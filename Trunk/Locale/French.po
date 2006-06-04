@@ -1,0 +1,3058 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2006-05-31 19:27\n"
+"PO-Revision-Date: 2006-01-14 12:56+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "From:"
+msgstr "De :"
+
+msgid "To:"
+msgstr "À :"
+
+msgid "Area"
+msgstr "Aire "
+
+msgid "Enter a start coordinate or mark the range on the image with the mouse."
+msgstr ""
+"Entrer la coordonnée de début ou marquer l'endroit sur le dessin avec la "
+"souris."
+
+msgid "Enter the end coordinate or mark the range on the image with the mouse."
+msgstr ""
+"Entrer la coordonnée de fin ou marquer l'endroit sur le dessin avec la "
+"souris."
+
+msgid ""
+"Area or length of path calculated for the given range using Simpson's "
+"formula."
+msgstr ""
+"Aire ou longueur de l'arc calculée pour l'intervalle donné avec la méhode de "
+"Simpson."
+
+msgid "Snap to:"
+msgstr "Passer à :"
+
+msgid "The x-coordinate evaluated for the t-parameter."
+msgstr "Valeur approchée de l'abscisse pour le paramètre t."
+
+msgid "The y-coordinate evaluated for the t-parameter."
+msgstr "Valeur approchée de l'ordonnée pour le paramètre t."
+
+msgid "The derivative of x(t) evaluated for the entered t-parameter."
+msgstr ""
+"Valeur approchée du nombre dérivé de x(t) pour la valeur du paramètre t."
+
+msgid "The derivative of y(t) evaluated for the entered t-parameter."
+msgstr ""
+"Valeur approchée du nombre dérivé de y(t) pour la valeur du paramètre t."
+
+msgid "The slope of the function evaluated for the entered t-parameter."
+msgstr "Pente de la courbe évaluée pour la valeur du paramètre t."
+
+msgid ""
+"Enter the independent variable for which you want to evaluate the function, "
+"or click on the function in the main window."
+msgstr ""
+"Entrer la variable indépendante pour laquelle vous voulez calculer la "
+"fonction, ou cliquer sur la fonction dans la fenêtre principale."
+
+msgid "Select where the cursor will be placed when you click on the image."
+msgstr "Choisir où placer le curseur avec un clic de souris sur l'image."
+
+msgid "Function"
+msgstr "Fonction"
+
+msgid "Intersection"
+msgstr "Intersection(s)"
+
+msgid "x-axis"
+msgstr "axe des abscisses"
+
+msgid "y-axis"
+msgstr "axe des ordonnées"
+
+msgid "Extreme x-value"
+msgstr "Extrémums abscisses"
+
+msgid "Extreme y-value"
+msgstr "Extrémums ordonnées"
+
+msgid "The distance to the function evaluated for the given angle."
+msgstr "La distance à la fonction évaluée pour l'angle donné."
+
+msgid "The x-coordinate evaluated for the given angle."
+msgstr "Valeur approchée de l'abscisse pour l'angle donné."
+
+msgid "The y-coordinate evaluated for the given angle."
+msgstr "Valeur approchée de l'ordonnée pour l'angle donné."
+
+msgid "The derivative of the function evaluated for the given angle."
+msgstr "Valeur appochée du nombre dérivé de la fonction pour l'angle donné."
+
+msgid "The slope of the function evaluated for the given angle."
+msgstr "La pente de la fonction évaluée pour l'angle donné."
+
+msgid ""
+"Enter a number for which you want to evaluate the function, or click on the "
+"function in the main window."
+msgstr ""
+"Entrer un nombre pour lequel vous voulez une valeur approchée de la fonction "
+"ou cliquer sur la fonction dans la fenêtre principale."
+
+msgid "Extremum"
+msgstr "Extremum"
+
+msgid "This is the function evaluated for the entered x-value."
+msgstr "Valeur approchée de la fonction pour l'abscisse donnée."
+
+#, fuzzy
+msgid ""
+"This is the first derivative of the function evaluated for the entered value."
+msgstr ""
+"C'est une valeur approchée de la dérivée première des fonctions pour la "
+"valeur donnée."
+
+msgid ""
+"This is the functions second derivative evaluated for the entered value."
+msgstr ""
+"C'est une valeur approchée de la dérivée seconde des fonctions pour la "
+"valeur donnée."
+
+#, fuzzy
+msgid "This is the y-coordinate corresponding to the entered x-coordinate."
+msgstr "Ordonnée du point sur la tangente pour la valeur donnée de l'abscisse."
+
+#, fuzzy
+msgid "Enter an x-coordinate or click in the main window."
+msgstr ""
+"Entrer une abscisse ou cliquer sur la tangente dans la fenêtre principale."
+
+msgid "File"
+msgstr "Fichier"
+
+msgid "Import"
+msgstr "Importer"
+
+msgid "Graph file..."
+msgstr "Fichier Graph..."
+
+msgid "Import a graph file into the current coordinate system."
+msgstr "Importe un fichier Graph dans le repère en cours."
+
+msgid "Point series..."
+msgstr "Série de points..."
+
+msgid "Import point series from a data file."
+msgstr "Importe une série de points d'un fichier de données."
+
+msgid "Edit"
+msgstr "Éditer"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Calc"
+msgstr "Calculer"
+
+msgid "Help"
+msgstr "Aide"
+
+msgid "Internet"
+msgstr "Internet"
+
+msgid "Open file: %s"
+msgstr "Ouvrir le fichier : %s."
+
+msgid "Visible"
+msgstr "Visible"
+
+msgid "Check to make the selected item visible in the coordinate system."
+msgstr "Cocher pour rendre visible l'item sélectionné dans le repère."
+
+msgid "Show in legend"
+msgstr "Montrer dans la légende"
+
+msgid "Check to show the selected item in the legend."
+msgstr "Cocher pour montrer l'item sélectionné dans la légende."
+
+msgid "Placement"
+msgstr "Emplacement"
+
+msgid "Above x-axis"
+msgstr "Au-dessus de l'axe des abscisses"
+
+msgid ""
+"Place the label directly above the x-axis on the right side of the image."
+msgstr ""
+"Place le label au-dessus de l'axe des abscisses sur la droite de l'image."
+
+msgid "Below x-axis"
+msgstr "En-dessous de l'axe des abscisses"
+
+msgid ""
+"Place the label directly below the x-axis on the right side of the image."
+msgstr ""
+"Place le label en-dessous de l'axe des abscisses sur la droite de l'image."
+
+msgid "Left of y-axis"
+msgstr "À gauche de l'axe des ordonnées"
+
+msgid "Place the label to the left of the y-axis at the top of the image."
+msgstr "Place le label  à gauche de l'axe des ordonnées et en haut du dessin."
+
+msgid "Right of y-axis"
+msgstr "À droite de l'axe des ordonnées"
+
+msgid "Place the label to the right of the y-axis at the top of the image."
+msgstr "Place le label  à droite de l'axe des ordonnées et en haut du dessin."
+
+msgid "Export to file..."
+msgstr "Exporter dans le fichier..."
+
+msgid "Export the selected point series to a file."
+msgstr "Exporte la série de points sélectionnée dans un fichier."
+
+msgid "New"
+msgstr "Nouveau"
+
+msgid "Creates a new coordinate system."
+msgstr "Crée un nouveau repère."
+
+msgid "Open..."
+msgstr "Ouvrir..."
+
+msgid "Read coordinate system and functions from a file."
+msgstr "Lit repère et fonctions enregistrés dans un fichier."
+
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Write coordinate system and functions to a file."
+msgstr "Enregistre le repère et les fonctions dans un fichier."
+
+msgid "Save as..."
+msgstr "Enregistrer sous..."
+
+msgid "Saves the coordinate system as a new name."
+msgstr "Enregistre le repère et les focntions sous un nouveau nom de fcihier."
+
+msgid "Save copy as..."
+msgstr "Enregistrer une copie sous..."
+
+#, fuzzy
+msgid "Saves a copy of the current coordinate system."
+msgstr "Enregistre une copie du repère en cours."
+
+msgid "Save as image..."
+msgstr "Enregistrer comme image..."
+
+msgid "Saves the shown coordinate system as an image."
+msgstr "Enregistre le repère affiché comme image."
+
+msgid "Print..."
+msgstr "Imprimer..."
+
+msgid "Print shown coordinate system."
+msgstr "Imprime le repère affiché."
+
+msgid "Exit"
+msgstr "Quitter"
+
+msgid "Quit the program."
+msgstr "Quitte le programme."
+
+msgid "Undo"
+msgstr "Défaire"
+
+msgid "Undo the last action."
+msgstr "Défait la dernière action."
+
+msgid "Redo"
+msgstr "Rétablir"
+
+msgid "Redo the last action undone."
+msgstr "Refait la dernière action défaite"
+
+msgid "Cut"
+msgstr "Couper"
+
+msgid "Cuts the selected function or point series to the clipboard."
+msgstr ""
+"Coupe la fonction ou la série de points sélectionnée et la met dans le "
+"presse-papiers."
+
+msgid "Copy"
+msgstr "Copier"
+
+msgid "Copies the selected function or point series to the clipboard."
+msgstr ""
+"Copie la fonction ou la série de points sélectionnée dans le presse-papiers."
+
+msgid "Paste"
+msgstr "Coller"
+
+msgid ""
+"Pastes a function or point series from the clipboard into the coordinate "
+"system."
+msgstr ""
+"Colle une fonction  ou une série de points du presse-papiers dans le système "
+"de coordonnées."
+
+msgid "Copy image"
+msgstr "Copier comme image"
+
+msgid "Copies the shown coordinate system to the clipboard."
+msgstr "Copie repère et fonctions affichés comme image dans le presse-papiers."
+
+msgid "Axes..."
+msgstr "Axes..."
+
+msgid "Edit axes settings."
+msgstr "Édite les paramètres des axes."
+
+msgid "Options..."
+msgstr "Options..."
+
+msgid "Edit options."
+msgstr "Édite les options."
+
+msgid "Insert function..."
+msgstr "Insérer une fonction..."
+
+msgid "Insert a new function."
+msgstr "Insère une nouvelle fonction."
+
+msgid "Insert tangent/normal..."
+msgstr "Insérer une tangente/normale..."
+
+#, fuzzy
+msgid "Insert a new tangent or normal for the selected function."
+msgstr "Insère une nouvelle tangente four la fonction séectionnée."
+
+msgid "Insert shade..."
+msgstr "Insérer un remplissage..."
+
+#, fuzzy
+msgid "Add shading to the selected function."
+msgstr "Ajoute un remplissage relatif à  une fonction."
+
+msgid "Insert point series..."
+msgstr "Insérer une série de points..."
+
+msgid "Insert a new point series."
+msgstr "Insèe une nouvelle série de points."
+
+msgid "Insert trendline..."
+msgstr "Insérer une courbe d'ajustement..."
+
+msgid "Insert a curve of best fit for the selected point series."
+msgstr "Insère une courbe d'ajustement pour la série de points séectionnée."
+
+msgid "Edit..."
+msgstr "Éditer..."
+
+#, fuzzy
+msgid "Edit the selected element: Function, tangent, point series, etc."
+msgstr "Édite la fonction, tangente ou série de points sélectionnée."
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Delete the selected function, tangent or point series."
+msgstr "Supprime la fonction, tangente ou série de points sélectionnée."
+
+msgid "Insert f'(x)..."
+msgstr "Insérer f'(x)..."
+
+msgid "Insert the first derivative of the selected function."
+msgstr "Insère la dérivée première de la fonction sélectionnée."
+
+msgid "In"
+msgstr "Agrandir"
+
+msgid "Zoom in."
+msgstr "Agrandit."
+
+msgid "Out"
+msgstr "Diminuer"
+
+msgid "Zoom out."
+msgstr "Diminue."
+
+msgid "Window"
+msgstr "Fenêtre"
+
+msgid "Zoom to user selected window."
+msgstr "Ajuste à la fenêtre sélectionnée."
+
+msgid "Square"
+msgstr "Normer"
+
+#, fuzzy
+msgid ""
+"Zoom to scale the axes equal. This will show a circle in the correct "
+"relation instead of an ellipse."
+msgstr ""
+"Ajuste à un repère normé. Le dessin associé à une équation de cercle sera un "
+"cercle et non une ellipse."
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Zoom to standard coordinates."
+msgstr "Utilise le repère standard."
+
+msgid "Move"
+msgstr "Déplacer"
+
+msgid "Move up"
+msgstr "Déplacer vers le haut"
+
+msgid "Move the window up the coordinate system."
+msgstr "Déplace la fenêtre vers le haut du repère."
+
+msgid "Move down"
+msgstr "Déplacer vers le bas"
+
+msgid "Move the window down the coordinate system."
+msgstr "Déplace la fenêtre vers le bas du repère."
+
+msgid "Move left"
+msgstr "Déplacer vers la gauche"
+
+msgid "Move the window to left of the coordinate system."
+msgstr "Déplace la fenêtre vers la gauche du repère."
+
+msgid "Move right"
+msgstr "Déplacer vers la droite"
+
+msgid "Move the window to the right of the coordinate system."
+msgstr "Déplace la fenêtre vers la droite du repère."
+
+msgid "Move system"
+msgstr "Déplacer le repère"
+
+msgid "Move the coordinate system with the mouse."
+msgstr "Déplace le repère avec la souris."
+
+#, fuzzy
+msgid "Length of path"
+msgstr "Longueur d'arc..."
+
+msgid "Calculate length of path between two points."
+msgstr "Calcule la longueur de l'arc entre deux points."
+
+msgid "Calculates area under the path."
+msgstr "Calcule l'aire sous l'arc de courbe."
+
+msgid "Evaluate"
+msgstr "Valeurs approchées"
+
+msgid "Evaluate or trace the selected function."
+msgstr "Évalue les images ou parcourt la fonction sélectionnée."
+
+msgid "Table..."
+msgstr "Table..."
+
+#, fuzzy
+msgid "Shows an evaluation table."
+msgstr "Montre une table de valeurs approchées."
+
+msgid "Contents and index"
+msgstr "Contenu et index"
+
+msgid "Open help file."
+msgstr "Ouvre le fichier d'aide."
+
+msgid "List of functions"
+msgstr "Liste des fonctions"
+
+msgid "Show list of functions that can be used for graphing."
+msgstr "Montre la liste des fonctions intégrées utilisables dans Graph."
+
+msgid "Go to home page"
+msgstr "Aller sur le site de Graph"
+
+msgid "Opens the default browser and shows the home page of the program."
+msgstr "Ouvre le navigateur par défaut sur le site du programme."
+
+msgid "Check for update"
+msgstr "Vérifier les mises à jour"
+
+msgid "Contact the home page to see if a newer version is available."
+msgstr "Va voir sur le site si une nouvelle version est disponible."
+
+msgid "About Graph..."
+msgstr "À propos de Graph..."
+
+msgid "Show copyright information."
+msgstr "Montre les informations sur les droits (copyright)."
+
+msgid "Separator"
+msgstr "Séparateur"
+
+msgid "Fit"
+msgstr "Ajuster"
+
+msgid "Zoom to show the selected function."
+msgstr "Ajuste la taille pour montrer la fonction sélectionnée."
+
+msgid "All points"
+msgstr "Tous les points"
+
+msgid "Zoom as much as all points are visible."
+msgstr "Ajuste la taille de façon à voir tous les points."
+
+msgid "Frequently Asked Questions"
+msgstr "FAQ : questions courantes"
+
+msgid "Shows a list of frequently asked questions and answers."
+msgstr "Liste des questions les plus courantes et leurs réponses."
+
+msgid "Insert label..."
+msgstr "Insérer un label..."
+
+msgid "Insert a text label."
+msgstr "Insère un label avec du texte."
+
+msgid "Donate"
+msgstr "Donation"
+
+#, fuzzy
+msgid "Donate money to the project."
+msgstr "Donner de l'argent pour le projet."
+
+msgid "Tip of the day"
+msgstr "Astuce du jour"
+
+msgid "Show tip of the day"
+msgstr "Montre l'astuce du jour."
+
+msgid "Support"
+msgstr "Services"
+
+msgid "Open browser with the support page for the program."
+msgstr "Ouvre le navigateur à la page des services du programme."
+
+msgid "Zoom x-axis in"
+msgstr "Agrandir en abscisse"
+
+msgid "Zoom in on the x-axis only."
+msgstr "Agrandit  seulement dans le sens des abscisses."
+
+msgid "Zoom x-axis out"
+msgstr "Diminuer en abscisses"
+
+msgid "Zoom out on the x-axis only."
+msgstr "Diminue seulement dans le sens des abscisses."
+
+msgid "Zoom y-axis in"
+msgstr "Agrandir en ordonnées"
+
+msgid "Zoom in on the y-axis only."
+msgstr "Agrandit  seulement dans le sens des ordonnées."
+
+msgid "Zoom y-axis out"
+msgstr "Diminuer en ordonnées"
+
+msgid "Zoom out on the y-axis only."
+msgstr "Diminue seulement dans le sens des ordonnées."
+
+msgid "Insert relation..."
+msgstr "Insérer une relation..."
+
+msgid "Insert a new equation or inequality."
+msgstr "Insère une nouvelle équation ou inéquation."
+
+msgid "Custom functions..."
+msgstr "Fonctions personnalisées..."
+
+msgid "Create custom functions and constants for use in graphs."
+msgstr ""
+"Crée des fonctions et constantes personnalisées pour utilisation dans les "
+"tracés."
+
+#, fuzzy
+msgid "Animate..."
+msgstr "Donation"
+
+msgid "Create an animation by variating a constant."
+msgstr ""
+
+msgid "Select color"
+msgstr "Choisir la couleur"
+
+msgid "Reset to default"
+msgstr "Remettre aux valeurs par défaut"
+
+msgid "Reset the tool bar icons to the installation default."
+msgstr "Remet la barre d'outils d'icônes à son état par défaut."
+
+msgid "Customize toolbar..."
+msgstr "Personnaliser la barre d'outils..."
+
+msgid "Customize the icons shown on the toolbar."
+msgstr "Personnalise les icônes montrées dans la barre d'outils."
+
+#, fuzzy
+msgid "Rotation"
+msgstr "Relation :"
+
+msgid "Edit label..."
+msgstr "Éditer label..."
+
+msgid "Edit the label under the cursor."
+msgstr "Édite le label pointé par le curseur."
+
+msgid "Delete label"
+msgstr "Supprimer label"
+
+msgid "Delete the label under the cursor."
+msgstr "Supprime le label pointé par le curseur."
+
+msgid "Show legend"
+msgstr "Montrer la légende"
+
+msgid "Select to show a legend in the coordinate system."
+msgstr "Cocher pour montrer la légende dans le repère."
+
+msgid "Top Right"
+msgstr "En haut à droite"
+
+msgid "Show the legend in the upper right corner."
+msgstr "Place la légende dans le coin droit en haut. "
+
+msgid "Bottom Right"
+msgstr "En bas à droite"
+
+msgid "Show the legend in the bottom right corner."
+msgstr "Place la légende dans le coin droit en bas. "
+
+msgid "Top Left"
+msgstr "En haut à gauche"
+
+msgid "Show the legend in the upper left corner."
+msgstr "Place la légende dans le coin gauche en haut. "
+
+msgid "Bottom Left"
+msgstr "En bas à gauche"
+
+msgid "Show the legend in the bottom left corner."
+msgstr "Place la légende dans le coin gauche en bas. "
+
+msgid "Close"
+msgstr "Fermer"
+
+msgid "Next tip"
+msgstr "Astuce suivante"
+
+msgid "Previous tip"
+msgstr "Astuce précédente"
+
+msgid "Show tips at startup"
+msgstr "Montrer les astuces au démarrage"
+
+msgid "Did you know..."
+msgstr "Le saviez-vous...?"
+
+msgid "Insert relation"
+msgstr "Insérer une relation"
+
+msgid "Relation:"
+msgstr "Relation :"
+
+msgid "Constraints:"
+msgstr "Contraintes :"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Legend text"
+msgstr "Légende"
+
+msgid "Description:"
+msgstr "Description :"
+
+#, fuzzy
+msgid ""
+"Write a descriptive text to show in the legend. If empty the equation will "
+"be used."
+msgstr "Écrire une description pour la légende à la place de l'équation."
+
+msgid "Properties"
+msgstr "Propriétés"
+
+msgid "Style:"
+msgstr "Type :"
+
+msgid "Color:"
+msgstr "Couleur :"
+
+msgid "Width:"
+msgstr "Largeur :"
+
+#, fuzzy
+msgid ""
+"Select the style used for drawing the inequality. Not used for equations."
+msgstr ""
+"Choisit le type de remplissage visualisant l'inéquation. Non utilisé pour "
+"les équations."
+
+#, fuzzy
+msgid ""
+"Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Épaisseur du tracé en pixels. Pas utilisé pour les inéquations."
+
+#, fuzzy
+msgid "Select the color for drawing the relation."
+msgstr "Choisir la couleur des lignes."
+
+msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
+msgstr "Entrer la relation, par example \"x^2+y^2 = 25\" or \"y < sin(x)\""
+
+msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
+msgstr ""
+"Entrer les contraintes pour la relation, par example \"x > 0 and y < 5\""
+
+msgid "Insert tangent/normal"
+msgstr "Insérer une tangente/normale"
+
+msgid "Coordinate where the tangent/normal will cross the function."
+msgstr "Coordonnées où la tangente/normale coupe la fonction."
+
+msgid "Choose if you want a tangent or a normal."
+msgstr "Choisir entre tangente ou normale."
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Tangent"
+msgstr "Tangente"
+
+msgid "Normal"
+msgstr "Normale"
+
+msgid "Graph properties"
+msgstr "Propriétés du tracé"
+
+msgid "Line style:"
+msgstr "Style de ligne :"
+
+msgid "Width of graph in pixels."
+msgstr "Épaisseur du tracé en pixels."
+
+msgid "Choose which line style to use for drawing the graph."
+msgstr "Choisir le style de ligne à utiliser pour le tracé."
+
+#, fuzzy
+msgid "Select the color of the graph."
+msgstr "Choisit le type de fonction à représenter."
+
+msgid "Argument range"
+msgstr "Intervalle pour l'argument"
+
+msgid "Start of range interval for the used variable."
+msgstr "Début de l'intervalle pour la variable utilisée."
+
+msgid "End of range interval for the used variable."
+msgstr "Fin de l'intervalle pour la variable utilisée."
+
+msgid "Endpoints"
+msgstr "Extrémités"
+
+msgid "Start:"
+msgstr "De début :"
+
+msgid "End:"
+msgstr "De fin :"
+
+msgid ""
+"Select marker to show at the start of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+"Choisir le marqueur du début dl'intervalle. Seulement si un intervalle a été "
+"précisé pour l'argument."
+
+msgid ""
+"Select marker to show at the end of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+"Choisit le marqueur utilisé pour marquer l'extrémité de l'intervalle. "
+"Seulement si un intervalle est spécifié."
+
+msgid "Insert trendline"
+msgstr "Insérer une courbe d'ajustement"
+
+msgid "Line"
+msgstr "Ligne"
+
+msgid "Built-in"
+msgstr "Intégré"
+
+msgid "Create a linear function: f(x)=ax+b"
+msgstr "Crée une fonction affine : f(x)=ax+b"
+
+msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
+msgstr "Crée une fonction logarithmique : f(x)=a*ln(x)+b"
+
+msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
+msgstr "Crée une fonction polynomiale : f(x)=ax^3+bx^2+cx+d"
+
+msgid "Create a power function: f(x)=ax^b"
+msgstr "Crée une fonction puissance : f(x)=ax^b"
+
+msgid "Create a exponential function: f(x)=a*b^x"
+msgstr "Crée une fonction exponentielle : f(x)=a*b^x"
+
+msgid "The order of the polynomium. For example 2 means a parable."
+msgstr "Le degré du polynôme. Par example 2 pour une parabole."
+
+msgid "Order:"
+msgstr "Degré :"
+
+msgid "Polynomial"
+msgstr "Polynomiale"
+
+msgid "Logarithmic"
+msgstr "Logarithmique"
+
+msgid "Linear"
+msgstr "Affine"
+
+msgid "Power"
+msgstr "Puissance"
+
+msgid "Exponential"
+msgstr "Exponentielle"
+
+msgid "Create a moving average as a series of straight lines."
+msgstr "Crée une moyenne mobile sous forme d'une série de lignes droites."
+
+msgid "Moving average"
+msgstr "Moyenne mobile"
+
+msgid "Period:"
+msgstr "Période :"
+
+msgid "Determines how many points are used for the average."
+msgstr "Détermine le nombre de points utilisés pour la moyenne."
+
+msgid "User defined"
+msgstr "Défini par l'utilisateur"
+
+msgid "Model:"
+msgstr "Modèle :"
+
+msgid "Add model"
+msgstr "Ajouter modèle"
+
+msgid "Remove model"
+msgstr "Suppr. modèle"
+
+msgid "Edit model"
+msgstr "Éditer modèle"
+
+#, fuzzy
+msgid "Enter a function model to base the trendline on."
+msgstr "Entrer une description pour la légende."
+
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendline."
+msgstr ""
+
+#, fuzzy
+msgid "Intercept ="
+msgstr "Internet"
+
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendlines."
+msgstr ""
+
+msgid "Insert point series"
+msgstr "Insérer une série de points"
+
+msgid ""
+"The name of the point series, which is shown in the list to the left of the "
+"coordinate system."
+msgstr ""
+"Le nom de la série de points, qui sera affiché dans la liste à gauche dans "
+"le repère"
+
+msgid "Series"
+msgstr "Séries"
+
+msgid "This shows a sample of the markers and the lines between the markers."
+msgstr "Ceci montre un exemple des points et lignes entre les points"
+
+msgid "Sample"
+msgstr "Exemple"
+
+msgid "Markers"
+msgstr "Marqueurs"
+
+msgid "Marker"
+msgstr "Marqueur"
+
+msgid "Size:"
+msgstr "Taille :"
+
+msgid "Choose the size of the markers."
+msgstr "Choisir la taille des marqueurs."
+
+msgid "Choose the type of markers to be shown at each point."
+msgstr "Choisir le type de dessin des marqueurs."
+
+msgid "Choose the color of the markers."
+msgstr "Choisir la couleur des marqueurs."
+
+msgid "Interpolation:"
+msgstr "Interpolation :"
+
+msgid ""
+"Choose the style of lines to be drawn between the points. You may also "
+"choose not to draw any lines."
+msgstr ""
+"Choisir le type de ligne à tracer entre les points. Vous pouvez aussi ne pas "
+"joindre les points."
+
+#, fuzzy
+msgid "Choose the width of the lines in pixels."
+msgstr "Choisir l'épaisseur des lignes."
+
+msgid "Select which kind of line to draw between the markers."
+msgstr "Sélectionne le style de ligne à utiliser pour joindre les marqueurs."
+
+msgid "Cubic splines"
+msgstr "Splines cubiques"
+
+msgid "Half cosine"
+msgstr "\"Half cosine\""
+
+msgid "Choose the color of the lines."
+msgstr "Choisir la couleur des lignes."
+
+msgid "Labels"
+msgstr "Labels"
+
+msgid "Position:"
+msgstr "Position :"
+
+msgid "Check to show the coordinate at each point."
+msgstr "Cocher pour montrer les coordonnées de chaque point."
+
+msgid "Show coordinates"
+msgstr "Montrer les coordonnées"
+
+msgid "Select the font for the coordinates."
+msgstr "Choisir la police pour les coordonnées."
+
+msgid "Select where the coordinates should be shown."
+msgstr "Choisir où montrer les coordonnées."
+
+msgid "Below"
+msgstr "Dessous"
+
+msgid "Above"
+msgstr "Dessus"
+
+msgid "Left"
+msgstr "Gauche"
+
+msgid "Right"
+msgstr "Droite"
+
+msgid "Error bars"
+msgstr "Intervalles d'incertitude"
+
+msgid "X error bars"
+msgstr "Intervalles d'incertitude en X"
+
+#, fuzzy
+msgid "Show horizontal error bars."
+msgstr "Montre les intervalles d'incertitude horizontaux."
+
+msgid "Show x-bars"
+msgstr "Montrer les intervalles "
+
+msgid "All error bars are the same size."
+msgstr "Tous les intervalles d'incertitude ont même longueur."
+
+msgid "Fixed:"
+msgstr "Fixé :"
+
+msgid "Enter fixed value."
+msgstr "Entrer la valeur choisie."
+
+msgid "All error bars are the same percentage of the x-coordinate."
+msgstr "Tous les intervalles d'incertitude font le même % de l'abscisse."
+
+msgid "Relative:"
+msgstr "Relatif :"
+
+msgid "Each error bar is given a custom value."
+msgstr "Une valeur particulière est donnée à chaque intervalle d'incertitude."
+
+msgid "Custom"
+msgstr "Choisi :"
+
+msgid "Enter relative value in percent."
+msgstr "Entrer la valeur relative en pourcentage."
+
+msgid "Y error bars"
+msgstr "Intervalle d'incertitude en Y"
+
+#, fuzzy
+msgid "Show vertical error bars."
+msgstr "Montre les intervalles d'incertitude verticaux."
+
+msgid "Show y-bars"
+msgstr "Montrer les intervalles "
+
+msgid "All error bars are the same percentage of the y-coordinate."
+msgstr "Tous les intervalles d'incertitude font le même % de l'ordonnée."
+
+#, fuzzy
+msgid "Cut the selected text to the clipboard."
+msgstr "Couper le texte selectionné vers le presse-papiers"
+
+msgid "Copy the selected text to the clipboard."
+msgstr "Copie le texte sélectionné dans le presse-papiers."
+
+msgid ""
+"Paste text from the clipboard into the grid. Other cells may be overwritten "
+"by the text from the clipboard."
+msgstr ""
+"Coller le texte du presse-papiers dans le quadrillage. D'autres cases "
+"peuvent être recouvertes par le texte."
+
+msgid "Erase selected cells."
+msgstr "Effacer les cases sélectionnées."
+
+msgid "Insert row"
+msgstr "Insérer une ligne"
+
+#, fuzzy
+msgid "Inserts a row in the grid moving rows below one down."
+msgstr "Insère une ligne dans le quadrillage en déplaçant les lignes en bas."
+
+msgid "Remove row"
+msgstr "Supprimer une ligne"
+
+msgid "Removes the selected rows."
+msgstr "Supprime les lignes sélectionnées."
+
+msgid "Select all"
+msgstr "Tout sélectionner"
+
+msgid "Select all cells."
+msgstr "Sélectionner toutes les cases."
+
+msgid "Import from file..."
+msgstr "Importer depuis un fichier..."
+
+msgid "Import data from a file and place it at the selected cell."
+msgstr ""
+"Importe des données d'un fichier et les place dans la case sélectionnée."
+
+msgid "Export selected data to a file."
+msgstr "Exporter les données sélectionnées dans un fichier."
+
+msgid "Calculate table"
+msgstr "Table de valeurs approchées"
+
+msgid ""
+"The step value. This is the distance between the x-values in the interval."
+msgstr ""
+"La valeur du pas. C'est la distance entre les valeurs de la subdivision de "
+"l'intervalle en abscisse."
+
+msgid "The first x-value in the interval."
+msgstr "Borne gauche de l'intervalle."
+
+msgid "The last x-value in the interval."
+msgstr "Borne droite de l'intervalle"
+
+msgid "Copy selected cells to the clipboard."
+msgstr "Copie les cases sélectionnées dans le presse-papiers."
+
+msgid "Saves the selected data to a file."
+msgstr "Enregistre les données sélectionnées dans un fichier."
+
+msgid "Calculating"
+msgstr "En train de calculer"
+
+msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
+msgstr "CSV (virgule comme délimiteur) [*.csv]|*.csv|Text [*.txt]|*.txt"
+
+msgid "Insert shade"
+msgstr "Insérer un remplissage"
+
+msgid "Shading"
+msgstr "Remplissage"
+
+msgid "Shades the area between the function and the x-axis."
+msgstr "Remplit l'aire entre la fonction et l'axe des abscisses."
+
+msgid "Shades the area below the function."
+msgstr "Remplit l'aire sous la fonction."
+
+msgid "Shades the area above the function."
+msgstr "Remplit l'aire au dessus de la fonction."
+
+msgid "Shades the area between the function and the y-axis."
+msgstr "Remplit l'aire entre la fonction et l'axe des ordonnées."
+
+msgid "Shades the area inside the function."
+msgstr "Remplit l'aire à l'intérieur de la fonction."
+
+msgid ""
+"Shades the area between the main function and the function selected in the "
+"list to the right."
+msgstr ""
+"Remplit l'aire entre la fonction principale et celle sélectionnée dans la "
+"liste placée à droite."
+
+msgid "Above function"
+msgstr "Au dessus de la fonction"
+
+msgid "Between function and x-axis"
+msgstr "Entre fonction et axe des abscisses"
+
+msgid "Between functions"
+msgstr "Entre fonctions"
+
+msgid "Between function and y-axis"
+msgstr "Entre fonction et axe des ordonnées"
+
+msgid "Inside function"
+msgstr "À l'intérieur de la fonction"
+
+msgid "Below function"
+msgstr "Sous la fonction"
+
+msgid "Options"
+msgstr "Options"
+
+msgid "Range"
+msgstr "Intervalle"
+
+msgid "Coordinate where the shading starts."
+msgstr "Coordonnée de départ du remplissage."
+
+msgid "Coordinate where the shading ends."
+msgstr "Coordonnée de fin du remplissage."
+
+msgid "Check to increase the end coordinate until intersection."
+msgstr "Cocher pour accroître l'abscisse de fin jusqu'à l'intersection."
+
+msgid "Increase to intersection"
+msgstr "Croître jusqu'à l'intersection"
+
+#, fuzzy
+msgid "Check to decrease the start coordinate until intersection."
+msgstr "Cocher pour diminuer l'abscisse de début jusqu'à l'intersection."
+
+msgid "Decrease to intersection"
+msgstr "Décroître jusqu'à l'intersection"
+
+msgid "Select the style used for the shading."
+msgstr "Choisir le type de remplissage."
+
+msgid "Mark the end of the shading with a line."
+msgstr "Marque la fin du remplissage avec un trait."
+
+msgid "Mark end of range"
+msgstr "Marquer fin d'intervalle."
+
+msgid "Select color used for shading."
+msgstr "Choisir la couleur du remplissage."
+
+msgid "Mark the start of the shading with a line."
+msgstr "Marque le début du remplissage avec un trait."
+
+msgid "Mark start of range"
+msgstr "Marquer début d'intervalle"
+
+msgid "Enter a description to show in the legend."
+msgstr "Entrer une description pour la légende."
+
+msgid "2nd function"
+msgstr "2nd fonction"
+
+msgid "2nd function:"
+msgstr "2nd fonction :"
+
+msgid "Select second function, when you want a shading between two functions."
+msgstr ""
+"Choisit la seconde fonction quand on veut remplir entre deux fonctions."
+
+msgid "Shading range for 2nd function"
+msgstr "Intervalle de remplissage pour la seconde fonction."
+
+msgid "Custom functions/constants"
+msgstr "Fonctions/constantes personnalisées"
+
+msgid "Apply"
+msgstr "Appliquer"
+
+msgid "Names"
+msgstr "Noms"
+
+msgid "Definition"
+msgstr "Définitions"
+
+msgid "Cut the selected text to the clipboard"
+msgstr "Couper le texte selectionné vers le presse-papiers"
+
+msgid "Image options"
+msgstr "Options de l'image"
+
+msgid "Size"
+msgstr "Taille"
+
+msgid "Image width:"
+msgstr ""
+
+msgid "Image height:"
+msgstr ""
+
+msgid "Set a custom image width."
+msgstr ""
+
+msgid "Set a custom image height."
+msgstr ""
+
+msgid ""
+"Choose to use the same size as shown on the screen or a custom image size."
+msgstr ""
+
+#, fuzzy
+msgid "Image size"
+msgstr "Taille du texte"
+
+#, fuzzy
+msgid "Screen size"
+msgstr "Taille du texte"
+
+#, fuzzy
+msgid "Custom size"
+msgstr "Personnaliser"
+
+msgid ""
+"Progressive encoding allows viewers to see a rough copy of the image while "
+"it is downloaded."
+msgstr ""
+
+msgid "Encoding"
+msgstr "Coder"
+
+msgid "Progressive"
+msgstr ""
+
+msgid "Select a compression quality."
+msgstr ""
+
+msgid "Quality"
+msgstr "Qualité"
+
+#, fuzzy
+msgid "Paper size:"
+msgstr "Taille du texte"
+
+msgid "Choose paper orientation."
+msgstr ""
+
+msgid "Orientation"
+msgstr "Orientation"
+
+msgid "Portrait"
+msgstr "Portrait"
+
+msgid "Landscape"
+msgstr "Paysage"
+
+#, fuzzy
+msgid "Choose paper size to use."
+msgstr "Choisir l'épaisseur des lignes."
+
+#, fuzzy
+msgid "Select this to use these settings as defaults in the future."
+msgstr ""
+"Sélectioonez cette option pour utiliser ces paramètres du repère comme "
+"valeurs par défaut pour les prochaines fois."
+
+msgid "Save as default"
+msgstr "Enregistrer comme défaut"
+
+#, fuzzy
+msgid "Animate"
+msgstr "Donation"
+
+#, fuzzy
+msgid "Constants:"
+msgstr "Contraintes :"
+
+#, fuzzy
+msgid "Step:"
+msgstr "Étapes :"
+
+msgid "Frames/second:"
+msgstr ""
+
+msgid "Choose a constant to change between each frame.."
+msgstr ""
+
+#, fuzzy
+msgid "The first value of the constant"
+msgstr "Borne gauche de l'intervalle."
+
+#, fuzzy
+msgid "The last value of the constant."
+msgstr "Borne droite de l'intervalle"
+
+msgid "The chosen constant is changed by this value between each frame."
+msgstr ""
+
+msgid "Number of frames per second used when the animation is played."
+msgstr ""
+
+msgid "Working"
+msgstr ""
+
+msgid "About Graph"
+msgstr "À propos de Graph"
+
+msgid "<Language> translation by <Translator>"
+msgstr "Traduction française de J.P. Fontaine"
+
+msgid "Version "
+msgstr "Version "
+
+msgid "Email:"
+msgstr "Email :"
+
+msgid "Build"
+msgstr "Build"
+
+msgid ""
+"This is free software, and you are welcome to redistribute it under the "
+"terms in the GNU General Public License. Please send bug reports and "
+"suggestions to the programmer."
+msgstr ""
+"Ceci est un logiciel libre, et vous êtes autorisé à le diffuser sous les "
+"conditions de la Licence Publique Générale GNU. S'il vous plaît envoyez des "
+"rapports d'erreurs et des suggestions à l'auteur."
+
+#, fuzzy
+msgid "The newest version as well as the source code are available at:"
+msgstr "La version la plus récente et le code source sont disponibles sur :"
+
+#, fuzzy
+msgid "Animation"
+msgstr "Donation"
+
+#, fuzzy
+msgid "Open an animation file."
+msgstr "Ouvre le fichier %s."
+
+#, fuzzy
+msgid "Save the animation to a file."
+msgstr "Enregistre les données sélectionnées dans un fichier."
+
+#, fuzzy
+msgid "Copy the animation to the clipboard."
+msgstr "Copie le texte sélectionné dans le presse-papiers."
+
+msgid "Edit axes"
+msgstr "Choix pour les axes"
+
+msgid "Minimum:"
+msgstr "Minimum :"
+
+msgid "Maximum:"
+msgstr "Maximum :"
+
+msgid "Tick unit:"
+msgstr "Unité gradu. :"
+
+msgid "The x-axis cross at y="
+msgstr "Axe des abscisses à y="
+
+msgid "Grid unit:"
+msgstr "Unité quadri :"
+
+msgid "Minimum x-value."
+msgstr "Abscisse minimale."
+
+msgid "Maximum x-value."
+msgstr "Abscisse maximale."
+
+msgid "Units between ticks on the x-axis."
+msgstr "Distance entre les marques en abscisses"
+
+msgid "Use logarithmic scale on the x-axis."
+msgstr "Utilise une échelle logarithmique en abscisse."
+
+msgid "Logarithmic scale"
+msgstr "Échelle logarithmique"
+
+msgid "Show label at the right side above the x-axis."
+msgstr "Place le nom de l'axe des abscisses au dessus à droite. "
+
+msgid "Label:"
+msgstr "Nom :"
+
+#, fuzzy
+msgid "Edit the label for the axis here."
+msgstr "Édite le nom ici."
+
+msgid "Show units on the x-axis."
+msgstr "Montre les unités en abscisse."
+
+msgid "Show numbers"
+msgstr "Montrer les valeurs"
+
+#, fuzzy
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr "L'axe des abscisses coupera l'axe des ordonnées à cette valeur."
+
+msgid "Units between the grid lines perpendicular to the x-axis."
+msgstr ""
+"Espace entre les lignes du quadrillage perpendiculaires à l'axe des "
+"abscisses."
+
+#, fuzzy
+msgid "Determine the tick unit automatically."
+msgstr "Détermine automatiquement l'unité de marquage."
+
+msgid "Auto tick"
+msgstr "Gradu. auto."
+
+#, fuzzy
+msgid "Set the grid unit to the same as the tick unit."
+msgstr "Met l'unité de quadrillage à la valeur de l'unité de marquage."
+
+msgid "Auto grid"
+msgstr "Quadri. auto."
+
+#, fuzzy
+msgid "Show tick marks on the x-axis."
+msgstr "Montre les graduations en abscisse."
+
+msgid "Show ticks"
+msgstr "Montrer gradu."
+
+#, fuzzy
+msgid "Show units on the selected axis as a fraction multiplied by pi."
+msgstr "Place les marques en abscisses pour k.pi "
+
+msgid "Show as a multiple of pi"
+msgstr "Graduer en fractions de pi"
+
+msgid "Show vertical grid lines."
+msgstr "Montre les verticales du quadrillage."
+
+msgid "Show grid"
+msgstr "Montrer quadri."
+
+msgid "The y-axis cross at x="
+msgstr "Axe des ordonnées à x="
+
+msgid "Minimum y-value."
+msgstr "Ordonnée minimale."
+
+msgid "Maximum y-value."
+msgstr "Ordonnée maximale."
+
+msgid "Use logarithmic scale for the y-axis."
+msgstr "Utilise une échelle logarithmique en ordonnées."
+
+msgid "Units between ticks on the y-axis."
+msgstr "Distance entre graduations en ordonnées."
+
+msgid "Show units on the y-axis."
+msgstr "Montre les unités en ordonnées."
+
+msgid "Show label at the top of the window to the right of the y-axis."
+msgstr "Montre le nom de l'axe des ordonnées en haut à sa droite."
+
+#, fuzzy
+msgid "The y-axis will intersect with the x-axis at this value."
+msgstr "L'axe des ordonnées coupera l'axe des abscisses à cette valeur."
+
+msgid "Units between the grid lines perpendicular to the y-axis."
+msgstr "Distance entre les lignes horizontales du quadrillage."
+
+#, fuzzy
+msgid "Show tick marks on the y-axis."
+msgstr "Montrer les graduations en ordonnées"
+
+msgid "Show horizontal grid lines."
+msgstr "Montrer les lignes horizontales du quadrillage."
+
+msgid "Settings"
+msgstr "Paramètres"
+
+msgid "Title:"
+msgstr "Titre :"
+
+msgid ""
+"Choose if you want to show the axes, and if you want to show them crossed or "
+"at the left and bottom of the image."
+msgstr ""
+"Choisir si vous voulez voir les axes, et dans ce cas les voir sécants ou en "
+"bas et à gauche de l'image."
+
+msgid "Axes style"
+msgstr "Situation des axes"
+
+msgid "None"
+msgstr "Invisibles"
+
+msgid "Crossed"
+msgstr "Sécants"
+
+msgid "Boxed"
+msgstr "Sur les bords"
+
+msgid ""
+"Choose if trigonometric functions should calculate in radian or degrees."
+msgstr "Choisit l'unité d'angle pour la trigonométrie."
+
+msgid "Trigonometry"
+msgstr "Trigonométrie"
+
+msgid "Radian"
+msgstr "Radian"
+
+msgid "Degree"
+msgstr "Degré"
+
+msgid "Enter a title to show above the coordinate system."
+msgstr "Entre un titre affiché en haut du repère."
+
+msgid "Select the font for the title."
+msgstr "Choisit la police pour le titre."
+
+msgid "Choose where the legend should be placed."
+msgstr "Choisit où sera placée la légende."
+
+msgid "Legend placement"
+msgstr "Emplacement légende"
+
+msgid ""
+"Check this to use complex numbers for calculations. Notice that this will "
+"slow graphing down."
+msgstr ""
+"Sélectionnez ceci pour utiliser les nombres complexes dans les calculs. "
+"Notez bien que cela ralentira la réalisation des tracés."
+
+msgid "Calculate with complex numbers"
+msgstr "Calcuer avec les complexes"
+
+msgid "Font and color"
+msgstr "Polices et couleurs"
+
+msgid "Colors"
+msgstr "Couleurs"
+
+msgid "Grid color:"
+msgstr "Couleur quadrillage :"
+
+msgid "Axes color:"
+msgstr "Couleur des axes :"
+
+msgid "Background color:"
+msgstr "Couleur de fond :"
+
+#, fuzzy
+msgid "Select the color of the image background."
+msgstr "Choisir la couleur des marqueurs."
+
+#, fuzzy
+msgid "Select the color of the axes."
+msgstr "Choisir la couleur des marqueurs."
+
+#, fuzzy
+msgid "Select the color of the grid lines."
+msgstr "Choisir la couleur des lignes."
+
+msgid "Fonts"
+msgstr "Polices"
+
+msgid "Number font:"
+msgstr "Police des nombres :"
+
+msgid "Label font:"
+msgstr "Police des labels :"
+
+msgid "Legend font:"
+msgstr "Police des légendes :"
+
+#, fuzzy
+msgid "Select the font used to show the labels on the axes."
+msgstr "Choisit la police utilisée pour le nom des axes."
+
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Choisit la police utilisée pour les nombres sur les axes."
+
+msgid "Select the font used to show the legend text."
+msgstr "Choisit la police utilisée pour le texte des légendes."
+
+msgid "Decimals:"
+msgstr "Décimales :"
+
+msgid "Recent files:"
+msgstr "Fichiers récents :"
+
+msgid "Max undo steps:"
+msgstr "Défaire jusqu'à :"
+
+msgid "Language:"
+msgstr "Langue :"
+
+#, fuzzy
+msgid "Font scale:"
+msgstr "Taille de la police :"
+
+msgid "Number of decimals used when results are shown."
+msgstr "Nombre de décimales utilisées pour afficher des résultats."
+
+#, fuzzy
+msgid "Associate *.grf files with Graph."
+msgstr "Associe les fichiers *.grf au logiciel Graph."
+
+msgid "Associate .grf files"
+msgstr "Associer aux fichiers .grf"
+
+#, fuzzy
+msgid "The number of most recent used files shown in the File menu."
+msgstr ""
+"Nombre de fichiers le plus récemment utilisés à montrer dans la rubrique "
+"Fichier."
+
+msgid ""
+"Save window position when the program quits. This setting is used the next "
+"time the program is used.|Save window state on exit."
+msgstr ""
+"Enregistre la position de la fenêtre en quittant le programme. Cette "
+"position sera utilisée lors de la prochaine utilisation du fichier.|"
+"Enregistre l'état de la fenêtre en quittant."
+
+msgid "Save workspace on exit"
+msgstr "Enregistrer l'espace de travail en quittant"
+
+msgid "Format used when complex numbers are shown."
+msgstr "Format utilisé pour afficher les nombres complexes."
+
+msgid "Complex format"
+msgstr "Format complexes"
+
+msgid "Real"
+msgstr "Réel"
+
+msgid "Rectangular"
+msgstr "Algébrique"
+
+msgid "Polar"
+msgstr "Trigo"
+
+msgid "Show tooltip when the cursor is over something."
+msgstr "Montre la bulle associée lorsque le curseur est sur quelquechose."
+
+msgid "Show tooltip"
+msgstr "Montrer bulle"
+
+msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
+msgstr ""
+"Nombre maximal d'étapes sauvées pour être défaites. Mettre à zéro pour ne "
+"pas pouvoir défaire."
+
+msgid ""
+"If checked the program will contact a web server when the program is started "
+"to see if a newer version is available."
+msgstr ""
+"Cocher pour que  le programme joigne un serveur web à chaque démarrage pour "
+"voir s'il existe une nouvelle version disponible."
+
+msgid "Check for new version of Graph at startup"
+msgstr "Vérifier l'existence d'une nouvelle version au démarrage"
+
+msgid "Select language to use."
+msgstr "Choisir la langue à  utiliser."
+
+msgid ""
+"This is used to scale the user interface if you are having problems reading "
+"the text."
+msgstr ""
+
+msgid "Insert function"
+msgstr "Insérer une fonction."
+
+msgid "Function type:"
+msgstr "Type de fonction :"
+
+msgid "Select the function type to graph."
+msgstr "Choisit le type de fonction à représenter."
+
+msgid "Standard function   y=f(x)"
+msgstr "Fonction standard        y=f(x)"
+
+msgid "Parametric function x(t), y(t)"
+msgstr "Fonction paramétrique x(t),y(t)"
+
+msgid "Polar function         r=f(t)"
+msgstr "Fonction polaire            r=f(t)"
+
+msgid "Function equation"
+msgstr "Équation associée à la fonction"
+
+msgid "Steps:"
+msgstr "Étapes :"
+
+msgid "Number of calculation steps used to draw the graph."
+msgstr "Nombre de pas utilisés pour tracer le graphe."
+
+msgid "Draw type:"
+msgstr "Type de dessin :"
+
+msgid ""
+"Choose Lines if you want the calculated points for the graph to be "
+"connected. Choose Dots if you only want to show a dot at each point."
+msgstr ""
+"Choisir Lignes si vous voulez joindre les points de construction du graphe."
+"Choisir Points si vous voulez des points isolés."
+
+msgid "Lines"
+msgstr "Lignes"
+
+msgid "Dots"
+msgstr "Points"
+
+msgid "Text label"
+msgstr "Texte du label"
+
+msgid "Font name:"
+msgstr "Nom de la police :"
+
+msgid "Font size:"
+msgstr "Taille de la police :"
+
+msgid "Font color:"
+msgstr "Couleur de la police :"
+
+#, fuzzy
+msgid "Text size."
+msgstr "Taille du texte"
+
+msgid "Text string"
+msgstr "Caractères du texte"
+
+#, fuzzy
+msgid "Insert symbol"
+msgstr "Insérer une ligne"
+
+#, fuzzy
+msgid "Insert object"
+msgstr "Insérer un objet..."
+
+msgid "Bold (Ctrl-B)"
+msgstr "Gras (Ctrl-B)"
+
+msgid "Italic (Ctrl-I)"
+msgstr "Italique (Ctrl-I)"
+
+msgid "Underline (Ctrl-U)"
+msgstr "Souligné (Ctrl-U)"
+
+msgid "Strikethrough (Ctrl-S)"
+msgstr "Rayé (Ctrl-S)"
+
+msgid "Superscript (Ctrl++)"
+msgstr "Exposant (Ctrl++)"
+
+msgid "Subscript (Ctrl+=)"
+msgstr "Indice (Ctrl+=)"
+
+msgid "Align left (Ctrl-L)"
+msgstr "Aligné à gauche (Ctrl-L)"
+
+msgid "Center (Ctrl-E)"
+msgstr "Centré (Ctrl-E)"
+
+msgid "Align right (Ctrl-R)"
+msgstr "Aligné à droite (Ctrl-R)"
+
+#, fuzzy
+msgid "Text font."
+msgstr "Police du texte"
+
+#, fuzzy
+msgid "Text color."
+msgstr "Couleur du texte"
+
+#, fuzzy
+msgid "Select background color of the text label."
+msgstr "Choisit la police pour le titre."
+
+msgid "Undo last action."
+msgstr "Défait la dernière action."
+
+msgid "Redo last undone action."
+msgstr "Refait la dernière action défaite."
+
+msgid "Cut selected text to the clipboard."
+msgstr "Coupe le texte sélectionné et le met dans le presse-papiers."
+
+msgid "Paste the contents of the clipboard."
+msgstr "Colle le contenu du presse-papiers."
+
+msgid "Paste special..."
+msgstr "Collage spécial..."
+
+msgid "Select which clipboard representation you want to paste."
+msgstr "Choisit quelle occurrence du presse-papiers vous voulez coller."
+
+msgid "Insert object..."
+msgstr "Insérer un objet..."
+
+msgid "Create a new OLE object."
+msgstr "Crée un nouvel objet OLE."
+
+msgid "Edit object"
+msgstr "Éditer objet"
+
+msgid "Edit selected OLE object."
+msgstr "Édite l'objet OLE sélectionné."
+
+msgid "Insert f'(x)"
+msgstr "Insérer f'(x)"
+
+msgid "Name:"
+msgstr "Nom :"
+
+msgid "Constant"
+msgstr "Constante"
+
+msgid "Value"
+msgstr "Valeur"
+
+#, fuzzy
+msgid "Select a function or tangent to evaluate."
+msgstr "Choisir une fonction ou une tangente à calculer"
+
+msgid "Error"
+msgstr "Erreur"
+
+msgid "Shade"
+msgstr "Remplissage"
+
+msgid "Functions"
+msgstr "Fonctions"
+
+msgid "Tangents"
+msgstr "Tangentes"
+
+msgid "Point series"
+msgstr "Séries de points"
+
+msgid "Shades"
+msgstr "Remplissages"
+
+msgid "Length"
+msgstr "Longueur "
+
+msgid "Label"
+msgstr "Label"
+
+msgid "%s-error"
+msgstr "%s-erreur"
+
+msgid "Transparent"
+msgstr "Transparent"
+
+msgid "Axes"
+msgstr "Axes"
+
+msgid "No error occurred. You should not see this message."
+msgstr "Pas d'erreur. Vous ne devriez pas voir ce message."
+
+msgid "An error occurred while evaluating power function."
+msgstr "Une erreur s'est produite en calculant une fonction puissance."
+
+msgid "Tangent to 90+p180 is undefined."
+msgstr "Tangente de 90+k.180 n'est pas définie."
+
+msgid "Fact can only be calculated for positive integers."
+msgstr "Le factorielle n'est défini que pour des entiers positifs."
+
+msgid "Cannot take logarithm to number equal or less than zero."
+msgstr "Calcul du logarithme d'un nombre négatif impossible."
+
+msgid "sqrt is undefined for negative numbers."
+msgstr "Racine carrée non définie pour les nombres négatifs stricts."
+
+msgid "A part of the evaluation gave a number with an imaginary part."
+msgstr "Une partie du calcul donne un nombre à partie imaginaire non nulle."
+
+msgid "Division by zero."
+msgstr "Division par zéro."
+
+msgid "Inverse trigonometric function out of range [-1;1]"
+msgstr "Fonction trigonométrique réciproque non définie en dehors de [-1;1]"
+
+msgid "The function is not defined for this value."
+msgstr "La fonction n'est pas définie pour cette valeur."
+
+msgid "atanh evaluated at undefined value."
+msgstr "atanh non définie en dehors de ]-1;1["
+
+msgid "acosh evaluated at undefined value."
+msgstr "Argch non défini en dehors de [1;+oo["
+
+msgid "arg(0) is undefined."
+msgstr "arg(0) n'existe pas."
+
+msgid "Evaluation failed."
+msgstr "Le calcul n'a pas abouti."
+
+msgid "Argument produced a function result with total loss of precision."
+msgstr "Cet argument donne une valeur de la fonction trop peu précise."
+
+msgid "Symbol '%s' not found."
+msgstr "Symbole '%s' pas trouvé."
+
+msgid "Too many recursive calls."
+msgstr "Trop d'appels récursifs."
+
+msgid "Unexpected operator. Operator '%s' cannot be placed here."
+msgstr "Opérateur inattendu. L'opérateur '%s' ne peut être placé ici."
+
+msgid "End of parenthesis missing."
+msgstr "Une fermeture de parenthèses manque."
+
+msgid "Invalid number of arguments supplied for function '%s'"
+msgstr "Nombre d'arguments incorrect pour la fonction '%s'"
+
+msgid "Comparison operator misplaced."
+msgstr ""
+
+msgid "Invalid number found. Use the format: -5.475E-8"
+msgstr "Nombre invalide rencontré. Utilisez le format :  -5.475E-8"
+
+msgid "String is empty. You need to enter a function."
+msgstr "La chaîne de caractère est vide. Vous devez saisir une fonction."
+
+#, fuzzy
+msgid "Comma is not allowed here. Use dot as decimal separator."
+msgstr "La virgule n'est pas autorisée ici ; utilisez le point décimal."
+
+msgid "Unexpected end of parenthesis."
+msgstr "Fin de parenthèses inattendue."
+
+msgid "Number, constant or function expected."
+msgstr "Un nombre, une constante ou une fonction étaient attendus."
+
+msgid "Parameter after constant or variable not allowed."
+msgstr ""
+"L'élément utilisé après la constante ou la variable n'est pas autorisé."
+
+msgid "Expression expected."
+msgstr "Une expression était attendue."
+
+msgid "Unknown variable, function or constant: \"%s\""
+msgstr "Variable, fonction ou constante inconnue : \"%s\""
+
+msgid "Unknown character: \"%s\""
+msgstr "Caractère inconnu : \"%s\""
+
+msgid "The end of the expression was unexpected."
+msgstr "La fin de l'expression était inattendue."
+
+#, fuzzy
+msgid "Error parsing function text."
+msgstr "Erreur en analysant l'expression définissant la fonction"
+
+msgid "A calculation resulted in an overflow."
+msgstr "Un calcul a entraîné un dépassement de capacité."
+
+msgid "An invalid value was used in the calculation."
+msgstr "Une valeur interdite a été utilisée dans le calcul."
+
+msgid "Not enough points for calculation."
+msgstr "Pas assez de points pour faire le calcul."
+
+msgid "Illegal name \"%s\" for user defined function or constant."
+msgstr "Nom illégal \"%s\" pour la fonction ou constante définie."
+
+msgid "Cannot differentiate recursive function."
+msgstr "Impossible de dériver une fonction récursive."
+
+msgid "Internal error."
+msgstr "Erreur interne."
+
+msgid "Function cannot be differentiated."
+msgstr "La fonction ne peut être dérivée."
+
+msgid "Not further specified error occurred under calculation."
+msgstr "Une erreur non répertoriée s'est produite pendant le calcul."
+
+msgid "No solution found. Try another guess or another model."
+msgstr ""
+"Aucune solution trouvée. Essayez une autre valeur initiale ou un autre "
+"modèle."
+
+msgid ""
+"Internal error. Please notify the programmer with as much information as "
+"possible."
+msgstr ""
+"Erreur interne. SVP contactez le concepteur avec le maximum d'information "
+"sur ce qui s'est passé (in english please)."
+
+msgid "You need to enter a name for the function/constant."
+msgstr "Vous devez entrer un nom pour la fonction/constante."
+
+msgid ""
+"Invalid function/constant name '%s'.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
+"In addition you are not allowed to redefine built-in names."
+msgstr ""
+"Nom de fonction/constante invalide '%s'.\n"
+"\"Le nom ne peut contenir que des chiffres et des lettres, et il doit "
+"commencer par une lettre. \n"
+"De plus vous ne pouvez redéfinir les noms réservés."
+
+msgid "You need to enter a name for the argument."
+msgstr "Vous devez entrer un nom pour l'argument."
+
+msgid ""
+"Invalid argument name '%s'.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
+" In addition you are not allowed to use built-in names as argument names."
+msgstr ""
+"Nom d'argument invalide '%s'.\n"
+"\"Le nom ne peut contenir que des chiffres et des lettres, et il doit "
+"commencer par une lettre. \n"
+"De plus vous ne pouvez utiliser un nom réservé pour nom d'argument."
+
+msgid "The end parenthesis is missing."
+msgstr "Une fermeture de parenthèses manque."
+
+msgid "Character found after the parenthesis."
+msgstr "Caractère situé hors des parenthèses."
+
+msgid "Symbol \"%s\" defined more than once."
+msgstr "Le symbole \"%s\" a été défini plus d'une fois."
+
+msgid "Invalid equation or inequality."
+msgstr "Équation ou inéquation invalide."
+
+msgid "Updating..."
+msgstr "En train de mettre à jour..."
+
+msgid "Save changes?"
+msgstr "Enregistrer les changements ?"
+
+msgid "Save changes in %s"
+msgstr "Enregistrer les changements dans %s"
+
+msgid "You have reached the maximum range of zoom."
+msgstr "Vous avez atteint le niveau maximal d'agrandissement."
+
+msgid "You have reached the minimum range of zoom."
+msgstr "Vous avez atteint le niveau minimal de réduction."
+
+msgid "There is no printer installed on the system."
+msgstr "Il n'y a pas d'imprimante installé dans votre configuration."
+
+msgid "Error in value"
+msgstr "Erreur dans la valeur"
+
+msgid "'%s' has to be an integer value greater or equal to 0."
+msgstr "'%s' doit être un entier positif."
+
+msgid "'%s' must be greater than zero."
+msgstr "'%s' doit être strictement positif."
+
+msgid "'%s' must be an integer greater than zero."
+msgstr "'%s' doit être un entier strictement positif."
+
+msgid "Trying to break zoom limit."
+msgstr "Vous essayez d'aller au delà des limites du zoom."
+
+msgid "'%s' must be greater than '%s'"
+msgstr "'%s' doit être plus grand que '%s'"
+
+msgid "The maximum value must be greater than the minimum value."
+msgstr "La valeur maximale doit être supérieure à la valeur minimale."
+
+msgid "You need to enter a value."
+msgstr "Vous devez entrer une valeur."
+
+msgid ""
+"This file was created with Graph %s.\n"
+"Only files from version %s and higher can be opened."
+msgstr ""
+"Le fichier a été créé avec Graph %s.\n"
+"Seuls ceux créés avec la version %s ou supérieure peuvent être ouverts."
+
+msgid "'%s' is not a valid number."
+msgstr "'%s' n'est pas un nombre valide."
+
+msgid "Open the file %s."
+msgstr "Ouvre le fichier %s."
+
+msgid "'%s' must be a positive number."
+msgstr "'%s' doit être un nombre strictement positif."
+
+msgid "File not found: %s"
+msgstr "Fichier pas trouvé : %s"
+
+msgid ""
+"Error reading file: %s\n"
+"File is not a correct graph file."
+msgstr ""
+"Erreur en lisant le fichier : %s\n"
+"Le fichier n'est pas un fichier Graph valide."
+
+msgid "Unknown error while reading file: %s"
+msgstr "Erreur inconnue survenue en lisant le fichier : %s"
+
+msgid "Graph files [*.grf]|*.grf"
+msgstr "Fichiers Graph [*.grf]|*.grf"
+
+msgid ""
+"Cannot write to file: %s\n"
+"Access denied. Check that the file is not in use or write protected."
+msgstr ""
+"Impossible d'écrire le fichier : %s\n"
+"Accès refusé. Vérifier que le fichier n'est pas utilisé ou protégé en "
+"écriture."
+
+msgid "The font \"%s\" doesn't exist. Standard font is used instead."
+msgstr "La police \"%s\" n'existe pas. Une police standard la remplace."
+
+msgid "Conversion error"
+msgstr "Erreur de conversion"
+
+msgid ""
+"Unknown error code.\n"
+"Could not find error message for this error."
+msgstr ""
+"Code d'erreur inconnu.\n"
+"Pas de message d'erreur associé à ce code."
+
+msgid "Selection error"
+msgstr "Erreur de sélection."
+
+msgid "File error"
+msgstr "Erreur de fichier"
+
+msgid "Write access failed"
+msgstr "L'accès en écriture a échoué"
+
+msgid "OLE error"
+msgstr "Erreur OLE"
+
+msgid "Error reading object"
+msgstr "Erreur en lisant l'objet."
+
+msgid "Not a valid Graph object."
+msgstr "Ceci n'est pas un objet Graph valide."
+
+msgid "Object error"
+msgstr "Erreur à propos de l'objet"
+
+msgid "Windows does not have enough resources to save an image that large."
+msgstr ""
+
+#, fuzzy
+msgid "'%1%' must be between %2% and %3%."
+msgstr "La valeur de 'Fichiers récemment utilisés' doit être entre 0 et 9."
+
+msgid "Confirm delete"
+msgstr "Confirmer l'effacement"
+
+msgid "This error should not occur. Please report this to the programmer."
+msgstr ""
+"Cette erreur ne devrait pas se produire. SVP informez le concepteur du "
+"programme."
+
+#, fuzzy
+msgid "Are you sure you want to delete %s?"
+msgstr "Êtes-vous sûr de vouloir supprimer : %s"
+
+msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
+msgstr "Fichiers Graph [*.grf]|*.grf|Tous les fichiers[*.*]|*.*"
+
+msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+msgstr "Fichiers texte [*.txt; *.csv]|*.txt;*.csv|Tous les fichiers [*.*]|*.*"
+
+#, fuzzy
+msgid "Are you sure you want to delete the model: %s?"
+msgstr "Êtes-vous sûr de vouloir supprimer le modèle : %s"
+
+msgid "Maximum number on x-axis must be greater than the minimum value."
+msgstr "Le maximum en abscisse doit être supérieur au minimum."
+
+msgid "Maximum number on y-axis must be greater than the minimum value."
+msgstr "Le maximum en ordonnée doit être supérieur au minimum."
+
+msgid "Server application not found."
+msgstr "Application du serveur pas trouvée."
+
+msgid "Maximum number for t must be greater than the minimum value."
+msgstr "Le maximum pour t doit être supérieur au minimum."
+
+msgid "The step value for t must be a number greater than 0."
+msgstr "Le pas pour t doit être stictement positif."
+
+msgid ""
+"The minimum value for the x-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+"Le minimum en abscisse doit être strictement supérieur à 0 pour une échelle "
+"des abscisses logarithmique."
+
+msgid ""
+"The cross point of the y-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr "L'axe des ordonnées doit couper"
+
+msgid ""
+"The minimum value for the y-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"Le minimum en ordonnée doit être strictement supérieur à 0 pour une échelle "
+"logarithmique sur l'axe correspondant."
+
+msgid ""
+"The cross point of the x-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"L'ordonnée du point d'intersection avec l'axe des abscisses doit être "
+"strictement supérieure à 0 pour une échelle logarithmique sur l'axe des "
+"abscisses."
+
+msgid "'Recent files' must be between 0 and 9."
+msgstr "La valeur de 'Fichiers récemment utilisés' doit être entre 0 et 9."
+
+msgid "The end of interval must be greater than the start of interval."
+msgstr "La fin de l'intervalle doit être supérieure à son début."
+
+msgid "Error in interval."
+msgstr "Erreur dans l'intervalle."
+
+msgid "The width must be an integer greater than 0."
+msgstr "L'épaisseur doit être un entier strictement supérieur à 0."
+
+msgid "Error in width"
+msgstr "Erreur dans la largeur."
+
+msgid ""
+"The end of interval must be greater than the start of interval and %s must "
+"be greater than 0."
+msgstr ""
+"La fin de l'intervalle doit être supérieure à son début et %s doit être "
+"strictement supérieur à 0."
+
+msgid "The maximum length of text has been reached."
+msgstr "La longueur maximale du teste a été atteinte."
+
+msgid "The derivative of the function is not defined at %s=%s"
+msgstr "La dérivée de la fonction n'est pas définie à %s=%s"
+
+msgid "Coordinate not defined."
+msgstr "Coordonnée non définie."
+
+msgid "Checking for newer version..."
+msgstr "Vérifie l'existence d'une nouvelle version..."
+
+msgid "Abort printing?"
+msgstr ""
+
+msgid "Calculate area"
+msgstr "Calcul de l'aire"
+
+msgid "Calculate length of path"
+msgstr "Calcul de la ongueur de l'arc"
+
+msgid "Edit function"
+msgstr "Éditer la fonction"
+
+msgid "Edit tangent/normal"
+msgstr "Éditer la tangente/normale"
+
+msgid "Error processing file '%s' at line %s."
+msgstr "Erreur en exécutant le fichier '%s' à la ligne %s."
+
+msgid "Dialog error: %sh"
+msgstr "Erreur de dialogue : %sh"
+
+msgid "Unknown Graph data found while pasting clipboard data."
+msgstr ""
+"Des données Graph inconnues ont été rencontrées en collant les données du "
+"presse-papiers."
+
+msgid "'%s' has to be an integer value between 0 and 1000."
+msgstr "'%s' doit être un entier entre 0 et 1000."
+
+msgid "Printing error"
+msgstr "Erreur d'impression"
+
+#, fuzzy
+msgid "An unknown error occurred while printing."
+msgstr "Une erreur inconnue s'est produite en impimant."
+
+msgid "Error while adding points"
+msgstr "Erreur en ajoutant des points."
+
+msgid "Each point needs both an x- and a y-coordinate."
+msgstr "Chaque point doit avoir ses deux coordonnées."
+
+msgid "\"%s\" is not a valid number."
+msgstr "\"%s\" n'est pas un nombre valide."
+
+msgid ""
+"You didn't add any points. You need to specify some x- and y-coordinates in "
+"the grid."
+msgstr ""
+"Vous n'avez pas ajouté de points. Vous devez spécifier des couples de "
+"coordonnées dans le quadrillage."
+
+msgid "Edit point series"
+msgstr "Éditer une série de points"
+
+msgid "Edit shade"
+msgstr "Éditer un remplissage"
+
+msgid "You need to select a function."
+msgstr "Vous devez sélectionner une fonction."
+
+msgid "New version of Graph available"
+msgstr "Nouvelle version de Graph disponible"
+
+msgid ""
+"Graph %s is now available for download from www.padowan.dk\n"
+"with these new features since the previous version:\n"
+"\n"
+"%s\n"
+"\n"
+"Would you like to visit the web site?"
+msgstr ""
+"Graph %s est maintenant disponible en téléchargement de www.padowan.dk\n"
+"avec les nouveautés suivantes depuis la précédente version :\n"
+"\n"
+"%s\n"
+"\n"
+"Voulez-vous aller voir sur le site web ? "
+
+msgid "No new version"
+msgstr "Pas de nouvelle version"
+
+msgid "You are already using the most recent version of the program."
+msgstr "Vous utilisez déjà la version la plus récente du programme."
+
+msgid ""
+"Cannot connect to server www.padowan.dk.\n"
+"Either the server is down or you do not have a connection to the Internet."
+msgstr ""
+"Impossible de se connecter à www.padowan.dk.\n"
+"Ou le serveur, ou votre connection internet sont indisponibles."
+
+msgid "Socket error %s"
+msgstr "Erreur de socket %s"
+
+msgid "The server responded with the message '%s'"
+msgstr "Le serveur renvoie le message : '%s'"
+
+msgid "Protocol reply error %s"
+msgstr "Erreur de réponse du protocole %s"
+
+msgid ""
+"The file cannot be opened by this version of the program.\n"
+"You need at least Graph %s to open this file."
+msgstr ""
+"Ce fichier ne peut être ouvert par cette version du programme.\n"
+"Vous devez avoir au moins la version %s de Graph pour le faire."
+
+#, fuzzy
+msgid ""
+"This file was saved by an outdated version of Graph,\n"
+"and it cannot be opened by the current version."
+msgstr ""
+"Ce fichier a été enregistré avec une version ancienne de Graph,\n"
+"et il ne peut pas être ouvert par la version dont vous disposez."
+
+msgid ""
+"\n"
+"\n"
+"If you don't want to be asked again, this feature may be disabled from the "
+"Edit|Options dialog."
+msgstr ""
+"\n"
+"\n"
+"Si vous ne voulez plus qu'on vous pose cette question, cette possibilité "
+"peut être désactivée dans Éditer|Options...."
+
+msgid "Edit relation"
+msgstr "Éditer la relation"
+
+#, fuzzy
+msgid "Commands"
+msgstr "Commentaire :"
+
+msgid "(All Commands)"
+msgstr ""
+
+msgid ""
+"To add a command to a toolbar simply select a category and drag the command "
+"out of this dialog box to a toolbar."
+msgstr ""
+
+#, fuzzy
+msgid "Edit f'(x)"
+msgstr "Insérer f'(x)"
+
+#, fuzzy
+msgid "Edit trendline"
+msgstr "Éditer la relation"
+
+msgid ""
+"This Tip Of The day can give you a lot of information about the program that "
+"most users don't know."
+msgstr ""
+"L'Astuce du jour vous fournit des indications méconnues sur les possibilités "
+"du programme."
+
+msgid ""
+"You can send suggestions for future versions, bug reports and comments to "
+"graph@padowan.dk."
+msgstr ""
+"Vous pouvez envoyer des suggestions pour les futures versions, rapporter les "
+"dysfonctionnements et faire vos commentaires à graph@padowan.dk."
+
+#, fuzzy
+msgid ""
+"You can customize the toolbar by right clicking on it and select 'Customize "
+"toolbar'."
+msgstr ""
+"Vous pouvez personnaliser la barre d'outils en choisissant 'Personnaliser la "
+"barre d'outils...' après un clic droit dans la barre."
+
+msgid ""
+"Instead of deleting a function you can make it invisible by right clicking "
+"on it in the function list and removing the check at the 'Visible' menu item."
+msgstr ""
+"Au lieu de supprimer une fonction vous pouvez la rendre invisible en "
+"décochant l'option 'Visible' du menu obtenu par un clic droit sur la "
+"fonction dans la liste des fonctions."
+
+msgid "You can paste images into a text label."
+msgstr "Vous pouvez coller des images dans le texte d'un label."
+
+msgid ""
+"Text labels can contain any kind of OLE objects, for example Microsoft "
+"Equation. When editing a label right click in the editing area and select "
+"'Insert object'."
+msgstr ""
+"Le texte des labels peut contenir toutes sortes d'objets OLE, par exemple "
+"Microsoft Equation. Il suffit pendant l'édition du label de sélectionner "
+"'Insérer objet' après un clic droit dans la zone d'édition."
+
+msgid ""
+"You can export points from a point series to a file that can be read by "
+"other programs, for example Microsoft Excel. When editing the point series "
+"select the points, right click and choose 'Export to file'."
+msgstr ""
+"Vous pouvez exporter des points d'une série dans un fichier lisible par "
+"d'autres programmes, par exemple Microsoft Excel. Éditez la série de points, "
+"sélectionnez les points, faites un clic droit et choisissez 'Exporter dans "
+"un fichier'."
+
+#, fuzzy
+msgid ""
+"A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)"
+"=t or as the relation x=5."
+msgstr ""
+"Une ligne verticale à x=5 peut être tracée comme représentation paramétrique "
+"de x(t)=5, y(t)=t ou comme relation x=5"
+
+msgid ""
+"You can use Zoom|Square to make the axes look equally scaled. This is "
+"especially useful when drawing circles and similar functions."
+msgstr ""
+"Vous pouvez utiliser Zoom|Normer pour obtenir la même unité sur les deux "
+"axes. C'est particulièrement utile pour tracer des cercles et des courbes du "
+"même genre."
+
+msgid "You can find a list of all available functions in the help."
+msgstr "Vous pouvez trouver une liste des fonctions prédéfinies dans l'aide."
+
+msgid ""
+"You can combine two functions to one using 'if'. For example the function f"
+"(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+msgstr ""
+"Vous pouvez combiner deux fonctions pour en définir une en utilisant 'if'. "
+"Par exemple la fonction définie par f(x)=x si x<1 et f(x)=x^2 si x>=1 peut "
+"être écrite sous la forme f(x)=if(x<1, x, x^2)."
+
+msgid ""
+"You can import the contents of another Graph file into the current "
+"coordinate system using 'File|Import|Graph file'."
+msgstr ""
+"Vous pouvez importer le contenu d'un autre fichier Graph dans le repère en "
+"cours en utilisant 'Fichier|Importer|Fichier Graph'."
+
+msgid ""
+"If you check 'Save as default' in the Axes dialog the current settings will "
+"be used as default when creating new files."
+msgstr ""
+"Si vous cochez la case 'Valeurs par défaut' dans 'Éditer|Axes' les valeurs "
+"du repère en cours seront utilisées pour les nouveaux fichiers Graph créés."
+
+msgid ""
+"While you hold down the Ctrl key, you can use the arrow keys to move the "
+"system."
+msgstr ""
+"En maintenant la touche Ctrl appuyée vous pouvez déplacer le repère avec les "
+"flèches de direction."
+
+msgid ""
+"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
+"and out."
+msgstr ""
+"En maintenant la touche Ctrl appuyée vous pouvez zoomer avec les touches + "
+"et -."
+
+msgid ""
+"You can use the scroll button on your mouse to zoom in and out at the "
+"position of the mouse cursor."
+msgstr ""
+"Vous pouvez utiliser la roulette de votre souris pour zoomer vers la "
+"position du curseur."
+
+msgid ""
+"If you don't want an item shown in the legend, you can right click on the "
+"item in the function list and deselect 'Show in legend'."
+msgstr ""
+"Si vous ne voulez pas qu'un item soit montré dans la légende vous pouvez "
+"cliquer sur l'item dans la liste des fonctions et désélectionner l'option "
+"'Montrer dans la légende'."
+
+msgid ""
+"If you want the axes shown to the left and bottom of the image, you can "
+"choose Axes style as Boxed in the Settings tab of the Axes dialog."
+msgstr ""
+"Si vous désirez des axes situés à gauche et en bas de la fenêtre, vous "
+"pouvez le faire en choisissant 'Sur les bords' dans  'Éditer|Axes|Paramètres|"
+"Situation des axes'."
+
+#, fuzzy
+msgid ""
+"Graph can save the shown coordinate system in five different image formats: "
+"bmp, emf, png, jpg and pdf."
+msgstr ""
+"Graph peut enregistrer le repère affcihé dans 4 formats d'image : bmp, emf, "
+"png et jpg"
+
+msgid ""
+"You can use 'Edit|Copy image' to copy the coordinate system to the clipboard "
+"and paste it into another program."
+msgstr ""
+"Vous pouvez utiliser 'Éditer|Copier comme image' pour copier le repère dans "
+"le presse-papiers et le coller dans un autre programme."
+
+msgid ""
+"You can open a saved grf-file in a new instance of the program by double "
+"clicking on it in Explorer."
+msgstr ""
+"Vous pouvez ouvrir un fichier grf enregistré dans une nouvelle session du "
+"programme en double-cliquant sur son nom dans l'explorateur."
+
+msgid ""
+"You can drag a grf-file from explorer into an open instance of Graph to open "
+"the file."
+msgstr ""
+"Vous pouvez glisser-déposer un fichier grf dans une session ouverte de Graph "
+"pour ouvrir le fichier."
+
+msgid ""
+"Graph will remember the size and placement of the main window between "
+"executions. This can be disabled from the Options dialog."
+msgstr ""
+"Graph se souviendra de la taille et de l'emplacement de la fenêtre "
+"principale d'une session à l'autre. Cette faculté peut être désactivée en "
+"désélectionnant 'Enregistrer l'espace de travail en quitttant' dans 'Éditer|"
+"Options'."
+
+msgid ""
+"Calc|Table can be used to create a table with evaluation values for a "
+"function."
+msgstr ""
+"'Calculer|Table' peut être utilisée pour obtenir un tableau de valeurs "
+"approchées de la fonction."
+
+msgid ""
+"A part or the whole evaluation table can be exported to a file by right "
+"clicking and selecting 'Export to file'. It can afterwards be opened in "
+"other programs like Microsoft Excel."
+msgstr ""
+"Une partie de la table de valeur approchées peut être exportée dans un "
+"fichier  en sélectionnant avec la souris une partie de la table puis en "
+"choisissant 'Exporter dans un fichier' après un clic droit de souris dans la "
+"table."
+
+msgid ""
+"Data from the evaluation table can be copied to another program like "
+"Microsoft excel using the clipboard."
+msgstr ""
+"Des données d'une table de valeur approchées peuvent être copiées dans un "
+"autre programme comme Microsoft Excel en sélectionnant avec la souris une "
+"partie de la table puis en choisissant 'Copier' après un clic droit de "
+"souris dans la table."
+
+msgid ""
+"The data points in a point series can be copied to and from other programs "
+"like Microsoft Excel through the clipboard."
+msgstr ""
+"Les données définissant une série de poits peuvent être copiées de ou vers "
+"un autre programme via le presse-papiers."
+
+msgid ""
+"Functions can be copied from one instance of the program to another through "
+"the clipboard using Edit|Copy."
+msgstr ""
+"des fonctions peuvent être copiées d'une session du programme vers une autre "
+"via le presse-papiers avec 'Éditer|Copier'."
+
+msgid "You can always undo the last thing you did using Edit|Undo."
+msgstr ""
+"Vous pouvez toujours annuler la dernière action réalisée en utilisant "
+"'Éditer|Défaire'."
+
+msgid ""
+"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
+"have undone."
+msgstr ""
+"Si vous utilisez 'Éditer|Défaire' par erreur vous pouvez utiliser 'Éditer|"
+"Rétablir' pour rétablir ce qui a été défait."
+
+msgid "In the Axes dialog you can add a title to the coordinate system."
+msgstr ""
+"Dans la boîte de dialogue ouverte avec 'Éditer|Axes' vous pouvez donner un "
+"titre à votre repère."
+
+msgid ""
+"You can import point series from files saved by other programs, like "
+"Microsoft Excel."
+msgstr ""
+"Vous pouvez importer des points d'un fichier enregistré avec un autre "
+"programme, comme Microsoft Excel."
+
+msgid ""
+"When inserting a point series you can copy data from programs like Microsoft "
+"Excel, and paste the data into the grid in Graph."
+msgstr ""
+"Quand vous insérez une série de points vous pouvez copier des données d'un "
+"programme comme Microsoft Excel dans le presse-papiers et les coller dans "
+"la  grille de Graph."
+
+msgid ""
+"You can use 'Zoom|All points' to change the coordinate system so all point "
+"series are visible."
+msgstr ""
+"Vous pouvez utiliser 'Zoom|Tous les points' pour ajuster le repère de façon "
+"à voir tous les points de la série."
+
+msgid ""
+"You can use Zoom|Fit to change the coordinate system to show the selected "
+"function or point series."
+msgstr ""
+"Vous pouvez utiliser 'Zomm|Ajuster' pour modifier le repère de façon à "
+"montrer le mieux possible la fonction ou la série de points."
+
+msgid ""
+"When you hold down the Shift key you can drag the coordinate system around "
+"with the mouse."
+msgstr ""
+"Quand vous tenez appuyée la touche Majuscule vous pouvez déplacer le repère "
+"en tous sens avec la souris."
+
+msgid ""
+"You can use Calc|Evaluate to find intersections between functions, crossings "
+"with the axes and extremum points."
+msgstr ""
+"Vous pouvez uiliser 'Calc|Évaluer...' pour déterminer les intersections "
+"entre focntions, avec les axes et les extremums."
+
+msgid ""
+"When a point series is selected you can add points to it by clicking on the "
+"image while you hold down the Ctrl key."
+msgstr ""
+"Quand une série de points est sélectionnée vous pouvez y ajouter des points "
+"en cliquant sur le dessin avec la touche Ctrl maintenue appuyée."
+
+msgid ""
+"You can use a relation to plot any inequality, for example sin(x^2) < cos"
+"(y^2)"
+msgstr ""
+"Vous pouvez utiliser une relation pour visualiser toute inéquation, par "
+"exemple sin(x^2) < cos(y^2)"
+
+msgid ""
+"You can use a relation to plot any equation, for example x*sin x = y*cos y"
+msgstr ""
+"Vous pouvez utiliser une relation pourreprésenter toute équation, par "
+"exemple x*sin x = y*cos y"
+
+msgid ""
+"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
+"same order they appear in the function list to the left."
+msgstr ""
+"Les éléments (fonctions, remplissages, textes, relations, etc.) sont tracés "
+"dans l'ordre de leur liste dans la fenêtre de gauche."
+
+msgid ""
+"You can move the selected element in the function list either by dragging it "
+"with the mouse or with the arrow up/down keys while ALT is held down."
+msgstr ""
+"Vous pouvez déplacer l'élément sélectionné dans la liste à gauche soit avec "
+"la souris, soit avec les flèches haut/bas en tenant la touche ALT appuyée."
+
+#, fuzzy
+msgid ""
+"You can show functions and other elements behind the axes by moving the "
+"element above the axes in the function list to the left. To move shadings "
+"and tangents you will have to move the functions they are attached to."
+msgstr ""
+"Vous pouvez montrer remplissages et autres éléments par dessus les axes en "
+"déplaçant ces éléments au-dessus des axes dans la liste des fonctions à "
+"gauche."
+
+msgid ""
+"Custom text labels may be attached to the axes by right clicking on the "
+"label and selecting a placement from the context menu."
+msgstr ""
+"Les labels à texte personnalisés peuvent être liés aux axes par un clic "
+"droit sur le label et le choix d'un placement depuis le menu contextuel."
+
+msgid ""
+"The legend may be moved freely with the mouse or attached to one of the "
+"corners by right clicking on the legend and choose a placement from the "
+"context menu."
+msgstr ""
+"La légende peut être déplacée librement avec la souris ou liée à l'un des "
+"coins choisi dans le menu contextuel après un clic droit."
+
+msgid ""
+"As an alternative to transparent you can choose a custom background color "
+"for labes. This is especially useful for labels drawn over shades."
+msgstr ""
+"Comme alternative à transparent vous pouvez choisir une couleur de fond "
+"personnalisée pour les labels. C'est particulièrement utile pour les labels "
+"placés sur des remplissages."
+
+msgid ""
+"In most places like point series, axes settings, function ranges, etc., you "
+"can use expressions like pi/4 instead of numbers."
+msgstr ""
+"Dans la plupart des éléments comme séries de points, paramètres des axes, "
+"intervalles des fonctions, etc., vous pouvez utiliser des expressions comme "
+"pi/4 au lieu de nombres."
+
+msgid ""
+"You can create your own custom constants under Function|Custom functions for "
+"use in functions, point series, etc. For example g=9.80665, R=8.31"
+msgstr ""
+"Vous pouvez créer vos propres constantes personnalisées dans Fonction|"
+"Fonctions personnalisées... pour réutilisation dans vos séries de points, "
+"fonctions etc. Par exemple g=9.80665, R=8.31"
+
+msgid ""
+"You can create your own custom functions under Function|Custom functions for "
+"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin"
+"(x)/x)"
+msgstr ""
+"Vous pouvez créer vos propres fonctions personnalisées dans Fonction|"
+"Fonctions personnalisées... pour réutilisation dans vos séries de points, "
+"fonctions etc. Par exemple sinc(x)=if(x=0, 0, sin(x)/x)"
+
+msgid ""
+"In the Save as image dialog there is an Option button you can use to specify "
+"the image resolution. This is especially useful if you want a high "
+"resolution image."
+msgstr ""
+"Dans la boîte de dialogue de Enregistrer comme image... il y a un bouton "
+"Options... pour définir la résolution de l'image. C'est particulièrement "
+"utile si vous désirez une image en haute résolution."
+
+msgid ""
+"Point series can have arrows as markers. A point series with arrows as "
+"markers and lines between the points can be used to show vectors."
+msgstr ""
+"Les marqueurs des séries de points peuvent être des flèches. Une série de "
+"points avec des flèches pour marqueurs et des lignes entre les marqueurs "
+"peut servir à représenter des vecteurs."
+
+#, fuzzy
+msgid "Custom..."
+msgstr "Choisi :"
+
+msgid "Black"
+msgstr "Noir"
+
+msgid "Maroon"
+msgstr "Marron"
+
+msgid "Green"
+msgstr "Vert"
+
+msgid "Olive"
+msgstr "Olive"
+
+msgid "Navy"
+msgstr "Bleu marine"
+
+msgid "Purple"
+msgstr "Violet"
+
+msgid "Teal"
+msgstr "Turquoise"
+
+msgid "Gray"
+msgstr "Gris"
+
+msgid "Silver"
+msgstr "Argent"
+
+msgid "Red"
+msgstr "Rouge"
+
+msgid "Lime"
+msgstr "Vert citron"
+
+msgid "Yellow"
+msgstr "Jaune"
+
+msgid "Blue"
+msgstr "Bleu"
+
+msgid "Fuchsia"
+msgstr "Fuchsia"
+
+msgid "Aqua"
+msgstr "Bleu vert"
+
+msgid "White"
+msgstr "Blanc"
+
+msgid "Money Green"
+msgstr "Vert pâle"
+
+msgid "Sky Blue"
+msgstr "Bleu ciel"
+
+msgid "Cream"
+msgstr "Écru"
+
+msgid "Med Gray"
+msgstr "Gris moyen"
+
+#, fuzzy
+msgid "Local"
+msgstr "Turquoise"
+
+msgid "Global"
+msgstr ""
+
+#, fuzzy
+msgid "Insert"
+msgstr "Insérer une ligne"
+
+msgid "Subset:"
+msgstr ""
+
+msgid "Print"
+msgstr "Imprimer"
+
+msgid "Scale:"
+msgstr "Échelle :"
+
+msgid "Printer"
+msgstr "Imprimante"
+
+msgid "Type:"
+msgstr "Type :"
+
+msgid "Where:"
+msgstr "Port :"
+
+msgid "Comment:"
+msgstr "Commentaire :"
+
+msgid ""
+"Select the printer to use. The Properties button may be used to change more "
+"advanced settings for the printer."
+msgstr ""
+
+msgid ""
+"Select to print in color (or grayscale if your printer is not a color "
+"printer) or convert all colors to black."
+msgstr ""
+
+msgid "Print output"
+msgstr "Sortie imprimante"
+
+msgid "Color"
+msgstr "Couleur"
+
+msgid "Black && white"
+msgstr "Noir && Blanc"
+
+msgid "Position (millimeters)"
+msgstr "Position (millimètres)"
+
+msgid "Left margin:"
+msgstr "Marge gauche :"
+
+msgid "Top margin:"
+msgstr "Marge haute :"
+
+#, fuzzy
+msgid "Select to place the image on the middle of the page."
+msgstr "Choisit la police utilisée pour le nom des axes."
+
+msgid "Center on page"
+msgstr "Centrer dans la page"
+
+#, fuzzy
+msgid "Enter the image position on the page."
+msgstr "Entrer une description pour la légende."
+
+msgid "Number of copies:"
+msgstr "Nombre de copies :"
+
+#, fuzzy
+msgid "Choose number of copies to print."
+msgstr "Nombre de copies :"
+
+msgid "Enter percent of original size."
+msgstr ""
+
+#, fuzzy
+#~ msgid "Panel1"
+#~ msgstr "Annuler"
+
+#~ msgid "Text too long"
+#~ msgstr "Texte trop long"
+
+#~ msgid ""
+#~ "Write a descriptive text to show in the legend, else the inequality will "
+#~ "be used."
+#~ msgstr ""
+#~ "Écrire une description pour mettre dans la légende, sinon c'est  "
+#~ "l'inéquation qui est utilisée."
+
+#~ msgid ""
+#~ "Description shown in the legend. If empty the function equation is used."
+#~ msgstr ""
+#~ "Texte affiché dans la légende. Remplacé s'il est vide par l'équation de "
+#~ "la fonction."
+
+#~ msgid "Customize"
+#~ msgstr "Personnaliser"
+
+#~ msgid "Actions"
+#~ msgstr "Actions"
+
+#~ msgid "Description"
+#~ msgstr "Description"
+
+#~ msgid "Cate&gories:"
+#~ msgstr "Caté&gories :"
+
+#~ msgid "A&ctions:"
+#~ msgstr "A&ctions :"
+
+#~ msgid ""
+#~ "To add actions to your application simply drag and drop from either "
+#~ "Categories or Actions onto an existing ActionBar."
+#~ msgstr ""
+#~ "Pour ajouter des actions faites simplement glisser et déposer depuis les "
+#~ "Catégories ou les Actions dans une barre existante."
+
+#~ msgid "Area..."
+#~ msgstr "Aire..."
+
+#~ msgid "Evaluate..."
+#~ msgstr "Évaluer..."
+
+#~ msgid "Are you sure you want to delete the function: %s"
+#~ msgstr "Êtes-vous sûr de vouloir supprimer cette fonction : %s"
+
+#~ msgid "Are you sure you want to delete the tangent: %s"
+#~ msgstr "Êtes-vous sûr de vouloir supprimer la tangente : %s"
+
+#, fuzzy
+#~ msgid "Letter"
+#~ msgstr "Gauche"
+
+#~ msgid "Show some frequently asked questions and their answers."
+#~ msgstr "Liste des questions les plus courantes avec leurs réponses."
+
+#~ msgid ""
+#~ "Double-click or select box and press space to change the color of the "
+#~ "graph."
+#~ msgstr ""
+#~ "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace "
+#~ "pour changer la couleur du tracé."
+
+#~ msgid "Check to increase the end coordinate until interception."
+#~ msgstr "Augmentera l'abscisse de fin jusqu'à la prochaine ordonnée nulle."
+
+#~ msgid "Increase to interception"
+#~ msgstr "Croître jusqu'à couper"
+
+#~ msgid "Check to decrease start coordinate until interception."
+#~ msgstr "Diminuera l'abscisse de début jusqu'à la prochaine ordonnée nulle."
+
+#~ msgid "Decrease to interception"
+#~ msgstr "Décroître jusqu'à couper"
+
+#~ msgid ""
+#~ "Double-click or select box and press space to change the background color "
+#~ "of the coordinate system."
+#~ msgstr ""
+#~ "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace "
+#~ "pour pouvoir changer la couleur de fond du repère."
+
+#~ msgid ""
+#~ "Double-click or select box and press space to change the color of the "
+#~ "axes."
+#~ msgstr ""
+#~ "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace "
+#~ "pour pouvoir changer la couleur des axes du repère."
+
+#~ msgid ""
+#~ "Double-click or select box and press space to change the color of the "
+#~ "grids."
+#~ msgstr ""
+#~ "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace "
+#~ "pour pouvoir changer la couleur du quadrillage."

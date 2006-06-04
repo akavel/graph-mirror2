@@ -1,0 +1,2999 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Graph\n"
+"POT-Creation-Date: 2006-05-31 19:27\n"
+"PO-Revision-Date: 2006-01-14 12:55+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: dxgettext 1.2.1\n"
+
+msgid "From:"
+msgstr "Από:"
+
+msgid "To:"
+msgstr "Μεχρι"
+
+msgid "Area"
+msgstr "Περιοχή"
+
+msgid "Enter a start coordinate or mark the range on the image with the mouse."
+msgstr ""
+"Εισάγετε τις συντεταγμένες της αρχής ή καθορίστε την περιοχή με το ποντίκι"
+
+msgid "Enter the end coordinate or mark the range on the image with the mouse."
+msgstr ""
+"Εισάγετε τις συντεταγμένες του τέλους ή καθορίστε την περιοχή με το ποντίκι."
+
+msgid ""
+"Area or length of path calculated for the given range using Simpson's "
+"formula."
+msgstr ""
+"Επιφάνεια ή μήκος διαδρομής υπολογισμένη για τη δεδομένη περιοχή με τον τύπο "
+"Simpson. "
+
+msgid "Snap to:"
+msgstr "Προσάρτηση σε:"
+
+msgid "The x-coordinate evaluated for the t-parameter."
+msgstr "Η τετμημένη του χ υπολογιζόμενη από την t-παράμετρο."
+
+msgid "The y-coordinate evaluated for the t-parameter."
+msgstr "Η τεταγμένη του y υπολογιζόμενη από την t-παράμετρο."
+
+msgid "The derivative of x(t) evaluated for the entered t-parameter."
+msgstr "Παράγωγος της x(t) υπολογιζόμενη από την t-παράμετρο."
+
+msgid "The derivative of y(t) evaluated for the entered t-parameter."
+msgstr "Παράγωγος της y(t) υπολογιζόμενη από την t-παράμετρο."
+
+msgid "The slope of the function evaluated for the entered t-parameter."
+msgstr "Κλίση (εφαπτομένη) της συνάρτησης υπολογιζόμενη από την t-παράμετρο."
+
+msgid ""
+"Enter the independent variable for which you want to evaluate the function, "
+"or click on the function in the main window."
+msgstr ""
+"Εισάγετε την ανεξάρτητη μεταβλητή για την οποία θέλετε να υπολογίσετε τη "
+"συνάρτηση, ή κάνετε click στο κύριο παράθυρο. "
+
+msgid "Select where the cursor will be placed when you click on the image."
+msgstr "Καθορίστε πού θα τοποθετηθεί ο δείκτης όταν κάνετε click στην εικόνα."
+
+msgid "Function"
+msgstr "Συνάρτηση"
+
+msgid "Intersection"
+msgstr "Σημεία τομής"
+
+msgid "x-axis"
+msgstr "Άξονας των  χ"
+
+msgid "y-axis"
+msgstr "Άξονας των  y"
+
+msgid "Extreme x-value"
+msgstr "Μέγιστη τιμή του  χ"
+
+msgid "Extreme y-value"
+msgstr "Μέγιστη τιμή του  y"
+
+msgid "The distance to the function evaluated for the given angle."
+msgstr "Απόσταση της συνάρτησης για δοθείσα γωνία."
+
+msgid "The x-coordinate evaluated for the given angle."
+msgstr "Τετμημένη του χ για δοθείσα γωνία."
+
+msgid "The y-coordinate evaluated for the given angle."
+msgstr "Τεταγμένη του y για δοθείσα γωνία."
+
+msgid "The derivative of the function evaluated for the given angle."
+msgstr "Παράγωγος της συνάρτησης για δοθείσα γωνία."
+
+msgid "The slope of the function evaluated for the given angle."
+msgstr "Κλίση της συνάρτησης για δοθείσα γωνία."
+
+msgid ""
+"Enter a number for which you want to evaluate the function, or click on the "
+"function in the main window."
+msgstr ""
+"Εισάγετε έναν αριθμό για τον οποίο θέλετε να υπολογίσετε τη συνάρτηση, ή "
+"κάνετε click στο κύριο παράθυρο. "
+
+msgid "Extremum"
+msgstr "Μέγιστο"
+
+msgid "This is the function evaluated for the entered x-value."
+msgstr "Η συνάρτηση για τη δοθείσα τιμή του χ."
+
+#, fuzzy
+msgid ""
+"This is the first derivative of the function evaluated for the entered value."
+msgstr "Πρώτη παράγωγος της συνάρτησης για τη δοθείσα τιμή."
+
+msgid ""
+"This is the functions second derivative evaluated for the entered value."
+msgstr "Δεύτερη παράγωγος της συνάρτησης για τη δοθείσα τιμή."
+
+#, fuzzy
+msgid "This is the y-coordinate corresponding to the entered x-coordinate."
+msgstr "Τιμή του y της εφαπτομένης για δεδομένο χ."
+
+#, fuzzy
+msgid "Enter an x-coordinate or click in the main window."
+msgstr ""
+"Εισάγετε τιμή του χ, ή κάνετε click στην εφαπτομένη στο κύριο παράθυρο. "
+
+msgid "File"
+msgstr "Αρχείο"
+
+msgid "Import"
+msgstr "Εισαγωγή"
+
+msgid "Graph file..."
+msgstr "Αρχείο γραφικών..."
+
+msgid "Import a graph file into the current coordinate system."
+msgstr "Εισαγωγή γραφήματος στο τρέχον σύστημα συντεταγμένων."
+
+msgid "Point series..."
+msgstr "Σειρές σημείων..."
+
+msgid "Import point series from a data file."
+msgstr "Εισαγωγή σημειοσειράς από αρχείο δεδομένων."
+
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+msgid "Zoom"
+msgstr "Μεγέθυνση"
+
+msgid "Calc"
+msgstr "Υπολογισμός"
+
+msgid "Help"
+msgstr "Βοήθεια"
+
+msgid "Internet"
+msgstr "Internet"
+
+msgid "Open file: %s"
+msgstr "Άνοιγμα αρχείου: %s"
+
+msgid "Visible"
+msgstr "Ορατό"
+
+msgid "Check to make the selected item visible in the coordinate system."
+msgstr ""
+"Τσεκάρετε για να εμφανίζεται το επιλεγμένο στοιχείο στο σύστημα αξόνων."
+
+msgid "Show in legend"
+msgstr "Να εμφανίζεται υπότιτλος"
+
+msgid "Check to show the selected item in the legend."
+msgstr "Τσεκάρετε για να εμφανίζεται το επιλεγμένο στοιχείο στο υπόμνημα."
+
+msgid "Placement"
+msgstr "Θέση"
+
+msgid "Above x-axis"
+msgstr "Επάνω από τον άξονα των χ."
+
+msgid ""
+"Place the label directly above the x-axis on the right side of the image."
+msgstr "Ακριβώς επάνω από τον άξονα των χ , δεξιά της εικόνας."
+
+msgid "Below x-axis"
+msgstr "Κάτω από τον άξονα των χ."
+
+msgid ""
+"Place the label directly below the x-axis on the right side of the image."
+msgstr "Ακριβώς κάτω από τον άξονα των χ , δεξιά της εικόνας."
+
+msgid "Left of y-axis"
+msgstr "Αριστερά του άξονα των y."
+
+msgid "Place the label to the left of the y-axis at the top of the image."
+msgstr "Αριστερά του άξονα των y, στην κορυφή της εικόνας."
+
+msgid "Right of y-axis"
+msgstr "Δεξιά του άξονα των y."
+
+msgid "Place the label to the right of the y-axis at the top of the image."
+msgstr "Δεξιά του άξονα των y, στην κορυφή της εικόνας."
+
+msgid "Export to file..."
+msgstr "Εξαγωγή σε αρχείο..."
+
+msgid "Export the selected point series to a file."
+msgstr "Εξαγωγή της επιλεγμένης σειράς σε αρχείο."
+
+msgid "New"
+msgstr "Νέο"
+
+msgid "Creates a new coordinate system."
+msgstr "Δημιουργία νέου συστήματος συτεταγμένων."
+
+msgid "Open..."
+msgstr "Άνοιγμα..."
+
+msgid "Read coordinate system and functions from a file."
+msgstr "Ανάγνωση συστήματος συντ. και συναρτήσεων από αρχείο."
+
+msgid "Save"
+msgstr "Αποθήκευση"
+
+msgid "Write coordinate system and functions to a file."
+msgstr "Εγγραφή συστήματος συντ. και συναρτήσεων σε αρχείο."
+
+msgid "Save as..."
+msgstr "Αποθήκευση ως..."
+
+msgid "Saves the coordinate system as a new name."
+msgstr "Αποθήκευση του συστ.συντετ. με νέο όνομα."
+
+msgid "Save copy as..."
+msgstr "Αποθήκευση αντιγράφου ως..."
+
+#, fuzzy
+msgid "Saves a copy of the current coordinate system."
+msgstr "Αποθήκευση αντιγράφου του παρόντος συστ.συντεταγμένων."
+
+msgid "Save as image..."
+msgstr "Αποθήκευση ως εικόνα."
+
+msgid "Saves the shown coordinate system as an image."
+msgstr "Αποθήκευση του παρόντος συστ.συντεταγμένων ως εικόνα."
+
+msgid "Print..."
+msgstr "Εκτύπωση..."
+
+msgid "Print shown coordinate system."
+msgstr "Εκτύπωση του παρόντος συστ.συντεταγμένων."
+
+msgid "Exit"
+msgstr "Έξοδος"
+
+msgid "Quit the program."
+msgstr "Κλείσιμο του προγράμματος."
+
+msgid "Undo"
+msgstr "Αναίρεση"
+
+msgid "Undo the last action."
+msgstr "Αναίρεση τελευταίας ενέργειας."
+
+msgid "Redo"
+msgstr "Ακύρωση αναίρεσης"
+
+msgid "Redo the last action undone."
+msgstr "Ακύρωση τελευταίας αναίρεσης."
+
+msgid "Cut"
+msgstr "Αποκοπή"
+
+msgid "Cuts the selected function or point series to the clipboard."
+msgstr "Αποκοπή της επιλεγμένης συνάρτησης ή σημειοσειράς στο πρόχειρο."
+
+msgid "Copy"
+msgstr "Αντιγραφή"
+
+msgid "Copies the selected function or point series to the clipboard."
+msgstr "Αντιγραφή της επιλεγμένης συνάρτησης ή σημειοσειράς στο πρόχειρο."
+
+msgid "Paste"
+msgstr "Επικόλληση"
+
+msgid ""
+"Pastes a function or point series from the clipboard into the coordinate "
+"system."
+msgstr ""
+"Επικόλληση της συνάρτησης ή της σημειοσειράς από το πρόχειρο στο σύστημα "
+"αξόνων."
+
+msgid "Copy image"
+msgstr "Αντιγραφή εικόνας"
+
+msgid "Copies the shown coordinate system to the clipboard."
+msgstr "Αντιγράφει το παρόν σύστημα συντεταγμένων στο πρόχειρο."
+
+msgid "Axes..."
+msgstr "Άξονες..."
+
+msgid "Edit axes settings."
+msgstr "Επεξεργασία στοιχείων αξόνων."
+
+msgid "Options..."
+msgstr "Προτιμήσεις..."
+
+msgid "Edit options."
+msgstr "Επεξεργασία προτιμήσεων."
+
+msgid "Insert function..."
+msgstr "Εισαγωγή συνάρτησης..."
+
+msgid "Insert a new function."
+msgstr "Εισαγωγή νέας συνάρτησης."
+
+msgid "Insert tangent/normal..."
+msgstr "Εισαγωγή εφαπτομένης/κάθετης..."
+
+#, fuzzy
+msgid "Insert a new tangent or normal for the selected function."
+msgstr "Εισαγωγή νέας εφαπτομένης στην επιλεγμένη συνάρτηση."
+
+msgid "Insert shade..."
+msgstr "Εισαγωγή γραμμοσκίασης... "
+
+#, fuzzy
+msgid "Add shading to the selected function."
+msgstr "Εισαγωγή γραμμοσκίασης σε μία συνάρτηση."
+
+msgid "Insert point series..."
+msgstr "Εισαγωγή σειράς σημείων..."
+
+msgid "Insert a new point series."
+msgstr "Εισαγωγή νέας σειράς σημείων."
+
+msgid "Insert trendline..."
+msgstr "Εσαγωγή γραμμής..."
+
+msgid "Insert a curve of best fit for the selected point series."
+msgstr "Εισαγωγή βέλτιστης καμπύλης για την επιλεγμένη σημειοσειρά."
+
+msgid "Edit..."
+msgstr "Επεξεργασία..."
+
+#, fuzzy
+msgid "Edit the selected element: Function, tangent, point series, etc."
+msgstr "Επεξεργασία για την επιλεγμένη συνάρτηση, εφαπτομένη ή σημειοσειρά."
+
+msgid "Delete"
+msgstr "Διαγραφή"
+
+msgid "Delete the selected function, tangent or point series."
+msgstr "Διαγραφή της επιλεγμένης συνάρτησης, εφαπτομένης ή σημειοσειράς."
+
+msgid "Insert f'(x)..."
+msgstr "Εισαγωγή f'(x)..."
+
+msgid "Insert the first derivative of the selected function."
+msgstr "Εισαγωγή πρώτης παραγώγου της επιλεγμένης συνάρτησης."
+
+msgid "In"
+msgstr "Μεγεθ."
+
+msgid "Zoom in."
+msgstr "Μεγέθυνση."
+
+msgid "Out"
+msgstr "Σμικρ."
+
+msgid "Zoom out."
+msgstr "Σμίκρυνση"
+
+msgid "Window"
+msgstr "Παράθυρο"
+
+msgid "Zoom to user selected window."
+msgstr "Μεγέθυνση του επιλεγμένου παράθυρου."
+
+msgid "Square"
+msgstr "Τετραγωνισμός"
+
+#, fuzzy
+msgid ""
+"Zoom to scale the axes equal. This will show a circle in the correct "
+"relation instead of an ellipse."
+msgstr "Μεγέθυνση για ισοτιμία αξόνων.Δείχνει σωστό κύκλο αντί για έλλειψη."
+
+msgid "Standard"
+msgstr "Κανονικά"
+
+msgid "Zoom to standard coordinates."
+msgstr "Κανονικές συντεταγμένες."
+
+msgid "Move"
+msgstr "Μετακίνηση"
+
+msgid "Move up"
+msgstr "Μετακίνηση επάνω"
+
+msgid "Move the window up the coordinate system."
+msgstr "Μετακίνηση του παράθυρου προς τα πάνω."
+
+msgid "Move down"
+msgstr "Μετακίνηση κάτω"
+
+msgid "Move the window down the coordinate system."
+msgstr "Μετακίνηση του παράθυρου προς τα κάτω."
+
+msgid "Move left"
+msgstr "Μετακίνηση αριστερά"
+
+msgid "Move the window to left of the coordinate system."
+msgstr "Μετακίνηση του παράθυρου προς τα αριστερά."
+
+msgid "Move right"
+msgstr "Μετακίνηση δεξιά"
+
+msgid "Move the window to the right of the coordinate system."
+msgstr "Μετακίνηση του παράθυρου προς τα δεξιά."
+
+msgid "Move system"
+msgstr "Μετακίνηση αξόνων"
+
+msgid "Move the coordinate system with the mouse."
+msgstr "Μετακίνηση του συστ.συτετεταγμένων με το ποντίκι."
+
+#, fuzzy
+msgid "Length of path"
+msgstr "Μήκος τροχιάς..."
+
+msgid "Calculate length of path between two points."
+msgstr "Υπολογισμός του μήκους μιάς καμπύλης μεταξύ δύο σημείων."
+
+msgid "Calculates area under the path."
+msgstr "Υπολογισμός του εμβαδού κάτω από μία συνάρτηση."
+
+msgid "Evaluate"
+msgstr "Υπολογισμός"
+
+msgid "Evaluate or trace the selected function."
+msgstr "Υπολογισμός ή ιχνηλάτηση επιλεγμένης συνάρτησης."
+
+msgid "Table..."
+msgstr "Πίνακας..."
+
+#, fuzzy
+msgid "Shows an evaluation table."
+msgstr "Εμφάνιση πίνακα τιμών."
+
+msgid "Contents and index"
+msgstr "Περιεχόμενα και ευρετήριο"
+
+msgid "Open help file."
+msgstr "Εμφάνιση βοήθειας."
+
+msgid "List of functions"
+msgstr "Κατάλογος συναρτήσεων"
+
+msgid "Show list of functions that can be used for graphing."
+msgstr "Εμφάνιση καταλόγου συναρτήσεων που παριστάνονται γραφικά."
+
+msgid "Go to home page"
+msgstr "Μετάβαση στην αρχική σελίδα"
+
+msgid "Opens the default browser and shows the home page of the program."
+msgstr "Άνοιγμα της αρχικής σελίδας στη προκαθορισμένη διεύθυνση."
+
+msgid "Check for update"
+msgstr "Έλεγχος για ενημερωμένες εκδόσεις"
+
+msgid "Contact the home page to see if a newer version is available."
+msgstr "Μετάβαση στην κεντρική σελίδα για αναζήτηση νεότερης έκδοσης."
+
+msgid "About Graph..."
+msgstr "Σχετικά με το Graph..."
+
+msgid "Show copyright information."
+msgstr "Εμφάνιση πληροφοριών copyright."
+
+msgid "Separator"
+msgstr "Διαχωριστικό"
+
+msgid "Fit"
+msgstr "Προσαρμογή"
+
+msgid "Zoom to show the selected function."
+msgstr "Προσαρμογή στην επιλεγμένη συνάρτηση."
+
+msgid "All points"
+msgstr "Όλα τα σημεία"
+
+msgid "Zoom as much as all points are visible."
+msgstr "Προσαρμογή ώστε να φαίνονται όλα τα σημεία."
+
+msgid "Frequently Asked Questions"
+msgstr "Συχνές ερωτήσεις"
+
+msgid "Shows a list of frequently asked questions and answers."
+msgstr "Κατάλογος συχνών ερωτήσεων και απαντήσεων."
+
+msgid "Insert label..."
+msgstr "Εισαγωγή ετικέτας.."
+
+msgid "Insert a text label."
+msgstr "Εισαγωγή κειμένου."
+
+msgid "Donate"
+msgstr "Δωρεές"
+
+#, fuzzy
+msgid "Donate money to the project."
+msgstr "Χρηματική δωρεά για το έργο"
+
+msgid "Tip of the day"
+msgstr "Συμβουλή της ημέρας"
+
+msgid "Show tip of the day"
+msgstr "Εμφάνιση συμβουλής της ημέρας"
+
+msgid "Support"
+msgstr "Υποστήριξη"
+
+msgid "Open browser with the support page for the program."
+msgstr "Άνοιγμα της σελίδας υποστήριξης του προγράματος."
+
+msgid "Zoom x-axis in"
+msgstr "Μεγέθυνση x-άξονα"
+
+msgid "Zoom in on the x-axis only."
+msgstr "Μεγέθυνση x-άξονα μόνο."
+
+msgid "Zoom x-axis out"
+msgstr "Σμίκρυνση  x-άξονα."
+
+msgid "Zoom out on the x-axis only."
+msgstr "Σμίκρυνση x-άξονα μόνο."
+
+msgid "Zoom y-axis in"
+msgstr "Μεγέθυνση y-άξονα"
+
+msgid "Zoom in on the y-axis only."
+msgstr "Μεγέθυνση y-άξονα μόνο."
+
+msgid "Zoom y-axis out"
+msgstr "Σμίκρυνση y-άξονα."
+
+msgid "Zoom out on the y-axis only."
+msgstr "Σμίκρυνση y-άξονα μόνο."
+
+msgid "Insert relation..."
+msgstr "Εισαγωγή σχέσης..."
+
+msgid "Insert a new equation or inequality."
+msgstr "Εισαγωγή νέας εξίσωσης ή ανίσωσης."
+
+msgid "Custom functions..."
+msgstr "Προσαρμοσμένες συναρτήσεις..."
+
+msgid "Create custom functions and constants for use in graphs."
+msgstr ""
+"Δημιουργία προσαρμοσμένων συναρτήσεων και σταθερών για γραφική παράσταση."
+
+#, fuzzy
+msgid "Animate..."
+msgstr "Δωρεές"
+
+msgid "Create an animation by variating a constant."
+msgstr ""
+
+msgid "Select color"
+msgstr "Επιλογή χρώματος"
+
+msgid "Reset to default"
+msgstr "Επαναφορά προκαθορισμένων"
+
+msgid "Reset the tool bar icons to the installation default."
+msgstr "Επαναφορά εικονιδίων της γραμμής εργαλείων στα προκαθορισμένα."
+
+msgid "Customize toolbar..."
+msgstr "Προσαρμογή γραμμής εργαλείων..."
+
+msgid "Customize the icons shown on the toolbar."
+msgstr "Προσαρμογή εικονιδίων της γραμμής εργαλείων."
+
+#, fuzzy
+msgid "Rotation"
+msgstr " σχέση:"
+
+msgid "Edit label..."
+msgstr "Επεξεργασία ετικέτας..."
+
+msgid "Edit the label under the cursor."
+msgstr "Επεξεργασία ετικέτας με τον δρομέα."
+
+msgid "Delete label"
+msgstr "Διαγραφή ετικέτας"
+
+msgid "Delete the label under the cursor."
+msgstr "Διαγραφή ετικέτας με τον δρομέα."
+
+msgid "Show legend"
+msgstr "Εμφάνιση λεζάντας"
+
+msgid "Select to show a legend in the coordinate system."
+msgstr "Εμφάνιση λεζάντας στο σύστημα συντεταγμένων "
+
+msgid "Top Right"
+msgstr "Επάνω δεξιά"
+
+msgid "Show the legend in the upper right corner."
+msgstr "Εμφάνιση λεζάντας στην επάνω δεξιά γωνία."
+
+msgid "Bottom Right"
+msgstr "Κάτω δεξιά"
+
+msgid "Show the legend in the bottom right corner."
+msgstr "Εμφάνιση λεζάντας στην κάτω δεξιά γωνία."
+
+msgid "Top Left"
+msgstr "Επάνω αριστερά"
+
+msgid "Show the legend in the upper left corner."
+msgstr "Εμφάνιση λεζάντας στην επάνω αριστερή γωνία."
+
+msgid "Bottom Left"
+msgstr "Κάτω αριστερά"
+
+msgid "Show the legend in the bottom left corner."
+msgstr "Εμφάνιση λεζάντας στην κάτω αριστερή γωνία."
+
+msgid "Close"
+msgstr "Κλείσιμο"
+
+msgid "Next tip"
+msgstr "Επόμενη συμβουλή"
+
+msgid "Previous tip"
+msgstr "Προηγούμενη συμβουλή"
+
+msgid "Show tips at startup"
+msgstr "Εμφάνιση συμβουλών κατά την έναρξη"
+
+msgid "Did you know..."
+msgstr "Γνωρίζατε ότι..."
+
+msgid "Insert relation"
+msgstr "Εισαγωγή σχέσης"
+
+msgid "Relation:"
+msgstr " σχέση:"
+
+msgid "Constraints:"
+msgstr "Σταθερές:"
+
+msgid "OK"
+msgstr "Εντάξει"
+
+msgid "Cancel"
+msgstr "Άκυρο"
+
+msgid "Legend text"
+msgstr "Κείμενο λεζάντας"
+
+msgid "Description:"
+msgstr "Περιγραφή:"
+
+#, fuzzy
+msgid ""
+"Write a descriptive text to show in the legend. If empty the equation will "
+"be used."
+msgstr ""
+"Γράψτε περιγραφικό κείμενο μεσα στη λεζάντα, διαφορετικά θα χρησιμοποιειθεί "
+"η εξίσωση."
+
+msgid "Properties"
+msgstr "Ιδιότητες"
+
+msgid "Style:"
+msgstr "Στίλ:"
+
+msgid "Color:"
+msgstr "Χρώμα:"
+
+msgid "Width:"
+msgstr "Πάχος"
+
+#, fuzzy
+msgid ""
+"Select the style used for drawing the inequality. Not used for equations."
+msgstr "Επιλογή στιλ για τις ανισώσεις, Όχι για τις εξισώσεις."
+
+#, fuzzy
+msgid ""
+"Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Πάχος για τις εξισώσεις σε pixels.Όχι για τις ανισώσεις."
+
+#, fuzzy
+msgid "Select the color for drawing the relation."
+msgstr "Επιλέξατε χρώμα γραμμής."
+
+msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
+msgstr "Εισαγωγή σχέσης,για παράδειγμα  \"x^2+y^2 = 25\" or \"y < sin(x)\""
+
+msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
+msgstr "Εισαγωγή σταθερών στη σχέση, για παράδειγμα  \"x > 0 and y < 5\""
+
+msgid "Insert tangent/normal"
+msgstr "Εισαγωγή εφαπτομένης/κάθετης"
+
+msgid "Coordinate where the tangent/normal will cross the function."
+msgstr "Τετμημένη που η εφαπτομένη/κάθετη τεμνει τη συνάρτηση."
+
+msgid "Choose if you want a tangent or a normal."
+msgstr "Επιλέξτε αν θέλετε εφαπτομένη ή κάθετη."
+
+msgid "Type"
+msgstr "Τύπος"
+
+msgid "Tangent"
+msgstr "εφαπτομένη"
+
+msgid "Normal"
+msgstr "κάθετη"
+
+msgid "Graph properties"
+msgstr "Ιδιόιητες γραφήματς"
+
+msgid "Line style:"
+msgstr "Στιλ γραμμής:"
+
+msgid "Width of graph in pixels."
+msgstr "Πάχος γραμμής σε pixels."
+
+msgid "Choose which line style to use for drawing the graph."
+msgstr "Επιλογή στιλ γραμμής τπυ γραφήματος."
+
+#, fuzzy
+msgid "Select the color of the graph."
+msgstr "Επιλογή τύπου  συνάρτησης."
+
+msgid "Argument range"
+msgstr "Περιοχή τμήματος"
+
+msgid "Start of range interval for the used variable."
+msgstr "Αρχή της περιοχής τμήματος για την χρησιμοποιούμενη μεταβλιτή."
+
+msgid "End of range interval for the used variable."
+msgstr "Τέλος της περιοχής τμήματος για την χρησιμοποιούμενη μεταβλιτή."
+
+msgid "Endpoints"
+msgstr "Ακραία σημεία"
+
+msgid "Start:"
+msgstr "Αρχή:"
+
+msgid "End:"
+msgstr "Τέλος:"
+
+msgid ""
+"Select marker to show at the start of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+"Επιλογή μαρκαρίσματος της αρχής του τμήματος.Χησιμοποιείται μόνο αν έχει "
+"καθοριστεί περιοχή."
+
+msgid ""
+"Select marker to show at the end of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+"Επιλογή μαρκαρίσματος του τέλους του τμήματος.Χησιμοποιείται μόνο αν έχει "
+"καθοριστεί περιοχή."
+
+msgid "Insert trendline"
+msgstr "Εισαγωγή καμπύλης"
+
+msgid "Line"
+msgstr "Γραμμή"
+
+msgid "Built-in"
+msgstr "Καθορισμένες"
+
+msgid "Create a linear function: f(x)=ax+b"
+msgstr "Δημιουργία γραμμικής συνάρτησης: f(x)=ax+b"
+
+msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
+msgstr "Δημιουργία λογαριθμικής συνάρτησης:f(x)=a*ln(x)+b "
+
+msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
+msgstr "Δημιουργία πολυωνυμικής συνάρτησης: f(x)=ax^3+bx^2+cx+d"
+
+msgid "Create a power function: f(x)=ax^b"
+msgstr "Δημιουργία μονωνυμικής συνάρτησης:f(x)=ax^b"
+
+msgid "Create a exponential function: f(x)=a*b^x"
+msgstr "Δημιουργία εκθετικής συνάρτησης: f(x)=a*b^x"
+
+msgid "The order of the polynomium. For example 2 means a parable."
+msgstr "Η σειρά του πολυώνυμου.Για παράδειγμα. το 2 παριστάνει παραβολή."
+
+msgid "Order:"
+msgstr "Σειρά "
+
+msgid "Polynomial"
+msgstr "Πολυωνυμική"
+
+msgid "Logarithmic"
+msgstr "Λογαριθμική"
+
+msgid "Linear"
+msgstr "Γραμμική"
+
+msgid "Power"
+msgstr "Δύναμη"
+
+msgid "Exponential"
+msgstr "Εκθετική"
+
+msgid "Create a moving average as a series of straight lines."
+msgstr "Δημιουργία κινητού μέσου από ευθείες γραμμές."
+
+msgid "Moving average"
+msgstr " Κινητός μέσος"
+
+msgid "Period:"
+msgstr "Περίοδος:"
+
+msgid "Determines how many points are used for the average."
+msgstr "Καθορίζει πόσα σημεία θα χρησιμοποιειθούν για τον μέσο."
+
+msgid "User defined"
+msgstr "Καθορισμός από τον χρήστη"
+
+msgid "Model:"
+msgstr "Πρότυπο:"
+
+msgid "Add model"
+msgstr "Προσθήκη προτύπου"
+
+msgid "Remove model"
+msgstr "Διαγραφή προτύπου"
+
+msgid "Edit model"
+msgstr "Επεξεργασία προτύπου"
+
+#, fuzzy
+msgid "Enter a function model to base the trendline on."
+msgstr "Εισαγωγή περιγραφής στην ετικέτα."
+
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendline."
+msgstr ""
+
+#, fuzzy
+msgid "Intercept ="
+msgstr "Internet"
+
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendlines."
+msgstr ""
+
+msgid "Insert point series"
+msgstr "Εισαγωγή σειράς σημείων"
+
+msgid ""
+"The name of the point series, which is shown in the list to the left of the "
+"coordinate system."
+msgstr "Το όνομα της σημειοσειράς,που εμφανίζεται σε λίστα επάνω αριστερά."
+
+msgid "Series"
+msgstr "Σειρά"
+
+msgid "This shows a sample of the markers and the lines between the markers."
+msgstr "Δείχνει ένα δείγμα των σημείων και τη γραμμή μεταξύ τους."
+
+msgid "Sample"
+msgstr "Δείγμα"
+
+msgid "Markers"
+msgstr "Σημεία"
+
+msgid "Marker"
+msgstr "Σημείο"
+
+msgid "Size:"
+msgstr "Μέγεθος:"
+
+msgid "Choose the size of the markers."
+msgstr "Επιλέξατε το μέγεθος των σημείων."
+
+msgid "Choose the type of markers to be shown at each point."
+msgstr "Επιλέξατε τον τύπο του μαρκαρίσματος κάθε σημείου."
+
+msgid "Choose the color of the markers."
+msgstr "Επιλέξατε το χρώμα του μαρκαρίσματος."
+
+msgid "Interpolation:"
+msgstr "Παρεμβολή:"
+
+msgid ""
+"Choose the style of lines to be drawn between the points. You may also "
+"choose not to draw any lines."
+msgstr ""
+"Επιλέξατε το στιλ γραμμής μεταξύ των σημείων. Μπορείτε να επιλέξετε και "
+"χωρίς γραμμή."
+
+#, fuzzy
+msgid "Choose the width of the lines in pixels."
+msgstr "Επιλέξατε πάχος γραμμής"
+
+msgid "Select which kind of line to draw between the markers."
+msgstr "Επιλέξατε το είδος γραμμής μεταξύ των σημείων."
+
+msgid "Cubic splines"
+msgstr "Κυβικό"
+
+msgid "Half cosine"
+msgstr "Συνημιτονοειδές"
+
+msgid "Choose the color of the lines."
+msgstr "Επιλέξατε χρώμα γραμμής."
+
+msgid "Labels"
+msgstr "Ετικέτες"
+
+msgid "Position:"
+msgstr "Θέση:"
+
+msgid "Check to show the coordinate at each point."
+msgstr "Επιλέξατε να εμφανίζονται οι συντεταγμένες καθε σημείου."
+
+msgid "Show coordinates"
+msgstr "Εμφάνιση  συντεταγμένων"
+
+msgid "Select the font for the coordinates."
+msgstr "Επιλέξατε γραμματοσειρά για τις συντεταγμένες."
+
+msgid "Select where the coordinates should be shown."
+msgstr "Επιλέξατε πού να εμφανίζονται οι συντεταγμένες."
+
+msgid "Below"
+msgstr "Κάτω"
+
+msgid "Above"
+msgstr "Επάνω"
+
+msgid "Left"
+msgstr "Αριστερά"
+
+msgid "Right"
+msgstr "Δεξιά"
+
+msgid "Error bars"
+msgstr "Περιοχές σφάλματος"
+
+msgid "X error bars"
+msgstr "Χ περιοχές σφάλματος"
+
+#, fuzzy
+msgid "Show horizontal error bars."
+msgstr "Εμφάνιση οριζόντιας περιοχής σφάλματος"
+
+msgid "Show x-bars"
+msgstr "Εμφάνιση Χ- περιοχές σφάλματος"
+
+msgid "All error bars are the same size."
+msgstr "Όλες οι περιοχές σφάλματος με ίδιο μέγεθος."
+
+msgid "Fixed:"
+msgstr "Σταθερή:"
+
+msgid "Enter fixed value."
+msgstr "Εισαγωγή τιμής σταθερής."
+
+msgid "All error bars are the same percentage of the x-coordinate."
+msgstr "Όλες οι περιοχές σφάλματος στο ίδιο ποσοστό μετις χ-συντεταγμένες."
+
+msgid "Relative:"
+msgstr "Σχετικό:"
+
+msgid "Each error bar is given a custom value."
+msgstr "Για κάθε περιοχή σφάλματος προσαρμοσμένη τιμή."
+
+msgid "Custom"
+msgstr " Προσαρμοσμένη"
+
+msgid "Enter relative value in percent."
+msgstr "Εισαγωγή σχετικής τιμής σε ποσοστό."
+
+msgid "Y error bars"
+msgstr "Y- περιοχές σφάλματος"
+
+#, fuzzy
+msgid "Show vertical error bars."
+msgstr "Εμφάνιση κατακόρυφης περιοχής σφάλματος"
+
+msgid "Show y-bars"
+msgstr "Εμφάνιση Y- περιοχές σφάλματος"
+
+msgid "All error bars are the same percentage of the y-coordinate."
+msgstr "Όλες οι περιοχές σφάλματος στο ίδιο ποσοστό μετις y-συντεταγμένες."
+
+#, fuzzy
+msgid "Cut the selected text to the clipboard."
+msgstr "Αποκοπή επιλεγμένου κειμένου σιό πρόχειρο"
+
+msgid "Copy the selected text to the clipboard."
+msgstr "Αντιγραφή επιλεγμένου κειμένου σιο πρόχειρο."
+
+msgid ""
+"Paste text from the clipboard into the grid. Other cells may be overwritten "
+"by the text from the clipboard."
+msgstr ""
+"Επικόλληση κειμένου από το πρόχειρο στο πλέγμα.Άλλα κελιά μπορεί να "
+"επανεγγραφούν με το κείμενο απο το πρόχειρο."
+
+msgid "Erase selected cells."
+msgstr "Διαγραφή επιλεγμένων κελιών."
+
+msgid "Insert row"
+msgstr "Εισαγωγή γραμμής"
+
+#, fuzzy
+msgid "Inserts a row in the grid moving rows below one down."
+msgstr ""
+"Εισαγωγή μιας γραμμής στο πλέγμα μετακινόντας τις γραμμές προς τα κάτω.."
+
+msgid "Remove row"
+msgstr "Διαγραφή γραμμης"
+
+msgid "Removes the selected rows."
+msgstr "Διαγραφή επιλεγμένων γραμμών."
+
+msgid "Select all"
+msgstr "Επιλογή όλων"
+
+msgid "Select all cells."
+msgstr "Επιλογή όλων των κελιων."
+
+msgid "Import from file..."
+msgstr "Εισαγωγή από αρχείο..."
+
+msgid "Import data from a file and place it at the selected cell."
+msgstr "Εισαγωγή δεδομένων από αρχείο και τοποθέτηση σε επιλεγμένα κελιά."
+
+msgid "Export selected data to a file."
+msgstr "Εξαγωγή επιλεγμένων δεδομένων σε αρχείο."
+
+msgid "Calculate table"
+msgstr "Υπολογισμος πίνακα"
+
+msgid ""
+"The step value. This is the distance between the x-values in the interval."
+msgstr ""
+"Η τιμή του βήματος.Είναι η απόσταση μεταξύ των τιμών του χ στο επιλεγμένο "
+"διάστημα."
+
+msgid "The first x-value in the interval."
+msgstr "Η πρώτη τιμή του χ στο επιλεγμένο διάστημα."
+
+msgid "The last x-value in the interval."
+msgstr "Η τελευταία τιμή του χ στο επιλεγμένο διάστημα."
+
+msgid "Copy selected cells to the clipboard."
+msgstr "Αντιγραφή επιλεγμένων κελιών στο πρόχειρο."
+
+msgid "Saves the selected data to a file."
+msgstr "Αποθήκευση επιλεγμένων δεδομένων σε αρχείο."
+
+msgid "Calculating"
+msgstr "Υπολογισμοί"
+
+msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
+msgstr "CSV (Διαχωριστικό το κόμμα) [*.csv]|*.csv|Text [*.txt]|*.txt"
+
+msgid "Insert shade"
+msgstr "Εισαγωγή γραμμοσκίασης"
+
+msgid "Shading"
+msgstr "Γραμμοσκίαση"
+
+msgid "Shades the area between the function and the x-axis."
+msgstr "Γραμμοσκίαση της επιφάνειας μεταξύ της συνάρτησης και του άξονα των χ."
+
+msgid "Shades the area below the function."
+msgstr "Γραμμοσκίαση της επιφάνειας κάτω από την συνάρτηση."
+
+msgid "Shades the area above the function."
+msgstr "Γραμμοσκίαση της επιφάνειας πάνω από την συνάρτηση."
+
+msgid "Shades the area between the function and the y-axis."
+msgstr "Γραμμοσκίαση της επιφάνειας μεταξύ της συνάρτησης και του άξονα των y."
+
+msgid "Shades the area inside the function."
+msgstr "Γραμμοσκίαση της επιφάνειας μέσα στη συνάρτηση."
+
+msgid ""
+"Shades the area between the main function and the function selected in the "
+"list to the right."
+msgstr ""
+"Γραμμοσκίαση της επιφάνειας μεταξύ της κύριας συνάρτησης και της επιλεγμένης "
+"από τη λίστα δεξιά."
+
+msgid "Above function"
+msgstr "Επάνω από την συνάρτηση"
+
+msgid "Between function and x-axis"
+msgstr "Μεταξύ της συνάρτησης και του άξονα των χ"
+
+msgid "Between functions"
+msgstr "Μεταξύ συναρτήσεων"
+
+msgid "Between function and y-axis"
+msgstr "Μεταξύ της συνάρτησης και του άξονα των y."
+
+msgid "Inside function"
+msgstr " Μέσα στη συνάρτηση"
+
+msgid "Below function"
+msgstr "Κάτω από την συνάρτηση"
+
+msgid "Options"
+msgstr "Επιλογές"
+
+msgid "Range"
+msgstr "Περιοχή"
+
+msgid "Coordinate where the shading starts."
+msgstr "Συντεταγμένες αρχής γραμμοσκιάσεως."
+
+msgid "Coordinate where the shading ends."
+msgstr "Συντεταγμένες τέλους γραμμοσκιάσεως."
+
+msgid "Check to increase the end coordinate until intersection."
+msgstr "Τσεκάρετε για να αυξηθεί το τέλος μεχρι το σημείο τομής."
+
+msgid "Increase to intersection"
+msgstr "Αύξηση μεχρι το σημείο τομής"
+
+#, fuzzy
+msgid "Check to decrease the start coordinate until intersection."
+msgstr ""
+"Τσεκάρετε για να ελαττωθεί η αρχή των συντεταγμένων μεχρι το σημείο τομής."
+
+msgid "Decrease to intersection"
+msgstr "Μείωση μεχρι το σημείο τομής"
+
+msgid "Select the style used for the shading."
+msgstr "Επιλογή στιλ γραμμοσκιάσεως."
+
+msgid "Mark the end of the shading with a line."
+msgstr "Σημειώστε το τέλος της γραμμοσκιάσεως με μια γραμμή."
+
+msgid "Mark end of range"
+msgstr "Σημειώστε το τέλος της περιοχής"
+
+msgid "Select color used for shading."
+msgstr "Επιλογή χρώματος γραμμοσκιάσεως."
+
+msgid "Mark the start of the shading with a line."
+msgstr "Σημειώστε την αρχή της γραμμοσκιάσεως με μια γραμμή."
+
+msgid "Mark start of range"
+msgstr "Σημειώστε την αρχή της περιοχής"
+
+msgid "Enter a description to show in the legend."
+msgstr "Εισαγωγή περιγραφής στην ετικέτα."
+
+msgid "2nd function"
+msgstr "Δεύτερη συνάρτηση"
+
+msgid "2nd function:"
+msgstr "Δεύτερη συνάρτηση:"
+
+msgid "Select second function, when you want a shading between two functions."
+msgstr ""
+"Επιλογή δεύτερης συνάρτησης,όταν θέλετε γραμμοσκίαση μεταξύ δύο συναρτήσεων. "
+
+msgid "Shading range for 2nd function"
+msgstr "Περιοχή γραμμοσκιάσεως για τη δεύτερη συνάρτηση"
+
+msgid "Custom functions/constants"
+msgstr " Προσαρμοσμένες συναρτήσεις/σταθερές"
+
+msgid "Apply"
+msgstr "Εφαρμογή"
+
+msgid "Names"
+msgstr "Ονόματα"
+
+msgid "Definition"
+msgstr "Ορισμός"
+
+msgid "Cut the selected text to the clipboard"
+msgstr "Αποκοπή επιλεγμένου κειμένου σιό πρόχειρο"
+
+msgid "Image options"
+msgstr "Επιλογές εικόνας"
+
+msgid "Size"
+msgstr "Μέγεθος"
+
+msgid "Image width:"
+msgstr "Πλάτος εικόνας:"
+
+msgid "Image height:"
+msgstr "Ύψος εικόνας:"
+
+msgid "Set a custom image width."
+msgstr ""
+
+msgid "Set a custom image height."
+msgstr ""
+
+msgid ""
+"Choose to use the same size as shown on the screen or a custom image size."
+msgstr ""
+
+#, fuzzy
+msgid "Image size"
+msgstr "Πλάτος εικόνας:"
+
+#, fuzzy
+msgid "Screen size"
+msgstr "Μέγεθος κειμένου"
+
+#, fuzzy
+msgid "Custom size"
+msgstr "Προσαρμογή"
+
+msgid ""
+"Progressive encoding allows viewers to see a rough copy of the image while "
+"it is downloaded."
+msgstr ""
+
+msgid "Encoding"
+msgstr "Κωδικοποίηση"
+
+msgid "Progressive"
+msgstr "Προοδευτικά"
+
+msgid "Select a compression quality."
+msgstr ""
+
+msgid "Quality"
+msgstr "Ποιότητα"
+
+#, fuzzy
+msgid "Paper size:"
+msgstr "Μέγεθος κειμένου"
+
+msgid "Choose paper orientation."
+msgstr ""
+
+msgid "Orientation"
+msgstr "Προσανατολισμός"
+
+msgid "Portrait"
+msgstr "Κατακόρυφος"
+
+msgid "Landscape"
+msgstr "Οριζόντιος"
+
+#, fuzzy
+msgid "Choose paper size to use."
+msgstr "Επιλέξατε πάχος γραμμής"
+
+#, fuzzy
+msgid "Select this to use these settings as defaults in the future."
+msgstr ""
+"Τσεκάρετε για να χρησιμοποιείτε αυτές τις ρυθμίσεις αξόνων σαν "
+"προκαθορισμένες στο μέλλον."
+
+msgid "Save as default"
+msgstr "Αποθήκευση σαν προκαθορισμένο"
+
+#, fuzzy
+msgid "Animate"
+msgstr "Δωρεές"
+
+#, fuzzy
+msgid "Constants:"
+msgstr "Σταθερές:"
+
+#, fuzzy
+msgid "Step:"
+msgstr "Βήματα:"
+
+msgid "Frames/second:"
+msgstr ""
+
+msgid "Choose a constant to change between each frame.."
+msgstr ""
+
+#, fuzzy
+msgid "The first value of the constant"
+msgstr "Η πρώτη τιμή του χ στο επιλεγμένο διάστημα."
+
+#, fuzzy
+msgid "The last value of the constant."
+msgstr "Η τελευταία τιμή του χ στο επιλεγμένο διάστημα."
+
+msgid "The chosen constant is changed by this value between each frame."
+msgstr ""
+
+msgid "Number of frames per second used when the animation is played."
+msgstr ""
+
+msgid "Working"
+msgstr ""
+
+msgid "About Graph"
+msgstr "Πληροφορίες για Graph"
+
+msgid "<Language> translation by <Translator>"
+msgstr "<Γλώσσα> μετάφραση από <Μεταφραστής>"
+
+msgid "Version "
+msgstr "Έκδοση"
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid "Build"
+msgstr "Build"
+
+msgid ""
+"This is free software, and you are welcome to redistribute it under the "
+"terms in the GNU General Public License. Please send bug reports and "
+"suggestions to the programmer."
+msgstr ""
+"Ελεύθερο λογισμικό,και είναι ευπρόσδεκτη η αναδιανομή του υπό τους όρους της "
+"GNU General Public License. Παρακαλώ αναφέρατε αστοχίες και υποδείξεις στον "
+"προγραμματιστή."
+
+#, fuzzy
+msgid "The newest version as well as the source code are available at:"
+msgstr "Η τελευταία έκδοση καθώς και ο πηγαίος κώδικας διατίθεται από:"
+
+#, fuzzy
+msgid "Animation"
+msgstr "Δωρεές"
+
+#, fuzzy
+msgid "Open an animation file."
+msgstr "Άνοιγμα φακέλλου  %s."
+
+#, fuzzy
+msgid "Save the animation to a file."
+msgstr "Αποθήκευση επιλεγμένων δεδομένων σε αρχείο."
+
+#, fuzzy
+msgid "Copy the animation to the clipboard."
+msgstr "Αντιγραφή επιλεγμένου κειμένου σιο πρόχειρο."
+
+msgid "Edit axes"
+msgstr "Επεξεργασία αξόνων"
+
+msgid "Minimum:"
+msgstr "Ελάχιστο:"
+
+msgid "Maximum:"
+msgstr "Μέγιστο:"
+
+msgid "Tick unit:"
+msgstr "Υποδιαίρεση,μονάδα:"
+
+msgid "The x-axis cross at y="
+msgstr "Ο άξονας των χ τέμνει στο y= "
+
+msgid "Grid unit:"
+msgstr "Πλέγμα,μονάδα:"
+
+msgid "Minimum x-value."
+msgstr "Ελάχιστη χ-τιμή."
+
+msgid "Maximum x-value."
+msgstr "Μέγιστη χ-τιμή."
+
+msgid "Units between ticks on the x-axis."
+msgstr "Μονάδες μεταξύ υποδιαιρέσεων στον άξονα των χ."
+
+msgid "Use logarithmic scale on the x-axis."
+msgstr "Χρήση λογαριθμικής κλίμακας στον άξονα των χ."
+
+msgid "Logarithmic scale"
+msgstr "Λογαριθμική κλίμακα"
+
+msgid "Show label at the right side above the x-axis."
+msgstr "Εμφάνιση λεζάντας δεξιά πάνω από τον άξονα των χ."
+
+msgid "Label:"
+msgstr "Ετικέτα:"
+
+#, fuzzy
+msgid "Edit the label for the axis here."
+msgstr "Επεξεργασία ετικέτας εδώ."
+
+msgid "Show units on the x-axis."
+msgstr "Εμφάνιση μονάδων στον άξονα των χ."
+
+msgid "Show numbers"
+msgstr "Εμφάνιση αριθμών"
+
+#, fuzzy
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr "Ο άξονας των x τέμνει τον άξονα των y σε αυτή την τιμή."
+
+msgid "Units between the grid lines perpendicular to the x-axis."
+msgstr "Μονάδες μεταξύ των γραμμών του πλέγματος κάθετες  στον άξονα των χ."
+
+#, fuzzy
+msgid "Determine the tick unit automatically."
+msgstr "Αυτόματος προσδιορισμός υποδιαιρέσεων"
+
+msgid "Auto tick"
+msgstr "Αυτόματες υποδιαιρέσεις"
+
+#, fuzzy
+msgid "Set the grid unit to the same as the tick unit."
+msgstr "Μονάδες πλέγματος ίδιες με τις υποδιαιρέσεις"
+
+msgid "Auto grid"
+msgstr "Αυτόματο πλέγμα"
+
+#, fuzzy
+msgid "Show tick marks on the x-axis."
+msgstr "Εμφάνιση υποδιαιρέσεων στον άξονα των χ"
+
+msgid "Show ticks"
+msgstr "Εμφάνιση υποδιαιρέσεων"
+
+#, fuzzy
+msgid "Show units on the selected axis as a fraction multiplied by pi."
+msgstr "Εμφάνιση μονάδων σαν κλάσμα πολλαπλάσιο του π."
+
+msgid "Show as a multiple of pi"
+msgstr "Εμφάνιση σαν πολλαπλάσιο του π."
+
+msgid "Show vertical grid lines."
+msgstr "Εμφάνιση κατακόρυφων γραμμών πλέγματος."
+
+msgid "Show grid"
+msgstr "Εμφάνιση πλέγματος"
+
+msgid "The y-axis cross at x="
+msgstr "Ο άξονας των y τέμνει στο χ="
+
+msgid "Minimum y-value."
+msgstr "Ελάχιστη y-τιμή."
+
+msgid "Maximum y-value."
+msgstr "Μέγιστη y-τιμή."
+
+msgid "Use logarithmic scale for the y-axis."
+msgstr "Χρήση λογαριθμικής κλίμακας στον άξονα των y."
+
+msgid "Units between ticks on the y-axis."
+msgstr "Μονάδες μεταξύ υποδιαιρέσεων στον άξονα των y."
+
+msgid "Show units on the y-axis."
+msgstr "Εμφάνιση μονάδων στον άξονα των y."
+
+msgid "Show label at the top of the window to the right of the y-axis."
+msgstr "Εμφάνιση λεζάντας στην κορυφή του παράθυρου δεξιά από τον άξονα των y."
+
+#, fuzzy
+msgid "The y-axis will intersect with the x-axis at this value."
+msgstr "Ο άξονας των y τέμνει τον άξονα των χ σε αυτή την τιμή."
+
+msgid "Units between the grid lines perpendicular to the y-axis."
+msgstr "Μονάδες μεταξύ των γραμμών του πλέγματος κάθετες  στον άξονα των y."
+
+#, fuzzy
+msgid "Show tick marks on the y-axis."
+msgstr "Εμφάνιση υποδιαιρέσεων στον άξονα των y."
+
+msgid "Show horizontal grid lines."
+msgstr "Εμφάνιση οριζόντιων γραμμών πλέγματος."
+
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+msgid "Title:"
+msgstr "Τίτλος:"
+
+msgid ""
+"Choose if you want to show the axes, and if you want to show them crossed or "
+"at the left and bottom of the image."
+msgstr ""
+"Επιλέξατε αν θέλετε να φαίνονται οι άξονες, και να φαίνεται το σημείο τομής "
+"ή κατω αριστερά στην εικόνα."
+
+msgid "Axes style"
+msgstr "Στιλ αξόνων"
+
+msgid "None"
+msgstr "Κανένας"
+
+msgid "Crossed"
+msgstr "Κέντρο"
+
+msgid "Boxed"
+msgstr "Άκρη"
+
+msgid ""
+"Choose if trigonometric functions should calculate in radian or degrees."
+msgstr ""
+"Επιλέξατε αν οι τριγωνομετρικές συναρτήσεις υπολογίζονται σε ακτίνια ή "
+"μοίρες."
+
+msgid "Trigonometry"
+msgstr "Τριγωνομετρία"
+
+msgid "Radian"
+msgstr "Rad"
+
+msgid "Degree"
+msgstr "Μοίρες"
+
+msgid "Enter a title to show above the coordinate system."
+msgstr "Εισαγωγή τίτλου επάνω από το συστημα συντεταγμένων."
+
+msgid "Select the font for the title."
+msgstr "Επιλογή γραμματοσειράς τίτλου."
+
+msgid "Choose where the legend should be placed."
+msgstr "Επιλογή θέσης ετικέτας."
+
+msgid "Legend placement"
+msgstr " Θέση ετικέτας"
+
+msgid ""
+"Check this to use complex numbers for calculations. Notice that this will "
+"slow graphing down."
+msgstr ""
+"Τσεκάρετε για χρήση μιγαδικών αριθμών στους υπολογισμούς Σημειώστε ότι "
+"επιβραδίνεται η σχεδίαση."
+
+msgid "Calculate with complex numbers"
+msgstr " Υπολογισμοί με μιγαδικούς αριθμούς"
+
+msgid "Font and color"
+msgstr "Γραμματοσειρά και χρώμα"
+
+msgid "Colors"
+msgstr "Χρώματα"
+
+msgid "Grid color:"
+msgstr "Χρώμα πλεγματος:"
+
+msgid "Axes color:"
+msgstr "Χρώμα αξόνων:"
+
+msgid "Background color:"
+msgstr "Χρώμα φόντου:"
+
+#, fuzzy
+msgid "Select the color of the image background."
+msgstr "Επιλέξατε το χρώμα του μαρκαρίσματος."
+
+#, fuzzy
+msgid "Select the color of the axes."
+msgstr "Επιλέξατε το χρώμα του μαρκαρίσματος."
+
+#, fuzzy
+msgid "Select the color of the grid lines."
+msgstr "Επιλέξατε χρώμα γραμμής."
+
+msgid "Fonts"
+msgstr "Γραμματοσειρά"
+
+msgid "Number font:"
+msgstr "Γραμματοσειρά αριθμών:"
+
+msgid "Label font:"
+msgstr "Γραμματοσειρά ετικέτας:"
+
+msgid "Legend font:"
+msgstr "Γραμματοσειρά λεζάντας"
+
+#, fuzzy
+msgid "Select the font used to show the labels on the axes."
+msgstr "Επιλογή γραμματοσειράς ετικέτας στούς άξονες.."
+
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Επιλογή γραμματοσειράς αριθμών στούς άξονες."
+
+msgid "Select the font used to show the legend text."
+msgstr "Επιλογή γραμματοσειράς κειμένου λεζάντας."
+
+msgid "Decimals:"
+msgstr "Δεκαδικοί:"
+
+msgid "Recent files:"
+msgstr "Πρόσφατα αρχεία:"
+
+msgid "Max undo steps:"
+msgstr "Μέγιστος αριθμός αναιρέσεων:"
+
+msgid "Language:"
+msgstr "Γλώσσα:"
+
+#, fuzzy
+msgid "Font scale:"
+msgstr "Μέγεθος γραμμάτων:"
+
+msgid "Number of decimals used when results are shown."
+msgstr "Αριθμός δεκαδικών στην εμφάνιση των αποτελεσμάτων."
+
+#, fuzzy
+msgid "Associate *.grf files with Graph."
+msgstr "Σύνδεση *.grf αρχείων με το Graph"
+
+msgid "Associate .grf files"
+msgstr "Σύνδεση *.grf αρχείων"
+
+#, fuzzy
+msgid "The number of most recent used files shown in the File menu."
+msgstr "Ο αριθμός των πιο πρόσφατων αρχείων φαίνεται στο μενού αρχείο."
+
+msgid ""
+"Save window position when the program quits. This setting is used the next "
+"time the program is used.|Save window state on exit."
+msgstr ""
+"Αποθήκευση της θέσης του παράθυρου όταν κλείνει το πρόγραμμα. Αυτές οι "
+"ρυθμήσεις χρησιμοποιούνται την επόμενη φορά που θα ανοίξει το πρόγραμμα.|"
+"Αποθήκευση της κατάστασης του παράθυρου κατά την έξοδο."
+
+msgid "Save workspace on exit"
+msgstr "Αποθήκευση παράθυρου κατά την έξοδο."
+
+msgid "Format used when complex numbers are shown."
+msgstr "Μορφή που χρησιμοποιείται για την παράσταση μιγαδικών αριθμών"
+
+msgid "Complex format"
+msgstr "Μιγαδική μορφή"
+
+msgid "Real"
+msgstr "Πραγματικοί"
+
+msgid "Rectangular"
+msgstr "Ορθογώνια"
+
+msgid "Polar"
+msgstr "Πολική"
+
+msgid "Show tooltip when the cursor is over something."
+msgstr "Εμφάνιση συμβουλής όταν ο δρομέας είναι πάνω από κάτι."
+
+msgid "Show tooltip"
+msgstr "Εμφάνιση συμβουλής"
+
+msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
+msgstr ""
+"Μέγιστος αριθμός αναιρέσεων αποθηκεύθηκε.Τοποθετήστε στο 0 για αποφυγή "
+"αναιρέσεως."
+
+msgid ""
+"If checked the program will contact a web server when the program is started "
+"to see if a newer version is available."
+msgstr ""
+"Αν τσεκαριστεί το πρόγραμμα συνδέεται με τον διακομιστή στην εκκίνηση για να "
+"διαπιστωθεί αν υπάρχει νεότερη έκδοση."
+
+msgid "Check for new version of Graph at startup"
+msgstr "Έλεγχος για νεότερη έκδοση του  Graph στην εκκίνηση"
+
+msgid "Select language to use."
+msgstr "Επιλογή γλώσσας."
+
+msgid ""
+"This is used to scale the user interface if you are having problems reading "
+"the text."
+msgstr ""
+
+msgid "Insert function"
+msgstr "Εισαγωγή συνάρτησης"
+
+msgid "Function type:"
+msgstr "Τύπος  συνάρτησης:"
+
+msgid "Select the function type to graph."
+msgstr "Επιλογή τύπου  συνάρτησης."
+
+msgid "Standard function   y=f(x)"
+msgstr "Τυπική συνάρτηση  y=f(x)"
+
+msgid "Parametric function x(t), y(t)"
+msgstr "Παραμετρική συνάρτηση x(t), y(t)"
+
+msgid "Polar function         r=f(t)"
+msgstr "Πολική συνάρτηση     r=f(t)"
+
+msgid "Function equation"
+msgstr "Εξίσωση συνάρτησης"
+
+msgid "Steps:"
+msgstr "Βήματα:"
+
+msgid "Number of calculation steps used to draw the graph."
+msgstr "Αριθμός υπολογιστικών βημάτων για τη γραφική παράσταση."
+
+msgid "Draw type:"
+msgstr "Τύπος σχεδίασης:"
+
+msgid ""
+"Choose Lines if you want the calculated points for the graph to be "
+"connected. Choose Dots if you only want to show a dot at each point."
+msgstr ""
+"Επιλέξατε Γραμμές αν θέλετε να συνδέονται τα σημεία. Επιλέξατε Κουκκίδες αν "
+"θέλετε να φαίνεται μια κουκκίδα για κάθε σημείο."
+
+msgid "Lines"
+msgstr "Γραμμές"
+
+msgid "Dots"
+msgstr "Κουκκίδες"
+
+msgid "Text label"
+msgstr "Κειμενο"
+
+msgid "Font name:"
+msgstr "Γραμματοσειρά:"
+
+msgid "Font size:"
+msgstr "Μέγεθος γραμμάτων:"
+
+msgid "Font color:"
+msgstr "Χρώμα γραμμάτων:"
+
+#, fuzzy
+msgid "Text size."
+msgstr "Μέγεθος κειμένου"
+
+msgid "Text string"
+msgstr "Πλαίσιο  κειμένου"
+
+msgid "Insert symbol"
+msgstr "Εισαγωγή συμβόλου"
+
+#, fuzzy
+msgid "Insert object"
+msgstr "Εισαγωγή αντικειμένου..."
+
+msgid "Bold (Ctrl-B)"
+msgstr "Έντονα (Ctrl-B)"
+
+msgid "Italic (Ctrl-I)"
+msgstr "Πλάγια (Ctrl-I)"
+
+msgid "Underline (Ctrl-U)"
+msgstr "Υπογραμμισμένα (Ctrl-U)"
+
+msgid "Strikethrough (Ctrl-S)"
+msgstr "Διαγραμμισμένα (Ctrl-S)"
+
+msgid "Superscript (Ctrl++)"
+msgstr "Εκθέτες (Ctrl++)"
+
+msgid "Subscript (Ctrl+=)"
+msgstr "Δείκτες (Ctrl+=)"
+
+msgid "Align left (Ctrl-L)"
+msgstr "Ευθυγράμμιση αριστερά (Ctrl-L)"
+
+msgid "Center (Ctrl-E)"
+msgstr "Κέντρο (Ctrl-E)"
+
+msgid "Align right (Ctrl-R)"
+msgstr "Ευθυγράμμιση δεξιά (Ctrl-R)"
+
+#, fuzzy
+msgid "Text font."
+msgstr "Γραμματοσειρά"
+
+#, fuzzy
+msgid "Text color."
+msgstr "Χρώμα κειμένου"
+
+#, fuzzy
+msgid "Select background color of the text label."
+msgstr "Επιλογή γραμματοσειράς τίτλου."
+
+msgid "Undo last action."
+msgstr "Αναίρεση τελευταίας ενέργειας."
+
+msgid "Redo last undone action."
+msgstr "Ακύρωση αναίρεσης."
+
+msgid "Cut selected text to the clipboard."
+msgstr "Αποκοπή επιλεγμένου κειμένου στο πρόχειρο."
+
+msgid "Paste the contents of the clipboard."
+msgstr "Επικόλληση  επιλεγμένου κειμένου από το πρόχειρο."
+
+msgid "Paste special..."
+msgstr "Ειδική επικόλληση..."
+
+msgid "Select which clipboard representation you want to paste."
+msgstr "Επιλογή εικόνας από το πρόχειρο που θέλετε να επικολλήσετε."
+
+msgid "Insert object..."
+msgstr "Εισαγωγή αντικειμένου..."
+
+msgid "Create a new OLE object."
+msgstr "Δημιουργία νέου OLE αντικειμένου."
+
+msgid "Edit object"
+msgstr "Επεξεργασία αντικειμένου"
+
+msgid "Edit selected OLE object."
+msgstr "Επεξεργασία επιλεγμένου OLE αντικειμένου."
+
+msgid "Insert f'(x)"
+msgstr "Εισαγωγή  f'(x)"
+
+msgid "Name:"
+msgstr "Όνομα:"
+
+msgid "Constant"
+msgstr "Σταθερά"
+
+msgid "Value"
+msgstr "Τιμή"
+
+#, fuzzy
+msgid "Select a function or tangent to evaluate."
+msgstr "Επιλογή συνάρτησης ή εφαπτομένης για υπολογισμό"
+
+msgid "Error"
+msgstr "Σφάλμα"
+
+msgid "Shade"
+msgstr "Γραμμοσκίαση"
+
+msgid "Functions"
+msgstr "Συναρτήσεις"
+
+msgid "Tangents"
+msgstr "Εφαπτομένες"
+
+msgid "Point series"
+msgstr "Σειρά σημείων"
+
+msgid "Shades"
+msgstr "Γραμμοσκιάσεις"
+
+msgid "Length"
+msgstr "Μήκος"
+
+msgid "Label"
+msgstr "Ετικέτα"
+
+msgid "%s-error"
+msgstr "%s-σφάλμα"
+
+msgid "Transparent"
+msgstr "Διαφανές"
+
+msgid "Axes"
+msgstr "Άξονες"
+
+msgid "No error occurred. You should not see this message."
+msgstr "Δεν έγινε λάθος.Μη λαμβάνεις υπόψη το μήνυμα."
+
+msgid "An error occurred while evaluating power function."
+msgstr "Έγινε λάθος στον υπολογισμό της δύναμης."
+
+msgid "Tangent to 90+p180 is undefined."
+msgstr "Εφαπτομένη στις 90+p180 μοίρες δεν ορίζεται."
+
+msgid "Fact can only be calculated for positive integers."
+msgstr "Το παραγοντικό υπολογίζεται μόνο για θετικούς ακέραιους."
+
+msgid "Cannot take logarithm to number equal or less than zero."
+msgstr "Δεν υπάρχει λογάριθμος αριθμού ίσου ή μικρότερου του μηδέν."
+
+msgid "sqrt is undefined for negative numbers."
+msgstr "Δεν ορίζεται για αρνητικούς αριθμους."
+
+msgid "A part of the evaluation gave a number with an imaginary part."
+msgstr "Ο υπολογισμός έδωσε μιγαδικό αριθμό."
+
+msgid "Division by zero."
+msgstr "Διαίρεση με μηδέν."
+
+msgid "Inverse trigonometric function out of range [-1;1]"
+msgstr "Αντίστροφη τριγωνομετρική συνάρτηση εκτος περιοχής [-1;1] "
+
+msgid "The function is not defined for this value."
+msgstr "Η συνάρτηση δεν ορίζεται για αυτή τη τιμή."
+
+msgid "atanh evaluated at undefined value."
+msgstr "Η atanh υπολογίζεται για απροσδιόριστη τιμή."
+
+msgid "acosh evaluated at undefined value."
+msgstr "Το acosh υπολογίζεται για απροσδιόριστη τιμή."
+
+msgid "arg(0) is undefined."
+msgstr "Το arg(0) δεν ορίζεται."
+
+msgid "Evaluation failed."
+msgstr "Ο υπολογισμός απέτυχε."
+
+msgid "Argument produced a function result with total loss of precision."
+msgstr "Ένα στοιχείο της συνάρησης προκάλεσε ολική απώλεια της ακρίβειας."
+
+msgid "Symbol '%s' not found."
+msgstr "Το σύμβολο  '%s' δεν βρέθηκε."
+
+msgid "Too many recursive calls."
+msgstr "Πάρα πολλές επαναλαμβανόμενες ενέργειες."
+
+msgid "Unexpected operator. Operator '%s' cannot be placed here."
+msgstr "Απροσδόκητος τελεστής. Ο τελεστής '%s' σε λάθος θέση."
+
+msgid "End of parenthesis missing."
+msgstr "Η παρένθεση δεν έκλεισε."
+
+msgid "Invalid number of arguments supplied for function '%s'"
+msgstr "Λάθος αριθμός παραμέτρων στη συνάρτηση '%s'"
+
+#, fuzzy
+msgid "Comparison operator misplaced."
+msgstr "Το σύμβολο σύγκρισης σε λαθος θέση."
+
+msgid "Invalid number found. Use the format: -5.475E-8"
+msgstr "Άκυρος αριθμός. Χρησιμοποιείστε τη μορφή: -5.475E-8"
+
+msgid "String is empty. You need to enter a function."
+msgstr "Το πλαίσιο είναι άδειο.Βάλτε μια συνάρτηση."
+
+#, fuzzy
+msgid "Comma is not allowed here. Use dot as decimal separator."
+msgstr "Δεν επιτρέπεται κόμμα, Χρησιμοποιείστε τελεία για τους δεκαδικούς."
+
+msgid "Unexpected end of parenthesis."
+msgstr "Απροσδόκητο κλείσιμο της παρένθεσης."
+
+msgid "Number, constant or function expected."
+msgstr "Αναμένεται αριθμός, σταθερά ή συνάρτηση."
+
+msgid "Parameter after constant or variable not allowed."
+msgstr "Δεν επιτρέπεται παράμετρος μετα από σταθερά ή μεταβλητή."
+
+msgid "Expression expected."
+msgstr "Αναμένεται παράσταση."
+
+msgid "Unknown variable, function or constant: \"%s\""
+msgstr "Άγνωστη μεταβλητή, συνάρτηση ή σταθερά: \"%s\""
+
+msgid "Unknown character: \"%s\""
+msgstr "Άγνωστος χαρακτήρας: \"%s\""
+
+msgid "The end of the expression was unexpected."
+msgstr "Απροσδόκητο τέλος της έκφρασης."
+
+#, fuzzy
+msgid "Error parsing function text."
+msgstr "Λάθος στο κειμενο της συνάρτησης"
+
+msgid "A calculation resulted in an overflow."
+msgstr "Ο υπολογισμός προκάλεσε υπερφόρτωση."
+
+msgid "An invalid value was used in the calculation."
+msgstr "Άκυρη τιμή χρησιμοποιήθηκε στον υπολογισμό."
+
+msgid "Not enough points for calculation."
+msgstr "Δεν είναι αρκετά τα σημεία για τον υπολογισμό."
+
+msgid "Illegal name \"%s\" for user defined function or constant."
+msgstr "Ακατάλληλο όνομα \"%s\" για τη συνάρτηση ή την σταθερά."
+
+msgid "Cannot differentiate recursive function."
+msgstr "Δεν μπορεί να διαφοριστεί επαναλαμβανόμενη συνάρτηση."
+
+msgid "Internal error."
+msgstr "Εσωτερικό λάθος."
+
+msgid "Function cannot be differentiated."
+msgstr "Δεν μπορεί να διαφοριστεί η συνάρτηση."
+
+msgid "Not further specified error occurred under calculation."
+msgstr "Μη περαιτέρω προσδιορισμός του σφάλματος που έγινε στον υπολογισμό."
+
+msgid "No solution found. Try another guess or another model."
+msgstr "Δεν βρέθηκε λύση.Δοκιμάστε κάποια άλλη υπόθεση ή μοντέλο."
+
+msgid ""
+"Internal error. Please notify the programmer with as much information as "
+"possible."
+msgstr ""
+"Λειτουργικό λάθος.Ενημερώστε τον προγραματιστή με όσο το δυνατό περισσότερες "
+"λεπτομέρειες."
+
+msgid "You need to enter a name for the function/constant."
+msgstr "Πρέπει να δώσετε ένα όνομα στη συνάρτηση/σταθερά."
+
+msgid ""
+"Invalid function/constant name '%s'.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
+"In addition you are not allowed to redefine built-in names."
+msgstr ""
+"Άκυρο όνομα συνάρτησης/σταθεράς '%s'.\n"
+"Το όνομα πρέπει να περιέχει μόνο γράματα και δεκαδικά ψηφία, και πάντα "
+"πρέπει να αρχίζει με γράμμα.\n"
+"Επιπροσθέτως δεν επιτρέπεται να αλλάζουν προκαθορισμένα ονόματα."
+
+msgid "You need to enter a name for the argument."
+msgstr "Πρέπει να δώσετε ένα όνομα στο σχόλιο."
+
+msgid ""
+"Invalid argument name '%s'.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
+" In addition you are not allowed to use built-in names as argument names."
+msgstr ""
+"Άκυρο όνομα σχολίου.'%s'.\n"
+"Το όνομα πρέπει να περιέχει μόνο γράματα και δεκαδικά ψηφία, και πάντα "
+"πρέπει να αρχίζει με γράμμα.\n"
+"Επιπροσθέτως δεν επιτρέπεται να αλλάζουν προκαθορισμένα ονόματα."
+
+msgid "The end parenthesis is missing."
+msgstr "Η παρένθεση δεν έκλεισε."
+
+msgid "Character found after the parenthesis."
+msgstr "Βρέθηκε γράμμα μετά την παρένθεση."
+
+msgid "Symbol \"%s\" defined more than once."
+msgstr "Το σύμβολο \"%s\" καθορίστηκε πάνω από μια φορά."
+
+msgid "Invalid equation or inequality."
+msgstr "Άκυρη εξίσωση ή ανίσωση."
+
+msgid "Updating..."
+msgstr "Ενημερώνεται..."
+
+msgid "Save changes?"
+msgstr "Να αποθηκευθούν οι αλλαγές;"
+
+msgid "Save changes in %s"
+msgstr "Να αποθηκευθούν οι αλλαγές στο %s ;"
+
+msgid "You have reached the maximum range of zoom."
+msgstr "Φθάσατε στη μέγιστη μεγέθυνση."
+
+msgid "You have reached the minimum range of zoom."
+msgstr "Φθάσατε στην ελάχιστη σμίκρυνση."
+
+msgid "There is no printer installed on the system."
+msgstr "Δεν υπάρχει εγκατεστημένος εκτυπωτής."
+
+msgid "Error in value"
+msgstr "Σφάλμα στην τιμή"
+
+msgid "'%s' has to be an integer value greater or equal to 0."
+msgstr "'%s' πρέπει να είναι ακέραιος μεγαλύτερος ή ίσος με το μηδέν."
+
+msgid "'%s' must be greater than zero."
+msgstr "'%s' πρέπει να είναι μεγαλύτερος από το μηδέν."
+
+msgid "'%s' must be an integer greater than zero."
+msgstr "'%s' πρέπει να είναι ακέραιος μεγαλύτερος από το μηδέν."
+
+msgid "Trying to break zoom limit."
+msgstr "Υπερβαίνονται τα όρια μεγέθυνσης."
+
+msgid "'%s' must be greater than '%s'"
+msgstr "'%s' πρέπει να είναι μεγαλύτερος απο '%s'"
+
+msgid "The maximum value must be greater than the minimum value."
+msgstr "Η μέγιστη τιμή πρέπει να είναι μεγαλύτερη από την ελάχιστη."
+
+msgid "You need to enter a value."
+msgstr "Πρέπει να εισάγετε τιμή."
+
+msgid ""
+"This file was created with Graph %s.\n"
+"Only files from version %s and higher can be opened."
+msgstr ""
+"Αυτό το αρχείο δημιουργήθηκε με το Graph %s.\n"
+"Μόνο αρχεία με έκδοση %s και πάνω μπορεί να ανοιχτούν."
+
+msgid "'%s' is not a valid number."
+msgstr "'%s' δεν είναι έγκυρος ο αριθμός."
+
+msgid "Open the file %s."
+msgstr "Άνοιγμα φακέλλου  %s."
+
+msgid "'%s' must be a positive number."
+msgstr "'%s' πρέπει να είναι θετικός αριθμός."
+
+msgid "File not found: %s"
+msgstr "Ο φάκελλος δεν βρέθηκε: %s"
+
+msgid ""
+"Error reading file: %s\n"
+"File is not a correct graph file."
+msgstr ""
+"Σφάλμα ανάγνωσης αρχείου: %s\n"
+"Το αρχείο δεν είναι σωστό graph αρχείο"
+
+msgid "Unknown error while reading file: %s"
+msgstr "Άγνωστο σφάλμα κατα την ανάγνωση του αρχείου: %s"
+
+msgid "Graph files [*.grf]|*.grf"
+msgstr "Graph αρχεία [*.grf]|*.grf"
+
+msgid ""
+"Cannot write to file: %s\n"
+"Access denied. Check that the file is not in use or write protected."
+msgstr ""
+"Αδύνατη η εγγραφή στο αρχείο: %s\n"
+"Η πρόσβαση είναι αδύνατη. Ελέγξατε αν ο φάκελος δεν χρησιμοποιείται ή "
+"προστατεύεται."
+
+msgid "The font \"%s\" doesn't exist. Standard font is used instead."
+msgstr ""
+"Η γραμματοσειρά  \"%s\"  δεν υπάρχει.Χρησιμοποιείστε έγκυρη γραμματοσειρά."
+
+msgid "Conversion error"
+msgstr "Μετατροπή λάθος"
+
+msgid ""
+"Unknown error code.\n"
+"Could not find error message for this error."
+msgstr ""
+"Άγνωστο σφάλμα.\n"
+"Δεν υπάρχει μήνυμα για αυτό το σφάλμα."
+
+msgid "Selection error"
+msgstr "Επιλογή λάθος"
+
+msgid "File error"
+msgstr "Αρχείο λάθος"
+
+msgid "Write access failed"
+msgstr "Πρόσβαση εγγραφής απέτυχε"
+
+msgid "OLE error"
+msgstr "OLE λάθος"
+
+msgid "Error reading object"
+msgstr "Αποτυχία ανάγνωσης"
+
+msgid "Not a valid Graph object."
+msgstr "Όχι έγκυρο Graph αντικείμενο."
+
+msgid "Object error"
+msgstr "Αντικείμενο λάθος"
+
+#, fuzzy
+msgid "Windows does not have enough resources to save an image that large."
+msgstr "Τα Windows δεν έχουν πόρους για αποθήκευση τόσο μεγάλης εικόνας."
+
+#, fuzzy
+msgid "'%1%' must be between %2% and %3%."
+msgstr "Τα 'πρόσφατα αρχεία' πρέπει να είναι μεταξύ 0 και 9."
+
+msgid "Confirm delete"
+msgstr "Επιβεβαιώστε διαγραφή"
+
+msgid "This error should not occur. Please report this to the programmer."
+msgstr "Αυτό το σφάλμα δεν έπρεπε να συμβεί.Να αναφερθεί στον προγραμματιστή."
+
+#, fuzzy
+msgid "Are you sure you want to delete %s?"
+msgstr "Είστε βεβαιοι ότι θέλετε να διαγράψετε το %s"
+
+msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
+msgstr "Αρχεία Graph f [*.grf]|*.grf|όλα τα αρχεία [*.*]|*.*"
+
+msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+msgstr "Κείμενο [*.txt; *.csv]|*.txt;*.csv|όλα τα αρχεία [*.*]|*.*"
+
+#, fuzzy
+msgid "Are you sure you want to delete the model: %s?"
+msgstr "Είστε βέβαιοι πως θελετε να αντικαταστήσετε το πρότυπο: %s"
+
+msgid "Maximum number on x-axis must be greater than the minimum value."
+msgstr ""
+"Το μέγιστο στον άξονα των χ πρέπει να είναι μεγαλύτερο από το ελάχιστο."
+
+msgid "Maximum number on y-axis must be greater than the minimum value."
+msgstr ""
+"Το μέγιστο στον άξονα των y πρέπει να είναι μεγαλύτερο από το ελάχιστο."
+
+msgid "Server application not found."
+msgstr "Δεν βρέθηκε εφαρμογή εξυπηρέτη."
+
+msgid "Maximum number for t must be greater than the minimum value."
+msgstr "Το μέγιστο του t πρέπει να είναι μεγαλύτερο από το ελάχιστο."
+
+msgid "The step value for t must be a number greater than 0."
+msgstr "Το βήμα στις τιμές του t πρέπει να είναι μεγαλύτερος από το 0."
+
+msgid ""
+"The minimum value for the x-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+"Η ελάχιστη τιμή στον άξονα των χ πρέπει να είναι μεγαλύτερη από το 0, όταν η "
+"κλίμακα είναι λογαριθμική."
+
+msgid ""
+"The cross point of the y-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+"Η αρχή στον άξονα των y πρέπει να είναι μεγαλύτερη από το 0, όταν η κλίμακα "
+"στον άξονα των χ είναι λογαριθμική."
+
+msgid ""
+"The minimum value for the y-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"Η ελάχιστη τιμή στον άξονα των y πρέπει να είναι μεγαλύτερη από το 0, όταν η "
+"κλίμακα είναι λογαριθμική."
+
+msgid ""
+"The cross point of the x-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"Η αρχή στον άξονα των χ πρέπει να είναι μεγαλύτερη από το 0, όταν η κλίμακα "
+"στον άξονα των y είναι λογαριθμική."
+
+msgid "'Recent files' must be between 0 and 9."
+msgstr "Τα 'πρόσφατα αρχεία' πρέπει να είναι μεταξύ 0 και 9."
+
+msgid "The end of interval must be greater than the start of interval."
+msgstr ""
+"Το τέλος των διαστημάτων πρέπει να είναι μεγαλύτερο από την αρχή των "
+"διαστημάτων."
+
+msgid "Error in interval."
+msgstr "Λάθος στα διαστήματα."
+
+msgid "The width must be an integer greater than 0."
+msgstr "Το πλάτος πρέπει να είναι ακέραιος μεγαλύτερος από το 0."
+
+msgid "Error in width"
+msgstr "Λάθος στο πλάτος."
+
+msgid ""
+"The end of interval must be greater than the start of interval and %s must "
+"be greater than 0."
+msgstr ""
+"Το τέλος των διαστημάτων πρέπει να είναι μεγαλύτερο από την αρχή των "
+"διαστημάτων και %s πρέπει να είναι μεγαλύτερος από το 0."
+
+msgid "The maximum length of text has been reached."
+msgstr "Φτάσατε στο μέγιστο μήκος κειμένου."
+
+msgid "The derivative of the function is not defined at %s=%s"
+msgstr "Η παράγωγος της συνάρτησης δεν ορίζεται στο %s=%s"
+
+msgid "Coordinate not defined."
+msgstr "Συντεταγμένες δεν ορίσθηκαν."
+
+msgid "Checking for newer version..."
+msgstr "Έλεγχος για νέα έκδοση..."
+
+msgid "Abort printing?"
+msgstr "Διακοπή εκτύπωσης;"
+
+msgid "Calculate area"
+msgstr "Υπολογισμός εμβαδού"
+
+msgid "Calculate length of path"
+msgstr "Υπολογισμός μήκους καμπύλης"
+
+msgid "Edit function"
+msgstr "Επεξεργασία συνάρτησης"
+
+msgid "Edit tangent/normal"
+msgstr "Επεξεργασία εφαπτομένης/κάθετης"
+
+msgid "Error processing file '%s' at line %s."
+msgstr "Λάθος πρόσβασης αρχείου  '%s' γραμμή %s."
+
+msgid "Dialog error: %sh"
+msgstr "Σφάλμα διαλόγου: %sh"
+
+msgid "Unknown Graph data found while pasting clipboard data."
+msgstr "Άγνωστη εφαρμογή Graph κατα την επικόλληση από το πρόχειρο."
+
+msgid "'%s' has to be an integer value between 0 and 1000."
+msgstr "'%s' πρέπει να είναι ακέραιος μεταξύ 0 και 1000."
+
+msgid "Printing error"
+msgstr "Σφάλμα κατά την εκτύπωση"
+
+#, fuzzy
+msgid "An unknown error occurred while printing."
+msgstr "Άγνωστο σφάλμα κατά την εκτύπωση."
+
+msgid "Error while adding points"
+msgstr "Σφάλμα κατά την προσθήκη σημείων"
+
+msgid "Each point needs both an x- and a y-coordinate."
+msgstr "Κάθε σημείο θέλει χ- και y- συντεταγμένες."
+
+msgid "\"%s\" is not a valid number."
+msgstr "\"%s\" δεν είναι έγκυρος αριθμός."
+
+msgid ""
+"You didn't add any points. You need to specify some x- and y-coordinates in "
+"the grid."
+msgstr ""
+"Δεν τοποθετήθηκε κανένα σημείο. Πρέπει προσδιορισθούν μερικές  χ- και y- "
+"συντεταγμένες στον πίνακα."
+
+msgid "Edit point series"
+msgstr "Επεξεργασία σημειοσειράς"
+
+msgid "Edit shade"
+msgstr "Επεξεργασία γραμμοσκίασης"
+
+msgid "You need to select a function."
+msgstr "Πρέπει να επιλεγεί συνάρτηση."
+
+msgid "New version of Graph available"
+msgstr "Υπάρχει νέα έκδοση του Graph"
+
+msgid ""
+"Graph %s is now available for download from www.padowan.dk\n"
+"with these new features since the previous version:\n"
+"\n"
+"%s\n"
+"\n"
+"Would you like to visit the web site?"
+msgstr ""
+"Graph %s διατίθεται για μεταφόρτωση από www.padowan.dk\n"
+"με αυτές τις νέες βελτιώσεις από την προηγούμενη έκδοση :\n"
+"\n"
+"%s\n"
+"\n"
+"Θέλετε να επισκευθείτε την τοποθεσία;"
+
+msgid "No new version"
+msgstr "Δεν υπάρχει νέα έκδοση "
+
+msgid "You are already using the most recent version of the program."
+msgstr "Ήδη χρησιμοποιείτε τη πιο πρόσφατη έκδοση του προγράμματος."
+
+msgid ""
+"Cannot connect to server www.padowan.dk.\n"
+"Either the server is down or you do not have a connection to the Internet."
+msgstr ""
+"Δεν είναι δυνατή η σύνδεση με την τοποθεσία  www.padowan.dk.\n"
+"Ή ο διακομιστής δεν ανταποκρίνεται ή δεν έχετε σύνδεση Internet."
+
+msgid "Socket error %s"
+msgstr "Socket error %s"
+
+msgid "The server responded with the message '%s'"
+msgstr "Ο διακομιστής απάντησε με το μήνυμα  '%s'"
+
+msgid "Protocol reply error %s"
+msgstr "Λάθος πρωτοκόλλου %s"
+
+msgid ""
+"The file cannot be opened by this version of the program.\n"
+"You need at least Graph %s to open this file."
+msgstr ""
+"Το αρχείο δεν μπορεί να ανοίξει με αυτή την έκδοση του προγράμματος.\n"
+"Χρειάζεται τουλάχιστον Graph %s για να ανοίξει."
+
+#, fuzzy
+msgid ""
+"This file was saved by an outdated version of Graph,\n"
+"and it cannot be opened by the current version."
+msgstr ""
+"Το αρχείο αποθηκεύθηκε με παλαιότερη έκδοση Graph,\n"
+"και δεν μπορεί να ανοίξει με την τρέχουσα."
+
+msgid ""
+"\n"
+"\n"
+"If you don't want to be asked again, this feature may be disabled from the "
+"Edit|Options dialog."
+msgstr ""
+"\n"
+"\n"
+"Αν δεν θέλετε να ερωτηθήτε πάλι, απενεργοποιείστε τη δυνατότητα από "
+"Επεξεργασία|Προτιμήσεις."
+
+msgid "Edit relation"
+msgstr "Επεξεργασία σχέσης"
+
+#, fuzzy
+msgid "Commands"
+msgstr "Σχόλιο:"
+
+#, fuzzy
+msgid "(All Commands)"
+msgstr "(Όλες οι ενέργειες)"
+
+msgid ""
+"To add a command to a toolbar simply select a category and drag the command "
+"out of this dialog box to a toolbar."
+msgstr ""
+
+#, fuzzy
+msgid "Edit f'(x)"
+msgstr "Εισαγωγή  f'(x)"
+
+#, fuzzy
+msgid "Edit trendline"
+msgstr "Επεξεργασία σχέσης"
+
+msgid ""
+"This Tip Of The day can give you a lot of information about the program that "
+"most users don't know."
+msgstr ""
+"Αυτή η Συμβουλή της ημέρας δίνει πολλές πληροφορίες για το πρόγραμμα που "
+"πολλοί χρήστες αγνοούν."
+
+msgid ""
+"You can send suggestions for future versions, bug reports and comments to "
+"graph@padowan.dk."
+msgstr ""
+"Μπορείτε να στέλνετε προτάσεις για μελλοντικές εκδόσεις, αναφορές αστοχιών "
+"και σχόλια στο graph@padowan.dk."
+
+#, fuzzy
+msgid ""
+"You can customize the toolbar by right clicking on it and select 'Customize "
+"toolbar'."
+msgstr ""
+"Μπορείτε να προσαρμόσετε τη γραμμή εργαλείων με δεξί κλικ επάνω της και "
+"επιλέγοντας 'προσαρμγή γραμμής εργαλείων'"
+
+msgid ""
+"Instead of deleting a function you can make it invisible by right clicking "
+"on it in the function list and removing the check at the 'Visible' menu item."
+msgstr ""
+"Αντί να διαγράψετε μια συνάρτηση μπορείτε να την κάνετε μη ορατή με δεξί "
+"κλικ στη λίστα των συναρτήσεων και αφαιρώντας το τσεκάρισμα 'ορατό' στο "
+"αναδυόμενο μενού."
+
+msgid "You can paste images into a text label."
+msgstr "Μπορείτε να επικολλήσετε εικόνες σε μια ετικέτα κειμένου."
+
+msgid ""
+"Text labels can contain any kind of OLE objects, for example Microsoft "
+"Equation. When editing a label right click in the editing area and select "
+"'Insert object'."
+msgstr ""
+"Ετικέτες κειμένου μπορεί να περιέχουν καθε είδους OLE αντικείμενα, π.χ.  "
+"Microsoft Equation. Κατα την επεξεργασία ετικέτας κανετε δεξί κλικ στη "
+"επιφάνια της και επιλέξατε 'εισαγωγή αντικειμένου'."
+
+msgid ""
+"You can export points from a point series to a file that can be read by "
+"other programs, for example Microsoft Excel. When editing the point series "
+"select the points, right click and choose 'Export to file'."
+msgstr ""
+"Μπορείτε να εξάγετε σειμεία από μια σημειοσειρά σε αρχείο που μπορεί να "
+"διαβαστεί από άλλα προγράμματα π.χ. Microsoft Excel .Κατα την επεξεργασία "
+"της σημειοσειράς επιλέξατε τα σημεία κάνετε δεξί κλικ και επιλέξατε 'Εξαγωγή "
+"σε αρχείο'."
+
+#, fuzzy
+msgid ""
+"A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)"
+"=t or as the relation x=5."
+msgstr ""
+"Μια κατακόρυφη γραμμή στο χ=5 μπορεί να σχεδιαστεί σαν παραμετρική "
+"συνάρτηση  x(t)=5, y(t)=t ή σαν σχέση x=5"
+
+msgid ""
+"You can use Zoom|Square to make the axes look equally scaled. This is "
+"especially useful when drawing circles and similar functions."
+msgstr ""
+"Μπορείτε να χρησιμοποιτίσετε Μεγέθυνση|Τετραγωνισμός για να έχουν οι άξονες "
+"την ίδια κλίμακα. Αυτό είναι ιδιαίτερα χρήσιμο στη σχεδίαση κύκλων και "
+"παρεμφερών συναρτήσεων."
+
+msgid "You can find a list of all available functions in the help."
+msgstr ""
+"Μπορείτε να βρείτε κατάλογο όλων των διαθέσιμων συναρτήσεων στη βοήθεια."
+
+msgid ""
+"You can combine two functions to one using 'if'. For example the function f"
+"(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+msgstr ""
+"Μπορείτε να συνδυάσετε δύο συναρτήσεις σε μία χρησιμοποιώντας 'if'. Για "
+"παράδειγμα η συνάρηση f(x)=x for x<1 και f(x)=x^2 για x>=1 μπορεί να γραφεί "
+"σαν f(x)=if(x<1, x, x^2)."
+
+msgid ""
+"You can import the contents of another Graph file into the current "
+"coordinate system using 'File|Import|Graph file'."
+msgstr ""
+"Μπορείτε να εισάγετε τα περιεχόμενα ενός άλλου αρχείου Graph στο τρέχον "
+"σύστημα συντεταγμένων χρησιμοποιώντας 'Αρχείο|Εισαγωγή|αρχείο Graph'."
+
+msgid ""
+"If you check 'Save as default' in the Axes dialog the current settings will "
+"be used as default when creating new files."
+msgstr ""
+"Μπορείτε να τσεκάρετε 'Αποθήκευση σαν προκαθορισμένο' στο διάλογο τρεχουσών "
+"ρυθμίσεων αξόνων για να χρησιμοποιείται σαν  προκαθορισμένο κατά τη "
+"δημιουργία νέων αρχείων."
+
+msgid ""
+"While you hold down the Ctrl key, you can use the arrow keys to move the "
+"system."
+msgstr ""
+"Κρατώντας πατημένο το  Ctrl, μπορείτε να χρησιμοποιείσετε τα βελάκια για να "
+"μετακινήσετε το σύστημα."
+
+msgid ""
+"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
+"and out."
+msgstr ""
+"Κρατώντας πατημένο το  Ctrl, χρησιμοποιείστε τα + και - πλήκτρα για "
+"μεγέθυνση ή σμίκρυνση."
+
+msgid ""
+"You can use the scroll button on your mouse to zoom in and out at the "
+"position of the mouse cursor."
+msgstr ""
+"Μπορείτε να χρησιμοποιείτε τη ρόδα του ποντικιού για μεγέθυνση ή σμίκρυνση "
+"της περιοχής που βρίσκειαι ο δρομέας."
+
+msgid ""
+"If you don't want an item shown in the legend, you can right click on the "
+"item in the function list and deselect 'Show in legend'."
+msgstr ""
+"Αν δεν θέλετε κάτι να εμφανίζεται στη λεζάντα, κάνετε κλικ επάνω του στη "
+"λίστα των συναρτήσεων και ξεμαρκάρετε 'Να εμφανίζεται υπότιτλος'."
+
+msgid ""
+"If you want the axes shown to the left and bottom of the image, you can "
+"choose Axes style as Boxed in the Settings tab of the Axes dialog."
+msgstr ""
+"Αν θέλετε οι άξονες να εμφανίζονται κάτω αριστερά, επιλέξατε στο διάλογο "
+"Στιλ αξόνων Άκρη."
+
+#, fuzzy
+msgid ""
+"Graph can save the shown coordinate system in five different image formats: "
+"bmp, emf, png, jpg and pdf."
+msgstr ""
+"Το Graph μπορεί να αποθηκεύει το τρέχον σύστημα αξόνων σε 4 διαφορετικά "
+"πρότυπα εικόνας: bmp, emf, png και jpg"
+
+msgid ""
+"You can use 'Edit|Copy image' to copy the coordinate system to the clipboard "
+"and paste it into another program."
+msgstr ""
+"Μπορείτε να χρησιμοποιείσετε 'Επεξεργασία|Αντιγραφή εικόνας' για να "
+"αντιγράψετε το σύστημα συντεταγμένων στο πρόχειρο και να το αντιγράψετε σε "
+"άλλο πρόγραμμα."
+
+msgid ""
+"You can open a saved grf-file in a new instance of the program by double "
+"clicking on it in Explorer."
+msgstr ""
+"Μπορείτε να ανοίξετε ένα αποθηκευμένο grf-αρχείο σε κάποιο σημείο του "
+"προγράμματος διπλοπατώντας το στον Εξερευνητή."
+
+msgid ""
+"You can drag a grf-file from explorer into an open instance of Graph to open "
+"the file."
+msgstr ""
+"Μπορείτε να σύρετε ένα grf-αρχείο από τον Εξερευνητή σε κάποιο στάδιο του "
+"Graph για να το ανοίξετε."
+
+msgid ""
+"Graph will remember the size and placement of the main window between "
+"executions. This can be disabled from the Options dialog."
+msgstr ""
+"Το Graph απομνημονεύει το μέγεθος και τη θέση του παράθυρου σε κάθε στάδιο "
+"της εκτέλεσης. Απενεργοποιείται απο τις Ρυθμίσεις."
+
+msgid ""
+"Calc|Table can be used to create a table with evaluation values for a "
+"function."
+msgstr ""
+"Υπολογισμός|Πίνακας μπορεί να χρησιμοποιειθεί για να δημιουργηθεί πίνακας "
+"υπολογισμού των τιμών της συνάρτησης."
+
+msgid ""
+"A part or the whole evaluation table can be exported to a file by right "
+"clicking and selecting 'Export to file'. It can afterwards be opened in "
+"other programs like Microsoft Excel."
+msgstr ""
+"Ενα μέρος του πίνακα υπολογισμού μπορεί να εξαχθεί σε αρχείο με δεξί κλικ "
+"και επιλογή 'Εξαγωγή σε αρχείο'. Αυτό μετά μπορεί να ανοιχθεί με άλλο "
+"πρόγραμμα όπως Microsoft Excel."
+
+msgid ""
+"Data from the evaluation table can be copied to another program like "
+"Microsoft excel using the clipboard."
+msgstr ""
+"Δεδομένα από τον πίνακα υπολογισμού μπορεί να αντιγραφούν σε  άλλο "
+"πρόγραμμα  όπως το Microsoft Excel χρησιμοποιώντας το πρόχειρο."
+
+msgid ""
+"The data points in a point series can be copied to and from other programs "
+"like Microsoft Excel through the clipboard."
+msgstr ""
+"Δεδομένα από πίνακα σημειοσειράς μπορεί να αντιγραφούν από και σε άλλο "
+"πρόγραμμα  όπως το Microsoft Excel χρησιμοποιώντας το πρόχειρο."
+
+msgid ""
+"Functions can be copied from one instance of the program to another through "
+"the clipboard using Edit|Copy."
+msgstr ""
+"Συναρτήσεις  μπορεί να αντιγραφούν από ένα στάδιο του προγράμματος σε άλλο "
+"μέσω προχείρου χρησιμοποιώντας Επεξεργασία|Αντιγραφή."
+
+msgid "You can always undo the last thing you did using Edit|Undo."
+msgstr ""
+"Πάντα μπορείτε να αναιρέσετε την τελευταία ενέργια χρησιμοποιώντας "
+"Επεξεργασία|Αναίρεση."
+
+msgid ""
+"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
+"have undone."
+msgstr ""
+"Αν χρησιμοποιείσατε Επεξεργασία|Αναίρεση κατά λάθος χρησιμοποιείστε "
+"Επεξεργασία|Επανάληψη για να ακυρώσετε την Αναίρεση."
+
+msgid "In the Axes dialog you can add a title to the coordinate system."
+msgstr ""
+"Στο διάλογο Άξονες μπορείτε να προσθέσετε ένα τίτλο για το σύστημα "
+"συντεταγμένων."
+
+msgid ""
+"You can import point series from files saved by other programs, like "
+"Microsoft Excel."
+msgstr ""
+"Μπορείτε να εισάγετε σημειοσειρές από αποθηκευμένα αρχεία σε άλλα "
+"προγράμματα, όπως  Microsoft Excel."
+
+msgid ""
+"When inserting a point series you can copy data from programs like Microsoft "
+"Excel, and paste the data into the grid in Graph."
+msgstr ""
+"Κατά την εισαγωγή σημειοσειράς δεδομένα από άλλο πρόγραμμα όπως το Microsoft "
+"Excel  μπορεί να αντιγραφούν και να επικολληθούν στον πίνακα του Graph."
+
+msgid ""
+"You can use 'Zoom|All points' to change the coordinate system so all point "
+"series are visible."
+msgstr ""
+"Μπορείτε να χρησιμοποιείσετε 'Μεγέθυνση|Όλα τα σημεία' για να αλλάξετε το "
+"σύστημα συντεταγμένων έτσι ώστε όλα τα σημεία να είναι ορατά."
+
+msgid ""
+"You can use Zoom|Fit to change the coordinate system to show the selected "
+"function or point series."
+msgstr ""
+"Μπορείτε να χρησιμοποιείσετε Μεγέθυνση|Προσαρμογή για να αλλάξετε το σύστημα "
+"συντεταγμένων έτσι ώστε όλες οι συναρτήσεις ή τα σημεία να είναι ορατά."
+
+msgid ""
+"When you hold down the Shift key you can drag the coordinate system around "
+"with the mouse."
+msgstr ""
+"Κρατώντας πατημένο το Shift, μπορείτε να χρησιμοποιείσετε το ποντίκι για να "
+"μετακινήσετε το σύστημα."
+
+msgid ""
+"You can use Calc|Evaluate to find intersections between functions, crossings "
+"with the axes and extremum points."
+msgstr ""
+"Μπορείτε να χρησιμοποιείσετε Υπολογισμός|Υπολογισμός για την εύρεση σημείων "
+"τομής συναρτήσεων μεταξύ τους, με τους άξονες και ακρότατα."
+
+msgid ""
+"When a point series is selected you can add points to it by clicking on the "
+"image while you hold down the Ctrl key."
+msgstr ""
+"Όταν επιλεγεί σειρά σημείων μπορείτε να προσθέσετε σημεία κάνοντας κλικ στην "
+"εικόνα ενώ κρατάτε πατημένο το  Ctrl."
+
+msgid ""
+"You can use a relation to plot any inequality, for example sin(x^2) < cos"
+"(y^2)"
+msgstr ""
+"Μπορείτε να χρησιμοποιείσετε μια σχέση για να παραστήσετε ανίσωση, π.χ. sin"
+"(x^2) < cos(y^2)"
+
+msgid ""
+"You can use a relation to plot any equation, for example x*sin x = y*cos y"
+msgstr ""
+"Μπορείτε να χρησιμοποιείσετε μια σχέση για να παραστήσετε εξίσωση, π.χ.  "
+"x*sin x = y*cos y"
+
+msgid ""
+"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
+"same order they appear in the function list to the left."
+msgstr ""
+"Στοιχεία (συναρτήσεις, γραμμοσκιάσεις, ετικέτες, σχέσεις, κλπ.) σχεδιάζονται "
+"με τη σειρά που εμφανίζονται στη λίστα των συναρτήσεων αριστερά."
+
+msgid ""
+"You can move the selected element in the function list either by dragging it "
+"with the mouse or with the arrow up/down keys while ALT is held down."
+msgstr ""
+"Μπορείτε να μετακινήσετε επιλεγμένα στοιχεία στη λίστα των συναρτήσεων είτε "
+"σύροντας με το ποντίκι είτε με τα βελάκια πανω/κάτω με πατημένο το ALT."
+
+#, fuzzy
+msgid ""
+"You can show functions and other elements behind the axes by moving the "
+"element above the axes in the function list to the left. To move shadings "
+"and tangents you will have to move the functions they are attached to."
+msgstr ""
+"Μπορείτε να εμφανίσετε γραμμοσκιάσεις και άλλα στοιχεία πίσω από τους άξονες "
+"μετακινόντας τα επάνω στους άξονες στη λίστα αριστερά."
+
+msgid ""
+"Custom text labels may be attached to the axes by right clicking on the "
+"label and selecting a placement from the context menu."
+msgstr ""
+"Ετικέτες προσαρμοσμένου κειμένου μπορεί να προσαρτηθούν στους άξονες με δεξί "
+"κλικ και επιλογή θέσης απο το εμφανιζόμενο μενού."
+
+msgid ""
+"The legend may be moved freely with the mouse or attached to one of the "
+"corners by right clicking on the legend and choose a placement from the "
+"context menu."
+msgstr ""
+"Οι ετικέτες μπορεί να μετακινούνται ελεύθερα με το ποντίκι ή να "
+"τοποθετούνται σε μια γωνία με δεξί κλικ και επιλογή θέσης απο το "
+"εμφανιζόμενο μενού."
+
+msgid ""
+"As an alternative to transparent you can choose a custom background color "
+"for labes. This is especially useful for labels drawn over shades."
+msgstr ""
+"Εναλλακτικά το προσαρμοσμένο χρώμα φόντου μπορεί να επιλεγεί διάφανο.Είναι "
+"ιδιαίτερα χρήσιμο για ετικέτες πάνω σε γραμμοσκίαση."
+
+msgid ""
+"In most places like point series, axes settings, function ranges, etc., you "
+"can use expressions like pi/4 instead of numbers."
+msgstr ""
+"Σε πολλές περιπτώσεις όπως σημειοσειρές, άξονες, περιοχές συναρτήσεων κλπ, "
+"μπορεί να χρησιμοποιειθούν εκφράσεις όπως π/4 αντί αριθμών. "
+
+msgid ""
+"You can create your own custom constants under Function|Custom functions for "
+"use in functions, point series, etc. For example g=9.80665, R=8.31"
+msgstr ""
+"Μπορείτε να δημιουργήσετε δικές σας προσαρμοσμένες σταθερές στο Συναρτήσεις|"
+"Προσαρμοσμένες, για χρήση σε συναρτήσεις,  σημειοσειρές, κλπ. Παράδειγμα  "
+"g=9.80665, R=8.31"
+
+msgid ""
+"You can create your own custom functions under Function|Custom functions for "
+"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin"
+"(x)/x)"
+msgstr ""
+"Μπορείτε να δημιουργήσετε δικές σας προσαρμοσμένες συναρτήσεις  στο "
+"Συναρτήσεις|Προσαρμοσμένες, για χρήση στη σχεδίαση συναρτήσεων, σχέσεων, "
+"κλπ. Παράδειγμα  sinc(x)=if(x=0, 0, sin(x)/x)"
+
+msgid ""
+"In the Save as image dialog there is an Option button you can use to specify "
+"the image resolution. This is especially useful if you want a high "
+"resolution image."
+msgstr ""
+"Στο διάλογο  Αποθήκευση σαν εικόνα υπάρχει το κουμπί Επιλογές για να ορίσετε "
+"την ανάλυση της εικόνας. Ιδιαίτερα χρήσιμο για εικόνες υψηλής ανάλυσης."
+
+msgid ""
+"Point series can have arrows as markers. A point series with arrows as "
+"markers and lines between the points can be used to show vectors."
+msgstr ""
+"Σημειοσειρές μπορεί να έχουν βέλη σαν μαρκάρισμα σημείου. Σημειοσειρά με "
+"βέλη και γραμμές μεταξυ των σημείων χρησιμοποιείται για την παράσταση "
+"διανυσμάτων."
+
+msgid "Custom..."
+msgstr "Προσαρμοσμένα..."
+
+msgid "Black"
+msgstr "Μαύρο"
+
+msgid "Maroon"
+msgstr "Βυσσινί"
+
+msgid "Green"
+msgstr "Πράσινο"
+
+msgid "Olive"
+msgstr "Λαδί"
+
+msgid "Navy"
+msgstr "Μπλε-Γκρι"
+
+msgid "Purple"
+msgstr "Βιολετί"
+
+msgid "Teal"
+msgstr "Πετρόλ"
+
+msgid "Gray"
+msgstr "Γκρι"
+
+msgid "Silver"
+msgstr "Ασημί"
+
+msgid "Red"
+msgstr "Κόκκινο"
+
+msgid "Lime"
+msgstr "Φωτεινό πράσινο"
+
+msgid "Yellow"
+msgstr "Κίτρινο"
+
+msgid "Blue"
+msgstr "Μπλε"
+
+msgid "Fuchsia"
+msgstr "Ροζ"
+
+msgid "Aqua"
+msgstr "Τυρκουάζ"
+
+msgid "White"
+msgstr "Λευκό"
+
+msgid "Money Green"
+msgstr "Πράσινο ανοιχτό"
+
+msgid "Sky Blue"
+msgstr "Παλ μπλε"
+
+msgid "Cream"
+msgstr "Κρεμ"
+
+msgid "Med Gray"
+msgstr "Γκρι ανοιχτό"
+
+#, fuzzy
+msgid "Local"
+msgstr "Πετρόλ"
+
+msgid "Global"
+msgstr ""
+
+msgid "Insert"
+msgstr "Εισαγωγή"
+
+msgid "Subset:"
+msgstr ""
+
+msgid "Print"
+msgstr "Εκτύπωση"
+
+msgid "Scale:"
+msgstr "Κλίμακα:"
+
+msgid "Printer"
+msgstr "Εκτυπωτής"
+
+msgid "Type:"
+msgstr "Τύπος:"
+
+msgid "Where:"
+msgstr "Θέση:"
+
+msgid "Comment:"
+msgstr "Σχόλιο:"
+
+msgid ""
+"Select the printer to use. The Properties button may be used to change more "
+"advanced settings for the printer."
+msgstr ""
+
+msgid ""
+"Select to print in color (or grayscale if your printer is not a color "
+"printer) or convert all colors to black."
+msgstr ""
+
+msgid "Print output"
+msgstr "Είδος εκτύπωσης"
+
+msgid "Color"
+msgstr "Έγχρωμο"
+
+msgid "Black && white"
+msgstr "Ασπρόμαυρο"
+
+msgid "Position (millimeters)"
+msgstr "Θέση (χιλιοστά)"
+
+msgid "Left margin:"
+msgstr "Αριστερό περιθώριο:"
+
+msgid "Top margin:"
+msgstr "Άνω περιθώριο:"
+
+#, fuzzy
+msgid "Select to place the image on the middle of the page."
+msgstr "Επιλογή γραμματοσειράς ετικέτας στούς άξονες.."
+
+msgid "Center on page"
+msgstr "Κέντρο σελίδας"
+
+#, fuzzy
+msgid "Enter the image position on the page."
+msgstr "Εισαγωγή περιγραφής στην ετικέτα."
+
+msgid "Number of copies:"
+msgstr "Αριθμός αντιτύπων:"
+
+#, fuzzy
+msgid "Choose number of copies to print."
+msgstr "Αριθμός αντιτύπων:"
+
+msgid "Enter percent of original size."
+msgstr ""
+
+#, fuzzy
+#~ msgid "Panel1"
+#~ msgstr "Άκυρο"
+
+#~ msgid "Text too long"
+#~ msgstr "Κείμενο μακροσκελές."
+
+#~ msgid ""
+#~ "Write a descriptive text to show in the legend, else the inequality will "
+#~ "be used."
+#~ msgstr "Γράψτε ένα περιγραφικό κείμενο στη λεζάντα."
+
+#~ msgid ""
+#~ "Description shown in the legend. If empty the function equation is used."
+#~ msgstr ""
+#~ "Η περιγραφή εμφανίζεται στην ετικέτα.Αν είναι άδεια χρησιμοποιείται "
+#~ "εξίσωση."
+
+#~ msgid "Customize"
+#~ msgstr "Προσαρμογή"
+
+#~ msgid "Actions"
+#~ msgstr "Ενέργειες"
+
+#~ msgid "Description"
+#~ msgstr "Περιγραφή"
+
+#~ msgid "Cate&gories:"
+#~ msgstr "Cate&gories:"
+
+#~ msgid "A&ctions:"
+#~ msgstr "A&ctions:"
+
+#~ msgid ""
+#~ "To add actions to your application simply drag and drop from either "
+#~ "Categories or Actions onto an existing ActionBar."
+#~ msgstr ""
+#~ "Για την πρόσθεση ενεργειών στην εφαρμογή απλά σύρετε και αποθέσατε είτε "
+#~ "από τις κατηγορίες είτε από τις ενέργειες στη υπάρχουσα γραμμή ενεργειών."
+
+#~ msgid "Area..."
+#~ msgstr "Εμβαδόν"
+
+#~ msgid "Evaluate..."
+#~ msgstr "Υπολογισμός..."
+
+#~ msgid "Are you sure you want to delete the function: %s"
+#~ msgstr "Είστε βεβαιοι ότι θέλετε να διαγράψετε τη συνάρτηση: %s"
+
+#~ msgid "Are you sure you want to delete the tangent: %s"
+#~ msgstr "Είστε βεβαιοι ότι θέλετε να διαγράψετε την εφαπτομένη: %s"
+
+#, fuzzy
+#~ msgid "Letter"
+#~ msgstr "Αριστερά"
+
+#~ msgid "Check to increase the end coordinate until interception."
+#~ msgstr ""
+#~ "Τσεκάρετε για να αυξηθεί το τέλος των συντεταγμένων μεχρι το σημείο τομής"
+
+#~ msgid "Increase to interception"
+#~ msgstr "Αύξηση μεχρι το σημείο τομής"
+
+#~ msgid "Check to decrease start coordinate until interception."
+#~ msgstr ""
+#~ "Τσεκάρετε για να ελαττωθεί η αρχή των συντεταγμένων μεχρι το σημείο τομής."
+
+#~ msgid "Decrease to interception"
+#~ msgstr "Μείωση μεχρι το σημείο τομής"

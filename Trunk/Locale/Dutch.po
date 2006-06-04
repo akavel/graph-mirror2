@@ -1,0 +1,3001 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Graph 4.0.1\n"
+"POT-Creation-Date: 2006-05-31 19:27\n"
+"PO-Revision-Date: 2006-01-14 12:56+0100\n"
+"Last-Translator: \n"
+"Language-Team: Etienne Goemaere <etienne.goemaere@pandora.be>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: dxgettext 1.2.1\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: BELGIUM\n"
+
+msgid "From:"
+msgstr "Van:"
+
+msgid "To:"
+msgstr "Tot:"
+
+msgid "Area"
+msgstr "Oppervlakte"
+
+msgid "Enter a start coordinate or mark the range on the image with the mouse."
+msgstr ""
+"Geef een begincoördinaat op of duid met de muis het bereik aan op de figuur"
+
+msgid "Enter the end coordinate or mark the range on the image with the mouse."
+msgstr "Voeg de ordinaat in of duid op de figuur het bereik aan met de muis."
+
+msgid ""
+"Area or length of path calculated for the given range using Simpson's "
+"formula."
+msgstr ""
+"Oppervlakte of lengte langs de kromme voor een gegeven domein berekend met "
+"formule van Simpson"
+
+msgid "Snap to:"
+msgstr "Hecht vast:"
+
+msgid "The x-coordinate evaluated for the t-parameter."
+msgstr "De waarde van x-coördinaat voor de parameter t. "
+
+msgid "The y-coordinate evaluated for the t-parameter."
+msgstr "De waarde van de y-coördinaat voor de parameter t"
+
+msgid "The derivative of x(t) evaluated for the entered t-parameter."
+msgstr "De afgeleide van x(t) in een waarde van de parameter t"
+
+msgid "The derivative of y(t) evaluated for the entered t-parameter."
+msgstr "De afgeleide van y(t) in een waarde voor de parameter t"
+
+msgid "The slope of the function evaluated for the entered t-parameter."
+msgstr "De helling van een functie voor een waarde van de parameter t"
+
+msgid ""
+"Enter the independent variable for which you want to evaluate the function, "
+"or click on the function in the main window."
+msgstr ""
+"Geef de onafhankelijk veranderlijke in voor de functie die je wenst te "
+"evalueren, of klik op de functie in het basisscherm.\""
+
+msgid "Select where the cursor will be placed when you click on the image."
+msgstr "Kies waar de cursor geplaatst moet worden als je de figuur aanklikt."
+
+msgid "Function"
+msgstr "Functie"
+
+msgid "Intersection"
+msgstr "Doorsnede"
+
+msgid "x-axis"
+msgstr "x-as"
+
+msgid "y-axis"
+msgstr "y-as"
+
+msgid "Extreme x-value"
+msgstr "x-waarde van het extremum"
+
+msgid "Extreme y-value"
+msgstr "y-waarde van het extremum"
+
+msgid "The distance to the function evaluated for the given angle."
+msgstr "De afstand tot de functie bij een gegeven hoek"
+
+msgid "The x-coordinate evaluated for the given angle."
+msgstr "De x-coördinaat bij een gegeven hoek."
+
+msgid "The y-coordinate evaluated for the given angle."
+msgstr "De y-coördinaat bij een gegeven hoek."
+
+msgid "The derivative of the function evaluated for the given angle."
+msgstr "De afgeleide van de functie bij een gegeven hoek."
+
+msgid "The slope of the function evaluated for the given angle."
+msgstr "De helling van de functie voor een gegeven hoek."
+
+msgid ""
+"Enter a number for which you want to evaluate the function, or click on the "
+"function in the main window."
+msgstr ""
+"Geef een getal in waarvan je de functiewaarde wil berekenen of klik op de "
+"functie in het basisscherm."
+
+msgid "Extremum"
+msgstr "Extremum"
+
+msgid "This is the function evaluated for the entered x-value."
+msgstr "Dit is de functiewaarde voor de gegeven x-waarde."
+
+#, fuzzy
+msgid ""
+"This is the first derivative of the function evaluated for the entered value."
+msgstr ""
+"Dit is de waarde van de eerste afgeleide van de functie voor de gegeven x-"
+"waarde."
+
+msgid ""
+"This is the functions second derivative evaluated for the entered value."
+msgstr ""
+"Dit is de waarde van de tweede afgeleide van de functie voor de gegeven x-"
+"waarde."
+
+#, fuzzy
+msgid "This is the y-coordinate corresponding to the entered x-coordinate."
+msgstr "De y-coördinaat op de raaklijn voor de gegeven x-waarde."
+
+#, fuzzy
+msgid "Enter an x-coordinate or click in the main window."
+msgstr "Geef een x-coördinaat in of klik op de raaklijn in het basisscherm."
+
+msgid "File"
+msgstr "Bestand"
+
+msgid "Import"
+msgstr "Importeer"
+
+msgid "Graph file..."
+msgstr "Graph bestand"
+
+msgid "Import a graph file into the current coordinate system."
+msgstr "Voer een grafisch bestand in het huidige assenstel."
+
+msgid "Point series..."
+msgstr "Puntenreeksen ..."
+
+msgid "Import point series from a data file."
+msgstr "Importeer puntenreeksen vanuit een gegevensbestand."
+
+msgid "Edit"
+msgstr "Bewerken"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Calc"
+msgstr "Bereken"
+
+msgid "Help"
+msgstr "Help"
+
+msgid "Internet"
+msgstr "Internet"
+
+msgid "Open file: %s"
+msgstr "Open bestand: %s"
+
+msgid "Visible"
+msgstr "Zichtbaar"
+
+msgid "Check to make the selected item visible in the coordinate system."
+msgstr ""
+"Controleer of het geselecteerde zichtbaar gemaakt kan worden in het "
+"coördinatenstelsel."
+
+msgid "Show in legend"
+msgstr "Toon in de legende."
+
+msgid "Check to show the selected item in the legend."
+msgstr "Controleer of het geselcteerde getoond kan worden in de legende."
+
+msgid "Placement"
+msgstr "Plaatsing"
+
+msgid "Above x-axis"
+msgstr "Boven de x-as"
+
+msgid ""
+"Place the label directly above the x-axis on the right side of the image."
+msgstr "Plaats het label vlak boven de x-as rechts van het beeld."
+
+msgid "Below x-axis"
+msgstr "Onder de x-as"
+
+msgid ""
+"Place the label directly below the x-axis on the right side of the image."
+msgstr "Plaats het label vlak onder de x-as rechts van het beeld."
+
+msgid "Left of y-axis"
+msgstr "Links van de y-as"
+
+msgid "Place the label to the left of the y-axis at the top of the image."
+msgstr "Plaats het label links van de y-as bovenaan het beeld."
+
+msgid "Right of y-axis"
+msgstr "Rechts van de y-as"
+
+msgid "Place the label to the right of the y-axis at the top of the image."
+msgstr "Plaats het label rechts van de y-as bovenaan het beeld."
+
+msgid "Export to file..."
+msgstr "Exporteer naar bestand"
+
+msgid "Export the selected point series to a file."
+msgstr "Exporteer de geselecteerde puntenreeksen naar een bestand"
+
+msgid "New"
+msgstr "Nieuw"
+
+msgid "Creates a new coordinate system."
+msgstr "Creëert een nieuw bestand."
+
+msgid "Open..."
+msgstr "Openen..."
+
+msgid "Read coordinate system and functions from a file."
+msgstr "Laad functies en assenstel uit bestand."
+
+msgid "Save"
+msgstr "Sla op"
+
+msgid "Write coordinate system and functions to a file."
+msgstr "Sla assenstelsel en functies op in een bestand."
+
+msgid "Save as..."
+msgstr "Sla op als"
+
+msgid "Saves the coordinate system as a new name."
+msgstr "Sla het assenstelsel op onder een nieuwe naam."
+
+msgid "Save copy as..."
+msgstr "Sla kopie op als"
+
+#, fuzzy
+msgid "Saves a copy of the current coordinate system."
+msgstr "Sla een kopie van het huidige assenstelsel op."
+
+msgid "Save as image..."
+msgstr "Als figuur opslaan..."
+
+msgid "Saves the shown coordinate system as an image."
+msgstr "Sla het getoonde assenstelsel op als een figuur."
+
+msgid "Print..."
+msgstr "Druk af..."
+
+msgid "Print shown coordinate system."
+msgstr "Druk het getoonde assenstelsel af."
+
+msgid "Exit"
+msgstr "Sluit af"
+
+msgid "Quit the program."
+msgstr "Verlaat het programma"
+
+msgid "Undo"
+msgstr "Maak ongedaan"
+
+msgid "Undo the last action."
+msgstr "Maak de laatste bewerking ongedaan"
+
+msgid "Redo"
+msgstr "Opnieuw"
+
+msgid "Redo the last action undone."
+msgstr "Doe de laatste bewerking opnieuw."
+
+msgid "Cut"
+msgstr "Knip"
+
+msgid "Cuts the selected function or point series to the clipboard."
+msgstr "Knip de geselecteerde puntenreeks of functie naar het klembord."
+
+msgid "Copy"
+msgstr "Kopieer"
+
+msgid "Copies the selected function or point series to the clipboard."
+msgstr "Kopieer de geselecteerde puntenreeks of functie naar het klembord."
+
+msgid "Paste"
+msgstr "Plak"
+
+msgid ""
+"Pastes a function or point series from the clipboard into the coordinate "
+"system."
+msgstr "Plak de geselecteerde puntenreeks of functie in het assenstelsel."
+
+msgid "Copy image"
+msgstr "Kopieer de figuur"
+
+msgid "Copies the shown coordinate system to the clipboard."
+msgstr "Kopieer het getoonde assenstelsel naar het klembord."
+
+msgid "Axes..."
+msgstr "Assen..."
+
+msgid "Edit axes settings."
+msgstr "Assen bewerken."
+
+msgid "Options..."
+msgstr "Opties..."
+
+msgid "Edit options."
+msgstr "Opties bewerken"
+
+msgid "Insert function..."
+msgstr "Voeg een functie in..."
+
+msgid "Insert a new function."
+msgstr "Voeg een nieuwe functie in."
+
+msgid "Insert tangent/normal..."
+msgstr "Voeg raaklijn/normaal in."
+
+#, fuzzy
+msgid "Insert a new tangent or normal for the selected function."
+msgstr "Teken een nieuwe raaklijn voor de geselecteerde functie"
+
+msgid "Insert shade..."
+msgstr "Arceer"
+
+#, fuzzy
+msgid "Add shading to the selected function."
+msgstr "Breng een arcerring aan bij een functie."
+
+msgid "Insert point series..."
+msgstr "Voeg een puntenreeks in..."
+
+msgid "Insert a new point series."
+msgstr "Voeg een nieuwe puntenreeks in."
+
+msgid "Insert trendline..."
+msgstr "Voeg de trendlijn in."
+
+msgid "Insert a curve of best fit for the selected point series."
+msgstr "Voeg de kromme in die het best past bij de geselecteerde puntenreeks."
+
+msgid "Edit..."
+msgstr "Bewerk..."
+
+#, fuzzy
+msgid "Edit the selected element: Function, tangent, point series, etc."
+msgstr "Bewerk de geselecteerde functie,raaklijn of puntenreeks."
+
+msgid "Delete"
+msgstr "Verwijder"
+
+msgid "Delete the selected function, tangent or point series."
+msgstr "Verwijder de geselecteerde functie, raaklijn of puntenreeks."
+
+msgid "Insert f'(x)..."
+msgstr "Voeg f'(x) in..."
+
+msgid "Insert the first derivative of the selected function."
+msgstr "Voeg de eerste afgeleide van de geselcteerde functie in."
+
+msgid "In"
+msgstr "In"
+
+msgid "Zoom in."
+msgstr "Zoom in."
+
+msgid "Out"
+msgstr "Uit"
+
+msgid "Zoom out."
+msgstr "Zoom uit"
+
+msgid "Window"
+msgstr "Venster"
+
+msgid "Zoom to user selected window."
+msgstr "Zoom in op het geselecteerde venster"
+
+msgid "Square"
+msgstr "Vierkant"
+
+#, fuzzy
+msgid ""
+"Zoom to scale the axes equal. This will show a circle in the correct "
+"relation instead of an ellipse."
+msgstr ""
+"Zoom zodat de schaal van de assen gelijk is. Hierdoor wordt een cirkel niet "
+"als ellips afgebeeld."
+
+msgid "Standard"
+msgstr "Standaard"
+
+msgid "Zoom to standard coordinates."
+msgstr "Zoom naar een standaardassenstel."
+
+msgid "Move"
+msgstr "Verplaats"
+
+msgid "Move up"
+msgstr "Verplaats naar boven"
+
+msgid "Move the window up the coordinate system."
+msgstr "Verplaats het venster naar de bovenkant van het assenstel."
+
+msgid "Move down"
+msgstr "Verplaats naar onder"
+
+msgid "Move the window down the coordinate system."
+msgstr "Verplaats het venster naar de onderkant van het assenstel."
+
+msgid "Move left"
+msgstr "Verplaats naar links"
+
+msgid "Move the window to left of the coordinate system."
+msgstr "Verplaats het venster naar de linkerkant van het assenstel."
+
+msgid "Move right"
+msgstr "Verplaats naar rechts"
+
+msgid "Move the window to the right of the coordinate system."
+msgstr "Verplaats het venster naar de rechterkant van het assenstel."
+
+msgid "Move system"
+msgstr "Beweeg het assenstel"
+
+msgid "Move the coordinate system with the mouse."
+msgstr "Verplaats het assenstel met de muis"
+
+#, fuzzy
+msgid "Length of path"
+msgstr "Lengte op de kromme..."
+
+msgid "Calculate length of path between two points."
+msgstr "Lengte op de kromme tussen twee punten"
+
+msgid "Calculates area under the path."
+msgstr "Bereken de oppervlakte onder de kromme."
+
+msgid "Evaluate"
+msgstr "Bereken"
+
+msgid "Evaluate or trace the selected function."
+msgstr "Evalueer of traceer de geslecteerde functie"
+
+msgid "Table..."
+msgstr "Tabel..."
+
+#, fuzzy
+msgid "Shows an evaluation table."
+msgstr "Toon een waardentabel"
+
+msgid "Contents and index"
+msgstr "Inhoud en index"
+
+msgid "Open help file."
+msgstr "Open het helpbestand"
+
+msgid "List of functions"
+msgstr "Functielijst"
+
+msgid "Show list of functions that can be used for graphing."
+msgstr "Geef de lijst van functies die getekend kunnen worden."
+
+msgid "Go to home page"
+msgstr "Ga naar de homepage"
+
+msgid "Opens the default browser and shows the home page of the program."
+msgstr "Open de standaard browser en toon de homepage van het programma."
+
+msgid "Check for update"
+msgstr "Controleer op updates"
+
+msgid "Contact the home page to see if a newer version is available."
+msgstr "Ga naar de homepage om te zien of een nieuwere versie beschikbaar is."
+
+msgid "About Graph..."
+msgstr "Over Graph"
+
+msgid "Show copyright information."
+msgstr "Toon copyright informatie."
+
+msgid "Separator"
+msgstr "Separator"
+
+msgid "Fit"
+msgstr "Doe passen"
+
+msgid "Zoom to show the selected function."
+msgstr "Zoom om de geselecteerde functie te tonen."
+
+msgid "All points"
+msgstr "Alle punten"
+
+msgid "Zoom as much as all points are visible."
+msgstr "Zoom tot alle punten zichtbaar zijn."
+
+msgid "Frequently Asked Questions"
+msgstr "Veel Gestelde Vragen"
+
+msgid "Shows a list of frequently asked questions and answers."
+msgstr "Toon een lijst van veel gestelde vragen en hun antwoorden."
+
+msgid "Insert label..."
+msgstr "Voeg een label in..."
+
+msgid "Insert a text label."
+msgstr "Voeg een tekstlabel in..."
+
+msgid "Donate"
+msgstr "Schenk"
+
+#, fuzzy
+msgid "Donate money to the project."
+msgstr "Schenk geld voor het project"
+
+msgid "Tip of the day"
+msgstr "Tip van de dag"
+
+msgid "Show tip of the day"
+msgstr "Toon de tip van de dag"
+
+msgid "Support"
+msgstr "Ondersteuning"
+
+msgid "Open browser with the support page for the program."
+msgstr "Open in de brower de ondersteuningspagina voor het programma."
+
+msgid "Zoom x-axis in"
+msgstr "Zoom in op de x-as"
+
+msgid "Zoom in on the x-axis only."
+msgstr "Zoom in op de x-as alleen."
+
+msgid "Zoom x-axis out"
+msgstr "Zoom uit op de x-as"
+
+msgid "Zoom out on the x-axis only."
+msgstr "Zoom uit op de x-as alleen. "
+
+msgid "Zoom y-axis in"
+msgstr "Zoom in op de y-as"
+
+msgid "Zoom in on the y-axis only."
+msgstr "Zoom in op de y-as alleen."
+
+msgid "Zoom y-axis out"
+msgstr "Zoom uit op de y-as"
+
+msgid "Zoom out on the y-axis only."
+msgstr "Zoom uit op de y-as alleen."
+
+msgid "Insert relation..."
+msgstr "Voeg een relatie in..."
+
+msgid "Insert a new equation or inequality."
+msgstr "Voeg een nieuwe vergelijking of ongelijkheid in."
+
+msgid "Custom functions..."
+msgstr "Basisfuncties..."
+
+msgid "Create custom functions and constants for use in graphs."
+msgstr "Creëer basisfuncties en constanten om te gebruiken in grafieken."
+
+#, fuzzy
+msgid "Animate..."
+msgstr "Schenk"
+
+msgid "Create an animation by variating a constant."
+msgstr ""
+
+msgid "Select color"
+msgstr "Kies een kleur"
+
+msgid "Reset to default"
+msgstr "Herstel de standaard."
+
+msgid "Reset the tool bar icons to the installation default."
+msgstr ""
+"Stel de iconen van de werkbalk terug in volgens de standaardinstellingen."
+
+msgid "Customize toolbar..."
+msgstr "Pas de werkbalk aan..."
+
+msgid "Customize the icons shown on the toolbar."
+msgstr "Pas de iconen van de werkbalk aan"
+
+#, fuzzy
+msgid "Rotation"
+msgstr "Relatie:"
+
+msgid "Edit label..."
+msgstr "Label bewerken..."
+
+msgid "Edit the label under the cursor."
+msgstr "Bewerk het label onder de cursor."
+
+msgid "Delete label"
+msgstr "Verwijder het label"
+
+msgid "Delete the label under the cursor."
+msgstr "Verwijder label onder de cursor"
+
+msgid "Show legend"
+msgstr "Toon de legende"
+
+msgid "Select to show a legend in the coordinate system."
+msgstr "Toon een legende in het assenstel."
+
+msgid "Top Right"
+msgstr "Rechtsboven"
+
+msgid "Show the legend in the upper right corner."
+msgstr "Toon de legende in de rechter bovenhoek."
+
+msgid "Bottom Right"
+msgstr "Rechts onder"
+
+msgid "Show the legend in the bottom right corner."
+msgstr "Toon de legende in de rechter benedenhoek."
+
+msgid "Top Left"
+msgstr "Linksboven"
+
+msgid "Show the legend in the upper left corner."
+msgstr "Toon de legende in de linker bovenhoek"
+
+msgid "Bottom Left"
+msgstr "Links onder"
+
+msgid "Show the legend in the bottom left corner."
+msgstr "Toon de legende links onderaan."
+
+msgid "Close"
+msgstr "Sluit"
+
+msgid "Next tip"
+msgstr "Volgende tip"
+
+msgid "Previous tip"
+msgstr "Vorige tip"
+
+msgid "Show tips at startup"
+msgstr "Toon tips bij het opstarten"
+
+msgid "Did you know..."
+msgstr "Wist je..."
+
+msgid "Insert relation"
+msgstr "Voeg een relatie in"
+
+msgid "Relation:"
+msgstr "Relatie:"
+
+msgid "Constraints:"
+msgstr "Beperkingen:"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Annuleer"
+
+msgid "Legend text"
+msgstr "Tekst in legende"
+
+msgid "Description:"
+msgstr "Beschrijving"
+
+#, fuzzy
+msgid ""
+"Write a descriptive text to show in the legend. If empty the equation will "
+"be used."
+msgstr ""
+"Geef een beschrijvende tekst voor de legende, in het andere geval wordt de "
+"vergelijking weergegeven."
+
+msgid "Properties"
+msgstr "Eigenschappen"
+
+msgid "Style:"
+msgstr "Stijl:"
+
+msgid "Color:"
+msgstr "Kleur:"
+
+msgid "Width:"
+msgstr "Breedte"
+
+#, fuzzy
+msgid ""
+"Select the style used for drawing the inequality. Not used for equations."
+msgstr ""
+"Selecteer de stijl gebruikt voor ongelijkheden. Niet gebruikt voor "
+"gelijkheden."
+
+#, fuzzy
+msgid ""
+"Width in pixels of the equation line or the borderline of the inequality."
+msgstr ""
+"Breedte van de vergelijking in pixels. Niet gebruikt voor ongelijkheden."
+
+#, fuzzy
+msgid "Select the color for drawing the relation."
+msgstr "Kies de lijnkleur."
+
+msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
+msgstr "Voeg de relatie in, bijboorbeeld \"x^2+y^2=25\"of\"y<sin(x)"
+
+msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
+msgstr ""
+"Geef de randvoorwaarde voor de relatie in, bijvoorbeeld \"x>0 and y<5\""
+
+msgid "Insert tangent/normal"
+msgstr "Voeg de raaklijn/normaal in"
+
+msgid "Coordinate where the tangent/normal will cross the function."
+msgstr "Coördinaat waar de raaklijn/normaal de functie snijdt."
+
+msgid "Choose if you want a tangent or a normal."
+msgstr "Kies voor raaklijn of normaal"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Tangent"
+msgstr "Raaklijn"
+
+msgid "Normal"
+msgstr "Normaal"
+
+msgid "Graph properties"
+msgstr "Grafiekeigenschappen"
+
+msgid "Line style:"
+msgstr "Lijnstijl"
+
+msgid "Width of graph in pixels."
+msgstr "Breedte van de grafiek in pixels."
+
+msgid "Choose which line style to use for drawing the graph."
+msgstr "Kies de lijnstijl voor de te tekenen grafiek."
+
+#, fuzzy
+msgid "Select the color of the graph."
+msgstr "Selecteer het te tekenen grafiektype."
+
+msgid "Argument range"
+msgstr "Bereik van het argument"
+
+msgid "Start of range interval for the used variable."
+msgstr "Benedengrens voor de variabele"
+
+msgid "End of range interval for the used variable."
+msgstr "Bovengrens voor de variabele."
+
+msgid "Endpoints"
+msgstr "Eindpunten"
+
+msgid "Start:"
+msgstr "Start:"
+
+msgid "End:"
+msgstr "Einde:"
+
+msgid ""
+"Select marker to show at the start of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+"Selecteer een markering voor het intervalbegin. Alleen gebruikt als een "
+"bereik opgeven is"
+
+msgid ""
+"Select marker to show at the end of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+"Selecteer een markering voor het intervaleinde. Alleen gebruikt als een "
+"bereik opgeven is"
+
+msgid "Insert trendline"
+msgstr "Voeg de trendlijn in"
+
+msgid "Line"
+msgstr "Lijn"
+
+msgid "Built-in"
+msgstr "Ingebouwd"
+
+msgid "Create a linear function: f(x)=ax+b"
+msgstr "Creëer een lineaire functie: y=ax+b"
+
+msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
+msgstr "Creëer een logaritmische functie: f(x)=a*ln(x)+b"
+
+msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
+msgstr "Creëer een veeltermfunctie: f(x)=ax^3+bx^2+cx+d"
+
+msgid "Create a power function: f(x)=ax^b"
+msgstr "Creëer een machtfunctie: f(x)=ax^b"
+
+msgid "Create a exponential function: f(x)=a*b^x"
+msgstr "Creëer een exponentiële functie: f(x)=a*b^x"
+
+msgid "The order of the polynomium. For example 2 means a parable."
+msgstr "De graad van de veelterm. Bijvoorbeeld 2 betekent een parabool"
+
+msgid "Order:"
+msgstr "Graad:"
+
+msgid "Polynomial"
+msgstr "Veelterm"
+
+msgid "Logarithmic"
+msgstr "Logaritmisch"
+
+msgid "Linear"
+msgstr "Lineair"
+
+msgid "Power"
+msgstr "Macht"
+
+msgid "Exponential"
+msgstr "Exponentieel"
+
+msgid "Create a moving average as a series of straight lines."
+msgstr "Creëer een voortschrijdend gemiddelde als een reeks rechte lijnen."
+
+msgid "Moving average"
+msgstr "Voortschrijdend gemiddelde"
+
+msgid "Period:"
+msgstr "Periode"
+
+msgid "Determines how many points are used for the average."
+msgstr "Bepaal hoeveel punten gebruikt worden voor het gemiddelde"
+
+msgid "User defined"
+msgstr "Bepaalde gebruiker"
+
+msgid "Model:"
+msgstr "Model"
+
+msgid "Add model"
+msgstr "Voeg model toe"
+
+msgid "Remove model"
+msgstr "Verwijder model"
+
+msgid "Edit model"
+msgstr "Model bewerken"
+
+#, fuzzy
+msgid "Enter a function model to base the trendline on."
+msgstr "Voeg een beschrijving in voor in de legende."
+
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendline."
+msgstr ""
+
+#, fuzzy
+msgid "Intercept ="
+msgstr "Internet"
+
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendlines."
+msgstr ""
+
+msgid "Insert point series"
+msgstr "Voeg een puntenreeks in"
+
+msgid ""
+"The name of the point series, which is shown in the list to the left of the "
+"coordinate system."
+msgstr ""
+"De naam van de puntenreeks, getoond in de lijst links van het assenstel."
+
+msgid "Series"
+msgstr "Reeksen"
+
+msgid "This shows a sample of the markers and the lines between the markers."
+msgstr ""
+"Dit laat een voorbeeld zien van de markeringen en de lijnen tussen deze "
+"markering."
+
+msgid "Sample"
+msgstr "Voorbeeld"
+
+msgid "Markers"
+msgstr "Markeringen"
+
+msgid "Marker"
+msgstr "Markering"
+
+msgid "Size:"
+msgstr "Grootte"
+
+msgid "Choose the size of the markers."
+msgstr "Kies de grootte van de markeringen."
+
+msgid "Choose the type of markers to be shown at each point."
+msgstr "Kies het type van markering in ieder punt."
+
+msgid "Choose the color of the markers."
+msgstr "Kies de kleur van de markeringen."
+
+msgid "Interpolation:"
+msgstr "Interpolatie"
+
+msgid ""
+"Choose the style of lines to be drawn between the points. You may also "
+"choose not to draw any lines."
+msgstr ""
+"Kies de lijnstijl te tekenen tussen de punten. Je kan ook kiezen om niets te "
+"tekenen."
+
+#, fuzzy
+msgid "Choose the width of the lines in pixels."
+msgstr "Kies de lijndikte"
+
+msgid "Select which kind of line to draw between the markers."
+msgstr "Selecteer de soort lijn te tekenen tussen de markeringen."
+
+msgid "Cubic splines"
+msgstr "Kubieke latten"
+
+msgid "Half cosine"
+msgstr "Halve cosinus"
+
+msgid "Choose the color of the lines."
+msgstr "Kies de lijnkleur."
+
+msgid "Labels"
+msgstr "Labels"
+
+msgid "Position:"
+msgstr "Positie: "
+
+msgid "Check to show the coordinate at each point."
+msgstr "Controle om de coördinaat op elk punt te tonen"
+
+msgid "Show coordinates"
+msgstr "Toon de coördinaten"
+
+msgid "Select the font for the coordinates."
+msgstr "Kies de kleur voor de coördinaten"
+
+msgid "Select where the coordinates should be shown."
+msgstr "Kies waar de coördinaten getoond moeten worden."
+
+msgid "Below"
+msgstr "Onder"
+
+msgid "Above"
+msgstr "Boven"
+
+msgid "Left"
+msgstr "Links"
+
+msgid "Right"
+msgstr "Rechts"
+
+msgid "Error bars"
+msgstr "Foutbalken"
+
+msgid "X error bars"
+msgstr "x-foutbalk"
+
+#, fuzzy
+msgid "Show horizontal error bars."
+msgstr "Toon horizontale foutenbalk"
+
+msgid "Show x-bars"
+msgstr "Toon x-maatstreep"
+
+msgid "All error bars are the same size."
+msgstr "Alle foutenbalken hebben dezelfde grootte"
+
+msgid "Fixed:"
+msgstr "Vast:"
+
+msgid "Enter fixed value."
+msgstr "Geef een vaste waarde in."
+
+msgid "All error bars are the same percentage of the x-coordinate."
+msgstr "Alle foutenbalken zijn eenzelfde procent van de x-coördinaat"
+
+msgid "Relative:"
+msgstr "Relatief"
+
+msgid "Each error bar is given a custom value."
+msgstr "Iedere foutenbalk is een toevallige waarde"
+
+msgid "Custom"
+msgstr "Toevallig"
+
+msgid "Enter relative value in percent."
+msgstr "Geef de relatieve waarde in procent in."
+
+msgid "Y error bars"
+msgstr "y-foutenbalk"
+
+#, fuzzy
+msgid "Show vertical error bars."
+msgstr "Toon verticale foutstreep"
+
+msgid "Show y-bars"
+msgstr "Toon y-maatstreep"
+
+msgid "All error bars are the same percentage of the y-coordinate."
+msgstr "Alle foutenbalken zijn eenzelfde procent van de y-coördinaat"
+
+#, fuzzy
+msgid "Cut the selected text to the clipboard."
+msgstr "Knip de selectie naar het klembord"
+
+msgid "Copy the selected text to the clipboard."
+msgstr "De selectie naar het klembord kopiëren"
+
+msgid ""
+"Paste text from the clipboard into the grid. Other cells may be overwritten "
+"by the text from the clipboard."
+msgstr ""
+"Plak tekst van het klembord in het raster. Andere cellen kunnen hierbij "
+"overschreven worden."
+
+msgid "Erase selected cells."
+msgstr "Wis de geselecteerde cellen"
+
+msgid "Insert row"
+msgstr "Voeg een rij in"
+
+#, fuzzy
+msgid "Inserts a row in the grid moving rows below one down."
+msgstr ""
+"Voeg een rij in het raster door de rijen eronder één naar beneden te "
+"verschuiven"
+
+msgid "Remove row"
+msgstr "Verwijder rij"
+
+msgid "Removes the selected rows."
+msgstr "Verwijder de geselecteerde rijen"
+
+msgid "Select all"
+msgstr "Selecteer alles"
+
+msgid "Select all cells."
+msgstr "Selecteer alle cellen"
+
+msgid "Import from file..."
+msgstr "Importeer vanuit bestand..."
+
+msgid "Import data from a file and place it at the selected cell."
+msgstr ""
+"Importeer gegevens uit een bestand en plaats ze in de geselecteerde cellen."
+
+msgid "Export selected data to a file."
+msgstr "Exporteer de geselecteerde gegevens naar een bestand."
+
+msgid "Calculate table"
+msgstr "Bereken tabel"
+
+msgid ""
+"The step value. This is the distance between the x-values in the interval."
+msgstr "De stapgrootte. Dit is de afstand tussen de x-waarden in een interval."
+
+msgid "The first x-value in the interval."
+msgstr "De eerste x-waarde in het interval."
+
+msgid "The last x-value in the interval."
+msgstr "De laatste x-waarde in het interval."
+
+msgid "Copy selected cells to the clipboard."
+msgstr "De geselecteerde cellen naar het klembord kopiëren"
+
+msgid "Saves the selected data to a file."
+msgstr "Sla de geselecteerde data op in een bestand."
+
+msgid "Calculating"
+msgstr "Berekening"
+
+msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
+msgstr "CSV (afgebakende komma)  [*.csv]|*.csv|Text [*.txt]|*.txt "
+
+msgid "Insert shade"
+msgstr "Arceer"
+
+msgid "Shading"
+msgstr "Arcering"
+
+msgid "Shades the area between the function and the x-axis."
+msgstr "Arceer het gebied tussen de kromme en de x-as."
+
+msgid "Shades the area below the function."
+msgstr "Arceer het gebied onder de kromme."
+
+msgid "Shades the area above the function."
+msgstr "Arceer het gebied boven de kromme"
+
+msgid "Shades the area between the function and the y-axis."
+msgstr "Arceer de oppervlakte tussen de kromme en de y-as."
+
+msgid "Shades the area inside the function."
+msgstr "Arceer het gebied binnen in de functie."
+
+msgid ""
+"Shades the area between the main function and the function selected in the "
+"list to the right."
+msgstr ""
+"Arceer het gebied tussen de hoofdfunctie en de functie geselecteerd in de "
+"rechtse lijst."
+
+msgid "Above function"
+msgstr "Boven de functie"
+
+msgid "Between function and x-axis"
+msgstr "Tussen functie en x-as"
+
+msgid "Between functions"
+msgstr "Tussen de functies"
+
+msgid "Between function and y-axis"
+msgstr "Tussen functie en y-as"
+
+msgid "Inside function"
+msgstr "Binnen functie"
+
+msgid "Below function"
+msgstr "Onder de functie"
+
+msgid "Options"
+msgstr "Opties"
+
+msgid "Range"
+msgstr "Bereik"
+
+msgid "Coordinate where the shading starts."
+msgstr "Coördinaat punt waar arcering  begint."
+
+msgid "Coordinate where the shading ends."
+msgstr "Coördinaat punt waar arcering  eindigt."
+
+msgid "Check to increase the end coordinate until intersection."
+msgstr "Controleer de toename van de eindcoördinaat tot aan doorsnede."
+
+msgid "Increase to intersection"
+msgstr "Vermeerder tot aan doorsnede"
+
+#, fuzzy
+msgid "Check to decrease the start coordinate until intersection."
+msgstr "Controleer vermindering begincoördinaat tot aan doorsnede."
+
+msgid "Decrease to intersection"
+msgstr "Toename tot aan doorsnede"
+
+msgid "Select the style used for the shading."
+msgstr "Selectreer de arceringstijl"
+
+msgid "Mark the end of the shading with a line."
+msgstr "Duid arceringeinde aan met een lijn."
+
+msgid "Mark end of range"
+msgstr "Duid bereikeinde aan"
+
+msgid "Select color used for shading."
+msgstr "Kies kleur van de arcering"
+
+msgid "Mark the start of the shading with a line."
+msgstr "Duid het begin van de arcering aan met een lijn."
+
+msgid "Mark start of range"
+msgstr "Duid bereikbegin aan"
+
+msgid "Enter a description to show in the legend."
+msgstr "Voeg een beschrijving in voor in de legende."
+
+msgid "2nd function"
+msgstr "2de functie"
+
+msgid "2nd function:"
+msgstr "2de functie:"
+
+msgid "Select second function, when you want a shading between two functions."
+msgstr ""
+"Selecteer een tweede functie, als je wenst te arceren tussen twee functies."
+
+msgid "Shading range for 2nd function"
+msgstr "Arceerbereik voor tweede functie"
+
+msgid "Custom functions/constants"
+msgstr "Gewone functies/constanten"
+
+msgid "Apply"
+msgstr "Pas toe"
+
+msgid "Names"
+msgstr "Namen"
+
+msgid "Definition"
+msgstr "Definitie"
+
+msgid "Cut the selected text to the clipboard"
+msgstr "Knip de selectie naar het klembord"
+
+msgid "Image options"
+msgstr "Beeldopties"
+
+msgid "Size"
+msgstr "Grootte"
+
+msgid "Image width:"
+msgstr "Beeldbreedte"
+
+msgid "Image height:"
+msgstr "Beeldhoogte"
+
+msgid "Set a custom image width."
+msgstr ""
+
+msgid "Set a custom image height."
+msgstr ""
+
+msgid ""
+"Choose to use the same size as shown on the screen or a custom image size."
+msgstr ""
+
+#, fuzzy
+msgid "Image size"
+msgstr "Beeldbreedte"
+
+#, fuzzy
+msgid "Screen size"
+msgstr "Tekstgrootte"
+
+#, fuzzy
+msgid "Custom size"
+msgstr "Pas aan"
+
+msgid ""
+"Progressive encoding allows viewers to see a rough copy of the image while "
+"it is downloaded."
+msgstr ""
+
+msgid "Encoding"
+msgstr "Codering"
+
+msgid "Progressive"
+msgstr "Progressief"
+
+msgid "Select a compression quality."
+msgstr ""
+
+msgid "Quality"
+msgstr "Kwaliteit"
+
+#, fuzzy
+msgid "Paper size:"
+msgstr "Tekstgrootte"
+
+msgid "Choose paper orientation."
+msgstr ""
+
+msgid "Orientation"
+msgstr "Oriëntatie"
+
+msgid "Portrait"
+msgstr "Portret"
+
+msgid "Landscape"
+msgstr "Landschap"
+
+#, fuzzy
+msgid "Choose paper size to use."
+msgstr "Kies de lijndikte"
+
+#, fuzzy
+msgid "Select this to use these settings as defaults in the future."
+msgstr "Kies deze as-instellingen als standaard voor de toekomst."
+
+msgid "Save as default"
+msgstr "Als standaard opslaan"
+
+#, fuzzy
+msgid "Animate"
+msgstr "Schenk"
+
+#, fuzzy
+msgid "Constants:"
+msgstr "Beperkingen:"
+
+#, fuzzy
+msgid "Step:"
+msgstr "Stappen:"
+
+msgid "Frames/second:"
+msgstr ""
+
+msgid "Choose a constant to change between each frame.."
+msgstr ""
+
+#, fuzzy
+msgid "The first value of the constant"
+msgstr "De eerste x-waarde in het interval."
+
+#, fuzzy
+msgid "The last value of the constant."
+msgstr "De laatste x-waarde in het interval."
+
+msgid "The chosen constant is changed by this value between each frame."
+msgstr ""
+
+msgid "Number of frames per second used when the animation is played."
+msgstr ""
+
+msgid "Working"
+msgstr ""
+
+msgid "About Graph"
+msgstr "Over Graph"
+
+msgid "<Language> translation by <Translator>"
+msgstr "Nederlandse vertaling door Etienne Goemaere"
+
+msgid "Version "
+msgstr "Versie"
+
+msgid "Email:"
+msgstr "E-mail:"
+
+msgid "Build"
+msgstr "Gemaakt"
+
+msgid ""
+"This is free software, and you are welcome to redistribute it under the "
+"terms in the GNU General Public License. Please send bug reports and "
+"suggestions to the programmer."
+msgstr ""
+"Deze vrije software mag verder verspreid worden als de voorwaarden uit de "
+"GNU General Public License gerespecteerd worden. Foutenmeldingen en "
+"suggesties zijn steeds welkom."
+
+#, fuzzy
+msgid "The newest version as well as the source code are available at:"
+msgstr "De nieuwste versie en de broncode is beschikbaar op:"
+
+#, fuzzy
+msgid "Animation"
+msgstr "Schenk"
+
+#, fuzzy
+msgid "Open an animation file."
+msgstr "Open het bestand%s."
+
+#, fuzzy
+msgid "Save the animation to a file."
+msgstr "Sla de geselecteerde data op in een bestand."
+
+#, fuzzy
+msgid "Copy the animation to the clipboard."
+msgstr "De selectie naar het klembord kopiëren"
+
+msgid "Edit axes"
+msgstr "Assen bewerken"
+
+msgid "Minimum:"
+msgstr "Minimum:"
+
+msgid "Maximum:"
+msgstr "Maximum:"
+
+msgid "Tick unit:"
+msgstr "Eenheidstreep"
+
+msgid "The x-axis cross at y="
+msgstr "De x-as snijdt in y="
+
+msgid "Grid unit:"
+msgstr "Rastereenheid"
+
+msgid "Minimum x-value."
+msgstr "Minimum x-waarde."
+
+msgid "Maximum x-value."
+msgstr "Maximum x-waarde."
+
+msgid "Units between ticks on the x-axis."
+msgstr "Aantal eenheden tussen maatstreepen op de x-as."
+
+msgid "Use logarithmic scale on the x-axis."
+msgstr "Gebruik logaritmische schaal op de x-as."
+
+msgid "Logarithmic scale"
+msgstr "Logaritmische schaal"
+
+msgid "Show label at the right side above the x-axis."
+msgstr "Toon label rechts boven de x-as."
+
+msgid "Label:"
+msgstr "Label"
+
+#, fuzzy
+msgid "Edit the label for the axis here."
+msgstr "Label hier bewerken"
+
+msgid "Show units on the x-axis."
+msgstr "Toon eenheid op x-as"
+
+msgid "Show numbers"
+msgstr "Toon getallen"
+
+#, fuzzy
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr "De x-as kruist de y-as in deze waarde."
+
+msgid "Units between the grid lines perpendicular to the x-axis."
+msgstr "Eenheden tussen de rasterlijnen loodrecht op de x-as."
+
+#, fuzzy
+msgid "Determine the tick unit automatically."
+msgstr "Automatische bepaling maatstrepen"
+
+msgid "Auto tick"
+msgstr "Auto stip"
+
+#, fuzzy
+msgid "Set the grid unit to the same as the tick unit."
+msgstr "Stel raster- en maatstreepeenheid gelijk aan elkaar"
+
+msgid "Auto grid"
+msgstr "Auto raster"
+
+#, fuzzy
+msgid "Show tick marks on the x-axis."
+msgstr "Toon maatstrepen op x-as"
+
+msgid "Show ticks"
+msgstr "Toon stippen"
+
+#, fuzzy
+msgid "Show units on the selected axis as a fraction multiplied by pi."
+msgstr "Toon eenheden op assen als breuk vermenigvuldigd met pi."
+
+msgid "Show as a multiple of pi"
+msgstr "Toon als veelvoud van pi"
+
+msgid "Show vertical grid lines."
+msgstr "Toon verticale roorsterlijnen."
+
+msgid "Show grid"
+msgstr "Toon raster"
+
+msgid "The y-axis cross at x="
+msgstr "De y-as kruist in x="
+
+msgid "Minimum y-value."
+msgstr "Minimum y-waarde"
+
+msgid "Maximum y-value."
+msgstr "Maximum y-waarde"
+
+msgid "Use logarithmic scale for the y-axis."
+msgstr "Gebruik logaritmische schaal op y-as."
+
+msgid "Units between ticks on the y-axis."
+msgstr "Eenheid tussen maatstrepen op y-as."
+
+msgid "Show units on the y-axis."
+msgstr "Toon eenheden op y-as."
+
+msgid "Show label at the top of the window to the right of the y-axis."
+msgstr "Toon label bovenaan het venster rechts van de y-as."
+
+#, fuzzy
+msgid "The y-axis will intersect with the x-axis at this value."
+msgstr "De y-as kruist de x-as in deze waarde."
+
+msgid "Units between the grid lines perpendicular to the y-axis."
+msgstr "Eenheden tussen de rasterlijnen loodrecht op de y-as."
+
+#, fuzzy
+msgid "Show tick marks on the y-axis."
+msgstr "Toon maatstrepen op y-as"
+
+msgid "Show horizontal grid lines."
+msgstr "Toon horizontale rasterlijnen"
+
+msgid "Settings"
+msgstr "Instellingen"
+
+msgid "Title:"
+msgstr "Titel:"
+
+msgid ""
+"Choose if you want to show the axes, and if you want to show them crossed or "
+"at the left and bottom of the image."
+msgstr ""
+"Kies of de assen getoond moeten worden en of die elkaar moeten kruisen of "
+"links en onderaan het beeld moeten geplaatst worden."
+
+msgid "Axes style"
+msgstr "Asstijl"
+
+msgid "None"
+msgstr "Geen"
+
+msgid "Crossed"
+msgstr "Kruisend"
+
+msgid "Boxed"
+msgstr "In kader"
+
+msgid ""
+"Choose if trigonometric functions should calculate in radian or degrees."
+msgstr ""
+"Kies of trigoniometrische functies in radialen of graden moeten rekenen."
+
+msgid "Trigonometry"
+msgstr "Goniometrie"
+
+msgid "Radian"
+msgstr "Radialen"
+
+msgid "Degree"
+msgstr "Graden"
+
+msgid "Enter a title to show above the coordinate system."
+msgstr "Geef een titel in voor boven het assenstel."
+
+msgid "Select the font for the title."
+msgstr "Kies lettertype voor titel."
+
+msgid "Choose where the legend should be placed."
+msgstr "Kies waar de legende moet verschijnen."
+
+msgid "Legend placement"
+msgstr "Plaatsing legende"
+
+msgid ""
+"Check this to use complex numbers for calculations. Notice that this will "
+"slow graphing down."
+msgstr ""
+"Controleer of bij de berekeningen complexe getallen gebruikt moeten worden. "
+"Bemerk dat dit dit het tekenen vertraagd."
+
+msgid "Calculate with complex numbers"
+msgstr "Bereken met complexe getallen"
+
+msgid "Font and color"
+msgstr "Lettertype en kleur"
+
+msgid "Colors"
+msgstr "Kleuren"
+
+msgid "Grid color:"
+msgstr "Rasterkleur"
+
+msgid "Axes color:"
+msgstr "Assenkleur"
+
+msgid "Background color:"
+msgstr "Achtergrondkleur"
+
+#, fuzzy
+msgid "Select the color of the image background."
+msgstr "Kies de kleur van de markeringen."
+
+#, fuzzy
+msgid "Select the color of the axes."
+msgstr "Kies de kleur van de markeringen."
+
+#, fuzzy
+msgid "Select the color of the grid lines."
+msgstr "Kies de lijnkleur."
+
+msgid "Fonts"
+msgstr "Lettertypes"
+
+msgid "Number font:"
+msgstr "Lettertype getallen:"
+
+msgid "Label font:"
+msgstr "Lettertype label"
+
+msgid "Legend font:"
+msgstr "Lettertype legende"
+
+#, fuzzy
+msgid "Select the font used to show the labels on the axes."
+msgstr "Kies het lettertype voor de labels bij de assen."
+
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Kies het lettertype voor de getallen bij de assen."
+
+msgid "Select the font used to show the legend text."
+msgstr "Kies het lettertype voor de tekst in de legende."
+
+msgid "Decimals:"
+msgstr "Decimalen:"
+
+msgid "Recent files:"
+msgstr "Recente bestanden:"
+
+msgid "Max undo steps:"
+msgstr "Max stappen ongedaan:"
+
+msgid "Language:"
+msgstr "Taal"
+
+#, fuzzy
+msgid "Font scale:"
+msgstr "Grootte"
+
+msgid "Number of decimals used when results are shown."
+msgstr "Aantal cijfers na de komma voor getoonde resultaat."
+
+#, fuzzy
+msgid "Associate *.grf files with Graph."
+msgstr "Associeer *.grf bestanden met Graph"
+
+msgid "Associate .grf files"
+msgstr "Associeer *.grf bestanden"
+
+#, fuzzy
+msgid "The number of most recent used files shown in the File menu."
+msgstr "Aantal te tonen recente bestanden in bestandsmenu."
+
+msgid ""
+"Save window position when the program quits. This setting is used the next "
+"time the program is used.|Save window state on exit."
+msgstr ""
+"Sla de vensterpositie op als het programma afgesloten wordt. Het programma "
+"start bij volgend gebruik met deze instelling.|Sla de vensterinstellingen op "
+"bij afsluiten."
+
+msgid "Save workspace on exit"
+msgstr "Sla de werkruimte op bij afsluiten"
+
+msgid "Format used when complex numbers are shown."
+msgstr "Vorm waaronder complexe getallen getoond worden."
+
+msgid "Complex format"
+msgstr "Complexe vorm"
+
+msgid "Real"
+msgstr "Reëel"
+
+msgid "Rectangular"
+msgstr "Rechthoekig"
+
+msgid "Polar"
+msgstr "Polair"
+
+msgid "Show tooltip when the cursor is over something."
+msgstr "Toon de tip van het gereedschap waarover de cursor beweegt."
+
+msgid "Show tooltip"
+msgstr "Toon gereedschapstip"
+
+msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
+msgstr ""
+"Maximum aantal ongedaan-stappen is opgeslagen. Zet dit op 0 om ongedaan-"
+"keuze onmogelijk te maken."
+
+msgid ""
+"If checked the program will contact a web server when the program is started "
+"to see if a newer version is available."
+msgstr ""
+"Bij het opstarten contacteert programma een webserver om te zien of een "
+"nieuwere versie beschikbaar is."
+
+msgid "Check for new version of Graph at startup"
+msgstr "Controleer bij opstarten op een nieuwere versie van Graph."
+
+msgid "Select language to use."
+msgstr "Selecteer de taal."
+
+msgid ""
+"This is used to scale the user interface if you are having problems reading "
+"the text."
+msgstr ""
+
+msgid "Insert function"
+msgstr "Voeg een functie in:"
+
+msgid "Function type:"
+msgstr "Functietype"
+
+msgid "Select the function type to graph."
+msgstr "Selecteer het te tekenen grafiektype."
+
+msgid "Standard function   y=f(x)"
+msgstr "Standaardfunctie y=f(x)"
+
+msgid "Parametric function x(t), y(t)"
+msgstr "Parameterfunctie x(t),y(t)"
+
+msgid "Polar function         r=f(t)"
+msgstr "Polaire functie   r=f(t)"
+
+msgid "Function equation"
+msgstr "Functievergellijking "
+
+msgid "Steps:"
+msgstr "Stappen:"
+
+msgid "Number of calculation steps used to draw the graph."
+msgstr "Aantal berekeningstappen om een grafiek te tekenen."
+
+msgid "Draw type:"
+msgstr "Grafiektype"
+
+msgid ""
+"Choose Lines if you want the calculated points for the graph to be "
+"connected. Choose Dots if you only want to show a dot at each point."
+msgstr ""
+"Kies Lijnen als de berekende punten van de grafiek met elkaar verbonden "
+"moeten worden. Kies Punten als alleen punten weergegeven moet worden."
+
+msgid "Lines"
+msgstr "Lijnen"
+
+msgid "Dots"
+msgstr "Punten"
+
+msgid "Text label"
+msgstr "Tekstlabel"
+
+msgid "Font name:"
+msgstr "Lettertype"
+
+msgid "Font size:"
+msgstr "Grootte"
+
+msgid "Font color:"
+msgstr "Kleur lettertype"
+
+#, fuzzy
+msgid "Text size."
+msgstr "Tekstgrootte"
+
+msgid "Text string"
+msgstr "Tekst"
+
+msgid "Insert symbol"
+msgstr "Voeg een symbool in"
+
+#, fuzzy
+msgid "Insert object"
+msgstr "Voeg object in..."
+
+msgid "Bold (Ctrl-B)"
+msgstr "Vet (Ctrl-B)"
+
+msgid "Italic (Ctrl-I)"
+msgstr "Schuin (Crl-I)"
+
+msgid "Underline (Ctrl-U)"
+msgstr "Onderstreep (Ctrl-U)"
+
+msgid "Strikethrough (Ctrl-S)"
+msgstr "Doorstreep (Ctrl-S)"
+
+msgid "Superscript (Ctrl++)"
+msgstr "Superscript (Ctrl++)"
+
+msgid "Subscript (Ctrl+=)"
+msgstr "Subscript (Ctrl+=)"
+
+msgid "Align left (Ctrl-L)"
+msgstr "Links uitvullen (Ctrl-L)"
+
+msgid "Center (Ctrl-E)"
+msgstr "Centreer (Ctrl-E)"
+
+msgid "Align right (Ctrl-R)"
+msgstr "Rechts uitvullen (Ctrl-R)"
+
+#, fuzzy
+msgid "Text font."
+msgstr "Tekstlettertype"
+
+#, fuzzy
+msgid "Text color."
+msgstr "Tekstkleur"
+
+#, fuzzy
+msgid "Select background color of the text label."
+msgstr "Kies lettertype voor titel."
+
+msgid "Undo last action."
+msgstr "Laatste actie ongedaan"
+
+msgid "Redo last undone action."
+msgstr "Laatse ongedaanactie opnieuw."
+
+msgid "Cut selected text to the clipboard."
+msgstr "Knip geselecteerde tekst naar klembord"
+
+msgid "Paste the contents of the clipboard."
+msgstr "Plak inhoud klembord"
+
+msgid "Paste special..."
+msgstr "Plakken speciaal"
+
+msgid "Select which clipboard representation you want to paste."
+msgstr "Selecteer welk klembord je wil plakken."
+
+msgid "Insert object..."
+msgstr "Voeg object in..."
+
+msgid "Create a new OLE object."
+msgstr "Maak een nieuw OLE-object."
+
+msgid "Edit object"
+msgstr "Object bewerken"
+
+msgid "Edit selected OLE object."
+msgstr "Geselecteerd OLE-object bewerken."
+
+msgid "Insert f'(x)"
+msgstr "Voeg f'(x) in"
+
+msgid "Name:"
+msgstr "Naam:"
+
+msgid "Constant"
+msgstr "Constante"
+
+msgid "Value"
+msgstr "Waarde"
+
+#, fuzzy
+msgid "Select a function or tangent to evaluate."
+msgstr "Kies functie of raaklijn"
+
+msgid "Error"
+msgstr "Fout"
+
+msgid "Shade"
+msgstr "Arceer"
+
+msgid "Functions"
+msgstr "Functies"
+
+msgid "Tangents"
+msgstr "Raaklijnen"
+
+msgid "Point series"
+msgstr "Puntenreeks"
+
+msgid "Shades"
+msgstr "Arceringen"
+
+msgid "Length"
+msgstr "Lengte"
+
+msgid "Label"
+msgstr "Label"
+
+msgid "%s-error"
+msgstr "%s-fout"
+
+msgid "Transparent"
+msgstr "Transparant"
+
+msgid "Axes"
+msgstr "Assen"
+
+msgid "No error occurred. You should not see this message."
+msgstr "Geen fouten. Deze boodschap zou niet te zien mogen zijn."
+
+msgid "An error occurred while evaluating power function."
+msgstr "Fout bij berekening van de machtsfunctie."
+
+msgid "Tangent to 90+p180 is undefined."
+msgstr "Raaklijn bij 90+p180 is niet gedefinieerd."
+
+msgid "Fact can only be calculated for positive integers."
+msgstr "Faculteit bestaat alleen voor positieve gehelen."
+
+msgid "Cannot take logarithm to number equal or less than zero."
+msgstr ""
+"Kan de logaritme van een getal kleiner of gelijk aan nul niet berekenen."
+
+msgid "sqrt is undefined for negative numbers."
+msgstr "Vierkanswortel  is niet gedefinieerd voor negatieve getallen."
+
+msgid "A part of the evaluation gave a number with an imaginary part."
+msgstr "Een deel van de berekeningen geeft een getal met een imaginair deel."
+
+msgid "Division by zero."
+msgstr "Gedeeld door nul"
+
+msgid "Inverse trigonometric function out of range [-1;1]"
+msgstr "Inverse van de goniometrische functie buiten het bereik [-1,1]"
+
+msgid "The function is not defined for this value."
+msgstr "De functie is niet gedefinieerd voor deze waarde."
+
+msgid "atanh evaluated at undefined value."
+msgstr "atanh niet gedefinieerd in deze waarde"
+
+msgid "acosh evaluated at undefined value."
+msgstr "aocsh niet gedefinieerd in deze waarde"
+
+msgid "arg(0) is undefined."
+msgstr "arg(0) niet gedefineerd."
+
+msgid "Evaluation failed."
+msgstr "Berekening mislukt."
+
+msgid "Argument produced a function result with total loss of precision."
+msgstr "Argument levert een onzekere functiewaarde op."
+
+msgid "Symbol '%s' not found."
+msgstr "Symbool '%s' niet gevonden."
+
+msgid "Too many recursive calls."
+msgstr "Teveel recursieve aanroepen."
+
+msgid "Unexpected operator. Operator '%s' cannot be placed here."
+msgstr "Onverwachte operator. Operator '%s' kan hier niet geplaatst worden."
+
+msgid "End of parenthesis missing."
+msgstr "Eindhaakje ontbreekt."
+
+msgid "Invalid number of arguments supplied for function '%s'"
+msgstr "Aantal argumenten ingevoerd bij functie '%s' is niet juist."
+
+msgid "Comparison operator misplaced."
+msgstr ""
+
+msgid "Invalid number found. Use the format: -5.475E-8"
+msgstr "Ongeldige getalvorm. Gebruik het formaat: -5.457E-8"
+
+msgid "String is empty. You need to enter a function."
+msgstr "Lege string. Er moet een functie ingevoerd worden."
+
+#, fuzzy
+msgid "Comma is not allowed here. Use dot as decimal separator."
+msgstr "Komma niet toegelaten. Gebruik het punt als decimaalteken."
+
+msgid "Unexpected end of parenthesis."
+msgstr "Eindhaakjes kloppen niet."
+
+msgid "Number, constant or function expected."
+msgstr "Hier een getal, constante of functie invullen."
+
+msgid "Parameter after constant or variable not allowed."
+msgstr "Parameter achter een constante of variabele is niet toegelaten."
+
+msgid "Expression expected."
+msgstr "Een uitdrukking invullen."
+
+msgid "Unknown variable, function or constant: \"%s\""
+msgstr "Onbekende functie, variabele of constante:\"%s"
+
+msgid "Unknown character: \"%s\""
+msgstr "Onbekend karakter: \"%s"
+
+msgid "The end of the expression was unexpected."
+msgstr "Onverwacht einde van de uitdrukking."
+
+#, fuzzy
+msgid "Error parsing function text."
+msgstr "Fout bij ontleden functietekst"
+
+msgid "A calculation resulted in an overflow."
+msgstr "Een berekening resulteerde in een overflow."
+
+msgid "An invalid value was used in the calculation."
+msgstr "Bij de berekening werd een ongeldige waarde gebruikt."
+
+msgid "Not enough points for calculation."
+msgstr "Te weinig punten voor een berekening."
+
+msgid "Illegal name \"%s\" for user defined function or constant."
+msgstr ""
+"Ongeldige naam \"%s\" voor door gebruiker gedefinieerde functie of constante."
+
+msgid "Cannot differentiate recursive function."
+msgstr "Recursieve betrekking niet afleidbaar."
+
+msgid "Internal error."
+msgstr "Interne fout"
+
+msgid "Function cannot be differentiated."
+msgstr "Functie niet afleidbaar"
+
+msgid "Not further specified error occurred under calculation."
+msgstr "Niet gespecifieerde fout opgetreden  bij berekening."
+
+msgid "No solution found. Try another guess or another model."
+msgstr ""
+"Geen oplossing gevonden. Probeer een andere startwaarde of een ander model."
+
+msgid ""
+"Internal error. Please notify the programmer with as much information as "
+"possible."
+msgstr "Interne fout. Licht de programmeur zo goed mogelijk in."
+
+msgid "You need to enter a name for the function/constant."
+msgstr "Hier moet een functie/constante ingebracht worden."
+
+msgid ""
+"Invalid function/constant name '%s'.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
+"In addition you are not allowed to redefine built-in names."
+msgstr ""
+"Ongeldige naam voor functie/constante '%s'\n"
+"De naam mag alleen bestaan uit letters en decimale cijfers en moet met een "
+"letter beginnen.\n"
+"Ingebouwde namen mogen niet herdefinieerd worden."
+
+msgid "You need to enter a name for the argument."
+msgstr "Geef het argument een naam"
+
+msgid ""
+"Invalid argument name '%s'.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
+" In addition you are not allowed to use built-in names as argument names."
+msgstr ""
+"Ongeldige naam voor argument '%s'\n"
+"De naam mag alleen bestaan uit letters en decimale cijfers en moet met een "
+"letter beginnen.\n"
+"Ingebouwde namen mogen niet herdefinieerd worden."
+
+msgid "The end parenthesis is missing."
+msgstr "Het eindhaakje ontbreekt"
+
+msgid "Character found after the parenthesis."
+msgstr "Karakter gevonden achter de haakjes."
+
+msgid "Symbol \"%s\" defined more than once."
+msgstr "Het symbool \"%s\" werd meermaals gedefinieerd."
+
+msgid "Invalid equation or inequality."
+msgstr "Ongeldige vergelijking of ongelijkheid."
+
+msgid "Updating..."
+msgstr "Aan het updaten..."
+
+msgid "Save changes?"
+msgstr "Wijzigingen opslaan?"
+
+msgid "Save changes in %s"
+msgstr "Wijzigingen opslaan in %s"
+
+msgid "You have reached the maximum range of zoom."
+msgstr "Verder uitzoomen onmogelijk."
+
+msgid "You have reached the minimum range of zoom."
+msgstr "Verder inzoomen onmogelijk."
+
+msgid "There is no printer installed on the system."
+msgstr "Er is geen printer geïnstalleerd in het systeem."
+
+msgid "Error in value"
+msgstr "Fout in waarde"
+
+msgid "'%s' has to be an integer value greater or equal to 0."
+msgstr "'%s'  moet een geheel getal zijn groter dan of gelijk aan 0."
+
+msgid "'%s' must be greater than zero."
+msgstr "'%s'  moet groter zijn dan 0."
+
+msgid "'%s' must be an integer greater than zero."
+msgstr "'%s'  moet een geheel getal groter dan 0 zijn."
+
+msgid "Trying to break zoom limit."
+msgstr "Aan het proberen de zoomgrens te breken."
+
+msgid "'%s' must be greater than '%s'"
+msgstr "'%s' moet groter zijn dan '%s'"
+
+msgid "The maximum value must be greater than the minimum value."
+msgstr "De maximale waarde moet groter zijn dan de minimale."
+
+msgid "You need to enter a value."
+msgstr "Je moet een waarde ingeven."
+
+msgid ""
+"This file was created with Graph %s.\n"
+"Only files from version %s and higher can be opened."
+msgstr ""
+"Dit bestand werd gemaakt met Graph%s.\n"
+"Alleen bestanden van de versie %s en hoger kunnen geopend worden."
+
+msgid "'%s' is not a valid number."
+msgstr "'%s' is geen geldig aantal"
+
+msgid "Open the file %s."
+msgstr "Open het bestand%s."
+
+msgid "'%s' must be a positive number."
+msgstr "'%s' moet een positief getal zijn."
+
+msgid "File not found: %s"
+msgstr "Bestand niet gevonden: %s"
+
+msgid ""
+"Error reading file: %s\n"
+"File is not a correct graph file."
+msgstr ""
+"Fout bij lezen  bestand: %s\n"
+"Bestand is geen geldig graph-bestand."
+
+msgid "Unknown error while reading file: %s"
+msgstr "Onbekende fout bij lezen van het bestand:%s"
+
+msgid "Graph files [*.grf]|*.grf"
+msgstr "Graph- bestanden [*.grf]*.grf"
+
+msgid ""
+"Cannot write to file: %s\n"
+"Access denied. Check that the file is not in use or write protected."
+msgstr ""
+"Kan niet schrijven naar het bestand: %s\n"
+"Toegang geweigerd. Controleer of het bestand niet in gebruik is of beschermd."
+
+msgid "The font \"%s\" doesn't exist. Standard font is used instead."
+msgstr ""
+"Het lettertype \"%s\" bestaat niet. In de plaats wordt een "
+"standaardlettertype gebruikt."
+
+msgid "Conversion error"
+msgstr "Conversiefout"
+
+msgid ""
+"Unknown error code.\n"
+"Could not find error message for this error."
+msgstr ""
+"Onbekende foutcode.\n"
+"Kan geen foutboodschap hiervoor vinden."
+
+msgid "Selection error"
+msgstr "Selectiefout"
+
+msgid "File error"
+msgstr "Bestandsfout"
+
+msgid "Write access failed"
+msgstr "Geen schrijftoegang"
+
+msgid "OLE error"
+msgstr "OLE-fout"
+
+msgid "Error reading object"
+msgstr "Leesfout"
+
+msgid "Not a valid Graph object."
+msgstr "Geen geldig graph-object"
+
+msgid "Object error"
+msgstr "Objectfout"
+
+#, fuzzy
+msgid "Windows does not have enough resources to save an image that large."
+msgstr "Windows heeft onvoldoende middelen om een zo groot beeld op te slaan."
+
+#, fuzzy
+msgid "'%1%' must be between %2% and %3%."
+msgstr "Recente bestanden moeten tussen 0 en 9 liggen."
+
+msgid "Confirm delete"
+msgstr "Bevestig de verwijdering"
+
+msgid "This error should not occur. Please report this to the programmer."
+msgstr "Deze fout zou niet mogen vorkomen. Rapporteer dit aan de programmeur."
+
+#, fuzzy
+msgid "Are you sure you want to delete %s?"
+msgstr "Zeker van de verwijdering %s"
+
+msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
+msgstr "Graph-bestanden [*.grf]|*.grf|Alle bestanden [*.*]|*.*"
+
+msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle bestanden [*.*]|*.*"
+
+#, fuzzy
+msgid "Are you sure you want to delete the model: %s?"
+msgstr "Zeker van de verwijdering van het model: %s"
+
+msgid "Maximum number on x-axis must be greater than the minimum value."
+msgstr "Het grootste getal op de x-as moet groter zijn dan de minimumwaarde."
+
+msgid "Maximum number on y-axis must be greater than the minimum value."
+msgstr "Het grootste getal op de y-as moet groter zijn dan de minimumwaarde."
+
+msgid "Server application not found."
+msgstr "Servertoepassing niet gevonden."
+
+msgid "Maximum number for t must be greater than the minimum value."
+msgstr "Het maximum voor t moet groter zijn dan de minimumwaarde."
+
+msgid "The step value for t must be a number greater than 0."
+msgstr "De stapgrootte voor t moet een getal groter dan 0 zijn."
+
+msgid ""
+"The minimum value for the x-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+"De minimumwaarde op de x-as moet groter zijn dan 0 als die x-as logaritmisch "
+"geschaald is."
+
+msgid ""
+"The cross point of the y-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+"Het snijpunt met de y-as moet groter zijn dan 0 als de x-as logaritmisch "
+"geschaald is."
+
+msgid ""
+"The minimum value for the y-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"De minimumwaarde op de y-as moet groter zijn dan 0 als die y-as logaritmisch "
+"geschaald is."
+
+msgid ""
+"The cross point of the x-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"De snijpunt met op de x-as moet groter zijn dan 0 als de y-as logaritmisch "
+"geschaald is."
+
+msgid "'Recent files' must be between 0 and 9."
+msgstr "Recente bestanden moeten tussen 0 en 9 liggen."
+
+msgid "The end of interval must be greater than the start of interval."
+msgstr "Het intervaleinde moet groter zijn dan het intervalbegin."
+
+msgid "Error in interval."
+msgstr "Fout in het interval"
+
+msgid "The width must be an integer greater than 0."
+msgstr "De breedte moet een getal groter dan 0 zijn."
+
+msgid "Error in width"
+msgstr "Fout in de breedte"
+
+msgid ""
+"The end of interval must be greater than the start of interval and %s must "
+"be greater than 0."
+msgstr ""
+"Het intervaleinde moet groter zijn dan het intervalbegin en %s moet groter "
+"zijn dan 0 ."
+
+msgid "The maximum length of text has been reached."
+msgstr "De maximum tekstlengte werd bereikt."
+
+msgid "The derivative of the function is not defined at %s=%s"
+msgstr "De afgeleide van de functie is niet gedefinieerd in %s=%s"
+
+msgid "Coordinate not defined."
+msgstr "Coördinaat niet gedefinieerd."
+
+msgid "Checking for newer version..."
+msgstr "Controleer op een nieuwere versie..."
+
+msgid "Abort printing?"
+msgstr "Onderbreek het printen?"
+
+msgid "Calculate area"
+msgstr "Oppervlakteberekening"
+
+msgid "Calculate length of path"
+msgstr "Bereken lengte op kromme"
+
+msgid "Edit function"
+msgstr "Functie bewerken"
+
+msgid "Edit tangent/normal"
+msgstr "Raaklijn/normaal bewerken"
+
+msgid "Error processing file '%s' at line %s."
+msgstr "Uitvoeringsfout bestand '%s' in regel %s."
+
+msgid "Dialog error: %sh"
+msgstr "Dialoogfout: %sh"
+
+msgid "Unknown Graph data found while pasting clipboard data."
+msgstr ""
+"Onbekende graph-gegevens aangetroffen bij plakken van klembordgegevens."
+
+msgid "'%s' has to be an integer value between 0 and 1000."
+msgstr "'%s' moet een geheel getal tussen 0 en 1000 zijn."
+
+msgid "Printing error"
+msgstr "Printfout"
+
+#, fuzzy
+msgid "An unknown error occurred while printing."
+msgstr "Niet gekende fout bij printen."
+
+msgid "Error while adding points"
+msgstr "Fout bij toevoegen van punten"
+
+msgid "Each point needs both an x- and a y-coordinate."
+msgstr "Voor elk punt zijn x- en y-coördinaat nodig."
+
+msgid "\"%s\" is not a valid number."
+msgstr "\"%s\" is geen geldig aantal."
+
+msgid ""
+"You didn't add any points. You need to specify some x- and y-coordinates in "
+"the grid."
+msgstr ""
+"Er werden geen punten toegevoegd. Specifieer de coördinaatgetallen in het "
+"raster."
+
+msgid "Edit point series"
+msgstr "Puntenreeks bewerken"
+
+msgid "Edit shade"
+msgstr "Arcering bewerken"
+
+msgid "You need to select a function."
+msgstr "Selecteer een functie."
+
+msgid "New version of Graph available"
+msgstr "Er is een nieuwe versie van Graph beschikbaar."
+
+msgid ""
+"Graph %s is now available for download from www.padowan.dk\n"
+"with these new features since the previous version:\n"
+"\n"
+"%s\n"
+"\n"
+"Would you like to visit the web site?"
+msgstr ""
+"Graph %s is nu te downloaden van www.padowan.dk\n"
+"met deze nieuwe mogelijkheden sedert de vorig versie:\n"
+"\n"
+"%s\n"
+"\n"
+"Wil je de website bezoeken?"
+
+msgid "No new version"
+msgstr "Geen nieuwe versie"
+
+msgid "You are already using the most recent version of the program."
+msgstr "Je gebruikt reeds de meest recente versie van het programma."
+
+msgid ""
+"Cannot connect to server www.padowan.dk.\n"
+"Either the server is down or you do not have a connection to the Internet."
+msgstr ""
+"Krijg geen verbinding met de server www.padowan.dk.\n"
+"Server offline of geen internetverbinding."
+
+msgid "Socket error %s"
+msgstr "Socket fout %s"
+
+msgid "The server responded with the message '%s'"
+msgstr "De server antwoordde met het bericht '%s'"
+
+msgid "Protocol reply error %s"
+msgstr "Fout antwoordprotocol"
+
+msgid ""
+"The file cannot be opened by this version of the program.\n"
+"You need at least Graph %s to open this file."
+msgstr ""
+"Het bestand kan met deze versie van het programma niet geopend worden.\n"
+"Je hebt minstens Graph %s nodig om dit bestand te openen."
+
+#, fuzzy
+msgid ""
+"This file was saved by an outdated version of Graph,\n"
+"and it cannot be opened by the current version."
+msgstr ""
+"Dit bestand werd opgeslagen met een verouderde versie van Graph,\n"
+"en kan door de huidige versie niet geopend worden."
+
+msgid ""
+"\n"
+"\n"
+"If you don't want to be asked again, this feature may be disabled from the "
+"Edit|Options dialog."
+msgstr ""
+"\n"
+"\n"
+"Wil je het niet meer gevraagd worden, dan kan deze mogelijkheid "
+"uitgeschakeld worden in de Bewerken/Opties dialoog."
+
+msgid "Edit relation"
+msgstr "Relatie bewerken"
+
+#, fuzzy
+msgid "Commands"
+msgstr "Commentaar:"
+
+#, fuzzy
+msgid "(All Commands)"
+msgstr "(Alle acties)"
+
+msgid ""
+"To add a command to a toolbar simply select a category and drag the command "
+"out of this dialog box to a toolbar."
+msgstr ""
+
+#, fuzzy
+msgid "Edit f'(x)"
+msgstr "Voeg f'(x) in"
+
+#, fuzzy
+msgid "Edit trendline"
+msgstr "Relatie bewerken"
+
+msgid ""
+"This Tip Of The day can give you a lot of information about the program that "
+"most users don't know."
+msgstr ""
+"Deze Tip van de Dag kan programma-informatie geven die weinig gebruikers "
+"kennen."
+
+msgid ""
+"You can send suggestions for future versions, bug reports and comments to "
+"graph@padowan.dk."
+msgstr ""
+"Suggesties voor toekomstige versies, foutmeldingen en opmerkingen zijn "
+"welkom op graph@padowan.dk."
+
+#, fuzzy
+msgid ""
+"You can customize the toolbar by right clicking on it and select 'Customize "
+"toolbar'."
+msgstr ""
+"De werkbalk kan aangepast door rechts te klikken en 'Werkbalk bewerken' te "
+"kiezen."
+
+msgid ""
+"Instead of deleting a function you can make it invisible by right clicking "
+"on it in the function list and removing the check at the 'Visible' menu item."
+msgstr ""
+"In plaats van een functie te verwijderen kan ze ook onzichtbaar gemaakt "
+"worden door er in de functielijst  rechts op te klikken en 'Zichtbaar' af te "
+"vinken."
+
+msgid "You can paste images into a text label."
+msgstr "In een tekstlabel kunnen figuren geplakt worden."
+
+msgid ""
+"Text labels can contain any kind of OLE objects, for example Microsoft "
+"Equation. When editing a label right click in the editing area and select "
+"'Insert object'."
+msgstr ""
+"Tekstlabels kunnen elke soort van OLE-object bevatten, bijvoorbeeld een "
+"Microsoft vergelijking. Bij het maken van een label klik je rechts in de "
+"bewerkingszone en selecteer je 'Voeg een object in'."
+
+msgid ""
+"You can export points from a point series to a file that can be read by "
+"other programs, for example Microsoft Excel. When editing the point series "
+"select the points, right click and choose 'Export to file'."
+msgstr ""
+"Je kunt de punten uit een puntenreeks exporteren naar een bestand dat "
+"gelezen kan worden door andere programma's, bijvoorbeeld Microsoft Excel. "
+"Bij het bewerken van de punten klik rechts en kies voor 'Exporteer naar "
+"bestand'."
+
+#, fuzzy
+msgid ""
+"A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)"
+"=t or as the relation x=5."
+msgstr ""
+"Een vertikale lijn x=5 kan getekend worden als de parameterkromme x(t)=t, y"
+"(t)=t of als de relatie x=5"
+
+msgid ""
+"You can use Zoom|Square to make the axes look equally scaled. This is "
+"especially useful when drawing circles and similar functions."
+msgstr ""
+"Zoom/Vierkant gebruik je om beide assen gelijk geschaald te hebben. Dit is "
+"vooral handig om cirkels en gelijkaardige functies te tekenen."
+
+msgid "You can find a list of all available functions in the help."
+msgstr ""
+"Een lijst met alle beschikbare functies vinden we in Help. ( kun je vinden "
+"in )"
+
+msgid ""
+"You can combine two functions to one using 'if'. For example the function f"
+"(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+msgstr ""
+"Een meervoudig functie voorschrift stellen we op met 'if'. Bijvoorbeeld f(x)"
+"= x voor x>1 en f(x)=x^2 voor x<1 geven we in als f(x)=if(x>1,x,x^2)."
+
+msgid ""
+"You can import the contents of another Graph file into the current "
+"coordinate system using 'File|Import|Graph file'."
+msgstr ""
+"De inhoud van andere Graph-bestanden kan in het huidige assenstel "
+"binnengehaald worden via 'Bestand|Importeer|Grafisch bestand'."
+
+msgid ""
+"If you check 'Save as default' in the Axes dialog the current settings will "
+"be used as default when creating new files."
+msgstr ""
+"Vink je \"Als standaard opslaan\"  aan in de assendialoog dan zullen de "
+"gebruikte instellingen voortaan standaard zijn voor nieuwe bestanden."
+
+msgid ""
+"While you hold down the Ctrl key, you can use the arrow keys to move the "
+"system."
+msgstr ""
+"Houden we de Ctrl-toets ingedrukt terwijl de pijltoetsen gebruikt worden dan "
+"kunnen we het assenstel verschuiven."
+
+msgid ""
+"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
+"and out."
+msgstr ""
+"Houden we de Ctrl-toets ingedrukt terwijl de + en - toetsen gebruikt worden "
+"dan zoomen we in of uit."
+
+msgid ""
+"You can use the scroll button on your mouse to zoom in and out at the "
+"position of the mouse cursor."
+msgstr ""
+"Het muiswieltje kan gebruikt worden om in of uit te zoomen op de plaats van "
+"de aanwijzer."
+
+msgid ""
+"If you don't want an item shown in the legend, you can right click on the "
+"item in the function list and deselect 'Show in legend'."
+msgstr ""
+"Wil je een item niet wil zien in de legende volstaat rechts klikken en het "
+"deselecteren van 'Toon in de legende'."
+
+msgid ""
+"If you want the axes shown to the left and bottom of the image, you can "
+"choose Axes style as Boxed in the Settings tab of the Axes dialog."
+msgstr ""
+"Wil je dat de assen links en onderaan het beeld zichtbaar zijn, kies dan "
+"Assenstijl als kader in de tabinstellingen van de assendialoog"
+
+#, fuzzy
+msgid ""
+"Graph can save the shown coordinate system in five different image formats: "
+"bmp, emf, png, jpg and pdf."
+msgstr ""
+"Graph kan het assenstel in vier verschillende bestandsformaten opslaan: bmp, "
+"emf, png and jpg."
+
+msgid ""
+"You can use 'Edit|Copy image' to copy the coordinate system to the clipboard "
+"and paste it into another program."
+msgstr ""
+"Met Bewerken|Kopiëren kun je het assenstel kopieren naar het klembord en "
+"plakken in een ander programma."
+
+msgid ""
+"You can open a saved grf-file in a new instance of the program by double "
+"clicking on it in Explorer."
+msgstr ""
+"Je kan een opgeslagen grf-bestand openen door er in Explorer op te "
+"dubbelklikken."
+
+msgid ""
+"You can drag a grf-file from explorer into an open instance of Graph to open "
+"the file."
+msgstr ""
+"Je kan een grf-file van explorer naar een open werkbalk van Graph slepen om "
+"dat bestand te openen."
+
+msgid ""
+"Graph will remember the size and placement of the main window between "
+"executions. This can be disabled from the Options dialog."
+msgstr ""
+"Graph onthoudt de grootte en plaats van het hoofdvenster tussen twee "
+"sessies. Dit uitschakelen kan bij Opties."
+
+msgid ""
+"Calc|Table can be used to create a table with evaluation values for a "
+"function."
+msgstr ""
+"Bereken|Tabel kan gebruikt worden om een tabel met functiewaarden aan te "
+"maken."
+
+msgid ""
+"A part or the whole evaluation table can be exported to a file by right "
+"clicking and selecting 'Export to file'. It can afterwards be opened in "
+"other programs like Microsoft Excel."
+msgstr ""
+"Een deel van een waardentabel kan geëxporteerd worden naar een bestand door "
+"rechts te klikken erop en 'Exporteer naar bestand\" te selecteren. Daarna "
+"kan deze geopend worden in programm's zoals Microsoft Excel."
+
+msgid ""
+"Data from the evaluation table can be copied to another program like "
+"Microsoft excel using the clipboard."
+msgstr ""
+"Gegevens uit een functietabel kunnen gekopieerd worden naar andere "
+"programma's, zoals Microsoft Excel, via het klembord."
+
+msgid ""
+"The data points in a point series can be copied to and from other programs "
+"like Microsoft Excel through the clipboard."
+msgstr ""
+"De punten uit een puntenreeks  kunnen gekopieerd worden naar andere "
+"programma's, zoals Microsoft Excel, via het klembord."
+
+msgid ""
+"Functions can be copied from one instance of the program to another through "
+"the clipboard using Edit|Copy."
+msgstr ""
+"Functies kunnen van het ene onderdeel van het programma naar een ander "
+"gekopieerd worden  via het klembord"
+
+msgid "You can always undo the last thing you did using Edit|Undo."
+msgstr ""
+"De laatst uitgevoerde actie kan altijd ongedaan gemaakt worden via Bewerken|"
+"Ongedaan"
+
+msgid ""
+"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
+"have undone."
+msgstr ""
+"Heb je per ongeluk iets ongedaan gemaakt dan kun je via Bewerken|Herdoen de "
+"situatie van voor het ongedaan terug zetten."
+
+msgid "In the Axes dialog you can add a title to the coordinate system."
+msgstr "In de dialoogbox van Assen kun je het assenstel een naam geven"
+
+msgid ""
+"You can import point series from files saved by other programs, like "
+"Microsoft Excel."
+msgstr ""
+"Je kan puntenreeks vanuit andere programma's, zoals Microsoft Excel, "
+"importeren."
+
+msgid ""
+"When inserting a point series you can copy data from programs like Microsoft "
+"Excel, and paste the data into the grid in Graph."
+msgstr ""
+"Puntenreeksen invoegen kan door de gegevens te kopiëren in andere "
+"programma's, zoals Microsoft Excel, en ze te plakken in Graph."
+
+msgid ""
+"You can use 'Zoom|All points' to change the coordinate system so all point "
+"series are visible."
+msgstr ""
+"Met Zoom|Alle punten zorg je ervoor dat alle punten van een puntenreeks "
+"zichtbaar zijn."
+
+msgid ""
+"You can use Zoom|Fit to change the coordinate system to show the selected "
+"function or point series."
+msgstr ""
+"Met Zoom|Alle punten zorg je ervoor dat alle geselecteerde punten van een "
+"puntenreeks zichtbaar zijn."
+
+msgid ""
+"When you hold down the Shift key you can drag the coordinate system around "
+"with the mouse."
+msgstr ""
+"Hou je de Shift-toets ingedrukt, dan kun je het assenstel bewegen met de "
+"muis."
+
+msgid ""
+"You can use Calc|Evaluate to find intersections between functions, crossings "
+"with the axes and extremum points."
+msgstr ""
+"Met Bereken|Evalueer kun je de doorsnede van twee funsties vinden, "
+"snijpunten met de assen en extrema."
+
+msgid ""
+"When a point series is selected you can add points to it by clicking on the "
+"image while you hold down the Ctrl key."
+msgstr ""
+"Als een puntenreeks geselecteerd is dan kunnen punten toegevoegd worden door "
+"op het beeld te klikken terwijl de Ctrl-toets ingedrukt is."
+
+msgid ""
+"You can use a relation to plot any inequality, for example sin(x^2) < cos"
+"(y^2)"
+msgstr ""
+"Een relatie kan gebruikt worden om een ongelijkheid te plotten, bijvoorbeeld "
+"sin(x^2) < sin (y^2)"
+
+msgid ""
+"You can use a relation to plot any equation, for example x*sin x = y*cos y"
+msgstr ""
+"Een vergelijking kan geplot worden door gebruik te maken van relaties, "
+"bijvoorbeeld x*sin x= y*cos y"
+
+msgid ""
+"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
+"same order they appear in the function list to the left."
+msgstr ""
+"Elementen (functies, arceringen, labels, relaties, enz.) worden in dezelfde "
+"volgorde getekend als dat ze in de lijst van functies voorkomen."
+
+msgid ""
+"You can move the selected element in the function list either by dragging it "
+"with the mouse or with the arrow up/down keys while ALT is held down."
+msgstr ""
+"Een in de lijst functies geselecteerd element kan verplaatst worden met de "
+"muis of met de opwaartse/neerwaartse pijlen terwijl de ALT-toets ingedrukt "
+"gehouden wordt."
+
+#, fuzzy
+msgid ""
+"You can show functions and other elements behind the axes by moving the "
+"element above the axes in the function list to the left. To move shadings "
+"and tangents you will have to move the functions they are attached to."
+msgstr ""
+"Arceringen en andere elementen die achter de assen liggen kunnen zichtbaar "
+"gemaakt worden door het element over de assen naar links te bewegen in de "
+"lijst van functies."
+
+msgid ""
+"Custom text labels may be attached to the axes by right clicking on the "
+"label and selecting a placement from the context menu."
+msgstr ""
+"Tektslabels kunnen vastgemaakt worden aan de assen door rechts klikken op "
+"het label en het kiezen van een plaatsing uit het contextmenu."
+
+msgid ""
+"The legend may be moved freely with the mouse or attached to one of the "
+"corners by right clicking on the legend and choose a placement from the "
+"context menu."
+msgstr ""
+"Men kan de legende met de muis vrij bewegen of vastmaken aan een van de "
+"hoeken door rechts te klikken en door een plaatsing te kiezen uit het "
+"contextmenu."
+
+msgid ""
+"As an alternative to transparent you can choose a custom background color "
+"for labes. This is especially useful for labels drawn over shades."
+msgstr ""
+"Een menu kan naast transparant ook een kleur krijgen. Dit is vooral "
+"interessant als een menu boven een schaduw getekend wordt."
+
+msgid ""
+"In most places like point series, axes settings, function ranges, etc., you "
+"can use expressions like pi/4 instead of numbers."
+msgstr ""
+"In de meeste plaatsen zoals punten reeksen, as-instellingen, bereik van "
+"functies, kunnen we uitdrukkingen zoals pi/4 in plaats van getallen."
+
+msgid ""
+"You can create your own custom constants under Function|Custom functions for "
+"use in functions, point series, etc. For example g=9.80665, R=8.31"
+msgstr ""
+"\"Men kan zijn eigen standaardconstanten creëren onder Functie|Standaard "
+"functies en gebruiken bij functies, puntenreeksen, enz. Bijvoorbeeld "
+"g=9.80665, R=8.31 ."
+
+msgid ""
+"You can create your own custom functions under Function|Custom functions for "
+"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin"
+"(x)/x)"
+msgstr ""
+"Men kan zijn eigen standaardfuncties creëren onder Functie|Standaard "
+"functies en gebruiken bij het voorstellen van functies, relaties, enz. "
+"Bijvoorbeeld sinc(x)=if(x=0,sin(x)/x)"
+
+msgid ""
+"In the Save as image dialog there is an Option button you can use to specify "
+"the image resolution. This is especially useful if you want a high "
+"resolution image."
+msgstr ""
+"Als je kiest voor Opslaan als figuur kan via een Optie drukknop de "
+"figuurresolutie ingesteld worden. Heel handig als men kiest voor een hoge "
+"resolutie."
+
+msgid ""
+"Point series can have arrows as markers. A point series with arrows as "
+"markers and lines between the points can be used to show vectors."
+msgstr ""
+"Puntenreeksen kunnen met pijlen aangeduid worden. Puntenreeksen met pijlen "
+"kunnen gebruikt worden om vectoren voor te stellen"
+
+msgid "Custom..."
+msgstr "Standaard"
+
+msgid "Black"
+msgstr "Zwart"
+
+msgid "Maroon"
+msgstr "Bruin"
+
+msgid "Green"
+msgstr "Groen"
+
+msgid "Olive"
+msgstr "Olijfkleurig"
+
+msgid "Navy"
+msgstr "Marineblauw"
+
+msgid "Purple"
+msgstr "Purper"
+
+msgid "Teal"
+msgstr "Donkergroen"
+
+msgid "Gray"
+msgstr "Grijs"
+
+msgid "Silver"
+msgstr "Zilverkleurig"
+
+msgid "Red"
+msgstr "Rood"
+
+msgid "Lime"
+msgstr "Limoengroenl"
+
+msgid "Yellow"
+msgstr "Geel"
+
+msgid "Blue"
+msgstr "Blauw"
+
+msgid "Fuchsia"
+msgstr "Fuchsia"
+
+msgid "Aqua"
+msgstr "Aqua"
+
+msgid "White"
+msgstr "Wit"
+
+msgid "Money Green"
+msgstr "Muntgrijs"
+
+msgid "Sky Blue"
+msgstr "Hemels blauw"
+
+msgid "Cream"
+msgstr "Roomkleurig"
+
+msgid "Med Gray"
+msgstr "Licht grijs"
+
+#, fuzzy
+msgid "Local"
+msgstr "Donkergroen"
+
+msgid "Global"
+msgstr ""
+
+msgid "Insert"
+msgstr "Voeg in"
+
+msgid "Subset:"
+msgstr ""
+
+msgid "Print"
+msgstr "Print"
+
+msgid "Scale:"
+msgstr "Schaal"
+
+msgid "Printer"
+msgstr "Printer"
+
+msgid "Type:"
+msgstr "Type:"
+
+msgid "Where:"
+msgstr "Waar:"
+
+msgid "Comment:"
+msgstr "Commentaar:"
+
+msgid ""
+"Select the printer to use. The Properties button may be used to change more "
+"advanced settings for the printer."
+msgstr ""
+
+msgid ""
+"Select to print in color (or grayscale if your printer is not a color "
+"printer) or convert all colors to black."
+msgstr ""
+
+msgid "Print output"
+msgstr "Print uitvoer"
+
+msgid "Color"
+msgstr "Kleur"
+
+msgid "Black && white"
+msgstr "Zwart & wit"
+
+msgid "Position (millimeters)"
+msgstr "Plaats(millimeters)"
+
+msgid "Left margin:"
+msgstr "Linkermarge"
+
+msgid "Top margin:"
+msgstr "Bovenmarge"
+
+#, fuzzy
+msgid "Select to place the image on the middle of the page."
+msgstr "Kies het lettertype voor de labels bij de assen."
+
+msgid "Center on page"
+msgstr "Centreer op de pagina"
+
+#, fuzzy
+msgid "Enter the image position on the page."
+msgstr "Voeg een beschrijving in voor in de legende."
+
+msgid "Number of copies:"
+msgstr "Aantal kopies:"
+
+#, fuzzy
+msgid "Choose number of copies to print."
+msgstr "Aantal kopies:"
+
+msgid "Enter percent of original size."
+msgstr ""
+
+#, fuzzy
+#~ msgid "Panel1"
+#~ msgstr "Annuleer"
+
+#~ msgid "Text too long"
+#~ msgstr "Tekst te lang"
+
+#~ msgid ""
+#~ "Write a descriptive text to show in the legend, else the inequality will "
+#~ "be used."
+#~ msgstr ""
+#~ "Geef een beschrijvende tekst voor in de legende, anders wordt de "
+#~ "ongelijkheid gebruikt."
+
+#~ msgid ""
+#~ "Description shown in the legend. If empty the function equation is used."
+#~ msgstr ""
+#~ "Beschrijving getoond in de legende. Indien leeg wordt de vergelijking van "
+#~ "de functie gebruikt"
+
+#~ msgid "Customize"
+#~ msgstr "Pas aan"
+
+#~ msgid "Actions"
+#~ msgstr "Acties"
+
+#~ msgid "Description"
+#~ msgstr "Omschrijving"
+
+#~ msgid "Cate&gories:"
+#~ msgstr "Categorieën "
+
+#~ msgid "A&ctions:"
+#~ msgstr "Acties:"
+
+#~ msgid ""
+#~ "To add actions to your application simply drag and drop from either "
+#~ "Categories or Actions onto an existing ActionBar."
+#~ msgstr ""
+#~ "Om acties toe te voegen  aan een toepassing, volstaat het slepen en "
+#~ "loslaten van een Categorie of een Actie naar een bestaande werkbalk"
+
+#~ msgid "Area..."
+#~ msgstr "Oppervlakte..."
+
+#~ msgid "Evaluate..."
+#~ msgstr "Evalueer..."
+
+#~ msgid "Are you sure you want to delete the function: %s"
+#~ msgstr "Ben je zeker van de verwijdering van de functie: %s"
+
+#~ msgid "Are you sure you want to delete the tangent: %s"
+#~ msgstr "Ben je zeker van de verwijdering van de raaklijn: %s"
+
+#, fuzzy
+#~ msgid "Letter"
+#~ msgstr "Links"
+
+#~ msgid "Check to increase the end coordinate until interception."
+#~ msgstr "Controleer het vermeerderen van de eindcoördinaat tot vensterrand."
+
+#~ msgid "Increase to interception"
+#~ msgstr "Vermeerder tot vensterrand"
+
+#~ msgid "Check to decrease start coordinate until interception."
+#~ msgstr "Controleer vermindering startcoördinaat tot vensterrand."
+
+#~ msgid "Decrease to interception"
+#~ msgstr "Verminder tot vensterrand"

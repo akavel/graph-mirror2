@@ -1,0 +1,2824 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Граф\n"
+"POT-Creation-Date: 2006-05-31 19:27\n"
+"PO-Revision-Date: 2006-03-14 19:05+0800\n"
+"Last-Translator: Batnasan <baagiibat@yahoo.com>\n"
+"Language-Team: Батнасан <baagiibat@yahoo.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: dxgettext 1.2.1\n"
+"X-Poedit-Bookmarks: -1,-1,-1,-1,56,-1,-1,-1,-1,-1\n"
+"X-Poedit-Language: Mongolian\n"
+"X-Poedit-Country: MONGOLIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "From:"
+msgstr "Хаанаас:"
+
+msgid "To:"
+msgstr "Хэнд:"
+
+msgid "Area"
+msgstr "Муж"
+
+msgid "Enter a start coordinate or mark the range on the image with the mouse."
+msgstr "өаө"
+
+#, fuzzy
+msgid "Enter the end coordinate or mark the range on the image with the mouse."
+msgstr "өаө"
+
+msgid ""
+"Area or length of path calculated for the given range using Simpson's "
+"formula."
+msgstr ""
+
+msgid "Snap to:"
+msgstr ""
+
+msgid "The x-coordinate evaluated for the t-parameter."
+msgstr ""
+
+msgid "The y-coordinate evaluated for the t-parameter."
+msgstr ""
+
+msgid "The derivative of x(t) evaluated for the entered t-parameter."
+msgstr ""
+
+msgid "The derivative of y(t) evaluated for the entered t-parameter."
+msgstr ""
+
+msgid "The slope of the function evaluated for the entered t-parameter."
+msgstr ""
+
+msgid ""
+"Enter the independent variable for which you want to evaluate the function, "
+"or click on the function in the main window."
+msgstr ""
+
+msgid "Select where the cursor will be placed when you click on the image."
+msgstr ""
+
+msgid "Function"
+msgstr "Функц"
+
+#, fuzzy
+msgid "Intersection"
+msgstr "Интернэт"
+
+msgid "x-axis"
+msgstr "х-тэнхлэг"
+
+msgid "y-axis"
+msgstr "у-тэнхлэг"
+
+#, fuzzy
+msgid "Extreme x-value"
+msgstr "Эктремум"
+
+#, fuzzy
+msgid "Extreme y-value"
+msgstr "Эктремум"
+
+msgid "The distance to the function evaluated for the given angle."
+msgstr ""
+
+msgid "The x-coordinate evaluated for the given angle."
+msgstr ""
+
+msgid "The y-coordinate evaluated for the given angle."
+msgstr ""
+
+msgid "The derivative of the function evaluated for the given angle."
+msgstr ""
+
+msgid "The slope of the function evaluated for the given angle."
+msgstr ""
+
+msgid ""
+"Enter a number for which you want to evaluate the function, or click on the "
+"function in the main window."
+msgstr ""
+
+msgid "Extremum"
+msgstr "Эктремум"
+
+msgid "This is the function evaluated for the entered x-value."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"This is the first derivative of the function evaluated for the entered value."
+msgstr "Сонгогдсон функцын нэгдүгээр эрэмбийн уламжлал оруулах"
+
+msgid ""
+"This is the functions second derivative evaluated for the entered value."
+msgstr ""
+
+msgid "This is the y-coordinate corresponding to the entered x-coordinate."
+msgstr ""
+
+#, fuzzy
+msgid "Enter an x-coordinate or click in the main window."
+msgstr "өаө"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Import"
+msgstr "Импорт"
+
+msgid "Graph file..."
+msgstr "График файл..."
+
+msgid "Import a graph file into the current coordinate system."
+msgstr "Тухайн координатын системд график импортло"
+
+msgid "Point series..."
+msgstr "Цэгэн цуваа..."
+
+msgid "Import point series from a data file."
+msgstr "Өгөгдөлийн файлаас цэгэн цуваа импортло"
+
+msgid "Edit"
+msgstr "Засвар"
+
+msgid "Zoom"
+msgstr "Харагдац"
+
+msgid "Calc"
+msgstr "Тооцоол"
+
+msgid "Help"
+msgstr "Зөвлөмж"
+
+msgid "Internet"
+msgstr "Интернэт"
+
+msgid "Open file: %s"
+msgstr "Файл нээх: %s"
+
+msgid "Visible"
+msgstr ""
+
+#, fuzzy
+msgid "Check to make the selected item visible in the coordinate system."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+#, fuzzy
+msgid "Show in legend"
+msgstr "Нэршилын самбар үзүүлэх"
+
+#, fuzzy
+msgid "Check to show the selected item in the legend."
+msgstr "Сонгогдсон функцын массштаб."
+
+msgid "Placement"
+msgstr ""
+
+#, fuzzy
+msgid "Above x-axis"
+msgstr "х-тэнхлэг"
+
+msgid ""
+"Place the label directly above the x-axis on the right side of the image."
+msgstr ""
+
+#, fuzzy
+msgid "Below x-axis"
+msgstr "х-тэнхлэг"
+
+msgid ""
+"Place the label directly below the x-axis on the right side of the image."
+msgstr ""
+
+#, fuzzy
+msgid "Left of y-axis"
+msgstr "У- тэнхлэгийн баруун тал"
+
+msgid "Place the label to the left of the y-axis at the top of the image."
+msgstr ""
+
+msgid "Right of y-axis"
+msgstr "У- тэнхлэгийн баруун тал"
+
+msgid "Place the label to the right of the y-axis at the top of the image."
+msgstr ""
+
+msgid "Export to file..."
+msgstr "Файл экпортлохдоо..."
+
+#, fuzzy
+msgid "Export the selected point series to a file."
+msgstr "Өгөгдөлийн файлаас цэгэн цуваа импортло"
+
+msgid "New"
+msgstr "Шинэ"
+
+msgid "Creates a new coordinate system."
+msgstr "Шинэ координатын систем үүсгэ"
+
+msgid "Open..."
+msgstr "Нээх"
+
+msgid "Read coordinate system and functions from a file."
+msgstr "Координатын систем болон функцыг файлаас унш."
+
+msgid "Save"
+msgstr "Хадгалах"
+
+msgid "Write coordinate system and functions to a file."
+msgstr "Координатын систем болон функцыг файлд бич."
+
+msgid "Save as..."
+msgstr "Хадгалахдаа..."
+
+msgid "Saves the coordinate system as a new name."
+msgstr "Координатын системийг шинэ нэртэй болгон хадгал"
+
+msgid "Save copy as..."
+msgstr "Хадгалахдаа хувилан..."
+
+#, fuzzy
+msgid "Saves a copy of the current coordinate system."
+msgstr "Энэ координатын системийг хувилан хадгал"
+
+msgid "Save as image..."
+msgstr "Зураг болгон хадгалахдаа..."
+
+msgid "Saves the shown coordinate system as an image."
+msgstr "Харагдаж байгаа координатын системийг зураг болгон хадгалах."
+
+msgid "Print..."
+msgstr "Хэвлэхдээ.."
+
+msgid "Print shown coordinate system."
+msgstr "Харагдаж байгаа координатын системийг хэвлэ."
+
+msgid "Exit"
+msgstr "Гарах"
+
+msgid "Quit the program."
+msgstr "Программыг хаах"
+
+msgid "Undo"
+msgstr "Хийснээ болих"
+
+msgid "Undo the last action."
+msgstr "Сүүлчийн үйлдлийг хүчингүй болгох"
+
+msgid "Redo"
+msgstr "Давтан хийх"
+
+msgid "Redo the last action undone."
+msgstr "Сүүлчийн үйлдлийг давтах"
+
+msgid "Cut"
+msgstr "Таслах"
+
+msgid "Cuts the selected function or point series to the clipboard."
+msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
+
+msgid "Copy"
+msgstr "Хувилах"
+
+msgid "Copies the selected function or point series to the clipboard."
+msgstr "Сонгогдсон функц болон цэгэн цувааг clipboard-руу хувилах."
+
+msgid "Paste"
+msgstr "Тавих"
+
+#, fuzzy
+msgid ""
+"Pastes a function or point series from the clipboard into the coordinate "
+"system."
+msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
+
+msgid "Copy image"
+msgstr "Зураг болгон хувилах"
+
+msgid "Copies the shown coordinate system to the clipboard."
+msgstr ""
+"Харагдаж байгаа координатын системийг зураг болгон  clipboard руу хувилах"
+
+msgid "Axes..."
+msgstr "Тэнхлэгүүд..."
+
+msgid "Edit axes settings."
+msgstr "Тэнхлэгийн тохиргоо засварлах."
+
+msgid "Options..."
+msgstr "Тохиргоонууд..."
+
+msgid "Edit options."
+msgstr "Тохиргооны засвар."
+
+msgid "Insert function..."
+msgstr "Функ оруул..."
+
+msgid "Insert a new function."
+msgstr "Шинэ функц оруул."
+
+msgid "Insert tangent/normal..."
+msgstr "Шүргэгч/ нормал оруулах."
+
+#, fuzzy
+msgid "Insert a new tangent or normal for the selected function."
+msgstr "Сонгогдсон функцэд шинэ тангент оруул"
+
+msgid "Insert shade..."
+msgstr "Сүүдэр оруулах..."
+
+#, fuzzy
+msgid "Add shading to the selected function."
+msgstr "Функцэд сүүдэр нэмэх"
+
+msgid "Insert point series..."
+msgstr "Цэгэн цуваа оруулах..."
+
+msgid "Insert a new point series."
+msgstr "Шинэ цэгэн цуваа оруулах."
+
+#, fuzzy
+msgid "Insert trendline..."
+msgstr "Тэнцэтгэл оруулах..."
+
+#, fuzzy
+msgid "Insert a curve of best fit for the selected point series."
+msgstr "Сонгогдсон функцэд шинэ тангент оруул"
+
+msgid "Edit..."
+msgstr "Завсарлах..."
+
+#, fuzzy
+msgid "Edit the selected element: Function, tangent, point series, etc."
+msgstr "Сонгогдсон функц, шүргэгч эсвэл цэгэн цувааг өөрчлах."
+
+msgid "Delete"
+msgstr "Устга"
+
+msgid "Delete the selected function, tangent or point series."
+msgstr "Сонгогдсон функц, шүргэгч, цэгэн цувааг /тахир  шугам/ арилгах"
+
+msgid "Insert f'(x)..."
+msgstr " f'(x) уламжлал оруулах..."
+
+msgid "Insert the first derivative of the selected function."
+msgstr "Сонгогдсон функцын нэгдүгээр эрэмбийн уламжлал оруулах"
+
+msgid "In"
+msgstr "Дотогш"
+
+msgid "Zoom in."
+msgstr "Дотогш агшаа"
+
+msgid "Out"
+msgstr "Гадагш"
+
+msgid "Zoom out."
+msgstr "Гадагш томсго."
+
+msgid "Window"
+msgstr "Цонх"
+
+msgid "Zoom to user selected window."
+msgstr "Хэрэглэгчийн сонгосон цонхыг томгох, агшаах"
+
+msgid "Square"
+msgstr "Квадрат"
+
+#, fuzzy
+msgid ""
+"Zoom to scale the axes equal. This will show a circle in the correct "
+"relation instead of an ellipse."
+msgstr ""
+"Тэнхлэгүүдийн массштабыг ижил хэмжээтэй болгох. Жишээ нь тойрог эллипс шиг "
+"харагдаж байвал түүнийг тойрог болгох."
+
+msgid "Standard"
+msgstr "Стандарт"
+
+msgid "Zoom to standard coordinates."
+msgstr "Стандарт "
+
+msgid "Move"
+msgstr "Зөө"
+
+msgid "Move up"
+msgstr "Дээш зөөх"
+
+msgid "Move the window up the coordinate system."
+msgstr "Координатын системийн цонхыг дээш зөөх"
+
+msgid "Move down"
+msgstr "Доош зөөх"
+
+msgid "Move the window down the coordinate system."
+msgstr "Координатын системийн цонхыг доош зөөх"
+
+msgid "Move left"
+msgstr "Зүүн тийш зөөх"
+
+msgid "Move the window to left of the coordinate system."
+msgstr "Координатын системийн цонхыг зүүн тийш зөөх"
+
+msgid "Move right"
+msgstr "Баруун тийш зөөх"
+
+msgid "Move the window to the right of the coordinate system."
+msgstr "Координатын системийн цонхыг баруун тийш зөөх"
+
+msgid "Move system"
+msgstr "Системийг зөөх"
+
+msgid "Move the coordinate system with the mouse."
+msgstr "Координатын системийг хулганы тусламжтайгаар зөөх"
+
+#, fuzzy
+msgid "Length of path"
+msgstr "Зайн урт..."
+
+msgid "Calculate length of path between two points."
+msgstr "Функцын хоёр цэгийн хоорондох зайг тохируулах."
+
+msgid "Calculates area under the path."
+msgstr "Графикын талбайг тодорхойлох"
+
+#, fuzzy
+msgid "Evaluate"
+msgstr "Утга..."
+
+msgid "Evaluate or trace the selected function."
+msgstr ""
+"Сонгогдсон функцын утга эсвэл уламжлалын утга зэргийг тухайн өгсөн цэг дээр "
+"бодох"
+
+msgid "Table..."
+msgstr "Хүснэгт..."
+
+#, fuzzy
+msgid "Shows an evaluation table."
+msgstr "Утгын хүснэгтийг харуулна."
+
+msgid "Contents and index"
+msgstr "Агуулга ба жагсаалт"
+
+msgid "Open help file."
+msgstr "Зөвлөмжийг файл нээх"
+
+msgid "List of functions"
+msgstr "Функцуудын жагсаалт"
+
+msgid "Show list of functions that can be used for graphing."
+msgstr "Графикд ашигласан функцуудын жагсаалтыг үзүүл"
+
+msgid "Go to home page"
+msgstr "Нүүр хуудас руу оч"
+
+msgid "Opens the default browser and shows the home page of the program."
+msgstr "Гол браузер программыг нээж энэ программын нүүр хуудсыг үзүүлнэ. "
+
+msgid "Check for update"
+msgstr "Нэмэлтийг шалга."
+
+msgid "Contact the home page to see if a newer version is available."
+msgstr "Нүүр хуудсанд холбогдож шинэ хувилбар боломжтой эсэхийг шалга."
+
+msgid "About Graph..."
+msgstr "График программын тухай..."
+
+msgid "Show copyright information."
+msgstr "Бүтээлийн тухай мэдээллийг үз."
+
+msgid "Separator"
+msgstr ""
+
+msgid "Fit"
+msgstr "Дүүргэ"
+
+msgid "Zoom to show the selected function."
+msgstr "Сонгогдсон функцын массштаб."
+
+msgid "All points"
+msgstr "Бүх цэгүүд"
+
+msgid "Zoom as much as all points are visible."
+msgstr ""
+
+msgid "Frequently Asked Questions"
+msgstr "Программын талаарх нийтлэг асуултууд"
+
+msgid "Shows a list of frequently asked questions and answers."
+msgstr "Программын талаарх хэрэглэгчдээс ирсэн асуултууд, тэдгээрийн хариулт"
+
+#, fuzzy
+msgid "Insert label..."
+msgstr "Сүүдэр оруулах..."
+
+#, fuzzy
+msgid "Insert a text label."
+msgstr "Шинэ цэгэн цуваа оруулах."
+
+msgid "Donate"
+msgstr "Хандив"
+
+#, fuzzy
+msgid "Donate money to the project."
+msgstr "Төсөлд хандив өргөх"
+
+msgid "Tip of the day"
+msgstr "Өдрийн шинж"
+
+msgid "Show tip of the day"
+msgstr "Өдрийн шинжийг үзүүл"
+
+#, fuzzy
+msgid "Support"
+msgstr "Импорт"
+
+#, fuzzy
+msgid "Open browser with the support page for the program."
+msgstr "Гол браузер программыг нээж энэ программын нүүр хуудсыг үзүүлнэ. "
+
+msgid "Zoom x-axis in"
+msgstr "х-тэнхлэгийг багасга"
+
+#, fuzzy
+msgid "Zoom in on the x-axis only."
+msgstr "х-тэнхлэгийг багасга"
+
+msgid "Zoom x-axis out"
+msgstr "х-тэнхлэгийг томсго"
+
+#, fuzzy
+msgid "Zoom out on the x-axis only."
+msgstr "х-тэнхлэгийг багасга"
+
+msgid "Zoom y-axis in"
+msgstr "у-тэнхлэгийг багасга"
+
+#, fuzzy
+msgid "Zoom in on the y-axis only."
+msgstr "у-тэнхлэгийг багасга"
+
+msgid "Zoom y-axis out"
+msgstr "у- тэнхлэгийг томсго"
+
+#, fuzzy
+msgid "Zoom out on the y-axis only."
+msgstr "у-тэнхлэгийг багасга"
+
+msgid "Insert relation..."
+msgstr "Тэнцэтгэл оруулах..."
+
+msgid "Insert a new equation or inequality."
+msgstr "Шинэ илэрхийлэл, тэнцэтгэл биш оруулах"
+
+msgid "Custom functions..."
+msgstr "Өөрийн функц..."
+
+msgid "Create custom functions and constants for use in graphs."
+msgstr "Графикд байнга ашиглагдах өөрийн функц оруулах"
+
+msgid "Animate..."
+msgstr ""
+
+msgid "Create an animation by variating a constant."
+msgstr ""
+
+msgid "Select color"
+msgstr "Өнгө сонго"
+
+msgid "Reset to default"
+msgstr ""
+
+msgid "Reset the tool bar icons to the installation default."
+msgstr ""
+
+msgid "Customize toolbar..."
+msgstr "Хэрэглүүрийг өөриймсөглөх..."
+
+msgid "Customize the icons shown on the toolbar."
+msgstr "Хэрэглүүр дээрх зургийг өөриймсөглөх."
+
+#, fuzzy
+msgid "Rotation"
+msgstr "Харьцаа:"
+
+msgid "Edit label..."
+msgstr "Нэршил засварлах..."
+
+msgid "Edit the label under the cursor."
+msgstr "Курсорын доорх нэршил засварлах"
+
+msgid "Delete label"
+msgstr "Нэршил арилгах"
+
+msgid "Delete the label under the cursor."
+msgstr "Курсорын доорх нэршил арилгах"
+
+msgid "Show legend"
+msgstr "Нэршилын самбар үзүүлэх"
+
+msgid "Select to show a legend in the coordinate system."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+msgid "Top Right"
+msgstr "Баруун дээд"
+
+msgid "Show the legend in the upper right corner."
+msgstr ""
+
+msgid "Bottom Right"
+msgstr "Зүүн доод"
+
+#, fuzzy
+msgid "Show the legend in the bottom right corner."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+msgid "Top Left"
+msgstr "Зүүн дээд"
+
+msgid "Show the legend in the upper left corner."
+msgstr ""
+
+msgid "Bottom Left"
+msgstr "Зүүн доод"
+
+msgid "Show the legend in the bottom left corner."
+msgstr ""
+
+msgid "Close"
+msgstr "Хаах"
+
+msgid "Next tip"
+msgstr "Дараахь"
+
+msgid "Previous tip"
+msgstr "Өмнөх"
+
+msgid "Show tips at startup"
+msgstr "Эхлэнгүүт хувилбарыг үзүүлж бай."
+
+msgid "Did you know..."
+msgstr "Чи мэдэх үү..."
+
+msgid "Insert relation"
+msgstr "Тэнцэнтгэл биш оруулах"
+
+msgid "Relation:"
+msgstr "Харьцаа:"
+
+msgid "Constraints:"
+msgstr "Тэнцэтгэл биш:"
+
+msgid "OK"
+msgstr "Ok"
+
+msgid "Cancel"
+msgstr "Болих"
+
+msgid "Legend text"
+msgstr ""
+
+msgid "Description:"
+msgstr "Бичлэг:"
+
+#, fuzzy
+msgid ""
+"Write a descriptive text to show in the legend. If empty the equation will "
+"be used."
+msgstr ""
+"Хэрэв координатын систем болон график дээр нэмэлт бичлэг, тэмдэглэгээ "
+"хийхээр бол энд бичнэ. "
+
+msgid "Properties"
+msgstr "Шинж чанар"
+
+msgid "Style:"
+msgstr "Хэлбэр:"
+
+msgid "Color:"
+msgstr "Өнгө:"
+
+msgid "Width:"
+msgstr "Өргөн:"
+
+msgid ""
+"Select the style used for drawing the inequality. Not used for equations."
+msgstr ""
+
+msgid ""
+"Width in pixels of the equation line or the borderline of the inequality."
+msgstr ""
+
+msgid "Select the color for drawing the relation."
+msgstr ""
+
+msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
+msgstr ""
+"Тэнцэтгэл бишийг дараах байдлаар оруул. Жишээ нь: x^2+y^2 = 25 эсвэл \"y < "
+"sin(x). "
+
+msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
+msgstr "Харьцаа, тэнцэтгэл биш оруулах. Жишээ нь x > 0 ба < 5"
+
+#, fuzzy
+msgid "Insert tangent/normal"
+msgstr "Шүргэгч/ нормал оруулах."
+
+msgid "Coordinate where the tangent/normal will cross the function."
+msgstr ""
+
+msgid "Choose if you want a tangent or a normal."
+msgstr ""
+
+#, fuzzy
+msgid "Type"
+msgstr "Төрөл:"
+
+msgid "Tangent"
+msgstr "Шүргэгч"
+
+msgid "Normal"
+msgstr "Нормаль шулуун"
+
+msgid "Graph properties"
+msgstr "Графикын шинж чанар"
+
+msgid "Line style:"
+msgstr "Шугамын хэлбэр:"
+
+msgid "Width of graph in pixels."
+msgstr ""
+
+msgid "Choose which line style to use for drawing the graph."
+msgstr ""
+
+msgid "Select the color of the graph."
+msgstr ""
+
+msgid "Argument range"
+msgstr "Аргументын хэмжээ"
+
+msgid "Start of range interval for the used variable."
+msgstr ""
+
+msgid "End of range interval for the used variable."
+msgstr ""
+
+#, fuzzy
+msgid "Endpoints"
+msgstr "Бүх цэгүүд"
+
+msgid "Start:"
+msgstr "Эхлэх:"
+
+msgid "End:"
+msgstr "Төгсөх:"
+
+msgid ""
+"Select marker to show at the start of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+
+msgid ""
+"Select marker to show at the end of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+
+#, fuzzy
+msgid "Insert trendline"
+msgstr "Тэнцэнтгэл биш оруулах"
+
+msgid "Line"
+msgstr "Шулуун"
+
+#, fuzzy
+msgid "Built-in"
+msgstr "Бүтээсэн"
+
+msgid "Create a linear function: f(x)=ax+b"
+msgstr "Шугаман функц үүсгэх:  f(x)=ax+b"
+
+msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
+msgstr "Логарифм  функц үүсгэх: f(x)=a*ln(x)+b"
+
+msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
+msgstr "Полиномиал функц үүсгэх: f(x)=ax^3+bx^2+cx+d"
+
+msgid "Create a power function: f(x)=ax^b"
+msgstr "Илтгэгч функц үүсгэх: f(x)=ax^b"
+
+msgid "Create a exponential function: f(x)=a*b^x"
+msgstr "Ехпонциал функц үүсгэх: f(x)=a*b^x"
+
+msgid "The order of the polynomium. For example 2 means a parable."
+msgstr "Полиномиал жагсаалт. "
+
+msgid "Order:"
+msgstr ""
+
+msgid "Polynomial"
+msgstr "Полиномиал"
+
+msgid "Logarithmic"
+msgstr "Логарифм "
+
+msgid "Linear"
+msgstr "Шугаман"
+
+msgid "Power"
+msgstr "Илтгэгч"
+
+msgid "Exponential"
+msgstr "Ехфонциал"
+
+msgid "Create a moving average as a series of straight lines."
+msgstr ""
+
+msgid "Moving average"
+msgstr ""
+
+msgid "Period:"
+msgstr "Үе:"
+
+msgid "Determines how many points are used for the average."
+msgstr ""
+
+msgid "User defined"
+msgstr ""
+
+msgid "Model:"
+msgstr "Загвар:"
+
+msgid "Add model"
+msgstr ""
+
+msgid "Remove model"
+msgstr ""
+
+#, fuzzy
+msgid "Edit model"
+msgstr "Тэнхлэг засварлах"
+
+msgid "Enter a function model to base the trendline on."
+msgstr ""
+
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendline."
+msgstr ""
+
+#, fuzzy
+msgid "Intercept ="
+msgstr "Интернэт"
+
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendlines."
+msgstr ""
+
+#, fuzzy
+msgid "Insert point series"
+msgstr "Цэгэн цуваа оруулах..."
+
+#, fuzzy
+msgid ""
+"The name of the point series, which is shown in the list to the left of the "
+"coordinate system."
+msgstr "Координатын системийн цонхыг зүүн тийш зөөх"
+
+#, fuzzy
+msgid "Series"
+msgstr "Шинж чанар"
+
+msgid "This shows a sample of the markers and the lines between the markers."
+msgstr ""
+
+msgid "Sample"
+msgstr "Жишээ"
+
+msgid "Markers"
+msgstr ""
+
+msgid "Marker"
+msgstr ""
+
+msgid "Size:"
+msgstr "Хэмжээ:"
+
+msgid "Choose the size of the markers."
+msgstr ""
+
+msgid "Choose the type of markers to be shown at each point."
+msgstr ""
+
+msgid "Choose the color of the markers."
+msgstr ""
+
+#, fuzzy
+msgid "Interpolation:"
+msgstr "Харьцаа:"
+
+msgid ""
+"Choose the style of lines to be drawn between the points. You may also "
+"choose not to draw any lines."
+msgstr ""
+
+msgid "Choose the width of the lines in pixels."
+msgstr ""
+
+msgid "Select which kind of line to draw between the markers."
+msgstr ""
+
+msgid "Cubic splines"
+msgstr ""
+
+msgid "Half cosine"
+msgstr ""
+
+msgid "Choose the color of the lines."
+msgstr ""
+
+#, fuzzy
+msgid "Labels"
+msgstr "Бичлэг:"
+
+msgid "Position:"
+msgstr "Байрлал:"
+
+#, fuzzy
+msgid "Check to show the coordinate at each point."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+#, fuzzy
+msgid "Show coordinates"
+msgstr "Харагдаж байгаа координатын системийг хэвлэ."
+
+#, fuzzy
+msgid "Select the font for the coordinates."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+#, fuzzy
+msgid "Select where the coordinates should be shown."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+#, fuzzy
+msgid "Below"
+msgstr "Шар"
+
+#, fuzzy
+msgid "Above"
+msgstr "Зөө"
+
+msgid "Left"
+msgstr "Зүүн"
+
+msgid "Right"
+msgstr "Баруун"
+
+#, fuzzy
+msgid "Error bars"
+msgstr "Алдаа"
+
+msgid "X error bars"
+msgstr ""
+
+msgid "Show horizontal error bars."
+msgstr ""
+
+msgid "Show x-bars"
+msgstr ""
+
+msgid "All error bars are the same size."
+msgstr ""
+
+#, fuzzy
+msgid "Fixed:"
+msgstr "Файл"
+
+msgid "Enter fixed value."
+msgstr ""
+
+msgid "All error bars are the same percentage of the x-coordinate."
+msgstr ""
+
+#, fuzzy
+msgid "Relative:"
+msgstr "Харьцаа:"
+
+msgid "Each error bar is given a custom value."
+msgstr ""
+
+msgid "Custom"
+msgstr "Өөриймсөг"
+
+msgid "Enter relative value in percent."
+msgstr ""
+
+msgid "Y error bars"
+msgstr ""
+
+msgid "Show vertical error bars."
+msgstr ""
+
+msgid "Show y-bars"
+msgstr ""
+
+msgid "All error bars are the same percentage of the y-coordinate."
+msgstr ""
+
+#, fuzzy
+msgid "Cut the selected text to the clipboard."
+msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
+
+#, fuzzy
+msgid "Copy the selected text to the clipboard."
+msgstr "Сонгогдсон функц болон цэгэн цувааг clipboard-руу хувилах."
+
+msgid ""
+"Paste text from the clipboard into the grid. Other cells may be overwritten "
+"by the text from the clipboard."
+msgstr ""
+
+msgid "Erase selected cells."
+msgstr ""
+
+#, fuzzy
+msgid "Insert row"
+msgstr "Оруулга"
+
+msgid "Inserts a row in the grid moving rows below one down."
+msgstr ""
+
+#, fuzzy
+msgid "Remove row"
+msgstr "Доош зөөх"
+
+#, fuzzy
+msgid "Removes the selected rows."
+msgstr "Сонгогдсон функцын массштаб."
+
+#, fuzzy
+msgid "Select all"
+msgstr "Өнгө сонго"
+
+#, fuzzy
+msgid "Select all cells."
+msgstr "Өнгө сонго"
+
+#, fuzzy
+msgid "Import from file..."
+msgstr "Файл экпортлохдоо..."
+
+msgid "Import data from a file and place it at the selected cell."
+msgstr ""
+
+#, fuzzy
+msgid "Export selected data to a file."
+msgstr "Файл экпортлохдоо..."
+
+#, fuzzy
+msgid "Calculate table"
+msgstr "Тооцоолох муж"
+
+msgid ""
+"The step value. This is the distance between the x-values in the interval."
+msgstr ""
+
+msgid "The first x-value in the interval."
+msgstr ""
+
+msgid "The last x-value in the interval."
+msgstr ""
+
+#, fuzzy
+msgid "Copy selected cells to the clipboard."
+msgstr "Сонгогдсон функц болон цэгэн цувааг clipboard-руу хувилах."
+
+msgid "Saves the selected data to a file."
+msgstr ""
+
+#, fuzzy
+msgid "Calculating"
+msgstr "Тооцоолох муж"
+
+msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
+msgstr ""
+
+#, fuzzy
+msgid "Insert shade"
+msgstr "Сүүдэр оруулах..."
+
+#, fuzzy
+msgid "Shading"
+msgstr "Сүүдэр"
+
+msgid "Shades the area between the function and the x-axis."
+msgstr ""
+
+msgid "Shades the area below the function."
+msgstr ""
+
+msgid "Shades the area above the function."
+msgstr ""
+
+msgid "Shades the area between the function and the y-axis."
+msgstr ""
+
+msgid "Shades the area inside the function."
+msgstr ""
+
+msgid ""
+"Shades the area between the main function and the function selected in the "
+"list to the right."
+msgstr ""
+
+#, fuzzy
+msgid "Above function"
+msgstr "Функцыг засварлах"
+
+msgid "Between function and x-axis"
+msgstr ""
+
+#, fuzzy
+msgid "Between functions"
+msgstr "Функцыг засварлах"
+
+msgid "Between function and y-axis"
+msgstr ""
+
+#, fuzzy
+msgid "Inside function"
+msgstr "Функ оруул..."
+
+#, fuzzy
+msgid "Below function"
+msgstr "Функцыг засварлах"
+
+#, fuzzy
+msgid "Options"
+msgstr "Тохиргоонууд..."
+
+#, fuzzy
+msgid "Range"
+msgstr "Шүргэгч"
+
+msgid "Coordinate where the shading starts."
+msgstr ""
+
+msgid "Coordinate where the shading ends."
+msgstr ""
+
+msgid "Check to increase the end coordinate until intersection."
+msgstr ""
+
+#, fuzzy
+msgid "Increase to intersection"
+msgstr "Тэнцэнтгэл биш оруулах"
+
+msgid "Check to decrease the start coordinate until intersection."
+msgstr ""
+
+msgid "Decrease to intersection"
+msgstr ""
+
+#, fuzzy
+msgid "Select the style used for the shading."
+msgstr "Курсорын доорх нэршил арилгах"
+
+msgid "Mark the end of the shading with a line."
+msgstr ""
+
+msgid "Mark end of range"
+msgstr ""
+
+msgid "Select color used for shading."
+msgstr ""
+
+msgid "Mark the start of the shading with a line."
+msgstr ""
+
+msgid "Mark start of range"
+msgstr ""
+
+#, fuzzy
+msgid "Enter a description to show in the legend."
+msgstr ""
+"Хэрэв координатын систем болон график дээр нэмэлт бичлэг, тэмдэглэгээ "
+"хийхээр бол энд бичнэ. "
+
+#, fuzzy
+msgid "2nd function"
+msgstr "Функцыг засварлах"
+
+#, fuzzy
+msgid "2nd function:"
+msgstr "Функцыг засварлах"
+
+msgid "Select second function, when you want a shading between two functions."
+msgstr ""
+
+#, fuzzy
+msgid "Shading range for 2nd function"
+msgstr "Функцэд сүүдэр нэмэх"
+
+#, fuzzy
+msgid "Custom functions/constants"
+msgstr "Өөрийн функц..."
+
+msgid "Apply"
+msgstr ""
+
+#, fuzzy
+msgid "Names"
+msgstr "Нэр:"
+
+#, fuzzy
+msgid "Definition"
+msgstr "Бичлэг:"
+
+#, fuzzy
+msgid "Cut the selected text to the clipboard"
+msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
+
+#, fuzzy
+msgid "Image options"
+msgstr "Тохиргооны засвар."
+
+#, fuzzy
+msgid "Size"
+msgstr "Хэмжээ:"
+
+msgid "Image width:"
+msgstr ""
+
+msgid "Image height:"
+msgstr ""
+
+msgid "Set a custom image width."
+msgstr ""
+
+msgid "Set a custom image height."
+msgstr ""
+
+msgid ""
+"Choose to use the same size as shown on the screen or a custom image size."
+msgstr ""
+
+#, fuzzy
+msgid "Image size"
+msgstr "Техтийн хэмжээ"
+
+#, fuzzy
+msgid "Screen size"
+msgstr "Техтийн хэмжээ"
+
+#, fuzzy
+msgid "Custom size"
+msgstr "Өөриймсөг"
+
+msgid ""
+"Progressive encoding allows viewers to see a rough copy of the image while "
+"it is downloaded."
+msgstr ""
+
+msgid "Encoding"
+msgstr ""
+
+msgid "Progressive"
+msgstr ""
+
+msgid "Select a compression quality."
+msgstr ""
+
+msgid "Quality"
+msgstr ""
+
+#, fuzzy
+msgid "Paper size:"
+msgstr "Техтийн хэмжээ"
+
+msgid "Choose paper orientation."
+msgstr ""
+
+#, fuzzy
+msgid "Orientation"
+msgstr "Харьцаа:"
+
+#, fuzzy
+msgid "Portrait"
+msgstr "Хэвлэ"
+
+msgid "Landscape"
+msgstr ""
+
+msgid "Choose paper size to use."
+msgstr ""
+
+msgid "Select this to use these settings as defaults in the future."
+msgstr ""
+
+msgid "Save as default"
+msgstr ""
+
+#, fuzzy
+msgid "Animate"
+msgstr "Хандив"
+
+#, fuzzy
+msgid "Constants:"
+msgstr "Тэнцэтгэл биш:"
+
+#, fuzzy
+msgid "Step:"
+msgstr "Алхамууд:"
+
+msgid "Frames/second:"
+msgstr ""
+
+msgid "Choose a constant to change between each frame.."
+msgstr ""
+
+msgid "The first value of the constant"
+msgstr ""
+
+msgid "The last value of the constant."
+msgstr ""
+
+msgid "The chosen constant is changed by this value between each frame."
+msgstr ""
+
+msgid "Number of frames per second used when the animation is played."
+msgstr ""
+
+msgid "Working"
+msgstr ""
+
+msgid "About Graph"
+msgstr "Графикын тухай:"
+
+msgid "<Language> translation by <Translator>"
+msgstr "Орчуулсан Даваагийн Батнасан    "
+
+msgid "Version "
+msgstr "Хувилбар:"
+
+msgid "Email:"
+msgstr "Э-хаяг:"
+
+msgid "Build"
+msgstr "Бүтээсэн"
+
+msgid ""
+"This is free software, and you are welcome to redistribute it under the "
+"terms in the GNU General Public License. Please send bug reports and "
+"suggestions to the programmer."
+msgstr "Энэ бол чөлөөт программ бөгөөд та оролдохыг хүсвэл наашаа..."
+
+#, fuzzy
+msgid "The newest version as well as the source code are available at:"
+msgstr "Шинэ хувилбар, бичлэгийн код нь энд байх магадлалтай..."
+
+msgid "Animation"
+msgstr ""
+
+msgid "Open an animation file."
+msgstr ""
+
+msgid "Save the animation to a file."
+msgstr ""
+
+#, fuzzy
+msgid "Copy the animation to the clipboard."
+msgstr ""
+"Харагдаж байгаа координатын системийг зураг болгон  clipboard руу хувилах"
+
+msgid "Edit axes"
+msgstr "Тэнхлэг засварлах"
+
+msgid "Minimum:"
+msgstr "Хамгийн бага утга:"
+
+msgid "Maximum:"
+msgstr "Хамгийн их утга:"
+
+msgid "Tick unit:"
+msgstr ""
+
+msgid "The x-axis cross at y="
+msgstr ""
+
+msgid "Grid unit:"
+msgstr ""
+
+msgid "Minimum x-value."
+msgstr ""
+
+msgid "Maximum x-value."
+msgstr ""
+
+msgid "Units between ticks on the x-axis."
+msgstr ""
+
+msgid "Use logarithmic scale on the x-axis."
+msgstr ""
+
+#, fuzzy
+msgid "Logarithmic scale"
+msgstr "Логарифм "
+
+msgid "Show label at the right side above the x-axis."
+msgstr ""
+
+msgid "Label:"
+msgstr "Бичлэг:"
+
+#, fuzzy
+msgid "Edit the label for the axis here."
+msgstr "Бичлэгийг энд засварла:"
+
+#, fuzzy
+msgid "Show units on the x-axis."
+msgstr "Өдрийн шинжийг үзүүл"
+
+msgid "Show numbers"
+msgstr ""
+
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr ""
+
+msgid "Units between the grid lines perpendicular to the x-axis."
+msgstr ""
+
+msgid "Determine the tick unit automatically."
+msgstr ""
+
+msgid "Auto tick"
+msgstr ""
+
+msgid "Set the grid unit to the same as the tick unit."
+msgstr ""
+
+msgid "Auto grid"
+msgstr ""
+
+#, fuzzy
+msgid "Show tick marks on the x-axis."
+msgstr "Өдрийн шинжийг үзүүл"
+
+#, fuzzy
+msgid "Show ticks"
+msgstr "Хэрэглүүрийн төрөл үзүүл"
+
+msgid "Show units on the selected axis as a fraction multiplied by pi."
+msgstr ""
+
+msgid "Show as a multiple of pi"
+msgstr ""
+
+msgid "Show vertical grid lines."
+msgstr ""
+
+#, fuzzy
+msgid "Show grid"
+msgstr "Нэршилын самбар үзүүлэх"
+
+msgid "The y-axis cross at x="
+msgstr ""
+
+msgid "Minimum y-value."
+msgstr ""
+
+msgid "Maximum y-value."
+msgstr ""
+
+msgid "Use logarithmic scale for the y-axis."
+msgstr ""
+
+msgid "Units between ticks on the y-axis."
+msgstr ""
+
+#, fuzzy
+msgid "Show units on the y-axis."
+msgstr "Өдрийн шинжийг үзүүл"
+
+#, fuzzy
+msgid "Show label at the top of the window to the right of the y-axis."
+msgstr "Координатын системийн цонхыг баруун тийш зөөх"
+
+msgid "The y-axis will intersect with the x-axis at this value."
+msgstr ""
+
+msgid "Units between the grid lines perpendicular to the y-axis."
+msgstr ""
+
+#, fuzzy
+msgid "Show tick marks on the y-axis."
+msgstr "Өдрийн шинжийг үзүүл"
+
+msgid "Show horizontal grid lines."
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Title:"
+msgstr "Гарчиг:"
+
+msgid ""
+"Choose if you want to show the axes, and if you want to show them crossed or "
+"at the left and bottom of the image."
+msgstr ""
+
+#, fuzzy
+msgid "Axes style"
+msgstr "Шугамын хэлбэр:"
+
+#, fuzzy
+msgid "None"
+msgstr "Хандив"
+
+#, fuzzy
+msgid "Crossed"
+msgstr "Хаах"
+
+msgid "Boxed"
+msgstr ""
+
+msgid ""
+"Choose if trigonometric functions should calculate in radian or degrees."
+msgstr ""
+
+msgid "Trigonometry"
+msgstr "Тригонометр"
+
+msgid "Radian"
+msgstr "Радиан"
+
+msgid "Degree"
+msgstr "Өнцөг"
+
+#, fuzzy
+msgid "Enter a title to show above the coordinate system."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+#, fuzzy
+msgid "Select the font for the title."
+msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
+
+msgid "Choose where the legend should be placed."
+msgstr ""
+
+msgid "Legend placement"
+msgstr ""
+
+msgid ""
+"Check this to use complex numbers for calculations. Notice that this will "
+"slow graphing down."
+msgstr ""
+
+msgid "Calculate with complex numbers"
+msgstr ""
+
+msgid "Font and color"
+msgstr "Фонт ба өнгө"
+
+msgid "Colors"
+msgstr "Өнгөнүүд"
+
+msgid "Grid color:"
+msgstr "Шугамын өнгө:"
+
+msgid "Axes color:"
+msgstr "Тэнхлэгийн өнгө:"
+
+msgid "Background color:"
+msgstr "Дэвсгэр өнгө:"
+
+msgid "Select the color of the image background."
+msgstr ""
+
+msgid "Select the color of the axes."
+msgstr ""
+
+msgid "Select the color of the grid lines."
+msgstr ""
+
+msgid "Fonts"
+msgstr "Фонтууд"
+
+msgid "Number font:"
+msgstr "Фонтын хэмжээ:"
+
+msgid "Label font:"
+msgstr "Бичлэгийн фонт:"
+
+#, fuzzy
+msgid "Legend font:"
+msgstr "Бичлэгийн фонт:"
+
+msgid "Select the font used to show the labels on the axes."
+msgstr ""
+
+msgid "Select the font used to show the numbers on the axes."
+msgstr ""
+
+msgid "Select the font used to show the legend text."
+msgstr ""
+
+msgid "Decimals:"
+msgstr ""
+
+#, fuzzy
+msgid "Recent files:"
+msgstr "Файл нээх: %s"
+
+msgid "Max undo steps:"
+msgstr ""
+
+msgid "Language:"
+msgstr "Хэл:"
+
+#, fuzzy
+msgid "Font scale:"
+msgstr "Фонтын хэмжээ"
+
+msgid "Number of decimals used when results are shown."
+msgstr ""
+
+msgid "Associate *.grf files with Graph."
+msgstr ""
+
+msgid "Associate .grf files"
+msgstr ""
+
+msgid "The number of most recent used files shown in the File menu."
+msgstr ""
+
+msgid ""
+"Save window position when the program quits. This setting is used the next "
+"time the program is used.|Save window state on exit."
+msgstr ""
+
+msgid "Save workspace on exit"
+msgstr ""
+
+msgid "Format used when complex numbers are shown."
+msgstr ""
+
+msgid "Complex format"
+msgstr ""
+
+msgid "Real"
+msgstr "Бодит"
+
+msgid "Rectangular"
+msgstr "Тэгш өнцөгт"
+
+msgid "Polar"
+msgstr "Туйлын"
+
+msgid "Show tooltip when the cursor is over something."
+msgstr ""
+
+msgid "Show tooltip"
+msgstr "Хэрэглүүрийн төрөл үзүүл"
+
+msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"If checked the program will contact a web server when the program is started "
+"to see if a newer version is available."
+msgstr "Нүүр хуудсанд холбогдож шинэ хувилбар боломжтой эсэхийг шалга."
+
+msgid "Check for new version of Graph at startup"
+msgstr ""
+
+msgid "Select language to use."
+msgstr ""
+
+msgid ""
+"This is used to scale the user interface if you are having problems reading "
+"the text."
+msgstr ""
+
+#, fuzzy
+msgid "Insert function"
+msgstr "Функ оруул..."
+
+msgid "Function type:"
+msgstr "Функцын төрөл:"
+
+#, fuzzy
+msgid "Select the function type to graph."
+msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
+
+msgid "Standard function   y=f(x)"
+msgstr "Стандарт функц y=f(x)"
+
+msgid "Parametric function x(t), y(t)"
+msgstr "Параметрт функц  x(t), y(t)"
+
+msgid "Polar function         r=f(t)"
+msgstr "Туйлын функц  r=f(t)"
+
+#, fuzzy
+msgid "Function equation"
+msgstr "Функцын төрөл:"
+
+msgid "Steps:"
+msgstr "Алхамууд:"
+
+msgid "Number of calculation steps used to draw the graph."
+msgstr ""
+
+msgid "Draw type:"
+msgstr "Зурах төрөл:"
+
+msgid ""
+"Choose Lines if you want the calculated points for the graph to be "
+"connected. Choose Dots if you only want to show a dot at each point."
+msgstr ""
+
+msgid "Lines"
+msgstr "Шулуунаар"
+
+msgid "Dots"
+msgstr "Цэгүүдээр"
+
+msgid "Text label"
+msgstr "Техт "
+
+msgid "Font name:"
+msgstr "Фонтны нэр:"
+
+msgid "Font size:"
+msgstr "Фонтын хэмжээ"
+
+msgid "Font color:"
+msgstr "Фонтны өнгө:"
+
+#, fuzzy
+msgid "Text size."
+msgstr "Техтийн хэмжээ"
+
+#, fuzzy
+msgid "Text string"
+msgstr "Техтийн хэмжээ"
+
+msgid "Insert symbol"
+msgstr "Тэмдэгт оруулах"
+
+#, fuzzy
+msgid "Insert object"
+msgstr "Тэнцэнтгэл биш оруулах"
+
+msgid "Bold (Ctrl-B)"
+msgstr "Тодруулах (Ctrl-B)"
+
+msgid "Italic (Ctrl-I)"
+msgstr "Налуулах (Ctrl-I)"
+
+msgid "Underline (Ctrl-U)"
+msgstr "Доогуур зурах  (Ctrl-U)"
+
+msgid "Strikethrough (Ctrl-S)"
+msgstr "Дундуур нь зурах  (Ctrl-S)"
+
+msgid "Superscript (Ctrl++)"
+msgstr "Зэрэг  (Ctrl++)"
+
+msgid "Subscript (Ctrl+=)"
+msgstr "Индекс  (Ctrl+=)"
+
+msgid "Align left (Ctrl-L)"
+msgstr "Зүүн зэрэгцүүлэх (Ctrl-L)"
+
+msgid "Center (Ctrl-E)"
+msgstr "Голлуулах  (Ctrl-E)"
+
+#, fuzzy
+msgid "Align right (Ctrl-R)"
+msgstr "Зүүн зэрэгцүүлэх (Ctrl-L)"
+
+#, fuzzy
+msgid "Text font."
+msgstr "Бичгийн фонт"
+
+#, fuzzy
+msgid "Text color."
+msgstr "Бичгийн өнгө"
+
+msgid "Select background color of the text label."
+msgstr ""
+
+msgid "Undo last action."
+msgstr "Сүүлчийн үйлдлийг хориглох"
+
+#, fuzzy
+msgid "Redo last undone action."
+msgstr "Сүүлчийн үйлдлийг хориглох"
+
+#, fuzzy
+msgid "Cut selected text to the clipboard."
+msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
+
+#, fuzzy
+msgid "Paste the contents of the clipboard."
+msgstr ""
+"Харагдаж байгаа координатын системийг зураг болгон  clipboard руу хувилах"
+
+msgid "Paste special..."
+msgstr ""
+
+msgid "Select which clipboard representation you want to paste."
+msgstr ""
+
+#, fuzzy
+msgid "Insert object..."
+msgstr "Сүүдэр оруулах..."
+
+#, fuzzy
+msgid "Create a new OLE object."
+msgstr "Шинэ координатын систем үүсгэ"
+
+#, fuzzy
+msgid "Edit object"
+msgstr "Тэнхлэг засварлах"
+
+msgid "Edit selected OLE object."
+msgstr ""
+
+msgid "Insert f'(x)"
+msgstr " f'(x) оруулах"
+
+msgid "Name:"
+msgstr "Нэр:"
+
+msgid "Constant"
+msgstr "Тогтмол"
+
+msgid "Value"
+msgstr "Утга"
+
+#, fuzzy
+msgid "Select a function or tangent to evaluate."
+msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
+
+msgid "Error"
+msgstr "Алдаа"
+
+msgid "Shade"
+msgstr "Сүүдэр"
+
+msgid "Functions"
+msgstr "Функцууд"
+
+#, fuzzy
+msgid "Tangents"
+msgstr "Шүргэгч"
+
+#, fuzzy
+msgid "Point series"
+msgstr "Цэгэн цуваа..."
+
+#, fuzzy
+msgid "Shades"
+msgstr "Сүүдэр"
+
+#, fuzzy
+msgid "Length"
+msgstr "Зүүн"
+
+#, fuzzy
+msgid "Label"
+msgstr "Бичлэг:"
+
+#, fuzzy
+msgid "%s-error"
+msgstr "Алдаа"
+
+#, fuzzy
+msgid "Transparent"
+msgstr "Шүргэгч"
+
+msgid "Axes"
+msgstr "Тэнхлэгүүд"
+
+msgid "No error occurred. You should not see this message."
+msgstr ""
+
+msgid "An error occurred while evaluating power function."
+msgstr ""
+
+msgid "Tangent to 90+p180 is undefined."
+msgstr ""
+
+msgid "Fact can only be calculated for positive integers."
+msgstr ""
+
+msgid "Cannot take logarithm to number equal or less than zero."
+msgstr ""
+
+msgid "sqrt is undefined for negative numbers."
+msgstr ""
+
+msgid "A part of the evaluation gave a number with an imaginary part."
+msgstr ""
+
+msgid "Division by zero."
+msgstr "Тэг-д хувааж болохгүй"
+
+msgid "Inverse trigonometric function out of range [-1;1]"
+msgstr ""
+
+msgid "The function is not defined for this value."
+msgstr ""
+
+msgid "atanh evaluated at undefined value."
+msgstr ""
+
+msgid "acosh evaluated at undefined value."
+msgstr ""
+
+msgid "arg(0) is undefined."
+msgstr ""
+
+#, fuzzy
+msgid "Evaluation failed."
+msgstr "Утга..."
+
+msgid "Argument produced a function result with total loss of precision."
+msgstr ""
+
+msgid "Symbol '%s' not found."
+msgstr ""
+
+msgid "Too many recursive calls."
+msgstr ""
+
+msgid "Unexpected operator. Operator '%s' cannot be placed here."
+msgstr ""
+
+msgid "End of parenthesis missing."
+msgstr ""
+
+msgid "Invalid number of arguments supplied for function '%s'"
+msgstr ""
+
+msgid "Comparison operator misplaced."
+msgstr ""
+
+msgid "Invalid number found. Use the format: -5.475E-8"
+msgstr ""
+
+msgid "String is empty. You need to enter a function."
+msgstr ""
+
+msgid "Comma is not allowed here. Use dot as decimal separator."
+msgstr ""
+
+msgid "Unexpected end of parenthesis."
+msgstr ""
+
+msgid "Number, constant or function expected."
+msgstr ""
+
+msgid "Parameter after constant or variable not allowed."
+msgstr ""
+
+msgid "Expression expected."
+msgstr ""
+
+msgid "Unknown variable, function or constant: \"%s\""
+msgstr ""
+
+msgid "Unknown character: \"%s\""
+msgstr ""
+
+msgid "The end of the expression was unexpected."
+msgstr ""
+
+msgid "Error parsing function text."
+msgstr ""
+
+msgid "A calculation resulted in an overflow."
+msgstr ""
+
+msgid "An invalid value was used in the calculation."
+msgstr ""
+
+msgid "Not enough points for calculation."
+msgstr ""
+
+msgid "Illegal name \"%s\" for user defined function or constant."
+msgstr ""
+
+msgid "Cannot differentiate recursive function."
+msgstr ""
+
+#, fuzzy
+msgid "Internal error."
+msgstr "Интернэт"
+
+msgid "Function cannot be differentiated."
+msgstr ""
+
+msgid "Not further specified error occurred under calculation."
+msgstr ""
+
+msgid "No solution found. Try another guess or another model."
+msgstr ""
+
+msgid ""
+"Internal error. Please notify the programmer with as much information as "
+"possible."
+msgstr ""
+
+msgid "You need to enter a name for the function/constant."
+msgstr ""
+
+msgid ""
+"Invalid function/constant name '%s'.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
+"In addition you are not allowed to redefine built-in names."
+msgstr ""
+
+msgid "You need to enter a name for the argument."
+msgstr ""
+
+msgid ""
+"Invalid argument name '%s'.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
+" In addition you are not allowed to use built-in names as argument names."
+msgstr ""
+
+msgid "The end parenthesis is missing."
+msgstr ""
+
+#, fuzzy
+msgid "Character found after the parenthesis."
+msgstr "Графикын талбайг тодорхойлох"
+
+msgid "Symbol \"%s\" defined more than once."
+msgstr ""
+
+#, fuzzy
+msgid "Invalid equation or inequality."
+msgstr "Шинэ илэрхийлэл, тэнцэтгэл биш оруулах"
+
+#, fuzzy
+msgid "Updating..."
+msgstr "Тохиргоонууд..."
+
+msgid "Save changes?"
+msgstr "Өөрчлөлтийг хадгалах уу?"
+
+msgid "Save changes in %s"
+msgstr "Хийсэн өөрчлөлтүүдий%г хадгалах уу?"
+
+msgid "You have reached the maximum range of zoom."
+msgstr ""
+
+msgid "You have reached the minimum range of zoom."
+msgstr ""
+
+msgid "There is no printer installed on the system."
+msgstr ""
+
+msgid "Error in value"
+msgstr ""
+
+msgid "'%s' has to be an integer value greater or equal to 0."
+msgstr ""
+
+msgid "'%s' must be greater than zero."
+msgstr ""
+
+msgid "'%s' must be an integer greater than zero."
+msgstr ""
+
+msgid "Trying to break zoom limit."
+msgstr ""
+
+msgid "'%s' must be greater than '%s'"
+msgstr ""
+
+msgid "The maximum value must be greater than the minimum value."
+msgstr ""
+
+msgid "You need to enter a value."
+msgstr ""
+
+msgid ""
+"This file was created with Graph %s.\n"
+"Only files from version %s and higher can be opened."
+msgstr ""
+
+msgid "'%s' is not a valid number."
+msgstr ""
+
+#, fuzzy
+msgid "Open the file %s."
+msgstr "Зөвлөмжийг файл нээх"
+
+msgid "'%s' must be a positive number."
+msgstr ""
+
+msgid "File not found: %s"
+msgstr ""
+
+msgid ""
+"Error reading file: %s\n"
+"File is not a correct graph file."
+msgstr ""
+
+msgid "Unknown error while reading file: %s"
+msgstr ""
+
+#, fuzzy
+msgid "Graph files [*.grf]|*.grf"
+msgstr "Графикын файлууд [*.grf]|*.grf|All files [*.*]|*.*"
+
+msgid ""
+"Cannot write to file: %s\n"
+"Access denied. Check that the file is not in use or write protected."
+msgstr ""
+
+msgid "The font \"%s\" doesn't exist. Standard font is used instead."
+msgstr ""
+
+msgid "Conversion error"
+msgstr ""
+
+msgid ""
+"Unknown error code.\n"
+"Could not find error message for this error."
+msgstr ""
+
+#, fuzzy
+msgid "Selection error"
+msgstr "Өнгө сонго"
+
+msgid "File error"
+msgstr ""
+
+msgid "Write access failed"
+msgstr ""
+
+#, fuzzy
+msgid "OLE error"
+msgstr "Алдаа"
+
+msgid "Error reading object"
+msgstr ""
+
+msgid "Not a valid Graph object."
+msgstr ""
+
+msgid "Object error"
+msgstr ""
+
+msgid "Windows does not have enough resources to save an image that large."
+msgstr ""
+
+msgid "'%1%' must be between %2% and %3%."
+msgstr ""
+
+msgid "Confirm delete"
+msgstr ""
+
+msgid "This error should not occur. Please report this to the programmer."
+msgstr ""
+
+msgid "Are you sure you want to delete %s?"
+msgstr ""
+
+msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
+msgstr "Графикын файлууд [*.grf]|*.grf|All files [*.*]|*.*"
+
+msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+msgstr "Техт [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+
+msgid "Are you sure you want to delete the model: %s?"
+msgstr ""
+
+msgid "Maximum number on x-axis must be greater than the minimum value."
+msgstr ""
+
+msgid "Maximum number on y-axis must be greater than the minimum value."
+msgstr ""
+
+msgid "Server application not found."
+msgstr ""
+
+msgid "Maximum number for t must be greater than the minimum value."
+msgstr ""
+
+msgid "The step value for t must be a number greater than 0."
+msgstr ""
+
+msgid ""
+"The minimum value for the x-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+
+msgid ""
+"The cross point of the y-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+
+msgid ""
+"The minimum value for the y-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+
+msgid ""
+"The cross point of the x-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+
+msgid "'Recent files' must be between 0 and 9."
+msgstr ""
+
+msgid "The end of interval must be greater than the start of interval."
+msgstr ""
+
+msgid "Error in interval."
+msgstr ""
+
+msgid "The width must be an integer greater than 0."
+msgstr ""
+
+msgid "Error in width"
+msgstr ""
+
+msgid ""
+"The end of interval must be greater than the start of interval and %s must "
+"be greater than 0."
+msgstr ""
+
+msgid "The maximum length of text has been reached."
+msgstr ""
+
+msgid "The derivative of the function is not defined at %s=%s"
+msgstr ""
+
+msgid "Coordinate not defined."
+msgstr ""
+
+msgid "Checking for newer version..."
+msgstr ""
+
+msgid "Abort printing?"
+msgstr "Хэвлэлтийг таслах уу?"
+
+msgid "Calculate area"
+msgstr "Тооцоолох муж"
+
+msgid "Calculate length of path"
+msgstr "Зайн уртыг тооцоолох"
+
+msgid "Edit function"
+msgstr "Функцыг засварлах"
+
+#, fuzzy
+msgid "Edit tangent/normal"
+msgstr "Шүргэгч/ нормал оруулах."
+
+msgid "Error processing file '%s' at line %s."
+msgstr ""
+
+msgid "Dialog error: %sh"
+msgstr ""
+
+msgid "Unknown Graph data found while pasting clipboard data."
+msgstr ""
+
+msgid "'%s' has to be an integer value between 0 and 1000."
+msgstr ""
+
+#, fuzzy
+msgid "Printing error"
+msgstr "Хэвлэгч"
+
+msgid "An unknown error occurred while printing."
+msgstr ""
+
+msgid "Error while adding points"
+msgstr ""
+
+msgid "Each point needs both an x- and a y-coordinate."
+msgstr ""
+
+msgid "\"%s\" is not a valid number."
+msgstr ""
+
+msgid ""
+"You didn't add any points. You need to specify some x- and y-coordinates in "
+"the grid."
+msgstr ""
+
+#, fuzzy
+msgid "Edit point series"
+msgstr "Цэгэн цуваа оруулах..."
+
+#, fuzzy
+msgid "Edit shade"
+msgstr "Тэнхлэг засварлах"
+
+#, fuzzy
+msgid "You need to select a function."
+msgstr "Сонгогдсон функцын массштаб."
+
+msgid "New version of Graph available"
+msgstr ""
+
+msgid ""
+"Graph %s is now available for download from www.padowan.dk\n"
+"with these new features since the previous version:\n"
+"\n"
+"%s\n"
+"\n"
+"Would you like to visit the web site?"
+msgstr ""
+
+msgid "No new version"
+msgstr ""
+
+msgid "You are already using the most recent version of the program."
+msgstr ""
+
+msgid ""
+"Cannot connect to server www.padowan.dk.\n"
+"Either the server is down or you do not have a connection to the Internet."
+msgstr ""
+
+msgid "Socket error %s"
+msgstr ""
+
+msgid "The server responded with the message '%s'"
+msgstr ""
+
+msgid "Protocol reply error %s"
+msgstr ""
+
+msgid ""
+"The file cannot be opened by this version of the program.\n"
+"You need at least Graph %s to open this file."
+msgstr ""
+
+msgid ""
+"This file was saved by an outdated version of Graph,\n"
+"and it cannot be opened by the current version."
+msgstr ""
+
+msgid ""
+"\n"
+"\n"
+"If you don't want to be asked again, this feature may be disabled from the "
+"Edit|Options dialog."
+msgstr ""
+
+#, fuzzy
+msgid "Edit relation"
+msgstr "Тэнцэнтгэл биш оруулах"
+
+#, fuzzy
+msgid "Commands"
+msgstr "Тайлбар:"
+
+#, fuzzy
+msgid "(All Commands)"
+msgstr "(Бүх үйлдэл)"
+
+msgid ""
+"To add a command to a toolbar simply select a category and drag the command "
+"out of this dialog box to a toolbar."
+msgstr ""
+
+#, fuzzy
+msgid "Edit f'(x)"
+msgstr " f'(x) оруулах"
+
+msgid "Edit trendline"
+msgstr ""
+
+msgid ""
+"This Tip Of The day can give you a lot of information about the program that "
+"most users don't know."
+msgstr ""
+
+msgid ""
+"You can send suggestions for future versions, bug reports and comments to "
+"graph@padowan.dk."
+msgstr ""
+
+msgid ""
+"You can customize the toolbar by right clicking on it and select 'Customize "
+"toolbar'."
+msgstr ""
+
+msgid ""
+"Instead of deleting a function you can make it invisible by right clicking "
+"on it in the function list and removing the check at the 'Visible' menu item."
+msgstr ""
+
+msgid "You can paste images into a text label."
+msgstr ""
+
+msgid ""
+"Text labels can contain any kind of OLE objects, for example Microsoft "
+"Equation. When editing a label right click in the editing area and select "
+"'Insert object'."
+msgstr ""
+
+msgid ""
+"You can export points from a point series to a file that can be read by "
+"other programs, for example Microsoft Excel. When editing the point series "
+"select the points, right click and choose 'Export to file'."
+msgstr ""
+
+msgid ""
+"A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)"
+"=t or as the relation x=5."
+msgstr ""
+
+msgid ""
+"You can use Zoom|Square to make the axes look equally scaled. This is "
+"especially useful when drawing circles and similar functions."
+msgstr ""
+
+msgid "You can find a list of all available functions in the help."
+msgstr ""
+
+msgid ""
+"You can combine two functions to one using 'if'. For example the function f"
+"(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"You can import the contents of another Graph file into the current "
+"coordinate system using 'File|Import|Graph file'."
+msgstr "Тухайн координатын системд график импортло"
+
+msgid ""
+"If you check 'Save as default' in the Axes dialog the current settings will "
+"be used as default when creating new files."
+msgstr ""
+
+msgid ""
+"While you hold down the Ctrl key, you can use the arrow keys to move the "
+"system."
+msgstr ""
+
+msgid ""
+"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
+"and out."
+msgstr ""
+
+msgid ""
+"You can use the scroll button on your mouse to zoom in and out at the "
+"position of the mouse cursor."
+msgstr ""
+
+msgid ""
+"If you don't want an item shown in the legend, you can right click on the "
+"item in the function list and deselect 'Show in legend'."
+msgstr ""
+
+msgid ""
+"If you want the axes shown to the left and bottom of the image, you can "
+"choose Axes style as Boxed in the Settings tab of the Axes dialog."
+msgstr ""
+
+msgid ""
+"Graph can save the shown coordinate system in five different image formats: "
+"bmp, emf, png, jpg and pdf."
+msgstr ""
+
+msgid ""
+"You can use 'Edit|Copy image' to copy the coordinate system to the clipboard "
+"and paste it into another program."
+msgstr ""
+
+msgid ""
+"You can open a saved grf-file in a new instance of the program by double "
+"clicking on it in Explorer."
+msgstr ""
+
+msgid ""
+"You can drag a grf-file from explorer into an open instance of Graph to open "
+"the file."
+msgstr ""
+
+msgid ""
+"Graph will remember the size and placement of the main window between "
+"executions. This can be disabled from the Options dialog."
+msgstr ""
+
+msgid ""
+"Calc|Table can be used to create a table with evaluation values for a "
+"function."
+msgstr ""
+
+msgid ""
+"A part or the whole evaluation table can be exported to a file by right "
+"clicking and selecting 'Export to file'. It can afterwards be opened in "
+"other programs like Microsoft Excel."
+msgstr ""
+
+msgid ""
+"Data from the evaluation table can be copied to another program like "
+"Microsoft excel using the clipboard."
+msgstr ""
+
+msgid ""
+"The data points in a point series can be copied to and from other programs "
+"like Microsoft Excel through the clipboard."
+msgstr ""
+
+msgid ""
+"Functions can be copied from one instance of the program to another through "
+"the clipboard using Edit|Copy."
+msgstr ""
+
+msgid "You can always undo the last thing you did using Edit|Undo."
+msgstr ""
+
+msgid ""
+"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
+"have undone."
+msgstr ""
+
+#, fuzzy
+msgid "In the Axes dialog you can add a title to the coordinate system."
+msgstr "Координатын системийн цонхыг зүүн тийш зөөх"
+
+msgid ""
+"You can import point series from files saved by other programs, like "
+"Microsoft Excel."
+msgstr ""
+
+msgid ""
+"When inserting a point series you can copy data from programs like Microsoft "
+"Excel, and paste the data into the grid in Graph."
+msgstr ""
+
+msgid ""
+"You can use 'Zoom|All points' to change the coordinate system so all point "
+"series are visible."
+msgstr ""
+
+msgid ""
+"You can use Zoom|Fit to change the coordinate system to show the selected "
+"function or point series."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"When you hold down the Shift key you can drag the coordinate system around "
+"with the mouse."
+msgstr "Координатын системийг хулганы тусламжтайгаар зөөх"
+
+msgid ""
+"You can use Calc|Evaluate to find intersections between functions, crossings "
+"with the axes and extremum points."
+msgstr ""
+
+msgid ""
+"When a point series is selected you can add points to it by clicking on the "
+"image while you hold down the Ctrl key."
+msgstr ""
+
+msgid ""
+"You can use a relation to plot any inequality, for example sin(x^2) < cos"
+"(y^2)"
+msgstr ""
+
+msgid ""
+"You can use a relation to plot any equation, for example x*sin x = y*cos y"
+msgstr ""
+
+msgid ""
+"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
+"same order they appear in the function list to the left."
+msgstr ""
+
+msgid ""
+"You can move the selected element in the function list either by dragging it "
+"with the mouse or with the arrow up/down keys while ALT is held down."
+msgstr ""
+
+msgid ""
+"You can show functions and other elements behind the axes by moving the "
+"element above the axes in the function list to the left. To move shadings "
+"and tangents you will have to move the functions they are attached to."
+msgstr ""
+
+msgid ""
+"Custom text labels may be attached to the axes by right clicking on the "
+"label and selecting a placement from the context menu."
+msgstr ""
+
+msgid ""
+"The legend may be moved freely with the mouse or attached to one of the "
+"corners by right clicking on the legend and choose a placement from the "
+"context menu."
+msgstr ""
+
+msgid ""
+"As an alternative to transparent you can choose a custom background color "
+"for labes. This is especially useful for labels drawn over shades."
+msgstr ""
+
+msgid ""
+"In most places like point series, axes settings, function ranges, etc., you "
+"can use expressions like pi/4 instead of numbers."
+msgstr ""
+
+msgid ""
+"You can create your own custom constants under Function|Custom functions for "
+"use in functions, point series, etc. For example g=9.80665, R=8.31"
+msgstr ""
+
+msgid ""
+"You can create your own custom functions under Function|Custom functions for "
+"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin"
+"(x)/x)"
+msgstr ""
+
+msgid ""
+"In the Save as image dialog there is an Option button you can use to specify "
+"the image resolution. This is especially useful if you want a high "
+"resolution image."
+msgstr ""
+
+msgid ""
+"Point series can have arrows as markers. A point series with arrows as "
+"markers and lines between the points can be used to show vectors."
+msgstr ""
+
+#, fuzzy
+msgid "Custom..."
+msgstr "Өөриймсөг"
+
+msgid "Black"
+msgstr "Хар"
+
+msgid "Maroon"
+msgstr ""
+
+msgid "Green"
+msgstr "Ногоон"
+
+msgid "Olive"
+msgstr ""
+
+msgid "Navy"
+msgstr ""
+
+msgid "Purple"
+msgstr "Ягаан"
+
+#, fuzzy
+msgid "Teal"
+msgstr "Бодит"
+
+msgid "Gray"
+msgstr "Саарал"
+
+msgid "Silver"
+msgstr "Мөнгөлөг"
+
+msgid "Red"
+msgstr "Улаан"
+
+#, fuzzy
+msgid "Lime"
+msgstr "Шулуун"
+
+msgid "Yellow"
+msgstr "Шар"
+
+msgid "Blue"
+msgstr "Цэнхэр"
+
+msgid "Fuchsia"
+msgstr ""
+
+msgid "Aqua"
+msgstr "Улбар шар"
+
+msgid "White"
+msgstr "Цагаан"
+
+#, fuzzy
+msgid "Money Green"
+msgstr "Ногоон"
+
+msgid "Sky Blue"
+msgstr "Хадган цэнхэр"
+
+msgid "Cream"
+msgstr "Тослог шаргал"
+
+msgid "Med Gray"
+msgstr "Бүдэг саарал"
+
+msgid "Local"
+msgstr ""
+
+msgid "Global"
+msgstr ""
+
+msgid "Insert"
+msgstr "Оруулга"
+
+msgid "Subset:"
+msgstr ""
+
+msgid "Print"
+msgstr "Хэвлэ"
+
+msgid "Scale:"
+msgstr "Шах:"
+
+msgid "Printer"
+msgstr "Хэвлэгч"
+
+msgid "Type:"
+msgstr "Төрөл:"
+
+msgid "Where:"
+msgstr "Хаана:"
+
+msgid "Comment:"
+msgstr "Тайлбар:"
+
+msgid ""
+"Select the printer to use. The Properties button may be used to change more "
+"advanced settings for the printer."
+msgstr ""
+
+msgid ""
+"Select to print in color (or grayscale if your printer is not a color "
+"printer) or convert all colors to black."
+msgstr ""
+
+msgid "Print output"
+msgstr "Гадагш хэвлэх"
+
+msgid "Color"
+msgstr "Өнгө"
+
+msgid "Black && white"
+msgstr "Хар && Цагаан"
+
+msgid "Position (millimeters)"
+msgstr "Байрлал (миллиметр)"
+
+msgid "Left margin:"
+msgstr "Зүүн зах:"
+
+msgid "Top margin:"
+msgstr "Дээд зах:"
+
+msgid "Select to place the image on the middle of the page."
+msgstr ""
+
+msgid "Center on page"
+msgstr "Хуудас голлуулах"
+
+msgid "Enter the image position on the page."
+msgstr ""
+
+msgid "Number of copies:"
+msgstr "Хувийн тоо:"
+
+#, fuzzy
+msgid "Choose number of copies to print."
+msgstr "Хувийн тоо:"
+
+msgid "Enter percent of original size."
+msgstr ""
+
+#~ msgid "A&ctions:"
+#~ msgstr "Ү&йлдэлүүд:"
+
+#~ msgid "Area..."
+#~ msgstr "Талбай..."
+
+#~ msgid "Text too long"
+#~ msgstr "Техт хэтэрхий урт байна"
