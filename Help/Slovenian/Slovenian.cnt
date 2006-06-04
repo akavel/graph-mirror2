@@ -1,0 +1,93 @@
+:Base Slovenian.hlp
+1 Kaj je Graph?=WHAT_IS_GRAPH
+1 Kaj je novega=HISTORY
+1 Kako uporabljati Graph=USE
+1 Namestitev in zagon=INSTALLATION
+1 Pogosto zastavljena vprašanja=FAQ
+1 OLE strežnik/odjemalec=OLE
+1 Seznam menijev=MENU
+1 Sporocila o napakah=ERROR_MSG
+1 Znani hrošci=KNOWN_BUGS
+1 Zahvala=ACKNOWLEDGE
+1 Funkcij
+2 Spisek funkcij=FUNCTIONS
+2 rand=FUNCTION_RAND
+2 Potencne, eksponentna in logaritemske
+3 sqr=FUNCTION_SQR
+3 exp=FUNCTION_EXP
+3 sqrt=FUNCTION_SQRT
+3 root=FUNCTION_ROOT
+3 ln=FUNCTION_LN
+3 log=FUNCTION_LOG
+3 logb=FUNCTION_LOGB
+2 Trigonometricne
+3 sin=FUNCTION_SIN
+3 cos=FUNCTION_COS
+3 tan=FUNCTION_TAN
+3 asin=FUNCTION_ASIN
+3 acos=FUNCTION_ACOS
+3 atan=FUNCTION_ATAN
+3 csc=FUNCTION_CSC
+3 sec=FUNCTION_SEC
+3 cot=FUNCTION_COT
+3 acsc=FUNCTION_ACSC
+3 asec=FUNCTION_ASEC
+3 acot=FUNCTION_ACOT
+2 Hiperbolicne
+3 sinh=FUNCTION_SINH
+3 cosh=FUNCTION_COSH
+3 tanh=FUNCTION_TANH
+3 asinh=FUNCTION_ASINH
+3 acosh=FUNCTION_ACOSH
+3 atanh=FUNCTION_ATANH
+3 csch=FUNCTION_CSCH
+3 sech=FUNCTION_SECH
+3 coth=FUNCTION_COTH
+3 acsch=FUNCTION_ACSCH
+3 asech=FUNCTION_ASECH
+3 acoth=FUNCTION_ACOTH
+2 Kompleksne
+3 abs=FUNCTION_ABS
+3 arg=FUNCTION_ARG
+3 conj=FUNCTION_CONJ
+3 re=FUNCTION_RE
+3 im=FUNCTION_IM
+2 Zaokrožanje
+3 trunc=FUNCTION_TRUNC
+3 fract=FUNCTION_FRACT
+3 ceil=FUNCTION_CEIL
+3 floor=FUNCTION_FLOOR
+3 round=FUNCTION_ROUND
+2 Sestavljene
+3 sign=FUNCTION_SIGN
+3 u=FUNCTION_U
+3 min=FUNCTION_MIN
+3 max=FUNCTION_MAX
+3 if=FUNCTION_IF
+3 ifseq=FUNCTION_IFSEQ
+3 range=FUNCTION_RANGE
+2 Specialne funkcije
+3 integrate=FUNCTION_INTEGRATE
+3 sum=FUNCTION_SUM
+3 fact=FUNCTION_FACT
+3 gamma=FUNCTION_GAMMA
+3 beta=FUNCTION_BETA
+3 W=FUNCTION_W
+3 zeta=FUNCTION_ZETA
+3 mod=FUNCTION_MOD
+3 dnorm=FUNCTION_DNORM
+1 Dialogs
+2 Osi=DIALOG_AXES
+2 Možnosti=DIALOG_OPTIONS
+2 Vstavi funkcijo=DIALOG_FUNCTION
+2 Vstavi tangento=DIALOG_TANGENT
+2 Vstavi senco=DIALOG_SHADE
+2 Vstavi zaporedje tock=DIALOG_POINTS
+2 Vstavi najbolje prilegajoc graf=DIALOG_TRENDLINE
+2 Vstavi oznako=DIALOG_LABEL
+2 Insert relation=DIALOG_RELATION
+2 Vstavi f'(x)=DIALOG_DIFF
+2 Custom functions=DIALOG_CUSTOM
+2 Ovrednoti/obmocje/Dolžina poti=DIALOG_EVAL
+2 Racunaj tabela=DIALOG_TABLE
+2 Shrani sliko kot=DIALOG_META
