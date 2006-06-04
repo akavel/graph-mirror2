@@ -1,0 +1,3005 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Graph russian interface\n"
+"POT-Creation-Date: 2006-05-31 19:27\n"
+"PO-Revision-Date: 2006-01-14 12:53+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: dxgettext 1.2 beta 5\n"
+"X-Poedit-Language: Russian\n"
+
+msgid "From:"
+msgstr "От:"
+
+msgid "To:"
+msgstr "До:"
+
+msgid "Area"
+msgstr "Площадь"
+
+msgid "Enter a start coordinate or mark the range on the image with the mouse."
+msgstr "Введите начальную координату или отметьте диапазон мышью на графике."
+
+msgid "Enter the end coordinate or mark the range on the image with the mouse."
+msgstr "Введите конечную координату или отметьте диапазон на графике мышью."
+
+msgid ""
+"Area or length of path calculated for the given range using Simpson's "
+"formula."
+msgstr ""
+"Площадь под графиком или длина пути вычисляются для заданного диапазона по "
+"формуле Симпсона."
+
+msgid "Snap to:"
+msgstr "Искать:"
+
+msgid "The x-coordinate evaluated for the t-parameter."
+msgstr "Оценка координаты х для параметра t."
+
+msgid "The y-coordinate evaluated for the t-parameter."
+msgstr "Оценка координаты у для параметра t."
+
+msgid "The derivative of x(t) evaluated for the entered t-parameter."
+msgstr "Значение производной x(t) для введённого параметра t."
+
+msgid "The derivative of y(t) evaluated for the entered t-parameter."
+msgstr "Значение производной y(t) для введённого параметра t."
+
+msgid "The slope of the function evaluated for the entered t-parameter."
+msgstr "Наклон касательной к функции при заданном параметре t."
+
+msgid ""
+"Enter the independent variable for which you want to evaluate the function, "
+"or click on the function in the main window."
+msgstr ""
+"Введите значение незавивимой переменной, для которого вы хотите получить "
+"значение функции, или выберите точку на графике функции."
+
+msgid "Select where the cursor will be placed when you click on the image."
+msgstr "Выберите, куда помещать курсор при щелчке мыши на изображении."
+
+msgid "Function"
+msgstr "Функции"
+
+msgid "Intersection"
+msgstr "Пересеч. функций"
+
+msgid "x-axis"
+msgstr "ось x"
+
+msgid "y-axis"
+msgstr "ось y"
+
+msgid "Extreme x-value"
+msgstr "Крайнее значение х"
+
+msgid "Extreme y-value"
+msgstr "Крайнее значение у"
+
+msgid "The distance to the function evaluated for the given angle."
+msgstr "Расстояние от начала координат до выбранной точки."
+
+msgid "The x-coordinate evaluated for the given angle."
+msgstr "Значение координаты х для данного угла."
+
+msgid "The y-coordinate evaluated for the given angle."
+msgstr "Значение координаты у для данного угла."
+
+msgid "The derivative of the function evaluated for the given angle."
+msgstr "Значение производной функции для заданного угла."
+
+msgid "The slope of the function evaluated for the given angle."
+msgstr "Наклон касательной к функции для заданного угла."
+
+msgid ""
+"Enter a number for which you want to evaluate the function, or click on the "
+"function in the main window."
+msgstr ""
+"Введите аргумент, для которого вы хотите получить значение функции, или "
+"выберите точку на графике."
+
+msgid "Extremum"
+msgstr "Экстремум"
+
+msgid "This is the function evaluated for the entered x-value."
+msgstr "Значение функции для заданного значения х."
+
+#, fuzzy
+msgid ""
+"This is the first derivative of the function evaluated for the entered value."
+msgstr "Значение первой производной функции для заданного х."
+
+msgid ""
+"This is the functions second derivative evaluated for the entered value."
+msgstr "Значение второй производной функции для заданного х."
+
+#, fuzzy
+msgid "This is the y-coordinate corresponding to the entered x-coordinate."
+msgstr "Координата у точки на касательной с заданным значением х."
+
+#, fuzzy
+msgid "Enter an x-coordinate or click in the main window."
+msgstr "Введите координату х или мышью выберите точку на касательной."
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Import"
+msgstr "Загрузить (import)"
+
+msgid "Graph file..."
+msgstr "Graph файл..."
+
+msgid "Import a graph file into the current coordinate system."
+msgstr "Загрузить файл Graph в текущую систему координат."
+
+msgid "Point series..."
+msgstr "Ряд точек..."
+
+msgid "Import point series from a data file."
+msgstr "Загрузить ряд точек из файла с данными."
+
+msgid "Edit"
+msgstr "Редактирование"
+
+msgid "Zoom"
+msgstr "Масштаб"
+
+msgid "Calc"
+msgstr "Вычисления"
+
+msgid "Help"
+msgstr "Помощь"
+
+msgid "Internet"
+msgstr "Интернет"
+
+msgid "Open file: %s"
+msgstr "Открыть файл %s."
+
+msgid "Visible"
+msgstr "Показывать на графике"
+
+msgid "Check to make the selected item visible in the coordinate system."
+msgstr "Отметьте, чтобы выбранный объект был виден на графике."
+
+msgid "Show in legend"
+msgstr "Показывать в подписи к графику"
+
+msgid "Check to show the selected item in the legend."
+msgstr "Отметьте, чтобы выбранный объект был включён в подпись к графику."
+
+msgid "Placement"
+msgstr "Расположение"
+
+msgid "Above x-axis"
+msgstr "Над осью x"
+
+msgid ""
+"Place the label directly above the x-axis on the right side of the image."
+msgstr "Помещать подпись над осью х на правой стороне графика."
+
+msgid "Below x-axis"
+msgstr "Под осью x"
+
+msgid ""
+"Place the label directly below the x-axis on the right side of the image."
+msgstr "Помещать подпись под осью х на правой стороне графика."
+
+msgid "Left of y-axis"
+msgstr "Слева от оси у"
+
+msgid "Place the label to the left of the y-axis at the top of the image."
+msgstr "Помещать подпись слева от оси у вверху графика."
+
+msgid "Right of y-axis"
+msgstr "Справа от оси у"
+
+msgid "Place the label to the right of the y-axis at the top of the image."
+msgstr "Помещать подпись справа от оси у вверху графика."
+
+msgid "Export to file..."
+msgstr "Экспортировать в файл..."
+
+msgid "Export the selected point series to a file."
+msgstr "Экспортировать выбранный ряд точек в файл."
+
+msgid "New"
+msgstr "Новый"
+
+msgid "Creates a new coordinate system."
+msgstr "Создать новую систему координат."
+
+msgid "Open..."
+msgstr "Открыть..."
+
+msgid "Read coordinate system and functions from a file."
+msgstr "Загрузить систему координат и функции из файла."
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Write coordinate system and functions to a file."
+msgstr "Записать систему координат и функции в файл."
+
+msgid "Save as..."
+msgstr "Сохранить как..."
+
+msgid "Saves the coordinate system as a new name."
+msgstr "Сохранить систему координат под новым названием."
+
+msgid "Save copy as..."
+msgstr "Сохранить копию как..."
+
+#, fuzzy
+msgid "Saves a copy of the current coordinate system."
+msgstr "Сохранить копию текущей системы координат."
+
+msgid "Save as image..."
+msgstr "Сохранить как изображение..."
+
+msgid "Saves the shown coordinate system as an image."
+msgstr "Сохранить изображение графика."
+
+msgid "Print..."
+msgstr "Печать..."
+
+msgid "Print shown coordinate system."
+msgstr "Печать графика."
+
+msgid "Exit"
+msgstr "Выход"
+
+msgid "Quit the program."
+msgstr "Выйти из программы"
+
+msgid "Undo"
+msgstr "Отменить"
+
+msgid "Undo the last action."
+msgstr "Отменить последнее действие."
+
+msgid "Redo"
+msgstr "Повторить"
+
+msgid "Redo the last action undone."
+msgstr "Повторить последнее отменённое действие."
+
+msgid "Cut"
+msgstr "Вырезать"
+
+msgid "Cuts the selected function or point series to the clipboard."
+msgstr "Вырезает выбранную функцию или ряд точек и помещает в буфер обмена."
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "Copies the selected function or point series to the clipboard."
+msgstr "Копирует выбранную функцию или ряд точек в буфер обмена."
+
+msgid "Paste"
+msgstr "Вставить"
+
+msgid ""
+"Pastes a function or point series from the clipboard into the coordinate "
+"system."
+msgstr "Помещает функцию или ряд точек из буфера обмена в систему координат."
+
+msgid "Copy image"
+msgstr "Копировать изображение"
+
+msgid "Copies the shown coordinate system to the clipboard."
+msgstr "Копировать изображение системы координат в буфер обмена."
+
+msgid "Axes..."
+msgstr "Оси..."
+
+msgid "Edit axes settings."
+msgstr "Редактировать параметры осей."
+
+msgid "Options..."
+msgstr "Настройки..."
+
+msgid "Edit options."
+msgstr "Редактировать настройки программы."
+
+msgid "Insert function..."
+msgstr "Добавить функцию..."
+
+msgid "Insert a new function."
+msgstr "Добавить новую функцию."
+
+msgid "Insert tangent/normal..."
+msgstr "Добавить касательную или перпендикуляр..."
+
+#, fuzzy
+msgid "Insert a new tangent or normal for the selected function."
+msgstr "Добавить новую касательную или перпендикуляр к выбранной функции."
+
+msgid "Insert shade..."
+msgstr "Заштриховать участок..."
+
+#, fuzzy
+msgid "Add shading to the selected function."
+msgstr "Заштриховать участок графика."
+
+msgid "Insert point series..."
+msgstr "Добавить ряд точек..."
+
+msgid "Insert a new point series."
+msgstr "Добавить новый ряд точек."
+
+msgid "Insert trendline..."
+msgstr "Добавить трендлинию..."
+
+msgid "Insert a curve of best fit for the selected point series."
+msgstr "Добавить кривую приближения для выбранного ряда точек."
+
+msgid "Edit..."
+msgstr "Изменить..."
+
+#, fuzzy
+msgid "Edit the selected element: Function, tangent, point series, etc."
+msgstr "Редактировать выбранную функцию, касательную, или ряд точек."
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Delete the selected function, tangent or point series."
+msgstr "Удалить выбранную функцию, касательную, или ряд точек."
+
+msgid "Insert f'(x)..."
+msgstr "Добавить производную f'(x)..."
+
+msgid "Insert the first derivative of the selected function."
+msgstr "Добавить первую производную выбранной функции."
+
+msgid "In"
+msgstr "Увеличить"
+
+msgid "Zoom in."
+msgstr "Увеличить."
+
+msgid "Out"
+msgstr "Уменьшить"
+
+msgid "Zoom out."
+msgstr "Уменьшить."
+
+msgid "Window"
+msgstr "Участок"
+
+msgid "Zoom to user selected window."
+msgstr "Выбрать участок графика и увеличить его."
+
+msgid "Square"
+msgstr "Равный"
+
+#, fuzzy
+msgid ""
+"Zoom to scale the axes equal. This will show a circle in the correct "
+"relation instead of an ellipse."
+msgstr ""
+"Сделать равный масштаб обеих осей. Например, чтобы окружность не выглядела "
+"эллипсом."
+
+msgid "Standard"
+msgstr "Стандартный"
+
+msgid "Zoom to standard coordinates."
+msgstr "Показать систему координат в стандартном масштабе."
+
+msgid "Move"
+msgstr "Перемещение"
+
+msgid "Move up"
+msgstr "Переместить вверх"
+
+msgid "Move the window up the coordinate system."
+msgstr "Переместить окно вверх по системе координат."
+
+msgid "Move down"
+msgstr "Переместить вниз"
+
+msgid "Move the window down the coordinate system."
+msgstr "Переместить окно вниз по системе координат."
+
+msgid "Move left"
+msgstr "Переместить влево"
+
+msgid "Move the window to left of the coordinate system."
+msgstr "Переместить окно влево по системе координат."
+
+msgid "Move right"
+msgstr "Переместить вправо"
+
+msgid "Move the window to the right of the coordinate system."
+msgstr "Переместить окно вправо по системе координат."
+
+msgid "Move system"
+msgstr "Перемещение системы"
+
+msgid "Move the coordinate system with the mouse."
+msgstr "Переместить систему координат при помощи мыши."
+
+#, fuzzy
+msgid "Length of path"
+msgstr "Длина пути..."
+
+msgid "Calculate length of path between two points."
+msgstr "Рассчитать длину пути по функции между двумя точками."
+
+msgid "Calculates area under the path."
+msgstr "Рассчитать площадь под графиком."
+
+msgid "Evaluate"
+msgstr "Оценить"
+
+msgid "Evaluate or trace the selected function."
+msgstr "Значения функции."
+
+msgid "Table..."
+msgstr "Таблица..."
+
+#, fuzzy
+msgid "Shows an evaluation table."
+msgstr "Показать таблицу значений"
+
+msgid "Contents and index"
+msgstr "Contents and index"
+
+msgid "Open help file."
+msgstr "Open help file."
+
+msgid "List of functions"
+msgstr "Список функций"
+
+msgid "Show list of functions that can be used for graphing."
+msgstr "Показать список функций, используемых для построения графиков."
+
+msgid "Go to home page"
+msgstr "Домашняя страница"
+
+msgid "Opens the default browser and shows the home page of the program."
+msgstr "Открывает домашнюю страницу программы в вашем браузере."
+
+msgid "Check for update"
+msgstr "Проверить обновления"
+
+msgid "Contact the home page to see if a newer version is available."
+msgstr ""
+"Подключиться к домашней странице программы и проверить, есть ли новая версия."
+
+msgid "About Graph..."
+msgstr "О программе Graph..."
+
+msgid "Show copyright information."
+msgstr "Информация о программе."
+
+msgid "Separator"
+msgstr "Разделитель"
+
+msgid "Fit"
+msgstr "Показать функцию"
+
+msgid "Zoom to show the selected function."
+msgstr "Показать выбранную функцию на всё графическое поле."
+
+msgid "All points"
+msgstr "Все точки"
+
+msgid "Zoom as much as all points are visible."
+msgstr "Показать все точки"
+
+msgid "Frequently Asked Questions"
+msgstr "Часто задаваемые вопросы"
+
+msgid "Shows a list of frequently asked questions and answers."
+msgstr "Показать ответы на часто задаваемые вопросы."
+
+msgid "Insert label..."
+msgstr "Добавить надпись..."
+
+msgid "Insert a text label."
+msgstr "Добавить надпись на графике."
+
+msgid "Donate"
+msgstr "Поддержать разработчика"
+
+#, fuzzy
+msgid "Donate money to the project."
+msgstr "Перечислить деньги разработчику"
+
+msgid "Tip of the day"
+msgstr "Совет дня"
+
+msgid "Show tip of the day"
+msgstr "Показать совет дня"
+
+msgid "Support"
+msgstr "Страница поддержки"
+
+msgid "Open browser with the support page for the program."
+msgstr "Открыть страницу поддержки программы."
+
+msgid "Zoom x-axis in"
+msgstr "Увеличить по оси х"
+
+msgid "Zoom in on the x-axis only."
+msgstr "Увеличить масштаб по оси х."
+
+msgid "Zoom x-axis out"
+msgstr "Уменьшить по оси х"
+
+msgid "Zoom out on the x-axis only."
+msgstr "Уменьшить масштаб по оси х."
+
+msgid "Zoom y-axis in"
+msgstr "Увеличить по оси у"
+
+msgid "Zoom in on the y-axis only."
+msgstr "Увеличить масштаб по оси у."
+
+msgid "Zoom y-axis out"
+msgstr "Уменьшить по оси у"
+
+msgid "Zoom out on the y-axis only."
+msgstr "Уменьшить масштаб по оси у."
+
+msgid "Insert relation..."
+msgstr "Добавить соотношение..."
+
+msgid "Insert a new equation or inequality."
+msgstr "Добавить новое уравнение или неравенство."
+
+msgid "Custom functions..."
+msgstr "Пользовательские функции..."
+
+msgid "Create custom functions and constants for use in graphs."
+msgstr "Создать дополнительные функции и константы."
+
+#, fuzzy
+msgid "Animate..."
+msgstr "Поддержать разработчика"
+
+msgid "Create an animation by variating a constant."
+msgstr ""
+
+msgid "Select color"
+msgstr "Выберите цвет"
+
+msgid "Reset to default"
+msgstr "Восстановить исходную панель"
+
+msgid "Reset the tool bar icons to the installation default."
+msgstr "Восстановить исходную конфигурацию панели инструментов."
+
+msgid "Customize toolbar..."
+msgstr "Изменить панель инструментов..."
+
+msgid "Customize the icons shown on the toolbar."
+msgstr "Выбрать кнопки, отображаемые на панели инструментов."
+
+#, fuzzy
+msgid "Rotation"
+msgstr "Соотношение:"
+
+msgid "Edit label..."
+msgstr "Редактировать надпись..."
+
+msgid "Edit the label under the cursor."
+msgstr "Редактировать надпись, над которой находится курсор."
+
+msgid "Delete label"
+msgstr "Удалить надпись"
+
+msgid "Delete the label under the cursor."
+msgstr "Удалить надпись, над которой находится курсор."
+
+msgid "Show legend"
+msgstr "Подпись к графику"
+
+msgid "Select to show a legend in the coordinate system."
+msgstr "Показывать подпись к графику на системе координат."
+
+msgid "Top Right"
+msgstr "Вверху справа"
+
+msgid "Show the legend in the upper right corner."
+msgstr "Показывать подпись к графику в верхнем правом углу."
+
+msgid "Bottom Right"
+msgstr "Внизу справа"
+
+msgid "Show the legend in the bottom right corner."
+msgstr "Показывать подпись к графику в нижнем правом углу."
+
+msgid "Top Left"
+msgstr "Вверху слева"
+
+msgid "Show the legend in the upper left corner."
+msgstr "Показывать подпись к графику в верхнем левом углу."
+
+msgid "Bottom Left"
+msgstr "Внизу слева"
+
+msgid "Show the legend in the bottom left corner."
+msgstr "Показывать подпись к графику в нижнем левом углу."
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Next tip"
+msgstr "Следующий"
+
+msgid "Previous tip"
+msgstr "Предыдущий"
+
+msgid "Show tips at startup"
+msgstr "Показывать советы при запуске"
+
+msgid "Did you know..."
+msgstr "Знаете ли вы..."
+
+msgid "Insert relation"
+msgstr "Добавить соотношение"
+
+msgid "Relation:"
+msgstr "Соотношение:"
+
+msgid "Constraints:"
+msgstr "Ограничения:"
+
+msgid "OK"
+msgstr "ОК"
+
+msgid "Cancel"
+msgstr "Отменить"
+
+msgid "Legend text"
+msgstr "Текст подписи"
+
+msgid "Description:"
+msgstr "Описание:"
+
+#, fuzzy
+msgid ""
+"Write a descriptive text to show in the legend. If empty the equation will "
+"be used."
+msgstr ""
+"Описание функции, используемое в подписи к графику. Если оставлено пустым, "
+"будет использована формула функции."
+
+msgid "Properties"
+msgstr "Свойства"
+
+msgid "Style:"
+msgstr "Тип:"
+
+msgid "Color:"
+msgstr "Цвет:"
+
+msgid "Width:"
+msgstr "Толщина:"
+
+#, fuzzy
+msgid ""
+"Select the style used for drawing the inequality. Not used for equations."
+msgstr ""
+"Выберите тип заштриховки для отображения неравенства. Не используется для "
+"уравнений."
+
+#, fuzzy
+msgid ""
+"Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Толщина линии графика уравнения. Не используется для неравенств."
+
+#, fuzzy
+msgid "Select the color for drawing the relation."
+msgstr "Выберите цвет линии."
+
+msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
+msgstr "Введите соотношение, например \"x^2+y^2 = 25\" или \"y < sin(x)\""
+
+msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
+msgstr "Введите ограничения для соотношения, например \"x > 0 and y < 5\""
+
+msgid "Insert tangent/normal"
+msgstr "Добавить касательную или перпендикуляр"
+
+msgid "Coordinate where the tangent/normal will cross the function."
+msgstr ""
+"Координата, при которой касательная или перпендикуляр должны касаться или "
+"пересекать функцию."
+
+msgid "Choose if you want a tangent or a normal."
+msgstr "Выберите, добавить касательную или перпендикуляр."
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Tangent"
+msgstr "Касательная"
+
+msgid "Normal"
+msgstr "Перпендикуляр"
+
+msgid "Graph properties"
+msgstr "Свойства графика"
+
+msgid "Line style:"
+msgstr "Тип линии:"
+
+msgid "Width of graph in pixels."
+msgstr "Толщина линии в пикселях."
+
+msgid "Choose which line style to use for drawing the graph."
+msgstr "Выберите, какой тип линии использовать для отображения графика."
+
+#, fuzzy
+msgid "Select the color of the graph."
+msgstr "Выберите тип функции."
+
+msgid "Argument range"
+msgstr "Диапазон аргумента"
+
+msgid "Start of range interval for the used variable."
+msgstr "Начало диапазона."
+
+msgid "End of range interval for the used variable."
+msgstr "Конец диапазона."
+
+msgid "Endpoints"
+msgstr "Маркеры начала и конца"
+
+msgid "Start:"
+msgstr "Начало:"
+
+msgid "End:"
+msgstr "Конец:"
+
+msgid ""
+"Select marker to show at the start of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+"Выберите маркер начала линии. Используется только если указан интервал."
+
+msgid ""
+"Select marker to show at the end of the interval. Only used if an argument "
+"range is specified."
+msgstr "Выберите маркер конца линии. Используется только если указан интервал."
+
+msgid "Insert trendline"
+msgstr "Добавить трендлинию"
+
+msgid "Line"
+msgstr "Линия"
+
+msgid "Built-in"
+msgstr "Встроенные"
+
+msgid "Create a linear function: f(x)=ax+b"
+msgstr "Создать линейную функцию: f(x)=ax+b"
+
+msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
+msgstr "Создать логарифмическую функцию: f(x)=a*ln(x)+b"
+
+msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
+msgstr "Создать полиномиальную функцию: f(x)=ax^3+bx^2+cx+d"
+
+msgid "Create a power function: f(x)=ax^b"
+msgstr "Создать степенную функцию: f(x)=ax^b"
+
+msgid "Create a exponential function: f(x)=a*b^x"
+msgstr "Создать экспоненциальную функцию: f(x)=a*b^x"
+
+msgid "The order of the polynomium. For example 2 means a parable."
+msgstr "Степень полинома. Например, 2 обозначает параболу."
+
+msgid "Order:"
+msgstr "Степень:"
+
+msgid "Polynomial"
+msgstr "Полином"
+
+msgid "Logarithmic"
+msgstr "Логарифмическая шкала"
+
+msgid "Linear"
+msgstr "Линейная"
+
+msgid "Power"
+msgstr "Степенная"
+
+msgid "Exponential"
+msgstr "Экспонента"
+
+msgid "Create a moving average as a series of straight lines."
+msgstr "Создать график скользящего среднего как последовательность отрезков."
+
+msgid "Moving average"
+msgstr "Скользящее среднее"
+
+msgid "Period:"
+msgstr "Период:"
+
+msgid "Determines how many points are used for the average."
+msgstr "Задаёт количество точек, используемых для нахождения среднего."
+
+msgid "User defined"
+msgstr "Пользовательские"
+
+msgid "Model:"
+msgstr "Модель:"
+
+msgid "Add model"
+msgstr "Новая модель"
+
+msgid "Remove model"
+msgstr "Удал. модель"
+
+msgid "Edit model"
+msgstr "Параметры"
+
+#, fuzzy
+msgid "Enter a function model to base the trendline on."
+msgstr "Введите описание для отображения в подписи к графику."
+
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendline."
+msgstr ""
+
+#, fuzzy
+msgid "Intercept ="
+msgstr "Интернет"
+
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendlines."
+msgstr ""
+
+msgid "Insert point series"
+msgstr "Добавить ряд точек"
+
+msgid ""
+"The name of the point series, which is shown in the list to the left of the "
+"coordinate system."
+msgstr "Название ряда точек, используемое в списке слева от системы координат."
+
+msgid "Series"
+msgstr "Ряд"
+
+msgid "This shows a sample of the markers and the lines between the markers."
+msgstr "Образцы маркеров и соединительных линий."
+
+msgid "Sample"
+msgstr "Образец"
+
+msgid "Markers"
+msgstr "Точки"
+
+msgid "Marker"
+msgstr "Маркеры"
+
+msgid "Size:"
+msgstr "Размер:"
+
+msgid "Choose the size of the markers."
+msgstr "Выберите размер маркеров."
+
+msgid "Choose the type of markers to be shown at each point."
+msgstr "Выберите тип маркера, обозначающего точку."
+
+msgid "Choose the color of the markers."
+msgstr "Выберите цвет точек"
+
+msgid "Interpolation:"
+msgstr "Интерполяция:"
+
+msgid ""
+"Choose the style of lines to be drawn between the points. You may also "
+"choose not to draw any lines."
+msgstr ""
+"Выберите тип линии, соединяющей точки. Линии могут также отсутствовать."
+
+#, fuzzy
+msgid "Choose the width of the lines in pixels."
+msgstr "Выберите ширину линии."
+
+msgid "Select which kind of line to draw between the markers."
+msgstr "Выберите тип линии, соединяющей маркеры."
+
+msgid "Cubic splines"
+msgstr "Кубич. сплайны"
+
+msgid "Half cosine"
+msgstr "Полукосинус"
+
+msgid "Choose the color of the lines."
+msgstr "Выберите цвет линии."
+
+msgid "Labels"
+msgstr "Надписи"
+
+msgid "Position:"
+msgstr "Расположение:"
+
+msgid "Check to show the coordinate at each point."
+msgstr "Выберите, показывать ли координаты каждой точки."
+
+msgid "Show coordinates"
+msgstr "Координаты"
+
+msgid "Select the font for the coordinates."
+msgstr "Выберите шрифт, которым будут выводиться координаты."
+
+msgid "Select where the coordinates should be shown."
+msgstr "Выберите, где будут выводиться координаты."
+
+msgid "Below"
+msgstr "Под"
+
+msgid "Above"
+msgstr "Над"
+
+msgid "Left"
+msgstr "Слева"
+
+msgid "Right"
+msgstr "Справа"
+
+msgid "Error bars"
+msgstr "Ошибки"
+
+msgid "X error bars"
+msgstr "Ошибки по оси Х"
+
+#, fuzzy
+msgid "Show horizontal error bars."
+msgstr "Показывать диапазон ошибок по горизонтали"
+
+msgid "Show x-bars"
+msgstr "Показывать ошибки"
+
+msgid "All error bars are the same size."
+msgstr "Фиксированная величина ошибки."
+
+msgid "Fixed:"
+msgstr "Фикс."
+
+msgid "Enter fixed value."
+msgstr "Введите величину ошибки."
+
+msgid "All error bars are the same percentage of the x-coordinate."
+msgstr "Диапазон ошибок в процентах от значения Х"
+
+msgid "Relative:"
+msgstr "Проценты"
+
+msgid "Each error bar is given a custom value."
+msgstr "Произвольные значения ошибок."
+
+msgid "Custom"
+msgstr "Пользовательские"
+
+msgid "Enter relative value in percent."
+msgstr "Введите величину ошибки в процентах."
+
+msgid "Y error bars"
+msgstr "Ошибки по оси У"
+
+#, fuzzy
+msgid "Show vertical error bars."
+msgstr "Показывать диапазон ошибок по вертикали"
+
+msgid "Show y-bars"
+msgstr "Показывать ошибки"
+
+msgid "All error bars are the same percentage of the y-coordinate."
+msgstr "Диапазон ошибок в процентах от значения У"
+
+#, fuzzy
+msgid "Cut the selected text to the clipboard."
+msgstr "Вырезать выбранный текст и поместить в буфер обмена"
+
+msgid "Copy the selected text to the clipboard."
+msgstr "Скопировать выбранный текст в буфер обмена."
+
+msgid ""
+"Paste text from the clipboard into the grid. Other cells may be overwritten "
+"by the text from the clipboard."
+msgstr ""
+"Вставить текст из буфера обмена в таблицу. Значения остальных ячеек могут "
+"быть заменены значениями из буфера обмена."
+
+msgid "Erase selected cells."
+msgstr "Удалить выбранные ячейки."
+
+msgid "Insert row"
+msgstr "Вставить строку"
+
+#, fuzzy
+msgid "Inserts a row in the grid moving rows below one down."
+msgstr "Вставить строку, опустив ячейки, находящиеся ниже."
+
+msgid "Remove row"
+msgstr "Удалить строку"
+
+msgid "Removes the selected rows."
+msgstr "Удаляет выбранную строку."
+
+msgid "Select all"
+msgstr "Выделить всё"
+
+msgid "Select all cells."
+msgstr "Выделить все ячейки."
+
+msgid "Import from file..."
+msgstr "Загрузить из файла..."
+
+msgid "Import data from a file and place it at the selected cell."
+msgstr "Импортировать данные из файла и поместить начиная с выбранной ячейки."
+
+msgid "Export selected data to a file."
+msgstr "Экспортировать выделенные данные в файл."
+
+msgid "Calculate table"
+msgstr "Вычислить таблицу"
+
+msgid ""
+"The step value. This is the distance between the x-values in the interval."
+msgstr "Величина шага."
+
+msgid "The first x-value in the interval."
+msgstr "Наименьшее значение х в интервале."
+
+msgid "The last x-value in the interval."
+msgstr "Наибольшее значение х в интервале."
+
+msgid "Copy selected cells to the clipboard."
+msgstr "Скопировать выделенные ячейки в буфер обмена."
+
+msgid "Saves the selected data to a file."
+msgstr "Сохранить выделенные данные в файл."
+
+msgid "Calculating"
+msgstr "Происходит вычисление"
+
+msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
+msgstr "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
+
+msgid "Insert shade"
+msgstr "Заштриховать участок"
+
+msgid "Shading"
+msgstr "Участок"
+
+msgid "Shades the area between the function and the x-axis."
+msgstr "Заштриховывает часть плоскости между функцией и осью х."
+
+msgid "Shades the area below the function."
+msgstr "Заштриховывает часть плоскости под функцией."
+
+msgid "Shades the area above the function."
+msgstr "Заштриховывает часть плоскости над функцией."
+
+msgid "Shades the area between the function and the y-axis."
+msgstr "Заштриховывает часть плоскости между функцией и осью у."
+
+msgid "Shades the area inside the function."
+msgstr "Заштриховывает часть плоскости внутри функции."
+
+msgid ""
+"Shades the area between the main function and the function selected in the "
+"list to the right."
+msgstr "Заштриховывает часть плоскости между двумя функциями."
+
+msgid "Above function"
+msgstr "Над функцией"
+
+msgid "Between function and x-axis"
+msgstr "Между функцией и осью х"
+
+msgid "Between functions"
+msgstr "Между функциями"
+
+msgid "Between function and y-axis"
+msgstr "Между функцией и осью у"
+
+msgid "Inside function"
+msgstr "Внутри функции"
+
+msgid "Below function"
+msgstr "Под функцией"
+
+msgid "Options"
+msgstr "Настройки"
+
+msgid "Range"
+msgstr "Диапазон"
+
+msgid "Coordinate where the shading starts."
+msgstr "Координата начала штрихования."
+
+msgid "Coordinate where the shading ends."
+msgstr "Координата окончания штрихования."
+
+msgid "Check to increase the end coordinate until intersection."
+msgstr "Отметьте, чтобы расширить участок штрихования вправо до пересечения."
+
+msgid "Increase to intersection"
+msgstr "Вправо до пересечения"
+
+#, fuzzy
+msgid "Check to decrease the start coordinate until intersection."
+msgstr "Отметьте, чтобы расширить участок штрихования влево до пересечения."
+
+msgid "Decrease to intersection"
+msgstr "Влево до пересечения"
+
+msgid "Select the style used for the shading."
+msgstr "Выберите тип заштриховки."
+
+msgid "Mark the end of the shading with a line."
+msgstr "Обозначить конец заштрихованного участка линией."
+
+msgid "Mark end of range"
+msgstr "Конечная граница"
+
+msgid "Select color used for shading."
+msgstr "Выберите цвет заштриховки."
+
+msgid "Mark the start of the shading with a line."
+msgstr "Обозначить начало заштрихованного участка линией."
+
+msgid "Mark start of range"
+msgstr "Начальная граница"
+
+msgid "Enter a description to show in the legend."
+msgstr "Введите описание для отображения в подписи к графику."
+
+msgid "2nd function"
+msgstr "Вторая функция"
+
+msgid "2nd function:"
+msgstr "Вторая функция:"
+
+msgid "Select second function, when you want a shading between two functions."
+msgstr ""
+"Выберите вторую функцию, если вы хотите заштриховать участок между двумя "
+"функциями."
+
+msgid "Shading range for 2nd function"
+msgstr "Диапазон заштриховки для второй функции"
+
+msgid "Custom functions/constants"
+msgstr "Пользовательские функции и константы"
+
+msgid "Apply"
+msgstr "Применить"
+
+msgid "Names"
+msgstr "Название:"
+
+msgid "Definition"
+msgstr "Определение"
+
+msgid "Cut the selected text to the clipboard"
+msgstr "Вырезать выбранный текст и поместить в буфер обмена"
+
+msgid "Image options"
+msgstr "Параметры изображения"
+
+msgid "Size"
+msgstr "Размер:"
+
+msgid "Image width:"
+msgstr "Ширина:"
+
+msgid "Image height:"
+msgstr "Высота:"
+
+msgid "Set a custom image width."
+msgstr ""
+
+msgid "Set a custom image height."
+msgstr ""
+
+msgid ""
+"Choose to use the same size as shown on the screen or a custom image size."
+msgstr ""
+
+#, fuzzy
+msgid "Image size"
+msgstr "Ширина:"
+
+#, fuzzy
+msgid "Screen size"
+msgstr "Размер текста"
+
+#, fuzzy
+msgid "Custom size"
+msgstr "Настройка панели"
+
+msgid ""
+"Progressive encoding allows viewers to see a rough copy of the image while "
+"it is downloaded."
+msgstr ""
+
+msgid "Encoding"
+msgstr "Формат"
+
+msgid "Progressive"
+msgstr "Прогрессивный"
+
+msgid "Select a compression quality."
+msgstr ""
+
+msgid "Quality"
+msgstr "Качество"
+
+#, fuzzy
+msgid "Paper size:"
+msgstr "Размер текста"
+
+msgid "Choose paper orientation."
+msgstr ""
+
+msgid "Orientation"
+msgstr "Ориентация"
+
+msgid "Portrait"
+msgstr "Вертикальная"
+
+msgid "Landscape"
+msgstr "Горизонтальная"
+
+#, fuzzy
+msgid "Choose paper size to use."
+msgstr "Выберите ширину линии."
+
+#, fuzzy
+msgid "Select this to use these settings as defaults in the future."
+msgstr ""
+"Ометьте, чтобы использовать данные параметры осей по умолчанию в будущем."
+
+msgid "Save as default"
+msgstr "Сохранить как стандарт"
+
+#, fuzzy
+msgid "Animate"
+msgstr "Поддержать разработчика"
+
+#, fuzzy
+msgid "Constants:"
+msgstr "Ограничения:"
+
+#, fuzzy
+msgid "Step:"
+msgstr "Шаги:"
+
+msgid "Frames/second:"
+msgstr ""
+
+msgid "Choose a constant to change between each frame.."
+msgstr ""
+
+#, fuzzy
+msgid "The first value of the constant"
+msgstr "Наименьшее значение х в интервале."
+
+#, fuzzy
+msgid "The last value of the constant."
+msgstr "Наибольшее значение х в интервале."
+
+msgid "The chosen constant is changed by this value between each frame."
+msgstr ""
+
+msgid "Number of frames per second used when the animation is played."
+msgstr ""
+
+msgid "Working"
+msgstr ""
+
+msgid "About Graph"
+msgstr "О программе"
+
+msgid "<Language> translation by <Translator>"
+msgstr "Перевод на русский: avenir"
+
+msgid "Version "
+msgstr "Версия"
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid "Build"
+msgstr "Build"
+
+msgid ""
+"This is free software, and you are welcome to redistribute it under the "
+"terms in the GNU General Public License. Please send bug reports and "
+"suggestions to the programmer."
+msgstr ""
+"Это бесплатная программа, и вы можете её распространять в соответствии с "
+"условиями GNU General Public License. Пожалуйста сообщайте об ошибках и "
+"своих предложениях разработчику."
+
+#, fuzzy
+msgid "The newest version as well as the source code are available at:"
+msgstr "Последнюю версию и исходный код программы можно найти по адресу:"
+
+#, fuzzy
+msgid "Animation"
+msgstr "Поддержать разработчика"
+
+#, fuzzy
+msgid "Open an animation file."
+msgstr "Открыть файл %s."
+
+#, fuzzy
+msgid "Save the animation to a file."
+msgstr "Сохранить выделенные данные в файл."
+
+#, fuzzy
+msgid "Copy the animation to the clipboard."
+msgstr "Скопировать выбранный текст в буфер обмена."
+
+msgid "Edit axes"
+msgstr "Редактирование осей:"
+
+msgid "Minimum:"
+msgstr "Минимум:"
+
+msgid "Maximum:"
+msgstr "Максимум:"
+
+msgid "Tick unit:"
+msgstr "Интервал засечек:"
+
+msgid "The x-axis cross at y="
+msgstr "Ось х пересекает ось у при у="
+
+msgid "Grid unit:"
+msgstr "Интервал для сетки:"
+
+msgid "Minimum x-value."
+msgstr "Минимальное значение х"
+
+msgid "Maximum x-value."
+msgstr "Максимальное значение х"
+
+msgid "Units between ticks on the x-axis."
+msgstr "Интервал между засечками на оси х."
+
+msgid "Use logarithmic scale on the x-axis."
+msgstr "Использовать логарифмическую шкалу по оси х."
+
+msgid "Logarithmic scale"
+msgstr "Логарифмическая шкала"
+
+msgid "Show label at the right side above the x-axis."
+msgstr "Показывать обозначение оси"
+
+msgid "Label:"
+msgstr "Обозн.:"
+
+#, fuzzy
+msgid "Edit the label for the axis here."
+msgstr "Введите обозначение оси."
+
+msgid "Show units on the x-axis."
+msgstr "Показывать значения по оси х."
+
+msgid "Show numbers"
+msgstr "Показ. значения"
+
+#, fuzzy
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr "Значение у, при котором оси будут пересекаться."
+
+msgid "Units between the grid lines perpendicular to the x-axis."
+msgstr "Интервал между линиями сетки, перпендикулярной оси х."
+
+#, fuzzy
+msgid "Determine the tick unit automatically."
+msgstr "Автоматическое определение интервала между засечками"
+
+msgid "Auto tick"
+msgstr "автом."
+
+#, fuzzy
+msgid "Set the grid unit to the same as the tick unit."
+msgstr "Сделать интервал сетки равным интервалу засечек"
+
+msgid "Auto grid"
+msgstr "автом."
+
+#, fuzzy
+msgid "Show tick marks on the x-axis."
+msgstr "Показывать засечки на оси х"
+
+msgid "Show ticks"
+msgstr "Показ. засечки"
+
+#, fuzzy
+msgid "Show units on the selected axis as a fraction multiplied by pi."
+msgstr "Показывать значения по оси в единицах пи."
+
+msgid "Show as a multiple of pi"
+msgstr "Показывать в единицах пи"
+
+msgid "Show vertical grid lines."
+msgstr "Показывать вертикальную сетку."
+
+msgid "Show grid"
+msgstr "Показывать сетку"
+
+msgid "The y-axis cross at x="
+msgstr "Ось у пересекает ось х при х="
+
+msgid "Minimum y-value."
+msgstr "Минимальное значение у."
+
+msgid "Maximum y-value."
+msgstr "Максимальное значение у."
+
+msgid "Use logarithmic scale for the y-axis."
+msgstr "Использовать логарифмическую шкалу по оси у."
+
+msgid "Units between ticks on the y-axis."
+msgstr "Интервал между засечками на оси у."
+
+msgid "Show units on the y-axis."
+msgstr "Показывать значения по оси у."
+
+msgid "Show label at the top of the window to the right of the y-axis."
+msgstr "Показывать обозначение оси"
+
+#, fuzzy
+msgid "The y-axis will intersect with the x-axis at this value."
+msgstr "Значение х, при котором оси будут пересекаться."
+
+msgid "Units between the grid lines perpendicular to the y-axis."
+msgstr "Интервал между линиями сетки, перпендикулярной оси у."
+
+#, fuzzy
+msgid "Show tick marks on the y-axis."
+msgstr "Показывать засечки на оси у"
+
+msgid "Show horizontal grid lines."
+msgstr "Показывать горизонтальную сетку."
+
+msgid "Settings"
+msgstr "Параметры"
+
+msgid "Title:"
+msgstr "Заголовок:"
+
+msgid ""
+"Choose if you want to show the axes, and if you want to show them crossed or "
+"at the left and bottom of the image."
+msgstr ""
+"Выберите вариант отображения осей: не отображать, отображать пересечение "
+"осей, или отображать оси по краям системы координат (углом)."
+
+msgid "Axes style"
+msgstr "Отображение осей"
+
+msgid "None"
+msgstr "Отсутствуют"
+
+msgid "Crossed"
+msgstr "Пересекающ."
+
+msgid "Boxed"
+msgstr "Углом"
+
+msgid ""
+"Choose if trigonometric functions should calculate in radian or degrees."
+msgstr "Выберите, в градусах или радианах вычислять тригонометрические функции"
+
+msgid "Trigonometry"
+msgstr "Тригонометрия"
+
+msgid "Radian"
+msgstr "Радианы"
+
+msgid "Degree"
+msgstr "Градусы"
+
+msgid "Enter a title to show above the coordinate system."
+msgstr "Введите заголовок для отображения над графиком."
+
+msgid "Select the font for the title."
+msgstr "Выбрать шрифт заголовка."
+
+msgid "Choose where the legend should be placed."
+msgstr "Выберите место расположения подписи к графику."
+
+msgid "Legend placement"
+msgstr "Расположение подписи к графику"
+
+msgid ""
+"Check this to use complex numbers for calculations. Notice that this will "
+"slow graphing down."
+msgstr ""
+"Использовать для вычислений комплексные числа (замедляет построение графика)."
+
+msgid "Calculate with complex numbers"
+msgstr "Комплексные вычисления"
+
+msgid "Font and color"
+msgstr "Шрифт и цвет"
+
+msgid "Colors"
+msgstr "Цвета"
+
+msgid "Grid color:"
+msgstr "Цвет сетки:"
+
+msgid "Axes color:"
+msgstr "Цвет осей:"
+
+msgid "Background color:"
+msgstr "Цвет фона:"
+
+#, fuzzy
+msgid "Select the color of the image background."
+msgstr "Выберите цвет точек"
+
+#, fuzzy
+msgid "Select the color of the axes."
+msgstr "Выберите цвет точек"
+
+#, fuzzy
+msgid "Select the color of the grid lines."
+msgstr "Выберите цвет линии."
+
+msgid "Fonts"
+msgstr "Шрифты"
+
+msgid "Number font:"
+msgstr "Шрифт для чисел:"
+
+msgid "Label font:"
+msgstr "Шрифт обозн. осей:"
+
+msgid "Legend font:"
+msgstr "Шрифт подписи:"
+
+#, fuzzy
+msgid "Select the font used to show the labels on the axes."
+msgstr "Выберите шрифт для обозначения осей."
+
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Выберите шрифт для значений на осях."
+
+msgid "Select the font used to show the legend text."
+msgstr "Выберите шрифт для подписи к графику."
+
+msgid "Decimals:"
+msgstr "Цифр после запятой:"
+
+msgid "Recent files:"
+msgstr "Последних файлов:"
+
+msgid "Max undo steps:"
+msgstr "Шагов отмены:"
+
+msgid "Language:"
+msgstr "Язык:"
+
+#, fuzzy
+msgid "Font scale:"
+msgstr "Размер:"
+
+msgid "Number of decimals used when results are shown."
+msgstr "Количество отображаемых знаков после запятой."
+
+#, fuzzy
+msgid "Associate *.grf files with Graph."
+msgstr "Ассоциировать Graph с *.grf файлами"
+
+msgid "Associate .grf files"
+msgstr "Ассоциировать с *.grf файлами"
+
+#, fuzzy
+msgid "The number of most recent used files shown in the File menu."
+msgstr "Количество последних использованных файлов для показа в меню Файл."
+
+msgid ""
+"Save window position when the program quits. This setting is used the next "
+"time the program is used.|Save window state on exit."
+msgstr ""
+"Сохранять положение окна программы при выходе. Это положение будет "
+"использовано при следующем запуске.|Сохранять положение окна при выходе."
+
+msgid "Save workspace on exit"
+msgstr "Сохранять расположение окна при выходе"
+
+msgid "Format used when complex numbers are shown."
+msgstr "Формат отображения комплексных чисел"
+
+msgid "Complex format"
+msgstr "Компл. числа"
+
+msgid "Real"
+msgstr "Действительн."
+
+msgid "Rectangular"
+msgstr "Полный"
+
+msgid "Polar"
+msgstr "Полярный"
+
+msgid "Show tooltip when the cursor is over something."
+msgstr "Показывать подсказку для объекта, над которым находиться курсор."
+
+msgid "Show tooltip"
+msgstr "Подсказки"
+
+msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
+msgstr "Количество запоминаемых последних действий."
+
+msgid ""
+"If checked the program will contact a web server when the program is started "
+"to see if a newer version is available."
+msgstr ""
+"Если отмечено, программа будет проверять наличие новой версии на сервере "
+"каждый раз при старте."
+
+msgid "Check for new version of Graph at startup"
+msgstr "Проверять наличие новой версии при запуске"
+
+msgid "Select language to use."
+msgstr "Выберите язык:"
+
+msgid ""
+"This is used to scale the user interface if you are having problems reading "
+"the text."
+msgstr ""
+
+msgid "Insert function"
+msgstr "Добавить функцию"
+
+msgid "Function type:"
+msgstr "Тип функции:"
+
+msgid "Select the function type to graph."
+msgstr "Выберите тип функции."
+
+msgid "Standard function   y=f(x)"
+msgstr "Стандартная функция           y=f(x)"
+
+msgid "Parametric function x(t), y(t)"
+msgstr "Параметрическая функция  x(t), y(t)"
+
+msgid "Polar function         r=f(t)"
+msgstr "Полярная функция                r=f(t)"
+
+msgid "Function equation"
+msgstr "Уравнение функции"
+
+msgid "Steps:"
+msgstr "Шаги:"
+
+msgid "Number of calculation steps used to draw the graph."
+msgstr ""
+"Количество шагов для построения графика (один шаг соединяет две точки)."
+
+msgid "Draw type:"
+msgstr "Рисовать:"
+
+msgid ""
+"Choose Lines if you want the calculated points for the graph to be "
+"connected. Choose Dots if you only want to show a dot at each point."
+msgstr ""
+"Выберите \"Линии\", если вы хотите, чтобы точки графика были соединены. "
+"Выберите \"Точки\", чтобы показывались только точки."
+
+msgid "Lines"
+msgstr "Линии"
+
+msgid "Dots"
+msgstr "Точки"
+
+msgid "Text label"
+msgstr "Надпись"
+
+msgid "Font name:"
+msgstr "Название шрифта:"
+
+msgid "Font size:"
+msgstr "Размер:"
+
+msgid "Font color:"
+msgstr "Цвет шрифта:"
+
+#, fuzzy
+msgid "Text size."
+msgstr "Размер текста"
+
+msgid "Text string"
+msgstr "Текст"
+
+#, fuzzy
+msgid "Insert symbol"
+msgstr "Вставить строку"
+
+#, fuzzy
+msgid "Insert object"
+msgstr "Вставить объект..."
+
+msgid "Bold (Ctrl-B)"
+msgstr "Жирный шрифт (Ctrl-B)"
+
+msgid "Italic (Ctrl-I)"
+msgstr "Курсив (Ctrl-I)"
+
+msgid "Underline (Ctrl-U)"
+msgstr "Подчёркнутый (Ctrl-U)"
+
+msgid "Strikethrough (Ctrl-S)"
+msgstr "Перечёркнутый (Ctrl-S)"
+
+msgid "Superscript (Ctrl++)"
+msgstr "Подпись вверху (Ctrl++)"
+
+msgid "Subscript (Ctrl+=)"
+msgstr "Подпись внизу (Ctrl+=)"
+
+msgid "Align left (Ctrl-L)"
+msgstr "Выравнивать по левому краю (Ctrl-L)"
+
+msgid "Center (Ctrl-E)"
+msgstr "Центровать (Ctrl-E)"
+
+msgid "Align right (Ctrl-R)"
+msgstr "Выравнивать по правому краю (Ctrl-R)"
+
+#, fuzzy
+msgid "Text font."
+msgstr "Шрифт текста"
+
+#, fuzzy
+msgid "Text color."
+msgstr "Цвет текста"
+
+#, fuzzy
+msgid "Select background color of the text label."
+msgstr "Выбрать шрифт заголовка."
+
+msgid "Undo last action."
+msgstr "Отменить последнее действие."
+
+msgid "Redo last undone action."
+msgstr "Повторить последнее отменённое действие."
+
+msgid "Cut selected text to the clipboard."
+msgstr "Вырезать выбранный текст и поместить в буфер обмена."
+
+msgid "Paste the contents of the clipboard."
+msgstr "Вставить содержимое буфера обмена."
+
+msgid "Paste special..."
+msgstr "Специальная вставка..."
+
+msgid "Select which clipboard representation you want to paste."
+msgstr "Выберите, какую часть буфера обмена вы хотите вставить."
+
+msgid "Insert object..."
+msgstr "Вставить объект..."
+
+msgid "Create a new OLE object."
+msgstr "Создать новый объект OLE."
+
+msgid "Edit object"
+msgstr "Редактировать объект"
+
+msgid "Edit selected OLE object."
+msgstr "Редактировать выбранный объёкт OLE."
+
+msgid "Insert f'(x)"
+msgstr "Добавить f'(x)"
+
+msgid "Name:"
+msgstr "Название:"
+
+msgid "Constant"
+msgstr "Константа"
+
+msgid "Value"
+msgstr "Значение"
+
+#, fuzzy
+msgid "Select a function or tangent to evaluate."
+msgstr "Выберите функцию или касательную для оценки"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Shade"
+msgstr "Участок"
+
+msgid "Functions"
+msgstr "Функции"
+
+msgid "Tangents"
+msgstr "Касательные"
+
+msgid "Point series"
+msgstr "Ряды точек"
+
+msgid "Shades"
+msgstr "Заштрихованные участки"
+
+msgid "Length"
+msgstr "Длина"
+
+msgid "Label"
+msgstr "Надпись"
+
+msgid "%s-error"
+msgstr "%s-error"
+
+msgid "Transparent"
+msgstr "Прозрачный"
+
+msgid "Axes"
+msgstr "Оси..."
+
+msgid "No error occurred. You should not see this message."
+msgstr "No error occurred. You should not see this message."
+
+msgid "An error occurred while evaluating power function."
+msgstr "Ошибка при оценке степенной функции."
+
+msgid "Tangent to 90+p180 is undefined."
+msgstr "Тангенс 90°+n*180° не определён."
+
+msgid "Fact can only be calculated for positive integers."
+msgstr "Факториал (fact) может быть вычислен только для натуральных чисел."
+
+msgid "Cannot take logarithm to number equal or less than zero."
+msgstr "Невозможно вычислить логарифм для числа, меньшего или равного нулю."
+
+msgid "sqrt is undefined for negative numbers."
+msgstr "Функция sqrt не определена для отрицательных чисел."
+
+msgid "A part of the evaluation gave a number with an imaginary part."
+msgstr "Часть выражения дала результат с мнимой частью."
+
+msgid "Division by zero."
+msgstr "Деление на нуль."
+
+msgid "Inverse trigonometric function out of range [-1;1]"
+msgstr "Обратная тригонометрическая функция вне диапазона [-1;1]"
+
+msgid "The function is not defined for this value."
+msgstr "Функция не определена для этого значения."
+
+msgid "atanh evaluated at undefined value."
+msgstr "Функция atanh не определена для этого значения."
+
+msgid "acosh evaluated at undefined value."
+msgstr "acosh при данном значении не определён."
+
+msgid "arg(0) is undefined."
+msgstr "arg(0) не определён."
+
+msgid "Evaluation failed."
+msgstr "Ошибка оценки."
+
+msgid "Argument produced a function result with total loss of precision."
+msgstr "Аргумент "
+
+msgid "Symbol '%s' not found."
+msgstr "Символ '%s' не найден."
+
+msgid "Too many recursive calls."
+msgstr "Слишком много рекурсивных вызовов функции."
+
+msgid "Unexpected operator. Operator '%s' cannot be placed here."
+msgstr "Оператор '%s' не может быть помещён здесь."
+
+msgid "End of parenthesis missing."
+msgstr "Нет закрывающих скобок."
+
+msgid "Invalid number of arguments supplied for function '%s'"
+msgstr "Для функции '%s' предоставлено неверное количество аргументов."
+
+msgid "Comparison operator misplaced."
+msgstr ""
+
+msgid "Invalid number found. Use the format: -5.475E-8"
+msgstr "Неправильный формат числа. Используйте формат -5.475E-8"
+
+msgid "String is empty. You need to enter a function."
+msgstr "Пустая строка. Необходимо ввести функцию."
+
+#, fuzzy
+msgid "Comma is not allowed here. Use dot as decimal separator."
+msgstr ""
+"Запятая не может быть здесь использована. Используйте точку для отделения "
+"десятичных знаков."
+
+msgid "Unexpected end of parenthesis."
+msgstr "Неправильно расставлены скобки."
+
+msgid "Number, constant or function expected."
+msgstr "Необходимо ввести число, константу, или функцию."
+
+msgid "Parameter after constant or variable not allowed."
+msgstr "Параметр не должен находиться после константы или переменной."
+
+msgid "Expression expected."
+msgstr "Необходимо ввести выражение."
+
+msgid "Unknown variable, function or constant: \"%s\""
+msgstr "Неизвестная переменная, функция, или константа: \"%s\""
+
+msgid "Unknown character: \"%s\""
+msgstr "Неизвестный символ: \"%s\""
+
+msgid "The end of the expression was unexpected."
+msgstr "Незаконченное выражение."
+
+#, fuzzy
+msgid "Error parsing function text."
+msgstr "Ошибка обработки формулы функции"
+
+msgid "A calculation resulted in an overflow."
+msgstr "Переполнение в результате вычисления."
+
+msgid "An invalid value was used in the calculation."
+msgstr "В вычислении было использовано неподходящее значение."
+
+msgid "Not enough points for calculation."
+msgstr "Недостаточно значений для вычисления."
+
+msgid "Illegal name \"%s\" for user defined function or constant."
+msgstr ""
+"\"%s\" нельзя использовать как пользовательское имя функции или константы."
+
+msgid "Cannot differentiate recursive function."
+msgstr "Невозможно дифференцировать рекурсивную функцию."
+
+msgid "Internal error."
+msgstr "Internal error."
+
+msgid "Function cannot be differentiated."
+msgstr "Функция не может быть продифференцирована."
+
+msgid "Not further specified error occurred under calculation."
+msgstr "Во время вычисления произошла некая ошибка."
+
+msgid "No solution found. Try another guess or another model."
+msgstr ""
+"Решение не найдено. Попробуйте использовать другую модель или другие "
+"параметры."
+
+msgid ""
+"Internal error. Please notify the programmer with as much information as "
+"possible."
+msgstr ""
+"Ошибка программы. Пожалуйста, проинформируйте о ней разработчика с "
+"максимумом деталей."
+
+msgid "You need to enter a name for the function/constant."
+msgstr "Необходимо ввести название функции или константы."
+
+msgid ""
+"Invalid function/constant name '%s'.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
+"In addition you are not allowed to redefine built-in names."
+msgstr ""
+"'%s' не может быть названием функции или константы.\n"
+"Название может содержать только буквы и цифаы, и должно начинаться с буквы.\n"
+"Также вы не можете использовать встроенные названия."
+
+msgid "You need to enter a name for the argument."
+msgstr "Необходимо ввести название аргумента."
+
+msgid ""
+"Invalid argument name '%s'.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
+" In addition you are not allowed to use built-in names as argument names."
+msgstr ""
+"'%s' не может быть названием аргумента. \n"
+"Название может содержать только буквы и цифаы, и должно начинаться с буквы.\n"
+"Также вы не можете использовать встроенные названия."
+
+msgid "The end parenthesis is missing."
+msgstr "Нет закрывающих скобок."
+
+msgid "Character found after the parenthesis."
+msgstr "Символ вне скобок."
+
+msgid "Symbol \"%s\" defined more than once."
+msgstr "Символ \"%s\" определён в нескольких местах."
+
+msgid "Invalid equation or inequality."
+msgstr "Неверное уравнение или неравенство."
+
+msgid "Updating..."
+msgstr "Обновление..."
+
+msgid "Save changes?"
+msgstr "Сохранить изменения?"
+
+msgid "Save changes in %s"
+msgstr "Сохранить изменения в %s"
+
+msgid "You have reached the maximum range of zoom."
+msgstr "Достигнут максимум увеличения."
+
+msgid "You have reached the minimum range of zoom."
+msgstr "Достигнут минимум увеличения."
+
+msgid "There is no printer installed on the system."
+msgstr "На системе не установлен принтер."
+
+msgid "Error in value"
+msgstr "Ошибка значения"
+
+msgid "'%s' has to be an integer value greater or equal to 0."
+msgstr "'%s' должно быть целым неотрицательным числом."
+
+msgid "'%s' must be greater than zero."
+msgstr "'%s' должно быть больше нуля."
+
+msgid "'%s' must be an integer greater than zero."
+msgstr "'%s' должно быть натуральным числом."
+
+msgid "Trying to break zoom limit."
+msgstr "Предел увеличения."
+
+msgid "'%s' must be greater than '%s'"
+msgstr "'%s' должно быть больше '%s'"
+
+msgid "The maximum value must be greater than the minimum value."
+msgstr "Максимальное значение должно быть больше минимального."
+
+msgid "You need to enter a value."
+msgstr "Необходимо ввести значение."
+
+msgid ""
+"This file was created with Graph %s.\n"
+"Only files from version %s and higher can be opened."
+msgstr ""
+"Этот файл был создан Graph %s.\n"
+"Поддерживаются только версии начиная с %s."
+
+msgid "'%s' is not a valid number."
+msgstr "Ошибка в числе '%s'"
+
+msgid "Open the file %s."
+msgstr "Открыть файл %s."
+
+msgid "'%s' must be a positive number."
+msgstr "'%s' должно быть положительным."
+
+msgid "File not found: %s"
+msgstr "Файл не найден: %s"
+
+msgid ""
+"Error reading file: %s\n"
+"File is not a correct graph file."
+msgstr ""
+"Ошибка чтения файла %s\n"
+"Неправильный формат файла."
+
+msgid "Unknown error while reading file: %s"
+msgstr "Некая ошибка при чтении файла: %s"
+
+msgid "Graph files [*.grf]|*.grf"
+msgstr "Graph files [*.grf]|*.grf"
+
+msgid ""
+"Cannot write to file: %s\n"
+"Access denied. Check that the file is not in use or write protected."
+msgstr ""
+"Ошибка при выводе в файл: %s\n"
+"Доступ запрещён. Проверьте, не используется ли файл, и не защищён ли он от "
+"записи."
+
+msgid "The font \"%s\" doesn't exist. Standard font is used instead."
+msgstr "Шрифт \"%s\" не найден. Вместо него использован стандартный шрифт."
+
+msgid "Conversion error"
+msgstr "Ошибка конвертации"
+
+msgid ""
+"Unknown error code.\n"
+"Could not find error message for this error."
+msgstr "Произошла некая ошибка (код ошибки не найден)."
+
+msgid "Selection error"
+msgstr "Ошибка выделения"
+
+msgid "File error"
+msgstr "Ошибка при работе с файлом"
+
+msgid "Write access failed"
+msgstr "Ошибка доступа при записи"
+
+msgid "OLE error"
+msgstr "Ошибка OLE"
+
+msgid "Error reading object"
+msgstr "Ошибка чтения объекта"
+
+msgid "Not a valid Graph object."
+msgstr "Недействительный объект Graph."
+
+msgid "Object error"
+msgstr "Ошибка в объекте"
+
+msgid "Windows does not have enough resources to save an image that large."
+msgstr ""
+
+#, fuzzy
+msgid "'%1%' must be between %2% and %3%."
+msgstr "Количество последних файлов должно быть между 0 и 9."
+
+msgid "Confirm delete"
+msgstr "Подтвердите удаление"
+
+msgid "This error should not occur. Please report this to the programmer."
+msgstr ""
+"Эта ошибка не должна была возникнуть. Пожалуйста сообщите о ней разработчику."
+
+#, fuzzy
+msgid "Are you sure you want to delete %s?"
+msgstr "Вы уверены, что хотите удалить %s?"
+
+msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
+msgstr "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
+
+msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+msgstr "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+
+#, fuzzy
+msgid "Are you sure you want to delete the model: %s?"
+msgstr "Вы уверены, что хотите удалить модель %s?"
+
+msgid "Maximum number on x-axis must be greater than the minimum value."
+msgstr ""
+"Максимальное значение по оси х должно быть больше минимального значения."
+
+msgid "Maximum number on y-axis must be greater than the minimum value."
+msgstr ""
+"Максимальное значение по оси у должно быть больше минимального значения."
+
+msgid "Server application not found."
+msgstr "Серверное приложение не найдено."
+
+msgid "Maximum number for t must be greater than the minimum value."
+msgstr "Максимальное значение для t должно быть больше минимального значения."
+
+msgid "The step value for t must be a number greater than 0."
+msgstr "Величина шага t должна быть больше нуля."
+
+msgid ""
+"The minimum value for the x-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+"Минимальное значение по оси х должно быть больше 0 при логарифмическом "
+"масштабе."
+
+msgid ""
+"The cross point of the y-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+"Значение при пересечении с осью у должно быть больше 0 при логарифмическом "
+"масштабе по оси х."
+
+msgid ""
+"The minimum value for the y-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"Минимальное значение у должно быть больше нуля, если шкала оси у "
+"логарифмическая."
+
+msgid ""
+"The cross point of the x-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"Значение при пересечении с осью х должно быть больше 0 при логарифмическом "
+"масштабе по оси у."
+
+msgid "'Recent files' must be between 0 and 9."
+msgstr "Количество последних файлов должно быть между 0 и 9."
+
+msgid "The end of interval must be greater than the start of interval."
+msgstr ""
+"Значение верхней границы интервала должно быть больше значения нижней "
+"границы."
+
+msgid "Error in interval."
+msgstr "Ошибка в интервале."
+
+msgid "The width must be an integer greater than 0."
+msgstr "Толщина должна быть натуральным числом."
+
+msgid "Error in width"
+msgstr "Ошибка в ширине"
+
+msgid ""
+"The end of interval must be greater than the start of interval and %s must "
+"be greater than 0."
+msgstr ""
+"Значение верхней границы интервала должно быть больше значения нижней "
+"границы, и %s должно быть больше 0."
+
+msgid "The maximum length of text has been reached."
+msgstr "Достигнут максимальный размер текста."
+
+msgid "The derivative of the function is not defined at %s=%s"
+msgstr "Производная функции не определена при %s=%s"
+
+msgid "Coordinate not defined."
+msgstr "Координата не определена."
+
+msgid "Checking for newer version..."
+msgstr "Проверка обновлений..."
+
+msgid "Abort printing?"
+msgstr ""
+
+msgid "Calculate area"
+msgstr "Вычислить площадь"
+
+msgid "Calculate length of path"
+msgstr "Вычислить расстояние"
+
+msgid "Edit function"
+msgstr "Редактировать функцию"
+
+msgid "Edit tangent/normal"
+msgstr "Редактировать касательную/перпендикуляр."
+
+msgid "Error processing file '%s' at line %s."
+msgstr "Ошибка обработки файла '%s' в строке %s."
+
+msgid "Dialog error: %sh"
+msgstr "Ошибка диалога: %sh"
+
+msgid "Unknown Graph data found while pasting clipboard data."
+msgstr "Неизвестные Graph данные обнаружены при вставке из буфера обмена."
+
+msgid "'%s' has to be an integer value between 0 and 1000."
+msgstr "'%s' должно быть целым числом между 0 и 1000."
+
+msgid "Printing error"
+msgstr "Ошибка печати"
+
+#, fuzzy
+msgid "An unknown error occurred while printing."
+msgstr "Неизвестная ошибка при печати."
+
+msgid "Error while adding points"
+msgstr "Ошибка при добавлении точек"
+
+msgid "Each point needs both an x- and a y-coordinate."
+msgstr "Для каждой точки необходимы х- и у- координаты."
+
+msgid "\"%s\" is not a valid number."
+msgstr "Значение \"%s\" не может быть здесь использовано."
+
+msgid ""
+"You didn't add any points. You need to specify some x- and y-coordinates in "
+"the grid."
+msgstr ""
+"Не добавлены координаты точек. Впишите координаты в соответствующие колонки."
+
+msgid "Edit point series"
+msgstr "Редактировать ряд точек"
+
+msgid "Edit shade"
+msgstr "Редактировать заштрихованный участок"
+
+msgid "You need to select a function."
+msgstr "Необходимо выбрать функцию."
+
+msgid "New version of Graph available"
+msgstr "Есть новая версия Graph"
+
+msgid ""
+"Graph %s is now available for download from www.padowan.dk\n"
+"with these new features since the previous version:\n"
+"\n"
+"%s\n"
+"\n"
+"Would you like to visit the web site?"
+msgstr ""
+"Новая версия Graph %s доступна для скачивания на www.padowan.dk\n"
+"со следующими обновлениями после предыдущей версии:\n"
+"\n"
+"%s\n"
+"\n"
+"Посетить страницу Graph в Интернет?"
+
+msgid "No new version"
+msgstr "Нет обновлений"
+
+msgid "You are already using the most recent version of the program."
+msgstr "Вы уже используете последнюю версию программы."
+
+msgid ""
+"Cannot connect to server www.padowan.dk.\n"
+"Either the server is down or you do not have a connection to the Internet."
+msgstr ""
+"Сервер www.padowan.dk недоступен.\n"
+"Сервер выключен, или нет возможности подключения к Интернет."
+
+msgid "Socket error %s"
+msgstr "Socket error %s"
+
+msgid "The server responded with the message '%s'"
+msgstr "Сервер вернул сообщение '%s'"
+
+msgid "Protocol reply error %s"
+msgstr "Protocol reply error %s"
+
+msgid ""
+"The file cannot be opened by this version of the program.\n"
+"You need at least Graph %s to open this file."
+msgstr ""
+"Файл не может быть открыт этой версией Graph.\n"
+"Необходимо наличие по крайней мере версии %s."
+
+#, fuzzy
+msgid ""
+"This file was saved by an outdated version of Graph,\n"
+"and it cannot be opened by the current version."
+msgstr ""
+"Этот файл был сохранён устаревшей версией Graph,\n"
+"  и не может быть открыт используемой версией."
+
+msgid ""
+"\n"
+"\n"
+"If you don't want to be asked again, this feature may be disabled from the "
+"Edit|Options dialog."
+msgstr ""
+"\n"
+"\n"
+"Вы можете отменить эту подсказку в меню 'Редактирование|Настройки'."
+
+msgid "Edit relation"
+msgstr "Редактировать соотношение"
+
+#, fuzzy
+msgid "Commands"
+msgstr "Комментарий:"
+
+msgid "(All Commands)"
+msgstr ""
+
+msgid ""
+"To add a command to a toolbar simply select a category and drag the command "
+"out of this dialog box to a toolbar."
+msgstr ""
+
+#, fuzzy
+msgid "Edit f'(x)"
+msgstr "Добавить f'(x)"
+
+#, fuzzy
+msgid "Edit trendline"
+msgstr "Редактировать соотношение"
+
+msgid ""
+"This Tip Of The day can give you a lot of information about the program that "
+"most users don't know."
+msgstr "Совет дня может дать вам полезную информацию о программе."
+
+msgid ""
+"You can send suggestions for future versions, bug reports and comments to "
+"graph@padowan.dk."
+msgstr ""
+"Вы можете присылать предложения для будущих версий программы, сообщения об "
+"ошибках и комментарии на адрес graph@padowan.dk."
+
+#, fuzzy
+msgid ""
+"You can customize the toolbar by right clicking on it and select 'Customize "
+"toolbar'."
+msgstr ""
+"Вы можете изменить набор кнопок на панели инструментов через контекстное "
+"меню 'Изменить панель инструментов'."
+
+msgid ""
+"Instead of deleting a function you can make it invisible by right clicking "
+"on it in the function list and removing the check at the 'Visible' menu item."
+msgstr ""
+"Вместо удаления функции вы можете сделать её невидимой через пункт "
+"контекстного меню для этой функции 'Показывать на графике'."
+
+msgid "You can paste images into a text label."
+msgstr "Вы можете вставлять изображения в надписи на графике."
+
+msgid ""
+"Text labels can contain any kind of OLE objects, for example Microsoft "
+"Equation. When editing a label right click in the editing area and select "
+"'Insert object'."
+msgstr ""
+"Надписи на графике могут содержать любые объекты OLE, например, Microsoft "
+"Equation. Редактируя надпись, вызовите контекстное меню и выберите 'Вставить "
+"объект'."
+
+msgid ""
+"You can export points from a point series to a file that can be read by "
+"other programs, for example Microsoft Excel. When editing the point series "
+"select the points, right click and choose 'Export to file'."
+msgstr ""
+"Вы можете сохранить точки ряда в файл, который затем можно будет открыть "
+"другой программой, например, Microsoft Excel. Редактируя ряд точек, выделите "
+"нужные точки, вызовите контекстное меню и выберите пункт 'Экспортировать в "
+"файл'."
+
+#, fuzzy
+msgid ""
+"A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)"
+"=t or as the relation x=5."
+msgstr ""
+"Вертикальная прямая при х=5 может быть получена как параметрическая функция x"
+"(t)=5, y(t)=t или как соотношение х=5"
+
+msgid ""
+"You can use Zoom|Square to make the axes look equally scaled. This is "
+"especially useful when drawing circles and similar functions."
+msgstr ""
+"Используйте меню 'Масштаб|Равный', чтобы получить равный масштаб по обеим "
+"осям. Это особенно полезно для изображений окружностей и подобных графиков."
+
+msgid "You can find a list of all available functions in the help."
+msgstr "Список всех доступных функций вы найдёте в меню Помощь."
+
+msgid ""
+"You can combine two functions to one using 'if'. For example the function f"
+"(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+msgstr ""
+"Вы можете объединить две функции в одну, используя оператор 'if'. Например, "
+"функция f(x)=x при x<1 и f(x)=x^2 при x>=1 может быть записана как f(x)=if"
+"(x<1, x, x^2)."
+
+msgid ""
+"You can import the contents of another Graph file into the current "
+"coordinate system using 'File|Import|Graph file'."
+msgstr ""
+"Вы можете добавить содержимое другого файла Graph в текущую систему "
+"координат, используя меню 'Файл|Загрузить(import)|Graph файл...'."
+
+msgid ""
+"If you check 'Save as default' in the Axes dialog the current settings will "
+"be used as default when creating new files."
+msgstr ""
+"Вы можете отметить пункт 'Сохранить как стандарт' в диалоге 'Оси', чтобы "
+"сохранить текущие установки для использования при создании новой системы "
+"координат."
+
+msgid ""
+"While you hold down the Ctrl key, you can use the arrow keys to move the "
+"system."
+msgstr ""
+"Удерживая клавишу Ctrl, вы можете использовать клавиши-стрелки для "
+"перемещения системы координат."
+
+msgid ""
+"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
+"and out."
+msgstr ""
+"Удерживая клавишу Ctrl, вы можете использовать клавиши + и - для увеличения "
+"и уменьшения масштаба."
+
+msgid ""
+"You can use the scroll button on your mouse to zoom in and out at the "
+"position of the mouse cursor."
+msgstr ""
+"Вы можете использовать колесо мыши для увеличения или уменьшения масштаба с "
+"центром в точке, на которую указывает курсор."
+
+msgid ""
+"If you don't want an item shown in the legend, you can right click on the "
+"item in the function list and deselect 'Show in legend'."
+msgstr ""
+"Если вы не хотите отображать элемент в подписи к графику, вы можете вызвать "
+"контекстное меню для этого элемента и изменить пункт 'Показывать в подписи к "
+"графику'."
+
+msgid ""
+"If you want the axes shown to the left and bottom of the image, you can "
+"choose Axes style as Boxed in the Settings tab of the Axes dialog."
+msgstr ""
+"Если вы хотите, чтобы оси отображались слева и внизу графика, вы можете "
+"выбрать тип отображения осей 'углом' на закладке 'Параметры' в диалоге 'Оси'."
+
+#, fuzzy
+msgid ""
+"Graph can save the shown coordinate system in five different image formats: "
+"bmp, emf, png, jpg and pdf."
+msgstr ""
+"Graph может сохранить график в четырёх форматах изображения: bmp, emf, png, "
+"и jpg."
+
+msgid ""
+"You can use 'Edit|Copy image' to copy the coordinate system to the clipboard "
+"and paste it into another program."
+msgstr ""
+"Используйте меню 'Редактирование|Копировать изображение' для того, чтобы "
+"скопировать график в буфер обмена и поместить в другую программу."
+
+msgid ""
+"You can open a saved grf-file in a new instance of the program by double "
+"clicking on it in Explorer."
+msgstr ""
+"Вы можете открыть сохранённый grf-файл в новом окне Graph, используя двойной "
+"щелчёк в Explorer."
+
+msgid ""
+"You can drag a grf-file from explorer into an open instance of Graph to open "
+"the file."
+msgstr "Вы можете открыть grf-файл, перетащив его из Explorer в окно Graph."
+
+msgid ""
+"Graph will remember the size and placement of the main window between "
+"executions. This can be disabled from the Options dialog."
+msgstr ""
+"Graph запоминает положение и размер окна программы для последующего запуска. "
+"Это может быть отменено в диалоге настроек."
+
+msgid ""
+"Calc|Table can be used to create a table with evaluation values for a "
+"function."
+msgstr ""
+"Меню 'Вычисления|Таблица' может быть использовано для создания таблицы "
+"значений функции."
+
+msgid ""
+"A part or the whole evaluation table can be exported to a file by right "
+"clicking and selecting 'Export to file'. It can afterwards be opened in "
+"other programs like Microsoft Excel."
+msgstr ""
+"Часть или вся таблица оценки может быть сохранена в файл через пункт "
+"контекстного меню 'Экспортировать в файл...'. Файл затем может быть открыт "
+"другой программой, например, Microsoft Excel."
+
+msgid ""
+"Data from the evaluation table can be copied to another program like "
+"Microsoft excel using the clipboard."
+msgstr ""
+"Данные из таблицы оценки могут быть скопированы в другую программу "
+"(например, Microsoft Excel) через буфер обмена."
+
+msgid ""
+"The data points in a point series can be copied to and from other programs "
+"like Microsoft Excel through the clipboard."
+msgstr ""
+"Значения из ряда точек могут быть скопированы в и из других программ "
+"(например, Microsoft Excel) через буфер обмена."
+
+msgid ""
+"Functions can be copied from one instance of the program to another through "
+"the clipboard using Edit|Copy."
+msgstr ""
+"Функции могут быть скопированы из одного окна Graph в другое через буфер "
+"обмена, используя меню Редактирование|Копировать."
+
+msgid "You can always undo the last thing you did using Edit|Undo."
+msgstr ""
+"Вы всегда можете отменить последние изменения через пункт меню "
+"Редактирование|Отменить."
+
+msgid ""
+"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
+"have undone."
+msgstr ""
+"Если вы использовали меню Редактирование|Отменить по ошибке, вы можете "
+"использовать меню Редактирование|Повторить."
+
+msgid "In the Axes dialog you can add a title to the coordinate system."
+msgstr "В диалоге Оси (Редактирование|Оси) вы можете ввести заголовок графика."
+
+msgid ""
+"You can import point series from files saved by other programs, like "
+"Microsoft Excel."
+msgstr ""
+"Вы можете импортировать ряд точек из файлов, сохранённых другими "
+"программами, например, Microsoft Excel."
+
+msgid ""
+"When inserting a point series you can copy data from programs like Microsoft "
+"Excel, and paste the data into the grid in Graph."
+msgstr ""
+"Добавляя ряд точек, вы можете скопировать данные из программ, например, "
+"Microsoft Excel, и поместить в ячейки данных Graph."
+
+msgid ""
+"You can use 'Zoom|All points' to change the coordinate system so all point "
+"series are visible."
+msgstr ""
+"Используйте меню 'Масштаб|Все точки', чтобы все точки были показаны на "
+"графическом поле."
+
+msgid ""
+"You can use Zoom|Fit to change the coordinate system to show the selected "
+"function or point series."
+msgstr ""
+"Используйте меню 'Масштаб|Показать функцию', чтобы показать выбранную "
+"функцию или ряд точек на всё графическое поле."
+
+msgid ""
+"When you hold down the Shift key you can drag the coordinate system around "
+"with the mouse."
+msgstr "Удерживая клавишу Shift, вы можете перемещать систему координат мышью."
+
+msgid ""
+"You can use Calc|Evaluate to find intersections between functions, crossings "
+"with the axes and extremum points."
+msgstr ""
+"Вы можете использовать меню 'Вычисления|Значения' для нахождения пересечений "
+"между функциями, пересечений функций с осями, и экстремумов."
+
+msgid ""
+"When a point series is selected you can add points to it by clicking on the "
+"image while you hold down the Ctrl key."
+msgstr ""
+"Когда выбран ряд точек, вы можете добавлять новые точки, щёлкая на графике "
+"левой кнопкой мыши при нажатой клавише Ctrl."
+
+msgid ""
+"You can use a relation to plot any inequality, for example sin(x^2) < cos"
+"(y^2)"
+msgstr ""
+"Вы можете использовать соотношение для построения неравенства, например, sin"
+"(x^2) < cos(y^2)"
+
+msgid ""
+"You can use a relation to plot any equation, for example x*sin x = y*cos y"
+msgstr ""
+"Вы можете использовать соотношение для построения любого уравнения, "
+"например, x*sin x = y*cos y"
+
+msgid ""
+"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
+"same order they appear in the function list to the left."
+msgstr ""
+"Элементы (функции, участки, надписи, уравнения...) выводятся в том порядке, "
+"в котором они находятся в списке функций слева."
+
+msgid ""
+"You can move the selected element in the function list either by dragging it "
+"with the mouse or with the arrow up/down keys while ALT is held down."
+msgstr ""
+"Вы можете перемещать выбранный элемент в списке функций, перетаскивая его "
+"мышью, или клавишами-стрелками, удерживая нажатой клавишу Alt."
+
+#, fuzzy
+msgid ""
+"You can show functions and other elements behind the axes by moving the "
+"element above the axes in the function list to the left. To move shadings "
+"and tangents you will have to move the functions they are attached to."
+msgstr ""
+"Вы можете поместить штриховку и другие элементы за оси, поместив его выше "
+"осей в списке функций слева."
+
+msgid ""
+"Custom text labels may be attached to the axes by right clicking on the "
+"label and selecting a placement from the context menu."
+msgstr ""
+"Произвольные подписи могут быть помещены у осей через контекстное меню "
+"надписи \"Расположение\""
+
+msgid ""
+"The legend may be moved freely with the mouse or attached to one of the "
+"corners by right clicking on the legend and choose a placement from the "
+"context menu."
+msgstr ""
+"Подпись к графику можно перемещать с помощью мыши, или поместить в один из "
+"углов изображения через контекстное меню."
+
+msgid ""
+"As an alternative to transparent you can choose a custom background color "
+"for labes. This is especially useful for labels drawn over shades."
+msgstr ""
+"Вы можете выбрать не только прозрачный, но и цветной фон для надписей на "
+"графике. Это особенно полезно для надписей, помещаемых на штрихованных "
+"участках."
+
+msgid ""
+"In most places like point series, axes settings, function ranges, etc., you "
+"can use expressions like pi/4 instead of numbers."
+msgstr ""
+"В большинстве случаев (ряд точек, параметры осей, диапазон функций, и т.д.) "
+"вы можете использовать выражения, такие как pi/4, вместо цифр."
+
+msgid ""
+"You can create your own custom constants under Function|Custom functions for "
+"use in functions, point series, etc. For example g=9.80665, R=8.31"
+msgstr ""
+"Вы можете создать свои собственные константы через меню \"Функции|"
+"Пользовательские функции...\" для использования в функциях, рядах точек, и т."
+"д. Например, g=9.80665, R=8.31"
+
+msgid ""
+"You can create your own custom functions under Function|Custom functions for "
+"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin"
+"(x)/x)"
+msgstr ""
+"Вы можете создать свои собственные функции через меню \"Функции|"
+"Пользовательские функции...\" для использования при построении графиков, в "
+"соотношениях, и т.д. Например, sinc(x)=if(x=0, 0, sin(x)/x)"
+
+msgid ""
+"In the Save as image dialog there is an Option button you can use to specify "
+"the image resolution. This is especially useful if you want a high "
+"resolution image."
+msgstr ""
+"В диалоге \"Сохранить как изображение...\" есть кнопка Options, которая "
+"позволяет указать разрешение изображения. Это особенно полезно, если вы "
+"хотите получить высокое разрешение."
+
+msgid ""
+"Point series can have arrows as markers. A point series with arrows as "
+"markers and lines between the points can be used to show vectors."
+msgstr ""
+"Ряд точек может быть изображён маркерами-стрелками. Если при этом точки "
+"соединены линиями, можно получить изображение векторов."
+
+#, fuzzy
+msgid "Custom..."
+msgstr "Пользовательские"
+
+msgid "Black"
+msgstr "Black"
+
+msgid "Maroon"
+msgstr "Maroon"
+
+msgid "Green"
+msgstr "Green"
+
+msgid "Olive"
+msgstr "Olive"
+
+msgid "Navy"
+msgstr "Navy"
+
+msgid "Purple"
+msgstr "Purple"
+
+msgid "Teal"
+msgstr "Teal"
+
+msgid "Gray"
+msgstr "Gray"
+
+msgid "Silver"
+msgstr "Silver"
+
+msgid "Red"
+msgstr "Red"
+
+msgid "Lime"
+msgstr "Lime"
+
+msgid "Yellow"
+msgstr "Yellow"
+
+msgid "Blue"
+msgstr "Blue"
+
+msgid "Fuchsia"
+msgstr "Fuchsia"
+
+msgid "Aqua"
+msgstr "Aqua"
+
+msgid "White"
+msgstr "White"
+
+msgid "Money Green"
+msgstr "Money Green"
+
+msgid "Sky Blue"
+msgstr "Sky Blue"
+
+msgid "Cream"
+msgstr "Cream"
+
+msgid "Med Gray"
+msgstr "Med Gray"
+
+#, fuzzy
+msgid "Local"
+msgstr "Teal"
+
+msgid "Global"
+msgstr ""
+
+#, fuzzy
+msgid "Insert"
+msgstr "Вставить строку"
+
+msgid "Subset:"
+msgstr ""
+
+msgid "Print"
+msgstr "Печать"
+
+msgid "Scale:"
+msgstr "Масштаб:"
+
+msgid "Printer"
+msgstr "Принтер"
+
+msgid "Type:"
+msgstr "Тип:"
+
+msgid "Where:"
+msgstr "Где:"
+
+msgid "Comment:"
+msgstr "Комментарий:"
+
+msgid ""
+"Select the printer to use. The Properties button may be used to change more "
+"advanced settings for the printer."
+msgstr ""
+
+msgid ""
+"Select to print in color (or grayscale if your printer is not a color "
+"printer) or convert all colors to black."
+msgstr ""
+
+msgid "Print output"
+msgstr "Печать"
+
+msgid "Color"
+msgstr "Цветная"
+
+msgid "Black && white"
+msgstr "Чёрно-белая"
+
+msgid "Position (millimeters)"
+msgstr "Расположение (в миллиметрах)"
+
+msgid "Left margin:"
+msgstr "Отступ слева:"
+
+msgid "Top margin:"
+msgstr "Отступ сверху:"
+
+#, fuzzy
+msgid "Select to place the image on the middle of the page."
+msgstr "Выберите шрифт для обозначения осей."
+
+msgid "Center on page"
+msgstr "Центровать на листе"
+
+#, fuzzy
+msgid "Enter the image position on the page."
+msgstr "Введите описание для отображения в подписи к графику."
+
+msgid "Number of copies:"
+msgstr "Количество копий:"
+
+#, fuzzy
+msgid "Choose number of copies to print."
+msgstr "Количество копий:"
+
+msgid "Enter percent of original size."
+msgstr ""
+
+#, fuzzy
+#~ msgid "Panel1"
+#~ msgstr "Отменить"
+
+#~ msgid "Text too long"
+#~ msgstr "Текст слишком длинный"
+
+#~ msgid ""
+#~ "Write a descriptive text to show in the legend, else the inequality will "
+#~ "be used."
+#~ msgstr ""
+#~ "Описание, используемое в подписи к графику. Если оставлено пустым, будет "
+#~ "использована формула."
+
+#~ msgid ""
+#~ "Description shown in the legend. If empty the function equation is used."
+#~ msgstr ""
+#~ "Описание, используемое в подписи к графику. Если оставлено пустым, будет "
+#~ "использовано уравнение функции."
+
+#~ msgid "Customize"
+#~ msgstr "Настройка панели"
+
+#~ msgid "Actions"
+#~ msgstr "Функции"
+
+#~ msgid "Description"
+#~ msgstr "Описание"
+
+#~ msgid "Cate&gories:"
+#~ msgstr "Категории:"
+
+#~ msgid "A&ctions:"
+#~ msgstr "Функции:"
+
+#~ msgid ""
+#~ "To add actions to your application simply drag and drop from either "
+#~ "Categories or Actions onto an existing ActionBar."
+#~ msgstr ""
+#~ "Чтобы поместить кнопки на панель инструментов, перетаскивайте их из "
+#~ "раздела Категории или Функции."
+
+#~ msgid "Area..."
+#~ msgstr "Площадь..."
+
+#~ msgid "Evaluate..."
+#~ msgstr "Значения..."
+
+#~ msgid "Are you sure you want to delete the function: %s"
+#~ msgstr "Вы уверены, что хотите удалить функцию %s?"
+
+#~ msgid "Are you sure you want to delete the tangent: %s"
+#~ msgstr "Вы уверены, что хотите удалить %s?"
+
+#, fuzzy
+#~ msgid "Letter"
+#~ msgstr "Слева"
+
+#~ msgid "Show some frequently asked questions and their answers."
+#~ msgstr "Некоторые часто задаваемые вопросы и ответы на них."
+
+#~ msgid ""
+#~ "Double-click or select box and press space to change the color of the "
+#~ "graph."
+#~ msgstr ""
+#~ "Щёлкните два раза или нажмите пробел на этом прямоугольнике, чтобы "
+#~ "изменить цвет графика функции."
+
+#~ msgid "Check to increase the end coordinate until interception."
+#~ msgstr ""
+#~ "Отметьте, чтобы расширить участок штрихования вправо до пересечения."
+
+#~ msgid "Increase to interception"
+#~ msgstr "Вправо до пересечения"
+
+#~ msgid "Check to decrease start coordinate until interception."
+#~ msgstr "Отметьте, чтобы расширить участок штрихования влево до пересечения."
+
+#~ msgid "Decrease to interception"
+#~ msgstr "Влево до пересечения"
+
+#~ msgid ""
+#~ "Double-click or select box and press space to change the background color "
+#~ "of the coordinate system."
+#~ msgstr ""
+#~ "Щёлкните два раза или нажмите пробел на этом прямоугольнике, чтобы "
+#~ "изменить цвет фона графика."
+
+#~ msgid ""
+#~ "Double-click or select box and press space to change the color of the "
+#~ "axes."
+#~ msgstr ""
+#~ "Щёлкните два раза или нажмите пробел на этом прямоугольнике, чтобы "
+#~ "изменить цвет осей."
+
+#~ msgid ""
+#~ "Double-click or select box and press space to change the color of the "
+#~ "grids."
+#~ msgstr ""
+#~ "Щёлкните два раза или нажмите пробел на этом прямоугольнике, чтобы "
+#~ "изменить цвет сетки."
