@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2005-12-28 20:29\n"
-"PO-Revision-Date: 2006-06-03 23:51+0100\n"
+"PO-Revision-Date: 2006-06-04 21:29+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -109,7 +109,7 @@ msgid "Enter an x-coordinate or click in the main window."
 msgstr "Skriv in en x-koordinat, eller klicka på tangenten i huvudfönstret."
 
 msgid "File"
-msgstr "Fil"
+msgstr "Arkiv"
 
 msgid "Import"
 msgstr "Importera"
@@ -333,9 +333,8 @@ msgstr "Skuggning..."
 
 # Funktion-menyn
 # Meddelandelist
-#, fuzzy
 msgid "Add shading to the selected function."
-msgstr "Lägg till skuggning till en funktion."
+msgstr "Lägg till skuggning till den valda funktionen."
 
 # Funktion-menyn
 msgid "Insert point series..."
@@ -361,9 +360,8 @@ msgstr "Redigera..."
 
 # Funktion-menyn
 # Meddelandelist
-#, fuzzy
 msgid "Edit the selected element: Function, tangent, point series, etc."
-msgstr "Redigera vald funktion, tangent eller punktserie."
+msgstr "Redigera vald funktion, tangent, punktserie, osv."
 
 # Funktion-menyn
 msgid "Delete"
@@ -653,10 +651,10 @@ msgid "Create custom functions and constants for use in graphs."
 msgstr "Skapa funktioner och konstanter att användas i grafer."
 
 msgid "Animate..."
-msgstr ""
+msgstr "Animera..."
 
 msgid "Create an animation by variating a constant."
-msgstr ""
+msgstr "Skapa en animation genom att variera en konstant."
 
 msgid "Select color"
 msgstr "Välj färg"
@@ -673,9 +671,8 @@ msgstr "Ställ in verktygsfältet..."
 msgid "Customize the icons shown on the toolbar."
 msgstr "Ställ in ikonerna som visas på verktygsfältet."
 
-#, fuzzy
 msgid "Rotation"
-msgstr "Samband:"
+msgstr "Rotation"
 
 msgid "Edit label..."
 msgstr "Redigera etikett..."
@@ -776,9 +773,8 @@ msgstr "Välj stil för olikheten. Används inte till ekvationer."
 msgid "Width in pixels of the equation line or the borderline of the inequality."
 msgstr "Linjebredd för ekvationen, i pixel. Används inte till olikheter."
 
-#, fuzzy
 msgid "Select the color for drawing the relation."
-msgstr "Välj teckensnitt för rubriken."
+msgstr "Välj färg för att rita upp relationen."
 
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
 msgstr "Skriv in sambandet, t.ex. \"x^2+y^2 = 25\" eller \" y < sin(x)\"."
@@ -816,9 +812,8 @@ msgstr "Linjebredd för grafen, i pixel."
 msgid "Choose which line style to use for drawing the graph."
 msgstr "Välj vilken linjestil som skall användas för grafen."
 
-#, fuzzy
 msgid "Select the color of the graph."
-msgstr "Välj funktionstyp att rita."
+msgstr "Välj färg på grafen."
 
 msgid "Argument range"
 msgstr "Begränsningsintervall"
@@ -917,17 +912,16 @@ msgid "Edit model"
 msgstr "Redigera modell"
 
 msgid "Enter a function model to base the trendline on."
-msgstr ""
+msgstr "Skriv in en funktion att basera trendlinjen på."
 
 msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendline."
-msgstr ""
+msgstr "Skriv in ett värde i Fånga upp-rutan för att ange punkten du vill att trendlinjen skall träffa y-axeln. Detta val ärn endast tillgängligt för linjär-, polynom- och exponentiell trendlinje."
 
-#, fuzzy
 msgid "Intercept ="
-msgstr "Internet"
+msgstr "Avskärning = "
 
 msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
-msgstr ""
+msgstr "Skriv in ett värde i Fånga upp-rutan för att ange punkten du vill att trendlinjen skall träffa y-axeln. Detta val ärn endast tillgängligt för linjära-, polynom- och exponentiella trendlinjer."
 
 msgid "Insert point series"
 msgstr "Infoga punktserie"
@@ -968,9 +962,8 @@ msgstr "Interpolation:"
 msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
 msgstr "Välj stil på linjer som ritas mellan punkterna. Du kan också välja att inte rita några linjer alls."
 
-#, fuzzy
 msgid "Choose the width of the lines in pixels."
-msgstr "Välj linjebredd."
+msgstr "Välj linjebredd, i pixel."
 
 msgid "Select which kind of line to draw between the markers."
 msgstr "Välj vilken linjetyp att rita mellan markeringarna."
@@ -1226,7 +1219,7 @@ msgid "Shading range for 2nd function"
 msgstr "Skuggningsområde för andra funktionen"
 
 msgid "Custom functions/constants"
-msgstr "Inställbara funktioner/constanter"
+msgstr "Inställbara funktioner/konstanter"
 
 msgid "Apply"
 msgstr "Ange"
@@ -1253,27 +1246,25 @@ msgid "Image height:"
 msgstr "Bildhöjd:"
 
 msgid "Set a custom image width."
-msgstr ""
+msgstr "Ställ in bredd på specialbild."
 
 msgid "Set a custom image height."
-msgstr ""
+msgstr "Ställ in höjd på specialbild."
 
 msgid "Choose to use the same size as shown on the screen or a custom image size."
-msgstr ""
+msgstr "Välj att använda samma storlek som visas på skärmen eller samma storlek som på specialbild."
 
-#, fuzzy
 msgid "Image size"
-msgstr "Bildbredd:"
+msgstr "Bildstorlek"
 
 msgid "Screen size"
-msgstr ""
+msgstr "Skärmstorlek"
 
-#, fuzzy
 msgid "Custom size"
-msgstr "Verktygsinställningar"
+msgstr "Specialstorlek"
 
 msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
-msgstr ""
+msgstr "Progressivt lagringsformat ger användaren möjlighet att se en enklare kopia av bilden medan den nedladdas."
 
 msgid "Encoding"
 msgstr "Kodningsformat"
@@ -1282,16 +1273,16 @@ msgid "Progressive"
 msgstr "Progressiv"
 
 msgid "Select a compression quality."
-msgstr ""
+msgstr "Välj kompressionsnivå."
 
 msgid "Quality"
 msgstr "Kvalitet"
 
 msgid "Paper size:"
-msgstr ""
+msgstr "Pappersstorlek:"
 
 msgid "Choose paper orientation."
-msgstr ""
+msgstr "Välj pappersriktning."
 
 msgid "Orientation"
 msgstr "Riktning"
@@ -1302,9 +1293,8 @@ msgstr "Stående"
 msgid "Landscape"
 msgstr "Liggande"
 
-#, fuzzy
 msgid "Choose paper size to use."
-msgstr "Välj linjebredd."
+msgstr "Välj pappersstorlek."
 
 msgid "Select this to use these settings as defaults in the future."
 msgstr "Välj detta för att använda dessa inställningar som standard."
@@ -1313,39 +1303,35 @@ msgid "Save as default"
 msgstr "Spara som standard"
 
 # Hjälp-menyn
-#, fuzzy
 msgid "Animate"
-msgstr "Donera"
+msgstr "Animera"
 
-#, fuzzy
 msgid "Constants:"
-msgstr "Begränsning:"
+msgstr "Konstanter:"
 
 msgid "Step:"
 msgstr "Steg:"
 
 msgid "Frames/second:"
-msgstr ""
+msgstr "Bilder/sekund:"
 
 msgid "Choose a constant to change between each frame.."
-msgstr ""
+msgstr "Välj en tidskonstant mellan varje bildruta."
 
-#, fuzzy
 msgid "The first value of the constant"
-msgstr "Första x-värdet i intervallet."
+msgstr "Första värdet av konstanten."
 
-#, fuzzy
 msgid "The last value of the constant."
-msgstr "Sista x-värdet i intervallet."
+msgstr "Sista värdet av konstanten."
 
 msgid "The chosen constant is changed by this value between each frame."
-msgstr ""
+msgstr "Den valda tidskonstanten ändras med detta värde för varje bildruta."
 
 msgid "Number of frames per second used when the animation is played."
-msgstr ""
+msgstr "Antalet bilder per sekund används när animationen spelas upp."
 
 msgid "Working"
-msgstr ""
+msgstr "Arbetar"
 
 msgid "About Graph"
 msgstr "Om Graph"
@@ -1368,20 +1354,17 @@ msgstr "Detta är fri programvara, och du får återdistribuera den under de fö
 msgid "The newest version as well as the source code are available at:"
 msgstr "Nyaste version och källkod finns hos:"
 
-#, fuzzy
 msgid "Animation"
-msgstr "Definition"
+msgstr "Animation"
 
 msgid "Open an animation file."
-msgstr ""
+msgstr "Öppna en animeringsfil."
 
-#, fuzzy
 msgid "Save the animation to a file."
-msgstr "Spara valda celler till en fil."
+msgstr "Spara animationen till en fil."
 
-#, fuzzy
 msgid "Copy the animation to the clipboard."
-msgstr "Kopiera vald text till Windows urklipp."
+msgstr "Kopiera animationen till Windows urklipp."
 
 msgid "Edit axes"
 msgstr "Redigera koordinataxlarna"
@@ -1422,9 +1405,8 @@ msgstr "Visa etikett på höger sida ovanför x-axeln."
 msgid "Label:"
 msgstr "Etikett:"
 
-#, fuzzy
 msgid "Edit the label for the axis here."
-msgstr "Ange nytt innehåll för etiketten."
+msgstr "Ange nytt innehåll för koordinataxeletiketten."
 
 msgid "Show units on the x-axis."
 msgstr "Visa siffror på x-axeln."
@@ -1567,17 +1549,14 @@ msgstr "Koordinataxlar:"
 msgid "Background color:"
 msgstr "Bakgrund:"
 
-#, fuzzy
 msgid "Select the color of the image background."
-msgstr "Välj färg på markeringarna."
+msgstr "Välj färg på bildbakgrund."
 
-#, fuzzy
 msgid "Select the color of the axes."
-msgstr "Välj färg på markeringarna."
+msgstr "Välj färg på koordinataxlarna."
 
-#, fuzzy
 msgid "Select the color of the grid lines."
-msgstr "Välj linjefärg."
+msgstr "Välj färg på rutnätet."
 
 msgid "Fonts"
 msgstr "Teckensnitt"
@@ -1591,7 +1570,6 @@ msgstr "Etiketter:"
 msgid "Legend font:"
 msgstr "Teckenförklaring:"
 
-#, fuzzy
 msgid "Select the font used to show the labels on the axes."
 msgstr "Välj teckensnitt för etiketter som visas på koordinataxlarna."
 
@@ -1613,9 +1591,8 @@ msgstr "Max ångra-steg:"
 msgid "Language:"
 msgstr "Språk:"
 
-#, fuzzy
 msgid "Font scale:"
-msgstr "Teckensnitt:"
+msgstr "Teckensnittskala:"
 
 msgid "Number of decimals used when results are shown."
 msgstr "Antal decimaler när resultat visas."
@@ -1669,7 +1646,7 @@ msgid "Select language to use."
 msgstr "Välj gränssnittsspråk."
 
 msgid "This is used to scale the user interface if you are having problems reading the text."
-msgstr ""
+msgstr "Detta används för att skala användargränssnittet, om du har problem med att läsa texten."
 
 msgid "Insert function"
 msgstr "Infoga funktion"
@@ -1761,16 +1738,14 @@ msgstr "Centrerad (Ctrl-E)."
 msgid "Align right (Ctrl-R)"
 msgstr "Högerställd (Ctrl-R)."
 
-#, fuzzy
 msgid "Text font."
 msgstr "Teckensnitt för texten."
 
 msgid "Text color."
 msgstr "Färg på texten."
 
-#, fuzzy
 msgid "Select background color of the text label."
-msgstr "Välj teckensnitt för rubriken."
+msgstr "Välj bakgrundsfärg för textetiketten."
 
 msgid "Undo last action."
 msgstr "Ångra senaste kommando."
@@ -2130,9 +2105,8 @@ msgstr "Objektfel"
 msgid "Windows does not have enough resources to save an image that large."
 msgstr "Windows har inte tillräckligt med resurser för att spara en bild av denna storlek."
 
-#, fuzzy
 msgid "'%1%' must be between %2% and %3%."
-msgstr "Värdet för antal 'Senast öppnade filer' måste vara mellan 0 och 9."
+msgstr "'%1%' måste vara mellan %2% och %3%."
 
 msgid "Confirm delete"
 msgstr "Bekräfta ta bort"
@@ -2310,7 +2284,6 @@ msgstr ""
 "Filen kan inte öppnas med denna version av programmet.\n"
 "Du måste minst ha Graph %s för att öppna filen."
 
-#, fuzzy
 msgid ""
 "This file was saved by an outdated version of Graph,\n"
 "and it cannot be opened by the current version."
@@ -2330,24 +2303,20 @@ msgstr ""
 msgid "Edit relation"
 msgstr "Redigera relation..."
 
-# Visas i dialogrutan utskrift
-#, fuzzy
 msgid "Commands"
-msgstr "Kommentar:"
+msgstr "Kommandon:"
 
 msgid "(All Commands)"
 msgstr "(Alla kommandon)"
 
 msgid "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
-msgstr ""
+msgstr "Vill du lägga till ett kommando till ett verktygsfält, välj en kategori och dra kommandot från denna dialogruta till ett verktygsfält."
 
-#, fuzzy
 msgid "Edit f'(x)"
-msgstr "Infoga f'(x)"
+msgstr "Redigera f'(x)"
 
-#, fuzzy
 msgid "Edit trendline"
-msgstr "Redigera relation..."
+msgstr "Redigera trendlinje"
 
 msgid "This Tip Of The day can give you a lot of information about the program that most users don't know."
 msgstr "Dagens Tips kan ge dig sådan information om programmet som de flesta inte känner till."
@@ -2475,9 +2444,8 @@ msgstr "Objekt (funktioner, skuggningar, etiketter, relationer, etc.) visas i sa
 msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
 msgstr "Du kan flytta valda objekt i funktionslistan, antingen genom att dra dem med musen, eller genom att använda tangentbordets piltangenter i kombination med Alt-tangenten."
 
-#, fuzzy
 msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
-msgstr "Du kan visa skuggningar och andra objekt bakom koordinataxlarna genom att flytta objekten i funktionslistan till vänster i programfönstret ovanför objektet 'Axlar'."
+msgstr "Du kan visa funktioner och andra objekt bakom koordinataxlarna genom att flytta objekten i funktionslistan, till vänster i programfönstret, ovanför objektet 'Axlar'. För att flytta skuggningar och tangenter måste du flytta funktionen de är associerade med."
 
 msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
 msgstr "Användardefinierade textetiketter kan sättas fast mot koordinataxlarna genom att högerklicka på en etikett och välja 'Placering'."
@@ -2567,16 +2535,16 @@ msgid "Med Gray"
 msgstr "Medelgrå"
 
 msgid "Local"
-msgstr ""
+msgstr "Lokal"
 
 msgid "Global"
-msgstr ""
+msgstr "Global"
 
 msgid "Insert"
 msgstr "Lägg till"
 
 msgid "Subset:"
-msgstr ""
+msgstr "Delmängd:"
 
 # Visas i namnlisten i dialogrutan utskrift
 msgid "Print"
@@ -2603,10 +2571,10 @@ msgid "Comment:"
 msgstr "Kommentar:"
 
 msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
-msgstr ""
+msgstr "Välj skrivare. Knappen Egenskaper kan användas till att förändra mer avancerade inställningar för slrivaren."
 
 msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
-msgstr ""
+msgstr "Välj färgutskrift (eller gråskala om din skrivare inte stödjer färg) eller konvertera alla färger till svart."
 
 # Visas i dialogrutan utskrift
 msgid "Print output"
@@ -2632,25 +2600,23 @@ msgstr "Vänstermarginal:"
 msgid "Top margin:"
 msgstr "Toppmarginal:"
 
-#, fuzzy
 msgid "Select to place the image on the middle of the page."
-msgstr "Välj teckensnitt för etiketter som visas på koordinataxlarna."
+msgstr "Välj för att placera bilden mitt på sidan."
 
 # Visas i dialogrutan utskrift
 msgid "Center on page"
 msgstr "Centrera på sidan"
 
-#, fuzzy
 msgid "Enter the image position on the page."
-msgstr "Skriv in en beskrivning att visa i teckenförklaringen."
+msgstr "Skriv in bildens placering på sidan."
 
 # Visas i dialogrutan utskrift
 msgid "Number of copies:"
 msgstr "Antal kopior:"
 
 msgid "Choose number of copies to print."
-msgstr ""
+msgstr "Välj antal kopior att skriva ut."
 
 msgid "Enter percent of original size."
-msgstr ""
+msgstr "Välj procent av originalstorlek."
 
