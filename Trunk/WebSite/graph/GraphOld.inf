@@ -1,0 +1,120 @@
+[Graph]
+Name = Graph
+Major = 4
+Minor = 1
+Release = 0
+Build = 270
+DownloadPage = http://www.padowan.dk/
+
+[Eng]
+NewFeatures = · Points may be added to series by clicking on the coordinate system while the Ctrl key is held down.
+NewFeatures = · Calc|Evaluate can now be used to find extremum points and intersections with other functions and the axes.
+NewFeatures = · A preview has been added to the open dialog.
+NewFeatures = · Moving average can now be added as a trendline.
+NewFeatures = · New functions added: Euler's beta function, Lambert's W-function (omega function)
+NewFeatures = · Some minor improvements have been implemented.
+NewFeatures = · The printing dialog has been improved.
+NewFeatures = · Minor bug with printing Graph objects from Word fixed.
+NewFeatures = · Fixed bug preventing the functions csc, sec, cot, acsc, asec and  acot from calculating in degrees.
+NewFeatures = · Spanish, Portuguese and Italian language translations added.
+
+[Dan]
+NewFeatures = · Punkter kan nu tilføjes til en punktserie ved at klikke i koordinatsystemet mens Ctrl holdes nede.
+NewFeatures = · Beregn|Evaluer kan nu bruges til at finde ekstremumspunkter og skæringer med andre funktioner og akserne.
+NewFeatures = · Indholdet af en fil kan nu ses før den åbnes.
+NewFeatures = · Bevægeligt gennemsnit kan nu tilføjes som en tendenslinie.
+NewFeatures = · Nye funktioner tilføjet: Eulers beta-funktion, Lamberts W-funktion (omega-funktion)
+NewFeatures = · En del mindre forbedringer er implementeret.
+NewFeatures = · Udskrivningsdialogen er blevet forbedret.
+NewFeatures = · Fejl vedrørende udskrivning af Graph objekter fra Word er rettet.
+NewFeatures = · Fejl, som forhindrede funktionerne csc, sec, cot, acsc, asec og acot i at regne i grader, er rettet.
+NewFeatures = · Spansk, portugisisk og italiensk sprogpakke tilføjet.
+
+[Deu]
+NewFeatures = · Punkte kann einer Punktserie hinzugefügt werden, durch ins Koordinatensystem klicken, während man Ctrl drückt.
+NewFeatures = · Durch Berechnen|Evaluieren kann man jetzt Extremenpunkte und Schnittpunkte mit anderen Funktionen und den Achsen.
+NewFeatures = · Eine Vorschau ist dem Öffnendialog hinzugefügt.
+NewFeatures = · Gleitender Durschnitt kann jetzt als eine Tendenzlinie eingesetzt werden.
+NewFeatures = · Neue Funktionen wurden hinzugefügt: Eulers Betafunktion, Lamberts W-Function (Omegafunktion)
+NewFeatures = · Kleine Verbesserungen sind implementiert.
+NewFeatures = · Der Druckendialog ist verbessert.
+NewFeatures = · Kleiner Fehler im Drucken von Graphobjekten in Word ist beseitigt.
+NewFeatures = · Spanische Übersetzung hinzugefügt.
+NewFeatures = · Portugiesische Übersetzung hinzugefügt.
+
+[English]
+NewFeatures = · Support for inequalities added.
+NewFeatures = · Functions, labels, etc. are no longer grouped in the list.
+NewFeatures = · Graph elements are now drawn in the order they are shown in the list.
+NewFeatures = · Graph elements can now be shown behind the axes.
+NewFeatures = · As an alternative to transparent, labels may now have a custom background color.
+NewFeatures = · New functions added: zeta, dnorm.
+NewFeatures = · Graph now remembers expressions used in point series.
+NewFeatures = · Graph now has a shell extension that shows thumbnails of grf-files in Explorer.
+NewFeatures = · Now user defined variables and functions are supported.
+NewFeatures = · The legend may now be moved freely with the mouse.
+NewFeatures = · Text labels may now be attached to the end of the axes as alternatives to the axes labels.
+NewFeatures = · Added support for saving images as JPEG files.
+NewFeatures = · Added support for half cosine interpolation for smooth lines in point series.
+NewFeatures = · You can now specify the resolution when saving as an image file.
+NewFeatures = · Russian translation added.
+NewFeatures = · Hungarian translation added.
+NewFeatures = · Slovenian translation of help file added.
+NewFeatures = · Fixed problem with inaccurate high order polynomial trendlines.
+NewFeatures = · Fixed wrong area calculated for tangents.
+
+[Danish]
+NewFeatures = · Understøttelse af ligninger og uligheder er implementeret.
+NewFeatures = · Funktioner, etiketter osv. er ikke længere grupperet i listen.
+NewFeatures = · Graph-elementer fremstilles nu i vinduet i samme rækkefølge, som de står i listen.
+NewFeatures = · Graph-elementer kan nu vises bag ved akserne.
+NewFeatures = · Som alternativ til gennemsigtighed kan etiketter nu have en brugerdefineret baggrundsfarve.
+NewFeatures = · Nye funktioner tilføjet: zeta, dnorm.
+NewFeatures = · Graph husker nu udtryk, som er anvendt i koordinater i punktserier.
+NewFeatures = · Graph har nu en shell extension, som gør det muligt at vise miniaturebilleder af grf-filer i Stifinder.
+NewFeatures = · Brugerdefinerede variable og funktioner understøttes.
+NewFeatures = · Signaturforklaringen kan nu frit flyttes rundt med musen.
+NewFeatures = · Etiketter kan nu hæftes på aksespidserne som et alternativ til akseteksterne.
+NewFeatures = · Understøttelse af JPEG og Encapsulated PostScript (EPS) billedfiler implementeret.
+NewFeatures = · Understøttelse af indskydelse af halve cosinuskurver for at tegne bløde kurver I punktserier.
+NewFeatures = · Man kan nu selv vælge, hvilken opløsning eksporterede billeder skal gemmes i.
+NewFeatures = · Russisk sprogpakke tilføjet.
+NewFeatures = · Slovensk sprogpakke tilføjet.
+NewFeatures = · Fejl, som gjorde polynomiske regressionskurver af høj orden upræcise, er rettet.
+
+[German]
+NewFeatures = · Ungleichungen werden nun auch unterstützt.
+NewFeatures = · Funktionen, Beschriftungselemente usw. werden nicht mehr gruppiert dargestellt.
+NewFeatures = · Objekte werden in der gleichen Reihenfolge auf dem Bildschirm dargestellt, wie sie in der Liste erscheinen.
+NewFeatures = · Graph-Elemente lassen sich nun hinter den Achsen darstellen.
+NewFeatures = · Beschriftungen können nun auch mit einer beliebigen Hintergrundfarbe hinterlegt werden.
+NewFeatures = · Neue Funktionen wurden hinzugefügt: zeta, dnorm.
+NewFeatures = · Graph behält sich nun die in den Punkt-Serien benutzten Ausdrücke.
+NewFeatures = · Graph hat jetzt eine Shell-Erweiterung, die Vorschau-Bilder von grf-Dateien im Explorer anzeigt.
+NewFeatures = · Es werden nun benutzerdefinierte Variablen und Funktionen unterstützt.
+NewFeatures = · Die Legende kann ab jetzt mit der Maus frei bewegt werden.
+NewFeatures = · Textfelder lassen sich nun an die Achsenenden anbinden, als Altenative zu den Achsenbeschriftungen.
+NewFeatures = · Graph unterstützt ab jetzt auch die Dateiformate JPEG und Encapsulated PostScript (EPS).
+NewFeatures = · Für Punktserien steht nun auch die Möglichkeit zur trigonometrischen Interpolation zur Verfügung.
+NewFeatures = · Beim Abspeichern von Bilddateien können Sie jetzt die Auflösung einstellen.
+NewFeatures = · Russische Übersetzung hinzugefügt.
+NewFeatures = · Slowenische Übersetzung hinzugefügt.
+NewFeatures = · Problem mit polynomialen Trendlinien höherer Ordnung wurde behoben.
+
+[Slovenian]
+NewFeatures = · dodana podpora za neenaèbe
+NewFeatures = · funkcije, oznake idr.niso veè grupirani v spisku
+NewFeatures = · elementi (funkcije, sence, oznake, relacije, itd.) se rišejo v istem zaporedju kot so prikazani v spisku
+NewFeatures = · sence in druge elemente lahko prikažete za osmi
+NewFeatures = · kot alternativo transparentni lahko izberete lastno barvo ozadja za oznake
+NewFeatures = · dodani novi funkciji: zeta, dnorm.
+NewFeatures = · Graph si zapomni izraze, ki ste jih uporabili  pri zaporedju toèk
+NewFeatures = · Graph ima možnost prikaza datotek s konènico .grf kot slièic v Raziskovalcu
+NewFeatures = · podprte so lastne funkcije in spremenljivke ( definira jih uporabnik )
+NewFeatures = · legendo lahko z miško prosto premikate
+NewFeatures = · kot alternativo oznakam osi, lahko na konec osi dodate tudi tekstovne oznake
+NewFeatures = · dodana podpora za JPEG format
+NewFeatures = · dodana podpora za interpolacijo s kosinusom iz zaporedja toèk 
+NewFeatures = · ko shranjujete grafe kot sliko, lahko sedaj doloèite loèljivost
+NewFeatures = · dodan ruski prevod
+NewFeatures = · odpravljen problem nenatanènosti pri risanju polinomske trendne èrte 
