@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<XML_DIZ_INFO>
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>2.01</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 2.0.1.22 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>Ivan Johansen</Company_Name>
+		<Address_1>Ringgade 60.1</Address_1>
+		<Address_2 />
+		<City_Town>Struer</City_Town>
+		<State_Province />
+		<Zip_Postal_Code>7600</Zip_Postal_Code>
+		<Country>Denmark</Country>
+		<Company_WebSite_URL>http://www.padowan.dk</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>Ivan</Author_First_Name>
+			<Author_Last_Name>Johansen</Author_Last_Name>
+			<Author_Email>graph@padowan.dk</Author_Email>
+			<Contact_First_Name>Ivan</Contact_First_Name>
+			<Contact_Last_Name>Johansen</Contact_Last_Name>
+			<Contact_Email>graph@padowan.dk</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email>graph@padowan.dk</Sales_Email>
+			<Support_Email>graph@padowan.dk</Support_Email>
+			<General_Email>graph@padowan.dk</General_Email>
+			<Sales_Phone />
+			<Support_Phone />
+			<General_Phone />
+			<Fax_Phone />
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>Graph</Program_Name>
+		<Program_Version>4.1</Program_Version>
+		<Program_Release_Month>12</Program_Release_Month>
+		<Program_Release_Day>31</Program_Release_Day>
+		<Program_Release_Year>2005</Program_Release_Year>
+		<Program_Cost_Dollars />
+		<Program_Cost_Other_Code />
+		<Program_Cost_Other />
+		<Program_Type>Freeware</Program_Type>
+		<Program_Release_Status>Minor Update</Program_Release_Status>
+		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_OS_Support>Win95,Win98,WinME,Windows2000,WinXP</Program_OS_Support>
+		<Program_Language>English,Danish,Finnish,French,German,Greek,Hungarian,Italian,Portuguese,Russian,Spanish</Program_Language>
+		<Program_Change_Info>Several minor improvements</Program_Change_Info>
+		<Program_Specific_Category>Education</Program_Specific_Category>
+		<Program_Category_Class>Education::Mathematics</Program_Category_Class>
+		<Program_Categories>Scientific, mathematic; education</Program_Categories>
+		<Program_System_Requirements />
+		<Includes_JAVA_VM>N</Includes_JAVA_VM>
+		<Includes_VB_Runtime>N</Includes_VB_Runtime>
+		<Includes_DirectX>N</Includes_DirectX>
+		<File_Info>
+			<Filename_Versioned>graph41.exe</Filename_Versioned>
+			<Filename_Previous>graph401.exe</Filename_Previous>
+			<Filename_Generic>graph.exe</Filename_Generic>
+			<Filename_Long>SetupGraph.exe</Filename_Long>
+			<File_Size_Bytes>2656952</File_Size_Bytes>
+			<File_Size_K>2594</File_Size_K>
+			<File_Size_MB>2.53</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>N</Has_Expire_Info>
+			<Expire_Count />
+			<Expire_Based_On>Days</Expire_Based_On>
+			<Expire_Other_Info />
+			<Expire_Month />
+			<Expire_Day />
+			<Expire_Year />
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>mathematic, graph, graphing, drawing, functions, tangents, evaluating, points</Keywords>
+			<Char_Desc_45>Draws graphs in a coordinate system.</Char_Desc_45>
+			<Char_Desc_80>Program for drawing graphs of mathematical functions in a coordinate system.</Char_Desc_80>
+			<Char_Desc_250>Graph is a program for drawing graphs of mathematical functions in a coordinate system. Graphs may be added with different color and line styles. It is possible to evaluate a function at an entered point or tracing the function with the mouse.</Char_Desc_250>
+			<Char_Desc_450>This program is for drawing graphs of mathematical functions in a coordinate system. Graphs may be added with different color and line styles. The program supports standard, parameter and polar functions. It is possible to evaluate a function at an entered point or tracing the function with the mouse. It is possible to add shadings to functions, and series of points to the coordinate system. Trendlines may be added to point series.</Char_Desc_450>
+			<Char_Desc_2000>This program is for drawing graphs of mathematical functions in a coordinate system. Graphs may be added with different color and line styles. Both standard functions, parameter functions and polar functions are supported. It is possible to evaluate a function at an entered point or tracing the function with the mouse. It is possible to add shadings to functions, and series of points to the coordinate system. Trendlines may be added to point series.
+
+It is possible to save the coordinate system and everything on it as an image file. It is also possible to copy an image into another program. Text labels may be placed anywhere in the coordinate system.</Char_Desc_2000>
+		</English>
+		<Danish>
+			<Keywords />
+			<Char_Desc_45 />
+			<Char_Desc_80 />
+			<Char_Desc_250 />
+			<Char_Desc_450 />
+			<Char_Desc_2000 />
+		</Danish>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>http://www.padowan.dk</Application_Info_URL>
+			<Application_Order_URL>http://www.padowan.dk</Application_Order_URL>
+			<Application_Screenshot_URL>http://www.padowan.dk/graph/DialogMain.gif</Application_Screenshot_URL>
+			<Application_Icon_URL>http://www.padowan.dk/graph/Icon.gif</Application_Icon_URL>
+			<Application_XML_File_URL>http://www.padowan.dk/graph/Graph.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>http://www.padowan.dk/graph/SetupGraph.exe</Primary_Download_URL>
+			<Secondary_Download_URL />
+			<Additional_Download_URL_1 />
+			<Additional_Download_URL_2 />
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+		<Distribution_Permissions>GNU General Public License
+http://www.gnu.org/licenses/gpl.html</Distribution_Permissions>
+		<EULA>GNU General Public License
+http://www.gnu.org/licenses/gpl.html</EULA>
+	</Permissions>
+	<ASP>
+		<ASP_FORM>Y</ASP_FORM>
+		<ASP_Member>N</ASP_Member>
+		<ASP_Member_Number />
+	</ASP>
+</XML_DIZ_INFO>
