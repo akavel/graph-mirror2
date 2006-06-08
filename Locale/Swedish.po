@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2005-12-28 20:29\n"
-"PO-Revision-Date: 2006-06-04 21:29+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2006-06-07 18:06+0100\n"
+"Last-Translator: Pär Smårs <par.smars@bredband.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,10 +67,10 @@ msgid "y-axis"
 msgstr "y-axel"
 
 msgid "Extreme x-value"
-msgstr "Extremt x-värde"
+msgstr "Extremvärde för x"
 
 msgid "Extreme y-value"
-msgstr "Extremt y-värde"
+msgstr "Extremvärde för y"
 
 msgid "The distance to the function evaluated for the given angle."
 msgstr "Avstånd till funktionen utvärderad för angiven vinkel."
@@ -786,7 +786,7 @@ msgid "Insert tangent/normal"
 msgstr "Lägg till tangent/normal"
 
 msgid "Coordinate where the tangent/normal will cross the function."
-msgstr "Koordinat där tangenten/normalen korsar funktionen."
+msgstr "Koordinat där tangenten/normalen skär funktionen."
 
 msgid "Choose if you want a tangent or a normal."
 msgstr "Välj om du vill ha tangent eller normal."
@@ -834,10 +834,10 @@ msgid "End:"
 msgstr "Slut:"
 
 msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
-msgstr "Välj markering att visas vid intervallets startpunkt. Används enbart om ett begränsningsintervall angetts."
+msgstr "Välj markering att visa vid intervallets startpunkt. Används enbart om ett begränsningsintervall angetts."
 
 msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
-msgstr "Välj markering att visas vid intervallets slutpunkt. Används enbart om ett begränsningsintervall angetts."
+msgstr "Välj markering att visa vid intervallets slutpunkt. Används enbart om ett begränsningsintervall angetts."
 
 msgid "Insert trendline"
 msgstr "Lägg till trendlinje"
@@ -951,7 +951,7 @@ msgid "Choose the size of the markers."
 msgstr "Välj storlek på markeringarna."
 
 msgid "Choose the type of markers to be shown at each point."
-msgstr "Välj typ av markering att visas vid varje punkt."
+msgstr "Välj typ av markering att visa vid varje punkt."
 
 msgid "Choose the color of the markers."
 msgstr "Välj färg på markeringarna."
@@ -1099,7 +1099,7 @@ msgid "Calculate table"
 msgstr "Tabellberäkning"
 
 msgid "The step value. This is the distance between the x-values in the interval."
-msgstr "Stegvärdet. Detta är distansen mellan x-värdet i intervallet."
+msgstr "Stegvärdet. Detta är distansen mellan x-värdena i intervallet."
 
 msgid "The first x-value in the interval."
 msgstr "Första x-värdet i intervallet."
@@ -1246,13 +1246,14 @@ msgid "Image height:"
 msgstr "Bildhöjd:"
 
 msgid "Set a custom image width."
-msgstr "Ställ in bredd på specialbild."
+msgstr "Ange användardefinierad bildbredd."
 
 msgid "Set a custom image height."
-msgstr "Ställ in höjd på specialbild."
+msgstr "Ange användardefinierad bildhöjd."
 
+# Spara bild som
 msgid "Choose to use the same size as shown on the screen or a custom image size."
-msgstr "Välj att använda samma storlek som visas på skärmen eller samma storlek som på specialbild."
+msgstr "Välj att använda samma storlek som visas på skärmen eller specialstorlek."
 
 msgid "Image size"
 msgstr "Bildstorlek"
@@ -1337,7 +1338,9 @@ msgid "About Graph"
 msgstr "Om Graph"
 
 msgid "<Language> translation by <Translator>"
-msgstr "Svensk översättning av Pär Smårs <par.smars@bredband.net>"
+msgstr ""
+"Svensk översättning av Pär Smårs <par.smars@bredband.net>\n"
+"(version 1.01, kontrollerad mot 4.2b Build 303)"
 
 msgid "Version "
 msgstr "Version"
@@ -1349,7 +1352,7 @@ msgid "Build"
 msgstr "Underversion"
 
 msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
-msgstr "Detta är fri programvara, och du får återdistribuera den under de förutsättningar som finns i GNU General Public Licence (allmän licens). Sänd felrapporter och förslag till förbättringar till programmeraren."
+msgstr "Detta är fri programvara, och du får återdistribuera den under de förutsättningar som finns i GNU General Public Licence (allmän licens). Sänd felrapporter och förslag på förbättringar till programmeraren."
 
 msgid "The newest version as well as the source code are available at:"
 msgstr "Nyaste version och källkod finns hos:"
@@ -1388,7 +1391,7 @@ msgid "Minimum x-value."
 msgstr "Minsta x-värde."
 
 msgid "Maximum x-value."
-msgstr "Maximum x-value."
+msgstr "Största x-värde."
 
 msgid "Units between ticks on the x-axis."
 msgstr "Värde mellan streckindelningen på x-axeln."
@@ -1550,7 +1553,7 @@ msgid "Background color:"
 msgstr "Bakgrund:"
 
 msgid "Select the color of the image background."
-msgstr "Välj färg på bildbakgrund."
+msgstr "Välj bakgrundsfärg."
 
 msgid "Select the color of the axes."
 msgstr "Välj färg på koordinataxlarna."
@@ -1577,7 +1580,7 @@ msgid "Select the font used to show the numbers on the axes."
 msgstr "Välj teckensnitt för att visa siffrorna på koordinataxlarna."
 
 msgid "Select the font used to show the legend text."
-msgstr "Välj teckensnitt för att visa texten på teckenförklaringen."
+msgstr "Välj teckensnitt för texten på teckenförklaringen."
 
 msgid "Decimals:"
 msgstr "Decimaler:"
