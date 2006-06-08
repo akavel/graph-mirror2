@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="Func32.lib"/>
+    <OBJFILES value="..\Obj\Parser.obj ..\Obj\TBaseFunc.obj ..\Obj\TCustomFunc.obj 
+      ..\Obj\TFunc.obj ..\Obj\TParamFunc.obj ..\Obj\TPolarFunc.obj 
+      ..\Obj\TFuncData.obj ..\Obj\MakeText.obj ..\Obj\Calc.obj 
+      ..\Obj\Differentiate.obj ..\Obj\Simplify.obj ..\Obj\Trend.obj 
+      ..\Obj\Utility.obj ..\Obj\TSymbolList.obj"/>
+    <RESFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <PACKAGES value=""/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <LINKER value="TLib"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="Func32.bpf"/>
+    <INCLUDEPATH value="&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;$(BCB)\include;..\..\spirit;..\..\boost"/>
+    <LIBPATH value="&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;"/>
+    <WARNINGS value="-w-par -w-8027"/>
+    <LISTFILE value=""/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <CFLAG1 value="-Od -H=b:\vcl60.csm -Hc -Vx -Ve -xp -X- -r- -a8 -6 -b- -d -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="/P256"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="$(OBJFILES)"/>
+    <ALLLIB value=""/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="Parser.cpp" FORMNAME="" UNITNAME="Parser.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TBaseFunc.cpp" FORMNAME="" UNITNAME="TBaseFunc.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TCustomFunc.cpp" FORMNAME="" UNITNAME="TCustomFunc" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TFunc.cpp" FORMNAME="" UNITNAME="TFunc.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TParamFunc.cpp" FORMNAME="" UNITNAME="TParamFunc.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TPolarFunc.cpp" FORMNAME="" UNITNAME="TPolarFunc.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TFuncData.cpp" FORMNAME="" UNITNAME="TFuncData" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MakeText.cpp" FORMNAME="" UNITNAME="MakeText" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Calc.cpp" FORMNAME="" UNITNAME="Calc.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Differentiate.cpp" FORMNAME="" UNITNAME="Differentiate" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Simplify.cpp" FORMNAME="" UNITNAME="Simplify.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Trend.cpp" FORMNAME="" UNITNAME="Trend.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utility.cpp" FORMNAME="" UNITNAME="Utility" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Func32.bpf" FORMNAME="" UNITNAME="Func32" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TSymbolList.cpp" FORMNAME="" UNITNAME="TSymbolList" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1030
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=12
+Item0=D:\Program Files\Borland\CBuilder6\Projects;$(BCB)\include;..\..\spirit;..\..\boost
+Item1=D:\Program Files\Borland\CBuilder6\Projects;$(BCB)\include;..\spirit;..\boost
+Item2=$(BCB)\include;..\spirit;..\boost
+Item3=$(BCB)\include;..\boost
+Item4=$(BCB)\include;..\spirit\miniboost;..\spirit;..\boost
+Item5=$(BCB)\include;..\spirit\miniboost;..\spirit
+Item6=$(BCB)\include;D:\Program Files\Borland\spirit\miniboost;D:\Program Files\Borland\spirit
+Item7=$(BCB)\include;D:\Program Files\Borland\spirit;D:\Program Files\Borland\spirit\miniboost
+Item8=$(BCB)\include;D:\Program Files\Borland\spirit;D:\Program Files\Borland\spirit\minboost
+Item9=$(BCB)\include;D:\Program Files\Borland\spirit
+Item10=D:\Program Files\Borland\CBuilder6\Projects;$(BCB)\include;D:\Program Files\Borland\spirit
+Item11=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=4
+Item0=D:\Program Files\Borland\CBuilder6\Projects
+Item1=&quot;D:\Pr
+Item2=D:\Program Files\Borland\CBuilder6\Projects;$(BCB)\lib\obj;$(BCB)\lib
+Item3=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=2
+Item0=_DEBUG
+Item1=DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=..\Obj
+Item1=Obj
+
+[HistoryLists\hlTlibPageSize]
+Count=7
+Item0=0x0100
+Item1=0x00100
+Item2=0x0080
+Item3=0x0040
+Item4=0x0020
+Item5=32
+Item6=0x0010
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Language]
+ActiveLang=
+ProjectLang=0x00000409
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>
