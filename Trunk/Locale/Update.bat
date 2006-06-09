@@ -1,5 +1,5 @@
 @echo off
-dxgettext ..\*.dfm ..\resource.rc \..\..\Components\TIPrintDialog\*.dfm \..\..\Components\Common\*.rc
+dxgettext ..\Source\*.dfm ..\Source\resource.rc \..\Components\TIPrintDialog\*.dfm \..\Components\Common\*.rc
 msgremove default.po -i ignore.po -o temp.po
 findstr /b /v "#" temp.po > temp2.po
 findstr /b /v /C:"msgid \"\"" temp2.po > temp3.po
