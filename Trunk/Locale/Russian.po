@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph russian interface\n"
-"POT-Creation-Date: 2006-05-31 19:27\n"
+"POT-Creation-Date: 2006-06-17 10:25\n"
 "PO-Revision-Date: 2006-01-14 12:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,10 +20,16 @@ msgstr "До:"
 msgid "Area"
 msgstr "Площадь"
 
-msgid "Enter a start coordinate or mark the range on the image with the mouse."
+#, fuzzy
+msgid ""
+"Enter the start coordinate or mark the range on the graph itself with the "
+"mouse."
 msgstr "Введите начальную координату или отметьте диапазон мышью на графике."
 
-msgid "Enter the end coordinate or mark the range on the image with the mouse."
+#, fuzzy
+msgid ""
+"Enter the end coordinate or mark the range on the graph itself with the "
+"mouse."
 msgstr "Введите конечную координату или отметьте диапазон на графике мышью."
 
 msgid ""
@@ -129,18 +135,6 @@ msgstr "Файл"
 
 msgid "Import"
 msgstr "Загрузить (import)"
-
-msgid "Graph file..."
-msgstr "Graph файл..."
-
-msgid "Import a graph file into the current coordinate system."
-msgstr "Загрузить файл Graph в текущую систему координат."
-
-msgid "Point series..."
-msgstr "Ряд точек..."
-
-msgid "Import point series from a data file."
-msgstr "Загрузить ряд точек из файла с данными."
 
 msgid "Edit"
 msgstr "Редактирование"
@@ -303,8 +297,8 @@ msgstr "Редактировать параметры осей."
 msgid "Options..."
 msgstr "Настройки..."
 
-msgid "Edit options."
-msgstr "Редактировать настройки программы."
+msgid "Edit various options for the interface and program features."
+msgstr ""
 
 msgid "Insert function..."
 msgstr "Добавить функцию..."
@@ -316,7 +310,7 @@ msgid "Insert tangent/normal..."
 msgstr "Добавить касательную или перпендикуляр..."
 
 #, fuzzy
-msgid "Insert a new tangent or normal for the selected function."
+msgid "Insert a tangent or normal for the selected function."
 msgstr "Добавить новую касательную или перпендикуляр к выбранной функции."
 
 msgid "Insert shade..."
@@ -329,8 +323,9 @@ msgstr "Заштриховать участок графика."
 msgid "Insert point series..."
 msgstr "Добавить ряд точек..."
 
-msgid "Insert a new point series."
-msgstr "Добавить новый ряд точек."
+#, fuzzy
+msgid "Insert a point series."
+msgstr "Добавить ряд точек"
 
 msgid "Insert trendline..."
 msgstr "Добавить трендлинию..."
@@ -380,8 +375,8 @@ msgstr "Равный"
 
 #, fuzzy
 msgid ""
-"Zoom to scale the axes equal. This will show a circle in the correct "
-"relation instead of an ellipse."
+"Zoom to scale the axes equally. This will show a plotted circle in its "
+"correct relation instead of an ellipse."
 msgstr ""
 "Сделать равный масштаб обеих осей. Например, чтобы окружность не выглядела "
 "эллипсом."
@@ -398,25 +393,29 @@ msgstr "Перемещение"
 msgid "Move up"
 msgstr "Переместить вверх"
 
-msgid "Move the window up the coordinate system."
+#, fuzzy
+msgid "Move the window up along the coordinate system."
 msgstr "Переместить окно вверх по системе координат."
 
 msgid "Move down"
 msgstr "Переместить вниз"
 
-msgid "Move the window down the coordinate system."
+#, fuzzy
+msgid "Move the window down along the coordinate system."
 msgstr "Переместить окно вниз по системе координат."
 
 msgid "Move left"
 msgstr "Переместить влево"
 
-msgid "Move the window to left of the coordinate system."
+#, fuzzy
+msgid "Move the window to the left along the coordinate system."
 msgstr "Переместить окно влево по системе координат."
 
 msgid "Move right"
 msgstr "Переместить вправо"
 
-msgid "Move the window to the right of the coordinate system."
+#, fuzzy
+msgid "Move the window to the right along the coordinate system."
 msgstr "Переместить окно вправо по системе координат."
 
 msgid "Move system"
@@ -429,11 +428,13 @@ msgstr "Переместить систему координат при помо
 msgid "Length of path"
 msgstr "Длина пути..."
 
-msgid "Calculate length of path between two points."
+#, fuzzy
+msgid "Calculates the length of path between two given points on the curve."
 msgstr "Рассчитать длину пути по функции между двумя точками."
 
-msgid "Calculates area under the path."
-msgstr "Рассчитать площадь под графиком."
+#, fuzzy
+msgid "Calculates the area under the path of the selected function."
+msgstr "Добавить первую производную выбранной функции."
 
 msgid "Evaluate"
 msgstr "Оценить"
@@ -457,7 +458,8 @@ msgstr "Open help file."
 msgid "List of functions"
 msgstr "Список функций"
 
-msgid "Show list of functions that can be used for graphing."
+#, fuzzy
+msgid "Shows a list of built-in functions that can be used for graphing."
 msgstr "Показать список функций, используемых для построения графиков."
 
 msgid "Go to home page"
@@ -497,14 +499,17 @@ msgstr "Показать все точки"
 msgid "Frequently Asked Questions"
 msgstr "Часто задаваемые вопросы"
 
-msgid "Shows a list of frequently asked questions and answers."
+#, fuzzy
+msgid "Shows a list of frequently asked questions and their answers."
 msgstr "Показать ответы на часто задаваемые вопросы."
 
 msgid "Insert label..."
 msgstr "Добавить надпись..."
 
-msgid "Insert a text label."
-msgstr "Добавить надпись на графике."
+msgid ""
+"Insert a text label (select and click in the main window where you want the "
+"label)."
+msgstr ""
 
 msgid "Donate"
 msgstr "Поддержать разработчика"
@@ -567,6 +572,19 @@ msgstr "Поддержать разработчика"
 
 msgid "Create an animation by variating a constant."
 msgstr ""
+
+msgid "Graph file..."
+msgstr "Graph файл..."
+
+#, fuzzy
+msgid "Import a Graph file into the current coordinate system."
+msgstr "Загрузить файл Graph в текущую систему координат."
+
+msgid "Point series..."
+msgstr "Ряд точек..."
+
+msgid "Import point series from a data file."
+msgstr "Загрузить ряд точек из файла с данными."
 
 msgid "Select color"
 msgstr "Выберите цвет"
@@ -851,18 +869,12 @@ msgstr "Введите описание для отображения в под�
 msgid ""
 "Type a value in the Intercept box to specify the point where you want the "
 "trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendline."
+"and exponential trendlines."
 msgstr ""
 
 #, fuzzy
 msgid "Intercept ="
 msgstr "Интернет"
-
-msgid ""
-"Type a value in the Intercept box to specify the point where you want the "
-"trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendlines."
-msgstr ""
 
 msgid "Insert point series"
 msgstr "Добавить ряд точек"
@@ -1170,7 +1182,9 @@ msgstr "Вторая функция"
 msgid "2nd function:"
 msgstr "Вторая функция:"
 
-msgid "Select second function, when you want a shading between two functions."
+#, fuzzy
+msgid ""
+"Select the second function when you want a shading between two functions."
 msgstr ""
 "Выберите вторую функцию, если вы хотите заштриховать участок между двумя "
 "функциями."
@@ -1287,7 +1301,7 @@ msgstr "Шаги:"
 msgid "Frames/second:"
 msgstr ""
 
-msgid "Choose a constant to change between each frame.."
+msgid "Choose a constant to change between each frame."
 msgstr ""
 
 #, fuzzy
@@ -1384,7 +1398,8 @@ msgstr "Использовать логарифмическую шкалу по 
 msgid "Logarithmic scale"
 msgstr "Логарифмическая шкала"
 
-msgid "Show label at the right side above the x-axis."
+#, fuzzy
+msgid "Show the label at the right side of the main window, above the x-axis."
 msgstr "Показывать обозначение оси"
 
 msgid "Label:"
@@ -1459,7 +1474,9 @@ msgstr "Интервал между засечками на оси у."
 msgid "Show units on the y-axis."
 msgstr "Показывать значения по оси у."
 
-msgid "Show label at the top of the window to the right of the y-axis."
+#, fuzzy
+msgid ""
+"Show the label at the top of the main window, to the right of the y-axis."
 msgstr "Показывать обозначение оси"
 
 #, fuzzy
@@ -1501,8 +1518,9 @@ msgstr "Пересекающ."
 msgid "Boxed"
 msgstr "Углом"
 
+#, fuzzy
 msgid ""
-"Choose if trigonometric functions should calculate in radian or degrees."
+"Choose if trigonometric functions should calculate in radians or degrees."
 msgstr "Выберите, в градусах или радианах вычислять тригонометрические функции"
 
 msgid "Trigonometry"
@@ -1639,7 +1657,8 @@ msgstr "Полный"
 msgid "Polar"
 msgstr "Полярный"
 
-msgid "Show tooltip when the cursor is over something."
+#, fuzzy
+msgid "Show the tooltip when the cursor is over an item."
 msgstr "Показывать подсказку для объекта, над которым находиться курсор."
 
 msgid "Show tooltip"
@@ -1658,8 +1677,9 @@ msgstr ""
 msgid "Check for new version of Graph at startup"
 msgstr "Проверять наличие новой версии при запуске"
 
-msgid "Select language to use."
-msgstr "Выберите язык:"
+#, fuzzy
+msgid "Select the language to use for the user interface."
+msgstr "Выберите тип заштриховки."
 
 msgid ""
 "This is used to scale the user interface if you are having problems reading "
@@ -1781,9 +1801,6 @@ msgstr "Отменить последнее действие."
 
 msgid "Redo last undone action."
 msgstr "Повторить последнее отменённое действие."
-
-msgid "Cut selected text to the clipboard."
-msgstr "Вырезать выбранный текст и поместить в буфер обмена."
 
 msgid "Paste the contents of the clipboard."
 msgstr "Вставить содержимое буфера обмена."
@@ -1909,8 +1926,8 @@ msgstr "Слишком много рекурсивных вызовов функ
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Оператор '%s' не может быть помещён здесь."
 
-msgid "End of parenthesis missing."
-msgstr "Нет закрывающих скобок."
+msgid "Right bracket missing."
+msgstr ""
 
 msgid "Invalid number of arguments supplied for function '%s'"
 msgstr "Для функции '%s' предоставлено неверное количество аргументов."
@@ -1930,7 +1947,8 @@ msgstr ""
 "Запятая не может быть здесь использована. Используйте точку для отделения "
 "десятичных знаков."
 
-msgid "Unexpected end of parenthesis."
+#, fuzzy
+msgid "Unexpected end of brackets."
 msgstr "Неправильно расставлены скобки."
 
 msgid "Number, constant or function expected."
@@ -2018,10 +2036,12 @@ msgstr ""
 "Название может содержать только буквы и цифаы, и должно начинаться с буквы.\n"
 "Также вы не можете использовать встроенные названия."
 
-msgid "The end parenthesis is missing."
+#, fuzzy
+msgid "The right bracket is missing."
 msgstr "Нет закрывающих скобок."
 
-msgid "Character found after the parenthesis."
+#, fuzzy
+msgid "Character found after brackets."
 msgstr "Символ вне скобок."
 
 msgid "Symbol \"%s\" defined more than once."
@@ -2091,9 +2111,10 @@ msgstr "'%s' должно быть положительным."
 msgid "File not found: %s"
 msgstr "Файл не найден: %s"
 
+#, fuzzy
 msgid ""
 "Error reading file: %s\n"
-"File is not a correct graph file."
+" The file is not a correct Graph file."
 msgstr ""
 "Ошибка чтения файла %s\n"
 "Неправильный формат файла."
@@ -2399,14 +2420,16 @@ msgstr "Добавить f'(x)"
 msgid "Edit trendline"
 msgstr "Редактировать соотношение"
 
+#, fuzzy
 msgid ""
-"This Tip Of The day can give you a lot of information about the program that "
+"This Tip of the day can give you a lot of information about the program that "
 "most users don't know."
 msgstr "Совет дня может дать вам полезную информацию о программе."
 
+#, fuzzy
 msgid ""
 "You can send suggestions for future versions, bug reports and comments to "
-"graph@padowan.dk."
+"graph@padowan.dk"
 msgstr ""
 "Вы можете присылать предложения для будущих версий программы, сообщения об "
 "ошибках и комментарии на адрес graph@padowan.dk."
@@ -2901,6 +2924,27 @@ msgstr "Количество копий:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#~ msgid "Edit options."
+#~ msgstr "Редактировать настройки программы."
+
+#~ msgid "Insert a new point series."
+#~ msgstr "Добавить новый ряд точек."
+
+#~ msgid "Calculates area under the path."
+#~ msgstr "Рассчитать площадь под графиком."
+
+#~ msgid "Insert a text label."
+#~ msgstr "Добавить надпись на графике."
+
+#~ msgid "Select language to use."
+#~ msgstr "Выберите язык:"
+
+#~ msgid "Cut selected text to the clipboard."
+#~ msgstr "Вырезать выбранный текст и поместить в буфер обмена."
+
+#~ msgid "End of parenthesis missing."
+#~ msgstr "Нет закрывающих скобок."
 
 #, fuzzy
 #~ msgid "Panel1"

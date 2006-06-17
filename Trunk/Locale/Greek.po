@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2006-05-31 19:27\n"
+"POT-Creation-Date: 2006-06-17 10:25\n"
 "PO-Revision-Date: 2006-01-14 12:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,11 +19,17 @@ msgstr "Μεχρι"
 msgid "Area"
 msgstr "Περιοχή"
 
-msgid "Enter a start coordinate or mark the range on the image with the mouse."
+#, fuzzy
+msgid ""
+"Enter the start coordinate or mark the range on the graph itself with the "
+"mouse."
 msgstr ""
 "Εισάγετε τις συντεταγμένες της αρχής ή καθορίστε την περιοχή με το ποντίκι"
 
-msgid "Enter the end coordinate or mark the range on the image with the mouse."
+#, fuzzy
+msgid ""
+"Enter the end coordinate or mark the range on the graph itself with the "
+"mouse."
 msgstr ""
 "Εισάγετε τις συντεταγμένες του τέλους ή καθορίστε την περιοχή με το ποντίκι."
 
@@ -131,18 +137,6 @@ msgstr "Αρχείο"
 
 msgid "Import"
 msgstr "Εισαγωγή"
-
-msgid "Graph file..."
-msgstr "Αρχείο γραφικών..."
-
-msgid "Import a graph file into the current coordinate system."
-msgstr "Εισαγωγή γραφήματος στο τρέχον σύστημα συντεταγμένων."
-
-msgid "Point series..."
-msgstr "Σειρές σημείων..."
-
-msgid "Import point series from a data file."
-msgstr "Εισαγωγή σημειοσειράς από αρχείο δεδομένων."
 
 msgid "Edit"
 msgstr "Επεξεργασία"
@@ -308,8 +302,8 @@ msgstr "Επεξεργασία στοιχείων αξόνων."
 msgid "Options..."
 msgstr "Προτιμήσεις..."
 
-msgid "Edit options."
-msgstr "Επεξεργασία προτιμήσεων."
+msgid "Edit various options for the interface and program features."
+msgstr ""
 
 msgid "Insert function..."
 msgstr "Εισαγωγή συνάρτησης..."
@@ -321,7 +315,7 @@ msgid "Insert tangent/normal..."
 msgstr "Εισαγωγή εφαπτομένης/κάθετης..."
 
 #, fuzzy
-msgid "Insert a new tangent or normal for the selected function."
+msgid "Insert a tangent or normal for the selected function."
 msgstr "Εισαγωγή νέας εφαπτομένης στην επιλεγμένη συνάρτηση."
 
 msgid "Insert shade..."
@@ -334,8 +328,9 @@ msgstr "Εισαγωγή γραμμοσκίασης σε μία συνάρτησ
 msgid "Insert point series..."
 msgstr "Εισαγωγή σειράς σημείων..."
 
-msgid "Insert a new point series."
-msgstr "Εισαγωγή νέας σειράς σημείων."
+#, fuzzy
+msgid "Insert a point series."
+msgstr "Εισαγωγή σειράς σημείων"
 
 msgid "Insert trendline..."
 msgstr "Εσαγωγή γραμμής..."
@@ -385,8 +380,8 @@ msgstr "Τετραγωνισμός"
 
 #, fuzzy
 msgid ""
-"Zoom to scale the axes equal. This will show a circle in the correct "
-"relation instead of an ellipse."
+"Zoom to scale the axes equally. This will show a plotted circle in its "
+"correct relation instead of an ellipse."
 msgstr "Μεγέθυνση για ισοτιμία αξόνων.Δείχνει σωστό κύκλο αντί για έλλειψη."
 
 msgid "Standard"
@@ -401,25 +396,29 @@ msgstr "Μετακίνηση"
 msgid "Move up"
 msgstr "Μετακίνηση επάνω"
 
-msgid "Move the window up the coordinate system."
+#, fuzzy
+msgid "Move the window up along the coordinate system."
 msgstr "Μετακίνηση του παράθυρου προς τα πάνω."
 
 msgid "Move down"
 msgstr "Μετακίνηση κάτω"
 
-msgid "Move the window down the coordinate system."
+#, fuzzy
+msgid "Move the window down along the coordinate system."
 msgstr "Μετακίνηση του παράθυρου προς τα κάτω."
 
 msgid "Move left"
 msgstr "Μετακίνηση αριστερά"
 
-msgid "Move the window to left of the coordinate system."
+#, fuzzy
+msgid "Move the window to the left along the coordinate system."
 msgstr "Μετακίνηση του παράθυρου προς τα αριστερά."
 
 msgid "Move right"
 msgstr "Μετακίνηση δεξιά"
 
-msgid "Move the window to the right of the coordinate system."
+#, fuzzy
+msgid "Move the window to the right along the coordinate system."
 msgstr "Μετακίνηση του παράθυρου προς τα δεξιά."
 
 msgid "Move system"
@@ -432,11 +431,13 @@ msgstr "Μετακίνηση του συστ.συτετεταγμένων με �
 msgid "Length of path"
 msgstr "Μήκος τροχιάς..."
 
-msgid "Calculate length of path between two points."
+#, fuzzy
+msgid "Calculates the length of path between two given points on the curve."
 msgstr "Υπολογισμός του μήκους μιάς καμπύλης μεταξύ δύο σημείων."
 
-msgid "Calculates area under the path."
-msgstr "Υπολογισμός του εμβαδού κάτω από μία συνάρτηση."
+#, fuzzy
+msgid "Calculates the area under the path of the selected function."
+msgstr "Εισαγωγή πρώτης παραγώγου της επιλεγμένης συνάρτησης."
 
 msgid "Evaluate"
 msgstr "Υπολογισμός"
@@ -460,7 +461,8 @@ msgstr "Εμφάνιση βοήθειας."
 msgid "List of functions"
 msgstr "Κατάλογος συναρτήσεων"
 
-msgid "Show list of functions that can be used for graphing."
+#, fuzzy
+msgid "Shows a list of built-in functions that can be used for graphing."
 msgstr "Εμφάνιση καταλόγου συναρτήσεων που παριστάνονται γραφικά."
 
 msgid "Go to home page"
@@ -499,14 +501,17 @@ msgstr "Προσαρμογή ώστε να φαίνονται όλα τα σημ
 msgid "Frequently Asked Questions"
 msgstr "Συχνές ερωτήσεις"
 
-msgid "Shows a list of frequently asked questions and answers."
+#, fuzzy
+msgid "Shows a list of frequently asked questions and their answers."
 msgstr "Κατάλογος συχνών ερωτήσεων και απαντήσεων."
 
 msgid "Insert label..."
 msgstr "Εισαγωγή ετικέτας.."
 
-msgid "Insert a text label."
-msgstr "Εισαγωγή κειμένου."
+msgid ""
+"Insert a text label (select and click in the main window where you want the "
+"label)."
+msgstr ""
 
 msgid "Donate"
 msgstr "Δωρεές"
@@ -570,6 +575,19 @@ msgstr "Δωρεές"
 
 msgid "Create an animation by variating a constant."
 msgstr ""
+
+msgid "Graph file..."
+msgstr "Αρχείο γραφικών..."
+
+#, fuzzy
+msgid "Import a Graph file into the current coordinate system."
+msgstr "Εισαγωγή γραφήματος στο τρέχον σύστημα συντεταγμένων."
+
+msgid "Point series..."
+msgstr "Σειρές σημείων..."
+
+msgid "Import point series from a data file."
+msgstr "Εισαγωγή σημειοσειράς από αρχείο δεδομένων."
 
 msgid "Select color"
 msgstr "Επιλογή χρώματος"
@@ -853,18 +871,12 @@ msgstr "Εισαγωγή περιγραφής στην ετικέτα."
 msgid ""
 "Type a value in the Intercept box to specify the point where you want the "
 "trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendline."
+"and exponential trendlines."
 msgstr ""
 
 #, fuzzy
 msgid "Intercept ="
 msgstr "Internet"
-
-msgid ""
-"Type a value in the Intercept box to specify the point where you want the "
-"trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendlines."
-msgstr ""
 
 msgid "Insert point series"
 msgstr "Εισαγωγή σειράς σημείων"
@@ -1179,7 +1191,9 @@ msgstr "Δεύτερη συνάρτηση"
 msgid "2nd function:"
 msgstr "Δεύτερη συνάρτηση:"
 
-msgid "Select second function, when you want a shading between two functions."
+#, fuzzy
+msgid ""
+"Select the second function when you want a shading between two functions."
 msgstr ""
 "Επιλογή δεύτερης συνάρτησης,όταν θέλετε γραμμοσκίαση μεταξύ δύο συναρτήσεων. "
 
@@ -1296,7 +1310,7 @@ msgstr "Βήματα:"
 msgid "Frames/second:"
 msgstr ""
 
-msgid "Choose a constant to change between each frame.."
+msgid "Choose a constant to change between each frame."
 msgstr ""
 
 #, fuzzy
@@ -1393,7 +1407,8 @@ msgstr "Χρήση λογαριθμικής κλίμακας στον άξονα
 msgid "Logarithmic scale"
 msgstr "Λογαριθμική κλίμακα"
 
-msgid "Show label at the right side above the x-axis."
+#, fuzzy
+msgid "Show the label at the right side of the main window, above the x-axis."
 msgstr "Εμφάνιση λεζάντας δεξιά πάνω από τον άξονα των χ."
 
 msgid "Label:"
@@ -1468,7 +1483,9 @@ msgstr "Μονάδες μεταξύ υποδιαιρέσεων στον άξον
 msgid "Show units on the y-axis."
 msgstr "Εμφάνιση μονάδων στον άξονα των y."
 
-msgid "Show label at the top of the window to the right of the y-axis."
+#, fuzzy
+msgid ""
+"Show the label at the top of the main window, to the right of the y-axis."
 msgstr "Εμφάνιση λεζάντας στην κορυφή του παράθυρου δεξιά από τον άξονα των y."
 
 #, fuzzy
@@ -1510,8 +1527,9 @@ msgstr "Κέντρο"
 msgid "Boxed"
 msgstr "Άκρη"
 
+#, fuzzy
 msgid ""
-"Choose if trigonometric functions should calculate in radian or degrees."
+"Choose if trigonometric functions should calculate in radians or degrees."
 msgstr ""
 "Επιλέξατε αν οι τριγωνομετρικές συναρτήσεις υπολογίζονται σε ακτίνια ή "
 "μοίρες."
@@ -1652,7 +1670,8 @@ msgstr "Ορθογώνια"
 msgid "Polar"
 msgstr "Πολική"
 
-msgid "Show tooltip when the cursor is over something."
+#, fuzzy
+msgid "Show the tooltip when the cursor is over an item."
 msgstr "Εμφάνιση συμβουλής όταν ο δρομέας είναι πάνω από κάτι."
 
 msgid "Show tooltip"
@@ -1673,8 +1692,9 @@ msgstr ""
 msgid "Check for new version of Graph at startup"
 msgstr "Έλεγχος για νεότερη έκδοση του  Graph στην εκκίνηση"
 
-msgid "Select language to use."
-msgstr "Επιλογή γλώσσας."
+#, fuzzy
+msgid "Select the language to use for the user interface."
+msgstr "Επιλογή στιλ γραμμοσκιάσεως."
 
 msgid ""
 "This is used to scale the user interface if you are having problems reading "
@@ -1794,9 +1814,6 @@ msgstr "Αναίρεση τελευταίας ενέργειας."
 
 msgid "Redo last undone action."
 msgstr "Ακύρωση αναίρεσης."
-
-msgid "Cut selected text to the clipboard."
-msgstr "Αποκοπή επιλεγμένου κειμένου στο πρόχειρο."
 
 msgid "Paste the contents of the clipboard."
 msgstr "Επικόλληση  επιλεγμένου κειμένου από το πρόχειρο."
@@ -1922,8 +1939,8 @@ msgstr "Πάρα πολλές επαναλαμβανόμενες ενέργει�
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Απροσδόκητος τελεστής. Ο τελεστής '%s' σε λάθος θέση."
 
-msgid "End of parenthesis missing."
-msgstr "Η παρένθεση δεν έκλεισε."
+msgid "Right bracket missing."
+msgstr ""
 
 msgid "Invalid number of arguments supplied for function '%s'"
 msgstr "Λάθος αριθμός παραμέτρων στη συνάρτηση '%s'"
@@ -1942,7 +1959,8 @@ msgstr "Το πλαίσιο είναι άδειο.Βάλτε μια συνάρτ
 msgid "Comma is not allowed here. Use dot as decimal separator."
 msgstr "Δεν επιτρέπεται κόμμα, Χρησιμοποιείστε τελεία για τους δεκαδικούς."
 
-msgid "Unexpected end of parenthesis."
+#, fuzzy
+msgid "Unexpected end of brackets."
 msgstr "Απροσδόκητο κλείσιμο της παρένθεσης."
 
 msgid "Number, constant or function expected."
@@ -2029,10 +2047,12 @@ msgstr ""
 "πρέπει να αρχίζει με γράμμα.\n"
 "Επιπροσθέτως δεν επιτρέπεται να αλλάζουν προκαθορισμένα ονόματα."
 
-msgid "The end parenthesis is missing."
+#, fuzzy
+msgid "The right bracket is missing."
 msgstr "Η παρένθεση δεν έκλεισε."
 
-msgid "Character found after the parenthesis."
+#, fuzzy
+msgid "Character found after brackets."
 msgstr "Βρέθηκε γράμμα μετά την παρένθεση."
 
 msgid "Symbol \"%s\" defined more than once."
@@ -2102,9 +2122,10 @@ msgstr "'%s' πρέπει να είναι θετικός αριθμός."
 msgid "File not found: %s"
 msgstr "Ο φάκελλος δεν βρέθηκε: %s"
 
+#, fuzzy
 msgid ""
 "Error reading file: %s\n"
-"File is not a correct graph file."
+" The file is not a correct Graph file."
 msgstr ""
 "Σφάλμα ανάγνωσης αρχείου: %s\n"
 "Το αρχείο δεν είναι σωστό graph αρχείο"
@@ -2416,16 +2437,18 @@ msgstr "Εισαγωγή  f'(x)"
 msgid "Edit trendline"
 msgstr "Επεξεργασία σχέσης"
 
+#, fuzzy
 msgid ""
-"This Tip Of The day can give you a lot of information about the program that "
+"This Tip of the day can give you a lot of information about the program that "
 "most users don't know."
 msgstr ""
 "Αυτή η Συμβουλή της ημέρας δίνει πολλές πληροφορίες για το πρόγραμμα που "
 "πολλοί χρήστες αγνοούν."
 
+#, fuzzy
 msgid ""
 "You can send suggestions for future versions, bug reports and comments to "
-"graph@padowan.dk."
+"graph@padowan.dk"
 msgstr ""
 "Μπορείτε να στέλνετε προτάσεις για μελλοντικές εκδόσεις, αναφορές αστοχιών "
 "και σχόλια στο graph@padowan.dk."
@@ -2927,6 +2950,27 @@ msgstr "Αριθμός αντιτύπων:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#~ msgid "Edit options."
+#~ msgstr "Επεξεργασία προτιμήσεων."
+
+#~ msgid "Insert a new point series."
+#~ msgstr "Εισαγωγή νέας σειράς σημείων."
+
+#~ msgid "Calculates area under the path."
+#~ msgstr "Υπολογισμός του εμβαδού κάτω από μία συνάρτηση."
+
+#~ msgid "Insert a text label."
+#~ msgstr "Εισαγωγή κειμένου."
+
+#~ msgid "Select language to use."
+#~ msgstr "Επιλογή γλώσσας."
+
+#~ msgid "Cut selected text to the clipboard."
+#~ msgstr "Αποκοπή επιλεγμένου κειμένου στο πρόχειρο."
+
+#~ msgid "End of parenthesis missing."
+#~ msgstr "Η παρένθεση δεν έκλεισε."
 
 #, fuzzy
 #~ msgid "Panel1"
