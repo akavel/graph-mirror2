@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2006-05-31 19:27\n"
+"POT-Creation-Date: 2006-06-17 10:25\n"
 "PO-Revision-Date: 2006-01-14 12:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,12 +18,18 @@ msgstr "A:"
 msgid "Area"
 msgstr "Area"
 
-msgid "Enter a start coordinate or mark the range on the image with the mouse."
+#, fuzzy
+msgid ""
+"Enter the start coordinate or mark the range on the graph itself with the "
+"mouse."
 msgstr ""
 "Inserisci la coordinata iniziale oppure delimitane il range sul grafico col "
 "mouse."
 
-msgid "Enter the end coordinate or mark the range on the image with the mouse."
+#, fuzzy
+msgid ""
+"Enter the end coordinate or mark the range on the graph itself with the "
+"mouse."
 msgstr ""
 "Inserisci la coordinata finale oppure delimitane il range sul grafico col "
 "mouse."
@@ -134,18 +140,6 @@ msgstr "File"
 
 msgid "Import"
 msgstr "Importa"
-
-msgid "Graph file..."
-msgstr "File Graph..."
-
-msgid "Import a graph file into the current coordinate system."
-msgstr "Importa un file di Graph nel sistema cartesiano corrente."
-
-msgid "Point series..."
-msgstr "Serie di punti..."
-
-msgid "Import point series from a data file."
-msgstr "Importa serie di punti da file."
 
 msgid "Edit"
 msgstr "Modifica"
@@ -309,8 +303,8 @@ msgstr "Modifica impostazioni assi."
 msgid "Options..."
 msgstr "Opzioni..."
 
-msgid "Edit options."
-msgstr "Modifica opzioni."
+msgid "Edit various options for the interface and program features."
+msgstr ""
 
 msgid "Insert function..."
 msgstr "Inserisci funzione..."
@@ -322,7 +316,7 @@ msgid "Insert tangent/normal..."
 msgstr "Inserisci tangente/perpendicolare..."
 
 #, fuzzy
-msgid "Insert a new tangent or normal for the selected function."
+msgid "Insert a tangent or normal for the selected function."
 msgstr "Inserisci nuova tangente per la funzione selezionata."
 
 msgid "Insert shade..."
@@ -335,8 +329,9 @@ msgstr "Aggiungi ombreggiatura ad una funzione."
 msgid "Insert point series..."
 msgstr "Inserisci serie di punti..."
 
-msgid "Insert a new point series."
-msgstr "Inserisci nuova serie di punti."
+#, fuzzy
+msgid "Insert a point series."
+msgstr "Inserisci serie di punti"
 
 msgid "Insert trendline..."
 msgstr "Inserisci linea di tendenza..."
@@ -386,8 +381,8 @@ msgstr "Quadrato"
 
 #, fuzzy
 msgid ""
-"Zoom to scale the axes equal. This will show a circle in the correct "
-"relation instead of an ellipse."
+"Zoom to scale the axes equally. This will show a plotted circle in its "
+"correct relation instead of an ellipse."
 msgstr ""
 "Aggiusta la scala degli assi in modo che un cerchio venga visto come tale, e "
 "non come un'elisse."
@@ -404,25 +399,29 @@ msgstr "Sposta"
 msgid "Move up"
 msgstr "Sposta su"
 
-msgid "Move the window up the coordinate system."
+#, fuzzy
+msgid "Move the window up along the coordinate system."
 msgstr "Sposta su la finestra rispetto al sistema cartesiano."
 
 msgid "Move down"
 msgstr "Sposta giù"
 
-msgid "Move the window down the coordinate system."
+#, fuzzy
+msgid "Move the window down along the coordinate system."
 msgstr "Sposta giù la finestra rispetto al sistema cartesiano."
 
 msgid "Move left"
 msgstr "Sposta a sinistra"
 
-msgid "Move the window to left of the coordinate system."
+#, fuzzy
+msgid "Move the window to the left along the coordinate system."
 msgstr "Sposta la finestra a sinistra rispetto al sistema cartesiano."
 
 msgid "Move right"
 msgstr "Sposta a destra"
 
-msgid "Move the window to the right of the coordinate system."
+#, fuzzy
+msgid "Move the window to the right along the coordinate system."
 msgstr "Sposta la finestra a destra rispetto al sistema cartesiano."
 
 msgid "Move system"
@@ -435,11 +434,13 @@ msgstr "Sposta col mouse il sistema cartesiano."
 msgid "Length of path"
 msgstr "Lunghezza curva..."
 
-msgid "Calculate length of path between two points."
+#, fuzzy
+msgid "Calculates the length of path between two given points on the curve."
 msgstr "Calcola la lunghezza della curva tra due punti."
 
-msgid "Calculates area under the path."
-msgstr "Calcola l'area sotto la curva."
+#, fuzzy
+msgid "Calculates the area under the path of the selected function."
+msgstr "Inserisci la derivata prima della funzione selezionata."
 
 msgid "Evaluate"
 msgstr "Calcola"
@@ -463,7 +464,8 @@ msgstr "Apri la guida."
 msgid "List of functions"
 msgstr "Lista di funzioni"
 
-msgid "Show list of functions that can be used for graphing."
+#, fuzzy
+msgid "Shows a list of built-in functions that can be used for graphing."
 msgstr "Mostra la lista delle funzioni da usare per tracciare grafici."
 
 msgid "Go to home page"
@@ -502,14 +504,17 @@ msgstr "Ingrandisci fino a rendere visibili tutti i punti."
 msgid "Frequently Asked Questions"
 msgstr "FAQ"
 
-msgid "Shows a list of frequently asked questions and answers."
+#, fuzzy
+msgid "Shows a list of frequently asked questions and their answers."
 msgstr "Mostra la lista delle FAQ e risposte."
 
 msgid "Insert label..."
 msgstr "Inserisci etichetta..."
 
-msgid "Insert a text label."
-msgstr "Inserisci etichetta di testo."
+msgid ""
+"Insert a text label (select and click in the main window where you want the "
+"label)."
+msgstr ""
 
 msgid "Donate"
 msgstr "Dona"
@@ -572,6 +577,19 @@ msgstr "Dona"
 
 msgid "Create an animation by variating a constant."
 msgstr ""
+
+msgid "Graph file..."
+msgstr "File Graph..."
+
+#, fuzzy
+msgid "Import a Graph file into the current coordinate system."
+msgstr "Importa un file di Graph nel sistema cartesiano corrente."
+
+msgid "Point series..."
+msgstr "Serie di punti..."
+
+msgid "Import point series from a data file."
+msgstr "Importa serie di punti da file."
 
 msgid "Select color"
 msgstr "Seleziona colore"
@@ -856,18 +874,12 @@ msgstr "Digita una descrizione da mostrare in legenda."
 msgid ""
 "Type a value in the Intercept box to specify the point where you want the "
 "trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendline."
+"and exponential trendlines."
 msgstr ""
 
 #, fuzzy
 msgid "Intercept ="
 msgstr "Internet"
-
-msgid ""
-"Type a value in the Intercept box to specify the point where you want the "
-"trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendlines."
-msgstr ""
 
 msgid "Insert point series"
 msgstr "Inserisci serie di punti"
@@ -1181,7 +1193,9 @@ msgstr "Seconda funzione"
 msgid "2nd function:"
 msgstr "Seconda funzione:"
 
-msgid "Select second function, when you want a shading between two functions."
+#, fuzzy
+msgid ""
+"Select the second function when you want a shading between two functions."
 msgstr ""
 "Seleziona la seconda funzione, se vuoi l'ombreggiatura tra le due funzioni."
 
@@ -1298,7 +1312,7 @@ msgstr "Step:"
 msgid "Frames/second:"
 msgstr ""
 
-msgid "Choose a constant to change between each frame.."
+msgid "Choose a constant to change between each frame."
 msgstr ""
 
 #, fuzzy
@@ -1395,7 +1409,8 @@ msgstr "Usa scala logaritmica per l'asse x."
 msgid "Logarithmic scale"
 msgstr "Scala Logaritmica"
 
-msgid "Show label at the right side above the x-axis."
+#, fuzzy
+msgid "Show the label at the right side of the main window, above the x-axis."
 msgstr "Mostra etichetta sul lato destro sopra l'asse x."
 
 msgid "Label:"
@@ -1470,7 +1485,9 @@ msgstr "Unità tra i segni di graduazione sull'asse y."
 msgid "Show units on the y-axis."
 msgstr "Mostra unità sull'asse y."
 
-msgid "Show label at the top of the window to the right of the y-axis."
+#, fuzzy
+msgid ""
+"Show the label at the top of the main window, to the right of the y-axis."
 msgstr "Mostra etichetta in alto alla destra dell'asse y."
 
 #, fuzzy
@@ -1512,8 +1529,9 @@ msgstr "Incrociato"
 msgid "Boxed"
 msgstr "Riquadro"
 
+#, fuzzy
 msgid ""
-"Choose if trigonometric functions should calculate in radian or degrees."
+"Choose if trigonometric functions should calculate in radians or degrees."
 msgstr ""
 "Scegli se le funzioni trigonometriche devono utilizzare radianti o gradi "
 "come unità di misura."
@@ -1654,7 +1672,8 @@ msgstr "Rettangolare"
 msgid "Polar"
 msgstr "Polare"
 
-msgid "Show tooltip when the cursor is over something."
+#, fuzzy
+msgid "Show the tooltip when the cursor is over an item."
 msgstr "Mostra suggerimenti quando il cursore è sopra un qualche oggetto."
 
 msgid "Show tooltip"
@@ -1675,8 +1694,9 @@ msgstr ""
 msgid "Check for new version of Graph at startup"
 msgstr "Controlla nuove versioni di Graph all'avvio"
 
-msgid "Select language to use."
-msgstr "Seleziona la lingua da usare."
+#, fuzzy
+msgid "Select the language to use for the user interface."
+msgstr "Seleziona lo stile per l'ombreggiatura."
 
 msgid ""
 "This is used to scale the user interface if you are having problems reading "
@@ -1797,9 +1817,6 @@ msgstr "Annulla ultima azione."
 
 msgid "Redo last undone action."
 msgstr "Ripristina l'ultima azione."
-
-msgid "Cut selected text to the clipboard."
-msgstr "Taglia negli appunti il testo selezionato."
 
 msgid "Paste the contents of the clipboard."
 msgstr "Incolla il contenuto degli appunti."
@@ -1928,8 +1945,8 @@ msgstr "Troppe chiamate ricorsive."
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Operatore inaspettato. L'Operatore '%s' non può essere messo qui."
 
-msgid "End of parenthesis missing."
-msgstr "Manca la chiusura della parentesi."
+msgid "Right bracket missing."
+msgstr ""
 
 msgid "Invalid number of arguments supplied for function '%s'"
 msgstr "Numero invalido di argomenti passato alla funzione '%s'"
@@ -1947,7 +1964,8 @@ msgstr "La stringa è vuota. Devi inserire una funzione."
 msgid "Comma is not allowed here. Use dot as decimal separator."
 msgstr "Qui la virgola non è permessa; Usa il punto come separatore decimale."
 
-msgid "Unexpected end of parenthesis."
+#, fuzzy
+msgid "Unexpected end of brackets."
 msgstr "Chiusura di parentesi inattesa."
 
 msgid "Number, constant or function expected."
@@ -2035,10 +2053,12 @@ msgstr ""
 "cominciare con una lettera.\n"
 "Inoltre non è possibile usare i nomi predefiniti come nomi per gli argomenti"
 
-msgid "The end parenthesis is missing."
+#, fuzzy
+msgid "The right bracket is missing."
 msgstr "Manca la chiusura della parentesi."
 
-msgid "Character found after the parenthesis."
+#, fuzzy
+msgid "Character found after brackets."
 msgstr "Rilevato un carattere dopo la parentesi."
 
 msgid "Symbol \"%s\" defined more than once."
@@ -2108,9 +2128,10 @@ msgstr "'%s' deve essere un numero positivo."
 msgid "File not found: %s"
 msgstr "File non trovato: %s"
 
+#, fuzzy
 msgid ""
 "Error reading file: %s\n"
-"File is not a correct graph file."
+" The file is not a correct Graph file."
 msgstr ""
 "Errore in lettura del file: %s\n"
 "Il file non è un file di Graph corretto."
@@ -2419,16 +2440,18 @@ msgstr "Inserisci f'(x)"
 msgid "Edit trendline"
 msgstr "Modifica relazione"
 
+#, fuzzy
 msgid ""
-"This Tip Of The day can give you a lot of information about the program that "
+"This Tip of the day can give you a lot of information about the program that "
 "most users don't know."
 msgstr ""
 "Questo suggerimento del giorno può darti molte informazioni sul programma "
 "che molti non sanno."
 
+#, fuzzy
 msgid ""
 "You can send suggestions for future versions, bug reports and comments to "
-"graph@padowan.dk."
+"graph@padowan.dk"
 msgstr ""
 "Puoi inviare suggerimenti per versioni future, bug reports e commenti a "
 "graph@padowan.dk."
@@ -2930,6 +2953,27 @@ msgstr "Numero di copie:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#~ msgid "Edit options."
+#~ msgstr "Modifica opzioni."
+
+#~ msgid "Insert a new point series."
+#~ msgstr "Inserisci nuova serie di punti."
+
+#~ msgid "Calculates area under the path."
+#~ msgstr "Calcola l'area sotto la curva."
+
+#~ msgid "Insert a text label."
+#~ msgstr "Inserisci etichetta di testo."
+
+#~ msgid "Select language to use."
+#~ msgstr "Seleziona la lingua da usare."
+
+#~ msgid "Cut selected text to the clipboard."
+#~ msgstr "Taglia negli appunti il testo selezionato."
+
+#~ msgid "End of parenthesis missing."
+#~ msgstr "Manca la chiusura della parentesi."
 
 #, fuzzy
 #~ msgid "Panel1"

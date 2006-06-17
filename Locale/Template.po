@@ -1,7 +1,7 @@
 msgid "" 
 msgstr "Project-Id-Version: Graph\n" 
-"POT-Creation-Date: 2006-05-31 19:27\n"
-"PO-Revision-Date: 2006-05-31 19:27\n"
+"POT-Creation-Date: 2006-06-17 10:25\n"
+"PO-Revision-Date: 2006-06-17 10:25\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,12 +17,12 @@ msgstr ""
 msgid "Area"
 msgstr ""
 
-msgid "Enter a start coordinate or mark the range on the image with the "
-"mouse."
+msgid "Enter the start coordinate or mark the range on the graph itself with "
+"the mouse."
 msgstr ""
 
-msgid "Enter the end coordinate or mark the range on the image with the "
-"mouse."
+msgid "Enter the end coordinate or mark the range on the graph itself with "
+"the mouse."
 msgstr ""
 
 msgid "Area or length of path calculated for the given range using Simpson's "
@@ -128,19 +128,6 @@ msgid "File"
 msgstr ""
 
 msgid "Import"
-msgstr ""
-
-msgid "Graph file..."
-msgstr ""
-
-msgid "Import a graph file into the current coordinate "
-"system."
-msgstr ""
-
-msgid "Point series..."
-msgstr ""
-
-msgid "Import point series from a data file."
 msgstr ""
 
 msgid "Edit"
@@ -315,7 +302,8 @@ msgstr ""
 msgid "Options..."
 msgstr ""
 
-msgid "Edit options."
+msgid "Edit various options for the interface and program "
+"features."
 msgstr ""
 
 msgid "Insert function..."
@@ -327,7 +315,7 @@ msgstr ""
 msgid "Insert tangent/normal..."
 msgstr ""
 
-msgid "Insert a new tangent or normal for the selected "
+msgid "Insert a tangent or normal for the selected "
 "function."
 msgstr ""
 
@@ -340,7 +328,7 @@ msgstr ""
 msgid "Insert point series..."
 msgstr ""
 
-msgid "Insert a new point series."
+msgid "Insert a point series."
 msgstr ""
 
 msgid "Insert trendline..."
@@ -392,8 +380,8 @@ msgstr ""
 msgid "Square"
 msgstr ""
 
-msgid "Zoom to scale the axes equal. This will show a circle in the correct "
-"relation instead of an ellipse."
+msgid "Zoom to scale the axes equally. This will show a plotted circle in "
+"its correct relation instead of an ellipse."
 msgstr ""
 
 msgid "Standard"
@@ -408,27 +396,28 @@ msgstr ""
 msgid "Move up"
 msgstr ""
 
-msgid "Move the window up the coordinate system."
+msgid "Move the window up along the coordinate "
+"system."
 msgstr ""
 
 msgid "Move down"
 msgstr ""
 
-msgid "Move the window down the coordinate "
+msgid "Move the window down along the coordinate "
 "system."
 msgstr ""
 
 msgid "Move left"
 msgstr ""
 
-msgid "Move the window to left of the coordinate "
+msgid "Move the window to the left along the coordinate "
 "system."
 msgstr ""
 
 msgid "Move right"
 msgstr ""
 
-msgid "Move the window to the right of the coordinate "
+msgid "Move the window to the right along the coordinate "
 "system."
 msgstr ""
 
@@ -442,11 +431,12 @@ msgstr ""
 msgid "Length of path"
 msgstr ""
 
-msgid "Calculate length of path between two "
-"points."
+msgid "Calculates the length of path between two given points on the "
+"curve."
 msgstr ""
 
-msgid "Calculates area under the path."
+msgid "Calculates the area under the path of the selected "
+"function."
 msgstr ""
 
 msgid "Evaluate"
@@ -470,7 +460,7 @@ msgstr ""
 msgid "List of functions"
 msgstr ""
 
-msgid "Show list of functions that can be used for "
+msgid "Shows a list of built-in functions that can be used for "
 "graphing."
 msgstr ""
 
@@ -512,14 +502,15 @@ msgstr ""
 msgid "Frequently Asked Questions"
 msgstr ""
 
-msgid "Shows a list of frequently asked questions and "
+msgid "Shows a list of frequently asked questions and their "
 "answers."
 msgstr ""
 
 msgid "Insert label..."
 msgstr ""
 
-msgid "Insert a text label."
+msgid "Insert a text label (select and click in the main window where you "
+"want the label)."
 msgstr ""
 
 msgid "Donate"
@@ -582,6 +573,19 @@ msgid "Animate..."
 msgstr ""
 
 msgid "Create an animation by variating a constant."
+msgstr ""
+
+msgid "Graph file..."
+msgstr ""
+
+msgid "Import a Graph file into the current coordinate "
+"system."
+msgstr ""
+
+msgid "Point series..."
+msgstr ""
+
+msgid "Import point series from a data file."
 msgstr ""
 
 msgid "Select color"
@@ -861,15 +865,10 @@ msgstr ""
 
 msgid "Type a value in the Intercept box to specify the point where you want "
 "the trendline to meet the y-axis. This is only available for linear, "
-"polynomial and exponential trendline."
+"polynomial and exponential trendlines."
 msgstr ""
 
 msgid "Intercept ="
-msgstr ""
-
-msgid "Type a value in the Intercept box to specify the point where you want "
-"the trendline to meet the y-axis. This is only available for linear, "
-"polynomial and exponential trendlines."
 msgstr ""
 
 msgid "Insert point series"
@@ -1180,7 +1179,7 @@ msgstr ""
 msgid "2nd function:"
 msgstr ""
 
-msgid "Select second function, when you want a shading between two "
+msgid "Select the second function when you want a shading between two "
 "functions."
 msgstr ""
 
@@ -1287,7 +1286,7 @@ msgid "Frames/second:"
 msgstr ""
 
 msgid "Choose a constant to change between each "
-"frame.."
+"frame."
 msgstr ""
 
 msgid "The first value of the constant"
@@ -1376,7 +1375,7 @@ msgstr ""
 msgid "Logarithmic scale"
 msgstr ""
 
-msgid "Show label at the right side above the "
+msgid "Show the label at the right side of the main window, above the "
 "x-axis."
 msgstr ""
 
@@ -1450,7 +1449,7 @@ msgstr ""
 msgid "Show units on the y-axis."
 msgstr ""
 
-msgid "Show label at the top of the window to the right of the "
+msgid "Show the label at the top of the main window, to the right of the "
 "y-axis."
 msgstr ""
 
@@ -1491,7 +1490,7 @@ msgstr ""
 msgid "Boxed"
 msgstr ""
 
-msgid "Choose if trigonometric functions should calculate in radian or "
+msgid "Choose if trigonometric functions should calculate in radians or "
 "degrees."
 msgstr ""
 
@@ -1625,8 +1624,8 @@ msgstr ""
 msgid "Polar"
 msgstr ""
 
-msgid "Show tooltip when the cursor is over "
-"something."
+msgid "Show the tooltip when the cursor is over an "
+"item."
 msgstr ""
 
 msgid "Show tooltip"
@@ -1644,7 +1643,8 @@ msgstr ""
 msgid "Check for new version of Graph at startup"
 msgstr ""
 
-msgid "Select language to use."
+msgid "Select the language to use for the user "
+"interface."
 msgstr ""
 
 msgid "This is used to scale the user interface if you are having problems "
@@ -1758,9 +1758,6 @@ msgid "Undo last action."
 msgstr ""
 
 msgid "Redo last undone action."
-msgstr ""
-
-msgid "Cut selected text to the clipboard."
 msgstr ""
 
 msgid "Paste the contents of the clipboard."
@@ -1896,7 +1893,7 @@ msgid "Unexpected operator. Operator '%s' cannot be placed "
 "here."
 msgstr ""
 
-msgid "End of parenthesis missing."
+msgid "Right bracket missing."
 msgstr ""
 
 msgid "Invalid number of arguments supplied for function "
@@ -1918,7 +1915,7 @@ msgid "Comma is not allowed here. Use dot as decimal "
 "separator."
 msgstr ""
 
-msgid "Unexpected end of parenthesis."
+msgid "Unexpected end of brackets."
 msgstr ""
 
 msgid "Number, constant or function expected."
@@ -1998,10 +1995,10 @@ msgid "Invalid argument name '%s'.\n"
 "names."
 msgstr ""
 
-msgid "The end parenthesis is missing."
+msgid "The right bracket is missing."
 msgstr ""
 
-msgid "Character found after the parenthesis."
+msgid "Character found after brackets."
 msgstr ""
 
 msgid "Symbol \"%s\" defined more than once."
@@ -2076,7 +2073,7 @@ msgid "File not found: %s"
 msgstr ""
 
 msgid "Error reading file: %s\n"
-"File is not a correct graph file."
+" The file is not a correct Graph file."
 msgstr ""
 
 msgid "Unknown error while reading file: %s"
@@ -2346,12 +2343,12 @@ msgstr ""
 msgid "Edit trendline"
 msgstr ""
 
-msgid "This Tip Of The day can give you a lot of information about the "
+msgid "This Tip of the day can give you a lot of information about the "
 "program that most users don't know."
 msgstr ""
 
 msgid "You can send suggestions for future versions, bug reports and "
-"comments to graph@padowan.dk."
+"comments to graph@padowan.dk"
 msgstr ""
 
 msgid "You can customize the toolbar by right clicking on it and select "

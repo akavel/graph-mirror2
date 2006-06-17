@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2006-05-31 19:27\n"
+"POT-Creation-Date: 2006-06-17 10:25\n"
 "PO-Revision-Date: 2006-01-14 12:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,10 +18,16 @@ msgstr "Do:"
 msgid "Area"
 msgstr "Ploščina"
 
-msgid "Enter a start coordinate or mark the range on the image with the mouse."
+#, fuzzy
+msgid ""
+"Enter the start coordinate or mark the range on the graph itself with the "
+"mouse."
 msgstr "Vpiši začetno koordinato ali označi interval na sliki."
 
-msgid "Enter the end coordinate or mark the range on the image with the mouse."
+#, fuzzy
+msgid ""
+"Enter the end coordinate or mark the range on the graph itself with the "
+"mouse."
 msgstr "Vpiši končno koordinato ali označi interval na sliki."
 
 msgid ""
@@ -127,18 +133,6 @@ msgstr "Datoteka"
 
 msgid "Import"
 msgstr "Uvozi"
-
-msgid "Graph file..."
-msgstr "Graph datoteka..."
-
-msgid "Import a graph file into the current coordinate system."
-msgstr "Uvozi datoteko z grafom v trenutni koordinatni sistem."
-
-msgid "Point series..."
-msgstr "Zaporedje točk..."
-
-msgid "Import point series from a data file."
-msgstr "Uvozi zaporedje točk iz datoteke."
 
 msgid "Edit"
 msgstr "Uredi"
@@ -301,8 +295,8 @@ msgstr "Uredi Lastnosti osi."
 msgid "Options..."
 msgstr "Možnosti..."
 
-msgid "Edit options."
-msgstr "Uredi Možnosti"
+msgid "Edit various options for the interface and program features."
+msgstr ""
 
 msgid "Insert function..."
 msgstr "Vstavi funkcijo."
@@ -314,7 +308,7 @@ msgid "Insert tangent/normal..."
 msgstr "Vstavi tangento/normalo..."
 
 #, fuzzy
-msgid "Insert a new tangent or normal for the selected function."
+msgid "Insert a tangent or normal for the selected function."
 msgstr "Vstavi novo tangento za izbrano funkcijo."
 
 msgid "Insert shade..."
@@ -327,8 +321,9 @@ msgstr "Dodaj senco funkciji."
 msgid "Insert point series..."
 msgstr "Vstavi zaporedje točk... "
 
-msgid "Insert a new point series."
-msgstr "Vsatvi novo zaporedje točk."
+#, fuzzy
+msgid "Insert a point series."
+msgstr "Vstavi zaporedje točk"
 
 msgid "Insert trendline..."
 msgstr "Vstavi trendno črto..."
@@ -378,8 +373,8 @@ msgstr "Izenači"
 
 #, fuzzy
 msgid ""
-"Zoom to scale the axes equal. This will show a circle in the correct "
-"relation instead of an ellipse."
+"Zoom to scale the axes equally. This will show a plotted circle in its "
+"correct relation instead of an ellipse."
 msgstr "Izenači merilo osi. Prikazan bo krog namesto elipse."
 
 msgid "Standard"
@@ -394,25 +389,29 @@ msgstr "Premakni"
 msgid "Move up"
 msgstr "Pomakni gor"
 
-msgid "Move the window up the coordinate system."
+#, fuzzy
+msgid "Move the window up along the coordinate system."
 msgstr "Pomakni okno po koordinatnem sistemu navzgor."
 
 msgid "Move down"
 msgstr "Pomakni dol"
 
-msgid "Move the window down the coordinate system."
+#, fuzzy
+msgid "Move the window down along the coordinate system."
 msgstr "Pomakni okno po koordinatnem sistemu navzdol."
 
 msgid "Move left"
 msgstr "Pomakni levo"
 
-msgid "Move the window to left of the coordinate system."
+#, fuzzy
+msgid "Move the window to the left along the coordinate system."
 msgstr "Pomakni okno po koordinatnem sistemu levo."
 
 msgid "Move right"
 msgstr "Pomakni desno"
 
-msgid "Move the window to the right of the coordinate system."
+#, fuzzy
+msgid "Move the window to the right along the coordinate system."
 msgstr "Pomakni okno po koordinatnem sistemu desno."
 
 msgid "Move system"
@@ -425,11 +424,13 @@ msgstr "Premakni koordinatni sistem s miško."
 msgid "Length of path"
 msgstr "Dolžina poti..."
 
-msgid "Calculate length of path between two points."
+#, fuzzy
+msgid "Calculates the length of path between two given points on the curve."
 msgstr "Izračunaj dolžino poti med dvema točkama."
 
-msgid "Calculates area under the path."
-msgstr "Izračuna območje pod potjo."
+#, fuzzy
+msgid "Calculates the area under the path of the selected function."
+msgstr "Vstavi prvi odvod za izbrano funkcijo. "
 
 msgid "Evaluate"
 msgstr "Ovrednoti"
@@ -453,7 +454,8 @@ msgstr "Odpri pomoč."
 msgid "List of functions"
 msgstr "Spisek funkcij"
 
-msgid "Show list of functions that can be used for graphing."
+#, fuzzy
+msgid "Shows a list of built-in functions that can be used for graphing."
 msgstr "Prikaži spisek funkcij, ki se lahko uporabljajo za izris."
 
 msgid "Go to home page"
@@ -492,14 +494,17 @@ msgstr "Prilagodi povečavo da bodo prikazane vse točke."
 msgid "Frequently Asked Questions"
 msgstr "Pogosto zastavljena vprašanja"
 
-msgid "Shows a list of frequently asked questions and answers."
+#, fuzzy
+msgid "Shows a list of frequently asked questions and their answers."
 msgstr "Prikaže spisek pogosto zastavljenih vprašanj in odgovorov."
 
 msgid "Insert label..."
 msgstr "Vstavi oznako..."
 
-msgid "Insert a text label."
-msgstr "Vstavi besedilno oznako."
+msgid ""
+"Insert a text label (select and click in the main window where you want the "
+"label)."
+msgstr ""
 
 msgid "Donate"
 msgstr "Darujte"
@@ -562,6 +567,19 @@ msgstr "Darujte"
 
 msgid "Create an animation by variating a constant."
 msgstr ""
+
+msgid "Graph file..."
+msgstr "Graph datoteka..."
+
+#, fuzzy
+msgid "Import a Graph file into the current coordinate system."
+msgstr "Uvozi datoteko z grafom v trenutni koordinatni sistem."
+
+msgid "Point series..."
+msgstr "Zaporedje točk..."
+
+msgid "Import point series from a data file."
+msgstr "Uvozi zaporedje točk iz datoteke."
 
 msgid "Select color"
 msgstr "Izberite barvo"
@@ -845,18 +863,12 @@ msgstr "Vtipkajte opis za legendo."
 msgid ""
 "Type a value in the Intercept box to specify the point where you want the "
 "trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendline."
+"and exponential trendlines."
 msgstr ""
 
 #, fuzzy
 msgid "Intercept ="
 msgstr "Internet"
-
-msgid ""
-"Type a value in the Intercept box to specify the point where you want the "
-"trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendlines."
-msgstr ""
 
 msgid "Insert point series"
 msgstr "Vstavi zaporedje točk"
@@ -1168,7 +1180,9 @@ msgstr "Druga funkcija"
 msgid "2nd function:"
 msgstr "Druga funkcija:"
 
-msgid "Select second function, when you want a shading between two functions."
+#, fuzzy
+msgid ""
+"Select the second function when you want a shading between two functions."
 msgstr "Izberite drugo funkcijo za senčenje med dvema funkcijama."
 
 msgid "Shading range for 2nd function"
@@ -1284,7 +1298,7 @@ msgstr "Koraki:"
 msgid "Frames/second:"
 msgstr ""
 
-msgid "Choose a constant to change between each frame.."
+msgid "Choose a constant to change between each frame."
 msgstr ""
 
 #, fuzzy
@@ -1381,7 +1395,8 @@ msgstr "Uporabi logaritmično merilo na x-osi."
 msgid "Logarithmic scale"
 msgstr "Logaritmično merilo"
 
-msgid "Show label at the right side above the x-axis."
+#, fuzzy
+msgid "Show the label at the right side of the main window, above the x-axis."
 msgstr "Prikaži oznako na desbi strani nad x osjo."
 
 msgid "Label:"
@@ -1456,7 +1471,9 @@ msgstr "Število enot med oznakami y-osi."
 msgid "Show units on the y-axis."
 msgstr "Prikaži enote na y osi."
 
-msgid "Show label at the top of the window to the right of the y-axis."
+#, fuzzy
+msgid ""
+"Show the label at the top of the main window, to the right of the y-axis."
 msgstr "Prikaži oznako na vrhu okna desno od y osi."
 
 #, fuzzy
@@ -1498,8 +1515,9 @@ msgstr "Križ"
 msgid "Boxed"
 msgstr "Obdano"
 
+#, fuzzy
 msgid ""
-"Choose if trigonometric functions should calculate in radian or degrees."
+"Choose if trigonometric functions should calculate in radians or degrees."
 msgstr ""
 "Izberite ali bodo trigonometrične funkcije računane v radianih ali v "
 "stopinjah."
@@ -1639,7 +1657,8 @@ msgstr "Pravokotna"
 msgid "Polar"
 msgstr "Polarna"
 
-msgid "Show tooltip when the cursor is over something."
+#, fuzzy
+msgid "Show the tooltip when the cursor is over an item."
 msgstr "Pokaži nasvet, ko je miškin kazalec nad nečem."
 
 msgid "Show tooltip"
@@ -1660,8 +1679,9 @@ msgstr ""
 msgid "Check for new version of Graph at startup"
 msgstr "Preveri za novo verzijo Graph-a ob zagonu."
 
-msgid "Select language to use."
-msgstr "Izberi jezik."
+#, fuzzy
+msgid "Select the language to use for the user interface."
+msgstr "Izberite slog senc."
 
 msgid ""
 "This is used to scale the user interface if you are having problems reading "
@@ -1782,9 +1802,6 @@ msgstr "Razveljavi zadnjo potezo"
 
 msgid "Redo last undone action."
 msgstr "Uveljavi zadnjo razveljavljeno potezo."
-
-msgid "Cut selected text to the clipboard."
-msgstr "Izreži izbrano besedilo v odložišče."
 
 msgid "Paste the contents of the clipboard."
 msgstr "Prilepi vsebino iz odložišča."
@@ -1910,8 +1927,8 @@ msgstr "Preveč rekurzivnih klicev."
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Nepričakovan operator. Operator '%s' tukaj ne sme biti postavljen."
 
-msgid "End of parenthesis missing."
-msgstr "Konec oklepaja manjka."
+msgid "Right bracket missing."
+msgstr ""
 
 msgid "Invalid number of arguments supplied for function '%s'"
 msgstr "Neveljavno število danih argumentov k funkciji '%s'"
@@ -1929,7 +1946,8 @@ msgstr "Vtipkati moraš funkcijo."
 msgid "Comma is not allowed here. Use dot as decimal separator."
 msgstr "Vejica ni dovoljena; Za decimalni zapis uporabi piko."
 
-msgid "Unexpected end of parenthesis."
+#, fuzzy
+msgid "Unexpected end of brackets."
 msgstr "Nepričakovan konec oklepaja."
 
 msgid "Number, constant or function expected."
@@ -2014,10 +2032,12 @@ msgstr ""
 "Ime lahko vsebuje le črke in števke. Začeti se mora s črko.\n"
 "Poleg tega ne smete uporabljati vgrajenih imen za ime argumenta."
 
-msgid "The end parenthesis is missing."
+#, fuzzy
+msgid "The right bracket is missing."
 msgstr "Majnkajoč zaklepaj"
 
-msgid "Character found after the parenthesis."
+#, fuzzy
+msgid "Character found after brackets."
 msgstr "Znak najden izven oklepaja"
 
 msgid "Symbol \"%s\" defined more than once."
@@ -2087,9 +2107,10 @@ msgstr "'%s' mora biti večji od 0."
 msgid "File not found: %s"
 msgstr "Datoteka ne obstaja: %s"
 
+#, fuzzy
 msgid ""
 "Error reading file: %s\n"
-"File is not a correct graph file."
+" The file is not a correct Graph file."
 msgstr ""
 "Napaka pri branju datoteke: %s\n"
 "Napačna datoteka."
@@ -2385,16 +2406,18 @@ msgstr "Vstavi f'(x)"
 msgid "Edit trendline"
 msgstr "Uredi relacijo"
 
+#, fuzzy
 msgid ""
-"This Tip Of The day can give you a lot of information about the program that "
+"This Tip of the day can give you a lot of information about the program that "
 "most users don't know."
 msgstr ""
 "Nasvet dneva vam lahko pove veliko informacij o programu, ki jih večina "
 "uprabnikov ne ve."
 
+#, fuzzy
 msgid ""
 "You can send suggestions for future versions, bug reports and comments to "
-"graph@padowan.dk."
+"graph@padowan.dk"
 msgstr ""
 "Predloge za bodoče različice, poročila o hroščih in komentarje lahko "
 "pošljete na graph@padowan.dk."
@@ -2883,6 +2906,27 @@ msgstr "Število kopij:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#~ msgid "Edit options."
+#~ msgstr "Uredi Možnosti"
+
+#~ msgid "Insert a new point series."
+#~ msgstr "Vsatvi novo zaporedje točk."
+
+#~ msgid "Calculates area under the path."
+#~ msgstr "Izračuna območje pod potjo."
+
+#~ msgid "Insert a text label."
+#~ msgstr "Vstavi besedilno oznako."
+
+#~ msgid "Select language to use."
+#~ msgstr "Izberi jezik."
+
+#~ msgid "Cut selected text to the clipboard."
+#~ msgstr "Izreži izbrano besedilo v odložišče."
+
+#~ msgid "End of parenthesis missing."
+#~ msgstr "Konec oklepaja manjka."
 
 #, fuzzy
 #~ msgid "Panel1"

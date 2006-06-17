@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2006-05-31 19:27\n"
+"POT-Creation-Date: 2006-06-17 10:25\n"
 "PO-Revision-Date: 2006-01-14 12:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: Pekka Lerssi <pekka.lerssi@tut.fi>\n"
@@ -20,10 +20,16 @@ msgstr "Loppu:"
 msgid "Area"
 msgstr "Pinta-ala"
 
-msgid "Enter a start coordinate or mark the range on the image with the mouse."
+#, fuzzy
+msgid ""
+"Enter the start coordinate or mark the range on the graph itself with the "
+"mouse."
 msgstr "Syötä alkupiste tai valitse alue kuvaajasta hiirellä"
 
-msgid "Enter the end coordinate or mark the range on the image with the mouse."
+#, fuzzy
+msgid ""
+"Enter the end coordinate or mark the range on the graph itself with the "
+"mouse."
 msgstr "Syötä loppupiste tai valitse alue kuvaajasta hiirellä"
 
 msgid ""
@@ -128,18 +134,6 @@ msgstr "Tiedosto"
 
 msgid "Import"
 msgstr "Tuo"
-
-msgid "Graph file..."
-msgstr "Graph-tiedosto..."
-
-msgid "Import a graph file into the current coordinate system."
-msgstr "Tuo Graph-tiedoston nykyiseen koordinaatistoon."
-
-msgid "Point series..."
-msgstr "Pistejoukko..."
-
-msgid "Import point series from a data file."
-msgstr "Tuo pistejoukon tiedostosta."
 
 msgid "Edit"
 msgstr "Muokkaa"
@@ -302,8 +296,8 @@ msgstr "Muokkaa koordinaattiakseleiden asetuksia."
 msgid "Options..."
 msgstr "Asetukset..."
 
-msgid "Edit options."
-msgstr "Muokkaa asetuksia."
+msgid "Edit various options for the interface and program features."
+msgstr ""
 
 msgid "Insert function..."
 msgstr "Lisää funktio..."
@@ -315,7 +309,7 @@ msgid "Insert tangent/normal..."
 msgstr "Lisää tangentti/normaali..."
 
 #, fuzzy
-msgid "Insert a new tangent or normal for the selected function."
+msgid "Insert a tangent or normal for the selected function."
 msgstr "Lisää tangentin tai normaalin valittuun funktioon."
 
 msgid "Insert shade..."
@@ -328,8 +322,9 @@ msgstr "Lisää varjostuksen valittuun funktioon."
 msgid "Insert point series..."
 msgstr "Lisää pistejoukko..."
 
-msgid "Insert a new point series."
-msgstr "Lisää uuden pistejoukon."
+#, fuzzy
+msgid "Insert a point series."
+msgstr "Lisää pistejoukko"
 
 msgid "Insert trendline..."
 msgstr "Lisää trendiviiva..."
@@ -379,8 +374,8 @@ msgstr "Neliö"
 
 #, fuzzy
 msgid ""
-"Zoom to scale the axes equal. This will show a circle in the correct "
-"relation instead of an ellipse."
+"Zoom to scale the axes equally. This will show a plotted circle in its "
+"correct relation instead of an ellipse."
 msgstr ""
 "Zoomaa akselit tasavälisiksi. Esimerkiksi ympyrä näkyy oikean muotoisena, ei "
 "ellipsinä."
@@ -397,25 +392,29 @@ msgstr "Siirrä"
 msgid "Move up"
 msgstr "Ylös"
 
-msgid "Move the window up the coordinate system."
+#, fuzzy
+msgid "Move the window up along the coordinate system."
 msgstr "Siirtää näkymää ylös."
 
 msgid "Move down"
 msgstr "Alas"
 
-msgid "Move the window down the coordinate system."
+#, fuzzy
+msgid "Move the window down along the coordinate system."
 msgstr "Siirtää näkymää alas."
 
 msgid "Move left"
 msgstr "Vasemmalle"
 
-msgid "Move the window to left of the coordinate system."
+#, fuzzy
+msgid "Move the window to the left along the coordinate system."
 msgstr "Siirtää näkymää vasemmalle."
 
 msgid "Move right"
 msgstr "Oikealle"
 
-msgid "Move the window to the right of the coordinate system."
+#, fuzzy
+msgid "Move the window to the right along the coordinate system."
 msgstr "Siirtää näkymää oikealle."
 
 msgid "Move system"
@@ -428,11 +427,13 @@ msgstr "Siirrä koordinaatistoa hiirellä."
 msgid "Length of path"
 msgstr "Kaaren pituus..."
 
-msgid "Calculate length of path between two points."
+#, fuzzy
+msgid "Calculates the length of path between two given points on the curve."
 msgstr "Laskee kahden pisteen välisen kaaren pituuden."
 
-msgid "Calculates area under the path."
-msgstr "Laskee funktion ja x-akselin välisen pinta-alan valitulla alueella."
+#, fuzzy
+msgid "Calculates the area under the path of the selected function."
+msgstr "Lisää ensimmäisen derivaatan valittuun funktioon."
 
 msgid "Evaluate"
 msgstr "Laske funktion arvoja"
@@ -456,7 +457,8 @@ msgstr "Avaa ohjetiedoston."
 msgid "List of functions"
 msgstr "Lista funktioista"
 
-msgid "Show list of functions that can be used for graphing."
+#, fuzzy
+msgid "Shows a list of built-in functions that can be used for graphing."
 msgstr "Näyttää listan käytettävissä olevista funktioista."
 
 msgid "Go to home page"
@@ -495,14 +497,17 @@ msgstr "Sovittaa kaikkien pistejoukkojen pisteet ikkunaan."
 msgid "Frequently Asked Questions"
 msgstr "Usein kysytyt kysymykset"
 
-msgid "Shows a list of frequently asked questions and answers."
+#, fuzzy
+msgid "Shows a list of frequently asked questions and their answers."
 msgstr "Näyttää listan usein kysytyistä kysymyksistä vastauksineen."
 
 msgid "Insert label..."
 msgstr "Lisää teksti..."
 
-msgid "Insert a text label."
-msgstr "Lisää tekstiä."
+msgid ""
+"Insert a text label (select and click in the main window where you want the "
+"label)."
+msgstr ""
 
 msgid "Donate"
 msgstr "Lahjoita"
@@ -565,6 +570,19 @@ msgstr "Lahjoita"
 
 msgid "Create an animation by variating a constant."
 msgstr ""
+
+msgid "Graph file..."
+msgstr "Graph-tiedosto..."
+
+#, fuzzy
+msgid "Import a Graph file into the current coordinate system."
+msgstr "Tuo Graph-tiedoston nykyiseen koordinaatistoon."
+
+msgid "Point series..."
+msgstr "Pistejoukko..."
+
+msgid "Import point series from a data file."
+msgstr "Tuo pistejoukon tiedostosta."
 
 msgid "Select color"
 msgstr "Valitse väri"
@@ -847,18 +865,12 @@ msgstr "Kirjoita selite."
 msgid ""
 "Type a value in the Intercept box to specify the point where you want the "
 "trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendline."
+"and exponential trendlines."
 msgstr ""
 
 #, fuzzy
 msgid "Intercept ="
 msgstr "Internet"
-
-msgid ""
-"Type a value in the Intercept box to specify the point where you want the "
-"trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendlines."
-msgstr ""
 
 msgid "Insert point series"
 msgstr "Lisää pistejoukko"
@@ -1168,7 +1180,9 @@ msgstr "Toinen funktio"
 msgid "2nd function:"
 msgstr "Toinen funktio:"
 
-msgid "Select second function, when you want a shading between two functions."
+#, fuzzy
+msgid ""
+"Select the second function when you want a shading between two functions."
 msgstr "Valitse toinen funktio, jos varjostat kahden funktion välistä aluetta."
 
 msgid "Shading range for 2nd function"
@@ -1282,7 +1296,7 @@ msgstr "Askeleita:"
 msgid "Frames/second:"
 msgstr ""
 
-msgid "Choose a constant to change between each frame.."
+msgid "Choose a constant to change between each frame."
 msgstr ""
 
 #, fuzzy
@@ -1379,7 +1393,8 @@ msgstr "Käyttää logaritmista asteikkoa x-akselille."
 msgid "Logarithmic scale"
 msgstr "Logaritminen asteikko"
 
-msgid "Show label at the right side above the x-axis."
+#, fuzzy
+msgid "Show the label at the right side of the main window, above the x-axis."
 msgstr "Näyttää otsikon x-akselin yläpuolella oikeassa reunassa."
 
 msgid "Label:"
@@ -1454,7 +1469,9 @@ msgstr "Valitse y-akselin numeroinnin jakoväli."
 msgid "Show units on the y-axis."
 msgstr "Näytä numerointi y-akselilla."
 
-msgid "Show label at the top of the window to the right of the y-axis."
+#, fuzzy
+msgid ""
+"Show the label at the top of the main window, to the right of the y-axis."
 msgstr "Näyttää otsikon y-akselin oikealla puolella yläreunassa."
 
 #, fuzzy
@@ -1494,8 +1511,9 @@ msgstr "Ristissä"
 msgid "Boxed"
 msgstr "Kulmittain"
 
+#, fuzzy
 msgid ""
-"Choose if trigonometric functions should calculate in radian or degrees."
+"Choose if trigonometric functions should calculate in radians or degrees."
 msgstr "Valitse lasketaanko trigonometriset funktiot radiaaneina vai asteina."
 
 msgid "Trigonometry"
@@ -1633,7 +1651,8 @@ msgstr "Suorakulmaisia"
 msgid "Polar"
 msgstr "Polaarisia"
 
-msgid "Show tooltip when the cursor is over something."
+#, fuzzy
+msgid "Show the tooltip when the cursor is over an item."
 msgstr "Näyttää työkaluvihjeet, kun jotain osoitetaan."
 
 msgid "Show tooltip"
@@ -1652,8 +1671,9 @@ msgstr "Tarkistaa ohjelman päivitykset käynnistettäessä."
 msgid "Check for new version of Graph at startup"
 msgstr "Tarkista päivitykset käynnistettäessä"
 
-msgid "Select language to use."
-msgstr "Valitsee käytettävän kielen."
+#, fuzzy
+msgid "Select the language to use for the user interface."
+msgstr "Valitse varjostuksen tyyli."
 
 msgid ""
 "This is used to scale the user interface if you are having problems reading "
@@ -1773,9 +1793,6 @@ msgstr "Kumoaa viimeisen toiminnon."
 
 msgid "Redo last undone action."
 msgstr "Tekee kumotun toiminnon uudelleen."
-
-msgid "Cut selected text to the clipboard."
-msgstr "Leikkaa valitun tekstin leikepöydälle."
 
 msgid "Paste the contents of the clipboard."
 msgstr "Liittää leikepöydän sisällön."
@@ -1903,8 +1920,8 @@ msgstr "Liian monta rekursiivista kutsua."
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Odottamaton operaattori. Operaattoria '%s' ei voi sijoittaa tähän."
 
-msgid "End of parenthesis missing."
-msgstr "Sulkeita pariton määrä."
+msgid "Right bracket missing."
+msgstr ""
 
 msgid "Invalid number of arguments supplied for function '%s'"
 msgstr "Virheellinen määrä argumentteja funktiolle '%s'"
@@ -1924,7 +1941,8 @@ msgid "Comma is not allowed here. Use dot as decimal separator."
 msgstr ""
 "Pilkku ei ole sallittu desimaalierotin. Käytä pistettä desimaalierottimena."
 
-msgid "Unexpected end of parenthesis."
+#, fuzzy
+msgid "Unexpected end of brackets."
 msgstr "Odottamaton paikka loppusulkeelle."
 
 msgid "Number, constant or function expected."
@@ -2011,10 +2029,12 @@ msgstr ""
 "kirjaimella.\n"
 "Et voi määrittää uudelleen jo käytössä olevia nimiä."
 
-msgid "The end parenthesis is missing."
+#, fuzzy
+msgid "The right bracket is missing."
 msgstr "Sulkeita pariton määrä."
 
-msgid "Character found after the parenthesis."
+#, fuzzy
+msgid "Character found after brackets."
 msgstr "Merkki löydetty sulkeiden ulkopuolelta."
 
 msgid "Symbol \"%s\" defined more than once."
@@ -2084,9 +2104,10 @@ msgstr "Arvon '%s' tulee olla positiivinen."
 msgid "File not found: %s"
 msgstr "Tiedostoa ei löydy: %s"
 
+#, fuzzy
 msgid ""
 "Error reading file: %s\n"
-"File is not a correct graph file."
+" The file is not a correct Graph file."
 msgstr ""
 "Virhe luettaessa tiedostoa: %s\n"
 "Tiedosto ei ole kelvollinen Graph-tiedosto."
@@ -2394,16 +2415,18 @@ msgstr "Lisää f'(x)"
 msgid "Edit trendline"
 msgstr "Muokkaa relaatiota"
 
+#, fuzzy
 msgid ""
-"This Tip Of The day can give you a lot of information about the program that "
+"This Tip of the day can give you a lot of information about the program that "
 "most users don't know."
 msgstr ""
 "Tämä Päivän vihje antaa tietoa, jota monet ohjelman käyttäjät eivät ehkä "
 "tiedä."
 
+#, fuzzy
 msgid ""
 "You can send suggestions for future versions, bug reports and comments to "
-"graph@padowan.dk."
+"graph@padowan.dk"
 msgstr ""
 "Voit lähettää vikailmoitukset, ehdotukset ja kommentit osoitteeseen "
 "graph@padowan.dk."
@@ -2896,6 +2919,27 @@ msgstr "Kopioita:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#~ msgid "Edit options."
+#~ msgstr "Muokkaa asetuksia."
+
+#~ msgid "Insert a new point series."
+#~ msgstr "Lisää uuden pistejoukon."
+
+#~ msgid "Calculates area under the path."
+#~ msgstr "Laskee funktion ja x-akselin välisen pinta-alan valitulla alueella."
+
+#~ msgid "Insert a text label."
+#~ msgstr "Lisää tekstiä."
+
+#~ msgid "Select language to use."
+#~ msgstr "Valitsee käytettävän kielen."
+
+#~ msgid "Cut selected text to the clipboard."
+#~ msgstr "Leikkaa valitun tekstin leikepöydälle."
+
+#~ msgid "End of parenthesis missing."
+#~ msgstr "Sulkeita pariton määrä."
 
 #, fuzzy
 #~ msgid "Panel1"
