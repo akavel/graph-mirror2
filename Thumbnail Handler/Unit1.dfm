@@ -1,5 +1,6 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
   Left = 337
   Top = 167
   Height = 150
@@ -13,6 +14,7 @@ object DataModule1: TDataModule1
     Registration.Description = 'Graph Shell Extension'
     Registration.FileClass = '.grf'
     Registration.RegType = []
+    OnRegisterOverwriteHandler = EasyThumbnailHandler1RegisterOverwriteHandler
     Initialize = EasyThumbnailHandler1Initialize
     ExtractImage = EasyThumbnailHandler1ExtractImage
     Left = 120

@@ -38,6 +38,9 @@ type
     procedure EasyThumbnailHandler1ExtractImage(
       Sender: TEasyThumbnailHandler; var Bitmap: TBitmap;
       var Extracted: Boolean);
+    procedure DataModuleCreate(Sender: TObject);
+    procedure EasyThumbnailHandler1RegisterOverwriteHandler(
+      Sender: TObject; ObjectPath: String; var Overwrite: Boolean);
   private
     { Private declarations }
   public
@@ -53,6 +56,9 @@ var
   DataModule1: TDataModule1;
 
 implementation
+
+uses
+  Registry;
 
 {$R *.dfm}
 
@@ -247,6 +253,24 @@ begin
     // (Best not to exceed the size of the Bitmap but can be smaller)
     Extracted := ExtractIt;
   end;
+end;
+
+procedure TDataModule1.DataModuleCreate(Sender: TObject);
+var
+  Registry : TRegistry;
+begin
+  Registry := TRegistry.Create;
+  if Registry.OpenKeyReadOnly('Software\Ivan\Graph') then
+    if Registry.ValueExists('InstallAllUsers') then
+      if Registry.ReadInteger('InstallAllUsers') <> 0 then
+        EasyThumbnailHandler1.Registration.Scope := ensMachine;
+  Registry.Free;
+end;
+
+procedure TDataModule1.EasyThumbnailHandler1RegisterOverwriteHandler(
+  Sender: TObject; ObjectPath: String; var Overwrite: Boolean);
+begin
+  OverWrite := true;
 end;
 
 end.
