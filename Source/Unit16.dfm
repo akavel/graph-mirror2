@@ -24,8 +24,8 @@ object Form16: TForm16
     Top = 16
     Width = 321
     Height = 257
-    ActivePage = TabSheet1
-    TabIndex = 0
+    ActivePage = TabSheet3
+    TabIndex = 2
     TabOrder = 0
     object TabSheet1: TTntTabSheet
       Caption = 'Shading'
@@ -788,8 +788,8 @@ object Form16: TForm16
         Width = 297
         Height = 89
         Hint = 
-          'Select second function, when you want a shading between two func' +
-          'tions.'
+          'Select the second function when you want a shading between two f' +
+          'unctions.'
         Enabled = False
         ItemHeight = 13
         TabOrder = 0

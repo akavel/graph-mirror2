@@ -561,7 +561,7 @@ object Form13: TForm13
     Hint = 
       'Type a value in the Intercept box to specify the point where you' +
       ' want the trendline to meet the y-axis. This is only available f' +
-      'or linear, polynomial and exponential trendline.'
+      'or linear, polynomial and exponential trendlines.'
     Caption = 'Intercept ='
     TabOrder = 5
     OnClick = CheckBox1Click

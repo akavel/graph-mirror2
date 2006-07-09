@@ -124,7 +124,9 @@ object Form3: TForm3
         Top = 10
         Width = 150
         Height = 17
-        Hint = 'Show label at the right side above the x-axis.'
+        Hint = 
+          'Show the label at the right side of the main window, above the x' +
+          '-axis.'
         Caption = 'Label:'
         ParentShowHint = False
         ShowHint = True
@@ -204,7 +206,7 @@ object Form3: TForm3
       object CheckBox17: TTntCheckBox
         Left = 187
         Top = 160
-        Width = 190
+        Width = 198
         Height = 17
         Hint = 'Show units on the selected axis as a fraction multiplied by pi.'
         Caption = 'Show as a multiple of pi'
@@ -323,7 +325,9 @@ object Form3: TForm3
         Top = 10
         Width = 166
         Height = 17
-        Hint = 'Show label at the top of the window to the right of the y-axis.'
+        Hint = 
+          'Show the label at the top of the main window, to the right of th' +
+          'e y-axis.'
         Caption = 'Label:'
         TabOrder = 6
         OnClick = CheckBoxClick
@@ -390,7 +394,7 @@ object Form3: TForm3
       object CheckBox18: TTntCheckBox
         Left = 187
         Top = 160
-        Width = 169
+        Width = 198
         Height = 17
         Hint = 'Show units on the selected axis as a fraction multiplied by pi.'
         Caption = 'Show as a multiple of pi'
@@ -456,8 +460,8 @@ object Form3: TForm3
         Width = 97
         Height = 57
         Hint = 
-          'Choose if trigonometric functions should calculate in radian or ' +
-          'degrees.'
+          'Choose if trigonometric functions should calculate in radians or' +
+          ' degrees.'
         Anchors = [akTop, akRight]
         Caption = 'Trigonometry'
         ItemIndex = 0
@@ -737,7 +741,7 @@ object Form3: TForm3
     MinFontSize = 0
     MaxFontSize = 0
     Options = [fdEffects, fdForceFontExist]
-    Left = 344
+    Left = 336
     Top = 192
   end
 end
