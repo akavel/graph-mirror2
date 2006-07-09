@@ -194,6 +194,33 @@ void TestDif(const char *f, const char *df, TTrigonometry Trigonometry = Radian)
   }
 }
 
+
+void TestDif(const char *Str, long double x, long double y, TTrigonometry Trigonometry = Radian)
+{
+  try
+  {
+    TFunc Func(Str, "x", Trigonometry);
+    TFunc Dif = Func.MakeDif();
+    long double f = Dif(x);
+
+    if(!IsEqual(f, y))
+    {
+      cerr << "f(x)=" << Str << std::endl;
+      cerr << "f'(x)=" << Dif.MakeText() << std::endl;
+      cerr << "f'(" << x << ")=" << f << std::endl;
+      cerr << "Expected f'(" << x << ")=" << y << std::endl << std::endl;
+      cin.ignore();
+    }
+  }
+  catch(EFuncError &E)
+  {
+    cerr << "f(x)=" << Str << std::endl;
+    cerr << "Expected f'(" << x << ")=" << y << std::endl;
+    cerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
+    cin.ignore();
+  }
+}
+
 /** Called when BOOST_ASSERT fails.
  */
 namespace boost
@@ -321,6 +348,7 @@ void Test()
   Test("acot(x)", 1, PI/4);
   Test("acot(x)", 1, 45, Degree);
   Test("acot(x)", 0, PI/2);
+  Test("acot(x)", 0, 90, Degree);
 
   //Test logarihms
   Test("log(x)", 10000, 4);
@@ -477,6 +505,9 @@ void Test()
 
   //Test differentiation of special functions
   TestDif("dnorm(x)", "-exp(-x^2/2)*x*sqrt(2pi)/2pi");
+
+  //Test differentiation of inverse trigonometric functions
+  TestDif("acot(x)", 1, -28.647889756541160438399077407053, Degree);
 }
 
 int main()
