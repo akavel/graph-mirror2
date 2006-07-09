@@ -92,9 +92,9 @@ TOleServerImpl::~TOleServerImpl()
   ReleaseCom(DataAdviseHolder);
 
   //If the program was started for use with OLE, terminate application when OLE object is destroyed
-  if(FindCmdLineSwitch("EMBEDDING"))
-    Application->Terminate();
-}
+/*  if(FindCmdLineSwitch("EMBEDDING"))
+    Application->Terminate();*/
+}   
 //---------------------------------------------------------------------------
 template<typename T> void TOleServerImpl::ReleaseCom(T *&Unknown)
 {
@@ -212,11 +212,94 @@ AnsiString TOleServerImpl::DeviceToStr(const DVTARGETDEVICE *Device)
   return Str + "]";
 }
 //---------------------------------------------------------------------------
-HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
+void TOleServerImpl::LogException()
+{
+  std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
+  if(out)
+    try
+    {
+      throw;
+    }
+    catch(Exception &E)
+    {
+      out << "\nCaught exception with message '" << E.Message << "'" << std::endl;
+    }
+    catch(...)
+    {
+      out << "\nCaught unknown exception" << std::endl;
+    }
+}
+//---------------------------------------------------------------------------
+bool TOleServerImpl::CheckRegistration()
+{
+  try
+  {
+    AnsiString ClassKey = "CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
+    AnsiString ProgID = GetProgID();
+
+    if(GetRegValue(ClassKey + "\\LocalServer32", "", HKEY_CLASSES_ROOT, "") == Application->ExeName + " /automation" &&
+       GetRegValue(ProgID + "\\shell\\open\\command", "", HKEY_CLASSES_ROOT, "") == "\"" + Application->ExeName + "\" \"%1\"")
+      return true;
+  }
+  catch(...)
+  {                                
+  }
+  return false;
+}
+//---------------------------------------------------------------------------
+bool TOleServerImpl::Register(bool AllUsers)
 {
   try
   {
     AnsiString Clsid = Comobj::GUIDToString(CLSID_OleServer);
+    AnsiString ClassKey = "Software\\Classes\\CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
+    AnsiString ProgID = AnsiString("Software\\Classes\\") + GetProgID();
+    DWORD RootKey = reinterpret_cast<DWORD>(AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER);
+
+    CreateRegKey(ClassKey, "", "Graph System", RootKey);
+    CreateRegKey(ClassKey + "\\InprocHandler32", "", "OLE32.DLL", RootKey);
+    CreateRegKey(ClassKey + "\\Insertable", "", "", RootKey);
+
+    //The /automation switch is needed to prevent an extra instance that doesn't close when inserting from file in Word; Don't know why
+    //Don't use Quotes; Quotes prevents arguments from being passed under Windows 9x
+    CreateRegKey(ClassKey + "\\LocalServer32", "", Application->ExeName + " /automation", RootKey);
+    CreateRegKey(ClassKey + "\\Verb\\0", "", "&Open,0,2", RootKey);
+    CreateRegKey(ClassKey + "\\DefaultIcon", "", "\"" + Application->ExeName + "\",1", RootKey);
+    CreateRegKey(ClassKey + "\\AuxUserType\\2", "", "Graph System", RootKey);
+    CreateRegKey(ClassKey + "\\AuxUserType\\3", "", "Graph", RootKey);
+    CreateRegKey(ClassKey + "\\MiscStatus", "", OLEMISC_RENDERINGISDEVICEINDEPENDENT, RootKey);
+    CreateRegKey(ClassKey + "\\DataFormats\\DefaultFile", "", "Embed Souce", RootKey);
+    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\0", "", AnsiString("Embed Source,") + DVASPECT_CONTENT + "," + TYMED_ISTORAGE + "," + DATADIR_GET, RootKey);
+    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\1", "", AnsiString(CF_ENHMETAFILE) + "," + DVASPECT_CONTENT + "," + TYMED_ENHMF + "," + DATADIR_GET, RootKey);
+    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\2", "", AnsiString(CF_METAFILEPICT) + "," + DVASPECT_CONTENT + "," + TYMED_MFPICT + "," + DATADIR_GET, RootKey);
+    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\3", "", AnsiString(CF_BITMAP) + "," + DVASPECT_CONTENT + "," + TYMED_GDI + "," + DATADIR_GET, RootKey);
+    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\4", "", AnsiString("PNG") + "," + DVASPECT_CONTENT + "," + TYMED_ISTREAM + "," + DATADIR_GET, RootKey);
+    CreateRegKey(ClassKey + "\\ProgID", "", ProgID, RootKey);
+
+    CreateRegKey(ProgID, "", "Graph system", RootKey);
+    CreateRegKey(ProgID + "\\DefaultIcon", "", Application->ExeName + ",1", RootKey);
+    CreateRegKey(ProgID + "\\shell\\open\\command", "", "\"" + Application->ExeName + "\" \"%1\"", RootKey);
+    CreateRegKey(ProgID + "\\Insertable", "", "", RootKey);
+    CreateRegKey(ProgID + "\\Clsid", "", Clsid, RootKey);
+
+    //Remove local registration to prevent it from overwriting the global one
+    if(AllUsers)
+    {
+      RemoveRegistryKey(ClassKey, HKEY_CURRENT_USER);
+      RemoveRegistryKey(ProgID, HKEY_CURRENT_USER);
+    }
+    return true;
+  }
+  catch(...)
+  {
+    return false;
+  }
+}
+//---------------------------------------------------------------------------
+HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
+{
+  try
+  {
     AnsiString ClassKey = "CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
     AnsiString ProgID = GetProgID();
 
@@ -230,31 +313,19 @@ HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
       //Update version info to last registered version for current user
       CreateRegKey(REGISTRY_KEY, "Version", TVersionInfo().ProductVersion().Text().c_str(), (unsigned)HKEY_CURRENT_USER);
 
-      CreateRegKey(ClassKey, "", "Graph System");
-      CreateRegKey(ClassKey + "\\InprocHandler32", "", "OLE32.DLL");
-      CreateRegKey(ClassKey + "\\Insertable", "", "");
-
-      //The /automation switch is needed to prevent an extra instance that doesn't close when inserting from file in Word; Don't know why
-      //Don't use Quotes; Quotes prevents arguments from being passed under Windows 9x
-      CreateRegKey(ClassKey + "\\LocalServer32", "", Application->ExeName + " /automation");
-      CreateRegKey(ClassKey + "\\Verb\\0", "", "&Open,0,2");
-      CreateRegKey(ClassKey + "\\DefaultIcon", "", "\"" + Application->ExeName + "\",1");
-      CreateRegKey(ClassKey + "\\AuxUserType\\2", "", "Graph System");
-      CreateRegKey(ClassKey + "\\AuxUserType\\3", "", "Graph");
-      CreateRegKey(ClassKey + "\\MiscStatus", "", OLEMISC_RENDERINGISDEVICEINDEPENDENT);
-      CreateRegKey(ClassKey + "\\DataFormats\\DefaultFile", "", "Embed Souce");
-      CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\0", "", AnsiString("Embed Source,") + DVASPECT_CONTENT + "," + TYMED_ISTORAGE + "," + DATADIR_GET);
-      CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\1", "", AnsiString(CF_ENHMETAFILE) + "," + DVASPECT_CONTENT + "," + TYMED_ENHMF + "," + DATADIR_GET);
-      CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\2", "", AnsiString(CF_METAFILEPICT) + "," + DVASPECT_CONTENT + "," + TYMED_MFPICT + "," + DATADIR_GET);
-      CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\3", "", AnsiString(CF_BITMAP) + "," + DVASPECT_CONTENT + "," + TYMED_GDI + "," + DATADIR_GET);
-      CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\4", "", AnsiString("PNG") + "," + DVASPECT_CONTENT + "," + TYMED_ISTREAM + "," + DATADIR_GET);
-      CreateRegKey(ClassKey + "\\ProgID", "", ProgID);
-
-      CreateRegKey(ProgID, "", "Graph system");
-      CreateRegKey(ProgID + "\\DefaultIcon", "", Application->ExeName + ",1");
-      CreateRegKey(ProgID + "\\shell\\open\\command", "", "\"" + Application->ExeName + "\" \"%1\"");
-      CreateRegKey(ProgID + "\\Insertable", "", "");
-      CreateRegKey(ProgID + "\\Clsid", "", Clsid);
+      //If "Install for all users" was selected under installation,
+      //first try to register for all users. If that fails, register for current user only.
+      //Only install if the path is different from the current installation.
+      //This prevent a registration for each user if there is a machine wide registration available.
+      //As far as I know it is not possible to register for current user only under Windows 9x
+      if(FindCmdLineSwitch("REGSERVER") || !CheckRegistration())
+        if(GetRegValue(REGISTRY_KEY, "InstallAllUsers", HKEY_CURRENT_USER, 0) || !IsWinNT)
+        {
+          if(!Register(true))
+            Register(false);
+        }
+        else
+          Register(false);
     }
     else
     {
@@ -401,6 +472,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Close(
   CoDisconnectObject(static_cast<IPersistStorage*>(this), 0);
   CoDisconnectObject(static_cast<IPersistFile*>(this), 0);
 
+  CoLockObjectExternal(static_cast<IOleObject*>(this), false, true);  
+
   return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------
@@ -449,32 +522,43 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::DoVerb(
   DEBUG_CALL();
   LOG_ARG(AnsiString("iVerb=") + iVerb);
 
-  switch(iVerb)
+  try
   {
-    case OLEIVERB_SHOW:
-    case OLEIVERB_UIACTIVATE:
-    case OLEIVERB_INPLACEACTIVATE:
-    case OLEIVERB_PROPERTIES:
-    case OLEIVERB_PRIMARY:
-    case OLEIVERB_OPEN:
-      //Only call OnShowWindow() on embedded objects and not on linked objects
-      if(OleClientSite)
-        OleClientSite->OnShowWindow(true);
-      Form1->ActivateOleUserInterface();
-      Application->MainForm->Show();
-      pActiveSite->ShowObject();
-      break;
+    switch(iVerb)
+    {
+      case OLEIVERB_SHOW:
+      case OLEIVERB_PROPERTIES:
+      case OLEIVERB_PRIMARY:
+      case OLEIVERB_OPEN:
+        //Only call OnShowWindow() on embedded objects and not on linked objects
+        if(OleClientSite)
+          OleClientSite->OnShowWindow(true);
+        Form1->ActivateOleUserInterface();
+        Application->MainForm->Show();
+        if(pActiveSite)
+          pActiveSite->ShowObject();
 
-    case OLEIVERB_HIDE:
-      if(OleClientSite)
-        OleClientSite->OnShowWindow(false);
-      Application->MainForm->Hide();
-      break;
+        //This locks the user interface until either the user or the client closes the user interface  
+        CoLockObjectExternal(static_cast<IOleObject*>(this), true, true);
 
-    default:
-      return LOG_RESULT(OLEOBJ_S_INVALIDVERB);
+        SetForegroundWindow(Form1->Handle);
+        break;
+
+      case OLEIVERB_HIDE:
+      case OLEIVERB_UIACTIVATE:
+      case OLEIVERB_INPLACEACTIVATE:
+        return LOG_RESULT(E_NOTIMPL);
+
+      default:
+        return LOG_RESULT(OLEOBJ_S_INVALIDVERB);
+    }
+    return LOG_RESULT(S_OK);
   }
-  return LOG_RESULT(S_OK);
+  catch(...)
+  {
+    LogException();
+    return LOG_RESULT(E_FAIL);
+  }
 }
 //---------------------------------------------------------------------------
 HRESULT STDMETHODCALLTYPE TOleServerImpl::EnumVerbs(
