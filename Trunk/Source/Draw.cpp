@@ -426,7 +426,7 @@ void TDraw::DrawAxes()
       Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
 
     double xGridMin = GetMinValue(Axes.xAxis.GridUnit, Axes.xAxis.Min, Axes.xAxis.Max, Axes.yAxis.AxisCross, Axes.xAxis.LogScl);
-    double GridPixelMin = xPoint(xGridMin);
+    double GridPixelMin = xPointExact(xGridMin);
     double GridPixelScl = xScale * (Axes.xAxis.LogScl ? std::log(Axes.xAxis.GridUnit) : Axes.xAxis.GridUnit);
 
     for(double x = GridPixelMin; x < AxesRect.Right - Size(5); x += GridPixelScl)
@@ -443,6 +443,15 @@ void TDraw::DrawAxes()
             Context.DrawLine(X, AxesRect.Top, X, AxesRect.Bottom);
         }
     }
+    else if(Axes.xAxis.ShowTicks && Axes.xAxis.TickUnit > Axes.xAxis.GridUnit)
+    {
+      //Draw solid lines instead of ticks
+      Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
+      double xPixelScl = (Axes.xAxis.LogScl ? std::log(Axes.xAxis.TickUnit) : Axes.xAxis.TickUnit) * xScale;
+      for(double x = xPointExact(xTickMin); x < AxesRect.Right - Size(5); x += xPixelScl)
+        if(std::abs(x - xPixelCross) > 1) //Don't show at or beside axis (when scaled it might be moved a pixel or two)
+          Context.DrawLine(x, AxesRect.Top, x, AxesRect.Bottom);
+    }
   }
 
   if(Axes.yAxis.ShowGrid)
@@ -453,7 +462,7 @@ void TDraw::DrawAxes()
       Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
 
     double yGridMin = GetMinValue(Axes.yAxis.GridUnit, Axes.yAxis.Min, Axes.yAxis.Max, Axes.xAxis.AxisCross, Axes.yAxis.LogScl);
-    double GridPixelMin = yPoint(yGridMin);
+    double GridPixelMin = yPointExact(yGridMin);
     double GridPixelScl = yScale * (Axes.yAxis.LogScl ? std::log(Axes.yAxis.GridUnit) : Axes.yAxis.GridUnit);
 
     for(double y = GridPixelMin; y > AxesRect.Top + Size(5); y -= GridPixelScl)
@@ -470,6 +479,15 @@ void TDraw::DrawAxes()
             break;
           Context.DrawLine(AxesRect.Left, Y, AxesRect.Right, Y);
         }
+    }
+    else if(Axes.yAxis.ShowTicks && Axes.yAxis.TickUnit > Axes.yAxis.GridUnit)
+    {
+      //Draw solid lines instead of ticks
+      Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
+      double yPixelScl = (Axes.yAxis.LogScl ? std::log(Axes.yAxis.TickUnit) : Axes.yAxis.TickUnit) * yScale;
+      for(double y = yPointExact(yTickMin); y > AxesRect.Top + Size(5); y -= yPixelScl)
+        if(std::abs(y - yPixelCross) > 1) //Don't show at or beside axis (when scaled it might be moved a pixel or two)
+          Context.DrawLine(AxesRect.Left, y, AxesRect.Right, y);
     }
   }
 
@@ -570,7 +588,8 @@ void TDraw::DrawAxes()
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, 1);
     Context.DrawPolygon(Arrow, 4);
 
-    if(Axes.xAxis.ShowTicks)
+    //Only show ticks if we have not already drawn a solid grid line instead
+    if(Axes.xAxis.ShowTicks && (!Axes.xAxis.ShowGrid || Axes.xAxis.TickUnit <= Axes.xAxis.GridUnit))
       //Show coordinate points on x-axis
       for(double x = xPointExact(xTickMin); x < AxesRect.Right - Size(5); x += xPixelScl)
         if(std::abs(x - xPixelCross) > 1) //Don't show at or beside axis (when scaled it might be moved a pixel or two)
@@ -592,7 +611,8 @@ void TDraw::DrawAxes()
     Context.DrawPolygon(Arrow, 4);
 
     double yPixelScl = (Axes.yAxis.LogScl ? std::log(Axes.yAxis.TickUnit) : Axes.yAxis.TickUnit) * yScale;
-    if(Axes.yAxis.ShowTicks)
+    //Only show ticks if we have not already drawn a solid grid line instead
+    if(Axes.yAxis.ShowTicks && (!Axes.yAxis.ShowGrid || Axes.yAxis.TickUnit <= Axes.yAxis.GridUnit))
       //Show coordinate points on the y-axis
       for(double y = yPointExact(yTickMin); y > AxesRect.Top + Size(5); y -= yPixelScl)
         if(std::abs(y - yPixelCross) > 1) //Don't show at or beside axis (when scaled it might be moved a pixel or two)
