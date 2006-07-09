@@ -72,7 +72,7 @@ static const TFuncTable Table[] = {
 /*CodeCot*/         TFuncTable("cot",   arg1 == 1, "1/tan(x)", "-csc(x)^2*dx"),
 /*CodeACsc*/        TFuncTable("acsc",  arg1 == 1, "asin(1/x)", "-1/(abs(x)*sqrt(x^2-1))*dx"),
 /*CodeASec*/        TFuncTable("asec",  arg1 == 1, "acos(1/x)", "1/(abs(x)*sqrt(x^2-1))*dx"),
-/*CodeACot*/        TFuncTable("acot",  arg1 == 1, "if(x, atan(1/x), pi/2)", "-1/(1+x^2)*dx"),
+/*CodeACot*/        TFuncTable("acot",  arg1 == 1, "if(x, atan(1/x), acos(0))", "-1/(1+x^2)*dx"),
 /*CodeCsch*/        TFuncTable("csch",  arg1 == 1, "1/sinh(x)", "-csch(x)*coth(x)*dx"),
 /*CodeSech*/        TFuncTable("sech",  arg1 == 1, "1/cosh(x)", "-sech(x)*tanh(x)*dx"),
 /*CodeCoth*/        TFuncTable("coth",  arg1 == 1, "1/tanh(x)", "-csch(x)^2*dx"),
