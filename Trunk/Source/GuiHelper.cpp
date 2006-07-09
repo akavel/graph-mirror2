@@ -34,8 +34,8 @@ void TAddView::Visit(TTan &Tan)
 
   TTntTreeNode *Node = Form1->TreeView->Items->AddChild(Form1->GetNode(Tan.ParentFunc()), Str);
 
-  Node->ImageIndex = ICON_TAN_NODE;
-  Node->SelectedIndex = ICON_TAN_NODE;
+  Node->ImageIndex = Tan.TangentType == ttTangent ? ICON_TAN_NODE : ICON_NORMAL_NODE;
+  Node->SelectedIndex = Node->ImageIndex;
 }
 //---------------------------------------------------------------------------
 void TAddView::Visit(TShade &Shade)
