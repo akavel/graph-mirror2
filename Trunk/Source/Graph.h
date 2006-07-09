@@ -53,13 +53,14 @@
 
 #define REGISTRY_KEY "Software\\Ivan\\Graph"//Registry key to use
 
-#define ICON_SAVE       0 //Position of save icon used in StatusBar in image list
-#define ICON_PRINT      1
-#define ICON_FUNC_NODE  2 //Position of icons shown in TreeView
-#define ICON_TAN_NODE   3
-#define ICON_LABEL_NODE 4
-#define ICON_AXES_NODE  5
-#define ICON_BULLET     6
+#define ICON_SAVE         0 //Position of save icon used in StatusBar in image list
+#define ICON_PRINT        1
+#define ICON_FUNC_NODE    2 //Position of icons shown in TreeView
+#define ICON_TAN_NODE     3
+#define ICON_LABEL_NODE   4
+#define ICON_AXES_NODE    5
+#define ICON_BULLET       6
+#define ICON_NORMAL_NODE  7
 
 //The default font used if the chosen one can't be found
 #define DEFAULT_FONT "Times New Roman"
