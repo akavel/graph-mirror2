@@ -41,36 +41,38 @@ void CenterForm(TForm *Form)
 //Description:  A description of the file type
 //Icon:         Path and name of icon file and the number of icon in the file
 //              Ex. "C:\\WINWORD.EXE,0"
-void AssociateExt(AnsiString Ext,AnsiString ProgramName,AnsiString Ident,AnsiString Description,AnsiString Icon)
+void AssociateExt(AnsiString Ext, AnsiString ProgramName, AnsiString Ident, AnsiString Description, AnsiString Icon, bool AllUsers)
 {
-  //Make sure there is a dot before the extention
-  if(Ext[1] != '.')
-    Ext = AnsiString('.')+Ext;
-  //If no program name specified then use the application name
-  if(ProgramName.IsEmpty())
-    ProgramName = Application->ExeName;
-  //If no identifier when use the exe name without extention
-  if(Ident.IsEmpty())
-    Ident = Application->ExeName.SubString(1,Application->ExeName.AnsiPos("."));
-  //If no icon when use the icon from ProgramName
-  if(Icon.IsEmpty())
-    Icon=ProgramName+",0";
-  //Change ProgramName to format: "Name.ext" "%1"
-  ProgramName=AnsiString("\"")+ProgramName+"\" \"%1\"";
+  try
+  {
+    //Make sure there is a dot before the extention
+    if(Ext[1] != '.')
+      Ext = AnsiString('.') + Ext;
+    //If no program name specified then use the application name
+    if(ProgramName.IsEmpty())
+      ProgramName = Application->ExeName;
+    //If no identifier when use the exe name without extention
+    if(Ident.IsEmpty())
+      Ident = Application->ExeName.SubString(1,Application->ExeName.AnsiPos("."));
+    //If no icon when use the icon from ProgramName
+    if(Icon.IsEmpty())
+      Icon = ProgramName + ",0";
+    //Change ProgramName to format: "Name.ext" "%1"
+    ProgramName = "\"" + ProgramName + "\" \"%1\"";
 
-  std::auto_ptr<TRegistry> Registry(new TRegistry);
-  Registry->RootKey=HKEY_CLASSES_ROOT;
-  if(Registry->OpenKey(AnsiString('\\')+Ext,true))
-    Registry->WriteString("",Ident);
-  if(Registry->OpenKey(AnsiString('\\')+Ident,true))
-    Registry->WriteString("",Description);
-  if(Registry->OpenKey(AnsiString('\\')+Ident+"\\DefaultIcon",true))
-    Registry->WriteString("",Icon);
-  if(Registry->OpenKey(AnsiString('\\')+Ident+"\\shell\\open\\command",true))
-    Registry->WriteString("",ProgramName);
+    DWORD RootKey = reinterpret_cast<DWORD>(AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER);
 
-  //Tell the shell that a file association has been changed
-  SHChangeNotify(SHCNE_ASSOCCHANGED,0,NULL,NULL);
+    CreateRegKey("Software\\Classes\\" + Ext, "", Ident, RootKey);
+    CreateRegKey("Software\\Classes\\" + Ident, "", Description, RootKey);
+    CreateRegKey("Software\\Classes\\" + Ident + "\\DefaultIcon", "", Icon, RootKey);
+    CreateRegKey("Software\\Classes\\" + Ident + "\\shell\\open\\command", "", ProgramName, RootKey);
+
+    //Tell the shell that a file association has been changed
+    SHChangeNotify(SHCNE_ASSOCCHANGED, 0, NULL, NULL);
+  }
+  catch(...)
+  {
+  }
 }
 //---------------------------------------------------------------------------
 //This function removes an association between a file type and a program
@@ -78,13 +80,17 @@ void AssociateExt(AnsiString Ext,AnsiString ProgramName,AnsiString Ident,AnsiStr
 //Ident is the identifier used when the association was made. Ex. "docfile"
 void RemoveAsociation(AnsiString Ext, AnsiString Ident)
 {
-  if(GetRegStringValue("\\" + Ext, "") == Ident)
-    DeleteRegKey("\\" + Ext);
+  //Make sure there is a dot before the extention
+  if(Ext[1] != '.')
+    Ext = AnsiString('.') + Ext;
 
-  DeleteRegKey("\\" + Ident);
+  if(GetRegStringValue(Ext, "") == Ident)
+    DeleteRegKey(Ext);
+
+  DeleteRegKey(Ident);
 
   //Tell the shell that a file association has been changed
-  SHChangeNotify(SHCNE_ASSOCCHANGED,0,NULL,NULL);
+  SHChangeNotify(SHCNE_ASSOCCHANGED, 0, NULL, NULL);
 }
 //---------------------------------------------------------------------------
 //This function checks if a file type is associated with a program
