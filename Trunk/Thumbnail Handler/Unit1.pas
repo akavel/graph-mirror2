@@ -186,8 +186,7 @@ procedure TDataModule1.EasyThumbnailHandler1Initialize(
   Sender: TEasyThumbnailHandler; var Initialized: Boolean);
 begin
   Sender.Cache := True;  // Have Explorer cach the image
-//  Sender.Async := False; // If the client wants to extract the image in a different thread don't allow it
-  Sender.Async := True; //Allow etraction from another thread. Is this a good idea? Consequences?
+  Sender.Async := True; //Allow extraction from another thread. Is this a good idea? Consequences?
   Sender.Refresh := True; //Show Refresh thumbnail in explorer context menu (Doesn't seem to work)
   Initialized := True;
 end;
