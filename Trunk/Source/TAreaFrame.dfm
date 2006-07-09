@@ -38,8 +38,8 @@ object AreaFrame: TAreaFrame
     Width = 127
     Height = 21
     Hint = 
-      'Enter a start coordinate or mark the range on the image with the' +
-      ' mouse.'
+      'Enter the start coordinate or mark the range on the graph itself' +
+      ' with the mouse.'
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
   end
@@ -49,8 +49,8 @@ object AreaFrame: TAreaFrame
     Width = 127
     Height = 21
     Hint = 
-      'Enter the end coordinate or mark the range on the image with the' +
-      ' mouse.'
+      'Enter the end coordinate or mark the range on the graph itself w' +
+      'ith the mouse.'
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 1
   end

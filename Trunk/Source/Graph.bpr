@@ -17,8 +17,7 @@
       ..\Obj\Unit17.obj ..\Obj\Unit18.obj ..\Obj\Unit19.obj ..\Obj\Unit20.obj 
       ..\Obj\Tokenizer.obj ..\Obj\TStdFuncFrame.obj ..\Obj\TParFuncFrame.obj 
       ..\Obj\TPolFuncFrame.obj ..\Obj\TTanFrame.obj ..\Obj\TAreaFrame.obj 
-      ..\Obj\OleServerImpl.obj ..\Obj\Graph_TLB.obj ..\Obj\pdflib.obj 
-      ..\Obj\gnugettext.obj"/>
+      ..\Obj\OleServerImpl.obj ..\Obj\Graph_TLB.obj ..\Obj\pdflib.obj &quot;D:\Program Files\dxgettext\gnugettext.obj&quot;"/>
     <RESFILES value="Graph.res Graph.tlb Resource.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
@@ -39,7 +38,7 @@
       visualdbclx.lib dclocx.lib xmlrtl.lib TntLibR.lib dclusr.lib"/>
     <PACKAGES value="vcl.bpi rtl.bpi IComp.bpi vcldb.bpi dbrtl.bpi indy.bpi"/>
     <PATHCPP value=".;..\Components\Common;..\..\PDFlib-Lite\bind\pdflib\cpp"/>
-    <PATHPAS value=".;d:\progra~1\dxgettext"/>
+    <PATHPAS value=".;"/>
     <PATHRC value=".;"/>
     <PATHASM value=".;"/>
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
@@ -131,7 +130,7 @@
       <FILE FILENAME="Graph.tlb" FORMNAME="" UNITNAME="Graph.tlb" CONTAINERID="TypeLibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\Func32\Func32.lib" FORMNAME="" UNITNAME="Func32.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Resource.rc" FORMNAME="" UNITNAME="Resource.rc" CONTAINERID="RC" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="d:\progra~1\dxgettext\gnugettext.pas" FORMNAME="" UNITNAME="gnugettext" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\Program Files\dxgettext\gnugettext.obj" FORMNAME="" UNITNAME="gnugettext.obj" CONTAINERID="OBJTool" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -148,7 +147,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=2
 Release=0
-Build=304
+Build=306
 Debug=1
 PreRelease=0
 Special=0
@@ -160,7 +159,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.2.0.304
+FileVersion=4.2.0.306
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2006
 LegalTrademarks=
@@ -217,5 +216,47 @@ Item9=..\Components\TSaveDialogEx;D:\Program Files\Borland\CBuilder6\Projects;..
 Item10=D:\Program Files\Borland\CBuilder6\Projects;..\Components\Common;..\Components\TIPrintDialog;d:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton
 Item11=..\Components\Common;..\Components\TIPrintDialog;d:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton
 Item12=..\ms-
+Item13=
+Item14=
+Item15=
+Item16=
+Item17=
+Item18=
+Item19=
+Item20=
+Item21=
+Item22=
+Item23=
+Item24=
+Item25=
+Item26=
+Item27=
+Item28=
+Item29=
+
+[Debugging]
+DebugSourceDirs=
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
   </IDEOPTIONS>
 </PROJECT>

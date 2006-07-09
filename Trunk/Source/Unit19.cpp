@@ -25,6 +25,13 @@ __fastcall TForm19::TForm19(TComponent* Owner)
   TranslateProperties(this);
   SetAccelerators(this);
 
+  int Left = Label5->Left + Label5->Width + 5;
+  ResizeControl(ComboBox1, Left);
+  ResizeControl(Edit1, Left);
+  ResizeControl(Edit2, Left);
+  ResizeControl(Edit3, Left);
+  ResizeControl(Edit4, Left);
+
   dwICValue = dwICValue; //Avoid stupid warning
   TData &Data = Form1->Data;
 

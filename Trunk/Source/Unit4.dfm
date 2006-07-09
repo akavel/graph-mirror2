@@ -174,7 +174,7 @@ object Form4: TForm4
     Top = 208
     Width = 259
     Height = 17
-    Hint = 'Show tooltip when the cursor is over something.'
+    Hint = 'Show the tooltip when the cursor is over an item.'
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Show tooltip'
     ParentShowHint = False
@@ -210,7 +210,7 @@ object Form4: TForm4
     Top = 152
     Width = 97
     Height = 21
-    Hint = 'Select language to use.'
+    Hint = 'Select the language to use for the user interface.'
     Style = csDropDownList
     Anchors = [akTop, akRight]
     ItemHeight = 13

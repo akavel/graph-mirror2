@@ -72,10 +72,13 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
   Form1->Recent1->MaxFiles = ToInt(Edit2->Text);
   UndoList.SetMaxUndo(ToInt(Edit3->Text));
   Property.ComplexFormat = (TComplexFormat)RadioGroup1->ItemIndex;;
-  if (CheckBox1->Checked)
-    AssociateExt(".grf","","GraphFile","Graph system",Application->ExeName+",1");
+  if(CheckBox1->Checked)
+  {
+    bool AllUsers = GetRegValue(REGISTRY_KEY, "InstallAllUsers", HKEY_CURRENT_USER, 0) || !IsWinNT;
+    AssociateExt(".grf", "", "GraphFile", "Graph system", Application->ExeName + ",1", AllUsers);
+  }
   else
-    RemoveAsociation(".grf","GraphFile");
+    RemoveAsociation(".grf", "GraphFile");
   Application->ShowHint = CheckBox2->Checked;
   Property.SavePos = CheckBox4->Checked;
   Property.CheckForUpdate = CheckBox7->Checked;
