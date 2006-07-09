@@ -55,6 +55,9 @@ class __declspec(uuid("FD536B77-5DF5-448C-90D1-2C04B3C1D1BD")) ATL_NO_VTABLE TOl
   template<typename T> static AnsiString FlagsToStr(const T &List, unsigned Value);
   template<typename T> static AnsiString ValueToStr(const T &List, unsigned Value);
   template<typename T> static void ReleaseCom(T *&Unknown);
+  static bool CheckRegistration();
+  static bool Register(bool AllUsers);
+  static void LogException();
 
   HRESULT CreateAdviseHolder();
   void DrawMetafile(TMetafile *Metafile);
