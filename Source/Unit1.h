@@ -264,6 +264,8 @@ __published:	// IDE-managed Components
   TTntMenuItem *Help_Contents;
   TTntMenuItem *Math_Animate;
   TTntAction *AnimateAction;
+  TAction *ImportGraphFileAction;
+  TAction *ImportPointSeriesAction;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);
@@ -370,8 +372,6 @@ __published:	// IDE-managed Components
   void __fastcall ZoomSquareActionExecute(TObject *Sender);
   void __fastcall Panel2KeyPress(TObject *Sender, char &Key);
   void __fastcall Tree_ShowInLegendClick(TObject *Sender);
-  void __fastcall File_Import_GraphFileClick(TObject *Sender);
-  void __fastcall File_Import_PointSeriesClick(TObject *Sender);
   void __fastcall InsertLabelActionExecute(TObject *Sender);
   void __fastcall Image1DblClick(TObject *Sender);
   void __fastcall Label_EditClick(TObject *Sender);
@@ -414,6 +414,8 @@ __published:	// IDE-managed Components
           Exception *E);
   void __fastcall RotationClick(TObject *Sender);
   void __fastcall AnimateActionExecute(TObject *Sender);
+  void __fastcall ImportGraphFileActionExecute(TObject *Sender);
+  void __fastcall ImportPointSeriesActionExecute(TObject *Sender);
 
 private:	// User declarations
   friend class TAddView;

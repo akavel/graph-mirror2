@@ -74,7 +74,7 @@
 #pragma link "../../BMGLib/BMGLibPNG.lib"  //Used to save png files
 #pragma resource "*.dfm"
 TForm1 *Form1;
-const TCursor crMoveHand1 = 1;
+const TCursor crMoveHand1 = 1;                       
 const TCursor crMoveHand2 = 2;
 TMutex GlobalMutex("Graph running"); //Global Mutex object indicating Graph is running (Checked by installation program)
 //---------------------------------------------------------------------------
@@ -134,7 +134,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
   LoadSettings();
   ScaleForm(this);
-  Form1->ActionToolBar1->ActionClient->Items->SmallIcons = Data.Property.FontScale < 150;
+  ActionToolBar1->ActionClient->Items->SmallIcons = Data.Property.FontScale < 150;
 
   //Don't create Form9 before settings are loaded. Scaling and other settings are needed in the constructor.
   Form9.reset(new TForm9(NULL));
@@ -234,8 +234,6 @@ void TForm1::Translate()
       TranslateList.push_back(MainMenu->Items->Items[I]);
 
     TranslateList.push_back(File_Import);
-    TranslateList.push_back(File_Import_GraphFile);
-    TranslateList.push_back(File_Import_PointSeries);
 
     TranslateList.push_back(Tree_Export);
     TranslateList.push_back(Tree_Visible);
@@ -671,7 +669,7 @@ void TForm1::LoadSettings(void)
   Panel3->Width = Registry.Read("SplitterPos", Panel3->Width);
   Panel1->Width = Panel3->Width;
 
-  Form1->WindowState = Registry.Read("Maximized", false) ? wsMaximized : wsNormal;
+  WindowState = Registry.Read("Maximized", false) ? wsMaximized : wsNormal;
   IPrintDialog1->LeftMargin = Registry.Read("LeftMargin", IPrintDialog1->LeftMargin);
   IPrintDialog1->TopMargin = Registry.Read("TopMargin", IPrintDialog1->TopMargin);
   IPrintDialog1->PrintOutput = Registry.Read("ForceBlackOnPrint", false) ? poBlackWhite : poColor;
@@ -713,7 +711,7 @@ void TForm1::SaveSettings(void)
     Registry.Write("DockCalcForm", Panel4->DockClientCount);
     if(Data.Property.SavePos)
     {
-      Registry.Write("Maximized", Form1->WindowState == wsMaximized);
+      Registry.Write("Maximized", WindowState == wsMaximized);
       if(WindowState == wsNormal)
       {
         StdWidth = Width;
@@ -1369,7 +1367,7 @@ void __fastcall TForm1::EndUpdate()
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ApplicationEventsActivate(TObject *Sender)
 {
-  UpdateMenu();
+  UpdateMenu(); 
 }
 //---------------------------------------------------------------------------
 //Use to zoom in at a given pixel position
@@ -1487,7 +1485,7 @@ int TForm1::AddImage(TColor Color, TBrushStyle Style)
   Bitmap->Canvas->Brush->Style = Style;
   Bitmap->Canvas->Pen->Style = psClear;
   Bitmap->Canvas->Rectangle(0, 0, Bitmap->Width, Bitmap->Height);
-  return Form1->ImageList1->Add(Bitmap.get(), NULL);
+  return ImageList1->Add(Bitmap.get(), NULL);
 }
 //---------------------------------------------------------------------------
 bool __fastcall TForm1::ApplicationEventsHelp(WORD Command, int Data,
@@ -1708,7 +1706,7 @@ void __fastcall TForm1::PrintActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ExitActionExecute(TObject *Sender)
 {
-  Form1->Close();
+  Close();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::UndoActionExecute(TObject *Sender)
@@ -2450,41 +2448,6 @@ void __fastcall TForm1::Tree_ShowInLegendClick(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::File_Import_GraphFileClick(TObject *Sender)
-{
-  OpenPreviewDialog1->Filter = LoadRes(RES_GRAPH_FILTER);
-  if(OpenPreviewDialog1->Execute())
-  {
-    unsigned Count = Data.ElemCount();
-
-    if(Data.Import(OpenPreviewDialog1->FileName.c_str()))
-    {
-      UndoList.BeginMultiUndo();
-      for(unsigned I = Count; I < Form1->Data.ElemCount(); I++)
-        UndoList.Push(TUndoAdd(Form1->Data.GetElem(I)));
-      UndoList.EndMultiUndo();
-      UpdateTreeView();
-      UpdateMenu();
-      Redraw();
-    }
-  }
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::File_Import_PointSeriesClick(TObject *Sender)
-{
-  OpenDialog->Filter = LoadRes(RES_DATA_FILTER);
-  if(OpenDialog->Execute())
-  {
-    for(int I = 0; I < OpenDialog->Files->Count; I++)
-      if(!Data.ImportData(OpenDialog->Files->Strings[I].c_str()))
-        return;
-
-    UpdateTreeView();
-    UpdateMenu();
-    Redraw();
-  }
-}
-//---------------------------------------------------------------------------
 void __fastcall TForm1::InsertLabelActionExecute(TObject *Sender)
 {
   SetCursorState(csAddLabel);
@@ -3018,13 +2981,13 @@ void TForm1::CopyAsImageToClipboard()
 
   //Copy metafile to clipboard
   std::auto_ptr<TMetafile> Metafile(new TMetafile());
-  Metafile->Width = Form1->Image1->Width;
-  Metafile->Height = Form1->Image1->Height;
+  Metafile->Width = Image1->Width;
+  Metafile->Height = Image1->Height;
   std::auto_ptr<TMetafileCanvas> MetaCanvas(new TMetafileCanvas(Metafile.get(), 0));
   TDraw DrawMeta(MetaCanvas.get(), &Data, false, "Metafile DrawThread");
 
   //Set width and height
-  DrawMeta.SetSize(Form1->Image1->Width, Form1->Image1->Height);
+  DrawMeta.SetSize(Image1->Width, Image1->Height);
   DrawMeta.DrawAll();
   DrawMeta.Wait();
   MetaCanvas.reset();
@@ -3398,13 +3361,41 @@ void __fastcall TForm1::DebugLine(System::TObject* Sender, const AnsiString Line
 void __fastcall TForm1::AnimateActionExecute(TObject *Sender)
 {
   CreateForm<TForm19>()->ShowModal();
-
-/*  if(AnimateAction->Checked)
-    Form9->SetEvalType(etAnimate);
-  else
-    Form9->Visible = false;*/
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::ImportGraphFileActionExecute(TObject *Sender)
+{
+  OpenPreviewDialog1->Filter = LoadRes(RES_GRAPH_FILTER);
+  if(OpenPreviewDialog1->Execute())
+  {
+    unsigned Count = Data.ElemCount();
 
+    if(Data.Import(OpenPreviewDialog1->FileName.c_str()))
+    {
+      UndoList.BeginMultiUndo();
+      for(unsigned I = Count; I < Data.ElemCount(); I++)
+        UndoList.Push(TUndoAdd(Data.GetElem(I)));
+      UndoList.EndMultiUndo();
+      UpdateTreeView();
+      UpdateMenu();
+      Redraw();
+    }
+  }
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::ImportPointSeriesActionExecute(TObject *Sender)
+{
+  OpenDialog->Filter = LoadRes(RES_DATA_FILTER);
+  if(OpenDialog->Execute())
+  {
+    for(int I = 0; I < OpenDialog->Files->Count; I++)
+      if(!Data.ImportData(OpenDialog->Files->Strings[I].c_str()))
+        return;
 
+    UpdateTreeView();
+    UpdateMenu();
+    Redraw();
+  }
+}
+//---------------------------------------------------------------------------
 
