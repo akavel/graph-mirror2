@@ -69,16 +69,16 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
   {
     if(Trigonometry == Degree)
     {
-      //Sin, Cos, Tan, ACsc, ASec, ACot must be multiplied with PI/180 when differentiated using degrees
-      if((Iter->Ident >= CodeSin && Iter->Ident <= CodeTan) || (Iter->Ident >= CodeACsc && Iter->Ident <= CodeACot))
+      //Sin, Cos, Tan, Csc, Sec, Cot must be multiplied with PI/180 when differentiated using degrees
+      if((Iter->Ident >= CodeSin && Iter->Ident <= CodeTan) || (Iter->Ident >= CodeCsc && Iter->Ident <= CodeCot))
       {
         Data.push_back(CodeMul);
         Data.push_back(CodeDiv);
         Data.push_back(CodePi);
         Data.push_back(180);
       }
-      //ASin, ACos, ATan, Csc, Sec, Cot must be multiplied with 180/PI when differentiated using degrees
-      else if((Iter->Ident >= CodeASin && Iter->Ident <= CodeATan) || (Iter->Ident >= CodeCsc && Iter->Ident <= CodeCot))
+      //ASin, ACos, ATan, ACsc, ASec, ACot must be multiplied with 180/PI when differentiated using degrees
+      else if((Iter->Ident >= CodeASin && Iter->Ident <= CodeATan) || (Iter->Ident >= CodeACsc && Iter->Ident <= CodeACot))
       {
         Data.push_back(CodeMul);
         Data.push_back(CodeDiv);
