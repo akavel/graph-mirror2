@@ -15,7 +15,7 @@
 #include <comctrls.hpp>
 //---------------------------------------------------------------------------
 void CenterForm(TForm *Form);
-void AssociateExt(AnsiString Ext,AnsiString ProgramName,AnsiString Ident,AnsiString Description,AnsiString Icon);
+void AssociateExt(AnsiString Ext,AnsiString ProgramName,AnsiString Ident,AnsiString Description,AnsiString Icon, bool AllUsers);
 void RemoveAsociation(AnsiString Ext,AnsiString Ident);
 bool CheckAssocation(AnsiString Ext,AnsiString Ident);
 WideString GetErrorMsg(const Func32::EFuncError &Error);
