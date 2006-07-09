@@ -10,13 +10,13 @@ object DataModule1: TDataModule1
     Top = 8
   end
   object EasyThumbnailHandler1: TEasyThumbnailHandler
+    OnRegisterOverwriteHandler = EasyThumbnailHandler1RegisterOverwriteHandler
+    OnInitialize = EasyThumbnailHandler1Initialize
+    OnExtractImage = EasyThumbnailHandler1ExtractImage
     Registration.CLSID = '{1944F5A1-2835-45B0-91E6-FA3EDDAF539E}'
     Registration.Description = 'Graph Shell Extension'
     Registration.FileClass = '.grf'
     Registration.RegType = []
-    OnRegisterOverwriteHandler = EasyThumbnailHandler1RegisterOverwriteHandler
-    Initialize = EasyThumbnailHandler1Initialize
-    ExtractImage = EasyThumbnailHandler1ExtractImage
     Left = 120
     Top = 64
   end
