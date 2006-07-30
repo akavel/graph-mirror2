@@ -1,0 +1,11 @@
+#include "CompRes.h"
+
+STRINGTABLE
+BEGIN
+  //TSymbolDialog
+  RES_BUTTON_INSERT       "Insert"
+  RES_BUTTON_CLOSE        "Close"
+  RES_FONT_NAME           "Font name:"
+  RES_SYMBOL_BOX_CAPTION  "Insert symbol"
+  RES_FONT_SUBSET         "Subset:"
+END
