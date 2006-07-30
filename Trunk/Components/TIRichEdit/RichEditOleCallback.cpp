@@ -1,0 +1,128 @@
+//---------------------------------------------------------------------------
+// class TRichEditOle - adds basic OLE functionality to TCustomRichEdit.
+// Based on code found at borland.public.cppbuilder.* posted by Robert Dunn
+// A lot of information about RichEdit can be found at his web site:
+// http://home.att.net/~robertdunn/Yacs.html
+//---------------------------------------------------------------------------
+#include <vcl.h>
+#pragma hdrstop
+#include "RichEditOleCallback.h"
+#pragma package(smart_init)
+//---------------------------------------------------------------------------
+TRichEditOleCallback::TRichEditOleCallback(TCustomRichEdit* ARichEdit)
+  : FRefCnt(0), RichEdit(ARichEdit), FAcceptDrop(false)
+{
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP TRichEditOleCallback::QueryInterface(THIS_ REFIID riid,
+	LPVOID FAR * lplpObj)
+{
+	// return S_OK if the interface is supported, E_NOINTERFACE if not.
+	if (riid == IID_IUnknown)
+		*lplpObj = (LPUNKNOWN) this;
+	else if (riid == IID_IRichEditOleCallback)
+		*lplpObj = (LPRICHEDITOLECALLBACK) this;
+	else {
+		*lplpObj = 0;
+		return E_NOINTERFACE;
+		}
+
+	((LPUNKNOWN) *lplpObj)->AddRef();
+	return S_OK;
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP_(ULONG) TRichEditOleCallback::AddRef(THIS)
+{
+	// need to add real reference counting if any caller really holds
+	// on to interface pointers
+	return ++FRefCnt;
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP_(ULONG) TRichEditOleCallback::Release(THIS)
+{
+	// need to add real reference counting if any caller really holds
+	// on to interface pointers
+	--FRefCnt;
+	return FRefCnt;
+}
+//---------------------------------------------------------------------------
+// *** IRichEditOleCallback methods ***
+STDMETHODIMP TRichEditOleCallback::GetNewStorage(THIS_ LPSTORAGE FAR * lplpstg)
+{
+	if (!lplpstg) return E_INVALIDARG;
+	*lplpstg = NULL;
+
+	//
+	// We need to create a new storage for an object to occupy.  We're going
+	// to do this the easy way and just create a storage on an HGLOBAL and let
+	// OLE do the management.  When it comes to saving things we'll just let
+	// the RichEdit control do the work.  Keep in mind this is not efficient.
+	//
+	LPLOCKBYTES pLockBytes;
+	HRESULT hr = ::CreateILockBytesOnHGlobal(NULL, TRUE, &pLockBytes);
+	if (FAILED(hr)) return hr;
+
+	hr = ::StgCreateDocfileOnILockBytes(pLockBytes,
+		STGM_SHARE_EXCLUSIVE | STGM_CREATE | STGM_READWRITE, 0, lplpstg);
+	pLockBytes->Release();
+	return hr;
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP TRichEditOleCallback::GetInPlaceContext(THIS_ LPOLEINPLACEFRAME FAR * lplpFrame,
+	LPOLEINPLACEUIWINDOW FAR * lplpDoc, LPOLEINPLACEFRAMEINFO lpFrameInfo)
+{
+	return E_NOTIMPL;	// what to return???
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP TRichEditOleCallback::ShowContainerUI(THIS_ BOOL fShow)
+{
+	return E_NOTIMPL;	// what to return???
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP TRichEditOleCallback::QueryInsertObject(THIS_ LPCLSID lpclsid,
+	LPSTORAGE lpstg, LONG cp)
+{
+	// let richedit insert any and all objects
+	return S_OK;
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP TRichEditOleCallback::DeleteObject(THIS_ LPOLEOBJECT lpoleobj)
+{
+	// per doc, no return value, i.e., this is simply a notification
+	return S_OK;
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP TRichEditOleCallback::QueryAcceptData(THIS_ LPDATAOBJECT lpdataobj,
+	CLIPFORMAT FAR * lpcfFormat, DWORD reco, BOOL fReally, HGLOBAL hMetaPict)
+{
+	// allow insertion on dropped file?
+	if (reco == RECO_DROP && !FAcceptDrop) return E_NOTIMPL;
+	return S_OK;
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP TRichEditOleCallback::ContextSensitiveHelp(THIS_ BOOL fEnterMode)
+{
+	return E_NOTIMPL;	// what to return???
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP TRichEditOleCallback::GetClipboardData(THIS_ CHARRANGE FAR * lpchrg,
+	DWORD reco, LPDATAOBJECT FAR * lplpdataobj)
+{
+	return E_NOTIMPL;	// what to return???
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP TRichEditOleCallback::GetDragDropEffect(THIS_ BOOL fDrag,
+	DWORD grfKeyState, LPDWORD pdwEffect)
+{
+	// per doc, no return value, i.e., for notification only
+	*pdwEffect = DROPEFFECT_NONE;
+	return S_OK;
+}
+//---------------------------------------------------------------------------
+STDMETHODIMP TRichEditOleCallback::GetContextMenu(THIS_ WORD seltype,
+	LPOLEOBJECT lpoleobj, CHARRANGE FAR * lpchrg, HMENU FAR * lphmenu)
+{
+	return E_NOTIMPL;	// what to return???
+}
+//---------------------------------------------------------------------------
+
