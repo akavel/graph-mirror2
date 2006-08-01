@@ -101,6 +101,12 @@ inline long double Sqr(long double x)
   return x*x;
 }
 //---------------------------------------------------------------------------
+//Calculate the perp dot product
+inline long double Perp(const TCoord<long double> &u, const TCoord<long double> &v)
+{
+  return u.x * v.y - u.y * v.x;
+}
+//---------------------------------------------------------------------------
 /** Find crossing between two lines
  *  \param p1: First point in the line p1-p2
  *  \param p2: Second point in the line p1-p2
@@ -109,20 +115,20 @@ inline long double Sqr(long double x)
  */
 bool IsCrossing(const TCoord<long double> &p1, const TCoord<long double> &p2, const TCoord<long double> &q1, const TCoord<long double> &q2)
 {
-  long double a1 = p2.x == p1.x ? 1E6 : (p2.y - p1.y) / (p2.x - p1.x); //Use large slope for vertical lines
-  long double b1 = p1.y - a1 * p1.x;
-  long double a2 = q2.x == q1.x ? 1E6 : (q2.y - q1.y) / (q2.x - q1.x); //Use large slope for vertical lines
-  long double b2 = q1.y - a2 * q1.x;
+  TCoord<long double> u(p2.x - p1.x, p2.y - p1.y);  //Vector from p1 to p2
+  TCoord<long double> v(q2.x - q1.x, q2.y - q1.y); //Vector from q1 to q2
+  TCoord<long double> w(p1.x - q1.x, p1.y - q1.y); //vector from q1 to p1
 
-  if(a1 == a2)
-    return false; //Parallel lines never cross
-  long double x = (b1 - b2) / (a2 - a1);
-  long double y = a1 * x + b1;
+  long double D = Perp(u, v);
 
-  return ((x >= p1.x && x <= p2.x) || (x >= p2.x && x <= p1.x)) &&
-         ((x >= q1.x && x <= q2.x) || (x >= q2.x && x <= q1.x)) &&
-         ((y >= p1.y && y <= p2.y) || (y >= p2.y && y <= p1.y)) &&
-         ((y >= q1.y && y <= q2.y) || (y >= q2.y && y <= q1.y));
+//  if(std::abs(D) < 1E-30) //It is difficult to peek a good number here
+  if(D == 0)
+    return false; //The lines are parallel
+
+  long double sI = Perp(v, w) / D;
+  long double tI = Perp(u, w) / D;
+
+  return sI >= 0 && sI <= 1 && tI >= 0 && tI <= 1;
 }
 //---------------------------------------------------------------------------
 /** Find crossing between two functions. A range for the crossing must already
@@ -143,9 +149,7 @@ long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double M
   TCoord<long double> q1 = GetReal(Func2.Calc(Complex(Min2)));
   TCoord<long double> q2 = GetReal(Func2.Calc(Complex(Max2)));
 
-  Tol *= Tol; //Now Tol is the tolerance squared
-
-  while(Sqr(p2.x - p1.x) + Sqr(p2.y - p1.y) > Tol)
+  while(Max1 - Min1 > Tol)
   {
     //TODO: What if s and t stops changing because Tol cannot get any better?
     long double s = (Max1 + Min1) / 2;
