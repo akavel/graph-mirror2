@@ -65,6 +65,9 @@ class TGrid : public TDrawGrid
   void __fastcall SetPopupMenu(TPopupMenu *Menu);
   void __fastcall SetMinRowHeight(int Value);
   void __fastcall SetMinColWidth(int Value);
+  void __fastcall CalcSizingState(int X, int Y, TGridState &State, int &Index, int &SizingPos, int &SizingOfs, TGridDrawInfo &FixedInfo);
+  bool __fastcall SelectCell(int ACol, int ARow);
+
   TGridOptions __fastcall GetOptions(){return TDrawGrid::Options;};
   void AjustRows();
   void ImportText(AnsiString Str);
