@@ -480,15 +480,16 @@ AnsiString TGrid::ExportText(char Delimiter)
 
   if(Empty)
     GridRect.Bottom--;
-
+                                 
   for(int ARow = GridRect.Top; ARow <= GridRect.Bottom; ARow++)
   {
     for(int ACol = GridRect.Left; ACol <= GridRect.Right; ACol++)
-    {
-      if(ACol != GridRect.Left)
-        Str += Delimiter;
-      Str += DoGetText(ACol, ARow);
-    }
+      if(ColWidths[ACol] > 0)
+      {
+        if(ACol != GridRect.Left)
+          Str += Delimiter;
+        Str += DoGetText(ACol, ARow);
+      }
     Str += "\r\n";
   }
 
@@ -711,7 +712,7 @@ void __fastcall TGrid::SetPopupMenu(TPopupMenu *Menu)
 void __fastcall TGrid::ColWidthsChanged()
 {
   for(int I = FixedCols; I < ColCount; I++)
-    if(ColWidths[I] < MinColWidth)
+    if(ColWidths[I] < MinColWidth && ColWidths[I] > 0) //Allow ColWidths=0 to hide coloumn
       ColWidths[I] = MinColWidth;
   TDrawGrid::ColWidthsChanged();
 }
@@ -1083,6 +1084,39 @@ void __fastcall TGrid::TitleCaptionsChange(TObject *Sender)
 {
   for(int I = 0; I < FTitleCaptions->Count; I++)
     DoSetText(I, 0, FTitleCaptions->Strings[I]);
+}
+//---------------------------------------------------------------------------
+void __fastcall TGrid::CalcSizingState(int X, int Y, TGridState &State, int &Index, int &SizingPos, int &SizingOfs, TGridDrawInfo &FixedInfo)
+{
+  TDrawGrid::CalcSizingState(X, Y, State, Index, SizingPos, SizingOfs, FixedInfo); //Call inherited
+
+  //If the coloumn is invisible (width=0) resizing should not be possible
+  if(State == gsColSizing && ColWidths[Index] == 0)
+    State = gsNormal;
+}
+//---------------------------------------------------------------------------
+bool __fastcall TGrid::SelectCell(int ACol, int ARow)
+{
+  if(ColWidths[ACol] <= 0)
+  {
+    bool MoveAnchor = (GetKeyState(VK_SHIFT) & 0x80000000) == 0;
+    int NewCol;
+    if(ACol > Selection.Right)
+    {
+      for(NewCol = ACol + 1; NewCol < ColCount && ColWidths[NewCol] <= 0; NewCol++);
+      if(NewCol < ColCount)
+        FocusCell(NewCol, ARow, MoveAnchor);
+    }
+    else
+    {
+      for(NewCol = ACol - 1; NewCol > FixedCols && ColWidths[NewCol] <= 0; NewCol--);
+      if(NewCol > FixedCols)
+        FocusCell(NewCol, ARow, MoveAnchor);
+    }
+    return false;
+  }
+
+  return TDrawGrid::SelectCell(ACol, ARow);
 }
 //---------------------------------------------------------------------------
 
