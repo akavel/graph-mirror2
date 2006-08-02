@@ -1,4 +1,4 @@
-/* Graph (http://sourceforge.net/projects/graph)
+  /* Graph (http://sourceforge.net/projects/graph)
  * Copyright 2006 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
@@ -20,7 +20,22 @@
 
 #define NAME_VALUE_ENTRY(x) TNameValue(#x, x)
 
-TOleServerImpl *OleServerImpl = NULL;
+TOleServerImpl *OleServerImpl;
+
+#ifdef _DEBUG
+  #define DEBUG_CALL() DebugFunctionCall(__FUNC__)
+  #define LOG_RESULT(x) DebugLogReturn(x)
+  #define LOG_ARG(x) DebugLogArg(x)
+  #define LOG_DATA(x) DebugLogData(x)
+#else
+  #define DEBUG_CALL()
+  #define LOG_RESULT(x) (x)
+  #define LOG_ARG(x)
+  #define LOG_DATA(x)
+#endif
+
+#define LOG_FUNCTION_CALL(x) TOleServerImpl::DebugLogFunctionCall(#x, (x))
+
 const CLIPFORMAT TOleServerImpl::cfObjectDescriptor = RegisterClipboardFormat("Object Descriptor");
 const CLIPFORMAT TOleServerImpl::cfEmbedSource = RegisterClipboardFormat("Embed Source");
 const CLIPFORMAT TOleServerImpl::cfEmbeddedObject = RegisterClipboardFormat("Embedded Object");
@@ -66,7 +81,8 @@ TNameValue AdvfList[] =
 /////////////////////////////////////////////////////////////////////////////
 // TOleServerImpl
 TOleServerImpl::TOleServerImpl()
-  : OleClientSite(NULL), OleAdviseHolder(NULL), DataAdviseHolder(NULL), DataIsDirty(false)
+  : OleClientSite(NULL), OleAdviseHolder(NULL), DataAdviseHolder(NULL), DataIsDirty(false),
+    Width(Form1->Image1->Width), Height(Form1->Image1->Height)
 {
 #ifdef _DEBUG
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
@@ -87,14 +103,9 @@ TOleServerImpl::~TOleServerImpl()
   OleServerImpl = NULL;
 
   //Release saved pointers
-  ReleaseCom(OleClientSite);
   ReleaseCom(OleAdviseHolder);
   ReleaseCom(DataAdviseHolder);
-
-  //If the program was started for use with OLE, terminate application when OLE object is destroyed
-/*  if(FindCmdLineSwitch("EMBEDDING"))
-    Application->Terminate();*/
-}   
+}
 //---------------------------------------------------------------------------
 template<typename T> void TOleServerImpl::ReleaseCom(T *&Unknown)
 {
@@ -127,33 +138,36 @@ void TOleServerImpl::DebugFunctionCall(const AnsiString &Str)
     out << std::endl << Str.c_str();
 }
 //---------------------------------------------------------------------------
+AnsiString TOleServerImpl::ResultToString(HRESULT Result)
+{
+  switch(Result)
+  {
+    case S_OK: return "S_OK";
+    case DV_E_DVASPECT: return "DV_E_DVASPECT";
+    case OLE_S_USEREG: return "OLE_S_USEREG";
+    case E_FAIL: return "E_FAIL";
+    case E_OUTOFMEMORY: return "E_OUTOFMEMORY";
+    case DV_E_TYMED: return "DV_E_TYMED";
+    case STG_E_MEDIUMFULL: return "STG_E_MEDIUMFULL";
+    case DV_E_FORMATETC: return "DV_E_FORMATETC";
+    case OLEOBJ_S_INVALIDVERB: return "OLEOBJ_S_INVALIDVERB";
+    case DATA_S_SAMEFORMATETC: return "DATA_S_SAMEFORMATETC";
+    case OLE_E_NOCONNECTION: return "OLE_E_NOCONNECTION";
+    case E_UNEXPECTED: return "E_UNEXPECTED";
+    case STG_E_INVALIDFLAG: return "STG_E_INVALIDFLAG";
+    case STG_E_FILEALREADYEXISTS: return "STG_E_FILEALREADYEXISTS";
+    case STG_E_INVALIDFUNCTION: return "STG_E_INVALIDFUNCTION";
+    case S_FALSE: return "S_FALSE";
+    case E_NOTIMPL: return "E_NOTIMPL";
+    default: return "0x" + IntToHex(static_cast<int>(Result), 8);
+  }
+}
+//---------------------------------------------------------------------------
 HRESULT TOleServerImpl::DebugLogReturn(HRESULT Result)
 {
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
   if(out)
-  {
-    out << " : ";
-    switch(Result)
-    {
-      case S_OK: out << "S_OK"; break;
-      case DV_E_DVASPECT: out << "DV_E_DVASPECT"; break;
-      case OLE_S_USEREG: out << "OLE_S_USEREG"; break;
-      case E_FAIL: out << "E_FAIL"; break;
-      case E_OUTOFMEMORY: out << "E_OUTOFMEMORY"; break;
-      case DV_E_TYMED: out << "DV_E_TYMED"; break;
-      case STG_E_MEDIUMFULL: out << "STG_E_MEDIUMFULL"; break;
-      case DV_E_FORMATETC: out << "DV_E_FORMATETC"; break;
-      case OLEOBJ_S_INVALIDVERB: out << "OLEOBJ_S_INVALIDVERB"; break;
-      case DATA_S_SAMEFORMATETC: out << "DATA_S_SAMEFORMATETC"; break;
-      case OLE_E_NOCONNECTION: out << "OLE_E_NOCONNECTION"; break;
-      case E_UNEXPECTED: out << "E_UNEXPECTED"; break;
-      case STG_E_INVALIDFLAG: out << "STG_E_INVALIDFLAG"; break;
-      case STG_E_FILEALREADYEXISTS: out << "STG_E_FILEALREADYEXISTS"; break;
-      case STG_E_INVALIDFUNCTION: out << "STG_E_INVALIDFUNCTION"; break;
-      case S_FALSE: out << "S_FALSE"; break;
-      default: out << "0x" << IntToHex(static_cast<int>(Result), 8).c_str();
-    }
-  }
+    out << " : " << ResultToString(Result).c_str();
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -169,6 +183,17 @@ void TOleServerImpl::DebugLogData(const AnsiString &Str)
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
   if(out)
     out << ", [" << Str.c_str() << "]" << std::flush;
+}
+//---------------------------------------------------------------------------
+HRESULT TOleServerImpl::DebugLogFunctionCall(const char *Name, HRESULT Result)
+{
+//  if(FAILED(Result))
+  {
+    std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
+    if(out)
+      out << "\n  {" << Name << " : " << ResultToString(Result).c_str() << " } " << std::flush;
+  }
+  return Result;
 }
 //---------------------------------------------------------------------------
 AnsiString TOleServerImpl::ClipboardFormatToStr(CLIPFORMAT Format)
@@ -274,7 +299,7 @@ bool TOleServerImpl::Register(bool AllUsers)
     CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\2", "", AnsiString(CF_METAFILEPICT) + "," + DVASPECT_CONTENT + "," + TYMED_MFPICT + "," + DATADIR_GET, RootKey);
     CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\3", "", AnsiString(CF_BITMAP) + "," + DVASPECT_CONTENT + "," + TYMED_GDI + "," + DATADIR_GET, RootKey);
     CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\4", "", AnsiString("PNG") + "," + DVASPECT_CONTENT + "," + TYMED_ISTREAM + "," + DATADIR_GET, RootKey);
-    CreateRegKey(ClassKey + "\\ProgID", "", ProgID, RootKey);
+    CreateRegKey(ClassKey + "\\ProgID", "", GetProgID(), RootKey);
 
     CreateRegKey(ProgID, "", "Graph system", RootKey);
     CreateRegKey(ProgID + "\\DefaultIcon", "", Application->ExeName + ",1", RootKey);
@@ -343,17 +368,10 @@ HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
   }
 }
 //---------------------------------------------------------------------------
-HRESULT TOleServerImpl::CreateAdviseHolder()
-{
-  if(!OleAdviseHolder)
-    return CreateOleAdviseHolder(&OleAdviseHolder);
-  return S_OK;
-}
-//---------------------------------------------------------------------------
 void TOleServerImpl::DrawMetafile(TMetafile *Metafile)
 {
-  Metafile->Width = Form1->Image1->ClientWidth;
-  Metafile->Height = Form1->Image1->ClientHeight;
+  Metafile->Width = GetWidth();
+  Metafile->Height = GetHeight();
 
   std::auto_ptr<TMetafileCanvas> MetaCanvas(new TMetafileCanvas(Metafile, 0));
 
@@ -362,7 +380,7 @@ void TOleServerImpl::DrawMetafile(TMetafile *Metafile)
   TDraw DrawMeta(MetaCanvas.get(), &MetaData, false, "OLE Metafile DrawThread");
 
   //Set width and height
-  DrawMeta.SetSize(Form1->Image1->ClientWidth, Form1->Image1->ClientHeight);
+  DrawMeta.SetSize(GetWidth(), GetHeight());
   DrawMeta.DrawAll();
   DrawMeta.Wait();
 }
@@ -382,24 +400,64 @@ HMETAFILE TOleServerImpl::ConvertEnhMetaToMeta(HENHMETAFILE hemf)
   return hMF;
 }
 //---------------------------------------------------------------------------
-void OleServerDataChanged()
+void TOleServerImpl::SendAdvise(TAdviseCode AdviseCode)
 {
-  if(OleServerImpl)
+  switch(AdviseCode)
   {
-    if(OleServerImpl->DataAdviseHolder)
-    OleServerImpl->DataAdviseHolder->SendOnDataChange(OleServerImpl, 0, 0);
-    OleServerImpl->DataIsDirty = true;
+    case acDataChanged:
+      if(DataAdviseHolder != NULL)
+        LOG_FUNCTION_CALL(DataAdviseHolder->SendOnDataChange(this, 0, 0));
+      DataIsDirty = true;
+      break;
+
+    case acDataSaved:
+      if(OleAdviseHolder != NULL)
+        LOG_FUNCTION_CALL(OleAdviseHolder->SendOnSave());
+      DataIsDirty = false;
+      break;
+
+    case acClose:
+      if(DataAdviseHolder != NULL)
+        LOG_FUNCTION_CALL(DataAdviseHolder->SendOnDataChange(this, 0, ADVF_DATAONSTOP));
+
+      if(OleAdviseHolder != NULL)
+        LOG_FUNCTION_CALL(OleAdviseHolder->SendOnClose());
+      break;
+
+    case acRenamed:
+      break;
+
+    case acSaveObject:
+      if(OleClientSite != NULL)
+        LOG_FUNCTION_CALL(OleClientSite->SaveObject());
+      break;
+
+    case acShowWindow:
+      if(OleClientSite != NULL)
+        LOG_FUNCTION_CALL(OleClientSite->OnShowWindow(true));
+      break;
+
+    case acHideWindow:
+      if(OleClientSite != NULL)
+        LOG_FUNCTION_CALL(OleClientSite->OnShowWindow(false));
+      break;
+
+    case acShowObject:
+      if(OleClientSite != NULL)
+        LOG_FUNCTION_CALL(OleClientSite->ShowObject());
+      break;
   }
 }
 //---------------------------------------------------------------------------
-void OleServerDataSaved()
+void SendOleAdvise(TAdviseCode AdviseCode)
 {
-  if(OleServerImpl)
-  {
-    if(OleServerImpl->OleAdviseHolder)
-      OleServerImpl->OleAdviseHolder->SendOnSave();
-    OleServerImpl->DataIsDirty = false;
-  }
+  if(OleServerImpl != NULL)
+    OleServerImpl->SendAdvise(AdviseCode);
+}
+//---------------------------------------------------------------------------
+bool OleServerRunning()
+{
+  return OleServerImpl != NULL;
 }
 //---------------------------------------------------------------------------
 /////////////////////////////////////////////////////////////////////////////
@@ -409,8 +467,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetClientSite(
 {
   DEBUG_CALL();
 
-  if(OleClientSite && pClientSite)
-    return LOG_RESULT(E_FAIL);
+  ReleaseCom(OleClientSite);
 
   OleClientSite = pClientSite;
   if(OleClientSite)
@@ -423,6 +480,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::GetClientSite(
 {
   DEBUG_CALL();
   *ppClientSite = OleClientSite;
+  OleClientSite->AddRef(); //Apparently we need to call AddRef(). See Inside OLE
   return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------
@@ -445,9 +503,13 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Close(
   if(OleClientSite)
   {
     if(dwSaveOption != OLECLOSE_NOSAVE && DataIsDirty)
-      OleClientSite->SaveObject();
-    OleClientSite->OnShowWindow(false);
-    OleClientSite->ShowObject();
+    {
+      SendAdvise(acSaveObject);
+      SendAdvise(acDataSaved);
+    }
+
+    SendAdvise(acHideWindow);
+    SendAdvise(acShowObject);
   }
   else
     //If no OleClientSite then this must be a linked object and we have to save it ourself
@@ -457,22 +519,20 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Close(
       else
       { //If file should not be saved; Reload data and update image
         Form1->LoadFromFile(Form1->Data.GetFileName().c_str(), false, false);
-        OleServerDataChanged();
+        SendAdvise(acDataChanged);
       }
 
-  if(DataAdviseHolder)
-    DataAdviseHolder->SendOnDataChange(this, 0, ADVF_DATAONSTOP);
+  SendAdvise(acClose);
 
-  if(OleAdviseHolder)
-    OleAdviseHolder->SendOnClose();
+  ReleaseCom(OleClientSite);
 
   //Cut off all clients
-  CoDisconnectObject(static_cast<IOleObject*>(this), 0);
-  CoDisconnectObject(static_cast<IDataObject*>(this), 0);
-  CoDisconnectObject(static_cast<IPersistStorage*>(this), 0);
-  CoDisconnectObject(static_cast<IPersistFile*>(this), 0);
+  LOG_FUNCTION_CALL(CoDisconnectObject(static_cast<IOleObject*>(this), 0));
+  LOG_FUNCTION_CALL(CoDisconnectObject(static_cast<IDataObject*>(this), 0));
+  LOG_FUNCTION_CALL(CoDisconnectObject(static_cast<IPersistStorage*>(this), 0));
+  LOG_FUNCTION_CALL(CoDisconnectObject(static_cast<IPersistFile*>(this), 0));
 
-  CoLockObjectExternal(static_cast<IOleObject*>(this), false, true);  
+  LOG_FUNCTION_CALL(CoLockObjectExternal(static_cast<IOleObject*>(this), false, true));
 
   return LOG_RESULT(S_OK);
 }
@@ -482,6 +542,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetMoniker(
     /* [unique][in] */ IMoniker *pmk)
 {
   DEBUG_CALL();
+  LOG_ARG(AnsiString("dwWhichMoniker=") + dwWhichMoniker);
+
   return LOG_RESULT(E_NOTIMPL);
 }
 //---------------------------------------------------------------------------
@@ -530,21 +592,34 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::DoVerb(
       case OLEIVERB_PROPERTIES:
       case OLEIVERB_PRIMARY:
       case OLEIVERB_OPEN:
+      case 1:
+      {
         //Only call OnShowWindow() on embedded objects and not on linked objects
-        if(OleClientSite)
-          OleClientSite->OnShowWindow(true);
+        SendAdvise(acShowWindow);
         Form1->ActivateOleUserInterface();
-        Application->MainForm->Show();
-        if(pActiveSite)
-          pActiveSite->ShowObject();
 
-        //This locks the user interface until either the user or the client closes the user interface  
-        CoLockObjectExternal(static_cast<IOleObject*>(this), true, true);
+        int NewWidth = GetWidth();
+        int NewHeight = GetHeight();
+        Application->MainForm->Show(); //Warning The different control sizes are not updated until the form is shown
+
+        NewWidth += Form1->Width - Form1->Image1->ClientWidth;
+        NewHeight += Form1->Height - Form1->Image1->ClientHeight;
+        Form1->SetBounds(Form1->Left, Form1->Top, NewWidth, NewHeight);
+
+        SendAdvise(acShowObject);
+
+        //This locks the user interface until either the user or the client closes the user interface
+        LOG_FUNCTION_CALL(CoLockObjectExternal(static_cast<IOleObject*>(this), true, true));
 
         SetForegroundWindow(Form1->Handle);
         break;
+      }
 
       case OLEIVERB_HIDE:
+        Form1->Hide();
+        SendAdvise(acHideWindow);
+        break;
+
       case OLEIVERB_UIACTIVATE:
       case OLEIVERB_INPLACEACTIVATE:
         return LOG_RESULT(E_NOTIMPL);
@@ -610,11 +685,14 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetExtent(
   if(dwDrawAspect != DVASPECT_CONTENT)
     return LOG_RESULT(DV_E_DVASPECT);
 
-  Form1->Draw.AbortUpdate();
-  Form1->Width = Form1->Width - Form1->Image1->ClientWidth + Size.cx;
-  Form1->Height = Form1->Height - Form1->Image1->ClientHeight + Size.cy;
-  Form1->Data.ClearCache();
-  Form1->Redraw();
+  if(Size.cx != Width || Size.cy != Height)
+  {
+    Form1->Draw.AbortUpdate();
+    SetSize(Size.cx, Size.cy);
+    Form1->Data.ClearCache();
+    Form1->Redraw();
+    SendAdvise(acDataChanged);
+  }
 
   return LOG_RESULT(S_OK);
 }
@@ -627,8 +705,11 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::GetExtent(
   if(dwDrawAspect != DVASPECT_CONTENT)
     return LOG_RESULT(DV_E_DVASPECT);
 
-  SIZEL Size = {Form1->Image1->ClientWidth, Form1->Image1->ClientHeight};
+  SIZEL Size = {GetWidth(), GetHeight()};
+  LOG_DATA(AnsiString("cx=") + Size.cx);
+  LOG_DATA(AnsiString("cy=") + Size.cy);
   AtlPixelToHiMetric(&Size, pSizel);
+
   return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------
@@ -637,27 +718,28 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Advise(
   /* [out] */ DWORD *pdwConnection)
 {
   DEBUG_CALL();
-  if(CreateAdviseHolder() != S_OK)
-    return LOG_RESULT(E_FAIL);
-  return LOG_RESULT(OleAdviseHolder->Advise(pAdvSink, pdwConnection));
+  if(OleAdviseHolder == NULL)
+    if(FAILED(LOG_FUNCTION_CALL(CreateOleAdviseHolder(&OleAdviseHolder))))
+      return LOG_RESULT(E_FAIL);
+  return LOG_RESULT(LOG_FUNCTION_CALL(OleAdviseHolder->Advise(pAdvSink, pdwConnection)));
 }
 //---------------------------------------------------------------------------
 HRESULT STDMETHODCALLTYPE TOleServerImpl::Unadvise(
   /* [in] */ DWORD dwConnection)
 {
   DEBUG_CALL();
-  if(CreateAdviseHolder() != S_OK)
+  if(OleAdviseHolder == NULL)
     return LOG_RESULT(E_FAIL);
-  return LOG_RESULT(OleAdviseHolder->Unadvise(dwConnection));
+  return LOG_RESULT(LOG_FUNCTION_CALL(OleAdviseHolder->Unadvise(dwConnection)));
 }
 //---------------------------------------------------------------------------
 HRESULT STDMETHODCALLTYPE TOleServerImpl::EnumAdvise(
   /* [out] */ IEnumSTATDATA **ppenumAdvise)
 {
   DEBUG_CALL();
-  if(CreateAdviseHolder() != S_OK)
+  if(OleAdviseHolder == NULL)
     return LOG_RESULT(E_FAIL);
-  return LOG_RESULT(OleAdviseHolder->EnumAdvise(ppenumAdvise));
+  return LOG_RESULT(LOG_FUNCTION_CALL(OleAdviseHolder->EnumAdvise(ppenumAdvise)));
 }
 //---------------------------------------------------------------------------
 HRESULT STDMETHODCALLTYPE TOleServerImpl::GetMiscStatus(
@@ -689,8 +771,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
   if(pFormatetcIn->dwAspect != DVASPECT_CONTENT && pFormatetcIn->dwAspect != DVASPECT_THUMBNAIL)
     return LOG_RESULT(DV_E_FORMATETC);
 
-  int ImageWidth = pFormatetcIn->dwAspect == DVASPECT_THUMBNAIL ? 120 : Form1->Image1->Width;
-  int ImageHeight = pFormatetcIn->dwAspect == DVASPECT_THUMBNAIL ? 120 : Form1->Image1->Height;
+  int ImageWidth = pFormatetcIn->dwAspect == DVASPECT_THUMBNAIL ? 120 : GetWidth();
+  int ImageHeight = pFormatetcIn->dwAspect == DVASPECT_THUMBNAIL ? 120 : GetHeight();
 
   try
   {
@@ -775,12 +857,12 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     {
       pmedium->tymed = TYMED_ISTORAGE;
       ILockBytes *LockBytes = NULL;
-      HRESULT Result = CreateILockBytesOnHGlobal(NULL, TRUE, &LockBytes);
-      if(Result != S_OK)
+      HRESULT Result = LOG_FUNCTION_CALL(CreateILockBytesOnHGlobal(NULL, TRUE, &LockBytes));
+      if(FAILED(Result))
         return LOG_RESULT(Result);
 
-      Result = StgCreateDocfileOnILockBytes(LockBytes, STGM_READWRITE | STGM_CREATE | STGM_SHARE_EXCLUSIVE, 0, &pmedium->pstg);
-      if(Result != S_OK)
+      Result = LOG_FUNCTION_CALL(StgCreateDocfileOnILockBytes(LockBytes, STGM_READWRITE | STGM_CREATE | STGM_SHARE_EXCLUSIVE, 0, &pmedium->pstg));
+      if(FAILED(Result))
         return LOG_RESULT(Result);
 
       return LOG_RESULT(OleSave(this, pmedium->pstg, FALSE));
@@ -803,8 +885,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
   LOG_ARG("cfFormat=" + ClipboardFormatToStr(pformatetc->cfFormat) + ", tymed=" + FlagsToStr(TymedList, pformatetc->tymed)
     + ", dwAspect=" + ValueToStr(AspectList, pformatetc->dwAspect) + ", ptd=" + DeviceToStr(pformatetc->ptd));
 
-  int ImageWidth = pformatetc->dwAspect == DVASPECT_THUMBNAIL ? 120 : Form1->Image1->Width;
-  int ImageHeight = pformatetc->dwAspect == DVASPECT_THUMBNAIL ? 120 : Form1->Image1->Height;
+  int ImageWidth = pformatetc->dwAspect == DVASPECT_THUMBNAIL ? 120 : GetWidth();
+  int ImageHeight = pformatetc->dwAspect == DVASPECT_THUMBNAIL ? 120 : GetHeight();
   pmedium->pUnkForRelease = NULL;
 
   if(pformatetc->cfFormat == cfEmbedSource && (pformatetc->tymed & TYMED_ISTORAGE))
@@ -889,10 +971,10 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::DAdvise(
   LOG_ARG("cfFormat=" + ClipboardFormatToStr(pFormatetc->cfFormat) + ", tymed=" + FlagsToStr(TymedList, pFormatetc->tymed) + ", advf=" + FlagsToStr(AdvfList, advf));
 
   if(!DataAdviseHolder)
-    if(CreateDataAdviseHolder(&DataAdviseHolder) != S_OK)
+    if(FAILED(LOG_FUNCTION_CALL(CreateDataAdviseHolder(&DataAdviseHolder))))
       return LOG_RESULT(E_OUTOFMEMORY);
 
-  return LOG_RESULT(DataAdviseHolder->Advise(this, pFormatetc, advf, pAdvSink, pdwConnection));
+  return LOG_RESULT(LOG_FUNCTION_CALL(DataAdviseHolder->Advise(this, pFormatetc, advf, pAdvSink, pdwConnection)));
 }
 //---------------------------------------------------------------------------
 HRESULT STDMETHODCALLTYPE TOleServerImpl::DUnadvise(
@@ -901,7 +983,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::DUnadvise(
   DEBUG_CALL();
   if(!DataAdviseHolder)
     return LOG_RESULT(E_FAIL);
-  return LOG_RESULT(DataAdviseHolder->Unadvise(dwConnection));
+  return LOG_RESULT(LOG_FUNCTION_CALL(DataAdviseHolder->Unadvise(dwConnection)));
 }
 //---------------------------------------------------------------------------
 HRESULT STDMETHODCALLTYPE TOleServerImpl::EnumDAdvise(
@@ -909,8 +991,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::EnumDAdvise(
 {
   DEBUG_CALL();
   if(!DataAdviseHolder)
-    return E_FAIL;
-  return DataAdviseHolder->EnumAdvise(ppenumAdvise);
+    return LOG_RESULT(E_FAIL);
+  return LOG_RESULT(LOG_FUNCTION_CALL(DataAdviseHolder->EnumAdvise(ppenumAdvise)));
 }
 //---------------------------------------------------------------------------
 /////////////////////////////////////////////////////////////////////////////
@@ -936,7 +1018,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Load(
 {
   DEBUG_CALL();
   IStream *Stream;
-  if(pStg->OpenStream(L"Graph", NULL, STGM_READ | STGM_SHARE_EXCLUSIVE, 0, &Stream) != S_OK)
+  DWORD GrfMode = STGM_READ | STGM_SHARE_EXCLUSIVE;
+  if(FAILED(LOG_FUNCTION_CALL(pStg->OpenStream(L"Graph", 0, GrfMode, 0, &Stream))))
     return LOG_RESULT(E_FAIL);
 
   std::vector<char> Buffer(10000);
@@ -944,7 +1027,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Load(
   ULONG BytesRead;
   do
   {
-    Stream->Read(&Buffer[0], Buffer.size(), &BytesRead);
+    LOG_FUNCTION_CALL(Stream->Read(&Buffer[0], Buffer.size(), &BytesRead));
     Str += std::string(&Buffer[0], BytesRead);
   }
   while(BytesRead == Buffer.size());
@@ -955,12 +1038,9 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Load(
   ConfigFile.LoadFromString(Str);
   if(ConfigFile.KeyExists("Image", "Width"))
   {
-    int Width = ConfigFile.Read("Image", "Width", 500);
-    int Height = ConfigFile.Read("Image", "Height", 500);
-    LOG_DATA(AnsiString("Width=") + Width);
-    LOG_DATA(AnsiString("Height=") + Height);
-    Form1->Width = Form1->Width - Form1->Image1->ClientWidth + Width;
-    Form1->Height = Form1->Height - Form1->Image1->ClientHeight + Height;
+    SetSize(ConfigFile.Read("Image", "Width", 500), ConfigFile.Read("Image", "Height", 500));
+    LOG_DATA(AnsiString("Width=") + GetWidth());
+    LOG_DATA(AnsiString("Height=") + GetHeight());
   }
 
   UndoList.Clear();
@@ -979,20 +1059,21 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Save(
   DEBUG_CALL();
   LOG_ARG(AnsiString("fSameAsLoad=") + fSameAsLoad);
   IStream *Stream = NULL;
-  if(pStgSave->CreateStream(L"Graph", STGM_WRITE | STGM_SHARE_EXCLUSIVE | STGM_CREATE, 0, 0, &Stream) != S_OK)
+  DWORD GrfMode = STGM_WRITE | STGM_SHARE_EXCLUSIVE | STGM_CREATE;
+  if(FAILED(LOG_FUNCTION_CALL(pStgSave->CreateStream(L"Graph", GrfMode, 0, 0, &Stream))))
     return LOG_RESULT(E_FAIL);
 
   std::string Str = Form1->Data.SaveToString(fSameAsLoad);
-  LOG_DATA(AnsiString("Width=") + Form1->Image1->Width);
-  LOG_DATA(AnsiString("Height=") + Form1->Image1->Height);
+  LOG_DATA(AnsiString("Width=") + GetWidth());
+  LOG_DATA(AnsiString("Height=") + GetHeight());
   TConfigFile ConfigFile;
   ConfigFile.LoadFromString(Str);
-  ConfigFile.Write("Image", "Width", Form1->Image1->Width);
-  ConfigFile.Write("Image", "Height", Form1->Image1->Height);
+  ConfigFile.Write("Image", "Width", GetWidth());
+  ConfigFile.Write("Image", "Height", GetHeight());
   Str = ConfigFile.GetAsString();
 
-  HRESULT Result = S_OK;
-  if(Stream->Write(Str.c_str(), Str.size(), NULL) != S_OK)
+  HRESULT Result = S_OK;                                                   
+  if(FAILED(LOG_FUNCTION_CALL(Stream->Write(Str.c_str(), Str.size(), NULL))))
     Result = E_FAIL;
 
   Stream->Release();
@@ -1003,6 +1084,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SaveCompleted(
   /* [unique][in] */ IStorage *pStgNew)
 {
   DEBUG_CALL();
+  SendAdvise(acDataSaved);
   return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------
@@ -1070,6 +1152,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::GetCurFile(
   return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------
+
+
 
 
 

@@ -12,24 +12,15 @@
 #ifndef OleServerImplH
 #define OleServerImplH
 
-#define ATL_APARTMENT_THREADED
+#include "OleServer.h"
 
-#ifdef _DEBUG
-#define DEBUG_CALL() DebugFunctionCall(__FUNC__)
-#define LOG_RESULT(x) DebugLogReturn(x)
-#define LOG_ARG(x) DebugLogArg(x)
-#define LOG_DATA(x) DebugLogData(x)
-#else
-#define DEBUG_CALL()
-#define LOG_RESULT(x) (x)
-#define LOG_ARG(x)
-#define LOG_DATA(x)
-#endif
+#define ATL_APARTMENT_THREADED
 
 extern class TOleServerImpl *OleServerImpl;
 extern "C" const __declspec(selectany) GUID CLSID_OleServer = {0xFD536B77, 0x5DF5, 0x448C,{ 0x90, 0xD1, 0x2C,0x04, 0xB3, 0xC1,0xD1, 0xBD} };
 
-class __declspec(uuid("FD536B77-5DF5-448C-90D1-2C04B3C1D1BD")) ATL_NO_VTABLE TOleServerImpl : public CComObjectRootEx<CComSingleThreadModel>,
+class __declspec(uuid("FD536B77-5DF5-448C-90D1-2C04B3C1D1BD")) ATL_NO_VTABLE TOleServerImpl :
+  public CComObjectRootEx<CComSingleThreadModel>,
   public CComCoClass<TOleServerImpl, &CLSID_OleServer>,
   public IOleObject,
   public IDataObject,
@@ -45,13 +36,17 @@ class __declspec(uuid("FD536B77-5DF5-448C-90D1-2C04B3C1D1BD")) ATL_NO_VTABLE TOl
   IOleAdviseHolder *OleAdviseHolder;
   IDataAdviseHolder *DataAdviseHolder;
   bool DataIsDirty;
+  int Width;
+  int Height;
 
   static void DebugFunctionCall(const AnsiString &Str);
   static HRESULT DebugLogReturn(HRESULT Result);
   static void DebugLogArg(const AnsiString &Str);
   static void DebugLogData(const AnsiString &Str);
+  static HRESULT DebugLogFunctionCall(const char *Name, HRESULT Result);
   static AnsiString ClipboardFormatToStr(CLIPFORMAT Format);
   static AnsiString DeviceToStr(const DVTARGETDEVICE *Device);
+  static AnsiString ResultToString(HRESULT Result);
   template<typename T> static AnsiString FlagsToStr(const T &List, unsigned Value);
   template<typename T> static AnsiString ValueToStr(const T &List, unsigned Value);
   template<typename T> static void ReleaseCom(T *&Unknown);
@@ -59,15 +54,16 @@ class __declspec(uuid("FD536B77-5DF5-448C-90D1-2C04B3C1D1BD")) ATL_NO_VTABLE TOl
   static bool Register(bool AllUsers);
   static void LogException();
 
-  HRESULT CreateAdviseHolder();
   void DrawMetafile(TMetafile *Metafile);
   HMETAFILE ConvertEnhMetaToMeta(HENHMETAFILE hemf);
 
 public:
   TOleServerImpl();
   ~TOleServerImpl();
-  friend void OleServerDataChanged();
-  friend void OleServerDataSaved();
+  void SetSize(int AWidth, int AHeight) {Width = AWidth; Height = AHeight;}
+  int GetWidth()  {return Width;}
+  int GetHeight() {return Height;}
+  void SendAdvise(TAdviseCode AdviseCode);
 
   // Data used when registering Object
   //
