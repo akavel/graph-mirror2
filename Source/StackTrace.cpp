@@ -228,7 +228,7 @@ bool NextStackFrame(TStackFrame *&StackFrame, TStackInfo &StackInfo, DWORD BaseO
 //---------------------------------------------------------------------------
 /** Write trace of current stack into StackInfoList.
  */
-void TraceStackFrames(std::vector<TStackInfo> &StackInfoList, unsigned IgnoreFrames)
+void TraceStackFrames(std::vector<TStackInfo> &StackInfoList, unsigned IgnoreFrames, unsigned Count = 200)
 {
   TStackFrame *StackFrame;
   TStackInfo StackInfo;
@@ -248,22 +248,22 @@ void TraceStackFrames(std::vector<TStackInfo> &StackInfoList, unsigned IgnoreFra
       return;
 
   // Loop over and report all valid stackframes
-  while(NextStackFrame(StackFrame, StackInfo, BaseOfStack))
+  while(Count-- > 0 && NextStackFrame(StackFrame, StackInfo, BaseOfStack))
     StackInfoList.push_back(StackInfo);
 }
 //---------------------------------------------------------------------------
 /** Write trace of current stack to Stream.
  */
-void WriteStackFrameToStream(std::ostream &Stream, unsigned IgnoreFrames)
+void WriteStackFrameToStream(std::ostream &Stream, unsigned IgnoreFrames, unsigned Count = 200)
 {
   std::vector<TStackInfo> StackInfoList;
-  TraceStackFrames(StackInfoList, IgnoreFrames);
+  TraceStackFrames(StackInfoList, IgnoreFrames, Count);
   WriteStackTrace(Stream, StackInfoList);
 }
 //---------------------------------------------------------------------------
 /** Log an OS exception (for example Division by zero) to a log file.
  */
-void LogOsException(EExternal *E)
+void LogOsException(EExternal *E, unsigned IgnoreFrames)
 {
   Sysutils::TExceptionRecord *Record = E->ExceptionRecord;
   std::ofstream File(LogFileName.c_str(), std::ios_base::app);
@@ -275,7 +275,7 @@ void LogOsException(EExternal *E)
   File << "Exception code: " << std::hex << std::uppercase << std::setw(8) << std::setfill('0') << Record->ExceptionCode << std::endl;
   File << "Exception flags: " << Record->ExceptionFlags << std::endl;
   File << "ExceptionAddress: " << std::hex << std::uppercase << std::setw(8) << std::setfill('0') << Record->ExceptionAddress << std::endl;
-  WriteStackFrameToStream(File, 6);
+  WriteStackFrameToStream(File, IgnoreFrames);
   File << "-----------------------------------------" << std::endl << std::endl;
 }
 //---------------------------------------------------------------------------
@@ -303,7 +303,7 @@ WINBASEAPI VOID WINAPI MyRaiseException(
     case 0x0EEDFAE4:  //cNonDelphiException
       if(nNumberOfArguments == 2)
         if(EExternal *E = dynamic_cast<EExternal*>(reinterpret_cast<Exception*>(lpArguments[1])))
-          LogOsException(E);
+          LogOsException(E, 6);
       break;
 
     case 0x0EEDFADF:  //cDelphiReRaise
@@ -351,7 +351,15 @@ Exception* __fastcall MyGetExceptionObject(Windows::PExceptionRecord P)
       GlobalStackInfo = new std::vector<TStackInfo>;
     TraceStackFrames(*GlobalStackInfo, 6);
   }
-  return OldExceptObjProc(P);
+
+  Exception *Result = OldExceptObjProc(P);
+
+  //Stack overflow cannot be handled from MyRaiseException() if running outside the debugger 
+  if(P->ExceptionCode == EXCEPTION_STACK_OVERFLOW)
+    if(EExternal *E = dynamic_cast<EExternal*>(Result))
+      LogOsException(E, 3);
+
+  return Result;
 }
 //---------------------------------------------------------------------------
 /** Call at startup to setup handling of exceptions.
