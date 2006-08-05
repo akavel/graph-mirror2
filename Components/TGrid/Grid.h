@@ -89,7 +89,7 @@ class TGrid : public TDrawGrid
   void SetClipboardData(unsigned int Format, void *Data, unsigned int DataSize);
 BEGIN_MESSAGE_MAP
   VCL_MESSAGE_HANDLER(WM_SETCURSOR, TMessage, WMSetCursor)
-  VCL_MESSAGE_HANDLER(WM_TIMER, TMessage, WMTimer);
+  VCL_MESSAGE_HANDLER(WM_TIMER, TMessage, WMTimer)
 END_MESSAGE_MAP(TDrawGrid)
 
 public:
