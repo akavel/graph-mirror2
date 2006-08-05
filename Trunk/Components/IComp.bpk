@@ -14,7 +14,7 @@
       ..\Obj\IPrintDialog.obj ..\Obj\SaveDialogEx.obj ..\Obj\ExtColorBox.obj 
       ..\Obj\SymbolDialog.obj ..\Obj\IRichEdit.obj ..\Obj\SymbolForm.obj 
       ..\Obj\TRecent.obj ..\Obj\SerialHandler.obj ..\Obj\SerialThread.obj 
-      ..\Obj\AtiHandler.obj ..\Obj\AtiThread.obj"/>
+      ..\Obj\AtiHandler.obj ..\Obj\AtiThread.obj ..\Obj\MediaPlayerEx.obj"/>
     <RESFILES value="IComp.res TCross\Cross.dcr TIColorBox\IColorBox.dcr 
       TLineSelect\LineSelect.dcr TPointSelect\PointSelect.dcr 
       TProgress\Progress.dcr TProgressForm\ProgressForm.dcr TRecent\TRecent.dcr 
@@ -30,7 +30,7 @@
     <LIBRARIES value="dbrtl.lib vcldb.lib"/>
     <SPARELIBS value="rtl.lib vcl.lib TntLibR.lib vclx.lib vcldb.lib dbrtl.lib"/>
     <PACKAGES value="rtl.bpi vcl.bpi vclx.bpi TntLibR.bpi"/>
-    <PATHCPP value=".;TIColorBox;TCross;TFocusPanel;TGrid;TOpenPreviewDialog;TLineSelect;TMyEdit;TMyRadioButton;TMySplitter;TPointSelect;TProgress;TProgressForm;TShadeSelect;TIColorSelect;TIFontBox;TIPageSetup;TIPolygon;TIRichEdit;TIPrintDialog;TSaveDialogEx;TExtColorBox;TSymbolDialog;TRecent;TSerialHandler;TAtiHandler"/>
+    <PATHCPP value=".;TIColorBox;TCross;TFocusPanel;TGrid;TOpenPreviewDialog;TLineSelect;TMyEdit;TMyRadioButton;TMySplitter;TPointSelect;TProgress;TProgressForm;TShadeSelect;TIColorSelect;TIFontBox;TIPageSetup;TIPolygon;TIRichEdit;TIPrintDialog;TSaveDialogEx;TExtColorBox;TSymbolDialog;TRecent;TSerialHandler;TAtiHandler;TMediaPlayerEx"/>
     <PATHPAS value=".;"/>
     <PATHRC value=".;Common"/>
     <PATHASM value=".;"/>
@@ -40,8 +40,8 @@
     <USERDEFINES value="_DEBUG"/>
     <SYSDEFINES value="NO_STRICT;USEPACKAGES"/>
     <MAINSOURCE value="IComp.cpp"/>
-    <INCLUDEPATH value="TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;..\..\TntUnicodeControls;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\include;$(BCB)\include\vcl;Common"/>
-    <LIBPATH value="TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;$(BCB)\Projects\Lib;Common;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\Psdk"/>
+    <INCLUDEPATH value="TMediaPlayerEx;TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;..\..\TntUnicodeControls;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\include;$(BCB)\include\vcl;Common"/>
+    <LIBPATH value="TMediaPlayerEx;TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;$(BCB)\Projects\Lib;Common;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\Psdk"/>
     <WARNINGS value="-w-par -w-8027"/>
     <OTHERFILES value=""/>
   </MACROS>
@@ -113,6 +113,7 @@
       <FILE FILENAME="TSerialHandler\SerialThread.cpp" FORMNAME="" UNITNAME="SerialThread" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="TAtiHandler\AtiHandler.cpp" FORMNAME="" UNITNAME="AtiHandler" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="TAtiHandler\AtiThread.cpp" FORMNAME="" UNITNAME="AtiThread" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TMediaPlayerEx\MediaPlayerEx.cpp" FORMNAME="" UNITNAME="MediaPlayerEx" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
