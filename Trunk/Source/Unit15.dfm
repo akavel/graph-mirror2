@@ -129,6 +129,21 @@ object Form15: TForm15
   object PopupMenu1: TTntPopupMenu
     Left = 8
     Top = 432
+    object Popup1_Show_df: TTntMenuItem
+      AutoCheck = True
+      Caption = 'Show %s'
+      Checked = True
+      OnClick = Popup1_Show
+    end
+    object Popup1_Show_ddf: TTntMenuItem
+      AutoCheck = True
+      Caption = 'Show %s'
+      Checked = True
+      OnClick = Popup1_Show
+    end
+    object N1: TTntMenuItem
+      Caption = '-'
+    end
     object Popup1_Copy: TTntMenuItem
       Caption = 'Copy'
       Hint = 'Copy selected cells to the clipboard.'
@@ -150,6 +165,7 @@ object Form15: TForm15
   object ProgressForm1: TProgressForm
     Caption = 'Calculating'
     Step = 1000
+    ButtonCaption = 'Cancel'
     Left = 248
     Top = 432
   end

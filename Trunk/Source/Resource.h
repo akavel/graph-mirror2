@@ -120,6 +120,7 @@
 #define RES_VALUE_RANGE         335
 
 #define RES_CAPTION_DELETE      400
+#define RES_SHOW                401
 
 #define RES_SAVE_OPTIONS        403
 #define RES_ERROR_BUG           404
