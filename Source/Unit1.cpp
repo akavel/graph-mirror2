@@ -639,13 +639,13 @@ void __fastcall TForm1::FormCloseQuery(TObject *Sender, bool &CanClose)
   //Some other programs may ask us to terminate more than once
   //When runing as OLE server only save when using linked object
   //Don't save when running as automation object
-  if(!Application->Terminated && (!OleServerImpl || !Data.GetFileName().empty()))
+  if(!Application->Terminated && (!OleServerRunning() || !Data.GetFileName().empty()))
   {
     CanClose = AskSave();
     SaveOption = OLECLOSE_NOSAVE; //Don't save again
   }
 
-  if(OleServerImpl && CanClose)
+  if(OleServerRunning() && CanClose)
   {
     OleServerImpl->AddRef();
     OleServerImpl->Close(SaveOption);
@@ -1044,7 +1044,7 @@ void __fastcall TForm1::WMExitSizeMove(TMessage &Message)
   {
     Draw.AbortUpdate();
     Data.ClearCache();
-    OleServerDataChanged();
+    SendOleAdvise(acDataChanged);
     Redraw(); //Activates thread; must be done after OLE update
     Reseized = false;
   }
@@ -1087,6 +1087,9 @@ void __fastcall TForm1::Panel2Resize(TObject *Sender)
       Redraw();
       UpdateEval();
     }
+
+    if(OleServerImpl)
+      OleServerImpl->SetSize(Image1->Width, Image1->Height);
   }
 }
 //---------------------------------------------------------------------------
@@ -1194,7 +1197,7 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       Data.ClearCache();
       Data.Update();
       UpdateTreeView();
-      OleServerDataChanged();
+      SendOleAdvise(acDataChanged);
       Redraw(); //Activates thread; must be done after OLE update
       break;
 
@@ -1789,11 +1792,11 @@ void __fastcall TForm1::PasteActionExecute(TObject *Sender)
 void __fastcall TForm1::CopyImageActionExecute(TObject *Sender)
 {
   IDataObject *Dummy = NULL;
-  if(!OleServerImpl)
+  OleCheck(OleInitialize(NULL));
+  if(!OleServerRunning())
     OleCheck(TOleServerImpl::_CreatorClass::CreateInstance(NULL, IID_IDataObject, &(void*&)Dummy));
 
-  OleCheck(OleInitialize(NULL));
-  if(OleSetClipboard(OleServerImpl) != S_OK)
+  if(FAILED(OleSetClipboard(OleServerImpl)))
     CopyAsImageToClipboard(); //Only copy bitmap and metafile
   else
     OleCheck(OleFlushClipboard());
@@ -3398,4 +3401,5 @@ void __fastcall TForm1::ImportPointSeriesActionExecute(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+
 

@@ -21,6 +21,7 @@
 #include <float.h>
 #include <functional>
 #include <boost/lexical_cast.hpp>
+#include "OleServer.h"
 
 TUndoList UndoList(50);
 //---------------------------------------------------------------------------
@@ -379,8 +380,7 @@ void TData::SaveUserModels() const
 void TData::SetModified()
 {
   Modified = true;
-  void OleServerDataChanged(); //Defined in OleServerImpl.cpp
-  OleServerDataChanged();
+  SendOleAdvise(acDataChanged);
 }
 //---------------------------------------------------------------------------
 double FindNearestValue(const std::vector<Func32::TCoordSet> &Values, int X, int Y, const TDraw &Draw)
