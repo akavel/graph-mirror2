@@ -829,19 +829,19 @@ void TDrawThread::DrawLabel(TTextLabel &Label)
   switch(Label.GetPlacement())
   {
     case lpAboveX:
-      Pos = TPoint(AxesRect.Right - Label.GetRect().Width() + 2, yPoint(0) - Label.GetRect().Height() - 4);
+      Pos = TPoint(AxesRect.Right - Label.GetRect().Width() + 2, yPoint(Axes.xAxis.AxisCross) - Label.GetRect().Height() - 4);
       break;
 
     case lpBelowX:
-      Pos = TPoint(AxesRect.Right - Label.GetRect().Width() + 2, yPoint(0));
+      Pos = TPoint(AxesRect.Right - Label.GetRect().Width() + 2, yPoint(Axes.xAxis.AxisCross));
       break;
 
     case lpRightOfY:
-      Pos = TPoint(xPoint(0) + 12, AxesRect.Top + 1);
+      Pos = TPoint(xPoint(Axes.yAxis.AxisCross) + 12, AxesRect.Top + 1);
       break;
 
     case lpLeftOfY:
-      Pos = TPoint(xPoint(0) - Label.GetRect().Width(), AxesRect.Top + 1);
+      Pos = TPoint(xPoint(Axes.yAxis.AxisCross) - Label.GetRect().Width(), AxesRect.Top + 1);
       break;
 
     case lpUserPos:
