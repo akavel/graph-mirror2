@@ -13,6 +13,7 @@
 #include <io>
 #include "VersionInfo.h"
 #include "ConfigFile.h"
+#include "OleServer.h"
 //---------------------------------------------------------------------------
 bool TData::LoadFromFile(const std::string &FileName, bool ShowErrorMessages)
 {
@@ -204,8 +205,7 @@ bool TData::Save(const std::string &FileName, bool Remember)
       Modified = false;
     }
 
-    void OleServerDataSaved(); //Defined in OleServerImpl.cpp
-    OleServerDataSaved(); //Notify OLE client that data has been saved
+    SendOleAdvise(acDataSaved); //Notify OLE client that data has been saved
     return true;
   }
   catch(EFCreateError &E)
