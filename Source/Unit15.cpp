@@ -17,10 +17,14 @@
 #pragma link "TntStdCtrls"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
-__fastcall TForm15::TForm15(TComponent* Owner)
+__fastcall TForm15::TForm15(TComponent* Owner)                                             
         : TTntForm(Owner), Func(NULL)
 {
   ScaleForm(this);
+
+  Popup1_Show_df->Caption = LoadRes(RES_SHOW, "f'(x)");
+  Popup1_Show_ddf->Caption = LoadRes(RES_SHOW, "f''(x)");
+                                                                     
   TranslateProperties(this);
   MoveControl(Edit1, Label1);
   MoveLabel(Edit2, Label2);
@@ -44,7 +48,7 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
   ProgressForm1->Position = 0;
   ProgressForm1->Show();
 
-  if(TStdFunc *F = dynamic_cast<TStdFunc*>(Func))
+  if(const TStdFunc *F = dynamic_cast<const TStdFunc*>(Func))
   {
     Func32::TFunc Dif1;
     Func32::TFunc Dif2;
@@ -55,7 +59,7 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
     }
     catch(...)
     {
-    }
+    }                    
 
     long double x = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, x += ds)
@@ -84,7 +88,7 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
         break;
     }
   }
-  else if(TParFunc *ParFunc = dynamic_cast<TParFunc*>(Func))
+  else if(const TParFunc *ParFunc = dynamic_cast<const TParFunc*>(Func))
   {
     double t = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
@@ -113,7 +117,7 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
         break;
     }
   }
-  else if(TPolFunc *PolFunc = dynamic_cast<TPolFunc*>(Func))
+  else if(const TPolFunc *PolFunc = dynamic_cast<const TPolFunc*>(Func))
   {
     double t = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
@@ -145,11 +149,11 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
   ProgressForm1->Close();
 }
 //---------------------------------------------------------------------------
-void TForm15::ShowTable(TBaseFuncType *F)
+void TForm15::ShowTable(const TBaseFuncType *F)
 {
   Func = F;
 
-  if(dynamic_cast<TStdFunc*>(Func))
+  if(dynamic_cast<const TStdFunc*>(Func))
   {
     Grid1->ColCount = 4;
     Grid1->Cells[0][0] = "x";
@@ -157,16 +161,20 @@ void TForm15::ShowTable(TBaseFuncType *F)
     Grid1->Cells[2][0] = "f'(x)";
     Grid1->Cells[3][0] = "f''(x)";
   }
-  else if(dynamic_cast<TParFunc*>(Func))
+  else if(dynamic_cast<const TParFunc*>(Func))
   {
+    Popup1_Show_df->Visible = false;
+    Popup1_Show_ddf->Visible = false;
     Grid1->ColCount = 3;
     Grid1->Cells[0][0] = "t";
     Grid1->Cells[1][0] = "x(t)";
     Grid1->Cells[2][0] = "y(t)";
     Label4->Caption = "dt=";
   }
-  else if(dynamic_cast<TPolFunc*>(Func))
+  else if(dynamic_cast<const TPolFunc*>(Func))
   {
+    Popup1_Show_df->Visible = false;
+    Popup1_Show_ddf->Visible = false;
     Grid1->ColCount = 4;
     Grid1->Cells[0][0] = "t";
     Grid1->Cells[1][0] = "r(t)";
@@ -204,6 +212,12 @@ void __fastcall TForm15::Popup1_ExportClick(TObject *Sender)
   if(SaveDialog1->Execute())
     if(!Grid1->ExportToFile(SaveDialog1->FileName, SaveDialog1->FilterIndex == 1 ? ';' : '\t'))
       MessageBox(LoadRes(RES_FILE_ACCESS, SaveDialog1->FileName), LoadRes(RES_WRITE_FAILED), MB_ICONSTOP);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm15::Popup1_Show(TObject *Sender)
+{                                                       
+  Grid1->ColWidths[2] = Popup1_Show_df->Checked ? Grid1->DefaultColWidth : 0;
+  Grid1->ColWidths[3] = Popup1_Show_ddf->Checked ? Grid1->DefaultColWidth : 0;
 }
 //---------------------------------------------------------------------------
 

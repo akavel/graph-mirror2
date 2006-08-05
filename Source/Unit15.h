@@ -41,17 +41,22 @@ __published:	// IDE-managed Components
   TGrid *Grid1;
   TTntMenuItem *Popup1_Export;
   TSaveDialog *SaveDialog1;
+  TTntMenuItem *N1;
+  TTntMenuItem *Popup1_Show_df;
+  TTntMenuItem *Popup1_Show_ddf;
   void __fastcall Button2Click(TObject *Sender);
   void __fastcall Popup1_CopyClick(TObject *Sender);
   void __fastcall Popup1_SelectClick(TObject *Sender);
   void __fastcall Button3Click(TObject *Sender);
   void __fastcall FormResize(TObject *Sender);
   void __fastcall Popup1_ExportClick(TObject *Sender);
+  void __fastcall Popup1_Show(TObject *Sender);
 private:	// User declarations
-        TBaseFuncType *Func;
+  const TBaseFuncType *Func; 
+
 public:		// User declarations
-        __fastcall TForm15(TComponent* Owner);
-        void ShowTable(TBaseFuncType *F);
+  __fastcall TForm15(TComponent* Owner);
+  void ShowTable(const TBaseFuncType *F);
 };
 //---------------------------------------------------------------------------
 #endif

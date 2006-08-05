@@ -116,7 +116,7 @@ BEGIN
   RES_VALUE_RANGE         "'%1%' must be between %2% and %3%."
 
   RES_CAPTION_DELETE      "Confirm delete"
-
+  RES_SHOW                "Show %1%"
   RES_SAVE_OPTIONS        "Options..."
   RES_ERROR_BUG           "This error should not occur. Please report this to the programmer."
   RES_DELETE              "Are you sure you want to delete %s?"
