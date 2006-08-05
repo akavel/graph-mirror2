@@ -15,6 +15,7 @@ object Form19: TForm19
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  ShowHint = True
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TTntLabel

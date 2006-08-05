@@ -124,6 +124,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
       }
       AVIStreamRelease(pStream);
     }
+
     AVIFileRelease(pFile);
   }
 
