@@ -14,7 +14,6 @@
 #include <Controls.hpp>
 #include <StdCtrls.hpp>
 #include <Forms.hpp>
-#include <MPlayer.hpp>
 #include <ExtCtrls.hpp>
 #include <Buttons.hpp>
 #include <Dialogs.hpp>
@@ -23,27 +22,52 @@
 #include <ToolWin.hpp>
 #include <TntMenus.hpp>
 #include <ImgList.hpp>
+#include "MediaPlayerEx.h"
+#include <MPlayer.hpp>
 //---------------------------------------------------------------------------
 class TForm20 : public TTntForm
 {
 __published:	// IDE-managed Components
-  TMediaPlayer *MediaPlayer1;
+  TMediaPlayerEx *MediaPlayer1;
   TPanel *Panel1;
   TSaveDialog *SaveDialog1;
   TPopupMenu *PopupMenu1;
   TMenuItem *Open1;
   TMenuItem *Save1;
-  TMenuItem *Copy1;
   TOpenDialog *OpenDialog1;
   TPanel *Panel2;
   TToolBar *ToolBar1;
   TToolButton *ToolButton1;
-  TButton *Button1;
   TImageList *ImageList1;
+  TMenuItem *N1;
+  TMenuItem *Repeat1;
+  TScrollBar *ScrollBar1;
+  TMenuItem *Reverse1;
+  TToolButton *ToolButton2;
+  TToolButton *ToolButton3;
+  TToolButton *ToolButton4;
+  TToolButton *ToolButton5;
+  TToolButton *ToolButton6;
+  TToolButton *ToolButton7;
+  TToolButton *ToolButton8;
   void __fastcall Save1Click(TObject *Sender);
   void __fastcall Open1Click(TObject *Sender);
-  void __fastcall Copy1Click(TObject *Sender);
-  void __fastcall Button1Click(TObject *Sender);
+  void __fastcall MediaPlayer1PostClick(TObject *Sender,
+          TMPBtnType Button);
+  void __fastcall ScrollBar1Scroll(TObject *Sender, TScrollCode ScrollCode,
+          int &ScrollPos);
+  void __fastcall Reverse1Click(TObject *Sender);
+  void __fastcall MediaPlayer1Signal(TMediaPlayerEx *Sender,
+          unsigned Position);
+  void __fastcall MediaPlayer1Hint(TMediaPlayerEx *Sender,
+          TMPBtnType Button);
+  void __fastcall ToolButton1Click(TObject *Sender);
+  void __fastcall ToolButton2Click(TObject *Sender);
+  void __fastcall ToolButton3Click(TObject *Sender);
+  void __fastcall ToolButton4Click(TObject *Sender);
+  void __fastcall ToolButton5Click(TObject *Sender);
+  void __fastcall ToolButton6Click(TObject *Sender);
+  void __fastcall ToolButton7Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
   __fastcall TForm20(TComponent* Owner);

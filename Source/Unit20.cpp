@@ -13,6 +13,7 @@
 #include "vfw.h"
 //---------------------------------------------------------------------------
 #pragma link "TntMenus"
+#pragma link "MediaPlayerEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm20::TForm20(TComponent* Owner)
@@ -24,7 +25,7 @@ __fastcall TForm20::TForm20(TComponent* Owner)
 
   dwICValue = dwICValue; //Avoid stupid warning
   Panel1->DoubleBuffered;
-}
+}                                                  
 //---------------------------------------------------------------------------
 void TForm20::ShowAnimation(const AnsiString &FileName, unsigned ImageWidth, unsigned ImageHeight)
 {
@@ -32,6 +33,10 @@ void TForm20::ShowAnimation(const AnsiString &FileName, unsigned ImageWidth, uns
   Height = Height - Panel1->ClientHeight + ImageHeight;
   MediaPlayer1->FileName = FileName;
   MediaPlayer1->Open();
+  ScrollBar1->Max = MediaPlayer1->Length - 1;
+  MediaPlayer1->Notify = true;
+  MediaPlayer1->TimeFormat = tfFrames;   
+  MediaPlayer1->SetSignal(0, 1);
   ShowModal();
 }
 //---------------------------------------------------------------------------
@@ -47,60 +52,88 @@ void __fastcall TForm20::Open1Click(TObject *Sender)
     MediaPlayer1->FileName = OpenDialog1->FileName;
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm20::Copy1Click(TObject *Sender)
+void __fastcall TForm20::MediaPlayer1PostClick(TObject *Sender,
+      TMPBtnType Button)
 {
-/*typedef struct  {
-    DWORD dwCallback;     // see below    DWORD dwFrom;         // starting position for copy    DWORD dwTo;           // ending position for copy    RECT  rc;             // see below    DWORD dwAudioStream;  // audio stream    DWORD dwVideoStream;  // video stream} MCI_DGV_COPY_PARMS;
-  MCI_DGV_COPY_PARMS Copy = {0};
-  Copy.dwCallback = (DWORD)Handle;
-  Copy.dwFrom = 1;
-  Copy.dwTo = 5;
-
-  DWORD Result = mciSendCommand(MediaPlayer1->DeviceID, MCI_COPY, MCI_NOTIFY | MCI_FROM | MCI_TO, (DWORD)&Copy);
-  char ErrorStr[256];
-  if(Result != 0)
-  {
-    mciGetErrorString(Result, ErrorStr, sizeof(ErrorStr));
-    MessageBox(ErrorStr, "MCI ERROR");
-  } */
-
-  OleCheck(OleInitialize(NULL));
-  FORMATETC FormatEtc = {0, NULL, DVASPECT_CONTENT, -1, TYMED_NULL};
-  IDataObject *DataObject;
-  IOleObject *OleObject;
-  IStorage *Storage;
-  OleCheck(StgCreateDocfile(NULL, STGM_DELETEONRELEASE | STGM_DIRECT | STGM_READWRITE | STGM_SHARE_EXCLUSIVE | STGM_CREATE, 0, &Storage));
-//  OleCheck(OleCreateLinkToFile(WideString(MediaPlayer1->FileName), IID_IDataObject, OLERENDER_NONE, &FormatEtc, NULL, Storage, reinterpret_cast<void**>(&DataObject)));
-
-  OleCheck(OleCreateLinkToFile(WideString(MediaPlayer1->FileName), IID_IOleObject, OLERENDER_NONE, &FormatEtc, NULL, Storage, reinterpret_cast<void**>(&OleObject)));
-  TRect Rect= Panel1->ClientRect;
-  OleObject->DoVerb(OLEIVERB_SHOW, NULL, NULL, 0, Handle, &Rect);
-
-/*  OleCheck(OleSetClipboard(DataObject));
-  OleCheck(OleFlushClipboard());
-  OleCheck(DataObject->Release());
-  OleCheck(Storage->Release());
-  OleUninitialize();*/
-/*
-  PAVIFILE pFile = NULL;
-  AVIFileInit();
-  if(AVIFileOpen(&pFile, MediaPlayer1->FileName.c_str(), OF_READ, NULL) == AVIERR_OK)
-  {
-    AVIPutFileOnClipboard(pFile);
-    AVIFileRelease(pFile);
-  }
-  AVIFileExit(); */
+  ScrollBar1->Position = MediaPlayer1->Position;
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm20::Button1Click(TObject *Sender)
+void __fastcall TForm20::ScrollBar1Scroll(TObject *Sender,
+      TScrollCode ScrollCode, int &ScrollPos)
 {
-  DWORD Result = mciSendCommand(MediaPlayer1->DeviceID, MCI_UPDATE, 0, NULL);
-  char ErrorStr[256];
-  if(Result != 0)
+  MediaPlayer1->Position = ScrollBar1->Position;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::Reverse1Click(TObject *Sender)
+{
+  MediaPlayer1->Reverse = Reverse1->Checked;
+  MediaPlayer1->Repeat = Repeat1->Checked;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::MediaPlayer1Signal(TMediaPlayerEx *Sender,
+      unsigned Position)
+{
+  ScrollBar1->Position = MediaPlayer1->Position - 1;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::MediaPlayer1Hint(TMediaPlayerEx *Sender,
+      TMPBtnType Button)
+{
+  switch(Button)
   {
-    mciGetErrorString(Result, ErrorStr, sizeof(ErrorStr));
-    MessageBox(ErrorStr, "MCI ERROR");
+    case btPlay:  Sender->Hint = "Play"; break;
+    case btPause: Sender->Hint = "Pause"; break;
+    case btStop:  Sender->Hint = "Stop"; break;
+    case Mplayer::btNext:
+    case Mplayer::btPrev:
+    case btStep:
+    case btBack:
+
+    default:
+      Sender->Hint = "";
   }
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::ToolButton1Click(TObject *Sender)
+{
+  MediaPlayer1->Play();
+  ToolButton1->Enabled = false;
+  ToolButton2->Enabled = true;
+  ToolButton3->Enabled = true;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::ToolButton2Click(TObject *Sender)
+{
+  MediaPlayer1->Pause();
+  ToolButton1->Enabled = true;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::ToolButton3Click(TObject *Sender)
+{
+  MediaPlayer1->Stop();
+  ToolButton1->Enabled = true;
+  ToolButton2->Enabled = false;
+  ToolButton3->Enabled = false;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::ToolButton4Click(TObject *Sender)
+{
+  MediaPlayer1->Next();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::ToolButton5Click(TObject *Sender)
+{
+  MediaPlayer1->Previous();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::ToolButton6Click(TObject *Sender)
+{
+  MediaPlayer1->Step();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::ToolButton7Click(TObject *Sender)
+{
+  MediaPlayer1->Back();
 }
 //---------------------------------------------------------------------------
 
