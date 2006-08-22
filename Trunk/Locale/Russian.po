@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph russian interface\n"
-"POT-Creation-Date: 2006-06-17 10:25\n"
+"POT-Creation-Date: 2006-08-22 23:14\n"
 "PO-Revision-Date: 2006-01-14 12:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -623,6 +623,14 @@ msgstr "Подпись к графику"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Показывать подпись к графику на системе координат."
 
+#, fuzzy
+msgid "Font"
+msgstr "Шрифты"
+
+#, fuzzy
+msgid "Change the font of the legend."
+msgstr "Выбрать шрифт заголовка."
+
 msgid "Top Right"
 msgstr "Вверху справа"
 
@@ -1074,6 +1082,10 @@ msgstr "Наименьшее значение х в интервале."
 msgid "The last x-value in the interval."
 msgstr "Наибольшее значение х в интервале."
 
+#, fuzzy
+msgid "Show %s"
+msgstr "Показ. засечки"
+
 msgid "Copy selected cells to the clipboard."
 msgstr "Скопировать выделенные ячейки в буфер обмена."
 
@@ -1354,16 +1366,42 @@ msgid "Animation"
 msgstr "Поддержать разработчика"
 
 #, fuzzy
+msgid "Play"
+msgstr "Полярный"
+
+#, fuzzy
+msgid "Pause"
+msgstr "Вставить"
+
+#, fuzzy
+msgid "Stop"
+msgstr "Шаги:"
+
+#, fuzzy
+msgid "Back"
+msgstr "Black"
+
+#, fuzzy
+msgid "Step"
+msgstr "Шаги:"
+
+msgid "Speed"
+msgstr ""
+
+#, fuzzy
+msgid "Repeat"
+msgstr "Действительн."
+
+msgid "Auto reverse"
+msgstr ""
+
+#, fuzzy
 msgid "Open an animation file."
 msgstr "Открыть файл %s."
 
 #, fuzzy
 msgid "Save the animation to a file."
 msgstr "Сохранить выделенные данные в файл."
-
-#, fuzzy
-msgid "Copy the animation to the clipboard."
-msgstr "Скопировать выбранный текст в буфер обмена."
 
 msgid "Edit axes"
 msgstr "Редактирование осей:"
@@ -1750,23 +1788,27 @@ msgid "Text string"
 msgstr "Текст"
 
 #, fuzzy
-msgid "Insert symbol"
+msgid "Insert symbol (Ctrl+G)"
 msgstr "Вставить строку"
 
 #, fuzzy
 msgid "Insert object"
 msgstr "Вставить объект..."
 
-msgid "Bold (Ctrl-B)"
+#, fuzzy
+msgid "Bold (Ctrl+B)"
 msgstr "Жирный шрифт (Ctrl-B)"
 
-msgid "Italic (Ctrl-I)"
+#, fuzzy
+msgid "Italic (Ctrl+I)"
 msgstr "Курсив (Ctrl-I)"
 
-msgid "Underline (Ctrl-U)"
+#, fuzzy
+msgid "Underline (Ctrl+U)"
 msgstr "Подчёркнутый (Ctrl-U)"
 
-msgid "Strikethrough (Ctrl-S)"
+#, fuzzy
+msgid "Strikethrough (Ctrl+S)"
 msgstr "Перечёркнутый (Ctrl-S)"
 
 msgid "Superscript (Ctrl++)"
@@ -1775,13 +1817,16 @@ msgstr "Подпись вверху (Ctrl++)"
 msgid "Subscript (Ctrl+=)"
 msgstr "Подпись внизу (Ctrl+=)"
 
-msgid "Align left (Ctrl-L)"
+#, fuzzy
+msgid "Align left (Ctrl+L)"
 msgstr "Выравнивать по левому краю (Ctrl-L)"
 
-msgid "Center (Ctrl-E)"
+#, fuzzy
+msgid "Center (Ctrl+E)"
 msgstr "Центровать (Ctrl-E)"
 
-msgid "Align right (Ctrl-R)"
+#, fuzzy
+msgid "Align right (Ctrl+R)"
 msgstr "Выравнивать по правому краю (Ctrl-R)"
 
 #, fuzzy
@@ -2855,6 +2900,10 @@ msgstr ""
 msgid "Insert"
 msgstr "Вставить строку"
 
+#, fuzzy
+msgid "Insert symbol"
+msgstr "Вставить строку"
+
 msgid "Subset:"
 msgstr ""
 
@@ -2924,6 +2973,10 @@ msgstr "Количество копий:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Copy the animation to the clipboard."
+#~ msgstr "Скопировать выбранный текст в буфер обмена."
 
 #~ msgid "Edit options."
 #~ msgstr "Редактировать настройки программы."

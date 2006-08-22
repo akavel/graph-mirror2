@@ -151,6 +151,12 @@ msgstr ""
 msgid "Legal"
 msgstr ""
 
+msgid "10%"
+msgstr ""
+
+msgid "50%"
+msgstr ""
+
 msgid "75%"
 msgstr ""
 
@@ -164,6 +170,9 @@ msgid "150%"
 msgstr ""
 
 msgid "200%"
+msgstr ""
+
+msgid "1000%"
 msgstr ""
 
 msgid "Lucida Sans Unicode"
