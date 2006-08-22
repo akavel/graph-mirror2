@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.0.1\n"
-"POT-Creation-Date: 2006-06-17 10:25\n"
+"POT-Creation-Date: 2006-08-22 23:14\n"
 "PO-Revision-Date: 2006-01-14 12:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: Etienne Goemaere <etienne.goemaere@pandora.be>\n"
@@ -631,6 +631,14 @@ msgstr "Toon de legende"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Toon een legende in het assenstel."
 
+#, fuzzy
+msgid "Font"
+msgstr "Lettertypes"
+
+#, fuzzy
+msgid "Change the font of the legend."
+msgstr "Kies lettertype voor titel."
+
 msgid "Top Right"
 msgstr "Rechtsboven"
 
@@ -1092,6 +1100,10 @@ msgstr "De eerste x-waarde in het interval."
 msgid "The last x-value in the interval."
 msgstr "De laatste x-waarde in het interval."
 
+#, fuzzy
+msgid "Show %s"
+msgstr "Toon stippen"
+
 msgid "Copy selected cells to the clipboard."
 msgstr "De geselecteerde cellen naar het klembord kopiëren"
 
@@ -1372,16 +1384,42 @@ msgid "Animation"
 msgstr "Schenk"
 
 #, fuzzy
+msgid "Play"
+msgstr "Polair"
+
+#, fuzzy
+msgid "Pause"
+msgstr "Plak"
+
+#, fuzzy
+msgid "Stop"
+msgstr "Stappen:"
+
+#, fuzzy
+msgid "Back"
+msgstr "Zwart"
+
+#, fuzzy
+msgid "Step"
+msgstr "Stappen:"
+
+msgid "Speed"
+msgstr ""
+
+#, fuzzy
+msgid "Repeat"
+msgstr "Reëel"
+
+msgid "Auto reverse"
+msgstr ""
+
+#, fuzzy
 msgid "Open an animation file."
 msgstr "Open het bestand%s."
 
 #, fuzzy
 msgid "Save the animation to a file."
 msgstr "Sla de geselecteerde data op in een bestand."
-
-#, fuzzy
-msgid "Copy the animation to the clipboard."
-msgstr "De selectie naar het klembord kopiëren"
 
 msgid "Edit axes"
 msgstr "Assen bewerken"
@@ -1771,23 +1809,28 @@ msgstr "Tekstgrootte"
 msgid "Text string"
 msgstr "Tekst"
 
-msgid "Insert symbol"
+#, fuzzy
+msgid "Insert symbol (Ctrl+G)"
 msgstr "Voeg een symbool in"
 
 #, fuzzy
 msgid "Insert object"
 msgstr "Voeg object in..."
 
-msgid "Bold (Ctrl-B)"
+#, fuzzy
+msgid "Bold (Ctrl+B)"
 msgstr "Vet (Ctrl-B)"
 
-msgid "Italic (Ctrl-I)"
+#, fuzzy
+msgid "Italic (Ctrl+I)"
 msgstr "Schuin (Crl-I)"
 
-msgid "Underline (Ctrl-U)"
+#, fuzzy
+msgid "Underline (Ctrl+U)"
 msgstr "Onderstreep (Ctrl-U)"
 
-msgid "Strikethrough (Ctrl-S)"
+#, fuzzy
+msgid "Strikethrough (Ctrl+S)"
 msgstr "Doorstreep (Ctrl-S)"
 
 msgid "Superscript (Ctrl++)"
@@ -1796,13 +1839,16 @@ msgstr "Superscript (Ctrl++)"
 msgid "Subscript (Ctrl+=)"
 msgstr "Subscript (Ctrl+=)"
 
-msgid "Align left (Ctrl-L)"
+#, fuzzy
+msgid "Align left (Ctrl+L)"
 msgstr "Links uitvullen (Ctrl-L)"
 
-msgid "Center (Ctrl-E)"
+#, fuzzy
+msgid "Center (Ctrl+E)"
 msgstr "Centreer (Ctrl-E)"
 
-msgid "Align right (Ctrl-R)"
+#, fuzzy
+msgid "Align right (Ctrl+R)"
 msgstr "Rechts uitvullen (Ctrl-R)"
 
 #, fuzzy
@@ -2883,6 +2929,9 @@ msgstr ""
 msgid "Insert"
 msgstr "Voeg in"
 
+msgid "Insert symbol"
+msgstr "Voeg een symbool in"
+
 msgid "Subset:"
 msgstr ""
 
@@ -2952,6 +3001,10 @@ msgstr "Aantal kopies:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Copy the animation to the clipboard."
+#~ msgstr "De selectie naar het klembord kopiëren"
 
 #~ msgid "Edit options."
 #~ msgstr "Opties bewerken"

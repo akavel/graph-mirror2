@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2006-06-17 10:25\n"
+"POT-Creation-Date: 2006-08-22 23:14\n"
 "PO-Revision-Date: 2006-01-14 12:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -628,6 +628,14 @@ msgstr "Mostra legenda"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Seleziona per mostrare la legenda sul sistema cartesiano."
 
+#, fuzzy
+msgid "Font"
+msgstr "Tipo carattere"
+
+#, fuzzy
+msgid "Change the font of the legend."
+msgstr "Seleziona il tipo di carattere per il titolo."
+
 msgid "Top Right"
 msgstr "Alto a destra"
 
@@ -1083,6 +1091,10 @@ msgstr "Il primo valore di x nell'intervallo."
 msgid "The last x-value in the interval."
 msgstr "L'ultimo valore di x nell'intervallo."
 
+#, fuzzy
+msgid "Show %s"
+msgstr "Mostra graduaz."
+
 msgid "Copy selected cells to the clipboard."
 msgstr "Copia le celle selezionate negli appunti."
 
@@ -1365,16 +1377,42 @@ msgid "Animation"
 msgstr "Dona"
 
 #, fuzzy
+msgid "Play"
+msgstr "Polare"
+
+#, fuzzy
+msgid "Pause"
+msgstr "Incolla"
+
+#, fuzzy
+msgid "Stop"
+msgstr "Step:"
+
+#, fuzzy
+msgid "Back"
+msgstr "Nero"
+
+#, fuzzy
+msgid "Step"
+msgstr "Step:"
+
+msgid "Speed"
+msgstr ""
+
+#, fuzzy
+msgid "Repeat"
+msgstr "Reale"
+
+msgid "Auto reverse"
+msgstr ""
+
+#, fuzzy
 msgid "Open an animation file."
 msgstr "Apri il file %s."
 
 #, fuzzy
 msgid "Save the animation to a file."
 msgstr "Salva i dati selezionati su file."
-
-#, fuzzy
-msgid "Copy the animation to the clipboard."
-msgstr "Copia negli appunti il testo selezionato."
 
 msgid "Edit axes"
 msgstr "Modifica assi"
@@ -1766,23 +1804,27 @@ msgid "Text string"
 msgstr "Corpo testo"
 
 #, fuzzy
-msgid "Insert symbol"
+msgid "Insert symbol (Ctrl+G)"
 msgstr "Inserisci riga"
 
 #, fuzzy
 msgid "Insert object"
 msgstr "Inserisci oggetto..."
 
-msgid "Bold (Ctrl-B)"
+#, fuzzy
+msgid "Bold (Ctrl+B)"
 msgstr "Grassetto (Ctrl-B)"
 
-msgid "Italic (Ctrl-I)"
+#, fuzzy
+msgid "Italic (Ctrl+I)"
 msgstr "Italico (Ctrl-I)"
 
-msgid "Underline (Ctrl-U)"
+#, fuzzy
+msgid "Underline (Ctrl+U)"
 msgstr "Sottolineato (Ctrl-U)"
 
-msgid "Strikethrough (Ctrl-S)"
+#, fuzzy
+msgid "Strikethrough (Ctrl+S)"
 msgstr "Barrato (Ctrl-S)"
 
 msgid "Superscript (Ctrl++)"
@@ -1791,13 +1833,16 @@ msgstr "Apice (Ctrl++)"
 msgid "Subscript (Ctrl+=)"
 msgstr "Pedice (Ctrl+=)"
 
-msgid "Align left (Ctrl-L)"
+#, fuzzy
+msgid "Align left (Ctrl+L)"
 msgstr "Allinea a sinistra (Ctrl-L)"
 
-msgid "Center (Ctrl-E)"
+#, fuzzy
+msgid "Center (Ctrl+E)"
 msgstr "Centra (Ctrl-E)"
 
-msgid "Align right (Ctrl-R)"
+#, fuzzy
+msgid "Align right (Ctrl+R)"
 msgstr "Allinea a destra (Ctrl-R)"
 
 #, fuzzy
@@ -2884,6 +2929,10 @@ msgstr ""
 msgid "Insert"
 msgstr "Inserisci riga"
 
+#, fuzzy
+msgid "Insert symbol"
+msgstr "Inserisci riga"
+
 msgid "Subset:"
 msgstr ""
 
@@ -2953,6 +3002,10 @@ msgstr "Numero di copie:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Copy the animation to the clipboard."
+#~ msgstr "Copia negli appunti il testo selezionato."
 
 #~ msgid "Edit options."
 #~ msgstr "Modifica opzioni."

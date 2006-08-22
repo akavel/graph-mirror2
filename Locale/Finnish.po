@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2006-06-17 10:25\n"
+"POT-Creation-Date: 2006-08-22 23:14\n"
 "PO-Revision-Date: 2006-01-14 12:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: Pekka Lerssi <pekka.lerssi@tut.fi>\n"
@@ -621,6 +621,14 @@ msgstr "Näytä selite"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Näyttää selitteen koordinaatistossa."
 
+#, fuzzy
+msgid "Font"
+msgstr "Fontit"
+
+#, fuzzy
+msgid "Change the font of the legend."
+msgstr "Valitse otsikon fontti."
+
 msgid "Top Right"
 msgstr "Oikea yläreuna"
 
@@ -1068,6 +1076,10 @@ msgstr "Välin ensimmäinen x-koordinaatti."
 msgid "The last x-value in the interval."
 msgstr "Välin viimeinen x-koordinaatti."
 
+#, fuzzy
+msgid "Show %s"
+msgstr "Näytä "
+
 msgid "Copy selected cells to the clipboard."
 msgstr "Kopioit valitut solut leikepöydälle."
 
@@ -1349,16 +1361,42 @@ msgid "Animation"
 msgstr "Lahjoita"
 
 #, fuzzy
+msgid "Play"
+msgstr "Polaarisia"
+
+#, fuzzy
+msgid "Pause"
+msgstr "Liitä"
+
+#, fuzzy
+msgid "Stop"
+msgstr "Askeleita:"
+
+#, fuzzy
+msgid "Back"
+msgstr "Musta"
+
+#, fuzzy
+msgid "Step"
+msgstr "Askeleita:"
+
+msgid "Speed"
+msgstr ""
+
+#, fuzzy
+msgid "Repeat"
+msgstr "Reaalisia"
+
+msgid "Auto reverse"
+msgstr ""
+
+#, fuzzy
 msgid "Open an animation file."
 msgstr "Avaa tiedosto %s."
 
 #, fuzzy
 msgid "Save the animation to a file."
 msgstr "Tallentaa valitun datan tiedostoon."
-
-#, fuzzy
-msgid "Copy the animation to the clipboard."
-msgstr "Kopioi valittu teksti leikepöydälle"
 
 msgid "Edit axes"
 msgstr "Muokkaa akseleita"
@@ -1742,23 +1780,28 @@ msgstr "Fonttikoko"
 msgid "Text string"
 msgstr "Teksti"
 
-msgid "Insert symbol"
+#, fuzzy
+msgid "Insert symbol (Ctrl+G)"
 msgstr "Lisää symboli"
 
 #, fuzzy
 msgid "Insert object"
 msgstr "Lisää objekti..."
 
-msgid "Bold (Ctrl-B)"
+#, fuzzy
+msgid "Bold (Ctrl+B)"
 msgstr "Lihavoitu (Ctrl-B)"
 
-msgid "Italic (Ctrl-I)"
+#, fuzzy
+msgid "Italic (Ctrl+I)"
 msgstr "Kursivoitu (Ctrl-I)"
 
-msgid "Underline (Ctrl-U)"
+#, fuzzy
+msgid "Underline (Ctrl+U)"
 msgstr "Alleviivattu (Ctrl-U)"
 
-msgid "Strikethrough (Ctrl-S)"
+#, fuzzy
+msgid "Strikethrough (Ctrl+S)"
 msgstr "Yliviivattu (Ctrl-S)"
 
 msgid "Superscript (Ctrl++)"
@@ -1767,13 +1810,16 @@ msgstr "Yläindeksi (Ctrl++)"
 msgid "Subscript (Ctrl+=)"
 msgstr "Alaindeksi (Ctrl+=)"
 
-msgid "Align left (Ctrl-L)"
+#, fuzzy
+msgid "Align left (Ctrl+L)"
 msgstr "Tasaa vasen reuna (Ctrl-L)"
 
-msgid "Center (Ctrl-E)"
+#, fuzzy
+msgid "Center (Ctrl+E)"
 msgstr "Keskitä (Ctrl-E)"
 
-msgid "Align right (Ctrl-R)"
+#, fuzzy
+msgid "Align right (Ctrl+R)"
 msgstr "Tasaa oikea reuna (Ctrl-R)"
 
 #, fuzzy
@@ -2850,6 +2896,9 @@ msgstr ""
 msgid "Insert"
 msgstr "Lisää"
 
+msgid "Insert symbol"
+msgstr "Lisää symboli"
+
 msgid "Subset:"
 msgstr ""
 
@@ -2919,6 +2968,10 @@ msgstr "Kopioita:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Copy the animation to the clipboard."
+#~ msgstr "Kopioi valittu teksti leikepöydälle"
 
 #~ msgid "Edit options."
 #~ msgstr "Muokkaa asetuksia."

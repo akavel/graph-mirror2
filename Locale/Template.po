@@ -1,7 +1,7 @@
 msgid "" 
 msgstr "Project-Id-Version: Graph\n" 
-"POT-Creation-Date: 2006-06-17 10:25\n"
-"PO-Revision-Date: 2006-06-17 10:25\n"
+"POT-Creation-Date: 2006-08-22 23:14\n"
+"PO-Revision-Date: 2006-08-22 23:14\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -626,6 +626,12 @@ msgid "Select to show a legend in the coordinate "
 "system."
 msgstr ""
 
+msgid "Font"
+msgstr ""
+
+msgid "Change the font of the legend."
+msgstr ""
+
 msgid "Top Right"
 msgstr ""
 
@@ -1067,6 +1073,9 @@ msgstr ""
 msgid "The last x-value in the interval."
 msgstr ""
 
+msgid "Show %s"
+msgstr ""
+
 msgid "Copy selected cells to the clipboard."
 msgstr ""
 
@@ -1333,13 +1342,34 @@ msgstr ""
 msgid "Animation"
 msgstr ""
 
+msgid "Play"
+msgstr ""
+
+msgid "Pause"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Step"
+msgstr ""
+
+msgid "Speed"
+msgstr ""
+
+msgid "Repeat"
+msgstr ""
+
+msgid "Auto reverse"
+msgstr ""
+
 msgid "Open an animation file."
 msgstr ""
 
 msgid "Save the animation to a file."
-msgstr ""
-
-msgid "Copy the animation to the clipboard."
 msgstr ""
 
 msgid "Edit axes"
@@ -1711,22 +1741,22 @@ msgstr ""
 msgid "Text string"
 msgstr ""
 
-msgid "Insert symbol"
+msgid "Insert symbol (Ctrl+G)"
 msgstr ""
 
 msgid "Insert object"
 msgstr ""
 
-msgid "Bold (Ctrl-B)"
+msgid "Bold (Ctrl+B)"
 msgstr ""
 
-msgid "Italic (Ctrl-I)"
+msgid "Italic (Ctrl+I)"
 msgstr ""
 
-msgid "Underline (Ctrl-U)"
+msgid "Underline (Ctrl+U)"
 msgstr ""
 
-msgid "Strikethrough (Ctrl-S)"
+msgid "Strikethrough (Ctrl+S)"
 msgstr ""
 
 msgid "Superscript (Ctrl++)"
@@ -1735,13 +1765,13 @@ msgstr ""
 msgid "Subscript (Ctrl+=)"
 msgstr ""
 
-msgid "Align left (Ctrl-L)"
+msgid "Align left (Ctrl+L)"
 msgstr ""
 
-msgid "Center (Ctrl-E)"
+msgid "Center (Ctrl+E)"
 msgstr ""
 
-msgid "Align right (Ctrl-R)"
+msgid "Align right (Ctrl+R)"
 msgstr ""
 
 msgid "Text font."
@@ -2646,6 +2676,9 @@ msgid "Global"
 msgstr ""
 
 msgid "Insert"
+msgstr ""
+
+msgid "Insert symbol"
 msgstr ""
 
 msgid "Subset:"
