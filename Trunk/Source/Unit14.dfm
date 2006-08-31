@@ -119,9 +119,9 @@ object Form14: TForm14
     Top = 24
     Width = 194
     Height = 352
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Anchors = [akTop, akRight, akBottom]
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 2
     object TabSheet1: TTntTabSheet
       Caption = 'Markers'

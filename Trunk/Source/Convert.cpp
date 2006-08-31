@@ -444,6 +444,11 @@ WideString ToWideString(const std::wstring &Str)
   return WideString(Str.c_str());
 }
 //--------------------------------------------------------------------------
+WideString ToWideString(const std::string &Str)
+{
+  return WideString(AnsiString(Str.c_str()));
+}
+//--------------------------------------------------------------------------
 WideString ToWideString(const AnsiString &Str)
 {
   return Str;
