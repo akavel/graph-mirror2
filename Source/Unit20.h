@@ -75,7 +75,7 @@ private:	// User declarations
   bool BackwardDirection;
 public:		// User declarations
   __fastcall TForm20(TComponent* Owner);
-  void ShowAnimation(const AnsiString &FileName, unsigned ImageWidth, unsigned ImageHeight);
+  void ShowAnimation(const AnsiString &FileName);
 };
 //---------------------------------------------------------------------------
 #endif

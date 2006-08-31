@@ -135,7 +135,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   AVIFileExit();
 
   ProgressForm1->Close();
-  CreateForm<TForm20>()->ShowAnimation(TempFile, ImageWidth, ImageHeight);
+  CreateForm<TForm20>()->ShowAnimation(TempFile);
   DeleteFile(TempFile);
 }
 //---------------------------------------------------------------------------
