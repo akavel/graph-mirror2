@@ -460,5 +460,14 @@ void __fastcall TMediaPlayerEx::SetSpeed(int Value)
   }
 }
 //---------------------------------------------------------------------------
+TRect TMediaPlayerEx::GetDisplayRect()
+{
+  MCI_DGV_RECT_PARMS RectParm;
+  CheckIfOpen();
+  DWORD Flags = MCI_WAIT | MCI_DGV_WHERE_SOURCE;
+  MciCheck(mciSendCommand(DeviceID, MCI_WHERE, Flags, reinterpret_cast<DWORD>(&RectParm)));
+  return RectParm.rc;
+}
+//---------------------------------------------------------------------------
 
 

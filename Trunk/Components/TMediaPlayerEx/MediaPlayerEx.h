@@ -52,6 +52,7 @@ private:
   int GetLength();
   TMPModes GetMode();
   void __fastcall SetSpeed(int Value);
+  TRect GetDisplayRect();
 
   void __fastcall Notification(TComponent* AComponent, TOperation Operation);
 
@@ -84,6 +85,7 @@ public:
   __property TMPDevCapsSet Capabilities = {read=FCapabilities};
   __property TMPTimeFormats TimeFormat = {read=GetTimeFormat, write=SetTimeFormat};
   __property TMPModes Mode = {read=GetMode};
+  __property TRect DisplayRect = {read=GetDisplayRect}; 
 
 __published:
   __property TWinControl* Display = {read=FDisplay, write=SetDisplay, default=NULL};

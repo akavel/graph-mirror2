@@ -27,16 +27,19 @@ __fastcall TForm20::TForm20(TComponent* Owner)
   Panel1->DoubleBuffered;
 }                                                   
 //---------------------------------------------------------------------------
-void TForm20::ShowAnimation(const AnsiString &FileName, unsigned ImageWidth, unsigned ImageHeight)
+void TForm20::ShowAnimation(const AnsiString &FileName)
 {
-  Width = Width - Panel1->ClientWidth + ImageWidth;
-  Height = Height - Panel1->ClientHeight + ImageHeight;
-  MediaPlayer1->FileName = FileName;             
+  MediaPlayer1->FileName = FileName;       
   MediaPlayer1->Open();
+  TRect Rect = MediaPlayer1->DisplayRect;                   
+  Width = Width - Panel1->ClientWidth + Rect.Width();
+  Height = Height - Panel1->ClientHeight + Rect.Height();
   TrackBar1->Max = MediaPlayer1->Length - 1;
   MediaPlayer1->TimeFormat = tfFrames;
   MediaPlayer1->SetSignal(0, 1);
-  ShowModal();                                           
+
+  if(!Visible)
+    ShowModal();                                           
 }                                                 
 //---------------------------------------------------------------------------
 void __fastcall TForm20::Save1Click(TObject *Sender)
@@ -48,20 +51,12 @@ void __fastcall TForm20::Save1Click(TObject *Sender)
 void __fastcall TForm20::Open1Click(TObject *Sender)
 {                                                      
   if(OpenDialog1->Execute())
-  {
-    MediaPlayer1->FileName = OpenDialog1->FileName;
-    MediaPlayer1->Open();
-    TrackBar1->Max = MediaPlayer1->Length - 1;
-    MediaPlayer1->TimeFormat = tfFrames;
-    MediaPlayer1->SetSignal(0, 1);
-  }
+    ShowAnimation(OpenDialog1->FileName);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm20::MediaPlayer1Signal(TMediaPlayerEx *Sender,
       unsigned Position)               
 {
-  OutputDebugString(("Signal: Position = " + AnsiString(MediaPlayer1->Position)).c_str());
-
   TrackBar1->OnChange = NULL;
   TrackBar1->Position = MediaPlayer1->Reverse ? Position : Position - 1;
   TrackBar1->OnChange = &TrackBar1Change; 
