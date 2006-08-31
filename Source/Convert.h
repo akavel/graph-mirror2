@@ -44,6 +44,7 @@ std::wstring ToWString(const std::string &Str);
 std::wstring ToWString(const WideString &Str);
 
 WideString ToWideString(const std::wstring &Str);
+WideString ToWideString(const std::string &Str);
 WideString ToWideString(const AnsiString &Str);
 
 #endif

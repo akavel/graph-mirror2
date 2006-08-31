@@ -17,6 +17,8 @@
 #pragma link "TntStdCtrls"
 #pragma link "ProgressForm"
 #pragma resource "*.dfm"
+
+::TAnimationInfo TForm19::AnimationInfo;
 //---------------------------------------------------------------------------
 __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
   : TTntForm(Owner), Data(AData)
@@ -25,7 +27,7 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
   TranslateProperties(this);
   SetAccelerators(this);
 
-  int Left = Label5->Left + Label5->Width + 5;
+  int Left = Label7->Left + Label7->Width + 5;
   ResizeControl(ComboBox1, Left);
   ResizeControl(Edit1, Left);
   ResizeControl(Edit2, Left);
@@ -35,37 +37,45 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
   ResizeControl(Edit6, Left);
 
   dwICValue = dwICValue; //Avoid stupid warning
-  TData &Data = Form1->Data;
 
   //Add constants to the combo box
   for(TCustomFunctions::ConstIterator Iter = Data.CustomFunctions.Begin(); Iter != Data.CustomFunctions.End(); ++Iter)
     if(Iter->Arguments.empty())
       ComboBox1->Items->Add(Iter->Name.c_str());
-  ComboBox1->ItemIndex = 0;
+
+  int Index = ComboBox1->Items->IndexOf(ToWideString(AnimationInfo.Constant));
+  ComboBox1->ItemIndex = Index == -1 ? 0 : Index;
+
+  Edit1->Text = ToWideString(AnimationInfo.Min);
+  Edit2->Text = ToWideString(AnimationInfo.Max);
+  Edit3->Text = ToWideString(AnimationInfo.Step);
+  Edit4->Text = ToWideString(AnimationInfo.Width);
+  Edit5->Text = ToWideString(AnimationInfo.Height);
+  Edit6->Text = ToWideString(AnimationInfo.FramesPerSecond);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button1Click(TObject *Sender)
 {
-  if(!CheckLimit(Edit5, LoadRes(RES_GREATER, Label6->Caption, 160), 160))
+  if(!CheckLimit(Edit4, LoadRes(RES_GREATER, Label6->Caption, 160), 160))
     return;
-  if(!CheckLimit(Edit6, LoadRes(RES_GREATER, Label7->Caption, 160), 160))
+  if(!CheckLimit(Edit5, LoadRes(RES_GREATER, Label7->Caption, 160), 160))
     return;
 
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-  unsigned ImageWidth = ToInt(Edit5->Text);
-  unsigned ImageHeight = ToInt(Edit6->Text);;
-  Bitmap->Width = ImageWidth;
-  Bitmap->Height = ImageHeight;
-  std::string ConstantName = ToString(ComboBox1->Text);
+  AnimationInfo.Width = ToInt(Edit4->Text);
+  AnimationInfo.Height = ToInt(Edit5->Text);;
+  Bitmap->Width = AnimationInfo.Width;
+  Bitmap->Height = AnimationInfo.Height;
+  AnimationInfo.Constant = ToString(ComboBox1->Text);
   TDraw Draw(Bitmap->Canvas, &Data, false, "Animate thread");
-  Draw.SetArea(TRect(0, 0, ImageWidth, ImageHeight));
+  Draw.SetArea(TRect(0, 0, AnimationInfo.Width, AnimationInfo.Height));
 
-  double Min = MakeFloat(Edit1);
-  double Max = MakeFloat(Edit2);
-  double Step = MakeFloat(Edit3);
-  double FramesPerSecond = MakeFloat(Edit4, LoadRes(RES_GREATER_ZERO, Label5->Caption), 0.01);
+  AnimationInfo.Min = MakeFloat(Edit1);
+  AnimationInfo.Max = MakeFloat(Edit2);
+  AnimationInfo.Step = MakeFloat(Edit3);
+  AnimationInfo.FramesPerSecond = MakeFloat(Edit6, LoadRes(RES_GREATER_ZERO, Label5->Caption), 0.01);
 
-  ProgressForm1->Max = std::ceil((Max - Min) / Step) + 1;
+  ProgressForm1->Max = std::ceil((AnimationInfo.Max - AnimationInfo.Min) / AnimationInfo.Step) + 1;
   ProgressForm1->Position = 0;
   ProgressForm1->Show();
   TCallOnRelease Dummy(&ProgressForm1->Close);
@@ -92,14 +102,14 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     StreamInfo.wPriority = 0;
     StreamInfo.wLanguage = 0;
     StreamInfo.dwScale = 100;
-    StreamInfo.dwRate = FramesPerSecond * 100;
+    StreamInfo.dwRate = AnimationInfo.FramesPerSecond * 100;
     StreamInfo.dwStart = 0;
     StreamInfo.dwLength = 0;
     StreamInfo.dwInitialFrames = 0;
-    StreamInfo.dwSuggestedBufferSize = ImageHeight*ImageWidth*4; //Should be changed later
+    StreamInfo.dwSuggestedBufferSize = AnimationInfo.Height * AnimationInfo.Width * 4; //Should be changed later
     StreamInfo.dwQuality = -1;
     StreamInfo.dwSampleSize = 0;
-    StreamInfo.rcFrame = TRect(0, 0, ImageWidth, ImageHeight);
+    StreamInfo.rcFrame = TRect(0, 0, AnimationInfo.Width, AnimationInfo.Height);
     StreamInfo.dwEditCount = 0;
     StreamInfo.dwFormatChangeCount = 0;
     strcpy(StreamInfo.szName, "Graph animation");
@@ -109,11 +119,11 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
       if(AVIStreamSetFormat(pStream, 0, &BitmapInfo, sizeof(BitmapInfo)) == AVIERR_OK)
       {
         int I = 0;
-        for(double Value = Min; Value <= Max; Value += Step, I++)
+        for(double Value = AnimationInfo.Min; Value <= AnimationInfo.Max; Value += AnimationInfo.Step, I++)
         {
           Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
-          Bitmap->Canvas->FillRect(TRect(0, 0, ImageWidth, ImageHeight));
-          Data.CustomFunctions.Replace(ConstantName, Value);
+          Bitmap->Canvas->FillRect(TRect(0, 0, AnimationInfo.Width, AnimationInfo.Height));
+          Data.CustomFunctions.Replace(AnimationInfo.Constant, Value);
           Data.CustomFunctions.Update();
           Data.Update();
           Data.ClearCache();
