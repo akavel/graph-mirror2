@@ -131,6 +131,7 @@ void AddAccelerator(TControl *Control, std::set<wchar_t> &Accelerators)
 
   WideString Caption = TntControl_GetText(Control);
   WideString LowerCaption = WideLowerCase(Caption);
+
   for(int I = 1; I <= LowerCaption.Length(); I++)
   {
     wchar_t Ch = LowerCaption[I];

@@ -36,11 +36,18 @@ __published:	// IDE-managed Components
   TTntButton *Button3;
   TProgressForm *ProgressForm1;
   TTntButton *Button4;
+  TTntLabel *Label6;
+  TTntLabel *Label7;
+  TTntEdit *Edit5;
+  TTntEdit *Edit6;
   void __fastcall Button1Click(TObject *Sender);
   void __fastcall Button4Click(TObject *Sender);
+  void __fastcall TntEditKeyPress(TObject *Sender, char &Key);
 private:	// User declarations
+  TData Data;
+
 public:		// User declarations
-  __fastcall TForm19(TComponent* Owner);
+  __fastcall TForm19(TComponent* Owner, const TData &AData);
 };
 //---------------------------------------------------------------------------
 #endif

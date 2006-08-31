@@ -1027,8 +1027,10 @@ void __fastcall TForm1::ApplicationEventsShowHint(AnsiString &HintStr,
 
   if(Application->HintShortCuts)
     if(TCustomAction *CustomAction = dynamic_cast<TCustomAction*>(HintInfo.HintControl->Action))
+    {
       if(CustomAction->ShortCut != 0)
         HintStr += " (" + ShortCutToText(CustomAction->ShortCut) + ")";
+    }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::WMEnterSizeMove(TMessage &Message)
@@ -3363,7 +3365,7 @@ void __fastcall TForm1::DebugLine(System::TObject* Sender, const AnsiString Line
 //---------------------------------------------------------------------------
 void __fastcall TForm1::AnimateActionExecute(TObject *Sender)
 {
-  CreateForm<TForm19>()->ShowModal();
+  CreateForm<TForm19>(Data)->ShowModal();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ImportGraphFileActionExecute(TObject *Sender)
@@ -3401,5 +3403,17 @@ void __fastcall TForm1::ImportPointSeriesActionExecute(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TForm1::Legend_FontClick(TObject *Sender)
+{
+  std::auto_ptr<TFontDialog> FontDialog(new TFontDialog(NULL));
+  FontDialog->Options = FontDialog->Options << fdForceFontExist;
+  FontDialog->Font->Assign(Data.Axes.LegendFont);
+  if(FontDialog->Execute())
+  {
+    Data.Axes.LegendFont->Assign(FontDialog->Font);
+    Data.SetModified();
+    Redraw();
+  }
+}
+//---------------------------------------------------------------------------
 

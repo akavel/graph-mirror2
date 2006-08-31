@@ -399,9 +399,19 @@ std::string RtfToPlainText(const std::string &Str)
   return Result.Trim().c_str();
 }
 //---------------------------------------------------------------------------
+std::string ToString(unsigned Value)
+{
+  return IntToStr(Value).c_str();
+}
+//---------------------------------------------------------------------------
 std::string ToString(int Value)
 {
   return IntToStr(Value).c_str();
+}
+//---------------------------------------------------------------------------
+std::string ToString(long double Value)
+{
+  return FloatToStr(Value).c_str();
 }
 //---------------------------------------------------------------------------
 std::string ToString(const std::wstring &Str)

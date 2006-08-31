@@ -18,8 +18,8 @@
 #pragma link "ProgressForm"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
-__fastcall TForm19::TForm19(TComponent* Owner)
-  : TTntForm(Owner)
+__fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
+  : TTntForm(Owner), Data(AData)
 {
   ScaleForm(this);
   TranslateProperties(this);
@@ -31,6 +31,8 @@ __fastcall TForm19::TForm19(TComponent* Owner)
   ResizeControl(Edit2, Left);
   ResizeControl(Edit3, Left);
   ResizeControl(Edit4, Left);
+  ResizeControl(Edit5, Left);
+  ResizeControl(Edit6, Left);
 
   dwICValue = dwICValue; //Avoid stupid warning
   TData &Data = Form1->Data;
@@ -44,14 +46,17 @@ __fastcall TForm19::TForm19(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button1Click(TObject *Sender)
 {
+  if(!CheckLimit(Edit5, LoadRes(RES_GREATER, Label6->Caption, 160), 160))
+    return;
+  if(!CheckLimit(Edit6, LoadRes(RES_GREATER, Label7->Caption, 160), 160))
+    return;
+
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-  unsigned ImageWidth = 320;
-  unsigned ImageHeight = 320;
+  unsigned ImageWidth = ToInt(Edit5->Text);
+  unsigned ImageHeight = ToInt(Edit6->Text);;
   Bitmap->Width = ImageWidth;
   Bitmap->Height = ImageHeight;
-  TData &Data = Form1->Data;
   std::string ConstantName = ToString(ComboBox1->Text);
-  std::string OldValue = Data.CustomFunctions.GetValue(ConstantName);
   TDraw Draw(Bitmap->Canvas, &Data, false, "Animate thread");
   Draw.SetArea(TRect(0, 0, ImageWidth, ImageHeight));
 
@@ -120,7 +125,6 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
             throw Exception("AVI write error");
           ProgressForm1->StepIt();     
         }
-        Data.CustomFunctions.Replace(ConstantName, OldValue);
       }
       AVIStreamRelease(pStream);
     }
@@ -138,6 +142,12 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 void __fastcall TForm19::Button4Click(TObject *Sender)
 {
   Application->HelpContext(HelpContext);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm19::TntEditKeyPress(TObject *Sender, char &Key)
+{
+  if(!isdigit(Key) && Key != '\b')
+    Key = 0;
 }
 //---------------------------------------------------------------------------
 

@@ -366,10 +366,10 @@ Exception* __fastcall MyGetExceptionObject(Windows::PExceptionRecord P)
  */
 void SetApplicationExceptionHandler(bool ALogAllExceptions)
 {
-  RaiseExceptionProc = MyRaiseException;
+/*  RaiseExceptionProc = MyRaiseException;
   OldExceptObjProc = reinterpret_cast<TGetExceptionObject>(ExceptObjProc);
   ExceptObjProc = MyGetExceptionObject;
-  LogAllExceptions = ALogAllExceptions;
+  LogAllExceptions = ALogAllExceptions;*/
 }
 //---------------------------------------------------------------------------
 #ifdef _STLP_DEBUG

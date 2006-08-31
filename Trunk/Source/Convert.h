@@ -34,6 +34,8 @@ inline int ToIntDef(const std::string &Str, int Default) {return StrToIntDef(Str
 inline int ToIntDef(const WideString &Str, int Default) {return StrToIntDef(Str, Default);}
 
 std::string ToString(int Value);
+std::string ToString(unsigned Value);
+std::string ToString(long double Value);
 std::string ToString(const std::wstring &Str);
 std::string ToString(const WideString &Str);
 
