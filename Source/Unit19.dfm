@@ -5,7 +5,7 @@ object Form19: TForm19
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Animate'
-  ClientHeight = 176
+  ClientHeight = 238
   ClientWidth = 300
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -57,6 +57,22 @@ object Form19: TForm19
     Height = 13
     Caption = 'Frames/second:'
     FocusControl = Edit4
+  end
+  object Label6: TTntLabel
+    Left = 8
+    Top = 180
+    Width = 60
+    Height = 13
+    Caption = 'Image width:'
+    FocusControl = Edit5
+  end
+  object Label7: TTntLabel
+    Left = 8
+    Top = 212
+    Width = 64
+    Height = 13
+    Caption = 'Image height:'
+    FocusControl = Edit6
   end
   object ComboBox1: TTntComboBox
     Left = 96
@@ -111,7 +127,7 @@ object Form19: TForm19
     Height = 25
     Caption = 'Animate'
     Default = True
-    TabOrder = 5
+    TabOrder = 7
     OnClick = Button1Click
   end
   object Button2: TTntButton
@@ -122,7 +138,7 @@ object Form19: TForm19
     Cancel = True
     Caption = 'Close'
     ModalResult = 2
-    TabOrder = 6
+    TabOrder = 8
   end
   object Button3: TTntButton
     Left = 216
@@ -130,7 +146,7 @@ object Form19: TForm19
     Width = 75
     Height = 25
     Caption = 'Options...'
-    TabOrder = 7
+    TabOrder = 9
     Visible = False
   end
   object Button4: TTntButton
@@ -139,8 +155,26 @@ object Form19: TForm19
     Width = 75
     Height = 25
     Caption = 'Help'
-    TabOrder = 8
+    TabOrder = 10
     OnClick = Button4Click
+  end
+  object Edit5: TTntEdit
+    Left = 96
+    Top = 176
+    Width = 105
+    Height = 21
+    TabOrder = 5
+    Text = '320'
+    OnKeyPress = TntEditKeyPress
+  end
+  object Edit6: TTntEdit
+    Left = 96
+    Top = 208
+    Width = 105
+    Height = 21
+    TabOrder = 6
+    Text = '320'
+    OnKeyPress = TntEditKeyPress
   end
   object ProgressForm1: TProgressForm
     Caption = 'Working'

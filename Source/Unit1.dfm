@@ -3898,6 +3898,11 @@ object Form1: TForm1
       Hint = 'Select to show a legend in the coordinate system.'
       OnClick = Legend_ShowClick
     end
+    object Legend_Font: TTntMenuItem
+      Caption = 'Font'
+      Hint = 'Change the font of the legend.'
+      OnClick = Legend_FontClick
+    end
     object Legend_Placement: TTntMenuItem
       Caption = 'Placement'
       object Legend_TopRight: TTntMenuItem

@@ -133,7 +133,7 @@ object Form6: TForm6
       object ToolButton11: TTntToolButton
         Left = 215
         Top = 0
-        Hint = 'Insert symbol'
+        Hint = 'Insert symbol (Ctrl+G)'
         ImageIndex = 9
         OnClick = ToolButton11Click
       end
@@ -154,7 +154,7 @@ object Form6: TForm6
       object ToolButton1: TTntToolButton
         Left = 284
         Top = 0
-        Hint = 'Bold (Ctrl-B)'
+        Hint = 'Bold (Ctrl+B)'
         ImageIndex = 0
         Style = tbsCheck
         OnClick = ToolButton1Click
@@ -162,7 +162,7 @@ object Form6: TForm6
       object ToolButton2: TTntToolButton
         Left = 307
         Top = 0
-        Hint = 'Italic (Ctrl-I)'
+        Hint = 'Italic (Ctrl+I)'
         ImageIndex = 1
         Style = tbsCheck
         OnClick = ToolButton2Click
@@ -170,7 +170,7 @@ object Form6: TForm6
       object ToolButton3: TTntToolButton
         Left = 330
         Top = 0
-        Hint = 'Underline (Ctrl-U)'
+        Hint = 'Underline (Ctrl+U)'
         ImageIndex = 2
         Style = tbsCheck
         OnClick = ToolButton3Click
@@ -178,7 +178,7 @@ object Form6: TForm6
       object ToolButton4: TTntToolButton
         Left = 353
         Top = 0
-        Hint = 'Strikethrough (Ctrl-S)'
+        Hint = 'Strikethrough (Ctrl+S)'
         ImageIndex = 3
         Style = tbsCheck
         OnClick = ToolButton4Click
@@ -209,7 +209,7 @@ object Form6: TForm6
       object ToolButton5: TTntToolButton
         Left = 445
         Top = 0
-        Hint = 'Align left (Ctrl-L)'
+        Hint = 'Align left (Ctrl+L)'
         Down = True
         Grouped = True
         ImageIndex = 4
@@ -219,7 +219,7 @@ object Form6: TForm6
       object ToolButton6: TTntToolButton
         Left = 468
         Top = 0
-        Hint = 'Center (Ctrl-E)'
+        Hint = 'Center (Ctrl+E)'
         Grouped = True
         ImageIndex = 5
         Style = tbsCheck
@@ -228,7 +228,7 @@ object Form6: TForm6
       object ToolButton7: TTntToolButton
         Left = 491
         Top = 0
-        Hint = 'Align right (Ctrl-R)'
+        Hint = 'Align right (Ctrl+R)'
         Grouped = True
         ImageIndex = 6
         Style = tbsCheck

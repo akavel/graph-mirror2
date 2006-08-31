@@ -24,43 +24,41 @@
 #include <ImgList.hpp>
 #include "MediaPlayerEx.h"
 #include <MPlayer.hpp>
+#include <Graphics.hpp>
 //---------------------------------------------------------------------------
 class TForm20 : public TTntForm
 {
 __published:	// IDE-managed Components
-  TMediaPlayerEx *MediaPlayer1;
   TPanel *Panel1;
   TSaveDialog *SaveDialog1;
-  TPopupMenu *PopupMenu1;
-  TMenuItem *Open1;
-  TMenuItem *Save1;
+  TTntPopupMenu *PopupMenu1;
+  TTntMenuItem *Open1;
+  TTntMenuItem *Save1;
   TOpenDialog *OpenDialog1;
-  TPanel *Panel2;
+  TImageList *ImageList1;
+  TTntMenuItem *N1;
+  TTntMenuItem *Repeat1;
+  TTntMenuItem *Reverse1;
+  TMediaPlayerEx *MediaPlayer1;
+  TTntMenuItem *Speed1;
+  TTrackBar *TrackBar1;
+  TTntMenuItem *N2001;
+  TTntMenuItem *N1501;
+  TTntMenuItem *N1001;
+  TTntMenuItem *N501;
+  TTntMenuItem *N101;
+  TTntMenuItem *N10001;
   TToolBar *ToolBar1;
   TToolButton *ToolButton1;
-  TImageList *ImageList1;
-  TMenuItem *N1;
-  TMenuItem *Repeat1;
-  TScrollBar *ScrollBar1;
-  TMenuItem *Reverse1;
   TToolButton *ToolButton2;
   TToolButton *ToolButton3;
   TToolButton *ToolButton4;
   TToolButton *ToolButton5;
   TToolButton *ToolButton6;
-  TToolButton *ToolButton7;
-  TToolButton *ToolButton8;
   void __fastcall Save1Click(TObject *Sender);
   void __fastcall Open1Click(TObject *Sender);
-  void __fastcall MediaPlayer1PostClick(TObject *Sender,
-          TMPBtnType Button);
-  void __fastcall ScrollBar1Scroll(TObject *Sender, TScrollCode ScrollCode,
-          int &ScrollPos);
-  void __fastcall Reverse1Click(TObject *Sender);
   void __fastcall MediaPlayer1Signal(TMediaPlayerEx *Sender,
           unsigned Position);
-  void __fastcall MediaPlayer1Hint(TMediaPlayerEx *Sender,
-          TMPBtnType Button);
   void __fastcall ToolButton1Click(TObject *Sender);
   void __fastcall ToolButton2Click(TObject *Sender);
   void __fastcall ToolButton3Click(TObject *Sender);
@@ -68,7 +66,13 @@ __published:	// IDE-managed Components
   void __fastcall ToolButton5Click(TObject *Sender);
   void __fastcall ToolButton6Click(TObject *Sender);
   void __fastcall ToolButton7Click(TObject *Sender);
+  void __fastcall MediaPlayer1Notify(TMediaPlayerEx *Sender,
+          TMPNotifyValues NotifyValue);
+  void __fastcall SpeedClick(TObject *Sender);
+  void __fastcall TntFormClose(TObject *Sender, TCloseAction &Action);
+  void __fastcall TrackBar1Change(TObject *Sender);
 private:	// User declarations
+  bool BackwardDirection;
 public:		// User declarations
   __fastcall TForm20(TComponent* Owner);
   void ShowAnimation(const AnsiString &FileName, unsigned ImageWidth, unsigned ImageHeight);

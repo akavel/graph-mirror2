@@ -71,6 +71,7 @@ void __fastcall TForm6::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
       case 'L': ToolButton5->Down = true; ToolButton5->Click(); break;
       case 'E': ToolButton6->Down = true; ToolButton6->Click(); break;
       case 'R': ToolButton7->Down = true; ToolButton7->Click(); break;
+      case 'G': ToolButton11->Click(); break;
       case VK_RETURN: if(Shift.Contains(ssCtrl)) {Key = 0; Button1->Click();} break;
     }
   }

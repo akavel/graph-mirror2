@@ -1,6 +1,6 @@
 object Form20: TForm20
-  Left = 381
-  Top = 171
+  Left = 452
+  Top = 191
   HelpContext = 160
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
@@ -16,131 +16,94 @@ object Form20: TForm20
   OldCreateOrder = False
   Position = poMainFormCenter
   ShowHint = True
+  OnClose = TntFormClose
   DesignSize = (
     384
     398)
   PixelsPerInch = 96
   TextHeight = 13
-  object MediaPlayer1: TMediaPlayerEx
-    Left = 8
-    Top = 304
-    Width = 197
-    Height = 30
-    VisibleButtons = [btPlay, btPause, btStop, btNext, btPrev, btStep, btBack]
-    Anchors = [akLeft, akBottom]
-    Display = Panel1
-    TabOrder = 0
-    OnPostClick = MediaPlayer1PostClick
-    OnSignal = MediaPlayer1Signal
-    OnHint = MediaPlayer1Hint
-  end
   object Panel1: TPanel
     Left = 8
     Top = 8
     Width = 369
-    Height = 257
+    Height = 305
     Anchors = [akLeft, akTop, akRight, akBottom]
-    TabOrder = 1
+    PopupMenu = PopupMenu1
+    TabOrder = 0
   end
-  object Panel2: TPanel
+  object TrackBar1: TTrackBar
     Left = 8
-    Top = 344
-    Width = 241
-    Height = 41
-    Anchors = [akLeft, akBottom]
-    BevelOuter = bvNone
-    TabOrder = 2
-    DesignSize = (
-      241
-      41)
-    object ToolBar1: TToolBar
-      Left = 0
-      Top = 0
-      Width = 233
-      Height = 33
-      Align = alNone
-      Anchors = [akLeft, akBottom]
-      ButtonHeight = 28
-      ButtonWidth = 28
-      EdgeInner = esNone
-      EdgeOuter = esNone
-      Images = ImageList1
-      TabOrder = 0
-      object ToolButton1: TToolButton
-        Left = 0
-        Top = 2
-        Hint = 'Play'
-        ImageIndex = 0
-        OnClick = ToolButton1Click
-      end
-      object ToolButton2: TToolButton
-        Left = 28
-        Top = 2
-        Hint = 'Pause'
-        Caption = 'ToolButton2'
-        Enabled = False
-        ImageIndex = 1
-        OnClick = ToolButton2Click
-      end
-      object ToolButton3: TToolButton
-        Left = 56
-        Top = 2
-        Hint = 'Stop'
-        Caption = 'ToolButton3'
-        Enabled = False
-        ImageIndex = 2
-        OnClick = ToolButton3Click
-      end
-      object ToolButton4: TToolButton
-        Left = 84
-        Top = 2
-        Hint = 'Next'
-        Caption = 'ToolButton4'
-        ImageIndex = 3
-        OnClick = ToolButton4Click
-      end
-      object ToolButton5: TToolButton
-        Left = 112
-        Top = 2
-        Hint = 'Previous'
-        Caption = 'ToolButton5'
-        ImageIndex = 4
-        OnClick = ToolButton5Click
-      end
-      object ToolButton6: TToolButton
-        Left = 140
-        Top = 2
-        Hint = 'Step'
-        Caption = 'ToolButton6'
-        ImageIndex = 5
-        OnClick = ToolButton6Click
-      end
-      object ToolButton7: TToolButton
-        Left = 168
-        Top = 2
-        Hint = 'Back'
-        Caption = 'ToolButton7'
-        ImageIndex = 6
-        OnClick = ToolButton7Click
-      end
-      object ToolButton8: TToolButton
-        Left = 196
-        Top = 2
-        Caption = 'ToolButton8'
-        DropdownMenu = PopupMenu1
-        ImageIndex = 7
-      end
-    end
-  end
-  object ScrollBar1: TScrollBar
-    Left = 8
-    Top = 272
+    Top = 320
     Width = 369
-    Height = 16
+    Height = 33
     Anchors = [akLeft, akRight, akBottom]
-    PageSize = 0
-    TabOrder = 3
-    OnScroll = ScrollBar1Scroll
+    Orientation = trHorizontal
+    PopupMenu = PopupMenu1
+    Frequency = 1
+    Position = 0
+    SelEnd = 0
+    SelStart = 0
+    TabOrder = 1
+    TickMarks = tmBottomRight
+    TickStyle = tsAuto
+    OnChange = TrackBar1Change
+  end
+  object ToolBar1: TToolBar
+    Left = 8
+    Top = 360
+    Width = 177
+    Height = 33
+    Align = alNone
+    Anchors = [akLeft, akBottom]
+    ButtonHeight = 28
+    ButtonWidth = 28
+    EdgeInner = esNone
+    EdgeOuter = esNone
+    Images = ImageList1
+    TabOrder = 2
+    object ToolButton1: TToolButton
+      Left = 0
+      Top = 2
+      Hint = 'Play'
+      ImageIndex = 0
+      OnClick = ToolButton1Click
+    end
+    object ToolButton2: TToolButton
+      Left = 28
+      Top = 2
+      Hint = 'Pause'
+      Enabled = False
+      ImageIndex = 1
+      OnClick = ToolButton2Click
+    end
+    object ToolButton3: TToolButton
+      Left = 56
+      Top = 2
+      Hint = 'Stop'
+      Enabled = False
+      ImageIndex = 2
+      OnClick = ToolButton3Click
+    end
+    object ToolButton4: TToolButton
+      Left = 84
+      Top = 2
+      Hint = 'Back'
+      ImageIndex = 6
+      OnClick = ToolButton7Click
+    end
+    object ToolButton5: TToolButton
+      Left = 112
+      Top = 2
+      Hint = 'Step'
+      ImageIndex = 5
+      OnClick = ToolButton6Click
+    end
+    object ToolButton6: TToolButton
+      Left = 140
+      Top = 2
+      DropdownMenu = PopupMenu1
+      ImageIndex = 7
+    end
   end
   object SaveDialog1: TSaveDialog
     DefaultExt = 'avi'
@@ -149,29 +112,83 @@ object Form20: TForm20
     Left = 16
     Top = 16
   end
-  object PopupMenu1: TPopupMenu
+  object PopupMenu1: TTntPopupMenu
     Left = 80
     Top = 16
-    object Repeat1: TMenuItem
+    object Speed1: TTntMenuItem
+      AutoHotkeys = maManual
+      Caption = 'Speed'
+      object N101: TTntMenuItem
+        AutoCheck = True
+        Caption = '10%'
+        GroupIndex = 1
+        Hint = 'Change the speed used to play the animation.'
+        RadioItem = True
+        OnClick = SpeedClick
+      end
+      object N501: TTntMenuItem
+        AutoCheck = True
+        Caption = '50%'
+        GroupIndex = 1
+        Hint = 'Change the speed used to play the animation.'
+        RadioItem = True
+        OnClick = SpeedClick
+      end
+      object N1001: TTntMenuItem
+        AutoCheck = True
+        Caption = '100%'
+        Checked = True
+        GroupIndex = 1
+        Hint = 'Change the speed used to play the animation.'
+        RadioItem = True
+        OnClick = SpeedClick
+      end
+      object N1501: TTntMenuItem
+        AutoCheck = True
+        Caption = '150%'
+        GroupIndex = 1
+        Hint = 'Change the speed used to play the animation.'
+        RadioItem = True
+        OnClick = SpeedClick
+      end
+      object N2001: TTntMenuItem
+        AutoCheck = True
+        Caption = '200%'
+        GroupIndex = 1
+        Hint = 'Change the speed used to play the animation.'
+        RadioItem = True
+        OnClick = SpeedClick
+      end
+      object N10001: TTntMenuItem
+        AutoCheck = True
+        Caption = '1000%'
+        GroupIndex = 1
+        Hint = 'Change the speed used to play the animation.'
+        RadioItem = True
+      end
+    end
+    object Repeat1: TTntMenuItem
       AutoCheck = True
       Caption = 'Repeat'
-      OnClick = Reverse1Click
+      Hint = 'Repeat playing the animation until manually stopped.'
     end
-    object Reverse1: TMenuItem
+    object Reverse1: TTntMenuItem
       AutoCheck = True
       Caption = 'Auto reverse'
-      OnClick = Reverse1Click
+      Hint = 
+        'Play backwards when the end of the animation is reached. This is' +
+        ' most useful in combination with the "Repeat" command.'
     end
-    object N1: TMenuItem
+    object N1: TTntMenuItem
       Caption = '-'
     end
-    object Open1: TMenuItem
+    object Open1: TTntMenuItem
       Caption = 'Open...'
       Hint = 'Open an animation file.'
       ShortCut = 16463
       OnClick = Open1Click
     end
-    object Save1: TMenuItem
+    object Save1: TTntMenuItem
       Caption = 'Save as...'
       Hint = 'Save the animation to a file.'
       ShortCut = 16467
@@ -191,7 +208,7 @@ object Form20: TForm20
     Left = 112
     Top = 16
     Bitmap = {
-      494C010108000900040012001200FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
+      494C010108000900040012001200FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000048000000360000000100200000000000C03C
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -701,6 +718,15 @@ object Form20: TForm20
       C00FFC21FC001C00F1000000C03FFC21FC001C03F1000000C0FFFC21FC001C0F
       F1000000C3FFFC21FC003C3FF1000000CFFFFC21FFFFFCFFF1000000FFFFFFFF
       FFFFFFFFFF000000FFFFFFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFF000000
-      FFFFFFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFF000000}
+      FFFFFFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFF0000000000000000000000
+      0000000000000000000000000000}
+  end
+  object MediaPlayer1: TMediaPlayerEx
+    Display = Panel1
+    AutoRewind = True
+    OnSignal = MediaPlayer1Signal
+    OnNotify = MediaPlayer1Notify
+    Left = 144
+    Top = 16
   end
 end
