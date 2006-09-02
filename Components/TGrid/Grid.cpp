@@ -234,7 +234,7 @@ void __fastcall TGrid::MouseDown(TMouseButton Button,TShiftState Shift,int X,int
   MouseToCell(X, Y, XCell, YCell); //Calc cell for mouse pos
 
   //If left button pressed and inside non fixed cell
-  if(Button == mbLeft && XCell >= FixedCols && YCell >= FixedRows)
+  if(Button == mbLeft && XCell >= FixedCols && YCell >= FixedRows && !Shift.Contains(ssShift))
   {
     SelStart.X = XCell; //Save start position for selection
     SelStart.Y = YCell;
