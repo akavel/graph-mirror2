@@ -227,8 +227,10 @@ void TDraw::RedrawAxes()
     //Calculate font height for numbers
     Context.SetFont(Axes.NumberFont);
     int NumberHeight = Context.GetTextHeight("1");
+    int MinWidth = NumberWidth(Axes.yAxis.Min, Axes.yAxis.MultiplyOfPi);
+    int MaxWidth = NumberWidth(Axes.yAxis.Max, Axes.yAxis.MultiplyOfPi);
 
-    AxesRect.Left = Size(50);
+    AxesRect.Left = std::max(MinWidth, MaxWidth) + Size(7);
     AxesRect.Bottom = Height - NumberHeight - Size(4);
   }
 
@@ -504,7 +506,7 @@ void TDraw::DrawAxes()
   if(Axes.xAxis.ShowNumbers)
   {
     double x; //Current x-position
-    int yPixel = (Axes.AxesStyle == asCrossed ? yPixelCross : AxesRect.Bottom) + Size(4); //Pixel position to draw numbers
+    int yPixel = yPixelCross + Size(4); //Pixel position to draw numbers
     if(yPixel >= AxesRect.Top) //Check that numbers are inside allowed view
     {
       if(Axes.xAxis.LogScl) //Is log scale used?
@@ -538,7 +540,7 @@ void TDraw::DrawAxes()
 
   if(Axes.yAxis.ShowNumbers)
   {
-    int xPixel = Axes.AxesStyle == asCrossed ? xPixelCross : Size(50); //Pixel position to draw numbers
+    int xPixel = xPixelCross - Size(7); //Pixel position to draw numbers
     double y = yTickMin; //Current y-position
 
     //Loop through all coordinates on y-axis
@@ -551,7 +553,7 @@ void TDraw::DrawAxes()
         if(yPixel > AxesRect.Top + NumberHeight / 2)
         {
           int Width = NumberWidth(y, Axes.yAxis.MultiplyOfPi);
-          ShowNumber(xPixel-Width-Size(7), yPixel - NumberHeight / 2, y, Axes.yAxis.MultiplyOfPi);
+          ShowNumber(xPixel-Width, yPixel - NumberHeight / 2, y, Axes.yAxis.MultiplyOfPi);
         }
 
       //Is axis shown in log scale
