@@ -16,9 +16,11 @@
 //---------------------------------------------------------------------------
 #pragma link "TntStdCtrls"
 #pragma link "ProgressForm"
-#pragma resource "*.dfm"
+#pragma resource "*.dfm"                                                     
 
 ::TAnimationInfo TForm19::AnimationInfo;
+const int MaxWidth = Screen->Width - 50;
+const int MaxHeight = Screen->Height - 180;
 //---------------------------------------------------------------------------
 __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
   : TTntForm(Owner), Data(AData)
@@ -46,6 +48,9 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
   int Index = ComboBox1->Items->IndexOf(ToWideString(AnimationInfo.Constant));
   ComboBox1->ItemIndex = Index == -1 ? 0 : Index;
 
+  AnimationInfo.Width = std::min(Form1->Image1->Width, MaxWidth);
+  AnimationInfo.Height = std::min(Form1->Image1->Height, MaxHeight);
+
   Edit1->Text = ToWideString(AnimationInfo.Min);
   Edit2->Text = ToWideString(AnimationInfo.Max);
   Edit3->Text = ToWideString(AnimationInfo.Step);
@@ -56,9 +61,9 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button1Click(TObject *Sender)
 {
-  if(!CheckLimit(Edit4, LoadRes(RES_GREATER, Label6->Caption, 160), 160))
+  if(!CheckLimit(Edit4, LoadRes(RES_VALUE_RANGE, Label5->Caption, 160, MaxWidth), 160, MaxWidth))
     return;
-  if(!CheckLimit(Edit5, LoadRes(RES_GREATER, Label7->Caption, 160), 160))
+  if(!CheckLimit(Edit5, LoadRes(RES_VALUE_RANGE, Label6->Caption, 160, MaxHeight), 160, MaxHeight))
     return;
 
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
@@ -89,9 +94,13 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 
   AnsiString TempFile = GetTempFileName("Graph", "avi");
   AVIFileInit();
+  TCallOnRelease Dummy2(AVIFileExit);
+  TCallOnRelease Dummy3(DeleteFile, TempFile);
+
   PAVIFILE pFile = NULL;
   if(AVIFileOpen(&pFile, TempFile.c_str(), OF_WRITE | OF_CREATE, NULL) == AVIERR_OK)
   {
+    TCallOnRelease Dummy(AVIFileRelease, pFile);
     PAVISTREAM pStream = NULL;
     AVISTREAMINFO StreamInfo;
 
@@ -116,6 +125,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 
     if(AVIFileCreateStream(pFile, &pStream, &StreamInfo) == AVIERR_OK)
     {
+      TCallOnRelease Dummy(AVIStreamRelease, pStream);
       if(AVIStreamSetFormat(pStream, 0, &BitmapInfo, sizeof(BitmapInfo)) == AVIERR_OK)
       {
         int I = 0;
@@ -133,20 +143,16 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
           GetDIB(Bitmap->Handle, 0, &BitmapInfo, &ImageData[0]);
           if(AVIStreamWrite(pStream, I, 1, &ImageData[0], ImageSize, AVIIF_KEYFRAME, NULL, NULL) != AVIERR_OK)
             throw Exception("AVI write error");
-          ProgressForm1->StepIt();     
+          ProgressForm1->StepIt();
+          if(ProgressForm1->AbortProgress)
+            return;
         }
       }
-      AVIStreamRelease(pStream);
     }
-
-    AVIFileRelease(pFile);
   }
-
-  AVIFileExit();
 
   ProgressForm1->Close();
   CreateForm<TForm20>()->ShowAnimation(TempFile);
-  DeleteFile(TempFile);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button4Click(TObject *Sender)
