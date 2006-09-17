@@ -10,18 +10,37 @@
 
 const unsigned MaxTelegramSize = 240;
 
+enum TAtiError
+{
+  aeNoError = 0,
+  aeConnectionError,
+  aeNotConnected,
+  aeInvalidSize,
+  aeNoStopByte,
+  aeAckMissing
+};
+
+class EAtiError : Exception
+{
+  TAtiError ErrorCode;
+public:
+  EAtiError(TAtiError AErrorCode, const AnsiString &Str) : Exception(Str), ErrorCode(AErrorCode) {}  
+};
+
 class TAtiHandler;
 class TAtiThread;
 typedef void __fastcall (__closure *TTelegramReceivedEvent)(TAtiHandler *Sender, const BYTE *Telegram, unsigned Size);
 typedef void __fastcall (__closure *TSpeedChangedEvent)(TAtiHandler *Sender, unsigned Speed);
+typedef void __fastcall (__closure *TErrorEvent)(TAtiHandler *Sender, TAtiError ErrorCode, const AnsiString &ErrorStr);
 
 class PACKAGE TAtiHandler : public TComponent
 {
   friend TAtiThread;
-  
+
   AnsiString FPort;
   TTelegramReceivedEvent FOnTelegramReceived;
   TSpeedChangedEvent FOnSpeedChanged;
+  TErrorEvent FOnError;
 
   class TSerialHandler *SerialHandler;
   TAtiThread *Thread;
@@ -36,6 +55,10 @@ class PACKAGE TAtiHandler : public TComponent
   void HandleControlFrame();
   void BreakSync();
   void DoTelegramReceived(const BYTE *Telegram, unsigned Size);
+  void DoError(TAtiError ErrorCode, const AnsiString &ErrorStr);
+  template<typename TIter>
+  static unsigned TAtiHandler::CalcCrc(TIter Begin, TIter End);
+  static void DebugLog(const AnsiString &Str);
 
 public:
   __fastcall TAtiHandler(TComponent* Owner);
@@ -49,6 +72,7 @@ __published:
 
   __property TTelegramReceivedEvent OnTelegramReceived = {read=FOnTelegramReceived, write=FOnTelegramReceived, default=NULL};
   __property TSpeedChangedEvent OnSpeedChanged = {read=FOnSpeedChanged, write=FOnSpeedChanged, default=NULL};
+  __property TErrorEvent OnError = {read=FOnError, write=FOnError, default=NULL};
 };
 //---------------------------------------------------------------------------
 #endif
