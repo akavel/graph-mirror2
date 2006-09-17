@@ -5,6 +5,7 @@
 #include "AtiHandler.h"
 #include "SerialHandler.h"
 #include "AtiThread.h"
+#include <fstream>
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
 static const WORD CrcTable[256] =
@@ -71,7 +72,7 @@ namespace Atihandler
 }
 //---------------------------------------------------------------------------
 template<typename TIter>
-unsigned CalcCrc(TIter Begin, TIter End)
+unsigned TAtiHandler::CalcCrc(TIter Begin, TIter End)
 {
   WORD Crc = 0;
   for(TIter Iter = Begin; Iter != End; ++Iter)
@@ -81,7 +82,7 @@ unsigned CalcCrc(TIter Begin, TIter End)
 //---------------------------------------------------------------------------
 __fastcall TAtiHandler::TAtiHandler(TComponent* Owner)
   : TComponent(Owner), FPort("COM1"), SerialHandler(new TSerialHandler(this)), Timer(new TTimer(this)), Breaking(false),
-    FOnTelegramReceived(NULL), FOnSpeedChanged(NULL)
+    FOnTelegramReceived(NULL), FOnSpeedChanged(NULL), FOnError(NULL)
 {
   SerialHandler->OnBreak = &SerialHandlerBreak;
   SerialHandler->OnDataReceived = &SerialHandlerDataReceived;
@@ -91,20 +92,30 @@ __fastcall TAtiHandler::TAtiHandler(TComponent* Owner)
 //---------------------------------------------------------------------------
 void TAtiHandler::Connect()
 {
-  if(SerialHandler->Connected)
-    return;
+  try
+  {
+    if(SerialHandler->Connected)
+      return;
 
-  SerialHandler->Port = Port;
-  SerialHandler->Speed = 19200;
-  SerialHandler->Parity = pbNoParity;
-  SerialHandler->StopBits = sbOneStopBit;
-  SerialHandler->ByteSize = 8;
+    SerialHandler->Port = Port;
+    SerialHandler->Speed = 19200;
+    SerialHandler->Parity = pbNoParity;
+    SerialHandler->StopBits = sbOneStopBit;
+    SerialHandler->ByteSize = 8;
 
-  Thread = new TAtiThread(this);
-  SerialHandler->Connect();
-  SerialHandler->SetDTR();
-  SerialHandler->SetRTS();
-  BreakSync();
+    Thread = new TAtiThread(this);
+    SerialHandler->Connect();
+    SerialHandler->SetDTR();
+    SerialHandler->SetRTS();
+    BreakSync();
+  }
+  catch(...)
+  {
+    if(Thread)
+      Thread->PostMessage(atmTerminate);  //The thread will delete itself
+    Thread = NULL;
+    throw EAtiError(aeConnectionError, "Connection failed");
+  }
 }
 //---------------------------------------------------------------------------
 void TAtiHandler::Disconnect()
@@ -119,8 +130,10 @@ void TAtiHandler::Disconnect()
 //---------------------------------------------------------------------------
 void TAtiHandler::SendTelegram(const BYTE *Telegram, unsigned Size, bool UsesAck)
 {
+  if(!SerialHandler->Connected)
+    throw EAtiError(aeNotConnected, "Not connected");
   if(Size > MaxTelegramSize || Size == 0)
-    return; //Error
+    throw EAtiError(aeInvalidSize, "Invalid size in telegram");
 
   BYTE Data[MaxTelegramSize + 6];
 
@@ -141,12 +154,12 @@ void TAtiHandler::SendTelegram(const BYTE *Telegram, unsigned Size, bool UsesAck
   BinToHex((char*)Data, &Text[0], Size + 6);
   AnsiString Str = "Send: ";
   Str += &Text[0];
-  OutputDebugString(Str.c_str());
+  DebugLog(Str);
 }
 //---------------------------------------------------------------------------
 void __fastcall TAtiHandler::SerialHandlerBreak(TObject *Sender)
 {
-  OutputDebugString("Break detected");
+  DebugLog("Break detected");
   SerialHandler->ClearBreak();
   Breaking = false;
   Sleep(200);
@@ -163,7 +176,7 @@ void __fastcall TAtiHandler::SerialHandlerDataReceived(TSerialHandler *Sender, c
   BinToHex((char*)Data, &Text[0], Size);
   AnsiString Str = "Data received: ";
   Str += &Text[0];
-  OutputDebugString(Str.c_str());
+  DebugLog(Str.c_str());
 
   Buffer.insert(Buffer.end(), Data, Data + Size);
 
@@ -171,17 +184,22 @@ void __fastcall TAtiHandler::SerialHandlerDataReceived(TSerialHandler *Sender, c
   {
     if(Buffer[0] != 0x81)
     {
-      OutputDebugString("No start byte!");
-      //Error: Break sync
-      return;
+      DebugLog("Start byte missing. Scanning for start byte...");
+
+      //Start byte not found. Search for start byte and erase everything before
+      std::vector<BYTE>::iterator Iter = std::find(Buffer.begin(), Buffer.end() - 2, 0x81);
+      Buffer.erase(Buffer.begin(), Iter);
+      if(Iter == Buffer.end() - 2)
+        return;
     }
 
     if(Buffer[1] & 0x80)
     {
       if(Buffer[2] != 0x00)
       {
-        OutputDebugString("No stop byte!");
-        //Error: Break sync
+        //Stop byte missing. Discard frame.
+        DebugLog("Stop byte missing");
+        Buffer.erase(Buffer.begin(), Buffer.begin() + 3);
         return;
       }
 
@@ -192,40 +210,41 @@ void __fastcall TAtiHandler::SerialHandlerDataReceived(TSerialHandler *Sender, c
     {
       //Data frame
       unsigned Count = Buffer[2];
-      //Size received
-      if(Buffer.size() >= Count + 6)
-      {
-        if(Buffer[Count + 5] != 0)
-        {
-          OutputDebugString("No stop byte!");
-          //Error: Break sync
-          return;
-        }
-
-        //Telegram received
-        unsigned Crc = (Buffer[Count + 3] << 8) | (Buffer[Count + 4]);
-        if(Crc != CalcCrc(Buffer.begin() + 1, Buffer.begin() + Count + 3))
-        {
-          OutputDebugString("CRC error!");
-          //Error: retransmit
-          return;
-        }
-
-        //Send Ack if requested
-        if(Buffer[1] & 0x08)
-        {
-          BYTE TxData[3] = {0x81, 0xF0, 0x00};
-          Sender->WriteBuffer(TxData, sizeof(TxData));
-          OutputDebugString("Send: ACK!");
-        }
-
-        BYTE *Telegram = new BYTE[Count];
-        std::copy(Buffer.begin() + 3, Buffer.begin() + Count + 3, Telegram);
-        Thread->PostMessage(atmDataReceived, reinterpret_cast<int>(Telegram), Count);
-        Buffer.erase(Buffer.begin(), Buffer.begin() + Count + 6);
-      }
-      else
+      //Size not received yet
+      if(Buffer.size() < Count + 6)
         return;
+
+      if(Buffer[Count + 5] != 0)
+      {
+        //Stop byte missing. Discard frame
+        DebugLog("Stop byte missing");
+        Buffer.erase(Buffer.begin(), Buffer.begin() + Count + 6);
+        return;
+      }
+
+      //Telegram received
+      unsigned Crc = (Buffer[Count + 3] << 8) | (Buffer[Count + 4]);
+      if(Crc != CalcCrc(Buffer.begin() + 1, Buffer.begin() + Count + 3))
+      {
+        DebugLog("CRC error!");
+        BYTE TxData[3] = {0x81, 0xF1, 0x00}; //Send NACK (CRC error)
+        Sender->WriteBuffer(TxData, sizeof(TxData));
+        Buffer.erase(Buffer.begin(), Buffer.begin() + Count + 6);
+        return;
+      }
+
+      //Send Ack if requested
+      if(Buffer[1] & 0x08)
+      {
+        BYTE TxData[3] = {0x81, 0xF0, 0x00};
+        Sender->WriteBuffer(TxData, sizeof(TxData));
+        DebugLog("Send: ACK!");
+      }
+
+      BYTE *Telegram = new BYTE[Count];
+      std::copy(Buffer.begin() + 3, Buffer.begin() + Count + 3, Telegram);
+      Thread->PostMessage(atmDataReceived, reinterpret_cast<int>(Telegram), Count);
+      Buffer.erase(Buffer.begin(), Buffer.begin() + Count + 6);
     }
   }
 }
@@ -240,19 +259,19 @@ void TAtiHandler::HandleControlFrame()
   switch(Buffer[1] & 0x0F)
   {
     case 0:
-      OutputDebugString("ACK");
+      DebugLog("ACK");
       break;
     case 1:
-      OutputDebugString("NACK");
+      DebugLog("NACK");
       break;
     case 2:
-      OutputDebugString("NACK_NO_BUF");
+      DebugLog("NACK_NO_BUF");
       break;
     case 3:
-      OutputDebugString("NACK_BAD_SEQ");
+      DebugLog("NACK_BAD_SEQ");
       break;
     case 4:
-      OutputDebugString("NACK_OVERRUN");
+      DebugLog("NACK_OVERRUN");
       break;
 
     default:
@@ -310,4 +329,19 @@ void TAtiHandler::DoTelegramReceived(const BYTE *Telegram, unsigned Size)
     OnTelegramReceived(this, Telegram, Size);
 }
 //---------------------------------------------------------------------------
+void TAtiHandler::DoError(TAtiError ErrorCode, const AnsiString &ErrorStr)
+{
+  DebugLog(ErrorStr);
+  if(OnError)
+    OnError(this, ErrorCode, ErrorStr);
+}
+//---------------------------------------------------------------------------
+void TAtiHandler::DebugLog(const AnsiString &Str)
+{
+  static std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str());
+  out << Str.c_str() << std::endl;
+  OutputDebugString(Str.c_str());
+}
+//---------------------------------------------------------------------------
+
 
