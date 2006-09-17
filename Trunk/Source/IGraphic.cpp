@@ -87,6 +87,8 @@ int CountColors(Graphics::TBitmap *Bitmap)
 void GetColors(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<TColor> &Colors)
 {
   Colors.clear();
+  Bitmap->HandleType = bmDIB;
+  Bitmap->PixelFormat = pf32bit;
   TColor LastColor = clMax; //Used as cache
 
   for(int Row = Rect.Top; Row < Rect.Bottom; Row++)
@@ -99,19 +101,64 @@ void GetColors(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<TColor>
         Colors.push_back(ScanLine[Col]);
       }
   }
+
+  //Sort colors for faster lookup
+  std::sort(Colors.begin(), Colors.end());
 }
 //---------------------------------------------------------------------------
 bool SaveCompressedBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const AnsiString &FileName)
 {
-  Bitmap->HandleType = bmDIB;
-  Bitmap->PixelFormat = pf32bit;
-  std::vector<TColor> Colors;
-  GetColors(Bitmap, Rect, Colors);
-
   BITMAPFILEHEADER FileHeader;
   BITMAPINFOHEADER BitmapHeader;
+  std::vector<TColor> Colors;
   std::vector<char> Data; //Area with compressed bitmap data
+  GetColors(Bitmap, Rect, Colors);
+  CompressBitmap(Bitmap, Rect, Colors, Data);
+  FillBitmapInfoHeader(BitmapHeader, Bitmap, Rect, Colors.size(), Data.size());
 
+  FileHeader.bfType = 0x4D42; //Initialize file header; must be 'BM'; Remember little endian
+  FileHeader.bfSize = sizeof(FileHeader)+sizeof(BitmapHeader)+Colors.size()*sizeof(TColor)+Data.size(); //File size
+  FileHeader.bfReserved1 = 0;
+  FileHeader.bfReserved2 = 0;
+  FileHeader.bfOffBits = sizeof(FileHeader)+sizeof(BitmapHeader)+Colors.size()*sizeof(TColor);//Offset to compressed data
+
+  //Create new text file; Erase if exists
+  std::ofstream out(FileName.c_str(),std::ios::out|std::ios::binary);
+  //If open not succesfull
+  if(!out)
+    return false;
+  out.write((char*)&FileHeader, sizeof(FileHeader)); //Save Save file header
+  out.write((char*)&BitmapHeader, sizeof(BitmapHeader)); //Save bitmap header
+  out.write((char*)&Colors[0], Colors.size()*sizeof(TColor)); //Save palette
+  out.write((char*)&Data[0], Data.size()); //Save compressed data
+  out.close(); //Close file
+  return true; //Return sucess
+}
+//---------------------------------------------------------------------------
+void FillBitmapInfoHeader(BITMAPINFOHEADER &BitmapHeader, Graphics::TBitmap *Bitmap, const TRect &Rect, unsigned Colors, unsigned DataSize)
+{
+  BitmapHeader.biSize = sizeof(BitmapHeader);  //Size of header
+  BitmapHeader.biWidth = Rect.Width();         //Width of bitmap
+  BitmapHeader.biHeight = Rect.Height();       //Height of bitmap
+  BitmapHeader.biPlanes = 1;                   //Planes; Must be 1
+  BitmapHeader.biBitCount = 8;                 //Color depth; Bits per pixel
+  BitmapHeader.biCompression = BI_RLE8;        //Compression format
+  BitmapHeader.biSizeImage = DataSize;       //Size of bitmap in bytes
+  //Calculate the x- and y-resolution in pixels per meter
+  BitmapHeader.biXPelsPerMeter = GetDeviceCaps(Bitmap->Canvas->Handle,HORZRES)*1000/GetDeviceCaps(Bitmap->Canvas->Handle,HORZSIZE);
+  BitmapHeader.biYPelsPerMeter = GetDeviceCaps(Bitmap->Canvas->Handle,VERTRES)*1000/GetDeviceCaps(Bitmap->Canvas->Handle,VERTSIZE);
+  BitmapHeader.biClrUsed = Colors;      //Used indexes in the color table
+  BitmapHeader.biClrImportant = Colors; //Required indexes
+}
+//---------------------------------------------------------------------------
+//Colors must be sorted
+void CompressBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const std::vector<TColor> &Colors, std::vector<char> &Data)
+{
+  Bitmap->HandleType = bmDIB;
+  Bitmap->PixelFormat = pf32bit;
+
+  Data.clear();
+  
   //Loop through scanlines from bottom to top
   for(int y = Rect.Bottom - 1; y >= Rect.Top; y--)
   {
@@ -132,7 +179,7 @@ bool SaveCompressedBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const An
         Data.push_back(ColorIndex); //Add the color
         Count = 1;                  //Set count to 1; The one we are looking at now
         Color = ScanLine[x];        //Save the color
-        ColorIndex = std::find(Colors.begin(), Colors.end(), Color) - Colors.begin();
+        ColorIndex = std::lower_bound(Colors.begin(), Colors.end(), Color) - Colors.begin();
       }
     Data.push_back(Count);          //Add length of last block of equal colors
     Data.push_back(ColorIndex);     //Add the color
@@ -141,37 +188,6 @@ bool SaveCompressedBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const An
   }
   Data.push_back(0);                //Add escape sequense telling:
   Data.push_back(1);                //End of bitmap
-
-  FileHeader.bfType = 0x4D42; //Initialize file header; must be 'BM'; Remember little endian
-  FileHeader.bfSize = sizeof(FileHeader)+sizeof(BitmapHeader)+Colors.size()*sizeof(TColor)+Data.size(); //File size
-  FileHeader.bfReserved1 = 0;
-  FileHeader.bfReserved2 = 0;
-  FileHeader.bfOffBits = sizeof(FileHeader)+sizeof(BitmapHeader)+Colors.size()*sizeof(TColor);//Offset to compressed data
-
-  BitmapHeader.biSize = sizeof(BitmapHeader);  //Size of header
-  BitmapHeader.biWidth = Rect.Width();         //Width of bitmap
-  BitmapHeader.biHeight = Rect.Height();       //Height of bitmap
-  BitmapHeader.biPlanes = 1;                   //Planes; Must be 1
-  BitmapHeader.biBitCount = 8;                 //Color depth; Bits per pixel
-  BitmapHeader.biCompression = BI_RLE8;        //Compression format
-  BitmapHeader.biSizeImage = Data.size();//Bitmap->Width*Bitmap->Height; //Size of bitmap in bytes
-  //Calculate the x- and y-resolution in pixels per meter
-  BitmapHeader.biXPelsPerMeter = GetDeviceCaps(Bitmap->Canvas->Handle,HORZRES)*1000/GetDeviceCaps(Bitmap->Canvas->Handle,HORZSIZE);
-  BitmapHeader.biYPelsPerMeter = GetDeviceCaps(Bitmap->Canvas->Handle,VERTRES)*1000/GetDeviceCaps(Bitmap->Canvas->Handle,VERTSIZE);
-  BitmapHeader.biClrUsed = Colors.size();      //Used indexes in the color table
-  BitmapHeader.biClrImportant = Colors.size(); //Required indexes
-
-  //Create new text file; Erase if exists
-  std::ofstream out(FileName.c_str(),std::ios::out|std::ios::binary);
-  //If open not succesfull
-  if(!out)
-    return false;
-  out.write((char*)&FileHeader, sizeof(FileHeader)); //Save Save file header
-  out.write((char*)&BitmapHeader, sizeof(BitmapHeader)); //Save bitmap header
-  out.write((char*)&Colors[0], Colors.size()*sizeof(TColor)); //Save palette
-  out.write((char*)&Data[0], Data.size()); //Save compressed data
-  out.close(); //Close file
-  return true; //Return sucess
 }
 //---------------------------------------------------------------------------
 unsigned FindEndPar(const std::string &Str, unsigned Pos)

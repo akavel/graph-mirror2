@@ -24,6 +24,8 @@
 #include <atl\atlmod.h>
 #include "OleServerImpl.h"
 #include "GraphServerImpl.h"
+#include "StackTrace.h"
+
 USEFORM("Unit1.cpp", Form1);
 USEFORM("Unit2.cpp", Form2);
 USEFORM("Unit3.cpp", Form3);
@@ -77,7 +79,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
   }
   catch (Exception &exception)
   {
-    Application->ShowException(&exception);
+    LogUncaughtException(NULL, &exception);
   }
   catch(std::exception &E)
   {
