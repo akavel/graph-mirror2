@@ -89,7 +89,7 @@ enum TErrorCode
   ecArgError        = 12, //!< arg(0) is undefined
   ecEvalFailed      = 13, //!< A complex function (W(z) for example) failed to evaluate an accurate result
   ecTotalLoss       = 14, //!< Argument would produce function result with total loss of significant digits, such as sin(10e70)
-  ecSymbolNotFound  = 15, //!< Symbol does not exist; A custom function/constant is not updated
+  ecSymbolNotFound  = 15, //!< Symbol does not exist or has wrong number of arguemnts; A custom function/constant is not updated
   ecRecusionLimit   = 16, //!< Recursive function has been called too many times
 
   //Parse errors
@@ -585,7 +585,7 @@ public:
   TIterator Begin() {return List.begin();}
   TConstIterator End() const {return List.end();}
   TIterator End() {return List.end();}
-  TCustomFunc Get(const std::string &Key) const;
+  const TCustomFunc& Get(const std::string &Key) const;
   void Clear() {List.clear();}
   bool Empty() const {return List.empty();}
   bool Exists(const std::string &Key) const;
