@@ -82,7 +82,8 @@ void LogUncaughtException(TObject *Sender, Exception *E)
   File << "Exception: " << E->ClassName() << std::endl;
   File << "Message: " << E->Message << std::endl;
   File << "ExceptAddr: 0x" << std::hex << std::uppercase << ExceptAddr() << std::endl;
-  File << "SenderClass: " << Sender->ClassName() << std::endl;
+  if(Sender)
+    File << "SenderClass: " << Sender->ClassName() << std::endl;
   if(TComponent *Component = dynamic_cast<TComponent*>(Sender))
     File << "SenderName: " << Component->Name << std::endl;
   WriteStackTrace(File, GlobalStackInfo);
@@ -366,10 +367,10 @@ Exception* __fastcall MyGetExceptionObject(Windows::PExceptionRecord P)
  */
 void SetApplicationExceptionHandler(bool ALogAllExceptions)
 {
-/*  RaiseExceptionProc = MyRaiseException;
+  RaiseExceptionProc = MyRaiseException;
   OldExceptObjProc = reinterpret_cast<TGetExceptionObject>(ExceptObjProc);
   ExceptObjProc = MyGetExceptionObject;
-  LogAllExceptions = ALogAllExceptions;*/
+  LogAllExceptions = ALogAllExceptions;
 }
 //---------------------------------------------------------------------------
 #ifdef _STLP_DEBUG

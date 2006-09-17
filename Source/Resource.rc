@@ -38,7 +38,7 @@ BEGIN
   RES_ArgError            "arg(0) is undefined."
   RES_EvalFailed          "Evaluation failed."
   RES_TotalLoss           "Argument produced a function result with total loss of precision."
-  RES_SymbolNotFound      "Symbol '%s' not found."
+  RES_SymbolNotFound      "The symbol '%s' was not found or has the wrong number of argument."
   RES_RecusionLimit       "Too many recursive calls."
 
   RES_OperatorError       "Unexpected operator. Operator '%s' cannot be placed here."
