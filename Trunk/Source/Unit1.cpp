@@ -99,7 +99,6 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 #else
   SetApplicationExceptionHandler(GetRegValue(REGISTRY_KEY, "LogExceptions", HKEY_CURRENT_USER, false));
 #endif
-
   Font->Name = "MS Shell Dlg";
   Data.SetAbortUpdateEvent(&Draw.AbortUpdate);
 
@@ -107,11 +106,11 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   if(!FindCmdLineSwitch("EMBEDDING") && !GetRegValue(REGISTRY_KEY, "AllowOLE", HKEY_CURRENT_USER, 0))
     //Prevent OLE instantiation if not started for use with OLE
     _Module.RevokeClassObjects();
-
+                                                                  
   SetThreadName("Main");
   DefaultInstance->OnDebugLine = DebugLine;
 
-  Initialize();
+  Initialize();                        
 
   //Don't update when system settings are changed (especially DecimalSeparator)
   Application->UpdateFormatSettings = false;
@@ -267,6 +266,18 @@ void TForm1::Translate()
       TranslateList.push_back(ActionManager->Actions[I]);
   }
 
+  //As a workaround on a bug in Windows XP set MainMenu->Images to NULL while the menu is changed.
+  //Else the menu will change color from grey to white.
+  //Warning: Graph will throw EMenuError at the line "MainMenu->Images = NULL;" under startup when run in wine under Linux.
+  //I have no ide why, so just ignore the exception
+  try
+  {
+    MainMenu->Images = NULL;
+  }
+  catch(EMenuError &E)
+  {
+  }
+  
   for(unsigned I = 0; I < TranslateList.size(); I++)
   {
     TComponent *Component = TranslateList[I].Component;
@@ -274,6 +285,7 @@ void TForm1::Translate()
     if(!TranslateList[I].Hint.IsEmpty())
       SetWideStrProp(Component, GetPropInfo(Component, "Hint"), gettext(TranslateList[I].Hint));
   }
+  MainMenu->Images = ImageList2; //Remember to restore the images
 
   UpdateTreeView(); //Translate "Axes"
 
@@ -1186,6 +1198,7 @@ void TForm1::ChangeLanguage(const AnsiString &Lang)
 
   if(Lang != Data.Property.Language)
     Translate();
+
   Data.Property.Language = Lang;
 }
 //---------------------------------------------------------------------------
@@ -1975,13 +1988,13 @@ void __fastcall TForm1::InsertDifActionExecute(TObject *Sender)
 void __fastcall TForm1::ZoomInActionExecute(TObject *Sender)
 {
   //Zoom in; New window is 1/4 of the original
-  Zoom(0.25);
+  Zoom(0.25, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomOutActionExecute(TObject *Sender)
 {
   //Zoom out; New window is the doubble of the original
-  Zoom(1);
+  Zoom(1, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomWindowActionExecute(TObject *Sender)
