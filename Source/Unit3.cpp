@@ -266,6 +266,9 @@ void TForm3::UpdateEnabledControls()
 
   Edit6->Enabled = RadioGroup1->ItemIndex == 1;
   Edit12->Enabled = RadioGroup1->ItemIndex == 1;
+
+  CheckBox17->Enabled = CheckBox2->Checked;
+  CheckBox18->Enabled = CheckBox9->Checked;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm3::CheckBoxClick(TObject *Sender)
