@@ -154,6 +154,7 @@ object Form3: TForm3
         ParentShowHint = False
         ShowHint = True
         TabOrder = 5
+        OnClick = CheckBoxClick
       end
       object Edit6: TTntEdit
         Left = 299
@@ -319,6 +320,7 @@ object Form3: TForm3
         ParentShowHint = False
         ShowHint = True
         TabOrder = 5
+        OnClick = CheckBoxClick
       end
       object CheckBox10: TTntCheckBox
         Left = 187
