@@ -37,11 +37,14 @@ void TSymbolList::Add(const std::string &Key, const TCustomFunc &CustomFunc)
   List[Name] = CustomFunc;
 }
 //---------------------------------------------------------------------------
-TCustomFunc TSymbolList::Get(const std::string &Key) const
+const TCustomFunc& TSymbolList::Get(const std::string &Key) const
 {
   TConstIterator Iter = List.find(ToLower(Key));
   if(Iter == List.end())
-    return TCustomFunc();
+  {
+    static TCustomFunc Empty;
+    return Empty;
+  }
   return Iter->second;
 }
 //---------------------------------------------------------------------------

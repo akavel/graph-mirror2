@@ -228,9 +228,14 @@ bool TFuncData::Update(const TSymbolList &SymbolList)
   for(std::vector<TElem>::iterator Iter = Data.begin(); Iter != Data.end(); ++Iter)
     if(Iter->Ident == CodeCustom)
     {
-      Iter->FuncData = SymbolList.Get(Iter->Text).FuncData;
-      if(!Iter->FuncData)
+      const TCustomFunc &Func = SymbolList.Get(Iter->Text);
+      if(Func.IsEmpty() || Iter->Arguments != Func.GetArguments().size()) //The number of arguments must match
+      {
         Result = false;
+        Iter->FuncData.reset();
+      }
+      else
+        Iter->FuncData = Func.FuncData;
     }
   return Result;
 }
