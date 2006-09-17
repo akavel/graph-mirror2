@@ -5,7 +5,7 @@ object Form19: TForm19
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Animate'
-  ClientHeight = 281
+  ClientHeight = 280
   ClientWidth = 299
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -56,7 +56,7 @@ object Form19: TForm19
     ModalResult = 2
     TabOrder = 4
   end
-  object Button3: TTntButton
+  object Button4: TTntButton
     Left = 216
     Top = 136
     Width = 75
@@ -64,15 +64,16 @@ object Form19: TForm19
     Caption = 'Options...'
     TabOrder = 5
     Visible = False
+    OnClick = Button4Click
   end
-  object Button4: TTntButton
+  object Button3: TTntButton
     Left = 216
     Top = 96
     Width = 75
     Height = 25
     Caption = 'Help'
     TabOrder = 6
-    OnClick = Button4Click
+    OnClick = Button3Click
   end
   object TntGroupBox1: TTntGroupBox
     Left = 8

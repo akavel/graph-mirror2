@@ -38,9 +38,9 @@ __published:	// IDE-managed Components
   TTntComboBox *ComboBox1;
   TTntButton *Button1;
   TTntButton *Button2;
-  TTntButton *Button3;
-  TProgressForm *ProgressForm1;
   TTntButton *Button4;
+  TProgressForm *ProgressForm1;
+  TTntButton *Button3;
   TTntGroupBox *TntGroupBox1;
   TTntGroupBox *TntGroupBox2;
   TTntLabel *Label2;
@@ -56,11 +56,16 @@ __published:	// IDE-managed Components
   TTntLabel *Label7;
   TTntEdit *Edit6;
   void __fastcall Button1Click(TObject *Sender);
-  void __fastcall Button4Click(TObject *Sender);
+  void __fastcall Button3Click(TObject *Sender);
   void __fastcall TntEditKeyPress(TObject *Sender, char &Key);
+  void __fastcall Button5Click(TObject *Sender);
+  void __fastcall Button4Click(TObject *Sender);
+  void __fastcall ComboBox2Change(TObject *Sender);
 private:	// User declarations
   TData Data;
+//  std::vector<DWORD> CompressionHandler;
   static ::TAnimationInfo AnimationInfo;
+  void EnumCompressors();
 
 public:		// User declarations
   __fastcall TForm19(TComponent* Owner, const TData &AData);

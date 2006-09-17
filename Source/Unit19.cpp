@@ -13,6 +13,7 @@
 #include "Unit20.h"
 #include <iterator>
 #include "vfw.h"
+#include "IGraphic.h"
 //---------------------------------------------------------------------------
 #pragma link "TntStdCtrls"
 #pragma link "ProgressForm"
@@ -57,6 +58,8 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
   Edit4->Text = ToWideString(AnimationInfo.Width);
   Edit5->Text = ToWideString(AnimationInfo.Height);
   Edit6->Text = ToWideString(AnimationInfo.FramesPerSecond);
+
+  EnumCompressors();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button1Click(TObject *Sender)
@@ -71,6 +74,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   AnimationInfo.Height = ToInt(Edit5->Text);;
   Bitmap->Width = AnimationInfo.Width;
   Bitmap->Height = AnimationInfo.Height;
+  Bitmap->PixelFormat = pf8bit;
   AnimationInfo.Constant = ToString(ComboBox1->Text);
   TDraw Draw(Bitmap->Canvas, &Data, false, "Animate thread");
   Draw.SetArea(TRect(0, 0, AnimationInfo.Width, AnimationInfo.Height));
@@ -85,27 +89,42 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   ProgressForm1->Show();
   TCallOnRelease Dummy(&ProgressForm1->Close);
 
+  TRect Rect(0, 0, AnimationInfo.Width, AnimationInfo.Height);
+  std::vector<char> ImageData;
+  ImageData.reserve(Rect.Width() * Rect.Height());
+
+  //Get colors used and sort them. If other colors are used they will be replaced by the nearest from the list.
+  //Unfortunately it is difficult to know what colors are used without looking at all the frames.
+  std::vector<TColor> Colors = Form1->ColorSelect->ColorListVector;
+  std::sort(Colors.begin(), Colors.end());
+
+  std::vector<char> BitmapInfoData(Colors.size() * sizeof(TColor) + sizeof(BITMAPINFOHEADER));
+  BITMAPINFO *BitmapInfo = reinterpret_cast<BITMAPINFO*>(&BitmapInfoData[0]);
+  FillBitmapInfoHeader(BitmapInfo->bmiHeader, Bitmap.get(), Rect, Colors.size(), 0);
+  std::copy(Colors.begin(), Colors.end(), reinterpret_cast<TColor*>(BitmapInfo->bmiColors));
+/*  BITMAPINFOHEADER BitmapInfo;
   unsigned InfoSize;
   unsigned ImageSize;
   GetDIBSizes(Bitmap->Handle, InfoSize, ImageSize);
-  std::vector<char> ImageData(ImageSize);
-  BITMAPINFOHEADER BitmapInfo;
+  ImageData.resize(ImageSize);
   GetDIB(Bitmap->Handle, 0, &BitmapInfo, &ImageData[0]);
-
+*/
   AnsiString TempFile = GetTempFileName("Graph", "avi");
   AVIFileInit();
   TCallOnRelease Dummy2(AVIFileExit);
   TCallOnRelease Dummy3(DeleteFile, TempFile);
 
-  PAVIFILE pFile = NULL;
-  if(AVIFileOpen(&pFile, TempFile.c_str(), OF_WRITE | OF_CREATE, NULL) == AVIERR_OK)
+  //Inner scope needed to release the avi file when the creation is finished.
   {
-    TCallOnRelease Dummy(AVIFileRelease, pFile);
+    PAVIFILE pFile = NULL;
+    OleCheck(AVIFileOpen(&pFile, TempFile.c_str(), OF_WRITE | OF_CREATE, NULL));
+    TCallOnRelease Dummy4(AVIFileRelease, pFile);
+
     PAVISTREAM pStream = NULL;
     AVISTREAMINFO StreamInfo;
 
     StreamInfo.fccType = streamtypeVIDEO;
-    StreamInfo.fccHandler = 0;
+    StreamInfo.fccHandler = 0; //CompressionHandler[ComboBox2->ItemIndex];
     StreamInfo.dwFlags = 0;
     StreamInfo.dwCaps = 0;
     StreamInfo.wPriority = 0;
@@ -113,7 +132,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     StreamInfo.dwScale = 100;
     StreamInfo.dwRate = AnimationInfo.FramesPerSecond * 100;
     StreamInfo.dwStart = 0;
-    StreamInfo.dwLength = 0;
+    StreamInfo.dwLength = std::ceil((AnimationInfo.Max - AnimationInfo.Min) / AnimationInfo.Step); //Number of frames, I think
     StreamInfo.dwInitialFrames = 0;
     StreamInfo.dwSuggestedBufferSize = AnimationInfo.Height * AnimationInfo.Width * 4; //Should be changed later
     StreamInfo.dwQuality = -1;
@@ -123,31 +142,29 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     StreamInfo.dwFormatChangeCount = 0;
     strcpy(StreamInfo.szName, "Graph animation");
 
-    if(AVIFileCreateStream(pFile, &pStream, &StreamInfo) == AVIERR_OK)
-    {
-      TCallOnRelease Dummy(AVIStreamRelease, pStream);
-      if(AVIStreamSetFormat(pStream, 0, &BitmapInfo, sizeof(BitmapInfo)) == AVIERR_OK)
-      {
-        int I = 0;
-        for(double Value = AnimationInfo.Min; Value <= AnimationInfo.Max; Value += AnimationInfo.Step, I++)
-        {
-          Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
-          Bitmap->Canvas->FillRect(TRect(0, 0, AnimationInfo.Width, AnimationInfo.Height));
-          Data.CustomFunctions.Replace(AnimationInfo.Constant, Value);
-          Data.CustomFunctions.Update();
-          Data.Update();
-          Data.ClearCache();
-          Draw.DrawAll();
-          Draw.Wait();           
+    OleCheck(AVIFileCreateStream(pFile, &pStream, &StreamInfo));
+    TCallOnRelease Dummy5(AVIStreamRelease, pStream);
 
-          GetDIB(Bitmap->Handle, 0, &BitmapInfo, &ImageData[0]);
-          if(AVIStreamWrite(pStream, I, 1, &ImageData[0], ImageSize, AVIIF_KEYFRAME, NULL, NULL) != AVIERR_OK)
-            throw Exception("AVI write error");
-          ProgressForm1->StepIt();
-          if(ProgressForm1->AbortProgress)
-            return;
-        }
-      }
+    OleCheck(AVIStreamSetFormat(pStream, 0, BitmapInfo, /*sizeof(BitmapInfo)*/BitmapInfoData.size()));
+
+    int I = 0;
+    for(double Value = AnimationInfo.Min; Value <= AnimationInfo.Max; Value += AnimationInfo.Step, I++)
+    {
+      Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
+      Bitmap->Canvas->FillRect(TRect(0, 0, AnimationInfo.Width, AnimationInfo.Height));
+      Data.CustomFunctions.Replace(AnimationInfo.Constant, Value);
+      Data.CustomFunctions.Update();
+      Data.Update();
+      Data.ClearCache();
+      Draw.DrawAll();
+      Draw.Wait();
+
+      CompressBitmap(Bitmap.get(), Rect, Colors, ImageData);
+//      GetDIB(Bitmap->Handle, 0, &BitmapInfo, &ImageData[0]);
+      OleCheck(AVIStreamWrite(pStream, I, 1, &ImageData[0], ImageData.size(), AVIIF_KEYFRAME, NULL, NULL));
+      ProgressForm1->StepIt();
+      if(ProgressForm1->AbortProgress)
+        return;
     }
   }
 
@@ -155,7 +172,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   CreateForm<TForm20>()->ShowAnimation(TempFile);
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm19::Button4Click(TObject *Sender)
+void __fastcall TForm19::Button3Click(TObject *Sender)
 {
   Application->HelpContext(HelpContext);
 }
@@ -164,6 +181,50 @@ void __fastcall TForm19::TntEditKeyPress(TObject *Sender, char &Key)
 {
   if(!isdigit(Key) && Key != '\b')
     Key = 0;
+}
+//---------------------------------------------------------------------------
+void TForm19::EnumCompressors()
+{
+/*  ICINFO Info;
+  unsigned I = 0;
+  CompressionHandler.push_back(0); //The first is "Uncompressed"
+
+  while(ICInfo(ICTYPE_VIDEO, I, &Info))
+  {
+    HIC hic = ICOpen(Info.fccType, Info.fccHandler, ICMODE_QUERY);
+    ICGetInfo(hic, &Info, sizeof(Info));
+    ICClose(hic);
+    if(*Info.szName)
+    {
+      ComboBox2->Items->Add(Info.szDescription);
+      CompressionHandler.push_back(Info.fccHandler);
+    }
+    I++;
+  }
+
+  ComboBox2->ItemIndex = 0;*/
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm19::Button5Click(TObject *Sender)
+{
+//  HIC hic = ICOpen(ICTYPE_VIDEO, CompressionHandler[ComboBox2->ItemIndex], ICMODE_QUERY);
+//  ICAbout(hic, Handle);
+//  ICClose(hic);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm19::Button4Click(TObject *Sender)
+{
+//  HIC hic = ICOpen(ICTYPE_VIDEO, CompressionHandler[ComboBox2->ItemIndex], ICMODE_QUERY);
+//  ICConfigure(hic, Handle);
+//  ICClose(hic);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm19::ComboBox2Change(TObject *Sender)
+{
+//  HIC hic = ICOpen(ICTYPE_VIDEO, CompressionHandler[ComboBox2->ItemIndex], ICMODE_QUERY);
+//  Button4->Enabled = ICQueryConfigure(hic);
+//  Button5->Enabled = ICQueryAbout(hic);
+//  ICClose(hic);
 }
 //---------------------------------------------------------------------------
 
