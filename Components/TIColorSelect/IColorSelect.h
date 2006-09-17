@@ -53,6 +53,8 @@ public:
   bool __fastcall Execute();
   __property TColor ColorList[int i][int j] = {read=GetColorList, write=SetColorList};
   __property HPALETTE Palette = {read=GetPalette};
+  __property std::vector<TColor> ColorListVector = {read=FColorList};
+
 __published:
   __property AnsiString Caption = {read=FCaption, write=FCaption};
   __property int HelpContext = {read=FHelpContext, write=FHelpContext,default=0};
