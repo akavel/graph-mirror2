@@ -142,7 +142,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=2
 Release=0
-Build=315
+Build=317
 Debug=1
 PreRelease=0
 Special=0
@@ -154,7 +154,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.2.0.315
+FileVersion=4.2.0.317
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2006
 LegalTrademarks=
@@ -230,17 +230,18 @@ Item28=D:\Program Files\dxgettext;..\Components\TOpenPreviewDialog;D:\Program Fi
 Item29=..\Components\TOpenPreviewDialog;D:\Program Files\Borland\CBuilder6\Examples\Apps\Autosrv;D:\Program Files\Borland\CBuilder6\Projects;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid
 
 [HistoryLists\hlConditionals]
-Count=10
+Count=11
 Item0=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER
-Item1=WIN32;_DEBUG
-Item2=WIN32
-Item3=WIN32;LIMITED_EDITION;_DEBUG
-Item4=WIN32;LIMITED_EDITION
-Item5=_DEBUG;WIN32
-Item6=_DEBUG
-Item7=EUREKALOG;_DEBUG
-Item8=EUREKALOG
-Item9=_DEBUG;EUREKALOG
+Item1=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
+Item2=WIN32;_DEBUG
+Item3=WIN32
+Item4=WIN32;LIMITED_EDITION;_DEBUG
+Item5=WIN32;LIMITED_EDITION
+Item6=_DEBUG;WIN32
+Item7=_DEBUG
+Item8=EUREKALOG;_DEBUG
+Item9=EUREKALOG
+Item10=_DEBUG;EUREKALOG
 
 [HistoryLists\hlIntOutputDir]
 Count=1
