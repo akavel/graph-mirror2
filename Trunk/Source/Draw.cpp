@@ -192,12 +192,11 @@ void TDraw::DrawAll()
         CalcTan(Tan);
 
   RedrawAxes();
-//  SetClippingRegion(); //Points and lines between points must be clipped
 
 #ifdef LIMITED_EDITION
   Context.SetFont("Times New Roman", 10, clBlack);
   std::string Str = "Graph Limited School Edition";
-  Context.DrawText(Str, 0, AxesRect.Bottom - Context.GetTextHeight(Str));
+  Context.DrawText(Str, 0, Height - Context.GetTextHeight(Str));
 #endif
 
   if(Data->ElemCount() != 0)
@@ -232,6 +231,10 @@ void TDraw::RedrawAxes()
 
     AxesRect.Left = std::max(MinWidth, MaxWidth) + Size(7);
     AxesRect.Bottom = Height - NumberHeight - Size(4);
+
+#ifdef LIMITED_EDITION
+    AxesRect.Bottom -= Size(15); //Make space for "Graph Limited School Edition" text at the bottom
+#endif
   }
 
   if(Axes.xAxis.LogScl)
