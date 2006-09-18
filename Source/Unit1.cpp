@@ -268,16 +268,11 @@ void TForm1::Translate()
 
   //As a workaround on a bug in Windows XP set MainMenu->Images to NULL while the menu is changed.
   //Else the menu will change color from grey to white.
-  //Warning: Graph will throw EMenuError at the line "MainMenu->Images = NULL;" under startup when run in wine under Linux.
-  //I have no ide why, so just ignore the exception
-  try
-  {
+  //Warning: Graph will throw EMenuError at the line "MainMenu->Images = NULL;" under startup when run in Wine under Linux.
+  //I have no ide why. It looks like we can detect Wine by looking for the registry key HKCU\Software\Wine.
+  if(!RegKeyExists("Software\\Wine", HKEY_CURRENT_USER))
     MainMenu->Images = NULL;
-  }
-  catch(EMenuError &E)
-  {
-  }
-  
+
   for(unsigned I = 0; I < TranslateList.size(); I++)
   {
     TComponent *Component = TranslateList[I].Component;

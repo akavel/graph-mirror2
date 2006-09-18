@@ -329,8 +329,7 @@ AnsiString GetRegValue(const AnsiString &Key, const AnsiString &ValueName, HKEY 
   {
     DWORD Size;
     DWORD Type;
-    RegQueryValueEx(RegKey, ValueName.c_str(), NULL, &Type, NULL, &Size);
-    if(Type == REG_SZ)
+    if(RegQueryValueEx(RegKey, ValueName.c_str(), NULL, &Type, NULL, &Size) == ERROR_SUCCESS && Type == REG_SZ)
     {
       std::vector<BYTE> Data(Size);
       if(RegQueryValueEx(RegKey, ValueName.c_str(), NULL, NULL, &Data[0], &Size) == ERROR_SUCCESS)
@@ -357,6 +356,19 @@ unsigned GetRegValue(const AnsiString &Key, const AnsiString &ValueName, HKEY Ro
       if(RegQueryValueEx(RegKey, ValueName.c_str(), NULL, NULL, reinterpret_cast<unsigned char*>(&Data), &Size) == ERROR_SUCCESS)
         Result = Data;
     }
+    RegCloseKey(RegKey);
+  }
+  return Result;
+}
+//---------------------------------------------------------------------------
+bool RegKeyExists(const AnsiString &Key, HKEY RootKey)
+{
+  HKEY RegKey;
+  DWORD Result = false;
+
+  if(RegOpenKeyEx(RootKey, Key.c_str(), 0, KEY_QUERY_VALUE, &RegKey) == ERROR_SUCCESS)
+  {
+    Result = true;
     RegCloseKey(RegKey);
   }
   return Result;
