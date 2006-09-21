@@ -46,6 +46,27 @@ public:
   TColor GetBackgroundColor() const;
 };
 
+enum TParaFormatAlignment
+{
+  pfaLeft = PFA_LEFT,
+  pfaRight = PFA_RIGHT,
+  pfaCenter = PFA_CENTER,
+  pfaJustify = PFA_JUSTIFY,
+  pfaFullInterword = PFA_FULL_INTERWORD
+};
+
+class TParaFormat : public TParaAttributes
+{
+  TIRichEdit *RichEdit;
+  TParaFormatAlignment GetAlignment();
+  void SetAlignment(TParaFormatAlignment Value);
+  ::PARAFORMAT2 GetFormat() const;
+
+public:
+  TParaFormat(TIRichEdit *ARichEdit);
+  __property TParaFormatAlignment Alignment = {read=GetAlignment, write=SetAlignment};
+};
+
 class TIRichEdit : public TCustomRichEdit
 {
 private:
@@ -53,6 +74,7 @@ private:
   HINSTANCE FLibHandle;
   TOleErrorEvent FOnOleError;
   TColor FBackgroundColor;
+  ::TParaFormat *FParagraph;
 
   void __fastcall SetTransparent(bool Value);
   void __fastcall SetBackgroundColor(TColor Color);
@@ -71,6 +93,8 @@ public:
   TTextFormat TextFormat;
 
   __fastcall TIRichEdit(TComponent* Owner);
+  __fastcall ~TIRichEdit();
+
   void SetRichText(const AnsiString &Str);
   AnsiString GetRichText();
   void Render(TCanvas *Canvas, const TPoint &Pos, int Width = MAXSHORT);
@@ -86,6 +110,7 @@ public:
   int LineLength(int Index);
   void SetSelText(wchar_t Ch, const AnsiString &FontName, unsigned Size);
 
+  __property ::TParaFormat *Paragraph = {read=FParagraph};
   __property SelText;
 //  __property Lines; //Don't use this
 

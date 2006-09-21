@@ -23,9 +23,15 @@ namespace Irichedit
 }
 //---------------------------------------------------------------------------
 __fastcall TIRichEdit::TIRichEdit(TComponent* Owner)
-  : TCustomRichEdit(Owner), FTransparent(false), TextFormat(this), FOnOleError(NULL), FBackgroundColor(clDefault)
+  : TCustomRichEdit(Owner), FTransparent(false), TextFormat(this), FOnOleError(NULL), FBackgroundColor(clDefault),
+    FParagraph(new ::TParaFormat(this))
 {
   ControlStyle = ControlStyle >> csSetCaption;
+}
+//---------------------------------------------------------------------------
+__fastcall TIRichEdit::~TIRichEdit()
+{
+  delete FParagraph;
 }
 //---------------------------------------------------------------------------
 //The following ensures that the new version of richedit (v2.0) is loaded;
@@ -382,6 +388,34 @@ void TIRichEdit::SetSelText(wchar_t Ch, const AnsiString &FontName, unsigned Siz
   Temp.sprintf("{\\rtf1{\\fonttbl{\\f0\\fcharset%u %s;}}\\f0 \\fs%u \\u%u?}", GetCharset(FontName), FontName.c_str(), Size*2, Char);
 
   SendMessage(Handle, EM_SETTEXTEX, reinterpret_cast<long>(&SetTextEx), reinterpret_cast<long>(Temp.c_str()));
+}
+//---------------------------------------------------------------------------
+TParaFormat::TParaFormat(TIRichEdit *ARichEdit)
+  : RichEdit(ARichEdit), TParaAttributes(ARichEdit)
+{
+}
+//---------------------------------------------------------------------------
+::PARAFORMAT2 TParaFormat::GetFormat() const
+{
+  ::PARAFORMAT2 Format;
+  Format.cbSize = sizeof(Format);
+
+  SendMessage(RichEdit->Handle, EM_GETPARAFORMAT, 0, reinterpret_cast<long>(&Format));
+  return Format;
+}
+//---------------------------------------------------------------------------
+TParaFormatAlignment TParaFormat::GetAlignment()
+{
+  return static_cast<TParaFormatAlignment>(GetFormat().wAlignment);
+}
+//---------------------------------------------------------------------------
+void TParaFormat::SetAlignment(TParaFormatAlignment Value)
+{
+  ::PARAFORMAT2 Format;
+  Format.cbSize = sizeof(Format);
+  Format.wAlignment = Value;
+  Format.dwMask = PFM_ALIGNMENT;
+  SendMessage(RichEdit->Handle, EM_SETPARAFORMAT, 0, reinterpret_cast<long>(&Format));
 }
 //---------------------------------------------------------------------------
 
