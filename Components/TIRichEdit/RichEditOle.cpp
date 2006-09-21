@@ -249,7 +249,7 @@ bool TRichEditOle::InsertObject()
 
 	memset(&io, 0, sizeof(io));
 	io.cbStruct = sizeof(io);
-	io.dwFlags = IOF_SHOWHELP | IOF_CREATENEWOBJECT | IOF_CREATEFILEOBJECT |
+	io.dwFlags = /*IOF_SHOWHELP |*/ IOF_CREATENEWOBJECT | IOF_CREATEFILEOBJECT |
 		IOF_SELECTCREATENEW | IOF_CREATELINKOBJECT;
 	io.hWndOwner = RichEdit->Handle;
 	io.lpszFile = Buf;
