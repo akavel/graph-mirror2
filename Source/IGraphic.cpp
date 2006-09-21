@@ -294,7 +294,7 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
 
   //We need to left align the text because there is no specific right side
   RichEdit->SelectAll();
-  RichEdit->Paragraph->Alignment = taLeftJustify;
+  RichEdit->Paragraph->Alignment = pfaLeft;
 
   return RichEdit->GetTextSize();
 }
