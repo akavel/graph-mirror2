@@ -45,7 +45,12 @@ __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, cons
 //---------------------------------------------------------------------------
 void __fastcall TForm6::ParagraphChange(TObject *Sender)
 {
-  IRichEdit1->Paragraph->Alignment = ToolButton6->Down ? taCenter : (ToolButton7->Down ? taRightJustify : taLeftJustify);
+  if(ToolButton5->Down)
+    IRichEdit1->Paragraph->Alignment = pfaLeft;
+  else if(ToolButton6->Down)
+    IRichEdit1->Paragraph->Alignment = pfaCenter;
+  else if(ToolButton7->Down)
+    IRichEdit1->Paragraph->Alignment = pfaRight;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::IRichEdit1SelectionChange(TObject *Sender)
@@ -228,9 +233,12 @@ void TForm6::UpdateFont()
   ToolButton3->Down = IRichEdit1->TextFormat.GetUnderline();
   ToolButton4->Down = IRichEdit1->TextFormat.GetStrikeOut();
 
-  ToolButton5->Down = IRichEdit1->Paragraph->Alignment == taLeftJustify;
-  ToolButton6->Down = IRichEdit1->Paragraph->Alignment == taCenter;
-  ToolButton7->Down = IRichEdit1->Paragraph->Alignment == taRightJustify;
+  switch(IRichEdit1->Paragraph->Alignment)
+  {
+    case pfaLeft:    ToolButton5->Down = true; break;
+    case pfaCenter:  ToolButton6->Down = true; break;
+    case pfaRight:   ToolButton7->Down = true; break;
+  }
 
   ToolButton9->Down = IRichEdit1->TextFormat.GetSuperscript();
   ToolButton10->Down = IRichEdit1->TextFormat.GetSubscript();

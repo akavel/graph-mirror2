@@ -110,7 +110,7 @@ object Form3: TForm3
       object CheckBox1: TTntCheckBox
         Left = 8
         Top = 136
-        Width = 113
+        Width = 369
         Height = 17
         Hint = 'Use logarithmic scale on the x-axis.'
         Caption = 'Logarithmic scale'
@@ -147,7 +147,7 @@ object Form3: TForm3
       object CheckBox2: TTntCheckBox
         Left = 8
         Top = 160
-        Width = 113
+        Width = 177
         Height = 17
         Hint = 'Show units on the x-axis.'
         Caption = 'Show numbers'
@@ -291,7 +291,7 @@ object Form3: TForm3
       object CheckBox8: TTntCheckBox
         Left = 8
         Top = 136
-        Width = 113
+        Width = 377
         Height = 17
         Hint = 'Use logarithmic scale for the y-axis.'
         Caption = 'Logarithmic scale'
@@ -313,7 +313,7 @@ object Form3: TForm3
       object CheckBox9: TTntCheckBox
         Left = 8
         Top = 160
-        Width = 113
+        Width = 177
         Height = 17
         Hint = 'Show units on the y-axis.'
         Caption = 'Show numbers'
