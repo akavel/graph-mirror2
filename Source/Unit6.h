@@ -108,7 +108,7 @@ __published:	// IDE-managed Components
   void __fastcall ColorBox2Change(TObject *Sender);
   void __fastcall ToolButton11Click(TObject *Sender);
   void __fastcall SymbolDialog1Insert(TSymbolDialog *Sender, wchar_t Symbol,
-          const AnsiString FontName);
+          const AnsiString &FontName);
   void __fastcall ToolButton13Click(TObject *Sender);
 private:	// User declarations
   TRichEditOle RichEditOle;

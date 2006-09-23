@@ -51,6 +51,7 @@ USEFORM("TParFuncFrame.cpp", ParFuncFrame); /* TFrame: File Type */
 USEFORM("TPolFuncFrame.cpp", PolFuncFrame); /* TFrame: File Type */
 USEFORM("TTanFrame.cpp", TanFrame); /* TFrame: File Type */
 USEFORM("TAreaFrame.cpp", AreaFrame); /* TFrame: File Type */
+USEFORM("..\Components\TSymbolDialog\SymbolForm.cpp", SymbolFrm);
 //---------------------------------------------------------------------------
 TComModule _ProjectModule(0 /*InitATLServer*/);
 TComModule &_Module = _ProjectModule;
