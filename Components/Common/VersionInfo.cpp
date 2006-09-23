@@ -50,29 +50,27 @@ std::string TVersion::Text() const
 //---------------------------------------------------------------------------
 void TVersionInfo::LoadVersionInfo()
 {
+  FInfoAvailable = false;
   if(FFileName.empty())
     FFileName = Application->ExeName.c_str();
 
-  VS_FIXEDFILEINFO *FileInfo;//Pointer to file info structure
   unsigned int puLen;//Length of file info structure
-  void *lpData; //Pointer to version info
   DWORD Dummy;
 
   //Get size of Resource data
   int DataSize = GetFileVersionInfoSize(const_cast<char*>(FFileName.c_str()), &Dummy);
-  if(!DataSize)
-  {
-    FInfoAvailable = false;
+  if(DataSize == 0)
     return; //Return on error
-  }
 
   //Allocate memory to data
-  lpData = new char[DataSize];
+  std::vector<char> Data(DataSize);
 
   //Get version info from file
-  if(GetFileVersionInfo(const_cast<char*>(FFileName.c_str()), 0, DataSize, lpData))
+  if(GetFileVersionInfo(const_cast<char*>(FFileName.c_str()), 0, Data.size(), &Data[0]))
+  {
     //Get pointer to file info structure
-    if(VerQueryValue(lpData,"\\", &(void*)FileInfo, &puLen))
+    VS_FIXEDFILEINFO *FileInfo;//Pointer to file info structure
+    if(VerQueryValue(&Data[0],"\\", &(void*)FileInfo, &puLen))
     {
       FFileVersion.VersionMS = FileInfo->dwFileVersionMS;
       FFileVersion.VersionLS = FileInfo->dwFileVersionLS;
@@ -93,8 +91,8 @@ void TVersionInfo::LoadVersionInfo()
       FFileType = FileInfo->dwFileType;
       FFileSubtype = FileInfo->dwFileSubtype;
     }
-  //Free memory
-  delete[] lpData;
+  }
+  
   FInfoAvailable = true;
 }
 //---------------------------------------------------------------------------
@@ -102,23 +100,19 @@ std::string TVersionInfo::StringValue(const std::string &Ident) const
 {
   unsigned int puLen;//Length of file info structure
   VS_FIXEDFILEINFO *FileInfo;//Pointer to file info structure
-  void *lpData; //Pointer to version info
   DWORD Dummy;
 
   //Get size of Resource data
   int DataSize = GetFileVersionInfoSize(const_cast<char*>(FFileName.c_str()), &Dummy);
-  if(!DataSize)
+  if(DataSize == 0)
     return ""; //Return on error
 
   //Allocate memory to data
-  lpData=new char[DataSize];
-
+  std::vector<char> Data(DataSize);
   //Get version info from file
-  if(!GetFileVersionInfo(const_cast<char*>(FFileName.c_str()), 0, DataSize, lpData))
-  {
-    delete[] lpData;
+  if(!GetFileVersionInfo(const_cast<char*>(FFileName.c_str()), 0, Data.size(), &Data[0]))
     return "";
-  }
+
   // *** Now the Character translation tables ***
   struct TRANSLATION
   {
@@ -126,14 +120,16 @@ std::string TVersionInfo::StringValue(const std::string &Ident) const
     WORD charset;
   }m_translation;
 
-  VerQueryValue(lpData, "VarFileInfo\\Translation", &(void*)FileInfo, &puLen);
+  if(!VerQueryValue(&Data[0], "VarFileInfo\\Translation", &(void*)FileInfo, &puLen))
+    return "";
+
   m_translation = *(TRANSLATION*)FileInfo;
   // *** Now we are ready to Build Queries ***
   AnsiString Query = "StringFileInfo\\" + IntToHex(m_translation.langID, 4) + IntToHex(m_translation.charset, 4) + "\\" + Ident.c_str();
-  VerQueryValue(lpData, Query.c_str(), &(void*)FileInfo, &puLen);
+  if(!VerQueryValue(&Data[0], Query.c_str(), &(void*)FileInfo, &puLen))
+    return "";
+
   std::string Str = reinterpret_cast<char*>(FileInfo);
-  //Free memory
-  delete[] lpData;
   return Str;
 }
 //---------------------------------------------------------------------------
