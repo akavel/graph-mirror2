@@ -19,12 +19,13 @@ const int PreviewFontSize = 30;
 
 struct TSubset
 {
-  unsigned First;
-  unsigned Last;
+  int First;
+  int Last;
   const char *Name;
 };
 
-TSubset Subsets[] = {
+//List from http://msdn.microsoft.com/library/default.asp?url=/library/en-us/intl/unicode_63ub.asp
+const TSubset Subsets[] = {
 {0x0020, 0x007A, "Basic Latin"},
 {0x00A0, 0x00FF, "Latin-1"},
 {0x0100, 0x017F, "Latin Extended-A"},
@@ -119,7 +120,7 @@ TSubset Subsets[] = {
 //---------------------------------------------------------------------------
 __fastcall TSymbolFrm::TSymbolFrm(TComponent* Owner, bool AShowUnicode)
   : TForm(Owner), Selected(FirstSymbol), hUNameDll(NULL), pGetUNameFunc(NULL), OldItemIndex(0), ShowUnicode(AShowUnicode),
-    BeginSymbol(0), EndSymbol(0), hGdi32Dll(NULL), pGetFontUnicodeRanges(NULL), pGetGlyphIndices(NULL)
+    hGdi32Dll(NULL), pGetFontUnicodeRanges(NULL), Glyphset(NULL)
 {
   Caption = LoadStr(RES_SYMBOL_BOX_CAPTION);
   Label1->Caption = "&" + LoadStr(RES_FONT_NAME);
@@ -136,7 +137,6 @@ __fastcall TSymbolFrm::TSymbolFrm(TComponent* Owner, bool AShowUnicode)
   if(hGdi32Dll)
   {
     pGetFontUnicodeRanges = reinterpret_cast<TGetFontUnicodeRanges>(GetProcAddress(hGdi32Dll, "GetFontUnicodeRanges"));
-    pGetGlyphIndices = reinterpret_cast<TGetGlyphIndices>(GetProcAddress(hGdi32Dll, "GetGlyphIndicesW"));
   }
 
   //Add list of fonts; Take care of duplicates, that for some strange reason has happened
@@ -152,9 +152,6 @@ __fastcall TSymbolFrm::TSymbolFrm(TComponent* Owner, bool AShowUnicode)
   }
 
   FocusPanel1->DoubleBuffered = true;
-
-  for(unsigned I = 0; I < sizeof(Subsets)/sizeof(Subsets[0]); I++)
-    ComboBox2->Items->Add(Subsets[I].Name);
 }
 //---------------------------------------------------------------------------
 __fastcall TSymbolFrm::~TSymbolFrm()
@@ -167,9 +164,6 @@ __fastcall TSymbolFrm::~TSymbolFrm()
 //---------------------------------------------------------------------------
 void TSymbolFrm::UpdateImage()
 {
-  BeginSymbol = ScrollBar1->Position * ColCount + FirstSymbol;
-  EndSymbol = ShowUnicode ? ColCount * RowCount + BeginSymbol : 256;
-
   TCanvas *Canvas = Image1->Canvas;
   int Width = Image1->Width;
   int Height = Image1->Height;
@@ -184,14 +178,24 @@ void TSymbolFrm::UpdateImage()
   Canvas->FillRect(Image1->ClientRect);
 
   //Draw symbols
-  wchar_t Symbol = BeginSymbol;
+  wchar_t Symbol = GetSymbol(ScrollBar1->Position * ColCount);
   WideString Str(L' ');
+  unsigned Index = GetRangeIndex(Symbol);
   for(int Row = 0; Row < RowCount; Row++)
-    for(int Col = 0; Col < ColCount && Symbol < EndSymbol; Col++, Symbol++)
+    for(int Col = 0; Col < ColCount; Col++)
     {
+      if(Symbol >= Glyphset->ranges[Index].wcLow + Glyphset->ranges[Index].cGlyphs)
+      {
+        Index++;
+        if(Index >= Glyphset->cRanges)
+          break;
+        Symbol = Glyphset->ranges[Index].wcLow;
+      }
+
       Str[1] = Symbol;
       TRect Rect(Col * Delta, Row * Delta, (Col+1) * Delta, (Row+1) * Delta);
       DrawTextW(Canvas->Handle, Str.c_bstr(), 1, &Rect, DT_CENTER | DT_VCENTER);
+      Symbol++;
     }
 
   //Draw horizontal and vertical lines
@@ -207,15 +211,12 @@ void TSymbolFrm::UpdateImage()
     Canvas->LineTo(Width, Y);
   }
 
-  int Col = (Selected-FirstSymbol) % ColCount;
-  int Row = (Selected-BeginSymbol) / ColCount;
-  if(Selected < BeginSymbol)
-    Row = 0, Selected = BeginSymbol + Col;
-  else if(Row >= RowCount)
-    Row = RowCount - 1, Selected = BeginSymbol + Row * ColCount + Col;
-
   //Draw selected symbol
   Canvas->Brush->Color = (TColor)0x006B2408; //A dark blue color
+  unsigned Pos = GetSymbolPos(Selected);
+  int Row = Pos / ColCount - ScrollBar1->Position;
+  unsigned Col = Pos % ColCount;
+
   TRect SelectedRect(Col * Delta + 1, Row * Delta + 1, (Col+1) * Delta, (Row+1) * Delta);
   Canvas->FillRect(SelectedRect);
   Canvas->Font->Color = clWhite;
@@ -225,7 +226,7 @@ void TSymbolFrm::UpdateImage()
     Canvas->DrawFocusRect(SelectedRect);
 
   //Show large preview
-  Image2->Canvas->Brush->Color = clBtnFace;                    
+  Image2->Canvas->Brush->Color = clBtnFace;
   Image2->Canvas->FillRect(Image2->ClientRect);
   Image2->Canvas->Font->Name = ComboBox1->Text;
   Image2->Canvas->Font->Size = PreviewFontSize;
@@ -257,7 +258,7 @@ void TSymbolFrm::UpdateImage()
 void __fastcall TSymbolFrm::FormShow(TObject *Sender)
 {
   OldItemIndex = ComboBox1->ItemIndex;
-  UpdateImage();
+  ComboBox1Select(NULL);
 }
 //---------------------------------------------------------------------------
 void __fastcall TSymbolFrm::Image1MouseDown(TObject *Sender,
@@ -293,8 +294,9 @@ void __fastcall TSymbolFrm::Image1DblClick(TObject *Sender)
 void __fastcall TSymbolFrm::FocusPanel1KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
-  int Row = (Selected - BeginSymbol) / ColCount;
-  int Col = (Selected - BeginSymbol) % ColCount;
+  unsigned Pos = GetSymbolPos(Selected);
+  unsigned Row = Pos / ColCount - ScrollBar1->Position;
+  unsigned Col = Pos % ColCount;
   switch(Key)
   {
     case VK_LEFT:
@@ -302,8 +304,8 @@ void __fastcall TSymbolFrm::FocusPanel1KeyDown(TObject *Sender, WORD &Key,
         Col--;
       else if(Row > 0)
         Row--, Col = ColCount-1;
-      else
-        ScrollBar1->Position = ScrollBar1->Position - ScrollBar1->SmallChange;
+      else if(ScrollBar1->Position > ScrollBar1->Min)
+        Col = ColCount-1, SetPosition(ScrollBar1->Position - ScrollBar1->SmallChange);
       break;
 
     case VK_RIGHT:
@@ -312,42 +314,42 @@ void __fastcall TSymbolFrm::FocusPanel1KeyDown(TObject *Sender, WORD &Key,
       else if(Row < RowCount-1)
         Row++, Col = 0;
       else
-        ScrollBar1->Position = ScrollBar1->Position + ScrollBar1->SmallChange;
+        Col = 0, SetPosition(ScrollBar1->Position + ScrollBar1->SmallChange);
       break;
 
     case VK_UP:
       if(Row > 0)
         Row--;
       else
-        ScrollBar1->Position = ScrollBar1->Position - ScrollBar1->SmallChange;
+        SetPosition(ScrollBar1->Position - ScrollBar1->SmallChange);
       break;
 
     case VK_DOWN:
       if(Row <  RowCount-1)
         Row++;
       else
-        ScrollBar1->Position = ScrollBar1->Position + ScrollBar1->SmallChange;
+        SetPosition(ScrollBar1->Position + ScrollBar1->SmallChange);
       break;
 
     case VK_PRIOR:
-      ScrollBar1->Position = ScrollBar1->Position - ScrollBar1->LargeChange;
+      SetPosition(ScrollBar1->Position - ScrollBar1->LargeChange);
       break;
 
     case VK_NEXT:
-      ScrollBar1->Position = ScrollBar1->Position + ScrollBar1->LargeChange;
+      SetPosition(ScrollBar1->Position + ScrollBar1->LargeChange);
       break;
 
     case VK_HOME:
-      ScrollBar1->Position = ScrollBar1->Min;
-      Row = 0;
+      SetPosition(ScrollBar1->Min);
       Col = 0;
+      Row = 0;
       break;
 
     case VK_END:
-      ScrollBar1->Position = ScrollBar1->Max;
-      Row = RowCount - 1;
-      Col = ColCount - 1;
-      break;
+      SetPosition(ScrollBar1->Max);
+      if(SetSelected(LastSymbol()))
+        UpdateImage();
+      return;
   }
 
   if(SetSelected(Col, Row))
@@ -357,29 +359,34 @@ void __fastcall TSymbolFrm::FocusPanel1KeyDown(TObject *Sender, WORD &Key,
 void __fastcall TSymbolFrm::ComboBox1Select(TObject *Sender)
 {
   OldItemIndex = ComboBox1->ItemIndex;
-  UpdateImage();
+  Image1->Canvas->Font->Name = ComboBox1->Text;
 
   //Symbol charset only has characters up to '\xFF'
   int Charset = GetTextCharset(Image1->Canvas->Handle);
-  ScrollBar1->Enabled = Charset != SYMBOL_CHARSET;
-  ComboBox2->Enabled = Charset != SYMBOL_CHARSET;
-
-  FONTSIGNATURE FontSignature;
-  Charset = GetTextCharsetInfo(Image1->Canvas->Handle, &FontSignature, 0);
-
-  if(pGetGlyphIndices)
+  if(Charset == SYMBOL_CHARSET)
   {
-    WORD Array[10];
-    wchar_t Input[] = {L'A', 0x1EA2, 0};
-    unsigned Result = pGetGlyphIndices(Image1->Canvas->Handle, Input, 1, Array, GGI_MARK_NONEXISTING_GLYPHS);
+    ScrollBar1->Enabled = false;
+    ComboBox2->Enabled = false;
+    ComboBox2->ItemIndex = -1;
   }
-
-  if(pGetFontUnicodeRanges)
+  else if(pGetFontUnicodeRanges)
   {
-    std::vector<BYTE> Data(pGetFontUnicodeRanges(Image1->Canvas->Handle, NULL));
-    GLYPHSET *Glyphset = reinterpret_cast<GLYPHSET*>(&Data[0]);
+    ComboBox2->Enabled = true;
+    Data.resize(pGetFontUnicodeRanges(Image1->Canvas->Handle, NULL));
+    Glyphset = reinterpret_cast<GLYPHSET*>(&Data[0]);
     pGetFontUnicodeRanges(Image1->Canvas->Handle, Glyphset);
+    int Max = Glyphset->cGlyphsSupported / ColCount;
+    if(Max > RowCount)
+      ScrollBar1->Max = Max;
+    ScrollBar1->Enabled = Max > RowCount;
+    UpdateSubsetList();
   }
+
+  unsigned Pos = GetSymbolPos(Selected);
+  SetPosition(Pos >= ColCount ? Pos / ColCount - 1 : 0);
+  SetSelected(GetSymbol(Pos));
+  SelectSubset(Selected);
+  UpdateImage();
 }
 //---------------------------------------------------------------------------
 void __fastcall TSymbolFrm::ComboBox1Exit(TObject *Sender)
@@ -388,20 +395,133 @@ void __fastcall TSymbolFrm::ComboBox1Exit(TObject *Sender)
   ComboBox1->Text = ComboBox1->Items->Strings[OldItemIndex];
 }
 //---------------------------------------------------------------------------
-void __fastcall TSymbolFrm::ScrollBar1Change(TObject *Sender)
+wchar_t TSymbolFrm::GetSymbol(int Count)
 {
-  UpdateImage();
+  unsigned Index;
+  for(Index = 0; Count >= Glyphset->ranges[Index].cGlyphs && Index < Glyphset->cRanges; Index++)
+    Count -= Glyphset->ranges[Index].cGlyphs;
+
+  if(Index == Glyphset->cRanges)
+    return 0; /*Glyphset->ranges[Glyphset->cRanges - 1].wcLow + Glyphset->ranges[Glyphset->cRanges - 1].cGlyphs - 1;*/
+
+  return Glyphset->ranges[Index].wcLow + Count;
 }
 //---------------------------------------------------------------------------
 bool TSymbolFrm::SetSelected(unsigned Col, unsigned Row)
 {
-  wchar_t NewSelected = Row * ColCount + Col + BeginSymbol;
-  if(NewSelected != Selected && NewSelected >= BeginSymbol && NewSelected < EndSymbol)
+  wchar_t NewSelected = GetSymbol((ScrollBar1->Position + Row) * ColCount + Col);
+  return SetSelected(NewSelected);
+}
+//---------------------------------------------------------------------------
+bool TSymbolFrm::SetSelected(wchar_t Symbol)
+{
+  if(Symbol != Selected && Symbol != 0)
   {
-    Selected = NewSelected;
+    Selected = Symbol;
+    SelectSubset(Symbol);
     return true;
   }
-  return false;      
+  return false;
+}
+//---------------------------------------------------------------------------
+unsigned TSymbolFrm::GetRangeIndex(wchar_t Symbol)
+{
+  unsigned Index;
+  for(Index = 0; Index < Glyphset->cRanges; Index++)
+    if(Symbol < Glyphset->ranges[Index].wcLow)
+      return Index - 1;
+  return 0;
+}
+//---------------------------------------------------------------------------
+void TSymbolFrm::UpdateSubsetList()
+{
+  ComboBox2->Items->Clear();
+  unsigned Index = 0;
+  for(unsigned I = 0; I < sizeof(Subsets)/sizeof(Subsets[0]); I++)
+  {
+    while(Glyphset->ranges[Index].wcLow + Glyphset->ranges[Index].cGlyphs - 1 < Subsets[I].First)
+      if(++Index >= Glyphset->cRanges)
+        break;
+    if(Index < Glyphset->cRanges && Glyphset->ranges[Index].wcLow <= Subsets[I].Last)
+      ComboBox2->Items->Add(Subsets[I].Name);
+  }
+}
+//---------------------------------------------------------------------------
+unsigned TSymbolFrm::GetSymbolPos(wchar_t Symbol)
+{
+  unsigned Pos = 0;
+  unsigned Index;
+  for(Index = 0; Index < Glyphset->cRanges-1 && Symbol >= Glyphset->ranges[Index+1].wcLow; Index++)
+    Pos += Glyphset->ranges[Index].cGlyphs;
+
+  if(Symbol < Glyphset->ranges[Index].wcLow + Glyphset->ranges[Index].cGlyphs)
+    Pos += Symbol - Glyphset->ranges[Index].wcLow;
+  else
+    Pos += Glyphset->ranges[Index].cGlyphs;
+
+  return Pos >= Glyphset->cGlyphsSupported ? Glyphset->cGlyphsSupported : Pos;
+}
+//---------------------------------------------------------------------------
+void __fastcall TSymbolFrm::ScrollBar1Scroll(TObject *Sender,
+      TScrollCode ScrollCode, int &ScrollPos)
+{
+  if(ScrollPos > ScrollBar1->Max - RowCount + 1)
+    ScrollPos = ScrollBar1->Max - RowCount + 1;
+}
+//---------------------------------------------------------------------------
+void __fastcall TSymbolFrm::ScrollBar1Change(TObject *Sender)
+{
+  unsigned Pos = GetSymbolPos(Selected);
+  int Row = Pos / ColCount - ScrollBar1->Position;
+  unsigned Col = Pos % ColCount;
+
+  if(Row < 0)
+    Row = 0, SetSelected(Col, Row);
+  else if(Row >= RowCount)
+    Row = RowCount - 1, SetSelected(Col, Row);
+
+  UpdateImage();
+}
+//---------------------------------------------------------------------------
+void TSymbolFrm::SetPosition(int Pos)
+{
+  ScrollBar1->OnChange = NULL;
+  if(Pos < ScrollBar1->Max - RowCount + 1)
+    ScrollBar1->Position = Pos;
+  else
+  ScrollBar1->Position = ScrollBar1->Max - RowCount + 1;
+  ScrollBar1->OnChange = ScrollBar1Change;
+}
+//---------------------------------------------------------------------------
+void __fastcall TSymbolFrm::ComboBox2Change(TObject *Sender)
+{
+  for(unsigned I = 0; I < sizeof(Subsets)/sizeof(Subsets[0]); I++)
+    if(ComboBox2->Text == Subsets[I].Name)
+    {
+      unsigned Pos = GetSymbolPos(Subsets[I].First);
+      SetSelected(GetSymbol(Pos));
+      SetPosition(Pos >= ColCount ? Pos / ColCount - 1 : 0);
+      UpdateImage();
+      break;
+    }
+}
+//---------------------------------------------------------------------------
+wchar_t TSymbolFrm::LastSymbol()
+{
+  int Index = Glyphset->cRanges - 1;
+  return Glyphset->ranges[Index].wcLow + Glyphset->ranges[Index].cGlyphs - 1;
+}
+//---------------------------------------------------------------------------
+void __fastcall TSymbolFrm::FocusPanel1Enter(TObject *Sender)
+{
+  OldItemIndex = ComboBox1->ItemIndex;
+}
+//---------------------------------------------------------------------------
+void TSymbolFrm::SelectSubset(wchar_t Symbol)
+{                                                              
+  for(unsigned I = 0; I < sizeof(Subsets)/sizeof(Subsets[0]); I++)
+    if(Symbol >= Subsets[I].First && Symbol <= Subsets[I].Last)
+      ComboBox2->ItemIndex = ComboBox2->Items->IndexOf(Subsets[I].Name);
 }
 //---------------------------------------------------------------------------
 
