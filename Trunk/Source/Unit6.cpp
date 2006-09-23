@@ -358,7 +358,7 @@ void __fastcall TForm6::ToolButton11Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::SymbolDialog1Insert(TSymbolDialog *Sender,
-      wchar_t Symbol, const AnsiString FontName)
+      wchar_t Symbol, const AnsiString &FontName)
 {
   AnsiString OldName = IRichEdit1->TextFormat.GetName();
   IRichEdit1->SetSelText(Symbol, FontName, ToIntDef(ComboBox1->Text, 12));
