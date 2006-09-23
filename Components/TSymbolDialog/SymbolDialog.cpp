@@ -25,7 +25,7 @@ namespace Symboldialog
 //---------------------------------------------------------------------------
 __fastcall TSymbolDialog::TSymbolDialog(TComponent* Owner)
   : TComponent(Owner), FFontName("Symbol"), FCharacterSet(csAnsiSet),
-    FOnShow(NULL), FOnClose(NULL), FOnInsert(NULL), SymbolFrm(NULL)
+    FOnShow(NULL), FOnClose(NULL), FOnInsert(NULL), SymbolFrm(NULL), FSymbol(0x20)
 {
 }
 //---------------------------------------------------------------------------
@@ -62,13 +62,14 @@ void TSymbolDialog::Close()
 //---------------------------------------------------------------------------
 void __fastcall TSymbolDialog::Button2Click(TObject *Sender)
 {
-  if(OnInsert)
+  if(OnInsert)                                
     OnInsert(this, SymbolFrm->GetSelected(), SymbolFrm->ComboBox1->Text);
 }
 //---------------------------------------------------------------------------
 void __fastcall TSymbolDialog::FormClose(TObject *Sender, TCloseAction &Action)
 {
   FFontName = SymbolFrm->ComboBox1->Text;
+  FSymbol = SymbolFrm->GetSelected();
   if(OnClose)
     OnClose(this);
   SymbolFrm = NULL;
@@ -80,6 +81,7 @@ void TSymbolDialog::DoShow()
   SymbolFrm->Button2->OnClick = Button2Click;
   SymbolFrm->OnClose = FormClose;
   SymbolFrm->ComboBox1->ItemIndex = SymbolFrm->ComboBox1->Items->IndexOf(FontName);
+  SymbolFrm->SetSelected(FSymbol);
   if(OnShow)
     OnShow(this);
 }

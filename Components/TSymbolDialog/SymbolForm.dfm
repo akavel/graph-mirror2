@@ -36,9 +36,9 @@ object SymbolFrm: TSymbolFrm
     FocusControl = ComboBox1
   end
   object Label2: TTntLabel
-    Left = 208
+    Left = 200
     Top = 12
-    Width = 100
+    Width = 52
     Height = 13
     Alignment = taRightJustify
     AutoSize = False
@@ -69,7 +69,7 @@ object SymbolFrm: TSymbolFrm
   object ComboBox1: TComboBox
     Left = 64
     Top = 8
-    Width = 145
+    Width = 129
     Height = 21
     ItemHeight = 13
     TabOrder = 0
@@ -100,8 +100,8 @@ object SymbolFrm: TSymbolFrm
     BevelOuter = bvNone
     TabOrder = 2
     TabStop = True
-    OnEnter = FormShow
-    OnExit = FormShow
+    OnEnter = FocusPanel1Enter
+    OnExit = ComboBox1Exit
     OnKeyDown = FocusPanel1KeyDown
     object Image1: TImage
       Left = 1
@@ -125,15 +125,16 @@ object SymbolFrm: TSymbolFrm
     TabOrder = 6
     TabStop = False
     OnChange = ScrollBar1Change
+    OnScroll = ScrollBar1Scroll
   end
   object ComboBox2: TComboBox
-    Left = 316
+    Left = 256
     Top = 8
-    Width = 113
+    Width = 170
     Height = 21
     Style = csDropDownList
     ItemHeight = 13
     TabOrder = 1
-    OnSelect = ScrollBar1Change
+    OnChange = ComboBox2Change
   end
 end

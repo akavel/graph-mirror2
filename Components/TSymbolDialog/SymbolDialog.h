@@ -6,7 +6,7 @@
 #include <Classes.hpp>
 //---------------------------------------------------------------------------
 class TSymbolDialog;
-typedef void __fastcall (__closure *TInsertEvent)(TSymbolDialog *Sender, wchar_t Symbol, const AnsiString FontName);
+typedef void __fastcall (__closure *TInsertEvent)(TSymbolDialog *Sender, wchar_t Symbol, const AnsiString &FontName);
 enum TCharacterSet {csAnsiSet, csUnicodeSet};
 
 class PACKAGE TSymbolDialog : public TComponent
@@ -17,6 +17,7 @@ private:
   TNotifyEvent FOnClose;
   TInsertEvent FOnInsert;
   TCharacterSet FCharacterSet;
+  wchar_t FSymbol;
   class TSymbolFrm *SymbolFrm;
 
   void __fastcall Button2Click(TObject *Sender);
@@ -32,6 +33,8 @@ public:
   void Show();
   void Close();
 
+  __property wchar_t Symbol = {read=FSymbol, write=FSymbol};
+  
 __published:
   __property TFontName FontName = {read=FFontName, write=FFontName};
   __property TCharacterSet CharacterSet = {read=FCharacterSet, write=FCharacterSet};
@@ -41,4 +44,3 @@ __published:
 };
 //---------------------------------------------------------------------------
 #endif
- 
