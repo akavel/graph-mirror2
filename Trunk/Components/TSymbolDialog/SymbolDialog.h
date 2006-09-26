@@ -6,7 +6,8 @@
 #include <Classes.hpp>
 //---------------------------------------------------------------------------
 class TSymbolDialog;
-typedef void __fastcall (__closure *TInsertEvent)(TSymbolDialog *Sender, wchar_t Symbol, const AnsiString &FontName);
+typedef void __fastcall (__closure *TInsertAnsiCharEvent)(TSymbolDialog *Sender, char Symbol, const AnsiString &FontName);
+typedef void __fastcall (__closure *TInsertWideCharEvent)(TSymbolDialog *Sender, wchar_t Symbol, const AnsiString &FontName);
 enum TCharacterSet {csAnsiSet, csUnicodeSet};
 
 class PACKAGE TSymbolDialog : public TComponent
@@ -15,7 +16,8 @@ private:
   TFontName FFontName;
   TNotifyEvent FOnShow;
   TNotifyEvent FOnClose;
-  TInsertEvent FOnInsert;
+  TInsertAnsiCharEvent FOnInsertAnsiChar;
+  TInsertWideCharEvent FOnInsertWideChar;
   TCharacterSet FCharacterSet;
   wchar_t FSymbol;
   class TSymbolFrm *SymbolFrm;
@@ -40,7 +42,8 @@ __published:
   __property TCharacterSet CharacterSet = {read=FCharacterSet, write=FCharacterSet};
   __property TNotifyEvent OnShow = {read=FOnShow, write=FOnShow, default=NULL};
   __property TNotifyEvent OnClose = {read=FOnClose, write=FOnClose, default=NULL};
-  __property TInsertEvent OnInsert = {read=FOnInsert, write=FOnInsert, default=NULL};
+  __property TInsertAnsiCharEvent OnInsertAnsiChar = {read=FOnInsertAnsiChar, write=FOnInsertAnsiChar, default=NULL};
+  __property TInsertWideCharEvent OnInsertWideChar = {read=FOnInsertWideChar, write=FOnInsertWideChar, default=NULL};
 };
 //---------------------------------------------------------------------------
 #endif
