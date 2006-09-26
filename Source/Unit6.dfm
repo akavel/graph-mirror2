@@ -910,7 +910,8 @@ object Form6: TForm6
   object SymbolDialog1: TSymbolDialog
     FontName = 'Symbol'
     CharacterSet = csUnicodeSet
-    OnInsert = SymbolDialog1Insert
+    OnInsertAnsiChar = SymbolDialog1InsertAnsiChar
+    OnInsertWideChar = SymbolDialog1InsertWideChar
     Left = 88
     Top = 256
   end

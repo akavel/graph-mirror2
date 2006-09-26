@@ -71,9 +71,9 @@ object SymbolFrm: TSymbolFrm
     Top = 8
     Width = 129
     Height = 21
+    Style = csDropDownList
     ItemHeight = 13
     TabOrder = 0
-    OnExit = ComboBox1Exit
     OnSelect = ComboBox1Select
   end
   object StatusBar1: TStatusBar
@@ -100,8 +100,6 @@ object SymbolFrm: TSymbolFrm
     BevelOuter = bvNone
     TabOrder = 2
     TabStop = True
-    OnEnter = FocusPanel1Enter
-    OnExit = ComboBox1Exit
     OnKeyDown = FocusPanel1KeyDown
     object Image1: TImage
       Left = 1

@@ -25,7 +25,7 @@ namespace Symboldialog
 //---------------------------------------------------------------------------
 __fastcall TSymbolDialog::TSymbolDialog(TComponent* Owner)
   : TComponent(Owner), FFontName("Symbol"), FCharacterSet(csAnsiSet),
-    FOnShow(NULL), FOnClose(NULL), FOnInsert(NULL), SymbolFrm(NULL), FSymbol(0x20)
+    FOnShow(NULL), FOnClose(NULL), FOnInsertAnsiChar(NULL), FOnInsertWideChar(NULL), SymbolFrm(NULL), FSymbol(0x20)
 {
 }
 //---------------------------------------------------------------------------
@@ -38,7 +38,7 @@ void TSymbolDialog::Execute()
 {
   if(SymbolFrm == NULL)
   {
-    SymbolFrm = new TSymbolFrm(NULL, CharacterSet == csUnicode && Win32Platform == VER_PLATFORM_WIN32_NT);
+    SymbolFrm = new TSymbolFrm(NULL, CharacterSet == csUnicode && Win32Platform == VER_PLATFORM_WIN32_NT, FSymbol);
     DoShow();
   }
   SymbolFrm->ShowModal();
@@ -48,7 +48,7 @@ void TSymbolDialog::Show()
 {
   if(SymbolFrm == NULL)
   {
-    SymbolFrm = new TSymbolFrm(NULL, CharacterSet == csUnicode && Win32Platform == VER_PLATFORM_WIN32_NT);
+    SymbolFrm = new TSymbolFrm(NULL, CharacterSet == csUnicode && Win32Platform == VER_PLATFORM_WIN32_NT, FSymbol);
     DoShow();
     SymbolFrm->Show();
   }
@@ -62,8 +62,16 @@ void TSymbolDialog::Close()
 //---------------------------------------------------------------------------
 void __fastcall TSymbolDialog::Button2Click(TObject *Sender)
 {
-  if(OnInsert)                                
-    OnInsert(this, SymbolFrm->GetSelected(), SymbolFrm->ComboBox1->Text);
+  if(CharacterSet == csUnicode && Win32Platform == VER_PLATFORM_WIN32_NT)
+  {
+    if(OnInsertWideChar)
+      OnInsertWideChar(this, SymbolFrm->GetSelected(), SymbolFrm->ComboBox1->Text);
+  }
+  else
+  {
+    if(OnInsertAnsiChar)
+      OnInsertAnsiChar(this, SymbolFrm->GetSelected(), SymbolFrm->ComboBox1->Text);
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TSymbolDialog::FormClose(TObject *Sender, TCloseAction &Action)
@@ -81,7 +89,6 @@ void TSymbolDialog::DoShow()
   SymbolFrm->Button2->OnClick = Button2Click;
   SymbolFrm->OnClose = FormClose;
   SymbolFrm->ComboBox1->ItemIndex = SymbolFrm->ComboBox1->Items->IndexOf(FontName);
-  SymbolFrm->SetSelected(FSymbol);
   if(OnShow)
     OnShow(this);
 }

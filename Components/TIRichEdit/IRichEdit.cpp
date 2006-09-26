@@ -390,6 +390,16 @@ void TIRichEdit::SetSelText(wchar_t Ch, const AnsiString &FontName, unsigned Siz
   SendMessage(Handle, EM_SETTEXTEX, reinterpret_cast<long>(&SetTextEx), reinterpret_cast<long>(Temp.c_str()));
 }
 //---------------------------------------------------------------------------
+void TIRichEdit::SetSelText(char Ch, const AnsiString &FontName, unsigned Size)
+{
+  SETTEXTEX SetTextEx = {ST_KEEPUNDO | ST_SELECTION, CP_ACP};
+  AnsiString Temp;
+  unsigned char Char = Ch;
+  Temp.sprintf("{\\rtf1{\\fonttbl{\\f0\\fcharset%u %s;}}\\f0 \\fs%u \\'%02X}", GetCharset(FontName), FontName.c_str(), Size*2, Char);
+
+  SendMessage(Handle, EM_SETTEXTEX, reinterpret_cast<long>(&SetTextEx), reinterpret_cast<long>(Temp.c_str()));
+}
+//---------------------------------------------------------------------------
 TParaFormat::TParaFormat(TIRichEdit *ARichEdit)
   : RichEdit(ARichEdit), TParaAttributes(ARichEdit)
 {

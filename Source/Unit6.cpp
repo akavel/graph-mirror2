@@ -354,10 +354,16 @@ void __fastcall TForm6::ToolButton11Click(TObject *Sender)
   //Only set dialog font for Windows NT. Win 9x will use default font. 
   if(Win32Platform == VER_PLATFORM_WIN32_NT)
     SymbolDialog1->FontName = IRichEdit1->TextFormat.GetName();
-  SymbolDialog1->Execute();
+  SymbolDialog1->Execute();           
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm6::SymbolDialog1Insert(TSymbolDialog *Sender,
+void __fastcall TForm6::ToolButton13Click(TObject *Sender)
+{
+  RichEditOle.InsertObject();           
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm6::SymbolDialog1InsertWideChar(TSymbolDialog *Sender,
       wchar_t Symbol, const AnsiString &FontName)
 {
   AnsiString OldName = IRichEdit1->TextFormat.GetName();
@@ -365,9 +371,12 @@ void __fastcall TForm6::SymbolDialog1Insert(TSymbolDialog *Sender,
   IRichEdit1->TextFormat.SetName(OldName);
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm6::ToolButton13Click(TObject *Sender)
+void __fastcall TForm6::SymbolDialog1InsertAnsiChar(TSymbolDialog *Sender,
+      char Symbol, const AnsiString &FontName)
 {
-  RichEditOle.InsertObject();
+  AnsiString OldName = IRichEdit1->TextFormat.GetName();
+  IRichEdit1->SetSelText(Symbol, FontName, ToIntDef(ComboBox1->Text, 12));
+  IRichEdit1->TextFormat.SetName(OldName); 
 }
 //---------------------------------------------------------------------------
 

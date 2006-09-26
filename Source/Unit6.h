@@ -107,9 +107,11 @@ __published:	// IDE-managed Components
           int ErrorCode);
   void __fastcall ColorBox2Change(TObject *Sender);
   void __fastcall ToolButton11Click(TObject *Sender);
-  void __fastcall SymbolDialog1Insert(TSymbolDialog *Sender, wchar_t Symbol,
-          const AnsiString &FontName);
   void __fastcall ToolButton13Click(TObject *Sender);
+  void __fastcall SymbolDialog1InsertWideChar(TSymbolDialog *Sender,
+          wchar_t Symbol, const AnsiString &FontName);
+  void __fastcall SymbolDialog1InsertAnsiChar(TSymbolDialog *Sender,
+          char Symbol, const AnsiString &FontName);
 private:	// User declarations
   TRichEditOle RichEditOle;
   TWndMethod OrgComboBox1WindowProc;

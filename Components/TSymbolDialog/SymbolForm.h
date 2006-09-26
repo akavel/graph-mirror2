@@ -42,25 +42,23 @@ __published:	// IDE-managed Components
   void __fastcall FocusPanel1KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
   void __fastcall ComboBox1Select(TObject *Sender);
-  void __fastcall ComboBox1Exit(TObject *Sender);
   void __fastcall ScrollBar1Scroll(TObject *Sender, TScrollCode ScrollCode,
           int &ScrollPos);
   void __fastcall ScrollBar1Change(TObject *Sender);
   void __fastcall ComboBox2Change(TObject *Sender);
-  void __fastcall FocusPanel1Enter(TObject *Sender);
 private:	// User declarations
   HMODULE hUNameDll;
   HMODULE hGdi32Dll;
   TGetUNameFunc pGetUNameFunc;
   TGetFontUnicodeRanges pGetFontUnicodeRanges;
-  int OldItemIndex;
   bool ShowUnicode;
   wchar_t Selected;
   std::vector<BYTE> Data;
-  GLYPHSET *Glyphset;
+  const GLYPHSET *Glyphset;
 
   void UpdateImage();
   bool SetSelected(unsigned Row, unsigned Col);
+  bool SetSelected(wchar_t Symbol);
   unsigned GetRangeIndex(wchar_t Symbol);
   void UpdateSubsetList();
   wchar_t GetSymbol(int Pos);
@@ -68,12 +66,12 @@ private:	// User declarations
   void SetPosition(int Pos);
   wchar_t LastSymbol();
   void SelectSubset(wchar_t Symbol);
+  void DrawSymbol(TCanvas *Canvas, wchar_t Symbol, const TRect &Rect);
 
 public:		// User declarations
-  __fastcall TSymbolFrm(TComponent* Owner, bool AShowUnicode);
+  __fastcall TSymbolFrm(TComponent* Owner, bool AShowUnicode, wchar_t Symbol);
   __fastcall ~TSymbolFrm();
   wchar_t GetSelected() {return Selected;}
-  bool SetSelected(wchar_t Symbol);
 };
 //---------------------------------------------------------------------------
 #endif

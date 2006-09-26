@@ -109,6 +109,7 @@ public:
   int LineCount();
   int LineLength(int Index);
   void SetSelText(wchar_t Ch, const AnsiString &FontName, unsigned Size);
+  void SetSelText(char Ch, const AnsiString &FontName, unsigned Size);
 
   __property ::TParaFormat *Paragraph = {read=FParagraph};
   __property SelText;
