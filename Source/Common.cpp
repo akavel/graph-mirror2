@@ -267,6 +267,7 @@ int _matherr(_exception *a)
 std::string DecodeEscapeSequence(const std::string &Str)
 {
   std::string Dest;
+  Dest.reserve(Str.size());
   for(unsigned I = 0; I < Str.size(); I++)
     if(Str[I] == '\\')
     {
@@ -280,6 +281,23 @@ std::string DecodeEscapeSequence(const std::string &Str)
     }
     else
       Dest += Str[I];
+  return Dest;
+}
+//---------------------------------------------------------------------------
+std::string EncodeEscapeSequence(const std::string &Str)
+{
+  std::string Dest;
+  Dest.reserve(Str.size());
+  for(unsigned I = 0; I < Str.size(); I++)
+    switch(Str[I])
+    {
+      case '\\': Dest += "\\\\"; break;
+      case '\r': break;
+      case '\n': Dest += "\\n"; break;
+      case '\t': Dest += "\\t"; break;
+      default:
+        Dest += Str[I];
+    }
   return Dest;
 }
 //---------------------------------------------------------------------------

@@ -26,6 +26,7 @@ void ShowErrorMsg(const class EGraphError &Error, TCustomEdit *Edit=NULL);
 void InvertBitmap(Graphics::TBitmap *Bitmap);
 double AdjustUnit(double Number);
 void SetGlobalFocus(TWinControl *Control);
+std::string EncodeEscapeSequence(const std::string &Str);
 std::string DecodeEscapeSequence(const std::string &Str);
 void GetLanguageList(TStrings *List);
 void RemoveRegistryKey(const AnsiString &Key, HKEY RootKey);
