@@ -759,9 +759,7 @@ void TTextLabel::WriteToIni(TConfigFile &IniFile, const std::string &Section) co
   if(LabelPlacement == lpUserPos)
     IniFile.Write(Section, "Pos", Pos);
   IniFile.Write(Section, "Rotation", Rotation, 0U);
-  AnsiString Str = StringReplace(Text.c_str(), '\\', "\\\\", TReplaceFlags() <<rfReplaceAll);
-  Str = StringReplace(Str, "\r\n", "\\n", TReplaceFlags() <<rfReplaceAll);
-  IniFile.Write(Section, "Text", Str);
+  IniFile.Write(Section, "Text", EncodeEscapeSequence(Text));
   IniFile.Write(Section, "BackgroundColor", BackgroundColor);
 
   TGraphElem::WriteToIni(IniFile, Section);
