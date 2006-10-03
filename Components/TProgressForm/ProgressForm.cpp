@@ -58,6 +58,7 @@ __fastcall TProgressForm::TProgressForm(TComponent* Owner)
   Button->Top = 80;
   Button->Left = 88;
   Button->Caption = FButtonCaption;
+  Button->Cancel = true;
   Button->OnClick = ButtonCancel;
 }
 //---------------------------------------------------------------------------
