@@ -216,7 +216,7 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
           //If we just went outside defined range
           //Use binary search to find the place between the last defined point and
           //the undefined point where the pixel position no longer changes.
-          if(!Err)
+          if(!Err && F.DrawType == dtAuto)
           {
             double s2 = sLast;   //The last defined point
             Pos = LastPos;       //Current pixel position
@@ -244,53 +244,54 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
           continue;
         }
 
-        //If no error occured: Check if distance between last and current point is more than 10
-        if(!Err && Dist(Pos, LastPos) > MaxSqrPixelDist)
-        {
-          unsigned Count = MaxExtraPoints; //Use a max loop count to prevent the algorithm from running wild
-          //If there is more than 10 pixels between the two points, calculate a point in the middle
-          while(--Count && Dist(Pos, LastPos) > MaxSqrPixelDist)
+        //If no error occured: Check if Pos and LastPos are not outside the image on the same side
+        if(!Err && F.DrawType == dtAuto)
+          if(!((Pos.x < 0 && LastPos.x < 0) || (Pos.x > AxesRect.Right && LastPos.x > AxesRect.Right) || (Pos.y < 0 && LastPos.y < 0) || (Pos.y > AxesRect.Bottom && LastPos.y > AxesRect.Bottom)))
           {
-            double sMiddle = LogScl ? std::sqrt(s*sLast) : (s + sLast) / 2; // Average between s and sLast
-            Coord = Func.Calc(T(sMiddle), CalcError);
-            Err = IsError(CalcError.ErrorCode, Coord);
-            if(Err)
-              break;
-
-            //Cosider the new point to be part of the line it is closest to
-            TPoint P = Draw->xyPoint(Coord);
-            if(Dist(P, LastPos) < Dist(P, Pos))
+            unsigned Count = MaxExtraPoints; //Use a max loop count to prevent the algorithm from running wild
+            //If there is more than 10 pixels between the two points, calculate a point in the middle
+            while(--Count && Dist(Pos, LastPos) > MaxSqrPixelDist)
             {
-              if(P == LastPos)
+              double sMiddle = LogScl ? std::sqrt(s*sLast) : (s + sLast) / 2; // Average between s and sLast
+              Coord = Func.Calc(T(sMiddle), CalcError);
+              Err = IsError(CalcError.ErrorCode, Coord);
+              if(Err)
+                break;
+
+              //Cosider the new point to be part of the line it is closest to
+              TPoint P = Draw->xyPoint(Coord);
+              if(Dist(P, LastPos) < Dist(P, Pos))
+              {
+                if(P == LastPos)
+                {
+                  Err = 3; //Simulate error at LastPos to make Pos part of a new line
+                  break;
+                }
+                sLast = sMiddle;
+                LastPos = P;
+                F.Points.push_back(LastPos);
+                F.sList.push_back(Func32::TCoordSet(sLast, real(Coord.x), real(Coord.y)));
+              }
+              else
+              {
+                if(P == Pos)
+                {
+                  Err = 3; //Simulate error at LastPos to make Pos part of a new line
+                  break;
+                }
+                s = sMiddle;
+                Pos = P;
+              }
+
+              //If both points are outside the image, simulate an error at LastPos to break the line between LastPos and Pos
+              if(!InsideRect(AxesRect, LastPos) && !InsideRect(AxesRect, Pos))
               {
                 Err = 3; //Simulate error at LastPos to make Pos part of a new line
                 break;
               }
-              sLast = sMiddle;
-              LastPos = P;
-              F.Points.push_back(LastPos);
-              F.sList.push_back(Func32::TCoordSet(sLast, real(Coord.x), real(Coord.y)));
-            }
-            else
-            {
-              if(P == Pos)
-              {
-                Err = 3; //Simulate error at LastPos to make Pos part of a new line
-                break;
-              }
-              s = sMiddle;
-              Pos = P;
-            }
-
-            //If both points are outside the image, simulate an error at LastPos to break the line between LastPos and Pos
-            if(!InsideRect(AxesRect, LastPos) && !InsideRect(AxesRect, Pos))
-            {
-              Err = 3; //Simulate error at LastPos to make Pos part of a new line
-              break;
             }
           }
-        }
-        
+
         if(Err)             //If an error happened last but not now
         {
           //If points has been added since last calculation
@@ -308,7 +309,7 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
              Func32::TCoord<T> Coord = Func.Calc(T(s-ds), CalcError);
              F.sList.push_back(Func32::TCoordSet(s - ds, real(Coord.x), real(Coord.y)));
           }
-          else if(Err == 1)   //If calculation error
+          else if(Err == 1 && F.DrawType == dtAuto)   //If calculation error
           {
             //If we just went inside defined range
             //Use binary tree to find the place between the last undefined point and

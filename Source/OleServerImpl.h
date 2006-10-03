@@ -43,12 +43,8 @@ class __declspec(uuid("FD536B77-5DF5-448C-90D1-2C04B3C1D1BD")) ATL_NO_VTABLE TOl
   static HRESULT DebugLogReturn(HRESULT Result);
   static void DebugLogArg(const AnsiString &Str);
   static void DebugLogData(const AnsiString &Str);
-  static HRESULT DebugLogFunctionCall(const char *Name, HRESULT Result);
   static AnsiString ClipboardFormatToStr(CLIPFORMAT Format);
   static AnsiString DeviceToStr(const DVTARGETDEVICE *Device);
-  static AnsiString ResultToString(HRESULT Result);
-  template<typename T> static AnsiString FlagsToStr(const T &List, unsigned Value);
-  template<typename T> static AnsiString ValueToStr(const T &List, unsigned Value);
   template<typename T> static void ReleaseCom(T *&Unknown);
   static bool CheckRegistration();
   static bool Register(bool AllUsers);

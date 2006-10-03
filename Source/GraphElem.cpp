@@ -35,7 +35,7 @@ void TTextValue::Update(const TData &Data)
       return; //Nothing to update. It is already +/-INF
     Value = Data.Calc(Text);
   }
-  catch(Func32::EParseError &E)
+  catch(Func32::EFuncError &E)
   {
     Value = NAN;
   }
@@ -119,7 +119,7 @@ void TGraphElem::SetData(const TData *AData)
 // TBaseFuncType //
 ///////////////////
 TBaseFuncType::TBaseFuncType() :
-  Color(clRed), Size(1), Style(psSolid), Steps(0), DrawType(dtLines),
+  Color(clRed), Size(1), Style(psSolid), Steps(0), DrawType(dtAuto),
   StartPointStyle(0), EndPointStyle(0), From(-INF), To(INF)
 {
 }
@@ -143,7 +143,7 @@ void TBaseFuncType::WriteToIni(TConfigFile &IniFile, const std::string &Section)
   IniFile.Write(Section, "Size", Size, 1U);
   IniFile.Write(Section, "StartPoint", StartPointStyle, 0U);
   IniFile.Write(Section, "EndPoint", EndPointStyle, 0U);
-  IniFile.Write(Section, "DrawType", DrawType, dtLines);
+  IniFile.Write(Section, "DrawType", DrawType, dtAuto);
 
   //Write tangents
   unsigned TanCount = 0;
@@ -168,7 +168,7 @@ void TBaseFuncType::ReadFromIni(const TConfigFile &IniFile, const std::string &S
   int TanCount = IniFile.Read(Section, "TanCount", 0);
   StartPointStyle = IniFile.Read(Section, "StartPoint", 0);
   EndPointStyle = IniFile.Read(Section, "EndPoint", 0);
-  DrawType = IniFile.ReadEnum(Section, "DrawType", dtLines);
+  DrawType = IniFile.ReadEnum(Section, "DrawType", dtAuto);
 
   //Create list of tangents
   for(int I = 0; I < TanCount; I++)
@@ -559,8 +559,17 @@ TPointSeriesPoint::TPointSeriesPoint(const TData &Data, const std::string &X, co
   {
   }
 
-  x.Value = Data.Calc(X);
-  y.Value = Data.Calc(Y);
+  //Allow calculation errors but not parse errors
+  try
+  {
+    x.Value = Data.Calc(X);
+    y.Value = Data.Calc(Y);
+  }
+  catch(Func32::ECalcError &E)
+  {
+    x.Value = NAN;
+    y.Value = NAN;
+  }
 }
 //---------------------------------------------------------------------------
 TPointSeries::TPointSeries()
@@ -732,7 +741,7 @@ void TPointSeries::Update()
       if(!PointList[I].yError.Text.empty())
         PointList[I].yError.Value = GetData().Calc(PointList[I].yError.Text);
     }
-    catch(Func32::EParseError &E)
+    catch(Func32::EFuncError &E)
     {
       PointList[I].x.Value = NAN;
       PointList[I].y.Value = NAN;

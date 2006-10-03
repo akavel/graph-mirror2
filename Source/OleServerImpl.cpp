@@ -1,4 +1,4 @@
-  /* Graph (http://sourceforge.net/projects/graph)
+/* Graph (http://sourceforge.net/projects/graph)
  * Copyright 2006 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
@@ -17,8 +17,7 @@
 #include <iomanip>
 #include "PngHelper.h"
 #include "ConfigFile.h"
-
-#define NAME_VALUE_ENTRY(x) TNameValue(#x, x)
+#include "Debug.h"
 
 TOleServerImpl *OleServerImpl;
 
@@ -34,26 +33,19 @@ TOleServerImpl *OleServerImpl;
   #define LOG_DATA(x)
 #endif
 
-#define LOG_FUNCTION_CALL(x) TOleServerImpl::DebugLogFunctionCall(#x, (x))
 
 const CLIPFORMAT TOleServerImpl::cfObjectDescriptor = RegisterClipboardFormat("Object Descriptor");
 const CLIPFORMAT TOleServerImpl::cfEmbedSource = RegisterClipboardFormat("Embed Source");
 const CLIPFORMAT TOleServerImpl::cfEmbeddedObject = RegisterClipboardFormat("Embedded Object");
 const CLIPFORMAT TOleServerImpl::cfPng = RegisterClipboardFormat("PNG");
 
-struct TNameValue
-{
-  const char *Name;
-  unsigned Value;
-  TNameValue(const char *AName, unsigned AValue) : Name(AName), Value(AValue) {}
-};
-
 TNameValue AspectList[] =
 {
   NAME_VALUE_ENTRY(DVASPECT_CONTENT),
 	NAME_VALUE_ENTRY(DVASPECT_THUMBNAIL),
 	NAME_VALUE_ENTRY(DVASPECT_ICON),
-	NAME_VALUE_ENTRY(DVASPECT_DOCPRINT)
+	NAME_VALUE_ENTRY(DVASPECT_DOCPRINT),
+  NAME_VALUE_END
 };
 
 TNameValue TymedList[] =
@@ -64,7 +56,8 @@ TNameValue TymedList[] =
   NAME_VALUE_ENTRY(TYMED_ISTORAGE),
   NAME_VALUE_ENTRY(TYMED_GDI),
   NAME_VALUE_ENTRY(TYMED_MFPICT),
-  NAME_VALUE_ENTRY(TYMED_ENHMF)
+  NAME_VALUE_ENTRY(TYMED_ENHMF),
+  NAME_VALUE_END
 };
 
 TNameValue AdvfList[] =
@@ -75,7 +68,8 @@ TNameValue AdvfList[] =
   NAME_VALUE_ENTRY(ADVF_DATAONSTOP),
   NAME_VALUE_ENTRY(ADVFCACHE_NOHANDLER),
   NAME_VALUE_ENTRY(ADVFCACHE_FORCEBUILTIN),
-  NAME_VALUE_ENTRY(ADVFCACHE_ONSAVE)
+  NAME_VALUE_ENTRY(ADVFCACHE_ONSAVE),
+  NAME_VALUE_END
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -114,23 +108,6 @@ template<typename T> void TOleServerImpl::ReleaseCom(T *&Unknown)
   Unknown = NULL;
 }
 //---------------------------------------------------------------------------
-template<typename T> AnsiString TOleServerImpl::ValueToStr(const T &List, unsigned Value)
-{
-  for(unsigned I = 0; I < sizeof(List)/sizeof(List[0]); I++)
-    if(Value == List[I].Value)
-      return List[I].Name;
-  return 0;
-}
-//---------------------------------------------------------------------------
-template<typename T> AnsiString TOleServerImpl::FlagsToStr(const T &List, unsigned Value)
-{
-  AnsiString Str;
-  for(unsigned I = 0; I < sizeof(List)/sizeof(List[0]); I++)
-    if(Value & List[I].Value)
-      Str += List[I].Name + AnsiString('|');
-  return Str.IsEmpty() ? AnsiString(0) : Str;
-}
-//---------------------------------------------------------------------------
 void TOleServerImpl::DebugFunctionCall(const AnsiString &Str)
 {
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
@@ -138,36 +115,11 @@ void TOleServerImpl::DebugFunctionCall(const AnsiString &Str)
     out << std::endl << Str.c_str();
 }
 //---------------------------------------------------------------------------
-AnsiString TOleServerImpl::ResultToString(HRESULT Result)
-{
-  switch(Result)
-  {
-    case S_OK: return "S_OK";
-    case DV_E_DVASPECT: return "DV_E_DVASPECT";
-    case OLE_S_USEREG: return "OLE_S_USEREG";
-    case E_FAIL: return "E_FAIL";
-    case E_OUTOFMEMORY: return "E_OUTOFMEMORY";
-    case DV_E_TYMED: return "DV_E_TYMED";
-    case STG_E_MEDIUMFULL: return "STG_E_MEDIUMFULL";
-    case DV_E_FORMATETC: return "DV_E_FORMATETC";
-    case OLEOBJ_S_INVALIDVERB: return "OLEOBJ_S_INVALIDVERB";
-    case DATA_S_SAMEFORMATETC: return "DATA_S_SAMEFORMATETC";
-    case OLE_E_NOCONNECTION: return "OLE_E_NOCONNECTION";
-    case E_UNEXPECTED: return "E_UNEXPECTED";
-    case STG_E_INVALIDFLAG: return "STG_E_INVALIDFLAG";
-    case STG_E_FILEALREADYEXISTS: return "STG_E_FILEALREADYEXISTS";
-    case STG_E_INVALIDFUNCTION: return "STG_E_INVALIDFUNCTION";
-    case S_FALSE: return "S_FALSE";
-    case E_NOTIMPL: return "E_NOTIMPL";
-    default: return "0x" + IntToHex(static_cast<int>(Result), 8);
-  }
-}
-//---------------------------------------------------------------------------
 HRESULT TOleServerImpl::DebugLogReturn(HRESULT Result)
 {
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
   if(out)
-    out << " : " << ResultToString(Result).c_str();
+    out << " : " << ValueToStr(HResultList, Result);
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -183,17 +135,6 @@ void TOleServerImpl::DebugLogData(const AnsiString &Str)
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
   if(out)
     out << ", [" << Str.c_str() << "]" << std::flush;
-}
-//---------------------------------------------------------------------------
-HRESULT TOleServerImpl::DebugLogFunctionCall(const char *Name, HRESULT Result)
-{
-//  if(FAILED(Result))
-  {
-    std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
-    if(out)
-      out << "\n  {" << Name << " : " << ResultToString(Result).c_str() << " } " << std::flush;
-  }
-  return Result;
 }
 //---------------------------------------------------------------------------
 AnsiString TOleServerImpl::ClipboardFormatToStr(CLIPFORMAT Format)

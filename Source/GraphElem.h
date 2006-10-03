@@ -125,7 +125,7 @@ public:
 };
 
 struct TAxes;
-enum TDrawType {dtLines, dtDots};
+enum TDrawType {dtAuto, dtDots, dtLines};
 
 class TBaseFuncType : public TGraphElem
 {
