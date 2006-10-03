@@ -17,7 +17,12 @@ enum TAtiError
   aeNotConnected,
   aeInvalidSize,
   aeNoStopByte,
-  aeAckMissing
+  aeAckMissing,
+  aeNackNoBuf,
+  aeNackBadSeq,
+  aeNackOverrun,
+  aeBreakSyncFailed,
+  aeInvalidFrame
 };
 
 class EAtiError : Exception
@@ -45,8 +50,9 @@ class PACKAGE TAtiHandler : public TComponent
   class TSerialHandler *SerialHandler;
   TAtiThread *Thread;
   TTimer *Timer;
-  unsigned Sequence;
-  std::vector<BYTE> Buffer;
+  unsigned TxSequence;
+  unsigned RxSequence;
+  std::vector<BYTE> RxBuffer;
   bool Breaking;
 
   void __fastcall SerialHandlerBreak(TObject *Sender);

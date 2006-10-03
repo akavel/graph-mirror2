@@ -138,7 +138,7 @@ void TAtiHandler::SendTelegram(const BYTE *Telegram, unsigned Size, bool UsesAck
   BYTE Data[MaxTelegramSize + 6];
 
   Data[0] = 0x81;
-  Data[1] = (Sequence << 4) | (UsesAck ? 0x0F : 0x07);
+  Data[1] = (TxSequence << 4) | (UsesAck ? 0x0F : 0x07);
   Data[2] = Size;
   memcpy(Data+3, Telegram, Size);
   unsigned Crc = CalcCrc(Data+1, Data + Size + 3);
@@ -146,8 +146,8 @@ void TAtiHandler::SendTelegram(const BYTE *Telegram, unsigned Size, bool UsesAck
   Data[Size + 4] = Crc;
   Data[Size + 5] = 0x00;
 
-  if(++Sequence == 8)
-    Sequence = 0;
+  if(++TxSequence == 8)
+    TxSequence = 0;
   SerialHandler->WriteBuffer(Data, Size + 6);
 
   std::vector<char> Text((Size+6)*2+1);
@@ -160,11 +160,15 @@ void TAtiHandler::SendTelegram(const BYTE *Telegram, unsigned Size, bool UsesAck
 void __fastcall TAtiHandler::SerialHandlerBreak(TObject *Sender)
 {
   DebugLog("Break detected");
+  Timer->Enabled = false;
+  if(Breaking)
+    DebugLog("Break off!");
   SerialHandler->ClearBreak();
   Breaking = false;
   Sleep(200);
   SerialHandler->Purge();
-  Sequence = 0;
+  TxSequence = 0;
+  RxSequence = 0;
 }
 //---------------------------------------------------------------------------
 void __fastcall TAtiHandler::SerialHandlerDataReceived(TSerialHandler *Sender, const BYTE *Data, unsigned Size)
@@ -178,28 +182,27 @@ void __fastcall TAtiHandler::SerialHandlerDataReceived(TSerialHandler *Sender, c
   Str += &Text[0];
   DebugLog(Str.c_str());
 
-  Buffer.insert(Buffer.end(), Data, Data + Size);
+  RxBuffer.insert(RxBuffer.end(), Data, Data + Size);
 
-  while(Buffer.size() >= 3)
+  while(RxBuffer.size() >= 3)
   {
-    if(Buffer[0] != 0x81)
+    if(RxBuffer[0] != 0x81)
     {
       DebugLog("Start byte missing. Scanning for start byte...");
 
       //Start byte not found. Search for start byte and erase everything before
-      std::vector<BYTE>::iterator Iter = std::find(Buffer.begin(), Buffer.end() - 2, 0x81);
-      Buffer.erase(Buffer.begin(), Iter);
-      if(Iter == Buffer.end() - 2)
-        return;
+      std::vector<BYTE>::iterator Iter = std::find(RxBuffer.begin(), RxBuffer.end() - 2, 0x81);
+      RxBuffer.erase(RxBuffer.begin(), Iter);
+      continue;
     }
 
-    if(Buffer[1] & 0x80)
+    if(RxBuffer[1] & 0x80)
     {
-      if(Buffer[2] != 0x00)
+      if(RxBuffer[2] != 0x00)
       {
         //Stop byte missing. Discard frame.
-        DebugLog("Stop byte missing");
-        Buffer.erase(Buffer.begin(), Buffer.begin() + 3);
+        DebugLog("Stop byte missing!");
+        RxBuffer.erase(RxBuffer.begin(), RxBuffer.begin() + 3);
         return;
       }
 
@@ -209,32 +212,32 @@ void __fastcall TAtiHandler::SerialHandlerDataReceived(TSerialHandler *Sender, c
     else
     {
       //Data frame
-      unsigned Count = Buffer[2];
+      unsigned Count = RxBuffer[2];
       //Size not received yet
-      if(Buffer.size() < Count + 6)
+      if(RxBuffer.size() < Count + 6)
         return;
 
-      if(Buffer[Count + 5] != 0)
+      if(RxBuffer[Count + 5] != 0)
       {
         //Stop byte missing. Discard frame
-        DebugLog("Stop byte missing");
-        Buffer.erase(Buffer.begin(), Buffer.begin() + Count + 6);
+        DebugLog("Stop byte missing!");
+        RxBuffer.erase(RxBuffer.begin(), RxBuffer.begin() + Count + 6);
         return;
       }
 
       //Telegram received
-      unsigned Crc = (Buffer[Count + 3] << 8) | (Buffer[Count + 4]);
-      if(Crc != CalcCrc(Buffer.begin() + 1, Buffer.begin() + Count + 3))
+      unsigned Crc = (RxBuffer[Count + 3] << 8) | (RxBuffer[Count + 4]);
+      if(Crc != CalcCrc(RxBuffer.begin() + 1, RxBuffer.begin() + Count + 3))
       {
         DebugLog("CRC error!");
         BYTE TxData[3] = {0x81, 0xF1, 0x00}; //Send NACK (CRC error)
         Sender->WriteBuffer(TxData, sizeof(TxData));
-        Buffer.erase(Buffer.begin(), Buffer.begin() + Count + 6);
+        RxBuffer.erase(RxBuffer.begin(), RxBuffer.begin() + Count + 6);
         return;
       }
 
       //Send Ack if requested
-      if(Buffer[1] & 0x08)
+      if(RxBuffer[1] & 0x08)
       {
         BYTE TxData[3] = {0x81, 0xF0, 0x00};
         Sender->WriteBuffer(TxData, sizeof(TxData));
@@ -242,21 +245,27 @@ void __fastcall TAtiHandler::SerialHandlerDataReceived(TSerialHandler *Sender, c
       }
 
       BYTE *Telegram = new BYTE[Count];
-      std::copy(Buffer.begin() + 3, Buffer.begin() + Count + 3, Telegram);
+      std::copy(RxBuffer.begin() + 3, RxBuffer.begin() + Count + 3, Telegram);
       Thread->PostMessage(atmDataReceived, reinterpret_cast<int>(Telegram), Count);
-      Buffer.erase(Buffer.begin(), Buffer.begin() + Count + 6);
+      RxBuffer.erase(RxBuffer.begin(), RxBuffer.begin() + Count + 6);
     }
   }
 }
 //---------------------------------------------------------------------------
 void __fastcall TAtiHandler::Timeout(TObject *Sender)
 {
-
+  Timer->Enabled = false;
+  if(Breaking)
+  {
+    DoError(aeBreakSyncFailed, "Break sync failed!");
+    DebugLog("Break off!");
+    SerialHandler->ClearBreak();
+  }
 }
 //---------------------------------------------------------------------------
 void TAtiHandler::HandleControlFrame()
 {
-  switch(Buffer[1] & 0x0F)
+  switch(RxBuffer[1] & 0x0F)
   {
     case 0:
       DebugLog("ACK");
@@ -265,28 +274,33 @@ void TAtiHandler::HandleControlFrame()
       DebugLog("NACK");
       break;
     case 2:
-      DebugLog("NACK_NO_BUF");
+      DoError(aeNackNoBuf, "NACK_NO_BUF received!");
       break;
     case 3:
-      DebugLog("NACK_BAD_SEQ");
+      DoError(aeNackBadSeq, "NACK_BAD_SEQ received!");
       break;
     case 4:
-      DebugLog("NACK_OVERRUN");
+      DoError(aeNackOverrun, "NACK_OVERRUN received!");
       break;
 
     default:
       //Handle invalid control frame
+      DoError(aeInvalidFrame, "Invalid control frame received!");
       break;
   }
 
-  Buffer.erase(Buffer.begin(), Buffer.begin() + 3);
+  RxBuffer.erase(RxBuffer.begin(), RxBuffer.begin() + 3);
 }
 //---------------------------------------------------------------------------
 void TAtiHandler::BreakSync()
 {
+  DebugLog("Break on!");
   SerialHandler->SetBreak();
   Breaking = true;
-  Sequence = 0;
+  TxSequence = 0;
+  RxSequence = 0;
+  Timer->Interval = 200;
+  Timer->Enabled = true;
 }
 //---------------------------------------------------------------------------
 void TAtiHandler::ChangeSpeed(unsigned Speed)
@@ -319,8 +333,7 @@ void TAtiHandler::DoTelegramReceived(const BYTE *Telegram, unsigned Size)
       SerialHandler->Connect();
       Sleep(100);
 
-      AnsiString Str = AnsiString("Speed changed: ") + Speed;
-      OutputDebugString(Str.c_str());
+      DebugLog(AnsiString("Speed changed: ") + Speed);
       if(OnSpeedChanged)
         OnSpeedChanged(this, Speed);
     }
