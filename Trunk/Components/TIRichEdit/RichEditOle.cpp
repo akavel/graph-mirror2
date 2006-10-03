@@ -4,9 +4,11 @@
 // A lot of information about RichEdit can be found at his web site:
 // http://home.att.net/~robertdunn/Yacs.html
 //---------------------------------------------------------------------------
-#include <vcl.h>
+#include <Config.h>
 #pragma hdrstop
 #include "RichEditOle.h"
+#include "Debug.h"
+#include <Atl/atlbase.h>
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
 void TRichEditOle::OleUIMetafilePictIconFree(HGLOBAL MetaPict)
@@ -22,7 +24,7 @@ void TRichEditOle::OleUIMetafilePictIconFree(HGLOBAL MetaPict)
 	GlobalFree(MetaPict);
 }
 //---------------------------------------------------------------------------
-HRESULT TRichEditOle::OleStdSwitchDisplayAspect(LPOLEOBJECT OleObj,
+bool TRichEditOle::OleStdSwitchDisplayAspect(LPOLEOBJECT OleObj,
   LPDWORD CurAspect, DWORD NewAspect, HGLOBAL MetaPict, BOOL DeleteOldAspect,
   BOOL SetupViewAdvise, LPADVISESINK AdviseSink, LPBOOL MustUpdate)
 {
@@ -40,11 +42,11 @@ HRESULT TRichEditOle::OleStdSwitchDisplayAspect(LPOLEOBJECT OleObj,
 	if(MustUpdate)
     *MustUpdate = FALSE;
 
-	OleObj->QueryInterface(IID_IOleCache, reinterpret_cast<LPVOID*>(&OleCache));
+	LOG_FUNCTION_CALL(OleObj->QueryInterface(IID_IOleCache, reinterpret_cast<LPVOID*>(&OleCache)));
 
 	//If IOleCache* is NOT available, do nothing
 	if(!OleCache)
-    return E_INVALIDARG;
+    return false;
 
 	//Setup new cache with the new aspect
 	FmtEtc.cfFormat = 0;     //Whatever is needed to draw
@@ -64,11 +66,11 @@ HRESULT TRichEditOle::OleStdSwitchDisplayAspect(LPOLEOBJECT OleObj,
 	else
     Advf = ADVF_PRIMEFIRST;
 
-	Err = OleCache->Cache(&FmtEtc, Advf, &NewConnection);
+	Err = LOG_FUNCTION_CALL(OleCache->Cache(&FmtEtc, Advf, &NewConnection));
 	if(!SUCCEEDED(Err))
   {
 		OleCache->Release();
-		return Err;
+		return false;
 	}
 
 	*CurAspect = NewAspect;
@@ -91,11 +93,11 @@ HRESULT TRichEditOle::OleStdSwitchDisplayAspect(LPOLEOBJECT OleObj,
 		Medium.hGlobal        = MetaPict;
 		Medium.pUnkForRelease = NULL;
 
-		Err = OleCache->SetData(&FmtEtc, &Medium, FALSE /* fRelease */);
+		Err = LOG_FUNCTION_CALL(OleCache->SetData(&FmtEtc, &Medium, FALSE /* fRelease */));
     if(!SUCCEEDED(Err))
     {
       OleCache->Release();
-      return Err;
+      return false;
     }
 	}
 	else
@@ -105,12 +107,12 @@ HRESULT TRichEditOle::OleStdSwitchDisplayAspect(LPOLEOBJECT OleObj,
 	if(SetupViewAdvise && AdviseSink)
   {
 		/* OLE2NOTE: re-establish the ViewAdvise connection */
-		OleObj->QueryInterface(IID_IViewObject, reinterpret_cast<LPVOID*>(&ViewObj));
+		LOG_FUNCTION_CALL(OleObj->QueryInterface(IID_IViewObject, reinterpret_cast<LPVOID*>(&ViewObj)));
 
 		if(ViewObj)
     {
-			ViewObj->SetAdvise(NewAspect, 0, AdviseSink);
-			ViewObj->Release();
+			LOG_FUNCTION_CALL(ViewObj->SetAdvise(NewAspect, 0, AdviseSink));
+      ViewObj->Release();
     }
   }
 
@@ -130,24 +132,26 @@ HRESULT TRichEditOle::OleStdSwitchDisplayAspect(LPOLEOBJECT OleObj,
 
 		while(Err == NOERROR)
     {
-			Err = EnumStatData->Next(1, &StatData, NULL);
+			Err = LOG_FUNCTION_CALL(EnumStatData->Next(1, &StatData, NULL));
 			if(Err != NOERROR)
         break;		// DONE! no more caches.
 
 			if(StatData.formatetc.dwAspect == OldAspect)
 				// Remove previous cache with old aspect
-				OleCache->Uncache(StatData.dwConnection);
+				LOG_FUNCTION_CALL(OleCache->Uncache(StatData.dwConnection));
 		}
 
 		if(EnumStatData)
 			if(EnumStatData->Release())
+      {
 				throw EOleError("OleStdSwitchDisplayAspect: Cache enumerator NOT released");
+      }
 	}
 
 	if(OleCache)
     OleCache->Release();
 
-	return NOERROR;
+	return true;
 }
 //---------------------------------------------------------------------------
 TRichEditOle::TRichEditOle(TCustomRichEdit* ARichEdit)
@@ -196,13 +200,13 @@ TRichEditOle::~TRichEditOle()
 void TRichEditOle::SetHostNames(const AnsiString &HostApp, const AnsiString &HostDoc)
 {
 	if(RichEditOle)
-  	RichEditOle->SetHostNames(HostApp.c_str(), HostDoc.c_str());
+  	LOG_FUNCTION_CALL(RichEditOle->SetHostNames(HostApp.c_str(), HostDoc.c_str()));
 }
 //---------------------------------------------------------------------------
 LPOLECLIENTSITE TRichEditOle::GetClientSite()
 {
 	LPOLECLIENTSITE ClientSite;
-	if(RichEditOle->GetClientSite(&ClientSite) != S_OK)
+	if(LOG_FUNCTION_CALL(RichEditOle->GetClientSite(&ClientSite)) != S_OK)
     ClientSite = 0;
 	return ClientSite;
 }
@@ -230,17 +234,14 @@ bool TRichEditOle::InsertObject()
     return false;
 
 	//Make sure client site is valid
-	LPOLECLIENTSITE ClientSite = GetClientSite();
+	CComPtr<IOleClientSite>  ClientSite;
+  ClientSite.Attach(GetClientSite());
 	if(!ClientSite)
     throw EOleError("IOleClientSite interface is not valid.");
 
 	//Get substorage
 	LPSTORAGE Stg;
-	if(RichEditCallback->GetNewStorage(&Stg) != S_OK)
-  {
-		ClientSite->Release();
-		throw EOleError("GetNewStorage failed.");
-	}
+	OleCheck(LOG_FUNCTION_CALL(RichEditCallback->GetNewStorage(&Stg)));
 
 	//Display the InsertObject dialog
 	TCHAR Buf[MAX_PATH];
@@ -249,7 +250,7 @@ bool TRichEditOle::InsertObject()
 
 	memset(&io, 0, sizeof(io));
 	io.cbStruct = sizeof(io);
-	io.dwFlags = /*IOF_SHOWHELP |*/ IOF_CREATENEWOBJECT | IOF_CREATEFILEOBJECT |
+	io.dwFlags = IOF_CREATENEWOBJECT | IOF_CREATEFILEOBJECT |
 		IOF_SELECTCREATENEW | IOF_CREATELINKOBJECT;
 	io.hWndOwner = RichEdit->Handle;
 	io.lpszFile = Buf;
@@ -261,10 +262,10 @@ bool TRichEditOle::InsertObject()
 	io.ppvObj = reinterpret_cast<void**>(&OleObject);
 	io.clsid = CLSID_NULL;
 
-	DWORD RetVal = OleUIInsertObject(&io);
+	DWORD RetVal = LOG_OLEUI_CALL(OleUIInsertObject(&io));
+  LOG_FUNCTION_CALL(io.sc);
 	if(RetVal != OLEUI_SUCCESS)
   {
-		ClientSite->Release();
 		Stg->Release();
 		if(io.hMetaPict)
       OleUIMetafilePictIconFree(io.hMetaPict);
@@ -272,7 +273,7 @@ bool TRichEditOle::InsertObject()
       OleObject->Release();
 		if(RetVal == OLEUI_CANCEL)
       return false;
-		throw EOleError("Insert Object dialog returned failure.");
+		OleError(io.sc);
 	}
 
 	//Got the object
@@ -308,16 +309,13 @@ bool TRichEditOle::InsertObject()
 	if(io.dwFlags & IOF_CHECKDISPLAYASICON)
   {
 		int Update;
-		if(OleStdSwitchDisplayAspect(OleObject, &Obj.dvaspect,
-			DVASPECT_ICON, io.hMetaPict, true, false, 0, &Update))
-			Application->MessageBox("Cannot display object as icon.",
-				"Insert Object", MB_OK | MB_ICONWARNING);
+		if(OleStdSwitchDisplayAspect(OleObject, &Obj.dvaspect, DVASPECT_ICON, io.hMetaPict, true, false, 0, &Update))
+			Application->MessageBox("Cannot display object as icon.", "Insert Object", MB_OK | MB_ICONWARNING);
 	}
 
 	//Insert the object into the richedit
-	if(RichEditOle->InsertObject(&Obj) != S_OK)
+	if(LOG_FUNCTION_CALL(RichEditOle->InsertObject(&Obj)) != S_OK)
   {
-		ClientSite->Release();
 		Stg->Release();
 		if(io.hMetaPict)
       OleUIMetafilePictIconFree(io.hMetaPict);
@@ -335,10 +333,9 @@ bool TRichEditOle::InsertObject()
 		SendMessage(RichEdit->Handle, EM_POSFROMCHAR, reinterpret_cast<WPARAM>(&Pos), REO_IOB_SELECTION);
 		RECT Rect = { 0, 0, 100, 100 };
 		OffsetRect(&Rect, Pos.x, Pos.y);
-		OleObject->DoVerb(OLEIVERB_SHOW, 0, ClientSite, 0, RichEdit->Handle, &Rect);
+		LOG_FUNCTION_CALL(OleObject->DoVerb(OLEIVERB_SHOW, 0, ClientSite, 0, RichEdit->Handle, &Rect));
 	}
 
-	ClientSite->Release();
 	Stg->Release();
 	if(io.hMetaPict)
     OleUIMetafilePictIconFree(io.hMetaPict);
@@ -350,8 +347,8 @@ bool TRichEditOle::InsertObject()
 //---------------------------------------------------------------------------
 bool TRichEditOle::PasteSpecial()
 {
-	TOleUIPasteSpecial Data;
-	TOleUIPasteEntry Formats[8];
+  OLEUIPASTESPECIAL Data;
+	OLEUIPASTEENTRY Formats[8];
 
 	memset(&Data, 0, sizeof(Data));
 	memset(&Formats, 0, sizeof(Formats));
@@ -430,24 +427,23 @@ bool TRichEditOle::PasteSpecial()
 	Formats[7].lpstrResultText = "a bitmap";
 	Formats[7].dwFlags = OLEUIPASTE_PASTEONLY;
 
-	DWORD RetVal = OleUIPasteSpecial(&Data);
+	DWORD RetVal = LOG_OLEUI_CALL(OleUIPasteSpecial(&Data));
 	if(RetVal == OLEUI_OK)
   {
 		//Apparently, richedit handles linking for us; unfortunately, some
 		//objects do not embed (MS Word/Office 97 simply fails to embed,
 		//although linking works...
-    HRESULT Result = RichEditOle->ImportDataObject(Data.lpSrcDataObj,
+    HRESULT Result = LOG_FUNCTION_CALL(RichEditOle->ImportDataObject(Data.lpSrcDataObj,
 			Formats[Data.nSelectedIndex].fmtetc.cfFormat,
-			(Data.dwFlags & PSF_CHECKDISPLAYASICON) ? Data.hMetaPict : 0);
+			(Data.dwFlags & PSF_CHECKDISPLAYASICON) ? Data.hMetaPict : 0));
 
     //Sometimes it only works with CFEmbeddedObject and sometimes with CFEmbedSource
     //I don't know why
     if(Result != S_OK && Data.nSelectedIndex == 0)
-      Result = RichEditOle->ImportDataObject(Data.lpSrcDataObj, CFEmbeddedObject,
-	      (Data.dwFlags & PSF_CHECKDISPLAYASICON) ? Data.hMetaPict : 0);
+      Result = LOG_FUNCTION_CALL(RichEditOle->ImportDataObject(Data.lpSrcDataObj, CFEmbeddedObject,
+	      (Data.dwFlags & PSF_CHECKDISPLAYASICON) ? Data.hMetaPict : 0));
 
-    if(Result != S_OK)
-			throw EOleError("RichEdit refused to paste object.");
+    OleCheck(Result);
 	}
 
 	if(Data.hMetaPict)
@@ -477,7 +473,7 @@ bool TRichEditOle::CloseActiveObjects(bool savePrompt)
 		Obj.cbStruct = sizeof(Obj);
 
 		//Get object data
-		if(RichEditOle->GetObject(i, &Obj, REO_GETOBJ_POLEOBJ) == S_OK)
+		if(LOG_FUNCTION_CALL(RichEditOle->GetObject(i, &Obj, REO_GETOBJ_POLEOBJ)) == S_OK)
     {
 			//If active, kill it
 			if(Obj.dwFlags & REO_INPLACEACTIVE)
@@ -505,10 +501,10 @@ bool TRichEditOle::OpenObject()
 	memset(&Obj, 0, sizeof(Obj));
   Obj.cbStruct = sizeof(Obj);
   Obj.cp = RichEdit->SelStart;
-  if(RichEditOle->GetObject(REO_IOB_USE_CP, &Obj, REO_GETOBJ_POLEOBJ) == S_OK)
+  if(LOG_FUNCTION_CALL(RichEditOle->GetObject(REO_IOB_USE_CP, &Obj, REO_GETOBJ_POLEOBJ)) == S_OK)
   {
     RECT Rect = RichEdit->ClientRect;
-    HRESULT Result = Obj.poleobj->DoVerb(OLEIVERB_OPEN, NULL, GetClientSite(), 0, RichEdit->Handle, &Rect);
+    HRESULT Result = LOG_FUNCTION_CALL(Obj.poleobj->DoVerb(OLEIVERB_OPEN, NULL, GetClientSite(), 0, RichEdit->Handle, &Rect));
     return Result == S_OK;
   }
   return false;
@@ -520,7 +516,10 @@ bool TRichEditOle::ObjectSelected()
 	memset(&Obj, 0, sizeof(Obj));
   Obj.cbStruct = sizeof(Obj);
   Obj.cp = RichEdit->SelStart;
-  return RichEditOle->GetObject(REO_IOB_USE_CP, &Obj, REO_GETOBJ_POLEOBJ) == S_OK;
+  //GetObject() returns E_INVALIDARG if there is no object at the given position
+  return LOG_FUNCTION_CALL(RichEditOle->GetObject(REO_IOB_USE_CP, &Obj, REO_GETOBJ_NO_INTERFACES)) == S_OK;
 }
 //---------------------------------------------------------------------------
+
+
 

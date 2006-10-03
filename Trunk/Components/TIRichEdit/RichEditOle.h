@@ -30,7 +30,7 @@
 class TRichEditOle
 {
   static void OleUIMetafilePictIconFree(HGLOBAL MetaPict);
-  static HRESULT OleStdSwitchDisplayAspect(LPOLEOBJECT lpOleObj,	LPDWORD lpdwCurAspect,
+  static bool OleStdSwitchDisplayAspect(LPOLEOBJECT lpOleObj,	LPDWORD lpdwCurAspect,
     DWORD dwNewAspect, HGLOBAL hMetaPict,	BOOL fDeleteOldAspect,
     BOOL fSetupViewAdvise, LPADVISESINK lpAdviseSink,	LPBOOL lpfMustUpdate);
 
@@ -38,9 +38,6 @@ protected:
 	TCustomRichEdit* RichEdit;
 	IRichEditOle* RichEditOle;
 	TRichEditOleCallback *RichEditCallback;
-
-	LONG GetObjectCount();
-	LONG GetLinkCount();
 
 	UINT CFObjectDescriptor;
 	UINT CFEmbeddedObject;
@@ -50,6 +47,10 @@ protected:
 	UINT CFRtfNoObjs;
 	UINT CFReTextObjs;
 
+	LONG GetObjectCount();
+	LONG GetLinkCount();
+	LPOLECLIENTSITE GetClientSite();
+  
 public:
 	TRichEditOle(TCustomRichEdit* ARichEdit);
 	~TRichEditOle();
@@ -59,8 +60,6 @@ public:
 	bool CloseActiveObjects(bool SavePrompt);
   bool OpenObject();
   bool ObjectSelected();
-
-	LPOLECLIENTSITE GetClientSite();
 
 	__property LONG ObjectCount = {read = GetObjectCount};
 	__property LONG LinkCount = {read = GetLinkCount};
