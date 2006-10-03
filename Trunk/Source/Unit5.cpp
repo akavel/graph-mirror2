@@ -129,7 +129,7 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
   Func->LegendText = ToWString(Edit7->Text);
   Func->StartPointStyle = ComboBox2->ItemIndex;
   Func->EndPointStyle = ComboBox3->ItemIndex;
-  Func->DrawType = ComboBox4->ItemIndex == 1 ? dtDots : dtLines;
+  Func->DrawType = static_cast<TDrawType>(ComboBox4->ItemIndex);
 
   Func->SetTrigonometry(Data.Axes.Trigonometry);
 
@@ -192,7 +192,7 @@ int TForm5::EditFunc(boost::shared_ptr<TBaseFuncType> Func)
     ComboBox2->ItemIndex = F->StartPointStyle;
     ComboBox3->ItemIndex = F->EndPointStyle;
     ComboBox4->ItemIndex = F->DrawType; 
-    LineSelect1->Enabled = F->DrawType == dtLines;
+    LineSelect1->Enabled = F->DrawType != dtDots;
   }
 
   OldItemIndex = ComboBox1->ItemIndex;

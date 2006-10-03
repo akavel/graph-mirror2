@@ -265,11 +265,12 @@ object Form5: TForm5
       ItemHeight = 13
       ItemIndex = 0
       TabOrder = 1
-      Text = 'Lines'
+      Text = 'Automatic'
       OnChange = ComboBox4Change
       Items.Strings = (
-        'Lines'
-        'Dots')
+        'Automatic'
+        'Dots'
+        'Lines')
     end
     object ExtColorBox1: TExtColorBox
       Left = 64

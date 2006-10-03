@@ -295,7 +295,7 @@ void TCustomFunctions::Update()
     SymbolList.Update();
   }
   catch(const Func32::EParseError &E)
-  {
+  { 
     throw ECustomFunctionError(cfeParseError, I, E);
   }
 }

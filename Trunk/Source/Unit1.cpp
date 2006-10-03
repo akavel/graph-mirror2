@@ -83,22 +83,21 @@ __fastcall TForm1::TForm1(TComponent* Owner)
     FixedImages(ImageList1->Count), Draw(Image1->Canvas, &Data, false, "DrawThread"), AbortPrinting(false)
 {
 #ifdef _DEBUG
-/*  std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
+  std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
   if(out)
   {
     out << std::endl << std::endl;
     out << "PID: 0x" << std::hex << std::uppercase << std::setw(8) << std::setfill('0') << GetCurrentProcessId() << std::endl;
     out << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
     out << "CmdLine: " << CmdLine << std::endl;
-  }*/
-
-  static TDebugStreamBuf DebugStreamBuf;
-  std::clog.rdbuf(&DebugStreamBuf);
+  }
 
   SetApplicationExceptionHandler(true); //Log all exceptions
+  InitDebug();
 #else
   SetApplicationExceptionHandler(GetRegValue(REGISTRY_KEY, "LogExceptions", HKEY_CURRENT_USER, false));
 #endif
+
   Font->Name = "MS Shell Dlg";
   Data.SetAbortUpdateEvent(&Draw.AbortUpdate);
 
@@ -3424,6 +3423,7 @@ void __fastcall TForm1::Legend_FontClick(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+
 
 
 
