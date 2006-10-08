@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2006-08-22 23:14\n"
+"POT-Creation-Date: 2006-10-08 21:22\n"
 "PO-Revision-Date: 2006-01-14 12:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: Magyari Gábor <magyari@kola.sulinet.hu>\n"
@@ -1303,18 +1303,15 @@ msgid "Animate"
 msgstr "Támogatás"
 
 #, fuzzy
-msgid "Constants:"
+msgid "Constant:"
 msgstr "Feltételek:"
+
+msgid "Choose a constant to change between each frame."
+msgstr ""
 
 #, fuzzy
 msgid "Step:"
 msgstr "Lépések:"
-
-msgid "Frames/second:"
-msgstr ""
-
-msgid "Choose a constant to change between each frame."
-msgstr ""
 
 #, fuzzy
 msgid "The first value of the constant"
@@ -1325,6 +1322,13 @@ msgid "The last value of the constant."
 msgstr "Az utolsó x érték az intervallumban."
 
 msgid "The chosen constant is changed by this value between each frame."
+msgstr ""
+
+#, fuzzy
+msgid "Image information"
+msgstr "Kép tulajdonságai"
+
+msgid "Frames/second:"
 msgstr ""
 
 msgid "Number of frames per second used when the animation is played."
@@ -1388,11 +1392,22 @@ msgstr "Lépések:"
 msgid "Speed"
 msgstr ""
 
+msgid "Change the speed used to play the animation."
+msgstr ""
+
 #, fuzzy
 msgid "Repeat"
 msgstr "Valós"
 
+msgid "Repeat playing the animation until manually stopped."
+msgstr ""
+
 msgid "Auto reverse"
+msgstr ""
+
+msgid ""
+"Play backwards when the end of the animation is reached. This is most useful "
+"in combination with the \"Repeat\" command."
 msgstr ""
 
 #, fuzzy
@@ -1763,11 +1778,15 @@ msgstr ""
 "Válaszd a Vonalak-at a kiszámított pontok összekötéséhez. Válaszd a Pontok-"
 "at különálló pontok ábrázolásához."
 
-msgid "Lines"
-msgstr "Vonalak"
+#, fuzzy
+msgid "Automatic"
+msgstr "Automatikus"
 
 msgid "Dots"
 msgstr "Pontok"
+
+msgid "Lines"
+msgstr "Vonalak"
 
 msgid "Text label"
 msgstr "Szöveges cimke"
@@ -1964,8 +1983,8 @@ msgstr "Számítási hiba."
 msgid "Argument produced a function result with total loss of precision."
 msgstr "Az argumentumhoz csak nagyon pontatlan függvényérték számolható."
 
-msgid "Symbol '%s' not found."
-msgstr "A %s jel nem található."
+msgid "The symbol '%s' was not found or has the wrong number of argument."
+msgstr ""
 
 msgid "Too many recursive calls."
 msgstr "Túl sok rekurzív hivatkozás."
@@ -2965,6 +2984,9 @@ msgstr "Másolatok száma:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#~ msgid "Symbol '%s' not found."
+#~ msgstr "A %s jel nem található."
 
 #, fuzzy
 #~ msgid "Copy the animation to the clipboard."
