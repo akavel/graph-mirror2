@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2006-08-22 23:14\n"
+"POT-Creation-Date: 2006-10-08 21:22\n"
 "PO-Revision-Date: 2006-01-14 12:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1314,18 +1314,15 @@ msgid "Animate"
 msgstr "Dona"
 
 #, fuzzy
-msgid "Constants:"
+msgid "Constant:"
 msgstr "Vincoli:"
+
+msgid "Choose a constant to change between each frame."
+msgstr ""
 
 #, fuzzy
 msgid "Step:"
 msgstr "Step:"
-
-msgid "Frames/second:"
-msgstr ""
-
-msgid "Choose a constant to change between each frame."
-msgstr ""
 
 #, fuzzy
 msgid "The first value of the constant"
@@ -1336,6 +1333,13 @@ msgid "The last value of the constant."
 msgstr "L'ultimo valore di x nell'intervallo."
 
 msgid "The chosen constant is changed by this value between each frame."
+msgstr ""
+
+#, fuzzy
+msgid "Image information"
+msgstr "Opzioni immagine."
+
+msgid "Frames/second:"
 msgstr ""
 
 msgid "Number of frames per second used when the animation is played."
@@ -1399,11 +1403,22 @@ msgstr "Step:"
 msgid "Speed"
 msgstr ""
 
+msgid "Change the speed used to play the animation."
+msgstr ""
+
 #, fuzzy
 msgid "Repeat"
 msgstr "Reale"
 
+msgid "Repeat playing the animation until manually stopped."
+msgstr ""
+
 msgid "Auto reverse"
+msgstr ""
+
+msgid ""
+"Play backwards when the end of the animation is reached. This is most useful "
+"in combination with the \"Repeat\" command."
 msgstr ""
 
 #, fuzzy
@@ -1778,11 +1793,15 @@ msgstr ""
 "Scegli Linee se vuoi che i punti calcolati siano collegati. Scegli Punti se "
 "vuoi semplicemente mostrare un segno per ogni punto."
 
-msgid "Lines"
-msgstr "Linee"
+#, fuzzy
+msgid "Automatic"
+msgstr "Graduaz auto"
 
 msgid "Dots"
 msgstr "Punti"
+
+msgid "Lines"
+msgstr "Linee"
 
 msgid "Text label"
 msgstr "Etichetta di testo"
@@ -1981,8 +2000,8 @@ msgstr ""
 "L'argomento passato ha prodotto un risultato con totale perdita di "
 "precisione."
 
-msgid "Symbol '%s' not found."
-msgstr "Simbolo '%s' non trovato."
+msgid "The symbol '%s' was not found or has the wrong number of argument."
+msgstr ""
 
 msgid "Too many recursive calls."
 msgstr "Troppe chiamate ricorsive."
@@ -3002,6 +3021,9 @@ msgstr "Numero di copie:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#~ msgid "Symbol '%s' not found."
+#~ msgstr "Simbolo '%s' non trovato."
 
 #, fuzzy
 #~ msgid "Copy the animation to the clipboard."

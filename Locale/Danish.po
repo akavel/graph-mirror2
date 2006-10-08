@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2006-08-22 23:14\n"
-"PO-Revision-Date: 2006-08-30 09:01+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2006-10-08 21:25+0100\n"
+"Last-Translator: \n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1185,17 +1185,15 @@ msgstr "Gem som standard"
 msgid "Animate"
 msgstr "Animér"
 
-msgid "Constants:"
+#, fuzzy
+msgid "Constant:"
 msgstr "Konstanter:"
-
-msgid "Step:"
-msgstr "Trin:"
-
-msgid "Frames/second:"
-msgstr "Billeder/sekund:"
 
 msgid "Choose a constant to change between each frame."
 msgstr "Vælg en konstant, som skal ændres mellem hvert billede."
+
+msgid "Step:"
+msgstr "Trin:"
 
 msgid "The first value of the constant"
 msgstr "Konstantens første værdi."
@@ -1205,6 +1203,13 @@ msgstr "Konstantens sidste værdi."
 
 msgid "The chosen constant is changed by this value between each frame."
 msgstr "Den valgte konstant ændres med denne værdi mellem hvert billede."
+
+#, fuzzy
+msgid "Image information"
+msgstr "Billedindstillinger"
+
+msgid "Frames/second:"
+msgstr "Billeder/sekund:"
 
 msgid "Number of frames per second used when the animation is played."
 msgstr "Antal billeder, som skal vises pr. sekund, når animationen afspilles."
@@ -1254,11 +1259,20 @@ msgstr "Trin"
 msgid "Speed"
 msgstr "Hastighed"
 
+msgid "Change the speed used to play the animation."
+msgstr ""
+
 msgid "Repeat"
 msgstr "Gentag"
 
+msgid "Repeat playing the animation until manually stopped."
+msgstr ""
+
 msgid "Auto reverse"
 msgstr "Kør automatisk tilbage"
+
+msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
+msgstr ""
 
 msgid "Open an animation file."
 msgstr "Åbn animationsfil."
@@ -1581,11 +1595,15 @@ msgstr "Tegnemetode:"
 msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
 msgstr "Vælg Linjer, hvis du vil have grafens udregnede punkter forbundet. Vælg Punkter, hvis du kun vil vise de enkelte udregnede punkter."
 
-msgid "Lines"
-msgstr "linjer"
+#, fuzzy
+msgid "Automatic"
+msgstr "Automatisk"
 
 msgid "Dots"
 msgstr "Prikker"
+
+msgid "Lines"
+msgstr "linjer"
 
 msgid "Text label"
 msgstr "Tekstetiket"
@@ -1767,8 +1785,8 @@ msgstr "Evaluering fejlede."
 msgid "Argument produced a function result with total loss of precision."
 msgstr "Argumentet har givet en funktion med totalt præcisionstab."
 
-msgid "Symbol '%s' not found."
-msgstr "Symbol '%s' ikke fundet"
+msgid "The symbol '%s' was not found or has the wrong number of argument."
+msgstr ""
 
 msgid "Too many recursive calls."
 msgstr "For mange rekursive kald."
@@ -2505,29 +2523,4 @@ msgstr "Vælg hvor mange eksemplarer der skal udskrives."
 
 msgid "Enter percent of original size."
 msgstr "Indtast procentdel af oprindelig størrelse."
-
-#~ msgid "Copy the animation to the clipboard."
-#~ msgstr "Kopierer de markerede celler til udklipsholderen."
-#~ msgid "Edit options."
-#~ msgstr "Rediger generelle indstillinger."
-#~ msgid "Insert a new point series."
-#~ msgstr "Indsæt en ny punkserie."
-#~ msgid "Calculates area under the path."
-#~ msgstr "Beregn arealet under kurven."
-#~ msgid "Insert a text label."
-#~ msgstr "Indsæt en tekstetiket."
-#~ msgid ""
-#~ "Type a value in the Intercept box to specify the point where you want the "
-#~ "trendline to meet the y-axis. This is only available for linear, "
-#~ "polynomial and exponential trendline."
-#~ msgstr ""
-#~ "Indtast en værdi i boksen Skæring for at angive det punkt, hvori du vil "
-#~ "have tendenslinjen til at skære y-aksen. Dette er kun tilgængeligt for "
-#~ "lineære, polynomiske og eksponentielle tendenslinjer."
-#~ msgid "Select language to use."
-#~ msgstr "Vælg det sprog som ønskes anvendt."
-#~ msgid "Cut selected text to the clipboard."
-#~ msgstr "Klipper den markerede tekst og placerer den i udklipsholderen."
-#~ msgid "End of parenthesis missing."
-#~ msgstr "Slutparentes mangler."
 

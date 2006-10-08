@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2006-08-22 23:14\n"
+"POT-Creation-Date: 2006-10-08 21:22\n"
 "PO-Revision-Date: 2006-01-14 12:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1312,18 +1312,15 @@ msgid "Animate"
 msgstr "Δωρεές"
 
 #, fuzzy
-msgid "Constants:"
+msgid "Constant:"
 msgstr "Σταθερές:"
+
+msgid "Choose a constant to change between each frame."
+msgstr ""
 
 #, fuzzy
 msgid "Step:"
 msgstr "Βήματα:"
-
-msgid "Frames/second:"
-msgstr ""
-
-msgid "Choose a constant to change between each frame."
-msgstr ""
 
 #, fuzzy
 msgid "The first value of the constant"
@@ -1334,6 +1331,13 @@ msgid "The last value of the constant."
 msgstr "Η τελευταία τιμή του χ στο επιλεγμένο διάστημα."
 
 msgid "The chosen constant is changed by this value between each frame."
+msgstr ""
+
+#, fuzzy
+msgid "Image information"
+msgstr "Επιλογές εικόνας"
+
+msgid "Frames/second:"
 msgstr ""
 
 msgid "Number of frames per second used when the animation is played."
@@ -1397,11 +1401,22 @@ msgstr "Βήματα:"
 msgid "Speed"
 msgstr ""
 
+msgid "Change the speed used to play the animation."
+msgstr ""
+
 #, fuzzy
 msgid "Repeat"
 msgstr "Πραγματικοί"
 
+msgid "Repeat playing the animation until manually stopped."
+msgstr ""
+
 msgid "Auto reverse"
+msgstr ""
+
+msgid ""
+"Play backwards when the end of the animation is reached. This is most useful "
+"in combination with the \"Repeat\" command."
 msgstr ""
 
 #, fuzzy
@@ -1776,11 +1791,15 @@ msgstr ""
 "Επιλέξατε Γραμμές αν θέλετε να συνδέονται τα σημεία. Επιλέξατε Κουκκίδες αν "
 "θέλετε να φαίνεται μια κουκκίδα για κάθε σημείο."
 
-msgid "Lines"
-msgstr "Γραμμές"
+#, fuzzy
+msgid "Automatic"
+msgstr "Αυτόματες υποδιαιρέσεις"
 
 msgid "Dots"
 msgstr "Κουκκίδες"
+
+msgid "Lines"
+msgstr "Γραμμές"
 
 msgid "Text label"
 msgstr "Κειμενο"
@@ -1976,8 +1995,8 @@ msgstr "Ο υπολογισμός απέτυχε."
 msgid "Argument produced a function result with total loss of precision."
 msgstr "Ένα στοιχείο της συνάρησης προκάλεσε ολική απώλεια της ακρίβειας."
 
-msgid "Symbol '%s' not found."
-msgstr "Το σύμβολο  '%s' δεν βρέθηκε."
+msgid "The symbol '%s' was not found or has the wrong number of argument."
+msgstr ""
 
 msgid "Too many recursive calls."
 msgstr "Πάρα πολλές επαναλαμβανόμενες ενέργειες."
@@ -2999,6 +3018,9 @@ msgstr "Αριθμός αντιτύπων:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#~ msgid "Symbol '%s' not found."
+#~ msgstr "Το σύμβολο  '%s' δεν βρέθηκε."
 
 #, fuzzy
 #~ msgid "Copy the animation to the clipboard."

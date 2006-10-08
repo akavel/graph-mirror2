@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2006-08-22 23:14\n"
+"POT-Creation-Date: 2006-10-08 21:22\n"
 "PO-Revision-Date: 2006-01-22 08:23+0800\n"
 "Last-Translator: djj <djj@cygsh.tw>\n"
 "Language-Team: \n"
@@ -1280,18 +1280,15 @@ msgid "Animate"
 msgstr "捐助"
 
 #, fuzzy
-msgid "Constants:"
+msgid "Constant:"
 msgstr " 限制條件:"
+
+msgid "Choose a constant to change between each frame."
+msgstr ""
 
 #, fuzzy
 msgid "Step:"
 msgstr "間隔數:"
-
-msgid "Frames/second:"
-msgstr ""
-
-msgid "Choose a constant to change between each frame."
-msgstr ""
 
 #, fuzzy
 msgid "The first value of the constant"
@@ -1302,6 +1299,13 @@ msgid "The last value of the constant."
 msgstr "間隔的最後x值"
 
 msgid "The chosen constant is changed by this value between each frame."
+msgstr ""
+
+#, fuzzy
+msgid "Image information"
+msgstr "圖形選項"
+
+msgid "Frames/second:"
 msgstr ""
 
 msgid "Number of frames per second used when the animation is played."
@@ -1364,11 +1368,22 @@ msgstr "間隔數:"
 msgid "Speed"
 msgstr ""
 
+msgid "Change the speed used to play the animation."
+msgstr ""
+
 #, fuzzy
 msgid "Repeat"
 msgstr "實數"
 
+msgid "Repeat playing the animation until manually stopped."
+msgstr ""
+
 msgid "Auto reverse"
+msgstr ""
+
+msgid ""
+"Play backwards when the end of the animation is reached. This is most useful "
+"in combination with the \"Repeat\" command."
 msgstr ""
 
 #, fuzzy
@@ -1732,11 +1747,15 @@ msgid ""
 msgstr ""
 "如果想要計算座標點被連起來，請選擇線條。如果想只想要呈現圓點而已，請選擇點。"
 
-msgid "Lines"
-msgstr "線條"
+#, fuzzy
+msgid "Automatic"
+msgstr "自動記號"
 
 msgid "Dots"
 msgstr "虛線"
+
+msgid "Lines"
+msgstr "線條"
 
 msgid "Text label"
 msgstr "文字標籤:"
@@ -1932,8 +1951,8 @@ msgstr "求解失敗"
 msgid "Argument produced a function result with total loss of precision."
 msgstr "參數產生了一個函數結果為遺失所有精確度"
 
-msgid "Symbol '%s' not found."
-msgstr "符號 '%s' 找不到 "
+msgid "The symbol '%s' was not found or has the wrong number of argument."
+msgstr ""
 
 msgid "Too many recursive calls."
 msgstr "太多遞迴呼叫"
@@ -2877,6 +2896,9 @@ msgstr "複製的數目:"
 
 msgid "Enter percent of original size."
 msgstr ""
+
+#~ msgid "Symbol '%s' not found."
+#~ msgstr "符號 '%s' 找不到 "
 
 #, fuzzy
 #~ msgid "Copy the animation to the clipboard."
