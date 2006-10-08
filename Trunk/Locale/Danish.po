@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2006-08-22 23:14\n"
-"PO-Revision-Date: 2006-10-08 21:25+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2006-10-08 21:43+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1185,9 +1185,8 @@ msgstr "Gem som standard"
 msgid "Animate"
 msgstr "Animér"
 
-#, fuzzy
 msgid "Constant:"
-msgstr "Konstanter:"
+msgstr "Konstant:"
 
 msgid "Choose a constant to change between each frame."
 msgstr "Vælg en konstant, som skal ændres mellem hvert billede."
@@ -1204,9 +1203,8 @@ msgstr "Konstantens sidste værdi."
 msgid "The chosen constant is changed by this value between each frame."
 msgstr "Den valgte konstant ændres med denne værdi mellem hvert billede."
 
-#, fuzzy
 msgid "Image information"
-msgstr "Billedindstillinger"
+msgstr "Billedinformation"
 
 msgid "Frames/second:"
 msgstr "Billeder/sekund:"
@@ -1260,19 +1258,19 @@ msgid "Speed"
 msgstr "Hastighed"
 
 msgid "Change the speed used to play the animation."
-msgstr ""
+msgstr "Skift hastigheden hvormed animationen afspilles."
 
 msgid "Repeat"
 msgstr "Gentag"
 
 msgid "Repeat playing the animation until manually stopped."
-msgstr ""
+msgstr "Gentag afspilningen af animationen, indtil den stoppes manuelt."
 
 msgid "Auto reverse"
 msgstr "Kør automatisk tilbage"
 
 msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
-msgstr ""
+msgstr "Baglæns afspilning når animationen afsluttes. Dette er mest anvendeligt i kombination med kommandoen \"Gentag\"."
 
 msgid "Open an animation file."
 msgstr "Åbn animationsfil."
@@ -1595,7 +1593,6 @@ msgstr "Tegnemetode:"
 msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
 msgstr "Vælg Linjer, hvis du vil have grafens udregnede punkter forbundet. Vælg Punkter, hvis du kun vil vise de enkelte udregnede punkter."
 
-#, fuzzy
 msgid "Automatic"
 msgstr "Automatisk"
 
@@ -1786,7 +1783,7 @@ msgid "Argument produced a function result with total loss of precision."
 msgstr "Argumentet har givet en funktion med totalt præcisionstab."
 
 msgid "The symbol '%s' was not found or has the wrong number of argument."
-msgstr ""
+msgstr "Symbolet '%s' blev ikke fundet eller har et forkert antal argumenter."
 
 msgid "Too many recursive calls."
 msgstr "For mange rekursive kald."
