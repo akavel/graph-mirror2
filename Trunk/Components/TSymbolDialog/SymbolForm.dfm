@@ -115,7 +115,7 @@ object SymbolFrm: TSymbolFrm
     Left = 410
     Top = 40
     Width = 16
-    Height = 241
+    Height = 243
     Kind = sbVertical
     LargeChange = 12
     Max = 205

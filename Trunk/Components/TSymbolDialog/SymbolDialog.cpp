@@ -25,7 +25,7 @@ namespace Symboldialog
 //---------------------------------------------------------------------------
 __fastcall TSymbolDialog::TSymbolDialog(TComponent* Owner)
   : TComponent(Owner), FFontName("Symbol"), FCharacterSet(csAnsiSet),
-    FOnShow(NULL), FOnClose(NULL), FOnInsertAnsiChar(NULL), FOnInsertWideChar(NULL), SymbolFrm(NULL), FSymbol(0x20)
+    FOnShow(NULL), FOnClose(NULL), FOnInsertAnsiChar(NULL), FOnInsertWideChar(NULL), FSymbolFrm(NULL), FSymbol(0x20)
 {
 }
 //---------------------------------------------------------------------------
@@ -36,28 +36,28 @@ __fastcall TSymbolDialog::~TSymbolDialog()
 //---------------------------------------------------------------------------
 void TSymbolDialog::Execute()
 {
-  if(SymbolFrm == NULL)
+  if(FSymbolFrm == NULL)
   {
-    SymbolFrm = new TSymbolFrm(NULL, CharacterSet == csUnicode && Win32Platform == VER_PLATFORM_WIN32_NT, FSymbol);
+    FSymbolFrm = new TSymbolFrm(NULL, CharacterSet == csUnicode && Win32Platform == VER_PLATFORM_WIN32_NT, FSymbol);
     DoShow();
   }
-  SymbolFrm->ShowModal();
+  FSymbolFrm->ShowModal();
 }
 //---------------------------------------------------------------------------
 void TSymbolDialog::Show()
 {
-  if(SymbolFrm == NULL)
+  if(FSymbolFrm == NULL)
   {
-    SymbolFrm = new TSymbolFrm(NULL, CharacterSet == csUnicode && Win32Platform == VER_PLATFORM_WIN32_NT, FSymbol);
+    FSymbolFrm = new TSymbolFrm(NULL, CharacterSet == csUnicode && Win32Platform == VER_PLATFORM_WIN32_NT, FSymbol);
     DoShow();
-    SymbolFrm->Show();
+    FSymbolFrm->Show();
   }
 }
 //---------------------------------------------------------------------------
 void TSymbolDialog::Close()
 {
-  if(SymbolFrm)
-    SymbolFrm->Close();
+  if(FSymbolFrm)
+    FSymbolFrm->Close();
 }
 //---------------------------------------------------------------------------
 void __fastcall TSymbolDialog::Button2Click(TObject *Sender)
@@ -65,30 +65,30 @@ void __fastcall TSymbolDialog::Button2Click(TObject *Sender)
   if(CharacterSet == csUnicode && Win32Platform == VER_PLATFORM_WIN32_NT)
   {
     if(OnInsertWideChar)
-      OnInsertWideChar(this, SymbolFrm->GetSelected(), SymbolFrm->ComboBox1->Text);
+      OnInsertWideChar(this, FSymbolFrm->GetSelected(), FSymbolFrm->ComboBox1->Text);
   }
   else
   {
     if(OnInsertAnsiChar)
-      OnInsertAnsiChar(this, SymbolFrm->GetSelected(), SymbolFrm->ComboBox1->Text);
+      OnInsertAnsiChar(this, FSymbolFrm->GetSelected(), FSymbolFrm->ComboBox1->Text);
   }
 }
 //---------------------------------------------------------------------------
 void __fastcall TSymbolDialog::FormClose(TObject *Sender, TCloseAction &Action)
 {
-  FFontName = SymbolFrm->ComboBox1->Text;
-  FSymbol = SymbolFrm->GetSelected();
+  FFontName = FSymbolFrm->ComboBox1->Text;
+  FSymbol = FSymbolFrm->GetSelected();
   if(OnClose)
     OnClose(this);
-  SymbolFrm = NULL;
+  FSymbolFrm = NULL;
   Action = caFree;
 }
 //---------------------------------------------------------------------------
 void TSymbolDialog::DoShow()
 {
-  SymbolFrm->Button2->OnClick = Button2Click;
-  SymbolFrm->OnClose = FormClose;
-  SymbolFrm->ComboBox1->ItemIndex = SymbolFrm->ComboBox1->Items->IndexOf(FontName);
+  FSymbolFrm->Button2->OnClick = Button2Click;
+  FSymbolFrm->OnClose = FormClose;
+  FSymbolFrm->ComboBox1->ItemIndex = FSymbolFrm->ComboBox1->Items->IndexOf(FontName);
   if(OnShow)
     OnShow(this);
 }
