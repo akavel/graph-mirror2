@@ -29,7 +29,8 @@ namespace Extcolorbox
 }
 //---------------------------------------------------------------------------
 __fastcall TExtColorBox::TExtColorBox(TComponent* Owner)
-  : TColorBox(Owner), FOnPickColor(NULL), FColorDialogType(cdtColorSelect), FDroppedWidth(0)
+  : TColorBox(Owner), FOnPickColor(NULL), FColorDialogType(cdtColorSelect), FDroppedWidth(0),
+    FAutoDroppedWidth(true), DroppedWidthFound(false)
 {
 }
 //---------------------------------------------------------------------------
@@ -81,6 +82,24 @@ void __fastcall TExtColorBox::SetExtendedUI(bool Value)
 bool __fastcall TExtColorBox::GetExtendedUI()
 {
   return SendMessage(Handle, CB_GETEXTENDEDUI, 0, 0);
+}
+//---------------------------------------------------------------------------
+void __fastcall TExtColorBox::DropDown(void)
+{
+  if(FAutoDroppedWidth && !DroppedWidthFound)
+  {
+    int MaxWidth = 0;
+    for(int I = 0; I < Items->Count; I++)
+    {
+      int NewWidth = Canvas->TextWidth(Items->Strings[I]);
+      if(NewWidth > MaxWidth)
+        MaxWidth = NewWidth;
+    }
+
+    DroppedWidthFound = true;
+    DroppedWidth = MaxWidth + Height + 10;
+  }
+  TColorBox::DropDown();
 }
 //---------------------------------------------------------------------------
 

@@ -18,6 +18,8 @@ private:
   TColorDialogType FColorDialogType;
   TPickColorEvent FOnPickColor;
   int FDroppedWidth;
+  bool FAutoDroppedWidth;
+  bool DroppedWidthFound;
 
   void __fastcall SetDroppedWidth(int AWidth);
   void __fastcall SetExtendedUI(bool Value);
@@ -26,6 +28,7 @@ private:
 protected:
   bool __fastcall PickCustomColor(void);
   void __fastcall Loaded(void);
+  DYNAMIC void __fastcall DropDown(void);
 
 public:
   __fastcall TExtColorBox(TComponent* Owner);
@@ -35,6 +38,7 @@ __published:
   __property TPickColorEvent OnPickColor = {read=FOnPickColor, write=FOnPickColor, default=NULL};
   __property int DroppedWidth = {read=FDroppedWidth, write=SetDroppedWidth, default=0};
   __property bool ExtendedUI = {read=GetExtendedUI, write=SetExtendedUI};
+  __property bool AutoDroppedWidth = {read=FAutoDroppedWidth, write=FAutoDroppedWidth};
 };
 //---------------------------------------------------------------------------
 #endif

@@ -20,7 +20,7 @@ private:
   TInsertWideCharEvent FOnInsertWideChar;
   TCharacterSet FCharacterSet;
   wchar_t FSymbol;
-  class TSymbolFrm *SymbolFrm;
+  class TSymbolFrm *FSymbolFrm;
 
   void __fastcall Button2Click(TObject *Sender);
   void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
@@ -36,7 +36,8 @@ public:
   void Close();
 
   __property wchar_t Symbol = {read=FSymbol, write=FSymbol};
-  
+  __property TSymbolFrm *SymbolForm = {read=FSymbolFrm};
+
 __published:
   __property TFontName FontName = {read=FFontName, write=FFontName};
   __property TCharacterSet CharacterSet = {read=FCharacterSet, write=FCharacterSet};

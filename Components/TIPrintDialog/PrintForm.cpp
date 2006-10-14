@@ -59,7 +59,8 @@ void __fastcall TPrintFrm::CheckBox1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void TPrintFrm::ResizePaper()
 {
-  const TPoint PaperCenter(373, 209);
+  double FontScale = Width / 449.0; //Divide by the original width in case it was scaled
+  const TPoint PaperCenter(373 * FontScale, 209 * FontScale);
 
   //DevMode->dmPaperWidth doesn't always work. Don't know why
   //Instead we create a DC ask that for the size
@@ -75,13 +76,14 @@ void TPrintFrm::ResizePaper()
   ReleaseDC(NULL, ScreenDC);
 
   double xyScale = yScale / xScale;
-  int PixelWidth = 104;
+  int MaxPixelHeight = 144 * FontScale;
+  int PixelWidth = 104 * FontScale;
   int PixelHeight = PaperHeight / PaperWidth * PixelWidth * xyScale;
 
-  if(PixelHeight > 144)
+  if(PixelHeight > MaxPixelHeight)
   {
-    PixelHeight = 144;
-    PixelWidth = PaperWidth / PaperHeight * 144 / xyScale;
+    PixelHeight = MaxPixelHeight;
+    PixelWidth = PaperWidth / PaperHeight * MaxPixelHeight / xyScale;
   }
 
   Image1->Height = PixelHeight;

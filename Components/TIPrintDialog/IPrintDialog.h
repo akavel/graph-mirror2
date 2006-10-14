@@ -28,7 +28,7 @@ private:
   int FCopies;
   TPrinterOrientation FOrientation;
   class TPrintFrm *PrintFrm;
-
+  
   TRect GetDrawingArea();
 
 protected:

@@ -12,11 +12,6 @@
 #pragma link "TntStdCtrls"
 #pragma resource "*.dfm"
 
-const wchar_t FirstSymbol = 32;
-const int Delta = 20;
-const int FontSize = 12;
-const int PreviewFontSize = 30;
-
 struct TSubset
 {
   int First;
@@ -120,7 +115,8 @@ const TSubset Subsets[] = {
 //---------------------------------------------------------------------------
 __fastcall TSymbolFrm::TSymbolFrm(TComponent* Owner, bool AShowUnicode, wchar_t Symbol)
   : TForm(Owner), Selected(Symbol), hUNameDll(NULL), pGetUNameFunc(NULL), ShowUnicode(AShowUnicode),
-    hGdi32Dll(NULL), pGetFontUnicodeRanges(NULL), Glyphset(NULL)
+    hGdi32Dll(NULL), pGetFontUnicodeRanges(NULL), Glyphset(NULL),
+    FontSize(12), PreviewFontSize(30), Delta(20)
 {
   Caption = LoadStr(RES_SYMBOL_BOX_CAPTION);
   Label1->Caption = "&" + LoadStr(RES_FONT_NAME);
@@ -206,16 +202,16 @@ void TSymbolFrm::UpdateImage()
     }
 
   //Draw horizontal and vertical lines
-  for(int X = 0; X < Width; X += Delta)
+  for(int Col = 0; Col <= ColCount; Col++)
   {
-    Canvas->MoveTo(X, 0);
-    Canvas->LineTo(X, Height);
+    Canvas->MoveTo(Col * Delta, 0);
+    Canvas->LineTo(Col * Delta, Height);
   }
 
-  for(int Y = 0; Y < Height; Y += Delta)
+  for(int Row = 0; Row <= RowCount; Row++)
   {
-    Canvas->MoveTo(0, Y);
-    Canvas->LineTo(Width, Y);
+    Canvas->MoveTo(0, Row * Delta);
+    Canvas->LineTo(Width, Row*Delta);
   }
 
   //Draw selected symbol
@@ -262,6 +258,7 @@ void TSymbolFrm::UpdateImage()
 //---------------------------------------------------------------------------
 void __fastcall TSymbolFrm::FormShow(TObject *Sender)
 {
+  Delta = static_cast<double>(Image1->Width - 1) / ColCount;
   ComboBox1Select(NULL);
 }
 //---------------------------------------------------------------------------
@@ -526,6 +523,13 @@ void TSymbolFrm::SelectSubset(wchar_t Symbol)
   for(unsigned I = 0; I < sizeof(Subsets)/sizeof(Subsets[0]); I++)
     if(Symbol >= Subsets[I].First && Symbol <= Subsets[I].Last)
       ComboBox2->ItemIndex = ComboBox2->Items->IndexOf(Subsets[I].Name);
+}
+//---------------------------------------------------------------------------
+void __fastcall TSymbolFrm::ChangeScale(int M, int D)
+{
+  FontSize = (FontSize * M) / D;
+  PreviewFontSize = (PreviewFontSize * M) / D;
+  TForm::ChangeScale(M, D); // Call inherited
 }
 //---------------------------------------------------------------------------
 

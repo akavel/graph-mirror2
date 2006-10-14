@@ -89,6 +89,7 @@ void __fastcall TIFontBox::ChangeScale(int M, int D)
 {
   TCustomComboBox::ChangeScale(M, D); // Call inherited
   ItemHeight = (ItemHeight * M) / D;
+  FSamplePos = (FSamplePos * M) / D;
 }
 //---------------------------------------------------------------------------
 

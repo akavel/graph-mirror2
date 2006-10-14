@@ -46,6 +46,7 @@ __published:	// IDE-managed Components
           int &ScrollPos);
   void __fastcall ScrollBar1Change(TObject *Sender);
   void __fastcall ComboBox2Change(TObject *Sender);
+
 private:	// User declarations
   HMODULE hUNameDll;
   HMODULE hGdi32Dll;
@@ -55,6 +56,9 @@ private:	// User declarations
   wchar_t Selected;
   std::vector<BYTE> Data;
   const GLYPHSET *Glyphset;
+  double Delta;
+  int FontSize;
+  int PreviewFontSize;
 
   void UpdateImage();
   bool SetSelected(unsigned Row, unsigned Col);
@@ -67,6 +71,7 @@ private:	// User declarations
   wchar_t LastSymbol();
   void SelectSubset(wchar_t Symbol);
   void DrawSymbol(TCanvas *Canvas, wchar_t Symbol, const TRect &Rect);
+  DYNAMIC void __fastcall ChangeScale(int M, int D);
 
 public:		// User declarations
   __fastcall TSymbolFrm(TComponent* Owner, bool AShowUnicode, wchar_t Symbol);

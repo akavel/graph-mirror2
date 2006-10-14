@@ -16,6 +16,9 @@ object PrintFrm: TPrintFrm
   Position = poMainFormCenter
   OnClose = FormClose
   OnShow = FormShow
+  DesignSize = (
+    441
+    369)
   PixelsPerInch = 96
   TextHeight = 13
   object Shape2: TShape
@@ -23,6 +26,7 @@ object PrintFrm: TPrintFrm
     Top = 144
     Width = 106
     Height = 145
+    Anchors = [akLeft, akTop, akRight]
     Brush.Color = clGray
     Pen.Style = psClear
   end
