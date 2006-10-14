@@ -48,61 +48,69 @@ object Form20: TForm20
     TickStyle = tsAuto
     OnChange = TrackBar1Change
   end
-  object ToolBar1: TToolBar
+  object Panel2: TPanel
     Left = 8
     Top = 360
-    Width = 177
-    Height = 33
-    Align = alNone
+    Width = 185
+    Height = 41
     Anchors = [akLeft, akBottom]
-    ButtonHeight = 28
-    ButtonWidth = 28
-    EdgeInner = esNone
-    EdgeOuter = esNone
-    Images = ImageList1
+    BevelOuter = bvNone
     TabOrder = 2
-    object ToolButton1: TToolButton
+    object ToolBar1: TToolBar
       Left = 0
-      Top = 2
-      Hint = 'Play'
-      ImageIndex = 0
-      OnClick = ToolButton1Click
-    end
-    object ToolButton2: TToolButton
-      Left = 28
-      Top = 2
-      Hint = 'Pause'
-      Enabled = False
-      ImageIndex = 1
-      OnClick = ToolButton2Click
-    end
-    object ToolButton3: TToolButton
-      Left = 56
-      Top = 2
-      Hint = 'Stop'
-      Enabled = False
-      ImageIndex = 2
-      OnClick = ToolButton3Click
-    end
-    object ToolButton4: TToolButton
-      Left = 84
-      Top = 2
-      Hint = 'Back'
-      ImageIndex = 6
-      OnClick = ToolButton7Click
-    end
-    object ToolButton5: TToolButton
-      Left = 112
-      Top = 2
-      Hint = 'Step'
-      ImageIndex = 5
-      OnClick = ToolButton6Click
-    end
-    object ToolButton6: TToolButton
-      Left = 140
-      Top = 2
-      DropdownMenu = PopupMenu1
-      ImageIndex = 7
+      Top = 0
+      Width = 177
+      Height = 33
+      Align = alNone
+      ButtonHeight = 28
+      ButtonWidth = 28
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      Images = ImageList1
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 0
+        Top = 2
+        Hint = 'Play'
+        ImageIndex = 0
+        OnClick = ToolButton1Click
+      end
+      object ToolButton2: TToolButton
+        Left = 28
+        Top = 2
+        Hint = 'Pause'
+        Enabled = False
+        ImageIndex = 1
+        OnClick = ToolButton2Click
+      end
+      object ToolButton3: TToolButton
+        Left = 56
+        Top = 2
+        Hint = 'Stop'
+        Enabled = False
+        ImageIndex = 2
+        OnClick = ToolButton3Click
+      end
+      object ToolButton4: TToolButton
+        Left = 84
+        Top = 2
+        Hint = 'Back'
+        ImageIndex = 6
+        OnClick = ToolButton7Click
+      end
+      object ToolButton5: TToolButton
+        Left = 112
+        Top = 2
+        Hint = 'Step'
+        ImageIndex = 5
+        OnClick = ToolButton6Click
+      end
+      object ToolButton6: TToolButton
+        Left = 140
+        Top = 2
+        DropdownMenu = PopupMenu1
+        ImageIndex = 7
+      end
     end
   end
   object SaveDialog1: TSaveDialog

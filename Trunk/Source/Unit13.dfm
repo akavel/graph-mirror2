@@ -130,7 +130,7 @@ object Form13: TForm13
       Anchors = [akTop, akRight]
       ItemHeight = 16
       TabOrder = 1
-      DroppedWidth = 110
+      DroppedWidth = 130
     end
   end
   object PageControl1: TTntPageControl

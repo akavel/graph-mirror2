@@ -112,6 +112,7 @@ __published:	// IDE-managed Components
           wchar_t Symbol, const AnsiString &FontName);
   void __fastcall SymbolDialog1InsertAnsiChar(TSymbolDialog *Sender,
           char Symbol, const AnsiString &FontName);
+  void __fastcall SymbolDialog1Show(TObject *Sender);
 private:	// User declarations
   TRichEditOle RichEditOle;
   TWndMethod OrgComboBox1WindowProc;

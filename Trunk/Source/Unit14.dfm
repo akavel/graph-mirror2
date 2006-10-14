@@ -210,7 +210,7 @@ object Form14: TForm14
           ItemHeight = 16
           TabOrder = 1
           OnChange = Change
-          DroppedWidth = 110
+          DroppedWidth = 130
         end
       end
       object GroupBox2: TTntGroupBox

@@ -126,7 +126,7 @@ void AddAccelerator(TControl *Control, std::set<wchar_t> &Accelerators)
   if(TTntLabel *Label = dynamic_cast<TTntLabel*>(Control))
     if(Label->FocusControl == NULL)
       return;
-  if(dynamic_cast<TCustomEdit*>(Control) != NULL)
+  if(dynamic_cast<TCustomEdit*>(Control) != NULL || dynamic_cast<TCustomComboBox*>(Control) != NULL)
     return;
 
   WideString Caption = TntControl_GetText(Control);

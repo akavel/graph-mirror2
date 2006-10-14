@@ -3523,6 +3523,7 @@ object Form1: TForm1
         'Zoom to scale the axes equally. This will show a plotted circle ' +
         'in its correct relation instead of an ellipse.'
       ImageIndex = 44
+      ShortCut = 16465
       OnExecute = ZoomSquareActionExecute
     end
     object ZoomStandardAction: TTntAction

@@ -27,6 +27,8 @@ __fastcall TForm10::TForm10(TComponent* Owner, TProperty &AProperty)
 
   CheckBox1->Checked = Property.ShowTipsAtStartup;
   Label2->Caption = LoadRes(Property.NextTip);
+
+  Width = Width - Button3->Width + Canvas->TextWidth(Button3->Caption) + 20;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm10::Button2Click(TObject *Sender)
