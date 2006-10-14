@@ -6,7 +6,7 @@ object Form4: TForm4
   BorderStyle = bsDialog
   Caption = 'Options'
   ClientHeight = 332
-  ClientWidth = 302
+  ClientWidth = 317
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,14 +17,14 @@ object Form4: TForm4
   Position = poMainFormCenter
   ShowHint = True
   DesignSize = (
-    302
+    317
     332)
   PixelsPerInch = 96
   TextHeight = 13
   object Bevel1: TBevel
     Left = 8
     Top = 8
-    Width = 285
+    Width = 300
     Height = 281
     Anchors = [akLeft, akTop, akRight, akBottom]
     Shape = bsFrame
@@ -83,7 +83,7 @@ object Form4: TForm4
     Text = '4'
   end
   object Button1: TTntButton
-    Left = 44
+    Left = 59
     Top = 299
     Width = 75
     Height = 25
@@ -94,7 +94,7 @@ object Form4: TForm4
     OnClick = Button1Click
   end
   object Button2: TTntButton
-    Left = 132
+    Left = 147
     Top = 299
     Width = 75
     Height = 25
@@ -107,7 +107,7 @@ object Form4: TForm4
   object CheckBox1: TTntCheckBox
     Left = 24
     Top = 184
-    Width = 259
+    Width = 274
     Height = 17
     Hint = 'Associate *.grf files with Graph.'
     Anchors = [akLeft, akRight, akBottom]
@@ -131,7 +131,7 @@ object Form4: TForm4
   object CheckBox4: TTntCheckBox
     Left = 24
     Top = 232
-    Width = 259
+    Width = 274
     Height = 17
     Hint = 
       'Save window position when the program quits. This setting is use' +
@@ -143,7 +143,7 @@ object Form4: TForm4
     TabOrder = 7
   end
   object Button3: TTntButton
-    Left = 220
+    Left = 235
     Top = 299
     Width = 75
     Height = 25
@@ -153,9 +153,9 @@ object Form4: TForm4
     OnClick = Button3Click
   end
   object RadioGroup1: TTntRadioGroup
-    Left = 177
+    Left = 178
     Top = 16
-    Width = 103
+    Width = 117
     Height = 73
     Hint = 'Format used when complex numbers are shown.'
     Anchors = [akTop, akRight]
@@ -172,7 +172,7 @@ object Form4: TForm4
   object CheckBox2: TTntCheckBox
     Left = 24
     Top = 208
-    Width = 259
+    Width = 274
     Height = 17
     Hint = 'Show the tooltip when the cursor is over an item.'
     Anchors = [akLeft, akRight, akBottom]
@@ -196,7 +196,7 @@ object Form4: TForm4
   object CheckBox7: TTntCheckBox
     Left = 24
     Top = 256
-    Width = 267
+    Width = 282
     Height = 17
     Hint = 
       'If checked the program will contact a web server when the progra' +

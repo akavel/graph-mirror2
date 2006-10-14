@@ -23,7 +23,6 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
 	: TTntForm(Owner), Data(AData)
 {
   ScaleForm(this);
-//  TranslateProperties(RadioGroup1);
   TranslateProperties(this);
   SetAccelerators(this);
   int Left = Label1->Left + TMaxWidth(Label1)(Label2)(Label3) + 5;

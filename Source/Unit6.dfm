@@ -296,7 +296,7 @@ object Form6: TForm6
     TabOrder = 6
     OnChange = ColorBox1Change
     OnKeyDown = ComboBoxKeyDown
-    DroppedWidth = 120
+    AutoDroppedWidth = True
   end
   object ColorBox2: TExtColorBox
     Left = 432
@@ -310,7 +310,7 @@ object Form6: TForm6
     TabOrder = 7
     OnChange = ColorBox2Change
     OnKeyDown = ComboBoxKeyDown
-    DroppedWidth = 120
+    AutoDroppedWidth = True
   end
   object ImageList1: TImageList
     Left = 8
@@ -910,6 +910,7 @@ object Form6: TForm6
   object SymbolDialog1: TSymbolDialog
     FontName = 'Symbol'
     CharacterSet = csUnicodeSet
+    OnShow = SymbolDialog1Show
     OnInsertAnsiChar = SymbolDialog1InsertAnsiChar
     OnInsertWideChar = SymbolDialog1InsertWideChar
     Left = 88

@@ -3427,3 +3427,4 @@ void __fastcall TForm1::Legend_FontClick(TObject *Sender)
 
 
 
+

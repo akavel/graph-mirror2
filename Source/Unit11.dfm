@@ -177,7 +177,7 @@ object Form11: TForm11
       Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
       ItemHeight = 16
       TabOrder = 1
-      DroppedWidth = 110
+      DroppedWidth = 130
     end
   end
   object Edit1: TMyEdit

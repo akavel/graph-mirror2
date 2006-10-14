@@ -5,11 +5,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or (at
  * your option) any later version.
- */
+ */                                      
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit6.h"
+#include "SymbolForm.h"
 //---------------------------------------------------------------------------
 #pragma link "IFontBox"
 #pragma link "IRichEdit"
@@ -24,7 +25,7 @@ __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, cons
 {
   ScaleForm(this);
   TranslateProperties(this);           
-  SetAccelerators(this);
+  SetAccelerators(this);                           
   TranslateStrings(ColorBox1->Items);
   TranslateStrings(ColorBox2->Items);                       
   ColorBox2->Items->Strings[1] = LoadRes(RES_TRANSPARENT);
@@ -35,7 +36,7 @@ __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, cons
   IFontBox1->WindowProc = IFontBox1Proc;
   OrgColorBox1WindowProc = ColorBox1->WindowProc;
   ColorBox1->WindowProc = ColorBox1Proc;
-
+                                           
   RichEditOle.SetHostNames(HostApp, HostDoc.IsEmpty() ? HostApp : HostDoc);
   IRichEdit1->SelectAll();
   IRichEdit1->SelAttributes->Assign(DefaultFont);
@@ -66,7 +67,7 @@ void __fastcall TForm6::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
      Button2->Click();
 
   if(Shift.Contains(ssCtrl))
-  {
+  {                                     
     switch(Key)
     {
       case 'B': ToolButton1->Down = !ToolButton1->Down; ToolButton1->Click(); break;
@@ -86,7 +87,7 @@ void __fastcall TForm6::ComboBoxKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   if(Key == VK_RETURN)
-  {
+  {                                                 
     if(Shift.Contains(ssCtrl))
       Button1->Click();
     Key = 0;
@@ -377,6 +378,11 @@ void __fastcall TForm6::SymbolDialog1InsertAnsiChar(TSymbolDialog *Sender,
   AnsiString OldName = IRichEdit1->TextFormat.GetName();
   IRichEdit1->SetSelText(Symbol, FontName, ToIntDef(ComboBox1->Text, 12));
   IRichEdit1->TextFormat.SetName(OldName); 
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm6::SymbolDialog1Show(TObject *Sender)
+{
+  ScaleForm(SymbolDialog1->SymbolForm);
 }
 //---------------------------------------------------------------------------
 

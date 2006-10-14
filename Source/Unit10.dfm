@@ -26,7 +26,7 @@ object Form10: TForm10
     Top = 16
     Width = 75
     Height = 25
-    Anchors = [akTop, akRight]
+    Anchors = [akLeft, akTop, akRight]
     Cancel = True
     Caption = 'Close'
     Default = True
@@ -38,7 +38,7 @@ object Form10: TForm10
     Top = 56
     Width = 75
     Height = 25
-    Anchors = [akTop, akRight]
+    Anchors = [akLeft, akTop, akRight]
     Caption = 'Next tip'
     TabOrder = 1
     OnClick = Button2Click
@@ -48,7 +48,7 @@ object Form10: TForm10
     Top = 96
     Width = 75
     Height = 25
-    Anchors = [akTop, akRight]
+    Anchors = [akLeft, akTop, akRight]
     Caption = 'Previous tip'
     TabOrder = 2
     OnClick = Button3Click
@@ -67,7 +67,7 @@ object Form10: TForm10
     Top = 8
     Width = 315
     Height = 171
-    Anchors = [akLeft, akTop, akRight, akBottom]
+    Anchors = [akLeft, akTop, akBottom]
     BevelInner = bvLowered
     BevelOuter = bvNone
     Color = clWhite

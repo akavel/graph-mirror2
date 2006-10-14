@@ -48,6 +48,7 @@ __published:	// IDE-managed Components
   TTntMenuItem *N501;
   TTntMenuItem *N101;
   TTntMenuItem *N10001;
+  TPanel *Panel2;
   TToolBar *ToolBar1;
   TToolButton *ToolButton1;
   TToolButton *ToolButton2;
