@@ -156,9 +156,9 @@ __fastcall TSymbolFrm::~TSymbolFrm()
     FreeLibrary(hGdi32Dll);
 }
 //---------------------------------------------------------------------------
-void TSymbolFrm::DrawSymbol(TCanvas *Canvas, wchar_t Symbol, const TRect &Rect)
+void TSymbolFrm::DrawSymbol(TCanvas *Canvas, wchar_t Symbol, const TRect &Rect, bool UseUnicode)
 {
-  if(ShowUnicode)
+  if(UseUnicode)
     DrawTextW(Canvas->Handle, &Symbol, 1, const_cast<TRect*>(&Rect), DT_CENTER | DT_VCENTER);
   else
   {
@@ -178,7 +178,10 @@ void TSymbolFrm::UpdateImage()
   Canvas->Font->Name = ComboBox1->Text;
   Canvas->Font->Size = FontSize;
   Canvas->Font->Color = clBlack;
+  Canvas->Font->Charset = DEFAULT_CHARSET;
 
+  int Charset = GetTextCharset(Canvas->Handle);
+  
   //Clear image
   Canvas->FillRect(Image1->ClientRect);
 
@@ -197,7 +200,7 @@ void TSymbolFrm::UpdateImage()
       }
 
       TRect Rect(Col * Delta, Row * Delta, (Col+1) * Delta, (Row+1) * Delta);
-      DrawSymbol(Image1->Canvas, Symbol, Rect);
+      DrawSymbol(Image1->Canvas, Symbol, Rect, ShowUnicode && Charset != SYMBOL_CHARSET);
       Symbol++;
     }
 
@@ -223,7 +226,7 @@ void TSymbolFrm::UpdateImage()
   TRect SelectedRect(Col * Delta + 1, Row * Delta + 1, (Col+1) * Delta, (Row+1) * Delta);
   Canvas->FillRect(SelectedRect);
   Canvas->Font->Color = clWhite;
-  DrawSymbol(Image1->Canvas, Selected, SelectedRect);
+  DrawSymbol(Image1->Canvas, Selected, SelectedRect, ShowUnicode && Charset != SYMBOL_CHARSET);
   if(FocusPanel1->Focused())
     Canvas->DrawFocusRect(SelectedRect);
 
@@ -232,25 +235,22 @@ void TSymbolFrm::UpdateImage()
   Image2->Canvas->FillRect(Image2->ClientRect);
   Image2->Canvas->Font->Name = ComboBox1->Text;
   Image2->Canvas->Font->Size = PreviewFontSize;
-  DrawSymbol(Image2->Canvas, Selected, Image2->ClientRect);
+  DrawSymbol(Image2->Canvas, Selected, Image2->ClientRect, ShowUnicode && Charset != SYMBOL_CHARSET);
 
   //Show character information in status bar
-  if(pGetUNameFunc)
+  if(pGetUNameFunc && Charset != SYMBOL_CHARSET)
   {
-    int Charset = GetTextCharset(Canvas->Handle);
-    if(Charset != SYMBOL_CHARSET)
-    {
-      wchar_t CharInfo[200];
-      wchar_t Char = WideString(AnsiString((char)Selected))[1];
-      pGetUNameFunc(Char, CharInfo);
-      StatusBar1->Panels->Items[0]->Text = WideString(CharInfo);
-    }
-    else
-      StatusBar1->Panels->Items[0]->Text = "";
+    wchar_t CharInfo[200];
+    wchar_t Char = WideString(AnsiString((char)Selected))[1];
+    pGetUNameFunc(Char, CharInfo);
+    StatusBar1->Panels->Items[0]->Text = WideString(CharInfo);
+    StatusBar1->Panels->Items[1]->Text = "U+" + IntToHex(Selected, 4) + " (" + (int)Selected + ")";
   }
-
-  //how character number in status bar
-  StatusBar1->Panels->Items[1]->Text = "U+" + IntToHex(Selected, 4) + " (" + (int)Selected + ")";
+  else
+  {
+    StatusBar1->Panels->Items[0]->Text = "";
+    StatusBar1->Panels->Items[1]->Text = (int)Selected;
+  }
 
   Image1->Repaint();
   Image2->Repaint();

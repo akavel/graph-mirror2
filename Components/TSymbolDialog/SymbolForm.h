@@ -70,7 +70,7 @@ private:	// User declarations
   void SetPosition(int Pos);
   wchar_t LastSymbol();
   void SelectSubset(wchar_t Symbol);
-  void DrawSymbol(TCanvas *Canvas, wchar_t Symbol, const TRect &Rect);
+  void DrawSymbol(TCanvas *Canvas, wchar_t Symbol, const TRect &Rect, bool UseUnicode);
   DYNAMIC void __fastcall ChangeScale(int M, int D);
 
 public:		// User declarations
