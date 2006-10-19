@@ -105,12 +105,14 @@ void TAtiHandler::Connect()
 
     Thread = new TAtiThread(this);
     SerialHandler->Connect();
+    DebugLog(AnsiString("Connected to " + Port));
     SerialHandler->SetDTR();
     SerialHandler->SetRTS();
     BreakSync();
   }
   catch(...)
   {
+    DebugLog(AnsiString("Failed to connect to " + Port));
     if(Thread)
       Thread->PostMessage(atmTerminate);  //The thread will delete itself
     Thread = NULL;
@@ -125,6 +127,7 @@ void TAtiHandler::Disconnect()
     SerialHandler->Disconnect();
     Thread->PostMessage(atmTerminate);  //The thread will delete itself
     Thread = NULL;
+    DebugLog(AnsiString("Disconnected"));
   }
 }
 //---------------------------------------------------------------------------
@@ -138,7 +141,14 @@ void TAtiHandler::SendTelegram(const BYTE *Telegram, unsigned Size, bool UsesAck
   BYTE Data[MaxTelegramSize + 6];
 
   Data[0] = 0x81;
-  Data[1] = (TxSequence << 4) | (UsesAck ? 0x0F : 0x07);
+  if(UsesAck)
+  {
+    Data[1] = (TxSequence << 4) | 0x0F;
+    if(++TxSequence == 8)
+      TxSequence = 0;
+  }
+  else
+    Data[1] = 0x07;
   Data[2] = Size;
   memcpy(Data+3, Telegram, Size);
   unsigned Crc = CalcCrc(Data+1, Data + Size + 3);
@@ -146,13 +156,11 @@ void TAtiHandler::SendTelegram(const BYTE *Telegram, unsigned Size, bool UsesAck
   Data[Size + 4] = Crc;
   Data[Size + 5] = 0x00;
 
-  if(++TxSequence == 8)
-    TxSequence = 0;
   SerialHandler->WriteBuffer(Data, Size + 6);
 
   std::vector<char> Text((Size+6)*2+1);
   BinToHex((char*)Data, &Text[0], Size + 6);
-  AnsiString Str = "Send: ";
+  AnsiString Str = "Tx: ";
   Str += &Text[0];
   DebugLog(Str);
 }
@@ -169,6 +177,7 @@ void __fastcall TAtiHandler::SerialHandlerBreak(TObject *Sender)
   SerialHandler->Purge();
   TxSequence = 0;
   RxSequence = 0;
+  RxBuffer.clear();
 }
 //---------------------------------------------------------------------------
 void __fastcall TAtiHandler::SerialHandlerDataReceived(TSerialHandler *Sender, const BYTE *Data, unsigned Size)
@@ -178,7 +187,7 @@ void __fastcall TAtiHandler::SerialHandlerDataReceived(TSerialHandler *Sender, c
 
   std::vector<char> Text(Size*2+1);
   BinToHex((char*)Data, &Text[0], Size);
-  AnsiString Str = "Data received: ";
+  AnsiString Str = "Rx: ";
   Str += &Text[0];
   DebugLog(Str.c_str());
 
@@ -229,7 +238,7 @@ void __fastcall TAtiHandler::SerialHandlerDataReceived(TSerialHandler *Sender, c
       unsigned Crc = (RxBuffer[Count + 3] << 8) | (RxBuffer[Count + 4]);
       if(Crc != CalcCrc(RxBuffer.begin() + 1, RxBuffer.begin() + Count + 3))
       {
-        DebugLog("CRC error!");
+        DebugLog("Tx: NACK (CRC error)");
         BYTE TxData[3] = {0x81, 0xF1, 0x00}; //Send NACK (CRC error)
         Sender->WriteBuffer(TxData, sizeof(TxData));
         RxBuffer.erase(RxBuffer.begin(), RxBuffer.begin() + Count + 6);
@@ -239,9 +248,20 @@ void __fastcall TAtiHandler::SerialHandlerDataReceived(TSerialHandler *Sender, c
       //Send Ack if requested
       if(RxBuffer[1] & 0x08)
       {
-        BYTE TxData[3] = {0x81, 0xF0, 0x00};
+        BYTE TxData[3] = {0x81, 0xF0, 0x00}; //Send ACK
         Sender->WriteBuffer(TxData, sizeof(TxData));
-        DebugLog("Send: ACK!");
+
+        if(RxSequence == RxBuffer[1] >> 4)
+        {
+          DebugLog("Tx: ACK!");
+          if(++RxSequence == 8)
+            RxSequence = 0;
+        }
+        else
+        {
+          TxData[1] = 0xF3; //Send NACK_BAD_SEQ
+          DebugLog("Tx: NACK_BAD_SEQ!");
+        }
       }
 
       BYTE *Telegram = new BYTE[Count];
@@ -265,22 +285,24 @@ void __fastcall TAtiHandler::Timeout(TObject *Sender)
 //---------------------------------------------------------------------------
 void TAtiHandler::HandleControlFrame()
 {
-  switch(RxBuffer[1] & 0x0F)
+  BYTE Control = RxBuffer[1] & 0x0F;
+  RxBuffer.erase(RxBuffer.begin(), RxBuffer.begin() + 3);
+  switch(Control)
   {
     case 0:
-      DebugLog("ACK");
+      DebugLog("Rx: ACK");
       break;
     case 1:
-      DebugLog("NACK");
+      DebugLog("Rx: NACK");
       break;
     case 2:
-      DoError(aeNackNoBuf, "NACK_NO_BUF received!");
+      DoError(aeNackNoBuf, "Rx: NACK_NO_BUF");
       break;
     case 3:
-      DoError(aeNackBadSeq, "NACK_BAD_SEQ received!");
+      DoError(aeNackBadSeq, "Rx: NACK_BAD_SEQ");
       break;
     case 4:
-      DoError(aeNackOverrun, "NACK_OVERRUN received!");
+      DoError(aeNackOverrun, "Rx: NACK_OVERRUN");
       break;
 
     default:
@@ -288,8 +310,6 @@ void TAtiHandler::HandleControlFrame()
       DoError(aeInvalidFrame, "Invalid control frame received!");
       break;
   }
-
-  RxBuffer.erase(RxBuffer.begin(), RxBuffer.begin() + 3);
 }
 //---------------------------------------------------------------------------
 void TAtiHandler::BreakSync()
@@ -299,6 +319,7 @@ void TAtiHandler::BreakSync()
   Breaking = true;
   TxSequence = 0;
   RxSequence = 0;
+  RxBuffer.clear();
   Timer->Interval = 200;
   Timer->Enabled = true;
 }

@@ -50,8 +50,8 @@ class PACKAGE TAtiHandler : public TComponent
   class TSerialHandler *SerialHandler;
   TAtiThread *Thread;
   TTimer *Timer;
-  unsigned TxSequence;
-  unsigned RxSequence;
+  BYTE TxSequence;
+  BYTE RxSequence;
   std::vector<BYTE> RxBuffer;
   bool Breaking;
 
