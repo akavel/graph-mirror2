@@ -46,7 +46,8 @@
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
-    <CFLAG1 value="-Od -H=b:\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -6 -b- -d -k -y -v -vi- -c -tWM"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -6 -b- -d -k -y -v 
+      -vi- -c -tWM"/>
     <PFLAGS value="-N2..\Obj -N0..\Obj -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
     <AFLAGS value="/mx /w2 /zi"/>
@@ -217,11 +218,6 @@ RemoteDebug=0
 ShowInfoMsgs=0
 LinkDebugVcl=1
 LinkCGLIB=0
-
-[Language]
-ActiveLang=
-ProjectLang=
-RootDir=
 
 [Linker]
 LibPrefix=

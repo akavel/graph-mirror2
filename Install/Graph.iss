@@ -16,12 +16,12 @@ Compression=lzma
 DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
-LicenseFile=E:\Graph\License.txt
-OutputDir=E:\Graph
+LicenseFile=D:\Graph\License.txt
+OutputDir=D:\Graph
 OutputBaseFilename=SetupGraphBeta
 SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.2.0.308
+VersionInfoVersion=4.2.0.321
 
 [Languages]
 Name: "English"; MessagesFile: "compiler:Default.isl"
@@ -47,12 +47,12 @@ Name: "QuickLaunchIcon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 Name: "InstallAllUsers"; Description: "{cm:InstallAllUsers}"; Check: HasAdminRights
 
 [Files]
-Source: "E:\Graph\Graph.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "E:\Graph\Thumbnails.dll"; DestDir: "{app}"; Flags: regserver noregerror ignoreversion restartreplace uninsrestartdelete; Check: not FilesEqual('Thumbnails.dll')
-Source: "E:\Graph\Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
-Source: "E:\Graph\Help\*.hlp"; DestDir: "{app}\Help"; Flags: ignoreversion
-Source: "E:\Graph\Help\*.cnt"; DestDir: "{app}\Help"; Flags: ignoreversion overwritereadonly
-Source: "E:\Graph\Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritereadonly
+Source: "D:\Graph\Graph.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Graph\Thumbnails.dll"; DestDir: "{app}"; Flags: regserver noregerror ignoreversion restartreplace uninsrestartdelete; Check: not FilesEqual('Thumbnails.dll')
+Source: "D:\Graph\Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
+Source: "D:\Graph\Help\*.hlp"; DestDir: "{app}\Help"; Flags: ignoreversion
+Source: "D:\Graph\Help\*.cnt"; DestDir: "{app}\Help"; Flags: ignoreversion overwritereadonly
+Source: "D:\Graph\Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritereadonly
 
 [Icons]
 Name: "{userprograms}\Graph"; Filename: "{app}\Graph.exe"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
@@ -78,6 +78,7 @@ Root: HKCU; Subkey: "Software\Ivan\Graph"; ValueType: dword; ValueName: "Install
 [InstallDelete]
 Type: files; Name: "{app}\uninstall.exe"
 Type: files; Name: "{app}\uninstall.ini"
+Type: files; Name: "{app}\Help\*.gid"
 
 [UninstallRun]
 Filename: "{app}\Graph.exe"; Parameters: "/unregserver"

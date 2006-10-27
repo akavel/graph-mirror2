@@ -10,16 +10,16 @@
 // ************************************************************************ //
 
 // C++ TLBWRTR : $Revision:   1.151.1.0.1.27  $
-// File generated on 14-10-2006 11:10:00 from Type Library described below.
+// File generated on 27-10-2006 19:45:32 from Type Library described below.
 
 // ************************************************************************  //
-// Type Lib: E:\Projects\Graph\Source\Graph.tlb (1)
+// Type Lib: D:\Projects\Graph\Source\Graph.tlb (1)
 // LIBID: {6EA12C95-4B54-4F1B-BB3E-2D0266ECA69E}
 // LCID: 0
 // Helpfile: 
 // HelpString: Graph 
 // DepndLst: 
-//   (1) v2.0 stdole, (D:\WINNT\system32\stdole2.tlb)
+//   (1) v2.0 stdole, (C:\WINDOWS\system32\stdole2.tlb)
 // ************************************************************************ //
 #ifndef   Graph_TLBH
 #define   Graph_TLBH
