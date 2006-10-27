@@ -7,7 +7,7 @@ findstr /v "Project-Id-Version:" temp3.po > temp4.po
 
 echo msgid "" > Template.po
 echo msgstr "Project-Id-Version: Graph\n" >> Template.po
-cat temp4.po >> Template.po
+type temp4.po >> Template.po
 
 del temp.po
 del temp2.po

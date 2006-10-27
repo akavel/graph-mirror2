@@ -1,11 +1,11 @@
 # Spanish translation for Graph
 # This file is distributed under the same license as the Graph package.
 # Ivan Johansen <graph@padowan.dk>, 2004.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2006-10-08 21:22\n"
+"POT-Creation-Date: 2006-10-27 23:48\n"
 "PO-Revision-Date: 2006-03-19 20:01+0100\n"
 "Last-Translator: \n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
@@ -2081,7 +2081,9 @@ msgid "Argument produced a function result with total loss of precision."
 msgstr ""
 "El argumento introducido produjo un resultado con total pérdida de precisión."
 
-msgid "The symbol '%s' was not found or has the wrong number of argument."
+msgid ""
+"The custom function/constant '%s' was not found or has the wrong number of "
+"arguments."
 msgstr ""
 
 msgid "Too many recursive calls."
