@@ -2,11 +2,11 @@
 # Copyright (C) 2004 Ivan Johansen
 # This file is distributed under the same license as the Graph package.
 # Ivan Johansen <graph@padowan.dk>, 2004.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2006-10-08 21:22\n"
+"POT-Creation-Date: 2006-10-27 23:48\n"
 "PO-Revision-Date: 2006-01-14 12:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2014,7 +2014,9 @@ msgstr "Falha no cálculo."
 msgid "Argument produced a function result with total loss of precision."
 msgstr "O argumento produziu um resultado totalmente sem precisão."
 
-msgid "The symbol '%s' was not found or has the wrong number of argument."
+msgid ""
+"The custom function/constant '%s' was not found or has the wrong number of "
+"arguments."
 msgstr ""
 
 msgid "Too many recursive calls."
