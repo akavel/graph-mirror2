@@ -83,4 +83,4 @@ File = open("Graph.iss", "w")
 File.writelines(Lines)
 File.close()
 
-os.system('"d:/Program Files/Inno Setup 5/iscc.exe" /Q Graph.iss')
+os.system('"c:\progra~1\\Inno Setup 5\\iscc.exe" /Q Graph.iss')

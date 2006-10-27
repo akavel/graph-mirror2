@@ -25,8 +25,8 @@
     <USERDEFINES value="_DEBUG"/>
     <SYSDEFINES value="NO_STRICT;_NO_VCL"/>
     <MAINSOURCE value="Test.bpf"/>
-    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;E:\Projects\boost"/>
-    <LIBPATH value="$(BCB)\Projects\Lib;E:\Projects\Func32\Test;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;..\..\..\boost"/>
+    <LIBPATH value="$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib"/>
     <WARNINGS value="-w-par"/>
     <OTHERFILES value=""/>
   </MACROS>
@@ -83,13 +83,16 @@ ProductVersion=1.0.0.0
 Comments=
 
 [HistoryLists\hlIncludePath]
-Count=2
-Item0=$(BCB)\include;$(BCB)\include\vcl;E:\Projects\boost
-Item1=E:\Projects\Func32\Test;$(BCB)\include;$(BCB)\include\vcl
+Count=4
+Item0=$(BCB)\include;$(BCB)\include\vcl;..\..\..\boost
+Item1=$(BCB)\include;$(BCB)\include\vcl;..\..\boost
+Item2=$(BCB)\include;$(BCB)\include\vcl;E:\Projects\boost
+Item3=E:\Projects\Func32\Test;$(BCB)\include;$(BCB)\include\vcl
 
 [HistoryLists\hlLibraryPath]
-Count=1
-Item0=$(BCB)\Projects\Lib;E:\Projects\Func32\Test;$(BCB)\lib\obj;$(BCB)\lib
+Count=2
+Item0=$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item1=$(BCB)\Projects\Lib;E:\Projects\Func32\Test;$(BCB)\lib\obj;$(BCB)\lib
 
 [HistoryLists\hlDebugSourcePath]
 Count=1
@@ -118,10 +121,5 @@ RemoteDebug=0
 ShowInfoMsgs=0
 LinkDebugVcl=0
 LinkCGLIB=0
-
-[Language]
-ActiveLang=
-ProjectLang=
-RootDir=
   </IDEOPTIONS>
 </PROJECT>

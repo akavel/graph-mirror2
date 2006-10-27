@@ -1,5 +1,5 @@
 @echo off
-set hcw="D:\Program Files\Borland\CBuilder6\Help\Tools\hcw.exe"
+set hcw="%ProgramFiles%\Borland\CBuilder6\Help\Tools\hcw.exe"
 %hcw% /C /E English\Graph.hpj
 %hcw% /C /E Danish\Graph.hpj
 %hcw% /C /E German\Graph.hpj
