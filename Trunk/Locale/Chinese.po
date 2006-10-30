@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-01-22 08:23+0800\n"
+"PO-Revision-Date: 2006-10-29 21:54+0800\n"
 "Last-Translator: djj <djj@cygsh.tw>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,20 +20,14 @@ msgid "Area"
 msgstr "面積"
 
 #, fuzzy
-msgid ""
-"Enter the start coordinate or mark the range on the graph itself with the "
-"mouse."
+msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "輸入起始座標或用滑鼠標示圖片範圍"
 
 #, fuzzy
-msgid ""
-"Enter the end coordinate or mark the range on the graph itself with the "
-"mouse."
+msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
 msgstr "輸入終點座標或用滑鼠標示圖片範圍"
 
-msgid ""
-"Area or length of path calculated for the given range using Simpson's "
-"formula."
+msgid "Area or length of path calculated for the given range using Simpson's formula."
 msgstr "利用 Simpson's 公式計算給定範圍的面積或者路徑長度。"
 
 msgid "Snap to:"
@@ -54,9 +48,7 @@ msgstr "在輸入t參數時，y(t)導函數"
 msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr "在t參數輸入之後所求得的函數斜率。"
 
-msgid ""
-"Enter the independent variable for which you want to evaluate the function, "
-"or click on the function in the main window."
+msgid "Enter the independent variable for which you want to evaluate the function, or click on the function in the main window."
 msgstr "輸入一個獨立變數用來求函數解，或者點選在主畫面當中的函數。"
 
 msgid "Select where the cursor will be placed when you click on the image."
@@ -95,9 +87,7 @@ msgstr "在輸入特定角度時，此函數之導函數"
 msgid "The slope of the function evaluated for the given angle."
 msgstr "此為給定角度的函數之斜率"
 
-msgid ""
-"Enter a number for which you want to evaluate the function, or click on the "
-"function in the main window."
+msgid "Enter a number for which you want to evaluate the function, or click on the function in the main window."
 msgstr "輸入一個你想要用來求解方程式使用的數字，或者點選在主視窗的函數"
 
 msgid "Extremum"
@@ -107,12 +97,10 @@ msgid "This is the function evaluated for the entered x-value."
 msgstr "此為帶入x值求解所用的函數"
 
 #, fuzzy
-msgid ""
-"This is the first derivative of the function evaluated for the entered value."
+msgid "This is the first derivative of the function evaluated for the entered value."
 msgstr "這是函數的第一導函數"
 
-msgid ""
-"This is the functions second derivative evaluated for the entered value."
+msgid "This is the functions second derivative evaluated for the entered value."
 msgstr "這是函數的第二導函數"
 
 #, fuzzy
@@ -165,15 +153,13 @@ msgstr "放置"
 msgid "Above x-axis"
 msgstr "x 軸之上"
 
-msgid ""
-"Place the label directly above the x-axis on the right side of the image."
+msgid "Place the label directly above the x-axis on the right side of the image."
 msgstr "把標籤放在x軸上方及圖形右側"
 
 msgid "Below x-axis"
 msgstr "x 軸邊下"
 
-msgid ""
-"Place the label directly below the x-axis on the right side of the image."
+msgid "Place the label directly below the x-axis on the right side of the image."
 msgstr "把標籤放在x軸下方及圖形右側"
 
 msgid "Left of y-axis"
@@ -270,9 +256,7 @@ msgstr "複製選擇的函數或者座標點數列到剪貼簿上。"
 msgid "Paste"
 msgstr " 貼上"
 
-msgid ""
-"Pastes a function or point series from the clipboard into the coordinate "
-"system."
+msgid "Pastes a function or point series from the clipboard into the coordinate system."
 msgstr "將剪貼簿上的函數或者座標點數列貼到這個座標系上。"
 
 msgid "Copy image"
@@ -291,7 +275,7 @@ msgid "Options..."
 msgstr "選項..."
 
 msgid "Edit various options for the interface and program features."
-msgstr ""
+msgstr "編輯介面與程式特性選項"
 
 msgid "Insert function..."
 msgstr "插入函數"
@@ -367,9 +351,7 @@ msgid "Square"
 msgstr "正方形"
 
 #, fuzzy
-msgid ""
-"Zoom to scale the axes equally. This will show a plotted circle in its "
-"correct relation instead of an ellipse."
+msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
 msgstr "縮放到座標軸相同，這會呈現圓形的關係而非橢圓"
 
 msgid "Standard"
@@ -496,10 +478,8 @@ msgstr "呈現常見問題與解答清單"
 msgid "Insert label..."
 msgstr "插入標籤"
 
-msgid ""
-"Insert a text label (select and click in the main window where you want the "
-"label)."
-msgstr ""
+msgid "Insert a text label (select and click in the main window where you want the label)."
+msgstr "插入一個文字標籤(在主視窗中選擇並點選要標籤的位置)"
 
 msgid "Donate"
 msgstr "捐助"
@@ -556,12 +536,11 @@ msgstr "自訂函數"
 msgid "Create custom functions and constants for use in graphs."
 msgstr "新建繪圖用的個別化函數及常數"
 
-#, fuzzy
 msgid "Animate..."
-msgstr "捐助"
+msgstr "繪製動畫"
 
 msgid "Create an animation by variating a constant."
-msgstr ""
+msgstr "用改變常數來新增動畫"
 
 msgid "Graph file..."
 msgstr "圖檔..."
@@ -682,9 +661,7 @@ msgid "Description:"
 msgstr "敘述:"
 
 #, fuzzy
-msgid ""
-"Write a descriptive text to show in the legend. If empty the equation will "
-"be used."
+msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
 msgstr "寫敘述文字到圖例說明當中，在等式的時候會使用到。"
 
 msgid "Properties"
@@ -700,13 +677,11 @@ msgid "Width:"
 msgstr "寬度:"
 
 #, fuzzy
-msgid ""
-"Select the style used for drawing the inequality. Not used for equations."
+msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "選擇不等式的形式。不能套用到等式當中。"
 
 #, fuzzy
-msgid ""
-"Width in pixels of the equation line or the borderline of the inequality."
+msgid "Width in pixels of the equation line or the borderline of the inequality."
 msgstr "等式的像素寬度，不可以套用到不等式。"
 
 #, fuzzy
@@ -771,14 +746,10 @@ msgstr "開始:"
 msgid "End:"
 msgstr "結束:"
 
-msgid ""
-"Select marker to show at the start of the interval. Only used if an argument "
-"range is specified."
+msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
 msgstr "選擇間隔的起始點標示"
 
-msgid ""
-"Select marker to show at the end of the interval. Only used if an argument "
-"range is specified."
+msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
 msgstr "選擇間隔的終點標示"
 
 msgid "Insert trendline"
@@ -857,22 +828,16 @@ msgstr "編輯模型"
 msgid "Enter a function model to base the trendline on."
 msgstr "輸入一個呈現在圖例說明的敘述"
 
-msgid ""
-"Type a value in the Intercept box to specify the point where you want the "
-"trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendlines."
-msgstr ""
+msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
+msgstr "在截距對話框輸入一個值,用來定義一個趨勢線與y軸相交的點。而這個只適用於線性、多項式與指數趨勢線。"
 
-#, fuzzy
 msgid "Intercept ="
-msgstr "網路"
+msgstr "截距="
 
 msgid "Insert point series"
 msgstr "插入座標點數列"
 
-msgid ""
-"The name of the point series, which is shown in the list to the left of the "
-"coordinate system."
+msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
 msgstr "座標點數列的名稱，此名稱會呈現在座標系的左邊列。"
 
 msgid "Series"
@@ -905,9 +870,7 @@ msgstr "選擇標示的顏色"
 msgid "Interpolation:"
 msgstr "中間插入："
 
-msgid ""
-"Choose the style of lines to be drawn between the points. You may also "
-"choose not to draw any lines."
+msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
 msgstr "選擇座標點之間的線條形式，你也可以不要畫任何線條。"
 
 #, fuzzy
@@ -1013,9 +976,7 @@ msgstr "剪下選擇的文字到剪貼簿上"
 msgid "Copy the selected text to the clipboard."
 msgstr "複製選擇的文字到剪貼簿上"
 
-msgid ""
-"Paste text from the clipboard into the grid. Other cells may be overwritten "
-"by the text from the clipboard."
+msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
 msgstr "把文字貼到表格上，而且所有的文字都會被覆蓋"
 
 msgid "Erase selected cells."
@@ -1052,8 +1013,7 @@ msgstr "輸出選擇的資料到檔案"
 msgid "Calculate table"
 msgstr "計算表格"
 
-msgid ""
-"The step value. This is the distance between the x-values in the interval."
+msgid "The step value. This is the distance between the x-values in the interval."
 msgstr "間隔值，用來設定 x 值的間隔數"
 
 msgid "The first x-value in the interval."
@@ -1099,9 +1059,7 @@ msgstr "函數與y軸間範圍陰影"
 msgid "Shades the area inside the function."
 msgstr "函數內部範圍陰影"
 
-msgid ""
-"Shades the area between the main function and the function selected in the "
-"list to the right."
+msgid "Shades the area between the main function and the function selected in the list to the right."
 msgstr "增加主要函數和選定的左邊函數列之間區塊陰影。"
 
 msgid "Above function"
@@ -1175,8 +1133,7 @@ msgid "2nd function:"
 msgstr "第2個函數："
 
 #, fuzzy
-msgid ""
-"Select the second function when you want a shading between two functions."
+msgid "Select the second function when you want a shading between two functions."
 msgstr "請選擇第二個函數套用於想要呈現兩個函數之間的陰影。"
 
 msgid "Shading range for 2nd function"
@@ -1210,14 +1167,13 @@ msgid "Image height:"
 msgstr "圖片高度："
 
 msgid "Set a custom image width."
-msgstr ""
+msgstr "設定自訂影像寬度"
 
 msgid "Set a custom image height."
-msgstr ""
+msgstr "設定自訂影像高度"
 
-msgid ""
-"Choose to use the same size as shown on the screen or a custom image size."
-msgstr ""
+msgid "Choose to use the same size as shown on the screen or a custom image size."
+msgstr "選用與顯示在銀幕或自訂影像相同的尺寸"
 
 #, fuzzy
 msgid "Image size"
@@ -1231,19 +1187,17 @@ msgstr "文字大小"
 msgid "Custom size"
 msgstr "自訂:"
 
-msgid ""
-"Progressive encoding allows viewers to see a rough copy of the image while "
-"it is downloaded."
-msgstr ""
+msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
+msgstr "漸進式的編碼可以讓下載圖片時觀看粗略的影像"
 
 msgid "Encoding"
-msgstr "編碼當中"
+msgstr "編碼中"
 
 msgid "Progressive"
-msgstr "進行當中"
+msgstr "進行中"
 
 msgid "Select a compression quality."
-msgstr ""
+msgstr "選擇壓縮品質"
 
 msgid "Quality"
 msgstr "品質"
@@ -1253,10 +1207,10 @@ msgid "Paper size:"
 msgstr "文字大小"
 
 msgid "Choose paper orientation."
-msgstr ""
+msgstr "選擇紙張方向"
 
 msgid "Orientation"
-msgstr "導向"
+msgstr "方向"
 
 msgid "Portrait"
 msgstr "畫像"
@@ -1275,44 +1229,40 @@ msgstr "選擇此使用軸線設定作為以後的預設值"
 msgid "Save as default"
 msgstr "儲存作為預設值"
 
-#, fuzzy
 msgid "Animate"
-msgstr "捐助"
+msgstr "繪製動畫"
 
-#, fuzzy
 msgid "Constant:"
-msgstr " 限制條件:"
+msgstr "常數"
 
 msgid "Choose a constant to change between each frame."
-msgstr ""
+msgstr "選擇用來改變畫面間的常數"
 
 #, fuzzy
 msgid "Step:"
 msgstr "間隔數:"
 
-#, fuzzy
 msgid "The first value of the constant"
-msgstr "間隔的第一個x值"
+msgstr "間隔的第一個常數"
 
-#, fuzzy
 msgid "The last value of the constant."
-msgstr "間隔的最後x值"
+msgstr "間隔的最後常數"
 
 msgid "The chosen constant is changed by this value between each frame."
-msgstr ""
+msgstr "這個選擇的常數已經被畫面間的值改變"
 
 #, fuzzy
 msgid "Image information"
 msgstr "圖形選項"
 
 msgid "Frames/second:"
-msgstr ""
+msgstr "畫面/秒:"
 
 msgid "Number of frames per second used when the animation is played."
-msgstr ""
+msgstr "動畫播放時每秒使用的畫面數"
 
 msgid "Working"
-msgstr ""
+msgstr "作用中"
 
 msgid "About Graph"
 msgstr "關於Graph"
@@ -1329,13 +1279,8 @@ msgstr "Email:"
 msgid "Build"
 msgstr "Build"
 
-msgid ""
-"This is free software, and you are welcome to redistribute it under the "
-"terms in the GNU General Public License. Please send bug reports and "
-"suggestions to the programmer."
-msgstr ""
-"這是免費軟體，歡迎你在GNU 通用公眾使用的範圍下使用。並請回報問題和建議給程式"
-"設計師。"
+msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
+msgstr "這是免費軟體，歡迎你在GNU 通用公眾使用的範圍下使用。並請回報問題和建議給程式設計師。"
 
 #, fuzzy
 msgid "The newest version as well as the source code are available at:"
@@ -1366,25 +1311,23 @@ msgid "Step"
 msgstr "間隔數:"
 
 msgid "Speed"
-msgstr ""
+msgstr "速度"
 
 msgid "Change the speed used to play the animation."
-msgstr ""
+msgstr "改變動畫播放的速度"
 
 #, fuzzy
 msgid "Repeat"
 msgstr "實數"
 
 msgid "Repeat playing the animation until manually stopped."
-msgstr ""
+msgstr "重複播放動畫直到手動停止"
 
 msgid "Auto reverse"
-msgstr ""
+msgstr "自動倒帶"
 
-msgid ""
-"Play backwards when the end of the animation is reached. This is most useful "
-"in combination with the \"Repeat\" command."
-msgstr ""
+msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
+msgstr "當動畫播放結束返回，這與\"重複\"指令一起最有用。"
 
 #, fuzzy
 msgid "Open an animation file."
@@ -1486,7 +1429,7 @@ msgid "Show grid"
 msgstr "顯示格線"
 
 msgid "The y-axis cross at x="
-msgstr "y 軸與x軸交插在 x="
+msgstr "y 軸與x軸交叉在 x="
 
 msgid "Minimum y-value."
 msgstr "最小 y 值"
@@ -1504,8 +1447,7 @@ msgid "Show units on the y-axis."
 msgstr "顯示y軸上的單位"
 
 #, fuzzy
-msgid ""
-"Show the label at the top of the main window, to the right of the y-axis."
+msgid "Show the label at the top of the main window, to the right of the y-axis."
 msgstr "在視窗的上端靠近y軸的地方顯示標籤"
 
 #, fuzzy
@@ -1528,9 +1470,7 @@ msgstr "設定"
 msgid "Title:"
 msgstr "標題："
 
-msgid ""
-"Choose if you want to show the axes, and if you want to show them crossed or "
-"at the left and bottom of the image."
+msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
 msgstr "選擇是否要顯示軸線，以及是否要顯示為交叉或者放置於左邊或底端。"
 
 msgid "Axes style"
@@ -1546,8 +1486,7 @@ msgid "Boxed"
 msgstr "盒狀"
 
 #, fuzzy
-msgid ""
-"Choose if trigonometric functions should calculate in radians or degrees."
+msgid "Choose if trigonometric functions should calculate in radians or degrees."
 msgstr "選擇三角函數的計算使用弧度或者角度"
 
 msgid "Trigonometry"
@@ -1571,9 +1510,7 @@ msgstr "選擇圖例說明放置的位置"
 msgid "Legend placement"
 msgstr "圖例說明放置"
 
-msgid ""
-"Check this to use complex numbers for calculations. Notice that this will "
-"slow graphing down."
+msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
 msgstr "確認使用複數計算，而這會讓繪圖速度變慢。"
 
 msgid "Calculate with complex numbers"
@@ -1658,12 +1595,8 @@ msgstr "關聯 .grf 檔案"
 msgid "The number of most recent used files shown in the File menu."
 msgstr "檔案目錄中最近使用檔案數目"
 
-msgid ""
-"Save window position when the program quits. This setting is used the next "
-"time the program is used.|Save window state on exit."
-msgstr ""
-"在關閉程式時候儲存視窗位置。這個設定可以讓下次開啟程式時候執行。|退出時儲存視"
-"窗狀態"
+msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
+msgstr "在關閉程式時候儲存視窗位置。這個設定可以讓下次開啟程式時候執行。|退出時儲存視窗狀態"
 
 msgid "Save workspace on exit"
 msgstr "退出時儲存工作空間"
@@ -1693,11 +1626,8 @@ msgstr "顯示工具提示"
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
 msgstr "最大的還原步驟次數，如果設定為0的話就是無法還原。"
 
-msgid ""
-"If checked the program will contact a web server when the program is started "
-"to see if a newer version is available."
-msgstr ""
-"如果被勾選了，則此程式會主動在被啟動時到網站上去尋找是否有新可用的版本。"
+msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
+msgstr "如果被勾選了，則此程式會主動在被啟動時到網站上去尋找是否有新可用的版本。"
 
 msgid "Check for new version of Graph at startup"
 msgstr "在啟動  Graph 時就檢查新版本"
@@ -1706,10 +1636,8 @@ msgstr "在啟動  Graph 時就檢查新版本"
 msgid "Select the language to use for the user interface."
 msgstr "選擇陰影的樣式"
 
-msgid ""
-"This is used to scale the user interface if you are having problems reading "
-"the text."
-msgstr ""
+msgid "This is used to scale the user interface if you are having problems reading the text."
+msgstr "當你觀看文字有困難的時候可以用來縮放使用者介面"
 
 msgid "Insert function"
 msgstr "插入函數"
@@ -1741,11 +1669,8 @@ msgstr "繪圖的計算步驟數目"
 msgid "Draw type:"
 msgstr "繪圖型態:"
 
-msgid ""
-"Choose Lines if you want the calculated points for the graph to be "
-"connected. Choose Dots if you only want to show a dot at each point."
-msgstr ""
-"如果想要計算座標點被連起來，請選擇線條。如果想只想要呈現圓點而已，請選擇點。"
+msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
+msgstr "如果想要計算座標點被連起來，請選擇線條。如果想只想要呈現圓點而已，請選擇點。"
 
 #, fuzzy
 msgid "Automatic"
@@ -1951,10 +1876,8 @@ msgstr "求解失敗"
 msgid "Argument produced a function result with total loss of precision."
 msgstr "參數產生了一個函數結果為遺失所有精確度"
 
-msgid ""
-"The custom function/constant '%s' was not found or has the wrong number of "
-"arguments."
-msgstr ""
+msgid "The custom function/constant '%s' was not found or has the wrong number of arguments."
+msgstr "自訂的函數/常數 '%s'沒有發現或者錯誤的參數"
 
 msgid "Too many recursive calls."
 msgstr "太多遞迴呼叫"
@@ -1963,7 +1886,7 @@ msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "運算子 '%s' 不可以被放在這裡"
 
 msgid "Right bracket missing."
-msgstr ""
+msgstr "缺少右括號"
 
 msgid "Invalid number of arguments supplied for function '%s'"
 msgstr "對此函數'%s'提供了無效的參數值"
@@ -2035,9 +1958,7 @@ msgstr "沒有進一步特定的錯誤出現在計算過程。"
 msgid "No solution found. Try another guess or another model."
 msgstr "無解,請試用其他的假設或者模式"
 
-msgid ""
-"Internal error. Please notify the programmer with as much information as "
-"possible."
+msgid "Internal error. Please notify the programmer with as much information as possible."
 msgstr "內部錯誤,請告知程式人員獲得更多的資訊"
 
 msgid "You need to enter a name for the function/constant."
@@ -2045,8 +1966,7 @@ msgstr "你需要輸入一個函數或者常數的名稱"
 
 msgid ""
 "Invalid function/constant name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always "
-"start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 "In addition you are not allowed to redefine built-in names."
 msgstr ""
 "無效的 函數/常數名稱 '%s'。\n"
@@ -2058,8 +1978,7 @@ msgstr "你需要輸入一個參數的名稱"
 
 msgid ""
 "Invalid argument name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always "
-"start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 " In addition you are not allowed to use built-in names as argument names."
 msgstr ""
 "無效的參數名稱 '%s' \n"
@@ -2241,27 +2160,19 @@ msgid "The step value for t must be a number greater than 0."
 msgstr "間隔數值 t 必須要大於0"
 
 #, fuzzy
-msgid ""
-"The minimum value for the x-axis must be greater than 0, when the x-axis is "
-"logarithmic scaled."
+msgid "The minimum value for the x-axis must be greater than 0, when the x-axis is logarithmic scaled."
 msgstr "當x軸是對數尺度時，x 軸的最小數值需要大於0"
 
 #, fuzzy
-msgid ""
-"The cross point of the y-axis must be greater than 0, when the x-axis is "
-"logarithmic scaled."
+msgid "The cross point of the y-axis must be greater than 0, when the x-axis is logarithmic scaled."
 msgstr "當x軸是對數刻度時，y 軸的交叉點值比需要大於0。"
 
 #, fuzzy
-msgid ""
-"The minimum value for the y-axis must be greater than 0, when the y-axis is "
-"logarithmic scaled."
+msgid "The minimum value for the y-axis must be greater than 0, when the y-axis is logarithmic scaled."
 msgstr "當y軸是對數刻度時，y軸的最小值必須要大於0。"
 
 #, fuzzy
-msgid ""
-"The cross point of the x-axis must be greater than 0, when the y-axis is "
-"logarithmic scaled."
+msgid "The cross point of the x-axis must be greater than 0, when the y-axis is logarithmic scaled."
 msgstr "當y軸是對數刻度時，x軸的交叉點必須要大於0。"
 
 msgid "'Recent files' must be between 0 and 9."
@@ -2281,9 +2192,7 @@ msgstr "寬度必須要為一大於0的整數"
 msgid "Error in width"
 msgstr "寬度錯誤"
 
-msgid ""
-"The end of interval must be greater than the start of interval and %s must "
-"be greater than 0."
+msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
 msgstr "間隔終點必須大於間隔起始點而且 %s 必須大於0。"
 
 msgid "The maximum length of text has been reached."
@@ -2341,9 +2250,7 @@ msgstr "每一個座標點需要有x 和 y 座標"
 msgid "\"%s\" is not a valid number."
 msgstr "\"%s\"  不是一個有效的數字"
 
-msgid ""
-"You didn't add any points. You need to specify some x- and y-coordinates in "
-"the grid."
+msgid "You didn't add any points. You need to specify some x- and y-coordinates in the grid."
 msgstr "你沒有增加任何座標點，你需要在格線上指明 x和y座標"
 
 msgid "Edit point series"
@@ -2413,8 +2320,7 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"If you don't want to be asked again, this feature may be disabled from the "
-"Edit|Options dialog."
+"If you don't want to be asked again, this feature may be disabled from the Edit|Options dialog."
 msgstr ""
 "\n"
 "\n"
@@ -2431,10 +2337,8 @@ msgstr "評論:"
 msgid "(All Commands)"
 msgstr "(所有動作)"
 
-msgid ""
-"To add a command to a toolbar simply select a category and drag the command "
-"out of this dialog box to a toolbar."
-msgstr ""
+msgid "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
+msgstr "要增加一個命令到工具列上只要選擇類別並且拖曳此命令到工具列上"
 
 #, fuzzy
 msgid "Edit f'(x)"
@@ -2445,313 +2349,163 @@ msgid "Edit trendline"
 msgstr "編輯關係式"
 
 #, fuzzy
-msgid ""
-"This Tip of the day can give you a lot of information about the program that "
-"most users don't know."
+msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "今天的提示給你大部分使用者通常不知道的訊息"
 
 #, fuzzy
-msgid ""
-"You can send suggestions for future versions, bug reports and comments to "
-"graph@padowan.dk"
+msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 msgstr "你可以把建議和評論寄信到 graph@padowan.dk"
 
 #, fuzzy
-msgid ""
-"You can customize the toolbar by right clicking on it and select 'Customize "
-"toolbar'."
+msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
 msgstr "你可以自訂工具列，方法為在上面按滑鼠右鍵，然後選擇[自訂工具列]。"
 
-msgid ""
-"Instead of deleting a function you can make it invisible by right clicking "
-"on it in the function list and removing the check at the 'Visible' menu item."
-msgstr ""
-"你可以在函數列那裡對某函數按滑鼠右鍵，然後移除勾選'顯示'來讓此函數隱藏。"
+msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
+msgstr "你可以在函數列那裡對某函數按滑鼠右鍵，然後移除勾選'顯示'來讓此函數隱藏。"
 
 msgid "You can paste images into a text label."
 msgstr "你可以貼圖到文字標籤"
 
-msgid ""
-"Text labels can contain any kind of OLE objects, for example Microsoft "
-"Equation. When editing a label right click in the editing area and select "
-"'Insert object'."
-msgstr ""
-"文字標籤可以包含任何  OLE 物件，例如 Microsoft 數學方程式編輯器。 當編輯一個"
-"標籤，點選滑鼠右鍵然後選擇\"插入物件\"。"
+msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
+msgstr "文字標籤可以包含任何  OLE 物件，例如 Microsoft 數學方程式編輯器。 當編輯一個標籤，點選滑鼠右鍵然後選擇\"插入物件\"。"
 
-msgid ""
-"You can export points from a point series to a file that can be read by "
-"other programs, for example Microsoft Excel. When editing the point series "
-"select the points, right click and choose 'Export to file'."
-msgstr ""
-"你可以輸出座標點數列到一個檔案讓其他程式運用，例如 Microsoft Excel 。方式為在"
-"編輯座標點數列的視窗，按滑鼠右鍵然後選擇'輸出到檔案'。"
+msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
+msgstr "你可以輸出座標點數列到一個檔案讓其他程式運用，例如 Microsoft Excel 。方式為在編輯座標點數列的視窗，按滑鼠右鍵然後選擇'輸出到檔案'。"
 
 #, fuzzy
-msgid ""
-"A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)"
-"=t or as the relation x=5."
+msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
 msgstr "在x=5的地方畫垂直線，可以使用 x(t)=5，y(t)=t 或者關係式 x=5 來表示。"
 
-msgid ""
-"You can use Zoom|Square to make the axes look equally scaled. This is "
-"especially useful when drawing circles and similar functions."
-msgstr ""
-"你可以使用[縮放]-->[正方形] 讓軸線看起來相等，這對於畫圓形或者相似的函數特別"
-"有用。"
+msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
+msgstr "你可以使用[縮放]-->[正方形] 讓軸線看起來相等，這對於畫圓形或者相似的函數特別有用。"
 
 msgid "You can find a list of all available functions in the help."
 msgstr "你可以在[說明]找到很多可用的函數"
 
-msgid ""
-"You can combine two functions to one using 'if'. For example the function f"
-"(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
-msgstr ""
-"你可以利用 'if' 來結合兩個函數。例如， 函數 f(x)=x , x<1 和函數 f(x) =x^2 ,"
-"x>=1兩者可以寫成  f(x)=if(x<1,x,x^2)。"
+msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+msgstr "你可以利用 'if' 來結合兩個函數。例如， 函數 f(x)=x , x<1 和函數 f(x) =x^2 ,x>=1兩者可以寫成  f(x)=if(x<1,x,x^2)。"
 
-msgid ""
-"You can import the contents of another Graph file into the current "
-"coordinate system using 'File|Import|Graph file'."
-msgstr ""
-"你可以利用 [檔案]-->[輸入]-->[Graph 檔案]來輸入另外的 Graph檔案到現在編輯的座"
-"標系上。"
+msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
+msgstr "你可以利用 [檔案]-->[輸入]-->[Graph 檔案]來輸入另外的 Graph檔案到現在編輯的座標系上。"
 
-msgid ""
-"If you check 'Save as default' in the Axes dialog the current settings will "
-"be used as default when creating new files."
-msgstr ""
-"如果你在[座標軸]對話框勾選\"儲存為預設值\"，則現在的設定將會成為以後新增檔案"
-"的預設值。"
+msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new files."
+msgstr "如果你在[座標軸]對話框勾選\"儲存為預設值\"，則現在的設定將會成為以後新增檔案的預設值。"
 
-msgid ""
-"While you hold down the Ctrl key, you can use the arrow keys to move the "
-"system."
+msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
 msgstr "如果你按住 Ctrl 鍵，你可以利用方向鍵移動座標系。"
 
-msgid ""
-"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
-"and out."
+msgid "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."
 msgstr "當你按住 Ctrl鍵，你可以利用 + 和 - 兩個按鍵來縮放視窗。"
 
-msgid ""
-"You can use the scroll button on your mouse to zoom in and out at the "
-"position of the mouse cursor."
+msgid "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."
 msgstr "你可以用滑鼠滾輪來縮放視窗。"
 
-msgid ""
-"If you don't want an item shown in the legend, you can right click on the "
-"item in the function list and deselect 'Show in legend'."
-msgstr ""
-"如果你不想要讓某一個項目出現在圖例說明，你可以在函數列上按滑鼠右鍵，然後取"
-"消'顯示在圖例說明'的選項。"
+msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
+msgstr "如果你不想要讓某一個項目出現在圖例說明，你可以在函數列上按滑鼠右鍵，然後取消'顯示在圖例說明'的選項。"
 
-msgid ""
-"If you want the axes shown to the left and bottom of the image, you can "
-"choose Axes style as Boxed in the Settings tab of the Axes dialog."
-msgstr ""
-"如果你想要軸線顯示在畫面的左下方，你可以在軸線對話框，選擇軸線樣式為 '盒狀'。"
+msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
+msgstr "如果你想要軸線顯示在畫面的左下方，你可以在軸線對話框，選擇軸線樣式為 '盒狀'。"
 
 #, fuzzy
-msgid ""
-"Graph can save the shown coordinate system in five different image formats: "
-"bmp, emf, png, jpg and pdf."
+msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
 msgstr "Graph 可以儲存顯示的座標系為四種不同的圖形格式: bmp, emf, png 和 jpg。"
 
-msgid ""
-"You can use 'Edit|Copy image' to copy the coordinate system to the clipboard "
-"and paste it into another program."
-msgstr ""
-"你可以使用 [編輯]-->[複製圖形] 把座標系複製到剪貼簿並且用來貼到其他的程式。"
+msgid "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."
+msgstr "你可以使用 [編輯]-->[複製圖形] 把座標系複製到剪貼簿並且用來貼到其他的程式。"
 
-msgid ""
-"You can open a saved grf-file in a new instance of the program by double "
-"clicking on it in Explorer."
+msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
 msgstr "你可以用滑鼠快速點兩下的方式，開啟 grf 檔案到一個新的圖例當中。"
 
-msgid ""
-"You can drag a grf-file from explorer into an open instance of Graph to open "
-"the file."
+msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
 msgstr "你可以用滑鼠拖曳的方式把一個 grf 檔案放到一個圖例當中來開啟。"
 
-msgid ""
-"Graph will remember the size and placement of the main window between "
-"executions. This can be disabled from the Options dialog."
-msgstr ""
-"Graph 可以紀錄執行時視窗的大小和放置，如果想要取消的話可以在選項對話框那設"
-"定。"
+msgid "Graph will remember the size and placement of the main window between executions. This can be disabled from the Options dialog."
+msgstr "Graph 可以紀錄執行時視窗的大小和放置，如果想要取消的話可以在選項對話框那設定。"
 
-msgid ""
-"Calc|Table can be used to create a table with evaluation values for a "
-"function."
+msgid "Calc|Table can be used to create a table with evaluation values for a function."
 msgstr "[計算]-->[表格]可以用來新建一個函數求值的表格。"
 
-msgid ""
-"A part or the whole evaluation table can be exported to a file by right "
-"clicking and selecting 'Export to file'. It can afterwards be opened in "
-"other programs like Microsoft Excel."
-msgstr ""
-"利用按滑鼠右鍵，然後選擇'輸出到檔案'的方式，部分或者全部的求解表格資料可以被"
-"輸出到檔案。然後可以被其他的程式如 Microsoft Excel 開啟。"
+msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
+msgstr "利用按滑鼠右鍵，然後選擇'輸出到檔案'的方式，部分或者全部的求解表格資料可以被輸出到檔案。然後可以被其他的程式如 Microsoft Excel 開啟。"
 
-msgid ""
-"Data from the evaluation table can be copied to another program like "
-"Microsoft excel using the clipboard."
-msgstr ""
-"求解的表格資料可以透過拷貝到剪貼簿的方式然後放到其他程式，例如 Microsoft "
-"Excel。"
+msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
+msgstr "求解的表格資料可以透過拷貝到剪貼簿的方式然後放到其他程式，例如 Microsoft Excel。"
 
-msgid ""
-"The data points in a point series can be copied to and from other programs "
-"like Microsoft Excel through the clipboard."
+msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel through the clipboard."
 msgstr "座標點數列的資料可以透過剪貼簿被拷貝到Microsoft Excel或從那輸入。"
 
-msgid ""
-"Functions can be copied from one instance of the program to another through "
-"the clipboard using Edit|Copy."
+msgid "Functions can be copied from one instance of the program to another through the clipboard using Edit|Copy."
 msgstr "函數可以利用[編輯]-->[複製]的方式來拷貝到另一個圖例當中。"
 
 msgid "You can always undo the last thing you did using Edit|Undo."
 msgstr "你可以使用[編輯]-->[還原]來回復上一個動作。"
 
-msgid ""
-"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
-"have undone."
-msgstr ""
-"你當操作錯誤時可以使用 [編輯]-->[還原] 還原上一個操作，你也可以使用[編輯]-->"
-"[重作]來重作上一個還原。 "
+msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
+msgstr "你當操作錯誤時可以使用 [編輯]-->[還原] 還原上一個操作，你也可以使用[編輯]-->[重作]來重作上一個還原。 "
 
 msgid "In the Axes dialog you can add a title to the coordinate system."
 msgstr "在軸線的對話框當中，你可以增加標題到座標系"
 
-msgid ""
-"You can import point series from files saved by other programs, like "
-"Microsoft Excel."
+msgid "You can import point series from files saved by other programs, like Microsoft Excel."
 msgstr "你可以由別的程式所編輯的檔案輸入座標點數列，例如 Microsoft Excel。"
 
-msgid ""
-"When inserting a point series you can copy data from programs like Microsoft "
-"Excel, and paste the data into the grid in Graph."
-msgstr ""
-"你可以複製例如像 Microsoft Excel的資料來插入座標點數列，然後貼到本程式的格"
-"線。"
+msgid "When inserting a point series you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
+msgstr "你可以複製例如像 Microsoft Excel的資料來插入座標點數列，然後貼到本程式的格線。"
 
-msgid ""
-"You can use 'Zoom|All points' to change the coordinate system so all point "
-"series are visible."
-msgstr ""
-"你可以使用[縮放]-->[全部座標點] 來改變座標系的大小到所有的座標點數列都可見。"
+msgid "You can use 'Zoom|All points' to change the coordinate system so all point series are visible."
+msgstr "你可以使用[縮放]-->[全部座標點] 來改變座標系的大小到所有的座標點數列都可見。"
 
-msgid ""
-"You can use Zoom|Fit to change the coordinate system to show the selected "
-"function or point series."
-msgstr ""
-"你可以使用 [縮放]-->[符合] 來改變座標系大小來呈現選定的函數或者座標點。"
+msgid "You can use Zoom|Fit to change the coordinate system to show the selected function or point series."
+msgstr "你可以使用 [縮放]-->[符合] 來改變座標系大小來呈現選定的函數或者座標點。"
 
-msgid ""
-"When you hold down the Shift key you can drag the coordinate system around "
-"with the mouse."
+msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
 msgstr "當你按住  shift 鍵的時候，你可以用滑鼠拖曳座標軸。"
 
-msgid ""
-"You can use Calc|Evaluate to find intersections between functions, crossings "
-"with the axes and extremum points."
+msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
 msgstr "你可以利用 [計算]-->[求解] 來找出函數、軸線間的交叉或者求出極點。"
 
-msgid ""
-"When a point series is selected you can add points to it by clicking on the "
-"image while you hold down the Ctrl key."
-msgstr ""
-"當座標點數列被選取的時候，你可以按住  Ctrl 鍵同時在圖片上點滑鼠來增加座標點。"
+msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
+msgstr "當座標點數列被選取的時候，你可以按住  Ctrl 鍵同時在圖片上點滑鼠來增加座標點。"
 
-msgid ""
-"You can use a relation to plot any inequality, for example sin(x^2) < cos"
-"(y^2)"
+msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
 msgstr "你可以利用一個關連來描繪任何的不等式，例如 sin(x^2) < cos(y^2)"
 
-msgid ""
-"You can use a relation to plot any equation, for example x*sin x = y*cos y"
+msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
 msgstr "你可以用一個關係式來描繪任何的等式，例如 x*sin x = y*cos y"
 
-msgid ""
-"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
-"same order they appear in the function list to the left."
-msgstr ""
-"所有的元件包含函數、陰影、標籤和關係式等，都是依據一定的順序出現在左邊的函數"
-"列上。"
+msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
+msgstr "所有的元件包含函數、陰影、標籤和關係式等，都是依據一定的順序出現在左邊的函數列上。"
 
-msgid ""
-"You can move the selected element in the function list either by dragging it "
-"with the mouse or with the arrow up/down keys while ALT is held down."
+msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
 msgstr "你可以利用滑鼠拖曳的功能，或者鍵盤上下鍵+Alt鍵移動函數列中選擇的元件。"
 
 #, fuzzy
-msgid ""
-"You can show functions and other elements behind the axes by moving the "
-"element above the axes in the function list to the left. To move shadings "
-"and tangents you will have to move the functions they are attached to."
-msgstr ""
-"你可以透過移動左邊函數列上的元件到座標軸之上，來顯示陰影或者其他在座標軸後方"
-"的的元件。"
+msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
+msgstr "你可以透過移動左邊函數列上的元件到座標軸之上，來顯示陰影或者其他在座標軸後方的的元件。"
 
-msgid ""
-"Custom text labels may be attached to the axes by right clicking on the "
-"label and selecting a placement from the context menu."
-msgstr ""
-"自訂的文字標籤可以被附著在座標軸上，使用的方式為在標籤上按滑鼠右鍵，然後選擇"
-"一個放置的選項。"
+msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
+msgstr "自訂的文字標籤可以被附著在座標軸上，使用的方式為在標籤上按滑鼠右鍵，然後選擇一個放置的選項。"
 
-msgid ""
-"The legend may be moved freely with the mouse or attached to one of the "
-"corners by right clicking on the legend and choose a placement from the "
-"context menu."
-msgstr ""
-"圖例說明可以隨意的用滑鼠來移動或者吸附到任何一個角落，使用方式為在圖例說明上"
-"點滑鼠右鍵，然後選擇一個適當的放置選項。"
+msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
+msgstr "圖例說明可以隨意的用滑鼠來移動或者吸附到任何一個角落，使用方式為在圖例說明上點滑鼠右鍵，然後選擇一個適當的放置選項。"
 
-msgid ""
-"As an alternative to transparent you can choose a custom background color "
-"for labes. This is especially useful for labels drawn over shades."
-msgstr ""
-"除了透明度之外，你也可以選擇一個適合的標籤背景顏色，特別是標籤畫在陰影之上的"
-"時候。"
+msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shades."
+msgstr "除了透明度之外，你也可以選擇一個適合的標籤背景顏色，特別是標籤畫在陰影之上的時候。"
 
-msgid ""
-"In most places like point series, axes settings, function ranges, etc., you "
-"can use expressions like pi/4 instead of numbers."
-msgstr ""
-" 在大部分的場合，像是座標點數列、座標軸設定或者函數範圍等，你可以用類似 pi/4 "
-"這樣的表示法來代替數字。"
+msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
+msgstr " 在大部分的場合，像是座標點數列、座標軸設定或者函數範圍等，你可以用類似 pi/4 這樣的表示法來代替數字。"
 
-msgid ""
-"You can create your own custom constants under Function|Custom functions for "
-"use in functions, point series, etc. For example g=9.80665, R=8.31"
-msgstr ""
-"你可以在 [函數]-->[自訂函數] 設定部份自訂常數，可以用在像是函數、座標點數列等"
-"地方。例如 g=9.80665, R=8.31"
+msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
+msgstr "你可以在 [函數]-->[自訂函數] 設定部份自訂常數，可以用在像是函數、座標點數列等地方。例如 g=9.80665, R=8.31"
 
-msgid ""
-"You can create your own custom functions under Function|Custom functions for "
-"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin"
-"(x)/x)"
-msgstr ""
-"你可以創造自訂的函數在 [函數]-->[自訂函數]當中，可以用來作為繪製函數、關係式"
-"等圖表。例如，sinc(x)=if(x=0, 0, sin(x)/x)。"
+msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
+msgstr "你可以創造自訂的函數在 [函數]-->[自訂函數]當中，可以用來作為繪製函數、關係式等圖表。例如，sinc(x)=if(x=0, 0, sin(x)/x)。"
 
-msgid ""
-"In the Save as image dialog there is an Option button you can use to specify "
-"the image resolution. This is especially useful if you want a high "
-"resolution image."
-msgstr ""
-"在[儲存為圖檔]的對話框當中，右下角有一個[選項]按鈕，你可以用來定義影像解析"
-"度。如果你想要一個高解析度的影像，這個功能特別有用。"
+msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
+msgstr "在[儲存為圖檔]的對話框當中，右下角有一個[選項]按鈕，你可以用來定義影像解析度。如果你想要一個高解析度的影像，這個功能特別有用。"
 
-msgid ""
-"Point series can have arrows as markers. A point series with arrows as "
-"markers and lines between the points can be used to show vectors."
-msgstr ""
-"座標點數列可有箭頭當成標示 一個座標數列。一個有箭頭標示的座標數列，和座標點之"
-"間的線條連結可以用來做向量顯示。"
+msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
+msgstr "座標點數列可有箭頭當成標示 一個座標數列。一個有箭頭標示的座標數列，和座標點之間的線條連結可以用來做向量顯示。"
 
 msgid "Custom..."
 msgstr "自定"
@@ -2821,7 +2575,7 @@ msgid "Local"
 msgstr "標籤"
 
 msgid "Global"
-msgstr ""
+msgstr "總體的"
 
 msgid "Insert"
 msgstr "插入"
@@ -2830,7 +2584,7 @@ msgid "Insert symbol"
 msgstr "插入符號"
 
 msgid "Subset:"
-msgstr ""
+msgstr "用戶電話"
 
 msgid "Print"
 msgstr "列印"
@@ -2850,15 +2604,11 @@ msgstr "位置:"
 msgid "Comment:"
 msgstr "評論:"
 
-msgid ""
-"Select the printer to use. The Properties button may be used to change more "
-"advanced settings for the printer."
-msgstr ""
+msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
+msgstr "選擇要使用的列表機，屬性的按鈕可以用來改變進階的設定。"
 
-msgid ""
-"Select to print in color (or grayscale if your printer is not a color "
-"printer) or convert all colors to black."
-msgstr ""
+msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
+msgstr "選擇列印成彩色、灰階或者黑白"
 
 msgid "Print output"
 msgstr "列印輸出"
@@ -2897,7 +2647,7 @@ msgid "Choose number of copies to print."
 msgstr "複製的數目:"
 
 msgid "Enter percent of original size."
-msgstr ""
+msgstr "輸入原尺寸百分比率"
 
 #~ msgid "Symbol '%s' not found."
 #~ msgstr "符號 '%s' 找不到 "
@@ -2905,73 +2655,54 @@ msgstr ""
 #, fuzzy
 #~ msgid "Copy the animation to the clipboard."
 #~ msgstr "複製選擇的文字到剪貼簿上"
-
 #~ msgid "Edit options."
 #~ msgstr "編輯選項"
-
 #~ msgid "Insert a new point series."
 #~ msgstr "插入一個座標點數列"
-
 #~ msgid "Calculates area under the path."
 #~ msgstr "計算路徑下方的面積"
-
 #~ msgid "Insert a text label."
 #~ msgstr "插入文字標籤"
-
 #~ msgid "Select language to use."
 #~ msgstr "選擇使用語言"
-
 #~ msgid "Cut selected text to the clipboard."
 #~ msgstr "剪下選取的文字到剪貼簿"
-
 #~ msgid "End of parenthesis missing."
 #~ msgstr "結束括號遺漏"
 
 #, fuzzy
 #~ msgid "Panel1"
 #~ msgstr "取消"
-
 #~ msgid "Text too long"
 #~ msgstr "文字太長"
-
 #~ msgid ""
 #~ "Write a descriptive text to show in the legend, else the inequality will "
 #~ "be used."
 #~ msgstr "寫下圖例說明的述語，不等式將會用到。"
-
 #~ msgid ""
 #~ "Description shown in the legend. If empty the function equation is used."
 #~ msgstr "圖例說明上的敘述。在使用空函數等式的情況。"
-
 #~ msgid "Customize"
 #~ msgstr "自訂:"
-
 #~ msgid "Actions"
 #~ msgstr "動作"
-
 #~ msgid "Description"
 #~ msgstr "敘述"
-
 #~ msgid "Cate&gories:"
 #~ msgstr "類 別:"
-
 #~ msgid "A&ctions:"
 #~ msgstr "動 作:"
-
 #~ msgid ""
 #~ "To add actions to your application simply drag and drop from either "
 #~ "Categories or Actions onto an existing ActionBar."
 #~ msgstr ""
 #~ "要加入[動作]到你的應用,只要從[類別]或[動作]選項拖曳到已經存在的[動作列]"
-
 #~ msgid "Area..."
 #~ msgstr "面積..."
-
 #~ msgid "Evaluate..."
 #~ msgstr "求解.."
-
 #~ msgid "Are you sure you want to delete the function: %s"
 #~ msgstr "你確定想要刪除此函數嗎? %s"
-
 #~ msgid "Are you sure you want to delete the tangent: %s"
 #~ msgstr "你確定想要刪除切線 %s 嗎?"
+
