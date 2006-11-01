@@ -2,14 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.0.1\n"
 "POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-10-31 12:15+0100\n"
-"Last-Translator: goemaere etienne <etienne.goemaere@pandora.be>\n"
+"PO-Revision-Date: 2006-11-01 21:49+0100\n"
+"Last-Translator: \n"
 "Language-Team: Etienne Goemaere <etienne.goemaere@pandora.be>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: dxgettext 1.2.1\n"
-"X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: BELGIUM\n"
 
 msgid "From:"
@@ -21,11 +20,9 @@ msgstr "Tot:"
 msgid "Area"
 msgstr "Oppervlakte"
 
-#, fuzzy
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Geef een begincoördinaat op of duid met de muis het bereik aan op de figuur"
 
-#, fuzzy
 msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
 msgstr "Voeg de ordinaat in of duid op de figuur het bereik aan met de muis."
 
@@ -344,7 +341,6 @@ msgstr "Zoom in op het geselecteerde venster"
 msgid "Square"
 msgstr "Vierkant"
 
-#, fuzzy
 msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
 msgstr "Zoom zodat de schaal van de assen gelijk is. Hierdoor wordt een cirkel niet als ellips afgebeeld."
 
@@ -405,7 +401,6 @@ msgstr "Evalueer of traceer de geselecteerde functie"
 msgid "Table..."
 msgstr "Tabel..."
 
-#, fuzzy
 msgid "Shows an evaluation table."
 msgstr "Toon een waardentabel"
 
@@ -457,7 +452,6 @@ msgstr "Zoom tot alle punten zichtbaar zijn."
 msgid "Frequently Asked Questions"
 msgstr "Veel Gestelde Vragen"
 
-#, fuzzy
 msgid "Shows a list of frequently asked questions and their answers."
 msgstr "Toon een lijst van veel gestelde vragen en hun antwoorden."
 
@@ -470,7 +464,6 @@ msgstr "Voeg tekstlabel in (selecteer en klik in het basisscherm waar je het lab
 msgid "Donate"
 msgstr "Schenk"
 
-#, fuzzy
 msgid "Donate money to the project."
 msgstr "Schenk geld voor het project"
 
@@ -663,7 +656,6 @@ msgstr "Selecteer de tekenstijl voor ongelijkheden. Niet gebruikt voor gelijkhed
 msgid "Width in pixels of the equation line or the borderline of the inequality."
 msgstr "Breedte van de rechte of de grens van de ongelijkheid in pixels ."
 
-#, fuzzy
 msgid "Select the color for drawing the relation."
 msgstr "Kies de lijnkleur."
 
@@ -943,7 +935,6 @@ msgstr "Toon y-maatstreep"
 msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "Alle foutenstaafjes zijn eenzelfde procent van de y-coördinaat"
 
-#, fuzzy
 msgid "Cut the selected text to the clipboard."
 msgstr "Knip de selectie naar het klembord"
 
@@ -995,7 +986,6 @@ msgstr "De eerste x-waarde in het interval."
 msgid "The last x-value in the interval."
 msgstr "De laatste x-waarde in het interval."
 
-#, fuzzy
 msgid "Show %s"
 msgstr "Toon stippen"
 
@@ -1071,7 +1061,6 @@ msgstr "Controleer de toename van de eindcoördinaat tot aan doorsnede."
 msgid "Increase to intersection"
 msgstr "Vermeerder tot aan doorsnede"
 
-#, fuzzy
 msgid "Check to decrease the start coordinate until intersection."
 msgstr "Controleer vermindering begincoördinaat tot aan doorsnede."
 
@@ -1147,7 +1136,6 @@ msgstr "Stel de hoogte van het beeld in"
 msgid "Choose to use the same size as shown on the screen or a custom image size."
 msgstr "Gebruik de getoonde of andere beeldgrootte."
 
-#, fuzzy
 msgid "Image size"
 msgstr "Beeldbreedte"
 
@@ -1247,7 +1235,6 @@ msgstr "Gemaakt"
 msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
 msgstr "Deze vrije software mag verder verspreid worden als de voorwaarden uit de GNU General Public License gerespecteerd worden. Foutenmeldingen en suggesties zijn steeds welkom."
 
-#, fuzzy
 msgid "The newest version as well as the source code are available at:"
 msgstr "De nieuwste versie en de broncode is beschikbaar op:"
 
@@ -1326,7 +1313,6 @@ msgstr "Gebruik logaritmische schaal op de x-as."
 msgid "Logarithmic scale"
 msgstr "Logaritmische schaal"
 
-#, fuzzy
 msgid "Show the label at the right side of the main window, above the x-axis."
 msgstr "Toon label rechts boven de x-as."
 
@@ -1342,7 +1328,6 @@ msgstr "Toon eenheid op x-as"
 msgid "Show numbers"
 msgstr "Toon getallen"
 
-#, fuzzy
 msgid "The x-axis will intersect with the y-axis at this value."
 msgstr "De x-as kruist de y-as in deze waarde."
 
@@ -1361,7 +1346,6 @@ msgstr "Stel rooster- en maatstreepeenheid gelijk aan elkaar"
 msgid "Auto grid"
 msgstr "Auto raster"
 
-#, fuzzy
 msgid "Show tick marks on the x-axis."
 msgstr "Toon maatstrepen op x-as"
 
@@ -1398,18 +1382,15 @@ msgstr "Eenheid tussen maatstrepen op y-as."
 msgid "Show units on the y-axis."
 msgstr "Toon eenheden op y-as."
 
-#, fuzzy
 msgid "Show the label at the top of the main window, to the right of the y-axis."
 msgstr "Toon label bovenaan het venster rechts van de y-as."
 
-#, fuzzy
 msgid "The y-axis will intersect with the x-axis at this value."
 msgstr "De y-as kruist de x-as in deze waarde."
 
 msgid "Units between the grid lines perpendicular to the y-axis."
 msgstr "Eenheden tussen de rasterlijnen loodrecht op de y-as."
 
-#, fuzzy
 msgid "Show tick marks on the y-axis."
 msgstr "Toon maatstrepen op y-as"
 
@@ -1503,7 +1484,6 @@ msgstr "Lettertype label"
 msgid "Legend font:"
 msgstr "Lettertype legende"
 
-#, fuzzy
 msgid "Select the font used to show the labels on the axes."
 msgstr "Kies het lettertype voor de labels bij de assen."
 
@@ -1531,14 +1511,12 @@ msgstr "Grootte lettertype:"
 msgid "Number of decimals used when results are shown."
 msgstr "Aantal cijfers na de komma voor getoonde resultaat."
 
-#, fuzzy
 msgid "Associate *.grf files with Graph."
 msgstr "Associeer *.grf bestanden met Graph"
 
 msgid "Associate .grf files"
 msgstr "Associeer *.grf bestanden"
 
-#, fuzzy
 msgid "The number of most recent used files shown in the File menu."
 msgstr "Aantal te tonen recente bestanden in bestandsmenu."
 
@@ -1563,7 +1541,6 @@ msgstr "Rechthoekig"
 msgid "Polar"
 msgstr "Polair"
 
-#, fuzzy
 msgid "Show the tooltip when the cursor is over an item."
 msgstr "Toon de tip van het gereedschap waarover de cursor beweegt."
 
@@ -1639,7 +1616,6 @@ msgstr "Grootte:"
 msgid "Font color:"
 msgstr "Kleur lettertype"
 
-#, fuzzy
 msgid "Text size."
 msgstr "Tekstgrootte"
 
@@ -1682,7 +1658,6 @@ msgstr "Rechts uitvullen (Ctrl+R)"
 msgid "Text font."
 msgstr "Lettertype tekst"
 
-#, fuzzy
 msgid "Text color."
 msgstr "Tekstkleur"
 
@@ -1833,11 +1808,9 @@ msgstr "Ongeldige getalvorm. Gebruik het formaat: -5.457E-8"
 msgid "String is empty. You need to enter a function."
 msgstr "Lege string. Er moet een functie ingevoerd worden."
 
-#, fuzzy
 msgid "Comma is not allowed here. Use dot as decimal separator."
 msgstr "Komma niet toegelaten. Gebruik het punt als decimaalteken."
 
-#, fuzzy
 msgid "Unexpected end of brackets."
 msgstr "Eindhaakjes kloppen niet."
 
@@ -1859,7 +1832,6 @@ msgstr "Onbekend karakter: \"%s\""
 msgid "The end of the expression was unexpected."
 msgstr "Onverwacht einde van de uitdrukking."
 
-#, fuzzy
 msgid "Error parsing function text."
 msgstr "Fout bij ontleden functietekst"
 
@@ -1920,7 +1892,6 @@ msgstr ""
 msgid "The right bracket is missing."
 msgstr "Het rechter haakje ontbreekt"
 
-#, fuzzy
 msgid "Character found after brackets."
 msgstr "Karakter gevonden achter de haakjes."
 
@@ -2045,7 +2016,6 @@ msgstr "Geen geldig graph-object"
 msgid "Object error"
 msgstr "Objectfout"
 
-#, fuzzy
 msgid "Windows does not have enough resources to save an image that large."
 msgstr "Windows heeft onvoldoende middelen om een zo groot beeld op te slaan."
 
@@ -2067,7 +2037,6 @@ msgstr "Graph-bestanden [*.grf]|*.grf|Alle bestanden [*.*]|*.*"
 msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle bestanden [*.*]|*.*"
 
-#, fuzzy
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "Zeker van de verwijdering van het model: %s"
 
@@ -2158,7 +2127,6 @@ msgstr "'%s' moet een geheel getal tussen 0 en 1000 zijn."
 msgid "Printing error"
 msgstr "Printfout"
 
-#, fuzzy
 msgid "An unknown error occurred while printing."
 msgstr "Niet gekende fout bij printen."
 
@@ -2230,7 +2198,6 @@ msgstr ""
 "Het bestand kan met deze versie van het programma niet geopend worden.\n"
 "Je hebt minstens Graph %s nodig om dit bestand te openen."
 
-#, fuzzy
 msgid ""
 "This file was saved by an outdated version of Graph,\n"
 "and it cannot be opened by the current version."
@@ -2265,15 +2232,12 @@ msgstr "Bewerk f'(x)"
 msgid "Edit trendline"
 msgstr "Trendlijn bewerken"
 
-#, fuzzy
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "Deze Tip van de Dag kan programma-informatie geven die weinig gebruikers kennen."
 
-#, fuzzy
 msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 msgstr "Suggesties voor toekomstige versies, foutmeldingen en opmerkingen zijn welkom op graph@padowan.dk."
 
-#, fuzzy
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
 msgstr "De werkbalk kan aangepast door rechts te klikken en 'Werkbalk bewerken' te kiezen."
 
@@ -2394,7 +2358,6 @@ msgstr "Elementen (functies, arceringen, labels, relaties, enz.) worden in dezel
 msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
 msgstr "Een in de lijst functies geselecteerd element kan verplaatst worden met de muis of met de opwaartse/neerwaartse pijlen terwijl de ALT-toets ingedrukt gehouden wordt."
 
-#, fuzzy
 msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
 msgstr "Arceringen en andere elementen die achter de assen liggen kunnen zichtbaar gemaakt worden door het element over de assen naar links te bewegen in de lijst van functies."
 
@@ -2554,7 +2517,6 @@ msgstr "Voeg de plaats van de figuur op de pagina in."
 msgid "Number of copies:"
 msgstr "Aantal kopies:"
 
-#, fuzzy
 msgid "Choose number of copies to print."
 msgstr "Aantal kopies:"
 
