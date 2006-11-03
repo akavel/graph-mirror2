@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-01-14 12:55+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2006-11-03 21:44+0100\n"
+"Last-Translator: Magyari Gábor\n"
 "Language-Team: Magyari Gábor <magyari@kola.sulinet.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,24 +22,14 @@ msgstr "Meddig:"
 msgid "Area"
 msgstr "Terület"
 
-#, fuzzy
-msgid ""
-"Enter the start coordinate or mark the range on the graph itself with the "
-"mouse."
+msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Add meg a kezdő koordinátát, vagy jelöld ki a tartományt az egérrel."
 
-#, fuzzy
-msgid ""
-"Enter the end coordinate or mark the range on the graph itself with the "
-"mouse."
+msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
 msgstr "Add meg a végső koordinátát, vagy jelöld ki a tartományt az egérrel."
 
-msgid ""
-"Area or length of path calculated for the given range using Simpson's "
-"formula."
-msgstr ""
-"Terület vagy ívhossz kiszámítása a megadott tartományon a Simpson formula "
-"segítségével."
+msgid "Area or length of path calculated for the given range using Simpson's formula."
+msgstr "Terület vagy ívhossz kiszámítása a megadott tartományon a Simpson formula segítségével."
 
 msgid "Snap to:"
 msgstr "Illesztés"
@@ -59,12 +49,8 @@ msgstr "Az y(t) deriváltja a beírt t paraméterhez."
 msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr "A függvény meredeksége a megadott t paraméter esetén."
 
-msgid ""
-"Enter the independent variable for which you want to evaluate the function, "
-"or click on the function in the main window."
-msgstr ""
-"Az értékek kiszámításához add meg a független változót vagy kattints a "
-"grafikonra a fő ablakban."
+msgid "Enter the independent variable for which you want to evaluate the function, or click on the function in the main window."
+msgstr "Az értékek kiszámításához add meg a független változót vagy kattints a grafikonra a fő ablakban."
 
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Válszd ki, mit mutasson a kurzor a képre kattintáskor."
@@ -102,9 +88,7 @@ msgstr "A függvény deriváltja a megadott t paraméternél."
 msgid "The slope of the function evaluated for the given angle."
 msgstr "A függvény meredeksége a megadott t paraméternél."
 
-msgid ""
-"Enter a number for which you want to evaluate the function, or click on the "
-"function in the main window."
+msgid "Enter a number for which you want to evaluate the function, or click on the function in the main window."
 msgstr "Az függvényérték kiszámításához add meg a változó értékét."
 
 msgid "Extremum"
@@ -113,20 +97,15 @@ msgstr "Szélsőérték"
 msgid "This is the function evaluated for the entered x-value."
 msgstr "A megadott x értékhez tartozó függvényérték."
 
-#, fuzzy
-msgid ""
-"This is the first derivative of the function evaluated for the entered value."
+msgid "This is the first derivative of the function evaluated for the entered value."
 msgstr "A függvény első deriváltja a változó megadott érték esetén."
 
-msgid ""
-"This is the functions second derivative evaluated for the entered value."
+msgid "This is the functions second derivative evaluated for the entered value."
 msgstr "A függvény második deriváltja a változó megadott érték esetén."
 
-#, fuzzy
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
 msgstr "Az érintő adott x koordinátához tartozó y értéke."
 
-#, fuzzy
 msgid "Enter an x-coordinate or click in the main window."
 msgstr "Add meg az x koordinátát vagy kattints az érintőre a megfelelő helyen."
 
@@ -158,8 +137,7 @@ msgid "Visible"
 msgstr "Látható"
 
 msgid "Check to make the selected item visible in the coordinate system."
-msgstr ""
-"Jelöld be, hogy a kiválasztott elem látható legyen a koordinátarendszerben."
+msgstr "Jelöld be, hogy a kiválasztott elem látható legyen a koordinátarendszerben."
 
 msgid "Show in legend"
 msgstr "Mutasd az emlékeztetőben"
@@ -173,15 +151,13 @@ msgstr "Elhelyezés"
 msgid "Above x-axis"
 msgstr "Az x tengely fölött"
 
-msgid ""
-"Place the label directly above the x-axis on the right side of the image."
+msgid "Place the label directly above the x-axis on the right side of the image."
 msgstr "A cimke legyen közvetlenül az x tengely fölött a kép jobb oldalán."
 
 msgid "Below x-axis"
 msgstr "Az x tengely alatt"
 
-msgid ""
-"Place the label directly below the x-axis on the right side of the image."
+msgid "Place the label directly below the x-axis on the right side of the image."
 msgstr "A cimke legyen közvetlenül az x tengely alatt a kép jobb oldalán."
 
 msgid "Left of y-axis"
@@ -229,7 +205,6 @@ msgstr "A koordinátarendszer mentése új néven."
 msgid "Save copy as..."
 msgstr "Másolat mentése"
 
-#, fuzzy
 msgid "Saves a copy of the current coordinate system."
 msgstr "Az aktuális koordinátarendszer mentése"
 
@@ -278,9 +253,7 @@ msgstr "A kijelölt függvény vagy pontsor másolása a vágólapra."
 msgid "Paste"
 msgstr "Beillesztés"
 
-msgid ""
-"Pastes a function or point series from the clipboard into the coordinate "
-"system."
+msgid "Pastes a function or point series from the clipboard into the coordinate system."
 msgstr "A vágólap tartalmának beillesztése a koordinátarendszerbe."
 
 msgid "Copy image"
@@ -299,7 +272,7 @@ msgid "Options..."
 msgstr "Beállítások"
 
 msgid "Edit various options for the interface and program features."
-msgstr ""
+msgstr "A programfelület és az elérhető szolgáltatások beállításainak módosítása."
 
 msgid "Insert function..."
 msgstr "Függvény beszúrása"
@@ -310,21 +283,18 @@ msgstr "Új függvény hozzáadása."
 msgid "Insert tangent/normal..."
 msgstr "Érintő/merőleges"
 
-#, fuzzy
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Érintő hozzáadása a kiválasztott függvényhez."
 
 msgid "Insert shade..."
 msgstr "Kiszínezés"
 
-#, fuzzy
 msgid "Add shading to the selected function."
-msgstr "A függvény által meghatározott rész kiszínezése."
+msgstr "A függvény által meghatározott rész besatírozása."
 
 msgid "Insert point series..."
 msgstr "Pontsor beszúrása"
 
-#, fuzzy
 msgid "Insert a point series."
 msgstr "Pontsor beszúrása"
 
@@ -337,7 +307,6 @@ msgstr "Pontsorhoz illeszkedő görbe hozzáadása."
 msgid "Edit..."
 msgstr "Szerkesztés"
 
-#, fuzzy
 msgid "Edit the selected element: Function, tangent, point series, etc."
 msgstr "A kiválasztott függvény, érintő vagy pontsor módosítása."
 
@@ -374,12 +343,8 @@ msgstr "A kijelölt ablak kinagyítása."
 msgid "Square"
 msgstr "Arányos"
 
-#, fuzzy
-msgid ""
-"Zoom to scale the axes equally. This will show a plotted circle in its "
-"correct relation instead of an ellipse."
-msgstr ""
-"Arányos nagyítás. Ezt használva a kör körnek is látszik és nem ellipszisnek."
+msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
+msgstr "Arányos nagyítás. Ezt használva a kör körnek látszik és nem ellipszisnek."
 
 msgid "Standard"
 msgstr "Alap"
@@ -393,28 +358,24 @@ msgstr "Mozgatás"
 msgid "Move up"
 msgstr "Fel"
 
-#, fuzzy
 msgid "Move the window up along the coordinate system."
 msgstr "Az ablakot felfelé mozdítja a koordinátarendszerhez képest."
 
 msgid "Move down"
 msgstr "Le"
 
-#, fuzzy
 msgid "Move the window down along the coordinate system."
 msgstr "Az ablakot lefelé mozdítja a koordinátarendszerhez képest."
 
 msgid "Move left"
 msgstr "Balra"
 
-#, fuzzy
 msgid "Move the window to the left along the coordinate system."
 msgstr "Az ablakot balra mozdítja a koordinátarendszerhez képest."
 
 msgid "Move right"
 msgstr "Jobbra"
 
-#, fuzzy
 msgid "Move the window to the right along the coordinate system."
 msgstr "Az ablakot jobbra mozdítja a koordinátarendszerhez képest."
 
@@ -424,17 +385,14 @@ msgstr "Mozgatás egérrel"
 msgid "Move the coordinate system with the mouse."
 msgstr "A koordinátarendszer mozgatása egérrel"
 
-#, fuzzy
 msgid "Length of path"
 msgstr "Ívhossz"
 
-#, fuzzy
 msgid "Calculates the length of path between two given points on the curve."
 msgstr "Ívhossz kiszámítása két adott pont között."
 
-#, fuzzy
 msgid "Calculates the area under the path of the selected function."
-msgstr "A kiválasztott függvény első deriváltjának hozzáadása."
+msgstr "A kiválasztott függvény alatti terület kiszámítása."
 
 msgid "Evaluate"
 msgstr "Számítás"
@@ -445,7 +403,6 @@ msgstr "A kiválasztott függvény értékeinek számítása és ábrázolása."
 msgid "Table..."
 msgstr "Táblázat"
 
-#, fuzzy
 msgid "Shows an evaluation table."
 msgstr "Értéktáblázat megjelenítése."
 
@@ -458,7 +415,6 @@ msgstr "Help fájl megnyitása (angol)."
 msgid "List of functions"
 msgstr "Függvények listája"
 
-#, fuzzy
 msgid "Shows a list of built-in functions that can be used for graphing."
 msgstr "A program által ismert függvények listájának megjelenítése."
 
@@ -498,22 +454,18 @@ msgstr "A lehetséges legtöbb pont megjelenítése."
 msgid "Frequently Asked Questions"
 msgstr "GyIK"
 
-#, fuzzy
 msgid "Shows a list of frequently asked questions and their answers."
 msgstr "A gyakran ismételt kérdések és válaszok megjelenítése."
 
 msgid "Insert label..."
 msgstr "Cimke beszúrása"
 
-msgid ""
-"Insert a text label (select and click in the main window where you want the "
-"label)."
-msgstr ""
+msgid "Insert a text label (select and click in the main window where you want the label)."
+msgstr "Szövegdoboz beszúrása (Kattintással válaszd ki a fő ablakban, hová kerüljön a szövegdoboz)."
 
 msgid "Donate"
 msgstr "Támogatás"
 
-#, fuzzy
 msgid "Donate money to the project."
 msgstr "Támogasd pénzzel a terméket"
 
@@ -565,17 +517,15 @@ msgstr "Egyéni függvények"
 msgid "Create custom functions and constants for use in graphs."
 msgstr "A programban használható egyéni függvények készítése."
 
-#, fuzzy
 msgid "Animate..."
-msgstr "Támogatás"
+msgstr "Animáció..."
 
 msgid "Create an animation by variating a constant."
-msgstr ""
+msgstr "Animáció készítése egy konstans változtatásával."
 
 msgid "Graph file..."
 msgstr "Graph fájl..."
 
-#, fuzzy
 msgid "Import a Graph file into the current coordinate system."
 msgstr "Grah fájl importálása a jelenlegi koordinátarendszerbe."
 
@@ -600,9 +550,8 @@ msgstr "Testreszabás"
 msgid "Customize the icons shown on the toolbar."
 msgstr "Az eszköztár elemeinek módosítása."
 
-#, fuzzy
 msgid "Rotation"
-msgstr "Összefüggés:"
+msgstr "Forgatás"
 
 msgid "Edit label..."
 msgstr "Cimke szerkesztése"
@@ -622,13 +571,11 @@ msgstr "Emlékeztető"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Mutassa az emlékeztetőt."
 
-#, fuzzy
 msgid "Font"
 msgstr "Betűtípus"
 
-#, fuzzy
 msgid "Change the font of the legend."
-msgstr "Válaszd ki a cím betűtípusát."
+msgstr "Válaszd ki a cimke betűtípusát."
 
 msgid "Top Right"
 msgstr "Jobbra fent"
@@ -690,12 +637,8 @@ msgstr "Emlékeztető szöveg"
 msgid "Description:"
 msgstr "Leírás:"
 
-#, fuzzy
-msgid ""
-"Write a descriptive text to show in the legend. If empty the equation will "
-"be used."
-msgstr ""
-"Írj szöveg az Emlékeztetőbe, különben a hozzárendelési szabály jelenik meg."
+msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
+msgstr "Írj szöveg az Emlékeztetőbe, különben a hozzárendelési szabály jelenik meg."
 
 msgid "Properties"
 msgstr "Tulajdonságok"
@@ -709,19 +652,14 @@ msgstr "Szín:"
 msgid "Width:"
 msgstr "Vastagság:"
 
-#, fuzzy
-msgid ""
-"Select the style used for drawing the inequality. Not used for equations."
-msgstr "Válszd ki az egyenlőtlenség típusát. Egyenlet esetén nem használható."
+msgid "Select the style used for drawing the inequality. Not used for equations."
+msgstr "Válszd ki az egyenlőtlenség ábrázolásának típusát. Egyenlet esetén nem használható."
 
-#, fuzzy
-msgid ""
-"Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Az egyenlet vastagsága képpontban. Egyenlőtlenségnél nem használható."
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Az egyenlet grafikonjának vastagsága képpontban. Egyenlőtlenségnél nem használható."
 
-#, fuzzy
 msgid "Select the color for drawing the relation."
-msgstr "Válaszd ki a vonal színét."
+msgstr "A relációt ábrázoló grafikon színének kiválasztása."
 
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
 msgstr "Írd le az összefüggést, pl. \"x^2+y^2 = 25\" vagy \"y < sin(x)\""
@@ -759,9 +697,8 @@ msgstr "A grafikon vastagsága képpontban."
 msgid "Choose which line style to use for drawing the graph."
 msgstr "Válaszd ki a vonalstílust a grafikon rajzolásához."
 
-#, fuzzy
 msgid "Select the color of the graph."
-msgstr "Válaszd ki az ábrázolandó függvény típusát."
+msgstr "Az ábra színének kiválasztása."
 
 msgid "Argument range"
 msgstr "Változó tartománya"
@@ -781,19 +718,11 @@ msgstr "Kezdőpont:"
 msgid "End:"
 msgstr "Végpont:"
 
-msgid ""
-"Select marker to show at the start of the interval. Only used if an argument "
-"range is specified."
-msgstr ""
-"Válaszd ki az intervallum kezdőpontjának stílusát. Csak, ha a változó "
-"tartománya meghatározott."
+msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
+msgstr "Válaszd ki az intervallum kezdőpontjának stílusát. Csak, ha a változó tartománya meghatározott."
 
-msgid ""
-"Select marker to show at the end of the interval. Only used if an argument "
-"range is specified."
-msgstr ""
-"Válaszd ki az intervallum végpontjának stílusát. Csak, ha a változó "
-"tartománya meghatározott."
+msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
+msgstr "Válaszd ki az intervallum végpontjának stílusát. Csak, ha a változó tartománya meghatározott."
 
 msgid "Insert trendline"
 msgstr "Trendvonal beszúrása"
@@ -867,26 +796,19 @@ msgstr "Modell törlése"
 msgid "Edit model"
 msgstr "Modell módosítása"
 
-#, fuzzy
 msgid "Enter a function model to base the trendline on."
-msgstr "Írd be az emlékeztető szövegét."
+msgstr "Írd be milyen függvénymodell legyen a trendvonal."
 
-msgid ""
-"Type a value in the Intercept box to specify the point where you want the "
-"trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendlines."
-msgstr ""
+msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
+msgstr "Írd a téglalapba azt az értéket, hol messe a trendvonal az y tengelyt. Ez a lehetőség csak lineáris, polinomiális és exponenciális illesztésnél elérhető. "
 
-#, fuzzy
 msgid "Intercept ="
-msgstr "Internet"
+msgstr "Tengelymetszet ="
 
 msgid "Insert point series"
 msgstr "Pontsor beszúrása"
 
-msgid ""
-"The name of the point series, which is shown in the list to the left of the "
-"coordinate system."
+msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
 msgstr "A pontsor neve. Ez jelenik meg a koordinátarendszerhez tartozó listán."
 
 msgid "Series"
@@ -919,14 +841,9 @@ msgstr "Válaszd ki a jel színét."
 msgid "Interpolation:"
 msgstr "Interpoláció:"
 
-msgid ""
-"Choose the style of lines to be drawn between the points. You may also "
-"choose not to draw any lines."
-msgstr ""
-"Válaszd ki a pontok közötti vonal stílusát. Választhatsz üreset is, ekkor a "
-"pontok nem lesznek összekötve."
+msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
+msgstr "Válaszd ki a pontok közötti vonal stílusát. Választhatsz üreset is, ekkor a pontok nem lesznek összekötve."
 
-#, fuzzy
 msgid "Choose the width of the lines in pixels."
 msgstr "Válaszd ki a vonal vastagságát."
 
@@ -978,7 +895,6 @@ msgstr "Hibajelek"
 msgid "X error bars"
 msgstr "X hiba jelek"
 
-#, fuzzy
 msgid "Show horizontal error bars."
 msgstr "Vízszintes hiba megjelenítése"
 
@@ -1012,7 +928,6 @@ msgstr "Add meg a relatív hibát százalékban."
 msgid "Y error bars"
 msgstr "Y-hiba jelek"
 
-#, fuzzy
 msgid "Show vertical error bars."
 msgstr "Függőleges hiba megjelenítése"
 
@@ -1022,19 +937,14 @@ msgstr "Mutasd az y-hibát"
 msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "Minden hiba azonos százalékértékű."
 
-#, fuzzy
 msgid "Cut the selected text to the clipboard."
-msgstr "A kijelölt szöveg kivágása"
+msgstr "A kijelölt szöveg kivágása."
 
 msgid "Copy the selected text to the clipboard."
 msgstr "A kijelölt szöveg másolása"
 
-msgid ""
-"Paste text from the clipboard into the grid. Other cells may be overwritten "
-"by the text from the clipboard."
-msgstr ""
-"Szöveg beillesztése a vágólapról. A cellák értékeit felülírhatja a "
-"beillesztett adat."
+msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
+msgstr "Szöveg beillesztése a vágólapról. A cellák értékeit felülírhatja a beillesztett adat."
 
 msgid "Erase selected cells."
 msgstr "Kijelölt cellák törlése."
@@ -1042,7 +952,6 @@ msgstr "Kijelölt cellák törlése."
 msgid "Insert row"
 msgstr "Sor beszúrása"
 
-#, fuzzy
 msgid "Inserts a row in the grid moving rows below one down."
 msgstr "Új sor beszúrása a sorok lefelé tolásával."
 
@@ -1070,8 +979,7 @@ msgstr "A kijelölt adat exportálása fájlba."
 msgid "Calculate table"
 msgstr "Táblázat adatainak kiszámítása"
 
-msgid ""
-"The step value. This is the distance between the x-values in the interval."
+msgid "The step value. This is the distance between the x-values in the interval."
 msgstr "Lépésköz. Megadja az x értékek közti távolságot az intervallumban."
 
 msgid "The first x-value in the interval."
@@ -1080,9 +988,8 @@ msgstr "Az első x érték az intervallumban."
 msgid "The last x-value in the interval."
 msgstr "Az utolsó x érték az intervallumban."
 
-#, fuzzy
 msgid "Show %s"
-msgstr "Megjelenít"
+msgstr "Megjelenítés"
 
 msgid "Copy selected cells to the clipboard."
 msgstr "Kijelölt cellák másolása."
@@ -1117,12 +1024,8 @@ msgstr "Kiszínezi a grafikon és az y tengely közötti területet."
 msgid "Shades the area inside the function."
 msgstr "Kiszínezi a grafikon 'belső' részét."
 
-msgid ""
-"Shades the area between the main function and the function selected in the "
-"list to the right."
-msgstr ""
-"Kiszínezi a fő függvénygrafikon és a jobb oldali listából kiválasztott "
-"függvény grafikonja közötti területet."
+msgid "Shades the area between the main function and the function selected in the list to the right."
+msgstr "Kiszínezi a fő függvénygrafikon és a jobb oldali listából kiválasztott függvény grafikonja közötti területet."
 
 msgid "Above function"
 msgstr "A függvény felett"
@@ -1160,7 +1063,6 @@ msgstr "Jelöld be, hogy a vége metszéspontnál legyen."
 msgid "Increase to intersection"
 msgstr "Metszéspontig"
 
-#, fuzzy
 msgid "Check to decrease the start coordinate until intersection."
 msgstr "Jelöld be, hogy a kezdet metszéspontnál legyen."
 
@@ -1194,12 +1096,8 @@ msgstr "Második függvény"
 msgid "2nd function:"
 msgstr "Második fv:"
 
-#, fuzzy
-msgid ""
-"Select the second function when you want a shading between two functions."
-msgstr ""
-"Válaszd ki a második függvényt, ha két függvény közti részt szeretnél "
-"kiszínezni."
+msgid "Select the second function when you want a shading between two functions."
+msgstr "Válaszd ki a második függvényt, ha két függvény közti részt szeretnél besatírozni."
 
 msgid "Shading range for 2nd function"
 msgstr "Színezési tartomány a második függvényre"
@@ -1232,31 +1130,25 @@ msgid "Image height:"
 msgstr "Kép magassága:"
 
 msgid "Set a custom image width."
-msgstr ""
+msgstr "Egyéni képszélesség beállítása."
 
 msgid "Set a custom image height."
-msgstr ""
+msgstr "Egyéni képmagasság beállítása."
 
-msgid ""
-"Choose to use the same size as shown on the screen or a custom image size."
-msgstr ""
+msgid "Choose to use the same size as shown on the screen or a custom image size."
+msgstr "A képernyőn látható méretek, vagy egyéni képméret használata."
 
-#, fuzzy
 msgid "Image size"
-msgstr "Kép szélessége:"
+msgstr "Kép mérete"
 
-#, fuzzy
 msgid "Screen size"
-msgstr "Szöveg mérete"
+msgstr "Képernyő mérete"
 
-#, fuzzy
 msgid "Custom size"
-msgstr "Egyéni"
+msgstr "Egyéni méret"
 
-msgid ""
-"Progressive encoding allows viewers to see a rough copy of the image while "
-"it is downloaded."
-msgstr ""
+msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
+msgstr "A progresszív kódolás lehetővé teszi, hogy letöltés közben kisebb felbontású képként is megjelenhessen az ábra."
 
 msgid "Encoding"
 msgstr "Kódolás"
@@ -1265,17 +1157,16 @@ msgid "Progressive"
 msgstr "Progresszív"
 
 msgid "Select a compression quality."
-msgstr ""
+msgstr "Tömörítési minőség kiválasztása."
 
 msgid "Quality"
 msgstr "Minőség"
 
-#, fuzzy
 msgid "Paper size:"
-msgstr "Szöveg mérete"
+msgstr "Papír mérete"
 
 msgid "Choose paper orientation."
-msgstr ""
+msgstr "Papír tájolása."
 
 msgid "Orientation"
 msgstr "Tájolás"
@@ -1286,56 +1177,47 @@ msgstr "Álló"
 msgid "Landscape"
 msgstr "Fekvő"
 
-#, fuzzy
 msgid "Choose paper size to use."
-msgstr "Válaszd ki a vonal vastagságát."
+msgstr "Válaszd ki a papír méretét."
 
-#, fuzzy
 msgid "Select this to use these settings as defaults in the future."
-msgstr ""
-"Jelöld be, hogy a jelenlegi beállítások legyenek alapértelmezettek a jövőben."
+msgstr "Jelöld be, hogy a jelenlegi beállítások legyenek alapértelmezettek a jövőben."
 
 msgid "Save as default"
 msgstr "Legyen alapértelmezett"
 
-#, fuzzy
 msgid "Animate"
-msgstr "Támogatás"
+msgstr "Animálás"
 
-#, fuzzy
 msgid "Constant:"
-msgstr "Feltételek:"
+msgstr "Állandó:"
 
 msgid "Choose a constant to change between each frame."
-msgstr ""
+msgstr "Válaszd ki az állandót, amely változik a képkockák között. "
 
-#, fuzzy
 msgid "Step:"
 msgstr "Lépések:"
 
-#, fuzzy
 msgid "The first value of the constant"
-msgstr "Az első x érték az intervallumban."
+msgstr "Az állandó kezdő értéke."
 
-#, fuzzy
 msgid "The last value of the constant."
-msgstr "Az utolsó x érték az intervallumban."
+msgstr "Az állandó záró értéke."
 
 msgid "The chosen constant is changed by this value between each frame."
-msgstr ""
+msgstr "A választott konstans ennyivel változik az egyes képkockák között."
 
-#, fuzzy
 msgid "Image information"
-msgstr "Kép tulajdonságai"
+msgstr "Kép jellemzői"
 
 msgid "Frames/second:"
-msgstr ""
+msgstr "Kép/másodperc:"
 
 msgid "Number of frames per second used when the animation is played."
-msgstr ""
+msgstr "Az animáció lejátszásának finomsága (kép/másodperc)."
 
 msgid "Working"
-msgstr ""
+msgstr "Feldolgozás"
 
 msgid "About Graph"
 msgstr "A Graph névjegye"
@@ -1352,71 +1234,53 @@ msgstr "E-mail:"
 msgid "Build"
 msgstr "Build"
 
-msgid ""
-"This is free software, and you are welcome to redistribute it under the "
-"terms in the GNU General Public License. Please send bug reports and "
-"suggestions to the programmer."
-msgstr ""
-"Ez egy szabadon felhasználható szoftver. Szabadon terjeszthető a GNU GPL "
-"szerint. Kérünk, ha hibát találsz a programban, jelezd észrevételeidet a "
-"program készítőinek."
+msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
+msgstr "Ez egy szabadon felhasználható szoftver. Szabadon terjeszthető a GNU GPL szerint. Kérünk, ha hibát találsz a programban, jelezd észrevételeidet a program készítőinek."
 
-#, fuzzy
 msgid "The newest version as well as the source code are available at:"
 msgstr "A legújabb verzió és a forrása elérhető a következő címen:"
 
-#, fuzzy
 msgid "Animation"
-msgstr "Támogatás"
+msgstr "Animáció"
 
-#, fuzzy
 msgid "Play"
-msgstr "Trigonometrikus"
+msgstr "Lejátszás"
 
-#, fuzzy
 msgid "Pause"
-msgstr "Beillesztés"
+msgstr "Szünet"
 
-#, fuzzy
 msgid "Stop"
-msgstr "Lépések:"
+msgstr "Leállítás"
 
-#, fuzzy
 msgid "Back"
-msgstr "Fekete"
+msgstr "Vissza"
 
-#, fuzzy
 msgid "Step"
-msgstr "Lépések:"
+msgstr "Léptetés"
 
 msgid "Speed"
-msgstr ""
+msgstr "Sebesség"
 
 msgid "Change the speed used to play the animation."
-msgstr ""
+msgstr "A lejátszás sebességének megváltoztatása."
 
-#, fuzzy
 msgid "Repeat"
-msgstr "Valós"
+msgstr "Ismétlés"
 
 msgid "Repeat playing the animation until manually stopped."
-msgstr ""
+msgstr "Az animáció ismételt lejátszása kézi megszakításig."
 
 msgid "Auto reverse"
-msgstr ""
+msgstr "Automatikus visszajátszás."
 
-msgid ""
-"Play backwards when the end of the animation is reached. This is most useful "
-"in combination with the \"Repeat\" command."
-msgstr ""
+msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
+msgstr "Az animáció lejátszása visszafelé, ha véget ér. Ez a lehetőség különösen hasznos az \"Ismétlés\" funcióval együtt."
 
-#, fuzzy
 msgid "Open an animation file."
-msgstr "A(z) %s fájl megnyitása."
+msgstr "Animációs fájl megnyitása."
 
-#, fuzzy
 msgid "Save the animation to a file."
-msgstr "A kijelölt adatok mentése fájlba."
+msgstr "Animáció mentése fájlba."
 
 msgid "Edit axes"
 msgstr "Tengelyek beállítása"
@@ -1451,16 +1315,14 @@ msgstr "Az x tengely logaritmikus beosztása."
 msgid "Logarithmic scale"
 msgstr "Logaritmikus"
 
-#, fuzzy
 msgid "Show the label at the right side of the main window, above the x-axis."
 msgstr "Mutasd a cimkét a jobb oldalon az x tengely fölött."
 
 msgid "Label:"
 msgstr "Cimke:"
 
-#, fuzzy
 msgid "Edit the label for the axis here."
-msgstr "Ide írd a cimke szövegét."
+msgstr "A tengelyek cimkéinek szerkesztése."
 
 msgid "Show units on the x-axis."
 msgstr "Mutasd az x tengely egységeit."
@@ -1468,35 +1330,30 @@ msgstr "Mutasd az x tengely egységeit."
 msgid "Show numbers"
 msgstr "Szám megjelenítése"
 
-#, fuzzy
 msgid "The x-axis will intersect with the y-axis at this value."
 msgstr "Az x tengely ennél az értéknél metszi az y tengelyt."
 
 msgid "Units between the grid lines perpendicular to the x-axis."
 msgstr "A x tengelyre merőleges rácsvonalak közti távolság."
 
-#, fuzzy
 msgid "Determine the tick unit automatically."
 msgstr "A beosztás automatikus beállítása."
 
 msgid "Auto tick"
 msgstr "Automatikus"
 
-#, fuzzy
 msgid "Set the grid unit to the same as the tick unit."
 msgstr "A rácsvonalak illesztése a tengely beosztásához"
 
 msgid "Auto grid"
 msgstr "Automatikus"
 
-#, fuzzy
 msgid "Show tick marks on the x-axis."
 msgstr "Beosztás megjelenítése az x tengelyen"
 
 msgid "Show ticks"
 msgstr "Megjelenít"
 
-#, fuzzy
 msgid "Show units on the selected axis as a fraction multiplied by pi."
 msgstr "A tengelyen megjelenő egységek legyenek a pi többszörösei."
 
@@ -1527,19 +1384,15 @@ msgstr "Az y tengely beosztásai közötti egység."
 msgid "Show units on the y-axis."
 msgstr "Az y tengely beosztásának megjelenítése."
 
-#, fuzzy
-msgid ""
-"Show the label at the top of the main window, to the right of the y-axis."
+msgid "Show the label at the top of the main window, to the right of the y-axis."
 msgstr "Mutasd a cimkét felül az y tengely jobb oldalán."
 
-#, fuzzy
 msgid "The y-axis will intersect with the x-axis at this value."
 msgstr "Az y tengely ennél az értéknél metszi az x tengelyt."
 
 msgid "Units between the grid lines perpendicular to the y-axis."
 msgstr "Az y tengelyre merőleges rácsvonalak közti távolság."
 
-#, fuzzy
 msgid "Show tick marks on the y-axis."
 msgstr "Mutasd az y tengely beosztásait"
 
@@ -1552,12 +1405,8 @@ msgstr "Beállítások"
 msgid "Title:"
 msgstr "Cím:"
 
-msgid ""
-"Choose if you want to show the axes, and if you want to show them crossed or "
-"at the left and bottom of the image."
-msgstr ""
-"Válaszd ki, látszanak-e a tengelyek, és hogy a metszéspont középen vagy a "
-"bal alsó sarokban legyen."
+msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
+msgstr "Válaszd ki, látszanak-e a tengelyek, és hogy a metszéspont középen vagy a bal alsó sarokban legyen."
 
 msgid "Axes style"
 msgstr "Tengelyek"
@@ -1571,9 +1420,7 @@ msgstr "Kereszt"
 msgid "Boxed"
 msgstr "L alak"
 
-#, fuzzy
-msgid ""
-"Choose if trigonometric functions should calculate in radians or degrees."
+msgid "Choose if trigonometric functions should calculate in radians or degrees."
 msgstr "Válaszd ki a a trigonometrikus függvények esetén a szögmérés egységét."
 
 msgid "Trigonometry"
@@ -1597,12 +1444,8 @@ msgstr "Válaszd ki, hol jelenjen meg az emlékeztető."
 msgid "Legend placement"
 msgstr "Emlékeztető elhelyezése"
 
-msgid ""
-"Check this to use complex numbers for calculations. Notice that this will "
-"slow graphing down."
-msgstr ""
-"Jelöld be komlex számokkal való munkához. Figyelem! Ez jelentősen lassítja "
-"az ábrázolást."
+msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
+msgstr "Jelöld be komlex számokkal való munkához. Figyelem! Ez jelentősen lassítja az ábrázolást."
 
 msgid "Calculate with complex numbers"
 msgstr "Komplex számok használata"
@@ -1622,17 +1465,14 @@ msgstr "Tengelyek színe:"
 msgid "Background color:"
 msgstr "Háttér színe:"
 
-#, fuzzy
 msgid "Select the color of the image background."
-msgstr "Válaszd ki a jel színét."
+msgstr "Válaszd ki a háttér színét."
 
-#, fuzzy
 msgid "Select the color of the axes."
-msgstr "Válaszd ki a jel színét."
+msgstr "Válaszd ki a tengelyek színét."
 
-#, fuzzy
 msgid "Select the color of the grid lines."
-msgstr "Válaszd ki a vonal színét."
+msgstr "Válaszd ki a rácsvonalak színét."
 
 msgid "Fonts"
 msgstr "Betűtípus"
@@ -1646,7 +1486,6 @@ msgstr "Cimke:"
 msgid "Legend font:"
 msgstr "Emlékeztető:"
 
-#, fuzzy
 msgid "Select the font used to show the labels on the axes."
 msgstr "Válaszd ki a tengelyek cimkéjének betűtípusát."
 
@@ -1668,30 +1507,23 @@ msgstr "Maximum visszavonható lépés:"
 msgid "Language:"
 msgstr "Nyelv:"
 
-#, fuzzy
 msgid "Font scale:"
 msgstr "Betűméret:"
 
 msgid "Number of decimals used when results are shown."
 msgstr "Az eredményekben ennyi tizedesjegy jelenik meg."
 
-#, fuzzy
 msgid "Associate *.grf files with Graph."
 msgstr "Társítsd a Graph programot a *.grf fájlokhoz"
 
 msgid "Associate .grf files"
 msgstr "Társítás .grf kiterjesztéshez."
 
-#, fuzzy
 msgid "The number of most recent used files shown in the File menu."
 msgstr "Ennyi legutóbb használt fájl megjelenítése a Fájl menüben."
 
-msgid ""
-"Save window position when the program quits. This setting is used the next "
-"time the program is used.|Save window state on exit."
-msgstr ""
-"Az ablak helyzetének mentése a program bezárásakor. Következő indításkor "
-"ugyanez lesz a beállítás. |Ablak helyzetének mentése kilépéskor."
+msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
+msgstr "Az ablak helyzetének mentése a program bezárásakor. Következő indításkor ugyanez lesz a beállítás. |Ablak helyzetének mentése kilépéskor."
 
 msgid "Save workspace on exit"
 msgstr "Munkaterület mentése kilépéskor"
@@ -1711,7 +1543,6 @@ msgstr "Kanonikus"
 msgid "Polar"
 msgstr "Trigonometrikus"
 
-#, fuzzy
 msgid "Show the tooltip when the cursor is over an item."
 msgstr "Gyorstipp megjelenítése az egérmutatóhoz."
 
@@ -1719,27 +1550,19 @@ msgid "Show tooltip"
 msgstr "Gyorstipp"
 
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
-msgstr ""
-"A viszavonható műveletek száma. Állíts 0-ra a visszavonás kikapcsolásához."
+msgstr "A viszavonható műveletek száma. Állíts 0-ra a visszavonás kikapcsolásához."
 
-msgid ""
-"If checked the program will contact a web server when the program is started "
-"to see if a newer version is available."
-msgstr ""
-"Ha bejelölöd, a program induláskor automatikusan kapcsolódik a web "
-"szerverhez, és  megkeresi a programfrissítést."
+msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
+msgstr "Ha bejelölöd, a program induláskor automatikusan kapcsolódik a web szerverhez, és  megkeresi a programfrissítést."
 
 msgid "Check for new version of Graph at startup"
 msgstr "Frissítések keresése induláskor"
 
-#, fuzzy
 msgid "Select the language to use for the user interface."
-msgstr "Színezési stílus kiválasztása."
+msgstr "A felhasználói felület nyelvének beállítása."
 
-msgid ""
-"This is used to scale the user interface if you are having problems reading "
-"the text."
-msgstr ""
+msgid "This is used to scale the user interface if you are having problems reading the text."
+msgstr "Itt állítható a felhasználói felület méretezése, ha nem jól olvasható a szöveg."
 
 msgid "Insert function"
 msgstr "Függvény hozzáadása"
@@ -1771,14 +1594,9 @@ msgstr "Az ábrázoláshoz használt számítási lépések száma."
 msgid "Draw type:"
 msgstr "Rajz típusa:"
 
-msgid ""
-"Choose Lines if you want the calculated points for the graph to be "
-"connected. Choose Dots if you only want to show a dot at each point."
-msgstr ""
-"Válaszd a Vonalak-at a kiszámított pontok összekötéséhez. Válaszd a Pontok-"
-"at különálló pontok ábrázolásához."
+msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
+msgstr "Válaszd a Vonalak-at a kiszámított pontok összekötéséhez. Válaszd a Pontok-at különálló pontok ábrázolásához."
 
-#, fuzzy
 msgid "Automatic"
 msgstr "Automatikus"
 
@@ -1800,34 +1618,27 @@ msgstr "Betűméret:"
 msgid "Font color:"
 msgstr "Betűszín:"
 
-#, fuzzy
 msgid "Text size."
 msgstr "Szöveg mérete"
 
 msgid "Text string"
 msgstr "Szöveg"
 
-#, fuzzy
 msgid "Insert symbol (Ctrl+G)"
-msgstr "Sor beszúrása"
+msgstr "Szimbólum beszúrása (Ctrl+G)"
 
-#, fuzzy
 msgid "Insert object"
-msgstr "Objektum beszúrása..."
+msgstr "Objektum beszúrása"
 
-#, fuzzy
 msgid "Bold (Ctrl+B)"
 msgstr "Félkövér (Ctrl-B)"
 
-#, fuzzy
 msgid "Italic (Ctrl+I)"
 msgstr "Dőlt (Ctrl-I)"
 
-#, fuzzy
 msgid "Underline (Ctrl+U)"
 msgstr "Aláhúzott (Ctrl-U)"
 
-#, fuzzy
 msgid "Strikethrough (Ctrl+S)"
 msgstr "Áthúzott (Ctrl-S)"
 
@@ -1837,29 +1648,23 @@ msgstr "Felső index (Ctrl++)"
 msgid "Subscript (Ctrl+=)"
 msgstr "Alsó index (Ctrl+=)"
 
-#, fuzzy
 msgid "Align left (Ctrl+L)"
 msgstr "Balra igazítás (Ctrl-L)"
 
-#, fuzzy
 msgid "Center (Ctrl+E)"
 msgstr "Középre igazítás (Ctrl-E)"
 
-#, fuzzy
 msgid "Align right (Ctrl+R)"
 msgstr "Jobbra igazítás (Ctrl-R)"
 
-#, fuzzy
 msgid "Text font."
 msgstr "Betűtípus"
 
-#, fuzzy
 msgid "Text color."
-msgstr "Szöveg színe"
+msgstr "Betűszín."
 
-#, fuzzy
 msgid "Select background color of the text label."
-msgstr "Válaszd ki a cím betűtípusát."
+msgstr "Válaszd ki a szövegdoboz háttérerének színét."
 
 msgid "Undo last action."
 msgstr "Az utolsó művelet visszavonása."
@@ -1900,7 +1705,6 @@ msgstr "Konstans"
 msgid "Value"
 msgstr "Érték"
 
-#, fuzzy
 msgid "Select a function or tangent to evaluate."
 msgstr "Függvény/érintő kiválasztása a számításhoz"
 
@@ -1962,8 +1766,7 @@ msgid "Division by zero."
 msgstr "A 0-val osztás értelmetlen."
 
 msgid "Inverse trigonometric function out of range [-1;1]"
-msgstr ""
-"Az inverz trigonometrikus függvény kívül esik a lehetséges tartományon [-1;1]"
+msgstr "Az inverz trigonometrikus függvény kívül esik a lehetséges tartományon [-1;1]"
 
 msgid "The function is not defined for this value."
 msgstr "Ehhez az értékhez nem tartozik függvényérték."
@@ -1983,10 +1786,8 @@ msgstr "Számítási hiba."
 msgid "Argument produced a function result with total loss of precision."
 msgstr "Az argumentumhoz csak nagyon pontatlan függvényérték számolható."
 
-msgid ""
-"The custom function/constant '%s' was not found or has the wrong number of "
-"arguments."
-msgstr ""
+msgid "The custom function/constant '%s' was not found or has the wrong number of arguments."
+msgstr "A(z) '%s' egyéni függvény/állandó nem található, vagy nem megfelelő számú argumentuma van."
 
 msgid "Too many recursive calls."
 msgstr "Túl sok rekurzív hivatkozás."
@@ -1995,13 +1796,13 @@ msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Ismeretlen operátor. A(z) %s operátor itt nem használható."
 
 msgid "Right bracket missing."
-msgstr ""
+msgstr "A záró zárójel hiányzik."
 
 msgid "Invalid number of arguments supplied for function '%s'"
 msgstr "A(z) s% függvényhez nem megfelelő az argumentum."
 
 msgid "Comparison operator misplaced."
-msgstr ""
+msgstr "A relációs jel rossz helyen van."
 
 msgid "Invalid number found. Use the format: -5.475E-8"
 msgstr "Érvénytelen számformátum. Használd a következőt: -5.475E-8"
@@ -2009,11 +1810,9 @@ msgstr "Érvénytelen számformátum. Használd a következőt: -5.475E-8"
 msgid "String is empty. You need to enter a function."
 msgstr "Nem írtál be semmit. Adj meg egy függvényt."
 
-#, fuzzy
 msgid "Comma is not allowed here. Use dot as decimal separator."
 msgstr "Tizedesvessző itt nem használható; Használj helyette pontot."
 
-#, fuzzy
 msgid "Unexpected end of brackets."
 msgstr "Nincs vége a zárójelnek."
 
@@ -2035,9 +1834,8 @@ msgstr "Ismeretlen jel: \"%s\""
 msgid "The end of the expression was unexpected."
 msgstr "Hiányzik a kifejezés vége."
 
-#, fuzzy
 msgid "Error parsing function text."
-msgstr "Szintaktikai hiba"
+msgstr "Szintaktikai hiba a függvényben."
 
 msgid "A calculation resulted in an overflow."
 msgstr "A számítás során túlcsordulás történt."
@@ -2049,8 +1847,7 @@ msgid "Not enough points for calculation."
 msgstr "Nincs elég pont a számításhoz."
 
 msgid "Illegal name \"%s\" for user defined function or constant."
-msgstr ""
-"A \"%s\" név érvénytelen az egyéni függvény vagy konstans definiciójában. "
+msgstr "A \"%s\" név érvénytelen az egyéni függvény vagy konstans definiciójában. "
 
 msgid "Cannot differentiate recursive function."
 msgstr "Rekurzív függvényt nem lehet differenciálni."
@@ -2067,19 +1864,15 @@ msgstr "Ismeretlen hiba lépett fel a számítás során."
 msgid "No solution found. Try another guess or another model."
 msgstr "Nem találtam megoldást. Próbálkozz más modellel."
 
-msgid ""
-"Internal error. Please notify the programmer with as much information as "
-"possible."
-msgstr ""
-"Belső hiba történt. Kérünk küldd el az információkat a program készítőjének."
+msgid "Internal error. Please notify the programmer with as much information as possible."
+msgstr "Belső hiba történt. Kérünk küldd el az információkat a program készítőjének."
 
 msgid "You need to enter a name for the function/constant."
 msgstr "Írd be a függvény vagy a konstans nevét."
 
 msgid ""
 "Invalid function/constant name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always "
-"start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 "In addition you are not allowed to redefine built-in names."
 msgstr ""
 "Érvénytelen név (függvény/konstans):'%s'.\n"
@@ -2090,19 +1883,16 @@ msgstr "Írd be az argumentum nevét."
 
 msgid ""
 "Invalid argument name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always "
-"start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 " In addition you are not allowed to use built-in names as argument names."
 msgstr ""
 "A következő argumentum neve nem érvényes '%s'.\n"
 "A név csak metűt és számjegyet tartalmazhat, és betűvel kell kezdődnie.\n"
 "A programba beépített nevek nem módosíthatók."
 
-#, fuzzy
 msgid "The right bracket is missing."
 msgstr "A zárójel vége hiányzik."
 
-#, fuzzy
 msgid "Character found after brackets."
 msgstr "Karakter van a zárójel után."
 
@@ -2173,7 +1963,6 @@ msgstr "'%s' számnak pozitívnak kell lennie."
 msgid "File not found: %s"
 msgstr "Nem található a következő fájl: %s"
 
-#, fuzzy
 msgid ""
 "Error reading file: %s\n"
 " The file is not a correct Graph file."
@@ -2228,13 +2017,11 @@ msgstr "Nem érvényes Graph objektum."
 msgid "Object error"
 msgstr "Objektum hiba"
 
-#, fuzzy
 msgid "Windows does not have enough resources to save an image that large."
 msgstr "A Windowsnak kevés szabad erőforrása van a kép mentéséhez."
 
-#, fuzzy
 msgid "'%1%' must be between %2% and %3%."
-msgstr "A 'Korábbi fájlok' száma legyen 0 és 9 között."
+msgstr "A(z) '%1%' értékének %2% és %3% között kell lennie."
 
 msgid "Confirm delete"
 msgstr "Törlés megerősítése"
@@ -2242,7 +2029,6 @@ msgstr "Törlés megerősítése"
 msgid "This error should not occur. Please report this to the programmer."
 msgstr "Hiba történt. Kérünk értesítsd a program készítőjét."
 
-#, fuzzy
 msgid "Are you sure you want to delete %s?"
 msgstr "Biztosan törölni akarod a következőt? %s"
 
@@ -2252,7 +2038,6 @@ msgstr "Graph fájlok [*.grf]|*.grf|Minden fájl [*.*]|*.*"
 msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 msgstr "Szöveg [*.txt; *.csv]|*.txt;*.csv|Minden fájl [*.*]|*.*"
 
-#, fuzzy
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "Biztosan törölni akarod a következő modellt? %s"
 
@@ -2271,33 +2056,17 @@ msgstr "A t paraméter maximuma legyen nagyobb, mint a minimuma."
 msgid "The step value for t must be a number greater than 0."
 msgstr "A t paraméter lépésköze legyen pozitív."
 
-msgid ""
-"The minimum value for the x-axis must be greater than 0, when the x-axis is "
-"logarithmic scaled."
-msgstr ""
-"Az x tengely legkisebb értéke legyen pozitív, ha az x tengely logaritmikus "
-"beosztású."
+msgid "The minimum value for the x-axis must be greater than 0, when the x-axis is logarithmic scaled."
+msgstr "Az x tengely legkisebb értéke legyen pozitív, ha az x tengely logaritmikus beosztású."
 
-msgid ""
-"The cross point of the y-axis must be greater than 0, when the x-axis is "
-"logarithmic scaled."
-msgstr ""
-"Az y tengely metszéspontja legyen pozitív, ha az x tengely logaritmikus "
-"beosztású."
+msgid "The cross point of the y-axis must be greater than 0, when the x-axis is logarithmic scaled."
+msgstr "Az y tengely metszéspontja legyen pozitív, ha az x tengely logaritmikus beosztású."
 
-msgid ""
-"The minimum value for the y-axis must be greater than 0, when the y-axis is "
-"logarithmic scaled."
-msgstr ""
-"Az y tengely legkisebb értéke legyen pozitív, ha az x tengely logaritmikus "
-"beosztású."
+msgid "The minimum value for the y-axis must be greater than 0, when the y-axis is logarithmic scaled."
+msgstr "Az y tengely legkisebb értéke legyen pozitív, ha az x tengely logaritmikus beosztású."
 
-msgid ""
-"The cross point of the x-axis must be greater than 0, when the y-axis is "
-"logarithmic scaled."
-msgstr ""
-"Az x tengely metszéspontja legyen pozitív, ha az y tengely logaritmikus "
-"beosztású."
+msgid "The cross point of the x-axis must be greater than 0, when the y-axis is logarithmic scaled."
+msgstr "Az x tengely metszéspontja legyen pozitív, ha az y tengely logaritmikus beosztású."
 
 msgid "'Recent files' must be between 0 and 9."
 msgstr "A 'Korábbi fájlok' száma legyen 0 és 9 között."
@@ -2314,12 +2083,8 @@ msgstr "A vastagság mértéke pozitív egész."
 msgid "Error in width"
 msgstr "Hibás vastagság"
 
-msgid ""
-"The end of interval must be greater than the start of interval and %s must "
-"be greater than 0."
-msgstr ""
-"Az intervallum vége legyen nagyobb, mint az intervallum eleje, és %s  legyen "
-"pozitív."
+msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
+msgstr "Az intervallum vége legyen nagyobb, mint az intervallum eleje, és %s  legyen pozitív."
 
 msgid "The maximum length of text has been reached."
 msgstr "Elérted a szöveg maximális hosszát."
@@ -2363,7 +2128,6 @@ msgstr "'s%' legyen 0 és 1000 közötti egész."
 msgid "Printing error"
 msgstr "Nyomtatási hiba"
 
-#, fuzzy
 msgid "An unknown error occurred while printing."
 msgstr "Ismeretlen hiba nyomtatás közben."
 
@@ -2376,9 +2140,7 @@ msgstr "Minden ponthoz szükséges egy x és egy y koordináta."
 msgid "\"%s\" is not a valid number."
 msgstr "\"%s\" nem érvényes szám."
 
-msgid ""
-"You didn't add any points. You need to specify some x- and y-coordinates in "
-"the grid."
+msgid "You didn't add any points. You need to specify some x- and y-coordinates in the grid."
 msgstr "Nem adtál meg egy pontot sem. Adj meg néhány x és y koordinátát."
 
 msgid "Edit point series"
@@ -2437,7 +2199,6 @@ msgstr ""
 "A fájl nem nyitható meg a program ezen verziójával.\n"
 "Ez a fájl csak a Graph %s, vagy későbbi verzókkal nyitható meg."
 
-#, fuzzy
 msgid ""
 "This file was saved by an outdated version of Graph,\n"
 "and it cannot be opened by the current version."
@@ -2448,399 +2209,185 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"If you don't want to be asked again, this feature may be disabled from the "
-"Edit|Options dialog."
+"If you don't want to be asked again, this feature may be disabled from the Edit|Options dialog."
 msgstr ""
 "\n"
 "\n"
-"Ha nem akarod, hogy ez a kérdés újra megjelenjen, tiltsd le a Szerkesztés|"
-"Beállítások menüpontban."
+"Ha nem akarod, hogy ez a kérdés újra megjelenjen, tiltsd le a Szerkesztés|Beállítások menüpontban."
 
 msgid "Edit relation"
 msgstr "Összefüggés szerkesztése"
 
-#, fuzzy
 msgid "Commands"
-msgstr "Megjegyzés:"
+msgstr "Műveletek"
 
-#, fuzzy
 msgid "(All Commands)"
 msgstr "(Minden művelet)"
 
-msgid ""
-"To add a command to a toolbar simply select a category and drag the command "
-"out of this dialog box to a toolbar."
-msgstr ""
+msgid "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
+msgstr "Parancsikont úgy lehet az eszköztárhoz adni, ha kiválasztjuk a kategóriát és az ikont az egérrel az eszköztárra húzzuk."
 
-#, fuzzy
 msgid "Edit f'(x)"
-msgstr "f'(x) hozzáadása"
+msgstr "f'(x) szerkesztése"
 
-#, fuzzy
 msgid "Edit trendline"
-msgstr "Összefüggés szerkesztése"
+msgstr "Trendvonal szerkesztése"
 
-#, fuzzy
-msgid ""
-"This Tip of the day can give you a lot of information about the program that "
-"most users don't know."
-msgstr ""
-"A Nap Ötlete használható, nem közismert információkat ad a program "
-"kezeléséről."
+msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
+msgstr "A Nap Ötlete használható, nem közismert információkat ad a program kezeléséről."
 
-#, fuzzy
-msgid ""
-"You can send suggestions for future versions, bug reports and comments to "
-"graph@padowan.dk"
-msgstr ""
-"A graph@padowan.dk címre várjuk a hibák jelzését, új funkciók fejlesztésének "
-"igényét és véleményeket."
+msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+msgstr "A graph@padowan.dk címre várjuk a hibák jelzését, új funkciók fejlesztésének igényét és véleményeket."
 
-#, fuzzy
-msgid ""
-"You can customize the toolbar by right clicking on it and select 'Customize "
-"toolbar'."
-msgstr ""
-"Jobb gombbal kattintva személyre szabhatod az eszköztárat a 'Testreszabás' "
-"menüponttal."
+msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
+msgstr "Jobb gombbal kattintva személyre szabhatod az eszköztárat a 'Testreszabás' menüponttal."
 
-msgid ""
-"Instead of deleting a function you can make it invisible by right clicking "
-"on it in the function list and removing the check at the 'Visible' menu item."
-msgstr ""
-"A függvény törlése helyett rejtetté tehető, ha jobb gombbal a "
-"függvénylistára kattintva megszűnteted a 'Látható' menüpont jelölését."
+msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
+msgstr "A függvény törlése helyett rejtetté tehető, ha jobb gombbal a függvénylistára kattintva megszűnteted a 'Látható' menüpont jelölését."
 
 msgid "You can paste images into a text label."
 msgstr "Képek is beilleszthetőek a szöveges cimkébe."
 
-msgid ""
-"Text labels can contain any kind of OLE objects, for example Microsoft "
-"Equation. When editing a label right click in the editing area and select "
-"'Insert object'."
-msgstr ""
-"A szöveges cimkék bármilyen OLE objektumot tartalmazhatnak, pl. MS "
-"Egyenletszerkesztő objektumot. A beszúráshoz szerkesztés közben kattints "
-"jobb gombbal a területre, és válaszd ki az 'Objektum beszúrása' menüpontot."
+msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
+msgstr "A szöveges cimkék bármilyen OLE objektumot tartalmazhatnak, pl. MS Egyenletszerkesztő objektumot. A beszúráshoz szerkesztés közben kattints jobb gombbal a területre, és válaszd ki az 'Objektum beszúrása' menüpontot."
 
-msgid ""
-"You can export points from a point series to a file that can be read by "
-"other programs, for example Microsoft Excel. When editing the point series "
-"select the points, right click and choose 'Export to file'."
-msgstr ""
-"A pontsorok táblázat exportálható más programokba, pl. Microsoft Excelbe. "
-"Ehhez kattints jobb gombbal a pontsor nevére és válaszd az 'Exportálás "
-"fájlba' menüpontot."
+msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
+msgstr "A pontsorok táblázat exportálható más programokba, pl. Microsoft Excelbe. Ehhez kattints jobb gombbal a pontsor nevére és válaszd az 'Exportálás fájlba' menüpontot."
 
-#, fuzzy
-msgid ""
-"A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)"
-"=t or as the relation x=5."
-msgstr ""
-"Függőleges vonalat (pl. x=5) ábrázolhatunk paraméteres függvényként (x(t)=5, "
-"y(t)=t) vagy összefüggésként (x=5)."
+msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
+msgstr "Függőleges vonalat (pl. x=5) ábrázolhatunk paraméteres függvényként (x(t)=5, y(t)=t) vagy összefüggésként (x=5)."
 
-msgid ""
-"You can use Zoom|Square to make the axes look equally scaled. This is "
-"especially useful when drawing circles and similar functions."
-msgstr ""
-"A Nagyítás|Arányos menüpont segítségével mérethelyessé teheted az ábrát. Ez "
-"különösen hasznos körök és más szimmetrikus alakzatok ábrázolásakor."
+msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
+msgstr "A Nagyítás|Arányos menüpont segítségével mérethelyessé teheted az ábrát. Ez különösen hasznos körök és más szimmetrikus alakzatok ábrázolásakor."
 
 msgid "You can find a list of all available functions in the help."
-msgstr ""
-"A Segítség menüpontban megtalálható az összes, a program által ismert "
-"függvény listája."
+msgstr "A Segítség menüpontban megtalálható az összes, a program által ismert függvény listája."
 
-msgid ""
-"You can combine two functions to one using 'if'. For example the function f"
-"(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
-msgstr ""
-"Az 'if' segítségével kombinált függvényeket is létrehozhatsz. Például x<1  "
-"esetén f(x)=x, x>=1 esetén f(x)=x^2 megadható a következő módon: f(x)=if"
-"(x>1, x, x^2)."
+msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+msgstr "Az 'if' segítségével kombinált függvényeket is létrehozhatsz. Például x<1  esetén f(x)=x, x>=1 esetén f(x)=x^2 megadható a következő módon: f(x)=if(x>1, x, x^2)."
 
-msgid ""
-"You can import the contents of another Graph file into the current "
-"coordinate system using 'File|Import|Graph file'."
-msgstr ""
-"Más Graph fájl tartalma importálható az aktuális koordinátarendszerbe a Fájl|"
-"Importálás|Graph fájl menüpont segítségével."
+msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
+msgstr "Más Graph fájl tartalma importálható az aktuális koordinátarendszerbe a Fájl|Importálás|Graph fájl menüpont segítségével."
 
-msgid ""
-"If you check 'Save as default' in the Axes dialog the current settings will "
-"be used as default when creating new files."
-msgstr ""
-"Ha a Tengelyek párbeszédablakban bejelölöd a 'Legyen alapértelmezett' "
-"négyzetet, akkor az aktuális beállítások alapértelmezettek lesznek és a "
-"következő fájlok ez alapján jönnek létre."
+msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new files."
+msgstr "Ha a Tengelyek párbeszédablakban bejelölöd a 'Legyen alapértelmezett' négyzetet, akkor az aktuális beállítások alapértelmezettek lesznek és a következő fájlok ez alapján jönnek létre."
 
-msgid ""
-"While you hold down the Ctrl key, you can use the arrow keys to move the "
-"system."
-msgstr ""
-"A Ctrl gomb lenyomva tartásával a kurzormozgató nyilak segítségével "
-"mozgatható a koordinátarendszer."
+msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
+msgstr "A Ctrl gomb lenyomva tartásával a kurzormozgató nyilak segítségével mozgatható a koordinátarendszer."
 
-msgid ""
-"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
-"and out."
+msgid "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."
 msgstr "A Ctrl gomb lenyomva tartásával a + és a - jel nagyításra használható."
 
-msgid ""
-"You can use the scroll button on your mouse to zoom in and out at the "
-"position of the mouse cursor."
-msgstr ""
-"Az egér görgőjével nagyítható és kicsinyíthető az ábra az egérmutató "
-"helyzetéhez képest."
+msgid "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."
+msgstr "Az egér görgőjével nagyítható és kicsinyíthető az ábra az egérmutató helyzetéhez képest."
 
-msgid ""
-"If you don't want an item shown in the legend, you can right click on the "
-"item in the function list and deselect 'Show in legend'."
-msgstr ""
-"Ha nem akarsz megjeleníteni egy elemet az Emlékeztetőben, kattints jobb "
-"gombbal a megfelelő elemre függvénylistában, és szüntesd meg a 'Mutasd az "
-"emlékeztetőben' jelölését."
+msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
+msgstr "Ha nem akarsz megjeleníteni egy elemet az Emlékeztetőben, kattints jobb gombbal a megfelelő elemre függvénylistában, és szüntesd meg a 'Mutasd az emlékeztetőben' jelölését."
 
-msgid ""
-"If you want the axes shown to the left and bottom of the image, you can "
-"choose Axes style as Boxed in the Settings tab of the Axes dialog."
-msgstr ""
-"Ha azt szeretnéd, hogy atengelyek a bal alsó sarokban metsszék egymást, "
-"válaszd ki a Tengelyek stílusa: Bal alsó metszés-t az Tengelyek menüpont "
-"Beállítások fülén."
+msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
+msgstr "Ha azt szeretnéd, hogy atengelyek a bal alsó sarokban metsszék egymást, válaszd ki a Tengelyek stílusa: Bal alsó metszés-t az Tengelyek menüpont Beállítások fülén."
 
-#, fuzzy
-msgid ""
-"Graph can save the shown coordinate system in five different image formats: "
-"bmp, emf, png, jpg and pdf."
-msgstr "A program 4 különböző képformátumba tud menteni: bmp, emf, png és jpg."
+msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
+msgstr "A program 5 különböző formátumba tud menteni: bmp, emf, png, jpg és pdf."
 
-msgid ""
-"You can use 'Edit|Copy image' to copy the coordinate system to the clipboard "
-"and paste it into another program."
-msgstr ""
-"A Szerkesztés|Kép másolása menüpont segítségével vágólapra másolható a "
-"koordinátarendszer, és beilleszthető más alkalmazásokba is."
+msgid "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."
+msgstr "A Szerkesztés|Kép másolása menüpont segítségével vágólapra másolható a koordinátarendszer, és beilleszthető más alkalmazásokba is."
 
-msgid ""
-"You can open a saved grf-file in a new instance of the program by double "
-"clicking on it in Explorer."
-msgstr ""
-"Az Intézőből dupla kattintással is megnyitható a grf fájl a Graph program "
-"segítségével."
+msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
+msgstr "Az Intézőből dupla kattintással is megnyitható a grf fájl a Graph program segítségével."
 
-msgid ""
-"You can drag a grf-file from explorer into an open instance of Graph to open "
-"the file."
-msgstr ""
-"A megnyitott Graph programban úgy is megnyitható egy grf fájl, hogy az "
-"intézőből ráhúzzuk a program ablakára."
+msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
+msgstr "A megnyitott Graph programban úgy is megnyitható egy grf fájl, hogy az intézőből ráhúzzuk a program ablakára."
 
-msgid ""
-"Graph will remember the size and placement of the main window between "
-"executions. This can be disabled from the Options dialog."
-msgstr ""
-"A Graph program megjegyzi az ablak méretét és helyzetét a következő "
-"indításig. Ez a lehetőség kikapcsolható a Beállítások menüpontban."
+msgid "Graph will remember the size and placement of the main window between executions. This can be disabled from the Options dialog."
+msgstr "A Graph program megjegyzi az ablak méretét és helyzetét a következő indításig. Ez a lehetőség kikapcsolható a Beállítások menüpontban."
 
-msgid ""
-"Calc|Table can be used to create a table with evaluation values for a "
-"function."
-msgstr ""
-"A Számítások|Táblázat menüponttal értéktáblázat készíthető az adott "
-"függvényhez."
+msgid "Calc|Table can be used to create a table with evaluation values for a function."
+msgstr "A Számítások|Táblázat menüponttal értéktáblázat készíthető az adott függvényhez."
 
-msgid ""
-"A part or the whole evaluation table can be exported to a file by right "
-"clicking and selecting 'Export to file'. It can afterwards be opened in "
-"other programs like Microsoft Excel."
-msgstr ""
-"Az értéktáblázat akár részben is exportálható fájlba. Ehhez kattints jobb "
-"gombbal a kiválasztott részre és válaszd az Exportálás fájlba menüpontot. "
-"Ezután a táblázat más programokban is felhasználható."
+msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
+msgstr "Az értéktáblázat akár részben is exportálható fájlba. Ehhez kattints jobb gombbal a kiválasztott részre és válaszd az Exportálás fájlba menüpontot. Ezután a táblázat más programokban is felhasználható."
 
-msgid ""
-"Data from the evaluation table can be copied to another program like "
-"Microsoft excel using the clipboard."
-msgstr ""
-"A vágólap segítségével az értéktáblázat átmásolható más programokba, például "
-"Microsoft Excelbe."
+msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
+msgstr "A vágólap segítségével az értéktáblázat átmásolható más programokba, például Microsoft Excelbe."
 
-msgid ""
-"The data points in a point series can be copied to and from other programs "
-"like Microsoft Excel through the clipboard."
-msgstr ""
-"A vágólap segítségével más programokból például Microsoft Excelből is "
-"beilleszthetjük a pontsor adatait."
+msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel through the clipboard."
+msgstr "A vágólap segítségével más programokból például Microsoft Excelből is beilleszthetjük a pontsor adatait."
 
-msgid ""
-"Functions can be copied from one instance of the program to another through "
-"the clipboard using Edit|Copy."
-msgstr ""
-"Vágólap segítségével átmásolhatunk függvényeket az egyik éppen futó Graph "
-"programból egy másikba."
+msgid "Functions can be copied from one instance of the program to another through the clipboard using Edit|Copy."
+msgstr "Vágólap segítségével átmásolhatunk függvényeket az egyik éppen futó Graph programból egy másikba."
 
 msgid "You can always undo the last thing you did using Edit|Undo."
-msgstr ""
-"A legutolsó művelet visszavonható a Szerkesztés|Visszavonás menüponttal."
+msgstr "A legutolsó művelet visszavonható a Szerkesztés|Visszavonás menüponttal."
 
-msgid ""
-"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
-"have undone."
-msgstr ""
-"Ha mégsem akarsz visszavonni egy műveletet, azt visszaállíthatod a "
-"Szerkesztés|Ismét menüpontjával."
+msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
+msgstr "Ha mégsem akarsz visszavonni egy műveletet, azt visszaállíthatod a Szerkesztés|Ismét menüpontjával."
 
 msgid "In the Axes dialog you can add a title to the coordinate system."
 msgstr "A Tengelyek párbeszédablakban megadható a koordinátarendszer címe."
 
-msgid ""
-"You can import point series from files saved by other programs, like "
-"Microsoft Excel."
+msgid "You can import point series from files saved by other programs, like Microsoft Excel."
 msgstr "Más programokból (pl. Microsoft Exclel) is lehet pontsort importálni."
 
-msgid ""
-"When inserting a point series you can copy data from programs like Microsoft "
-"Excel, and paste the data into the grid in Graph."
-msgstr ""
-"Pontsor hozzáadásakor az adatokat más programokból kimásolt értékekkel is "
-"feltölthetjük. Ehhez illesszük be a kimásolt adatokat a pontsor táblázatába."
+msgid "When inserting a point series you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
+msgstr "Pontsor hozzáadásakor az adatokat más programokból kimásolt értékekkel is feltölthetjük. Ehhez illesszük be a kimásolt adatokat a pontsor táblázatába."
 
-msgid ""
-"You can use 'Zoom|All points' to change the coordinate system so all point "
-"series are visible."
-msgstr ""
-"A Nagyítás|Minden pont segítségével minden ábrázolt pont megjelenik a "
-"koordinátarendszeren, ha ez lehetséges."
+msgid "You can use 'Zoom|All points' to change the coordinate system so all point series are visible."
+msgstr "A Nagyítás|Minden pont segítségével minden ábrázolt pont megjelenik a koordinátarendszeren, ha ez lehetséges."
 
-msgid ""
-"You can use Zoom|Fit to change the coordinate system to show the selected "
-"function or point series."
-msgstr ""
-"A Nagyítás|Kitöltés segítségével optimális nagyításban látható a grafikon."
+msgid "You can use Zoom|Fit to change the coordinate system to show the selected function or point series."
+msgstr "A Nagyítás|Kitöltés segítségével optimális nagyításban látható a grafikon."
 
-msgid ""
-"When you hold down the Shift key you can drag the coordinate system around "
-"with the mouse."
-msgstr ""
-"A Shift gomb lenyomva tartásával a koordinátarendszer az egér segítségével "
-"mozgatható."
+msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
+msgstr "A Shift gomb lenyomva tartásával a koordinátarendszer az egér segítségével mozgatható."
 
-msgid ""
-"You can use Calc|Evaluate to find intersections between functions, crossings "
-"with the axes and extremum points."
-msgstr ""
-"A Számítások|Számítás segítségével kiszámítható két függvény metszéspontja, "
-"tengelypontok és szélsőértékek is."
+msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
+msgstr "A Számítások|Számítás segítségével kiszámítható két függvény metszéspontja, tengelypontok és szélsőértékek is."
 
-msgid ""
-"When a point series is selected you can add points to it by clicking on the "
-"image while you hold down the Ctrl key."
-msgstr ""
-"A kiválasztott pontsorhoz úgy is hozzáadhatunk újabb pontot, hogy a Ctrl "
-"gomb lenyomva tartásával az ábrán oda kattintunk, ahová az új pontot akarjuk "
-"helyezni."
+msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
+msgstr "A kiválasztott pontsorhoz úgy is hozzáadhatunk újabb pontot, hogy a Ctrl gomb lenyomva tartásával az ábrán oda kattintunk, ahová az új pontot akarjuk helyezni."
 
-msgid ""
-"You can use a relation to plot any inequality, for example sin(x^2) < cos"
-"(y^2)"
-msgstr ""
-"Összefüggéseket is használhatunk például egyenlőtlenségek megoldására. (f(x)"
-"=sin(x)<0.5)"
+msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
+msgstr "Összefüggéseket is használhatunk például egyenlőtlenségek megoldására. (f(x)=sin(x)<0.5)"
 
-msgid ""
-"You can use a relation to plot any equation, for example x*sin x = y*cos y"
-msgstr ""
-"Összefüggéseket is használhatunk például egyenlet megoldására. (f(x)=sin(x)"
-"=0.5)"
+msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
+msgstr "Összefüggéseket is használhatunk például egyenlet megoldására. (f(x)=sin(x)=0.5)"
 
-msgid ""
-"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
-"same order they appear in the function list to the left."
-msgstr ""
-"Az ábrázolt elemek (függvények, színezés, cimkék, összefüggések, stb.) olyan "
-"sorrendben kerülnek ábrázolásra, amilyen sorrendben a bel oldalon megjelenő "
-"függvénylistában vannak."
+msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
+msgstr "Az ábrázolt elemek (függvények, színezés, cimkék, összefüggések, stb.) olyan sorrendben kerülnek ábrázolásra, amilyen sorrendben a bel oldalon megjelenő függvénylistában vannak."
 
-msgid ""
-"You can move the selected element in the function list either by dragging it "
-"with the mouse or with the arrow up/down keys while ALT is held down."
-msgstr ""
-"A függvénylista elemeinek sorrendje módosítható áthúzással vagy az ALT "
-"nyomva tartása közben a LE és FEL gombokkal."
+msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
+msgstr "A függvénylista elemeinek sorrendje módosítható áthúzással vagy az ALT nyomva tartása közben a LE és FEL gombokkal."
 
-#, fuzzy
-msgid ""
-"You can show functions and other elements behind the axes by moving the "
-"element above the axes in the function list to the left. To move shadings "
-"and tangents you will have to move the functions they are attached to."
-msgstr ""
-"A színezést és más elemeket a tengely mögé helyezhetünk, ha a "
-"függvénylistában a megfelelő elemet a tengely elé húzzuk."
+msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
+msgstr "Függvényeket és más elemeket a tengely mögé helyezhetünk, ha a bal oldalon lévő függvénylistában a \"Tengelyek\" fölé húzzuk. A satírozást és más elemeket a tengely mögé helyezhetünk, ha a hozzájuk tartozó függvényeket a tengelyek mögé helyezzük."
 
-msgid ""
-"Custom text labels may be attached to the axes by right clicking on the "
-"label and selecting a placement from the context menu."
-msgstr ""
-"Egyéni szövegcimke beszúrható úgy, hogy jobb gombbal kattintunk a a "
-"megfelelő helyre, és beírjuk/formázzuk a kívánt szöveget."
+msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
+msgstr "Egyéni szövegcimke beszúrható úgy, hogy jobb gombbal kattintunk a a megfelelő helyre, és beírjuk/formázzuk a kívánt szöveget."
 
-msgid ""
-"The legend may be moved freely with the mouse or attached to one of the "
-"corners by right clicking on the legend and choose a placement from the "
-"context menu."
-msgstr ""
-"Az Emlékeztető szabadon mozgatható az egérrel, vagy bármely sarokba "
-"elhelyezhető jobb gombos kattintással."
+msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
+msgstr "Az Emlékeztető szabadon mozgatható az egérrel, vagy bármely sarokba elhelyezhető jobb gombos kattintással."
 
-msgid ""
-"As an alternative to transparent you can choose a custom background color "
-"for labes. This is especially useful for labels drawn over shades."
-msgstr ""
-"Átlátszóság helyett beállítható egyéni háttér a cimkékre. Ez különösen "
-"hasznos, ha a cimke színezés fölött helyezkedik el."
+msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shades."
+msgstr "Átlátszóság helyett beállítható egyéni háttér a cimkékre. Ez különösen hasznos, ha a cimke színezés fölött helyezkedik el."
 
-msgid ""
-"In most places like point series, axes settings, function ranges, etc., you "
-"can use expressions like pi/4 instead of numbers."
-msgstr ""
-"A legtöbb helyen (pontsor, tengely, intervallum, stb.) számok helyett "
-"kifejezések is használhatók, mint pl. pi/4."
+msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
+msgstr "A legtöbb helyen (pontsor, tengely, intervallum, stb.) számok helyett kifejezések is használhatók, mint pl. pi/4."
 
-msgid ""
-"You can create your own custom constants under Function|Custom functions for "
-"use in functions, point series, etc. For example g=9.80665, R=8.31"
-msgstr ""
-"Létrehozható egyéni konstans a Függvények|Saját függvények menüpontban. "
-"Ezeket az állandókat később felhasználhatjuk függvények vagy pontsorok "
-"megadásakor."
+msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
+msgstr "Létrehozható egyéni konstans a Függvények|Saját függvények menüpontban. Ezeket az állandókat később felhasználhatjuk függvények vagy pontsorok megadásakor."
 
-msgid ""
-"You can create your own custom functions under Function|Custom functions for "
-"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin"
-"(x)/x)"
-msgstr ""
-"Létrehozható saját egyedi függvény a Függvények|Saját függvények menüpontban."
+msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
+msgstr "Létrehozható saját egyedi függvény a Függvények|Saját függvények menüpontban."
 
-msgid ""
-"In the Save as image dialog there is an Option button you can use to specify "
-"the image resolution. This is especially useful if you want a high "
-"resolution image."
-msgstr ""
-"A Mentés képként párbeszédablakban a Beállítások gomb segítségével "
-"kiválasztható, milyen felbontású legyen az elmentett kép."
+msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
+msgstr "A Mentés képként párbeszédablakban a Beállítások gomb segítségével kiválasztható, milyen felbontású legyen az elmentett kép."
 
-msgid ""
-"Point series can have arrows as markers. A point series with arrows as "
-"markers and lines between the points can be used to show vectors."
-msgstr ""
-"Pontsorok megjeleníthetők nyilakkal is. Ezzel a lehetőséggel akár vektorokat "
-"is ábrázolhatzunk."
+msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
+msgstr "Pontsorok megjeleníthetők nyilakkal is. Ezzel a lehetőséggel akár vektorokat is ábrázolhatzunk."
 
-#, fuzzy
 msgid "Custom..."
-msgstr "Különböző"
+msgstr "Egyéni..."
 
 msgid "Black"
 msgstr "Fekete"
@@ -2902,23 +2449,20 @@ msgstr "Vajszínű"
 msgid "Med Gray"
 msgstr "Sötétszürke"
 
-#, fuzzy
 msgid "Local"
-msgstr "Pávakék"
+msgstr "Helyi"
 
 msgid "Global"
-msgstr ""
+msgstr "Általános"
 
-#, fuzzy
 msgid "Insert"
-msgstr "Sor beszúrása"
+msgstr "Beszúrás"
 
-#, fuzzy
 msgid "Insert symbol"
-msgstr "Sor beszúrása"
+msgstr "Szimbólum beszúrása"
 
 msgid "Subset:"
-msgstr ""
+msgstr "Részhalmaz:"
 
 msgid "Print"
 msgstr "Nyomtatás"
@@ -2938,15 +2482,11 @@ msgstr "Hová:"
 msgid "Comment:"
 msgstr "Megjegyzés:"
 
-msgid ""
-"Select the printer to use. The Properties button may be used to change more "
-"advanced settings for the printer."
-msgstr ""
+msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
+msgstr "Nyomtató kiválasztása. További lehetőségek a Beállítások gomb segítségével érhetők el."
 
-msgid ""
-"Select to print in color (or grayscale if your printer is not a color "
-"printer) or convert all colors to black."
-msgstr ""
+msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
+msgstr "Színes vagy szürkeárnyalatos nyomtatás."
 
 msgid "Print output"
 msgstr "Kimenet"
@@ -2966,26 +2506,23 @@ msgstr "Bal margó:"
 msgid "Top margin:"
 msgstr "Felső margó:"
 
-#, fuzzy
 msgid "Select to place the image on the middle of the page."
-msgstr "Válaszd ki a tengelyek cimkéjének betűtípusát."
+msgstr "A kép igazítása az oldal közepére."
 
 msgid "Center on page"
 msgstr "A lap közepére"
 
-#, fuzzy
 msgid "Enter the image position on the page."
-msgstr "Írd be az emlékeztető szövegét."
+msgstr "Add meg a kép helyzetét az oldalon."
 
 msgid "Number of copies:"
 msgstr "Másolatok száma:"
 
-#, fuzzy
 msgid "Choose number of copies to print."
 msgstr "Másolatok száma:"
 
 msgid "Enter percent of original size."
-msgstr ""
+msgstr "Új méret az eredetihez képest százalékban."
 
 #~ msgid "Symbol '%s' not found."
 #~ msgstr "A %s jel nem található."
@@ -2993,115 +2530,87 @@ msgstr ""
 #, fuzzy
 #~ msgid "Copy the animation to the clipboard."
 #~ msgstr "A kijelölt szöveg másolása"
-
 #~ msgid "Edit options."
 #~ msgstr "Beállítások módosítása."
-
 #~ msgid "Insert a new point series."
 #~ msgstr "Új pontsor hozzáadása."
-
 #~ msgid "Calculates area under the path."
 #~ msgstr "Görbe alatti terület nagyságának kiszámítása."
-
 #~ msgid "Insert a text label."
 #~ msgstr "Szöveges cimke beszúrása."
-
 #~ msgid "Select language to use."
 #~ msgstr "Válaszd ki a program nyelvét."
-
 #~ msgid "Cut selected text to the clipboard."
 #~ msgstr "A kijelölt szöveg kivágása a vágólapra."
-
 #~ msgid "End of parenthesis missing."
 #~ msgstr "A záró zárójel hiányzik."
 
 #, fuzzy
 #~ msgid "Panel1"
 #~ msgstr "Mégse"
-
 #~ msgid "Text too long"
 #~ msgstr "A szöveg túl hosszú"
-
 #~ msgid ""
 #~ "Write a descriptive text to show in the legend, else the inequality will "
 #~ "be used."
 #~ msgstr ""
 #~ "Írj szöveget az emlékeztetőbe, különben az hozzárendelési szabály jelenik "
 #~ "meg."
-
 #~ msgid ""
 #~ "Description shown in the legend. If empty the function equation is used."
 #~ msgstr "Emlékeztető. Ha üres, a hozzárendelési szabály jelenik meg."
-
 #~ msgid "Customize"
 #~ msgstr "Egyéni"
-
 #~ msgid "Actions"
 #~ msgstr "Műveletek"
-
 #~ msgid "Description"
 #~ msgstr "Leírás"
-
 #~ msgid "Cate&gories:"
 #~ msgstr "Kategóriák:"
-
 #~ msgid "A&ctions:"
 #~ msgstr "Műveletek"
-
 #~ msgid ""
 #~ "To add actions to your application simply drag and drop from either "
 #~ "Categories or Actions onto an existing ActionBar."
 #~ msgstr ""
 #~ "Művelet hozzáadáaához egyszerűen húzza át a Kategóriák vagy a Műveletek "
 #~ "panelből az Eszköztárra."
-
 #~ msgid "Area..."
 #~ msgstr "Terület"
-
 #~ msgid "Evaluate..."
 #~ msgstr "Számítás"
-
 #~ msgid "Are you sure you want to delete the function: %s"
 #~ msgstr "Biztos törölni akarod a következő függvényt? %s"
-
 #~ msgid "Are you sure you want to delete the tangent: %s"
 #~ msgstr "Biztos törölni akarod a következő érintőt? %s"
 
 #, fuzzy
 #~ msgid "Letter"
 #~ msgstr "Balra"
-
 #~ msgid "Show some frequently asked questions and their answers."
 #~ msgstr "Néhány gyakran ismételt kérdés és válasz."
-
 #~ msgid ""
 #~ "Double-click or select box and press space to change the color of the "
 #~ "graph."
 #~ msgstr "Kétszer idekattintva módosíthatod a grafikon színét."
-
 #~ msgid "Check to increase the end coordinate until interception."
 #~ msgstr "Jelöld be, hogy a vége metszéspontnál legyen."
-
 #~ msgid "Increase to interception"
 #~ msgstr "Metszéspontig"
-
 #~ msgid "Check to decrease start coordinate until interception."
 #~ msgstr "Jelöld be, hogy a kezdet metszéspontnál legyen."
-
 #~ msgid "Decrease to interception"
 #~ msgstr "Metszésponttól"
-
 #~ msgid ""
 #~ "Double-click or select box and press space to change the background color "
 #~ "of the coordinate system."
 #~ msgstr "Kattints kétszer a téglalapra a háttérszín kiválasztásához."
-
 #~ msgid ""
 #~ "Double-click or select box and press space to change the color of the "
 #~ "axes."
 #~ msgstr "Kattints kétszer a téglalapra a tengelyek színének kiválasztásához."
-
 #~ msgid ""
 #~ "Double-click or select box and press space to change the color of the "
 #~ "grids."
 #~ msgstr "Kattints kétszer a téglalapra a rács színének kiválasztásához."
+
