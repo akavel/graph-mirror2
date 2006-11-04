@@ -245,6 +245,7 @@ void TForm1::Translate()
     TranslateList.push_back(Label_Edit);
     TranslateList.push_back(Label_Delete);
     TranslateList.push_back(Label_Placement);
+    TranslateList.push_back(Label_Rotation);
     TranslateList.push_back(Label_Above);
     TranslateList.push_back(Label_Below);
     TranslateList.push_back(Label_Left);
@@ -2653,6 +2654,10 @@ TSaveError SaveAsPdf(const AnsiString &FileName, Graphics::TBitmap *Bitmap, cons
     p.end_document("");
     return seNoError;
   }
+  catch(EDllLoadError&)
+  {
+    return seDllError;
+  }
   catch(PDFlib::Exception &ex)
   {
     MessageBox("PDFlib exception: [" + ToString(ex.get_errnum()) + "] " + ex.get_apiname() + ": " + ex.get_errmsg(), "PDFlib exception");
@@ -3423,6 +3428,7 @@ void __fastcall TForm1::Legend_FontClick(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+
 
 
 

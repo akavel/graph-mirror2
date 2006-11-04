@@ -58,7 +58,7 @@
 #include <boost/scoped_ptr.hpp>
 //---------------------------------------------------------------------------
 enum TCursorState {csIdle, csAddLabel, csMoveLabel, csMoveLegend, csZoomWindow, csMove, csMoving};
-enum TSaveError {seNoError, seFileAccess, seOutOfResources, sePdfError};
+enum TSaveError {seNoError, seFileAccess, seOutOfResources, sePdfError, seDllError};
 
 class TForm1 : public TTntForm
 {

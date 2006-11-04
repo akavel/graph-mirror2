@@ -10,6 +10,12 @@
 #ifndef StackTraceH
 #define StackTraceH
 //---------------------------------------------------------------------------
+class EDllLoadError : public Exception
+{
+public:
+  EDllLoadError(const AnsiString &Str) : Exception(Str) {}
+};
+
 void SetApplicationExceptionHandler(bool ALogAllExceptions);
 void LogUncaughtException(TObject *Sender, Exception *E);
 void LogUncaughtCppException(const char *Message, const char *Thread);

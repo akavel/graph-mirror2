@@ -45,7 +45,7 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value="WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER"/>
+    <USERDEFINES value="WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG"/>
     <SYSDEFINES value="NO_STRICT;USING_ATLVCL;_ATL_NO_SECURITY;INC_ATL_HEADERS;_ATL_SINGLEUSE_INSTANCING;_ATL_MULTIUSE_INSTANCING;_ATL_APARTMENT_THREADED;_BCB_ATL_DEBUG"/>
     <MAINSOURCE value="Graph.cpp"/>
     <INCLUDEPATH value="..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;..\Components\TSaveDialogEx;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Func32;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;$(BCB)\include;$(BCB)\include\vcl;..\components\ticolorbox;..\Components\TCross;..\Components\TFocusPanel;..\Components\TGrid;..\Components\TLineSelect;..\Components\TMyEdit;..\Components\TMyRadioButton;..\Components\TMySplitter;..\Components\TPointSelect;..\Components\TProgress;..\Components\TProgressForm;..\Components\TRecent;..\Components\TShadeSelect;..\..\BMGLib\BMGLib_DLL;..\Components\Common;..\Components\TIRichEdit;$(BCB)\include\atl;..\..\boost;..\..\BMGLib\lpng125;..\..\BMGLib\zlib114;$(BCB)\source\rtl\rtlinc;..\..\PDFlib-Lite\libs\pdflib;..\..\TntUnicodeControls"/>
@@ -67,7 +67,7 @@
     <PFLAGS value="-N2..\Obj -N0..\Obj -$Y+ -$W -$O- -$C- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
     <AFLAGS value="/mx /w2 /zi"/>
-    <LFLAGS value="-I..\Obj -D&quot;&quot; -aa -Tpe -GD -x -v"/>
+    <LFLAGS value="-I..\Obj -dPDFlib.dll -D&quot;&quot; -aa -Tpe -GD -x -v"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -144,7 +144,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=2
 Release=0
-Build=322
+Build=323
 Debug=1
 PreRelease=0
 Special=0
@@ -156,7 +156,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.2.0.322
+FileVersion=4.2.0.323
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2006
 LegalTrademarks=
@@ -232,18 +232,20 @@ Item28=D:\Program Files\dxgettext;D:\Progra~1\dxgettext;..\Components\TOpenPrevi
 Item29=D:\Program Files\dxgettext;..\Components\TOpenPreviewDialog;D:\Program Files\Borland\CBuilder6\Examples\Apps\Autosrv;D:\Program Files\Borland\CBuilder6\Projects;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid
 
 [HistoryLists\hlConditionals]
-Count=11
-Item0=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER
-Item1=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
-Item2=WIN32;_DEBUG
-Item3=WIN32
-Item4=WIN32;LIMITED_EDITION;_DEBUG
-Item5=WIN32;LIMITED_EDITION
-Item6=_DEBUG;WIN32
-Item7=_DEBUG
-Item8=EUREKALOG;_DEBUG
-Item9=EUREKALOG
-Item10=_DEBUG;EUREKALOG
+Count=13
+Item0=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG
+Item1=WIN32;CUSTOM_DEBUG_HANDLER
+Item2=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER
+Item3=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
+Item4=WIN32;_DEBUG
+Item5=WIN32
+Item6=WIN32;LIMITED_EDITION;_DEBUG
+Item7=WIN32;LIMITED_EDITION
+Item8=_DEBUG;WIN32
+Item9=_DEBUG
+Item10=EUREKALOG;_DEBUG
+Item11=EUREKALOG
+Item12=_DEBUG;EUREKALOG
 
 [HistoryLists\hlIntOutputDir]
 Count=1
