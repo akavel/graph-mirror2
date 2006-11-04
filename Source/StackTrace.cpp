@@ -15,6 +15,7 @@
 #include <crtdbg.h>       //Declares _ErrorMessage()
 #include "VersionInfo.h"
 #include <stdio>
+#include <delayimp.h>
 //---------------------------------------------------------------------------
 struct TStackFrame
 {
@@ -39,6 +40,13 @@ static __thread std::vector<TStackInfo> *GlobalStackInfo = NULL; //Must be a poi
 static AnsiString LogFileName = ChangeFileExt(Application->ExeName, ".err");
 static bool LogAllExceptions = false;
 static TGetExceptionObject OldExceptObjProc = NULL;
+//---------------------------------------------------------------------------
+//Called when delay loading a DLL failes
+FARPROC WINAPI DllLoadFailure(dliNotification dliNotify, DelayLoadInfo *pdli)
+{
+  MessageBox("Error loading " + AnsiString(pdli->szDll), "Error loading DLL", MB_ICONSTOP);
+  throw EDllLoadError("Error loading " + AnsiString(pdli->szDll));
+}
 //---------------------------------------------------------------------------
 /** Write stack trace from StackInfoList to Stream.
  */
@@ -371,6 +379,7 @@ void SetApplicationExceptionHandler(bool ALogAllExceptions)
   OldExceptObjProc = reinterpret_cast<TGetExceptionObject>(ExceptObjProc);
   ExceptObjProc = MyGetExceptionObject;
   LogAllExceptions = ALogAllExceptions;
+  __pfnDliFailureHook = DllLoadFailure;
 }
 //---------------------------------------------------------------------------
 #ifdef _STLP_DEBUG
@@ -408,4 +417,5 @@ void __stl_debug_terminate(void)
 }
 #endif //_STLP_DEBUG
 //---------------------------------------------------------------------------
+
 
