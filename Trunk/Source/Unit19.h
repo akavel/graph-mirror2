@@ -58,14 +58,9 @@ __published:	// IDE-managed Components
   void __fastcall Button1Click(TObject *Sender);
   void __fastcall Button3Click(TObject *Sender);
   void __fastcall TntEditKeyPress(TObject *Sender, char &Key);
-  void __fastcall Button5Click(TObject *Sender);
-  void __fastcall Button4Click(TObject *Sender);
-  void __fastcall ComboBox2Change(TObject *Sender);
 private:	// User declarations
   TData Data;
-//  std::vector<DWORD> CompressionHandler;
   static ::TAnimationInfo AnimationInfo;
-  void EnumCompressors();
 
 public:		// User declarations
   __fastcall TForm19(TComponent* Owner, const TData &AData);

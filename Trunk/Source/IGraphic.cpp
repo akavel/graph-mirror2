@@ -18,6 +18,16 @@
 #include <Jpeg.hpp>
 
 //---------------------------------------------------------------------------
+inline bool operator==(RGBQUAD Color1, RGBQUAD Color2)
+{
+  return *reinterpret_cast<unsigned*>(&Color1) == *reinterpret_cast<unsigned*>(&Color2);
+}
+//---------------------------------------------------------------------------
+inline bool operator!=(RGBQUAD Color1, RGBQUAD Color2)
+{
+  return *reinterpret_cast<unsigned*>(&Color1) != *reinterpret_cast<unsigned*>(&Color2);
+}
+//---------------------------------------------------------------------------
 
 //==  CountColors  =====================================================
 // Count number of unique R-G-B triples in a pf24bit Bitmap.
@@ -84,43 +94,39 @@ int CountColors(Graphics::TBitmap *Bitmap)
   return RESULT;
 }
 //---------------------------------------------------------------------------
-void GetColors(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<TColor> &Colors)
+void GetColors(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<RGBQUAD> &Colors)
 {
   Colors.clear();
   Bitmap->HandleType = bmDIB;
   Bitmap->PixelFormat = pf32bit;
-  TColor LastColor = clMax; //Used as cache
+  RGBQUAD LastColor = {0xFF, 0xFF, 0xFF, 0xFF}; //Used as cache
 
   for(int Row = Rect.Top; Row < Rect.Bottom; Row++)
   {
-    TColor *ScanLine = (TColor*)Bitmap->ScanLine[Row];
+    RGBQUAD *ScanLine = static_cast<RGBQUAD*>(Bitmap->ScanLine[Row]);
     for(int Col = Rect.Left; Col < Rect.Right; Col++)
-      if(ScanLine[Col] != LastColor && std::find(Colors.begin(), Colors.end(), ScanLine[Col]) == Colors.end())
+      if(!(ScanLine[Col] == LastColor) && std::find(Colors.begin(), Colors.end(), ScanLine[Col]) == Colors.end())
       {
         LastColor = ScanLine[Col]; //Store in cache
         Colors.push_back(ScanLine[Col]);
       }
   }
-
-  //Sort colors for faster lookup
-  std::sort(Colors.begin(), Colors.end());
 }
 //---------------------------------------------------------------------------
 bool SaveCompressedBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const AnsiString &FileName)
 {
   BITMAPFILEHEADER FileHeader;
   BITMAPINFOHEADER BitmapHeader;
-  std::vector<TColor> Colors;
+  std::vector<RGBQUAD> Colors;
   std::vector<char> Data; //Area with compressed bitmap data
-  GetColors(Bitmap, Rect, Colors);
   CompressBitmap(Bitmap, Rect, Colors, Data);
   FillBitmapInfoHeader(BitmapHeader, Bitmap, Rect, Colors.size(), Data.size());
 
   FileHeader.bfType = 0x4D42; //Initialize file header; must be 'BM'; Remember little endian
-  FileHeader.bfSize = sizeof(FileHeader)+sizeof(BitmapHeader)+Colors.size()*sizeof(TColor)+Data.size(); //File size
+  FileHeader.bfSize = sizeof(FileHeader)+sizeof(BitmapHeader)+Colors.size()*sizeof(RGBQUAD)+Data.size(); //File size
   FileHeader.bfReserved1 = 0;
   FileHeader.bfReserved2 = 0;
-  FileHeader.bfOffBits = sizeof(FileHeader)+sizeof(BitmapHeader)+Colors.size()*sizeof(TColor);//Offset to compressed data
+  FileHeader.bfOffBits = sizeof(FileHeader)+sizeof(BitmapHeader)+Colors.size()*sizeof(RGBQUAD);//Offset to compressed data
 
   //Create new text file; Erase if exists
   std::ofstream out(FileName.c_str(),std::ios::out|std::ios::binary);
@@ -151,21 +157,33 @@ void FillBitmapInfoHeader(BITMAPINFOHEADER &BitmapHeader, Graphics::TBitmap *Bit
   BitmapHeader.biClrImportant = Colors; //Required indexes
 }
 //---------------------------------------------------------------------------
+unsigned AddToPalette(RGBQUAD Color, std::vector<RGBQUAD> &Colors)
+{
+  std::vector<RGBQUAD>::iterator Iter = std::find(Colors.begin(), Colors.end(), Color);
+  if(Iter == Colors.end())
+  {
+    Colors.push_back(Color);
+    return Colors.size() - 1;
+  }
+  return Iter - Colors.begin();
+}
+//---------------------------------------------------------------------------
 //Colors must be sorted
-void CompressBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const std::vector<TColor> &Colors, std::vector<char> &Data)
+//Notice that the Colors are not real TColor values, as DIB use inverted colors.
+void CompressBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<RGBQUAD> &Colors, std::vector<char> &Data)
 {
   Bitmap->HandleType = bmDIB;
   Bitmap->PixelFormat = pf32bit;
 
   Data.clear();
-  
+
   //Loop through scanlines from bottom to top
   for(int y = Rect.Bottom - 1; y >= Rect.Top; y--)
   {
-    TColor *ScanLine = static_cast<TColor*>(Bitmap->ScanLine[y]); //Get pointer to scanline
+    const RGBQUAD *ScanLine = static_cast<RGBQUAD*>(Bitmap->ScanLine[y]); //Get pointer to scanline
     unsigned Count = 1;  //Number of equal pixels following each other
-    TColor Color = ScanLine[Rect.Left]; //Get color of first pixel in scanline
-    unsigned ColorIndex = std::find(Colors.begin(), Colors.end(), Color) - Colors.begin();
+    RGBQUAD Color = ScanLine[Rect.Left]; //Get color of first pixel in scanline
+    unsigned ColorIndex = AddToPalette(Color, Colors);
 
     //Loop through pixels in scanline
     for(int x = Rect.Left + 1; x < Rect.Right; x++)
@@ -179,7 +197,7 @@ void CompressBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const std::vec
         Data.push_back(ColorIndex); //Add the color
         Count = 1;                  //Set count to 1; The one we are looking at now
         Color = ScanLine[x];        //Save the color
-        ColorIndex = std::lower_bound(Colors.begin(), Colors.end(), Color) - Colors.begin();
+        ColorIndex = AddToPalette(Color, Colors);
       }
     Data.push_back(Count);          //Add length of last block of equal colors
     Data.push_back(ColorIndex);     //Add the color

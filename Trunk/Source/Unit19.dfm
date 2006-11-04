@@ -64,7 +64,6 @@ object Form19: TForm19
     Caption = 'Options...'
     TabOrder = 5
     Visible = False
-    OnClick = Button4Click
   end
   object Button3: TTntButton
     Left = 216
