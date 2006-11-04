@@ -170,4 +170,10 @@ void __fastcall TForm20::TrackBar1Change(TObject *Sender)
   MediaPlayer1->Position = TrackBar1->Position;
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm20::TrackBar1KeyPress(TObject *Sender, char &Key)
+{
+  if(Key == VK_ESCAPE)
+    Close();
+}
+//---------------------------------------------------------------------------
 

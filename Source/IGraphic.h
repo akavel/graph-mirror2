@@ -12,8 +12,8 @@
 #include <vector>
 //---------------------------------------------------------------------------
 int CountColors(Graphics::TBitmap *Bitmap);
-void GetColors(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<TColor> &Colors);
-void CompressBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const std::vector<TColor> &Colors, std::vector<char> &Data);
+void GetColors(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<RGBQUAD> &Colors);
+void CompressBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<RGBQUAD> &Colors, std::vector<char> &Data);
 bool SaveCompressedBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const AnsiString &FileName);
 void FillBitmapInfoHeader(BITMAPINFOHEADER &BitmapHeader, Graphics::TBitmap *Bitmap, const TRect &Rect, unsigned Colors, unsigned DataSize);
 

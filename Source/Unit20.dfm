@@ -13,6 +13,7 @@ object Form20: TForm20
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
   Position = poMainFormCenter
   ShowHint = True
@@ -47,6 +48,7 @@ object Form20: TForm20
     TickMarks = tmBottomRight
     TickStyle = tsAuto
     OnChange = TrackBar1Change
+    OnKeyPress = TrackBar1KeyPress
   end
   object Panel2: TPanel
     Left = 8

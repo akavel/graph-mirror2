@@ -72,6 +72,7 @@ __published:	// IDE-managed Components
   void __fastcall SpeedClick(TObject *Sender);
   void __fastcall TntFormClose(TObject *Sender, TCloseAction &Action);
   void __fastcall TrackBar1Change(TObject *Sender);
+  void __fastcall TrackBar1KeyPress(TObject *Sender, char &Key);
 private:	// User declarations
   bool BackwardDirection;
 public:		// User declarations

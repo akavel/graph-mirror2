@@ -58,8 +58,6 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
   Edit4->Text = ToWideString(AnimationInfo.Width);
   Edit5->Text = ToWideString(AnimationInfo.Height);
   Edit6->Text = ToWideString(AnimationInfo.FramesPerSecond);
-
-  EnumCompressors();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button1Click(TObject *Sender)
@@ -74,17 +72,19 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   AnimationInfo.Height = ToInt(Edit5->Text);;
   Bitmap->Width = AnimationInfo.Width;
   Bitmap->Height = AnimationInfo.Height;
-  Bitmap->PixelFormat = pf8bit;
   AnimationInfo.Constant = ToString(ComboBox1->Text);
   TDraw Draw(Bitmap->Canvas, &Data, false, "Animate thread");
   Draw.SetArea(TRect(0, 0, AnimationInfo.Width, AnimationInfo.Height));
 
   AnimationInfo.Min = MakeFloat(Edit1);
   AnimationInfo.Max = MakeFloat(Edit2);
-  AnimationInfo.Step = MakeFloat(Edit3);
+  AnimationInfo.Step = std::abs(MakeFloat(Edit3));
+  if(AnimationInfo.Max < AnimationInfo.Min)
+    AnimationInfo.Step = -AnimationInfo.Step;
   AnimationInfo.FramesPerSecond = MakeFloat(Edit6, LoadRes(RES_GREATER_ZERO, Label5->Caption), 0.01);
 
-  ProgressForm1->Max = std::ceil((AnimationInfo.Max - AnimationInfo.Min) / AnimationInfo.Step) + 1;
+  unsigned StepCount = std::ceil((AnimationInfo.Max - AnimationInfo.Min) / AnimationInfo.Step) + 1;
+  ProgressForm1->Max = StepCount;
   ProgressForm1->Position = 0;
   ProgressForm1->Show();
   TCallOnRelease Dummy(&ProgressForm1->Close);
@@ -93,23 +93,12 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   std::vector<char> ImageData;
   ImageData.reserve(Rect.Width() * Rect.Height());
 
-  //Get colors used and sort them. If other colors are used they will be replaced by the nearest from the list.
-  //Unfortunately it is difficult to know what colors are used without looking at all the frames.
-  std::vector<TColor> Colors = Form1->ColorSelect->ColorListVector;
-  std::sort(Colors.begin(), Colors.end());
-
-  std::vector<char> BitmapInfoData(Colors.size() * sizeof(TColor) + sizeof(BITMAPINFOHEADER));
+  //Make space for 256 colors in palette
+  std::vector<char> BitmapInfoData(256 * sizeof(RGBQUAD) + sizeof(BITMAPINFOHEADER));
   BITMAPINFO *BitmapInfo = reinterpret_cast<BITMAPINFO*>(&BitmapInfoData[0]);
-  FillBitmapInfoHeader(BitmapInfo->bmiHeader, Bitmap.get(), Rect, Colors.size(), 0);
-  std::copy(Colors.begin(), Colors.end(), reinterpret_cast<TColor*>(BitmapInfo->bmiColors));
-/*  BITMAPINFOHEADER BitmapInfo;
-  unsigned InfoSize;
-  unsigned ImageSize;
-  GetDIBSizes(Bitmap->Handle, InfoSize, ImageSize);
-  ImageData.resize(ImageSize);
-  GetDIB(Bitmap->Handle, 0, &BitmapInfo, &ImageData[0]);
-*/
+  FillBitmapInfoHeader(BitmapInfo->bmiHeader, Bitmap.get(), Rect, 256, 0);
   AnsiString TempFile = GetTempFileName("Graph", "avi");
+
   AVIFileInit();
   TCallOnRelease Dummy2(AVIFileExit);
   TCallOnRelease Dummy3(DeleteFile, TempFile);
@@ -125,14 +114,14 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 
     StreamInfo.fccType = streamtypeVIDEO;
     StreamInfo.fccHandler = 0; //CompressionHandler[ComboBox2->ItemIndex];
-    StreamInfo.dwFlags = 0;
+    StreamInfo.dwFlags = AVISTREAMINFO_FORMATCHANGES;
     StreamInfo.dwCaps = 0;
     StreamInfo.wPriority = 0;
     StreamInfo.wLanguage = 0;
     StreamInfo.dwScale = 100;
     StreamInfo.dwRate = AnimationInfo.FramesPerSecond * 100;
     StreamInfo.dwStart = 0;
-    StreamInfo.dwLength = std::ceil((AnimationInfo.Max - AnimationInfo.Min) / AnimationInfo.Step); //Number of frames, I think
+    StreamInfo.dwLength = StepCount; //Number of frames, I think
     StreamInfo.dwInitialFrames = 0;
     StreamInfo.dwSuggestedBufferSize = AnimationInfo.Height * AnimationInfo.Width * 4; //Should be changed later
     StreamInfo.dwQuality = -1;
@@ -145,10 +134,9 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     OleCheck(AVIFileCreateStream(pFile, &pStream, &StreamInfo));
     TCallOnRelease Dummy5(AVIStreamRelease, pStream);
 
-    OleCheck(AVIStreamSetFormat(pStream, 0, BitmapInfo, /*sizeof(BitmapInfo)*/BitmapInfoData.size()));
-
-    int I = 0;
-    for(double Value = AnimationInfo.Min; Value <= AnimationInfo.Max; Value += AnimationInfo.Step, I++)
+    unsigned I = 0;
+    std::vector<RGBQUAD> Colors;
+    for(double Value = AnimationInfo.Min; I < StepCount; Value += AnimationInfo.Step, I++)
     {
       Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
       Bitmap->Canvas->FillRect(TRect(0, 0, AnimationInfo.Width, AnimationInfo.Height));
@@ -159,9 +147,21 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
       Draw.DrawAll();
       Draw.Wait();
 
+      //As we don't know what colors will be used in all the frames, the palette is updated for each frame.
+      //It seems to give problems when the palette is changed, at least with the MCI used in Graph,
+      //so we only add to the palette. It also gives problems when the number of entries is
+      //increased. Therefore we always store 256 colors, where the unused have dummy values.
+      //Why is this so difficult?
+      unsigned LastColorCount = Colors.size();
       CompressBitmap(Bitmap.get(), Rect, Colors, ImageData);
-//      GetDIB(Bitmap->Handle, 0, &BitmapInfo, &ImageData[0]);
+      if(Colors.size() > LastColorCount)
+      {
+        std::copy(Colors.begin(), Colors.end(), BitmapInfo->bmiColors);
+        OleCheck(AVIStreamSetFormat(pStream, I, BitmapInfo, BitmapInfoData.size()));
+      }
+
       OleCheck(AVIStreamWrite(pStream, I, 1, &ImageData[0], ImageData.size(), AVIIF_KEYFRAME, NULL, NULL));
+
       ProgressForm1->StepIt();
       if(ProgressForm1->AbortProgress)
         return;
@@ -181,50 +181,6 @@ void __fastcall TForm19::TntEditKeyPress(TObject *Sender, char &Key)
 {
   if(!isdigit(Key) && Key != '\b')
     Key = 0;
-}
-//---------------------------------------------------------------------------
-void TForm19::EnumCompressors()
-{
-/*  ICINFO Info;
-  unsigned I = 0;
-  CompressionHandler.push_back(0); //The first is "Uncompressed"
-
-  while(ICInfo(ICTYPE_VIDEO, I, &Info))
-  {
-    HIC hic = ICOpen(Info.fccType, Info.fccHandler, ICMODE_QUERY);
-    ICGetInfo(hic, &Info, sizeof(Info));
-    ICClose(hic);
-    if(*Info.szName)
-    {
-      ComboBox2->Items->Add(Info.szDescription);
-      CompressionHandler.push_back(Info.fccHandler);
-    }
-    I++;
-  }
-
-  ComboBox2->ItemIndex = 0;*/
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm19::Button5Click(TObject *Sender)
-{
-//  HIC hic = ICOpen(ICTYPE_VIDEO, CompressionHandler[ComboBox2->ItemIndex], ICMODE_QUERY);
-//  ICAbout(hic, Handle);
-//  ICClose(hic);
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm19::Button4Click(TObject *Sender)
-{
-//  HIC hic = ICOpen(ICTYPE_VIDEO, CompressionHandler[ComboBox2->ItemIndex], ICMODE_QUERY);
-//  ICConfigure(hic, Handle);
-//  ICClose(hic);
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm19::ComboBox2Change(TObject *Sender)
-{
-//  HIC hic = ICOpen(ICTYPE_VIDEO, CompressionHandler[ComboBox2->ItemIndex], ICMODE_QUERY);
-//  Button4->Enabled = ICQueryConfigure(hic);
-//  Button5->Enabled = ICQueryAbout(hic);
-//  ICClose(hic);
 }
 //---------------------------------------------------------------------------
 
