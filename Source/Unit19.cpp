@@ -30,7 +30,7 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
   TranslateProperties(this);
   SetAccelerators(this);
 
-  int Left = Label7->Left + Label7->Width + 5;
+  int Left = Label7->Left + TMaxWidth(Label2)(Label3)(Label4)(Label5)(Label6)(Label7) + 5;
   ResizeControl(ComboBox1, Left);
   ResizeControl(Edit1, Left);
   ResizeControl(Edit2, Left);
