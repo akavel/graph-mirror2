@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-10-29 21:54+0800\n"
+"PO-Revision-Date: 2006-11-05 11:34+0800\n"
 "Last-Translator: djj <djj@cygsh.tw>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,9 @@ msgstr "到:"
 msgid "Area"
 msgstr "面積"
 
-#, fuzzy
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "輸入起始座標或用滑鼠標示圖片範圍"
 
-#, fuzzy
 msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
 msgstr "輸入終點座標或用滑鼠標示圖片範圍"
 
@@ -96,18 +94,15 @@ msgstr "極限"
 msgid "This is the function evaluated for the entered x-value."
 msgstr "此為帶入x值求解所用的函數"
 
-#, fuzzy
 msgid "This is the first derivative of the function evaluated for the entered value."
 msgstr "這是函數的第一導函數"
 
 msgid "This is the functions second derivative evaluated for the entered value."
 msgstr "這是函數的第二導函數"
 
-#, fuzzy
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
 msgstr "這是輸入x座標後相對應 y 座標上的切線"
 
-#, fuzzy
 msgid "Enter an x-coordinate or click in the main window."
 msgstr "輸入 x 座標或者點主視窗上的 切線"
 
@@ -207,7 +202,6 @@ msgstr "儲存座標系為另一個新名稱"
 msgid "Save copy as..."
 msgstr "儲存副本為"
 
-#, fuzzy
 msgid "Saves a copy of the current coordinate system."
 msgstr "儲存一個此座標系副本"
 
@@ -286,21 +280,18 @@ msgstr "插入新函數"
 msgid "Insert tangent/normal..."
 msgstr "插入切線/法線"
 
-#, fuzzy
 msgid "Insert a tangent or normal for the selected function."
-msgstr "插入選定函數的切線"
+msgstr "插入選定函數的切線或法線"
 
 msgid "Insert shade..."
 msgstr "插入陰影"
 
-#, fuzzy
 msgid "Add shading to the selected function."
 msgstr "為此函數增加陰影"
 
 msgid "Insert point series..."
 msgstr "插入座標點數列"
 
-#, fuzzy
 msgid "Insert a point series."
 msgstr "插入座標點數列"
 
@@ -313,7 +304,6 @@ msgstr "插入一個最適合曲線到選定的座標數列"
 msgid "Edit..."
 msgstr "編輯..."
 
-#, fuzzy
 msgid "Edit the selected element: Function, tangent, point series, etc."
 msgstr "編輯選取的函數, 切線或座標點"
 
@@ -350,7 +340,6 @@ msgstr "縮放到使用者選取的視窗"
 msgid "Square"
 msgstr "正方形"
 
-#, fuzzy
 msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
 msgstr "縮放到座標軸相同，這會呈現圓形的關係而非橢圓"
 
@@ -366,28 +355,24 @@ msgstr "移動"
 msgid "Move up"
 msgstr "上移"
 
-#, fuzzy
 msgid "Move the window up along the coordinate system."
 msgstr "移動視窗到座標系上面"
 
 msgid "Move down"
 msgstr "下移"
 
-#, fuzzy
 msgid "Move the window down along the coordinate system."
 msgstr "移動視窗到座標系下面"
 
 msgid "Move left"
 msgstr "左移"
 
-#, fuzzy
 msgid "Move the window to the left along the coordinate system."
 msgstr "移動視窗到座標系左側"
 
 msgid "Move right"
 msgstr "右移"
 
-#, fuzzy
 msgid "Move the window to the right along the coordinate system."
 msgstr "移動視窗到座標系右側"
 
@@ -397,17 +382,14 @@ msgstr "移動座標系"
 msgid "Move the coordinate system with the mouse."
 msgstr "用滑鼠移動座標系"
 
-#, fuzzy
 msgid "Length of path"
 msgstr "路徑長度"
 
-#, fuzzy
 msgid "Calculates the length of path between two given points on the curve."
-msgstr "計算兩點之間的路徑長度"
+msgstr "計算曲線上兩點之間的路徑長度"
 
-#, fuzzy
 msgid "Calculates the area under the path of the selected function."
-msgstr "插入選定函數的第一導函數"
+msgstr "計算所選擇函數路徑下方的面積"
 
 msgid "Evaluate"
 msgstr "求解"
@@ -418,7 +400,6 @@ msgstr "求解或推算選定的函數"
 msgid "Table..."
 msgstr "表格..."
 
-#, fuzzy
 msgid "Shows an evaluation table."
 msgstr "呈現一個求解表格"
 
@@ -431,7 +412,6 @@ msgstr "開啟說明檔案"
 msgid "List of functions"
 msgstr "函數清單"
 
-#, fuzzy
 msgid "Shows a list of built-in functions that can be used for graphing."
 msgstr "呈現可以用來繪圖的函數清單"
 
@@ -471,7 +451,6 @@ msgstr "縮放到所有的座標點都可見"
 msgid "Frequently Asked Questions"
 msgstr "常見問題"
 
-#, fuzzy
 msgid "Shows a list of frequently asked questions and their answers."
 msgstr "呈現常見問題與解答清單"
 
@@ -484,7 +463,6 @@ msgstr "插入一個文字標籤(在主視窗中選擇並點選要標籤的位�
 msgid "Donate"
 msgstr "捐助"
 
-#, fuzzy
 msgid "Donate money to the project."
 msgstr "捐助這個計畫經費"
 
@@ -545,7 +523,6 @@ msgstr "用改變常數來新增動畫"
 msgid "Graph file..."
 msgstr "圖檔..."
 
-#, fuzzy
 msgid "Import a Graph file into the current coordinate system."
 msgstr "輸入一個圖檔到現在的座標系"
 
@@ -570,9 +547,8 @@ msgstr "自訂工具列"
 msgid "Customize the icons shown on the toolbar."
 msgstr "自訂工具列圖示"
 
-#, fuzzy
 msgid "Rotation"
-msgstr "關係式:"
+msgstr "旋轉"
 
 msgid "Edit label..."
 msgstr "編輯標籤"
@@ -592,11 +568,9 @@ msgstr "顯示圖例說明"
 msgid "Select to show a legend in the coordinate system."
 msgstr "選擇顯示此座標系的圖例說明"
 
-#, fuzzy
 msgid "Font"
 msgstr "字型"
 
-#, fuzzy
 msgid "Change the font of the legend."
 msgstr "選擇標題的字型"
 
@@ -660,7 +634,6 @@ msgstr "圖例說明文字"
 msgid "Description:"
 msgstr "敘述:"
 
-#, fuzzy
 msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
 msgstr "寫敘述文字到圖例說明當中，在等式的時候會使用到。"
 
@@ -676,17 +649,14 @@ msgstr "顏色"
 msgid "Width:"
 msgstr "寬度:"
 
-#, fuzzy
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "選擇不等式的形式。不能套用到等式當中。"
 
-#, fuzzy
 msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "等式的像素寬度，不可以套用到不等式。"
+msgstr "等式或不等式的線寬度。"
 
-#, fuzzy
 msgid "Select the color for drawing the relation."
-msgstr "選擇線條的顏色"
+msgstr "選擇畫等式的的顏色"
 
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
 msgstr "輸入關係式，例如 \"x^2+y^2 = 25\" 或 \"y < sin(x)\""
@@ -724,9 +694,8 @@ msgstr "圖形寬度(點數)"
 msgid "Choose which line style to use for drawing the graph."
 msgstr "選擇用來繪圖的線條樣式"
 
-#, fuzzy
 msgid "Select the color of the graph."
-msgstr "選擇要繪圖之函數類型"
+msgstr "選擇路徑顏色"
 
 msgid "Argument range"
 msgstr "參數範圍"
@@ -824,9 +793,8 @@ msgstr "移除模式"
 msgid "Edit model"
 msgstr "編輯模型"
 
-#, fuzzy
 msgid "Enter a function model to base the trendline on."
-msgstr "輸入一個呈現在圖例說明的敘述"
+msgstr "使用一個函數模式來作為趨勢線的基準"
 
 msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
 msgstr "在截距對話框輸入一個值,用來定義一個趨勢線與y軸相交的點。而這個只適用於線性、多項式與指數趨勢線。"
@@ -873,9 +841,8 @@ msgstr "中間插入："
 msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
 msgstr "選擇座標點之間的線條形式，你也可以不要畫任何線條。"
 
-#, fuzzy
 msgid "Choose the width of the lines in pixels."
-msgstr "選擇線條尺寸"
+msgstr "選擇線條寬度"
 
 msgid "Select which kind of line to draw between the markers."
 msgstr "選擇標示之間的線條樣式"
@@ -925,7 +892,6 @@ msgstr "誤差槓"
 msgid "X error bars"
 msgstr "X 誤差槓"
 
-#, fuzzy
 msgid "Show horizontal error bars."
 msgstr "顯示水平誤差槓"
 
@@ -959,7 +925,6 @@ msgstr "輸入一個百分比的相對值"
 msgid "Y error bars"
 msgstr "Y 誤差槓"
 
-#, fuzzy
 msgid "Show vertical error bars."
 msgstr "呈現垂直誤差槓"
 
@@ -969,7 +934,6 @@ msgstr "顯示y誤差槓"
 msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "所有的誤差槓都以y軸同樣比率呈現"
 
-#, fuzzy
 msgid "Cut the selected text to the clipboard."
 msgstr "剪下選擇的文字到剪貼簿上"
 
@@ -985,7 +949,6 @@ msgstr "擦掉選擇的欄位"
 msgid "Insert row"
 msgstr "插入列"
 
-#, fuzzy
 msgid "Inserts a row in the grid moving rows below one down."
 msgstr "插入一列到表格當中，並且把以下的列往下移。"
 
@@ -1022,9 +985,8 @@ msgstr "間隔的第一個x值"
 msgid "The last x-value in the interval."
 msgstr "間隔的最後x值"
 
-#, fuzzy
 msgid "Show %s"
-msgstr "顯示記號"
+msgstr "顯示 %s"
 
 msgid "Copy selected cells to the clipboard."
 msgstr "複製選擇的欄位到剪貼簿上"
@@ -1098,7 +1060,6 @@ msgstr "確認增加終點座標直到交叉"
 msgid "Increase to intersection"
 msgstr "增加直到交叉"
 
-#, fuzzy
 msgid "Check to decrease the start coordinate until intersection."
 msgstr "確認減少起始座標直到交叉"
 
@@ -1132,9 +1093,8 @@ msgstr "第2個函數"
 msgid "2nd function:"
 msgstr "第2個函數："
 
-#, fuzzy
 msgid "Select the second function when you want a shading between two functions."
-msgstr "請選擇第二個函數套用於想要呈現兩個函數之間的陰影。"
+msgstr "若你想要繪製陰影在兩個函數之間，請選擇第二個函數。"
 
 msgid "Shading range for 2nd function"
 msgstr "第二個函數的陰影範圍"
@@ -1175,17 +1135,14 @@ msgstr "設定自訂影像高度"
 msgid "Choose to use the same size as shown on the screen or a custom image size."
 msgstr "選用與顯示在銀幕或自訂影像相同的尺寸"
 
-#, fuzzy
 msgid "Image size"
-msgstr "圖片寬度："
+msgstr "圖片寬度"
 
-#, fuzzy
 msgid "Screen size"
 msgstr "文字大小"
 
-#, fuzzy
 msgid "Custom size"
-msgstr "自訂:"
+msgstr "自訂大小"
 
 msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
 msgstr "漸進式的編碼可以讓下載圖片時觀看粗略的影像"
@@ -1202,9 +1159,8 @@ msgstr "選擇壓縮品質"
 msgid "Quality"
 msgstr "品質"
 
-#, fuzzy
 msgid "Paper size:"
-msgstr "文字大小"
+msgstr "紙張尺寸:"
 
 msgid "Choose paper orientation."
 msgstr "選擇紙張方向"
@@ -1218,11 +1174,9 @@ msgstr "畫像"
 msgid "Landscape"
 msgstr "風景圖"
 
-#, fuzzy
 msgid "Choose paper size to use."
-msgstr "選擇線條尺寸"
+msgstr "選擇欲使用的紙張尺寸"
 
-#, fuzzy
 msgid "Select this to use these settings as defaults in the future."
 msgstr "選擇此使用軸線設定作為以後的預設值"
 
@@ -1238,7 +1192,6 @@ msgstr "常數"
 msgid "Choose a constant to change between each frame."
 msgstr "選擇用來改變畫面間的常數"
 
-#, fuzzy
 msgid "Step:"
 msgstr "間隔數:"
 
@@ -1251,9 +1204,8 @@ msgstr "間隔的最後常數"
 msgid "The chosen constant is changed by this value between each frame."
 msgstr "這個選擇的常數已經被畫面間的值改變"
 
-#, fuzzy
 msgid "Image information"
-msgstr "圖形選項"
+msgstr "圖形資訊"
 
 msgid "Frames/second:"
 msgstr "畫面/秒:"
@@ -1282,31 +1234,24 @@ msgstr "Build"
 msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
 msgstr "這是免費軟體，歡迎你在GNU 通用公眾使用的範圍下使用。並請回報問題和建議給程式設計師。"
 
-#, fuzzy
 msgid "The newest version as well as the source code are available at:"
 msgstr "最新的版本和原始碼在："
 
-#, fuzzy
 msgid "Animation"
-msgstr "捐助"
+msgstr "動畫繪製"
 
-#, fuzzy
 msgid "Play"
-msgstr "極座標"
+msgstr "播放"
 
-#, fuzzy
 msgid "Pause"
-msgstr " 貼上"
+msgstr " 停止"
 
-#, fuzzy
 msgid "Stop"
-msgstr "間隔數:"
+msgstr "停止"
 
-#, fuzzy
 msgid "Back"
-msgstr "黑色"
+msgstr "返回"
 
-#, fuzzy
 msgid "Step"
 msgstr "間隔數:"
 
@@ -1316,9 +1261,8 @@ msgstr "速度"
 msgid "Change the speed used to play the animation."
 msgstr "改變動畫播放的速度"
 
-#, fuzzy
 msgid "Repeat"
-msgstr "實數"
+msgstr "重複"
 
 msgid "Repeat playing the animation until manually stopped."
 msgstr "重複播放動畫直到手動停止"
@@ -1329,13 +1273,11 @@ msgstr "自動倒帶"
 msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
 msgstr "當動畫播放結束返回，這與\"重複\"指令一起最有用。"
 
-#, fuzzy
 msgid "Open an animation file."
-msgstr "開啟檔案: %s"
+msgstr "開啟一個動畫檔案"
 
-#, fuzzy
 msgid "Save the animation to a file."
-msgstr "儲存選擇的資料到檔案"
+msgstr "儲存動畫到檔案"
 
 msgid "Edit axes"
 msgstr "編輯座標軸"
@@ -1370,16 +1312,14 @@ msgstr "使用對數尺度在x軸上"
 msgid "Logarithmic scale"
 msgstr "對數尺度"
 
-#, fuzzy
 msgid "Show the label at the right side of the main window, above the x-axis."
 msgstr "在x軸的右上顯示標籤"
 
 msgid "Label:"
 msgstr "標籤："
 
-#, fuzzy
 msgid "Edit the label for the axis here."
-msgstr "編輯標籤"
+msgstr "編輯此軸線的標籤"
 
 msgid "Show units on the x-axis."
 msgstr "顯示x軸單位"
@@ -1387,35 +1327,30 @@ msgstr "顯示x軸單位"
 msgid "Show numbers"
 msgstr "顯示數字"
 
-#, fuzzy
 msgid "The x-axis will intersect with the y-axis at this value."
 msgstr "x 軸和y軸會在此數值相交"
 
 msgid "Units between the grid lines perpendicular to the x-axis."
 msgstr "垂直於x軸的格線之間單位"
 
-#, fuzzy
 msgid "Determine the tick unit automatically."
 msgstr "自動決定記號單位"
 
 msgid "Auto tick"
 msgstr "自動記號"
 
-#, fuzzy
 msgid "Set the grid unit to the same as the tick unit."
 msgstr "設定格線單位與記號單位相同"
 
 msgid "Auto grid"
 msgstr "自動格線"
 
-#, fuzzy
 msgid "Show tick marks on the x-axis."
 msgstr "顯示x軸上的記號標示"
 
 msgid "Show ticks"
 msgstr "顯示記號"
 
-#, fuzzy
 msgid "Show units on the selected axis as a fraction multiplied by pi."
 msgstr "在軸上顯示pi 的分數單位"
 
@@ -1446,18 +1381,15 @@ msgstr "y軸上的記號尺度"
 msgid "Show units on the y-axis."
 msgstr "顯示y軸上的單位"
 
-#, fuzzy
 msgid "Show the label at the top of the main window, to the right of the y-axis."
 msgstr "在視窗的上端靠近y軸的地方顯示標籤"
 
-#, fuzzy
 msgid "The y-axis will intersect with the x-axis at this value."
-msgstr "y軸和x軸會在此數值時候交叉"
+msgstr "y軸和x軸會在此數值交叉"
 
 msgid "Units between the grid lines perpendicular to the y-axis."
 msgstr "垂直於y軸的格線之間的單位"
 
-#, fuzzy
 msgid "Show tick marks on the y-axis."
 msgstr "顯示y軸上的記號標記"
 
@@ -1485,7 +1417,6 @@ msgstr "交叉的"
 msgid "Boxed"
 msgstr "盒狀"
 
-#, fuzzy
 msgid "Choose if trigonometric functions should calculate in radians or degrees."
 msgstr "選擇三角函數的計算使用弧度或者角度"
 
@@ -1531,17 +1462,14 @@ msgstr "軸線顏色"
 msgid "Background color:"
 msgstr "背景顏色"
 
-#, fuzzy
 msgid "Select the color of the image background."
-msgstr "選擇標示的顏色"
+msgstr "選擇圖片背景的顏色"
 
-#, fuzzy
 msgid "Select the color of the axes."
-msgstr "選擇標示的顏色"
+msgstr "選擇軸線的顏色"
 
-#, fuzzy
 msgid "Select the color of the grid lines."
-msgstr "選擇線條的顏色"
+msgstr "選擇格線的顏色"
 
 msgid "Fonts"
 msgstr "字型"
@@ -1555,7 +1483,6 @@ msgstr "標籤字型："
 msgid "Legend font:"
 msgstr "圖例說明字型"
 
-#, fuzzy
 msgid "Select the font used to show the labels on the axes."
 msgstr "選擇軸線上的標籤字型"
 
@@ -1577,21 +1504,18 @@ msgstr "最大還原步驟："
 msgid "Language:"
 msgstr "語言："
 
-#, fuzzy
 msgid "Font scale:"
 msgstr "字型大小"
 
 msgid "Number of decimals used when results are shown."
 msgstr "用來顯現的十進位數目"
 
-#, fuzzy
 msgid "Associate *.grf files with Graph."
 msgstr "用Graph關聯 *.grf 檔案類型"
 
 msgid "Associate .grf files"
 msgstr "關聯 .grf 檔案"
 
-#, fuzzy
 msgid "The number of most recent used files shown in the File menu."
 msgstr "檔案目錄中最近使用檔案數目"
 
@@ -1616,7 +1540,6 @@ msgstr "方形的"
 msgid "Polar"
 msgstr "極座標"
 
-#, fuzzy
 msgid "Show the tooltip when the cursor is over an item."
 msgstr "當游標在某物件上時顯示工具提示"
 
@@ -1632,9 +1555,8 @@ msgstr "如果被勾選了，則此程式會主動在被啟動時到網站上去
 msgid "Check for new version of Graph at startup"
 msgstr "在啟動  Graph 時就檢查新版本"
 
-#, fuzzy
 msgid "Select the language to use for the user interface."
-msgstr "選擇陰影的樣式"
+msgstr "選擇"
 
 msgid "This is used to scale the user interface if you are having problems reading the text."
 msgstr "當你觀看文字有困難的時候可以用來縮放使用者介面"
@@ -1672,9 +1594,8 @@ msgstr "繪圖型態:"
 msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
 msgstr "如果想要計算座標點被連起來，請選擇線條。如果想只想要呈現圓點而已，請選擇點。"
 
-#, fuzzy
 msgid "Automatic"
-msgstr "自動記號"
+msgstr "自動"
 
 msgid "Dots"
 msgstr "虛線"
@@ -1694,34 +1615,27 @@ msgstr "字型大小"
 msgid "Font color:"
 msgstr "字型顏色"
 
-#, fuzzy
 msgid "Text size."
 msgstr "文字大小"
 
 msgid "Text string"
 msgstr "文字字串"
 
-#, fuzzy
 msgid "Insert symbol (Ctrl+G)"
-msgstr "插入符號"
+msgstr "插入符號 (Ctrl+G)"
 
-#, fuzzy
 msgid "Insert object"
 msgstr "插入物件"
 
-#, fuzzy
 msgid "Bold (Ctrl+B)"
 msgstr "粗體 (Ctrl-B)"
 
-#, fuzzy
 msgid "Italic (Ctrl+I)"
 msgstr "斜體(Ctrl-I)"
 
-#, fuzzy
 msgid "Underline (Ctrl+U)"
 msgstr "底線(Ctrl-U)"
 
-#, fuzzy
 msgid "Strikethrough (Ctrl+S)"
 msgstr "刪除線 (Ctrl-S)"
 
@@ -1729,31 +1643,25 @@ msgid "Superscript (Ctrl++)"
 msgstr "上標 (Ctrl++)"
 
 msgid "Subscript (Ctrl+=)"
-msgstr "下標 (Ctrl++)"
+msgstr "下標 (Ctrl+=)"
 
-#, fuzzy
 msgid "Align left (Ctrl+L)"
-msgstr "置左"
+msgstr "置左(Ctrl+L)"
 
-#, fuzzy
 msgid "Center (Ctrl+E)"
-msgstr "置中"
+msgstr "置中(Ctrl+E)"
 
-#, fuzzy
 msgid "Align right (Ctrl+R)"
-msgstr "置右"
+msgstr "置右(Ctrl+R)"
 
-#, fuzzy
 msgid "Text font."
 msgstr "字型"
 
-#, fuzzy
 msgid "Text color."
 msgstr "文字顏色"
 
-#, fuzzy
 msgid "Select background color of the text label."
-msgstr "選擇標題的字型"
+msgstr "選擇標題的字的背景色"
 
 msgid "Undo last action."
 msgstr "還原上一個動作"
@@ -1794,7 +1702,6 @@ msgstr "常數"
 msgid "Value"
 msgstr "數值"
 
-#, fuzzy
 msgid "Select a function or tangent to evaluate."
 msgstr "選擇函數或切線進行求解"
 
@@ -1891,7 +1798,6 @@ msgstr "缺少右括號"
 msgid "Invalid number of arguments supplied for function '%s'"
 msgstr "對此函數'%s'提供了無效的參數值"
 
-#, fuzzy
 msgid "Comparison operator misplaced."
 msgstr "比較運算子放置錯誤"
 
@@ -1901,11 +1807,9 @@ msgstr "發現無效數字,使用此格式: -5.475E-8"
 msgid "String is empty. You need to enter a function."
 msgstr "字串是空的,你需要輸入一個函數"
 
-#, fuzzy
 msgid "Comma is not allowed here. Use dot as decimal separator."
 msgstr "符號(,)是不被允許的; 請用(.)作為十進位的分隔符號"
 
-#, fuzzy
 msgid "Unexpected end of brackets."
 msgstr "無預期的結束括號"
 
@@ -1927,7 +1831,6 @@ msgstr "未知字元: \"%s\""
 msgid "The end of the expression was unexpected."
 msgstr "意外的式子結尾"
 
-#, fuzzy
 msgid "Error parsing function text."
 msgstr "解譯函數文字出現錯誤"
 
@@ -1985,13 +1888,11 @@ msgstr ""
 "名稱只能夠包含字母和十進位數字，而且必須要以字幕為開頭。\n"
 "此外，你不可以用保留字作為參數名稱。"
 
-#, fuzzy
 msgid "The right bracket is missing."
-msgstr "結束括號\")\"遺漏了"
+msgstr "右括號遺漏了"
 
-#, fuzzy
 msgid "Character found after brackets."
-msgstr "括號後方建立字元"
+msgstr "括號後出現字元"
 
 msgid "Symbol \"%s\" defined more than once."
 msgstr "符號 \"%s\" 已經被建立超過一次"
@@ -2060,7 +1961,6 @@ msgstr "'%s' 必須為一個正數"
 msgid "File not found: %s"
 msgstr "找不到 '%s' 這個檔案"
 
-#, fuzzy
 msgid ""
 "Error reading file: %s\n"
 " The file is not a correct Graph file."
@@ -2115,13 +2015,11 @@ msgstr "不是一個有效的圖形物件"
 msgid "Object error"
 msgstr "物件錯誤"
 
-#, fuzzy
 msgid "Windows does not have enough resources to save an image that large."
 msgstr "系統的資源不足以儲存此大圖檔"
 
-#, fuzzy
 msgid "'%1%' must be between %2% and %3%."
-msgstr "'最近檔案'必須介於0和9之間。"
+msgstr "'%1%' 必需介於 %2% and %3%之間"
 
 msgid "Confirm delete"
 msgstr "確定刪除"
@@ -2129,7 +2027,6 @@ msgstr "確定刪除"
 msgid "This error should not occur. Please report this to the programmer."
 msgstr "這個錯誤不應該發生，請回報此錯誤給程式設計師"
 
-#, fuzzy
 msgid "Are you sure you want to delete %s?"
 msgstr "你確定想要刪除  %s ?"
 
@@ -2139,7 +2036,6 @@ msgstr "圖檔 [*.grf]|*.grf|All files [*.*]|*.*"
 msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 msgstr "文字 [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 
-#, fuzzy
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "你確定想要刪除此模型 %s 嗎?"
 
@@ -2152,42 +2048,35 @@ msgstr "y 軸上最大的數值必須大於最小數值"
 msgid "Server application not found."
 msgstr "找不到主機上的應用"
 
-#, fuzzy
 msgid "Maximum number for t must be greater than the minimum value."
-msgstr "t 的最大數值比需要大於最小數值"
+msgstr "t 的最大數值需要大於最小數值"
 
 msgid "The step value for t must be a number greater than 0."
 msgstr "間隔數值 t 必須要大於0"
 
-#, fuzzy
 msgid "The minimum value for the x-axis must be greater than 0, when the x-axis is logarithmic scaled."
 msgstr "當x軸是對數尺度時，x 軸的最小數值需要大於0"
 
-#, fuzzy
 msgid "The cross point of the y-axis must be greater than 0, when the x-axis is logarithmic scaled."
 msgstr "當x軸是對數刻度時，y 軸的交叉點值比需要大於0。"
 
-#, fuzzy
 msgid "The minimum value for the y-axis must be greater than 0, when the y-axis is logarithmic scaled."
 msgstr "當y軸是對數刻度時，y軸的最小值必須要大於0。"
 
-#, fuzzy
 msgid "The cross point of the x-axis must be greater than 0, when the y-axis is logarithmic scaled."
 msgstr "當y軸是對數刻度時，x軸的交叉點必須要大於0。"
 
 msgid "'Recent files' must be between 0 and 9."
 msgstr "'最近檔案'必須介於0和9之間。"
 
-#, fuzzy
 msgid "The end of interval must be greater than the start of interval."
 msgstr "間隔終點必須要大於起始點"
 
 msgid "Error in interval."
 msgstr "間隔錯誤"
 
-#, fuzzy
 msgid "The width must be an integer greater than 0."
-msgstr "寬度必須要為一大於0的整數"
+msgstr "寬度必須要為大於0的整數"
 
 msgid "Error in width"
 msgstr "寬度錯誤"
@@ -2237,7 +2126,6 @@ msgstr "'%s' 必須要為一個介於0和1000之間的整數。"
 msgid "Printing error"
 msgstr "列印錯誤"
 
-#, fuzzy
 msgid "An unknown error occurred while printing."
 msgstr "一個未明的列印錯誤發生"
 
@@ -2309,7 +2197,6 @@ msgstr ""
 "這個檔案不能用此版本的程式打開，\n"
 "你必須要最新的 Graph %s 來開啟此檔案。"
 
-#, fuzzy
 msgid ""
 "This file was saved by an outdated version of Graph,\n"
 "and it cannot be opened by the current version."
@@ -2329,34 +2216,27 @@ msgstr ""
 msgid "Edit relation"
 msgstr "編輯關係式"
 
-#, fuzzy
 msgid "Commands"
-msgstr "評論:"
+msgstr "命令"
 
-#, fuzzy
 msgid "(All Commands)"
-msgstr "(所有動作)"
+msgstr "(所有命令)"
 
 msgid "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
 msgstr "要增加一個命令到工具列上只要選擇類別並且拖曳此命令到工具列上"
 
-#, fuzzy
 msgid "Edit f'(x)"
-msgstr "插入 f'(x)"
+msgstr "編輯 f'(x)"
 
-#, fuzzy
 msgid "Edit trendline"
-msgstr "編輯關係式"
+msgstr "編輯趨勢線"
 
-#, fuzzy
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "今天的提示給你大部分使用者通常不知道的訊息"
 
-#, fuzzy
 msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
-msgstr "你可以把建議和評論寄信到 graph@padowan.dk"
+msgstr "你可以把建議和錯誤寄信到 graph@padowan.dk"
 
-#, fuzzy
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
 msgstr "你可以自訂工具列，方法為在上面按滑鼠右鍵，然後選擇[自訂工具列]。"
 
@@ -2372,7 +2252,6 @@ msgstr "文字標籤可以包含任何  OLE 物件，例如 Microsoft 數學方�
 msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
 msgstr "你可以輸出座標點數列到一個檔案讓其他程式運用，例如 Microsoft Excel 。方式為在編輯座標點數列的視窗，按滑鼠右鍵然後選擇'輸出到檔案'。"
 
-#, fuzzy
 msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
 msgstr "在x=5的地方畫垂直線，可以使用 x(t)=5，y(t)=t 或者關係式 x=5 來表示。"
 
@@ -2406,9 +2285,8 @@ msgstr "如果你不想要讓某一個項目出現在圖例說明，你可以在
 msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
 msgstr "如果你想要軸線顯示在畫面的左下方，你可以在軸線對話框，選擇軸線樣式為 '盒狀'。"
 
-#, fuzzy
 msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
-msgstr "Graph 可以儲存顯示的座標系為四種不同的圖形格式: bmp, emf, png 和 jpg。"
+msgstr "Graph 可以儲存顯示的座標系為五種不同的圖形格式: bmp, emf, png, jpg和 pdf。"
 
 msgid "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."
 msgstr "你可以使用 [編輯]-->[複製圖形] 把座標系複製到剪貼簿並且用來貼到其他的程式。"
@@ -2479,7 +2357,6 @@ msgstr "所有的元件包含函數、陰影、標籤和關係式等，都是依
 msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
 msgstr "你可以利用滑鼠拖曳的功能，或者鍵盤上下鍵+Alt鍵移動函數列中選擇的元件。"
 
-#, fuzzy
 msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
 msgstr "你可以透過移動左邊函數列上的元件到座標軸之上，來顯示陰影或者其他在座標軸後方的的元件。"
 
@@ -2570,9 +2447,8 @@ msgstr "乳白色"
 msgid "Med Gray"
 msgstr "淺灰色"
 
-#, fuzzy
 msgid "Local"
-msgstr "標籤"
+msgstr "區域"
 
 msgid "Global"
 msgstr "總體的"
@@ -2628,23 +2504,20 @@ msgstr "左邊空白:"
 msgid "Top margin:"
 msgstr "上邊空白:"
 
-#, fuzzy
 msgid "Select to place the image on the middle of the page."
-msgstr "選擇軸線上的標籤字型"
+msgstr "選擇讓影像置於頁面中間"
 
 msgid "Center on page"
 msgstr "頁面中間"
 
-#, fuzzy
 msgid "Enter the image position on the page."
-msgstr "輸入一個呈現在圖例說明的敘述"
+msgstr "輸入影像在頁面中的位置"
 
 msgid "Number of copies:"
 msgstr "複製的數目:"
 
-#, fuzzy
 msgid "Choose number of copies to print."
-msgstr "複製的數目:"
+msgstr "選擇列印數目:"
 
 msgid "Enter percent of original size."
 msgstr "輸入原尺寸百分比率"
