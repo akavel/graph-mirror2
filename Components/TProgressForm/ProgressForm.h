@@ -8,13 +8,14 @@
 #include <SysUtils.hpp>
 #include <Controls.hpp>
 #include <Classes.hpp>
-#include <Forms.hpp>
+#include <TntForms.hpp>
+#include <TntStdCtrls.hpp>
 #include "Progress.h"
 //---------------------------------------------------------------------------
 class TProgressForm : public TComponent
 {
 private:
-  AnsiString FCaption;
+  WideString FCaption;
   int FMin;
   int FMax;
   int FStep;
@@ -23,18 +24,18 @@ private:
   bool FAbortProgress;
   TColor FColor;
   TCursor FCursor;
-  AnsiString FButtonCaption;
+  WideString FButtonCaption;
 
   TNotifyEvent FOnShow;
   TNotifyEvent FOnCancel;
 
-  TForm *Form;
+  TTntForm *Form;
   TTimer *Timer;
   TProgress *Progress;
-  TButton *Button;
+  TTntButton *Button;
 
-  void __fastcall SetCaption(AnsiString Str);
-  void __fastcall SetButtonCaption(AnsiString Str);
+  void __fastcall SetCaption(WideString Str);
+  void __fastcall SetButtonCaption(WideString Str);
   void __fastcall SetMin(int Value);
   void __fastcall SetMax(int Value);
   void __fastcall SetStep(int Value);
@@ -54,7 +55,7 @@ public:
   __property bool AbortProgress = {read=FAbortProgress};
 
 __published:
-  __property AnsiString Caption = {read=FCaption, write=SetCaption};
+  __property WideString Caption = {read=FCaption, write=SetCaption};
   __property int Min = {read=FMin, write=SetMin, default=0};
   __property int Max = {read=FMax, write=SetMax, default=100};
   __property int Step = {read=FStep, write=SetStep, default=1};
@@ -62,7 +63,7 @@ __published:
   __property int Delay = {read=FDelay, write=FDelay, default=500};
   __property TCursor Cursor = {read=FCursor, write=FCursor, default=crAppStart};
   __property TColor Color = {read=FColor, write=SetColor, default=clBlue};
-  __property AnsiString ButtonCaption = {read=FButtonCaption, write=SetButtonCaption};
+  __property WideString ButtonCaption = {read=FButtonCaption, write=SetButtonCaption};
 
   __property TNotifyEvent OnShow = {read=FOnShow, write=FOnShow, default=NULL};
   __property TNotifyEvent OnCancel = {read=FOnCancel, write=FOnCancel, default=NULL};
