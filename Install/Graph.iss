@@ -21,7 +21,7 @@ OutputDir=D:\Graph
 OutputBaseFilename=SetupGraphBeta
 SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.2.0.321
+VersionInfoVersion=4.2.0.323
 
 [Languages]
 Name: "English"; MessagesFile: "compiler:Default.isl"
@@ -40,6 +40,7 @@ Name: "Greek"; MessagesFile: "compiler:Languages\Greek.isl"
 Name: "Chinese"; MessagesFile: "compiler:Languages\ChineseTrad.isl"
 ;Name: "Mongolian"; MessagesFile: "compiler:Languages\Mongolian.isl"
 Name: "Swedish"; MessagesFile:  "compiler:Languages\Swedish.isl"
+Name: "Polish"; MessagesFile:  "compiler:Languages\Polish.isl"
 
 [Tasks]
 Name: "DesktopIcon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
@@ -47,12 +48,13 @@ Name: "QuickLaunchIcon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 Name: "InstallAllUsers"; Description: "{cm:InstallAllUsers}"; Check: HasAdminRights
 
 [Files]
-Source: "D:\Graph\Graph.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Graph\Thumbnails.dll"; DestDir: "{app}"; Flags: regserver noregerror ignoreversion restartreplace uninsrestartdelete; Check: not FilesEqual('Thumbnails.dll')
-Source: "D:\Graph\Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
-Source: "D:\Graph\Help\*.hlp"; DestDir: "{app}\Help"; Flags: ignoreversion
-Source: "D:\Graph\Help\*.cnt"; DestDir: "{app}\Help"; Flags: ignoreversion overwritereadonly
-Source: "D:\Graph\Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritereadonly
+Source: "Graph.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "PDFlib.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "Thumbnails.dll"; DestDir: "{app}"; Flags: regserver noregerror ignoreversion restartreplace uninsrestartdelete; Check: not FilesEqual('Thumbnails.dll')
+Source: "Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
+Source: "Help\*.hlp"; DestDir: "{app}\Help"; Flags: ignoreversion
+Source: "Help\*.cnt"; DestDir: "{app}\Help"; Flags: ignoreversion overwritereadonly
+Source: "Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritereadonly
 
 [Icons]
 Name: "{userprograms}\Graph"; Filename: "{app}\Graph.exe"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
