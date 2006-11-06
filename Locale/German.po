@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-10-30 17:39+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2006-11-06 22:35+0100\n"
+"Last-Translator: \n"
 "Language-Team: Frank Hüttemeister & Michael Bach Ipsen <deutsch@padowan.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1786,7 +1786,6 @@ msgstr "Fehler bei der Evaluierung aufgetreten."
 msgid "Argument produced a function result with total loss of precision."
 msgstr "Argument erzeugte ein Funktionsergebnis ohne Genauigkeit."
 
-#, fuzzy
 msgid "The custom function/constant '%s' was not found or has the wrong number of arguments."
 msgstr "Das Zeichen '%s' konnte nicht gefunden werden oder hat nicht die erforderliche Anzahl an Argumenten."
 
@@ -2237,6 +2236,9 @@ msgstr "f'(x) bearbeiten."
 msgid "Edit trendline"
 msgstr "Trendlinie bearbeiten"
 
+msgid "Categories:"
+msgstr "&Kategorien:"
+
 # This Tip of the day ....
 # oder
 # The Tip of the day ...
@@ -2457,6 +2459,15 @@ msgstr "Beige"
 msgid "Med Gray"
 msgstr "Hellgrau"
 
+msgid "Customize"
+msgstr "Anpassen"
+
+msgid "Description"
+msgstr "Beschreibung:"
+
+msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
+msgstr "Ziehen Sie Aktionen zur Symbolleiste, indem Sie sie aus der Kategorien- oder Aktionenspalte in die Symbolleiste hineinziehen."
+
 msgid "Local"
 msgstr "Lokal"
 
@@ -2531,32 +2542,4 @@ msgstr "Geben Sie die Anzahl der zu druckenden Kopien ein."
 
 msgid "Enter percent of original size."
 msgstr "Geben die den Prozentssatz zur Originalgröße ein."
-
-#~ msgid "Symbol '%s' not found."
-#~ msgstr "Das Symbol '%s' wurde nicht gefunden."
-#~ msgid "Copy the animation to the clipboard."
-#~ msgstr "Kopiert die Animation in die Zwischenablage."
-#~ msgid "Edit options."
-#~ msgstr "Einstellungen bearbeiten."
-#~ msgid "Insert a new point series."
-#~ msgstr "Eine neue Punktserie einfügen."
-#~ msgid "Calculates area under the path."
-#~ msgstr "Die Fläche unter dem Kurvenstück berechnen."
-#~ msgid "Insert a text label."
-#~ msgstr "Textfeld einfügen"
-#~ msgid ""
-#~ "Type a value in the Intercept box to specify the point where you want the "
-#~ "trendline to meet the y-axis. This is only available for linear, "
-#~ "polynomial and exponential trendline."
-#~ msgstr ""
-#~ "Geben Sie einen Wert in die Schnittpunkt-Box ein, um den Punkt zu "
-#~ "bestimmen, in dem die Trendlinie die Y-Achse schneiden soll. Dies ist nur "
-#~ "für lineare, ganzrationale und exponentielle Trendlinien möglich."
-#~ msgid "Select language to use."
-#~ msgstr "Sprache wählen"
-#~ msgid "Cut selected text to the clipboard."
-#~ msgstr ""
-#~ "Den ausgewählten Text ausschneiden und in der Zwischenablage ablegen."
-#~ msgid "End of parenthesis missing."
-#~ msgstr "Schließende Klammer fehlt."
 

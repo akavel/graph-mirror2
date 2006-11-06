@@ -2289,8 +2289,10 @@ void __fastcall TForm1::ToolBar_CustomizeClick(TObject *Sender)
   Form->ActionsActionsLbl->Caption = LoadRes(552) + AnsiString(':');
   Form->CatList->Items->Strings[Form->CatList->Items->Count-1] = LoadRes(553);
   Form->InfoLbl->Caption = LoadRes(554);
+  Form->ActionsCatLbl->Caption = LoadRes(557);
   Form->ToolbarsTab->TabVisible = false;
   Form->OptionsTab->TabVisible = false;
+  SetAccelerators(Form);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ToolBar_ResetClick(TObject *Sender)
