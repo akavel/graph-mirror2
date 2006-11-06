@@ -182,6 +182,7 @@ BEGIN
   554 "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
   555 "Edit f'(x)"
   556 "Edit trendline"
+  557 "Categories:"
 
   600 "This Tip of the day can give you a lot of information about the program that most users don't know."
   601 "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
@@ -258,6 +259,11 @@ BEGIN
 "Sky Blue"
 "Cream"
 "Med Gray"
+
+//Texts for Customize Toolbar
+"Customize"
+"Description"
+"To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
 
 "Local"
 "Global"
