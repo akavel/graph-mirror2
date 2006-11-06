@@ -67,13 +67,14 @@ void __fastcall TForm20::ToolButton1Click(TObject *Sender)
   ToolButton1->Enabled = false;
   ToolButton2->Enabled = true;
   ToolButton3->Enabled = true;
-  MediaPlayer1->Notify = true;
 
   if(!Reverse1->Checked)
     MediaPlayer1->Reverse = false;
 
   MediaPlayer1->Repeat = Repeat1->Checked && !Reverse1->Checked;
+  MediaPlayer1->Notify = true;
   MediaPlayer1->Play();
+  MediaPlayer1->Notify = false;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm20::ToolButton2Click(TObject *Sender)
@@ -133,7 +134,6 @@ void __fastcall TForm20::ToolButton7Click(TObject *Sender)
 void __fastcall TForm20::MediaPlayer1Notify(TMediaPlayerEx *Sender,
       TMPNotifyValues NotifyValue)
 {
-  MediaPlayer1->Notify = false;
   if(NotifyValue != nvAborted)
   {
     if(Reverse1->Checked)
@@ -142,6 +142,7 @@ void __fastcall TForm20::MediaPlayer1Notify(TMediaPlayerEx *Sender,
     {
       MediaPlayer1->Notify = true;
       MediaPlayer1->Play();
+      MediaPlayer1->Notify = false;
     }
   }
 
