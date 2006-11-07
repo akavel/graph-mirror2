@@ -367,7 +367,7 @@ object Form3: TForm3
       object CheckBox11: TTntCheckBox
         Left = 187
         Top = 74
-        Width = 81
+        Width = 142
         Height = 17
         Hint = 'Determine the tick unit automatically.'
         Caption = 'Auto tick'
@@ -377,7 +377,7 @@ object Form3: TForm3
       object CheckBox12: TTntCheckBox
         Left = 187
         Top = 106
-        Width = 81
+        Width = 142
         Height = 17
         Hint = 'Set the grid unit to the same as the tick unit.'
         Caption = 'Auto grid'
@@ -577,6 +577,7 @@ object Form3: TForm3
           ItemHeight = 16
           TabOrder = 0
           DroppedWidth = 110
+          AutoDroppedWidth = True
         end
         object ExtColorBox2: TExtColorBox
           Left = 104
@@ -589,6 +590,7 @@ object Form3: TForm3
           ItemHeight = 16
           TabOrder = 1
           DroppedWidth = 110
+          AutoDroppedWidth = True
         end
         object ExtColorBox3: TExtColorBox
           Left = 104
@@ -601,6 +603,7 @@ object Form3: TForm3
           ItemHeight = 16
           TabOrder = 2
           DroppedWidth = 110
+          AutoDroppedWidth = True
         end
       end
       object GroupBox4: TTntGroupBox
