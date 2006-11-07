@@ -118,6 +118,7 @@
 #define RES_OBJECT_ERROR        333
 #define RES_OUT_OF_RESOURCES    334
 #define RES_VALUE_RANGE         335
+#define RES_FILE_DOESNT_EXIST   336
 
 #define RES_CAPTION_DELETE      400
 #define RES_SHOW                401
