@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2006-08-22 23:14\n"
-"PO-Revision-Date: 2006-11-05 22:07+0100\n"
+"PO-Revision-Date: 2006-11-07 22:47+0100\n"
 "Last-Translator: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -131,16 +131,16 @@ msgid "Open file: %s"
 msgstr "Otwórz plik: %s"
 
 msgid "Visible"
-msgstr "Widoczny"
+msgstr "Wyświetlaj"
 
 msgid "Check to make the selected item visible in the coordinate system."
-msgstr "Zaznacz aby obiekt był widoczny w układzie współrzędnych."
+msgstr "Zaznacz, aby obiekt był widoczny w układzie współrzędnych."
 
 msgid "Show in legend"
 msgstr "Pokaż w legendzie"
 
 msgid "Check to show the selected item in the legend."
-msgstr "Zaznacz aby obiekt był widoczny w legendzie."
+msgstr "Zaznacz, aby obiekt był widoczny w legendzie."
 
 msgid "Placement"
 msgstr "Położenie"
@@ -386,7 +386,7 @@ msgid "Length of path"
 msgstr "Długość krzywej"
 
 msgid "Calculates the length of path between two given points on the curve."
-msgstr "Oblicza długość linii pomiędzy dwoma punktami na "
+msgstr "Oblicza długość linii pomiędzy dwoma punktami na krzywej."
 
 msgid "Calculates the area under the path of the selected function."
 msgstr ""
@@ -395,7 +395,7 @@ msgid "Evaluate"
 msgstr "Analizuj"
 
 msgid "Evaluate or trace the selected function."
-msgstr ""
+msgstr "Analizuje przebieg zaznaczonej funkcji."
 
 msgid "Table..."
 msgstr "Tabela..."
@@ -536,10 +536,10 @@ msgid "Select color"
 msgstr "Wybierz kolor (??)"
 
 msgid "Reset to default"
-msgstr ""
+msgstr "Przywróć domyślne"
 
 msgid "Reset the tool bar icons to the installation default."
-msgstr ""
+msgstr "Przywraca domyślny układ ikon paska narzędzi."
 
 msgid "Customize toolbar..."
 msgstr "Dostosuj pasek narzędzi..."
@@ -572,7 +572,7 @@ msgid "Font"
 msgstr "Czcionka"
 
 msgid "Change the font of the legend."
-msgstr ""
+msgstr "Zmienia czcionkę legendy."
 
 msgid "Top Right"
 msgstr "Na górze z prawej"
@@ -620,7 +620,7 @@ msgid "Relation:"
 msgstr "Relacja:"
 
 msgid "Constraints:"
-msgstr ""
+msgstr "Ograniczenia:"
 
 msgid "OK"
 msgstr "OK"
@@ -665,13 +665,13 @@ msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
 msgstr ""
 
 msgid "Insert tangent/normal"
-msgstr ""
+msgstr "Wstawianie stycznej/normalnej"
 
 msgid "Coordinate where the tangent/normal will cross the function."
-msgstr ""
+msgstr "Punkt styczności."
 
 msgid "Choose if you want a tangent or a normal."
-msgstr ""
+msgstr "Wybierz czy chcesz styczną czy normalną."
 
 msgid "Type"
 msgstr "Typ"
@@ -692,10 +692,10 @@ msgid "Width of graph in pixels."
 msgstr "Szerokość wykresu w pikselach."
 
 msgid "Choose which line style to use for drawing the graph."
-msgstr ""
+msgstr "Wybierz styl linii wykresu."
 
 msgid "Select the color of the graph."
-msgstr ""
+msgstr "Wybierz kolor wykresu."
 
 msgid "Argument range"
 msgstr "Zakres argumentów"
@@ -803,7 +803,7 @@ msgid "Intercept ="
 msgstr ""
 
 msgid "Insert point series"
-msgstr ""
+msgstr "Wstawianie serii punktów"
 
 msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
 msgstr "Nazwa serii punktów, która jest widoczna na liście po lewej stronie układu współrzędnych."
@@ -1001,7 +1001,7 @@ msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
 msgstr "CSV [*.csv]|*.csv|Tekst [*.txt]|*.txt"
 
 msgid "Insert shade"
-msgstr ""
+msgstr "Wstawianie cienia"
 
 msgid "Shading"
 msgstr "Cieniowanie"
@@ -1292,7 +1292,7 @@ msgid "Tick unit:"
 msgstr ""
 
 msgid "The x-axis cross at y="
-msgstr "Oś x przecina się w y="
+msgstr "Oś x przechodzi przez y="
 
 msgid "Grid unit:"
 msgstr ""
@@ -1322,13 +1322,13 @@ msgid "Edit the label for the axis here."
 msgstr ""
 
 msgid "Show units on the x-axis."
-msgstr ""
+msgstr "Zaznacz aby na osi x były wyświetlane jednostki."
 
 msgid "Show numbers"
-msgstr ""
+msgstr "Pokazuj liczby"
 
 msgid "The x-axis will intersect with the y-axis at this value."
-msgstr ""
+msgstr "Oś x przetnie oś y w tym punkcie."
 
 msgid "Units between the grid lines perpendicular to the x-axis."
 msgstr ""
@@ -1337,19 +1337,19 @@ msgid "Determine the tick unit automatically."
 msgstr ""
 
 msgid "Auto tick"
-msgstr ""
+msgstr "Auto jednostka"
 
 msgid "Set the grid unit to the same as the tick unit."
 msgstr ""
 
 msgid "Auto grid"
-msgstr ""
+msgstr "Auto siatka"
 
 msgid "Show tick marks on the x-axis."
 msgstr ""
 
 msgid "Show ticks"
-msgstr ""
+msgstr "Pokaż jednostki"
 
 msgid "Show units on the selected axis as a fraction multiplied by pi."
 msgstr "Pokazuje jednostki na wskazanej osi jako ułamek pomnożony przez pi."
@@ -1364,7 +1364,7 @@ msgid "Show grid"
 msgstr "Pokaż siatkę"
 
 msgid "The y-axis cross at x="
-msgstr "Oś y przecina się w x="
+msgstr "Oś y przechodzi przez x="
 
 msgid "Minimum y-value."
 msgstr ""
@@ -1379,7 +1379,7 @@ msgid "Units between ticks on the y-axis."
 msgstr ""
 
 msgid "Show units on the y-axis."
-msgstr ""
+msgstr "Zaznacz aby na osi y były wyświetlane jednostki."
 
 msgid "Show the label at the top of the main window, to the right of the y-axis."
 msgstr ""
@@ -1496,7 +1496,7 @@ msgid "Decimals:"
 msgstr "Miejsca po przecinku:"
 
 msgid "Recent files:"
-msgstr "Ostatnie pliki:"
+msgstr "Ostatnio otwierane pliki:"
 
 msgid "Max undo steps:"
 msgstr "Maksymalna liczba kroków wstecz:"
@@ -1511,7 +1511,7 @@ msgid "Number of decimals used when results are shown."
 msgstr "Liczba miejsc po przecinku przy wyświetlaniu wyników."
 
 msgid "Associate *.grf files with Graph."
-msgstr ""
+msgstr "Kojarzy pliki *.grf z Graph."
 
 msgid "Associate .grf files"
 msgstr "Skojarz pliki .grf"
@@ -1520,10 +1520,10 @@ msgid "The number of most recent used files shown in the File menu."
 msgstr "Liczba ostatnio używanych plików pokazywanych w menu Plik."
 
 msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
-msgstr ""
+msgstr "Zapisuje pozycję okna przy wychodzeniu z programu. Zmiana jest stosowana po ponownym uruchomieniu programu.|Zapisuje stan okna przy wyjściu z programu"
 
 msgid "Save workspace on exit"
-msgstr ""
+msgstr "Zapisuj stan okna przy wyjściu z programu"
 
 msgid "Format used when complex numbers are shown."
 msgstr "Format używany gdy pokazywane są licby zespolone."
@@ -1532,13 +1532,13 @@ msgid "Complex format"
 msgstr "Postać zespolona"
 
 msgid "Real"
-msgstr ""
+msgstr "Część rzeczywista"
 
 msgid "Rectangular"
-msgstr ""
+msgstr "Algebraiczna"
 
 msgid "Polar"
-msgstr ""
+msgstr "Biegunowa"
 
 msgid "Show the tooltip when the cursor is over an item."
 msgstr ""
@@ -1553,10 +1553,10 @@ msgid "If checked the program will contact a web server when the program is star
 msgstr ""
 
 msgid "Check for new version of Graph at startup"
-msgstr "Sprawdź obecność nowszej wersji przy starcie"
+msgstr "Sprawdź obecność nowszej wersji w trakcie uruchamiania programu"
 
 msgid "Select the language to use for the user interface."
-msgstr ""
+msgstr "Wybierz język interfejsu."
 
 msgid "This is used to scale the user interface if you are having problems reading the text."
 msgstr ""
@@ -1604,7 +1604,7 @@ msgid "Lines"
 msgstr "Linie"
 
 msgid "Text label"
-msgstr ""
+msgstr "Pole tekstowe"
 
 msgid "Font name:"
 msgstr "Czcionka"
@@ -1619,7 +1619,7 @@ msgid "Text size."
 msgstr ""
 
 msgid "Text string"
-msgstr ""
+msgstr "Tekst"
 
 msgid "Insert symbol (Ctrl+G)"
 msgstr "Wstaw symbol (Ctrl+G)"
@@ -1661,7 +1661,7 @@ msgid "Text color."
 msgstr "Kolor tekstu."
 
 msgid "Select background color of the text label."
-msgstr ""
+msgstr "Wybierz kolor tła dla pola tekstowego."
 
 msgid "Undo last action."
 msgstr ""
@@ -1670,10 +1670,10 @@ msgid "Redo last undone action."
 msgstr ""
 
 msgid "Paste the contents of the clipboard."
-msgstr ""
+msgstr "Wkleja zawartość schowka."
 
 msgid "Paste special..."
-msgstr ""
+msgstr "Wklej specjalne..."
 
 msgid "Select which clipboard representation you want to paste."
 msgstr ""
@@ -1682,13 +1682,13 @@ msgid "Insert object..."
 msgstr "Wstaw obiekt..."
 
 msgid "Create a new OLE object."
-msgstr ""
+msgstr "Tworzy nowy obiekt OLE."
 
 msgid "Edit object"
-msgstr ""
+msgstr "Edytuj obiekt"
 
 msgid "Edit selected OLE object."
-msgstr ""
+msgstr "Edytuje zaznaczony obiekt OLE."
 
 msgid "Insert f'(x)"
 msgstr ""
@@ -1703,7 +1703,7 @@ msgid "Value"
 msgstr "Wartość"
 
 msgid "Select a function or tangent to evaluate."
-msgstr ""
+msgstr "Wybierz funkcję lub styczną do analizy."
 
 msgid "Error"
 msgstr "Błąd"
@@ -1739,7 +1739,7 @@ msgid "Axes"
 msgstr "Osie"
 
 msgid "No error occurred. You should not see this message."
-msgstr ""
+msgstr "Nie wystąpił żaden błąd. Nie powinieneś zobaczyć tej wiadomości."
 
 msgid "An error occurred while evaluating power function."
 msgstr ""
@@ -1748,7 +1748,7 @@ msgid "Tangent to 90+p180 is undefined."
 msgstr "Nie istnieje tangens 90+p180."
 
 msgid "Fact can only be calculated for positive integers."
-msgstr ""
+msgstr "Silnia może być wyznaczona tylko dla liczb naturalnych."
 
 msgid "Cannot take logarithm to number equal or less than zero."
 msgstr "Nie można obliczyć logarytmu dla liczby mniejszej lub równej 0."
@@ -1790,19 +1790,19 @@ msgid "Too many recursive calls."
 msgstr ""
 
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
-msgstr ""
+msgstr "Nieoczekiwany operator. Operator '%s' nie może występować w tym miejscu."
 
 msgid "Right bracket missing."
 msgstr "Brak prawego nawiasu."
 
 msgid "Invalid number of arguments supplied for function '%s'"
-msgstr ""
+msgstr "Nieprawidłowa liczba argumentów funkcji '%s'"
 
 msgid "Comparison operator misplaced."
 msgstr "Brak operatora porównania."
 
 msgid "Invalid number found. Use the format: -5.475E-8"
-msgstr ""
+msgstr "Znaleziono nieprawidłową liczbę. Użyj formatu: -5.475E-8"
 
 msgid "String is empty. You need to enter a function."
 msgstr ""
@@ -1872,6 +1872,9 @@ msgid ""
 "The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 "In addition you are not allowed to redefine built-in names."
 msgstr ""
+"Nieprawdiłowa nazwa funkcji/stałej: '%s'.\n"
+"Nazwa może zawierać tylko litery i cyfry i zawsze musi zaczynać się od litery.\n"
+"W dodatku nie można redefiniować standardowych funkcji."
 
 msgid "You need to enter a name for the argument."
 msgstr ""
@@ -1889,10 +1892,10 @@ msgid "Character found after brackets."
 msgstr ""
 
 msgid "Symbol \"%s\" defined more than once."
-msgstr ""
+msgstr "Symbol \"%s\" zdefiniowany wileokrotnie."
 
 msgid "Invalid equation or inequality."
-msgstr ""
+msgstr "Nieprawidłowe równanie lub nierówność."
 
 msgid "Updating..."
 msgstr "Odświeżanie..."
@@ -1934,15 +1937,17 @@ msgid "The maximum value must be greater than the minimum value."
 msgstr ""
 
 msgid "You need to enter a value."
-msgstr ""
+msgstr "Musisz podać wartość."
 
 msgid ""
 "This file was created with Graph %s.\n"
 "Only files from version %s and higher can be opened."
 msgstr ""
+"Ten plik został utworzony za pomocą Graph %s.\n"
+"Tylko pliki z wersji %s lub wyższej mogą być otwarte."
 
 msgid "'%s' is not a valid number."
-msgstr ""
+msgstr "'%s' jest nieprawidłową liczbą."
 
 msgid "Open the file %s."
 msgstr "Otwiera plik %s."
@@ -1951,12 +1956,14 @@ msgid "'%s' must be a positive number."
 msgstr "'%s' musi być liczbą dodatnią."
 
 msgid "File not found: %s"
-msgstr ""
+msgstr "Nie znaleziono pliku: %s"
 
 msgid ""
 "Error reading file: %s\n"
 " The file is not a correct Graph file."
 msgstr ""
+"Błąd podczas odczytu pliku: %s\n"
+"Ten plik nie jest prawidłowym plikiem Graph."
 
 msgid "Unknown error while reading file: %s"
 msgstr "Nieznany błąd w trakcie odczytu pliku: %s"
@@ -1968,6 +1975,8 @@ msgid ""
 "Cannot write to file: %s\n"
 "Access denied. Check that the file is not in use or write protected."
 msgstr ""
+"Nie można zapisać pliku: %s\n"
+"Odmowa dostępu. Sprawdź czy plik jest używany lub zabezpieczony przed zapisem."
 
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "Czcionka \"%s\" nie istnieje. Zamiast niej użyto czcionki standardowej."
@@ -1990,7 +1999,7 @@ msgid "Write access failed"
 msgstr ""
 
 msgid "OLE error"
-msgstr ""
+msgstr "Błąd OLE"
 
 msgid "Error reading object"
 msgstr ""
@@ -2006,6 +2015,10 @@ msgstr ""
 
 msgid "'%1%' must be between %2% and %3%."
 msgstr "'%1%' musi być pomiędzy %2% a %3%."
+
+#, fuzzy
+msgid "File not found"
+msgstr "Nie znaleziono pliku: %s"
 
 msgid "Confirm delete"
 msgstr "Potwierdź usunięcie"
@@ -2053,7 +2066,7 @@ msgid "The cross point of the x-axis must be greater than 0, when the y-axis is 
 msgstr ""
 
 msgid "'Recent files' must be between 0 and 9."
-msgstr ""
+msgstr "Liczba ostatnio ostwieranych plików musi zawierać się w przedziale od 0 do 9."
 
 msgid "The end of interval must be greater than the start of interval."
 msgstr ""
@@ -2080,7 +2093,7 @@ msgid "Coordinate not defined."
 msgstr ""
 
 msgid "Checking for newer version..."
-msgstr ""
+msgstr "Sprawdzanie dostępności nowszej wersji..."
 
 msgid "Abort printing?"
 msgstr "Przerwać drukowanie?"
@@ -2095,7 +2108,7 @@ msgid "Edit function"
 msgstr "Edycja funkcji"
 
 msgid "Edit tangent/normal"
-msgstr ""
+msgstr "Edycja stycznej/normalnej"
 
 msgid "Error processing file '%s' at line %s."
 msgstr ""
@@ -2122,19 +2135,19 @@ msgid "Each point needs both an x- and a y-coordinate."
 msgstr ""
 
 msgid "\"%s\" is not a valid number."
-msgstr ""
+msgstr "\"%s\" is not a valid number."
 
 msgid "You didn't add any points. You need to specify some x- and y-coordinates in the grid."
 msgstr "Nie dodano żadnych punktów. Musisz określić współrzędne x i y w tabeli."
 
 msgid "Edit point series"
-msgstr ""
+msgstr "Edycja serii punktów"
 
 msgid "Edit shade"
-msgstr ""
+msgstr "Edycja cienia"
 
 msgid "You need to select a function."
-msgstr ""
+msgstr "Musisz wybrać funkcję."
 
 msgid "New version of Graph available"
 msgstr "Nowa wersja Graph jest dostępna"
@@ -2193,18 +2206,21 @@ msgid "Edit relation"
 msgstr "Edycja relacji"
 
 msgid "Commands"
-msgstr ""
+msgstr "Polecenia"
 
 msgid "(All Commands)"
-msgstr ""
+msgstr "(Wszystkie polecenia)"
 
 msgid "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
-msgstr ""
+msgstr "Aby dodać polecenie na pasek narzędzi po prostu przeciągnij je z tego okna w wybrane miejsce na pasku narzędzi."
 
 msgid "Edit f'(x)"
 msgstr ""
 
 msgid "Edit trendline"
+msgstr ""
+
+msgid "Categories:"
 msgstr ""
 
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
@@ -2423,6 +2439,17 @@ msgstr "Kremowy"
 msgid "Med Gray"
 msgstr "Średnioszary"
 
+#, fuzzy
+msgid "Customize"
+msgstr "Własny..."
+
+#, fuzzy
+msgid "Description"
+msgstr "Opis:"
+
+msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
+msgstr ""
+
 msgid "Local"
 msgstr ""
 
@@ -2436,7 +2463,7 @@ msgid "Insert symbol"
 msgstr "Wstaw symbol"
 
 msgid "Subset:"
-msgstr ""
+msgstr "Podzbiór:"
 
 msgid "Print"
 msgstr "Drukuj"
