@@ -114,6 +114,7 @@ BEGIN
   RES_OBJECT_ERROR        "Object error"
   RES_OUT_OF_RESOURCES    "Windows does not have enough resources to save an image that large."
   RES_VALUE_RANGE         "'%1%' must be between %2% and %3%."
+  RES_FILE_DOESNT_EXIST   "File not found"
 
   RES_CAPTION_DELETE      "Confirm delete"
   RES_SHOW                "Show %s"

@@ -81,7 +81,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   AnimationInfo.Step = std::abs(MakeFloat(Edit3));
   if(AnimationInfo.Max < AnimationInfo.Min)
     AnimationInfo.Step = -AnimationInfo.Step;
-  AnimationInfo.FramesPerSecond = MakeFloat(Edit6, LoadRes(RES_GREATER_ZERO, Label5->Caption), 0.01);
+  AnimationInfo.FramesPerSecond = MakeFloat(Edit6, LoadRes(RES_GREATER_ZERO, Label7->Caption), 0.01);
 
   unsigned StepCount = std::ceil((AnimationInfo.Max - AnimationInfo.Min) / AnimationInfo.Step) + 1;
   ProgressForm1->Max = StepCount;

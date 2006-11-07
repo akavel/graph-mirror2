@@ -28,7 +28,7 @@ bool TData::LoadFromFile(const std::string &FileName, bool ShowErrorMessages)
     if(ShowErrorMessages)
     {
       if(std::access(FileName.c_str(), 0))
-        MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), "File not found", MB_ICONSTOP);
+        MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), LoadRes(RES_FILE_DOESNT_EXIST), MB_ICONSTOP);
       else
         MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), "Error reading file", MB_ICONSTOP);
     }
@@ -134,7 +134,7 @@ bool TData::Import(const std::string &FileName)
   if(SavedByVersion == "NA")
   {
     if(std::access(FileName.c_str(), 0))
-      MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), "File not found", MB_ICONSTOP);
+      MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), LoadRes(RES_FILE_DOESNT_EXIST), MB_ICONSTOP);
     else
       MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), "Error reading file", MB_ICONSTOP);
     return false;
