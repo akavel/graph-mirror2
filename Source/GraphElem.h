@@ -96,7 +96,7 @@ class TTextLabel : public TGraphElem
 {
   std::string Text;
   TLabelPlacement LabelPlacement;
-  Func32::TCoord<double> Pos; //Only used when TextLabelPos is tlpCustom
+  Func32::TDblPoint Pos; //Only used when TextLabelPos is tlpCustom
   TRect Rect;
   TColor BackgroundColor;
   TVclObject<TMetafile> Metafile;
@@ -105,14 +105,14 @@ class TTextLabel : public TGraphElem
 
 public:
   TTextLabel() : LabelPlacement(lpUserPos), Pos(0,0), Rect(0,0,0,0), Rotation(0) {}
-  TTextLabel(const std::string &Str, TLabelPlacement Placement, const Func32::TCoord<double> &Coord, TColor Color, unsigned ARotation);
+  TTextLabel(const std::string &Str, TLabelPlacement Placement, const Func32::TDblPoint &Coord, TColor Color, unsigned ARotation);
   void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
   std::wstring MakeText() const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   int UpdateRect(int X, int Y) {int Width = Rect.Width(); int Height = Rect.Height(); Rect = TRect(X, Y, X + Width, Y + Height); return Width;}
   bool IsInsideRect(int X, int Y) const {return InsideRect(Rect, TPoint(X, Y));}
-  const Func32::TCoord<double>& GetPos() const {return Pos;}
+  const Func32::TDblPoint& GetPos() const {return Pos;}
   const std::string& GetText() const {return Text;}
   void Scale(double xSizeMul, double ySizeMul);
   const TRect& GetRect() const {return Rect;}
@@ -381,5 +381,6 @@ public:
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TAxesView(*this));}
 };
+
 //---------------------------------------------------------------------------
 #endif
