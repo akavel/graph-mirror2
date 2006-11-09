@@ -54,6 +54,7 @@
 #include "ConfigFile.h"
 #include "ConfigRegistry.h"
 #include <TypInfo.hpp>
+#include "OleObjectElem.h"
 //---------------------------------------------------------------------------
 #pragma link "TRecent"
 #pragma link "Cross"
@@ -3430,10 +3431,20 @@ void __fastcall TForm1::Legend_FontClick(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
+{
+  Func32::TDblPoint Pos(Image1->Width/2, Image1->Height/2);
+  boost::shared_ptr<TOleObjectElem> OleObject(new TOleObjectElem(Pos));
+  if(!OleObject->InsertObjectDialog())
+    return;
 
-
-
-
-
-
+  UndoList.Push(TUndoAdd(OleObject));
+  Data.Add(OleObject);
+  UpdateTreeView();
+  TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
+  TreeView->SetFocus();
+  Data.SetModified();
+  Redraw();
+}
+//---------------------------------------------------------------------------
 

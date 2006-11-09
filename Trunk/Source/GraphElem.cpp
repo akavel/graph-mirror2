@@ -754,7 +754,7 @@ void TPointSeries::Update()
 ////////////////
 // TTextLabel //
 ////////////////
-TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const Func32::TCoord<double> &Coord, TColor Color, unsigned ARotation)
+TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const Func32::TDblPoint &Coord, TColor Color, unsigned ARotation)
   : Text(Str), LabelPlacement(Placement), Pos(Coord), BackgroundColor(Color), Rotation(ARotation)
 {
   ShowInLegend = false;
@@ -777,7 +777,7 @@ void TTextLabel::WriteToIni(TConfigFile &IniFile, const std::string &Section) co
 void TTextLabel::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
 {
   LabelPlacement = IniFile.ReadEnum(Section, "Placement", lpUserPos);
-  Pos = IniFile.Read(Section, "Pos", Func32::TCoord<double>(0,0));
+  Pos = IniFile.Read(Section, "Pos", Func32::TDblPoint(0,0));
   Rotation = IniFile.Read(Section, "Rotation", 0U);
   Text = DecodeEscapeSequence(IniFile.Read(Section, "Text", "ERROR"));
   BackgroundColor = IniFile.Read(Section, "BackgroundColor", clNone);
@@ -922,7 +922,7 @@ void TRelation::Update()
 ///////////////
 // TAxesView //
 ///////////////
-void TAxesView::WriteToIni(class TConfigFile &IniFile, const std::string &Section) const
+void TAxesView::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
 {
   GetData().Axes.WriteToIni(IniFile);
 }

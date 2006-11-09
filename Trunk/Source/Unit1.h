@@ -267,6 +267,8 @@ __published:	// IDE-managed Components
   TAction *ImportGraphFileAction;
   TAction *ImportPointSeriesAction;
   TTntMenuItem *Legend_Font;
+  TAction *InsertObjectAction;
+  TTntMenuItem *Insertobject1;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);
@@ -418,6 +420,7 @@ __published:	// IDE-managed Components
   void __fastcall ImportGraphFileActionExecute(TObject *Sender);
   void __fastcall ImportPointSeriesActionExecute(TObject *Sender);
   void __fastcall Legend_FontClick(TObject *Sender);
+  void __fastcall InsertObjectActionExecute(TObject *Sender);
 
 private:	// User declarations
   friend class TAddView;
