@@ -36,7 +36,7 @@ __fastcall TForm15::TForm15(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm15::Button2Click(TObject *Sender)
 {
-  double ds = MakeFloat(Edit3, LoadRes(RES_GREATER_ZERO, "ds"), 0.00001);
+  double ds = MakeFloat(Edit3, LoadRes(RES_GREATER_ZERO, "d" + Func->GetVariable()), 0.00001);
   double Min = MakeFloat(Edit1);
   double Max = MakeFloat(Edit2, LoadRes(511), Min);
   int Digits = GetDecimals(ds);
