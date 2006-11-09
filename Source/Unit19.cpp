@@ -49,14 +49,14 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
   int Index = ComboBox1->Items->IndexOf(ToWideString(AnimationInfo.Constant));
   ComboBox1->ItemIndex = Index == -1 ? 0 : Index;
 
-  AnimationInfo.Width = std::min(Form1->Image1->Width, MaxWidth);
-  AnimationInfo.Height = std::min(Form1->Image1->Height, MaxHeight);
+  unsigned ImageWidth = std::min(AnimationInfo.Width == 0 ? Form1->Image1->Width : AnimationInfo.Width, MaxWidth);
+  unsigned ImageHeight = std::min(AnimationInfo.Height == 0 ? Form1->Image1->Height : AnimationInfo.Height, MaxHeight);
 
   Edit1->Text = ToWideString(AnimationInfo.Min);
   Edit2->Text = ToWideString(AnimationInfo.Max);
   Edit3->Text = ToWideString(AnimationInfo.Step);
-  Edit4->Text = ToWideString(AnimationInfo.Width);
-  Edit5->Text = ToWideString(AnimationInfo.Height);
+  Edit4->Text = ToWideString(ImageWidth);
+  Edit5->Text = ToWideString(ImageHeight);
   Edit6->Text = ToWideString(AnimationInfo.FramesPerSecond);
 }
 //---------------------------------------------------------------------------
@@ -68,13 +68,19 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     return;
 
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-  AnimationInfo.Width = ToInt(Edit4->Text);
-  AnimationInfo.Height = ToInt(Edit5->Text);;
-  Bitmap->Width = AnimationInfo.Width;
-  Bitmap->Height = AnimationInfo.Height;
+  unsigned ImageWidth = ToInt(Edit4->Text);
+  unsigned ImageHeight = ToInt(Edit5->Text);;
+  if(Edit4->Modified || Edit5->Modified)
+  {
+    AnimationInfo.Width = ImageWidth;
+    AnimationInfo.Height = ImageHeight;
+  }
+
+  Bitmap->Width = ImageWidth;
+  Bitmap->Height = ImageHeight;
   AnimationInfo.Constant = ToString(ComboBox1->Text);
   TDraw Draw(Bitmap->Canvas, &Data, false, "Animate thread");
-  Draw.SetArea(TRect(0, 0, AnimationInfo.Width, AnimationInfo.Height));
+  Draw.SetArea(TRect(0, 0, ImageWidth, ImageHeight));
 
   AnimationInfo.Min = MakeFloat(Edit1);
   AnimationInfo.Max = MakeFloat(Edit2);
@@ -89,7 +95,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   ProgressForm1->Show();
   TCallOnRelease Dummy(&ProgressForm1->Close);
 
-  TRect Rect(0, 0, AnimationInfo.Width, AnimationInfo.Height);
+  TRect Rect(0, 0, ImageWidth, ImageHeight);
   std::vector<char> ImageData;
   ImageData.reserve(Rect.Width() * Rect.Height());
 
@@ -123,10 +129,10 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     StreamInfo.dwStart = 0;
     StreamInfo.dwLength = StepCount; //Number of frames, I think
     StreamInfo.dwInitialFrames = 0;
-    StreamInfo.dwSuggestedBufferSize = AnimationInfo.Height * AnimationInfo.Width * 4; //Should be changed later
+    StreamInfo.dwSuggestedBufferSize = ImageHeight * ImageWidth * 4; //Should be changed later
     StreamInfo.dwQuality = -1;
     StreamInfo.dwSampleSize = 0;
-    StreamInfo.rcFrame = TRect(0, 0, AnimationInfo.Width, AnimationInfo.Height);
+    StreamInfo.rcFrame = TRect(0, 0, ImageWidth, ImageHeight);
     StreamInfo.dwEditCount = 0;
     StreamInfo.dwFormatChangeCount = 0;
     strcpy(StreamInfo.szName, "Graph animation");
@@ -139,7 +145,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     for(double Value = AnimationInfo.Min; I < StepCount; Value += AnimationInfo.Step, I++)
     {
       Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
-      Bitmap->Canvas->FillRect(TRect(0, 0, AnimationInfo.Width, AnimationInfo.Height));
+      Bitmap->Canvas->FillRect(TRect(0, 0, ImageWidth, ImageHeight));
       Data.CustomFunctions.Replace(AnimationInfo.Constant, Value);
       Data.CustomFunctions.Update();
       Data.Update();

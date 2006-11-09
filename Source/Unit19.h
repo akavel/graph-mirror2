@@ -28,7 +28,7 @@ struct TAnimationInfo
   unsigned Height;
   double FramesPerSecond;
 
-  TAnimationInfo() : Min(1), Max(10), Step(1), Width(360), Height(360), FramesPerSecond(1) {}
+  TAnimationInfo() : Min(1), Max(10), Step(1), Width(0), Height(0), FramesPerSecond(1) {}
 };
 
 class TForm19 : public TTntForm
