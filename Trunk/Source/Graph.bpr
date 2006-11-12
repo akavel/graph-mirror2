@@ -8,17 +8,17 @@
       ..\Obj\Common.obj ..\Obj\Context.obj ..\Obj\Convert.obj ..\Obj\Data.obj 
       ..\Obj\Debug.obj ..\Obj\Draw.obj ..\Obj\DrawThread.obj ..\Obj\Files.obj 
       ..\Obj\Graph.obj ..\Obj\GraphElem.obj ..\Obj\GuiHelper.obj 
-      ..\Obj\GuiUtil.obj ..\Obj\IGraphic.obj ..\Obj\PngHelper.obj 
-      ..\Obj\Settings.obj ..\Obj\StackTrace.obj ..\Obj\VersionInfo.obj 
-      ..\Obj\Undo.obj ..\Obj\Unit1.obj ..\Obj\Unit2.obj ..\Obj\Unit3.obj 
-      ..\Obj\Unit4.obj ..\Obj\Unit5.obj ..\Obj\Unit6.obj ..\Obj\Unit7.obj 
-      ..\Obj\Unit8.obj ..\Obj\Unit9.obj ..\Obj\Unit10.obj ..\Obj\Unit11.obj 
-      ..\Obj\Unit12.obj ..\Obj\Unit13.obj ..\Obj\Unit14.obj ..\Obj\Unit15.obj 
-      ..\Obj\Unit16.obj ..\Obj\Unit17.obj ..\Obj\Unit18.obj ..\Obj\Unit19.obj 
-      ..\Obj\Unit20.obj ..\Obj\Tokenizer.obj ..\Obj\TStdFuncFrame.obj 
-      ..\Obj\TParFuncFrame.obj ..\Obj\TPolFuncFrame.obj ..\Obj\TTanFrame.obj 
-      ..\Obj\TAreaFrame.obj ..\Obj\OleServerImpl.obj ..\Obj\Graph_TLB.obj 
-      ..\Obj\pdflib.obj &quot;D:\Program Files\dxgettext\gnugettext.obj&quot;"/>
+      ..\Obj\GuiUtil.obj ..\Obj\IGraphic.obj ..\Obj\OleObjectElem.obj 
+      ..\Obj\PngHelper.obj ..\Obj\Settings.obj ..\Obj\StackTrace.obj 
+      ..\Obj\VersionInfo.obj ..\Obj\Undo.obj ..\Obj\Unit1.obj ..\Obj\Unit2.obj 
+      ..\Obj\Unit3.obj ..\Obj\Unit4.obj ..\Obj\Unit5.obj ..\Obj\Unit6.obj 
+      ..\Obj\Unit7.obj ..\Obj\Unit8.obj ..\Obj\Unit9.obj ..\Obj\Unit10.obj 
+      ..\Obj\Unit11.obj ..\Obj\Unit12.obj ..\Obj\Unit13.obj ..\Obj\Unit14.obj 
+      ..\Obj\Unit15.obj ..\Obj\Unit16.obj ..\Obj\Unit17.obj ..\Obj\Unit18.obj 
+      ..\Obj\Unit19.obj ..\Obj\Unit20.obj ..\Obj\Tokenizer.obj 
+      ..\Obj\TStdFuncFrame.obj ..\Obj\TParFuncFrame.obj ..\Obj\TPolFuncFrame.obj 
+      ..\Obj\TTanFrame.obj ..\Obj\TAreaFrame.obj ..\Obj\OleServerImpl.obj 
+      ..\Obj\Graph_TLB.obj ..\Obj\pdflib.obj &quot;D:\Program Files\dxgettext\gnugettext.obj&quot;"/>
     <RESFILES value="Graph.res Graph.tlb Resource.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
@@ -94,6 +94,7 @@
       <FILE FILENAME="GuiHelper.cpp" FORMNAME="" UNITNAME="GuiHelper" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="GuiUtil.cpp" FORMNAME="" UNITNAME="GuiUtil" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="IGraphic.cpp" FORMNAME="" UNITNAME="IGraphic.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="OleObjectElem.cpp" FORMNAME="" UNITNAME="OleObjectElem" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\Components\Common\PngHelper.cpp" FORMNAME="" UNITNAME="PngHelper" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Settings.cpp" FORMNAME="" UNITNAME="Settings" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="StackTrace.cpp" FORMNAME="" UNITNAME="StackTrace" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
@@ -144,7 +145,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=2
 Release=0
-Build=326
+Build=328
 Debug=1
 PreRelease=0
 Special=0
@@ -156,7 +157,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.2.0.326
+FileVersion=4.2.0.328
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2006
 LegalTrademarks=

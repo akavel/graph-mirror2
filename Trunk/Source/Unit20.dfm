@@ -110,6 +110,7 @@ object Form20: TForm20
       object ToolButton6: TToolButton
         Left = 140
         Top = 2
+        Hint = 'Options'
         DropdownMenu = PopupMenu1
         ImageIndex = 7
       end
@@ -175,6 +176,7 @@ object Form20: TForm20
         GroupIndex = 1
         Hint = 'Change the speed used to play the animation.'
         RadioItem = True
+        OnClick = SpeedClick
       end
     end
     object Repeat1: TTntMenuItem

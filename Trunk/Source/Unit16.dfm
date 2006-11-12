@@ -748,7 +748,7 @@ object Form16: TForm16
           ItemHeight = 16
           TabOrder = 2
           OnChange = ExtColorBox1Change
-          DroppedWidth = 130
+          AutoDroppedWidth = True
         end
         object CheckBox5: TTntCheckBox
           Left = 134

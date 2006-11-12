@@ -150,7 +150,7 @@ object Form7: TForm7
       Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
       ItemHeight = 16
       TabOrder = 3
-      DroppedWidth = 130
+      AutoDroppedWidth = True
     end
   end
   object GroupBox3: TTntGroupBox
