@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-11-06 22:42+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2006-11-12 12:26+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1905,9 +1905,8 @@ msgstr "Utvärderingen misslyckades."
 msgid "Argument produced a function result with total loss of precision."
 msgstr "Argumentet producerar ett funktionsresultat med total precisionsförlust."
 
-#, fuzzy
 msgid "The custom function/constant '%s' was not found or has the wrong number of arguments."
-msgstr "Symbolen '%s' hittades inte, eller den har fel antal argument."
+msgstr "Funktionen/konstanten '%s' hittades inte, eller den har fel antal argument."
 
 msgid "Too many recursive calls."
 msgstr "För många rekursiva anrop."
@@ -2355,7 +2354,7 @@ msgid "Edit trendline"
 msgstr "Redigera trendlinje"
 
 msgid "Categories:"
-msgstr ""
+msgstr "Kategorier:"
 
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "Dagens Tips kan ge dig sådan information om programmet som de flesta inte känner till."
@@ -2575,14 +2574,13 @@ msgstr "Medelgrå"
 
 #, fuzzy
 msgid "Customize"
-msgstr "Specialstorlek"
+msgstr "Inställning"
 
-#, fuzzy
 msgid "Description"
-msgstr "Beskrivning:"
+msgstr "Beskrivning"
 
 msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
-msgstr ""
+msgstr "För att lägga till en åtgärd till din applikation, dra objekt från antingen Kategorier eller Åtgärder och släpp dem på en befintlig Åtgärdslist."
 
 msgid "Local"
 msgstr "Lokal"
