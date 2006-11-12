@@ -282,7 +282,7 @@ object Form5: TForm5
       Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
       ItemHeight = 16
       TabOrder = 2
-      DroppedWidth = 130
+      AutoDroppedWidth = True
     end
   end
   object Button3: TTntButton

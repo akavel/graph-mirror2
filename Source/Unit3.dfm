@@ -576,7 +576,6 @@ object Form3: TForm3
           Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
           ItemHeight = 16
           TabOrder = 0
-          DroppedWidth = 110
           AutoDroppedWidth = True
         end
         object ExtColorBox2: TExtColorBox
@@ -589,7 +588,6 @@ object Form3: TForm3
           Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
           ItemHeight = 16
           TabOrder = 1
-          DroppedWidth = 110
           AutoDroppedWidth = True
         end
         object ExtColorBox3: TExtColorBox
@@ -602,7 +600,6 @@ object Form3: TForm3
           Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
           ItemHeight = 16
           TabOrder = 2
-          DroppedWidth = 110
           AutoDroppedWidth = True
         end
       end
