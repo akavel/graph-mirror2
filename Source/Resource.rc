@@ -42,7 +42,7 @@ BEGIN
   RES_RecusionLimit       "Too many recursive calls."
 
   RES_OperatorError       "Unexpected operator. Operator '%s' cannot be placed here."
-  RES_NoEndPar            "Right bracket missing."
+  RES_NoEndPar            "The right bracket is missing."
   RES_ArgCountError       "Invalid number of arguments supplied for function '%s'"
   RES_InvalidCompare      "Comparison operator misplaced."
   RES_InvalidNumber       "Invalid number found. Use the format: -5.475E-8"
