@@ -36,12 +36,11 @@ object SymbolFrm: TSymbolFrm
     FocusControl = ComboBox1
   end
   object Label2: TTntLabel
-    Left = 200
+    Left = 216
     Top = 12
-    Width = 52
+    Width = 36
     Height = 13
     Alignment = taRightJustify
-    AutoSize = False
     Caption = 'Subset:'
     FocusControl = ComboBox2
   end
