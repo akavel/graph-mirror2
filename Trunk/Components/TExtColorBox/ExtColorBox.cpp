@@ -97,7 +97,7 @@ void __fastcall TExtColorBox::DropDown(void)
     }
 
     DroppedWidthFound = true;
-    DroppedWidth = MaxWidth + Height + 10;
+    DroppedWidth = MaxWidth + Height + GetSystemMetrics(SM_CXVSCROLL) + 10;
   }
   TColorBox::DropDown();
 }
