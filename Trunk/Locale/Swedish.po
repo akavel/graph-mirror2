@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-11-12 12:26+0100\n"
+"PO-Revision-Date: 2006-11-13 20:10+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -659,8 +659,9 @@ msgid "Reset the tool bar icons to the installation default."
 msgstr "Återställ verktygsikoner till installationsstandard."
 
 msgid "Customize toolbar..."
-msgstr "Ställ in verktygsfältet..."
+msgstr "Anpassa verktygsfältet..."
 
+#, fuzzy
 msgid "Customize the icons shown on the toolbar."
 msgstr "Ställ in ikonerna som visas på verktygsfältet."
 
@@ -2362,8 +2363,9 @@ msgstr "Dagens Tips kan ge dig sådan information om programmet som de flesta in
 msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 msgstr "Du kan sända förslag på förbättringar för framtida versioner, felrapporter och kommentarer till graph@padowan.dk. (V.v. använd engelska eller danska.)"
 
+#, fuzzy
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
-msgstr "Du kan ställa in verktygsfältet genom att högerklicka på det och välja 'Redigera verktygsfält'."
+msgstr "Du kan anpassa verktygsfältet genom att högerklicka på det och välja 'Redigera verktygsfält'."
 
 msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
 msgstr "Istället för att ta bort en funktion, kan du göra den osynlig genom att högerklicka på den i funktionslistan och sedan klicka på 'Synlig'."
@@ -2572,9 +2574,8 @@ msgstr "Krämfärgad"
 msgid "Med Gray"
 msgstr "Medelgrå"
 
-#, fuzzy
 msgid "Customize"
-msgstr "Inställning"
+msgstr "Anpassa"
 
 msgid "Description"
 msgstr "Beskrivning"
