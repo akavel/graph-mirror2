@@ -256,6 +256,7 @@ void TForm1::Translate()
     TranslateList.push_back(ToolBar_Customize);
 
     TranslateList.push_back(Legend_Show);
+    TranslateList.push_back(Legend_Font);
     TranslateList.push_back(Legend_Placement);
     TranslateList.push_back(Legend_TopRight);
     TranslateList.push_back(Legend_BottomRight);
@@ -3447,4 +3448,5 @@ void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
   Redraw();
 }
 //---------------------------------------------------------------------------
+
 

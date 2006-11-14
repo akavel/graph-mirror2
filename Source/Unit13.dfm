@@ -369,7 +369,7 @@ object Form13: TForm13
       object RadioButton3: TMyRadioButton
         Left = 200
         Top = 80
-        Width = 81
+        Width = 129
         Height = 17
         Caption = 'Polynomial'
         TabOrder = 8
