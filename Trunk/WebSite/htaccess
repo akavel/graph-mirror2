@@ -1,0 +1,2 @@
+Redirect /graph/SetupGraphBeta.exe http://padowan.dk/graph/DownloadBeta.php
+Redirect /graph/SetupGraph.exe http://padowan.dk/graph/Download.php

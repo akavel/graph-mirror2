@@ -1,5 +1,5 @@
 <?php
-  $counter_file = 'GraphVersionCount.txt';
+  $counter_file = '../stat/GraphVersionCount.txt';
   clearstatcache();
   ignore_user_abort(true);     ## prevent refresh from aborting file operations and hosing file
   $fh = fopen($counter_file, 'r+b');     ## use 'r+b' so file can be read and written
