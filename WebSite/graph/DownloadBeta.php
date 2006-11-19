@@ -1,6 +1,7 @@
 <?php
   $counter_file = '../stat/DownloadBetaCount.txt';
-  $download_file = "http://www.padowan.dk/graph/SetupGraphBeta-4.2.0.328.exe";
+  $ini_file = parse_ini_file("GraphBeta.inf");
+  $download_file = $ini_file["DownloadFile"];
   clearstatcache();
   ignore_user_abort(true);     ## prevent refresh from aborting file operations and hosing file
   $fh = fopen($counter_file, 'r+b');     ## use 'r+b' so file can be read and written
