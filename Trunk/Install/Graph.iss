@@ -16,12 +16,13 @@ Compression=lzma
 DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
-LicenseFile=D:\Graph\License.txt
-OutputDir=D:\Graph
-OutputBaseFilename=SetupGraphBeta
+LicenseFile=License.txt
+OutputBaseFilename=SetupGraphBeta-4.2.0.328
+OutputDir=.
 SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.2.0.323
+VersionInfoVersion=4.2.0.328
+
 
 [Languages]
 Name: "English"; MessagesFile: "compiler:Default.isl"
