@@ -29,8 +29,10 @@ __fastcall TForm2::TForm2(TComponent* Owner)
   //Make string with file version information
   if(Info.InfoAvailable())
   {
-    Version->Caption = "Version " + AnsiString(Info.StringValue("ProductVersion").c_str());
-    Label3->Caption = "Build " + AnsiString(Info.FileVersion().Build);
+    TVersion FileVersion = Info.FileVersion();
+    Label3->Caption = "Build " + AnsiString(FileVersion.Build);
+    FileVersion.Build = 0;
+    Version->Caption = "Version " + AnsiString(FileVersion.Text().c_str());
     if(Info.FileFlags() && ffDebug)
       Version->Caption = Version->Caption + " beta";
     Copyright->Caption = Info.StringValue("LegalCopyright").c_str();
@@ -66,5 +68,6 @@ void __fastcall TForm2::ProgramIconDblClick(TObject *Sender)
   Animate1->Active = !Animate1->Active;
 }
 //---------------------------------------------------------------------------
+
 
 

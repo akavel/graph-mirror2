@@ -30,7 +30,7 @@ bool TData::LoadFromFile(const std::string &FileName, bool ShowErrorMessages)
       if(std::access(FileName.c_str(), 0))
         MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), LoadRes(RES_FILE_DOESNT_EXIST), MB_ICONSTOP);
       else
-        MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), "Error reading file", MB_ICONSTOP);
+        MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadRes(RES_FILE_READ_ERROR), MB_ICONSTOP);
     }
     return false;
   }
@@ -136,7 +136,7 @@ bool TData::Import(const std::string &FileName)
     if(std::access(FileName.c_str(), 0))
       MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), LoadRes(RES_FILE_DOESNT_EXIST), MB_ICONSTOP);
     else
-      MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), "Error reading file", MB_ICONSTOP);
+      MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadRes(RES_FILE_READ_ERROR), MB_ICONSTOP);
     return false;
   }
 
@@ -149,7 +149,6 @@ bool TData::Import(const std::string &FileName)
     //same over the whole world
     DecimalSeparator = '.';
 
-    TVersionInfo VersionInfo;
     if(SavedByVersion != "NA" && TVersion(SavedByVersion) <= "2.4")
     {
       MessageBox(LoadRes(RES_INVALID_VERSION, SavedByVersion, "2.5"), "Invalid version");
