@@ -365,6 +365,11 @@ void TPolFunc::SetTrigonometry(Func32::TTrigonometry Trig)
 //////////
 // TTan //
 //////////
+TTan::TTan()
+{
+  DrawType = dtLines;
+}
+//---------------------------------------------------------------------------
 void TTan::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
 {
   IniFile.Write(Section, "t", t.Text);
@@ -385,6 +390,7 @@ void TTan::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
   TangentType = IniFile.ReadEnum(Section, "TangentType", ttTangent);
 
   TBaseFuncType::ReadFromIni(IniFile, Section);
+  DrawType = dtLines; //Overwrite the default from TBaseFuncType::ReadFromIni()
 }
 //---------------------------------------------------------------------------
 std::wstring TTan::MakeText() const
