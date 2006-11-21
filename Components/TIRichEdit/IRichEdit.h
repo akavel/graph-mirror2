@@ -9,7 +9,8 @@
 #include <StdCtrls.hpp>
 //---------------------------------------------------------------------------
 class TIRichEdit;
-typedef void (__closure *TOleErrorEvent)(TIRichEdit* Sender, int Oper, int ErrorCode);
+typedef void __fastcall (__closure *TOleErrorEvent)(TIRichEdit* Sender, int Oper, int ErrorCode);
+typedef void __fastcall (__closure *TLinkEvent)(TIRichEdit* Sender, unsigned Min, unsigned Max);
 
 class TTextFormat
 {
@@ -34,6 +35,7 @@ public:
   void SetSize(unsigned Value);
   void SetColor(TColor Color);
   void SetBackgroundColor(TColor Color);
+  void SetLink(bool Value);
   bool GetBold() const;
   bool GetItalic() const;
   bool GetUnderline() const;
@@ -44,6 +46,7 @@ public:
   unsigned GetSize() const;
   TColor GetColor() const;
   TColor GetBackgroundColor() const;
+  bool GetLink() const;
 };
 
 enum TParaFormatAlignment
@@ -75,6 +78,7 @@ private:
   TOleErrorEvent FOnOleError;
   TColor FBackgroundColor;
   ::TParaFormat *FParagraph;
+  TLinkEvent FOnLink;
 
   void __fastcall SetTransparent(bool Value);
   void __fastcall SetBackgroundColor(TColor Color);
@@ -88,6 +92,7 @@ END_MESSAGE_MAP(TCustomRichEdit)
 protected:
   void __fastcall CreateParams(Controls::TCreateParams &Params);
   void __fastcall DestroyWnd();
+  bool DoLink(UINT Msg, unsigned Min, unsigned Max);
 
 public:
   TTextFormat TextFormat;
@@ -110,7 +115,10 @@ public:
   int LineLength(int Index);
   void SetSelText(wchar_t Ch, const AnsiString &FontName, unsigned Size);
   void SetSelText(char Ch, const AnsiString &FontName, unsigned Size);
-
+  void __fastcall SetAutoUrlDetect(bool Value);
+  bool __fastcall GetAutoUrlDetect();
+  void __fastcall SetOnLink(TLinkEvent Value);
+  void SetEventMask(DWORD Mask, DWORD Value);
   __property ::TParaFormat *Paragraph = {read=FParagraph};
   __property SelText;
 //  __property Lines; //Don't use this
@@ -118,7 +126,9 @@ public:
 __published:
   __property bool Transparent = {read=FTransparent, write=SetTransparent, default=false};
   __property TColor BackgroundColor = {read=FBackgroundColor, write=SetBackgroundColor, default=clDefault};
+  __property bool AutoUrlDetect = {read=GetAutoUrlDetect, write=SetAutoUrlDetect};
   __property TOleErrorEvent OnOleError = {read=FOnOleError, write=FOnOleError, default=NULL};
+  __property TLinkEvent OnLink = {read=FOnLink, write=SetOnLink, default=NULL};
 
   __property BorderStyle;
   __property WordWrap;
@@ -136,6 +146,7 @@ __published:
   __property PopupMenu;
   __property ParentFont;
   __property TabOrder;
+  __property Enabled;
 
   __property OnChange;
   __property OnSelectionChange;

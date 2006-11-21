@@ -24,7 +24,7 @@ namespace Irichedit
 //---------------------------------------------------------------------------
 __fastcall TIRichEdit::TIRichEdit(TComponent* Owner)
   : TCustomRichEdit(Owner), FTransparent(false), TextFormat(this), FOnOleError(NULL), FBackgroundColor(clDefault),
-    FParagraph(new ::TParaFormat(this))
+    FParagraph(new ::TParaFormat(this)), FOnLink(NULL)
 {
   ControlStyle = ControlStyle >> csSetCaption;
 }
@@ -367,10 +367,23 @@ int TIRichEdit::LineLength(int Index)
 //---------------------------------------------------------------------------
 void __fastcall TIRichEdit::WMNotify(TMessage &Message)
 {
-  ENOLEOPFAILED *OleOpFailed = reinterpret_cast<ENOLEOPFAILED*>(Message.LParam);
-  if(OleOpFailed->nmhdr.code == EN_OLEOPFAILED)
-    if(FOnOleError)
-      FOnOleError(this, OleOpFailed->lOper, OleOpFailed->hr);
+  NMHDR *Nmhdr = reinterpret_cast<NMHDR*>(Message.LParam);
+  switch(Nmhdr->code)
+  {
+    case EN_OLEOPFAILED:
+    {
+      ENOLEOPFAILED *OleOpFailed = reinterpret_cast<ENOLEOPFAILED*>(Message.LParam);
+      if(FOnOleError)
+        FOnOleError(this, OleOpFailed->lOper, OleOpFailed->hr);
+      break;
+    }
+    case EN_LINK:
+    {
+      ENLINK *Link = reinterpret_cast<ENLINK*>(Message.LParam);
+      Message.Result = DoLink(Link->msg, Link->chrg.cpMin, Link->chrg.cpMax);
+      break;
+    }
+  }
   TCustomRichEdit::Dispatch(&Message);
 }
 //---------------------------------------------------------------------------
@@ -426,6 +439,58 @@ void TParaFormat::SetAlignment(TParaFormatAlignment Value)
   Format.wAlignment = Value;
   Format.dwMask = PFM_ALIGNMENT;
   SendMessage(RichEdit->Handle, EM_SETPARAFORMAT, 0, reinterpret_cast<long>(&Format));
+}
+//---------------------------------------------------------------------------
+void TTextFormat::SetLink(bool Value)
+{
+  SetFormat(CFM_LINK, Value ? CFE_LINK : 0);
+}
+//---------------------------------------------------------------------------
+bool TTextFormat::GetLink() const
+{
+  return GetFormat().dwEffects & CFE_LINK;
+}
+//---------------------------------------------------------------------------
+void __fastcall TIRichEdit::SetAutoUrlDetect(bool Value)
+{
+  SendMessage(Handle, EM_AUTOURLDETECT, Value, 0);
+}
+//---------------------------------------------------------------------------
+bool __fastcall TIRichEdit::GetAutoUrlDetect()
+{
+  return SendMessage(Handle, EM_GETAUTOURLDETECT, 0, 0);
+}
+//---------------------------------------------------------------------------
+void __fastcall TIRichEdit::SetOnLink(TLinkEvent Value)
+{
+  FOnLink = Value;
+  SetEventMask(ENM_LINK, Value ? ENM_LINK : 0);
+}
+//---------------------------------------------------------------------------
+void TIRichEdit::SetEventMask(DWORD Mask, DWORD Value)
+{
+  DWORD Events = SendMessage(Handle, EM_GETEVENTMASK, 0, 0);
+  Events &= ~Mask;
+  Events |= (Mask & Value);
+  SendMessage(Handle, EM_SETEVENTMASK, 0, Events);
+}
+//---------------------------------------------------------------------------
+bool TIRichEdit::DoLink(UINT Msg, unsigned Min, unsigned Max)
+{
+  switch(Msg)
+  {
+    case WM_LBUTTONDOWN:
+      if(OnLink)
+        OnLink(this, Min, Max);
+      return true;
+
+    case WM_SETCURSOR:
+      ::SetCursor(Screen->Cursors[crHandPoint]);
+      return true;
+
+    default:
+      return false;
+  }
 }
 //---------------------------------------------------------------------------
 
