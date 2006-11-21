@@ -50,8 +50,7 @@ TData::TData(const TData &OldData) : Axes(OldData.Axes), Property(OldData.Proper
 void TData::WriteInfoToIni(TConfigFile &IniFile)
 {
   TVersionInfo VerInfo;
-  IniFile.Write("Graph", "Version", VerInfo.StringValue("ProductVersion"));
-  IniFile.Write("Graph", "Build", VerInfo.FileVersion().Build);
+  IniFile.Write("Graph", "Version", VerInfo.FileVersion().Text());
   IniFile.Write("Graph", "MinVersion", MINVERSION);
   IniFile.Write("Graph", "OS", GetWindowsVersion());
 }
