@@ -170,6 +170,7 @@ public:
   TTextValue t;
   TTangentType TangentType;
 
+  TTan::TTan();
   std::wstring MakeText() const;
   void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
