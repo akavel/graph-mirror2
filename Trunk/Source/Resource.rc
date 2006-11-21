@@ -115,6 +115,7 @@ BEGIN
   RES_OUT_OF_RESOURCES    "Windows does not have enough resources to save an image that large."
   RES_VALUE_RANGE         "'%1%' must be between %2% and %3%."
   RES_FILE_DOESNT_EXIST   "File not found"
+  RES_FILE_READ_ERROR     "Error reading file"
 
   RES_CAPTION_DELETE      "Confirm delete"
   RES_SHOW                "Show %s"
@@ -264,7 +265,6 @@ BEGIN
 //Texts for Customize Toolbar
 "Customize"
 "Description"
-"To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
 
 "Local"
 "Global"
