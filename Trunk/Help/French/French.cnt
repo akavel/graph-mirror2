@@ -11,14 +11,7 @@
 1 Remerciements=ACKNOWLEDGE
 1 Fonctions
 2 Liste des fonctions=FUNCTIONS
-2 fact=FUNCTION_FACT
-2 gamma=FUNCTION_GAMMA
-2 beta=FUNCTION_BETA
-2 W=FUNCTION_W
-2 mod=FUNCTION_MOD
-2 integrate=FUNCTION_INTEGRATE
-2 sum=FUNCTION_SUM
-2 Power and logarithm
+2 Puissance et logarithme
 3 sqr=FUNCTION_SQR
 3 exp=FUNCTION_EXP
 3 sqrt=FUNCTION_SQRT
@@ -26,7 +19,7 @@
 3 ln=FUNCTION_LN
 3 log=FUNCTION_LOG
 3 logb=FUNCTION_LOGB
-2 Trigonometric
+2 Trigonométrie
 3 sin=FUNCTION_SIN
 3 cos=FUNCTION_COS
 3 tan=FUNCTION_TAN
@@ -39,7 +32,7 @@
 3 acsc=FUNCTION_ACSC
 3 asec=FUNCTION_ASEC
 3 acot=FUNCTION_ACOT
-2 Hyperbolic
+2 Trigonométrie hyperbolique
 3 sinh=FUNCTION_SINH
 3 cosh=FUNCTION_COSH
 3 tanh=FUNCTION_TANH
@@ -52,19 +45,19 @@
 3 acsch=FUNCTION_ACSCH
 3 asech=FUNCTION_ASECH
 3 acoth=FUNCTION_ACOTH
-2 Complex
+2 Complexes
 3 abs=FUNCTION_ABS
 3 arg=FUNCTION_ARG
 3 conj=FUNCTION_CONJ
 3 re=FUNCTION_RE
 3 im=FUNCTION_IM
-2 Rounding
+2 Arrondis
 3 trunc=FUNCTION_TRUNC
 3 fract=FUNCTION_FRACT
 3 ceil=FUNCTION_CEIL
 3 floor=FUNCTION_FLOOR
 3 round=FUNCTION_ROUND
-2 Piecewise
+2 Fonctions alternatives
 3 sign=FUNCTION_SIGN
 3 u=FUNCTION_U
 3 min=FUNCTION_MIN
@@ -72,6 +65,16 @@
 3 if=FUNCTION_IF
 3 ifseq=FUNCTION_IFSEQ
 3 range=FUNCTION_RANGE
+2 Fonctions spéciales
+3 integrate=FUNCTION_INTEGRATE
+3 sum=FUNCTION_SUM
+3 fact=FUNCTION_FACT
+3 gamma=FUNCTION_GAMMA
+3 beta=FUNCTION_BETA
+3 W=FUNCTION_W
+3 zeta=FUNCTION_ZETA
+3 mod=FUNCTION_MOD
+3 dnorm=FUNCTION_DNORM
 1 Dialogues
 2 Axes=DIALOG_AXES
 2 Options=DIALOG_OPTIONS
@@ -84,4 +87,5 @@
 2 Insérer f'(x)=DIALOG_DIFF
 2 Évaluer/Aire/Longueur d'arc=DIALOG_EVAL
 2 Calculer Table=DIALOG_TABLE
+2 Animer=DIAlOG_ANIMATE
 2 Enregistrer comme image=DIALOG_META
