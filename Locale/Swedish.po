@@ -2,14 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-11-13 20:10+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2006-11-25 13:47+0100\n"
+"Last-Translator: Pär Smårs <par.smars@bredband.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: dxgettext 1.2.1\n"
 "X-Poedit-Country: SWEDEN\n"
+"X-Poedit-Language: Swedish\n"
 
 msgid "From:"
 msgstr "Från:"
@@ -661,9 +662,8 @@ msgstr "Återställ verktygsikoner till installationsstandard."
 msgid "Customize toolbar..."
 msgstr "Anpassa verktygsfältet..."
 
-#, fuzzy
 msgid "Customize the icons shown on the toolbar."
-msgstr "Ställ in ikonerna som visas på verktygsfältet."
+msgstr "Anpassa ikonerna som visas på verktygsfältet."
 
 msgid "Rotation"
 msgstr "Rotation"
@@ -903,19 +903,19 @@ msgid "Model:"
 msgstr "Modell:"
 
 msgid "Add model"
-msgstr "Lägg till modell"
+msgstr "Lägg till"
 
 msgid "Remove model"
-msgstr "Ta bort modell"
+msgstr "Ta bort"
 
 msgid "Edit model"
-msgstr "Redigera modell"
+msgstr "Redigera"
 
 msgid "Enter a function model to base the trendline on."
 msgstr "Skriv in en funktion att basera trendlinjen på."
 
 msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
-msgstr "Skriv in ett värde i Fånga upp-rutan för att ange punkten du vill att trendlinjen skall träffa y-axeln. Detta val ärn endast tillgängligt för linjära-, polynom- och exponentiella trendlinjer."
+msgstr "Skriv in ett värde i Avskärning-rutan för att ange punkten du vill att trendlinjen skall träffa y-axeln. Detta val är endast tillgängligt för linjära-, polynom- och exponentiella trendlinjer."
 
 msgid "Intercept ="
 msgstr "Avskärning = "
@@ -936,22 +936,22 @@ msgid "Sample"
 msgstr "Prov"
 
 msgid "Markers"
-msgstr "Markeringar"
+msgstr "Markörer"
 
 msgid "Marker"
-msgstr "Markering"
+msgstr "Markör"
 
 msgid "Size:"
 msgstr "Storlek:"
 
 msgid "Choose the size of the markers."
-msgstr "Välj storlek på markeringarna."
+msgstr "Välj storlek på markörerna."
 
 msgid "Choose the type of markers to be shown at each point."
-msgstr "Välj typ av markering att visa vid varje punkt."
+msgstr "Välj typ av markör att visa vid varje punkt."
 
 msgid "Choose the color of the markers."
-msgstr "Välj färg på markeringarna."
+msgstr "Välj färg på markörerna."
 
 msgid "Interpolation:"
 msgstr "Interpolation:"
@@ -1343,7 +1343,7 @@ msgstr "Om Graph"
 msgid "<Language> translation by <Translator>"
 msgstr ""
 "Svensk översättning av Pär Smårs <par.smars@bredband.net>\n"
-"(version 1.01, kontrollerad mot 4.2b Build 303)"
+"(version 1.02, kontrollerad mot 4.2b Build 322)"
 
 msgid "Version "
 msgstr "Version"
@@ -1373,10 +1373,10 @@ msgid "Stop"
 msgstr "Stoppa"
 
 msgid "Back"
-msgstr "Backa"
+msgstr "Stega bakåt"
 
 msgid "Step"
-msgstr "Steg:"
+msgstr "Stega framåt"
 
 msgid "Speed"
 msgstr "Hastighet"
@@ -2340,13 +2340,13 @@ msgid "Edit relation"
 msgstr "Redigera relation..."
 
 msgid "Commands"
-msgstr "Kommandon:"
+msgstr "Kommandon"
 
 msgid "(All Commands)"
 msgstr "(Alla kommandon)"
 
 msgid "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
-msgstr "Vill du lägga till ett kommando till ett verktygsfält, välj en kategori och dra kommandot från denna dialogruta till ett verktygsfält."
+msgstr "För att lägga till ett kommando, välj en kategori och dra kommandot från denna dialogruta till verktygsfältet."
 
 msgid "Edit f'(x)"
 msgstr "Redigera f'(x)"
@@ -2363,9 +2363,8 @@ msgstr "Dagens Tips kan ge dig sådan information om programmet som de flesta in
 msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 msgstr "Du kan sända förslag på förbättringar för framtida versioner, felrapporter och kommentarer till graph@padowan.dk. (V.v. använd engelska eller danska.)"
 
-#, fuzzy
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
-msgstr "Du kan anpassa verktygsfältet genom att högerklicka på det och välja 'Redigera verktygsfält'."
+msgstr "Du kan anpassa verktygsfältet genom att högerklicka på det och välja 'Anpassa verktygsfält'."
 
 msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
 msgstr "Istället för att ta bort en funktion, kan du göra den osynlig genom att högerklicka på den i funktionslistan och sedan klicka på 'Synlig'."
