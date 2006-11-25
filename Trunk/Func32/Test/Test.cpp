@@ -453,6 +453,12 @@ void Test()
 
   Test("gamma(x)", 6, 120);
   Test("mod(x,5)", 12, 2);
+  Test("mod(x,5)", 10, 0);
+  Test("mod(x,-1)", -2, 0);
+  Test("mod(x,-5)", 12, -3);
+  Test("mod(x,-5)", -12, -2);
+  Test("mod(x, 1.2)", 5.6, 0.8);
+  Test("mod(x, 1.2)", -5.6, 0.4);
   Test("integrate(x^2,2,5)", NaN, 39);
   Test("sum(x, 3, 7)", NaN, 3+4+5+6+7);
   Test("dnorm(x, 5, 7)", 3, 0.054712394277745);

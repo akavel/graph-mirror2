@@ -621,7 +621,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         ErrorCode = ecComplexError;
       //The C++ implementation doesn't follow the documentation, which also seems to be wrong.
       //We want the sign of mod(m,n) to be the same as the sign of n.
-      if((real(Temp) > 0) != (real(Temp2) > 0))
+      if(!!Temp && (real(Temp) >= 0) != (real(Temp2) >= 0))
         return Temp + Temp2;
       return Temp;
     }
