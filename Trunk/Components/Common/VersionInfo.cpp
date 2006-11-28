@@ -38,9 +38,7 @@ void TVersionInfo::SetFileName(const std::string &FileName)
 std::string TVersion::Text() const
 {
   std::ostringstream Stream;
-  Stream << Major;
-  if(Minor || Release || Build)
-    Stream << '.' << Minor;
+  Stream << Major << '.' << Minor;
   if(Release || Build)
     Stream << '.' << Release;
   if(Build)
