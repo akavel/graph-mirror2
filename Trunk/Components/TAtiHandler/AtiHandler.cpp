@@ -372,9 +372,13 @@ void TAtiHandler::DoError(TAtiError ErrorCode, const AnsiString &ErrorStr)
 //---------------------------------------------------------------------------
 void TAtiHandler::DebugLog(const AnsiString &Str)
 {
-  static std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str());
-  out << Str.c_str() << std::endl;
-  OutputDebugString(Str.c_str());
+  static bool EnableLog = FindCmdLineSwitch("log");
+  if(EnableLog)
+  {
+    static std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str());
+    out << Str.c_str() << std::endl;
+    OutputDebugString(Str.c_str());
+  }
 }
 //---------------------------------------------------------------------------
 
