@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2006-08-22 23:14\n"
-"PO-Revision-Date: 2006-11-17 00:21+0100\n"
+"PO-Revision-Date: 2006-11-30 00:06+0100\n"
 "Last-Translator: Martin Stružský <struzsky.m@seznam.cz>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +26,7 @@ msgid "Enter the end coordinate or mark the range on the graph itself with the m
 msgstr "Zadejte koncovou souřadnici nebo ji označte přímo v grafu pomocí myši."
 
 msgid "Area or length of path calculated for the given range using Simpson's formula."
-msgstr "Oblast nebo délka cesty vypočítaná pro daný rozsah pomocí Simpsonova pravidla."
+msgstr "Oblast nebo délka křivky vypočítaná pro daný rozsah pomocí Simpsonova pravidla."
 
 msgid "Snap to:"
 msgstr "Přichytit k:"
@@ -137,7 +137,7 @@ msgid "Check to make the selected item visible in the coordinate system."
 msgstr "Zaškrtněte, chcete-li položku zobrazit v soustavě souřadnic."
 
 msgid "Show in legend"
-msgstr "Zobrazit legendu"
+msgstr "Zobrazit v legendě"
 
 msgid "Check to show the selected item in the legend."
 msgstr "Zaškrtněte, chcete-li zobrazit legendu pro vybranou položku."
@@ -293,7 +293,7 @@ msgid "Insert point series..."
 msgstr "Vložit posloupnost bodů..."
 
 msgid "Insert a point series."
-msgstr "Vložit posloupnosti bodů."
+msgstr "Vložit posloupnost bodů."
 
 msgid "Insert trendline..."
 msgstr "Vložit regresní křivku..."
@@ -341,7 +341,7 @@ msgid "Square"
 msgstr "Čtvercové"
 
 msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
-msgstr "Zobrazit osy ve stejném měřítku. Kruhové tvary budou zobrazeny ve správném tvaru, ne jako elipsy."
+msgstr "Zobrazit osy ve stejném měřítku. Kružnice budou zobrazeny ve správném tvaru, ne jako elipsy."
 
 msgid "Standard"
 msgstr "Standardní"
@@ -383,10 +383,10 @@ msgid "Move the coordinate system with the mouse."
 msgstr "Posunout soustavu souřadnic pomocí myši."
 
 msgid "Length of path"
-msgstr "Délka cesty"
+msgstr "Délka křivky"
 
 msgid "Calculates the length of path between two given points on the curve."
-msgstr "Vypočítat délku cesty mezi dvěma zadanými body po křivce."
+msgstr "Vypočítat délku křivky mezi dvěma zadanými body."
 
 msgid "Calculates the area under the path of the selected function."
 msgstr "Vypočítat obsah oblasti pod vybranou funkcí."
@@ -656,7 +656,7 @@ msgid "Width in pixels of the equation line or the borderline of the inequality.
 msgstr "Šířka křivky rovnice nebo hranice nerovnice v pixelech."
 
 msgid "Select the color for drawing the relation."
-msgstr "Vyberte barvu pro zobrazení vztahu,"
+msgstr "Vyberte barvu pro zobrazení vztahu."
 
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
 msgstr "Zadejte vztah, např. \"x^2+y^2 = 25\" nebo \"y < sin(x)\""
@@ -692,7 +692,7 @@ msgid "Width of graph in pixels."
 msgstr "Šířka čáry v pixelech."
 
 msgid "Choose which line style to use for drawing the graph."
-msgstr "Zvolte styl čáry, kterým bude vykreslen graf."
+msgstr "Zvolte styl čáry, kterou bude zobrazen graf."
 
 msgid "Select the color of the graph."
 msgstr "Vyberte barvu čáry."
@@ -839,13 +839,13 @@ msgid "Interpolation:"
 msgstr "Interpolace:"
 
 msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
-msgstr "Zvolte styl čáry vykreslené mezi body. Čára se nemusí vykreslovat."
+msgstr "Zvolte styl čáry zobrazené mezi body. Čára nemusí být zobrazena."
 
 msgid "Choose the width of the lines in pixels."
 msgstr "Zvolte šířku čáry v pixelech."
 
 msgid "Select which kind of line to draw between the markers."
-msgstr "Vyberte druh čáry vykreslené mezi symboly."
+msgstr "Vyberte druh čáry zobrazené mezi symboly."
 
 msgid "Cubic splines"
 msgstr "Kubický splajn"
@@ -998,7 +998,7 @@ msgid "Calculating"
 msgstr "Probíhá výpočet"
 
 msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
-msgstr "CSV (hodnoty oddělené čárkou) [*.csv]|*.csv|Text [*.txt]|*.txt"
+msgstr "CSV (hodnoty oddělené čárkou) [*.csv]|*.csv|Textové soubory [*.txt]|*.txt"
 
 msgid "Insert shade"
 msgstr "Vložit šrafování"
@@ -1100,118 +1100,118 @@ msgid "Shading range for 2nd function"
 msgstr "Rozsah šrafování pro druhou funkci"
 
 msgid "Custom functions/constants"
-msgstr ""
+msgstr "Vlastní fukce/konstanty"
 
 msgid "Apply"
-msgstr ""
+msgstr "Použít"
 
 msgid "Names"
-msgstr ""
+msgstr "Název"
 
 msgid "Definition"
-msgstr ""
+msgstr "Definice"
 
 msgid "Cut the selected text to the clipboard"
-msgstr ""
+msgstr "Vyjmout vybraný text a vložit ho do schránky."
 
 msgid "Image options"
-msgstr ""
+msgstr "Možnosti obrázku"
 
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 msgid "Image width:"
-msgstr ""
+msgstr "Šířka obrázku:"
 
 msgid "Image height:"
-msgstr ""
+msgstr "Výška obrázku:"
 
 msgid "Set a custom image width."
-msgstr ""
+msgstr "Nastavit vlastní šířku obrázku."
 
 msgid "Set a custom image height."
-msgstr ""
+msgstr "Nastavit vlastní výšku obrázku."
 
 msgid "Choose to use the same size as shown on the screen or a custom image size."
-msgstr ""
+msgstr "Zvolte, chcete-li použít stejnou velikost jako na obrazovce nebo vlastní velikost obrázku."
 
 msgid "Image size"
-msgstr ""
+msgstr "Velikost obrázku"
 
 msgid "Screen size"
-msgstr ""
+msgstr "Velikost obrazovky"
 
 msgid "Custom size"
-msgstr ""
+msgstr "Vlastní velikost"
 
 msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
-msgstr ""
+msgstr "Progresivní kódování umožňuje zobrazení hrubého náhledu obrázku při jeho načítání."
 
 msgid "Encoding"
-msgstr ""
+msgstr "Kódování"
 
 msgid "Progressive"
-msgstr ""
+msgstr "Progresivní"
 
 msgid "Select a compression quality."
-msgstr ""
+msgstr "Vyberte úroveň komprese."
 
 msgid "Quality"
-msgstr ""
+msgstr "Kvalita"
 
 msgid "Paper size:"
-msgstr ""
+msgstr "Velikost papíru:"
 
 msgid "Choose paper orientation."
-msgstr ""
+msgstr "Zvolte orientaci papíru."
 
 msgid "Orientation"
-msgstr ""
+msgstr "Orientace"
 
 msgid "Portrait"
-msgstr ""
+msgstr "Na výšku"
 
 msgid "Landscape"
-msgstr ""
+msgstr "Na šířku"
 
 msgid "Choose paper size to use."
-msgstr ""
+msgstr "Zvolte použitou velikost papíru."
 
 msgid "Select this to use these settings as defaults in the future."
-msgstr ""
+msgstr "Vyberte, chcete-li příště toto nastavení použít jako výchozí."
 
 msgid "Save as default"
-msgstr ""
+msgstr "Uložit jako výchozí"
 
 msgid "Animate"
-msgstr ""
+msgstr "Animovat"
 
 msgid "Constants:"
-msgstr ""
+msgstr "Konstanty:"
 
 msgid "Step:"
-msgstr ""
+msgstr "Krok:"
 
 msgid "Frames/second:"
-msgstr ""
+msgstr "Snímků/sekundu:"
 
 msgid "Choose a constant to change between each frame."
-msgstr ""
+msgstr "Zvolte konstantu, která se v každém snímku změní."
 
 msgid "The first value of the constant"
-msgstr ""
+msgstr "První hodnota konstanty."
 
 msgid "The last value of the constant."
-msgstr ""
+msgstr "Poslední hodnota konstanty."
 
 msgid "The chosen constant is changed by this value between each frame."
-msgstr ""
+msgstr "Zvolená konstanta se mění v každém snímku o tuto hodnotu."
 
 msgid "Number of frames per second used when the animation is played."
-msgstr ""
+msgstr "Počet snímků za sekundu zobrazených při přehrávání animace."
 
 msgid "Working"
-msgstr ""
+msgstr "Pracuji"
 
 msgid "About Graph"
 msgstr "O programu Graph"
@@ -1235,451 +1235,451 @@ msgid "The newest version as well as the source code are available at:"
 msgstr "Nejnovější verze a zdrojový kód programu jsou k dispozici na adrese:"
 
 msgid "Animation"
-msgstr ""
+msgstr "Animace"
 
 msgid "Play"
-msgstr ""
+msgstr "Přehrát"
 
 msgid "Pause"
-msgstr ""
+msgstr "Pozastavit"
 
 msgid "Stop"
-msgstr ""
+msgstr "Zastavit"
 
 msgid "Back"
-msgstr ""
+msgstr "Zpět"
 
 msgid "Step"
-msgstr ""
+msgstr "Vpřed"
 
 msgid "Speed"
-msgstr ""
+msgstr "Rychlost"
 
 msgid "Repeat"
-msgstr ""
+msgstr "Opakovat"
 
 msgid "Auto reverse"
-msgstr ""
+msgstr "Automatické převinutí"
 
 msgid "Open an animation file."
-msgstr ""
+msgstr "Otevřít soubor s animací."
 
 msgid "Save the animation to a file."
-msgstr ""
+msgstr "Uložit animaci do souboru."
 
 msgid "Edit axes"
-msgstr ""
+msgstr "Osy"
 
 msgid "Minimum:"
-msgstr ""
+msgstr "Minimum:"
 
 msgid "Maximum:"
-msgstr ""
+msgstr "Maximum:"
 
 msgid "Tick unit:"
-msgstr ""
+msgstr "Vzdálenost značek:"
 
 msgid "The x-axis cross at y="
-msgstr ""
+msgstr "Průsečík s osou y v bodě y="
 
 msgid "Grid unit:"
-msgstr ""
+msgstr "Jednotka mřížky:"
 
 msgid "Minimum x-value."
-msgstr ""
+msgstr "Nejmenší hodnota na ose x."
 
 msgid "Maximum x-value."
-msgstr ""
+msgstr "Největší hodnota na ose x."
 
 msgid "Units between ticks on the x-axis."
-msgstr ""
+msgstr "Vzdálenost značek na ose x."
 
 msgid "Use logarithmic scale on the x-axis."
-msgstr ""
+msgstr "Použít na ose x logaritmické měřítko."
 
 msgid "Logarithmic scale"
-msgstr ""
+msgstr "Logaritmicky"
 
 msgid "Show the label at the right side of the main window, above the x-axis."
-msgstr ""
+msgstr "Zobrazit popis na pravé straně hlavního okna nad osou x."
 
 msgid "Label:"
-msgstr ""
+msgstr "Popis:"
 
 msgid "Edit the label for the axis here."
-msgstr ""
+msgstr "Zadejte popis osy."
 
 msgid "Show units on the x-axis."
-msgstr ""
+msgstr "Zobrazit čísla na ose x."
 
 msgid "Show numbers"
-msgstr ""
+msgstr "Zobrazit čísla"
 
 msgid "The x-axis will intersect with the y-axis at this value."
-msgstr ""
+msgstr "V tomto bodě bude osa x protínat osu y."
 
 msgid "Units between the grid lines perpendicular to the x-axis."
-msgstr ""
+msgstr "Vzdálenost mezi čárami mřížky kolmými na osu x."
 
 msgid "Determine the tick unit automatically."
-msgstr ""
+msgstr "Automaticky určit vzdálenost značek."
 
 msgid "Auto tick"
-msgstr ""
+msgstr "Automatická"
 
 msgid "Set the grid unit to the same as the tick unit."
-msgstr ""
+msgstr "Nastavit jednotku mřížky stejnou jako vzdálenost značek."
 
 msgid "Auto grid"
-msgstr ""
+msgstr "Automatická"
 
 msgid "Show tick marks on the x-axis."
-msgstr ""
+msgstr "Zobrazit značky na ose x."
 
 msgid "Show ticks"
-msgstr ""
+msgstr "Zobrazit značky"
 
 msgid "Show units on the selected axis as a fraction multiplied by pi."
-msgstr ""
+msgstr "Zobrazit jednotky na vybrané ose jako zlomek vynásobený číslem pí."
 
 msgid "Show as a multiple of pi"
-msgstr ""
+msgstr "Zobrazit jako násobek pí"
 
 msgid "Show vertical grid lines."
-msgstr ""
+msgstr "Zobrazit svislé čáry mřížky."
 
 msgid "Show grid"
-msgstr ""
+msgstr "Zobrazit mřížku"
 
 msgid "The y-axis cross at x="
-msgstr ""
+msgstr "Průsečík s osou x v bodě x="
 
 msgid "Minimum y-value."
-msgstr ""
+msgstr "Nejmenší hodnota na ose y."
 
 msgid "Maximum y-value."
-msgstr ""
+msgstr "Největší hodnota na ose y."
 
 msgid "Use logarithmic scale for the y-axis."
-msgstr ""
+msgstr "Použít logaritmické měřítko na ose y."
 
 msgid "Units between ticks on the y-axis."
-msgstr ""
+msgstr "Vzdálenost značek na ose y."
 
 msgid "Show units on the y-axis."
-msgstr ""
+msgstr "Zobrazit čísla na ose y."
 
 msgid "Show the label at the top of the main window, to the right of the y-axis."
-msgstr ""
+msgstr "Zobrazit popis v horní části hlavního okna napravo od osy y."
 
 msgid "The y-axis will intersect with the x-axis at this value."
-msgstr ""
+msgstr "V tomto bodě bude osa y protínat osu x."
 
 msgid "Units between the grid lines perpendicular to the y-axis."
-msgstr ""
+msgstr "Vzdálenost mezi čárami mřížky kolmými na osu y."
 
 msgid "Show tick marks on the y-axis."
-msgstr ""
+msgstr "Zobrazit značky na ose y."
 
 msgid "Show horizontal grid lines."
-msgstr ""
+msgstr "Zobrazit vodorovné čáry mřížky."
 
 msgid "Settings"
-msgstr ""
+msgstr "Nastavení"
 
 msgid "Title:"
-msgstr ""
+msgstr "Název:"
 
 msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
-msgstr ""
+msgstr "Zvolte, chcete-li zobrazit osy protnuté uprostřed nebo vlevo dole nebo je nechcete zobrazit vůbec."
 
 msgid "Axes style"
-msgstr ""
+msgstr "Zobrazení os"
 
 msgid "None"
-msgstr ""
+msgstr "Žádné"
 
 msgid "Crossed"
-msgstr ""
+msgstr "Uprostřed"
 
 msgid "Boxed"
-msgstr ""
+msgstr "Vlevo dole"
 
 msgid "Choose if trigonometric functions should calculate in radians or degrees."
-msgstr ""
+msgstr "Zvolte, zda mají trigonometrické funkce počítat v radiánech nebo ve stupních."
 
 msgid "Trigonometry"
-msgstr ""
+msgstr "Trigonometrie"
 
 msgid "Radian"
-msgstr ""
+msgstr "Radiány"
 
 msgid "Degree"
-msgstr ""
+msgstr "Stupně"
 
 msgid "Enter a title to show above the coordinate system."
-msgstr ""
+msgstr "Zadejte název grafu zobrazený nad soustavou souřadnic."
 
 msgid "Select the font for the title."
-msgstr ""
+msgstr "Vyberte písmo názvu."
 
 msgid "Choose where the legend should be placed."
-msgstr ""
+msgstr "Zvolte, kde bude umístěna legenda."
 
 msgid "Legend placement"
-msgstr ""
+msgstr "Umístění legendy"
 
 msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
-msgstr ""
+msgstr "Toto políčko zaškrtněte, chcete-li pro výpočty použít komplexní čísla. Pamatujte, že tato funkce zpomalí práci s grafy."
 
 msgid "Calculate with complex numbers"
-msgstr ""
+msgstr "Počítat s komplexními čísly"
 
 msgid "Font and color"
-msgstr ""
+msgstr "Písma a barvy"
 
 msgid "Colors"
-msgstr ""
+msgstr "Barvy"
 
 msgid "Grid color:"
-msgstr ""
+msgstr "Barva mřížky:"
 
 msgid "Axes color:"
-msgstr ""
+msgstr "Barva os:"
 
 msgid "Background color:"
-msgstr ""
+msgstr "Barva pozadí:"
 
 msgid "Select the color of the image background."
-msgstr ""
+msgstr "Vyberte barvu pozadí grafu."
 
 msgid "Select the color of the axes."
-msgstr ""
+msgstr "Vyberte barvu os."
 
 msgid "Select the color of the grid lines."
-msgstr ""
+msgstr "Vyberte barvu čar mřížky."
 
 msgid "Fonts"
-msgstr ""
+msgstr "Písma"
 
 msgid "Number font:"
-msgstr ""
+msgstr "Písmo čísel:"
 
 msgid "Label font:"
-msgstr ""
+msgstr "Písmo popisů:"
 
 msgid "Legend font:"
-msgstr ""
+msgstr "Písmo legendy:"
 
 msgid "Select the font used to show the labels on the axes."
-msgstr ""
+msgstr "Vyberte písmo použité pro zobrazení popisů os."
 
 msgid "Select the font used to show the numbers on the axes."
-msgstr ""
+msgstr "Vyberte písmo použité pro zobrazení čísel na osách."
 
 msgid "Select the font used to show the legend text."
-msgstr ""
+msgstr "Vyberte písmo použité pro zobrazení textu legendy."
 
 msgid "Decimals:"
-msgstr ""
+msgstr "Desetinná místa:"
 
 msgid "Recent files:"
-msgstr ""
+msgstr "Poslední soubory:"
 
 msgid "Max undo steps:"
-msgstr ""
+msgstr "Max. kroků zpět:"
 
 msgid "Language:"
-msgstr ""
+msgstr "Jazyk:"
 
 msgid "Font scale:"
-msgstr ""
+msgstr "Velikost písma:"
 
 msgid "Number of decimals used when results are shown."
-msgstr ""
+msgstr "Počet desetinných míst v zobrazených výsledcích."
 
 msgid "Associate *.grf files with Graph."
-msgstr ""
+msgstr "Přiřadit soubory s příponou GRF k programu Graph. "
 
 msgid "Associate .grf files"
-msgstr ""
+msgstr "Přiřadit soubory GRF"
 
 msgid "The number of most recent used files shown in the File menu."
-msgstr ""
+msgstr "Počet naposledy otevřených souborů zobrazených v nabídce Soubor."
 
 msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
-msgstr ""
+msgstr "Uložit pozici okna při ukončení programu. Toto nastavení bude použito při příštím spuštění programu.|Uložit stav okna při ukončení."
 
 msgid "Save workspace on exit"
-msgstr ""
+msgstr "Při ukočení uložit pracovní plochu"
 
 msgid "Format used when complex numbers are shown."
-msgstr ""
+msgstr "Formát použitý pro zobrazení komplexních čísel."
 
 msgid "Complex format"
-msgstr ""
+msgstr "Komplexní čísla"
 
 msgid "Real"
-msgstr ""
+msgstr "Reálná část"
 
 msgid "Rectangular"
-msgstr ""
+msgstr "Kartézsky"
 
 msgid "Polar"
-msgstr ""
+msgstr "Polárně"
 
 msgid "Show the tooltip when the cursor is over an item."
-msgstr ""
+msgstr "Zobrazit popis položky, nad kterou se nachází kurzor."
 
 msgid "Show tooltip"
-msgstr ""
+msgstr "Zobrazit vysvětlivky"
 
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
-msgstr ""
+msgstr "Maximální počet uložených kroků, které lze vrátit zpět. Chcete-li vypnout funkci Zpět, nastavte tuto hodnotu na 0."
 
 msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
-msgstr ""
+msgstr "Je-li toto políčko zaškrtnuto, program program bude při spuštění kontaktovat webový server, aby zjistil, zda je k dispozici novější verze."
 
 msgid "Check for new version of Graph at startup"
-msgstr ""
+msgstr "Při spuštění zjišťovat novou verzi programu Graph"
 
 msgid "Select the language to use for the user interface."
-msgstr ""
+msgstr "Vyberte jazyk uživatelského rozhraní."
 
 msgid "This is used to scale the user interface if you are having problems reading the text."
-msgstr ""
+msgstr "Tato hodnota je použita pro nastavení velikosti písma uživatelského rozhraní, máte-li potíže s čtením textu."
 
 msgid "Insert function"
-msgstr ""
+msgstr "Vložit funkci"
 
 msgid "Function type:"
-msgstr ""
+msgstr "Typ funkce:"
 
 msgid "Select the function type to graph."
-msgstr ""
+msgstr "Vyberte typ funkce, kterou chcete vložit do grafu."
 
 msgid "Standard function   y=f(x)"
-msgstr ""
+msgstr "Běžná funkce              y=f(x)"
 
 msgid "Parametric function x(t), y(t)"
-msgstr ""
+msgstr "Parametrická funkce   x(t), y(t)"
 
 msgid "Polar function         r=f(t)"
-msgstr ""
+msgstr "Polární funkce             r=f(t)"
 
 msgid "Function equation"
-msgstr ""
+msgstr "Rovnice funkce"
 
 msgid "Steps:"
-msgstr ""
+msgstr "Výpočty:"
 
 msgid "Number of calculation steps used to draw the graph."
-msgstr ""
+msgstr "Počet výpočtů, které budou použity pro zobrazení grafu."
 
 msgid "Draw type:"
-msgstr ""
+msgstr "Zobrazit:"
 
 msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
-msgstr ""
+msgstr "Zvolte možnost Čáry, chcete-li body vypočítané pro graf spojit. Zvolte možnost Tečky, chcete-li pro každý vypočítaný bod zobrazit pouze tečku."
 
 msgid "Lines"
-msgstr ""
+msgstr "Čáry"
 
 msgid "Dots"
-msgstr ""
+msgstr "Tečky"
 
 msgid "Text label"
-msgstr ""
+msgstr "Textový popis"
 
 msgid "Font name:"
-msgstr ""
+msgstr "Písmo:"
 
 msgid "Font size:"
-msgstr ""
+msgstr "Velikost:"
 
 msgid "Font color:"
-msgstr ""
+msgstr "Barva písma:"
 
 msgid "Text size."
-msgstr ""
+msgstr "Velikost textu."
 
 msgid "Text string"
-msgstr ""
+msgstr "Textový popis"
 
 msgid "Insert symbol (Ctrl+G)"
-msgstr ""
+msgstr "Vložit symbol (Ctrl+G)"
 
 msgid "Insert object"
-msgstr ""
+msgstr "Vložit objekt"
 
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "Tučně (Ctrl+B)"
 
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "Kurzíva (Ctrl+I)"
 
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "Podtržené (Ctrl+U)"
 
 msgid "Strikethrough (Ctrl+S)"
-msgstr ""
+msgstr "Přeškrtnuté (Ctrl+S)"
 
 msgid "Superscript (Ctrl++)"
-msgstr ""
+msgstr "Horní index (Ctrl++)"
 
 msgid "Subscript (Ctrl+=)"
-msgstr ""
+msgstr "Dolní index (Ctrl+=)"
 
 msgid "Align left (Ctrl+L)"
-msgstr ""
+msgstr "Zarovnat doleva (Ctrl+L)"
 
 msgid "Center (Ctrl+E)"
-msgstr ""
+msgstr "Zarovnat na střed (Ctrl+E)"
 
 msgid "Align right (Ctrl+R)"
-msgstr ""
+msgstr "Zarovnat doprava (Ctrl+R)"
 
 msgid "Text font."
-msgstr ""
+msgstr "Písmo textu."
 
 msgid "Text color."
-msgstr ""
+msgstr "Barva textu."
 
 msgid "Select background color of the text label."
-msgstr ""
+msgstr "Vyberte barvu pozadí textového popisu."
 
 msgid "Undo last action."
-msgstr ""
+msgstr "Vrátit zpět poslední akci."
 
 msgid "Redo last undone action."
-msgstr ""
+msgstr "Opakovat poslední zrušenou akci."
 
 msgid "Paste the contents of the clipboard."
-msgstr ""
+msgstr "Vložit obsah schránky."
 
 msgid "Paste special..."
-msgstr ""
+msgstr "Vložit jinak..."
 
 msgid "Select which clipboard representation you want to paste."
-msgstr ""
+msgstr "Vyberte, jakým způsobem chcete vložit obsah schránky."
 
 msgid "Insert object..."
-msgstr ""
+msgstr "Vložit objekt..."
 
 msgid "Create a new OLE object."
-msgstr ""
+msgstr "Vytvořit nový objekt OLE."
 
 msgid "Edit object"
-msgstr ""
+msgstr "Upravit objekt."
 
 msgid "Edit selected OLE object."
-msgstr ""
+msgstr "Upravit vybraný objekt OLE."
 
 msgid "Insert f'(x)"
 msgstr "Vložit f'(x)"
 
 msgid "Name:"
-msgstr ""
+msgstr "Název:"
 
 msgid "Constant"
 msgstr "Konstanta"
@@ -1688,13 +1688,13 @@ msgid "Value"
 msgstr "Hodnota"
 
 msgid "Select a function or tangent to evaluate."
-msgstr ""
+msgstr "Vyberte funkci, jejíž hodnotu chcete vypočítat."
 
 msgid "Error"
 msgstr "Chyba"
 
 msgid "Shade"
-msgstr ""
+msgstr "Šrafování"
 
 msgid "Functions"
 msgstr "Funkce"
@@ -1702,11 +1702,13 @@ msgstr "Funkce"
 msgid "Tangents"
 msgstr "Tečny"
 
+#, fuzzy
 msgid "Point series"
-msgstr ""
+msgstr "Posloupnost bodů"
 
+#, fuzzy
 msgid "Shades"
-msgstr ""
+msgstr "Šrafování"
 
 msgid "Length"
 msgstr "Délka"
@@ -1714,8 +1716,9 @@ msgstr "Délka"
 msgid "Label"
 msgstr "Popis"
 
+#, fuzzy
 msgid "%s-error"
-msgstr ""
+msgstr "Chyba %s"
 
 msgid "Transparent"
 msgstr "Průhledné"
@@ -1723,406 +1726,426 @@ msgstr "Průhledné"
 msgid "Axes"
 msgstr "Osy"
 
+#, fuzzy
 msgid "No error occurred. You should not see this message."
-msgstr ""
+msgstr "Nedošlo k žádné chybě. Tato zpráva by neměla být zobrazena."
 
 msgid "An error occurred while evaluating power function."
-msgstr ""
+msgstr "Behěm výpočtu mocninné funkce došlo k chybě."
 
 msgid "Tangent to 90+p180 is undefined."
-msgstr ""
+msgstr "Funkce tangens není definována pro argument 90 + k*180."
 
 msgid "Fact can only be calculated for positive integers."
-msgstr ""
+msgstr "Faktoriál lze vypočítat pouze pro kladná celá čísla."
 
 msgid "Cannot take logarithm to number equal or less than zero."
-msgstr ""
+msgstr "Nelze logaritmovat čísla menší nebo rovna nule."
 
 msgid "sqrt is undefined for negative numbers."
-msgstr ""
+msgstr "Odmocnina není definována pro záporná čísla."
 
 msgid "A part of the evaluation gave a number with an imaginary part."
-msgstr ""
+msgstr "Během výpočtu bylo vráceno číslo s imaginární částí."
 
 msgid "Division by zero."
-msgstr ""
+msgstr "Dělení nulou."
 
 msgid "Inverse trigonometric function out of range [-1;1]"
-msgstr ""
+msgstr "Mimo rozsah inverzní trigonometrické funkce [-1;1]."
 
 msgid "The function is not defined for this value."
-msgstr ""
+msgstr "Funkce není definována pro tuto hodnotu."
 
 msgid "atanh evaluated at undefined value."
-msgstr ""
+msgstr "Funkce atanh není definována pro tuto hodnotu."
 
 msgid "acosh evaluated at undefined value."
-msgstr ""
+msgstr "Funkce acosh není definována pro tuto hodnotu."
 
 msgid "arg(0) is undefined."
-msgstr ""
+msgstr "Hodnota funkce arg(0) není definována."
 
 msgid "Evaluation failed."
-msgstr ""
+msgstr "Výpočet se nepodařil."
 
 msgid "Argument produced a function result with total loss of precision."
-msgstr ""
+msgstr "Argument způsobil úplnou ztrátou přesnosti výpočtu."
 
 msgid "Symbol '%s' not found."
-msgstr ""
+msgstr "Symbol '%s' nebyl nalezen."
 
 msgid "Too many recursive calls."
-msgstr ""
+msgstr "Příliš mnoho rekurzivních volání."
 
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
-msgstr ""
+msgstr "Neočekávaný operátor. Na tomto místě nelze použít operátor '%s'."
 
 msgid "Right bracket missing."
-msgstr ""
+msgstr "Chybí uzavírací závorka."
 
 msgid "Invalid number of arguments supplied for function '%s'"
-msgstr ""
+msgstr "Neplatný počet argumentů funkce '%s'"
 
 msgid "Comparison operator misplaced."
-msgstr ""
+msgstr "Chybně umístěný operátor porovnání."
 
 msgid "Invalid number found. Use the format: -5.475E-8"
-msgstr ""
+msgstr "Nalezeno neplatné číslo. Používejte následující formát: -5.475E-8"
 
 msgid "String is empty. You need to enter a function."
-msgstr ""
+msgstr "Řetězec je prázdný. Je třeba zadat funkci."
 
 msgid "Comma is not allowed here. Use dot as decimal separator."
-msgstr ""
+msgstr "Na tomto místě nelze použít čárku. K oddělení desetinných míst použijte tečku."
 
 msgid "Unexpected end of brackets."
-msgstr ""
+msgstr "Neočekávané ukončení závorky."
 
 msgid "Number, constant or function expected."
-msgstr ""
+msgstr "Bylo očekáváno číslo, konstanta nebo funkce."
 
 msgid "Parameter after constant or variable not allowed."
-msgstr ""
+msgstr "Po zadání konstanty nebo proměnné nelze použít parametr."
 
 msgid "Expression expected."
-msgstr ""
+msgstr "Byl očekáván výraz."
 
 msgid "Unknown variable, function or constant: \"%s\""
-msgstr ""
+msgstr "Neznámá proměnná, funkce nebo konstanta: \"%s\""
 
 msgid "Unknown character: \"%s\""
-msgstr ""
+msgstr "Neznámý znak: \"%s\""
 
 msgid "The end of the expression was unexpected."
-msgstr ""
+msgstr "Neočekávané ukončení řetězce."
 
 msgid "Error parsing function text."
-msgstr ""
+msgstr "Chyba při zpracování textu funkce."
 
 msgid "A calculation resulted in an overflow."
-msgstr ""
+msgstr "Během výpočtu došlo k přeplnění."
 
 msgid "An invalid value was used in the calculation."
-msgstr ""
+msgstr "Ve výpočtu byla použita neplatná hodnota."
 
 msgid "Not enough points for calculation."
-msgstr ""
+msgstr "Nedostatečný počet bodů pro výpočet."
 
 msgid "Illegal name \"%s\" for user defined function or constant."
-msgstr ""
+msgstr "Neplatné jméno \"%s\" uživatelské funkce nebo konstanty."
 
 msgid "Cannot differentiate recursive function."
-msgstr ""
+msgstr "Nelze určit derivaci rekurzivní funkce."
 
 msgid "Internal error."
-msgstr ""
+msgstr "Interní chyba."
 
 msgid "Function cannot be differentiated."
-msgstr ""
+msgstr "Nelze určit derivaci funkce."
 
 msgid "Not further specified error occurred under calculation."
-msgstr ""
+msgstr "Během výpočtu došlo k blíže neurčené chybě."
 
+#, fuzzy
 msgid "No solution found. Try another guess or another model."
-msgstr ""
+msgstr "Nebylo nalezeno žádné řešení. Zkuste jiný odhad nebo jiný model."
 
 msgid "Internal error. Please notify the programmer with as much information as possible."
-msgstr ""
+msgstr "Interní chyba. Zašlete prosím autorovi programu co nejpodrobnější informace."
 
 msgid "You need to enter a name for the function/constant."
-msgstr ""
+msgstr "Je třeba zadat název funkce nebo konstanty."
 
 msgid ""
 "Invalid function/constant name '%s'.\n"
 "The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 "In addition you are not allowed to redefine built-in names."
 msgstr ""
+"Neplatný název funkce nebo konstanty '%s'.\n"
+"Název může obsahovat pouze písmena a číslice a musí začínat písmenem.\n"
+"Nelze znovu definovat interní názvy programu."
 
 msgid "You need to enter a name for the argument."
-msgstr ""
+msgstr "Je třeba zadat název argumentu."
 
 msgid ""
 "Invalid argument name '%s'.\n"
 "The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 " In addition you are not allowed to use built-in names as argument names."
 msgstr ""
+"Neplatný název argumentu '%s'.\n"
+"Název může obsahovat pouze písmena a číslice a musí začínat písmenem.\n"
+"Nelze použít interní názvy programu jako názvy argumentů."
 
 msgid "The right bracket is missing."
-msgstr ""
+msgstr "Chybí uzavírací závorka."
 
+#, fuzzy
 msgid "Character found after brackets."
-msgstr ""
+msgstr "Byl nalezen znak mimo závorky."
 
 msgid "Symbol \"%s\" defined more than once."
-msgstr ""
+msgstr "Symbol \"%s\" byl definován více než jednou."
 
 msgid "Invalid equation or inequality."
-msgstr ""
+msgstr "Neplatná rovnice nebo nerovnost."
 
 msgid "Updating..."
-msgstr ""
+msgstr "Aktualizace..."
 
 msgid "Save changes?"
-msgstr ""
+msgstr "Uložit změny?"
 
 msgid "Save changes in %s"
-msgstr ""
+msgstr "Uložit změny v souboru %s?"
 
 msgid "You have reached the maximum range of zoom."
-msgstr ""
+msgstr "Byla dosaženo největší možné zvětšení."
 
 msgid "You have reached the minimum range of zoom."
-msgstr ""
+msgstr "Bylo dosaženo nejmenší možné zmenšení."
 
 msgid "There is no printer installed on the system."
-msgstr ""
+msgstr "V systému není nainstalována žádná tiskárna."
 
 msgid "Error in value"
-msgstr ""
+msgstr "Chybná hodnota"
 
 msgid "'%s' has to be an integer value greater or equal to 0."
-msgstr ""
+msgstr "'%s' musí být celé číslo větší nebo rovno nule."
 
 msgid "'%s' must be greater than zero."
-msgstr ""
+msgstr "'%s' musí být větší než nula."
 
 msgid "'%s' must be an integer greater than zero."
-msgstr ""
+msgstr "'%s' musí být celé číslo větší než nula."
 
 msgid "Trying to break zoom limit."
-msgstr ""
+msgstr "Pokoušíte se přesáhnout omezení přiblížení/oddálení."
 
 msgid "'%s' must be greater than '%s'"
-msgstr ""
+msgstr "'%s' musí být větší než '%s'"
 
 msgid "The maximum value must be greater than the minimum value."
-msgstr ""
+msgstr "Maximální hodnota musí být větší než minimální hodnota."
 
 msgid "You need to enter a value."
-msgstr ""
+msgstr "Je třeba zadat hodnotu."
 
 msgid ""
 "This file was created with Graph %s.\n"
 "Only files from version %s and higher can be opened."
 msgstr ""
+"Tento soubor byl vytvořen v programu Graph %s.\n"
+"Lze otevřít pouze soubory od verze %s a novější."
 
 msgid "'%s' is not a valid number."
-msgstr ""
+msgstr "'%s' není platné číslo."
 
 msgid "Open the file %s."
-msgstr ""
+msgstr "Otevřete soubor %s."
 
 msgid "'%s' must be a positive number."
-msgstr ""
+msgstr "'%s' musí být kladné číslo."
 
 msgid "File not found: %s"
-msgstr ""
+msgstr "Soubor nebyl nalezen: %s"
 
 msgid ""
 "Error reading file: %s\n"
 " The file is not a correct Graph file."
 msgstr ""
+"Došlo k chybě při čtení souboru: %s\n"
+"Toto není platný soubor programu Graph."
 
 msgid "Unknown error while reading file: %s"
-msgstr ""
+msgstr "Došlo k neznámé chybě při čtení souboru: %s"
 
 msgid "Graph files [*.grf]|*.grf"
-msgstr ""
+msgstr "Soubory programu Graph [*.grf]|*.grf"
 
 msgid ""
 "Cannot write to file: %s\n"
 "Access denied. Check that the file is not in use or write protected."
 msgstr ""
+"Do souboru nelze zapisovat: %s\n"
+"Přístup odmítnut. Zkontrolujte, zda soubor není používán nebo chráněn proti zápisu."
 
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
-msgstr ""
+msgstr "Písmo \"%s\" neexistuje. Bude použito standardní písmo."
 
 msgid "Conversion error"
-msgstr ""
+msgstr "Chyba konverze"
 
 msgid ""
 "Unknown error code.\n"
 "Could not find error message for this error."
 msgstr ""
+"Neznámý kód chyby.\n"
+"Pro tuto chybu nelze nelézt chybovou zprávu."
 
 msgid "Selection error"
-msgstr ""
+msgstr "Chyba výběru"
 
 msgid "File error"
-msgstr ""
+msgstr "Chyba souboru"
 
 msgid "Write access failed"
-msgstr ""
+msgstr "Zápis se nepodařil"
 
 msgid "OLE error"
-msgstr ""
+msgstr "Chyba OLE"
 
 msgid "Error reading object"
-msgstr ""
+msgstr "Chyba při čtení objektu"
 
 msgid "Not a valid Graph object."
-msgstr ""
+msgstr "Toto není platný objekt programu Graph."
 
 msgid "Object error"
-msgstr ""
+msgstr "Chyba objektu"
 
 msgid "Windows does not have enough resources to save an image that large."
-msgstr ""
+msgstr "Systém Windows nemá dostatek prostředků pro uložení tak velkého obrázku."
 
 msgid "'%1%' must be between %2% and %3%."
-msgstr ""
+msgstr "'%1%' musí být v intevalu od %2% do %3%."
 
 msgid "Confirm delete"
-msgstr ""
+msgstr "Potvrzení odstranění"
 
 msgid "This error should not occur. Please report this to the programmer."
-msgstr ""
+msgstr "Tato chyba by se neměla vyskytovat. Ohlašte ji prosím autorovi programu."
 
 msgid "Are you sure you want to delete %s?"
-msgstr ""
+msgstr "Opravdu chcete odstranit %s?"
 
 msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
-msgstr ""
+msgstr "Soubory programu Graph [*.grf]|*.grf|Všechny soubory [*.*]|*.*"
 
 msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-msgstr ""
+msgstr "Textové soubory [*.txt; *.csv]|*.txt;*.csv|Všechny soubory [*.*]|*.*"
 
 msgid "Are you sure you want to delete the model: %s?"
-msgstr ""
+msgstr "Opravdu chcete odstranit model: %s?"
 
 msgid "Maximum number on x-axis must be greater than the minimum value."
-msgstr ""
+msgstr "Největší hodnota na ose x musí být větší než nejmenší hodnota."
 
 msgid "Maximum number on y-axis must be greater than the minimum value."
-msgstr ""
+msgstr "Největší hodnota na ose y musí být větší než nejmenší hodnota."
 
+#, fuzzy
 msgid "Server application not found."
-msgstr ""
+msgstr "Serverová aplikace nebyla nalezena."
 
 msgid "Maximum number for t must be greater than the minimum value."
-msgstr ""
+msgstr "Největší hodnota t musí být větší než nejmenší hodnota."
 
 msgid "The step value for t must be a number greater than 0."
-msgstr ""
+msgstr "Počet výpočtů pro t musí být větší než nula."
 
 msgid "The minimum value for the x-axis must be greater than 0, when the x-axis is logarithmic scaled."
-msgstr ""
+msgstr "Nejmenší hodnota na ose x musí být větší než nula, pokud je osa x v logaritmickém měřítku."
 
 msgid "The cross point of the y-axis must be greater than 0, when the x-axis is logarithmic scaled."
-msgstr ""
+msgstr "Je-li osa x v  logaritmickém měřítku, bod, ve kterém ji protíná osa y, musí být větší než nula."
 
 msgid "The minimum value for the y-axis must be greater than 0, when the y-axis is logarithmic scaled."
-msgstr ""
+msgstr "Nejmenší hodnota na ose y musí být větší než nula, pokud je osa y v logaritmickém měřítku."
 
 msgid "The cross point of the x-axis must be greater than 0, when the y-axis is logarithmic scaled."
-msgstr ""
+msgstr "Je-li osa y v  logaritmickém měřítku, bod, ve kterém ji protíná osa x, musí být větší než nula."
 
 msgid "'Recent files' must be between 0 and 9."
-msgstr ""
+msgstr "Počet naposledy otevřených souborů musí být v intervalu od 0 do 9."
 
 msgid "The end of interval must be greater than the start of interval."
-msgstr ""
+msgstr "Konec intervalu musí být větší než jeho počátek."
 
 msgid "Error in interval."
-msgstr ""
+msgstr "Chybný interval"
 
 msgid "The width must be an integer greater than 0."
-msgstr ""
+msgstr "Šířka musí být celé číslo větší než nula."
 
 msgid "Error in width"
-msgstr ""
+msgstr "Chybně zadaná šířka"
 
 msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
-msgstr ""
+msgstr "Konec intervalu musí být větší než jeho počátek a %s musí být větší než nula."
 
 msgid "The maximum length of text has been reached."
-msgstr ""
+msgstr "Byla dosažena největší délka textu."
 
 msgid "The derivative of the function is not defined at %s=%s"
-msgstr ""
+msgstr "Derivace funkce není definována v bodě %s=%s."
 
 msgid "Coordinate not defined."
-msgstr ""
+msgstr "Souřadnice není definována."
 
 msgid "Checking for newer version..."
-msgstr ""
+msgstr "Zjišťování novější verze..."
 
 msgid "Abort printing?"
-msgstr ""
+msgstr "Zrušit tisk?"
 
+#, fuzzy
 msgid "Calculate area"
-msgstr ""
+msgstr "Vypočítat obsah oblasti"
 
+#, fuzzy
 msgid "Calculate length of path"
-msgstr ""
+msgstr "Vypočítat délku křivky"
 
 msgid "Edit function"
-msgstr ""
+msgstr "Upravit funkci"
 
 msgid "Edit tangent/normal"
-msgstr ""
+msgstr "Upravit tečnu/kolmici"
 
 msgid "Error processing file '%s' at line %s."
-msgstr ""
+msgstr "Chyba při zpracování souboru '%s' na řádku %s."
 
 msgid "Dialog error: %sh"
-msgstr ""
+msgstr "Chyba dialogu: %sh"
 
 msgid "Unknown Graph data found while pasting clipboard data."
-msgstr ""
+msgstr "Program Graph nalezl při vkládání dat ze schránky neznámá data."
 
 msgid "'%s' has to be an integer value between 0 and 1000."
-msgstr ""
+msgstr "'%s' musí být celé číslo v intervalu od 0 do 1000."
 
 msgid "Printing error"
-msgstr ""
+msgstr "Chyba tisku"
 
 msgid "An unknown error occurred while printing."
-msgstr ""
+msgstr "Během tisku došlo k neznámé chybě."
 
 msgid "Error while adding points"
-msgstr ""
+msgstr "Chyba při vkládání bodů"
 
 msgid "Each point needs both an x- and a y-coordinate."
-msgstr ""
+msgstr "Pro každý bod je třeba zadat souřadnice x a y."
 
 msgid "\"%s\" is not a valid number."
-msgstr ""
+msgstr "\"%s\" není platné číslo."
 
 msgid "You didn't add any points. You need to specify some x- and y-coordinates in the grid."
-msgstr ""
+msgstr "Nebyly přidány žádné body. Do tabulky je třeba zadat souřadnice x a y."
 
 msgid "Edit point series"
-msgstr ""
+msgstr "Upravit posloupnost bodů"
 
 msgid "Edit shade"
-msgstr ""
+msgstr "Upravit šrafování"
 
 msgid "You need to select a function."
-msgstr ""
+msgstr "Je třeba vybrat funkci."
 
 msgid "New version of Graph available"
-msgstr ""
+msgstr "Je k dispozici nová verze programu Graph."
 
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
@@ -2132,117 +2155,132 @@ msgid ""
 "\n"
 "Would you like to visit the web site?"
 msgstr ""
+"Na webu www.padowan.dk je nyní k dispozici program Graph %s \n"
+"s následujícími novými funkcemi oproti předchozí verzi:\n"
+"\n"
+"%s\n"
+"\n"
+"Chcete navšítit tento web?"
 
 msgid "No new version"
-msgstr ""
+msgstr "Žádná nová verze"
 
 msgid "You are already using the most recent version of the program."
-msgstr ""
+msgstr "Používáte nejnovější verzi programu."
 
 msgid ""
 "Cannot connect to server www.padowan.dk.\n"
 "Either the server is down or you do not have a connection to the Internet."
 msgstr ""
+"Nelze se připojit k serveru www.padowan.dk.\n"
+"Server nefunguje nebo není k dispozici připojení k Internetu."
 
 msgid "Socket error %s"
-msgstr ""
+msgstr "Chyba připojení %s"
 
 msgid "The server responded with the message '%s'"
-msgstr ""
+msgstr "Server vrátil následující zprávu: '%s'"
 
 msgid "Protocol reply error %s"
-msgstr ""
+msgstr "Chyba odpovědi protokolu %s"
 
 msgid ""
 "The file cannot be opened by this version of the program.\n"
 "You need at least Graph %s to open this file."
 msgstr ""
+"Soubor nelze otevřít v této verzi programu.\n"
+"K otevření tohoto souboru je vyžadován alespoň program Graph %s."
 
 msgid ""
 "This file was saved by an outdated version of Graph,\n"
 "and it cannot be opened by the current version."
 msgstr ""
+"Tento soubor byl uložen ve starší verzi programu Graph\n"
+"a v této verzi jej nelze otevřít."
 
 msgid ""
 "\n"
 "\n"
 "If you don't want to be asked again, this feature may be disabled from the Edit|Options dialog."
 msgstr ""
+"\n"
+"\n"
+"Nechcete-li tento dotaz znovu zobrazovat, můžete tuto funkci vypnout v dialogovém okně Úpravy|Možnosti."
 
 msgid "Edit relation"
-msgstr ""
+msgstr "Upravit vztah"
 
 msgid "Commands"
-msgstr ""
+msgstr "Příkazy"
 
 msgid "(All Commands)"
-msgstr ""
+msgstr "(Všechny příkazy)"
 
 msgid "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
-msgstr ""
+msgstr "Chcete-li na panel nástrojů přidat příkaz, vyberte kategorii a přetáhněte příkaz z tohoto dialogového okna na panel nástrojů."
 
 msgid "Edit f'(x)"
-msgstr ""
+msgstr "Upravit f'(x)"
 
 msgid "Edit trendline"
-msgstr ""
+msgstr "Upravit regresní křivku"
 
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
-msgstr ""
+msgstr "Mezi tipy dne naleznete mnoho informací o programu, které většina uživatelů nezná."
 
 msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
-msgstr ""
+msgstr "Návrhy pro další verze, hlášení o chybách a komentáře můžete posílat na adresu graph@padowan.dk"
 
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
-msgstr ""
+msgstr "Panel nástrojů si můžete přizpůsobit. Klepněte na něj pravým tlačítkem a vyberte příkaz 'Přizpůsobit panel nástrojů'."
 
 msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
-msgstr ""
+msgstr "Funkci lze místo odstranění zneviditelnit. Klepněte na ni pravým tlačítkem a zrušte zaškrtnutí položky 'Viditelná'."
 
 msgid "You can paste images into a text label."
-msgstr ""
+msgstr "Do textového popisu lze vložit obrázky."
 
 msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
-msgstr ""
+msgstr "Textové popisy mohou obsahovat libovolné objekty OLE, například objekty aplikace Microsoft Equation. Během úpravy popisu klepněte do oblasti pro úpravy a vyberte příkaz 'Vložit objekt'."
 
 msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
-msgstr ""
+msgstr "Body z posloupnosti bodů lze exportovat do souboru, který potom můžete otevřít v jiných programech, např. Microsoft Excel..."
 
 msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
-msgstr ""
+msgstr "Svislou čáru v bodě x=5 lze zobrazit jako parametrickou funkci x(t)=5, y(t)=t nebo jako vztah x=5."
 
 msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
-msgstr ""
+msgstr "Obě osy lze zobrazit ve stejném měřítku pomocí funkce Zobrazení|Čtvercové. Tato funkce je vhodná zejména pro zobrazení kružnic a podobných funkcí."
 
 msgid "You can find a list of all available functions in the help."
-msgstr ""
+msgstr "Seznam dostupných funkcí naleznete v nápovědě."
 
 msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
-msgstr ""
+msgstr "Pomocí příkazu 'if' lze spojit dvě funkce do jedné. Např. funkci f(x)=x pro x<1 a f(x)=x^2 pro x>=1 lze zadat jako f(x)=if(x<1, x, x^2)."
 
 msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
-msgstr ""
+msgstr "Obsah jiného souboru programu Graph lze importovat do aktuální soustavy souřadnic pomocí příkazu 'Soubor|Importovat|Soubor programu Graph'."
 
 msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new files."
-msgstr ""
+msgstr "Zaškrnete-li políčko 'Uložit jako výchozí' v dialogovém okně okně Osy aktuální nastavení bude použito jako výchozí při vytváření nového souboru."
 
 msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
-msgstr ""
+msgstr "Držíte-li stisknutou klávesu Ctrl, lze pomocí šipek pohybovat soustavou souřadnic."
 
 msgid "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."
-msgstr ""
+msgstr "Držíte-li stisknutou klávesu Ctrl, lze pomocí kláves + a - přibližovat a oddalovat zobrazení."
 
 msgid "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."
-msgstr ""
+msgstr "Pomocí kolečka myši lze přibližovat a oddalovat oblast pod kurzorem."
 
 msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
-msgstr ""
+msgstr "Nechcete-li, aby byla položka zobrazena v legendě, klepněte na ni pravým tlačítkem a zrušte zaškrtnutí u možnosti 'Zobrazit v legendě'."
 
 msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
-msgstr ""
+msgstr "Chcete-li zobrazit osy v levé a dolní části soustavy souřadnic, v dialogovém okně Osy na kartě Nastavení vyberte v poli Zobrazení os možnost Vlevo dole."
 
 msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
-msgstr ""
+msgstr "V programu Graph lze zobrazenou soustavu souřadnic uložit v pěti různých formátech: BMP, EMF, PNG, JPG a PDF."
 
 msgid "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."
 msgstr ""
@@ -2341,106 +2379,108 @@ msgid "Point series can have arrows as markers. A point series with arrows as ma
 msgstr ""
 
 msgid "Custom..."
-msgstr ""
+msgstr "Vlastní..."
 
 msgid "Black"
-msgstr ""
+msgstr "Černá"
 
 msgid "Maroon"
-msgstr ""
+msgstr "Kaštanová"
 
 msgid "Green"
-msgstr ""
+msgstr "Tmavě zelená"
 
 msgid "Olive"
-msgstr ""
+msgstr "Olivová"
 
 msgid "Navy"
-msgstr ""
+msgstr "Tmavě modrá"
 
 msgid "Purple"
-msgstr ""
+msgstr "Nachová"
 
 msgid "Teal"
-msgstr ""
+msgstr "Šedozelená"
 
 msgid "Gray"
-msgstr ""
+msgstr "Tmavě šedá"
 
 msgid "Silver"
-msgstr ""
+msgstr "Stříbrná"
 
 msgid "Red"
-msgstr ""
+msgstr "Červená"
 
 msgid "Lime"
-msgstr ""
+msgstr "Zelená"
 
 msgid "Yellow"
-msgstr ""
+msgstr "Žlutá"
 
 msgid "Blue"
-msgstr ""
+msgstr "Modrá"
 
 msgid "Fuchsia"
-msgstr ""
+msgstr "Fuchsiová"
 
 msgid "Aqua"
-msgstr ""
+msgstr "Azurová"
 
 msgid "White"
-msgstr ""
+msgstr "Bílá"
 
 msgid "Money Green"
-msgstr ""
+msgstr "Světle zelená"
 
 msgid "Sky Blue"
-msgstr ""
+msgstr "Světle modrá"
 
 msgid "Cream"
-msgstr ""
+msgstr "Smetanová"
 
 msgid "Med Gray"
-msgstr ""
+msgstr "Šedá"
 
+#, fuzzy
 msgid "Local"
-msgstr ""
+msgstr "Místní"
 
+#, fuzzy
 msgid "Global"
-msgstr ""
+msgstr "Globální"
 
 msgid "Insert"
-msgstr ""
+msgstr "Vložit"
 
 msgid "Insert symbol"
-msgstr ""
+msgstr "Vložit symbol"
 
 msgid "Subset:"
-msgstr ""
+msgstr "Podmnožina:"
 
 msgid "Print"
-msgstr ""
+msgstr "Tisk"
 
 msgid "Scale:"
-msgstr ""
+msgstr "Měřítko:"
 
 msgid "Printer"
-msgstr ""
+msgstr "Tiskárna"
 
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
 msgid "Where:"
-msgstr ""
+msgstr "Připojení:"
 
 msgid "Comment:"
-msgstr ""
+msgstr "Komentář:"
 
 msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
-msgstr ""
+msgstr "Vyberte, kterou tiskárnu chcete použít. Pomocí tlačítka Vlastnosti lze změnit pokročilá nastavení tiskárny."
 
 msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
-msgstr ""
+msgstr "Vyberte chcete-li tisknout barevně (nebo ve stupních šedi, pokud nemáte barevnou tiskárnu) nebo převést všechny barvy na černou."
 
 msgid "Print output"
 msgstr "Výstup"
@@ -2455,7 +2495,7 @@ msgid "Position (millimeters)"
 msgstr "Pozice (v milimetrech)"
 
 msgid "Left margin:"
-msgstr "Levý okraj"
+msgstr "Levý okraj:"
 
 msgid "Top margin:"
 msgstr "Horní okraj:"
