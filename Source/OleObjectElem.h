@@ -17,13 +17,14 @@ class TOleObjectElem : public TGraphElem
   Func32::TDblPoint Pos;
 
 public:
-  TOleObjectElem() : OleContainer(new TOleContainer((TComponent*)NULL)) {}
-  TOleObjectElem(const Func32::TDblPoint &APos) : Pos(APos), OleContainer(new TOleContainer((TComponent*)NULL)) {}
-  std::wstring MakeText() const {return L"";}
+  TOleObjectElem();
+  TOleObjectElem(const Func32::TDblPoint &APos);
+  std::wstring MakeText() const;
   void WriteToIni(class TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
-  void Accept(TGraphElemVisitor &v) {/*v.Visit(*this);*/}
+  void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TOleObjectElem(*this));}
-  bool InsertObjectDialog() {return OleContainer->InsertObjectDialog();}
+  bool InsertObjectDialog();
+  bool Edit();
 };
 #endif

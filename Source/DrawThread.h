@@ -64,6 +64,7 @@ private:
   void Visit(TTextLabel &Label);
   void Visit(TRelation &Relation);
   void Visit(TAxesView &AxesView);
+  void Visit(TOleObjectElem &OleObjectElem) {}
 
   void CreateEquation(TRelation &Relation);
   void CreateInequality(TRelation &Relation);

@@ -10,10 +10,7 @@ STRINGTABLE
 BEGIN
   RES_ERROR       "Error"
   RES_SHADE       "Shade"
-  RES_FUNCTIONS   "Functions"
-  RES_TANGENTS    "Tangents"
-  RES_POINTSERIES "Point series"
-  RES_SHADES      "Shades"
+
   RES_AREA        "Area"
   RES_LENGTH      "Length"
   RES_SERIES      "Series"
@@ -23,7 +20,6 @@ BEGIN
   RES_TRANSPARENT "Transparent"
   RES_AXES        "Axes"
 
-  RES_NoError             "No error occurred. You should not see this message."
   RES_PowCalcError        "An error occurred while evaluating power function."
   RES_TanError            "Tangent to 90+p180 is undefined."
   RES_FactError           "Fact can only be calculated for positive integers."

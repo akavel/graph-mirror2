@@ -19,6 +19,7 @@ struct TAddView : public TGraphElemVisitor
   void Visit(TTextLabel &Label);
   void Visit(TRelation &Relation);
   void Visit(TAxesView &AxesView);
+  void Visit(TOleObjectElem &OleObjectElem);
 };
 
 struct TZoomFit : public TGraphElemVisitor
@@ -34,5 +35,6 @@ struct TZoomFit : public TGraphElemVisitor
   void Visit(TTextLabel &Label) {}  //Not used
   void Visit(TRelation &Relation);
   void Visit(TAxesView &AxesView) {} //Not used
+  void Visit(TOleObjectElem &OleObjectElem) {}
 };
 #endif

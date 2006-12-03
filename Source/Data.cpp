@@ -22,6 +22,7 @@
 #include <functional>
 #include <boost/lexical_cast.hpp>
 #include "OleServer.h"
+#include "OleObjectElem.h"
 
 TUndoList UndoList(50);
 //---------------------------------------------------------------------------
@@ -94,6 +95,7 @@ void TData::SaveData(TConfigFile &IniFile)
   unsigned ShadeCount = 0;
   unsigned LabelCount = 0;
   unsigned RelationCount = 0;
+  unsigned OleObjectCount = 0;
 
   for(unsigned I = 0; I < ElemList.size(); I++)
   {
@@ -107,6 +109,8 @@ void TData::SaveData(TConfigFile &IniFile)
       Relation->WriteToIni(IniFile, "Relation" + ToString(++RelationCount));
     else if(TAxesView *AxesView = dynamic_cast<TAxesView*>(ElemList[I].get()))
       AxesView->WriteToIni(IniFile, "Axes");
+    else if(TOleObjectElem *OleObjectElem = dynamic_cast<TOleObjectElem*>(ElemList[I].get()))
+      OleObjectElem->WriteToIni(IniFile, "OleObject" + ToString(++OleObjectCount));
 
     for(unsigned J = 0; J < ElemList[I]->ChildList.size(); J++)
       if(dynamic_cast<TShade*>(ElemList[I]->ChildList[J].get()))
@@ -119,6 +123,7 @@ void TData::SaveData(TConfigFile &IniFile)
   IniFile.Write("Data", "PointSeriesCount", PointSeriesCount);
   IniFile.Write("Data", "ShadeCount", ShadeCount);
   IniFile.Write("Data", "RelationCount", RelationCount);
+  IniFile.Write("Data", "OleObjectCount", OleObjectCount);
 }
 //---------------------------------------------------------------------------
 void TData::LoadData(const TConfigFile &IniFile)
@@ -143,6 +148,8 @@ void TData::LoadData(const TConfigFile &IniFile)
       Elem.reset(new TRelation);
     else if(Section.substr(0, 10) == "Axes")
       Elem.reset(new TAxesView);
+//    else if(Section.substr(0, 9) == "OleObject")
+//      Elem.reset(new TOleObjectElem);
     else
       continue; //No known elem type
 

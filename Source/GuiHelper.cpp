@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "GuiHelper.h"
 #include "PointSelect.h"
+#include "OleObjectElem.h"
 //---------------------------------------------------------------------------
 //////////////
 // TAddView //
@@ -20,7 +21,7 @@ void TAddView::Visit(TBaseFuncType &Func)
   AnsiString Str = ReduceString(Func.MakeText(), 50).c_str();
 
   TTreeNode *Node = Form1->TreeView->Items->Add(NULL, Str);
-  int ImageIndex = Form1->AddImage(ICON_FUNC_NODE, Func.Color);
+  int ImageIndex = Form1->AddImage(iiFuncNode, Func.Color);
   Node->ImageIndex = ImageIndex;
   Node->SelectedIndex = ImageIndex;
 
@@ -34,7 +35,7 @@ void TAddView::Visit(TTan &Tan)
 
   TTntTreeNode *Node = Form1->TreeView->Items->AddChild(Form1->GetNode(Tan.ParentFunc()), Str);
 
-  Node->ImageIndex = Tan.TangentType == ttTangent ? ICON_TAN_NODE : ICON_NORMAL_NODE;
+  Node->ImageIndex = Tan.TangentType == ttTangent ? iiTanNode : iiNormalNode;
   Node->SelectedIndex = Node->ImageIndex;
 }
 //---------------------------------------------------------------------------
@@ -64,8 +65,8 @@ void TAddView::Visit(TTextLabel &Label)
 {
   TTreeNode *Node = Form1->TreeView->Items->Add(NULL, Label.MakeText().c_str());
 
-  Node->ImageIndex = ICON_LABEL_NODE;
-  Node->SelectedIndex = ICON_LABEL_NODE;
+  Node->ImageIndex = iiLabelNode;
+  Node->SelectedIndex = iiLabelNode;
 }
 //---------------------------------------------------------------------------
 void TAddView::Visit(TRelation &Relation)
@@ -75,7 +76,7 @@ void TAddView::Visit(TRelation &Relation)
   if(Relation.GetRelationType() == rtInequality)
     Node->ImageIndex = Form1->AddImage(Relation.GetColor(), Relation.GetBrushStyle());
   else
-    Node->ImageIndex = Form1->AddImage(ICON_FUNC_NODE, Relation.GetColor());
+    Node->ImageIndex = Form1->AddImage(iiFuncNode, Relation.GetColor());
 
   Node->SelectedIndex = Node->ImageIndex;
 }
@@ -83,8 +84,15 @@ void TAddView::Visit(TRelation &Relation)
 void TAddView::Visit(TAxesView &AxesView)
 {
   TTreeNode *Node = Form1->TreeView->Items->Add(NULL, LoadRes(RES_AXES));
-  Node->ImageIndex = ICON_AXES_NODE;
-  Node->SelectedIndex = ICON_AXES_NODE;
+  Node->ImageIndex = iiAxesNode;
+  Node->SelectedIndex = iiAxesNode;
+}
+//---------------------------------------------------------------------------
+void TAddView::Visit(TOleObjectElem &OleObjectElem)
+{
+  TTreeNode *Node = Form1->TreeView->Items->Add(NULL, ToWideString(OleObjectElem.MakeText()));
+  Node->ImageIndex = iiOleNode;
+  Node->SelectedIndex = iiOleNode;
 }
 //---------------------------------------------------------------------------
 ///////////////

@@ -35,6 +35,7 @@ struct TGraphElemVisitor
   virtual void Visit(class TTextLabel &Label) =0;
   virtual void Visit(class TRelation &Relation) =0;
   virtual void Visit(class TAxesView &AxesView) =0;
+  virtual void Visit(class TOleObjectElem &OleObjectElem) =0;
 };
 
 struct TTextValue

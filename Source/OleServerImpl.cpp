@@ -222,7 +222,7 @@ bool TOleServerImpl::Register(bool AllUsers)
     AnsiString ProgID = AnsiString("Software\\Classes\\") + GetProgID();
     DWORD RootKey = reinterpret_cast<DWORD>(AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER);
 
-    CreateRegKey(ClassKey, "", "Graph System", RootKey);
+    CreateRegKey(ClassKey, "", GetDescription(), RootKey);
     CreateRegKey(ClassKey + "\\InprocHandler32", "", "OLE32.DLL", RootKey);
     CreateRegKey(ClassKey + "\\Insertable", "", "", RootKey);
 
