@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2006-08-22 23:14\n"
-"PO-Revision-Date: 2006-11-30 00:06+0100\n"
+"PO-Revision-Date: 2006-12-01 12:33+0100\n"
 "Last-Translator: Martin Stružský <struzsky.m@seznam.cz>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgid "To:"
 msgstr "Do:"
 
 msgid "Area"
-msgstr "Oblast"
+msgstr "Obsah oblasti"
 
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Zadejte počáteční souřadnici nebo ji označte přímo v grafu pomocí myši."
@@ -26,7 +26,7 @@ msgid "Enter the end coordinate or mark the range on the graph itself with the m
 msgstr "Zadejte koncovou souřadnici nebo ji označte přímo v grafu pomocí myši."
 
 msgid "Area or length of path calculated for the given range using Simpson's formula."
-msgstr "Oblast nebo délka křivky vypočítaná pro daný rozsah pomocí Simpsonova pravidla."
+msgstr "Obsah oblasti nebo délka křivky vypočítaná pro daný rozsah pomocí Simpsonova pravidla."
 
 msgid "Snap to:"
 msgstr "Přichytit k:"
@@ -305,7 +305,7 @@ msgid "Edit..."
 msgstr "Upravit..."
 
 msgid "Edit the selected element: Function, tangent, point series, etc."
-msgstr "Upravit vybranou položku (funkci, tečnu, posloupnost bodů atd.)"
+msgstr "Upravit vybranou položku (funkci, tečnu, posloupnost bodů apod.)"
 
 msgid "Delete"
 msgstr "Odstranit"
@@ -662,7 +662,7 @@ msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
 msgstr "Zadejte vztah, např. \"x^2+y^2 = 25\" nebo \"y < sin(x)\""
 
 msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
-msgstr "Zadejte omezení pro vztah, např. \"x > 0 and y < 5\""
+msgstr "Zadejte omezení pro vztah, např. x > 0 nebo y < 5."
 
 msgid "Insert tangent/normal"
 msgstr "Vložit tečnu/kolmici"
@@ -1217,7 +1217,10 @@ msgid "About Graph"
 msgstr "O programu Graph"
 
 msgid "<Language> translation by <Translator>"
-msgstr "Český překlad: Martin Stružský, Pavlína Krausová"
+msgstr ""
+"Český překlad: Martin Stružský, Pavlína Krausová\n"
+"Web: http://soustruh.atlasweb.cz\n"
+"E-mail: soustruh@gmail.com"
 
 msgid "Version "
 msgstr "Verze "
@@ -1702,11 +1705,9 @@ msgstr "Funkce"
 msgid "Tangents"
 msgstr "Tečny"
 
-#, fuzzy
 msgid "Point series"
 msgstr "Posloupnost bodů"
 
-#, fuzzy
 msgid "Shades"
 msgstr "Šrafování"
 
@@ -1716,9 +1717,8 @@ msgstr "Délka"
 msgid "Label"
 msgstr "Popis"
 
-#, fuzzy
 msgid "%s-error"
-msgstr "Chyba %s"
+msgstr "Odchylka %s"
 
 msgid "Transparent"
 msgstr "Průhledné"
@@ -1726,7 +1726,6 @@ msgstr "Průhledné"
 msgid "Axes"
 msgstr "Osy"
 
-#, fuzzy
 msgid "No error occurred. You should not see this message."
 msgstr "Nedošlo k žádné chybě. Tato zpráva by neměla být zobrazena."
 
@@ -1847,9 +1846,8 @@ msgstr "Nelze určit derivaci funkce."
 msgid "Not further specified error occurred under calculation."
 msgstr "Během výpočtu došlo k blíže neurčené chybě."
 
-#, fuzzy
 msgid "No solution found. Try another guess or another model."
-msgstr "Nebylo nalezeno žádné řešení. Zkuste jiný odhad nebo jiný model."
+msgstr "Nebylo nalezeno žádné řešení. Zkuste použít jinou šablonu."
 
 msgid "Internal error. Please notify the programmer with as much information as possible."
 msgstr "Interní chyba. Zašlete prosím autorovi programu co nejpodrobnější informace."
@@ -1881,9 +1879,8 @@ msgstr ""
 msgid "The right bracket is missing."
 msgstr "Chybí uzavírací závorka."
 
-#, fuzzy
 msgid "Character found after brackets."
-msgstr "Byl nalezen znak mimo závorky."
+msgstr "Byl nalezen jeden nebo více znaků po ukončení závorky."
 
 msgid "Symbol \"%s\" defined more than once."
 msgstr "Symbol \"%s\" byl definován více než jednou."
@@ -2036,9 +2033,8 @@ msgstr "Největší hodnota na ose x musí být větší než nejmenší hodnota
 msgid "Maximum number on y-axis must be greater than the minimum value."
 msgstr "Největší hodnota na ose y musí být větší než nejmenší hodnota."
 
-#, fuzzy
 msgid "Server application not found."
-msgstr "Serverová aplikace nebyla nalezena."
+msgstr "Nebyla nalezena příslušná aplikace."
 
 msgid "Maximum number for t must be greater than the minimum value."
 msgstr "Největší hodnota t musí být větší než nejmenší hodnota."
@@ -2091,13 +2087,11 @@ msgstr "Zjišťování novější verze..."
 msgid "Abort printing?"
 msgstr "Zrušit tisk?"
 
-#, fuzzy
 msgid "Calculate area"
-msgstr "Vypočítat obsah oblasti"
+msgstr "Obsah oblasti"
 
-#, fuzzy
 msgid "Calculate length of path"
-msgstr "Vypočítat délku křivky"
+msgstr "Délka křivky"
 
 msgid "Edit function"
 msgstr "Upravit funkci"
@@ -2173,7 +2167,7 @@ msgid ""
 "Either the server is down or you do not have a connection to the Internet."
 msgstr ""
 "Nelze se připojit k serveru www.padowan.dk.\n"
-"Server nefunguje nebo není k dispozici připojení k Internetu."
+"Server nepracuje nebo není k dispozici připojení k Internetu."
 
 msgid "Socket error %s"
 msgstr "Chyba připojení %s"
@@ -2283,100 +2277,100 @@ msgid "Graph can save the shown coordinate system in five different image format
 msgstr "V programu Graph lze zobrazenou soustavu souřadnic uložit v pěti různých formátech: BMP, EMF, PNG, JPG a PDF."
 
 msgid "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."
-msgstr ""
+msgstr "Pomocí příkazu 'Úpravy|Kopírovat obrázek' lze kopírovat soustavu souřadnic do schránky a vložit ji do jiného programu."
 
 msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
-msgstr ""
+msgstr "Chcete-li otevřít uložený soubor GRF v nové instanci programu, poklepejte na něj."
 
 msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
-msgstr ""
+msgstr "Je-li program Graph spuštěn, otevřete soubor GRF přetažením do jeho okna."
 
 msgid "Graph will remember the size and placement of the main window between executions. This can be disabled from the Options dialog."
-msgstr ""
+msgstr "Program Graph si pamatuje velikost a umístění hlavního okna pro další spuštění. Tuto funkci lze zakázat v dialogovém okně Možnosti."
 
 msgid "Calc|Table can be used to create a table with evaluation values for a function."
-msgstr ""
+msgstr "Pomocí příkazu Výpočty|Tabulka lze vytvořit tabulku s odhady hodnot funkce."
 
 msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
-msgstr ""
+msgstr "Chcete-li exportovat část tabulky do souboru, klepněte na ni pravým tlačítkem a vyberte příkaz 'Export do souboru'. Tento soubor potom lze otevřít v ostatních aplikacích (např. Microsoft Excel)."
 
 msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
-msgstr ""
+msgstr "Data z tabulky lze kopírovat do ostatních aplikací (např. Microsoft Excel) pomocí schránky."
 
 msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel through the clipboard."
-msgstr ""
+msgstr "Datové body v posloupnosti bodů lze lze kopírovat z a vkládat do ostatních aplikací (např. Microsoft Excel) prostřednictvím schránky."
 
 msgid "Functions can be copied from one instance of the program to another through the clipboard using Edit|Copy."
-msgstr ""
+msgstr "Funkce lze kopírovat z jedné instance programu do jiné prostřednictvím schránky pomocí příkazu Úpravy|Kopírovat."
 
 msgid "You can always undo the last thing you did using Edit|Undo."
-msgstr ""
+msgstr "Poslední provedenou akci lze vždy vrátit zpět příkazem Úpravy|Zpět."
 
 msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
-msgstr ""
+msgstr "Pokud jste omylem použili příkaz Úpravy|Zpět, lze opakovat zrušenou akci pomocí příkazu Úpravy|Znovu."
 
 msgid "In the Axes dialog you can add a title to the coordinate system."
-msgstr ""
+msgstr "V dialogovém okně Osy lze soustavě souřadnic přiřadit název."
 
 msgid "You can import point series from files saved by other programs, like Microsoft Excel."
-msgstr ""
+msgstr "Posloupnost bodů lze importovat ze souborů uložených ostaními aplikacemi (např. Microsoft Excel)."
 
 msgid "When inserting a point series you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
-msgstr ""
+msgstr "Při vkládání posloupnosti bodů lze kopírovat data z ostatních aplikací (např. Microsoft Excel) a vložit je do tabulky programu Graph."
 
 msgid "You can use 'Zoom|All points' to change the coordinate system so all point series are visible."
-msgstr ""
+msgstr "Pomocí příkazu 'Zobrazení|Všechny body' lze změnit soustavu souřadnic tak, aby byly viditelné všechny posloupnosti bodů."
 
 msgid "You can use Zoom|Fit to change the coordinate system to show the selected function or point series."
-msgstr ""
+msgstr "Pomocí příkazu 'Zobrazení|Přizpůsobit' lze změnit soustavu souřadnic tak, aby byla zobrazena vybraná funkce nebo posloupnost bodů."
 
 msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
-msgstr ""
+msgstr "Držíte-li stisknutou klávesu Shift, můžete pomocí myši posunovat soustavu souřadnic."
 
 msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
-msgstr ""
+msgstr "Pomocí příkazu Výpočty|Hodnota lze nalézt průsečíky funkcí, body, kde funkce protíná osy, a extrémy."
 
 msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
-msgstr ""
+msgstr "Je-li vybrána posloupnost bodů, můžete do ní přidávat body tak, že stisknete klávesu Ctrl a klepnete do soustavy souřadnic."
 
 msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
-msgstr ""
+msgstr "Pomocí vztahu, jako např. sin(x^2) < cos(y^2), lze zobrazit nerovnost."
 
 msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
-msgstr ""
+msgstr "Pomocí vztahu, jako např. x*sin x = y*cos y, lze zobrazit rovnost."
 
 msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
-msgstr ""
+msgstr "Jednotlivé položky (funkce, šrafování, popisy, vztahy apod.) jsou zobrazovány ve stejném pořadí, v jakém se nacházejí v seznamu vlevo."
 
 msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
-msgstr ""
+msgstr "Vybranou položku v seznamu funkcí lze přesunout přetažením pomocí myši nebo pomocí šipek, držíte-li stisknutou klávesu ALT."
 
 msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
-msgstr ""
+msgstr "Funkce a další položky lze zobrazit za osami, přesunete-li je nad osy v seznamu funkcí vlevo. Chcete-li přesunout šrafování a tečny, je třeba přesunout také příslušné funkce."
 
 msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
-msgstr ""
+msgstr "Osám lze přiřadit vlastní textové popisy. Klepněte pravým tlačítkem na popis a v místní nabídce vyberte umístění."
 
 msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
-msgstr ""
+msgstr "Legendu lze volně přesunovat pomocí myši nebo ji umístit do některého rohu. Klepněte na ni pravým tlačítkem a v místní nabídce vyberte umístění."
 
 msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shades."
-msgstr ""
+msgstr "Pro pozadí popisu můžete kromě průhledného zvolit také vlastní barvu. To je vhodné zejména pro popisy nad šrafováním."
 
 msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
-msgstr ""
+msgstr "Ve většině případů (např. posloupnosti bodů, nastavení os, rozsahy funkcí apod.) lze namísto čísel použít výrazy jako pi/4."
 
 msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
-msgstr ""
+msgstr "Pomocí příkazu Funkce|Vlastní funkce můžete vytvořit vlastní konstanty, např. g=9.80665, R=8.31, které lze potom použít ve funkcích, posloupnostech bodů apod. "
 
 msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
-msgstr ""
+msgstr "Pomocí příkazu Funkce|Vlastní funkce můžete vytvořit vlastní funkce, např. sinc(x)=if(x=0, 0, sin(x)/x), které lze potom použít ve funkcích, vztazích apod. "
 
 msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
-msgstr ""
+msgstr "V dialogovém okně Uložit jako obrázek lze pomocí tlačítka Možnosti určit rozlišení obrázku. Tato funkce je vhodná zejména, chcete-li vytvořit obrázek ve vysokém rozlišení."
 
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
-msgstr ""
+msgstr "Posloupnosti bodů mohou mít symbol zobrazený jako šipku. Posloupnost bodů se šipkami jako symboly a čárami mezi jednotlivými body lze použít k zobrazení vektorů."
 
 msgid "Custom..."
 msgstr "Vlastní..."
@@ -2441,11 +2435,9 @@ msgstr "Smetanová"
 msgid "Med Gray"
 msgstr "Šedá"
 
-#, fuzzy
 msgid "Local"
 msgstr "Místní"
 
-#, fuzzy
 msgid "Global"
 msgstr "Globální"
 
