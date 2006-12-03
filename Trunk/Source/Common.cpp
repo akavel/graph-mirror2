@@ -262,45 +262,6 @@ int _matherr(_exception *a)
   return 1;
 }
 //---------------------------------------------------------------------------
-//This must be used to decode escape sequences to make sure a string like
-//"\\\\n" is decode corectly to "\\n" and not "\n"
-std::string DecodeEscapeSequence(const std::string &Str)
-{
-  std::string Dest;
-  Dest.reserve(Str.size());
-  for(unsigned I = 0; I < Str.size(); I++)
-    if(Str[I] == '\\')
-    {
-      if(++I < Str.size())
-        switch(Str[I])
-        {
-          case '\\': Dest += '\\';   break;
-          case 'n':  Dest += "\r\n"; break;
-          case 't':  Dest += '\t';   break;
-        }
-    }
-    else
-      Dest += Str[I];
-  return Dest;
-}
-//---------------------------------------------------------------------------
-std::string EncodeEscapeSequence(const std::string &Str)
-{
-  std::string Dest;
-  Dest.reserve(Str.size());
-  for(unsigned I = 0; I < Str.size(); I++)
-    switch(Str[I])
-    {
-      case '\\': Dest += "\\\\"; break;
-      case '\r': break;
-      case '\n': Dest += "\\n"; break;
-      case '\t': Dest += "\\t"; break;
-      default:
-        Dest += Str[I];
-    }
-  return Dest;
-}
-//---------------------------------------------------------------------------
 template<typename T1, typename T2>
 LessFirstPair(const std::pair<T1, T2> &Pair1, const std::pair<T1, T2> &Pair2)
 {

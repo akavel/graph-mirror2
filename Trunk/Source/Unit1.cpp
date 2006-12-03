@@ -368,6 +368,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
             if(TPointSeries *Series = dynamic_cast<TPointSeries*>(Elem.get()))
             {
               Series->AddPoint(Draw.xyCoord(X, Y));
+              Data.SetModified();
               Redraw(); //We need to redraw everything; Smooth lines may have changed
             }
           }
@@ -834,7 +835,8 @@ void TForm1::UpdateMenu()
     Tree_ShowInLegend->Checked = Elem->ShowInLegend;
   }
 
-  if(dynamic_cast<TTextLabel*>(Elem.get()) || dynamic_cast<TAxesView*>(Elem.get()))
+  if(dynamic_cast<TTextLabel*>(Elem.get()) || dynamic_cast<TAxesView*>(Elem.get()) ||
+     dynamic_cast<TOleObjectElem*>(Elem.get()))
     Tree_ShowInLegend->Visible = false;
   else
     Tree_ShowInLegend->Visible = true;
@@ -1671,7 +1673,7 @@ void __fastcall TForm1::PrintActionExecute(TObject *Sender)
     return;
   }
 
-  SetStatusIcon(ICON_PRINT);  //Show printer icon in statusbar
+  SetStatusIcon(iiPrint);  //Show printer icon in statusbar
   TCallOnRelease Dummy(&SetStatusIcon, -1);
   Printer()->Title = Caption; //Set document title
   Printer()->BeginDoc();      //Start sending to print spooler
@@ -1929,6 +1931,8 @@ void __fastcall TForm1::EditActionExecute(TObject *Sender)
     Result = CreateForm<TForm11>(Data)->EditRelation(Relation);
   else if(boost::shared_ptr<TAxesView> AxesView = boost::dynamic_pointer_cast<TAxesView>(Item))
     AxesAction->Execute();
+  else if(boost::shared_ptr<TOleObjectElem> OleObjectElem = boost::dynamic_pointer_cast<TOleObjectElem>(Item))
+    OleObjectElem->Edit();
 
   if(Result == mrOk)
   {
@@ -2676,7 +2680,7 @@ TSaveError TForm1::SaveAsImage(const AnsiString &FileName, int ImageFileType)
     bool SameSize = !ImageOptions->UseCustomSize;
 
     //Show save icon in status bar
-    SetStatusIcon(ICON_SAVE);
+    SetStatusIcon(iiSave);
     TCallOnRelease Dummy(&SetStatusIcon, -1);
     Draw.Wait();
 
@@ -3175,7 +3179,7 @@ void __fastcall TForm1::PopupMenu1Popup(TObject *Sender)
   if(boost::shared_ptr<TTextLabel> TextLabel = boost::dynamic_pointer_cast<TTextLabel>(GetGraphElem(TreeView->Selected)))
     for(int I = 0; I < Tree_Placement->Count; I++)
       if(TextLabel->GetPlacement() == I + 1)
-        Tree_Placement->Items[I]->ImageIndex = ICON_BULLET;
+        Tree_Placement->Items[I]->ImageIndex = iiBullet;
       else //Remove check mark
         Tree_Placement->Items[I]->ImageIndex = -1;
 }
@@ -3443,7 +3447,6 @@ void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
   Data.Add(OleObject);
   UpdateTreeView();
   TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
-  TreeView->SetFocus();
   Data.SetModified();
   Redraw();
 }

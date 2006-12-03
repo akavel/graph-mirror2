@@ -60,6 +60,19 @@
 enum TCursorState {csIdle, csAddLabel, csMoveLabel, csMoveLegend, csZoomWindow, csMove, csMoving};
 enum TSaveError {seNoError, seFileAccess, seOutOfResources, sePdfError, seDllError};
 
+enum TIconIndex
+{
+  iiSave, //Position of save icon used in StatusBar in image list
+  iiPrint,
+  iiFuncNode,
+  iiTanNode,
+  iiLabelNode,
+  iiAxesNode,
+  iiBullet,
+  iiNormalNode,
+  iiOleNode
+};
+
 class TForm1 : public TTntForm
 {
 __published:	// IDE-managed Components
