@@ -141,11 +141,11 @@ WizardSelectDir=Seleccione la ubicación de destino
 SelectDirDesc=¿Dónde se instalará [name]?
 SelectDirLabel3=El asistente instalará [name] en la siguiente carpeta.
 SelectDirBrowseLabel=Para continuar, haga clic en Siguiente. Si desea seleccionar una carpeta diferente, haga clic en Examinar.
-DiskSpaceMBLabel=Se necesitan, al menos, [mb] MB de espacio libre en el disco.
+DiskSpaceMBLabel=Se necesitan, al menos, [mb] MB de espacio libre en el disco duro.
 ToUNCPathname=El asistente no puede realizar la instalación en un directorio UNC. Si está tratando de instalar el programa en una red, necesitará asignarlo a una unidad de red.
 InvalidPath=Debe introducir una ruta completa con la letra de la unidad; por ejemplo:%nC:\APP%n%ni un directorio UNC en la forma:%n%n\\server\share
 InvalidDrive=La unidad o el directorio UNC que ha seleccionado no existe. Por favor, seleccione otra.
-DiskSpaceWarningTitle=No hay espacio suficiente en el disco
+DiskSpaceWarningTitle=No hay espacio suficiente en el disco duro
 DiskSpaceWarning=El asistente necesita, al menos, %1 KB de espacio libre para la instalación, pero la unidad seleccionada sólo tiene %2 KB disponibles.%n%n¿Desea continuar de todos modos?
 DirNameTooLong=El nombre de la carpeta o ruta es demasiado largo.
 InvalidDirName=El nombre de la carpeta no es válido.
@@ -167,12 +167,12 @@ NoUninstallWarningTitle=Componentes existentes
 NoUninstallWarning=El asistente ha detectado que los siguientes componentes ya están instalados en su ordenador:%n%n%1%n%nDeseleccionando esos componentes, no los desinstalará.%n%n¿Desea continuar de todos modos?
 ComponentSize1=%1 KB
 ComponentSize2=%1 MB
-ComponentsDiskSpaceMBLabel=La selección actual necesita, al menos, [mb] MB de espacio libre en disco.
+ComponentsDiskSpaceMBLabel=La selección actual necesita, al menos, [mb] MB de espacio libre en el disco duro.
 
 ; *** "Select Additional Tasks" wizard page
 WizardSelectTasks=Seleccione las tareas adicionales
-SelectTasksDesc=¿Qué tareas adicionales deber ser ejecutadas?
-SelectTasksLabel2=Seleccione las tareas adicionales que desearía que el asistente ejecutase mientras instala [name], y haga clic en Siguiente.
+SelectTasksDesc=¿Qué tareas adicionales deben ser ejecutadas?
+SelectTasksLabel2=Seleccione las tareas adicionales que desee que el asistente ejecute mientras instala [name], y haga clic en Siguiente.
 
 ; *** "Select Start Menu Folder" wizard page
 WizardSelectProgramGroup=Seleccione la carpeta del menú de Inicio
