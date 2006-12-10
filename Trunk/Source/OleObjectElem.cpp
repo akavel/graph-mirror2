@@ -79,5 +79,10 @@ void TOleObjectElem::ReadFromIni(const TConfigFile &IniFile, const std::string &
   Pos = IniFile.Read(Section, "Pos", Func32::TDblPoint(0,0));
 }
 //---------------------------------------------------------------------------
+void TOleObjectElem::Copy()
+{
+  OleContainer->Copy();
+}
+//---------------------------------------------------------------------------
 
 

@@ -112,7 +112,7 @@ WideString GetErrorMsg(const Func32::EFuncError &Error)
 {
   WideString ErrorStr = LoadRes(Error.ErrorCode+100, Error.Str.c_str());
   if(ErrorStr.IsEmpty())
-    ErrorStr = LoadRes(RES_UNKNOWN_ERROR_MSG);
+    ErrorStr = "Unknown error code.\nCould not find error message for this error.";
   return ErrorStr;
 }
 //---------------------------------------------------------------------------

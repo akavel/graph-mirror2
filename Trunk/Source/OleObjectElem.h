@@ -26,5 +26,6 @@ public:
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TOleObjectElem(*this));}
   bool InsertObjectDialog();
   bool Edit();
+  void Copy();
 };
 #endif
