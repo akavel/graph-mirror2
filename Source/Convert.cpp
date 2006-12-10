@@ -32,7 +32,7 @@ double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr, double Min, doub
     {
       SetGlobalFocus(Edit);
       if(ErrorStr.IsEmpty())
-        MessageBox(LoadRes(RES_ERROR_BUG), LoadRes(RES_ERROR), MB_ICONSTOP);
+        MessageBox("This error should not occur. Please report this to the programmer.", LoadRes(RES_ERROR), MB_ICONSTOP);
       else
         MessageBox(ErrorStr, LoadRes(RES_ERROR_IN_VALUE));
       throw EAbort("");

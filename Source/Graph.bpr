@@ -9,16 +9,17 @@
       ..\Obj\Debug.obj ..\Obj\Draw.obj ..\Obj\DrawThread.obj ..\Obj\Encode.obj 
       ..\Obj\Files.obj ..\Obj\Graph.obj ..\Obj\GraphElem.obj 
       ..\Obj\GuiHelper.obj ..\Obj\GuiUtil.obj ..\Obj\IGraphic.obj 
-      ..\Obj\OleObjectElem.obj ..\Obj\PngHelper.obj ..\Obj\Settings.obj 
-      ..\Obj\StackTrace.obj ..\Obj\VersionInfo.obj ..\Obj\Undo.obj 
-      ..\Obj\Unit1.obj ..\Obj\Unit2.obj ..\Obj\Unit3.obj ..\Obj\Unit4.obj 
-      ..\Obj\Unit5.obj ..\Obj\Unit6.obj ..\Obj\Unit7.obj ..\Obj\Unit8.obj 
-      ..\Obj\Unit9.obj ..\Obj\Unit10.obj ..\Obj\Unit11.obj ..\Obj\Unit12.obj 
-      ..\Obj\Unit13.obj ..\Obj\Unit14.obj ..\Obj\Unit15.obj ..\Obj\Unit16.obj 
-      ..\Obj\Unit17.obj ..\Obj\Unit18.obj ..\Obj\Unit19.obj ..\Obj\Unit20.obj 
-      ..\Obj\Tokenizer.obj ..\Obj\TStdFuncFrame.obj ..\Obj\TParFuncFrame.obj 
-      ..\Obj\TPolFuncFrame.obj ..\Obj\TTanFrame.obj ..\Obj\TAreaFrame.obj 
-      ..\Obj\OleServerImpl.obj ..\Obj\Graph_TLB.obj ..\Obj\pdflib.obj &quot;D:\Program Files\dxgettext\gnugettext.obj&quot;"/>
+      ..\Obj\OleObjectElem.obj ..\Obj\OleServerImpl.obj ..\Obj\PngHelper.obj 
+      ..\Obj\Settings.obj ..\Obj\StackTrace.obj ..\Obj\VersionInfo.obj 
+      ..\Obj\Undo.obj ..\Obj\Unit1.obj ..\Obj\Unit2.obj ..\Obj\Unit3.obj 
+      ..\Obj\Unit4.obj ..\Obj\Unit5.obj ..\Obj\Unit6.obj ..\Obj\Unit7.obj 
+      ..\Obj\Unit8.obj ..\Obj\Unit9.obj ..\Obj\Unit10.obj ..\Obj\Unit11.obj 
+      ..\Obj\Unit12.obj ..\Obj\Unit13.obj ..\Obj\Unit14.obj ..\Obj\Unit15.obj 
+      ..\Obj\Unit16.obj ..\Obj\Unit17.obj ..\Obj\Unit18.obj ..\Obj\Unit19.obj 
+      ..\Obj\Unit20.obj ..\Obj\Tokenizer.obj ..\Obj\TStdFuncFrame.obj 
+      ..\Obj\TParFuncFrame.obj ..\Obj\TPolFuncFrame.obj ..\Obj\TTanFrame.obj 
+      ..\Obj\TAreaFrame.obj ..\Obj\Graph_TLB.obj ..\Obj\pdflib.obj 
+      ..\..\dxgettext\gnugettext.obj"/>
     <RESFILES value="Graph.res Graph.tlb Resource.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
@@ -37,7 +38,7 @@
       Func32.lib vclx.lib bcbsmp.lib adortl.lib qrpt.lib vcldbx.lib dsnap.lib 
       cds.lib bdecds.lib teeui.lib teedb.lib tee.lib teeqr.lib ibxpress.lib 
       visualdbclx.lib dclocx.lib xmlrtl.lib TntLibR.lib dclusr.lib"/>
-    <PACKAGES value="vcl.bpi rtl.bpi IComp.bpi vcldb.bpi dbrtl.bpi indy.bpi"/>
+    <PACKAGES value="vcl.bpi rtl.bpi IComp.bpi indy.bpi vclx.bpi vcldb.bpi dbrtl.bpi TntLibR.bpi"/>
     <PATHCPP value=".;..\Components\Common;..\..\PDFlib-Lite\bind\pdflib\cpp"/>
     <PATHPAS value=".;"/>
     <PATHRC value=".;"/>
@@ -45,8 +46,8 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value="WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG"/>
-    <SYSDEFINES value="NO_STRICT;USING_ATLVCL;_ATL_NO_SECURITY;INC_ATL_HEADERS;_ATL_SINGLEUSE_INSTANCING;_ATL_MULTIUSE_INSTANCING;_ATL_APARTMENT_THREADED;_BCB_ATL_DEBUG"/>
+    <USERDEFINES value="WIN32;CUSTOM_DEBUG_HANDLER"/>
+    <SYSDEFINES value="NO_STRICT;USING_ATLVCL;_ATL_NO_SECURITY;INC_ATL_HEADERS;_ATL_SINGLEUSE_INSTANCING;_ATL_MULTIUSE_INSTANCING;_ATL_APARTMENT_THREADED"/>
     <MAINSOURCE value="Graph.cpp"/>
     <INCLUDEPATH value="&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;..\Components\TSaveDialogEx;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Func32;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;$(BCB)\include;$(BCB)\include\vcl;..\components\ticolorbox;..\Components\TCross;..\Components\TFocusPanel;..\Components\TGrid;..\Components\TLineSelect;..\Components\TMyEdit;..\Components\TMyRadioButton;..\Components\TMySplitter;..\Components\TPointSelect;..\Components\TProgress;..\Components\TProgressForm;..\Components\TRecent;..\Components\TShadeSelect;..\..\BMGLib\BMGLib_DLL;..\Components\Common;..\Components\TIRichEdit;$(BCB)\include\atl;..\..\boost;..\..\BMGLib\lpng125;..\..\BMGLib\zlib114;$(BCB)\source\rtl\rtlinc;..\..\PDFlib-Lite\libs\pdflib;..\..\TntUnicodeControls"/>
     <LIBPATH value="&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;..\Components\TMediaPlayerEx;&quot;..\..\PDFlib-Lite\bind\pdflib\cpp&quot;;..\Components\TSymbolDialog;..\Components\TExtColorBox;$(BCB)\Source\Rtl\Source\except;..\Components\TSaveDialogEx;..\Components\Common;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton;$(BCB)\Lib\Psdk;..\Obj"/>
@@ -62,12 +63,12 @@
       -I..\Components\TPageSetup -I..\Components\TPointSelect 
       -I..\Components\TProgress -I..\Components\TProgressForm 
       -I..\Components\TRecent -I..\Components\TShadeSelect -boa"/>
-    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -xp -X- -r- -a8 -6 -b- -d -k -y -v 
-      -vi- -c -tW -tWM"/>
-    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y+ -$W -$O- -$C- -$A8 -v -JPHNE -M"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -xp -X- -a8 -6 -b- -d -k- -vi -c 
+      -tW -tWM"/>
+    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y- -$L- -$D- -$C- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zi"/>
-    <LFLAGS value="-I..\Obj -dPDFlib.dll -D&quot;&quot; -aa -Tpe -GD -x -v"/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\Obj -dPDFlib.dll -D&quot;&quot; -aa -Tpe -GD -x"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -96,6 +97,7 @@
       <FILE FILENAME="GuiUtil.cpp" FORMNAME="" UNITNAME="GuiUtil" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="IGraphic.cpp" FORMNAME="" UNITNAME="IGraphic.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="OleObjectElem.cpp" FORMNAME="" UNITNAME="OleObjectElem" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="OleServerImpl.cpp" FORMNAME="" UNITNAME="OleServerImpl" COCLASSES="OleServer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\Components\Common\PngHelper.cpp" FORMNAME="" UNITNAME="PngHelper" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Settings.cpp" FORMNAME="" UNITNAME="Settings" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="StackTrace.cpp" FORMNAME="" UNITNAME="StackTrace" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
@@ -128,13 +130,12 @@
       <FILE FILENAME="TTanFrame.cpp" FORMNAME="TanFrame" UNITNAME="TTanFrame" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
       <FILE FILENAME="TAreaFrame.cpp" FORMNAME="AreaFrame" UNITNAME="TAreaFrame" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\PDFlib-Lite\PDFlib.lib" FORMNAME="" UNITNAME="PDFlib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="OleServerImpl.cpp" FORMNAME="" UNITNAME="OleServerImpl" COCLASSES="OleServer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Graph_TLB.cpp" FORMNAME="" UNITNAME="Graph_TLB" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\PDFlib-Lite\bind\pdflib\cpp\pdflib.cpp" FORMNAME="" UNITNAME="pdflib" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Graph.tlb" FORMNAME="" UNITNAME="Graph.tlb" CONTAINERID="TypeLibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\Func32\Func32.lib" FORMNAME="" UNITNAME="Func32.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Resource.rc" FORMNAME="" UNITNAME="Resource.rc" CONTAINERID="RC" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="D:\Program Files\dxgettext\gnugettext.obj" FORMNAME="" UNITNAME="gnugettext.obj" CONTAINERID="OBJTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\dxgettext\gnugettext.obj" FORMNAME="" UNITNAME="gnugettext.obj" CONTAINERID="OBJTool" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -147,7 +148,7 @@ MajorVer=4
 MinorVer=2
 Release=0
 Build=332
-Debug=1
+Debug=0
 PreRelease=0
 Special=0
 Private=0
@@ -235,8 +236,8 @@ Item29=D:\Program Files\dxgettext;D:\Progra~1\dxgettext;..\Components\TOpenPrevi
 
 [HistoryLists\hlConditionals]
 Count=13
-Item0=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG
-Item1=WIN32;CUSTOM_DEBUG_HANDLER
+Item0=WIN32;CUSTOM_DEBUG_HANDLER
+Item1=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG
 Item2=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER
 Item3=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
 Item4=WIN32;_DEBUG
@@ -275,7 +276,7 @@ RemoteDebug=0
 
 [Compiler]
 ShowInfoMsgs=0
-LinkDebugVcl=1
+LinkDebugVcl=0
 LinkCGLIB=0
   </IDEOPTIONS>
 </PROJECT>

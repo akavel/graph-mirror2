@@ -16,7 +16,7 @@
 #define RES_AREA         7
 #define RES_LENGTH       8
 #define RES_SERIES       9
-#define RES_LABELS      10
+
 #define RES_LABEL       11
 #define RES_UNCERTAINTY 12
 #define RES_TRANSPARENT 13
@@ -84,7 +84,7 @@
 #define RES_SAVE_CHANGES_IN     302
 #define RES_MAX_ZOOM            303
 #define RES_MIN_ZOOM            304
-#define RES_NO_PRINTER          305
+
 #define RES_ERROR_IN_VALUE      306
 #define RES_LIMIT_ZERO          307
 #define RES_GREATER_ZERO        308
@@ -103,8 +103,7 @@
 #define RES_FILE_FILTER         321
 #define RES_FILE_ACCESS         322
 #define RES_UNKNOWN_FONT        324
-#define RES_CONVERSION_ERROR    325
-#define RES_UNKNOWN_ERROR_MSG   326
+
 #define RES_SELECTION_ERROR     327
 #define RES_FILE_ERROR          328
 #define RES_WRITE_FAILED        329
@@ -121,7 +120,7 @@
 #define RES_SHOW                401
 
 #define RES_SAVE_OPTIONS        403
-#define RES_ERROR_BUG           404
+
 #define RES_DELETE              405
 #define RES_GRAPH_FILTER        406
 #define RES_DATA_FILTER         407

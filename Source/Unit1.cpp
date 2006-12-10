@@ -1789,6 +1789,8 @@ void __fastcall TForm1::CopyActionExecute(TObject *Sender)
     GraphClipboard.Copy(Label);
   else if(TRelation *Relation = dynamic_cast<TRelation*>(Elem.get()))
     GraphClipboard.Copy(Relation);
+  else if(TOleObjectElem *OleObjectElem = dynamic_cast<TOleObjectElem*>(Elem.get()))
+    OleObjectElem->Copy();
   UpdateMenu();
 }
 //---------------------------------------------------------------------------
