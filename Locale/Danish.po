@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-12-10 23:14+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2006-12-11 19:43+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2837,7 +2837,7 @@ msgid "'%s' must be a positive number."
 msgstr "'%s' Skal være større end 0."
 
 msgid "File not found: %s"
-msgstr "Filen Blev ikke fundet: %s"
+msgstr "Filen blev ikke fundet: %s"
 
 msgid ""
 "Error reading file: %s\n"
@@ -2894,13 +2894,11 @@ msgstr "Windows har ikke nok ressourcer til at gemme et billede, der er så stor
 msgid "'%1%' must be between %2% and %3%."
 msgstr "'%1%' skal ligge imellem %2% og %3%."
 
-#, fuzzy
 msgid "File not found"
-msgstr "Filen Blev ikke fundet: %s"
+msgstr "Filen blev ikke fundet"
 
-#, fuzzy
 msgid "Error reading file"
-msgstr "Fejl ved læsning af objekt"
+msgstr "Fejl ved læsning af fil"
 
 msgid "Confirm delete"
 msgstr "Bekræft sletning"
