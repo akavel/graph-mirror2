@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-01-14 12:53+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2006-12-13 18:59+0100\n"
+"Last-Translator: Mask <Embrio1988@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,24 +18,14 @@ msgstr "Do:"
 msgid "Area"
 msgstr "Ploščina"
 
-#, fuzzy
-msgid ""
-"Enter the start coordinate or mark the range on the graph itself with the "
-"mouse."
-msgstr "Vpiši začetno koordinato ali označi interval na sliki."
+msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
+msgstr "Vpiši začetno koordinato ali označi interval na grafu s mišjo."
 
-#, fuzzy
-msgid ""
-"Enter the end coordinate or mark the range on the graph itself with the "
-"mouse."
-msgstr "Vpiši končno koordinato ali označi interval na sliki."
+msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
+msgstr "Vpiši končno koordinato ali označi interval na grafu s mišjo."
 
-msgid ""
-"Area or length of path calculated for the given range using Simpson's "
-"formula."
-msgstr ""
-"Ploščina oz. dolžina poti izračunano za podani interval po Simpsonovi "
-"formuli."
+msgid "Area or length of path calculated for the given range using Simpson's formula."
+msgstr "Ploščina oz. dolžina poti izračunano za podani interval po Simpsonovi formuli."
 
 msgid "Snap to:"
 msgstr "Lepi na:"
@@ -55,12 +45,8 @@ msgstr "Izpeljanka od y(t) ovrednotena za parameter t."
 msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr "Strmina funkcije ovrednotena za parameter t."
 
-msgid ""
-"Enter the independent variable for which you want to evaluate the function, "
-"or click on the function in the main window."
-msgstr ""
-"Vpišite neodvisno spremenljivko za katero hočete ovrednotiti funkcijo ali pa "
-"kliknite na funkcijo v glavnem oknu."
+msgid "Enter the independent variable for which you want to evaluate the function, or click on the function in the main window."
+msgstr "Vpišite neodvisno spremenljivko za katero hočete ovrednotiti funkcijo ali pa kliknite na funkcijo v glavnem oknu."
 
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Izberite, kje se bo pojavil kurzor ko klikneš na sliko."
@@ -98,12 +84,8 @@ msgstr "Odvod funkcije ovrednoten za dan kot."
 msgid "The slope of the function evaluated for the given angle."
 msgstr "Strmina funkcije ovrednotena za dan kot."
 
-msgid ""
-"Enter a number for which you want to evaluate the function, or click on the "
-"function in the main window."
-msgstr ""
-"Vpiši število za katero hočeš funkcijo ovrednotiti, ali pa klikni na "
-"funkcijo v glavnem oknu."
+msgid "Enter a number for which you want to evaluate the function, or click on the function in the main window."
+msgstr "Vpiši število za katero hočeš funkcijo ovrednotiti, ali pa klikni na funkcijo v glavnem oknu."
 
 msgid "Extremum"
 msgstr "Ekstrem"
@@ -111,22 +93,17 @@ msgstr "Ekstrem"
 msgid "This is the function evaluated for the entered x-value."
 msgstr "Funkcija ovrednotena za vpisano x-vrednost."
 
-#, fuzzy
-msgid ""
-"This is the first derivative of the function evaluated for the entered value."
+msgid "This is the first derivative of the function evaluated for the entered value."
 msgstr "To je prvi odvod funkcije ovrednoten za vpisano vrednost."
 
-msgid ""
-"This is the functions second derivative evaluated for the entered value."
+msgid "This is the functions second derivative evaluated for the entered value."
 msgstr "To je drugi odvod funkcije ovrednoten za vpisano vrednost."
 
-#, fuzzy
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
-msgstr "To je y-koordinata na tangenti za vtipkano x-koordinato."
+msgstr "To je y-koordinata, ki vstreza vtipkani x-koordinati."
 
-#, fuzzy
 msgid "Enter an x-coordinate or click in the main window."
-msgstr "Vpiši x koordinato al pa klikni na tangento v glavnem oknu."
+msgstr "Vpištei x-koordinato al pa kliknite v glavnem oknu."
 
 msgid "File"
 msgstr "Datoteka"
@@ -170,15 +147,13 @@ msgstr "Postavitev"
 msgid "Above x-axis"
 msgstr "Nad x-osjo"
 
-msgid ""
-"Place the label directly above the x-axis on the right side of the image."
+msgid "Place the label directly above the x-axis on the right side of the image."
 msgstr "Postavi oznako na desno stran slike nad x-osjo."
 
 msgid "Below x-axis"
 msgstr "Pod x-osjo"
 
-msgid ""
-"Place the label directly below the x-axis on the right side of the image."
+msgid "Place the label directly below the x-axis on the right side of the image."
 msgstr "Postavi oznako na desno stran slike pod x-osjo."
 
 msgid "Left of y-axis"
@@ -226,7 +201,6 @@ msgstr "Shrani koordinatni sistem pod novim imenom."
 msgid "Save copy as..."
 msgstr "Shrani kopijo kot..."
 
-#, fuzzy
 msgid "Saves a copy of the current coordinate system."
 msgstr "Shrani kopijo trenutnega koordinatnega sistema"
 
@@ -275,9 +249,7 @@ msgstr "Kopira izbrano funkcijo ali zaporedje točk v odložišče."
 msgid "Paste"
 msgstr "Prilepi"
 
-msgid ""
-"Pastes a function or point series from the clipboard into the coordinate "
-"system."
+msgid "Pastes a function or point series from the clipboard into the coordinate system."
 msgstr "Prilepi funkcijo ali zaporedje točk iz odložišča v koordinatni sistem."
 
 msgid "Copy image"
@@ -296,7 +268,7 @@ msgid "Options..."
 msgstr "Možnosti..."
 
 msgid "Edit various options for the interface and program features."
-msgstr ""
+msgstr "Uredi razne možnosti vmesnika in programa."
 
 msgid "Insert function..."
 msgstr "Vstavi funkcijo."
@@ -307,23 +279,20 @@ msgstr "Vstavi novo funkcijo."
 msgid "Insert tangent/normal..."
 msgstr "Vstavi tangento/normalo..."
 
-#, fuzzy
 msgid "Insert a tangent or normal for the selected function."
-msgstr "Vstavi novo tangento za izbrano funkcijo."
+msgstr "Vstavi tangento ali normalo za izbrano funkcijo."
 
 msgid "Insert shade..."
 msgstr "Vstavi senco..."
 
-#, fuzzy
 msgid "Add shading to the selected function."
-msgstr "Dodaj senco funkciji."
+msgstr "Dodaj senco izbrani funkciji."
 
 msgid "Insert point series..."
 msgstr "Vstavi zaporedje točk... "
 
-#, fuzzy
 msgid "Insert a point series."
-msgstr "Vstavi zaporedje točk"
+msgstr "Vstavi zaporedje točk."
 
 msgid "Insert trendline..."
 msgstr "Vstavi trendno črto..."
@@ -334,9 +303,8 @@ msgstr "Vstavi graf ki se najbolje prilega zaporedju točk."
 msgid "Edit..."
 msgstr "Uredi..."
 
-#, fuzzy
 msgid "Edit the selected element: Function, tangent, point series, etc."
-msgstr "Uredi izbrano funkcijo, tangento ali zaporedje točk."
+msgstr "Uredi izbrani element: Funkcijo, tangento, zaporedj točke, itn."
 
 msgid "Delete"
 msgstr "Izbriši"
@@ -371,11 +339,8 @@ msgstr "Poveča na uporabnikovo mero."
 msgid "Square"
 msgstr "Izenači"
 
-#, fuzzy
-msgid ""
-"Zoom to scale the axes equally. This will show a plotted circle in its "
-"correct relation instead of an ellipse."
-msgstr "Izenači merilo osi. Prikazan bo krog namesto elipse."
+msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
+msgstr "Približajte pogled, da izenačite osi. Tako boste videli krog namesto elipse."
 
 msgid "Standard"
 msgstr "Standardno"
@@ -389,28 +354,24 @@ msgstr "Premakni"
 msgid "Move up"
 msgstr "Pomakni gor"
 
-#, fuzzy
 msgid "Move the window up along the coordinate system."
 msgstr "Pomakni okno po koordinatnem sistemu navzgor."
 
 msgid "Move down"
 msgstr "Pomakni dol"
 
-#, fuzzy
 msgid "Move the window down along the coordinate system."
 msgstr "Pomakni okno po koordinatnem sistemu navzdol."
 
 msgid "Move left"
 msgstr "Pomakni levo"
 
-#, fuzzy
 msgid "Move the window to the left along the coordinate system."
 msgstr "Pomakni okno po koordinatnem sistemu levo."
 
 msgid "Move right"
 msgstr "Pomakni desno"
 
-#, fuzzy
 msgid "Move the window to the right along the coordinate system."
 msgstr "Pomakni okno po koordinatnem sistemu desno."
 
@@ -420,17 +381,14 @@ msgstr "Premakni sistem."
 msgid "Move the coordinate system with the mouse."
 msgstr "Premakni koordinatni sistem s miško."
 
-#, fuzzy
 msgid "Length of path"
-msgstr "Dolžina poti..."
+msgstr "Dolžina poti"
 
-#, fuzzy
 msgid "Calculates the length of path between two given points on the curve."
-msgstr "Izračunaj dolžino poti med dvema točkama."
+msgstr "Izračunaj dolžino poti med dvema točkama na krivulji."
 
-#, fuzzy
 msgid "Calculates the area under the path of the selected function."
-msgstr "Vstavi prvi odvod za izbrano funkcijo. "
+msgstr "Izračuna območje pod potjo izbrane funkcije."
 
 msgid "Evaluate"
 msgstr "Ovrednoti"
@@ -441,9 +399,8 @@ msgstr "Ovrednoti ali sledi izbrano funkcijo."
 msgid "Table..."
 msgstr "Tabela..."
 
-#, fuzzy
 msgid "Shows an evaluation table."
-msgstr "Prikaže tabelo z vrednostmi"
+msgstr "Prikaže tabelo vrednosti."
 
 msgid "Contents and index"
 msgstr "Pomoč"
@@ -454,9 +411,8 @@ msgstr "Odpri pomoč."
 msgid "List of functions"
 msgstr "Spisek funkcij"
 
-#, fuzzy
 msgid "Shows a list of built-in functions that can be used for graphing."
-msgstr "Prikaži spisek funkcij, ki se lahko uporabljajo za izris."
+msgstr "Prikaži spisek vgrajenih funkcij, ki se lahko uporabljajo za izris."
 
 msgid "Go to home page"
 msgstr "Pojdi na domačo stran"
@@ -494,24 +450,20 @@ msgstr "Prilagodi povečavo da bodo prikazane vse točke."
 msgid "Frequently Asked Questions"
 msgstr "Pogosto zastavljena vprašanja"
 
-#, fuzzy
 msgid "Shows a list of frequently asked questions and their answers."
-msgstr "Prikaže spisek pogosto zastavljenih vprašanj in odgovorov."
+msgstr "Prikaže spisek pogosto zastavljenih vprašanj in njihovih odgovorov."
 
 msgid "Insert label..."
 msgstr "Vstavi oznako..."
 
-msgid ""
-"Insert a text label (select and click in the main window where you want the "
-"label)."
-msgstr ""
+msgid "Insert a text label (select and click in the main window where you want the label)."
+msgstr "Vnesi besedilno oznako (izberite in kliknite na glavno okno kjer želite postaviti oznako)."
 
 msgid "Donate"
 msgstr "Darujte"
 
-#, fuzzy
 msgid "Donate money to the project."
-msgstr "Darujte denar za projekt"
+msgstr "Darujte denar za projekt."
 
 msgid "Tip of the day"
 msgstr "Nasvet dneva"
@@ -559,19 +511,17 @@ msgid "Custom functions..."
 msgstr "Lastne funkcije..."
 
 msgid "Create custom functions and constants for use in graphs."
-msgstr "Ustvarite lastne funkicje ali konstante za rabo v grafih."
+msgstr "Ustvarite lastne funkcije ali konstante za rabo v grafih."
 
-#, fuzzy
 msgid "Animate..."
-msgstr "Darujte"
+msgstr "Animiraj..."
 
 msgid "Create an animation by variating a constant."
-msgstr ""
+msgstr "Ustvari animacijo s spreminjanjem konstante."
 
 msgid "Graph file..."
 msgstr "Graph datoteka..."
 
-#, fuzzy
 msgid "Import a Graph file into the current coordinate system."
 msgstr "Uvozi datoteko z grafom v trenutni koordinatni sistem."
 
@@ -596,9 +546,8 @@ msgstr "Prilagodi orodno vrstico"
 msgid "Customize the icons shown on the toolbar."
 msgstr "Prilagodi ikone v orodni vrstici."
 
-#, fuzzy
 msgid "Rotation"
-msgstr "Relacija:"
+msgstr "Obračanje"
 
 msgid "Edit label..."
 msgstr "Uredi oznako..."
@@ -618,13 +567,11 @@ msgstr "Prikaži legendo"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Izberite, da bo legenda prikazana v koordinatnem sistemu."
 
-#, fuzzy
 msgid "Font"
 msgstr "Pisava"
 
-#, fuzzy
 msgid "Change the font of the legend."
-msgstr "Izberi piasvo za naslov."
+msgstr "Spremeni pisavo legende."
 
 msgid "Top Right"
 msgstr "Zgoraj Desno"
@@ -686,13 +633,8 @@ msgstr "Besedilo v legendi"
 msgid "Description:"
 msgstr "Opis:"
 
-#, fuzzy
-msgid ""
-"Write a descriptive text to show in the legend. If empty the equation will "
-"be used."
-msgstr ""
-"Vpišite opis, ki se bo uporabil v legendi, sicer bo uporabljena enačaba "
-"funkcije."
+msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
+msgstr "Vpišite opis, ki bo uporabljen v legendi, sicer bo uporabljena enačaba funkcije."
 
 msgid "Properties"
 msgstr "Lastnosti"
@@ -706,19 +648,14 @@ msgstr "Barva:"
 msgid "Width:"
 msgstr "Širina:"
 
-#, fuzzy
-msgid ""
-"Select the style used for drawing the inequality. Not used for equations."
-msgstr "Izberite slog, ki bo uporabljen samo za neenačbe. "
+msgid "Select the style used for drawing the inequality. Not used for equations."
+msgstr "Izberite slog, ki se uporablja le za risanje neenačb."
 
-#, fuzzy
-msgid ""
-"Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Širina enačbe v pikslih. Za neenačbe se ne uporablja."
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Širina črte enačbe ali meje neenačbe v pikslih."
 
-#, fuzzy
 msgid "Select the color for drawing the relation."
-msgstr "Izberi barvo črt."
+msgstr "Izberi barvo za risanje relacij."
 
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
 msgstr "Vpišite relacijo, naprimer \"x^2+y^2 = 25\" ali \"y < sin(x)\""
@@ -756,9 +693,8 @@ msgstr "Širina grafa v pikslih."
 msgid "Choose which line style to use for drawing the graph."
 msgstr "Izberite slog črte za risanje grafa."
 
-#, fuzzy
 msgid "Select the color of the graph."
-msgstr "Izberite vrsto funkcije za izris."
+msgstr "Izberite barvo grafa."
 
 msgid "Argument range"
 msgstr "Interval"
@@ -778,19 +714,11 @@ msgstr "Začetna:"
 msgid "End:"
 msgstr "Končna:"
 
-msgid ""
-"Select marker to show at the start of the interval. Only used if an argument "
-"range is specified."
-msgstr ""
-"Izberi oznako za začetek intervala. Uporabljena je samo, če je določen "
-"interval."
+msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
+msgstr "Izberi oznako za začetek intervala. Uporabljena je samo, če je določen interval."
 
-msgid ""
-"Select marker to show at the end of the interval. Only used if an argument "
-"range is specified."
-msgstr ""
-"Izberi oznako za konec intervala. Uporabljena je samo, če je določen "
-"interval."
+msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
+msgstr "Izberi oznako za konec intervala. Uporabljena je samo, če je določen interval."
 
 msgid "Insert trendline"
 msgstr "Vstavi trendno črto."
@@ -864,29 +792,20 @@ msgstr "Odstrani vzorec"
 msgid "Edit model"
 msgstr "Uredi vzorec"
 
-#, fuzzy
 msgid "Enter a function model to base the trendline on."
-msgstr "Vtipkajte opis za legendo."
+msgstr "Vtipkajte funkcijski model na podlagi katerega bo trendna črta."
 
-msgid ""
-"Type a value in the Intercept box to specify the point where you want the "
-"trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendlines."
-msgstr ""
+msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
+msgstr "Vnesite vrednost v pogovorno okno za točko, kjer želite, da trendna črta seka os y. Možnost je dostopna samo za linerano, polinomsko in eksponentno trendo črto."
 
-#, fuzzy
 msgid "Intercept ="
-msgstr "Internet"
+msgstr "Presečišče ="
 
 msgid "Insert point series"
 msgstr "Vstavi zaporedje točk"
 
-msgid ""
-"The name of the point series, which is shown in the list to the left of the "
-"coordinate system."
-msgstr ""
-"Ime zaporedja točk, ki je prikazano na spisku na levi strani koordinatnega "
-"sistema. "
+msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
+msgstr "Ime zaporedja točk, ki je prikazano na spisku na levi strani koordinatnega sistema. "
 
 msgid "Series"
 msgstr "Niz"
@@ -918,15 +837,11 @@ msgstr "Izberi barvo točk."
 msgid "Interpolation:"
 msgstr "Interpolacija:"
 
-msgid ""
-"Choose the style of lines to be drawn between the points. You may also "
-"choose not to draw any lines."
-msgstr ""
-"Izberite slog črt, ki bodo narisane med točakmi. Črt lahko tudi ne narišete."
+msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
+msgstr "Izberite slog črt, ki bodo narisane med točakmi. Črt lahko tudi ne narišete."
 
-#, fuzzy
 msgid "Choose the width of the lines in pixels."
-msgstr "Izberi velikost črt."
+msgstr "Izberite širino črt v pikslih."
 
 msgid "Select which kind of line to draw between the markers."
 msgstr "Izberite kateri tip črte narisati med oznakami."
@@ -976,7 +891,6 @@ msgstr "Intervali napak"
 msgid "X error bars"
 msgstr "X intervali napak"
 
-#, fuzzy
 msgid "Show horizontal error bars."
 msgstr "Prikaži vodoravne intervale napak."
 
@@ -1010,7 +924,6 @@ msgstr "Vpiši relativno vrednost v procentih."
 msgid "Y error bars"
 msgstr "Y intervali napak"
 
-#, fuzzy
 msgid "Show vertical error bars."
 msgstr "Prikaži navpične intervale napak."
 
@@ -1020,19 +933,14 @@ msgstr "Prikaži y-intervale napak"
 msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "Velikost intervalov napak je delež velikosti y-koordinate."
 
-#, fuzzy
 msgid "Cut the selected text to the clipboard."
 msgstr "Izreži izbrano besedilo v odložišče."
 
 msgid "Copy the selected text to the clipboard."
 msgstr "Kopiraj izbrano besedilo v odložišče."
 
-msgid ""
-"Paste text from the clipboard into the grid. Other cells may be overwritten "
-"by the text from the clipboard."
-msgstr ""
-"Prilepi besedilo iz odložišča v mrežo. To besedilo lahko prepiše ostale "
-"celice."
+msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
+msgstr "Prilepi besedilo iz odložišča v mrežo. To besedilo lahko prepiše ostale celice."
 
 msgid "Erase selected cells."
 msgstr "Izbriši izbrane celice."
@@ -1040,7 +948,6 @@ msgstr "Izbriši izbrane celice."
 msgid "Insert row"
 msgstr "Vstavi vrstico"
 
-#, fuzzy
 msgid "Inserts a row in the grid moving rows below one down."
 msgstr "Vstavi vrstico v mrežo. Spodnje vrstice se pomaknejo za eno navzdol."
 
@@ -1068,8 +975,7 @@ msgstr "Izvozi izbrane podake v datoteko."
 msgid "Calculate table"
 msgstr "Izračunaj tabelo"
 
-msgid ""
-"The step value. This is the distance between the x-values in the interval."
+msgid "The step value. This is the distance between the x-values in the interval."
 msgstr "Velikost koraka. To je razdalja med x vrednostmi na intervalu."
 
 msgid "The first x-value in the interval."
@@ -1078,9 +984,8 @@ msgstr "Prva x-vrednost intervala."
 msgid "The last x-value in the interval."
 msgstr "Zadnja x-vrednost intrevala."
 
-#, fuzzy
 msgid "Show %s"
-msgstr "Prikaži kljukice"
+msgstr "Prikaži %s"
 
 msgid "Copy selected cells to the clipboard."
 msgstr "Kopiraj izbrane celice v odložišče."
@@ -1115,12 +1020,8 @@ msgstr "Osenči območje med funkcijo in y-osjo."
 msgid "Shades the area inside the function."
 msgstr "Osenči območje znotraj funkcije."
 
-msgid ""
-"Shades the area between the main function and the function selected in the "
-"list to the right."
-msgstr ""
-"Osenči območje med izbrano funkcijo in med funkcijo izbrano na spisku v "
-"jezičku skrajno desno."
+msgid "Shades the area between the main function and the function selected in the list to the right."
+msgstr "Osenči območje med izbrano funkcijo in med funkcijo izbrano na spisku v jezičku skrajno desno."
 
 msgid "Above function"
 msgstr "Nad funkcijo"
@@ -1158,7 +1059,6 @@ msgstr "Obkljukajte da poveča končne koordinate do izhodišča."
 msgid "Increase to intersection"
 msgstr "Povečaj do presečišča."
 
-#, fuzzy
 msgid "Check to decrease the start coordinate until intersection."
 msgstr "Obkljukajte, da zmanjša začetne koordinate do presečišča."
 
@@ -1192,10 +1092,8 @@ msgstr "Druga funkcija"
 msgid "2nd function:"
 msgstr "Druga funkcija:"
 
-#, fuzzy
-msgid ""
-"Select the second function when you want a shading between two functions."
-msgstr "Izberite drugo funkcijo za senčenje med dvema funkcijama."
+msgid "Select the second function when you want a shading between two functions."
+msgstr "Izberite drugo funkcijo ko želite senco med dvema funkcijama."
 
 msgid "Shading range for 2nd function"
 msgstr "Območje senčenja 2. funkcije"
@@ -1228,31 +1126,25 @@ msgid "Image height:"
 msgstr "Višina:"
 
 msgid "Set a custom image width."
-msgstr ""
+msgstr "Nastavi željeno širino slike."
 
 msgid "Set a custom image height."
-msgstr ""
+msgstr "Nastavi željeno višino slike."
 
-msgid ""
-"Choose to use the same size as shown on the screen or a custom image size."
-msgstr ""
+msgid "Choose to use the same size as shown on the screen or a custom image size."
+msgstr "Izberite med velikostjo prikazano na zaslonu ali lastno velikostjo slike."
 
-#, fuzzy
 msgid "Image size"
-msgstr "Širina:"
+msgstr "Velikost slike"
 
-#, fuzzy
 msgid "Screen size"
-msgstr "Velikost besedila"
+msgstr "Velikost zaslona"
 
-#, fuzzy
 msgid "Custom size"
-msgstr "Prilagodi"
+msgstr "Lastna velikost"
 
-msgid ""
-"Progressive encoding allows viewers to see a rough copy of the image while "
-"it is downloaded."
-msgstr ""
+msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
+msgstr "Napredno kodiranje omogoča gledalcem da vidijo grobo obliko slike medtem ko se le ta nalaga."
 
 msgid "Encoding"
 msgstr "Kodiranje"
@@ -1261,17 +1153,16 @@ msgid "Progressive"
 msgstr "Napreden"
 
 msgid "Select a compression quality."
-msgstr ""
+msgstr "Izberite kvaliteto stiskanja."
 
 msgid "Quality"
 msgstr "Kakovost"
 
-#, fuzzy
 msgid "Paper size:"
-msgstr "Velikost besedila"
+msgstr "Velikost papirja:"
 
 msgid "Choose paper orientation."
-msgstr ""
+msgstr "Izberite usmerjenost papirja."
 
 msgid "Orientation"
 msgstr "Usmerjenost"
@@ -1282,57 +1173,47 @@ msgstr "Pokončno"
 msgid "Landscape"
 msgstr "Ležeče"
 
-#, fuzzy
 msgid "Choose paper size to use."
-msgstr "Izberi velikost črt."
+msgstr "Izberite velikost papirja."
 
-#, fuzzy
 msgid "Select this to use these settings as defaults in the future."
-msgstr ""
-"Obkljukate, če hočete uporabiti te nastavitve kot privzete tudi v "
-"prihodnosti."
+msgstr "Izberite, če hočete uporabiti te nastavitve kot privzete tudi v prihodnosti."
 
 msgid "Save as default"
 msgstr "Shrani kot privzeto"
 
-#, fuzzy
 msgid "Animate"
-msgstr "Darujte"
+msgstr "Animiraj"
 
-#, fuzzy
 msgid "Constant:"
-msgstr "Omejitve:"
+msgstr "Konstanta:"
 
 msgid "Choose a constant to change between each frame."
-msgstr ""
+msgstr "Izberite konstanto, ki se bo spremenila z vsako novo sliko animacije."
 
-#, fuzzy
 msgid "Step:"
-msgstr "Koraki:"
+msgstr "Korak:"
 
-#, fuzzy
 msgid "The first value of the constant"
-msgstr "Prva x-vrednost intervala."
+msgstr "Prva vrednost konstante."
 
-#, fuzzy
 msgid "The last value of the constant."
-msgstr "Zadnja x-vrednost intrevala."
+msgstr "Zadnja vrednost konstante."
 
 msgid "The chosen constant is changed by this value between each frame."
-msgstr ""
+msgstr "Vrednost za katero se izbrana konstanta spremeni ob vsaki novi sliki animacije."
 
-#, fuzzy
 msgid "Image information"
-msgstr "Možnosti slike"
+msgstr "Informacije o sliki"
 
 msgid "Frames/second:"
-msgstr ""
+msgstr "Slik/sekundo:"
 
 msgid "Number of frames per second used when the animation is played."
-msgstr ""
+msgstr "Število slik na sekundo ob predvajanju animacije"
 
 msgid "Working"
-msgstr ""
+msgstr "Obdelujem"
 
 msgid "About Graph"
 msgstr "O programu"
@@ -1349,71 +1230,53 @@ msgstr "E-mail:"
 msgid "Build"
 msgstr "Prevedi"
 
-msgid ""
-"This is free software, and you are welcome to redistribute it under the "
-"terms in the GNU General Public License. Please send bug reports and "
-"suggestions to the programmer."
-msgstr ""
-"To je brezplačni program. Lahko ga uporabljate in razširjate pod pogoji, "
-"navedenimi v licenci GNU General Public License. Prosimo, da poročila o "
-"napakah in priporočila pošiljate razvijalcu."
+msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
+msgstr "To je brezplačni program. Lahko ga uporabljate in razširjate pod pogoji, navedenimi v licenci GNU General Public License. Prosimo, da poročila o napakah in priporočila pošiljate razvijalcu."
 
-#, fuzzy
 msgid "The newest version as well as the source code are available at:"
-msgstr "Najnovejša različica in izvorna koda se nahaja na spletni strani:"
+msgstr "Najnovejša različica in izvorna koda se nahajata na spletni strani:"
 
-#, fuzzy
 msgid "Animation"
-msgstr "Darujte"
+msgstr "Animacija"
 
-#, fuzzy
 msgid "Play"
-msgstr "Polarna"
+msgstr "Predvajaj"
 
-#, fuzzy
 msgid "Pause"
-msgstr "Prilepi"
+msgstr "Pavza"
 
-#, fuzzy
 msgid "Stop"
-msgstr "Koraki:"
+msgstr "Ustavi"
 
-#, fuzzy
 msgid "Back"
-msgstr "Črno"
+msgstr "Nazaj"
 
-#, fuzzy
 msgid "Step"
-msgstr "Koraki:"
+msgstr "Korak"
 
 msgid "Speed"
-msgstr ""
+msgstr "Hitrost"
 
 msgid "Change the speed used to play the animation."
-msgstr ""
+msgstr "Spremeni hitrost za predvajanje animacij."
 
-#, fuzzy
 msgid "Repeat"
-msgstr "Realna"
+msgstr "Ponavljaj"
 
 msgid "Repeat playing the animation until manually stopped."
-msgstr ""
+msgstr "Ponavljaj animacijo dokler ni ročno ustavlejna."
 
 msgid "Auto reverse"
-msgstr ""
+msgstr "Avtomatsko obrni"
 
-msgid ""
-"Play backwards when the end of the animation is reached. This is most useful "
-"in combination with the \"Repeat\" command."
-msgstr ""
+msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
+msgstr "Ob koncu animacije le to predvajaj vzvratno. To je najbolj uporabno v kombinaciji z ukazom \"Ponavljaj\"."
 
-#, fuzzy
 msgid "Open an animation file."
-msgstr "Odpri datoteko %s."
+msgstr "Odpri animacijo."
 
-#, fuzzy
 msgid "Save the animation to a file."
-msgstr "Shrani izbrane podatke v datoteko."
+msgstr "Shrani animacijo v datoteko."
 
 msgid "Edit axes"
 msgstr "Uredi osi"
@@ -1448,16 +1311,14 @@ msgstr "Uporabi logaritmično merilo na x-osi."
 msgid "Logarithmic scale"
 msgstr "Logaritmično merilo"
 
-#, fuzzy
 msgid "Show the label at the right side of the main window, above the x-axis."
-msgstr "Prikaži oznako na desbi strani nad x osjo."
+msgstr "Prikaži oznako na desni strani glavnega okna nad x-osjo."
 
 msgid "Label:"
 msgstr "Oznaka:"
 
-#, fuzzy
 msgid "Edit the label for the axis here."
-msgstr "Uredi oznako tukaj."
+msgstr "Uredi besedilno oznako za osi."
 
 msgid "Show units on the x-axis."
 msgstr "Prikaži enote na x osi"
@@ -1465,35 +1326,30 @@ msgstr "Prikaži enote na x osi"
 msgid "Show numbers"
 msgstr "Prikaži števila."
 
-#, fuzzy
 msgid "The x-axis will intersect with the y-axis at this value."
-msgstr "x os bo prečkala y os na tej vrednosti."
+msgstr "x-os bo prečkala y-os v tej vrednosti."
 
 msgid "Units between the grid lines perpendicular to the x-axis."
 msgstr "Število enot med mrežnimi črtami prvokotnimi na x-os."
 
-#, fuzzy
 msgid "Determine the tick unit automatically."
-msgstr "Samodejna nastavitem merila oznak."
+msgstr "Samodejna nastavitev merila oznak."
 
 msgid "Auto tick"
 msgstr "Samodejno"
 
-#, fuzzy
 msgid "Set the grid unit to the same as the tick unit."
-msgstr "Nastavi merilo mreže enako kot merilo oznak. "
+msgstr "Nastavi merilo mreže na enako kot merilo oznak. "
 
 msgid "Auto grid"
 msgstr "Samodejno"
 
-#, fuzzy
 msgid "Show tick marks on the x-axis."
 msgstr "Prikaži oznake na x-osi."
 
 msgid "Show ticks"
 msgstr "Prikaži kljukice"
 
-#, fuzzy
 msgid "Show units on the selected axis as a fraction multiplied by pi."
 msgstr "Prikaže enote an osi kot ulomek pomnožen s pi."
 
@@ -1524,19 +1380,15 @@ msgstr "Število enot med oznakami y-osi."
 msgid "Show units on the y-axis."
 msgstr "Prikaži enote na y osi."
 
-#, fuzzy
-msgid ""
-"Show the label at the top of the main window, to the right of the y-axis."
-msgstr "Prikaži oznako na vrhu okna desno od y osi."
+msgid "Show the label at the top of the main window, to the right of the y-axis."
+msgstr "Prikaži oznako na vrhu glavnega okna desno od y-osi."
 
-#, fuzzy
 msgid "The y-axis will intersect with the x-axis at this value."
-msgstr "y-os bo sekala x-os na tej vrednosti."
+msgstr "y-os bo sekala x-os v tej vrednosti."
 
 msgid "Units between the grid lines perpendicular to the y-axis."
 msgstr "Število enot med mrežnimi črtami prvokotnimi na y-os."
 
-#, fuzzy
 msgid "Show tick marks on the y-axis."
 msgstr "Prikaži oznake na y-osi."
 
@@ -1549,12 +1401,8 @@ msgstr "Nastavitve"
 msgid "Title:"
 msgstr "Ime:"
 
-msgid ""
-"Choose if you want to show the axes, and if you want to show them crossed or "
-"at the left and bottom of the image."
-msgstr ""
-"Izberite ali hočete prikazati koordinatni sistem in ali hočete da bo "
-"prekrižan na sredini ali v levem spodnjem kotu slike."
+msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
+msgstr "Izberite ali hočete prikazati koordinatni sistem in ali hočete da bo prekrižan na sredini ali v levem spodnjem kotu slike."
 
 msgid "Axes style"
 msgstr "Slog osi"
@@ -1568,12 +1416,8 @@ msgstr "Križ"
 msgid "Boxed"
 msgstr "Obdano"
 
-#, fuzzy
-msgid ""
-"Choose if trigonometric functions should calculate in radians or degrees."
-msgstr ""
-"Izberite ali bodo trigonometrične funkcije računane v radianih ali v "
-"stopinjah."
+msgid "Choose if trigonometric functions should calculate in radians or degrees."
+msgstr "Izberite ali bodo trigonometrične funkcije računane v radianih ali v stopinjah."
 
 msgid "Trigonometry"
 msgstr "Koti"
@@ -1596,12 +1440,8 @@ msgstr "Izberite, kje bo prikazana legenda."
 msgid "Legend placement"
 msgstr "Položaj legende"
 
-msgid ""
-"Check this to use complex numbers for calculations. Notice that this will "
-"slow graphing down."
-msgstr ""
-"Obkljukajte, če hočete pri račuananju uporabljati kompleksna števila. Ta "
-"možnost bo upočasnila risanje grafov."
+msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
+msgstr "Obkljukajte, če hočete pri račuananju uporabljati kompleksna števila. Ta možnost bo upočasnila risanje grafov."
 
 msgid "Calculate with complex numbers"
 msgstr "Računaj s kompleksnimi števili."
@@ -1621,17 +1461,14 @@ msgstr "Barva osi:"
 msgid "Background color:"
 msgstr "Barva ozadja:"
 
-#, fuzzy
 msgid "Select the color of the image background."
-msgstr "Izberi barvo točk."
+msgstr "Izberite barvo ozadja slike."
 
-#, fuzzy
 msgid "Select the color of the axes."
-msgstr "Izberi barvo točk."
+msgstr "Izberite barvo osi."
 
-#, fuzzy
 msgid "Select the color of the grid lines."
-msgstr "Izberi barvo črt."
+msgstr "Izberite barvo mrežnih črt."
 
 msgid "Fonts"
 msgstr "Pisava"
@@ -1645,9 +1482,8 @@ msgstr "Pisava oznak:"
 msgid "Legend font:"
 msgstr "Pisava legende:"
 
-#, fuzzy
 msgid "Select the font used to show the labels on the axes."
-msgstr "Izberite pisavo za prikaz oznak na oseh."
+msgstr "Izberite pisavo za besedilne oznake osi."
 
 msgid "Select the font used to show the numbers on the axes."
 msgstr "Izberite pisavo za prikaz števil na oseh."
@@ -1667,30 +1503,23 @@ msgstr "Razveljavitve:"
 msgid "Language:"
 msgstr "Jezik:"
 
-#, fuzzy
 msgid "Font scale:"
-msgstr "Velikost:"
+msgstr "Merilo pisave:"
 
 msgid "Number of decimals used when results are shown."
 msgstr "Število decimalnih mest v rezultatih."
 
-#, fuzzy
 msgid "Associate *.grf files with Graph."
 msgstr "Naredi Graph privzet program za odpiranje *.grf datotek."
 
 msgid "Associate .grf files"
 msgstr "Privzemi .grf datoteke"
 
-#, fuzzy
 msgid "The number of most recent used files shown in the File menu."
-msgstr "Število prikazanih nedavnih datotek v meniju datoteka."
+msgstr "Število prikazanih nedavnih datotek v meniju Datoteka."
 
-msgid ""
-"Save window position when the program quits. This setting is used the next "
-"time the program is used.|Save window state on exit."
-msgstr ""
-"Shrani položaj okna ob izhodu programa. Te nastavitve bodo uporabljene ob "
-"naslednji uporabi programa.|Shrani stanje okna ob izhodu."
+msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
+msgstr "Shrani položaj okna ob izhodu programa. Te nastavitve bodo uporabljene ob naslednji uporabi programa.|Shrani stanje okna ob izhodu."
 
 msgid "Save workspace on exit"
 msgstr "Shrani delo ob izhodu iz programa."
@@ -1710,7 +1539,6 @@ msgstr "Pravokotna"
 msgid "Polar"
 msgstr "Polarna"
 
-#, fuzzy
 msgid "Show the tooltip when the cursor is over an item."
 msgstr "Pokaži nasvet, ko je miškin kazalec nad nečem."
 
@@ -1718,28 +1546,19 @@ msgid "Show tooltip"
 msgstr "Pokaži nasvet"
 
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
-msgstr ""
-"Maksimalno število shranjenih razveljavitvenih korakov. Nastavite na 0 za "
-"onemogočenje razveljavljanja."
+msgstr "Maksimalno število shranjenih razveljavitvenih korakov. Nastavite na 0 za onemogočenje razveljavljanja."
 
-msgid ""
-"If checked the program will contact a web server when the program is started "
-"to see if a newer version is available."
-msgstr ""
-"Če je obkljukano, se bo program povezal s spletnim strežnikom vsakič, ko se "
-"bo program zagnal in preveril, če je na voljo nova različica programa."
+msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
+msgstr "Če je obkljukano, se bo program povezal s spletnim strežnikom vsakič, ko se bo program zagnal in preveril, če je na voljo nova različica programa."
 
 msgid "Check for new version of Graph at startup"
 msgstr "Preveri za novo verzijo Graph-a ob zagonu."
 
-#, fuzzy
 msgid "Select the language to use for the user interface."
-msgstr "Izberite slog senc."
+msgstr "Izberite jezik za uporabniški vmesnik."
 
-msgid ""
-"This is used to scale the user interface if you are having problems reading "
-"the text."
-msgstr ""
+msgid "This is used to scale the user interface if you are having problems reading the text."
+msgstr "To se uporabi za povečevanje uporabniškega vmesnika, če je besedilo težko berljivo."
 
 msgid "Insert function"
 msgstr "Vstavi funkcijo"
@@ -1771,14 +1590,9 @@ msgstr "Število računskih korakov za izris grafa."
 msgid "Draw type:"
 msgstr "Slog risanja:"
 
-msgid ""
-"Choose Lines if you want the calculated points for the graph to be "
-"connected. Choose Dots if you only want to show a dot at each point."
-msgstr ""
-"Izberite Črte, če hočete, da bo črta grafa neprekinjena in Pike če hočete da "
-"bo črta grafa točkasta."
+msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
+msgstr "Izberite Črte, če hočete, da bo črta grafa neprekinjena in Pike če hočete da bo črta grafa točkasta."
 
-#, fuzzy
 msgid "Automatic"
 msgstr "Samodejno"
 
@@ -1800,36 +1614,29 @@ msgstr "Velikost:"
 msgid "Font color:"
 msgstr "Barva:"
 
-#, fuzzy
 msgid "Text size."
-msgstr "Velikost besedila"
+msgstr "Velikost besedila."
 
 msgid "Text string"
 msgstr "Besedilo"
 
-#, fuzzy
 msgid "Insert symbol (Ctrl+G)"
-msgstr "Vstavi vrstico"
+msgstr "Vstavi simbol (Ctrl+G)"
 
-#, fuzzy
 msgid "Insert object"
-msgstr "Vstavi objekt..."
+msgstr "Vstavi objekt"
 
-#, fuzzy
 msgid "Bold (Ctrl+B)"
 msgstr "Krepko (Ctrl-B)"
 
-#, fuzzy
 msgid "Italic (Ctrl+I)"
 msgstr "Ležeče (Ctrl-I)"
 
-#, fuzzy
 msgid "Underline (Ctrl+U)"
 msgstr "Podčrtano (Ctrl-U)"
 
-#, fuzzy
 msgid "Strikethrough (Ctrl+S)"
-msgstr "Pod črto (Ctrl-S)"
+msgstr "Prečrtano (Ctrl-S)"
 
 msgid "Superscript (Ctrl++)"
 msgstr "Nadpisano (Ctrl++)"
@@ -1837,29 +1644,23 @@ msgstr "Nadpisano (Ctrl++)"
 msgid "Subscript (Ctrl+=)"
 msgstr "Podpisano (Ctrl+=)"
 
-#, fuzzy
 msgid "Align left (Ctrl+L)"
 msgstr "Poravnaj levo (Ctrl-L)"
 
-#, fuzzy
 msgid "Center (Ctrl+E)"
 msgstr "Sredina (Ctrl-E)"
 
-#, fuzzy
 msgid "Align right (Ctrl+R)"
 msgstr "Poravnaj desno (Ctrl-R)"
 
-#, fuzzy
 msgid "Text font."
-msgstr "Pisava"
+msgstr "Pisava."
 
-#, fuzzy
 msgid "Text color."
-msgstr "Barva besedila"
+msgstr "Barva besedila."
 
-#, fuzzy
 msgid "Select background color of the text label."
-msgstr "Izberi piasvo za naslov."
+msgstr "Izberite barvo ozadja besedilne oznake."
 
 msgid "Undo last action."
 msgstr "Razveljavi zadnjo potezo"
@@ -1900,9 +1701,8 @@ msgstr "Konstanta"
 msgid "Value"
 msgstr "Vrednost"
 
-#, fuzzy
 msgid "Select a function or tangent to evaluate."
-msgstr "Izberite funkcijo ali tangento ki jo želite ovrednotiti."
+msgstr "Izberite funkcijo ali tangento, ki jo želite ovrednotiti."
 
 msgid "Error"
 msgstr "Napaka"
@@ -1982,10 +1782,8 @@ msgstr "Vrednotenje spodletelo."
 msgid "Argument produced a function result with total loss of precision."
 msgstr "Argument funkcije je povzročil popolnoma napačen rezultat."
 
-msgid ""
-"The custom function/constant '%s' was not found or has the wrong number of "
-"arguments."
-msgstr ""
+msgid "The custom function/constant '%s' was not found or has the wrong number of arguments."
+msgstr "Lastna funkcija/konstanta '%s' ni bila najdena ali ima napačno število argumentov."
 
 msgid "Too many recursive calls."
 msgstr "Preveč rekurzivnih klicev."
@@ -1994,13 +1792,13 @@ msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Nepričakovan operator. Operator '%s' tukaj ne sme biti postavljen."
 
 msgid "Right bracket missing."
-msgstr ""
+msgstr "Manjkajoč zaklepaj."
 
 msgid "Invalid number of arguments supplied for function '%s'"
 msgstr "Neveljavno število danih argumentov k funkciji '%s'"
 
 msgid "Comparison operator misplaced."
-msgstr ""
+msgstr "Primerjalni operator napačno postavljen."
 
 msgid "Invalid number found. Use the format: -5.475E-8"
 msgstr "Najdeno neveljavno število. Uporabite obliko: -5.475E-8"
@@ -2008,11 +1806,9 @@ msgstr "Najdeno neveljavno število. Uporabite obliko: -5.475E-8"
 msgid "String is empty. You need to enter a function."
 msgstr "Vtipkati moraš funkcijo."
 
-#, fuzzy
 msgid "Comma is not allowed here. Use dot as decimal separator."
-msgstr "Vejica ni dovoljena; Za decimalni zapis uporabi piko."
+msgstr "Vejica ni dovoljena. Za decimalni zapis uporabite piko."
 
-#, fuzzy
 msgid "Unexpected end of brackets."
 msgstr "Nepričakovan konec oklepaja."
 
@@ -2034,7 +1830,6 @@ msgstr "Neznan znak: \"%s\""
 msgid "The end of the expression was unexpected."
 msgstr "Nepričakovan konec izraza."
 
-#, fuzzy
 msgid "Error parsing function text."
 msgstr "Napaka pri zapisu funkcije."
 
@@ -2065,20 +1860,15 @@ msgstr "Med računanjem se je zgodila nadalje nedefinirana napaka."
 msgid "No solution found. Try another guess or another model."
 msgstr "Rešitev ni bila najdena. Poizkusite z drugo možnostjo ali modelom"
 
-msgid ""
-"Internal error. Please notify the programmer with as much information as "
-"possible."
-msgstr ""
-"Notranja napaka. Prosimo da obvestite razvijalaca in priložite čim več "
-"podatkov."
+msgid "Internal error. Please notify the programmer with as much information as possible."
+msgstr "Notranja napaka. Prosimo da obvestite razvijalaca in priložite čim več podatkov."
 
 msgid "You need to enter a name for the function/constant."
 msgstr "Vpisati morate ime funkcije/konstante."
 
 msgid ""
 "Invalid function/constant name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always "
-"start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 "In addition you are not allowed to redefine built-in names."
 msgstr ""
 "Neveljavno ime '%s' za funkcijo/konstanto.\n"
@@ -2090,21 +1880,18 @@ msgstr "Vnesti morate ime za argument."
 
 msgid ""
 "Invalid argument name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always "
-"start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 " In addition you are not allowed to use built-in names as argument names."
 msgstr ""
 "Neveljavno ime argumenta '%s'.\n"
 "Ime lahko vsebuje le črke in števke. Začeti se mora s črko.\n"
 "Poleg tega ne smete uporabljati vgrajenih imen za ime argumenta."
 
-#, fuzzy
 msgid "The right bracket is missing."
 msgstr "Majnkajoč zaklepaj"
 
-#, fuzzy
 msgid "Character found after brackets."
-msgstr "Znak najden izven oklepaja"
+msgstr "Znak najden izven oklepaja."
 
 msgid "Symbol \"%s\" defined more than once."
 msgstr "Simbol \"%s\" je definiran večkrat."
@@ -2173,13 +1960,12 @@ msgstr "'%s' mora biti večji od 0."
 msgid "File not found: %s"
 msgstr "Datoteka ne obstaja: %s"
 
-#, fuzzy
 msgid ""
 "Error reading file: %s\n"
 " The file is not a correct Graph file."
 msgstr ""
 "Napaka pri branju datoteke: %s\n"
-"Napačna datoteka."
+" Ni Graph datoteka."
 
 msgid "Unknown error while reading file: %s"
 msgstr "Prišlo je do neznane napake med branjem datoteke: %s"
@@ -2227,11 +2013,10 @@ msgid "Object error"
 msgstr "Napaka na objektu"
 
 msgid "Windows does not have enough resources to save an image that large."
-msgstr ""
+msgstr "Windows nimajo dovolj sredstev za shranjevanje tako velike slike."
 
-#, fuzzy
 msgid "'%1%' must be between %2% and %3%."
-msgstr "'Zadnje datoteke' mora biti med 0 in 9."
+msgstr "'%1%' mora biti med %2% in %3%."
 
 msgid "Confirm delete"
 msgstr "Potrdi brisanje"
@@ -2239,7 +2024,6 @@ msgstr "Potrdi brisanje"
 msgid "This error should not occur. Please report this to the programmer."
 msgstr "Do te napake ne bi smelo priti. Prosimo da obvestite avtorja programa."
 
-#, fuzzy
 msgid "Are you sure you want to delete %s?"
 msgstr "Ste prepričani da želite izbrisati %s"
 
@@ -2249,7 +2033,6 @@ msgstr "Graph datoteke[*.grf]|*.grf|Vse datoteke [*.*]|*.*"
 msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 msgstr "Besedilo [*.txt; *.csv]|*.txt;*.csv|Vse datoteke [*.*]|*.*"
 
-#, fuzzy
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "Ste prepričani, da želite izbrisati model: %s"
 
@@ -2268,31 +2051,17 @@ msgstr "Največja vrednost za t mora biti večja od najmanjše vrednosti."
 msgid "The step value for t must be a number greater than 0."
 msgstr "Velikost koraka za t mora biti številka večja od 0."
 
-msgid ""
-"The minimum value for the x-axis must be greater than 0, when the x-axis is "
-"logarithmic scaled."
-msgstr ""
-"Minimalna vrednost x-osi mora biti večja od 0, ko je na x-osi logaritmično "
-"merilo."
+msgid "The minimum value for the x-axis must be greater than 0, when the x-axis is logarithmic scaled."
+msgstr "Minimalna vrednost x-osi mora biti večja od 0, ko je na x-osi logaritmično merilo."
 
-msgid ""
-"The cross point of the y-axis must be greater than 0, when the x-axis is "
-"logarithmic scaled."
-msgstr ""
-"Presečišče z y-osjo mora biti večje od 0, ko je na x-osi loagritmično merilo."
+msgid "The cross point of the y-axis must be greater than 0, when the x-axis is logarithmic scaled."
+msgstr "Presečišče z y-osjo mora biti večje od 0, ko je na x-osi loagritmično merilo."
 
-msgid ""
-"The minimum value for the y-axis must be greater than 0, when the y-axis is "
-"logarithmic scaled."
-msgstr ""
-"Minimalna vrednost y-osi mora biti večja od 0, ko je na y-osi logaritmično "
-"merilo."
+msgid "The minimum value for the y-axis must be greater than 0, when the y-axis is logarithmic scaled."
+msgstr "Minimalna vrednost y-osi mora biti večja od 0, ko je na y-osi logaritmično merilo."
 
-msgid ""
-"The cross point of the x-axis must be greater than 0, when the y-axis is "
-"logarithmic scaled."
-msgstr ""
-"Presečišče z x-osjo mora biti večje od 0, ko je na y-osi loagritmično merilo."
+msgid "The cross point of the x-axis must be greater than 0, when the y-axis is logarithmic scaled."
+msgstr "Presečišče z x-osjo mora biti večje od 0, ko je na y-osi loagritmično merilo."
 
 msgid "'Recent files' must be between 0 and 9."
 msgstr "'Zadnje datoteke' mora biti med 0 in 9."
@@ -2309,9 +2078,7 @@ msgstr "Širina mora biti celo število in večje od 0."
 msgid "Error in width"
 msgstr "Napaka v širini"
 
-msgid ""
-"The end of interval must be greater than the start of interval and %s must "
-"be greater than 0."
+msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
 msgstr "Konec intervala mora biti večji od začetka in %s mora biti večji od 0."
 
 msgid "The maximum length of text has been reached."
@@ -2327,7 +2094,7 @@ msgid "Checking for newer version..."
 msgstr "Iskanje nove različice..."
 
 msgid "Abort printing?"
-msgstr ""
+msgstr "Prekinem tiskanje?"
 
 msgid "Calculate area"
 msgstr "Izračunaj območje"
@@ -2356,7 +2123,6 @@ msgstr "'%s' mora biti celo število med 0 in 1000."
 msgid "Printing error"
 msgstr "Napaka pri tiskanju"
 
-#, fuzzy
 msgid "An unknown error occurred while printing."
 msgstr "Med tiskanjem je prišlo do neznane napake."
 
@@ -2369,9 +2135,7 @@ msgstr "Vsaka točka potrebuje x in y koordinato"
 msgid "\"%s\" is not a valid number."
 msgstr "\"%s\" ni veljavno število."
 
-msgid ""
-"You didn't add any points. You need to specify some x- and y-coordinates in "
-"the grid."
+msgid "You didn't add any points. You need to specify some x- and y-coordinates in the grid."
 msgstr "Niste dodali točk. Določiti morate nekaj x in y koordinat v mreži."
 
 msgid "Edit point series"
@@ -2430,7 +2194,6 @@ msgstr ""
 "Datoteke, s to različico programa, ni mogoče odpreti.\n"
 "Za to datoteko potrebujete vsaj Graph %s. "
 
-#, fuzzy
 msgid ""
 "This file was saved by an outdated version of Graph,\n"
 "and it cannot be opened by the current version."
@@ -2441,396 +2204,185 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"If you don't want to be asked again, this feature may be disabled from the "
-"Edit|Options dialog."
+"If you don't want to be asked again, this feature may be disabled from the Edit|Options dialog."
 msgstr ""
 "\n"
 "\n"
-"Če nočete biti še enkrat vprašani, lahko to funkcijo onemogočite v Uredi|"
-"Možnosti pogovornem oknu."
+"Če nočete biti še enkrat vprašani, lahko to funkcijo onemogočite v Uredi|Možnosti pogovornem oknu."
 
 msgid "Edit relation"
 msgstr "Uredi relacijo"
 
-#, fuzzy
 msgid "Commands"
-msgstr "Pripomba:"
+msgstr "Ukazi"
 
 msgid "(All Commands)"
-msgstr ""
+msgstr "(Vsi Ukazi)"
 
-msgid ""
-"To add a command to a toolbar simply select a category and drag the command "
-"out of this dialog box to a toolbar."
-msgstr ""
+msgid "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
+msgstr "Za dodajanje ukaza v orodno vrstico preprosto izberite kategorijo in povlecite ukaz iz pogovornega okna v orodno vrstico."
 
-#, fuzzy
 msgid "Edit f'(x)"
-msgstr "Vstavi f'(x)"
+msgstr "Uredi f'(x)"
 
-#, fuzzy
 msgid "Edit trendline"
-msgstr "Uredi relacijo"
+msgstr "Uredi trendno črto"
 
-#, fuzzy
-msgid ""
-"This Tip of the day can give you a lot of information about the program that "
-"most users don't know."
-msgstr ""
-"Nasvet dneva vam lahko pove veliko informacij o programu, ki jih večina "
-"uprabnikov ne ve."
+msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
+msgstr "Nasvet dneva vam lahko pove veliko informacij o programu, ki jih večina uprabnikov ne ve."
 
-#, fuzzy
-msgid ""
-"You can send suggestions for future versions, bug reports and comments to "
-"graph@padowan.dk"
-msgstr ""
-"Predloge za bodoče različice, poročila o hroščih in komentarje lahko "
-"pošljete na graph@padowan.dk."
+msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+msgstr "Predloge za bodoče različice, poročila o hroščih in komentarje lahko pošljete na graph@padowan.dk."
 
-#, fuzzy
-msgid ""
-"You can customize the toolbar by right clicking on it and select 'Customize "
-"toolbar'."
-msgstr ""
-"Orodno vrstico lahko prilagodite tako, da kliknete nanjo z desnim miškinim "
-"gumbom in izberete 'Prilagodi orodno vrstico'."
+msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
+msgstr "Orodno vrstico lahko prilagodite tako, da kliknete nanjo z desnim miškinim gumbom in izberete 'Prilagodi orodno vrstico'."
 
-msgid ""
-"Instead of deleting a function you can make it invisible by right clicking "
-"on it in the function list and removing the check at the 'Visible' menu item."
-msgstr ""
-"Namesto da funkcijo zbrišete jo lahko naredite nevidno, tako da z desnim "
-"gumbom miške kliknite nanjo v spisku funkcij in in odkljukate 'Vidno'."
+msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
+msgstr "Namesto da funkcijo zbrišete jo lahko naredite nevidno, tako da z desnim gumbom miške kliknite nanjo v spisku funkcij in in odkljukate 'Vidno'."
 
 msgid "You can paste images into a text label."
 msgstr "V tekstovno oznako lahko prilepite slike."
 
-msgid ""
-"Text labels can contain any kind of OLE objects, for example Microsoft "
-"Equation. When editing a label right click in the editing area and select "
-"'Insert object'."
-msgstr ""
-"Besedilne oznake lahko vsebujejo kakršnokoli obliko OLE objektov, na primer "
-"Microsoft Equation. Ko urejate oznako, kliknite v območje urejanja, kliknte "
-"z desnim miškinim gumbom in izberite \"Vstavi objekt\"."
+msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
+msgstr "Besedilne oznake lahko vsebujejo kakršnokoli obliko OLE objektov, na primer Microsoft Equation. Ko urejate oznako, kliknite v območje urejanja, kliknte z desnim miškinim gumbom in izberite \"Vstavi objekt\"."
 
-msgid ""
-"You can export points from a point series to a file that can be read by "
-"other programs, for example Microsoft Excel. When editing the point series "
-"select the points, right click and choose 'Export to file'."
-msgstr ""
-"Točke iz zaporedja točk lahko izvozite v datoteko, ki jo lahko berejo drugi "
-"programi, kot naprimer Microsoft Excel. Ko urejate zaporedje točk izberite "
-"točke, kliknite z desnim miškinim gumbom in izberite 'Izvozi v datoteko'."
+msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
+msgstr "Točke iz zaporedja točk lahko izvozite v datoteko, ki jo lahko berejo drugi programi, kot naprimer Microsoft Excel. Ko urejate zaporedje točk izberite točke, kliknite z desnim miškinim gumbom in izberite 'Izvozi v datoteko'."
 
-#, fuzzy
-msgid ""
-"A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)"
-"=t or as the relation x=5."
-msgstr ""
-"Navpično črto na x=5 lahko narišete kot funkcijo va parametrični obliki x(t)"
-"=5, y(t)=t ali kot relacijo x=5"
+msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
+msgstr "Navpično črto na x=5 lahko narišete kot funkcijo va parametrični obliki x(t)=5, y(t)=t ali kot relacijo x=5"
 
-msgid ""
-"You can use Zoom|Square to make the axes look equally scaled. This is "
-"especially useful when drawing circles and similar functions."
-msgstr ""
-"Uporabite lahko 'Zoom|Izenači' da merilo osi poravnate. To je še posebej "
-"uprabno, ko rišete kroge ali podobne si funkcije."
+msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
+msgstr "Uporabite lahko 'Zoom|Izenači' da merilo osi poravnate. To je še posebej uprabno, ko rišete kroge ali podobne si funkcije."
 
 msgid "You can find a list of all available functions in the help."
 msgstr "Seznam vseh možnih funkcij lahko dobite v pomoči."
 
-msgid ""
-"You can combine two functions to one using 'if'. For example the function f"
-"(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
-msgstr ""
-"Dve funkciji lahko združite s besedo 'if'. Naprimer funkcijo f(x)=x for x<1 "
-"in f(x)=x^2 for x>=1 lahko zapišemo kot f(x)=if(x<1, x, x^2)."
+msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+msgstr "Dve funkciji lahko združite s besedo 'if'. Naprimer funkcijo f(x)=x for x<1 in f(x)=x^2 for x>=1 lahko zapišemo kot f(x)=if(x<1, x, x^2)."
 
-msgid ""
-"You can import the contents of another Graph file into the current "
-"coordinate system using 'File|Import|Graph file'."
-msgstr ""
-"Uvozite lahko vsebino neke Graph datoteke v trenutni koordinatni sistem s "
-"uporabo 'Datoteka|Uvozi|Graph datoteka'."
+msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
+msgstr "Uvozite lahko vsebino neke Graph datoteke v trenutni koordinatni sistem s uporabo 'Datoteka|Uvozi|Graph datoteka'."
 
-msgid ""
-"If you check 'Save as default' in the Axes dialog the current settings will "
-"be used as default when creating new files."
-msgstr ""
-"Obkljukajte 'Shrani kot privzeto' v nastavitvah osi, da se bodo vaše "
-"nastavitve uporabljale kot privzete ob naslednjem delu."
+msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new files."
+msgstr "Obkljukajte 'Shrani kot privzeto' v nastavitvah osi, da se bodo vaše nastavitve uporabljale kot privzete ob naslednjem delu."
 
-msgid ""
-"While you hold down the Ctrl key, you can use the arrow keys to move the "
-"system."
-msgstr ""
-"Medtem ko držite tipko Ctrl pritisnjeno lahko uporabite tipke s puščicami za "
-"premikanje koordinatnega sistema."
+msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
+msgstr "Medtem ko držite tipko Ctrl pritisnjeno lahko uporabite tipke s puščicami za premikanje koordinatnega sistema."
 
-msgid ""
-"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
-"and out."
-msgstr ""
-"Medtem ko držite tipko Ctrl pritisnjeno lahko uporabite tipki + in - za "
+msgid "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."
+msgstr "Medtem ko držite tipko Ctrl pritisnjeno lahko uporabite tipki + in - za "
 
-msgid ""
-"You can use the scroll button on your mouse to zoom in and out at the "
-"position of the mouse cursor."
-msgstr ""
-"Z vrtljivim gumbom na miški lahko povečate ali pomanjšate točko kjer je "
-"kurzor. "
+msgid "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."
+msgstr "Z vrtljivim gumbom na miški lahko povečate ali pomanjšate točko kjer je kurzor. "
 
-msgid ""
-"If you don't want an item shown in the legend, you can right click on the "
-"item in the function list and deselect 'Show in legend'."
-msgstr ""
-"Če nočete da je nek predmet viden v legendi, z desnim gumbom miške kliknite "
-"nanj v spisku in odkljukajte 'Prikaži v legendi'."
+msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
+msgstr "Če nočete da je nek predmet viden v legendi, z desnim gumbom miške kliknite nanj v spisku in odkljukajte 'Prikaži v legendi'."
 
-msgid ""
-"If you want the axes shown to the left and bottom of the image, you can "
-"choose Axes style as Boxed in the Settings tab of the Axes dialog."
-msgstr ""
-"Če hočete, da sta osi prikazani na levi strani in na dnu slike, lahko "
-"izberete Slog osi kot Obdano v jezičku Nastavitve v pogovornem oknu Osi."
+msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
+msgstr "Če hočete, da sta osi prikazani na levi strani in na dnu slike, lahko izberete Slog osi kot Obdano v jezičku Nastavitve v pogovornem oknu Osi."
 
-#, fuzzy
-msgid ""
-"Graph can save the shown coordinate system in five different image formats: "
-"bmp, emf, png, jpg and pdf."
-msgstr ""
-"Graph lahko shrani prikazan koordinatni sistem kot sliko v štirih različnih "
-"formatih: bmp, emf, png in jpg"
+msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
+msgstr "Graph lahko shrani prikazan koordinatni sistem kot sliko v petih različnih formatih: bmp, emf, png, jpg in pdf"
 
-msgid ""
-"You can use 'Edit|Copy image' to copy the coordinate system to the clipboard "
-"and paste it into another program."
-msgstr ""
-"Uporabite 'Uredi|Kopiraj sliko' za kopiranje koordinatnega sistema v "
-"odložišče in potem prilepite sliko v drug program."
+msgid "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."
+msgstr "Uporabite 'Uredi|Kopiraj sliko' za kopiranje koordinatnega sistema v odložišče in potem prilepite sliko v drug program."
 
-msgid ""
-"You can open a saved grf-file in a new instance of the program by double "
-"clicking on it in Explorer."
-msgstr ""
-"S dvoklikom miške na shranjeno grf-datoteko, jo lahko odprete kot nov primer "
-"Graph-a."
+msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
+msgstr "S dvoklikom miške na shranjeno grf-datoteko, jo lahko odprete kot nov primer Graph-a."
 
-msgid ""
-"You can drag a grf-file from explorer into an open instance of Graph to open "
-"the file."
-msgstr ""
-"Če hočete odpreti grf-datoteko jo lahko povlečete iz Raziskovalca v odprt "
-"primer Graph-a.   "
+msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
+msgstr "Če hočete odpreti grf-datoteko jo lahko povlečete iz Raziskovalca v odprt primer Graph-a.   "
 
-msgid ""
-"Graph will remember the size and placement of the main window between "
-"executions. This can be disabled from the Options dialog."
-msgstr ""
-"Graph si zapomni velikost in postavitev glavnega okna med izvršitvami. To "
-"lahko onemogočite v pogovornem oknu Možnosti."
+msgid "Graph will remember the size and placement of the main window between executions. This can be disabled from the Options dialog."
+msgstr "Graph si zapomni velikost in postavitev glavnega okna med izvršitvami. To lahko onemogočite v pogovornem oknu Možnosti."
 
-msgid ""
-"Calc|Table can be used to create a table with evaluation values for a "
-"function."
-msgstr ""
-"Če hočete ustvariti tabelo z vrednostmi funkcije uporabite 'Računaj|Tabela'."
+msgid "Calc|Table can be used to create a table with evaluation values for a function."
+msgstr "Če hočete ustvariti tabelo z vrednostmi funkcije uporabite 'Računaj|Tabela'."
 
-msgid ""
-"A part or the whole evaluation table can be exported to a file by right "
-"clicking and selecting 'Export to file'. It can afterwards be opened in "
-"other programs like Microsoft Excel."
-msgstr ""
-"Del celotne tabele vrednosti lahko izvozite v datoteko tako, da kliknete "
-"desni miškin gumb in izberete 'Izvozi v datoteko'. Datoteko lahko potem "
-"odprete v drugih programih, kot je Microsoft Excel."
+msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
+msgstr "Del celotne tabele vrednosti lahko izvozite v datoteko tako, da kliknete desni miškin gumb in izberete 'Izvozi v datoteko'. Datoteko lahko potem odprete v drugih programih, kot je Microsoft Excel."
 
-msgid ""
-"Data from the evaluation table can be copied to another program like "
-"Microsoft excel using the clipboard."
-msgstr ""
-"Podatke iz tabele vrednosti lahko kopirate v drugi program, kot je Microsoft "
-"Excel, preko odložišča."
+msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
+msgstr "Podatke iz tabele vrednosti lahko kopirate v drugi program, kot je Microsoft Excel, preko odložišča."
 
-msgid ""
-"The data points in a point series can be copied to and from other programs "
-"like Microsoft Excel through the clipboard."
-msgstr ""
-"Podatkovne točke in zaporedje točk se lahko kopira v in iz drugih programov, "
-"kot je Microsoft Excel, preko odložišča."
+msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel through the clipboard."
+msgstr "Podatkovne točke in zaporedje točk se lahko kopira v in iz drugih programov, kot je Microsoft Excel, preko odložišča."
 
-msgid ""
-"Functions can be copied from one instance of the program to another through "
-"the clipboard using Edit|Copy."
-msgstr ""
-"Funkcije lahko kopirate iz odprtega primera enega programa v drugega preko "
-"odložišča z uporabo 'Uredi|Kopiraj'."
+msgid "Functions can be copied from one instance of the program to another through the clipboard using Edit|Copy."
+msgstr "Funkcije lahko kopirate iz odprtega primera enega programa v drugega preko odložišča z uporabo 'Uredi|Kopiraj'."
 
 msgid "You can always undo the last thing you did using Edit|Undo."
-msgstr ""
-"Vedno lahko razveljavite zadnjo stvar, ki ste jo naredili z Uredi|Razveljavi."
+msgstr "Vedno lahko razveljavite zadnjo stvar, ki ste jo naredili z Uredi|Razveljavi."
 
-msgid ""
-"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
-"have undone."
-msgstr ""
-"Če pomotoma uporabite Uredi|Razveljavi lahko uporabite Uredi|Uveljavi da "
-"obnovite kar ste razveljavili."
+msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
+msgstr "Če pomotoma uporabite Uredi|Razveljavi lahko uporabite Uredi|Uveljavi da obnovite kar ste razveljavili."
 
 msgid "In the Axes dialog you can add a title to the coordinate system."
 msgstr "V nastavitvah 'Uredi|Osi' lahko dodate ime koordinatnemu sistemu."
 
-msgid ""
-"You can import point series from files saved by other programs, like "
-"Microsoft Excel."
-msgstr ""
-"Zaporedje točk lahko uvozite tudi iz datotek, shranjenih z drugimi programi, "
-"kot je Microsoft Excel."
+msgid "You can import point series from files saved by other programs, like Microsoft Excel."
+msgstr "Zaporedje točk lahko uvozite tudi iz datotek, shranjenih z drugimi programi, kot je Microsoft Excel."
 
-msgid ""
-"When inserting a point series you can copy data from programs like Microsoft "
-"Excel, and paste the data into the grid in Graph."
-msgstr ""
-"Ko vstavljate zaporedje točk, lahko kopirate podatke iz programov kot je "
-"Microsoft Excel in jih prilepite v mrežo v Graph-u."
+msgid "When inserting a point series you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
+msgstr "Ko vstavljate zaporedje točk, lahko kopirate podatke iz programov kot je Microsoft Excel in jih prilepite v mrežo v Graph-u."
 
-msgid ""
-"You can use 'Zoom|All points' to change the coordinate system so all point "
-"series are visible."
-msgstr ""
-"Uporabite lahko 'Zoom|Vse točke', da spremenite merilo koordinatnega "
-"sistema, da bo vidno zaporedje točk."
+msgid "You can use 'Zoom|All points' to change the coordinate system so all point series are visible."
+msgstr "Uporabite lahko 'Zoom|Vse točke', da spremenite merilo koordinatnega sistema, da bo vidno zaporedje točk."
 
-msgid ""
-"You can use Zoom|Fit to change the coordinate system to show the selected "
-"function or point series."
-msgstr ""
-"Uporabite lahko 'Zoom|Na graf', da spremenite merilo koordinatnega sistema, "
-"da bo vidna funkcija ali pa zaporedje točk."
+msgid "You can use Zoom|Fit to change the coordinate system to show the selected function or point series."
+msgstr "Uporabite lahko 'Zoom|Na graf', da spremenite merilo koordinatnega sistema, da bo vidna funkcija ali pa zaporedje točk."
 
-msgid ""
-"When you hold down the Shift key you can drag the coordinate system around "
-"with the mouse."
-msgstr ""
-"Ko držite tipko Shift pritisnjeno, lahko z miško premikate koordinatni "
-"sistem."
+msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
+msgstr "Ko držite tipko Shift pritisnjeno, lahko z miško premikate koordinatni sistem."
 
-msgid ""
-"You can use Calc|Evaluate to find intersections between functions, crossings "
-"with the axes and extremum points."
-msgstr ""
-"Uporabite lahko 'Računaj|Ovrednoti' za iskanje presečišč funkcij, ničle in "
-"ekstreme."
+msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
+msgstr "Uporabite lahko 'Računaj|Ovrednoti' za iskanje presečišč funkcij, ničle in ekstreme."
 
-msgid ""
-"When a point series is selected you can add points to it by clicking on the "
-"image while you hold down the Ctrl key."
-msgstr ""
-"Ko je zaporedje točk izbrano, ji lahko dodate točke s klikanjem na sliko, "
-"medtem ko držite Ctrl tipko."
+msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
+msgstr "Ko je zaporedje točk izbrano, ji lahko dodate točke s klikanjem na sliko, medtem ko držite Ctrl tipko."
 
-msgid ""
-"You can use a relation to plot any inequality, for example sin(x^2) < cos"
-"(y^2)"
-msgstr ""
-"Za izris neenačbe lahko uporabite relacijo, na primer sin(x^2) < cos(y^2)"
+msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
+msgstr "Za izris neenačbe lahko uporabite relacijo, na primer sin(x^2) < cos(y^2)"
 
-msgid ""
-"You can use a relation to plot any equation, for example x*sin x = y*cos y"
+msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
 msgstr "Za izris enačbe lahko uproabite relacijo, naprimer x*sin x = y*cos y"
 
-msgid ""
-"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
-"same order they appear in the function list to the left."
-msgstr ""
-"Elementi (funkcije, sence, oznake, relacije, itd.) se rišejo v istem "
-"zaporedju kot so prikazane na spisku funkcij na levi."
+msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
+msgstr "Elementi (funkcije, sence, oznake, relacije, itd.) se rišejo v istem zaporedju kot so prikazane na spisku funkcij na levi."
 
-msgid ""
-"You can move the selected element in the function list either by dragging it "
-"with the mouse or with the arrow up/down keys while ALT is held down."
-msgstr ""
-"Izbran element v spisku funkcij lahko premikate z vlečenjem z miško ali pa s "
-"tipkama gor/dol medtem ko držite tipko ALT."
+msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
+msgstr "Izbran element v spisku funkcij lahko premikate z vlečenjem z miško ali pa s tipkama gor/dol medtem ko držite tipko ALT."
 
-#, fuzzy
-msgid ""
-"You can show functions and other elements behind the axes by moving the "
-"element above the axes in the function list to the left. To move shadings "
-"and tangents you will have to move the functions they are attached to."
-msgstr ""
-"Sence in druge elemente lahko prikažete za osmi, tako da elemente premaknete "
-"nad osi na spisku funkcij levo."
+msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
+msgstr "Funkcije in ostale elemente lahko skrijeta za osi, tako da jih na spisku funkcij ne levi pomaknete nad osi. Če hočete premakniti sence in tangente morate premakniti funkcije na katere so pritrjene."
 
-msgid ""
-"Custom text labels may be attached to the axes by right clicking on the "
-"label and selecting a placement from the context menu."
-msgstr ""
-"Lastne besedilne oznake lahko nalepite na osi tako da, kliknete na oznako z "
-"desnim gumbom in izberete mesto v meniju 'Postavitev'."
+msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
+msgstr "Lastne besedilne oznake lahko nalepite na osi tako da, kliknete na oznako z desnim gumbom in izberete mesto v meniju 'Postavitev'."
 
-msgid ""
-"The legend may be moved freely with the mouse or attached to one of the "
-"corners by right clicking on the legend and choose a placement from the "
-"context menu."
-msgstr ""
-"Legendo lahko prosto premikate z miško ali pa jo pritrdite v kot, tako da "
-"kliknte na legendo s desnim gumbom in izberete mesto iz menija 'Postavitev', "
-"ki se vam odpre."
+msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
+msgstr "Legendo lahko prosto premikate z miško ali pa jo pritrdite v kot, tako da kliknte na legendo s desnim gumbom in izberete mesto iz menija 'Postavitev', ki se vam odpre."
 
-msgid ""
-"As an alternative to transparent you can choose a custom background color "
-"for labes. This is especially useful for labels drawn over shades."
-msgstr ""
-"Kot alternativa transparentni lahko izberete lastno barvo ozadja za oznake. "
-"To je uporabno, ko se oznake rišejo čez sence."
+msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shades."
+msgstr "Kot alternativa transparentni lahko izberete lastno barvo ozadja za oznake. To je uporabno, ko se oznake rišejo čez sence."
 
-msgid ""
-"In most places like point series, axes settings, function ranges, etc., you "
-"can use expressions like pi/4 instead of numbers."
-msgstr ""
-"Uporabite lahko izraze kot je 'pi/4' namesto števil pri pisanju zaporedij "
-"točk, nastavitvah mreže, itd."
+msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
+msgstr "Uporabite lahko izraze kot je 'pi/4' namesto števil pri pisanju zaporedij točk, nastavitvah mreže, itd."
 
-msgid ""
-"You can create your own custom constants under Function|Custom functions for "
-"use in functions, point series, etc. For example g=9.80665, R=8.31"
-msgstr ""
-"Ustvarite lahko lastne konstante v meniju Funkcija|Lastne funkcije, ki jih "
-"lahko uporabite v funkcijah, zaporedjih točk, itd. Na primer g=9.80665, "
-"R=8.31"
+msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
+msgstr "Ustvarite lahko lastne konstante v meniju Funkcija|Lastne funkcije, ki jih lahko uporabite v funkcijah, zaporedjih točk, itd. Na primer g=9.80665, R=8.31"
 
-msgid ""
-"You can create your own custom functions under Function|Custom functions for "
-"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin"
-"(x)/x)"
-msgstr ""
-"Ustvarite lahko lastne funkcije v meniju Funkcija|Lastne funkcije, ki jih "
-"lahko uporabite v funkcijah, relacijah, itd. Na primer sinc(x)=if(x=0, 0, sin"
-"(x)/x)"
+msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
+msgstr "Ustvarite lahko lastne funkcije v meniju Funkcija|Lastne funkcije, ki jih lahko uporabite v funkcijah, relacijah, itd. Na primer sinc(x)=if(x=0, 0, sin(x)/x)"
 
-msgid ""
-"In the Save as image dialog there is an Option button you can use to specify "
-"the image resolution. This is especially useful if you want a high "
-"resolution image."
-msgstr ""
-"V pogovornem oknu Shrani kot sliko je gumb Možnosti kjer lahko nastavite "
-"ločljivost slike. To je še posebej uporabno če hočete sliko z visoko "
-"ločljivostjo."
+msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
+msgstr "V pogovornem oknu Shrani kot sliko je gumb Možnosti kjer lahko nastavite ločljivost slike. To je še posebej uporabno če hočete sliko z visoko ločljivostjo."
 
-msgid ""
-"Point series can have arrows as markers. A point series with arrows as "
-"markers and lines between the points can be used to show vectors."
-msgstr ""
-"Zaporedje točk ima lahko puščice za oznake. S črto povezano zaporedje točk, "
-"ki ima puščice za oznake lahko uporabite za prikaz vektorjev."
+msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
+msgstr "Zaporedje točk ima lahko puščice za oznake. S črto povezano zaporedje točk, ki ima puščice za oznake lahko uporabite za prikaz vektorjev."
 
-#, fuzzy
 msgid "Custom..."
-msgstr "Po meri"
+msgstr "Po meri..."
 
 msgid "Black"
 msgstr "Črno"
@@ -2892,23 +2444,20 @@ msgstr "Bež"
 msgid "Med Gray"
 msgstr "Srednje siva"
 
-#, fuzzy
 msgid "Local"
-msgstr "Turkizna"
+msgstr "Lokalno"
 
 msgid "Global"
-msgstr ""
+msgstr "Globalno"
 
-#, fuzzy
 msgid "Insert"
-msgstr "Vstavi vrstico"
+msgstr "Vstavi"
 
-#, fuzzy
 msgid "Insert symbol"
-msgstr "Vstavi vrstico"
+msgstr "Vstavi simbol"
 
 msgid "Subset:"
-msgstr ""
+msgstr "Podmnožica:"
 
 msgid "Print"
 msgstr "Natisni"
@@ -2928,15 +2477,11 @@ msgstr "Mesto:"
 msgid "Comment:"
 msgstr "Pripomba:"
 
-msgid ""
-"Select the printer to use. The Properties button may be used to change more "
-"advanced settings for the printer."
-msgstr ""
+msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
+msgstr "Izberite tiskalnik, ki ga želite uporabiti. Uporabtei gumb Lastnosti za naprednejše nastavitve tiskanja."
 
-msgid ""
-"Select to print in color (or grayscale if your printer is not a color "
-"printer) or convert all colors to black."
-msgstr ""
+msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
+msgstr "Izberi za barvno tiskanje (oziroma  sivinsko, če nimate barvnega tiskalnika) ali pretvorbo vseh barv v črno."
 
 msgid "Print output"
 msgstr "Natisni rezultate"
@@ -2956,26 +2501,23 @@ msgstr "Levi rob:"
 msgid "Top margin:"
 msgstr "Zgornji rob:"
 
-#, fuzzy
 msgid "Select to place the image on the middle of the page."
-msgstr "Izberite pisavo za prikaz oznak na oseh."
+msgstr "Izberite, če hočete postaviti sliko na sredino strani."
 
 msgid "Center on page"
 msgstr "Sredina strani"
 
-#, fuzzy
 msgid "Enter the image position on the page."
-msgstr "Vtipkajte opis za legendo."
+msgstr "Vpišite položaj slike na strani."
 
 msgid "Number of copies:"
 msgstr "Število kopij:"
 
-#, fuzzy
 msgid "Choose number of copies to print."
-msgstr "Število kopij:"
+msgstr "Izberite koliko kopij želite natisniti."
 
 msgid "Enter percent of original size."
-msgstr ""
+msgstr "Vnesi odstotek izvorne velikosti."
 
 #~ msgid "Symbol '%s' not found."
 #~ msgstr "Simbol '%s' ni bil najden."
@@ -2983,124 +2525,96 @@ msgstr ""
 #, fuzzy
 #~ msgid "Copy the animation to the clipboard."
 #~ msgstr "Kopiraj izbrano besedilo v odložišče."
-
 #~ msgid "Edit options."
 #~ msgstr "Uredi Možnosti"
-
 #~ msgid "Insert a new point series."
 #~ msgstr "Vsatvi novo zaporedje točk."
-
 #~ msgid "Calculates area under the path."
 #~ msgstr "Izračuna območje pod potjo."
-
 #~ msgid "Insert a text label."
 #~ msgstr "Vstavi besedilno oznako."
-
 #~ msgid "Select language to use."
 #~ msgstr "Izberi jezik."
-
 #~ msgid "Cut selected text to the clipboard."
 #~ msgstr "Izreži izbrano besedilo v odložišče."
-
 #~ msgid "End of parenthesis missing."
 #~ msgstr "Konec oklepaja manjka."
 
 #, fuzzy
 #~ msgid "Panel1"
 #~ msgstr "Prekliči"
-
 #~ msgid "Text too long"
 #~ msgstr "Predolgo besedilo"
-
 #~ msgid ""
 #~ "Write a descriptive text to show in the legend, else the inequality will "
 #~ "be used."
 #~ msgstr ""
 #~ "Vpišite opis, ki se bo uporabil v legendi, sicer bo uporabljena neenačba "
 #~ "funkcije."
-
 #~ msgid ""
 #~ "Description shown in the legend. If empty the function equation is used."
 #~ msgstr ""
 #~ "Opis prikazan v legendi. Če je prazna je enčba funkcije že uporabljena."
-
 #~ msgid "Customize"
 #~ msgstr "Prilagodi"
-
 #~ msgid "Actions"
 #~ msgstr "Dejanja"
-
 #~ msgid "Description"
 #~ msgstr "Opis"
-
 #~ msgid "Cate&gories:"
 #~ msgstr "Kate&gorije:"
-
 #~ msgid "A&ctions:"
 #~ msgstr "Ak&cije:"
-
 #~ msgid ""
 #~ "To add actions to your application simply drag and drop from either "
 #~ "Categories or Actions onto an existing ActionBar."
 #~ msgstr ""
 #~ "Da dodate dejanja k vaši aplikaciji, preprosto povlecite in spustite iz "
 #~ "Kategorije ali Akcije na Vrstico dejanj."
-
 #~ msgid "Area..."
 #~ msgstr "Območje..."
-
 #~ msgid "Evaluate..."
 #~ msgstr "Ovrednoti..."
-
 #~ msgid "Are you sure you want to delete the function: %s"
 #~ msgstr "Ste prepričani da želite izbrisati funkcijo: %s"
-
 #~ msgid "Are you sure you want to delete the tangent: %s"
 #~ msgstr "Ste prepričani da želite izbrisati tangento: %s"
 
 #, fuzzy
 #~ msgid "Letter"
 #~ msgstr "Levo"
-
 #~ msgid "Show some frequently asked questions and their answers."
 #~ msgstr "Prikaži pogosto zastavljena vprašanja in njihove odgorvore."
-
 #~ msgid ""
 #~ "Double-click or select box and press space to change the color of the "
 #~ "graph."
 #~ msgstr ""
 #~ "Dvokliknite ali označite kvadratek in pritisnite preslednico za spremembo "
 #~ "barve grafa."
-
 #~ msgid "Check to increase the end coordinate until interception."
 #~ msgstr "Obkljukajte da poveča končne koordinate do izhodišča."
-
 #~ msgid "Increase to interception"
 #~ msgstr "Povečaj do presečišča."
-
 #~ msgid "Check to decrease start coordinate until interception."
 #~ msgstr "Obkljukajte, da zmanjša začetne koordinate do presečišča."
-
 #~ msgid "Decrease to interception"
 #~ msgstr "Zmanjšaj do presečišča."
-
 #~ msgid ""
 #~ "Double-click or select box and press space to change the background color "
 #~ "of the coordinate system."
 #~ msgstr ""
 #~ "Dvokliknite ali označite kvadratek in pritisnite preslednico za spremembo "
 #~ "barve ozadja koordinatnega sistema."
-
 #~ msgid ""
 #~ "Double-click or select box and press space to change the color of the "
 #~ "axes."
 #~ msgstr ""
 #~ "Dvokliknite ali označite kvadratek in pritisnite preslednico za spremembo "
 #~ "barve osi."
-
 #~ msgid ""
 #~ "Double-click or select box and press space to change the color of the "
 #~ "grids."
 #~ msgstr ""
 #~ "Dvokliknite ali označite kvadratek in pritisnite preslednico za spremembo "
 #~ "barve mreže."
+
