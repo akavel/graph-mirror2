@@ -3,7 +3,7 @@ Name = Graph
 Major = 4
 Minor = 2
 Release = 0
-Build = 321
+Build = 332
 DownloadPage = http://www.padowan.dk/
 
 [English]
@@ -22,6 +22,7 @@ NewFeatures = · The Draw type in the Insert function dialog now has three types:
 NewFeatures = · Fixed bug in creating wrong trendlines when calculating in degrees.
 NewFeatures = · Fixed bug with moving average disappearing when edited.
 NewFeatures = · Several bugs related to Graph as OLE server have been fixed.
+NewFeatures = · Fixed bug in mod function.
 NewFeatures = · Several minor bugs have been fixed.
 
 [Danish]
@@ -61,3 +62,40 @@ NewFeatures = · Fehler korrigiert, der beim Rechnen in Grad falsche Trendlinien 
 NewFeatures = · Fehler korrigiert, bei dem der gleitende Mittelwert beim Bearbeiten verschwand.
 NewFeatures = · Einige Fehler bezüglich Graph als OLE-Server behoben.
 NewFeatures = · Einige geringfügige Fehler korrigiert.
+
+[Slovenian]
+NewFeatures = · sedaj lahko ustvarite animacije, ki prikazujejo dogajanje ob spremembi doloèene konstante
+NewFeatures = · za shranjevanje v obliki slike lahko izberete privzete nastavitve
+NewFeatures = · tabela znakov podpira celotno UNICODE tabelo na Windows 2000/XP sistemih
+NewFeatures = · tekstovne oznake lahko zavrtite navpièno s pomoèjo priroènega menija na Windows 2000/XP sistemih
+NewFeatures = · za vgrajene trendne èrte lahko doloèite preseèišèe z osjo y 
+NewFeatures = · dodani kitajski, mongolski, švedski in poljski prevod
+NewFeatures = · dodana možnost nastavitev uporabniškega vmesnika
+NewFeatures = · Eulerjeva funkcija beta je bila preimenovana iz B v Beta, B je lahko ime navadne konstante
+NewFeatures = · dodana podpora za izraze v tekstovnih oznakah
+NewFeatures = · pri uvozu zaporedja toèk lahko sedaj izberete veè datotek
+NewFeatures = · v pogovornem oknu Raèunaj|Tabela lahko nekatere stolpce skrijete 
+NewFeatures = · pogovorno okno Tip risanja v meniju v Vstavi funkcijo ima sedaj tri možnosti : Avtomatièno, Pikice in Èrtice
+NewFeatures = · odpravljen hrošè, ko so se ustvarile napaène trendne èrte, èe ste raèunali v kotnih stopinjah
+NewFeatures = · drseèe povpreèje pri urejanju ne izgine veè
+NewFeatures = · odpravljeni hrošèi pri delovanju Grapha kot OLE strežnika
+NewFeatures = · odpravljeni manjši hrošèi
+
+[French]
+NewFeatures = · Vous pouvez maintenant créer des animations qui montrent ce qui se passe quand on fait varier la valeur d’une constante.
+NewFeatures = · Vous pouvez maintenant choisir des valeurs par défaut pour les options d’enregistrement comme image.
+NewFeatures = · La table de caractères gère maintenant totalement l’Unicode sous Windows 2000/XP.
+NewFeatures = · Le texte des labels peut maintenant être tourné verticalement depuis le menu contextuel sous Windows 2000/XP.
+NewFeatures = · Vous pouvez maintenant imposer l’intersection avec l’axe des y pour les courbes d’ajustement intégrées.
+NewFeatures = · Les traductions chinoise (traditionnel), mongolienne, suédoise, polonaise et tchèque ont été ajoutées.
+NewFeatures = · Une option pour ajuster l’interface utilisateur a été ajoutée.
+NewFeatures = · La fonction beta d’Euler a été renommée de B en Beta pour laisser B disponible pour une constante personnalisée.
+NewFeatures = · La gestion des expressions dans le texte des labels a été ajoutée.
+NewFeatures = · Il est maintenant possible de sélectionner plusieurs fichiers simultanément lors de l’importation de séries de points.
+NewFeatures = · Vous pouvez maintenant cacher des colonnes  dans la boîte de dialogue de Calculer|Table,
+NewFeatures = · Le Type de dessin dans la boîte de dialogue Insérer une fonction dispose maintenant de trois choix : Automatique, Points et Lignes,
+NewFeatures = · Le « bug » qui créait des courbes d’ajustement fausses lors de calculs en degrés a été corrigé.
+NewFeatures = · Le « bug » qui faisait disparaître les moyennes mobiles lors de l’édition a été corrigé.
+NewFeatures = · Plusieurs « bugs » relatifs à Graph comme serveur OLE ont été corrigés.
+NewFeatures = · Correction du « bug » dans la fonction mod.
+NewFeatures = · Plusieurs « bugs » mineurs ont été corrigés.

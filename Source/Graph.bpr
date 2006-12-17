@@ -235,20 +235,21 @@ Item28=..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\T
 Item29=D:\Program Files\dxgettext;D:\Progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid
 
 [HistoryLists\hlConditionals]
-Count=13
+Count=14
 Item0=WIN32;CUSTOM_DEBUG_HANDLER
-Item1=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG
-Item2=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER
-Item3=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
-Item4=WIN32;_DEBUG
-Item5=WIN32
-Item6=WIN32;LIMITED_EDITION;_DEBUG
-Item7=WIN32;LIMITED_EDITION
-Item8=_DEBUG;WIN32
-Item9=_DEBUG
-Item10=EUREKALOG;_DEBUG
-Item11=EUREKALOG
-Item12=_DEBUG;EUREKALOG
+Item1=WIN32;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
+Item2=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG
+Item3=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER
+Item4=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
+Item5=WIN32;_DEBUG
+Item6=WIN32
+Item7=WIN32;LIMITED_EDITION;_DEBUG
+Item8=WIN32;LIMITED_EDITION
+Item9=_DEBUG;WIN32
+Item10=_DEBUG
+Item11=EUREKALOG;_DEBUG
+Item12=EUREKALOG
+Item13=_DEBUG;EUREKALOG
 
 [HistoryLists\hlIntOutputDir]
 Count=1

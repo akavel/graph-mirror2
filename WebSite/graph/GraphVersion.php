@@ -23,8 +23,8 @@
     echo "Could not open counter file '$counter_file'";
   ignore_user_abort(false);     ## put things back to normal
 
-  if($_GET["Version"] == "4.0" || $_GET["Version"] == "4.0.1" || $_GET["Version"] == "4.1")
+##  if($_GET["Version"] == "4.0" || $_GET["Version"] == "4.0.1" || $_GET["Version"] == "4.1")
     header("Location: http://www.padowan.dk/graph/Graph.inf");
-  else
-    header("Location: http://www.padowan.dk/graph/GraphOld.inf");
+##  else
+##    header("Location: http://www.padowan.dk/graph/GraphOld.inf");
 ?>
