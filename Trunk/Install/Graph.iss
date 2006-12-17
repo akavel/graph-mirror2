@@ -6,7 +6,7 @@ AllowNoIcons=yes
 AppCopyright=Ivan Johansen
 AppMutex=Graph running
 AppName=Graph
-AppVerName=Graph 4.2 beta
+AppVerName=Graph 4.2
 AppPublisher=Ivan Johansen
 AppPublisherURL=http://www.padowan.dk
 AppSupportURL=http://www.padowan.dk
@@ -17,11 +17,11 @@ DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
 LicenseFile=License.txt
-OutputBaseFilename=SetupGraphBeta-4.2.0.328
+OutputBaseFilename=SetupGraph-4.2
 OutputDir=.
 SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.2.0.328
+VersionInfoVersion=4.2.0.332
 
 
 [Languages]
@@ -36,12 +36,13 @@ Name: "Italian"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "Portuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "Russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "Slovenian"; MessagesFile: "compiler:Languages\Slovenian.isl"
-Name: "Spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
+Name: "Spanish"; MessagesFile: "Languages\Spanish.isl"
 Name: "Greek"; MessagesFile: "compiler:Languages\Greek.isl"
 Name: "Chinese"; MessagesFile: "compiler:Languages\ChineseTrad.isl"
 ;Name: "Mongolian"; MessagesFile: "compiler:Languages\Mongolian.isl"
 Name: "Swedish"; MessagesFile:  "compiler:Languages\Swedish.isl"
 Name: "Polish"; MessagesFile:  "compiler:Languages\Polish.isl"
+Name: "Czech"; MessagesFile:  "compiler:Languages\Czech.isl"
 
 [Tasks]
 Name: "DesktopIcon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
@@ -52,6 +53,7 @@ Name: "InstallAllUsers"; Description: "{cm:InstallAllUsers}"; Check: HasAdminRig
 Source: "Graph.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "PDFlib.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Thumbnails.dll"; DestDir: "{app}"; Flags: regserver noregerror ignoreversion restartreplace uninsrestartdelete; Check: not FilesEqual('Thumbnails.dll')
+Source: "License.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
 Source: "Help\*.hlp"; DestDir: "{app}\Help"; Flags: ignoreversion
 Source: "Help\*.cnt"; DestDir: "{app}\Help"; Flags: ignoreversion overwritereadonly
@@ -104,7 +106,7 @@ English.WelcomeLabel1=Welcome to the [name/ver] Setup Wizard
 InstallAllUsers=Install for all users
 Danish.InstallAllUsers=Installér for alle brugere
 German.InstallAllUsers=Für alle Benutzer installieren
-Spanish.InstallAllUsers=Instalar para Todos los Usuarios
+Spanish.InstallAllUsers=Instalar para todos los usuarios
 Portuguese.InstallAllUsers=Instala para todos os usuários
 Italian.InstallAllUsers=Installa per tutti gli utenti
 Hungarian.InstallAllUsers=Telepítés minden felhasználónak

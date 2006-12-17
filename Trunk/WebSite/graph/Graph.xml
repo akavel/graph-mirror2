@@ -35,7 +35,7 @@
 	<Program_Info>
 		<Program_Name>Graph</Program_Name>
 		<Program_Version>4.2</Program_Version>
-		<Program_Release_Month>11</Program_Release_Month>
+		<Program_Release_Month>12</Program_Release_Month>
 		<Program_Release_Day>20</Program_Release_Day>
 		<Program_Release_Year>2006</Program_Release_Year>
 		<Program_Cost_Dollars />
@@ -45,15 +45,15 @@
 		<Program_Release_Status>Minor Update</Program_Release_Status>
 		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
 		<Program_OS_Support>Win95,Win98,WinME,Windows2000,WinXP</Program_OS_Support>
-		<Program_Language>English,ChineseTraditional,Danish,Dutch,Finnish,French,German,Greek,Hungarian,Italian,Mongolian,Polish,Portuguese,Russian,Slovenian,Spanish,Swedish</Program_Language>
+		<Program_Language>English,Chinese,ChineseTraditional,Danish,Dutch,Finnish,French,German,Greek,Hungarian,Italian,Mongolian,Polish,Portuguese,Russian,Slovenian,Spanish,Swedish</Program_Language>
 		<Program_Change_Info>Several minor improvements</Program_Change_Info>
 		<Program_Specific_Category>Education</Program_Specific_Category>
 		<Program_Category_Class>Education::Mathematics</Program_Category_Class>
 		<Program_System_Requirements />
 		<File_Info>
-			<File_Size_Bytes>2877241</File_Size_Bytes>
-			<File_Size_K>2809</File_Size_K>
-			<File_Size_MB>2.74</File_Size_MB>
+			<File_Size_Bytes>5526528</File_Size_Bytes>
+			<File_Size_K>5397</File_Size_K>
+			<File_Size_MB>5.27</File_Size_MB>
 		</File_Info>
 		<Expire_Info>
 			<Has_Expire_Info>N</Has_Expire_Info>

@@ -21,22 +21,22 @@ Shell extension for showing thumbnails of grf files. This is written in Delphi a
 The following third party libraries are needed to build Graph:
 
 BMGLib
-BMGLib (http://members.cox.net/scottheiman/bmglib.htm) is used for writing PNG files. See PNG.H for license.
+This is a stripped down version of BMGLib (http://members.cox.net/scottheiman/bmglib.htm) used for writing PNG files. 
 
 Boost
 Boost (http://boost.org) is used as a general purpose library collection.
 
 Spirit
-Spirit (http://spirit.sf.net) is a paraser library that is part of Boost (http://boost.org). It is necesarry to compiler Func32. Notice that Spirit 1.6.1 is used because newer versions doesn't work with bcc.
+Spirit (http://spirit.sf.net) is a paraser library that is part of Boost (http://boost.org). It is necesarry to compiler Func32. Notice that Spirit 1.6.3 is used because newer versions doesn't work with bcc.
 
 dxgettext
-dxgettext (http://dybdahl.dk/dxgettext), which is an improved version of GNU gettext for Delphi/BCB, is used as translation library.
+The file gnugettext.pas from dxgettext (http://dybdahl.dk/dxgettext), which is an improved version of GNU gettext for Delphi/BCB, is used as translation library.
 
 EasyNSE
 EasyNSE (http://www.mustangpeak.net/) is used for shell extensions. 
 
 PDFlib-Lite
-PDFlib-Lite (http://www.pdflib.com) is used for generating PDF documents.
+PDFlib-Lite (http://www.pdflib.com) is used to create the PDFlib.dll, which is used for generating PDF documents.
 
 TNT Unicode Controls
 The Tnt Delphi Unicode Controls (http://www.tntware.com/delphicontrols/unicode/) are used for unicode support in the user interface.
