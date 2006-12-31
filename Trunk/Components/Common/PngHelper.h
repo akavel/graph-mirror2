@@ -12,4 +12,5 @@
 #include <ostream>
 //---------------------------------------------------------------------------
 bool SaveBitmapToPngStream(HBITMAP hBitmap, std::ostream &Stream);
+HBITMAP CreateBitmapFromPNGMemory(const void *Data, unsigned Size);
 #endif

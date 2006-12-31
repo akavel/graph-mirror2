@@ -17,6 +17,13 @@ extern "C"
 {
 #include "BMGUtils.h"
 }
+#include <algorithm>
+using std::min;
+using std::max;
+#pragma warn -8022
+#pragma warn -8080
+#include <gdiplus.h>
+#pragma link "gdiplus.lib"
 //---------------------------------------------------------------------------
 struct TPngResources
 {
@@ -203,6 +210,40 @@ bool SaveBitmapToPngStream(HBITMAP hBitmap, std::ostream &Stream)
 
 	SetLastBMGError( out );
   return out == BMG_OK;
+}
+//---------------------------------------------------------------------------
+bool CheckGdiPlus()
+{
+  static int Result = -1;
+  if(Result == -1)
+  {
+    HINSTANCE hGDIPlus = LoadLibrary("Gdiplus.dll");
+    Result = hGDIPlus != NULL;
+    FreeLibrary(hGDIPlus);
+  }
+  return Result;
+}
+//---------------------------------------------------------------------------
+HBITMAP CreateBitmapFromPNGMemory(const void *Data, unsigned Size)
+{
+  if(!CheckGdiPlus())
+    return NULL;
+
+  // Initialize GDI+.
+  Gdiplus::GdiplusStartupInput GdiplusStartupInput;
+  ULONG_PTR           GdiplusToken;
+  HBITMAP Result = NULL;
+  GdiplusStartup(&GdiplusToken, &GdiplusStartupInput, NULL);
+  {
+    IStream *Stream = NULL;
+    CreateStreamOnHGlobal(GlobalAlloc(GMEM_FIXED, Size), true, &Stream);
+    Stream->Write(Data, Size, NULL);
+    Gdiplus::Bitmap Image(Stream);
+    Stream->Release();
+    Image.GetHBITMAP(Gdiplus::Color(0,0,0), &Result);
+  }
+  Gdiplus::GdiplusShutdown(GdiplusToken);
+  return Result;
 }
 //---------------------------------------------------------------------------
 
