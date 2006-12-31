@@ -4,12 +4,12 @@
 #pragma hdrstop
 #include "IColorSelect.h"
 #include "Consts.hpp" //Declarition of constants in resource
+#include "CompRes.h"
 #include <memory>
 #pragma package(smart_init)
 
 #define BOX_WIDTH  14
 #define BOX_SPACE   4
-#define RES_CANCEL 12
 //---------------------------------------------------------------------------
 //Table with colors used to initialize ColorList
 const int ColorTable[256] =
@@ -52,7 +52,7 @@ namespace Icolorselect
 //Constructor initializes variables
 __fastcall TIColorSelect::TIColorSelect(TComponent* Owner)
   : TComponent(Owner), FColorList((TColor*)ColorTable, (TColor*)ColorTable+256),
-    FColCount(16), FRowCount(16), FColor(clRed), FCaption("Select color"),
+    FColCount(16), FRowCount(16), FColor(clRed), FCaption(LoadStr(RES_SELECT_COLOR)),
     FEditColor(false), FShowHelp(false), Form(NULL), FOnShow(NULL), FOnClose(NULL)
 {
 }
@@ -286,7 +286,7 @@ void __fastcall TIColorSelect::CreateColorDialog()
   Button1->Parent = Form;
   Button1->Top = 16;
   Button1->Left = Panel->Left+Panel->Width+20;
-  Button1->Caption = "OK";
+  Button1->Caption = Consts_SOKButton;
   Button1->ModalResult = mrOk;
   Button1->Default = true;
 

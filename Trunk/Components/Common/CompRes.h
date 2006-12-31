@@ -7,6 +7,9 @@
 #define RES_FONT_NAME             10002
 #define RES_SYMBOL_BOX_CAPTION    10003
 #define RES_FONT_SUBSET           10004
+
+//TIColorSelect
+#define RES_SELECT_COLOR          10005
 #endif
 
  

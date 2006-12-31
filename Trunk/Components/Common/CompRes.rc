@@ -8,4 +8,7 @@ BEGIN
   RES_FONT_NAME           "Font name:"
   RES_SYMBOL_BOX_CAPTION  "Insert symbol"
   RES_FONT_SUBSET         "Subset:"
+
+  //TIColorSelect
+  RES_SELECT_COLOR        "Select color"
 END

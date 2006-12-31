@@ -37,7 +37,7 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value=""/>
+    <USERDEFINES value="_DEBUG"/>
     <SYSDEFINES value="NO_STRICT;USEPACKAGES"/>
     <MAINSOURCE value="IComp.cpp"/>
     <INCLUDEPATH value="TMediaPlayerEx;TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;..\..\TntUnicodeControls;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\include;$(BCB)\include\vcl;Common"/>
@@ -46,11 +46,12 @@
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
-    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -6 -b- -d -k- -vi -c -tWM"/>
-    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -6 -b- -d -k -y -v 
+      -vi- -c -tWM"/>
+    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zn"/>
-    <LFLAGS value="-I..\Obj -D&quot;Ivan's components (VCL)&quot; -aa -Tpp -x -Gl -Gi"/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-I..\Obj -D&quot;Ivan's components (VCL)&quot; -aa -Tpp -x -Gl -Gi -v"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
