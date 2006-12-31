@@ -31,6 +31,7 @@ class TData
   std::string GrfName;
   TAbortUpdateEvent OnAbortUpdate;
   std::vector<boost::shared_ptr<TGraphElem> > ElemList;
+  void SaveImage(TConfigFile &IniFile);
 
 public:
   TAxes Axes;

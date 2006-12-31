@@ -10,6 +10,7 @@ STRINGTABLE
 BEGIN
   RES_ERROR       "Error"       //Used in titles of error message boxes
   RES_SHADE       "Shade"       //Default name in Insert shade dialog
+  RES_ROTATION    "Rotation"    //Shown in rotation dialog
 
   RES_AREA        "Area"        //Shown as title in the Calc|Area dialog when it is undocked
   RES_LENGTH      "Length"      //Shown as title in the Calc|Length of path dialog when it is undocked
@@ -85,7 +86,7 @@ BEGIN
   RES_LIMIT_ZERO          "'%s' has to be an integer value greater or equal to 0."
   RES_GREATER_ZERO        "'%s' must be greater than zero."
   RES_INT_GREATER_ZERO    "'%s' must be an integer greater than zero."
-  RES_ERROR_ZOOM          "Trying to break zoom limit." //Error message in Axes dialog when zoom in/out too much 
+  RES_ERROR_ZOOM          "Trying to break zoom limit." //Error message in Axes dialog when zoom in/out too much
   RES_GREATER             "'%s' must be greater than '%s'"
   RES_MAX_GREATER_MIN     "The maximum value must be greater than the minimum value."
   RES_VALUE_NEEDED        "You need to enter a value."

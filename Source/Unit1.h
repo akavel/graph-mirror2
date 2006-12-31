@@ -282,6 +282,14 @@ __published:	// IDE-managed Components
   TTntMenuItem *Legend_Font;
   TAction *InsertObjectAction;
   TTntMenuItem *Insertobject1;
+  TTntMenuItem *Rotation_Custom;
+  TTntMenuItem *Tree_Rotation;
+  TTntMenuItem *Tree_Rotation_0;
+  TTntMenuItem *Tree_Rotation_90;
+  TTntMenuItem *Tree_Rotation_180;
+  TTntMenuItem *Tree_Rotation_270;
+  TTntMenuItem *Tree_Rotation_Custom;
+  TTntMenuItem *Plugins_;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);

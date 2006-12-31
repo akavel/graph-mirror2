@@ -46,4 +46,6 @@ int MessageBox(const char *Text, const char *Caption, int Flags = MB_OK | MB_ICO
 int MessageBox(const WideString &Text, const WideString &Caption, int Flags = MB_OK | MB_ICONWARNING);
 int MessageBox(const std::string &Text, const std::string &Caption, int Flags = MB_OK | MB_ICONWARNING);
 
+bool InputQuery(const AnsiString &Caption, const AnsiString &Prompt, int &Value);
+
 #endif

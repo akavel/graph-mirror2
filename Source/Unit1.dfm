@@ -480,6 +480,10 @@ object Form1: TForm1
         Action = AnimateAction
       end
     end
+    object Plugins_: TTntMenuItem
+      Caption = 'Plugins'
+      Visible = False
+    end
     object Help_: TTntMenuItem
       Caption = 'Help'
       object Help_Contents: TTntMenuItem
@@ -612,6 +616,34 @@ object Form1: TForm1
           'ge.'
         RadioItem = True
         OnClick = Tree_LabelPlacementClick
+      end
+    end
+    object Tree_Rotation: TTntMenuItem
+      Caption = 'Rotation'
+      object Tree_Rotation_0: TTntMenuItem
+        Caption = '0'
+        RadioItem = True
+        OnClick = RotationClick
+      end
+      object Tree_Rotation_90: TTntMenuItem
+        Caption = '90'
+        RadioItem = True
+        OnClick = RotationClick
+      end
+      object Tree_Rotation_180: TTntMenuItem
+        Caption = '180'
+        RadioItem = True
+        OnClick = RotationClick
+      end
+      object Tree_Rotation_270: TTntMenuItem
+        Caption = '270'
+        RadioItem = True
+        OnClick = RotationClick
+      end
+      object Tree_Rotation_Custom: TTntMenuItem
+        Caption = 'Custom...'
+        RadioItem = True
+        OnClick = RotationClick
       end
     end
     object N15: TTntMenuItem
@@ -3917,7 +3949,6 @@ object Form1: TForm1
       Category = 'Function'
       Caption = 'Insert object...'
       ImageIndex = 59
-      Visible = False
       OnExecute = InsertObjectActionExecute
     end
   end
@@ -4003,6 +4034,11 @@ object Form1: TForm1
       end
       object Rotation_270: TTntMenuItem
         Caption = '270'
+        RadioItem = True
+        OnClick = RotationClick
+      end
+      object Rotation_Custom: TTntMenuItem
+        Caption = 'Custom...'
         RadioItem = True
         OnClick = RotationClick
       end

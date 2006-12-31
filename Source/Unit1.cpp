@@ -45,7 +45,6 @@
 #include <iomanip>
 #include <jpeg.hpp>
 #include "IThread.h"
-#include "EmfToEps.h"
 #include "Debug.h"
 #include <iostream>
 #include "PngHelper.h"
@@ -55,6 +54,8 @@
 #include "ConfigRegistry.h"
 #include <TypInfo.hpp>
 #include "OleObjectElem.h"
+#include "PythonBind.h"
+#include "Encode.h"
 //---------------------------------------------------------------------------
 #pragma link "TRecent"
 #pragma link "Cross"
@@ -73,6 +74,7 @@
 
 #pragma link "Wininet.lib" //Used for InternetGetConnectedState()
 #pragma link "../../BMGLib/BMGLibPNG.lib"  //Used to save png files
+#pragma link "PDFlib.lib"
 #pragma resource "*.dfm"
 TForm1 *Form1;
 const TCursor crMoveHand1 = 1;                       
@@ -92,7 +94,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
     out << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
     out << "CmdLine: " << CmdLine << std::endl;
   }
-
+ 
   SetApplicationExceptionHandler(true); //Log all exceptions
   InitDebug();
 #else
@@ -172,7 +174,7 @@ void __fastcall TForm1::FormShow(TObject *Sender)
   //Do not initialize data when OLE is used. This is done through InitNew() and Load() in IPersistStorage
   if(!FindCmdLineSwitch("EMBEDDING"))
   {
-    if(!ParamCount() || !LoadFromFile(ParamStr(1)))
+    if(!ParamCount() || ParamStr(1)[1] == '/' || ParamStr(1)[1] == '-' || !LoadFromFile(ParamStr(1)))
       LoadDefault();
     Redraw();
   }
@@ -207,7 +209,10 @@ void TForm1::Initialize()
 
   //Add degree symbols (°) so we get 270° in the rotation menus
   for(int I = 0; I < Label_Placement->Count; I++)
-    Label_Rotation->Items[I]->Caption = Label_Rotation->Items[I]->Caption + WideString(L'\xB0'); 
+  {
+    Label_Rotation->Items[I]->Caption = Label_Rotation->Items[I]->Caption + WideString(L'\xB0');
+    Tree_Rotation->Items[I]->Caption = Tree_Rotation->Items[I]->Caption + WideString(L'\xB0');
+  }
 
   //Label rotation doesn't work under Windows 9x
   Label_Rotation->Visible = IsWinNT;
@@ -687,6 +692,9 @@ void TForm1::LoadSettings(void)
   IPrintDialog1->Scale = Registry.Read("PrinterScale", 100);
   IPrintDialog1->Orientation = Registry.ReadEnum("Orientation", poPortrait);
   UndoList.SetMaxUndo(Registry.Read("MaxUndo", 50));
+
+  InitPlugins();
+
   if(Registry.ValueExists("ToolBar"))
     CreateToolBar(Registry.Read("ToolBar", "").c_str());
 
@@ -2250,7 +2258,7 @@ void TForm1::CreateToolBar(AnsiString Str)
     if(ButtonName == '-')
     {
       if(LastName != '-')
-        ActionToolBar1->ActionClient->Items->Add()->Caption = '-';
+        ActionToolBar1->ActionClient->Items->Add()->Action = SeparatorAction;
     }
     else
       for(int I = 0; I < ActionManager->ActionCount; I++)
@@ -2262,11 +2270,6 @@ void TForm1::CreateToolBar(AnsiString Str)
         }
     LastName = ButtonName;
   }
-
-  std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
-  ActionManager->SaveToStream(Stream.get());
-  Stream->Position = 0;
-  ActionManager->LoadFromStream(Stream.get());
 }
 //---------------------------------------------------------------------------
 AnsiString TForm1::GetToolBar()
@@ -2865,6 +2868,24 @@ bool __fastcall TForm1::OpenPreviewDialog1PreviewFile(
 {
   PreviewDraw->AbortUpdate();
 
+  TConfigFile IniFile;
+  if(IniFile.LoadFromFile(FileName.c_str()))
+  {
+    std::string PngStr = IniFile.Read("Image", "Png", "");
+    if(!PngStr.empty())
+    {
+      std::vector<BYTE> Data((PngStr.size()*3)/4);
+      Base64Decode(PngStr, &Data[0]);
+      std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
+      Bitmap->Handle = CreateBitmapFromPNGMemory(&Data[0], Data.size());
+      if(Bitmap->Handle != NULL)
+      {
+        Canvas->CopyRect(Rect, Bitmap->Canvas, TRect(0, 0, Bitmap->Width, Bitmap->Height));
+        return true;
+      }
+    }
+  }
+
   //Make sure background is drawn
   Canvas->Brush->Style = bsSolid;
   //Set background color
@@ -2872,14 +2893,6 @@ bool __fastcall TForm1::OpenPreviewDialog1PreviewFile(
   //Clear area
   Canvas->FillRect(Rect);
 
-  if(!FileExists(FileName))
-  {
-    //Blank image
-    Canvas->Brush->Style = bsSolid;
-    Canvas->Brush->Color = clWhite;
-    Canvas->FillRect(Rect);
-    return false;
-  }
   if(PreviewData.LoadFromFile(FileName.c_str(), false) && !!PreviewDraw)
   {
     PreviewData.Axes.ShowLegend = false; //Always disable legend for preview
@@ -3171,7 +3184,11 @@ void __fastcall TForm1::PopupMenu3Popup(TObject *Sender)
     else //Remove all check marks
       for(int I = 0; I < Label_Placement->Count; I++)
         Label_Placement->Items[I]->Checked = false;
-    Label_Rotation->Items[TextLabel->GetRotation() / 90]->Checked = true;
+
+    if(TextLabel->GetRotation() % 90 == 0)
+      Label_Rotation->Items[TextLabel->GetRotation() / 90]->Checked = true;
+    else
+      Label_Rotation->Items[4]->Checked = true;
   }
 }
 //---------------------------------------------------------------------------
@@ -3179,11 +3196,18 @@ void __fastcall TForm1::PopupMenu1Popup(TObject *Sender)
 {
   //Warning: RadioItem does not work when Images are assigned
   if(boost::shared_ptr<TTextLabel> TextLabel = boost::dynamic_pointer_cast<TTextLabel>(GetGraphElem(TreeView->Selected)))
+  {
     for(int I = 0; I < Tree_Placement->Count; I++)
       if(TextLabel->GetPlacement() == I + 1)
         Tree_Placement->Items[I]->ImageIndex = iiBullet;
       else //Remove check mark
         Tree_Placement->Items[I]->ImageIndex = -1;
+
+    if(TextLabel->GetRotation() % 90 == 0)
+      Tree_Rotation->Items[TextLabel->GetRotation() / 90]->Checked = true;
+    else
+      Tree_Rotation->Items[4]->Checked = true;
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Tree_LabelPlacementClick(TObject *Sender)
@@ -3364,12 +3388,25 @@ void __fastcall TForm1::RotationClick(TObject *Sender)
   {
     MenuItem->Checked = true;
     Draw.AbortUpdate();
-    boost::shared_ptr<TTextLabel> TextLabel = Data.FindLabel(LastMousePos.x, LastMousePos.y);
+    boost::shared_ptr<TTextLabel> TextLabel;
+    if(MenuItem->Parent == Label_Rotation)
+      TextLabel = Data.FindLabel(LastMousePos.x, LastMousePos.y);  //Right click on label menu
+    else
+      TextLabel = boost::dynamic_pointer_cast<TTextLabel>(GetGraphElem(TreeView->Selected)); //Context menu in function list
+
     if(!TextLabel)
       return;
 
+    int Rotation = TextLabel->GetRotation();
+    if(MenuItem->MenuIndex == 4)
+    {
+      if(!InputQuery(LoadStr(RES_ROTATION), LoadStr(RES_ROTATION) + ":", Rotation))
+        return;
+    }
+    else
+      Rotation = MenuItem->MenuIndex * 90;
+
     UndoList.Push(TUndoChange(TextLabel, Data.GetIndex(TextLabel)));
-    unsigned Rotation = MenuItem->MenuIndex * 90;
     boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(TextLabel->GetText(), TextLabel->GetPlacement(), TextLabel->GetPos(), TextLabel->GetBackgroundColor(), Rotation));
     Data.Replace(Data.GetIndex(TextLabel), NewLabel);
     NewLabel->Update();

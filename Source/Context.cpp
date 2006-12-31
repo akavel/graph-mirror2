@@ -269,17 +269,23 @@ void TContext::SetPen(TPenStyle Style, TColor Color, int Width)
 //---------------------------------------------------------------------------
 void TContext::SetGridPen(TColor Color, unsigned Width)
 {
-  if(Width > 1)
+  //Some printers do no support PS_ALTERNATE and PS_DOT
+  if(Canvas == Printer()->Canvas)
+  {
+    SetPen(psSolid, Color, Width);
+    return;
+  }
+
+  //PS_ALTERNATE is not supported on Win9x and apparently most printers
+  if(Width > 1 || !IsWinNT)
   {
     SetPen(psDot, Color, Width);
     return;
   }
 
-  //PS_ALTERNATE is not supported on Win9x and apparently most printers
-  unsigned Style = (!IsWinNT || (Canvas == Printer()->Canvas) || (Width > 1) ? PS_DOT : PS_ALTERNATE);
   LOGBRUSH LogBrush = {BS_SOLID, Color};
-  Canvas->Pen->Handle = ExtCreatePen(PS_COSMETIC | Style, 1, &LogBrush, 0, NULL);
-  PenStyle = static_cast<TPenStyle>(Style);
+  Canvas->Pen->Handle = ExtCreatePen(PS_COSMETIC | PS_ALTERNATE, 1, &LogBrush, 0, NULL);
+  PenStyle = static_cast<TPenStyle>(PS_ALTERNATE);
   PenColor = Color;
   PenWidth = 1;
 }
