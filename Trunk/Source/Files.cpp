@@ -14,6 +14,8 @@
 #include "VersionInfo.h"
 #include "ConfigFile.h"
 #include "OleServer.h"
+#include "PngHelper.h"
+#include "Encode.h"
 //---------------------------------------------------------------------------
 bool TData::LoadFromFile(const std::string &FileName, bool ShowErrorMessages)
 {
@@ -179,6 +181,20 @@ bool TData::Import(const std::string &FileName)
   return true;
 }
 //---------------------------------------------------------------------------
+void TData::SaveImage(TConfigFile &IniFile)
+{
+  std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
+  Bitmap->Width = Form1->Image1->Width;
+  Bitmap->Height = Form1->Image1->Height;
+  TRect Rect(0, 0, Bitmap->Width, Bitmap->Height);
+  Bitmap->Canvas->CopyRect(Rect, Form1->Image1->Picture->Bitmap->Canvas, Rect);
+
+  std::stringstream Stream;
+  Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
+  if(SaveBitmapToPngStream(Bitmap->Handle, Stream))
+    IniFile.Write("Image", "Png", Base64Encode(Stream.str().data(), Stream.str().size()));
+}
+//---------------------------------------------------------------------------
 //Saves data to file given in FileName; if empty the user is requested a file name
 //If Remember is true this will be the new current file name
 bool TData::Save(const std::string &FileName, bool Remember)
@@ -192,6 +208,7 @@ bool TData::Save(const std::string &FileName, bool Remember)
     WriteInfoToIni(IniFile);
     SaveData(IniFile);
     CustomFunctions.WriteToIni(IniFile);
+    SaveImage(IniFile);
 
     if(!IniFile.SaveToFile(FileName))
       return false;

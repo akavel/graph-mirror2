@@ -253,7 +253,7 @@ int MessageBox(const char *Text, const char *Caption, int Flags)
 //Unicode version of Application::MessageBox
 int MessageBox(const WideString &Text, const WideString &Caption, int Flags)
 {
-  HWND ActiveWindow = GetActiveWindow;
+  HWND ActiveWindow = (HWND)GetActiveWindow();
   HMONITOR MBMonitor = MonitorFromWindow(ActiveWindow, MONITOR_DEFAULTTONEAREST);
   HMONITOR AppMonitor = MonitorFromWindow(Application->Handle, MONITOR_DEFAULTTONEAREST);
   TRect Rect;
@@ -305,5 +305,66 @@ public:
   }
 };
 TCustomTranslator CustomTranslator;
+//---------------------------------------------------------------------------
+class TInputQueryForm : public TForm
+{
+  TEdit *Edit;
+  TLabel *Label;
+  TButton *Button1;
+  TButton *Button2;
+  int &Value;
+
+public:
+  __fastcall TInputQueryForm(const AnsiString &ACaption, const AnsiString &APrompt, int &AValue)
+    : TForm(NULL, 0), Value(AValue)
+  {
+    Caption = ACaption;
+    BorderStyle = bsDialog;
+    Position = poMainFormCenter;
+    ClientHeight = 70;
+
+    Label = new TLabel(this);
+    Label->Caption = APrompt;
+    Label->Parent = this;
+    Label->Left = 8;
+    Label->Top = 8;
+
+    Edit = new TEdit(this);
+    Edit->Text = Value;
+    Edit->Parent = this;
+    Edit->Left = Label->Left + Label->Width + 5;
+    Edit->Top = 8;
+    Edit->Width = std::max(180 - Edit->Left - 10, 50);
+    Width = Edit->Left + Edit->Width + 10;
+
+    Button1 = new TButton(this);
+    Button1->Parent = this;
+    Button1->Caption = _("OK");
+    Button1->Left = Width / 2 - Button1->Width - 5;
+    Button1->Top = 38;
+    Button1->Default = true;
+    Button1->OnClick = InputQueryClick;
+
+    Button2 = new TButton(this);
+    Button2->Parent = this;
+    Button2->Caption = _("Cancel");
+    Button2->Left = 50;
+    Button2->Left = Width / 2 + 5;
+    Button2->Top = 38;
+    Button2->Cancel = true;
+    Button2->ModalResult = mrCancel;
+  }
+
+  void __fastcall InputQueryClick(TObject *Sender)
+  {
+    Value = Edit->Text.ToInt(); //Verify that a valid integer is entered
+    ModalResult = mrOk;
+  }
+};
+bool InputQuery(const AnsiString &Caption, const AnsiString &Prompt, int &Value)
+{
+  std::auto_ptr<TForm> Form(new TInputQueryForm(Caption, Prompt, Value));
+  return Form->ShowModal() == mrOk;
+}
 //---------------------------------------------------------------------------
 

@@ -12,6 +12,7 @@
 
 #define RES_ERROR        1
 #define RES_SHADE        2
+#define RES_ROTATION     3
 
 #define RES_AREA         7
 #define RES_LENGTH       8
@@ -21,8 +22,6 @@
 #define RES_UNCERTAINTY 12
 #define RES_TRANSPARENT 13
 #define RES_AXES        14
-
-#define RES_CANCEL 65237  //Note: same as Consts_SCancelButton
 
 #define RES_PowCalcError        101 //Error while power raising
 #define RES_TanError            102 //Tangent to 90°+p180°
