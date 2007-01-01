@@ -73,23 +73,31 @@ void TGraphClipboard::Copy(const TRelation *Relation)
 //---------------------------------------------------------------------------
 void TGraphClipboard::Paste(TData &Data)
 {
-  if(!HasData())
-    return;
-  int DataSize = GetClipboardDataSize(ClipboardFormat);
-  std::vector<char> Str(DataSize+1);  //It looks like we need a zero termination
-  GetClipboardData(ClipboardFormat, &Str[0], DataSize);
-  TConfigFile IniFile;
-  IniFile.LoadFromString(&Str[0]);
+  try
+  {
+    if(!HasData())
+      return;
 
-  unsigned ElemNo = Data.ElemCount();
+    int DataSize = GetClipboardDataSize(ClipboardFormat);
+    std::vector<char> Str(DataSize+1);  //It looks like we need a zero termination
+    GetClipboardData(ClipboardFormat, &Str[0], DataSize);
+    TConfigFile IniFile;
+    IniFile.LoadFromString(&Str[0]);
 
-  if(Data.CheckIniInfo(IniFile))
-    Data.LoadData(IniFile);
+    unsigned ElemNo = Data.ElemCount();
 
-  UndoList.BeginMultiUndo();
-  for(unsigned I = ElemNo; I < Data.ElemCount(); I++)
-    UndoList.Push(TUndoAdd(Data.GetElem(I)));
-  UndoList.EndMultiUndo();
+    if(Data.CheckIniInfo(IniFile))
+      Data.LoadData(IniFile);
+
+    UndoList.BeginMultiUndo();
+    for(unsigned I = ElemNo; I < Data.ElemCount(); I++)
+      UndoList.Push(TUndoAdd(Data.GetElem(I)));
+    UndoList.EndMultiUndo();
+  }
+  catch(Func32::EFuncError &Error)
+  {
+    ShowErrorMsg(Error);
+  }
 }
 //---------------------------------------------------------------------------
 void TGraphClipboard::SetClipboardData(unsigned Format, const void *Data, unsigned DataSize)

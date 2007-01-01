@@ -525,8 +525,8 @@ TRect Rotate(TMetafile *Metafile, int Degrees)
   unsigned Height = Metafile->Height;
   double Angle = Degrees * M_PI / 180;
 
-  unsigned NewWidth = std::abs(Width * std::cos(Angle) + Height * std::sin(Angle));
-  unsigned NewHeight = std::abs(Width * std::sin(Angle) + Height * std::cos(Angle));
+  unsigned NewWidth = std::abs(Width * std::cos(Angle)) + std::abs(Height * std::sin(Angle));
+  unsigned NewHeight = std::abs(Width * std::sin(Angle)) + std::abs(Height * std::cos(Angle));
 
   std::auto_ptr<TMetafile> TempMetafile(new TMetafile);
   TempMetafile->Width = NewWidth;

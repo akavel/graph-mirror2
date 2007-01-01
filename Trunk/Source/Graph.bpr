@@ -72,7 +72,7 @@
     <PFLAGS value="-N2..\Obj -N0..\Obj -$Y+ -$W -$O- -$C- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
     <AFLAGS value="/mx /w2 /zi"/>
-    <LFLAGS value="-dPDFlib.dll -dpython25.dll -dgdiplus.dll -I..\Obj -D&quot;&quot; -aa -Tpe -GD -x -v"/>
+    <LFLAGS value="-I..\Obj -dPDFlib.dll -dpython25.dll -dgdiplus.dll -D&quot;&quot; -aa -Tpe -GD -x -v"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -151,7 +151,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=3
 Release=0
-Build=334
+Build=335
 Debug=1
 PreRelease=0
 Special=0
@@ -163,7 +163,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.3.0.334
+FileVersion=4.3.0.335
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2006
 LegalTrademarks=
