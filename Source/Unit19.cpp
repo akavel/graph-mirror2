@@ -77,7 +77,8 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   }
 
   Bitmap->Width = ImageWidth;
-  Bitmap->Height = ImageHeight;
+  Bitmap->Height = ImageHeight;   
+
   AnimationInfo.Constant = ToString(ComboBox1->Text);
   TDraw Draw(Bitmap->Canvas, &Data, false, "Animate thread");
   Draw.SetArea(TRect(0, 0, ImageWidth, ImageHeight));
@@ -144,6 +145,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     std::vector<RGBQUAD> Colors;
     for(double Value = AnimationInfo.Min; I < StepCount; Value += AnimationInfo.Step, I++)
     {
+      Bitmap->Canvas->Brush->Style = bsSolid;
       Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
       Bitmap->Canvas->FillRect(TRect(0, 0, ImageWidth, ImageHeight));
       Data.CustomFunctions.Replace(AnimationInfo.Constant, Value);
