@@ -89,40 +89,48 @@ struct TExecutePythonAction
 //---------------------------------------------------------------------------
 static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args, PyObject *Keywds)
 {
-  const char *ActionName;
-  const char *Caption;
-  PyObject *Event;
-  const char *IconName = NULL;
-  const char *Hint = NULL;
-  const char *ShortCut = NULL; 
-
-  static char* Kwlist[] = {"action", "caption", "event", "icon", "hint", "shortcut", NULL};
-  if(!PyArg_ParseTupleAndKeywords(Args, Keywds, "ssO|sss", Kwlist, &ActionName, &Caption, &Event, &IconName, &Hint, &ShortCut))
-    return NULL;
-
-  Py_INCREF(Event);
-  TTntAction *Action = new TTntAction(Application);
-  static TExecutePythonAction ExecutePythonAction;
-  Action->Name = ActionName;
-  Action->Caption = Caption;
-  Action->Category = _("Plugins");
-  Action->Hint = Hint;
-  Action->ShortCut = TextToShortCut(ShortCut);
-  Action->ActionList = Form1->ActionManager;
-  Action->Tag = reinterpret_cast<int>(Event);
-  Action->OnExecute = ExecutePythonAction.Execute;
-  if(IconName)
+  try
   {
-    std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-    Bitmap->LoadFromFile(IconName);
-    Action->ImageIndex = Form1->ImageList2->AddMasked(Bitmap.get(), Bitmap->TransparentColor);
+    const char *ActionName;
+    const char *Caption;
+    PyObject *Event;
+    const char *IconName = NULL;
+    const char *Hint = NULL;
+    const char *ShortCut = NULL;
+
+    static char* Kwlist[] = {"action", "caption", "event", "icon", "hint", "shortcut", NULL};
+    if(!PyArg_ParseTupleAndKeywords(Args, Keywds, "ssO|sss", Kwlist, &ActionName, &Caption, &Event, &IconName, &Hint, &ShortCut))
+      return NULL;
+
+    Py_INCREF(Event);
+    TTntAction *Action = new TTntAction(Application);
+    static TExecutePythonAction ExecutePythonAction;
+    Action->Name = ActionName;
+    Action->Caption = Caption;
+    Action->Category = _("Plugins");
+    Action->Hint = Hint;
+    if(ShortCut)
+      Action->ShortCut = TextToShortCut(ShortCut);
+    Action->ActionList = Form1->ActionManager;
+    Action->Tag = reinterpret_cast<int>(Event);
+    Action->OnExecute = ExecutePythonAction.Execute;
+    if(IconName)
+    {
+      ChDir(ExtractFileDir(Application->ExeName) + "\\Plugins");
+      std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
+      Bitmap->LoadFromFile(IconName);
+      Action->ImageIndex = Form1->ImageList2->AddMasked(Bitmap.get(), Bitmap->TransparentColor);
+    }
+
+    TMenuItem *MenuItem = new TMenuItem(Form1->MainMenu);
+    MenuItem->Action = Action;
+    Form1->Plugins_->Add(MenuItem);
+    Form1->Plugins_->Visible = true;
   }
-
-  TMenuItem *MenuItem = new TMenuItem(Form1->MainMenu);
-  MenuItem->Action = Action;
-  Form1->Plugins_->Add(MenuItem);
-  Form1->Plugins_->Visible = true;
-
+  catch(Exception &E)
+  {
+    Application->ShowException(&E);
+  }
   return Py_BuildValue("s", NULL);
 }
 //---------------------------------------------------------------------------
@@ -164,19 +172,20 @@ void InitPlugins()
   {
     KeyboardHookHandle = SetWindowsHookEx(WH_KEYBOARD, reinterpret_cast<HOOKPROC>(KeyboardProc), HInstance, GetCurrentThreadId());
     Py_Initialize();
-    char *argv[] = {"", NULL};
+    AnsiString ExeName = Application->ExeName;
+    char *argv[] = {ExeName.c_str(), NULL};
     PySys_SetArgv(1, argv);
     if(FindCmdLineSwitch("C"))
       ShowConsole();
 
     Py_InitModule("Graph", GraphMethods);
     PyRun_SimpleString(AnsiString().sprintf(
-      "import sys\n"
-      "sys.stdin = None\n"
-      "sys.path.append('Plugins')\n"
-      "import GraphUtil\n"
-      "GraphUtil.InitPlugins()\n"
-    ).c_str());
+      "import imp\n"
+			"File, PathName, Desc = imp.find_module('GraphUtil', ['%s\\Plugins'])\n"
+      "Module = imp.load_module('GraphUtil', File, PathName, Desc)\n"
+      "File.close()\n"
+      "Module.InitPlugins()\n"
+      , ExtractFileDir(Application->ExeName).c_str()).c_str());
   }
 }
 //---------------------------------------------------------------------------
