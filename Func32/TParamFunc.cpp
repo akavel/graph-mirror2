@@ -451,6 +451,24 @@ long double TParamFunc::CalcAngleSlope(long double t) const
   return std::atan2(dy, dx);
 }
 //---------------------------------------------------------------------------
+/** Calculates the area under curve using Simpson's rule between xMin and xMax
+ *  The area will be negative when the function travels from right to left.
+ *  \param xMin: Start of range
+ *  \param xMax: End of range
+ *  \param n: The number of steps; n must be even
+ */
+long double TParamFunc::CalcArea(long double tMin, long double tMax, unsigned n) const
+{
+  if(!xDifData)
+    xDifData = xFuncData->MakeDif(CodeVariable, Trigonometry);
+
+  TFuncData Temp;
+  Temp.Add(CodeMul);
+  Temp.Add(*yFuncData);
+  Temp.Add(*xDifData);
+  return Temp.Integrate(tMin, tMax, n, Trigonometry);
+}
+//---------------------------------------------------------------------------
 /** Returns the length of the curve between t=tMin and t=tMax made by the function.
  *  \param tMin: Start parameter
  *  \param tMax: End parameter
