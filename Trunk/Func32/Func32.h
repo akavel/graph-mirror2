@@ -282,6 +282,9 @@ public:
   //!Returns true if the function has not been set. Any calculations on an empty function will result in an error.
   virtual bool IsEmpty() const =0; //throw()
 
+  //!Calculates the area of the function from sMin to sMax. The exact area depends on the type of function
+  virtual long double CalcArea(long double sMin, long double sMax, unsigned n) const =0;
+
   //!Calculates the length of the function from sMin to sMax along the curve
   //!using Simpson's formula. n is the number of steps, and n must be even.
   virtual long double CalcArc(long double sMin, long double sMax, unsigned n) const =0;
@@ -431,6 +434,7 @@ public:
   TCoord<Complex> Calc(Complex, ECalcError &E) const; //throw()
 
   long double CalcSlope(long double t) const;
+  long double CalcArea(long double sMin, long double sMax, unsigned n) const;
   long double CalcArc(long double tMin, long double tMax, unsigned n) const;
   long double CalcAngleSlope(long double s) const;
 
