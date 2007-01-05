@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-12-11 19:43+0100\n"
+"PO-Revision-Date: 2007-01-05 01:30+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Indtast en slutkoordinat eller marker et interval på selve grafen med m
 
 #. AreaFrame..Edit3....Hint
 msgid "Area or length of path calculated for the given range using Simpson's formula."
-msgstr "Areal eller kurvelængde beregnet for det angivne interval ved brug af Simpsons formel."
+msgstr "Areal eller buelængde beregnet for det angivne interval ved brug af Simpsons formel."
 
 #. ParFuncFrame..Label7("Snap to:")..Caption
 #. PolFuncFrame..Label7("Snap to:")..Caption
@@ -649,7 +649,7 @@ msgstr "Flyt koordinatsystemet med musen."
 
 #. Form1..ActionManager..PathAction("Length of path")..Caption
 msgid "Length of path"
-msgstr "Kurvelængde..."
+msgstr "Buelængde..."
 
 #. Form1..ActionManager..PathAction("Length of path")....Hint
 msgid "Calculates the length of path between two given points on the curve."
@@ -829,7 +829,7 @@ msgstr "Opret brugerdefinerede funktioner og konstanter til brug i udtryk."
 
 #. Form1..ActionManager..AnimateAction("Animate...")..Caption
 msgid "Animate..."
-msgstr "Animér..."
+msgstr "Animer..."
 
 #. Form1..ActionManager..AnimateAction("Animate...")..Hint
 msgid "Create an animation by variating a constant."
@@ -1569,7 +1569,7 @@ msgstr "Beregn tabel"
 
 #. Form15("Calculate table")..Edit3....Hint
 msgid "The step value. This is the distance between the x-values in the interval."
-msgstr "Stepværdien, som angiver afstanden mellem hver x-værdi i intervallet."
+msgstr "Trinværdien, som angiver afstanden mellem hver x-værdi i intervallet."
 
 #. Form15("Calculate table")..Edit1..Hint
 msgid "The first x-value in the interval."
@@ -1872,7 +1872,7 @@ msgstr "Gem som standard"
 #. Form19("Animate")..Caption
 #. Form19("Animate")..Button1("Animate")..Caption
 msgid "Animate"
-msgstr "Animér"
+msgstr "Animer"
 
 #. Form19("Animate")..Label1("Constant:")..Caption
 msgid "Constant:"
@@ -2141,7 +2141,7 @@ msgstr "Minimum y-værdi."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit8..Hint
 msgid "Maximum y-value."
-msgstr "Maksimum y-værdi."
+msgstr "Maksimal y-værdi."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox8("Logarithmic scale")..Hint
 msgid "Use logarithmic scale for the y-axis."
@@ -2314,7 +2314,7 @@ msgstr "Tidligere filer:"
 
 #. Form4("Options")..Label3("Max undo steps:")..Caption
 msgid "Max undo steps:"
-msgstr "Max fortryd:"
+msgstr "Maks. fortryd:"
 
 #. Form4("Options")..Label4("Language:")..Caption
 msgid "Language:"
@@ -2430,7 +2430,7 @@ msgstr "Trin:"
 
 #. Form5("Insert function")..GroupBox2("Argument range")..Edit5..Hint
 msgid "Number of calculation steps used to draw the graph."
-msgstr "Det antal beregninger der bruges til at tegne grafen."
+msgstr "Det antal beregninger, der bruges til at tegne grafen."
 
 #. Form5("Insert function")..GroupBox4("Graph properties")..Label13("Draw type:")..Caption
 msgid "Draw type:"
@@ -2931,7 +2931,7 @@ msgid "Maximum number for t must be greater than the minimum value."
 msgstr "Maksimumværdien for t skal være større end minimumværdien."
 
 msgid "The step value for t must be a number greater than 0."
-msgstr "Step-værdien for t skal være et tal større end 0."
+msgstr "Trinværdien for t skal være et tal større end 0."
 
 msgid "The minimum value for the x-axis must be greater than 0, when the x-axis is logarithmic scaled."
 msgstr "Minimumværdien for x-aksen skal være større end 0, når logaritmisk skala er valgt."
@@ -2979,7 +2979,7 @@ msgid "Calculate area"
 msgstr "Beregn areal"
 
 msgid "Calculate length of path"
-msgstr "Beregn kurvelængde"
+msgstr "Beregn buelængde"
 
 msgid "Edit function"
 msgstr "Rediger funktion"
@@ -3225,7 +3225,7 @@ msgstr "Funktioner kan kopieres fra et vindue af programmet til et andet ved hj�
 
 #. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
-msgstr "Du kan altid fortryde den foregående handling ved at vælge Rediger|Fortryd, med mindre Max fortryd er sat til 0."
+msgstr "Du kan altid fortryde den foregående handling ved at vælge Rediger|Fortryd, med mindre Maks. fortryd er sat til 0."
 
 #. Tip of the Day
 msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
