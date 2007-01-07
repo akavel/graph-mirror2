@@ -936,6 +936,26 @@ bool TForm1::ZoomWindow(double xMin, double xMax, double yMin, double yMax, bool
   if(SaveUndo)
     UndoList.Push(TUndoAxes());
 
+  if(Data.Axes.ZoomSquare && Data.Axes.xAxis.LogScl == Data.Axes.yAxis.LogScl)
+  {
+    if(Data.Axes.xAxis.LogScl)
+    {
+      double yMiddle = std::exp((std::log(yMax) + std::log(yMin)) / 2);
+      double dy = std::exp(Draw.GetScaledYAxis() * (std::log(xMax) - std::log(xMin)) / 2);
+      yMin = yMiddle / dy;
+      yMax = yMiddle * dy;
+    }
+    else
+    {
+      double yMiddle = (yMin + yMax) /2;
+      double dy = Draw.GetScaledYAxis() * (xMax - xMin);
+      yMin = yMiddle - dy / 2;
+      yMax = yMiddle + dy / 2;
+    }
+  }
+  else
+    Data.Axes.ZoomSquare = false;
+
   //Set min and max for axes
   Data.Axes.xAxis.Min = xMin;
   Data.Axes.xAxis.Max = xMax;
@@ -1087,6 +1107,8 @@ void __fastcall TForm1::Panel2Resize(TObject *Sender)
     {
       IPolygon1->Visible = false;
       Draw.AbortUpdate();
+      if(Data.Axes.ZoomSquare)
+        ZoomWindow(Data.Axes.xAxis.Min, Data.Axes.xAxis.Max, Data.Axes.yAxis.Min, Data.Axes.yAxis.Max, false, false);
       //Set width and height
       Draw.SetSize(Image1->Width,Image1->Height);
       //Make sure background is drawn
@@ -2436,22 +2458,16 @@ void __fastcall TForm1::WndProc(Messages::TMessage &Message)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomSquareActionExecute(TObject *Sender)
 {
-  const TAxes &Axes = Data.Axes;
+  TAxes &Axes = Data.Axes;
   if(Axes.xAxis.LogScl != Axes.yAxis.LogScl)
     return; //Invalid
 
-  if(Axes.xAxis.LogScl)
-  {
-    double yMiddle = std::exp((std::log(Axes.yAxis.Max) + std::log(Axes.yAxis.Min)) / 2);
-    double dy = std::exp(Draw.GetScaledYAxis() * (std::log(Axes.xAxis.Max) - std::log(Axes.xAxis.Min)) / 2);
-    ZoomWindow(Axes.xAxis.Min, Axes.xAxis.Max, yMiddle / dy, yMiddle * dy);
-  }
-  else
-  {
-    double yMiddle = (Axes.yAxis.Min + Axes.yAxis.Max) /2;
-    double dy = Draw.GetScaledYAxis() * (Axes.xAxis.Max - Axes.xAxis.Min);
-    ZoomWindow(Axes.xAxis.Min, Axes.xAxis.Max, yMiddle - dy / 2, yMiddle + dy / 2);
-  }
+  UndoList.Push(TUndoAxes());
+  Axes.ZoomSquare = !Axes.ZoomSquare;
+
+  //Don't save undo info. We have already done that
+  if(Axes.ZoomSquare)
+    ZoomWindow(Axes.xAxis.Min, Axes.xAxis.Max, Axes.yAxis.Min, Axes.yAxis.Max, true, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Panel2KeyPress(TObject *Sender, char &Key)
@@ -3490,5 +3506,9 @@ void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
   Redraw();
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TForm1::ZoomSquareActionUpdate(TObject *Sender)
+{
+  ZoomSquareAction->Checked = Data.Axes.ZoomSquare;   
+}
+//---------------------------------------------------------------------------
 
