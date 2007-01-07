@@ -33,7 +33,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
     Label3->Caption = _("Build") + " " + AnsiString(FileVersion.Build);
     FileVersion.Build = 0;
     Version->Caption = _("Version ") + AnsiString(FileVersion.Text().c_str());
-    if(Info.FileFlags() && ffDebug)
+    if(Info.FileFlags() & ffDebug)
       Version->Caption = Version->Caption + " beta";
     Copyright->Caption = Info.StringValue("LegalCopyright").c_str();
   }
