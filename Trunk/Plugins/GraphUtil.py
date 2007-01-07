@@ -4,6 +4,7 @@ import sys
 import imp
 import traceback
 from Tkinter import *
+import Graph
 
 def InitPlugins():
 	print "Loading plugins..."
@@ -12,7 +13,7 @@ def InitPlugins():
 	global root
 	root = Tk()
 	root.withdraw()
-	
+
 	PluginsDir = os.path.dirname(sys.argv[0]) + '\\Plugins'
 	sys.path.append(PluginsDir)
 
@@ -26,3 +27,14 @@ def InitPlugins():
 
 			except ImportError, e:
 				traceback.print_exc()
+
+
+class Action(object):
+		def __init__(self, caption, event, **keywords): 
+			object.__setattr__(self, "id", Graph.CreateAction())
+			Graph.SetActionAttr(self.id, caption=caption, event=event, **keywords) 
+
+		def __getattr__(self, name): 
+			return Graph.GetActionAttr(self.id)[name]
+		def __setattr__(self, name, value): 
+			Graph.SetActionAttr(self.id, **{name:value})

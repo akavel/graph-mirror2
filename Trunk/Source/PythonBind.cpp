@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "PythonBind.h"
 #include "IThread.h"
+#include "VersionInfo.h"
 #undef _DEBUG
 #include <python.h>
 #pragma link "python25.lib"
@@ -36,7 +37,8 @@ class TConsoleReader : public TIThread
 
   void ExecutePython()
   {
-    PyRun_SimpleString(Buffer);
+    if(Buffer[0])
+      PyRun_SimpleString(AnsiString().sprintf("eval(compile('%s', '', 'single'))", Buffer).c_str());
   }
 
   void __fastcall Execute()
@@ -82,38 +84,66 @@ struct TExecutePythonAction
   {
     Form1->Enabled = false;
     if(TTntAction *Action = dynamic_cast<TTntAction*>(Sender))
-      PyObject_CallObject(reinterpret_cast<PyObject*>(Action->Tag), NULL);
+    {
+      PyObject *Result = PyObject_CallObject(reinterpret_cast<PyObject*>(Action->Tag), NULL);
+      if(Result == NULL)
+        PyErr_Print();
+      Py_XDECREF(Result);
+    }
     Form1->Enabled = true;
   }
 };
 //---------------------------------------------------------------------------
 static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args, PyObject *Keywds)
 {
+  TTntAction *Action = new TTntAction(Application);
+  Action->Category = _("Plugins");
+  Action->ActionList = Form1->ActionManager;
+
+  TMenuItem *MenuItem = new TMenuItem(Form1->MainMenu);
+  MenuItem->Action = Action;
+  Form1->Plugins_->Add(MenuItem);
+  Form1->Plugins_->Visible = true;
+
+  return PyInt_FromLong(reinterpret_cast<long>(Action));
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginSetActionAttr(PyObject *Self, PyObject *Args, PyObject *Keywds)
+{
   try
   {
-    const char *ActionName;
-    const char *Caption;
-    PyObject *Event;
+    TAction *Action = NULL;
+    const char *Caption = NULL;
+    PyObject *Event = NULL;
     const char *IconName = NULL;
     const char *Hint = NULL;
     const char *ShortCut = NULL;
+    int Enabled = -1;
+    int Visible = -1;
 
-    static char* Kwlist[] = {"action", "caption", "event", "icon", "hint", "shortcut", NULL};
-    if(!PyArg_ParseTupleAndKeywords(Args, Keywds, "ssO|sss", Kwlist, &ActionName, &Caption, &Event, &IconName, &Hint, &ShortCut))
+    static char* Kwlist[] = {"action", "caption", "event", "icon", "hint", "shortcut", "enabled", "visible", NULL};
+    if(!PyArg_ParseTupleAndKeywords(Args, Keywds, "i|sOsssii", Kwlist, &Action, &Caption, &Event, &IconName, &Hint, &ShortCut, &Enabled, &Visible))
       return NULL;
 
-    Py_INCREF(Event);
-    TTntAction *Action = new TTntAction(Application);
-    static TExecutePythonAction ExecutePythonAction;
-    Action->Name = ActionName;
-    Action->Caption = Caption;
-    Action->Category = _("Plugins");
-    Action->Hint = Hint;
+    if(Event)
+    {
+      Py_INCREF(Event);
+      AnsiString ActionName = PyString_AsString(PyObject_GetAttrString(Event, "__module__"));
+      ActionName += "_";
+      ActionName += PyString_AsString(PyObject_GetAttrString(Event, "__name__"));
+
+      static TExecutePythonAction ExecutePythonAction;
+      Action->Name = ActionName;
+      Action->OnExecute = ExecutePythonAction.Execute;
+      Action->Tag = reinterpret_cast<int>(Event);
+    }
+
+    if(Caption)
+      Action->Caption = Caption;
+    if(Hint)
+      Action->Hint = Hint;
     if(ShortCut)
       Action->ShortCut = TextToShortCut(ShortCut);
-    Action->ActionList = Form1->ActionManager;
-    Action->Tag = reinterpret_cast<int>(Event);
-    Action->OnExecute = ExecutePythonAction.Execute;
     if(IconName)
     {
       ChDir(ExtractFileDir(Application->ExeName) + "\\Plugins");
@@ -121,17 +151,33 @@ static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args, PyObject *Ke
       Bitmap->LoadFromFile(IconName);
       Action->ImageIndex = Form1->ImageList2->AddMasked(Bitmap.get(), Bitmap->TransparentColor);
     }
+    if(Enabled != -1)
+      Action->Enabled = Enabled;
+    if(Visible != -1)
+      Action->Visible = Visible;
 
-    TMenuItem *MenuItem = new TMenuItem(Form1->MainMenu);
-    MenuItem->Action = Action;
-    Form1->Plugins_->Add(MenuItem);
-    Form1->Plugins_->Visible = true;
+    return PyInt_FromLong(reinterpret_cast<long>(Action));
   }
   catch(Exception &E)
   {
     Application->ShowException(&E);
   }
-  return Py_BuildValue("s", NULL);
+  return Py_BuildValue(""); //Return None
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginGetActionAttr(PyObject *Self, PyObject *Args, PyObject *Keywds)
+{
+  TAction *Action = reinterpret_cast<TAction*>(PyInt_AsLong(Args));
+  if(PyErr_Occurred())
+    return NULL;
+
+  return Py_BuildValue("{s:s,s:s,s:s,s:i,s:i}",
+    "hint",     Action->Hint.c_str(),
+    "shortcut", ShortCutToText(Action->ShortCut).c_str(),
+    "caption",  Action->Caption.c_str(),
+    "enabled",  Action->Enabled,
+    "visible",  Action->Visible
+  );
 }
 //---------------------------------------------------------------------------
 static PyObject* PluginCreateParametricFunction(PyObject *Self, PyObject *Args)
@@ -141,7 +187,7 @@ static PyObject* PluginCreateParametricFunction(PyObject *Self, PyObject *Args)
   if(!PyArg_ParseTuple(Args, "ss", &xName, &yName))
     return NULL;
 
-  TData &Data = Form1->Data;  
+  TData &Data = Form1->Data;
   boost::shared_ptr<TBaseFuncType> Func(new TParFunc(xName, yName, Data.CustomFunctions.SymbolList));
   Func->SetTrigonometry(Data.Axes.Trigonometry);
   Func->From.Value = -10;
@@ -157,12 +203,25 @@ static PyObject* PluginCreateParametricFunction(PyObject *Self, PyObject *Args)
   Data.SetModified();
   Form1->Redraw();
 
-  return Py_BuildValue("s", NULL);
+  return Py_BuildValue(""); //Return None
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginSetParent(PyObject *Self, PyObject *Args)
+{
+  const char *Str;
+  if(!PyArg_ParseTuple(Args, "s", &Str))
+    return NULL;
+  HWND Handle = reinterpret_cast<HWND>(StrToInt(Str));
+  SetParent(Handle, Form1->Handle);
+  return Py_BuildValue(""); //Return None
 }
 //---------------------------------------------------------------------------
 static PyMethodDef GraphMethods[] = {
-  {"CreateAction", reinterpret_cast<PyCFunction>(PluginCreateAction), METH_VARARGS | METH_KEYWORDS, "Test"},
+  {"CreateAction", reinterpret_cast<PyCFunction>(PluginCreateAction), METH_NOARGS, "Test"},
+  {"SetActionAttr", reinterpret_cast<PyCFunction>(PluginSetActionAttr), METH_VARARGS | METH_KEYWORDS, "Test"},
+  {"GetActionAttr", reinterpret_cast<PyCFunction>(PluginGetActionAttr), METH_O, "Test"},
   {"CreateParametricFunction", PluginCreateParametricFunction, METH_VARARGS, ""},
+  {"SetParent", PluginSetParent, METH_VARARGS, ""},
   {NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
@@ -179,16 +238,24 @@ void InitPlugins()
       ShowConsole();
 
     Py_InitModule("Graph", GraphMethods);
+    TVersionInfo Info;
+    TVersion Version = Info.FileVersion();
+    const char *BetaFinal = Info.FileFlags() & ffDebug ? "beta" : "final";
     PyRun_SimpleString(AnsiString().sprintf(
       "import imp\n"
+      "import Graph\n"
+      "Graph.version_info = (%d,%d,%d,'%s',%d)\n"
 			"File, PathName, Desc = imp.find_module('GraphUtil', ['%s\\Plugins'])\n"
       "Module = imp.load_module('GraphUtil', File, PathName, Desc)\n"
       "File.close()\n"
       "Module.InitPlugins()\n"
-      , ExtractFileDir(Application->ExeName).c_str()).c_str());
+      , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
+      , ExtractFileDir(Application->ExeName).c_str()
+    ).c_str());
   }
 }
 //---------------------------------------------------------------------------
+
 
 
 
