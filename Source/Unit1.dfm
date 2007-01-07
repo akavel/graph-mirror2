@@ -440,7 +440,7 @@ object Form1: TForm1
         Action = ZoomSquareAction
       end
       object Zoom_Standard: TTntMenuItem
-        Action = ZoomStandardAction
+        Action = ZoomWindowAction
       end
       object N14: TTntMenuItem
         Caption = '-'
@@ -3692,6 +3692,7 @@ object Form1: TForm1
       ImageIndex = 44
       ShortCut = 16465
       OnExecute = ZoomSquareActionExecute
+      OnUpdate = ZoomSquareActionUpdate
     end
     object ZoomStandardAction: TTntAction
       Category = 'Zoom'

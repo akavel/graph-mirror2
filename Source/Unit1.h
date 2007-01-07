@@ -442,6 +442,7 @@ __published:	// IDE-managed Components
   void __fastcall ImportPointSeriesActionExecute(TObject *Sender);
   void __fastcall Legend_FontClick(TObject *Sender);
   void __fastcall InsertObjectActionExecute(TObject *Sender);
+  void __fastcall ZoomSquareActionUpdate(TObject *Sender);
 
 private:	// User declarations
   friend class TAddView;

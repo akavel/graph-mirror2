@@ -184,6 +184,8 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
   yAxis.ShowTicks = CheckBox13->Checked;
   yAxis.ShowGrid = CheckBox14->Checked;
   yAxis.MultiplyOfPi = CheckBox18->Checked;
+  yAxis.Min = Data.Axes.yAxis.Min; //This is starting to get silly, but ZoomWindow may have changed the y-axis if ZoomSquare=true
+  yAxis.Max = Data.Axes.yAxis.Max;
 
   TAxes &Axes = Data.Axes;
   Axes.xAxis = xAxis;
