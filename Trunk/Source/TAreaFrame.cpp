@@ -61,7 +61,7 @@ void TAreaFrame::EvalArea(TGraphElem *GraphElem)
 
     if(dynamic_cast<TStdFunc*>(GraphElem) || dynamic_cast<TParFunc*>(GraphElem))
     {
-      if(N1 != N2)
+      if(N1 != N2 && Func->Points[N1] != Func->Points[N2-1])
       {
         TPoint P1(Func->Points[N1].x, Form1->Draw.yPoint(Form1->Data.Axes.xAxis.AxisCross));
         TPoint P2(Func->Points[N2-1].x, Form1->Draw.yPoint(Form1->Data.Axes.xAxis.AxisCross));

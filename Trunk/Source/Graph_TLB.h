@@ -10,7 +10,7 @@
 // ************************************************************************ //
 
 // C++ TLBWRTR : $Revision:   1.151.1.0.1.27  $
-// File generated on 07-01-2007 12:26:47 from Type Library described below.
+// File generated on 10-01-2007 19:52:52 from Type Library described below.
 
 // ************************************************************************  //
 // Type Lib: D:\Projects\Graph\Source\Graph.tlb (1)
