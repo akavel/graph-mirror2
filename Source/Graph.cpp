@@ -61,7 +61,6 @@ TComModule &_Module = _ProjectModule;
 //
 BEGIN_OBJECT_MAP(ObjectMap)
   OBJECT_ENTRY(CLSID_OleServer, TOleServerImpl)
-//  OBJECT_ENTRY(CLSID_GraphServer, TGraphServerImpl)
 END_OBJECT_MAP()
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
