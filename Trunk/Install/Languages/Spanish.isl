@@ -103,7 +103,7 @@ BrowseDialogLabel=Seleccione una carpeta de la lista inferior, y haga clic en Ac
 NewFolderName=Nueva carpeta
 
 ; *** "Welcome" wizard page
-WelcomeLabel1=Bienvenido al asistente de instalación de [name].
+WelcomeLabel1=Bienvenido al asistente de instalación de [name]
 WelcomeLabel2=Este asistente instalará [name/ver] en su ordenador.%n%nSe recomienda cerrar todas las aplicaciones en ejecución antes de continuar.
 
 ; *** "Password" wizard page
