@@ -13,6 +13,7 @@
 #define OleServerImplH
 
 #include "OleServer.h"
+#include <atl/atlmod.h>
 
 #define ATL_APARTMENT_THREADED
 

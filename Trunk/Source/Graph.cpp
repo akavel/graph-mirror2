@@ -23,8 +23,8 @@
 #include <atl\atlmod.h>
 #include <atl\atlmod.h>
 #include "OleServerImpl.h"
-#include "GraphServerImpl.h"
 #include "StackTrace.h"
+#include <exception>
 
 USEFORM("Unit1.cpp", Form1);
 USEFORM("Unit2.cpp", Form2);
@@ -76,9 +76,9 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
     Application->CreateForm(__classid(TForm1), &Form1);
      Application->Run();
   }
-  catch (Exception &exception)
+  catch (Exception &E)
   {
-    LogUncaughtException(NULL, &exception);
+    LogUncaughtException(NULL, &E);
   }
   catch(std::exception &E)
   {

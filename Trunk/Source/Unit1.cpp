@@ -37,7 +37,6 @@
 #include "VersionInfo.h"
 #include "GuiHelper.h"
 #include "BMGLibPNG.h"                     //Used to save png files
-#include "GraphServerImpl.h"
 #include "OleServerImpl.h"
 #include "PrintForm.h" //Needed to access TPrintFrm for translation
 #include <Menus.hpp>

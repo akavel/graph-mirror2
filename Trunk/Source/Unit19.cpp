@@ -17,7 +17,7 @@
 //---------------------------------------------------------------------------
 #pragma link "TntStdCtrls"
 #pragma link "ProgressForm"
-#pragma resource "*.dfm"                                                     
+#pragma resource "*.dfm"
 
 ::TAnimationInfo TForm19::AnimationInfo;
 const int MaxWidth = Screen->Width - 50;
@@ -46,18 +46,23 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
     if(Iter->Arguments.empty())
       ComboBox1->Items->Add(Iter->Name.c_str());
 
-  int Index = ComboBox1->Items->IndexOf(ToWideString(AnimationInfo.Constant));
-  ComboBox1->ItemIndex = Index == -1 ? 0 : Index;
-
   unsigned ImageWidth = std::min(AnimationInfo.Width == 0 ? Form1->Image1->Width : AnimationInfo.Width, MaxWidth);
   unsigned ImageHeight = std::min(AnimationInfo.Height == 0 ? Form1->Image1->Height : AnimationInfo.Height, MaxHeight);
 
-  Edit1->Text = ToWideString(AnimationInfo.Min);
-  Edit2->Text = ToWideString(AnimationInfo.Max);
-  Edit3->Text = ToWideString(AnimationInfo.Step);
-  Edit4->Text = ToWideString(ImageWidth);
-  Edit5->Text = ToWideString(ImageHeight);
-  Edit6->Text = ToWideString(AnimationInfo.FramesPerSecond);
+  int Index = ComboBox1->Items->IndexOf(ToWideString(AnimationInfo.Constant));
+  ComboBox1->ItemIndex = Index == -1 ? 0 : Index;
+
+  if(Index == -1)
+    ComboBox1Change(ComboBox1);
+  else
+  {
+    Edit1->Text = ToWideString(AnimationInfo.Min);
+    Edit2->Text = ToWideString(AnimationInfo.Max);
+    Edit3->Text = ToWideString(AnimationInfo.Step);
+    Edit4->Text = ToWideString(ImageWidth);
+    Edit5->Text = ToWideString(ImageHeight);
+    Edit6->Text = ToWideString(AnimationInfo.FramesPerSecond);
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button1Click(TObject *Sender)
@@ -77,7 +82,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   }
 
   Bitmap->Width = ImageWidth;
-  Bitmap->Height = ImageHeight;   
+  Bitmap->Height = ImageHeight;
 
   AnimationInfo.Constant = ToString(ComboBox1->Text);
   TDraw Draw(Bitmap->Canvas, &Data, false, "Animate thread");
@@ -189,6 +194,15 @@ void __fastcall TForm19::TntEditKeyPress(TObject *Sender, char &Key)
 {
   if(!isdigit(Key) && Key != '\b')
     Key = 0;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm19::ComboBox1Change(TObject *Sender)
+{
+  std::string Constant = ToString(ComboBox1->Text);
+  double Min = Func32::Eval(Constant, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
+  double Max = (Min == 0) ? 10 : Min * 10;
+  Edit1->Text = ToWideString(Min);
+  Edit2->Text = ToWideString(Max);
 }
 //---------------------------------------------------------------------------
 

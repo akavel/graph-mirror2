@@ -78,11 +78,11 @@ static LRESULT CALLBACK KeyboardProc(int Code, WPARAM wParam, LPARAM lParam)
   return CallNextHookEx(KeyboardHookHandle, Code, wParam, lParam);
 }
 //---------------------------------------------------------------------------
-struct TExecutePythonAction 
+struct TExecutePythonAction
 {
   void __fastcall Execute(TObject *Sender)
   {
-    Form1->Enabled = false;
+//    Form1->Enabled = false;
     if(TTntAction *Action = dynamic_cast<TTntAction*>(Sender))
     {
       PyObject *Result = PyObject_CallObject(reinterpret_cast<PyObject*>(Action->Tag), NULL);
@@ -206,13 +206,51 @@ static PyObject* PluginCreateParametricFunction(PyObject *Self, PyObject *Args)
   return Py_BuildValue(""); //Return None
 }
 //---------------------------------------------------------------------------
-static PyObject* PluginSetParent(PyObject *Self, PyObject *Args)
+static long double CallCustomFunction(void *Custom, const long double *Args, unsigned ArgsCount, Func32::TTrigonometry Trigonemtry)
 {
-  const char *Str;
-  if(!PyArg_ParseTuple(Args, "s", &Str))
+  PyRun_SimpleString("math.sqrt(-10.0)\n");
+  PyObject *Tuple = PyTuple_New(ArgsCount);   
+  for(unsigned I = 0; I < ArgsCount; I++)
+    PyTuple_SET_ITEM(Tuple, I, PyFloat_FromDouble(Args[I]));
+  PyObject *CallResult = PyObject_CallObject(reinterpret_cast<PyObject*>(Custom), Tuple);
+  if(CallResult == NULL)
+    PyErr_Print();
+  double Result = PyFloat_AsDouble(CallResult);
+  Py_XDECREF(CallResult);
+  Py_XDECREF(Tuple);
+  return Result;
+}
+//---------------------------------------------------------------------------
+static Func32::TComplex CallCustomFunction(void *Custom, const Func32::TComplex *Args, unsigned ArgsCount, Func32::TTrigonometry Trigonemtry)
+{
+  PyObject *Tuple = PyTuple_New(ArgsCount);
+  for(unsigned I = 0; I < ArgsCount; I++)
+    PyTuple_SET_ITEM(Tuple, I, PyComplex_FromDoubles(Args[I].real(), Args[I].imag()));
+  PyObject *CallResult = PyObject_CallObject(reinterpret_cast<PyObject*>(Custom), Tuple);
+  if(CallResult == NULL)
+    PyErr_Print();
+  Py_complex Result = PyComplex_AsCComplex(CallResult);
+  Py_XDECREF(CallResult);
+  Py_XDECREF(Tuple);
+  return Func32::TComplex(Result.real, Result.imag);
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginCreateCustomFunction(PyObject *Self, PyObject *Args)
+{
+  //The number of arguments are in func_code.co_argcount
+  const char *Name;
+  PyObject *Function;
+  if(!PyArg_ParseTuple(Args, "sO", &Name, &Function))
     return NULL;
-  HWND Handle = reinterpret_cast<HWND>(StrToInt(Str));
-  SetParent(Handle, Form1->Handle);
+
+  PyObject *FuncCode = PyObject_GetAttrString(Function, "func_code");
+  PyObject *ArgCount = PyObject_GetAttrString(FuncCode, "co_argcount");
+  long Arguments = PyInt_AsLong(ArgCount);
+
+  Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, Func32::TCustomFunc(CallCustomFunction, CallCustomFunction, Arguments, Function));
+
+  Py_XDECREF(FuncCode);
+  Py_XDECREF(ArgCount);
   return Py_BuildValue(""); //Return None
 }
 //---------------------------------------------------------------------------
@@ -221,7 +259,7 @@ static PyMethodDef GraphMethods[] = {
   {"SetActionAttr", reinterpret_cast<PyCFunction>(PluginSetActionAttr), METH_VARARGS | METH_KEYWORDS, "Test"},
   {"GetActionAttr", reinterpret_cast<PyCFunction>(PluginGetActionAttr), METH_O, "Test"},
   {"CreateParametricFunction", PluginCreateParametricFunction, METH_VARARGS, ""},
-  {"SetParent", PluginSetParent, METH_VARARGS, ""},
+  {"CreateCustomFunction", PluginCreateCustomFunction, METH_VARARGS, ""},
   {NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
@@ -245,11 +283,13 @@ void InitPlugins()
       "import imp\n"
       "import Graph\n"
       "Graph.version_info = (%d,%d,%d,'%s',%d)\n"
+      "Graph.handle = %d\n"
 			"File, PathName, Desc = imp.find_module('GraphUtil', ['%s\\Plugins'])\n"
       "Module = imp.load_module('GraphUtil', File, PathName, Desc)\n"
       "File.close()\n"
       "Module.InitPlugins()\n"
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
+      , Application->Handle
       , ExtractFileDir(Application->ExeName).c_str()
     ).c_str());
   }

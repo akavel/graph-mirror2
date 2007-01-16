@@ -12,8 +12,8 @@
 //---------------------------------------------------------------------------
 double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr=WideString(), double Min=-MAXDOUBLE, double Max=MAXDOUBLE);
 int MakeInt(TCustomEdit *Edit, const AnsiString &Caption);
-void ComplexToRTF(const Func32::Complex &C, TRichEdit *RichEdit);
-WideString ComplexToWideString(const Func32::Complex &C);
+void ComplexToRTF(const Func32::TComplex &C, TRichEdit *RichEdit);
+WideString ComplexToWideString(const Func32::TComplex &C);
 AnsiString RoundToStr(long double Number, unsigned Decimals);
 AnsiString RoundToStr(long double Number, const TData &Data);
 AnsiString DoubleToStr(long double Number);

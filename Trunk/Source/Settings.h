@@ -139,13 +139,14 @@ class TCustomFunctions
 public:
   typedef std::vector<TCustomFunction>::const_iterator ConstIterator;
   Func32::TSymbolList SymbolList;
+  Func32::TSymbolList GlobalSymbolList;
 
   void Add(const std::string &Str, const std::string &Value);
   void Replace(const std::string &Name, const std::string &Value);
   void Replace(const std::string &Name, long double Value);
   const std::string& GetValue(const std::string &Name) const;
   void Update();
-  void Clear() {Functions.clear(); SymbolList.Clear();}
+  void Clear();
   void Swap(TCustomFunctions &Other) {Functions.swap(Other.Functions); SymbolList.Swap(Other.SymbolList);}
   void WriteToIni(TConfigFile &IniFile) const;
   void ReadFromIni(const TConfigFile &IniFile);

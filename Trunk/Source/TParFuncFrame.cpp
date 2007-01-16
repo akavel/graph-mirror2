@@ -31,7 +31,7 @@ void TParFuncFrame::EvalFunc(TParFunc *Func)
 
   try
   {
-    Func32::Complex xTemp = Func->GetFunc().CalcX(Func32::Complex(t));
+    Func32::TComplex xTemp = Func->GetFunc().CalcX(Func32::TComplex(t));
     x = real(xTemp);
     if(!imag(xTemp))
       Edit2->Text = RoundToStr(x, Form1->Data);
@@ -42,7 +42,7 @@ void TParFuncFrame::EvalFunc(TParFunc *Func)
 
   try
   {
-    Func32::Complex yTemp = Func->GetFunc().CalcY(Func32::Complex(t));
+    Func32::TComplex yTemp = Func->GetFunc().CalcY(Func32::TComplex(t));
     y = real(yTemp);
     if(!imag(yTemp))
       Edit3->Text = RoundToStr(y, Form1->Data);

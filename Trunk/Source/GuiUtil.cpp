@@ -361,10 +361,46 @@ public:
     ModalResult = mrOk;
   }
 };
+//---------------------------------------------------------------------------
 bool InputQuery(const AnsiString &Caption, const AnsiString &Prompt, int &Value)
 {
   std::auto_ptr<TForm> Form(new TInputQueryForm(Caption, Prompt, Value));
   return Form->ShowModal() == mrOk;
+}
+//---------------------------------------------------------------------------
+WideString GetKeyName(UINT Key)
+{
+  UINT ScanCode = MapVirtualKey(Key, 0) << 16;
+  if(ScanCode != 0)
+  {
+    if(Key > VK_ESCAPE && Key < 'A' /*VK_A*/) //Not sure about this range
+      ScanCode |= 0x01000000;
+    char KeyName[20];
+    GetKeyNameText(ScanCode, KeyName, sizeof(KeyName));
+    AnsiStrLower(&KeyName[1]);
+    return WideString(KeyName);
+  }
+  return WideString();
+}
+//---------------------------------------------------------------------------
+//Replaces the function WideShortCutToText() in TntMenus.pas
+//This function asks the keyboard driver for the key names instead of using hardcoded names
+//We better make sure this also works on a Chinese system
+namespace Tntmenus
+{
+  WideString __fastcall WideShortCutToText(TShortCut ShortCut)
+  {
+    static const WideString Plus(L'+');
+    WideString Str;
+    if(ShortCut & scShift)
+      Str += GetKeyName(VK_SHIFT) + Plus;
+    if(ShortCut & scCtrl)
+      Str += GetKeyName(VK_CONTROL) + Plus;
+    if(ShortCut & scAlt)
+      Str += GetKeyName(VK_MENU) + Plus;
+    Str += GetKeyName(ShortCut & 0xFF);
+    return Str;
+  }
 }
 //---------------------------------------------------------------------------
 

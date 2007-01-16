@@ -34,20 +34,20 @@ void TStdFuncFrame::Clear()
 void TStdFuncFrame::EvalFunc(TStdFunc *Func)
 {
   Clear();
-  Func32::Complex x = Form1->Data.CalcComplex(ToString(Edit1->Text));
-  Func32::Complex y = Func->GetFunc().CalcY(x);
+  Func32::TComplex x = Form1->Data.CalcComplex(ToString(Edit1->Text));
+  Func32::TComplex y = Func->GetFunc().CalcY(x);
 
   if(!x.imag() && std::abs(y.imag()) < MIN_ZERO)
     Form1->SetCrossPos(x.real(), y.real());
 
   Edit2->Text = ComplexToWideString(y);
   Func32::TFunc Dif1 = Func->GetFunc().MakeDif();
-  Func32::Complex yDif1 = Dif1.CalcY(x);
+  Func32::TComplex yDif1 = Dif1.CalcY(x);
 
   Edit3->Text = ComplexToWideString(yDif1);
   Func32::TFunc Dif2 = Dif1.MakeDif();
 
-  Func32::Complex yDif2 = Dif2.CalcY(x);
+  Func32::TComplex yDif2 = Dif2.CalcY(x);
   Edit4->Text = ComplexToWideString(yDif2);
 }
 //---------------------------------------------------------------------------
