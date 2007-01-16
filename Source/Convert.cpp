@@ -68,7 +68,7 @@ int MakeInt(TCustomEdit *Edit, const AnsiString &Caption)
 }
 //---------------------------------------------------------------------------
 //This function writes the complex number into the RichEdit
-void ComplexToRTF(Func32::Complex C, TRichEdit *RichEdit)
+void ComplexToRTF(Func32::TComplex C, TRichEdit *RichEdit)
 {
   const TData &Data = Form1->Data;
   //Create rtf string to everything to become bold
@@ -126,7 +126,7 @@ void ComplexToRTF(Func32::Complex C, TRichEdit *RichEdit)
   RichEdit->Lines->LoadFromStream(Stream.get());
 }
 //---------------------------------------------------------------------------
-WideString ComplexToWideString(const Func32::Complex &C)
+WideString ComplexToWideString(const Func32::TComplex &C)
 {
   const TData &Data = Form1->Data;
   WideString Str;

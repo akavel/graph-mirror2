@@ -347,7 +347,6 @@ object Form1: TForm1
       end
       object Edit_Redo: TTntMenuItem
         Action = RedoAction
-        ShortCut = 16473
       end
       object N5: TTntMenuItem
         Caption = '-'
@@ -3547,7 +3546,7 @@ object Form1: TForm1
       Caption = 'Redo'
       Hint = 'Redo the last action undone.'
       ImageIndex = 8
-      ShortCut = 24666
+      ShortCut = 16473
       OnExecute = RedoActionExecute
     end
     object CutAction: TTntAction

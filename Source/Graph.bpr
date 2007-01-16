@@ -19,8 +19,8 @@
       ..\Obj\Unit19.obj ..\Obj\Unit20.obj ..\Obj\Tokenizer.obj 
       ..\Obj\TStdFuncFrame.obj ..\Obj\TParFuncFrame.obj ..\Obj\TPolFuncFrame.obj 
       ..\Obj\TTanFrame.obj ..\Obj\TAreaFrame.obj ..\Obj\pdflib.obj 
-      ..\..\dxgettext\gnugettext.obj"/>
-    <RESFILES value="Graph.res Resource.res"/>
+      ..\..\dxgettext\gnugettext.obj ..\Obj\Graph_TLB.obj"/>
+    <RESFILES value="Graph.res Resource.res Graph.tlb"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
     <DEFFILE value=""/>
@@ -50,7 +50,7 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value="WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG;STRICT"/>
+    <USERDEFINES value="WIN32;CUSTOM_DEBUG_HANDLER;STRICT;_DEBUG"/>
     <SYSDEFINES value="NO_STRICT;USING_ATLVCL;_ATL_NO_SECURITY;INC_ATL_HEADERS;_ATL_SINGLEUSE_INSTANCING;_ATL_MULTIUSE_INSTANCING;_ATL_APARTMENT_THREADED;_BCB_ATL_DEBUG"/>
     <MAINSOURCE value="Graph.cpp"/>
     <INCLUDEPATH value="&quot;C:\Program Files\Borland\CBuilder6\Source\vcl&quot;;&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;..\Components\TSaveDialogEx;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Func32;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;$(BCB)\include;$(BCB)\include\vcl;..\components\ticolorbox;..\Components\TCross;..\Components\TFocusPanel;..\Components\TGrid;..\Components\TLineSelect;..\Components\TMyEdit;..\Components\TMyRadioButton;..\Components\TMySplitter;..\Components\TPointSelect;..\Components\TProgress;..\Components\TProgressForm;..\Components\TRecent;..\Components\TShadeSelect;..\..\BMGLib\BMGLib_DLL;..\Components\Common;..\Components\TIRichEdit;$(BCB)\include\atl;..\..\boost;..\..\BMGLib\lpng125;..\..\BMGLib\zlib114;$(BCB)\source\rtl\rtlinc;..\..\PDFlib-Lite\libs\pdflib;..\..\TntUnicodeControls;C:\Python25\include"/>
@@ -138,6 +138,8 @@
       <FILE FILENAME="..\Func32\Func32.lib" FORMNAME="" UNITNAME="Func32.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Resource.rc" FORMNAME="" UNITNAME="Resource.rc" CONTAINERID="RC" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\dxgettext\gnugettext.obj" FORMNAME="" UNITNAME="gnugettext.obj" CONTAINERID="OBJTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Graph.tlb" FORMNAME="" UNITNAME="Graph.tlb" CONTAINERID="TypeLibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Graph_TLB.cpp" FORMNAME="" UNITNAME="Graph_TLB" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -149,7 +151,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=3
 Release=0
-Build=339
+Build=340
 Debug=1
 PreRelease=0
 Special=0
@@ -161,7 +163,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.3.0.339
+FileVersion=4.3.0.340
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2006
 LegalTrademarks=
@@ -237,22 +239,24 @@ Item28=d:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRi
 Item29=d:\progra~1\dxgettext;D:\Program Files\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid
 
 [HistoryLists\hlConditionals]
-Count=15
-Item0=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG;STRICT
-Item1=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG
-Item2=WIN32;CUSTOM_DEBUG_HANDLER
-Item3=WIN32;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
-Item4=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER
-Item5=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
-Item6=WIN32;_DEBUG
-Item7=WIN32
-Item8=WIN32;LIMITED_EDITION;_DEBUG
-Item9=WIN32;LIMITED_EDITION
-Item10=_DEBUG;WIN32
-Item11=_DEBUG
-Item12=EUREKALOG;_DEBUG
-Item13=EUREKALOG
-Item14=_DEBUG;EUREKALOG
+Count=17
+Item0=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;_DEBUG
+Item1=WIN32;CUSTOM_DEBUG_HANDLER;STRICT
+Item2=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG;STRICT
+Item3=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG
+Item4=WIN32;CUSTOM_DEBUG_HANDLER
+Item5=WIN32;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
+Item6=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER
+Item7=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
+Item8=WIN32;_DEBUG
+Item9=WIN32
+Item10=WIN32;LIMITED_EDITION;_DEBUG
+Item11=WIN32;LIMITED_EDITION
+Item12=_DEBUG;WIN32
+Item13=_DEBUG
+Item14=EUREKALOG;_DEBUG
+Item15=EUREKALOG
+Item16=_DEBUG;EUREKALOG
 
 [HistoryLists\hlIntOutputDir]
 Count=1

@@ -259,6 +259,21 @@ BEGIN
 "Customize"    //Customize toolbar dialog
 "Description"  //Customize toolbar dialog
 
+//Texts for short cuts
+"Ctrl+"       //Shortcut key
+"Alt+"        //Shortcut key
+"Shift+"      //Shortcut key
+"Del"         //Shortcut key
+"Ins"         //Shortcut key
+"Home"        //Shortcut key
+"End"         //Shortcut key
+"PgUp"        //Shortcut key
+"PgDn"        //Shortcut key
+"Left"        //Shortcut key
+"Right"       //Shortcut key
+"Up"          //Shortcut key
+"Down"        //Shortcut key
+
 "Local"
 "Global"
 */

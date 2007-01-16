@@ -85,7 +85,7 @@ public:
     return Eval(Str, CustomFunctions.SymbolList, Axes.Trigonometry);
   }
 
-  Func32::Complex CalcComplex(const std::string &Str) const
+  Func32::TComplex CalcComplex(const std::string &Str) const
   {
     return EvalComplex(Str, CustomFunctions.SymbolList, Axes.Trigonometry);
   }

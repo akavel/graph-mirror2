@@ -35,6 +35,7 @@ object Form19: TForm19
     Style = csDropDownList
     ItemHeight = 13
     TabOrder = 0
+    OnChange = ComboBox1Change
   end
   object Button1: TTntButton
     Left = 216

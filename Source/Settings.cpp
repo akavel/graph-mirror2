@@ -319,6 +319,13 @@ void TCustomFunctions::ReadFromIni(const TConfigFile &IniFile)
   }
 }
 //---------------------------------------------------------------------------
+void TCustomFunctions::Clear()
+{
+  Functions.clear();
+//  SymbolList.Clear();
+  SymbolList = GlobalSymbolList;
+}
+//---------------------------------------------------------------------------
 //////////////////
 // TDefaultData //
 //////////////////
