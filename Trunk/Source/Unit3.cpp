@@ -258,6 +258,10 @@ void __fastcall TForm3::BitBtn3Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void TForm3::UpdateEnabledControls()
 {
+  //Min and Max for the y-axis are not available when Zoom|Square is enabled.
+  Edit7->Enabled = !Data.Axes.ZoomSquare;
+  Edit8->Enabled = !Data.Axes.ZoomSquare;
+
   Edit3->Enabled = !CheckBox4->Checked;
   Edit4->Enabled = !CheckBox5->Checked;
   Edit5->Enabled = CheckBox3->Checked;

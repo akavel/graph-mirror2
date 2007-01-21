@@ -10,6 +10,7 @@
 // OLESERVERIMPL : Implementation of TOleServerImpl (CoClass: OleServer, Interface: IOleServer)
 #include "Graph.h"
 #pragma hdrstop
+
 #include <atl\atlvcl.h> //Needed by OleServerImpl.h
 #include "OleServerImpl.h"
 #include "VersionInfo.h"

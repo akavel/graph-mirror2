@@ -662,9 +662,12 @@ void TDrawThread::Visit(TShade &Shade)
         Y2 = Shade.Func2->Points[M2].y;
       }
 
+      //Check if Max is actually less than min for one of the functions
+      bool SwapMinMax = (Shade.sMin.Value < Shade.sMax.Value) != (Shade.sMin2.Value < Shade.sMax2.Value);
+
       //Add start point to the polygon points list
       if(!Shade.ExtendMax2ToIntercept)
-        Points.push_back(TPoint(X2, Y2));
+        Points.push_back(SwapMinMax ? TPoint(X1, Y1) : TPoint(X2, Y2));
 
       if(Shade.ExtendMin2ToIntercept)
       {
@@ -684,16 +687,16 @@ void TDrawThread::Visit(TShade &Shade)
       //Add points on the second function to the polygon points list
       if(M2 > M1)
       {
-        if((Shade.sMin.Value < Shade.sMax.Value) == (Shade.sMin2.Value < Shade.sMax2.Value))
-          Points.insert(Points.end(), Shade.Func2->Points.rend()-M2-1, Shade.Func2->Points.rend()-M1);
-        else
+        if(SwapMinMax)
           Points.insert(Points.end(), Shade.Func2->Points.begin()+M1, Shade.Func2->Points.begin()+M2);
+        else
+          Points.insert(Points.end(), Shade.Func2->Points.rend()-M2-1, Shade.Func2->Points.rend()-M1);
       }
 
       //Add end point to the polygon points list
       //Add start point to the polygon points list
       if(!Shade.ExtendMin2ToIntercept)
-        Points.push_back(TPoint(X1, Y1));
+        Points.push_back(SwapMinMax ? TPoint(X2, Y2) : TPoint(X1, Y1));
       break;
     }
     case ssInside:

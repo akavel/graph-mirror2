@@ -266,7 +266,7 @@ struct TPointSeriesPoint
   TPointSeriesPoint() {}
   TPointSeriesPoint(double X, double Y, double XError = 0, double YError = 0)
     : x(X), y(Y), xError(XError), yError(YError) {}
-  TPointSeriesPoint(const TData &Data, const std::string &X, const std::string &Y, const std::string &XError = "", const std::string &YError = "");
+  TPointSeriesPoint(const TData &Data, const std::string &X, const std::string &Y, const std::string &XError = "", const std::string &YError = "", bool IgnoreErrors=false);
 };
 
 enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};

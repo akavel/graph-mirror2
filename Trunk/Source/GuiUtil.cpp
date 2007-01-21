@@ -368,19 +368,51 @@ bool InputQuery(const AnsiString &Caption, const AnsiString &Prompt, int &Value)
   return Form->ShowModal() == mrOk;
 }
 //---------------------------------------------------------------------------
-WideString GetKeyName(UINT Key)
+AnsiString GetKeyName(UINT Key)
 {
-  UINT ScanCode = MapVirtualKey(Key, 0) << 16;
+  UINT ScanCode = MapVirtualKeyA(Key, 0) << 16;
   if(ScanCode != 0)
   {
     if(Key > VK_ESCAPE && Key < 'A' /*VK_A*/) //Not sure about this range
       ScanCode |= 0x01000000;
     char KeyName[20];
-    GetKeyNameText(ScanCode, KeyName, sizeof(KeyName));
+    GetKeyNameTextA(ScanCode, KeyName, sizeof(KeyName));
     AnsiStrLower(&KeyName[1]);
+    return AnsiString(KeyName);
+  }
+  return AnsiString();              
+}
+//---------------------------------------------------------------------------
+WideString GetWideKeyName(UINT Key)
+{
+  UINT ScanCode = MapVirtualKeyW(Key, 0) << 16;
+  if(ScanCode != 0)
+  {
+    if(Key > VK_ESCAPE && Key < 'A' /*VK_A*/) //Not sure about this range
+      ScanCode |= 0x01000000;
+    wchar_t KeyName[20];
+    GetKeyNameTextW(ScanCode, KeyName, sizeof(KeyName) / sizeof(KeyName[0]));
+    CharLowerW(&KeyName[1]);
     return WideString(KeyName);
   }
   return WideString();
+}
+//---------------------------------------------------------------------------
+namespace Menus
+{
+  AnsiString __fastcall ShortCutToText(TShortCut ShortCut)
+  {
+    static const AnsiString Plus('+');
+    AnsiString Str;
+    if(ShortCut & scShift)
+      Str += GetKeyName(VK_SHIFT) + Plus;
+    if(ShortCut & scCtrl)
+      Str += GetKeyName(VK_CONTROL) + Plus;
+    if(ShortCut & scAlt)
+      Str += GetKeyName(VK_MENU) + Plus;
+    Str += GetKeyName(ShortCut & 0xFF);
+    return Str;
+  }
 }
 //---------------------------------------------------------------------------
 //Replaces the function WideShortCutToText() in TntMenus.pas
@@ -393,12 +425,12 @@ namespace Tntmenus
     static const WideString Plus(L'+');
     WideString Str;
     if(ShortCut & scShift)
-      Str += GetKeyName(VK_SHIFT) + Plus;
+      Str += GetWideKeyName(VK_SHIFT) + Plus;
     if(ShortCut & scCtrl)
-      Str += GetKeyName(VK_CONTROL) + Plus;
+      Str += GetWideKeyName(VK_CONTROL) + Plus;
     if(ShortCut & scAlt)
-      Str += GetKeyName(VK_MENU) + Plus;
-    Str += GetKeyName(ShortCut & 0xFF);
+      Str += GetWideKeyName(VK_MENU) + Plus;
+    Str += GetWideKeyName(ShortCut & 0xFF);
     return Str;
   }
 }

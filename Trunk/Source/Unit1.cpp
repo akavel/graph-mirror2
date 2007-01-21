@@ -849,6 +849,7 @@ void TForm1::UpdateMenu()
     Tree_ShowInLegend->Visible = true;
 
   Tree_Placement->Visible = dynamic_cast<TTextLabel*>(Elem.get());
+  Tree_Rotation->Visible = Tree_Placement->Visible;
 
   if(dynamic_cast<TAxesView*>(Elem.get()))
   {
@@ -1151,8 +1152,22 @@ void __fastcall TForm1::TreeViewDblClick(TObject *Sender)
 void __fastcall TForm1::TreeViewMouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
+  TTntTreeNode *Node = TreeView->GetNodeAt(X,Y);
   if(Button == mbRight)
-    TreeView->Selected = TreeView->GetNodeAt(X,Y);
+    TreeView->Selected = Node;
+  else if(Button == mbLeft)
+    if(Node->StateIndex != iiEmpty && TreeView->GetHitTestInfoAt(X, Y).Contains(htOnStateIcon))
+    {
+      boost::shared_ptr<TGraphElem> GraphElem = GetGraphElem(Node);
+      if(GraphElem)
+      {
+        GraphElem->Visible = !GraphElem->Visible;
+        Node->StateIndex = GraphElem->Visible ? iiChecked : iiUnChecked;
+        Data.SetModified();
+        Redraw();
+        UpdateMenu(); //In case we have changed the selected item
+      }
+    }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormMouseWheelUp(TObject *Sender,
@@ -1369,6 +1384,10 @@ void __fastcall TForm1::TreeViewKeyPress(TObject *Sender, char &Key)
       Tree_Properties->OnClick(Sender);
       Key = 0;
       break;
+
+    case ' ':
+      Tree_Visible->Click();
+      break;  
   }
   Key = 0;
 }
@@ -2387,12 +2406,16 @@ void __fastcall TForm1::FaqActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Tree_VisibleClick(TObject *Sender)
 {
-  boost::shared_ptr<TGraphElem> GraphElem = GetGraphElem(TreeView->Selected);
-  if(GraphElem)
+  if(TreeView->Selected->StateIndex != iiEmpty)
   {
-    GraphElem->Visible = Tree_Visible->Checked;
-    Data.SetModified();
-    Redraw();
+    boost::shared_ptr<TGraphElem> GraphElem = GetGraphElem(TreeView->Selected);
+    if(GraphElem)
+    {
+      GraphElem->Visible = Tree_Visible->Checked;
+      TreeView->Selected->StateIndex = GraphElem->Visible ? iiChecked : iiUnChecked;
+      Data.SetModified();
+      Redraw();
+    }
   }
 }
 //---------------------------------------------------------------------------
@@ -3507,7 +3530,13 @@ void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomSquareActionUpdate(TObject *Sender)
 {
-  ZoomSquareAction->Checked = Data.Axes.ZoomSquare;   
+  ZoomSquareAction->Checked = Data.Axes.ZoomSquare;
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::ZoomActionUpdate(TObject *Sender)
+{
+  static_cast<TAction*>(Sender)->Enabled = !Data.Axes.ZoomSquare;
+}
+//---------------------------------------------------------------------------
+
 

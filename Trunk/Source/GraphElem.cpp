@@ -544,7 +544,7 @@ void TShade::Update()
 //////////////////
 // TPointSeries //
 //////////////////
-TPointSeriesPoint::TPointSeriesPoint(const TData &Data, const std::string &X, const std::string &Y, const std::string &XError, const std::string &YError)
+TPointSeriesPoint::TPointSeriesPoint(const TData &Data, const std::string &X, const std::string &Y, const std::string &XError, const std::string &YError, bool IgnoreErrors)
   : xError(XError.empty() ? 0 : Data.Calc(XError), XError), yError(YError.empty() ? 0 : Data.Calc(YError), YError)
 {
   x.Text = X;
@@ -573,6 +573,13 @@ TPointSeriesPoint::TPointSeriesPoint(const TData &Data, const std::string &X, co
   }
   catch(Func32::ECalcError &E)
   {
+    x.Value = NAN;
+    y.Value = NAN;
+  }
+  catch(...)
+  {
+    if(!IgnoreErrors)
+      throw;
     x.Value = NAN;
     y.Value = NAN;
   }
@@ -673,11 +680,19 @@ void TPointSeries::ReadFromIni(const TConfigFile &IniFile, const std::string &Se
     getline(xStream, xError, ';');
     getline(yStream, yError, ';');
 
-    using boost::lexical_cast;
-    if(BackwardCompatibility)
-      PointList.push_back(TPointSeriesPoint(lexical_cast<double>(x), lexical_cast<double>(y), xError.empty() ? 0.0 : lexical_cast<double>(yError), xError.empty() ? 0.0 : lexical_cast<double>(yError)));
-    else
-      PointList.push_back(TPointSeriesPoint(GetData(), x, y, xError, yError));
+    try
+    {
+      using boost::lexical_cast;
+      if(BackwardCompatibility)
+        PointList.push_back(TPointSeriesPoint(lexical_cast<double>(x), lexical_cast<double>(y), xError.empty() ? 0.0 : lexical_cast<double>(yError), xError.empty() ? 0.0 : lexical_cast<double>(yError)));
+      else
+        PointList.push_back(TPointSeriesPoint(GetData(), x, y, xError, yError));
+    }
+    catch(Func32::EParseError &E)
+    {
+      Form1->ShowStatusError(GetErrorMsg(E));
+      PointList.push_back(TPointSeriesPoint(GetData(), x, y, xError, yError, true));
+    }
   }
 
   xErrorBarType = IniFile.ReadEnum(Section, "xErrorBarType", ebtNone);
