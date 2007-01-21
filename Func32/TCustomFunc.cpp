@@ -50,6 +50,25 @@ TCustomFunc::TCustomFunc(long double Value)
   FuncData->Add(Value);
 }
 //---------------------------------------------------------------------------
+/** Constructor creating a custom function from a pointer to an external function.
+ *  The external function is called when the custom function is evaluated
+ *  \param ExtFunc: Pointer to an external function.
+ *  \param Args: Number of arguments for the function.
+ *  \param Custom: A custom value parsed to the external function.
+ */
+TCustomFunc::TCustomFunc(TExtFunc ExtFunc, TExtFuncComplex ExtFuncComplex, unsigned AArgs, void *Custom)
+  : FuncData(new TFuncData), Args(AArgs), Trigonometry(Radian)
+{
+  TElem Elem(CodeExtFunc);
+  Elem.ExtFunc = ExtFunc;
+  Elem.ExtFuncComplex = ExtFuncComplex;
+  Elem.Custom = Custom;
+  Elem.Arguments = AArgs;
+  FuncData->Add(Elem);
+  for(unsigned I = 0; I < AArgs; I++)
+    FuncData->Add(TElem(CodeVariable, I, 0));
+}
+//---------------------------------------------------------------------------
 /** Assigns new data to the function.
  *  \param Text: The string to containing the function, for example "a*sin(b)"
  *  \param AArgs: A vector for strings with the argument names, for example {"a", "b"}

@@ -61,10 +61,10 @@ long double Eval(const std::string &Expr, long double x, const std::string &Var,
  *  \throw EParseError: Thrown if an error occurs while parsing the expression
  *  \throw ECalcError: Thrown if a calculation error occurs
  */
-Complex EvalComplex(const std::string &Expr, TTrigonometry Trig)
+TComplex EvalComplex(const std::string &Expr, TTrigonometry Trig)
 {
   TFunc Func(Expr, "", Trig);
-  return Func.CalcY(Complex(0));
+  return Func.CalcY(TComplex(0));
 }
 //---------------------------------------------------------------------------
 /** Evaluates a function expression using complex numbers.
@@ -75,10 +75,10 @@ Complex EvalComplex(const std::string &Expr, TTrigonometry Trig)
  *  \throw EParseError: Thrown if an error occurs while parsing the expression
  *  \throw ECalcError: Thrown if a calculation error occurs
  */
-Complex EvalComplex(const std::string &Expr, const TSymbolList &SymbolList, TTrigonometry Trig)
+TComplex EvalComplex(const std::string &Expr, const TSymbolList &SymbolList, TTrigonometry Trig)
 {
   TFunc Func(Expr, "", SymbolList, Trig);
-  return Func.CalcY(Complex(0));
+  return Func.CalcY(TComplex(0));
 }
 //---------------------------------------------------------------------------
 /** Evaluates a function expression using complex numbers.
@@ -90,10 +90,10 @@ Complex EvalComplex(const std::string &Expr, const TSymbolList &SymbolList, TTri
  *  \throw EParseError: Thrown if an error occurs while parsing the expression
  *  \throw ECalcError: Thrown if a calculation error occurs
  */
-Complex EvalComplex(const std::string &Expr, Complex x, const std::string &Var, TTrigonometry Trig)
+TComplex EvalComplex(const std::string &Expr, TComplex x, const std::string &Var, TTrigonometry Trig)
 {
   TFunc Func(Expr, Var, Trig);
-  return Func.CalcY(Complex(x));
+  return Func.CalcY(TComplex(x));
 }
 //---------------------------------------------------------------------------
 inline long double Sqr(long double x)
@@ -144,10 +144,10 @@ bool IsCrossing(const TCoord<long double> &p1, const TCoord<long double> &p2, co
  */
 long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double Max1, const TBaseFunc &Func2, long double Min2, long double Max2, long double Tol)
 {
-  TCoord<long double> p1 = GetReal(Func1.Calc(Complex(Min1)));
-  TCoord<long double> p2 = GetReal(Func1.Calc(Complex(Max1)));
-  TCoord<long double> q1 = GetReal(Func2.Calc(Complex(Min2)));
-  TCoord<long double> q2 = GetReal(Func2.Calc(Complex(Max2)));
+  TCoord<long double> p1 = GetReal(Func1.Calc(TComplex(Min1)));
+  TCoord<long double> p2 = GetReal(Func1.Calc(TComplex(Max1)));
+  TCoord<long double> q1 = GetReal(Func2.Calc(TComplex(Min2)));
+  TCoord<long double> q2 = GetReal(Func2.Calc(TComplex(Max2)));
 
   while(Max1 - Min1 > Tol)
   {
@@ -155,8 +155,8 @@ long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double M
     long double s = (Max1 + Min1) / 2;
     long double t = (Max2 + Min2) / 2;
 
-    TCoord<long double> p = GetReal(Func1.Calc(Complex(s)));
-    TCoord<long double> q = GetReal(Func2.Calc(Complex(t)));
+    TCoord<long double> p = GetReal(Func1.Calc(TComplex(s)));
+    TCoord<long double> q = GetReal(Func2.Calc(TComplex(t)));
 
     if(IsCrossing(p1, p, q1, q))
       Max1 = s, p2 = p, Max2 = t, q2 = q;

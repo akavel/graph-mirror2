@@ -15,14 +15,17 @@ namespace Func32
 const unsigned MaxDifLevel = 10; //The maximum number of call levels allowed to avoid recursive functions
 
 /** Diferentiate data and return the result in a new object.
+ *  WARNING: Do not call for recursive functions as it will crash with a stack overflow
  *  \param Var: Variable to differenciate with respect to
  *  \param Trigonometry: Choose to differentiate trigonometric functions as radians or degrees.
- *  \throw EFuncError: Thrown if differentiation fails.
  */
 boost::shared_ptr<TFuncData> TFuncData::MakeDif(const TElem &Var, TTrigonometry Trigonometry) const
 {
   if(Data.empty())
     throw EFuncError(ecNoFunc);
+
+  if(CheckRecursive())
+    throw EFuncError(ecRecursiveDif);
 
   boost::shared_ptr<TFuncData> Temp(new TFuncData);
   Temp->CopyReplace(Data.begin(), std::vector<TConstIterator>());

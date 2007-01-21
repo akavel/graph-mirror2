@@ -58,6 +58,11 @@ void TSymbolList::Erase(const std::string &Key)
   List.erase(ToLower(Key));
 }
 //---------------------------------------------------------------------------
+void TSymbolList::Clear()
+{
+  List.clear();
+}
+//---------------------------------------------------------------------------
 } //namespace Func32
 
 

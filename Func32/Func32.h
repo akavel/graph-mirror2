@@ -200,7 +200,7 @@ inline std::istream& operator>>(std::istream &Stream, TCoord<T> &Coord)
 
 //---------------------------------------------------------------------------
 //!The type Complex is used for all calculations with complex numbers.
-typedef std::complex<long double> Complex;
+typedef std::complex<long double> TComplex;
 
 //!Type that indicates if calculations are done with radians or degrees
 enum TTrigonometry {Radian, Degree};
@@ -241,22 +241,22 @@ public:
   TTrigonometry GetTrigonometry() const {return Trigonometry;}
 
   virtual TCoord<long double> Calc(long double, ECalcError &E) const =0; //throw()
-  virtual TCoord<Complex> Calc(Complex, ECalcError &E) const =0; //throw()
+  virtual TCoord<TComplex> Calc(TComplex, ECalcError &E) const =0; //throw()
 
   virtual long double CalcX(long double, ECalcError &E) const =0; //throw()
-  virtual Complex CalcX(Complex, ECalcError &E) const =0; //throw()
+  virtual TComplex CalcX(TComplex, ECalcError &E) const =0; //throw()
 
   virtual long double CalcY(long double, ECalcError &E) const =0; //throw()
-  virtual Complex CalcY(Complex, ECalcError &E) const =0; //throw()
+  virtual TComplex CalcY(TComplex, ECalcError &E) const =0; //throw()
 
   TCoord<long double> Calc(long double) const;
-  TCoord<Complex> Calc(Complex) const;
+  TCoord<TComplex> Calc(TComplex) const;
 
   long double CalcX(long double) const;
-  Complex CalcX(Complex) const;
+  TComplex CalcX(TComplex) const;
 
   long double CalcY(long double) const;
-  Complex CalcY(Complex) const;
+  TComplex CalcY(TComplex) const;
 
   /** Calculates the slope of the function at s. The calculation differentiating the function.
    *  \param s: Position to calculate slope at.
@@ -347,13 +347,13 @@ public:
   void SetFunc(const std::string &Text, const std::string &Variable, const TSymbolList &SymbolList);
 
   long double CalcX(long double x, ECalcError &E) const; //throw()
-  Complex CalcX(Complex, ECalcError &E) const; //throw()
+  TComplex CalcX(TComplex, ECalcError &E) const; //throw()
 
   long double CalcY(long double x, ECalcError &E) const; //throw()
-  Complex CalcY(Complex, ECalcError &E) const; //throw()
+  TComplex CalcY(TComplex, ECalcError &E) const; //throw()
 
   TCoord<long double> Calc(long double, ECalcError &E) const; //throw()
-  TCoord<Complex> Calc(Complex, ECalcError &E) const; //throw()
+  TCoord<TComplex> Calc(TComplex, ECalcError &E) const; //throw()
 
   long double CalcSlope(long double x) const;
   long double CalcArea(long double xMin, long double xMax, unsigned n) const;
@@ -391,7 +391,7 @@ public:
   bool operator==(const TFunc &Func) const;
   bool operator!=(const TFunc &Func) const;
   long double operator()(long double x) const;
-  Complex operator()(Complex x) const;
+  TComplex operator()(TComplex x) const;
 };
 //---------------------------------------------------------------------------
 /*! \brief The TParamFunc class is derived from TBaseFunc. It models a parameter
@@ -425,13 +425,13 @@ public:
   void SetFunc(const std::string &xText, const std::string &yText, const std::string &Variable, const TSymbolList &SymbolList);
 
   long double CalcX(long double t, ECalcError &E) const; //throw()
-  Complex CalcX(Complex, ECalcError &E) const; //throw()
+  TComplex CalcX(TComplex, ECalcError &E) const; //throw()
 
   long double CalcY(long double t, ECalcError &E) const; //throw()
-  Complex CalcY(Complex, ECalcError &E) const; //throw()
+  TComplex CalcY(TComplex, ECalcError &E) const; //throw()
 
   TCoord<long double> Calc(long double, ECalcError &E) const; //throw()
-  TCoord<Complex> Calc(Complex, ECalcError &E) const; //throw()
+  TCoord<TComplex> Calc(TComplex, ECalcError &E) const; //throw()
 
   long double CalcSlope(long double t) const;
   long double CalcArea(long double sMin, long double sMax, unsigned n) const;
@@ -497,13 +497,13 @@ public:
   void SetFunc(const std::string &Text, const std::string &Variable, const TSymbolList &SymbolList);
 
   long double CalcX(long double t, ECalcError &E) const; //throw()
-  Complex CalcX(Complex, ECalcError &E) const; //throw()
+  TComplex CalcX(TComplex, ECalcError &E) const; //throw()
 
   long double CalcY(long double t, ECalcError &E) const; //throw()
-  Complex CalcY(Complex, ECalcError &E) const; //throw()
+  TComplex CalcY(TComplex, ECalcError &E) const; //throw()
 
   TCoord<long double> Calc(long double, ECalcError &E) const; //throw()
-  TCoord<Complex> Calc(Complex, ECalcError &E) const; //throw()
+  TCoord<TComplex> Calc(TComplex, ECalcError &E) const; //throw()
 
   long double CalcSlope(long double t) const;
   long double CalcR(long double t) const;
@@ -538,6 +538,9 @@ public:
 //---------------------------------------------------------------------------
 typedef std::vector<std::string> TArgType;
 enum TFunctionType {ftEmpty, ftFunction, ftEquation, ftInequality};
+typedef long double (*TExtFunc)(void *Custom, const long double Args[], unsigned ArgsCount, TTrigonometry Trigonometry);
+typedef TComplex (*TExtFuncComplex)(void *Custom, const TComplex Args[], unsigned ArgsCount, TTrigonometry Trigonometry);
+
 class TCustomFunc
 {
   friend class TFuncData;
@@ -556,6 +559,8 @@ public:
   TCustomFunc(const std::string &Text, const TArgType &AArgs, TTrigonometry Trig = Radian);
   TCustomFunc(const std::string &Text, const TArgType &AArgs, const TSymbolList &SymbolList, TTrigonometry Trig = Radian);
   TCustomFunc(long double Value);
+  TCustomFunc(TExtFunc ExtFunc, TExtFuncComplex, unsigned AArgs, void *Custom = NULL);
+
   void SetFunc(const std::string &Text, const TArgType &AArgs);
   void SetFunc(const std::string &Text, const TArgType &AArgs, const TSymbolList &SymbolList);
   long double Calc(const std::vector<long double> &Values) const;
@@ -590,7 +595,7 @@ public:
   TConstIterator End() const {return List.end();}
   TIterator End() {return List.end();}
   const TCustomFunc& Get(const std::string &Key) const;
-  void Clear() {List.clear();}
+  void Clear();
   bool Empty() const {return List.empty();}
   bool Exists(const std::string &Key) const;
   void Erase(const std::string &Key);
@@ -614,7 +619,7 @@ inline TCoord<long double> GetReal(const TCoord<T> &Coord)
   return TCoord<long double>(GetReal(Coord.x), GetReal(Coord.y));
 }
 //---------------------------------------------------------------------------
-inline long double GetReal(Complex Number)
+inline long double GetReal(TComplex Number)
 {
   if(imag(Number))
     throw ECalcError(ecComplexError);
@@ -653,9 +658,9 @@ std::istream& operator>>(std::istream &is, TFunc &Func);
 long double Eval(const std::string &Expr, TTrigonometry Trig = Radian);
 long double Eval(const std::string &Expr, const TSymbolList &SymbolList, TTrigonometry Trig = Radian);
 long double Eval(const std::string &Expr, long double x, const std::string &Var = "x", TTrigonometry Trig = Radian);
-Complex EvalComplex(const std::string &Expr, TTrigonometry Trig = Radian);
-Complex EvalComplex(const std::string &Expr, const TSymbolList &SymbolList, TTrigonometry Trig = Radian);
-Complex EvalComplex(const std::string &Expr, Complex x, const std::string &Var = "x", TTrigonometry Trig = Radian);
+TComplex EvalComplex(const std::string &Expr, TTrigonometry Trig = Radian);
+TComplex EvalComplex(const std::string &Expr, const TSymbolList &SymbolList, TTrigonometry Trig = Radian);
+TComplex EvalComplex(const std::string &Expr, TComplex x, const std::string &Var = "x", TTrigonometry Trig = Radian);
 
 long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double Max1, const TBaseFunc &Func2, long double Min2, long double Max2, long double Tol);
 std::vector<std::string> FindUnknowns(const std::string &Str);

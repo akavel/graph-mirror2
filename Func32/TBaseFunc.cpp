@@ -46,10 +46,10 @@ TCoord<long double> TBaseFunc::Calc(long double s) const
  *  \param s: Value to evaluate the function for.
  *  \return The x- and y-coordinate in a TCoord structure.
  */
-TCoord<Complex> TBaseFunc::Calc(Complex s) const
+TCoord<TComplex> TBaseFunc::Calc(TComplex s) const
 {
   ECalcError E;
-  TCoord<Complex> Result = Calc(s, E);
+  TCoord<TComplex> Result = Calc(s, E);
   if(E.ErrorCode)
     throw E;
   return Result;
@@ -72,10 +72,10 @@ long double TBaseFunc::CalcX(long double s) const
  *  \param s: The value to evaluate the function for.
  *  \return The x-coordinate of the function
  */
-Complex TBaseFunc::CalcX(Complex s) const
+TComplex TBaseFunc::CalcX(TComplex s) const
 {
   ECalcError E;
-  Complex Result = CalcX(s, E);
+  TComplex Result = CalcX(s, E);
   if(E.ErrorCode)
     throw E;
   return Result;
@@ -98,10 +98,10 @@ long double TBaseFunc::CalcY(long double s) const
  *  \param s: The value to evaluate the function for.
  *  \return The y-coordinate of the function
  */
-Complex TBaseFunc::CalcY(Complex s) const
+TComplex TBaseFunc::CalcY(TComplex s) const
 {
   ECalcError E;
-  Complex Result = CalcY(s, E);
+  TComplex Result = CalcY(s, E);
   if(E.ErrorCode)
     throw E;
   return Result;
