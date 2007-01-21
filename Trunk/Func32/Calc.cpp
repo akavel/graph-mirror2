@@ -381,15 +381,19 @@ bool Compare(const T &t1, const T &t2, TCompareMethod Compare, TErrorCode &Error
 }
 //---------------------------------------------------------------------------
 
-template<typename T> struct ComplexTrait
+template<typename T> struct TComplexTrait
 {
+  typedef TExtFunc TExtFuncCall;
   static const bool HasImagUnit = false;
   static const T ImagUnit() {return 0;}
+  static TExtFuncCall GetFunction(TExtFunc f1, TExtFuncComplex f2) {return f1;}
 };
-template<typename T> struct ComplexTrait<std::complex<T> >
+template<typename T> struct TComplexTrait<std::complex<T> >
 {
+  typedef TExtFuncComplex TExtFuncCall;
   static const bool HasImagUnit = true;
   static const std::complex<T> ImagUnit() {return std::complex<T>(0, 1);}
+  static TExtFuncCall GetFunction(TExtFunc f1, TExtFuncComplex f2) {return f2;}
 };
 //---------------------------------------------------------------------------
 template<typename T>
@@ -449,8 +453,8 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       return EULER;
 
     case Codei:
-      if(ComplexTrait<T>::HasImagUnit)
-        return ComplexTrait<T>::ImagUnit();
+      if(TComplexTrait<T>::HasImagUnit)
+        return TComplexTrait<T>::ImagUnit();
       ErrorCode = ecComplexError;
       return 0;
 
@@ -517,7 +521,12 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
 
       std::vector<T> Values;
       for(unsigned I = 0; I < Elem.Arguments; I++)
+      {
         Values.push_back(CalcF(Iter, DynData));
+        if(ErrorCode != ecNoError)
+          return 0;
+      }
+
       if(Elem.FuncData)
       {
         const T *OldArgs = DynData.Args;
@@ -530,6 +539,18 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
 
       ErrorCode = ecSymbolNotFound;
       DynData.ErrorStr = Elem.Text;
+      return 0;
+    }
+
+    case CodeExtFunc:
+    {
+      //Weird construct: This is just forwarding to another function
+      TComplexTrait<T>::TExtFuncCall FuncCall = TComplexTrait<T>::GetFunction(Elem.ExtFunc, Elem.ExtFuncComplex);
+      if(FuncCall)
+        return FuncCall(Elem.Custom, DynData.Args, Elem.Arguments, DynData.Trigonometry);
+
+      ErrorCode = ecSymbolNotFound;
+//      DynData.ErrorStr = Elem.Text;
       return 0;
     }
 
@@ -589,7 +610,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       //Calculations with complex numbers may return a complex number if Temp<0,
       //e.g. (-2)^2 = 4+i4.3368E-19; Because of this
       //evaluating f(x)=x/(x^2-4) results in f(-2)=4.6117E+18i
-      if(ComplexTrait<T>::HasImagUnit && !imag(Temp) && !imag(Temp2) && Trunc(Temp2) == Temp2)
+      if(TComplexTrait<T>::HasImagUnit && !imag(Temp) && !imag(Temp2) && Trunc(Temp2) == Temp2)
         Temp = pow(real(Temp), real(Temp2));
       else
         Temp = pow(Temp, Temp2);
@@ -944,7 +965,7 @@ long double TFuncData::IntegrateT(TConstIterator Func, long double Min, long dou
 long double TFuncData::Integrate(long double Min, long double Max, unsigned n, TTrigonometry Trigonometry) const
 {
   TErrorCode ErrorCode;
-  long double Result = IntegrateT<Complex>(Data.begin(), Min, Max, n, Trigonometry, ErrorCode);
+  long double Result = IntegrateT<TComplex>(Data.begin(), Min, Max, n, Trigonometry, ErrorCode);
   if(ErrorCode)
     throw ECalcError(ErrorCode);
   return Result;

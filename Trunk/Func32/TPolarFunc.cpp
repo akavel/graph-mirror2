@@ -209,13 +209,13 @@ long double TPolarFunc::operator()(long double t) const
 }
 //---------------------------------------------------------------------------
 //Returns the complex x-coordinate coresponding to the angle t
-Complex TPolarFunc::CalcX(Complex t, ECalcError &E) const
+TComplex TPolarFunc::CalcX(TComplex t, ECalcError &E) const
 {
   return FuncData->Calc(&t, Trigonometry, E) * cos(Trigonometry == Radian ? t : t*(PI/180));
 }
 //---------------------------------------------------------------------------
 //Returns the complex y-coordinate coresponding to the angle t
-Complex TPolarFunc::CalcY(Complex t, ECalcError &E) const
+TComplex TPolarFunc::CalcY(TComplex t, ECalcError &E) const
 {
   return FuncData->Calc(&t, Trigonometry, E) * sin(Trigonometry == Radian ? t : t*(PI/180));
 }
@@ -238,12 +238,12 @@ TCoord<long double> TPolarFunc::Calc(long double t, ECalcError &E) const
  *  \param E: Contains error information on return.
  *  \return Structure with the (x,y) pair.
  */
-TCoord<Complex> TPolarFunc::Calc(Complex t, ECalcError &E) const
+TCoord<TComplex> TPolarFunc::Calc(TComplex t, ECalcError &E) const
 {
-  Complex r = FuncData->Calc(&t, Trigonometry, E);
+  TComplex r = FuncData->Calc(&t, Trigonometry, E);
   if(Trigonometry == Degree)
     t *= PI / 180;
-  return TCoord<Complex>(r * cos(t), r * sin(t));
+  return TCoord<TComplex>(r * cos(t), r * sin(t));
 }
 //---------------------------------------------------------------------------
 /** Create a TFunc object with the x-part of the function.

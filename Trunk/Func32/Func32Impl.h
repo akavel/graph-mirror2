@@ -122,6 +122,7 @@ enum TIdent
   CodeMax,        //!< Return the greatest of the parameters
   CodeIfSeq,      //!< ifseq(a,f1,b,f2,f3) returns if(a) f1 else if(b) f2 else f3
   CodeCustom,     //!< Indicates a custom function
+  CodeExtFunc,    //!< Indicates a custom plugin function to call
   CodeDNorm,      //!< The normal distribution normaldist(x, mean, deviation)
   LastFunction = CodeDNorm, //!< Indicates last function
 
@@ -142,6 +143,12 @@ struct TElem
     long double Number; //A value if Ident is CodeNumber
     char Text[16];
     TCompareMethod Compare[2];
+    struct
+    {
+      TExtFunc ExtFunc;
+      TExtFuncComplex ExtFuncComplex;
+      void *Custom;
+    };
   };
 
   TElem() : Ident(CodeNull), Arguments(0) {};
@@ -193,6 +200,8 @@ class TFuncData
   static std::string MakeText(TConstIterator Iter);
   static TConstIterator CreateText(TConstIterator Iter, std::string &Str, const std::vector<std::string> &Args);
   void CopyReplace(TConstIterator Iter, const std::vector<TConstIterator> &Args);
+  bool CheckRecursive(std::vector<const TFuncData*> &FuncStack) const;
+  bool CheckRecursive() const;
 
 public:
   TFuncData() {}

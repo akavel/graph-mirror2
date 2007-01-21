@@ -110,7 +110,7 @@ long double TFunc::CalcX(long double x, ECalcError &E) const
  *  \param x: The x value returned.
  *  \param E: Class with eror information. Not used as this function cannot fail.
  */
-Complex TFunc::CalcX(Complex x, ECalcError &E) const
+TComplex TFunc::CalcX(TComplex x, ECalcError &E) const
 {
   return x;
 }
@@ -128,7 +128,7 @@ long double TFunc::CalcY(long double x, ECalcError &E) const
  *  \param x: The x-ccordinate to evaluate the function for.
  *  \param E: Class with error information on return.
  */
-Complex TFunc::CalcY(Complex x, ECalcError &E) const
+TComplex TFunc::CalcY(TComplex x, ECalcError &E) const
 {
   return FuncData->Calc(&x, Trigonometry, E);
 }
@@ -308,7 +308,7 @@ long double TFunc::operator()(long double x) const
 //---------------------------------------------------------------------------
 /** This is the same as the CalcY function
  */
-Complex TFunc::operator()(Complex x) const
+TComplex TFunc::operator()(TComplex x) const
 {
   return CalcY(x);
 }
@@ -439,9 +439,9 @@ TCoord<long double> TFunc::Calc(long double x, ECalcError &E) const
  *  \param E: Contains error information on return.
  *  \return Structure with the (x,y) pair.
  */
-TCoord<Complex> TFunc::Calc(Complex x, ECalcError &E) const
+TCoord<TComplex> TFunc::Calc(TComplex x, ECalcError &E) const
 {
-  return TCoord<Complex>(x, FuncData->Calc(&x, Trigonometry, E));
+  return TCoord<TComplex>(x, FuncData->Calc(&x, Trigonometry, E));
 }
 //---------------------------------------------------------------------------
 /** Update the function from the symbol list.

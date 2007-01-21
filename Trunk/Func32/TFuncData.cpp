@@ -105,6 +105,7 @@ static const TFuncTable Table[] = {
 /*CodeMax*/         TFuncTable("max",   arg1 >= 2),
 /*CodeIfSeq*/       TFuncTable("ifseq", arg1 >= 2),
 /*CodeCustom*/      TFuncTable("",      0),
+/*CodeExtFunc*/     TFuncTable("",      0),
 /*CodeDNorm*/       TFuncTable("dnorm", arg1 == 1 || arg1 == 3, "exp(-sqr(x-x2)/(2sqr(x3))) / (x3*sqrt(2pi))"),
 };
 
@@ -249,6 +250,30 @@ void TFuncData::Add(const TFuncData &FuncData)
   if(FuncData.IsEmpty())
     throw EFuncError(ecNoFunc);
   Data.insert(Data.end(), FuncData.Data.begin(), FuncData.Data.end());
+}
+//---------------------------------------------------------------------------
+bool TFuncData::CheckRecursive() const
+{
+  std::vector<const TFuncData*> FuncStack;
+  FuncStack.push_back(this);
+  return CheckRecursive(FuncStack);
+}
+//---------------------------------------------------------------------------
+bool TFuncData::CheckRecursive(std::vector<const TFuncData*> &FuncStack) const
+{
+  for(std::vector<TElem>::const_iterator Iter = Data.begin(); Iter != Data.end(); ++Iter)
+    if(Iter->Ident == CodeCustom)
+    {
+      if(std::find(FuncStack.begin(), FuncStack.end(), Iter->FuncData.get()) != FuncStack.end())
+        return true;
+
+      FuncStack.push_back(Iter->FuncData.get());
+      if(Iter->FuncData->CheckRecursive(FuncStack))
+        return true;
+      FuncStack.pop_back();
+    }
+
+  return false;
 }
 //---------------------------------------------------------------------------
 } //namespace Func32

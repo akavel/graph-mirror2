@@ -395,13 +395,13 @@ bool TParamFunc::operator !=(const TParamFunc &Func) const
 }
 //---------------------------------------------------------------------------
 //Return complex function value x(t)
-Complex TParamFunc::CalcX(Complex t, ECalcError &E) const
+TComplex TParamFunc::CalcX(TComplex t, ECalcError &E) const
 {
   return xFuncData->Calc(&t, Trigonometry, E);
 }
 //---------------------------------------------------------------------------
 //Return complex function value y(t)
-Complex TParamFunc::CalcY(Complex t, ECalcError &E) const
+TComplex TParamFunc::CalcY(TComplex t, ECalcError &E) const
 {
   return yFuncData->Calc(&t, Trigonometry, E);
 }
@@ -517,9 +517,9 @@ TCoord<long double> TParamFunc::Calc(long double t, ECalcError &E) const
  *  \param E: Contains error information on return.
  *  \return Structure with the (x,y) pair.
  */
-TCoord<Complex> TParamFunc::Calc(Complex t, ECalcError &E) const
+TCoord<TComplex> TParamFunc::Calc(TComplex t, ECalcError &E) const
 {
-  TCoord<Complex> Result;
+  TCoord<TComplex> Result;
   Result.x = xFuncData->Calc(&t, Trigonometry, E);
   if(!E.ErrorCode)
     Result.y = yFuncData->Calc(&t, Trigonometry, E);
