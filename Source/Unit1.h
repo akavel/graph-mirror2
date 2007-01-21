@@ -70,7 +70,10 @@ enum TIconIndex
   iiAxesNode,
   iiBullet,
   iiNormalNode,
-  iiOleNode
+  iiOleNode,
+  iiUnChecked,
+  iiChecked,
+  iiEmpty
 };
 
 class TForm1 : public TTntForm
@@ -277,10 +280,10 @@ __published:	// IDE-managed Components
   TTntMenuItem *Help_Contents;
   TTntMenuItem *Math_Animate;
   TTntAction *AnimateAction;
-  TAction *ImportGraphFileAction;
-  TAction *ImportPointSeriesAction;
+  TTntAction *ImportGraphFileAction;
+  TTntAction *ImportPointSeriesAction;
   TTntMenuItem *Legend_Font;
-  TAction *InsertObjectAction;
+  TTntAction *InsertObjectAction;
   TTntMenuItem *Insertobject1;
   TTntMenuItem *Rotation_Custom;
   TTntMenuItem *Tree_Rotation;
@@ -443,6 +446,7 @@ __published:	// IDE-managed Components
   void __fastcall Legend_FontClick(TObject *Sender);
   void __fastcall InsertObjectActionExecute(TObject *Sender);
   void __fastcall ZoomSquareActionUpdate(TObject *Sender);
+  void __fastcall ZoomActionUpdate(TObject *Sender);
 
 private:	// User declarations
   friend class TAddView;

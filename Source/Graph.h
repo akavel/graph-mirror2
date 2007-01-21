@@ -25,6 +25,7 @@
 
 //Don't include all ATL headers
 #undef INC_ATL_HEADERS
+#define USING_ATLVCL //Remove warning
 
 #include "Config.h"
 #include <vcl.h>

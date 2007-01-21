@@ -85,7 +85,7 @@ object Form17: TForm17
     OnEditorKeyPress = Grid1EditorKeyPress
     ColWidths = (
       76
-      330)
+      328)
   end
   object PopupMenu1: TTntPopupMenu
     Top = 328

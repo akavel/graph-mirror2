@@ -100,7 +100,7 @@ static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args, PyObject *Ke
   Action->Category = _("Plugins");
   Action->ActionList = Form1->ActionManager;
 
-  TMenuItem *MenuItem = new TMenuItem(Form1->MainMenu);
+  TTntMenuItem *MenuItem = new TTntMenuItem(Form1->MainMenu);
   MenuItem->Action = Action;
   Form1->Plugins_->Add(MenuItem);
   Form1->Plugins_->Visible = true;
@@ -112,7 +112,7 @@ static PyObject* PluginSetActionAttr(PyObject *Self, PyObject *Args, PyObject *K
 {
   try
   {
-    TAction *Action = NULL;
+    TTntAction *Action = NULL;
     const char *Caption = NULL;
     PyObject *Event = NULL;
     const char *IconName = NULL;

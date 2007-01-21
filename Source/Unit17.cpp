@@ -22,7 +22,7 @@ __fastcall TForm17::TForm17(TComponent* Owner, TData &AData)
   ScaleForm(this);
   TranslateProperties(this);
   SetAccelerators(this);
-  Grid1->ColWidths[1] = Grid1->Width - Grid1->ColWidths[0] - 10;
+  Grid1->ColWidths[1] = Grid1->Width - Grid1->ColWidths[0] - GetSystemMetrics(SM_CXHTHUMB) - 6;
 
   unsigned I = 1;
   Grid1->RowCount = Data.CustomFunctions.End() - Data.CustomFunctions.Begin() + 2;

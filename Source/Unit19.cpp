@@ -59,10 +59,11 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
     Edit1->Text = ToWideString(AnimationInfo.Min);
     Edit2->Text = ToWideString(AnimationInfo.Max);
     Edit3->Text = ToWideString(AnimationInfo.Step);
-    Edit4->Text = ToWideString(ImageWidth);
-    Edit5->Text = ToWideString(ImageHeight);
-    Edit6->Text = ToWideString(AnimationInfo.FramesPerSecond);
   }
+
+  Edit4->Text = ToWideString(ImageWidth);
+  Edit5->Text = ToWideString(ImageHeight);
+  Edit6->Text = ToWideString(AnimationInfo.FramesPerSecond);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button1Click(TObject *Sender)
@@ -110,6 +111,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   BITMAPINFO *BitmapInfo = reinterpret_cast<BITMAPINFO*>(&BitmapInfoData[0]);
   FillBitmapInfoHeader(BitmapInfo->bmiHeader, Bitmap.get(), Rect, 256, 0);
   AnsiString TempFile = GetTempFileName("Graph", "avi");
+  std::string OriginalValue = Data.CustomFunctions.GetValue(AnimationInfo.Constant);
 
   AVIFileInit();
   TCallOnRelease Dummy2(AVIFileExit);
@@ -177,10 +179,16 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 
       ProgressForm1->StepIt();
       if(ProgressForm1->AbortProgress)
+      {
+        //Restore constant in case we want to create a new animation with another constant
+        Data.CustomFunctions.Replace(AnimationInfo.Constant, OriginalValue);
         return;
+      }
     }
   }
 
+  //Restore constant in case we want to create a new animation with another constant
+  Data.CustomFunctions.Replace(AnimationInfo.Constant, OriginalValue);
   ProgressForm1->Close();
   CreateForm<TForm20>()->ShowAnimation(TempFile);
 }
@@ -199,10 +207,14 @@ void __fastcall TForm19::TntEditKeyPress(TObject *Sender, char &Key)
 void __fastcall TForm19::ComboBox1Change(TObject *Sender)
 {
   std::string Constant = ToString(ComboBox1->Text);
-  double Min = Func32::Eval(Constant, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
-  double Max = (Min == 0) ? 10 : Min * 10;
+  double Value = Func32::Eval(Constant, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
+  double Min = (Value == 0) ? 10 : Value / 10;
+  double Max = (Value == 0) ? 10 : Value * 10;
+  double Step = std::abs((Max - Min) / 9);
   Edit1->Text = ToWideString(Min);
   Edit2->Text = ToWideString(Max);
+  Edit3->Text = ToWideString(Step);
 }
 //---------------------------------------------------------------------------
+
 
