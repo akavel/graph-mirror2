@@ -22,6 +22,24 @@
 #define RES_UNCERTAINTY 12
 #define RES_TRANSPARENT 13
 #define RES_AXES        14
+#define RES_KEY_CTRL    15
+#define RES_KEY_ALT     16
+#define RES_KEY_SHIFT   17
+#define RES_KEY_DEL     18
+#define RES_KEY_INS     19
+#define RES_KEY_HOME    20
+#define RES_KEY_PGUP    21
+#define RES_KEY_PGDN    22
+#define RES_KEY_END     23
+#define RES_KEY_ESC     24
+#define RES_KEY_ENTER   25
+#define RES_KEY_SPACE   26
+#define RES_KEY_BKSP    27
+#define RES_KEY_TAB     28
+#define RES_KEY_LEFT    29
+#define RES_KEY_RIGHT   30
+#define RES_KEY_UP      31
+#define RES_KEY_DOWN    32
 
 #define RES_PowCalcError        101 //Error while power raising
 #define RES_TanError            102 //Tangent to 90°+p180°

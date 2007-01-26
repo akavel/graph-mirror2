@@ -149,7 +149,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=3
 Release=0
-Build=342
+Build=344
 Debug=1
 PreRelease=0
 Special=0
@@ -161,7 +161,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.3.0.342
+FileVersion=4.3.0.344
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2006
 LegalTrademarks=

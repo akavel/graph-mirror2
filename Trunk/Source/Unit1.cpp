@@ -239,7 +239,6 @@ void TForm1::Translate()
     TranslateList.push_back(File_Import);
 
     TranslateList.push_back(Tree_Export);
-    TranslateList.push_back(Tree_Visible);
     TranslateList.push_back(Tree_ShowInLegend);
     TranslateList.push_back(Tree_Placement);
     TranslateList.push_back(Tree_Above);
@@ -392,7 +391,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
               Image2->Visible = true;
               ImagePos = TPoint(Image2->Left, Image2->Top);
 
-              Label->Visible = false;
+              Label->ChangeVisible(); //Make label invisible
               Redraw();
               break;
             }
@@ -582,7 +581,7 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
       case csMoveLabel:
       {
         Image2->Visible = false;
-        MovingLabel->Visible = true; //Works because we can only move a visible label
+        MovingLabel->ChangeVisible(); //Works because we can only move a visible label
 
         //Only if label was actually moved
         if(Image2->Left != MovingLabel->GetRect().Left || Image2->Top != MovingLabel->GetRect().Top)
@@ -838,8 +837,7 @@ void TForm1::UpdateMenu()
 
   if(Elem)
   {
-    Tree_Visible->Checked = Elem->Visible;
-    Tree_ShowInLegend->Checked = Elem->ShowInLegend;
+    Tree_ShowInLegend->Checked = Elem->GetShowInLegend();
   }
 
   if(dynamic_cast<TTextLabel*>(Elem.get()) || dynamic_cast<TAxesView*>(Elem.get()) ||
@@ -853,12 +851,10 @@ void TForm1::UpdateMenu()
 
   if(dynamic_cast<TAxesView*>(Elem.get()))
   {
-    Tree_Visible->Visible = false;
     DeleteAction->Enabled = false;
   }
   else
   {
-    Tree_Visible->Visible = true;
     DeleteAction->Enabled = true;
   }
 
@@ -1153,21 +1149,14 @@ void __fastcall TForm1::TreeViewMouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   TTntTreeNode *Node = TreeView->GetNodeAt(X,Y);
+  if(Node == NULL)
+    return;
+    
   if(Button == mbRight)
     TreeView->Selected = Node;
   else if(Button == mbLeft)
-    if(Node->StateIndex != iiEmpty && TreeView->GetHitTestInfoAt(X, Y).Contains(htOnStateIcon))
-    {
-      boost::shared_ptr<TGraphElem> GraphElem = GetGraphElem(Node);
-      if(GraphElem)
-      {
-        GraphElem->Visible = !GraphElem->Visible;
-        Node->StateIndex = GraphElem->Visible ? iiChecked : iiUnChecked;
-        Data.SetModified();
-        Redraw();
-        UpdateMenu(); //In case we have changed the selected item
-      }
-    }
+    if(TreeView->GetHitTestInfoAt(X, Y).Contains(htOnStateIcon))
+      ChangeVisible(GetGraphElem(Node));
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormMouseWheelUp(TObject *Sender,
@@ -1318,7 +1307,7 @@ void __fastcall TForm1::FormKeyPress(TObject *Sender, char &Key)
       if(CursorState == csMoveLabel)
       {
         Image2->Visible = false;
-        MovingLabel->Visible = true;
+        MovingLabel->ChangeVisible();
         Redraw();
       }
       else if(CursorState == csMoveLegend)
@@ -1342,7 +1331,7 @@ void __fastcall TForm1::TreeViewMouseMove(TObject *Sender,
     if(GraphElem)
     {
       std::wstring Str = GraphElem->MakeText();
-      std::wstring LegendText = GraphElem->GetLegendText();
+      std::wstring LegendText = GraphElem->MakeLegendText();
       if(!LegendText.empty() && Str != LegendText)
         Str += L"    \"" + LegendText + L'\"';
       StatusBar1->Panels->Items[0]->Text = Str.c_str();
@@ -1376,6 +1365,22 @@ void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
   TreeView->Items->EndUpdate();
 }
 //---------------------------------------------------------------------------
+void TForm1::ChangeVisible(boost::shared_ptr<TGraphElem> GraphElem)
+{
+  if(GraphElem)
+  {
+    GraphElem->ChangeVisible();
+    switch(GraphElem->GetVisible())
+    {
+      case -1: TreeView->Selected->StateIndex =  iiGrayed; break;
+      case 0:  TreeView->Selected->StateIndex =  iiUnChecked; break;
+      case 1:  TreeView->Selected->StateIndex =  iiChecked; break;
+    }
+    Data.SetModified();
+    Redraw();
+  }
+}
+//---------------------------------------------------------------------------
 void __fastcall TForm1::TreeViewKeyPress(TObject *Sender, char &Key)
 {
   switch(Key)
@@ -1386,8 +1391,8 @@ void __fastcall TForm1::TreeViewKeyPress(TObject *Sender, char &Key)
       break;
 
     case ' ':
-      Tree_Visible->Click();
-      break;  
+      ChangeVisible(GetGraphElem(TreeView->Selected));
+      break;
   }
   Key = 0;
 }
@@ -1879,6 +1884,7 @@ void __fastcall TForm1::AxesActionExecute(TObject *Sender)
     Cross->Hide();
     Data.ClearCache();
     Data.SetModified();
+    UpdateTreeView(); //Update the check box for AxesView
     Redraw();
     UpdateEval();
     //Zoom|Square needs to be updated
@@ -2376,7 +2382,7 @@ void __fastcall TForm1::ZoomAllPointsActionExecute(TObject *Sender)
   {
     TPointSeries *Series = dynamic_cast<TPointSeries*>(Iter->get());
     //Ignore non visible point series
-    if(Series && Series->Visible)
+    if(Series && Series->GetVisible())
     {
       Series->Accept(ZoomFit);
       Found = true;
@@ -2402,21 +2408,6 @@ void __fastcall TForm1::ZoomAllPointsActionExecute(TObject *Sender)
 void __fastcall TForm1::FaqActionExecute(TObject *Sender)
 {
   Application->HelpJump("FAQ");
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::Tree_VisibleClick(TObject *Sender)
-{
-  if(TreeView->Selected->StateIndex != iiEmpty)
-  {
-    boost::shared_ptr<TGraphElem> GraphElem = GetGraphElem(TreeView->Selected);
-    if(GraphElem)
-    {
-      GraphElem->Visible = Tree_Visible->Checked;
-      TreeView->Selected->StateIndex = GraphElem->Visible ? iiChecked : iiUnChecked;
-      Data.SetModified();
-      Redraw();
-    }
-  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Panel4DockDrop(TObject *Sender,
@@ -2506,7 +2497,7 @@ void __fastcall TForm1::Tree_ShowInLegendClick(TObject *Sender)
   if(TreeView->Selected)
   {
     boost::shared_ptr<TGraphElem> GraphElem = GetGraphElem(TreeView->Selected);
-    GraphElem->ShowInLegend = Tree_ShowInLegend->Checked;
+    GraphElem->SetShowInLegend(Tree_ShowInLegend->Checked);
     Data.SetModified();
     Redraw();
   }

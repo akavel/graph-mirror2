@@ -21,6 +21,25 @@ BEGIN
   RES_TRANSPARENT "Transparent" //May be selected as background color in Insert label dialog
   RES_AXES        "Axes"        //Shown in the function list
 
+  RES_KEY_CTRL      "Ctrl+"       //Shortcut key
+  RES_KEY_ALT       "Alt+"        //Shortcut key
+  RES_KEY_SHIFT     "Shift+"      //Shortcut key
+  RES_KEY_DEL       "Del"         //Shortcut key
+  RES_KEY_INS       "Ins"         //Shortcut key
+  RES_KEY_HOME      "Home"        //Shortcut key
+  RES_KEY_END       "End"         //Shortcut key
+  RES_KEY_PGUP      "PgUp"        //Shortcut key
+  RES_KEY_PGDN      "PgDn"        //Shortcut key
+  RES_KEY_LEFT      "Left"        //Shortcut key
+  RES_KEY_RIGHT     "Right"       //Shortcut key
+  RES_KEY_UP        "Up"          //Shortcut key
+  RES_KEY_DOWN      "Down"        //Shortcut key
+  RES_KEY_ESC       "Esc"         //Shortcut key
+  RES_KEY_ENTER     "Enter"       //Shortcut key
+  RES_KEY_TAB       "Tab"         //Shortcut key
+  RES_KEY_BKSP      "BkSp"        //Shortcut key
+  RES_KEY_SPACE     "Space"       //Shortcut key
+
   RES_PowCalcError        "An error occurred while evaluating power function."
   RES_TanError            "Tangent to 90+p180 is undefined."
   RES_FactError           "Fact can only be calculated for positive integers."
@@ -259,20 +278,8 @@ BEGIN
 "Customize"    //Customize toolbar dialog
 "Description"  //Customize toolbar dialog
 
-//Texts for short cuts
-"Ctrl+"       //Shortcut key
-"Alt+"        //Shortcut key
-"Shift+"      //Shortcut key
-"Del"         //Shortcut key
-"Ins"         //Shortcut key
-"Home"        //Shortcut key
-"End"         //Shortcut key
-"PgUp"        //Shortcut key
-"PgDn"        //Shortcut key
-"Left"        //Shortcut key
-"Right"       //Shortcut key
-"Up"          //Shortcut key
-"Down"        //Shortcut key
+//Error messages in the VCL
+"Cannot open clipboard"  //Another application has locked the clipboard
 
 "Local"
 "Global"

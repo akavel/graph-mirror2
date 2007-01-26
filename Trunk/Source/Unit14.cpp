@@ -110,7 +110,7 @@ void __fastcall TForm14::GridEditorKeyPress(TInplaceEdit *InplaceEdit,
 void __fastcall TForm14::Button1Click(TObject *Sender)
 {
   boost::shared_ptr<TPointSeries> PointSeries(new TPointSeries);
-  PointSeries->LegendText = ToWString(Edit1->Text);
+  PointSeries->SetLegendText(ToWString(Edit1->Text));
   PointSeries->FrameColor = clBlack;
   PointSeries->FillColor = ExtColorBox1->Selected;
   PointSeries->LineColor = ExtColorBox2->Selected;
@@ -191,8 +191,8 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
 
   if(Series)
   {
-    PointSeries->Visible = Series->Visible;
-    PointSeries->ShowInLegend = Series->ShowInLegend;
+    PointSeries->SetVisible(Series->GetVisible());
+    PointSeries->SetShowInLegend(Series->GetShowInLegend());
     int Index = Data.GetIndex(Series);
     UndoList.Push(TUndoChange(Series, Index));
     Data.Replace(Index, PointSeries);
@@ -216,7 +216,7 @@ int TForm14::EditPointSeries(const boost::shared_ptr<TPointSeries> &P)
   if(P)
   {
     Caption = LoadRes(537);
-    Edit1->Text = P->LegendText.c_str();
+    Edit1->Text = ToWideString(P->GetLegendText());
     ExtColorBox1->Selected = P->FillColor;
     UpDown1->Position = P->Size;
     PointSelect1->ItemIndex = P->Style;

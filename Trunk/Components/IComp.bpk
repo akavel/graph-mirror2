@@ -41,7 +41,7 @@
     <SYSDEFINES value="NO_STRICT;USEPACKAGES"/>
     <MAINSOURCE value="IComp.cpp"/>
     <INCLUDEPATH value="TMediaPlayerEx;TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;..\..\TntUnicodeControls;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\include;$(BCB)\include\vcl;Common"/>
-    <LIBPATH value="TMediaPlayerEx;TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;$(BCB)\Projects\Lib;Common;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\Psdk"/>
+    <LIBPATH value="&quot;C:\Program Files\TntWare\Delphi Unicode Controls\CBuilder&quot;;TMediaPlayerEx;TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;$(BCB)\Projects\Lib;Common;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\Psdk"/>
     <WARNINGS value="-w-par -w-8027"/>
     <OTHERFILES value=""/>
   </MACROS>

@@ -64,17 +64,17 @@ class TGraphElem
 {
   const TGraphElem& operator=(const TGraphElem&); //Not implemented
   const TData *Data;
-
-public:
   bool Visible;
   bool ShowInLegend;
   std::wstring LegendText;
+
+public:
   std::vector<boost::shared_ptr<TGraphElem> > ChildList;
 
   TGraphElem() : Visible(true), ShowInLegend(true), Data(NULL) {}
   TGraphElem(const TGraphElem &Elem);
   virtual ~TGraphElem() {}
-  virtual std::wstring GetLegendText() const {return LegendText.empty() ? MakeText() : LegendText;}
+  virtual std::wstring MakeLegendText() const {return LegendText.empty() ? MakeText() : LegendText;}
   virtual void SetParentFunc(const boost::shared_ptr<TBaseFuncType> &AFunc) {}
   virtual boost::shared_ptr<TBaseFuncType> ParentFunc() const {return boost::shared_ptr<TBaseFuncType>();}
   virtual std::wstring MakeText() const = 0;
@@ -89,6 +89,14 @@ public:
   void AddChild(const TGraphElemPtr &Elem);
   void ReplaceChild(unsigned Index, const TGraphElemPtr &Elem);
   unsigned GetChildIndex(const TGraphElemPtr &Elem) const;
+
+  virtual int GetVisible() const {return Visible;}
+  virtual void ChangeVisible() {Visible = !Visible;}
+  void SetVisible(int AVisible) {Visible = AVisible;}
+  bool GetShowInLegend() const {return ShowInLegend;}
+  void SetShowInLegend(bool Value) {ShowInLegend = Value;}
+  std::wstring GetLegendText() const {return LegendText;}
+  void SetLegendText(const std::wstring &Str) {LegendText = Str;}
 };
 
 enum TLabelPlacement {lpUserPos, lpAboveX, lpBelowX, lpLeftOfY, lpRightOfY};
@@ -175,7 +183,7 @@ public:
   std::wstring MakeText() const;
   void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
-  std::wstring GetLegendText() const;
+  std::wstring MakeLegendText() const;
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TBaseFuncType>(new TTan(*this));}
   boost::shared_ptr<TBaseFuncType> MakeDifFunc() {throw Exception("Tangent cannot be differentiated");}
   void UpdateTan(double a1, double q1);
@@ -289,7 +297,7 @@ struct TPointSeries : public TGraphElem
   void Update();
 
   TPointSeries();
-  std::wstring MakeText() const {return LegendText;}
+  std::wstring MakeText() const {return MakeLegendText();}
   void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
   Func32::TDblPoint FindCoord(double x) const;
@@ -376,12 +384,14 @@ public:
 class TAxesView : public TGraphElem
 {
 public:
-  TAxesView() {ShowInLegend = false;}
+  TAxesView() {SetShowInLegend(false);}
   std::wstring MakeText() const {return L"";}
   void WriteToIni(class TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section) {ShowInLegend = false;}
+  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section) {SetShowInLegend(false);}
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TAxesView(*this));}
+  int GetVisible() const;
+  void ChangeVisible();
 };
 
 //---------------------------------------------------------------------------
