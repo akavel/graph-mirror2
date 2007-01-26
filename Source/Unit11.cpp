@@ -52,7 +52,7 @@ int TForm11::EditRelation(const boost::shared_ptr<TRelation> &ARelation)
 
   Edit1->Text = Relation->GetText().c_str();
   Edit2->Text = Relation->GetConstraints().c_str();
-  Edit3->Text = Relation->LegendText.c_str();
+  Edit3->Text = ToWideString(Relation->GetLegendText());
   UpDown1->Position = Relation->GetSize();
   ExtColorBox1->Selected = Relation->GetColor();
   ShadeSelect1->ShadeStyle = Relation->GetBrushStyle();
@@ -78,13 +78,13 @@ void __fastcall TForm11::Button1Click(TObject *Sender)
       }
     }
 
-    NewRelation->LegendText = ToWString(Edit3->Text);
+    NewRelation->SetLegendText(ToWString(Edit3->Text));
 
     Data.AbortUpdate();
     if(Relation)
     {
-      NewRelation->Visible = Relation->Visible;
-      NewRelation->ShowInLegend = Relation->ShowInLegend;
+      NewRelation->SetVisible(Relation->GetVisible());
+      NewRelation->SetShowInLegend(Relation->GetShowInLegend());
       UndoList.Push(TUndoChange(Relation, Data.GetIndex(Relation)));
       Data.Replace(Data.GetIndex(Relation), NewRelation);
     }

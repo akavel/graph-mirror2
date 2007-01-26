@@ -44,7 +44,7 @@ __fastcall TForm16::TForm16(TComponent* Owner, TData &AData)
     for(unsigned N = 0; N < Data.ElemCount(); N++)
       for(unsigned J = 0; J < Data.GetElem(N)->ChildList.size(); J++)
         if(boost::shared_ptr<TShade> Shade = boost::dynamic_pointer_cast<TShade>(Data.GetElem(N)->ChildList[J]))
-          if(CmpStr == ToWideString(Shade->LegendText))
+          if(CmpStr == ToWideString(Shade->GetLegendText()))
             Found = true;
   }
   Edit5->Text = CmpStr;
@@ -111,7 +111,7 @@ void __fastcall TForm16::Button1Click(TObject *Sender)
   Shade->Color = ExtColorBox1->Selected;
   Shade->Func = Func;
 
-  Shade->LegendText = ToWString(Edit5->Text);
+  Shade->SetLegendText(ToWString(Edit5->Text));
   Shade->sMin.Text = ToString(Edit1->Text);
   Shade->sMax.Text = ToString(Edit2->Text);
   if(Edit1->Text.IsEmpty())
@@ -168,8 +168,8 @@ void __fastcall TForm16::Button1Click(TObject *Sender)
 
   if(OldShade)
   {
-    Shade->Visible = OldShade->Visible;
-    Shade->ShowInLegend = OldShade->ShowInLegend;
+    Shade->SetVisible(OldShade->GetVisible());
+    Shade->SetShowInLegend(OldShade->GetShowInLegend());
     int Index = IndexOf(OldShade->ParentFunc()->ChildList, OldShade);
     UndoList.Push(TUndoChange(OldShade, Index));
     OldShade->ParentFunc()->ReplaceChild(Index, Shade);
@@ -216,7 +216,7 @@ int TForm16::EditShade(const boost::shared_ptr<TShade> &AShade)
     CheckBox2->Checked = OldShade->ExtendMaxToIntercept;
     CheckBox5->Checked = OldShade->MarkStart;
     CheckBox6->Checked = OldShade->MarkEnd;
-    Edit5->Text = OldShade->LegendText.c_str();
+    Edit5->Text = ToWideString(OldShade->GetLegendText());
 
     GroupBox2->Enabled = false;
     switch(OldShade->ShadeStyle)

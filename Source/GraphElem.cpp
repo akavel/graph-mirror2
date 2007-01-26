@@ -398,10 +398,10 @@ std::wstring TTan::MakeText() const
   return ToWString(Func.lock()->GetVariable() + "=" + t.Text);
 }
 //---------------------------------------------------------------------------
-std::wstring TTan::GetLegendText() const
+std::wstring TTan::MakeLegendText() const
 {
-  if(!LegendText.empty())
-    return LegendText;
+  if(!GetLegendText().empty())
+    return GetLegendText();
 
   if(_isnan(a))
     return L"";
@@ -503,8 +503,8 @@ void TShade::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
   TGraphElem::ReadFromIni(IniFile, Section);
 
   //For backward compatibility
-  if(LegendText.empty())
-    LegendText = LoadString(RES_SHADE);
+  if(GetLegendText().empty())
+    SetLegendText(LoadString(RES_SHADE));
 
   ShadeStyle = IniFile.ReadEnum(Section, "ShadeStyle", ssXAxis);
   BrushStyle = IniFile.ReadEnum(Section, "BrushStyle", bsBDiagonal);
@@ -531,7 +531,7 @@ void TShade::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
 //---------------------------------------------------------------------------
 std::wstring TShade::MakeText() const
 {
-  return LegendText;
+  return GetLegendText();
 }
 //---------------------------------------------------------------------------
 void TShade::Update()
@@ -646,8 +646,8 @@ void TPointSeries::ReadFromIni(const TConfigFile &IniFile, const std::string &Se
 {
   TGraphElem::ReadFromIni(IniFile, Section);
   //For backward compatibility
-  if(LegendText.empty())
-    LegendText = ToWString(IniFile.Read(Section, "Text", Section));
+  if(GetLegendText().empty())
+    SetLegendText(ToWString(IniFile.Read(Section, "Text", Section)));
 
   FrameColor = IniFile.Read(Section, "FrameColor", clBlack);
   FillColor = IniFile.Read(Section, "FillColor", clRed);
@@ -778,7 +778,7 @@ void TPointSeries::Update()
 TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const Func32::TDblPoint &Coord, TColor Color, unsigned ARotation)
   : Text(Str), LabelPlacement(Placement), Pos(Coord), BackgroundColor(Color), Rotation(ARotation)
 {
-  ShowInLegend = false;
+  SetShowInLegend(false);
   StatusText = ToWString(RtfToPlainText(Str));
   //Update() must be called after Label is added to Data
 }
@@ -807,7 +807,7 @@ void TTextLabel::ReadFromIni(const TConfigFile &IniFile, const std::string &Sect
   StatusText = ToWString(RtfToPlainText(Text));
 
   TGraphElem::ReadFromIni(IniFile, Section);
-  ShowInLegend = false; //Overwrite data; Label is never shown in legend
+  SetShowInLegend(false); //Overwrite data; Label is never shown in legend
 }
 //---------------------------------------------------------------------------
 std::wstring TTextLabel::MakeText() const
@@ -946,6 +946,40 @@ void TRelation::Update()
 void TAxesView::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
 {
   GetData().Axes.WriteToIni(IniFile);
+}
+//---------------------------------------------------------------------------
+int TAxesView::GetVisible() const
+{
+  switch(GetData().Axes.AxesStyle)
+  {
+    case asCrossed:
+      return 1;
+    case asBoxed:
+      return -1;
+    default:
+      return 0;
+  }
+}
+//---------------------------------------------------------------------------
+void TAxesView::ChangeVisible()
+{
+  TData &Data = const_cast<TData&>(GetData());
+  switch(Data.Axes.AxesStyle)
+  {
+    case asCrossed:
+      Data.Axes.AxesStyle = asBoxed;
+      Data.ClearCache();
+      break;
+
+    case asBoxed:
+      Data.Axes.AxesStyle = ::asNone;
+      Data.ClearCache();
+      break;
+
+    default:
+      Data.Axes.AxesStyle = asCrossed;
+      break;
+  }
 }
 //---------------------------------------------------------------------------
 

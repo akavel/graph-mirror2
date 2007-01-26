@@ -148,8 +148,8 @@ void TData::LoadData(const TConfigFile &IniFile)
       Elem.reset(new TRelation);
     else if(Section.substr(0, 10) == "Axes")
       Elem.reset(new TAxesView);
-//    else if(Section.substr(0, 9) == "OleObject")
-//      Elem.reset(new TOleObjectElem);
+    else if(Section.substr(0, 9) == "OleObject")
+      Elem.reset(new TOleObjectElem);
     else
       continue; //No known elem type
 
@@ -235,7 +235,7 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y, long dou
   {
     for(unsigned I = 0; I < ElemList.size(); I++)
       if(const TBaseFuncType *Func2 = dynamic_cast<TBaseFuncType*>(ElemList[I].get()))
-        if(Func2->Visible)
+        if(Func2->GetVisible())
         {
           const Func32::TFunc *StdFunc2 = dynamic_cast<const Func32::TFunc*>(&Func2->GetFunc());
 
@@ -311,7 +311,7 @@ std::wstring TData::CreatePointSeriesDescription()
     std::wstring CmpStr = Str + ToWString(I++);
     unsigned N;
     for(N = 0; N < ElemList.size(); N++)
-      if(ElemList[N]->LegendText == CmpStr)
+      if(ElemList[N]->GetLegendText() == CmpStr)
         break;
     if(N == ElemList.size())
       return CmpStr;
@@ -322,7 +322,7 @@ boost::shared_ptr<TTextLabel> TData::FindLabel(int X, int Y)
 {
   for(unsigned I = 0; I < ElemList.size(); I++)
     if(boost::shared_ptr<TTextLabel> Label = boost::dynamic_pointer_cast<TTextLabel>(ElemList[I]))
-      if(Label->Visible && Label->IsInsideRect(X, Y))
+      if(Label->GetVisible() && Label->IsInsideRect(X, Y))
         return Label;
   return boost::shared_ptr<TTextLabel>();
 }

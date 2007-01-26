@@ -110,10 +110,10 @@ void TDrawThread::DrawAll()
   {
     const boost::shared_ptr<TGraphElem> &Elem = Data->GetElem(I);
     for(unsigned N = 0; N < Elem->ChildList.size() && !Aborted; N++)
-      if(Elem->ChildList[N]->Visible)
+      if(Elem->ChildList[N]->GetVisible())
         Elem->ChildList[N]->Accept(*this);
 
-    if(Elem->Visible && !Aborted)
+    if(Elem->GetVisible() && !Aborted)
       Elem->Accept(*this);
   }
 }

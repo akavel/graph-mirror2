@@ -116,7 +116,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       Regression(Points, TempFunc, Values);
 
       boost::shared_ptr<TStdFunc> Func(new TStdFunc(TempFunc.ConvToFunc(Values, 0)));
-      Func->LegendText = Func->MakeText() + L"; R²=" + ToWString(RoundToString(Correlation(Points, Func->GetFunc()), Data));
+      Func->SetLegendText(Func->MakeText() + L"; R²=" + ToWString(RoundToString(Correlation(Points, Func->GetFunc()), Data)));
       Func->From.Value = -INF;
       Func->To.Value = +INF;
       BaseFunc = Func;
@@ -161,7 +161,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
         Func.reset(new TStdFunc(TrendLine(Type, Points, N, MakeFloat(Edit5))));
       else
         Func.reset(new TStdFunc(TrendLine(Type, Points, N)));
-      Func->LegendText = Func->MakeText() + L"; R²=" + ToWString(RoundToString(Correlation(Points, Func->GetFunc()), Data));
+      Func->SetLegendText(Func->MakeText() + L"; R²=" + ToWString(RoundToString(Correlation(Points, Func->GetFunc()), Data)));
       Func->From.Value = -INF;
       Func->To.Value = +INF;
       BaseFunc = Func;

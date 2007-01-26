@@ -380,7 +380,7 @@ AnsiString GetKeyName(UINT Key)
     AnsiStrLower(&KeyName[1]);
     return AnsiString(KeyName);
   }
-  return AnsiString();              
+  return AnsiString();
 }
 //---------------------------------------------------------------------------
 WideString GetWideKeyName(UINT Key)
@@ -402,16 +402,7 @@ namespace Menus
 {
   AnsiString __fastcall ShortCutToText(TShortCut ShortCut)
   {
-    static const AnsiString Plus('+');
-    AnsiString Str;
-    if(ShortCut & scShift)
-      Str += GetKeyName(VK_SHIFT) + Plus;
-    if(ShortCut & scCtrl)
-      Str += GetKeyName(VK_CONTROL) + Plus;
-    if(ShortCut & scAlt)
-      Str += GetKeyName(VK_MENU) + Plus;
-    Str += GetKeyName(ShortCut & 0xFF);
-    return Str;
+    return WideShortCutToText(ShortCut);
   }
 }
 //---------------------------------------------------------------------------
@@ -422,15 +413,35 @@ namespace Tntmenus
 {
   WideString __fastcall WideShortCutToText(TShortCut ShortCut)
   {
-    static const WideString Plus(L'+');
     WideString Str;
     if(ShortCut & scShift)
-      Str += GetWideKeyName(VK_SHIFT) + Plus;
+      Str += LoadRes(RES_KEY_SHIFT);
     if(ShortCut & scCtrl)
-      Str += GetWideKeyName(VK_CONTROL) + Plus;
+      Str += LoadRes(RES_KEY_CTRL);
     if(ShortCut & scAlt)
-      Str += GetWideKeyName(VK_MENU) + Plus;
-    Str += GetWideKeyName(ShortCut & 0xFF);
+      Str += LoadRes(RES_KEY_ALT);
+
+    switch(ShortCut & 0xFF)
+    {
+      case VK_DELETE: Str += LoadRes(RES_KEY_DEL); break;
+      case VK_INSERT: Str += LoadRes(RES_KEY_INS); break;
+      case VK_HOME:   Str += LoadRes(RES_KEY_HOME); break;
+      case VK_PRIOR:  Str += LoadRes(RES_KEY_PGUP); break;
+      case VK_NEXT:   Str += LoadRes(RES_KEY_PGDN); break;
+      case VK_END:    Str += LoadRes(RES_KEY_END); break;
+      case VK_ESCAPE: Str += LoadRes(RES_KEY_ESC); break;
+      case VK_RETURN: Str += LoadRes(RES_KEY_ENTER); break;
+      case VK_SPACE:  Str += LoadRes(RES_KEY_SPACE); break;
+      case VK_BACK:   Str += LoadRes(RES_KEY_BKSP); break;
+      case VK_TAB:    Str += LoadRes(RES_KEY_TAB); break;
+      case VK_LEFT:   Str += LoadRes(RES_KEY_LEFT); break;
+      case VK_RIGHT:  Str += LoadRes(RES_KEY_RIGHT); break;
+      case VK_UP:     Str += LoadRes(RES_KEY_UP); break;
+      case VK_DOWN:   Str += LoadRes(RES_KEY_DOWN); break;
+      default:
+        Str += Win32PlatformIsUnicode ? GetWideKeyName(ShortCut & 0xFF) : WideString(GetKeyName(ShortCut & 0xFF));
+    }
+
     return Str;
   }
 }

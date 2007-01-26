@@ -73,7 +73,7 @@ enum TIconIndex
   iiOleNode,
   iiUnChecked,
   iiChecked,
-  iiEmpty
+  iiGrayed
 };
 
 class TForm1 : public TTntForm
@@ -160,7 +160,6 @@ __published:	// IDE-managed Components
   TTntMenuItem *N11;
   TTntAction *ZoomAllPointsAction;
   TTntAction *FaqAction;
-  TTntMenuItem *Tree_Visible;
   TMySplitter *Splitter;
   TPanel *Panel3;
   TTntTreeView *TreeView;
@@ -387,7 +386,6 @@ __published:	// IDE-managed Components
     const AnsiString Section, int &Result);
   void __fastcall ZoomAllPointsActionExecute(TObject *Sender);
   void __fastcall FaqActionExecute(TObject *Sender);
-  void __fastcall Tree_VisibleClick(TObject *Sender);
   void __fastcall Panel4DockDrop(TObject *Sender, TDragDockObject *Source,
     int X, int Y);
   void __fastcall Panel4UnDock(TObject *Sender, TControl *Client,
@@ -497,6 +495,7 @@ private:	// User declarations
   void MoveAndSnapLegend(int dx, int dy, bool Snap);
   void MoveAndSnapLabel(int dx, int dy, bool Snap);
   void __fastcall DebugLine(System::TObject* Sender, const AnsiString Line, bool &Discard); //Write debug text from dxGetText
+  void ChangeVisible(boost::shared_ptr<TGraphElem> GraphElem);
 
   int AddImage(int Index, TColor Color);
   int AddImage(TColor Color, TBrushStyle Style);

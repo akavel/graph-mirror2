@@ -64,7 +64,7 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
   Tan->Style = LineSelect1->LineStyle;
   Tan->Color = ExtColorBox1->Selected;
   Tan->TangentType = RadioGroup1->ItemIndex == 0 ? ttTangent : ttNormal;
-  Tan->LegendText = ToWString(Edit2->Text);
+  Tan->SetLegendText(ToWString(Edit2->Text));
 
   Tan->From.Value = -INF;
   Tan->To.Value = INF;
@@ -98,8 +98,8 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
   }
   else
   {
-    Tan->Visible = Func->ChildList[Index]->Visible;
-    Tan->ShowInLegend = Func->ChildList[Index]->ShowInLegend;
+    Tan->SetVisible(Func->ChildList[Index]->GetVisible());
+    Tan->SetShowInLegend(Func->ChildList[Index]->GetShowInLegend());
     UndoList.Push(TUndoChange(Func->ChildList[Index], Index));
     Func->ReplaceChild(Index, Tan);
   }
@@ -126,7 +126,7 @@ int TForm12::EditTan(const boost::shared_ptr<TBaseFuncType> &F, int AIndex)
   LineSelect1->LineStyle = Tan->Style;
   ExtColorBox1->Selected = Tan->Color;
   Label1->Caption = (Tan->ParentFunc()->GetVariable() + "=").c_str();
-  Edit2->Text = Tan->LegendText.c_str();
+  Edit2->Text = ToWideString(Tan->GetLegendText());
   RadioGroup1->ItemIndex = Tan->TangentType;
   Edit4->Text = Tan->From.Text.c_str();
   Edit5->Text = Tan->To.Text.c_str();

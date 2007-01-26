@@ -641,17 +641,17 @@ void TDraw::DrawLegend()
   for(unsigned I = 0; I < Data->ElemCount(); I++)
   {
     TGraphElem *Elem = Data->GetElem(I).get();
-    if(Elem->Visible && Elem->ShowInLegend)
+    if(Elem->GetVisible() && Elem->GetShowInLegend())
     {
       LegendCount++;
-      TextWidth = std::max(TextWidth, Context.GetTextWidth(Elem->GetLegendText()));
+      TextWidth = std::max(TextWidth, Context.GetTextWidth(Elem->MakeLegendText()));
     }
 
     for(unsigned N = 0; N < Elem->ChildList.size(); N++)
-      if(Elem->ChildList[N]->Visible && Elem->ChildList[N]->ShowInLegend)
+      if(Elem->ChildList[N]->GetVisible() && Elem->ChildList[N]->GetShowInLegend())
       {
         LegendCount++;
-        TextWidth = std::max(TextWidth, Context.GetTextWidth(Elem->ChildList[N]->GetLegendText()));
+        TextWidth = std::max(TextWidth, Context.GetTextWidth(Elem->ChildList[N]->MakeLegendText()));
       }
   }
 
@@ -700,11 +700,11 @@ void TDraw::DrawLegend()
   for(unsigned I = 0; I < Data->ElemCount(); I++)
   {
     TGraphElem *Elem = Data->GetElem(I).get();
-    if(Elem->Visible && Elem->ShowInLegend)
+    if(Elem->GetVisible() && Elem->GetShowInLegend())
       Elem->Accept(DrawLegendItems);
 
     for(unsigned N = 0; N < Elem->ChildList.size(); N++)
-      if(Elem->ChildList[N]->Visible && Elem->ChildList[N]->ShowInLegend)
+      if(Elem->ChildList[N]->GetVisible() && Elem->ChildList[N]->GetShowInLegend())
         Elem->ChildList[N]->Accept(DrawLegendItems);
   }
 
@@ -816,7 +816,7 @@ void TDrawLegend::Visit(TBaseFuncType &Func)
   Draw->Context.SetPen(Style, Draw->ForceBlack ? clBlack : Func.Color, Size(Func.Size));
   Draw->Context.DrawLine(TPoint(x, y), TPoint(x + TextWidth, y));
 
-  Draw->Context.DrawText(Func.GetLegendText(), x, y - TextHeight - Size(1));
+  Draw->Context.DrawText(Func.MakeLegendText(), x, y - TextHeight - Size(1));
   y += TextHeight + Size(6);
 }
 //---------------------------------------------------------------------------
@@ -839,7 +839,7 @@ void TDrawLegend::Visit(TPointSeries &Series)
      TPointSelect::DrawPoint(Draw->Context.GetCanvas(), TPoint(X, y), Series.Style, Series.Size > 2 ? FrameColor : FillColor, FillColor, Size(PointSize));
 
   Draw->Context.SetBrush(bsClear);
-  Draw->Context.DrawText(Series.GetLegendText(), x, y - TextHeight - Size(1));
+  Draw->Context.DrawText(Series.MakeLegendText(), x, y - TextHeight - Size(1));
   y += TextHeight + Size(6);
 }
 //---------------------------------------------------------------------------
@@ -852,7 +852,7 @@ void TDrawLegend::Visit(TShade &Shade)
   TPoint Points[] = {TPoint(R.Left, R.Top), TPoint(R.Right, R.Top), TPoint(R.Right, R.Bottom), TPoint(R.Left, R.Bottom)};
   Draw->Context.DrawPolygon(Points, 4);
 
-  Draw->Context.DrawText(Shade.GetLegendText(), x, y - TextHeight - Size(1));
+  Draw->Context.DrawText(Shade.MakeLegendText(), x, y - TextHeight - Size(1));
   y += TextHeight + Size(6);
 }
 //---------------------------------------------------------------------------
@@ -876,7 +876,7 @@ void TDrawLegend::Visit(TRelation &Relation)
   }
 
   Draw->Context.SetBrush(bsClear); //Draw text transparent
-  Draw->Context.DrawText(Relation.GetLegendText(), x, y - TextHeight - Size(1));
+  Draw->Context.DrawText(Relation.MakeLegendText(), x, y - TextHeight - Size(1));
   y += TextHeight + Size(6);
 }
 //---------------------------------------------------------------------------

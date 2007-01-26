@@ -23,7 +23,7 @@ TOleObjectElem::TOleObjectElem()
   OleContainer->AllowInPlace = false;
   OleContainer->Left = 200;
   OleContainer->Top = 100;
-  ShowInLegend = false;
+  SetShowInLegend(false);
 }
 //---------------------------------------------------------------------------
 TOleObjectElem::TOleObjectElem(const Func32::TDblPoint &APos)
@@ -33,7 +33,7 @@ TOleObjectElem::TOleObjectElem(const Func32::TDblPoint &APos)
   OleContainer->AllowInPlace = false;
   OleContainer->Left = 200;
   OleContainer->Top = 100;
-  ShowInLegend = false;
+  SetShowInLegend(false);
 }
 //---------------------------------------------------------------------------
 bool TOleObjectElem::InsertObjectDialog()

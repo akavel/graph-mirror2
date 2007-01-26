@@ -126,7 +126,7 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
   Func->Color = ExtColorBox1->Selected;
   Func->Size = ToIntDef(Edit6->Text, 1);
   Func->Style = LineSelect1->LineStyle;
-  Func->LegendText = ToWString(Edit7->Text);
+  Func->SetLegendText(ToWString(Edit7->Text));
   Func->StartPointStyle = ComboBox2->ItemIndex;
   Func->EndPointStyle = ComboBox3->ItemIndex;
   Func->DrawType = static_cast<TDrawType>(ComboBox4->ItemIndex);
@@ -136,8 +136,8 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
   Data.AbortUpdate();
   if(F)
   {
-    Func->Visible = F->Visible;
-    Func->ShowInLegend = F->ShowInLegend;
+    Func->SetVisible(F->GetVisible());
+    Func->SetShowInLegend(F->GetShowInLegend());
     UndoList.Push(TUndoChangeFunc(F, Func));
     Data.Replace(F, Func);
   }
@@ -188,7 +188,7 @@ int TForm5::EditFunc(boost::shared_ptr<TBaseFuncType> Func)
     LineSelect1->LineStyle = F->Style;
     UpDown1->Position = F->Size;                  
     ExtColorBox1->Selected = F->Color;
-    Edit7->Text = F->LegendText.c_str();
+    Edit7->Text = ToWideString(F->GetLegendText());
     ComboBox2->ItemIndex = F->StartPointStyle;
     ComboBox3->ItemIndex = F->EndPointStyle;
     ComboBox4->ItemIndex = F->DrawType; 
