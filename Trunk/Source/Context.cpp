@@ -269,15 +269,9 @@ void TContext::SetPen(TPenStyle Style, TColor Color, int Width)
 //---------------------------------------------------------------------------
 void TContext::SetGridPen(TColor Color, unsigned Width)
 {
-  //Some printers do no support PS_ALTERNATE and PS_DOT
-  if(Canvas == Printer()->Canvas)
-  {
-    SetPen(psSolid, Color, Width);
-    return;
-  }
-
-  //PS_ALTERNATE is not supported on Win9x and apparently most printers
-  if(Width > 1 || !IsWinNT)
+  //PS_ALTERNATE is not supported on Win9x and apparently most printers.
+  //It may also cause problems if PS_ALTERNATE is used in a metafile and printed afterwards,
+  if(Width > 1 || !IsWinNT || Canvas == Printer()->Canvas || dynamic_cast<TMetafileCanvas*>(Canvas))
   {
     SetPen(psDot, Color, Width);
     return;

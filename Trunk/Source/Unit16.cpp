@@ -57,7 +57,7 @@ void TForm16::ShowFuncList()
       if(F != Func)
       {
         FuncList.push_back(F);
-        ListBox1->Items->Add(F->MakeText().c_str());
+        ListBox1->Items->Add(ToWideString(F->MakeLegendText()));
       }
 
   if(ListBox1->Items->Count)

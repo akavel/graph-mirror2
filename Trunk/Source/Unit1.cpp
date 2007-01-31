@@ -26,6 +26,7 @@
 #include "Unit17.h"
 #include "Unit18.h"
 #include "Unit19.h"
+#include "Unit21.h"
 #include <Clipbrd.hpp>
 #include <Registry.hpp>
 #include <Printers.hpp>
@@ -206,8 +207,8 @@ void TForm1::Initialize()
 
   Recent1->RegistryKey = REGISTRY_KEY; //Set key for data in registry
 
-  //Add degree symbols (°) so we get 270° in the rotation menus
-  for(int I = 0; I < Label_Placement->Count; I++)
+  //Add degree symbols (°) so we get 270° in the rotation menus, but ignore the last "Custom..."
+  for(int I = 0; I < Label_Placement->Count - 1; I++)
   {
     Label_Rotation->Items[I]->Caption = Label_Rotation->Items[I]->Caption + WideString(L'\xB0');
     Tree_Rotation->Items[I]->Caption = Tree_Rotation->Items[I]->Caption + WideString(L'\xB0');
@@ -245,6 +246,7 @@ void TForm1::Translate()
     TranslateList.push_back(Tree_Below);
     TranslateList.push_back(Tree_Left);
     TranslateList.push_back(Tree_Right);
+    TranslateList.push_back(Tree_Placement_Custom);
 
     TranslateList.push_back(Label_Edit);
     TranslateList.push_back(Label_Delete);
@@ -254,6 +256,7 @@ void TForm1::Translate()
     TranslateList.push_back(Label_Below);
     TranslateList.push_back(Label_Left);
     TranslateList.push_back(Label_Right);
+    TranslateList.push_back(Label_Placement_Custom);
 
     TranslateList.push_back(ToolBar_Reset);
     TranslateList.push_back(ToolBar_Customize);
@@ -339,7 +342,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
           if(Form6->ShowModal() == mrOk && !Form6->IsEmpty())
           {
             Data.Property.DefaultLabelFont = Form6->GetFont();
-            boost::shared_ptr<TTextLabel> Label(new TTextLabel(Form6->GetText().c_str(), lpUserPos, Draw.xyCoord(X, Y), Form6->GetBackgroundColor(), 0));
+            boost::shared_ptr<TTextLabel> Label(new TTextLabel(Form6->GetText().c_str(), lpUserTopLeft, Draw.xyCoord(X, Y), Form6->GetBackgroundColor(), 0));
             Data.Add(Label);
             Label->Update();
             Redraw();
@@ -1061,10 +1064,15 @@ void __fastcall TForm1::ApplicationEventsShowHint(AnsiString &HintStr,
   HintInfo.HintMaxWidth = 200;
 
   if(Application->HintShortCuts)
-    if(TCustomAction *CustomAction = dynamic_cast<TCustomAction*>(HintInfo.HintControl->Action))
+    if(TTntAction *Action = dynamic_cast<TTntAction*>(HintInfo.HintControl->Action))
     {
-      if(CustomAction->ShortCut != 0)
-        HintStr += " (" + ShortCutToText(CustomAction->ShortCut) + ")";
+      HintInfo.HintWindowClass = __classid(TTntHintWindow);
+      HintInfo.HintData = &HintInfo;
+      WideString Str = Action->Hint;
+      if(Action->ShortCut != 0)
+        Str += WideString(L" (") + WideShortCutToText(Action->ShortCut) + L")";
+      TntControl_SetHint(HintInfo.HintControl, Str);
+      HintStr = Str;
     }
 }
 //---------------------------------------------------------------------------
@@ -3182,16 +3190,28 @@ void __fastcall TForm1::SaveDialogEx1Help(TObject *Sender)
   CreateForm<TForm18>()->EditOptions(*ImageOptions, static_cast<TImageFormat>(SaveDialogEx1->FilterIndex), Image1->Width, Image1->Height);
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::LabelPlacementClick(TObject *Sender)
+void __fastcall TForm1::PlacementClick(TObject *Sender)
 {
   if(TMenuItem *MenuItem = dynamic_cast<TMenuItem*>(Sender))
   {
     MenuItem->Checked = true;
     Draw.AbortUpdate();
-    boost::shared_ptr<TTextLabel> TextLabel = Data.FindLabel(LastMousePos.x, LastMousePos.y);
+    boost::shared_ptr<TTextLabel> TextLabel;
+    if(MenuItem->Parent == Tree_Placement)
+      TextLabel = boost::dynamic_pointer_cast<TTextLabel>(GetGraphElem(TreeView->Selected));
+    else
+      TextLabel = Data.FindLabel(LastMousePos.x, LastMousePos.y);
     if(!TextLabel)
       return;
 
+    if(MenuItem->MenuIndex == 4)
+    {
+      if(!CreateForm<TForm21>(TextLabel)->ShowModal() == mrOk)
+        return;
+    }
+    else
+      ;
+      
     UndoList.Push(TUndoChange(TextLabel, Data.GetIndex(TextLabel)));
     boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(TextLabel->GetText(), static_cast<TLabelPlacement>(MenuItem->MenuIndex + 1), Func32::MakeCoord(0.0, 0.0), TextLabel->GetBackgroundColor(), TextLabel->GetRotation()));
     Data.Replace(Data.GetIndex(TextLabel), NewLabel);
@@ -3208,7 +3228,7 @@ void __fastcall TForm1::PopupMenu3Popup(TObject *Sender)
   TPoint Pos = Image1->ScreenToClient(PopupMenu3->PopupPoint);
   if(boost::shared_ptr<TTextLabel> TextLabel = Data.FindLabel(Pos.x, Pos.y))
   {
-    if(TextLabel->GetPlacement() > lpUserPos && TextLabel->GetPlacement() <= Label_Placement->Count)
+    if(TextLabel->GetPlacement() > lpUserTopLeft && TextLabel->GetPlacement() <= Label_Placement->Count)
       Label_Placement->Items[TextLabel->GetPlacement() - 1]->Checked = true;
     else //Remove all check marks
       for(int I = 0; I < Label_Placement->Count; I++)
@@ -3236,27 +3256,6 @@ void __fastcall TForm1::PopupMenu1Popup(TObject *Sender)
       Tree_Rotation->Items[TextLabel->GetRotation() / 90]->Checked = true;
     else
       Tree_Rotation->Items[4]->Checked = true;
-  }
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::Tree_LabelPlacementClick(TObject *Sender)
-{
-  //Warning RadioItem doesn't work when Images is assigned
-  if(TMenuItem *MenuItem = dynamic_cast<TMenuItem*>(Sender))
-  {
-    Draw.AbortUpdate();
-    boost::shared_ptr<TTextLabel> TextLabel = boost::dynamic_pointer_cast<TTextLabel>(GetGraphElem(TreeView->Selected));
-    if(!TextLabel)
-      return;
-
-    UndoList.Push(TUndoChange(TextLabel, Data.GetIndex(TextLabel)));
-    boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(TextLabel->GetText(), static_cast<TLabelPlacement>(MenuItem->MenuIndex + 1), Func32::MakeCoord(0.0, 0.0), TextLabel->GetBackgroundColor(), TextLabel->GetRotation()));
-    Data.Replace(Data.GetIndex(TextLabel), NewLabel);
-    NewLabel->Update();
-
-    Data.SetModified();
-    UpdateMenu();
-    Redraw();
   }
 }
 //---------------------------------------------------------------------------
@@ -3336,7 +3335,7 @@ void TForm1::MoveAndSnapLabel(int dx, int dy, bool Snap)
 
   if(!Snap)
   {
-    MovingLabelPlacement = lpUserPos;
+    MovingLabelPlacement = lpUserTopLeft;
     Image2->Left = ImagePos.x;
     Image2->Top = ImagePos.y;
     return;
@@ -3407,7 +3406,7 @@ void TForm1::MoveAndSnapLabel(int dx, int dy, bool Snap)
       Image2->Top = MinPoint.y;
     }*/
 
-    MovingLabelPlacement = lpUserPos;
+    MovingLabelPlacement = lpUserTopLeft;
   }
 }
 //---------------------------------------------------------------------------
@@ -3529,5 +3528,4 @@ void __fastcall TForm1::ZoomActionUpdate(TObject *Sender)
   static_cast<TAction*>(Sender)->Enabled = !Data.Axes.ZoomSquare;
 }
 //---------------------------------------------------------------------------
-
 

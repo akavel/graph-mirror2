@@ -99,7 +99,17 @@ public:
   void SetLegendText(const std::wstring &Str) {LegendText = Str;}
 };
 
-enum TLabelPlacement {lpUserPos, lpAboveX, lpBelowX, lpLeftOfY, lpRightOfY};
+enum TLabelPlacement
+{
+  lpUserTopLeft,
+  lpAboveX,
+  lpBelowX,
+  lpLeftOfY,
+  lpRightOfY,
+  lpUserTopRight,
+  lpUserBottomLeft,
+  lpUserBottomRight
+};
 
 class TTextLabel : public TGraphElem
 {
@@ -113,7 +123,7 @@ class TTextLabel : public TGraphElem
   std::wstring StatusText; //The text shown in the TreeView
 
 public:
-  TTextLabel() : LabelPlacement(lpUserPos), Pos(0,0), Rect(0,0,0,0), Rotation(0) {}
+  TTextLabel() : LabelPlacement(lpUserTopLeft), Pos(0,0), Rect(0,0,0,0), Rotation(0) {}
   TTextLabel(const std::string &Str, TLabelPlacement Placement, const Func32::TDblPoint &Coord, TColor Color, unsigned ARotation);
   void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);

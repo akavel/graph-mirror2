@@ -786,7 +786,7 @@ TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const 
 void TTextLabel::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
 {
   IniFile.Write(Section, "Placement", LabelPlacement);
-  if(LabelPlacement == lpUserPos)
+  if(LabelPlacement == lpUserTopLeft)
     IniFile.Write(Section, "Pos", Pos);
   IniFile.Write(Section, "Rotation", Rotation, 0U);
   IniFile.Write(Section, "Text", EncodeEscapeSequence(Text));
@@ -797,7 +797,7 @@ void TTextLabel::WriteToIni(TConfigFile &IniFile, const std::string &Section) co
 //---------------------------------------------------------------------------
 void TTextLabel::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
 {
-  LabelPlacement = IniFile.ReadEnum(Section, "Placement", lpUserPos);
+  LabelPlacement = IniFile.ReadEnum(Section, "Placement", lpUserTopLeft);
   Pos = IniFile.Read(Section, "Pos", Func32::TDblPoint(0,0));
   Rotation = IniFile.Read(Section, "Rotation", 0U);
   Text = DecodeEscapeSequence(IniFile.Read(Section, "Text", "ERROR"));

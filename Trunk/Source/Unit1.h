@@ -292,6 +292,8 @@ __published:	// IDE-managed Components
   TTntMenuItem *Tree_Rotation_270;
   TTntMenuItem *Tree_Rotation_Custom;
   TTntMenuItem *Plugins_;
+  TTntMenuItem *Tree_Placement_Custom;
+  TTntMenuItem *Label_Placement_Custom;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);
@@ -431,10 +433,9 @@ __published:	// IDE-managed Components
   void __fastcall InsertRelationActionExecute(TObject *Sender);
   void __fastcall CustomFunctionsActionExecute(TObject *Sender);
   void __fastcall SaveDialogEx1Help(TObject *Sender);
-  void __fastcall LabelPlacementClick(TObject *Sender);
+  void __fastcall PlacementClick(TObject *Sender);
   void __fastcall PopupMenu3Popup(TObject *Sender);
   void __fastcall PopupMenu1Popup(TObject *Sender);
-  void __fastcall Tree_LabelPlacementClick(TObject *Sender);
   void __fastcall ApplicationEventsException(TObject *Sender,
           Exception *E);
   void __fastcall RotationClick(TObject *Sender);
