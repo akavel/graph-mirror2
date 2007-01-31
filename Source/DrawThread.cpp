@@ -848,7 +848,7 @@ void TDrawThread::DrawLabel(TTextLabel &Label)
       Pos = TPoint(xPoint(Axes.yAxis.AxisCross) - Label.GetRect().Width(), AxesRect.Top + 1);
       break;
 
-    case lpUserPos:
+    case lpUserTopLeft:
     default:
       Pos = Draw->xyPoint(Label.GetPos().x, Label.GetPos().y);
   }

@@ -436,7 +436,7 @@ void TDraw::DrawAxes()
     double GridPixelScl = xScale * (Axes.xAxis.LogScl ? std::log(Axes.xAxis.GridUnit) : Axes.xAxis.GridUnit);
 
     for(double x = GridPixelMin; x < AxesRect.Right - Size(5); x += GridPixelScl)
-      Context.DrawLine(x, AxesRect.Top, x, AxesRect.Bottom);
+      Context.DrawLine(x + 0.5, AxesRect.Top, x + 0.5, AxesRect.Bottom);
 
     if(Axes.xAxis.LogScl)
     {
@@ -472,7 +472,7 @@ void TDraw::DrawAxes()
     double GridPixelScl = yScale * (Axes.yAxis.LogScl ? std::log(Axes.yAxis.GridUnit) : Axes.yAxis.GridUnit);
 
     for(double y = GridPixelMin; y > AxesRect.Top + Size(5); y -= GridPixelScl)
-      Context.DrawLine(AxesRect.Left, y, AxesRect.Right, y);
+      Context.DrawLine(AxesRect.Left, y + 0.5, AxesRect.Right, y + 0.5);
 
     if(Axes.yAxis.LogScl)
     {

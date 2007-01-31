@@ -439,7 +439,7 @@ object Form1: TForm1
         Action = ZoomSquareAction
       end
       object Zoom_Standard: TTntMenuItem
-        Action = ZoomWindowAction
+        Action = ZoomStandardAction
       end
       object N14: TTntMenuItem
         Caption = '-'
@@ -582,7 +582,7 @@ object Form1: TForm1
           'he image.'
         ImageIndex = 5
         RadioItem = True
-        OnClick = Tree_LabelPlacementClick
+        OnClick = PlacementClick
       end
       object Tree_Below: TTntMenuItem
         Caption = 'Below x-axis'
@@ -590,7 +590,7 @@ object Form1: TForm1
           'Place the label directly below the x-axis on the right side of t' +
           'he image.'
         RadioItem = True
-        OnClick = Tree_LabelPlacementClick
+        OnClick = PlacementClick
       end
       object Tree_Left: TTntMenuItem
         Caption = 'Left of y-axis'
@@ -598,7 +598,7 @@ object Form1: TForm1
           'Place the label to the left of the y-axis at the top of the imag' +
           'e.'
         RadioItem = True
-        OnClick = Tree_LabelPlacementClick
+        OnClick = PlacementClick
       end
       object Tree_Right: TTntMenuItem
         Caption = 'Right of y-axis'
@@ -606,7 +606,11 @@ object Form1: TForm1
           'Place the label to the right of the y-axis at the top of the ima' +
           'ge.'
         RadioItem = True
-        OnClick = Tree_LabelPlacementClick
+        OnClick = PlacementClick
+      end
+      object Tree_Placement_Custom: TTntMenuItem
+        Caption = 'Custom...'
+        OnClick = PlacementClick
       end
     end
     object Tree_Rotation: TTntMenuItem
@@ -674,7 +678,7 @@ object Form1: TForm1
     Left = 208
     Top = 216
     Bitmap = {
-      494C01010C000E00040010001000FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
+      494C01010C000E00040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1206,7 +1210,8 @@ object Form1: TForm1
       FFFFFFFFFFFFFDFFE007F00FFFFFFAFFC047E007FFE3F4FFC047EFE7FFC9EE7F
       C007EFE7FF9CEEBFC007EFF7FF3EDF3FC007E0077F7FDF5FC7C7F42F3E7FBFAF
       C7C7F42F9CFFBFAFC7C7F7EFC9FFBFB7C7D7F00FE3FF7FDBC007FFFFFFFF7FDB
-      FFFFFFFFFFFF7FDDFFFFFFFFFFFF7FDF}
+      FFFFFFFFFFFF7FDDFFFFFFFFFFFF7FDF00000000000000000000000000000000
+      000000000000}
   end
   object ImageList2: TImageList
     Left = 208
@@ -3982,7 +3987,7 @@ object Form1: TForm1
           'Place the label directly above the x-axis on the right side of t' +
           'he image.'
         RadioItem = True
-        OnClick = LabelPlacementClick
+        OnClick = PlacementClick
       end
       object Label_Below: TTntMenuItem
         Caption = 'Below x-axis'
@@ -3990,7 +3995,7 @@ object Form1: TForm1
           'Place the label directly below the x-axis on the right side of t' +
           'he image.'
         RadioItem = True
-        OnClick = LabelPlacementClick
+        OnClick = PlacementClick
       end
       object Label_Left: TTntMenuItem
         Caption = 'Left of y-axis'
@@ -3998,7 +4003,7 @@ object Form1: TForm1
           'Place the label to the left of the y-axis at the top of the imag' +
           'e.'
         RadioItem = True
-        OnClick = LabelPlacementClick
+        OnClick = PlacementClick
       end
       object Label_Right: TTntMenuItem
         Caption = 'Right of y-axis'
@@ -4006,7 +4011,11 @@ object Form1: TForm1
           'Place the label to the right of the y-axis at the top of the ima' +
           'ge.'
         RadioItem = True
-        OnClick = LabelPlacementClick
+        OnClick = PlacementClick
+      end
+      object Label_Placement_Custom: TTntMenuItem
+        Caption = 'Custom...'
+        OnClick = PlacementClick
       end
     end
     object Label_Rotation: TTntMenuItem

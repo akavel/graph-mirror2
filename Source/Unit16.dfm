@@ -24,8 +24,8 @@ object Form16: TForm16
     Top = 16
     Width = 321
     Height = 257
-    ActivePage = TabSheet2
-    TabIndex = 1
+    ActivePage = TabSheet3
+    TabIndex = 2
     TabOrder = 0
     object TabSheet1: TTntTabSheet
       Caption = 'Shading'
