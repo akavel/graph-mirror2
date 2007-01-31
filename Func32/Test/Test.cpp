@@ -33,7 +33,7 @@ inline bool IsZero(long double a)
   return a == 0 || abs(a) <= 0.0000001L * (abs(a) + 1);
 }
 
-inline bool IsZero(Complex c)
+inline bool IsZero(TComplex c)
 {
   return IsZero(real(c)) && IsZero(imag(c));
 }
@@ -74,7 +74,7 @@ void TestEval(const char *Str, T x, T y, TTrigonometry Trig = Radian)
 void Test(const char *Str, long double x, long double y, TTrigonometry Trig = Radian)
 {
   TestEval<long double>(Str, x, y, Trig);
-  TestEval<Complex>(Str, x, y, Trig);
+  TestEval<TComplex>(Str, x, y, Trig);
 }
 
 template<typename T>
@@ -108,7 +108,7 @@ void TestErrorEval(const char *Str, T x, Func32::TErrorCode Error, TTrigonometry
 void TestError(const char *Str, long double x, TErrorCode Error, TTrigonometry Trig = Radian)
 {
   TestErrorEval<long double>(Str, x, Error, Trig);
-  TestErrorEval<Complex>(Str, x, Error, Trig);
+  TestErrorEval<TComplex>(Str, x, Error, Trig);
 }
 
 
@@ -279,7 +279,7 @@ void Test()
   Test("pi", 0, PI);
   Test("e", 0, EULER);
   TestError("E", 0, ecUnknownVar);
-  TestEval<Complex>("i*i", 0, -1);
+  TestEval<TComplex>("i*i", 0, -1);
   TestErrorEval<long double>("i*i", 0, ecComplexError);
   Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4
   TestError("1.2.3", 0, ecInvalidNumber);
@@ -315,10 +315,10 @@ void Test()
   Test("log(x)^2", 100, 4);
   TestError("x/(x^2-4)", -2, ecDivByZero);
   TestErrorEval<long double>("(-2)^x", 2.2, ecPowCalcError);
-  TestEval<Complex>("(-2)^x", 2.2, Complex(3.717265962,2.70075181));
+  TestEval<TComplex>("(-2)^x", 2.2, TComplex(3.717265962,2.70075181));
   TestError("x^(-1)", 0, ecPowCalcError);
-  TestErrorEval<Complex>("0^x", Complex(3,1), ecPowCalcError);
-  TestEval<Complex>("0^x", Complex(3,0), 0);
+  TestErrorEval<TComplex>("0^x", TComplex(3,1), ecPowCalcError);
+  TestEval<TComplex>("0^x", TComplex(3,0), 0);
 
   //Test trigonometry functions
   Test("sin(x)", PI/2, 1);
@@ -361,11 +361,11 @@ void Test()
   Test("sqrt(x)", 100, 10);
   Test("root(3,x)", 125, 5);
   TestEval<long double>("root(3,x)", -27, -3);
-  TestEval<Complex>("root(3,x)", -27, Complex(1.5, 2.598076211));
+  TestEval<TComplex>("root(3,x)", -27, TComplex(1.5, 2.598076211));
   TestErrorEval<long double>("root(3.5, x)", -27, ecPowCalcError);
   Test("root(4,x)", 625, 5);
   TestErrorEval<long double>("root(4,x)", -625, ecPowCalcError);
-  TestEval<Complex>("root(4,x)", -4, Complex(1, 1));
+  TestEval<TComplex>("root(4,x)", -4, TComplex(1, 1));
 
   Test("fact(x)", 5, 120);
   Test("sign(x)", 7.98, 1);
@@ -384,12 +384,12 @@ void Test()
   Test("atanh(x)", 0.5, 0.54930614);
 
   Test("abs(x)", -4.67, 4.67);
-  TestEval<Complex>("abs(x)", Complex(3, 4), 5);
-  TestEval<Complex>("arg(x)", Complex(3, 4), 0.927295218);
-  TestEval<Complex>("arg(x)", Complex(3, 4), 53.13010235, Degree);
-  TestEval<Complex>("conj(x)", Complex(3, 4), Complex(3, -4));
-  TestEval<Complex>("re(x)", Complex(3, 4), 3);
-  TestEval<Complex>("im(x)", Complex(3, 4), 4);
+  TestEval<TComplex>("abs(x)", TComplex(3, 4), 5);
+  TestEval<TComplex>("arg(x)", TComplex(3, 4), 0.927295218);
+  TestEval<TComplex>("arg(x)", TComplex(3, 4), 53.13010235, Degree);
+  TestEval<TComplex>("conj(x)", TComplex(3, 4), TComplex(3, -4));
+  TestEval<TComplex>("re(x)", TComplex(3, 4), 3);
+  TestEval<TComplex>("im(x)", TComplex(3, 4), 4);
   Test("re(x)", 3, 3);
   Test("im(x)", 3, 0);
 
