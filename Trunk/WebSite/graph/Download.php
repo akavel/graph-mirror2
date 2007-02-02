@@ -1,5 +1,5 @@
 <?php
-  $counter_file = '../stat/DownloadLimitedCount.txt';
+  $counter_file = '../stat/DownloadCount.txt';
   $download_file = "http://www.padowan.dk/graph/SetupGraph-4.2.exe";
   clearstatcache();
   ignore_user_abort(true);     ## prevent refresh from aborting file operations and hosing file
