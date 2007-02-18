@@ -197,6 +197,7 @@ public:
  */
 std::vector<TCoordSet> AnalyseFunction(const TBaseFunc &Func, long double Min, long double Max, unsigned Steps, long double Tol, TAnalyseType AnalyseType)
 {
+  const unsigned MaxCount = 100; //Max number of iteration to avoid infinite loop
   const long double dt = (Max - Min) / Steps;
   long double (TBaseFunc::*Eval)(long double, ECalcError&) const;
 
@@ -223,6 +224,7 @@ std::vector<TCoordSet> AnalyseFunction(const TBaseFunc &Func, long double Min, l
       long double sMin = t - dt;
       long double sMax = t;
       long double s;
+      unsigned Count = MaxCount; //Count down to avoid infinite loop
       do
       {
         s = (sMax + sMin) / 2;
@@ -235,7 +237,7 @@ std::vector<TCoordSet> AnalyseFunction(const TBaseFunc &Func, long double Min, l
           sMin = s;
         else
           sMax = s;
-      } while(std::abs(sMax-sMin) > Tol);
+      } while(std::abs(sMax-sMin) > Tol && --Count > 0);
 
       if(!E.ErrorCode)
         Data.push_back(TCoordSet(s, Func.CalcX(s), Func.CalcY(s)));
