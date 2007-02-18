@@ -94,6 +94,7 @@ struct TUndoAxes
     UndoList.Push(TUndoAxes());
     Form1->Data.Axes = Axes;
     Form1->Data.ClearCache();
+    Form1->Data.Update(); //In case trigonmetry has changed
   }
 };
 

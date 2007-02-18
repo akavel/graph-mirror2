@@ -72,25 +72,28 @@ void TForm5::Translate()
 void __fastcall TForm5::Button1Click(TObject *Sender)
 {
   boost::shared_ptr<TBaseFuncType> Func;
+  TTextValue Steps;
+  Steps.Text = ToString(Edit5->Text);
+  Steps.Value = 0;
   try
   {
     switch(ComboBox1->ItemIndex)
     {
       case 0:
-        Func.reset(new TStdFunc(ToString(Edit1->Text), Data.CustomFunctions.SymbolList));
-        Func->Steps = 0;
-        if(!Edit5->Text.IsEmpty())
-          Func->Steps = MakeInt(Edit5, Label6->Caption);
+        Func.reset(new TStdFunc(ToString(Edit1->Text), Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry));
+        Func->SetSteps(TTextValue(0));
+        if(!Steps.Text.empty())
+          Steps.Value = MakeInt(Edit5, Label6->Caption);
         break;
 
       case 1:
-        Func.reset(new TParFunc(ToString(Edit1->Text), ToString(Edit2->Text), Data.CustomFunctions.SymbolList));
-        Func->Steps = MakeInt(Edit5, Label6->Caption);
+        Func.reset(new TParFunc(ToString(Edit1->Text), ToString(Edit2->Text), Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry));
+        Steps.Value = MakeInt(Edit5, Label6->Caption);
         break;
 
       case 2:
-        Func.reset(new TPolFunc(ToString(Edit1->Text), Data.CustomFunctions.SymbolList));
-        Func->Steps = MakeInt(Edit5, Label6->Caption);
+        Func.reset(new TPolFunc(ToString(Edit1->Text), Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry));
+        Steps.Value = MakeInt(Edit5, Label6->Caption);
         break;
     }
   }
@@ -104,6 +107,7 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
   Func->To.Value = INF;
   Func->From.Text = ToString(Edit3->Text);
   Func->To.Text = ToString(Edit4->Text);
+  Func->SetSteps(Steps);
 
   if(!Edit3->Text.IsEmpty() || ComboBox1->ItemIndex)
     Func->From.Value = MakeFloat(Edit3);
@@ -130,8 +134,6 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
   Func->StartPointStyle = ComboBox2->ItemIndex;
   Func->EndPointStyle = ComboBox3->ItemIndex;
   Func->DrawType = static_cast<TDrawType>(ComboBox4->ItemIndex);
-
-  Func->SetTrigonometry(Data.Axes.Trigonometry);
 
   Data.AbortUpdate();
   if(F)
@@ -183,8 +185,8 @@ int TForm5::EditFunc(boost::shared_ptr<TBaseFuncType> Func)
     Caption = LoadRes(524);
     Edit3->Text = F->From.Text.c_str();
     Edit4->Text = F->To.Text.c_str();
-    if(F->GetSteps())
-      Edit5->Text = ToWideString(F->GetSteps());  
+//    if(F->GetSteps())
+      Edit5->Text = ToWideString(F->GetSteps().Text);  
     LineSelect1->LineStyle = F->Style;
     UpDown1->Position = F->Size;                  
     ExtColorBox1->Selected = F->Color;

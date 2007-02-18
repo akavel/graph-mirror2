@@ -74,7 +74,7 @@ object StdFuncFrame: TStdFuncFrame
     Anchors = [akLeft, akTop, akRight]
     ItemHeight = 13
     ItemIndex = 0
-    TabOrder = 1
+    TabOrder = 4
     Text = 'Function'
     OnChange = ComboBox1Change
     Items.Strings = (
@@ -98,7 +98,7 @@ object StdFuncFrame: TStdFuncFrame
     Font.Style = []
     ParentFont = False
     ReadOnly = True
-    TabOrder = 2
+    TabOrder = 1
   end
   object Edit3: TTntEdit
     Left = 40
@@ -117,7 +117,7 @@ object StdFuncFrame: TStdFuncFrame
     Font.Style = []
     ParentFont = False
     ReadOnly = True
-    TabOrder = 3
+    TabOrder = 2
   end
   object Edit4: TTntEdit
     Left = 40
@@ -136,6 +136,6 @@ object StdFuncFrame: TStdFuncFrame
     Font.Style = []
     ParentFont = False
     ReadOnly = True
-    TabOrder = 4
+    TabOrder = 3
   end
 end

@@ -125,14 +125,21 @@ void TDrawThread::PrepareFunction(TBaseFuncType *F)
     //Use axes range for standard functions if the axes range is smaller than the function range
     //sMin = first; sMax = second
     std::pair<double,double> MinMax = F->GetCurrentRange();
+    if(MinMax.first > MinMax.second)
+      return; //No range
 
-    unsigned Steps = F->GetSteps();
+    int Steps = F->GetSteps().Value;
     bool LogScl = Axes.xAxis.LogScl && !Steps;
     double ds;
-    if(Steps <= 1)
+    if(Steps <= 0)
       ds = LogScl ? std::exp(std::log(Axes.xAxis.Max / Axes.xAxis.Min) / AxesRect.Width()) : 1/Draw->xScale;
+    else if(Steps == 1)
+      MinMax.second = MinMax.first, ds = 1; 
     else
       ds = (MinMax.second - MinMax.first) / (Steps - 1); //Remove 1 so two steps only plots at Min and Max
+
+    if(ds  <= 0)
+      ds = 1; //ds must always be a positive number
 
     if(Data->Axes.CalcComplex)
       CalcFunc<std::complex<long double> >(*F, MinMax.first, MinMax.second, ds, LogScl);
@@ -829,6 +836,9 @@ void TDrawThread::Visit(TTextLabel &Label)
 //---------------------------------------------------------------------------
 void TDrawThread::DrawLabel(TTextLabel &Label)
 {
+  if(_isnan(Label.GetXPos().Value) || _isnan(Label.GetYPos().Value))
+    return;
+
   TPoint Pos;
   switch(Label.GetPlacement())
   {
@@ -850,7 +860,24 @@ void TDrawThread::DrawLabel(TTextLabel &Label)
 
     case lpUserTopLeft:
     default:
-      Pos = Draw->xyPoint(Label.GetPos().x, Label.GetPos().y);
+      Pos = Draw->xyPoint(Label.GetXPos().Value, Label.GetYPos().Value);
+      break;
+
+    case lpUserTopRight:
+      Pos = Draw->xyPoint(Label.GetXPos().Value, Label.GetYPos().Value);
+      Pos.x -= Label.GetRect().Width();
+      break;
+
+    case lpUserBottomLeft:
+      Pos = Draw->xyPoint(Label.GetXPos().Value, Label.GetYPos().Value);
+      Pos.y -= Label.GetRect().Height();
+      break;
+
+    case lpUserBottomRight:
+      Pos = Draw->xyPoint(Label.GetXPos().Value, Label.GetYPos().Value);
+      Pos.x -= Label.GetRect().Width();
+      Pos.y -= Label.GetRect().Height();
+      break;
   }
 
   Label.UpdateRect(Pos.x, Pos.y);

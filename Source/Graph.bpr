@@ -150,7 +150,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=3
 Release=0
-Build=347
+Build=351
 Debug=1
 PreRelease=0
 Special=0
@@ -162,9 +162,9 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.3.0.347
+FileVersion=4.3.0.351
 InternalName=Graph
-LegalCopyright=Copyright Ivan Johansen 2006
+LegalCopyright=Copyright Ivan Johansen 2007
 LegalTrademarks=
 OriginalFilename=Graph.exe
 ProductName=Graph
@@ -206,8 +206,8 @@ Item29=D:\Program Files\Borland\CBuilder6\Projects;..\Components\TIPrintDialog;d
 
 [HistoryLists\hlLibraryPath]
 Count=30
-Item0=C:\Program Files\Borland\CBuilder6\Projects;..;..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;$(BCB)\Source\Rtl\Source\except;..\Components\TSaveDialogEx;..\Components\Common;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton;$(BCB)\Lib\Psdk;..\Obj;C:\Program Files\TntWare\Delphi Unicode Controls\CBuilder
-Item1=..;..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;$(BCB)\Source\Rtl\Source\except;..\Components\TSaveDialogEx;..\Components\Common;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton;$(BCB)\Lib\Psdk;..\Obj;C:\Program Files\TntWare\Delphi Unicode Controls\CBuilder
+Item0=..;..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;$(BCB)\Source\Rtl\Source\except;..\Components\TSaveDialogEx;..\Components\Common;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton;$(BCB)\Lib\Psdk;..\Obj;C:\Program Files\TntWare\Delphi Unicode Controls\CBuilder
+Item1=C:\Program Files\Borland\CBuilder6\Projects;..;..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;$(BCB)\Source\Rtl\Source\except;..\Components\TSaveDialogEx;..\Components\Common;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton;$(BCB)\Lib\Psdk;..\Obj;C:\Program Files\TntWare\Delphi Unicode Controls\CBuilder
 Item2=..;C:\Program Files\Borland\CBuilder6\Projects;..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;$(BCB)\Source\Rtl\Source\except;..\Components\TSaveDialogEx;..\Components\Common;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton;$(BCB)\Lib\Psdk;..\Obj
 Item3=C:\Program Files\Borland\CBuilder6\Source\vcl;C:\Program Files\Borland\CBuilder6\Projects;..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;$(BCB)\Source\Rtl\Source\except;..\Components\TSaveDialogEx;..\Components\Common;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton;$(BCB)\Lib\Psdk;..\Obj
 Item4=C:\Program Files\Borland\CBuilder6\Projects;..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;$(BCB)\Source\Rtl\Source\except;..\Components\TSaveDialogEx;..\Components\Common;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton;$(BCB)\Lib\Psdk;..\Obj
@@ -275,7 +275,7 @@ Item0=..
 DebugSourceDirs=
 
 [Parameters]
-RunParams=/C
+RunParams=
 Launcher=
 UseLauncher=0
 DebugCWD=

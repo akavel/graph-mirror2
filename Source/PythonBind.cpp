@@ -188,13 +188,12 @@ static PyObject* PluginCreateParametricFunction(PyObject *Self, PyObject *Args)
     return NULL;
 
   TData &Data = Form1->Data;
-  boost::shared_ptr<TBaseFuncType> Func(new TParFunc(xName, yName, Data.CustomFunctions.SymbolList));
-  Func->SetTrigonometry(Data.Axes.Trigonometry);
+  boost::shared_ptr<TBaseFuncType> Func(new TParFunc(xName, yName, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry));
   Func->From.Value = -10;
   Func->To.Value = 10;
   Func->From.Text = "-10";
   Func->To.Text = "10";
-  Func->Steps = 1000;
+  Func->SetSteps(TTextValue(1000));
 
   Data.AbortUpdate();
   UndoList.Push(TUndoAdd(Func));

@@ -41,7 +41,7 @@ void TTextValue::Update(const TData &Data)
   }
 }
 //---------------------------------------------------------------------------
-void TTextValue::Set(const std::string AText, const TData &Data)
+void TTextValue::Set(const std::string AText, const TData &Data, bool IgnoreErrors)
 {
   Text = AText;
   if(Text == "INF" || Text == "+INF")
@@ -55,7 +55,16 @@ void TTextValue::Set(const std::string AText, const TData &Data)
     Value = -INF;
   }
   else
-    Value = Data.Calc(Text);
+    try
+    {
+      Value = Data.Calc(Text);
+    }
+    catch(Func32::EFuncError &E)
+    {
+      if(!IgnoreErrors)
+        throw;
+      Value = NAN;
+    }
 }
 //---------------------------------------------------------------------------
 std::ostream& operator<<(std::ostream &Stream, const TTextValue &TextValue)
@@ -137,7 +146,7 @@ void TBaseFuncType::WriteToIni(TConfigFile &IniFile, const std::string &Section)
 
   IniFile.Write(Section, "From", From.Text, std::string());
   IniFile.Write(Section, "To", To.Text, std::string());
-  IniFile.Write(Section, "Steps", Steps, 0U);
+  IniFile.Write(Section, "Steps", Steps.Text, std::string());
   IniFile.Write(Section, "Style", Style, psSolid);
   IniFile.Write(Section, "Color", Color);
   IniFile.Write(Section, "Size", Size, 1U);
@@ -155,7 +164,7 @@ void TBaseFuncType::WriteToIni(TConfigFile &IniFile, const std::string &Section)
 //---------------------------------------------------------------------------
 void TBaseFuncType::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
 {
-  SetTrigonometry(GetData().Axes.Trigonometry);
+  GetFunc().SetTrigonometry(GetData().Axes.Trigonometry);
   Style = IniFile.ReadEnum(Section, "Style", psSolid);
   Color = IniFile.Read(Section, "Color", clRed);
   Size = IniFile.Read(Section, "Size", 1);
@@ -164,7 +173,7 @@ void TBaseFuncType::ReadFromIni(const TConfigFile &IniFile, const std::string &S
   else
     From.Set(IniFile.Read(Section, "From", "-INF"), GetData());
   To.Set(IniFile.Read(Section, "To", "+INF"), GetData());
-  Steps = IniFile.Read(Section, "Steps", 0);
+  Steps.Set(IniFile.Read(Section, "Steps", ""), GetData(), true);
   int TanCount = IniFile.Read(Section, "TanCount", 0);
   StartPointStyle = IniFile.Read(Section, "StartPoint", 0);
   EndPointStyle = IniFile.Read(Section, "EndPoint", 0);
@@ -202,17 +211,19 @@ void TBaseFuncType::ClearCache()
 //---------------------------------------------------------------------------
 void TBaseFuncType::Update()
 {
+  GetFunc().SetTrigonometry(GetData().Axes.Trigonometry);
   GetFunc().Update(GetData().CustomFunctions.SymbolList);
   From.Update(GetData());
   To.Update(GetData());
+  Steps.Update(GetData());
   std::for_each(ChildList.begin(), ChildList.end(), boost::mem_fn(&TGraphElem::Update));
 }
 //---------------------------------------------------------------------------
 //////////////
 // TStdFunc //
 //////////////
-TStdFunc::TStdFunc(const std::string &AText, const Func32::TSymbolList &SymbolList)
-  : Text(AText), Func(AText, "x", SymbolList)
+TStdFunc::TStdFunc(const std::string &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
+  : Text(AText), Func(AText, "x", SymbolList, Trig)
 {
 }
 //---------------------------------------------------------------------------
@@ -252,11 +263,6 @@ boost::shared_ptr<TBaseFuncType> TStdFunc::MakeDifFunc()
   return DifFunc;
 }
 //---------------------------------------------------------------------------
-void TStdFunc::SetTrigonometry(Func32::TTrigonometry Trig)
-{
-  Func.SetTrigonometry(Trig);
-}
-//---------------------------------------------------------------------------
 std::pair<double,double> TStdFunc::GetCurrentRange() const
 {
   return std::make_pair(std::max(GetData().Axes.xAxis.Min, From.Value), std::min(GetData().Axes.xAxis.Max, To.Value));
@@ -265,8 +271,8 @@ std::pair<double,double> TStdFunc::GetCurrentRange() const
 //////////////
 // TParFunc //
 //////////////
-TParFunc::TParFunc(const std::string &AxText, const std::string &AyText, const Func32::TSymbolList &SymbolList)
-  : xText(AxText), yText(AyText), Func(AxText, AyText, "t", SymbolList)
+TParFunc::TParFunc(const std::string &AxText, const std::string &AyText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
+  : xText(AxText), yText(AyText), Func(AxText, AyText, "t", SymbolList, Trig)
 {
 }
 //---------------------------------------------------------------------------
@@ -308,16 +314,11 @@ boost::shared_ptr<TBaseFuncType> TParFunc::MakeDifFunc()
   return DifFunc;
 }
 //---------------------------------------------------------------------------
-void TParFunc::SetTrigonometry(Func32::TTrigonometry Trig)
-{
-  Func.SetTrigonometry(Trig);
-}
-//---------------------------------------------------------------------------
 //////////////
 // TPolFunc //
 //////////////
-TPolFunc::TPolFunc(const std::string &AText, const Func32::TSymbolList &SymbolList)
-  : Text(AText), Func(AText, "t", SymbolList)
+TPolFunc::TPolFunc(const std::string &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
+  : Text(AText), Func(AText, "t", SymbolList, Trig)
 {
 }
 //---------------------------------------------------------------------------
@@ -355,11 +356,6 @@ boost::shared_ptr<TBaseFuncType> TPolFunc::MakeDifFunc()
   DifFunc->Func = Func.MakeDif();
   DifFunc->Text = DifFunc->Func.MakeText();
   return DifFunc;
-}
-//---------------------------------------------------------------------------
-void TPolFunc::SetTrigonometry(Func32::TTrigonometry Trig)
-{
-  Func.SetTrigonometry(Trig);
 }
 //---------------------------------------------------------------------------
 //////////
@@ -410,9 +406,9 @@ std::wstring TTan::MakeLegendText() const
   return ToWString("y=" + RoundToString(a, GetData()) + "x" + (q < 0 ? '-' : '+') + RoundToString(std::abs(q), GetData()));
 }
 //---------------------------------------------------------------------------
-unsigned TTan::GetSteps() const
+const TTextValue& TTan::GetSteps() const
 {
-  return _finite(a) ? 0 : 2;
+  return _finite(a) ? TTextValue(0, "") : TTextValue(2, "");
 }
 //---------------------------------------------------------------------------
 void TTan::UpdateTan(double a1, double q1)
@@ -775,8 +771,9 @@ void TPointSeries::Update()
 ////////////////
 // TTextLabel //
 ////////////////
-TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const Func32::TDblPoint &Coord, TColor Color, unsigned ARotation)
-  : Text(Str), LabelPlacement(Placement), Pos(Coord), BackgroundColor(Color), Rotation(ARotation)
+TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation)
+  : Text(Str), LabelPlacement(Placement), xPos(AxPos), yPos(AyPos),
+    BackgroundColor(Color), Rotation(ARotation)
 {
   SetShowInLegend(false);
   StatusText = ToWString(RtfToPlainText(Str));
@@ -786,8 +783,8 @@ TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const 
 void TTextLabel::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
 {
   IniFile.Write(Section, "Placement", LabelPlacement);
-  if(LabelPlacement == lpUserTopLeft)
-    IniFile.Write(Section, "Pos", Pos);
+  if(LabelPlacement == lpUserTopLeft || LabelPlacement >= lpUserTopRight)
+    IniFile.Write(Section, "Pos", xPos.Text + ";" + yPos.Text);
   IniFile.Write(Section, "Rotation", Rotation, 0U);
   IniFile.Write(Section, "Text", EncodeEscapeSequence(Text));
   IniFile.Write(Section, "BackgroundColor", BackgroundColor);
@@ -798,7 +795,21 @@ void TTextLabel::WriteToIni(TConfigFile &IniFile, const std::string &Section) co
 void TTextLabel::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
 {
   LabelPlacement = IniFile.ReadEnum(Section, "Placement", lpUserTopLeft);
-  Pos = IniFile.Read(Section, "Pos", Func32::TDblPoint(0,0));
+  std::string Temp = IniFile.Read(Section, "Pos", "0;0");
+  unsigned n = Temp.find(";");
+  if(n == std::string::npos)
+  {
+    //For backwards compatibility
+    Func32::TDblPoint Pos = IniFile.Read(Section, "Pos", Func32::TDblPoint(0,0));
+    xPos = TTextValue(Pos.x);
+    yPos = TTextValue(Pos.y);
+  }
+  else
+  {
+    xPos.Set(Temp.substr(0, n), GetData(), true);
+    yPos.Set(Temp.substr(n+1), GetData(), true);
+  }
+
   Rotation = IniFile.Read(Section, "Rotation", 0U);
   Text = DecodeEscapeSequence(IniFile.Read(Section, "Text", "ERROR"));
   BackgroundColor = IniFile.Read(Section, "BackgroundColor", clNone);
@@ -833,6 +844,9 @@ void TTextLabel::Update()
   RenderRichText(Text.c_str(), Canvas.get(), TPoint(0, 0), Size.x, BackgroundColor, &GetData());
   Canvas.reset();
   Rect = Rotate(Metafile, Rotation);
+
+  xPos.Update(GetData());
+  yPos.Update(GetData());
 }
 //---------------------------------------------------------------------------
 ///////////////
@@ -843,12 +857,14 @@ TRelation::TRelation()
 {
 }
 //---------------------------------------------------------------------------
-TRelation::TRelation(const std::string &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize)
+TRelation::TRelation(const std::string &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig)
   : Text(AText), Color(AColor), BrushStyle(Style), Size(ASize)
 {
   std::vector<std::string> Args;
   Args.push_back("x");
   Args.push_back("y");
+  Func.SetTrigonometry(Trig);
+  Constraints.SetTrigonometry(Trig);
   Func.SetFunc(Text, Args, SymbolList);
   if(Func.GetFunctionType() != Func32::ftInequality && Func.GetFunctionType() != Func32::ftEquation)
     throw EGraphError(geInvalidRelation);
@@ -881,6 +897,8 @@ void TRelation::WriteToIni(TConfigFile &IniFile, const std::string &Section) con
 //---------------------------------------------------------------------------
 void TRelation::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
 {
+  Func.SetTrigonometry(GetData().Axes.Trigonometry);
+  Constraints.SetTrigonometry(GetData().Axes.Trigonometry);
   Text = IniFile.Read(Section, "Relation", "");
   ConstraintsText = IniFile.Read(Section, "Constraints", "");
   BrushStyle = IniFile.ReadEnum(Section, "Style", bsBDiagonal);
@@ -936,6 +954,8 @@ void TRelation::ClearCache()
 //---------------------------------------------------------------------------
 void TRelation::Update()
 {
+  Func.SetTrigonometry(GetData().Axes.Trigonometry);
+  Constraints.SetTrigonometry(GetData().Axes.Trigonometry);
   Func.Update(GetData().CustomFunctions.SymbolList);
   Constraints.Update(GetData().CustomFunctions.SymbolList);
 }

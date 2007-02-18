@@ -209,9 +209,7 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
 
   //Set trigonometry property for all functions if the setting changed
   if(OldTrig != Axes.Trigonometry)
-    for(unsigned I = 0; I < Data.ElemCount(); I++)
-      if(TBaseFuncType *Func = dynamic_cast<TBaseFuncType*>(Data.GetElem(I).get()))
-        Func->SetTrigonometry(Axes.Trigonometry);
+    Data.Update();
 
   if(CheckBox16->Checked)
     Data.SaveDefault();

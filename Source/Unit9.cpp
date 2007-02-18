@@ -78,9 +78,16 @@ void TForm9::StartValueChanged(int X, int Y)
         {
           double t = FindNearestPoint(Func, X, Y); //Returns NAN if no point found
           if(_isnan(t))
+          {
             Form1->Cross->Hide();
-          AreaFrame1->Edit1->Text = RoundToStr(t, Form1->Data);
-          AreaFrame1->Edit2->Text = RoundToStr(t, Form1->Data);
+            AreaFrame1->Edit1->Text = "";
+            AreaFrame1->Edit2->Text = "";
+          }
+          else
+          {
+            AreaFrame1->Edit1->Text = RoundToStr(t, Form1->Data);
+            AreaFrame1->Edit2->Text = AreaFrame1->Edit1->Text;
+          }
         }
         break;
 
@@ -110,7 +117,7 @@ void TForm9::EndValueChanged(int X, int Y)
   {
     double t = FindNearestPoint(Func, X, Y);
     if(EvalType == etArea || EvalType == etArc)
-      AreaFrame1->Edit2->Text = RoundToStr(t, Form1->Data);
+      AreaFrame1->Edit2->Text = _isnan(t) ? AnsiString("") : RoundToStr(t, Form1->Data);
   }
 }
 //---------------------------------------------------------------------------
