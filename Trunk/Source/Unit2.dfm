@@ -128,9 +128,10 @@ object Form2: TForm2
     object Comments: TTntLabel
       Left = 8
       Top = 104
-      Width = 267
+      Width = 270
       Height = 52
       Anchors = [akLeft, akTop, akRight]
+      AutoSize = False
       Caption = 
         'This is free software, and you are welcome to redistribute it un' +
         'der the terms in the GNU General Public License. Please send bug' +
@@ -141,8 +142,9 @@ object Form2: TForm2
     object Label4: TTntLabel
       Left = 8
       Top = 184
-      Width = 225
+      Width = 270
       Height = 26
+      AutoSize = False
       Caption = 'The newest version as well as the source code are available at:'
       WordWrap = True
     end

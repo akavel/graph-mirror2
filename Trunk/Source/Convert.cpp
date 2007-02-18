@@ -57,14 +57,24 @@ int MakeInt(TCustomEdit *Edit, const AnsiString &Caption)
     throw EAbort("");
   }
 
-  int Number = Text.ToIntDef(0);
-  if(Number <= 0)
+  try
   {
-    MessageBox(LoadRes(RES_INT_GREATER_ZERO, Caption), LoadRes(RES_ERROR));
-    Edit->SetFocus();
+    double Number = Form1->Data.Calc(Text.c_str());
+    int Value = Number;
+    if(Number <= 0 || static_cast<double>(Value) != Number)
+    {
+      MessageBox(LoadRes(RES_INT_GREATER_ZERO, Caption), LoadRes(RES_ERROR));
+      SetGlobalFocus(Edit);
+      throw EAbort("");
+    }
+    return Number;
+  }
+  catch(Func32::EFuncError &Error)
+  {
+    SetGlobalFocus(Edit);
+    ShowErrorMsg(Error, Edit);
     throw EAbort("");
   }
-  return Number;
 }
 //---------------------------------------------------------------------------
 //This function writes the complex number into the RichEdit
@@ -362,11 +372,7 @@ double CellToDouble(TGrid *Grid, int Col, int Row)
   }
   catch(Func32::EFuncError &E)
   {
-    Grid->SetFocus();
-    Grid->Col = Col;
-    Grid->Row = Row;
-    ShowErrorMsg(E);
-    throw EAbort("");
+    return NAN;
   }
 }
 //---------------------------------------------------------------------------

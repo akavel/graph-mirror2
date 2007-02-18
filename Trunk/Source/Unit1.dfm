@@ -615,6 +615,7 @@ object Form1: TForm1
     end
     object Tree_Rotation: TTntMenuItem
       Caption = 'Rotation'
+      SubMenuImages = ImageList1
       object Tree_Rotation_0: TTntMenuItem
         Caption = '0'
         RadioItem = True
@@ -4015,6 +4016,7 @@ object Form1: TForm1
       end
       object Label_Placement_Custom: TTntMenuItem
         Caption = 'Custom...'
+        RadioItem = True
         OnClick = PlacementClick
       end
     end

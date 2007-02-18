@@ -64,7 +64,14 @@ void __fastcall TForm11::Button1Click(TObject *Sender)
 {
   try
   {
-    boost::shared_ptr<TRelation> NewRelation(new TRelation(ToString(Edit1->Text), Data.CustomFunctions.SymbolList, ExtColorBox1->Selected, ShadeSelect1->ShadeStyle, ToInt(Edit4->Text)));
+    boost::shared_ptr<TRelation> NewRelation(new TRelation(
+      ToString(Edit1->Text),
+      Data.CustomFunctions.SymbolList,
+      ExtColorBox1->Selected,
+      ShadeSelect1->ShadeStyle,
+      ToInt(Edit4->Text),
+      Data.Axes.Trigonometry
+    ));
     try
     {
       NewRelation->SetConstraints(ToString(Edit2->Text), Data.CustomFunctions.SymbolList);

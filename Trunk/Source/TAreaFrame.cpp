@@ -30,6 +30,9 @@ void TAreaFrame::EvalArea(TGraphElem *GraphElem)
   double Min = Form1->Data.Calc(ToString(Edit1->Text));
   double Max = Form1->Data.Calc(ToString(Edit2->Text));
 
+  if(!GraphElem->GetVisible())
+    return;
+    
   if(TTan *Tan = dynamic_cast<TTan*>(GraphElem))
   {
     try
@@ -105,6 +108,9 @@ void TAreaFrame::EvalArc(TGraphElem *GraphElem)
 {
   Edit3->Text = "";
   Form1->IPolygon1->Clear();
+
+  if(!GraphElem->GetVisible())
+    return;
 
   double Min = Form1->Data.Calc(ToString(Edit1->Text));
   double Max = Form1->Data.Calc(ToString(Edit2->Text));

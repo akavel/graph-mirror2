@@ -342,7 +342,14 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
           if(Form6->ShowModal() == mrOk && !Form6->IsEmpty())
           {
             Data.Property.DefaultLabelFont = Form6->GetFont();
-            boost::shared_ptr<TTextLabel> Label(new TTextLabel(Form6->GetText().c_str(), lpUserTopLeft, Draw.xyCoord(X, Y), Form6->GetBackgroundColor(), 0));
+            boost::shared_ptr<TTextLabel> Label(new TTextLabel(
+              Form6->GetText().c_str(),
+              lpUserTopLeft,
+              TTextValue(Draw.xCoord(X)),
+              TTextValue(Draw.yCoord(Y)),
+              Form6->GetBackgroundColor(),
+              0
+            ));
             Data.Add(Label);
             Label->Update();
             Redraw();
@@ -590,7 +597,14 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
         if(Image2->Left != MovingLabel->GetRect().Left || Image2->Top != MovingLabel->GetRect().Top)
         {
           UndoList.Push(TUndoChange(MovingLabel, Data.GetIndex(MovingLabel)));
-          boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(MovingLabel->GetText(), MovingLabelPlacement, Draw.xyCoord(Image2->Left, Image2->Top), MovingLabel->GetBackgroundColor(), MovingLabel->GetRotation()));
+          boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
+            MovingLabel->GetText(),
+            MovingLabelPlacement,
+            TTextValue(Draw.xCoord(Image2->Left)),
+            TTextValue(Draw.yCoord(Image2->Top)),
+            MovingLabel->GetBackgroundColor(),
+            MovingLabel->GetRotation()
+          ));
           Data.Replace(Data.GetIndex(MovingLabel), NewLabel);
           NewLabel->Update();
           NewLabel->UpdateRect(Image2->Left, Image2->Top); //Needed so we don't have to wait for label to be redrawn
@@ -2513,7 +2527,27 @@ void __fastcall TForm1::Tree_ShowInLegendClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::InsertLabelActionExecute(TObject *Sender)
 {
-  SetCursorState(csAddLabel);
+//  SetCursorState(csAddLabel);
+  std::auto_ptr<TForm6> Form6(new TForm6(Application, Data.Property.DefaultLabelFont, NAME, Data.GetFileName().c_str()));
+  if(Form6->ShowModal() == mrOk && !Form6->IsEmpty())
+  {
+    Data.Property.DefaultLabelFont = Form6->GetFont();
+    boost::shared_ptr<TTextLabel> Label(new TTextLabel(
+      Form6->GetText().c_str(),
+      lpUserTopLeft,
+      TTextValue(Draw.xCoord(Image1->Width / 2)),
+      TTextValue(Draw.yCoord(Image1->Height /2)),
+      Form6->GetBackgroundColor(),
+      0
+    ));
+    Data.Add(Label);
+    Label->Update();
+    Redraw();
+    UndoList.Push(TUndoAdd(Data.Back()));
+    UpdateTreeView();
+    UpdateMenu();
+    Data.SetModified();
+  }
 }
 //---------------------------------------------------------------------------
 void TForm1::SetCursorState(TCursorState State)
@@ -2596,7 +2630,14 @@ void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
       {
         Data.Property.DefaultLabelFont = Form6->GetFont();
         UndoList.Push(TUndoChange(Label, Data.GetIndex(Label)));
-        boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(Form6->GetText().c_str(), Label->GetPlacement(), Label->GetPos(), Form6->GetBackgroundColor(), Label->GetRotation()));
+        boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
+          Form6->GetText().c_str(),
+          Label->GetPlacement(),
+          Label->GetXPos(),
+          Label->GetYPos(),
+          Form6->GetBackgroundColor(),
+          Label->GetRotation()
+        ));
         Data.Replace(Data.GetIndex(Label), NewLabel);
         NewLabel->Update();
       }
@@ -3206,17 +3247,24 @@ void __fastcall TForm1::PlacementClick(TObject *Sender)
 
     if(MenuItem->MenuIndex == 4)
     {
-      if(!CreateForm<TForm21>(TextLabel)->ShowModal() == mrOk)
+      if(!CreateForm<TForm21>(Data, TextLabel)->ShowModal() == mrOk)
         return;
     }
     else
-      ;
-      
-    UndoList.Push(TUndoChange(TextLabel, Data.GetIndex(TextLabel)));
-    boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(TextLabel->GetText(), static_cast<TLabelPlacement>(MenuItem->MenuIndex + 1), Func32::MakeCoord(0.0, 0.0), TextLabel->GetBackgroundColor(), TextLabel->GetRotation()));
-    Data.Replace(Data.GetIndex(TextLabel), NewLabel);
-    NewLabel->Update();
-
+    {
+      UndoList.Push(TUndoChange(TextLabel, Data.GetIndex(TextLabel)));
+      boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
+        TextLabel->GetText(),
+        static_cast<TLabelPlacement>(MenuItem->MenuIndex + 1),
+        TTextValue(0.0),
+        TTextValue(0.0),
+        TextLabel->GetBackgroundColor(),
+        TextLabel->GetRotation()
+      ));
+      Data.Replace(Data.GetIndex(TextLabel), NewLabel);
+      NewLabel->Update();
+    }
+    
     Data.SetModified();
     UpdateMenu();
     Redraw();
@@ -3228,11 +3276,10 @@ void __fastcall TForm1::PopupMenu3Popup(TObject *Sender)
   TPoint Pos = Image1->ScreenToClient(PopupMenu3->PopupPoint);
   if(boost::shared_ptr<TTextLabel> TextLabel = Data.FindLabel(Pos.x, Pos.y))
   {
-    if(TextLabel->GetPlacement() > lpUserTopLeft && TextLabel->GetPlacement() <= Label_Placement->Count)
+    if(TextLabel->GetPlacement() > lpUserTopLeft && TextLabel->GetPlacement() < lpUserTopRight)
       Label_Placement->Items[TextLabel->GetPlacement() - 1]->Checked = true;
-    else //Remove all check marks
-      for(int I = 0; I < Label_Placement->Count; I++)
-        Label_Placement->Items[I]->Checked = false;
+    else 
+      Label_Placement->Items[4]->Checked = true;
 
     if(TextLabel->GetRotation() % 90 == 0)
       Label_Rotation->Items[TextLabel->GetRotation() / 90]->Checked = true;
@@ -3246,16 +3293,13 @@ void __fastcall TForm1::PopupMenu1Popup(TObject *Sender)
   //Warning: RadioItem does not work when Images are assigned
   if(boost::shared_ptr<TTextLabel> TextLabel = boost::dynamic_pointer_cast<TTextLabel>(GetGraphElem(TreeView->Selected)))
   {
+    int Index = (TextLabel->GetPlacement() == lpUserTopLeft || TextLabel->GetPlacement() >= lpUserTopRight) ? 4 : TextLabel->GetPlacement() - 1;
     for(int I = 0; I < Tree_Placement->Count; I++)
-      if(TextLabel->GetPlacement() == I + 1)
-        Tree_Placement->Items[I]->ImageIndex = iiBullet;
-      else //Remove check mark
-        Tree_Placement->Items[I]->ImageIndex = -1;
+      Tree_Placement->Items[I]->ImageIndex = (I == Index) ? iiBullet : -1;
 
-    if(TextLabel->GetRotation() % 90 == 0)
-      Tree_Rotation->Items[TextLabel->GetRotation() / 90]->Checked = true;
-    else
-      Tree_Rotation->Items[4]->Checked = true;
+    Index = TextLabel->GetRotation() % 90 == 0 ? TextLabel->GetRotation() / 90 : 4;
+    for(int I = 0; I < Tree_Rotation->Count; I++)
+      Tree_Rotation->Items[I]->ImageIndex = (I == Index) ? iiBullet : -1;
   }
 }
 //---------------------------------------------------------------------------
@@ -3406,7 +3450,7 @@ void TForm1::MoveAndSnapLabel(int dx, int dy, bool Snap)
       Image2->Top = MinPoint.y;
     }*/
 
-    MovingLabelPlacement = lpUserTopLeft;
+    MovingLabelPlacement = lpUserTopLeft; 
   }
 }
 //---------------------------------------------------------------------------
@@ -3435,7 +3479,14 @@ void __fastcall TForm1::RotationClick(TObject *Sender)
       Rotation = MenuItem->MenuIndex * 90;
 
     UndoList.Push(TUndoChange(TextLabel, Data.GetIndex(TextLabel)));
-    boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(TextLabel->GetText(), TextLabel->GetPlacement(), TextLabel->GetPos(), TextLabel->GetBackgroundColor(), Rotation));
+    boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
+      TextLabel->GetText(),
+      TextLabel->GetPlacement(),
+      TextLabel->GetXPos(),
+      TextLabel->GetYPos(),
+      TextLabel->GetBackgroundColor(),
+      Rotation
+    ));
     Data.Replace(Data.GetIndex(TextLabel), NewLabel);
     NewLabel->Update();
 
@@ -3528,4 +3579,5 @@ void __fastcall TForm1::ZoomActionUpdate(TObject *Sender)
   static_cast<TAction*>(Sender)->Enabled = !Data.Axes.ZoomSquare;
 }
 //---------------------------------------------------------------------------
+
 

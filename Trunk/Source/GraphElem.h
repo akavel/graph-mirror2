@@ -52,7 +52,7 @@ struct TTextValue
   bool operator<=(double a) const {return Value <= a;}
   bool operator>=(double a) const {return Value >= a;}
   void Update(const class TData &Data);
-  void Set(const std::string AText, const TData &Data);
+  void Set(const std::string AText, const TData &Data, bool IgnoreErrors = false);
 };
 
 std::ostream& operator<<(std::ostream &Stream, const TTextValue &TextValue);
@@ -115,7 +115,8 @@ class TTextLabel : public TGraphElem
 {
   std::string Text;
   TLabelPlacement LabelPlacement;
-  Func32::TDblPoint Pos; //Only used when TextLabelPos is tlpCustom
+  TTextValue xPos; //Only used when TextLabelPos is tlpCustom
+  TTextValue yPos; //Only used when TextLabelPos is tlpCustom
   TRect Rect;
   TColor BackgroundColor;
   TVclObject<TMetafile> Metafile;
@@ -123,15 +124,16 @@ class TTextLabel : public TGraphElem
   std::wstring StatusText; //The text shown in the TreeView
 
 public:
-  TTextLabel() : LabelPlacement(lpUserTopLeft), Pos(0,0), Rect(0,0,0,0), Rotation(0) {}
-  TTextLabel(const std::string &Str, TLabelPlacement Placement, const Func32::TDblPoint &Coord, TColor Color, unsigned ARotation);
+  TTextLabel() : LabelPlacement(lpUserTopLeft), Rect(0,0,0,0), Rotation(0) {}
+  TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation);
   void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
   std::wstring MakeText() const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   int UpdateRect(int X, int Y) {int Width = Rect.Width(); int Height = Rect.Height(); Rect = TRect(X, Y, X + Width, Y + Height); return Width;}
   bool IsInsideRect(int X, int Y) const {return InsideRect(Rect, TPoint(X, Y));}
-  const Func32::TDblPoint& GetPos() const {return Pos;}
+  const TTextValue& GetXPos() const {return xPos;}
+  const TTextValue& GetYPos() const {return yPos;}
   const std::string& GetText() const {return Text;}
   void Scale(double xSizeMul, double ySizeMul);
   const TRect& GetRect() const {return Rect;}
@@ -151,6 +153,7 @@ class TBaseFuncType : public TGraphElem
 protected:
   static const boost::shared_ptr<TBaseFuncType> CloneWithTangents(TBaseFuncType *Dest, const TBaseFuncType *Src);
   TBaseFuncType(const TBaseFuncType &F);
+  TTextValue Steps; //Number of steps/evaluations. Rounded to an integer
 
 public:
   std::vector<Func32::TCoordSet> sList;
@@ -160,17 +163,16 @@ public:
   unsigned Size;
   TPenStyle Style;
   TTextValue From, To;
-  unsigned Steps;
   unsigned StartPointStyle, EndPointStyle;
   TDrawType DrawType;
 
   TBaseFuncType();
-  virtual void SetTrigonometry(Func32::TTrigonometry Trig) {}; //Does nothing as default
   void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
   virtual boost::shared_ptr<TBaseFuncType> MakeDifFunc() =0;
   virtual std::pair<double,double> GetCurrentRange() const {return std::make_pair(From.Value, To.Value);}
-  virtual unsigned GetSteps() const {return Steps;}
+  virtual const TTextValue& GetSteps() const {return Steps;}
+  void SetSteps(const TTextValue &Value) {Steps = Value;}
   virtual std::string GetVariable() const {return "";}
   virtual const Func32::TBaseFunc& GetFunc() const =0;
   Func32::TBaseFunc& GetFunc() {return const_cast<Func32::TBaseFunc&>(const_cast<const TBaseFuncType*>(this)->GetFunc());}
@@ -199,7 +201,7 @@ public:
   void UpdateTan(double a1, double q1);
   bool IsValid() const; //Indicates the parent function is valid at t
   std::pair<double,double> GetCurrentRange() const;
-  unsigned GetSteps() const;
+  const TTextValue& GetSteps() const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   const Func32::TParamFunc& GetFunc() const {return TanFunc;}
   boost::shared_ptr<TBaseFuncType> ParentFunc() const {return Func.lock();}
@@ -215,12 +217,11 @@ class TStdFunc : public TBaseFuncType
 
 public:
   TStdFunc() {}
-  TStdFunc(const std::string &AText, const Func32::TSymbolList &SymbolList);
+  TStdFunc(const std::string &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
   TStdFunc(const Func32::TFunc &AFunc) : Text(AFunc.MakeText()), Func(AFunc) {}
 
   boost::shared_ptr<TGraphElem> Clone() const {return CloneWithTangents(new TStdFunc(*this), this);}
   std::wstring MakeText() const;
-  void SetTrigonometry(Func32::TTrigonometry Trig);
   void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
@@ -238,12 +239,11 @@ class TParFunc : public TBaseFuncType
 
 public:
   TParFunc() {}
-  TParFunc(const std::string &AxText, const std::string &AyText, const Func32::TSymbolList &SymbolList);
+  TParFunc(const std::string &AxText, const std::string &AyText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
   TParFunc(const Func32::TParamFunc &AFunc) : xText(AFunc.MakeXText()), yText(AFunc.MakeYText()), Func(AFunc) {}
 
   boost::shared_ptr<TGraphElem> Clone() const {return CloneWithTangents(new TParFunc(*this), this);}
   std::wstring MakeText() const;
-  void SetTrigonometry(Func32::TTrigonometry Trig);
   void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
@@ -261,11 +261,10 @@ class TPolFunc : public TBaseFuncType
 
 public:
   TPolFunc() {}
-  TPolFunc(const std::string &AText, const Func32::TSymbolList &SymbolList);
+  TPolFunc(const std::string &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
 
   boost::shared_ptr<TGraphElem> Clone() const {return CloneWithTangents(new TPolFunc(*this), this);}
   std::wstring MakeText() const;
-  void SetTrigonometry(Func32::TTrigonometry Trig);
   void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
@@ -371,7 +370,7 @@ public:
   boost::shared_ptr<class TRegion> BoundingRegion; //Used to draw the frame around Region for inequalities
 
   TRelation();
-  TRelation(const std::string &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize);
+  TRelation(const std::string &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig);
   TRelation(const TRelation &Relation);
   std::wstring MakeText() const;
   void WriteToIni(class TConfigFile &IniFile, const std::string &Section) const;

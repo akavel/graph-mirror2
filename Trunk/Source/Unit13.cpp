@@ -135,7 +135,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       Func->From.Text = "0";
       Func->To.Value = Points.size() - N;
       Func->To.Text = ToString(Func->To.Value);
-      Func->Steps = 1000;
+      Func->SetSteps(TTextValue(1000));
       BaseFunc = Func;
     }
     else

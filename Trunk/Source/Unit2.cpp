@@ -19,7 +19,6 @@
 __fastcall TForm2::TForm2(TComponent* Owner)
 	: TTntForm(Owner)
 {
-  ScaleForm(this);
   Label6->Width = Comments->Width;
   TranslateProperties(this);
   Animate1->ResName = "FLAG";
@@ -46,6 +45,12 @@ __fastcall TForm2::TForm2(TComponent* Owner)
     Label6->Top = Label6->Top + 25;
     Height = Height + Label6->Height + 5;
   }
+
+  //Don't scale until we have made all adjustments.
+  //Disable AutoSize before we scale as it sometimes create problems. 
+  Label6->AutoSize = false;
+  Label6->Width = Panel1->ClientWidth - 5;
+  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm2::Label2Click(TObject *Sender)
@@ -68,6 +73,8 @@ void __fastcall TForm2::ProgramIconDblClick(TObject *Sender)
   Animate1->Active = !Animate1->Active;
 }
 //---------------------------------------------------------------------------
+
+
 
 
 
