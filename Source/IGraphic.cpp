@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -217,7 +217,7 @@ unsigned FindEndPar(const std::string &Str, unsigned Pos)
     else if(Str[I] == ')')
       if(--Count == 0)
         return I;
-  return std::string::npos;        
+  return std::string::npos;
 }
 //---------------------------------------------------------------------------
 void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
@@ -537,7 +537,7 @@ TRect Rotate(TMetafile *Metafile, int Degrees)
   int dy = 0;
   if(std::sin(Angle) > 0)
     dy += Width * std::sin(Angle);
-  else  
+  else
     dx -= Height * std::sin(Angle);
   if(std::cos(Angle) < 0)
   {

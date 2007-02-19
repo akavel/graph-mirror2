@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -208,7 +208,7 @@ static PyObject* PluginCreateParametricFunction(PyObject *Self, PyObject *Args)
 static long double CallCustomFunction(void *Custom, const long double *Args, unsigned ArgsCount, Func32::TTrigonometry Trigonemtry)
 {
   PyRun_SimpleString("math.sqrt(-10.0)\n");
-  PyObject *Tuple = PyTuple_New(ArgsCount);   
+  PyObject *Tuple = PyTuple_New(ArgsCount);
   for(unsigned I = 0; I < ArgsCount; I++)
     PyTuple_SET_ITEM(Tuple, I, PyFloat_FromDouble(Args[I]));
   PyObject *CallResult = PyObject_CallObject(reinterpret_cast<PyObject*>(Custom), Tuple);

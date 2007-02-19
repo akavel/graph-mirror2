@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -77,7 +77,7 @@
 #pragma link "PDFlib.lib"
 #pragma resource "*.dfm"
 TForm1 *Form1;
-const TCursor crMoveHand1 = 1;                       
+const TCursor crMoveHand1 = 1;
 const TCursor crMoveHand2 = 2;
 TMutex GlobalMutex("Graph running"); //Global Mutex object indicating Graph is running (Checked by installation program)
 //---------------------------------------------------------------------------
@@ -94,7 +94,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
     out << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
     out << "CmdLine: " << CmdLine << std::endl;
   }
- 
+
   SetApplicationExceptionHandler(true); //Log all exceptions
   InitDebug();
 #else
@@ -108,11 +108,11 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   if(!FindCmdLineSwitch("EMBEDDING") && !GetRegValue(REGISTRY_KEY, "AllowOLE", HKEY_CURRENT_USER, 0))
     //Prevent OLE instantiation if not started for use with OLE
     _Module.RevokeClassObjects();
-                                                                  
+
   SetThreadName("Main");
   DefaultInstance->OnDebugLine = DebugLine;
 
-  Initialize();                        
+  Initialize();
 
   //Don't update when system settings are changed (especially DecimalSeparator)
   Application->UpdateFormatSettings = false;
@@ -151,8 +151,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   Screen->Cursors[crMoveHand1] = LoadCursor(HInstance, "MOVECURSOR2");
   BOOST_ASSERT(Screen->Cursors[crMoveHand1]);
   BOOST_ASSERT(Screen->Cursors[crMoveHand2]);
-  BOOST_ASSERT(TreeView->Items->Count == 0);               
-}                                  
+  BOOST_ASSERT(TreeView->Items->Count == 0);
+}
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormShow(TObject *Sender)
 {
@@ -1173,7 +1173,7 @@ void __fastcall TForm1::TreeViewMouseDown(TObject *Sender,
   TTntTreeNode *Node = TreeView->GetNodeAt(X,Y);
   if(Node == NULL)
     return;
-    
+
   if(Button == mbRight)
     TreeView->Selected = Node;
   else if(Button == mbLeft)
@@ -1459,7 +1459,7 @@ void __fastcall TForm1::EndUpdate()
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ApplicationEventsActivate(TObject *Sender)
 {
-  UpdateMenu(); 
+  UpdateMenu();
 }
 //---------------------------------------------------------------------------
 //Use to zoom in at a given pixel position
@@ -2728,7 +2728,7 @@ TSaveError SaveAsPdf(const AnsiString &FileName, Graphics::TBitmap *Bitmap, cons
     std::string Creator = NAME " " + TVersionInfo().StringValue("ProductVersion");
     p.set_info("Creator", Creator);
     p.set_info("Author", Creator);
-    p.set_info("Title", Title); 
+    p.set_info("Title", Title);
     p.set_info("Subject", Subject);
     p.begin_page_ext(Width, Height, "");
     int image;
@@ -3264,7 +3264,7 @@ void __fastcall TForm1::PlacementClick(TObject *Sender)
       Data.Replace(Data.GetIndex(TextLabel), NewLabel);
       NewLabel->Update();
     }
-    
+
     Data.SetModified();
     UpdateMenu();
     Redraw();
@@ -3278,7 +3278,7 @@ void __fastcall TForm1::PopupMenu3Popup(TObject *Sender)
   {
     if(TextLabel->GetPlacement() > lpUserTopLeft && TextLabel->GetPlacement() < lpUserTopRight)
       Label_Placement->Items[TextLabel->GetPlacement() - 1]->Checked = true;
-    else 
+    else
       Label_Placement->Items[4]->Checked = true;
 
     if(TextLabel->GetRotation() % 90 == 0)
@@ -3450,7 +3450,7 @@ void TForm1::MoveAndSnapLabel(int dx, int dy, bool Snap)
       Image2->Top = MinPoint.y;
     }*/
 
-    MovingLabelPlacement = lpUserTopLeft; 
+    MovingLabelPlacement = lpUserTopLeft;
   }
 }
 //---------------------------------------------------------------------------

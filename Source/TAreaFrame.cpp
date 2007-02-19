@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ void TAreaFrame::EvalArea(TGraphElem *GraphElem)
 
   if(!GraphElem->GetVisible())
     return;
-    
+
   if(TTan *Tan = dynamic_cast<TTan*>(GraphElem))
   {
     try

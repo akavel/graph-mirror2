@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ void TAxis::WriteToIni(TConfigFile &IniFile, const std::string &Prefix) const
   IniFile.Write("Axes", Prefix + "ShowLabel", ShowLabel, true);
   IniFile.Write("Axes", Prefix + "AutoTick", AutoTick, true);
   IniFile.Write("Axes", Prefix + "AutoGrid", AutoGrid, true);
-  IniFile.Write("Axes", Prefix + "Label", ToString(Label), Prefix); 
+  IniFile.Write("Axes", Prefix + "Label", ToString(Label), Prefix);
   IniFile.Write("Axes", Prefix + "ShowNumbers", ShowNumbers, true);
   IniFile.Write("Axes", Prefix + "AxisCross", AxisCross, 0.0);
   IniFile.Write("Axes", Prefix + "MultiplyOfPi", MultiplyOfPi, false);
@@ -297,7 +297,7 @@ void TCustomFunctions::Update()
     SymbolList.Update();
   }
   catch(const Func32::EParseError &E)
-  { 
+  {
     throw ECustomFunctionError(cfeParseError, I, E);
   }
 }

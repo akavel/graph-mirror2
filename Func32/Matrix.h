@@ -1,4 +1,4 @@
-/* Copyright 2006 Ivan Johansen
+/* Copyright 2007 Ivan Johansen
  *
  * Func32 is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -604,7 +604,7 @@ TMatrix<T> TMatrix<T>::Inverse() const
   {
     if(!Matrix.Get(Row, Row))
       throw EDivByZero();
-      
+
     T Value = 1 / Matrix.Get(Row, Row);
     for(unsigned Col = 0; Col < Matrix.ColCount; Col++)
       Matrix.Get(Row, Col) *= Value;

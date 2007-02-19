@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ private:	// User declarations
     boost::shared_ptr<TGraphElem> Elem;
     TEvalType EvalType;
     int SizeDif; //Difference between Height and ClientHeight
-    TVclObject<TTntStringList> StdFuncStrings, ParFuncStrings, PolFuncStrings; 
+    TVclObject<TTntStringList> StdFuncStrings, ParFuncStrings, PolFuncStrings;
 
     void __fastcall Loaded() {VisibleFrame=NULL; TForm::Loaded();} //Prevent crash when resources are reloaded
     void ShowFrame(TFrame *Frame);

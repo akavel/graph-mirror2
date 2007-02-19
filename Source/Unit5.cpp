@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -186,14 +186,14 @@ int TForm5::EditFunc(boost::shared_ptr<TBaseFuncType> Func)
     Edit3->Text = F->From.Text.c_str();
     Edit4->Text = F->To.Text.c_str();
 //    if(F->GetSteps())
-      Edit5->Text = ToWideString(F->GetSteps().Text);  
+      Edit5->Text = ToWideString(F->GetSteps().Text);
     LineSelect1->LineStyle = F->Style;
-    UpDown1->Position = F->Size;                  
+    UpDown1->Position = F->Size;
     ExtColorBox1->Selected = F->Color;
     Edit7->Text = ToWideString(F->GetLegendText());
     ComboBox2->ItemIndex = F->StartPointStyle;
     ComboBox3->ItemIndex = F->EndPointStyle;
-    ComboBox4->ItemIndex = F->DrawType; 
+    ComboBox4->ItemIndex = F->DrawType;
     LineSelect1->Enabled = F->DrawType != dtDots;
   }
 
@@ -205,9 +205,9 @@ int TForm5::EditFunc(boost::shared_ptr<TBaseFuncType> Func)
 void __fastcall TForm5::ComboBox1Change(TObject *Sender)
 {
   //Save current state
-  TempData[OldItemIndex].Text1 = Edit1->Text;               
+  TempData[OldItemIndex].Text1 = Edit1->Text;
   TempData[OldItemIndex].Text2 = Edit2->Text;
-  TempData[OldItemIndex].From = Edit3->Text;      
+  TempData[OldItemIndex].From = Edit3->Text;
   TempData[OldItemIndex].To = Edit4->Text;
   TempData[OldItemIndex].Steps = Edit5->Text;
 

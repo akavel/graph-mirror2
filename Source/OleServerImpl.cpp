@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -209,7 +209,7 @@ bool TOleServerImpl::CheckRegistration()
       return true;
   }
   catch(...)
-  {                                
+  {
   }
   return false;
 }
@@ -1014,7 +1014,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Save(
   ConfigFile.Write("Image", "Height", GetHeight());
   Str = ConfigFile.GetAsString();
 
-  HRESULT Result = S_OK;                                                   
+  HRESULT Result = S_OK;
   if(FAILED(LOG_FUNCTION_CALL(Stream->Write(Str.c_str(), Str.size(), NULL))))
     Result = E_FAIL;
 

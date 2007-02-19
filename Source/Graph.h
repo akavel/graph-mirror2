@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Func32 is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

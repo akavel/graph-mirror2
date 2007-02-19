@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -134,7 +134,7 @@ void TDrawThread::PrepareFunction(TBaseFuncType *F)
     if(Steps <= 0)
       ds = LogScl ? std::exp(std::log(Axes.xAxis.Max / Axes.xAxis.Min) / AxesRect.Width()) : 1/Draw->xScale;
     else if(Steps == 1)
-      MinMax.second = MinMax.first, ds = 1; 
+      MinMax.second = MinMax.first, ds = 1;
     else
       ds = (MinMax.second - MinMax.first) / (Steps - 1); //Remove 1 so two steps only plots at Min and Max
 
@@ -932,7 +932,7 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
         TPoint Pos(Draw->xPoint(iter->x.Value), Draw->yPoint(iter->y.Value));
         if(!InsideRect(AxesRect, Pos)) //We might get rounding errors if the point is too much outside the visible area
           continue;
-          
+
         //Draw x error bar
         Context.SetPen(psSolid, clBlack, Size(1));
         double Delta = PointSeries.GetXError(I);

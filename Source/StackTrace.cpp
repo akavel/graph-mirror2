@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -363,7 +363,7 @@ Exception* __fastcall MyGetExceptionObject(Windows::PExceptionRecord P)
 
   Exception *Result = OldExceptObjProc(P);
 
-  //Stack overflow cannot be handled from MyRaiseException() if running outside the debugger 
+  //Stack overflow cannot be handled from MyRaiseException() if running outside the debugger
   if(P->ExceptionCode == EXCEPTION_STACK_OVERFLOW)
     if(EExternal *E = dynamic_cast<EExternal*>(Result))
       LogOsException(E, 3);

@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
     : TTntForm(Owner), Data(AData)
 {
   ScaleForm(this);
-  Translate();            
+  Translate();
 
   FontDialog1->Font->Assign(Data.Property.DefaultPointLabelFont);
   Edit1->Text = Data.CreatePointSeriesDescription().c_str();

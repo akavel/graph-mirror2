@@ -1,11 +1,11 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or (at
  * your option) any later version.
- */                                      
+ */
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
@@ -24,10 +24,10 @@ __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, cons
   : TTntForm(Owner), RichEditOle(IRichEdit1)
 {
   ScaleForm(this);
-  TranslateProperties(this);           
-  SetAccelerators(this);                           
+  TranslateProperties(this);
+  SetAccelerators(this);
   TranslateStrings(ColorBox1->Items);
-  TranslateStrings(ColorBox2->Items);                       
+  TranslateStrings(ColorBox2->Items);
   ColorBox2->Items->Strings[1] = LoadRes(RES_TRANSPARENT);
 
   OrgComboBox1WindowProc = ComboBox1->WindowProc;
@@ -36,7 +36,7 @@ __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, cons
   IFontBox1->WindowProc = IFontBox1Proc;
   OrgColorBox1WindowProc = ColorBox1->WindowProc;
   ColorBox1->WindowProc = ColorBox1Proc;
-                                           
+
   RichEditOle.SetHostNames(HostApp, HostDoc.IsEmpty() ? HostApp : HostDoc);
   IRichEdit1->SelectAll();
   IRichEdit1->SelAttributes->Assign(DefaultFont);
@@ -67,7 +67,7 @@ void __fastcall TForm6::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
      Button2->Click();
 
   if(Shift.Contains(ssCtrl))
-  {                                     
+  {
     switch(Key)
     {
       case 'B': ToolButton1->Down = !ToolButton1->Down; ToolButton1->Click(); break;
@@ -87,7 +87,7 @@ void __fastcall TForm6::ComboBoxKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   if(Key == VK_RETURN)
-  {                                                 
+  {
     if(Shift.Contains(ssCtrl))
       Button1->Click();
     Key = 0;
@@ -348,19 +348,19 @@ void TForm6::SetBackgroundColor(TColor Color)
 TColor TForm6::GetBackgroundColor() const
 {
   return ColorBox2->Selected == clBlack ? clNone : ColorBox2->Selected;
-}                                
+}
 //---------------------------------------------------------------------------
 void __fastcall TForm6::ToolButton11Click(TObject *Sender)
 {
-  //Only set dialog font for Windows NT. Win 9x will use default font. 
+  //Only set dialog font for Windows NT. Win 9x will use default font.
   if(Win32Platform == VER_PLATFORM_WIN32_NT)
     SymbolDialog1->FontName = IRichEdit1->TextFormat.GetName();
-  SymbolDialog1->Execute();           
+  SymbolDialog1->Execute();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::ToolButton13Click(TObject *Sender)
 {
-  RichEditOle.InsertObject();           
+  RichEditOle.InsertObject();
 }
 //---------------------------------------------------------------------------
 
@@ -377,7 +377,7 @@ void __fastcall TForm6::SymbolDialog1InsertAnsiChar(TSymbolDialog *Sender,
 {
   AnsiString OldName = IRichEdit1->TextFormat.GetName();
   IRichEdit1->SetSelText(Symbol, FontName, ToIntDef(ComboBox1->Text, 12));
-  IRichEdit1->TextFormat.SetName(OldName); 
+  IRichEdit1->TextFormat.SetName(OldName);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::SymbolDialog1Show(TObject *Sender)

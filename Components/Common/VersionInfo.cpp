@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -90,7 +90,7 @@ void TVersionInfo::LoadVersionInfo()
       FFileSubtype = FileInfo->dwFileSubtype;
     }
   }
-  
+
   FInfoAvailable = true;
 }
 //---------------------------------------------------------------------------
@@ -268,7 +268,7 @@ std::istream& operator>>(std::istream &Stream, TVersion &Ver)
   if(!Stream)
     return Stream;
 
-  //The last bit is optional  
+  //The last bit is optional
   Stream >> Ch >> Ver.Release >> Ch >> Ver.Build;
   Stream.clear();
   return Stream;

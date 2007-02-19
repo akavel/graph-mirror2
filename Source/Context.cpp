@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -69,7 +69,7 @@ inline void TContext::Clip(TPoint *P1, const TPoint *P2, TOutCode OutCode, const
   if(*P1 == *P2)
     return;
 
-  //Notice: The += operations may overflow if both the left and right sides are above MAXINT   
+  //Notice: The += operations may overflow if both the left and right sides are above MAXINT
   if(OutCode & ocTop)
   {
     BOOST_ASSERT(P2->y != P1->y);
