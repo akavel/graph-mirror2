@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,19 +19,19 @@
 __fastcall TForm20::TForm20(TComponent* Owner)
   : TTntForm(Owner), BackwardDirection(false)
 {
-  ScaleForm(this);                              
-  TranslateProperties(this);                        
+  ScaleForm(this);
+  TranslateProperties(this);
   SetAccelerators(this);
-        
+
   dwICValue = dwICValue; //Avoid stupid warning
   Panel1->DoubleBuffered;
-}                                                   
+}
 //---------------------------------------------------------------------------
 void TForm20::ShowAnimation(const AnsiString &FileName)
 {
-  MediaPlayer1->FileName = FileName;       
+  MediaPlayer1->FileName = FileName;
   MediaPlayer1->Open();
-  TRect Rect = MediaPlayer1->DisplayRect;                   
+  TRect Rect = MediaPlayer1->DisplayRect;
   Width = Width - Panel1->ClientWidth + Rect.Width();
   Height = Height - Panel1->ClientHeight + Rect.Height();
   TrackBar1->Max = MediaPlayer1->Length - 1;
@@ -39,8 +39,8 @@ void TForm20::ShowAnimation(const AnsiString &FileName)
   MediaPlayer1->SetSignal(0, 1);
 
   if(!Visible)
-    ShowModal();                                           
-}                                                 
+    ShowModal();
+}
 //---------------------------------------------------------------------------
 void __fastcall TForm20::Save1Click(TObject *Sender)
 {
@@ -49,17 +49,17 @@ void __fastcall TForm20::Save1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm20::Open1Click(TObject *Sender)
-{                                                      
+{
   if(OpenDialog1->Execute())
     ShowAnimation(OpenDialog1->FileName);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm20::MediaPlayer1Signal(TMediaPlayerEx *Sender,
-      unsigned Position)               
+      unsigned Position)
 {
   TrackBar1->OnChange = NULL;
   TrackBar1->Position = MediaPlayer1->Reverse ? Position : Position - 1;
-  TrackBar1->OnChange = &TrackBar1Change; 
+  TrackBar1->OnChange = &TrackBar1Change;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm20::ToolButton1Click(TObject *Sender)
@@ -90,13 +90,13 @@ void __fastcall TForm20::ToolButton3Click(TObject *Sender)
   TrackBar1->Position = 0;
   ToolButton1->Enabled = true;
   ToolButton2->Enabled = false;
-  ToolButton3->Enabled = false;        
+  ToolButton3->Enabled = false;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm20::ToolButton4Click(TObject *Sender)
 {
   MediaPlayer1->Next();
-}                           
+}
 //---------------------------------------------------------------------------
 void __fastcall TForm20::ToolButton5Click(TObject *Sender)
 {
@@ -119,7 +119,7 @@ void __fastcall TForm20::ToolButton6Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm20::ToolButton7Click(TObject *Sender)
 {
-  try                              
+  try
   {
     MediaPlayer1->Back();
     TrackBar1->OnChange = NULL;
@@ -163,7 +163,7 @@ void __fastcall TForm20::SpeedClick(TObject *Sender)
 void __fastcall TForm20::TntFormClose(TObject *Sender,
       TCloseAction &Action)
 {
-  MediaPlayer1->Stop();  
+  MediaPlayer1->Stop();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm20::TrackBar1Change(TObject *Sender)

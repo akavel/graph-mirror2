@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -344,7 +344,7 @@ void __fastcall TForm13::RadioButtonClick(TObject *Sender)
     Edit5->Enabled = true;
     Edit5->Color = clWindow;
   }
-  else                                
+  else
   {
     CheckBox1->Enabled = false;
     Edit5->Enabled = false;

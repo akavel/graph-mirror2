@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,7 @@ __published:	// IDE-managed Components
   void __fastcall Popup1_ExportClick(TObject *Sender);
   void __fastcall Popup1_Show(TObject *Sender);
 private:	// User declarations
-  const TBaseFuncType *Func; 
+  const TBaseFuncType *Func;
 
 public:		// User declarations
   __fastcall TForm15(TComponent* Owner);

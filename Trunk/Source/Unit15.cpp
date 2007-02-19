@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,14 +17,14 @@
 #pragma link "TntStdCtrls"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
-__fastcall TForm15::TForm15(TComponent* Owner)                                             
+__fastcall TForm15::TForm15(TComponent* Owner)
         : TTntForm(Owner), Func(NULL)
 {
   ScaleForm(this);
 
   Popup1_Show_df->Caption = LoadRes(RES_SHOW, "f'(x)");
   Popup1_Show_ddf->Caption = LoadRes(RES_SHOW, "f''(x)");
-                                                                     
+
   TranslateProperties(this);
   MoveControl(Edit1, Label1);
   MoveLabel(Edit2, Label2);
@@ -59,7 +59,7 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
     }
     catch(...)
     {
-    }                    
+    }
 
     long double x = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, x += ds)
@@ -215,7 +215,7 @@ void __fastcall TForm15::Popup1_ExportClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm15::Popup1_Show(TObject *Sender)
-{                                                       
+{
   Grid1->ColWidths[2] = Popup1_Show_df->Checked ? Grid1->DefaultColWidth : 0;
   Grid1->ColWidths[3] = Popup1_Show_ddf->Checked ? Grid1->DefaultColWidth : 0;
 }

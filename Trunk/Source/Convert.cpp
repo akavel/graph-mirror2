@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -242,7 +242,7 @@ void StrToFont(const std::string &Str, TFont *Font)
 {
   if(Str.empty())
     return;
-    
+
   unsigned Pos = Str.find(',');
   //Get font name from string
   Font->Name = Str.substr(0, Pos).c_str();
@@ -352,7 +352,7 @@ AnsiString RoundToStr(long double Number, const TData &Data)
 }
 //---------------------------------------------------------------------------
 double CellToDouble(TGrid *Grid, int Col, int Row)
-{                                      
+{
   try
   {
     //First try to convert as a number as optimization. If it fails parse using Calc()

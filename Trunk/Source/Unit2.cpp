@@ -1,5 +1,5 @@
 /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
   }
 
   //Don't scale until we have made all adjustments.
-  //Disable AutoSize before we scale as it sometimes create problems. 
+  //Disable AutoSize before we scale as it sometimes create problems.
   Label6->AutoSize = false;
   Label6->Width = Panel1->ClientWidth - 5;
   ScaleForm(this);

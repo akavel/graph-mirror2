@@ -1,5 +1,5 @@
  /* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2006 Ivan Johansen
+ * Copyright 2007 Ivan Johansen
  *
  * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -329,7 +329,7 @@ void __fastcall TForm3::CheckBox8Click(TObject *Sender)
   if(!Edit10->Modified)
     Edit10->Text = ToWideString(CheckBox8->Checked ? 10 : 1);
   if(!Edit6->Modified)
-    Edit6->Text = ToWideString(CheckBox8->Checked ? 1 : 0);  
+    Edit6->Text = ToWideString(CheckBox8->Checked ? 1 : 0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm3::CheckBox15Click(TObject *Sender)
