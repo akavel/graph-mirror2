@@ -25,15 +25,15 @@ class TForm2 : public TTntForm
 __published:	// IDE-managed Components
 	TTntButton *Button1;
 	TPanel *Panel1;
-	TLabel *ProductName;
-	TLabel *Version;
-	TLabel *Copyright;
+	TTntLabel *ProductName;
+	TTntLabel *Version;
+	TTntLabel *Copyright;
 	TTntLabel *Comments;
-  TLabel *Label1;
-  TLabel *Label2;
-  TLabel *Label3;
+  TTntLabel *Label1;
+  TTntLabel *Label2;
+  TTntLabel *Label3;
   TTntLabel *Label4;
-  TLabel *Label5;
+  TTntLabel *Label5;
   TTntLabel *Label6;
   TAnimate *Animate1;
   TImage *ProgramIcon;

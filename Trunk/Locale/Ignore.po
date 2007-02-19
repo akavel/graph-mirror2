@@ -189,3 +189,9 @@ msgstr ""
 
 msgid "Video for Windows [*.avi]|*.avi|All files [*.*]|*.*"
 msgstr ""
+
+msgid "x:"
+msgstr ""
+
+msgid "y:"
+msgstr ""

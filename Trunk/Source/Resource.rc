@@ -11,6 +11,8 @@ BEGIN
   RES_ERROR       "Error"       //Used in titles of error message boxes
   RES_SHADE       "Shade"       //Default name in Insert shade dialog
   RES_ROTATION    "Rotation"    //Shown in rotation dialog
+  RES_VERSION     "Version %s"  //%s is replaced with version number
+  RES_BUILD       "Build %s"    //%s is replaced with build number
 
   RES_AREA        "Area"        //Shown as title in the Calc|Area dialog when it is undocked
   RES_LENGTH      "Length"      //Shown as title in the Calc|Length of path dialog when it is undocked

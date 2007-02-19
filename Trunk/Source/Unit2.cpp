@@ -29,9 +29,9 @@ __fastcall TForm2::TForm2(TComponent* Owner)
   if(Info.InfoAvailable())
   {
     TVersion FileVersion = Info.FileVersion();
-    Label3->Caption = _("Build") + " " + AnsiString(FileVersion.Build);
+    Label3->Caption = LoadRes(RES_BUILD, FileVersion.Build);
     FileVersion.Build = 0;
-    Version->Caption = _("Version ") + AnsiString(FileVersion.Text().c_str());
+    Version->Caption = LoadRes(RES_VERSION, FileVersion.Text());
     if(Info.FileFlags() & ffDebug)
       Version->Caption = Version->Caption + " beta";
     Copyright->Caption = Info.StringValue("LegalCopyright").c_str();
@@ -49,7 +49,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
   //Don't scale until we have made all adjustments.
   //Disable AutoSize before we scale as it sometimes create problems.
   Label6->AutoSize = false;
-  Label6->Width = Panel1->ClientWidth - 5;
+  Label6->Width = Panel1->ClientWidth - 5 - Label6->Left;
   ScaleForm(this);
 }
 //---------------------------------------------------------------------------

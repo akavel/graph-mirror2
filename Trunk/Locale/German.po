@@ -2,9 +2,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-12-12 19:50+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2007-02-19 22:24\n"
+"PO-Revision-Date: 2007-02-19 22:35+0100\n"
+"Last-Translator: \n"
 "Language-Team: Frank Hüttemeister & Michael Bach Ipsen <deutsch@padowan.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -241,6 +241,10 @@ msgstr "Zoomen"
 msgid "Calc"
 msgstr "Berechnen"
 
+#. Form1..MainMenu..Plugins_("Plugins")..Caption
+msgid "Plugins"
+msgstr ""
+
 #. Form1..MainMenu..Help_("Help")..Caption
 #. Form1..ActionManager..ContentsAction("Contents and index")..Category
 #. Form1..ActionManager..ListAction("List of functions")..Category
@@ -275,14 +279,6 @@ msgstr "Internet"
 msgid "Open file: %s"
 msgstr "Öffne die Datei %s."
 
-#. Form1..PopupMenu1..Tree_Visible("Visible")..Caption
-msgid "Visible"
-msgstr "Sichtbar"
-
-#. Form1..PopupMenu1..Tree_Visible("Visible")....Hint
-msgid "Check to make the selected item visible in the coordinate system."
-msgstr "Aktivieren, um das gewählte Element im Koordinatensystem anzuzeigen oder auszublenden."
-
 #. Form1..PopupMenu1..Tree_ShowInLegend("Show in legend")..Caption
 msgid "Show in legend"
 msgstr "In der Legende anzeigen"
@@ -294,6 +290,8 @@ msgstr "Aktivieren, um das gewählte Element in der Legende anzuzeigen."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Caption
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Caption
+#. Form21("Placement")..Caption
+#. Form21("Placement")..Label1("Placement")..Caption
 msgid "Placement"
 msgstr "Platzierung"
 
@@ -336,6 +334,19 @@ msgstr "Rechts der Y-Achse"
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Right("Right of y-axis")....Hint
 msgid "Place the label to the right of the y-axis at the top of the image."
 msgstr "Platziert den Textfeld oben im Bild, direkt rechts der Y-Achse."
+
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+msgid "Custom..."
+msgstr "Benutzerdefiniert..."
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
+#. Shown in rotation dialog
+msgid "Rotation"
+msgstr "Rotation"
 
 #. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
@@ -877,10 +888,6 @@ msgstr "Symbolleiste anpassen..."
 msgid "Customize the icons shown on the toolbar."
 msgstr "Passt die Icons in der Symbolleiste an."
 
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
-msgid "Rotation"
-msgstr "Rotation"
-
 #. Form1..PopupMenu3..Label_Edit("Edit label...")..Caption
 msgid "Edit label..."
 msgstr "Textfeld bearbeiten..."
@@ -916,6 +923,7 @@ msgid "Change the font of the legend."
 msgstr "Wählen Sie die Schriftart für die Legende."
 
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Top Right"
 msgstr "Oben rechts"
@@ -925,6 +933,7 @@ msgid "Show the legend in the upper right corner."
 msgstr "Legende oben rechts zeigen."
 
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomRight("Bottom Right")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Bottom Right"
 msgstr "Unten rechts"
@@ -934,6 +943,8 @@ msgid "Show the legend in the bottom right corner."
 msgstr "Legende unten rechts zeigen."
 
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopLeft("Top Left")..Caption
+#. Form21("Placement")..ComboBox1..Text
+#. Form21("Placement")..ComboBox1....Items.Strings
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Top Left"
 msgstr "Oben links"
@@ -943,6 +954,7 @@ msgid "Show the legend in the upper left corner."
 msgstr "Legende oben links zeigen."
 
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomLeft("Bottom Left")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Bottom Left"
 msgstr "Unten links"
@@ -993,6 +1005,7 @@ msgstr "Restriktionen:"
 #. Form17("Custom functions/constants")..Button1("OK")..Caption
 #. Form18("Image options")..Button1("OK")..Caption
 #. Form2("About Graph")..Button1("OK")..Caption
+#. Form21("Placement")..TntButton1("OK")..Caption
 #. Form3("Edit axes")..Button1("OK")..Caption
 #. Form4("Options")..Button1("OK")..Caption
 #. Form5("Insert function")..Button1("OK")..Caption
@@ -1012,6 +1025,7 @@ msgstr "OK"
 #. Form17("Custom functions/constants")..Button2("Cancel")..Caption
 #. Form18("Image options")..Button2("Cancel")..Caption
 #. Form19("Animate")..ProgressForm1("Working")..ButtonCaption
+#. Form21("Placement")..TntButton2("Cancel")..Caption
 #. Form3("Edit axes")..Button2("Cancel")..Caption
 #. Form4("Options")..Button2("Cancel")..Caption
 #. Form5("Insert function")..Button2("Cancel")..Caption
@@ -1420,10 +1434,12 @@ msgid "Above"
 msgstr "Über"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#. Shortcut key
 msgid "Left"
 msgstr "Links"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#. Shortcut key
 msgid "Right"
 msgstr "Rechts"
 
@@ -1888,7 +1904,7 @@ msgid "Step:"
 msgstr "Schritt:"
 
 #. Form19("Animate")..TntGroupBox1("Range")..Edit1..Hint
-msgid "The first value of the constant"
+msgid "The first value of the constant."
 msgstr "Erster Wert der Konstanten."
 
 #. Form19("Animate")..TntGroupBox1("Range")..Edit2..Hint
@@ -1926,17 +1942,19 @@ msgstr ""
 "Michael Bach Ipsen, Sebastian Stütz\n"
 "und Frank Hüttemeister."
 
-#. Form2("About Graph")..Panel1..Version("Version ")..Caption
-msgid "Version "
-msgstr "Version "
+#. Form2("About Graph")..Panel1..Version("Version %s")..Caption
+#. %s is replaced with version number
+msgid "Version %s"
+msgstr "Version %s"
 
 #. Form2("About Graph")..Panel1..Label1("Email:")..Caption
 msgid "Email:"
 msgstr "E-Mail:"
 
-#. Form2("About Graph")..Panel1..Label3("Build")..Caption
-msgid "Build"
-msgstr "Erzeugen"
+#. Form2("About Graph")..Panel1..Label3("Build %s")..Caption
+#. %s is replaced with build number
+msgid "Build %s"
+msgstr "Erzeugen %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
 msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
@@ -2619,6 +2637,76 @@ msgstr "Transparent"
 #. Shown in the function list
 msgid "Axes"
 msgstr "Achsen"
+
+#. Shortcut key
+msgid "Ctrl+"
+msgstr ""
+
+#. Shortcut key
+msgid "Alt+"
+msgstr ""
+
+#. Shortcut key
+msgid "Shift+"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Del"
+msgstr "Löschen"
+
+#. Shortcut key
+#, fuzzy
+msgid "Ins"
+msgstr "Vergrößern"
+
+#. Shortcut key
+msgid "Home"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "End"
+msgstr "Ende:"
+
+#. Shortcut key
+msgid "PgUp"
+msgstr ""
+
+#. Shortcut key
+msgid "PgDn"
+msgstr ""
+
+#. Shortcut key
+msgid "Up"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Down"
+msgstr "Spenden"
+
+#. Shortcut key
+msgid "Esc"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Enter"
+msgstr "Drucker"
+
+#. Shortcut key
+msgid "Tab"
+msgstr ""
+
+#. Shortcut key
+msgid "BkSp"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Space"
+msgstr "Speichern"
 
 msgid "An error occurred while evaluating power function."
 msgstr "Bei der Berechnung der Potenzfunktion trat ein Fehler auf."
@@ -3325,9 +3413,6 @@ msgstr "Der Menüpunkt \"Als Bilddatei abspeichern\" (?)  besitzt eine Funktion 
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Punktserien können mit Pfeilen als Endpunkt versehen werden. Eine Punktserie mit einem solchen Endpunkt und einer Geraden zwischen den Punkten kann beispielsweise so einen Vektor darstellen."
 
-msgid "Custom..."
-msgstr "Benutzerdefiniert..."
-
 msgid "Black"
 msgstr "Schwarz"
 
@@ -3393,6 +3478,9 @@ msgstr "Anpassen"
 
 msgid "Description"
 msgstr "Beschreibung:"
+
+msgid "Cannot open clipboard"
+msgstr ""
 
 msgid "Local"
 msgstr "Lokal"
@@ -3489,4 +3577,14 @@ msgstr "Geben Sie die Anzahl der zu druckenden Kopien ein."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Geben die den Prozentssatz zur Originalgröße ein."
+
+#, fuzzy
+#~ msgid "Version -%s"
+#~ msgstr "Version "
+#~ msgid "Visible"
+#~ msgstr "Sichtbar"
+#~ msgid "Check to make the selected item visible in the coordinate system."
+#~ msgstr ""
+#~ "Aktivieren, um das gewählte Element im Koordinatensystem anzuzeigen oder "
+#~ "auszublenden."
 

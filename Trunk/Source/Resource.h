@@ -13,6 +13,8 @@
 #define RES_ERROR        1
 #define RES_SHADE        2
 #define RES_ROTATION     3
+#define RES_VERSION      4
+#define RES_BUILD        5
 
 #define RES_AREA         7
 #define RES_LENGTH       8

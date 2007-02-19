@@ -1,1868 +1,2835 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-11-25 13:47+0100\n"
-"Last-Translator: Pär Smårs <par.smars@bredband.net>\n"
+"POT-Creation-Date: 2007-02-19 22:24\n"
+"PO-Revision-Date: 2007-02-19 22:43+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: dxgettext 1.2.1\n"
 "X-Poedit-Country: SWEDEN\n"
-"X-Poedit-Language: Swedish\n"
 
+#. AreaFrame..Label1("From:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label4("From:")..Caption
+#. Form15("Calculate table")..Label1("From:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Label2("From:")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Label4("From:")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label4("From:")..Caption
 msgid "From:"
 msgstr "Från:"
 
+#. AreaFrame..Label2("To:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label5("To:")..Caption
+#. Form15("Calculate table")..Label2("To:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Label3("To:")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Label5("To:")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label5("To:")..Caption
 msgid "To:"
 msgstr "Till:"
 
+#. AreaFrame..Label3("Area")..Caption
+#. Form1..ActionManager..AreaAction("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Area"
 
+#. AreaFrame..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Skriv in startkoordinat, eller markera utbredningsområde i koordinatsystemet med musen."
 
+#. AreaFrame..Edit2....Hint
 msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
 msgstr "Skriv in slutkoordinat, eller markera utbredningsområde i koordinatsystemet med musen."
 
+#. AreaFrame..Edit3....Hint
 msgid "Area or length of path calculated for the given range using Simpson's formula."
 msgstr "Använder Simpsons formel för att beräkna area eller längd på kurvan för angivet område."
 
+#. ParFuncFrame..Label7("Snap to:")..Caption
+#. PolFuncFrame..Label7("Snap to:")..Caption
+#. StdFuncFrame..Label5("Snap to:")..Caption
 msgid "Snap to:"
 msgstr "Fäst vid:"
 
+#. ParFuncFrame..Edit2..Hint
 msgid "The x-coordinate evaluated for the t-parameter."
 msgstr "X-koordinaten utvärderad för t-parametern."
 
+#. ParFuncFrame..Edit3..Hint
 msgid "The y-coordinate evaluated for the t-parameter."
 msgstr "Y-koordinaten utvärderad för t-parametern."
 
+#. ParFuncFrame..Edit4..Hint
 msgid "The derivative of x(t) evaluated for the entered t-parameter."
 msgstr "Derivatan av x(t) utvärderad för inmatad t-parameter."
 
+#. ParFuncFrame..Edit5..Hint
 msgid "The derivative of y(t) evaluated for the entered t-parameter."
 msgstr "Derivatan av y(t) utvärderad för inmatad t-parameter."
 
+#. ParFuncFrame..Edit6..Hint
 msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr "Funktionens lutning utvärderad för inmatad t-parameter."
 
+#. ParFuncFrame..Edit1....Hint
+#. PolFuncFrame..Edit1....Hint
 msgid "Enter the independent variable for which you want to evaluate the function, or click on the function in the main window."
 msgstr "Skriv in den oberoende variabeln för vilken du vill utvärdera funktionen, eller klicka på funktionen i huvudfönstret."
 
+#. ParFuncFrame..ComboBox1....Hint
+#. StdFuncFrame..ComboBox1....Hint
+#. Form9("Evaluate")..PolFuncFrame1....Hint
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Välj var markören skall placeras då du klickar på bilden."
 
+#. ParFuncFrame..ComboBox1..Text
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1..Text
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1..Text
+#. StdFuncFrame..ComboBox1....Items.Strings
+#. Form1..MainMenu..Function_("Function")..Caption
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
+#. Form1..ActionManager..EditAction("Edit...")..Category
+#. Form1..ActionManager..DeleteAction("Delete")..Category
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Category
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Category
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Category
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Category
+#. Form1..ActionManager..InsertObjectAction("Insert object...")..Category
 msgid "Function"
 msgstr "Funktion"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1....Items.Strings
 msgid "Intersection"
 msgstr "Skärningspunkt"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Caption
 msgid "x-axis"
 msgstr "x-axel"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 msgid "y-axis"
 msgstr "y-axel"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
 msgid "Extreme x-value"
 msgstr "Extremvärde för x"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
 msgid "Extreme y-value"
 msgstr "Extremvärde för y"
 
+#. PolFuncFrame..Edit2..Hint
 msgid "The distance to the function evaluated for the given angle."
 msgstr "Avstånd till funktionen utvärderad för angiven vinkel."
 
+#. PolFuncFrame..Edit3..Hint
 msgid "The x-coordinate evaluated for the given angle."
 msgstr "X-koordinaten utvärderad för angiven vinkel."
 
+#. PolFuncFrame..Edit4..Hint
 msgid "The y-coordinate evaluated for the given angle."
 msgstr "Y-koordinaten utvärderad för angiven vinkel."
 
+#. PolFuncFrame..Edit5..Hint
 msgid "The derivative of the function evaluated for the given angle."
 msgstr "Funktionens derivata utvärderad för angiven vinkel."
 
+#. PolFuncFrame..Edit6..Hint
 msgid "The slope of the function evaluated for the given angle."
 msgstr "Funktionens lutning utvärderad för angiven vinkel."
 
+#. StdFuncFrame..Edit1....Hint
 msgid "Enter a number for which you want to evaluate the function, or click on the function in the main window."
 msgstr "Skriv in ett värde för vilket du vill utvärdera funktionen, eller klicka på funktionen i koordinatsystemet."
 
+#. StdFuncFrame..ComboBox1....Items.Strings
 msgid "Extremum"
 msgstr "Extremvärde"
 
+#. StdFuncFrame..Edit2..Hint
 msgid "This is the function evaluated for the entered x-value."
 msgstr "Detta är funktionsvärdet som resultat av inmatat x-värde."
 
+#. StdFuncFrame..Edit3....Hint
 msgid "This is the first derivative of the function evaluated for the entered value."
 msgstr "Detta är funktionens förstaderivata utvärderad för inmatat värde."
 
+#. StdFuncFrame..Edit4....Hint
 msgid "This is the functions second derivative evaluated for the entered value."
 msgstr "Detta är funktionens andraderivata utvärderad för inmatat värde."
 
+#. TanFrame..Edit2....Hint
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
 msgstr "Detta är y-koordinaten för tangenten till den inmatade x-koordinaten."
 
+#. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the main window."
 msgstr "Skriv in en x-koordinat, eller klicka på tangenten i huvudfönstret."
 
+#. Form1..MainMenu..File_("File")..Caption
+#. Form1..ActionManager..NewAction("New")..Category
+#. Form1..ActionManager..OpenAction("Open...")..Category
+#. Form1..ActionManager..SaveAction("Save")..Category
+#. Form1..ActionManager..SaveAsAction("Save as...")..Category
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Category
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Category
+#. Form1..ActionManager..PrintAction("Print...")..Category
+#. Form1..ActionManager..ExitAction("Exit")..Category
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Category
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Category
 msgid "File"
 msgstr "Arkiv"
 
+#. Form1..MainMenu..File_("File")..File_Import("Import")..Caption
 msgid "Import"
 msgstr "Importera"
 
+#. Form1..MainMenu..Edit_("Edit")..Caption
+#. Form1..ActionManager..UndoAction("Undo")..Category
+#. Form1..ActionManager..RedoAction("Redo")..Category
+#. Form1..ActionManager..CutAction("Cut")..Category
+#. Form1..ActionManager..CopyAction("Copy")..Category
+#. Form1..ActionManager..PasteAction("Paste")..Category
+#. Form1..ActionManager..CopyImageAction("Copy image")..Category
+#. Form1..ActionManager..AxesAction("Axes...")..Category
+#. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Redigera"
 
+#. Form1..MainMenu..Zoom_("Zoom")..Caption
+#. Form1..ActionManager..ZoomInAction("In")..Category
+#. Form1..ActionManager..ZoomOutAction("Out")..Category
+#. Form1..ActionManager..ZoomWindowAction("Window")..Category
+#. Form1..ActionManager..ZoomSquareAction("Square")..Category
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Category
+#. Form1..ActionManager..ZoomFitAction("Fit")..Category
+#. Form1..ActionManager..ZoomAllPointsAction("All points")..Category
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Category
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Category
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Category
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Category
 msgid "Zoom"
 msgstr "Zooma"
 
+#. Form1..MainMenu..Math_("Calc")..Caption
+#. Form1..ActionManager..PathAction("Length of path")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
+#. Form1..ActionManager..EvalAction("Evaluate")..Category
+#. Form1..ActionManager..TableAction("Table...")..Category
+#. Form1..ActionManager..AnimateAction("Animate...")..Category
+#. Form15("Calculate table")..Button2("Calc")..Caption
 msgid "Calc"
 msgstr "Beräkna"
 
+#. Form1..MainMenu..Plugins_("Plugins")..Caption
+msgid "Plugins"
+msgstr ""
+
+#. Form1..MainMenu..Help_("Help")..Caption
+#. Form1..ActionManager..ContentsAction("Contents and index")..Category
+#. Form1..ActionManager..ListAction("List of functions")..Category
+#. Form1..ActionManager..HomePageAction("Go to home page")..Category
+#. Form1..ActionManager..UpdateAction("Check for update")..Category
+#. Form1..ActionManager..AboutAction("About Graph...")..Category
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Category
+#. Form1..ActionManager..DonateAction("Donate")..Category
+#. Form1..ActionManager..TipAction("Tip of the day")..Category
+#. Form1..ActionManager..SupportAction("Support")..Category
+#. Form11("Insert relation")..Button3("Help")..Caption
+#. Form12("Insert tangent/normal")..Button3("Help")..Caption
+#. Form13("Insert trendline")..Button3("Help")..Caption
+#. Form14("Insert point series")..Button3("Help")..Caption
+#. Form15("Calculate table")..Button3("Help")..Caption
+#. Form16("Insert shade")..Button3("Help")..Caption
+#. Form17("Custom functions/constants")..Button4("Help")..Caption
+#. Form19("Animate")..Button3("Help")..Caption
+#. Form3("Edit axes")..Button3("Help")..Caption
+#. Form4("Options")..Button3("Help")..Caption
+#. Form5("Insert function")..Button3("Help")..Caption
+#. Form6("Text label")..Button3("Help")..Caption
+#. Form7("Insert f'(x)")..Button3("Help")..Caption
 msgid "Help"
 msgstr "Hjälp"
 
+#. Form1..MainMenu..Help_("Help")..Help_Internet("Internet")..Caption
 msgid "Internet"
 msgstr "Internet"
 
+#. Form1..Recent1..Hint
 msgid "Open file: %s"
 msgstr "Öppna filen: %s"
 
-msgid "Visible"
-msgstr "Synlig"
-
-msgid "Check to make the selected item visible in the coordinate system."
-msgstr "Välj för att göra valt objekt synligt i koordinatsystemet."
-
+#. Form1..PopupMenu1..Tree_ShowInLegend("Show in legend")..Caption
 msgid "Show in legend"
 msgstr "Visa i teckenförklaringen"
 
+#. Form1..PopupMenu1..Tree_ShowInLegend("Show in legend")..Hint
 msgid "Check to show the selected item in the legend."
 msgstr "Välj för att visa valt objekt i teckenförklaringen."
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Caption
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Caption
+#. Form21("Placement")..Caption
+#. Form21("Placement")..Label1("Placement")..Caption
 msgid "Placement"
 msgstr "Placering"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Above("Above x-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Above("Above x-axis")..Caption
 msgid "Above x-axis"
 msgstr "Ovanför x-axeln"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Above("Above x-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Above("Above x-axis")....Hint
 msgid "Place the label directly above the x-axis on the right side of the image."
 msgstr "Placera etiketten direkt ovanför x-axeln, på höger sida i bilden."
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")..Caption
 msgid "Below x-axis"
 msgstr "Under x-axeln"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")....Hint
 msgid "Place the label directly below the x-axis on the right side of the image."
 msgstr "Placera etiketten direkt under x-axeln, på höger sida i bilden."
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Left("Left of y-axis")..Caption
 msgid "Left of y-axis"
 msgstr "Till vänster om y-axeln"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Left("Left of y-axis")....Hint
 msgid "Place the label to the left of the y-axis at the top of the image."
 msgstr "Placera etiketten till vänster om y-axeln, i toppen av bilden."
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Right("Right of y-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Right("Right of y-axis")..Caption
 msgid "Right of y-axis"
 msgstr "Till höger om y-axeln"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Right("Right of y-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Right("Right of y-axis")....Hint
 msgid "Place the label to the right of the y-axis at the top of the image."
 msgstr "Placera etiketten till höger om y-axeln, i toppen av bilden."
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+msgid "Custom..."
+msgstr "Välj..."
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
+#. Shown in rotation dialog
+msgid "Rotation"
+msgstr "Rotation"
+
+#. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Export("Export to file...")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Export("Export to file...")..Caption
 msgid "Export to file..."
 msgstr "Exportera till fil..."
 
+#. Form1..PopupMenu1..Tree_Export("Export to file...")..Hint
 msgid "Export the selected point series to a file."
 msgstr "Exportera vald punktserie till en fil."
 
+#. Form1..ActionManager..NewAction("New")..Caption
 msgid "New"
 msgstr "Nytt"
 
+#. Form1..ActionManager..NewAction("New")..Hint
 msgid "Creates a new coordinate system."
 msgstr "Skapar ett nytt koordinatsystem."
 
+#. Form1..ActionManager..OpenAction("Open...")..Caption
+#. Form20("Animation")..PopupMenu1..Open1("Open...")..Caption
 msgid "Open..."
 msgstr "Öppna..."
 
+#. Form1..ActionManager..OpenAction("Open...")..Hint
 msgid "Read coordinate system and functions from a file."
 msgstr "Läs in koordinatsystem och funktioner från en fil."
 
+#. Form1..ActionManager..SaveAction("Save")..Caption
 msgid "Save"
 msgstr "Spara"
 
+#. Form1..ActionManager..SaveAction("Save")..Hint
 msgid "Write coordinate system and functions to a file."
 msgstr "Skriver koordinatsystem och funktioner till en fil."
 
+#. Form1..ActionManager..SaveAsAction("Save as...")..Caption
+#. Form20("Animation")..PopupMenu1..Save1("Save as...")..Caption
 msgid "Save as..."
 msgstr "Spara som..."
 
+#. Form1..ActionManager..SaveAsAction("Save as...")..Hint
 msgid "Saves the coordinate system as a new name."
 msgstr "Sparar koordinatsystemet under ett nytt namn."
 
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Caption
 msgid "Save copy as..."
 msgstr "Spara kopia som..."
 
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Hint
 msgid "Saves a copy of the current coordinate system."
 msgstr "Sparar en kopia av aktuellet koordinatsystem."
 
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Caption
 msgid "Save as image..."
 msgstr "Spara som bild..."
 
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Hint
 msgid "Saves the shown coordinate system as an image."
 msgstr "Sparar aktuellt koordinatsystem som en bild."
 
+#. Form1..ActionManager..PrintAction("Print...")..Caption
 msgid "Print..."
 msgstr "Skriv ut..."
 
+#. Form1..ActionManager..PrintAction("Print...")..Hint
 msgid "Print shown coordinate system."
 msgstr "Skriv ut aktuellt koordinatsystem."
 
+#. Form1..ActionManager..ExitAction("Exit")..Caption
 msgid "Exit"
 msgstr "Avsluta"
 
+#. Form1..ActionManager..ExitAction("Exit")..Hint
 msgid "Quit the program."
 msgstr "Avslutar programmet."
 
 # Redigeramenyn
+#. Form1..ActionManager..UndoAction("Undo")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Caption
 msgid "Undo"
 msgstr "Ångra"
 
 # Redigeramenyn
 # Meddelandelist
+#. Form1..ActionManager..UndoAction("Undo")..Hint
 msgid "Undo the last action."
 msgstr "Ångrar senaste kommando."
 
 # Redigeramenyn
+#. Form1..ActionManager..RedoAction("Redo")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Caption
 msgid "Redo"
 msgstr "Gör om"
 
 # Redigeramenyn
 # Meddelandelist
+#. Form1..ActionManager..RedoAction("Redo")..Hint
 msgid "Redo the last action undone."
 msgstr "Gör om senast ångrade kommando."
 
 # Redigeramenyn
+#. Form1..ActionManager..CutAction("Cut")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Caption
 msgid "Cut"
 msgstr "Klipp ur"
 
 # Redigeramenyn
 # Meddelandelist
+#. Form1..ActionManager..CutAction("Cut")..Hint
 msgid "Cuts the selected function or point series to the clipboard."
 msgstr "Klipper ur den valda funktionen eller punktserien till Windows urklipp."
 
 # Redigeramenyn
+#. Form1..ActionManager..CopyAction("Copy")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Caption
 msgid "Copy"
 msgstr "Kopiera"
 
 # Redigeramenyn
 # Meddelandelist
+#. Form1..ActionManager..CopyAction("Copy")..Hint
 msgid "Copies the selected function or point series to the clipboard."
 msgstr "Kopierar den valda funktionen eller punktserien till Windows urklipp."
 
 # Redigeramenyn
+#. Form1..ActionManager..PasteAction("Paste")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Caption
 msgid "Paste"
 msgstr "Klistra in"
 
 # Redigeramenyn
 # Meddelandelist
+#. Form1..ActionManager..PasteAction("Paste")....Hint
 msgid "Pastes a function or point series from the clipboard into the coordinate system."
 msgstr "Klistrar in den valda funktionen eller punktserien från Windows urklipp till koordinatsystemet."
 
 # Redigeramenyn
+#. Form1..ActionManager..CopyImageAction("Copy image")..Caption
 msgid "Copy image"
 msgstr "Kopiera bild"
 
 # Redigeramenyn
 # Meddelandelist
+#. Form1..ActionManager..CopyImageAction("Copy image")..Hint
 msgid "Copies the shown coordinate system to the clipboard."
 msgstr "Kopierar aktuellt koordinatsystem som en bild till Windows urklipp."
 
 # Redigeramenyn
+#. Form1..ActionManager..AxesAction("Axes...")..Caption
 msgid "Axes..."
 msgstr "Axlar..."
 
 # Redigeramenyn
 # Meddelandelist
+#. Form1..ActionManager..AxesAction("Axes...")..Hint
 msgid "Edit axes settings."
 msgstr "Redigerar inställningarna för koordinataxlarna."
 
 # Redigeramenyn
+#. Form1..ActionManager..OptionsAction("Options...")..Caption
+#. Form1..SaveDialogEx1..HelpCaption
+#. Form19("Animate")..Button4("Options...")..Caption
+#. Button in Save as image dialog
 msgid "Options..."
 msgstr "Inställningar..."
 
+#. Form1..ActionManager..OptionsAction("Options...")..Hint
 msgid "Edit various options for the interface and program features."
 msgstr "Redigera olika inställningar för gränssnittet och programegenskaper."
 
 # Funktion-menyn
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Caption
 msgid "Insert function..."
 msgstr "Lägg till funktion..."
 
 # Funktion-menyn
 # Meddelandelist
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Hint
 msgid "Insert a new function."
 msgstr "Lägger till en funktion till koordinatsystemet."
 
 # Funktion-menyn
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Caption
 msgid "Insert tangent/normal..."
 msgstr "Lägg till tangent/normal..."
 
 # Funktion-menyn
 # Meddelandelist
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Hint
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Lägg till en ny tangent eller normal för den valda funktionen."
 
 # Funktion-menyn
+#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
 msgid "Insert shade..."
 msgstr "Skuggning..."
 
 # Funktion-menyn
 # Meddelandelist
+#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
 msgid "Add shading to the selected function."
 msgstr "Lägg till skuggning till den valda funktionen."
 
 # Funktion-menyn
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Caption
 msgid "Insert point series..."
 msgstr "Punktserie..."
 
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Hint
 msgid "Insert a point series."
 msgstr "Infoga punktserie"
 
 # Funktion-menyn
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Caption
 msgid "Insert trendline..."
 msgstr "Trendlinje..."
 
 # Funktion-menyn
 # Meddelandelist
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Hint
 msgid "Insert a curve of best fit for the selected point series."
 msgstr "Lägg till en kurva som bäst approximerar den valda punktserien."
 
 # Funktion-menyn
+#. Form1..ActionManager..EditAction("Edit...")..Caption
 msgid "Edit..."
 msgstr "Redigera..."
 
 # Funktion-menyn
 # Meddelandelist
+#. Form1..ActionManager..EditAction("Edit...")..Hint
 msgid "Edit the selected element: Function, tangent, point series, etc."
 msgstr "Redigera vald funktion, tangent, punktserie, osv."
 
 # Funktion-menyn
+#. Form1..ActionManager..DeleteAction("Delete")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Delete("Delete")..Caption
 msgid "Delete"
 msgstr "Ta bort"
 
 # Funktion-menyn
 # Meddelandelist
+#. Form1..ActionManager..DeleteAction("Delete")..Hint
 msgid "Delete the selected function, tangent or point series."
 msgstr "Ta bort vald funktion, tangent eller punktserie."
 
 # Funktion-menyn
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Caption
 msgid "Insert f'(x)..."
 msgstr "Derivata f'(x)..."
 
 # Funktion-menyn
 # Meddelandelist
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Hint
 msgid "Insert the first derivative of the selected function."
 msgstr "Lägg till förstaderivatan till den valda funktionen."
 
 # Zooma-menyn
+#. Form1..ActionManager..ZoomInAction("In")..Caption
 msgid "In"
 msgstr "In"
 
 # Zooma-menyn
 # Meddelandelist
+#. Form1..ActionManager..ZoomInAction("In")..Hint
 msgid "Zoom in."
 msgstr "Zooma in."
 
 # Zooma-menyn
+#. Form1..ActionManager..ZoomOutAction("Out")..Caption
 msgid "Out"
 msgstr "Ut"
 
 # Zooma-menyn
 # Meddelandelist
+#. Form1..ActionManager..ZoomOutAction("Out")..Hint
 msgid "Zoom out."
 msgstr "Zooma ut."
 
 # Zooma-menyn
+#. Form1..ActionManager..ZoomWindowAction("Window")..Caption
 msgid "Window"
 msgstr "Markering"
 
 # Zooma-menyn
 # Meddelandelist
+#. Form1..ActionManager..ZoomWindowAction("Window")..Hint
 msgid "Zoom to user selected window."
 msgstr "Zooma till markering."
 
 # Zooma-menyn
+#. Form1..ActionManager..ZoomSquareAction("Square")..Caption
 msgid "Square"
 msgstr "Kvadratisk"
 
 # Zooma-menyn
 # Meddelandelist
+#. Form1..ActionManager..ZoomSquareAction("Square")....Hint
 msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
 msgstr "Zooma tills axlarna är lika. Alternativet gör att en cirkel visas korrekt istället för som en ellips."
 
 # Zooma-menyn
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Standard"
 msgstr "Standard"
 
 # Zooma-menyn
 # Meddelandelist
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Hint
 msgid "Zoom to standard coordinates."
 msgstr "Zooma till standardkoordinater."
 
+#. Form1..ActionManager..MoveUpAction("Move up")..Category
+#. Form1..ActionManager..MoveDownAction("Move down")..Category
+#. Form1..ActionManager..MoveLeftAction("Move left")..Category
+#. Form1..ActionManager..MoveRightAction("Move right")..Category
+#. Form1..ActionManager..MoveAction("Move system")..Category
 msgid "Move"
 msgstr "Flytta"
 
+#. Form1..ActionManager..MoveUpAction("Move up")..Caption
 msgid "Move up"
 msgstr "Flytta upp"
 
+#. Form1..ActionManager..MoveUpAction("Move up")..Hint
 msgid "Move the window up along the coordinate system."
 msgstr "Flytta fönstret uppåt längs koordinatsystemet."
 
+#. Form1..ActionManager..MoveDownAction("Move down")..Caption
 msgid "Move down"
 msgstr "Flytta ner"
 
+#. Form1..ActionManager..MoveDownAction("Move down")..Hint
 msgid "Move the window down along the coordinate system."
 msgstr "Flytta fönstret nedåt längs koordinatsystemet."
 
+#. Form1..ActionManager..MoveLeftAction("Move left")..Caption
 msgid "Move left"
 msgstr "Flytta vänster"
 
+#. Form1..ActionManager..MoveLeftAction("Move left")..Hint
 msgid "Move the window to the left along the coordinate system."
 msgstr "Flytta fönstret åt vänster längs koordinatsystemet."
 
+#. Form1..ActionManager..MoveRightAction("Move right")..Caption
 msgid "Move right"
 msgstr "Flytta höger"
 
+#. Form1..ActionManager..MoveRightAction("Move right")..Hint
 msgid "Move the window to the right along the coordinate system."
 msgstr "Flytta fönstret åt höger längs koordinatsystemet."
 
+#. Form1..ActionManager..MoveAction("Move system")..Caption
 msgid "Move system"
 msgstr "Flytta systemet"
 
+#. Form1..ActionManager..MoveAction("Move system")..Hint
 msgid "Move the coordinate system with the mouse."
 msgstr "Flytta koordinatsystemet med musen."
 
 # Beräkna-menyn
+#. Form1..ActionManager..PathAction("Length of path")..Caption
 msgid "Length of path"
 msgstr "Linjelängd"
 
 # Beräkna-menyn
 # Meddelandelist
+#. Form1..ActionManager..PathAction("Length of path")....Hint
 msgid "Calculates the length of path between two given points on the curve."
 msgstr "Beräknar grafens längd mellan två punkter på grafen."
 
 # Funktion-menyn
 # Meddelandelist
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculates the area under the path of the selected function."
 msgstr "Beräknar arean under grafen till den valda funktionen."
 
+#. Form1..ActionManager..EvalAction("Evaluate")..Caption
+#. Form9("Evaluate")..Caption
 msgid "Evaluate"
 msgstr "Utvärdera"
 
 # Beräkna-menyn
 # Meddelandelist
+#. Form1..ActionManager..EvalAction("Evaluate")..Hint
 msgid "Evaluate or trace the selected function."
 msgstr "Utvärderar eller spårar den valda funktionen."
 
 # Beräkna-menyn
+#. Form1..ActionManager..TableAction("Table...")..Caption
 msgid "Table..."
 msgstr "Tabell..."
 
 # Beräkna-menyn
 # Meddelandelist
+#. Form1..ActionManager..TableAction("Table...")..Hint
 msgid "Shows an evaluation table."
 msgstr "Visar en värdetabell."
 
 # Hjälp-menyn
+#. Form1..ActionManager..ContentsAction("Contents and index")..Caption
 msgid "Contents and index"
 msgstr "Innehåll och register"
 
 # Hjälp-menyn
 # Meddelandelist
+#. Form1..ActionManager..ContentsAction("Contents and index")..Hint
 msgid "Open help file."
 msgstr "Öppna hjälpfilen."
 
 # Hjälp-menyn
+#. Form1..ActionManager..ListAction("List of functions")..Caption
 msgid "List of functions"
 msgstr "Lista funktioner"
 
 # Hjälp-menyn
 # Meddelandelist
+#. Form1..ActionManager..ListAction("List of functions")....Hint
 msgid "Shows a list of built-in functions that can be used for graphing."
 msgstr "Visar en lista med funktioner som kan användas vid kurvritning."
 
 # Hjälp-menyn
+#. Form1..ActionManager..HomePageAction("Go to home page")..Caption
 msgid "Go to home page"
 msgstr "Gå till hemsidan"
 
 # Hjälp-menyn
 # Meddelandelist
+#. Form1..ActionManager..HomePageAction("Go to home page")....Hint
 msgid "Opens the default browser and shows the home page of the program."
 msgstr "Öppnar standardwebbläsaren och visar programmets hemsida."
 
 # Hjälp-menyn
+#. Form1..ActionManager..UpdateAction("Check for update")..Caption
 msgid "Check for update"
 msgstr "Finns ny version?"
 
 # Hjälp-menyn
 # Meddelandelist
+#. Form1..ActionManager..UpdateAction("Check for update")..Hint
 msgid "Contact the home page to see if a newer version is available."
 msgstr "Kontaktar hemsidan för att se efter om det finns en ny version tillgänglig."
 
 # Hjälp-menyn
+#. Form1..ActionManager..AboutAction("About Graph...")..Caption
 msgid "About Graph..."
 msgstr "Om Graph..."
 
 # Hjälp-menyn
 # Meddelandelist
+#. Form1..ActionManager..AboutAction("About Graph...")..Hint
 msgid "Show copyright information."
 msgstr "Visar information om upphovsrätt."
 
 # För verktygsknappraden
+#. Form1..ActionManager..SeparatorAction("Separator")..Category
+#. Form1..ActionManager..SeparatorAction("Separator")..Caption
 msgid "Separator"
 msgstr "Delare"
 
 # Zooma-menyn
+#. Form1..ActionManager..ZoomFitAction("Fit")..Caption
 msgid "Fit"
 msgstr "Anpassa"
 
 # Zooma-menyn
 # Meddelandelist
+#. Form1..ActionManager..ZoomFitAction("Fit")..Hint
 msgid "Zoom to show the selected function."
 msgstr "Zooma för att visa de valda funktionerna."
 
 # Zooma-menyn
+#. Form1..ActionManager..ZoomAllPointsAction("All points")..Caption
 msgid "All points"
 msgstr "Alla punkter"
 
 # Zooma-menyn
 # Meddelandelist
+#. Form1..ActionManager..ZoomAllPointsAction("All points")..Hint
 msgid "Zoom as much as all points are visible."
 msgstr "Zooma så mycket att alla punkter är synliga."
 
 # Hjälp-menyn
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Caption
 msgid "Frequently Asked Questions"
 msgstr "Vanliga frågor"
 
 # Hjälp-menyn
 # Meddelandelist
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Hint
 msgid "Shows a list of frequently asked questions and their answers."
 msgstr "Visar en lista med de vanligaste frågorna och svaren."
 
 # Funktion-menyn
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Caption
 msgid "Insert label..."
 msgstr "Lägg till etikett..."
 
+#. Form1..ActionManager..InsertLabelAction("Insert label...")....Hint
 msgid "Insert a text label (select and click in the main window where you want the label)."
 msgstr "Lägg till textetikett (välj och klicka i huvudfönstret där du vill placera etiketten)."
 
 # Hjälp-menyn
+#. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
 msgstr "Donera"
 
 # Hjälp-menyn
 # Meddelandelist
+#. Form1..ActionManager..DonateAction("Donate")..Hint
 msgid "Donate money to the project."
 msgstr "Donera pengar till projektet."
 
 # Hjälp-menyn
+#. Form1..ActionManager..TipAction("Tip of the day")..Caption
+#. Form10("Tip of the day")..Caption
+#. Form10("Tip of the day")..Panel1..Label2("Tip of the day")..Caption
 msgid "Tip of the day"
 msgstr "Dagens tips"
 
 # Hjälp-menyn
 # Meddelandelist
+#. Form1..ActionManager..TipAction("Tip of the day")..Hint
 msgid "Show tip of the day"
 msgstr "Visa dagens tips-ruta."
 
 # Hjälp-menyn
+#. Form1..ActionManager..SupportAction("Support")..Caption
 msgid "Support"
 msgstr "Assistans"
 
 # Hjälp-menyn
 # Meddelandelist
+#. Form1..ActionManager..SupportAction("Support")..Hint
 msgid "Open browser with the support page for the program."
 msgstr "Öppnar din webbläsare med programmets assistanssidor."
 
 # Extra verktygsknapp
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Caption
 msgid "Zoom x-axis in"
 msgstr "Zooma in x-axeln"
 
 # Extra verktygsknapp
 # Meddelandelist
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Hint
 msgid "Zoom in on the x-axis only."
 msgstr "Zoomar in enbart x-axeln."
 
 # Extra verktygsknapp
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Caption
 msgid "Zoom x-axis out"
 msgstr "Zooma ut x-axeln"
 
 # Extra verktygsknapp
 # Meddelandelist
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Hint
 msgid "Zoom out on the x-axis only."
 msgstr "Zoomar ut enbart x-axeln."
 
 # Extra verktygsknapp
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Caption
 msgid "Zoom y-axis in"
 msgstr "Zooma in y-axeln"
 
 # Extra verktygsknapp
 # Meddelandelist
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Hint
 msgid "Zoom in on the y-axis only."
 msgstr "Zoomar in enbart y-axeln."
 
 # Extra verktygsknapp
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Caption
 msgid "Zoom y-axis out"
 msgstr "Zooma ut y-axeln"
 
 # Extra verktygsknapp
 # Meddelandelist
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Hint
 msgid "Zoom out on the y-axis only."
 msgstr "Zoomar ut enbart y-axeln."
 
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Caption
 msgid "Insert relation..."
 msgstr "Lägg till relation..."
 
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Hint
 msgid "Insert a new equation or inequality."
 msgstr "Lägger till en ny ekvation eller olikhet."
 
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Caption
 msgid "Custom functions..."
 msgstr "Skapa funktioner..."
 
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Hint
 msgid "Create custom functions and constants for use in graphs."
 msgstr "Skapa funktioner och konstanter att användas i grafer."
 
+#. Form1..ActionManager..AnimateAction("Animate...")..Caption
 msgid "Animate..."
 msgstr "Animera..."
 
+#. Form1..ActionManager..AnimateAction("Animate...")..Hint
 msgid "Create an animation by variating a constant."
 msgstr "Skapa en animation genom att variera en konstant."
 
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Caption
 msgid "Graph file..."
 msgstr "Graph-fil..."
 
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Hint
 msgid "Import a Graph file into the current coordinate system."
 msgstr "Importera en Graph-fil till aktuellt koordinatsystem."
 
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Caption
 msgid "Point series..."
 msgstr "Punktserie..."
 
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Hint
 msgid "Import point series from a data file."
 msgstr "Importera en punktserie från en datafil."
 
+#. Form1..ActionManager..InsertObjectAction("Insert object...")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
+msgid "Insert object..."
+msgstr "Infoga objekt..."
+
+#. Form1..ColorSelect("Select color")..Caption
 msgid "Select color"
 msgstr "Välj färg"
 
+#. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
 msgstr "Återställ till standard"
 
+#. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
 msgid "Reset the tool bar icons to the installation default."
 msgstr "Återställ verktygsikoner till installationsstandard."
 
+#. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
 msgid "Customize toolbar..."
 msgstr "Anpassa verktygsfältet..."
 
+#. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Hint
 msgid "Customize the icons shown on the toolbar."
 msgstr "Anpassa ikonerna som visas på verktygsfältet."
 
-msgid "Rotation"
-msgstr "Rotation"
-
+#. Form1..PopupMenu3..Label_Edit("Edit label...")..Caption
 msgid "Edit label..."
 msgstr "Redigera etikett..."
 
+#. Form1..PopupMenu3..Label_Edit("Edit label...")..Hint
 msgid "Edit the label under the cursor."
 msgstr "Redigera etiketten under musmarkören."
 
+#. Form1..PopupMenu3..Label_Delete("Delete label")..Caption
 msgid "Delete label"
 msgstr "Ta bort etiektt"
 
+#. Form1..PopupMenu3..Label_Delete("Delete label")..Hint
 msgid "Delete the label under the cursor."
 msgstr "Ta bort etiketten under musmarkören."
 
+#. Form1..PopupMenu4..Legend_Show("Show legend")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Caption
 msgid "Show legend"
 msgstr "Visa teckenförklaring"
 
+#. Form1..PopupMenu4..Legend_Show("Show legend")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Hint
 msgid "Select to show a legend in the coordinate system."
 msgstr "Välj för att visa teckenförklaringen i koordinatsystemet."
 
+#. Form1..PopupMenu4..Legend_Font("Font")..Caption
 msgid "Font"
 msgstr "Teckensnitt"
 
+#. Form1..PopupMenu4..Legend_Font("Font")..Hint
 msgid "Change the font of the legend."
 msgstr "Välj teckensnitt för rubriken."
 
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Top Right"
 msgstr "Uppe till höger"
 
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Hint
 msgid "Show the legend in the upper right corner."
 msgstr "Visa teckenförklaringen i övre högra hörnet."
 
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomRight("Bottom Right")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Bottom Right"
 msgstr "Nere till höger"
 
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomRight("Bottom Right")..Hint
 msgid "Show the legend in the bottom right corner."
 msgstr "Visa teckenförklaringen i nedre högra hörnet."
 
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopLeft("Top Left")..Caption
+#. Form21("Placement")..ComboBox1..Text
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Top Left"
 msgstr "Uppe till vänster"
 
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopLeft("Top Left")..Hint
 msgid "Show the legend in the upper left corner."
 msgstr "Visa teckenförklaringen i övre vänstra hörnet."
 
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomLeft("Bottom Left")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Bottom Left"
 msgstr "Nere till vänster"
 
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomLeft("Bottom Left")..Hint
 msgid "Show the legend in the bottom left corner."
 msgstr "Visa teckenförklaringen i nedre vänstra hörnet."
 
+#. Form10("Tip of the day")..Button1("Close")..Caption
+#. Form15("Calculate table")..Button1("Close")..Caption
+#. Form19("Animate")..Button2("Close")..Caption
 msgid "Close"
 msgstr "Stäng"
 
+#. Form10("Tip of the day")..Button2("Next tip")..Caption
 msgid "Next tip"
 msgstr "Nästa"
 
+#. Form10("Tip of the day")..Button3("Previous tip")..Caption
 msgid "Previous tip"
 msgstr "Föregående"
 
+#. Form10("Tip of the day")..CheckBox1("Show tips at startup")..Caption
 msgid "Show tips at startup"
 msgstr "Visa tips vid uppstart"
 
+#. Form10("Tip of the day")..Panel1..Label1("Did you know...")..Caption
 msgid "Did you know..."
 msgstr "Visste du att..."
 
+#. Form11("Insert relation")..Caption
 msgid "Insert relation"
 msgstr "Lägg till ett samband..."
 
+#. Form11("Insert relation")..Label1("Relation:")..Caption
 msgid "Relation:"
 msgstr "Samband:"
 
+#. Form11("Insert relation")..Label2("Constraints:")..Caption
 msgid "Constraints:"
 msgstr "Begränsning:"
 
+#. Form11("Insert relation")..Button1("OK")..Caption
+#. Form12("Insert tangent/normal")..Button1("OK")..Caption
+#. Form13("Insert trendline")..Button1("OK")..Caption
+#. Form14("Insert point series")..Button1("OK")..Caption
+#. Form16("Insert shade")..Button1("OK")..Caption
+#. Form17("Custom functions/constants")..Button1("OK")..Caption
+#. Form18("Image options")..Button1("OK")..Caption
+#. Form2("About Graph")..Button1("OK")..Caption
+#. Form21("Placement")..TntButton1("OK")..Caption
+#. Form3("Edit axes")..Button1("OK")..Caption
+#. Form4("Options")..Button1("OK")..Caption
+#. Form5("Insert function")..Button1("OK")..Caption
+#. Form6("Text label")..Button1("OK")..Caption
+#. Form7("Insert f'(x)")..Button1("OK")..Caption
+#. Form8("Add model")..Button1("OK")..Caption
+#. PrintFrm("Print")..Button1("OK")..Caption
 msgid "OK"
 msgstr "OK"
 
+#. Form11("Insert relation")..Button2("Cancel")..Caption
+#. Form12("Insert tangent/normal")..Button2("Cancel")..Caption
+#. Form13("Insert trendline")..Button2("Cancel")..Caption
+#. Form14("Insert point series")..Button2("Cancel")..Caption
+#. Form15("Calculate table")..ProgressForm1("Calculating")..ButtonCaption
+#. Form16("Insert shade")..Button2("Cancel")..Caption
+#. Form17("Custom functions/constants")..Button2("Cancel")..Caption
+#. Form18("Image options")..Button2("Cancel")..Caption
+#. Form19("Animate")..ProgressForm1("Working")..ButtonCaption
+#. Form21("Placement")..TntButton2("Cancel")..Caption
+#. Form3("Edit axes")..Button2("Cancel")..Caption
+#. Form4("Options")..Button2("Cancel")..Caption
+#. Form5("Insert function")..Button2("Cancel")..Caption
+#. Form6("Text label")..Button2("Cancel")..Caption
+#. Form7("Insert f'(x)")..Button2("Cancel")..Caption
+#. Form8("Add model")..Button2("Cancel")..Caption
+#. PrintFrm("Print")..Button2("Cancel")..Caption
 msgid "Cancel"
 msgstr "Avbryt"
 
+#. Form11("Insert relation")..GroupBox1("Legend text")..Caption
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Caption
+#. Form5("Insert function")..GroupBox3("Legend text")..Caption
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Caption
 msgid "Legend text"
 msgstr "Text i teckenförklaring"
 
+#. Form11("Insert relation")..GroupBox1("Legend text")..Label10("Description:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Label10("Description:")..Caption
+#. Form14("Insert point series")..Label3("Description:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Label12("Description:")..Caption
+#. Form5("Insert function")..GroupBox3("Legend text")..Label10("Description:")..Caption
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Label10("Description:")..Caption
 msgid "Description:"
 msgstr "Beskrivning:"
 
+#. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
+#. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
 msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
 msgstr "Skriv en beskrivande text att visa i teckenförklaringen. Om rutan lämnas tom, kommer ekvationsuttrycket att användas."
 
+#. Form11("Insert relation")..GroupBox2("Properties")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Button3("Properties")..Caption
 msgid "Properties"
 msgstr "Egenskaper"
 
+#. Form11("Insert relation")..GroupBox2("Properties")..Label7("Style:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label7("Style:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label1("Style:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label5("Style:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label4("Style:")..Caption
 msgid "Style:"
 msgstr "Stil:"
 
+#. Form11("Insert relation")..GroupBox2("Properties")..Label9("Color:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label9("Color:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label6("Color:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label2("Color:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label6("Color:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label9("Color:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label9("Color:")..Caption
 msgid "Color:"
 msgstr "Färg:"
 
+#. Form11("Insert relation")..GroupBox2("Properties")..Label3("Width:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label8("Width:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label5("Width:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label7("Width:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label8("Width:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label8("Width:")..Caption
 msgid "Width:"
 msgstr "Linjebredd:"
 
+#. Form11("Insert relation")..GroupBox2("Properties")..ShadeSelect1....Hint
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Välj stil för olikheten. Används inte till ekvationer."
 
+#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
 msgid "Width in pixels of the equation line or the borderline of the inequality."
 msgstr "Linjebredd för ekvationen, i pixel. Används inte till olikheter."
 
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Välj färg för att rita upp relationen."
 
+#. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
 msgstr "Skriv in sambandet, t.ex. \"x^2+y^2 = 25\" eller \" y < sin(x)\"."
 
+#. Form11("Insert relation")..Edit2....Hint
 msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
 msgstr "Skriv in begränsningen för sambandet, t.ex. \"x > 0 and y < 5\""
 
+#. Form12("Insert tangent/normal")..Caption
 msgid "Insert tangent/normal"
 msgstr "Lägg till tangent/normal"
 
+#. Form12("Insert tangent/normal")..Edit1..Hint
 msgid "Coordinate where the tangent/normal will cross the function."
 msgstr "Koordinat där tangenten/normalen skär funktionen."
 
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")..Hint
 msgid "Choose if you want a tangent or a normal."
 msgstr "Välj om du vill ha tangent eller normal."
 
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")..Caption
 msgid "Type"
 msgstr "Typ"
 
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")....Items.Strings
 msgid "Tangent"
 msgstr "Tangent"
 
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")....Items.Strings
 msgid "Normal"
 msgstr "Normal"
 
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Caption
 msgid "Graph properties"
 msgstr "Egenskaper för grafen"
 
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label7("Line style:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label7("Line style:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label7("Line style:")..Caption
 msgid "Line style:"
 msgstr "Linjestil:"
 
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Edit3..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..Edit2..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..Edit6..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Edit4..Hint
 msgid "Width of graph in pixels."
 msgstr "Linjebredd för grafen, i pixel."
 
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..LineSelect1..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..LineSelect1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..LineSelect1..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..LineSelect1..Hint
 msgid "Choose which line style to use for drawing the graph."
 msgstr "Välj vilken linjestil som skall användas för grafen."
 
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..Hint
 msgid "Select the color of the graph."
 msgstr "Välj färg på grafen."
 
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Caption
 msgid "Argument range"
 msgstr "Begränsningsintervall"
 
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Edit4..Hint
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit3..Hint
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Edit1..Hint
 msgid "Start of range interval for the used variable."
 msgstr "Startvärde för begränsningsintervallet för den använda variabeln."
 
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Edit5..Hint
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit4..Hint
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Edit2..Hint
 msgid "End of range interval for the used variable."
 msgstr "Slutvärde för begränsningsintervallet för den använda variabeln."
 
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Caption
 msgid "Endpoints"
 msgstr "Ändpunkter"
 
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Label11("Start:")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Label11("Start:")..Caption
 msgid "Start:"
 msgstr "Start:"
 
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Label12("End:")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Label12("End:")..Caption
 msgid "End:"
 msgstr "Slut:"
 
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox1....Hint
+#. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox2....Hint
 msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
 msgstr "Välj markering att visa vid intervallets startpunkt. Används enbart om ett begränsningsintervall angetts."
 
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox2....Hint
+#. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox3....Hint
 msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
 msgstr "Välj markering att visa vid intervallets slutpunkt. Används enbart om ett begränsningsintervall angetts."
 
+#. Form13("Insert trendline")..Caption
 msgid "Insert trendline"
 msgstr "Lägg till trendlinje"
 
+#. Form13("Insert trendline")..GroupBox1("Line")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Caption
 msgid "Line"
 msgstr "Linje"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Caption
 msgid "Built-in"
 msgstr "Inbyggda"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel1..Image1..Hint
 msgid "Create a linear function: f(x)=ax+b"
 msgstr "Skapa linjär funktion: f(x)=ax+b"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel2..Image2..Hint
 msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
 msgstr "Skapa logaritmisk funktion: f(x)=a*ln(x)+b"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel3..Image3..Hint
 msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
 msgstr "Skapa polynomfunktion: f(x)=ax^3+bx^2+cx+d"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel4..Image4..Hint
 msgid "Create a power function: f(x)=ax^b"
 msgstr "Skapa potensfunktion: f(x)=ax^b"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel5..Image5..Hint
 msgid "Create a exponential function: f(x)=a*b^x"
 msgstr "Skapa exponentialfunktion: f(x)=a*b^x"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit1..Hint
 msgid "The order of the polynomium. For example 2 means a parable."
 msgstr "Polynomets grad. T.ex. 2 avser en parabel."
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText1("Order:")..Caption
 msgid "Order:"
 msgstr "Grad:"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton3("Polynomial")..Caption
 msgid "Polynomial"
 msgstr "Polynomisk"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton2("Logarithmic")..Caption
 msgid "Logarithmic"
 msgstr "Logaritmisk"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton1("Linear")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Linear"
 msgstr "Linjär"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton4("Power")..Caption
 msgid "Power"
 msgstr "Potens-"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton5("Exponential")..Caption
 msgid "Exponential"
 msgstr "Exponentiell"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel6..Image6..Hint
 msgid "Create a moving average as a series of straight lines."
 msgstr "Skapa ett dynamiskt medelvärde som en serie raka linjer."
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton6("Moving average")..Caption
 msgid "Moving average"
 msgstr "Dynamiskt medelvärde"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText2("Period:")..Caption
 msgid "Period:"
 msgstr "Period:"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit4..Hint
 msgid "Determines how many points are used for the average."
 msgstr "Bestämmer hur mänga punkter som används för medelvärdet."
 
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Caption
 msgid "User defined"
 msgstr "Användardefinierad"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Label1("Model:")..Caption
 msgid "Model:"
 msgstr "Modell:"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button4("Add model")..Caption
+#. Form8("Add model")..Caption
 msgid "Add model"
 msgstr "Lägg till"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button5("Remove model")..Caption
 msgid "Remove model"
 msgstr "Ta bort"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button6("Edit model")..Caption
+#. Insert trendline dialog
 msgid "Edit model"
 msgstr "Redigera"
 
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Edit3..Hint
 msgid "Enter a function model to base the trendline on."
 msgstr "Skriv in en funktion att basera trendlinjen på."
 
+#. Form13("Insert trendline")..CheckBox1("Intercept =")....Hint
+#. Form13("Insert trendline")..Edit5....Hint
 msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
 msgstr "Skriv in ett värde i Avskärning-rutan för att ange punkten du vill att trendlinjen skall träffa y-axeln. Detta val är endast tillgängligt för linjära-, polynom- och exponentiella trendlinjer."
 
+#. Form13("Insert trendline")..CheckBox1("Intercept =")..Caption
 msgid "Intercept ="
 msgstr "Avskärning = "
 
+#. Form14("Insert point series")..Caption
 msgid "Insert point series"
 msgstr "Infoga punktserie"
 
+#. Form14("Insert point series")..Edit1....Hint
 msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
 msgstr "Namnet på punktserien, vilket visas i listan till vänster om koordinatsystemet."
 
+#. Form14("Insert point series")..Edit1..Text
+#. Default description in the Insert shade dialog
 msgid "Series"
 msgstr "Serie"
 
+#. Form14("Insert point series")..GroupBox4("Sample")....Hint
 msgid "This shows a sample of the markers and the lines between the markers."
 msgstr "Här visas ett prov på merkering och linjerna mellan dem."
 
+#. Form14("Insert point series")..GroupBox4("Sample")..Caption
 msgid "Sample"
 msgstr "Prov"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..Caption
 msgid "Markers"
 msgstr "Markörer"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Caption
 msgid "Marker"
 msgstr "Markör"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label4("Size:")..Caption
 msgid "Size:"
 msgstr "Storlek:"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Edit2..Hint
 msgid "Choose the size of the markers."
 msgstr "Välj storlek på markörerna."
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..PointSelect1..Hint
 msgid "Choose the type of markers to be shown at each point."
 msgstr "Välj typ av markör att visa vid varje punkt."
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..Hint
 msgid "Choose the color of the markers."
 msgstr "Välj färg på markörerna."
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label11("Interpolation:")..Caption
 msgid "Interpolation:"
 msgstr "Interpolation:"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..LineSelect1....Hint
 msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
 msgstr "Välj stil på linjer som ritas mellan punkterna. Du kan också välja att inte rita några linjer alls."
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Edit3..Hint
 msgid "Choose the width of the lines in pixels."
 msgstr "Välj linjebredd, i pixel."
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Hint
 msgid "Select which kind of line to draw between the markers."
 msgstr "Välj vilken linjetyp att rita mellan markeringarna."
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Text
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Cubic splines"
 msgstr "Kubisk spline"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Half cosine"
 msgstr "Halv cosinus"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..Hint
 msgid "Choose the color of the lines."
 msgstr "Välj linjefärg."
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..Caption
 msgid "Labels"
 msgstr "Etiketter"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..Label8("Position:")..Caption
 msgid "Position:"
 msgstr "Position:"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..CheckBox2("Show coordinates")..Hint
 msgid "Check to show the coordinate at each point."
 msgstr "Val för att visa punkternas koordinater."
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..CheckBox2("Show coordinates")..Caption
 msgid "Show coordinates"
 msgstr "Visa koordinater"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..BitBtn1..Hint
 msgid "Select the font for the coordinates."
 msgstr "Välj teckensnitt för koordinaterna."
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1..Hint
 msgid "Select where the coordinates should be shown."
 msgstr "Välj var koordinaterna skall visas."
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1..Text
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 msgid "Below"
 msgstr "Under"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 msgid "Above"
 msgstr "Över"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#. Shortcut key
 msgid "Left"
 msgstr "Vänster"
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#. Shortcut key
 msgid "Right"
 msgstr "Höger"
 
 # Dialogrutan Infoga punktserie
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..Caption
 msgid "Error bars"
 msgstr "Felstaplar"
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Caption
 msgid "X error bars"
 msgstr "X-felstaplar"
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..CheckBox3("Show x-bars")..Hint
 msgid "Show horizontal error bars."
 msgstr "Visa horisontella felstaplar."
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..CheckBox3("Show x-bars")..Caption
 msgid "Show x-bars"
 msgstr "Visa x-felstaplar"
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton1("Fixed:")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton4("Fixed:")..Hint
 msgid "All error bars are the same size."
 msgstr "Alla felstaplar har samma storlek."
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton1("Fixed:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton4("Fixed:")..Caption
 msgid "Fixed:"
 msgstr "Fast:"
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Edit4..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Edit6..Hint
 msgid "Enter fixed value."
 msgstr "Skriv in ett fixt värde."
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton2("Relative:")..Hint
 msgid "All error bars are the same percentage of the x-coordinate."
 msgstr "Alla felstaplar har samma procentuella värde av x-koordinaten."
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton2("Relative:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton5("Relative:")..Caption
 msgid "Relative:"
 msgstr "Relativ:"
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton3("Custom")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton6("Custom")..Hint
 msgid "Each error bar is given a custom value."
 msgstr "Varje felstapel tilldelas ett inställbart värde."
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton3("Custom")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton6("Custom")..Caption
 msgid "Custom"
 msgstr "Inställbar"
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Edit5..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Edit7..Hint
 msgid "Enter relative value in percent."
 msgstr "Skriv in ett relativt värde i procent."
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Caption
 msgid "Y error bars"
 msgstr "Y-felstaplar"
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..CheckBox4("Show y-bars")..Hint
 msgid "Show vertical error bars."
 msgstr "Visa vertikala felstaplar."
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..CheckBox4("Show y-bars")..Caption
 msgid "Show y-bars"
 msgstr "Visa y-felstaplar"
 
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton5("Relative:")..Hint
 msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "Alla felstaplar har samma procentuella värde av y-koordinaten."
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 msgid "Cut the selected text to the clipboard."
 msgstr "Klipp ur vald text till Windows urklipp."
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Hint
+#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Hint
 msgid "Copy the selected text to the clipboard."
 msgstr "Kopiera vald text till Windows urklipp."
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")....Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")....Hint
 msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
 msgstr "Klistra in text från Windows urklipp till rutnätet. Andra celler kan skrivas över av texten från urklipp."
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Delete("Delete")..Hint
 msgid "Erase selected cells."
 msgstr "Radera valda celler."
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Insert("Insert row")..Caption
 msgid "Insert row"
 msgstr "Lägg till rad"
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Hint
 msgid "Inserts a row in the grid moving rows below one down."
 msgstr "Lägger till en rad i rutnätet och flyttar raderna under insättningspunkten nedåt ett steg."
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Remove("Remove row")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Remove("Remove row")..Caption
 msgid "Remove row"
 msgstr "Ta bort rad"
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Remove("Remove row")..Hint
 msgid "Removes the selected rows."
 msgstr "Tar bort valda rader."
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Select("Select all")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Select("Select all")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Select("Select all")..Caption
 msgid "Select all"
 msgstr "Välj alla"
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Select("Select all")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Select("Select all")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Select("Select all")..Hint
 msgid "Select all cells."
 msgstr "Väljer alla celler."
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Caption
 msgid "Import from file..."
 msgstr "Importera från fil..."
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Hint
 msgid "Import data from a file and place it at the selected cell."
 msgstr "Importera data från en fil och placera den i den valda cellen."
 
+#. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Export("Export to file...")..Hint
 msgid "Export selected data to a file."
 msgstr "Exportera valda data till en fil."
 
+#. Form15("Calculate table")..Caption
 msgid "Calculate table"
 msgstr "Tabellberäkning"
 
+#. Form15("Calculate table")..Edit3....Hint
 msgid "The step value. This is the distance between the x-values in the interval."
 msgstr "Stegvärdet. Detta är distansen mellan x-värdena i intervallet."
 
+#. Form15("Calculate table")..Edit1..Hint
 msgid "The first x-value in the interval."
 msgstr "Första x-värdet i intervallet."
 
+#. Form15("Calculate table")..Edit2..Hint
 msgid "The last x-value in the interval."
 msgstr "Sista x-värdet i intervallet."
 
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show_df("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show_ddf("Show %s")..Caption
+#. Context menu in Calc|Table dialog
 msgid "Show %s"
 msgstr "Visa %s"
 
+#. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Hint
 msgid "Copy selected cells to the clipboard."
 msgstr "Kopiera valda celler till Windows urklipp."
 
+#. Form15("Calculate table")..PopupMenu1..Popup1_Export("Export to file...")..Hint
 msgid "Saves the selected data to a file."
 msgstr "Spara valda celler till en fil."
 
+#. Form15("Calculate table")..ProgressForm1("Calculating")..Caption
 msgid "Calculating"
 msgstr "Beräknar..."
 
+#. Form15("Calculate table")..SaveDialog1..Filter
+#. Export to file dialog
 msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
 msgstr "CSV (Kommaseparerad) [*.csv]|*.csv|Text [*.txt]|*.txt"
 
+#. Form16("Insert shade")..Caption
 msgid "Insert shade"
 msgstr "Lägg till skuggning"
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Caption
 msgid "Shading"
 msgstr "Skuggning"
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel1..Image1..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Hint
 msgid "Shades the area between the function and the x-axis."
 msgstr "Skuggar området mellan funktionen och x-axeln."
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel2..Image2..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Hint
 msgid "Shades the area below the function."
 msgstr "Skuggar området under funktionen."
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel3..Image3..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Hint
 msgid "Shades the area above the function."
 msgstr "Skuggar området ovanför funktionen."
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel4..Image4..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Hint
 msgid "Shades the area between the function and the y-axis."
 msgstr "Skuggar området mellan funktionen och y-axeln."
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel5..Image5..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Hint
 msgid "Shades the area inside the function."
 msgstr "Skuggar området inom funktionen."
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
 msgid "Shades the area between the main function and the function selected in the list to the right."
 msgstr "Skuggar området mellan huvudfunktionen och funktionen som listas under fliken \"Andra funktionen\""
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
 msgid "Above function"
 msgstr "Ovanför funktionen"
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Caption
 msgid "Between function and x-axis"
 msgstr "Mellan funktion och x-axel"
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")..Caption
 msgid "Between functions"
 msgstr "Mellan funktionerna"
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Caption
 msgid "Between function and y-axis"
 msgstr "Mellan funktion och y-axel"
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Caption
 msgid "Inside function"
 msgstr "Inom funktion"
 
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Caption
 msgid "Below function"
 msgstr "Under funktion"
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Caption
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton6..Hint
+#. Form4("Options")..Caption
 msgid "Options"
 msgstr "Tillval"
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Caption
 msgid "Range"
 msgstr "Område"
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit3..Hint
 msgid "Coordinate where the shading starts."
 msgstr "Koordinat där skuggning startar."
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit4..Hint
 msgid "Coordinate where the shading ends."
 msgstr "Koordinat där skuggning slutar."
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
 msgid "Check to increase the end coordinate until intersection."
 msgstr "Välj för att öka slutkoordinaten till skärningspunkten."
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
 msgid "Increase to intersection"
 msgstr "Öka till skärningspunkt"
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
 msgid "Check to decrease the start coordinate until intersection."
 msgstr "Välj för att öka startkoordinaten till skärningspunkten."
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
 msgid "Decrease to intersection"
 msgstr "Minska till skärningspunkt"
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ShadeSelect1..Hint
 msgid "Select the style used for the shading."
 msgstr "Välj stil för skuggning."
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
 msgid "Mark the end of the shading with a line."
 msgstr "Markera slutpunkt för skuggning med en linje."
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
 msgid "Mark end of range"
 msgstr "Markera områdesslut"
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
 msgid "Select color used for shading."
 msgstr "Välj färg för skuggning."
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
 msgid "Mark the start of the shading with a line."
 msgstr "Markera startpunkt för skuggning med en linje."
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
 msgid "Mark start of range"
 msgstr "Markera områdesstart"
 
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
 msgstr "Skriv in en beskrivning att visa i teckenförklaringen."
 
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Caption
 msgid "2nd function"
 msgstr "Andra funktionen"
 
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Label11("2nd function:")..Caption
 msgid "2nd function:"
 msgstr "Andra funktionen:"
 
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
 msgid "Select the second function when you want a shading between two functions."
 msgstr "Välj en andra funktion när du vill ha skuggning mellan två funktioner."
 
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
 msgid "Shading range for 2nd function"
 msgstr "Skuggningsområde för andra funktionen"
 
+#. Form17("Custom functions/constants")..Caption
 msgid "Custom functions/constants"
 msgstr "Inställbara funktioner/konstanter"
 
+#. Form17("Custom functions/constants")..Button3("Apply")..Caption
 msgid "Apply"
 msgstr "Ange"
 
+#. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
 msgid "Names"
 msgstr "Namn"
 
+#. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
 msgid "Definition"
 msgstr "Definition"
 
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
 msgid "Cut the selected text to the clipboard"
 msgstr "Klipp ur vald text till Windows urklipp."
 
+#. Form18("Image options")..Caption
 msgid "Image options"
 msgstr "Bildinställningar"
 
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Caption
 msgid "Size"
 msgstr "Storlek"
 
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Label1("Image width:")..Caption
+#. Form19("Animate")..TntGroupBox2("Image information")..Label5("Image width:")..Caption
 msgid "Image width:"
 msgstr "Bildbredd:"
 
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Label2("Image height:")..Caption
+#. Form19("Animate")..TntGroupBox2("Image information")..Label6("Image height:")..Caption
 msgid "Image height:"
 msgstr "Bildhöjd:"
 
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit1..Hint
 msgid "Set a custom image width."
 msgstr "Ange användardefinierad bildbredd."
 
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit2..Hint
 msgid "Set a custom image height."
 msgstr "Ange användardefinierad bildhöjd."
 
 # Spara bild som
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
 msgid "Choose to use the same size as shown on the screen or a custom image size."
 msgstr "Välj att använda samma storlek som visas på skärmen eller specialstorlek."
 
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")..Caption
 msgid "Image size"
 msgstr "Bildstorlek"
 
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Items.Strings
 msgid "Screen size"
 msgstr "Skärmstorlek"
 
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Items.Strings
 msgid "Custom size"
 msgstr "Specialstorlek"
 
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Hint
 msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
 msgstr "Progressivt lagringsformat ger användaren möjlighet att se en enklare kopia av bilden medan den nedladdas."
 
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")..Caption
 msgid "Encoding"
 msgstr "Kodningsformat"
 
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr "Progressiv"
 
+#. Form18("Image options")..PageControl1..TabSheet2..GroupBox1("Quality")..Hint
 msgid "Select a compression quality."
 msgstr "Välj kompressionsnivå."
 
+#. Form18("Image options")..PageControl1..TabSheet2..GroupBox1("Quality")..Caption
 msgid "Quality"
 msgstr "Kvalitet"
 
+#. Form18("Image options")..PageControl1..TabSheet3..Label3("Paper size:")..Caption
 msgid "Paper size:"
 msgstr "Pappersstorlek:"
 
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")..Hint
+#. PrintFrm("Print")..RadioGroup1("Orientation")..Hint
 msgid "Choose paper orientation."
 msgstr "Välj pappersriktning."
 
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")..Caption
+#. PrintFrm("Print")..RadioGroup1("Orientation")..Caption
 msgid "Orientation"
 msgstr "Riktning"
 
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")....Items.Strings
+#. PrintFrm("Print")..RadioGroup1("Orientation")....Items.Strings
 msgid "Portrait"
 msgstr "Stående"
 
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")....Items.Strings
+#. PrintFrm("Print")..RadioGroup1("Orientation")....Items.Strings
 msgid "Landscape"
 msgstr "Liggande"
 
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1..Hint
 msgid "Choose paper size to use."
 msgstr "Välj pappersstorlek."
 
+#. Form18("Image options")..CheckBox1("Save as default")..Hint
+#. Form3("Edit axes")..CheckBox16("Save as default")..Hint
 msgid "Select this to use these settings as defaults in the future."
 msgstr "Välj detta för att använda dessa inställningar som standard."
 
+#. Form18("Image options")..CheckBox1("Save as default")..Caption
+#. Form3("Edit axes")..CheckBox16("Save as default")..Caption
 msgid "Save as default"
 msgstr "Spara som standard"
 
 # Hjälp-menyn
+#. Form19("Animate")..Caption
+#. Form19("Animate")..Button1("Animate")..Caption
 msgid "Animate"
 msgstr "Animera"
 
+#. Form19("Animate")..Label1("Constant:")..Caption
 msgid "Constant:"
 msgstr "Konstant:"
 
+#. Form19("Animate")..ComboBox1..Hint
 msgid "Choose a constant to change between each frame."
 msgstr "Välj en tidskonstant mellan varje bildruta."
 
+#. Form19("Animate")..TntGroupBox1("Range")..Label4("Step:")..Caption
 msgid "Step:"
 msgstr "Steg:"
 
-msgid "The first value of the constant"
+#. Form19("Animate")..TntGroupBox1("Range")..Edit1..Hint
+msgid "The first value of the constant."
 msgstr "Första värdet av konstanten."
 
+#. Form19("Animate")..TntGroupBox1("Range")..Edit2..Hint
 msgid "The last value of the constant."
 msgstr "Sista värdet av konstanten."
 
+#. Form19("Animate")..TntGroupBox1("Range")..Edit3..Hint
 msgid "The chosen constant is changed by this value between each frame."
 msgstr "Den valda tidskonstanten ändras med detta värde för varje bildruta."
 
+#. Form19("Animate")..TntGroupBox2("Image information")..Caption
 msgid "Image information"
 msgstr "Bildinformation"
 
+#. Form19("Animate")..TntGroupBox2("Image information")..Label7("Frames/second:")..Caption
 msgid "Frames/second:"
 msgstr "Bilder/sekund:"
 
+#. Form19("Animate")..TntGroupBox2("Image information")..Edit6..Hint
 msgid "Number of frames per second used when the animation is played."
 msgstr "Antalet bilder per sekund används när animationen spelas upp."
 
+#. Form19("Animate")..ProgressForm1("Working")..Caption
 msgid "Working"
 msgstr "Arbetar"
 
+#. Form2("About Graph")..Caption
 msgid "About Graph"
 msgstr "Om Graph"
 
+#. Form2("About Graph")..Panel1..Label6("<Language> translation by <Translator>")..Caption
 msgid "<Language> translation by <Translator>"
 msgstr ""
 "Svensk översättning av Pär Smårs <par.smars@bredband.net>\n"
 "(version 1.02, kontrollerad mot 4.2b Build 322)"
 
-msgid "Version "
-msgstr "Version"
+#. Form2("About Graph")..Panel1..Version("Version %s")..Caption
+#. %s is replaced with version number
+msgid "Version %s"
+msgstr "Version %s"
 
+#. Form2("About Graph")..Panel1..Label1("Email:")..Caption
 msgid "Email:"
 msgstr "E-post:"
 
-msgid "Build"
-msgstr "Underversion"
+#. Form2("About Graph")..Panel1..Label3("Build %s")..Caption
+#. %s is replaced with build number
+msgid "Build %s"
+msgstr "Underversion %s"
 
+#. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
 msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
 msgstr "Detta är fri programvara, och du får återdistribuera den under de förutsättningar som finns i GNU General Public Licence (allmän licens). Sänd felrapporter och förslag på förbättringar till programmeraren."
 
+#. Form2("About Graph")..Panel1..Label4("The newest version as well as the source code are available ")..Caption
 msgid "The newest version as well as the source code are available at:"
 msgstr "Nyaste version och källkod finns hos:"
 
+#. Form20("Animation")..Caption
 msgid "Animation"
 msgstr "Animation"
 
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton1..Hint
 msgid "Play"
 msgstr "Spela upp"
 
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton2..Hint
 msgid "Pause"
 msgstr "Paus"
 
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton3..Hint
 msgid "Stop"
 msgstr "Stoppa"
 
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton4..Hint
 msgid "Back"
 msgstr "Stega bakåt"
 
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton5..Hint
 msgid "Step"
 msgstr "Stega framåt"
 
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..Caption
 msgid "Speed"
 msgstr "Hastighet"
 
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N101..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N501..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N1001..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N1501..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N2001..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N10001..Hint
 msgid "Change the speed used to play the animation."
 msgstr "Ändra animationens uppspelningshastighet."
 
+#. Form20("Animation")..PopupMenu1..Repeat1("Repeat")..Caption
 msgid "Repeat"
 msgstr "Repetera"
 
+#. Form20("Animation")..PopupMenu1..Repeat1("Repeat")..Hint
 msgid "Repeat playing the animation until manually stopped."
 msgstr "Repetera uppspelningen tills den avbryts."
 
+#. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")..Caption
 msgid "Auto reverse"
 msgstr "Autoreversera"
 
+#. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")....Hint
 msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
 msgstr "Spela animationen baklänges när den nått slutet. Detta är väldigt användbart i kombination med \"Repetera\"-kommandot."
 
+#. Form20("Animation")..PopupMenu1..Open1("Open...")..Hint
 msgid "Open an animation file."
 msgstr "Öppna en animeringsfil."
 
+#. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
 msgstr "Spara animationen till en fil."
 
+#. Form3("Edit axes")..Caption
 msgid "Edit axes"
 msgstr "Redigera koordinataxlarna"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label1("Minimum:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label5("Minimum:")..Caption
 msgid "Minimum:"
 msgstr "Minimum:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label2("Maximum:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label6("Maximum:")..Caption
 msgid "Maximum:"
 msgstr "Maximum:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label3("Tick unit:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label7("Tick unit:")..Caption
 msgid "Tick unit:"
 msgstr "Streckindelning:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label4("The x-axis cross at y=")..Caption
 msgid "The x-axis cross at y="
 msgstr "Sätt origo till y="
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label14("Grid unit:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label9("Grid unit:")..Caption
 msgid "Grid unit:"
 msgstr "Rutnätsindelning:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit1..Hint
 msgid "Minimum x-value."
 msgstr "Minsta x-värde."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit2..Hint
 msgid "Maximum x-value."
 msgstr "Största x-värde."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit3..Hint
 msgid "Units between ticks on the x-axis."
 msgstr "Värde mellan streckindelningen på x-axeln."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox1("Logarithmic scale")..Hint
 msgid "Use logarithmic scale on the x-axis."
 msgstr "Använd logaritmisk skala för x-axeln."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox1("Logarithmic scale")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox8("Logarithmic scale")..Caption
 msgid "Logarithmic scale"
 msgstr "Logaritmisk skala"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")....Hint
 msgid "Show the label at the right side of the main window, above the x-axis."
 msgstr "Visa etikett på höger sida av fönstret, ovanför x-axeln."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")..Caption
 msgid "Label:"
 msgstr "Etikett:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit5..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit11..Hint
 msgid "Edit the label for the axis here."
 msgstr "Ange nytt innehåll för koordinataxeletiketten."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox2("Show numbers")..Hint
 msgid "Show units on the x-axis."
 msgstr "Visa siffror på x-axeln."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox2("Show numbers")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox9("Show numbers")..Caption
 msgid "Show numbers"
 msgstr "Visa siffror"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit6..Hint
 msgid "The x-axis will intersect with the y-axis at this value."
 msgstr "X-axeln korsar y-axeln vid detta värde."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit4..Hint
 msgid "Units between the grid lines perpendicular to the x-axis."
 msgstr "Enheter mellan rutnätslinjerna vinkelrätt mot x-axlen."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox4("Auto tick")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox11("Auto tick")..Hint
 msgid "Determine the tick unit automatically."
 msgstr "Automatisk streckindelning."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox4("Auto tick")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox11("Auto tick")..Caption
 msgid "Auto tick"
 msgstr "Auto-streck"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox5("Auto grid")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox12("Auto grid")..Hint
 msgid "Set the grid unit to the same as the tick unit."
 msgstr "Ställ in enheterna för rutnätet till samma som för streckindelningen."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox5("Auto grid")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox12("Auto grid")..Caption
 msgid "Auto grid"
 msgstr "Auto-rutnät"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox6("Show ticks")..Hint
 msgid "Show tick marks on the x-axis."
 msgstr "Visa streckindelning på x-axeln."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox6("Show ticks")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox13("Show ticks")..Caption
 msgid "Show ticks"
 msgstr "Visa streckindelning"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox17("Show as a multiple of pi")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox18("Show as a multiple of pi")..Hint
 msgid "Show units on the selected axis as a fraction multiplied by pi."
 msgstr "Visa enheter på axlarna som en multipel av Pi"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox17("Show as a multiple of pi")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox18("Show as a multiple of pi")..Caption
 msgid "Show as a multiple of pi"
 msgstr "Visa som multipel av Pi"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox7("Show grid")..Hint
 msgid "Show vertical grid lines."
 msgstr "Visa vertikala rutnätslinjer."
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox7("Show grid")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox14("Show grid")..Caption
 msgid "Show grid"
 msgstr "Visa rutnät"
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label8("The y-axis cross at x=")..Caption
 msgid "The y-axis cross at x="
 msgstr "Sätt origo till x="
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit7..Hint
 msgid "Minimum y-value."
 msgstr "Minsta y-värde."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit8..Hint
 msgid "Maximum y-value."
 msgstr "Största y-värde."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox8("Logarithmic scale")..Hint
 msgid "Use logarithmic scale for the y-axis."
 msgstr "Använd logaritmisk skala för y-axeln."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit9..Hint
 msgid "Units between ticks on the y-axis."
 msgstr "Enheter för streckindelningen på y-axeln."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox9("Show numbers")..Hint
 msgid "Show units on the y-axis."
 msgstr "Visa siffror på y-axeln."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")....Hint
 msgid "Show the label at the top of the main window, to the right of the y-axis."
 msgstr "Visa etikett i överkant av fönstret, till höger om y-axeln."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit12..Hint
 msgid "The y-axis will intersect with the x-axis at this value."
 msgstr "Y-axeln korsar x-axeln vid detta värde."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit10..Hint
 msgid "Units between the grid lines perpendicular to the y-axis."
 msgstr "Enheter mellan rutnätslinjerna vinkelrätt mot y-axlen."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox13("Show ticks")..Hint
 msgid "Show tick marks on the y-axis."
 msgstr "Visa streckindelning på y-axeln."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox14("Show grid")..Hint
 msgid "Show horizontal grid lines."
 msgstr "Visa horisontella rutnätslinjer."
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Caption
 msgid "Settings"
 msgstr "Inställningar"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Label16("Title:")..Caption
 msgid "Title:"
 msgstr "Rubrik:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Hint
 msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
 msgstr "Välj om du vill ha synliga koordinataxlar, samt om du vill ha dem korsade eller längs vänstra- och nedre kanten i fönstret."
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")..Caption
 msgid "Axes style"
 msgstr "Koordinataxelstil"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
 msgid "None"
 msgstr "Ingen"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
 msgid "Crossed"
 msgstr "Korsade"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
 msgid "Boxed"
 msgstr "Första kvadrant"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Hint
 msgid "Choose if trigonometric functions should calculate in radians or degrees."
 msgstr "Välj om trigonometriska funktioner skall beräknas i radianer eller grader."
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")..Caption
 msgid "Trigonometry"
 msgstr "Trigonometri"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Items.Strings
 msgid "Radian"
 msgstr "Radianer"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Items.Strings
 msgid "Degree"
 msgstr "Grader"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Edit13..Hint
 msgid "Enter a title to show above the coordinate system."
 msgstr "Skriv in en rubrik att visa ovanför koordinatsystemet."
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..BitBtn1..Hint
 msgid "Select the font for the title."
 msgstr "Välj teckensnitt för rubriken."
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")..Hint
 msgid "Choose where the legend should be placed."
 msgstr "Välj var teckenförklaringen skall placeras."
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")..Caption
 msgid "Legend placement"
 msgstr "Teckenförklaring"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")....Hint
 msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
 msgstr "Välj för att använda komplexa tal för beräkningar. Notera dock, att detta val gör kurvritningen långsammare."
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")..Caption
 msgid "Calculate with complex numbers"
 msgstr "Beräkna med komplexa tal"
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Teckensnitt och färg"
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Caption
 msgid "Colors"
 msgstr "Färg"
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label17("Grid color:")..Caption
 msgid "Grid color:"
 msgstr "Rutnät:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label18("Axes color:")..Caption
 msgid "Axes color:"
 msgstr "Koordinataxlar:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label19("Background color:")..Caption
+#. Form6("Text label")..Label4("Background color:")..Caption
 msgid "Background color:"
 msgstr "Bakgrund:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..Hint
 msgid "Select the color of the image background."
 msgstr "Välj bakgrundsfärg."
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..Hint
 msgid "Select the color of the axes."
 msgstr "Välj färg på koordinataxlarna."
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..Hint
 msgid "Select the color of the grid lines."
 msgstr "Välj färg på rutnätet."
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Caption
 msgid "Fonts"
 msgstr "Teckensnitt"
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label20("Number font:")..Caption
 msgid "Number font:"
 msgstr "Koordinataxelsiffror:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label21("Label font:")..Caption
 msgid "Label font:"
 msgstr "Etiketter:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Teckenförklaring:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..BitBtn2..Hint
 msgid "Select the font used to show the labels on the axes."
 msgstr "Välj teckensnitt för etiketter som visas på koordinataxlarna."
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..BitBtn3..Hint
 msgid "Select the font used to show the numbers on the axes."
 msgstr "Välj teckensnitt för att visa siffrorna på koordinataxlarna."
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..BitBtn4..Hint
 msgid "Select the font used to show the legend text."
 msgstr "Välj teckensnitt för texten på teckenförklaringen."
 
+#. Form4("Options")..Label1("Decimals:")..Caption
 msgid "Decimals:"
 msgstr "Decimaler:"
 
+#. Form4("Options")..Label2("Recent files:")..Caption
 msgid "Recent files:"
 msgstr "Senast använda filer:"
 
+#. Form4("Options")..Label3("Max undo steps:")..Caption
 msgid "Max undo steps:"
 msgstr "Max ångra-steg:"
 
+#. Form4("Options")..Label4("Language:")..Caption
 msgid "Language:"
 msgstr "Språk:"
 
+#. Form4("Options")..Label5("Font scale:")..Caption
 msgid "Font scale:"
 msgstr "Teckensnittskala:"
 
+#. Form4("Options")..Edit1..Hint
 msgid "Number of decimals used when results are shown."
 msgstr "Antal decimaler när resultat visas."
 
+#. Form4("Options")..CheckBox1("Associate .grf files")..Hint
 msgid "Associate *.grf files with Graph."
 msgstr "Associera *.grf-filer med Graph."
 
+#. Form4("Options")..CheckBox1("Associate .grf files")..Caption
 msgid "Associate .grf files"
 msgstr "Associera .grf-filer"
 
+#. Form4("Options")..Edit2..Hint
 msgid "The number of most recent used files shown in the File menu."
 msgstr "Antalet senast använda filer som visas i Arkiv-menyn."
 
+#. Form4("Options")..CheckBox4("Save workspace on exit")....Hint
 msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
 msgstr "Spara fönsterposition när programmmet avslutas. Denna inställning används nästa gång programmet startas.|Spara fönsterposition vid avslut."
 
+#. Form4("Options")..CheckBox4("Save workspace on exit")..Caption
 msgid "Save workspace on exit"
 msgstr "Spara arbetsytan vid avslut"
 
+#. Form4("Options")..RadioGroup1("Complex format")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "Använt format då komplexa tal visas."
 
+#. Form4("Options")..RadioGroup1("Complex format")..Caption
 msgid "Complex format"
 msgstr "Komplext format"
 
+#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
 msgid "Real"
 msgstr "Flyttal"
 
+#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
 msgid "Rectangular"
 msgstr "Rektangulärt"
 
+#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
 msgid "Polar"
 msgstr "Polärt"
 
+#. Form4("Options")..CheckBox2("Show tooltip")..Hint
 msgid "Show the tooltip when the cursor is over an item."
 msgstr "Visa hjälprutor när markören befinner sig ovanför ett objekt."
 
+#. Form4("Options")..CheckBox2("Show tooltip")..Caption
 msgid "Show tooltip"
 msgstr "Visa verktygstips"
 
+#. Form4("Options")..Edit3....Hint
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
 msgstr "Maximalt antal sparade ångrasteg. Sätt till 0 (noll) för att förhindra ångrafunktionen."
 
+#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")....Hint
 msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
 msgstr "Om valt, kommer programmet att kontakta en webbserver då det startas för att kontrollera om en nyare version finns att hämta."
 
+#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")..Caption
 msgid "Check for new version of Graph at startup"
 msgstr "Kontrollera om ny version vid uppstart"
 
+#. Form4("Options")..ComboBox1..Hint
 msgid "Select the language to use for the user interface."
 msgstr "Välj språk för användargränssnittet."
 
+#. Form4("Options")..ComboBox2....Hint
 msgid "This is used to scale the user interface if you are having problems reading the text."
 msgstr "Detta används för att skala användargränssnittet, om du har problem med att läsa texten."
 
+#. Form5("Insert function")..Caption
 msgid "Insert function"
 msgstr "Infoga funktion"
 
+#. Form5("Insert function")..Label1("Function type:")..Caption
 msgid "Function type:"
 msgstr "Funktionstyp:"
 
+#. Form5("Insert function")..ComboBox1..Hint
 msgid "Select the function type to graph."
 msgstr "Välj funktionstyp att rita."
 
+#. Form5("Insert function")..ComboBox1....Items.Strings
 msgid "Standard function   y=f(x)"
 msgstr "Standardfunktion y=f(x)"
 
+#. Form5("Insert function")..ComboBox1....Items.Strings
 msgid "Parametric function x(t), y(t)"
 msgstr "Parameterfunktion x(t), y(t)"
 
+#. Form5("Insert function")..ComboBox1....Items.Strings
 msgid "Polar function         r=f(t)"
 msgstr "Polär funktion      r=f(t)"
 
+#. Form5("Insert function")..GroupBox1("Function equation")..Caption
 msgid "Function equation"
 msgstr "Funktionens ekvation"
 
+#. Form5("Insert function")..GroupBox2("Argument range")..Label6("Steps:")..Caption
 msgid "Steps:"
 msgstr "Steg:"
 
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit5..Hint
 msgid "Number of calculation steps used to draw the graph."
 msgstr "Antal beräkningssteg som används för att rita grafen."
 
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label13("Draw type:")..Caption
 msgid "Draw type:"
 msgstr "Linjetyp:"
 
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Hint
 msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
 msgstr "Välj linjer om du vill att grafens beräknade punkter skall vara sammankopplade. Välj punkter om du vill visa en punkt vid varje steg."
 
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4..Text
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
 msgid "Automatic"
 msgstr "Automatiskt"
 
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
 msgid "Dots"
 msgstr "Punkter"
 
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
 msgid "Lines"
 msgstr "Linjer"
 
+#. Form6("Text label")..Caption
 msgid "Text label"
 msgstr "Textetikett"
 
+#. Form6("Text label")..Label1("Font name:")..Caption
 msgid "Font name:"
 msgstr "Teckensnitt:"
 
+#. Form6("Text label")..Label2("Font size:")..Caption
 msgid "Font size:"
 msgstr "Storlek:"
 
+#. Form6("Text label")..Label3("Font color:")..Caption
 msgid "Font color:"
 msgstr "Färg:"
 
+#. Form6("Text label")..ComboBox1..Hint
 msgid "Text size."
 msgstr "Textstorlek."
 
+#. Form6("Text label")..GroupBox1("Text string")..Caption
 msgid "Text string"
 msgstr "Text"
 
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton11..Hint
 msgid "Insert symbol (Ctrl+G)"
 msgstr "Lägg till symbol (Ctrl-G)"
 
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
 msgid "Insert object"
 msgstr "Infoga objekt..."
 
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
 msgstr "Fet (Ctrl-B)."
 
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton2..Hint
 msgid "Italic (Ctrl+I)"
 msgstr "Kursiv (Ctrl-I)."
 
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton3..Hint
 msgid "Underline (Ctrl+U)"
 msgstr "Understruken (Ctrl-U)."
 
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton4..Hint
 msgid "Strikethrough (Ctrl+S)"
 msgstr "Genomstruken (Ctrl-S)."
 
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton9..Hint
 msgid "Superscript (Ctrl++)"
 msgstr "Upphöjd (Ctrl++)."
 
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton10..Hint
 msgid "Subscript (Ctrl+=)"
 msgstr "Nedsänkt (Ctrl+=)."
 
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton5..Hint
 msgid "Align left (Ctrl+L)"
 msgstr "Vänsterställd (Ctrl-L)."
 
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton6..Hint
 msgid "Center (Ctrl+E)"
 msgstr "Centrerad (Ctrl-E)."
 
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton7..Hint
 msgid "Align right (Ctrl+R)"
 msgstr "Högerställd (Ctrl-R)."
 
+#. Form6("Text label")..IFontBox1..Hint
 msgid "Text font."
 msgstr "Teckensnitt för texten."
 
+#. Form6("Text label")..ColorBox1..Hint
 msgid "Text color."
 msgstr "Färg på texten."
 
+#. Form6("Text label")..ColorBox2..Hint
 msgid "Select background color of the text label."
 msgstr "Välj bakgrundsfärg för textetiketten."
 
+#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Ångra senaste kommando."
 
+#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Hint
 msgid "Redo last undone action."
 msgstr "Gör om senaste ångrasteget."
 
+#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Hint
 msgid "Paste the contents of the clipboard."
 msgstr "Klistra in innehållet från Windows urklipp."
 
+#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Caption
 msgid "Paste special..."
 msgstr "Klistra in special..."
 
+#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Hint
 msgid "Select which clipboard representation you want to paste."
 msgstr "Välj vilken urklippstyp du vill klistra in."
 
-msgid "Insert object..."
-msgstr "Infoga objekt..."
-
+#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
 msgid "Create a new OLE object."
 msgstr "Skapa nytt OLE-objekt."
 
+#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Caption
 msgid "Edit object"
 msgstr "Redigera objekt"
 
+#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Hint
 msgid "Edit selected OLE object."
 msgstr "Redigera valt OLE-objekt."
 
+#. Form7("Insert f'(x)")..Caption
 msgid "Insert f'(x)"
 msgstr "Infoga f'(x)"
 
+#. Form8("Add model")..Label1("Name:")..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Label1("Name:")..Caption
 msgid "Name:"
 msgstr "Namn:"
 
+#. Form8("Add model")..ValueListEditor1....TitleCaptions.Strings
 msgid "Constant"
 msgstr "Konstant"
 
+#. Form8("Add model")..ValueListEditor1....TitleCaptions.Strings
 msgid "Value"
 msgstr "Värde"
 
+#. Form9("Evaluate")..Label1("Select a function or tangent to evaluate.")..Caption
 msgid "Select a function or tangent to evaluate."
 msgstr "Välj en funktion eller tangent att utvärdera."
 
+#. Used in titles of error message boxes
+#. Error message when an invalid value is entered.
+#. Error message in Axes dialog when zoom in/out too much
 msgid "Error"
 msgstr "Fel"
 
+#. Default name in Insert shade dialog
 msgid "Shade"
 msgstr "Skuggning"
 
-msgid "Functions"
-msgstr "Funktioner"
-
-msgid "Tangents"
-msgstr "Tangenter"
-
-msgid "Point series"
-msgstr "Punktserier"
-
-msgid "Shades"
-msgstr "Skuggningar"
-
+#. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Längd"
 
+#. Name for labels shown in the function list if there is no text in the label.
 msgid "Label"
 msgstr "Etikett"
 
+#. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-fel"
 
+#. May be selected as background color in Insert label dialog
 msgid "Transparent"
 msgstr "Transparent"
 
+#. Shown in the function list
 msgid "Axes"
 msgstr "Axlar"
 
-msgid "No error occurred. You should not see this message."
-msgstr "Inget fel uppstod. Du borde inte se detta meddelande."
+#. Shortcut key
+msgid "Ctrl+"
+msgstr ""
+
+#. Shortcut key
+msgid "Alt+"
+msgstr ""
+
+#. Shortcut key
+msgid "Shift+"
+msgstr ""
+
+# Funktion-menyn
+#. Shortcut key
+#, fuzzy
+msgid "Del"
+msgstr "Ta bort"
+
+# Zooma-menyn
+#. Shortcut key
+#, fuzzy
+msgid "Ins"
+msgstr "In"
+
+#. Shortcut key
+msgid "Home"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "End"
+msgstr "Slut:"
+
+#. Shortcut key
+msgid "PgUp"
+msgstr ""
+
+#. Shortcut key
+msgid "PgDn"
+msgstr ""
+
+#. Shortcut key
+msgid "Up"
+msgstr ""
+
+# Hjälp-menyn
+#. Shortcut key
+#, fuzzy
+msgid "Down"
+msgstr "Donera"
+
+#. Shortcut key
+msgid "Esc"
+msgstr ""
+
+# Visas i dialogrutan utskrift
+#. Shortcut key
+#, fuzzy
+msgid "Enter"
+msgstr "Skrivare"
+
+#. Shortcut key
+msgid "Tab"
+msgstr ""
+
+#. Shortcut key
+msgid "BkSp"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Space"
+msgstr "Spara"
 
 msgid "An error occurred while evaluating power function."
 msgstr "Ett fel uppstod då en potensfunktion utvärderades."
@@ -1915,8 +2882,8 @@ msgstr "För många rekursiva anrop."
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Oväntad operator. Operatorn '%s' kan inte placeras här."
 
-msgid "Right bracket missing."
-msgstr "Högerparentes saknas."
+msgid "The right bracket is missing."
+msgstr "Slutparentes saknas."
 
 msgid "Invalid number of arguments supplied for function '%s'"
 msgstr "Felaktigt antal argument för funktionen '%s'."
@@ -2011,9 +2978,6 @@ msgstr ""
 "Namnet får endast innehålla tecken och siffror, men det måste alltid börja med en bokstav.\n"
 "Du får heller inte använda redan upptagna, interna argumentnamn."
 
-msgid "The right bracket is missing."
-msgstr "Slutparentes saknas."
-
 msgid "Character found after brackets."
 msgstr "Tecken funnet efter parentesen."
 
@@ -2023,24 +2987,28 @@ msgstr "Symbolen \"%s\" har definierats fler än en gång."
 msgid "Invalid equation or inequality."
 msgstr "Ogiltig ekvation eller olikhet."
 
+#. Shown in status bar
 msgid "Updating..."
 msgstr "Uppdaterar..."
 
+#. Asked when trying to exit
+#. Asked when trying to exit
 msgid "Save changes?"
 msgstr "Spara ändringar?"
 
+#. Asked when trying to exit
 msgid "Save changes in %s"
 msgstr "Spara ändringar i %s"
 
+#. Written in status bar when trying to zoom in too much
 msgid "You have reached the maximum range of zoom."
 msgstr "Du har nått maximal förstoring."
 
+#. Written in status bar when trying to zoom out too much
 msgid "You have reached the minimum range of zoom."
 msgstr "Du har nått största förminskning."
 
-msgid "There is no printer installed on the system."
-msgstr "Det finns ingen skrivare installerad."
-
+#. Error message when an invalid value is entered.
 msgid "Error in value"
 msgstr "Fel i värdet."
 
@@ -2053,6 +3021,7 @@ msgstr "'%s' måste vara större än 0 (noll)."
 msgid "'%s' must be an integer greater than zero."
 msgstr "'%s' måste vara ett heltal större än 0 (noll)."
 
+#. Error message in Axes dialog when zoom in/out too much
 msgid "Trying to break zoom limit."
 msgstr "Försöker bryta zoomgränsen."
 
@@ -2075,6 +3044,7 @@ msgstr ""
 msgid "'%s' is not a valid number."
 msgstr "'%s' är inte ett giltigt tal."
 
+#. Hint for recent file menu items
 msgid "Open the file %s."
 msgstr "Öppna filen %s."
 
@@ -2094,6 +3064,7 @@ msgstr ""
 msgid "Unknown error while reading file: %s"
 msgstr "Okänt fel uppstod vid läsning av filen: %s"
 
+#. Used in Save as dialog
 msgid "Graph files [*.grf]|*.grf"
 msgstr "Graph-filer [*.grf]|*.grf"
 
@@ -2107,19 +3078,11 @@ msgstr ""
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "Teckensnittet \"%s\" finns inte. Ett standardteckensnitt används istället."
 
-msgid "Conversion error"
-msgstr "Konverteringsfel"
-
-msgid ""
-"Unknown error code.\n"
-"Could not find error message for this error."
-msgstr ""
-"Okänd felkod.\n"
-"Kan inte hitta felmeddelandet för detta fel."
-
+#. Error in Insert shade dialog when you need to select a function
 msgid "Selection error"
 msgstr "Urvalsfel"
 
+#. Title in error message when reading a grf-file failed
 msgid "File error"
 msgstr "Fel vid filhantering"
 
@@ -2132,9 +3095,11 @@ msgstr "OLE-fel"
 msgid "Error reading object"
 msgstr "Fel då objekt lästes in"
 
+#. Error message when a Graph OLE object is invalid.
 msgid "Not a valid Graph object."
 msgstr "Inte ett giltigt Graph-objekt."
 
+#. Error message when a Graph OLE object is invalid.
 msgid "Object error"
 msgstr "Objektfel"
 
@@ -2144,18 +3109,25 @@ msgstr "Windows har inte tillräckligt med resurser för att spara en bild av de
 msgid "'%1%' must be between %2% and %3%."
 msgstr "'%1%' måste vara mellan %2% och %3%."
 
+#, fuzzy
+msgid "File not found"
+msgstr "Filen hittades inte: %s"
+
+#, fuzzy
+msgid "Error reading file"
+msgstr "Fel då objekt lästes in"
+
 msgid "Confirm delete"
 msgstr "Bekräfta ta bort"
-
-msgid "This error should not occur. Please report this to the programmer."
-msgstr "Detta fel skall ej uppkomma. Var god rapportera händelsen till programmeraren."
 
 msgid "Are you sure you want to delete %s?"
 msgstr "Är du säker på att du vill radera %s?"
 
+#. Save as dialog
 msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Graph-filer [*.grf]|*.grf|Alla filer [*.*]|*.*"
 
+#. Import from file dialog
 msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 msgstr "Textfiler [*.txt; *.csv]|*.txt;*.csv|Alla filer [*.*]|*.*"
 
@@ -2168,6 +3140,7 @@ msgstr "Maxvärde på x-axeln måste vara större än minvärdet."
 msgid "Maximum number on y-axis must be greater than the minimum value."
 msgstr "Maxvärde på y-axeln måste vara större än minvärdet."
 
+#. Error message when trying to activate an OLE object
 msgid "Server application not found."
 msgstr "Serverapplikationen hittades inte."
 
@@ -2207,9 +3180,6 @@ msgstr "Fel linjebredd"
 msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
 msgstr "Slutet på intervallet måste vara större än början och %s måste vara större än 0."
 
-msgid "The maximum length of text has been reached."
-msgstr "Maximal textlängd har uppnåtts."
-
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Funktionens derivata är inte definierad vid %s=%s"
 
@@ -2237,12 +3207,6 @@ msgstr "Redigera tangent/normal"
 msgid "Error processing file '%s' at line %s."
 msgstr "Fel vid läsning av filen '%s' på rad %s."
 
-msgid "Dialog error: %sh"
-msgstr "Dialogrutefel: %sh"
-
-msgid "Unknown Graph data found while pasting clipboard data."
-msgstr "Okänt Graph-data hittades när inehållet i urklipp klistrades in."
-
 msgid "'%s' has to be an integer value between 0 and 1000."
 msgstr "'%s' måste vara ett heltal mellan 0 och 1000."
 
@@ -2252,6 +3216,7 @@ msgstr "Utskriftsfel"
 msgid "An unknown error occurred while printing."
 msgstr "Ett okänt fel uppstod vid utskrift."
 
+#. Error message title in Point series dialog
 msgid "Error while adding points"
 msgstr "Ett fel uppstod då punkter lades till."
 
@@ -2304,12 +3269,15 @@ msgstr ""
 "Kan inte kontakta servern www.padowan.dk.\n"
 "Antingen är servern nere, eller så finns ingen kontakt med Internet."
 
+#. Communication error when checking for newer version
 msgid "Socket error %s"
 msgstr "TCP-protokollfel %s"
 
+#. Communication error when checking for newer version
 msgid "The server responded with the message '%s'"
 msgstr "Servern svarade med meddelandet '%s'"
 
+#. Communication error when checking for newer version
 msgid "Protocol reply error %s"
 msgstr "Fel i svar från nätverksprotokoll %s"
 
@@ -2339,9 +3307,11 @@ msgstr ""
 msgid "Edit relation"
 msgstr "Redigera relation..."
 
+#. Customize toolbar dialog
 msgid "Commands"
 msgstr "Kommandon"
 
+#. Customize toolbar dialog
 msgid "(All Commands)"
 msgstr "(Alla kommandon)"
 
@@ -2354,164 +3324,213 @@ msgstr "Redigera f'(x)"
 msgid "Edit trendline"
 msgstr "Redigera trendlinje"
 
+#. Customize toolbar dialog
 msgid "Categories:"
 msgstr "Kategorier:"
 
+#. Tip of the Day
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "Dagens Tips kan ge dig sådan information om programmet som de flesta inte känner till."
 
+#. Tip of the Day
 msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 msgstr "Du kan sända förslag på förbättringar för framtida versioner, felrapporter och kommentarer till graph@padowan.dk. (V.v. använd engelska eller danska.)"
 
+#. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
 msgstr "Du kan anpassa verktygsfältet genom att högerklicka på det och välja 'Anpassa verktygsfält'."
 
+#. Tip of the Day
 msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
 msgstr "Istället för att ta bort en funktion, kan du göra den osynlig genom att högerklicka på den i funktionslistan och sedan klicka på 'Synlig'."
 
+#. Tip of the Day
 msgid "You can paste images into a text label."
 msgstr "Du kan klistra in bilder i en textetikett."
 
+#. Tip of the Day
 msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
 msgstr "Textetiketter kan innehålla alla typer av OLE-objekt, till exempel Microsoft Equation. När du redigerar en etikett, högerklicka i redigeringsrutan och välj 'Infoga objekt'."
 
+#. Tip of the Day
 msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
 msgstr "Du kan exportera punkter från en punktserie till en fil som kan läsas av andra program, t.ex. Microsoft Excel. När du redigerar punktserier, högerklicka på en punkt och välj 'Exportera till fil'."
 
+#. Tip of the Day
 msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
 msgstr "En vertikal linje vid x=5 kan beskrivas med den parametriska funktionen x(t)=5, y(t)=y, eller som relationen x=5."
 
+#. Tip of the Day
 msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
 msgstr "Du kan zooma till kvadratisk för att få koordinataxlarna att visa lika värden. Detta är speciellt användbart när du vill beskriva en cirkel och liknande funktioner."
 
+#. Tip of the Day
 msgid "You can find a list of all available functions in the help."
 msgstr "Du kan hitta en lista över alla tillgängliga funktioner i hjälpfilen."
 
+#. Tip of the Day
 msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
 msgstr "Du kan kombinera två funktioner till en genom att använda det booleska uttrycket 'if'. Exempelvis funktionen f(x)=x^2 för x>=1 kan skrivas som f(x)=if(x<1, x, x^2)."
 
+#. Tip of the Day
 msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
 msgstr "Du kan importera innehållet i en Graph-fil till en annan genom att använda 'Arkiv|Importera|Graph-fil'."
 
+#. Tip of the Day
 msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new files."
 msgstr "Om du väljer 'Spara som standard' i dialogrutan egenskaper för koordinataxlarna, kommer aktuell inställning att gälla då du skapar en ny fil."
 
+#. Tip of the Day
 msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
 msgstr "Håller du ner knappen Ctrl på tangentbordet, kan du använda piltangenterna till att flytta koordinatsystemet."
 
+#. Tip of the Day
 msgid "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."
 msgstr "Håller du ner knappen Ctrl på tangentbordet, kan du använda knapparna + och - till att förstora och förminska koordinatsystemet."
 
+#. Tip of the Day
 msgid "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."
 msgstr "Om du har, kan du använda musens hjul till att förstora och förminska koordinatsystemet."
 
+#. Tip of the Day
 msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
 msgstr "Om du inte vill att ett objekt skall synas i teckenförklaringen, kan du högerklicka på det och avmarkera 'Visa i teckenförklaringen'."
 
+#. Tip of the Day
 msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
 msgstr "Om du vill att koordinataxlarna skall visas i fönstrets nedre, vänstra hörn, ställ in axelstilen 'Första kvadrant' under fliken 'Inställningar' i dialogrutan 'Redigera koordinataxlarna'."
 
+#. Tip of the Day
 msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
 msgstr "Graph kan spara aktuellt koordinatsystem i fem olika bildformat: bmp, emf, png, jpg och pdf."
 
+#. Tip of the Day
 msgid "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."
 msgstr "Du kan använda 'Redigera|Kopiera bild' för att kopiera koordinatsystemet till Windows urklipp och klistra in det i ett annat program."
 
+#. Tip of the Day
 msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
 msgstr "Du kan öppna en sparad grf-fil i en ny instans av programmet genom att dubbelklicka på filen i Utforskaren."
 
+#. Tip of the Day
 msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
 msgstr "Du kan dra en grf-fil från Utforskaren till ett öppet Graph-fönster för att öppna den filen."
 
+#. Tip of the Day
 msgid "Graph will remember the size and placement of the main window between executions. This can be disabled from the Options dialog."
 msgstr "Graph kommer ihåg storleken och placeringen av huvudfönstret mellan sessioner. Denna funktion kan stängas av i dialogrutan Programinställningar."
 
+#. Tip of the Day
 msgid "Calc|Table can be used to create a table with evaluation values for a function."
 msgstr "Beräkna|Tabell kan användas till att skapa en värdetabell till en funktion."
 
+#. Tip of the Day
 msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
 msgstr "En del av, eller hela, värdetabellen kan exporteras som en fil geom att högerklicka på ett valt område och välja 'Exportera till fil'. Filen kan sedan öppnas i ett annat program, som t.ex. Microsoft Excel."
 
+#. Tip of the Day
 msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
 msgstr "Data från en värdetabell kan kopieras till ett annat program, som t.ex. Microsoft Excel, genom att använda Windows urklipp."
 
+#. Tip of the Day
 msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel through the clipboard."
 msgstr "Datapunkterna i en punktserie kan kopieras till och från andra program, som t.ex. Microsoft Excel, genom att använda Windows urklipp."
 
+#. Tip of the Day
 msgid "Functions can be copied from one instance of the program to another through the clipboard using Edit|Copy."
 msgstr "Funktioner kan kopieras från en instans av Graph till en annan genom att använda Windows urklipp."
 
+#. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
 msgstr "Du kan alltid ångra det senaste kommandot genom att använda Redigera|Ångra."
 
+#. Tip of the Day
 msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
 msgstr "Om du av misstag ångrar ett kommando, kan du återkskapa vad du hade genom att använda kommandot Redigera|Gör om."
 
+#. Tip of the Day
 msgid "In the Axes dialog you can add a title to the coordinate system."
 msgstr "I dialogrutan 'Redigera koordinataxlarna' kan du lägga till en rubrik ovanför koordinatsystemet."
 
+#. Tip of the Day
 msgid "You can import point series from files saved by other programs, like Microsoft Excel."
 msgstr "Du kan importera en punktserie som skapats av ett annat program, som t.ex. Microsoft Excel."
 
+#. Tip of the Day
 msgid "When inserting a point series you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
 msgstr "När du lägger till en punktserie, kan du kopiera data från ett annat program, som t.ex. Microsoft Excel, och klistra in det direkt i Graph."
 
+#. Tip of the Day
 msgid "You can use 'Zoom|All points' to change the coordinate system so all point series are visible."
 msgstr "Du kan använda 'Zooma|Alla punkter' för att ändra förstoringsgraden så, att alla punkter i en punktserie är synliga."
 
+#. Tip of the Day
 msgid "You can use Zoom|Fit to change the coordinate system to show the selected function or point series."
 msgstr "Du kan använda 'Zooma|Anpassa' för att ändra förstoringsgraden så, att hela den valda funktionen eller punktserien syns i fönstret."
 
+#. Tip of the Day
 msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
 msgstr "Om du håller ner skiftknappen (Shift) kan du flytta koordinatsystemet med musen."
 
+#. Tip of the Day
 msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
 msgstr "Du kan använda 'Beräkna|Utvärdera' för att hitta grafer som korsar varandra, koordinataxlarna, eller du kan hitta extrempunkter."
 
+#. Tip of the Day
 msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
 msgstr "När en punktserie är vald, kan du lägga till punkter till densamma genom att klicka på koordinatsystemet och hålla ned knappen Ctrl på tangentbordet."
 
+#. Tip of the Day
 msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
 msgstr "Du kan använda en relation för att plotta en olikhet, t.ex. sin(x^2) < cos(y^2)."
 
+#. Tip of the Day
 msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
 msgstr "Du kan använda en relation för att plotta en ekvation, t.ex. x*sin(x) = y*cos(y)."
 
+#. Tip of the Day
 msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
 msgstr "Objekt (funktioner, skuggningar, etiketter, relationer, etc.) visas i samma ordning som de visas i funktionslistan till vänster i programfönstret."
 
+#. Tip of the Day
 msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
 msgstr "Du kan flytta valda objekt i funktionslistan, antingen genom att dra dem med musen, eller genom att använda tangentbordets piltangenter i kombination med Alt-tangenten."
 
+#. Tip of the Day
 msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
 msgstr "Du kan visa funktioner och andra objekt bakom koordinataxlarna genom att flytta objekten i funktionslistan, till vänster i programfönstret, ovanför objektet 'Axlar'. För att flytta skuggningar och tangenter måste du flytta funktionen de är associerade med."
 
+#. Tip of the Day
 msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
 msgstr "Användardefinierade textetiketter kan sättas fast mot koordinataxlarna genom att högerklicka på en etikett och välja 'Placering'."
 
+#. Tip of the Day
 msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
 msgstr "Teckenförklaringen kan flyttas med musen, eller sättas fast i hörnen genom att högerklicka på teckenförklaringen och välja 'Placering'."
 
+#. Tip of the Day
 msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shades."
 msgstr "Som ett alternativ till transparent färg, kan du välja en specialfärg för bakgrunden att använda ihop med etiketter. Detta är speciellt användbart för etiketter som skall ritas ovanpå skuggningar."
 
+#. Tip of the Day
 msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
 msgstr "I de flesta fall, t.ex. för punktserier, koordinataxelinställningar, funktionsområden, etc., kan du använda uttryck som Pi/4 istället för siffror."
 
+#. Tip of the Day
 msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
 msgstr "Du kan skapa dina egna funktionskonstanter under 'Funktion|Skapa funktioner', att användas i funktioner, punkttserier, etc. Exempelvis g=9.80665, R=8.31."
 
+#. Tip of the Day
 msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
 msgstr "Du kan skapa dina egna funktionskonstanter under 'Funktion|Skapa funktioner', för att plotta funktioner, relationer, etc. Exempelvis sinc(x)=if(x=0, 0, sin(x)/x)."
 
+#. Tip of the Day
 msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
 msgstr "I dialogrutan för 'Spara som bild' finns det en knapp för 'Inställningar'. Du kan använda denna för att ställa in vissa parametrar som gäller för det filformat du angett. Detta är speciellt användbart om du vill ha en högupplöst bild som resultat."
 
+#. Tip of the Day
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Punktserier kan ha pilar som markörer. En punktserie med pilar som markörer, och linjer mellan markörerna, skulle kunna användas till att åskådliggöra vektorer."
-
-msgid "Custom..."
-msgstr "Välj..."
 
 msgid "Black"
 msgstr "Svart"
@@ -2579,8 +3598,8 @@ msgstr "Anpassa"
 msgid "Description"
 msgstr "Beskrivning"
 
-msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
-msgstr "För att lägga till en åtgärd till din applikation, dra objekt från antingen Kategorier eller Åtgärder och släpp dem på en befintlig Åtgärdslist."
+msgid "Cannot open clipboard"
+msgstr ""
 
 msgid "Local"
 msgstr "Lokal"
@@ -2598,76 +3617,144 @@ msgid "Subset:"
 msgstr "Delmängd:"
 
 # Visas i namnlisten i dialogrutan utskrift
+#. PrintFrm("Print")..Caption
 msgid "Print"
 msgstr "Skriv ut"
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..Label6("Scale:")..Caption
 msgid "Scale:"
 msgstr "Skala:"
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..GroupBox1("Printer")..Caption
 msgid "Printer"
 msgstr "Skrivare"
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..GroupBox1("Printer")..Label7("Type:")..Caption
 msgid "Type:"
 msgstr "Typ:"
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..GroupBox1("Printer")..Label8("Where:")..Caption
 msgid "Where:"
 msgstr "Port:"
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..GroupBox1("Printer")..Label9("Comment:")..Caption
 msgid "Comment:"
 msgstr "Kommentar:"
 
+#. PrintFrm("Print")..GroupBox1("Printer")..ComboBox1....Hint
 msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
 msgstr "Välj skrivare. Knappen Egenskaper kan användas till att förändra mer avancerade inställningar för slrivaren."
 
+#. PrintFrm("Print")..RadioGroup2("Print output")....Hint
 msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
 msgstr "Välj färgutskrift (eller gråskala om din skrivare inte stödjer färg) eller konvertera alla färger till svart."
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..RadioGroup2("Print output")..Caption
 msgid "Print output"
 msgstr "Färg"
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..RadioGroup2("Print output")....Items.Strings
 msgid "Color"
 msgstr "Färg"
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..RadioGroup2("Print output")....Items.Strings
 msgid "Black && white"
 msgstr "Svartvitt"
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Caption
 msgid "Position (millimeters)"
 msgstr "Position (millimeter)"
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Label3("Left margin:")..Caption
 msgid "Left margin:"
 msgstr "Vänstermarginal:"
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Label4("Top margin:")..Caption
 msgid "Top margin:"
 msgstr "Toppmarginal:"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
 msgid "Select to place the image on the middle of the page."
 msgstr "Välj för att placera bilden mitt på sidan."
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
 msgstr "Centrera på sidan"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1..Hint
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2..Hint
 msgid "Enter the image position on the page."
 msgstr "Skriv in bildens placering på sidan."
 
 # Visas i dialogrutan utskrift
+#. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
 msgid "Number of copies:"
 msgstr "Antal kopior:"
 
+#. PrintFrm("Print")..GroupBox3..Edit3..Hint
 msgid "Choose number of copies to print."
 msgstr "Välj antal kopior att skriva ut."
 
+#. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Välj procent av originalstorlek."
+
+#, fuzzy
+#~ msgid "Version -%s"
+#~ msgstr "Version"
+#~ msgid "Visible"
+#~ msgstr "Synlig"
+#~ msgid "Check to make the selected item visible in the coordinate system."
+#~ msgstr "Välj för att göra valt objekt synligt i koordinatsystemet."
+#~ msgid "Functions"
+#~ msgstr "Funktioner"
+#~ msgid "Tangents"
+#~ msgstr "Tangenter"
+#~ msgid "Point series"
+#~ msgstr "Punktserier"
+#~ msgid "Shades"
+#~ msgstr "Skuggningar"
+#~ msgid "No error occurred. You should not see this message."
+#~ msgstr "Inget fel uppstod. Du borde inte se detta meddelande."
+#~ msgid "Right bracket missing."
+#~ msgstr "Högerparentes saknas."
+#~ msgid "There is no printer installed on the system."
+#~ msgstr "Det finns ingen skrivare installerad."
+#~ msgid "Conversion error"
+#~ msgstr "Konverteringsfel"
+#~ msgid ""
+#~ "Unknown error code.\n"
+#~ "Could not find error message for this error."
+#~ msgstr ""
+#~ "Okänd felkod.\n"
+#~ "Kan inte hitta felmeddelandet för detta fel."
+#~ msgid "This error should not occur. Please report this to the programmer."
+#~ msgstr ""
+#~ "Detta fel skall ej uppkomma. Var god rapportera händelsen till "
+#~ "programmeraren."
+#~ msgid "The maximum length of text has been reached."
+#~ msgstr "Maximal textlängd har uppnåtts."
+#~ msgid "Dialog error: %sh"
+#~ msgstr "Dialogrutefel: %sh"
+#~ msgid "Unknown Graph data found while pasting clipboard data."
+#~ msgstr "Okänt Graph-data hittades när inehållet i urklipp klistrades in."
+#~ msgid ""
+#~ "To add actions to your application simply drag and drop from either "
+#~ "Categories or Actions onto an existing ActionBar."
+#~ msgstr ""
+#~ "För att lägga till en åtgärd till din applikation, dra objekt från "
+#~ "antingen Kategorier eller Åtgärder och släpp dem på en befintlig "
+#~ "Åtgärdslist."
 
