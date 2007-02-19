@@ -111,7 +111,7 @@ object Form19: TForm19
       Top = 16
       Width = 89
       Height = 21
-      Hint = 'The first value of the constant'
+      Hint = 'The first value of the constant.'
       TabOrder = 0
       Text = '1'
     end

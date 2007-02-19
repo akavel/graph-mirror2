@@ -55,7 +55,7 @@ object Form2: TForm2
       Visible = False
       WordWrap = True
     end
-    object Label5: TLabel
+    object Label5: TTntLabel
       Left = 8
       Top = 212
       Width = 65
@@ -70,7 +70,7 @@ object Form2: TForm2
       ParentFont = False
       OnClick = Label5Click
     end
-    object ProductName: TLabel
+    object ProductName: TTntLabel
       Left = 88
       Top = 8
       Width = 29
@@ -78,15 +78,15 @@ object Form2: TForm2
       Caption = 'Graph'
       IsControl = True
     end
-    object Version: TLabel
+    object Version: TTntLabel
       Left = 88
       Top = 32
-      Width = 38
+      Width = 51
       Height = 13
-      Caption = 'Version '
+      Caption = 'Version %s'
       IsControl = True
     end
-    object Copyright: TLabel
+    object Copyright: TTntLabel
       Left = 8
       Top = 80
       Width = 68
@@ -94,14 +94,14 @@ object Form2: TForm2
       Caption = 'Copyright note'
       IsControl = True
     end
-    object Label1: TLabel
+    object Label1: TTntLabel
       Left = 8
       Top = 160
       Width = 28
       Height = 13
       Caption = 'Email:'
     end
-    object Label2: TLabel
+    object Label2: TTntLabel
       Left = 48
       Top = 160
       Width = 83
@@ -118,12 +118,12 @@ object Form2: TForm2
       ParentFont = False
       OnClick = Label2Click
     end
-    object Label3: TLabel
+    object Label3: TTntLabel
       Left = 88
       Top = 48
-      Width = 23
+      Width = 39
       Height = 13
-      Caption = 'Build'
+      Caption = 'Build %s'
     end
     object Comments: TTntLabel
       Left = 8

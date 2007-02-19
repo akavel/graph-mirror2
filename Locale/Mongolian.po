@@ -1,1992 +1,2877 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Граф\n"
-"POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-03-14 19:05+0800\n"
-"Last-Translator: Batnasan <baagiibat@yahoo.com>\n"
+"POT-Creation-Date: 2007-02-19 22:24\n"
+"PO-Revision-Date: 2007-02-19 22:38+0100\n"
+"Last-Translator: \n"
 "Language-Team: Батнасан <baagiibat@yahoo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: dxgettext 1.2.1\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,56,-1,-1,-1,-1,-1\n"
-"X-Poedit-Language: Mongolian\n"
 "X-Poedit-Country: MONGOLIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#. AreaFrame..Label1("From:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label4("From:")..Caption
+#. Form15("Calculate table")..Label1("From:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Label2("From:")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Label4("From:")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label4("From:")..Caption
 msgid "From:"
 msgstr "Хаанаас:"
 
+#. AreaFrame..Label2("To:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label5("To:")..Caption
+#. Form15("Calculate table")..Label2("To:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Label3("To:")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Label5("To:")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label5("To:")..Caption
 msgid "To:"
 msgstr "Хэнд:"
 
+#. AreaFrame..Label3("Area")..Caption
+#. Form1..ActionManager..AreaAction("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Муж"
 
+#. AreaFrame..Edit1....Hint
 #, fuzzy
-msgid ""
-"Enter the start coordinate or mark the range on the graph itself with the "
-"mouse."
+msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "өаө"
 
+#. AreaFrame..Edit2....Hint
 #, fuzzy
-msgid ""
-"Enter the end coordinate or mark the range on the graph itself with the "
-"mouse."
+msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
 msgstr "өаө"
 
-msgid ""
-"Area or length of path calculated for the given range using Simpson's "
-"formula."
+#. AreaFrame..Edit3....Hint
+msgid "Area or length of path calculated for the given range using Simpson's formula."
 msgstr ""
 
+#. ParFuncFrame..Label7("Snap to:")..Caption
+#. PolFuncFrame..Label7("Snap to:")..Caption
+#. StdFuncFrame..Label5("Snap to:")..Caption
 msgid "Snap to:"
 msgstr ""
 
+#. ParFuncFrame..Edit2..Hint
 msgid "The x-coordinate evaluated for the t-parameter."
 msgstr ""
 
+#. ParFuncFrame..Edit3..Hint
 msgid "The y-coordinate evaluated for the t-parameter."
 msgstr ""
 
+#. ParFuncFrame..Edit4..Hint
 msgid "The derivative of x(t) evaluated for the entered t-parameter."
 msgstr ""
 
+#. ParFuncFrame..Edit5..Hint
 msgid "The derivative of y(t) evaluated for the entered t-parameter."
 msgstr ""
 
+#. ParFuncFrame..Edit6..Hint
 msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr ""
 
-msgid ""
-"Enter the independent variable for which you want to evaluate the function, "
-"or click on the function in the main window."
+#. ParFuncFrame..Edit1....Hint
+#. PolFuncFrame..Edit1....Hint
+msgid "Enter the independent variable for which you want to evaluate the function, or click on the function in the main window."
 msgstr ""
 
+#. ParFuncFrame..ComboBox1....Hint
+#. StdFuncFrame..ComboBox1....Hint
+#. Form9("Evaluate")..PolFuncFrame1....Hint
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr ""
 
+#. ParFuncFrame..ComboBox1..Text
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1..Text
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1..Text
+#. StdFuncFrame..ComboBox1....Items.Strings
+#. Form1..MainMenu..Function_("Function")..Caption
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
+#. Form1..ActionManager..EditAction("Edit...")..Category
+#. Form1..ActionManager..DeleteAction("Delete")..Category
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Category
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Category
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Category
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Category
+#. Form1..ActionManager..InsertObjectAction("Insert object...")..Category
 msgid "Function"
 msgstr "Функц"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1....Items.Strings
 #, fuzzy
 msgid "Intersection"
 msgstr "Интернэт"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Caption
 msgid "x-axis"
 msgstr "х-тэнхлэг"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 msgid "y-axis"
 msgstr "у-тэнхлэг"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
 #, fuzzy
 msgid "Extreme x-value"
 msgstr "Эктремум"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
 #, fuzzy
 msgid "Extreme y-value"
 msgstr "Эктремум"
 
+#. PolFuncFrame..Edit2..Hint
 msgid "The distance to the function evaluated for the given angle."
 msgstr ""
 
+#. PolFuncFrame..Edit3..Hint
 msgid "The x-coordinate evaluated for the given angle."
 msgstr ""
 
+#. PolFuncFrame..Edit4..Hint
 msgid "The y-coordinate evaluated for the given angle."
 msgstr ""
 
+#. PolFuncFrame..Edit5..Hint
 msgid "The derivative of the function evaluated for the given angle."
 msgstr ""
 
+#. PolFuncFrame..Edit6..Hint
 msgid "The slope of the function evaluated for the given angle."
 msgstr ""
 
-msgid ""
-"Enter a number for which you want to evaluate the function, or click on the "
-"function in the main window."
+#. StdFuncFrame..Edit1....Hint
+msgid "Enter a number for which you want to evaluate the function, or click on the function in the main window."
 msgstr ""
 
+#. StdFuncFrame..ComboBox1....Items.Strings
 msgid "Extremum"
 msgstr "Эктремум"
 
+#. StdFuncFrame..Edit2..Hint
 msgid "This is the function evaluated for the entered x-value."
 msgstr ""
 
+#. StdFuncFrame..Edit3....Hint
 #, fuzzy
-msgid ""
-"This is the first derivative of the function evaluated for the entered value."
+msgid "This is the first derivative of the function evaluated for the entered value."
 msgstr "Сонгогдсон функцын нэгдүгээр эрэмбийн уламжлал оруулах"
 
-msgid ""
-"This is the functions second derivative evaluated for the entered value."
+#. StdFuncFrame..Edit4....Hint
+msgid "This is the functions second derivative evaluated for the entered value."
 msgstr ""
 
+#. TanFrame..Edit2....Hint
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
 msgstr ""
 
+#. TanFrame..Edit1..Hint
 #, fuzzy
 msgid "Enter an x-coordinate or click in the main window."
 msgstr "өаө"
 
+#. Form1..MainMenu..File_("File")..Caption
+#. Form1..ActionManager..NewAction("New")..Category
+#. Form1..ActionManager..OpenAction("Open...")..Category
+#. Form1..ActionManager..SaveAction("Save")..Category
+#. Form1..ActionManager..SaveAsAction("Save as...")..Category
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Category
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Category
+#. Form1..ActionManager..PrintAction("Print...")..Category
+#. Form1..ActionManager..ExitAction("Exit")..Category
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Category
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Category
 msgid "File"
 msgstr "Файл"
 
+#. Form1..MainMenu..File_("File")..File_Import("Import")..Caption
 msgid "Import"
 msgstr "Импорт"
 
+#. Form1..MainMenu..Edit_("Edit")..Caption
+#. Form1..ActionManager..UndoAction("Undo")..Category
+#. Form1..ActionManager..RedoAction("Redo")..Category
+#. Form1..ActionManager..CutAction("Cut")..Category
+#. Form1..ActionManager..CopyAction("Copy")..Category
+#. Form1..ActionManager..PasteAction("Paste")..Category
+#. Form1..ActionManager..CopyImageAction("Copy image")..Category
+#. Form1..ActionManager..AxesAction("Axes...")..Category
+#. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Засвар"
 
+#. Form1..MainMenu..Zoom_("Zoom")..Caption
+#. Form1..ActionManager..ZoomInAction("In")..Category
+#. Form1..ActionManager..ZoomOutAction("Out")..Category
+#. Form1..ActionManager..ZoomWindowAction("Window")..Category
+#. Form1..ActionManager..ZoomSquareAction("Square")..Category
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Category
+#. Form1..ActionManager..ZoomFitAction("Fit")..Category
+#. Form1..ActionManager..ZoomAllPointsAction("All points")..Category
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Category
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Category
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Category
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Category
 msgid "Zoom"
 msgstr "Харагдац"
 
+#. Form1..MainMenu..Math_("Calc")..Caption
+#. Form1..ActionManager..PathAction("Length of path")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
+#. Form1..ActionManager..EvalAction("Evaluate")..Category
+#. Form1..ActionManager..TableAction("Table...")..Category
+#. Form1..ActionManager..AnimateAction("Animate...")..Category
+#. Form15("Calculate table")..Button2("Calc")..Caption
 msgid "Calc"
 msgstr "Тооцоол"
 
+#. Form1..MainMenu..Plugins_("Plugins")..Caption
+msgid "Plugins"
+msgstr ""
+
+#. Form1..MainMenu..Help_("Help")..Caption
+#. Form1..ActionManager..ContentsAction("Contents and index")..Category
+#. Form1..ActionManager..ListAction("List of functions")..Category
+#. Form1..ActionManager..HomePageAction("Go to home page")..Category
+#. Form1..ActionManager..UpdateAction("Check for update")..Category
+#. Form1..ActionManager..AboutAction("About Graph...")..Category
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Category
+#. Form1..ActionManager..DonateAction("Donate")..Category
+#. Form1..ActionManager..TipAction("Tip of the day")..Category
+#. Form1..ActionManager..SupportAction("Support")..Category
+#. Form11("Insert relation")..Button3("Help")..Caption
+#. Form12("Insert tangent/normal")..Button3("Help")..Caption
+#. Form13("Insert trendline")..Button3("Help")..Caption
+#. Form14("Insert point series")..Button3("Help")..Caption
+#. Form15("Calculate table")..Button3("Help")..Caption
+#. Form16("Insert shade")..Button3("Help")..Caption
+#. Form17("Custom functions/constants")..Button4("Help")..Caption
+#. Form19("Animate")..Button3("Help")..Caption
+#. Form3("Edit axes")..Button3("Help")..Caption
+#. Form4("Options")..Button3("Help")..Caption
+#. Form5("Insert function")..Button3("Help")..Caption
+#. Form6("Text label")..Button3("Help")..Caption
+#. Form7("Insert f'(x)")..Button3("Help")..Caption
 msgid "Help"
 msgstr "Зөвлөмж"
 
+#. Form1..MainMenu..Help_("Help")..Help_Internet("Internet")..Caption
 msgid "Internet"
 msgstr "Интернэт"
 
+#. Form1..Recent1..Hint
 msgid "Open file: %s"
 msgstr "Файл нээх: %s"
 
-msgid "Visible"
-msgstr ""
-
-#, fuzzy
-msgid "Check to make the selected item visible in the coordinate system."
-msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
-
+#. Form1..PopupMenu1..Tree_ShowInLegend("Show in legend")..Caption
 #, fuzzy
 msgid "Show in legend"
 msgstr "Нэршилын самбар үзүүлэх"
 
+#. Form1..PopupMenu1..Tree_ShowInLegend("Show in legend")..Hint
 #, fuzzy
 msgid "Check to show the selected item in the legend."
 msgstr "Сонгогдсон функцын массштаб."
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Caption
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Caption
+#. Form21("Placement")..Caption
+#. Form21("Placement")..Label1("Placement")..Caption
 msgid "Placement"
 msgstr ""
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Above("Above x-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Above("Above x-axis")..Caption
 #, fuzzy
 msgid "Above x-axis"
 msgstr "х-тэнхлэг"
 
-msgid ""
-"Place the label directly above the x-axis on the right side of the image."
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Above("Above x-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Above("Above x-axis")....Hint
+msgid "Place the label directly above the x-axis on the right side of the image."
 msgstr ""
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")..Caption
 #, fuzzy
 msgid "Below x-axis"
 msgstr "х-тэнхлэг"
 
-msgid ""
-"Place the label directly below the x-axis on the right side of the image."
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")....Hint
+msgid "Place the label directly below the x-axis on the right side of the image."
 msgstr ""
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Left("Left of y-axis")..Caption
 #, fuzzy
 msgid "Left of y-axis"
 msgstr "У- тэнхлэгийн баруун тал"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Left("Left of y-axis")....Hint
 msgid "Place the label to the left of the y-axis at the top of the image."
 msgstr ""
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Right("Right of y-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Right("Right of y-axis")..Caption
 msgid "Right of y-axis"
 msgstr "У- тэнхлэгийн баруун тал"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Right("Right of y-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Right("Right of y-axis")....Hint
 msgid "Place the label to the right of the y-axis at the top of the image."
 msgstr ""
 
-msgid "Export to file..."
-msgstr "Файл экпортлохдоо..."
-
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
 #, fuzzy
-msgid "Export the selected point series to a file."
-msgstr "Өгөгдөлийн файлаас цэгэн цуваа импортло"
-
-msgid "New"
-msgstr "Шинэ"
-
-msgid "Creates a new coordinate system."
-msgstr "Шинэ координатын систем үүсгэ"
-
-msgid "Open..."
-msgstr "Нээх"
-
-msgid "Read coordinate system and functions from a file."
-msgstr "Координатын систем болон функцыг файлаас унш."
-
-msgid "Save"
-msgstr "Хадгалах"
-
-msgid "Write coordinate system and functions to a file."
-msgstr "Координатын систем болон функцыг файлд бич."
-
-msgid "Save as..."
-msgstr "Хадгалахдаа..."
-
-msgid "Saves the coordinate system as a new name."
-msgstr "Координатын системийг шинэ нэртэй болгон хадгал"
-
-msgid "Save copy as..."
-msgstr "Хадгалахдаа хувилан..."
-
-#, fuzzy
-msgid "Saves a copy of the current coordinate system."
-msgstr "Энэ координатын системийг хувилан хадгал"
-
-msgid "Save as image..."
-msgstr "Зураг болгон хадгалахдаа..."
-
-msgid "Saves the shown coordinate system as an image."
-msgstr "Харагдаж байгаа координатын системийг зураг болгон хадгалах."
-
-msgid "Print..."
-msgstr "Хэвлэхдээ.."
-
-msgid "Print shown coordinate system."
-msgstr "Харагдаж байгаа координатын системийг хэвлэ."
-
-msgid "Exit"
-msgstr "Гарах"
-
-msgid "Quit the program."
-msgstr "Программыг хаах"
-
-msgid "Undo"
-msgstr "Хийснээ болих"
-
-msgid "Undo the last action."
-msgstr "Сүүлчийн үйлдлийг хүчингүй болгох"
-
-msgid "Redo"
-msgstr "Давтан хийх"
-
-msgid "Redo the last action undone."
-msgstr "Сүүлчийн үйлдлийг давтах"
-
-msgid "Cut"
-msgstr "Таслах"
-
-msgid "Cuts the selected function or point series to the clipboard."
-msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
-
-msgid "Copy"
-msgstr "Хувилах"
-
-msgid "Copies the selected function or point series to the clipboard."
-msgstr "Сонгогдсон функц болон цэгэн цувааг clipboard-руу хувилах."
-
-msgid "Paste"
-msgstr "Тавих"
-
-#, fuzzy
-msgid ""
-"Pastes a function or point series from the clipboard into the coordinate "
-"system."
-msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
-
-msgid "Copy image"
-msgstr "Зураг болгон хувилах"
-
-msgid "Copies the shown coordinate system to the clipboard."
-msgstr ""
-"Харагдаж байгаа координатын системийг зураг болгон  clipboard руу хувилах"
-
-msgid "Axes..."
-msgstr "Тэнхлэгүүд..."
-
-msgid "Edit axes settings."
-msgstr "Тэнхлэгийн тохиргоо засварлах."
-
-msgid "Options..."
-msgstr "Тохиргоонууд..."
-
-msgid "Edit various options for the interface and program features."
-msgstr ""
-
-msgid "Insert function..."
-msgstr "Функ оруул..."
-
-msgid "Insert a new function."
-msgstr "Шинэ функц оруул."
-
-msgid "Insert tangent/normal..."
-msgstr "Шүргэгч/ нормал оруулах."
-
-#, fuzzy
-msgid "Insert a tangent or normal for the selected function."
-msgstr "Сонгогдсон функцэд шинэ тангент оруул"
-
-msgid "Insert shade..."
-msgstr "Сүүдэр оруулах..."
-
-#, fuzzy
-msgid "Add shading to the selected function."
-msgstr "Функцэд сүүдэр нэмэх"
-
-msgid "Insert point series..."
-msgstr "Цэгэн цуваа оруулах..."
-
-#, fuzzy
-msgid "Insert a point series."
-msgstr "Цэгэн цуваа оруулах..."
-
-#, fuzzy
-msgid "Insert trendline..."
-msgstr "Тэнцэтгэл оруулах..."
-
-#, fuzzy
-msgid "Insert a curve of best fit for the selected point series."
-msgstr "Сонгогдсон функцэд шинэ тангент оруул"
-
-msgid "Edit..."
-msgstr "Завсарлах..."
-
-#, fuzzy
-msgid "Edit the selected element: Function, tangent, point series, etc."
-msgstr "Сонгогдсон функц, шүргэгч эсвэл цэгэн цувааг өөрчлах."
-
-msgid "Delete"
-msgstr "Устга"
-
-msgid "Delete the selected function, tangent or point series."
-msgstr "Сонгогдсон функц, шүргэгч, цэгэн цувааг /тахир  шугам/ арилгах"
-
-msgid "Insert f'(x)..."
-msgstr " f'(x) уламжлал оруулах..."
-
-msgid "Insert the first derivative of the selected function."
-msgstr "Сонгогдсон функцын нэгдүгээр эрэмбийн уламжлал оруулах"
-
-msgid "In"
-msgstr "Дотогш"
-
-msgid "Zoom in."
-msgstr "Дотогш агшаа"
-
-msgid "Out"
-msgstr "Гадагш"
-
-msgid "Zoom out."
-msgstr "Гадагш томсго."
-
-msgid "Window"
-msgstr "Цонх"
-
-msgid "Zoom to user selected window."
-msgstr "Хэрэглэгчийн сонгосон цонхыг томгох, агшаах"
-
-msgid "Square"
-msgstr "Квадрат"
-
-#, fuzzy
-msgid ""
-"Zoom to scale the axes equally. This will show a plotted circle in its "
-"correct relation instead of an ellipse."
-msgstr ""
-"Тэнхлэгүүдийн массштабыг ижил хэмжээтэй болгох. Жишээ нь тойрог эллипс шиг "
-"харагдаж байвал түүнийг тойрог болгох."
-
-msgid "Standard"
-msgstr "Стандарт"
-
-msgid "Zoom to standard coordinates."
-msgstr "Стандарт "
-
-msgid "Move"
-msgstr "Зөө"
-
-msgid "Move up"
-msgstr "Дээш зөөх"
-
-#, fuzzy
-msgid "Move the window up along the coordinate system."
-msgstr "Координатын системийн цонхыг дээш зөөх"
-
-msgid "Move down"
-msgstr "Доош зөөх"
-
-#, fuzzy
-msgid "Move the window down along the coordinate system."
-msgstr "Координатын системийн цонхыг доош зөөх"
-
-msgid "Move left"
-msgstr "Зүүн тийш зөөх"
-
-#, fuzzy
-msgid "Move the window to the left along the coordinate system."
-msgstr "Координатын системийн цонхыг зүүн тийш зөөх"
-
-msgid "Move right"
-msgstr "Баруун тийш зөөх"
-
-#, fuzzy
-msgid "Move the window to the right along the coordinate system."
-msgstr "Координатын системийн цонхыг баруун тийш зөөх"
-
-msgid "Move system"
-msgstr "Системийг зөөх"
-
-msgid "Move the coordinate system with the mouse."
-msgstr "Координатын системийг хулганы тусламжтайгаар зөөх"
-
-#, fuzzy
-msgid "Length of path"
-msgstr "Зайн урт..."
-
-#, fuzzy
-msgid "Calculates the length of path between two given points on the curve."
-msgstr "Функцын хоёр цэгийн хоорондох зайг тохируулах."
-
-#, fuzzy
-msgid "Calculates the area under the path of the selected function."
-msgstr "Сонгогдсон функцын нэгдүгээр эрэмбийн уламжлал оруулах"
-
-#, fuzzy
-msgid "Evaluate"
-msgstr "Утга..."
-
-msgid "Evaluate or trace the selected function."
-msgstr ""
-"Сонгогдсон функцын утга эсвэл уламжлалын утга зэргийг тухайн өгсөн цэг дээр "
-"бодох"
-
-msgid "Table..."
-msgstr "Хүснэгт..."
-
-#, fuzzy
-msgid "Shows an evaluation table."
-msgstr "Утгын хүснэгтийг харуулна."
-
-msgid "Contents and index"
-msgstr "Агуулга ба жагсаалт"
-
-msgid "Open help file."
-msgstr "Зөвлөмжийг файл нээх"
-
-msgid "List of functions"
-msgstr "Функцуудын жагсаалт"
-
-#, fuzzy
-msgid "Shows a list of built-in functions that can be used for graphing."
-msgstr "Графикд ашигласан функцуудын жагсаалтыг үзүүл"
-
-msgid "Go to home page"
-msgstr "Нүүр хуудас руу оч"
-
-msgid "Opens the default browser and shows the home page of the program."
-msgstr "Гол браузер программыг нээж энэ программын нүүр хуудсыг үзүүлнэ. "
-
-msgid "Check for update"
-msgstr "Нэмэлтийг шалга."
-
-msgid "Contact the home page to see if a newer version is available."
-msgstr "Нүүр хуудсанд холбогдож шинэ хувилбар боломжтой эсэхийг шалга."
-
-msgid "About Graph..."
-msgstr "График программын тухай..."
-
-msgid "Show copyright information."
-msgstr "Бүтээлийн тухай мэдээллийг үз."
-
-msgid "Separator"
-msgstr ""
-
-msgid "Fit"
-msgstr "Дүүргэ"
-
-msgid "Zoom to show the selected function."
-msgstr "Сонгогдсон функцын массштаб."
-
-msgid "All points"
-msgstr "Бүх цэгүүд"
-
-msgid "Zoom as much as all points are visible."
-msgstr ""
-
-msgid "Frequently Asked Questions"
-msgstr "Программын талаарх нийтлэг асуултууд"
-
-#, fuzzy
-msgid "Shows a list of frequently asked questions and their answers."
-msgstr "Программын талаарх хэрэглэгчдээс ирсэн асуултууд, тэдгээрийн хариулт"
-
-#, fuzzy
-msgid "Insert label..."
-msgstr "Сүүдэр оруулах..."
-
-msgid ""
-"Insert a text label (select and click in the main window where you want the "
-"label)."
-msgstr ""
-
-msgid "Donate"
-msgstr "Хандив"
-
-#, fuzzy
-msgid "Donate money to the project."
-msgstr "Төсөлд хандив өргөх"
-
-msgid "Tip of the day"
-msgstr "Өдрийн шинж"
-
-msgid "Show tip of the day"
-msgstr "Өдрийн шинжийг үзүүл"
-
-#, fuzzy
-msgid "Support"
-msgstr "Импорт"
-
-#, fuzzy
-msgid "Open browser with the support page for the program."
-msgstr "Гол браузер программыг нээж энэ программын нүүр хуудсыг үзүүлнэ. "
-
-msgid "Zoom x-axis in"
-msgstr "х-тэнхлэгийг багасга"
-
-#, fuzzy
-msgid "Zoom in on the x-axis only."
-msgstr "х-тэнхлэгийг багасга"
-
-msgid "Zoom x-axis out"
-msgstr "х-тэнхлэгийг томсго"
-
-#, fuzzy
-msgid "Zoom out on the x-axis only."
-msgstr "х-тэнхлэгийг багасга"
-
-msgid "Zoom y-axis in"
-msgstr "у-тэнхлэгийг багасга"
-
-#, fuzzy
-msgid "Zoom in on the y-axis only."
-msgstr "у-тэнхлэгийг багасга"
-
-msgid "Zoom y-axis out"
-msgstr "у- тэнхлэгийг томсго"
-
-#, fuzzy
-msgid "Zoom out on the y-axis only."
-msgstr "у-тэнхлэгийг багасга"
-
-msgid "Insert relation..."
-msgstr "Тэнцэтгэл оруулах..."
-
-msgid "Insert a new equation or inequality."
-msgstr "Шинэ илэрхийлэл, тэнцэтгэл биш оруулах"
-
-msgid "Custom functions..."
-msgstr "Өөрийн функц..."
-
-msgid "Create custom functions and constants for use in graphs."
-msgstr "Графикд байнга ашиглагдах өөрийн функц оруулах"
-
-msgid "Animate..."
-msgstr ""
-
-msgid "Create an animation by variating a constant."
-msgstr ""
-
-msgid "Graph file..."
-msgstr "График файл..."
-
-#, fuzzy
-msgid "Import a Graph file into the current coordinate system."
-msgstr "Тухайн координатын системд график импортло"
-
-msgid "Point series..."
-msgstr "Цэгэн цуваа..."
-
-msgid "Import point series from a data file."
-msgstr "Өгөгдөлийн файлаас цэгэн цуваа импортло"
-
-msgid "Select color"
-msgstr "Өнгө сонго"
-
-msgid "Reset to default"
-msgstr ""
-
-msgid "Reset the tool bar icons to the installation default."
-msgstr ""
-
-msgid "Customize toolbar..."
-msgstr "Хэрэглүүрийг өөриймсөглөх..."
-
-msgid "Customize the icons shown on the toolbar."
-msgstr "Хэрэглүүр дээрх зургийг өөриймсөглөх."
-
+msgid "Custom..."
+msgstr "Өөриймсөг"
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
+#. Shown in rotation dialog
 #, fuzzy
 msgid "Rotation"
 msgstr "Харьцаа:"
 
-msgid "Edit label..."
-msgstr "Нэршил засварлах..."
+#. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Export("Export to file...")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Export("Export to file...")..Caption
+msgid "Export to file..."
+msgstr "Файл экпортлохдоо..."
 
-msgid "Edit the label under the cursor."
-msgstr "Курсорын доорх нэршил засварлах"
-
-msgid "Delete label"
-msgstr "Нэршил арилгах"
-
-msgid "Delete the label under the cursor."
-msgstr "Курсорын доорх нэршил арилгах"
-
-msgid "Show legend"
-msgstr "Нэршилын самбар үзүүлэх"
-
-msgid "Select to show a legend in the coordinate system."
-msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
-
+#. Form1..PopupMenu1..Tree_Export("Export to file...")..Hint
 #, fuzzy
-msgid "Font"
-msgstr "Фонтууд"
+msgid "Export the selected point series to a file."
+msgstr "Өгөгдөлийн файлаас цэгэн цуваа импортло"
 
+#. Form1..ActionManager..NewAction("New")..Caption
+msgid "New"
+msgstr "Шинэ"
+
+#. Form1..ActionManager..NewAction("New")..Hint
+msgid "Creates a new coordinate system."
+msgstr "Шинэ координатын систем үүсгэ"
+
+#. Form1..ActionManager..OpenAction("Open...")..Caption
+#. Form20("Animation")..PopupMenu1..Open1("Open...")..Caption
+msgid "Open..."
+msgstr "Нээх"
+
+#. Form1..ActionManager..OpenAction("Open...")..Hint
+msgid "Read coordinate system and functions from a file."
+msgstr "Координатын систем болон функцыг файлаас унш."
+
+#. Form1..ActionManager..SaveAction("Save")..Caption
+msgid "Save"
+msgstr "Хадгалах"
+
+#. Form1..ActionManager..SaveAction("Save")..Hint
+msgid "Write coordinate system and functions to a file."
+msgstr "Координатын систем болон функцыг файлд бич."
+
+#. Form1..ActionManager..SaveAsAction("Save as...")..Caption
+#. Form20("Animation")..PopupMenu1..Save1("Save as...")..Caption
+msgid "Save as..."
+msgstr "Хадгалахдаа..."
+
+#. Form1..ActionManager..SaveAsAction("Save as...")..Hint
+msgid "Saves the coordinate system as a new name."
+msgstr "Координатын системийг шинэ нэртэй болгон хадгал"
+
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Caption
+msgid "Save copy as..."
+msgstr "Хадгалахдаа хувилан..."
+
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Hint
 #, fuzzy
-msgid "Change the font of the legend."
-msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
-
-msgid "Top Right"
-msgstr "Баруун дээд"
-
-msgid "Show the legend in the upper right corner."
-msgstr ""
-
-msgid "Bottom Right"
-msgstr "Зүүн доод"
-
-#, fuzzy
-msgid "Show the legend in the bottom right corner."
-msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
-
-msgid "Top Left"
-msgstr "Зүүн дээд"
-
-msgid "Show the legend in the upper left corner."
-msgstr ""
-
-msgid "Bottom Left"
-msgstr "Зүүн доод"
-
-msgid "Show the legend in the bottom left corner."
-msgstr ""
-
-msgid "Close"
-msgstr "Хаах"
-
-msgid "Next tip"
-msgstr "Дараахь"
-
-msgid "Previous tip"
-msgstr "Өмнөх"
-
-msgid "Show tips at startup"
-msgstr "Эхлэнгүүт хувилбарыг үзүүлж бай."
-
-msgid "Did you know..."
-msgstr "Чи мэдэх үү..."
-
-msgid "Insert relation"
-msgstr "Тэнцэнтгэл биш оруулах"
-
-msgid "Relation:"
-msgstr "Харьцаа:"
-
-msgid "Constraints:"
-msgstr "Тэнцэтгэл биш:"
-
-msgid "OK"
-msgstr "Ok"
-
-msgid "Cancel"
-msgstr "Болих"
-
-msgid "Legend text"
-msgstr ""
-
-msgid "Description:"
-msgstr "Бичлэг:"
-
-#, fuzzy
-msgid ""
-"Write a descriptive text to show in the legend. If empty the equation will "
-"be used."
-msgstr ""
-"Хэрэв координатын систем болон график дээр нэмэлт бичлэг, тэмдэглэгээ "
-"хийхээр бол энд бичнэ. "
-
-msgid "Properties"
-msgstr "Шинж чанар"
-
-msgid "Style:"
-msgstr "Хэлбэр:"
-
-msgid "Color:"
-msgstr "Өнгө:"
-
-msgid "Width:"
-msgstr "Өргөн:"
-
-msgid ""
-"Select the style used for drawing the inequality. Not used for equations."
-msgstr ""
-
-msgid ""
-"Width in pixels of the equation line or the borderline of the inequality."
-msgstr ""
-
-msgid "Select the color for drawing the relation."
-msgstr ""
-
-msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
-msgstr ""
-"Тэнцэтгэл бишийг дараах байдлаар оруул. Жишээ нь: x^2+y^2 = 25 эсвэл \"y < "
-"sin(x). "
-
-msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
-msgstr "Харьцаа, тэнцэтгэл биш оруулах. Жишээ нь x > 0 ба < 5"
-
-#, fuzzy
-msgid "Insert tangent/normal"
-msgstr "Шүргэгч/ нормал оруулах."
-
-msgid "Coordinate where the tangent/normal will cross the function."
-msgstr ""
-
-msgid "Choose if you want a tangent or a normal."
-msgstr ""
-
-#, fuzzy
-msgid "Type"
-msgstr "Төрөл:"
-
-msgid "Tangent"
-msgstr "Шүргэгч"
-
-msgid "Normal"
-msgstr "Нормаль шулуун"
-
-msgid "Graph properties"
-msgstr "Графикын шинж чанар"
-
-msgid "Line style:"
-msgstr "Шугамын хэлбэр:"
-
-msgid "Width of graph in pixels."
-msgstr ""
-
-msgid "Choose which line style to use for drawing the graph."
-msgstr ""
-
-msgid "Select the color of the graph."
-msgstr ""
-
-msgid "Argument range"
-msgstr "Аргументын хэмжээ"
-
-msgid "Start of range interval for the used variable."
-msgstr ""
-
-msgid "End of range interval for the used variable."
-msgstr ""
-
-#, fuzzy
-msgid "Endpoints"
-msgstr "Бүх цэгүүд"
-
-msgid "Start:"
-msgstr "Эхлэх:"
-
-msgid "End:"
-msgstr "Төгсөх:"
-
-msgid ""
-"Select marker to show at the start of the interval. Only used if an argument "
-"range is specified."
-msgstr ""
-
-msgid ""
-"Select marker to show at the end of the interval. Only used if an argument "
-"range is specified."
-msgstr ""
-
-#, fuzzy
-msgid "Insert trendline"
-msgstr "Тэнцэнтгэл биш оруулах"
-
-msgid "Line"
-msgstr "Шулуун"
-
-#, fuzzy
-msgid "Built-in"
-msgstr "Бүтээсэн"
-
-msgid "Create a linear function: f(x)=ax+b"
-msgstr "Шугаман функц үүсгэх:  f(x)=ax+b"
-
-msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
-msgstr "Логарифм  функц үүсгэх: f(x)=a*ln(x)+b"
-
-msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
-msgstr "Полиномиал функц үүсгэх: f(x)=ax^3+bx^2+cx+d"
-
-msgid "Create a power function: f(x)=ax^b"
-msgstr "Илтгэгч функц үүсгэх: f(x)=ax^b"
-
-msgid "Create a exponential function: f(x)=a*b^x"
-msgstr "Ехпонциал функц үүсгэх: f(x)=a*b^x"
-
-msgid "The order of the polynomium. For example 2 means a parable."
-msgstr "Полиномиал жагсаалт. "
-
-msgid "Order:"
-msgstr ""
-
-msgid "Polynomial"
-msgstr "Полиномиал"
-
-msgid "Logarithmic"
-msgstr "Логарифм "
-
-msgid "Linear"
-msgstr "Шугаман"
-
-msgid "Power"
-msgstr "Илтгэгч"
-
-msgid "Exponential"
-msgstr "Ехфонциал"
-
-msgid "Create a moving average as a series of straight lines."
-msgstr ""
-
-msgid "Moving average"
-msgstr ""
-
-msgid "Period:"
-msgstr "Үе:"
-
-msgid "Determines how many points are used for the average."
-msgstr ""
-
-msgid "User defined"
-msgstr ""
-
-msgid "Model:"
-msgstr "Загвар:"
-
-msgid "Add model"
-msgstr ""
-
-msgid "Remove model"
-msgstr ""
-
-#, fuzzy
-msgid "Edit model"
-msgstr "Тэнхлэг засварлах"
-
-msgid "Enter a function model to base the trendline on."
-msgstr ""
-
-msgid ""
-"Type a value in the Intercept box to specify the point where you want the "
-"trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendlines."
-msgstr ""
-
-#, fuzzy
-msgid "Intercept ="
-msgstr "Интернэт"
-
-#, fuzzy
-msgid "Insert point series"
-msgstr "Цэгэн цуваа оруулах..."
-
-#, fuzzy
-msgid ""
-"The name of the point series, which is shown in the list to the left of the "
-"coordinate system."
-msgstr "Координатын системийн цонхыг зүүн тийш зөөх"
-
-#, fuzzy
-msgid "Series"
-msgstr "Шинж чанар"
-
-msgid "This shows a sample of the markers and the lines between the markers."
-msgstr ""
-
-msgid "Sample"
-msgstr "Жишээ"
-
-msgid "Markers"
-msgstr ""
-
-msgid "Marker"
-msgstr ""
-
-msgid "Size:"
-msgstr "Хэмжээ:"
-
-msgid "Choose the size of the markers."
-msgstr ""
-
-msgid "Choose the type of markers to be shown at each point."
-msgstr ""
-
-msgid "Choose the color of the markers."
-msgstr ""
-
-#, fuzzy
-msgid "Interpolation:"
-msgstr "Харьцаа:"
-
-msgid ""
-"Choose the style of lines to be drawn between the points. You may also "
-"choose not to draw any lines."
-msgstr ""
-
-msgid "Choose the width of the lines in pixels."
-msgstr ""
-
-msgid "Select which kind of line to draw between the markers."
-msgstr ""
-
-msgid "Cubic splines"
-msgstr ""
-
-msgid "Half cosine"
-msgstr ""
-
-msgid "Choose the color of the lines."
-msgstr ""
-
-#, fuzzy
-msgid "Labels"
-msgstr "Бичлэг:"
-
-msgid "Position:"
-msgstr "Байрлал:"
-
-#, fuzzy
-msgid "Check to show the coordinate at each point."
-msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
-
-#, fuzzy
-msgid "Show coordinates"
+msgid "Saves a copy of the current coordinate system."
+msgstr "Энэ координатын системийг хувилан хадгал"
+
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Caption
+msgid "Save as image..."
+msgstr "Зураг болгон хадгалахдаа..."
+
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Hint
+msgid "Saves the shown coordinate system as an image."
+msgstr "Харагдаж байгаа координатын системийг зураг болгон хадгалах."
+
+#. Form1..ActionManager..PrintAction("Print...")..Caption
+msgid "Print..."
+msgstr "Хэвлэхдээ.."
+
+#. Form1..ActionManager..PrintAction("Print...")..Hint
+msgid "Print shown coordinate system."
 msgstr "Харагдаж байгаа координатын системийг хэвлэ."
 
-#, fuzzy
-msgid "Select the font for the coordinates."
-msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+#. Form1..ActionManager..ExitAction("Exit")..Caption
+msgid "Exit"
+msgstr "Гарах"
 
-#, fuzzy
-msgid "Select where the coordinates should be shown."
-msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+#. Form1..ActionManager..ExitAction("Exit")..Hint
+msgid "Quit the program."
+msgstr "Программыг хаах"
 
-#, fuzzy
-msgid "Below"
-msgstr "Шар"
+#. Form1..ActionManager..UndoAction("Undo")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Caption
+msgid "Undo"
+msgstr "Хийснээ болих"
 
-#, fuzzy
-msgid "Above"
-msgstr "Зөө"
+#. Form1..ActionManager..UndoAction("Undo")..Hint
+msgid "Undo the last action."
+msgstr "Сүүлчийн үйлдлийг хүчингүй болгох"
 
-msgid "Left"
-msgstr "Зүүн"
+#. Form1..ActionManager..RedoAction("Redo")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Caption
+msgid "Redo"
+msgstr "Давтан хийх"
 
-msgid "Right"
-msgstr "Баруун"
+#. Form1..ActionManager..RedoAction("Redo")..Hint
+msgid "Redo the last action undone."
+msgstr "Сүүлчийн үйлдлийг давтах"
 
-#, fuzzy
-msgid "Error bars"
-msgstr "Алдаа"
+#. Form1..ActionManager..CutAction("Cut")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Caption
+msgid "Cut"
+msgstr "Таслах"
 
-msgid "X error bars"
-msgstr ""
-
-msgid "Show horizontal error bars."
-msgstr ""
-
-msgid "Show x-bars"
-msgstr ""
-
-msgid "All error bars are the same size."
-msgstr ""
-
-#, fuzzy
-msgid "Fixed:"
-msgstr "Файл"
-
-msgid "Enter fixed value."
-msgstr ""
-
-msgid "All error bars are the same percentage of the x-coordinate."
-msgstr ""
-
-#, fuzzy
-msgid "Relative:"
-msgstr "Харьцаа:"
-
-msgid "Each error bar is given a custom value."
-msgstr ""
-
-msgid "Custom"
-msgstr "Өөриймсөг"
-
-msgid "Enter relative value in percent."
-msgstr ""
-
-msgid "Y error bars"
-msgstr ""
-
-msgid "Show vertical error bars."
-msgstr ""
-
-msgid "Show y-bars"
-msgstr ""
-
-msgid "All error bars are the same percentage of the y-coordinate."
-msgstr ""
-
-#, fuzzy
-msgid "Cut the selected text to the clipboard."
+#. Form1..ActionManager..CutAction("Cut")..Hint
+msgid "Cuts the selected function or point series to the clipboard."
 msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
 
-#, fuzzy
-msgid "Copy the selected text to the clipboard."
+#. Form1..ActionManager..CopyAction("Copy")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Caption
+msgid "Copy"
+msgstr "Хувилах"
+
+#. Form1..ActionManager..CopyAction("Copy")..Hint
+msgid "Copies the selected function or point series to the clipboard."
 msgstr "Сонгогдсон функц болон цэгэн цувааг clipboard-руу хувилах."
 
-msgid ""
-"Paste text from the clipboard into the grid. Other cells may be overwritten "
-"by the text from the clipboard."
-msgstr ""
-
-msgid "Erase selected cells."
-msgstr ""
-
-#, fuzzy
-msgid "Insert row"
-msgstr "Оруулга"
-
-msgid "Inserts a row in the grid moving rows below one down."
-msgstr ""
-
-#, fuzzy
-msgid "Remove row"
-msgstr "Доош зөөх"
-
-#, fuzzy
-msgid "Removes the selected rows."
-msgstr "Сонгогдсон функцын массштаб."
-
-#, fuzzy
-msgid "Select all"
-msgstr "Өнгө сонго"
-
-#, fuzzy
-msgid "Select all cells."
-msgstr "Өнгө сонго"
-
-#, fuzzy
-msgid "Import from file..."
-msgstr "Файл экпортлохдоо..."
-
-msgid "Import data from a file and place it at the selected cell."
-msgstr ""
-
-#, fuzzy
-msgid "Export selected data to a file."
-msgstr "Файл экпортлохдоо..."
-
-#, fuzzy
-msgid "Calculate table"
-msgstr "Тооцоолох муж"
-
-msgid ""
-"The step value. This is the distance between the x-values in the interval."
-msgstr ""
-
-msgid "The first x-value in the interval."
-msgstr ""
-
-msgid "The last x-value in the interval."
-msgstr ""
-
-#, fuzzy
-msgid "Show %s"
-msgstr "Хэрэглүүрийн төрөл үзүүл"
-
-#, fuzzy
-msgid "Copy selected cells to the clipboard."
-msgstr "Сонгогдсон функц болон цэгэн цувааг clipboard-руу хувилах."
-
-msgid "Saves the selected data to a file."
-msgstr ""
-
-#, fuzzy
-msgid "Calculating"
-msgstr "Тооцоолох муж"
-
-msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
-msgstr ""
-
-#, fuzzy
-msgid "Insert shade"
-msgstr "Сүүдэр оруулах..."
-
-#, fuzzy
-msgid "Shading"
-msgstr "Сүүдэр"
-
-msgid "Shades the area between the function and the x-axis."
-msgstr ""
-
-msgid "Shades the area below the function."
-msgstr ""
-
-msgid "Shades the area above the function."
-msgstr ""
-
-msgid "Shades the area between the function and the y-axis."
-msgstr ""
-
-msgid "Shades the area inside the function."
-msgstr ""
-
-msgid ""
-"Shades the area between the main function and the function selected in the "
-"list to the right."
-msgstr ""
-
-#, fuzzy
-msgid "Above function"
-msgstr "Функцыг засварлах"
-
-msgid "Between function and x-axis"
-msgstr ""
-
-#, fuzzy
-msgid "Between functions"
-msgstr "Функцыг засварлах"
-
-msgid "Between function and y-axis"
-msgstr ""
-
-#, fuzzy
-msgid "Inside function"
-msgstr "Функ оруул..."
-
-#, fuzzy
-msgid "Below function"
-msgstr "Функцыг засварлах"
-
-#, fuzzy
-msgid "Options"
-msgstr "Тохиргоонууд..."
-
-#, fuzzy
-msgid "Range"
-msgstr "Шүргэгч"
-
-msgid "Coordinate where the shading starts."
-msgstr ""
-
-msgid "Coordinate where the shading ends."
-msgstr ""
-
-msgid "Check to increase the end coordinate until intersection."
-msgstr ""
-
-#, fuzzy
-msgid "Increase to intersection"
-msgstr "Тэнцэнтгэл биш оруулах"
-
-msgid "Check to decrease the start coordinate until intersection."
-msgstr ""
-
-msgid "Decrease to intersection"
-msgstr ""
-
-#, fuzzy
-msgid "Select the style used for the shading."
-msgstr "Курсорын доорх нэршил арилгах"
-
-msgid "Mark the end of the shading with a line."
-msgstr ""
-
-msgid "Mark end of range"
-msgstr ""
-
-msgid "Select color used for shading."
-msgstr ""
-
-msgid "Mark the start of the shading with a line."
-msgstr ""
-
-msgid "Mark start of range"
-msgstr ""
-
-#, fuzzy
-msgid "Enter a description to show in the legend."
-msgstr ""
-"Хэрэв координатын систем болон график дээр нэмэлт бичлэг, тэмдэглэгээ "
-"хийхээр бол энд бичнэ. "
-
-#, fuzzy
-msgid "2nd function"
-msgstr "Функцыг засварлах"
-
-#, fuzzy
-msgid "2nd function:"
-msgstr "Функцыг засварлах"
-
-msgid ""
-"Select the second function when you want a shading between two functions."
-msgstr ""
-
-#, fuzzy
-msgid "Shading range for 2nd function"
-msgstr "Функцэд сүүдэр нэмэх"
-
-#, fuzzy
-msgid "Custom functions/constants"
-msgstr "Өөрийн функц..."
-
-msgid "Apply"
-msgstr ""
-
-#, fuzzy
-msgid "Names"
-msgstr "Нэр:"
-
-#, fuzzy
-msgid "Definition"
-msgstr "Бичлэг:"
-
-#, fuzzy
-msgid "Cut the selected text to the clipboard"
-msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
-
-#, fuzzy
-msgid "Image options"
-msgstr "Тохиргооны засвар."
-
-#, fuzzy
-msgid "Size"
-msgstr "Хэмжээ:"
-
-msgid "Image width:"
-msgstr ""
-
-msgid "Image height:"
-msgstr ""
-
-msgid "Set a custom image width."
-msgstr ""
-
-msgid "Set a custom image height."
-msgstr ""
-
-msgid ""
-"Choose to use the same size as shown on the screen or a custom image size."
-msgstr ""
-
-#, fuzzy
-msgid "Image size"
-msgstr "Техтийн хэмжээ"
-
-#, fuzzy
-msgid "Screen size"
-msgstr "Техтийн хэмжээ"
-
-#, fuzzy
-msgid "Custom size"
-msgstr "Өөриймсөг"
-
-msgid ""
-"Progressive encoding allows viewers to see a rough copy of the image while "
-"it is downloaded."
-msgstr ""
-
-msgid "Encoding"
-msgstr ""
-
-msgid "Progressive"
-msgstr ""
-
-msgid "Select a compression quality."
-msgstr ""
-
-msgid "Quality"
-msgstr ""
-
-#, fuzzy
-msgid "Paper size:"
-msgstr "Техтийн хэмжээ"
-
-msgid "Choose paper orientation."
-msgstr ""
-
-#, fuzzy
-msgid "Orientation"
-msgstr "Харьцаа:"
-
-#, fuzzy
-msgid "Portrait"
-msgstr "Хэвлэ"
-
-msgid "Landscape"
-msgstr ""
-
-msgid "Choose paper size to use."
-msgstr ""
-
-msgid "Select this to use these settings as defaults in the future."
-msgstr ""
-
-msgid "Save as default"
-msgstr ""
-
-#, fuzzy
-msgid "Animate"
-msgstr "Хандив"
-
-#, fuzzy
-msgid "Constant:"
-msgstr "Тэнцэтгэл биш:"
-
-msgid "Choose a constant to change between each frame."
-msgstr ""
-
-#, fuzzy
-msgid "Step:"
-msgstr "Алхамууд:"
-
-msgid "The first value of the constant"
-msgstr ""
-
-msgid "The last value of the constant."
-msgstr ""
-
-msgid "The chosen constant is changed by this value between each frame."
-msgstr ""
-
-#, fuzzy
-msgid "Image information"
-msgstr "Тохиргооны засвар."
-
-msgid "Frames/second:"
-msgstr ""
-
-msgid "Number of frames per second used when the animation is played."
-msgstr ""
-
-msgid "Working"
-msgstr ""
-
-msgid "About Graph"
-msgstr "Графикын тухай:"
-
-msgid "<Language> translation by <Translator>"
-msgstr "Орчуулсан Даваагийн Батнасан    "
-
-msgid "Version "
-msgstr "Хувилбар:"
-
-msgid "Email:"
-msgstr "Э-хаяг:"
-
-msgid "Build"
-msgstr "Бүтээсэн"
-
-msgid ""
-"This is free software, and you are welcome to redistribute it under the "
-"terms in the GNU General Public License. Please send bug reports and "
-"suggestions to the programmer."
-msgstr "Энэ бол чөлөөт программ бөгөөд та оролдохыг хүсвэл наашаа..."
-
-#, fuzzy
-msgid "The newest version as well as the source code are available at:"
-msgstr "Шинэ хувилбар, бичлэгийн код нь энд байх магадлалтай..."
-
-msgid "Animation"
-msgstr ""
-
-#, fuzzy
-msgid "Play"
-msgstr "Туйлын"
-
-#, fuzzy
-msgid "Pause"
+#. Form1..ActionManager..PasteAction("Paste")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Caption
+msgid "Paste"
 msgstr "Тавих"
 
+#. Form1..ActionManager..PasteAction("Paste")....Hint
 #, fuzzy
-msgid "Stop"
-msgstr "Алхамууд:"
+msgid "Pastes a function or point series from the clipboard into the coordinate system."
+msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
 
-#, fuzzy
-msgid "Back"
-msgstr "Хар"
+#. Form1..ActionManager..CopyImageAction("Copy image")..Caption
+msgid "Copy image"
+msgstr "Зураг болгон хувилах"
 
-#, fuzzy
-msgid "Step"
-msgstr "Алхамууд:"
+#. Form1..ActionManager..CopyImageAction("Copy image")..Hint
+msgid "Copies the shown coordinate system to the clipboard."
+msgstr "Харагдаж байгаа координатын системийг зураг болгон  clipboard руу хувилах"
 
-msgid "Speed"
+#. Form1..ActionManager..AxesAction("Axes...")..Caption
+msgid "Axes..."
+msgstr "Тэнхлэгүүд..."
+
+#. Form1..ActionManager..AxesAction("Axes...")..Hint
+msgid "Edit axes settings."
+msgstr "Тэнхлэгийн тохиргоо засварлах."
+
+#. Form1..ActionManager..OptionsAction("Options...")..Caption
+#. Form1..SaveDialogEx1..HelpCaption
+#. Form19("Animate")..Button4("Options...")..Caption
+#. Button in Save as image dialog
+msgid "Options..."
+msgstr "Тохиргоонууд..."
+
+#. Form1..ActionManager..OptionsAction("Options...")..Hint
+msgid "Edit various options for the interface and program features."
 msgstr ""
 
-msgid "Change the speed used to play the animation."
-msgstr ""
-
-#, fuzzy
-msgid "Repeat"
-msgstr "Бодит"
-
-msgid "Repeat playing the animation until manually stopped."
-msgstr ""
-
-msgid "Auto reverse"
-msgstr ""
-
-msgid ""
-"Play backwards when the end of the animation is reached. This is most useful "
-"in combination with the \"Repeat\" command."
-msgstr ""
-
-msgid "Open an animation file."
-msgstr ""
-
-msgid "Save the animation to a file."
-msgstr ""
-
-msgid "Edit axes"
-msgstr "Тэнхлэг засварлах"
-
-msgid "Minimum:"
-msgstr "Хамгийн бага утга:"
-
-msgid "Maximum:"
-msgstr "Хамгийн их утга:"
-
-msgid "Tick unit:"
-msgstr ""
-
-msgid "The x-axis cross at y="
-msgstr ""
-
-msgid "Grid unit:"
-msgstr ""
-
-msgid "Minimum x-value."
-msgstr ""
-
-msgid "Maximum x-value."
-msgstr ""
-
-msgid "Units between ticks on the x-axis."
-msgstr ""
-
-msgid "Use logarithmic scale on the x-axis."
-msgstr ""
-
-#, fuzzy
-msgid "Logarithmic scale"
-msgstr "Логарифм "
-
-#, fuzzy
-msgid "Show the label at the right side of the main window, above the x-axis."
-msgstr "Координатын системийн цонхыг баруун тийш зөөх"
-
-msgid "Label:"
-msgstr "Бичлэг:"
-
-#, fuzzy
-msgid "Edit the label for the axis here."
-msgstr "Бичлэгийг энд засварла:"
-
-#, fuzzy
-msgid "Show units on the x-axis."
-msgstr "Өдрийн шинжийг үзүүл"
-
-msgid "Show numbers"
-msgstr ""
-
-msgid "The x-axis will intersect with the y-axis at this value."
-msgstr ""
-
-msgid "Units between the grid lines perpendicular to the x-axis."
-msgstr ""
-
-msgid "Determine the tick unit automatically."
-msgstr ""
-
-msgid "Auto tick"
-msgstr ""
-
-msgid "Set the grid unit to the same as the tick unit."
-msgstr ""
-
-msgid "Auto grid"
-msgstr ""
-
-#, fuzzy
-msgid "Show tick marks on the x-axis."
-msgstr "Өдрийн шинжийг үзүүл"
-
-#, fuzzy
-msgid "Show ticks"
-msgstr "Хэрэглүүрийн төрөл үзүүл"
-
-msgid "Show units on the selected axis as a fraction multiplied by pi."
-msgstr ""
-
-msgid "Show as a multiple of pi"
-msgstr ""
-
-msgid "Show vertical grid lines."
-msgstr ""
-
-#, fuzzy
-msgid "Show grid"
-msgstr "Нэршилын самбар үзүүлэх"
-
-msgid "The y-axis cross at x="
-msgstr ""
-
-msgid "Minimum y-value."
-msgstr ""
-
-msgid "Maximum y-value."
-msgstr ""
-
-msgid "Use logarithmic scale for the y-axis."
-msgstr ""
-
-msgid "Units between ticks on the y-axis."
-msgstr ""
-
-#, fuzzy
-msgid "Show units on the y-axis."
-msgstr "Өдрийн шинжийг үзүүл"
-
-#, fuzzy
-msgid ""
-"Show the label at the top of the main window, to the right of the y-axis."
-msgstr "Координатын системийн цонхыг баруун тийш зөөх"
-
-msgid "The y-axis will intersect with the x-axis at this value."
-msgstr ""
-
-msgid "Units between the grid lines perpendicular to the y-axis."
-msgstr ""
-
-#, fuzzy
-msgid "Show tick marks on the y-axis."
-msgstr "Өдрийн шинжийг үзүүл"
-
-msgid "Show horizontal grid lines."
-msgstr ""
-
-msgid "Settings"
-msgstr ""
-
-msgid "Title:"
-msgstr "Гарчиг:"
-
-msgid ""
-"Choose if you want to show the axes, and if you want to show them crossed or "
-"at the left and bottom of the image."
-msgstr ""
-
-#, fuzzy
-msgid "Axes style"
-msgstr "Шугамын хэлбэр:"
-
-#, fuzzy
-msgid "None"
-msgstr "Хандив"
-
-#, fuzzy
-msgid "Crossed"
-msgstr "Хаах"
-
-msgid "Boxed"
-msgstr ""
-
-msgid ""
-"Choose if trigonometric functions should calculate in radians or degrees."
-msgstr ""
-
-msgid "Trigonometry"
-msgstr "Тригонометр"
-
-msgid "Radian"
-msgstr "Радиан"
-
-msgid "Degree"
-msgstr "Өнцөг"
-
-#, fuzzy
-msgid "Enter a title to show above the coordinate system."
-msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
-
-#, fuzzy
-msgid "Select the font for the title."
-msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
-
-msgid "Choose where the legend should be placed."
-msgstr ""
-
-msgid "Legend placement"
-msgstr ""
-
-msgid ""
-"Check this to use complex numbers for calculations. Notice that this will "
-"slow graphing down."
-msgstr ""
-
-msgid "Calculate with complex numbers"
-msgstr ""
-
-msgid "Font and color"
-msgstr "Фонт ба өнгө"
-
-msgid "Colors"
-msgstr "Өнгөнүүд"
-
-msgid "Grid color:"
-msgstr "Шугамын өнгө:"
-
-msgid "Axes color:"
-msgstr "Тэнхлэгийн өнгө:"
-
-msgid "Background color:"
-msgstr "Дэвсгэр өнгө:"
-
-msgid "Select the color of the image background."
-msgstr ""
-
-msgid "Select the color of the axes."
-msgstr ""
-
-msgid "Select the color of the grid lines."
-msgstr ""
-
-msgid "Fonts"
-msgstr "Фонтууд"
-
-msgid "Number font:"
-msgstr "Фонтын хэмжээ:"
-
-msgid "Label font:"
-msgstr "Бичлэгийн фонт:"
-
-#, fuzzy
-msgid "Legend font:"
-msgstr "Бичлэгийн фонт:"
-
-msgid "Select the font used to show the labels on the axes."
-msgstr ""
-
-msgid "Select the font used to show the numbers on the axes."
-msgstr ""
-
-msgid "Select the font used to show the legend text."
-msgstr ""
-
-msgid "Decimals:"
-msgstr ""
-
-#, fuzzy
-msgid "Recent files:"
-msgstr "Файл нээх: %s"
-
-msgid "Max undo steps:"
-msgstr ""
-
-msgid "Language:"
-msgstr "Хэл:"
-
-#, fuzzy
-msgid "Font scale:"
-msgstr "Фонтын хэмжээ"
-
-msgid "Number of decimals used when results are shown."
-msgstr ""
-
-msgid "Associate *.grf files with Graph."
-msgstr ""
-
-msgid "Associate .grf files"
-msgstr ""
-
-msgid "The number of most recent used files shown in the File menu."
-msgstr ""
-
-msgid ""
-"Save window position when the program quits. This setting is used the next "
-"time the program is used.|Save window state on exit."
-msgstr ""
-
-msgid "Save workspace on exit"
-msgstr ""
-
-msgid "Format used when complex numbers are shown."
-msgstr ""
-
-msgid "Complex format"
-msgstr ""
-
-msgid "Real"
-msgstr "Бодит"
-
-msgid "Rectangular"
-msgstr "Тэгш өнцөгт"
-
-msgid "Polar"
-msgstr "Туйлын"
-
-msgid "Show the tooltip when the cursor is over an item."
-msgstr ""
-
-msgid "Show tooltip"
-msgstr "Хэрэглүүрийн төрөл үзүүл"
-
-msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
-msgstr ""
-
-#, fuzzy
-msgid ""
-"If checked the program will contact a web server when the program is started "
-"to see if a newer version is available."
-msgstr "Нүүр хуудсанд холбогдож шинэ хувилбар боломжтой эсэхийг шалга."
-
-msgid "Check for new version of Graph at startup"
-msgstr ""
-
-#, fuzzy
-msgid "Select the language to use for the user interface."
-msgstr "Курсорын доорх нэршил арилгах"
-
-msgid ""
-"This is used to scale the user interface if you are having problems reading "
-"the text."
-msgstr ""
-
-#, fuzzy
-msgid "Insert function"
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Caption
+msgid "Insert function..."
 msgstr "Функ оруул..."
 
-msgid "Function type:"
-msgstr "Функцын төрөл:"
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Hint
+msgid "Insert a new function."
+msgstr "Шинэ функц оруул."
 
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Caption
+msgid "Insert tangent/normal..."
+msgstr "Шүргэгч/ нормал оруулах."
+
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Hint
 #, fuzzy
-msgid "Select the function type to graph."
-msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
+msgid "Insert a tangent or normal for the selected function."
+msgstr "Сонгогдсон функцэд шинэ тангент оруул"
 
-msgid "Standard function   y=f(x)"
-msgstr "Стандарт функц y=f(x)"
+#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
+msgid "Insert shade..."
+msgstr "Сүүдэр оруулах..."
 
-msgid "Parametric function x(t), y(t)"
-msgstr "Параметрт функц  x(t), y(t)"
-
-msgid "Polar function         r=f(t)"
-msgstr "Туйлын функц  r=f(t)"
-
+#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
 #, fuzzy
-msgid "Function equation"
-msgstr "Функцын төрөл:"
+msgid "Add shading to the selected function."
+msgstr "Функцэд сүүдэр нэмэх"
 
-msgid "Steps:"
-msgstr "Алхамууд:"
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Caption
+msgid "Insert point series..."
+msgstr "Цэгэн цуваа оруулах..."
 
-msgid "Number of calculation steps used to draw the graph."
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Hint
+#, fuzzy
+msgid "Insert a point series."
+msgstr "Цэгэн цуваа оруулах..."
+
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Caption
+#, fuzzy
+msgid "Insert trendline..."
+msgstr "Тэнцэтгэл оруулах..."
+
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Hint
+#, fuzzy
+msgid "Insert a curve of best fit for the selected point series."
+msgstr "Сонгогдсон функцэд шинэ тангент оруул"
+
+#. Form1..ActionManager..EditAction("Edit...")..Caption
+msgid "Edit..."
+msgstr "Завсарлах..."
+
+#. Form1..ActionManager..EditAction("Edit...")..Hint
+#, fuzzy
+msgid "Edit the selected element: Function, tangent, point series, etc."
+msgstr "Сонгогдсон функц, шүргэгч эсвэл цэгэн цувааг өөрчлах."
+
+#. Form1..ActionManager..DeleteAction("Delete")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Delete("Delete")..Caption
+msgid "Delete"
+msgstr "Устга"
+
+#. Form1..ActionManager..DeleteAction("Delete")..Hint
+msgid "Delete the selected function, tangent or point series."
+msgstr "Сонгогдсон функц, шүргэгч, цэгэн цувааг /тахир  шугам/ арилгах"
+
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Caption
+msgid "Insert f'(x)..."
+msgstr " f'(x) уламжлал оруулах..."
+
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Hint
+msgid "Insert the first derivative of the selected function."
+msgstr "Сонгогдсон функцын нэгдүгээр эрэмбийн уламжлал оруулах"
+
+#. Form1..ActionManager..ZoomInAction("In")..Caption
+msgid "In"
+msgstr "Дотогш"
+
+#. Form1..ActionManager..ZoomInAction("In")..Hint
+msgid "Zoom in."
+msgstr "Дотогш агшаа"
+
+#. Form1..ActionManager..ZoomOutAction("Out")..Caption
+msgid "Out"
+msgstr "Гадагш"
+
+#. Form1..ActionManager..ZoomOutAction("Out")..Hint
+msgid "Zoom out."
+msgstr "Гадагш томсго."
+
+#. Form1..ActionManager..ZoomWindowAction("Window")..Caption
+msgid "Window"
+msgstr "Цонх"
+
+#. Form1..ActionManager..ZoomWindowAction("Window")..Hint
+msgid "Zoom to user selected window."
+msgstr "Хэрэглэгчийн сонгосон цонхыг томгох, агшаах"
+
+#. Form1..ActionManager..ZoomSquareAction("Square")..Caption
+msgid "Square"
+msgstr "Квадрат"
+
+#. Form1..ActionManager..ZoomSquareAction("Square")....Hint
+#, fuzzy
+msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
+msgstr "Тэнхлэгүүдийн массштабыг ижил хэмжээтэй болгох. Жишээ нь тойрог эллипс шиг харагдаж байвал түүнийг тойрог болгох."
+
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+msgid "Standard"
+msgstr "Стандарт"
+
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Hint
+msgid "Zoom to standard coordinates."
+msgstr "Стандарт "
+
+#. Form1..ActionManager..MoveUpAction("Move up")..Category
+#. Form1..ActionManager..MoveDownAction("Move down")..Category
+#. Form1..ActionManager..MoveLeftAction("Move left")..Category
+#. Form1..ActionManager..MoveRightAction("Move right")..Category
+#. Form1..ActionManager..MoveAction("Move system")..Category
+msgid "Move"
+msgstr "Зөө"
+
+#. Form1..ActionManager..MoveUpAction("Move up")..Caption
+msgid "Move up"
+msgstr "Дээш зөөх"
+
+#. Form1..ActionManager..MoveUpAction("Move up")..Hint
+#, fuzzy
+msgid "Move the window up along the coordinate system."
+msgstr "Координатын системийн цонхыг дээш зөөх"
+
+#. Form1..ActionManager..MoveDownAction("Move down")..Caption
+msgid "Move down"
+msgstr "Доош зөөх"
+
+#. Form1..ActionManager..MoveDownAction("Move down")..Hint
+#, fuzzy
+msgid "Move the window down along the coordinate system."
+msgstr "Координатын системийн цонхыг доош зөөх"
+
+#. Form1..ActionManager..MoveLeftAction("Move left")..Caption
+msgid "Move left"
+msgstr "Зүүн тийш зөөх"
+
+#. Form1..ActionManager..MoveLeftAction("Move left")..Hint
+#, fuzzy
+msgid "Move the window to the left along the coordinate system."
+msgstr "Координатын системийн цонхыг зүүн тийш зөөх"
+
+#. Form1..ActionManager..MoveRightAction("Move right")..Caption
+msgid "Move right"
+msgstr "Баруун тийш зөөх"
+
+#. Form1..ActionManager..MoveRightAction("Move right")..Hint
+#, fuzzy
+msgid "Move the window to the right along the coordinate system."
+msgstr "Координатын системийн цонхыг баруун тийш зөөх"
+
+#. Form1..ActionManager..MoveAction("Move system")..Caption
+msgid "Move system"
+msgstr "Системийг зөөх"
+
+#. Form1..ActionManager..MoveAction("Move system")..Hint
+msgid "Move the coordinate system with the mouse."
+msgstr "Координатын системийг хулганы тусламжтайгаар зөөх"
+
+#. Form1..ActionManager..PathAction("Length of path")..Caption
+#, fuzzy
+msgid "Length of path"
+msgstr "Зайн урт..."
+
+#. Form1..ActionManager..PathAction("Length of path")....Hint
+#, fuzzy
+msgid "Calculates the length of path between two given points on the curve."
+msgstr "Функцын хоёр цэгийн хоорондох зайг тохируулах."
+
+#. Form1..ActionManager..AreaAction("Area")..Hint
+#, fuzzy
+msgid "Calculates the area under the path of the selected function."
+msgstr "Сонгогдсон функцын нэгдүгээр эрэмбийн уламжлал оруулах"
+
+#. Form1..ActionManager..EvalAction("Evaluate")..Caption
+#. Form9("Evaluate")..Caption
+#, fuzzy
+msgid "Evaluate"
+msgstr "Утга..."
+
+#. Form1..ActionManager..EvalAction("Evaluate")..Hint
+msgid "Evaluate or trace the selected function."
+msgstr "Сонгогдсон функцын утга эсвэл уламжлалын утга зэргийг тухайн өгсөн цэг дээр бодох"
+
+#. Form1..ActionManager..TableAction("Table...")..Caption
+msgid "Table..."
+msgstr "Хүснэгт..."
+
+#. Form1..ActionManager..TableAction("Table...")..Hint
+#, fuzzy
+msgid "Shows an evaluation table."
+msgstr "Утгын хүснэгтийг харуулна."
+
+#. Form1..ActionManager..ContentsAction("Contents and index")..Caption
+msgid "Contents and index"
+msgstr "Агуулга ба жагсаалт"
+
+#. Form1..ActionManager..ContentsAction("Contents and index")..Hint
+msgid "Open help file."
+msgstr "Зөвлөмжийг файл нээх"
+
+#. Form1..ActionManager..ListAction("List of functions")..Caption
+msgid "List of functions"
+msgstr "Функцуудын жагсаалт"
+
+#. Form1..ActionManager..ListAction("List of functions")....Hint
+#, fuzzy
+msgid "Shows a list of built-in functions that can be used for graphing."
+msgstr "Графикд ашигласан функцуудын жагсаалтыг үзүүл"
+
+#. Form1..ActionManager..HomePageAction("Go to home page")..Caption
+msgid "Go to home page"
+msgstr "Нүүр хуудас руу оч"
+
+#. Form1..ActionManager..HomePageAction("Go to home page")....Hint
+msgid "Opens the default browser and shows the home page of the program."
+msgstr "Гол браузер программыг нээж энэ программын нүүр хуудсыг үзүүлнэ. "
+
+#. Form1..ActionManager..UpdateAction("Check for update")..Caption
+msgid "Check for update"
+msgstr "Нэмэлтийг шалга."
+
+#. Form1..ActionManager..UpdateAction("Check for update")..Hint
+msgid "Contact the home page to see if a newer version is available."
+msgstr "Нүүр хуудсанд холбогдож шинэ хувилбар боломжтой эсэхийг шалга."
+
+#. Form1..ActionManager..AboutAction("About Graph...")..Caption
+msgid "About Graph..."
+msgstr "График программын тухай..."
+
+#. Form1..ActionManager..AboutAction("About Graph...")..Hint
+msgid "Show copyright information."
+msgstr "Бүтээлийн тухай мэдээллийг үз."
+
+#. Form1..ActionManager..SeparatorAction("Separator")..Category
+#. Form1..ActionManager..SeparatorAction("Separator")..Caption
+msgid "Separator"
 msgstr ""
 
-msgid "Draw type:"
-msgstr "Зурах төрөл:"
+#. Form1..ActionManager..ZoomFitAction("Fit")..Caption
+msgid "Fit"
+msgstr "Дүүргэ"
 
-msgid ""
-"Choose Lines if you want the calculated points for the graph to be "
-"connected. Choose Dots if you only want to show a dot at each point."
+#. Form1..ActionManager..ZoomFitAction("Fit")..Hint
+msgid "Zoom to show the selected function."
+msgstr "Сонгогдсон функцын массштаб."
+
+#. Form1..ActionManager..ZoomAllPointsAction("All points")..Caption
+msgid "All points"
+msgstr "Бүх цэгүүд"
+
+#. Form1..ActionManager..ZoomAllPointsAction("All points")..Hint
+msgid "Zoom as much as all points are visible."
 msgstr ""
 
-msgid "Automatic"
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Caption
+msgid "Frequently Asked Questions"
+msgstr "Программын талаарх нийтлэг асуултууд"
+
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Hint
+#, fuzzy
+msgid "Shows a list of frequently asked questions and their answers."
+msgstr "Программын талаарх хэрэглэгчдээс ирсэн асуултууд, тэдгээрийн хариулт"
+
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Caption
+#, fuzzy
+msgid "Insert label..."
+msgstr "Сүүдэр оруулах..."
+
+#. Form1..ActionManager..InsertLabelAction("Insert label...")....Hint
+msgid "Insert a text label (select and click in the main window where you want the label)."
 msgstr ""
 
-msgid "Dots"
-msgstr "Цэгүүдээр"
+#. Form1..ActionManager..DonateAction("Donate")..Caption
+msgid "Donate"
+msgstr "Хандив"
 
-msgid "Lines"
-msgstr "Шулуунаар"
-
-msgid "Text label"
-msgstr "Техт "
-
-msgid "Font name:"
-msgstr "Фонтны нэр:"
-
-msgid "Font size:"
-msgstr "Фонтын хэмжээ"
-
-msgid "Font color:"
-msgstr "Фонтны өнгө:"
-
+#. Form1..ActionManager..DonateAction("Donate")..Hint
 #, fuzzy
-msgid "Text size."
-msgstr "Техтийн хэмжээ"
+msgid "Donate money to the project."
+msgstr "Төсөлд хандив өргөх"
 
+#. Form1..ActionManager..TipAction("Tip of the day")..Caption
+#. Form10("Tip of the day")..Caption
+#. Form10("Tip of the day")..Panel1..Label2("Tip of the day")..Caption
+msgid "Tip of the day"
+msgstr "Өдрийн шинж"
+
+#. Form1..ActionManager..TipAction("Tip of the day")..Hint
+msgid "Show tip of the day"
+msgstr "Өдрийн шинжийг үзүүл"
+
+#. Form1..ActionManager..SupportAction("Support")..Caption
 #, fuzzy
-msgid "Text string"
-msgstr "Техтийн хэмжээ"
+msgid "Support"
+msgstr "Импорт"
 
+#. Form1..ActionManager..SupportAction("Support")..Hint
 #, fuzzy
-msgid "Insert symbol (Ctrl+G)"
-msgstr "Тэмдэгт оруулах"
+msgid "Open browser with the support page for the program."
+msgstr "Гол браузер программыг нээж энэ программын нүүр хуудсыг үзүүлнэ. "
 
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Caption
+msgid "Zoom x-axis in"
+msgstr "х-тэнхлэгийг багасга"
+
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Hint
 #, fuzzy
-msgid "Insert object"
-msgstr "Тэнцэнтгэл биш оруулах"
+msgid "Zoom in on the x-axis only."
+msgstr "х-тэнхлэгийг багасга"
 
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Caption
+msgid "Zoom x-axis out"
+msgstr "х-тэнхлэгийг томсго"
+
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Hint
 #, fuzzy
-msgid "Bold (Ctrl+B)"
-msgstr "Тодруулах (Ctrl-B)"
+msgid "Zoom out on the x-axis only."
+msgstr "х-тэнхлэгийг багасга"
 
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Caption
+msgid "Zoom y-axis in"
+msgstr "у-тэнхлэгийг багасга"
+
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Hint
 #, fuzzy
-msgid "Italic (Ctrl+I)"
-msgstr "Налуулах (Ctrl-I)"
+msgid "Zoom in on the y-axis only."
+msgstr "у-тэнхлэгийг багасга"
 
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Caption
+msgid "Zoom y-axis out"
+msgstr "у- тэнхлэгийг томсго"
+
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Hint
 #, fuzzy
-msgid "Underline (Ctrl+U)"
-msgstr "Доогуур зурах  (Ctrl-U)"
+msgid "Zoom out on the y-axis only."
+msgstr "у-тэнхлэгийг багасга"
 
-#, fuzzy
-msgid "Strikethrough (Ctrl+S)"
-msgstr "Дундуур нь зурах  (Ctrl-S)"
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Caption
+msgid "Insert relation..."
+msgstr "Тэнцэтгэл оруулах..."
 
-msgid "Superscript (Ctrl++)"
-msgstr "Зэрэг  (Ctrl++)"
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Hint
+msgid "Insert a new equation or inequality."
+msgstr "Шинэ илэрхийлэл, тэнцэтгэл биш оруулах"
 
-msgid "Subscript (Ctrl+=)"
-msgstr "Индекс  (Ctrl+=)"
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Caption
+msgid "Custom functions..."
+msgstr "Өөрийн функц..."
 
-#, fuzzy
-msgid "Align left (Ctrl+L)"
-msgstr "Зүүн зэрэгцүүлэх (Ctrl-L)"
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Hint
+msgid "Create custom functions and constants for use in graphs."
+msgstr "Графикд байнга ашиглагдах өөрийн функц оруулах"
 
-#, fuzzy
-msgid "Center (Ctrl+E)"
-msgstr "Голлуулах  (Ctrl-E)"
-
-#, fuzzy
-msgid "Align right (Ctrl+R)"
-msgstr "Зүүн зэрэгцүүлэх (Ctrl-L)"
-
-#, fuzzy
-msgid "Text font."
-msgstr "Бичгийн фонт"
-
-#, fuzzy
-msgid "Text color."
-msgstr "Бичгийн өнгө"
-
-msgid "Select background color of the text label."
+#. Form1..ActionManager..AnimateAction("Animate...")..Caption
+msgid "Animate..."
 msgstr ""
 
-msgid "Undo last action."
-msgstr "Сүүлчийн үйлдлийг хориглох"
+#. Form1..ActionManager..AnimateAction("Animate...")..Hint
+msgid "Create an animation by variating a constant."
+msgstr ""
 
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Caption
+msgid "Graph file..."
+msgstr "График файл..."
+
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Hint
 #, fuzzy
-msgid "Redo last undone action."
-msgstr "Сүүлчийн үйлдлийг хориглох"
+msgid "Import a Graph file into the current coordinate system."
+msgstr "Тухайн координатын системд график импортло"
 
-#, fuzzy
-msgid "Paste the contents of the clipboard."
-msgstr ""
-"Харагдаж байгаа координатын системийг зураг болгон  clipboard руу хувилах"
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Caption
+msgid "Point series..."
+msgstr "Цэгэн цуваа..."
 
-msgid "Paste special..."
-msgstr ""
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Hint
+msgid "Import point series from a data file."
+msgstr "Өгөгдөлийн файлаас цэгэн цуваа импортло"
 
-msgid "Select which clipboard representation you want to paste."
-msgstr ""
-
+#. Form1..ActionManager..InsertObjectAction("Insert object...")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
 #, fuzzy
 msgid "Insert object..."
 msgstr "Сүүдэр оруулах..."
 
+#. Form1..ColorSelect("Select color")..Caption
+msgid "Select color"
+msgstr "Өнгө сонго"
+
+#. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
+msgid "Reset to default"
+msgstr ""
+
+#. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
+msgid "Reset the tool bar icons to the installation default."
+msgstr ""
+
+#. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
+msgid "Customize toolbar..."
+msgstr "Хэрэглүүрийг өөриймсөглөх..."
+
+#. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Hint
+msgid "Customize the icons shown on the toolbar."
+msgstr "Хэрэглүүр дээрх зургийг өөриймсөглөх."
+
+#. Form1..PopupMenu3..Label_Edit("Edit label...")..Caption
+msgid "Edit label..."
+msgstr "Нэршил засварлах..."
+
+#. Form1..PopupMenu3..Label_Edit("Edit label...")..Hint
+msgid "Edit the label under the cursor."
+msgstr "Курсорын доорх нэршил засварлах"
+
+#. Form1..PopupMenu3..Label_Delete("Delete label")..Caption
+msgid "Delete label"
+msgstr "Нэршил арилгах"
+
+#. Form1..PopupMenu3..Label_Delete("Delete label")..Hint
+msgid "Delete the label under the cursor."
+msgstr "Курсорын доорх нэршил арилгах"
+
+#. Form1..PopupMenu4..Legend_Show("Show legend")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Caption
+msgid "Show legend"
+msgstr "Нэршилын самбар үзүүлэх"
+
+#. Form1..PopupMenu4..Legend_Show("Show legend")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Hint
+msgid "Select to show a legend in the coordinate system."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+#. Form1..PopupMenu4..Legend_Font("Font")..Caption
+#, fuzzy
+msgid "Font"
+msgstr "Фонтууд"
+
+#. Form1..PopupMenu4..Legend_Font("Font")..Hint
+#, fuzzy
+msgid "Change the font of the legend."
+msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
+msgid "Top Right"
+msgstr "Баруун дээд"
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Hint
+msgid "Show the legend in the upper right corner."
+msgstr ""
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomRight("Bottom Right")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
+msgid "Bottom Right"
+msgstr "Зүүн доод"
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomRight("Bottom Right")..Hint
+#, fuzzy
+msgid "Show the legend in the bottom right corner."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopLeft("Top Left")..Caption
+#. Form21("Placement")..ComboBox1..Text
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
+msgid "Top Left"
+msgstr "Зүүн дээд"
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopLeft("Top Left")..Hint
+msgid "Show the legend in the upper left corner."
+msgstr ""
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomLeft("Bottom Left")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
+msgid "Bottom Left"
+msgstr "Зүүн доод"
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomLeft("Bottom Left")..Hint
+msgid "Show the legend in the bottom left corner."
+msgstr ""
+
+#. Form10("Tip of the day")..Button1("Close")..Caption
+#. Form15("Calculate table")..Button1("Close")..Caption
+#. Form19("Animate")..Button2("Close")..Caption
+msgid "Close"
+msgstr "Хаах"
+
+#. Form10("Tip of the day")..Button2("Next tip")..Caption
+msgid "Next tip"
+msgstr "Дараахь"
+
+#. Form10("Tip of the day")..Button3("Previous tip")..Caption
+msgid "Previous tip"
+msgstr "Өмнөх"
+
+#. Form10("Tip of the day")..CheckBox1("Show tips at startup")..Caption
+msgid "Show tips at startup"
+msgstr "Эхлэнгүүт хувилбарыг үзүүлж бай."
+
+#. Form10("Tip of the day")..Panel1..Label1("Did you know...")..Caption
+msgid "Did you know..."
+msgstr "Чи мэдэх үү..."
+
+#. Form11("Insert relation")..Caption
+msgid "Insert relation"
+msgstr "Тэнцэнтгэл биш оруулах"
+
+#. Form11("Insert relation")..Label1("Relation:")..Caption
+msgid "Relation:"
+msgstr "Харьцаа:"
+
+#. Form11("Insert relation")..Label2("Constraints:")..Caption
+msgid "Constraints:"
+msgstr "Тэнцэтгэл биш:"
+
+#. Form11("Insert relation")..Button1("OK")..Caption
+#. Form12("Insert tangent/normal")..Button1("OK")..Caption
+#. Form13("Insert trendline")..Button1("OK")..Caption
+#. Form14("Insert point series")..Button1("OK")..Caption
+#. Form16("Insert shade")..Button1("OK")..Caption
+#. Form17("Custom functions/constants")..Button1("OK")..Caption
+#. Form18("Image options")..Button1("OK")..Caption
+#. Form2("About Graph")..Button1("OK")..Caption
+#. Form21("Placement")..TntButton1("OK")..Caption
+#. Form3("Edit axes")..Button1("OK")..Caption
+#. Form4("Options")..Button1("OK")..Caption
+#. Form5("Insert function")..Button1("OK")..Caption
+#. Form6("Text label")..Button1("OK")..Caption
+#. Form7("Insert f'(x)")..Button1("OK")..Caption
+#. Form8("Add model")..Button1("OK")..Caption
+#. PrintFrm("Print")..Button1("OK")..Caption
+msgid "OK"
+msgstr "Ok"
+
+#. Form11("Insert relation")..Button2("Cancel")..Caption
+#. Form12("Insert tangent/normal")..Button2("Cancel")..Caption
+#. Form13("Insert trendline")..Button2("Cancel")..Caption
+#. Form14("Insert point series")..Button2("Cancel")..Caption
+#. Form15("Calculate table")..ProgressForm1("Calculating")..ButtonCaption
+#. Form16("Insert shade")..Button2("Cancel")..Caption
+#. Form17("Custom functions/constants")..Button2("Cancel")..Caption
+#. Form18("Image options")..Button2("Cancel")..Caption
+#. Form19("Animate")..ProgressForm1("Working")..ButtonCaption
+#. Form21("Placement")..TntButton2("Cancel")..Caption
+#. Form3("Edit axes")..Button2("Cancel")..Caption
+#. Form4("Options")..Button2("Cancel")..Caption
+#. Form5("Insert function")..Button2("Cancel")..Caption
+#. Form6("Text label")..Button2("Cancel")..Caption
+#. Form7("Insert f'(x)")..Button2("Cancel")..Caption
+#. Form8("Add model")..Button2("Cancel")..Caption
+#. PrintFrm("Print")..Button2("Cancel")..Caption
+msgid "Cancel"
+msgstr "Болих"
+
+#. Form11("Insert relation")..GroupBox1("Legend text")..Caption
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Caption
+#. Form5("Insert function")..GroupBox3("Legend text")..Caption
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Caption
+msgid "Legend text"
+msgstr ""
+
+#. Form11("Insert relation")..GroupBox1("Legend text")..Label10("Description:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Label10("Description:")..Caption
+#. Form14("Insert point series")..Label3("Description:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Label12("Description:")..Caption
+#. Form5("Insert function")..GroupBox3("Legend text")..Label10("Description:")..Caption
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Label10("Description:")..Caption
+msgid "Description:"
+msgstr "Бичлэг:"
+
+#. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
+#. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
+#, fuzzy
+msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
+msgstr "Хэрэв координатын систем болон график дээр нэмэлт бичлэг, тэмдэглэгээ хийхээр бол энд бичнэ. "
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Button3("Properties")..Caption
+msgid "Properties"
+msgstr "Шинж чанар"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Label7("Style:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label7("Style:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label1("Style:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label5("Style:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label4("Style:")..Caption
+msgid "Style:"
+msgstr "Хэлбэр:"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Label9("Color:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label9("Color:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label6("Color:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label2("Color:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label6("Color:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label9("Color:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label9("Color:")..Caption
+msgid "Color:"
+msgstr "Өнгө:"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Label3("Width:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label8("Width:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label5("Width:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label7("Width:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label8("Width:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label8("Width:")..Caption
+msgid "Width:"
+msgstr "Өргөн:"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..ShadeSelect1....Hint
+msgid "Select the style used for drawing the inequality. Not used for equations."
+msgstr ""
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr ""
+
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
+msgid "Select the color for drawing the relation."
+msgstr ""
+
+#. Form11("Insert relation")..Edit1..Hint
+msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
+msgstr "Тэнцэтгэл бишийг дараах байдлаар оруул. Жишээ нь: x^2+y^2 = 25 эсвэл \"y < sin(x). "
+
+#. Form11("Insert relation")..Edit2....Hint
+msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
+msgstr "Харьцаа, тэнцэтгэл биш оруулах. Жишээ нь x > 0 ба < 5"
+
+#. Form12("Insert tangent/normal")..Caption
+#, fuzzy
+msgid "Insert tangent/normal"
+msgstr "Шүргэгч/ нормал оруулах."
+
+#. Form12("Insert tangent/normal")..Edit1..Hint
+msgid "Coordinate where the tangent/normal will cross the function."
+msgstr ""
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")..Hint
+msgid "Choose if you want a tangent or a normal."
+msgstr ""
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")..Caption
+#, fuzzy
+msgid "Type"
+msgstr "Төрөл:"
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")....Items.Strings
+msgid "Tangent"
+msgstr "Шүргэгч"
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")....Items.Strings
+msgid "Normal"
+msgstr "Нормаль шулуун"
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Caption
+msgid "Graph properties"
+msgstr "Графикын шинж чанар"
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label7("Line style:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label7("Line style:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label7("Line style:")..Caption
+msgid "Line style:"
+msgstr "Шугамын хэлбэр:"
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Edit3..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..Edit2..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..Edit6..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Edit4..Hint
+msgid "Width of graph in pixels."
+msgstr ""
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..LineSelect1..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..LineSelect1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..LineSelect1..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..LineSelect1..Hint
+msgid "Choose which line style to use for drawing the graph."
+msgstr ""
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..Hint
+msgid "Select the color of the graph."
+msgstr ""
+
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Caption
+msgid "Argument range"
+msgstr "Аргументын хэмжээ"
+
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Edit4..Hint
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit3..Hint
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Edit1..Hint
+msgid "Start of range interval for the used variable."
+msgstr ""
+
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Edit5..Hint
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit4..Hint
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Edit2..Hint
+msgid "End of range interval for the used variable."
+msgstr ""
+
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Caption
+#, fuzzy
+msgid "Endpoints"
+msgstr "Бүх цэгүүд"
+
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Label11("Start:")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Label11("Start:")..Caption
+msgid "Start:"
+msgstr "Эхлэх:"
+
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Label12("End:")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Label12("End:")..Caption
+msgid "End:"
+msgstr "Төгсөх:"
+
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox1....Hint
+#. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox2....Hint
+msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
+msgstr ""
+
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox2....Hint
+#. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox3....Hint
+msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
+msgstr ""
+
+#. Form13("Insert trendline")..Caption
+#, fuzzy
+msgid "Insert trendline"
+msgstr "Тэнцэнтгэл биш оруулах"
+
+#. Form13("Insert trendline")..GroupBox1("Line")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Caption
+msgid "Line"
+msgstr "Шулуун"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Caption
+#, fuzzy
+msgid "Built-in"
+msgstr "Бүтээсэн"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel1..Image1..Hint
+msgid "Create a linear function: f(x)=ax+b"
+msgstr "Шугаман функц үүсгэх:  f(x)=ax+b"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel2..Image2..Hint
+msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
+msgstr "Логарифм  функц үүсгэх: f(x)=a*ln(x)+b"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel3..Image3..Hint
+msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
+msgstr "Полиномиал функц үүсгэх: f(x)=ax^3+bx^2+cx+d"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel4..Image4..Hint
+msgid "Create a power function: f(x)=ax^b"
+msgstr "Илтгэгч функц үүсгэх: f(x)=ax^b"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel5..Image5..Hint
+msgid "Create a exponential function: f(x)=a*b^x"
+msgstr "Ехпонциал функц үүсгэх: f(x)=a*b^x"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit1..Hint
+msgid "The order of the polynomium. For example 2 means a parable."
+msgstr "Полиномиал жагсаалт. "
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText1("Order:")..Caption
+msgid "Order:"
+msgstr ""
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton3("Polynomial")..Caption
+msgid "Polynomial"
+msgstr "Полиномиал"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton2("Logarithmic")..Caption
+msgid "Logarithmic"
+msgstr "Логарифм "
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton1("Linear")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+msgid "Linear"
+msgstr "Шугаман"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton4("Power")..Caption
+msgid "Power"
+msgstr "Илтгэгч"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton5("Exponential")..Caption
+msgid "Exponential"
+msgstr "Ехфонциал"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel6..Image6..Hint
+msgid "Create a moving average as a series of straight lines."
+msgstr ""
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton6("Moving average")..Caption
+msgid "Moving average"
+msgstr ""
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText2("Period:")..Caption
+msgid "Period:"
+msgstr "Үе:"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit4..Hint
+msgid "Determines how many points are used for the average."
+msgstr ""
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Caption
+msgid "User defined"
+msgstr ""
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Label1("Model:")..Caption
+msgid "Model:"
+msgstr "Загвар:"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button4("Add model")..Caption
+#. Form8("Add model")..Caption
+msgid "Add model"
+msgstr ""
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button5("Remove model")..Caption
+msgid "Remove model"
+msgstr ""
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button6("Edit model")..Caption
+#. Insert trendline dialog
+#, fuzzy
+msgid "Edit model"
+msgstr "Тэнхлэг засварлах"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Edit3..Hint
+msgid "Enter a function model to base the trendline on."
+msgstr ""
+
+#. Form13("Insert trendline")..CheckBox1("Intercept =")....Hint
+#. Form13("Insert trendline")..Edit5....Hint
+msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
+msgstr ""
+
+#. Form13("Insert trendline")..CheckBox1("Intercept =")..Caption
+#, fuzzy
+msgid "Intercept ="
+msgstr "Интернэт"
+
+#. Form14("Insert point series")..Caption
+#, fuzzy
+msgid "Insert point series"
+msgstr "Цэгэн цуваа оруулах..."
+
+#. Form14("Insert point series")..Edit1....Hint
+#, fuzzy
+msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
+msgstr "Координатын системийн цонхыг зүүн тийш зөөх"
+
+#. Form14("Insert point series")..Edit1..Text
+#. Default description in the Insert shade dialog
+#, fuzzy
+msgid "Series"
+msgstr "Шинж чанар"
+
+#. Form14("Insert point series")..GroupBox4("Sample")....Hint
+msgid "This shows a sample of the markers and the lines between the markers."
+msgstr ""
+
+#. Form14("Insert point series")..GroupBox4("Sample")..Caption
+msgid "Sample"
+msgstr "Жишээ"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..Caption
+msgid "Markers"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Caption
+msgid "Marker"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label4("Size:")..Caption
+msgid "Size:"
+msgstr "Хэмжээ:"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Edit2..Hint
+msgid "Choose the size of the markers."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..PointSelect1..Hint
+msgid "Choose the type of markers to be shown at each point."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..Hint
+msgid "Choose the color of the markers."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label11("Interpolation:")..Caption
+#, fuzzy
+msgid "Interpolation:"
+msgstr "Харьцаа:"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..LineSelect1....Hint
+msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Edit3..Hint
+msgid "Choose the width of the lines in pixels."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Hint
+msgid "Select which kind of line to draw between the markers."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Text
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+msgid "Cubic splines"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+msgid "Half cosine"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..Hint
+msgid "Choose the color of the lines."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..Caption
+#, fuzzy
+msgid "Labels"
+msgstr "Бичлэг:"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..Label8("Position:")..Caption
+msgid "Position:"
+msgstr "Байрлал:"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..CheckBox2("Show coordinates")..Hint
+#, fuzzy
+msgid "Check to show the coordinate at each point."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..CheckBox2("Show coordinates")..Caption
+#, fuzzy
+msgid "Show coordinates"
+msgstr "Харагдаж байгаа координатын системийг хэвлэ."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..BitBtn1..Hint
+#, fuzzy
+msgid "Select the font for the coordinates."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1..Hint
+#, fuzzy
+msgid "Select where the coordinates should be shown."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1..Text
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#, fuzzy
+msgid "Below"
+msgstr "Шар"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#, fuzzy
+msgid "Above"
+msgstr "Зөө"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#. Shortcut key
+msgid "Left"
+msgstr "Зүүн"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#. Shortcut key
+msgid "Right"
+msgstr "Баруун"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..Caption
+#, fuzzy
+msgid "Error bars"
+msgstr "Алдаа"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Caption
+msgid "X error bars"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..CheckBox3("Show x-bars")..Hint
+msgid "Show horizontal error bars."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..CheckBox3("Show x-bars")..Caption
+msgid "Show x-bars"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton1("Fixed:")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton4("Fixed:")..Hint
+msgid "All error bars are the same size."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton1("Fixed:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton4("Fixed:")..Caption
+#, fuzzy
+msgid "Fixed:"
+msgstr "Файл"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Edit4..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Edit6..Hint
+msgid "Enter fixed value."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton2("Relative:")..Hint
+msgid "All error bars are the same percentage of the x-coordinate."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton2("Relative:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton5("Relative:")..Caption
+#, fuzzy
+msgid "Relative:"
+msgstr "Харьцаа:"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton3("Custom")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton6("Custom")..Hint
+msgid "Each error bar is given a custom value."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton3("Custom")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton6("Custom")..Caption
+msgid "Custom"
+msgstr "Өөриймсөг"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Edit5..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Edit7..Hint
+msgid "Enter relative value in percent."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Caption
+msgid "Y error bars"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..CheckBox4("Show y-bars")..Hint
+msgid "Show vertical error bars."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..CheckBox4("Show y-bars")..Caption
+msgid "Show y-bars"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton5("Relative:")..Hint
+msgid "All error bars are the same percentage of the y-coordinate."
+msgstr ""
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
+#, fuzzy
+msgid "Cut the selected text to the clipboard."
+msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Hint
+#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Hint
+#, fuzzy
+msgid "Copy the selected text to the clipboard."
+msgstr "Сонгогдсон функц болон цэгэн цувааг clipboard-руу хувилах."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")....Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")....Hint
+msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
+msgstr ""
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Delete("Delete")..Hint
+msgid "Erase selected cells."
+msgstr ""
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Insert("Insert row")..Caption
+#, fuzzy
+msgid "Insert row"
+msgstr "Оруулга"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Hint
+msgid "Inserts a row in the grid moving rows below one down."
+msgstr ""
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Remove("Remove row")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Remove("Remove row")..Caption
+#, fuzzy
+msgid "Remove row"
+msgstr "Доош зөөх"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Remove("Remove row")..Hint
+#, fuzzy
+msgid "Removes the selected rows."
+msgstr "Сонгогдсон функцын массштаб."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Select("Select all")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Select("Select all")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Select("Select all")..Caption
+#, fuzzy
+msgid "Select all"
+msgstr "Өнгө сонго"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Select("Select all")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Select("Select all")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Select("Select all")..Hint
+#, fuzzy
+msgid "Select all cells."
+msgstr "Өнгө сонго"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Caption
+#, fuzzy
+msgid "Import from file..."
+msgstr "Файл экпортлохдоо..."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Hint
+msgid "Import data from a file and place it at the selected cell."
+msgstr ""
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Export("Export to file...")..Hint
+#, fuzzy
+msgid "Export selected data to a file."
+msgstr "Файл экпортлохдоо..."
+
+#. Form15("Calculate table")..Caption
+#, fuzzy
+msgid "Calculate table"
+msgstr "Тооцоолох муж"
+
+#. Form15("Calculate table")..Edit3....Hint
+msgid "The step value. This is the distance between the x-values in the interval."
+msgstr ""
+
+#. Form15("Calculate table")..Edit1..Hint
+msgid "The first x-value in the interval."
+msgstr ""
+
+#. Form15("Calculate table")..Edit2..Hint
+msgid "The last x-value in the interval."
+msgstr ""
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show_df("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show_ddf("Show %s")..Caption
+#. Context menu in Calc|Table dialog
+#, fuzzy
+msgid "Show %s"
+msgstr "Хэрэглүүрийн төрөл үзүүл"
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Hint
+#, fuzzy
+msgid "Copy selected cells to the clipboard."
+msgstr "Сонгогдсон функц болон цэгэн цувааг clipboard-руу хувилах."
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Export("Export to file...")..Hint
+msgid "Saves the selected data to a file."
+msgstr ""
+
+#. Form15("Calculate table")..ProgressForm1("Calculating")..Caption
+#, fuzzy
+msgid "Calculating"
+msgstr "Тооцоолох муж"
+
+#. Form15("Calculate table")..SaveDialog1..Filter
+#. Export to file dialog
+msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
+msgstr ""
+
+#. Form16("Insert shade")..Caption
+#, fuzzy
+msgid "Insert shade"
+msgstr "Сүүдэр оруулах..."
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Caption
+#, fuzzy
+msgid "Shading"
+msgstr "Сүүдэр"
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel1..Image1..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Hint
+msgid "Shades the area between the function and the x-axis."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel2..Image2..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Hint
+msgid "Shades the area below the function."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel3..Image3..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Hint
+msgid "Shades the area above the function."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel4..Image4..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Hint
+msgid "Shades the area between the function and the y-axis."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel5..Image5..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Hint
+msgid "Shades the area inside the function."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
+msgid "Shades the area between the main function and the function selected in the list to the right."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
+#, fuzzy
+msgid "Above function"
+msgstr "Функцыг засварлах"
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Caption
+msgid "Between function and x-axis"
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")..Caption
+#, fuzzy
+msgid "Between functions"
+msgstr "Функцыг засварлах"
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Caption
+msgid "Between function and y-axis"
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Caption
+#, fuzzy
+msgid "Inside function"
+msgstr "Функ оруул..."
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Caption
+#, fuzzy
+msgid "Below function"
+msgstr "Функцыг засварлах"
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Caption
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton6..Hint
+#. Form4("Options")..Caption
+#, fuzzy
+msgid "Options"
+msgstr "Тохиргоонууд..."
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Caption
+#, fuzzy
+msgid "Range"
+msgstr "Шүргэгч"
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit3..Hint
+msgid "Coordinate where the shading starts."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit4..Hint
+msgid "Coordinate where the shading ends."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
+msgid "Check to increase the end coordinate until intersection."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
+#, fuzzy
+msgid "Increase to intersection"
+msgstr "Тэнцэнтгэл биш оруулах"
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
+msgid "Check to decrease the start coordinate until intersection."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
+msgid "Decrease to intersection"
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ShadeSelect1..Hint
+#, fuzzy
+msgid "Select the style used for the shading."
+msgstr "Курсорын доорх нэршил арилгах"
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
+msgid "Mark the end of the shading with a line."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
+msgid "Mark end of range"
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
+msgid "Select color used for shading."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
+msgid "Mark the start of the shading with a line."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
+msgid "Mark start of range"
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Edit5..Hint
+#, fuzzy
+msgid "Enter a description to show in the legend."
+msgstr "Хэрэв координатын систем болон график дээр нэмэлт бичлэг, тэмдэглэгээ хийхээр бол энд бичнэ. "
+
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Caption
+#, fuzzy
+msgid "2nd function"
+msgstr "Функцыг засварлах"
+
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Label11("2nd function:")..Caption
+#, fuzzy
+msgid "2nd function:"
+msgstr "Функцыг засварлах"
+
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
+msgid "Select the second function when you want a shading between two functions."
+msgstr ""
+
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
+#, fuzzy
+msgid "Shading range for 2nd function"
+msgstr "Функцэд сүүдэр нэмэх"
+
+#. Form17("Custom functions/constants")..Caption
+#, fuzzy
+msgid "Custom functions/constants"
+msgstr "Өөрийн функц..."
+
+#. Form17("Custom functions/constants")..Button3("Apply")..Caption
+msgid "Apply"
+msgstr ""
+
+#. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
+#, fuzzy
+msgid "Names"
+msgstr "Нэр:"
+
+#. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
+#, fuzzy
+msgid "Definition"
+msgstr "Бичлэг:"
+
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
+#, fuzzy
+msgid "Cut the selected text to the clipboard"
+msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
+
+#. Form18("Image options")..Caption
+#, fuzzy
+msgid "Image options"
+msgstr "Тохиргооны засвар."
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Caption
+#, fuzzy
+msgid "Size"
+msgstr "Хэмжээ:"
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Label1("Image width:")..Caption
+#. Form19("Animate")..TntGroupBox2("Image information")..Label5("Image width:")..Caption
+msgid "Image width:"
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Label2("Image height:")..Caption
+#. Form19("Animate")..TntGroupBox2("Image information")..Label6("Image height:")..Caption
+msgid "Image height:"
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit1..Hint
+msgid "Set a custom image width."
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit2..Hint
+msgid "Set a custom image height."
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
+msgid "Choose to use the same size as shown on the screen or a custom image size."
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")..Caption
+#, fuzzy
+msgid "Image size"
+msgstr "Техтийн хэмжээ"
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Items.Strings
+#, fuzzy
+msgid "Screen size"
+msgstr "Техтийн хэмжээ"
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Items.Strings
+#, fuzzy
+msgid "Custom size"
+msgstr "Өөриймсөг"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Hint
+msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")..Caption
+msgid "Encoding"
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+msgid "Progressive"
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet2..GroupBox1("Quality")..Hint
+msgid "Select a compression quality."
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet2..GroupBox1("Quality")..Caption
+msgid "Quality"
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet3..Label3("Paper size:")..Caption
+#, fuzzy
+msgid "Paper size:"
+msgstr "Техтийн хэмжээ"
+
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")..Hint
+#. PrintFrm("Print")..RadioGroup1("Orientation")..Hint
+msgid "Choose paper orientation."
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")..Caption
+#. PrintFrm("Print")..RadioGroup1("Orientation")..Caption
+#, fuzzy
+msgid "Orientation"
+msgstr "Харьцаа:"
+
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")....Items.Strings
+#. PrintFrm("Print")..RadioGroup1("Orientation")....Items.Strings
+#, fuzzy
+msgid "Portrait"
+msgstr "Хэвлэ"
+
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")....Items.Strings
+#. PrintFrm("Print")..RadioGroup1("Orientation")....Items.Strings
+msgid "Landscape"
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1..Hint
+msgid "Choose paper size to use."
+msgstr ""
+
+#. Form18("Image options")..CheckBox1("Save as default")..Hint
+#. Form3("Edit axes")..CheckBox16("Save as default")..Hint
+msgid "Select this to use these settings as defaults in the future."
+msgstr ""
+
+#. Form18("Image options")..CheckBox1("Save as default")..Caption
+#. Form3("Edit axes")..CheckBox16("Save as default")..Caption
+msgid "Save as default"
+msgstr ""
+
+#. Form19("Animate")..Caption
+#. Form19("Animate")..Button1("Animate")..Caption
+#, fuzzy
+msgid "Animate"
+msgstr "Хандив"
+
+#. Form19("Animate")..Label1("Constant:")..Caption
+#, fuzzy
+msgid "Constant:"
+msgstr "Тэнцэтгэл биш:"
+
+#. Form19("Animate")..ComboBox1..Hint
+msgid "Choose a constant to change between each frame."
+msgstr ""
+
+#. Form19("Animate")..TntGroupBox1("Range")..Label4("Step:")..Caption
+#, fuzzy
+msgid "Step:"
+msgstr "Алхамууд:"
+
+#. Form19("Animate")..TntGroupBox1("Range")..Edit1..Hint
+msgid "The first value of the constant."
+msgstr ""
+
+#. Form19("Animate")..TntGroupBox1("Range")..Edit2..Hint
+msgid "The last value of the constant."
+msgstr ""
+
+#. Form19("Animate")..TntGroupBox1("Range")..Edit3..Hint
+msgid "The chosen constant is changed by this value between each frame."
+msgstr ""
+
+#. Form19("Animate")..TntGroupBox2("Image information")..Caption
+#, fuzzy
+msgid "Image information"
+msgstr "Тохиргооны засвар."
+
+#. Form19("Animate")..TntGroupBox2("Image information")..Label7("Frames/second:")..Caption
+msgid "Frames/second:"
+msgstr ""
+
+#. Form19("Animate")..TntGroupBox2("Image information")..Edit6..Hint
+msgid "Number of frames per second used when the animation is played."
+msgstr ""
+
+#. Form19("Animate")..ProgressForm1("Working")..Caption
+msgid "Working"
+msgstr ""
+
+#. Form2("About Graph")..Caption
+msgid "About Graph"
+msgstr "Графикын тухай:"
+
+#. Form2("About Graph")..Panel1..Label6("<Language> translation by <Translator>")..Caption
+msgid "<Language> translation by <Translator>"
+msgstr "Орчуулсан Даваагийн Батнасан    "
+
+#. Form2("About Graph")..Panel1..Version("Version %s")..Caption
+#. %s is replaced with version number
+msgid "Version %s"
+msgstr "Хувилбар %s"
+
+#. Form2("About Graph")..Panel1..Label1("Email:")..Caption
+msgid "Email:"
+msgstr "Э-хаяг:"
+
+#. Form2("About Graph")..Panel1..Label3("Build %s")..Caption
+#. %s is replaced with build number
+msgid "Build %s"
+msgstr "Бүтээсэн %s"
+
+#. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
+msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
+msgstr "Энэ бол чөлөөт программ бөгөөд та оролдохыг хүсвэл наашаа..."
+
+#. Form2("About Graph")..Panel1..Label4("The newest version as well as the source code are available ")..Caption
+#, fuzzy
+msgid "The newest version as well as the source code are available at:"
+msgstr "Шинэ хувилбар, бичлэгийн код нь энд байх магадлалтай..."
+
+#. Form20("Animation")..Caption
+msgid "Animation"
+msgstr ""
+
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton1..Hint
+#, fuzzy
+msgid "Play"
+msgstr "Туйлын"
+
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton2..Hint
+#, fuzzy
+msgid "Pause"
+msgstr "Тавих"
+
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton3..Hint
+#, fuzzy
+msgid "Stop"
+msgstr "Алхамууд:"
+
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton4..Hint
+#, fuzzy
+msgid "Back"
+msgstr "Хар"
+
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton5..Hint
+#, fuzzy
+msgid "Step"
+msgstr "Алхамууд:"
+
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..Caption
+msgid "Speed"
+msgstr ""
+
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N101..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N501..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N1001..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N1501..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N2001..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N10001..Hint
+msgid "Change the speed used to play the animation."
+msgstr ""
+
+#. Form20("Animation")..PopupMenu1..Repeat1("Repeat")..Caption
+#, fuzzy
+msgid "Repeat"
+msgstr "Бодит"
+
+#. Form20("Animation")..PopupMenu1..Repeat1("Repeat")..Hint
+msgid "Repeat playing the animation until manually stopped."
+msgstr ""
+
+#. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")..Caption
+msgid "Auto reverse"
+msgstr ""
+
+#. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")....Hint
+msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
+msgstr ""
+
+#. Form20("Animation")..PopupMenu1..Open1("Open...")..Hint
+msgid "Open an animation file."
+msgstr ""
+
+#. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
+msgid "Save the animation to a file."
+msgstr ""
+
+#. Form3("Edit axes")..Caption
+msgid "Edit axes"
+msgstr "Тэнхлэг засварлах"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label1("Minimum:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label5("Minimum:")..Caption
+msgid "Minimum:"
+msgstr "Хамгийн бага утга:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label2("Maximum:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label6("Maximum:")..Caption
+msgid "Maximum:"
+msgstr "Хамгийн их утга:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label3("Tick unit:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label7("Tick unit:")..Caption
+msgid "Tick unit:"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label4("The x-axis cross at y=")..Caption
+msgid "The x-axis cross at y="
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label14("Grid unit:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label9("Grid unit:")..Caption
+msgid "Grid unit:"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit1..Hint
+msgid "Minimum x-value."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit2..Hint
+msgid "Maximum x-value."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit3..Hint
+msgid "Units between ticks on the x-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox1("Logarithmic scale")..Hint
+msgid "Use logarithmic scale on the x-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox1("Logarithmic scale")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox8("Logarithmic scale")..Caption
+#, fuzzy
+msgid "Logarithmic scale"
+msgstr "Логарифм "
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")....Hint
+#, fuzzy
+msgid "Show the label at the right side of the main window, above the x-axis."
+msgstr "Координатын системийн цонхыг баруун тийш зөөх"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")..Caption
+msgid "Label:"
+msgstr "Бичлэг:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit5..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit11..Hint
+#, fuzzy
+msgid "Edit the label for the axis here."
+msgstr "Бичлэгийг энд засварла:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox2("Show numbers")..Hint
+#, fuzzy
+msgid "Show units on the x-axis."
+msgstr "Өдрийн шинжийг үзүүл"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox2("Show numbers")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox9("Show numbers")..Caption
+msgid "Show numbers"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit6..Hint
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit4..Hint
+msgid "Units between the grid lines perpendicular to the x-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox4("Auto tick")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox11("Auto tick")..Hint
+msgid "Determine the tick unit automatically."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox4("Auto tick")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox11("Auto tick")..Caption
+msgid "Auto tick"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox5("Auto grid")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox12("Auto grid")..Hint
+msgid "Set the grid unit to the same as the tick unit."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox5("Auto grid")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox12("Auto grid")..Caption
+msgid "Auto grid"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox6("Show ticks")..Hint
+#, fuzzy
+msgid "Show tick marks on the x-axis."
+msgstr "Өдрийн шинжийг үзүүл"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox6("Show ticks")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox13("Show ticks")..Caption
+#, fuzzy
+msgid "Show ticks"
+msgstr "Хэрэглүүрийн төрөл үзүүл"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox17("Show as a multiple of pi")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox18("Show as a multiple of pi")..Hint
+msgid "Show units on the selected axis as a fraction multiplied by pi."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox17("Show as a multiple of pi")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox18("Show as a multiple of pi")..Caption
+msgid "Show as a multiple of pi"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox7("Show grid")..Hint
+msgid "Show vertical grid lines."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox7("Show grid")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox14("Show grid")..Caption
+#, fuzzy
+msgid "Show grid"
+msgstr "Нэршилын самбар үзүүлэх"
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label8("The y-axis cross at x=")..Caption
+msgid "The y-axis cross at x="
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit7..Hint
+msgid "Minimum y-value."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit8..Hint
+msgid "Maximum y-value."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox8("Logarithmic scale")..Hint
+msgid "Use logarithmic scale for the y-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit9..Hint
+msgid "Units between ticks on the y-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox9("Show numbers")..Hint
+#, fuzzy
+msgid "Show units on the y-axis."
+msgstr "Өдрийн шинжийг үзүүл"
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")....Hint
+#, fuzzy
+msgid "Show the label at the top of the main window, to the right of the y-axis."
+msgstr "Координатын системийн цонхыг баруун тийш зөөх"
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit12..Hint
+msgid "The y-axis will intersect with the x-axis at this value."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit10..Hint
+msgid "Units between the grid lines perpendicular to the y-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox13("Show ticks")..Hint
+#, fuzzy
+msgid "Show tick marks on the y-axis."
+msgstr "Өдрийн шинжийг үзүүл"
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox14("Show grid")..Hint
+msgid "Show horizontal grid lines."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Caption
+msgid "Settings"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Label16("Title:")..Caption
+msgid "Title:"
+msgstr "Гарчиг:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Hint
+msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")..Caption
+#, fuzzy
+msgid "Axes style"
+msgstr "Шугамын хэлбэр:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
+#, fuzzy
+msgid "None"
+msgstr "Хандив"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
+#, fuzzy
+msgid "Crossed"
+msgstr "Хаах"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
+msgid "Boxed"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Hint
+msgid "Choose if trigonometric functions should calculate in radians or degrees."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")..Caption
+msgid "Trigonometry"
+msgstr "Тригонометр"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Items.Strings
+msgid "Radian"
+msgstr "Радиан"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Items.Strings
+msgid "Degree"
+msgstr "Өнцөг"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Edit13..Hint
+#, fuzzy
+msgid "Enter a title to show above the coordinate system."
+msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..BitBtn1..Hint
+#, fuzzy
+msgid "Select the font for the title."
+msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")..Hint
+msgid "Choose where the legend should be placed."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")..Caption
+msgid "Legend placement"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")....Hint
+msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")..Caption
+msgid "Calculate with complex numbers"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
+msgid "Font and color"
+msgstr "Фонт ба өнгө"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Caption
+msgid "Colors"
+msgstr "Өнгөнүүд"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label17("Grid color:")..Caption
+msgid "Grid color:"
+msgstr "Шугамын өнгө:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label18("Axes color:")..Caption
+msgid "Axes color:"
+msgstr "Тэнхлэгийн өнгө:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label19("Background color:")..Caption
+#. Form6("Text label")..Label4("Background color:")..Caption
+msgid "Background color:"
+msgstr "Дэвсгэр өнгө:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..Hint
+msgid "Select the color of the image background."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..Hint
+msgid "Select the color of the axes."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..Hint
+msgid "Select the color of the grid lines."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Caption
+msgid "Fonts"
+msgstr "Фонтууд"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label20("Number font:")..Caption
+msgid "Number font:"
+msgstr "Фонтын хэмжээ:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label21("Label font:")..Caption
+msgid "Label font:"
+msgstr "Бичлэгийн фонт:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
+#, fuzzy
+msgid "Legend font:"
+msgstr "Бичлэгийн фонт:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..BitBtn2..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..BitBtn3..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..BitBtn4..Hint
+msgid "Select the font used to show the legend text."
+msgstr ""
+
+#. Form4("Options")..Label1("Decimals:")..Caption
+msgid "Decimals:"
+msgstr ""
+
+#. Form4("Options")..Label2("Recent files:")..Caption
+#, fuzzy
+msgid "Recent files:"
+msgstr "Файл нээх: %s"
+
+#. Form4("Options")..Label3("Max undo steps:")..Caption
+msgid "Max undo steps:"
+msgstr ""
+
+#. Form4("Options")..Label4("Language:")..Caption
+msgid "Language:"
+msgstr "Хэл:"
+
+#. Form4("Options")..Label5("Font scale:")..Caption
+#, fuzzy
+msgid "Font scale:"
+msgstr "Фонтын хэмжээ"
+
+#. Form4("Options")..Edit1..Hint
+msgid "Number of decimals used when results are shown."
+msgstr ""
+
+#. Form4("Options")..CheckBox1("Associate .grf files")..Hint
+msgid "Associate *.grf files with Graph."
+msgstr ""
+
+#. Form4("Options")..CheckBox1("Associate .grf files")..Caption
+msgid "Associate .grf files"
+msgstr ""
+
+#. Form4("Options")..Edit2..Hint
+msgid "The number of most recent used files shown in the File menu."
+msgstr ""
+
+#. Form4("Options")..CheckBox4("Save workspace on exit")....Hint
+msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
+msgstr ""
+
+#. Form4("Options")..CheckBox4("Save workspace on exit")..Caption
+msgid "Save workspace on exit"
+msgstr ""
+
+#. Form4("Options")..RadioGroup1("Complex format")..Hint
+msgid "Format used when complex numbers are shown."
+msgstr ""
+
+#. Form4("Options")..RadioGroup1("Complex format")..Caption
+msgid "Complex format"
+msgstr ""
+
+#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+msgid "Real"
+msgstr "Бодит"
+
+#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+msgid "Rectangular"
+msgstr "Тэгш өнцөгт"
+
+#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+msgid "Polar"
+msgstr "Туйлын"
+
+#. Form4("Options")..CheckBox2("Show tooltip")..Hint
+msgid "Show the tooltip when the cursor is over an item."
+msgstr ""
+
+#. Form4("Options")..CheckBox2("Show tooltip")..Caption
+msgid "Show tooltip"
+msgstr "Хэрэглүүрийн төрөл үзүүл"
+
+#. Form4("Options")..Edit3....Hint
+msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
+msgstr ""
+
+#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")....Hint
+#, fuzzy
+msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
+msgstr "Нүүр хуудсанд холбогдож шинэ хувилбар боломжтой эсэхийг шалга."
+
+#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")..Caption
+msgid "Check for new version of Graph at startup"
+msgstr ""
+
+#. Form4("Options")..ComboBox1..Hint
+#, fuzzy
+msgid "Select the language to use for the user interface."
+msgstr "Курсорын доорх нэршил арилгах"
+
+#. Form4("Options")..ComboBox2....Hint
+msgid "This is used to scale the user interface if you are having problems reading the text."
+msgstr ""
+
+#. Form5("Insert function")..Caption
+#, fuzzy
+msgid "Insert function"
+msgstr "Функ оруул..."
+
+#. Form5("Insert function")..Label1("Function type:")..Caption
+msgid "Function type:"
+msgstr "Функцын төрөл:"
+
+#. Form5("Insert function")..ComboBox1..Hint
+#, fuzzy
+msgid "Select the function type to graph."
+msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
+
+#. Form5("Insert function")..ComboBox1....Items.Strings
+msgid "Standard function   y=f(x)"
+msgstr "Стандарт функц y=f(x)"
+
+#. Form5("Insert function")..ComboBox1....Items.Strings
+msgid "Parametric function x(t), y(t)"
+msgstr "Параметрт функц  x(t), y(t)"
+
+#. Form5("Insert function")..ComboBox1....Items.Strings
+msgid "Polar function         r=f(t)"
+msgstr "Туйлын функц  r=f(t)"
+
+#. Form5("Insert function")..GroupBox1("Function equation")..Caption
+#, fuzzy
+msgid "Function equation"
+msgstr "Функцын төрөл:"
+
+#. Form5("Insert function")..GroupBox2("Argument range")..Label6("Steps:")..Caption
+msgid "Steps:"
+msgstr "Алхамууд:"
+
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit5..Hint
+msgid "Number of calculation steps used to draw the graph."
+msgstr ""
+
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label13("Draw type:")..Caption
+msgid "Draw type:"
+msgstr "Зурах төрөл:"
+
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Hint
+msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
+msgstr ""
+
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4..Text
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+msgid "Automatic"
+msgstr ""
+
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+msgid "Dots"
+msgstr "Цэгүүдээр"
+
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+msgid "Lines"
+msgstr "Шулуунаар"
+
+#. Form6("Text label")..Caption
+msgid "Text label"
+msgstr "Техт "
+
+#. Form6("Text label")..Label1("Font name:")..Caption
+msgid "Font name:"
+msgstr "Фонтны нэр:"
+
+#. Form6("Text label")..Label2("Font size:")..Caption
+msgid "Font size:"
+msgstr "Фонтын хэмжээ"
+
+#. Form6("Text label")..Label3("Font color:")..Caption
+msgid "Font color:"
+msgstr "Фонтны өнгө:"
+
+#. Form6("Text label")..ComboBox1..Hint
+#, fuzzy
+msgid "Text size."
+msgstr "Техтийн хэмжээ"
+
+#. Form6("Text label")..GroupBox1("Text string")..Caption
+#, fuzzy
+msgid "Text string"
+msgstr "Техтийн хэмжээ"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton11..Hint
+#, fuzzy
+msgid "Insert symbol (Ctrl+G)"
+msgstr "Тэмдэгт оруулах"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
+#, fuzzy
+msgid "Insert object"
+msgstr "Тэнцэнтгэл биш оруулах"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
+#, fuzzy
+msgid "Bold (Ctrl+B)"
+msgstr "Тодруулах (Ctrl-B)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton2..Hint
+#, fuzzy
+msgid "Italic (Ctrl+I)"
+msgstr "Налуулах (Ctrl-I)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton3..Hint
+#, fuzzy
+msgid "Underline (Ctrl+U)"
+msgstr "Доогуур зурах  (Ctrl-U)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton4..Hint
+#, fuzzy
+msgid "Strikethrough (Ctrl+S)"
+msgstr "Дундуур нь зурах  (Ctrl-S)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton9..Hint
+msgid "Superscript (Ctrl++)"
+msgstr "Зэрэг  (Ctrl++)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton10..Hint
+msgid "Subscript (Ctrl+=)"
+msgstr "Индекс  (Ctrl+=)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton5..Hint
+#, fuzzy
+msgid "Align left (Ctrl+L)"
+msgstr "Зүүн зэрэгцүүлэх (Ctrl-L)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton6..Hint
+#, fuzzy
+msgid "Center (Ctrl+E)"
+msgstr "Голлуулах  (Ctrl-E)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton7..Hint
+#, fuzzy
+msgid "Align right (Ctrl+R)"
+msgstr "Зүүн зэрэгцүүлэх (Ctrl-L)"
+
+#. Form6("Text label")..IFontBox1..Hint
+#, fuzzy
+msgid "Text font."
+msgstr "Бичгийн фонт"
+
+#. Form6("Text label")..ColorBox1..Hint
+#, fuzzy
+msgid "Text color."
+msgstr "Бичгийн өнгө"
+
+#. Form6("Text label")..ColorBox2..Hint
+msgid "Select background color of the text label."
+msgstr ""
+
+#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
+msgid "Undo last action."
+msgstr "Сүүлчийн үйлдлийг хориглох"
+
+#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Hint
+#, fuzzy
+msgid "Redo last undone action."
+msgstr "Сүүлчийн үйлдлийг хориглох"
+
+#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Hint
+#, fuzzy
+msgid "Paste the contents of the clipboard."
+msgstr "Харагдаж байгаа координатын системийг зураг болгон  clipboard руу хувилах"
+
+#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Caption
+msgid "Paste special..."
+msgstr ""
+
+#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Hint
+msgid "Select which clipboard representation you want to paste."
+msgstr ""
+
+#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
 #, fuzzy
 msgid "Create a new OLE object."
 msgstr "Шинэ координатын систем үүсгэ"
 
+#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Caption
 #, fuzzy
 msgid "Edit object"
 msgstr "Тэнхлэг засварлах"
 
+#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Hint
 msgid "Edit selected OLE object."
 msgstr ""
 
+#. Form7("Insert f'(x)")..Caption
 msgid "Insert f'(x)"
 msgstr " f'(x) оруулах"
 
+#. Form8("Add model")..Label1("Name:")..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Label1("Name:")..Caption
 msgid "Name:"
 msgstr "Нэр:"
 
+#. Form8("Add model")..ValueListEditor1....TitleCaptions.Strings
 msgid "Constant"
 msgstr "Тогтмол"
 
+#. Form8("Add model")..ValueListEditor1....TitleCaptions.Strings
 msgid "Value"
 msgstr "Утга"
 
+#. Form9("Evaluate")..Label1("Select a function or tangent to evaluate.")..Caption
 #, fuzzy
 msgid "Select a function or tangent to evaluate."
 msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
 
+#. Used in titles of error message boxes
+#. Error message when an invalid value is entered.
+#. Error message in Axes dialog when zoom in/out too much
 msgid "Error"
 msgstr "Алдаа"
 
+#. Default name in Insert shade dialog
 msgid "Shade"
 msgstr "Сүүдэр"
 
-msgid "Functions"
-msgstr "Функцууд"
-
-#, fuzzy
-msgid "Tangents"
-msgstr "Шүргэгч"
-
-#, fuzzy
-msgid "Point series"
-msgstr "Цэгэн цуваа..."
-
-#, fuzzy
-msgid "Shades"
-msgstr "Сүүдэр"
-
+#. Shown as title in the Calc|Length of path dialog when it is undocked
 #, fuzzy
 msgid "Length"
 msgstr "Зүүн"
 
+#. Name for labels shown in the function list if there is no text in the label.
 #, fuzzy
 msgid "Label"
 msgstr "Бичлэг:"
 
+#. Used for error bars in point series dialog as "x-error" or "y-error"
 #, fuzzy
 msgid "%s-error"
 msgstr "Алдаа"
 
+#. May be selected as background color in Insert label dialog
 #, fuzzy
 msgid "Transparent"
 msgstr "Шүргэгч"
 
+#. Shown in the function list
 msgid "Axes"
 msgstr "Тэнхлэгүүд"
 
-msgid "No error occurred. You should not see this message."
+#. Shortcut key
+msgid "Ctrl+"
 msgstr ""
+
+#. Shortcut key
+msgid "Alt+"
+msgstr ""
+
+#. Shortcut key
+msgid "Shift+"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Del"
+msgstr "Устга"
+
+#. Shortcut key
+#, fuzzy
+msgid "Ins"
+msgstr "Дотогш"
+
+#. Shortcut key
+msgid "Home"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "End"
+msgstr "Төгсөх:"
+
+#. Shortcut key
+msgid "PgUp"
+msgstr ""
+
+#. Shortcut key
+msgid "PgDn"
+msgstr ""
+
+#. Shortcut key
+msgid "Up"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Down"
+msgstr "Хандив"
+
+#. Shortcut key
+msgid "Esc"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Enter"
+msgstr "Хэвлэгч"
+
+#. Shortcut key
+msgid "Tab"
+msgstr ""
+
+#. Shortcut key
+msgid "BkSp"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Space"
+msgstr "Хадгалах"
 
 msgid "An error occurred while evaluating power function."
 msgstr ""
@@ -2031,9 +2916,7 @@ msgstr "Утга..."
 msgid "Argument produced a function result with total loss of precision."
 msgstr ""
 
-msgid ""
-"The custom function/constant '%s' was not found or has the wrong number of "
-"arguments."
+msgid "The custom function/constant '%s' was not found or has the wrong number of arguments."
 msgstr ""
 
 msgid "Too many recursive calls."
@@ -2042,7 +2925,7 @@ msgstr ""
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr ""
 
-msgid "Right bracket missing."
+msgid "The right bracket is missing."
 msgstr ""
 
 msgid "Invalid number of arguments supplied for function '%s'"
@@ -2112,9 +2995,7 @@ msgstr ""
 msgid "No solution found. Try another guess or another model."
 msgstr ""
 
-msgid ""
-"Internal error. Please notify the programmer with as much information as "
-"possible."
+msgid "Internal error. Please notify the programmer with as much information as possible."
 msgstr ""
 
 msgid "You need to enter a name for the function/constant."
@@ -2122,8 +3003,7 @@ msgstr ""
 
 msgid ""
 "Invalid function/constant name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always "
-"start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 "In addition you are not allowed to redefine built-in names."
 msgstr ""
 
@@ -2132,12 +3012,8 @@ msgstr ""
 
 msgid ""
 "Invalid argument name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always "
-"start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 " In addition you are not allowed to use built-in names as argument names."
-msgstr ""
-
-msgid "The right bracket is missing."
 msgstr ""
 
 #, fuzzy
@@ -2151,25 +3027,29 @@ msgstr ""
 msgid "Invalid equation or inequality."
 msgstr "Шинэ илэрхийлэл, тэнцэтгэл биш оруулах"
 
+#. Shown in status bar
 #, fuzzy
 msgid "Updating..."
 msgstr "Тохиргоонууд..."
 
+#. Asked when trying to exit
+#. Asked when trying to exit
 msgid "Save changes?"
 msgstr "Өөрчлөлтийг хадгалах уу?"
 
+#. Asked when trying to exit
 msgid "Save changes in %s"
 msgstr "Хийсэн өөрчлөлтүүдий%г хадгалах уу?"
 
+#. Written in status bar when trying to zoom in too much
 msgid "You have reached the maximum range of zoom."
 msgstr ""
 
+#. Written in status bar when trying to zoom out too much
 msgid "You have reached the minimum range of zoom."
 msgstr ""
 
-msgid "There is no printer installed on the system."
-msgstr ""
-
+#. Error message when an invalid value is entered.
 msgid "Error in value"
 msgstr ""
 
@@ -2182,6 +3062,7 @@ msgstr ""
 msgid "'%s' must be an integer greater than zero."
 msgstr ""
 
+#. Error message in Axes dialog when zoom in/out too much
 msgid "Trying to break zoom limit."
 msgstr ""
 
@@ -2202,6 +3083,7 @@ msgstr ""
 msgid "'%s' is not a valid number."
 msgstr ""
 
+#. Hint for recent file menu items
 #, fuzzy
 msgid "Open the file %s."
 msgstr "Зөвлөмжийг файл нээх"
@@ -2220,6 +3102,7 @@ msgstr ""
 msgid "Unknown error while reading file: %s"
 msgstr ""
 
+#. Used in Save as dialog
 #, fuzzy
 msgid "Graph files [*.grf]|*.grf"
 msgstr "Графикын файлууд [*.grf]|*.grf|All files [*.*]|*.*"
@@ -2232,18 +3115,12 @@ msgstr ""
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr ""
 
-msgid "Conversion error"
-msgstr ""
-
-msgid ""
-"Unknown error code.\n"
-"Could not find error message for this error."
-msgstr ""
-
+#. Error in Insert shade dialog when you need to select a function
 #, fuzzy
 msgid "Selection error"
 msgstr "Өнгө сонго"
 
+#. Title in error message when reading a grf-file failed
 msgid "File error"
 msgstr ""
 
@@ -2257,9 +3134,11 @@ msgstr "Алдаа"
 msgid "Error reading object"
 msgstr ""
 
+#. Error message when a Graph OLE object is invalid.
 msgid "Not a valid Graph object."
 msgstr ""
 
+#. Error message when a Graph OLE object is invalid.
 msgid "Object error"
 msgstr ""
 
@@ -2269,18 +3148,23 @@ msgstr ""
 msgid "'%1%' must be between %2% and %3%."
 msgstr ""
 
-msgid "Confirm delete"
+msgid "File not found"
 msgstr ""
 
-msgid "This error should not occur. Please report this to the programmer."
+msgid "Error reading file"
+msgstr ""
+
+msgid "Confirm delete"
 msgstr ""
 
 msgid "Are you sure you want to delete %s?"
 msgstr ""
 
+#. Save as dialog
 msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Графикын файлууд [*.grf]|*.grf|All files [*.*]|*.*"
 
+#. Import from file dialog
 msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 msgstr "Техт [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 
@@ -2293,6 +3177,7 @@ msgstr ""
 msgid "Maximum number on y-axis must be greater than the minimum value."
 msgstr ""
 
+#. Error message when trying to activate an OLE object
 msgid "Server application not found."
 msgstr ""
 
@@ -2302,24 +3187,16 @@ msgstr ""
 msgid "The step value for t must be a number greater than 0."
 msgstr ""
 
-msgid ""
-"The minimum value for the x-axis must be greater than 0, when the x-axis is "
-"logarithmic scaled."
+msgid "The minimum value for the x-axis must be greater than 0, when the x-axis is logarithmic scaled."
 msgstr ""
 
-msgid ""
-"The cross point of the y-axis must be greater than 0, when the x-axis is "
-"logarithmic scaled."
+msgid "The cross point of the y-axis must be greater than 0, when the x-axis is logarithmic scaled."
 msgstr ""
 
-msgid ""
-"The minimum value for the y-axis must be greater than 0, when the y-axis is "
-"logarithmic scaled."
+msgid "The minimum value for the y-axis must be greater than 0, when the y-axis is logarithmic scaled."
 msgstr ""
 
-msgid ""
-"The cross point of the x-axis must be greater than 0, when the y-axis is "
-"logarithmic scaled."
+msgid "The cross point of the x-axis must be greater than 0, when the y-axis is logarithmic scaled."
 msgstr ""
 
 msgid "'Recent files' must be between 0 and 9."
@@ -2337,12 +3214,7 @@ msgstr ""
 msgid "Error in width"
 msgstr ""
 
-msgid ""
-"The end of interval must be greater than the start of interval and %s must "
-"be greater than 0."
-msgstr ""
-
-msgid "The maximum length of text has been reached."
+msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
 msgstr ""
 
 msgid "The derivative of the function is not defined at %s=%s"
@@ -2373,12 +3245,6 @@ msgstr "Шүргэгч/ нормал оруулах."
 msgid "Error processing file '%s' at line %s."
 msgstr ""
 
-msgid "Dialog error: %sh"
-msgstr ""
-
-msgid "Unknown Graph data found while pasting clipboard data."
-msgstr ""
-
 msgid "'%s' has to be an integer value between 0 and 1000."
 msgstr ""
 
@@ -2389,6 +3255,7 @@ msgstr "Хэвлэгч"
 msgid "An unknown error occurred while printing."
 msgstr ""
 
+#. Error message title in Point series dialog
 msgid "Error while adding points"
 msgstr ""
 
@@ -2398,9 +3265,7 @@ msgstr ""
 msgid "\"%s\" is not a valid number."
 msgstr ""
 
-msgid ""
-"You didn't add any points. You need to specify some x- and y-coordinates in "
-"the grid."
+msgid "You didn't add any points. You need to specify some x- and y-coordinates in the grid."
 msgstr ""
 
 #, fuzzy
@@ -2438,12 +3303,15 @@ msgid ""
 "Either the server is down or you do not have a connection to the Internet."
 msgstr ""
 
+#. Communication error when checking for newer version
 msgid "Socket error %s"
 msgstr ""
 
+#. Communication error when checking for newer version
 msgid "The server responded with the message '%s'"
 msgstr ""
 
+#. Communication error when checking for newer version
 msgid "Protocol reply error %s"
 msgstr ""
 
@@ -2460,25 +3328,24 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"If you don't want to be asked again, this feature may be disabled from the "
-"Edit|Options dialog."
+"If you don't want to be asked again, this feature may be disabled from the Edit|Options dialog."
 msgstr ""
 
 #, fuzzy
 msgid "Edit relation"
 msgstr "Тэнцэнтгэл биш оруулах"
 
+#. Customize toolbar dialog
 #, fuzzy
 msgid "Commands"
 msgstr "Тайлбар:"
 
+#. Customize toolbar dialog
 #, fuzzy
 msgid "(All Commands)"
 msgstr "(Бүх үйлдэл)"
 
-msgid ""
-"To add a command to a toolbar simply select a category and drag the command "
-"out of this dialog box to a toolbar."
+msgid "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
 msgstr ""
 
 #, fuzzy
@@ -2488,265 +3355,216 @@ msgstr " f'(x) оруулах"
 msgid "Edit trendline"
 msgstr ""
 
-msgid ""
-"This Tip of the day can give you a lot of information about the program that "
-"most users don't know."
+#. Customize toolbar dialog
+msgid "Categories:"
 msgstr ""
 
-msgid ""
-"You can send suggestions for future versions, bug reports and comments to "
-"graph@padowan.dk"
+#. Tip of the Day
+msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr ""
 
-msgid ""
-"You can customize the toolbar by right clicking on it and select 'Customize "
-"toolbar'."
+#. Tip of the Day
+msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 msgstr ""
 
-msgid ""
-"Instead of deleting a function you can make it invisible by right clicking "
-"on it in the function list and removing the check at the 'Visible' menu item."
+#. Tip of the Day
+msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
 msgstr ""
 
+#. Tip of the Day
+msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
+msgstr ""
+
+#. Tip of the Day
 msgid "You can paste images into a text label."
 msgstr ""
 
-msgid ""
-"Text labels can contain any kind of OLE objects, for example Microsoft "
-"Equation. When editing a label right click in the editing area and select "
-"'Insert object'."
+#. Tip of the Day
+msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
 msgstr ""
 
-msgid ""
-"You can export points from a point series to a file that can be read by "
-"other programs, for example Microsoft Excel. When editing the point series "
-"select the points, right click and choose 'Export to file'."
+#. Tip of the Day
+msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
 msgstr ""
 
-msgid ""
-"A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)"
-"=t or as the relation x=5."
+#. Tip of the Day
+msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
 msgstr ""
 
-msgid ""
-"You can use Zoom|Square to make the axes look equally scaled. This is "
-"especially useful when drawing circles and similar functions."
+#. Tip of the Day
+msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
 msgstr ""
 
+#. Tip of the Day
 msgid "You can find a list of all available functions in the help."
 msgstr ""
 
-msgid ""
-"You can combine two functions to one using 'if'. For example the function f"
-"(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+#. Tip of the Day
+msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
 msgstr ""
 
+#. Tip of the Day
 #, fuzzy
-msgid ""
-"You can import the contents of another Graph file into the current "
-"coordinate system using 'File|Import|Graph file'."
+msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
 msgstr "Тухайн координатын системд график импортло"
 
-msgid ""
-"If you check 'Save as default' in the Axes dialog the current settings will "
-"be used as default when creating new files."
+#. Tip of the Day
+msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new files."
 msgstr ""
 
-msgid ""
-"While you hold down the Ctrl key, you can use the arrow keys to move the "
-"system."
+#. Tip of the Day
+msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
 msgstr ""
 
-msgid ""
-"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
-"and out."
+#. Tip of the Day
+msgid "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."
 msgstr ""
 
-msgid ""
-"You can use the scroll button on your mouse to zoom in and out at the "
-"position of the mouse cursor."
+#. Tip of the Day
+msgid "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."
 msgstr ""
 
-msgid ""
-"If you don't want an item shown in the legend, you can right click on the "
-"item in the function list and deselect 'Show in legend'."
+#. Tip of the Day
+msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
 msgstr ""
 
-msgid ""
-"If you want the axes shown to the left and bottom of the image, you can "
-"choose Axes style as Boxed in the Settings tab of the Axes dialog."
+#. Tip of the Day
+msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
 msgstr ""
 
-msgid ""
-"Graph can save the shown coordinate system in five different image formats: "
-"bmp, emf, png, jpg and pdf."
+#. Tip of the Day
+msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
 msgstr ""
 
-msgid ""
-"You can use 'Edit|Copy image' to copy the coordinate system to the clipboard "
-"and paste it into another program."
+#. Tip of the Day
+msgid "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."
 msgstr ""
 
-msgid ""
-"You can open a saved grf-file in a new instance of the program by double "
-"clicking on it in Explorer."
+#. Tip of the Day
+msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
 msgstr ""
 
-msgid ""
-"You can drag a grf-file from explorer into an open instance of Graph to open "
-"the file."
+#. Tip of the Day
+msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
 msgstr ""
 
-msgid ""
-"Graph will remember the size and placement of the main window between "
-"executions. This can be disabled from the Options dialog."
+#. Tip of the Day
+msgid "Graph will remember the size and placement of the main window between executions. This can be disabled from the Options dialog."
 msgstr ""
 
-msgid ""
-"Calc|Table can be used to create a table with evaluation values for a "
-"function."
+#. Tip of the Day
+msgid "Calc|Table can be used to create a table with evaluation values for a function."
 msgstr ""
 
-msgid ""
-"A part or the whole evaluation table can be exported to a file by right "
-"clicking and selecting 'Export to file'. It can afterwards be opened in "
-"other programs like Microsoft Excel."
+#. Tip of the Day
+msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
 msgstr ""
 
-msgid ""
-"Data from the evaluation table can be copied to another program like "
-"Microsoft excel using the clipboard."
+#. Tip of the Day
+msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
 msgstr ""
 
-msgid ""
-"The data points in a point series can be copied to and from other programs "
-"like Microsoft Excel through the clipboard."
+#. Tip of the Day
+msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel through the clipboard."
 msgstr ""
 
-msgid ""
-"Functions can be copied from one instance of the program to another through "
-"the clipboard using Edit|Copy."
+#. Tip of the Day
+msgid "Functions can be copied from one instance of the program to another through the clipboard using Edit|Copy."
 msgstr ""
 
+#. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
 msgstr ""
 
-msgid ""
-"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
-"have undone."
+#. Tip of the Day
+msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
 msgstr ""
 
+#. Tip of the Day
 #, fuzzy
 msgid "In the Axes dialog you can add a title to the coordinate system."
 msgstr "Координатын системийн цонхыг зүүн тийш зөөх"
 
-msgid ""
-"You can import point series from files saved by other programs, like "
-"Microsoft Excel."
+#. Tip of the Day
+msgid "You can import point series from files saved by other programs, like Microsoft Excel."
 msgstr ""
 
-msgid ""
-"When inserting a point series you can copy data from programs like Microsoft "
-"Excel, and paste the data into the grid in Graph."
+#. Tip of the Day
+msgid "When inserting a point series you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
 msgstr ""
 
-msgid ""
-"You can use 'Zoom|All points' to change the coordinate system so all point "
-"series are visible."
+#. Tip of the Day
+msgid "You can use 'Zoom|All points' to change the coordinate system so all point series are visible."
 msgstr ""
 
-msgid ""
-"You can use Zoom|Fit to change the coordinate system to show the selected "
-"function or point series."
+#. Tip of the Day
+msgid "You can use Zoom|Fit to change the coordinate system to show the selected function or point series."
 msgstr ""
 
+#. Tip of the Day
 #, fuzzy
-msgid ""
-"When you hold down the Shift key you can drag the coordinate system around "
-"with the mouse."
+msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
 msgstr "Координатын системийг хулганы тусламжтайгаар зөөх"
 
-msgid ""
-"You can use Calc|Evaluate to find intersections between functions, crossings "
-"with the axes and extremum points."
+#. Tip of the Day
+msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
 msgstr ""
 
-msgid ""
-"When a point series is selected you can add points to it by clicking on the "
-"image while you hold down the Ctrl key."
+#. Tip of the Day
+msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
 msgstr ""
 
-msgid ""
-"You can use a relation to plot any inequality, for example sin(x^2) < cos"
-"(y^2)"
+#. Tip of the Day
+msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
 msgstr ""
 
-msgid ""
-"You can use a relation to plot any equation, for example x*sin x = y*cos y"
+#. Tip of the Day
+msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
 msgstr ""
 
-msgid ""
-"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
-"same order they appear in the function list to the left."
+#. Tip of the Day
+msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
 msgstr ""
 
-msgid ""
-"You can move the selected element in the function list either by dragging it "
-"with the mouse or with the arrow up/down keys while ALT is held down."
+#. Tip of the Day
+msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
 msgstr ""
 
-msgid ""
-"You can show functions and other elements behind the axes by moving the "
-"element above the axes in the function list to the left. To move shadings "
-"and tangents you will have to move the functions they are attached to."
+#. Tip of the Day
+msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
 msgstr ""
 
-msgid ""
-"Custom text labels may be attached to the axes by right clicking on the "
-"label and selecting a placement from the context menu."
+#. Tip of the Day
+msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
 msgstr ""
 
-msgid ""
-"The legend may be moved freely with the mouse or attached to one of the "
-"corners by right clicking on the legend and choose a placement from the "
-"context menu."
+#. Tip of the Day
+msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
 msgstr ""
 
-msgid ""
-"As an alternative to transparent you can choose a custom background color "
-"for labes. This is especially useful for labels drawn over shades."
+#. Tip of the Day
+msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shades."
 msgstr ""
 
-msgid ""
-"In most places like point series, axes settings, function ranges, etc., you "
-"can use expressions like pi/4 instead of numbers."
+#. Tip of the Day
+msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
 msgstr ""
 
-msgid ""
-"You can create your own custom constants under Function|Custom functions for "
-"use in functions, point series, etc. For example g=9.80665, R=8.31"
+#. Tip of the Day
+msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
 msgstr ""
 
-msgid ""
-"You can create your own custom functions under Function|Custom functions for "
-"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin"
-"(x)/x)"
+#. Tip of the Day
+msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
 msgstr ""
 
-msgid ""
-"In the Save as image dialog there is an Option button you can use to specify "
-"the image resolution. This is especially useful if you want a high "
-"resolution image."
+#. Tip of the Day
+msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
 msgstr ""
 
-msgid ""
-"Point series can have arrows as markers. A point series with arrows as "
-"markers and lines between the points can be used to show vectors."
+#. Tip of the Day
+msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr ""
-
-#, fuzzy
-msgid "Custom..."
-msgstr "Өөриймсөг"
 
 msgid "Black"
 msgstr "Хар"
@@ -2811,6 +3629,17 @@ msgstr "Тослог шаргал"
 msgid "Med Gray"
 msgstr "Бүдэг саарал"
 
+#, fuzzy
+msgid "Customize"
+msgstr "Өөриймсөг"
+
+#, fuzzy
+msgid "Description"
+msgstr "Бичлэг:"
+
+msgid "Cannot open clipboard"
+msgstr ""
+
 msgid "Local"
 msgstr ""
 
@@ -2826,82 +3655,118 @@ msgstr "Тэмдэгт оруулах"
 msgid "Subset:"
 msgstr ""
 
+#. PrintFrm("Print")..Caption
 msgid "Print"
 msgstr "Хэвлэ"
 
+#. PrintFrm("Print")..Label6("Scale:")..Caption
 msgid "Scale:"
 msgstr "Шах:"
 
+#. PrintFrm("Print")..GroupBox1("Printer")..Caption
 msgid "Printer"
 msgstr "Хэвлэгч"
 
+#. PrintFrm("Print")..GroupBox1("Printer")..Label7("Type:")..Caption
 msgid "Type:"
 msgstr "Төрөл:"
 
+#. PrintFrm("Print")..GroupBox1("Printer")..Label8("Where:")..Caption
 msgid "Where:"
 msgstr "Хаана:"
 
+#. PrintFrm("Print")..GroupBox1("Printer")..Label9("Comment:")..Caption
 msgid "Comment:"
 msgstr "Тайлбар:"
 
-msgid ""
-"Select the printer to use. The Properties button may be used to change more "
-"advanced settings for the printer."
+#. PrintFrm("Print")..GroupBox1("Printer")..ComboBox1....Hint
+msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
 msgstr ""
 
-msgid ""
-"Select to print in color (or grayscale if your printer is not a color "
-"printer) or convert all colors to black."
+#. PrintFrm("Print")..RadioGroup2("Print output")....Hint
+msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
 msgstr ""
 
+#. PrintFrm("Print")..RadioGroup2("Print output")..Caption
 msgid "Print output"
 msgstr "Гадагш хэвлэх"
 
+#. PrintFrm("Print")..RadioGroup2("Print output")....Items.Strings
 msgid "Color"
 msgstr "Өнгө"
 
+#. PrintFrm("Print")..RadioGroup2("Print output")....Items.Strings
 msgid "Black && white"
 msgstr "Хар && Цагаан"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Caption
 msgid "Position (millimeters)"
 msgstr "Байрлал (миллиметр)"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Label3("Left margin:")..Caption
 msgid "Left margin:"
 msgstr "Зүүн зах:"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Label4("Top margin:")..Caption
 msgid "Top margin:"
 msgstr "Дээд зах:"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
 msgid "Select to place the image on the middle of the page."
 msgstr ""
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
 msgstr "Хуудас голлуулах"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1..Hint
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2..Hint
 msgid "Enter the image position on the page."
 msgstr ""
 
+#. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
 msgid "Number of copies:"
 msgstr "Хувийн тоо:"
 
+#. PrintFrm("Print")..GroupBox3..Edit3..Hint
 #, fuzzy
 msgid "Choose number of copies to print."
 msgstr "Хувийн тоо:"
 
+#. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Version -%s"
+#~ msgstr "Хувилбар:"
+
+#, fuzzy
+#~ msgid "Check to make the selected item visible in the coordinate system."
+#~ msgstr "Тухайн координатын системийн нэршлийн самбар үзүүлэх"
+#~ msgid "Functions"
+#~ msgstr "Функцууд"
+
+#, fuzzy
+#~ msgid "Tangents"
+#~ msgstr "Шүргэгч"
+
+#, fuzzy
+#~ msgid "Point series"
+#~ msgstr "Цэгэн цуваа..."
+
+#, fuzzy
+#~ msgid "Shades"
+#~ msgstr "Сүүдэр"
 
 #, fuzzy
 #~ msgid "Copy the animation to the clipboard."
 #~ msgstr ""
 #~ "Харагдаж байгаа координатын системийг зураг болгон  clipboard руу хувилах"
-
 #~ msgid "Edit options."
 #~ msgstr "Тохиргооны засвар."
-
 #~ msgid "Insert a new point series."
 #~ msgstr "Шинэ цэгэн цуваа оруулах."
-
 #~ msgid "Calculates area under the path."
 #~ msgstr "Графикын талбайг тодорхойлох"
 
@@ -2912,12 +3777,10 @@ msgstr ""
 #, fuzzy
 #~ msgid "Cut selected text to the clipboard."
 #~ msgstr "Сонгосон функц болон цэгэн цувааг clipboard руу таслан авах"
-
 #~ msgid "A&ctions:"
 #~ msgstr "Ү&йлдэлүүд:"
-
 #~ msgid "Area..."
 #~ msgstr "Талбай..."
-
 #~ msgid "Text too long"
 #~ msgstr "Техт хэтэрхий урт байна"
+

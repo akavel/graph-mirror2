@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2006-10-27 23:48\n"
-"PO-Revision-Date: 2006-11-06 22:29+0100\n"
+"POT-Creation-Date: 2007-02-19 22:24\n"
+"PO-Revision-Date: 2007-02-19 22:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: Pekka Lerssi <pekka.lerssi@tut.fi>\n"
 "MIME-Version: 1.0\n"
@@ -10,1736 +10,2700 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Country: FINLAND\n"
 
+#. AreaFrame..Label1("From:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label4("From:")..Caption
+#. Form15("Calculate table")..Label1("From:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Label2("From:")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Label4("From:")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label4("From:")..Caption
 msgid "From:"
 msgstr "Alku:"
 
+#. AreaFrame..Label2("To:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label5("To:")..Caption
+#. Form15("Calculate table")..Label2("To:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Label3("To:")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Label5("To:")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label5("To:")..Caption
 msgid "To:"
 msgstr "Loppu:"
 
+#. AreaFrame..Label3("Area")..Caption
+#. Form1..ActionManager..AreaAction("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Pinta-ala"
 
+#. AreaFrame..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Syötä alkupiste tai valitse alue kuvaajasta hiirellä."
 
+#. AreaFrame..Edit2....Hint
 msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
 msgstr "Syötä loppupiste tai valitse alue kuvaajasta hiirellä."
 
+#. AreaFrame..Edit3....Hint
 msgid "Area or length of path calculated for the given range using Simpson's formula."
 msgstr "Valitun alueen pinta-ala tai kaaren pituus laskettuna Simpsonin säännöllä."
 
+#. ParFuncFrame..Label7("Snap to:")..Caption
+#. PolFuncFrame..Label7("Snap to:")..Caption
+#. StdFuncFrame..Label5("Snap to:")..Caption
 msgid "Snap to:"
 msgstr "Kiinnitä:"
 
+#. ParFuncFrame..Edit2..Hint
 msgid "The x-coordinate evaluated for the t-parameter."
 msgstr "T-parametria vastaava x-koordinaatti"
 
+#. ParFuncFrame..Edit3..Hint
 msgid "The y-coordinate evaluated for the t-parameter."
 msgstr "T-parametria vastaava y-koordinaatti."
 
+#. ParFuncFrame..Edit4..Hint
 msgid "The derivative of x(t) evaluated for the entered t-parameter."
 msgstr "Funktion x(t) derivaatta valitulle t-parametrille."
 
+#. ParFuncFrame..Edit5..Hint
 msgid "The derivative of y(t) evaluated for the entered t-parameter."
 msgstr "Funktion y(t) derivaatta valitulle t-parametrille."
 
+#. ParFuncFrame..Edit6..Hint
 msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr "Valittua t-parametria vastaava funktion kulmakerroin."
 
+#. ParFuncFrame..Edit1....Hint
+#. PolFuncFrame..Edit1....Hint
 msgid "Enter the independent variable for which you want to evaluate the function, or click on the function in the main window."
 msgstr "Syötä riippumaton muuttuja, jolle haluat laskea funktion arvoja tai valitse funktio vasemman reunan listalta."
 
+#. ParFuncFrame..ComboBox1....Hint
+#. StdFuncFrame..ComboBox1....Hint
+#. Form9("Evaluate")..PolFuncFrame1....Hint
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Valitse mihin kohdistin kiinnittyy, kun klikkaat koordinaatistoa."
 
+#. ParFuncFrame..ComboBox1..Text
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1..Text
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1..Text
+#. StdFuncFrame..ComboBox1....Items.Strings
+#. Form1..MainMenu..Function_("Function")..Caption
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
+#. Form1..ActionManager..EditAction("Edit...")..Category
+#. Form1..ActionManager..DeleteAction("Delete")..Category
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Category
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Category
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Category
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Category
+#. Form1..ActionManager..InsertObjectAction("Insert object...")..Category
 msgid "Function"
 msgstr "Funktio"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1....Items.Strings
 msgid "Intersection"
 msgstr "Leikkauspiste"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Caption
 msgid "x-axis"
 msgstr "x-akseli"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 msgid "y-axis"
 msgstr "y-akseli"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
 msgid "Extreme x-value"
 msgstr "X:n ääriarvo"
 
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
 msgid "Extreme y-value"
 msgstr "Y:n ääriarvo"
 
+#. PolFuncFrame..Edit2..Hint
 msgid "The distance to the function evaluated for the given angle."
 msgstr "Säteittäinen etäisyys funktioon kuvaajaan valitussa kulmassa."
 
+#. PolFuncFrame..Edit3..Hint
 msgid "The x-coordinate evaluated for the given angle."
 msgstr "Valittua kulmaa vastaava x-koordinaatti."
 
+#. PolFuncFrame..Edit4..Hint
 msgid "The y-coordinate evaluated for the given angle."
 msgstr "Valittua kulmaa vastaava y-koordinaatti."
 
+#. PolFuncFrame..Edit5..Hint
 msgid "The derivative of the function evaluated for the given angle."
 msgstr "Funktion derivaatta valitussa kulmassa."
 
+#. PolFuncFrame..Edit6..Hint
 msgid "The slope of the function evaluated for the given angle."
 msgstr "Valittua kulmaa vastaava funktion kulmakerroin."
 
+#. StdFuncFrame..Edit1....Hint
 msgid "Enter a number for which you want to evaluate the function, or click on the function in the main window."
 msgstr "Syötä x-akselin piste, jossa haluat laskea funktion arvon tai valitse piste kuvaajasta hiirellä."
 
+#. StdFuncFrame..ComboBox1....Items.Strings
 msgid "Extremum"
 msgstr "Ääriarvo"
 
+#. StdFuncFrame..Edit2..Hint
 msgid "This is the function evaluated for the entered x-value."
 msgstr "Funktion arvo valitussa x-akselin pisteessä."
 
+#. StdFuncFrame..Edit3....Hint
 msgid "This is the first derivative of the function evaluated for the entered value."
 msgstr "Funktion ensimmäinen derivaatta valitussa x-akselin pisteessä."
 
+#. StdFuncFrame..Edit4....Hint
 msgid "This is the functions second derivative evaluated for the entered value."
 msgstr "Funktion toinen derivaatta valitussa x-akselin pisteessä."
 
+#. TanFrame..Edit2....Hint
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
 msgstr "Y-koordinattia vastaava x-koordinaatti."
 
+#. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the main window."
 msgstr "Syötä x-koordinaatti tai valitse piste kuvaajasta hiirellä."
 
+#. Form1..MainMenu..File_("File")..Caption
+#. Form1..ActionManager..NewAction("New")..Category
+#. Form1..ActionManager..OpenAction("Open...")..Category
+#. Form1..ActionManager..SaveAction("Save")..Category
+#. Form1..ActionManager..SaveAsAction("Save as...")..Category
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Category
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Category
+#. Form1..ActionManager..PrintAction("Print...")..Category
+#. Form1..ActionManager..ExitAction("Exit")..Category
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Category
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Category
 msgid "File"
 msgstr "Tiedosto"
 
+#. Form1..MainMenu..File_("File")..File_Import("Import")..Caption
 msgid "Import"
 msgstr "Tuo"
 
+#. Form1..MainMenu..Edit_("Edit")..Caption
+#. Form1..ActionManager..UndoAction("Undo")..Category
+#. Form1..ActionManager..RedoAction("Redo")..Category
+#. Form1..ActionManager..CutAction("Cut")..Category
+#. Form1..ActionManager..CopyAction("Copy")..Category
+#. Form1..ActionManager..PasteAction("Paste")..Category
+#. Form1..ActionManager..CopyImageAction("Copy image")..Category
+#. Form1..ActionManager..AxesAction("Axes...")..Category
+#. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Muokkaa"
 
+#. Form1..MainMenu..Zoom_("Zoom")..Caption
+#. Form1..ActionManager..ZoomInAction("In")..Category
+#. Form1..ActionManager..ZoomOutAction("Out")..Category
+#. Form1..ActionManager..ZoomWindowAction("Window")..Category
+#. Form1..ActionManager..ZoomSquareAction("Square")..Category
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Category
+#. Form1..ActionManager..ZoomFitAction("Fit")..Category
+#. Form1..ActionManager..ZoomAllPointsAction("All points")..Category
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Category
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Category
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Category
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Category
 msgid "Zoom"
 msgstr "Zoomaa"
 
+#. Form1..MainMenu..Math_("Calc")..Caption
+#. Form1..ActionManager..PathAction("Length of path")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
+#. Form1..ActionManager..EvalAction("Evaluate")..Category
+#. Form1..ActionManager..TableAction("Table...")..Category
+#. Form1..ActionManager..AnimateAction("Animate...")..Category
+#. Form15("Calculate table")..Button2("Calc")..Caption
 msgid "Calc"
 msgstr "Laske"
 
+#. Form1..MainMenu..Plugins_("Plugins")..Caption
+msgid "Plugins"
+msgstr ""
+
+#. Form1..MainMenu..Help_("Help")..Caption
+#. Form1..ActionManager..ContentsAction("Contents and index")..Category
+#. Form1..ActionManager..ListAction("List of functions")..Category
+#. Form1..ActionManager..HomePageAction("Go to home page")..Category
+#. Form1..ActionManager..UpdateAction("Check for update")..Category
+#. Form1..ActionManager..AboutAction("About Graph...")..Category
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Category
+#. Form1..ActionManager..DonateAction("Donate")..Category
+#. Form1..ActionManager..TipAction("Tip of the day")..Category
+#. Form1..ActionManager..SupportAction("Support")..Category
+#. Form11("Insert relation")..Button3("Help")..Caption
+#. Form12("Insert tangent/normal")..Button3("Help")..Caption
+#. Form13("Insert trendline")..Button3("Help")..Caption
+#. Form14("Insert point series")..Button3("Help")..Caption
+#. Form15("Calculate table")..Button3("Help")..Caption
+#. Form16("Insert shade")..Button3("Help")..Caption
+#. Form17("Custom functions/constants")..Button4("Help")..Caption
+#. Form19("Animate")..Button3("Help")..Caption
+#. Form3("Edit axes")..Button3("Help")..Caption
+#. Form4("Options")..Button3("Help")..Caption
+#. Form5("Insert function")..Button3("Help")..Caption
+#. Form6("Text label")..Button3("Help")..Caption
+#. Form7("Insert f'(x)")..Button3("Help")..Caption
 msgid "Help"
 msgstr "Ohje"
 
+#. Form1..MainMenu..Help_("Help")..Help_Internet("Internet")..Caption
 msgid "Internet"
 msgstr "Internet"
 
+#. Form1..Recent1..Hint
 msgid "Open file: %s"
 msgstr "Avaa tiedosto: %s"
 
-msgid "Visible"
-msgstr "Näytetään koordinaatistossa"
-
-msgid "Check to make the selected item visible in the coordinate system."
-msgstr "Näyttää tai piilottaa objektin."
-
+#. Form1..PopupMenu1..Tree_ShowInLegend("Show in legend")..Caption
 msgid "Show in legend"
 msgstr "Näytetään selitteessä"
 
+#. Form1..PopupMenu1..Tree_ShowInLegend("Show in legend")..Hint
 msgid "Check to show the selected item in the legend."
 msgstr "Näyttää tai piilottaa objektin selitteessä."
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Caption
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Caption
+#. Form21("Placement")..Caption
+#. Form21("Placement")..Label1("Placement")..Caption
 msgid "Placement"
 msgstr "Sijoitus"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Above("Above x-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Above("Above x-axis")..Caption
 msgid "Above x-axis"
 msgstr "x-akselin yläpuolella"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Above("Above x-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Above("Above x-axis")....Hint
 msgid "Place the label directly above the x-axis on the right side of the image."
 msgstr "Sijoittaa tekstin x-akselin yläpuolelle oikeaan reunaan."
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")..Caption
 msgid "Below x-axis"
 msgstr "x-akselin alapuolella"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")....Hint
 msgid "Place the label directly below the x-axis on the right side of the image."
 msgstr "Sijoittaa tekstin x-akselin alapuolelle oikeaan reunaan."
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Left("Left of y-axis")..Caption
 msgid "Left of y-axis"
 msgstr "y-akselin vasemmalla puolella"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Left("Left of y-axis")....Hint
 msgid "Place the label to the left of the y-axis at the top of the image."
 msgstr "Sijoittaa tekstin y-akselin vasemmalle puolelle yläreunaan."
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Right("Right of y-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Right("Right of y-axis")..Caption
 msgid "Right of y-axis"
 msgstr "y-akselin oikealle puolelle"
 
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Right("Right of y-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Right("Right of y-axis")....Hint
 msgid "Place the label to the right of the y-axis at the top of the image."
 msgstr "Sijoittaa tekstin y-akselin oikealle puolelle yläreunaan."
 
-msgid "Export to file..."
-msgstr "Vie tiedostoon..."
-
-msgid "Export the selected point series to a file."
-msgstr "Vie valitun pistejoukon tiedostoon."
-
-msgid "New"
-msgstr "Uusi"
-
-msgid "Creates a new coordinate system."
-msgstr "Luo uuden dokumentin."
-
-msgid "Open..."
-msgstr "Avaa..."
-
-msgid "Read coordinate system and functions from a file."
-msgstr "Avaa dokumentin."
-
-msgid "Save"
-msgstr "Tallenna"
-
-msgid "Write coordinate system and functions to a file."
-msgstr "Tallentaa dokumentin tiedostoon."
-
-msgid "Save as..."
-msgstr "Tallenna nimellä..."
-
-msgid "Saves the coordinate system as a new name."
-msgstr "Tallentaa dokumentin uudella nimellä."
-
-msgid "Save copy as..."
-msgstr "Tallenna kopio nimellä..."
-
-msgid "Saves a copy of the current coordinate system."
-msgstr "Tallentaa kopion nykyisestä dokumentista."
-
-msgid "Save as image..."
-msgstr "Tallenna kuvana..."
-
-msgid "Saves the shown coordinate system as an image."
-msgstr "Tallentaa dokumentin kuvana."
-
-msgid "Print..."
-msgstr "Tulosta..."
-
-msgid "Print shown coordinate system."
-msgstr "Tulostaa dokumentin."
-
-msgid "Exit"
-msgstr "Sulje"
-
-msgid "Quit the program."
-msgstr "Sulkee ohjelman."
-
-msgid "Undo"
-msgstr "Kumoa"
-
-msgid "Undo the last action."
-msgstr "Kumoaa viimeisen toiminnon."
-
-msgid "Redo"
-msgstr "Tee uudelleen"
-
-msgid "Redo the last action undone."
-msgstr "Tekee kumotun toiminnon uudelleen."
-
-msgid "Cut"
-msgstr "Leikkaa"
-
-msgid "Cuts the selected function or point series to the clipboard."
-msgstr "Leikkaa valitun funktion tai pistejoukon leikepöydälle."
-
-msgid "Copy"
-msgstr "Kopioi"
-
-msgid "Copies the selected function or point series to the clipboard."
-msgstr "Kopioi valitun funktion tai pistejoukon leikepöydälle."
-
-msgid "Paste"
-msgstr "Liitä"
-
-msgid "Pastes a function or point series from the clipboard into the coordinate system."
-msgstr "Liittää funktion tai pistejoukon koordinaatistoon."
-
-msgid "Copy image"
-msgstr "Kopioi kuvana"
-
-msgid "Copies the shown coordinate system to the clipboard."
-msgstr "Kopioi koordinaatiston leikepöydälle kuvana."
-
-msgid "Axes..."
-msgstr "Akselit..."
-
-msgid "Edit axes settings."
-msgstr "Muokkaa koordinaattiakseleiden asetuksia."
-
-msgid "Options..."
-msgstr "Asetukset..."
-
-msgid "Edit various options for the interface and program features."
-msgstr "Muokkaa ohjelman ja käyttöliittymän asetuksia."
-
-msgid "Insert function..."
-msgstr "Lisää funktio..."
-
-msgid "Insert a new function."
-msgstr "Lisää uuden funktion."
-
-msgid "Insert tangent/normal..."
-msgstr "Lisää tangentti/normaali..."
-
-msgid "Insert a tangent or normal for the selected function."
-msgstr "Lisää tangentin tai normaalin valittuun funktioon."
-
-msgid "Insert shade..."
-msgstr "Lisää varjostus..."
-
-msgid "Add shading to the selected function."
-msgstr "Lisää varjostuksen valittuun funktioon."
-
-msgid "Insert point series..."
-msgstr "Lisää pistejoukko..."
-
-msgid "Insert a point series."
-msgstr "Lisää pistejoukko."
-
-msgid "Insert trendline..."
-msgstr "Lisää trendiviiva..."
-
-msgid "Insert a curve of best fit for the selected point series."
-msgstr "Lisää pistejoukkoon parhaiten sopivan käyrän."
-
-msgid "Edit..."
-msgstr "Muokkaa..."
-
-msgid "Edit the selected element: Function, tangent, point series, etc."
-msgstr "Muokkaa valittua objektia: funktiota, tangenttia, pistejoukkoa, jne."
-
-msgid "Delete"
-msgstr "Poista"
-
-msgid "Delete the selected function, tangent or point series."
-msgstr "Poistaa valitun funktion, tangentin tai pistejoukon."
-
-msgid "Insert f'(x)..."
-msgstr "Lisää f'(x)..."
-
-msgid "Insert the first derivative of the selected function."
-msgstr "Lisää ensimmäisen derivaatan valittuun funktioon."
-
-msgid "In"
-msgstr "Lähennä"
-
-msgid "Zoom in."
-msgstr "Lähentää zoomausta."
-
-msgid "Out"
-msgstr "Loitonna"
-
-msgid "Zoom out."
-msgstr "Loitontaa zoomausta."
-
-msgid "Window"
-msgstr "Valinta"
-
-msgid "Zoom to user selected window."
-msgstr "Zoomaa valintaan."
-
-msgid "Square"
-msgstr "Neliö"
-
-msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
-msgstr "Zoomaa akselit tasavälisiksi, jolloin esimerkiksi ympyrä näkyy oikean muotoisena, ei ellipsinä."
-
-msgid "Standard"
-msgstr "Standardi"
-
-msgid "Zoom to standard coordinates."
-msgstr "Zoomaa standardikoordinaatistoon."
-
-msgid "Move"
-msgstr "Siirrä"
-
-msgid "Move up"
-msgstr "Ylös"
-
-msgid "Move the window up along the coordinate system."
-msgstr "Siirtää näkymää ylös."
-
-msgid "Move down"
-msgstr "Alas"
-
-msgid "Move the window down along the coordinate system."
-msgstr "Siirtää näkymää alas."
-
-msgid "Move left"
-msgstr "Vasemmalle"
-
-msgid "Move the window to the left along the coordinate system."
-msgstr "Siirtää näkymää vasemmalle."
-
-msgid "Move right"
-msgstr "Oikealle"
-
-msgid "Move the window to the right along the coordinate system."
-msgstr "Siirtää näkymää oikealle."
-
-msgid "Move system"
-msgstr "Siirrä koordinaatistoa"
-
-msgid "Move the coordinate system with the mouse."
-msgstr "Siirrä koordinaatistoa hiirellä."
-
-msgid "Length of path"
-msgstr "Kaaren pituus"
-
-msgid "Calculates the length of path between two given points on the curve."
-msgstr "Laskee kahden pisteen välisen kaaren pituuden."
-
-msgid "Calculates the area under the path of the selected function."
-msgstr "Laskee valitun funktion ja koordinaattiakselin väliin jäävän alan."
-
-msgid "Evaluate"
-msgstr "Laske funktion arvoja"
-
-msgid "Evaluate or trace the selected function."
-msgstr "Laskee valitun funktion arvoja."
-
-msgid "Table..."
-msgstr "Arvotaulukko..."
-
-msgid "Shows an evaluation table."
-msgstr "Laskee funktion arvoja taulukkoon."
-
-msgid "Contents and index"
-msgstr "Ohjeen aiheet"
-
-msgid "Open help file."
-msgstr "Avaa ohjetiedoston."
-
-msgid "List of functions"
-msgstr "Lista funktioista"
-
-msgid "Shows a list of built-in functions that can be used for graphing."
-msgstr "Näyttää listan käytettävissä olevista funktioista."
-
-msgid "Go to home page"
-msgstr "Ohjelman kotisivu"
-
-msgid "Opens the default browser and shows the home page of the program."
-msgstr "Avaa ohjelman kotisivun oletusselaimessa."
-
-msgid "Check for update"
-msgstr "Tarkista päivitykset"
-
-msgid "Contact the home page to see if a newer version is available."
-msgstr "Tarkistaa onko uutta ohjelmaversiota saatavilla."
-
-msgid "About Graph..."
-msgstr "Tietoja Graph-ohjelmasta..."
-
-msgid "Show copyright information."
-msgstr "Näyttää tekijänoikeustietoja."
-
-msgid "Separator"
-msgstr "Erotin"
-
-msgid "Fit"
-msgstr "Sovita"
-
-msgid "Zoom to show the selected function."
-msgstr "Sovittaa valitun kuvaajan ikkunaan."
-
-msgid "All points"
-msgstr "Kaikki pisteet"
-
-msgid "Zoom as much as all points are visible."
-msgstr "Sovittaa kaikkien pistejoukkojen pisteet ikkunaan."
-
-msgid "Frequently Asked Questions"
-msgstr "Usein kysytyt kysymykset"
-
-msgid "Shows a list of frequently asked questions and their answers."
-msgstr "Näyttää listan usein kysytyistä kysymyksistä vastauksineen."
-
-msgid "Insert label..."
-msgstr "Lisää teksti..."
-
-msgid "Insert a text label (select and click in the main window where you want the label)."
-msgstr "Lisää teksti (valitse tämä ja klikkaa haluamaasi kohtaa koordinaatistossa)."
-
-msgid "Donate"
-msgstr "Lahjoita"
-
-msgid "Donate money to the project."
-msgstr "Lahjoita rahaa Graph-projektiin."
-
-msgid "Tip of the day"
-msgstr "Päivän vihje"
-
-msgid "Show tip of the day"
-msgstr "Näyttää päivän vihjeen."
-
-msgid "Support"
-msgstr "Tukipalvelut"
-
-msgid "Open browser with the support page for the program."
-msgstr "Avaa ohjelman tukisivuston oletusselaimessa."
-
-msgid "Zoom x-axis in"
-msgstr "Zoomaa x-akselia sisään"
-
-msgid "Zoom in on the x-axis only."
-msgstr "Zoomaa vain x-akselia sisään."
-
-msgid "Zoom x-axis out"
-msgstr "Zoomaa x-akselia ulos"
-
-msgid "Zoom out on the x-axis only."
-msgstr "Zoomaa vain x-akselia ulos."
-
-msgid "Zoom y-axis in"
-msgstr "Zoomaa y-akselia sisään"
-
-msgid "Zoom in on the y-axis only."
-msgstr "Zoomaa vain y-akselia sisään."
-
-msgid "Zoom y-axis out"
-msgstr "Zoomaa y-akselia ulos"
-
-msgid "Zoom out on the y-axis only."
-msgstr "Zoomaa vain y-akselia ulos."
-
-msgid "Insert relation..."
-msgstr "Lisää relaatio..."
-
-msgid "Insert a new equation or inequality."
-msgstr "Lisää yhtälön tai epäyhtälön."
-
-msgid "Custom functions..."
-msgstr "Omat funktiot..."
-
-msgid "Create custom functions and constants for use in graphs."
-msgstr "Luo omia funktioita tai vakioita."
-
-msgid "Animate..."
-msgstr "Animoi..."
-
-msgid "Create an animation by variating a constant."
-msgstr "Luo animaatio vakiota varioimalla."
-
-msgid "Graph file..."
-msgstr "Graph-tiedosto..."
-
-msgid "Import a Graph file into the current coordinate system."
-msgstr "Tuo Graph-tiedoston nykyiseen koordinaatistoon."
-
-msgid "Point series..."
-msgstr "Pistejoukko..."
-
-msgid "Import point series from a data file."
-msgstr "Tuo pistejoukon tiedostosta."
-
-msgid "Select color"
-msgstr "Valitse väri"
-
-msgid "Reset to default"
-msgstr "Palauta oletukset"
-
-msgid "Reset the tool bar icons to the installation default."
-msgstr "Palauttaa työkalurivin oletuspainikkeet."
-
-msgid "Customize toolbar..."
-msgstr "Mukauta..."
-
-msgid "Customize the icons shown on the toolbar."
-msgstr "Mukauttaa työkalurivin painikkeita."
-
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+msgid "Custom..."
+msgstr "Mukautettu..."
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
+#. Shown in rotation dialog
 msgid "Rotation"
 msgstr "Kiertokulma"
 
-msgid "Edit label..."
-msgstr "Muokkaa tekstiä..."
+#. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Export("Export to file...")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Export("Export to file...")..Caption
+msgid "Export to file..."
+msgstr "Vie tiedostoon..."
 
-msgid "Edit the label under the cursor."
-msgstr "Muokkaa valittua tekstiä."
+#. Form1..PopupMenu1..Tree_Export("Export to file...")..Hint
+msgid "Export the selected point series to a file."
+msgstr "Vie valitun pistejoukon tiedostoon."
 
-msgid "Delete label"
-msgstr "Poista"
+#. Form1..ActionManager..NewAction("New")..Caption
+msgid "New"
+msgstr "Uusi"
 
-msgid "Delete the label under the cursor."
-msgstr "Poistaa valitun tekstin."
+#. Form1..ActionManager..NewAction("New")..Hint
+msgid "Creates a new coordinate system."
+msgstr "Luo uuden dokumentin."
 
-msgid "Show legend"
-msgstr "Näytä selite"
+#. Form1..ActionManager..OpenAction("Open...")..Caption
+#. Form20("Animation")..PopupMenu1..Open1("Open...")..Caption
+msgid "Open..."
+msgstr "Avaa..."
 
-msgid "Select to show a legend in the coordinate system."
-msgstr "Näyttää selitteen koordinaatistossa."
+#. Form1..ActionManager..OpenAction("Open...")..Hint
+msgid "Read coordinate system and functions from a file."
+msgstr "Avaa dokumentin."
 
-msgid "Font"
-msgstr "Fontti"
+#. Form1..ActionManager..SaveAction("Save")..Caption
+msgid "Save"
+msgstr "Tallenna"
 
-msgid "Change the font of the legend."
-msgstr "Valitse selitteen fontti."
+#. Form1..ActionManager..SaveAction("Save")..Hint
+msgid "Write coordinate system and functions to a file."
+msgstr "Tallentaa dokumentin tiedostoon."
 
-msgid "Top Right"
-msgstr "Oikea yläreuna"
+#. Form1..ActionManager..SaveAsAction("Save as...")..Caption
+#. Form20("Animation")..PopupMenu1..Save1("Save as...")..Caption
+msgid "Save as..."
+msgstr "Tallenna nimellä..."
 
-msgid "Show the legend in the upper right corner."
-msgstr "Näyttää selitteen oikeassa yläreunassa."
+#. Form1..ActionManager..SaveAsAction("Save as...")..Hint
+msgid "Saves the coordinate system as a new name."
+msgstr "Tallentaa dokumentin uudella nimellä."
 
-msgid "Bottom Right"
-msgstr "Oikea alareuna"
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Caption
+msgid "Save copy as..."
+msgstr "Tallenna kopio nimellä..."
 
-msgid "Show the legend in the bottom right corner."
-msgstr "Näyttää selitteen oikeassa alareunassa."
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Hint
+msgid "Saves a copy of the current coordinate system."
+msgstr "Tallentaa kopion nykyisestä dokumentista."
 
-msgid "Top Left"
-msgstr "Vasen yläreuna"
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Caption
+msgid "Save as image..."
+msgstr "Tallenna kuvana..."
 
-msgid "Show the legend in the upper left corner."
-msgstr "Näyttää selitteen vasemmassa yläreunassa."
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Hint
+msgid "Saves the shown coordinate system as an image."
+msgstr "Tallentaa dokumentin kuvana."
 
-msgid "Bottom Left"
-msgstr "Vasen alareuna"
+#. Form1..ActionManager..PrintAction("Print...")..Caption
+msgid "Print..."
+msgstr "Tulosta..."
 
-msgid "Show the legend in the bottom left corner."
-msgstr "Näyttää selitteen vasemmassa alareunassa."
+#. Form1..ActionManager..PrintAction("Print...")..Hint
+msgid "Print shown coordinate system."
+msgstr "Tulostaa dokumentin."
 
-msgid "Close"
+#. Form1..ActionManager..ExitAction("Exit")..Caption
+msgid "Exit"
 msgstr "Sulje"
 
-msgid "Next tip"
-msgstr "Seuraava vihje"
-
-msgid "Previous tip"
-msgstr "Edellinen vihje"
-
-msgid "Show tips at startup"
-msgstr "Näytä vihjeet käynnistettäessä"
-
-msgid "Did you know..."
-msgstr "Tiesitkö..."
-
-msgid "Insert relation"
-msgstr "Lisää relaatio"
-
-msgid "Relation:"
-msgstr "Relaatio:"
-
-msgid "Constraints:"
-msgstr "Rajoitukset:"
-
-msgid "OK"
-msgstr "OK"
-
-msgid "Cancel"
-msgstr "Peruuta"
-
-msgid "Legend text"
-msgstr "Selitteen teksti"
-
-msgid "Description:"
-msgstr "Kuvaus:"
-
-msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
-msgstr "Kirjoita selite. Jos et kirjoita mitään, selitteenä näkyy funktion yhtälö."
-
-msgid "Properties"
-msgstr "Ominaisuudet"
-
-msgid "Style:"
-msgstr "Tyyli:"
-
-msgid "Color:"
-msgstr "Väri:"
-
-msgid "Width:"
-msgstr "Leveys:"
-
-msgid "Select the style used for drawing the inequality. Not used for equations."
-msgstr "Valitse epäyhtälössä käytettävä tyyli. Ei vaikuta yhtälöihin."
-
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Yhtälön kaaren tai epäyhtälön rajaviivan leveys pikseleinä."
-
-msgid "Select the color for drawing the relation."
-msgstr "Valitse viivan väri."
-
-msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
-msgstr "Syötä relaatio. Esimerkiksi \"x^2+y^2 = 25\" tai \"y < sin(x)\""
-
-msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
-msgstr "Syötä relaation rajoitukset. Esimerkiksi \"x > 0 and y < 5\""
-
-msgid "Insert tangent/normal"
-msgstr "Lisää tangentti/normaali"
-
-msgid "Coordinate where the tangent/normal will cross the function."
-msgstr "Piste, jossa tangentti sivuaa funktion kuvaajaa/normaali leikkaa funktion kuvaajan."
-
-msgid "Choose if you want a tangent or a normal."
-msgstr "Valitse tangentti tai normaali"
-
-msgid "Type"
-msgstr "Tyyppi"
-
-msgid "Tangent"
-msgstr "Tangentti"
-
-msgid "Normal"
-msgstr "Normaali"
-
-msgid "Graph properties"
-msgstr "Ominaisuudet"
-
-msgid "Line style:"
-msgstr "Viivan tyyli:"
-
-msgid "Width of graph in pixels."
-msgstr "Viivan paksuus pikseleinä."
-
-msgid "Choose which line style to use for drawing the graph."
-msgstr "Valitse kuvaajan viivan tyyli."
-
-msgid "Select the color of the graph."
-msgstr "Valitse kuvaajan väri."
-
-msgid "Argument range"
-msgstr "Määrittelyväli"
-
-msgid "Start of range interval for the used variable."
-msgstr "Määrittelyvälin alkupiste."
-
-msgid "End of range interval for the used variable."
-msgstr "Määrittelyvälin loppupiste."
-
-msgid "Endpoints"
-msgstr "Päätepisteet"
-
-msgid "Start:"
-msgstr "Alku:"
-
-msgid "End:"
-msgstr "Loppu:"
-
-msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
-msgstr "Valitse välin alkupisteen merkki. Näkyy vain, jos on valittu jokin väli."
-
-msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
-msgstr "Valitse välin loppupisteen merkki. Näkyy vain, jos on valittu jokin väli."
-
-msgid "Insert trendline"
-msgstr "Lisää trendiviiva"
-
-msgid "Line"
-msgstr "Viiva"
-
-msgid "Built-in"
-msgstr "Valmiit mallit"
-
-msgid "Create a linear function: f(x)=ax+b"
-msgstr "Luo lineaarisen funktion: f(x)=ax+b"
-
-msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
-msgstr "Luo logaritmifunktion: f(x)=a*ln(x)+b"
-
-msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
-msgstr "Luo polynomifunktion: f(x)=ax^3+bx^2+cx+d"
-
-msgid "Create a power function: f(x)=ax^b"
-msgstr "Luo potenssifunktion: f(x)=ax^b"
-
-msgid "Create a exponential function: f(x)=a*b^x"
-msgstr "Luo eksponenttifunktion: f(x)=a*b^x"
-
-msgid "The order of the polynomium. For example 2 means a parable."
-msgstr "Polynomin asteluku. Esimerkiksi 2 luo paraabelin."
-
-msgid "Order:"
-msgstr "Asteluku:"
-
-msgid "Polynomial"
-msgstr "Polynomi"
-
-msgid "Logarithmic"
-msgstr "Logaritminen"
-
-msgid "Linear"
-msgstr "Lineaarinen"
-
-msgid "Power"
-msgstr "Potenssi"
-
-msgid "Exponential"
-msgstr "Eksponentiaalinen"
-
-msgid "Create a moving average as a series of straight lines."
-msgstr "Luo liukuvan keskiarvon sarjana suoria."
-
-msgid "Moving average"
-msgstr "Liukuva keskiarvo"
-
-msgid "Period:"
-msgstr "Jakso:"
-
-msgid "Determines how many points are used for the average."
-msgstr "Määrittää kuinka monta pistettä keskiarvon laskemiseen käytetään."
-
-msgid "User defined"
-msgstr "Käyttäjän määrittämä"
-
-msgid "Model:"
-msgstr "Malli:"
-
-msgid "Add model"
-msgstr "Lisää"
-
-msgid "Remove model"
-msgstr "Poista"
-
-msgid "Edit model"
-msgstr "Muokkaa"
-
-msgid "Enter a function model to base the trendline on."
-msgstr "Kirjoita mallifunktio, johon trendiviiva perustuu."
-
-msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
-msgstr "Valitse pakotettu trendiviivan ja y-akselin leikkauspiste. Tämä on käytössä vain lineaariselle, polynomiselle ja eksponentiaaliselle trendiviivalle."
-
-msgid "Intercept ="
-msgstr "Leikkauspiste ="
-
-msgid "Insert point series"
-msgstr "Lisää pistejoukko"
-
-msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
-msgstr "Pistejoukon nimi."
-
-msgid "Series"
-msgstr "Pistejoukko"
-
-msgid "This shows a sample of the markers and the lines between the markers."
-msgstr "Esimerkki, kuinka pistejoukko tulee koordinaatistossa näkymään."
-
-msgid "Sample"
-msgstr "Esimerkki"
-
-msgid "Markers"
-msgstr "Pisteet"
-
-msgid "Marker"
-msgstr "Piste"
-
-msgid "Size:"
-msgstr "Koko:"
-
-msgid "Choose the size of the markers."
-msgstr "Valitse pisteen koko."
-
-msgid "Choose the type of markers to be shown at each point."
-msgstr "Valitse käytettävän pisteen tyyli."
-
-msgid "Choose the color of the markers."
-msgstr "Valitsen pisteen väri."
-
-msgid "Interpolation:"
-msgstr "Interpolointi:"
-
-msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
-msgstr "Valitse pisteiden väliin piirrettävän viivan tyyli."
-
-msgid "Choose the width of the lines in pixels."
-msgstr "Valitse viivan leveys pikesleinä."
-
-msgid "Select which kind of line to draw between the markers."
-msgstr "Valitse pisteiden väliin piirrettävän viivan interpolaatiotapa."
-
-msgid "Cubic splines"
-msgstr "Kolmannen asteen splinit"
-
-msgid "Half cosine"
-msgstr "Puolikas kosini"
-
-msgid "Choose the color of the lines."
-msgstr "Valitse viivan väri."
-
-msgid "Labels"
-msgstr "Otsikot"
-
-msgid "Position:"
-msgstr "Sijainti:"
-
-msgid "Check to show the coordinate at each point."
-msgstr "Näyttää joka pisteen koordinaatin."
-
-msgid "Show coordinates"
-msgstr "Näytä koordinaatit"
-
-msgid "Select the font for the coordinates."
-msgstr "Valitse koordinaatin fontti."
-
-msgid "Select where the coordinates should be shown."
-msgstr "Valitse koordinaatin sijoituspaikka."
-
-msgid "Below"
-msgstr "Pisteen alla"
-
-msgid "Above"
-msgstr "Pisteen päällä"
-
-msgid "Left"
-msgstr "Pisteen vasemmalla puolella"
-
-msgid "Right"
-msgstr "Pisteen oikealla puolella"
-
-msgid "Error bars"
-msgstr "Virhepalkit"
-
-msgid "X error bars"
-msgstr "X-virhepalkit"
-
-msgid "Show horizontal error bars."
-msgstr "Näyttä vaakasuuntaiset virhepalkit."
-
-msgid "Show x-bars"
-msgstr "Näytä"
-
-msgid "All error bars are the same size."
-msgstr "Kaikki virhepalkit samankokoisia."
-
-msgid "Fixed:"
-msgstr "Kiinteä:"
-
-msgid "Enter fixed value."
-msgstr "Syötä kiinteä arvo."
-
-msgid "All error bars are the same percentage of the x-coordinate."
-msgstr "Kaikki virhepalkit ovat tietyn prosentin x-koordinaatin arvosta."
-
-msgid "Relative:"
-msgstr "Suhteellinen:"
-
-msgid "Each error bar is given a custom value."
-msgstr "Jokaisella virhepalkilla on mukautettu arvo."
-
-msgid "Custom"
-msgstr "Mukautettu"
-
-msgid "Enter relative value in percent."
-msgstr "Syötä suhteellinen arvo prosentteina."
-
-msgid "Y error bars"
-msgstr "Y-virhepalkit"
-
-msgid "Show vertical error bars."
-msgstr "Näyttä pystysuuntaiset virhepalkit."
-
-msgid "Show y-bars"
-msgstr "Näytä"
-
-msgid "All error bars are the same percentage of the y-coordinate."
-msgstr "Kaikki virhepalkit ovat tietyn prosentin y-koordinaatin arvosta."
-
-msgid "Cut the selected text to the clipboard."
-msgstr "Leikkaa valittu teksti leikepöydälle."
-
-msgid "Copy the selected text to the clipboard."
-msgstr "Kopioi valittu teksti leikepöydälle"
-
-msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
-msgstr "Liittää tekstin leikepöydältä taulukkoon. Osa tekstistä saattaa korvautua."
-
-msgid "Erase selected cells."
-msgstr "Tyhjentää valitut solut."
-
-msgid "Insert row"
-msgstr "Lisää rivi"
-
-msgid "Inserts a row in the grid moving rows below one down."
-msgstr "Lisää rivin taulukkoon siirtäen alla olevia rivejä alaspäin."
-
-msgid "Remove row"
-msgstr "Poista rivi"
-
-msgid "Removes the selected rows."
-msgstr "Poistaa valitut rivit."
-
-msgid "Select all"
-msgstr "Valitse kaikki"
-
-msgid "Select all cells."
-msgstr "Valitsee kaikki solut."
-
-msgid "Import from file..."
-msgstr "Tuo tiedostosta..."
-
-msgid "Import data from a file and place it at the selected cell."
-msgstr "Tuo dataa tiedostosta valittuun soluun."
-
-msgid "Export selected data to a file."
-msgstr "Vie valitun datan tiedostoon."
-
-msgid "Calculate table"
-msgstr "Arvotaulukko"
-
-msgid "The step value. This is the distance between the x-values in the interval."
-msgstr "X:n muutos. Kuinka suurin x-akselin välein funktion arvot lasketaan."
-
-msgid "The first x-value in the interval."
-msgstr "Välin ensimmäinen x-koordinaatti."
-
-msgid "The last x-value in the interval."
-msgstr "Välin viimeinen x-koordinaatti."
-
-msgid "Show %s"
-msgstr "Näytä %s"
-
-msgid "Copy selected cells to the clipboard."
-msgstr "Kopioit valitut solut leikepöydälle."
-
-msgid "Saves the selected data to a file."
-msgstr "Tallentaa valitun datan tiedostoon."
-
-msgid "Calculating"
-msgstr "Lasketaan..."
-
-msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
-msgstr "CSV (Comma delimited) [*.csv]|*.csv|Teksti [*.txt]|*.txt"
-
-msgid "Insert shade"
-msgstr "Lisää varjostus"
-
-msgid "Shading"
-msgstr "Varjostus"
-
-msgid "Shades the area between the function and the x-axis."
-msgstr "Varjostaa funktion ja x-akselin väliin jäävän alueen."
-
-msgid "Shades the area below the function."
-msgstr "Varjostaa funktion alle jäävän alueen."
-
-msgid "Shades the area above the function."
-msgstr "Varjostaa funktion päälle jäävän alueen."
-
-msgid "Shades the area between the function and the y-axis."
-msgstr "Varjostaa funktion ja y-akselin välisen alueen."
-
-msgid "Shades the area inside the function."
-msgstr "Varjostaa alueen funktion sisällä."
-
-msgid "Shades the area between the main function and the function selected in the list to the right."
-msgstr "Varjostaa kahden valitun funktion välisen alueen. Toisen funktion voit valita Toinen funktio -välilehdeltä."
-
-msgid "Above function"
-msgstr "Funktion yläpuolella"
-
-msgid "Between function and x-axis"
-msgstr "Funktion ja x-akselin välissä"
-
-msgid "Between functions"
-msgstr "Funktioiden välissä"
-
-msgid "Between function and y-axis"
-msgstr "Funktion ja y-akselin välissä"
-
-msgid "Inside function"
-msgstr "Funktion sisällä"
-
-msgid "Below function"
-msgstr "Funktion alapuolella"
-
-msgid "Options"
-msgstr "Asetukset"
-
-msgid "Range"
-msgstr "Varjostettava alue"
-
-msgid "Coordinate where the shading starts."
-msgstr "Varjostuksen alkupiste."
-
-msgid "Coordinate where the shading ends."
-msgstr "Varjostuksen loppupiste."
-
-msgid "Check to increase the end coordinate until intersection."
-msgstr "Valitse ulottaaksesi loppupistettä seuraavaan leikkauspisteeseen."
-
-msgid "Increase to intersection"
-msgstr "Seuraavaan leikkauspisteeseen"
-
-msgid "Check to decrease the start coordinate until intersection."
-msgstr "Valitse ulottaaksesi alkupistettä edeltävään leikkauspisteeseen."
-
-msgid "Decrease to intersection"
-msgstr "Edelliseen leikkauspisteeseen"
-
-msgid "Select the style used for the shading."
-msgstr "Valitse varjostuksen tyyli."
-
-msgid "Mark the end of the shading with a line."
-msgstr "Merkitsee varjostettavan alueen loppupisteen viivalla."
-
-msgid "Mark end of range"
-msgstr "Merkitse loppupiste"
-
-msgid "Select color used for shading."
-msgstr "Valitse varjostuksen väli."
-
-msgid "Mark the start of the shading with a line."
-msgstr "Merkitsee varjostettavan alueen alkupisteen viivalla."
-
-msgid "Mark start of range"
-msgstr "Merkitse alkupiste"
-
-msgid "Enter a description to show in the legend."
-msgstr "Kirjoita selite."
-
-msgid "2nd function"
-msgstr "Toinen funktio"
-
-msgid "2nd function:"
-msgstr "Toinen funktio:"
-
-msgid "Select the second function when you want a shading between two functions."
-msgstr "Valitse toinen funktio, jos haluat varjostuksen kahden funktion väliselle alueelle."
-
-msgid "Shading range for 2nd function"
-msgstr "Toisen funktion varjostettava alue"
-
-msgid "Custom functions/constants"
-msgstr "Omat funktiot/vakiot"
-
-msgid "Apply"
-msgstr "Käytä"
-
-msgid "Names"
-msgstr "Nimi"
-
-msgid "Definition"
-msgstr "Määrittely"
-
-msgid "Cut the selected text to the clipboard"
-msgstr "Leikkaa valittu teksti leikepöydälle"
-
-msgid "Image options"
-msgstr "Kuvan ominaisuudet"
-
-msgid "Size"
-msgstr "Koko"
-
-msgid "Image width:"
-msgstr "Kuvan leveys:"
-
-msgid "Image height:"
-msgstr "Kuvan korkeus:"
-
-msgid "Set a custom image width."
-msgstr "Valitse mukautettu kuvan leveys."
-
-msgid "Set a custom image height."
-msgstr "Valitse mukautettu kuvan korkeus."
-
-msgid "Choose to use the same size as shown on the screen or a custom image size."
-msgstr "Valitse käyttääksesi joko ruudussa näkyvää tai mukautettua kuvan kokoa."
-
-msgid "Image size"
-msgstr "Kuvan koko"
-
-msgid "Screen size"
-msgstr "Näytön koko"
-
-msgid "Custom size"
-msgstr "Mukautettu"
-
-msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
-msgstr "Progressiivinen koodaus näyttää kuvasta ensin karkean vedoksen ennen kuin se ladataan kokonaan."
-
-msgid "Encoding"
-msgstr "Koodaus"
-
-msgid "Progressive"
-msgstr "Progressiivinen"
-
-msgid "Select a compression quality."
-msgstr "Valitse pakkauslaatu."
-
-msgid "Quality"
-msgstr "Laatu"
-
-msgid "Paper size:"
-msgstr "Paperikoko"
-
-msgid "Choose paper orientation."
-msgstr "Valitse paperin suunta."
-
-msgid "Orientation"
-msgstr "Paperin suunta"
-
-msgid "Portrait"
-msgstr "Pysty"
-
-msgid "Landscape"
-msgstr "Vaaka"
-
-msgid "Choose paper size to use."
-msgstr "Valitse käytettävä paperikoko."
-
-msgid "Select this to use these settings as defaults in the future."
-msgstr "Valitse asettaaksesi nykyiset asetukset oletusasetuksiksi."
-
-msgid "Save as default"
-msgstr "Tallenna oletukseksi"
-
-msgid "Animate"
-msgstr "Animoi"
-
-msgid "Constant:"
-msgstr "Vakio:"
-
-msgid "Choose a constant to change between each frame."
-msgstr "Valitse varioitava vakio."
-
-msgid "Step:"
-msgstr "Askel:"
-
-msgid "The first value of the constant"
-msgstr "Vakion ensimmäinen arvo."
-
-msgid "The last value of the constant."
-msgstr "Vakion viimeinen arvo."
-
-msgid "The chosen constant is changed by this value between each frame."
-msgstr "Vakion arvo muuttuu askeleen verran animaation ruutujen välillä."
-
-msgid "Image information"
-msgstr "Kuvan tiedot"
-
-msgid "Frames/second:"
-msgstr "Ruutua/sekunti:"
-
-msgid "Number of frames per second used when the animation is played."
-msgstr "Animaation toistossa käytetty ruututaajuus."
-
-msgid "Working"
-msgstr "Työskennellään"
-
-msgid "About Graph"
-msgstr "Tietoja Graph-ohjelmasta"
-
-msgid "<Language> translation by <Translator>"
-msgstr "Suomenkielinen käännös Pekka Lerssi"
-
-msgid "Version "
-msgstr "Versio"
-
-msgid "Email:"
-msgstr "Email:"
-
-msgid "Build"
-msgstr "Koontiversio"
-
-msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
-msgstr "Tämä on maksuton ohjelmisto, ja saat jakaa sitä GNU General Public License -ehtojen mukaisesti. Lähetä vikailmoitukset ja ehdotukset tekijälle."
-
-msgid "The newest version as well as the source code are available at:"
-msgstr "Uusin versio ohjelmasta ja avoin lähdekoodi ovat saatavilla osoitteesta:"
-
-msgid "Animation"
-msgstr "Animaatio"
-
-msgid "Play"
-msgstr "Toista"
-
-msgid "Pause"
-msgstr "Tauko"
-
-msgid "Stop"
-msgstr "Pysäytä"
-
-msgid "Back"
-msgstr "Takaisin"
-
-msgid "Step"
-msgstr "Askel"
-
-msgid "Speed"
-msgstr "Nopeus"
-
-msgid "Change the speed used to play the animation."
-msgstr "Valitse animaation toistonopeus."
-
-msgid "Repeat"
-msgstr "Uudelleentoisto"
-
-msgid "Repeat playing the animation until manually stopped."
-msgstr "Uudelleentoista animaatiota kunnes se pysäytetään manuaalisesti."
-
-msgid "Auto reverse"
-msgstr "Automaattinen alkuunkelaus"
-
-msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
-msgstr "Toista takaisin alkuun takaperin, kun animaatio saavuttaa lopun. Tämä toiminto on hyödyllisin \"Uudelleentoisto\"-toiminnon kanssa käytettynä."
-
-msgid "Open an animation file."
-msgstr "Avaa animaatiotiedosto."
-
-msgid "Save the animation to a file."
-msgstr "Tallenna animaatio tiedostoon."
-
-msgid "Edit axes"
-msgstr "Muokkaa akseleita"
-
-msgid "Minimum:"
-msgstr "Minimi:"
-
-msgid "Maximum:"
-msgstr "Maksimi:"
-
-msgid "Tick unit:"
-msgstr "Asteikon jako:"
-
-msgid "The x-axis cross at y="
-msgstr "X-akseli leikkaa kohdassa y="
-
-msgid "Grid unit:"
-msgstr "Taustaruudukon jako:"
-
-msgid "Minimum x-value."
-msgstr "Pienin näytettävä x-akselin piste."
-
-msgid "Maximum x-value."
-msgstr "Suurin näytettävä x-akselin piste."
-
-msgid "Units between ticks on the x-axis."
-msgstr "Valitse x-akselin numeroinnin jakoväli."
-
-msgid "Use logarithmic scale on the x-axis."
-msgstr "Käyttää logaritmista asteikkoa x-akselille."
-
-msgid "Logarithmic scale"
-msgstr "Logaritminen asteikko"
-
-msgid "Show the label at the right side of the main window, above the x-axis."
-msgstr "Näyttää otsikon x-akselin yläpuolella oikeassa reunassa."
-
-msgid "Label:"
-msgstr "Otsikko:"
-
-msgid "Edit the label for the axis here."
-msgstr "Kirjoita akselin otsikko tähän."
-
-msgid "Show units on the x-axis."
-msgstr "Näytä numerointi x-akselilla."
-
-msgid "Show numbers"
-msgstr "Näytä numerot"
-
-msgid "The x-axis will intersect with the y-axis at this value."
-msgstr "X-akseli leikkaa y-akselin tässä pisteessä."
-
-msgid "Units between the grid lines perpendicular to the x-axis."
-msgstr "Valitse x-akselin taustaruudukon (pystysuuntainen) jakoväli."
-
-msgid "Determine the tick unit automatically."
-msgstr "Määritä asteikon jako automaattisesti."
-
-msgid "Auto tick"
-msgstr "Automaattinen"
-
-msgid "Set the grid unit to the same as the tick unit."
-msgstr "Määritä taustaruudukon jako samaksi kuin akselilla."
-
-msgid "Auto grid"
-msgstr "Automaattinen"
-
-msgid "Show tick marks on the x-axis."
-msgstr "Näytä jakoviivat x-akselilla."
-
-msgid "Show ticks"
-msgstr "Näytä "
-
-msgid "Show units on the selected axis as a fraction multiplied by pi."
-msgstr "Näyttää numeroinnin piin murtolukumonikertana."
-
-msgid "Show as a multiple of pi"
-msgstr "Piin monikerta"
-
-msgid "Show vertical grid lines."
-msgstr "Näyttää pystysuuntaisen taustaruudukon."
-
-msgid "Show grid"
-msgstr "Näytä"
-
-msgid "The y-axis cross at x="
-msgstr "Y-akseli leikkaa kohdassa x="
-
-msgid "Minimum y-value."
-msgstr "Pienin näytettävä y-akselin piste."
-
-msgid "Maximum y-value."
-msgstr "Suurin näytettävä y-akselin piste."
-
-msgid "Use logarithmic scale for the y-axis."
-msgstr "Käyttää logaritmista asteikkoa y-akselille."
-
-msgid "Units between ticks on the y-axis."
-msgstr "Valitse y-akselin numeroinnin jakoväli."
-
-msgid "Show units on the y-axis."
-msgstr "Näytä numerointi y-akselilla."
-
-msgid "Show the label at the top of the main window, to the right of the y-axis."
-msgstr "Näyttää otsikon y-akselin oikealla puolella yläreunassa."
-
-msgid "The y-axis will intersect with the x-axis at this value."
-msgstr "Y-akseli leikkaa x-akselin tässä pisteessä."
-
-msgid "Units between the grid lines perpendicular to the y-axis."
-msgstr "Valitse y-akselin taustaruudukon (vaakasuuntainen) jakoväli."
-
-msgid "Show tick marks on the y-axis."
-msgstr "Näytä jakoviivat y-akselilla."
-
-msgid "Show horizontal grid lines."
-msgstr "Näyttää vaakasuuntaisen taustaruudukon."
-
-msgid "Settings"
-msgstr "Asetukset"
-
-msgid "Title:"
-msgstr "Otsikko:"
-
-msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
-msgstr "Valitse näytetäänkö akseleita tai niiden leikkaustapa."
-
-msgid "Axes style"
-msgstr "Akselit"
-
-msgid "None"
-msgstr "Ei mitään"
-
-msgid "Crossed"
-msgstr "Ristissä"
-
-msgid "Boxed"
-msgstr "Kulmittain"
-
-msgid "Choose if trigonometric functions should calculate in radians or degrees."
-msgstr "Valitse lasketaanko trigonometriset funktiot radiaaneina vai asteina."
-
-msgid "Trigonometry"
-msgstr "Kulmayksikkö"
-
-msgid "Radian"
-msgstr "Radiaani"
-
-msgid "Degree"
-msgstr "Aste"
-
-msgid "Enter a title to show above the coordinate system."
-msgstr "Kirjoita koordinaatiston otsikko."
-
-msgid "Select the font for the title."
-msgstr "Valitse otsikon fontti."
-
-msgid "Choose where the legend should be placed."
-msgstr "Valitse selitteen sijoituspaikka."
-
-msgid "Legend placement"
-msgstr "Selitteen sijoitus"
-
-msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
-msgstr "Valitse laskeaksesi kompleksiluvuilla. Huomaa, että tämä saattaa hidastaa piirtämistä."
-
-msgid "Calculate with complex numbers"
-msgstr "Laske kompleksiluvuilla"
-
-msgid "Font and color"
-msgstr "Fontti ja väri"
-
-msgid "Colors"
-msgstr "Värit"
-
-msgid "Grid color:"
-msgstr "Taustaruudukon väri:"
-
-msgid "Axes color:"
-msgstr "Akseleiden väri:"
-
-msgid "Background color:"
-msgstr "Taustaväri:"
-
-msgid "Select the color of the image background."
-msgstr "Valitsen koordinaatiston taustan väri."
-
-msgid "Select the color of the axes."
-msgstr "Valitsen akseleiden väri."
-
-msgid "Select the color of the grid lines."
-msgstr "Valitse taustaruudukon väri."
-
-msgid "Fonts"
-msgstr "Fontit"
-
-msgid "Number font:"
-msgstr "Numeroinnin fontti:"
-
-msgid "Label font:"
-msgstr "Otsikoiden fontti:"
-
-msgid "Legend font:"
-msgstr "Selitteen fontti:"
-
-msgid "Select the font used to show the labels on the axes."
-msgstr "Valitse akseleiden otsikoissa käytettävä fontti."
-
-msgid "Select the font used to show the numbers on the axes."
-msgstr "Valitse akseleiden numeroimisessa käytettävä fontti."
-
-msgid "Select the font used to show the legend text."
-msgstr "Valitse selitteen fontti."
-
-msgid "Decimals:"
-msgstr "Desimaaleja:"
-
-msgid "Recent files:"
-msgstr "Viimeksi avattuja:"
-
-msgid "Max undo steps:"
-msgstr "Kumousaskeleita:"
-
-msgid "Language:"
-msgstr "Kieli:"
-
-msgid "Font scale:"
-msgstr "Fontin skaalaus:"
-
-msgid "Number of decimals used when results are shown."
-msgstr "Valitse, kuinka monella desimaalilla tulokset näytetään."
-
-msgid "Associate *.grf files with Graph."
-msgstr "Määritä *.grf-tiedostot avautumaan Graphissa."
-
-msgid "Associate .grf files"
-msgstr "Kytke grf-tiedostot Graphiin"
-
-msgid "The number of most recent used files shown in the File menu."
-msgstr "Valitse, kuinka monta viimeksi avattua tiedostoa näytetään Tiedosto-valikossa."
-
-msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
-msgstr "Tallentaa ikkunoiden sijainnin suljettaessa. Asetus tulee voimaan seuraavalla käynnistyksellä."
-
-msgid "Save workspace on exit"
-msgstr "Tallenna työtila poistuttaessa"
-
-msgid "Format used when complex numbers are shown."
-msgstr "Valitse, missä muodossa kompleksiluvut näytetään."
-
-msgid "Complex format"
-msgstr "Kompleksiluvut"
-
-msgid "Real"
-msgstr "Reaalisia"
-
-msgid "Rectangular"
-msgstr "Suorakulmaisia"
-
-msgid "Polar"
-msgstr "Polaarisia"
-
-msgid "Show the tooltip when the cursor is over an item."
-msgstr "Näyttää työkaluvihjeet osoitettaessa."
-
-msgid "Show tooltip"
-msgstr "Näytä työkaluvihjeet"
-
-msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
-msgstr "Valitse, kuinka monta kumousaskelta tallennetaan. Aseta nollaan estääksesi kumoamisen."
-
-msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
-msgstr "Tarkistaa ohjelman päivitykset käynnistettäessä."
-
-msgid "Check for new version of Graph at startup"
-msgstr "Tarkista päivitykset käynnistettäessä"
-
-msgid "Select the language to use for the user interface."
-msgstr "Valitse käyttöliittymän kieli."
-
-msgid "This is used to scale the user interface if you are having problems reading the text."
-msgstr "Käytä tätä toimintoa skaalataksesi käyttöliittymää, mikäli teksti on vaikeasti luettavissa."
-
-msgid "Insert function"
-msgstr "Lisää funktio"
-
-msgid "Function type:"
-msgstr "Funktion tyyppi:"
-
-msgid "Select the function type to graph."
-msgstr "Valitsee lisättävän funktion tyypin."
-
-msgid "Standard function   y=f(x)"
-msgstr "Standardifunktio y=f(x)"
-
-msgid "Parametric function x(t), y(t)"
-msgstr "Parametrifunktio x(t), y(t)"
-
-msgid "Polar function         r=f(t)"
-msgstr "Polaarifunktio     r=f(t)"
-
-msgid "Function equation"
-msgstr "Funktion yhtälö"
-
-msgid "Steps:"
-msgstr "Askeleita:"
-
-msgid "Number of calculation steps used to draw the graph."
-msgstr "Määrittää, kuinka monta askelta funktiota piirrettäessä lasketaan."
-
-msgid "Draw type:"
-msgstr "Piirtotapa:"
-
-msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
-msgstr "Valitse viiva, jos haluat piirtää yhtenäisen käyrän. Valitse pisteet, jos haluat jokaisen askeleen näkyvän erikseen."
-
-msgid "Automatic"
-msgstr "Automaattinen"
-
-msgid "Dots"
-msgstr "Pisteet"
-
-msgid "Lines"
-msgstr "Viiva"
-
-msgid "Text label"
-msgstr "Teksti"
-
-msgid "Font name:"
-msgstr "Fontti:"
-
-msgid "Font size:"
-msgstr "Fonttikoko:"
-
-msgid "Font color:"
-msgstr "Fontin väri:"
-
-msgid "Text size."
-msgstr "Fonttikoko."
-
-msgid "Text string"
-msgstr "Teksti"
-
-msgid "Insert symbol (Ctrl+G)"
-msgstr "Lisää symboli (Ctrl+G)"
-
-msgid "Insert object"
-msgstr "Lisää objekti"
-
-msgid "Bold (Ctrl+B)"
-msgstr "Lihavoitu (Ctrl-B)"
-
-msgid "Italic (Ctrl+I)"
-msgstr "Kursivoitu (Ctrl-I)"
-
-msgid "Underline (Ctrl+U)"
-msgstr "Alleviivattu (Ctrl-U)"
-
-msgid "Strikethrough (Ctrl+S)"
-msgstr "Yliviivattu (Ctrl-S)"
-
-msgid "Superscript (Ctrl++)"
-msgstr "Yläindeksi (Ctrl++)"
-
-msgid "Subscript (Ctrl+=)"
-msgstr "Alaindeksi (Ctrl+=)"
-
-msgid "Align left (Ctrl+L)"
-msgstr "Tasaa vasen reuna (Ctrl-L)"
-
-msgid "Center (Ctrl+E)"
-msgstr "Keskitä (Ctrl-E)"
-
-msgid "Align right (Ctrl+R)"
-msgstr "Tasaa oikea reuna (Ctrl-R)"
-
-msgid "Text font."
-msgstr "Valitse käytettävä fontti."
-
-msgid "Text color."
-msgstr "Valitse fontin väri."
-
-msgid "Select background color of the text label."
-msgstr "Valitse tekstikentän taustaväri."
-
-msgid "Undo last action."
+#. Form1..ActionManager..ExitAction("Exit")..Hint
+msgid "Quit the program."
+msgstr "Sulkee ohjelman."
+
+#. Form1..ActionManager..UndoAction("Undo")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Caption
+msgid "Undo"
+msgstr "Kumoa"
+
+#. Form1..ActionManager..UndoAction("Undo")..Hint
+msgid "Undo the last action."
 msgstr "Kumoaa viimeisen toiminnon."
 
-msgid "Redo last undone action."
+#. Form1..ActionManager..RedoAction("Redo")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Caption
+msgid "Redo"
+msgstr "Tee uudelleen"
+
+#. Form1..ActionManager..RedoAction("Redo")..Hint
+msgid "Redo the last action undone."
 msgstr "Tekee kumotun toiminnon uudelleen."
 
-msgid "Paste the contents of the clipboard."
-msgstr "Liittää leikepöydän sisällön."
+#. Form1..ActionManager..CutAction("Cut")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Caption
+msgid "Cut"
+msgstr "Leikkaa"
 
-msgid "Paste special..."
-msgstr "Liitä määräten..."
+#. Form1..ActionManager..CutAction("Cut")..Hint
+msgid "Cuts the selected function or point series to the clipboard."
+msgstr "Leikkaa valitun funktion tai pistejoukon leikepöydälle."
 
-msgid "Select which clipboard representation you want to paste."
-msgstr "Valitsee missä muodossa leikepöydän sisältö liitetään."
+#. Form1..ActionManager..CopyAction("Copy")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Caption
+msgid "Copy"
+msgstr "Kopioi"
 
+#. Form1..ActionManager..CopyAction("Copy")..Hint
+msgid "Copies the selected function or point series to the clipboard."
+msgstr "Kopioi valitun funktion tai pistejoukon leikepöydälle."
+
+#. Form1..ActionManager..PasteAction("Paste")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Caption
+msgid "Paste"
+msgstr "Liitä"
+
+#. Form1..ActionManager..PasteAction("Paste")....Hint
+msgid "Pastes a function or point series from the clipboard into the coordinate system."
+msgstr "Liittää funktion tai pistejoukon koordinaatistoon."
+
+#. Form1..ActionManager..CopyImageAction("Copy image")..Caption
+msgid "Copy image"
+msgstr "Kopioi kuvana"
+
+#. Form1..ActionManager..CopyImageAction("Copy image")..Hint
+msgid "Copies the shown coordinate system to the clipboard."
+msgstr "Kopioi koordinaatiston leikepöydälle kuvana."
+
+#. Form1..ActionManager..AxesAction("Axes...")..Caption
+msgid "Axes..."
+msgstr "Akselit..."
+
+#. Form1..ActionManager..AxesAction("Axes...")..Hint
+msgid "Edit axes settings."
+msgstr "Muokkaa koordinaattiakseleiden asetuksia."
+
+#. Form1..ActionManager..OptionsAction("Options...")..Caption
+#. Form1..SaveDialogEx1..HelpCaption
+#. Form19("Animate")..Button4("Options...")..Caption
+#. Button in Save as image dialog
+msgid "Options..."
+msgstr "Asetukset..."
+
+#. Form1..ActionManager..OptionsAction("Options...")..Hint
+msgid "Edit various options for the interface and program features."
+msgstr "Muokkaa ohjelman ja käyttöliittymän asetuksia."
+
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Caption
+msgid "Insert function..."
+msgstr "Lisää funktio..."
+
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Hint
+msgid "Insert a new function."
+msgstr "Lisää uuden funktion."
+
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Caption
+msgid "Insert tangent/normal..."
+msgstr "Lisää tangentti/normaali..."
+
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Hint
+msgid "Insert a tangent or normal for the selected function."
+msgstr "Lisää tangentin tai normaalin valittuun funktioon."
+
+#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
+msgid "Insert shade..."
+msgstr "Lisää varjostus..."
+
+#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+msgid "Add shading to the selected function."
+msgstr "Lisää varjostuksen valittuun funktioon."
+
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Caption
+msgid "Insert point series..."
+msgstr "Lisää pistejoukko..."
+
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Hint
+msgid "Insert a point series."
+msgstr "Lisää pistejoukko."
+
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Caption
+msgid "Insert trendline..."
+msgstr "Lisää trendiviiva..."
+
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Hint
+msgid "Insert a curve of best fit for the selected point series."
+msgstr "Lisää pistejoukkoon parhaiten sopivan käyrän."
+
+#. Form1..ActionManager..EditAction("Edit...")..Caption
+msgid "Edit..."
+msgstr "Muokkaa..."
+
+#. Form1..ActionManager..EditAction("Edit...")..Hint
+msgid "Edit the selected element: Function, tangent, point series, etc."
+msgstr "Muokkaa valittua objektia: funktiota, tangenttia, pistejoukkoa, jne."
+
+#. Form1..ActionManager..DeleteAction("Delete")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Delete("Delete")..Caption
+msgid "Delete"
+msgstr "Poista"
+
+#. Form1..ActionManager..DeleteAction("Delete")..Hint
+msgid "Delete the selected function, tangent or point series."
+msgstr "Poistaa valitun funktion, tangentin tai pistejoukon."
+
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Caption
+msgid "Insert f'(x)..."
+msgstr "Lisää f'(x)..."
+
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Hint
+msgid "Insert the first derivative of the selected function."
+msgstr "Lisää ensimmäisen derivaatan valittuun funktioon."
+
+#. Form1..ActionManager..ZoomInAction("In")..Caption
+msgid "In"
+msgstr "Lähennä"
+
+#. Form1..ActionManager..ZoomInAction("In")..Hint
+msgid "Zoom in."
+msgstr "Lähentää zoomausta."
+
+#. Form1..ActionManager..ZoomOutAction("Out")..Caption
+msgid "Out"
+msgstr "Loitonna"
+
+#. Form1..ActionManager..ZoomOutAction("Out")..Hint
+msgid "Zoom out."
+msgstr "Loitontaa zoomausta."
+
+#. Form1..ActionManager..ZoomWindowAction("Window")..Caption
+msgid "Window"
+msgstr "Valinta"
+
+#. Form1..ActionManager..ZoomWindowAction("Window")..Hint
+msgid "Zoom to user selected window."
+msgstr "Zoomaa valintaan."
+
+#. Form1..ActionManager..ZoomSquareAction("Square")..Caption
+msgid "Square"
+msgstr "Neliö"
+
+#. Form1..ActionManager..ZoomSquareAction("Square")....Hint
+msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
+msgstr "Zoomaa akselit tasavälisiksi, jolloin esimerkiksi ympyrä näkyy oikean muotoisena, ei ellipsinä."
+
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+msgid "Standard"
+msgstr "Standardi"
+
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Hint
+msgid "Zoom to standard coordinates."
+msgstr "Zoomaa standardikoordinaatistoon."
+
+#. Form1..ActionManager..MoveUpAction("Move up")..Category
+#. Form1..ActionManager..MoveDownAction("Move down")..Category
+#. Form1..ActionManager..MoveLeftAction("Move left")..Category
+#. Form1..ActionManager..MoveRightAction("Move right")..Category
+#. Form1..ActionManager..MoveAction("Move system")..Category
+msgid "Move"
+msgstr "Siirrä"
+
+#. Form1..ActionManager..MoveUpAction("Move up")..Caption
+msgid "Move up"
+msgstr "Ylös"
+
+#. Form1..ActionManager..MoveUpAction("Move up")..Hint
+msgid "Move the window up along the coordinate system."
+msgstr "Siirtää näkymää ylös."
+
+#. Form1..ActionManager..MoveDownAction("Move down")..Caption
+msgid "Move down"
+msgstr "Alas"
+
+#. Form1..ActionManager..MoveDownAction("Move down")..Hint
+msgid "Move the window down along the coordinate system."
+msgstr "Siirtää näkymää alas."
+
+#. Form1..ActionManager..MoveLeftAction("Move left")..Caption
+msgid "Move left"
+msgstr "Vasemmalle"
+
+#. Form1..ActionManager..MoveLeftAction("Move left")..Hint
+msgid "Move the window to the left along the coordinate system."
+msgstr "Siirtää näkymää vasemmalle."
+
+#. Form1..ActionManager..MoveRightAction("Move right")..Caption
+msgid "Move right"
+msgstr "Oikealle"
+
+#. Form1..ActionManager..MoveRightAction("Move right")..Hint
+msgid "Move the window to the right along the coordinate system."
+msgstr "Siirtää näkymää oikealle."
+
+#. Form1..ActionManager..MoveAction("Move system")..Caption
+msgid "Move system"
+msgstr "Siirrä koordinaatistoa"
+
+#. Form1..ActionManager..MoveAction("Move system")..Hint
+msgid "Move the coordinate system with the mouse."
+msgstr "Siirrä koordinaatistoa hiirellä."
+
+#. Form1..ActionManager..PathAction("Length of path")..Caption
+msgid "Length of path"
+msgstr "Kaaren pituus"
+
+#. Form1..ActionManager..PathAction("Length of path")....Hint
+msgid "Calculates the length of path between two given points on the curve."
+msgstr "Laskee kahden pisteen välisen kaaren pituuden."
+
+#. Form1..ActionManager..AreaAction("Area")..Hint
+msgid "Calculates the area under the path of the selected function."
+msgstr "Laskee valitun funktion ja koordinaattiakselin väliin jäävän alan."
+
+#. Form1..ActionManager..EvalAction("Evaluate")..Caption
+#. Form9("Evaluate")..Caption
+msgid "Evaluate"
+msgstr "Laske funktion arvoja"
+
+#. Form1..ActionManager..EvalAction("Evaluate")..Hint
+msgid "Evaluate or trace the selected function."
+msgstr "Laskee valitun funktion arvoja."
+
+#. Form1..ActionManager..TableAction("Table...")..Caption
+msgid "Table..."
+msgstr "Arvotaulukko..."
+
+#. Form1..ActionManager..TableAction("Table...")..Hint
+msgid "Shows an evaluation table."
+msgstr "Laskee funktion arvoja taulukkoon."
+
+#. Form1..ActionManager..ContentsAction("Contents and index")..Caption
+msgid "Contents and index"
+msgstr "Ohjeen aiheet"
+
+#. Form1..ActionManager..ContentsAction("Contents and index")..Hint
+msgid "Open help file."
+msgstr "Avaa ohjetiedoston."
+
+#. Form1..ActionManager..ListAction("List of functions")..Caption
+msgid "List of functions"
+msgstr "Lista funktioista"
+
+#. Form1..ActionManager..ListAction("List of functions")....Hint
+msgid "Shows a list of built-in functions that can be used for graphing."
+msgstr "Näyttää listan käytettävissä olevista funktioista."
+
+#. Form1..ActionManager..HomePageAction("Go to home page")..Caption
+msgid "Go to home page"
+msgstr "Ohjelman kotisivu"
+
+#. Form1..ActionManager..HomePageAction("Go to home page")....Hint
+msgid "Opens the default browser and shows the home page of the program."
+msgstr "Avaa ohjelman kotisivun oletusselaimessa."
+
+#. Form1..ActionManager..UpdateAction("Check for update")..Caption
+msgid "Check for update"
+msgstr "Tarkista päivitykset"
+
+#. Form1..ActionManager..UpdateAction("Check for update")..Hint
+msgid "Contact the home page to see if a newer version is available."
+msgstr "Tarkistaa onko uutta ohjelmaversiota saatavilla."
+
+#. Form1..ActionManager..AboutAction("About Graph...")..Caption
+msgid "About Graph..."
+msgstr "Tietoja Graph-ohjelmasta..."
+
+#. Form1..ActionManager..AboutAction("About Graph...")..Hint
+msgid "Show copyright information."
+msgstr "Näyttää tekijänoikeustietoja."
+
+#. Form1..ActionManager..SeparatorAction("Separator")..Category
+#. Form1..ActionManager..SeparatorAction("Separator")..Caption
+msgid "Separator"
+msgstr "Erotin"
+
+#. Form1..ActionManager..ZoomFitAction("Fit")..Caption
+msgid "Fit"
+msgstr "Sovita"
+
+#. Form1..ActionManager..ZoomFitAction("Fit")..Hint
+msgid "Zoom to show the selected function."
+msgstr "Sovittaa valitun kuvaajan ikkunaan."
+
+#. Form1..ActionManager..ZoomAllPointsAction("All points")..Caption
+msgid "All points"
+msgstr "Kaikki pisteet"
+
+#. Form1..ActionManager..ZoomAllPointsAction("All points")..Hint
+msgid "Zoom as much as all points are visible."
+msgstr "Sovittaa kaikkien pistejoukkojen pisteet ikkunaan."
+
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Caption
+msgid "Frequently Asked Questions"
+msgstr "Usein kysytyt kysymykset"
+
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Hint
+msgid "Shows a list of frequently asked questions and their answers."
+msgstr "Näyttää listan usein kysytyistä kysymyksistä vastauksineen."
+
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Caption
+msgid "Insert label..."
+msgstr "Lisää teksti..."
+
+#. Form1..ActionManager..InsertLabelAction("Insert label...")....Hint
+msgid "Insert a text label (select and click in the main window where you want the label)."
+msgstr "Lisää teksti (valitse tämä ja klikkaa haluamaasi kohtaa koordinaatistossa)."
+
+#. Form1..ActionManager..DonateAction("Donate")..Caption
+msgid "Donate"
+msgstr "Lahjoita"
+
+#. Form1..ActionManager..DonateAction("Donate")..Hint
+msgid "Donate money to the project."
+msgstr "Lahjoita rahaa Graph-projektiin."
+
+#. Form1..ActionManager..TipAction("Tip of the day")..Caption
+#. Form10("Tip of the day")..Caption
+#. Form10("Tip of the day")..Panel1..Label2("Tip of the day")..Caption
+msgid "Tip of the day"
+msgstr "Päivän vihje"
+
+#. Form1..ActionManager..TipAction("Tip of the day")..Hint
+msgid "Show tip of the day"
+msgstr "Näyttää päivän vihjeen."
+
+#. Form1..ActionManager..SupportAction("Support")..Caption
+msgid "Support"
+msgstr "Tukipalvelut"
+
+#. Form1..ActionManager..SupportAction("Support")..Hint
+msgid "Open browser with the support page for the program."
+msgstr "Avaa ohjelman tukisivuston oletusselaimessa."
+
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Caption
+msgid "Zoom x-axis in"
+msgstr "Zoomaa x-akselia sisään"
+
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Hint
+msgid "Zoom in on the x-axis only."
+msgstr "Zoomaa vain x-akselia sisään."
+
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Caption
+msgid "Zoom x-axis out"
+msgstr "Zoomaa x-akselia ulos"
+
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Hint
+msgid "Zoom out on the x-axis only."
+msgstr "Zoomaa vain x-akselia ulos."
+
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Caption
+msgid "Zoom y-axis in"
+msgstr "Zoomaa y-akselia sisään"
+
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Hint
+msgid "Zoom in on the y-axis only."
+msgstr "Zoomaa vain y-akselia sisään."
+
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Caption
+msgid "Zoom y-axis out"
+msgstr "Zoomaa y-akselia ulos"
+
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Hint
+msgid "Zoom out on the y-axis only."
+msgstr "Zoomaa vain y-akselia ulos."
+
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Caption
+msgid "Insert relation..."
+msgstr "Lisää relaatio..."
+
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Hint
+msgid "Insert a new equation or inequality."
+msgstr "Lisää yhtälön tai epäyhtälön."
+
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Caption
+msgid "Custom functions..."
+msgstr "Omat funktiot..."
+
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Hint
+msgid "Create custom functions and constants for use in graphs."
+msgstr "Luo omia funktioita tai vakioita."
+
+#. Form1..ActionManager..AnimateAction("Animate...")..Caption
+msgid "Animate..."
+msgstr "Animoi..."
+
+#. Form1..ActionManager..AnimateAction("Animate...")..Hint
+msgid "Create an animation by variating a constant."
+msgstr "Luo animaatio vakiota varioimalla."
+
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Caption
+msgid "Graph file..."
+msgstr "Graph-tiedosto..."
+
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Hint
+msgid "Import a Graph file into the current coordinate system."
+msgstr "Tuo Graph-tiedoston nykyiseen koordinaatistoon."
+
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Caption
+msgid "Point series..."
+msgstr "Pistejoukko..."
+
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Hint
+msgid "Import point series from a data file."
+msgstr "Tuo pistejoukon tiedostosta."
+
+#. Form1..ActionManager..InsertObjectAction("Insert object...")..Caption
+#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
 msgid "Insert object..."
 msgstr "Lisää objekti..."
 
+#. Form1..ColorSelect("Select color")..Caption
+msgid "Select color"
+msgstr "Valitse väri"
+
+#. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
+msgid "Reset to default"
+msgstr "Palauta oletukset"
+
+#. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
+msgid "Reset the tool bar icons to the installation default."
+msgstr "Palauttaa työkalurivin oletuspainikkeet."
+
+#. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
+msgid "Customize toolbar..."
+msgstr "Mukauta..."
+
+#. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Hint
+msgid "Customize the icons shown on the toolbar."
+msgstr "Mukauttaa työkalurivin painikkeita."
+
+#. Form1..PopupMenu3..Label_Edit("Edit label...")..Caption
+msgid "Edit label..."
+msgstr "Muokkaa tekstiä..."
+
+#. Form1..PopupMenu3..Label_Edit("Edit label...")..Hint
+msgid "Edit the label under the cursor."
+msgstr "Muokkaa valittua tekstiä."
+
+#. Form1..PopupMenu3..Label_Delete("Delete label")..Caption
+msgid "Delete label"
+msgstr "Poista"
+
+#. Form1..PopupMenu3..Label_Delete("Delete label")..Hint
+msgid "Delete the label under the cursor."
+msgstr "Poistaa valitun tekstin."
+
+#. Form1..PopupMenu4..Legend_Show("Show legend")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Caption
+msgid "Show legend"
+msgstr "Näytä selite"
+
+#. Form1..PopupMenu4..Legend_Show("Show legend")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Hint
+msgid "Select to show a legend in the coordinate system."
+msgstr "Näyttää selitteen koordinaatistossa."
+
+#. Form1..PopupMenu4..Legend_Font("Font")..Caption
+msgid "Font"
+msgstr "Fontti"
+
+#. Form1..PopupMenu4..Legend_Font("Font")..Hint
+msgid "Change the font of the legend."
+msgstr "Valitse selitteen fontti."
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
+msgid "Top Right"
+msgstr "Oikea yläreuna"
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Hint
+msgid "Show the legend in the upper right corner."
+msgstr "Näyttää selitteen oikeassa yläreunassa."
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomRight("Bottom Right")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
+msgid "Bottom Right"
+msgstr "Oikea alareuna"
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomRight("Bottom Right")..Hint
+msgid "Show the legend in the bottom right corner."
+msgstr "Näyttää selitteen oikeassa alareunassa."
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopLeft("Top Left")..Caption
+#. Form21("Placement")..ComboBox1..Text
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
+msgid "Top Left"
+msgstr "Vasen yläreuna"
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopLeft("Top Left")..Hint
+msgid "Show the legend in the upper left corner."
+msgstr "Näyttää selitteen vasemmassa yläreunassa."
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomLeft("Bottom Left")..Caption
+#. Form21("Placement")..ComboBox1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
+msgid "Bottom Left"
+msgstr "Vasen alareuna"
+
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomLeft("Bottom Left")..Hint
+msgid "Show the legend in the bottom left corner."
+msgstr "Näyttää selitteen vasemmassa alareunassa."
+
+#. Form10("Tip of the day")..Button1("Close")..Caption
+#. Form15("Calculate table")..Button1("Close")..Caption
+#. Form19("Animate")..Button2("Close")..Caption
+msgid "Close"
+msgstr "Sulje"
+
+#. Form10("Tip of the day")..Button2("Next tip")..Caption
+msgid "Next tip"
+msgstr "Seuraava vihje"
+
+#. Form10("Tip of the day")..Button3("Previous tip")..Caption
+msgid "Previous tip"
+msgstr "Edellinen vihje"
+
+#. Form10("Tip of the day")..CheckBox1("Show tips at startup")..Caption
+msgid "Show tips at startup"
+msgstr "Näytä vihjeet käynnistettäessä"
+
+#. Form10("Tip of the day")..Panel1..Label1("Did you know...")..Caption
+msgid "Did you know..."
+msgstr "Tiesitkö..."
+
+#. Form11("Insert relation")..Caption
+msgid "Insert relation"
+msgstr "Lisää relaatio"
+
+#. Form11("Insert relation")..Label1("Relation:")..Caption
+msgid "Relation:"
+msgstr "Relaatio:"
+
+#. Form11("Insert relation")..Label2("Constraints:")..Caption
+msgid "Constraints:"
+msgstr "Rajoitukset:"
+
+#. Form11("Insert relation")..Button1("OK")..Caption
+#. Form12("Insert tangent/normal")..Button1("OK")..Caption
+#. Form13("Insert trendline")..Button1("OK")..Caption
+#. Form14("Insert point series")..Button1("OK")..Caption
+#. Form16("Insert shade")..Button1("OK")..Caption
+#. Form17("Custom functions/constants")..Button1("OK")..Caption
+#. Form18("Image options")..Button1("OK")..Caption
+#. Form2("About Graph")..Button1("OK")..Caption
+#. Form21("Placement")..TntButton1("OK")..Caption
+#. Form3("Edit axes")..Button1("OK")..Caption
+#. Form4("Options")..Button1("OK")..Caption
+#. Form5("Insert function")..Button1("OK")..Caption
+#. Form6("Text label")..Button1("OK")..Caption
+#. Form7("Insert f'(x)")..Button1("OK")..Caption
+#. Form8("Add model")..Button1("OK")..Caption
+#. PrintFrm("Print")..Button1("OK")..Caption
+msgid "OK"
+msgstr "OK"
+
+#. Form11("Insert relation")..Button2("Cancel")..Caption
+#. Form12("Insert tangent/normal")..Button2("Cancel")..Caption
+#. Form13("Insert trendline")..Button2("Cancel")..Caption
+#. Form14("Insert point series")..Button2("Cancel")..Caption
+#. Form15("Calculate table")..ProgressForm1("Calculating")..ButtonCaption
+#. Form16("Insert shade")..Button2("Cancel")..Caption
+#. Form17("Custom functions/constants")..Button2("Cancel")..Caption
+#. Form18("Image options")..Button2("Cancel")..Caption
+#. Form19("Animate")..ProgressForm1("Working")..ButtonCaption
+#. Form21("Placement")..TntButton2("Cancel")..Caption
+#. Form3("Edit axes")..Button2("Cancel")..Caption
+#. Form4("Options")..Button2("Cancel")..Caption
+#. Form5("Insert function")..Button2("Cancel")..Caption
+#. Form6("Text label")..Button2("Cancel")..Caption
+#. Form7("Insert f'(x)")..Button2("Cancel")..Caption
+#. Form8("Add model")..Button2("Cancel")..Caption
+#. PrintFrm("Print")..Button2("Cancel")..Caption
+msgid "Cancel"
+msgstr "Peruuta"
+
+#. Form11("Insert relation")..GroupBox1("Legend text")..Caption
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Caption
+#. Form5("Insert function")..GroupBox3("Legend text")..Caption
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Caption
+msgid "Legend text"
+msgstr "Selitteen teksti"
+
+#. Form11("Insert relation")..GroupBox1("Legend text")..Label10("Description:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Label10("Description:")..Caption
+#. Form14("Insert point series")..Label3("Description:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Label12("Description:")..Caption
+#. Form5("Insert function")..GroupBox3("Legend text")..Label10("Description:")..Caption
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Label10("Description:")..Caption
+msgid "Description:"
+msgstr "Kuvaus:"
+
+#. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
+#. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
+msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
+msgstr "Kirjoita selite. Jos et kirjoita mitään, selitteenä näkyy funktion yhtälö."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Button3("Properties")..Caption
+msgid "Properties"
+msgstr "Ominaisuudet"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Label7("Style:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label7("Style:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label1("Style:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label5("Style:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label4("Style:")..Caption
+msgid "Style:"
+msgstr "Tyyli:"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Label9("Color:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label9("Color:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label6("Color:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label2("Color:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label6("Color:")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label9("Color:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label9("Color:")..Caption
+msgid "Color:"
+msgstr "Väri:"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Label3("Width:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label8("Width:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label5("Width:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label7("Width:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label8("Width:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label8("Width:")..Caption
+msgid "Width:"
+msgstr "Leveys:"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..ShadeSelect1....Hint
+msgid "Select the style used for drawing the inequality. Not used for equations."
+msgstr "Valitse epäyhtälössä käytettävä tyyli. Ei vaikuta yhtälöihin."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Yhtälön kaaren tai epäyhtälön rajaviivan leveys pikseleinä."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
+msgid "Select the color for drawing the relation."
+msgstr "Valitse viivan väri."
+
+#. Form11("Insert relation")..Edit1..Hint
+msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
+msgstr "Syötä relaatio. Esimerkiksi \"x^2+y^2 = 25\" tai \"y < sin(x)\""
+
+#. Form11("Insert relation")..Edit2....Hint
+msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
+msgstr "Syötä relaation rajoitukset. Esimerkiksi \"x > 0 and y < 5\""
+
+#. Form12("Insert tangent/normal")..Caption
+msgid "Insert tangent/normal"
+msgstr "Lisää tangentti/normaali"
+
+#. Form12("Insert tangent/normal")..Edit1..Hint
+msgid "Coordinate where the tangent/normal will cross the function."
+msgstr "Piste, jossa tangentti sivuaa funktion kuvaajaa/normaali leikkaa funktion kuvaajan."
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")..Hint
+msgid "Choose if you want a tangent or a normal."
+msgstr "Valitse tangentti tai normaali"
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")..Caption
+msgid "Type"
+msgstr "Tyyppi"
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")....Items.Strings
+msgid "Tangent"
+msgstr "Tangentti"
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")....Items.Strings
+msgid "Normal"
+msgstr "Normaali"
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Caption
+msgid "Graph properties"
+msgstr "Ominaisuudet"
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label7("Line style:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label7("Line style:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label7("Line style:")..Caption
+msgid "Line style:"
+msgstr "Viivan tyyli:"
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Edit3..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..Edit2..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..Edit6..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Edit4..Hint
+msgid "Width of graph in pixels."
+msgstr "Viivan paksuus pikseleinä."
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..LineSelect1..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..LineSelect1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..LineSelect1..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..LineSelect1..Hint
+msgid "Choose which line style to use for drawing the graph."
+msgstr "Valitse kuvaajan viivan tyyli."
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..Hint
+msgid "Select the color of the graph."
+msgstr "Valitse kuvaajan väri."
+
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Caption
+msgid "Argument range"
+msgstr "Määrittelyväli"
+
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Edit4..Hint
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit3..Hint
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Edit1..Hint
+msgid "Start of range interval for the used variable."
+msgstr "Määrittelyvälin alkupiste."
+
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Edit5..Hint
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit4..Hint
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Edit2..Hint
+msgid "End of range interval for the used variable."
+msgstr "Määrittelyvälin loppupiste."
+
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Caption
+msgid "Endpoints"
+msgstr "Päätepisteet"
+
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Label11("Start:")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Label11("Start:")..Caption
+msgid "Start:"
+msgstr "Alku:"
+
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Label12("End:")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Label12("End:")..Caption
+msgid "End:"
+msgstr "Loppu:"
+
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox1....Hint
+#. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox2....Hint
+msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
+msgstr "Valitse välin alkupisteen merkki. Näkyy vain, jos on valittu jokin väli."
+
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox2....Hint
+#. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox3....Hint
+msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
+msgstr "Valitse välin loppupisteen merkki. Näkyy vain, jos on valittu jokin väli."
+
+#. Form13("Insert trendline")..Caption
+msgid "Insert trendline"
+msgstr "Lisää trendiviiva"
+
+#. Form13("Insert trendline")..GroupBox1("Line")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Caption
+msgid "Line"
+msgstr "Viiva"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Caption
+msgid "Built-in"
+msgstr "Valmiit mallit"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel1..Image1..Hint
+msgid "Create a linear function: f(x)=ax+b"
+msgstr "Luo lineaarisen funktion: f(x)=ax+b"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel2..Image2..Hint
+msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
+msgstr "Luo logaritmifunktion: f(x)=a*ln(x)+b"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel3..Image3..Hint
+msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
+msgstr "Luo polynomifunktion: f(x)=ax^3+bx^2+cx+d"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel4..Image4..Hint
+msgid "Create a power function: f(x)=ax^b"
+msgstr "Luo potenssifunktion: f(x)=ax^b"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel5..Image5..Hint
+msgid "Create a exponential function: f(x)=a*b^x"
+msgstr "Luo eksponenttifunktion: f(x)=a*b^x"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit1..Hint
+msgid "The order of the polynomium. For example 2 means a parable."
+msgstr "Polynomin asteluku. Esimerkiksi 2 luo paraabelin."
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText1("Order:")..Caption
+msgid "Order:"
+msgstr "Asteluku:"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton3("Polynomial")..Caption
+msgid "Polynomial"
+msgstr "Polynomi"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton2("Logarithmic")..Caption
+msgid "Logarithmic"
+msgstr "Logaritminen"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton1("Linear")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+msgid "Linear"
+msgstr "Lineaarinen"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton4("Power")..Caption
+msgid "Power"
+msgstr "Potenssi"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton5("Exponential")..Caption
+msgid "Exponential"
+msgstr "Eksponentiaalinen"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel6..Image6..Hint
+msgid "Create a moving average as a series of straight lines."
+msgstr "Luo liukuvan keskiarvon sarjana suoria."
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton6("Moving average")..Caption
+msgid "Moving average"
+msgstr "Liukuva keskiarvo"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText2("Period:")..Caption
+msgid "Period:"
+msgstr "Jakso:"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit4..Hint
+msgid "Determines how many points are used for the average."
+msgstr "Määrittää kuinka monta pistettä keskiarvon laskemiseen käytetään."
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Caption
+msgid "User defined"
+msgstr "Käyttäjän määrittämä"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Label1("Model:")..Caption
+msgid "Model:"
+msgstr "Malli:"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button4("Add model")..Caption
+#. Form8("Add model")..Caption
+msgid "Add model"
+msgstr "Lisää"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button5("Remove model")..Caption
+msgid "Remove model"
+msgstr "Poista"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button6("Edit model")..Caption
+#. Insert trendline dialog
+msgid "Edit model"
+msgstr "Muokkaa"
+
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Edit3..Hint
+msgid "Enter a function model to base the trendline on."
+msgstr "Kirjoita mallifunktio, johon trendiviiva perustuu."
+
+#. Form13("Insert trendline")..CheckBox1("Intercept =")....Hint
+#. Form13("Insert trendline")..Edit5....Hint
+msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
+msgstr "Valitse pakotettu trendiviivan ja y-akselin leikkauspiste. Tämä on käytössä vain lineaariselle, polynomiselle ja eksponentiaaliselle trendiviivalle."
+
+#. Form13("Insert trendline")..CheckBox1("Intercept =")..Caption
+msgid "Intercept ="
+msgstr "Leikkauspiste ="
+
+#. Form14("Insert point series")..Caption
+msgid "Insert point series"
+msgstr "Lisää pistejoukko"
+
+#. Form14("Insert point series")..Edit1....Hint
+msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
+msgstr "Pistejoukon nimi."
+
+#. Form14("Insert point series")..Edit1..Text
+#. Default description in the Insert shade dialog
+msgid "Series"
+msgstr "Pistejoukko"
+
+#. Form14("Insert point series")..GroupBox4("Sample")....Hint
+msgid "This shows a sample of the markers and the lines between the markers."
+msgstr "Esimerkki, kuinka pistejoukko tulee koordinaatistossa näkymään."
+
+#. Form14("Insert point series")..GroupBox4("Sample")..Caption
+msgid "Sample"
+msgstr "Esimerkki"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..Caption
+msgid "Markers"
+msgstr "Pisteet"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Caption
+msgid "Marker"
+msgstr "Piste"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label4("Size:")..Caption
+msgid "Size:"
+msgstr "Koko:"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Edit2..Hint
+msgid "Choose the size of the markers."
+msgstr "Valitse pisteen koko."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..PointSelect1..Hint
+msgid "Choose the type of markers to be shown at each point."
+msgstr "Valitse käytettävän pisteen tyyli."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..Hint
+msgid "Choose the color of the markers."
+msgstr "Valitsen pisteen väri."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label11("Interpolation:")..Caption
+msgid "Interpolation:"
+msgstr "Interpolointi:"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..LineSelect1....Hint
+msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
+msgstr "Valitse pisteiden väliin piirrettävän viivan tyyli."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Edit3..Hint
+msgid "Choose the width of the lines in pixels."
+msgstr "Valitse viivan leveys pikesleinä."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Hint
+msgid "Select which kind of line to draw between the markers."
+msgstr "Valitse pisteiden väliin piirrettävän viivan interpolaatiotapa."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Text
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+msgid "Cubic splines"
+msgstr "Kolmannen asteen splinit"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+msgid "Half cosine"
+msgstr "Puolikas kosini"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..Hint
+msgid "Choose the color of the lines."
+msgstr "Valitse viivan väri."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..Caption
+msgid "Labels"
+msgstr "Otsikot"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..Label8("Position:")..Caption
+msgid "Position:"
+msgstr "Sijainti:"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..CheckBox2("Show coordinates")..Hint
+msgid "Check to show the coordinate at each point."
+msgstr "Näyttää joka pisteen koordinaatin."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..CheckBox2("Show coordinates")..Caption
+msgid "Show coordinates"
+msgstr "Näytä koordinaatit"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..BitBtn1..Hint
+msgid "Select the font for the coordinates."
+msgstr "Valitse koordinaatin fontti."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1..Hint
+msgid "Select where the coordinates should be shown."
+msgstr "Valitse koordinaatin sijoituspaikka."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1..Text
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+msgid "Below"
+msgstr "Pisteen alla"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+msgid "Above"
+msgstr "Pisteen päällä"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#. Shortcut key
+msgid "Left"
+msgstr "Pisteen vasemmalla puolella"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#. Shortcut key
+msgid "Right"
+msgstr "Pisteen oikealla puolella"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..Caption
+msgid "Error bars"
+msgstr "Virhepalkit"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Caption
+msgid "X error bars"
+msgstr "X-virhepalkit"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..CheckBox3("Show x-bars")..Hint
+msgid "Show horizontal error bars."
+msgstr "Näyttä vaakasuuntaiset virhepalkit."
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..CheckBox3("Show x-bars")..Caption
+msgid "Show x-bars"
+msgstr "Näytä"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton1("Fixed:")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton4("Fixed:")..Hint
+msgid "All error bars are the same size."
+msgstr "Kaikki virhepalkit samankokoisia."
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton1("Fixed:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton4("Fixed:")..Caption
+msgid "Fixed:"
+msgstr "Kiinteä:"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Edit4..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Edit6..Hint
+msgid "Enter fixed value."
+msgstr "Syötä kiinteä arvo."
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton2("Relative:")..Hint
+msgid "All error bars are the same percentage of the x-coordinate."
+msgstr "Kaikki virhepalkit ovat tietyn prosentin x-koordinaatin arvosta."
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton2("Relative:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton5("Relative:")..Caption
+msgid "Relative:"
+msgstr "Suhteellinen:"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton3("Custom")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton6("Custom")..Hint
+msgid "Each error bar is given a custom value."
+msgstr "Jokaisella virhepalkilla on mukautettu arvo."
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton3("Custom")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton6("Custom")..Caption
+msgid "Custom"
+msgstr "Mukautettu"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Edit5..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Edit7..Hint
+msgid "Enter relative value in percent."
+msgstr "Syötä suhteellinen arvo prosentteina."
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Caption
+msgid "Y error bars"
+msgstr "Y-virhepalkit"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..CheckBox4("Show y-bars")..Hint
+msgid "Show vertical error bars."
+msgstr "Näyttä pystysuuntaiset virhepalkit."
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..CheckBox4("Show y-bars")..Caption
+msgid "Show y-bars"
+msgstr "Näytä"
+
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton5("Relative:")..Hint
+msgid "All error bars are the same percentage of the y-coordinate."
+msgstr "Kaikki virhepalkit ovat tietyn prosentin y-koordinaatin arvosta."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
+msgid "Cut the selected text to the clipboard."
+msgstr "Leikkaa valittu teksti leikepöydälle."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Hint
+#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Hint
+msgid "Copy the selected text to the clipboard."
+msgstr "Kopioi valittu teksti leikepöydälle"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")....Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")....Hint
+msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
+msgstr "Liittää tekstin leikepöydältä taulukkoon. Osa tekstistä saattaa korvautua."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Delete("Delete")..Hint
+msgid "Erase selected cells."
+msgstr "Tyhjentää valitut solut."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Insert("Insert row")..Caption
+msgid "Insert row"
+msgstr "Lisää rivi"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Hint
+msgid "Inserts a row in the grid moving rows below one down."
+msgstr "Lisää rivin taulukkoon siirtäen alla olevia rivejä alaspäin."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Remove("Remove row")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Remove("Remove row")..Caption
+msgid "Remove row"
+msgstr "Poista rivi"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Remove("Remove row")..Hint
+msgid "Removes the selected rows."
+msgstr "Poistaa valitut rivit."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Select("Select all")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Select("Select all")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Select("Select all")..Caption
+msgid "Select all"
+msgstr "Valitse kaikki"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Select("Select all")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Select("Select all")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Select("Select all")..Hint
+msgid "Select all cells."
+msgstr "Valitsee kaikki solut."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Caption
+msgid "Import from file..."
+msgstr "Tuo tiedostosta..."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Hint
+msgid "Import data from a file and place it at the selected cell."
+msgstr "Tuo dataa tiedostosta valittuun soluun."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Export("Export to file...")..Hint
+msgid "Export selected data to a file."
+msgstr "Vie valitun datan tiedostoon."
+
+#. Form15("Calculate table")..Caption
+msgid "Calculate table"
+msgstr "Arvotaulukko"
+
+#. Form15("Calculate table")..Edit3....Hint
+msgid "The step value. This is the distance between the x-values in the interval."
+msgstr "X:n muutos. Kuinka suurin x-akselin välein funktion arvot lasketaan."
+
+#. Form15("Calculate table")..Edit1..Hint
+msgid "The first x-value in the interval."
+msgstr "Välin ensimmäinen x-koordinaatti."
+
+#. Form15("Calculate table")..Edit2..Hint
+msgid "The last x-value in the interval."
+msgstr "Välin viimeinen x-koordinaatti."
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show_df("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show_ddf("Show %s")..Caption
+#. Context menu in Calc|Table dialog
+msgid "Show %s"
+msgstr "Näytä %s"
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Hint
+msgid "Copy selected cells to the clipboard."
+msgstr "Kopioit valitut solut leikepöydälle."
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Export("Export to file...")..Hint
+msgid "Saves the selected data to a file."
+msgstr "Tallentaa valitun datan tiedostoon."
+
+#. Form15("Calculate table")..ProgressForm1("Calculating")..Caption
+msgid "Calculating"
+msgstr "Lasketaan..."
+
+#. Form15("Calculate table")..SaveDialog1..Filter
+#. Export to file dialog
+msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
+msgstr "CSV (Comma delimited) [*.csv]|*.csv|Teksti [*.txt]|*.txt"
+
+#. Form16("Insert shade")..Caption
+msgid "Insert shade"
+msgstr "Lisää varjostus"
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Caption
+msgid "Shading"
+msgstr "Varjostus"
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel1..Image1..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Hint
+msgid "Shades the area between the function and the x-axis."
+msgstr "Varjostaa funktion ja x-akselin väliin jäävän alueen."
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel2..Image2..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Hint
+msgid "Shades the area below the function."
+msgstr "Varjostaa funktion alle jäävän alueen."
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel3..Image3..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Hint
+msgid "Shades the area above the function."
+msgstr "Varjostaa funktion päälle jäävän alueen."
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel4..Image4..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Hint
+msgid "Shades the area between the function and the y-axis."
+msgstr "Varjostaa funktion ja y-akselin välisen alueen."
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel5..Image5..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Hint
+msgid "Shades the area inside the function."
+msgstr "Varjostaa alueen funktion sisällä."
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
+msgid "Shades the area between the main function and the function selected in the list to the right."
+msgstr "Varjostaa kahden valitun funktion välisen alueen. Toisen funktion voit valita Toinen funktio -välilehdeltä."
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
+msgid "Above function"
+msgstr "Funktion yläpuolella"
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Caption
+msgid "Between function and x-axis"
+msgstr "Funktion ja x-akselin välissä"
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")..Caption
+msgid "Between functions"
+msgstr "Funktioiden välissä"
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Caption
+msgid "Between function and y-axis"
+msgstr "Funktion ja y-akselin välissä"
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Caption
+msgid "Inside function"
+msgstr "Funktion sisällä"
+
+#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Caption
+msgid "Below function"
+msgstr "Funktion alapuolella"
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Caption
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton6..Hint
+#. Form4("Options")..Caption
+msgid "Options"
+msgstr "Asetukset"
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Caption
+msgid "Range"
+msgstr "Varjostettava alue"
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit3..Hint
+msgid "Coordinate where the shading starts."
+msgstr "Varjostuksen alkupiste."
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit4..Hint
+msgid "Coordinate where the shading ends."
+msgstr "Varjostuksen loppupiste."
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
+msgid "Check to increase the end coordinate until intersection."
+msgstr "Valitse ulottaaksesi loppupistettä seuraavaan leikkauspisteeseen."
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
+msgid "Increase to intersection"
+msgstr "Seuraavaan leikkauspisteeseen"
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
+msgid "Check to decrease the start coordinate until intersection."
+msgstr "Valitse ulottaaksesi alkupistettä edeltävään leikkauspisteeseen."
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
+msgid "Decrease to intersection"
+msgstr "Edelliseen leikkauspisteeseen"
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ShadeSelect1..Hint
+msgid "Select the style used for the shading."
+msgstr "Valitse varjostuksen tyyli."
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
+msgid "Mark the end of the shading with a line."
+msgstr "Merkitsee varjostettavan alueen loppupisteen viivalla."
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
+msgid "Mark end of range"
+msgstr "Merkitse loppupiste"
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
+msgid "Select color used for shading."
+msgstr "Valitse varjostuksen väli."
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
+msgid "Mark the start of the shading with a line."
+msgstr "Merkitsee varjostettavan alueen alkupisteen viivalla."
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
+msgid "Mark start of range"
+msgstr "Merkitse alkupiste"
+
+#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Edit5..Hint
+msgid "Enter a description to show in the legend."
+msgstr "Kirjoita selite."
+
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Caption
+msgid "2nd function"
+msgstr "Toinen funktio"
+
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Label11("2nd function:")..Caption
+msgid "2nd function:"
+msgstr "Toinen funktio:"
+
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
+msgid "Select the second function when you want a shading between two functions."
+msgstr "Valitse toinen funktio, jos haluat varjostuksen kahden funktion väliselle alueelle."
+
+#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
+msgid "Shading range for 2nd function"
+msgstr "Toisen funktion varjostettava alue"
+
+#. Form17("Custom functions/constants")..Caption
+msgid "Custom functions/constants"
+msgstr "Omat funktiot/vakiot"
+
+#. Form17("Custom functions/constants")..Button3("Apply")..Caption
+msgid "Apply"
+msgstr "Käytä"
+
+#. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
+msgid "Names"
+msgstr "Nimi"
+
+#. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
+msgid "Definition"
+msgstr "Määrittely"
+
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
+msgid "Cut the selected text to the clipboard"
+msgstr "Leikkaa valittu teksti leikepöydälle"
+
+#. Form18("Image options")..Caption
+msgid "Image options"
+msgstr "Kuvan ominaisuudet"
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Caption
+msgid "Size"
+msgstr "Koko"
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Label1("Image width:")..Caption
+#. Form19("Animate")..TntGroupBox2("Image information")..Label5("Image width:")..Caption
+msgid "Image width:"
+msgstr "Kuvan leveys:"
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Label2("Image height:")..Caption
+#. Form19("Animate")..TntGroupBox2("Image information")..Label6("Image height:")..Caption
+msgid "Image height:"
+msgstr "Kuvan korkeus:"
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit1..Hint
+msgid "Set a custom image width."
+msgstr "Valitse mukautettu kuvan leveys."
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit2..Hint
+msgid "Set a custom image height."
+msgstr "Valitse mukautettu kuvan korkeus."
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
+msgid "Choose to use the same size as shown on the screen or a custom image size."
+msgstr "Valitse käyttääksesi joko ruudussa näkyvää tai mukautettua kuvan kokoa."
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")..Caption
+msgid "Image size"
+msgstr "Kuvan koko"
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Items.Strings
+msgid "Screen size"
+msgstr "Näytön koko"
+
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Items.Strings
+msgid "Custom size"
+msgstr "Mukautettu"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Hint
+msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
+msgstr "Progressiivinen koodaus näyttää kuvasta ensin karkean vedoksen ennen kuin se ladataan kokonaan."
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")..Caption
+msgid "Encoding"
+msgstr "Koodaus"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+msgid "Progressive"
+msgstr "Progressiivinen"
+
+#. Form18("Image options")..PageControl1..TabSheet2..GroupBox1("Quality")..Hint
+msgid "Select a compression quality."
+msgstr "Valitse pakkauslaatu."
+
+#. Form18("Image options")..PageControl1..TabSheet2..GroupBox1("Quality")..Caption
+msgid "Quality"
+msgstr "Laatu"
+
+#. Form18("Image options")..PageControl1..TabSheet3..Label3("Paper size:")..Caption
+msgid "Paper size:"
+msgstr "Paperikoko"
+
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")..Hint
+#. PrintFrm("Print")..RadioGroup1("Orientation")..Hint
+msgid "Choose paper orientation."
+msgstr "Valitse paperin suunta."
+
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")..Caption
+#. PrintFrm("Print")..RadioGroup1("Orientation")..Caption
+msgid "Orientation"
+msgstr "Paperin suunta"
+
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")....Items.Strings
+#. PrintFrm("Print")..RadioGroup1("Orientation")....Items.Strings
+msgid "Portrait"
+msgstr "Pysty"
+
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")....Items.Strings
+#. PrintFrm("Print")..RadioGroup1("Orientation")....Items.Strings
+msgid "Landscape"
+msgstr "Vaaka"
+
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1..Hint
+msgid "Choose paper size to use."
+msgstr "Valitse käytettävä paperikoko."
+
+#. Form18("Image options")..CheckBox1("Save as default")..Hint
+#. Form3("Edit axes")..CheckBox16("Save as default")..Hint
+msgid "Select this to use these settings as defaults in the future."
+msgstr "Valitse asettaaksesi nykyiset asetukset oletusasetuksiksi."
+
+#. Form18("Image options")..CheckBox1("Save as default")..Caption
+#. Form3("Edit axes")..CheckBox16("Save as default")..Caption
+msgid "Save as default"
+msgstr "Tallenna oletukseksi"
+
+#. Form19("Animate")..Caption
+#. Form19("Animate")..Button1("Animate")..Caption
+msgid "Animate"
+msgstr "Animoi"
+
+#. Form19("Animate")..Label1("Constant:")..Caption
+msgid "Constant:"
+msgstr "Vakio:"
+
+#. Form19("Animate")..ComboBox1..Hint
+msgid "Choose a constant to change between each frame."
+msgstr "Valitse varioitava vakio."
+
+#. Form19("Animate")..TntGroupBox1("Range")..Label4("Step:")..Caption
+msgid "Step:"
+msgstr "Askel:"
+
+#. Form19("Animate")..TntGroupBox1("Range")..Edit1..Hint
+msgid "The first value of the constant."
+msgstr "Vakion ensimmäinen arvo."
+
+#. Form19("Animate")..TntGroupBox1("Range")..Edit2..Hint
+msgid "The last value of the constant."
+msgstr "Vakion viimeinen arvo."
+
+#. Form19("Animate")..TntGroupBox1("Range")..Edit3..Hint
+msgid "The chosen constant is changed by this value between each frame."
+msgstr "Vakion arvo muuttuu askeleen verran animaation ruutujen välillä."
+
+#. Form19("Animate")..TntGroupBox2("Image information")..Caption
+msgid "Image information"
+msgstr "Kuvan tiedot"
+
+#. Form19("Animate")..TntGroupBox2("Image information")..Label7("Frames/second:")..Caption
+msgid "Frames/second:"
+msgstr "Ruutua/sekunti:"
+
+#. Form19("Animate")..TntGroupBox2("Image information")..Edit6..Hint
+msgid "Number of frames per second used when the animation is played."
+msgstr "Animaation toistossa käytetty ruututaajuus."
+
+#. Form19("Animate")..ProgressForm1("Working")..Caption
+msgid "Working"
+msgstr "Työskennellään"
+
+#. Form2("About Graph")..Caption
+msgid "About Graph"
+msgstr "Tietoja Graph-ohjelmasta"
+
+#. Form2("About Graph")..Panel1..Label6("<Language> translation by <Translator>")..Caption
+msgid "<Language> translation by <Translator>"
+msgstr "Suomenkielinen käännös Pekka Lerssi"
+
+#. Form2("About Graph")..Panel1..Version("Version %s")..Caption
+#. %s is replaced with version number
+msgid "Version %s"
+msgstr "Versio %s"
+
+#. Form2("About Graph")..Panel1..Label1("Email:")..Caption
+msgid "Email:"
+msgstr "Email:"
+
+#. Form2("About Graph")..Panel1..Label3("Build %s")..Caption
+#. %s is replaced with build number
+msgid "Build %s"
+msgstr "Koontiversio %s"
+
+#. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
+msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
+msgstr "Tämä on maksuton ohjelmisto, ja saat jakaa sitä GNU General Public License -ehtojen mukaisesti. Lähetä vikailmoitukset ja ehdotukset tekijälle."
+
+#. Form2("About Graph")..Panel1..Label4("The newest version as well as the source code are available ")..Caption
+msgid "The newest version as well as the source code are available at:"
+msgstr "Uusin versio ohjelmasta ja avoin lähdekoodi ovat saatavilla osoitteesta:"
+
+#. Form20("Animation")..Caption
+msgid "Animation"
+msgstr "Animaatio"
+
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton1..Hint
+msgid "Play"
+msgstr "Toista"
+
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton2..Hint
+msgid "Pause"
+msgstr "Tauko"
+
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton3..Hint
+msgid "Stop"
+msgstr "Pysäytä"
+
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton4..Hint
+msgid "Back"
+msgstr "Takaisin"
+
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton5..Hint
+msgid "Step"
+msgstr "Askel"
+
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..Caption
+msgid "Speed"
+msgstr "Nopeus"
+
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N101..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N501..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N1001..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N1501..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N2001..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N10001..Hint
+msgid "Change the speed used to play the animation."
+msgstr "Valitse animaation toistonopeus."
+
+#. Form20("Animation")..PopupMenu1..Repeat1("Repeat")..Caption
+msgid "Repeat"
+msgstr "Uudelleentoisto"
+
+#. Form20("Animation")..PopupMenu1..Repeat1("Repeat")..Hint
+msgid "Repeat playing the animation until manually stopped."
+msgstr "Uudelleentoista animaatiota kunnes se pysäytetään manuaalisesti."
+
+#. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")..Caption
+msgid "Auto reverse"
+msgstr "Automaattinen alkuunkelaus"
+
+#. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")....Hint
+msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
+msgstr "Toista takaisin alkuun takaperin, kun animaatio saavuttaa lopun. Tämä toiminto on hyödyllisin \"Uudelleentoisto\"-toiminnon kanssa käytettynä."
+
+#. Form20("Animation")..PopupMenu1..Open1("Open...")..Hint
+msgid "Open an animation file."
+msgstr "Avaa animaatiotiedosto."
+
+#. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
+msgid "Save the animation to a file."
+msgstr "Tallenna animaatio tiedostoon."
+
+#. Form3("Edit axes")..Caption
+msgid "Edit axes"
+msgstr "Muokkaa akseleita"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label1("Minimum:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label5("Minimum:")..Caption
+msgid "Minimum:"
+msgstr "Minimi:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label2("Maximum:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label6("Maximum:")..Caption
+msgid "Maximum:"
+msgstr "Maksimi:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label3("Tick unit:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label7("Tick unit:")..Caption
+msgid "Tick unit:"
+msgstr "Asteikon jako:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label4("The x-axis cross at y=")..Caption
+msgid "The x-axis cross at y="
+msgstr "X-akseli leikkaa kohdassa y="
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label14("Grid unit:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label9("Grid unit:")..Caption
+msgid "Grid unit:"
+msgstr "Taustaruudukon jako:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit1..Hint
+msgid "Minimum x-value."
+msgstr "Pienin näytettävä x-akselin piste."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit2..Hint
+msgid "Maximum x-value."
+msgstr "Suurin näytettävä x-akselin piste."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit3..Hint
+msgid "Units between ticks on the x-axis."
+msgstr "Valitse x-akselin numeroinnin jakoväli."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox1("Logarithmic scale")..Hint
+msgid "Use logarithmic scale on the x-axis."
+msgstr "Käyttää logaritmista asteikkoa x-akselille."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox1("Logarithmic scale")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox8("Logarithmic scale")..Caption
+msgid "Logarithmic scale"
+msgstr "Logaritminen asteikko"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")....Hint
+msgid "Show the label at the right side of the main window, above the x-axis."
+msgstr "Näyttää otsikon x-akselin yläpuolella oikeassa reunassa."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")..Caption
+msgid "Label:"
+msgstr "Otsikko:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit5..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit11..Hint
+msgid "Edit the label for the axis here."
+msgstr "Kirjoita akselin otsikko tähän."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox2("Show numbers")..Hint
+msgid "Show units on the x-axis."
+msgstr "Näytä numerointi x-akselilla."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox2("Show numbers")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox9("Show numbers")..Caption
+msgid "Show numbers"
+msgstr "Näytä numerot"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit6..Hint
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr "X-akseli leikkaa y-akselin tässä pisteessä."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit4..Hint
+msgid "Units between the grid lines perpendicular to the x-axis."
+msgstr "Valitse x-akselin taustaruudukon (pystysuuntainen) jakoväli."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox4("Auto tick")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox11("Auto tick")..Hint
+msgid "Determine the tick unit automatically."
+msgstr "Määritä asteikon jako automaattisesti."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox4("Auto tick")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox11("Auto tick")..Caption
+msgid "Auto tick"
+msgstr "Automaattinen"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox5("Auto grid")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox12("Auto grid")..Hint
+msgid "Set the grid unit to the same as the tick unit."
+msgstr "Määritä taustaruudukon jako samaksi kuin akselilla."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox5("Auto grid")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox12("Auto grid")..Caption
+msgid "Auto grid"
+msgstr "Automaattinen"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox6("Show ticks")..Hint
+msgid "Show tick marks on the x-axis."
+msgstr "Näytä jakoviivat x-akselilla."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox6("Show ticks")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox13("Show ticks")..Caption
+msgid "Show ticks"
+msgstr "Näytä "
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox17("Show as a multiple of pi")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox18("Show as a multiple of pi")..Hint
+msgid "Show units on the selected axis as a fraction multiplied by pi."
+msgstr "Näyttää numeroinnin piin murtolukumonikertana."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox17("Show as a multiple of pi")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox18("Show as a multiple of pi")..Caption
+msgid "Show as a multiple of pi"
+msgstr "Piin monikerta"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox7("Show grid")..Hint
+msgid "Show vertical grid lines."
+msgstr "Näyttää pystysuuntaisen taustaruudukon."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox7("Show grid")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox14("Show grid")..Caption
+msgid "Show grid"
+msgstr "Näytä"
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label8("The y-axis cross at x=")..Caption
+msgid "The y-axis cross at x="
+msgstr "Y-akseli leikkaa kohdassa x="
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit7..Hint
+msgid "Minimum y-value."
+msgstr "Pienin näytettävä y-akselin piste."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit8..Hint
+msgid "Maximum y-value."
+msgstr "Suurin näytettävä y-akselin piste."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox8("Logarithmic scale")..Hint
+msgid "Use logarithmic scale for the y-axis."
+msgstr "Käyttää logaritmista asteikkoa y-akselille."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit9..Hint
+msgid "Units between ticks on the y-axis."
+msgstr "Valitse y-akselin numeroinnin jakoväli."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox9("Show numbers")..Hint
+msgid "Show units on the y-axis."
+msgstr "Näytä numerointi y-akselilla."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")....Hint
+msgid "Show the label at the top of the main window, to the right of the y-axis."
+msgstr "Näyttää otsikon y-akselin oikealla puolella yläreunassa."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit12..Hint
+msgid "The y-axis will intersect with the x-axis at this value."
+msgstr "Y-akseli leikkaa x-akselin tässä pisteessä."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit10..Hint
+msgid "Units between the grid lines perpendicular to the y-axis."
+msgstr "Valitse y-akselin taustaruudukon (vaakasuuntainen) jakoväli."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox13("Show ticks")..Hint
+msgid "Show tick marks on the y-axis."
+msgstr "Näytä jakoviivat y-akselilla."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox14("Show grid")..Hint
+msgid "Show horizontal grid lines."
+msgstr "Näyttää vaakasuuntaisen taustaruudukon."
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Caption
+msgid "Settings"
+msgstr "Asetukset"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Label16("Title:")..Caption
+msgid "Title:"
+msgstr "Otsikko:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Hint
+msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
+msgstr "Valitse näytetäänkö akseleita tai niiden leikkaustapa."
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")..Caption
+msgid "Axes style"
+msgstr "Akselit"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
+msgid "None"
+msgstr "Ei mitään"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
+msgid "Crossed"
+msgstr "Ristissä"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
+msgid "Boxed"
+msgstr "Kulmittain"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Hint
+msgid "Choose if trigonometric functions should calculate in radians or degrees."
+msgstr "Valitse lasketaanko trigonometriset funktiot radiaaneina vai asteina."
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")..Caption
+msgid "Trigonometry"
+msgstr "Kulmayksikkö"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Items.Strings
+msgid "Radian"
+msgstr "Radiaani"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Items.Strings
+msgid "Degree"
+msgstr "Aste"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Edit13..Hint
+msgid "Enter a title to show above the coordinate system."
+msgstr "Kirjoita koordinaatiston otsikko."
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..BitBtn1..Hint
+msgid "Select the font for the title."
+msgstr "Valitse otsikon fontti."
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")..Hint
+msgid "Choose where the legend should be placed."
+msgstr "Valitse selitteen sijoituspaikka."
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")..Caption
+msgid "Legend placement"
+msgstr "Selitteen sijoitus"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")....Hint
+msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
+msgstr "Valitse laskeaksesi kompleksiluvuilla. Huomaa, että tämä saattaa hidastaa piirtämistä."
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")..Caption
+msgid "Calculate with complex numbers"
+msgstr "Laske kompleksiluvuilla"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
+msgid "Font and color"
+msgstr "Fontti ja väri"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Caption
+msgid "Colors"
+msgstr "Värit"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label17("Grid color:")..Caption
+msgid "Grid color:"
+msgstr "Taustaruudukon väri:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label18("Axes color:")..Caption
+msgid "Axes color:"
+msgstr "Akseleiden väri:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label19("Background color:")..Caption
+#. Form6("Text label")..Label4("Background color:")..Caption
+msgid "Background color:"
+msgstr "Taustaväri:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..Hint
+msgid "Select the color of the image background."
+msgstr "Valitsen koordinaatiston taustan väri."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..Hint
+msgid "Select the color of the axes."
+msgstr "Valitsen akseleiden väri."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..Hint
+msgid "Select the color of the grid lines."
+msgstr "Valitse taustaruudukon väri."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Caption
+msgid "Fonts"
+msgstr "Fontit"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label20("Number font:")..Caption
+msgid "Number font:"
+msgstr "Numeroinnin fontti:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label21("Label font:")..Caption
+msgid "Label font:"
+msgstr "Otsikoiden fontti:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
+msgid "Legend font:"
+msgstr "Selitteen fontti:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..BitBtn2..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "Valitse akseleiden otsikoissa käytettävä fontti."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..BitBtn3..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Valitse akseleiden numeroimisessa käytettävä fontti."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..BitBtn4..Hint
+msgid "Select the font used to show the legend text."
+msgstr "Valitse selitteen fontti."
+
+#. Form4("Options")..Label1("Decimals:")..Caption
+msgid "Decimals:"
+msgstr "Desimaaleja:"
+
+#. Form4("Options")..Label2("Recent files:")..Caption
+msgid "Recent files:"
+msgstr "Viimeksi avattuja:"
+
+#. Form4("Options")..Label3("Max undo steps:")..Caption
+msgid "Max undo steps:"
+msgstr "Kumousaskeleita:"
+
+#. Form4("Options")..Label4("Language:")..Caption
+msgid "Language:"
+msgstr "Kieli:"
+
+#. Form4("Options")..Label5("Font scale:")..Caption
+msgid "Font scale:"
+msgstr "Fontin skaalaus:"
+
+#. Form4("Options")..Edit1..Hint
+msgid "Number of decimals used when results are shown."
+msgstr "Valitse, kuinka monella desimaalilla tulokset näytetään."
+
+#. Form4("Options")..CheckBox1("Associate .grf files")..Hint
+msgid "Associate *.grf files with Graph."
+msgstr "Määritä *.grf-tiedostot avautumaan Graphissa."
+
+#. Form4("Options")..CheckBox1("Associate .grf files")..Caption
+msgid "Associate .grf files"
+msgstr "Kytke grf-tiedostot Graphiin"
+
+#. Form4("Options")..Edit2..Hint
+msgid "The number of most recent used files shown in the File menu."
+msgstr "Valitse, kuinka monta viimeksi avattua tiedostoa näytetään Tiedosto-valikossa."
+
+#. Form4("Options")..CheckBox4("Save workspace on exit")....Hint
+msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
+msgstr "Tallentaa ikkunoiden sijainnin suljettaessa. Asetus tulee voimaan seuraavalla käynnistyksellä."
+
+#. Form4("Options")..CheckBox4("Save workspace on exit")..Caption
+msgid "Save workspace on exit"
+msgstr "Tallenna työtila poistuttaessa"
+
+#. Form4("Options")..RadioGroup1("Complex format")..Hint
+msgid "Format used when complex numbers are shown."
+msgstr "Valitse, missä muodossa kompleksiluvut näytetään."
+
+#. Form4("Options")..RadioGroup1("Complex format")..Caption
+msgid "Complex format"
+msgstr "Kompleksiluvut"
+
+#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+msgid "Real"
+msgstr "Reaalisia"
+
+#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+msgid "Rectangular"
+msgstr "Suorakulmaisia"
+
+#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+msgid "Polar"
+msgstr "Polaarisia"
+
+#. Form4("Options")..CheckBox2("Show tooltip")..Hint
+msgid "Show the tooltip when the cursor is over an item."
+msgstr "Näyttää työkaluvihjeet osoitettaessa."
+
+#. Form4("Options")..CheckBox2("Show tooltip")..Caption
+msgid "Show tooltip"
+msgstr "Näytä työkaluvihjeet"
+
+#. Form4("Options")..Edit3....Hint
+msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
+msgstr "Valitse, kuinka monta kumousaskelta tallennetaan. Aseta nollaan estääksesi kumoamisen."
+
+#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")....Hint
+msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
+msgstr "Tarkistaa ohjelman päivitykset käynnistettäessä."
+
+#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")..Caption
+msgid "Check for new version of Graph at startup"
+msgstr "Tarkista päivitykset käynnistettäessä"
+
+#. Form4("Options")..ComboBox1..Hint
+msgid "Select the language to use for the user interface."
+msgstr "Valitse käyttöliittymän kieli."
+
+#. Form4("Options")..ComboBox2....Hint
+msgid "This is used to scale the user interface if you are having problems reading the text."
+msgstr "Käytä tätä toimintoa skaalataksesi käyttöliittymää, mikäli teksti on vaikeasti luettavissa."
+
+#. Form5("Insert function")..Caption
+msgid "Insert function"
+msgstr "Lisää funktio"
+
+#. Form5("Insert function")..Label1("Function type:")..Caption
+msgid "Function type:"
+msgstr "Funktion tyyppi:"
+
+#. Form5("Insert function")..ComboBox1..Hint
+msgid "Select the function type to graph."
+msgstr "Valitsee lisättävän funktion tyypin."
+
+#. Form5("Insert function")..ComboBox1....Items.Strings
+msgid "Standard function   y=f(x)"
+msgstr "Standardifunktio y=f(x)"
+
+#. Form5("Insert function")..ComboBox1....Items.Strings
+msgid "Parametric function x(t), y(t)"
+msgstr "Parametrifunktio x(t), y(t)"
+
+#. Form5("Insert function")..ComboBox1....Items.Strings
+msgid "Polar function         r=f(t)"
+msgstr "Polaarifunktio     r=f(t)"
+
+#. Form5("Insert function")..GroupBox1("Function equation")..Caption
+msgid "Function equation"
+msgstr "Funktion yhtälö"
+
+#. Form5("Insert function")..GroupBox2("Argument range")..Label6("Steps:")..Caption
+msgid "Steps:"
+msgstr "Askeleita:"
+
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit5..Hint
+msgid "Number of calculation steps used to draw the graph."
+msgstr "Määrittää, kuinka monta askelta funktiota piirrettäessä lasketaan."
+
+#. Form5("Insert function")..GroupBox4("Graph properties")..Label13("Draw type:")..Caption
+msgid "Draw type:"
+msgstr "Piirtotapa:"
+
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Hint
+msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
+msgstr "Valitse viiva, jos haluat piirtää yhtenäisen käyrän. Valitse pisteet, jos haluat jokaisen askeleen näkyvän erikseen."
+
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4..Text
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+msgid "Automatic"
+msgstr "Automaattinen"
+
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+msgid "Dots"
+msgstr "Pisteet"
+
+#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+msgid "Lines"
+msgstr "Viiva"
+
+#. Form6("Text label")..Caption
+msgid "Text label"
+msgstr "Teksti"
+
+#. Form6("Text label")..Label1("Font name:")..Caption
+msgid "Font name:"
+msgstr "Fontti:"
+
+#. Form6("Text label")..Label2("Font size:")..Caption
+msgid "Font size:"
+msgstr "Fonttikoko:"
+
+#. Form6("Text label")..Label3("Font color:")..Caption
+msgid "Font color:"
+msgstr "Fontin väri:"
+
+#. Form6("Text label")..ComboBox1..Hint
+msgid "Text size."
+msgstr "Fonttikoko."
+
+#. Form6("Text label")..GroupBox1("Text string")..Caption
+msgid "Text string"
+msgstr "Teksti"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton11..Hint
+msgid "Insert symbol (Ctrl+G)"
+msgstr "Lisää symboli (Ctrl+G)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
+msgid "Insert object"
+msgstr "Lisää objekti"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
+msgid "Bold (Ctrl+B)"
+msgstr "Lihavoitu (Ctrl-B)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton2..Hint
+msgid "Italic (Ctrl+I)"
+msgstr "Kursivoitu (Ctrl-I)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton3..Hint
+msgid "Underline (Ctrl+U)"
+msgstr "Alleviivattu (Ctrl-U)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton4..Hint
+msgid "Strikethrough (Ctrl+S)"
+msgstr "Yliviivattu (Ctrl-S)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton9..Hint
+msgid "Superscript (Ctrl++)"
+msgstr "Yläindeksi (Ctrl++)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton10..Hint
+msgid "Subscript (Ctrl+=)"
+msgstr "Alaindeksi (Ctrl+=)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton5..Hint
+msgid "Align left (Ctrl+L)"
+msgstr "Tasaa vasen reuna (Ctrl-L)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton6..Hint
+msgid "Center (Ctrl+E)"
+msgstr "Keskitä (Ctrl-E)"
+
+#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton7..Hint
+msgid "Align right (Ctrl+R)"
+msgstr "Tasaa oikea reuna (Ctrl-R)"
+
+#. Form6("Text label")..IFontBox1..Hint
+msgid "Text font."
+msgstr "Valitse käytettävä fontti."
+
+#. Form6("Text label")..ColorBox1..Hint
+msgid "Text color."
+msgstr "Valitse fontin väri."
+
+#. Form6("Text label")..ColorBox2..Hint
+msgid "Select background color of the text label."
+msgstr "Valitse tekstikentän taustaväri."
+
+#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
+msgid "Undo last action."
+msgstr "Kumoaa viimeisen toiminnon."
+
+#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Hint
+msgid "Redo last undone action."
+msgstr "Tekee kumotun toiminnon uudelleen."
+
+#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Hint
+msgid "Paste the contents of the clipboard."
+msgstr "Liittää leikepöydän sisällön."
+
+#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Caption
+msgid "Paste special..."
+msgstr "Liitä määräten..."
+
+#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Hint
+msgid "Select which clipboard representation you want to paste."
+msgstr "Valitsee missä muodossa leikepöydän sisältö liitetään."
+
+#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
 msgid "Create a new OLE object."
 msgstr "Lisää objektin."
 
+#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Caption
 msgid "Edit object"
 msgstr "Muokkaa objektia"
 
+#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Hint
 msgid "Edit selected OLE object."
 msgstr "Muokkaa valittua objektia."
 
+#. Form7("Insert f'(x)")..Caption
 msgid "Insert f'(x)"
 msgstr "Lisää f'(x)"
 
+#. Form8("Add model")..Label1("Name:")..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Label1("Name:")..Caption
 msgid "Name:"
 msgstr "Nimi:"
 
+#. Form8("Add model")..ValueListEditor1....TitleCaptions.Strings
 msgid "Constant"
 msgstr "Vakio"
 
+#. Form8("Add model")..ValueListEditor1....TitleCaptions.Strings
 msgid "Value"
 msgstr "Arvo"
 
+#. Form9("Evaluate")..Label1("Select a function or tangent to evaluate.")..Caption
 msgid "Select a function or tangent to evaluate."
 msgstr "Valitse funktio tai tangentti, jota haluat tarkastella."
 
+#. Used in titles of error message boxes
+#. Error message when an invalid value is entered.
+#. Error message in Axes dialog when zoom in/out too much
 msgid "Error"
 msgstr "Virhe"
 
+#. Default name in Insert shade dialog
 msgid "Shade"
 msgstr "Varjostus"
 
-msgid "Functions"
-msgstr "Funktiot"
-
-msgid "Tangents"
-msgstr "Tangentit"
-
-msgid "Point series"
-msgstr "Pistejoukot"
-
-msgid "Shades"
-msgstr "Varjostukset"
-
+#. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Pituus"
 
+#. Name for labels shown in the function list if there is no text in the label.
 msgid "Label"
 msgstr "Otsikko"
 
+#. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-virhe"
 
+#. May be selected as background color in Insert label dialog
 msgid "Transparent"
 msgstr "Läpinäkyvä"
 
+#. Shown in the function list
 msgid "Axes"
 msgstr "Akselit"
 
-msgid "No error occurred. You should not see this message."
-msgstr "Ei virhettä. Tätä virhettä ei pitäisi näkyä."
+#. Shortcut key
+msgid "Ctrl+"
+msgstr ""
+
+#. Shortcut key
+msgid "Alt+"
+msgstr ""
+
+#. Shortcut key
+msgid "Shift+"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Del"
+msgstr "Poista"
+
+#. Shortcut key
+#, fuzzy
+msgid "Ins"
+msgstr "Lähennä"
+
+#. Shortcut key
+msgid "Home"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "End"
+msgstr "Loppu:"
+
+#. Shortcut key
+msgid "PgUp"
+msgstr ""
+
+#. Shortcut key
+msgid "PgDn"
+msgstr ""
+
+#. Shortcut key
+msgid "Up"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Down"
+msgstr "Lahjoita"
+
+#. Shortcut key
+msgid "Esc"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Enter"
+msgstr "Tulostin"
+
+#. Shortcut key
+msgid "Tab"
+msgstr ""
+
+#. Shortcut key
+msgid "BkSp"
+msgstr ""
+
+#. Shortcut key
+#, fuzzy
+msgid "Space"
+msgstr "Tallenna"
 
 msgid "An error occurred while evaluating power function."
 msgstr "Virhe laskettaessa potenssifunktion arvoja."
@@ -1792,7 +2756,7 @@ msgstr "Liian monta rekursiivista kutsua."
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Odottamaton operaattori. Operaattoria '%s' ei voi sijoittaa tähän."
 
-msgid "Right bracket missing."
+msgid "The right bracket is missing."
 msgstr "Oikea sulje puuttuu."
 
 msgid "Invalid number of arguments supplied for function '%s'"
@@ -1888,9 +2852,6 @@ msgstr ""
 "Nimi saa sisältää vain kirjaimia ja desimaaleja, ja sen täytyy alkaa kirjaimella.\n"
 "Et voi määrittää uudelleen jo käytössä olevia nimiä."
 
-msgid "The right bracket is missing."
-msgstr "Oikea sulje puuttuu."
-
 msgid "Character found after brackets."
 msgstr "Merkki löydetty sulkeiden ulkopuolelta."
 
@@ -1900,24 +2861,28 @@ msgstr "Symboli \"%s\" on määritelty useammin kuin yhdesti."
 msgid "Invalid equation or inequality."
 msgstr "Virheellinen yhtälö tai epäyhtälö."
 
+#. Shown in status bar
 msgid "Updating..."
 msgstr "Päivitetään..."
 
+#. Asked when trying to exit
+#. Asked when trying to exit
 msgid "Save changes?"
 msgstr "Tallennetaanko muutokset?"
 
+#. Asked when trying to exit
 msgid "Save changes in %s"
 msgstr "Tallennetaanko muutokset tiedostoon %s ?"
 
+#. Written in status bar when trying to zoom in too much
 msgid "You have reached the maximum range of zoom."
 msgstr "Zoomaus maksimissaan."
 
+#. Written in status bar when trying to zoom out too much
 msgid "You have reached the minimum range of zoom."
 msgstr "Zoomaus minimissään."
 
-msgid "There is no printer installed on the system."
-msgstr "Järjestelmään ei ole asennettu kirjoitinta."
-
+#. Error message when an invalid value is entered.
 msgid "Error in value"
 msgstr "Virhe arvossa."
 
@@ -1930,6 +2895,7 @@ msgstr "'%s' tulee olla nollaa suurempi."
 msgid "'%s' must be an integer greater than zero."
 msgstr "'%s' tulee olla nollaa suurempi."
 
+#. Error message in Axes dialog when zoom in/out too much
 msgid "Trying to break zoom limit."
 msgstr "Zoomauksen raja ylitetty."
 
@@ -1952,6 +2918,7 @@ msgstr ""
 msgid "'%s' is not a valid number."
 msgstr "'%s' ei ole kelvollinen luku."
 
+#. Hint for recent file menu items
 msgid "Open the file %s."
 msgstr "Avaa tiedosto %s."
 
@@ -1971,6 +2938,7 @@ msgstr ""
 msgid "Unknown error while reading file: %s"
 msgstr "Tuntematon virhe luettaessa tiedostoa: %s"
 
+#. Used in Save as dialog
 msgid "Graph files [*.grf]|*.grf"
 msgstr "Graph-tiedostot [*.grf]|*.grf"
 
@@ -1984,19 +2952,11 @@ msgstr ""
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "Fonttia \"%s\" ei löydy. Käytetään oletusfonttia."
 
-msgid "Conversion error"
-msgstr "Muunnosvirhe"
-
-msgid ""
-"Unknown error code.\n"
-"Could not find error message for this error."
-msgstr ""
-"Tuntematon virhe.\n"
-"Tälle virheelle ei ole lisätietoja."
-
+#. Error in Insert shade dialog when you need to select a function
 msgid "Selection error"
 msgstr "Virhe: Selection error"
 
+#. Title in error message when reading a grf-file failed
 msgid "File error"
 msgstr "Tiedostovirhe"
 
@@ -2009,9 +2969,11 @@ msgstr "Virhe: OLE error"
 msgid "Error reading object"
 msgstr "Virhe luettaessa objektia"
 
+#. Error message when a Graph OLE object is invalid.
 msgid "Not a valid Graph object."
 msgstr "Tämä ei ole sopiva Graph-objekti."
 
+#. Error message when a Graph OLE object is invalid.
 msgid "Object error"
 msgstr "Objektivirhe"
 
@@ -2021,18 +2983,25 @@ msgstr "Järjestelmässä ei ole riittävästi resursseja näin suuren tiedoston
 msgid "'%1%' must be between %2% and %3%."
 msgstr "'%1%' tulee olla väliltä %2% - %3%."
 
+#, fuzzy
+msgid "File not found"
+msgstr "Tiedostoa ei löydy: %s"
+
+#, fuzzy
+msgid "Error reading file"
+msgstr "Virhe luettaessa objektia"
+
 msgid "Confirm delete"
 msgstr "Varmista poistaminen"
-
-msgid "This error should not occur. Please report this to the programmer."
-msgstr "Tätä virhettä ei pitäisi näkyä. Ilmoita virheestä tekijälle."
 
 msgid "Are you sure you want to delete %s?"
 msgstr "Haluatko varmasti poistaa %s?"
 
+#. Save as dialog
 msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Graph-tiedostot [*.grf]|*.grf|Kaikki tiedostot [*.*]|*.*"
 
+#. Import from file dialog
 msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 msgstr "Teksti [*.txt; *.csv]|*.txt;*.csv|Kaikki tiedostot [*.*]|*.*"
 
@@ -2045,6 +3014,7 @@ msgstr "X-akselin maksimiarvon tulee olla minimiarvoa suurempi."
 msgid "Maximum number on y-axis must be greater than the minimum value."
 msgstr "Y-akselin maksimiarvon tulee olla minimiarvoa suurempi."
 
+#. Error message when trying to activate an OLE object
 msgid "Server application not found."
 msgstr "Palvelinsovellusta ei löydy."
 
@@ -2084,9 +3054,6 @@ msgstr "Virhe leveydessä"
 msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
 msgstr "Välin päätepisteen tulee olla alkupistettä suurempi ja %s on oltava nollaa suurempi."
 
-msgid "The maximum length of text has been reached."
-msgstr "Tekstin maksimipituus saavutettu."
-
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Funktion derivaattaa ei ole määritelty pisteessä %s=%s"
 
@@ -2114,12 +3081,6 @@ msgstr "Muokkaa tangenttia/normaalia"
 msgid "Error processing file '%s' at line %s."
 msgstr "Virhe käsitellessä tiedostoa '%s' rivillä %s."
 
-msgid "Dialog error: %sh"
-msgstr "Virheilmoitus: %sh"
-
-msgid "Unknown Graph data found while pasting clipboard data."
-msgstr "Tuntematonta Graph-dataa löydetty liitettäessä leikepöydältä."
-
 msgid "'%s' has to be an integer value between 0 and 1000."
 msgstr "'%s' tulee olla väliltä 0-1000."
 
@@ -2129,6 +3090,7 @@ msgstr "Tulostusvirhe"
 msgid "An unknown error occurred while printing."
 msgstr "Tuntematon virhe tulostettaessa."
 
+#. Error message title in Point series dialog
 msgid "Error while adding points"
 msgstr "Virhe lisättäessä pisteitä."
 
@@ -2181,12 +3143,15 @@ msgstr ""
 "Ei saada yhteyttä palvelimeen www.padowan.dk.\n"
 "Palvelin voi olla väliaikaisesti poissa käytöstä, tai Internet-yhteytesi ei ole toiminnassa."
 
+#. Communication error when checking for newer version
 msgid "Socket error %s"
 msgstr "Virhe: Socket error %s"
 
+#. Communication error when checking for newer version
 msgid "The server responded with the message '%s'"
 msgstr "Palvelimen vastaus: '%s'"
 
+#. Communication error when checking for newer version
 msgid "Protocol reply error %s"
 msgstr "Virhe: Protocol reply error %s"
 
@@ -2216,9 +3181,11 @@ msgstr ""
 msgid "Edit relation"
 msgstr "Muokkaa relaatiota"
 
+#. Customize toolbar dialog
 msgid "Commands"
 msgstr "Komennot"
 
+#. Customize toolbar dialog
 msgid "(All Commands)"
 msgstr "(Kaikki komennot)"
 
@@ -2231,164 +3198,213 @@ msgstr "Muokkaa f'(x)"
 msgid "Edit trendline"
 msgstr "Muokkaa trendiviivaa"
 
+#. Customize toolbar dialog
 msgid "Categories:"
 msgstr "Valikot:"
 
+#. Tip of the Day
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "Tämä Päivän vihje antaa tietoa, jota monet ohjelman käyttäjät eivät ehkä tiedä."
 
+#. Tip of the Day
 msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 msgstr "Voit lähettää vikailmoitukset, ehdotukset ja kommentit sähköpostilla osoitteeseen graph@padowan.dk"
 
+#. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
 msgstr "Voit mukauttaa työkaluriviä klikkaamalla sitä hiiren oikealla näppäimellä ja valitsemalla 'Mukauta...'."
 
+#. Tip of the Day
 msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
 msgstr "Funktion poistamisen sijaan voit tehdä sen näkymättömäksi klikkaamalla sitä hiiren oikealla näppäimellä ja valitsemalla 'Näytetään koordinaatistossa'."
 
+#. Tip of the Day
 msgid "You can paste images into a text label."
 msgstr "Voit lisätä kuvia liittämällä ne kohtaan Funktio|Lisää teksti..."
 
+#. Tip of the Day
 msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
 msgstr "Tekstikenttä voi sisältää mitä tahansa objekteja, esimerkiksi Microsoft Kaavan. Lisää teksti -ikkunassa klikkaa tekstikenttää hiiren oikealla näppäimellä ja valitse 'Lisää objekti...'."
 
+#. Tip of the Day
 msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
 msgstr "Voit viedä pistejoukon tiedostoon, jonka voi avata toisessa ohjelmassa, esimerkiksi Microsoft Excelissä. Pistejoukkoa muokatessa valitse haluamasi pisteet ja klikkaa niitä hiiren oikealla näppäimellä ja valitse sitten 'Vie tiedostoon...'."
 
+#. Tip of the Day
 msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
 msgstr "Voit piirtää pystysuoran viivan esimerkiksi pisteeseen x=5 piirtämällä parametrifunktion x(t)=5, y(t)=t tai relaation x=5."
 
+#. Tip of the Day
 msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
 msgstr "Valitse Zoomaa|Neliö skaalataksesi akselit tasajakoisiksi. Hyödyllinen erityisesti piirrettäessä ympyröitä."
 
+#. Tip of the Day
 msgid "You can find a list of all available functions in the help."
 msgstr "Ohjeesta löydät listan kaikista käytössä olevista funktioista."
 
+#. Tip of the Day
 msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
 msgstr "Voit yhdistää kaksi funktiosta koodilla 'if'. Esimerkiksi funktio [f(x)=x, kun x<1 ja f(x)=x^2, kun x>=1] kirjoitetaan f(x)=if(x<1, x, x^2)."
 
+#. Tip of the Day
 msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
 msgstr "Voit tuoda tietoja toisista Graph-tiedostoista valitsemalla Tiedosto|Tuo|Graph-tiedosto...."
 
+#. Tip of the Day
 msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new files."
 msgstr "Valitse 'Tallenna oletukseksi' Muokkaa akseleita -ikkunasta saadaksesi nykyiset asetukset käyttöön kaikissa uusissa tiedostoissa."
 
+#. Tip of the Day
 msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
 msgstr "Pidä Ctrl-näppäin painettuna ja liikuttele koordinaatistonäkymää nuolinäppäimillä."
 
+#. Tip of the Day
 msgid "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."
 msgstr "Pidä Ctrl-näppäin painettuna ja zoomaa koordinaatistoa + ja - -näppäimillä."
 
+#. Tip of the Day
 msgid "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."
 msgstr "Voit zoomata koordinaatistoa hiiren rullalla. Zoomaus kohdistuu kursorin pisteeseen."
 
+#. Tip of the Day
 msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
 msgstr "Jos et halua jonkun objektin näkyvän selitteessä, klikkaa objektia hiiren oikealla painikkeella ja poista valinta 'Näytä selitteessä'."
 
+#. Tip of the Day
 msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
 msgstr "Jos haluat, että akselit näkyvät kuvan vasemmassa reunassa ja alareunassa, valitse Muokkaa akselit -ikkunasta, Asetukset-välilehdeltä Akselit-kohdasta Kulmittain."
 
+#. Tip of the Day
 msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
 msgstr "Koordinaatiston voi tallentaa viidessä eri kuvaformaatissa: bmp, emf, png, jpg ja pdf."
 
+#. Tip of the Day
 msgid "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."
 msgstr "Valitse Muokkaa|Kopioi kuvana kopioidaksesi koordinaatiston kuvana, jonka voi myöhemmin liittää toiseen ohjelmaan."
 
+#. Tip of the Day
 msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
 msgstr "Voit avata tallennetun grf-tiedoston uuteen ikkunaan avaamalla sen esimerkiksi Resurssienhallinnasta."
 
+#. Tip of the Day
 msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
 msgstr "Avataksesi grf-tiedoston voit raahata sen esimerkiksi Resurssienhallinnasta jo avoinna olevaan Graph-ikkunaan."
 
+#. Tip of the Day
 msgid "Graph will remember the size and placement of the main window between executions. This can be disabled from the Options dialog."
 msgstr "Voit valita, muistaako ohjelma ikkunan sijainnin ja koon kohdasta Muokkaa|Asetukset...|Tallenna työtila poistuttaessa."
 
+#. Tip of the Day
 msgid "Calc|Table can be used to create a table with evaluation values for a function."
 msgstr "Laske|Laske funktion arvoja taulukkoon... -toimintoa voidaan käyttää, kun halutaan laskea funktion arvoja taulukkoon tietyllä välillä ja jaotuksella."
 
+#. Tip of the Day
 msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
 msgstr "Haluttu osa funktion arvotaulukosta voidaan viedä tiedostoon. Valitse haluamasi solut ja klikkaa niitä hiiren oikealla näppäimellä ja valitse sitten 'Vie tiedostoon...'."
 
+#. Tip of the Day
 msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
 msgstr "Tietoja arvotaulukosta voi kopioida toisiin ohjelmiin kuten Microsoft Exceliin leikepöytää käyttäen."
 
+#. Tip of the Day
 msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel through the clipboard."
 msgstr "Tietoja pistejoukkojen taulukoista voi kopioida toisiin ohjelmiin kuten Microsoft Exceliin leikepöytää käyttäen."
 
+#. Tip of the Day
 msgid "Functions can be copied from one instance of the program to another through the clipboard using Edit|Copy."
 msgstr "Funktioita voi kopioida ikkunasta toiseen leikepöytää käyttäen valitsemalla Muokkaa|Kopioi."
 
+#. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
 msgstr "Voit aina peruuttaa viimeisen tekemäsi toiminnon valitsemalla Muokkaa|Kumoa."
 
+#. Tip of the Day
 msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
 msgstr "Jos vahingossa valitset Muokkaa|Kumoa -toiminnon, voit tehdä kumoamasi uudelleen valitsemalla Muokkaa|Tee uudelleen."
 
+#. Tip of the Day
 msgid "In the Axes dialog you can add a title to the coordinate system."
 msgstr "Akselit-ikkunassa voit antaa koordinaatistolle nimen."
 
+#. Tip of the Day
 msgid "You can import point series from files saved by other programs, like Microsoft Excel."
 msgstr "Voit tuoda ohjelmaan pistejoukkoja toisista ohjelmista kuten Microsoft Excelistä."
 
+#. Tip of the Day
 msgid "When inserting a point series you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
 msgstr "Luodessasi pistejoukkoja, voit kopioida tietoja muista ohjelmista (esimerkiksi Microsoft Excel) leikepöydälle ja liittää sen sitten Graphin taulukkoon."
 
+#. Tip of the Day
 msgid "You can use 'Zoom|All points' to change the coordinate system so all point series are visible."
 msgstr "Valitse Zoomaa|Kaikki pisteet saadaksesi näkyviin kaikkien pistejoukkojen kaikki pisteet."
 
+#. Tip of the Day
 msgid "You can use Zoom|Fit to change the coordinate system to show the selected function or point series."
 msgstr "Valitse Zoomaa|Sovita sovittaaksesi näkyviin vain valittuna olevan funktion tai pistejoukon."
 
+#. Tip of the Day
 msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
 msgstr "Voit liikutella koordinaatistoa hiirellä pitämällä Shift-näppäintä pohjassa."
 
+#. Tip of the Day
 msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
 msgstr "Voit etsiä funktioiden leikkauspisteitä ja ääriarvoja valitsemalla Laske|Laske funktion arvoja..."
 
+#. Tip of the Day
 msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
 msgstr "Pistejoukkoon voi lisätä pisteitä valitsemalla muokattavan pistejoukon  ja pitäen Ctrl-näppäintä pohjassa klikkailemalla koordinaatistoa halutuista kohdista."
 
+#. Tip of the Day
 msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
 msgstr "Voit piirtää epäyhtälön kuvaajan lisäämällä relaation. Esimerkiksi sin(x^2) < cos(y^2)"
 
+#. Tip of the Day
 msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
 msgstr "Voit piirtää minkä tahansa yhtälön kuvaajan lisäämällä relaation. Esimerkiksi x*sin x = y*cos y"
 
+#. Tip of the Day
 msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
 msgstr "Objektit (funktiot, varjostukset, tekstit, relaatiot jne.) piirretään siinä päällekkäisessä järjestyksessä, jossa ne ovat vasemman reunan listalla."
 
+#. Tip of the Day
 msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
 msgstr "Voit siirtää objektia vasemman reunan listalla ylös tai alas valitsemalla objektin ja pitäen Alt-näppäintä pohjassa siirtämällä objektia nuolinäppäimillä."
 
+#. Tip of the Day
 msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
 msgstr "Voit vaihtaa objektien keskinäistä päällekkäisyyttä koordinaatistossa siirtämällä vasemman reunan listalla ylimmäksi sen objektin, jonka haluat näkyvän päällimmäisenä. Siirtääksesi varjostuksia ja tangentteja, sinun on siirrettävä niihin liittyviä funktioita."
 
+#. Tip of the Day
 msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
 msgstr "Luomasi tekstit voi kiinnittää akseleihin omiksi akseleiden otsikoiksi hiiren oikean painikkeen alavalikosta."
 
+#. Tip of the Day
 msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
 msgstr "Selitettä voi liikutella vapaasti ja sen voi kiinnittää johonkin nurkkaan hiiren oikean painikkeen alavalikosta."
 
+#. Tip of the Day
 msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shades."
 msgstr "Voit valita lisäämillesi teksteille myös taustavärin läpinäkyvän sijaan. Tämä on käytännöllinen toiminto lisättäessä tekstiä esimerkiksi varjostuksen päälle."
 
+#. Tip of the Day
 msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
 msgstr "Voit monissa paikoissa käyttää lukujen sijasta myös lausekkeita kuten pi/4."
 
+#. Tip of the Day
 msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
 msgstr "Voit luoda omia vakioita valitsemalla Funktio|Omat funktiot... Esimerkiksi g=9.80665, R=8.31."
 
+#. Tip of the Day
 msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
 msgstr "Voit luoda omia funktioita valitsemalla Funktio|Omat funktiot... Esimerkiksi  sinc(x)=if(x=0, 0, sin(x)/x)."
 
+#. Tip of the Day
 msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
 msgstr "Tallentaessasi koordinaatistoa kuvana, voit valita tallennettavan kuvan resoluution ja koon. Tämä on käytännöllinen toiminto, jos haluat tallentaa suuriresoluutioisia kuvia."
 
+#. Tip of the Day
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Pistejoukon pisteinä voidaan käyttää nuolenpäitä. Tällä tavalla voidaan piirtää vektoreita koordinaatistoon."
-
-msgid "Custom..."
-msgstr "Mukautettu..."
 
 msgid "Black"
 msgstr "Musta"
@@ -2456,8 +3472,8 @@ msgstr "Mukauta..."
 msgid "Description"
 msgstr "Kuvaus"
 
-msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
-msgstr "Lisää toimintoja vetämällä ja pudottamalla työkalupalkkiin."
+msgid "Cannot open clipboard"
+msgstr ""
 
 msgid "Local"
 msgstr "Paikallinen"
@@ -2474,63 +3490,126 @@ msgstr "Lisää symboli"
 msgid "Subset:"
 msgstr "Osajoukko:"
 
+#. PrintFrm("Print")..Caption
 msgid "Print"
 msgstr "Tulosta"
 
+#. PrintFrm("Print")..Label6("Scale:")..Caption
 msgid "Scale:"
 msgstr "Skaalaus:"
 
+#. PrintFrm("Print")..GroupBox1("Printer")..Caption
 msgid "Printer"
 msgstr "Tulostin"
 
+#. PrintFrm("Print")..GroupBox1("Printer")..Label7("Type:")..Caption
 msgid "Type:"
 msgstr "Tyyppi:"
 
+#. PrintFrm("Print")..GroupBox1("Printer")..Label8("Where:")..Caption
 msgid "Where:"
 msgstr "Missä:"
 
+#. PrintFrm("Print")..GroupBox1("Printer")..Label9("Comment:")..Caption
 msgid "Comment:"
 msgstr "Kommentti:"
 
+#. PrintFrm("Print")..GroupBox1("Printer")..ComboBox1....Hint
 msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
 msgstr "Valitse käytettävä tulostin. Käytä Ominaisuudet-painiketta muuttaaksesi tulostamisen lisäasetuksia."
 
+#. PrintFrm("Print")..RadioGroup2("Print output")....Hint
 msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
 msgstr "Valitse väri, jos halua tulostaa värikuvan tai harmaasävykuvan mikäli tulostimesi ei ole väritulostin. Mustavalkoinen muuttaa kaikki värisävyt mustaksi."
 
+#. PrintFrm("Print")..RadioGroup2("Print output")..Caption
 msgid "Print output"
 msgstr "Tuloste"
 
+#. PrintFrm("Print")..RadioGroup2("Print output")....Items.Strings
 msgid "Color"
 msgstr "Väri"
 
+#. PrintFrm("Print")..RadioGroup2("Print output")....Items.Strings
 msgid "Black && white"
 msgstr "Mustavalkoinen"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Caption
 msgid "Position (millimeters)"
 msgstr "Sijainti (millimetriä)"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Label3("Left margin:")..Caption
 msgid "Left margin:"
 msgstr "Vasen reunus:"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Label4("Top margin:")..Caption
 msgid "Top margin:"
 msgstr "Yläreunus:"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
 msgid "Select to place the image on the middle of the page."
 msgstr "Valitse keskittääksesi kuvan sivulle."
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
 msgstr "Sivun keskelle"
 
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1..Hint
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2..Hint
 msgid "Enter the image position on the page."
 msgstr "Valitse kuvan sijainti sivulla suhteessa reunukseen."
 
+#. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
 msgid "Number of copies:"
 msgstr "Kopioita:"
 
+#. PrintFrm("Print")..GroupBox3..Edit3..Hint
 msgid "Choose number of copies to print."
 msgstr "Valitse tulostettavien kopioiden määrä."
 
+#. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Valitse tulosteen skaalaus suhteessa alkuperäiseen kuvaan."
+
+#, fuzzy
+#~ msgid "Version -%s"
+#~ msgstr "Versio"
+#~ msgid "Visible"
+#~ msgstr "Näytetään koordinaatistossa"
+#~ msgid "Check to make the selected item visible in the coordinate system."
+#~ msgstr "Näyttää tai piilottaa objektin."
+#~ msgid "Functions"
+#~ msgstr "Funktiot"
+#~ msgid "Tangents"
+#~ msgstr "Tangentit"
+#~ msgid "Point series"
+#~ msgstr "Pistejoukot"
+#~ msgid "Shades"
+#~ msgstr "Varjostukset"
+#~ msgid "No error occurred. You should not see this message."
+#~ msgstr "Ei virhettä. Tätä virhettä ei pitäisi näkyä."
+#~ msgid "Right bracket missing."
+#~ msgstr "Oikea sulje puuttuu."
+#~ msgid "There is no printer installed on the system."
+#~ msgstr "Järjestelmään ei ole asennettu kirjoitinta."
+#~ msgid "Conversion error"
+#~ msgstr "Muunnosvirhe"
+#~ msgid ""
+#~ "Unknown error code.\n"
+#~ "Could not find error message for this error."
+#~ msgstr ""
+#~ "Tuntematon virhe.\n"
+#~ "Tälle virheelle ei ole lisätietoja."
+#~ msgid "This error should not occur. Please report this to the programmer."
+#~ msgstr "Tätä virhettä ei pitäisi näkyä. Ilmoita virheestä tekijälle."
+#~ msgid "The maximum length of text has been reached."
+#~ msgstr "Tekstin maksimipituus saavutettu."
+#~ msgid "Dialog error: %sh"
+#~ msgstr "Virheilmoitus: %sh"
+#~ msgid "Unknown Graph data found while pasting clipboard data."
+#~ msgstr "Tuntematonta Graph-dataa löydetty liitettäessä leikepöydältä."
+#~ msgid ""
+#~ "To add actions to your application simply drag and drop from either "
+#~ "Categories or Actions onto an existing ActionBar."
+#~ msgstr "Lisää toimintoja vetämällä ja pudottamalla työkalupalkkiin."
 
