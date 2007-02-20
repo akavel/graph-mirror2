@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2007-02-19 22:24\n"
-"PO-Revision-Date: 2007-02-19 22:33+0100\n"
+"PO-Revision-Date: 2007-02-20 13:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
@@ -242,7 +242,7 @@ msgstr "Beregn"
 
 #. Form1..MainMenu..Plugins_("Plugins")..Caption
 msgid "Plugins"
-msgstr ""
+msgstr "Plugins"
 
 #. Form1..MainMenu..Help_("Help")..Caption
 #. Form1..ActionManager..ContentsAction("Contents and index")..Category
@@ -2636,73 +2636,67 @@ msgstr "Akser"
 
 #. Shortcut key
 msgid "Ctrl+"
-msgstr ""
+msgstr "Ctrl+"
 
 #. Shortcut key
 msgid "Alt+"
-msgstr ""
+msgstr "Alt+"
 
 #. Shortcut key
 msgid "Shift+"
-msgstr ""
+msgstr "Skift+"
 
 #. Shortcut key
-#, fuzzy
 msgid "Del"
 msgstr "Slet"
 
 #. Shortcut key
-#, fuzzy
 msgid "Ins"
-msgstr "Ind"
+msgstr "Indsæt"
 
 #. Shortcut key
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. Shortcut key
-#, fuzzy
 msgid "End"
-msgstr "Slut:"
+msgstr "End"
 
 #. Shortcut key
 msgid "PgUp"
-msgstr ""
+msgstr "PgUp"
 
 #. Shortcut key
 msgid "PgDn"
-msgstr ""
+msgstr "PgDn"
 
 #. Shortcut key
 msgid "Up"
-msgstr ""
+msgstr "Op"
 
 #. Shortcut key
-#, fuzzy
 msgid "Down"
-msgstr "Donér"
+msgstr "Ned"
 
 #. Shortcut key
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #. Shortcut key
-#, fuzzy
 msgid "Enter"
-msgstr "Printer"
+msgstr "Enter"
 
 #. Shortcut key
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Shortcut key
 msgid "BkSp"
-msgstr ""
+msgstr "BkSp"
 
 #. Shortcut key
-#, fuzzy
 msgid "Space"
-msgstr "Gem"
+msgstr "Mellemrum"
 
 msgid "An error occurred while evaluating power function."
 msgstr "Der opstod en fejl under potensopløftning."
@@ -3470,7 +3464,7 @@ msgid "Description"
 msgstr "Beskrivelse"
 
 msgid "Cannot open clipboard"
-msgstr ""
+msgstr "Udklipsholderen kan ikke åbnes"
 
 msgid "Local"
 msgstr "Lokal"
