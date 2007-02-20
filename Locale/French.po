@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2007-02-19 22:24\n"
-"PO-Revision-Date: 2007-02-19 22:35+0100\n"
+"PO-Revision-Date: 2007-02-20 13:44+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -2648,23 +2648,20 @@ msgid "Shift+"
 msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Del"
-msgstr "Supprimer"
+msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Ins"
-msgstr "Agrandir"
+msgstr ""
 
 #. Shortcut key
 msgid "Home"
 msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "End"
-msgstr "De fin :"
+msgstr ""
 
 #. Shortcut key
 msgid "PgUp"
@@ -2679,18 +2676,16 @@ msgid "Up"
 msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Down"
-msgstr "Donation"
+msgstr ""
 
 #. Shortcut key
 msgid "Esc"
 msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Enter"
-msgstr "Imprimante"
+msgstr ""
 
 #. Shortcut key
 msgid "Tab"
@@ -2701,9 +2696,8 @@ msgid "BkSp"
 msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Space"
-msgstr "Enregistrer"
+msgstr "Éspace"
 
 msgid "An error occurred while evaluating power function."
 msgstr "Une erreur s'est produite en calculant une fonction puissance."
@@ -2983,13 +2977,11 @@ msgstr "Windows n'a pas assez de ressources pour enregistrer une image aussi gra
 msgid "'%1%' must be between %2% and %3%."
 msgstr "'%1%' doit être entre %2% and %3%."
 
-#, fuzzy
 msgid "File not found"
-msgstr "Fichier pas trouvé : %s"
+msgstr "Fichier pas trouvé"
 
-#, fuzzy
 msgid "Error reading file"
-msgstr "Erreur en lisant l'objet."
+msgstr "Erreur en lisant le fichier."
 
 msgid "Confirm delete"
 msgstr "Confirmer l'effacement"
@@ -3199,9 +3191,8 @@ msgid "Edit trendline"
 msgstr "Éditer une courbe d'ajustement"
 
 #. Customize toolbar dialog
-#, fuzzy
 msgid "Categories:"
-msgstr "Caté&gories :"
+msgstr "Catégories :"
 
 #. Tip of the Day
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."

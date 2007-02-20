@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2007-02-19 22:24\n"
-"PO-Revision-Date: 2007-02-19 22:43+0100\n"
+"PO-Revision-Date: 2007-02-20 13:38+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -244,7 +244,7 @@ msgstr "Beräkna"
 
 #. Form1..MainMenu..Plugins_("Plugins")..Caption
 msgid "Plugins"
-msgstr ""
+msgstr "Plugins"
 
 #. Form1..MainMenu..Help_("Help")..Caption
 #. Form1..ActionManager..ContentsAction("Contents and index")..Category
@@ -2759,77 +2759,71 @@ msgstr "Axlar"
 
 #. Shortcut key
 msgid "Ctrl+"
-msgstr ""
+msgstr "Ctrl+"
 
 #. Shortcut key
 msgid "Alt+"
-msgstr ""
+msgstr "Alt+"
 
 #. Shortcut key
 msgid "Shift+"
-msgstr ""
+msgstr "Shift+"
 
 # Funktion-menyn
 #. Shortcut key
-#, fuzzy
 msgid "Del"
 msgstr "Ta bort"
 
 # Zooma-menyn
 #. Shortcut key
-#, fuzzy
 msgid "Ins"
-msgstr "In"
+msgstr ""
 
 #. Shortcut key
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. Shortcut key
-#, fuzzy
 msgid "End"
-msgstr "Slut:"
+msgstr "End"
 
 #. Shortcut key
 msgid "PgUp"
-msgstr ""
+msgstr "PgUp"
 
 #. Shortcut key
 msgid "PgDn"
-msgstr ""
+msgstr "PgDn"
 
 #. Shortcut key
 msgid "Up"
-msgstr ""
+msgstr "Upp"
 
 # Hjälp-menyn
 #. Shortcut key
-#, fuzzy
 msgid "Down"
-msgstr "Donera"
+msgstr "Ner"
 
 #. Shortcut key
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 # Visas i dialogrutan utskrift
 #. Shortcut key
-#, fuzzy
 msgid "Enter"
-msgstr "Skrivare"
+msgstr "Enter"
 
 #. Shortcut key
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Shortcut key
 msgid "BkSp"
-msgstr ""
+msgstr "BkSp"
 
 #. Shortcut key
-#, fuzzy
 msgid "Space"
-msgstr "Spara"
+msgstr "Mellanrum"
 
 msgid "An error occurred while evaluating power function."
 msgstr "Ett fel uppstod då en potensfunktion utvärderades."
@@ -3109,13 +3103,11 @@ msgstr "Windows har inte tillräckligt med resurser för att spara en bild av de
 msgid "'%1%' must be between %2% and %3%."
 msgstr "'%1%' måste vara mellan %2% och %3%."
 
-#, fuzzy
 msgid "File not found"
-msgstr "Filen hittades inte: %s"
+msgstr "Filen hittades inte"
 
-#, fuzzy
 msgid "Error reading file"
-msgstr "Fel då objekt lästes in"
+msgstr ""
 
 msgid "Confirm delete"
 msgstr "Bekräfta ta bort"
