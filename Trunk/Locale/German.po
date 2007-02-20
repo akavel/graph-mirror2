@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2007-02-19 22:24\n"
-"PO-Revision-Date: 2007-02-20 13:34+0100\n"
+"PO-Revision-Date: 2007-02-20 16:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: Frank Hüttemeister & Michael Bach Ipsen <deutsch@padowan.dk>\n"
 "MIME-Version: 1.0\n"
@@ -2648,7 +2648,7 @@ msgstr "Alt+"
 
 #. Shortcut key
 msgid "Shift+"
-msgstr ""
+msgstr "Shift+"
 
 #. Shortcut key
 msgid "Del"
@@ -2668,19 +2668,19 @@ msgstr "Ende"
 
 #. Shortcut key
 msgid "PgUp"
-msgstr ""
+msgstr "Bild auf"
 
 #. Shortcut key
 msgid "PgDn"
-msgstr ""
+msgstr "Bild ab"
 
 #. Shortcut key
 msgid "Up"
-msgstr ""
+msgstr "Pfeil nach oben"
 
 #. Shortcut key
 msgid "Down"
-msgstr ""
+msgstr "Pfeil nach unten"
 
 #. Shortcut key
 msgid "Esc"
@@ -2688,7 +2688,7 @@ msgstr "Esc"
 
 #. Shortcut key
 msgid "Enter"
-msgstr ""
+msgstr "Enter"
 
 #. Shortcut key
 msgid "Tab"
