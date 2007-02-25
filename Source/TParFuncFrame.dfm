@@ -6,7 +6,6 @@ object ParFuncFrame: TParFuncFrame
   HelpContext = 101
   Anchors = [akLeft, akTop, akRight]
   TabOrder = 0
-  Visible = False
   DesignSize = (
     184
     230)

@@ -52,4 +52,20 @@ void TTanFrame::SetPoint(const TPointSeries *Series, int X)
   Edit1->Text = RoundToStr(Form1->Draw.xCoord(X), Form1->Data);
 }
 //---------------------------------------------------------------------------
+void TTanFrame::Eval(const TGraphElem *Elem)
+{
+  if(const TTan *Tan = dynamic_cast<const TTan*>(Elem))
+    EvalTan(Tan);
+  else if(const TPointSeries *Series = dynamic_cast<const TPointSeries*>(Elem))
+    EvalSeries(Series);
+}
+//---------------------------------------------------------------------------
+void TTanFrame::SetPoint(const TGraphElem *Elem, int X, int Y)
+{
+  if(const TTan *Tan = dynamic_cast<const TTan*>(Elem))
+    SetPoint(Tan, X, Y);
+  else if(const TPointSeries *Series = dynamic_cast<const TPointSeries*>(Elem))
+    SetPoint(Series, X, Y);
+}
+//---------------------------------------------------------------------------
 

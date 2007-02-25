@@ -16,8 +16,9 @@
 #include <Forms.hpp>
 #include "MyEdit.h"
 #include "TntStdCtrls.hpp"
+#include "TStdFuncFrame.h"
 //---------------------------------------------------------------------------
-class TTanFrame : public TFrame
+class TTanFrame : public TFrame, public TEvalFrame
 {
 __published:	// IDE-managed Components
   TTntEdit *Edit2;
@@ -25,12 +26,17 @@ __published:	// IDE-managed Components
   TLabel *Label2;
   TMyEdit *Edit1;
 private:	// User declarations
-public:		// User declarations
-  __fastcall TTanFrame(TComponent* Owner);
   void EvalTan(const TTan *Tan);
+  void EvalSeries(const TPointSeries *Series);
   void SetPoint(const TTan *Tan, int X);
   void SetPoint(const TPointSeries *Series, int X);
-  void EvalSeries(const TPointSeries *Series);
+
+public:		// User declarations
+  __fastcall TTanFrame(TComponent* Owner);
+  void Eval(const TGraphElem *Elem);
+  void SetPoint(const TGraphElem *Elem, int X, int Y);
+  std::string GetErrorPrefix() {return std::string();}
+  TFrame* GetFrame() {return this;} //Workaround for nasty compiler bug
 };
 //---------------------------------------------------------------------------
 #endif

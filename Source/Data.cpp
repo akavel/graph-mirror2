@@ -409,7 +409,7 @@ double FindNearestValue(const std::vector<Func32::TCoordSet> &Values, int X, int
   return Result;
 }
 //---------------------------------------------------------------------------
-double TraceFunction(TBaseFuncType *Func, TTraceType TraceType, int X, int Y, const TData &Data, const TDraw &Draw)
+double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int Y, const TData &Data, const TDraw &Draw)
 {
   switch(TraceType)
   {

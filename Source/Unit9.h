@@ -16,12 +16,12 @@
 #include <vcl\Forms.hpp>
 #include <ComCtrls.hpp>
 #include <ExtCtrls.hpp>
-#include "TStdFuncFrame.h"
-#include "TTanFrame.h"
+#include "TntStdCtrls.hpp"
+#include "TAreaFrame.h"
 #include "TParFuncFrame.h"
 #include "TPolFuncFrame.h"
-#include "TAreaFrame.h"
-#include "TntStdCtrls.hpp"
+#include "TStdFuncFrame.h"
+#include "TTanFrame.h"
 //---------------------------------------------------------------------------
 enum TEvalType {etEval, etArea, etArc};
 class TForm9 : public TTntForm
@@ -46,13 +46,13 @@ private:	// User declarations
     TEvalType EvalType;
     int SizeDif; //Difference between Height and ClientHeight
     TVclObject<TTntStringList> StdFuncStrings, ParFuncStrings, PolFuncStrings;
+    TEvalFrame *VisibleFrame;
 
     void __fastcall Loaded() {VisibleFrame=NULL; TForm::Loaded();} //Prevent crash when resources are reloaded
-    void ShowFrame(TFrame *Frame);
+    void ShowFrame(TEvalFrame *Frame);
+    TFrame* GetFrame() {return VisibleFrame->GetFrame();} //Workaround for nasty compiler bug
 
 public:		// User declarations
-    TFrame *VisibleFrame;
-
     __fastcall TForm9(TComponent* Owner);
     void FuncChanged(const boost::shared_ptr<TGraphElem> &AElem);
     void StartValueChanged(int X, int Y);
@@ -60,6 +60,7 @@ public:		// User declarations
     void Clear();
     void SetEvalType(TEvalType AEvalType);
     void Translate();
+    int GetFrameHeight() {return VisibleFrame ? GetFrame()->Height : 0;}
 };
 //---------------------------------------------------------------------------
 #endif

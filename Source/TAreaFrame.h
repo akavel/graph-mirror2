@@ -16,8 +16,9 @@
 #include <Forms.hpp>
 #include "MyEdit.h"
 #include "TntStdCtrls.hpp"
+#include "TStdFuncFrame.h"
 //---------------------------------------------------------------------------
-class TAreaFrame : public TFrame
+class TAreaFrame : public TFrame, public TEvalFrame
 {
 __published:	// IDE-managed Components
   TMyEdit *Edit1;
@@ -27,10 +28,15 @@ __published:	// IDE-managed Components
   TTntLabel *Label2;
   TTntLabel *Label3;
 private:	// User declarations
+
 public:		// User declarations
   __fastcall TAreaFrame(TComponent* Owner);
-  void EvalArea(TGraphElem *Elem);
-  void EvalArc(TGraphElem *Elem);
+  void Eval(const TGraphElem *Elem) {} //Dummy
+  void SetPoint(const TGraphElem *Elem, int X, int Y) {} //Dummy
+  void EvalArea(const TGraphElem *Elem);
+  void EvalArc(const TGraphElem *Elem);
+  std::string GetErrorPrefix() {return std::string();}
+  TFrame* GetFrame() {return this;} //Workaround for nasty compiler bug
 };
 //---------------------------------------------------------------------------
 #endif

@@ -16,8 +16,9 @@
 #include <Forms.hpp>
 #include "MyEdit.h"
 #include "TntStdCtrls.hpp"
+#include "TStdFuncFrame.h"
 //---------------------------------------------------------------------------
-class TParFuncFrame : public TFrame
+class TParFuncFrame : public TFrame, public TEvalFrame
 {
 __published:	// IDE-managed Components
   TLabel *Label2;
@@ -36,11 +37,14 @@ __published:	// IDE-managed Components
   TTntLabel *Label7;
   void __fastcall ComboBox1Change(TObject *Sender);
 private:	// User declarations
+  void Clear();
+  
 public:		// User declarations
   __fastcall TParFuncFrame(TComponent* Owner);
-  void EvalFunc(TParFunc *Func);
-  void Clear();
-  void SetPoint(TParFunc *Func, int X, int Y);
+  void Eval(const TGraphElem *Elem);
+  void SetPoint(const TGraphElem *Elem, int X, int Y);
+  std::string GetErrorPrefix() {return std::string();}
+  TFrame* GetFrame() {return this;} //Workaround for nasty compiler bug
 };
 //---------------------------------------------------------------------------
 #endif

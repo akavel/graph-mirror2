@@ -31,43 +31,53 @@ void TStdFuncFrame::Clear()
   Form1->CancelStatusError();
 }
 //---------------------------------------------------------------------------
-void TStdFuncFrame::EvalFunc(TStdFunc *Func)
+void TStdFuncFrame::Eval(const TGraphElem *Elem)
 {
-  Clear();
-  Func32::TComplex x = Form1->Data.CalcComplex(ToString(Edit1->Text));
-  Func32::TComplex y = Func->GetFunc().CalcY(x);
+  if(const TStdFunc *Func = dynamic_cast<const TStdFunc*>(Elem))
+  {
+    Clear();
+    ErrorPrefix = "x: ";
+    Func32::TComplex x = Form1->Data.CalcComplex(ToString(Edit1->Text));
 
-  if(!x.imag() && std::abs(y.imag()) < MIN_ZERO)
-    Form1->SetCrossPos(x.real(), y.real());
+    ErrorPrefix = "f(x): ";
+    Func32::TComplex y = Func->GetFunc().CalcY(x);
 
-  Edit2->Text = ComplexToWideString(y);
-  Func32::TFunc Dif1 = Func->GetFunc().MakeDif();
-  Func32::TComplex yDif1 = Dif1.CalcY(x);
+    if(!x.imag() && std::abs(y.imag()) < MIN_ZERO)
+      Form1->SetCrossPos(x.real(), y.real());
 
-  Edit3->Text = ComplexToWideString(yDif1);
-  Func32::TFunc Dif2 = Dif1.MakeDif();
+    ErrorPrefix = "f'(x): ";
+    Edit2->Text = ComplexToWideString(y);
+    Func32::TFunc Dif1 = Func->GetFunc().MakeDif();
+    Func32::TComplex yDif1 = Dif1.CalcY(x);
+    Edit3->Text = ComplexToWideString(yDif1);
 
-  Func32::TComplex yDif2 = Dif2.CalcY(x);
-  Edit4->Text = ComplexToWideString(yDif2);
+    ErrorPrefix = "f''(x): ";
+    Func32::TFunc Dif2 = Dif1.MakeDif();
+    Func32::TComplex yDif2 = Dif2.CalcY(x);
+    Edit4->Text = ComplexToWideString(yDif2);
+  }
 }
 //---------------------------------------------------------------------------
-void TStdFuncFrame::SetPoint(TStdFunc *Func, int X, int Y)
+void TStdFuncFrame::SetPoint(const TGraphElem *Elem, int X, int Y)
 {
-  Edit1->Text = "";
-  TTraceType TraceType;
-  switch(ComboBox1->ItemIndex)
+  if(const TStdFunc *Func = dynamic_cast<const TStdFunc*>(Elem))
   {
-    case 0: TraceType = ttTrace;        break;
-    case 1: TraceType = ttIntersection; break;
-    case 2: TraceType = ttXAxis;        break;
-    case 3: TraceType = ttExtremeY;     break;
-  }
-
-  double t = TraceFunction(Func, TraceType, X, Y, Form1->Data, Form1->Draw);
-  if(_isnan(t))
     Edit1->Text = "";
-  else
-    Edit1->Text = RoundToStr(t, ComboBox1->ItemIndex == 0 ? Form1->Data.Property.RoundTo : 8);
+    TTraceType TraceType;
+    switch(ComboBox1->ItemIndex)
+    {
+      case 0: TraceType = ttTrace;        break;
+      case 1: TraceType = ttIntersection; break;
+      case 2: TraceType = ttXAxis;        break;
+      case 3: TraceType = ttExtremeY;     break;
+    }
+
+    double t = TraceFunction(Func, TraceType, X, Y, Form1->Data, Form1->Draw);
+    if(_isnan(t))
+      Edit1->Text = "";
+    else
+      Edit1->Text = RoundToStr(t, ComboBox1->ItemIndex == 0 ? Form1->Data.Property.RoundTo : 8);
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TStdFuncFrame::ComboBox1Change(TObject *Sender)

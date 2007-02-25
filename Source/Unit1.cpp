@@ -1046,7 +1046,7 @@ void TForm1::ShowStatusMessage(const AnsiString &Str)
 //Show error message in status bar. This overwrite a normal message.
 //Timeout indicates how long the message is shown
 //Timeout=0 will show the message until CancelStatusError() is called
-void TForm1::ShowStatusError(const AnsiString &Str, TColor Color, unsigned Timeout)
+void TForm1::ShowStatusError(const WideString &Str, TColor Color, unsigned Timeout)
 {
   //Set statusbar to owner drawn; don't show hints, show error message
   StatusBar1->Panels->Items[0]->Style = psOwnerDraw;
@@ -2435,7 +2435,7 @@ void __fastcall TForm1::FaqActionExecute(TObject *Sender)
 void __fastcall TForm1::Panel4DockDrop(TObject *Sender,
       TDragDockObject *Source, int X, int Y)
 {
-  Panel1->Height = Form9->VisibleFrame ? Form9->VisibleFrame->Height+10 : 100;
+  Panel1->Height = Form9->GetFrameHeight() ? Form9->GetFrameHeight()+10 : 100;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Panel4UnDock(TObject *Sender, TControl *Client,
@@ -2449,7 +2449,7 @@ void __fastcall TForm1::Panel4DockOver(TObject *Sender,
       bool &Accept)
 {
   // Modify the DockRect to preview dock area.
-  int FormHeight = Form9->VisibleFrame ? Form9->VisibleFrame->Height+10 : 100;
+  int FormHeight = Form9->GetFrameHeight() ? Form9->GetFrameHeight()+10 : 100;
   TPoint TopLeft = Panel1->ClientToScreen(TPoint(0, -FormHeight));
   TPoint BottomRight = Panel1->ClientToScreen(TPoint(Panel1->Width, Panel1->Height));
   Source->DockRect = TRect(TopLeft, BottomRight);

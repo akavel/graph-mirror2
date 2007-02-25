@@ -18,7 +18,16 @@
 #include "MyEdit.h"
 #include "TntStdCtrls.hpp"
 //---------------------------------------------------------------------------
-class TStdFuncFrame : public TFrame
+class TEvalFrame
+{
+public:
+  virtual std::string GetErrorPrefix() =0;
+  virtual void Eval(const TGraphElem *Elem) =0;
+  virtual void SetPoint(const TGraphElem *Elem, int X, int Y) =0;
+  virtual TFrame* GetFrame() =0; 
+};
+
+class TStdFuncFrame : public TFrame, public TEvalFrame
 {
 __published:	// IDE-managed Components
   TLabel *Label2;
@@ -33,11 +42,15 @@ __published:	// IDE-managed Components
   TTntEdit *Edit4;
   void __fastcall ComboBox1Change(TObject *Sender);
 private:	// User declarations
+  std::string ErrorPrefix;
+  void Clear();
+  
 public:		// User declarations
   __fastcall TStdFuncFrame(TComponent* Owner);
-  void EvalFunc(TStdFunc *Func);
-  void Clear();
-  void SetPoint(TStdFunc *Func, int X, int Y);
+  void Eval(const TGraphElem *Elem);
+  void SetPoint(const TGraphElem *Elem, int X, int Y);
+  std::string GetErrorPrefix() {return ErrorPrefix;}
+  TFrame* GetFrame() {return this;} //Workaround for nasty compiler bug
 };
 //---------------------------------------------------------------------------
 #endif

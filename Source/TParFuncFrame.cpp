@@ -21,66 +21,69 @@ __fastcall TParFuncFrame::TParFuncFrame(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
-void TParFuncFrame::EvalFunc(TParFunc *Func)
+void TParFuncFrame::Eval(const TGraphElem *Elem)
 {
-  Clear();
-
-  long double t = Form1->Data.Calc(ToString(Edit1->Text));
-  long double x = 0;
-  long double y = 0;
-
-  try
+  if(const TParFunc *Func = dynamic_cast<const TParFunc*>(Elem))
   {
-    Func32::TComplex xTemp = Func->GetFunc().CalcX(Func32::TComplex(t));
-    x = real(xTemp);
-    if(!imag(xTemp))
-      Edit2->Text = RoundToStr(x, Form1->Data);
-  }
-  catch(Func32::ECalcError&)
-  {
-  }
+    Clear();
 
-  try
-  {
-    Func32::TComplex yTemp = Func->GetFunc().CalcY(Func32::TComplex(t));
-    y = real(yTemp);
-    if(!imag(yTemp))
-      Edit3->Text = RoundToStr(y, Form1->Data);
-  }
-  catch(Func32::ECalcError&)
-  {
-  }
+    long double t = Form1->Data.Calc(ToString(Edit1->Text));
+    long double x = 0;
+    long double y = 0;
 
-  if(!Edit2->Text.IsEmpty() && !Edit3->Text.IsEmpty())
-    Form1->SetCrossPos(x, y);
+    try
+    {
+      Func32::TComplex xTemp = Func->GetFunc().CalcX(Func32::TComplex(t));
+      x = real(xTemp);
+      if(!imag(xTemp))
+        Edit2->Text = RoundToStr(x, Form1->Data);
+    }
+    catch(Func32::ECalcError&)
+    {
+    }
 
-  Func32::TParamFunc Dif = Func->GetFunc().MakeDif();
-  long double xDif = 0;
-  long double yDif = 0;
+    try
+    {
+      Func32::TComplex yTemp = Func->GetFunc().CalcY(Func32::TComplex(t));
+      y = real(yTemp);
+      if(!imag(yTemp))
+        Edit3->Text = RoundToStr(y, Form1->Data);
+    }
+    catch(Func32::ECalcError&)
+    {
+    }
 
-  try
-  {
-    xDif = Dif.CalcX(t);
-    if(!Edit2->Text.IsEmpty())
-      Edit4->Text = RoundToStr(xDif, Form1->Data);
-  }
-  catch(Func32::ECalcError&)
-  {
-  }
+    if(!Edit2->Text.IsEmpty() && !Edit3->Text.IsEmpty())
+      Form1->SetCrossPos(x, y);
 
-  try
-  {
-    yDif = Dif.CalcY(t);
-    if(!Edit3->Text.IsEmpty())
-      Edit5->Text = RoundToStr(yDif, Form1->Data);
-  }
-  catch(Func32::ECalcError&)
-  {
-  }
+    Func32::TParamFunc Dif = Func->GetFunc().MakeDif();
+    long double xDif = 0;
+    long double yDif = 0;
 
-  if(!Edit4->Text.IsEmpty() && !Edit5->Text.IsEmpty())
-    if(xDif)
-      Edit6->Text = RoundToStr(yDif/xDif, Form1->Data);
+    try
+    {
+      xDif = Dif.CalcX(t);
+      if(!Edit2->Text.IsEmpty())
+        Edit4->Text = RoundToStr(xDif, Form1->Data);
+    }
+    catch(Func32::ECalcError&)
+    {
+    }
+
+    try
+    {
+      yDif = Dif.CalcY(t);
+      if(!Edit3->Text.IsEmpty())
+        Edit5->Text = RoundToStr(yDif, Form1->Data);
+    }
+    catch(Func32::ECalcError&)
+    {
+    }
+
+    if(!Edit4->Text.IsEmpty() && !Edit5->Text.IsEmpty())
+      if(xDif)
+        Edit6->Text = RoundToStr(yDif/xDif, Form1->Data);
+  }
 }
 //---------------------------------------------------------------------------
 void TParFuncFrame::Clear()
@@ -93,24 +96,27 @@ void TParFuncFrame::Clear()
   Form1->CancelStatusError();
 }
 //---------------------------------------------------------------------------
-void TParFuncFrame::SetPoint(TParFunc *Func, int X, int Y)
+void TParFuncFrame::SetPoint(const TGraphElem *Elem, int X, int Y)
 {
-  TTraceType TraceType;
-  switch(ComboBox1->ItemIndex)
+  if(const TParFunc *Func = dynamic_cast<const TParFunc*>(Elem))
   {
-    case 0: TraceType = ttTrace;        break;
-    case 1: TraceType = ttIntersection; break;
-    case 2: TraceType = ttXAxis;        break;
-    case 3: TraceType = ttYAxis;        break;
-    case 4: TraceType = ttExtremeX;     break;
-    case 5: TraceType = ttExtremeY;     break;
-  }
+    TTraceType TraceType;
+    switch(ComboBox1->ItemIndex)
+    {
+      case 0: TraceType = ttTrace;        break;
+      case 1: TraceType = ttIntersection; break;
+      case 2: TraceType = ttXAxis;        break;
+      case 3: TraceType = ttYAxis;        break;
+      case 4: TraceType = ttExtremeX;     break;
+      case 5: TraceType = ttExtremeY;     break;
+    }
 
-  double t = TraceFunction(Func, TraceType, X, Y, Form1->Data, Form1->Draw);
-  if(_isnan(t))
-    Edit1->Text = "";
-  else
-    Edit1->Text = RoundToStr(t, ComboBox1->ItemIndex == 0 ? Form1->Data.Property.RoundTo : 8);
+    double t = TraceFunction(Func, TraceType, X, Y, Form1->Data, Form1->Draw);
+    if(_isnan(t))
+      Edit1->Text = "";
+    else
+      Edit1->Text = RoundToStr(t, ComboBox1->ItemIndex == 0 ? Form1->Data.Property.RoundTo : 8);
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TParFuncFrame::ComboBox1Change(TObject *Sender)

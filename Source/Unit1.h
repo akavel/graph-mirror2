@@ -452,7 +452,7 @@ private:	// User declarations
 
   //Form pos in standard size
   int StdTop,StdLeft,StdWidth,StdHeight;
-  AnsiString StatusError;
+  WideString StatusError;
   TColor StatusErrorColor;
   int IsResizing;     // >0 when the window is being resized or dragged
   bool Reseized;      // true if windo was resized
@@ -530,7 +530,7 @@ public:		// User declarations
   bool Zoom(double x, double y, double xZoomRate, double yZoomRate, bool ChangeUnits=true);
   bool Zoom(double ZoomRate, bool ChangeUnits=true);
   bool Zoom(double xZoomRate, double yZoomRate, bool ChangeUnits=true);
-  void ShowStatusError(const AnsiString &Str, TColor = clRed, unsigned Timeout = 5000);
+  void ShowStatusError(const WideString &Str, TColor = clRed, unsigned Timeout = 5000);
   void CancelStatusError();
   void ShowStatusMessage(const AnsiString &Str);
   void SetHelpError(int AHelpError) {HelpError = AHelpError;}
