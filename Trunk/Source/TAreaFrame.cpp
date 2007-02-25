@@ -22,7 +22,7 @@ __fastcall TAreaFrame::TAreaFrame(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
-void TAreaFrame::EvalArea(TGraphElem *GraphElem)
+void TAreaFrame::EvalArea(const TGraphElem *GraphElem)
 {
   Edit3->Text = "";
   Form1->IPolygon1->Clear();
@@ -33,7 +33,7 @@ void TAreaFrame::EvalArea(TGraphElem *GraphElem)
   if(!GraphElem->GetVisible())
     return;
 
-  if(TTan *Tan = dynamic_cast<TTan*>(GraphElem))
+  if(const TTan *Tan = dynamic_cast<const TTan*>(GraphElem))
   {
     try
     {
@@ -53,7 +53,7 @@ void TAreaFrame::EvalArea(TGraphElem *GraphElem)
         Edit3->Text = L"0";
     }
   }
-  else if(TBaseFuncType *Func = dynamic_cast<TBaseFuncType*>(GraphElem))
+  else if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(GraphElem))
   {
     unsigned N1 = std::lower_bound(Func->sList.begin(), Func->sList.end(), std::min(Min, Max), CompCoordSet1) - Func->sList.begin();
     unsigned N2 = std::lower_bound(Func->sList.begin() + N1, Func->sList.end(), std::max(Min, Max), CompCoordSet1) - Func->sList.begin();
@@ -62,7 +62,7 @@ void TAreaFrame::EvalArea(TGraphElem *GraphElem)
 
     Edit3->Text = RoundToStr(Func->GetFunc().CalcArea(Min, Max, 1000), Form1->Data);
 
-    if(dynamic_cast<TStdFunc*>(GraphElem) || dynamic_cast<TParFunc*>(GraphElem))
+    if(dynamic_cast<const TStdFunc*>(GraphElem) || dynamic_cast<const TParFunc*>(GraphElem))
     {
       if(N1 != N2 && Func->Points[N1] != Func->Points[N2-1])
       {
@@ -89,7 +89,7 @@ void TAreaFrame::EvalArea(TGraphElem *GraphElem)
           Form1->IPolygon1->AddPoint(P1);
       }
     }
-    else if(TPolFunc *PolFunc = dynamic_cast<TPolFunc*>(GraphElem))
+    else if(const TPolFunc *PolFunc = dynamic_cast<const TPolFunc*>(GraphElem))
     {
       if(N1 != N2)
         Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xyPoint(Form1->Data.Axes.yAxis.AxisCross, Form1->Data.Axes.xAxis.AxisCross)));
@@ -104,7 +104,7 @@ void TAreaFrame::EvalArea(TGraphElem *GraphElem)
   Form1->IPolygon1->Visible = true;
 }
 //---------------------------------------------------------------------------
-void TAreaFrame::EvalArc(TGraphElem *GraphElem)
+void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
 {
   Edit3->Text = "";
   Form1->IPolygon1->Clear();
@@ -118,7 +118,7 @@ void TAreaFrame::EvalArc(TGraphElem *GraphElem)
   if(Max < Min)
     std::swap(Min, Max);
 
-  if(TBaseFuncType *Func = dynamic_cast<TBaseFuncType*>(GraphElem))
+  if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(GraphElem))
   {
     Edit3->Text = RoundToStr(Func->GetFunc().CalcArc(Min, Max, 1000), Form1->Data);
 
@@ -128,7 +128,7 @@ void TAreaFrame::EvalArc(TGraphElem *GraphElem)
       Form1->IPolygon1->AddPoints(&Func->Points[N1], N2 - N1);
     Form1->IPolygon1->Pen->Width = Func->Size;
   }
-  else if(TTan *Tan = dynamic_cast<TTan*>(GraphElem))
+  else if(const TTan *Tan = dynamic_cast<const TTan*>(GraphElem))
   {
     try
     {

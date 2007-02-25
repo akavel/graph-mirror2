@@ -94,7 +94,7 @@ public:
 //extern TData Data;
 
 enum TTraceType {ttTrace, ttIntersection, ttXAxis, ttYAxis, ttExtremeX, ttExtremeY};
-double TraceFunction(TBaseFuncType *Func, TTraceType TraceType, int X, int Y, const TData &Data, const class TDraw &Draw);
+double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int Y, const TData &Data, const class TDraw &Draw);
 bool ExportPointSeries(const TPointSeries *Series, const char *FileName, char Delimiter);
 double FindNearestPoint(const TBaseFuncType *Func, int X, int Y);
 

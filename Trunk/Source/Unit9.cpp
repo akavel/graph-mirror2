@@ -19,6 +19,16 @@
 #pragma link "TPolFuncFrame"
 #pragma link "TAreaFrame"
 #pragma link "TntStdCtrls"
+#pragma link "TAreaFrame"
+#pragma link "TParFuncFrame"
+#pragma link "TPolFuncFrame"
+#pragma link "TStdFuncFrame"
+#pragma link "TTanFrame"
+#pragma link "TAreaFrame"
+#pragma link "TParFuncFrame"
+#pragma link "TPolFuncFrame"
+#pragma link "TStdFuncFrame"
+#pragma link "TTanFrame"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm9::TForm9(TComponent* Owner)
@@ -92,16 +102,8 @@ void TForm9::StartValueChanged(int X, int Y)
         break;
 
       default:
-        if(TStdFunc *StdFunc = dynamic_cast<TStdFunc*>(Elem.get()))
-          StdFuncFrame1->SetPoint(StdFunc, X, Y);
-        else if(TParFunc *ParFunc = dynamic_cast<TParFunc*>(Elem.get()))
-          ParFuncFrame1->SetPoint(ParFunc, X, Y);
-        else if(TPolFunc *PolFunc = dynamic_cast<TPolFunc*>(Elem.get()))
-          PolFuncFrame1->SetPoint(PolFunc, X, Y);
-        else if(TTan *Tan = dynamic_cast<TTan*>(Elem.get()))
-          TanFrame1->SetPoint(Tan, X);
-        else if(TPointSeries *Series = dynamic_cast<TPointSeries*>(Elem.get()))
-          TanFrame1->SetPoint(Series, X);
+        if(VisibleFrame)
+          VisibleFrame->SetPoint(Elem.get(), X, Y);
     }
   }
   catch(Func32::EFuncError &Error)
@@ -195,16 +197,8 @@ void __fastcall TForm9::Edit1Change(TObject *Sender)
     switch(EvalType)
     {
       case etEval:
-        if(TStdFunc *Func = dynamic_cast<TStdFunc*>(Elem.get()))
-          StdFuncFrame1->EvalFunc(Func);
-        else if(TParFunc *ParFunc = dynamic_cast<TParFunc*>(Elem.get()))
-          ParFuncFrame1->EvalFunc(ParFunc);
-        else if(TPolFunc *PolFunc = dynamic_cast<TPolFunc*>(Elem.get()))
-          PolFuncFrame1->EvalFunc(PolFunc);
-        else if(TTan *Tan = dynamic_cast<TTan*>(Elem.get()))
-          TanFrame1->EvalTan(Tan);
-        else if(TPointSeries *Series = dynamic_cast<TPointSeries*>(Elem.get()))
-          TanFrame1->EvalSeries(Series);
+        if(VisibleFrame)
+          VisibleFrame->Eval(Elem.get());
         break;
 
       case etArea:
@@ -219,7 +213,7 @@ void __fastcall TForm9::Edit1Change(TObject *Sender)
   catch(Func32::EFuncError &Error)
   {
     if(Error.ErrorCode != Func32::ecEmptyString)
-      Form1->ShowStatusError(GetErrorMsg(Error));
+      Form1->ShowStatusError(ToWideString(VisibleFrame->GetErrorPrefix()) + GetErrorMsg(Error));
   }
   catch(EOverflow&)
   {
@@ -268,7 +262,7 @@ void __fastcall TForm9::FormStartDock(TObject *Sender,
   //The problem was introduced in Graph 2.7 with no obvius cause.
   //It may be Patch 4 for BCB6 that introduced it.
   if(VisibleFrame)
-    VisibleFrame->Width = ClientWidth;
+    GetFrame()->Width = ClientWidth;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm9::FormEndDock(TObject *Sender, TObject *Target,
@@ -277,22 +271,22 @@ void __fastcall TForm9::FormEndDock(TObject *Sender, TObject *Target,
   Form1->StatusBar1->AutoHint = true;
 }
 //---------------------------------------------------------------------------
-void TForm9::ShowFrame(TFrame *Frame)
+void TForm9::ShowFrame(TEvalFrame *Frame)
 {
   if(Frame != VisibleFrame)
   {
     if(VisibleFrame)
-      VisibleFrame->Hide();
+      GetFrame()->Hide();
 
     VisibleFrame = Frame;
 
     if(VisibleFrame)
     {
-      VisibleFrame->Show();
-      ClientHeight = VisibleFrame->Height;
+      GetFrame()->Show();
+      ClientHeight = GetFrame()->Height;
     }
     if(Form1->Panel1->Height)
-      Form1->Panel1->Height = VisibleFrame ? VisibleFrame->Height+10 : 110;
+      Form1->Panel1->Height = VisibleFrame ? GetFrame()->Height+10 : 110;
     UndockHeight = ClientHeight + SizeDif;
   }
 
@@ -307,7 +301,7 @@ void TForm9::SetEvalType(TEvalType AEvalType)
   EvalType = AEvalType;
   Visible = true;
   if(Form1->Panel4->VisibleDockClientCount)
-    Form1->Panel1->Height = VisibleFrame ? VisibleFrame->Height+10 : 100;
+    Form1->Panel1->Height = VisibleFrame ? GetFrame()->Height+10 : 100;
   switch(EvalType)
   {
     case etEval:
@@ -326,7 +320,7 @@ void TForm9::SetEvalType(TEvalType AEvalType)
 void __fastcall TForm9::FormResize(TObject *Sender)
 {
   if(VisibleFrame)
-    VisibleFrame->Width = ClientWidth;
+    GetFrame()->Width = ClientWidth;
 }
 //---------------------------------------------------------------------------
 
