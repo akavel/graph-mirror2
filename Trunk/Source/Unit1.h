@@ -298,7 +298,6 @@ __published:	// IDE-managed Components
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);
   void __fastcall FormCloseQuery(TObject *Sender, bool &CanClose);
-  void __fastcall Panel2KeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
   void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
   void __fastcall Math_MonotoniClick(TObject *Sender);
   void __fastcall FormConstrainedResize(TObject *Sender,
@@ -397,7 +396,6 @@ __published:	// IDE-managed Components
   void __fastcall FormShow(TObject *Sender);
   void __fastcall ZoomFitActionExecute(TObject *Sender);
   void __fastcall ZoomSquareActionExecute(TObject *Sender);
-  void __fastcall Panel2KeyPress(TObject *Sender, char &Key);
   void __fastcall Tree_ShowInLegendClick(TObject *Sender);
   void __fastcall InsertLabelActionExecute(TObject *Sender);
   void __fastcall Image1DblClick(TObject *Sender);

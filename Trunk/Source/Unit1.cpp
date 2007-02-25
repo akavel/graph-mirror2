@@ -768,26 +768,6 @@ void TForm1::SaveSettings(void)
   Data.SaveUserModels();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::Panel2KeyDown(TObject *Sender, WORD &Key,
-    TShiftState Shift)
-{
-  switch(Key)
-  {
-    case VK_RIGHT:
-      MoveRightAction->Execute();
-      break;
-    case VK_LEFT:
-      MoveLeftAction->Execute();
-      break;
-    case VK_UP:
-      MoveUpAction->Execute();
-      break;
-    case VK_DOWN:
-      MoveDownAction->Execute();
-      break;
-  }
-}
-//---------------------------------------------------------------------------
 void TForm1::UpdateMenu()
 {
   //It may be called after the destructor
@@ -2503,15 +2483,6 @@ void __fastcall TForm1::ZoomSquareActionExecute(TObject *Sender)
   //Don't save undo info. We have already done that
   if(Axes.ZoomSquare)
     ZoomWindow(Axes.xAxis.Min, Axes.xAxis.Max, Axes.yAxis.Min, Axes.yAxis.Max, true, false);
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::Panel2KeyPress(TObject *Sender, char &Key)
-{
-  switch(Key)
-  {
-    case '-': ZoomOutAction->Execute(); break;
-    case '+': ZoomInAction->Execute(); break;
-  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Tree_ShowInLegendClick(TObject *Sender)
