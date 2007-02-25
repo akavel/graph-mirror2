@@ -398,7 +398,8 @@ double TDraw::GetMinValue(double Unit, double Min, double Max, double AxisCross,
     //Get the first number to be shown
     return std::exp(std::floor(std::log(Min / AxisCross * Unit) / std::log(Unit)) * std::log(Unit) + std::log(AxisCross));
   //Get the first number to be shown
-  return std::floor((Min - AxisCross) / Unit) * Unit + AxisCross + Unit;
+//  return std::floor((Min - AxisCross) / Unit) * Unit + AxisCross + Unit;
+  return std::ceil((Min - AxisCross) / Unit) * Unit + AxisCross;
 }
 //---------------------------------------------------------------------------
 void TDraw::DrawAxes()
@@ -509,28 +510,21 @@ void TDraw::DrawAxes()
 
   if(Axes.xAxis.ShowNumbers)
   {
-    double x; //Current x-position
+    double x = xTickMin; //Current x-position
     int yPixel = yPixelCross + Size(4); //Pixel position to draw numbers
     if(yPixel >= AxesRect.Top) //Check that numbers are inside allowed view
     {
-      if(Axes.xAxis.LogScl) //Is log scale used?
-        //Get the first number to be shown
-        x = std::exp(std::floor((std::log(Axes.xAxis.Min / Axes.yAxis.AxisCross * Axes.xAxis.TickUnit)) / std::log(Axes.xAxis.TickUnit)) *
-          std::log(Axes.xAxis.TickUnit) + std::log(Axes.yAxis.AxisCross));
-      else
-        //Get the first number to be shown
-        x = std::floor((Axes.xAxis.Min - Axes.yAxis.AxisCross) / Axes.xAxis.TickUnit) * Axes.xAxis.TickUnit + Axes.yAxis.AxisCross + Axes.xAxis.TickUnit;
-
       while(x < Axes.xAxis.Max)
       {
         int xPixel = xPoint(x); //Calc pixel position
-        //Check that we are not showing a number at the axis
-        if(std::abs(xPixel - xPixelCross) > 1)
+        //Check that we are not showing a number at the axis when they are crossed
+        if(Axes.AxesStyle == asBoxed || std::abs(xPixel - xPixelCross) > 1)
         {
           int TextWidth = NumberWidth(x, Axes.xAxis.MultiplyOfPi);
 
-          //Check if we are not too close to the right side of the window
-          if(xPixel < AxesRect.Right - TextWidth / 2)
+          //Check if we are not too close to the sides of the window
+          //Compare with 0 instead of AxesRect.Left because it is okay to write in the blank area
+          if(xPixel - TextWidth / 2 >= 0 && xPixel + TextWidth / 2 <= AxesRect.Right)
             ShowNumber(xPixel - TextWidth/2, yPixel, x, Axes.xAxis.MultiplyOfPi);
         }
         //Is axis shown in log scale
@@ -551,10 +545,10 @@ void TDraw::DrawAxes()
     while(y < Axes.yAxis.Max)
     {
       int yPixel = yPoint(y);//Get pixel position
-      //Check if we are not drawing any number at the axis
-      if(std::abs(yPixel - yPixelCross) > 1)
-        //Check if we are not too close to the upper boundery of the window
-        if(yPixel > AxesRect.Top + NumberHeight / 2)
+        //Check that we are not showing a number at the axis when they are crossed
+      if(Axes.AxesStyle == asBoxed || std::abs(yPixel - yPixelCross) > 1)
+        //Check if we are not too close to the boundery of the window
+        if(yPixel + NumberHeight / 2 < Height && yPixel - NumberHeight / 2 > AxesRect.Top)
         {
           int Width = NumberWidth(y, Axes.yAxis.MultiplyOfPi);
           ShowNumber(xPixel-Width, yPixel - NumberHeight / 2, y, Axes.yAxis.MultiplyOfPi);
@@ -598,7 +592,9 @@ void TDraw::DrawAxes()
     if(Axes.xAxis.ShowTicks && (!Axes.xAxis.ShowGrid || Axes.xAxis.TickUnit <= Axes.xAxis.GridUnit))
       //Show coordinate points on x-axis
       for(double x = xPointExact(xTickMin); x < AxesRect.Right - Size(5); x += xPixelScl)
-        if(std::abs(x - xPixelCross) > 1) //Don't show at or beside axis (when scaled it might be moved a pixel or two)
+        //Don't show at or beside axis (when scaled it might be moved a pixel or two)
+        //Don't show tick at left side
+        if(x > AxesRect.Left && std::abs(x - xPixelCross) > 1)
           Context.DrawLine(x + 0.5, Y + Size(5), x + 0.5, Y - Size(5)-2);
   }
 

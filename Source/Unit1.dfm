@@ -126,8 +126,6 @@ object Form1: TForm1
     ShowHint = False
     TabOrder = 1
     OnResize = Panel2Resize
-    OnKeyPress = Panel2KeyPress
-    OnKeyDown = Panel2KeyDown
     OnMouseLeave = Panel2MouseLeave
     object Image1: TImage
       Left = 0
