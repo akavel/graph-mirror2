@@ -14,6 +14,7 @@ object PrintFrm: TPrintFrm
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  ShowHint = True
   OnClose = FormClose
   OnShow = FormShow
   DesignSize = (
