@@ -4,7 +4,7 @@ object Form16: TForm16
   HelpContext = 140
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
-  Caption = 'Insert shade'
+  Caption = 'Insert shading'
   ClientHeight = 323
   ClientWidth = 342
   Color = clBtnFace

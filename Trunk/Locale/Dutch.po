@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.0.1\n"
-"POT-Creation-Date: 2007-02-19 22:24\n"
-"PO-Revision-Date: 2007-02-19 22:34+0100\n"
+"POT-Creation-Date: 2007-03-05 23:28\n"
+"PO-Revision-Date: 2007-03-05 23:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: Etienne Goemaere <etienne.goemaere@pandora.be>\n"
 "MIME-Version: 1.0\n"
@@ -14,8 +14,8 @@ msgstr ""
 #. AreaFrame..Label1("From:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label4("From:")..Caption
 #. Form15("Calculate table")..Label1("From:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
 #. Form19("Animate")..TntGroupBox1("Range")..Label2("From:")..Caption
 #. Form5("Insert function")..GroupBox2("Argument range")..Label4("From:")..Caption
 #. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label4("From:")..Caption
@@ -25,8 +25,8 @@ msgstr "Van:"
 #. AreaFrame..Label2("To:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label5("To:")..Caption
 #. Form15("Calculate table")..Label2("To:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
 #. Form19("Animate")..TntGroupBox1("Range")..Label3("To:")..Caption
 #. Form5("Insert function")..GroupBox2("Argument range")..Label5("To:")..Caption
 #. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label5("To:")..Caption
@@ -217,6 +217,10 @@ msgstr "Importeer"
 msgid "Edit"
 msgstr "Bewerken"
 
+#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
+msgid "Insert shading..."
+msgstr "Arceer"
+
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
 #. Form1..ActionManager..ZoomOutAction("Out")..Category
@@ -261,7 +265,7 @@ msgstr ""
 #. Form13("Insert trendline")..Button3("Help")..Caption
 #. Form14("Insert point series")..Button3("Help")..Caption
 #. Form15("Calculate table")..Button3("Help")..Caption
-#. Form16("Insert shade")..Button3("Help")..Caption
+#. Form16("Insert shading")..Button3("Help")..Caption
 #. Form17("Custom functions/constants")..Button4("Help")..Caption
 #. Form19("Animate")..Button3("Help")..Caption
 #. Form3("Edit axes")..Button3("Help")..Caption
@@ -1002,7 +1006,7 @@ msgstr "Beperkingen:"
 #. Form12("Insert tangent/normal")..Button1("OK")..Caption
 #. Form13("Insert trendline")..Button1("OK")..Caption
 #. Form14("Insert point series")..Button1("OK")..Caption
-#. Form16("Insert shade")..Button1("OK")..Caption
+#. Form16("Insert shading")..Button1("OK")..Caption
 #. Form17("Custom functions/constants")..Button1("OK")..Caption
 #. Form18("Image options")..Button1("OK")..Caption
 #. Form2("About Graph")..Button1("OK")..Caption
@@ -1022,7 +1026,7 @@ msgstr "OK"
 #. Form13("Insert trendline")..Button2("Cancel")..Caption
 #. Form14("Insert point series")..Button2("Cancel")..Caption
 #. Form15("Calculate table")..ProgressForm1("Calculating")..ButtonCaption
-#. Form16("Insert shade")..Button2("Cancel")..Caption
+#. Form16("Insert shading")..Button2("Cancel")..Caption
 #. Form17("Custom functions/constants")..Button2("Cancel")..Caption
 #. Form18("Image options")..Button2("Cancel")..Caption
 #. Form19("Animate")..ProgressForm1("Working")..ButtonCaption
@@ -1047,7 +1051,7 @@ msgstr "Tekst in legende"
 #. Form11("Insert relation")..GroupBox1("Legend text")..Label10("Description:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Label10("Description:")..Caption
 #. Form14("Insert point series")..Label3("Description:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Label12("Description:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Label12("Description:")..Caption
 #. Form5("Insert function")..GroupBox3("Legend text")..Label10("Description:")..Caption
 #. Form7("Insert f'(x)")..GroupBox3("Legend text")..Label10("Description:")..Caption
 msgid "Description:"
@@ -1061,7 +1065,7 @@ msgid "Write a descriptive text to show in the legend. If empty the equation wil
 msgstr "Geef een beschrijvende tekst voor de legende. In het andere geval wordt de vergelijking weergegeven."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
 #. PrintFrm("Print")..GroupBox1("Printer")..Button3("Properties")..Caption
 msgid "Properties"
 msgstr "Eigenschappen"
@@ -1070,7 +1074,7 @@ msgstr "Eigenschappen"
 #. Form13("Insert trendline")..GroupBox1("Line")..Label7("Style:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label1("Style:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label5("Style:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label4("Style:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label4("Style:")..Caption
 msgid "Style:"
 msgstr "Stijl:"
 
@@ -1079,7 +1083,7 @@ msgstr "Stijl:"
 #. Form13("Insert trendline")..GroupBox1("Line")..Label6("Color:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label2("Color:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label6("Color:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
 #. Form5("Insert function")..GroupBox4("Graph properties")..Label9("Color:")..Caption
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label9("Color:")..Caption
 msgid "Color:"
@@ -1336,7 +1340,7 @@ msgid "The name of the point series, which is shown in the list to the left of t
 msgstr "De naam van de puntenreeks, getoond in de lijst links van het assenstel."
 
 #. Form14("Insert point series")..Edit1..Text
-#. Default description in the Insert shade dialog
+#. Default description in the Insert point series dialog
 msgid "Series"
 msgstr "Reeksen"
 
@@ -1620,150 +1624,150 @@ msgstr "Berekening"
 msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
 msgstr "CSV (afgebakende komma)  [*.csv]|*.csv|Text [*.txt]|*.txt "
 
-#. Form16("Insert shade")..Caption
-msgid "Insert shade"
+#. Form16("Insert shading")..Caption
+msgid "Insert shading"
 msgstr "Arceer"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
 msgid "Shading"
 msgstr "Arcering"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel1..Image1..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel1..Image1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Hint
 msgid "Shades the area between the function and the x-axis."
 msgstr "Arceert het gebied tussen de kromme en de x-as."
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel2..Image2..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel2..Image2..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Hint
 msgid "Shades the area below the function."
 msgstr "Arceert het gebied onder de kromme."
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel3..Image3..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel3..Image3..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Hint
 msgid "Shades the area above the function."
 msgstr "Arceert het gebied boven de kromme"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel4..Image4..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel4..Image4..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Hint
 msgid "Shades the area between the function and the y-axis."
 msgstr "Arceert de oppervlakte tussen de kromme en de y-as."
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel5..Image5..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel5..Image5..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Hint
 msgid "Shades the area inside the function."
 msgstr "Arceert  het gebied binnen in de functie."
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
 msgid "Shades the area between the main function and the function selected in the list to the right."
 msgstr "Arceert  het gebied tussen de hoofdfunctie en de functie geselecteerd in de rechtse lijst."
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
 msgid "Above function"
 msgstr "Boven de functie"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Caption
 msgid "Between function and x-axis"
 msgstr "Tussen functie en x-as"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")..Caption
 msgid "Between functions"
 msgstr "Tussen de functies"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Caption
 msgid "Between function and y-axis"
 msgstr "Tussen functie en y-as"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Caption
 msgid "Inside function"
 msgstr "Binnen functie"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Caption
 msgid "Below function"
 msgstr "Onder de functie"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Caption
 #. Form20("Animation")..Panel2..ToolBar1..ToolButton6..Hint
 #. Form4("Options")..Caption
 msgid "Options"
 msgstr "Opties"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Caption
 #. Form19("Animate")..TntGroupBox1("Range")..Caption
 msgid "Range"
 msgstr "Bereik"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit3..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit3..Hint
 msgid "Coordinate where the shading starts."
 msgstr "Coördinaat waar arcering  begint."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit4..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit4..Hint
 msgid "Coordinate where the shading ends."
 msgstr "Coördinaat waar arcering  eindigt."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
 msgid "Check to increase the end coordinate until intersection."
 msgstr "Controleer de toename van de eindcoördinaat tot aan doorsnede."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
 msgid "Increase to intersection"
 msgstr "Vermeerder tot aan doorsnede"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
 msgid "Check to decrease the start coordinate until intersection."
 msgstr "Controleer vermindering begincoördinaat tot aan doorsnede."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
 msgid "Decrease to intersection"
 msgstr "Toename tot aan doorsnede"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ShadeSelect1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ShadeSelect1..Hint
 msgid "Select the style used for the shading."
 msgstr "Selecteer de arceringstijl"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
 msgid "Mark the end of the shading with a line."
 msgstr "Duid arceringeinde aan met een lijn."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
 msgid "Mark end of range"
 msgstr "Duid bereikeinde aan"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
 msgid "Select color used for shading."
 msgstr "Kies kleur van de arcering"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
 msgid "Mark the start of the shading with a line."
 msgstr "Duid het begin van de arcering aan met een lijn."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
 msgid "Mark start of range"
 msgstr "Duid bereikbegin aan"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Edit5..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
 msgstr "Voeg een beschrijving in voor in de legende."
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..Caption
 msgid "2nd function"
 msgstr "2de functie"
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Label11("2nd function:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..Label11("2nd function:")..Caption
 msgid "2nd function:"
 msgstr "2de functie:"
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
 msgid "Select the second function when you want a shading between two functions."
 msgstr "Selecteer de tweede functie als je wenst te arceren tussen twee functies."
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
 msgid "Shading range for 2nd function"
 msgstr "Arceerbereik voor tweede functie"
 
@@ -2612,7 +2616,7 @@ msgstr "Kies functie of raaklijnom te evalueren."
 msgid "Error"
 msgstr "Fout"
 
-#. Default name in Insert shade dialog
+#. Default name in Insert shading dialog
 msgid "Shade"
 msgstr "Arceer"
 
@@ -2953,7 +2957,7 @@ msgstr ""
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "Het lettertype \"%s\" bestaat niet. In de plaats wordt een standaardlettertype gebruikt."
 
-#. Error in Insert shade dialog when you need to select a function
+#. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
 msgstr "Selectiefout"
 
@@ -3107,7 +3111,7 @@ msgstr "Er werden geen punten toegevoegd. Specifieer de coördinaatgetallen in h
 msgid "Edit point series"
 msgstr "Puntenreeks bewerken"
 
-msgid "Edit shade"
+msgid "Edit shading"
 msgstr "Arcering bewerken"
 
 msgid "You need to select a function."
@@ -3384,7 +3388,7 @@ msgid "The legend may be moved freely with the mouse or attached to one of the c
 msgstr "Men kan de legende met de muis vrij bewegen of vastmaken aan een van de hoeken door rechts te klikken en door een plaatsing te kiezen uit het contextmenu."
 
 #. Tip of the Day
-msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shades."
+msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."
 msgstr "Een menu kan naast transparant ook een kleur krijgen. Dit is vooral interessant als een menu boven een schaduw getekend wordt."
 
 #. Tip of the Day
