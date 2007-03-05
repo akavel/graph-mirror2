@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-02-19 22:24\n"
-"PO-Revision-Date: 2007-02-19 22:27+0100\n"
+"POT-Creation-Date: 2007-03-05 23:28\n"
+"PO-Revision-Date: 2007-03-05 23:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,8 +13,8 @@ msgstr ""
 #. AreaFrame..Label1("From:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label4("From:")..Caption
 #. Form15("Calculate table")..Label1("From:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
 #. Form19("Animate")..TntGroupBox1("Range")..Label2("From:")..Caption
 #. Form5("Insert function")..GroupBox2("Argument range")..Label4("From:")..Caption
 #. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label4("From:")..Caption
@@ -24,8 +24,8 @@ msgstr "From:"
 #. AreaFrame..Label2("To:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label5("To:")..Caption
 #. Form15("Calculate table")..Label2("To:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
 #. Form19("Animate")..TntGroupBox1("Range")..Label3("To:")..Caption
 #. Form5("Insert function")..GroupBox2("Argument range")..Label5("To:")..Caption
 #. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label5("To:")..Caption
@@ -216,6 +216,10 @@ msgstr "輸入"
 msgid "Edit"
 msgstr "編輯"
 
+#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
+msgid "Insert shading..."
+msgstr "插入陰影"
+
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
 #. Form1..ActionManager..ZoomOutAction("Out")..Category
@@ -260,7 +264,7 @@ msgstr ""
 #. Form13("Insert trendline")..Button3("Help")..Caption
 #. Form14("Insert point series")..Button3("Help")..Caption
 #. Form15("Calculate table")..Button3("Help")..Caption
-#. Form16("Insert shade")..Button3("Help")..Caption
+#. Form16("Insert shading")..Button3("Help")..Caption
 #. Form17("Custom functions/constants")..Button4("Help")..Caption
 #. Form19("Animate")..Button3("Help")..Caption
 #. Form3("Edit axes")..Button3("Help")..Caption
@@ -1001,7 +1005,7 @@ msgstr " 限制條件:"
 #. Form12("Insert tangent/normal")..Button1("OK")..Caption
 #. Form13("Insert trendline")..Button1("OK")..Caption
 #. Form14("Insert point series")..Button1("OK")..Caption
-#. Form16("Insert shade")..Button1("OK")..Caption
+#. Form16("Insert shading")..Button1("OK")..Caption
 #. Form17("Custom functions/constants")..Button1("OK")..Caption
 #. Form18("Image options")..Button1("OK")..Caption
 #. Form2("About Graph")..Button1("OK")..Caption
@@ -1021,7 +1025,7 @@ msgstr "確定"
 #. Form13("Insert trendline")..Button2("Cancel")..Caption
 #. Form14("Insert point series")..Button2("Cancel")..Caption
 #. Form15("Calculate table")..ProgressForm1("Calculating")..ButtonCaption
-#. Form16("Insert shade")..Button2("Cancel")..Caption
+#. Form16("Insert shading")..Button2("Cancel")..Caption
 #. Form17("Custom functions/constants")..Button2("Cancel")..Caption
 #. Form18("Image options")..Button2("Cancel")..Caption
 #. Form19("Animate")..ProgressForm1("Working")..ButtonCaption
@@ -1046,7 +1050,7 @@ msgstr "圖例說明文字"
 #. Form11("Insert relation")..GroupBox1("Legend text")..Label10("Description:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Label10("Description:")..Caption
 #. Form14("Insert point series")..Label3("Description:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Label12("Description:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Label12("Description:")..Caption
 #. Form5("Insert function")..GroupBox3("Legend text")..Label10("Description:")..Caption
 #. Form7("Insert f'(x)")..GroupBox3("Legend text")..Label10("Description:")..Caption
 msgid "Description:"
@@ -1060,7 +1064,7 @@ msgid "Write a descriptive text to show in the legend. If empty the equation wil
 msgstr "寫敘述文字到圖例說明當中，在等式的時候會使用到。"
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
 #. PrintFrm("Print")..GroupBox1("Printer")..Button3("Properties")..Caption
 msgid "Properties"
 msgstr "屬性:"
@@ -1069,7 +1073,7 @@ msgstr "屬性:"
 #. Form13("Insert trendline")..GroupBox1("Line")..Label7("Style:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label1("Style:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label5("Style:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label4("Style:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label4("Style:")..Caption
 msgid "Style:"
 msgstr "樣式:"
 
@@ -1078,7 +1082,7 @@ msgstr "樣式:"
 #. Form13("Insert trendline")..GroupBox1("Line")..Label6("Color:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label2("Color:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label6("Color:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
 #. Form5("Insert function")..GroupBox4("Graph properties")..Label9("Color:")..Caption
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label9("Color:")..Caption
 msgid "Color:"
@@ -1335,7 +1339,7 @@ msgid "The name of the point series, which is shown in the list to the left of t
 msgstr "座標點數列的名稱，此名稱會呈現在座標系的左邊列。"
 
 #. Form14("Insert point series")..Edit1..Text
-#. Default description in the Insert shade dialog
+#. Default description in the Insert point series dialog
 msgid "Series"
 msgstr "數列"
 
@@ -1619,150 +1623,150 @@ msgstr "計算"
 msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
 msgstr "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
 
-#. Form16("Insert shade")..Caption
-msgid "Insert shade"
+#. Form16("Insert shading")..Caption
+msgid "Insert shading"
 msgstr "插入陰影"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
 msgid "Shading"
 msgstr "陰影"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel1..Image1..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel1..Image1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Hint
 msgid "Shades the area between the function and the x-axis."
 msgstr "函數與x軸之間範圍陰影"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel2..Image2..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel2..Image2..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Hint
 msgid "Shades the area below the function."
 msgstr "函數下面範圍陰影"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel3..Image3..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel3..Image3..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Hint
 msgid "Shades the area above the function."
 msgstr "函數上面範圍陰影"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel4..Image4..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel4..Image4..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Hint
 msgid "Shades the area between the function and the y-axis."
 msgstr "函數與y軸間範圍陰影"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel5..Image5..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel5..Image5..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Hint
 msgid "Shades the area inside the function."
 msgstr "函數內部範圍陰影"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
 msgid "Shades the area between the main function and the function selected in the list to the right."
 msgstr "增加主要函數和選定的左邊函數列之間區塊陰影。"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
 msgid "Above function"
 msgstr "函數上端"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Caption
 msgid "Between function and x-axis"
 msgstr "在函數和x軸之間"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")..Caption
 msgid "Between functions"
 msgstr "在兩函數之間"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Caption
 msgid "Between function and y-axis"
 msgstr "在函數和y軸之間"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Caption
 msgid "Inside function"
 msgstr "在函數內"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Caption
 msgid "Below function"
 msgstr "在函數下面"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Caption
 #. Form20("Animation")..Panel2..ToolBar1..ToolButton6..Hint
 #. Form4("Options")..Caption
 msgid "Options"
 msgstr "選項"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Caption
 #. Form19("Animate")..TntGroupBox1("Range")..Caption
 msgid "Range"
 msgstr "範圍"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit3..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit3..Hint
 msgid "Coordinate where the shading starts."
 msgstr "陰影開始的座標"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit4..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit4..Hint
 msgid "Coordinate where the shading ends."
 msgstr "陰影結束的座標"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
 msgid "Check to increase the end coordinate until intersection."
 msgstr "確認增加終點座標直到交叉"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
 msgid "Increase to intersection"
 msgstr "增加直到交叉"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
 msgid "Check to decrease the start coordinate until intersection."
 msgstr "確認減少起始座標直到交叉"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
 msgid "Decrease to intersection"
 msgstr "減少直到交叉"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ShadeSelect1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ShadeSelect1..Hint
 msgid "Select the style used for the shading."
 msgstr "選擇陰影的樣式"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
 msgid "Mark the end of the shading with a line."
 msgstr "用線條標示陰影的終點"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
 msgid "Mark end of range"
 msgstr "標示範圍終點"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
 msgid "Select color used for shading."
 msgstr "選擇陰影的顏色"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
 msgid "Mark the start of the shading with a line."
 msgstr "用線條標示陰影的起始點"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
 msgid "Mark start of range"
 msgstr "標示範圍的起始點"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Edit5..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
 msgstr "輸入一個呈現在圖例說明的敘述"
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..Caption
 msgid "2nd function"
 msgstr "第2個函數"
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Label11("2nd function:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..Label11("2nd function:")..Caption
 msgid "2nd function:"
 msgstr "第2個函數："
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
 msgid "Select the second function when you want a shading between two functions."
 msgstr "若你想要繪製陰影在兩個函數之間，請選擇第二個函數。"
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
 msgid "Shading range for 2nd function"
 msgstr "第二個函數的陰影範圍"
 
@@ -2611,7 +2615,7 @@ msgstr "選擇函數或切線進行求解"
 msgid "Error"
 msgstr "錯誤"
 
-#. Default name in Insert shade dialog
+#. Default name in Insert shading dialog
 msgid "Shade"
 msgstr "陰影"
 
@@ -2952,7 +2956,7 @@ msgstr ""
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "字型 \"%s\"不存在，使用標準的字型替代。"
 
-#. Error in Insert shade dialog when you need to select a function
+#. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
 msgstr "選取錯誤"
 
@@ -3106,7 +3110,7 @@ msgstr "你沒有增加任何座標點，你需要在格線上指明 x和y座標
 msgid "Edit point series"
 msgstr "編輯座標點數列"
 
-msgid "Edit shade"
+msgid "Edit shading"
 msgstr "編輯陰影"
 
 msgid "You need to select a function."
@@ -3383,7 +3387,7 @@ msgid "The legend may be moved freely with the mouse or attached to one of the c
 msgstr "圖例說明可以隨意的用滑鼠來移動或者吸附到任何一個角落，使用方式為在圖例說明上點滑鼠右鍵，然後選擇一個適當的放置選項。"
 
 #. Tip of the Day
-msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shades."
+msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."
 msgstr "除了透明度之外，你也可以選擇一個適合的標籤背景顏色，特別是標籤畫在陰影之上的時候。"
 
 #. Tip of the Day

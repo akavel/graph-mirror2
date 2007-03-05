@@ -384,6 +384,7 @@ object Form1: TForm1
       end
       object Function_InsShade: TTntMenuItem
         Action = InsertShadeAction
+        Caption = 'Insert shading...'
       end
       object Function_InsertDiff: TTntMenuItem
         Action = InsertDifAction

@@ -9,14 +9,14 @@ FLAG AVI LOADONCALL DISCARDABLE Flag.avi
 STRINGTABLE
 BEGIN
   RES_ERROR       "Error"       //Used in titles of error message boxes
-  RES_SHADE       "Shade"       //Default name in Insert shade dialog
+  RES_SHADE       "Shade"       //Default name in Insert shading dialog
   RES_ROTATION    "Rotation"    //Shown in rotation dialog
   RES_VERSION     "Version %s"  //%s is replaced with version number
   RES_BUILD       "Build %s"    //%s is replaced with build number
 
   RES_AREA        "Area"        //Shown as title in the Calc|Area dialog when it is undocked
   RES_LENGTH      "Length"      //Shown as title in the Calc|Length of path dialog when it is undocked
-  RES_SERIES      "Series"      //Default description in the Insert shade dialog
+  RES_SERIES      "Series"      //Default description in the Insert point series dialog
 
   RES_LABEL       "Label"       //Name for labels shown in the function list if there is no text in the label.
   RES_UNCERTAINTY "%s-error"    //Used for error bars in point series dialog as "x-error" or "y-error"
@@ -122,7 +122,7 @@ BEGIN
   RES_FILE_ACCESS         "Cannot write to file: %s\nAccess denied. Check that the file is not in use or write protected."
   RES_UNKNOWN_FONT        "The font \"%s\" doesn't exist. Standard font is used instead."
 
-  RES_SELECTION_ERROR     "Selection error" //Error in Insert shade dialog when you need to select a function
+  RES_SELECTION_ERROR     "Selection error" //Error in Insert shading dialog when you need to select a function
   RES_FILE_ERROR          "File error"      //Title in error message when reading a grf-file failed
   RES_WRITE_FAILED        "Write access failed"
   RES_OLE_ERROR           "OLE error"
@@ -179,7 +179,7 @@ BEGIN
   535 "\"%s\" is not a valid number."
   536 "You didn't add any points. You need to specify some x- and y-coordinates in the grid."
   537 "Edit point series"
-  538 "Edit shade"
+  538 "Edit shading"
   539 "You need to select a function."
   540 "New version of Graph available"
   541 "Graph %s is now available for download from www.padowan.dk\nwith these new features since the previous version:\n\n%s\n\nWould you like to visit the web site?"
@@ -245,7 +245,7 @@ BEGIN
   642 "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to." //Tip of the Day
   643 "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."                            //Tip of the Day
   644 "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu." //Tip of the Day
-  645 "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shades."              //Tip of the Day
+  645 "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."              //Tip of the Day
   646 "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."                             //Tip of the Day
   647 "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"           //Tip of the Day
   648 "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"  //Tip of the Day

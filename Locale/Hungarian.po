@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-02-19 22:24\n"
-"PO-Revision-Date: 2007-02-19 22:37+0100\n"
+"POT-Creation-Date: 2007-03-05 23:28\n"
+"PO-Revision-Date: 2007-03-05 23:41+0100\n"
 "Last-Translator: \n"
 "Language-Team: Magyari Gábor <magyari@kola.sulinet.hu>\n"
 "MIME-Version: 1.0\n"
@@ -15,8 +15,8 @@ msgstr ""
 #. AreaFrame..Label1("From:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label4("From:")..Caption
 #. Form15("Calculate table")..Label1("From:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
 #. Form19("Animate")..TntGroupBox1("Range")..Label2("From:")..Caption
 #. Form5("Insert function")..GroupBox2("Argument range")..Label4("From:")..Caption
 #. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label4("From:")..Caption
@@ -26,8 +26,8 @@ msgstr "Honnan:"
 #. AreaFrame..Label2("To:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label5("To:")..Caption
 #. Form15("Calculate table")..Label2("To:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
 #. Form19("Animate")..TntGroupBox1("Range")..Label3("To:")..Caption
 #. Form5("Insert function")..GroupBox2("Argument range")..Label5("To:")..Caption
 #. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label5("To:")..Caption
@@ -218,6 +218,10 @@ msgstr "Importálás"
 msgid "Edit"
 msgstr "Szerkesztés"
 
+#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
+msgid "Insert shading..."
+msgstr "Kiszínezés"
+
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
 #. Form1..ActionManager..ZoomOutAction("Out")..Category
@@ -262,7 +266,7 @@ msgstr ""
 #. Form13("Insert trendline")..Button3("Help")..Caption
 #. Form14("Insert point series")..Button3("Help")..Caption
 #. Form15("Calculate table")..Button3("Help")..Caption
-#. Form16("Insert shade")..Button3("Help")..Caption
+#. Form16("Insert shading")..Button3("Help")..Caption
 #. Form17("Custom functions/constants")..Button4("Help")..Caption
 #. Form19("Animate")..Button3("Help")..Caption
 #. Form3("Edit axes")..Button3("Help")..Caption
@@ -1003,7 +1007,7 @@ msgstr "Feltételek:"
 #. Form12("Insert tangent/normal")..Button1("OK")..Caption
 #. Form13("Insert trendline")..Button1("OK")..Caption
 #. Form14("Insert point series")..Button1("OK")..Caption
-#. Form16("Insert shade")..Button1("OK")..Caption
+#. Form16("Insert shading")..Button1("OK")..Caption
 #. Form17("Custom functions/constants")..Button1("OK")..Caption
 #. Form18("Image options")..Button1("OK")..Caption
 #. Form2("About Graph")..Button1("OK")..Caption
@@ -1023,7 +1027,7 @@ msgstr "OK"
 #. Form13("Insert trendline")..Button2("Cancel")..Caption
 #. Form14("Insert point series")..Button2("Cancel")..Caption
 #. Form15("Calculate table")..ProgressForm1("Calculating")..ButtonCaption
-#. Form16("Insert shade")..Button2("Cancel")..Caption
+#. Form16("Insert shading")..Button2("Cancel")..Caption
 #. Form17("Custom functions/constants")..Button2("Cancel")..Caption
 #. Form18("Image options")..Button2("Cancel")..Caption
 #. Form19("Animate")..ProgressForm1("Working")..ButtonCaption
@@ -1048,7 +1052,7 @@ msgstr "Emlékeztető szöveg"
 #. Form11("Insert relation")..GroupBox1("Legend text")..Label10("Description:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Label10("Description:")..Caption
 #. Form14("Insert point series")..Label3("Description:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Label12("Description:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Label12("Description:")..Caption
 #. Form5("Insert function")..GroupBox3("Legend text")..Label10("Description:")..Caption
 #. Form7("Insert f'(x)")..GroupBox3("Legend text")..Label10("Description:")..Caption
 msgid "Description:"
@@ -1062,7 +1066,7 @@ msgid "Write a descriptive text to show in the legend. If empty the equation wil
 msgstr "Írj szöveg az Emlékeztetőbe, különben a hozzárendelési szabály jelenik meg."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
 #. PrintFrm("Print")..GroupBox1("Printer")..Button3("Properties")..Caption
 msgid "Properties"
 msgstr "Tulajdonságok"
@@ -1071,7 +1075,7 @@ msgstr "Tulajdonságok"
 #. Form13("Insert trendline")..GroupBox1("Line")..Label7("Style:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label1("Style:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label5("Style:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label4("Style:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label4("Style:")..Caption
 msgid "Style:"
 msgstr "Stílus:"
 
@@ -1080,7 +1084,7 @@ msgstr "Stílus:"
 #. Form13("Insert trendline")..GroupBox1("Line")..Label6("Color:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label2("Color:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label6("Color:")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
 #. Form5("Insert function")..GroupBox4("Graph properties")..Label9("Color:")..Caption
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label9("Color:")..Caption
 msgid "Color:"
@@ -1337,7 +1341,7 @@ msgid "The name of the point series, which is shown in the list to the left of t
 msgstr "A pontsor neve. Ez jelenik meg a koordinátarendszerhez tartozó listán."
 
 #. Form14("Insert point series")..Edit1..Text
-#. Default description in the Insert shade dialog
+#. Default description in the Insert point series dialog
 msgid "Series"
 msgstr "Pontsor"
 
@@ -1621,150 +1625,150 @@ msgstr "Számolás"
 msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
 msgstr "CSV (vesszővel tagolt fájl)"
 
-#. Form16("Insert shade")..Caption
-msgid "Insert shade"
+#. Form16("Insert shading")..Caption
+msgid "Insert shading"
 msgstr "Színezés beszúrása"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
 msgid "Shading"
 msgstr "Színezés"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel1..Image1..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel1..Image1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Hint
 msgid "Shades the area between the function and the x-axis."
 msgstr "Kiszínezi a grafikon és az x tengely közötti területet."
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel2..Image2..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel2..Image2..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Hint
 msgid "Shades the area below the function."
 msgstr "Kiszínezi a grafikon alatti területet."
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel3..Image3..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel3..Image3..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Hint
 msgid "Shades the area above the function."
 msgstr "Kiszínezi a grafikon feletti területet."
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel4..Image4..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel4..Image4..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Hint
 msgid "Shades the area between the function and the y-axis."
 msgstr "Kiszínezi a grafikon és az y tengely közötti területet."
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel5..Image5..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel5..Image5..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Hint
 msgid "Shades the area inside the function."
 msgstr "Kiszínezi a grafikon 'belső' részét."
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
 msgid "Shades the area between the main function and the function selected in the list to the right."
 msgstr "Kiszínezi a fő függvénygrafikon és a jobb oldali listából kiválasztott függvény grafikonja közötti területet."
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
 msgid "Above function"
 msgstr "A függvény felett"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Caption
 msgid "Between function and x-axis"
 msgstr "A függvény és az x tengely között"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")..Caption
 msgid "Between functions"
 msgstr "Függvények között"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Caption
 msgid "Between function and y-axis"
 msgstr "A függvény és az y tengely között"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Caption
 msgid "Inside function"
 msgstr "Belső rész"
 
-#. Form16("Insert shade")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Caption
 msgid "Below function"
 msgstr "A függvény alatt"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Caption
 #. Form20("Animation")..Panel2..ToolBar1..ToolButton6..Hint
 #. Form4("Options")..Caption
 msgid "Options"
 msgstr "Beállítások"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Caption
 #. Form19("Animate")..TntGroupBox1("Range")..Caption
 msgid "Range"
 msgstr "Tartomány"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit3..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit3..Hint
 msgid "Coordinate where the shading starts."
 msgstr "A színezés kezdő koordinátája."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit4..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit4..Hint
 msgid "Coordinate where the shading ends."
 msgstr "A színezés végének koordinátája."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
 msgid "Check to increase the end coordinate until intersection."
 msgstr "Jelöld be, hogy a vége metszéspontnál legyen."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
 msgid "Increase to intersection"
 msgstr "Metszéspontig"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
 msgid "Check to decrease the start coordinate until intersection."
 msgstr "Jelöld be, hogy a kezdet metszéspontnál legyen."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
 msgid "Decrease to intersection"
 msgstr "Metszésponttól"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ShadeSelect1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ShadeSelect1..Hint
 msgid "Select the style used for the shading."
 msgstr "Színezési stílus kiválasztása."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
 msgid "Mark the end of the shading with a line."
 msgstr "Jelölje vonal a színezés végét."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
 msgid "Mark end of range"
 msgstr "Tartomány végének jelölése"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
 msgid "Select color used for shading."
 msgstr "Szín kiválasztása."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
 msgid "Mark the start of the shading with a line."
 msgstr "Jelölje vonal a színezés kezdetét."
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
 msgid "Mark start of range"
 msgstr "Tartomány kezdetének jelölése"
 
-#. Form16("Insert shade")..PageControl1..TabSheet2("Options")..Edit5..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
 msgstr "Írd be az emlékeztető szövegét."
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..Caption
 msgid "2nd function"
 msgstr "Második függvény"
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..Label11("2nd function:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..Label11("2nd function:")..Caption
 msgid "2nd function:"
 msgstr "Második fv:"
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
 msgid "Select the second function when you want a shading between two functions."
 msgstr "Válaszd ki a második függvényt, ha két függvény közti részt szeretnél besatírozni."
 
-#. Form16("Insert shade")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
 msgid "Shading range for 2nd function"
 msgstr "Színezési tartomány a második függvényre"
 
@@ -2613,7 +2617,7 @@ msgstr "Függvény/érintő kiválasztása a számításhoz"
 msgid "Error"
 msgstr "Hiba"
 
-#. Default name in Insert shade dialog
+#. Default name in Insert shading dialog
 msgid "Shade"
 msgstr "Színezés"
 
@@ -2953,7 +2957,7 @@ msgstr ""
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "A(z) \"%s\" jelet nem ismerem. Használj szabványos betűket."
 
-#. Error in Insert shade dialog when you need to select a function
+#. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
 msgstr "Hibás kiválasztás"
 
@@ -3107,7 +3111,7 @@ msgstr "Nem adtál meg egy pontot sem. Adj meg néhány x és y koordinátát."
 msgid "Edit point series"
 msgstr "Pontsor szerkesztése"
 
-msgid "Edit shade"
+msgid "Edit shading"
 msgstr "Színezés szerkesztése"
 
 msgid "You need to select a function."
@@ -3385,7 +3389,7 @@ msgid "The legend may be moved freely with the mouse or attached to one of the c
 msgstr "Az Emlékeztető szabadon mozgatható az egérrel, vagy bármely sarokba elhelyezhető jobb gombos kattintással."
 
 #. Tip of the Day
-msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shades."
+msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."
 msgstr "Átlátszóság helyett beállítható egyéni háttér a cimkékre. Ez különösen hasznos, ha a cimke színezés fölött helyezkedik el."
 
 #. Tip of the Day
