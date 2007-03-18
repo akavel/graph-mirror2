@@ -85,7 +85,7 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
     return;
   }
 
-  if(!TDraw::CalcTan(Tan.get()))
+  if(!Tan->CalcTan())
   {
     MessageBox(LoadRes(518, Tan->ParentFunc()->GetVariable(), Tan->t.Text), LoadRes(519));
     return;

@@ -16,13 +16,30 @@
 //////////////
 // TAddView //
 //////////////
-void TAddView::Visit(TBaseFuncType &Func)
+TTntTreeNode* TAddView::AddNode(TGraphElem &Elem, int ImageIndex)
 {
-  TTntTreeNode *Node = Form1->TreeView->Items->Add(NULL, ToWideString(Func.MakeLegendText()));
-  int ImageIndex = Form1->AddImage(iiFuncNode, Func.Color);
+  //Replace Hyphen-Minus with Minus Sign
+  std::wstring Str = Elem.MakeLegendText();
+  std::replace(Str.begin(), Str.end(), L'-', L'\x2212');
+
+  TTntTreeNode *Node = Elem.ParentFunc() ?
+    Form1->TreeView->Items->AddChild(Form1->GetNode(Elem.ParentFunc()), ToWideString(Str)) :
+    Form1->TreeView->Items->Add(NULL, ToWideString(Str));
+
   Node->ImageIndex = ImageIndex;
   Node->SelectedIndex = ImageIndex;
-  Node->StateIndex = Func.GetVisible() ? iiChecked : iiUnChecked;
+  switch(Elem.GetVisible())
+  {
+    case -1: Node->StateIndex =  iiGrayed; break;
+    case 0:  Node->StateIndex =  iiUnChecked; break;
+    case 1:  Node->StateIndex =  iiChecked; break;
+  }
+  return Node;
+}
+//---------------------------------------------------------------------------
+void TAddView::Visit(TBaseFuncType &Func)
+{
+  AddNode(Func, Form1->AddImage(iiFuncNode, Func.Color));
 
   for(unsigned I = 0; I < Func.ChildList.size(); I++)
     Func.ChildList[I]->Accept(*this);
@@ -30,79 +47,47 @@ void TAddView::Visit(TBaseFuncType &Func)
 //---------------------------------------------------------------------------
 void TAddView::Visit(TTan &Tan)
 {
-  TTntTreeNode *Node = Form1->TreeView->Items->AddChild(Form1->GetNode(Tan.ParentFunc()), ToWideString(Tan.MakeLegendText()));
-
-  Node->ImageIndex = Tan.TangentType == ttTangent ? iiTanNode : iiNormalNode;
-  Node->SelectedIndex = Node->ImageIndex;
-  Node->StateIndex = Tan.GetVisible() ? iiChecked : iiUnChecked;
+  AddNode(Tan, Tan.TangentType == ttTangent ? iiTanNode : iiNormalNode);
 }
 //---------------------------------------------------------------------------
 void TAddView::Visit(TShade &Shade)
 {
-  WideString Str = ToWideString(Shade.MakeLegendText());
-  TTntTreeNode *Node = Form1->TreeView->Items->AddChild(Form1->GetNode(Shade.ParentFunc()), Str);
-  int ImageIndex = Form1->AddImage(Shade.Color, Shade.BrushStyle);
-
-  Node->ImageIndex = ImageIndex;
-  Node->SelectedIndex = ImageIndex;
-  Node->StateIndex = Shade.GetVisible() ? iiChecked : iiUnChecked;
+  AddNode(Shade, Form1->AddImage(Shade.Color, Shade.BrushStyle));
 }
 //---------------------------------------------------------------------------
 void TAddView::Visit(TPointSeries &Series)
 {
-  TTreeNode *Node = Form1->TreeView->Items->Add(NULL, ToWideString(Series.MakeLegendText()));
 
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
   Bitmap->Width = 16;
   Bitmap->Height = 16;
   TPointSelect::DrawPoint(Bitmap->Canvas, TPoint(8,8), Series.Style, Series.FrameColor, Series.FillColor, Series.Style == 7 ? 3 : 5);
-  int ImageIndex = Form1->ImageList1->Add(Bitmap.get(), NULL);
-  Node->ImageIndex = ImageIndex;
-  Node->SelectedIndex = ImageIndex;
-  Node->StateIndex = Series.GetVisible() ? iiChecked : iiUnChecked;
+  AddNode(Series, Form1->ImageList1->Add(Bitmap.get(), NULL));
 }
 //---------------------------------------------------------------------------
 void TAddView::Visit(TTextLabel &Label)
 {
-  TTreeNode *Node = Form1->TreeView->Items->Add(NULL, ToWideString(Label.MakeText()));
-
-  Node->ImageIndex = iiLabelNode;
-  Node->SelectedIndex = iiLabelNode;
-  Node->StateIndex = Label.GetVisible() ? iiChecked : iiUnChecked;
+  AddNode(Label, iiLabelNode);
 }
 //---------------------------------------------------------------------------
 void TAddView::Visit(TRelation &Relation)
 {
-  TTreeNode *Node = Form1->TreeView->Items->Add(NULL, ToWideString(Relation.MakeLegendText()));
-
+  int ImageIndex;
   if(Relation.GetRelationType() == rtInequality)
-    Node->ImageIndex = Form1->AddImage(Relation.GetColor(), Relation.GetBrushStyle());
+    ImageIndex = Form1->AddImage(Relation.GetColor(), Relation.GetBrushStyle());
   else
-    Node->ImageIndex = Form1->AddImage(iiFuncNode, Relation.GetColor());
-
-  Node->SelectedIndex = Node->ImageIndex;
-  Node->StateIndex = Relation.GetVisible() ? iiChecked : iiUnChecked;
+    ImageIndex = Form1->AddImage(iiFuncNode, Relation.GetColor());
+  AddNode(Relation, ImageIndex);
 }
 //---------------------------------------------------------------------------
 void TAddView::Visit(TAxesView &AxesView)
 {
-  TTreeNode *Node = Form1->TreeView->Items->Add(NULL, LoadRes(RES_AXES));
-  Node->ImageIndex = iiAxesNode;
-  Node->SelectedIndex = iiAxesNode;
-  switch(AxesView.GetVisible())
-  {
-    case -1: Node->StateIndex =  iiGrayed; break;
-    case 0:  Node->StateIndex =  iiUnChecked; break;
-    case 1:  Node->StateIndex =  iiChecked; break;
-  }
+  AddNode(AxesView, iiAxesNode)->Text = LoadRes(RES_AXES);
 }
 //---------------------------------------------------------------------------
 void TAddView::Visit(TOleObjectElem &OleObjectElem)
 {
-  TTreeNode *Node = Form1->TreeView->Items->Add(NULL, ToWideString(OleObjectElem.MakeText()));
-  Node->ImageIndex = iiOleNode;
-  Node->SelectedIndex = iiOleNode;
-  Node->StateIndex = OleObjectElem.GetVisible() ? iiChecked : iiUnChecked;
+  AddNode(OleObjectElem, iiOleNode);
 }
 //---------------------------------------------------------------------------
 ///////////////

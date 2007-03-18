@@ -12,6 +12,8 @@
 //---------------------------------------------------------------------------
 struct TAddView : public TGraphElemVisitor
 {
+  TTntTreeNode* AddNode(TGraphElem &Elem, int ImageIndex);
+
   void Visit(TBaseFuncType &Func);
   void Visit(TTan &Tan);
   void Visit(TShade &Shade);

@@ -27,75 +27,41 @@ void TAreaFrame::EvalArea(const TGraphElem *GraphElem)
   Edit3->Text = "";
   Form1->IPolygon1->Clear();
 
-  double Min = Form1->Data.Calc(ToString(Edit1->Text));
-  double Max = Form1->Data.Calc(ToString(Edit2->Text));
-
   if(!GraphElem->GetVisible())
     return;
 
-  if(const TTan *Tan = dynamic_cast<const TTan*>(GraphElem))
+  if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(GraphElem))
   {
-    try
-    {
-      double yMin = Tan->GetFunc().CalcY(Min);
-      double yMax = Tan->GetFunc().CalcY(Max);
-      Edit3->Text = RoundToStr(0.5 * (Max - Min) * (yMax + yMin), Form1->Data);
+    long double From = Form1->Data.Calc(ToString(Edit1->Text));
+    long double To = Form1->Data.Calc(ToString(Edit2->Text));
 
-      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Min, Form1->Data.Axes.xAxis.AxisCross));
-      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Min, yMin));
-      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Max, yMax));
-      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Max, Form1->Data.Axes.xAxis.AxisCross));
-      Form1->IPolygon1->Pen->Width = Tan->Size;
-    }
-    catch(...)
-    {
-      if(Tan->IsValid())
-        Edit3->Text = L"0";
-    }
-  }
-  else if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(GraphElem))
-  {
-    unsigned N1 = std::lower_bound(Func->sList.begin(), Func->sList.end(), std::min(Min, Max), CompCoordSet1) - Func->sList.begin();
-    unsigned N2 = std::lower_bound(Func->sList.begin() + N1, Func->sList.end(), std::max(Min, Max), CompCoordSet1) - Func->sList.begin();
+    Edit3->Text = RoundToStr(Func->CalcArea(From, To), Form1->Data);
+
+    if(From > To)
+      std::swap(From, To);
+
+    Func32::TCoord<long double> Min = Func->Eval(From);
+    Func32::TCoord<long double> Max = Func->Eval(To);
+
+    unsigned N1 = std::lower_bound(Func->sList.begin(), Func->sList.end(), From, CompCoordSet1) - Func->sList.begin();
+    unsigned N2 = std::lower_bound(Func->sList.begin() + N1, Func->sList.end(), To, CompCoordSet1) - Func->sList.begin();
     if(N1 != N2)
-      Form1->IPolygon1->AddPoints(&Func->Points[N1], N2 - N1);
-
-    Edit3->Text = RoundToStr(Func->GetFunc().CalcArea(Min, Max, 1000), Form1->Data);
-
-    if(dynamic_cast<const TStdFunc*>(GraphElem) || dynamic_cast<const TParFunc*>(GraphElem))
     {
-      if(N1 != N2 && Func->Points[N1] != Func->Points[N2-1])
-      {
-        TPoint P1(Func->Points[N1].x, Form1->Draw.yPoint(Form1->Data.Axes.xAxis.AxisCross));
-        TPoint P2(Func->Points[N2-1].x, Form1->Draw.yPoint(Form1->Data.Axes.xAxis.AxisCross));
-
-        //Make sure there is no line drawn on the right side if Max > xMax
-        if(Max > Form1->Data.Axes.xAxis.Max)
-        {
-          P2.x += 10;
-          Form1->IPolygon1->AddPoint(TPoint(P2.x, Func->Points[N2-1].y));
-        }
-
-        Form1->IPolygon1->AddPoint(P2);
-
-        //Make sure there is no line drawn on the right side if Min < xMin
-        if(Min < Form1->Data.Axes.xAxis.Min)
-        {
-          P1.x -= 10;
-          Form1->IPolygon1->AddPoint(P1);
-          Form1->IPolygon1->AddPoint(TPoint(P1.x, Func->Points[N1].y));
-        }
-        else
-          Form1->IPolygon1->AddPoint(P1);
-      }
+      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Min.x, Min.y));
+      Form1->IPolygon1->AddPoints(&Func->Points[N1], N2 - N1);
+      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Max.x, Max.y));
     }
-    else if(const TPolFunc *PolFunc = dynamic_cast<const TPolFunc*>(GraphElem))
+
+    if(const TPolFunc *PolFunc = dynamic_cast<const TPolFunc*>(GraphElem))
     {
       if(N1 != N2)
         Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xyPoint(Form1->Data.Axes.yAxis.AxisCross, Form1->Data.Axes.xAxis.AxisCross)));
     }
     else
-      Form1->IPolygon1->Clear();
+    {
+      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Max.x, Form1->Data.Axes.xAxis.AxisCross));
+      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Min.x, Form1->Data.Axes.xAxis.AxisCross));
+    }
 
     Form1->IPolygon1->Pen->Width = Func->Size;
   }

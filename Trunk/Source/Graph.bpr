@@ -5,9 +5,9 @@
     <VERSION value="BCB.06.00"/>
     <PROJECT value="..\Graph.exe"/>
     <OBJFILES value="..\Obj\Clipboard.obj ..\Obj\ConfigFile.obj ..\Obj\ConfigRegistry.obj 
-      ..\Obj\Common.obj ..\Obj\Context.obj ..\Obj\Convert.obj ..\Obj\Data.obj 
-      ..\Obj\Debug.obj ..\Obj\Draw.obj ..\Obj\DrawThread.obj ..\Obj\Encode.obj 
-      ..\Obj\Files.obj ..\Obj\Graph.obj ..\Obj\GraphElem.obj 
+      ..\Obj\Common.obj ..\Obj\Files.obj ..\Obj\Context.obj ..\Obj\Convert.obj 
+      ..\Obj\Data.obj ..\Obj\Debug.obj ..\Obj\Draw.obj ..\Obj\DrawThread.obj 
+      ..\Obj\Encode.obj ..\Obj\Graph.obj ..\Obj\GraphElem.obj 
       ..\Obj\GuiHelper.obj ..\Obj\GuiUtil.obj ..\Obj\IGraphic.obj 
       ..\Obj\OleObjectElem.obj ..\Obj\OleServerImpl.obj ..\Obj\PngHelper.obj 
       ..\Obj\PythonBind.obj ..\Obj\Settings.obj ..\Obj\StackTrace.obj 
@@ -86,6 +86,7 @@
       <FILE FILENAME="..\Components\Common\ConfigFile.cpp" FORMNAME="" UNITNAME="ConfigFile" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\Components\Common\ConfigRegistry.cpp" FORMNAME="" UNITNAME="ConfigRegistry" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Common.cpp" FORMNAME="" UNITNAME="Common" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Files.cpp" FORMNAME="" UNITNAME="Files.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Context.cpp" FORMNAME="" UNITNAME="Context" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Convert.cpp" FORMNAME="" UNITNAME="Convert" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Data.cpp" FORMNAME="" UNITNAME="Data.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
@@ -93,7 +94,6 @@
       <FILE FILENAME="Draw.cpp" FORMNAME="" UNITNAME="Draw.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="DrawThread.cpp" FORMNAME="" UNITNAME="DrawThread.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\Components\Common\Encode.cpp" FORMNAME="" UNITNAME="Encode" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="Files.cpp" FORMNAME="" UNITNAME="Files.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Graph.cpp" FORMNAME="" UNITNAME="Graph" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Graph.res" FORMNAME="" UNITNAME="Graph.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="GraphElem.cpp" FORMNAME="" UNITNAME="GraphElem" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
@@ -150,7 +150,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=3
 Release=0
-Build=351
+Build=356
 Debug=1
 PreRelease=0
 Special=0
@@ -162,7 +162,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.3.0.351
+FileVersion=4.3.0.356
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2007
 LegalTrademarks=

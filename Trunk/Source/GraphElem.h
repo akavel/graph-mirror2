@@ -178,6 +178,8 @@ public:
   Func32::TBaseFunc& GetFunc() {return const_cast<Func32::TBaseFunc&>(const_cast<const TBaseFuncType*>(this)->GetFunc());}
   void ClearCache();
   void Update();
+  Func32::TCoord<long double> Eval(long double t) const;
+  virtual long double CalcArea(long double From, long double To) const;
 };
 
 enum TTangentType {ttTangent, ttNormal};
@@ -186,6 +188,7 @@ class TTan : public TBaseFuncType
   boost::weak_ptr<TBaseFuncType> Func;
   mutable double a, q;  //Calculated at last redraw; a!=INF: y=ax+q, a==INF: x=q
   mutable Func32::TParamFunc TanFunc;
+  void UpdateTan(double a1, double q1);
 
 public:
   TTextValue t;
@@ -198,7 +201,6 @@ public:
   std::wstring MakeLegendText() const;
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TBaseFuncType>(new TTan(*this));}
   boost::shared_ptr<TBaseFuncType> MakeDifFunc() {throw Exception("Tangent cannot be differentiated");}
-  void UpdateTan(double a1, double q1);
   bool IsValid() const; //Indicates the parent function is valid at t
   std::pair<double,double> GetCurrentRange() const;
   const TTextValue& GetSteps() const;
@@ -207,6 +209,8 @@ public:
   boost::shared_ptr<TBaseFuncType> ParentFunc() const {return Func.lock();}
   void SetParentFunc(const boost::shared_ptr<TBaseFuncType> &AFunc) {Func = AFunc;}
   void Update();
+  long double CalcArea(long double From, long double To) const;
+  bool CalcTan();
 };
 
 class TStdFunc : public TBaseFuncType

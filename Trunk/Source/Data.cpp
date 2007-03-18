@@ -162,6 +162,7 @@ void TData::LoadData(const TConfigFile &IniFile)
       Elem->ChildList[I]->SetParentFunc(boost::dynamic_pointer_cast<TBaseFuncType>(Elem));
 
     ElemList.push_back(Elem);
+    Elem->Update(); //Needed to update a and q for tangents. Must be called after ParentFunc is set
   }
 
   //We need to load shades after all functions are loaded
@@ -441,9 +442,13 @@ double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int
       else
         F = Func->GetFunc().ConvXToFunc().MakeDif();
       std::vector<Func32::TCoordSet> List = AnalyseFunction(F, Range.first, Range.second, Form1->Image1->Width, 1E-16, Func32::atXAxisCross);
-      std::transform(List.begin(), List.end(), List.begin(), Func32::TEvalCoordSet(Func->GetFunc())); //Fill list with coordinates for f(x) instead of f'(x)
-      if(!List.empty())
-        return FindNearestValue(List, X, Y, Draw);
+
+      //Convert the list of f'(x) coordinates to f(x) coordinates. Notice that List2 may have less
+      //elements than List, because we may have found some extremums that don't have valid coordinates.
+      std::vector<Func32::TCoordSet> List2;
+      Transform(List.begin(), List.end(), back_inserter(List2), Func32::TEvalCoordSet(Func->GetFunc())); //Fill list with coordinates for f(x) instead of f'(x)
+      if(!List2.empty())
+        return FindNearestValue(List2, X, Y, Draw);
       return NAN;
     }
 
@@ -527,6 +532,7 @@ boost::shared_ptr<TGraphElem> TData::Replace(unsigned Index, const boost::shared
 
     ElemList[Index] = Elem;
     Elem->SetData(this);
+    Elem->Update(); //Update tangents
     Result->SetData(NULL);
     return Result;
   }

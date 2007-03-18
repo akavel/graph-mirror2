@@ -152,45 +152,10 @@ void TDraw::DrawFunc(const TGraphElem *F)
   Thread->PostMessage(dmDrawFunc, reinterpret_cast<unsigned>(F));
 }
 //---------------------------------------------------------------------------
-//Calculate data used to draw a tangent
-//(x,y) is the point there the tangent crosses the function and a is the slope
-bool TDraw::CalcTan(TTan *Tan)
-{
-  try
-  {
-    const Func32::TBaseFunc &Func = Tan->ParentFunc()->GetFunc();
-
-    double x = Func.CalcX(Tan->t.Value); //Find x(t)
-    double y = Func.CalcY(Tan->t.Value); //Find y(t)
-
-    double a = Tan->ParentFunc()->GetFunc().CalcSlope(Tan->t.Value);
-
-    if(Tan->TangentType == ttNormal)
-      if(_finite(a))
-        a = std::abs(a) < MIN_ZERO ? INF : -1/a;
-      else
-        a = 0;
-
-    double q = _finite(a) ? y - a*x : x;
-    Tan->UpdateTan(a, q);
-    return true;
-  }
-  catch(Func32::EFuncError&)
-  {
-    Tan->UpdateTan(NAN, NAN);
-    return false;
-  }
-}
-//---------------------------------------------------------------------------
 void TDraw::DrawAll()
 {
   AbortUpdate();
   Context.DestroyClipRect(); //Remove all clipping regions; Must be done if printing more than one page
-
-  for(unsigned I = 0; I < Data->ElemCount(); I++)
-    for(unsigned N = 0; N < Data->GetElem(I)->ChildList.size(); N++)
-      if(TTan *Tan = dynamic_cast<TTan*>(Data->GetElem(I)->ChildList[N].get()))
-        CalcTan(Tan);
 
   RedrawAxes();
 
@@ -396,7 +361,8 @@ double TDraw::GetMinValue(double Unit, double Min, double Max, double AxisCross,
 {
   if(Log) //Is log scale used?
     //Get the first number to be shown
-    return std::exp(std::floor(std::log(Min / AxisCross * Unit) / std::log(Unit)) * std::log(Unit) + std::log(AxisCross));
+//    return std::exp(std::floor(std::log(Min / AxisCross * Unit) / std::log(Unit)) * std::log(Unit) + std::log(AxisCross));
+    return std::exp(std::floor(std::log(Min / AxisCross) / std::log(Unit)) * std::log(Unit) + std::log(AxisCross));
   //Get the first number to be shown
 //  return std::floor((Min - AxisCross) / Unit) * Unit + AxisCross + Unit;
   return std::ceil((Min - AxisCross) / Unit) * Unit + AxisCross;
@@ -417,12 +383,15 @@ void TDraw::DrawAxes()
   Context.SetFont(Axes.NumberFont);
   int NumberHeight = Context.GetTextHeight("1");
 
-  //Get axis cross in pixels
-  int xPixelCross = Axes.AxesStyle == asBoxed ? AxesRect.Left : xPoint(Axes.yAxis.AxisCross);
-  int yPixelCross = Axes.AxesStyle == asBoxed ? AxesRect.Bottom : yPoint(Axes.xAxis.AxisCross);
+  double xAxisCross = Axes.AxesStyle == asBoxed ? (Axes.yAxis.LogScl ? 0.1 : 0) : Axes.xAxis.AxisCross;
+  double yAxisCross = Axes.AxesStyle == asBoxed ? (Axes.xAxis.LogScl ? 0.1 : 0) : Axes.yAxis.AxisCross;
 
-  double xTickMin = GetMinValue(Axes.xAxis.TickUnit, Axes.xAxis.Min, Axes.xAxis.Max, Axes.yAxis.AxisCross, Axes.xAxis.LogScl);
-  double yTickMin = GetMinValue(Axes.yAxis.TickUnit, Axes.yAxis.Min, Axes.yAxis.Max, Axes.xAxis.AxisCross, Axes.yAxis.LogScl);
+  //Get axis cross in pixels
+  int xPixelCross = Axes.AxesStyle == asBoxed ? AxesRect.Left : xPoint(yAxisCross);
+  int yPixelCross = Axes.AxesStyle == asBoxed ? AxesRect.Bottom : yPoint(xAxisCross);
+
+  double xTickMin = GetMinValue(Axes.xAxis.TickUnit, Axes.xAxis.Min, Axes.xAxis.Max, yAxisCross, Axes.xAxis.LogScl);
+  double yTickMin = GetMinValue(Axes.yAxis.TickUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
 
   if(Axes.xAxis.ShowGrid)
   {
@@ -432,7 +401,7 @@ void TDraw::DrawAxes()
     else
       Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
 
-    double xGridMin = GetMinValue(Axes.xAxis.GridUnit, Axes.xAxis.Min, Axes.xAxis.Max, Axes.yAxis.AxisCross, Axes.xAxis.LogScl);
+    double xGridMin = GetMinValue(Axes.xAxis.GridUnit, Axes.xAxis.Min, Axes.xAxis.Max, yAxisCross, Axes.xAxis.LogScl);
     double GridPixelMin = xPointExact(xGridMin);
     double GridPixelScl = xScale * (Axes.xAxis.LogScl ? std::log(Axes.xAxis.GridUnit) : Axes.xAxis.GridUnit);
 
@@ -468,7 +437,7 @@ void TDraw::DrawAxes()
     else
       Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
 
-    double yGridMin = GetMinValue(Axes.yAxis.GridUnit, Axes.yAxis.Min, Axes.yAxis.Max, Axes.xAxis.AxisCross, Axes.yAxis.LogScl);
+    double yGridMin = GetMinValue(Axes.yAxis.GridUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
     double GridPixelMin = yPointExact(yGridMin);
     double GridPixelScl = yScale * (Axes.yAxis.LogScl ? std::log(Axes.yAxis.GridUnit) : Axes.yAxis.GridUnit);
 

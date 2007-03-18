@@ -207,6 +207,9 @@ void TBaseFuncType::ClearCache()
   Points.clear();
   PointNum.clear();
   sList.clear();
+
+  for(unsigned N = 0; N < ChildList.size(); N++)
+    ChildList[N]->ClearCache();
 }
 //---------------------------------------------------------------------------
 void TBaseFuncType::Update()
@@ -219,6 +222,23 @@ void TBaseFuncType::Update()
   std::for_each(ChildList.begin(), ChildList.end(), boost::mem_fn(&TGraphElem::Update));
 }
 //---------------------------------------------------------------------------
+Func32::TCoord<long double> TBaseFuncType::Eval(long double t) const
+{
+  if(!GetData().Axes.CalcComplex)
+    return GetFunc().Calc(t);
+
+  Func32::TCoord<Func32::TComplex> Result = GetFunc().Calc(Func32::TComplex(t));
+  if(imag(Result.x) || imag(Result.y))
+    throw Func32::ECalcError(Func32::ecComplexError);
+  return Func32::TCoord<long double>(real(Result.x), real(Result.y));
+}
+//---------------------------------------------------------------------------
+long double TBaseFuncType::CalcArea(long double From, long double To) const
+{
+  return GetFunc().CalcArea(From, To, 1000);
+}
+//---------------------------------------------------------------------------
+
 //////////////
 // TStdFunc //
 //////////////
@@ -437,8 +457,48 @@ std::pair<double,double> TTan::GetCurrentRange() const
 //---------------------------------------------------------------------------
 void TTan::Update()
 {
-  t.Update(GetData());
   TBaseFuncType::Update();
+  t.Update(GetData());
+  CalcTan(); //Update a and q
+}
+//---------------------------------------------------------------------------
+long double TTan::CalcArea(long double From, long double To) const
+{
+  if(_isnanl(a))
+    return NAN; //The tangent is not valid, i.e. it is touching a undefined function
+  if(_finitel(a))
+    return (To - From) * a * 0.5 * (To + From);
+  return 0;    //The tangent is vertical
+}
+//---------------------------------------------------------------------------
+//Calculate data used to draw a tangent
+//(x,y) is the point there the tangent crosses the function and a is the slope
+bool TTan::CalcTan()
+{
+  try
+  {
+    const Func32::TBaseFunc &Func = ParentFunc()->GetFunc();
+
+    double x = Func.CalcX(t.Value); //Find x(t)
+    double y = Func.CalcY(t.Value); //Find y(t)
+
+    double a = Func.CalcSlope(t.Value);
+
+    if(TangentType == ttNormal)
+      if(_finite(a))
+        a = std::abs(a) < MIN_ZERO ? INF : -1/a;
+      else
+        a = 0;
+
+    double q = _finite(a) ? y - a*x : x;
+    UpdateTan(a, q);
+    return true;
+  }
+  catch(Func32::EFuncError&)
+  {
+    UpdateTan(NAN, NAN);
+    return false;
+  }
 }
 //---------------------------------------------------------------------------
 ////////////
