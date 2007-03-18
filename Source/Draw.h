@@ -71,7 +71,6 @@ public:
   void DrawAxes();
   void SetClippingRegion();
   double GetScaledYAxis() const;
-  static bool CalcTan(TTan *Tan);
   void SetSizeMul(double xSizeMul, double ySizeMul);
   bool InsideLegend(int X, int Y) const {return Data->Axes.ShowLegend && InsideRect(LegendRect, TPoint(X, Y));}
   static void DrawPointLabel(TCanvas *Canvas, TPoint Pos, int PointSize, const std::string &Label, TLabelPosition LabelPosition);

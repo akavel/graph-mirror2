@@ -3949,6 +3949,7 @@ object Form1: TForm1
       Category = 'Function'
       Caption = 'Insert object...'
       ImageIndex = 59
+      Visible = False
       OnExecute = InsertObjectActionExecute
     end
   end

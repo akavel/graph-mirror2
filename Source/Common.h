@@ -264,6 +264,22 @@ public:
   operator int() const {return Value;}
 };
 
+//Same as std::transform except that no result is added to Result if Op throws an exception
+template <class TInputIterator, class TOutputIterator, class TUnaryOperation>
+TOutputIterator Transform(TInputIterator First, TInputIterator Last,
+                          TOutputIterator Result, TUnaryOperation Op)
+{
+  while(First != Last)
+    try
+    {
+      *Result = Op(*First++);
+      ++Result;
+    }
+    catch(...)
+    {
+    }
+    return Result;
+}
 
 extern const bool IsWinNT;
 extern const double NAN;

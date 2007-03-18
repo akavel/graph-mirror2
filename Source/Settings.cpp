@@ -23,8 +23,9 @@ TAxis::TAxis() : Min(-10), Max(10), LogScl(false), ShowGrid(false), MultiplyOfPi
 }
 //---------------------------------------------------------------------------
 TAxes::TAxes() : ShowLegend(true), AxesColor(clBlue),
-  GridColor(static_cast<TColor>(0x00FF9999)), BackgroundColor(clWhite), Trigonometry(Func32::Radian), AxesStyle(asCrossed),
-  LegendPlacement(lpTopRight), GridSize(1), CalcComplex(false), ZoomSquare(false)
+  GridColor(static_cast<TColor>(0x00FF9999)), BackgroundColor(clWhite), Trigonometry(Func32::Radian),
+  AxesStyle(asCrossed), LegendPlacement(lpTopRight), GridSize(1), CalcComplex(false), ZoomSquare(false),
+  LegendPos(0,0)  
 {
 }
 //---------------------------------------------------------------------------

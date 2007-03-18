@@ -20,7 +20,7 @@
 #include "IGraphics.h"
 #include "StackTrace.h"
 
-const unsigned MaxSqrPixelDist = 100;
+const unsigned MaxPixelDist = 10;
 const unsigned MaxExtraPoints = 100;
 //---------------------------------------------------------------------------
 using std::real;
@@ -182,8 +182,6 @@ void TDrawThread::DrawFunction(const TBaseFuncType &Func)
 template<typename T>
 void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds, bool LogScl)
 {
-  F.ClearCache();
-
   try
   {
     Func32::ECalcError CalcError;
@@ -256,8 +254,9 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
           if(!((Pos.x < 0 && LastPos.x < 0) || (Pos.x > AxesRect.Right && LastPos.x > AxesRect.Right) || (Pos.y < 0 && LastPos.y < 0) || (Pos.y > AxesRect.Bottom && LastPos.y > AxesRect.Bottom)))
           {
             unsigned Count = MaxExtraPoints; //Use a max loop count to prevent the algorithm from running wild
-            //If there is more than 10 pixels between the two points, calculate a point in the middle
-            while(--Count && Dist(Pos, LastPos) > MaxSqrPixelDist)
+            //If there is more than 10 pixels between the two points, calculate a point in the middle.
+            //We use virtual and horizontal dist to avoid overflow in square calculation
+            while(--Count && MaxDist(Pos, LastPos) > MaxPixelDist)
             {
               double sMiddle = LogScl ? std::sqrt(s*sLast) : (s + sLast) / 2; // Average between s and sLast
               Coord = Func.Calc(T(sMiddle), CalcError);
@@ -267,7 +266,7 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
 
               //Cosider the new point to be part of the line it is closest to
               TPoint P = Draw->xyPoint(Coord);
-              if(Dist(P, LastPos) < Dist(P, Pos))
+              if(MaxDist(P, LastPos) < MaxDist(P, Pos))
               {
                 if(P == LastPos)
                 {

@@ -332,7 +332,6 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
   switch(Button)
   {
     case mbLeft:
-      Panel2->SetFocus();
       switch(CursorState)
       {
         case csAddLabel:
@@ -1057,17 +1056,12 @@ void __fastcall TForm1::ApplicationEventsShowHint(AnsiString &HintStr,
   //Maximum length in pixels of hint text before line wrap
   HintInfo.HintMaxWidth = 200;
 
-  if(Application->HintShortCuts)
-    if(TTntAction *Action = dynamic_cast<TTntAction*>(HintInfo.HintControl->Action))
-    {
-      HintInfo.HintWindowClass = __classid(TTntHintWindow);
-      HintInfo.HintData = &HintInfo;
-      WideString Str = Action->Hint;
-      if(Action->ShortCut != 0)
-        Str += WideString(L" (") + WideShortCutToText(Action->ShortCut) + L")";
-      TntControl_SetHint(HintInfo.HintControl, Str);
-      HintStr = Str;
-    }
+  if(TTntAction *Action = dynamic_cast<TTntAction*>(HintInfo.HintControl->Action))
+  {
+    HintInfo.HintWindowClass = __classid(TTntHintWindow);
+    HintInfo.HintData = &HintInfo;
+    HintStr = TntControl_GetHint(HintInfo.HintControl);
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::WMEnterSizeMove(TMessage &Message)
@@ -1234,6 +1228,19 @@ void TForm1::ChangeLanguage(const AnsiString &Lang)
     Translate();
 
   Data.Property.Language = Lang;
+
+  //Store unicode version of hint in tool buttons and add shortcuts
+  for(int I = 0; I < ActionToolBar1->ActionClient->Items->Count; I++)
+  {
+    TActionClientItem *Item = ActionToolBar1->ActionClient->Items->ActionClients[I];
+    if(TTntAction *Action = dynamic_cast<TTntAction*>(Item->Action))
+    {
+      WideString Str = Action->Hint;
+      if(Action->ShortCut != 0)
+        Str += WideString(L" (") + WideShortCutToText(Action->ShortCut) + L")";
+      TntControl_SetHint(Item->Control, Str);
+    }
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
@@ -1361,7 +1368,6 @@ void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
     TreeView->Selected = GetNode(Selected);
   else if(Index != -1 && TreeView->Items->Count)
     TreeView->Selected = TreeView->Items->Item[Index < TreeView->Items->Count ? Index : TreeView->Items->Count-1];
-  TreeViewChange(TreeView, TreeView->Selected);
 
   TreeView->FullExpand();
   TreeView->Items->EndUpdate();
@@ -3550,5 +3556,4 @@ void __fastcall TForm1::ZoomActionUpdate(TObject *Sender)
   static_cast<TAction*>(Sender)->Enabled = !Data.Axes.ZoomSquare;
 }
 //---------------------------------------------------------------------------
-
 

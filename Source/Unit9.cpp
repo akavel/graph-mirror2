@@ -126,7 +126,6 @@ void TForm9::EndValueChanged(int X, int Y)
 void TForm9::FuncChanged(const boost::shared_ptr<TGraphElem> &AElem)
 {
   Elem = AElem;
-
   if(!Elem)
   {
     ShowFrame(NULL);
@@ -190,25 +189,23 @@ void __fastcall TForm9::Edit1Change(TObject *Sender)
   {
     Form1->Cross->Hide();
     Form1->IPolygon1->Hide();
-    if(!Visible)
-      return;
-
     Form1->CancelStatusError();
-    switch(EvalType)
-    {
-      case etEval:
-        if(VisibleFrame)
+
+    if(Visible && VisibleFrame)
+      switch(EvalType)
+      {
+        case etEval:
           VisibleFrame->Eval(Elem.get());
-        break;
+          break;
 
-      case etArea:
-        AreaFrame1->EvalArea(Elem.get());
-        break;
+        case etArea:
+          AreaFrame1->EvalArea(Elem.get());
+          break;
 
-      case etArc:
-        AreaFrame1->EvalArc(Elem.get());
-        break;
-    }
+        case etArc:
+          AreaFrame1->EvalArc(Elem.get());
+          break;
+      }
   }
   catch(Func32::EFuncError &Error)
   {

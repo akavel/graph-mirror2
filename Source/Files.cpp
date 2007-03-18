@@ -208,7 +208,7 @@ bool TData::Save(const std::string &FileName, bool Remember)
     WriteInfoToIni(IniFile);
     SaveData(IniFile);
     CustomFunctions.WriteToIni(IniFile);
-    SaveImage(IniFile);
+//    SaveImage(IniFile);
 
     if(!IniFile.SaveToFile(FileName))
       return false;

@@ -149,6 +149,7 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
     Data.Add(Func);
   }
 
+  Func->Update(); //Make sure tangents are updated
   Data.Property.DefaultFunction.Set(LineSelect1->LineStyle, ExtColorBox1->Selected, ToInt(Edit6->Text));
   ModalResult = mrOk;
 }
