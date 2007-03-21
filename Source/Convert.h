@@ -28,6 +28,7 @@ std::pair<int, int> FloatToFract(double f, double Epsilon = 0.01);
 inline std::string RoundToString(long double Number, unsigned Decimals) {return RoundToStr(Number, Decimals).c_str();}
 inline std::string RoundToString(long double Number, const TData &Data) {return RoundToStr(Number, Data.Property.RoundTo).c_str();}
 std::string RtfToPlainText(const std::string &Str);
+void Trim(std::string &Str);
 
 inline int ToInt(const WideString &Str) {return AnsiString(Str).ToInt();}
 inline int ToIntDef(const std::string &Str, int Default) {return StrToIntDef(Str.c_str(), Default);}

@@ -357,9 +357,10 @@ double CellToDouble(TGrid *Grid, int Col, int Row)
   {
     //First try to convert as a number as optimization. If it fails parse using Calc()
     double Result;
-    if(Grid->Cells[Col][Row].Pos("e") == -1 && TryStrToFloat(Grid->Cells[Col][Row], Result))
+    AnsiString Str = Grid->Cells[Col][Row];
+    if(Str.Pos("e") == -1 && TryStrToFloat(Str, Result))
       return Result;
-    return Form1->Data.Calc(Grid->Cells[Col][Row].c_str());
+    return Form1->Data.Calc(Str.c_str());
   }
   catch(Func32::EParseError &E)
   {
@@ -458,6 +459,14 @@ WideString ToWideString(const std::string &Str)
 WideString ToWideString(const AnsiString &Str)
 {
   return Str;
+}
+//--------------------------------------------------------------------------
+void Trim(std::string &Str)
+{
+  unsigned Pos1 = Str.find_first_not_of(" ");
+  unsigned Pos2 = Str.find_last_not_of(" ");
+  if(!Str.empty() && (Pos1 != 0 || Pos2 != Str.size()-1))
+    Str.replace(0, std::string::npos, Str, Pos1, Pos2 - Pos1 + 1);
 }
 //--------------------------------------------------------------------------
 
