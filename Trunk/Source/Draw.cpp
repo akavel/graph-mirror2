@@ -172,90 +172,6 @@ void TDraw::DrawAll()
   }
 }
 //---------------------------------------------------------------------------
-void TDraw::RedrawAxes()
-{
-  AxesRect = TRect(0, 0, Width, Height);
-
-  if(!Axes.Title.empty())
-  {
-    Context.SetFont(Axes.TitleFont);
-    Context.SetBrush(bsClear);
-    if(ForceBlack)
-      Context.SetFontColor(clBlack);
-    TSize TextSize = Context.GetTextExtent(Axes.Title);
-    Context.DrawText(Axes.Title, (AxesRect.Width() - TextSize.cx) / 2, 0);
-    AxesRect.Top = TextSize.cy;
-  }
-
-  if(Axes.AxesStyle == asBoxed)
-  {
-    //Calculate font height for numbers
-    Context.SetFont(Axes.NumberFont);
-    int NumberHeight = Context.GetTextHeight("1");
-    int MinWidth = NumberWidth(Axes.yAxis.Min, Axes.yAxis.MultiplyOfPi);
-    int MaxWidth = NumberWidth(Axes.yAxis.Max, Axes.yAxis.MultiplyOfPi);
-
-    AxesRect.Left = std::max(MinWidth, MaxWidth) + Size(7);
-    AxesRect.Bottom = Height - NumberHeight - Size(4);
-
-#ifdef LIMITED_EDITION
-    AxesRect.Bottom -= Size(15); //Make space for "Graph Limited School Edition" text at the bottom
-#endif
-  }
-
-  if(Axes.xAxis.LogScl)
-    xScale = AxesRect.Width() / std::log(Axes.xAxis.Max / Axes.xAxis.Min);
-  else
-    xScale = AxesRect.Width() / (Axes.xAxis.Max - Axes.xAxis.Min);
-
-  if(Axes.yAxis.LogScl)
-    yScale = AxesRect.Height() / std::log(Axes.yAxis.Max / Axes.yAxis.Min);
-  else
-    yScale = AxesRect.Height() / (Axes.yAxis.Max - Axes.yAxis.Min);
-
-  if(Axes.xAxis.AutoTick)
-  {
-    int TextDist = Size(40);
-    int Ticks = AxesRect.Width() / TextDist;
-    double Dist = (Axes.xAxis.LogScl ? std::log10(Axes.xAxis.Max / Axes.xAxis.Min) : Axes.xAxis.Max - Axes.xAxis.Min) / Ticks;
-    if(Axes.xAxis.LogScl)
-      Axes.xAxis.TickUnit = std::pow10(std::ceil(Dist));
-    else
-    {
-      if(Axes.xAxis.MultiplyOfPi)
-        Dist /= M_PI;
-      Axes.xAxis.TickUnit = AdjustUnit(Dist);
-      if(Axes.xAxis.MultiplyOfPi)
-        Axes.xAxis.TickUnit *= M_PI;
-    }
-  }
-
-  if(Axes.yAxis.AutoTick)
-  {
-    int TextDist = Size(40);
-    int Ticks = AxesRect.Height() / TextDist;
-    double Dist = (Axes.yAxis.LogScl ? std::log10(Axes.yAxis.Max / Axes.yAxis.Min) : Axes.yAxis.Max - Axes.yAxis.Min) / Ticks;
-    if(Axes.yAxis.LogScl)
-      Axes.yAxis.TickUnit = std::pow10(std::ceil(Dist));
-    else
-    {
-      if(Axes.yAxis.MultiplyOfPi)
-        Dist /= M_PI;
-      Axes.yAxis.TickUnit = AdjustUnit(Dist);
-      if(Axes.yAxis.MultiplyOfPi)
-        Axes.yAxis.TickUnit *= M_PI;
-    }
-  }
-
-  if(Axes.xAxis.AutoGrid)
-    Axes.xAxis.GridUnit = Axes.xAxis.TickUnit;
-
-  if(Axes.yAxis.AutoGrid)
-    Axes.yAxis.GridUnit = Axes.yAxis.TickUnit;
-
-  DrawLegend();
-}
-//---------------------------------------------------------------------------
 void TDraw::SetSize(int AWidth, int AHeight)
 {
   Width = AWidth;
@@ -368,6 +284,145 @@ double TDraw::GetMinValue(double Unit, double Min, double Max, double AxisCross,
   return std::ceil((Min - AxisCross) / Unit) * Unit + AxisCross;
 }
 //---------------------------------------------------------------------------
+//Fills yLabelInfo with list of labels and return the maximum with
+unsigned TDraw::FindLabels()
+{
+  yLabelInfo.clear();
+  unsigned MaxWidth = 0;
+
+  if(Axes.yAxis.ShowNumbers)
+  {
+    //Calculate font height for numbers
+    Context.SetFont(Axes.NumberFont);
+    double y = yTickMin;
+
+    //Loop through all coordinates on y-axis
+    while(y < Axes.yAxis.Max)
+    {
+      int yPixel = yPoint(y);//Get pixel position
+        //Check that we are not showing a number at the axis when they are crossed
+      if(Axes.AxesStyle == asBoxed || std::abs(yPixel - yPixelCross) > 1)
+        //Check if we are not too close to the boundery of the window
+        if(yPixel + NumberHeight / 2 < Height && yPixel - NumberHeight / 2 > AxesRect.Top)
+        {
+          TLabelInfo LabelInfo;
+          LabelInfo.Label = MakeNumber(y, Axes.yAxis.MultiplyOfPi);
+          LabelInfo.Width = Context.GetTextWidth(LabelInfo.Label);
+          LabelInfo.Pos = yPixel;
+          yLabelInfo.push_back(LabelInfo);
+          if(LabelInfo.Width > MaxWidth)
+            MaxWidth = LabelInfo.Width;
+        }
+
+      //Is axis shown in log scale
+      if(Axes.yAxis.LogScl)
+        y *= Axes.yAxis.TickUnit;
+      else
+        y += Axes.yAxis.TickUnit; //Add scale to position
+    }
+  }
+  return MaxWidth;
+}
+//---------------------------------------------------------------------------
+void TDraw::PreCalcXAxis()
+{
+  xTickMin = GetMinValue(Axes.xAxis.TickUnit, Axes.xAxis.Min, Axes.xAxis.Max, yAxisCross, Axes.xAxis.LogScl);
+
+  unsigned MaxLabelWidth = FindLabels();
+  if(Axes.AxesStyle == asBoxed)
+    AxesRect.Left = MaxLabelWidth + Size(7);
+
+  if(Axes.xAxis.LogScl)
+    xScale = AxesRect.Width() / std::log(Axes.xAxis.Max / Axes.xAxis.Min);
+  else
+    xScale = AxesRect.Width() / (Axes.xAxis.Max - Axes.xAxis.Min);
+
+  if(Axes.xAxis.AutoTick)
+  {
+    int TextDist = Size(40);
+    int Ticks = AxesRect.Width() / TextDist;
+    double Dist = (Axes.xAxis.LogScl ? std::log10(Axes.xAxis.Max / Axes.xAxis.Min) : Axes.xAxis.Max - Axes.xAxis.Min) / Ticks;
+    if(Axes.xAxis.LogScl)
+      Axes.xAxis.TickUnit = std::pow10(std::ceil(Dist));
+    else
+    {
+      if(Axes.xAxis.MultiplyOfPi)
+        Dist /= M_PI;
+      Axes.xAxis.TickUnit = AdjustUnit(Dist);
+      if(Axes.xAxis.MultiplyOfPi)
+        Axes.xAxis.TickUnit *= M_PI;
+    }
+  }
+
+  xPixelCross = Axes.AxesStyle == asBoxed ? AxesRect.Left : xPoint(yAxisCross);
+  if(Axes.xAxis.AutoGrid)
+    Axes.xAxis.GridUnit = Axes.xAxis.TickUnit;
+}
+//---------------------------------------------------------------------------
+void TDraw::PreCalcYAxis()
+{
+  if(Axes.AxesStyle == asBoxed)
+  {
+    AxesRect.Bottom = Height - NumberHeight - Size(4);
+#ifdef LIMITED_EDITION
+    AxesRect.Bottom -= Size(15); //Make space for "Graph Limited School Edition" text at the bottom
+#endif
+  }
+
+  if(Axes.yAxis.LogScl)
+    yScale = AxesRect.Height() / std::log(Axes.yAxis.Max / Axes.yAxis.Min);
+  else
+    yScale = AxesRect.Height() / (Axes.yAxis.Max - Axes.yAxis.Min);
+
+  if(Axes.yAxis.AutoTick)
+  {
+    int TextDist = Size(40);
+    int Ticks = AxesRect.Height() / TextDist;
+    double Dist = (Axes.yAxis.LogScl ? std::log10(Axes.yAxis.Max / Axes.yAxis.Min) : Axes.yAxis.Max - Axes.yAxis.Min) / Ticks;
+    if(Axes.yAxis.LogScl)
+      Axes.yAxis.TickUnit = std::pow10(std::ceil(Dist));
+    else
+    {
+      if(Axes.yAxis.MultiplyOfPi)
+        Dist /= M_PI;
+      Axes.yAxis.TickUnit = AdjustUnit(Dist);
+      if(Axes.yAxis.MultiplyOfPi)
+        Axes.yAxis.TickUnit *= M_PI;
+    }
+  }
+
+  xAxisCross = Axes.AxesStyle == asBoxed ? (Axes.yAxis.LogScl ? 0.1 : 0) : Axes.xAxis.AxisCross;
+  yAxisCross = Axes.AxesStyle == asBoxed ? (Axes.xAxis.LogScl ? 0.1 : 0) : Axes.yAxis.AxisCross;
+  yTickMin = GetMinValue(Axes.yAxis.TickUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
+  yPixelCross = Axes.AxesStyle == asBoxed ? AxesRect.Bottom : yPoint(xAxisCross);
+
+  if(Axes.yAxis.AutoGrid)
+    Axes.yAxis.GridUnit = Axes.yAxis.TickUnit;
+}
+//---------------------------------------------------------------------------
+void TDraw::RedrawAxes()
+{
+  AxesRect = TRect(0, 0, Width, Height);
+  Context.SetFont(Axes.NumberFont);
+  NumberHeight = Context.GetTextHeight("1");
+
+  if(!Axes.Title.empty())
+  {
+    Context.SetFont(Axes.TitleFont);
+    Context.SetBrush(bsClear);
+    if(ForceBlack)
+      Context.SetFontColor(clBlack);
+    TSize TextSize = Context.GetTextExtent(Axes.Title);
+    Context.DrawText(Axes.Title, (AxesRect.Width() - TextSize.cx) / 2, 0);
+    AxesRect.Top = TextSize.cy;
+  }
+
+  PreCalcYAxis();
+  PreCalcXAxis();
+
+  DrawLegend();
+}
+//---------------------------------------------------------------------------
 void TDraw::DrawAxes()
 {
   Context.DestroyClipRect(); //Remove all clipping regions; Must be done to draw boxed axes
@@ -381,17 +436,6 @@ void TDraw::DrawAxes()
 
   //Calculate font height for numbers
   Context.SetFont(Axes.NumberFont);
-  int NumberHeight = Context.GetTextHeight("1");
-
-  double xAxisCross = Axes.AxesStyle == asBoxed ? (Axes.yAxis.LogScl ? 0.1 : 0) : Axes.xAxis.AxisCross;
-  double yAxisCross = Axes.AxesStyle == asBoxed ? (Axes.xAxis.LogScl ? 0.1 : 0) : Axes.yAxis.AxisCross;
-
-  //Get axis cross in pixels
-  int xPixelCross = Axes.AxesStyle == asBoxed ? AxesRect.Left : xPoint(yAxisCross);
-  int yPixelCross = Axes.AxesStyle == asBoxed ? AxesRect.Bottom : yPoint(xAxisCross);
-
-  double xTickMin = GetMinValue(Axes.xAxis.TickUnit, Axes.xAxis.Min, Axes.xAxis.Max, yAxisCross, Axes.xAxis.LogScl);
-  double yTickMin = GetMinValue(Axes.yAxis.TickUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
 
   if(Axes.xAxis.ShowGrid)
   {
@@ -489,12 +533,13 @@ void TDraw::DrawAxes()
         //Check that we are not showing a number at the axis when they are crossed
         if(Axes.AxesStyle == asBoxed || std::abs(xPixel - xPixelCross) > 1)
         {
-          int TextWidth = NumberWidth(x, Axes.xAxis.MultiplyOfPi);
+          std::wstring Str = MakeNumber(x, Axes.xAxis.MultiplyOfPi);
+          int TextWidth = Context.GetTextWidth(Str);
 
           //Check if we are not too close to the sides of the window
           //Compare with 0 instead of AxesRect.Left because it is okay to write in the blank area
           if(xPixel - TextWidth / 2 >= 0 && xPixel + TextWidth / 2 <= AxesRect.Right)
-            ShowNumber(xPixel - TextWidth/2, yPixel, x, Axes.xAxis.MultiplyOfPi);
+            Context.DrawText(Str, xPixel - TextWidth/2, yPixel);
         }
         //Is axis shown in log scale
         if(Axes.xAxis.LogScl)
@@ -505,31 +550,9 @@ void TDraw::DrawAxes()
     }
   }
 
-  if(Axes.yAxis.ShowNumbers)
-  {
-    int xPixel = xPixelCross - Size(7); //Pixel position to draw numbers
-    double y = yTickMin; //Current y-position
-
-    //Loop through all coordinates on y-axis
-    while(y < Axes.yAxis.Max)
-    {
-      int yPixel = yPoint(y);//Get pixel position
-        //Check that we are not showing a number at the axis when they are crossed
-      if(Axes.AxesStyle == asBoxed || std::abs(yPixel - yPixelCross) > 1)
-        //Check if we are not too close to the boundery of the window
-        if(yPixel + NumberHeight / 2 < Height && yPixel - NumberHeight / 2 > AxesRect.Top)
-        {
-          int Width = NumberWidth(y, Axes.yAxis.MultiplyOfPi);
-          ShowNumber(xPixel-Width, yPixel - NumberHeight / 2, y, Axes.yAxis.MultiplyOfPi);
-        }
-
-      //Is axis shown in log scale
-      if(Axes.yAxis.LogScl)
-        y *= Axes.yAxis.TickUnit;
-      else
-        y += Axes.yAxis.TickUnit; //Add scale to position
-    }
-  }
+  //Draw number labels on the y-axis
+  for(std::vector<TLabelInfo>::const_iterator Iter = yLabelInfo.begin(); Iter != yLabelInfo.end(); ++Iter)
+    Context.DrawText(Iter->Label, xPixelCross - Iter->Width - Size(7), Iter->Pos - NumberHeight / 2);
 
   //Set font for labels
   Context.SetFont(Axes.LabelFont);
@@ -699,68 +722,29 @@ double TDraw::GetScaledYAxis() const
   return (AxesRect.Height() / yPixelsPerInch) / (AxesRect.Width() / xPixelsPerInch);
 }
 //---------------------------------------------------------------------------
-//Draw Number at (X, Y)
-//If MultiplyByPi is true, number is draw as a fraction multiplied by pi
-void TDraw::ShowNumber(int X, int Y, double Number, bool MultiplyByPi)
+//If MultiplyByPi is true, the number is a fraction multiplied by pi
+std::wstring TDraw::MakeNumber(double Number, bool MultiplyByPi)
 {
   if(MultiplyByPi)
   {
     std::pair<int, int> Fract = FloatToFract(Number / M_PI);
     if(Fract.first == 0)
-    {
-      Context.DrawText("0", X, Y);
-      return;
-    }
+      return L"0";
 
-    int xPos = X;
+    std::wstring Str;
     if(Fract.first != 1)
-    {
-      std::string Str = Fract.first == -1 ? std::string("-") : ToString(Fract.first);
-      Context.DrawText(Str, X, Y);
-      xPos += Context.GetTextWidth(Str);
-    }
+      Str = Fract.first == -1 ? std::wstring(L"-") : ToWString(Fract.first);
 
-    int NumberHeight = Context.GetTextHeight("0");
-    Context.SetFontName("Symbol");
-    Context.DrawText("p", xPos, Y - (Context.GetTextHeight("p") - NumberHeight)); //The pi is alligned at the bottom
-    xPos += Context.GetTextWidth("p");
-    Context.SetFontName(Axes.NumberFont->Name.c_str());
+    Str += L'\x3C0'; // Pi
 
     if(Fract.second != 1)
-      Context.DrawText("/" + ToString(Fract.second), xPos, Y);
-    return;
+      Str += L"/" + ToWString(Fract.second);
+    return Str;
   }
 
-  std::string Str = std::abs(Number) < MIN_ZERO ? "0" : FloatToStrF(Number, ffGeneral, 8, 8).c_str();
-  Context.DrawText(Str, X, Y);
-}
-//---------------------------------------------------------------------------
-//Returns the width of the number in pixels
-unsigned TDraw::NumberWidth(double Number, bool MultiplyByPi)
-{
-  if(MultiplyByPi)
-  {
-    std::pair<int, int> Fract = FloatToFract(Number / M_PI);
-    if(Fract.first == 0)
-      return Context.GetTextWidth("0");
-
-    unsigned Width = 0;
-    if(Fract.first != 1)
-    {
-      std::string Str = Fract.first == -1 ? std::string("-") : ToString(Fract.first);
-      Width = Context.GetTextWidth(Str);
-    }
-
-    Context.SetFontName("Symbol");
-    Width += Context.GetTextWidth("p");
-    Context.SetFontName(Axes.NumberFont->Name.c_str());
-
-    if(Fract.second != 1)
-      Width += Context.GetTextWidth("/" + ToString(Fract.second));
-    return Width;
-  }
-
-  return Context.GetTextWidth(std::abs(Number) < MIN_ZERO ? "0" : FloatToStrF(Number, ffGeneral, 8, 8).c_str());
+  if(std::abs(Number) < MIN_ZERO)
+    return L"0";
+  return ToWString(FloatToStrF(Number, ffGeneral, 8, 8));
 }
 //---------------------------------------------------------------------------
 void TDraw::SetSizeMul(double xSizeMul, double ySizeMul)

@@ -20,6 +20,13 @@ typedef std::vector<TPoint>::const_iterator TConstPointIter;
 
 typedef boost::function0<void> TOnCompleteEvent;
 
+struct TLabelInfo
+{
+  std::wstring Label;
+  unsigned Width;
+  int Pos;
+};
+
 class TDraw
 {
   friend TDrawThread;
@@ -35,13 +42,22 @@ class TDraw
   bool ForceBlack;
   double SizeMul;
   TOnCompleteEvent OnComplete;
+  std::vector<TLabelInfo> yLabelInfo;
 
+  //Temp variables
+  double xAxisCross, yAxisCross;
+  double yTickMin, xTickMin;
+  int xPixelCross, yPixelCross;
+  int NumberHeight;
+
+  void PreCalcXAxis();
+  void PreCalcYAxis();
   void DrawPolyline(TConstPointIter Begin, TConstPointIter End, TPenStyle Style, int LineSize, TColor Color);
   void DrawPolydots(TConstPointIter Begin, TConstPointIter End, int LineSize, TColor Color);
   void DrawLegend();
   static double GetMinValue(double Unit, double Min, double Max, double AxisCross, bool Log);
-  void ShowNumber(int X, int Y, double Number, bool MultiplyByPi);
-  unsigned NumberWidth(double Number, bool MultiplyByPi);
+  static std::wstring MakeNumber(double Number, bool MultiplyByPi);
+  unsigned FindLabels();
 
   TDraw(const TDraw&); //Not implemented
   TDraw& operator=(const TDraw&); //Not implemented
