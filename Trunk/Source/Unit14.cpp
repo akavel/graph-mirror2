@@ -155,6 +155,8 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
 
   for(int Row = 1; Row < Grid->RowCount; Row++)
   {
+    Trim(DataPoints[Row-1].x.Text);
+    Trim(DataPoints[Row-1].y.Text);
     if(DataPoints[Row-1].x.Text.empty() && DataPoints[Row-1].y.Text.empty())
       continue;
 
