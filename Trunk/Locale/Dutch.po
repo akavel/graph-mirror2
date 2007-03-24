@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.0.1\n"
-"POT-Creation-Date: 2007-03-05 23:28\n"
-"PO-Revision-Date: 2007-03-05 23:35+0100\n"
+"POT-Creation-Date: 2007-03-24 08:08\n"
+"PO-Revision-Date: 2007-03-24 08:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: Etienne Goemaere <etienne.goemaere@pandora.be>\n"
 "MIME-Version: 1.0\n"
@@ -3308,7 +3308,7 @@ msgid "A part or the whole evaluation table can be exported to a file by right c
 msgstr "Een deel van een waardentabel kan geëxporteerd worden naar een bestand door rechts te klikken erop en 'Exporteer naar bestand' te selecteren. Daarna kan deze geopend worden in programma's zoals Microsoft Excel."
 
 #. Tip of the Day
-msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
+msgid "Data from the evaluation table can be copied to another program like Microsoft Excel using the clipboard."
 msgstr "Gegevens uit een functietabel kunnen gekopieerd worden naar andere programma's, zoals Microsoft Excel, via het klembord."
 
 #. Tip of the Day

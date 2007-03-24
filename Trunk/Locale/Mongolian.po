@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Граф\n"
-"POT-Creation-Date: 2007-03-05 23:28\n"
+"POT-Creation-Date: 2007-03-24 08:08\n"
 "PO-Revision-Date: 2007-02-19 22:38+0100\n"
 "Last-Translator: \n"
 "Language-Team: Батнасан <baagiibat@yahoo.com>\n"
@@ -3613,7 +3613,7 @@ msgstr ""
 #. Tip of the Day
 msgid ""
 "Data from the evaluation table can be copied to another program like "
-"Microsoft excel using the clipboard."
+"Microsoft Excel using the clipboard."
 msgstr ""
 
 #. Tip of the Day

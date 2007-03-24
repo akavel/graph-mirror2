@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2007-03-05 23:28\n"
-"PO-Revision-Date: 2007-03-05 23:44+0100\n"
+"POT-Creation-Date: 2007-03-24 08:08\n"
+"PO-Revision-Date: 2007-03-24 08:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
 "MIME-Version: 1.0\n"
@@ -3308,7 +3308,7 @@ msgid "A part or the whole evaluation table can be exported to a file by right c
 msgstr "Una parte o toda una tabla de evaluación puede ser exportada a un archivo haciendo clic derecho sobre ella, y seleccionando 'Exportar al archivo'. Éste puede ser después abierto por otros programas, como Microsoft Excel."
 
 #. Tip of the Day
-msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
+msgid "Data from the evaluation table can be copied to another program like Microsoft Excel using the clipboard."
 msgstr "Los datos de una tabla de evaluación pueden ser copiados en otros programas, como Microsoft Excel, usando el Portapapeles."
 
 #. Tip of the Day
