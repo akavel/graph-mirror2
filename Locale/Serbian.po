@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-03-05 23:28\n"
-"PO-Revision-Date: 2007-03-05 23:43+0100\n"
+"POT-Creation-Date: 2007-03-24 08:08\n"
+"PO-Revision-Date: 2007-03-24 08:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -3307,7 +3307,7 @@ msgid "A part or the whole evaluation table can be exported to a file by right c
 msgstr "Izabrani deo proracunske tabele mozete izvesti u neki fajl, desnim klikom na njega i zadavanjem naredbe 'Izvezi u fajl'. Kasnije cete isti fajl moci da otvorite pomocu drugih programa, kao sto je na primer Microsoft Excel."
 
 #. Tip of the Day
-msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
+msgid "Data from the evaluation table can be copied to another program like Microsoft Excel using the clipboard."
 msgstr "Podatke iz proracunske tabele mozete kopirati u drugi program, na primer Microsoft Excel, koristeci klipbord."
 
 #. Tip of the Day

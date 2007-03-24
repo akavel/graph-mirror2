@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-03-05 23:28\n"
+"POT-Creation-Date: 2007-03-24 08:08\n"
 "PO-Revision-Date: 2007-02-19 22:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -3705,9 +3705,10 @@ msgstr ""
 "πρόγραμμα όπως Microsoft Excel."
 
 #. Tip of the Day
+#, fuzzy
 msgid ""
 "Data from the evaluation table can be copied to another program like "
-"Microsoft excel using the clipboard."
+"Microsoft Excel using the clipboard."
 msgstr ""
 "Δεδομένα από τον πίνακα υπολογισμού μπορεί να αντιγραφούν σε  άλλο "
 "πρόγραμμα  όπως το Microsoft Excel χρησιμοποιώντας το πρόχειρο."

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2007-03-05 23:28\n"
-"PO-Revision-Date: 2007-03-05 23:38+0100\n"
+"POT-Creation-Date: 2007-03-24 08:08\n"
+"PO-Revision-Date: 2007-03-24 08:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -3299,7 +3299,7 @@ msgid "A part or the whole evaluation table can be exported to a file by right c
 msgstr "Une partie de la table de valeur approchées peut être exportée dans un fichier  en sélectionnant avec la souris une partie de la table puis en choisissant 'Exporter dans un fichier' après un clic droit de souris dans la table."
 
 #. Tip of the Day
-msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
+msgid "Data from the evaluation table can be copied to another program like Microsoft Excel using the clipboard."
 msgstr "Des données d'une table de valeur approchées peuvent être copiées dans un autre programme comme Microsoft Excel en sélectionnant avec la souris une partie de la table puis en choisissant 'Copier' après un clic droit de souris dans la table."
 
 #. Tip of the Day

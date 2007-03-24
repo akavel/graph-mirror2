@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-03-05 23:28\n"
-"PO-Revision-Date: 2007-03-05 23:41+0100\n"
+"POT-Creation-Date: 2007-03-24 08:08\n"
+"PO-Revision-Date: 2007-03-24 08:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: Magyari Gábor <magyari@kola.sulinet.hu>\n"
 "MIME-Version: 1.0\n"
@@ -3309,7 +3309,7 @@ msgid "A part or the whole evaluation table can be exported to a file by right c
 msgstr "Az értéktáblázat akár részben is exportálható fájlba. Ehhez kattints jobb gombbal a kiválasztott részre és válaszd az Exportálás fájlba menüpontot. Ezután a táblázat más programokban is felhasználható."
 
 #. Tip of the Day
-msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
+msgid "Data from the evaluation table can be copied to another program like Microsoft Excel using the clipboard."
 msgstr "A vágólap segítségével az értéktáblázat átmásolható más programokba, például Microsoft Excelbe."
 
 #. Tip of the Day

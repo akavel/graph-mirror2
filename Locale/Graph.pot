@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-03-05 23:28\n"
-"PO-Revision-Date: 2007-03-05 23:28\n"
+"POT-Creation-Date: 2007-03-24 08:08\n"
+"PO-Revision-Date: 2007-03-24 08:08\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3501,7 +3501,7 @@ msgstr ""
 
 #. Tip of the Day
 msgid "Data from the evaluation table can be copied to another program like "
-"Microsoft excel using the clipboard."
+"Microsoft Excel using the clipboard."
 msgstr ""
 
 #. Tip of the Day
