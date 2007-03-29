@@ -70,6 +70,14 @@ std::string GetCompareString(TCompareMethod CompareMethod)
   return "";
 }
 //---------------------------------------------------------------------------
+std::vector<TElem>::const_iterator TFuncData::CreateTextInPar(TConstIterator Iter, std::string &Str, const std::vector<std::string> &Args)
+{
+  Str += '(';
+  std::vector<TElem>::const_iterator Result = CreateText(Iter, Str, Args);
+  Str += ')';
+  return Result;
+}
+//---------------------------------------------------------------------------
 /** Converts data at Iter to text saved at the end of Str. Recursive call.
  *  \param Iter: Iterator pointing to next element to convert.
  *  \param Str:  String to add result to.
@@ -128,73 +136,63 @@ std::vector<TElem>::const_iterator TFuncData::CreateText(TConstIterator Iter, st
       Iter = CreateText(Iter, Str, Args);
       Str += '-';
       if(Iter->Ident == CodeAdd || Iter->Ident == CodeSub)
-      {
-        Str += '(';
-        Iter = CreateText(Iter, Str, Args);
-        Str += ')';
-      }
+        Iter = CreateTextInPar(Iter, Str, Args);
       else
         Iter = CreateText(Iter, Str, Args);
       return Iter;
 
     case CodeMul:
       if(Iter->Ident == CodeAdd || Iter->Ident == CodeSub)
-      {
-        Str += '(';
-        Iter = CreateText(Iter, Str, Args);
-        Str += ')';
-      }
+        Iter = CreateTextInPar(Iter, Str, Args);
       else
         Iter = CreateText(Iter, Str, Args);
       Str += '*';
       if(Iter->Ident == CodeAdd || Iter->Ident == CodeSub)
-      {
-        Str += '(';
-        Iter = CreateText(Iter, Str, Args);
-        Str += ')';
-      }
+        Iter = CreateTextInPar(Iter, Str, Args);
       else
         Iter = CreateText(Iter, Str, Args);
       return Iter;
 
     case CodeDiv:
       if(Iter->Ident == CodeAdd || Iter->Ident == CodeSub)
-      {
-        Str += '(';
-        Iter = CreateText(Iter, Str, Args);
-        Str += ')';
-      }
+        Iter = CreateTextInPar(Iter, Str, Args);
       else
         Iter = CreateText(Iter, Str, Args);
       Str += '/';
       if(Iter->Ident == CodeAdd || Iter->Ident == CodeSub || Iter->Ident == CodeMul || Iter->Ident == CodeDiv)
-      {
-        Str += '(';
-        Iter = CreateText(Iter, Str, Args);
-        Str += ')';
-      }
+        Iter = CreateTextInPar(Iter, Str, Args);
       else
         Iter = CreateText(Iter, Str, Args);
       return Iter;
 
     case CodePow:
       if(IsOperator(*Iter) || Iter->Ident == CodeNeg || (Iter->Ident == CodeNumber && Iter->Number < 0))
-      {
-        Str += '(';
-        Iter = CreateText(Iter, Str, Args);
-        Str += ')';
-      }
+        Iter = CreateTextInPar(Iter, Str, Args);
       else
         Iter = CreateText(Iter, Str, Args);
       Str += '^';
       if(IsOperator(*Iter))
-      {
-        Str += '(';
-        Iter = CreateText(Iter, Str, Args);
-        Str += ')';
-      }
+        Iter = CreateTextInPar(Iter, Str, Args);
       else
         Iter = CreateText(Iter, Str, Args);
+      return Iter;
+
+    case CodePowDiv:
+      if(IsOperator(*Iter) || Iter->Ident == CodeNeg || (Iter->Ident == CodeNumber && Iter->Number < 0))
+        Iter = CreateTextInPar(Iter, Str, Args);
+      else
+        Iter = CreateText(Iter, Str, Args);
+      Str += "^(";
+      if(Iter->Ident == CodeAdd || Iter->Ident == CodeSub)
+        Iter = CreateTextInPar(Iter, Str, Args);
+      else
+        Iter = CreateText(Iter, Str, Args);
+      Str += '/';
+      if(Iter->Ident == CodeAdd || Iter->Ident == CodeSub || Iter->Ident == CodeMul || Iter->Ident == CodeDiv)
+        Iter = CreateTextInPar(Iter, Str, Args);
+      else
+        Iter = CreateText(Iter, Str, Args);
+      Str += ')';
       return Iter;
 
     case CodeNeg:
@@ -204,11 +202,7 @@ std::vector<TElem>::const_iterator TFuncData::CreateText(TConstIterator Iter, st
         Str += '(';
       Str += '-';
       if(Iter->Ident == CodeAdd || Iter->Ident == CodeSub)
-      {
-        Str += '(';
-        Iter = CreateText(Iter, Str, Args);
-        Str += ')';
-      }
+        Iter = CreateTextInPar(Iter, Str, Args);
       else
         Iter = CreateText(Iter, Str, Args);
       if(Parenthese)
@@ -217,11 +211,7 @@ std::vector<TElem>::const_iterator TFuncData::CreateText(TConstIterator Iter, st
     }
     case CodeSqr:
       if(IsOperator(*Iter) || Iter->Ident == CodeNeg || (Iter->Ident == CodeNumber &&Iter->Number < 0))
-      {
-        Str += '(';
-        Iter = CreateText(Iter, Str, Args);
-        Str += ')';
-      }
+        Iter = CreateTextInPar(Iter, Str, Args);
       else
         Iter = CreateText(Iter, Str, Args);
       Str += "^2";
@@ -247,11 +237,7 @@ std::vector<TElem>::const_iterator TFuncData::CreateText(TConstIterator Iter, st
       Iter = CreateText(Iter, Str, Args);
       Str += Elem.Ident == CodeAnd ? " and " : Elem.Ident == CodeOr ? " or " : " xor ";
       if(Iter->Ident == CodeAnd || Iter->Ident == CodeOr || Iter->Ident == CodeXor)
-      {
-        Str += '(';
-        Iter = CreateText(Iter, Str, Args);
-        Str += ')';
-      }
+        Iter = CreateTextInPar(Iter, Str, Args);
       else
         Iter = CreateText(Iter, Str, Args);
       return Iter;

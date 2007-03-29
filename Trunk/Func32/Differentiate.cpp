@@ -68,49 +68,7 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
     throw EFuncError(ecNotDifAble);
   else if(IsConstant(*Iter))
     Data.push_back(TElem(CodeNumber, 0.0));
-  else if(IsFunction1P(*Iter) || IsFunction2P(*Iter))
-  {
-    if(Trigonometry == Degree)
-    {
-      //Sin, Cos, Tan, Csc, Sec, Cot must be multiplied with PI/180 when differentiated using degrees
-      if((Iter->Ident >= CodeSin && Iter->Ident <= CodeTan) || (Iter->Ident >= CodeCsc && Iter->Ident <= CodeCot))
-      {
-        Data.push_back(CodeMul);
-        Data.push_back(CodeDiv);
-        Data.push_back(CodePi);
-        Data.push_back(180);
-      }
-      //ASin, ACos, ATan, ACsc, ASec, ACot must be multiplied with 180/PI when differentiated using degrees
-      else if((Iter->Ident >= CodeASin && Iter->Ident <= CodeATan) || (Iter->Ident >= CodeACsc && Iter->Ident <= CodeACot))
-      {
-        Data.push_back(CodeMul);
-        Data.push_back(CodeDiv);
-        Data.push_back(180);
-        Data.push_back(CodePi);
-      }
-    }
-
-    const TFuncData &DifData = GetDif(Iter->Ident);
-    if(DifData.IsEmpty())
-      throw EFuncError(ecNotDifAble);
-
-    TConstIterator End = DifData.Data.end();
-    TConstIterator FirstPar = Iter;             //Start of first parenthesis
-    ++FirstPar;
-    TConstIterator SecondPar = FindEnd(FirstPar); //Start of second parenthesis
-
-    for(TConstIterator Elem = DifData.Data.begin(); Elem != End; ++Elem)
-      if(Elem->Ident == CodeVariable)
-        Data.insert(Data.end(), FirstPar, SecondPar);
-      else if(*Elem == TElem(CodeCustom, "dx"))
-        AddDif(FirstPar, Var, Trigonometry, Level);
-      else if(*Elem == TElem(CodeCustom, "x2"))
-        Data.insert(Data.end(), SecondPar, FindEnd(SecondPar));
-      else if(*Elem == TElem(CodeCustom, "dx2"))
-        AddDif(SecondPar, Var, Trigonometry, Level);
-      else
-        Data.push_back(*Elem);
-  }
+//  else if(IsFunction1P(*Iter) || IsFunction2P(*Iter))
   else switch(Iter->Ident)
   {
     case CodeIf:
@@ -197,11 +155,61 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
       break;
     }
     default:
+  {
+    if(Trigonometry == Degree)
+    {
+      //Sin, Cos, Tan, Csc, Sec, Cot must be multiplied with PI/180 when differentiated using degrees
+      if((Iter->Ident >= CodeSin && Iter->Ident <= CodeTan) || (Iter->Ident >= CodeCsc && Iter->Ident <= CodeCot))
+      {
+        Data.push_back(CodeMul);
+        Data.push_back(CodeDiv);
+        Data.push_back(CodePi);
+        Data.push_back(180);
+      }
+      //ASin, ACos, ATan, ACsc, ASec, ACot must be multiplied with 180/PI when differentiated using degrees
+      else if((Iter->Ident >= CodeASin && Iter->Ident <= CodeATan) || (Iter->Ident >= CodeACsc && Iter->Ident <= CodeACot))
+      {
+        Data.push_back(CodeMul);
+        Data.push_back(CodeDiv);
+        Data.push_back(180);
+        Data.push_back(CodePi);
+      }
+    }
+
+    const TFuncData &DifData = GetDif(Iter->Ident);
+    if(DifData.IsEmpty())
       throw EFuncError(ecNotDifAble);
+
+    TConstIterator End = DifData.Data.end();
+    TConstIterator FirstPar = Iter;             //Start of first parenthesis
+    ++FirstPar;
+    TConstIterator SecondPar = FindEnd(FirstPar); //Start of second parenthesis
+    TConstIterator ThirdPar;
+    if(FunctionArguments(*Iter) >= 2)
+      ThirdPar = FindEnd(SecondPar); //Start of third parenthesis
+
+    for(TConstIterator Elem = DifData.Data.begin(); Elem != End; ++Elem)
+      if(Elem->Ident == CodeVariable)
+        Data.insert(Data.end(), FirstPar, SecondPar);
+      else if(*Elem == TElem(CodeCustom, "dx"))
+        AddDif(FirstPar, Var, Trigonometry, Level);
+      else if(*Elem == TElem(CodeCustom, "x2"))
+        Data.insert(Data.end(), SecondPar, ThirdPar);
+      else if(*Elem == TElem(CodeCustom, "dx2"))
+        AddDif(SecondPar, Var, Trigonometry, Level);
+      else if(*Elem == TElem(CodeCustom, "x3"))
+        Data.insert(Data.end(), ThirdPar, FindEnd(ThirdPar));
+      else if(*Elem == TElem(CodeCustom, "dx3"))
+        AddDif(ThirdPar, Var, Trigonometry, Level);
+      else
+        Data.push_back(*Elem);
+  }
+//      throw EFuncError(ecNotDifAble);
   }
 }
 //---------------------------------------------------------------------------
 } //namespace Func32
+
 
 
 

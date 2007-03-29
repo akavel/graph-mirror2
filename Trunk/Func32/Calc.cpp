@@ -225,26 +225,6 @@ long double Fact(unsigned x)
   return Result;
 }
 //---------------------------------------------------------------------------
-//Calculates Root(a,b) = b^(1/a)
-//There is no check for a=0
-template<typename T>
-inline T Root(T a, T b)
-{
-  //If a is an odd integer, b is negative (and we are using real numbers)
-  if(b < 0 && Trunc(a) == a && fmod(a, 2) != 0)
-    return -pow(-b, 1/a);
-
-  return pow(b, 1/a);
-}
-//---------------------------------------------------------------------------
-template<typename T>
-inline std::complex<T> Root(const std::complex<T> a, const std::complex<T> b)
-{
-  //Calculations with complex numbers may return a complex number if Temp<0,
-  //and b is not an integer
-  return pow(b, T(1.0)/a);
-}
-//---------------------------------------------------------------------------
 /** Calculates the gamma function ( n! = Gamma(n+1) ), Gamma(z) is not defined for z=0
  *  Implemented from description on http://www.rskey.org/gamma.htm
  *  The alogirthm is a modification of the one found in Numerical Recipes in C
@@ -378,6 +358,49 @@ bool Compare(const T &t1, const T &t2, TCompareMethod Compare, TErrorCode &Error
     case cmGreaterEqual:  return real(t1) >= real(t2);
     default:              return 0; //Error
   }
+}
+//---------------------------------------------------------------------------
+//Returns a^(b/c) for real numbers
+//c may not be 0
+template<typename T>
+T PowDiv(const T &a, const T &b, const T &c)
+{
+  if(!b) //Define: 0^0 = 1
+    return 1;
+
+  if(a < 0 && abs(fmod(c, 2)) == 1)
+  {
+    T bMod = fmod(b, 2);
+    //If both b and c are odd integers, a is negative (and we are using real numbers)
+    if(bMod == -1 || bMod == 1)
+      return -pow(-a, b/c);
+    //If b is even, c is odd, and a is negative
+    else if(bMod == 0)
+      return pow(-a, b/c);
+  }
+  return pow(a, b/c);
+}
+//---------------------------------------------------------------------------
+template<typename T>
+inline std::complex<T> PowDiv(const std::complex<T> &a, const std::complex<T> &b, const std::complex<T> &c)
+{
+  if(!b) //Define: 0^0 = 1
+    return 1;
+
+  std::complex<T> n = b/c;
+  //pow(0, n) is undefined if n has an imaginary part or is real and less than 0
+  if(!a && !imag(n) && real(n) > 0)
+    return 0; //pow(0,Temp2) seems to give problems with complex numbers
+
+  //Calculations with complex numbers may return a complex number if Temp<0,
+  //e.g. (-2)^2 = 4+i4.3368E-19; Because of this
+  //evaluating f(x)=x/(x^2-4) results in f(-2)=4.6117E+18i
+  if(!imag(a) && !imag(n) && Trunc(n) == n)
+    return pow(real(a), real(n));
+
+  //Calculations with complex numbers may return a complex number if a<0,
+  //and b is not an integer
+  return pow(a, b/c);
 }
 //---------------------------------------------------------------------------
 
@@ -600,20 +623,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodePow:
     {
       T Temp2 = CalcF(Iter, DynData);
-      if(!Temp2) //Define: 0^0 = 1, in general: Temp^0 = 1
-        return 1;
-
-      //pow(0, Temp2) is undefined if Temp2 has an imaginary part or is real and less than 0
-      if(!Temp && !imag(Temp2) && real(Temp2) > 0)
-        return 0; //pow(0,Temp2) seems to give problems with complex numbers
-
-      //Calculations with complex numbers may return a complex number if Temp<0,
-      //e.g. (-2)^2 = 4+i4.3368E-19; Because of this
-      //evaluating f(x)=x/(x^2-4) results in f(-2)=4.6117E+18i
-      if(TComplexTrait<T>::HasImagUnit && !imag(Temp) && !imag(Temp2) && Trunc(Temp2) == Temp2)
-        Temp = pow(real(Temp), real(Temp2));
-      else
-        Temp = pow(Temp, Temp2);
+      Temp = PowDiv(Temp, Temp2, T(1));
       if(errno)
         ErrorCode = ecPowCalcError;
       return Temp;
@@ -628,9 +638,26 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         return 0;
       }
 
-      Temp = Root(Temp, Temp2);
+      Temp = PowDiv(Temp2, T(1), Temp);
       if(errno)
         ErrorCode = ecPowCalcError;
+      return Temp;
+    }
+
+    case CodePowDiv:
+    {  //Temp^(Temp2/Temp3)
+      T Temp2 = CalcF(Iter, DynData);
+      T Temp3 = CalcF(Iter, DynData);
+      if(!Temp3)  //Cannot raise to root 0
+      {
+        ErrorCode = ecDivByZero;
+        return 0;
+      }
+
+      Temp = PowDiv(Temp, Temp2, Temp3);
+      if(errno)
+        ErrorCode = ecPowCalcError;
+
       return Temp;
     }
 

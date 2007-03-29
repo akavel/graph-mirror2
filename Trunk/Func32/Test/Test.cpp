@@ -316,9 +316,19 @@ void Test()
   TestError("x/(x^2-4)", -2, ecDivByZero);
   TestErrorEval<long double>("(-2)^x", 2.2, ecPowCalcError);
   TestEval<TComplex>("(-2)^x", 2.2, TComplex(3.717265962,2.70075181));
+  TestErrorEval<long double>("(-2)^x", 2.3, ecPowCalcError);
   TestError("x^(-1)", 0, ecPowCalcError);
   TestErrorEval<TComplex>("0^x", TComplex(3,1), ecPowCalcError);
   TestEval<TComplex>("0^x", TComplex(3,0), 0);
+
+  //Test special power function handling
+  TestEval<long double>("x^(1/3)", -8, -2);
+  TestEval<TComplex>("x^(1/3)", -8, TComplex(1,1.732050807568877));
+  TestEval<long double>("x^(2/3)", -8, 4);
+  TestEval<TComplex>("x^(2/3)", -8, TComplex(-2, 3.464101615137755));
+  TestError("x^(2/0)", -8, ecDivByZero);
+  Test("x^(2/3)", 0, 0);
+  Test("x^(4/2)", -2, 4);
 
   //Test trigonometry functions
   Test("sin(x)", PI/2, 1);
@@ -488,7 +498,6 @@ void Test()
   TestError("zeta(x)", 1, ecNotDefError);
   Test("zeta(x)", -5, -1.0/252);
 
-
   //Test vertical trend lines
   TDblPoint Vertical[] = {TDblPoint(5,1), TDblPoint(5,7)};
   TestTrendLineError(ttPower, Vertical, 2, 0, ecOverflow);
@@ -514,6 +523,11 @@ void Test()
 
   //Test differentiation of inverse trigonometric functions
   TestDif("acot(x)", 1, -28.647889756541160438399077407053, Degree);
+
+  //Differentiation of special power handling
+  TestDif("x^(1/3)", "1/3*x^(-2/3)");
+  TestDif("2^(x/3)", "1/3*ln(2)*2^(x/3)");
+  TestDif("2^(1/x)", "-ln(2)*2^(1/x)/x^2");
 }
 
 int main()

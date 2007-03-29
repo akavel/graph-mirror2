@@ -100,6 +100,7 @@ static const TFuncTable Table[] = {
 /*CodeIntegrate*/   TFuncTable("integrate", arg1 == 3),
 /*CodeSum*/         TFuncTable("sum",   arg1 == 3),
 /*CodeCompare2*/    TFuncTable("",      arg1 == 3),
+/*CodePowDiv*/      TFuncTable("",      0, NULL, "x2/x3*x^((x2-x3)/x3)*dx + x^(x2/x3)*ln(x)*(dx2*x3-x2*dx3)/x3^2"),
 
 /*CodeMin*/         TFuncTable("min",   arg1 >= 2),
 /*CodeMax*/         TFuncTable("max",   arg1 >= 2),
