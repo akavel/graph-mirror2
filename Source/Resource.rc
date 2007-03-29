@@ -225,7 +225,7 @@ BEGIN
   622 "Graph will remember the size and placement of the main window between executions. This can be disabled from the Options dialog."                           //Tip of the Day
   623 "Calc|Table can be used to create a table with evaluation values for a function."                                                                           //Tip of the Day
   624 "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel." //Tip of the Day
-  625 "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."                                                 //Tip of the Day
+  625 "Data from the evaluation table can be copied to another program like Microsoft Excel using the clipboard."                                                 //Tip of the Day
   626 "The data points in a point series can be copied to and from other programs like Microsoft Excel through the clipboard."                                    //Tip of the Day
   627 "Functions can be copied from one instance of the program to another through the clipboard using Edit|Copy."                                                //Tip of the Day
   628 "You can always undo the last thing you did using Edit|Undo."                                                                                               //Tip of the Day

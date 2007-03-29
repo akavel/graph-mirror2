@@ -2922,7 +2922,7 @@ bool __fastcall TForm1::OpenPreviewDialog1PreviewFile(
       TCanvas *Canvas, const TRect &Rect)
 {
   PreviewDraw->AbortUpdate();
-
+/*
   TConfigFile IniFile;
   if(IniFile.LoadFromFile(FileName.c_str()))
   {
@@ -2940,7 +2940,7 @@ bool __fastcall TForm1::OpenPreviewDialog1PreviewFile(
       }
     }
   }
-
+*/
   //Make sure background is drawn
   Canvas->Brush->Style = bsSolid;
   //Set background color
