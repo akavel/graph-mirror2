@@ -62,6 +62,7 @@ void __fastcall TForm7::Button1Click(TObject *Sender)
     Dif->Style = LineSelect1->LineStyle;
     Dif->Color = ExtColorBox1->Selected;
     Dif->SetLegendText(ToWString(Edit3->Text));
+    Dif->SetSteps(TTextValue(0, ""));
 
     Data.Add(Dif);
     UndoList.Push(TUndoAdd(Dif));

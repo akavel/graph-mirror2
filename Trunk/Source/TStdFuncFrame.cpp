@@ -40,7 +40,9 @@ void TStdFuncFrame::Eval(const TGraphElem *Elem)
     Func32::TComplex x = Form1->Data.CalcComplex(ToString(Edit1->Text));
 
     ErrorPrefix = "f(x): ";
-    Func32::TComplex y = Func->GetFunc().CalcY(x);
+    Func32::TComplex y;
+    bool UseReal = Form1->Data.Property.ComplexFormat == cfReal;
+    y = UseReal ? Func32::TComplex(Func->GetFunc().CalcY(real(x))): Func->GetFunc().CalcY(x);
 
     if(!x.imag() && std::abs(y.imag()) < MIN_ZERO)
       Form1->SetCrossPos(x.real(), y.real());
@@ -48,12 +50,12 @@ void TStdFuncFrame::Eval(const TGraphElem *Elem)
     ErrorPrefix = "f'(x): ";
     Edit2->Text = ComplexToWideString(y);
     Func32::TFunc Dif1 = Func->GetFunc().MakeDif();
-    Func32::TComplex yDif1 = Dif1.CalcY(x);
+    Func32::TComplex yDif1 = UseReal ? Func32::TComplex(Dif1.CalcY(real(x))) : Dif1.CalcY(x);
     Edit3->Text = ComplexToWideString(yDif1);
 
     ErrorPrefix = "f''(x): ";
     Func32::TFunc Dif2 = Dif1.MakeDif();
-    Func32::TComplex yDif2 = Dif2.CalcY(x);
+    Func32::TComplex yDif2 = UseReal ? Func32::TComplex(Dif2.CalcY(real(x))) : Dif2.CalcY(x);
     Edit4->Text = ComplexToWideString(yDif2);
   }
 }
