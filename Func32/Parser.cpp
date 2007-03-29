@@ -129,8 +129,18 @@ namespace Func32
     TDoOperator(TContext::member1 &AElements, TIdent Operator) : Ident(Operator), Elements(AElements) {}
     void operator()(const std::deque<TElem> &List)
     {
-      Elements().push_front(Ident);
-      Elements().insert(Elements().end(), List.begin(), List.end());
+      //This should be handled in the simplify code.
+      //a^(b/c) will be converted to CodePowDiv(a,b,c) instead of CodePow(a, CodeDiv(b,c))
+      if(Ident == CodePow && List[0].Ident == CodeDiv)
+      {
+        Elements().push_front(CodePowDiv);
+        Elements().insert(Elements().end(), List.begin()+1, List.end());
+      }
+      else
+      {
+        Elements().push_front(Ident);
+        Elements().insert(Elements().end(), List.begin(), List.end());
+      }
     }
   };
 //---------------------------------------------------------------------------
@@ -349,8 +359,11 @@ namespace Func32
         |   Constant[Factor.List = arg1]
         |   FuncUReal_p[PushFront(Factor.List)] >> !(+ch_p('.'))[TDoError(ecInvalidNumber)]
         |   Parentheses[Factor.List = arg1]
-        )   >> !('^' >> AssertExpression_p(Neg)[TDoOperator(Factor.List, CodePow)])
-        ;
+        )   >> !('^' >>
+        (
+//          (ch_p('(') >> Neg >> ch_p('/') >> Neg[TDoOperator(Factor.List, CodePow)] >> ch_p(')'))
+         AssertExpression_p(Neg)[TDoOperator(Factor.List, CodePow)]
+        ));
 
   BOOST_SPIRIT_DEBUG_RULE(Expression);
   BOOST_SPIRIT_DEBUG_RULE(Relation);

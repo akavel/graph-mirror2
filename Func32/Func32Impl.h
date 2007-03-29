@@ -116,6 +116,7 @@ enum TIdent
   CodeIntegrate,  //!< Integrate(f,min,max) returns the numeric integrale of f from min to max
   CodeSum,        //!< Sum(f,min,max) returns the sum of f(i) where i are integers in the range [min;max]
   CodeCompare2,   //!< Element is a compare between three arguments, for example "3 < x < 27"
+  CodePowDiv,     //!< Element is a^(b/c). This makes it possible to handle x^(1/3) correctly
 
   FirstFunctionVariableP, //!< Indicates first function with variable number or parameters
   CodeMin = FirstFunctionVariableP, //!< Return the lowest of the parameters
@@ -183,6 +184,7 @@ struct TDynData
 
 class TFuncData
 {
+  typedef std::vector<TElem>::iterator TIterator;
   typedef std::vector<TElem>::const_iterator TConstIterator;
 
   std::vector<TElem> Data;
@@ -199,6 +201,7 @@ class TFuncData
   void AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trigonometry, unsigned Level);
   static std::string MakeText(TConstIterator Iter);
   static TConstIterator CreateText(TConstIterator Iter, std::string &Str, const std::vector<std::string> &Args);
+  static TConstIterator CreateTextInPar(TConstIterator Iter, std::string &Str, const std::vector<std::string> &Args);
   void CopyReplace(TConstIterator Iter, const std::vector<TConstIterator> &Args);
   bool CheckRecursive(std::vector<const TFuncData*> &FuncStack) const;
   bool CheckRecursive() const;
