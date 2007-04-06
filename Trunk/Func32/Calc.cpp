@@ -204,6 +204,18 @@ inline std::complex<T> Round(const std::complex<T> &Number, int Decimals)
   return std::complex<T>(Round(real(Number), Decimals), Round(imag(Number), Decimals));
 }
 //---------------------------------------------------------------------------
+//Calculate Greatest Common Divisor
+int CalcGcd(int a, int b)
+{
+  if(b > a)
+    return CalcGcd(b, a);
+
+  if(b == 0)
+    return a;
+
+  return CalcGcd(b, a%b);
+}
+//---------------------------------------------------------------------------
 long double Fact(unsigned x)
 {
   static std::vector<long double> List; //Cache for Fact(0)..Fact(100)
@@ -362,45 +374,68 @@ bool Compare(const T &t1, const T &t2, TCompareMethod Compare, TErrorCode &Error
 //---------------------------------------------------------------------------
 //Returns a^(b/c) for real numbers
 //c may not be 0
-template<typename T>
-T PowDiv(const T &a, const T &b, const T &c)
+long double PowDiv(const long double &a, const long double &b, const long double &c)
 {
   if(!b) //Define: 0^0 = 1
     return 1;
 
-  if(a < 0 && abs(fmod(c, 2)) == 1)
+  int bInt = b;
+  int cInt = c;
+
+  //If a is negative and both b and c are integers
+  if(a < 0 && bInt == b && cInt == c)
   {
-    T bMod = fmod(b, 2);
-    //If both b and c are odd integers, a is negative (and we are using real numbers)
-    if(bMod == -1 || bMod == 1)
-      return -pow(-a, b/c);
-    //If b is even, c is odd, and a is negative
-    else if(bMod == 0)
-      return pow(-a, b/c);
+    //Reduce the fraction till either b or c is odd
+    while((bInt & 0x01) == 0 && (cInt & 0x01) == 0)
+      bInt >>= 1, cInt >>= 1;
+
+    if(cInt & 0x01)
+    {
+      //If both b and c are odd integers, a is negative (and we are using real numbers)
+      if(bInt & 0x01)
+        return -pow(-a, static_cast<long double>(bInt)/cInt);
+      //If b is even, c is odd, and a is negative
+      else
+        return pow(-a, static_cast<long double>(bInt)/cInt);
+    }
   }
   return pow(a, b/c);
+}
+//---------------------------------------------------------------------------
+// Returns a^b for complex numbers
+template<typename T>
+std::complex<T> Pow(const std::complex<T> &a, const std::complex<T> &b)
+{
+  if(!b) //Define: 0^0 = 1
+    return 1;
+
+  //pow(0, n) is undefined if n has an imaginary part or is real and less than 0
+  if(!a && !imag(b) && real(b) > 0)
+    return 0; //pow(0,b) seems to give problems with complex numbers
+
+  //Calculations with complex numbers may return a complex number if Temp<0,
+  //e.g. (-2)^2 = 4+i4.3368E-19; Because of this
+  //evaluating f(x)=x/(x^2-4) results in f(-2)=4.6117E+18i
+  if(!imag(a) && !imag(b) && Trunc(b) == b)
+    return pow(real(a), real(b));
+
+  //Calculations with complex numbers may return a complex number if a<0,
+  //and b is not an integer
+  return pow(a, b);
+}
+//---------------------------------------------------------------------------
+template<typename T>
+inline T Pow(const T &a, const T &b)
+{
+  if(!b)
+    return 1;
+  return pow(a, b);
 }
 //---------------------------------------------------------------------------
 template<typename T>
 inline std::complex<T> PowDiv(const std::complex<T> &a, const std::complex<T> &b, const std::complex<T> &c)
 {
-  if(!b) //Define: 0^0 = 1
-    return 1;
-
-  std::complex<T> n = b/c;
-  //pow(0, n) is undefined if n has an imaginary part or is real and less than 0
-  if(!a && !imag(n) && real(n) > 0)
-    return 0; //pow(0,Temp2) seems to give problems with complex numbers
-
-  //Calculations with complex numbers may return a complex number if Temp<0,
-  //e.g. (-2)^2 = 4+i4.3368E-19; Because of this
-  //evaluating f(x)=x/(x^2-4) results in f(-2)=4.6117E+18i
-  if(!imag(a) && !imag(n) && Trunc(n) == n)
-    return pow(real(a), real(n));
-
-  //Calculations with complex numbers may return a complex number if a<0,
-  //and b is not an integer
-  return pow(a, b/c);
+  return Pow(a, b/c);
 }
 //---------------------------------------------------------------------------
 
@@ -623,7 +658,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodePow:
     {
       T Temp2 = CalcF(Iter, DynData);
-      Temp = PowDiv(Temp, Temp2, T(1));
+      Temp = Pow(Temp, Temp2);
       if(errno)
         ErrorCode = ecPowCalcError;
       return Temp;

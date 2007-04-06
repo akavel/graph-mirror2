@@ -324,6 +324,8 @@ void Test()
   //Test special power function handling
   TestEval<long double>("x^(1/3)", -8, -2);
   TestEval<TComplex>("x^(1/3)", -8, TComplex(1,1.732050807568877));
+  TestEval<long double>("x^(2/6)", -8, -2);
+  TestEval<TComplex>("x^(2/6)", -8, TComplex(1,1.732050807568877));
   TestEval<long double>("x^(2/3)", -8, 4);
   TestEval<TComplex>("x^(2/3)", -8, TComplex(-2, 3.464101615137755));
   TestError("x^(2/0)", -8, ecDivByZero);
