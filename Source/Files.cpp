@@ -142,12 +142,12 @@ bool TData::Import(const std::string &FileName)
     return false;
   }
 
-  //Save decimal seperator
+  //Save decimal separator
   char OldDecimalSeparator = DecimalSeparator;
 
   try
   {
-    //Set decimal seperator to '.' to make sure that file conversion are the
+    //Set decimal separator to '.' to make sure that file conversion are the
     //same over the whole world
     DecimalSeparator = '.';
 
@@ -257,11 +257,11 @@ void TData::SaveDefault()
   }
 }
 //---------------------------------------------------------------------------
-//Returns seperator used for line ('\t', ' ', ';', ',')
-char GetSeperator(const std::string &Str)
+//Returns separator used for line ('\t', ' ', ';', ',')
+char GetSeparator(const std::string &Str)
 {
-  const char *Seperators = "\t; ,";
-  for(const char* Ch = Seperators; *Ch; Ch++)
+  const char *Separators = "\t; ,";
+  for(const char* Ch = Separators; *Ch; Ch++)
     if(Str.find(*Ch) != std::string::npos)
       return *Ch;
   return 0;
@@ -288,19 +288,23 @@ bool TData::ImportData(const std::string &FileName)
     if(Str.empty())
       continue;
 
-    char Seperator = GetSeperator(Str);
-    if(Seperator != ',')
+    char Separator = GetSeparator(Str);
+    if(Separator != ',')
       std::replace(Str.begin(), Str.end(), ',', '.');
 
-    unsigned Pos = Str.find(Seperator);
-    std::string xText = Str.substr(0, Pos);
+    //Several separators after each other (eg. spaces) are ignored
+    unsigned FirstPos = Str.find_first_not_of(Separator);
+    unsigned Pos = Str.find(Separator, FirstPos);
+    std::string xText = Str.substr(FirstPos, Pos - FirstPos);
     unsigned Col = 0;
 
-    for(unsigned LastPos = Pos + 1; Pos != std::string::npos; LastPos = Pos + 1, Col++)
+    for(unsigned LastPos = Str.find_first_not_of(Separator, Pos);
+        Pos != std::string::npos; LastPos = Pos + 1,
+        Col++)
     {
       try
-      {
-        Pos = Str.find(Seperator, LastPos);
+      {  
+        Pos = Str.find(Separator, LastPos);
 
         //Ignore empty entries
         if(Pos == LastPos || LastPos == Str.size())
@@ -323,7 +327,7 @@ bool TData::ImportData(const std::string &FileName)
       {
         //Ignore errors in first line; This could be a text
         if(Line != 1)
-        {
+        { 
           MessageBox(LoadRes(526, FileName.c_str(), Line), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
           return false;
         }
