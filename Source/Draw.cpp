@@ -507,7 +507,7 @@ void TDraw::DrawAxes()
       double yPixelScl = (Axes.yAxis.LogScl ? std::log(Axes.yAxis.TickUnit) : Axes.yAxis.TickUnit) * yScale;
       for(double y = yPointExact(yTickMin); y > AxesRect.Top + Size(5); y -= yPixelScl)
         if(std::abs(y - yPixelCross) > 1) //Don't show at or beside axis (when scaled it might be moved a pixel or two)
-          Context.DrawLine(AxesRect.Left, y, AxesRect.Right, y);
+          Context.DrawLine(AxesRect.Left, y + 0.5, AxesRect.Right, y + 0.5); //Round the same as grid as they may appear over each other 
     }
   }
 
