@@ -556,7 +556,9 @@ void TGrid::ImportText(AnsiString Str)
     {
       case '\t':
       case ';':
-        DoSetText(ACol++, ARow, Str.SubString(OldPos, Pos-OldPos));
+      case ' ':
+        if(Pos != OldPos)
+          DoSetText(ACol++, ARow, Str.SubString(OldPos, Pos-OldPos));
         OldPos = Pos+1;
         break;
 
