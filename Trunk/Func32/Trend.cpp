@@ -406,15 +406,19 @@ double CalcSSQ(const std::vector<TDblPoint> &Points, const TFunc &Func)
 double CalcSSQ(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, std::vector<long double> Values)
 {
   BOOST_ASSERT(Values.size() == Func.GetArguments().size());
-  double Sum = 0;
+  long double Sum = 0;
   std::vector<TDblPoint>::const_iterator Begin = Points.begin();
   std::vector<TDblPoint>::const_iterator End = Points.end();
   for(std::vector<TDblPoint>::const_iterator Iter = Begin; Iter != End; ++Iter)
   {
     Values[0] = Iter->x;
-    double d = Iter->y - Func(Values);
+    long double d = Iter->y - Func(Values);
     Sum += d*d;
   }
+
+  //Values larger than MAXDOUBLE are giving problems, especially when written to a stream
+  if(Sum > std::numeric_limits<double>::max())
+    return std::numeric_limits<double>::infinity();
   return Sum;
 }
 //---------------------------------------------------------------------------
@@ -478,7 +482,7 @@ double LinearCorrelation(const std::vector<TDblPoint> &Points)
  */
 double Correlation(const std::vector<TDblPoint> &Points, const TFunc &Func)
 {
-  double yMean = 0;
+  long double yMean = 0;
 
   std::vector<TDblPoint>::const_iterator Begin = Points.begin();
   std::vector<TDblPoint>::const_iterator End = Points.end();
@@ -486,8 +490,8 @@ double Correlation(const std::vector<TDblPoint> &Points, const TFunc &Func)
     yMean += Iter->y;
   yMean /= Points.size();
 
-  double St = 0;
-  double Sy = 0;
+  long double St = 0;
+  long double Sy = 0;
   for(std::vector<TDblPoint>::const_iterator Iter = Begin; Iter != End; ++Iter)
   {
     St += Sqr(yMean - Iter->y);
@@ -536,6 +540,11 @@ void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, s
 
     const TMatrix<double> I = IdentityMatrix<double>(n);
     double LastSum = CalcSSQ(Points, Func, Args);
+
+    //We cannot continue with a guess that gives a huge SSQ
+    if(LastSum == std::numeric_limits<double>::infinity())
+      throw EFuncError(ecBadGuess);
+
     DEBUG_LOG(std::clog << std::string("SquareError = ") << LastSum << std::endl);
 
     std::vector<long double> LastArgs = Args;
@@ -617,6 +626,7 @@ void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, s
 }
 //---------------------------------------------------------------------------
 } //namespace Func32
+
 
 
 
