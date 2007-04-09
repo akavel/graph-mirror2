@@ -320,6 +320,10 @@ void Test()
   TestError("x^(-1)", 0, ecPowCalcError);
   TestErrorEval<TComplex>("0^x", TComplex(3,1), ecPowCalcError);
   TestEval<TComplex>("0^x", TComplex(3,0), 0);
+  Test("e^(2x)", 2, M_E*M_E*M_E*M_E);
+  Test("e^2x", 2, M_E*M_E*M_E*M_E); //Same as the above
+  Test("x^2^3", 10, 1E8);
+  Test("(x^2)^3", 10, 1E6);
 
   //Test special power function handling
   TestEval<long double>("x^(1/3)", -8, -2);

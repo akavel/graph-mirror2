@@ -359,11 +359,8 @@ namespace Func32
         |   Constant[Factor.List = arg1]
         |   FuncUReal_p[PushFront(Factor.List)] >> !(+ch_p('.'))[TDoError(ecInvalidNumber)]
         |   Parentheses[Factor.List = arg1]
-        )   >> !('^' >>
-        (
-//          (ch_p('(') >> Neg >> ch_p('/') >> Neg[TDoOperator(Factor.List, CodePow)] >> ch_p(')'))
-         AssertExpression_p(Neg)[TDoOperator(Factor.List, CodePow)]
-        ));
+        )   >> !('^' >> FactorSeq[TDoOperator(Factor.List, CodePow)])
+        ;
 
   BOOST_SPIRIT_DEBUG_RULE(Expression);
   BOOST_SPIRIT_DEBUG_RULE(Relation);
