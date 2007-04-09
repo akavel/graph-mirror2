@@ -29,8 +29,11 @@ __published:	// IDE-managed Components
   void __fastcall ValueListEditor1KeyPress(TObject *Sender, char &Key);
   void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
+  TData &Data;
+  int ItemIndex;
+
 public:		// User declarations
-  __fastcall TForm8(TComponent* Owner);
+  __fastcall TForm8(TComponent* Owner, TData &AData, int AItemIndex);
 };
 //---------------------------------------------------------------------------
 #endif

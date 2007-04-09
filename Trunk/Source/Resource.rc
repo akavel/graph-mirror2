@@ -159,7 +159,8 @@ BEGIN
   513 "The width must be an integer greater than 0."
   514 "Error in width"
   515 "The end of interval must be greater than the start of interval and %s must be greater than 0."
-
+  516 "Invalid model name."
+  517 "A model of that name already exist."
   518 "The derivative of the function is not defined at %s=%s"
   519 "Coordinate not defined."
   520 "Checking for newer version..."

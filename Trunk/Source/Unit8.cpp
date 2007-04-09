@@ -14,8 +14,8 @@
 #pragma link "TntStdCtrls"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
-__fastcall TForm8::TForm8(TComponent* Owner)
-  : TTntForm(Owner)
+__fastcall TForm8::TForm8(TComponent* Owner, TData &AData, int AItemIndex)
+  : TTntForm(Owner), Data(AData), ItemIndex(AItemIndex)
 {
   ScaleForm(this);
   TranslateProperties(this);
@@ -37,6 +37,22 @@ void __fastcall TForm8::Button1Click(TObject *Sender)
   int I;
   try
   {
+    std::wstring Name = ToWString(Edit1->Text);
+    //Empty names are not allowed
+    if(Name.empty())
+    {
+      MessageBox(LoadRes(516), LoadRes(RES_ERROR));
+      return;
+    }
+
+    //Two models with the same name cannot exist
+    for(unsigned I = 0; I < Data.UserModels.size(); I++)
+      if(Data.UserModels[I].Name == Name && static_cast<int>(I) != ItemIndex)
+      {
+        MessageBox(LoadRes(517), LoadRes(RES_ERROR));
+        return;
+      }
+
     for(I = 1; I < ValueListEditor1->RowCount; I++)
       ValueListEditor1->Cells[1][I].ToDouble();
     ModalResult = mrOk;
