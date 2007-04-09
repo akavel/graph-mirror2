@@ -213,7 +213,7 @@ void __fastcall TForm13::Button4Click(TObject *Sender)
     Func32::TSymbolList SymbolList;
     std::vector<std::string> Unknowns = Func32::FindUnknowns(ToString(Edit3->Text));
 
-    std::auto_ptr<TForm8> Form8(new TForm8(Application));
+    std::auto_ptr<TForm8> Form8(new TForm8(Application, Data, -1));
     for(unsigned I = 0; I < Unknowns.size(); I++)
     {
       Form8->ValueListEditor1->Values[Unknowns[I].c_str()] = 1;
@@ -244,7 +244,7 @@ void __fastcall TForm13::Button6Click(TObject *Sender)
   if(ListBox1->ItemIndex == -1)
     return;
 
-  TForm8 *Form8 = new TForm8(Application);
+  TForm8 *Form8 = new TForm8(Application, Data, ListBox1->ItemIndex);
   TUserModel &UserModel = Data.UserModels[ListBox1->ItemIndex];
 
   Form8->Caption = LoadRes(503);
