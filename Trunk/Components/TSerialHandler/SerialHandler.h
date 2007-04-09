@@ -44,12 +44,14 @@ private:
   TParityBit FParity;
   TStopBits FStopBits;
   bool FSynchronized;
+  TStringList *FSerialPorts;
 
   TNotifyEvent FOnBreak;
   TDataReceivedEvent FOnDataReceived;
   TNotifyEvent FOnTransmissionFinished;
 
   bool GetConnected() {return Handle.Get();}
+  TStrings* GetSerialPorts();
 
 protected:
   void DoBreak();
@@ -72,6 +74,7 @@ public:
   void Purge();
 
   __property bool Connected = {read=GetConnected};
+  __property TStrings* SerialPorts = {read=GetSerialPorts};
 
 __published:
   __property AnsiString Port = {read=FPort, write=FPort};

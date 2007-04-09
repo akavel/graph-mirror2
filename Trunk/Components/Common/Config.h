@@ -10,6 +10,9 @@
   #define _STLP_USE_EXCEPTIONS
   #undef _STLP_NO_DEBUG_EXCEPTIONS
 
+  #include <stdlib.h>
+  using std::abort;
+
 //Don't call external functions when build as package
 #if !defined(USEPACKAGES) && defined(CUSTOM_DEBUG_HANDLER)
   #define _STLP_DEBUG_TERMINATE 1  //Call __stl_debug_terminate() to terminate (eg. on assertion failed and similar)

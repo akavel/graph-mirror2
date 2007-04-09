@@ -381,5 +381,15 @@ void TAtiHandler::DebugLog(const AnsiString &Str)
   }
 }
 //---------------------------------------------------------------------------
+TStrings* TAtiHandler::GetSerialPorts()
+{
+  return SerialHandler->SerialPorts;
+}
+//---------------------------------------------------------------------------
+bool TAtiHandler::GetConnected()
+{
+  return SerialHandler->Connected;
+}
+//---------------------------------------------------------------------------
 
 
