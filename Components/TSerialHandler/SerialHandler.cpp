@@ -4,6 +4,7 @@
 #include "Config.h"
 #include "SerialHandler.h"
 #include "SerialThread.h"
+#include <Registry.hpp>
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
 // ValidCtrCheck is used to assure that the components created do not have
@@ -25,7 +26,7 @@ namespace Serialhandler
 //---------------------------------------------------------------------------
 __fastcall TSerialHandler::TSerialHandler(TComponent* Owner)
   : TComponent(Owner), FPort("COM1"), FSpeed(19200), FByteSize(8), FParity(pbNoParity), FStopBits(sbOneStopBit),
-    FSynchronized(true),
+    FSynchronized(true), FSerialPorts(new TStringList),
     FOnBreak(NULL), FOnDataReceived(NULL), FOnTransmissionFinished(NULL)
 {
 }
@@ -172,6 +173,23 @@ void TSerialHandler::SetDTR()
 void TSerialHandler::SetRTS()
 {
   Win32Check(EscapeCommFunction(GetHandle(), SETRTS));
+}
+//---------------------------------------------------------------------------
+TStrings* TSerialHandler::GetSerialPorts()
+{
+  if(FSerialPorts->Count == 0)
+  {
+    std::auto_ptr<TRegistry> Registry(new TRegistry);
+    Registry->RootKey = HKEY_LOCAL_MACHINE;
+    if(Registry->OpenKeyReadOnly("Hardware\\DeviceMap\\SerialComm"))
+    {
+      std::auto_ptr<TStrings> Strings(new TStringList);
+      Registry->GetValueNames(Strings.get());
+      for(int I = 0; I < Strings->Count; I++)
+        FSerialPorts->Add(Registry->ReadString(Strings->Strings[I]));
+    }
+  }
+  return FSerialPorts;
 }
 //---------------------------------------------------------------------------
 

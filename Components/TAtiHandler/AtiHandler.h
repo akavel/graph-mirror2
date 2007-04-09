@@ -65,6 +65,8 @@ class PACKAGE TAtiHandler : public TComponent
   template<typename TIter>
   static unsigned TAtiHandler::CalcCrc(TIter Begin, TIter End);
   static void DebugLog(const AnsiString &Str);
+  TStrings* GetSerialPorts();
+  bool GetConnected();
 
 public:
   __fastcall TAtiHandler(TComponent* Owner);
@@ -73,6 +75,9 @@ public:
   void ChangeSpeed(unsigned Speed);
   void SendTelegram(const BYTE *Telegram, unsigned Size, bool UsesAck = false);
 
+  __property TStrings* SerialPorts = {read=GetSerialPorts};
+  __property bool Connected = {read=GetConnected};
+  
 __published:
   __property AnsiString Port = {read=FPort, write=FPort};
 
@@ -82,4 +87,3 @@ __published:
 };
 //---------------------------------------------------------------------------
 #endif
- 
