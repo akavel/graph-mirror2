@@ -445,32 +445,46 @@ void TDraw::DrawAxes()
     else
       Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
 
-    double xGridMin = GetMinValue(Axes.xAxis.GridUnit, Axes.xAxis.Min, Axes.xAxis.Max, yAxisCross, Axes.xAxis.LogScl);
-    double GridPixelMin = xPointExact(xGridMin);
+    double GridMin = GetMinValue(Axes.xAxis.GridUnit, Axes.xAxis.Min, Axes.xAxis.Max, yAxisCross, Axes.xAxis.LogScl);
     double GridPixelScl = xScale * (Axes.xAxis.LogScl ? std::log(Axes.xAxis.GridUnit) : Axes.xAxis.GridUnit);
 
-    for(double x = GridPixelMin; x < AxesRect.Right - Size(5); x += GridPixelScl)
-      Context.DrawLine(x + 0.5, AxesRect.Top, x + 0.5, AxesRect.Bottom);
+    bool ShowGridTick = !Axes.xAxis.LogScl && Axes.xAxis.ShowTicks && Axes.xAxis.TickUnit > Axes.xAxis.GridUnit;
+    double MaxPixel = AxesRect.Right - Size(5);
+    double MinTickPixel = ShowGridTick ? xPointExact(xTickMin) : MaxPixel;
+    double TickPixelScl = Axes.xAxis.TickUnit * xScale;
+    double x = xPointExact(GridMin);
+
+    //Draw dotted grid lines. If Tick unit is greater than the Grid unit, the ticks are drawn as solid
+    //lines from one side to the other. A grid line is not drawn if it is within one pixel from a
+    //grid line. This is done to avoid rounding problems where tick lines and grid lines are calculated
+    //to have one pixel in difference while they actually should be on top of each other.
+    for(double x2 = MinTickPixel; x <= MaxPixel; x2 += TickPixelScl)
+    {
+      for(; x < x2 + 1; x += GridPixelScl)
+        Context.DrawLine(x + 0.5, AxesRect.Top, x + 0.5, AxesRect.Bottom);
+
+      if(x < x2 + 1 && x> x2 - 1)
+        x += GridPixelScl;
+
+      if(ShowGridTick && x2 < MaxPixel)
+      {
+        //Draw solid lines instead of ticks
+        Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
+        Context.DrawLine(x2 + 0.5, AxesRect.Top, x2 + 0.5, AxesRect.Bottom);
+        Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
+      }
+    }
 
     if(Axes.xAxis.LogScl)
     {
       Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-      for(double x = xGridMin / Axes.xAxis.GridUnit; x < Axes.xAxis.Max; x *= Axes.xAxis.GridUnit)
+      for(double x = GridMin / Axes.xAxis.GridUnit; x < Axes.xAxis.Max; x *= Axes.xAxis.GridUnit)
         for(unsigned n = 1; n < 9; n++)
         {
           double X = xPoint(x*(1+(Axes.xAxis.GridUnit-1)*n/9));
           if(X > AxesRect.Left) //Don't draw outside area (if Axes Style is Boxed)
             Context.DrawLine(X, AxesRect.Top, X, AxesRect.Bottom);
         }
-    }
-    else if(Axes.xAxis.ShowTicks && Axes.xAxis.TickUnit > Axes.xAxis.GridUnit)
-    {
-      //Draw solid lines instead of ticks
-      Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-      double xPixelScl = (Axes.xAxis.LogScl ? std::log(Axes.xAxis.TickUnit) : Axes.xAxis.TickUnit) * xScale;
-      for(double x = xPointExact(xTickMin); x < AxesRect.Right - Size(5); x += xPixelScl)
-        if(std::abs(x - xPixelCross) > 1) //Don't show at or beside axis (when scaled it might be moved a pixel or two)
-          Context.DrawLine(x, AxesRect.Top, x, AxesRect.Bottom);
     }
   }
 
@@ -481,17 +495,40 @@ void TDraw::DrawAxes()
     else
       Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
 
-    double yGridMin = GetMinValue(Axes.yAxis.GridUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
-    double GridPixelMin = yPointExact(yGridMin);
+    double GridMin = GetMinValue(Axes.yAxis.GridUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
     double GridPixelScl = yScale * (Axes.yAxis.LogScl ? std::log(Axes.yAxis.GridUnit) : Axes.yAxis.GridUnit);
 
-    for(double y = GridPixelMin; y > AxesRect.Top + Size(5); y -= GridPixelScl)
-      Context.DrawLine(AxesRect.Left, y + 0.5, AxesRect.Right, y + 0.5);
+    bool ShowGridTick = !Axes.yAxis.LogScl && Axes.yAxis.ShowTicks && Axes.yAxis.TickUnit > Axes.yAxis.GridUnit;
+    double MaxPixel = AxesRect.Top + Size(5);
+    double MinTickPixel = ShowGridTick ? yPointExact(yTickMin) : MaxPixel;
+    double TickPixelScl = Axes.yAxis.TickUnit * yScale;
+    double y = yPointExact(GridMin);
+
+    //Draw dotted grid lines. If Tick unit is greater than the Grid unit, the ticks are drawn as solid
+    //lines from one side to the other. A grid line is not drawn if it is within one pixel from a
+    //grid line. This is done to avoid rounding problems where tick lines and grid lines are calculated
+    //to have one pixel in difference while they actually should be on top of each other.
+    for(double y2 = MinTickPixel; y >= MaxPixel; y2 -= TickPixelScl)
+    {
+      for(; y > y2 + 1; y -= GridPixelScl)
+        Context.DrawLine(AxesRect.Left, y + 0.5, AxesRect.Right, y + 0.5);
+
+      if(y < y2 + 1 && y > y2 - 1)
+        y -= GridPixelScl;
+
+      if(ShowGridTick && y2 > MaxPixel)
+      {
+        //Draw solid lines instead of ticks
+        Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
+        Context.DrawLine(AxesRect.Left, y2 + 0.5, AxesRect.Right, y2 + 0.5);
+        Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
+      }
+    }
 
     if(Axes.yAxis.LogScl)
     {
       Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-      for(double y = yGridMin / Axes.yAxis.GridUnit; y < Axes.yAxis.Max; y *= Axes.yAxis.GridUnit)
+      for(double y = GridMin / Axes.yAxis.GridUnit; y < Axes.yAxis.Max; y *= Axes.yAxis.GridUnit)
         for(unsigned n = 1; n < 9; n++)
         {
           double Y = yPoint(y*(1+(Axes.yAxis.GridUnit-1)*n/9));
@@ -499,15 +536,6 @@ void TDraw::DrawAxes()
             break;
           Context.DrawLine(AxesRect.Left, Y, AxesRect.Right, Y);
         }
-    }
-    else if(Axes.yAxis.ShowTicks && Axes.yAxis.TickUnit > Axes.yAxis.GridUnit)
-    {
-      //Draw solid lines instead of ticks
-      Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-      double yPixelScl = (Axes.yAxis.LogScl ? std::log(Axes.yAxis.TickUnit) : Axes.yAxis.TickUnit) * yScale;
-      for(double y = yPointExact(yTickMin); y > AxesRect.Top + Size(5); y -= yPixelScl)
-        if(std::abs(y - yPixelCross) > 1) //Don't show at or beside axis (when scaled it might be moved a pixel or two)
-          Context.DrawLine(AxesRect.Left, y + 0.5, AxesRect.Right, y + 0.5); //Round the same as grid as they may appear over each other 
     }
   }
 

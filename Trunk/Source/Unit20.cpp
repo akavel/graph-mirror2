@@ -9,6 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#include "Unit19.h"
 #include "Unit20.h"
 #include "vfw.h"
 //---------------------------------------------------------------------------
@@ -16,8 +17,8 @@
 #pragma link "MediaPlayerEx"
 #pragma resource "*.dfm"
 //--------------------------------------------------------------------------
-__fastcall TForm20::TForm20(TComponent* Owner)
-  : TTntForm(Owner), BackwardDirection(false)
+__fastcall TForm20::TForm20(TComponent* Owner, const ::TAnimationInfo &AAnimationInfo)
+  : TTntForm(Owner), BackwardDirection(false), AnimationInfo(AAnimationInfo)
 {
   ScaleForm(this);
   TranslateProperties(this);
@@ -25,6 +26,7 @@ __fastcall TForm20::TForm20(TComponent* Owner)
 
   dwICValue = dwICValue; //Avoid stupid warning
   Panel1->DoubleBuffered;
+  LabeledEdit1->EditLabel->Caption = AnimationInfo.Constant.c_str() + AnsiString("=");
 }
 //---------------------------------------------------------------------------
 void TForm20::ShowAnimation(const AnsiString &FileName)
@@ -48,18 +50,10 @@ void __fastcall TForm20::Save1Click(TObject *Sender)
     Win32Check(CopyFile(MediaPlayer1->FileName.c_str(), SaveDialog1->FileName.c_str(), false));
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm20::Open1Click(TObject *Sender)
-{
-  if(OpenDialog1->Execute())
-    ShowAnimation(OpenDialog1->FileName);
-}
-//---------------------------------------------------------------------------
 void __fastcall TForm20::MediaPlayer1Signal(TMediaPlayerEx *Sender,
       unsigned Position)
 {
-  TrackBar1->OnChange = NULL;
-  TrackBar1->Position = MediaPlayer1->Reverse ? Position : Position - 1;
-  TrackBar1->OnChange = &TrackBar1Change;
+  PosChanged(MediaPlayer1->Reverse ? Position : Position - 1);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm20::ToolButton1Click(TObject *Sender)
@@ -87,7 +81,7 @@ void __fastcall TForm20::ToolButton3Click(TObject *Sender)
 {
   MediaPlayer1->Stop();
   MediaPlayer1->Rewind();
-  TrackBar1->Position = 0;
+  PosChanged(0);
   ToolButton1->Enabled = true;
   ToolButton2->Enabled = false;
   ToolButton3->Enabled = false;
@@ -108,9 +102,7 @@ void __fastcall TForm20::ToolButton6Click(TObject *Sender)
   try
   {
     MediaPlayer1->Step();
-    TrackBar1->OnChange = NULL;
-    TrackBar1->Position = MediaPlayer1->Position;
-    TrackBar1->OnChange = &TrackBar1Change;
+    PosChanged(MediaPlayer1->Position);
   }
   catch(EMCIDeviceError &E)
   { //Ignore Boundary errors;
@@ -122,9 +114,7 @@ void __fastcall TForm20::ToolButton7Click(TObject *Sender)
   try
   {
     MediaPlayer1->Back();
-    TrackBar1->OnChange = NULL;
-    TrackBar1->Position = MediaPlayer1->Position;
-    TrackBar1->OnChange = &TrackBar1Change;
+    PosChanged(MediaPlayer1->Position);
   }
   catch(EMCIDeviceError &E)
   { //Ignore Boundary errors;
@@ -169,12 +159,22 @@ void __fastcall TForm20::TntFormClose(TObject *Sender,
 void __fastcall TForm20::TrackBar1Change(TObject *Sender)
 {
   MediaPlayer1->Position = TrackBar1->Position;
+  PosChanged(MediaPlayer1->Position);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm20::TrackBar1KeyPress(TObject *Sender, char &Key)
 {
   if(Key == VK_ESCAPE)
     Close();
+}
+//---------------------------------------------------------------------------
+void TForm20::PosChanged(unsigned Position)
+{
+  TrackBar1->OnChange = NULL;
+  TrackBar1->Position = Position;
+  TrackBar1->OnChange = &TrackBar1Change;
+
+  LabeledEdit1->Text = AnimationInfo.Min + AnimationInfo.Step * Position;
 }
 //---------------------------------------------------------------------------
 

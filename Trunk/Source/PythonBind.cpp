@@ -146,10 +146,10 @@ static PyObject* PluginSetActionAttr(PyObject *Self, PyObject *Args, PyObject *K
       Action->ShortCut = TextToShortCut(ShortCut);
     if(IconName)
     {
-      ChDir(ExtractFileDir(Application->ExeName) + "\\Plugins");
-      std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-      Bitmap->LoadFromFile(IconName);
-      Action->ImageIndex = Form1->ImageList2->AddMasked(Bitmap.get(), Bitmap->TransparentColor);
+//      ChDir(ExtractFileDir(Application->ExeName) + "\\Plugins");   //Don't change current dir when called from command line
+//      std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
+//      Bitmap->LoadFromFile(IconName);
+//      Action->ImageIndex = Form1->ImageList2->AddMasked(Bitmap.get(), Bitmap->TransparentColor);
     }
     if(Enabled != -1)
       Action->Enabled = Enabled;
