@@ -286,7 +286,7 @@ namespace Func32
 
     //Add arguments before symbol names, so they take precedens.
     for(unsigned I = 0; I < Args.size(); ++I)
-      NoCaseSymbols.add(Args[I].c_str(), TElem(CodeVariable, I, 0));
+      NoCaseSymbols.add(ToLower(Args[I]).c_str(), TElem(CodeVariable, I, 0));
 
     if(SymbolList)
     { //WARNING: Do not remove {} (bcc 5.6.4 bug)
@@ -306,14 +306,14 @@ namespace Func32
     //A constant may not be followed by a alpha-numeric character
     //A constant may not be followed a a parenthesis
     Constant =
-        lexeme_d[ nocase_d[NoCaseSymbols[TAssign(Constant.List)]] >> (eps_p - alnum_p)
+        lexeme_d[ as_lower_d[NoCaseSymbols[TAssign(Constant.List)]] >> (eps_p - alnum_p)
                 | Symbols[TAssign(Constant.List)] >> (eps_p - alnum_p)
                 ] >> !(+ch_p('('))[TDoError(ecParAfterConst)];
 
     //A function name may not be followd by character og digit, because they should be part of the name.
     //If an aplhanumeric character is found afterwards, the pushed function is popped
     Function =
-        lexeme_d[nocase_d[FuncSymbols[PushFront(Function.List)][Function.Arg = 1] >> (eps_p - alnum_p)]] >>
+        lexeme_d[as_lower_d[FuncSymbols[PushFront(Function.List)][Function.Arg = 1] >> (eps_p - alnum_p)]] >>
             (   '(' >> Expression[TPushBack(Function.List)] >>
                 *(',' >> AssertExpression_p(Expression)[TPushBack(Function.List)])[++Function.Arg] >> AssertEndPar_p(ch_p(')'))
             |   FactorSeq[TPushBack(Function.List)]
@@ -332,9 +332,9 @@ namespace Func32
 
     Expression =
         Relation[Expression.List = arg1] >>
-           *(   lexeme_d[nocase_d["and"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeAnd)])
-            |   lexeme_d[nocase_d["or"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeOr)])
-            |   lexeme_d[nocase_d["xor"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeXor)])
+           *(   lexeme_d[as_lower_d["and"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeAnd)])
+            |   lexeme_d[as_lower_d["or"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeOr)])
+            |   lexeme_d[as_lower_d["xor"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeXor)])
             );
 
     Sum =
