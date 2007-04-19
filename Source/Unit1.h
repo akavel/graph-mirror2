@@ -58,7 +58,7 @@
 #include <boost/scoped_ptr.hpp>
 //---------------------------------------------------------------------------
 enum TCursorState {csIdle, csAddLabel, csMoveLabel, csMoveLegend, csZoomWindow, csMove, csMoving};
-enum TSaveError {seNoError, seFileAccess, seOutOfResources, sePdfError, seDllError};
+enum TSaveError {seNoError, seFileAccess, seOutOfResources, sePdfError, seDllError, seUnknownFileType};
 
 enum TIconIndex
 {
@@ -495,6 +495,7 @@ private:	// User declarations
   void MoveAndSnapLabel(int dx, int dy, bool Snap);
   void __fastcall DebugLine(System::TObject* Sender, const AnsiString Line, bool &Discard); //Write debug text from dxGetText
   void ChangeVisible(boost::shared_ptr<TGraphElem> GraphElem);
+  void HandleCommandLine();
 
   int AddImage(int Index, TColor Color);
   int AddImage(TColor Color, TBrushStyle Style);
@@ -545,6 +546,7 @@ public:		// User declarations
   void __fastcall BeginUpdate();
   void __fastcall EndUpdate();
 
+  TSaveError SaveAsImage(const AnsiString &FileName);
   TSaveError SaveAsImage(const AnsiString &FileName, int ImageFileType);
   bool LoadFromFile(const AnsiString &FileName, bool AddToRecent = true, bool ShowErrorMessages = true);
   void LoadDefault();

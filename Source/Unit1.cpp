@@ -154,6 +154,47 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   BOOST_ASSERT(TreeView->Items->Count == 0);
 }
 //---------------------------------------------------------------------------
+void TForm1::HandleCommandLine()
+{
+  //Do not initialize data when OLE is used. This is done through InitNew() and Load() in IPersistStorage
+  if(!FindCmdLineSwitch("EMBEDDING"))
+  {
+    if(!ParamCount() || ParamStr(1)[1] == '/' || ParamStr(1)[1] == '-' || !LoadFromFile(ParamStr(1)))
+      LoadDefault();
+    Redraw();
+
+    if(ParamCount() > 1)
+    {
+      typedef std::map<AnsiString,AnsiString> TCommandList;
+      TCommandList CommandList;
+      for(int I = 1; I <= ParamCount(); I++)
+      {
+        AnsiString Str = ParamStr(I);
+        if(Str[1] == '-' || Str[1] == '/')
+        {
+          int I = Str.Pos('=');
+          if(I == -1)
+            CommandList[Str.SubString(2, MAXINT).LowerCase()]; //Just add empty command
+          else
+            CommandList[Str.SubString(2, I - 2).LowerCase()] = Str.SubString(I + 1, MAXINT-1);
+        }
+      }
+
+      TCommandList::iterator Iter = CommandList.find("si");
+      if(Iter != CommandList.end())
+      {
+        int ImageWidth = CommandList["width"].ToIntDef(Image1->Width);
+        int ImageHeight = CommandList["height"].ToIntDef(Image1->Height);
+        ImageOptions.reset(new TImageOptions(ImageWidth, ImageHeight));
+        ImageOptions->UseCustomSize = true;
+        AnsiString FileName = Iter->second;
+        SaveAsImage(FileName);
+        Close();
+      }
+    }
+  }
+}
+//---------------------------------------------------------------------------
 void __fastcall TForm1::FormShow(TObject *Sender)
 {
   //Load file passed as the first argument to the program
@@ -171,13 +212,7 @@ void __fastcall TForm1::FormShow(TObject *Sender)
     Panel1->Height = 0;
   }
 
-  //Do not initialize data when OLE is used. This is done through InitNew() and Load() in IPersistStorage
-  if(!FindCmdLineSwitch("EMBEDDING"))
-  {
-    if(!ParamCount() || ParamStr(1)[1] == '/' || ParamStr(1)[1] == '-' || !LoadFromFile(ParamStr(1)))
-      LoadDefault();
-    Redraw();
-  }
+  HandleCommandLine();
 
   if(Data.Property.CheckForUpdate)
   {
@@ -2731,6 +2766,26 @@ TSaveError SaveAsPdf(const AnsiString &FileName, Graphics::TBitmap *Bitmap, cons
     MessageBox("PDFlib exception: [" + ToString(ex.get_errnum()) + "] " + ex.get_apiname() + ": " + ex.get_errmsg(), "PDFlib exception");
     return sePdfError;
   }
+}
+
+TSaveError TForm1::SaveAsImage(const AnsiString &FileName)
+{
+  int ImageFileType;
+  AnsiString FileExt = ExtractFileExt(FileName);
+  if(FileExt.AnsiCompareIC(".emf") == 0)
+    ImageFileType = ifMetafile;
+  else if(FileExt.AnsiCompareIC(".bmp") == 0)
+    ImageFileType = ifBitmap;
+  else if(FileExt.AnsiCompareIC(".png") == 0)
+    ImageFileType = ifPng;
+  else if(FileExt.AnsiCompareIC(".jpeg") == 0 || FileExt.AnsiCompareIC(".jpg") == 0)
+    ImageFileType = ifJpeg;
+  else if(FileExt.AnsiCompareIC(".pdf") == 0)
+    ImageFileType = ifPdf;
+  else
+    return seUnknownFileType;
+
+  return SaveAsImage(FileName, ImageFileType);
 }
 
 TSaveError TForm1::SaveAsImage(const AnsiString &FileName, int ImageFileType)

@@ -32,7 +32,6 @@ __published:	// IDE-managed Components
   TPanel *Panel1;
   TSaveDialog *SaveDialog1;
   TTntPopupMenu *PopupMenu1;
-  TTntMenuItem *Open1;
   TTntMenuItem *Save1;
   TOpenDialog *OpenDialog1;
   TImageList *ImageList1;
@@ -56,8 +55,8 @@ __published:	// IDE-managed Components
   TToolButton *ToolButton4;
   TToolButton *ToolButton5;
   TToolButton *ToolButton6;
+  TLabeledEdit *LabeledEdit1;
   void __fastcall Save1Click(TObject *Sender);
-  void __fastcall Open1Click(TObject *Sender);
   void __fastcall MediaPlayer1Signal(TMediaPlayerEx *Sender,
           unsigned Position);
   void __fastcall ToolButton1Click(TObject *Sender);
@@ -75,8 +74,12 @@ __published:	// IDE-managed Components
   void __fastcall TrackBar1KeyPress(TObject *Sender, char &Key);
 private:	// User declarations
   bool BackwardDirection;
+  const class TAnimationInfo &AnimationInfo;
+
+  void PosChanged(unsigned Position);
+
 public:		// User declarations
-  __fastcall TForm20(TComponent* Owner);
+  __fastcall TForm20(TComponent* Owner, const ::TAnimationInfo &AAnimationInfo);
   void ShowAnimation(const AnsiString &FileName);
 };
 //---------------------------------------------------------------------------

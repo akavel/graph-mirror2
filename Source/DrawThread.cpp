@@ -1103,17 +1103,22 @@ void TDrawThread::CreateEquation(TRelation &Relation)
   double y = Axes.yAxis.Max + dy;
   for(int Y = AxesRect.Top - 1; Y < AxesRect.Bottom + 1; Y++, y -= dy)
   {
-    double LastResult = NAN;
+    double Result[3] = {NAN, NAN};
     int X = AxesRect.Left - 1;
     for(double x = Axes.xAxis.Min - dx / 2; X < AxesRect.Right + 1; X++, x += dx)
     {
       Args[0] = x;
       Args[1] = y;
-      double Result = Relation.Eval(Args, CalcError);
-      if((Result < 0) == (LastResult > 0) && !_isnan(LastResult) && !_isnan(Result))
+      Result[2] = Relation.Eval(Args, CalcError);
+
+      //If the sign has changed, both last and current result is valid, and both last and current
+      //value is increasing/decreasing (to avoid false vertical line at y=1/x)
+      if((Result[1] < 0) == (Result[2] > 0) && !_isnan(Result[1]) && !_isnan(Result[2]) &&
+        (Result[0] < Result[1]) == (Result[1] < Result[2]))
         Points.push_back(TRect(X - S1, Y - S1, X + S2, Y + S2));
 
-      LastResult = Result;
+      Result[0] = Result[1];
+      Result[1] = Result[2];
     }
 
     if(Aborted)
@@ -1123,17 +1128,22 @@ void TDrawThread::CreateEquation(TRelation &Relation)
   double x = Axes.xAxis.Min - dx / 2;
   for(int X = AxesRect.Left - 1; X < AxesRect.Right + 1; X++, x += dx)
   {
-    double LastResult = NAN;
+    double Result[3] = {NAN, NAN};
     int Y = AxesRect.Top - 1;
     for(double y = Axes.yAxis.Max + dy; Y < AxesRect.Bottom + 1; Y++, y -= dy)
     {
       Args[0] = x;
       Args[1] = y;
-      double Result = Relation.Eval(Args, CalcError);
-      if((Result < 0) != (LastResult < 0) && !_isnan(LastResult) && !_isnan(Result))
+      Result[2] = Relation.Eval(Args, CalcError);
+
+      //If the sign has changed, both last and current result is valid, and both last and current
+      //value is increasing/decreasing (to avoid false vertical line at y=1/x)
+      if((Result[1] < 0) != (Result[2] < 0) && !_isnan(Result[1]) && !_isnan(Result[2]) &&
+        (Result[0] < Result[1]) == (Result[1] < Result[2]))
         Points.push_back(TRect(X - S1, Y - S1, X + S2, Y + S2));
 
-      LastResult = Result;
+      Result[0] = Result[1];
+      Result[1] = Result[2];
     }
 
     if(Aborted)

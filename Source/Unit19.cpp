@@ -190,7 +190,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   //Restore constant in case we want to create a new animation with another constant
   Data.CustomFunctions.Replace(AnimationInfo.Constant, OriginalValue);
   ProgressForm1->Close();
-  CreateForm<TForm20>()->ShowAnimation(TempFile);
+  CreateForm<TForm20>(AnimationInfo)->ShowAnimation(TempFile);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button3Click(TObject *Sender)

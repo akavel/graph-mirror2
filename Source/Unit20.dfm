@@ -113,8 +113,24 @@ object Form20: TForm20
         Hint = 'Options'
         DropdownMenu = PopupMenu1
         ImageIndex = 7
+        OnClick = ToolButton6Click
       end
     end
+  end
+  object LabeledEdit1: TLabeledEdit
+    Left = 280
+    Top = 368
+    Width = 97
+    Height = 21
+    Anchors = [akRight, akBottom]
+    Color = clBtnFace
+    EditLabel.Width = 62
+    EditLabel.Height = 13
+    EditLabel.Caption = 'LabeledEdit1'
+    LabelPosition = lpLeft
+    LabelSpacing = 3
+    ReadOnly = True
+    TabOrder = 3
   end
   object SaveDialog1: TSaveDialog
     DefaultExt = 'avi'
@@ -193,12 +209,6 @@ object Form20: TForm20
     end
     object N1: TTntMenuItem
       Caption = '-'
-    end
-    object Open1: TTntMenuItem
-      Caption = 'Open...'
-      Hint = 'Open an animation file.'
-      ShortCut = 16463
-      OnClick = Open1Click
     end
     object Save1: TTntMenuItem
       Caption = 'Save as...'
