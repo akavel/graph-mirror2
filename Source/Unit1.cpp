@@ -2574,7 +2574,7 @@ void TForm1::SetCursorState(TCursorState State)
     {
       MoveAction->Checked = false;
       Shape1->Visible = false;
-      if(CursorState != csIdle)
+      if(CursorState == csZoomWindow)
         StatusBar1->Panels->Items[0]->Text = ""; //Only if state has changed
       TPoint Pos = Image1->ScreenToClient(Mouse->CursorPos);
       if(!!Data.FindLabel(Pos.x, Pos.y) || Draw.InsideLegend(Pos.x, Pos.y))
