@@ -205,6 +205,7 @@ class TFuncData
   void CopyReplace(TConstIterator Iter, const std::vector<TConstIterator> &Args);
   bool CheckRecursive(std::vector<const TFuncData*> &FuncStack) const;
   bool CheckRecursive() const;
+  static void HandleParseError(const EParseError &E, const char* Where, unsigned Pos);
 
 public:
   TFuncData() {}
