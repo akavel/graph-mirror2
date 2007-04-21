@@ -418,28 +418,11 @@ namespace Func32
     //Should not be necesarry. Bug in BCB6? Error on "sin ¤" is not caught without
     catch(parser_error<const EParseError, const char*> &E)
     {
-      if(std::isalpha(*E.where))
-      {
-        const char *Ch;
-        for(Ch = E.where; std::isalnum(*Ch); ++Ch);
-        throw EParseError(ecUnknownVar, E.where - Begin, std::string(E.where, Ch));
-      }
-      throw EParseError(E.descriptor.ErrorCode, E.where - Begin, E.descriptor.Str);
+      HandleParseError(E.descriptor, E.where, E.where - Begin);
     }
     catch(parser_error<EParseError, const char*> &E)
     {
-      if(std::isalpha(*E.where))
-      {
-        const char *Ch;
-        for(Ch = E.where; std::isalnum(*Ch); ++Ch);
-        throw EParseError(ecUnknownVar, E.where - Begin, std::string(E.where, Ch));
-      }
-
-      //Convert to a comma error if the error was detected at a comma (eg. "(0,8)")
-      if(*E.where == ',')
-        throw EParseError(ecCommaError, E.where - Begin);
-
-      throw EParseError(E.descriptor.ErrorCode, E.where - Begin, E.descriptor.Str);
+      HandleParseError(E.descriptor, E.where, E.where - Begin);
     }
     catch(EFuncError &E)
     {
@@ -449,6 +432,22 @@ namespace Func32
     {
       throw EFuncError(ecInternalError);
     }
+  }
+//---------------------------------------------------------------------------
+  void TFuncData::HandleParseError(const EParseError &E, const char* Where, unsigned Pos)
+  {
+    if(E.ErrorCode != ecArgCountError && std::isalpha(*Where))
+    {
+      const char *Ch;
+      for(Ch = Where; std::isalnum(*Ch); ++Ch);
+      throw EParseError(ecUnknownVar, Pos, std::string(Where, Ch));
+    }
+
+    //Convert to a comma error if the error was detected at a comma (eg. "(0,8)")
+    if(*Where == ',')
+      throw EParseError(ecCommaError, Pos);
+
+    throw EParseError(E.ErrorCode, Pos, E.Str);
   }
 //---------------------------------------------------------------------------
 } //namespace Func32

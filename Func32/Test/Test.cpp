@@ -284,6 +284,11 @@ void Test()
   Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4
   TestError("1.2.3", 0, ecInvalidNumber);
 
+  //Test functions with arguments
+  TestError("round x", 1.2345, ecArgCountError);
+  TestError("round(x)", 1.2345, ecArgCountError);
+  Test("round(x, 0)", 1.2345, 1);
+
   //Implied multiplication
   Test("10sin(pi/2)x", 10, 100);
   Test("sin(pi*x)4x", 1.5, -6);
