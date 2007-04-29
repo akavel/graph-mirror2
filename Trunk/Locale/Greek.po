@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-03-24 08:08\n"
+"POT-Creation-Date: 2007-04-29 21:42\n"
 "PO-Revision-Date: 2007-02-19 22:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -402,7 +402,6 @@ msgid "Creates a new coordinate system."
 msgstr "Δημιουργία νέου συστήματος συτεταγμένων."
 
 #. Form1..ActionManager..OpenAction("Open...")..Caption
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Caption
 msgid "Open..."
 msgstr "Άνοιγμα..."
 
@@ -978,12 +977,12 @@ msgstr "Εμφάνιση λεζάντας"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Εμφάνιση λεζάντας στο σύστημα συντεταγμένων "
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Caption
+#. Form1..PopupMenu4..Legend_Font("Font...")..Caption
 #, fuzzy
-msgid "Font"
+msgid "Font..."
 msgstr "Γραμματοσειρά"
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Hint
+#. Form1..PopupMenu4..Legend_Font("Font...")..Hint
 #, fuzzy
 msgid "Change the font of the legend."
 msgstr "Επιλογή γραμματοσειράς τίτλου."
@@ -2173,11 +2172,6 @@ msgstr ""
 "Ανάστροφο παίξιμο μέχρι το τέλος. Είναι η πιο χρήσιμη εφαρμογή τηε εντολής  "
 "''Επανάληψη''"
 
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Hint
-#, fuzzy
-msgid "Open an animation file."
-msgstr "Άνοιγμα φακέλλου  %s."
-
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 #, fuzzy
 msgid "Save the animation to a file."
@@ -3328,6 +3322,12 @@ msgstr ""
 "Το τέλος των διαστημάτων πρέπει να είναι μεγαλύτερο από την αρχή των "
 "διαστημάτων και %s πρέπει να είναι μεγαλύτερος από το 0."
 
+msgid "Invalid model name."
+msgstr ""
+
+msgid "A model of that name already exist."
+msgstr ""
+
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Η παράγωγος της συνάρτησης δεν ορίζεται στο %s=%s"
 
@@ -4094,6 +4094,10 @@ msgstr "Αριθμός αντιτύπων:"
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Βάλτε ποσοστό του κανονικού μεγέθους."
+
+#, fuzzy
+#~ msgid "Open an animation file."
+#~ msgstr "Άνοιγμα φακέλλου  %s."
 
 #, fuzzy
 #~ msgid "Version -%s"

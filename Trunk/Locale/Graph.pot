@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-03-24 08:08\n"
-"PO-Revision-Date: 2007-03-24 08:08\n"
+"POT-Creation-Date: 2007-04-29 21:42\n"
+"PO-Revision-Date: 2007-04-29 21:42\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -402,7 +402,6 @@ msgid "Creates a new coordinate system."
 msgstr ""
 
 #. Form1..ActionManager..OpenAction("Open...")..Caption
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Caption
 msgid "Open..."
 msgstr ""
 
@@ -981,11 +980,11 @@ msgid "Select to show a legend in the coordinate "
 "system."
 msgstr ""
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Caption
-msgid "Font"
+#. Form1..PopupMenu4..Legend_Font("Font...")..Caption
+msgid "Font..."
 msgstr ""
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Hint
+#. Form1..PopupMenu4..Legend_Font("Font...")..Hint
 msgid "Change the font of the legend."
 msgstr ""
 
@@ -2131,10 +2130,6 @@ msgid "Play backwards when the end of the animation is reached. This is most "
 "command."
 msgstr ""
 
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Hint
-msgid "Open an animation file."
-msgstr ""
-
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
 msgstr ""
@@ -3223,6 +3218,12 @@ msgstr ""
 
 msgid "The end of interval must be greater than the start of interval and %s "
 "must be greater than 0."
+msgstr ""
+
+msgid "Invalid model name."
+msgstr ""
+
+msgid "A model of that name already exist."
 msgstr ""
 
 msgid "The derivative of the function is not defined at "
