@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2007-03-24 08:08\n"
+"POT-Creation-Date: 2007-04-29 21:42\n"
 "PO-Revision-Date: 2007-03-07 00:40+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Ivan Johansen\n"
@@ -393,7 +393,6 @@ msgid "Creates a new coordinate system."
 msgstr "Opretter et nyt koordinatsystem."
 
 #. Form1..ActionManager..OpenAction("Open...")..Caption
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Caption
 msgid "Open..."
 msgstr "Åbn..."
 
@@ -961,11 +960,12 @@ msgstr "Vis signaturforklaring"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Vælg for at vise en signaturforklaring i koordinatsystemet."
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Caption
-msgid "Font"
+#. Form1..PopupMenu4..Legend_Font("Font...")..Caption
+#, fuzzy
+msgid "Font..."
 msgstr "Skrifttype"
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Hint
+#. Form1..PopupMenu4..Legend_Font("Font...")..Hint
 msgid "Change the font of the legend."
 msgstr "Skift skrifttype på signaturforklaringen."
 
@@ -2122,10 +2122,6 @@ msgstr ""
 "Baglæns afspilning når animationen afsluttes. Dette er mest anvendeligt i "
 "kombination med kommandoen \"Gentag\"."
 
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Hint
-msgid "Open an animation file."
-msgstr "Åbn animationsfil."
-
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
 msgstr "Gem animationen i en fil."
@@ -3218,6 +3214,12 @@ msgstr ""
 "Slutningen på intervallet skal være større end starten på intervallet og %s "
 "skal være større end 0."
 
+msgid "Invalid model name."
+msgstr ""
+
+msgid "A model of that name already exist."
+msgstr ""
+
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Funktionens afledede er ikke defineret for %s=%s"
 
@@ -3956,6 +3958,9 @@ msgstr "Vælg hvor mange eksemplarer der skal udskrives."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Indtast procentdel af oprindelig størrelse."
+
+#~ msgid "Open an animation file."
+#~ msgstr "Åbn animationsfil."
 
 #, fuzzy
 #~ msgid "Version -%s"

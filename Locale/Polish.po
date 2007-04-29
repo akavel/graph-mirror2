@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-03-24 08:08\n"
+"POT-Creation-Date: 2007-04-29 21:42\n"
 "PO-Revision-Date: 2007-02-19 22:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -402,7 +402,6 @@ msgid "Creates a new coordinate system."
 msgstr "Tworzy nowy układ współrzędnych."
 
 #. Form1..ActionManager..OpenAction("Open...")..Caption
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Caption
 msgid "Open..."
 msgstr "Otwórz..."
 
@@ -974,11 +973,12 @@ msgstr "Pokazuj legendę"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Zaznacz aby legenda była widoczna w układzie współrzędnych."
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Caption
-msgid "Font"
+#. Form1..PopupMenu4..Legend_Font("Font...")..Caption
+#, fuzzy
+msgid "Font..."
 msgstr "Czcionka"
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Hint
+#. Form1..PopupMenu4..Legend_Font("Font...")..Hint
 msgid "Change the font of the legend."
 msgstr "Zmienia czcionkę legendy."
 
@@ -2161,11 +2161,6 @@ msgid ""
 "in combination with the \"Repeat\" command."
 msgstr ""
 
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Hint
-#, fuzzy
-msgid "Open an animation file."
-msgstr "Otwiera plik %s."
-
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
 msgstr ""
@@ -3290,6 +3285,12 @@ msgid ""
 "be greater than 0."
 msgstr ""
 
+msgid "Invalid model name."
+msgstr ""
+
+msgid "A model of that name already exist."
+msgstr ""
+
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Pochodna funkcji nie istnieje w punkcie %s=%s"
 
@@ -3944,6 +3945,10 @@ msgstr "Wprowadź liczbę kopii, które chcesz wydrukować."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Podaj procent oryginalnego rozmiaru."
+
+#, fuzzy
+#~ msgid "Open an animation file."
+#~ msgstr "Otwiera plik %s."
 
 #, fuzzy
 #~ msgid "Version -%s"

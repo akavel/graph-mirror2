@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2007-03-24 08:08\n"
+"POT-Creation-Date: 2007-04-29 21:42\n"
 "PO-Revision-Date: 2007-03-07 00:40+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Frank Hüttemeister & Michael Bach Ipsen <deutsch@padowan.dk>\n"
@@ -396,7 +396,6 @@ msgid "Creates a new coordinate system."
 msgstr "Erstellt ein neues Koordinatensystem."
 
 #. Form1..ActionManager..OpenAction("Open...")..Caption
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Caption
 msgid "Open..."
 msgstr "Öffnen..."
 
@@ -959,11 +958,12 @@ msgstr "Legende anzeigen"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Zeigt die Legende im Koordinatensystem an."
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Caption
-msgid "Font"
+#. Form1..PopupMenu4..Legend_Font("Font...")..Caption
+#, fuzzy
+msgid "Font..."
 msgstr "Schriftart"
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Hint
+#. Form1..PopupMenu4..Legend_Font("Font...")..Hint
 msgid "Change the font of the legend."
 msgstr "Wählen Sie die Schriftart für die Legende."
 
@@ -2140,10 +2140,6 @@ msgstr ""
 "meisten Fällen an, in diesem Fall auch die Option \"Wiederholen\" "
 "auszuwählen."
 
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Hint
-msgid "Open an animation file."
-msgstr "Animations-Datei öffnen."
-
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
 msgstr "Animation speichern."
@@ -3256,6 +3252,12 @@ msgstr ""
 "Die rechte Intervallgrenze muss größer als die linke Intervallgrenze sein, "
 "und %s muss positiv sein."
 
+msgid "Invalid model name."
+msgstr ""
+
+msgid "A model of that name already exist."
+msgstr ""
+
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Die Funktion f(x) ist nicht für %s=%s definiert."
 
@@ -4007,6 +4009,9 @@ msgstr "Geben Sie die Anzahl der zu druckenden Kopien ein."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Geben die den Prozentssatz zur Originalgröße ein."
+
+#~ msgid "Open an animation file."
+#~ msgstr "Animations-Datei öffnen."
 
 #, fuzzy
 #~ msgid "Version -%s"

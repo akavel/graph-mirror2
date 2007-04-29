@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph russian interface\n"
-"POT-Creation-Date: 2007-03-24 08:08\n"
+"POT-Creation-Date: 2007-04-29 21:42\n"
 "PO-Revision-Date: 2007-02-19 22:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -400,7 +400,6 @@ msgid "Creates a new coordinate system."
 msgstr "Создать новую систему координат."
 
 #. Form1..ActionManager..OpenAction("Open...")..Caption
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Caption
 msgid "Open..."
 msgstr "Открыть..."
 
@@ -974,12 +973,12 @@ msgstr "Подпись к графику"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Показывать подпись к графику на системе координат."
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Caption
+#. Form1..PopupMenu4..Legend_Font("Font...")..Caption
 #, fuzzy
-msgid "Font"
+msgid "Font..."
 msgstr "Шрифты"
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Hint
+#. Form1..PopupMenu4..Legend_Font("Font...")..Hint
 #, fuzzy
 msgid "Change the font of the legend."
 msgstr "Выбрать шрифт заголовка."
@@ -2157,11 +2156,6 @@ msgid ""
 "in combination with the \"Repeat\" command."
 msgstr ""
 
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Hint
-#, fuzzy
-msgid "Open an animation file."
-msgstr "Открыть файл %s."
-
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 #, fuzzy
 msgid "Save the animation to a file."
@@ -3305,6 +3299,12 @@ msgstr ""
 "Значение верхней границы интервала должно быть больше значения нижней "
 "границы, и %s должно быть больше 0."
 
+msgid "Invalid model name."
+msgstr ""
+
+msgid "A model of that name already exist."
+msgstr ""
+
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Производная функции не определена при %s=%s"
 
@@ -4053,6 +4053,10 @@ msgstr "Количество копий:"
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Open an animation file."
+#~ msgstr "Открыть файл %s."
 
 #, fuzzy
 #~ msgid "Version -%s"
