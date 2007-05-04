@@ -119,6 +119,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       Func->SetLegendText(Func->MakeText() + L"; R²=" + ToWString(RoundToString(Correlation(Points, Func->GetFunc()), Data)));
       Func->From.Value = -INF;
       Func->To.Value = +INF;
+      Func->SetSteps(TTextValue(0, ""));
       BaseFunc = Func;
     }
     else if(RadioButton6->Checked) //Moving average
@@ -164,6 +165,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       Func->SetLegendText(Func->MakeText() + L"; R²=" + ToWString(RoundToString(Correlation(Points, Func->GetFunc()), Data)));
       Func->From.Value = -INF;
       Func->To.Value = +INF;
+      Func->SetSteps(TTextValue(0, ""));
       BaseFunc = Func;
     }
 

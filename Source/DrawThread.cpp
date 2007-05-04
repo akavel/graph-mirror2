@@ -172,8 +172,8 @@ void TDrawThread::DrawFunction(const TBaseFuncType &Func)
       iter += Func.PointNum[I];
     }
   }
-  DrawEndPoint(&Func, Func.From.Value, Func.StartPointStyle, true);
-  DrawEndPoint(&Func, Func.To.Value, Func.EndPointStyle, false);
+  
+  DrawEndPoints(Func);
 }
 //---------------------------------------------------------------------------
 //This function draws a mathematical function on the canvas
@@ -242,8 +242,12 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
              }
             }
             while((Err || (LastPos != Pos && InsideImage(Pos))) && std::abs(s-s2) > 1E-12);
-            F.Points.push_back(Pos);
-            F.sList.push_back(Func32::TCoordSet(s2, real(Coord.x), real(Coord.y)));
+
+            if(!Err)
+            {
+              F.Points.push_back(Pos);
+              F.sList.push_back(Func32::TCoordSet(s2, real(Coord.x), real(Coord.y)));
+            }
           }
           Err = true;
           continue;
@@ -343,8 +347,12 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
               }
             }
             while((Err || (LastPos != Pos2 && InsideImage(LastPos))) && std::abs(s1-s2) > 1E-12);
-            F.Points.push_back(Pos2);
-            F.sList.push_back(Func32::TCoordSet(s2, real(Coord2.x), real(Coord2.y)));
+
+            if(!Err)
+            {
+              F.Points.push_back(Pos2);
+              F.sList.push_back(Func32::TCoordSet(s2, real(Coord2.x), real(Coord2.y)));
+            }
           }
 
           //Add point to vector
@@ -787,12 +795,53 @@ void __fastcall TDrawThread::EndUpdate()
   }
 }
 //---------------------------------------------------------------------------
-void TDrawThread::DrawEndPoint(const TBaseFuncType *Func, long double t, unsigned Style, bool InvertArrow)
+void TDrawThread::DrawEndPoints(const TBaseFuncType &Func)
 {
-  if(_finite(t))
+  if(Func.StartPointStyle != 0)
+  {
+    long double t = Func.From.Value;
+    if(!_finitel(t))
+    {
+      //If a start value has not been specified, search for the first point inside the visible area
+      //that is close to the border, and show the end point here.
+      for(unsigned I = 0; I < Func.sList.size(); I++)
+        if(InsideRect(AxesRect, Func.Points[I]))
+        {
+          if(!IsInRange(Func.Points[I].x, AxesRect.Left + 5, AxesRect.Right - 5) ||
+             !IsInRange(Func.Points[I].y, AxesRect.Top + 5, AxesRect.Bottom - 5))
+              t = Func.sList[I].t;
+          break;
+        }
+    }
+    DrawEndPoint(Func, t, Func.StartPointStyle, true);
+  }
+
+  if(Func.EndPointStyle != 0)
+  {
+    long double t = Func.To.Value;
+    if(!_finitel(t))
+    {
+      //If a start value has not been specified, search for the first point inside the visible area
+      //that is close to the border, and show the end point here.
+      for(unsigned I = Func.sList.size()-1; I > 0; I--)
+        if(InsideRect(AxesRect, Func.Points[I]))
+        {
+          if(!IsInRange(Func.Points[I].x, AxesRect.Left + 5, AxesRect.Right - 5) ||
+             !IsInRange(Func.Points[I].y, AxesRect.Top + 5, AxesRect.Bottom - 5))
+              t = Func.sList[I].t;
+          break;
+        }
+    }
+    DrawEndPoint(Func, t, Func.EndPointStyle, false);
+  }
+}
+//---------------------------------------------------------------------------
+void TDrawThread::DrawEndPoint(const TBaseFuncType &Func, long double t, unsigned Style, bool InvertArrow)
+{
+  if(_finitel(t))
     try
     {
-      Func32::TCoord<long double> Coord = Func->GetFunc().Calc(t);
+      Func32::TCoord<long double> Coord = Func.GetFunc().Calc(t);
       if(IsError(Func32::ecNoError, Coord))
         return; //Invalid coordinate because of log axes
 
@@ -800,26 +849,26 @@ void TDrawThread::DrawEndPoint(const TBaseFuncType *Func, long double t, unsigne
       switch(Style)
       {
         case 1:
-          TPointSelect::DrawPoint(Context.GetCanvas(), Pos, 0, Func->Color, Axes.BackgroundColor, Size(Func->Size + 3));
+          TPointSelect::DrawPoint(Context.GetCanvas(), Pos, 0, Func.Color, Axes.BackgroundColor, Size(Func.Size + 3));
           break;
 
         case 2:
-          TPointSelect::DrawPoint(Context.GetCanvas(), Pos, 0, Func->Color, Func->Color, Size(Func->Size + 3));
+          TPointSelect::DrawPoint(Context.GetCanvas(), Pos, 0, Func.Color, Func.Color, Size(Func.Size + 3));
           break;
 
         case 3:
           if(InvertArrow)
-            DrawArrow(Pos, Func->GetFunc().CalcAngleSlope(t) + M_PI, Func->Color, Func->Size);
+            DrawArrow(Pos, Func.GetFunc().CalcAngleSlope(t) + M_PI, Func.Color, Func.Size);
           else
-            DrawArrow(Pos, Func->GetFunc().CalcAngleSlope(t), Func->Color, Func->Size);
+            DrawArrow(Pos, Func.GetFunc().CalcAngleSlope(t), Func.Color, Func.Size);
           break;
 
         case 4:
-          DrawHalfCircle(Pos, Func->GetFunc().CalcAngleSlope(t), Func->Color, Func->Size);
+          DrawHalfCircle(Pos, Func.GetFunc().CalcAngleSlope(t), Func.Color, Func.Size);
           break;
 
         case 5:
-          DrawHalfCircle(Pos, Func->GetFunc().CalcAngleSlope(t) + M_PI, Func->Color, Func->Size);
+          DrawHalfCircle(Pos, Func.GetFunc().CalcAngleSlope(t) + M_PI, Func.Color, Func.Size);
           break;
       }
     }

@@ -1292,6 +1292,13 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       Redraw(); //Activates thread; must be done after OLE update
       break;
 
+    case VK_F9:
+      Draw.AbortUpdate();
+      Data.Axes.AxesArrows = Data.Axes.AxesArrows == aaPositiveEnd ? aaBothEnds : aaPositiveEnd;
+      Data.Axes.NumberPlacement = Data.Axes.NumberPlacement == npCenter ? npBefore : npCenter; 
+      Redraw(); //Activates thread; must be done after OLE update
+      break;
+
     case VK_SHIFT:
       if(CursorState == csIdle)
         SetCursorState(csMove);

@@ -63,9 +63,10 @@ void TTanFrame::Eval(const TGraphElem *Elem)
 void TTanFrame::SetPoint(const TGraphElem *Elem, int X, int Y)
 {
   if(const TTan *Tan = dynamic_cast<const TTan*>(Elem))
-    SetPoint(Tan, X, Y);
+    SetPoint(Tan, X);
   else if(const TPointSeries *Series = dynamic_cast<const TPointSeries*>(Elem))
-    SetPoint(Series, X, Y);
+    SetPoint(Series, X);
 }
 //---------------------------------------------------------------------------
+
 

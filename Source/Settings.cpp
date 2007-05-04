@@ -25,7 +25,7 @@ TAxis::TAxis() : Min(-10), Max(10), LogScl(false), ShowGrid(false), MultiplyOfPi
 TAxes::TAxes() : ShowLegend(true), AxesColor(clBlue),
   GridColor(static_cast<TColor>(0x00FF9999)), BackgroundColor(clWhite), Trigonometry(Func32::Radian),
   AxesStyle(asCrossed), LegendPlacement(lpTopRight), GridSize(1), CalcComplex(false), ZoomSquare(false),
-  LegendPos(0,0)  
+  LegendPos(0,0), AxesArrows(aaPositiveEnd), NumberPlacement(npCenter)  
 {
 }
 //---------------------------------------------------------------------------
@@ -69,6 +69,8 @@ void TAxes::WriteToIni(TConfigFile &IniFile) const
   IniFile.Write("Axes", "GridSize", GridSize, 1U);
   IniFile.Write("Axes", "CalcComplex", CalcComplex, false);
   IniFile.Write("Axes", "ZoomSquare", ZoomSquare, false);
+  IniFile.Write("Axes", "AxesArrows", AxesArrows, aaPositiveEnd);
+  IniFile.Write("Axes", "NumberPlacement", NumberPlacement, npCenter);
 }
 //---------------------------------------------------------------------------
 void TAxis::ReadFromIni(const TConfigFile &IniFile, const std::string &Prefix)
@@ -111,6 +113,8 @@ void TAxes::ReadFromIni(const TConfigFile &IniFile)
   GridSize = IniFile.Read("Axes", "GridSize", 1);
   CalcComplex = IniFile.Read("Axes", "CalcComplex", false);
   ZoomSquare = IniFile.Read("Axes", "ZoomSquare", false);
+  AxesArrows = IniFile.ReadEnum("Axes", "AxesArrows", aaPositiveEnd);
+  NumberPlacement = IniFile.ReadEnum("Axes", "NumberPlacement", npCenter);
 }
 //---------------------------------------------------------------------------
 ///////////////

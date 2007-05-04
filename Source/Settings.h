@@ -36,6 +36,19 @@ struct TAxis
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Prefix);
 };
 
+enum TAxesArrows
+{
+  aaNone,
+  aaPositiveEnd,
+  aaBothEnds
+};
+
+enum TNumberPlacement
+{
+  npCenter,
+  npBefore
+};
+
 struct TAxes
 {
   TAxis xAxis;
@@ -56,6 +69,8 @@ struct TAxes
   unsigned GridSize;
   bool CalcComplex;//When true: Complex numbers are used for graphing
   bool ZoomSquare;
+  TAxesArrows AxesArrows;
+  TNumberPlacement NumberPlacement;
 
   TAxes();
   void WriteToIni(TConfigFile &IniFile) const;
