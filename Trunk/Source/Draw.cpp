@@ -308,7 +308,9 @@ unsigned TDraw::FindLabels()
           TLabelInfo LabelInfo;
           LabelInfo.Label = MakeNumber(y, Axes.yAxis.MultiplyOfPi);
           LabelInfo.Width = Context.GetTextWidth(LabelInfo.Label);
-          LabelInfo.Pos = yPixel;
+          LabelInfo.Pos = yPixel;;
+          if(Axes.NumberPlacement == npCenter)
+            LabelInfo.Pos -= NumberHeight / 2;
           yLabelInfo.push_back(LabelInfo);
           if(LabelInfo.Width > MaxWidth)
             MaxWidth = LabelInfo.Width;
@@ -453,6 +455,8 @@ void TDraw::DrawAxes()
     double MinTickPixel = ShowGridTick ? xPointExact(xTickMin) : MaxPixel;
     double TickPixelScl = Axes.xAxis.TickUnit * xScale;
     double x = xPointExact(GridMin);
+    if(x < Size(5))
+      x += GridPixelScl;
 
     //Draw dotted grid lines. If Tick unit is greater than the Grid unit, the ticks are drawn as solid
     //lines from one side to the other. A grid line is not drawn if it is within one pixel from a
@@ -461,7 +465,9 @@ void TDraw::DrawAxes()
     for(double x2 = MinTickPixel; x <= MaxPixel; x2 += TickPixelScl)
     {
       for(; x < x2 + 1; x += GridPixelScl)
-        Context.DrawLine(x + 0.5, AxesRect.Top, x + 0.5, AxesRect.Bottom);
+        //Don't show at or beside axis (when scaled it might be moved a pixel or two)
+        if(std::abs(x - xPixelCross) > 1)
+          Context.DrawLine(x + 0.5, AxesRect.Top, x + 0.5, AxesRect.Bottom);
 
       if(x < x2 + 1 && x> x2 - 1)
         x += GridPixelScl;
@@ -481,8 +487,9 @@ void TDraw::DrawAxes()
       for(double x = GridMin / Axes.xAxis.GridUnit; x < Axes.xAxis.Max; x *= Axes.xAxis.GridUnit)
         for(unsigned n = 1; n < 9; n++)
         {
-          double X = xPoint(x*(1+(Axes.xAxis.GridUnit-1)*n/9));
-          if(X > AxesRect.Left) //Don't draw outside area (if Axes Style is Boxed)
+          int X = xPoint(x*(1+(Axes.xAxis.GridUnit-1)*n/9));
+          //Don't draw outside area (if Axes Style is Boxed)
+          if(X > AxesRect.Left)
             Context.DrawLine(X, AxesRect.Top, X, AxesRect.Bottom);
         }
     }
@@ -511,7 +518,9 @@ void TDraw::DrawAxes()
     for(double y2 = MinTickPixel; y >= MaxPixel; y2 -= TickPixelScl)
     {
       for(; y > y2 + 1; y -= GridPixelScl)
-        Context.DrawLine(AxesRect.Left, y + 0.5, AxesRect.Right, y + 0.5);
+        //Don't show at or beside axis (when scaled it might be moved a pixel or two)
+        if(std::abs(y - yPixelCross) > 1)
+          Context.DrawLine(AxesRect.Left, y + 0.5, AxesRect.Right, y + 0.5);
 
       if(y < y2 + 1 && y > y2 - 1)
         y -= GridPixelScl;
@@ -567,7 +576,10 @@ void TDraw::DrawAxes()
           //Check if we are not too close to the sides of the window
           //Compare with 0 instead of AxesRect.Left because it is okay to write in the blank area
           if(xPixel - TextWidth / 2 >= 0 && xPixel + TextWidth / 2 <= AxesRect.Right)
-            Context.DrawText(Str, xPixel - TextWidth/2, yPixel);
+          {
+            xPixel -= Axes.NumberPlacement == npCenter ? TextWidth / 2 : TextWidth;
+            Context.DrawText(Str, xPixel, yPixel);
+          }
         }
         //Is axis shown in log scale
         if(Axes.xAxis.LogScl)
@@ -580,7 +592,7 @@ void TDraw::DrawAxes()
 
   //Draw number labels on the y-axis
   for(std::vector<TLabelInfo>::const_iterator Iter = yLabelInfo.begin(); Iter != yLabelInfo.end(); ++Iter)
-    Context.DrawText(Iter->Label, xPixelCross - Iter->Width - Size(7), Iter->Pos - NumberHeight / 2);
+    Context.DrawText(Iter->Label, xPixelCross - Iter->Width - Size(7), Iter->Pos);
 
   //Set font for labels
   Context.SetFont(Axes.LabelFont);
@@ -596,17 +608,22 @@ void TDraw::DrawAxes()
   //If x-axis is inside the view
   if(yPixelCross >= AxesRect.Top && yPixelCross <= AxesRect.Bottom)
   {
-    int X = AxesRect.Right - 1;
+    int X1 = AxesRect.Left + 1;
+    int X2 = AxesRect.Right - 1;
     int Y = yPixelCross;
     double xPixelScl = (Axes.xAxis.LogScl ? std::log(Axes.xAxis.TickUnit) : Axes.xAxis.TickUnit) * xScale;
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(2));
-    Context.DrawLine(AxesRect.Left, Y, X - Size(3), Y);
+    Context.DrawLine(X1, Y, X2 - Size(3), Y);
 
-    //Show filled arrow on x-axis
-    TPoint Arrow[] = {TPoint(X-Size(5), Y-Size(5)-1), TPoint(X, Y-1), TPoint(X, Y), TPoint(X-Size(5), Y+Size(5))};
     Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.AxesColor);
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, 1);
-    Context.DrawPolygon(Arrow, 4);
+    const TPoint LeftArrow[] = {TPoint(X1+Size(5), Y-Size(5)-1), TPoint(X1, Y-1), TPoint(X1, Y), TPoint(X1+Size(5), Y+Size(5))};
+    const TPoint RightArrow[] = {TPoint(X2-Size(5), Y-Size(5)-1), TPoint(X2, Y-1), TPoint(X2, Y), TPoint(X2-Size(5), Y+Size(5))};
+    //Show filled arrow on x-axis
+    if(Axes.AxesArrows == aaBothEnds)
+      Context.DrawPolygon(LeftArrow, 4);
+    if(Axes.AxesArrows != aaNone)
+      Context.DrawPolygon(RightArrow, 4);
 
     //Only show ticks if we have not already drawn a solid grid line instead
     if(Axes.xAxis.ShowTicks && (!Axes.xAxis.ShowGrid || Axes.xAxis.TickUnit <= Axes.xAxis.GridUnit))
@@ -622,15 +639,21 @@ void TDraw::DrawAxes()
   if(xPixelCross >= AxesRect.Left && xPixelCross <= AxesRect.Right)
   {
     int X = xPixelCross;
-    int Y = AxesRect.Top;
+    int Y1 = AxesRect.Top;
+    int Y2 = AxesRect.Bottom - 1;
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(2));
-    Context.DrawLine(X, Y + Size(3),X, AxesRect.Bottom);
+    Context.DrawLine(X, Y1 + Size(3), X, Y2);
 
-    //Show arrow on y-axis
-    TPoint Arrow[] = {TPoint(X-Size(5)-1, Y+Size(5)), TPoint(X-1, Y), TPoint(X, Y), TPoint(X+Size(5), Y+Size(5))};
     Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.AxesColor);
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, 1);
-    Context.DrawPolygon(Arrow, 4);
+    TPoint TopArrow[] = {TPoint(X-Size(5)-1, Y1+Size(5)), TPoint(X-1, Y1), TPoint(X, Y1), TPoint(X+Size(5), Y1+Size(5))};
+    TPoint BottomArrow[] = {TPoint(X-Size(5)-1, Y2-Size(5)), TPoint(X-1, Y2), TPoint(X, Y2), TPoint(X+Size(5), Y2-Size(5))};
+
+    //Show arrow on y-axis
+    if(Axes.AxesArrows == aaBothEnds)
+      Context.DrawPolygon(BottomArrow, 4);
+    if(Axes.AxesArrows != aaNone)
+      Context.DrawPolygon(TopArrow, 4);
 
     double yPixelScl = (Axes.yAxis.LogScl ? std::log(Axes.yAxis.TickUnit) : Axes.yAxis.TickUnit) * yScale;
     //Only show ticks if we have not already drawn a solid grid line instead

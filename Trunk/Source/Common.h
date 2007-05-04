@@ -181,6 +181,12 @@ inline int Sign(T Val){return Val>=0 ? Val ? 1 : 0 : -1;};
 template<typename T>
 inline T Range(T Min, T Value, T Max) { return std::max(Min, std::min(Value, Max)); }
 
+template<typename T>
+inline T IsInRange(const T &Value, const T &Min, const T &Max)
+{
+  return Value >= Min && Value <= Max;
+}
+
 class TWaitCursor
 {
   TCursor OldCursor;

@@ -124,9 +124,8 @@ object Form20: TForm20
     Height = 21
     Anchors = [akRight, akBottom]
     Color = clBtnFace
-    EditLabel.Width = 62
+    EditLabel.Width = 3
     EditLabel.Height = 13
-    EditLabel.Caption = 'LabeledEdit1'
     LabelPosition = lpLeft
     LabelSpacing = 3
     ReadOnly = True

@@ -43,7 +43,8 @@ private:
   template<typename T> bool IsError(Func32::TErrorCode ErrorCode, const Func32::TCoord<T> &Coord);
   void __fastcall BeginUpdate();
   void __fastcall EndUpdate();
-  void DrawEndPoint(const TBaseFuncType *Func, long double t, unsigned Style, bool InvertArrow);
+  void DrawEndPoints(const TBaseFuncType &Func);
+  void DrawEndPoint(const TBaseFuncType &Func, long double t, unsigned Style, bool InvertArrow);
   void PrepareFunction(TBaseFuncType *F);
   void DrawArrow(const TPoint &Point, long double Angle, TColor Color, unsigned Size);
   void DrawHalfCircle(const TPoint &Point, long double Angle, TColor Color, unsigned Size);

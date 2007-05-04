@@ -31,7 +31,7 @@ struct TZoomFit : public TGraphElemVisitor
   double xMin, xMax, yMin, yMax;
   TZoomFit(const TData &AData, const TDraw &ADraw);
   void Visit(TBaseFuncType &Func);
-  void Visit(TTan &Tan) {} //Not used
+  void Visit(TTan &Tan) {Visit(static_cast<TBaseFuncType&>(Tan));} //Forward
   void Visit(TShade &Shade) {} //Not used
   void Visit(TPointSeries &Series);
   void Visit(TTextLabel &Label) {}  //Not used
