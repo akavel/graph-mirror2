@@ -800,7 +800,9 @@ void TDrawThread::DrawEndPoints(const TBaseFuncType &Func)
   if(Func.StartPointStyle != 0)
   {
     long double t = Func.From.Value;
-    if(!_finitel(t))
+    if(_finitel(t))
+      DrawEndPoint(Func, t, Func.StartPointStyle, true);
+    else
     {
       //If a start value has not been specified, search for the first point inside the visible area
       //that is close to the border, and show the end point here.
@@ -809,17 +811,25 @@ void TDrawThread::DrawEndPoints(const TBaseFuncType &Func)
         {
           if(!IsInRange(Func.Points[I].x, AxesRect.Left + 5, AxesRect.Right - 5) ||
              !IsInRange(Func.Points[I].y, AxesRect.Top + 5, AxesRect.Bottom - 5))
-              t = Func.sList[I].t;
+          {
+            t = Func.sList[I].t;
+            TPoint Pos = Func.Points[I];
+            if(I > 0)
+              //This only works because we know the function is a standard function
+              Pos = TContext::ClipLine(Func.Points[I-1], Func.Points[I], AxesRect);
+            DrawEndPoint(Func, t, Pos, Func.StartPointStyle, true);
+          }
           break;
         }
     }
-    DrawEndPoint(Func, t, Func.StartPointStyle, true);
   }
 
   if(Func.EndPointStyle != 0)
   {
     long double t = Func.To.Value;
-    if(!_finitel(t))
+    if(_finitel(t))
+      DrawEndPoint(Func, t, Func.EndPointStyle, false);
+    else
     {
       //If a start value has not been specified, search for the first point inside the visible area
       //that is close to the border, and show the end point here.
@@ -828,15 +838,21 @@ void TDrawThread::DrawEndPoints(const TBaseFuncType &Func)
         {
           if(!IsInRange(Func.Points[I].x, AxesRect.Left + 5, AxesRect.Right - 5) ||
              !IsInRange(Func.Points[I].y, AxesRect.Top + 5, AxesRect.Bottom - 5))
-              t = Func.sList[I].t;
+          {
+            t = Func.sList[I].t;
+            TPoint Pos = Func.Points[I];
+            if(I < Func.sList.size() - 1)
+              //This only works because we know the function is a standard function
+              Pos = TContext::ClipLine(Func.Points[I+1], Func.Points[I], AxesRect);
+            DrawEndPoint(Func, t, Pos, Func.EndPointStyle, false);
+          }
           break;
         }
     }
-    DrawEndPoint(Func, t, Func.EndPointStyle, false);
   }
 }
 //---------------------------------------------------------------------------
-void TDrawThread::DrawEndPoint(const TBaseFuncType &Func, long double t, unsigned Style, bool InvertArrow)
+void TDrawThread::DrawEndPoint(const TBaseFuncType &Func, long double t, const TPoint &Pos, unsigned Style, bool InvertArrow)
 {
   if(_finitel(t))
     try
@@ -845,7 +861,6 @@ void TDrawThread::DrawEndPoint(const TBaseFuncType &Func, long double t, unsigne
       if(IsError(Func32::ecNoError, Coord))
         return; //Invalid coordinate because of log axes
 
-      TPoint Pos = Draw->xyPoint(Coord);
       switch(Style)
       {
         case 1:
@@ -871,6 +886,22 @@ void TDrawThread::DrawEndPoint(const TBaseFuncType &Func, long double t, unsigne
           DrawHalfCircle(Pos, Func.GetFunc().CalcAngleSlope(t) + M_PI, Func.Color, Func.Size);
           break;
       }
+    }
+    catch(Func32::EFuncError&)
+    {
+    }
+}
+//---------------------------------------------------------------------------
+void TDrawThread::DrawEndPoint(const TBaseFuncType &Func, long double t, unsigned Style, bool InvertArrow)
+{
+  if(_finitel(t))
+    try
+    {
+      Func32::TCoord<long double> Coord = Func.GetFunc().Calc(t);
+      if(IsError(Func32::ecNoError, Coord))
+        return; //Invalid coordinate because of log axes
+
+      DrawEndPoint(Func, t, Draw->xyPoint(Coord), Style, InvertArrow);
     }
     catch(Func32::EFuncError&)
     {
@@ -1031,15 +1062,23 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
 //---------------------------------------------------------------------------
 void TDrawThread::DrawArrow(const TPoint &Point, long double Angle, TColor Color, unsigned Size)
 {
-  Context.SetPen(psSolid, Color, Size);
+  Context.SetPen(psSolid, Color, 1);
+  Context.SetBrush(bsSolid, Color);
 
   //Adjust angle for visual coordinate system instead of real system
   long double Angle2 = std::atan(Draw->yScale/Draw->xScale * std::tan(Angle));
   if(std::abs(std::fmod(Angle, 2.0L*M_PI)) > M_PI_2)
     Angle2 -= M_PI;
 
-  LineToAngle(Point.x, Point.y, Angle2 + 2.6, 15);
-  LineToAngle(Point.x, Point.y, Angle2 - 2.6, 15);
+  int Length = 13 + 2*Size;
+  int dX1 = Length * std::cos(Angle2 + 2.8);
+  int dY1 = Length * std::sin(Angle2 + 2.8);
+  int dX2 = Length * std::cos(Angle2 - 2.8);
+  int dY2 = Length * std::sin(Angle2 - 2.8);
+  TPoint Arrow[] = {TPoint(Point.x + dX1, Point.y - dY1), Point, TPoint(Point.x + dX2, Point.y - dY2)};
+  Context.DrawPolygon(Arrow, 3);
+//  LineToAngle(Point.x, Point.y, Angle2 + 2.6, 15);
+//  LineToAngle(Point.x, Point.y, Angle2 - 2.6, 15);
 }
 //---------------------------------------------------------------------------
 void TDrawThread::LineToAngle(int X, int Y, double Angle, double Length)
