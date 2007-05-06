@@ -44,6 +44,7 @@ private:
   void __fastcall BeginUpdate();
   void __fastcall EndUpdate();
   void DrawEndPoints(const TBaseFuncType &Func);
+  void DrawEndPoint(const TBaseFuncType &Func, long double t, const TPoint &Pos, unsigned Style, bool InvertArrow);
   void DrawEndPoint(const TBaseFuncType &Func, long double t, unsigned Style, bool InvertArrow);
   void PrepareFunction(TBaseFuncType *F);
   void DrawArrow(const TPoint &Point, long double Angle, TColor Color, unsigned Size);

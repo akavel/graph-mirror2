@@ -63,36 +63,36 @@ inline TContext::TOutCode TContext::CompOutCode(const TPoint &P, const TRect &Re
 //---------------------------------------------------------------------------
 //Move the point P1 inside Rect so the line P1-P2 is the same
 //Only clips at one side. Recalculate OutCode an call again to make sure P1 is completely inside
-inline void TContext::Clip(TPoint *P1, const TPoint *P2, TOutCode OutCode, const TRect &Rect)
+inline void TContext::Clip(TPoint &P1, const TPoint &P2, TOutCode OutCode, const TRect &Rect)
 {
   //No clipping needed if it is the same point; Prevent division by zero
-  if(*P1 == *P2)
+  if(P1 == P2)
     return;
 
   //Notice: The += operations may overflow if both the left and right sides are above MAXINT
   if(OutCode & ocTop)
   {
-    BOOST_ASSERT(P2->y != P1->y);
-    P1->x += (static_cast<long long>(P2->x - P1->x)*(Rect.Top - P1->y))/(P2->y - P1->y);
-    P1->y = Rect.Top;
+    BOOST_ASSERT(P2.y != P1.y);
+    P1.x += (static_cast<long long>(P2.x - P1.x)*(Rect.Top - P1.y))/(P2.y - P1.y);
+    P1.y = Rect.Top;
   }
   else if(OutCode & ocBottom)
   {
-    BOOST_ASSERT(P2->y != P1->y);
-    P1->x += (static_cast<long long>(P2->x - P1->x)*(Rect.Bottom - P1->y))/(P2->y - P1->y);
-    P1->y = Rect.Bottom;
+    BOOST_ASSERT(P2.y != P1.y);
+    P1.x += (static_cast<long long>(P2.x - P1.x)*(Rect.Bottom - P1.y))/(P2.y - P1.y);
+    P1.y = Rect.Bottom;
   }
   else if(OutCode & ocRight)
   {
-    BOOST_ASSERT(P2->x != P1->x);
-    P1->y += (static_cast<long long>(P2->y - P1->y)*(Rect.Right - P1->x))/(P2->x - P1->x);
-    P1->x = Rect.Right;
+    BOOST_ASSERT(P2.x != P1.x);
+    P1.y += (static_cast<long long>(P2.y - P1.y)*(Rect.Right - P1.x))/(P2.x - P1.x);
+    P1.x = Rect.Right;
   }
   else if(OutCode & ocLeft)
   {
-    BOOST_ASSERT(P2->x != P1->x);
-    P1->y += (static_cast<long long>(P2->y - P1->y)*(Rect.Left - P1->x))/(P2->x - P1->x);
-    P1->x = Rect.Left;
+    BOOST_ASSERT(P2.x != P1.x);
+    P1.y += (static_cast<long long>(P2.y - P1.y)*(Rect.Left - P1.x))/(P2.x - P1.x);
+    P1.x = Rect.Left;
   }
 }
 //---------------------------------------------------------------------------
@@ -129,8 +129,8 @@ void TContext::DrawPolyline(const TPoint *Points, unsigned Size, const TRect &Re
     //Store old P1 value and move P1 inside Rect
     TPoint *P1 = P2-1; //Start of polyline segment
     TPoint OldP1 = *P1;
-    Clip(P1, P2, OutCode1, Rect);
-    Clip(P1, P2, CompOutCode(*P1, Rect), Rect);
+    Clip(*P1, *P2, OutCode1, Rect);
+    Clip(*P1, *P2, CompOutCode(*P1, Rect), Rect);
 
     //Search for point outside so clipping is needed
     while(OutCode2 == ocInside && ++P2 != End)
@@ -145,8 +145,8 @@ void TContext::DrawPolyline(const TPoint *Points, unsigned Size, const TRect &Re
 
     //Store old P2 and clip twice so both x- and y-coordinate gets inside
     TPoint OldP2 = *P2;
-    Clip(P2, P2-1, OutCode2, Rect);
-    Clip(P2, P2-1, CompOutCode(*P2, Rect), Rect);
+    Clip(*P2, *(P2-1), OutCode2, Rect);
+    Clip(*P2, *(P2-1), CompOutCode(*P2, Rect), Rect);
 
     //Draw the line segment and restore start and end points
     DrawPolyline(P1, P2 - P1 + 1);
@@ -484,6 +484,23 @@ boost::shared_ptr<TRegion> CreateRegionFromLine(const std::vector<TPoint> &Data)
   for(std::vector<TPoint>::const_reverse_iterator Iter = Data.rbegin(); Iter != Data.rend(); ++Iter)
     Temp.push_back(TPoint(Iter->x+1, Iter->y+1));
   return boost::shared_ptr<TRegion>(new TRegion(Temp, WINDING));
+}
+//---------------------------------------------------------------------------
+void TContext::ClipLine(TPoint &P1, TPoint &P2, const TRect &Rect)
+{
+  Clip(P1, P2, CompOutCode(P1, Rect), Rect);
+  Clip(P1, P2, CompOutCode(P1, Rect), Rect);
+
+  Clip(P2, P1, CompOutCode(P2, Rect), Rect);
+  Clip(P2, P1, CompOutCode(P2, Rect), Rect);
+}
+//---------------------------------------------------------------------------
+TPoint TContext::ClipLine(const TPoint &P1, const TPoint &P2, const TRect &Rect)
+{
+  TPoint P = P1;
+  Clip(P, P2, CompOutCode(P1, Rect), Rect);
+  Clip(P, P2, CompOutCode(P1, Rect), Rect);
+  return P;
 }
 //---------------------------------------------------------------------------
 

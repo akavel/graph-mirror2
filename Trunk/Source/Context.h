@@ -26,13 +26,16 @@ class TContext
   TContext& operator=(const TContext&); //Not implemented
   void DrawPolyline2(const TPoint *Points, unsigned Size);
   void DrawPolyline(const std::vector<TPoint> &Points);
-  static void Clip(TPoint *P1, const TPoint *P2, TOutCode OutCode, const TRect &Rect);
+  static void Clip(TPoint &P1, const TPoint &P2, TOutCode OutCode, const TRect &Rect);
   static TOutCode CompOutCode(const TPoint &P, const TRect &Rect);
 
 public:
   TContext(Graphics::TCanvas *ACanvas) : Canvas(ACanvas) {}
   TCanvas* GetCanvas() {return Canvas;}
   void SetCanvas(TCanvas *ACanvas) {Canvas = ACanvas;}
+
+  static void ClipLine(TPoint &P1, TPoint &P2, const TRect &Rect);
+  static TPoint ClipLine(const TPoint &P1, const TPoint &P2, const TRect &Rect);
 
   void DrawPolyline(const TPoint *Points, unsigned Size);
   void DrawPolyline(const TPoint *Points, unsigned Size, const TRect &Rect);
