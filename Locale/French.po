@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2007-04-29 21:42\n"
-"PO-Revision-Date: 2007-05-15 20:47+0100\n"
+"PO-Revision-Date: 2007-05-16 18:33+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -3049,10 +3049,10 @@ msgid "The end of interval must be greater than the start of interval and %s mus
 msgstr "La fin de l'intervalle doit être supérieure à son début et %s doit être strictement supérieur à 0."
 
 msgid "Invalid model name."
-msgstr ""
+msgstr "Nom de modèle invalide."
 
 msgid "A model of that name already exist."
-msgstr ""
+msgstr "Un modèle de ce nom existe déjà."
 
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "La dérivée de la fonction n'est pas définie à %s=%s"
