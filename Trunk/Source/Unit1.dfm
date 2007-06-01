@@ -3843,9 +3843,7 @@ object Form1: TForm1
     object InsertLabelAction: TTntAction
       Category = 'Function'
       Caption = 'Insert label...'
-      Hint = 
-        'Insert a text label (select and click in the main window where y' +
-        'ou want the label).'
+      Hint = 'Insert a text label'
       ImageIndex = 46
       ShortCut = 119
       OnExecute = InsertLabelActionExecute

@@ -677,7 +677,7 @@ bool TForm1::AskSave(void)
   bool Result = true;
   if(Data.IsModified())
   {
-    WideString Str = Data.GetFileName().empty() ? LoadRes(RES_SAVE_CHANGES) : LoadRes(RES_SAVE_CHANGES_IN, Data.GetFileName());
+    WideString Str = Data.GetFileName().empty() ? LoadRes(RES_SAVE_CHANGES) : LoadRes(RES_SAVE_CHANGES_IN, ExtractFileName(Data.GetFileName().c_str()));
     switch(MessageBox(Str, NAME, MB_YESNOCANCEL | MB_ICONEXCLAMATION))
     {
       case IDYES:
@@ -1453,10 +1453,10 @@ void TForm1::SetCross(int X, int Y)
     Form9->StartValueChanged(X, Y);
 }
 //---------------------------------------------------------------------------
-void TForm1::SetCrossPos(double x, double y)
+void TForm1::SetCrossPos(long double x, long double y)
 {
   Cross->SetPos(Draw.xPoint(x), Draw.yPoint(y));
-  Cross->Show();
+  Cross->Show();               
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::UpdateEval()
@@ -2111,6 +2111,7 @@ void __fastcall TForm1::ZoomWindowActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomStandardActionExecute(TObject *Sender)
 {
+  UndoList.Push(TUndoAxes());
   TAxis xAxis, yAxis;
 
   AnsiString Str = GetRegValue(REGISTRY_KEY, "DefaultAxes", HKEY_CURRENT_USER, "");
@@ -2130,6 +2131,7 @@ void __fastcall TForm1::ZoomStandardActionExecute(TObject *Sender)
   Redraw();
   if(!MoveAction->Checked)
     UpdateEval();
+  UpdateMenu();  
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::PathActionExecute(TObject *Sender)
