@@ -91,6 +91,7 @@ enum TErrorCode
   ecTotalLoss       = 14, //!< Argument would produce function result with total loss of significant digits, such as sin(10e70)
   ecSymbolNotFound  = 15, //!< Symbol does not exist or has wrong number of arguemnts; A custom function/constant is not updated
   ecRecusionLimit   = 16, //!< Recursive function has been called too many times
+  ecHugeValReturned = 17, //!< Overflowe: A function result was too large, e.g. sinh(20000)
 
   //Parse errors
   ecOperatorError   = 50, //!< Operator cannot be placed here. Example "*5"

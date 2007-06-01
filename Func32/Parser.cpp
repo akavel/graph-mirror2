@@ -197,6 +197,11 @@ namespace Func32
     {
       return ch_p('E').parse(scan);
     }
+/*
+    template <typename ScannerT>
+    static typename parser_result<chlit<>, ScannerT>::type
+    parse_dot(ScannerT& scan)
+    { return ch_p(',').parse(scan); }*/
   };
 //---------------------------------------------------------------------------
   //Parser used for parsing unsigned real numbers. Example: 5.457E-87

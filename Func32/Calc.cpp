@@ -826,8 +826,20 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         ErrorCode = ecNotDefError;
       return real(Temp) < 0 ? 0 : 1;
 
-    case CodeSinh:  return sinh(Temp);
-    case CodeCosh:  return cosh(Temp);
+    case CodeSinh:
+      if(real(Temp) < -8191) //BCC 5.6.4 has an error. It returns a positive number for sinh(x) when x < -8191
+        ErrorCode = ecHugeValReturned;
+      Temp = sinh(Temp);
+      if(errno)
+        ErrorCode = ecHugeValReturned;
+      return Temp;
+
+    case CodeCosh:
+      Temp = cosh(Temp);
+      if(errno)
+        ErrorCode = ecHugeValReturned;
+      return Temp;
+
     case CodeTanh:  return tanh(Temp);
     case CodeASinh: return asinh(Temp);
     case CodeACosh:
