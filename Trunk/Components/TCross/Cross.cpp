@@ -36,10 +36,17 @@ __fastcall TCross::TCross(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TCross::Paint()
 {
-  Canvas->MoveTo(0, Y);
-  Canvas->LineTo(Width, Y);
-  Canvas->MoveTo(X, 0);
-  Canvas->LineTo(X, Height);
+  if(Y >= 0 && Y <= Height)
+  {
+    Canvas->MoveTo(0, Y);
+    Canvas->LineTo(Width, Y);
+  }
+
+  if(X >= 0 && X <= Width)
+  {
+    Canvas->MoveTo(X, 0);
+    Canvas->LineTo(X, Height);
+  }
 }
 //---------------------------------------------------------------------------
 
