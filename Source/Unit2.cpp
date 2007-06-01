@@ -23,6 +23,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
   TranslateProperties(this);
   Animate1->ResName = "FLAG";
   reinterpret_cast<TEdit*>(Animate1)->OnDblClick = ProgramIconDblClick; //Nasty hack. Don't do this at home kids
+  Label2->Left = Label1->Left + Label1->Width + 5;
 
   TVersionInfo Info;
   //Make string with file version information
@@ -73,6 +74,7 @@ void __fastcall TForm2::ProgramIconDblClick(TObject *Sender)
   Animate1->Active = !Animate1->Active;
 }
 //---------------------------------------------------------------------------
+
 
 
 

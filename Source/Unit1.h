@@ -538,7 +538,7 @@ public:		// User declarations
   void UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected = boost::shared_ptr<TGraphElem>());
 
   void SetCross(int X, int Y);
-  void SetCrossPos(double x, double y);
+  void SetCrossPos(long double x, long double y);
   void ChangeLanguage(const AnsiString &Ext);
   void ActivateOleUserInterface();
 
