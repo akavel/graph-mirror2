@@ -23,13 +23,18 @@ private:
   void __fastcall SetColor(TColor Value){Canvas->Pen->Color = Value; Invalidate();};
   TColor __fastcall GetColor(){return Canvas->Pen->Color;};
   DYNAMIC void __fastcall VisibleChanging(){Invalidate();};
+  void __fastcall SetMode(TPenMode Value){Canvas->Pen->Mode = Value; Invalidate();};
+  TPenMode __fastcall GetMode(){return Canvas->Pen->Mode;};
+
 protected:
 public:
   __fastcall TCross(TComponent* Owner);
   void SetPos(int x, int y) { FX = x; FY = y; Invalidate();}
-__published:
+
+  __published:
   __property TPenStyle Style = {read=GetStyle, write=SetStyle};
   __property TColor Color = {read=GetColor, write=SetColor};
+  __property TPenMode Mode = {read=GetMode, write=SetMode};
   __property int X = {read=FX, write=SetX};
   __property int Y = {read=FY, write=SetY};
   __property Align;
