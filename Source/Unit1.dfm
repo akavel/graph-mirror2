@@ -146,6 +146,7 @@ object Form1: TForm1
       Width = 575
       Height = 416
       Style = psDot
+      Mode = pmNot
       X = 30
       Y = 30
       Align = alClient
@@ -656,6 +657,7 @@ object Form1: TForm1
     object Tree_Properties: TTntMenuItem
       Action = EditAction
       Default = True
+      ShortCut = 13
     end
   end
   object ApplicationEvents: TApplicationEvents
