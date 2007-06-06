@@ -1469,7 +1469,6 @@ void __fastcall TForm1::FormResize(TObject *Sender)
 {
   if(Panel2->Width < Splitter->MinSize)
     TreeView->Width = TreeView->Width - (Splitter->MinSize - Panel2->Width);
-  ActionToolBar1->Align = alTop; //Necessary to avoid double line toolbar without reason when maximized
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::BeginUpdate()
@@ -2356,7 +2355,11 @@ void TForm1::CreateToolBar(AnsiString Str)
     if(ButtonName == '-')
     {
       if(LastName != '-')
-        ActionToolBar1->ActionClient->Items->Add()->Action = SeparatorAction;
+      {
+        TActionClientItem *Item = ActionToolBar1->ActionClient->Items->Add();
+        Item->Action = SeparatorAction;
+        Item->Control->Width = 8; //Workaround for bug in VCL, which sometimes sets the with to 12 and creates a second line
+      }
     }
     else
       for(int I = 0; I < ActionManager->ActionCount; I++)
