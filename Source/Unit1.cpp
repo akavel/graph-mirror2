@@ -1469,6 +1469,7 @@ void __fastcall TForm1::FormResize(TObject *Sender)
 {
   if(Panel2->Width < Splitter->MinSize)
     TreeView->Width = TreeView->Width - (Splitter->MinSize - Panel2->Width);
+  ActionToolBar1->Align = alTop;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::BeginUpdate()
@@ -2358,7 +2359,7 @@ void TForm1::CreateToolBar(AnsiString Str)
       {
         TActionClientItem *Item = ActionToolBar1->ActionClient->Items->Add();
         Item->Action = SeparatorAction;
-        Item->Control->Width = 8; //Workaround for bug in VCL, which sometimes sets the with to 12 and creates a second line
+        Item->Control->Width = 12; //Workaround for bug in VCL, it prevents an empty second toolbar line. I cannot explain why.
       }
     }
     else
@@ -3623,4 +3624,5 @@ void __fastcall TForm1::ZoomActionUpdate(TObject *Sender)
   static_cast<TAction*>(Sender)->Enabled = !Data.Axes.ZoomSquare;
 }
 //---------------------------------------------------------------------------
+
 
