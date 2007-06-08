@@ -2359,7 +2359,7 @@ void TForm1::CreateToolBar(AnsiString Str)
       {
         TActionClientItem *Item = ActionToolBar1->ActionClient->Items->Add();
         Item->Action = SeparatorAction;
-        Item->Control->Width = 12; //Workaround for bug in VCL, it prevents an empty second toolbar line. I cannot explain why.
+        Item->Control->Width = 9; //Workaround for bug in VCL, it prevents an empty second toolbar line. I cannot explain why.
       }
     }
     else
@@ -2372,6 +2372,8 @@ void TForm1::CreateToolBar(AnsiString Str)
         }
     LastName = ButtonName;
   }
+
+  ActionToolBar1->Align = alTop; //Makes sure a second line is removed if empty
 }
 //---------------------------------------------------------------------------
 AnsiString TForm1::GetToolBar()
