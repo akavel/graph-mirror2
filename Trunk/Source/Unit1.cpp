@@ -2359,7 +2359,7 @@ void TForm1::CreateToolBar(AnsiString Str)
       {
         TActionClientItem *Item = ActionToolBar1->ActionClient->Items->Add();
         Item->Action = SeparatorAction;
-        Item->Control->Width = 9; //Workaround for bug in VCL, it prevents an empty second toolbar line. I cannot explain why.
+        Item->InitiateAction(); //This is need to avoid an empty second line and make sure the separators are shown.
       }
     }
     else
