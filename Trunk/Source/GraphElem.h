@@ -310,7 +310,7 @@ struct TPointSeries : public TGraphElem
   void Update();
 
   TPointSeries();
-  std::wstring MakeText() const {return MakeLegendText();}
+  std::wstring MakeText() const {return L"";}
   void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
   void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
   Func32::TDblPoint FindCoord(double x) const;

@@ -328,8 +328,6 @@ unsigned TDraw::FindLabels()
 //---------------------------------------------------------------------------
 void TDraw::PreCalcXAxis()
 {
-  xTickMin = GetMinValue(Axes.xAxis.TickUnit, Axes.xAxis.Min, Axes.xAxis.Max, yAxisCross, Axes.xAxis.LogScl);
-
   unsigned MaxLabelWidth = FindLabels();
   if(Axes.AxesStyle == asBoxed)
     AxesRect.Left = MaxLabelWidth + Size(7);
@@ -359,6 +357,7 @@ void TDraw::PreCalcXAxis()
   xPixelCross = Axes.AxesStyle == asBoxed ? AxesRect.Left : xPoint(yAxisCross);
   if(Axes.xAxis.AutoGrid)
     Axes.xAxis.GridUnit = Axes.xAxis.TickUnit;
+  xTickMin = GetMinValue(Axes.xAxis.TickUnit, Axes.xAxis.Min, Axes.xAxis.Max, yAxisCross, Axes.xAxis.LogScl);
 }
 //---------------------------------------------------------------------------
 void TDraw::PreCalcYAxis()
