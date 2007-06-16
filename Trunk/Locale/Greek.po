@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-04-29 21:42\n"
+"POT-Creation-Date: 2007-06-17 00:28\n"
 "PO-Revision-Date: 2007-02-19 22:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -816,13 +816,10 @@ msgstr "Κατάλογος συχνών ερωτήσεων και απαντήσ
 msgid "Insert label..."
 msgstr "Εισαγωγή ετικέτας.."
 
-#. Form1..ActionManager..InsertLabelAction("Insert label...")....Hint
-msgid ""
-"Insert a text label (select and click in the main window where you want the "
-"label)."
-msgstr ""
-"Προσθέστε λεζάντα κειμένου.(Επιλέξτε και κάντε κλικ στη θέση που επιθυμήτε "
-"να τοποθετηθεί)."
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
+#, fuzzy
+msgid "Insert a text label"
+msgstr "Εισαγωγή ετικέτας.."
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -1615,6 +1612,7 @@ msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "Όλες οι περιοχές σφάλματος στο ίδιο ποσοστό μετις y-συντεταγμένες."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
 #. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 #, fuzzy
 msgid "Cut the selected text to the clipboard."
@@ -1902,10 +1900,6 @@ msgstr "Ονόματα"
 #. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
 msgid "Definition"
 msgstr "Ορισμός"
-
-#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
-msgid "Cut the selected text to the clipboard"
-msgstr "Αποκοπή επιλεγμένου κειμένου σιό πρόχειρο"
 
 #. Form18("Image options")..Caption
 msgid "Image options"
@@ -2976,6 +2970,9 @@ msgstr ""
 msgid "Too many recursive calls."
 msgstr "Πάρα πολλές επαναλαμβανόμενες ενέργειες."
 
+msgid "Overflow: A function returned a value too large to handle."
+msgstr ""
+
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Απροσδόκητος τελεστής. Ο τελεστής '%s' σε λάθος θέση."
 
@@ -3108,7 +3105,8 @@ msgid "Save changes?"
 msgstr "Να αποθηκευθούν οι αλλαγές;"
 
 #. Asked when trying to exit
-msgid "Save changes in %s"
+#, fuzzy
+msgid "Save changes in %s?"
 msgstr "Να αποθηκευθούν οι αλλαγές στο %s ;"
 
 #. Written in status bar when trying to zoom in too much
@@ -4094,6 +4092,16 @@ msgstr "Αριθμός αντιτύπων:"
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Βάλτε ποσοστό του κανονικού μεγέθους."
+
+#~ msgid ""
+#~ "Insert a text label (select and click in the main window where you want "
+#~ "the label)."
+#~ msgstr ""
+#~ "Προσθέστε λεζάντα κειμένου.(Επιλέξτε και κάντε κλικ στη θέση που "
+#~ "επιθυμήτε να τοποθετηθεί)."
+
+#~ msgid "Cut the selected text to the clipboard"
+#~ msgstr "Αποκοπή επιλεγμένου κειμένου σιό πρόχειρο"
 
 #, fuzzy
 #~ msgid "Open an animation file."

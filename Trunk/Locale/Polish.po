@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-04-29 21:42\n"
+"POT-Creation-Date: 2007-06-17 00:28\n"
 "PO-Revision-Date: 2007-02-19 22:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -809,11 +809,10 @@ msgstr "Pokazuje listę najczęściej zadawanych pytań i odpowiedzi na nie."
 msgid "Insert label..."
 msgstr "Wstaw pole tekstowe..."
 
-#. Form1..ActionManager..InsertLabelAction("Insert label...")....Hint
-msgid ""
-"Insert a text label (select and click in the main window where you want the "
-"label)."
-msgstr "Wstawia pole tekstowe (Kliknij w miejscu gdzie chcesz je utworzyć)."
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
+#, fuzzy
+msgid "Insert a text label"
+msgstr "Wstaw pole tekstowe..."
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -1619,6 +1618,7 @@ msgid "All error bars are the same percentage of the y-coordinate."
 msgstr ""
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
 #. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 #, fuzzy
 msgid "Cut the selected text to the clipboard."
@@ -1915,11 +1915,6 @@ msgstr "Nazwa"
 #. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
 msgid "Definition"
 msgstr "Definicja"
-
-#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
-#, fuzzy
-msgid "Cut the selected text to the clipboard"
-msgstr "Wycina zaznaczoną funkcję lub serię punktów do schowka."
 
 #. Form18("Image options")..Caption
 msgid "Image options"
@@ -2948,6 +2943,9 @@ msgstr ""
 msgid "Too many recursive calls."
 msgstr ""
 
+msgid "Overflow: A function returned a value too large to handle."
+msgstr ""
+
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr ""
 "Nieoczekiwany operator. Operator '%s' nie może występować w tym miejscu."
@@ -3081,7 +3079,7 @@ msgstr "Zapisać zmiany?"
 
 #. Asked when trying to exit
 #, fuzzy
-msgid "Save changes in %s"
+msgid "Save changes in %s?"
 msgstr "Zapisać zmiany?"
 
 #. Written in status bar when trying to zoom in too much
@@ -3945,6 +3943,15 @@ msgstr "Wprowadź liczbę kopii, które chcesz wydrukować."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Podaj procent oryginalnego rozmiaru."
+
+#~ msgid ""
+#~ "Insert a text label (select and click in the main window where you want "
+#~ "the label)."
+#~ msgstr "Wstawia pole tekstowe (Kliknij w miejscu gdzie chcesz je utworzyć)."
+
+#, fuzzy
+#~ msgid "Cut the selected text to the clipboard"
+#~ msgstr "Wycina zaznaczoną funkcję lub serię punktów do schowka."
 
 #, fuzzy
 #~ msgid "Open an animation file."

@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-04-29 21:42\n"
-"PO-Revision-Date: 2007-04-29 21:42\n"
+"POT-Creation-Date: 2007-06-17 00:28\n"
+"PO-Revision-Date: 2007-06-17 00:28\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -821,9 +821,8 @@ msgstr ""
 msgid "Insert label..."
 msgstr ""
 
-#. Form1..ActionManager..InsertLabelAction("Insert label...")....Hint
-msgid "Insert a text label (select and click in the main window where you "
-"want the label)."
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
+msgid "Insert a text label"
 msgstr ""
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
@@ -1607,6 +1606,7 @@ msgid "All error bars are the same percentage of the "
 msgstr ""
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
 #. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 msgid "Cut the selected text to the clipboard."
 msgstr ""
@@ -1884,10 +1884,6 @@ msgstr ""
 
 #. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
 msgid "Definition"
-msgstr ""
-
-#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
-msgid "Cut the selected text to the clipboard"
 msgstr ""
 
 #. Form18("Image options")..Caption
@@ -2899,6 +2895,10 @@ msgstr ""
 msgid "Too many recursive calls."
 msgstr ""
 
+msgid "Overflow: A function returned a value too large to "
+"handle."
+msgstr ""
+
 msgid "Unexpected operator. Operator '%s' cannot be placed "
 "here."
 msgstr ""
@@ -3024,7 +3024,7 @@ msgid "Save changes?"
 msgstr ""
 
 #. Asked when trying to exit
-msgid "Save changes in %s"
+msgid "Save changes in %s?"
 msgstr ""
 
 #. Written in status bar when trying to zoom in too much

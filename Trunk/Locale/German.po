@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2007-04-29 21:42\n"
+"POT-Creation-Date: 2007-06-17 00:28\n"
 "PO-Revision-Date: 2007-05-15 20:52+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Frank Hüttemeister & Michael Bach Ipsen <deutsch@padowan.dk>\n"
@@ -39,16 +39,28 @@ msgid "Area"
 msgstr "Fläche"
 
 #. AreaFrame..Edit1....Hint
-msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
-msgstr "Eine Anfangskoordinate eingeben oder den Bereich direkt auf dem Graphen mit der Maus markieren."
+msgid ""
+"Enter the start coordinate or mark the range on the graph itself with the "
+"mouse."
+msgstr ""
+"Eine Anfangskoordinate eingeben oder den Bereich direkt auf dem Graphen mit "
+"der Maus markieren."
 
 #. AreaFrame..Edit2....Hint
-msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
-msgstr "Eine Endkoordinate eingeben oder den Bereich direkt auf dem Graphen mit der Maus markieren."
+msgid ""
+"Enter the end coordinate or mark the range on the graph itself with the "
+"mouse."
+msgstr ""
+"Eine Endkoordinate eingeben oder den Bereich direkt auf dem Graphen mit der "
+"Maus markieren."
 
 #. AreaFrame..Edit3....Hint
-msgid "Area or length of path calculated for the given range using Simpson's formula."
-msgstr "Fläche oder Kurvenlänge des gegebenen Intervalls, bestimmt mit der Simpson'schen Regel (Keplersche Fassregel)"
+msgid ""
+"Area or length of path calculated for the given range using Simpson's "
+"formula."
+msgstr ""
+"Fläche oder Kurvenlänge des gegebenen Intervalls, bestimmt mit der "
+"Simpson'schen Regel (Keplersche Fassregel)"
 
 #. ParFuncFrame..Label7("Snap to:")..Caption
 #. PolFuncFrame..Label7("Snap to:")..Caption
@@ -78,8 +90,12 @@ msgstr "Die Steigung der Funktion für den eingegebenen Parameter t."
 
 #. ParFuncFrame..Edit1....Hint
 #. PolFuncFrame..Edit1....Hint
-msgid "Enter the independent variable for which you want to evaluate the function, or click on the function in the main window."
-msgstr "Geben Sie einen Wert für unabhängige Variable ein, oder klicken Sie auf die Funktion im Hauptfenster, um den Funktionswert zu berechnen!"
+msgid ""
+"Enter the independent variable for which you want to evaluate the function, "
+"or click on the function in the main window."
+msgstr ""
+"Geben Sie einen Wert für unabhängige Variable ein, oder klicken Sie auf die "
+"Funktion im Hauptfenster, um den Funktionswert zu berechnen!"
 
 #. ParFuncFrame..ComboBox1....Hint
 #. StdFuncFrame..ComboBox1....Hint
@@ -159,8 +175,12 @@ msgid "The slope of the function evaluated for the given angle."
 msgstr "Die Steigung der Funktion berechnet für den eingegebenen Winkel."
 
 #. StdFuncFrame..Edit1....Hint
-msgid "Enter a number for which you want to evaluate the function, or click on the function in the main window."
-msgstr "Geben Sie einen Wert ein, für den der Funktionswert berechnet werden soll, oder klicken Sie auf die Funktion im Hauptfenster!"
+msgid ""
+"Enter a number for which you want to evaluate the function, or click on the "
+"function in the main window."
+msgstr ""
+"Geben Sie einen Wert ein, für den der Funktionswert berechnet werden soll, "
+"oder klicken Sie auf die Funktion im Hauptfenster!"
 
 #. StdFuncFrame..ComboBox1....Items.Strings
 msgid "Extremum"
@@ -171,11 +191,13 @@ msgid "This is the function evaluated for the entered x-value."
 msgstr "Dies ist der Funktionswert berechnet für den eingegebenen X-Wert."
 
 #. StdFuncFrame..Edit3....Hint
-msgid "This is the first derivative of the function evaluated for the entered value."
+msgid ""
+"This is the first derivative of the function evaluated for the entered value."
 msgstr "Dies ist die erste Ableitung der Funktion für den eingegebenen Wert."
 
 #. StdFuncFrame..Edit4....Hint
-msgid "This is the functions second derivative evaluated for the entered value."
+msgid ""
+"This is the functions second derivative evaluated for the entered value."
 msgstr "Dies ist die zweite Ableitung der Funktion für den eingegebenen Wert."
 
 #. TanFrame..Edit2....Hint
@@ -306,7 +328,8 @@ msgstr "Über der X-Achse"
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Above("Above x-axis")....Hint
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Above("Above x-axis")....Hint
-msgid "Place the label directly above the x-axis on the right side of the image."
+msgid ""
+"Place the label directly above the x-axis on the right side of the image."
 msgstr "Platziert den Textfeld rechts im Bild, direkt über der X-Achse."
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")..Caption
@@ -316,7 +339,8 @@ msgstr "Unter der X-Achse"
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")....Hint
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")....Hint
-msgid "Place the label directly below the x-axis on the right side of the image."
+msgid ""
+"Place the label directly below the x-axis on the right side of the image."
 msgstr "Platziert den Textfeld rechts im Bild, direkt unter der X-Achse."
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")..Caption
@@ -410,7 +434,8 @@ msgstr "Als Bilddatei abspeichern..."
 
 #. Form1..ActionManager..SaveAsImageAction("Save as image...")..Hint
 msgid "Saves the shown coordinate system as an image."
-msgstr "Speichert das Koordinatensystem als Bilddatei (*.emf, *.bmp oder *.png)."
+msgstr ""
+"Speichert das Koordinatensystem als Bilddatei (*.emf, *.bmp oder *.png)."
 
 #. Form1..ActionManager..PrintAction("Print...")..Caption
 msgid "Print..."
@@ -455,7 +480,9 @@ msgstr "Ausschneiden"
 
 #. Form1..ActionManager..CutAction("Cut")..Hint
 msgid "Cuts the selected function or point series to the clipboard."
-msgstr "Schneidet die gewählte Funktion oder Punktserie aus und legt sie in der Zwischenablage ab."
+msgstr ""
+"Schneidet die gewählte Funktion oder Punktserie aus und legt sie in der "
+"Zwischenablage ab."
 
 #. Form1..ActionManager..CopyAction("Copy")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Caption
@@ -477,8 +504,12 @@ msgid "Paste"
 msgstr "Einfügen"
 
 #. Form1..ActionManager..PasteAction("Paste")....Hint
-msgid "Pastes a function or point series from the clipboard into the coordinate system."
-msgstr "Fügt eine Funktion oder Punktserie aus der Zwischenablage ins Koordinatensystem ein."
+msgid ""
+"Pastes a function or point series from the clipboard into the coordinate "
+"system."
+msgstr ""
+"Fügt eine Funktion oder Punktserie aus der Zwischenablage ins "
+"Koordinatensystem ein."
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Caption
 msgid "Copy image"
@@ -602,8 +633,12 @@ msgid "Square"
 msgstr "Quadrat"
 
 #. Form1..ActionManager..ZoomSquareAction("Square")....Hint
-msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
-msgstr "Zoomen, um die Achsen einheitlich zu skalieren. Dies stellt einen Kreis mit korrekten Seitenverhältnisse dar (statt einer Ellipse)."
+msgid ""
+"Zoom to scale the axes equally. This will show a plotted circle in its "
+"correct relation instead of an ellipse."
+msgstr ""
+"Zoomen, um die Achsen einheitlich zu skalieren. Dies stellt einen Kreis mit "
+"korrekten Seitenverhältnisse dar (statt einer Ellipse)."
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
@@ -681,7 +716,8 @@ msgstr "Evaluieren"
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Hint
 msgid "Evaluate or trace the selected function."
-msgstr "Funktionswerte der gewählten Funktion berechnen oder deren Graph verfolgen."
+msgstr ""
+"Funktionswerte der gewählten Funktion berechnen oder deren Graph verfolgen."
 
 #. Form1..ActionManager..TableAction("Table...")..Caption
 msgid "Table..."
@@ -764,9 +800,10 @@ msgstr "Zeigt eine Liste mit häufig gestellten Fragen und Antworten."
 msgid "Insert label..."
 msgstr "Textfeld einfügen..."
 
-#. Form1..ActionManager..InsertLabelAction("Insert label...")....Hint
-msgid "Insert a text label (select and click in the main window where you want the label)."
-msgstr "Textfeld einfügen (auswählen und auf die gewünschte Stelle im Hauptfenster klicken)."
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
+#, fuzzy
+msgid "Insert a text label"
+msgstr "Textfeld einfügen..."
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -840,7 +877,8 @@ msgstr "Benutzerdefinierte Funktionen..."
 
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Hint
 msgid "Create custom functions and constants for use in graphs."
-msgstr "Erstellen Sie benutzerdefinierte Funktionen und Konstanten für Graphen."
+msgstr ""
+"Erstellen Sie benutzerdefinierte Funktionen und Konstanten für Graphen."
 
 #. Form1..ActionManager..AnimateAction("Animate...")..Caption
 msgid "Animate..."
@@ -1059,8 +1097,12 @@ msgstr "Beschreibung:"
 #. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
 #. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
 #. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
-msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
-msgstr "Schreiben Sie einen erklärenden Text für die Legende, andernfalls wird die Gleichung der Funktion angezeigt."
+msgid ""
+"Write a descriptive text to show in the legend. If empty the equation will "
+"be used."
+msgstr ""
+"Schreiben Sie einen erklärenden Text für die Legende, andernfalls wird die "
+"Gleichung der Funktion angezeigt."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
@@ -1097,12 +1139,18 @@ msgid "Width:"
 msgstr "Breite:"
 
 #. Form11("Insert relation")..GroupBox2("Properties")..ShadeSelect1....Hint
-msgid "Select the style used for drawing the inequality. Not used for equations."
-msgstr "Wählen Sie den Zeichen-Stil für die Ungleichung. Wird für Gleichungen nicht benötigt."
+msgid ""
+"Select the style used for drawing the inequality. Not used for equations."
+msgstr ""
+"Wählen Sie den Zeichen-Stil für die Ungleichung. Wird für Gleichungen nicht "
+"benötigt."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Breite des Graphs einer Gleichung oder der Grenzlinie einer Ungleichung, in Pixel."
+msgid ""
+"Width in pixels of the equation line or the borderline of the inequality."
+msgstr ""
+"Breite des Graphs einer Gleichung oder der Grenzlinie einer Ungleichung, in "
+"Pixel."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
@@ -1110,11 +1158,15 @@ msgstr "Wählen Sie die Farbe für die Relation."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
-msgstr "Geben Sie die Relation ein, beispielsweise \"x^2+y^2 = 25\" oder \"y < sin(x)\""
+msgstr ""
+"Geben Sie die Relation ein, beispielsweise \"x^2+y^2 = 25\" oder \"y < sin(x)"
+"\""
 
 #. Form11("Insert relation")..Edit2....Hint
 msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
-msgstr "Geben Sie die Restriktionen der Relation ein, beispielsweise \"x > 0 and y < 5\""
+msgstr ""
+"Geben Sie die Restriktionen der Relation ein, beispielsweise \"x > 0 and y < "
+"5\""
 
 #. Form12("Insert tangent/normal")..Caption
 msgid "Insert tangent/normal"
@@ -1208,13 +1260,21 @@ msgstr "Ende:"
 
 #. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox1....Hint
 #. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox2....Hint
-msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
-msgstr "Wählen Sie, wie der Intervallanfang markiert werden soll (nur wenn ein Intervall eingegeben ist)."
+msgid ""
+"Select marker to show at the start of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+"Wählen Sie, wie der Intervallanfang markiert werden soll (nur wenn ein "
+"Intervall eingegeben ist)."
 
 #. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox2....Hint
 #. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox3....Hint
-msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
-msgstr "Wählen Sie, wie das Intervallende markiert werden soll (nur wenn ein Intervall eingegeben ist)."
+msgid ""
+"Select marker to show at the end of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+"Wählen Sie, wie das Intervallende markiert werden soll (nur wenn ein "
+"Intervall eingegeben ist)."
 
 #. Form13("Insert trendline")..Caption
 msgid "Insert trendline"
@@ -1280,7 +1340,9 @@ msgstr "Exponentiell"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel6..Image6..Hint
 msgid "Create a moving average as a series of straight lines."
-msgstr "Erstellt einen gleitenden Mittelwert in Form einer Folge aneinander gereihter Strecken."
+msgstr ""
+"Erstellt einen gleitenden Mittelwert in Form einer Folge aneinander "
+"gereihter Strecken."
 
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton6("Moving average")..Caption
 msgid "Moving average"
@@ -1322,8 +1384,14 @@ msgstr "Geben Sie ein Funktionsmodell als Basis für die Trendlinie ein."
 
 #. Form13("Insert trendline")..CheckBox1("Intercept =")....Hint
 #. Form13("Insert trendline")..Edit5....Hint
-msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
-msgstr "Geben Sie einen Wert in die Schnittpunkt-Box ein, um den Punkt zu bestimmen, in dem die Trendlinie die Y-Achse schneiden soll. Dies ist nur für lineare, ganzrationale und exponentielle Trendlinien möglich."
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendlines."
+msgstr ""
+"Geben Sie einen Wert in die Schnittpunkt-Box ein, um den Punkt zu bestimmen, "
+"in dem die Trendlinie die Y-Achse schneiden soll. Dies ist nur für lineare, "
+"ganzrationale und exponentielle Trendlinien möglich."
 
 #. Form13("Insert trendline")..CheckBox1("Intercept =")..Caption
 msgid "Intercept ="
@@ -1334,8 +1402,12 @@ msgid "Insert point series"
 msgstr "Punktserie einfügen"
 
 #. Form14("Insert point series")..Edit1....Hint
-msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
-msgstr "Der Name der Punktserie, der in der Liste links vom Koordinatensystem angezeigt wird."
+msgid ""
+"The name of the point series, which is shown in the list to the left of the "
+"coordinate system."
+msgstr ""
+"Der Name der Punktserie, der in der Liste links vom Koordinatensystem "
+"angezeigt wird."
 
 #. Form14("Insert point series")..Edit1..Text
 #. Default description in the Insert point series dialog
@@ -1344,7 +1416,9 @@ msgstr "Serie"
 
 #. Form14("Insert point series")..GroupBox4("Sample")....Hint
 msgid "This shows a sample of the markers and the lines between the markers."
-msgstr "Dies zeigt ein Beispiel für die Markierungen und den Linien zwischen den Markierungen."
+msgstr ""
+"Dies zeigt ein Beispiel für die Markierungen und den Linien zwischen den "
+"Markierungen."
 
 #. Form14("Insert point series")..GroupBox4("Sample")..Caption
 msgid "Sample"
@@ -1379,8 +1453,12 @@ msgid "Interpolation:"
 msgstr "Interpolation:"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..LineSelect1....Hint
-msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
-msgstr "Wählen Sie, ob die Punkte verbunden werden sollen, und wenn ja, mit welcher Linienart!"
+msgid ""
+"Choose the style of lines to be drawn between the points. You may also "
+"choose not to draw any lines."
+msgstr ""
+"Wählen Sie, ob die Punkte verbunden werden sollen, und wenn ja, mit welcher "
+"Linienart!"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Edit3..Hint
 msgid "Choose the width of the lines in pixels."
@@ -1388,7 +1466,9 @@ msgstr "Wählen Sie die Linienbreite in Pixel."
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Hint
 msgid "Select which kind of line to draw between the markers."
-msgstr "Legen Sie den Stil für die zwischen den Markierungen verlaufenden Linien fest."
+msgstr ""
+"Legen Sie den Stil für die zwischen den Markierungen verlaufenden Linien "
+"fest."
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Text
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
@@ -1518,6 +1598,7 @@ msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "Alle Fehlerbalken haben denselben Prozentsatz der X-Koordinate."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
 #. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 msgid "Cut the selected text to the clipboard."
 msgstr "Den ausgewählten Text ausschneiden und in der Zwischenablage ablegen."
@@ -1530,8 +1611,12 @@ msgstr "Kopiert den ausgewählten Text in die Zwischenablage."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")....Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")....Hint
-msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
-msgstr "Fügt Text aus der Zwischenablage in die Tabelle ein. Andere Felder könnten mit dem Text überschrieben werden."
+msgid ""
+"Paste text from the clipboard into the grid. Other cells may be overwritten "
+"by the text from the clipboard."
+msgstr ""
+"Fügt Text aus der Zwischenablage in die Tabelle ein. Andere Felder könnten "
+"mit dem Text überschrieben werden."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Delete("Delete")..Hint
@@ -1545,7 +1630,8 @@ msgstr "Zeile einfügen."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Hint
 msgid "Inserts a row in the grid moving rows below one down."
-msgstr "Fügt eine Zeile in die Tabelle ein und schiebt die unteren Zeilen nach unten."
+msgstr ""
+"Fügt eine Zeile in die Tabelle ein und schiebt die unteren Zeilen nach unten."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Remove("Remove row")..Caption
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Remove("Remove row")..Caption
@@ -1588,7 +1674,8 @@ msgid "Calculate table"
 msgstr "Wertetabelle"
 
 #. Form15("Calculate table")..Edit3....Hint
-msgid "The step value. This is the distance between the x-values in the interval."
+msgid ""
+"The step value. This is the distance between the x-values in the interval."
 msgstr "Die Schrittweite, der Abstand zwischen den X-Werten im Intervall."
 
 #. Form15("Calculate table")..Edit1..Hint
@@ -1657,8 +1744,12 @@ msgstr "Schraffiert die Fläche innerhalb der Funktion."
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
-msgid "Shades the area between the main function and the function selected in the list to the right."
-msgstr "Schraffiert die Fläche zwischen der Hauptfunktion und der Funktion, die in der Liste rechts gewählt ist."
+msgid ""
+"Shades the area between the main function and the function selected in the "
+"list to the right."
+msgstr ""
+"Schraffiert die Fläche zwischen der Hauptfunktion und der Funktion, die in "
+"der Liste rechts gewählt ist."
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
 msgid "Above function"
@@ -1708,7 +1799,9 @@ msgstr "Die Koordinate, bei der die Schraffur endet."
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
 msgid "Check to increase the end coordinate until intersection."
-msgstr "Aktivieren, um die Schraffur bis zu dem Schnittpunkt zu zeichnen, der rechts von der angegebenen X-Koordinate liegt."
+msgstr ""
+"Aktivieren, um die Schraffur bis zu dem Schnittpunkt zu zeichnen, der rechts "
+"von der angegebenen X-Koordinate liegt."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
@@ -1718,7 +1811,8 @@ msgstr "Erhöhen zum Schnittpunkt"
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
 msgid "Check to decrease the start coordinate until intersection."
-msgstr "Aktivieren, um die Anfangskoordinate bis zum Schnittpunkt zu verkleinern.."
+msgstr ""
+"Aktivieren, um die Anfangskoordinate bis zum Schnittpunkt zu verkleinern.."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
@@ -1762,8 +1856,10 @@ msgid "2nd function:"
 msgstr "Zweite Funktion:"
 
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
-msgid "Select the second function when you want a shading between two functions."
-msgstr "Für eine Schraffur zwischen zwei Funktionen wählen Sie die zweite Funktion."
+msgid ""
+"Select the second function when you want a shading between two functions."
+msgstr ""
+"Für eine Schraffur zwischen zwei Funktionen wählen Sie die zweite Funktion."
 
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
 msgid "Shading range for 2nd function"
@@ -1784,10 +1880,6 @@ msgstr "Namen"
 #. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
 msgid "Definition"
 msgstr "Definition"
-
-#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
-msgid "Cut the selected text to the clipboard"
-msgstr "Den ausgewählten Text ausschneiden und in der Zwischenablage ablegen."
 
 #. Form18("Image options")..Caption
 msgid "Image options"
@@ -1816,8 +1908,11 @@ msgid "Set a custom image height."
 msgstr "Legen Sie eine benutzerdefinierte Bildhöhe fest."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
-msgid "Choose to use the same size as shown on the screen or a custom image size."
-msgstr "Wählen Sie, ob Sie dieselbe Größe, wie auf dem Bildschirm gezeigt, benutzen oder eine benutzerdefinierte Bildgröße."
+msgid ""
+"Choose to use the same size as shown on the screen or a custom image size."
+msgstr ""
+"Wählen Sie, ob Sie dieselbe Größe, wie auf dem Bildschirm gezeigt, benutzen "
+"oder eine benutzerdefinierte Bildgröße."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")..Caption
 msgid "Image size"
@@ -1832,8 +1927,12 @@ msgid "Custom size"
 msgstr "Benutzerdefinierte Größe"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Hint
-msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
-msgstr "Mit Progressivem Encoding kann man während des Downloads eine grobe Kopie des Bildes sehen. "
+msgid ""
+"Progressive encoding allows viewers to see a rough copy of the image while "
+"it is downloaded."
+msgstr ""
+"Mit Progressivem Encoding kann man während des Downloads eine grobe Kopie "
+"des Bildes sehen. "
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")..Caption
 msgid "Encoding"
@@ -1882,7 +1981,9 @@ msgstr "Wählen Sie die zu benutzende Papiergröße."
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
 msgid "Select this to use these settings as defaults in the future."
-msgstr "Hier markieren, um diese Einstellungen in Zukunft als Voreinstellungen zu benutzen."
+msgstr ""
+"Hier markieren, um diese Einstellungen in Zukunft als Voreinstellungen zu "
+"benutzen."
 
 #. Form18("Image options")..CheckBox1("Save as default")..Caption
 #. Form3("Edit axes")..CheckBox16("Save as default")..Caption
@@ -1916,7 +2017,8 @@ msgstr "Letzter Wert der Konstanten."
 
 #. Form19("Animate")..TntGroupBox1("Range")..Edit3..Hint
 msgid "The chosen constant is changed by this value between each frame."
-msgstr "Die gewählte Konstante wird zwischen jedem Frame um diesen Wert geändert."
+msgstr ""
+"Die gewählte Konstante wird zwischen jedem Frame um diesen Wert geändert."
 
 #. Form19("Animate")..TntGroupBox2("Image information")..Caption
 msgid "Image information"
@@ -1960,8 +2062,14 @@ msgid "Build %s"
 msgstr "Erzeugen %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
-msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
-msgstr "Dieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License kostenlos weitergeben. Schicken Sie bitte Fehlermeldungen und Vorschläge an den Programmierer."
+msgid ""
+"This is free software, and you are welcome to redistribute it under the "
+"terms in the GNU General Public License. Please send bug reports and "
+"suggestions to the programmer."
+msgstr ""
+"Dieses Programm ist freie Software. Sie können es unter den Bedingungen der "
+"GNU General Public License kostenlos weitergeben. Schicken Sie bitte "
+"Fehlermeldungen und Vorschläge an den Programmierer."
 
 #. Form2("About Graph")..Panel1..Label4("The newest version as well as the source code are available ")..Caption
 msgid "The newest version as well as the source code are available at:"
@@ -2017,8 +2125,13 @@ msgid "Auto reverse"
 msgstr "Auto reverse"
 
 #. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")....Hint
-msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
-msgstr "Animation erst vorwärts, dann rückwärts abspielen. Es bietet sich in den meisten Fällen an, in diesem Fall auch die Option \"Wiederholen\" auszuwählen."
+msgid ""
+"Play backwards when the end of the animation is reached. This is most useful "
+"in combination with the \"Repeat\" command."
+msgstr ""
+"Animation erst vorwärts, dann rückwärts abspielen. Es bietet sich in den "
+"meisten Fällen an, in diesem Fall auch die Option \"Wiederholen\" "
+"auszuwählen."
 
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
@@ -2075,7 +2188,9 @@ msgstr "Logarithmische Skala"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")....Hint
 msgid "Show the label at the right side of the main window, above the x-axis."
-msgstr "Textfeld rechts auf der rechten Seite des Hauptfensters oberhalb der X-Achse anzeigen."
+msgstr ""
+"Textfeld rechts auf der rechten Seite des Hauptfensters oberhalb der X-Achse "
+"anzeigen."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")..Caption
@@ -2177,7 +2292,8 @@ msgid "Show units on the y-axis."
 msgstr "Skalenteilung an der Y-Achse anzeigen."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")....Hint
-msgid "Show the label at the top of the main window, to the right of the y-axis."
+msgid ""
+"Show the label at the top of the main window, to the right of the y-axis."
 msgstr "Textfeld oben im Hauptfenster rechts der Y-Achse anzeigen."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit12..Hint
@@ -2205,8 +2321,12 @@ msgid "Title:"
 msgstr "Titel:"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Hint
-msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
-msgstr "Wählen Sie, ob die Achsen unsichtbar, alle vier oder nur der erste Quadrant sichtbar sein sollen!"
+msgid ""
+"Choose if you want to show the axes, and if you want to show them crossed or "
+"at the left and bottom of the image."
+msgstr ""
+"Wählen Sie, ob die Achsen unsichtbar, alle vier oder nur der erste Quadrant "
+"sichtbar sein sollen!"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")..Caption
 msgid "Axes style"
@@ -2225,8 +2345,11 @@ msgid "Boxed"
 msgstr "Als Kasten"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Hint
-msgid "Choose if trigonometric functions should calculate in radians or degrees."
-msgstr "Wählen Sie, ob trigonometrische Funktionen in Bogenmaß oder Grad rechnen sollen."
+msgid ""
+"Choose if trigonometric functions should calculate in radians or degrees."
+msgstr ""
+"Wählen Sie, ob trigonometrische Funktionen in Bogenmaß oder Grad rechnen "
+"sollen."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")..Caption
 msgid "Trigonometry"
@@ -2242,7 +2365,9 @@ msgstr "Grad"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Edit13..Hint
 msgid "Enter a title to show above the coordinate system."
-msgstr "Geben Sie den Titel ein, der über dem Koordinatensystem angezeigt werden soll."
+msgstr ""
+"Geben Sie den Titel ein, der über dem Koordinatensystem angezeigt werden "
+"soll."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..BitBtn1..Hint
 msgid "Select the font for the title."
@@ -2257,8 +2382,12 @@ msgid "Legend placement"
 msgstr "Platzierung der Legende"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")....Hint
-msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
-msgstr "Aktivieren, um mit komplexen Zahlen zu rechnen. Beachten Sie, dass hierdurch die grafische Darstellung langsamer wird."
+msgid ""
+"Check this to use complex numbers for calculations. Notice that this will "
+"slow graphing down."
+msgstr ""
+"Aktivieren, um mit komplexen Zahlen zu rechnen. Beachten Sie, dass hierdurch "
+"die grafische Darstellung langsamer wird."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")..Caption
 msgid "Calculate with complex numbers"
@@ -2362,8 +2491,12 @@ msgid "The number of most recent used files shown in the File menu."
 msgstr "Anzahl der zuletzt geöffneten Dateien im Dateimenü."
 
 #. Form4("Options")..CheckBox4("Save workspace on exit")....Hint
-msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
-msgstr "Fensterstellung am Programmende abspeichern. Diese Einstellung wird beim nächsten Programmstart verwendet.|Fensterstellung beim Beenden abspeichern."
+msgid ""
+"Save window position when the program quits. This setting is used the next "
+"time the program is used.|Save window state on exit."
+msgstr ""
+"Fensterstellung am Programmende abspeichern. Diese Einstellung wird beim "
+"nächsten Programmstart verwendet.|Fensterstellung beim Beenden abspeichern."
 
 #. Form4("Options")..CheckBox4("Save workspace on exit")..Caption
 msgid "Save workspace on exit"
@@ -2399,11 +2532,17 @@ msgstr "Quickinfo zeigen"
 
 #. Form4("Options")..Edit3....Hint
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
-msgstr "Maximale Anzahl von Rückgängig-Schritten. Auf 0 setzen, um das Rückgängigmachen zu sperren."
+msgstr ""
+"Maximale Anzahl von Rückgängig-Schritten. Auf 0 setzen, um das "
+"Rückgängigmachen zu sperren."
 
 #. Form4("Options")..CheckBox7("Check for new version of Graph at startup")....Hint
-msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
-msgstr "Wenn aktiviert, wird bei jedem Programmstart im Internet nach einer neuen Version von Graph gesucht."
+msgid ""
+"If checked the program will contact a web server when the program is started "
+"to see if a newer version is available."
+msgstr ""
+"Wenn aktiviert, wird bei jedem Programmstart im Internet nach einer neuen "
+"Version von Graph gesucht."
 
 #. Form4("Options")..CheckBox7("Check for new version of Graph at startup")..Caption
 msgid "Check for new version of Graph at startup"
@@ -2414,8 +2553,12 @@ msgid "Select the language to use for the user interface."
 msgstr "Wählen Sie die Sprache für die Benutzeroberfläche."
 
 #. Form4("Options")..ComboBox2....Hint
-msgid "This is used to scale the user interface if you are having problems reading the text."
-msgstr "Hiermit läßt sich die Bildschirmauflösung einstellen, falls Sie Probleme beim Lesen des Textes haben."
+msgid ""
+"This is used to scale the user interface if you are having problems reading "
+"the text."
+msgstr ""
+"Hiermit läßt sich die Bildschirmauflösung einstellen, falls Sie Probleme "
+"beim Lesen des Textes haben."
 
 #. Form5("Insert function")..Caption
 msgid "Insert function"
@@ -2451,15 +2594,20 @@ msgstr "Schritte:"
 
 #. Form5("Insert function")..GroupBox2("Argument range")..Edit5..Hint
 msgid "Number of calculation steps used to draw the graph."
-msgstr "Anzahl der verwendeten Rechnenschritte, um den Funktionsgraphen zu zeichnen."
+msgstr ""
+"Anzahl der verwendeten Rechnenschritte, um den Funktionsgraphen zu zeichnen."
 
 #. Form5("Insert function")..GroupBox4("Graph properties")..Label13("Draw type:")..Caption
 msgid "Draw type:"
 msgstr "Darstellungsart:"
 
 #. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Hint
-msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
-msgstr "Wählen Sie Verlauf, wenn die berechneten Punkte miteinander verbunden werden sollen. Wenn nur die Punkte angezeigt werden sollen, wählen Sie nur Punkte."
+msgid ""
+"Choose Lines if you want the calculated points for the graph to be "
+"connected. Choose Dots if you only want to show a dot at each point."
+msgstr ""
+"Wählen Sie Verlauf, wenn die berechneten Punkte miteinander verbunden werden "
+"sollen. Wenn nur die Punkte angezeigt werden sollen, wählen Sie nur Punkte."
 
 #. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4..Text
 #. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
@@ -2743,14 +2891,22 @@ msgstr "Fehler bei der Evaluierung aufgetreten."
 msgid "Argument produced a function result with total loss of precision."
 msgstr "Argument erzeugte ein Funktionsergebnis ohne Genauigkeit."
 
-msgid "The custom function/constant '%s' was not found or has the wrong number of arguments."
-msgstr "Das Zeichen '%s' konnte nicht gefunden werden oder hat nicht die erforderliche Anzahl an Argumenten."
+msgid ""
+"The custom function/constant '%s' was not found or has the wrong number of "
+"arguments."
+msgstr ""
+"Das Zeichen '%s' konnte nicht gefunden werden oder hat nicht die "
+"erforderliche Anzahl an Argumenten."
 
 msgid "Too many recursive calls."
 msgstr "Die maximale Rekursionstiefe wurde überschritten."
 
+msgid "Overflow: A function returned a value too large to handle."
+msgstr ""
+
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
-msgstr "Unerwartet Operator. Der Operator '%s' kann hier nicht eingesetzt werden."
+msgstr ""
+"Unerwartet Operator. Der Operator '%s' kann hier nicht eingesetzt werden."
 
 msgid "The right bracket is missing."
 msgstr "Die rechte Klammer fehlt."
@@ -2768,7 +2924,8 @@ msgid "String is empty. You need to enter a function."
 msgstr "Die Zeichenfolge ist leer. Sie müssen eine Funktion eingeben."
 
 msgid "Comma is not allowed here. Use dot as decimal separator."
-msgstr "Ein Komma ist hier nicht erlaubt; benutzen Sie den Punkt als Dezimaltrenner."
+msgstr ""
+"Ein Komma ist hier nicht erlaubt; benutzen Sie den Punkt als Dezimaltrenner."
 
 msgid "Unexpected end of brackets."
 msgstr "Unerwartetes Ende der Klammern."
@@ -2804,7 +2961,9 @@ msgid "Not enough points for calculation."
 msgstr "Nicht genug Punkte für die Berechnung."
 
 msgid "Illegal name \"%s\" for user defined function or constant."
-msgstr "Der Name \"%s\" ist für benutzerdefinierte Funktionen oder Konstanten nicht zulässig."
+msgstr ""
+"Der Name \"%s\" ist für benutzerdefinierte Funktionen oder Konstanten nicht "
+"zulässig."
 
 msgid "Cannot differentiate recursive function."
 msgstr "Eine rekursive Funktion kann nicht differenziert werden."
@@ -2819,34 +2978,47 @@ msgid "Not further specified error occurred under calculation."
 msgstr "Unbekannter Fehler in der Berechnung."
 
 msgid "No solution found. Try another guess or another model."
-msgstr "Keine Lösung gefunden. Versuchen Sie es mit einer anderen Schätzung oder einem anderen Modell."
+msgstr ""
+"Keine Lösung gefunden. Versuchen Sie es mit einer anderen Schätzung oder "
+"einem anderen Modell."
 
-msgid "Internal error. Please notify the programmer with as much information as possible."
-msgstr "Interner Fehler. Teilen Sie dies bitte möglichst detailliert dem Programmierer mit, z.B. wie dieser Fehler auftrat oder wie er sich provozieren lässt."
+msgid ""
+"Internal error. Please notify the programmer with as much information as "
+"possible."
+msgstr ""
+"Interner Fehler. Teilen Sie dies bitte möglichst detailliert dem "
+"Programmierer mit, z.B. wie dieser Fehler auftrat oder wie er sich "
+"provozieren lässt."
 
 msgid "You need to enter a name for the function/constant."
 msgstr "Für die Funktion/Konstante muss ein Name vergeben werden."
 
 msgid ""
 "Invalid function/constant name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
 "In addition you are not allowed to redefine built-in names."
 msgstr ""
 "Unzulässiger Funktions-/Konstantenname '%s'.\n"
-"Ein Name kann nur aus Buchstaben und Zahlen zusammengesetzt werden und muss stets mit einem Buchstaben beginnen.\n"
-"Es ist ferner nicht erlaubt, festdefinierte Namen eigenen Konstanten/Funktionen zuzuweisen."
+"Ein Name kann nur aus Buchstaben und Zahlen zusammengesetzt werden und muss "
+"stets mit einem Buchstaben beginnen.\n"
+"Es ist ferner nicht erlaubt, festdefinierte Namen eigenen Konstanten/"
+"Funktionen zuzuweisen."
 
 msgid "You need to enter a name for the argument."
 msgstr "Für das Argument muss ein Name vergeben werden."
 
 msgid ""
 "Invalid argument name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
 " In addition you are not allowed to use built-in names as argument names."
 msgstr ""
 "Unzulässiger Argumentname '%s'.\n"
-"Ein Name kann nur aus Buchstaben und Zahlen zusammengesetzt werden und muss stets mit einem Buchstaben beginnen.\n"
-"Es ist weiterhin nicht erlaubt, festdefinierte Namen als Argumentnamen in Ausdrücken zu benutzen"
+"Ein Name kann nur aus Buchstaben und Zahlen zusammengesetzt werden und muss "
+"stets mit einem Buchstaben beginnen.\n"
+"Es ist weiterhin nicht erlaubt, festdefinierte Namen als Argumentnamen in "
+"Ausdrücken zu benutzen"
 
 msgid "Character found after brackets."
 msgstr "Ein Zeichen folgt direkt auf eine Klammer."
@@ -2867,7 +3039,8 @@ msgid "Save changes?"
 msgstr "Änderungen speichern?"
 
 #. Asked when trying to exit
-msgid "Save changes in %s"
+#, fuzzy
+msgid "Save changes in %s?"
 msgstr "Änderungen in \"%s\" speichern?"
 
 #. Written in status bar when trying to zoom in too much
@@ -2945,10 +3118,13 @@ msgid ""
 "Access denied. Check that the file is not in use or write protected."
 msgstr ""
 "In die Datei %sn kann nicht gespeichert werden. \n"
-"Der Zugriff wurde verweigert. Stellen Sie sicher, dass die Datei nicht von einem anderen Programm verwendet wird oder schreibgeschützt ist."
+"Der Zugriff wurde verweigert. Stellen Sie sicher, dass die Datei nicht von "
+"einem anderen Programm verwendet wird oder schreibgeschützt ist."
 
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
-msgstr "Die Schriftart \"%s\" existiert nicht. Stattdessen wird die Standard-Schriftart benutzt."
+msgstr ""
+"Die Schriftart \"%s\" existiert nicht. Stattdessen wird die Standard-"
+"Schriftart benutzt."
 
 #. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
@@ -2976,7 +3152,9 @@ msgid "Object error"
 msgstr "Objekt-Fehler"
 
 msgid "Windows does not have enough resources to save an image that large."
-msgstr "Es steht nicht genügend Arbeitsspeicher zur Verfügung, um ein Bild dieser Größe zu speichern."
+msgstr ""
+"Es steht nicht genügend Arbeitsspeicher zur Verfügung, um ein Bild dieser "
+"Größe zu speichern."
 
 msgid "'%1%' must be between %2% and %3%."
 msgstr "'%1%' muß zwischen %2% und %3% liegen."
@@ -3020,23 +3198,40 @@ msgstr "Der Maximalwert für t muss größer als der Minimalwert sein."
 msgid "The step value for t must be a number greater than 0."
 msgstr "Die Schrittweite für t muss positiv sein."
 
-msgid "The minimum value for the x-axis must be greater than 0, when the x-axis is logarithmic scaled."
-msgstr "Der Minimalwert für die X-Achse muss positiv sein, wenn die X-Achse logarithmisch ist."
+msgid ""
+"The minimum value for the x-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+"Der Minimalwert für die X-Achse muss positiv sein, wenn die X-Achse "
+"logarithmisch ist."
 
-msgid "The cross point of the y-axis must be greater than 0, when the x-axis is logarithmic scaled."
-msgstr "Der Kreuzungspunkt der Y-Achse muss positiv sein, wenn die X-Achse logarithmisch ist."
+msgid ""
+"The cross point of the y-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+"Der Kreuzungspunkt der Y-Achse muss positiv sein, wenn die X-Achse "
+"logarithmisch ist."
 
-msgid "The minimum value for the y-axis must be greater than 0, when the y-axis is logarithmic scaled."
-msgstr "Der Minimalwert für die Y-Achse muss positiv sein, wenn die Y-Achse logarithmisch ist."
+msgid ""
+"The minimum value for the y-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"Der Minimalwert für die Y-Achse muss positiv sein, wenn die Y-Achse "
+"logarithmisch ist."
 
-msgid "The cross point of the x-axis must be greater than 0, when the y-axis is logarithmic scaled."
-msgstr "Der Kreuzungspunkt der X-Achse muss positiv sein, wenn die Y-Achse logarithmisch ist."
+msgid ""
+"The cross point of the x-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"Der Kreuzungspunkt der X-Achse muss positiv sein, wenn die Y-Achse "
+"logarithmisch ist."
 
 msgid "'Recent files' must be between 0 and 9."
 msgstr "'Letzte Dateien' muss zwischen 0 und 9 liegen."
 
 msgid "The end of interval must be greater than the start of interval."
-msgstr "Die rechte Intervallgrenze muss größer als die linke Intervallgrenze sein."
+msgstr ""
+"Die rechte Intervallgrenze muss größer als die linke Intervallgrenze sein."
 
 msgid "Error in interval."
 msgstr "Intervallfehler."
@@ -3047,8 +3242,12 @@ msgstr "Die Breite muss eine größer als 0 sein."
 msgid "Error in width"
 msgstr "Breite fehlerhaft."
 
-msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
-msgstr "Die rechte Intervallgrenze muss größer als die linke Intervallgrenze sein, und %s muss positiv sein."
+msgid ""
+"The end of interval must be greater than the start of interval and %s must "
+"be greater than 0."
+msgstr ""
+"Die rechte Intervallgrenze muss größer als die linke Intervallgrenze sein, "
+"und %s muss positiv sein."
 
 msgid "Invalid model name."
 msgstr "Ungültiger Modellname."
@@ -3102,8 +3301,12 @@ msgstr "Jeder Punkt benötigt eine X- und eine Y-Koordinate."
 msgid "\"%s\" is not a valid number."
 msgstr "\"%s\" ist keine gültige Zahl."
 
-msgid "You didn't add any points. You need to specify some x- and y-coordinates in the grid."
-msgstr "Sie haben keine Punkte hinzufügt. Sie müssen einige X- und Y-Koordinaten im Raster spezifizieren."
+msgid ""
+"You didn't add any points. You need to specify some x- and y-coordinates in "
+"the grid."
+msgstr ""
+"Sie haben keine Punkte hinzufügt. Sie müssen einige X- und Y-Koordinaten im "
+"Raster spezifizieren."
 
 msgid "Edit point series"
 msgstr "Punktserie bearbeiten"
@@ -3174,7 +3377,8 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"If you don't want to be asked again, this feature may be disabled from the Edit|Options dialog."
+"If you don't want to be asked again, this feature may be disabled from the "
+"Edit|Options dialog."
 msgstr ""
 "\n"
 "\n"
@@ -3191,8 +3395,13 @@ msgstr "Befehle:"
 msgid "(All Commands)"
 msgstr "(Alle Befehle)"
 
-msgid "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
-msgstr "Um einen Befehl zur Symbolleiste hinzuzufügen, wählen Sie einfach eine Kategorie und ziehen Sie den Befehl aus diesem Dialogfeld in eine Symbolleiste."
+msgid ""
+"To add a command to a toolbar simply select a category and drag the command "
+"out of this dialog box to a toolbar."
+msgstr ""
+"Um einen Befehl zur Symbolleiste hinzuzufügen, wählen Sie einfach eine "
+"Kategorie und ziehen Sie den Befehl aus diesem Dialogfeld in eine "
+"Symbolleiste."
 
 msgid "Edit f'(x)"
 msgstr "f'(x) bearbeiten."
@@ -3209,208 +3418,420 @@ msgstr "&Kategorien:"
 # The Tip of the day ...
 # anders gefragt: Gilt dieser Satz für einen ganz bestimmten "Tipp des Tages" (dann wäre This richtig) oder gilt er allgemein?
 #. Tip of the Day
-msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
-msgstr "Der Tipp des Tages kann Ihnen viele Informationen über das Programm geben, die die meisten Anwender nicht kennen."
+msgid ""
+"This Tip of the day can give you a lot of information about the program that "
+"most users don't know."
+msgstr ""
+"Der Tipp des Tages kann Ihnen viele Informationen über das Programm geben, "
+"die die meisten Anwender nicht kennen."
 
 #. Tip of the Day
-msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
-msgstr "Vorschläge für zukünftige Versionen, Fehlermeldungen und Kommentare senden Sie bitte an deutsch@padowan.dk ."
+msgid ""
+"You can send suggestions for future versions, bug reports and comments to "
+"graph@padowan.dk"
+msgstr ""
+"Vorschläge für zukünftige Versionen, Fehlermeldungen und Kommentare senden "
+"Sie bitte an deutsch@padowan.dk ."
 
 #. Tip of the Day
-msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
-msgstr "Sie können die Symbolleiste durch Rechtsklick darauf anpassen. Wählen Sie dann 'Symbolleiste anpassen'!"
+msgid ""
+"You can customize the toolbar by right clicking on it and select 'Customize "
+"toolbar'."
+msgstr ""
+"Sie können die Symbolleiste durch Rechtsklick darauf anpassen. Wählen Sie "
+"dann 'Symbolleiste anpassen'!"
 
 #. Tip of the Day
-msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
-msgstr "Anstatt eine Funktion zu löschen, können Sie sie unsichtbar machen. Rechtsklick auf die Funktion und dann 'Sichtbar' wählen."
+msgid ""
+"Instead of deleting a function you can make it invisible by right clicking "
+"on it in the function list and removing the check at the 'Visible' menu item."
+msgstr ""
+"Anstatt eine Funktion zu löschen, können Sie sie unsichtbar machen. "
+"Rechtsklick auf die Funktion und dann 'Sichtbar' wählen."
 
 #. Tip of the Day
 msgid "You can paste images into a text label."
 msgstr "Sie können auch Bilder in ein Textfeld einfügen."
 
 #. Tip of the Day
-msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
-msgstr "Textfelder können jede Art von OLE-Objekten enthalten, zum Beispiel ein Microsoft Gleichungsobjekt. Um ein Textfeld zu bearbeiten, klicken Sie in den Bearbeitungsbereich und wählen Sie 'Objekt einfügen'."
+msgid ""
+"Text labels can contain any kind of OLE objects, for example Microsoft "
+"Equation. When editing a label right click in the editing area and select "
+"'Insert object'."
+msgstr ""
+"Textfelder können jede Art von OLE-Objekten enthalten, zum Beispiel ein "
+"Microsoft Gleichungsobjekt. Um ein Textfeld zu bearbeiten, klicken Sie in "
+"den Bearbeitungsbereich und wählen Sie 'Objekt einfügen'."
 
 #. Tip of the Day
-msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
-msgstr "Sie können Punkte aus einer Punktserie in eine Datei exportieren, die von anderen Programmen geöffnet werden kann, zum Beispiel von Microsoft Excel. Beim Bearbeiten klicken Sie rechts und wählen 'In Datei exportieren'."
+msgid ""
+"You can export points from a point series to a file that can be read by "
+"other programs, for example Microsoft Excel. When editing the point series "
+"select the points, right click and choose 'Export to file'."
+msgstr ""
+"Sie können Punkte aus einer Punktserie in eine Datei exportieren, die von "
+"anderen Programmen geöffnet werden kann, zum Beispiel von Microsoft Excel. "
+"Beim Bearbeiten klicken Sie rechts und wählen 'In Datei exportieren'."
 
 #. Tip of the Day
-msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
-msgstr "Eine Senkrechte in x=5 kann mit der Parameterfunktion x(t)=5, y(t)=t gezeichnet werden oder mit der Relation x=5."
+msgid ""
+"A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)"
+"=t or as the relation x=5."
+msgstr ""
+"Eine Senkrechte in x=5 kann mit der Parameterfunktion x(t)=5, y(t)=t "
+"gezeichnet werden oder mit der Relation x=5."
 
 #. Tip of the Day
-msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
-msgstr "Sie können Zoomen|Quadrat benutzen, um die Achsen zu einheitlich zu skalieren. Besonders praktisch beim Zeichnen von Kreisen und ähnlichen Funktionen."
+msgid ""
+"You can use Zoom|Square to make the axes look equally scaled. This is "
+"especially useful when drawing circles and similar functions."
+msgstr ""
+"Sie können Zoomen|Quadrat benutzen, um die Achsen zu einheitlich zu "
+"skalieren. Besonders praktisch beim Zeichnen von Kreisen und ähnlichen "
+"Funktionen."
 
 #. Tip of the Day
 msgid "You can find a list of all available functions in the help."
 msgstr "In der Hilfe finden Sie eine Liste aller verfügbaren Funktionen."
 
 #. Tip of the Day
-msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
-msgstr "Mit 'if' können Sie zwei Funktionen in einer zusammenführen. Beispiel: Die Funktion f(x)=x für x<1 und f(x)=x^2 für x>=2 kann als f(x)=if(x<1, x, x^2) geschrieben werden."
+msgid ""
+"You can combine two functions to one using 'if'. For example the function f"
+"(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+msgstr ""
+"Mit 'if' können Sie zwei Funktionen in einer zusammenführen. Beispiel: Die "
+"Funktion f(x)=x für x<1 und f(x)=x^2 für x>=2 kann als f(x)=if(x<1, x, x^2) "
+"geschrieben werden."
 
 #. Tip of the Day
-msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
-msgstr "Sie können den Inhalt einer anderen Graph-Datei in das aktuelle Koordinatensystem einfügen mit 'Datei|Einfügen|Graph-Datei'."
+msgid ""
+"You can import the contents of another Graph file into the current "
+"coordinate system using 'File|Import|Graph file'."
+msgstr ""
+"Sie können den Inhalt einer anderen Graph-Datei in das aktuelle "
+"Koordinatensystem einfügen mit 'Datei|Einfügen|Graph-Datei'."
 
 #. Tip of the Day
-msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new files."
-msgstr "Wenn Sie 'Als Standard abspeichern' im Achsendialog wählen, werden die aktuellen Einstellungen beim Erstellen neuer Dateien als voreingestellt verwendet."
+msgid ""
+"If you check 'Save as default' in the Axes dialog the current settings will "
+"be used as default when creating new files."
+msgstr ""
+"Wenn Sie 'Als Standard abspeichern' im Achsendialog wählen, werden die "
+"aktuellen Einstellungen beim Erstellen neuer Dateien als voreingestellt "
+"verwendet."
 
 #. Tip of the Day
-msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
-msgstr "Mit der Strg-Taste und den Pfeil-Tasten können Sie das Koordinatensystem verschieben."
+msgid ""
+"While you hold down the Ctrl key, you can use the arrow keys to move the "
+"system."
+msgstr ""
+"Mit der Strg-Taste und den Pfeil-Tasten können Sie das Koordinatensystem "
+"verschieben."
 
 #. Tip of the Day
-msgid "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."
-msgstr "Mit der Strg-Taste und den + und - Tasten können Sie hinein- und hinauszoomen."
+msgid ""
+"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
+"and out."
+msgstr ""
+"Mit der Strg-Taste und den + und - Tasten können Sie hinein- und "
+"hinauszoomen."
 
 #. Tip of the Day
-msgid "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."
-msgstr "Sie können mit dem Scroll-Rad Ihrer Maus an der Cursorposition hinein- und hinauszoomen."
+msgid ""
+"You can use the scroll button on your mouse to zoom in and out at the "
+"position of the mouse cursor."
+msgstr ""
+"Sie können mit dem Scroll-Rad Ihrer Maus an der Cursorposition hinein- und "
+"hinauszoomen."
 
 #. Tip of the Day
-msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
-msgstr "Möchten Sie etwas in der Legende verbergen, klicken mit rechts auf den Eintrag in der Funktionsliste und wählen Sie 'In der Legende zeigen' ab."
+msgid ""
+"If you don't want an item shown in the legend, you can right click on the "
+"item in the function list and deselect 'Show in legend'."
+msgstr ""
+"Möchten Sie etwas in der Legende verbergen, klicken mit rechts auf den "
+"Eintrag in der Funktionsliste und wählen Sie 'In der Legende zeigen' ab."
 
 #. Tip of the Day
-msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
-msgstr "Sollen sich die Achsen links und unten befinden, so wählen Sie im Achsendialog Einstellungen|Achsenstil 'Als Kasten'."
+msgid ""
+"If you want the axes shown to the left and bottom of the image, you can "
+"choose Axes style as Boxed in the Settings tab of the Axes dialog."
+msgstr ""
+"Sollen sich die Achsen links und unten befinden, so wählen Sie im "
+"Achsendialog Einstellungen|Achsenstil 'Als Kasten'."
 
 #. Tip of the Day
-msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
-msgstr "Graph kann das gezeigte Koordinatensystem in fünf verschiedenen Formaten abspeichern: bmp, emf, png, jpg und pdf."
+msgid ""
+"Graph can save the shown coordinate system in five different image formats: "
+"bmp, emf, png, jpg and pdf."
+msgstr ""
+"Graph kann das gezeigte Koordinatensystem in fünf verschiedenen Formaten "
+"abspeichern: bmp, emf, png, jpg und pdf."
 
 #. Tip of the Day
-msgid "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."
-msgstr "Mit 'Bearbeiten|Bild kopieren' können Sie das gezeigte Koordinatensystem in die Zwischenablage zu kopieren, um es in ein anderes Programm einzufügen."
+msgid ""
+"You can use 'Edit|Copy image' to copy the coordinate system to the clipboard "
+"and paste it into another program."
+msgstr ""
+"Mit 'Bearbeiten|Bild kopieren' können Sie das gezeigte Koordinatensystem in "
+"die Zwischenablage zu kopieren, um es in ein anderes Programm einzufügen."
 
 #. Tip of the Day
-msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
-msgstr "Wenn Sie im Explorer auf eine gespeicherte Datei doppelklicken, wird sie in einem neuen Fenster geöffnet."
+msgid ""
+"You can open a saved grf-file in a new instance of the program by double "
+"clicking on it in Explorer."
+msgstr ""
+"Wenn Sie im Explorer auf eine gespeicherte Datei doppelklicken, wird sie in "
+"einem neuen Fenster geöffnet."
 
 #. Tip of the Day
-msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
-msgstr "Ziehen Sie eine Graph-Datei vom Explorer in ein Graph-Fenster, wird die Datei geöffnet."
+msgid ""
+"You can drag a grf-file from explorer into an open instance of Graph to open "
+"the file."
+msgstr ""
+"Ziehen Sie eine Graph-Datei vom Explorer in ein Graph-Fenster, wird die "
+"Datei geöffnet."
 
 #. Tip of the Day
-msgid "Graph will remember the size and placement of the main window between executions. This can be disabled from the Options dialog."
-msgstr "Graph speichert die Stellung und Größe des Fensters. Das kann unter Einstellungen abgeschaltet werden."
+msgid ""
+"Graph will remember the size and placement of the main window between "
+"executions. This can be disabled from the Options dialog."
+msgstr ""
+"Graph speichert die Stellung und Größe des Fensters. Das kann unter "
+"Einstellungen abgeschaltet werden."
 
 #. Tip of the Day
-msgid "Calc|Table can be used to create a table with evaluation values for a function."
-msgstr "Mit Berechnen|Tabelle lässt sich eine Tabelle mit Stützpunkten für eine Funktion erstellen."
+msgid ""
+"Calc|Table can be used to create a table with evaluation values for a "
+"function."
+msgstr ""
+"Mit Berechnen|Tabelle lässt sich eine Tabelle mit Stützpunkten für eine "
+"Funktion erstellen."
 
 #. Tip of the Day
-msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
-msgstr "Durch Rechtsklick und 'In Datei exportieren' lässt sich die ganze Tabelle oder ein Teil davon in eine Datei exportieren. Diese kann später mit anderen Programmen wie Microsoft Excel geöffnet werden."
+msgid ""
+"A part or the whole evaluation table can be exported to a file by right "
+"clicking and selecting 'Export to file'. It can afterwards be opened in "
+"other programs like Microsoft Excel."
+msgstr ""
+"Durch Rechtsklick und 'In Datei exportieren' lässt sich die ganze Tabelle "
+"oder ein Teil davon in eine Datei exportieren. Diese kann später mit anderen "
+"Programmen wie Microsoft Excel geöffnet werden."
 
 #. Tip of the Day
-msgid "Data from the evaluation table can be copied to another program like Microsoft Excel using the clipboard."
-msgstr "Daten aus der Wertetabelle können mit Hilfe der Zwischenablage in andere Programme wie Microsoft Excel kopiert werden."
+msgid ""
+"Data from the evaluation table can be copied to another program like "
+"Microsoft Excel using the clipboard."
+msgstr ""
+"Daten aus der Wertetabelle können mit Hilfe der Zwischenablage in andere "
+"Programme wie Microsoft Excel kopiert werden."
 
 #. Tip of the Day
-msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel through the clipboard."
-msgstr "Die Daten einer Punktserie können mit Hilfe der Zwischenablage von anderen Programmen wie Microsoft Excel importiert werden."
+msgid ""
+"The data points in a point series can be copied to and from other programs "
+"like Microsoft Excel through the clipboard."
+msgstr ""
+"Die Daten einer Punktserie können mit Hilfe der Zwischenablage von anderen "
+"Programmen wie Microsoft Excel importiert werden."
 
 #. Tip of the Day
-msgid "Functions can be copied from one instance of the program to another through the clipboard using Edit|Copy."
-msgstr "Mit Hilfe der Zwischenablage lassen sich Funktionen von einem Programmfenster des Programms in ein anderes kopieren (mit Bearbeiten|Kopieren)."
+msgid ""
+"Functions can be copied from one instance of the program to another through "
+"the clipboard using Edit|Copy."
+msgstr ""
+"Mit Hilfe der Zwischenablage lassen sich Funktionen von einem "
+"Programmfenster des Programms in ein anderes kopieren (mit Bearbeiten|"
+"Kopieren)."
 
 #. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
-msgstr "Mit Bearbeiten|Rückgängig Wiederherstellen können Sie jederzeit den letzten Schritt rückgängig machen."
+msgstr ""
+"Mit Bearbeiten|Rückgängig Wiederherstellen können Sie jederzeit den letzten "
+"Schritt rückgängig machen."
 
 #. Tip of the Day
-msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
-msgstr "Falls Sie Bearbeiten|Rückgängig versehentlich benutzt haben, können sie es mit Bearbeiten|Wiederherstellen wiederherstellen."
+msgid ""
+"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
+"have undone."
+msgstr ""
+"Falls Sie Bearbeiten|Rückgängig versehentlich benutzt haben, können sie es "
+"mit Bearbeiten|Wiederherstellen wiederherstellen."
 
 #. Tip of the Day
 msgid "In the Axes dialog you can add a title to the coordinate system."
-msgstr "Im Achsendialog können Sie dem Koordinatensystem einen Titel hinzufügen."
+msgstr ""
+"Im Achsendialog können Sie dem Koordinatensystem einen Titel hinzufügen."
 
 #. Tip of the Day
-msgid "You can import point series from files saved by other programs, like Microsoft Excel."
-msgstr "Sie können Punktserien aus Dateien einfügen, die von anderen Programm wie Microsoft Excel abgespeichert wurden."
+msgid ""
+"You can import point series from files saved by other programs, like "
+"Microsoft Excel."
+msgstr ""
+"Sie können Punktserien aus Dateien einfügen, die von anderen Programm wie "
+"Microsoft Excel abgespeichert wurden."
 
 #. Tip of the Day
-msgid "When inserting a point series you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
-msgstr "Wenn Sie eine Punktserie einfügen, können Sie Daten von anderen Programmen wie Microsoft Excel kopieren und ins Raster von Graph einfügen."
+msgid ""
+"When inserting a point series you can copy data from programs like Microsoft "
+"Excel, and paste the data into the grid in Graph."
+msgstr ""
+"Wenn Sie eine Punktserie einfügen, können Sie Daten von anderen Programmen "
+"wie Microsoft Excel kopieren und ins Raster von Graph einfügen."
 
 #. Tip of the Day
-msgid "You can use 'Zoom|All points' to change the coordinate system so all point series are visible."
+msgid ""
+"You can use 'Zoom|All points' to change the coordinate system so all point "
+"series are visible."
 msgstr "Mit Zoomen|Alle Punkte werden alle Punktserien sichtbar."
 
 #. Tip of the Day
-msgid "You can use Zoom|Fit to change the coordinate system to show the selected function or point series."
-msgstr "Mit Zoomen|Passend wird die gewählte Funktion oder Punktserie sichtbar."
+msgid ""
+"You can use Zoom|Fit to change the coordinate system to show the selected "
+"function or point series."
+msgstr ""
+"Mit Zoomen|Passend wird die gewählte Funktion oder Punktserie sichtbar."
 
 #. Tip of the Day
-msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
-msgstr "Bei gedrückter Shift-Taste können Sie das Koordinatensystem frei verschieben."
+msgid ""
+"When you hold down the Shift key you can drag the coordinate system around "
+"with the mouse."
+msgstr ""
+"Bei gedrückter Shift-Taste können Sie das Koordinatensystem frei verschieben."
 
 #. Tip of the Day
-msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
-msgstr "Benutzen Sie Berechen|Funktionswerte, um Schnittpunkte zwischen den Funktionen, Schnittpunkte mit den Achsen sowie Extremwerte zu ermitteln."
+msgid ""
+"You can use Calc|Evaluate to find intersections between functions, crossings "
+"with the axes and extremum points."
+msgstr ""
+"Benutzen Sie Berechen|Funktionswerte, um Schnittpunkte zwischen den "
+"Funktionen, Schnittpunkte mit den Achsen sowie Extremwerte zu ermitteln."
 
 #. Tip of the Day
-msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
-msgstr "Sie können bei einer ausgewählten Punktserie Punkte hinzufügen, indem sie bei gedrückter Strg-Taste auf das Koordinatensystem klicken."
+msgid ""
+"When a point series is selected you can add points to it by clicking on the "
+"image while you hold down the Ctrl key."
+msgstr ""
+"Sie können bei einer ausgewählten Punktserie Punkte hinzufügen, indem sie "
+"bei gedrückter Strg-Taste auf das Koordinatensystem klicken."
 
 #. Tip of the Day
-msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
-msgstr "Relationen können dazu verwendet werden, um Ungleichungen grafisch darstellen zu lassen, z.B. sin(x^2) < cos(y^2)"
+msgid ""
+"You can use a relation to plot any inequality, for example sin(x^2) < cos"
+"(y^2)"
+msgstr ""
+"Relationen können dazu verwendet werden, um Ungleichungen grafisch "
+"darstellen zu lassen, z.B. sin(x^2) < cos(y^2)"
 
 #. Tip of the Day
-msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
-msgstr "Relationen können auch dazu verwendet werden, um beliebige Gleichungen grafisch darstellen zu können, z.B. x*sin x = y*cos y"
+msgid ""
+"You can use a relation to plot any equation, for example x*sin x = y*cos y"
+msgstr ""
+"Relationen können auch dazu verwendet werden, um beliebige Gleichungen "
+"grafisch darstellen zu können, z.B. x*sin x = y*cos y"
 
 #. Tip of the Day
-msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
-msgstr "Die einzelnen Teile des Koordinatensystems (Funktionen, Schraffuren, Beschriftungen, Relationen, usw.) werden in derselben Reihenfolge gezeichnet wie sie in der Funktionenliste links angeordnet sind."
+msgid ""
+"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
+"same order they appear in the function list to the left."
+msgstr ""
+"Die einzelnen Teile des Koordinatensystems (Funktionen, Schraffuren, "
+"Beschriftungen, Relationen, usw.) werden in derselben Reihenfolge gezeichnet "
+"wie sie in der Funktionenliste links angeordnet sind."
 
 #. Tip of the Day
-msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
-msgstr "Die Reihenfolge der Elemente in der Funktionsliste kann entweder per Drag & Drop oder mit Hilfe von ALT und den Cursor-Tasten verändert werden."
+msgid ""
+"You can move the selected element in the function list either by dragging it "
+"with the mouse or with the arrow up/down keys while ALT is held down."
+msgstr ""
+"Die Reihenfolge der Elemente in der Funktionsliste kann entweder per Drag & "
+"Drop oder mit Hilfe von ALT und den Cursor-Tasten verändert werden."
 
 #. Tip of the Day
-msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
-msgstr "Funktionen und andere von den Achsen verdeckte Zeichnungselemente können vor die Koordinatenachsen geschoben werden, indem man in der Funktionsliste ihren Eintrag nach oben über den der Koordinatenachsen schiebt. Um Schraffuren und Tangenten zu verschieben, müssen die mit ihnen verbundenen Funktionen verschoben werden."
+msgid ""
+"You can show functions and other elements behind the axes by moving the "
+"element above the axes in the function list to the left. To move shadings "
+"and tangents you will have to move the functions they are attached to."
+msgstr ""
+"Funktionen und andere von den Achsen verdeckte Zeichnungselemente können vor "
+"die Koordinatenachsen geschoben werden, indem man in der Funktionsliste "
+"ihren Eintrag nach oben über den der Koordinatenachsen schiebt. Um "
+"Schraffuren und Tangenten zu verschieben, müssen die mit ihnen verbundenen "
+"Funktionen verschoben werden."
 
 #. Tip of the Day
-msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
-msgstr "Selbstdefinierte Beschriftungen können auch als Achsenbeschriftung verwendet werden. Per Kontextmenü (Rechtsklick auf der Beschriftung) kann diese Art der Platzierung ausgewählt werden."
+msgid ""
+"Custom text labels may be attached to the axes by right clicking on the "
+"label and selecting a placement from the context menu."
+msgstr ""
+"Selbstdefinierte Beschriftungen können auch als Achsenbeschriftung verwendet "
+"werden. Per Kontextmenü (Rechtsklick auf der Beschriftung) kann diese Art "
+"der Platzierung ausgewählt werden."
 
 #. Tip of the Day
-msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
-msgstr "Die Legende kann mit der Maus frei oder in einer der vier Bildschirmecken fest platziert werden. Die Platzierung in einer Ecke kann per Kontextmenü festgelegt werden."
+msgid ""
+"The legend may be moved freely with the mouse or attached to one of the "
+"corners by right clicking on the legend and choose a placement from the "
+"context menu."
+msgstr ""
+"Die Legende kann mit der Maus frei oder in einer der vier Bildschirmecken "
+"fest platziert werden. Die Platzierung in einer Ecke kann per Kontextmenü "
+"festgelegt werden."
 
 #. Tip of the Day
-msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."
-msgstr "Beschriftungen können (anstelle durchsichtig zu sein) auch mit einer Hintergrundfarbe belegt werden. Dies empfiehlt sich, falls eine Beschriftung über einer Schraffur liegen soll."
+msgid ""
+"As an alternative to transparent you can choose a custom background color "
+"for labes. This is especially useful for labels drawn over shadings."
+msgstr ""
+"Beschriftungen können (anstelle durchsichtig zu sein) auch mit einer "
+"Hintergrundfarbe belegt werden. Dies empfiehlt sich, falls eine Beschriftung "
+"über einer Schraffur liegen soll."
 
 #. Tip of the Day
-msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
-msgstr "Für diverse numerische Angaben (wie z.B. bei Punktserien, Skalenteilung der Achsen, Definitionsbereiche von Funktionen, usw.) können anstelle von konkreten Zahlen auch Ausdrücke wie z.B. pi/4 benutzt werden."
+msgid ""
+"In most places like point series, axes settings, function ranges, etc., you "
+"can use expressions like pi/4 instead of numbers."
+msgstr ""
+"Für diverse numerische Angaben (wie z.B. bei Punktserien, Skalenteilung der "
+"Achsen, Definitionsbereiche von Funktionen, usw.) können anstelle von "
+"konkreten Zahlen auch Ausdrücke wie z.B. pi/4 benutzt werden."
 
 #. Tip of the Day
-msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
-msgstr "Eigene Konstanten (zur Verwendung in Funktionsdefinitionen, Punktserien, usw.) können unter Funktion|Benutzerdefiniert definiert werden. Beispiel: g=9.80665 R=8.31"
+msgid ""
+"You can create your own custom constants under Function|Custom functions for "
+"use in functions, point series, etc. For example g=9.80665, R=8.31"
+msgstr ""
+"Eigene Konstanten (zur Verwendung in Funktionsdefinitionen, Punktserien, "
+"usw.) können unter Funktion|Benutzerdefiniert definiert werden. Beispiel: "
+"g=9.80665 R=8.31"
 
 #. Tip of the Day
-msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
-msgstr "Eigene Funktionen (zur Verwendung in anderen Funktionsdefinitionen, Relationen, usw.) können unter Funktion|Benutzerdefiniert erstellt werden. Beispiel: sinc(x)=if(x=0, 0, sin(x)/x)"
+msgid ""
+"You can create your own custom functions under Function|Custom functions for "
+"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin"
+"(x)/x)"
+msgstr ""
+"Eigene Funktionen (zur Verwendung in anderen Funktionsdefinitionen, "
+"Relationen, usw.) können unter Funktion|Benutzerdefiniert erstellt werden. "
+"Beispiel: sinc(x)=if(x=0, 0, sin(x)/x)"
 
 #. Tip of the Day
-msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
-msgstr "Der Menüpunkt \"Als Bilddatei abspeichern\" (?)  besitzt eine Funktion zur Festlegung der Auflösung der Bilddatei, die insbesondere dann nützlich ist, wenn ein hochaufgelöstes Bild gewünscht ist."
+msgid ""
+"In the Save as image dialog there is an Option button you can use to specify "
+"the image resolution. This is especially useful if you want a high "
+"resolution image."
+msgstr ""
+"Der Menüpunkt \"Als Bilddatei abspeichern\" (?)  besitzt eine Funktion zur "
+"Festlegung der Auflösung der Bilddatei, die insbesondere dann nützlich ist, "
+"wenn ein hochaufgelöstes Bild gewünscht ist."
 
 #. Tip of the Day
-msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
-msgstr "Punktserien können mit Pfeilen als Endpunkt versehen werden. Eine Punktserie mit einem solchen Endpunkt und einer Geraden zwischen den Punkten kann beispielsweise so einen Vektor darstellen."
+msgid ""
+"Point series can have arrows as markers. A point series with arrows as "
+"markers and lines between the points can be used to show vectors."
+msgstr ""
+"Punktserien können mit Pfeilen als Endpunkt versehen werden. Eine Punktserie "
+"mit einem solchen Endpunkt und einer Geraden zwischen den Punkten kann "
+"beispielsweise so einen Vektor darstellen."
 
 msgid "Black"
 msgstr "Schwarz"
@@ -3521,12 +3942,20 @@ msgid "Comment:"
 msgstr "Bemerkung:"
 
 #. PrintFrm("Print")..GroupBox1("Printer")..ComboBox1....Hint
-msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
-msgstr "Wählen Sie einen Drucker aus. Mit der Schaltfläche \"Eigenschaften\" lassen sich mehrere erweiterte Drucker-Einstellungen ändern."
+msgid ""
+"Select the printer to use. The Properties button may be used to change more "
+"advanced settings for the printer."
+msgstr ""
+"Wählen Sie einen Drucker aus. Mit der Schaltfläche \"Eigenschaften\" lassen "
+"sich mehrere erweiterte Drucker-Einstellungen ändern."
 
 #. PrintFrm("Print")..RadioGroup2("Print output")....Hint
-msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
-msgstr "Wählen Sie Farbdruck (oder Graustufendruck, falls es kein Farbdrucker ist) oder konvertieren Sie alle Farben nach schwarz."
+msgid ""
+"Select to print in color (or grayscale if your printer is not a color "
+"printer) or convert all colors to black."
+msgstr ""
+"Wählen Sie Farbdruck (oder Graustufendruck, falls es kein Farbdrucker ist) "
+"oder konvertieren Sie alle Farben nach schwarz."
 
 #. PrintFrm("Print")..RadioGroup2("Print output")..Caption
 msgid "Print output"
@@ -3577,16 +4006,28 @@ msgstr "Geben Sie die Anzahl der zu druckenden Kopien ein."
 msgid "Enter percent of original size."
 msgstr "Geben die den Prozentssatz zur Originalgröße ein."
 
+#~ msgid ""
+#~ "Insert a text label (select and click in the main window where you want "
+#~ "the label)."
+#~ msgstr ""
+#~ "Textfeld einfügen (auswählen und auf die gewünschte Stelle im "
+#~ "Hauptfenster klicken)."
+
+#~ msgid "Cut the selected text to the clipboard"
+#~ msgstr ""
+#~ "Den ausgewählten Text ausschneiden und in der Zwischenablage ablegen."
+
 #~ msgid "Open an animation file."
 #~ msgstr "Animations-Datei öffnen."
 
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Version "
+
 #~ msgid "Visible"
 #~ msgstr "Sichtbar"
+
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr ""
 #~ "Aktivieren, um das gewählte Element im Koordinatensystem anzuzeigen oder "
 #~ "auszublenden."
-
