@@ -25,9 +25,9 @@ object Form18: TForm18
     Top = 8
     Width = 287
     Height = 193
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     Anchors = [akLeft, akTop, akRight]
-    TabIndex = 0
+    TabIndex = 2
     TabOrder = 0
     object TabSheet1: TTntTabSheet
       Caption = 'Size'
@@ -66,7 +66,7 @@ object Form18: TForm18
       object RadioGroup3: TTntRadioGroup
         Left = 8
         Top = 8
-        Width = 137
+        Width = 193
         Height = 65
         Hint = 
           'Choose to use the same size as shown on the screen or a custom i' +

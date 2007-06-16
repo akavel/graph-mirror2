@@ -26,6 +26,7 @@ __fastcall TForm18::TForm18(TComponent* Owner)
 
   ResizeControl(Edit1, Label1, Label2);
   ResizeControl(Edit2, Label1, Label2);
+  ComboBox1->Left = Label3->Left + Label3->Width + 5;
   PageControl1->ActivePage = TabSheet1;
 }
 //---------------------------------------------------------------------------
@@ -151,4 +152,5 @@ void TImageOptions::SaveSettings() const
   }
 }
 //---------------------------------------------------------------------------
+
 

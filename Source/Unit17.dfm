@@ -91,7 +91,7 @@ object Form17: TForm17
     Top = 328
     object Popup_Cut: TTntMenuItem
       Caption = 'Cut'
-      Hint = 'Cut the selected text to the clipboard'
+      Hint = 'Cut the selected text to the clipboard.'
       ShortCut = 16472
       OnClick = Popup_CutClick
     end
