@@ -6,16 +6,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.2\n"
-"POT-Creation-Date: 2007-03-05 23:28\n"
-"PO-Revision-Date: 2007-05-24 09:47+0100\n"
-"Last-Translator: hasan osmanagic <hasan.osmanagic@public.srce.hr>\n"
+"POT-Creation-Date: 2007-06-17 00:28\n"
+"PO-Revision-Date: 2007-06-17 00:36+0100\n"
+"Last-Translator: \n"
+"Language-Team:  <hasan.osmanagic@public.srce.hr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: dxgettext 1.2.1\n"
-"Language-Team:  <hasan.osmanagic@public.srce.hr>\n"
 "X-Poedit-Country: CROATIA\n"
-"X-Poedit-Language: Hrvatski\n"
 
 #. AreaFrame..Label1("From:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label4("From:")..Caption
@@ -379,7 +378,6 @@ msgid "Creates a new coordinate system."
 msgstr "Kreiranje novog koordinatnog sustava"
 
 #. Form1..ActionManager..OpenAction("Open...")..Caption
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Caption
 msgid "Open..."
 msgstr "Otvori"
 
@@ -772,9 +770,10 @@ msgstr "Prikaz često postavljanih pitanja i odgovora"
 msgid "Insert label..."
 msgstr "Umetni tekstni okvir..."
 
-#. Form1..ActionManager..InsertLabelAction("Insert label...")....Hint
-msgid "Insert a text label (select and click in the main window where you want the label)."
-msgstr "Umetanje tekstnog okvira (kliknite na željeno mjesto u glavnom prozoru)"
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
+#, fuzzy
+msgid "Insert a text label"
+msgstr "Umetni tekstni okvir..."
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -925,11 +924,12 @@ msgstr "Prikaži legendu"
 msgid "Select to show a legend in the coordinate system."
 msgstr "Označite, želite li prikaz legende u koordinatnom sustavu"
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Caption
-msgid "Font"
+#. Form1..PopupMenu4..Legend_Font("Font...")..Caption
+#, fuzzy
+msgid "Font..."
 msgstr "Font"
 
-#. Form1..PopupMenu4..Legend_Font("Font")..Hint
+#. Form1..PopupMenu4..Legend_Font("Font...")..Hint
 msgid "Change the font of the legend."
 msgstr "Izmijena fonat legende"
 
@@ -1526,6 +1526,7 @@ msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "Sve trake grešaka su u istom odnosu s y-koordinatom"
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
 #. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 msgid "Cut the selected text to the clipboard."
 msgstr "Uklanjanje označenog teksta."
@@ -1793,10 +1794,6 @@ msgstr "Naziv"
 msgid "Definition"
 msgstr "Definicija"
 
-#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
-msgid "Cut the selected text to the clipboard"
-msgstr "Uklanjanje označenog teksta."
-
 #. Form18("Image options")..Caption
 msgid "Image options"
 msgstr "Mogućnosti slike"
@@ -2024,10 +2021,6 @@ msgstr "Samoponavljanje"
 #. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")....Hint
 msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
 msgstr "Ponavlanje animacije kad dođe do kraja. Ovo je korisno u kombinaciji s \"Ponovi\" naredbom."
-
-#. Form20("Animation")..PopupMenu1..Open1("Open...")..Hint
-msgid "Open an animation file."
-msgstr "Pokretanje animacije."
 
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
@@ -2758,6 +2751,9 @@ msgstr "Korisnička funkcija ili konstanta '%s' nije nađena ili sadrži krivi b
 msgid "Too many recursive calls."
 msgstr "Previše rekurzivnih čelija"
 
+msgid "Overflow: A function returned a value too large to handle."
+msgstr ""
+
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Neočekivan operator '%s' i ne može biti ovdje."
 
@@ -2876,8 +2872,8 @@ msgid "Save changes?"
 msgstr "Želite li pohraniti promjene?"
 
 #. Asked when trying to exit
-msgid "Save changes in %s"
-msgstr "Želite li pohraniti promjene %s"
+msgid "Save changes in %s?"
+msgstr "Želite li pohraniti promjene %s?"
 
 #. Written in status bar when trying to zoom in too much
 msgid "You have reached the maximum range of zoom."
@@ -3056,6 +3052,12 @@ msgstr "Greška u širini"
 
 msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
 msgstr "Kraj intervala mora biti veći od početka i %s veći od 0."
+
+msgid "Invalid model name."
+msgstr ""
+
+msgid "A model of that name already exist."
+msgstr ""
 
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Derivacija funkcije je neodređena u %s=%s"
@@ -3306,7 +3308,8 @@ msgid "A part or the whole evaluation table can be exported to a file by right c
 msgstr "Dio ili cijeli tabelarni izračun može biti desnim klikom miša i izborom 'Izvoz u datoteku' pohranjen pa kasnije otvoren u drugom programu kao npr. Microsoft Excel."
 
 #. Tip of the Day
-msgid "Data from the evaluation table can be copied to another program like Microsoft excel using the clipboard."
+#, fuzzy
+msgid "Data from the evaluation table can be copied to another program like Microsoft Excel using the clipboard."
 msgstr "Podaci iz tabelarnog izračuna mogu biti izravno, preko međuspremnika, kopirani u druge programe kao npr. Microsoft Excel."
 
 #. Tip of the Day
@@ -3573,4 +3576,14 @@ msgstr "Izbor broja kopija."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Unašanje postotka od izvorne veličine"
+
+#~ msgid ""
+#~ "Insert a text label (select and click in the main window where you want "
+#~ "the label)."
+#~ msgstr ""
+#~ "Umetanje tekstnog okvira (kliknite na željeno mjesto u glavnom prozoru)"
+#~ msgid "Cut the selected text to the clipboard"
+#~ msgstr "Uklanjanje označenog teksta."
+#~ msgid "Open an animation file."
+#~ msgstr "Pokretanje animacije."
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph russian interface\n"
-"POT-Creation-Date: 2007-04-29 21:42\n"
+"POT-Creation-Date: 2007-06-17 00:28\n"
 "PO-Revision-Date: 2007-02-19 22:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -815,11 +815,10 @@ msgstr "Показать ответы на часто задаваемые во�
 msgid "Insert label..."
 msgstr "Добавить надпись..."
 
-#. Form1..ActionManager..InsertLabelAction("Insert label...")....Hint
-msgid ""
-"Insert a text label (select and click in the main window where you want the "
-"label)."
-msgstr ""
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
+#, fuzzy
+msgid "Insert a text label"
+msgstr "Добавить надпись на графике."
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -1609,6 +1608,7 @@ msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "Диапазон ошибок в процентах от значения У"
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
 #. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 #, fuzzy
 msgid "Cut the selected text to the clipboard."
@@ -1891,10 +1891,6 @@ msgstr "Название:"
 #. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
 msgid "Definition"
 msgstr "Определение"
-
-#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
-msgid "Cut the selected text to the clipboard"
-msgstr "Вырезать выбранный текст и поместить в буфер обмена"
 
 #. Form18("Image options")..Caption
 msgid "Image options"
@@ -2953,6 +2949,9 @@ msgstr ""
 msgid "Too many recursive calls."
 msgstr "Слишком много рекурсивных вызовов функции."
 
+msgid "Overflow: A function returned a value too large to handle."
+msgstr ""
+
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Оператор '%s' не может быть помещён здесь."
 
@@ -3087,7 +3086,8 @@ msgid "Save changes?"
 msgstr "Сохранить изменения?"
 
 #. Asked when trying to exit
-msgid "Save changes in %s"
+#, fuzzy
+msgid "Save changes in %s?"
 msgstr "Сохранить изменения в %s"
 
 #. Written in status bar when trying to zoom in too much
@@ -4054,6 +4054,9 @@ msgstr "Количество копий:"
 msgid "Enter percent of original size."
 msgstr ""
 
+#~ msgid "Cut the selected text to the clipboard"
+#~ msgstr "Вырезать выбранный текст и поместить в буфер обмена"
+
 #, fuzzy
 #~ msgid "Open an animation file."
 #~ msgstr "Открыть файл %s."
@@ -4123,9 +4126,6 @@ msgstr ""
 
 #~ msgid "Calculates area under the path."
 #~ msgstr "Рассчитать площадь под графиком."
-
-#~ msgid "Insert a text label."
-#~ msgstr "Добавить надпись на графике."
 
 #~ msgid "Select language to use."
 #~ msgstr "Выберите язык:"

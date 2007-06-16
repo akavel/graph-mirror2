@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2007-04-29 21:42\n"
-"PO-Revision-Date: 2007-05-16 18:33+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2007-06-17 00:28\n"
+"PO-Revision-Date: 2007-06-17 00:38+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -764,9 +764,9 @@ msgstr "Liste des questions les plus courantes et leurs réponses."
 msgid "Insert label..."
 msgstr "Insérer un label..."
 
-#. Form1..ActionManager..InsertLabelAction("Insert label...")....Hint
-msgid "Insert a text label (select and click in the main window where you want the label)."
-msgstr "Insère le texte d'un label (sélectionnez puis cliquez à l'emplacement souhaité du label)."
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
+msgid "Insert a text label"
+msgstr "Insère un label avec du texte."
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -1518,6 +1518,7 @@ msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "Tous les intervalles d'incertitude font le même % de l'ordonnée."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
 #. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 msgid "Cut the selected text to the clipboard."
 msgstr "Coupe le texte selectionné et le place dans le presse-papiers."
@@ -1784,10 +1785,6 @@ msgstr "Noms"
 #. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
 msgid "Definition"
 msgstr "Définitions"
-
-#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
-msgid "Cut the selected text to the clipboard"
-msgstr "Couper le texte selectionné vers le presse-papiers"
 
 #. Form18("Image options")..Caption
 msgid "Image options"
@@ -2749,6 +2746,9 @@ msgstr "La fonction/constante personnelle '%s' n'a pas été trouvée ou a un no
 msgid "Too many recursive calls."
 msgstr "Trop d'appels récursifs."
 
+msgid "Overflow: A function returned a value too large to handle."
+msgstr ""
+
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Opérateur inattendu. L'opérateur '%s' ne peut être placé ici."
 
@@ -2867,8 +2867,8 @@ msgid "Save changes?"
 msgstr "Enregistrer les changements ?"
 
 #. Asked when trying to exit
-msgid "Save changes in %s"
-msgstr "Enregistrer les changements dans %s"
+msgid "Save changes in %s?"
+msgstr "Enregistrer les changements dans %s?"
 
 #. Written in status bar when trying to zoom in too much
 msgid "You have reached the maximum range of zoom."
@@ -3571,6 +3571,14 @@ msgstr "Choisit le nombre de copies à imprimer."
 msgid "Enter percent of original size."
 msgstr "Saisir un pourcentage de la taille d'origine."
 
+#~ msgid ""
+#~ "Insert a text label (select and click in the main window where you want "
+#~ "the label)."
+#~ msgstr ""
+#~ "Insère le texte d'un label (sélectionnez puis cliquez à l'emplacement "
+#~ "souhaité du label)."
+#~ msgid "Cut the selected text to the clipboard"
+#~ msgstr "Couper le texte selectionné vers le presse-papiers"
 #~ msgid "Open an animation file."
 #~ msgstr "Ouvre un fichier d'animation."
 
@@ -3627,8 +3635,6 @@ msgstr "Saisir un pourcentage de la taille d'origine."
 #~ msgstr "Insèe une nouvelle série de points."
 #~ msgid "Calculates area under the path."
 #~ msgstr "Calcule l'aire sous l'arc de courbe."
-#~ msgid "Insert a text label."
-#~ msgstr "Insère un label avec du texte."
 #~ msgid "Select language to use."
 #~ msgstr "Choisir la langue à  utiliser."
 #~ msgid "Cut selected text to the clipboard."

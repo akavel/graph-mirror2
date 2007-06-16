@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-04-29 21:42\n"
-"PO-Revision-Date: 2007-05-17 17:18+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2007-06-17 00:28\n"
+"PO-Revision-Date: 2007-06-17 00:41+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -861,9 +861,11 @@ msgstr "Visar en lista med de vanligaste frågorna och svaren."
 msgid "Insert label..."
 msgstr "Lägg till etikett..."
 
-#. Form1..ActionManager..InsertLabelAction("Insert label...")....Hint
-msgid "Insert a text label (select and click in the main window where you want the label)."
-msgstr "Lägg till textetikett (välj och klicka i huvudfönstret där du vill placera etiketten)."
+# Funktion-menyn
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
+#, fuzzy
+msgid "Insert a text label"
+msgstr "Lägg till etikett..."
 
 # Hjälp-menyn
 #. Form1..ActionManager..DonateAction("Donate")..Caption
@@ -1637,6 +1639,7 @@ msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "Alla felstaplar har samma procentuella värde av y-koordinaten."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
 #. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 msgid "Cut the selected text to the clipboard."
 msgstr "Klipp ur vald text till Windows urklipp."
@@ -1903,10 +1906,6 @@ msgstr "Namn"
 #. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
 msgid "Definition"
 msgstr "Definition"
-
-#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
-msgid "Cut the selected text to the clipboard"
-msgstr "Klipp ur vald text till Windows urklipp."
 
 #. Form18("Image options")..Caption
 msgid "Image options"
@@ -2873,6 +2872,9 @@ msgstr "Funktionen/konstanten '%s' hittades inte, eller den har fel antal argume
 msgid "Too many recursive calls."
 msgstr "För många rekursiva anrop."
 
+msgid "Overflow: A function returned a value too large to handle."
+msgstr ""
+
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Oväntad operator. Operatorn '%s' kan inte placeras här."
 
@@ -2991,8 +2993,8 @@ msgid "Save changes?"
 msgstr "Spara ändringar?"
 
 #. Asked when trying to exit
-msgid "Save changes in %s"
-msgstr "Spara ändringar i %s"
+msgid "Save changes in %s?"
+msgstr "Spara ändringar i %s?"
 
 #. Written in status bar when trying to zoom in too much
 msgid "You have reached the maximum range of zoom."
@@ -3709,6 +3711,14 @@ msgstr "Välj antal kopior att skriva ut."
 msgid "Enter percent of original size."
 msgstr "Välj procent av originalstorlek."
 
+#~ msgid ""
+#~ "Insert a text label (select and click in the main window where you want "
+#~ "the label)."
+#~ msgstr ""
+#~ "Lägg till textetikett (välj och klicka i huvudfönstret där du vill "
+#~ "placera etiketten)."
+#~ msgid "Cut the selected text to the clipboard"
+#~ msgstr "Klipp ur vald text till Windows urklipp."
 #~ msgid "Open an animation file."
 #~ msgstr "Öppna en animeringsfil."
 
