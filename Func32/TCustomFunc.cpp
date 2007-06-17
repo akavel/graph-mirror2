@@ -104,7 +104,7 @@ long double TCustomFunc::Calc(const std::vector<long double> &Values) const
 {
   if(Values.size() != Args.size())
     throw EFuncError(ecInvalidArgCount);
-  return FuncData->Calc(&Values[0], Trigonometry);
+  return FuncData->Calc(Values.empty() ? NULL : &Values[0], Trigonometry);
 }
 //---------------------------------------------------------------------------
 /** Evaluates the function for a given set of arguments.
