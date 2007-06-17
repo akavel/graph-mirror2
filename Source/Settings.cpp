@@ -300,6 +300,16 @@ void TCustomFunctions::Update()
     for(I = 0; I < Functions.size(); I++)
       SymbolList.Add(Functions[I].Name, Func32::TCustomFunc(Functions[I].Text, Functions[I].Arguments, SymbolList));
     SymbolList.Update();
+
+    //Replace all constant expressions with their value 
+    std::vector<long double> DummyArgs;
+    for(Func32::TSymbolList::TIterator Iter = SymbolList.Begin(); Iter != SymbolList.End(); ++Iter)
+      if(Iter->second.GetArguments().size() == 0)
+      {
+        long double Value = Iter->second.Calc(DummyArgs);
+        Iter->second = Func32::TCustomFunc(Value);
+      }
+    SymbolList.Update();  
   }
   catch(const Func32::EParseError &E)
   {
