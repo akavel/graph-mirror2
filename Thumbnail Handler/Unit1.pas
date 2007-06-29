@@ -30,6 +30,20 @@ uses
   Olectnrs, ActiveX, ComObj, Dialogs;
 
 type
+  TGdiplusStartupInput = record
+    GdiplusVersion : Cardinal;
+    DebugEventCallback : Pointer;
+    SuppressBackgroundThread : Boolean;
+    SuppressExternalCodecs : Boolean;
+  end;
+
+  PGdiplusStartupInput = ^TGdiplusStartupInput;
+  TGdipCreateBitmapFromStream = function(stream : IStream; var bitmap : Pointer) : Byte stdcall;
+  TGdipCreateHBITMAPFromBitmap = function(bitmap : Pointer; var hbmReturn : HBITMAP; background : Cardinal) : Byte stdcall;
+  TGdipDisposeImage = function(image : Pointer) : Byte stdcall;
+  TGdiplusStartup = function(var token : Pointer; input : PGdiplusStartupInput; output : Pointer) : Byte stdcall;
+
+
   TDataModule1= class(TDataModule)
     EasyFactoryManager1: TEasyFactoryManager;
     EasyThumbnailHandler1: TEasyThumbnailHandler;
@@ -43,6 +57,11 @@ type
       Sender: TObject; ObjectPath: String; var Overwrite: Boolean);
   private
     { Private declarations }
+    GdiPlusInstance : HMODULE;
+    GdiplusStartup : TGdiplusStartup;
+    GdipCreateBitmapFromStream : TGdipCreateBitmapFromStream;
+    GdipCreateHBITMAPFromBitmap : TGdipCreateHBITMAPFromBitmap;
+    GdipDisposeImage : TGdipDisposeImage;
   public
     { Public declarations }
   end;
@@ -58,7 +77,7 @@ var
 implementation
 
 uses
-  Registry;
+  Registry, IniFiles;
 
 {$R *.dfm}
 
@@ -70,11 +89,16 @@ begin
   SetString(Result, Buffer, GetLongPathName(PChar(FileName), Buffer, SizeOf(Buffer)));
 end;
 
-procedure WriteToLog(Str : string);
+procedure WriteToLog(LogAlways : Boolean; Str : string);
 var
   f: TextFile;
   FileName : TFileName;
 begin
+{$IF not Defined(_DEBUG)}
+  if not LogAlways then
+    Exit;
+{$IFEND}
+
   FileName := ChangeFileExt(ExtractLongPathName(GetModuleName(HInstance)), '.log');
   AssignFile(f, FileName);
   if FileExists(FileName) then
@@ -91,7 +115,7 @@ var
   Buffer: array[0..1023] of Char;
 begin
   ExceptionErrorMessage(ExceptObject, ExceptAddr, Buffer, SizeOf(Buffer));
-  WriteToLog(Buffer);
+  WriteToLog(True, Buffer);
 end;
 
 function GetFileClass : string;
@@ -184,13 +208,72 @@ end;
 
 procedure TDataModule1.EasyThumbnailHandler1Initialize(
   Sender: TEasyThumbnailHandler; var Initialized: Boolean);
+var
+  GdiplusStartupInput : TGdiplusStartupInput;
+  GdiplusToken : Pointer;  
 begin
   Sender.Cache := True;  // Have Explorer cach the image
   Sender.Async := True; //Allow extraction from another thread. Is this a good idea? Consequences?
   Sender.Refresh := True; //Show Refresh thumbnail in explorer context menu (Doesn't seem to work)
   Initialized := True;
+
+  GdiPlusInstance := LoadLibrary('gdiplus.dll');
+  if GdiPlusInstance <> 0 then
+  begin
+    GdiplusStartup := GetProcAddress(GdiPlusInstance, 'GdiplusStartup');
+    GdipCreateBitmapFromStream := GetProcAddress(GdiPlusInstance, 'GdipCreateBitmapFromStream');
+    GdipCreateHBITMAPFromBitmap := GetProcAddress(GdiPlusInstance, 'GdipCreateHBITMAPFromBitmap');
+    GdipDisposeImage := GetProcAddress(GdiPlusInstance, 'GdipDisposeImage');
+
+    if GdiplusStartup(GdiplusToken, @GdiplusStartupInput, nil) = 0 then
+      WriteToLog(False, 'Loading gdiplus.dll OK.')
+    else
+      WriteToLog(False, 'GdiplusStartup() failed!');
+  end
+  else
+    WriteToLog(False, 'gdiplus.dll not found!');
 end;
 
+function Base64Index(Ch : Char) : Byte;
+const
+  Base64Table = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+begin
+  Result := 0;
+  if(Ch = '=') then
+    Exit;
+  Result := Pos(Base64Table, Ch);
+end;
+
+function Base64Decode(S : string) : string;
+var
+  I, Index : Integer;
+  Byte1, Byte2, Byte3, Byte4 : Byte;
+begin
+  SetLength(Result, (Length(S)*3) div 4);
+  Index := 0;
+  for I := 1 to Length(S) do
+  begin
+    //11111122 22223333 33444444
+    Byte1 := Base64Index(S[I]);
+    Byte2 := Base64Index(S[I+1]);
+    Byte3 := Base64Index(S[I+2]);
+    Byte4 := Base64Index(S[I+3]);
+
+    Result[Index] := Chr((Byte1 shl 2) or (Byte2 shr 4));
+    Inc(Index);
+    if S[I+1] <> '=' then
+    begin
+      Result[Index] := Chr((Byte2 shl 4) or (Byte3 shr 2));
+      Inc(Index)
+    end;
+    if S[I+2] <> '=' then
+    begin
+      Result[Index] := Chr((Byte3 shl 6) or Byte4);
+      Inc(Index);
+    end;
+  end;
+  SetLength(Result, Index);
+end;
 
 //Windows XP: Thumbnails are 96*96
 //Windows 2000: Thumbnails are 120*120
@@ -198,6 +281,29 @@ end;
 procedure TDataModule1.EasyThumbnailHandler1ExtractImage(
   Sender: TEasyThumbnailHandler; var Bitmap: TBitmap;
   var Extracted: Boolean);
+
+    function ExtractFromGrfFile : Boolean;
+    var
+      IniFile : TIniFile;
+      Stream : IStream;
+      S : string;
+      Bitmap : Pointer;
+    begin
+      Result := False;
+      if GdiPlusInstance = 0 then
+        Exit;
+
+      IniFile := TIniFile.Create(Sender.FileName);
+      S := IniFile.ReadString('Image', 'Png', '');
+      if S <> '' then
+      begin
+        WriteToLog(False, 'Extracting file ' + string(Sender.FileName) + '   Width=' + IntToStr(Sender.Width) + '   Height=' + IntToStr(Sender.Height));
+        Stream := TOleStream.Create(Base64Decode(S));
+        GdipCreateBitmapFromStream(Stream, Bitmap);
+        Stream.Free;
+      end;
+      IniFile.Free
+    end;
 
     function ExtractIt : Boolean;
     var
@@ -207,9 +313,7 @@ procedure TDataModule1.EasyThumbnailHandler1ExtractImage(
       Format : FORMATETC;
     begin
       try
-{$IF Defined(_DEBUG)}
-        WriteToLog('Extracting file ' + string(Sender.FileName) + '   Width=' + IntToStr(Sender.Width) + '   Height=' + IntToStr(Sender.Height));
-{$IFEND}
+        WriteToLog(False, 'Executing Graph to extract thumbnail...');
         OleCheck(StgCreateDocfile(nil, STGM_READWRITE or STGM_SHARE_EXCLUSIVE or STGM_CREATE or STGM_DELETEONRELEASE, 0, Storage));
         Format.cfFormat := CF_BITMAP;
         Format.ptd := nil;
@@ -226,7 +330,7 @@ procedure TDataModule1.EasyThumbnailHandler1ExtractImage(
         // Quiet failure
         on E: Exception do
           begin
-            WriteToLog('Error handling file ' + string(Sender.FileName));
+            WriteToLog(True, 'Error handling file ' + string(Sender.FileName));
             LogException(E);
             Result := False;
           end;
@@ -242,9 +346,12 @@ begin
   end else
   if Sender.OrgSize then
   begin
+    WriteToLog(False, 'Extracting file ' + string(Sender.FileName) + '   Width=' + IntToStr(Sender.Width) + '   Height=' + IntToStr(Sender.Height));
     // Extract the image with out changing its size but clip it to the size of
     // the Bitmap
-    Extracted := ExtractIt;
+    Extracted := ExtractFromGrfFile;
+    if not Extracted then
+      Extracted := ExtractIt;
   end else
   if Sender.Screen then
   begin
