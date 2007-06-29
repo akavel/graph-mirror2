@@ -25,9 +25,15 @@ object Form18: TForm18
     Top = 8
     Width = 287
     Height = 193
-    ActivePage = TabSheet3
+    ActivePage = TabSheet2
     Anchors = [akLeft, akTop, akRight]
-    TabIndex = 2
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabIndex = 1
     TabOrder = 0
     object TabSheet1: TTntTabSheet
       Caption = 'Size'
@@ -82,7 +88,13 @@ object Form18: TForm18
     end
     object TabSheet2: TTntTabSheet
       Caption = 'JPEG'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
       ImageIndex = 1
+      ParentFont = False
       DesignSize = (
         279
         165)
@@ -97,7 +109,7 @@ object Form18: TForm18
         Caption = 'Encoding'
         ItemIndex = 0
         Items.Strings = (
-          'Standard'
+          'Sequential'
           'Progressive')
         TabOrder = 0
       end
