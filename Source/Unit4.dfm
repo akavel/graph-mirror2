@@ -159,7 +159,7 @@ object Form4: TForm4
     Height = 73
     Hint = 'Format used when complex numbers are shown.'
     Anchors = [akTop, akRight]
-    Caption = 'Complex format'
+    Caption = 'Complex form'
     ItemIndex = 1
     Items.Strings = (
       'Real'

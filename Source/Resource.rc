@@ -247,7 +247,7 @@ BEGIN
   642 "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to." //Tip of the Day
   643 "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."                            //Tip of the Day
   644 "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu." //Tip of the Day
-  645 "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."              //Tip of the Day
+  645 "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."              //Tip of the Day
   646 "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."                             //Tip of the Day
   647 "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"           //Tip of the Day
   648 "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"  //Tip of the Day
