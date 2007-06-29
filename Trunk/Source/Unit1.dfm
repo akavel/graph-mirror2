@@ -218,7 +218,6 @@ object Form1: TForm1
     Align = alLeft
     BevelOuter = bvNone
     DragKind = dkDock
-    DragMode = dmAutomatic
     TabOrder = 0
     object TreeView: TTntTreeView
       Left = 0
@@ -229,7 +228,6 @@ object Form1: TForm1
       BevelInner = bvNone
       BevelOuter = bvNone
       Ctl3D = True
-      DragMode = dmAutomatic
       HideSelection = False
       Images = ImageList1
       Indent = 19
@@ -3963,7 +3961,7 @@ object Form1: TForm1
     Top = 256
     object ToolBar_Reset: TTntMenuItem
       Caption = 'Reset to default'
-      Hint = 'Reset the tool bar icons to the installation default.'
+      Hint = 'Reset the toolbar icons to the installation default.'
       OnClick = ToolBar_ResetClick
     end
     object N11: TTntMenuItem
