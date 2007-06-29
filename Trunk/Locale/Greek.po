@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-17 00:28\n"
+"POT-Creation-Date: 2007-06-27 21:32\n"
 "PO-Revision-Date: 2007-02-19 22:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -648,7 +648,6 @@ msgid ""
 msgstr "Μεγέθυνση για ισοτιμία αξόνων.Δείχνει σωστό κύκλο αντί για έλλειψη."
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
-#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Standard"
 msgstr "Κανονικά"
 
@@ -937,7 +936,8 @@ msgid "Reset to default"
 msgstr "Επαναφορά προκαθορισμένων"
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
-msgid "Reset the tool bar icons to the installation default."
+#, fuzzy
+msgid "Reset the toolbar icons to the installation default."
 msgstr "Επαναφορά εικονιδίων της γραμμής εργαλείων στα προκαθορισμένα."
 
 #. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
@@ -1960,6 +1960,11 @@ msgid "Encoding"
 msgstr "Κωδικοποίηση"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+#, fuzzy
+msgid "Sequential"
+msgstr "Επιλογή όλων"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr "Προοδευτικά"
 
@@ -2551,23 +2556,24 @@ msgstr ""
 msgid "Save workspace on exit"
 msgstr "Αποθήκευση παράθυρου κατά την έξοδο."
 
-#. Form4("Options")..RadioGroup1("Complex format")..Hint
+#. Form4("Options")..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "Μορφή που χρησιμοποιείται για την παράσταση μιγαδικών αριθμών"
 
-#. Form4("Options")..RadioGroup1("Complex format")..Caption
-msgid "Complex format"
+#. Form4("Options")..RadioGroup1("Complex form")..Caption
+#, fuzzy
+msgid "Complex form"
 msgstr "Μιγαδική μορφή"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "Πραγματικοί"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "Ορθογώνια"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "Πολική"
 
@@ -3865,8 +3871,8 @@ msgstr ""
 #. Tip of the Day
 #, fuzzy
 msgid ""
-"As an alternative to transparent you can choose a custom background color "
-"for labes. This is especially useful for labels drawn over shadings."
+"As an alternative to Transparent, you can choose a custom background color "
+"for labels. This is especially useful for labels drawn over shadings."
 msgstr ""
 "Εναλλακτικά το προσαρμοσμένο χρώμα φόντου μπορεί να επιλεγεί διάφανο.Είναι "
 "ιδιαίτερα χρήσιμο για ετικέτες πάνω σε γραμμοσκίαση."

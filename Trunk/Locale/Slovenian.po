@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-17 00:28\n"
-"PO-Revision-Date: 2007-06-17 00:40+0100\n"
+"POT-Creation-Date: 2007-06-27 21:32\n"
+"PO-Revision-Date: 2007-06-27 21:41+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -605,7 +605,6 @@ msgid "Zoom to scale the axes equally. This will show a plotted circle in its co
 msgstr "Približajte pogled, da izenačite osi. Tako boste videli krog namesto elipse."
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
-#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Standard"
 msgstr "Standardno"
 
@@ -879,7 +878,7 @@ msgid "Reset to default"
 msgstr "Ponastavi"
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
-msgid "Reset the tool bar icons to the installation default."
+msgid "Reset the toolbar icons to the installation default."
 msgstr "Ponastavi orodno vrstico na prvotni izgled."
 
 #. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
@@ -1836,6 +1835,11 @@ msgid "Encoding"
 msgstr "Kodiranje"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+#, fuzzy
+msgid "Sequential"
+msgstr "Izberi vse"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr "Napreden"
 
@@ -2362,23 +2366,23 @@ msgstr "Shrani položaj okna ob izhodu programa. Te nastavitve bodo uporabljene 
 msgid "Save workspace on exit"
 msgstr "Shrani delo ob izhodu iz programa."
 
-#. Form4("Options")..RadioGroup1("Complex format")..Hint
+#. Form4("Options")..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "Oblika uporabljena za prikaz kompleksnih števil."
 
-#. Form4("Options")..RadioGroup1("Complex format")..Caption
-msgid "Complex format"
+#. Form4("Options")..RadioGroup1("Complex form")..Caption
+msgid "Complex form"
 msgstr "Oblika kompleksnega števila"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "Realna"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "Pravokotna"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "Polarna"
 
@@ -3388,7 +3392,7 @@ msgid "The legend may be moved freely with the mouse or attached to one of the c
 msgstr "Legendo lahko prosto premikate z miško ali pa jo pritrdite v kot, tako da kliknte na legendo s desnim gumbom in izberete mesto iz menija 'Postavitev', ki se vam odpre."
 
 #. Tip of the Day
-msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."
+msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
 msgstr "Kot alternativa transparentni lahko izberete lastno barvo ozadja za oznake. To je uporabno, ko se oznake rišejo čez sence."
 
 #. Tip of the Day

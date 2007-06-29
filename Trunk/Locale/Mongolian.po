@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Граф\n"
-"POT-Creation-Date: 2007-06-17 00:28\n"
+"POT-Creation-Date: 2007-06-27 21:32\n"
 "PO-Revision-Date: 2007-05-08 22:39+0800\n"
 "Last-Translator: Батнасан <bat_nasan@mail.mn>\n"
 "Language-Team: Батнасан <baagiibat@yahoo.com>\n"
@@ -646,7 +646,6 @@ msgstr ""
 "шиг харагдаж байвал түүнийг тойрог болгох."
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
-#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Standard"
 msgstr "Стандарт"
 
@@ -923,7 +922,8 @@ msgid "Reset to default"
 msgstr "Анхны хэлбэрт оруул"
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
-msgid "Reset the tool bar icons to the installation default."
+#, fuzzy
+msgid "Reset the toolbar icons to the installation default."
 msgstr "Командын хэрэглүүрийн мөрийг анхны суурилуулалт шиг болгох"
 
 #. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
@@ -1916,6 +1916,11 @@ msgid "Encoding"
 msgstr "Кодчилол"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+#, fuzzy
+msgid "Sequential"
+msgstr "Бүгдийг идвэхжүүл"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr "Прогресс"
 
@@ -2467,23 +2472,24 @@ msgstr ""
 msgid "Save workspace on exit"
 msgstr "Программаас гарахад ажлын талбарыг хадгалах"
 
-#. Form4("Options")..RadioGroup1("Complex format")..Hint
+#. Form4("Options")..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "Харагдаж байгаа тоонуудыг комплекс тоон хэлбэрт оруулна."
 
-#. Form4("Options")..RadioGroup1("Complex format")..Caption
-msgid "Complex format"
+#. Form4("Options")..RadioGroup1("Complex form")..Caption
+#, fuzzy
+msgid "Complex form"
 msgstr "Комплекс формат"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "Бодит"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "Тэгш өнцөгт"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "Туйлын"
 
@@ -3698,8 +3704,8 @@ msgstr ""
 #. Tip of the Day
 #, fuzzy
 msgid ""
-"As an alternative to transparent you can choose a custom background color "
-"for labes. This is especially useful for labels drawn over shadings."
+"As an alternative to Transparent, you can choose a custom background color "
+"for labels. This is especially useful for labels drawn over shadings."
 msgstr ""
 "Функцыг нэрлэсэн тэмдэглэгээний дэвсгэр өнгийг та өөрөө өөрчлөн сонгож "
 "болно. "

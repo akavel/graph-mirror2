@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2007-06-17 00:28\n"
-"PO-Revision-Date: 2007-06-27 11:50+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2007-06-29 21:32+0100\n"
+"Last-Translator: \n"
 "Language-Team: Frank Hüttemeister & Michael Bach Ipsen <deutsch@padowan.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -606,7 +606,6 @@ msgid "Zoom to scale the axes equally. This will show a plotted circle in its co
 msgstr "Zoomen, um die Achsen einheitlich zu skalieren. Dies stellt einen Kreis mit korrekten Seitenverhältnisse dar (statt einer Ellipse)."
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
-#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Standard"
 msgstr "Standard"
 
@@ -880,7 +879,8 @@ msgid "Reset to default"
 msgstr "Auf Standardwerte zurücksetzen"
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
-msgid "Reset the tool bar icons to the installation default."
+#, fuzzy
+msgid "Reset the toolbar icons to the installation default."
 msgstr "Symbolleiste auf Voreinstellungen zurücksetzen."
 
 #. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
@@ -1837,6 +1837,10 @@ msgid "Encoding"
 msgstr "Encoding"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+msgid "Sequential"
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr "Progressiv"
 
@@ -2366,23 +2370,24 @@ msgstr "Fensterstellung am Programmende abspeichern. Diese Einstellung wird beim
 msgid "Save workspace on exit"
 msgstr "Fenstereinstellungen beim Beenden speichern"
 
-#. Form4("Options")..RadioGroup1("Complex format")..Hint
+#. Form4("Options")..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "Format für die Anzeige komplexer Zahlen"
 
-#. Form4("Options")..RadioGroup1("Complex format")..Caption
-msgid "Complex format"
+#. Form4("Options")..RadioGroup1("Complex form")..Caption
+#, fuzzy
+msgid "Complex form"
 msgstr "Komplexformat"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "Reell"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "Rechteckig"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "Polar"
 
@@ -3389,7 +3394,8 @@ msgid "The legend may be moved freely with the mouse or attached to one of the c
 msgstr "Die Legende kann mit der Maus frei oder in einer der vier Bildschirmecken fest platziert werden. Die Platzierung in einer Ecke kann per Kontextmenü festgelegt werden."
 
 #. Tip of the Day
-msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."
+#, fuzzy
+msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
 msgstr "Beschriftungen können (anstelle durchsichtig zu sein) auch mit einer Hintergrundfarbe belegt werden. Dies empfiehlt sich, falls eine Beschriftung über einer Schraffur liegen soll."
 
 #. Tip of the Day
@@ -3576,26 +3582,4 @@ msgstr "Geben Sie die Anzahl der zu druckenden Kopien ein."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Geben die den Prozentssatz zur Originalgröße ein."
-
-#~ msgid ""
-#~ "Insert a text label (select and click in the main window where you want "
-#~ "the label)."
-#~ msgstr ""
-#~ "Textfeld einfügen (auswählen und auf die gewünschte Stelle im "
-#~ "Hauptfenster klicken)."
-#~ msgid "Cut the selected text to the clipboard"
-#~ msgstr ""
-#~ "Den ausgewählten Text ausschneiden und in der Zwischenablage ablegen."
-#~ msgid "Open an animation file."
-#~ msgstr "Animations-Datei öffnen."
-
-#, fuzzy
-#~ msgid "Version -%s"
-#~ msgstr "Version "
-#~ msgid "Visible"
-#~ msgstr "Sichtbar"
-#~ msgid "Check to make the selected item visible in the coordinate system."
-#~ msgstr ""
-#~ "Aktivieren, um das gewählte Element im Koordinatensystem anzuzeigen oder "
-#~ "auszublenden."
 

@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.2\n"
-"POT-Creation-Date: 2007-06-17 00:28\n"
-"PO-Revision-Date: 2007-06-17 00:36+0100\n"
+"POT-Creation-Date: 2007-06-27 21:32\n"
+"PO-Revision-Date: 2007-06-27 21:37+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <hasan.osmanagic@public.srce.hr>\n"
 "MIME-Version: 1.0\n"
@@ -612,7 +612,6 @@ msgid "Zoom to scale the axes equally. This will show a plotted circle in its co
 msgstr "Izjednačavanje mjerila osi (krug neće biti elipsa)."
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
-#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Standard"
 msgstr "Standardno"
 
@@ -887,7 +886,7 @@ msgid "Reset to default"
 msgstr "Vrati na početno stanje"
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
-msgid "Reset the tool bar icons to the installation default."
+msgid "Reset the toolbar icons to the installation default."
 msgstr "Vraćanje ikone alatne trake na početno stanje"
 
 #. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
@@ -1845,6 +1844,11 @@ msgid "Encoding"
 msgstr "Kodiranje"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+#, fuzzy
+msgid "Sequential"
+msgstr "Selektiraj sve"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr "Progresivno"
 
@@ -2371,23 +2375,23 @@ msgstr "Pohrana položaja prozora programa pri izlazu. Postavka će biti korišt
 msgid "Save workspace on exit"
 msgstr "Pohrani izgled pri izlazu."
 
-#. Form4("Options")..RadioGroup1("Complex format")..Hint
+#. Form4("Options")..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "Oblik prikaza kompleksnih brojeva."
 
-#. Form4("Options")..RadioGroup1("Complex format")..Caption
-msgid "Complex format"
+#. Form4("Options")..RadioGroup1("Complex form")..Caption
+msgid "Complex form"
 msgstr "Oblik kompleks. broja"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "Realni"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "Pravokutni"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "Polarni"
 
@@ -3308,7 +3312,6 @@ msgid "A part or the whole evaluation table can be exported to a file by right c
 msgstr "Dio ili cijeli tabelarni izračun može biti desnim klikom miša i izborom 'Izvoz u datoteku' pohranjen pa kasnije otvoren u drugom programu kao npr. Microsoft Excel."
 
 #. Tip of the Day
-#, fuzzy
 msgid "Data from the evaluation table can be copied to another program like Microsoft Excel using the clipboard."
 msgstr "Podaci iz tabelarnog izračuna mogu biti izravno, preko međuspremnika, kopirani u druge programe kao npr. Microsoft Excel."
 
@@ -3389,7 +3392,7 @@ msgid "The legend may be moved freely with the mouse or attached to one of the c
 msgstr "Legenda se može slobodno pomicati mišom ili desnim klikom miša na okvir i izborom ponuđenih položaja."
 
 #. Tip of the Day
-msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."
+msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
 msgstr "Obojena pozadina je dobro došla alternativa prozirnoj pozadini kad su tekstne oznake iznad šrafura."
 
 #. Tip of the Day

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2007-06-17 00:28\n"
-"PO-Revision-Date: 2007-06-17 00:39+0100\n"
+"POT-Creation-Date: 2007-06-27 21:32\n"
+"PO-Revision-Date: 2007-06-27 21:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -605,7 +605,6 @@ msgid "Zoom to scale the axes equally. This will show a plotted circle in its co
 msgstr "Zooma per scalare equalmente gli assi. Questo mostrerà un cerchio disegnato nella sua relazione corretta invece di un'ellisse."
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
-#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Standard"
 msgstr "Standard"
 
@@ -880,7 +879,7 @@ msgid "Reset to default"
 msgstr "Reimposta a default"
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
-msgid "Reset the tool bar icons to the installation default."
+msgid "Reset the toolbar icons to the installation default."
 msgstr "Resetta alle impostazioni di default la barra degli strumenti."
 
 #. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
@@ -1837,6 +1836,11 @@ msgid "Encoding"
 msgstr "Codifica"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+#, fuzzy
+msgid "Sequential"
+msgstr "Seleziona tutto"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr "Progressiva"
 
@@ -2363,23 +2367,23 @@ msgstr "Salva la posizione della finestra quando si esce dal programma. L'impost
 msgid "Save workspace on exit"
 msgstr "Salva area di lavoro alla chiusura"
 
-#. Form4("Options")..RadioGroup1("Complex format")..Hint
+#. Form4("Options")..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "Formato usato per mostare i numeri complessi."
 
-#. Form4("Options")..RadioGroup1("Complex format")..Caption
-msgid "Complex format"
+#. Form4("Options")..RadioGroup1("Complex form")..Caption
+msgid "Complex form"
 msgstr "Formato complesso"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "Reale"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "Rettangolare"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "Polare"
 
@@ -3389,7 +3393,7 @@ msgid "The legend may be moved freely with the mouse or attached to one of the c
 msgstr "La didascalia può essere spostata liberamente  o collegata a uno degli angoli cliccando con il pulsante destro del mouse sulla stessa e scegliendo la disposizione dal menu contestuale."
 
 #. Tip of the Day
-msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."
+msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
 msgstr "Come alternativa al trasparente, puoi scegliere un colore di sfondo per le etichette. Ciò è particolarmente utile per le etichette sopra le ombreggiature."
 
 #. Tip of the Day

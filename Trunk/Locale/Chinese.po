@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-17 00:28\n"
-"PO-Revision-Date: 2007-06-17 00:35+0100\n"
+"POT-Creation-Date: 2007-06-27 21:32\n"
+"PO-Revision-Date: 2007-06-27 21:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -606,7 +606,6 @@ msgid "Zoom to scale the axes equally. This will show a plotted circle in its co
 msgstr "縮放到座標軸相同，這會呈現圓形的關係而非橢圓"
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
-#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Standard"
 msgstr "標準"
 
@@ -881,7 +880,7 @@ msgid "Reset to default"
 msgstr "重設到預始值"
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
-msgid "Reset the tool bar icons to the installation default."
+msgid "Reset the toolbar icons to the installation default."
 msgstr "重設工具列圖示到安裝預始值"
 
 #. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
@@ -1838,6 +1837,11 @@ msgid "Encoding"
 msgstr "編碼中"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+#, fuzzy
+msgid "Sequential"
+msgstr "選擇全部"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr "進行中"
 
@@ -2364,23 +2368,23 @@ msgstr "在關閉程式時候儲存視窗位置。這個設定可以讓下次開
 msgid "Save workspace on exit"
 msgstr "退出時儲存工作空間"
 
-#. Form4("Options")..RadioGroup1("Complex format")..Hint
+#. Form4("Options")..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "當顯示複數時候所使用的格式"
 
-#. Form4("Options")..RadioGroup1("Complex format")..Caption
-msgid "Complex format"
+#. Form4("Options")..RadioGroup1("Complex form")..Caption
+msgid "Complex form"
 msgstr "複數格式"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "實數"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "方形的"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "極座標"
 
@@ -3389,7 +3393,7 @@ msgid "The legend may be moved freely with the mouse or attached to one of the c
 msgstr "圖例說明可以隨意的用滑鼠來移動或者吸附到任何一個角落，使用方式為在圖例說明上點滑鼠右鍵，然後選擇一個適當的放置選項。"
 
 #. Tip of the Day
-msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."
+msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
 msgstr "除了透明度之外，你也可以選擇一個適合的標籤背景顏色，特別是標籤畫在陰影之上的時候。"
 
 #. Tip of the Day
