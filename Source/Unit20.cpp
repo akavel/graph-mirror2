@@ -37,6 +37,9 @@ void TForm20::ShowAnimation(const AnsiString &FileName)
   Width = Width - Panel1->ClientWidth + Rect.Width();
   Height = Height - Panel1->ClientHeight + Rect.Height();
   TrackBar1->Max = MediaPlayer1->Length - 1;
+  TrackBar1->Frequency = (MediaPlayer1->Length / 100) * 10;
+  if(TrackBar1->Frequency == 0)
+    TrackBar1->Frequency = 1;
   MediaPlayer1->TimeFormat = tfFrames;
   MediaPlayer1->SetSignal(0, 1);
 
