@@ -6,7 +6,7 @@ AllowNoIcons=yes
 AppCopyright=Ivan Johansen
 AppMutex=Graph running
 AppName=Graph
-AppVerName=Graph 4.2
+AppVerName=Graph 4.3 beta
 AppPublisher=Ivan Johansen
 AppPublisherURL=http://www.padowan.dk
 AppSupportURL=http://www.padowan.dk
@@ -17,11 +17,11 @@ DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
 LicenseFile=License.txt
-OutputBaseFilename=SetupGraph-4.2
+OutputBaseFilename=SetupGraphBeta-4.3.0.373
 OutputDir=.
 SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.2.0.332
+VersionInfoVersion=4.3.0.373
 
 
 [Languages]
@@ -58,10 +58,16 @@ Source: "Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
 Source: "Help\*.hlp"; DestDir: "{app}\Help"; Flags: ignoreversion
 Source: "Help\*.cnt"; DestDir: "{app}\Help"; Flags: ignoreversion overwritereadonly
 Source: "Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritereadonly
+;Source: "Plugins\*.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+;Source: "Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 
 [Icons]
-Name: "{userprograms}\Graph"; Filename: "{app}\Graph.exe"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
-Name: "{commonprograms}\Graph"; Filename: "{app}\Graph.exe"; Tasks: InstallAllUsers; Check: not WizardNoIcons
+Name: "{userprograms}\Graph\Examples"; Filename: "{app}\Examples"; IconFilename: "{sys}\shell32.dll"; IconIndex: 19; Flags: foldershortcut; Tasks: not InstallAllUsers; Check: not WizardNoIcons
+Name: "{userprograms}\Graph\Graph"; Filename: "{app}\Graph.exe"; Comment: "Graph"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
+Name: "{userprograms}\Graph\Uninstall"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
+Name: "{commonprograms}\Graph\Examples"; Filename: "{app}\Examples"; IconFilename: "{sys}\shell32.dll"; IconIndex: 19; Flags: foldershortcut; Tasks: InstallAllUsers; Check: not WizardNoIcons
+Name: "{commonprograms}\Graph\Graph"; Filename: "{app}\Graph.exe"; Comment: "Graph"; Tasks: InstallAllUsers; Check: not WizardNoIcons
+Name: "{commonprograms}\Graph\Uninstall"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{userdesktop}\Graph"; Filename: "{app}\Graph.exe"; Tasks: DesktopIcon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\Graph"; Filename: "{app}\Graph.exe"; Tasks: QuickLaunchIcon
 
@@ -84,6 +90,8 @@ Root: HKCU; Subkey: "Software\Ivan\Graph"; ValueType: dword; ValueName: "Install
 Type: files; Name: "{app}\uninstall.exe"
 Type: files; Name: "{app}\uninstall.ini"
 Type: files; Name: "{app}\Help\*.gid"
+Type: files; Name: "{userprograms}\Graph.lnk"
+Type: files; Name: "{commonprograms}\Graph.lnk"
 
 [UninstallRun]
 Filename: "{app}\Graph.exe"; Parameters: "/unregserver"
@@ -94,9 +102,11 @@ Type: files; Name: "{app}\Graph.err"
 Type: files; Name: "{app}\Thumbnails.log"
 Type: files; Name: "{app}\Thumbnails.dll"
 Type: files; Name: "{app}\Examples\Thumbs.db"
+Type: files; Name: "{app}\Plugins\*.pyc"
 Type: dirifempty; Name: "{app}\Examples"
 Type: dirifempty; Name: "{app}\Help"
 Type: dirifempty; Name: "{app}\Locale"
+Type: dirifempty; Name: "{app}\Plugins"
 Type: dirifempty; Name: "{app}"
 
 [Messages]
