@@ -77,7 +77,7 @@ object Form3: TForm3
         Caption = 'Grid unit:'
         FocusControl = Edit4
       end
-      object Edit1: TTntEdit
+      object Edit1: TMyEdit
         Left = 72
         Top = 8
         Width = 100
@@ -87,7 +87,7 @@ object Form3: TForm3
         ShowHint = True
         TabOrder = 0
       end
-      object Edit2: TTntEdit
+      object Edit2: TMyEdit
         Left = 72
         Top = 40
         Width = 100
@@ -97,7 +97,7 @@ object Form3: TForm3
         ShowHint = True
         TabOrder = 1
       end
-      object Edit3: TTntEdit
+      object Edit3: TMyEdit
         Left = 72
         Top = 72
         Width = 100
@@ -133,7 +133,7 @@ object Form3: TForm3
         TabOrder = 6
         OnClick = CheckBoxClick
       end
-      object Edit5: TTntEdit
+      object Edit5: TMyEdit
         Left = 243
         Top = 8
         Width = 135
@@ -156,7 +156,7 @@ object Form3: TForm3
         TabOrder = 5
         OnClick = CheckBoxClick
       end
-      object Edit6: TTntEdit
+      object Edit6: TMyEdit
         Left = 299
         Top = 40
         Width = 79
@@ -167,7 +167,7 @@ object Form3: TForm3
         ShowHint = True
         TabOrder = 8
       end
-      object Edit4: TTntEdit
+      object Edit4: TMyEdit
         Left = 72
         Top = 104
         Width = 100
@@ -268,7 +268,7 @@ object Form3: TForm3
         Caption = 'Grid unit:'
         FocusControl = Edit10
       end
-      object Edit7: TTntEdit
+      object Edit7: TMyEdit
         Left = 72
         Top = 8
         Width = 100
@@ -278,7 +278,7 @@ object Form3: TForm3
         ShowHint = True
         TabOrder = 0
       end
-      object Edit8: TTntEdit
+      object Edit8: TMyEdit
         Left = 72
         Top = 40
         Width = 100
@@ -300,7 +300,7 @@ object Form3: TForm3
         TabOrder = 4
         OnClick = CheckBox8Click
       end
-      object Edit9: TTntEdit
+      object Edit9: TMyEdit
         Left = 72
         Top = 72
         Width = 100
@@ -334,7 +334,7 @@ object Form3: TForm3
         TabOrder = 6
         OnClick = CheckBoxClick
       end
-      object Edit11: TTntEdit
+      object Edit11: TMyEdit
         Left = 243
         Top = 8
         Width = 135
@@ -345,7 +345,7 @@ object Form3: TForm3
         ShowHint = True
         TabOrder = 7
       end
-      object Edit12: TTntEdit
+      object Edit12: TMyEdit
         Left = 299
         Top = 40
         Width = 79
@@ -356,7 +356,7 @@ object Form3: TForm3
         ShowHint = True
         TabOrder = 8
       end
-      object Edit10: TTntEdit
+      object Edit10: TMyEdit
         Left = 72
         Top = 104
         Width = 100
@@ -474,7 +474,7 @@ object Form3: TForm3
         ShowHint = True
         TabOrder = 5
       end
-      object Edit13: TTntEdit
+      object Edit13: TMyEdit
         Left = 40
         Top = 8
         Width = 321

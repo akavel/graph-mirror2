@@ -40,7 +40,7 @@ __published:	// IDE-managed Components
   TLineSelect *LineSelect1;
   TTntGroupBox *GroupBox3;
   TTntLabel *Label10;
-  TTntEdit *Edit3;
+  TMyEdit *Edit3;
   TTntButton *Button3;
   TExtColorBox *ExtColorBox1;
   void __fastcall Button1Click(TObject *Sender);

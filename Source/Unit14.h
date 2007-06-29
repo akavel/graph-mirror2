@@ -46,7 +46,7 @@ __published:	// IDE-managed Components
   TTntMenuItem *N1;
   TTntMenuItem *Popup_Select;
   TTntButton *Button2;
-  TTntEdit *Edit1;
+  TMyEdit *Edit1;
   TTntLabel *Label3;
   TTntGroupBox *GroupBox4;
   TPaintBox *PaintBox1;

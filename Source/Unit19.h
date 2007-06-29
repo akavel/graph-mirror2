@@ -17,6 +17,7 @@
 #include "TntStdCtrls.hpp"
 #include <MPlayer.hpp>
 #include "ProgressForm.h"
+#include "MyEdit.h"
 //---------------------------------------------------------------------------
 struct TAnimationInfo
 {
@@ -44,17 +45,17 @@ __published:	// IDE-managed Components
   TTntGroupBox *TntGroupBox1;
   TTntGroupBox *TntGroupBox2;
   TTntLabel *Label2;
-  TTntEdit *Edit1;
+  TMyEdit *Edit1;
   TTntLabel *Label3;
-  TTntEdit *Edit2;
+  TMyEdit *Edit2;
   TTntLabel *Label4;
-  TTntEdit *Edit3;
+  TMyEdit *Edit3;
   TTntLabel *Label5;
-  TTntEdit *Edit4;
+  TMyEdit *Edit4;
   TTntLabel *Label6;
-  TTntEdit *Edit5;
+  TMyEdit *Edit5;
   TTntLabel *Label7;
-  TTntEdit *Edit6;
+  TMyEdit *Edit6;
   void __fastcall Button1Click(TObject *Sender);
   void __fastcall Button3Click(TObject *Sender);
   void __fastcall TntEditKeyPress(TObject *Sender, char &Key);

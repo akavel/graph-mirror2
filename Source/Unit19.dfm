@@ -106,7 +106,7 @@ object Form19: TForm19
       Caption = 'Step:'
       FocusControl = Edit3
     end
-    object Edit1: TTntEdit
+    object Edit1: TMyEdit
       Left = 96
       Top = 16
       Width = 89
@@ -115,7 +115,7 @@ object Form19: TForm19
       TabOrder = 0
       Text = '1'
     end
-    object Edit2: TTntEdit
+    object Edit2: TMyEdit
       Left = 96
       Top = 44
       Width = 89
@@ -124,7 +124,7 @@ object Form19: TForm19
       TabOrder = 1
       Text = '10'
     end
-    object Edit3: TTntEdit
+    object Edit3: TMyEdit
       Left = 96
       Top = 72
       Width = 89
@@ -165,7 +165,7 @@ object Form19: TForm19
       Caption = 'Frames/second:'
       FocusControl = Edit6
     end
-    object Edit4: TTntEdit
+    object Edit4: TMyEdit
       Left = 96
       Top = 16
       Width = 89
@@ -174,7 +174,7 @@ object Form19: TForm19
       Text = '320'
       OnKeyPress = TntEditKeyPress
     end
-    object Edit5: TTntEdit
+    object Edit5: TMyEdit
       Left = 96
       Top = 44
       Width = 89
@@ -183,7 +183,7 @@ object Form19: TForm19
       Text = '320'
       OnKeyPress = TntEditKeyPress
     end
-    object Edit6: TTntEdit
+    object Edit6: TMyEdit
       Left = 96
       Top = 72
       Width = 89

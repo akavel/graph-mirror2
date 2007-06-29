@@ -146,7 +146,7 @@ object Form5: TForm5
       Caption = 'Steps:'
       FocusControl = Edit5
     end
-    object Edit3: TTntEdit
+    object Edit3: TMyEdit
       Left = 38
       Top = 18
       Width = 74
@@ -154,7 +154,7 @@ object Form5: TForm5
       Hint = 'Start of range interval for the used variable.'
       TabOrder = 0
     end
-    object Edit4: TTntEdit
+    object Edit4: TMyEdit
       Left = 144
       Top = 18
       Width = 74
@@ -162,7 +162,7 @@ object Form5: TForm5
       Hint = 'End of range interval for the used variable.'
       TabOrder = 1
     end
-    object Edit5: TTntEdit
+    object Edit5: TMyEdit
       Left = 264
       Top = 18
       Width = 49
@@ -314,7 +314,7 @@ object Form5: TForm5
       Caption = 'Description:'
       FocusControl = Edit7
     end
-    object Edit7: TTntEdit
+    object Edit7: TMyEdit
       Left = 72
       Top = 18
       Width = 241
