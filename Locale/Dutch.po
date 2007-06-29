@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.0.1\n"
-"POT-Creation-Date: 2007-06-17 00:28\n"
-"PO-Revision-Date: 2007-06-17 08:07+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2007-06-27 21:32\n"
+"PO-Revision-Date: 2007-06-27 21:38+0100\n"
+"Last-Translator: \n"
 "Language-Team: Etienne Goemaere <etienne.goemaere@pandora.be>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -607,7 +607,6 @@ msgid "Zoom to scale the axes equally. This will show a plotted circle in its co
 msgstr "Zoom zodat de schaal van de assen gelijk is. Hierdoor wordt een cirkel niet als ellips afgebeeld."
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
-#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Standard"
 msgstr "Standaard"
 
@@ -881,7 +880,7 @@ msgid "Reset to default"
 msgstr "Herstel de standaard."
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
-msgid "Reset the tool bar icons to the installation default."
+msgid "Reset the toolbar icons to the installation default."
 msgstr "Stel de iconen van de werkbalk terug in volgens de standaardinstellingen."
 
 #. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
@@ -1838,6 +1837,11 @@ msgid "Encoding"
 msgstr "Codering"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+#, fuzzy
+msgid "Sequential"
+msgstr "Selecteer alles"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr "Progressief"
 
@@ -2364,23 +2368,23 @@ msgstr "Sla de vensterpositie op als het programma afgesloten wordt. Het program
 msgid "Save workspace on exit"
 msgstr "Sla de werkruimte op bij afsluiten"
 
-#. Form4("Options")..RadioGroup1("Complex format")..Hint
+#. Form4("Options")..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "Vorm waaronder complexe getallen getoond worden."
 
-#. Form4("Options")..RadioGroup1("Complex format")..Caption
-msgid "Complex format"
+#. Form4("Options")..RadioGroup1("Complex form")..Caption
+msgid "Complex form"
 msgstr "Complexe vorm"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "Reëel"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "Rechthoekig"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "Polair"
 
@@ -3389,7 +3393,7 @@ msgid "The legend may be moved freely with the mouse or attached to one of the c
 msgstr "Men kan de legende met de muis vrij bewegen of vastmaken aan een van de hoeken door rechts te klikken en door een plaatsing te kiezen uit het contextmenu."
 
 #. Tip of the Day
-msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."
+msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
 msgstr "Een menu kan naast transparant ook een kleur krijgen. Dit is vooral interessant als een menu boven een schaduw getekend wordt."
 
 #. Tip of the Day

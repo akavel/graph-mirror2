@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-17 00:28\n"
-"PO-Revision-Date: 2007-06-17 00:37+0100\n"
+"POT-Creation-Date: 2007-06-27 21:32\n"
+"PO-Revision-Date: 2007-06-27 21:38+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -606,7 +606,6 @@ msgid "Zoom to scale the axes equally. This will show a plotted circle in its co
 msgstr "Zobrazit osy ve stejném měřítku. Kružnice budou zobrazeny ve správném tvaru, ne jako elipsy."
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
-#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Standard"
 msgstr "Standardní"
 
@@ -881,7 +880,7 @@ msgid "Reset to default"
 msgstr "Obnovit výchozí"
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
-msgid "Reset the tool bar icons to the installation default."
+msgid "Reset the toolbar icons to the installation default."
 msgstr "Obnovit výchozí nastavení ikon na panelu nástrojů."
 
 #. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
@@ -1838,6 +1837,11 @@ msgid "Encoding"
 msgstr "Kódování"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+#, fuzzy
+msgid "Sequential"
+msgstr "Vybrat vše"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr "Progresivní"
 
@@ -2369,23 +2373,23 @@ msgstr "Uložit pozici okna při ukončení programu. Toto nastavení bude použ
 msgid "Save workspace on exit"
 msgstr "Při ukočení uložit pracovní plochu"
 
-#. Form4("Options")..RadioGroup1("Complex format")..Hint
+#. Form4("Options")..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "Formát použitý pro zobrazení komplexních čísel."
 
-#. Form4("Options")..RadioGroup1("Complex format")..Caption
-msgid "Complex format"
+#. Form4("Options")..RadioGroup1("Complex form")..Caption
+msgid "Complex form"
 msgstr "Komplexní čísla"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "Reálná část"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "Kartézsky"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "Polárně"
 
@@ -3395,8 +3399,7 @@ msgid "The legend may be moved freely with the mouse or attached to one of the c
 msgstr "Legendu lze volně přesunovat pomocí myši nebo ji umístit do některého rohu. Klepněte na ni pravým tlačítkem a v místní nabídce vyberte umístění."
 
 #. Tip of the Day
-#, fuzzy
-msgid "As an alternative to transparent you can choose a custom background color for labes. This is especially useful for labels drawn over shadings."
+msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
 msgstr "Pro pozadí popisu můžete kromě průhledného zvolit také vlastní barvu. To je vhodné zejména pro popisy nad šrafováním."
 
 #. Tip of the Day

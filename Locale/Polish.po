@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-17 00:28\n"
+"POT-Creation-Date: 2007-06-27 21:32\n"
 "PO-Revision-Date: 2007-02-19 22:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -640,7 +640,6 @@ msgid ""
 msgstr ""
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
-#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Standard"
 msgstr "Standardowe"
 
@@ -935,7 +934,8 @@ msgid "Reset to default"
 msgstr "Przywróć domyślne"
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
-msgid "Reset the tool bar icons to the installation default."
+#, fuzzy
+msgid "Reset the toolbar icons to the installation default."
 msgstr "Przywraca domyślny układ ikon paska narzędzi."
 
 #. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
@@ -1971,6 +1971,11 @@ msgid "Encoding"
 msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
+#, fuzzy
+msgid "Sequential"
+msgstr "Wybierz kolor (??)"
+
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr ""
 
@@ -2534,23 +2539,24 @@ msgstr ""
 msgid "Save workspace on exit"
 msgstr "Zapisuj stan okna przy wyjściu z programu"
 
-#. Form4("Options")..RadioGroup1("Complex format")..Hint
+#. Form4("Options")..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "Format używany gdy pokazywane są licby zespolone."
 
-#. Form4("Options")..RadioGroup1("Complex format")..Caption
-msgid "Complex format"
+#. Form4("Options")..RadioGroup1("Complex form")..Caption
+#, fuzzy
+msgid "Complex form"
 msgstr "Postać zespolona"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "Część rzeczywista"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "Algebraiczna"
 
-#. Form4("Options")..RadioGroup1("Complex format")....Items.Strings
+#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "Biegunowa"
 
@@ -3733,8 +3739,8 @@ msgstr ""
 
 #. Tip of the Day
 msgid ""
-"As an alternative to transparent you can choose a custom background color "
-"for labes. This is especially useful for labels drawn over shadings."
+"As an alternative to Transparent, you can choose a custom background color "
+"for labels. This is especially useful for labels drawn over shadings."
 msgstr ""
 
 #. Tip of the Day
