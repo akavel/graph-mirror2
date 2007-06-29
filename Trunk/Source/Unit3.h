@@ -25,6 +25,7 @@
 #include "TntButtons.hpp"
 #include "TntComCtrls.hpp"
 #include "TntExtCtrls.hpp"
+#include "MyEdit.h"
 //---------------------------------------------------------------------------
 class TForm3 : public TTntForm
 {
@@ -32,30 +33,30 @@ __published:	// IDE-managed Components
 	TTntPageControl *PageControl1;
 	TTntTabSheet *TabSheet1;
 	TTntTabSheet *TabSheet2;
-	TTntEdit *Edit1;
+	TMyEdit *Edit1;
 	TTntLabel *Label1;
 	TTntLabel *Label2;
 	TTntLabel *Label3;
-	TTntEdit *Edit2;
-	TTntEdit *Edit3;
+	TMyEdit *Edit2;
+	TMyEdit *Edit3;
 	TTntCheckBox *CheckBox1;
   TTntCheckBox *CheckBox3;
-  TTntEdit *Edit5;
+  TMyEdit *Edit5;
   TTntCheckBox *CheckBox2;
 	TTntLabel *Label4;
-  TTntEdit *Edit6;
+  TMyEdit *Edit6;
 	TTntLabel *Label5;
 	TTntLabel *Label6;
-  TTntEdit *Edit7;
-  TTntEdit *Edit8;
+  TMyEdit *Edit7;
+  TMyEdit *Edit8;
   TTntCheckBox *CheckBox14;
   TTntCheckBox *CheckBox8;
-  TTntEdit *Edit9;
+  TMyEdit *Edit9;
 	TTntLabel *Label7;
   TTntCheckBox *CheckBox9;
   TTntCheckBox *CheckBox10;
-  TTntEdit *Edit11;
-  TTntEdit *Edit12;
+  TMyEdit *Edit11;
+  TMyEdit *Edit12;
 	TTntLabel *Label8;
 	TTntButton *Button1;
 	TTntButton *Button2;
@@ -67,7 +68,7 @@ __published:	// IDE-managed Components
   TTntRadioGroup *RadioGroup1;
   TTntRadioGroup *RadioGroup2;
   TTntLabel *Label14;
-  TTntEdit *Edit4;
+  TMyEdit *Edit4;
   TTntCheckBox *CheckBox4;
   TTntCheckBox *CheckBox5;
   TTntTabSheet *TabSheet4;
@@ -80,10 +81,10 @@ __published:	// IDE-managed Components
   TTntLabel *Label21;
   TTntBitBtn *BitBtn2;
   TTntBitBtn *BitBtn3;
-  TTntEdit *Edit13;
+  TMyEdit *Edit13;
   TTntLabel *Label16;
   TTntBitBtn *BitBtn1;
-  TTntEdit *Edit10;
+  TMyEdit *Edit10;
   TTntLabel *Label9;
   TTntCheckBox *CheckBox11;
   TTntCheckBox *CheckBox12;

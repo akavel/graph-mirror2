@@ -32,7 +32,7 @@ __published:	// IDE-managed Components
     TTntRadioGroup *RadioGroup1;
     TTntGroupBox *GroupBox1;
     TTntLabel *Label10;
-    TTntEdit *Edit2;
+    TMyEdit *Edit2;
     TTntGroupBox *GroupBox2;
     TTntLabel *Label7;
     TTntLabel *Label8;

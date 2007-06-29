@@ -17,6 +17,7 @@
 //---------------------------------------------------------------------------
 #pragma link "TntStdCtrls"
 #pragma link "ProgressForm"
+#pragma link "MyEdit"
 #pragma resource "*.dfm"
 
 ::TAnimationInfo TForm19::AnimationInfo;

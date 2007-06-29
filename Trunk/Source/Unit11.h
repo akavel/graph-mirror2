@@ -30,7 +30,7 @@ __published:	// IDE-managed Components
   TTntLabel *Label1;
   TTntGroupBox *GroupBox1;
   TTntLabel *Label10;
-  TTntEdit *Edit3;
+  TMyEdit *Edit3;
   TTntGroupBox *GroupBox2;
   TTntLabel *Label7;
   TTntLabel *Label9;

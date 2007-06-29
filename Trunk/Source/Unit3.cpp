@@ -16,6 +16,7 @@
 #pragma link "TntButtons"
 #pragma link "TntComCtrls"
 #pragma link "TntExtCtrls"
+#pragma link "MyEdit"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)

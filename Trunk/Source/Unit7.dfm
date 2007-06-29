@@ -168,7 +168,7 @@ object Form7: TForm7
       Caption = 'Description:'
       FocusControl = Edit3
     end
-    object Edit3: TTntEdit
+    object Edit3: TMyEdit
       Left = 72
       Top = 18
       Width = 241

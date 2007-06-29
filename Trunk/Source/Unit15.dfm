@@ -29,9 +29,10 @@ object Form15: TForm15
   object Label4: TTntLabel
     Left = 16
     Top = 50
-    Width = 17
+    Width = 18
     Height = 13
-    Caption = 'dx='
+    Caption = #916'x='
+    Caption_UTF7 = '+A5Q-x='
   end
   object Label1: TTntLabel
     Left = 16

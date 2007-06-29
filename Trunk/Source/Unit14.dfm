@@ -73,7 +73,7 @@ object Form14: TForm14
     ModalResult = 2
     TabOrder = 5
   end
-  object Edit1: TTntEdit
+  object Edit1: TMyEdit
     Left = 80
     Top = 24
     Width = 172
