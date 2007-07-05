@@ -95,7 +95,7 @@ protected:
   bool DoLink(UINT Msg, unsigned Min, unsigned Max);
 
 public:
-  TTextFormat TextFormat;
+  ::TTextFormat TextFormat;
 
   __fastcall TIRichEdit(TComponent* Owner);
   __fastcall ~TIRichEdit();

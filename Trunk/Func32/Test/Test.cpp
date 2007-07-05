@@ -6,6 +6,7 @@
 #include <sstream>
 #include <cstdarg>
 #include <limits>
+#include <cmath>
 //---------------------------------------------------------------------------
 using namespace Func32;
 using namespace std;
@@ -23,9 +24,10 @@ long double StrToDouble(const char *Str)
 {
   istringstream Stream(Str);
   long double Number;
-  if(Stream >> Number)
-    return Number;
-  return NaN;
+//  if(Stream >> Number)
+//    return Number;
+  sscanf(Str, "%Lf", &Number);
+  return Number;
 }
 
 inline bool IsZero(long double a)
@@ -38,10 +40,18 @@ inline bool IsZero(TComplex c)
   return IsZero(real(c)) && IsZero(imag(c));
 }
 
-template<typename T>
-inline bool IsEqual(T a, T b)
+inline bool IsEqual(long double a, long double b)
 {
-  return IsZero(a - b);
+  int a_exp, b_exp, exp;
+  frexp(a, &a_exp);
+  frexp(b, &b_exp);
+  frexp(a - b, &exp);
+  return IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 50);
+}
+
+inline bool IsEqual(TComplex a, TComplex b)
+{
+  return IsEqual(real(a), real(b)) && IsEqual(imag(a), imag(b));
 }
 
 template<typename T>

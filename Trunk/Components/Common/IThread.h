@@ -62,7 +62,7 @@ class TIThread : public TThread
 
 protected:
   TIThread(bool CreateSuspended = false) : TThread(CreateSuspended), FFinished(false) {}
-  using TThread::Synchronize;
+//  using TThread::Synchronize;
 
   template<typename TClassMethod> void Synchronize(TClassMethod Method)
   {

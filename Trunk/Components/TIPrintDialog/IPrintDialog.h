@@ -26,7 +26,7 @@ private:
   int FImageWidth;
   int FImageHeight;
   int FCopies;
-  TPrinterOrientation FOrientation;
+  Printers::TPrinterOrientation FOrientation;
   class TPrintFrm *PrintFrm;
   
   TRect GetDrawingArea();
@@ -51,7 +51,7 @@ __published:
   __property int ImageWidth = {read=FImageWidth, write=FImageWidth, default=100};
   __property int ImageHeight = {read=FImageHeight, write=FImageHeight, default=100};
   __property int Copies = {read=FCopies, write=FCopies, default=1};
-  __property TPrinterOrientation Orientation = {read=FOrientation, write=FOrientation, default=poPortrait};
+  __property Printers::TPrinterOrientation Orientation = {read=FOrientation, write=FOrientation, default=poPortrait};
 };
 //---------------------------------------------------------------------------
 #endif

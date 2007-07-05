@@ -17,7 +17,7 @@ typedef enum {psoDefaultMinMargins, psoDisableMargins, psoDisableOrientation,
 	psoMinMargins, psoNoWarning, psoShowHelp
 	} TIPageSetupDialogOptions;
 
-typedef Set<TIPageSetupDialogOptions, psoDefaultMinMargins, psoShowHelp> TPageSetupOptionsSet;
+typedef Set<TIPageSetupDialogOptions, ::psoDefaultMinMargins, ::psoShowHelp> TPageSetupOptionsSet;
 
 typedef enum {psuMillimeters, psuInches} TIPageSetupDialogUnits;
 
@@ -74,8 +74,10 @@ public:
 
   __fastcall TIPageSetupDialog(TComponent* Owner);
   __fastcall ~TIPageSetupDialog();
-  bool __fastcall Execute(void);
+  bool __fastcall Execute(HWND ParentWnd = NULL);
+  bool __fastcall Execute() {return Execute(NULL);}
   void __fastcall Error(TPageSetupRect *R){throw Exception("Error!");};
+
 __published:
   __property TIPageSetupDialogUnits Units = {read = FUnits, write = FUnits,default = psuMillimeters};
   __property TPageSetupRect* MinMargins = {read = FMinMargins, write=FMinMargins};
