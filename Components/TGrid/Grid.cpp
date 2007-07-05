@@ -9,6 +9,7 @@
 #include <Clipbrd.hpp>
 #include "Grid.h"
 #include <fstream>
+#include <string>
 #pragma package(smart_init)
 #pragma resource "cursors.res"
 

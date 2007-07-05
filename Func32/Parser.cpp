@@ -127,7 +127,7 @@ namespace Func32
     TIdent Ident;
     TContext::member1 &Elements;
     TDoOperator(TContext::member1 &AElements, TIdent Operator) : Ident(Operator), Elements(AElements) {}
-    void operator()(const std::deque<TElem> &List)
+    void operator()(const std::deque<TElem> &List) const
     {
       //This should be handled in the simplify code.
       //a^(b/c) will be converted to CodePowDiv(a,b,c) instead of CodePow(a, CodeDiv(b,c))
@@ -148,7 +148,7 @@ namespace Func32
   {
     TContext::member1 &Elements;
     TDoNegate(TContext::member1 &AElements) : Elements(AElements) {}
-    void operator()(const std::deque<TElem> &List)
+    void operator()(const std::deque<TElem> &List) const
     {
       if(List.front().Ident == CodeNumber)
         Elements().push_back(-List.front().Number);
@@ -244,10 +244,10 @@ namespace Func32
 
   class TAssign
   {
-    TContext::member1 &Container;
+	TContext::member1 &Container;
   public:
-    TAssign(TContext::member1 &AContainer) : Container(AContainer) {}
-    void operator()(const TElem &Elem)
+	TAssign(TContext::member1 &AContainer) : Container(AContainer) {}
+    void operator()(const TElem &Elem) const
     {
       Container().clear();
       Container().push_back(Elem);
@@ -259,7 +259,7 @@ namespace Func32
     TContext::member1 &Container;
   public:
     TPushBack(TContext::member1 &AContainer) : Container(AContainer) {}
-    void operator()(const std::deque<TElem> &List)
+    void operator()(const std::deque<TElem> &List) const
     {
       Container().insert(Container().end(), List.begin(), List.end());
     }
@@ -267,10 +267,10 @@ namespace Func32
 
   class TConvertRelation
   {
-    TContext::member1 &Container;
+	TContext::member1 &Container;
   public:
-    TConvertRelation(TContext::member1 &AContainer) : Container(AContainer) {}
-    void operator()(const TElem &Elem)
+	TConvertRelation(TContext::member1 &AContainer) : Container(AContainer) {}
+    void operator()(const TElem &Elem) const
     {
       Container().front().Ident = CodeCompare2;
       Container().front().Compare[1] = Elem.Compare[0];
@@ -286,7 +286,7 @@ namespace Func32
    */
   void TFuncData::Parse(const std::string &Str, const std::vector<std::string> &Args, const TSymbolList *SymbolList)
   {
-    TFuncSymbols FuncSymbols;
+	TFuncSymbols FuncSymbols;
     TNoCaseSymbols NoCaseSymbols;
 
     //Add arguments before symbol names, so they take precedens.
@@ -311,7 +311,7 @@ namespace Func32
     //A constant may not be followed by a alpha-numeric character
     //A constant may not be followed a a parenthesis
     Constant =
-        lexeme_d[ as_lower_d[NoCaseSymbols[TAssign(Constant.List)]] >> (eps_p - alnum_p)
+		lexeme_d[ as_lower_d[NoCaseSymbols[TAssign(Constant.List)]] >> (eps_p - alnum_p)
                 | Symbols[TAssign(Constant.List)] >> (eps_p - alnum_p)
                 ] >> !(+ch_p('('))[TDoError(ecParAfterConst)];
 
@@ -379,76 +379,76 @@ namespace Func32
   BOOST_SPIRIT_DEBUG_RULE(Constant);
   BOOST_SPIRIT_DEBUG_RULE(Neg);
 
-    if(Str.empty())
-      throw EParseError(ecEmptyString);
+	if(Str.empty())
+	  throw EParseError(ecEmptyString);
 
-    const char *Begin = &Str[0];
-    const char *End = &Str[0] + Str.size();
+	const char *Begin = &Str[0];
+	const char *End = &Str[0] + Str.size();
 
-    try
-    {
-      //Parse expression and ignore spaces at the end
-      std::deque<TElem> Temp;
-      parse_info<> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
-      std::vector<TElem> Temp2(Temp.begin(), Temp.end());
+	try
+	{
+	  //Parse expression and ignore spaces at the end
+	  std::deque<TElem> Temp;
+	  parse_info<> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
+	  std::vector<TElem> Temp2(Temp.begin(), Temp.end());
 
-      if(!Info.full)
-      {
-        if(std::isalpha(*Info.stop))
-        {
-          const char *Ch;
-          for(Ch = Info.stop; std::isalnum(*Ch); ++Ch);
-          throw EParseError(ecUnknownVar, Info.stop - Begin, std::string(Info.stop, Ch));
-        }
-        if(*Info.stop == ',')
-          throw EParseError(ecCommaError, Info.stop - Begin);
-        if(*Info.stop == 0)
-          throw EParseError(ecUnexpectedEnd, Info.stop - Begin);
-        if(std::string("+-/*^").find_first_of(*Info.stop) != std::string::npos)
-          throw EParseError(ecOperatorError, Info.stop - Begin, std::string(1, *Info.stop));
-        if(*Info.stop == ')')
-          throw EParseError(ecInvalidEndPar, Info.stop - Begin);
-        if(*Info.stop == '.' || std::isdigit(*Info.stop))
-          throw EParseError(ecInvalidNumber, Info.stop - Begin);
-        if(*Info.stop == '<' || *Info.stop == '>' || *Info.stop == '=')
-          throw EParseError(ecInvalidCompare, Info.stop - Begin);
-        if(!std::isdigit(*Info.stop) && std::string(".( ").find_first_of(*Info.stop) == std::string::npos)
-          throw EParseError(ecUnknownChar, Info.stop - Begin, std::string(1, *Info.stop));
-        throw EParseError(ecParseError, Info.stop - Begin);
-      }
+	  if(!Info.full)
+	  {
+		if(std::isalpha(*Info.stop))
+		{
+		  const char *Ch;
+		  for(Ch = Info.stop; std::isalnum(*Ch); ++Ch);
+		  throw EParseError(ecUnknownVar, Info.stop - Begin, std::string(Info.stop, Ch));
+		}
+		if(*Info.stop == ',')
+		  throw EParseError(ecCommaError, Info.stop - Begin);
+		if(*Info.stop == 0)
+		  throw EParseError(ecUnexpectedEnd, Info.stop - Begin);
+		if(std::string("+-/*^").find_first_of(*Info.stop) != std::string::npos)
+		  throw EParseError(ecOperatorError, Info.stop - Begin, std::string(1, *Info.stop));
+		if(*Info.stop == ')')
+		  throw EParseError(ecInvalidEndPar, Info.stop - Begin);
+		if(*Info.stop == '.' || std::isdigit(*Info.stop))
+		  throw EParseError(ecInvalidNumber, Info.stop - Begin);
+		if(*Info.stop == '<' || *Info.stop == '>' || *Info.stop == '=')
+		  throw EParseError(ecInvalidCompare, Info.stop - Begin);
+		if(!std::isdigit(*Info.stop) && std::string(".( ").find_first_of(*Info.stop) == std::string::npos)
+		  throw EParseError(ecUnknownChar, Info.stop - Begin, std::string(1, *Info.stop));
+		throw EParseError(ecParseError, Info.stop - Begin);
+	  }
 
 //      DEBUG_LOG(std::clog << MakeText(Temp2.begin()) << std::endl);
-      Data.swap(Temp2);
-    }
-    //Should not be necesarry. Bug in BCB6? Error on "sin ¤" is not caught without
-    catch(parser_error<const EParseError, const char*> &E)
-    {
-      HandleParseError(E.descriptor, E.where, E.where - Begin);
-    }
-    catch(parser_error<EParseError, const char*> &E)
-    {
-      HandleParseError(E.descriptor, E.where, E.where - Begin);
-    }
-    catch(EFuncError &E)
-    {
-      throw;
-    }
-    catch(...)
-    {
-      throw EFuncError(ecInternalError);
-    }
+	  Data.swap(Temp2);
+	}
+	//Should not be necesarry. Bug in BCB6? Error on "sin ¤" is not caught without
+	catch(parser_error<const EParseError, const char*> &E)
+	{
+	  HandleParseError(E.descriptor, E.where, E.where - Begin);
+	}
+	catch(parser_error<EParseError, const char*> &E)
+	{
+	  HandleParseError(E.descriptor, E.where, E.where - Begin);
+	}
+	catch(EFuncError &E)
+	{
+	  throw;
+	}
+	catch(...)
+	{
+	  throw EFuncError(ecInternalError);
+	}
   }
 //---------------------------------------------------------------------------
   void TFuncData::HandleParseError(const EParseError &E, const char* Where, unsigned Pos)
   {
-    if(E.ErrorCode != ecArgCountError && std::isalpha(*Where))
-    {
-      const char *Ch;
-      for(Ch = Where; std::isalnum(*Ch); ++Ch);
-      throw EParseError(ecUnknownVar, Pos, std::string(Where, Ch));
-    }
+	if(E.ErrorCode != ecArgCountError && std::isalpha(*Where))
+	{
+	  const char *Ch;
+	  for(Ch = Where; std::isalnum(*Ch); ++Ch);
+	  throw EParseError(ecUnknownVar, Pos, std::string(Where, Ch));
+	}
 
-    //Convert to a comma error if the error was detected at a comma (eg. "(0,8)")
+	//Convert to a comma error if the error was detected at a comma (eg. "(0,8)")
     if(*Where == ',')
       throw EParseError(ecCommaError, Pos);
 

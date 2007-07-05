@@ -10,6 +10,7 @@
 #include "Func32Impl.h"
 #pragma hdrstop
 #include <memory>
+#include <limits>
 #define PI    3.141592653589793238462643L
 
 namespace Func32

@@ -38,7 +38,7 @@ __fastcall TIPageSetupDialog::TIPageSetupDialog(TComponent* Owner)
   FMargins = new TPageSetupRect(Owner);
   FUnits = psuMillimeters;
   FOptions.Clear();
-  FOptions << psoDefaultMinMargins << psoMargins;
+  FOptions << ::psoDefaultMinMargins << ::psoMargins;
   FOnPaintMargins=NULL;
   FOnPaintText=NULL;
   FOnPaintStamp=NULL;
@@ -58,7 +58,7 @@ __fastcall TIPageSetupDialog::~TIPageSetupDialog()
 //---------------------------------------------------------------------------
 //This function shows the dialog
 //Returns true if the user presses OK and false if user presses Cancel
-bool __fastcall TIPageSetupDialog::Execute(void)
+bool __fastcall TIPageSetupDialog::Execute(HWND ParentWnd)
 {
   PAGESETUPDLG psd;
   char device[255];
@@ -68,50 +68,53 @@ bool __fastcall TIPageSetupDialog::Execute(void)
 
   //Check if a dialog is already in use
   if(Dialog)
-    throw EPageSetup("PageSetupDialog is already in use!", 0);
-          
+	throw EPageSetup("PageSetupDialog is already in use!", 0);
+
   if(Printer()->Printing)
-    throw EPageSetup("Printing in progress!", 0);
+	throw EPageSetup("Printing in progress!", 0);
 
   try
   {
-    //Set static variable to point to this object and allocate memory for canvas
-    Dialog=this;
+	//Set static variable to point to this object and allocate memory for canvas
+	Dialog=this;
 
-    //Get printer information                             
-    Printer()->GetPrinter(device, driver, port, devmode);
+	//Get printer information
+	Printer()->GetPrinter(device, driver, port, devmode);
 
-    //Initialize the print setup dialog structure
-    psd.lStructSize = sizeof(psd);
-    psd.hwndOwner = Application->MainForm ? Application->Handle : NULL;
-    //hDevMode and hDevNames have to be 0 when default should be returned
-    psd.hDevMode = (HGLOBAL)devmode;
-    psd.hDevNames = 0;
-    psd.Flags = GetOptionFlags();
-    psd.ptPaperSize = TPoint(FPaperWidth,FPaperHeight);
-    psd.rtMinMargin = FMinMargins->Rect;
-    psd.rtMargin = FMargins->Rect;
-    psd.hInstance = 0;
-    psd.lCustData = 0;
-    psd.lpfnPageSetupHook = 0;
-    psd.lpfnPagePaintHook = 0;
-    psd.lpPageSetupTemplateName = 0;
-    psd.hPageSetupTemplate = 0;
+	//Initialize the print setup dialog structure
+	psd.lStructSize = sizeof(psd);
+	if(ParentWnd)
+	  psd.hwndOwner = ParentWnd;
+	else
+	  psd.hwndOwner = Application->MainForm ? Application->Handle : NULL;
+	//hDevMode and hDevNames have to be 0 when default should be returned
+	psd.hDevMode = (HGLOBAL)devmode;
+	psd.hDevNames = 0;
+	psd.Flags = GetOptionFlags();
+	psd.ptPaperSize = TPoint(FPaperWidth,FPaperHeight);
+	psd.rtMinMargin = FMinMargins->Rect;
+	psd.rtMargin = FMargins->Rect;
+	psd.hInstance = 0;
+	psd.lCustData = 0;
+	psd.lpfnPageSetupHook = 0;
+	psd.lpfnPagePaintHook = 0;
+	psd.lpPageSetupTemplateName = 0;
+	psd.hPageSetupTemplate = 0;
 
-    //Check if the printers minimum margins should be used as the minimum
-    //margins the user can enter in the dialog
-    if(FOptions.Contains(psoDefaultMinMargins) && !FOptions.Contains(psoMinMargins))
-    {
-      psd.Flags |= PSD_MINMARGINS; //Make the dialog use MinMargins
-      psd.rtMinMargin = GetPrinterMargins();
-    }
+	//Check if the printers minimum margins should be used as the minimum
+	//margins the user can enter in the dialog
+	if(FOptions.Contains(::psoDefaultMinMargins) && !FOptions.Contains(::psoMinMargins))
+	{
+	  psd.Flags |= PSD_MINMARGINS; //Make the dialog use MinMargins
+	  psd.rtMinMargin = GetPrinterMargins();
+	}
 
-    //If minimum margins are used
-    //Make sure that the shown margins are not less than the minimum margins.
-    //Else some printer drivers may give an error (1006h)
+	//If minimum margins are used
+	//Make sure that the shown margins are not less than the minimum margins.
+	//Else some printer drivers may give an error (1006h)
     if(psd.Flags & ~PSD_MINMARGINS)
     {
-      if(psd.rtMargin.left < psd.rtMinMargin.left)
+	  if(psd.rtMargin.left < psd.rtMinMargin.left)
         psd.rtMargin.left = psd.rtMinMargin.left;
       if(psd.rtMargin.top < psd.rtMinMargin.top)
         psd.rtMargin.top = psd.rtMinMargin.top;
@@ -132,7 +135,7 @@ bool __fastcall TIPageSetupDialog::Execute(void)
     if(!TaskModalDialog(&PageSetupDlg,&psd))
     {
       //Get error code
-      int Error = CommDlgExtendedError();
+	  int Error = CommDlgExtendedError();
       if(Error)
         throw EPageSetup("Error while showing page setup dialog box.", Error);
       Dialog = NULL;
@@ -188,15 +191,15 @@ bool __fastcall TIPageSetupDialog::Execute(void)
 unsigned int __fastcall TIPageSetupDialog::GetOptionFlags(void)
 {
   unsigned int Flags = 0;
-  if (FOptions.Contains(psoDisableMargins)) Flags |= PSD_DISABLEMARGINS;
-  if (FOptions.Contains(psoDisableOrientation)) Flags |= PSD_DISABLEORIENTATION;
-  if (FOptions.Contains(psoDisablePagePainting)) Flags |= PSD_DISABLEPAGEPAINTING;
-  if (FOptions.Contains(psoDisablePaper)) Flags |= PSD_DISABLEPAPER;
-  if (FOptions.Contains(psoDisablePrinter)) Flags |= PSD_DISABLEPRINTER;
-  if (FOptions.Contains(psoMargins)) Flags |= PSD_MARGINS;
-  if (FOptions.Contains(psoMinMargins)) Flags |= PSD_MINMARGINS;
-  if (FOptions.Contains(psoNoWarning)) Flags |= PSD_NOWARNING;
-  if (FOptions.Contains(psoShowHelp)) Flags |= PSD_SHOWHELP;
+  if (FOptions.Contains(::psoDisableMargins)) Flags |= PSD_DISABLEMARGINS;
+  if (FOptions.Contains(::psoDisableOrientation)) Flags |= PSD_DISABLEORIENTATION;
+  if (FOptions.Contains(::psoDisablePagePainting)) Flags |= PSD_DISABLEPAGEPAINTING;
+  if (FOptions.Contains(::psoDisablePaper)) Flags |= PSD_DISABLEPAPER;
+  if (FOptions.Contains(::psoDisablePrinter)) Flags |= PSD_DISABLEPRINTER;
+  if (FOptions.Contains(::psoMargins)) Flags |= PSD_MARGINS;
+  if (FOptions.Contains(::psoMinMargins)) Flags |= PSD_MINMARGINS;
+  if (FOptions.Contains(::psoNoWarning)) Flags |= PSD_NOWARNING;
+  if (FOptions.Contains(::psoShowHelp)) Flags |= PSD_SHOWHELP;
   if (FUnits == psuMillimeters) Flags |= PSD_INHUNDREDTHSOFMILLIMETERS;
   if (FUnits == psuInches) Flags |= PSD_INTHOUSANDTHSOFINCHES;
 
@@ -213,16 +216,16 @@ void __fastcall TIPageSetupDialog::SetOptionFlags(int Flags)
 {
   FOptions.Clear();
   FUnits = psuInches;
-  if (Flags & PSD_DEFAULTMINMARGINS) FOptions << psoDefaultMinMargins;
-  if (Flags & PSD_DISABLEMARGINS) FOptions << psoDisableMargins;
-  if (Flags & PSD_DISABLEORIENTATION) FOptions << psoDisableOrientation;
-  if (Flags & PSD_DISABLEPAGEPAINTING) FOptions << psoDisablePagePainting;
-  if (Flags & PSD_DISABLEPAPER) FOptions << psoDisablePaper;
-  if (Flags & PSD_DISABLEPRINTER) FOptions << psoDisablePrinter;
-  if (Flags & PSD_MARGINS) FOptions << psoMargins;
-  if (Flags & PSD_MINMARGINS) FOptions << psoMinMargins;
-  if (Flags & PSD_NOWARNING) FOptions << psoNoWarning;
-  if (Flags & PSD_SHOWHELP) FOptions << psoShowHelp;
+  if (Flags & PSD_DEFAULTMINMARGINS) FOptions << ::psoDefaultMinMargins;
+  if (Flags & PSD_DISABLEMARGINS) FOptions << ::psoDisableMargins;
+  if (Flags & PSD_DISABLEORIENTATION) FOptions << ::psoDisableOrientation;
+  if (Flags & PSD_DISABLEPAGEPAINTING) FOptions << ::psoDisablePagePainting;
+  if (Flags & PSD_DISABLEPAPER) FOptions << ::psoDisablePaper;
+  if (Flags & PSD_DISABLEPRINTER) FOptions << ::psoDisablePrinter;
+  if (Flags & PSD_MARGINS) FOptions << ::psoMargins;
+  if (Flags & PSD_MINMARGINS) FOptions << ::psoMinMargins;
+  if (Flags & PSD_NOWARNING) FOptions << ::psoNoWarning;
+  if (Flags & PSD_SHOWHELP) FOptions << ::psoShowHelp;
   if (Flags & PSD_INHUNDREDTHSOFMILLIMETERS) FUnits = psuMillimeters;
   if (Flags & PSD_INTHOUSANDTHSOFINCHES) FUnits = psuInches;
 }

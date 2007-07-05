@@ -44,3 +44,8 @@ void __fastcall TSaveDialogEx::DoShow()
     SendMessage(GetParent(Handle), CDM_SETCONTROLTEXT, pshHelp, reinterpret_cast<long>(HelpCaption.c_str()));
 }
 //---------------------------------------------------------------------------
+/*bool __fastcall TSaveDialog::Execute(HWND ParentWnd)
+{
+  return false;
+}*/
+

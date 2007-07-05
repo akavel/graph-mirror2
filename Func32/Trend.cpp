@@ -10,6 +10,7 @@
 #include "Func32Impl.h"
 #pragma hdrstop
 #include <cmath>
+#include <limits>
 #include "Matrix.h"
 
 namespace Func32
