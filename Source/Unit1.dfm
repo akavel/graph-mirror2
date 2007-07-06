@@ -228,6 +228,7 @@ object Form1: TForm1
       BevelInner = bvNone
       BevelOuter = bvNone
       Ctl3D = True
+      DragMode = dmAutomatic
       HideSelection = False
       Images = ImageList1
       Indent = 19
@@ -383,7 +384,6 @@ object Form1: TForm1
       end
       object Function_InsShade: TTntMenuItem
         Action = InsertShadeAction
-        Caption = 'Insert shading...'
       end
       object Function_InsertDiff: TTntMenuItem
         Action = InsertDifAction
@@ -3609,7 +3609,7 @@ object Form1: TForm1
     end
     object InsertShadeAction: TTntAction
       Category = 'Function'
-      Caption = 'Insert shade...'
+      Caption = 'Insert shading...'
       Hint = 'Add shading to the selected function.'
       ImageIndex = 16
       ShortCut = 114
@@ -4041,7 +4041,7 @@ object Form1: TForm1
         RadioItem = True
         OnClick = RotationClick
       end
-      object Rotation_Custom: TTntMenuItem
+      object Label_Rotation_Custom: TTntMenuItem
         Caption = 'Custom...'
         RadioItem = True
         OnClick = RotationClick
