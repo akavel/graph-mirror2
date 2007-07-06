@@ -71,6 +71,7 @@ public:
   void SetDTR(); //Set Data Terminal Ready
   void SetRTS(); //Set Request To Send
   void WriteBuffer(const BYTE *Buffer, unsigned ByteCount, bool Wait=false);
+  void WriteString(const AnsiString &Str, bool Wait=false);
   void Purge();
 
   __property bool Connected = {read=GetConnected};

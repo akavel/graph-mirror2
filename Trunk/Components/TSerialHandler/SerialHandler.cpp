@@ -20,7 +20,7 @@ namespace Serialhandler
   void __fastcall PACKAGE Register()
   {
      TComponentClass classes[1] = {__classid(TSerialHandler)};
-     RegisterComponents("IComp", classes, 0);
+     RegisterComponents("B&&O", classes, 0);
   }
 }
 //---------------------------------------------------------------------------
@@ -136,6 +136,11 @@ void TSerialHandler::WriteBuffer(const BYTE *Buffer, unsigned ByteCount, bool Wa
   WriteFile(GetHandle(), Buffer, ByteCount, &Dummy, &Overlapped);
   if(Wait)
     Win32Check(GetOverlappedResult(GetHandle(), &Overlapped, &Dummy, TRUE));
+}
+//---------------------------------------------------------------------------
+void TSerialHandler::WriteString(const AnsiString &Str, bool Wait=false)
+{
+  WriteBuffer(Str.c_str(), Str.Length(), Wait);
 }
 //---------------------------------------------------------------------------
 void TSerialHandler::DoDataReceived(const std::vector<BYTE> &Data)
