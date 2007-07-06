@@ -284,7 +284,7 @@ __published:	// IDE-managed Components
   TTntMenuItem *Legend_Font;
   TTntAction *InsertObjectAction;
   TTntMenuItem *Insertobject1;
-  TTntMenuItem *Rotation_Custom;
+  TTntMenuItem *Label_Rotation_Custom;
   TTntMenuItem *Tree_Rotation;
   TTntMenuItem *Tree_Rotation_0;
   TTntMenuItem *Tree_Rotation_90;

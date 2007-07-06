@@ -292,6 +292,7 @@ void TForm1::Translate()
     TranslateList.push_back(Label_Left);
     TranslateList.push_back(Label_Right);
     TranslateList.push_back(Label_Placement_Custom);
+    TranslateList.push_back(Label_Rotation_Custom);
 
     TranslateList.push_back(ToolBar_Reset);
     TranslateList.push_back(ToolBar_Customize);
