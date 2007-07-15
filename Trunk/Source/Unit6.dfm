@@ -290,13 +290,13 @@ object Form6: TForm6
     Width = 105
     Height = 22
     Hint = 'Text color.'
-    Selected = clDefault
-    Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
     ItemHeight = 16
     TabOrder = 6
     OnChange = ColorBox1Change
     OnKeyDown = ComboBoxKeyDown
     AutoDroppedWidth = True
+    DefaultName = 'Default'
+    CustomName = 'Custom...'
   end
   object ColorBox2: TExtColorBox
     Left = 432
@@ -304,19 +304,21 @@ object Form6: TForm6
     Width = 105
     Height = 22
     Hint = 'Select background color of the text label.'
-    Selected = clDefault
-    Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
     ItemHeight = 16
     TabOrder = 7
     OnChange = ColorBox2Change
     OnKeyDown = ComboBoxKeyDown
     AutoDroppedWidth = True
+    ShowDefault = True
+    Selected = clDefault
+    DefaultName = 'Transparent'
+    CustomName = 'Custom...'
   end
   object ImageList1: TImageList
     Left = 8
     Top = 256
     Bitmap = {
-      494C01010C000E00040010001000FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
+      494C01010C000E00040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -848,7 +850,8 @@ object Form6: TForm6
       800F87FF80038FF0E1C7C3FFFFFFC7F1E1C3E1FFF01FE7E1E1C3F0FFE38FE003
       E1C3F87FC7C7F3C3E1C3FC3FC7C7F1C7E007FE1FC7C7C000E1C3FF0FC7C7C000
       E1C3FF87C7C7FC8FE1C3FFC3C7C7FC1FE1C3FFE1C7C7FE1FE1C7FFC0C7C7FE3F
-      800FFFFF8103FF3FFFFFFFFFFFFFFFFF}
+      800FFFFF8103FF3FFFFFFFFFFFFFFFFF00000000000000000000000000000000
+      000000000000}
   end
   object PopupMenu1: TPopupMenu
     OnPopup = PopupMenu1Popup

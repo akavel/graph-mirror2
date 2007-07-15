@@ -204,13 +204,14 @@ object Form14: TForm14
           Width = 86
           Height = 22
           Hint = 'Choose the color of the markers.'
-          Selected = clRed
-          Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
           Anchors = [akTop, akRight]
           ItemHeight = 16
           TabOrder = 1
           OnChange = Change
           AutoDroppedWidth = True
+          Selected = clRed
+          DefaultName = 'Default'
+          CustomName = 'Custom...'
         end
       end
       object GroupBox2: TTntGroupBox
@@ -319,13 +320,14 @@ object Form14: TForm14
           Width = 86
           Height = 22
           Hint = 'Choose the color of the lines.'
-          Selected = clBlue
-          Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
           Anchors = [akTop, akRight]
           ItemHeight = 16
           TabOrder = 1
           OnChange = Change
           AutoDroppedWidth = True
+          Selected = clBlue
+          DefaultName = 'Default'
+          CustomName = 'Custom...'
         end
       end
       object GroupBox3: TTntGroupBox

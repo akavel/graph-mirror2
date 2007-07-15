@@ -5,7 +5,7 @@
 #include <Classes.hpp>
 #include <Controls.hpp>
 #include <StdCtrls.hpp>
-#include <Forms.hpp>
+#include <TntForms.hpp>
 #include <ComCtrls.hpp>
 #include <ExtCtrls.hpp>
 #include "FocusPanel.h"
@@ -18,7 +18,7 @@ typedef DWORD (WINAPI *TGetFontUnicodeRanges)(HDC, LPGLYPHSET);
 const int ColCount = 20;
 const int RowCount = 12;
 
-class TSymbolFrm : public TForm
+class TSymbolFrm : public TTntForm
 {
 __published:	// IDE-managed Components
   TTntButton *Button1;

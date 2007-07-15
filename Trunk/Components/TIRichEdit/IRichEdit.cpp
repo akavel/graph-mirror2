@@ -322,7 +322,7 @@ TColor TTextFormat::GetColor() const
 TColor TTextFormat::GetBackgroundColor() const
 {
   ::CHARFORMAT2 Format = GetFormat();
-  return Format.dwEffects & CFE_AUTOBACKCOLOR ? clNone : static_cast<TColor>(Format.crBackColor);
+  return Format.dwEffects & CFE_AUTOBACKCOLOR ? clDefault : static_cast<TColor>(Format.crBackColor);
 }
 //---------------------------------------------------------------------------
 void TIRichEdit::Redo()

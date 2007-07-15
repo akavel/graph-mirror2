@@ -138,7 +138,7 @@ void TSerialHandler::WriteBuffer(const BYTE *Buffer, unsigned ByteCount, bool Wa
     Win32Check(GetOverlappedResult(GetHandle(), &Overlapped, &Dummy, TRUE));
 }
 //---------------------------------------------------------------------------
-void TSerialHandler::WriteString(const AnsiString &Str, bool Wait=false)
+void TSerialHandler::WriteString(const AnsiString &Str, bool Wait)
 {
   WriteBuffer(Str.c_str(), Str.Length(), Wait);
 }

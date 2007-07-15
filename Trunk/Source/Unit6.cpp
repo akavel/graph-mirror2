@@ -15,7 +15,7 @@
 #pragma link "IFontBox"
 #pragma link "IRichEdit"
 #pragma link "ExtColorBox"
-#pragma link "SymbolDialog"
+#pragma link "SymbolDialog"                                                    
 #pragma link "TntStdCtrls"
 #pragma link "TntComCtrls"
 #pragma resource "*.dfm"
@@ -24,15 +24,13 @@ __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, cons
   : TTntForm(Owner), RichEditOle(IRichEdit1)
 {
   ScaleForm(this);
-  TranslateProperties(this);
+  TranslateProperties(this);           
   SetAccelerators(this);
-  TranslateStrings(ColorBox1->Items);
-  TranslateStrings(ColorBox2->Items);
-  ColorBox2->Items->Strings[1] = LoadRes(RES_TRANSPARENT);
+  TranslateStrings(ColorBox1->Items); 
 
   OrgComboBox1WindowProc = ComboBox1->WindowProc;
   ComboBox1->WindowProc = ComboBox1Proc;
-  OrgIFontBox1WindowProc = IFontBox1->WindowProc;
+  OrgIFontBox1WindowProc = IFontBox1->WindowProc;                  
   IFontBox1->WindowProc = IFontBox1Proc;
   OrgColorBox1WindowProc = ColorBox1->WindowProc;
   ColorBox1->WindowProc = ColorBox1Proc;
@@ -228,7 +226,7 @@ void TForm6::UpdateFont()
   ComboBox1->Text = ToWideString(IRichEdit1->TextFormat.GetSize());
   ComboBox1->ItemIndex = ComboBox1->Items->IndexOf(ComboBox1->Text);
   ColorBox1->Selected = IRichEdit1->TextFormat.GetColor();
-  ColorBox2->Selected = IRichEdit1->BackgroundColor == clDefault ? clBlack : IRichEdit1->BackgroundColor;
+  ColorBox2->Selected = IRichEdit1->BackgroundColor;
   ToolButton1->Down = IRichEdit1->TextFormat.GetBold();
   ToolButton2->Down = IRichEdit1->TextFormat.GetItalic();
   ToolButton3->Down = IRichEdit1->TextFormat.GetUnderline();
@@ -336,18 +334,18 @@ void __fastcall TForm6::IRichEdit1OleError(TIRichEdit *Sender, int Oper,
 //---------------------------------------------------------------------------
 void __fastcall TForm6::ColorBox2Change(TObject *Sender)
 {
-  IRichEdit1->BackgroundColor = ColorBox2->Selected == clBlack ? clDefault : ColorBox2->Selected;
+  IRichEdit1->BackgroundColor = ColorBox2->Selected; 
 }
 //---------------------------------------------------------------------------
 void TForm6::SetBackgroundColor(TColor Color)
 {
   IRichEdit1->BackgroundColor = Color == clNone ? clDefault : Color;
-  ColorBox2->Selected = Color = Color == clNone ? clBlack : Color;
+  ColorBox2->Selected = Color == clNone ? clDefault : Color;
 }
 //---------------------------------------------------------------------------
 TColor TForm6::GetBackgroundColor() const
 {
-  return ColorBox2->Selected == clBlack ? clNone : ColorBox2->Selected;
+  return ColorBox2->Selected == clDefault ? clNone : ColorBox2->Selected;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::ToolButton11Click(TObject *Sender)
@@ -363,7 +361,6 @@ void __fastcall TForm6::ToolButton13Click(TObject *Sender)
   RichEditOle.InsertObject();
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm6::SymbolDialog1InsertWideChar(TSymbolDialog *Sender,
       wchar_t Symbol, const AnsiString &FontName)
 {

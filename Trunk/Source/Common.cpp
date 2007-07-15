@@ -126,7 +126,7 @@ WideString GetErrorMsg(Func32::TErrorCode ErrorCode)
 //the cursor position is set to where the error ocoured
 void ShowErrorMsg(const Func32::EFuncError &Error, TCustomEdit *Edit)
 {
-  AnsiString str = LoadRes(RES_ERROR) + " " + AnsiString(Error.ErrorCode);
+  WideString str = LoadRes(RES_ERROR) + " " + WideString(AnsiString(Error.ErrorCode));
   Form1->SetHelpError(Error.ErrorCode);
   MessageBox(GetErrorMsg(Error), str, MB_ICONWARNING | MB_HELP);
   Form1->SetHelpError(0);
@@ -396,6 +396,7 @@ AnsiString GetTempFileName(const AnsiString &Prefix, const AnsiString &Ext)
   return FileName;
 }
 //---------------------------------------------------------------------------
+
 
 
 

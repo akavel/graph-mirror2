@@ -14,14 +14,14 @@
       ..\Obj\IPrintDialog.obj ..\Obj\SaveDialogEx.obj ..\Obj\ExtColorBox.obj 
       ..\Obj\SymbolDialog.obj ..\Obj\IRichEdit.obj ..\Obj\SymbolForm.obj 
       ..\Obj\TRecent.obj ..\Obj\SerialHandler.obj ..\Obj\SerialThread.obj 
-      ..\Obj\MediaPlayerEx.obj"/>
+      ..\Obj\MediaPlayerEx.obj ..\Obj\ICompCommon.obj"/>
     <RESFILES value="IComp.res TCross\Cross.dcr TIColorBox\IColorBox.dcr 
       TLineSelect\LineSelect.dcr TPointSelect\PointSelect.dcr 
       TProgress\Progress.dcr TProgressForm\ProgressForm.dcr TRecent\TRecent.dcr 
       TShadeSelect\ShadeSelect.dcr TIColorSelect\IColorSelect.dcr 
       TIPageSetup\IPageSetup.dcr tipolygon\IPolygon.dcr 
       TIPrintDialog\IPrintDialog.dcr TSymbolDialog\SymbolDialog.dcr 
-      TIRichEdit\IRichEdit.dcr TIFontBox\IFontBox.dcr Common\CompRes.res"/>
+      TIRichEdit\IRichEdit.dcr TIFontBox\IFontBox.dcr"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
     <DEFFILE value=""/>
@@ -30,9 +30,9 @@
     <LIBRARIES value="dbrtl.lib vcldb.lib"/>
     <SPARELIBS value="rtl.lib vcl.lib TntLibR.lib vclx.lib vcldb.lib dbrtl.lib"/>
     <PACKAGES value="rtl.bpi vcl.bpi vclx.bpi TntLibR.bpi"/>
-    <PATHCPP value=".;TIColorBox;TCross;TFocusPanel;TGrid;TOpenPreviewDialog;TLineSelect;TMyEdit;TMyRadioButton;TMySplitter;TPointSelect;TProgress;TProgressForm;TShadeSelect;TIColorSelect;TIFontBox;TIPageSetup;TIPolygon;TIRichEdit;TIPrintDialog;TSaveDialogEx;TExtColorBox;TSymbolDialog;TRecent;TSerialHandler;TMediaPlayerEx"/>
+    <PATHCPP value=".;TIColorBox;TCross;TFocusPanel;TGrid;TOpenPreviewDialog;TLineSelect;TMyEdit;TMyRadioButton;TMySplitter;TPointSelect;TProgress;TProgressForm;TShadeSelect;TIColorSelect;TIFontBox;TIPageSetup;TIPolygon;TIRichEdit;TIPrintDialog;TSaveDialogEx;TExtColorBox;TSymbolDialog;TRecent;TSerialHandler;TMediaPlayerEx;Common"/>
     <PATHPAS value=".;"/>
-    <PATHRC value=".;Common"/>
+    <PATHRC value=".;"/>
     <PATHASM value=".;"/>
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
@@ -40,8 +40,8 @@
     <USERDEFINES value="_DEBUG"/>
     <SYSDEFINES value="NO_STRICT;USEPACKAGES"/>
     <MAINSOURCE value="IComp.cpp"/>
-    <INCLUDEPATH value="TMediaPlayerEx;TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;&quot;C:\Program Files\TntWare\Delphi Unicode Controls\Source&quot;;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\include;$(BCB)\include\vcl;Common"/>
-    <LIBPATH value="&quot;C:\Program Files\TntWare\Delphi Unicode Controls\CBuilder&quot;;TMediaPlayerEx;TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;$(BCB)\Projects\Lib;Common;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\Psdk"/>
+    <INCLUDEPATH value="&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;TMediaPlayerEx;TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;&quot;C:\Program Files\TntWare\Delphi Unicode Controls\Source&quot;;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\include;$(BCB)\include\vcl;Common"/>
+    <LIBPATH value="&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;&quot;C:\Program Files\TntWare\Delphi Unicode Controls\CBuilder&quot;;TMediaPlayerEx;TAtiHandler;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;TSerialHandler;$(BCB)\Projects\Lib;Common;TSymbolDialog;TExtColorBox;TSaveDialogEx;TIPrintDialog;TOpenPreviewDialog;TIRichEdit;TIFontBox;TIPolygon;TIPageSetup;TIColorSelect;TShadeSelect;TRecent;TProgressForm;TProgress;TPointSelect;TMySplitter;TMyRadioButton;TMyEdit;TLineSelect;TGrid;TIColorBox;TFocusPanel;TCross;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\Psdk"/>
     <WARNINGS value="-w-par -w-8027"/>
     <OTHERFILES value=""/>
   </MACROS>
@@ -107,12 +107,12 @@
       <FILE FILENAME="TIFontBox\IFontBox.dcr" FORMNAME="" UNITNAME="" CONTAINERID="DcrTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="TSymbolDialog\SymbolForm.cpp" FORMNAME="SymbolFrm" UNITNAME="SymbolForm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="TRecent\TRecent.cpp" FORMNAME="" UNITNAME="TRecent" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="Common\CompRes.rc" FORMNAME="" UNITNAME="CompRes.rc" CONTAINERID="RC" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="d:\program files\borland\cbuilder6\Lib\TSerialHandler\TSerialHandler\Func32\vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="d:\program files\borland\cbuilder6\Lib\TSerialHandler\TSerialHandler\Func32\TntLibR.bpi" FORMNAME="" UNITNAME="TntLibR" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="TSerialHandler\SerialHandler.cpp" FORMNAME="" UNITNAME="SerialHandler" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="TSerialHandler\SerialThread.cpp" FORMNAME="" UNITNAME="SerialThread" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="TMediaPlayerEx\MediaPlayerEx.cpp" FORMNAME="" UNITNAME="MediaPlayerEx" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Common\ICompCommon.cpp" FORMNAME="" UNITNAME="ICompCommon" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>

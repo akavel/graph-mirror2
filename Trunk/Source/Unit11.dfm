@@ -173,11 +173,12 @@ object Form11: TForm11
       Width = 81
       Height = 22
       Hint = 'Select the color for drawing the relation.'
-      Selected = clDefault
-      Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
       ItemHeight = 16
       TabOrder = 1
       AutoDroppedWidth = True
+      Selected = clRed
+      DefaultName = 'Default'
+      CustomName = 'Custom...'
     end
   end
   object Edit1: TMyEdit

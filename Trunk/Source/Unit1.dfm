@@ -3702,6 +3702,7 @@ object Form1: TForm1
       Caption = 'Move up'
       Hint = 'Move the window up along the coordinate system.'
       ImageIndex = 26
+      ShortCut = 16422
       OnExecute = MoveUpActionExecute
     end
     object MoveDownAction: TTntAction
@@ -3709,6 +3710,7 @@ object Form1: TForm1
       Caption = 'Move down'
       Hint = 'Move the window down along the coordinate system.'
       ImageIndex = 27
+      ShortCut = 16424
       OnExecute = MoveDownActionExecute
     end
     object MoveLeftAction: TTntAction
@@ -3716,6 +3718,7 @@ object Form1: TForm1
       Caption = 'Move left'
       Hint = 'Move the window to the left along the coordinate system.'
       ImageIndex = 28
+      ShortCut = 16421
       OnExecute = MoveLeftActionExecute
     end
     object MoveRightAction: TTntAction
@@ -3723,6 +3726,7 @@ object Form1: TForm1
       Caption = 'Move right'
       Hint = 'Move the window to the right along the coordinate system.'
       ImageIndex = 29
+      ShortCut = 16423
       OnExecute = MoveRightActionExecute
     end
     object MoveAction: TTntAction

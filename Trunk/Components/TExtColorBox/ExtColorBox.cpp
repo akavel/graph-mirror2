@@ -8,12 +8,35 @@
 #include <memory>
 #include "ExtColorBox.h"
 #include "IColorSelect.h"
+#include <TntGraphics.hpp>
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TColor ColorList[] =
+{
+  clBlack,
+  clMaroon,
+  clGreen,
+  clOlive,
+  clNavy,
+  clPurple,
+  clTeal,
+  clGray,
+  clSilver,
+  clRed,
+  clLime,
+  clYellow,
+  clBlue,
+  clFuchsia,
+  clAqua,
+  clWhite,
+  clMoneyGreen,
+  clSkyBlue,
+  clMedGray,
+};
+
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //
-
 static inline void ValidCtrCheck(TExtColorBox *)
 {
   new TExtColorBox(NULL);
@@ -29,19 +52,22 @@ namespace Extcolorbox
 }
 //---------------------------------------------------------------------------
 __fastcall TExtColorBox::TExtColorBox(TComponent* Owner)
-  : TColorBox(Owner), FOnPickColor(NULL), FColorDialogType(cdtColorSelect), FDroppedWidth(0),
-    FAutoDroppedWidth(true), DroppedWidthFound(false)
+  : TTntCustomComboBox(Owner), FOnPickColor(NULL), FColorDialogType(cdtColorSelect), FDroppedWidth(0),
+    FAutoDroppedWidth(true), DroppedWidthFound(false), FShowDefault(false), FShowCustom(true),
+    FDefaultName("Default"), FCustomName("Custom...")
 {
+  Style = csOwnerDrawFixed;
+  Selected = clBlack;
 }
 //---------------------------------------------------------------------------
-void __fastcall TExtColorBox::Loaded(void)
+void __fastcall TExtColorBox::Loaded()
 {
-  TColorBox::Loaded();
-  if(Style.Contains(cbCustomColor))
-    Items->Objects[0] = reinterpret_cast<TObject*>(clDefault);
+  TTntCustomComboBox::Loaded();
+  PopulateList();
+  Selected = FSelected;
 }
 //---------------------------------------------------------------------------
-bool __fastcall TExtColorBox::PickCustomColor(void)
+bool __fastcall TExtColorBox::PickCustomColor()
 {
   if(OnPickColor)
   {
@@ -65,7 +91,15 @@ bool __fastcall TExtColorBox::PickCustomColor(void)
     return false;
   }
 
-  return TColorBox::PickCustomColor();
+  std::auto_ptr<TColorDialog> ColorDialog(new TColorDialog(NULL));
+  ColorDialog->Color = Selected;
+  if(ColorDialog->Execute())
+  {
+    Selected = ColorDialog->Color;
+    Invalidate();
+    return true;
+  }
+  return false;
 }
 //---------------------------------------------------------------------------
 void __fastcall TExtColorBox::SetDroppedWidth(int AWidth)
@@ -84,22 +118,121 @@ bool __fastcall TExtColorBox::GetExtendedUI()
   return SendMessage(Handle, CB_GETEXTENDEDUI, 0, 0);
 }
 //---------------------------------------------------------------------------
-void __fastcall TExtColorBox::DropDown(void)
+void __fastcall TExtColorBox::SetSelected(TColor Value)
+{
+  if(ComponentState.Contains(csReading))
+  {
+    FSelected = Value;
+    return;
+  }
+
+  int Index = -1;
+  for(int I = 0; I < Items->Count; I++)
+    if(reinterpret_cast<TColor>(Items->Objects[I]) == Value)
+    {
+      Index = I;
+      break;
+    }
+
+  if(Index == -1 && ShowCustom)
+  {
+    ItemIndex = 0;
+    Items->Objects[0] = reinterpret_cast<TObject*>(Value);
+  }
+  else
+    ItemIndex = Index;
+}
+//---------------------------------------------------------------------------
+TColor __fastcall TExtColorBox::GetSelected()
+{
+  return ItemIndex == -1 ? NoColorSelected : reinterpret_cast<TColor>(Items->Objects[ItemIndex]);
+}
+//---------------------------------------------------------------------------
+void __fastcall TExtColorBox::DrawItem(int Index, const Types::TRect &Rect, TOwnerDrawState State)
+{
+  Canvas->FillRect(Rect);
+  TColor BackgroundColor = Canvas->Brush->Color;
+  TRect LRect = Rect;
+  if(Index < ShowCustom + ShowDefault)
+    LRect.Right = LRect.Height() + LRect.Left;
+
+  InflateRect(&LRect, -1, -1);
+  TColor Color = reinterpret_cast<TColor>(Items->Objects[Index]);
+  if(Color == clDefault)
+    Color = clWhite;
+  Canvas->Brush->Color = Color;
+  Canvas->Pen->Color = clBlack;
+  Canvas->Rectangle(LRect);
+  Canvas->Brush->Color = BackgroundColor;
+
+  if(Index < ShowCustom + ShowDefault)
+  {
+    LRect = TRect(LRect.Right + 5, Rect.Top, Rect.Right, Rect.Bottom);
+    WideString Str = ShowCustom && Index == 0 ? CustomName : DefaultName;
+    WideCanvasTextRect(Canvas, LRect, LRect.Left,
+      (LRect.Bottom + LRect.Top - Canvas->TextHeight(Str)) / 2, Str);
+  }
+}
+//---------------------------------------------------------------------------
+void TExtColorBox::PopulateList()
+{
+  Clear();
+  if(ShowCustom)
+    AddItem("", reinterpret_cast<TObject*>(0x669900));
+  if(ShowDefault)
+    AddItem("", reinterpret_cast<TObject*>(clDefault));
+
+  for(int I = 0; I < sizeof(ColorList)/sizeof(ColorList[0]); I++)
+    AddItem("", reinterpret_cast<TObject*>(ColorList[I]));
+}
+//---------------------------------------------------------------------------
+void __fastcall TExtColorBox::KeyPress(char &Key)
+{
+  inherited::KeyPress(Key);
+  if(Key == VK_RETURN && ShowCustom && ItemIndex == 0)
+  {
+    PickCustomColor();
+    Key = 0;
+  }
+}
+//---------------------------------------------------------------------------
+void __fastcall TExtColorBox::Select()
+{
+  if(ListSelected)
+  {
+    ListSelected = false;
+    if(ShowCustom && ItemIndex == 0 && !PickCustomColor())
+      return;
+  }
+  inherited::Select();
+}
+//---------------------------------------------------------------------------
+void __fastcall TExtColorBox::CloseUp()
+{
+  inherited::CloseUp();
+  ListSelected = true;
+}
+//---------------------------------------------------------------------------
+void __fastcall TExtColorBox::KeyDown(unsigned short &Key, TShiftState Shift)
+{
+  ListSelected = False;
+  inherited::KeyDown(Key, Shift);
+}
+//---------------------------------------------------------------------------
+void __fastcall TExtColorBox::DropDown()
 {
   if(FAutoDroppedWidth && !DroppedWidthFound)
   {
     int MaxWidth = 0;
-    for(int I = 0; I < Items->Count; I++)
-    {
-      int NewWidth = Canvas->TextWidth(Items->Strings[I]);
-      if(NewWidth > MaxWidth)
-        MaxWidth = NewWidth;
-    }
-
+    if(ShowCustom)
+      MaxWidth = std::max(MaxWidth, Canvas->TextWidth(CustomName));
+    if(ShowDefault)
+      MaxWidth = std::max(MaxWidth, Canvas->TextWidth(DefaultName));
     DroppedWidthFound = true;
     DroppedWidth = MaxWidth + Height + GetSystemMetrics(SM_CXVSCROLL) + 10;
   }
-  TColorBox::DropDown();
+  inherited::DropDown();
 }
 //---------------------------------------------------------------------------
+
 

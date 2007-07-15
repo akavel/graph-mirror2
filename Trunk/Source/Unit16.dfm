@@ -24,8 +24,8 @@ object Form16: TForm16
     Top = 16
     Width = 321
     Height = 257
-    ActivePage = TabSheet3
-    TabIndex = 2
+    ActivePage = TabSheet2
+    TabIndex = 1
     TabOrder = 0
     object TabSheet1: TTntTabSheet
       Caption = 'Shading'
@@ -743,12 +743,13 @@ object Form16: TForm16
           Width = 81
           Height = 22
           Hint = 'Select color used for shading.'
-          Selected = clGreen
-          Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
           ItemHeight = 16
           TabOrder = 2
           OnChange = ExtColorBox1Change
           AutoDroppedWidth = True
+          Selected = clGreen
+          DefaultName = 'Default'
+          CustomName = 'Custom...'
         end
         object CheckBox5: TTntCheckBox
           Left = 134
