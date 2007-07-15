@@ -1,3 +1,4 @@
+
 /* Graph (http://sourceforge.net/projects/graph)
  * Copyright 2007 Ivan Johansen
  *
@@ -40,7 +41,7 @@ void TForm5::Translate()
 {
   TranslateProperties(ExtColorBox1);
   TranslateProperties(this);
-  TranslateStrings(ExtColorBox1->Items);
+  TranslateStrings(ExtColorBox1->Items); 
   SetAccelerators(this);
 
   ResizeControl(ComboBox1, Label1);
@@ -52,14 +53,14 @@ void TForm5::Translate()
   int Left = Label7->Left + Label7->Width + 5;
   LineSelect1->Left = Left;
   ExtColorBox1->Left = Left;
-
+          
   Left = ComboBox4->Left - TMaxWidth(Label13)(Label8) - 5;
   Label13->Left = Left;
   Label8->Left = Left;
 
   if(LineSelect1->Left + LineSelect1->Width > Label13->Left)
     Width = Width + LineSelect1->Left + LineSelect1->Width - Label13->Left + 10;
-
+ 
   MoveControl(ComboBox2, Label11);
   MoveLabel(ComboBox3, Label12);
 
@@ -273,4 +274,5 @@ void __fastcall TForm5::ComboBox4Change(TObject *Sender)
   LineSelect1->Enabled = ComboBox4->ItemIndex == 0;
 }
 //---------------------------------------------------------------------------
+
 

@@ -22,7 +22,7 @@ namespace Ifontbox
 }
 //---------------------------------------------------------------------------
 __fastcall TIFontBox::TIFontBox(TComponent* Owner)
-  : TCustomComboBox(Owner), FSamplePos(100), OldItemIndex(-1)
+  : inherited(Owner), FSamplePos(100), OldItemIndex(-1)
 {
   Width = 200;
   //Add list of fonts; Take care of duplicates, that for some strange reason has happened
@@ -34,7 +34,7 @@ __fastcall TIFontBox::TIFontBox(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TIFontBox::CreateParams(TCreateParams &Params)
 {
-  TCustomComboBox::CreateParams(Params);
+  inherited::CreateParams(Params);
   Params.Style = Params.Style | CBS_OWNERDRAWFIXED;
 }
 //---------------------------------------------------------------------------
@@ -43,22 +43,19 @@ void __fastcall TIFontBox::DrawItem(int Index, const Types::TRect &Rect, TOwnerD
   int TextHeight = Canvas->TextHeight('M');
   Canvas->TextRect(Rect, Rect.Left + 3, Rect.Top + (Rect.Height() - TextHeight) / 2, Items->Strings[Index]);
 
-  if(!State.Contains(odComboBoxEdit))
-  {
-    AnsiString Str = FSample.IsEmpty() ? Items->Strings[Index] : FSample;
-    Canvas->Font->Name = Items->Strings[Index];
-    Canvas->Font->Size = 12;
-    TextHeight = Canvas->TextHeight(Str);
-    TRect Rect2(Rect);
-    Rect2.Left += FSamplePos;
-    Canvas->TextRect(Rect2, Rect2.Left, Rect2.Top + (Rect2.Height() - TextHeight) / 2, Str);
-  }
+  AnsiString Str = FSample.IsEmpty() ? Items->Strings[Index] : FSample;
+  Canvas->Font->Name = Items->Strings[Index];
+  Canvas->Font->Size = 12;
+  TextHeight = Canvas->TextHeight(Str);
+  TRect Rect2(Rect);
+  Rect2.Left += FSamplePos;
+  Canvas->TextRect(Rect2, Rect2.Left, Rect2.Top + (Rect2.Height() - TextHeight) / 2, Str);
 }
 //---------------------------------------------------------------------------
-void __fastcall TIFontBox::MeasureItem(int Index, int &Height)
+void __fastcall TIFontBox::MeasureItem(int Index, int &H)
 {
   if(Index != -1)
-    Height = 20;
+    H = 20;
 }
 //---------------------------------------------------------------------------
 AnsiString __fastcall TIFontBox::GetFontName()
@@ -66,28 +63,27 @@ AnsiString __fastcall TIFontBox::GetFontName()
   return ItemIndex != -1 ? Items->Strings[ItemIndex] : AnsiString();
 }
 //---------------------------------------------------------------------------
-void __fastcall TIFontBox::SetFontName(AnsiString Str)
+void __fastcall TIFontBox::SetFontName(const AnsiString &Str)
 {
   ItemIndex = Items->IndexOf(Str);
-//  Text = Str;
 }
 //---------------------------------------------------------------------------
 void __fastcall TIFontBox::DoExit()
 {
   ItemIndex = OldItemIndex;
   Text = Items->Strings[ItemIndex];
-  TCustomComboBox::DoExit();
+  inherited::DoExit();
 }
 //---------------------------------------------------------------------------
 void __fastcall TIFontBox::Select()
 {
   OldItemIndex = ItemIndex;
-  TCustomComboBox::Select();
+  inherited::Select();
 }
 //---------------------------------------------------------------------------
 void __fastcall TIFontBox::ChangeScale(int M, int D)
 {
-  TCustomComboBox::ChangeScale(M, D); // Call inherited
+  inherited::ChangeScale(M, D); // Call inherited
   ItemHeight = (ItemHeight * M) / D;
   FSamplePos = (FSamplePos * M) / D;
 }

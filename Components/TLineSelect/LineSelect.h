@@ -11,7 +11,7 @@
 #include <Forms.hpp>
 #include <TntStdCtrls.hpp>
 //---------------------------------------------------------------------------
-class TLineSelect : public TCustomComboBox
+class TLineSelect : public TTntCustomComboBox
 {
 private:
   TColor FColor;

@@ -56,6 +56,7 @@
 #include "OleObjectElem.h"
 #include "PythonBind.h"
 #include "Encode.h"
+#include "ICompCommon.h"
 //---------------------------------------------------------------------------
 #pragma link "TRecent"
 #pragma link "Cross"
@@ -96,6 +97,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   }
 
   SetApplicationExceptionHandler(true); //Log all exceptions
+  SetCompTranslateFunc(gettext);
   InitDebug();
 #else
   SetApplicationExceptionHandler(GetRegValue(REGISTRY_KEY, "LogExceptions", HKEY_CURRENT_USER, false));
@@ -107,7 +109,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   //Set "AllowOLE" to 1 in the Registry to use OLE with instances not started with "-Embedding"
   if(!FindCmdLineSwitch("EMBEDDING") && !GetRegValue(REGISTRY_KEY, "AllowOLE", HKEY_CURRENT_USER, 0))
     //Prevent OLE instantiation if not started for use with OLE
-    _Module.RevokeClassObjects();
+    _Module.RevokeClassObjects();          
 
   SetThreadName("Main");
   DefaultInstance->OnDebugLine = DebugLine;
@@ -1296,7 +1298,7 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
     case VK_F9:
       Draw.AbortUpdate();
       Data.Axes.AxesArrows = Data.Axes.AxesArrows == aaPositiveEnd ? aaBothEnds : aaPositiveEnd;
-      Data.Axes.NumberPlacement = Data.Axes.NumberPlacement == npCenter ? npBefore : npCenter; 
+      Data.Axes.NumberPlacement = Data.Axes.NumberPlacement == npCenter ? npBefore : npCenter;
       Redraw(); //Activates thread; must be done after OLE update
       break;
 
@@ -1318,31 +1320,6 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
     {
       const char* Languages[] = {"Russian", "English", "Danish", "German", "Spanish", "Portuguese", "Italian", "Slovenian", "French", "Hungarian"};
       ChangeLanguage(Languages[Key - '0']);
-    }
-    switch(Key)
-    {
-      case VK_RIGHT:
-        MoveRightAction->Execute();
-        Key = 0;
-        break;
-      case VK_LEFT:
-        MoveLeftAction->Execute();
-        Key = 0;
-        break;
-      case VK_UP:
-        MoveUpAction->Execute();
-        Key = 0;
-        break;
-      case VK_DOWN:
-        MoveDownAction->Execute();
-        Key = 0;
-        break;
-      case VK_ADD:
-        ZoomInAction->Execute();
-        break;
-      case VK_SUBTRACT:
-        ZoomOutAction->Execute();
-        break;
     }
   }
 }
@@ -3627,5 +3604,9 @@ void __fastcall TForm1::ZoomActionUpdate(TObject *Sender)
   static_cast<TAction*>(Sender)->Enabled = !Data.Axes.ZoomSquare;
 }
 //---------------------------------------------------------------------------
+
+
+
+
 
 

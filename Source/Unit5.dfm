@@ -278,11 +278,12 @@ object Form5: TForm5
       Width = 81
       Height = 22
       Hint = 'Select the color of the graph.'
-      Selected = clDefault
-      Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
       ItemHeight = 16
       TabOrder = 2
       AutoDroppedWidth = True
+      Selected = clRed
+      DefaultName = 'Default'
+      CustomName = 'Custom...'
     end
   end
   object Button3: TTntButton

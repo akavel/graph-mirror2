@@ -254,29 +254,13 @@ BEGIN
   649 "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image." //Tip of the Day
   650 "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."                  //Tip of the Day
 
-/*                                                                                                                                                                
-//Color names
-"Custom..."    //Color list
-"Black"        //Color list
-"Maroon"       //Color list
-"Green"        //Color list
-"Olive"        //Color list
-"Navy"         //Color list
-"Purple"       //Color list
-"Teal"         //Color list
-"Gray"         //Color list
-"Silver"       //Color list
-"Red"          //Color list
-"Lime"         //Color list
-"Yellow"       //Color list
-"Blue"         //Color list
-"Fuchsia"      //Color list
-"Aqua"         //Color list
-"White"        //Color list
-"Money Green"  //Color list
-"Sky Blue"     //Color list
-"Cream"        //Color list
-"Med Gray"     //Color list
+/*
+//Texts used in components
+"Insert symbol"
+"Font name:"
+"Subset:"
+"Close"
+"Insert"
 
 //Texts for Customize Toolbar
 "Customize"    //Customize toolbar dialog

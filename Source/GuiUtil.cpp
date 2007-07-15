@@ -235,9 +235,14 @@ WideString LoadRes(short Ident)
 {
   if(!IsWinNT)
     return LoadStr(Ident);
-  wchar_t Temp[512];
-  LoadStringW(HInstance, Ident, Temp, sizeof(Temp)/sizeof(Temp[0]));
-  return gettext(Temp);
+
+  //Undocumented feature in Windows. When LoadStringW is passed nBufferMax=0 a pointer to the
+  //resource string is written to *lpBuffer. The string is not zero terminated.
+  wchar_t *Str;
+  int Size = LoadStringW(HInstance, Ident, reinterpret_cast<wchar_t*>(&Str), 0);
+  if(Size == 0)
+    return L"";
+  return gettext(WideString(Str, Size));
 }
 //---------------------------------------------------------------------------
 std::wstring LoadString(unsigned Ident)

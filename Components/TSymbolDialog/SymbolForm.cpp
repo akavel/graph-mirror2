@@ -3,12 +3,11 @@
 #pragma hdrstop
 #include "Config.h"
 #include "SymbolForm.h"
-#include "CompRes.h"
+#include "ICompCommon.h"
 #include <vector>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "FocusPanel"
-#pragma resource "CompRes.res"
 #pragma link "TntStdCtrls"
 #pragma resource "*.dfm"
 
@@ -114,15 +113,15 @@ const TSubset Subsets[] = {
 };
 //---------------------------------------------------------------------------
 __fastcall TSymbolFrm::TSymbolFrm(TComponent* Owner, bool AShowUnicode, wchar_t Symbol)
-  : TForm(Owner), Selected(Symbol), hUNameDll(NULL), pGetUNameFunc(NULL), ShowUnicode(AShowUnicode),
+  : TTntForm(Owner), Selected(Symbol), hUNameDll(NULL), pGetUNameFunc(NULL), ShowUnicode(AShowUnicode),
     hGdi32Dll(NULL), pGetFontUnicodeRanges(NULL), Glyphset(NULL),
     FontSize(12), PreviewFontSize(30), Delta(20)
 {
-  Caption = LoadStr(RES_SYMBOL_BOX_CAPTION);
-  Label1->Caption = "&" + LoadStr(RES_FONT_NAME);
-  Label2->Caption = "&" + LoadStr(RES_FONT_SUBSET);
-  Button1->Caption = LoadStr(RES_BUTTON_CLOSE);
-  Button2->Caption = LoadStr(RES_BUTTON_INSERT);
+  Caption = TranslateCompText(L"Insert symbol");
+  Label1->Caption = WideString(L"&") + TranslateCompText(L"Font name:");
+  Label2->Caption = WideString(L"&") + TranslateCompText(L"Subset:");
+  Button1->Caption = TranslateCompText(L"Close");
+  Button2->Caption = TranslateCompText(L"Insert");
   ComboBox1->Left = Label1->Left + Label1->Width + 5;
 
   hUNameDll = LoadLibrary("GETUNAME.DLL");

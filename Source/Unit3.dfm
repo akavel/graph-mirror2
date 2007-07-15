@@ -28,9 +28,9 @@ object Form3: TForm3
     Top = 8
     Width = 393
     Height = 215
-    ActivePage = TabSheet1
+    ActivePage = TabSheet4
     Anchors = [akLeft, akTop, akRight, akBottom]
-    TabIndex = 0
+    TabIndex = 3
     TabOrder = 0
     object TabSheet1: TTntTabSheet
       Caption = 'x-axis'
@@ -572,11 +572,12 @@ object Form3: TForm3
           Width = 81
           Height = 22
           Hint = 'Select the color of the image background.'
-          Selected = clDefault
-          Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
           ItemHeight = 16
           TabOrder = 0
           AutoDroppedWidth = True
+          Selected = -16777216
+          DefaultName = 'Default'
+          CustomName = 'Custom...'
         end
         object ExtColorBox2: TExtColorBox
           Left = 104
@@ -584,11 +585,12 @@ object Form3: TForm3
           Width = 81
           Height = 22
           Hint = 'Select the color of the axes.'
-          Selected = clDefault
-          Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
           ItemHeight = 16
           TabOrder = 1
           AutoDroppedWidth = True
+          Selected = -16777216
+          DefaultName = 'Default'
+          CustomName = 'Custom...'
         end
         object ExtColorBox3: TExtColorBox
           Left = 104
@@ -596,11 +598,12 @@ object Form3: TForm3
           Width = 81
           Height = 22
           Hint = 'Select the color of the grid lines.'
-          Selected = clDefault
-          Style = [cbStandardColors, cbExtendedColors, cbCustomColor, cbPrettyNames]
           ItemHeight = 16
           TabOrder = 2
           AutoDroppedWidth = True
+          Selected = -16777216
+          DefaultName = 'Default'
+          CustomName = 'Custom...'
         end
       end
       object GroupBox4: TTntGroupBox
