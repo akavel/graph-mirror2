@@ -258,10 +258,10 @@ void TContext::SetPen(TPenStyle Style, TColor Color, int Width)
   PenWidth = Width;
 
   //Windows 9x does not support line width larger than one, except for solid lines
-  if(IsWinNT && Width > 1 && Style != psSolid)
+  if(IsWinNT && Width > 1 /*&& Style != psSolid*/)
   {
     LOGBRUSH LogBrush = {BS_SOLID, Color};
-    Canvas->Pen->Handle = ExtCreatePen(PS_GEOMETRIC | Style, Width, &LogBrush, 0, NULL);
+    Canvas->Pen->Handle = ExtCreatePen(PS_GEOMETRIC | PS_ENDCAP_FLAT | Style, Width, &LogBrush, 0, NULL);
   }
   else
     Canvas->Pen->Handle = CreatePen(Style, Style == psSolid ? Width : 1, Color);

@@ -607,7 +607,7 @@ void TDraw::DrawAxes()
   //If x-axis is inside the view
   if(yPixelCross >= AxesRect.Top && yPixelCross <= AxesRect.Bottom)
   {
-    int X1 = AxesRect.Left + 1;
+    int X1 = AxesRect.Left;
     int X2 = AxesRect.Right - 1;
     int Y = yPixelCross;
     double xPixelScl = (Axes.xAxis.LogScl ? std::log(Axes.xAxis.TickUnit) : Axes.xAxis.TickUnit) * xScale;
@@ -639,14 +639,14 @@ void TDraw::DrawAxes()
   {
     int X = xPixelCross;
     int Y1 = AxesRect.Top;
-    int Y2 = AxesRect.Bottom - 1;
+    int Y2 = AxesRect.Bottom;
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(2));
     Context.DrawLine(X, Y1 + Size(3), X, Y2);
 
     Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.AxesColor);
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, 1);
     TPoint TopArrow[] = {TPoint(X-Size(5)-1, Y1+Size(5)), TPoint(X-1, Y1), TPoint(X, Y1), TPoint(X+Size(5), Y1+Size(5))};
-    TPoint BottomArrow[] = {TPoint(X-Size(5)-1, Y2-Size(5)), TPoint(X-1, Y2), TPoint(X, Y2), TPoint(X+Size(5), Y2-Size(5))};
+    TPoint BottomArrow[] = {TPoint(X-Size(5)-1, Y2-Size(6)), TPoint(X-1, Y2-1), TPoint(X, Y2-1), TPoint(X+Size(5), Y2-Size(6))};
 
     //Show arrow on y-axis
     if(Axes.AxesArrows == aaBothEnds)
