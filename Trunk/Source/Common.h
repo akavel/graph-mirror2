@@ -37,7 +37,7 @@ AnsiString GetTempFileName(const AnsiString &Prefix, const AnsiString &Ext);
 
 AnsiString GetTempPath();
 
-inline bool InsideRect(const TRect &Rect, const TPoint &P) {return P.x > Rect.Left && P.x < Rect.Right && P.y > Rect.Top && P.y < Rect.Bottom;}
+inline bool InsideRect(const TRect &Rect, const TPoint &P) {return P.x >= Rect.Left && P.x <= Rect.Right && P.y >= Rect.Top && P.y <= Rect.Bottom;}
 std::wstring ReduceString(const std::wstring &Str, unsigned MaxLength);
 
 
