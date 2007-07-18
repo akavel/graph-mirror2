@@ -354,14 +354,15 @@ void CreateSingleSpline(std::vector<TPoint> &Points, TPoint p1, TPoint p2, TPoin
   //Calculate points on spline
   for(double t = 0; t < 1; t += dt)
   {
+    //Add 0.5 to take care of rounding error. We assume the coordinates are always positive.
     q.x = 0.5 * (Spline.Param[0].x * t*t*t
                + Spline.Param[1].x * t*t
                + Spline.Param[2].x * t
-               + Spline.Param[3].x);
+               + Spline.Param[3].x) + 0.5;
     q.y = 0.5 * (Spline.Param[0].y * t*t*t
                + Spline.Param[1].y * t*t
                + Spline.Param[2].y * t
-               + Spline.Param[3].y);
+               + Spline.Param[3].y) + 0.5;
 
     //No need to add point if it is equal to the last one
     if(Points.empty() || q != Points.back())
