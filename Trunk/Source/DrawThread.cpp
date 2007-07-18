@@ -976,7 +976,6 @@ void TDrawThread::Visit(TPointSeries &PointSeries)
 //---------------------------------------------------------------------------
 void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
 {
-//  TContextLock ContextLock(Context); Doesn't work; Synchronize() instead
   Draw->SetClippingRegion();
 
   std::vector<TPoint> PointArray;
@@ -1001,19 +1000,23 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
   }
 
   //Only draw for point sizes >0
-  if(PointSeries.Size > 0)
+  if(PointSeries.Size == 0)
+    return;
+
+  //First draw all error bars and labels
+  if(PointSeries.xErrorBarType != ebtNone || PointSeries.yErrorBarType != ebtNone ||  PointSeries.ShowLabels)
     for(std::vector<TPointSeriesPoint>::const_iterator iter = PointSeries.PointList.begin(); iter != end; ++iter)
     {
       //Check that point is valid (NAN is used to indicate invalid value)
       if((!Axes.xAxis.LogScl || iter->x.Value > 0) && (!Axes.yAxis.LogScl || iter->y.Value > 0) && _finite(iter->x.Value) && _finite(iter->y.Value))
       {
-        unsigned I = iter - PointSeries.PointList.begin();
         TPoint Pos(Draw->xPoint(iter->x.Value), Draw->yPoint(iter->y.Value));
         if(!InsideRect(AxesRect, Pos)) //We might get rounding errors if the point is too much outside the visible area
           continue;
 
         //Draw x error bar
         Context.SetPen(psSolid, clBlack, Size(1));
+        unsigned I = iter - PointSeries.PointList.begin();
         double Delta = PointSeries.GetXError(I);
         if(Delta)
         {
@@ -1035,29 +1038,44 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
           Context.DrawLine(Pos.x - 4, Y2, Pos.x +5, Y2);
         }
 
-        int PointSize = Size(PointSeries.Size);
-        TColor FillColor = ForceBlack ? clWhite : PointSeries.FillColor;
-        TColor FrameColor = ForceBlack ? clBlack : (PointSeries.Size > 2 ? PointSeries.FrameColor : FillColor);
-
-        if(PointSeries.Style != 7)
-          TPointSelect::DrawPoint(Context.GetCanvas(), Pos, PointSeries.Style, FrameColor, FillColor, PointSize); //Draw normalt markers
-        else if(I != 0) //Draw arrow
-        {
-          Context.SetPen(PointSeries.LineStyle == psClear ? psSolid : PointSeries.LineStyle, PointSeries.FillColor, PointSize);
-          double Angle;
-          Angle = InterpolationAngle(PointSeries.GetPoint(std::max((int)I-2, 0)), PointSeries.GetPoint(I-1),
-            PointSeries.GetPoint(I), PointSeries.GetPoint(std::min(I+1, PointSeries.PointList.size()-1)), PointSeries.Interpolation);
-
-          DrawArrow(Pos, Angle, PointSeries.FillColor, PointSeries.Size);
-        }
-
         if(PointSeries.ShowLabels)
         {
           std::string Str = "(" + iter->x.Text + "," + iter->y.Text + ")";
+          int PointSize = Size(PointSeries.Size);
           TDraw::DrawPointLabel(Context.GetCanvas(), Pos, PointSize, Str, PointSeries.LabelPosition);
         }
       }
     }
+
+  //Remove clipping region and draw all markers.
+  //This is done so you either is all the marker or none of it. InsideRect checks if it should be shown.
+  Context.DestroyClipRect();
+  for(std::vector<TPointSeriesPoint>::const_iterator iter = PointSeries.PointList.begin(); iter != end; ++iter)
+  {
+    //Check that point is valid (NAN is used to indicate invalid value)
+    if((!Axes.xAxis.LogScl || iter->x.Value > 0) && (!Axes.yAxis.LogScl || iter->y.Value > 0) && _finite(iter->x.Value) && _finite(iter->y.Value))
+    {
+      TPoint Pos(Draw->xPoint(iter->x.Value), Draw->yPoint(iter->y.Value));
+      if(!InsideRect(AxesRect, Pos)) //We might get rounding errors if the point is too much outside the visible area
+        continue;
+
+      int PointSize = Size(PointSeries.Size);
+      TColor FillColor = ForceBlack ? clWhite : PointSeries.FillColor;
+      TColor FrameColor = ForceBlack ? clBlack : (PointSeries.Size > 2 ? PointSeries.FrameColor : FillColor);
+
+      if(PointSeries.Style != 7)
+        TPointSelect::DrawPoint(Context.GetCanvas(), Pos, PointSeries.Style, FrameColor, FillColor, PointSize); //Draw normalt markers
+      else if(iter != PointSeries.PointList.begin()) //Draw arrow
+      {
+        Context.SetPen(PointSeries.LineStyle == psClear ? psSolid : PointSeries.LineStyle, PointSeries.FillColor, PointSize);
+        unsigned I = iter - PointSeries.PointList.begin();
+        double Angle = InterpolationAngle(PointSeries.GetPoint(std::max((int)I-2, 0)), PointSeries.GetPoint(I-1),
+          PointSeries.GetPoint(I), PointSeries.GetPoint(std::min(I+1, PointSeries.PointList.size()-1)), PointSeries.Interpolation);
+
+        DrawArrow(Pos, Angle, PointSeries.FillColor, PointSeries.Size);
+      }
+    }
+  }
 }
 //---------------------------------------------------------------------------
 void TDrawThread::DrawArrow(const TPoint &Point, long double Angle, TColor Color, unsigned Size)
