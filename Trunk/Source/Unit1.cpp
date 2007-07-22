@@ -1739,6 +1739,13 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::PrintActionExecute(TObject *Sender)
 {
+  if(Printer()->Printing)
+  {
+    if(MessageBox(LoadRes(521), NAME, MB_OKCANCEL | MB_ICONEXCLAMATION) != IDCANCEL)
+      AbortPrinting = true;
+    return;
+  }
+
   IPrintDialog1->ImageWidth = Image1->Width;
   IPrintDialog1->ImageHeight = Image1->Height;
 
