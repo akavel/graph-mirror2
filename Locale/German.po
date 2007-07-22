@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2007-06-17 00:28\n"
-"PO-Revision-Date: 2007-06-29 23:37+0100\n"
+"PO-Revision-Date: 2007-07-14 18:00+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Frank Hüttemeister & Michael Bach Ipsen <deutsch@padowan.dk>\n"
 "MIME-Version: 1.0\n"
@@ -2375,7 +2375,7 @@ msgstr "Format für die Anzeige komplexer Zahlen"
 
 #. Form4("Options")..RadioGroup1("Complex form")..Caption
 msgid "Complex form"
-msgstr "Komplexformat"
+msgstr "Komplexzahlen-Format"
 
 #. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
@@ -2383,11 +2383,11 @@ msgstr "Reell"
 
 #. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
-msgstr "Rechteckig"
+msgstr "Normalform"
 
 #. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
-msgstr "Polar"
+msgstr "Polarform"
 
 #. Form4("Options")..CheckBox2("Show tooltip")..Hint
 msgid "Show the tooltip when the cursor is over an item."
