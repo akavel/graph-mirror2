@@ -1095,8 +1095,6 @@ void TDrawThread::DrawArrow(const TPoint &Point, long double Angle, TColor Color
   int dY2 = Length * std::sin(Angle2 - 2.8);
   TPoint Arrow[] = {TPoint(Point.x + dX1, Point.y - dY1), Point, TPoint(Point.x + dX2, Point.y - dY2)};
   Context.DrawPolygon(Arrow, 3);
-//  LineToAngle(Point.x, Point.y, Angle2 + 2.6, 15);
-//  LineToAngle(Point.x, Point.y, Angle2 - 2.6, 15);
 }
 //---------------------------------------------------------------------------
 void TDrawThread::LineToAngle(int X, int Y, double Angle, double Length)
@@ -1126,8 +1124,6 @@ void TDrawThread::DrawHalfCircle(const TPoint &Point, long double Angle, TColor 
 //---------------------------------------------------------------------------
 void TDrawThread::Visit(TAxesView &AxesView)
 {
-//  TContextLock ContextLock(Context);
-//  Draw->DrawAxes();
   Synchronize(&Draw->DrawAxes);
 }
 //---------------------------------------------------------------------------
@@ -1193,68 +1189,89 @@ void TDrawThread::CreateInequality(TRelation &Relation)
     Relation.BoundingRegion.reset(); //Don't draw frame when brush style is bsSolid
 }
 //---------------------------------------------------------------------------
+//Check if there is a possibility for a zero point in f(x,y).
+//It may not be certain
+bool TDrawThread::CheckResult1(const double Result[3])
+{
+  //If the sign has changes, at least one of the current and last result is valid, or
+  //the increase/decrease state has changed, which might indicate an asymptote.
+  return (Result[1] < 0) == (Result[2] > 0) && !(_isnan(Result[1]) && _isnan(Result[2])) ||
+    (Result[0] < Result[1]) != (Result[1] < Result[2]);
+}
+//---------------------------------------------------------------------------
+//Check if there actually is a zero point in f(x,y) for certain.
+bool TDrawThread::CheckResult2(const double Result[3])
+{
+  //If the sign has changed, both last and current result is valid, and both last and current
+  //value is increasing/decreasing (to avoid false vertical line at y=1/x)
+  return (Result[1] < 0) == (Result[2] > 0) && !_isnan(Result[1]) && !_isnan(Result[2]) &&
+    (Result[0] < Result[1]) == (Result[1] < Result[2]);
+}
+//---------------------------------------------------------------------------
+void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, bool Loop)
+{
+  std::vector<long double> Args(2);
+  Func32::ECalcError CalcError;
+  double ds1 = Loop ? 1/Draw->xScale : -1/Draw->yScale;
+  double ds2 = Loop ? -1/Draw->yScale : 1/Draw->xScale;
+  int M1 = Size(Relation.GetSize()) / 2;
+  int M2 = Size(Relation.GetSize() + 1) / 2;
+
+  double s1Min = Loop ? Axes.xAxis.Min - ds1/2 : Axes.yAxis.Max - ds1/2;
+  double s2Min = Loop ? Axes.yAxis.Max : Axes.xAxis.Min;
+
+  int S1Min = Loop ? AxesRect.Left - 1 : AxesRect.Top - 1;
+  int S2Min = Loop ? AxesRect.Top : AxesRect.Left;
+
+  int S1Max = Loop ? AxesRect.Right + 1 : AxesRect.Bottom + 1;
+  int S2Max = Loop ? AxesRect.Bottom + 1 : AxesRect.Right + 1;
+
+  int dS1 = Draw->Width > 1200 ? Draw->Width / 120 : 10;
+  int dS2 = M2;
+
+  double s2 = s2Min;
+  for(int S2 = S2Min; S2 < S2Max; S2 += dS2, s2 += ds2 * dS2)
+  {
+    double Result[3] = {NAN, NAN};
+    double s1 = s1Min;
+    for(int S1 = S1Min; S1 < S1Max; S1 += dS1, s1 += ds1 * dS1)
+    {
+      Args[!Loop] = s1;
+      Args[Loop] = s2;
+      Result[2] = Relation.Eval(Args, CalcError);
+      if(CheckResult1(Result))
+      {
+        double s3 = s1 - ds1 * (dS1-1);
+        for(int S3 = S1 - dS1 + 1; S3 <= S1; S3++, s3 += ds1)
+        {
+          Args[!Loop] = s3;
+          Result[2] = Relation.Eval(Args, CalcError);
+          if(CheckResult2(Result))
+            if(Loop)
+              Points.push_back(TRect(S3 - M1, S2 - M1, S3 + M2, S2 + M2));
+            else
+              Points.push_back(TRect(S2 - M1, S3 - M1, S2 + M2, S3 + M2));
+          Result[0] = Result[1];
+          Result[1] = Result[2];
+        }
+      }
+      else
+      Result[0] = Result[1], Result[1] = Result[2];
+    }
+
+    if(Aborted)
+      return;
+  }
+}
+//---------------------------------------------------------------------------
 void TDrawThread::CreateEquation(TRelation &Relation)
 {
-  double dx = 1/Draw->xScale;
-  double dy = 1/Draw->yScale;
-  int S1 = Size(Relation.GetSize()) / 2;
-  int S2 = Size(Relation.GetSize() + 1) / 2;
 
   std::vector<TRect> Points;
   Points.reserve(500);
 
-  std::vector<long double> Args(2);
-  Func32::ECalcError CalcError;
-
-  double y = Axes.yAxis.Max + dy;
-  for(int Y = AxesRect.Top - 1; Y < AxesRect.Bottom + 1; Y++, y -= dy)
-  {
-    double Result[3] = {NAN, NAN};
-    int X = AxesRect.Left - 1;
-    for(double x = Axes.xAxis.Min - dx / 2; X < AxesRect.Right + 1; X++, x += dx)
-    {
-      Args[0] = x;
-      Args[1] = y;
-      Result[2] = Relation.Eval(Args, CalcError);
-
-      //If the sign has changed, both last and current result is valid, and both last and current
-      //value is increasing/decreasing (to avoid false vertical line at y=1/x)
-      if((Result[1] < 0) == (Result[2] > 0) && !_isnan(Result[1]) && !_isnan(Result[2]) &&
-        (Result[0] < Result[1]) == (Result[1] < Result[2]))
-        Points.push_back(TRect(X - S1, Y - S1, X + S2, Y + S2));
-
-      Result[0] = Result[1];
-      Result[1] = Result[2];
-    }
-
-    if(Aborted)
-      return;
-  }
-
-  double x = Axes.xAxis.Min - dx / 2;
-  for(int X = AxesRect.Left - 1; X < AxesRect.Right + 1; X++, x += dx)
-  {
-    double Result[3] = {NAN, NAN};
-    int Y = AxesRect.Top - 1;
-    for(double y = Axes.yAxis.Max + dy; Y < AxesRect.Bottom + 1; Y++, y -= dy)
-    {
-      Args[0] = x;
-      Args[1] = y;
-      Result[2] = Relation.Eval(Args, CalcError);
-
-      //If the sign has changed, both last and current result is valid, and both last and current
-      //value is increasing/decreasing (to avoid false vertical line at y=1/x)
-      if((Result[1] < 0) != (Result[2] < 0) && !_isnan(Result[1]) && !_isnan(Result[2]) &&
-        (Result[0] < Result[1]) == (Result[1] < Result[2]))
-        Points.push_back(TRect(X - S1, Y - S1, X + S2, Y + S2));
-
-      Result[0] = Result[1];
-      Result[1] = Result[2];
-    }
-
-    if(Aborted)
-      return;
-  }
+  EquationLoop(Relation, Points, 1);
+  EquationLoop(Relation, Points, 0);
 
   if(!IsWinNT && Points.size() > 4000)
   {
