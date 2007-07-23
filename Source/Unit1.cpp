@@ -2263,7 +2263,7 @@ void __fastcall TForm1::AboutActionExecute(TObject *Sender)
 void __fastcall TForm1::MoveRightActionExecute(TObject *Sender)
 {
   const TAxes &Axes = Data.Axes;
-  double StepSize = GetKeyState (VK_SHIFT) & 0x8000 ? 0.1 : 0.01;
+  double StepSize = GetKeyState(VK_SHIFT) & 0x8000 ? 0.1 : 0.01;
   double MoveWidth=(Axes.xAxis.Max-Axes.xAxis.Min) * StepSize;
   if(Axes.xAxis.LogScl)
   {

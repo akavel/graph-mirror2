@@ -57,6 +57,9 @@ private:
   void DrawShade(const struct TDrawShadeData &ShadeData);
   void DrawLabel(TTextLabel &Label);
   void DrawRelation(const TRelation &Relation);
+  void EquationLoop(TRelation &Relation, std::vector<TRect> &Points, bool Loop);
+  static bool CheckResult1(const double Result[3]);
+  static bool CheckResult2(const double Result[3]);
 
   //Draw elements
   void Visit(TBaseFuncType &Func);
