@@ -1130,33 +1130,44 @@ void TDrawThread::Visit(TAxesView &AxesView)
 void TDrawThread::CreateInequality(TRelation &Relation)
 {
   double dx = 1/Draw->xScale;
-  double dy = 1/Draw->yScale;
+  double dy = -1/Draw->yScale;
+  int dX = Draw->Width > 1200 ? Draw->Width / 120 : 10;
 
-  double y = Axes.yAxis.Max + dy;
   std::vector<TRect> Points;
   Points.reserve(500);
   int XStart;
   std::vector<long double> Args(2);
   Func32::ECalcError CalcError;
 
-  for(int Y = AxesRect.Top - 1; Y < AxesRect.Bottom + 1; Y++, y -= dy)
+  double y = Axes.yAxis.Max;
+  for(int Y = AxesRect.Top; Y < AxesRect.Bottom + 1; Y++, y += dy)
   {
     Args[1] = y;
     bool LastResult = false;
-    int X = AxesRect.Left - 1;
-    for(double x = Axes.xAxis.Min - dx; X < AxesRect.Right + 1; X++, x += dx)
+    double x = Axes.xAxis.Min - dx/2;
+    for(int X = AxesRect.Left - 1; X < AxesRect.Right + dX; X += dX, x += dx * dX)
     {
       Args[0] = x;
       long double Temp = Relation.Eval(Args, CalcError);
       bool Result = !_isnanl(Temp) && Temp != 0;
       if(Result != LastResult)
       {
-        if(Result)
-          XStart = X;
-        else
-          Points.push_back(TRect(XStart, Y, X, Y + 1));
+        double x2 = x - dx * (dX - 1);
+        for(int X2 = X - dX + 1; X2 <= X; x2 += dx, X2++)
+        {
+          Args[0] = x2;
+          Temp = Relation.Eval(Args, CalcError);
+          Result = !_isnanl(Temp) && Temp != 0;
+          if(Result != LastResult)
+          {
+            if(Result)
+              XStart = X2;
+            else
+              Points.push_back(TRect(XStart + 1, Y, X2, Y + 1));
+            break;
+          }
+        }
       }
-
       LastResult = Result;
     }
 
@@ -1170,7 +1181,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
 
   if(Relation.GetBrushStyle() != bsSolid && Relation.GetSize() > 0)
   {
-    //Create bounding region as a region 1 pixel large than the real region, and subtract the real region
+    //Create bounding region as a region Delta pixels large than the real region, and subtract the real region
     //to get the bounding region
     const std::vector<TRect>::iterator End = Points.end();
     for(std::vector<TRect>::iterator Iter = Points.begin(); Iter != End; ++Iter)
@@ -1232,12 +1243,12 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
   double s2 = s2Min;
   for(int S2 = S2Min; S2 < S2Max; S2 += dS2, s2 += ds2 * dS2)
   {
+    Args[Loop] = s2;
     double Result[3] = {NAN, NAN};
     double s1 = s1Min;
     for(int S1 = S1Min; S1 < S1Max; S1 += dS1, s1 += ds1 * dS1)
     {
       Args[!Loop] = s1;
-      Args[Loop] = s2;
       Result[2] = Relation.Eval(Args, CalcError);
       if(CheckResult1(Result))
       {
