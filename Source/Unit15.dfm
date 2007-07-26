@@ -29,10 +29,9 @@ object Form15: TForm15
   object Label4: TTntLabel
     Left = 16
     Top = 50
-    Width = 18
+    Width = 17
     Height = 13
-    Caption = #916'x='
-    Caption_UTF7 = '+A5Q-x='
+    Caption = 'dx='
   end
   object Label1: TTntLabel
     Left = 16
@@ -117,7 +116,7 @@ object Form15: TForm15
     DefaultRowHeight = 16
     FixedCols = 0
     RowCount = 2
-    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing]
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goThumbTracking]
     PopupMenu = PopupMenu1
     TabOrder = 4
     MinColWidth = 64

@@ -72,7 +72,7 @@ object Form17: TForm17
     ColCount = 2
     DefaultRowHeight = 16
     FixedCols = 0
-    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goColSizing, goEditing, goTabs, goAlwaysShowEditor]
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goColSizing, goEditing, goTabs, goAlwaysShowEditor, goThumbTracking]
     PopupMenu = PopupMenu1
     TabOrder = 0
     AutoAddRows = True

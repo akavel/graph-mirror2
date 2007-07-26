@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit15.h"
+#include <cmath>
 //---------------------------------------------------------------------------
 #pragma link "Grid"
 #pragma link "ProgressForm"
@@ -36,17 +37,28 @@ __fastcall TForm15::TForm15(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm15::Button2Click(TObject *Sender)
 {
-  double ds = MakeFloat(Edit3, LoadRes(RES_GREATER_ZERO, "d" + Func->GetVariable()), 0.00001);
+  double ds = std::abs(MakeFloat(Edit3));
   double Min = MakeFloat(Edit1);
-  double Max = MakeFloat(Edit2, LoadRes(511), Min);
+  double Max = MakeFloat(Edit2);
   int Digits = GetDecimals(ds);
 
-  Grid1->RowCount = (Max - Min)/ds + 2.5;
+  if(ds == 0)
+  {
+    Grid1->RowCount = 2;
+    for(int I = 0; I < Grid1->ColCount; I++)
+      Grid1->Cells[I][1] = "";
+    return;
+  }
+
+  Grid1->RowCount = std::abs(Max - Min)/ds + 2.5;
   Grid1->FixedRows = 1;
 
   ProgressForm1->Max = Grid1->RowCount;
   ProgressForm1->Position = 0;
   ProgressForm1->Show();
+
+  if(Max < Min)
+    ds = -ds;
 
   if(const TStdFunc *F = dynamic_cast<const TStdFunc*>(Func))
   {
@@ -160,6 +172,7 @@ void TForm15::ShowTable(const TBaseFuncType *F)
     Grid1->Cells[1][0] = "f(x)";
     Grid1->Cells[2][0] = "f'(x)";
     Grid1->Cells[3][0] = "f''(x)";
+    Label4->Caption = L"\x394x=";
   }
   else if(dynamic_cast<const TParFunc*>(Func))
   {
@@ -169,7 +182,7 @@ void TForm15::ShowTable(const TBaseFuncType *F)
     Grid1->Cells[0][0] = "t";
     Grid1->Cells[1][0] = "x(t)";
     Grid1->Cells[2][0] = "y(t)";
-    Label4->Caption = "dt=";
+    Label4->Caption = L"\x394t=";
   }
   else if(dynamic_cast<const TPolFunc*>(Func))
   {
@@ -180,7 +193,7 @@ void TForm15::ShowTable(const TBaseFuncType *F)
     Grid1->Cells[1][0] = "r(t)";
     Grid1->Cells[2][0] = "x(t)";
     Grid1->Cells[3][0] = "y(t)";
-    Label4->Caption = "dt=";
+    Label4->Caption = L"\x394t=";
   }
 
   ShowModal();
