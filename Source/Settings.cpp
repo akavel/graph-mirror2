@@ -391,18 +391,21 @@ void TAnimationInfo::WriteToIni(TConfigFile &IniFile) const
 //---------------------------------------------------------------------------
 void TAnimationInfo::ReadFromIni(const TConfigFile &IniFile)
 {
-  Constant = IniFile.Read("Animate", "Constant", "");
-  std::pair<TConfigFile::TSectionIterator, TConfigFile::TSectionIterator> Section = IniFile.GetSectionData("Animate");
-  for(TConfigFile::TSectionIterator Iter = Section.first; Iter != Section.second; ++Iter)
-    if(Iter->first[0] == '%')
-    {
-      TAnimationConstant &AnimationConstant = ConstantList[Iter->first.substr(1)];
-      int Pos = Iter->second.find(';');
-      AnimationConstant.Min = Iter->second.substr(0, Pos);
-      int Pos2 = Iter->second.find(';', Pos+1);
-      AnimationConstant.Max = Iter->second.substr(Pos+1, Pos2 - Pos - 1);
-      AnimationConstant.Step = Iter->second.substr(Pos2+1);
-    }
+  if(IniFile.SectionExists("Animate"))
+  {
+    Constant = IniFile.Read("Animate", "Constant", "");
+    std::pair<TConfigFile::TSectionIterator, TConfigFile::TSectionIterator> Section = IniFile.GetSectionData("Animate");
+    for(TConfigFile::TSectionIterator Iter = Section.first; Iter != Section.second; ++Iter)
+      if(Iter->first[0] == '%')
+      {
+        TAnimationConstant &AnimationConstant = ConstantList[Iter->first.substr(1)];
+        int Pos = Iter->second.find(';');
+        AnimationConstant.Min = Iter->second.substr(0, Pos);
+        int Pos2 = Iter->second.find(';', Pos+1);
+        AnimationConstant.Max = Iter->second.substr(Pos+1, Pos2 - Pos - 1);
+        AnimationConstant.Step = Iter->second.substr(Pos2+1);
+      }
+  }
 }
 //---------------------------------------------------------------------------
 void TAnimationInfo::Clear()
