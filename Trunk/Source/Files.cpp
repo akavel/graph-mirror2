@@ -68,6 +68,7 @@ bool TData::LoadFromFile(const std::string &FileName, bool ShowErrorMessages)
 
     CustomFunctions.ReadFromIni(IniFile);
     LoadData(IniFile);
+    AnimationInfo.ReadFromIni(IniFile);
   }
   catch(Func32::EFuncError &Error)
   {
@@ -111,6 +112,7 @@ bool TData::LoadFromString(const std::string &Str)
     Axes.ReadFromIni(IniFile);
     CustomFunctions.ReadFromIni(IniFile);
     LoadData(IniFile);
+    AnimationInfo.ReadFromIni(IniFile);
   }
   catch(Func32::EFuncError &Error)
   {
@@ -162,6 +164,7 @@ bool TData::Import(const std::string &FileName)
     Temp.swap(ElemList);
     CustomFunctions.ReadFromIni(IniFile);
     LoadData(IniFile);
+    AnimationInfo.ReadFromIni(IniFile);
     for(unsigned I = 0; I < ElemList.size(); I++)
       if(!dynamic_cast<TAxesView*>(ElemList[I].get())) //We only want 1 TAxesView
         Temp.push_back(ElemList[I]);
@@ -208,6 +211,7 @@ bool TData::Save(const std::string &FileName, bool Remember)
     WriteInfoToIni(IniFile);
     SaveData(IniFile);
     CustomFunctions.WriteToIni(IniFile);
+    AnimationInfo.WriteToIni(IniFile);
 //    SaveImage(IniFile);
 
     if(!IniFile.SaveToFile(FileName))
@@ -239,6 +243,7 @@ std::string TData::SaveToString(bool ResetModified)
   Axes.WriteToIni(IniFile);
   SaveData(IniFile);
   CustomFunctions.WriteToIni(IniFile);
+  AnimationInfo.WriteToIni(IniFile);
 
   if(ResetModified)
     Modified = false;

@@ -17,8 +17,8 @@
 #pragma link "MediaPlayerEx"
 #pragma resource "*.dfm"
 //--------------------------------------------------------------------------
-__fastcall TForm20::TForm20(TComponent* Owner, const ::TAnimationInfo &AAnimationInfo)
-  : TTntForm(Owner), BackwardDirection(false), AnimationInfo(AAnimationInfo)
+__fastcall TForm20::TForm20(TComponent* Owner, const std::string &Constant, double AMin, double AStep)
+  : TTntForm(Owner), BackwardDirection(false), Min(AMin), Step(AStep)
 {
   ScaleForm(this);
   TranslateProperties(this);
@@ -26,7 +26,7 @@ __fastcall TForm20::TForm20(TComponent* Owner, const ::TAnimationInfo &AAnimatio
 
   dwICValue = dwICValue; //Avoid stupid warning
   Panel1->DoubleBuffered;
-  LabeledEdit1->EditLabel->Caption = AnimationInfo.Constant.c_str() + AnsiString("=");
+  LabeledEdit1->EditLabel->Caption = Constant.c_str() + AnsiString("=");
 }
 //---------------------------------------------------------------------------
 void TForm20::ShowAnimation(const AnsiString &FileName)
@@ -177,7 +177,7 @@ void TForm20::PosChanged(unsigned Position)
   TrackBar1->Position = Position;
   TrackBar1->OnChange = &TrackBar1Change;
 
-  LabeledEdit1->Text = AnimationInfo.Min + AnimationInfo.Step * Position;
+  LabeledEdit1->Text = Min + Step * Position;
 }
 //---------------------------------------------------------------------------
 

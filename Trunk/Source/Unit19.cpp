@@ -14,18 +14,18 @@
 #include <iterator>
 #include "vfw.h"
 #include "IGraphic.h"
+#include <cmath>
 //---------------------------------------------------------------------------
 #pragma link "TntStdCtrls"
 #pragma link "ProgressForm"
 #pragma link "MyEdit"
 #pragma resource "*.dfm"
 
-::TAnimationInfo TForm19::AnimationInfo;
 const int MaxWidth = Screen->Width - 50;
 const int MaxHeight = Screen->Height - 180;
 //---------------------------------------------------------------------------
-__fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
-  : TTntForm(Owner), Data(AData)
+__fastcall TForm19::TForm19(TComponent* Owner, TData &AData)
+  : TTntForm(Owner), Data(AData), AnimationInfo(AData.AnimationInfo)
 {
   ScaleForm(this);
   TranslateProperties(this);
@@ -45,7 +45,19 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
   //Add constants to the combo box
   for(TCustomFunctions::ConstIterator Iter = Data.CustomFunctions.Begin(); Iter != Data.CustomFunctions.End(); ++Iter)
     if(Iter->Arguments.empty())
+    {
+      TAnimationConstant &AnimationConstant = AnimationInfo.ConstantList[Iter->Name];
+      if(AnimationConstant.Step.empty())
+      {
+        double Value = Func32::Eval(Iter->Name, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
+        double Min = (Value == 0) ? 10 : Value / 10;
+        double Max = (Value == 0) ? 10 : Value * 10;
+        AnimationConstant.Min = ToString(Min);
+        AnimationConstant.Max = ToString(Max);
+        AnimationConstant.Step = ToString(std::abs((Max - Min) / 9));
+      }
       ComboBox1->Items->Add(Iter->Name.c_str());
+    }
 
   unsigned ImageWidth = std::min(AnimationInfo.Width == 0 ? Form1->Image1->Width : AnimationInfo.Width, MaxWidth);
   unsigned ImageHeight = std::min(AnimationInfo.Height == 0 ? Form1->Image1->Height : AnimationInfo.Height, MaxHeight);
@@ -57,9 +69,9 @@ __fastcall TForm19::TForm19(TComponent* Owner, const TData &AData)
     ComboBox1Change(ComboBox1);
   else
   {
-    Edit1->Text = ToWideString(AnimationInfo.Min);
-    Edit2->Text = ToWideString(AnimationInfo.Max);
-    Edit3->Text = ToWideString(AnimationInfo.Step);
+    Edit1->Text = ToWideString(AnimationInfo.ConstantList[AnimationInfo.Constant].Min);
+    Edit2->Text = ToWideString(AnimationInfo.ConstantList[AnimationInfo.Constant].Max);
+    Edit3->Text = ToWideString(AnimationInfo.ConstantList[AnimationInfo.Constant].Step);
   }
 
   Edit4->Text = ToWideString(ImageWidth);
@@ -90,14 +102,16 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   TDraw Draw(Bitmap->Canvas, &Data, false, "Animate thread");
   Draw.SetArea(TRect(0, 0, ImageWidth, ImageHeight));
 
-  AnimationInfo.Min = MakeFloat(Edit1);
-  AnimationInfo.Max = MakeFloat(Edit2);
-  AnimationInfo.Step = std::abs(MakeFloat(Edit3));
-  if(AnimationInfo.Max < AnimationInfo.Min)
-    AnimationInfo.Step = -AnimationInfo.Step;
+  ComboBox1Change(NULL); //Update AnimationInfo
+
+  double Min = MakeFloat(Edit1);
+  double Max = MakeFloat(Edit2);
+  double Step = std::abs(MakeFloat(Edit3));
+  if(Max < Min)
+    Step = -Step;
   AnimationInfo.FramesPerSecond = MakeFloat(Edit6, LoadRes(RES_GREATER_ZERO, Label7->Caption), 0.01);
 
-  unsigned StepCount = std::ceil((AnimationInfo.Max - AnimationInfo.Min) / AnimationInfo.Step) + 1;
+  unsigned StepCount = std::ceil((Max - Min) / Step) + 1;
   ProgressForm1->Max = StepCount;
   ProgressForm1->Position = 0;
   ProgressForm1->Show();
@@ -151,7 +165,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 
     unsigned I = 0;
     std::vector<RGBQUAD> Colors;
-    for(double Value = AnimationInfo.Min; I < StepCount; Value += AnimationInfo.Step, I++)
+    for(double Value = Min; I < StepCount; Value += Step, I++)
     {
       Bitmap->Canvas->Brush->Style = bsSolid;
       Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
@@ -191,7 +205,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   //Restore constant in case we want to create a new animation with another constant
   Data.CustomFunctions.Replace(AnimationInfo.Constant, OriginalValue);
   ProgressForm1->Close();
-  CreateForm<TForm20>(AnimationInfo)->ShowAnimation(TempFile);
+  CreateForm<TForm20>(AnimationInfo.Constant, Min, Step)->ShowAnimation(TempFile);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button3Click(TObject *Sender)
@@ -207,15 +221,19 @@ void __fastcall TForm19::TntEditKeyPress(TObject *Sender, char &Key)
 //---------------------------------------------------------------------------
 void __fastcall TForm19::ComboBox1Change(TObject *Sender)
 {
-  std::string Constant = ToString(ComboBox1->Text);
-  double Value = Func32::Eval(Constant, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
-  double Min = (Value == 0) ? 10 : Value / 10;
-  double Max = (Value == 0) ? 10 : Value * 10;
-  double Step = std::abs((Max - Min) / 9);
-  Edit1->Text = ToWideString(Min);
-  Edit2->Text = ToWideString(Max);
-  Edit3->Text = ToWideString(Step);
+  if(!AnimationInfo.Constant.empty())
+  {
+    TAnimationConstant &AnimationConstant = AnimationInfo.ConstantList[AnimationInfo.Constant];
+    AnimationConstant.Min = ToString(Edit1->Text);
+    AnimationConstant.Max = ToString(Edit2->Text);
+    AnimationConstant.Step = ToString(Edit3->Text);
+  }
+
+  AnimationInfo.Constant = ToString(ComboBox1->Text);
+  TAnimationConstant &AnimationConstant = AnimationInfo.ConstantList[ToString(ComboBox1->Text)];
+  Edit1->Text = ToWideString(AnimationConstant.Min);
+  Edit2->Text = ToWideString(AnimationConstant.Max);
+  Edit3->Text = ToWideString(AnimationConstant.Step);
 }
 //---------------------------------------------------------------------------
-
 

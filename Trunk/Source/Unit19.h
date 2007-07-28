@@ -18,20 +18,8 @@
 #include <MPlayer.hpp>
 #include "ProgressForm.h"
 #include "MyEdit.h"
+#include <map>
 //---------------------------------------------------------------------------
-struct TAnimationInfo
-{
-  std::string Constant;
-  double Min;
-  double Max;
-  double Step;
-  unsigned Width;
-  unsigned Height;
-  double FramesPerSecond;
-
-  TAnimationInfo() : Min(1), Max(10), Step(1), Width(0), Height(0), FramesPerSecond(1) {}
-};
-
 class TForm19 : public TTntForm
 {
 __published:	// IDE-managed Components
@@ -62,10 +50,10 @@ __published:	// IDE-managed Components
   void __fastcall ComboBox1Change(TObject *Sender);
 private:	// User declarations
   TData Data;
-  static ::TAnimationInfo AnimationInfo;
-
+  ::TAnimationInfo &AnimationInfo;
+  
 public:		// User declarations
-  __fastcall TForm19(TComponent* Owner, const TData &AData);
+  __fastcall TForm19(TComponent* Owner, TData &AData);
 };
 //---------------------------------------------------------------------------
 #endif

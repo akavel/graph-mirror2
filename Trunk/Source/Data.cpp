@@ -80,6 +80,7 @@ void TData::Clear()
 {
   ElemList.clear();
   CustomFunctions.Clear();
+  AnimationInfo.Clear();
 }
 //---------------------------------------------------------------------------
 void TData::ClearCache()
