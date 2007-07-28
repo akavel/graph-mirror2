@@ -169,4 +169,25 @@ public:
   ConstIterator End() const {return Functions.end();}
 };
 
+struct TAnimationConstant
+{
+  std::string Min;
+  std::string Max;
+  std::string Step;
+};
+
+struct TAnimationInfo
+{
+  std::string Constant;
+  std::map<std::string, TAnimationConstant> ConstantList;
+  unsigned Width;
+  unsigned Height;
+  double FramesPerSecond;
+
+  TAnimationInfo() : Width(0), Height(0), FramesPerSecond(1) {}
+  void WriteToIni(TConfigFile &IniFile) const;
+  void ReadFromIni(const TConfigFile &IniFile);
+  void Clear();
+};
+
 #endif

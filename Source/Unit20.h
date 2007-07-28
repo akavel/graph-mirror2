@@ -74,12 +74,13 @@ __published:	// IDE-managed Components
   void __fastcall TrackBar1KeyPress(TObject *Sender, char &Key);
 private:	// User declarations
   bool BackwardDirection;
-  const class TAnimationInfo &AnimationInfo;
+  double Min;
+  double Step;
 
   void PosChanged(unsigned Position);
 
 public:		// User declarations
-  __fastcall TForm20(TComponent* Owner, const ::TAnimationInfo &AAnimationInfo);
+  __fastcall TForm20(TComponent* Owner, const std::string &Constant, double AMin, double AStep);
   void ShowAnimation(const AnsiString &FileName);
 };
 //---------------------------------------------------------------------------

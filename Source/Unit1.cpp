@@ -1724,11 +1724,11 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
     switch(SaveAsImage(FileName, SaveDialogEx1->FilterIndex))
     {
       case seFileAccess:
-        MessageBox(LoadRes(RES_FILE_ACCESS, FileName), "Error writing file", MB_OK | MB_ICONSTOP);
+        MessageBox(LoadRes(RES_FILE_ACCESS, FileName), LoadRes(RES_ERROR), MB_OK | MB_ICONSTOP);
         break;
 
       case seOutOfResources:
-        MessageBox(LoadRes(RES_OUT_OF_RESOURCES), "Error writing file", MB_OK | MB_ICONSTOP);
+        MessageBox(LoadRes(RES_OUT_OF_RESOURCES), LoadRes(RES_ERROR), MB_OK | MB_ICONSTOP);
         break;
 
       case sePdfError:

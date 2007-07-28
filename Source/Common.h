@@ -236,6 +236,7 @@ public:
 template<typename T> inline std::auto_ptr<T> CreateForm() {return std::auto_ptr<T>(new T(Application));}
 template<typename T, typename TArg> inline std::auto_ptr<T> CreateForm(TArg &Arg) {return std::auto_ptr<T>(new T(Application, Arg));}
 template<typename T, typename TArg1, typename TArg2> inline std::auto_ptr<T> CreateForm(TArg1 &Arg1, TArg2 &Arg2) {return std::auto_ptr<T>(new T(Application, Arg1, Arg2));}
+template<typename T, typename TArg1, typename TArg2, typename TArg3> inline std::auto_ptr<T> CreateForm(TArg1 &Arg1, TArg2 &Arg2, TArg3 &Arg3) {return std::auto_ptr<T>(new T(Application, Arg1, Arg2, Arg3));}
 
 //Used to show a modal form, e.g.: if(ShowForm<TForm2>() == mrOk)
 template<typename T> inline TModalResult ShowForm() {return CreateForm<T>()->ShowModal();}

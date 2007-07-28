@@ -38,6 +38,7 @@ public:
   TProperty Property;
   std::vector<TUserModel> UserModels;
   TCustomFunctions CustomFunctions;
+  ::TAnimationInfo AnimationInfo;
 
   TData(){}
   TData(const TData &OldData);
