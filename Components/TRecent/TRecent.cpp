@@ -87,7 +87,7 @@ void __fastcall TRecent::SetFileMenu(TMenuItem *Value)
 int TRecent::FileIndex(const AnsiString &FileName)
 {
   for(unsigned I = 0; I < Impl->FileList.size(); I++)
-    if(Impl->FileList[I].first == FileName)
+    if(Impl->FileList[I].first.AnsiCompareIC(FileName) == 0)
       return I;
   return -1;
 }
@@ -101,7 +101,7 @@ int TRecent::ObjectIndex(TObject *Object)
 }
 //---------------------------------------------------------------------------
 //Called by user to indicate that file have been used
-void __fastcall TRecent::FileUsed(AnsiString FileName)
+void __fastcall TRecent::FileUsed(const AnsiString &FileName)
 {
   if(FMaxFiles)
   {

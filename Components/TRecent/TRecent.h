@@ -40,7 +40,7 @@ protected:
 public:
     __fastcall TRecent(TComponent* Owner);
     __fastcall ~TRecent();
-    void __fastcall FileUsed(AnsiString FileName);
+    void __fastcall FileUsed(const AnsiString &FileName);
 __published:
     __property unsigned MaxFiles={read=FMaxFiles,write=SetMaxFiles,default=4};
     __property AnsiString RegistryKey={read=FRegistryKey,write=SetRegistryKey};
