@@ -1,0 +1,43 @@
+;This file was created by Graph (http://www.padowan.dk)
+;Do not change this file from other programs.
+[Graph]
+Version = 4.0
+Build = 238
+MinVersion = 2.5
+OS = Windows 2000 5.0 Service Pack 4
+
+[Axes]
+xMin = -10
+xMax = 10
+xTickUnit = 1
+xGridUnit = 1
+xAutoTick = 0
+yMin = -10
+yMax = 10
+yTickUnit = 1
+yGridUnit = 1
+yAutoTick = 0
+AxesColor = clBlue
+GridColor = 0x00FF9999
+LegendFont = Times New Roman,12,clBlack,B
+ShowLegend = 1
+Radian = 1
+
+[Relation1]
+Relation = abs sin x+abs sin y = 1.5
+Style = 5
+Color = clGreen
+Size = 2
+
+[Relation2]
+Relation = abs sin x+abs sin y > 1.7
+Style = 5
+Color = clBlue
+
+[Data]
+TextLabelCount = 0
+FuncCount = 0
+PointSeriesCount = 0
+ShadeCount = 0
+RelationCount = 2
+
