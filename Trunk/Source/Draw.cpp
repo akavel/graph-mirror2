@@ -540,7 +540,7 @@ void TDraw::DrawAxes()
         for(unsigned n = 1; n < 9; n++)
         {
           double Y = yPoint(y*(1+(Axes.yAxis.GridUnit-1)*n/9));
-          if(Y < AxesRect.Top)
+          if(Y < AxesRect.Top || Y > AxesRect.Bottom)
             break;
           Context.DrawLine(AxesRect.Left, Y, AxesRect.Right, Y);
         }
