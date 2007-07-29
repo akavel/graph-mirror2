@@ -126,7 +126,6 @@ object Form20: TForm20
     Color = clBtnFace
     EditLabel.Width = 3
     EditLabel.Height = 13
-    EditLabel.Caption = 'LabeledEdit1'
     LabelPosition = lpLeft
     LabelSpacing = 3
     ReadOnly = True
