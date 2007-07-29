@@ -261,7 +261,7 @@ void TContext::SetPen(TPenStyle Style, TColor Color, int Width)
   if(IsWinNT && Width > 1 /*&& Style != psSolid*/)
   {
     LOGBRUSH LogBrush = {BS_SOLID, Color};
-    Canvas->Pen->Handle = ExtCreatePen(PS_GEOMETRIC | PS_ENDCAP_FLAT | Style, Width, &LogBrush, 0, NULL);
+    Canvas->Pen->Handle = ExtCreatePen(PS_GEOMETRIC | Style, Width, &LogBrush, 0, NULL);
   }
   else
     Canvas->Pen->Handle = CreatePen(Style, Style == psSolid ? Width : 1, Color);
