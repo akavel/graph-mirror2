@@ -1,0 +1,46 @@
+;This file was created by Graph (http://www.padowan.dk)
+;Change this file at your own risk.
+[Graph]
+Version = 3.2
+Build = 144
+MinVersion = 2.5
+OS = Windows 2000 5.0 Service Pack 4
+
+[Axes]
+xMin = -10
+xMax = 10
+yMin = 0.01
+yMax = 100
+xTickUnit = 2
+yTickUnit = 10
+xGridUnit = 2
+yGridUnit = 10
+yLogScl = 1
+yShowGrid = 1
+yLabel = f(x)
+yAxisCross = 1
+AxesColor = clBlue
+GridColor = 0x00FF9999
+ShowLegend = 1
+Radian = 1
+Title = Logarithmic scale
+AxesStyle = 2
+
+[Data]
+FuncCount = 2
+PointSeriesCount = 0
+ShadeCount = 0
+TextLabelCount = 0
+
+[Func1]
+FuncType = 0
+y = 0.5*5^x
+Color = clRed
+Size = 2
+
+[Func2]
+FuncType = 0
+y = x
+Color = clGray
+Size = 2
+
