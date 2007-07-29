@@ -9,7 +9,7 @@ FLAG AVI LOADONCALL DISCARDABLE Flag.avi
 STRINGTABLE
 BEGIN
   RES_ERROR       "Error"       //Used in titles of error message boxes
-  RES_SHADE       "Shade"       //Default name in Insert shading dialog
+  RES_SHADE       "Shading"     //Default name in Insert shading dialog
   RES_ROTATION    "Rotation"    //Shown in rotation dialog
   RES_VERSION     "Version %s"  //%s is replaced with version number
   RES_BUILD       "Build %s"    //%s is replaced with build number
