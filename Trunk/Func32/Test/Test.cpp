@@ -492,6 +492,7 @@ void Test()
   Test("mod(x, 1.2)", -5.6, 0.4);
   Test("integrate(x^2,2,5)", NaN, 39);
   Test("sum(x, 3, 7)", NaN, 3+4+5+6+7);
+  Test("product(x, 3, 7)", NaN, 3*4*5*6*7);
   Test("dnorm(x, 5, 7)", 3, 0.054712394277745);
   Test("dnorm(x)", 3, 0.00443184841193801);
   Test("dnorm(x, 0, 1)", 3, 0.00443184841193801);
