@@ -547,6 +547,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     }
 
     case CodeSum:
+    case CodeProduct:
     {
       TConstIterator F = Iter;
       Iter = FindEnd(Iter);
@@ -557,14 +558,17 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         ErrorCode = ecComplexError;
         return 0;
       }
-      T Sum = 0;
+      T Sum = Elem.Ident == CodeSum ? 0 : 1;
       TDynData<T> TempDynData(DynData);
       T Value;
       TempDynData.Args = &Value;
       for(long double i = real(Min); i <= real(Max); i++)
       {
         Value = i;
-        Sum += CalcFunc(F, TempDynData);
+        if(Elem.Ident == CodeSum)
+          Sum += CalcFunc(F, TempDynData);
+        else
+          Sum *= CalcFunc(F, TempDynData);
       }
       return Sum;
     }

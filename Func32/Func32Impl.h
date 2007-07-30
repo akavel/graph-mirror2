@@ -115,6 +115,7 @@ enum TIdent
   CodeRange,      //!< Range(x,y,z): returns max(x,min(y,z))
   CodeIntegrate,  //!< Integrate(f,min,max) returns the numeric integrale of f from min to max
   CodeSum,        //!< Sum(f,min,max) returns the sum of f(i) where i are integers in the range [min;max]
+  CodeProduct,    //!< Prod(f,min,max) returns the product of f(i) where i are integers in the range [min;max]
   CodeCompare2,   //!< Element is a compare between three arguments, for example "3 < x < 27"
   CodePowDiv,     //!< Element is a^(b/c). This makes it possible to handle x^(1/3) correctly
 
