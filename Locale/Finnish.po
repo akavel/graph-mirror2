@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-27 21:32\n"
-"PO-Revision-Date: 2007-06-27 21:39+0100\n"
+"POT-Creation-Date: 2007-07-30 19:49\n"
+"PO-Revision-Date: 2007-07-30 19:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: Pekka Lerssi <pekka.lerssi@tut.fi>\n"
 "MIME-Version: 1.0\n"
@@ -96,7 +96,7 @@ msgstr "Valitse mihin kohdistin kiinnittyy, kun klikkaat koordinaatistoa."
 #. Form1..MainMenu..Function_("Function")..Caption
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
 #. Form1..ActionManager..EditAction("Edit...")..Category
@@ -215,10 +215,6 @@ msgstr "Tuo"
 #. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Muokkaa"
-
-#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
-msgid "Insert shading..."
-msgstr "Lisää varjostus..."
 
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
@@ -342,7 +338,20 @@ msgstr "Sijoittaa tekstin y-akselin oikealle puolelle yläreunaan."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form6("Text label")..ColorBox1..CustomName
+#. Form6("Text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Mukautettu..."
 
@@ -523,11 +532,11 @@ msgstr "Lisää tangentti/normaali..."
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Lisää tangentin tai normaalin valittuun funktioon."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
-msgid "Insert shade..."
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
+msgid "Insert shading..."
 msgstr "Lisää varjostus..."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 msgid "Add shading to the selected function."
 msgstr "Lisää varjostuksen valittuun funktioon."
 
@@ -1628,6 +1637,7 @@ msgid "Insert shading"
 msgstr "Lisää varjostus"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
 msgid "Shading"
 msgstr "Varjostus"
 
@@ -2553,6 +2563,11 @@ msgstr "Valitse fontin väri."
 msgid "Select background color of the text label."
 msgstr "Valitse tekstikentän taustaväri."
 
+#. Form6("Text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
+msgid "Transparent"
+msgstr "Läpinäkyvä"
+
 #. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Kumoaa viimeisen toiminnon."
@@ -2612,10 +2627,6 @@ msgstr "Valitse funktio tai tangentti, jota haluat tarkastella."
 msgid "Error"
 msgstr "Virhe"
 
-#. Default name in Insert shading dialog
-msgid "Shade"
-msgstr "Varjostus"
-
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Pituus"
@@ -2627,10 +2638,6 @@ msgstr "Otsikko"
 #. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-virhe"
-
-#. May be selected as background color in Insert label dialog
-msgid "Transparent"
-msgstr "Läpinäkyvä"
 
 #. Shown in the function list
 msgid "Axes"
@@ -2934,7 +2941,7 @@ msgstr "Tiedostoa ei löydy: %s"
 
 msgid ""
 "Error reading file: %s\n"
-" The file is not a correct Graph file."
+"The file is not a correct Graph file."
 msgstr ""
 "Virhe luettaessa tiedostoa: %s\n"
 "Tiedosto ei ole kelvollinen Graph-tiedosto."
@@ -3416,65 +3423,14 @@ msgstr "Tallentaessasi koordinaatistoa kuvana, voit valita tallennettavan kuvan 
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Pistejoukon pisteinä voidaan käyttää nuolenpäitä. Tällä tavalla voidaan piirtää vektoreita koordinaatistoon."
 
-msgid "Black"
-msgstr "Musta"
+msgid "Insert symbol"
+msgstr "Lisää symboli"
 
-msgid "Maroon"
-msgstr "Kastanjanruskea"
+msgid "Subset:"
+msgstr "Osajoukko:"
 
-msgid "Green"
-msgstr "Vihreä"
-
-msgid "Olive"
-msgstr "Oliivinvihreä"
-
-msgid "Navy"
-msgstr "Tummansininen"
-
-msgid "Purple"
-msgstr "Purppura"
-
-msgid "Teal"
-msgstr "Sinivihreä"
-
-msgid "Gray"
-msgstr "Harmaa"
-
-msgid "Silver"
-msgstr "Hopea"
-
-msgid "Red"
-msgstr "Punainen"
-
-msgid "Lime"
-msgstr "Keltavihreä"
-
-msgid "Yellow"
-msgstr "Keltainen"
-
-msgid "Blue"
-msgstr "Sininen"
-
-msgid "Fuchsia"
-msgstr "Aniliini"
-
-msgid "Aqua"
-msgstr "Turkoosi"
-
-msgid "White"
-msgstr "Valkoinen"
-
-msgid "Money Green"
-msgstr "Rahanvihreä"
-
-msgid "Sky Blue"
-msgstr "Taivaansininen"
-
-msgid "Cream"
-msgstr "Kerma"
-
-msgid "Med Gray"
-msgstr "Keskiharmaa"
+msgid "Insert"
+msgstr "Lisää"
 
 msgid "Customize"
 msgstr "Mukauta..."
@@ -3490,15 +3446,6 @@ msgstr "Paikallinen"
 
 msgid "Global"
 msgstr "Globaali"
-
-msgid "Insert"
-msgstr "Lisää"
-
-msgid "Insert symbol"
-msgstr "Lisää symboli"
-
-msgid "Subset:"
-msgstr "Osajoukko:"
 
 #. PrintFrm("Print")..Caption
 msgid "Print"
@@ -3581,6 +3528,50 @@ msgstr "Valitse tulostettavien kopioiden määrä."
 msgid "Enter percent of original size."
 msgstr "Valitse tulosteen skaalaus suhteessa alkuperäiseen kuvaan."
 
+#~ msgid "Insert shade..."
+#~ msgstr "Lisää varjostus..."
+#~ msgid "Shade"
+#~ msgstr "Varjostus"
+#~ msgid "Black"
+#~ msgstr "Musta"
+#~ msgid "Maroon"
+#~ msgstr "Kastanjanruskea"
+#~ msgid "Green"
+#~ msgstr "Vihreä"
+#~ msgid "Olive"
+#~ msgstr "Oliivinvihreä"
+#~ msgid "Navy"
+#~ msgstr "Tummansininen"
+#~ msgid "Purple"
+#~ msgstr "Purppura"
+#~ msgid "Teal"
+#~ msgstr "Sinivihreä"
+#~ msgid "Gray"
+#~ msgstr "Harmaa"
+#~ msgid "Silver"
+#~ msgstr "Hopea"
+#~ msgid "Red"
+#~ msgstr "Punainen"
+#~ msgid "Lime"
+#~ msgstr "Keltavihreä"
+#~ msgid "Yellow"
+#~ msgstr "Keltainen"
+#~ msgid "Blue"
+#~ msgstr "Sininen"
+#~ msgid "Fuchsia"
+#~ msgstr "Aniliini"
+#~ msgid "Aqua"
+#~ msgstr "Turkoosi"
+#~ msgid "White"
+#~ msgstr "Valkoinen"
+#~ msgid "Money Green"
+#~ msgstr "Rahanvihreä"
+#~ msgid "Sky Blue"
+#~ msgstr "Taivaansininen"
+#~ msgid "Cream"
+#~ msgstr "Kerma"
+#~ msgid "Med Gray"
+#~ msgstr "Keskiharmaa"
 #~ msgid ""
 #~ "Insert a text label (select and click in the main window where you want "
 #~ "the label)."

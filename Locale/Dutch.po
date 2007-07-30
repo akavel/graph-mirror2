@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.0.1\n"
-"POT-Creation-Date: 2007-06-27 21:32\n"
-"PO-Revision-Date: 2007-06-27 21:38+0100\n"
+"POT-Creation-Date: 2007-07-30 19:49\n"
+"PO-Revision-Date: 2007-07-30 19:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: Etienne Goemaere <etienne.goemaere@pandora.be>\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgstr "Kies waar de cursor geplaatst moet worden als je de figuur aanklikt."
 #. Form1..MainMenu..Function_("Function")..Caption
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
 #. Form1..ActionManager..EditAction("Edit...")..Category
@@ -216,10 +216,6 @@ msgstr "Importeer"
 #. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Bewerken"
-
-#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
-msgid "Insert shading..."
-msgstr "Arceer"
 
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
@@ -343,7 +339,20 @@ msgstr "Plaats het label rechts van de y-as bovenaan het beeld."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form6("Text label")..ColorBox1..CustomName
+#. Form6("Text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Standaard"
 
@@ -524,11 +533,11 @@ msgstr "Voeg raaklijn/normaal in."
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Voeg een raaklijn of normale in voor de geselecteerde functie"
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
-msgid "Insert shade..."
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
+msgid "Insert shading..."
 msgstr "Arceer"
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 msgid "Add shading to the selected function."
 msgstr "Breng een arcerring aan bij de geselecteerde functie."
 
@@ -1628,6 +1637,7 @@ msgid "Insert shading"
 msgstr "Arceer"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
 msgid "Shading"
 msgstr "Arcering"
 
@@ -2553,6 +2563,11 @@ msgstr "Tekstkleur"
 msgid "Select background color of the text label."
 msgstr "Kies achtergrond voor tekstlabel."
 
+#. Form6("Text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
+msgid "Transparent"
+msgstr "Transparant"
+
 #. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Laatste actie ongedaan"
@@ -2612,10 +2627,6 @@ msgstr "Kies functie of raaklijnom te evalueren."
 msgid "Error"
 msgstr "Fout"
 
-#. Default name in Insert shading dialog
-msgid "Shade"
-msgstr "Arceer"
-
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Lengte"
@@ -2627,10 +2638,6 @@ msgstr "Label"
 #. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-fout"
-
-#. May be selected as background color in Insert label dialog
-msgid "Transparent"
-msgstr "Transparant"
 
 #. Shown in the function list
 msgid "Axes"
@@ -2934,7 +2941,7 @@ msgstr "Bestand niet gevonden: %s"
 
 msgid ""
 "Error reading file: %s\n"
-" The file is not a correct Graph file."
+"The file is not a correct Graph file."
 msgstr ""
 "Fout bij lezen  bestand: %s\n"
 "Bestand is geen geldig Graph-bestand."
@@ -3416,65 +3423,14 @@ msgstr "Als je kiest voor Opslaan als figuur kan via een Optie drukknop de figuu
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Puntenreeksen kunnen met pijlen aangeduid worden. Puntenreeksen met pijlen kunnen gebruikt worden om vectoren voor te stellen"
 
-msgid "Black"
-msgstr "Zwart"
+msgid "Insert symbol"
+msgstr "Voeg een symbool in"
 
-msgid "Maroon"
-msgstr "Bruin"
+msgid "Subset:"
+msgstr "Deelverzameling:"
 
-msgid "Green"
-msgstr "Groen"
-
-msgid "Olive"
-msgstr "Olijfkleurig"
-
-msgid "Navy"
-msgstr "Marineblauw"
-
-msgid "Purple"
-msgstr "Purper"
-
-msgid "Teal"
-msgstr "Donkergroen"
-
-msgid "Gray"
-msgstr "Grijs"
-
-msgid "Silver"
-msgstr "Zilverkleurig"
-
-msgid "Red"
-msgstr "Rood"
-
-msgid "Lime"
-msgstr "Citroengeel"
-
-msgid "Yellow"
-msgstr "Geel"
-
-msgid "Blue"
-msgstr "Blauw"
-
-msgid "Fuchsia"
-msgstr "Fuchsia"
-
-msgid "Aqua"
-msgstr "Aqua"
-
-msgid "White"
-msgstr "Wit"
-
-msgid "Money Green"
-msgstr "Muntgrijs"
-
-msgid "Sky Blue"
-msgstr "Hemels blauw"
-
-msgid "Cream"
-msgstr "Roomkleurig"
-
-msgid "Med Gray"
-msgstr "Licht grijs"
+msgid "Insert"
+msgstr "Voeg in"
 
 msgid "Customize"
 msgstr "Pas aan"
@@ -3490,15 +3446,6 @@ msgstr "Lokaal"
 
 msgid "Global"
 msgstr "Globaal"
-
-msgid "Insert"
-msgstr "Voeg in"
-
-msgid "Insert symbol"
-msgstr "Voeg een symbool in"
-
-msgid "Subset:"
-msgstr "Deelverzameling:"
 
 #. PrintFrm("Print")..Caption
 msgid "Print"
@@ -3581,6 +3528,50 @@ msgstr "Aantal kopies:"
 msgid "Enter percent of original size."
 msgstr "Voer procent van het orgineel in."
 
+#~ msgid "Insert shade..."
+#~ msgstr "Arceer"
+#~ msgid "Shade"
+#~ msgstr "Arceer"
+#~ msgid "Black"
+#~ msgstr "Zwart"
+#~ msgid "Maroon"
+#~ msgstr "Bruin"
+#~ msgid "Green"
+#~ msgstr "Groen"
+#~ msgid "Olive"
+#~ msgstr "Olijfkleurig"
+#~ msgid "Navy"
+#~ msgstr "Marineblauw"
+#~ msgid "Purple"
+#~ msgstr "Purper"
+#~ msgid "Teal"
+#~ msgstr "Donkergroen"
+#~ msgid "Gray"
+#~ msgstr "Grijs"
+#~ msgid "Silver"
+#~ msgstr "Zilverkleurig"
+#~ msgid "Red"
+#~ msgstr "Rood"
+#~ msgid "Lime"
+#~ msgstr "Citroengeel"
+#~ msgid "Yellow"
+#~ msgstr "Geel"
+#~ msgid "Blue"
+#~ msgstr "Blauw"
+#~ msgid "Fuchsia"
+#~ msgstr "Fuchsia"
+#~ msgid "Aqua"
+#~ msgstr "Aqua"
+#~ msgid "White"
+#~ msgstr "Wit"
+#~ msgid "Money Green"
+#~ msgstr "Muntgrijs"
+#~ msgid "Sky Blue"
+#~ msgstr "Hemels blauw"
+#~ msgid "Cream"
+#~ msgstr "Roomkleurig"
+#~ msgid "Med Gray"
+#~ msgstr "Licht grijs"
 #~ msgid ""
 #~ "Insert a text label (select and click in the main window where you want "
 #~ "the label)."

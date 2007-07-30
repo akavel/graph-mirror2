@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-27 21:32\n"
-"PO-Revision-Date: 2007-06-27 21:41+0100\n"
+"POT-Creation-Date: 2007-07-30 19:49\n"
+"PO-Revision-Date: 2007-07-30 19:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -96,7 +96,7 @@ msgstr "Chọn nơi con trỏ chuôt sẽ đựoc đặt khi bạn nhấn lên h
 #. Form1..MainMenu..Function_("Function")..Caption
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
 #. Form1..ActionManager..EditAction("Edit...")..Category
@@ -215,11 +215,6 @@ msgstr "Nhập"
 #. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Chỉnh sửa"
-
-#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
-#, fuzzy
-msgid "Insert shading..."
-msgstr "Chèn bóng..."
 
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
@@ -343,7 +338,20 @@ msgstr "Vị trí tên sẽ nằm bên trên và ngay bên phải trục y."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form6("Text label")..ColorBox1..CustomName
+#. Form6("Text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Tùy chọn..."
 
@@ -524,11 +532,12 @@ msgstr "Chèn tiếp tuyến/đường thẳng..."
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Chèn một tiếp tuyến hoặc một đường thẳng vào hàm được chọn."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
-msgid "Insert shade..."
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
+#, fuzzy
+msgid "Insert shading..."
 msgstr "Chèn bóng..."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 msgid "Add shading to the selected function."
 msgstr "Chèn bóng vào hàm được chọn."
 
@@ -1630,6 +1639,7 @@ msgid "Insert shading"
 msgstr "Chèn bóng"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
 msgid "Shading"
 msgstr "Bóng"
 
@@ -2558,6 +2568,11 @@ msgstr "Màu chữ."
 msgid "Select background color of the text label."
 msgstr "Chọn màu nền cho nhãn chữ."
 
+#. Form6("Text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
+msgid "Transparent"
+msgstr "Trong suốt"
+
 #. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Trở về thao tác trước đó."
@@ -2617,10 +2632,6 @@ msgstr "Chọn một hàm số hoặc thông số của điểm tiếp xúc."
 msgid "Error"
 msgstr "Lỗi"
 
-#. Default name in Insert shading dialog
-msgid "Shade"
-msgstr "Độ bóng"
-
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Độ dài"
@@ -2632,10 +2643,6 @@ msgstr "Nhãn tên"
 #. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-Lỗi"
-
-#. May be selected as background color in Insert label dialog
-msgid "Transparent"
-msgstr "Trong suốt"
 
 #. Shown in the function list
 msgid "Axes"
@@ -2939,7 +2946,7 @@ msgstr "Không tìm thấy tập tin: %s"
 
 msgid ""
 "Error reading file: %s\n"
-" The file is not a correct Graph file."
+"The file is not a correct Graph file."
 msgstr ""
 "Lỗi khi đọc tập tin: %s\n"
 "Tập tin này không phải là một tập tin Graph."
@@ -3418,65 +3425,14 @@ msgstr "Trong cửa sổ lưu hình ảnh có một nút tùy chọn mà bạn c
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Tập hợp điểm có thể đánh dấu bằng những mũi tên. Một tập hợp điểm đánh dấu bằng những mũi tên và những đường thẳng giữa các điểm có thể được sử dụng để hiển thị các vectơ."
 
-msgid "Black"
-msgstr "Đen"
+msgid "Insert symbol"
+msgstr "Chèn ký hiệu"
 
-msgid "Maroon"
-msgstr "Nâu sẫm"
+msgid "Subset:"
+msgstr "Tập hợp con:"
 
-msgid "Green"
-msgstr "Xanh lá cây"
-
-msgid "Olive"
-msgstr "Ô-liu"
-
-msgid "Navy"
-msgstr "Xanh đen"
-
-msgid "Purple"
-msgstr "Đỏ tía"
-
-msgid "Teal"
-msgstr "Trà"
-
-msgid "Gray"
-msgstr "Xám"
-
-msgid "Silver"
-msgstr "Bạc"
-
-msgid "Red"
-msgstr "Đỏ"
-
-msgid "Lime"
-msgstr "Vàng chanh"
-
-msgid "Yellow"
-msgstr "Vàng"
-
-msgid "Blue"
-msgstr "Xanh dương"
-
-msgid "Fuchsia"
-msgstr "Hồng"
-
-msgid "Aqua"
-msgstr "Xanh ngọc"
-
-msgid "White"
-msgstr "Trắng"
-
-msgid "Money Green"
-msgstr "Xanh lá cây nhạt"
-
-msgid "Sky Blue"
-msgstr "Xanh da trời"
-
-msgid "Cream"
-msgstr "Kem"
-
-msgid "Med Gray"
-msgstr "Xám nhạt"
+msgid "Insert"
+msgstr "Chèn"
 
 msgid "Customize"
 msgstr "Tùy biến"
@@ -3492,15 +3448,6 @@ msgstr "Cục bộ"
 
 msgid "Global"
 msgstr "Toàn cục"
-
-msgid "Insert"
-msgstr "Chèn"
-
-msgid "Insert symbol"
-msgstr "Chèn ký hiệu"
-
-msgid "Subset:"
-msgstr "Tập hợp con:"
 
 #. PrintFrm("Print")..Caption
 msgid "Print"
@@ -3583,6 +3530,50 @@ msgstr "Chọn số bản để in."
 msgid "Enter percent of original size."
 msgstr "Nhập phần trăm so vơi kích cỡ gốc."
 
+#~ msgid "Insert shade..."
+#~ msgstr "Chèn bóng..."
+#~ msgid "Shade"
+#~ msgstr "Độ bóng"
+#~ msgid "Black"
+#~ msgstr "Đen"
+#~ msgid "Maroon"
+#~ msgstr "Nâu sẫm"
+#~ msgid "Green"
+#~ msgstr "Xanh lá cây"
+#~ msgid "Olive"
+#~ msgstr "Ô-liu"
+#~ msgid "Navy"
+#~ msgstr "Xanh đen"
+#~ msgid "Purple"
+#~ msgstr "Đỏ tía"
+#~ msgid "Teal"
+#~ msgstr "Trà"
+#~ msgid "Gray"
+#~ msgstr "Xám"
+#~ msgid "Silver"
+#~ msgstr "Bạc"
+#~ msgid "Red"
+#~ msgstr "Đỏ"
+#~ msgid "Lime"
+#~ msgstr "Vàng chanh"
+#~ msgid "Yellow"
+#~ msgstr "Vàng"
+#~ msgid "Blue"
+#~ msgstr "Xanh dương"
+#~ msgid "Fuchsia"
+#~ msgstr "Hồng"
+#~ msgid "Aqua"
+#~ msgstr "Xanh ngọc"
+#~ msgid "White"
+#~ msgstr "Trắng"
+#~ msgid "Money Green"
+#~ msgstr "Xanh lá cây nhạt"
+#~ msgid "Sky Blue"
+#~ msgstr "Xanh da trời"
+#~ msgid "Cream"
+#~ msgstr "Kem"
+#~ msgid "Med Gray"
+#~ msgstr "Xám nhạt"
 #~ msgid ""
 #~ "Insert a text label (select and click in the main window where you want "
 #~ "the label)."

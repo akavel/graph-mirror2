@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-27 21:32\n"
+"POT-Creation-Date: 2007-07-30 19:49\n"
 "PO-Revision-Date: 2007-02-19 22:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -112,7 +112,7 @@ msgstr "Καθορίστε πού θα τοποθετηθεί ο δείκτης 
 #. Form1..MainMenu..Function_("Function")..Caption
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
 #. Form1..ActionManager..EditAction("Edit...")..Category
@@ -242,11 +242,6 @@ msgstr "Εισαγωγή"
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
-#, fuzzy
-msgid "Insert shading..."
-msgstr "Εισαγωγή γραμμοσκίασης... "
-
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
 #. Form1..ActionManager..ZoomOutAction("Out")..Category
@@ -371,7 +366,20 @@ msgstr "Δεξιά του άξονα των y, στην κορυφή της ει
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form6("Text label")..ColorBox1..CustomName
+#. Form6("Text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Προσαρμοσμένα..."
 
@@ -559,11 +567,12 @@ msgstr "Εισαγωγή εφαπτομένης/κάθετης..."
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Εισαγωγή νέας εφαπτομένης στην επιλεγμένη συνάρτηση."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
-msgid "Insert shade..."
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
+#, fuzzy
+msgid "Insert shading..."
 msgstr "Εισαγωγή γραμμοσκίασης... "
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 #, fuzzy
 msgid "Add shading to the selected function."
 msgstr "Εισαγωγή γραμμοσκίασης σε μία συνάρτηση."
@@ -1734,6 +1743,7 @@ msgid "Insert shading"
 msgstr "Εισαγωγή γραμμοσκίασης"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
 msgid "Shading"
 msgstr "Γραμμοσκίαση"
 
@@ -2771,6 +2781,11 @@ msgstr "Χρώμα κειμένου"
 msgid "Select background color of the text label."
 msgstr "Επιλογή γραμματοσειράς τίτλου."
 
+#. Form6("Text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
+msgid "Transparent"
+msgstr "Διαφανές"
+
 #. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Αναίρεση τελευταίας ενέργειας."
@@ -2831,10 +2846,6 @@ msgstr "Επιλογή συνάρτησης ή εφαπτομένης για υ�
 msgid "Error"
 msgstr "Σφάλμα"
 
-#. Default name in Insert shading dialog
-msgid "Shade"
-msgstr "Γραμμοσκίαση"
-
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Μήκος"
@@ -2846,10 +2857,6 @@ msgstr "Ετικέτα"
 #. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-σφάλμα"
-
-#. May be selected as background color in Insert label dialog
-msgid "Transparent"
-msgstr "Διαφανές"
 
 #. Shown in the function list
 msgid "Axes"
@@ -3172,7 +3179,7 @@ msgstr "Ο φάκελλος δεν βρέθηκε: %s"
 #, fuzzy
 msgid ""
 "Error reading file: %s\n"
-" The file is not a correct Graph file."
+"The file is not a correct Graph file."
 msgstr ""
 "Σφάλμα ανάγνωσης αρχείου: %s\n"
 "Το αρχείο δεν είναι σωστό graph αρχείο"
@@ -3922,65 +3929,14 @@ msgstr ""
 "βέλη και γραμμές μεταξυ των σημείων χρησιμοποιείται για την παράσταση "
 "διανυσμάτων."
 
-msgid "Black"
-msgstr "Μαύρο"
+msgid "Insert symbol"
+msgstr "Εισαγωγή συμβόλου"
 
-msgid "Maroon"
-msgstr "Βυσσινί"
+msgid "Subset:"
+msgstr "Αντικείμενο:"
 
-msgid "Green"
-msgstr "Πράσινο"
-
-msgid "Olive"
-msgstr "Λαδί"
-
-msgid "Navy"
-msgstr "Μπλε-Γκρι"
-
-msgid "Purple"
-msgstr "Βιολετί"
-
-msgid "Teal"
-msgstr "Πετρόλ"
-
-msgid "Gray"
-msgstr "Γκρι"
-
-msgid "Silver"
-msgstr "Ασημί"
-
-msgid "Red"
-msgstr "Κόκκινο"
-
-msgid "Lime"
-msgstr "Φωτεινό πράσινο"
-
-msgid "Yellow"
-msgstr "Κίτρινο"
-
-msgid "Blue"
-msgstr "Μπλε"
-
-msgid "Fuchsia"
-msgstr "Ροζ"
-
-msgid "Aqua"
-msgstr "Τυρκουάζ"
-
-msgid "White"
-msgstr "Λευκό"
-
-msgid "Money Green"
-msgstr "Πράσινο ανοιχτό"
-
-msgid "Sky Blue"
-msgstr "Παλ μπλε"
-
-msgid "Cream"
-msgstr "Κρεμ"
-
-msgid "Med Gray"
-msgstr "Γκρι ανοιχτό"
+msgid "Insert"
+msgstr "Εισαγωγή"
 
 msgid "Customize"
 msgstr "Προσαρμογή"
@@ -3997,15 +3953,6 @@ msgstr "Πετρόλ"
 
 msgid "Global"
 msgstr "Γενικά"
-
-msgid "Insert"
-msgstr "Εισαγωγή"
-
-msgid "Insert symbol"
-msgstr "Εισαγωγή συμβόλου"
-
-msgid "Subset:"
-msgstr "Αντικείμενο:"
 
 #. PrintFrm("Print")..Caption
 msgid "Print"
@@ -4098,6 +4045,72 @@ msgstr "Αριθμός αντιτύπων:"
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Βάλτε ποσοστό του κανονικού μεγέθους."
+
+#~ msgid "Insert shade..."
+#~ msgstr "Εισαγωγή γραμμοσκίασης... "
+
+#~ msgid "Shade"
+#~ msgstr "Γραμμοσκίαση"
+
+#~ msgid "Black"
+#~ msgstr "Μαύρο"
+
+#~ msgid "Maroon"
+#~ msgstr "Βυσσινί"
+
+#~ msgid "Green"
+#~ msgstr "Πράσινο"
+
+#~ msgid "Olive"
+#~ msgstr "Λαδί"
+
+#~ msgid "Navy"
+#~ msgstr "Μπλε-Γκρι"
+
+#~ msgid "Purple"
+#~ msgstr "Βιολετί"
+
+#~ msgid "Teal"
+#~ msgstr "Πετρόλ"
+
+#~ msgid "Gray"
+#~ msgstr "Γκρι"
+
+#~ msgid "Silver"
+#~ msgstr "Ασημί"
+
+#~ msgid "Red"
+#~ msgstr "Κόκκινο"
+
+#~ msgid "Lime"
+#~ msgstr "Φωτεινό πράσινο"
+
+#~ msgid "Yellow"
+#~ msgstr "Κίτρινο"
+
+#~ msgid "Blue"
+#~ msgstr "Μπλε"
+
+#~ msgid "Fuchsia"
+#~ msgstr "Ροζ"
+
+#~ msgid "Aqua"
+#~ msgstr "Τυρκουάζ"
+
+#~ msgid "White"
+#~ msgstr "Λευκό"
+
+#~ msgid "Money Green"
+#~ msgstr "Πράσινο ανοιχτό"
+
+#~ msgid "Sky Blue"
+#~ msgstr "Παλ μπλε"
+
+#~ msgid "Cream"
+#~ msgstr "Κρεμ"
+
+#~ msgid "Med Gray"
+#~ msgstr "Γκρι ανοιχτό"
 
 #~ msgid ""
 #~ "Insert a text label (select and click in the main window where you want "

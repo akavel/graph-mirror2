@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-27 21:32\n"
-"PO-Revision-Date: 2007-07-01 20:37+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2007-07-30 19:49\n"
+"PO-Revision-Date: 2007-07-30 19:55+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -97,7 +97,7 @@ msgstr "Välj var markören skall placeras då du klickar på bilden."
 #. Form1..MainMenu..Function_("Function")..Caption
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
 #. Form1..ActionManager..EditAction("Edit...")..Category
@@ -216,11 +216,6 @@ msgstr "Importera"
 #. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Redigera"
-
-# Funktion-menyn
-#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
-msgid "Insert shading..."
-msgstr "Skuggning..."
 
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
@@ -344,7 +339,20 @@ msgstr "Placera etiketten till höger om y-axeln, i toppen av bilden."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form6("Text label")..ColorBox1..CustomName
+#. Form6("Text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Välj..."
 
@@ -554,13 +562,13 @@ msgid "Insert a tangent or normal for the selected function."
 msgstr "Lägg till en ny tangent eller normal för den valda funktionen."
 
 # Funktion-menyn
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
-msgid "Insert shade..."
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
+msgid "Insert shading..."
 msgstr "Skuggning..."
 
 # Funktion-menyn
 # Meddelandelist
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 msgid "Add shading to the selected function."
 msgstr "Lägg till skuggning till den valda funktionen."
 
@@ -1747,6 +1755,7 @@ msgid "Insert shading"
 msgstr "Lägg till skuggning"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
 msgid "Shading"
 msgstr "Skuggning"
 
@@ -2675,6 +2684,11 @@ msgstr "Färg på texten."
 msgid "Select background color of the text label."
 msgstr "Välj bakgrundsfärg för textetiketten."
 
+#. Form6("Text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
+msgid "Transparent"
+msgstr "Transparent"
+
 #. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Ångra senaste kommando."
@@ -2734,10 +2748,6 @@ msgstr "Välj en funktion eller tangent att utvärdera."
 msgid "Error"
 msgstr "Fel"
 
-#. Default name in Insert shading dialog
-msgid "Shade"
-msgstr "Skuggning"
-
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Längd"
@@ -2749,10 +2759,6 @@ msgstr "Etikett"
 #. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-fel"
-
-#. May be selected as background color in Insert label dialog
-msgid "Transparent"
-msgstr "Transparent"
 
 #. Shown in the function list
 msgid "Axes"
@@ -3054,7 +3060,7 @@ msgstr "Filen hittades inte: %s"
 
 msgid ""
 "Error reading file: %s\n"
-" The file is not a correct Graph file."
+"The file is not a correct Graph file."
 msgstr ""
 "Fel när filen: %s\n"
 "lästes. Den är inte en Graph-fil."
@@ -3534,65 +3540,14 @@ msgstr "I dialogrutan för 'Spara som bild' finns det en knapp för 'Inställnin
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Punktserier kan ha pilar som markörer. En punktserie med pilar som markörer, och linjer mellan markörerna, skulle kunna användas till att åskådliggöra vektorer."
 
-msgid "Black"
-msgstr "Svart"
+msgid "Insert symbol"
+msgstr "Lägg till symbol"
 
-msgid "Maroon"
-msgstr "Rödbrun"
+msgid "Subset:"
+msgstr "Delmängd:"
 
-msgid "Green"
-msgstr "Grön"
-
-msgid "Olive"
-msgstr "Olivfärgad"
-
-msgid "Navy"
-msgstr "Marinblå"
-
-msgid "Purple"
-msgstr "Mörklila"
-
-msgid "Teal"
-msgstr "Blågrön"
-
-msgid "Gray"
-msgstr "Grå"
-
-msgid "Silver"
-msgstr "Silver"
-
-msgid "Red"
-msgstr "Röd"
-
-msgid "Lime"
-msgstr "Limegrön"
-
-msgid "Yellow"
-msgstr "Gul"
-
-msgid "Blue"
-msgstr "Blå"
-
-msgid "Fuchsia"
-msgstr "Cerise"
-
-msgid "Aqua"
-msgstr "Akvamarin"
-
-msgid "White"
-msgstr "Vit"
-
-msgid "Money Green"
-msgstr "Mintgrön"
-
-msgid "Sky Blue"
-msgstr "Himmelsblå"
-
-msgid "Cream"
-msgstr "Krämfärgad"
-
-msgid "Med Gray"
-msgstr "Medelgrå"
+msgid "Insert"
+msgstr "Lägg till"
 
 msgid "Customize"
 msgstr "Anpassa"
@@ -3608,15 +3563,6 @@ msgstr "Lokal"
 
 msgid "Global"
 msgstr "Global"
-
-msgid "Insert"
-msgstr "Lägg till"
-
-msgid "Insert symbol"
-msgstr "Lägg till symbol"
-
-msgid "Subset:"
-msgstr "Delmängd:"
 
 # Visas i namnlisten i dialogrutan utskrift
 #. PrintFrm("Print")..Caption
@@ -3713,6 +3659,51 @@ msgstr "Välj antal kopior att skriva ut."
 msgid "Enter percent of original size."
 msgstr "Välj procent av originalstorlek."
 
+# Funktion-menyn
+#~ msgid "Insert shade..."
+#~ msgstr "Skuggning..."
+#~ msgid "Shade"
+#~ msgstr "Skuggning"
+#~ msgid "Black"
+#~ msgstr "Svart"
+#~ msgid "Maroon"
+#~ msgstr "Rödbrun"
+#~ msgid "Green"
+#~ msgstr "Grön"
+#~ msgid "Olive"
+#~ msgstr "Olivfärgad"
+#~ msgid "Navy"
+#~ msgstr "Marinblå"
+#~ msgid "Purple"
+#~ msgstr "Mörklila"
+#~ msgid "Teal"
+#~ msgstr "Blågrön"
+#~ msgid "Gray"
+#~ msgstr "Grå"
+#~ msgid "Silver"
+#~ msgstr "Silver"
+#~ msgid "Red"
+#~ msgstr "Röd"
+#~ msgid "Lime"
+#~ msgstr "Limegrön"
+#~ msgid "Yellow"
+#~ msgstr "Gul"
+#~ msgid "Blue"
+#~ msgstr "Blå"
+#~ msgid "Fuchsia"
+#~ msgstr "Cerise"
+#~ msgid "Aqua"
+#~ msgstr "Akvamarin"
+#~ msgid "White"
+#~ msgstr "Vit"
+#~ msgid "Money Green"
+#~ msgstr "Mintgrön"
+#~ msgid "Sky Blue"
+#~ msgstr "Himmelsblå"
+#~ msgid "Cream"
+#~ msgstr "Krämfärgad"
+#~ msgid "Med Gray"
+#~ msgstr "Medelgrå"
 #~ msgid ""
 #~ "Insert a text label (select and click in the main window where you want "
 #~ "the label)."
@@ -3723,7 +3714,6 @@ msgstr "Välj procent av originalstorlek."
 #~ msgstr "Klipp ur vald text till Windows urklipp."
 #~ msgid "Open an animation file."
 #~ msgstr "Öppna en animeringsfil."
-
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Version"
