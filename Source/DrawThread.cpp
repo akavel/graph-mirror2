@@ -1241,7 +1241,7 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
   int dS2 = M2;
 
   double s2 = s2Min;
-  for(int S2 = S2Min; S2 < S2Max; S2 += dS2, s2 += ds2 * dS2)
+  for(int S2 = S2Min; S2 < S2Max && !Aborted; S2 += dS2, s2 += ds2 * dS2)
   {
     Args[Loop] = s2;
     double Result[3] = {NAN, NAN};
@@ -1269,9 +1269,6 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
       else
       Result[0] = Result[1], Result[1] = Result[2];
     }
-
-    if(Aborted)
-      return;
   }
 }
 //---------------------------------------------------------------------------
@@ -1289,7 +1286,9 @@ void TDrawThread::CreateEquation(TRelation &Relation)
     Synchronize(&Form1->ShowStatusError, AnsiString("The relation is too complex to plot under Windows 9x"));
     Points.clear();
   }
-  Relation.Region.reset(new TRegion(Points));
+
+  if(!Aborted)
+    Relation.Region.reset(new TRegion(Points));
 }
 //---------------------------------------------------------------------------
 void TDrawThread::Visit(TRelation &Relation)
