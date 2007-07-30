@@ -1131,7 +1131,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
 {
   double dx = 1/Draw->xScale;
   double dy = -1/Draw->yScale;
-  int dX = Draw->Width > 1200 ? Draw->Width / 120 : 10;
+  int dX = Draw->Width > 1200 ? Draw->Width / 120 : 5;
 
   std::vector<TRect> Points;
   Points.reserve(500);
@@ -1237,7 +1237,7 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
   int S1Max = Loop ? AxesRect.Right + 1 : AxesRect.Bottom + 1;
   int S2Max = Loop ? AxesRect.Bottom + 1 : AxesRect.Right + 1;
 
-  int dS1 = Draw->Width > 1200 ? Draw->Width / 120 : 10;
+  int dS1 = Draw->Width > 1200 ? Draw->Width / 120 : 5;
   int dS2 = M2;
 
   double s2 = s2Min;
