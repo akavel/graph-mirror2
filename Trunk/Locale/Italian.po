@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2007-06-27 21:32\n"
-"PO-Revision-Date: 2007-06-27 21:40+0100\n"
+"POT-Creation-Date: 2007-07-30 19:49\n"
+"PO-Revision-Date: 2007-07-30 19:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -95,7 +95,7 @@ msgstr "Seleziona dove sarà posizionato il cursore quando si clicca sull'immagi
 #. Form1..MainMenu..Function_("Function")..Caption
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
 #. Form1..ActionManager..EditAction("Edit...")..Category
@@ -214,10 +214,6 @@ msgstr "Importa"
 #. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Modifica"
-
-#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
-msgid "Insert shading..."
-msgstr "Inserisci ombreggiatura..."
 
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
@@ -341,7 +337,20 @@ msgstr "Posiziona l'etichetta alla destra dell'asse y sopra l'immagine."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form6("Text label")..ColorBox1..CustomName
+#. Form6("Text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Personalizza..."
 
@@ -522,11 +531,11 @@ msgstr "Inserisci tangente/perpendicolare..."
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Inserisci una tangente o una perpendicolare alla funzione selezionata."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
-msgid "Insert shade..."
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
+msgid "Insert shading..."
 msgstr "Inserisci ombreggiatura..."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 msgid "Add shading to the selected function."
 msgstr "Aggiungi ombreggiatura alla funzione selezionata."
 
@@ -1627,6 +1636,7 @@ msgid "Insert shading"
 msgstr "Inserisci ombreggiatura"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
 msgid "Shading"
 msgstr "Ombreggiatura"
 
@@ -2552,6 +2562,11 @@ msgstr "Colore del  testo."
 msgid "Select background color of the text label."
 msgstr "Seleziona il colore di sfondo per l'etichetta di testo."
 
+#. Form6("Text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
+msgid "Transparent"
+msgstr "Trasparente"
+
 #. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Annulla ultima azione."
@@ -2611,10 +2626,6 @@ msgstr "Seleziona una funzione o tangente da valutare."
 msgid "Error"
 msgstr "Errore"
 
-#. Default name in Insert shading dialog
-msgid "Shade"
-msgstr "Ombreggiatura"
-
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Lunghezza"
@@ -2626,10 +2637,6 @@ msgstr "Etichetta"
 #. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-errore"
-
-#. May be selected as background color in Insert label dialog
-msgid "Transparent"
-msgstr "Trasparente"
 
 #. Shown in the function list
 msgid "Axes"
@@ -2933,7 +2940,7 @@ msgstr "File non trovato: %s"
 
 msgid ""
 "Error reading file: %s\n"
-" The file is not a correct Graph file."
+"The file is not a correct Graph file."
 msgstr ""
 "Errore in lettura del file: %s\n"
 "Il file non è un file di Graph corretto."
@@ -3416,65 +3423,14 @@ msgstr "Nella finestra 'Salva come immagine', il pulsante 'Opzioni' permette di 
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Una serie di punti può avere delle frecce come marcatori. La serie di punti avente delle frecce come marcatori e delle linee tra i punti, può essere usata per visualizzare vettori."
 
-msgid "Black"
-msgstr "Nero"
+msgid "Insert symbol"
+msgstr "Inserisci simbolo"
 
-msgid "Maroon"
-msgstr "Marrone"
+msgid "Subset:"
+msgstr "Sottoinsieme:"
 
-msgid "Green"
-msgstr "Verde"
-
-msgid "Olive"
-msgstr "Verde oliva"
-
-msgid "Navy"
-msgstr "Blu marino"
-
-msgid "Purple"
-msgstr "Porpora"
-
-msgid "Teal"
-msgstr "Teal"
-
-msgid "Gray"
-msgstr "Grigio"
-
-msgid "Silver"
-msgstr "Argento"
-
-msgid "Red"
-msgstr "Rosso"
-
-msgid "Lime"
-msgstr "Lime"
-
-msgid "Yellow"
-msgstr "Giallo"
-
-msgid "Blue"
-msgstr "Blu"
-
-msgid "Fuchsia"
-msgstr "Fucsia"
-
-msgid "Aqua"
-msgstr "Celeste"
-
-msgid "White"
-msgstr "Bianco"
-
-msgid "Money Green"
-msgstr "Verde scuro"
-
-msgid "Sky Blue"
-msgstr "Azzurro"
-
-msgid "Cream"
-msgstr "Crema"
-
-msgid "Med Gray"
-msgstr "Grigio medio"
+msgid "Insert"
+msgstr "Inserisci"
 
 msgid "Customize"
 msgstr "Personalizza"
@@ -3490,15 +3446,6 @@ msgstr "Locale"
 
 msgid "Global"
 msgstr "Globale"
-
-msgid "Insert"
-msgstr "Inserisci"
-
-msgid "Insert symbol"
-msgstr "Inserisci simbolo"
-
-msgid "Subset:"
-msgstr "Sottoinsieme:"
 
 #. PrintFrm("Print")..Caption
 msgid "Print"
@@ -3581,6 +3528,50 @@ msgstr "Numero di copie da stampare."
 msgid "Enter percent of original size."
 msgstr "Scala in proporzione alla dimensione originale."
 
+#~ msgid "Insert shade..."
+#~ msgstr "Inserisci ombreggiatura..."
+#~ msgid "Shade"
+#~ msgstr "Ombreggiatura"
+#~ msgid "Black"
+#~ msgstr "Nero"
+#~ msgid "Maroon"
+#~ msgstr "Marrone"
+#~ msgid "Green"
+#~ msgstr "Verde"
+#~ msgid "Olive"
+#~ msgstr "Verde oliva"
+#~ msgid "Navy"
+#~ msgstr "Blu marino"
+#~ msgid "Purple"
+#~ msgstr "Porpora"
+#~ msgid "Teal"
+#~ msgstr "Teal"
+#~ msgid "Gray"
+#~ msgstr "Grigio"
+#~ msgid "Silver"
+#~ msgstr "Argento"
+#~ msgid "Red"
+#~ msgstr "Rosso"
+#~ msgid "Lime"
+#~ msgstr "Lime"
+#~ msgid "Yellow"
+#~ msgstr "Giallo"
+#~ msgid "Blue"
+#~ msgstr "Blu"
+#~ msgid "Fuchsia"
+#~ msgstr "Fucsia"
+#~ msgid "Aqua"
+#~ msgstr "Celeste"
+#~ msgid "White"
+#~ msgstr "Bianco"
+#~ msgid "Money Green"
+#~ msgstr "Verde scuro"
+#~ msgid "Sky Blue"
+#~ msgstr "Azzurro"
+#~ msgid "Cream"
+#~ msgstr "Crema"
+#~ msgid "Med Gray"
+#~ msgstr "Grigio medio"
 #~ msgid ""
 #~ "Insert a text label (select and click in the main window where you want "
 #~ "the label)."

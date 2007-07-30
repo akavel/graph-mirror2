@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-27 21:32\n"
-"PO-Revision-Date: 2007-06-27 21:39+0100\n"
+"POT-Creation-Date: 2007-07-30 19:49\n"
+"PO-Revision-Date: 2007-07-30 19:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: Magyari Gábor <magyari@kola.sulinet.hu>\n"
 "MIME-Version: 1.0\n"
@@ -98,7 +98,7 @@ msgstr "Válszd ki, mit mutasson a kurzor a képre kattintáskor."
 #. Form1..MainMenu..Function_("Function")..Caption
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
 #. Form1..ActionManager..EditAction("Edit...")..Category
@@ -217,10 +217,6 @@ msgstr "Importálás"
 #. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Szerkesztés"
-
-#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
-msgid "Insert shading..."
-msgstr "Kiszínezés"
 
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
@@ -344,7 +340,20 @@ msgstr "A cimke legyen közvetlenül jobbra az y tengelytől a kép tetején."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form6("Text label")..ColorBox1..CustomName
+#. Form6("Text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Egyéni..."
 
@@ -525,11 +534,11 @@ msgstr "Érintő/merőleges"
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Érintő hozzáadása a kiválasztott függvényhez."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
-msgid "Insert shade..."
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
+msgid "Insert shading..."
 msgstr "Kiszínezés"
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 msgid "Add shading to the selected function."
 msgstr "A függvény által meghatározott rész besatírozása."
 
@@ -1629,6 +1638,7 @@ msgid "Insert shading"
 msgstr "Színezés beszúrása"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
 msgid "Shading"
 msgstr "Színezés"
 
@@ -2554,6 +2564,11 @@ msgstr "Betűszín."
 msgid "Select background color of the text label."
 msgstr "Válaszd ki a szövegdoboz háttérerének színét."
 
+#. Form6("Text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
+msgid "Transparent"
+msgstr "Átlátszó"
+
 #. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Az utolsó művelet visszavonása."
@@ -2613,10 +2628,6 @@ msgstr "Függvény/érintő kiválasztása a számításhoz"
 msgid "Error"
 msgstr "Hiba"
 
-#. Default name in Insert shading dialog
-msgid "Shade"
-msgstr "Színezés"
-
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Ívhossz"
@@ -2628,10 +2639,6 @@ msgstr "Cimke"
 #. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-hiba"
-
-#. May be selected as background color in Insert label dialog
-msgid "Transparent"
-msgstr "Átlátszó"
 
 #. Shown in the function list
 msgid "Axes"
@@ -2934,7 +2941,7 @@ msgstr "Nem található a következő fájl: %s"
 
 msgid ""
 "Error reading file: %s\n"
-" The file is not a correct Graph file."
+"The file is not a correct Graph file."
 msgstr ""
 "Fájl olvasási hiba: %s\n"
 "A fájl nem megfelelő formátumú."
@@ -3417,65 +3424,14 @@ msgstr "A Mentés képként párbeszédablakban a Beállítások gomb segítség
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Pontsorok megjeleníthetők nyilakkal is. Ezzel a lehetőséggel akár vektorokat is ábrázolhatzunk."
 
-msgid "Black"
-msgstr "Fekete"
+msgid "Insert symbol"
+msgstr "Szimbólum beszúrása"
 
-msgid "Maroon"
-msgstr "Gesztenye"
+msgid "Subset:"
+msgstr "Részhalmaz:"
 
-msgid "Green"
-msgstr "Zöld"
-
-msgid "Olive"
-msgstr "Oliva"
-
-msgid "Navy"
-msgstr "Tenger"
-
-msgid "Purple"
-msgstr "Lila"
-
-msgid "Teal"
-msgstr "Pávakék"
-
-msgid "Gray"
-msgstr "Szürke"
-
-msgid "Silver"
-msgstr "Ezüst"
-
-msgid "Red"
-msgstr "Piros"
-
-msgid "Lime"
-msgstr "Banánzöld"
-
-msgid "Yellow"
-msgstr "Sárga"
-
-msgid "Blue"
-msgstr "Kék"
-
-msgid "Fuchsia"
-msgstr "Magenta"
-
-msgid "Aqua"
-msgstr "Türkiz"
-
-msgid "White"
-msgstr "Fehér"
-
-msgid "Money Green"
-msgstr "Világoszöld"
-
-msgid "Sky Blue"
-msgstr "Világoskék"
-
-msgid "Cream"
-msgstr "Vajszínű"
-
-msgid "Med Gray"
-msgstr "Sötétszürke"
+msgid "Insert"
+msgstr "Beszúrás"
 
 msgid "Customize"
 msgstr "Egyéni"
@@ -3491,15 +3447,6 @@ msgstr "Helyi"
 
 msgid "Global"
 msgstr "Általános"
-
-msgid "Insert"
-msgstr "Beszúrás"
-
-msgid "Insert symbol"
-msgstr "Szimbólum beszúrása"
-
-msgid "Subset:"
-msgstr "Részhalmaz:"
 
 #. PrintFrm("Print")..Caption
 msgid "Print"
@@ -3582,6 +3529,50 @@ msgstr "Másolatok száma:"
 msgid "Enter percent of original size."
 msgstr "Új méret az eredetihez képest százalékban."
 
+#~ msgid "Insert shade..."
+#~ msgstr "Kiszínezés"
+#~ msgid "Shade"
+#~ msgstr "Színezés"
+#~ msgid "Black"
+#~ msgstr "Fekete"
+#~ msgid "Maroon"
+#~ msgstr "Gesztenye"
+#~ msgid "Green"
+#~ msgstr "Zöld"
+#~ msgid "Olive"
+#~ msgstr "Oliva"
+#~ msgid "Navy"
+#~ msgstr "Tenger"
+#~ msgid "Purple"
+#~ msgstr "Lila"
+#~ msgid "Teal"
+#~ msgstr "Pávakék"
+#~ msgid "Gray"
+#~ msgstr "Szürke"
+#~ msgid "Silver"
+#~ msgstr "Ezüst"
+#~ msgid "Red"
+#~ msgstr "Piros"
+#~ msgid "Lime"
+#~ msgstr "Banánzöld"
+#~ msgid "Yellow"
+#~ msgstr "Sárga"
+#~ msgid "Blue"
+#~ msgstr "Kék"
+#~ msgid "Fuchsia"
+#~ msgstr "Magenta"
+#~ msgid "Aqua"
+#~ msgstr "Türkiz"
+#~ msgid "White"
+#~ msgstr "Fehér"
+#~ msgid "Money Green"
+#~ msgstr "Világoszöld"
+#~ msgid "Sky Blue"
+#~ msgstr "Világoskék"
+#~ msgid "Cream"
+#~ msgstr "Vajszínű"
+#~ msgid "Med Gray"
+#~ msgstr "Sötétszürke"
 #~ msgid ""
 #~ "Insert a text label (select and click in the main window where you want "
 #~ "the label)."

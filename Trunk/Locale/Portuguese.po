@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2007-06-27 21:32\n"
-"PO-Revision-Date: 2007-06-27 21:40+0100\n"
+"POT-Creation-Date: 2007-07-30 19:49\n"
+"PO-Revision-Date: 2007-07-30 19:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgstr "Selecione onde o cursor será colocado quando você clicar sobre a image
 #. Form1..MainMenu..Function_("Function")..Caption
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
 #. Form1..ActionManager..EditAction("Edit...")..Category
@@ -219,10 +219,6 @@ msgstr "Importar"
 #. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Editar"
-
-#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
-msgid "Insert shading..."
-msgstr "Inserir sombra..."
 
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
@@ -346,7 +342,20 @@ msgstr "Mostra o rótulo no topo da janela à direita do eixo-y."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form6("Text label")..ColorBox1..CustomName
+#. Form6("Text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Personalizado"
 
@@ -527,11 +536,11 @@ msgstr "Inserir tangente/normal..."
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Insere uma nova tangente ou normal para a função selecionada."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
-msgid "Insert shade..."
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
+msgid "Insert shading..."
 msgstr "Inserir sombra..."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 msgid "Add shading to the selected function."
 msgstr "Adiciona um sombreamento para a função selecionada."
 
@@ -1632,6 +1641,7 @@ msgid "Insert shading"
 msgstr "Inserir sombra"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
 msgid "Shading"
 msgstr "Sombreando"
 
@@ -2557,6 +2567,11 @@ msgstr "Cor do texto."
 msgid "Select background color of the text label."
 msgstr "Selecione a cor do fundo para o título do rótulo."
 
+#. Form6("Text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
+msgid "Transparent"
+msgstr "Transparente"
+
 #. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Desfazer a última ação."
@@ -2616,10 +2631,6 @@ msgstr "Selecione uma função ou tangente para o cálculo."
 msgid "Error"
 msgstr "Erro"
 
-#. Default name in Insert shading dialog
-msgid "Shade"
-msgstr "Sombra"
-
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Comprimento"
@@ -2631,10 +2642,6 @@ msgstr "Rótulo"
 #. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-erro"
-
-#. May be selected as background color in Insert label dialog
-msgid "Transparent"
-msgstr "Transparente"
 
 #. Shown in the function list
 msgid "Axes"
@@ -2938,10 +2945,10 @@ msgstr "Arquivo não encontrado: %s"
 
 msgid ""
 "Error reading file: %s\n"
-" The file is not a correct Graph file."
+"The file is not a correct Graph file."
 msgstr ""
 "Erro na leitura do arquivo: %s\n"
-" não é uma arquivo válido para o Graph"
+"não é uma arquivo válido para o Graph"
 
 msgid "Unknown error while reading file: %s"
 msgstr "Erro desconhecido ao ler o arquivo: %s"
@@ -3418,65 +3425,14 @@ msgstr "Na janela de diálogos Salvar como imagem existe um botão Opção onde 
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Série de pontos pode ter setas como marcas dos pontos.  Uma série de pontos com setas como marcas e linhas entre os pontos podem ser úteis para serem usados como vetores."
 
-msgid "Black"
-msgstr "Preto"
+msgid "Insert symbol"
+msgstr "Inserir símbolo"
 
-msgid "Maroon"
-msgstr "Castanho"
+msgid "Subset:"
+msgstr "Subconjunto:"
 
-msgid "Green"
-msgstr "Verde"
-
-msgid "Olive"
-msgstr "Verde oliva"
-
-msgid "Navy"
-msgstr "Azul marinho"
-
-msgid "Purple"
-msgstr "Violeta"
-
-msgid "Teal"
-msgstr "Verde teal"
-
-msgid "Gray"
-msgstr "Cinza"
-
-msgid "Silver"
-msgstr "Prata"
-
-msgid "Red"
-msgstr "Vermelho"
-
-msgid "Lime"
-msgstr "Verde limão"
-
-msgid "Yellow"
-msgstr "Amarelo"
-
-msgid "Blue"
-msgstr "Azul"
-
-msgid "Fuchsia"
-msgstr "Cor-de-rosa"
-
-msgid "Aqua"
-msgstr "Azul claro"
-
-msgid "White"
-msgstr "Branco"
-
-msgid "Money Green"
-msgstr "Verde moeda"
-
-msgid "Sky Blue"
-msgstr "Azul céu"
-
-msgid "Cream"
-msgstr "Creme"
-
-msgid "Med Gray"
-msgstr "Cinza médio"
+msgid "Insert"
+msgstr "Inserir"
 
 msgid "Customize"
 msgstr "Personalizado"
@@ -3492,15 +3448,6 @@ msgstr "Local"
 
 msgid "Global"
 msgstr "Geral"
-
-msgid "Insert"
-msgstr "Inserir"
-
-msgid "Insert symbol"
-msgstr "Inserir símbolo"
-
-msgid "Subset:"
-msgstr "Subconjunto:"
 
 #. PrintFrm("Print")..Caption
 msgid "Print"
@@ -3583,6 +3530,50 @@ msgstr "Número de cópias:"
 msgid "Enter percent of original size."
 msgstr "Entre o percentual do tamanho original."
 
+#~ msgid "Insert shade..."
+#~ msgstr "Inserir sombra..."
+#~ msgid "Shade"
+#~ msgstr "Sombra"
+#~ msgid "Black"
+#~ msgstr "Preto"
+#~ msgid "Maroon"
+#~ msgstr "Castanho"
+#~ msgid "Green"
+#~ msgstr "Verde"
+#~ msgid "Olive"
+#~ msgstr "Verde oliva"
+#~ msgid "Navy"
+#~ msgstr "Azul marinho"
+#~ msgid "Purple"
+#~ msgstr "Violeta"
+#~ msgid "Teal"
+#~ msgstr "Verde teal"
+#~ msgid "Gray"
+#~ msgstr "Cinza"
+#~ msgid "Silver"
+#~ msgstr "Prata"
+#~ msgid "Red"
+#~ msgstr "Vermelho"
+#~ msgid "Lime"
+#~ msgstr "Verde limão"
+#~ msgid "Yellow"
+#~ msgstr "Amarelo"
+#~ msgid "Blue"
+#~ msgstr "Azul"
+#~ msgid "Fuchsia"
+#~ msgstr "Cor-de-rosa"
+#~ msgid "Aqua"
+#~ msgstr "Azul claro"
+#~ msgid "White"
+#~ msgstr "Branco"
+#~ msgid "Money Green"
+#~ msgstr "Verde moeda"
+#~ msgid "Sky Blue"
+#~ msgstr "Azul céu"
+#~ msgid "Cream"
+#~ msgstr "Creme"
+#~ msgid "Med Gray"
+#~ msgstr "Cinza médio"
 #~ msgid ""
 #~ "Insert a text label (select and click in the main window where you want "
 #~ "the label)."

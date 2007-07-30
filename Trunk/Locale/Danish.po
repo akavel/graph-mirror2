@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2007-06-17 00:28\n"
-"PO-Revision-Date: 2007-07-01 20:39+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2007-07-30 19:49\n"
+"PO-Revision-Date: 2007-07-30 19:52+0100\n"
+"Last-Translator: \n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -95,7 +95,7 @@ msgstr "Vælg hvor markøren skal placeres når der klikkes på billedet."
 #. Form1..MainMenu..Function_("Function")..Caption
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
 #. Form1..ActionManager..EditAction("Edit...")..Category
@@ -214,10 +214,6 @@ msgstr "Importer"
 #. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Rediger"
-
-#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
-msgid "Insert shading..."
-msgstr "Indsæt skravering..."
 
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
@@ -341,7 +337,20 @@ msgstr "Placér etiketten umiddelbart til højre for y-aksen."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form6("Text label")..ColorBox1..CustomName
+#. Form6("Text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Brugerdefineret..."
 
@@ -522,11 +531,11 @@ msgstr "Indsæt tangent/normal..."
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Indsæt en tangent eller normal til den markerede funktion."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
-msgid "Insert shade..."
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
+msgid "Insert shading..."
 msgstr "Indsæt skravering..."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 msgid "Add shading to the selected function."
 msgstr "Tilføj skravering til den markerede funktion."
 
@@ -1626,6 +1635,7 @@ msgid "Insert shading"
 msgstr "Indsæt skravering"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
 msgid "Shading"
 msgstr "Skravering"
 
@@ -2550,6 +2560,11 @@ msgstr "Skriftfarve."
 msgid "Select background color of the text label."
 msgstr "Vælg etikettens baggrundsfarve."
 
+#. Form6("Text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
+msgid "Transparent"
+msgstr "Gennemsigtig"
+
 #. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Fortryder den sidste redigering."
@@ -2609,10 +2624,6 @@ msgstr "Vælg en funktion eller tangent at evaluere."
 msgid "Error"
 msgstr "Fejl"
 
-#. Default name in Insert shading dialog
-msgid "Shade"
-msgstr "Skravering"
-
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Længde"
@@ -2624,10 +2635,6 @@ msgstr "Etiket"
 #. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "Fejl %s"
-
-#. May be selected as background color in Insert label dialog
-msgid "Transparent"
-msgstr "Gennemsigtig"
 
 #. Shown in the function list
 msgid "Axes"
@@ -2925,10 +2932,10 @@ msgstr "Filen blev ikke fundet: %s"
 
 msgid ""
 "Error reading file: %s\n"
-" The file is not a correct Graph file."
+"The file is not a correct Graph file."
 msgstr ""
 "Fejl under læsning af fil: %s\n"
-" Dette er ikke en korrekt Graph-fil."
+"Dette er ikke en korrekt Graph-fil."
 
 msgid "Unknown error while reading file: %s"
 msgstr "Ukendt fejl under læsning af filen: %s"
@@ -3405,65 +3412,14 @@ msgstr "I dialogen Gem som billede er en Option-knap, som kan bruges til at væl
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Punktserier kan have pile som markører. En punktserie med pile som markører og linjer mellem punkterne kan bruges til at vise vektorer."
 
-msgid "Black"
-msgstr "Sort"
+msgid "Insert symbol"
+msgstr "Indsæt symbol"
 
-msgid "Maroon"
-msgstr "Kastanje"
+msgid "Subset:"
+msgstr "Fra:"
 
-msgid "Green"
-msgstr "Løv"
-
-msgid "Olive"
-msgstr "Oliven"
-
-msgid "Navy"
-msgstr "Marine"
-
-msgid "Purple"
-msgstr "Lilla"
-
-msgid "Teal"
-msgstr "Blågrøn"
-
-msgid "Gray"
-msgstr "Grå"
-
-msgid "Silver"
-msgstr "Sølv"
-
-msgid "Red"
-msgstr "Rød"
-
-msgid "Lime"
-msgstr "Lime"
-
-msgid "Yellow"
-msgstr "Gul"
-
-msgid "Blue"
-msgstr "Blå"
-
-msgid "Fuchsia"
-msgstr "Pink"
-
-msgid "Aqua"
-msgstr "Turkis"
-
-msgid "White"
-msgstr "Hvid"
-
-msgid "Money Green"
-msgstr "Dollargrøn"
-
-msgid "Sky Blue"
-msgstr "Himmelblå"
-
-msgid "Cream"
-msgstr "Beige"
-
-msgid "Med Gray"
-msgstr "Lysegrå"
+msgid "Insert"
+msgstr "Indsæt"
 
 msgid "Customize"
 msgstr "Tilpas"
@@ -3479,15 +3435,6 @@ msgstr "Lokal"
 
 msgid "Global"
 msgstr "Global"
-
-msgid "Insert"
-msgstr "Indsæt"
-
-msgid "Insert symbol"
-msgstr "Indsæt symbol"
-
-msgid "Subset:"
-msgstr "Fra:"
 
 #. PrintFrm("Print")..Caption
 msgid "Print"

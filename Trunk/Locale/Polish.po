@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-27 21:32\n"
+"POT-Creation-Date: 2007-07-30 19:49\n"
 "PO-Revision-Date: 2007-02-19 22:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -110,7 +110,7 @@ msgstr "Wybierz gdzie ma być umieszczony kursor po kliknięciu myszką."
 #. Form1..MainMenu..Function_("Function")..Caption
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
 #. Form1..ActionManager..EditAction("Edit...")..Category
@@ -240,11 +240,6 @@ msgstr "Importuj"
 msgid "Edit"
 msgstr "Edycja"
 
-#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
-#, fuzzy
-msgid "Insert shading..."
-msgstr "Wstaw cień..."
-
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
 #. Form1..ActionManager..ZoomOutAction("Out")..Category
@@ -372,7 +367,20 @@ msgstr "Zaznaczy aby umieścić obraz w środku strony."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form6("Text label")..ColorBox1..CustomName
+#. Form6("Text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Własny..."
 
@@ -555,11 +563,12 @@ msgstr "Wstaw styczną/normalną..."
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Wstawia styczną lub normalną zaznaczonej funkcji."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
-msgid "Insert shade..."
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
+#, fuzzy
+msgid "Insert shading..."
 msgstr "Wstaw cień..."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 msgid "Add shading to the selected function."
 msgstr "Dodaje cień do zaznaczonej funkcji."
 
@@ -1744,6 +1753,7 @@ msgid "Insert shading"
 msgstr "Wstawianie cienia"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
 msgid "Shading"
 msgstr "Cieniowanie"
 
@@ -2738,6 +2748,11 @@ msgstr "Kolor tekstu."
 msgid "Select background color of the text label."
 msgstr "Wybierz kolor tła dla pola tekstowego."
 
+#. Form6("Text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
+msgid "Transparent"
+msgstr "Przezroczysty"
+
 #. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 #, fuzzy
 msgid "Undo last action."
@@ -2800,10 +2815,6 @@ msgstr "Wybierz funkcję lub styczną do analizy."
 msgid "Error"
 msgstr "Błąd"
 
-#. Default name in Insert shading dialog
-msgid "Shade"
-msgstr "Cień"
-
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 #, fuzzy
 msgid "Length"
@@ -2818,10 +2829,6 @@ msgstr "Oznaczenie:"
 #, fuzzy
 msgid "%s-error"
 msgstr "Błąd"
-
-#. May be selected as background color in Insert label dialog
-msgid "Transparent"
-msgstr "Przezroczysty"
 
 #. Shown in the function list
 msgid "Axes"
@@ -3145,9 +3152,10 @@ msgstr "'%s' musi być liczbą dodatnią."
 msgid "File not found: %s"
 msgstr "Nie znaleziono pliku: %s"
 
+#, fuzzy
 msgid ""
 "Error reading file: %s\n"
-" The file is not a correct Graph file."
+"The file is not a correct Graph file."
 msgstr ""
 "Błąd podczas odczytu pliku: %s\n"
 "Ten plik nie jest prawidłowym plikiem Graph."
@@ -3777,65 +3785,14 @@ msgstr ""
 "Serie punktów mogą mieć strzałki jako znaczniki. Taka seria z liniami "
 "łączącymi punkty może być użyta do wyświetlania wektorów."
 
-msgid "Black"
-msgstr "Czarny"
+msgid "Insert symbol"
+msgstr "Wstaw symbol"
 
-msgid "Maroon"
-msgstr "Brązowy"
+msgid "Subset:"
+msgstr "Podzbiór:"
 
-msgid "Green"
-msgstr "Zielony"
-
-msgid "Olive"
-msgstr "Oliwkowy"
-
-msgid "Navy"
-msgstr "Granatowy"
-
-msgid "Purple"
-msgstr "Fioletowy"
-
-msgid "Teal"
-msgstr "Ciemnobłękitny"
-
-msgid "Gray"
-msgstr "Szary"
-
-msgid "Silver"
-msgstr "Srebrny"
-
-msgid "Red"
-msgstr "Czerwony"
-
-msgid "Lime"
-msgstr "Jasnozielony"
-
-msgid "Yellow"
-msgstr "Żółty"
-
-msgid "Blue"
-msgstr "Niebieski"
-
-msgid "Fuchsia"
-msgstr "Różowy"
-
-msgid "Aqua"
-msgstr "Turkusowy"
-
-msgid "White"
-msgstr "Biały"
-
-msgid "Money Green"
-msgstr "Bladozielony"
-
-msgid "Sky Blue"
-msgstr "Bladoniebieski"
-
-msgid "Cream"
-msgstr "Kremowy"
-
-msgid "Med Gray"
-msgstr "Średnioszary"
+msgid "Insert"
+msgstr "&Wstaw"
 
 msgid "Customize"
 msgstr "Dostosuj pasek narzędzi"
@@ -3851,15 +3808,6 @@ msgstr ""
 
 msgid "Global"
 msgstr ""
-
-msgid "Insert"
-msgstr "&Wstaw"
-
-msgid "Insert symbol"
-msgstr "Wstaw symbol"
-
-msgid "Subset:"
-msgstr "Podzbiór:"
 
 #. PrintFrm("Print")..Caption
 msgid "Print"
@@ -3949,6 +3897,72 @@ msgstr "Wprowadź liczbę kopii, które chcesz wydrukować."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Podaj procent oryginalnego rozmiaru."
+
+#~ msgid "Insert shade..."
+#~ msgstr "Wstaw cień..."
+
+#~ msgid "Shade"
+#~ msgstr "Cień"
+
+#~ msgid "Black"
+#~ msgstr "Czarny"
+
+#~ msgid "Maroon"
+#~ msgstr "Brązowy"
+
+#~ msgid "Green"
+#~ msgstr "Zielony"
+
+#~ msgid "Olive"
+#~ msgstr "Oliwkowy"
+
+#~ msgid "Navy"
+#~ msgstr "Granatowy"
+
+#~ msgid "Purple"
+#~ msgstr "Fioletowy"
+
+#~ msgid "Teal"
+#~ msgstr "Ciemnobłękitny"
+
+#~ msgid "Gray"
+#~ msgstr "Szary"
+
+#~ msgid "Silver"
+#~ msgstr "Srebrny"
+
+#~ msgid "Red"
+#~ msgstr "Czerwony"
+
+#~ msgid "Lime"
+#~ msgstr "Jasnozielony"
+
+#~ msgid "Yellow"
+#~ msgstr "Żółty"
+
+#~ msgid "Blue"
+#~ msgstr "Niebieski"
+
+#~ msgid "Fuchsia"
+#~ msgstr "Różowy"
+
+#~ msgid "Aqua"
+#~ msgstr "Turkusowy"
+
+#~ msgid "White"
+#~ msgstr "Biały"
+
+#~ msgid "Money Green"
+#~ msgstr "Bladozielony"
+
+#~ msgid "Sky Blue"
+#~ msgstr "Bladoniebieski"
+
+#~ msgid "Cream"
+#~ msgstr "Kremowy"
+
+#~ msgid "Med Gray"
+#~ msgstr "Średnioszary"
 
 #~ msgid ""
 #~ "Insert a text label (select and click in the main window where you want "

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-06-27 21:32\n"
-"PO-Revision-Date: 2007-06-27 21:41+0100\n"
+"POT-Creation-Date: 2007-07-30 19:49\n"
+"PO-Revision-Date: 2007-07-30 19:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -96,7 +96,7 @@ msgstr "Izaberite mesto na koje ce biti postavljen kursor kada kliknete na grafi
 #. Form1..MainMenu..Function_("Function")..Caption
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
 #. Form1..ActionManager..EditAction("Edit...")..Category
@@ -215,10 +215,6 @@ msgstr "Uvezi"
 #. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Uredi"
-
-#. Form1..MainMenu..Function_("Function")..Function_InsShade("Insert shading...")..Caption
-msgid "Insert shading..."
-msgstr "Ubaci srafuru..."
 
 #. Form1..MainMenu..Zoom_("Zoom")..Caption
 #. Form1..ActionManager..ZoomInAction("In")..Category
@@ -342,7 +338,20 @@ msgstr "Postavlja natpis na vrh grafika desno od y-ose."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
-#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form6("Text label")..ColorBox1..CustomName
+#. Form6("Text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Vasa..."
 
@@ -523,11 +532,11 @@ msgstr "Ubaci tangentu/normalu..."
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Ubacuje tangentu ili normalu za izabranu funkciju."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Caption
-msgid "Insert shade..."
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
+msgid "Insert shading..."
 msgstr "Ubaci srafuru..."
 
-#. Form1..ActionManager..InsertShadeAction("Insert shade...")..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 msgid "Add shading to the selected function."
 msgstr "Dodaje srafuru izabranoj funkciji."
 
@@ -1628,6 +1637,7 @@ msgid "Insert shading"
 msgstr "Ubaci srafuru"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
 msgid "Shading"
 msgstr "Srafiranje"
 
@@ -2553,6 +2563,11 @@ msgstr "Boja teksta."
 msgid "Select background color of the text label."
 msgstr "Izaberite boju pozadine tekstualnog natpisa."
 
+#. Form6("Text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
+msgid "Transparent"
+msgstr "Providno"
+
 #. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Ponistava poslednju akciju."
@@ -2612,10 +2627,6 @@ msgstr "Izaberite funkciju ili tangentu za izracunavanje."
 msgid "Error"
 msgstr "Greska"
 
-#. Default name in Insert shading dialog
-msgid "Shade"
-msgstr "Srafura"
-
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Duzina"
@@ -2627,10 +2638,6 @@ msgstr "Natpis"
 #. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-greska"
-
-#. May be selected as background color in Insert label dialog
-msgid "Transparent"
-msgstr "Providno"
 
 #. Shown in the function list
 msgid "Axes"
@@ -2934,10 +2941,10 @@ msgstr "Fajl nije pronadjen: %s"
 
 msgid ""
 "Error reading file: %s\n"
-" The file is not a correct Graph file."
+"The file is not a correct Graph file."
 msgstr ""
 "Greska prilikom ucitavanja fajla: %s\n"
-"  Fajl nije ispravan Graph fajl."
+"Fajl nije ispravan Graph fajl."
 
 msgid "Unknown error while reading file: %s"
 msgstr "Nepoznata greska prilikom ucitavanja fajla: %s"
@@ -3416,65 +3423,14 @@ msgstr "Dugme Opcije u okviru dijaloga Sacuvaj kao sliku omogucava vam da podesi
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Serije tacaka mogu imati strelice kao markere. Serije tacaka sa strelicama kao  markerima i linijama izmedju tacaka mogu se koristiti za prikazivanje vektora."
 
-msgid "Black"
-msgstr "Crna"
+msgid "Insert symbol"
+msgstr "Ubaci simbol"
 
-msgid "Maroon"
-msgstr "Kesten"
+msgid "Subset:"
+msgstr "Subset:"
 
-msgid "Green"
-msgstr "Zelena"
-
-msgid "Olive"
-msgstr "Maslinasta"
-
-msgid "Navy"
-msgstr "Tamno plava"
-
-msgid "Purple"
-msgstr "Ljubicasta"
-
-msgid "Teal"
-msgstr "Tirkizna"
-
-msgid "Gray"
-msgstr "Siva"
-
-msgid "Silver"
-msgstr "Srebrna"
-
-msgid "Red"
-msgstr "Crvena"
-
-msgid "Lime"
-msgstr "Limun zuta"
-
-msgid "Yellow"
-msgstr "Zuta"
-
-msgid "Blue"
-msgstr "Plava"
-
-msgid "Fuchsia"
-msgstr "Pink"
-
-msgid "Aqua"
-msgstr "Akvamarin"
-
-msgid "White"
-msgstr "Bela"
-
-msgid "Money Green"
-msgstr "Sivozelena"
-
-msgid "Sky Blue"
-msgstr "Nebo plava"
-
-msgid "Cream"
-msgstr "Krem"
-
-msgid "Med Gray"
-msgstr "Srednje siva"
+msgid "Insert"
+msgstr "Ubaci"
 
 msgid "Customize"
 msgstr "Proizvoljna"
@@ -3490,15 +3446,6 @@ msgstr "Lokalni"
 
 msgid "Global"
 msgstr "Globalni"
-
-msgid "Insert"
-msgstr "Ubaci"
-
-msgid "Insert symbol"
-msgstr "Ubaci simbol"
-
-msgid "Subset:"
-msgstr "Subset:"
 
 #. PrintFrm("Print")..Caption
 msgid "Print"
@@ -3581,6 +3528,50 @@ msgstr "Izaberite broj kopija za stampanje."
 msgid "Enter percent of original size."
 msgstr "Unesite procenat od originalne velicine."
 
+#~ msgid "Insert shade..."
+#~ msgstr "Ubaci srafuru..."
+#~ msgid "Shade"
+#~ msgstr "Srafura"
+#~ msgid "Black"
+#~ msgstr "Crna"
+#~ msgid "Maroon"
+#~ msgstr "Kesten"
+#~ msgid "Green"
+#~ msgstr "Zelena"
+#~ msgid "Olive"
+#~ msgstr "Maslinasta"
+#~ msgid "Navy"
+#~ msgstr "Tamno plava"
+#~ msgid "Purple"
+#~ msgstr "Ljubicasta"
+#~ msgid "Teal"
+#~ msgstr "Tirkizna"
+#~ msgid "Gray"
+#~ msgstr "Siva"
+#~ msgid "Silver"
+#~ msgstr "Srebrna"
+#~ msgid "Red"
+#~ msgstr "Crvena"
+#~ msgid "Lime"
+#~ msgstr "Limun zuta"
+#~ msgid "Yellow"
+#~ msgstr "Zuta"
+#~ msgid "Blue"
+#~ msgstr "Plava"
+#~ msgid "Fuchsia"
+#~ msgstr "Pink"
+#~ msgid "Aqua"
+#~ msgstr "Akvamarin"
+#~ msgid "White"
+#~ msgstr "Bela"
+#~ msgid "Money Green"
+#~ msgstr "Sivozelena"
+#~ msgid "Sky Blue"
+#~ msgstr "Nebo plava"
+#~ msgid "Cream"
+#~ msgstr "Krem"
+#~ msgid "Med Gray"
+#~ msgstr "Srednje siva"
 #~ msgid ""
 #~ "Insert a text label (select and click in the main window where you want "
 #~ "the label)."

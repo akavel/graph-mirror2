@@ -117,7 +117,7 @@ BEGIN
   RES_OPEN_FILE           "Open the file %s."                //Hint for recent file menu items
   RES_POSITIVE            "'%s' must be a positive number."
   RES_FILE_NOT_FOUND      "File not found: %s"
-  RES_NOT_GRAPH_FILE      "Error reading file: %s\n The file is not a correct Graph file."
+  RES_NOT_GRAPH_FILE      "Error reading file: %s\nThe file is not a correct Graph file."
   RES_ERROR_READING_FILE  "Unknown error while reading file: %s"
   RES_FILE_FILTER         "Graph files [*.grf]|*.grf" //Used in Save as dialog
   RES_FILE_ACCESS         "Cannot write to file: %s\nAccess denied. Check that the file is not in use or write protected."
