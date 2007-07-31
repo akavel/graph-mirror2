@@ -27,7 +27,7 @@ Color = clRed
 Size = 2
 
 [Relation1]
-Relation = x^3*y + y^3*z + z^3*x = 0
+Relation = funny(x,y) = 0
 Style = 5
 Color = clGreen
 Size = 2
@@ -64,4 +64,5 @@ OleObjectCount = 0
 [CustomFunctions]
 sinc(x) = if(x=0, 1, sin(x)/x)
 z = 1
+funny(x,y) = x^3*y + y^3*z + z^3*x
 
