@@ -63,6 +63,7 @@ void TTextValue::Set(const std::string AText, const TData &Data, bool IgnoreErro
     {
       if(!IgnoreErrors)
         throw;
+      Text = "";  
       Value = NAN;
     }
 }
@@ -573,16 +574,23 @@ void TShade::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
   if(Func2No != -1)
     Func2 = GetData().GetFuncFromIndex(Func2No);
 
-  sMin.Set(IniFile.Read(Section, "sMin", "-INF"), GetData());
-  sMax.Set(IniFile.Read(Section, "sMax", "+INF"), GetData());
-  sMin2.Set(IniFile.Read(Section, "sMin2", "-INF"), GetData());
-  sMax2.Set(IniFile.Read(Section, "sMax2", "+INF"), GetData());
+  sMin.Set(IniFile.Read(Section, "sMin", "-INF"), GetData(), true);
+  sMax.Set(IniFile.Read(Section, "sMax", "+INF"), GetData(), true);
+  sMin2.Set(IniFile.Read(Section, "sMin2", "-INF"), GetData(), true);
+  sMax2.Set(IniFile.Read(Section, "sMax2", "+INF"), GetData(), true);
   ExtendMinToIntercept = IniFile.Read(Section, "ExtendMinToIntercept", false);
   ExtendMaxToIntercept = IniFile.Read(Section, "ExtendMaxToIntercept", false);
   ExtendMin2ToIntercept = IniFile.Read(Section, "ExtendMin2ToIntercept", false);
   ExtendMax2ToIntercept = IniFile.Read(Section, "ExtendMax2ToIntercept", false);
   MarkStart = IniFile.Read(Section, "MarkStart", true);
   MarkEnd = IniFile.Read(Section, "MarkEnd", true);
+
+  //For backweards compatibility
+  if(_isnan(sMin.Value)) sMin.Set("-INF", GetData());
+  if(_isnan(sMax.Value)) sMax.Set("+INF", GetData());
+  if(_isnan(sMin2.Value)) sMin2.Set("-INF", GetData());
+  if(_isnan(sMax2.Value)) sMax2.Set("+INF", GetData());
+
 }
 //---------------------------------------------------------------------------
 std::wstring TShade::MakeText() const

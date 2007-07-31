@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 284
-  Top = 175
-  Width = 747
-  Height = 511
+  Left = 1
+  Top = 1
+  Width = 638
+  Height = 450
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   ActiveControl = Panel2
@@ -80,7 +80,7 @@ object Form1: TForm1
     Left = 161
     Top = 30
     Width = 3
-    Height = 416
+    Height = 355
     Cursor = crHSplit
     AutoSnap = False
     Beveled = True
@@ -89,8 +89,8 @@ object Form1: TForm1
   end
   object StatusBar1: TTntStatusBar
     Left = 0
-    Top = 446
-    Width = 739
+    Top = 385
+    Width = 630
     Height = 19
     AutoHint = True
     Panels = <
@@ -117,8 +117,8 @@ object Form1: TForm1
   object Panel2: TFocusPanel
     Left = 164
     Top = 30
-    Width = 575
-    Height = 416
+    Width = 466
+    Height = 355
     Align = alClient
     BevelOuter = bvNone
     FullRepaint = False
@@ -130,8 +130,8 @@ object Form1: TForm1
     object Image1: TImage
       Left = 0
       Top = 0
-      Width = 575
-      Height = 416
+      Width = 466
+      Height = 355
       Align = alClient
       ParentShowHint = False
       ShowHint = False
@@ -143,8 +143,8 @@ object Form1: TForm1
     object Cross: TCross
       Left = 0
       Top = 0
-      Width = 575
-      Height = 416
+      Width = 466
+      Height = 355
       Style = psDot
       Mode = pmNot
       X = 30
@@ -168,8 +168,8 @@ object Form1: TForm1
     object IPolygon1: TIPolygon
       Left = 0
       Top = 0
-      Width = 575
-      Height = 416
+      Width = 466
+      Height = 355
       Brush.Color = 13395660
       Brush.Style = bsBDiagonal
       Points.Strings = (
@@ -198,7 +198,7 @@ object Form1: TForm1
   object ActionToolBar1: TActionToolBar
     Left = 0
     Top = 0
-    Width = 739
+    Width = 630
     Height = 30
     ActionManager = ActionManager
     AllowHiding = True
@@ -214,7 +214,7 @@ object Form1: TForm1
     Left = 0
     Top = 30
     Width = 161
-    Height = 416
+    Height = 355
     Align = alLeft
     BevelOuter = bvNone
     DragKind = dkDock
@@ -223,7 +223,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 161
-      Height = 416
+      Height = 355
       Align = alClient
       BevelInner = bvNone
       BevelOuter = bvNone
@@ -252,7 +252,7 @@ object Form1: TForm1
     end
     object Panel1: TPanel
       Left = 0
-      Top = 416
+      Top = 355
       Width = 161
       Height = 0
       Align = alBottom
