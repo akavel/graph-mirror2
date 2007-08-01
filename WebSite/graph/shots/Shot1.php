@@ -3,22 +3,24 @@
 <head>
 <title>Graph - Screen shots</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="Shots.css" type="text/css">
 </head>
 
-<body bgcolor="#FFFFFF" text="#000000">
+<body>
+<div id="main"> 
 <p align="center"><img src="ScreenShot1.png" width="596" height="401" border="0" name="Screenshot" alt="How to trace a graph"></p>
-<table width="550" border="0" align="center">
-  <tr> 
-    <td height="107" valign="top"> 
       <p align="left"><font size="+1">With Graph you can trace a function with 
         the mouse by clicking on the graph, or you can enter an x-coordinate for 
         which you want the function evaluated. The program will then tell you 
         the function value f(x) and the first two derivatives f'(x) and f''(x) 
         evaluated at the given coordinate.</font></p>
-    </td>
-    <td height="107" valign="top">&nbsp;</td>
-  </tr>
-</table>
-<p align="center">&nbsp;</p>
+
+</div>
+
+<?php
+  include './Menu.inc';
+  include './ShotsTop.inc';
+?>
+
 </body>
 </html>

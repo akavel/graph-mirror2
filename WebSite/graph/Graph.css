@@ -1,0 +1,26 @@
+/* we leave some place on the side using the margin-* properties */
+#main {
+        top:0;
+        margin-left:10.2em;
+        margin-right:10.2em;
+        padding-left:1em;
+        padding-right:1em;
+}
+/* and then we put each list on its place */
+
+#menu {
+        left:0;
+
+        width:10.2em;
+        position:absolute;
+        top:0;
+        font-size:80%;
+        padding-left:1%;
+        padding-right:1%;
+        margin-left:0;
+        margin-right:0;
+}
+
+#margin {
+        right:0;
+}

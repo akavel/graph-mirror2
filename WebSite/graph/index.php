@@ -6,15 +6,12 @@
 <meta name="Author" content="Ivan Johansen">
 <meta name="Keywords" content="graph, mathematic, graphing, drawing, freeware, download">
 <meta name="Description" content="Freeware program for drawing graphs in a coordinate system">
+<link rel="stylesheet" href="Graph.css" type="text/css">
 </head>
-<body bgcolor="#ffffff" text="#000000">
-<div align="center"> 
+<body>
+
+<div id="main" align="center"> 
   <p><b><font size="+7" color="#0000ff"> 
-    <script type="text/javascript">
-		<!--
-		if (top == self) self.location.href = "index.html";
-		// -->
-	</script>
     Graph 4.2</font></b></p>
   <p><img height="424" alt="Main window" src="DialogMain.png" width="595" ></p>
   <table border="0" align="center" cellspacing="10">
@@ -62,5 +59,10 @@
     December 18, 2006
     </font></b></p>
 </div>
+
+<?php
+  include './Menu.inc';
+?>
+
 </body>
 </html>
