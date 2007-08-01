@@ -3,18 +3,12 @@
 <head>
 <title>Graph - Features</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="Graph.css" type="text/css">
 </head>
 
-<body bgcolor="#ffffff" text="#000000">
-<table width="550" border="0" align="center">
-  <tr>
-    <td> 
+<body>
+<div id="main"> 
       <h1 align="center"><font size="+7" color="#0000ff"><b> 
-        <script type="text/javascript">
-		<!--
-		if (top == self) self.location.href = "index.html";
-		// -->
-		</script>
         </b></font><font size="+6" color="#0000ff">Features</font></h1>
       <p align="center"><font size="+1">Why should you use Graph?<br>
        Here&nbsp;are some of the things Graph can do for you: </font></p>
@@ -69,7 +63,11 @@
                   
        sin(x)/x and a constant R=
                                    8.314510. You can when plot the function f(x)=R*sinc(x). </font></p></td>
-  </tr>
-</table>
+</div>
+
+<?php
+  include './Menu.inc';
+?>
+
 </body>
 </html>

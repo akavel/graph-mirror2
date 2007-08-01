@@ -2,28 +2,13 @@
 <html>
 <head>
   <title>Graph - Translations</title>
-
-
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-
+  <link rel="stylesheet" href="Graph.css" type="text/css">
 </head>
 
-
 <body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
-
-<table align="center" border="0" width="550">
-
-  <tbody>
-
-    <tr>
-
-      <td height="456" valign="top">
+<div id="main"> 
       <h1 align="center"><font size="+7"><b><font color="#0000ff" size="+7">
-      <script type="text/javascript">
-<!--
-if (top == self) self.location.href = "index.html";
-// -->
-      </script>
       </font><font color="#0000ff">Translations</font></b></font></h1>
 
       <p><font size="+1"> Graph currently supports
@@ -436,12 +421,11 @@ voluntarily, please contact me, and I will supply you with the
 necessary files. No particular programming skills are required, however
 knowledge about mathematical terms in your own language is required.</font></p>
 
-      </td>
+</div>
 
-    </tr>
-
-  </tbody>
-</table>
+<?php
+  include './Menu.inc';
+?>
 
 </body>
 </html>

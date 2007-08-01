@@ -1,30 +1,18 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>Graph</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-</head>
-
-<body text="#000000" bgcolor="#FFFFFF">
+<div id="menu"> 
 <p><img src="Graph.png" width="64" height="64" alt="Logo"></p>
-<script type="text/javascript">
-<!--
-  if (top == self) self.location.href = "index.html";
-// -->
-</script>
 <p><font size="+1">  
-<a href="main.html" target="mainFrame">Main</a><br>
-<a href="history.html" target="mainFrame">History</a><br>
-<a href="download.html" target="mainFrame">Download</a><br>
+<a href="index.php">Main</a><br>
+<a href="History.php">History</a><br>
+<a href="Download.php">Download</a><br>
 
-<a href="features.html" target="mainFrame">Features</a><br>
-<a href="shots.html" target="mainFrame">Screen shots</a><br>
-<a href="faq.html" target="mainFrame">FAQ</a><br>
+<a href="Features.php">Features</a><br>
+<a href="Shots.php">Screen shots</a><br>
+<a href="Faq.php" target="mainFrame">FAQ</a><br>
 <a href="http://news.gmane.org/gmane.comp.mathematics.graph" target="mainFrame">Forum</a><br>
   <a href="forum.html" target="mainFrame"> Support</a><br>
-<a href="lang.html" target="mainFrame">Translations</a><br>
-<a href="donation.html" target="mainFrame">Donate</a><br>
-<a href="links.html" target="mainFrame">Links</a><br>
+<a href="Language.php">Translations</a><br>
+<a href="Donation.php">Donate</a><br>
+<a href="Links.php">Links</a><br>
 <a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#103;&#x72;&#x61;&#x70;&#x68;&#64;&#112;&#x61;&#x64;&#x6f;&#119;&#97;&#x6e;&#x2e;&#x64;&#x6b;">E-mail</a> 
 </font></p>
 <p>&nbsp;</p>
@@ -51,5 +39,4 @@ document.write("<img  border=\"0\" src=\"http://www.zipstat.dk/cgi-bin/zipstat/z
 <p><img border="0"
         src="http://www.w3.org/Icons/valid-html401"
         alt="Valid HTML 4.01!" height="31" width="88"> </p>
-</body>
-</html>
+</div>

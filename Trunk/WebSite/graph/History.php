@@ -3,19 +3,13 @@
 <head>
 <title>Graph - Revision history</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="Graph.css" type="text/css">
 </head>
 
-<body bgcolor="#ffffff" text="#000000">
-<table width="550" border="0" align="center">
-  <tr> 
-    <td height="456" valign="top"> 
-      <h1 align="center"><font size="+7"><b><font size="+7" color="#0000ff"> 
-        <script type="text/javascript">
-		<!--
-		if (top == self) self.location.href = "index.html";
-		// -->
-		</script>
-        </font><font color="#0000ff">Revision history</font></b></font> </h1>
+<body>
+<div id="main"> 
+      <h1 align="center"><font size="+7"><b>
+        <font color="#0000ff">Revision history</font></b></font> </h1>
       <p><b><font size="+1">Version 4.2 (December 17th 2006)</font></b></p>
       <ul>
         <li><font size="+1">You can now create animations that show what happens when a constant changes.</font>
@@ -374,7 +368,12 @@
       <blockquote> 
         <p><font size="+1">First release with many features.</font></p>
       </blockquote></font>    </td>
-  </tr>
-</table>
+
+</div>
+
+<?php
+  include './Menu.inc';
+?>
+
 </body>
 </html>

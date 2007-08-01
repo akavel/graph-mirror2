@@ -3,18 +3,12 @@
 <head>
 <title>Graph - Links</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="Graph.css" type="text/css">
 </head>
 
 <body bgcolor="#ffffff" text="#000000">
-<table width="550" border="0" align="center">
-  <tr>
-    <td height="457" valign="top"> 
+<div id="main"> 
       <h1 align="center"><font size="+7" color="#0000ff"><b>
-        <script type="text/javascript">
-		<!--
-		if (top == self) self.location.href = "index.html";
-		// -->
-		</script>
         Links</b></font></h1>
       <p>
       <font size="+1"><b>    More information about Graph:</b></font><br>
@@ -39,9 +33,12 @@
       target=_blank>How to Report Bugs 
 Effectively</a>    
 </font></p>
-      </td>
-  </tr>
-</table>
 <p>&nbsp;</p>
+</div>
+
+<?php
+  include './Menu.inc';
+?>
+
 </body>
 </html>
