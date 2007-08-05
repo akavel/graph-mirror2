@@ -201,3 +201,6 @@ msgstr ""
 
 msgid "dx="
 msgstr ""
+
+msgid "LabeledEdit1"
+msgstr ""
