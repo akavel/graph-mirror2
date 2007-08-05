@@ -134,7 +134,7 @@ void __fastcall TMediaPlayerEx::SetDisplay(TWinControl *Control)
     Control->FreeNotification(this);
   }
 
-  if(DeviceID != 0 && FCapabilities.Contains(mpUsesWindow))
+  if(DeviceID != 0 && FCapabilities.Contains(mpUsesWindow) && !ComponentState.Contains(csDestroying))
   {
     MCI_DGV_WINDOW_PARMS AWindowParm;
     DWORD Flags = MCI_WAIT | MCI_DGV_WINDOW_HWND;

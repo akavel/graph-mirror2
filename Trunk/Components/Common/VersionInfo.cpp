@@ -7,9 +7,9 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
+#include "Config.h"
 #include <vcl.h>
 #pragma hdrstop
-#include "Config.h"
 #include "VersionInfo.h"
 #include <sstream>
 #include <vector>
