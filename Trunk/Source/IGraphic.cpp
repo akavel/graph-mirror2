@@ -555,4 +555,80 @@ TRect Rotate(TMetafile *Metafile, int Degrees)
   return TRect(0, 0, NewWidth, NewHeight);
 }
 //---------------------------------------------------------------------------
+unsigned AlignBit(unsigned Bits, unsigned BitsPerPixel, unsigned Alignment)
+{
+  Alignment--;
+  return (((Bits * BitsPerPixel) + Alignment) & ~Alignment) >> 3;
+}
+//---------------------------------------------------------------------------
+void InitializeBitmapInfoHeader(HBITMAP Bitmap, BITMAPINFOHEADER &Info, TPixelFormat PixelFormat)
+{
+  DIBSECTION DIB;
+  DIB.dsBmih.biSize = 0;
+  int Bytes = GetObject(Bitmap, sizeof(DIB), &DIB);
+  if(Bytes == 0)
+    throw Exception("Invalid bitmap");
+
+  if(Bytes >= (sizeof(DIB.dsBm) + sizeof(DIB.dsBmih)) &&
+    DIB.dsBmih.biSize >= sizeof(DIB.dsBmih))
+    Info = DIB.dsBmih;
+  else
+  {
+    memset(&Info, 0, sizeof(Info));
+    Info.biSize = sizeof(Info);
+    Info.biWidth = DIB.dsBm.bmWidth;
+    Info.biHeight = DIB.dsBm.bmHeight;
+  }
+  switch(PixelFormat)
+  {
+    case pf1bit: Info.biBitCount = 1;   break;
+    case pf4bit: Info.biBitCount = 4;   break;
+    case pf8bit: Info.biBitCount = 8;   break;
+    case pf24bit: Info.biBitCount = 24; break;
+    case pf32bit: Info.biBitCount = 32; break;
+    default:
+      throw Exception("Invalid pixel foramt");
+  }
+  Info.biPlanes = 1;
+  Info.biCompression = BI_RGB; // Always return data in RGB format
+  Info.biSizeImage = AlignBit(Info.biWidth, Info.biBitCount, 32) * abs(Info.biHeight);
+}
+//---------------------------------------------------------------------------
+bool InternalGetDIB(HBITMAP Bitmap, HPALETTE Palette, void *BitmapInfo, void *Bits, TPixelFormat PixelFormat)
+{
+  HPALETTE OldPal = 0;
+  BITMAPINFOHEADER &Info = *static_cast<BITMAPINFOHEADER*>(BitmapInfo);
+  InitializeBitmapInfoHeader(Bitmap, Info, PixelFormat);
+  HDC DC = CreateCompatibleDC(0);
+  if(Palette != 0)
+  {
+    OldPal = SelectPalette(DC, Palette, False);
+    RealizePalette(DC);
+  }
+  bool Result = GetDIBits(DC, Bitmap, 0, abs(Info.biHeight), Bits,
+    static_cast<BITMAPINFO*>(BitmapInfo), DIB_RGB_COLORS);
+  if(OldPal != 0)
+    SelectPalette(DC, OldPal, false);
+  DeleteDC(DC);
+  return Result;
+}
+//---------------------------------------------------------------------------
+void InternalGetDIBSizes(HBITMAP Bitmap, int &InfoHeaderSize, int &ImageSize, TPixelFormat PixelFormat)
+{
+  BITMAPINFOHEADER Info;
+  InitializeBitmapInfoHeader(Bitmap, Info, PixelFormat);
+  // Check for palette device format
+  if(Info.biBitCount > 8)
+  {
+    // Header but no palette
+    InfoHeaderSize = sizeof(Info);
+    if((Info.biCompression & BI_BITFIELDS) != 0)
+      InfoHeaderSize += 12;
+  }
+  else
+    // Header and palette
+    InfoHeaderSize = sizeof(BITMAPINFOHEADER) + sizeof(TRGBQuad) * (1 << Info.biBitCount);
+  ImageSize = Info.biSizeImage;
+}
+//---------------------------------------------------------------------------
 

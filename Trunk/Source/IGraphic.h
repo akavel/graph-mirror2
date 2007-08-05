@@ -25,4 +25,7 @@ double InterpolationAngle(Func32::TDblPoint p1, Func32::TDblPoint p2, Func32::TD
 
 TRect Rotate(TMetafile *Metafile, int Degrees);
 
+void InternalGetDIBSizes(HBITMAP Bitmap, int &InfoHeaderSize, int &ImageSize, TPixelFormat PixelFormat);
+bool InternalGetDIB(HBITMAP Bitmap, HPALETTE Palette, void *BitmapInfo, void *Bits, TPixelFormat PixelFormat);
+
 #endif
