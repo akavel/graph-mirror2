@@ -27,6 +27,7 @@ __fastcall TForm20::TForm20(TComponent* Owner, const std::string &Constant, doub
   dwICValue = dwICValue; //Avoid stupid warning
   Panel1->DoubleBuffered;
   LabeledEdit1->EditLabel->Caption = Constant.c_str() + AnsiString("=");
+  LabeledEdit1->Text = Min;
 }
 //---------------------------------------------------------------------------
 void TForm20::ShowAnimation(const AnsiString &FileName)

@@ -18,7 +18,7 @@
 //---------------------------------------------------------------------------
 #pragma link "TntStdCtrls"
 #pragma link "ProgressForm"
-#pragma link "MyEdit"
+#pragma link "MyEdit"                       
 #pragma resource "*.dfm"
 
 const int MaxWidth = Screen->Width - 50;
@@ -157,9 +157,9 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     StreamInfo.dwSampleSize = 0;
     StreamInfo.rcFrame = TRect(0, 0, ImageWidth, ImageHeight);
     StreamInfo.dwEditCount = 0;
-    StreamInfo.dwFormatChangeCount = 0;
+    StreamInfo.dwFormatChangeCount = 0;                                 
     strcpy(StreamInfo.szName, "Graph animation");
-
+                 
     OleCheck(AVIFileCreateStream(pFile, &pStream, &StreamInfo));
     TCallOnRelease Dummy5(AVIStreamRelease, pStream);
 
@@ -191,6 +191,21 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
       }
 
       OleCheck(AVIStreamWrite(pStream, I, 1, &ImageData[0], ImageData.size(), AVIIF_KEYFRAME, NULL, NULL));
+
+/*
+      //Save uncrompressed
+      int BitmapInfoSize;
+      int BitmapSize;
+      Bitmap->HandleType = bmDIB;
+      Bitmap->PixelFormat = pf8bit;
+      InternalGetDIBSizes(Bitmap->Handle, BitmapInfoSize, BitmapSize, Bitmap->PixelFormat);
+      std::vector<char> BitmapInfo(BitmapInfoSize);
+      std::vector<char> BitmapBits(BitmapSize);
+      InternalGetDIB(Bitmap->Handle, 0, &BitmapInfo[0], &BitmapBits[0], Bitmap->PixelFormat);
+      if(I == 0)
+        OleCheck(AVIStreamSetFormat(pStream, 0, &BitmapInfo[0], BitmapInfoSize));
+      AVIStreamWrite(pStream, I, 1, &BitmapBits[0], BitmapSize, AVIIF_KEYFRAME, NULL, NULL);
+*/
 
       ProgressForm1->StepIt();
       if(ProgressForm1->AbortProgress)
@@ -236,4 +251,6 @@ void __fastcall TForm19::ComboBox1Change(TObject *Sender)
   Edit3->Text = ToWideString(AnimationConstant.Step);
 }
 //---------------------------------------------------------------------------
+
+
 
