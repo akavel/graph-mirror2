@@ -12,7 +12,7 @@
 
 <div id="main" align="center"> 
   <p><b><font size="+7" color="#0000ff"> 
-    Graph 4.2</font></b></p>
+    Graph 4.3</font></b></p>
   <p><img height="424" alt="Main window" src="DialogMain.png" width="595" ></p>
   <table border="0" align="center" cellspacing="10">
     <tr> 
@@ -54,9 +54,9 @@
       </td>
     </tr>
   </table>
-  <p align="center"><b><font size="+1">Copyright © 2006 by Ivan Johansen</font></b></p>
+  <p align="center"><b><font size="+1">Copyright © 2007 by Ivan Johansen</font></b></p>
   <p align="center"><b><font size="+1">Last updated: 
-    December 18, 2006
+    August 12, 2007
     </font></b></p>
 </div>
 
