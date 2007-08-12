@@ -1,10 +1,10 @@
-<p align="center"><font size="+7" color="#0000FF"><b>Screen shots</b></font></p>
 <div id="top"><font size="+1">
-  <a href="shot1.html" target="PictureFrame">Evaluate</a> &nbsp; &nbsp; 
-  <a href="shot2.html" target="PictureFrame">Insert shade</a> &nbsp; &nbsp;
-  <a href="shot3.html" target="PictureFrame">Insert function</a> &nbsp; &nbsp; 
-  <a href="shot4.html" target="PictureFrame">Insert point series</a> &nbsp; &nbsp; 
-  <a href="shot5.html" target="PictureFrame">Insert trendline</a> &nbsp; &nbsp; 
-  <a href="shot6.html" target="PictureFrame">Add labels</a> &nbsp; &nbsp;
-  <a href="shot7.html" target="PictureFrame">Insert relation</a></font>
+<p><font size="+7" color="#0000FF"><b>Screen shots</b></font></p>
+  <a href="Shot1.php">Evaluate</a> &nbsp; &nbsp; 
+  <a href="Shot2.php">Insert shade</a> &nbsp; &nbsp;
+  <a href="Shot3.php">Insert function</a> &nbsp; &nbsp; 
+  <a href="Shot4.php">Insert point series</a> &nbsp; &nbsp; 
+  <a href="Shot5.php">Insert trendline</a> &nbsp; &nbsp; 
+  <a href="Shot6.php">Add labels</a> &nbsp; &nbsp;
+  <a href="Shot7.php">Insert relation</a></font>
 </div>

@@ -3,18 +3,12 @@
 <head>
 <title>Graph - Support forum</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="Graph.css" type="text/css">
 </head>
 
-<body bgcolor="#ffffff" text="#000000">
-<table width="550" border="0" align="center">
-  <tr> 
-    <td height="456" valign="top"> 
+<body>
+<div id="main"> 
       <h1 align="center"><font size="+7"><b><font size="+7" color="#0000ff"> 
-        <script type="text/javascript">
-		<!--
-		if (top == self) self.location.href = "index.html";
-		// -->
-		</script>
         </font><font color="#0000ff">Support forum</font></b></font></h1>
       <p><font size="+1">There is a mailing list available for discussions and 
         support for Graph. A forum and newsgroup is also available as alternative 
@@ -44,8 +38,10 @@
       <p><font size="+1">The above link should subscripe your default newsgroup 
         client to the graph newsgroup. If not you have to check the documentation 
         following your client for how to subscripe to it.</font></p>
-      </td>
-  </tr>
-</table>
+</div>
+
+<?php
+  include './Menu.inc';
+?>
 </body>
 </html>

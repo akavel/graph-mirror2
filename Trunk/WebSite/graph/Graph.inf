@@ -5,6 +5,8 @@ Minor = 2
 Release = 0
 Build = 332
 DownloadPage = http://www.padowan.dk/
+SupportPage = http://www.padowan.dk/test/Forum.php
+DonatePage = http://www.padowan.dk/test/Donation.php
 
 [English]
 NewFeatures = · You can now create animations that show what happens when a constant changes.
