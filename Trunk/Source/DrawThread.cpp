@@ -1131,7 +1131,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
 {
   double dx = 1/Draw->xScale;
   double dy = -1/Draw->yScale;
-  int dX = Draw->Width > 1200 ? Draw->Width / 120 : 5;
+  int dX = Draw->Width > 1200 ? Draw->Width / 120 : 1;
 
   std::vector<TRect> Points;
   Points.reserve(500);
