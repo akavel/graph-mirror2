@@ -96,11 +96,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
     out << "CmdLine: " << CmdLine << std::endl;
   }
 
-  SetApplicationExceptionHandler(true); //Log all exceptions
   SetCompTranslateFunc(gettext);
   InitDebug();
-#else
-  SetApplicationExceptionHandler(GetRegValue(REGISTRY_KEY, "LogExceptions", HKEY_CURRENT_USER, false));
 #endif
 
   Font->Name = "MS Shell Dlg";
@@ -745,7 +742,7 @@ void TForm1::LoadSettings(void)
   IPrintDialog1->Orientation = Registry.ReadEnum("Orientation", poPortrait);
   UndoList.SetMaxUndo(Registry.Read("MaxUndo", 50));
 
-  InitPlugins();
+//  InitPlugins();
 
   if(Registry.ValueExists("ToolBar"))
     CreateToolBar(Registry.Read("ToolBar", "").c_str());
