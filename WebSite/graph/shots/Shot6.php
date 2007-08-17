@@ -7,11 +7,13 @@
 </head>
 
 <body>
+<div id="container">
 <div id="main"> 
 <p align="center"><img src="ScreenShot6.png" width="603" height="431" name="Screenshot" alt="How to insert a text label"></p>
       <p align="left"><font size="+1">Formatted text labels can be added anyplace 
         in the coordinate system.</font></p>
 <p align="center">&nbsp;</p>
+</div>
 </div>
 
 <?php

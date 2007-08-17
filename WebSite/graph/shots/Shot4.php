@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<div id="container">
 <div id="main"> 
 <p align="center"><img src="ScreenShot4.png" width="693" height="544" name="Screenshot" alt="How to insert a point series"></p>
       <p align="left"><font size="+1">It is possible to add series of points to 
@@ -14,6 +15,7 @@
         The user can choose between different types of markers and lines between 
         the markers. </font></p>
 <p align="center">&nbsp;</p>
+</div>
 </div>
 
 <?php

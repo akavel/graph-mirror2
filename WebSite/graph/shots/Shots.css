@@ -1,19 +1,22 @@
-body {
+#container {
   text-align: center;
-  width: 43em;
+  max-width: 43em;
   margin: 0 auto;
   top: 0;
 }
 
 #top {
   position: absolute;
+  text-align: center;
+  top: 0;
+  margin-left: 12em;
 }
 
 #main {
-  float: right;
+  margin: 8em 8em;
   width: 35em;
-  margin: 8em 0px 0px 0px;
   text-align: left;
+  padding: 1em;
 }
 
 #menu {
@@ -23,6 +26,6 @@ body {
   float: right;
   width: 8em;
   text-align: left;
-  padding-left: 1%;
-  padding-top: 1%;
+  padding-left: 1em;
+  padding-top: 1em;
 }

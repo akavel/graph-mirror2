@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<div id="container">
 <div id="main"> 
 <p align="center"><img src="ScreenShot3.png" width="638" height="454" name="Screenshot" alt="How to insert a function"></p>
 
@@ -14,6 +15,7 @@
         To draw the function y=x*cos(x), you just enter &quot;x*cos(x)&quot;. 
         The program supports a lot of built in functions that can be used.</font></p>
 <p align="center">&nbsp;</p>
+</div>
 </div>
 
 <?php
