@@ -7,10 +7,12 @@
 </head>
 
 <body>
+<div id="container">
 <div id="main"> 
 <p align="center"><img src="ScreenShot7.png" width="604" height="429" name="Screenshot" alt="How to create a relation"></p>
       <p align="left"><font size="+1">Any equation and inequality can be drawn. You can for example draw a circle with radius 8 and center in (0,0) as the equation x^2 + y^2 = 64. A shaded circle with radius 3 and center in (5,5) can be draw as the inequality (x-5)^2 + (y-5)^2 &lt; 9. </font></p>
 <p align="center">&nbsp;</p>
+</div>
 </div>
 
 <?php

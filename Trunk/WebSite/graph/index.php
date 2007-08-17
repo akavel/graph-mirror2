@@ -10,9 +10,9 @@
 </head>
 <body>
 
-<div id="main" align="center"> 
-  <p><b><font size="+7" color="#0000ff"> 
-    Graph 4.3</font></b></p>
+<div id="main"> 
+  <p><h1  align="center"><b><font size="+7" color="#0000ff"> 
+    Graph 4.3</font></b></h1></p>
   <p><img height="424" alt="Main window" src="DialogMain.png" width="595" ></p>
   <table border="0" align="center" cellspacing="10">
     <tr> 
@@ -54,8 +54,8 @@
       </td>
     </tr>
   </table>
-  <p align="center"><b><font size="+1">Copyright © 2007 by Ivan Johansen</font></b></p>
-  <p align="center"><b><font size="+1">Last updated: 
+  <p align="center"><b><font size="+1">Copyright © 2007 by Ivan Johansen<br>
+  Last updated: 
     August 12, 2007
     </font></b></p>
 </div>

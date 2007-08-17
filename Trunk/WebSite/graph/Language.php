@@ -111,7 +111,7 @@ Ipsen and Erik Lyngholt Nielsen</td>
 
             </td>
 
-            <td width="48%"><span style="font-size: 10pt; font-family: Arial;" lang="DA"><font face="Times New Roman" size="3">Etienne Goemaere</font></span></td>
+            <td width="48%">Etienne Goemaere</td>
 
           </tr>
 

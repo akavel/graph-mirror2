@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<div id="container">
 <div id="main"> 
 <p align="center"><img src="ScreenShot2.png" width="604" height="429" name="Screenshot" alt="How to add a shading to a function"></p>
       <p align="left"><font size="+1">You can insert 6 different types of shadings 
@@ -14,6 +15,7 @@
         the x-axis, but other possibilities are also available. Of course the 
         user can specify the exact limits of the area.</font></p>
 <p align="center">&nbsp;</p>
+</div>
 </div>
 
 <?php
