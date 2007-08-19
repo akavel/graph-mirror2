@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2007-07-30 19:49\n"
-"PO-Revision-Date: 2007-07-30 19:55+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2007-08-19 15:01+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2071,9 +2071,7 @@ msgstr "Om Graph"
 
 #. Form2("About Graph")..Panel1..Label6("<Language> translation by <Translator>")..Caption
 msgid "<Language> translation by <Translator>"
-msgstr ""
-"Svensk översättning av Pär Smårs <par.smars@bredband.net>\n"
-"(version 1.02, kontrollerad mot 4.2b Build 322)"
+msgstr "Svensk översättning av Pär Smårs <par.smars@bredband.net>"
 
 #. Form2("About Graph")..Panel1..Version("Version %s")..Caption
 #. %s is replaced with version number
@@ -3342,7 +3340,7 @@ msgstr "Dagens Tips kan ge dig sådan information om programmet som de flesta in
 
 #. Tip of the Day
 msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
-msgstr "Du kan sända förslag på förbättringar för framtida versioner, felrapporter och kommentarer till graph@padowan.dk. (V.v. använd engelska eller danska.)"
+msgstr "Du kan sända förslag på förbättringar för framtida versioner, felrapporter och kommentarer till graph@padowan.dk."
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
