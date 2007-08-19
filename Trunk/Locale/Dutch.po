@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.0.1\n"
 "POT-Creation-Date: 2007-07-30 19:49\n"
-"PO-Revision-Date: 2007-07-30 19:52+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2007-08-19 15:07+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Etienne Goemaere <etienne.goemaere@pandora.be>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1847,9 +1847,8 @@ msgid "Encoding"
 msgstr "Codering"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
-#, fuzzy
 msgid "Sequential"
-msgstr "Selecteer alles"
+msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
@@ -1966,7 +1965,7 @@ msgstr "E-mail:"
 #. Form2("About Graph")..Panel1..Label3("Build %s")..Caption
 #. %s is replaced with build number
 msgid "Build %s"
-msgstr "Gemaakt %s"
+msgstr "Onderversie %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
 msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
@@ -2656,23 +2655,20 @@ msgid "Shift+"
 msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Del"
-msgstr "Verwijder"
+msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Ins"
-msgstr "In"
+msgstr ""
 
 #. Shortcut key
 msgid "Home"
 msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "End"
-msgstr "Einde:"
+msgstr "Einde"
 
 #. Shortcut key
 msgid "PgUp"
@@ -2687,18 +2683,16 @@ msgid "Up"
 msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Down"
-msgstr "Schenk"
+msgstr ""
 
 #. Shortcut key
 msgid "Esc"
 msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Enter"
-msgstr "Printer"
+msgstr ""
 
 #. Shortcut key
 msgid "Tab"
@@ -2709,9 +2703,8 @@ msgid "BkSp"
 msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Space"
-msgstr "Sla op"
+msgstr "Spatie"
 
 msgid "An error occurred while evaluating power function."
 msgstr "Fout bij berekening van de machtsfunctie."
@@ -2994,11 +2987,9 @@ msgstr "Windows heeft onvoldoende middelen om een zo groot beeld op te slaan."
 msgid "'%1%' must be between %2% and %3%."
 msgstr "%1%'  moet tussen %2%  en %3% liggen."
 
-#, fuzzy
 msgid "File not found"
-msgstr "Bestand niet gevonden: %s"
+msgstr "Bestand niet gevonden"
 
-#, fuzzy
 msgid "Error reading file"
 msgstr "Leesfout"
 
