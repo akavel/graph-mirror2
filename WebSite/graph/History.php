@@ -21,55 +21,55 @@
 <p><b><font size="+1">Version 4.3 (August 12th 2007)</font></b></p>
 <ul>
   <li><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;</span></span></span><big><span style="">Labels can
-now be rotated freely.<o:p></o:p></span></big></li>
+now be rotated freely.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Graph can
-now calculate the area under a parametric function.<o:p></o:p></span></big></li>
+now calculate the area under a parametric function.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Zoom|Square
-will now keep the y-axis scaled equal to the x-axis until explicitly disabled.<o:p></o:p></span></big></li>
+will now keep the y-axis scaled equal to the x-axis until explicitly disabled.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">An image
-is now stored into the grf files to make preview and thumbnails faster.<o:p></o:p></span></big></li>
+is now stored into the grf files to make preview and thumbnails faster.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">OLE
-objects may now be inserted without text labels.<o:p></o:p></span></big></li>
+objects may now be inserted without text labels.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Checkboxes
-added to the function list to indicate visibility.<o:p></o:p></span></big></li>
+added to the function list to indicate visibility.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">You can
-now specify the exact placement of text labels.<o:p></o:p></span></big></li>
+now specify the exact placement of text labels.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">a^(b/c) is
-now handled as a special case and will be plotted correctly.<o:p></o:p></span></big></li>
+now handled as a special case and will be plotted correctly.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">The
-settings in the <i>Animate</i> dialog is now stored in the grf file.<o:p></o:p></span></big></li>
+settings in the <i>Animate</i> dialog is now stored in the grf file.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Equations
-and inequalities are now plotted faster, especially when printed.<o:p></o:p></span></big></li>
+and inequalities are now plotted faster, especially when printed.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Fixed
-problem with animations that includes inequalities.<o:p></o:p></span></big></li>
+problem with animations that includes inequalities.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Fixed bug
-crashing Graph when trying to differentiate a recursive function.<o:p></o:p></span></big></li>
+crashing Graph when trying to differentiate a recursive function.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Fixed bug
-in drawing shadings between functions.<o:p></o:p></span></big></li>
+in drawing shadings between functions.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Several
-minor bugs have been fixed.<o:p></o:p></span></big></li>
+minor bugs have been fixed.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Fixed and
-improved several things in the animation dialog.<o:p></o:p></span></big></li>
+improved several things in the animation dialog.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Fixed problem
-where Graph might stop responding when trying to find an extremum.<o:p></o:p></span></big></li>
+where Graph might stop responding when trying to find an extremum.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Serbian,
-Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
+Croatian and Vietnamese translations added.</span></big></li>
 </ul>
 
 
@@ -154,7 +154,7 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
 <font size="+1">      </font>
 <ul>
 
-  <font size="+1">      <li><font size="+1">Several minor improvements have been implemented.</font>
+  <li><font size="+1">Several minor improvements have been implemented.</font>
       </li>
   <li><font size="+1">When moved near a corner, the legend will now snap to the corner and stay there.</font>
       </li>
@@ -187,30 +187,22 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
  
       </li>
   <li><font size="+1">	A lot 	of minor bugs have been fixed.</font></li>
- </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 4.0.1 (October 30th 2005)</font></b></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">A dialog is no longer shown when Explorer tries to get a thumbnail of a grf-file that was not created by Graph.</font>
+  <li><font size="+1">A dialog is no longer shown when Explorer tries to get a thumbnail of a grf-file that was not created by Graph.</font>
         </li>
   <li><font size="+1">	Calculate with complex numbers has been moved to the Edit|Axes dialog.</font>
         </li>
   <li><font size="+1">	Some improvements in printing of grids and labels.</font>
         </li>
   <li><font size="+1">	A few minor bugs have been fixed.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 4.0 (October 15th 2005)</font></b></font></p>
 
-<font size="+1">      </font>
 <ul>
   <li><font size="+1"><font size="+1">Support  for inequality added.</font>
         </font></li>
@@ -249,34 +241,23 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
   <li><font size="+1"><font size="+1">Fixed  problem with inaccurate high order polynomial trendlines.</font>
         </font></li>
   <li><font size="+1"><font size="+1">Fixed wrong  area calculated for tangents.</font></font></li>
-
-  <font size="+1">      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 3.3.1 (February 27th 2005)</font></b></font></p>
-
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">French translation added (including a French help 
+  <li><font size="+1">French translation added (including a French help 
           file).</font>
         </li>
   <li><font size="+1">Fixed bug terminating Graph when some invalid functions 
           are entered.</font>
         </li>
   <li><font size="+1">Several minor bugs have been fixed.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 3.3 (December 29th 2004)</font></b></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li> <font size="+1">Implemented the possibility to show end points at 
+  <li> <font size="+1">Implemented the possibility to show end points at 
           the ends of functions. </font>
         </li>
   <li><font size="+1"> Arrows can now be used as markers on point series. 
@@ -308,53 +289,34 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
   <li><font size="+1">Slovenian language translation added.</font><br>
 
         </li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 3.2.2 (Septmeber 12th 2004)</font></b></font></p>
-
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Fixed bug preventing <i>Edit|Copy image</i> from working 
+  <li><font size="+1">Fixed bug preventing <i>Edit|Copy image</i> from working 
           for users with limited accounts.</font>
         </li>
   <li><font size="+1">Fixed bug crashing Graph when trying to open a non 
           existing file.</font>
         </li>
   <li><font size="+1">A few minor bugs have been fixed.</font><br>
-
         </li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 3.2.1 (August 31st 2004)</font></b></font></p>
 
-<font size="+1">      </font>
 <ul>
 
-  <font size="+1">        <li><font size="+1">Fixed bug in creating moving average.</font>
+  <li><font size="+1">Fixed bug in creating moving average.</font>
         </li>
   <li><font size="+1">Fixed bug preventing user defined trendlines from 
           working.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
-<p></p>
-
-<font size="+1">      </font>
 <p><font size="+1"><font size="+1"><b>Version 3.2 (August 16th 2004)</b></font></font></p>
-
-<font size="+1">      </font>
 <ul>
 
-  <font size="+1">        <li><font size="+1">Points may be added to series by clicking on the coordinate 
+  <li><font size="+1">Points may be added to series by clicking on the coordinate 
           system while the Ctrl key is held down.</font>
         </li>
   <li><i><font size="+1">Calc|Evaluate</font></i><font size="+1"> can now 
@@ -379,17 +341,11 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
         </li>
   <li><font size="+1">Spanish, Portuguese and Italian language translations 
           added.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 3.1 (March 31st 2004)</font></b></font></p>
-
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">OLE server implemented.</font>
+  <li><font size="+1">OLE server implemented.</font>
         </li>
   <li><font size="+1">You can now use the Shift key instead of <i>Zoom|Move 
           system</i></font>
@@ -403,17 +359,11 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
   <li><font size="+1">A lot of minor bugs have been fixed.</font><br>
 
         </li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 3.0 (January 20th 2004)</font></b></font></p>
-
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Text labels may now be added anywhere in the coordinate 
+  <li><font size="+1">Text labels may now be added anywhere in the coordinate 
           system.</font>
         </li>
   <li><font size="+1">Labels may contain any kind of OLE objects, for example 
@@ -457,17 +407,12 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
           work around some printer problems.<br>
 
           </font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><font size="+1"><b>Version 2.7.1 (September 19th 2003)</b></font></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">The results in area calculations with polar functions 
+  <li><font size="+1">The results in area calculations with polar functions 
           are now correct.</font>
         </li>
   <li><font size="+1"> The results in length of path calculations with polar 
@@ -479,17 +424,12 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
   <li><font size="+1">Some minor bugs have been fixed.</font>
         </li>
   <li><font size="+1">A few very minor improvements have been made.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><font size="+1"><b>Version 2.7 (September 6th 2003)</b></font></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Some minor bugs have been fixed.</font>
+  <li><font size="+1">Some minor bugs have been fixed.</font>
         </li>
   <li><font size="+1">Some minor improvements have been made.</font>
         </li>
@@ -525,19 +465,13 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
         </li>
   <li><font size="+1">Now remembers last style, color and size when inserting 
           functions and point series.</font><br>
-
         </li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 2.6 (June 14th 2003)</font></b></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Some minor bugs have been fixed.</font>
+  <li><font size="+1">Some minor bugs have been fixed.</font>
         </li>
   <li><font size="+1">It is now possible to zoom to fit the selected function 
           or point series.</font>
@@ -565,17 +499,12 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
           the tick units.</font>
         </li>
   <li><font size="+1">The program can now auto select the tick units.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 2.5 (March 26th 2003)</font></b></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">A lot of minor bugs have been fixed.</font>
+  <li><font size="+1">A lot of minor bugs have been fixed.</font>
         </li>
   <li><font size="+1">Bug in differentiation fixed.</font>
         </li>
@@ -599,20 +528,12 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
         </li>
   <li><font size="+1">Functions that end suddenly after a large slope are 
           now drawn more correctly.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
-<p></p>
-
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 2.4 (January 1st 2003)</font></b></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Some minor bugs have been fixed.</font>
+  <li><font size="+1">Some minor bugs have been fixed.</font>
         </li>
   <li><font size="+1">These functions may now be used: mod, trunc, fract, 
           ceil, floor, round, min, max, if, range</font>
@@ -638,28 +559,19 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
           large fonts are used.</font>
         </li>
   <li><font size="+1">Added feature to zoom as much as all points are visible.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><font size="+1"><b>Version 2.3.1 (October 26th 2002)</b></font></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Bug in differentiation of division fixed.</font></li>
-
-      </font>
+  <li><font size="+1">Bug in differentiation of division fixed.</font></li>
 </ul>
 
 <font size="+1">      </font>
 <p><font size="+1"><font size="+1"><b>Version 2.3 (October 7th 2002)</b></font></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">A redo menu item has been implemented</font>
+  <li><font size="+1">A redo menu item has been implemented</font>
         </li>
   <li><font size="+1">It is now possible to save as Portable Network Graphics 
           (png).</font>
@@ -667,58 +579,39 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
   <li><font size="+1">A lot of minor bugs have been fixed.</font>
         </li>
   <li><font size="+1">Some minor improvements have been made.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
-<p><font size="+1"><b><font size="+1">Version 2.2 (August 27th 2002)<br>
-
-        </font></b></font></p>
-
-<font size="+1">      </font>
+<p><font size="+1"><b>Version 2.2 (August 27th 2002)<br>
+        </b></font></p>
 <ul>
-
-  <font size="+1">        <li><font size="+1">The internal functions for parsing and calculating 
+  <li><font size="+1">The internal functions for parsing and calculating 
           have been optimized.</font>
         </li>
   <li><font size="+1">Some minor improvements made.</font>
         </li>
   <li><font size="+1">Some minor bugs have been fixed.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
-<p><font size="+1"><b><font size="+1">Version 2.1.1 (August 10th 2002)</font></b></font></p>
+<p><font size="+1"><b>Version 2.1.1 (August 10th 2002)</b></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Now it is possible to save bitmap files again.</font>
+  <li><font size="+1">Now it is possible to save bitmap files again.</font>
         </li>
   <li><font size="+1">Fixed lock up when adding one or two points with a 
           smooth line.</font>
         </li>
   <li><font size="+1">Some printer bugs have been fixed.</font><font size="+1"><b></b></font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1">Version 2.1 (August 4th 2002)</font></b></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Added a menu item to check if a new version is available. 
+  <li><font size="+1">Added a menu item to check if a new version is available. 
           </font>
         </li>
   <li><font size="+1">It is now possible to evaluate tangents.</font>
         </li>
   <li><font size="+1"> Some small improvements.</font></li>
-
-      </font>
 </ul>
 
 <font size="+1">      </font>
@@ -726,8 +619,7 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
 
 <font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Bug in undo function fixed.</font>
+  <li><font size="+1">Bug in undo function fixed.</font>
         </li>
   <li><font size="+1">It is now possible to add series of points with different 
           colors, styles, and more.</font>
@@ -738,32 +630,22 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
   <li><font size="+1">You may now add shadings to the functions.</font>
         </li>
   <li><font size="+1">Some minor bugs have been fixed.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><b><font size="+1"></font></b><font size="+1"><b>Version 1.2.1 (January 
         1st 2002)</b></font></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Bug, which might prevent writing ^ for power functions, 
+  <li><font size="+1">Bug, which might prevent writing ^ for power functions, 
           has been fixed.</font>
         </li>
   <li><font size="+1">Some minor bugs have been fixed.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
-<p><font size="+1"><b><font size="+1">Version 1.2 (December 7th 2001)</font></b></font></p>
+<p><font size="+1"><b>Version 1.2 (December 7th 2001)</b></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Some minor bugs fixed.</font>
+  <li><font size="+1">Some minor bugs fixed.</font>
         </li>
   <li><font size="+1">Copy and paste of functions now implemented.</font>
         </li>
@@ -771,31 +653,21 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
         </li>
   <li><font size="+1">It is now possible to show a table with evaluated 
           values.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><font size="+1"><b></b></font><font size="+1"><b>Version 1.1.1 (September 
         23rd 2001)</b></font></font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Bug, that might crash program while printing, fixed.</font>
+  <li><font size="+1">Bug, that might crash program while printing, fixed.</font>
         </li>
   <li><font size="+1">Some minor bugs have been fixed.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><font size="+1"><b>Version 1.1 (September 1st 2001)</b></font> </font></p>
 
-<font size="+1">      </font>
 <ul>
-
-  <font size="+1">        <li><font size="+1">Interface changed: A list with functions and tangents 
+  <li><font size="+1">Interface changed: A list with functions and tangents 
           is now shown in the main window instead of in each dialog box.</font>
         </li>
   <li><font size="+1">Different line styles are now supported: Solid, dot, 
@@ -813,14 +685,10 @@ Croatian and Vietnamese translations added.<o:p></o:p></span></big></li>
   <li><font size="+1">A lot of minor bugs have been removed.</font>
         </li>
   <li><font size="+1">Some optimizations have been done.</font></li>
-
-      </font>
 </ul>
 
-<font size="+1">      </font>
 <p><font size="+1"><font size="+1"><b>Version 1.0</b> <b>(March 6th 2001)</b></font></font></p>
 
-<font size="+1">      </font>
 <blockquote><font size="+1"> 
         </font>
   <p><font size="+1"><font size="+1">First release with many features.</font></font></p>

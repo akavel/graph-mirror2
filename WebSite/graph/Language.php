@@ -277,7 +277,7 @@ Kannas </td>
             </td>
 
             <td width="48%">
-            <p wrap="">Pawe&#322; Gl&#261;b</p>
+            <p>Pawe&#322; Gl&#261;b</p>
 
             </td>
 
