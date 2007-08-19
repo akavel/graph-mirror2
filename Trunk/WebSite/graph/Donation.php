@@ -2,33 +2,24 @@
 <html>
 <head>
   <title>Graph - Donate</title>
-
-
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-
   <link rel="stylesheet" href="Graph.css" type="text/css">
-
 </head>
-
-
 <body>
 
 <div id="main">
 <h1 align="center"><font color="#0000ff" size="+7"><b> Donate</b></font></h1>
 
-<font size="+1">
-<p align="left">Graph is
+<p><font size="+1">Graph is
 completely free of charge, but there are some expenses involved in the
 development of the program, like web hosting and development utilities.
 If you want to express your appreciation of the time spent on the
 development, I accept and appreciate donations to help cover the
-expenses.</p>
-
-<p align="left">The button
-below may be used to make donations through PayPal.</p>
-
-<p align="left">Thank you in
-advance!</p>
+expenses.<br>
+The button below may be used to make donations through PayPal.<br>
+Thank you in advance!
+</font>
+</p>
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <div align="center"> 
@@ -56,13 +47,11 @@ advance!</p>
 	<input name="item_name" value="Graph donation" type="hidden">
   <input name="image_url" value="http://padowan.dk/graph/Icon.gif" type="hidden">
   <input name="no_shipping" value="1" type="hidden"><input name="return" value="http://www.padowan.dk" type="hidden">
-  <input name="cancel_return" value="http://www.padowan.dk" type="hidden"> <xinput type="hidden" name="currency_code" value="USD">
+  <input name="cancel_return" value="http://www.padowan.dk" type="hidden">
   <input name="tax" value="0" type="hidden"><input name="cn" value="Comments" type="hidden">
   <input name="submit" value="Make donation" type="submit">
 	</div>
 </form>
-
-</font>
 </div>
 
 <?php include './Menu.inc'; ?>

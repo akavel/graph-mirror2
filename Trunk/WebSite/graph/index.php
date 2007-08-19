@@ -12,7 +12,7 @@
 
 <div id="main"> 
   <p><h1  align="center"><b><font size="+7" color="#0000ff"> 
-    Graph 4.3</font></b></h1></p>
+    Graph 4.3</font></b></h1>
   <p><img height="424" alt="Main window" src="DialogMain.png" width="595" ></p>
   <table border="0" align="center" cellspacing="10">
     <tr> 
@@ -28,14 +28,14 @@
       <td valign="top">
 <table border="1" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" width="170" id="AutoNumber4">
           <tr> 
-            <td align="middle" bgcolor="#000000"> 
+            <td align="center" bgcolor="#000000"> 
               <p><font face="Arial, Arial, Helvetica"> <b><font color="#ffff00" size="2">Graph 
                 Update </font></b></font><font face="Arial, Arial, Helvetica"><b><font color="#ffff00" size="2">Mailing 
                 List</font></b> </font></p>
             </td>
           </tr>
           <tr> 
-            <td align="middle" bgcolor="#ffff99"> 
+            <td align="center" bgcolor="#ffff99"> 
               <form method="post" action="http://www.padowan.dk/graph/updatelist.php">
                 <p align="center" style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 2px"> <font size="2" face="Arial, Arial, Helvetica">Join 
                   the list to be notified when a new version of Graph is available.</font></p>
@@ -47,7 +47,7 @@
            > <font face="Arial, Arial, Helvetica"> 
                   <input type="image" alt="Click here to join the Graph update mailing list" src="subscribe.png" >
                   </font> 
-              </form></p>
+              </form>
             </td>
           </tr>
         </table>
