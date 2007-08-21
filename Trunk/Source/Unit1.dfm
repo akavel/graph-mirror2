@@ -3955,11 +3955,6 @@ object Form1: TForm1
       OnExecute = InsertObjectActionExecute
     end
   end
-  object ColorSelect: TIColorSelect
-    Caption = 'Select color'
-    Left = 328
-    Top = 176
-  end
   object PopupMenu2: TTntPopupMenu
     Left = 328
     Top = 256
@@ -4127,7 +4122,7 @@ object Form1: TForm1
     Options = [ofOverwritePrompt, ofHideReadOnly, ofShowHelp, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing]
     HelpCaption = 'Options...'
     OnHelp = SaveDialogEx1Help
-    Left = 408
-    Top = 256
+    Left = 328
+    Top = 176
   end
 end

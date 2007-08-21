@@ -95,7 +95,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
     out << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
     out << "CmdLine: " << CmdLine << std::endl;
   }
-
+                                                                  
   SetCompTranslateFunc(gettext);
   InitDebug();
 #endif

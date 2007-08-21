@@ -261,6 +261,7 @@ BEGIN
 "Subset:"
 "Close"
 "Insert"
+"Select color"
 
 //Texts for Customize Toolbar
 "Customize"    //Customize toolbar dialog
