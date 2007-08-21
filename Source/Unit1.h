@@ -110,7 +110,6 @@ __published:	// IDE-managed Components
   TImageList *ImageList2;
   TCustomizeDlg *CustomizeDlg;
   TActionManager *ActionManager;
-  TIColorSelect *ColorSelect;
   TTntAction *NewAction;
   TActionToolBar *ActionToolBar1;
   TTntAction *OpenAction;

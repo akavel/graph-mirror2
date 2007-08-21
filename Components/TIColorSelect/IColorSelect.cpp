@@ -4,6 +4,7 @@
 #pragma hdrstop
 #include "IColorSelect.h"
 #include "Consts.hpp" //Declarition of constants in resource
+#include "ICompCommon.h"
 #include <memory>
 #pragma package(smart_init)
 
@@ -51,7 +52,7 @@ namespace Icolorselect
 //Constructor initializes variables
 __fastcall TIColorSelect::TIColorSelect(TComponent* Owner)
   : TComponent(Owner), FColorList((TColor*)ColorTable, (TColor*)ColorTable+256),
-    FColCount(16), FRowCount(16), FColor(clRed), FCaption("Select Color"),
+    FColCount(16), FRowCount(16), FColor(clRed), FCaption(TranslateCompText("Select color")),
     FEditColor(false), FShowHelp(false), Form(NULL), FOnShow(NULL), FOnClose(NULL)
 {
 }

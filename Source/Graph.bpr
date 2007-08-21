@@ -50,7 +50,7 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value="WIN32;CUSTOM_DEBUG_HANDLER;STRICT;_DEBUG"/>
+    <USERDEFINES value="WIN32;CUSTOM_DEBUG_HANDLER;STRICT"/>
     <SYSDEFINES value="NO_STRICT;_ATL_NO_SECURITY;INC_ATL_HEADERS;_ATL_SINGLEUSE_INSTANCING;_ATL_MULTIUSE_INSTANCING;_ATL_APARTMENT_THREADED;_BCB_ATL_DEBUG"/>
     <MAINSOURCE value="Graph.cpp"/>
     <INCLUDEPATH value="&quot;C:\Program Files\Borland\CBuilder6\Source\vcl&quot;;&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;..\Components\TSaveDialogEx;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Func32;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;$(BCB)\include;$(BCB)\include\vcl;..\components\ticolorbox;..\Components\TCross;..\Components\TFocusPanel;..\Components\TGrid;..\Components\TLineSelect;..\Components\TMyEdit;..\Components\TMyRadioButton;..\Components\TMySplitter;..\Components\TPointSelect;..\Components\TProgress;..\Components\TProgressForm;..\Components\TRecent;..\Components\TShadeSelect;..\..\BMGLib\BMGLib_DLL;..\Components\Common;..\Components\TIRichEdit;$(BCB)\include\atl;..\..\boost;..\..\BMGLib\lpng125;..\..\BMGLib\zlib114;$(BCB)\source\rtl\rtlinc;..\..\PDFlib-Lite\libs\pdflib;&quot;C:\Program Files\TntWare\Delphi Unicode Controls\Source&quot;;C:\Python25\include"/>
@@ -67,13 +67,13 @@
       -I..\Components\TPageSetup -I..\Components\TPointSelect 
       -I..\Components\TProgress -I..\Components\TProgressForm 
       -I..\Components\TRecent -I..\Components\TShadeSelect -boa"/>
-    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -xp -X- -r- -a8 -6 -b- -d -k -y -v 
-      -vi- -c -tW -tWM"/>
-    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y+ -$W -$O- -$C- -$A8 -v -JPHNE -M"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -xp -X- -a8 -6 -b- -d -k- -vi -c 
+      -tW -tWM"/>
+    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y- -$L- -$D- -$C- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zi"/>
+    <AFLAGS value="/mx /w2 /zn"/>
     <LFLAGS value="-I..\Obj -dPDFlib.dll -dpython25.dll -dgdiplus.dll -D&quot;&quot; -S:0x500000 -aa 
-      -Tpe -GD -x -v"/>
+      -Tpe -GD -x"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -151,7 +151,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=3
 Release=0
-Build=382
+Build=384
 Debug=1
 PreRelease=0
 Special=0
@@ -163,7 +163,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.3.0.382
+FileVersion=4.3.0.384
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2007
 LegalTrademarks=
@@ -240,9 +240,9 @@ Item29=d:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRi
 
 [HistoryLists\hlConditionals]
 Count=18
-Item0=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;_DEBUG
-Item1=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;_DEBUG;dgd
-Item2=WIN32;CUSTOM_DEBUG_HANDLER;STRICT
+Item0=WIN32;CUSTOM_DEBUG_HANDLER;STRICT
+Item1=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;_DEBUG
+Item2=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;_DEBUG;dgd
 Item3=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG;STRICT
 Item4=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG
 Item5=WIN32;CUSTOM_DEBUG_HANDLER
