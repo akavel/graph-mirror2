@@ -276,11 +276,13 @@ void TForm1::Translate()
     TranslateList.push_back(Tree_Export);
     TranslateList.push_back(Tree_ShowInLegend);
     TranslateList.push_back(Tree_Placement);
+    TranslateList.push_back(Tree_Rotation);
     TranslateList.push_back(Tree_Above);
     TranslateList.push_back(Tree_Below);
     TranslateList.push_back(Tree_Left);
     TranslateList.push_back(Tree_Right);
     TranslateList.push_back(Tree_Placement_Custom);
+    TranslateList.push_back(Tree_Rotation_Custom);
 
     TranslateList.push_back(Label_Edit);
     TranslateList.push_back(Label_Delete);
