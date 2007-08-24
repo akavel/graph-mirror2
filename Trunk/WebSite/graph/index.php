@@ -56,7 +56,7 @@
   </table>
   <p align="center"><b><font size="+1">Copyright © 2007 by Ivan Johansen<br>
   Last updated: 
-    August 12, 2007
+    August 26, 2007
     </font></b></p>
 </div>
 

@@ -1,24 +1,18 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-
-
   <title>Graph - Revision history</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-
   <link rel="stylesheet" href="Graph.css" type="text/css">
 </head>
 
 
 <body>
 
-<div id="main"> 
-      
+<div id="main">      
 <h1 align="center"><font size="+7"><b>
-        <font color="#0000ff">Revision history</font></b></font> </h1>
-
-      
-<p><b><font size="+1">Version 4.3 (August 12th 2007)</font></b></p>
+        <font color="#0000ff">Revision history</font></b></font> </h1>    
+<p><b><font size="+1">Version 4.3 (August 26th 2007)</font></b></p>
 <ul>
   <li><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;</span></span></span><big><span style="">Labels can
 now be rotated freely.</span></big></li>
