@@ -25,24 +25,27 @@ VersionInfoVersion=4.3.0.384
 
 
 [Languages]
-Name: "English"; MessagesFile: "compiler:Default.isl"
+Name: "Chinese"; MessagesFile: "compiler:Languages\ChineseTrad.isl"
+Name: "Croatian"; MessagesFile:  "compiler:Languages\Croatian.isl"
+Name: "Czech"; MessagesFile:  "compiler:Languages\Czech.isl"
 Name: "Danish"; MessagesFile: "compiler:Languages\Danish.isl"
 Name: "Dutch"; MessagesFile: "compiler:Languages\Dutch.isl"
+Name: "English"; MessagesFile: "compiler:Default.isl"
 Name: "Finnish"; MessagesFile: "compiler:Languages\Finnish.isl"
 Name: "French"; MessagesFile: "compiler:Languages\French.isl"
 Name: "German"; MessagesFile: "compiler:Languages\German.isl"
+Name: "Greek"; MessagesFile: "compiler:Languages\Greek.isl"
 Name: "Hungarian"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "Italian"; MessagesFile: "compiler:Languages\Italian.isl"
+;Name: "Mongolian"; MessagesFile: "compiler:Languages\Mongolian.isl"
+Name: "Polish"; MessagesFile:  "compiler:Languages\Polish.isl"
 Name: "Portuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "Russian"; MessagesFile: "compiler:Languages\Russian.isl"
+Name: "Serbian"; MessagesFile: "compiler:Languages\Serbian.isl"
 Name: "Slovenian"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "Spanish"; MessagesFile: "Languages\Spanish.isl"
-Name: "Greek"; MessagesFile: "compiler:Languages\Greek.isl"
-Name: "Chinese"; MessagesFile: "compiler:Languages\ChineseTrad.isl"
-;Name: "Mongolian"; MessagesFile: "compiler:Languages\Mongolian.isl"
 Name: "Swedish"; MessagesFile:  "compiler:Languages\Swedish.isl"
-Name: "Polish"; MessagesFile:  "compiler:Languages\Polish.isl"
-Name: "Czech"; MessagesFile:  "compiler:Languages\Czech.isl"
+;Name: "Vietnamese"; MessagesFile: "compiler:Languages\Vietnamese.isl"
 
 [Tasks]
 Name: "DesktopIcon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
