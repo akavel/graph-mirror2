@@ -2244,7 +2244,12 @@ void TForm1::CheckForUpdate(bool StartupCheck)
     if(!StartupCheck)
       MessageBox(LoadRes(546, E.Message), LoadRes(547, E.ReplyErrorCode), MB_ICONSTOP);
   }
-}
+  catch(Exception &E)
+  {
+    if(!StartupCheck)
+      MessageBox(E.Message, LoadRes(RES_ERROR), MB_ICONSTOP);
+  }
+}                                               
 //---------------------------------------------------------------------------
 void __fastcall TForm1::UpdateActionExecute(TObject *Sender)
 {
