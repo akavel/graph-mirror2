@@ -6,7 +6,7 @@ AllowNoIcons=yes
 AppCopyright=Ivan Johansen
 AppMutex=Graph running
 AppName=Graph
-AppVerName=Graph 4.3 beta
+AppVerName=Graph 4.3
 AppPublisher=Ivan Johansen
 AppPublisherURL=http://www.padowan.dk
 AppSupportURL=http://www.padowan.dk
@@ -17,11 +17,11 @@ DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
 LicenseFile=License.txt
-OutputBaseFilename=SetupGraphBeta-4.3.0.373
+OutputBaseFilename=SetupGrap-4.3
 OutputDir=.
 SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.3.0.373
+VersionInfoVersion=4.3.0.384
 
 
 [Languages]
@@ -65,7 +65,7 @@ Source: "Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritere
 Name: "{userprograms}\Graph\Examples"; Filename: "{app}\Examples"; IconFilename: "{sys}\shell32.dll"; IconIndex: 19; Flags: foldershortcut; Tasks: not InstallAllUsers; Check: not WizardNoIcons
 Name: "{userprograms}\Graph\Graph"; Filename: "{app}\Graph.exe"; Comment: "Graph"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
 Name: "{userprograms}\Graph\Uninstall"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
-Name: "{commonprograms}\Graph\Examples"; Filename: "{app}\Examples"; IconFilename: "{sys}\shell32.dll"; IconIndex: 19; Flags: foldershortcut; Tasks: InstallAllUsers; Check: not WizardNoIcons
+Name: "{commonprograms}\Graph\Examples"; Filename: "{app}\Examples"; Flags: foldershortcut; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{commonprograms}\Graph\Graph"; Filename: "{app}\Graph.exe"; Comment: "Graph"; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{commonprograms}\Graph\Uninstall"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{userdesktop}\Graph"; Filename: "{app}\Graph.exe"; Tasks: DesktopIcon
@@ -90,6 +90,7 @@ Root: HKCU; Subkey: "Software\Ivan\Graph"; ValueType: dword; ValueName: "Install
 Type: files; Name: "{app}\uninstall.exe"
 Type: files; Name: "{app}\uninstall.ini"
 Type: files; Name: "{app}\Help\*.gid"
+Type: files; Name: "{app}\Examples\*.grf"
 Type: files; Name: "{userprograms}\Graph.lnk"
 Type: files; Name: "{commonprograms}\Graph.lnk"
 
