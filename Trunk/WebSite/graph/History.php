@@ -23,12 +23,6 @@ now calculate the area under a parametric function.</span></big></li>
     </span></span></span><span style="">Zoom|Square
 will now keep the y-axis scaled equal to the x-axis until explicitly disabled.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
-    </span></span></span><span style="">An image
-is now stored into the grf files to make preview and thumbnails faster.</span></big></li>
-  <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
-    </span></span></span><span style="">OLE
-objects may now be inserted without text labels.</span></big></li>
-  <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
     </span></span></span><span style="">Checkboxes
 added to the function list to indicate visibility.</span></big></li>
   <li><big><span style="font-family: Symbol;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">

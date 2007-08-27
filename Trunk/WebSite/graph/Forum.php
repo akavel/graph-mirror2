@@ -18,7 +18,7 @@
         and email each time a message is posted to the list. Subscription may 
         be done from the <a href="https://lists.sourceforge.net/lists/listinfo/graph-support" target="_top">info 
         page</a>.</font></p>
-      <p><font size="+1">To post a message to the list, send an email to <a href="mailto:graph-support@lists.sourceforge.net">graph-support@lists.sourceforge.net</a></font></p>
+      <p><font size="+1">To post a message to the list, send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#114;&#97;&#112;&#104;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#46;&#115;&#111;&#117;&#114;&#99;&#101;&#102;&#111;&#114;&#103;&#101;&#46;&#110;&#101;&#116;">&#103;&#114;&#97;&#112;&#104;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#46;&#115;&#111;&#117;&#114;&#99;&#101;&#102;&#111;&#114;&#103;&#101;&#46;&#110;&#101;&#116;</a></font></p>
       <p><font size="+1">You can find a collection of all prior messages in the 
         <a href="http://sourceforge.net/mailarchive/forum.php?forum=graph-support" target="_top">Archives</a>.</font></p>
       <p><font size="+1"><b>Forum</b></font><br><font size="+1">Instead of using the 

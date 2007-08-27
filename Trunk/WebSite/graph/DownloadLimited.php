@@ -1,6 +1,6 @@
 <?php
   $counter_file = '../stat/DownloadLimitedCount.txt';
-  $download_file = "http://www.padowan.dk/graph/SetupGraphLimited-4.2.exe";
+  $download_file = "http://www.padowan.dk/bin/SetupGraphLimited-4.3.exe";
   clearstatcache();
   ignore_user_abort(true);     ## prevent refresh from aborting file operations and hosing file
   $fh = fopen($counter_file, 'r+b');     ## use 'r+b' so file can be read and written
