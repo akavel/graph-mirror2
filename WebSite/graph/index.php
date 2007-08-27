@@ -11,7 +11,7 @@
 <body>
 
 <div id="main"> 
-  <p><h1  align="center"><b><font size="+7" color="#0000ff"> 
+  <h1  align="center"><b><font size="+7" color="#0000ff"> 
     Graph 4.3</font></b></h1>
   <p><img height="424" alt="Main window" src="DialogMain.png" width="595" ></p>
   <table border="0" align="center" cellspacing="10">

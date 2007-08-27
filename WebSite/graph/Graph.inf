@@ -12,8 +12,6 @@ DonatePage = http://www.padowan.dk/test/Donation.php
 NewFeatures = · Labels can now be rotated freely.
 NewFeatures = · Graph can now calculate the area under a parametric function.
 NewFeatures = · Zoom|Square will now keep the y-axis scaled equal to the x-axis until explicitly disabled.
-NewFeatures = · An image is now stored into the grf files to make preview and thumbnails faster.
-NewFeatures = · OLE objects may now be inserted without text labels.
 NewFeatures = · Checkboxes added to the function list to indicate visibility.
 NewFeatures = · You can now specify the exact placement of text labels.
 NewFeatures = · a^(b/c) is now handled as a special case and will be plotted correctly.
@@ -29,11 +27,9 @@ NewFeatures = · Serbian, Croatian and Vietnamese translations added.
 
 [Danish]
 NewFeatures = · Etiketter kan nu roteres frit.
-NewFeatures = · Understøttelse af Python-plugins implementeret.
 NewFeatures = · Graph kan nu beregne arealet under en parameterfunktion.
 NewFeatures = · Zoom|Kvadrat vil nu skalere y-aksen og x-aksen ens, med mindre dette slås fra.
 NewFeatures = · Et billede gemmes nu i grf-filerne for at gøre visningen af miniaturebilleder hurtigere.
-NewFeatures = · OLE-objekter kan nu indsættes uden brug af tekstetiketter.
 NewFeatures = · I funktionslisten kan man nu markere med flueben, om de enkelte elementer skal vises eller ej.
 NewFeatures = · Der kan nu vælges en nøjagtig placering af tekstetiketter.
 NewFeatures = · a^(b/c) håndteres nu som et specialtilfælde.
@@ -49,11 +45,9 @@ NewFeatures = · Serbisk, kroatisk og vietnamesisk sprogpakke tilføjet.
 
 [German]
 NewFeatures = · Textfelder lassen nun sich beliebig drehen. 
-NewFeatures = · Unterstützung für Python-Plugins implementiert. 
 NewFeatures = · Graph kann jetzt die Fläche unterhalb einer Parameterfunktion berechnen.
 NewFeatures = · Zoomen|Quadrat sorgt für eine gleichmäßige Skalenteilung der X- und der Y-Achse, es sei denn, dies wird ausdrücklich ausgeschaltet.
 NewFeatures = · Graph-Dateien (*.grf) enthalten ab jetzt auch ein Bild, um schnellere Vorschauen zu ermöglichen.
-NewFeatures = · OLE-Objekte können nun direkt eingefügt werden. Der Umweg über Textfelder ist nicht mehr erforderlich.
 NewFeatures = · Die Funktionsliste ermöglicht es jetzt direkt (über Knöpfe), Funktionen aus- und wieder einzublenden.
 NewFeatures = · Textfelder können nun exakt platziert werden.
 NewFeatures = · a^(b/c) wird nun gesondert behandelt.
@@ -70,11 +64,9 @@ NewFeatures = · Übersetzung für Serbisch, Kroatisch und Vietnamesisch hinzugefüg
 
 [French]
 NewFeatures = · Les labels peuvent maintenant pivoter librement.
-NewFeatures = · La gestion de plugins Python a été implémentée.
 NewFeatures = · Graph peut maintenant calculer l’aire sous une courbe définie paramétriquement.
 NewFeatures = · Zoom|Normer conservera maintenant l'égalité des échelles sur l'axe des « x » et des « y » tant qu'il ne sera pas désactivé.
 NewFeatures = · Une image est maintenant incluse dans le fichier grf pour accélérer la prévisualisation et les vignettes.
-NewFeatures = · Les objets OLE peuvent maintenant être insérés sans label texte.
 NewFeatures = · Des cases ont été ajoutées à la liste des fonctions pour indiquer l'état visible/invisible.
 NewFeatures = · Vous pouvez maintenant spécifier l'emplacement précis des labels.
 NewFeatures = · a^(b/c) est maintenant traité comme un cas particulier.

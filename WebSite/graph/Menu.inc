@@ -4,7 +4,7 @@
 <a href=".">Main</a><br>
 <a href="History.php">History</a><br>
 <a href="Download.php">Download</a><br>
-<a href="Beta.php">Beta</a><br>
+<!--<a href="Beta.php">Beta</a><br>-->
 <a href="Features.php">Features</a><br>
 <a href="shots/Shot1.php">Screenshots</a><br>
 <a href="Faq.php">FAQ</a><br>
