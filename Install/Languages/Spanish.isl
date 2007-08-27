@@ -31,9 +31,9 @@ LanguageCodePage=0
 
 ; *** Application titles
 SetupAppTitle=Instalar
-SetupWindowTitle=Asistente para la instalación de %1
+SetupWindowTitle=Instalar - %1
 UninstallAppTitle=Desinstalar
-UninstallAppFullTitle=Asistente para la desinstalación de %1
+UninstallAppFullTitle=Desinstalar - %1
 
 ; *** Misc. common
 InformationTitle=Información
@@ -241,7 +241,7 @@ StatusCreateIniEntries=Creando entradas INI...
 StatusCreateRegistryEntries=Creando entradas en el Registro...
 StatusRegisterFiles=Registrando archivos...
 StatusSavingUninstall=Guardando información para desinstalar el programa...
-StatusRunProgram=Terminando la instalación...
+StatusRunProgram=Finalizando la instalación...
 StatusRollback=Deshaciendo los cambios...
 
 ; *** Misc. errors
@@ -312,7 +312,7 @@ StatusUninstalling=Desinstalando %1...
 
 NameAndVersion=%1 versión %2
 AdditionalIcons=Iconos:
-CreateDesktopIcon=Crear un acceso directo en el &Escritorio
+CreateDesktopIcon=Crear un icono de acceso directo en el &Escritorio
 CreateQuickLaunchIcon=Crear un icono de acceso &rápido
 ProgramOnTheWeb=%1 en la Web
 UninstallProgram=Desinstalar %1
