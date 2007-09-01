@@ -10,16 +10,16 @@
       ..\Obj\Encode.obj ..\Obj\Graph.obj ..\Obj\GraphElem.obj 
       ..\Obj\GuiHelper.obj ..\Obj\GuiUtil.obj ..\Obj\IGraphic.obj 
       ..\Obj\OleObjectElem.obj ..\Obj\OleServerImpl.obj ..\Obj\PngHelper.obj 
-      ..\Obj\PythonBind.obj ..\Obj\Settings.obj ..\Obj\StackTrace.obj 
-      ..\Obj\VersionInfo.obj ..\Obj\Undo.obj ..\Obj\Unit1.obj ..\Obj\Unit2.obj 
-      ..\Obj\Unit3.obj ..\Obj\Unit4.obj ..\Obj\Unit5.obj ..\Obj\Unit6.obj 
-      ..\Obj\Unit7.obj ..\Obj\Unit8.obj ..\Obj\Unit9.obj ..\Obj\Unit10.obj 
-      ..\Obj\Unit11.obj ..\Obj\Unit12.obj ..\Obj\Unit13.obj ..\Obj\Unit14.obj 
-      ..\Obj\Unit15.obj ..\Obj\Unit16.obj ..\Obj\Unit17.obj ..\Obj\Unit18.obj 
-      ..\Obj\Unit19.obj ..\Obj\Unit20.obj ..\Obj\Unit21.obj ..\Obj\Tokenizer.obj 
-      ..\Obj\TStdFuncFrame.obj ..\Obj\TParFuncFrame.obj ..\Obj\TPolFuncFrame.obj 
-      ..\Obj\TTanFrame.obj ..\Obj\TAreaFrame.obj ..\Obj\pdflib.obj 
-      ..\..\dxgettext\gnugettext.obj"/>
+      ..\Obj\PythonBind.obj ..\Obj\PyVcl.obj ..\Obj\Settings.obj 
+      ..\Obj\StackTrace.obj ..\Obj\VersionInfo.obj ..\Obj\Undo.obj 
+      ..\Obj\Unit1.obj ..\Obj\Unit2.obj ..\Obj\Unit3.obj ..\Obj\Unit4.obj 
+      ..\Obj\Unit5.obj ..\Obj\Unit6.obj ..\Obj\Unit7.obj ..\Obj\Unit8.obj 
+      ..\Obj\Unit9.obj ..\Obj\Unit10.obj ..\Obj\Unit11.obj ..\Obj\Unit12.obj 
+      ..\Obj\Unit13.obj ..\Obj\Unit14.obj ..\Obj\Unit15.obj ..\Obj\Unit16.obj 
+      ..\Obj\Unit17.obj ..\Obj\Unit18.obj ..\Obj\Unit19.obj ..\Obj\Unit20.obj 
+      ..\Obj\Unit21.obj ..\Obj\Tokenizer.obj ..\Obj\TStdFuncFrame.obj 
+      ..\Obj\TParFuncFrame.obj ..\Obj\TPolFuncFrame.obj ..\Obj\TTanFrame.obj 
+      ..\Obj\TAreaFrame.obj ..\Obj\pdflib.obj ..\..\dxgettext\gnugettext.obj"/>
     <RESFILES value="Graph.res Resource.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
@@ -50,11 +50,11 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value="WIN32;CUSTOM_DEBUG_HANDLER;STRICT"/>
+    <USERDEFINES value="WIN32;CUSTOM_DEBUG_HANDLER;STRICT;xLIMITED_EDITION;_DEBUG"/>
     <SYSDEFINES value="NO_STRICT;_ATL_NO_SECURITY;INC_ATL_HEADERS;_ATL_SINGLEUSE_INSTANCING;_ATL_MULTIUSE_INSTANCING;_ATL_APARTMENT_THREADED;_BCB_ATL_DEBUG"/>
     <MAINSOURCE value="Graph.cpp"/>
     <INCLUDEPATH value="&quot;C:\Program Files\Borland\CBuilder6\Source\vcl&quot;;&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;..\Components\TMediaPlayerEx;..\..\PDFlib-Lite\bind\pdflib\cpp;..\Components\TSymbolDialog;..\Components\TExtColorBox;..\Components\TSaveDialogEx;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Func32;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;$(BCB)\include;$(BCB)\include\vcl;..\components\ticolorbox;..\Components\TCross;..\Components\TFocusPanel;..\Components\TGrid;..\Components\TLineSelect;..\Components\TMyEdit;..\Components\TMyRadioButton;..\Components\TMySplitter;..\Components\TPointSelect;..\Components\TProgress;..\Components\TProgressForm;..\Components\TRecent;..\Components\TShadeSelect;..\..\BMGLib\BMGLib_DLL;..\Components\Common;..\Components\TIRichEdit;$(BCB)\include\atl;..\..\boost;..\..\BMGLib\lpng125;..\..\BMGLib\zlib114;$(BCB)\source\rtl\rtlinc;..\..\PDFlib-Lite\libs\pdflib;&quot;C:\Program Files\TntWare\Delphi Unicode Controls\Source&quot;;C:\Python25\include"/>
-    <LIBPATH value="&quot;C:\Program Files\Borland\CBuilder6\Source\vcl&quot;;..;..\Components\TMediaPlayerEx;&quot;..\..\PDFlib-Lite\bind\pdflib\cpp&quot;;..\Components\TSymbolDialog;..\Components\TExtColorBox;$(BCB)\Source\Rtl\Source\except;..\Components\TSaveDialogEx;..\Components\Common;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton;$(BCB)\Lib\Psdk;..\Obj;&quot;C:\Program Files\TntWare\Delphi Unicode Controls\CBuilder&quot;"/>
+    <LIBPATH value="&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;&quot;C:\Program Files\Borland\CBuilder6\Source\vcl&quot;;..;..\Components\TMediaPlayerEx;&quot;..\..\PDFlib-Lite\bind\pdflib\cpp&quot;;..\Components\TSymbolDialog;..\Components\TExtColorBox;$(BCB)\Source\Rtl\Source\except;..\Components\TSaveDialogEx;..\Components\Common;..\Components\TIPrintDialog;c:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TLineSelect;..\Components\TMyRadioButton;$(BCB)\Lib\Psdk;..\Obj;&quot;C:\Program Files\TntWare\Delphi Unicode Controls\CBuilder&quot;"/>
     <WARNINGS value="-wprc -wuse -wucp -w-par -w-8027 -wdef -wbbf -wasm -wamp -wamb"/>
     <OTHERFILES value=""/>
   </MACROS>
@@ -67,13 +67,13 @@
       -I..\Components\TPageSetup -I..\Components\TPointSelect 
       -I..\Components\TProgress -I..\Components\TProgressForm 
       -I..\Components\TRecent -I..\Components\TShadeSelect -boa"/>
-    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -xp -X- -a8 -6 -b- -d -k- -vi -c 
-      -tW -tWM"/>
-    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y- -$L- -$D- -$C- -$A8 -v -JPHNE -M"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -xp -X- -r- -a8 -6 -b- -d -k -y -v 
+      -vi- -c -tW -tWM"/>
+    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y+ -$W -$O- -$C- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zn"/>
-    <LFLAGS value="-I..\Obj -dPDFlib.dll -dpython25.dll -dgdiplus.dll -D&quot;&quot; -S:0x500000 -aa 
-      -Tpe -GD -x"/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-dPDFlib.dll -dpython25.dll -dgdiplus.dll -I..\Obj -D&quot;&quot; -S:0x500000 -aa 
+      -Tpe -GD -x -v"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -105,6 +105,7 @@
       <FILE FILENAME="OleServerImpl.cpp" FORMNAME="" UNITNAME="OleServerImpl" COCLASSES="OleServer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\Components\Common\PngHelper.cpp" FORMNAME="" UNITNAME="PngHelper" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="PythonBind.cpp" FORMNAME="" UNITNAME="PythonBind" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="PyVcl.cpp" FORMNAME="" UNITNAME="PyVcl" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Settings.cpp" FORMNAME="" UNITNAME="Settings" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="StackTrace.cpp" FORMNAME="" UNITNAME="StackTrace" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\Components\Common\VersionInfo.cpp" FORMNAME="" UNITNAME="VersionInfo" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
@@ -149,10 +150,10 @@
 IncludeVerInfo=1
 AutoIncBuild=1
 MajorVer=4
-MinorVer=3
+MinorVer=4
 Release=0
-Build=384
-Debug=0
+Build=385
+Debug=1
 PreRelease=0
 Special=0
 Private=0
@@ -163,7 +164,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.3.0.384
+FileVersion=4.4.0.385
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2007
 LegalTrademarks=
@@ -238,26 +239,33 @@ Item27=d:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRi
 Item28=d:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter
 Item29=d:\progra~1\dxgettext;..\Components\TOpenPreviewDialog;..\Components\TIRichEdit;..\Components\TIFontBox;..\components\tipolygon;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TMyEdit;..\components\ticolorbox;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\Func32;..\Components\TGrid;..\Components\TCross;..\Components\TFocusPanel
 
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=C:\Program Files\Borland\CBuilder6\Source\Indy\
+
 [HistoryLists\hlConditionals]
-Count=18
-Item0=WIN32;CUSTOM_DEBUG_HANDLER;STRICT
-Item1=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;_DEBUG
-Item2=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;_DEBUG;dgd
-Item3=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG;STRICT
-Item4=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG
-Item5=WIN32;CUSTOM_DEBUG_HANDLER
-Item6=WIN32;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
-Item7=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER
-Item8=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
-Item9=WIN32;_DEBUG
-Item10=WIN32
-Item11=WIN32;LIMITED_EDITION;_DEBUG
-Item12=WIN32;LIMITED_EDITION
-Item13=_DEBUG;WIN32
-Item14=_DEBUG
-Item15=EUREKALOG;_DEBUG
-Item16=EUREKALOG
-Item17=_DEBUG;EUREKALOG
+Count=21
+Item0=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;xLIMITED_EDITION;_DEBUG
+Item1=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;LIMITED_EDITION;_DEBUG
+Item2=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;LIMITED_EDITION
+Item3=WIN32;CUSTOM_DEBUG_HANDLER;STRICT
+Item4=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;_DEBUG
+Item5=WIN32;CUSTOM_DEBUG_HANDLER;STRICT;_DEBUG;dgd
+Item6=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG;STRICT
+Item7=WIN32;CUSTOM_DEBUG_HANDLER;_DEBUG
+Item8=WIN32;CUSTOM_DEBUG_HANDLER
+Item9=WIN32;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
+Item10=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER
+Item11=WIN32;_DEBUG;CUSTOM_DEBUG_HANDLER;LIMITED_EDITION
+Item12=WIN32;_DEBUG
+Item13=WIN32
+Item14=WIN32;LIMITED_EDITION;_DEBUG
+Item15=WIN32;LIMITED_EDITION
+Item16=_DEBUG;WIN32
+Item17=_DEBUG
+Item18=EUREKALOG;_DEBUG
+Item19=EUREKALOG
+Item20=_DEBUG;EUREKALOG
 
 [HistoryLists\hlIntOutputDir]
 Count=1
@@ -276,7 +284,7 @@ Item0=..
 DebugSourceDirs=C:\Program Files\Borland\CBuilder6\Source\Indy\
 
 [Parameters]
-RunParams=
+RunParams=/c
 Launcher=
 UseLauncher=0
 DebugCWD=
@@ -289,7 +297,7 @@ RemoteDebug=0
 
 [Compiler]
 ShowInfoMsgs=0
-LinkDebugVcl=0
+LinkDebugVcl=1
 LinkCGLIB=0
   </IDEOPTIONS>
 </PROJECT>

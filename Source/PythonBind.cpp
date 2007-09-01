@@ -14,6 +14,7 @@
 #include "VersionInfo.h"
 #undef _DEBUG
 #include <python.h>
+#include "PyVcl.h"
 #pragma link "python25.lib"
 //---------------------------------------------------------------------------
 static HHOOK KeyboardHookHandle = NULL;
@@ -23,7 +24,7 @@ static bool IsPythonInstalled()
   static int Result = -1;
   if(Result == -1)
   {
-    HINSTANCE Instance = LoadLibrary("Python25.dll");
+    HINSTANCE Instance = LoadLibrary(GetRegValue("Software\\Ivan\\Graph", "PythonDll", HKEY_CURRENT_USER, "Python25.dll").c_str());
     Result = Instance != NULL;
     if(Instance)
       FreeLibrary(Instance);
@@ -90,7 +91,8 @@ struct TExecutePythonAction
         PyErr_Print();
       Py_XDECREF(Result);
     }
-    Form1->Enabled = true;
+//    Form1->Enabled = true;
+//    Form1->SetFocus();
   }
 };
 //---------------------------------------------------------------------------
@@ -274,26 +276,34 @@ void InitPlugins()
     if(FindCmdLineSwitch("C"))
       ShowConsole();
 
-    Py_InitModule("Graph", GraphMethods);
+    Py_InitModule("GraphImpl", GraphMethods);
+    InitPyVcl();
+
     TVersionInfo Info;
     TVersion Version = Info.FileVersion();
     const char *BetaFinal = Info.FileFlags() & ffDebug ? "beta" : "final";
     PyRun_SimpleString(AnsiString().sprintf(
       "import imp\n"
-      "import Graph\n"
-      "Graph.version_info = (%d,%d,%d,'%s',%d)\n"
-      "Graph.handle = %d\n"
-			"File, PathName, Desc = imp.find_module('GraphUtil', ['%s\\Plugins'])\n"
-      "Module = imp.load_module('GraphUtil', File, PathName, Desc)\n"
+      "import GraphImpl\n"
+      "GraphImpl.version_info = (%d,%d,%d,'%s',%d)\n"
+      "GraphImpl.handle = %d\n"
+      "GraphImpl.form1 = %d\n"
+			"File, PathName, Desc = imp.find_module('Graph', ['%s\\Plugins'])\n"
+      "Module = imp.load_module('Graph', File, PathName, Desc)\n"
       "File.close()\n"
       "Module.InitPlugins()\n"
+      "import Graph\n"
+      "import vcl\n"
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
       , Application->Handle
+      , Form1
       , ExtractFileDir(Application->ExeName).c_str()
     ).c_str());
   }
 }
 //---------------------------------------------------------------------------
+
+
 
 
 
