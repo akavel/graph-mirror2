@@ -1,7 +1,7 @@
 ;This file was created by Graph (http://www.padowan.dk)
 ;Do not change this file from other programs.
 [Graph]
-Version = 4.3.0.380
+Version = 4.3.0.384
 MinVersion = 2.5
 OS = Windows XP 5.1 Service Pack 2
 
@@ -49,7 +49,7 @@ ShowInLegend = 0
 [Label3]
 Placement = 0
 Pos = -9.72972972972973;8.83636363636364
-Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1030{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\b\\f0\\fs24 sinc(x)=sin(x)/x\\par\nz = 1\\par\n}\n
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1030{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\b\\f0\\fs24 sinc(x)=sin(x)/x\\par\nz = %(z)\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 
