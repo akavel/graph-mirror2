@@ -2,13 +2,18 @@
 <html>
 <head>
   <title>Graph - Frequently asked questions</title>
+
+
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
   <link rel="stylesheet" href="Graph.css" type="text/css">
+
 </head>
+
 
 <body>
 
-<div id="main"> 
+<div id="main">
 <h1 align="center"><font color="#0000ff" size="+1"><b> <font size="+7">FAQ</font></b></font></h1>
 
 <p><font size="+1"><b>Q:</b> <b>What
@@ -25,7 +30,16 @@ run under Linux?</font></strong><font size="+1"><br>
 <strong>A:</strong>&nbsp; Graph is a native
 Windows
 application and not tested under Linux, but several users have informed
-me that Graph runs without problems under Linux with Wine. </font></p>
+me that Graph runs without problems under Linux with Wine.</font></p>
+
+<p><font size="+1"><b>Q: Will
+Graph run on a
+Macintosh?<br>
+
+A:</b> As with the above,
+you cannot run Graph directly on a Mac. But it should be possible with
+some
+kind of Windows emulator.</font></p>
 
 <p><font size="+1"><b>Q: When will the
 next version be released?</b></font><font size="+1"><br>
@@ -203,9 +217,6 @@ Windows 95.<br>
 
 </div>
 
-<?php
-  include './Menu.inc';
-?>
-
+<?php include './Menu.inc'; ?>
 </body>
 </html>
