@@ -3,7 +3,7 @@ import os
 import sys
 import imp
 import traceback
-import Graph
+import GraphImpl
 import wx
 
 def InitPlugins():
@@ -15,7 +15,7 @@ def InitPlugins():
 
     app = wx.PySimpleApp()
 #    d = wx.MessageDialog(None, "Hello world")
-    root = wx.Window_FromHWND(None, Graph.handle)
+    root = wx.Window_FromHWND(None, GraphImpl.handle)
 #    root.Reparent(root)
 #    root.Reparent(d)
 #    root.Reparent(None)
@@ -37,10 +37,10 @@ def InitPlugins():
 
 class Action(object):
     def __init__(self, caption, event, **keywords):
-        object.__setattr__(self, "id", Graph.CreateAction())
-        Graph.SetActionAttr(self.id, caption=caption, event=event, **keywords)
+        object.__setattr__(self, "id", GraphImpl.CreateAction())
+        GraphImpl.SetActionAttr(self.id, caption=caption, event=event, **keywords)
 
     def __getattr__(self, name):
-        return Graph.GetActionAttr(self.id)[name]
+        return GraphImpl.GetActionAttr(self.id)[name]
     def __setattr__(self, name, value):
-        Graph.SetActionAttr(self.id, **{name:value})
+        GraphImpl.SetActionAttr(self.id, **{name:value})

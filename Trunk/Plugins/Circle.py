@@ -1,32 +1,29 @@
 import Graph
-import GraphUtil
-import wx
+import GraphImpl
+import vcl
 
+class CircleDialog():
+    def __init__(self):
+        self.Form = vcl.TForm(Caption = "Insert circle", Height = 140, Position = 6, BorderStyle = 1, BorderIcons = "biSystemMenu")
+
+        self.label1 = vcl.TLabel(self.Form, Caption = "Radius:", Top = 12, Left = 8)
+        self.label2 = vcl.TLabel(self.Form, Caption = "Center:", Top = 44, Left = 8)
+        self.label3 = vcl.TLabel(self.Form, Caption = "X:", Top = 44, Left = 50)
+        self.label4 = vcl.TLabel(self.Form, Caption = "Y:", Top = 44, Left = 180)
+        self.edit1 = vcl.TEdit(self.Form, Top = 8, Left = 70, Width = 100)
+        self.edit2 = vcl.TEdit(self.Form, Top = 40, Left = 70, Width = 100)
+        self.edit3 = vcl.TEdit(self.Form, Top = 40, Left = 200, Width = 100)
+
+        self.button1 = vcl.TButton(self.Form, Caption = "OK", Top = 80, Left = 20, Default = True)
+        self.button2 = vcl.TButton(self.Form, Caption = "Cancel", Top = 80, Left = 120, ModalResult=1, Cancel = True)
+        self.button1.OnClick = self.OnOk
+
+    def OnOk(self):
+        GraphImpl.CreateParametricFunction(self.edit2.Text + "+" + self.edit1.Text + "*cos t", self.edit3.Text + "+" + self.edit1.Text + "*sin t")
+        self.Form.Close()
 
 def execute_action():
-    class CircleDialog(wx.Dialog):
-        def __init__(self, parent, title):
-            wx.Dialog.__init__(self, parent, wx.ID_ANY, title, size=(200,100))
-            wx.Button(self, 10, "OK")
-            wx.Button(self, 11, "Cancel")
-            wx.EVT_BUTTON(self, 10, self.OnOk)
-            wx.EVT_BUTTON(self, 11, self.OnCancel)
+    d = CircleDialog()
+    d.Form.ShowModal()
 
-        def OnOk(self, event):
-            print "OK"
-            d = ScrolledMessageDialog(GraphUtil.root, "Hello world", "Test")
-            d.ShowModal()
-            pass
-
-        def OnCancel(self, event):
-            Close()
-
-    from wx.lib.dialogs import ScrolledMessageDialog
-#    d = ScrolledMessageDialog(GraphUtil.root, "Hello world", "Test")
-#    d = wx.MessageDialog(GraphUtil.root, "Hello world")
-    d = CircleDialog(GraphUtil.root, 'Small editor')
-    d.ShowModal()
-    print "Hello world"
-
-
-action = GraphUtil.Action("Create circle...", execute_action, icon="Graph.bmp", hint="Create circle from center and radius", shortcut="Ctrl+Shift+C")
+action = Graph.Action("Create circle...", execute_action, icon="Graph.bmp", hint="Create circle from center and radius", shortcut="Ctrl+Shift+C")
