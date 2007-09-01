@@ -632,12 +632,19 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
         //Only if label was actually moved
         if(Image2->Left != MovingLabel->GetRect().Left || Image2->Top != MovingLabel->GetRect().Top)
         {
+          int X = Image2->Left;
+          int Y = Image2->Top;
+          if(MovingLabelPlacement == lpUserTopRight || MovingLabelPlacement == lpUserBottomRight)
+            X += Image2->Width;
+          if(MovingLabelPlacement == lpUserBottomLeft || MovingLabelPlacement == lpUserBottomRight)
+            Y += Image2->Height;
+
           UndoList.Push(TUndoChange(MovingLabel, Data.GetIndex(MovingLabel)));
           boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
             MovingLabel->GetText(),
             MovingLabelPlacement,
-            TTextValue(Draw.xCoord(Image2->Left)),
-            TTextValue(Draw.yCoord(Image2->Top)),
+            TTextValue(Draw.xCoord(X)),
+            TTextValue(Draw.yCoord(Y)),
             MovingLabel->GetBackgroundColor(),
             MovingLabel->GetRotation()
           ));
@@ -744,7 +751,7 @@ void TForm1::LoadSettings(void)
   IPrintDialog1->Orientation = Registry.ReadEnum("Orientation", poPortrait);
   UndoList.SetMaxUndo(Registry.Read("MaxUndo", 50));
 
-//  InitPlugins();
+  InitPlugins();
 
   if(Registry.ValueExists("ToolBar"))
     CreateToolBar(Registry.Read("ToolBar", "").c_str());
@@ -904,7 +911,7 @@ void TForm1::UpdateMenu()
   RedoAction->Enabled = UndoList.CanRedo();
   PasteAction->Enabled = GraphClipboard.HasData();
   ZoomFitAction->Enabled = dynamic_cast<TBaseFuncType*>(Elem.get()) || dynamic_cast<TPointSeries*>(Elem.get()) || dynamic_cast<TRelation*>(Elem.get());
-//  ZoomAllPointsAction->Enabled = !Data.PointList.empty();
+  ZoomFitAllAction->Enabled = ZoomFitAction->Enabled;
   ZoomSquareAction->Enabled = Data.Axes.xAxis.LogScl == Data.Axes.yAxis.LogScl;
 
 #ifdef LIMITED_EDITION
@@ -2419,25 +2426,17 @@ void __fastcall TForm1::ApplicationEventsSettingChange(TObject *Sender,
   }
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::ZoomAllPointsActionExecute(TObject *Sender)
+void __fastcall TForm1::ZoomFitAllActionExecute(TObject *Sender)
 {
   TZoomFit ZoomFit(Data, Draw);
-  bool Found = false;
 
   for(std::vector<boost::shared_ptr<TGraphElem> >::const_iterator Iter = Data.Begin();
     Iter != Data.End(); ++Iter)
-  {
-    TPointSeries *Series = dynamic_cast<TPointSeries*>(Iter->get());
-    //Ignore non visible point series
-    if(Series && Series->GetVisible())
-    {
-      Series->Accept(ZoomFit);
-      Found = true;
-    }
-  }
+    if((*Iter)->GetVisible())
+      (*Iter)->Accept(ZoomFit);
 
-  if(!Found)
-    return; //Ignore if no Point series found
+  if(!ZoomFit.IsChanged())
+    return;
 
   double xMin = ZoomFit.xMin;
   double xMax = ZoomFit.xMax;
@@ -2634,6 +2633,7 @@ void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
     std::auto_ptr<TForm6> Form6(new TForm6(Application, Data.Property.DefaultLabelFont, NAME, Data.GetFileName().c_str()));
     Form6->SetText(Label->GetText().c_str());
     Form6->SetBackgroundColor(Label->GetBackgroundColor());
+    Form6->Caption = LoadRes(528);
     if(Form6->ShowModal() == mrOk)
     {
       //If text is empty, remove label
@@ -3404,59 +3404,58 @@ void TForm1::MoveAndSnapLegend(int dx, int dy, bool Snap)
     LegendPlacement = lpCustom;
 }
 //---------------------------------------------------------------------------
+void TForm1::MoveLabel(int X, int Y, TLabelPlacement Placement, bool Snap)
+{
+  Image2->Left = X;
+  Image2->Top = Y;
+  if(Snap)
+    MovingLabelPlacement = Placement;
+  else
+    switch(MovingLabel->GetPlacement())
+    {
+      case lpUserTopRight:
+      case lpUserBottomLeft:
+      case lpUserBottomRight:
+        MovingLabelPlacement = MovingLabel->GetPlacement();
+        break;
+      default:
+        MovingLabelPlacement = lpUserTopLeft;
+    }
+}
+//---------------------------------------------------------------------------
 void TForm1::MoveAndSnapLabel(int dx, int dy, bool Snap)
 {
   ImagePos.x += dx;
   ImagePos.y += dy;
-  Image2->Left = ImagePos.x;
-  Image2->Top = ImagePos.y;
   int SnapDist = 15;
   const TRect &Rect = Draw.GetAxesRect();
 
   if(!Snap)
   {
-    MovingLabelPlacement = lpUserTopLeft;
-    Image2->Left = ImagePos.x;
-    Image2->Top = ImagePos.y;
+    MoveLabel(ImagePos.x, ImagePos.y, lpUserTopLeft, false);
     return;
   }
 
-  int RightDist = std::abs(Image2->Left + Image2->Width - Rect.Width()) + 2;
-  int TopDist = std::abs(Image2->Top - (int)Rect.Top + 1);
+  int RightDist = std::abs((int)ImagePos.x + Image2->Width - Rect.Width()) + 2;
+  int TopDist = std::abs((int)ImagePos.y - (int)Rect.Top + 1);
   int xAxesCoord = Draw.xPoint(Data.Axes.yAxis.AxisCross);
   int yAxesCoord = Draw.yPoint(Data.Axes.xAxis.AxisCross);
 
   //Check for label above x-axis
   if(RightDist < SnapDist && std::abs(Image2->Top + Image2->Height -4 - yAxesCoord) < SnapDist)
-  {
-    Image2->Left = Rect.Width() - Image2->Width + 2;
-    Image2->Top = yAxesCoord - Image2->Height - 4;
-    MovingLabelPlacement = lpAboveX;
-  }
+    MoveLabel(Rect.Width() - Image2->Width + 2, yAxesCoord - Image2->Height - 4, lpAboveX, true);
 
   //Check for label below x-axis
   else if(RightDist < SnapDist && std::abs(Image2->Top - yAxesCoord) < SnapDist)
-  {
-    Image2->Left = Rect.Width() - Image2->Width + 2;
-    Image2->Top = yAxesCoord;
-    MovingLabelPlacement = lpBelowX;
-  }
+    MoveLabel(Rect.Width() - Image2->Width + 2, yAxesCoord, lpBelowX, true);
 
   //Check for label left of y-axis
   else if(TopDist < SnapDist && std::abs(Image2->Left + Image2->Width - xAxesCoord) < SnapDist)
-  {
-    Image2->Left = xAxesCoord - Image2->Width;
-    Image2->Top = Rect.Top + 1;
-    MovingLabelPlacement = lpLeftOfY;
-  }
+    MoveLabel(xAxesCoord - Image2->Width, Rect.Top + 1, lpLeftOfY, true);
 
   //Check for label right of y-axis
   else if(TopDist < SnapDist && std::abs(Image2->Left + 12 - xAxesCoord) < SnapDist)
-  {
-    Image2->Left = xAxesCoord + 12;
-    Image2->Top = Rect.Top + 1;
-    MovingLabelPlacement = lpRightOfY;
-  }
+    MoveLabel(xAxesCoord + 12, Rect.Top + 1, lpRightOfY, true);
   else
   {
     //Snap to nearest point in point series
@@ -3486,7 +3485,7 @@ void TForm1::MoveAndSnapLabel(int dx, int dy, bool Snap)
       Image2->Top = MinPoint.y;
     }*/
 
-    MovingLabelPlacement = lpUserTopLeft;
+    MoveLabel(ImagePos.x, ImagePos.y, lpUserTopLeft, false);
   }
 }
 //---------------------------------------------------------------------------
@@ -3615,6 +3614,7 @@ void __fastcall TForm1::ZoomActionUpdate(TObject *Sender)
   static_cast<TAction*>(Sender)->Enabled = !Data.Axes.ZoomSquare;
 }
 //---------------------------------------------------------------------------
+
 
 
 

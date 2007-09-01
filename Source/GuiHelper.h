@@ -29,6 +29,8 @@ struct TZoomFit : public TGraphElemVisitor
   const TData &Data;
   const TDraw &Draw;
   double xMin, xMax, yMin, yMax;
+  bool IsChanged() const;
+
   TZoomFit(const TData &AData, const TDraw &ADraw);
   void Visit(TBaseFuncType &Func);
   void Visit(TTan &Tan) {Visit(static_cast<TBaseFuncType&>(Tan));} //Forward

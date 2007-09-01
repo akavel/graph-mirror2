@@ -28,9 +28,9 @@ object Form3: TForm3
     Top = 8
     Width = 393
     Height = 215
-    ActivePage = TabSheet4
+    ActivePage = TabSheet1
     Anchors = [akLeft, akTop, akRight, akBottom]
-    TabIndex = 3
+    TabIndex = 0
     TabOrder = 0
     object TabSheet1: TTntTabSheet
       Caption = 'x-axis'

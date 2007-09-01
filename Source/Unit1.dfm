@@ -453,7 +453,7 @@ object Form1: TForm1
         Action = ZoomFitAction
       end
       object Allpoints1: TTntMenuItem
-        Action = ZoomAllPointsAction
+        Action = ZoomFitAllAction
       end
     end
     object Math_: TTntMenuItem
@@ -608,6 +608,7 @@ object Form1: TForm1
       end
       object Tree_Placement_Custom: TTntMenuItem
         Caption = 'Custom...'
+        Hint = 'Place the label at a custom position.'
         OnClick = PlacementClick
       end
     end
@@ -636,6 +637,7 @@ object Form1: TForm1
       end
       object Tree_Rotation_Custom: TTntMenuItem
         Caption = 'Custom...'
+        Hint = 'Specify a rotation of the label.'
         RadioItem = True
         OnClick = RotationClick
       end
@@ -3478,7 +3480,7 @@ object Form1: TForm1
     object OpenAction: TTntAction
       Category = 'File'
       Caption = 'Open...'
-      Hint = 'Read coordinate system and functions from a file.'
+      Hint = 'Read a coordinate system from a file.'
       ImageIndex = 1
       ShortCut = 16463
       OnExecute = OpenActionExecute
@@ -3486,7 +3488,7 @@ object Form1: TForm1
     object SaveAction: TTntAction
       Category = 'File'
       Caption = 'Save'
-      Hint = 'Write coordinate system and functions to a file.'
+      Hint = 'Save the current coordinate system to a file.'
       ImageIndex = 2
       ShortCut = 16467
       OnExecute = SaveActionExecute
@@ -3692,7 +3694,7 @@ object Form1: TForm1
     object ZoomStandardAction: TTntAction
       Category = 'Zoom'
       Caption = 'Standard'
-      Hint = 'Zoom to standard coordinates.'
+      Hint = 'Resets the axes to their default settings.'
       ImageIndex = 25
       ShortCut = 16452
       OnExecute = ZoomStandardActionExecute
@@ -3795,7 +3797,7 @@ object Form1: TForm1
     end
     object HomePageAction: TTntAction
       Category = 'Help'
-      Caption = 'Go to home page'
+      Caption = 'Graph web site'
       Hint = 
         'Opens the default browser and shows the home page of the program' +
         '.'
@@ -3826,16 +3828,16 @@ object Form1: TForm1
     object ZoomFitAction: TTntAction
       Category = 'Zoom'
       Caption = 'Fit'
-      Hint = 'Zoom to show the selected function.'
+      Hint = 'Zoom to show the selected element.'
       ImageIndex = 43
       OnExecute = ZoomFitActionExecute
     end
-    object ZoomAllPointsAction: TTntAction
+    object ZoomFitAllAction: TTntAction
       Category = 'Zoom'
-      Caption = 'All points'
-      Hint = 'Zoom as much as all points are visible.'
+      Caption = 'Fit all'
+      Hint = 'Zoom to show all elements.'
       ImageIndex = 41
-      OnExecute = ZoomAllPointsActionExecute
+      OnExecute = ZoomFitAllActionExecute
     end
     object FaqAction: TTntAction
       Category = 'Help'
@@ -3950,6 +3952,7 @@ object Form1: TForm1
     object InsertObjectAction: TTntAction
       Category = 'Function'
       Caption = 'Insert object...'
+      Hint = 'Insert an OLE object such as a drawing or an equation.'
       ImageIndex = 59
       Visible = False
       OnExecute = InsertObjectActionExecute
@@ -4013,6 +4016,7 @@ object Form1: TForm1
       end
       object Label_Placement_Custom: TTntMenuItem
         Caption = 'Custom...'
+        Hint = 'Place the label at a custom position.'
         RadioItem = True
         OnClick = PlacementClick
       end
@@ -4042,6 +4046,7 @@ object Form1: TForm1
       end
       object Label_Rotation_Custom: TTntMenuItem
         Caption = 'Custom...'
+        Hint = 'Specify a rotation of the label.'
         RadioItem = True
         OnClick = RotationClick
       end

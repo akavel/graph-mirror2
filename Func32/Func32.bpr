@@ -20,7 +20,7 @@
     <PATHRC value=".;"/>
     <PATHASM value=".;"/>
     <LINKER value="TLib"/>
-    <USERDEFINES value=""/>
+    <USERDEFINES value="_DEBUG"/>
     <SYSDEFINES value="NO_STRICT"/>
     <MAINSOURCE value="Func32.bpf"/>
     <INCLUDEPATH value="&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;$(BCB)\include;..\..\spirit;..\..\boost"/>
@@ -30,10 +30,10 @@
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
-    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -xp -X- -a8 -6 -b- -d -k- -vi -c 
-      -tW -tWM"/>
-    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
-    <AFLAGS value="/mx /w2 /zn"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -xp -X- -r- -a8 -6 -b- -d -k -y -v 
+      -vi- -c -tW -tWM"/>
+    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <AFLAGS value="/mx /w2 /zi"/>
     <LFLAGS value="/P256"/>
     <OTHERFILES value=""/>
   </OPTIONS>
