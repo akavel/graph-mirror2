@@ -25,7 +25,7 @@ object Form18: TForm18
     Top = 8
     Width = 287
     Height = 193
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Anchors = [akLeft, akTop, akRight]
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -33,7 +33,7 @@ object Form18: TForm18
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 0
     object TabSheet1: TTntTabSheet
       Caption = 'Size'
@@ -56,7 +56,7 @@ object Form18: TForm18
         Top = 88
         Width = 121
         Height = 21
-        Hint = 'Set a custom image width.'
+        Hint = 'Set a custom image width in pixels.'
         TabOrder = 0
         OnKeyPress = EditKeyPress
       end
@@ -65,7 +65,7 @@ object Form18: TForm18
         Top = 120
         Width = 121
         Height = 21
-        Hint = 'Set a custom image height.'
+        Hint = 'Set a custom image height in pixels.'
         TabOrder = 1
         OnKeyPress = EditKeyPress
       end

@@ -172,6 +172,7 @@ BEGIN
   525 "Edit tangent/normal"
   526 "Error processing file '%s' at line %s."
   527 "Evaluate"
+  528 "Edit text label"
 
   530 "'%s' has to be an integer value between 0 and 1000."
   531 "Printing error"

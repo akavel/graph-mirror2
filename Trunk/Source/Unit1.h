@@ -157,7 +157,7 @@ __published:	// IDE-managed Components
   TTntMenuItem *ToolBar_Reset;
   TTntMenuItem *ToolBar_Customize;
   TTntMenuItem *N11;
-  TTntAction *ZoomAllPointsAction;
+  TTntAction *ZoomFitAllAction;
   TTntAction *FaqAction;
   TMySplitter *Splitter;
   TPanel *Panel3;
@@ -384,7 +384,7 @@ __published:	// IDE-managed Components
   void __fastcall CustomizeDlgClose(TObject *Sender);
   void __fastcall ApplicationEventsSettingChange(TObject *Sender, int Flag,
     const AnsiString Section, int &Result);
-  void __fastcall ZoomAllPointsActionExecute(TObject *Sender);
+  void __fastcall ZoomFitAllActionExecute(TObject *Sender);
   void __fastcall FaqActionExecute(TObject *Sender);
   void __fastcall Panel4DockDrop(TObject *Sender, TDragDockObject *Source,
     int X, int Y);
@@ -492,6 +492,7 @@ private:	// User declarations
   bool DoSave(const AnsiString &FileName, bool Remember);
   void MoveAndSnapLegend(int dx, int dy, bool Snap);
   void MoveAndSnapLabel(int dx, int dy, bool Snap);
+  void MoveLabel(int X, int Y, TLabelPlacement Placement, bool Snap);
   void __fastcall DebugLine(System::TObject* Sender, const AnsiString Line, bool &Discard); //Write debug text from dxGetText
   void ChangeVisible(boost::shared_ptr<TGraphElem> GraphElem);
   void HandleCommandLine();

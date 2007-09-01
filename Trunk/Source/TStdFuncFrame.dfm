@@ -58,7 +58,7 @@ object StdFuncFrame: TStdFuncFrame
     Height = 21
     Hint = 
       'Enter a number for which you want to evaluate the function, or c' +
-      'lick on the function in the main window.'
+      'lick on the graph in the main window.'
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
   end
@@ -125,8 +125,8 @@ object StdFuncFrame: TStdFuncFrame
     Width = 137
     Height = 23
     Hint = 
-      'This is the functions second derivative evaluated for the entere' +
-      'd value.'
+      'This is the second derivative of the function evaluated for the ' +
+      'entered value.'
     Anchors = [akLeft, akTop, akRight]
     Color = clBtnFace
     Font.Charset = ANSI_CHARSET

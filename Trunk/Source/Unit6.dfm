@@ -4,7 +4,7 @@ object Form6: TForm6
   HelpContext = 10
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
-  Caption = 'Text label'
+  Caption = 'Insert text label'
   ClientHeight = 289
   ClientWidth = 545
   Color = clBtnFace

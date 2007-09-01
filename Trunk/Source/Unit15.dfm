@@ -53,8 +53,8 @@ object Form15: TForm15
     Width = 57
     Height = 21
     Hint = 
-      'The step value. This is the distance between the x-values in the' +
-      ' interval.'
+      'The step value. This is the difference between two adjoining val' +
+      'ues in the defined interval.'
     TabOrder = 2
     Text = '0.1'
   end
@@ -133,12 +133,14 @@ object Form15: TForm15
       AutoCheck = True
       Caption = 'Show %s'
       Checked = True
+      Hint = 'Show the f'#39'(x) coloumn in the table.'
       OnClick = Popup1_Show
     end
     object Popup1_Show_ddf: TTntMenuItem
       AutoCheck = True
       Caption = 'Show %s'
       Checked = True
+      Hint = 'Show the f'#39#39'(x) coloumn in the table.'
       OnClick = Popup1_Show
     end
     object N1: TTntMenuItem

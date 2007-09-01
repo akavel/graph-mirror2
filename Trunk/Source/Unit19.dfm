@@ -139,7 +139,7 @@ object Form19: TForm19
     Top = 168
     Width = 193
     Height = 105
-    Caption = 'Image information'
+    Caption = 'Image options'
     TabOrder = 2
     object Label5: TTntLabel
       Left = 8
@@ -170,6 +170,7 @@ object Form19: TForm19
       Top = 16
       Width = 89
       Height = 21
+      Hint = 'Width of each frame, in pixels.'
       TabOrder = 0
       Text = '320'
       OnKeyPress = TntEditKeyPress
@@ -179,6 +180,7 @@ object Form19: TForm19
       Top = 44
       Width = 89
       Height = 21
+      Hint = 'Height of each frame, in pixels.'
       TabOrder = 1
       Text = '320'
       OnKeyPress = TntEditKeyPress

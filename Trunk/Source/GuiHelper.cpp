@@ -12,6 +12,7 @@
 #include "GuiHelper.h"
 #include "PointSelect.h"
 #include "OleObjectElem.h"
+#include <float.h>
 //---------------------------------------------------------------------------
 //////////////
 // TAddView //
@@ -90,9 +91,9 @@ void TAddView::Visit(TOleObjectElem &OleObjectElem)
   AddNode(OleObjectElem, iiOleNode);
 }
 //---------------------------------------------------------------------------
-///////////////
-// TZoomView //
-///////////////
+//////////////
+// TZoomFit //
+//////////////
 TZoomFit::TZoomFit(const TData &AData, const TDraw &ADraw)
  : Data(AData), Draw(ADraw)
 {
@@ -101,6 +102,11 @@ TZoomFit::TZoomFit(const TData &AData, const TDraw &ADraw)
   xMax = Data.Axes.AxesStyle == asCrossed ? Data.Axes.yAxis.AxisCross : -INF;
   yMin = Data.Axes.AxesStyle == asCrossed ? Data.Axes.xAxis.AxisCross : INF;
   yMax = Data.Axes.AxesStyle == asCrossed ? Data.Axes.xAxis.AxisCross : -INF;
+}
+//---------------------------------------------------------------------------
+bool TZoomFit::IsChanged() const
+{
+  return xMin != xMax && yMin != yMax && _finite(xMin) && _finite(xMax) && _finite(yMin) && _finite(yMax);
 }
 //---------------------------------------------------------------------------
 void TZoomFit::Visit(TBaseFuncType &Func)
