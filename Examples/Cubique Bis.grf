@@ -1,10 +1,9 @@
 ;This file was created by Graph (http://www.padowan.dk)
 ;Do not change this file from other programs.
 [Graph]
-Version = 4.1
-Build = 270
+Version = 4.4.0.385
 MinVersion = 2.5
-OS = Windows Me 4.90  
+OS = Windows XP 5.1 Service Pack 2
 
 [Axes]
 xMin = -1.6
@@ -101,7 +100,8 @@ FuncCount = 0
 PointSeriesCount = 0
 ShadeCount = 0
 RelationCount = 12
+OleObjectCount = 0
 
 [CustomFunctions]
-f(x,y) = y*y-x*x*x+x
+f(x,y) = y^2-x^3+x
 
