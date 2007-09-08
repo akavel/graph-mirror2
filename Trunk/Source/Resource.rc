@@ -173,6 +173,7 @@ BEGIN
   526 "Error processing file '%s' at line %s."
   527 "Evaluate"
   528 "Edit text label"
+  529 "The model needs some constants (starting with a $) for Graph to find."
 
   530 "'%s' has to be an integer value between 0 and 1000."
   531 "Printing error"

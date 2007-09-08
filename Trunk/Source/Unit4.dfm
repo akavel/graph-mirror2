@@ -208,7 +208,7 @@ object Form4: TForm4
   object ComboBox1: TTntComboBox
     Left = 110
     Top = 152
-    Width = 97
+    Width = 123
     Height = 21
     Hint = 'Select the language to use for the user interface.'
     Style = csDropDownList
@@ -260,7 +260,7 @@ object Form4: TForm4
   object ComboBox2: TTntComboBox
     Left = 110
     Top = 120
-    Width = 97
+    Width = 123
     Height = 21
     Hint = 
       'This is used to scale the user interface if you are having probl' +

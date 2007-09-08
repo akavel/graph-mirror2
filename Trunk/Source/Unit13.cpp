@@ -208,36 +208,43 @@ void __fastcall TForm13::ListBox1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm13::Button4Click(TObject *Sender)
 {
+  TUserModel UserModel;
+  UserModel.Model = ToString(Edit3->Text);
+  std::vector<std::string> Unknowns = Func32::FindUnknowns(ToString(Edit3->Text));
+
+  if(Unknowns.empty())
+  {
+    MessageBox(LoadRes(529), LoadRes(RES_ERROR));
+    return;
+  }
+
+  Unknowns.insert(Unknowns.begin(), "x");
+
+  //Putting more code inside the try block can crash Graph when an exception is thrown when compiled with bcc 5.6.4
   try
   {
-    TUserModel UserModel;
-    UserModel.Model = ToString(Edit3->Text);
-    Func32::TSymbolList SymbolList;
-    std::vector<std::string> Unknowns = Func32::FindUnknowns(ToString(Edit3->Text));
-
-    std::auto_ptr<TForm8> Form8(new TForm8(Application, Data, -1));
-    for(unsigned I = 0; I < Unknowns.size(); I++)
-    {
-      Form8->ValueListEditor1->Values[Unknowns[I].c_str()] = 1;
-      SymbolList.Add(Unknowns[I]);
-    }
-
-    Func32::TFunc Func(ToString(Edit3->Text), "x", SymbolList);
-    if(Form8->ShowModal() == mrOk)
-    {
-      for(Func32::TSymbolList::TIterator Iter = SymbolList.Begin(); Iter != SymbolList.End(); ++Iter)
-        UserModel.Defaults.push_back(std::make_pair(Iter->first, Form8->ValueListEditor1->Values[Iter->first.c_str()].ToDouble()));
-
-      UserModel.Name = ToWString(Form8->Edit1->Text);
-      Data.UserModels.push_back(UserModel);
-      ListBox1->Items->Add(UserModel.Name.c_str());
-      ListBox1->ItemIndex = ListBox1->Items->Count - 1;
-    }
+    Func32::TCustomFunc TempFunc(ToString(Edit3->Text), Unknowns, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
   }
   catch(Func32::EFuncError &Error)
   {
     Edit3->SetFocus();
     ShowErrorMsg(Error, Edit3);
+    return;
+  }
+
+  std::auto_ptr<TForm8> Form8(new TForm8(Application, Data, -1));
+  for(unsigned I = 1; I < Unknowns.size(); I++)
+    Form8->ValueListEditor1->Values[Unknowns[I].c_str()] = 1;
+
+  if(Form8->ShowModal() == mrOk)
+  {
+    for(std::vector<std::string>::const_iterator Iter = Unknowns.begin() + 1; Iter != Unknowns.end(); ++Iter)
+      UserModel.Defaults.push_back(std::make_pair(*Iter, Form8->ValueListEditor1->Values[Iter->c_str()].ToDouble()));
+
+    UserModel.Name = ToWString(Form8->Edit1->Text);
+    Data.UserModels.push_back(UserModel);
+    ListBox1->Items->Add(UserModel.Name.c_str());
+    ListBox1->ItemIndex = ListBox1->Items->Count - 1;
   }
 }
 //---------------------------------------------------------------------------
