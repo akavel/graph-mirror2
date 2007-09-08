@@ -271,18 +271,20 @@ LessFirstPair(const std::pair<T1, T2> &Pair1, const std::pair<T1, T2> &Pair2)
 //List is filled with langugae names, which are the same as the file names
 void GetLanguageList(TStrings *List)
 {
-  List->Clear();
-  List->Add("English"); //We always have English
+  std::auto_ptr<TStringList> TempList(new TStringList);
+  TempList->Sorted = true;
+  TempList->Add("English"); //We always have English
 
   TSearchRec SearchRec;
   AnsiString Path = ExtractFilePath(Application->ExeName) + "locale\\";
   int Result = FindFirst(Path + "*.mo", faReadOnly | faArchive, SearchRec);
   while(Result == 0)
   {
-    List->Add(SearchRec.Name.SubString(1, SearchRec.Name.Length() - 3));
+    TempList->Add(SearchRec.Name.SubString(1, SearchRec.Name.Length() - 3));
     Result = FindNext(SearchRec);
   }
   FindClose(SearchRec);
+  List->Assign(TempList.get());
 }
 //---------------------------------------------------------------------------
 //Remove Key and all subkeys from the registry
