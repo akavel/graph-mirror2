@@ -1,6 +1,9 @@
 //---------------------------------------------------------------------------
-#include <basepch.h>
+#define NO_WIN32_LEAN_AND_MEAN
+#include <vcl.h>
 #pragma hdrstop
+#include <shlguid.h>
+#include <shobjidl.h>
 #include "OpenPreviewDialog.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
@@ -35,6 +38,46 @@ __fastcall TOpenPreviewDialog::TOpenPreviewDialog(TComponent* Owner)
   Panel->DoubleBuffered = true;
 }
 //---------------------------------------------------------------------------
+AnsiString TOpenPreviewDialog::ResolveIt(const AnsiString &FileName)
+{
+  char szGotPath[MAX_PATH] = {0};
+
+  // Get a pointer to the IShellLink interface.
+  IShellLink* psl;
+  HRESULT hres = CoCreateInstance(CLSID_ShellLink, NULL,
+          CLSCTX_INPROC_SERVER, IID_IShellLink, reinterpret_cast<void**>(&psl));
+  if(SUCCEEDED(hres))
+  {
+    IPersistFile* ppf;
+    // Get a pointer to the IPersistFile interface.
+    hres = psl->QueryInterface(IID_IPersistFile, reinterpret_cast<void**>(&ppf));
+    if(SUCCEEDED(hres))
+    {
+      // Load the shortcut.
+      hres = ppf->Load(WideString(FileName), STGM_READ);
+      if(SUCCEEDED(hres))
+      {
+        // Resolve the link.
+        hres = psl->Resolve(Application->Handle, SLR_ANY_MATCH);
+        if(SUCCEEDED(hres))
+        {
+          WIN32_FIND_DATA wfd;
+          // Get the path to the link target.
+          hres = psl->GetPath(szGotPath, MAX_PATH, &wfd, SLGP_SHORTPATH);
+          if(!SUCCEEDED(hres))
+            szGotPath[0] = 0; // Error
+        }
+      }
+      // Release the pointer to the IPersistFile interface.
+      ppf->Release();
+    }
+
+    // Release the pointer to the IShellLink interface.
+    psl->Release();
+  }
+  return szGotPath[0] ? AnsiString(szGotPath) : FileName;
+}
+//---------------------------------------------------------------------------
 void __fastcall TOpenPreviewDialog::DoSelectionChange()
 {
   DoPreviewFile();
@@ -52,7 +95,7 @@ void __fastcall TOpenPreviewDialog::DoFolderChange()
 void TOpenPreviewDialog::DoPreviewFile()
 {
   if(FOnPreviewFile)
-    FOnPreviewFile(this, FileName, Image->Canvas, TRect(0, 0, Image->Width, Image->Height));
+    FOnPreviewFile(this, ResolveIt(FileName), Image->Canvas, TRect(0, 0, Image->Width, Image->Height));
 }
 //---------------------------------------------------------------------------
 void __fastcall TOpenPreviewDialog::DoShow()

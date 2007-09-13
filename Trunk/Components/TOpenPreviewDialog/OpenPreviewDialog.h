@@ -18,6 +18,8 @@ private:
   TImage *Image;
   TPanel *Panel;
 
+  AnsiString ResolveIt(const AnsiString &FileName);
+
 protected:
   DYNAMIC void __fastcall DoSelectionChange();
   DYNAMIC void __fastcall DoFolderChange();
