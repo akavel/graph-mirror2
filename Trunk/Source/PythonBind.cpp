@@ -9,6 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#include "Unit22.h"
 #include "PythonBind.h"
 #include "IThread.h"
 #include "VersionInfo.h"
@@ -75,7 +76,13 @@ static LRESULT CALLBACK KeyboardProc(int Code, WPARAM wParam, LPARAM lParam)
 {
   //Check for F11 pressed down without ALT
   if(wParam == VK_F11 && (lParam & 0xE0000000))
+  {
     ShowConsole();
+    Form22->Visible = true;
+    if(Form1->Panel6->VisibleDockClientCount)
+      Form1->Panel5->Height = 100;
+    Form1->Splitter2->Visible = true;
+  }
   return CallNextHookEx(KeyboardHookHandle, Code, wParam, lParam);
 }
 //---------------------------------------------------------------------------
@@ -266,6 +273,10 @@ static PyMethodDef GraphMethods[] = {
 //---------------------------------------------------------------------------
 void InitPlugins()
 {
+  Form22 = new TForm22(Application);
+  Form22->ManualDock(Form1->Panel6);
+  Form22->Visible = true;
+  
   if(IsPythonInstalled())
   {
     KeyboardHookHandle = SetWindowsHookEx(WH_KEYBOARD, reinterpret_cast<HOOKPROC>(KeyboardProc), HInstance, GetCurrentThreadId());

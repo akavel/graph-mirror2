@@ -27,6 +27,7 @@
 #include "Unit18.h"
 #include "Unit19.h"
 #include "Unit21.h"
+#include "Unit22.h"
 #include <Clipbrd.hpp>
 #include <Registry.hpp>
 #include <Printers.hpp>
@@ -1229,9 +1230,9 @@ void __fastcall TForm1::FormMouseWheelDown(TObject *Sender,
   Handled = true;
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::SplitterDblClick(TObject *Sender)
+void __fastcall TForm1::Splitter1DblClick(TObject *Sender)
 {
-  int MaxWidth = Splitter->MinSize;
+  int MaxWidth = Splitter1->MinSize;
   for(int I = 0; I < TreeView->Items->Count; I++)
   {
     TTreeNode *Node = TreeView->Items->Item[I];
@@ -1451,8 +1452,8 @@ void __fastcall TForm1::UpdateEval()
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormResize(TObject *Sender)
 {
-  if(Panel2->Width < Splitter->MinSize)
-    TreeView->Width = TreeView->Width - (Splitter->MinSize - Panel2->Width);
+  if(Panel2->Width < Splitter1->MinSize)
+    TreeView->Width = TreeView->Width - (Splitter1->MinSize - Panel2->Width);
   ActionToolBar1->Align = alTop;
 }
 //---------------------------------------------------------------------------
@@ -3614,10 +3615,38 @@ void __fastcall TForm1::ZoomActionUpdate(TObject *Sender)
   static_cast<TAction*>(Sender)->Enabled = !Data.Axes.ZoomSquare;
 }
 //---------------------------------------------------------------------------
-
-
-
-
-
+void __fastcall TForm1::Panel6UnDock(TObject *Sender, TControl *Client,
+      TWinControl *NewTarget, bool &Allow)
+{
+  Panel5->Height = StatusBar1->Height;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Panel6DockDrop(TObject *Sender,
+      TDragDockObject *Source, int X, int Y)
+{
+//  Panel5->Height = 100;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Panel6DockOver(TObject *Sender,
+      TDragDockObject *Source, int X, int Y, TDragState State,
+      bool &Accept)
+{
+;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Panel6GetSiteInfo(TObject *Sender,
+      TControl *DockClient, TRect &InfluenceRect, TPoint &MousePos,
+      bool &CanDock)
+{
+  CanDock = DockClient == Form22;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Panel4GetSiteInfo(TObject *Sender,
+      TControl *DockClient, TRect &InfluenceRect, TPoint &MousePos,
+      bool &CanDock)
+{
+  CanDock = DockClient == Form9.get();
+}
+//---------------------------------------------------------------------------
 
 
