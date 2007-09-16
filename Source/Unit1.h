@@ -79,7 +79,6 @@ enum TIconIndex
 class TForm1 : public TTntForm
 {
 __published:	// IDE-managed Components
-  TTntStatusBar *StatusBar1;
   TOpenDialog *OpenDialog;
   TTntMainMenu *MainMenu;
   TTntMenuItem *File_;
@@ -159,7 +158,7 @@ __published:	// IDE-managed Components
   TTntMenuItem *N11;
   TTntAction *ZoomFitAllAction;
   TTntAction *FaqAction;
-  TMySplitter *Splitter;
+  TMySplitter *Splitter1;
   TPanel *Panel3;
   TTntTreeView *TreeView;
   TPanel *Panel1;
@@ -293,6 +292,10 @@ __published:	// IDE-managed Components
   TTntMenuItem *Plugins_;
   TTntMenuItem *Tree_Placement_Custom;
   TTntMenuItem *Label_Placement_Custom;
+  TPanel *Panel5;
+  TSplitter *Splitter2;
+  TTntStatusBar *StatusBar1;
+  TPanel *Panel6;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);
@@ -319,7 +322,7 @@ __published:	// IDE-managed Components
   TShiftState Shift, const TPoint &MousePos, bool &Handled);
   void __fastcall FormMouseWheelDown(TObject *Sender,
   TShiftState Shift, const TPoint &MousePos, bool &Handled);
-  void __fastcall SplitterDblClick(TObject *Sender);
+  void __fastcall Splitter1DblClick(TObject *Sender);
   void __fastcall TreeViewChange(TObject *Sender, TTreeNode *Node);
   void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
     TShiftState Shift);
@@ -443,6 +446,16 @@ __published:	// IDE-managed Components
   void __fastcall InsertObjectActionExecute(TObject *Sender);
   void __fastcall ZoomSquareActionUpdate(TObject *Sender);
   void __fastcall ZoomActionUpdate(TObject *Sender);
+  void __fastcall Panel6UnDock(TObject *Sender, TControl *Client,
+          TWinControl *NewTarget, bool &Allow);
+  void __fastcall Panel6DockDrop(TObject *Sender, TDragDockObject *Source,
+          int X, int Y);
+  void __fastcall Panel6DockOver(TObject *Sender, TDragDockObject *Source,
+          int X, int Y, TDragState State, bool &Accept);
+  void __fastcall Panel6GetSiteInfo(TObject *Sender, TControl *DockClient,
+          TRect &InfluenceRect, TPoint &MousePos, bool &CanDock);
+  void __fastcall Panel4GetSiteInfo(TObject *Sender, TControl *DockClient,
+          TRect &InfluenceRect, TPoint &MousePos, bool &CanDock);
 
 private:	// User declarations
   friend class TAddView;

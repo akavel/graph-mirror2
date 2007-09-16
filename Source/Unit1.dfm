@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 367
-  Top = 228
+  Left = 304
+  Top = 193
   Width = 638
-  Height = 450
+  Height = 479
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   ActiveControl = Panel2
@@ -76,49 +76,31 @@ object Form1: TForm1
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Splitter: TMySplitter
+  object Splitter1: TMySplitter
     Left = 161
     Top = 30
     Width = 3
-    Height = 355
+    Height = 302
     Cursor = crHSplit
     AutoSnap = False
     Beveled = True
     MinSize = 120
-    OnDblClick = SplitterDblClick
+    OnDblClick = Splitter1DblClick
   end
-  object StatusBar1: TTntStatusBar
+  object Splitter2: TSplitter
     Left = 0
-    Top = 385
+    Top = 332
     Width = 630
-    Height = 19
-    AutoHint = True
-    Panels = <
-      item
-        Width = 412
-      end
-      item
-        Alignment = taCenter
-        Width = 150
-      end
-      item
-        Alignment = taRightJustify
-        Style = psOwnerDraw
-        Width = 50
-      end>
-    ParentFont = True
-    ParentShowHint = False
-    ShowHint = False
-    SimplePanel = False
-    UseSystemFont = False
-    OnDrawPanel = StatusBar1DrawPanel
-    OnResize = StatusBar1Resize
+    Height = 1
+    Cursor = crVSplit
+    Align = alBottom
+    MinSize = 1
   end
   object Panel2: TFocusPanel
     Left = 164
     Top = 30
     Width = 466
-    Height = 355
+    Height = 302
     Align = alClient
     BevelOuter = bvNone
     FullRepaint = False
@@ -131,7 +113,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 466
-      Height = 355
+      Height = 302
       Align = alClient
       ParentShowHint = False
       ShowHint = False
@@ -144,7 +126,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 466
-      Height = 355
+      Height = 302
       Style = psDot
       Mode = pmNot
       X = 30
@@ -169,7 +151,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 466
-      Height = 355
+      Height = 302
       Brush.Color = 13395660
       Brush.Style = bsBDiagonal
       Points.Strings = (
@@ -214,7 +196,7 @@ object Form1: TForm1
     Left = 0
     Top = 30
     Width = 161
-    Height = 355
+    Height = 302
     Align = alLeft
     BevelOuter = bvNone
     DragKind = dkDock
@@ -223,7 +205,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 161
-      Height = 355
+      Height = 302
       Align = alClient
       BevelInner = bvNone
       BevelOuter = bvNone
@@ -252,7 +234,7 @@ object Form1: TForm1
     end
     object Panel1: TPanel
       Left = 0
-      Top = 355
+      Top = 302
       Width = 161
       Height = 0
       Align = alBottom
@@ -269,8 +251,59 @@ object Form1: TForm1
         TabOrder = 0
         OnDockDrop = Panel4DockDrop
         OnDockOver = Panel4DockOver
+        OnGetSiteInfo = Panel4GetSiteInfo
         OnUnDock = Panel4UnDock
       end
+    end
+  end
+  object Panel5: TPanel
+    Left = 0
+    Top = 333
+    Width = 630
+    Height = 100
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 2
+    object StatusBar1: TTntStatusBar
+      Left = 0
+      Top = 81
+      Width = 630
+      Height = 19
+      AutoHint = True
+      Panels = <
+        item
+          Width = 412
+        end
+        item
+          Alignment = taCenter
+          Width = 150
+        end
+        item
+          Alignment = taRightJustify
+          Style = psOwnerDraw
+          Width = 50
+        end>
+      ParentFont = True
+      ParentShowHint = False
+      ShowHint = False
+      SimplePanel = False
+      UseSystemFont = False
+      OnDrawPanel = StatusBar1DrawPanel
+      OnResize = StatusBar1Resize
+    end
+    object Panel6: TPanel
+      Left = 0
+      Top = 0
+      Width = 630
+      Height = 81
+      Align = alClient
+      BevelOuter = bvNone
+      DockSite = True
+      TabOrder = 1
+      OnDockDrop = Panel6DockDrop
+      OnDockOver = Panel6DockOver
+      OnGetSiteInfo = Panel6GetSiteInfo
+      OnUnDock = Panel6UnDock
     end
   end
   object OpenDialog: TOpenDialog

@@ -47,6 +47,7 @@ USEFORM("Unit18.cpp", Form18);
 USEFORM("Unit19.cpp", Form19);
 USEFORM("Unit20.cpp", Form20);
 USEFORM("Unit21.cpp", Form21);
+USEFORM("Unit22.cpp", Form22);
 USEFORM("TStdFuncFrame.cpp", StdFuncFrame); /* TFrame: File Type */
 USEFORM("TParFuncFrame.cpp", ParFuncFrame); /* TFrame: File Type */
 USEFORM("TPolFuncFrame.cpp", PolFuncFrame); /* TFrame: File Type */
