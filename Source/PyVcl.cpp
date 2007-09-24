@@ -13,6 +13,8 @@
 #undef _DEBUG
 #include <python.h>
 //---------------------------------------------------------------------------
+static PyObject *PyPropertyException = NULL;
+
 struct TPythonCallback : public TObject
 {
   PyObject *Callback;
@@ -30,6 +32,7 @@ struct TPythonCallback : public TObject
 PyObject* PyNone()
 {
   static PyObject *None = Py_BuildValue("");
+  Py_INCREF(None);
   return None;
 }
 //---------------------------------------------------------------------------
@@ -42,8 +45,7 @@ PyObject* ThrowPythonException(const Exception &E)
 //---------------------------------------------------------------------------
 PyObject* ThrowPropertyError(const AnsiString &Str)
 {
-  static PyObject *Exception = PyErr_NewException("PyVcl.PropertyError", NULL, NULL);
-  PyErr_SetString(Exception, Str.c_str());
+  PyErr_SetString(PyPropertyException, Str.c_str());
   return NULL;
 }
 //---------------------------------------------------------------------------
@@ -277,7 +279,10 @@ void InitPyVcl()
   RegisterClass(__classid(TEdit));
   RegisterClass(__classid(TLabel));
   RegisterClass(__classid(TButton));
-  Py_InitModule("PyVcl", PyVclMethods);
+  PyObject *PyVclModule = Py_InitModule("PyVcl", PyVclMethods);
+
+  PyPropertyException = PyErr_NewException("PyVcl.PropertyError", NULL, NULL);
+  PyModule_AddObject(PyVclModule, "PropertyError", PyPropertyException);
 }
 //---------------------------------------------------------------------------
 

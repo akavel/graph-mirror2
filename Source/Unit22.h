@@ -7,15 +7,27 @@
 #include <StdCtrls.hpp>
 #include <Forms.hpp>
 #include <ComCtrls.hpp>
+#include "IRichEdit.h"
 //---------------------------------------------------------------------------
 class TForm22 : public TForm
 {
 __published:	// IDE-managed Components
-  TRichEdit *RichEdit1;
+  TIRichEdit *IRichEdit1;
   void __fastcall FormHide(TObject *Sender);
+  void __fastcall IRichEdit1ProtectChange(TObject *Sender, int StartPos,
+          int EndPos, bool &AllowChange);
+  void __fastcall IRichEdit1KeyDown(TObject *Sender, WORD &Key,
+          TShiftState Shift);
+  void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
+  int LastIndex;
+  bool FAllowChange;
+  std::vector<AnsiString> TextCache;
+  int CacheIndex;
+
 public:		// User declarations
   __fastcall TForm22(TComponent* Owner);
+  void WriteText(const AnsiString &Str, TColor Color = clBlack);
 };
 //---------------------------------------------------------------------------
 extern TForm22 *Form22;
