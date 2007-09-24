@@ -10,5 +10,8 @@
 #ifndef PyVclH
 #define PyVclH
 //---------------------------------------------------------------------------
+struct _object;
+
 void InitPyVcl();
+_object* PyNone();
 #endif

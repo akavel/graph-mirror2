@@ -18,8 +18,6 @@
 #include "PyVcl.h"
 #pragma link "python25.lib"
 //---------------------------------------------------------------------------
-static HHOOK KeyboardHookHandle = NULL;
-
 static bool IsPythonInstalled()
 {
   static int Result = -1;
@@ -33,57 +31,12 @@ static bool IsPythonInstalled()
   return Result;
 }
 //---------------------------------------------------------------------------
-class TConsoleReader : public TIThread
+void ExecutePythonCommand(const AnsiString &Command)
 {
-  char Buffer[100];
-
-  void ExecutePython()
-  {
-    if(Buffer[0])
-      PyRun_SimpleString(AnsiString().sprintf("eval(compile('%s', '', 'single'))", Buffer).c_str());
-  }
-
-  void __fastcall Execute()
-  {
-    HANDLE InHandle = GetStdHandle(STD_INPUT_HANDLE);
-    HANDLE OutHandle = GetStdHandle(STD_OUTPUT_HANDLE);
-    DWORD Bytes;
-    while(1)
-    {
-      WriteConsole(OutHandle, ">>> ", 4, &Bytes, NULL);
-      if(ReadConsole(InHandle, Buffer, sizeof(Buffer)-1, &Bytes, 0))
-      {
-        Buffer[Bytes - 2] = 0;
-        Synchronize(&ExecutePython);
-      }
-    }
-  }
-};
-//---------------------------------------------------------------------------
-static void ShowConsole()
-{
-  AllocConsole();
-  SetConsoleTitle("Graph plugin console");
-  PyRun_SimpleString(
-    "import sys\n"
-    "sys.stdout = open('CONOUT$', 'w', 0)\n"
-    "sys.stderr = sys.stdout\n"
-  );
-  new TConsoleReader;
-}
-//---------------------------------------------------------------------------
-static LRESULT CALLBACK KeyboardProc(int Code, WPARAM wParam, LPARAM lParam)
-{
-  //Check for F11 pressed down without ALT
-  if(wParam == VK_F11 && (lParam & 0xE0000000))
-  {
-    ShowConsole();
-    Form22->Visible = true;
-    if(Form1->Panel6->VisibleDockClientCount)
-      Form1->Panel5->Height = 100;
-    Form1->Splitter2->Visible = true;
-  }
-  return CallNextHookEx(KeyboardHookHandle, Code, wParam, lParam);
+  if(!Command.IsEmpty())
+    PyRun_SimpleString(AnsiString().sprintf("eval(compile('%s', '', 'single'))", Command.c_str()).c_str());
+  if(Form22)
+    Form22->WriteText(">>> ");
 }
 //---------------------------------------------------------------------------
 struct TExecutePythonAction
@@ -102,6 +55,17 @@ struct TExecutePythonAction
 //    Form1->SetFocus();
   }
 };
+//---------------------------------------------------------------------------
+static PyObject* PluginWriteToConsole(PyObject *Self, PyObject *Args, PyObject *Keywds)
+{
+  const char *Str;
+  TColor Color = clBlack;
+  if(!PyArg_ParseTuple(Args, "s|i", &Str, &Color))
+    return NULL;
+  if(Form22)
+    Form22->WriteText(Str, Color);
+  return PyNone();
+}
 //---------------------------------------------------------------------------
 static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args, PyObject *Keywds)
 {
@@ -171,7 +135,7 @@ static PyObject* PluginSetActionAttr(PyObject *Self, PyObject *Args, PyObject *K
   {
     Application->ShowException(&E);
   }
-  return Py_BuildValue(""); //Return None
+  return PyNone();
 }
 //---------------------------------------------------------------------------
 static PyObject* PluginGetActionAttr(PyObject *Self, PyObject *Args, PyObject *Keywds)
@@ -211,7 +175,7 @@ static PyObject* PluginCreateParametricFunction(PyObject *Self, PyObject *Args)
   Data.SetModified();
   Form1->Redraw();
 
-  return Py_BuildValue(""); //Return None
+  return PyNone();
 }
 //---------------------------------------------------------------------------
 static long double CallCustomFunction(void *Custom, const long double *Args, unsigned ArgsCount, Func32::TTrigonometry Trigonemtry)
@@ -259,33 +223,39 @@ static PyObject* PluginCreateCustomFunction(PyObject *Self, PyObject *Args)
 
   Py_XDECREF(FuncCode);
   Py_XDECREF(ArgCount);
-  return Py_BuildValue(""); //Return None
+  return PyNone();
 }
 //---------------------------------------------------------------------------
 static PyMethodDef GraphMethods[] = {
-  {"CreateAction", reinterpret_cast<PyCFunction>(PluginCreateAction), METH_NOARGS, "Test"},
+  {"CreateAction", reinterpret_cast<PyCFunction>(PluginCreateAction), METH_NOARGS, ""},
   {"SetActionAttr", reinterpret_cast<PyCFunction>(PluginSetActionAttr), METH_VARARGS | METH_KEYWORDS, "Test"},
-  {"GetActionAttr", reinterpret_cast<PyCFunction>(PluginGetActionAttr), METH_O, "Test"},
+  {"GetActionAttr", reinterpret_cast<PyCFunction>(PluginGetActionAttr), METH_O, ""},
   {"CreateParametricFunction", PluginCreateParametricFunction, METH_VARARGS, ""},
   {"CreateCustomFunction", PluginCreateCustomFunction, METH_VARARGS, ""},
+  {"WriteToConsole", reinterpret_cast<PyCFunction>(PluginWriteToConsole), METH_VARARGS, ""},
   {NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
+void ShowPythonConsole()
+{
+  if(Form22)
+  {
+    Form22->ManualDock(Form1->Panel6);
+    Form22->Show();
+    if(Form1->Panel6->VisibleDockClientCount)
+      Form1->Panel5->Height = 150;
+  }
+}
+//---------------------------------------------------------------------------
 void InitPlugins()
 {
-  Form22 = new TForm22(Application);
-  Form22->ManualDock(Form1->Panel6);
-  Form22->Visible = true;
-  
   if(IsPythonInstalled())
   {
-    KeyboardHookHandle = SetWindowsHookEx(WH_KEYBOARD, reinterpret_cast<HOOKPROC>(KeyboardProc), HInstance, GetCurrentThreadId());
+    Form22 = new TForm22(Application);
     Py_Initialize();
     AnsiString ExeName = Application->ExeName;
     char *argv[] = {ExeName.c_str(), NULL};
     PySys_SetArgv(1, argv);
-    if(FindCmdLineSwitch("C"))
-      ShowConsole();
 
     Py_InitModule("GraphImpl", GraphMethods);
     InitPyVcl();
@@ -294,15 +264,26 @@ void InitPlugins()
     TVersion Version = Info.FileVersion();
     const char *BetaFinal = Info.FileFlags() & ffDebug ? "beta" : "final";
     PyRun_SimpleString(AnsiString().sprintf(
-      "import imp\n"
+      "import sys\n"
+      "class ConsoleWriter:\n"
+      "  def __init__(self, color):\n"
+      "    self._color = color\n"
+      "  def write(self, str):\n"
+      "    GraphImpl.WriteToConsole(str, self._color)\n"
+      "sys.stdout = ConsoleWriter(0)\n"
+      "sys.stderr = ConsoleWriter(0xFF)\n"
+
       "import GraphImpl\n"
       "GraphImpl.version_info = (%d,%d,%d,'%s',%d)\n"
       "GraphImpl.handle = %d\n"
       "GraphImpl.form1 = %d\n"
+
+      "import imp\n"
 			"File, PathName, Desc = imp.find_module('Graph', ['%s\\Plugins'])\n"
       "Module = imp.load_module('Graph', File, PathName, Desc)\n"
       "File.close()\n"
       "Module.InitPlugins()\n"
+
       "import Graph\n"
       "import vcl\n"
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
@@ -311,6 +292,9 @@ void InitPlugins()
       , ExtractFileDir(Application->ExeName).c_str()
     ).c_str());
   }
+
+  if(Form22)
+    Form22->WriteText(">>> ");
 }
 //---------------------------------------------------------------------------
 

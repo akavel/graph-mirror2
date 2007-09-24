@@ -18,6 +18,11 @@ class TObject(object):
 class TForm(TObject):
     def __init__(self, handle = 0, **keywords):
         TObject.__init__(self, PyVcl.CreateObject("TForm") if handle == 0 else handle, handle == 0, **keywords)
+    def __setattr__(self, name, value):
+        try:
+            PyVcl.SetProperty(self._handle, name, value)
+        except PyVcl.PropertyError:
+            object.__setattr__(self, name, value)
     def ShowModal(self):
         PyVcl.CallMethod(self._handle, "ShowModal")
     def Close(self):

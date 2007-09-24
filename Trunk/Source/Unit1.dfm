@@ -80,7 +80,7 @@ object Form1: TForm1
     Left = 161
     Top = 30
     Width = 3
-    Height = 302
+    Height = 300
     Cursor = crHSplit
     AutoSnap = False
     Beveled = True
@@ -89,9 +89,9 @@ object Form1: TForm1
   end
   object Splitter2: TSplitter
     Left = 0
-    Top = 332
+    Top = 330
     Width = 630
-    Height = 1
+    Height = 3
     Cursor = crVSplit
     Align = alBottom
     MinSize = 1
@@ -100,7 +100,7 @@ object Form1: TForm1
     Left = 164
     Top = 30
     Width = 466
-    Height = 302
+    Height = 300
     Align = alClient
     BevelOuter = bvNone
     FullRepaint = False
@@ -113,7 +113,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 466
-      Height = 302
+      Height = 300
       Align = alClient
       ParentShowHint = False
       ShowHint = False
@@ -126,7 +126,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 466
-      Height = 302
+      Height = 300
       Style = psDot
       Mode = pmNot
       X = 30
@@ -151,7 +151,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 466
-      Height = 302
+      Height = 300
       Brush.Color = 13395660
       Brush.Style = bsBDiagonal
       Points.Strings = (
@@ -196,7 +196,7 @@ object Form1: TForm1
     Left = 0
     Top = 30
     Width = 161
-    Height = 302
+    Height = 300
     Align = alLeft
     BevelOuter = bvNone
     DragKind = dkDock
@@ -205,7 +205,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 161
-      Height = 302
+      Height = 300
       Align = alClient
       BevelInner = bvNone
       BevelOuter = bvNone
@@ -234,7 +234,7 @@ object Form1: TForm1
     end
     object Panel1: TPanel
       Left = 0
-      Top = 302
+      Top = 300
       Width = 161
       Height = 0
       Align = alBottom

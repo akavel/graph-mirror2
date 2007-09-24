@@ -222,6 +222,7 @@ void __fastcall TForm1::FormShow(TObject *Sender)
   PostMessage(Handle, WM_USER, 0, 0);
 
   TreeView->SetFocus();
+  ShowPythonConsole();
 }
 //---------------------------------------------------------------------------
 void TForm1::Initialize()
@@ -1307,6 +1308,13 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       Data.Axes.AxesArrows = Data.Axes.AxesArrows == aaPositiveEnd ? aaBothEnds : aaPositiveEnd;
       Data.Axes.NumberPlacement = Data.Axes.NumberPlacement == npCenter ? npBefore : npCenter;
       Redraw(); //Activates thread; must be done after OLE update
+      break;
+
+    case VK_F11:
+      Form22->Visible = true;
+      if(Form1->Panel6->VisibleDockClientCount)
+        Form1->Panel5->Height = 150;
+      Form1->Splitter2->Visible = true;
       break;
 
     case VK_SHIFT:
@@ -3619,19 +3627,28 @@ void __fastcall TForm1::Panel6UnDock(TObject *Sender, TControl *Client,
       TWinControl *NewTarget, bool &Allow)
 {
   Panel5->Height = StatusBar1->Height;
+  Splitter2->Visible = false;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Panel6DockDrop(TObject *Sender,
       TDragDockObject *Source, int X, int Y)
 {
-//  Panel5->Height = 100;
+  if(Form22->Visible)
+  {
+    Panel5->Height = 150;
+    Splitter2->Visible = true;
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Panel6DockOver(TObject *Sender,
       TDragDockObject *Source, int X, int Y, TDragState State,
       bool &Accept)
 {
-;
+  // Modify the DockRect to preview dock area.
+  int FormHeight = 150 - StatusBar1->Height;
+  TPoint TopLeft = Panel6->ClientToScreen(TPoint(0, -FormHeight));
+  TPoint BottomRight = Panel6->ClientToScreen(TPoint(Panel6->Width, Panel6->Height));
+  Source->DockRect = TRect(TopLeft, BottomRight);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Panel6GetSiteInfo(TObject *Sender,
