@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2007-07-30 19:49\n"
-"PO-Revision-Date: 2007-09-06 10:19+0800\n"
-"Last-Translator: shalalal <shalalahoo@yahoo.com.cn>\n"
+"PO-Revision-Date: 2007-09-22 08:49+0800\n"
+"Last-Translator: shalalal <shalalalhoo@yahoo.com.cn>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgid "%s-error"
 msgstr "%s-错误"
 
 msgid "'%1%' must be between %2% and %3%."
-msgstr "'%1%' 必需介于 %2% 和 %3%之间"
+msgstr "'%1%' 必须介于 %2% 和 %3%之间"
 
 msgid "'%s' has to be an integer value between 0 and 1000."
 msgstr "'%s' 必须要为一个介于0和1000之间的整数。"
@@ -63,7 +63,9 @@ msgid "2nd function:"
 msgstr "第2个函数："
 
 msgid "<Language> translation by <Translator>"
-msgstr "简体中文由上安 [黄易] 翻译 "
+msgstr ""
+"简体中文由 [ 黄易 ] 翻译 \n"
+" \t\t\tshalalahoo@yahoo.com.cn"
 
 msgid "A calculation resulted in an overflow."
 msgstr "计算结果溢出"
@@ -88,7 +90,7 @@ msgid "Abort printing?"
 msgstr "取消打印吗?"
 
 msgid "About Graph"
-msgstr "关于Graph"
+msgstr "关于 Graph"
 
 msgid "About Graph..."
 msgstr "关于 Graph..."
@@ -162,7 +164,7 @@ msgid ""
 msgstr "利用 Simpson's 公式计算给定范围的面积或者路径长度。"
 
 msgid "Argument produced a function result with total loss of precision."
-msgstr "参数产生了一个函数结果为遗失所有精确度"
+msgstr "参数产生了一个遗失所有精确度的函数结果"
 
 msgid "Argument range"
 msgstr "参数范围"
@@ -171,8 +173,8 @@ msgid ""
 "As an alternative to Transparent, you can choose a custom background color "
 "for labels. This is especially useful for labels drawn over shadings."
 msgstr ""
-"除了透明度之外，你也可以选择一个适合的标签背景颜色，特别是标签画在阴影之上的"
-"时候。"
+"除了可以改变透明度之外，你也可以选择一个适合的标签背景颜色，尤其是标签画在阴"
+"影之上的时候非常有用。"
 
 msgid "Associate *.grf files with Graph."
 msgstr "用Graph关联 *.grf 文件类型"
@@ -226,10 +228,10 @@ msgid "Between function and y-axis"
 msgstr "在函数和y轴之间"
 
 msgid "Between functions"
-msgstr "在两函数之间"
+msgstr "在两函数间"
 
 msgid "Black && white"
-msgstr "黑 && 白"
+msgstr "黑白"
 
 msgid "Bold (Ctrl+B)"
 msgstr "粗体 (Ctrl-B)"
@@ -244,7 +246,7 @@ msgid "Boxed"
 msgstr "盒状"
 
 msgid "Build %s"
-msgstr "生成 %s"
+msgstr "Build %s"
 
 msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
 msgstr "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
@@ -308,7 +310,7 @@ msgid "Center (Ctrl+E)"
 msgstr "居中(Ctrl+E)"
 
 msgid "Center on page"
-msgstr "页面中间"
+msgstr "自动居中"
 
 msgid "Change the font of the legend."
 msgstr "选择标题的字体"
@@ -367,7 +369,7 @@ msgid ""
 msgstr "选择是否要显示轴线，以及是否要显示为交叉或者放置于左边或底端。"
 
 msgid "Choose number of copies to print."
-msgstr "选择打印数目:"
+msgstr "选择打印份数:"
 
 msgid "Choose paper orientation."
 msgstr "选择纸张方向"
@@ -397,7 +399,7 @@ msgstr "选择线条宽度"
 
 msgid ""
 "Choose to use the same size as shown on the screen or a custom image size."
-msgstr "选用与显示在银幕或自定义影像相同的尺寸"
+msgstr "选用与显示在银幕或自定义图像相同的尺寸"
 
 msgid "Choose where the legend should be placed."
 msgstr "选择图例说明放置的位置"
@@ -409,10 +411,10 @@ msgid "Close"
 msgstr "关闭"
 
 msgid "Color"
-msgstr "颜色"
+msgstr "彩色"
 
 msgid "Color:"
-msgstr "颜色"
+msgstr "颜色:"
 
 msgid "Colors"
 msgstr "颜色"
@@ -445,7 +447,7 @@ msgid "Constraints:"
 msgstr " 限制条件:"
 
 msgid "Contact the home page to see if a newer version is available."
-msgstr "到首页检查是否有新版本程序"
+msgstr "检查更新"
 
 msgid "Contents and index"
 msgstr "内容和索引"
@@ -466,7 +468,7 @@ msgid "Copies the selected function or point series to the clipboard."
 msgstr "复制选择的函数或者坐标点数列到剪贴板上。"
 
 msgid "Copies the shown coordinate system to the clipboard."
-msgstr "复制这个显示的坐标系到剪贴板上"
+msgstr "复制坐标系及函数所显示的部分到剪贴板上"
 
 msgid "Copy"
 msgstr "复制"
@@ -493,7 +495,7 @@ msgid "Create a moving average as a series of straight lines."
 msgstr "新建一条走向平均值的直线"
 
 msgid "Create a new OLE object."
-msgstr "建立新 OLE 物件"
+msgstr "建立新 OLE 对象"
 
 msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
 msgstr "建立多项式函数: f(x)=ax^3+bx^2+cx+d"
@@ -505,7 +507,7 @@ msgid "Create an animation by variating a constant."
 msgstr "用改变常数来新增动画"
 
 msgid "Create custom functions and constants for use in graphs."
-msgstr "新建绘图用的个别化函数及常数"
+msgstr "新建绘图用的自定义函数及常数"
 
 msgid "Creates a new coordinate system."
 msgstr "新建一个坐标系"
@@ -548,13 +550,13 @@ msgid "Customize toolbar..."
 msgstr "自定义工具列"
 
 msgid "Cut"
-msgstr "剪下"
+msgstr "剪切"
 
 msgid "Cut the selected text to the clipboard."
-msgstr "剪下选择的文字到剪贴板上"
+msgstr "剪切选择的文字到剪贴板上"
 
 msgid "Cuts the selected function or point series to the clipboard."
-msgstr "剪下选择的函数或者坐标点数列到剪贴板上"
+msgstr "剪切选择的函数或者坐标点数列到剪贴板上"
 
 msgid ""
 "Data from the evaluation table can be copied to another program like "
@@ -564,7 +566,7 @@ msgstr ""
 "Excel。"
 
 msgid "Decimals:"
-msgstr "十进位："
+msgstr "小数位数"
 
 msgid "Decrease to intersection"
 msgstr "减少直到交叉"
@@ -588,10 +590,10 @@ msgid "Delete the selected function, tangent or point series."
 msgstr "删除选取的函数, 切线或坐标点"
 
 msgid "Description"
-msgstr "叙述"
+msgstr "描述"
 
 msgid "Description:"
-msgstr "叙述:"
+msgstr "描述:"
 
 msgid "Determine the tick unit automatically."
 msgstr "自动决定记号单位"
@@ -609,13 +611,13 @@ msgid "Donate"
 msgstr "捐助"
 
 msgid "Donate money to the project."
-msgstr "捐助这个计画经费"
+msgstr "捐款帮助这个项目"
 
 msgid "Dots"
-msgstr "虚线"
+msgstr "点"
 
 msgid "Draw type:"
-msgstr "绘图型态:"
+msgstr "绘图方式:"
 
 msgid "Each error bar is given a custom value."
 msgstr "任一误差杠采用自定义值"
@@ -645,7 +647,7 @@ msgid "Edit model"
 msgstr "编辑模型"
 
 msgid "Edit object"
-msgstr "编辑物件"
+msgstr "编辑对象"
 
 msgid "Edit point series"
 msgstr "编辑坐标点数列"
@@ -654,7 +656,7 @@ msgid "Edit relation"
 msgstr "编辑关系式"
 
 msgid "Edit selected OLE object."
-msgstr "编辑选取的 OLE 物件"
+msgstr "编辑选取的 OLE 对象"
 
 msgid "Edit shading"
 msgstr "编辑阴影"
@@ -703,7 +705,7 @@ msgid "Endpoints"
 msgstr "端点图样:"
 
 msgid "Enter a description to show in the legend."
-msgstr "输入一个显示在图例说明的叙述"
+msgstr "输入一个显示在图例说明中的描述"
 
 msgid "Enter a function model to base the trendline on."
 msgstr "使用一个函数模式来作为趋势线的基准"
@@ -711,13 +713,13 @@ msgstr "使用一个函数模式来作为趋势线的基准"
 msgid ""
 "Enter a number for which you want to evaluate the function, or click on the "
 "function in the main window."
-msgstr "输入一个你想要用来求解方程序使用的数字，或者点选在主视窗的函数"
+msgstr "输入一个你想要用来求解方程序使用的数字，或者点选在主窗口的函数"
 
 msgid "Enter a title to show above the coordinate system."
 msgstr "输入一个显示于坐标系上的标题"
 
 msgid "Enter an x-coordinate or click in the main window."
-msgstr "输入 x 坐标或者点主视窗上的 切线"
+msgstr "输入 x 坐标或者点主窗口上的 切线"
 
 msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
 msgstr "输入关系式的限制条件，例如\"x > 0 and y < 5\""
@@ -734,10 +736,10 @@ msgstr "输入一个百分比的相对值"
 msgid ""
 "Enter the end coordinate or mark the range on the graph itself with the "
 "mouse."
-msgstr "输入终点坐标或用鼠标标示图片范围"
+msgstr "输入终点坐标或用鼠标标示图像范围"
 
 msgid "Enter the image position on the page."
-msgstr "输入影像在页面中的位置"
+msgstr "输入图像在页面中的位置"
 
 msgid ""
 "Enter the independent variable for which you want to evaluate the function, "
@@ -750,7 +752,7 @@ msgstr "输入关系式，例如 \"x^2+y^2 = 25\" 或 \"y < sin(x)\""
 msgid ""
 "Enter the start coordinate or mark the range on the graph itself with the "
 "mouse."
-msgstr "输入起始坐标或用鼠标标示图片范围"
+msgstr "输入起始坐标或用鼠标标示图像范围"
 
 msgid "Erase selected cells."
 msgstr "擦掉选择的栏位"
@@ -781,10 +783,10 @@ msgid ""
 "The file is not a correct Graph file."
 msgstr ""
 "文件读取错误: %s\n"
-"文件不是一个正确的图片"
+"文件不是一个正确的Graph图像文件"
 
 msgid "Error reading object"
-msgstr "物件读取错误"
+msgstr "对象读取错误"
 
 msgid "Error while adding points"
 msgstr "增加坐标点的错误"
@@ -826,7 +828,7 @@ msgid "Extremum"
 msgstr "极限"
 
 msgid "Fact can only be calculated for positive integers."
-msgstr "阶层只有在正整数的情况下计算。"
+msgstr "只能计算正整数的阶乘。"
 
 msgid "File"
 msgstr "文件"
@@ -841,7 +843,7 @@ msgid "Fit"
 msgstr "适合"
 
 msgid "Fixed:"
-msgstr "固定的(长度)："
+msgstr "固定长度:"
 
 msgid "Font and color"
 msgstr "字体和颜色"
@@ -874,16 +876,16 @@ msgid "Frequently Asked Questions"
 msgstr "常见问题"
 
 msgid "From:"
-msgstr "From:"
+msgstr "从:"
 
 msgid "Function"
 msgstr "函数"
 
 msgid "Function cannot be differentiated."
-msgstr "函数无法被区别"
+msgstr "无法识别的函数"
 
 msgid "Function equation"
-msgstr "函数方程序"
+msgstr "函数方程式"
 
 msgid "Function type:"
 msgstr "函数类型:"
@@ -897,7 +899,7 @@ msgid "Global"
 msgstr "总体的"
 
 msgid "Go to home page"
-msgstr "到首页"
+msgstr "主页"
 
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
@@ -918,25 +920,26 @@ msgid ""
 "Graph can save the shown coordinate system in five different image formats: "
 "bmp, emf, png, jpg and pdf."
 msgstr ""
-"Graph 可以保存显示的坐标系为五种不同的图形格式: bmp, emf, png, jpg和 pdf。"
+"Graph 可以保存坐标系及函数所显示的部分为五种不同的图片格式: bmp, emf, png, "
+"jpg和 pdf。"
 
 msgid "Graph file..."
-msgstr "图片..."
+msgstr "Graph 图像..."
 
 msgid "Graph files [*.grf]|*.grf"
-msgstr "图片 [*.grf]|*.grf"
+msgstr "Graph 图像 [*.grf]|*.grf"
 
 msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
-msgstr "图片 [*.grf]|*.grf|All files [*.*]|*.*"
+msgstr "Graph 图像 [*.grf]|*.grf|All files [*.*]|*.*"
 
 msgid "Graph properties"
-msgstr "图形属性"
+msgstr "图片属性"
 
 msgid ""
 "Graph will remember the size and placement of the main window between "
 "executions. This can be disabled from the Options dialog."
 msgstr ""
-"Graph 可以纪录执行时视窗的大小和放置，如果想要取消的话可以在选项对话框那设"
+"Graph 可以纪录执行时窗口的大小和放置，如果想要取消的话可以在选项对话框那设"
 "定。"
 
 msgid "Grid color:"
@@ -946,7 +949,7 @@ msgid "Grid unit:"
 msgstr "表格单位："
 
 msgid "Half cosine"
-msgstr "Half cosine"
+msgstr "半余弦"
 
 msgid "Help"
 msgstr "说明"
@@ -954,8 +957,7 @@ msgstr "说明"
 msgid ""
 "If checked the program will contact a web server when the program is started "
 "to see if a newer version is available."
-msgstr ""
-"如果被勾选了，则此程序会主动在被启动时到网站上去寻找是否有新可用的版本。"
+msgstr "如果选择此项，程序启动时将自动连网检查更新。"
 
 msgid ""
 "If you check 'Save as default' in the Axes dialog the current settings will "
@@ -975,8 +977,8 @@ msgid ""
 "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
 "have undone."
 msgstr ""
-"你当操作错误时可以使用 [编辑]-->[还原] 还原上一个操作，你也可以使用[编辑]-->"
-"[重作]来重作上一个还原。 "
+"你当操作错误时可以使用 [编辑]-->[撤消]撤消上一个操作，你也可以使用[编辑]-->"
+"[重复]来重复上一个已撤消的操作。 "
 
 msgid ""
 "If you want the axes shown to the left and bottom of the image, you can "
@@ -988,34 +990,34 @@ msgid "Illegal name \"%s\" for user defined function or constant."
 msgstr "不合规定的名称 \"%s\" 用于使用者定义的函数或者常数"
 
 msgid "Image height:"
-msgstr "图片高度："
+msgstr "图像高度："
 
 msgid "Image information"
-msgstr "图形资讯"
+msgstr "图像资讯"
 
 msgid "Image options"
-msgstr "图形选项"
+msgstr "图像选项"
 
 msgid "Image size"
-msgstr "图片宽度"
+msgstr "图像宽度"
 
 msgid "Image width:"
-msgstr "图片宽度："
+msgstr "图像宽度："
 
 msgid "Import"
-msgstr "输入"
+msgstr "导入"
 
 msgid "Import a Graph file into the current coordinate system."
-msgstr "输入一个图片到现在的坐标系"
+msgstr "导入一个Graph图像到当前坐标系"
 
 msgid "Import data from a file and place it at the selected cell."
-msgstr "从文件输入资料，并且放到选择的栏位。"
+msgstr "从文件导入资料，并且放到选择的栏位。"
 
 msgid "Import from file..."
-msgstr "从文件输入"
+msgstr "从文件导入"
 
 msgid "Import point series from a data file."
-msgstr "由资料文件输入坐标点"
+msgstr "由资料文件导入坐标点"
 
 msgid "In"
 msgstr "放大"
@@ -1035,8 +1037,8 @@ msgid ""
 "the image resolution. This is especially useful if you want a high "
 "resolution image."
 msgstr ""
-"在[保存为图片]的对话框当中，右下角有一个[选项]按钮，你可以用来定义影像解析"
-"度。如果你想要一个高解析度的影像，这个功能特别有用。"
+"在[保存为Graph图像]的对话框当中，右下角有一个[选项]按钮，你可以用来定义图像解"
+"析度。如果你想要一个高解析度的图像，这个功能特别有用。"
 
 msgid "Increase to intersection"
 msgstr "增加直到交叉"
@@ -1075,10 +1077,10 @@ msgid "Insert label..."
 msgstr "插入标签"
 
 msgid "Insert object"
-msgstr "插入物件"
+msgstr "插入对象"
 
 msgid "Insert object..."
-msgstr "插入物件"
+msgstr "插入对象"
 
 msgid "Insert point series"
 msgstr "插入坐标点数列"
@@ -1146,10 +1148,10 @@ msgid ""
 msgstr "内部错误,请告知程序人员获得更多的资讯"
 
 msgid "Internet"
-msgstr "网路"
+msgstr "网络"
 
 msgid "Interpolation:"
-msgstr "中间插入："
+msgstr "中间插值："
 
 msgid "Intersection"
 msgstr "交集"
@@ -1161,7 +1163,7 @@ msgid ""
 " In addition you are not allowed to use built-in names as argument names."
 msgstr ""
 "无效的参数名称 '%s' \n"
-"名称只能够包含字母和十进位数字，而且必须要以字幕为开头。\n"
+"名称只能够包含字母和十进位数字，而且必须要以字母为开头。\n"
 "此外，你不可以用保留字作为参数名称。"
 
 msgid "Invalid equation or inequality."
@@ -1196,16 +1198,16 @@ msgid "Label font:"
 msgstr "标签字体："
 
 msgid "Label:"
-msgstr "标签："
+msgstr "标签:"
 
 msgid "Labels"
 msgstr "标签"
 
 msgid "Landscape"
-msgstr "风景图"
+msgstr "横向"
 
 msgid "Language:"
-msgstr "语言："
+msgstr "语言:"
 
 msgid "Left"
 msgstr "左边"
@@ -1274,13 +1276,13 @@ msgid "Markers"
 msgstr "标示"
 
 msgid "Max undo steps:"
-msgstr "最大还原步骤："
+msgstr "最大撤消步骤："
 
 msgid "Maximum number for t must be greater than the minimum value."
 msgstr "t 的最大数值需要大于最小数值"
 
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
-msgstr "最大的还原步骤次数，如果设定为0的话就是无法还原。"
+msgstr "最大的撤消步骤次数，如果设定为0的话就是无法撤消。"
 
 msgid "Maximum number on x-axis must be greater than the minimum value."
 msgstr "x 轴上最大的数值必须大于最小数值"
@@ -1328,22 +1330,22 @@ msgid "Move the coordinate system with the mouse."
 msgstr "用鼠标移动坐标系"
 
 msgid "Move the window down along the coordinate system."
-msgstr "移动视窗到坐标系下面"
+msgstr "移动窗口到坐标系下面"
 
 msgid "Move the window to the left along the coordinate system."
-msgstr "移动视窗到坐标系左侧"
+msgstr "移动窗口到坐标系左侧"
 
 msgid "Move the window to the right along the coordinate system."
-msgstr "移动视窗到坐标系右侧"
+msgstr "移动窗口到坐标系右侧"
 
 msgid "Move the window up along the coordinate system."
-msgstr "移动视窗到坐标系上面"
+msgstr "移动窗口到坐标系上面"
 
 msgid "Move up"
 msgstr "上移"
 
 msgid "Moving average"
-msgstr "移动平均值"
+msgstr "拟合曲线"
 
 msgid "Name:"
 msgstr "名称："
@@ -1358,7 +1360,7 @@ msgid "New version of Graph available"
 msgstr "新版本的 Graph 已经可以取得"
 
 msgid "Next tip"
-msgstr "下一个提醒"
+msgstr "下一个提示"
 
 msgid "No new version"
 msgstr "没有新版本"
@@ -1373,7 +1375,7 @@ msgid "Normal"
 msgstr "法线"
 
 msgid "Not a valid Graph object."
-msgstr "不是一个有效的图形物件"
+msgstr "不是一个有效的图形对象"
 
 msgid "Not enough points for calculation."
 msgstr "没有足够的坐标点用以计算"
@@ -1388,10 +1390,10 @@ msgid "Number of calculation steps used to draw the graph."
 msgstr "绘图的计算步骤数目"
 
 msgid "Number of copies:"
-msgstr "复制的数目:"
+msgstr "打印的份数:"
 
 msgid "Number of decimals used when results are shown."
-msgstr "用来显现的十进位数目"
+msgstr "用来显现十进制数小数的位数"
 
 msgid "Number of frames per second used when the animation is played."
 msgstr "动画播放时每秒使用的画面数"
@@ -1403,28 +1405,28 @@ msgid "OK"
 msgstr "确定"
 
 msgid "OLE error"
-msgstr "OLE 错误"
+msgstr "OLE对象 错误"
 
 msgid "Object error"
-msgstr "物件错误"
+msgstr "对象错误"
 
 msgid "Open browser with the support page for the program."
-msgstr "打开支援这个计画的浏览器页面"
+msgstr "打开这个项目的主页"
 
 msgid "Open file: %s"
-msgstr "打开文件: %s"
+msgstr "打开Graph文件: %s"
 
 msgid "Open help file."
-msgstr "打开说明文件"
+msgstr "打开帮助文件"
 
 msgid "Open the file %s."
-msgstr "打开文件: %s"
+msgstr "打开Graph文件: %s"
 
 msgid "Open..."
-msgstr "打开.."
+msgstr "打开..."
 
 msgid "Opens the default browser and shows the home page of the program."
-msgstr "打开预设浏览器并且显示此程序的首页"
+msgstr "访问主页"
 
 msgid "Options"
 msgstr "选项"
@@ -1451,10 +1453,10 @@ msgid "Parametric function x(t), y(t)"
 msgstr "参量函数 x(t),y(t)"
 
 msgid "Paste"
-msgstr " 贴上"
+msgstr "粘贴"
 
 msgid "Paste special..."
-msgstr "贴上特别..."
+msgstr "粘贴特别..."
 
 msgid ""
 "Paste text from the clipboard into the grid. Other cells may be overwritten "
@@ -1462,15 +1464,15 @@ msgid ""
 msgstr "把文字贴到表格上，而且所有的文字都会被覆盖"
 
 msgid "Paste the contents of the clipboard."
-msgstr "贴上剪贴板的内容"
+msgstr "粘贴剪贴板上的内容"
 
 msgid ""
 "Pastes a function or point series from the clipboard into the coordinate "
 "system."
-msgstr "将剪贴板上的函数或者坐标点数列贴到这个坐标系上。"
+msgstr "将剪贴板上的函数或者坐标点数列粘贴到这个坐标系上。"
 
 msgid "Pause"
-msgstr " 停止"
+msgstr "停止"
 
 msgid "Period:"
 msgstr "周期:"
@@ -1511,7 +1513,7 @@ msgid "Point series..."
 msgstr "坐标点数列"
 
 msgid "Polar"
-msgstr "极坐标"
+msgstr "模及复角"
 
 msgid "Polar function         r=f(t)"
 msgstr "极函数  r=f(t)"
@@ -1520,10 +1522,10 @@ msgid "Polynomial"
 msgstr "多项式"
 
 msgid "Portrait"
-msgstr "画像"
+msgstr "纵向"
 
 msgid "Position (millimeters)"
-msgstr "位置(公分)"
+msgstr "位置（毫米）"
 
 msgid "Position:"
 msgstr "位置："
@@ -1532,7 +1534,7 @@ msgid "Power"
 msgstr "幂"
 
 msgid "Previous tip"
-msgstr "上一个提醒"
+msgstr "上一个提示"
 
 msgid "Print"
 msgstr "打印"
@@ -1541,30 +1543,30 @@ msgid "Print output"
 msgstr "打印输出"
 
 msgid "Print shown coordinate system."
-msgstr "打印显示的坐标系"
+msgstr "打印坐标系及函数中所显示的部分"
 
 msgid "Print..."
 msgstr "打印..."
 
 msgid "Printer"
-msgstr "印表机:"
+msgstr "打印机:"
 
 msgid "Printing error"
 msgstr "打印错误"
 
 msgid "Progressive"
-msgstr "进行中"
+msgstr "渐进式"
 
 msgid ""
 "Progressive encoding allows viewers to see a rough copy of the image while "
 "it is downloaded."
-msgstr "渐进式的编码可以让下载图片时观看粗略的影像"
+msgstr "渐进式的编码可以让下载图像时观看粗略的图像"
 
 msgid "Properties"
 msgstr "属性:"
 
 msgid "Protocol reply error %s"
-msgstr "Protocol 回应错误 %s"
+msgstr "Protocol 返回错误 %s"
 
 msgid "Quality"
 msgstr "品质"
@@ -1582,28 +1584,28 @@ msgid "Read coordinate system and functions from a file."
 msgstr "从文件读取坐标系及函数"
 
 msgid "Real"
-msgstr "实数"
+msgstr "仅实部"
 
 msgid "Recent files:"
-msgstr "最近使用文件："
+msgstr "最近使用过的文件："
 
 msgid "Rectangular"
-msgstr "方形的"
+msgstr "实部＋虚部"
 
 msgid "Redo"
-msgstr "重作"
+msgstr "重复"
 
 msgid "Redo last undone action."
-msgstr "重作上一个还原动作"
+msgstr "重复上一个已撤消的操作"
 
 msgid "Redo the last action undone."
-msgstr "重作上一个还原的动作"
+msgstr "重复上一个已撤消的操作"
 
 msgid "Relation:"
 msgstr "关系式:"
 
 msgid "Relative:"
-msgstr "相对的(比例)："
+msgstr "相对比例:"
 
 msgid "Remove model"
 msgstr "移除模式"
@@ -1639,16 +1641,16 @@ msgid "Sample"
 msgstr "范例"
 
 msgid "Save"
-msgstr "保存"
+msgstr "保存Graph图像"
 
 msgid "Save as default"
 msgstr "保存作为预设值"
 
 msgid "Save as image..."
-msgstr "保存为图片"
+msgstr "保存为其它图片格式..."
 
 msgid "Save as..."
-msgstr "另存为..."
+msgstr "另存为Graph图像..."
 
 msgid "Save changes in %s?"
 msgstr "保存修改在 %s?"
@@ -1666,26 +1668,26 @@ msgid ""
 "Save window position when the program quits. This setting is used the next "
 "time the program is used.|Save window state on exit."
 msgstr ""
-"在关闭程序时候保存视窗位置。这个设定可以让下次打开程序时候执行。|退出时保存视"
-"窗状态"
+"在关闭程序时候保存窗口位置。这个设定可以让下次打开程序时候在当前集位置显示窗"
+"口。|退出时保存窗口状态"
 
 msgid "Save workspace on exit"
 msgstr "退出时保存工作空间"
 
 msgid "Saves a copy of the current coordinate system."
-msgstr "保存一个此坐标系副本"
+msgstr "保存一个此坐标系及函数的副本"
 
 msgid "Saves the coordinate system as a new name."
-msgstr "保存坐标系为另一个新名称"
+msgstr "保存坐标系及函数为另一个新Graph图像文件"
 
 msgid "Saves the selected data to a file."
 msgstr "保存选择的资料到文件"
 
 msgid "Saves the shown coordinate system as an image."
-msgstr "保存坐标系为图片"
+msgstr "保存坐标系及函数图像为图片"
 
 msgid "Scale:"
-msgstr "范围:"
+msgstr "缩放:"
 
 msgid "Screen size"
 msgstr "文字大小"
@@ -1734,7 +1736,7 @@ msgid "Select the color of the grid lines."
 msgstr "选择格线的颜色"
 
 msgid "Select the color of the image background."
-msgstr "选择图片背景的颜色"
+msgstr "选择图像背景的颜色"
 
 msgid "Select the font for the coordinates."
 msgstr "选择此坐标系的字体"
@@ -1755,12 +1757,14 @@ msgid "Select the function type to graph."
 msgstr "选择要绘图之函数类型"
 
 msgid "Select the language to use for the user interface."
-msgstr "选择"
+msgstr ""
+"选择你所使用的语言。\n"
+"Select the language to use for the user interface."
 
 msgid ""
 "Select the printer to use. The Properties button may be used to change more "
 "advanced settings for the printer."
-msgstr "选择要使用的列表机，属性的按钮可以用来改变进阶的设定。"
+msgstr "选择要使用的打印机，还可以单击“属性”按钮改变打印机的高级设置。"
 
 msgid ""
 "Select the second function when you want a shading between two functions."
@@ -1777,7 +1781,7 @@ msgid "Select this to use these settings as defaults in the future."
 msgstr "选择此使用轴线设定作为以后的预设值"
 
 msgid "Select to place the image on the middle of the page."
-msgstr "选择让影像置于页面中间"
+msgstr "选择让图像置于页面正中"
 
 msgid ""
 "Select to print in color (or grayscale if your printer is not a color "
@@ -1788,13 +1792,13 @@ msgid "Select to show a legend in the coordinate system."
 msgstr "选择显示此坐标系的图例说明"
 
 msgid "Select where the coordinates should be shown."
-msgstr "选择那里的坐标需要被显示"
+msgstr "选择要显示的坐标"
 
 msgid "Select where the cursor will be placed when you click on the image."
-msgstr "选择点选图片后的游标放置位置。"
+msgstr "选择点选图像后的游标放置位置。"
 
 msgid "Select which clipboard representation you want to paste."
-msgstr "选择哪一个你想要的剪贴板显示"
+msgstr "选择用何种方式粘贴剪贴板上的内容"
 
 msgid "Select which kind of line to draw between the markers."
 msgstr "选择标示之间的线条样式"
@@ -1803,7 +1807,7 @@ msgid "Selection error"
 msgstr "选取错误"
 
 msgid "Separator"
-msgstr "分离器"
+msgstr "分隔线"
 
 msgid "Series"
 msgstr "数列"
@@ -1812,10 +1816,10 @@ msgid "Server application not found."
 msgstr "找不到主机上的应用"
 
 msgid "Set a custom image height."
-msgstr "设定自定义影像高度"
+msgstr "设定自定义图像高度"
 
 msgid "Set a custom image width."
-msgstr "设定自定义影像宽度"
+msgstr "设定自定义图像宽度"
 
 msgid "Set the grid unit to the same as the tick unit."
 msgstr "设定格线单位与记号单位相同"
@@ -1859,7 +1863,7 @@ msgid "Show coordinates"
 msgstr "显示坐标"
 
 msgid "Show copyright information."
-msgstr "显示智慧财产资讯"
+msgstr "显示版权信息"
 
 msgid "Show grid"
 msgstr "显示格线"
@@ -1884,7 +1888,7 @@ msgstr "在x轴的右上显示标签"
 
 msgid ""
 "Show the label at the top of the main window, to the right of the y-axis."
-msgstr "在视窗的上端靠近y轴的地方显示标签"
+msgstr "在窗口的上端靠近y轴的地方显示标签"
 
 msgid "Show the legend in the bottom left corner."
 msgstr "显示图例说明在左下角"
@@ -1899,7 +1903,7 @@ msgid "Show the legend in the upper right corner."
 msgstr "显示图例说明在右上角"
 
 msgid "Show the tooltip when the cursor is over an item."
-msgstr "当游标在某物件上时显示工具提示"
+msgstr "当游标在某对象上时显示工具提示"
 
 msgid "Show tick marks on the x-axis."
 msgstr "显示x轴上的记号标示"
@@ -1914,7 +1918,7 @@ msgid "Show tip of the day"
 msgstr "显示今天提示"
 
 msgid "Show tips at startup"
-msgstr "在开始显示提醒"
+msgstr "在开始显示提示"
 
 msgid "Show tooltip"
 msgstr "显示工具提示"
@@ -2004,13 +2008,13 @@ msgid "Subscript (Ctrl+=)"
 msgstr "下标 (Ctrl+=)"
 
 msgid "Subset:"
-msgstr "用户电话"
+msgstr "子集："
 
 msgid "Superscript (Ctrl++)"
 msgstr "上标 (Ctrl++)"
 
 msgid "Support"
-msgstr "支援"
+msgstr "支持"
 
 msgid "Symbol \"%s\" defined more than once."
 msgstr "符号 \"%s\" 已经被建立超过一次"
@@ -2041,8 +2045,8 @@ msgid ""
 "Equation. When editing a label right click in the editing area and select "
 "'Insert object'."
 msgstr ""
-"文字标签可以包含任何  OLE 物件，例如 Microsoft 数学方程序编辑器。 当编辑一个"
-"标签，点选鼠标右键然后选择\"插入物件\"。"
+"文字标签可以包含任何  OLE 对象，例如 Microsoft 数学方程序编辑器。 当编辑一个"
+"标签，点选鼠标右键然后选择\"插入对象\"。"
 
 msgid "Text size."
 msgstr "文字大小"
@@ -2151,7 +2155,7 @@ msgid ""
 msgstr "坐标点数列的名称，此名称会显示在坐标系的左边列。"
 
 msgid "The newest version as well as the source code are available at:"
-msgstr "最新的版本和原始码在："
+msgstr "最新的版本及源代码在："
 
 msgid "The number of most recent used files shown in the File menu."
 msgstr "文件目录中最近使用文件数目"
@@ -2229,19 +2233,19 @@ msgid ""
 "terms in the GNU General Public License. Please send bug reports and "
 "suggestions to the programmer."
 msgstr ""
-"这是免费软件，欢迎你在GNU 通用公众使用的范围下使用。并请回报问题和建议给程序"
-"设计师。"
+"Graph 是一款免费软件, 您可以遵照 GNU 通用公共许可协议条款来修改和重新发布这一"
+"程序. 请将 BUG 报告和意见建议反馈给我们."
 
 msgid ""
 "This is the first derivative of the function evaluated for the entered value."
-msgstr "这是函数的第一导函数"
+msgstr "这是函数的一阶导数函数"
 
 msgid "This is the function evaluated for the entered x-value."
 msgstr "此为带入x值求解所用的函数"
 
 msgid ""
 "This is the functions second derivative evaluated for the entered value."
-msgstr "这是函数的第二导函数"
+msgstr "这是函数的二阶导数函数"
 
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
 msgstr "这是输入x坐标后相对应 y 坐标上的切线"
@@ -2266,7 +2270,7 @@ msgstr "标题："
 msgid ""
 "To add a command to a toolbar simply select a category and drag the command "
 "out of this dialog box to a toolbar."
-msgstr "要增加一个命令到工具列上只要选择类别并且拖曳此命令到工具列上"
+msgstr "要增加一个命令到工具栏上只要选择类别并且拖曳此命令到工具栏上"
 
 msgid "To:"
 msgstr "到:"
@@ -2293,7 +2297,7 @@ msgid "Trying to break zoom limit."
 msgstr "尝试打破缩放限制。"
 
 msgid "Type"
-msgstr "型态"
+msgstr "方式"
 
 msgid ""
 "Type a value in the Intercept box to specify the point where you want the "
@@ -2304,19 +2308,19 @@ msgstr ""
 "多项式与指数趋势线。"
 
 msgid "Type:"
-msgstr "型态:"
+msgstr "方式:"
 
 msgid "Underline (Ctrl+U)"
-msgstr "底线(Ctrl-U)"
+msgstr "下划线(Ctrl-U)"
 
 msgid "Undo"
-msgstr "还原"
+msgstr "撤消"
 
 msgid "Undo last action."
-msgstr "还原上一个动作"
+msgstr "撤消上一个操作"
 
 msgid "Undo the last action."
-msgstr "还原上一个动作"
+msgstr "撤消上一个操作"
 
 msgid "Unexpected end of brackets."
 msgstr "无预期的结束括号"
@@ -2367,7 +2371,7 @@ msgid ""
 "When a point series is selected you can add points to it by clicking on the "
 "image while you hold down the Ctrl key."
 msgstr ""
-"当坐标点数列被选取的时候，你可以按住  Ctrl 键同时在图片上点鼠标来增加坐标点。"
+"当坐标点数列被选取的时候，你可以按住  Ctrl 键同时在图像上点鼠标来增加坐标点。"
 
 msgid ""
 "When inserting a point series you can copy data from programs like Microsoft "
@@ -2387,7 +2391,7 @@ msgstr "位置:"
 msgid ""
 "While you hold down the Ctrl key, you can use the + and - keys to zoom in "
 "and out."
-msgstr "当你按住 Ctrl键，你可以利用 + 和 - 两个按键来缩放视窗。"
+msgstr "当你按住 Ctrl键，你可以利用 + 和 - 两个按键来缩放窗口。"
 
 msgid ""
 "While you hold down the Ctrl key, you can use the arrow keys to move the "
@@ -2405,18 +2409,18 @@ msgid "Width:"
 msgstr "宽度:"
 
 msgid "Window"
-msgstr "视窗"
+msgstr "窗口"
 
 msgid "Windows does not have enough resources to save an image that large."
-msgstr "系统的资源不足以保存此大图片"
+msgstr "系统的资源不足以保存此大图像"
 
 msgid "Working"
-msgstr "作用中"
+msgstr "请等待，制作中……"
 
 msgid ""
 "Write a descriptive text to show in the legend. If empty the equation will "
 "be used."
-msgstr "写叙述文字到图例说明当中，在等式的时候会使用到。"
+msgstr "用于图例说明当中的描述。"
 
 msgid "Write access failed"
 msgstr "写入存取失败"
@@ -2434,7 +2438,7 @@ msgid "You are already using the most recent version of the program."
 msgstr "你已经使用最新的版本了"
 
 msgid "You can always undo the last thing you did using Edit|Undo."
-msgstr "你可以使用[编辑]-->[还原]来回复上一个动作。"
+msgstr "你可以使用[编辑]-->[撤消]来撤消上一个操作。"
 
 msgid ""
 "You can combine two functions to one using 'if'. For example the function f"
@@ -2474,7 +2478,7 @@ msgid ""
 "select the points, right click and choose 'Export to file'."
 msgstr ""
 "你可以输出坐标点数列到一个文件让其他程序运用，例如 Microsoft Excel 。方式为在"
-"编辑坐标点数列的视窗，按鼠标右键然后选择'输出到文件'。"
+"编辑坐标点数列的窗口，按鼠标右键然后选择'输出到文件'。"
 
 msgid "You can find a list of all available functions in the help."
 msgstr "你可以在[说明]找到很多可用的函数"
@@ -2488,7 +2492,7 @@ msgid ""
 "You can import the contents of another Graph file into the current "
 "coordinate system using 'File|Import|Graph file'."
 msgstr ""
-"你可以利用 [文件]-->[输入]-->[Graph 文件]来输入另外的 Graph文件到现在编辑的座"
+"你可以利用 [文件]-->[导入]-->[Graph 文件]来导入另外的 Graph文件到当前编辑的座"
 "标系上。"
 
 msgid ""
@@ -2499,7 +2503,7 @@ msgstr "你可以利用鼠标拖曳的功能，或者键盘上下键+Alt键移�
 msgid ""
 "You can open a saved grf-file in a new instance of the program by double "
 "clicking on it in Explorer."
-msgstr "你可以用鼠标快速点两下的方式，打开 grf 文件到一个新的图例当中。"
+msgstr "你可以用鼠标双击 grf 文件，程序将在一个新窗口中打开它。"
 
 msgid "You can paste images into a text label."
 msgstr "你可以贴图到文字标签"
@@ -2514,7 +2518,7 @@ msgid ""
 "element above the axes in the function list to the left. To move shadings "
 "and tangents you will have to move the functions they are attached to."
 msgstr ""
-"你可以透过移动左边函数列上的元件到坐标轴之上，来显示阴影或者其他在坐标轴后方"
+"你可以通过移动左边函数列上的元件到坐标轴之上，来显示阴影或者其他在坐标轴后方"
 "的元件。"
 
 msgid ""
@@ -2549,17 +2553,17 @@ msgstr ""
 
 msgid ""
 "You can use a relation to plot any equation, for example x*sin x = y*cos y"
-msgstr "你可以用一个关系式来描绘任何的等式，例如 x*sin x = y*cos y"
+msgstr "你可以利用一个关系式来描绘任何的等式，例如 x*sin x = y*cos y"
 
 msgid ""
 "You can use a relation to plot any inequality, for example sin(x^2) < cos"
 "(y^2)"
-msgstr "你可以利用一个关连来描绘任何的不等式，例如 sin(x^2) < cos(y^2)"
+msgstr "你可以利用一个关系式来描绘任何的不等式，例如 sin(x^2) < cos(y^2)"
 
 msgid ""
 "You can use the scroll button on your mouse to zoom in and out at the "
 "position of the mouse cursor."
-msgstr "你可以用鼠标滚轮来缩放视窗。"
+msgstr "你可以用鼠标滚轮来缩放窗口。"
 
 msgid ""
 "You didn't add any points. You need to specify some x- and y-coordinates in "
@@ -2570,7 +2574,7 @@ msgid "You have reached the maximum range of zoom."
 msgstr "你已经放到最大的限度了"
 
 msgid "You have reached the minimum range of zoom."
-msgstr "你已经缩小到最小限度"
+msgstr "你已经缩小到最小限度了"
 
 msgid "You need to enter a name for the argument."
 msgstr "你需要输入一个参数的名称"
@@ -2582,7 +2586,7 @@ msgid "You need to enter a value."
 msgstr "你需要输入一个数值"
 
 msgid "You need to select a function."
-msgstr "你要选一个函数"
+msgstr "你应选一个函数"
 
 msgid "Zoom"
 msgstr "缩放"
@@ -2620,7 +2624,7 @@ msgid "Zoom to standard coordinates."
 msgstr "缩放到标准坐标"
 
 msgid "Zoom to user selected window."
-msgstr "缩放到使用者选取的视窗"
+msgstr "缩放到你所选择的窗口"
 
 msgid "Zoom x-axis in"
 msgstr "放大 x 轴"
@@ -2644,7 +2648,7 @@ msgid "atanh evaluated at undefined value."
 msgstr "atanh 使用未被定义的值来求解。"
 
 msgid "sqrt is undefined for negative numbers."
-msgstr "开平方不可以用在负数。"
+msgstr "负数不可以开平方。"
 
 msgid "x-axis"
 msgstr "x 轴"
