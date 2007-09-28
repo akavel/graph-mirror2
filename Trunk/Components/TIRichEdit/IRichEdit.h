@@ -15,6 +15,7 @@ typedef void __fastcall (__closure *TLinkEvent)(TIRichEdit* Sender, unsigned Min
 class TTextFormat
 {
   class TIRichEdit *RichEdit;
+  bool Global;
 
   void SetFormat(::CHARFORMAT2 Format, unsigned Mask);
   void SetFormat(unsigned Format, unsigned Effects);
@@ -24,7 +25,7 @@ class TTextFormat
   const TCharFormat& operator=(const TTextFormat&); //Not implemented
 
 public:
-  TTextFormat(TIRichEdit *ARichEdit);
+  TTextFormat(TIRichEdit *ARichEdit, bool AGlobal);
   void SetBold(bool Value);
   void SetItalic(bool Value);
   void SetUnderline(bool Value);
@@ -36,6 +37,7 @@ public:
   void SetColor(TColor Color);
   void SetBackgroundColor(TColor Color);
   void SetLink(bool Value);
+  void SetProtected(bool Value);
   bool GetBold() const;
   bool GetItalic() const;
   bool GetUnderline() const;
@@ -47,6 +49,7 @@ public:
   TColor GetColor() const;
   TColor GetBackgroundColor() const;
   bool GetLink() const;
+  bool GetProtected() const;
 };
 
 enum TParaFormatAlignment
@@ -82,6 +85,11 @@ private:
 
   void __fastcall SetTransparent(bool Value);
   void __fastcall SetBackgroundColor(TColor Color);
+  void __fastcall SetAutoUrlDetect(bool Value);
+  bool __fastcall GetAutoUrlDetect();
+  void __fastcall SetOnLink(TLinkEvent Value);
+  void __fastcall SetWideSelText(const WideString &Str);
+  WideString __fastcall GetWideSelText();
 
   void __fastcall WMNotify(TMessage &Message);
 
@@ -96,6 +104,7 @@ protected:
 
 public:
   ::TTextFormat TextFormat;
+  ::TTextFormat GlobalTextFormat;
 
   __fastcall TIRichEdit(TComponent* Owner);
   __fastcall ~TIRichEdit();
@@ -113,15 +122,16 @@ public:
   int LineIndex(int Line);
   int LineCount();
   int LineLength(int Index);
+  int GetLine(int Index);
   void SetSelText(wchar_t Ch, const AnsiString &FontName, unsigned Size);
   void SetSelText(char Ch, const AnsiString &FontName, unsigned Size);
-  void __fastcall SetAutoUrlDetect(bool Value);
-  bool __fastcall GetAutoUrlDetect();
-  void __fastcall SetOnLink(TLinkEvent Value);
   void SetEventMask(DWORD Mask, DWORD Value);
+  int TextSize();
+
   __property ::TParaFormat *Paragraph = {read=FParagraph};
-  __property SelText;
+  __property WideString SelText = {read=GetWideSelText, write=SetWideSelText};
 //  __property Lines; //Don't use this
+  WideString GetText(int Min, int Max);
 
 __published:
   __property bool Transparent = {read=FTransparent, write=SetTransparent, default=false};
@@ -158,6 +168,7 @@ __published:
   __property OnMouseMove;
   __property OnMouseDown;
   __property OnMouseUp;
+  __property OnProtectChange;
 };
 //---------------------------------------------------------------------------
 #endif

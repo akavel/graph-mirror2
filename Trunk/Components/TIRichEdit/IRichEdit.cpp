@@ -23,7 +23,8 @@ namespace Irichedit
 }
 //---------------------------------------------------------------------------
 __fastcall TIRichEdit::TIRichEdit(TComponent* Owner)
-  : TCustomRichEdit(Owner), FTransparent(false), TextFormat(this), FOnOleError(NULL), FBackgroundColor(clDefault),
+  : TCustomRichEdit(Owner), FTransparent(false), TextFormat(this, false),
+    GlobalTextFormat(this, true), FOnOleError(NULL), FBackgroundColor(clDefault),
     FParagraph(new ::TParaFormat(this)), FOnLink(NULL)
 {
   ControlStyle = ControlStyle >> csSetCaption;
@@ -167,7 +168,7 @@ bool TIRichEdit::IsEmpty() const
   return !Lines->Count;
 }
 //---------------------------------------------------------------------------
-TTextFormat::TTextFormat(TIRichEdit *ARichEdit) : RichEdit(ARichEdit)
+TTextFormat::TTextFormat(TIRichEdit *ARichEdit, bool AGlobal) : RichEdit(ARichEdit), Global(AGlobal)
 {
 }
 //---------------------------------------------------------------------------
@@ -176,7 +177,10 @@ void TTextFormat::SetFormat(::CHARFORMAT2 Format, unsigned Mask)
   Format.cbSize = sizeof(Format);
   Format.dwMask = Mask;
   Format.dwReserved = 0;
-  if(!SendMessage(RichEdit->Handle, EM_SETCHARFORMAT, SCF_SELECTION, reinterpret_cast<long>(&Format)))
+  if(!SendMessage(RichEdit->Handle,
+                  EM_SETCHARFORMAT,
+                  Global ? SCF_ALL : SCF_SELECTION,
+                  reinterpret_cast<long>(&Format)))
     RaiseLastOSError();
 }
 //---------------------------------------------------------------------------
@@ -192,7 +196,10 @@ void TTextFormat::SetFormat(unsigned Mask, unsigned Effects)
   ::CHARFORMAT2 Format;
   Format.cbSize = sizeof(Format);
 
-  SendMessage(RichEdit->Handle, EM_GETCHARFORMAT, SCF_SELECTION, reinterpret_cast<long>(&Format));
+  SendMessage(RichEdit->Handle,
+              EM_GETCHARFORMAT,
+              Global ? SCF_ALL : SCF_SELECTION,
+              reinterpret_cast<long>(&Format));
   return Format;
 }
 //---------------------------------------------------------------------------
@@ -383,8 +390,27 @@ void __fastcall TIRichEdit::WMNotify(TMessage &Message)
       Message.Result = DoLink(Link->msg, Link->chrg.cpMin, Link->chrg.cpMax);
       break;
     }
+    case EN_PROTECTED:
+    {
+      ENPROTECTED *Protected = reinterpret_cast<ENPROTECTED*>(Message.LParam);
+      bool AllowChange = false;
+      switch(Protected->msg)
+      {
+        case WM_COPY:
+          AllowChange = true;
+          break;
+
+        default:
+          if(OnProtectChange)
+            OnProtectChange(this, Protected->chrg.cpMin, Protected->chrg.cpMax, AllowChange);
+      }
+      Message.Result = !AllowChange;
+      break;
+    }
+
+    default:
+      TCustomRichEdit::Dispatch(&Message);
   }
-  TCustomRichEdit::Dispatch(&Message);
 }
 //---------------------------------------------------------------------------
 void __fastcall TIRichEdit::SetBackgroundColor(TColor Color)
@@ -451,6 +477,16 @@ bool TTextFormat::GetLink() const
   return GetFormat().dwEffects & CFE_LINK;
 }
 //---------------------------------------------------------------------------
+void TTextFormat::SetProtected(bool Value)
+{
+  SetFormat(CFM_PROTECTED, Value ? CFE_PROTECTED : 0);
+}
+//---------------------------------------------------------------------------
+bool TTextFormat::GetProtected() const
+{
+  return GetFormat().dwEffects & CFE_PROTECTED;
+}
+//---------------------------------------------------------------------------
 void __fastcall TIRichEdit::SetAutoUrlDetect(bool Value)
 {
   SendMessage(Handle, EM_AUTOURLDETECT, Value, 0);
@@ -491,6 +527,43 @@ bool TIRichEdit::DoLink(UINT Msg, unsigned Min, unsigned Max)
     default:
       return false;
   }
+}
+//---------------------------------------------------------------------------
+WideString TIRichEdit::GetText(int Min, int Max)
+{
+  int Length = GetWindowTextLengthW(Handle);
+  if(Max > Length)
+    Max = Length;
+
+  WideString Str;
+  Str.SetLength(Length);
+  ::TEXTRANGEW Range = {{Min, Max}, Str.c_bstr()};
+  int Length2 = SendMessage(Handle, EM_GETTEXTRANGE, 0, reinterpret_cast<LONG>(&Range));
+  Str.SetLength(Length2);
+  return Str;
+}
+//---------------------------------------------------------------------------
+int TIRichEdit::GetLine(int Index)
+{
+  return SendMessage(Handle, EM_LINEFROMCHAR, Index, 0);
+}
+//---------------------------------------------------------------------------
+int TIRichEdit::TextSize()
+{
+  return GetWindowTextLengthW(Handle);
+}
+//---------------------------------------------------------------------------
+void __fastcall TIRichEdit::SetWideSelText(const WideString &Str)
+{
+  SendMessage(Handle, EM_REPLACESEL, 0, reinterpret_cast<LONG>(AnsiString(Str).c_str()));
+}
+//---------------------------------------------------------------------------
+WideString __fastcall TIRichEdit::GetWideSelText()
+{
+  WideString Str;
+  Str.SetLength(GetSelLength() + 1);
+  Str.SetLength(SendMessage(Handle, EM_GETSELTEXT, 0, reinterpret_cast<LONG>(Str.c_bstr())));
+  return Str;
 }
 //---------------------------------------------------------------------------
 
