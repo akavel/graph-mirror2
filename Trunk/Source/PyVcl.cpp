@@ -14,6 +14,7 @@
 #include <python.h>
 //---------------------------------------------------------------------------
 static PyObject *PyPropertyException = NULL;
+static PyObject *PyVclException = NULL;
 
 struct TPythonCallback : public TObject
 {
@@ -32,21 +33,13 @@ struct TPythonCallback : public TObject
 PyObject* PyNone()
 {
   static PyObject *None = Py_BuildValue("");
-  Py_INCREF(None);
   return None;
 }
 //---------------------------------------------------------------------------
-PyObject* ThrowPythonException(const Exception &E)
+PyObject* PyReturnNone()
 {
-  static PyObject *VclException = PyErr_NewException("PyVcl.VclException", NULL, NULL);
-  PyErr_SetString(VclException, E.Message.c_str());
-  return NULL;
-}
-//---------------------------------------------------------------------------
-PyObject* ThrowPropertyError(const AnsiString &Str)
-{
-  PyErr_SetString(PyPropertyException, Str.c_str());
-  return NULL;
+  Py_INCREF(PyNone());
+  return PyNone();
 }
 //---------------------------------------------------------------------------
 static PyObject* CreateObject(PyObject *Self, PyObject *Args)
@@ -66,7 +59,8 @@ static PyObject* CreateObject(PyObject *Self, PyObject *Args)
   }
   catch(Exception &E)
   {
-    return ThrowPythonException(E);
+    PyErr_SetString(PyVclException, E.Message.c_str());
+    return NULL;
   }
 }
 //---------------------------------------------------------------------------
@@ -79,11 +73,12 @@ static PyObject* DeleteObject(PyObject *Self, PyObject *Args)
       return NULL;
 
     delete Object;
-    return PyNone();
+    return PyReturnNone();
   }
   catch(Exception &E)
   {
-    return ThrowPythonException(E);
+    PyErr_SetString(PyVclException, E.Message.c_str());
+    return NULL;
   }
 
 }
@@ -102,12 +97,15 @@ static PyObject* SetProperty(PyObject *Self, PyObject *Args)
     if(ClassName == "Parent")
     {
       Control->Parent = reinterpret_cast<TWinControl*>(PyInt_AsLong(Value));
-      return PyNone();
+      return PyReturnNone();
     }
 
     TPropInfo *PropInfo = GetPropInfo(Control, Name);
     if(PropInfo == NULL)
-      return ThrowPropertyError(AnsiString("Property ") + Name + " does not exist in class " + Control->ClassName());
+    {
+      PyErr_SetString(PyPropertyException, ("Property " + ClassName + " does not exist in class " + Control->ClassName()).c_str());
+      return NULL;
+    }
 
     switch((*PropInfo->PropType)->Kind)
     {
@@ -171,11 +169,12 @@ static PyObject* SetProperty(PyObject *Self, PyObject *Args)
         break;
       }
     }
-    return PyNone();
+    return PyReturnNone();
   }
   catch(Exception &E)
   {
-    return ThrowPythonException(E);
+    PyErr_SetString(PyVclException, E.Message.c_str());
+    return NULL;
   }
 }
 //---------------------------------------------------------------------------
@@ -194,8 +193,11 @@ static PyObject* GetProperty(PyObject *Self, PyObject *Args)
 
     TPropInfo *PropInfo = GetPropInfo(Control, Name);
     if(PropInfo == NULL)
-      return ThrowPropertyError(AnsiString("Property ") + Name + " does not exist in class " + Control->ClassName());
-
+    {
+      PyErr_SetString(PyPropertyException, (AnsiString("Property ") + Name + " does not exist in class " + Control->ClassName()).c_str());
+      return NULL;
+    }
+    
     switch((*PropInfo->PropType)->Kind)
     {
       case tkInteger:
@@ -224,18 +226,19 @@ static PyObject* GetProperty(PyObject *Self, PyObject *Args)
       {
         void *Data = GetMethodProp(Control, PropInfo).Data;
         TPythonCallback *PythonCallback = dynamic_cast<TPythonCallback*>(static_cast<TObject*>(Data));
-        PyObject *Result = PythonCallback ? PythonCallback->Callback : PyNone();
+        PyObject *Result = PythonCallback ? PythonCallback->Callback : PyReturnNone();
         Py_INCREF(Result);
         return Result;
       }
       
       default:
-        return PyNone();
+        return PyReturnNone();
     }
   }
   catch(Exception &E)
   {
-    return ThrowPythonException(E);
+    PyErr_SetString(PyVclException, E.Message.c_str());
+    return NULL;
   }
 }
 //---------------------------------------------------------------------------
@@ -256,11 +259,12 @@ static PyObject* CallMethod(PyObject *Self, PyObject *Args)
       else if(Method == "Close")
         Form->Close();
     }
-    return PyNone();  
+    return PyReturnNone();
   }
   catch(Exception &E)
   {
-    return ThrowPythonException(E);
+    PyErr_SetString(PyVclException, E.Message.c_str());
+    return NULL;
   }
 }
 //---------------------------------------------------------------------------
@@ -282,7 +286,12 @@ void InitPyVcl()
   PyObject *PyVclModule = Py_InitModule("PyVcl", PyVclMethods);
 
   PyPropertyException = PyErr_NewException("PyVcl.PropertyError", NULL, NULL);
+  Py_INCREF(PyPropertyException);
   PyModule_AddObject(PyVclModule, "PropertyError", PyPropertyException);
+
+  PyVclException = PyErr_NewException("PyVcl.VclException", NULL, NULL);
+  Py_INCREF(PyVclException);
+  PyModule_AddObject(PyVclModule, "VclError", PyVclException);
 }
 //---------------------------------------------------------------------------
 

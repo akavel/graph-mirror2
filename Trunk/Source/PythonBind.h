@@ -11,6 +11,6 @@
 #define PythonBindH
 //---------------------------------------------------------------------------
 void InitPlugins();
-void ExecutePythonCommand(const AnsiString &Command);
+bool ExecutePythonCommand(const AnsiString &Command);
 void ShowPythonConsole();
 #endif

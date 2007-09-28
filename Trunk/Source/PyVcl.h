@@ -13,5 +13,6 @@
 struct _object;
 
 void InitPyVcl();
+_object* PyReturnNone();
 _object* PyNone();
 #endif

@@ -1307,14 +1307,17 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       Draw.AbortUpdate();
       Data.Axes.AxesArrows = Data.Axes.AxesArrows == aaPositiveEnd ? aaBothEnds : aaPositiveEnd;
       Data.Axes.NumberPlacement = Data.Axes.NumberPlacement == npCenter ? npBefore : npCenter;
-      Redraw(); //Activates thread; must be done after OLE update
+      Redraw(); //Activates thread; must be done after OLE update    
       break;
 
     case VK_F11:
-      Form22->Visible = true;
-      if(Form1->Panel6->VisibleDockClientCount)
-        Form1->Panel5->Height = 150;
-      Form1->Splitter2->Visible = true;
+      if(Form22)
+      {
+        Form22->Visible = true;
+        if(Panel6->VisibleDockClientCount) 
+          Panel5->Height = 150;
+        Splitter2->Visible = true;
+      }
       break;
 
     case VK_SHIFT:
