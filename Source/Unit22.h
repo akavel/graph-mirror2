@@ -24,6 +24,7 @@ private:	// User declarations
   bool FAllowChange;
   std::vector<AnsiString> TextCache;
   int CacheIndex;
+  AnsiString Command;
 
 public:		// User declarations
   __fastcall TForm22(TComponent* Owner);

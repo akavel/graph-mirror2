@@ -90,11 +90,20 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
     case VK_RETURN:
     {
       AnsiString Str = IRichEdit1->GetText(LastIndex, MAXINT);
-//        Str = Str.SubString(1, Str.Length() - 1);
       IRichEdit1->SelStart = MAXINT;
-        IRichEdit1->SelText = "\r";
+      IRichEdit1->SelText = "\r";
       LastIndex = IRichEdit1->SelStart;
-      ExecutePythonCommand(Str);
+      Command += Str;
+      if(ExecutePythonCommand(Command))
+      {
+        WriteText(">>> ");
+        Command = "";
+      }
+      else
+      {
+        WriteText("... ");
+        Command += "\n";
+      }
       TextCache.back() = Str;
       CacheIndex = TextCache.size();
       TextCache.push_back(AnsiString());

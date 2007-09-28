@@ -31,19 +31,58 @@ static bool IsPythonInstalled()
   return Result;
 }
 //---------------------------------------------------------------------------
-void ExecutePythonCommand(const AnsiString &Command)
+bool ExecutePythonCommand(const AnsiString &Command)
 {
+  PyObject *Module = PyImport_ImportModule("code");
+  bool Result = true;
+  if(Module)
+  {
+    PyObject *Function = PyObject_GetAttrString(Module, "compile_command");
+    if(Function)
+    {
+      PyObject *Code = PyObject_CallFunction(Function, "ss", Command.c_str(), "<console>");
+      if(Code == NULL)
+      {
+        PyObject *Type, *Value, *Traceback;
+	      PyErr_Fetch(&Type, &Value, &Traceback);
+        PyErr_Restore(Type, Value, NULL);
+        Py_XDECREF(Traceback);
+        PyErr_Print();
+      }
+      else if(Code == PyNone())
+        Result = false;
+      else
+      {
+	      PyObject *MainModule = PyImport_AddModule("__main__");
+	      if(MainModule)
+        {
+      	  PyObject *Dict = PyModule_GetDict(MainModule);
+          PyObject *Temp = PyEval_EvalCode((PyCodeObject*)Code, Dict, Dict);
+          if(Temp == NULL)
+            PyErr_Print();
+          Py_XDECREF(Temp);
+        }
+      }
+      Py_XDECREF(Code);
+      Py_DECREF(Function);
+    }
+    Py_DECREF(Module);
+  }
+
+  return Result;
+
+/*
   if(!Command.IsEmpty())
     PyRun_SimpleString(AnsiString().sprintf("eval(compile('%s', '', 'single'))", Command.c_str()).c_str());
   if(Form22)
     Form22->WriteText(">>> ");
+  return true;*/
 }
 //---------------------------------------------------------------------------
 struct TExecutePythonAction
 {
   void __fastcall Execute(TObject *Sender)
   {
-//    Form1->Enabled = false;
     if(TTntAction *Action = dynamic_cast<TTntAction*>(Sender))
     {
       PyObject *Result = PyObject_CallObject(reinterpret_cast<PyObject*>(Action->Tag), NULL);
@@ -64,7 +103,7 @@ static PyObject* PluginWriteToConsole(PyObject *Self, PyObject *Args, PyObject *
     return NULL;
   if(Form22)
     Form22->WriteText(Str, Color);
-  return PyNone();
+  return PyReturnNone();
 }
 //---------------------------------------------------------------------------
 static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args, PyObject *Keywds)
@@ -135,7 +174,7 @@ static PyObject* PluginSetActionAttr(PyObject *Self, PyObject *Args, PyObject *K
   {
     Application->ShowException(&E);
   }
-  return PyNone();
+  return PyReturnNone();
 }
 //---------------------------------------------------------------------------
 static PyObject* PluginGetActionAttr(PyObject *Self, PyObject *Args, PyObject *Keywds)
@@ -175,7 +214,7 @@ static PyObject* PluginCreateParametricFunction(PyObject *Self, PyObject *Args)
   Data.SetModified();
   Form1->Redraw();
 
-  return PyNone();
+  return PyReturnNone();
 }
 //---------------------------------------------------------------------------
 static long double CallCustomFunction(void *Custom, const long double *Args, unsigned ArgsCount, Func32::TTrigonometry Trigonemtry)
@@ -223,7 +262,7 @@ static PyObject* PluginCreateCustomFunction(PyObject *Self, PyObject *Args)
 
   Py_XDECREF(FuncCode);
   Py_XDECREF(ArgCount);
-  return PyNone();
+  return PyReturnNone();
 }
 //---------------------------------------------------------------------------
 static PyMethodDef GraphMethods[] = {
@@ -291,10 +330,14 @@ void InitPlugins()
       , Form1
       , ExtractFileDir(Application->ExeName).c_str()
     ).c_str());
-  }
 
-  if(Form22)
     Form22->WriteText(">>> ");
+  }
+  else
+  {
+    Form1->Panel5->Height = Form1->StatusBar1->Height;
+    Form1->Splitter2->Visible = false;
+  }
 }
 //---------------------------------------------------------------------------
 

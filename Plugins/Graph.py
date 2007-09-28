@@ -93,4 +93,7 @@ def ExecuteCommand(source):
         traceback.print_exception(SyntaxError, code, None)
 
     elif status == "okay":
-        exec code
+        try:
+            exec code
+        except:
+            traceback.print_exception(sys.exc_type, sys.exc_value, sys.exc_traceback.tb_next)
