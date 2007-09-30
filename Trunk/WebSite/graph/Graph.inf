@@ -4,9 +4,10 @@ Major = 4
 Minor = 3
 Release = 0
 Build = 384
+Date = 30-09-2007
 DownloadPage = http://www.padowan.dk/
-SupportPage = http://www.padowan.dk/test/Forum.php
-DonatePage = http://www.padowan.dk/test/Donation.php
+SupportPage = http://www.padowan.dk/graph/Forum.php
+DonatePage = http://www.padowan.dk/graph/Donation.php
 
 [English]
 NewFeatures = · Labels can now be rotated freely.
