@@ -6,18 +6,25 @@ class TObject(object):
         object.__setattr__(self, "_owned", owned)
         for name, value in keywords.iteritems():
             PyVcl.SetProperty(handle, name, value)
+
+    @property
+    def PropertyList(self):
+        return PyVcl.GetPropertyList(self._handle)
         
     def __del__(self):
         if self._owned:
             PyVcl.DeleteObject(self._handle)
     def __getattr__(self, name):
-        return PyVcl.GetProperty(self._handle, name)
+        result = PyVcl.GetProperty(self._handle, name)
+        if result[1] == 7:  # An object
+            return TObject(result[0], owned=False) if result[0] != 0 else None
+        return result[0]
     def __setattr__(self, name, value):
         PyVcl.SetProperty(self._handle, name, value)
 
 class TForm(TObject):
     def __init__(self, handle = 0, **keywords):
-        TObject.__init__(self, PyVcl.CreateObject("TForm") if handle == 0 else handle, handle == 0, **keywords)
+        TObject.__init__(self, PyVcl.CreateObject("TForm") if handle == 0 else handle, **keywords)
     def __setattr__(self, name, value):
         try:
             PyVcl.SetProperty(self._handle, name, value)
@@ -40,5 +47,3 @@ class TButton(TObject):
     def __init__(self, Parent, **keywords):
         TObject.__init__(self, PyVcl.CreateObject("TButton"), Parent = Parent._handle, **keywords)
 
-import GraphImpl
-Form1 = TForm(GraphImpl.form1)

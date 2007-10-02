@@ -8,7 +8,7 @@ class CircleDialog(vcl.TForm):
         self.Caption = "Insert circle"
         self.Height = 140
         self.Position = 6
-        self.BorderStyle = 1
+        self.BorderStyle = 3
         self.BorderIcons = "biSystemMenu"
 
         self.label1 = vcl.TLabel(self, Caption = "Radius:", Top = 12, Left = 8)
