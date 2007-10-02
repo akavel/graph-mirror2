@@ -1012,9 +1012,9 @@ TGridRect TGrid::GetCompleteGridRect()
   return GridRect;
 }
 //---------------------------------------------------------------------------
-AnsiString TGrid::DoGetText(unsigned ACol, unsigned ARow)
+WideString TGrid::DoGetText(unsigned ACol, unsigned ARow)
 {
-  AnsiString Value;
+  WideString Value;
   if(FOnGetText)
     FOnGetText(this, ACol, ARow, Value);
   else if(ACol < Data.size())
@@ -1024,7 +1024,7 @@ AnsiString TGrid::DoGetText(unsigned ACol, unsigned ARow)
   return Value;
 }
 //---------------------------------------------------------------------------
-void TGrid::DoSetText(unsigned ACol, unsigned ARow, const AnsiString &Value)
+void TGrid::DoSetText(unsigned ACol, unsigned ARow, const WideString &Value)
 {
   if(FOnSetText)
     FOnSetText(this, ACol, ARow, Value);
@@ -1043,7 +1043,8 @@ void TGrid::DoSetText(unsigned ACol, unsigned ARow, const AnsiString &Value)
 //Replaces TStringGrid::DrawCell()
 void __fastcall TGrid::DrawCell(int ACol, int ARow, const TRect &ARect, TGridDrawState AState)
 {
-  Canvas->TextRect(ARect, ARect.Left+2, ARect.Top+2, DoGetText(ACol, ARow));
+  WideString Str = DoGetText(ACol, ARow);
+  ExtTextOutW(Canvas->Handle, ARect.Left+2, ARect.Top+2, ETO_CLIPPED, &ARect, Str.c_bstr(), Str.Length(), NULL);
   TDrawGrid::DrawCell(ACol, ARow, ARect, AState);
 }
 //---------------------------------------------------------------------------

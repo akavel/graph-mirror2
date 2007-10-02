@@ -14,6 +14,8 @@
 #include "VclObject.h"
 //---------------------------------------------------------------------------
 typedef void __fastcall (__closure *TEditorKeyPressEvent)(TInplaceEdit *InplaceEdit, char &Key);
+typedef void __fastcall (__closure *TGetTextEvent)(System::TObject* Sender, long ACol, long ARow, WideString &Value);
+typedef void __fastcall (__closure *TSetTextEvent)(System::TObject* Sender, long ACol, long ARow, const WideString &Value);
 
 class TGrid : public TDrawGrid
 {
@@ -32,8 +34,8 @@ class TGrid : public TDrawGrid
   bool FAutoAddRows;
   bool FExportFixedRows;
   TEditorKeyPressEvent FOnEditorKeyPress;
-  TGetEditEvent FOnGetText;
-  TSetEditEvent FOnSetText;
+  TGetTextEvent FOnGetText;
+  TSetTextEvent FOnSetText;
   bool FReplaceDecimalSeparator;
   TPopupMenu *FEditorPopupMenu;
   int EditUpdate; //>0 indicates update triggered from change in Inplace Editor
@@ -45,7 +47,7 @@ class TGrid : public TDrawGrid
   int State;
   bool LeftButtonPressed;
   int CursorPos;
-  std::vector<std::vector<AnsiString> > Data;
+  std::vector<std::vector<WideString> > Data;
   TVclObject<TStringList> FTitleCaptions;
 
   TInplaceEdit* __fastcall CreateEditor(void);
@@ -74,8 +76,8 @@ class TGrid : public TDrawGrid
   AnsiString ExportText(char Delimiter);
   void __fastcall SetEditorPopupMenu(TPopupMenu *Menu);
   TGridRect GetCompleteGridRect();
-  AnsiString DoGetText(unsigned ACol, unsigned ARow);
-  void DoSetText(unsigned ACol, unsigned ARow, const AnsiString &Value);
+  WideString DoGetText(unsigned ACol, unsigned ARow);
+  void DoSetText(unsigned ACol, unsigned ARow, const WideString &Value);
   DYNAMIC void __fastcall ChangeScale(int M, int D);
   TStrings* __fastcall GetTitleCaptions() {return FTitleCaptions;}
   void __fastcall SetTitleCaptions(TStrings *Strings);
@@ -110,7 +112,7 @@ public:
   void RemoveRows(int Index, int Count);
   void SetCursorPos(int Pos);
 
-  __property AnsiString Cells[unsigned ACol][unsigned ARow] = {read=DoGetText, write=DoSetText};
+  __property WideString Cells[unsigned ACol][unsigned ARow] = {read=DoGetText, write=DoSetText};
 
 __published:
   __property bool SelectCols = {read=FSelectCols, write=FSelectCols, default=true};
@@ -126,8 +128,8 @@ __published:
   __property TStrings* TitleCaptions = {read=GetTitleCaptions, write=SetTitleCaptions};
 
   __property TEditorKeyPressEvent OnEditorKeyPress = {read=FOnEditorKeyPress, write=FOnEditorKeyPress, default=NULL};
-  __property TGetEditEvent OnGetText = {read=FOnGetText, write=FOnGetText, default=NULL};
-  __property TSetEditEvent OnSetText = {read=FOnSetText, write=FOnSetText, default=NULL};
+  __property TGetTextEvent OnGetText = {read=FOnGetText, write=FOnGetText, default=NULL};
+  __property TSetTextEvent OnSetText = {read=FOnSetText, write=FOnSetText, default=NULL};
 };
 
 class TMyInplaceEdit : public TInplaceEdit
