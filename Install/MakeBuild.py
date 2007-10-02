@@ -4,6 +4,7 @@ from VersionInfo import CalcVersionInfo
 import os
 import sys
 import traceback
+import datetime
 
 try:
   print "Updating Graph.iss ..."
@@ -36,16 +37,19 @@ try:
   File.write("Minor = " + VersionInfo[2] + "\n")
   File.write("Release = " + VersionInfo[4] + "\n")
   File.write("Build = " + VersionInfo[6:] + "\n")
-  File.write("DownloadFile = http://www.padowan.dk/graph/" + FileName + '\n')
+  File.write("Date = " + datetime.date.today().strftime("%d-%m-%Y\n"))
+  File.write("DownloadFile = http://www.padowan.dk/bin/" + FileName + '\n')
 
   # Upload SetupGraphBeta.exe to the server
   ftp = FTP('ftp.padowan.dk')   # connect to host, default port
   ftp.login('padowan.dk', getpass())
-  ftp.cwd('graph')
+  ftp.cwd('bin')
   print "Uploading", FileName, "..."
   File=open(FileName, 'rb')
   ftp.storbinary('STOR ' + FileName, File)
+  
   print "Uploading GraphBeta.inf ..."
+  ftp.cwd('../graph')
   File=open("GraphBeta.inf", 'rb')
   ftp.storbinary('STOR GraphBeta.inf', File)
   ftp.quit()
