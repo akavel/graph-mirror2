@@ -45,6 +45,7 @@ public:
   void DrawLine(const TPoint &P1, const TPoint &P2);
   void DrawText(const std::string &Str, int X, int Y);
   void DrawText(const std::wstring &Str, int X, int Y);
+  void DrawText(const std::wstring &Str, int X, int Y, const TRect &Rect);
   void DrawRectangle(const TRect &Rect);
   void DrawPolydots(const TPoint *Points, unsigned Size, TColor Color);
   void DrawEllipse(int X1, int Y1, int X2, int Y2);

@@ -53,6 +53,7 @@ public:
   bool CheckIniInfo(const TConfigFile &IniFile, bool ShowErrorMessages = true);
   static void WriteInfoToIni(TConfigFile &IniFile);
   void LoadData(const TConfigFile &IniFile);
+  void PreprocessGrfFile(TConfigFile &IniFile);
   bool Import(const std::string &FileName);
   bool ImportData(const std::string &FileName);
   std::wstring CreatePointSeriesDescription();

@@ -73,18 +73,21 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
     {
     }
 
+    bool UseReal = Form1->Data.Property.ComplexFormat == cfReal;
     long double x = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, x += ds)
     {
-      Grid1->Cells[0][N] = DoubleToStr(x, (x >= 10000 || x <= -10000) ? 3 : Digits);
+      AnsiString Str = DoubleToStr(x, (x >= 10000 || x <= -10000) ? 3 : Digits);
       //Calculate back to take care of rounding. What is written is also what is used for evaluation
-      x = Grid1->Cells[0][N].ToDouble();
-      AnsiString y, dy, ddy; //Default to empty string
+      x = Str.ToDouble();
+      Grid1->Cells[0][N] = Str;
+      WideString y, dy, ddy; //Default to empty string
+      const Func32::TFunc &StdFunc = F->GetFunc();
       try
       {
-        y = DoubleToStr(F->GetFunc().CalcY(x));
-        dy = DoubleToStr(Dif1.CalcY(x));
-        ddy = DoubleToStr(Dif2.CalcY(x));
+        y = ComplexToWideString(UseReal ? Func32::TComplex(StdFunc.CalcY(x)) : StdFunc.CalcY(Func32::TComplex(x)));
+        dy = ComplexToWideString(UseReal ? Func32::TComplex(Dif1.CalcY(x)) : Dif1.CalcY(Func32::TComplex(x)));
+        ddy = ComplexToWideString(UseReal ? Func32::TComplex(Dif2.CalcY(x)) : Dif2.CalcY(Func32::TComplex(x)));
       }
       catch(Func32::ECalcError&)
       { //Ignore errors and continue
@@ -105,9 +108,10 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
     double t = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
     {
-      Grid1->Cells[0][N] = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
+      AnsiString Str = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
       //Calculate back to take care of rounding. What is written is also what is used for evaluation
-      t = Grid1->Cells[0][N].ToDouble();
+      t = Str.ToDouble();
+      Grid1->Cells[0][N] = Str;
 
       try
       {
@@ -134,9 +138,10 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
     double t = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
     {
-      Grid1->Cells[0][N] = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
+      AnsiString Str = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
       //Calculate back to take care of rounding. What is written is also what is used for evaluation
-      t = Grid1->Cells[0][N].ToDouble();
+      t = Str.ToDouble();
+      Grid1->Cells[0][N] = Str;
       AnsiString r, x, y;
       try
       {

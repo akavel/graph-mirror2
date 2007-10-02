@@ -231,6 +231,12 @@ void TContext::DrawText(const std::wstring &Str, int X, int Y)
   Changed();
 }
 //---------------------------------------------------------------------------
+void TContext::DrawText(const std::wstring &Str, int X, int Y, const TRect &Rect)
+{
+  ExtTextOutW(Canvas->Handle, X, Y, ETO_CLIPPED, &Rect, Str.c_str(), Str.size(), NULL);
+  Changed();
+}
+//---------------------------------------------------------------------------
 void TContext::SetClipRegion(const TRegion &Region)
 {
   SelectClipRgn(Canvas->Handle, Region.Handle);

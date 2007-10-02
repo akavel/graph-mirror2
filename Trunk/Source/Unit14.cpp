@@ -365,7 +365,7 @@ void __fastcall TForm14::Popup_ImportClick(TObject *Sender)
   {
     Grid->ImportFromFile(OpenDialog1->FileName);
     int Row = Grid->Selection.Top;
-    if(Grid->Cells[0][Row] == "X" && Grid->Cells[1][Row] == "Y")
+    if(Grid->Cells[0][Row] == WideString(L"X") && Grid->Cells[1][Row] == WideString(L"Y"))
       Grid->RemoveRows(Row, 1);
   }
 }
@@ -431,15 +431,20 @@ std::string& TForm14::GetText(int ACol, int ARow)
   throw Exception("Invalid Coloumn");
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm14::GridSetText(TObject *Sender, int ACol, int ARow,
-      const AnsiString Value)
+void __fastcall TForm14::EditChange(TObject *Sender)
 {
-  if(ARow > 0)
-    GetText(ACol, ARow) = Value.c_str();
+  if(Sender == Edit4)
+    RadioButton1->Checked = true;
+  else if(Sender == Edit5)
+    RadioButton2->Checked = true;
+  else if(Sender == Edit6)
+    RadioButton4->Checked = true;
+  else if(Sender == Edit7)
+    RadioButton5->Checked = true;
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm14::GridGetText(TObject *Sender, int ACol, int ARow,
-      AnsiString &Value)
+void __fastcall TForm14::GridGetText(TObject *Sender, long ACol, long ARow,
+      WideString &Value)
 {
   if(ARow == 0)
     switch(ACol)
@@ -453,16 +458,11 @@ void __fastcall TForm14::GridGetText(TObject *Sender, int ACol, int ARow,
     Value = GetText(ACol, ARow).c_str();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm14::EditChange(TObject *Sender)
+void __fastcall TForm14::GridSetText(TObject *Sender, long ACol, long ARow,
+      const WideString &Value)
 {
-  if(Sender == Edit4)
-    RadioButton1->Checked = true;
-  else if(Sender == Edit5)
-    RadioButton2->Checked = true;
-  else if(Sender == Edit6)
-    RadioButton4->Checked = true;
-  else if(Sender == Edit7)
-    RadioButton5->Checked = true;
+  if(ARow > 0)
+    GetText(ACol, ARow) = ToString(Value);
 }
 //---------------------------------------------------------------------------
 

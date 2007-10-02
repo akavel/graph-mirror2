@@ -1,4 +1,3 @@
-
 /* Graph (http://sourceforge.net/projects/graph)
  * Copyright 2007 Ivan Johansen
  *
