@@ -52,7 +52,7 @@ void __fastcall TForm17::Button3Click(TObject *Sender)
     TCustomFunctions CustomFunctions;
     for(Index = 1; Index < Grid1->RowCount; Index++)
       if(!Grid1->Cells[0][Index].IsEmpty() || !Grid1->Cells[1][Index].IsEmpty())
-        CustomFunctions.Add(Grid1->Cells[0][Index].c_str(), Grid1->Cells[1][Index].c_str());
+        CustomFunctions.Add(ToString(Grid1->Cells[0][Index]), ToString(Grid1->Cells[1][Index]));
 
     CustomFunctions.Update();
     Data.AbortUpdate();

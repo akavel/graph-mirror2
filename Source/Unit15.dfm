@@ -116,7 +116,13 @@ object Form15: TForm15
     DefaultRowHeight = 16
     FixedCols = 0
     RowCount = 2
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Lucida Sans Unicode'
+    Font.Style = []
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goThumbTracking]
+    ParentFont = False
     PopupMenu = PopupMenu1
     TabOrder = 4
     MinColWidth = 64

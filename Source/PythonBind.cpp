@@ -325,6 +325,7 @@ void InitPlugins()
 
       "import Graph\n"
       "import vcl\n"
+      "import PyVcl\n"
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
       , Application->Handle
       , Form1

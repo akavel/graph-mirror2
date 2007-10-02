@@ -110,6 +110,12 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
       Key = 0;
       break;
     }
+
+    case VK_ESCAPE:
+      IRichEdit1->SelStart = LastIndex;
+      IRichEdit1->SelLength = MaxInt;
+      IRichEdit1->SelText = L"";
+      break;
   }
 }
 //---------------------------------------------------------------------------

@@ -121,11 +121,11 @@ __published:	// IDE-managed Components
   void __fastcall Popup_ExportClick(TObject *Sender);
   void __fastcall EditKeyPress(TObject *Sender, char &Key);
   void __fastcall RadioButtonClick(TObject *Sender);
-  void __fastcall GridSetText(TObject *Sender, int ACol, int ARow,
-          const AnsiString Value);
-  void __fastcall GridGetText(TObject *Sender, int ACol, int ARow,
-          AnsiString &Value);
   void __fastcall EditChange(TObject *Sender);
+  void __fastcall GridGetText(TObject *Sender, long ACol, long ARow,
+          WideString &Value);
+  void __fastcall GridSetText(TObject *Sender, long ACol, long ARow,
+          const WideString &Value);
 
 private:	// User declarations
   boost::shared_ptr<TPointSeries> Series;

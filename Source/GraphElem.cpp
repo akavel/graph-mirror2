@@ -239,7 +239,6 @@ long double TBaseFuncType::CalcArea(long double From, long double To) const
   return GetFunc().CalcArea(From, To, 1000);
 }
 //---------------------------------------------------------------------------
-
 //////////////
 // TStdFunc //
 //////////////

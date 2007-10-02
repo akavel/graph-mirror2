@@ -12,6 +12,10 @@
 #include "PyVcl.h"
 #undef _DEBUG
 #include <python.h>
+
+//Workaround for name mangling bug in GetPropList()
+#pragma alias "@Typinfo@GetPropList$qqrp14System@TObjectrpp17Typinfo@TPropInfo"\
+="@Typinfo@GetPropList$qqrp14System@TObjectrpa16380$p17Typinfo@TPropInfo"
 //---------------------------------------------------------------------------
 static PyObject *PyPropertyException = NULL;
 static PyObject *PyVclException = NULL;
@@ -197,40 +201,40 @@ static PyObject* GetProperty(PyObject *Self, PyObject *Args)
       PyErr_SetString(PyPropertyException, (AnsiString("Property ") + Name + " does not exist in class " + Control->ClassName()).c_str());
       return NULL;
     }
-    
-    switch((*PropInfo->PropType)->Kind)
+
+    int Kind = (*PropInfo->PropType)->Kind;
+    switch(Kind)
     {
       case tkInteger:
       case tkEnumeration:
       case tkChar:
       case tkClass:
-        return PyInt_FromLong(GetOrdProp(Control, PropInfo));
+        return Py_BuildValue("ii", GetOrdProp(Control, PropInfo), Kind);
 
       case tkFloat:
-        return PyFloat_FromDouble(GetFloatProp(Control, PropInfo));
+        return Py_BuildValue("di", GetFloatProp(Control, PropInfo), Kind);
 
-      case tkLString:  
+      case tkLString:
       case tkString:
-        return PyString_FromString(GetStrProp(Control, PropInfo).c_str());
+        return Py_BuildValue("si", GetStrProp(Control, PropInfo).c_str(), Kind);
 
       case tkWString:
       {
         WideString Str = GetWideStrProp(Control, PropInfo);
-        return PyUnicode_FromWideChar(Str ? Str.c_bstr() : L"", Str.Length());
+        return Py_BuildValue("ui", Str ? Str.c_bstr() : L"", Kind);
       }
 
       case tkSet:
-        return PyString_FromString(GetSetProp(Control, PropInfo).c_str());
+        return Py_BuildValue("si", GetSetProp(Control, PropInfo).c_str(), Kind);
 
       case tkMethod:
       {
         void *Data = GetMethodProp(Control, PropInfo).Data;
         TPythonCallback *PythonCallback = dynamic_cast<TPythonCallback*>(static_cast<TObject*>(Data));
-        PyObject *Result = PythonCallback ? PythonCallback->Callback : PyReturnNone();
-        Py_INCREF(Result);
-        return Result;
+        PyObject *Result = PythonCallback ? PythonCallback->Callback : PyNone();
+        return Py_BuildValue("Oi", Result, Kind);
       }
-      
+
       default:
         return PyReturnNone();
     }
@@ -240,6 +244,20 @@ static PyObject* GetProperty(PyObject *Self, PyObject *Args)
     PyErr_SetString(PyVclException, E.Message.c_str());
     return NULL;
   }
+}
+//---------------------------------------------------------------------------
+static PyObject* GetPropertyList(PyObject *Self, PyObject *Args)
+{
+  TObject *Object = reinterpret_cast<TObject*>(PyInt_AsLong(Args));
+  if(PyErr_Occurred())
+    return NULL;
+
+  PPropList PropList;
+  int Count = GetPropList(Object, PropList);
+  PyObject *List = PyList_New(Count);
+  for(int I = 0; I < Count; I++)
+    PyList_SetItem(List, I, PyString_FromString(AnsiString(PropList[I]->Name).c_str()));
+  return List;
 }
 //---------------------------------------------------------------------------
 static PyObject* CallMethod(PyObject *Self, PyObject *Args)
@@ -274,6 +292,7 @@ static PyMethodDef PyVclMethods[] = {
   {"SetProperty", SetProperty, METH_VARARGS, ""},
   {"GetProperty", GetProperty, METH_VARARGS, ""},
   {"CallMethod", CallMethod, METH_VARARGS, ""},
+  {"GetPropertyList", GetPropertyList, METH_O, ""},
   {NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
@@ -294,4 +313,15 @@ void InitPyVcl()
   PyModule_AddObject(PyVclModule, "VclError", PyVclException);
 }
 //---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 

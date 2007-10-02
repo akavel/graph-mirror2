@@ -44,6 +44,7 @@ bool TData::LoadFromFile(const std::string &FileName, bool ShowErrorMessages)
     //Free mem in function lists
     Clear();
 
+    PreprocessGrfFile(IniFile);
     Axes.ReadFromIni(IniFile);
 
     //Adjust TickUnit and GridUnit if saved by an outdated version
@@ -109,6 +110,7 @@ bool TData::LoadFromString(const std::string &Str)
     //Free mem in function lists
     Clear();
 
+    PreprocessGrfFile(IniFile);
     Axes.ReadFromIni(IniFile);
     CustomFunctions.ReadFromIni(IniFile);
     LoadData(IniFile);
@@ -162,6 +164,7 @@ bool TData::Import(const std::string &FileName)
     //ElemList must be empty when reading shades and tangents from file
     std::vector<boost::shared_ptr<TGraphElem> > Temp;
     Temp.swap(ElemList);
+    PreprocessGrfFile(IniFile);
     CustomFunctions.ReadFromIni(IniFile);
     LoadData(IniFile);
     AnimationInfo.ReadFromIni(IniFile);
@@ -393,4 +396,20 @@ void TData::LoadDefault()
   Modified = false;
 }
 //---------------------------------------------------------------------------
+void TData::PreprocessGrfFile(TConfigFile &IniFile)
+{
+  std::string SavedByVersion = IniFile.Read("Graph", "Version", "NA");
+  if(SavedByVersion < TVersion("4.2"))
+  {
+    std::string Str = IniFile.GetAsString();
+    unsigned Size = Str.size();
+    for(unsigned I = 0; I < Str.size(); I++)
+      if(Str[I] == '.' && !isdigit(Str[I+1]))
+        Str.erase(I, 1); 
+    if(Size != Str.size())
+      IniFile.LoadFromString(Str);
+  }
+}
+//---------------------------------------------------------------------------
+
 
