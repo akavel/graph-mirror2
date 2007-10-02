@@ -6,7 +6,7 @@ AllowNoIcons=yes
 AppCopyright=Ivan Johansen
 AppMutex=Graph running
 AppName=Graph
-AppVerName=Graph 4.3
+AppVerName=Graph 4.4 Beta
 AppPublisher=Ivan Johansen
 AppPublisherURL=http://www.padowan.dk
 AppSupportURL=http://www.padowan.dk
@@ -17,15 +17,16 @@ DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
 LicenseFile=License.txt
-OutputBaseFilename=SetupGrap-4.3
+OutputBaseFilename=SetupGraphBeta-4.4.0.385
 OutputDir=.
 SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.3.0.384
+VersionInfoVersion=4.4.0.385
 
 
 [Languages]
-Name: "Chinese"; MessagesFile: "compiler:Languages\ChineseTrad.isl"
+Name: "Chinese_Traditional"; MessagesFile: "compiler:Languages\ChineseTrad.isl"
+Name: "Chinese_Simplified"; MessagesFile: "compiler:Languages\ChineseSimp.isl"
 Name: "Croatian"; MessagesFile:  "compiler:Languages\Croatian.isl"
 Name: "Czech"; MessagesFile:  "compiler:Languages\Czech.isl"
 Name: "Danish"; MessagesFile: "compiler:Languages\Danish.isl"
@@ -61,7 +62,7 @@ Source: "Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
 Source: "Help\*.hlp"; DestDir: "{app}\Help"; Flags: ignoreversion
 Source: "Help\*.cnt"; DestDir: "{app}\Help"; Flags: ignoreversion overwritereadonly
 Source: "Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritereadonly
-;Source: "Plugins\*.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "Plugins\*.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 ;Source: "Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 
 [Icons]
@@ -82,7 +83,11 @@ Filename: "{app}\Graph.exe"; Description: "{cm:LaunchProgram,Graph}"; Flags: now
 Root: HKCU; Subkey: "Software\Classes\.grf"; ValueType: string; ValueName: ""; ValueData: "GraphFile"; Flags: uninsdeletevalue noerror; Tasks: not InstallAllUsers
 Root: HKLM; Subkey: "Software\Classes\.grf"; ValueType: string; ValueName: ""; ValueData: "GraphFile"; Flags: uninsdeletevalue noerror; Tasks: InstallAllUsers
 Root: HKCU; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "{language}"; Flags: noerror
+Root: HKCU; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "Chinese (Traditional)"; Flags: noerror; Languages: Chinese_Traditional
+Root: HKCU; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "Chinese (Simplified)"; Flags: noerror; Languages: Chinese_Simplified
 Root: HKLM; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "{language}"; Flags: noerror; Tasks: InstallAllUsers
+Root: HKLM; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "Chinese (Traditional)"; Flags: noerror; Tasks: InstallAllUsers; Languages: Chinese_Traditional
+Root: HKLM; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "Chinese (Simplified)"; Flags: noerror; Tasks: InstallAllUsers; Languages: Chinese_Simplified
 Root: HKCU; Subkey: "Software\Ivan\Graph"; Flags: uninsdeletekey noerror
 Root: HKLM; Subkey: "Software\Ivan\Graph"; Flags: uninsdeletekey noerror
 Root: HKLM; SubKey: "Software\Microsoft\Windows\CurrentVersion\Uninstall\Graph"; Flags: deletekey
@@ -96,6 +101,7 @@ Type: files; Name: "{app}\Help\*.gid"
 Type: files; Name: "{app}\Examples\*.grf"
 Type: files; Name: "{userprograms}\Graph.lnk"
 Type: files; Name: "{commonprograms}\Graph.lnk"
+Type: files; Name: "{app}\Locale\Chinese.mo"
 
 [UninstallRun]
 Filename: "{app}\Graph.exe"; Parameters: "/unregserver"
