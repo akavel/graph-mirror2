@@ -555,7 +555,9 @@ int TIRichEdit::TextSize()
 //---------------------------------------------------------------------------
 void __fastcall TIRichEdit::SetWideSelText(const WideString &Str)
 {
-  SendMessage(Handle, EM_REPLACESEL, 0, reinterpret_cast<LONG>(AnsiString(Str).c_str()));
+//  SendMessage(Handle, EM_REPLACESEL, 0, reinterpret_cast<LONG>(AnsiString(Str).c_str()));
+  SETTEXTEX Text = {ST_SELECTION, 1200}; //1200=Unicode
+  SendMessage(Handle, EM_SETTEXTEX, reinterpret_cast<LONG>(&Text), reinterpret_cast<LONG>(Str.c_bstr()));
 }
 //---------------------------------------------------------------------------
 WideString __fastcall TIRichEdit::GetWideSelText()
