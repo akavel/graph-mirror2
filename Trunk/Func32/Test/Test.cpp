@@ -293,6 +293,7 @@ void Test()
   TestErrorEval<long double>("i*i", 0, ecComplexError);
   Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4
   TestError("1.2.3", 0, ecInvalidNumber);
+  TestError("5.", 0, ecInvalidNumber);
 
   //Test functions with arguments
   TestError("round x", 1.2345, ecArgCountError);
