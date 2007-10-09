@@ -5,7 +5,7 @@ class TObject(object):
         object.__setattr__(self, "_handle", handle)
         object.__setattr__(self, "_owned", owned)
         for name, value in keywords.iteritems():
-            PyVcl.SetProperty(handle, name, value)
+            PyVcl.SetProperty(handle, name, value, self)
 
     @property
     def PropertyList(self):
@@ -20,14 +20,14 @@ class TObject(object):
             return TObject(result[0], owned=False) if result[0] != 0 else None
         return result[0]
     def __setattr__(self, name, value):
-        PyVcl.SetProperty(self._handle, name, value)
+        PyVcl.SetProperty(self._handle, name, value, self)
 
 class TForm(TObject):
     def __init__(self, handle = 0, **keywords):
         TObject.__init__(self, PyVcl.CreateObject("TForm") if handle == 0 else handle, **keywords)
     def __setattr__(self, name, value):
         try:
-            PyVcl.SetProperty(self._handle, name, value)
+            PyVcl.SetProperty(self._handle, name, value, self)
         except PyVcl.PropertyError:
             object.__setattr__(self, name, value)
     def ShowModal(self):
@@ -47,3 +47,30 @@ class TButton(TObject):
     def __init__(self, Parent, **keywords):
         TObject.__init__(self, PyVcl.CreateObject("TButton"), Parent = Parent._handle, **keywords)
 
+def CreateObject(type, **keywords):
+    return TObject(PyVcl.CreateObject(type), **keywords)
+
+class SimpleDialog(TForm):
+    def __init__(self):
+        TForm.__init__(self)
+        self.Position = "poMainFormCenter"
+        self.BorderStyle = "bsDialog"
+        self.BorderIcons = "biSystemMenu"
+
+        self.button1 = TButton(self, Caption = "OK", Anchors = "akRight,akBottom", Default = True, OnClick = self.OnOk)
+        self.button1.Top = self.ClientHeight - 32
+        self.button1.Left = self.ClientWidth - 176
+        self.button2 = TButton(self, Caption = "Cancel", Anchors = "akRight,akBottom", ModalResult=1, Cancel = True)
+        self.button2.Top = self.ClientHeight - 32
+        self.button2.Left = self.ClientWidth - 88
+        self.OnShow = self.FormOnShow
+
+    def FormOnShow(self, sender):
+        self.button1.TabOrder = 100
+        self.button2.TabOrder = 100
+
+    def OnOk(self, sender):
+        self.Close()
+
+def test(*args):
+    print args

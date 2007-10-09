@@ -302,11 +302,11 @@ void TCustomFunctions::Update()
     SymbolList.Update();
 
     //Replace all constant expressions with their value 
-    std::vector<long double> DummyArgs;
+    std::vector<Func32::TComplex> DummyArgs;
     for(Func32::TSymbolList::TIterator Iter = SymbolList.Begin(); Iter != SymbolList.End(); ++Iter)
       if(Iter->second.GetArguments().size() == 0)
       {
-        long double Value = Iter->second.Calc(DummyArgs);
+        Func32::TComplex Value = Iter->second.Calc(DummyArgs);
         Iter->second = Func32::TCustomFunc(Value);
       }
     SymbolList.Update();  
