@@ -560,12 +560,15 @@ public:
   TCustomFunc(const std::string &Text, const TArgType &AArgs, TTrigonometry Trig = Radian);
   TCustomFunc(const std::string &Text, const TArgType &AArgs, const TSymbolList &SymbolList, TTrigonometry Trig = Radian);
   TCustomFunc(long double Value);
+  TCustomFunc(const TComplex &Complex);
   TCustomFunc(TExtFunc ExtFunc, TExtFuncComplex, unsigned AArgs, void *Custom = NULL);
 
   void SetFunc(const std::string &Text, const TArgType &AArgs);
   void SetFunc(const std::string &Text, const TArgType &AArgs, const TSymbolList &SymbolList);
   long double Calc(const std::vector<long double> &Values) const;
   long double Calc(const std::vector<long double> &Values, ECalcError &E) const;
+  TComplex Calc(const std::vector<TComplex> &Values) const;
+  TComplex Calc(const std::vector<TComplex> &Values, ECalcError &E) const;
   TCustomFunc MakeDif(unsigned Arg) const;
   const TArgType& GetArguments() const {return Args;}
   void SetTrigonometry(TTrigonometry Trig) {Trigonometry = Trig;}

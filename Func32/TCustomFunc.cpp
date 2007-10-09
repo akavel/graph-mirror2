@@ -50,6 +50,19 @@ TCustomFunc::TCustomFunc(long double Value)
   FuncData->Add(Value);
 }
 //---------------------------------------------------------------------------
+TCustomFunc::TCustomFunc(const TComplex &Complex)
+  : FuncData(new TFuncData), Trigonometry(Radian)
+{
+  if(imag(Complex))
+  {
+    FuncData->Add(CodeAdd);
+    FuncData->Add(CodeMul);
+    FuncData->Add(imag(Complex));
+    FuncData->Add(Codei);
+  }
+  FuncData->Add(real(Complex));
+}
+//---------------------------------------------------------------------------
 /** Constructor creating a custom function from a pointer to an external function.
  *  The external function is called when the custom function is evaluated
  *  \param ExtFunc: Pointer to an external function.
@@ -113,6 +126,34 @@ long double TCustomFunc::Calc(const std::vector<long double> &Values) const
  *  \return Result of the evaluation. Invalid on errors.
  */
 long double TCustomFunc::Calc(const std::vector<long double> &Values, ECalcError &E) const
+{
+  if(Values.size() != Args.size())
+  {
+    E.ErrorCode = ecInvalidArgCount;
+    return 0;
+  }
+  return FuncData->Calc(&Values[0], Trigonometry, E);
+}
+//---------------------------------------------------------------------------
+/** Evaluates the function for a given set of arguments.
+ *  \param Values: Arguments to pass into function. Values.size() must equal Args.size()
+ *  \return Result of the evaluation
+ *  \throw EFuncError if invalid number of arguments are passed.
+ *  \throw ECalcError if calculation fails
+ */
+TComplex TCustomFunc::Calc(const std::vector<TComplex> &Values) const
+{
+  if(Values.size() != Args.size())
+    throw EFuncError(ecInvalidArgCount);
+  return FuncData->Calc(Values.empty() ? NULL : &Values[0], Trigonometry);
+}
+//---------------------------------------------------------------------------
+/** Evaluates the function for a given set of arguments.
+ *  \param Values: Arguments to pass into function. Values.size() must equal Args.size()
+ *  \param E: Filled with error information on return.
+ *  \return Result of the evaluation. Invalid on errors.
+ */
+TComplex TCustomFunc::Calc(const std::vector<TComplex> &Values, ECalcError &E) const
 {
   if(Values.size() != Args.size())
   {
@@ -214,4 +255,5 @@ bool TCustomFunc::IsEmpty() const
 }
 //---------------------------------------------------------------------------
 } //namespace Func32
+
 
