@@ -16,7 +16,7 @@ __fastcall TForm22::TForm22(TComponent* Owner)
 void __fastcall TForm22::FormHide(TObject *Sender)
 {
   Form1->Panel5->Height = Form1->StatusBar1->Height;
-  Form1->Splitter2->Visible = false;  
+  Form1->Splitter2->Visible = false;
 }
 //---------------------------------------------------------------------------
 void TForm22::WriteText(const AnsiString &Str, TColor Color)
@@ -31,6 +31,7 @@ void TForm22::WriteText(const AnsiString &Str, TColor Color)
   IRichEdit1->TextFormat.SetProtected(false);
   IRichEdit1->SelLength = 0;
   FAllowChange = false;
+  SendMessage(IRichEdit1->Handle, WM_VSCROLL, SB_BOTTOM, 0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm22::IRichEdit1ProtectChange(TObject *Sender,
@@ -104,9 +105,17 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
         WriteText("... ");
         Command += "\n";
       }
-      TextCache.back() = Str;
-      CacheIndex = TextCache.size();
-      TextCache.push_back(AnsiString());
+
+      if(!Str.IsEmpty())
+      {
+        TextCache.back() = Str;
+        TextCache.push_back(AnsiString());
+      }
+      CacheIndex = TextCache.size() - 1;
+
+      if(!Str.IsEmpty() && Str[Str.Length()] == ':')
+        IRichEdit1->SelText = "\t";
+
       Key = 0;
       break;
     }

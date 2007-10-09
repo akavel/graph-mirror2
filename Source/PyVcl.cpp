@@ -23,11 +23,37 @@ static PyObject *PyVclException = NULL;
 struct TPythonCallback : public TObject
 {
   PyObject *Callback;
-  TPythonCallback(PyObject *ACallback) : Callback(ACallback) {}
-    
+  PTypeData TypeData;
+  PyObject *PySender;
+  TPythonCallback(PyObject *ACallback, PyObject *APySender, PTypeData ATypeData)
+    : Callback(ACallback), PySender(APySender), TypeData(ATypeData)
+  {
+  }
+
   void __fastcall Method(TObject *Sender)
   {
-    PyObject *Result = PyObject_CallObject(Callback, NULL);
+    int Arg3 = _ECX;
+    PyObject *Args = PyTuple_New(TypeData->ParamCount);
+    PyTuple_SetItem(Args, 0, PySender);
+    char *Ptr = TypeData->ParamList;
+    Ptr++;
+    Ptr += *Ptr + 1;
+    Ptr += *Ptr + 1;
+
+    for(int I = 1; I < TypeData->ParamCount; I++)
+    {
+      TParamFlags &Flags = reinterpret_cast<TParamFlags&>(*(Ptr++));
+      const ShortString &ParamName = reinterpret_cast<const ShortString&>(*Ptr);
+      Ptr += *Ptr + 1;
+      const ShortString &TypeName = reinterpret_cast<const ShortString&>(*Ptr);
+      Ptr += *Ptr + 1;
+      AnsiString Type = TypeName;
+      if(Type == "Word")
+        PyTuple_SetItem(Args, I, PyInt_FromLong(Arg3));
+      else if(Type == "Char")
+        PyTuple_SetItem(Args, I, PyString_FromFormat("%c", *(char*)Arg3));
+    }
+    PyObject *Result = PyObject_CallObject(Callback, Args);
     if(Result == NULL)
       PyErr_Print();
     Py_XDECREF(Result);
@@ -94,7 +120,8 @@ static PyObject* SetProperty(PyObject *Self, PyObject *Args)
     TControl *Control;
     const char *Name;
     PyObject *Value = NULL;
-    if(!PyArg_ParseTuple(Args, "isO", &Control, &Name, &Value))
+    PyObject *Sender = NULL;
+    if(!PyArg_ParseTuple(Args, "isO|O", &Control, &Name, &Value, &Sender))
       return NULL;
 
     AnsiString ClassName = Name;
@@ -114,7 +141,6 @@ static PyObject* SetProperty(PyObject *Self, PyObject *Args)
     switch((*PropInfo->PropType)->Kind)
     {
       case tkInteger:
-      case tkEnumeration:
       case tkChar:
       case tkClass:
       {
@@ -124,6 +150,20 @@ static PyObject* SetProperty(PyObject *Self, PyObject *Args)
         break;
       }
 
+      case tkEnumeration:
+      {
+        int Long = PyInt_AsLong(Value);
+        if(!PyErr_Occurred())
+          SetOrdProp(Control, PropInfo, Long);
+        else
+        {
+          PyErr_Clear();
+          if(const char *Str = PyString_AsString(Value))
+            SetEnumProp(Control, PropInfo, Str);
+        }
+        break;
+      }
+      
       case tkFloat:
       {
         double Double = PyFloat_AsDouble(Value);
@@ -166,14 +206,15 @@ static PyObject* SetProperty(PyObject *Self, PyObject *Args)
 
       case tkMethod:
       {
+        PTypeData TypeData = GetTypeData(*PropInfo->PropType);
         Py_INCREF(Value);
-        TPythonCallback *PythonCallback = new TPythonCallback(Value);
+        TPythonCallback *PythonCallback = new TPythonCallback(Value, Sender, TypeData);
         TNotifyEvent Event = &PythonCallback->Method;
         SetMethodProp(Control, PropInfo, reinterpret_cast<TMethod&>(Event));
         break;
       }
     }
-    return PyReturnNone();
+    return PyErr_Occurred() ? NULL : PyReturnNone();
   }
   catch(Exception &E)
   {
@@ -206,10 +247,12 @@ static PyObject* GetProperty(PyObject *Self, PyObject *Args)
     switch(Kind)
     {
       case tkInteger:
-      case tkEnumeration:
       case tkChar:
       case tkClass:
         return Py_BuildValue("ii", GetOrdProp(Control, PropInfo), Kind);
+
+      case tkEnumeration:
+        return Py_BuildValue("si", GetEnumProp(Control, PropInfo).c_str(), Kind);
 
       case tkFloat:
         return Py_BuildValue("di", GetFloatProp(Control, PropInfo), Kind);
@@ -302,6 +345,9 @@ void InitPyVcl()
   RegisterClass(__classid(TEdit));
   RegisterClass(__classid(TLabel));
   RegisterClass(__classid(TButton));
+  RegisterClass(__classid(TTntAction));
+  RegisterClass(__classid(TTntMenuItem));
+
   PyObject *PyVclModule = Py_InitModule("PyVcl", PyVclMethods);
 
   PyPropertyException = PyErr_NewException("PyVcl.PropertyError", NULL, NULL);
@@ -313,6 +359,17 @@ void InitPyVcl()
   PyModule_AddObject(PyVclModule, "VclError", PyVclException);
 }
 //---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
 
 

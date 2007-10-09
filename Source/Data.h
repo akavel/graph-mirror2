@@ -82,7 +82,7 @@ public:
   void AbortUpdate() const {if(OnAbortUpdate) OnAbortUpdate();}
   void Swap(unsigned Index1, unsigned Index2) {boost::swap(ElemList[Index1], ElemList[Index2]);}
 
-  double Calc(const std::string &Str) const
+  long double Calc(const std::string &Str) const
   {
     return Eval(Str, CustomFunctions.SymbolList, Axes.Trigonometry);
   }

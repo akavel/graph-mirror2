@@ -70,13 +70,6 @@ bool ExecutePythonCommand(const AnsiString &Command)
   }
 
   return Result;
-
-/*
-  if(!Command.IsEmpty())
-    PyRun_SimpleString(AnsiString().sprintf("eval(compile('%s', '', 'single'))", Command.c_str()).c_str());
-  if(Form22)
-    Form22->WriteText(">>> ");
-  return true;*/
 }
 //---------------------------------------------------------------------------
 struct TExecutePythonAction
@@ -90,8 +83,6 @@ struct TExecutePythonAction
         PyErr_Print();
       Py_XDECREF(Result);
     }
-//    Form1->Enabled = true;
-//    Form1->SetFocus();
   }
 };
 //---------------------------------------------------------------------------
@@ -341,6 +332,7 @@ void InitPlugins()
   }
 }
 //---------------------------------------------------------------------------
+
 
 
 

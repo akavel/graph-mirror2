@@ -237,10 +237,12 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
 
     try
     {
-      long double Value = Data.Calc(Str.substr(Pos+2, Pos2-Pos-2));
+      std::string Expression = Str.substr(Pos+2, Pos2-Pos-2);
+      bool UseReal = Form1->Data.Property.ComplexFormat == cfReal;
+      WideString Value = ComplexToWideString(UseReal ? Func32::TComplex(Data.Calc(Expression)) : Data.CalcComplex(Expression));
 
       //If %() is preceded by a '+' and the value is negative, the '+' will be removed to avoid such as "2x+-3"
-      if(Value < 0 && Pos > 0 && Str[Pos - 1] == '+')
+      if(Value[1] == '-' && Pos > 0 && Str[Pos - 1] == '+')
       {
         Pos--;
         Length++;
@@ -248,12 +250,15 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
 
       RichEdit->SelStart = Pos;
       RichEdit->SelLength = Length;
-      RichEdit->SelText = RoundToString(Value, Data).c_str();
+      RichEdit->SelText = Value;                 
     }
     catch(Func32::EFuncError &Error)
     {
       WideString ErrorMessage = GetErrorMsg(Error);
+      RichEdit->SelStart = Pos;
+      RichEdit->SelLength = Length;
       RichEdit->SelText = ErrorMessage;
+
       RichEdit->SelStart = Pos;
       RichEdit->SelLength = ErrorMessage.Length();
       RichEdit->TextFormat.SetBold(true);
