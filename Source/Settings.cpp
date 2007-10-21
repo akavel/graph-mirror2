@@ -298,14 +298,18 @@ void TCustomFunctions::Update()
   try
   {
     for(I = 0; I < Functions.size(); I++)
-      SymbolList.Add(Functions[I].Name, Func32::TCustomFunc(Functions[I].Text, Functions[I].Arguments, SymbolList));
+    {
+      std::string Expression = Functions[I].Text.substr(0, Functions[I].Text.find("#"));
+      SymbolList.Add(Functions[I].Name, Func32::TCustomFunc(Expression, Functions[I].Arguments, SymbolList));
+    }
     SymbolList.Update();
 
-    //Replace all constant expressions with their value 
+    //Replace all constant expressions with their value
     std::vector<Func32::TComplex> DummyArgs;
     for(Func32::TSymbolList::TIterator Iter = SymbolList.Begin(); Iter != SymbolList.End(); ++Iter)
       if(Iter->second.GetArguments().size() == 0)
       {
+        Iter->second.SetTrigonometry(Data.Axes.Trigonometry);
         Func32::TComplex Value = Iter->second.Calc(DummyArgs);
         Iter->second = Func32::TCustomFunc(Value);
       }

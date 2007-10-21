@@ -150,12 +150,14 @@ class TCustomFunctions
 {
   std::vector<TCustomFunction> Functions;
   typedef std::vector<TCustomFunction>::iterator Iterator;
+  const TData &Data;
 
 public:
   typedef std::vector<TCustomFunction>::const_iterator ConstIterator;
   Func32::TSymbolList SymbolList;
   Func32::TSymbolList GlobalSymbolList;
 
+  TCustomFunctions(const TData &AData) : Data(AData) {}
   void Add(const std::string &Str, const std::string &Value);
   void Replace(const std::string &Name, const std::string &Value);
   void Replace(const std::string &Name, long double Value);

@@ -40,7 +40,7 @@ public:
   TCustomFunctions CustomFunctions;
   ::TAnimationInfo AnimationInfo;
 
-  TData(){}
+  TData() : CustomFunctions(*this) {}
   TData(const TData &OldData);
   void ClearCache();
   void Clear();

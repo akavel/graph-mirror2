@@ -37,3 +37,6 @@ class Action(object):
         return GraphImpl.GetActionAttr(self.id)[name]
     def __setattr__(self, name, value):
         GraphImpl.SetActionAttr(self.id, **{name:value})
+
+Eval = GraphImpl.Eval
+EvalComplex = GraphImpl.EvalComplex

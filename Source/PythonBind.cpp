@@ -17,6 +17,8 @@
 #include <python.h>
 #include "PyVcl.h"
 #pragma link "python25.lib"
+
+PyObject *PyEFuncError = NULL;
 //---------------------------------------------------------------------------
 static bool IsPythonInstalled()
 {
@@ -256,6 +258,43 @@ static PyObject* PluginCreateCustomFunction(PyObject *Self, PyObject *Args)
   return PyReturnNone();
 }
 //---------------------------------------------------------------------------
+static PyObject* PluginEval(PyObject *Self, PyObject *Args)
+{
+  try
+  {
+    int Degrees = Form1->Data.Axes.Trigonometry == Func32::Degree;
+    const char *Expression;
+    if(!PyArg_ParseTuple(Args, "s|i", &Expression, &Degrees))
+      return NULL;
+
+    return PyFloat_FromDouble(Func32::Eval(Expression, Form1->Data.CustomFunctions.SymbolList, Degrees ? Func32::Degree : Func32::Radian));
+  }
+  catch(Func32::EFuncError &E)
+  {
+    PyErr_SetString(PyEFuncError, AnsiString(GetErrorMsg(E)).c_str());
+    return NULL;
+  }
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginEvalComplex(PyObject *Self, PyObject *Args)
+{
+  try
+  {
+    int Degrees = Form1->Data.Axes.Trigonometry == Func32::Degree;
+    const char *Expression;
+    if(!PyArg_ParseTuple(Args, "s|i", &Expression, &Degrees))
+      return NULL;
+
+    Func32::TComplex Result = Func32::EvalComplex(Expression, Form1->Data.CustomFunctions.SymbolList, Degrees ? Func32::Degree : Func32::Radian);
+    return PyComplex_FromDoubles(real(Result), imag(Result));    
+  }
+  catch(Func32::EFuncError &E)
+  {
+    PyErr_SetString(PyEFuncError, AnsiString(GetErrorMsg(E)).c_str());
+    return NULL;
+  }
+}
+//---------------------------------------------------------------------------
 static PyMethodDef GraphMethods[] = {
   {"CreateAction", reinterpret_cast<PyCFunction>(PluginCreateAction), METH_NOARGS, ""},
   {"SetActionAttr", reinterpret_cast<PyCFunction>(PluginSetActionAttr), METH_VARARGS | METH_KEYWORDS, "Test"},
@@ -263,6 +302,8 @@ static PyMethodDef GraphMethods[] = {
   {"CreateParametricFunction", PluginCreateParametricFunction, METH_VARARGS, ""},
   {"CreateCustomFunction", PluginCreateCustomFunction, METH_VARARGS, ""},
   {"WriteToConsole", reinterpret_cast<PyCFunction>(PluginWriteToConsole), METH_VARARGS, ""},
+  {"Eval", reinterpret_cast<PyCFunction>(PluginEval), METH_VARARGS, ""},
+  {"EvalComplex", reinterpret_cast<PyCFunction>(PluginEvalComplex), METH_VARARGS, ""},
   {NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
@@ -289,6 +330,8 @@ void InitPlugins()
 
     Py_InitModule("GraphImpl", GraphMethods);
     InitPyVcl();
+
+    PyEFuncError = PyErr_NewException("GraphImpl.EFuncError", NULL, NULL);
 
     TVersionInfo Info;
     TVersion Version = Info.FileVersion();

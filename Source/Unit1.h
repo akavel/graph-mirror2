@@ -296,6 +296,7 @@ __published:	// IDE-managed Components
   TSplitter *Splitter2;
   TTntStatusBar *StatusBar1;
   TPanel *Panel6;
+  TTimer *Timer2;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);
@@ -456,12 +457,13 @@ __published:	// IDE-managed Components
           TRect &InfluenceRect, TPoint &MousePos, bool &CanDock);
   void __fastcall Panel4GetSiteInfo(TObject *Sender, TControl *DockClient,
           TRect &InfluenceRect, TPoint &MousePos, bool &CanDock);
+  void __fastcall Timer2Timer(TObject *Sender);
 
 private:	// User declarations
   friend class TAddView;
 
   //Form pos in standard size
-  int StdTop,StdLeft,StdWidth,StdHeight;
+  int StdTop, StdLeft, StdWidth, StdHeight;
   WideString StatusError;
   TColor StatusErrorColor;
   int IsResizing;     // >0 when the window is being resized or dragged
