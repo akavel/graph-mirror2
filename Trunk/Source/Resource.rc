@@ -163,7 +163,7 @@ BEGIN
   516 "Invalid model name."
   517 "A model of that name already exist."
   518 "The derivative of the function is not defined at %s=%s"
-  519 "Coordinate not defined."
+  519 "Coordinate not defined"
   520 "Checking for newer version..."
   521 "Abort printing?"
   522 "Calculate area"

@@ -1390,9 +1390,12 @@ void __fastcall TForm1::TreeViewMouseMove(TObject *Sender,
 //---------------------------------------------------------------------------
 void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
 {
-  int Index = TreeView->Selected ? TreeView->Selected->AbsoluteIndex : -1;
-  TreeView->Items->BeginUpdate();
+  TreeView->Repaint();
+  //Prevent the scrollbar from jumping
+  SendMessage(TreeView->Parent->Handle, WM_SETREDRAW, false, 0);
+  int Pos = GetScrollPos(TreeView->Handle, SB_VERT);
 
+  int Index = TreeView->Selected ? TreeView->Selected->AbsoluteIndex : -1;
   TreeView->Selected = NULL;
   TreeView->Items->Clear();
 
@@ -1408,7 +1411,13 @@ void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
     TreeView->Selected = TreeView->Items->Item[Index < TreeView->Items->Count ? Index : TreeView->Items->Count-1];
 
   TreeView->FullExpand();
-  TreeView->Items->EndUpdate();
+
+  //Enable and redraw the scrollbar again
+  SetScrollPos(TreeView->Handle, SB_VERT, Pos, false);
+  SendMessage(TreeView->Parent->Handle, WM_SETREDRAW, true, 0);
+  RedrawWindow(TreeView->Parent->Handle, NULL, 0, RDW_INVALIDATE | RDW_ALLCHILDREN);
+  if(Selected)
+    PostMessage(TreeView->Handle, TVM_ENSUREVISIBLE, 0, (LONG)TreeView->Selected->ItemId);
 }
 //---------------------------------------------------------------------------
 void TForm1::ChangeVisible(boost::shared_ptr<TGraphElem> GraphElem)
@@ -1906,6 +1915,7 @@ void __fastcall TForm1::PasteActionExecute(TObject *Sender)
   GraphClipboard.Paste(Data);
   Data.SetModified();
   UpdateTreeView();
+  TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
   UpdateMenu();
   UpdateEval();
   Redraw();
@@ -1951,6 +1961,7 @@ void __fastcall TForm1::OptionsActionExecute(TObject *Sender)
   {
     Draw.AbortUpdate();
     Data.ClearCache();
+    Data.Update();
     Redraw();
     UpdateMenu();
   }
@@ -3181,6 +3192,8 @@ void __fastcall TForm1::TreeViewDragOver(TObject *Sender, TObject *Source,
   TTreeNode *Node= TreeView->GetNodeAt(X, Y);
   if(Node && TreeView->Selected)
     Accept = Node->Parent == TreeView->Selected->Parent;
+
+  Timer2->Enabled = Y < 10 || Y > TreeView->Height - 15;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::TreeViewDragDrop(TObject *Sender, TObject *Source,
@@ -3668,5 +3681,10 @@ void __fastcall TForm1::Panel4GetSiteInfo(TObject *Sender,
   CanDock = DockClient == Form9.get();
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TForm1::Timer2Timer(TObject *Sender)
+{
+  TPoint Pos = TreeView->ScreenToClient(Mouse->CursorPos);
+  PostMessage(TreeView->Handle, WM_VSCROLL, Pos.y < 10 ? SB_LINEUP : SB_LINEDOWN, 0);
+}
+//---------------------------------------------------------------------------
 

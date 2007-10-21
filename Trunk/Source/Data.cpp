@@ -579,6 +579,7 @@ const boost::shared_ptr<TGraphElem>& TData::GetElem(unsigned Index) const
 //---------------------------------------------------------------------------
 void TData::Update()
 {
+  CustomFunctions.Update();
   for(unsigned I = 0; I < ElemList.size(); ++I)
     ElemList[I]->Update();
 }
