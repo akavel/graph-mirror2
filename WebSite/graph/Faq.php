@@ -19,10 +19,13 @@
 <p><font size="+1"><b>Q:</b> <b>What
 are the system requirements of the program?</b></font><br>
 
-<font size="+1"><b>A:</b> The program
-requires 32 bit Windows. It has been tested under Windows 95, Windows
-98, Windows ME, Windows 2000 and Windows XP. If the system is able to
-run Windows, it should be able to run the program.</font></p>
+<font size="+1"><b>A:</b>&nbsp;Graph requires
+32 bit Windows. It has been tested
+under Windows 98, Windows ME, Windows 2000, Windows XP and Windows
+Vista. If
+the system is able to run Windows, it should be able to run the
+program, though
+Windows 95 is no longer supported.</font></p>
 
 <p><strong><font size="+1">Q: Will Graph
 run under Linux?</font></strong><font size="+1"><br>
@@ -206,12 +209,10 @@ A:</strong> Would I joke about something like that?</font> </p>
 <p><font size="+1"><b>Q:</b> <b>Why
 will the program not start under Windows 95?</b><br>
 
-<b>A:</b> Some of the system files under Windows 95
-need to be updated to the newest version. The easiest way to do this is
-to upgrade MS Internet Explorer to the newest version supporting
-Windows 95.<br>
-
-</font> </p>
+<b>A:</b>&nbsp;Graph no longer
+supports Windows 95. The last
+version to run under Windows 95 was Graph 4.2.</font>
+</p>
 
 <p>&nbsp;</p>
 
