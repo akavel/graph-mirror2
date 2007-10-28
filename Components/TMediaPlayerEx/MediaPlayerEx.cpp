@@ -100,9 +100,8 @@ void __fastcall TMediaPlayerEx::WndProc(Messages::TMessage &Message)
       else
       {
         PAINTSTRUCT Paint;
-        HDC DC = BeginPaint(Display->Handle, &Paint);
         MCI_DGV_UPDATE_PARMS UpdateParms = {0};
-        UpdateParms.hDC = DC; //reinterpret_cast<HDC>(Message.WParam);
+        UpdateParms.hDC = BeginPaint(Display->Handle, &Paint);
         DWORD Flags = MCI_WAIT | MCI_DGV_UPDATE_HDC | MCI_DGV_UPDATE_PAINT;
         mciSendCommand(DeviceID, MCI_UPDATE, Flags, reinterpret_cast<DWORD>(&UpdateParms));
         EndPaint(Display->Handle, &Paint);
@@ -464,9 +463,40 @@ TRect TMediaPlayerEx::GetDisplayRect()
 {
   MCI_DGV_RECT_PARMS RectParm;
   CheckIfOpen();
+  DWORD Flags = MCI_WAIT | MCI_DGV_WHERE_DESTINATION;
+  MciCheck(mciSendCommand(DeviceID, MCI_WHERE, Flags, reinterpret_cast<DWORD>(&RectParm)));
+  return RectParm.rc;
+}
+//---------------------------------------------------------------------------
+void TMediaPlayerEx::SetDisplayRect(const TRect &Rect)
+{
+  MCI_DGV_RECT_PARMS RectParm;
+  RectParm.rc = Rect;
+  CheckIfOpen();
+  DWORD Flags = MCI_WAIT | MCI_DGV_RECT | MCI_DGV_PUT_DESTINATION;
+  MciCheck(mciSendCommand(DeviceID, MCI_PUT, Flags, reinterpret_cast<DWORD>(&RectParm)));
+}
+//---------------------------------------------------------------------------
+TRect TMediaPlayerEx::GetSourceRect()
+{
+  MCI_DGV_RECT_PARMS RectParm;
+  CheckIfOpen();
   DWORD Flags = MCI_WAIT | MCI_DGV_WHERE_SOURCE;
   MciCheck(mciSendCommand(DeviceID, MCI_WHERE, Flags, reinterpret_cast<DWORD>(&RectParm)));
   return RectParm.rc;
+}
+//---------------------------------------------------------------------------
+void TMediaPlayerEx::GetBitmap(Graphics::TBitmap *Bitmap)
+{
+  CheckIfOpen();
+  TRect Rect = DisplayRect;
+  Bitmap->Width = Rect.Width();
+  Bitmap->Height = Rect.Height();
+
+  MCI_DGV_UPDATE_PARMS UpdateParms = {0};
+  UpdateParms.hDC = Bitmap->Canvas->Handle;
+  DWORD Flags = MCI_WAIT | MCI_DGV_UPDATE_HDC;
+  MciCheck(mciSendCommand(DeviceID, MCI_UPDATE, Flags, reinterpret_cast<DWORD>(&UpdateParms)));
 }
 //---------------------------------------------------------------------------
 
