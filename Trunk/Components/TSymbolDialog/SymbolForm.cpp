@@ -240,8 +240,7 @@ void TSymbolFrm::UpdateImage()
   if(pGetUNameFunc && Charset != SYMBOL_CHARSET)
   {
     wchar_t CharInfo[200];
-    wchar_t Char = WideString(AnsiString((char)Selected))[1];
-    pGetUNameFunc(Char, CharInfo);
+    pGetUNameFunc(Selected, CharInfo);
     StatusBar1->Panels->Items[0]->Text = WideString(CharInfo);
     StatusBar1->Panels->Items[1]->Text = "U+" + IntToHex(Selected, 4) + " (" + (int)Selected + ")";
   }
