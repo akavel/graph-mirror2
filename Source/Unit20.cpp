@@ -12,10 +12,14 @@
 #include "Unit19.h"
 #include "Unit20.h"
 #include "vfw.h"
+#include "BMGLibPNG.h"                     //Used to save png files
+#include <Jpeg.hpp>
 //---------------------------------------------------------------------------
 #pragma link "TntMenus"
 #pragma link "MediaPlayerEx"
 #pragma resource "*.dfm"
+const double MaxWidth = Screen->Width - 50;
+const double MaxHeight = Screen->Height - 180;
 //--------------------------------------------------------------------------
 __fastcall TForm20::TForm20(TComponent* Owner, const std::string &Constant, double AMin, double AStep)
   : TTntForm(Owner), BackwardDirection(false), Min(AMin), Step(AStep)
@@ -34,15 +38,19 @@ void TForm20::ShowAnimation(const AnsiString &FileName)
 {
   MediaPlayer1->FileName = FileName;
   MediaPlayer1->Open();
-  TRect Rect = MediaPlayer1->DisplayRect;
-  Width = Width - Panel1->ClientWidth + Rect.Width();
-  Height = Height - Panel1->ClientHeight + Rect.Height();
+  DisplayRect = MediaPlayer1->SourceRect;
+  double Zoom = std::max(std::max(DisplayRect.Height() / MaxHeight, DisplayRect.Width() / MaxWidth), 1.0);
+  DisplayRect.Bottom /= Zoom;
+  DisplayRect.Right /= Zoom;
+  Width = Width - Panel1->ClientWidth + DisplayRect.Width();
+  Height = Height - Panel1->ClientHeight + DisplayRect.Height();
   TrackBar1->Max = MediaPlayer1->Length - 1;
   TrackBar1->Frequency = (MediaPlayer1->Length / 100) * 10;
   if(TrackBar1->Frequency == 0)
     TrackBar1->Frequency = 1;
   MediaPlayer1->TimeFormat = tfFrames;
   MediaPlayer1->SetSignal(0, 1);
+  MediaPlayer1->DisplayRect = DisplayRect;
 
   if(!Visible)
     ShowModal();
@@ -179,6 +187,59 @@ void TForm20::PosChanged(unsigned Position)
   TrackBar1->OnChange = &TrackBar1Change;
 
   LabeledEdit1->Text = Min + Step * Position;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::Saveimageas1Click(TObject *Sender)
+{
+  if(SaveDialog2->Execute())
+    SaveFrame(SaveDialog2->FileName, SaveDialog2->FilterIndex);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::Saveimagesequence1Click(TObject *Sender)
+{
+  if(SaveDialog2->Execute())
+  {
+    int FrameCount = MediaPlayer1->Length;
+    int Size = std::log10l(FrameCount) + 1;
+    int OldPosition = MediaPlayer1->Position;
+    for(int I = 0; I < FrameCount; I++)
+    {
+      AnsiString FileName = ChangeFileExt(SaveDialog2->FileName, AnsiString().sprintf(" %0*d%s", Size, I+1, ExtractFileExt(SaveDialog2->FileName).c_str()));
+      MediaPlayer1->Position = I;
+      SaveFrame(FileName, SaveDialog2->FilterIndex);
+    }
+    MediaPlayer1->Position = OldPosition;
+  }
+}
+//---------------------------------------------------------------------------
+void TForm20::SaveFrame(const AnsiString &FileName, int FilterIndex)
+{
+  std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
+  MediaPlayer1->DisplayRect = MediaPlayer1->SourceRect;
+  MediaPlayer1->GetBitmap(Bitmap.get());
+  switch(FilterIndex)
+  {
+    case 1: //bmp
+      Bitmap->SaveToFile(FileName);
+      break;
+
+    case 2: //png
+     Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
+     SaveBitmapToPNGFile(Bitmap->Handle, FileName.c_str());
+     break;
+
+    case 3: //jpeg
+    {
+      std::auto_ptr<TJPEGImage> Image(new TJPEGImage);
+      Image->Assign(Bitmap.get());
+//      Image->CompressionQuality = ImageOptions->Jpeg.Quality;
+//      Image->ProgressiveEncoding = ImageOptions->Jpeg.ProgressiveEncoding;
+      Image->Compress();
+      Image->SaveToFile(FileName);
+      break;
+    }
+  }
+  MediaPlayer1->DisplayRect = DisplayRect;
 }
 //---------------------------------------------------------------------------
 
