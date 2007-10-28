@@ -53,6 +53,8 @@ private:
   TMPModes GetMode();
   void __fastcall SetSpeed(int Value);
   TRect GetDisplayRect();
+  void SetDisplayRect(const TRect &Rect);
+  TRect GetSourceRect();
 
   void __fastcall Notification(TComponent* AComponent, TOperation Operation);
 
@@ -76,6 +78,7 @@ public:
   void Step(bool Wait=true);
   void Stop(bool Wait=true);
   void Rewind(bool Wait=true);
+  void GetBitmap(Graphics::TBitmap *Bitmap);
 
   __property int Position = {read=GetPosition, write=SetPosition};
   __property int Frames = {read=FFrames, write=FFrames};
@@ -85,7 +88,8 @@ public:
   __property TMPDevCapsSet Capabilities = {read=FCapabilities};
   __property TMPTimeFormats TimeFormat = {read=GetTimeFormat, write=SetTimeFormat};
   __property TMPModes Mode = {read=GetMode};
-  __property TRect DisplayRect = {read=GetDisplayRect}; 
+  __property TRect DisplayRect = {read=GetDisplayRect, write=SetDisplayRect};
+  __property TRect SourceRect = {read=GetSourceRect};
 
 __published:
   __property TWinControl* Display = {read=FDisplay, write=SetDisplay, default=NULL};
