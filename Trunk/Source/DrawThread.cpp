@@ -1059,6 +1059,10 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
       if(!InsideRect(AxesRect, Pos)) //We might get rounding errors if the point is too much outside the visible area
         continue;
 
+      //Check if we are inside the legend  
+      if(Axes.ShowLegend && InsideRect(Draw->LegendRect, Pos))
+        continue;
+
       int PointSize = Size(PointSeries.Size);
       TColor FillColor = ForceBlack ? clWhite : PointSeries.FillColor;
       TColor FrameColor = ForceBlack ? clBlack : (PointSeries.Size > 2 ? PointSeries.FrameColor : FillColor);
