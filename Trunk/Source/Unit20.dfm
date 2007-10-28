@@ -118,14 +118,15 @@ object Form20: TForm20
     end
   end
   object LabeledEdit1: TLabeledEdit
-    Left = 280
+    Left = 304
     Top = 368
-    Width = 97
+    Width = 73
     Height = 21
     Anchors = [akRight, akBottom]
     Color = clBtnFace
     EditLabel.Width = 3
     EditLabel.Height = 13
+    EditLabel.Caption = 'LabeledEdit1'
     LabelPosition = lpLeft
     LabelSpacing = 3
     ReadOnly = True
@@ -134,7 +135,7 @@ object Form20: TForm20
   object SaveDialog1: TSaveDialog
     DefaultExt = 'avi'
     Filter = 'Video for Windows [*.avi]|*.avi'
-    Options = [ofOverwritePrompt, ofHideReadOnly, ofPathMustExist, ofEnableSizing]
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing, ofDontAddToRecent]
     Left = 16
     Top = 16
   end
@@ -215,13 +216,19 @@ object Form20: TForm20
       ShortCut = 16467
       OnClick = Save1Click
     end
-  end
-  object OpenDialog1: TOpenDialog
-    DefaultExt = 'avi'
-    Filter = 'Video for Windows [*.avi]|*.avi|All files [*.*]|*.*'
-    Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist, ofEnableSizing]
-    Left = 48
-    Top = 16
+    object Saveimageas1: TTntMenuItem
+      Caption = 'Save frame...'
+      Hint = 'Save the shown frame to an image file.'
+      ShortCut = 16450
+      OnClick = Saveimageas1Click
+    end
+    object Saveimagesequence1: TTntMenuItem
+      Caption = 'Save all frames...'
+      Hint = 
+        'Save all frames  in the animation to image files. This will crea' +
+        'te as many files as there are frames in the animation.'
+      OnClick = Saveimagesequence1Click
+    end
   end
   object ImageList1: TImageList
     Height = 18
@@ -748,6 +755,16 @@ object Form20: TForm20
     OnSignal = MediaPlayer1Signal
     OnNotify = MediaPlayer1Notify
     Left = 144
+    Top = 16
+  end
+  object SaveDialog2: TSaveDialog
+    DefaultExt = 'png'
+    Filter = 
+      'Windows Bitmap [*.bmp]|*.bmp|Portable Network Graphics [*.png]|*' +
+      '.png|Joint Photographic Experts Group [*.jpg, *.jpeg]|*.jpg;*.jp' +
+      'eg'
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing, ofDontAddToRecent]
+    Left = 48
     Top = 16
   end
 end

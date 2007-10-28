@@ -18,11 +18,8 @@
 //---------------------------------------------------------------------------
 #pragma link "TntStdCtrls"
 #pragma link "ProgressForm"
-#pragma link "MyEdit"                       
+#pragma link "MyEdit"
 #pragma resource "*.dfm"
-
-const int MaxWidth = Screen->Width - 50;
-const int MaxHeight = Screen->Height - 180;
 //---------------------------------------------------------------------------
 __fastcall TForm19::TForm19(TComponent* Owner, TData &AData)
   : TTntForm(Owner), Data(AData), AnimationInfo(AData.AnimationInfo)
@@ -59,8 +56,8 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData)
       ComboBox1->Items->Add(Iter->Name.c_str());
     }
 
-  unsigned ImageWidth = std::min(AnimationInfo.Width == 0 ? Form1->Image1->Width : AnimationInfo.Width, MaxWidth);
-  unsigned ImageHeight = std::min(AnimationInfo.Height == 0 ? Form1->Image1->Height : AnimationInfo.Height, MaxHeight);
+  unsigned ImageWidth = AnimationInfo.Width == 0 ? Form1->Image1->Width : AnimationInfo.Width;
+  unsigned ImageHeight = AnimationInfo.Height == 0 ? Form1->Image1->Height : AnimationInfo.Height;
 
   int Index = ComboBox1->Items->IndexOf(ToWideString(AnimationInfo.Constant));
   ComboBox1->ItemIndex = Index == -1 ? 0 : Index;
@@ -81,9 +78,9 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData)
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button1Click(TObject *Sender)
 {
-  if(!CheckLimit(Edit4, LoadRes(RES_VALUE_RANGE, Label5->Caption, 160, MaxWidth), 160, MaxWidth))
+  if(!CheckLimit(Edit4, LoadRes(RES_GREATER, Label5->Caption, 160), 160))
     return;
-  if(!CheckLimit(Edit5, LoadRes(RES_VALUE_RANGE, Label6->Caption, 160, MaxHeight), 160, MaxHeight))
+  if(!CheckLimit(Edit5, LoadRes(RES_GREATER, Label6->Caption, 160), 160))
     return;
 
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
@@ -232,7 +229,7 @@ void __fastcall TForm19::TntEditKeyPress(TObject *Sender, char &Key)
 {
   if(!isdigit(Key) && Key != '\b')
     Key = 0;
-}
+}                                             
 //---------------------------------------------------------------------------
 void __fastcall TForm19::ComboBox1Change(TObject *Sender)
 {
@@ -251,6 +248,7 @@ void __fastcall TForm19::ComboBox1Change(TObject *Sender)
   Edit3->Text = ToWideString(AnimationConstant.Step);
 }
 //---------------------------------------------------------------------------
+
 
 
 

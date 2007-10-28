@@ -33,7 +33,6 @@ __published:	// IDE-managed Components
   TSaveDialog *SaveDialog1;
   TTntPopupMenu *PopupMenu1;
   TTntMenuItem *Save1;
-  TOpenDialog *OpenDialog1;
   TImageList *ImageList1;
   TTntMenuItem *N1;
   TTntMenuItem *Repeat1;
@@ -56,6 +55,9 @@ __published:	// IDE-managed Components
   TToolButton *ToolButton5;
   TToolButton *ToolButton6;
   TLabeledEdit *LabeledEdit1;
+  TTntMenuItem *Saveimageas1;
+  TSaveDialog *SaveDialog2;
+  TTntMenuItem *Saveimagesequence1;
   void __fastcall Save1Click(TObject *Sender);
   void __fastcall MediaPlayer1Signal(TMediaPlayerEx *Sender,
           unsigned Position);
@@ -72,12 +74,16 @@ __published:	// IDE-managed Components
   void __fastcall TntFormClose(TObject *Sender, TCloseAction &Action);
   void __fastcall TrackBar1Change(TObject *Sender);
   void __fastcall TrackBar1KeyPress(TObject *Sender, char &Key);
+  void __fastcall Saveimageas1Click(TObject *Sender);
+  void __fastcall Saveimagesequence1Click(TObject *Sender);
 private:	// User declarations
   bool BackwardDirection;
   double Min;
   double Step;
+  TRect DisplayRect;
 
   void PosChanged(unsigned Position);
+  void SaveFrame(const AnsiString &FileName, int FilterIndex);
 
 public:		// User declarations
   __fastcall TForm20(TComponent* Owner, const std::string &Constant, double AMin, double AStep);

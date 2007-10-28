@@ -6,6 +6,7 @@ object Form1: TForm1
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   ActiveControl = Panel2
+  AlphaBlendValue = 100
   Caption = 'Graph'
   Color = clBtnFace
   Constraints.MinHeight = 300
