@@ -177,32 +177,32 @@ TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, u
         if(Points.size() < 2)
           throw EFuncError(ecTooFewPoints);
         int n = Points.size();
-        double SumX = 0;
-        double SumY = 0;
-        double SumXY = 0;
-        double SumSqrX = 0;
+        long double SumX = 0;
+        long double SumY = 0;
+        long double SumXY = 0;
+        long double SumSqrX = 0;
 
         for(std::vector<TDblPoint>::const_iterator Iter = Points.begin(); Iter != Points.end(); ++Iter)
         {
           if(Iter->y <= 0)
             throw EFuncError(ecInvalidValue);
-          double LogY = std::log(Iter->y);
+          long double LogY = std::log(Iter->y);
           SumX += Iter->x;
           SumY += LogY;
           SumXY += Iter->x * LogY;
           SumSqrX += Iter->x * Iter->x;
         }
 
-        double d = (n*SumSqrX-SumX*SumX);
+        long double d = (n*SumSqrX-SumX*SumX);
 
         //Take care of division by zero
         if(IsZero(d))
           throw EFuncError(ecOverflow);
 
-        double LogB = (n*SumXY - SumX*SumY) / d;
-        double LogA = (SumY - LogB*SumX) / n;
-        double a = std::exp(LogA);
-        double b = std::exp(LogB);
+        long double LogB = (n*SumXY - SumX*SumY) / d;
+        long double LogA = (SumY - LogB*SumX) / n;
+        long double a = std::expl(LogA);
+        long double b = std::expl(LogB);
         return TFunc(a) * pow(TFunc(b),TFunc("x"));
       }
 
