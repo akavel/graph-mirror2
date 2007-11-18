@@ -239,7 +239,7 @@ void TForm20::SaveFrame(const AnsiString &FileName, int FilterIndex)
       break;
     }
   }
-  MediaPlayer1->DisplayRect = DisplayRect;
+  MediaPlayer1->DisplayRect = DisplayRect; 
 }
 //---------------------------------------------------------------------------
 

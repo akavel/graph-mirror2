@@ -40,7 +40,7 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData)
   dwICValue = dwICValue; //Avoid stupid warning
 
   //Add constants to the combo box
-  for(TCustomFunctions::ConstIterator Iter = Data.CustomFunctions.Begin(); Iter != Data.CustomFunctions.End(); ++Iter)
+  for(TCustomFunctions::TConstIterator Iter = Data.CustomFunctions.Begin(); Iter != Data.CustomFunctions.End(); ++Iter)
     if(Iter->Arguments.empty())
     {
       TAnimationConstant &AnimationConstant = AnimationInfo.ConstantList[Iter->Name];
@@ -123,7 +123,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   BITMAPINFO *BitmapInfo = reinterpret_cast<BITMAPINFO*>(&BitmapInfoData[0]);
   FillBitmapInfoHeader(BitmapInfo->bmiHeader, Bitmap.get(), Rect, 256, 0);
   AnsiString TempFile = GetTempFileName("Graph", "avi");
-  std::string OriginalValue = Data.CustomFunctions.GetValue(AnimationInfo.Constant);
+  std::string OriginalValue = Data.CustomFunctions.GetValue(AnimationInfo.Constant).Text;
 
   AVIFileInit();
   TCallOnRelease Dummy2(AVIFileExit);

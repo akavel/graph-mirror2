@@ -469,6 +469,14 @@ void Trim(std::string &Str)
     Str.replace(0, std::string::npos, Str, Pos1, Pos2 - Pos1 + 1);
 }
 //--------------------------------------------------------------------------
+std::string ToLower(const std::string &Str)
+{
+  std::string Result;
+  for(unsigned I = 0; I < Str.size(); I++)
+    Result += std::tolower(Str[I]);
+  return Result;
+}
+//---------------------------------------------------------------------------
 
 
 

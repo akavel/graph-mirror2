@@ -13,24 +13,50 @@
 #include "PythonBind.h"
 #include "IThread.h"
 #include "VersionInfo.h"
+#include "Unit18.h"
 #undef _DEBUG
 #include <python.h>
 #include "PyVcl.h"
 #pragma link "python25.lib"
 
+namespace PythonBind
+{
+PyTypeObject& GetPythonType(const char *Name);
+PyObject* GetPythonAddress(const char *Name);
+
+HINSTANCE PythonInstance = NULL;
 PyObject *PyEFuncError = NULL;
+PyObject *PyEGraphError = NULL;
+
+PyTypeObject &PyTuple_Type = GetPythonType("PyTuple_Type");
+PyObject *PyExc_TypeError = GetPythonAddress("PyExc_TypeError");
+PyObject *PyExc_KeyError = GetPythonAddress("PyExc_KeyError");
 //---------------------------------------------------------------------------
 static bool IsPythonInstalled()
 {
   static int Result = -1;
   if(Result == -1)
   {
-    HINSTANCE Instance = LoadLibrary(GetRegValue("Software\\Ivan\\Graph", "PythonDll", HKEY_CURRENT_USER, "Python25.dll").c_str());
-    Result = Instance != NULL;
-    if(Instance)
-      FreeLibrary(Instance);
+    PythonInstance = LoadLibrary(GetRegValue("Software\\Ivan\\Graph", "PythonDll", HKEY_CURRENT_USER, "Python25.dll").c_str());
+    Result = PythonInstance != NULL;
   }
   return Result;
+}
+//---------------------------------------------------------------------------
+PyTypeObject& GetPythonType(const char *Name)
+{
+  static PyTypeObject Dummy;
+  if(IsPythonInstalled())
+    return *(PyTypeObject*)GetProcAddress(PythonInstance, Name);
+  return Dummy;
+}
+//---------------------------------------------------------------------------
+PyObject* GetPythonAddress(const char *Name)
+{
+  static PyObject *Dummy = NULL;
+  if(IsPythonInstalled())
+    return *(PyObject**)GetProcAddress(PythonInstance, Name);
+  return Dummy;
 }
 //---------------------------------------------------------------------------
 bool ExecutePythonCommand(const AnsiString &Command)
@@ -88,7 +114,7 @@ struct TExecutePythonAction
   }
 };
 //---------------------------------------------------------------------------
-static PyObject* PluginWriteToConsole(PyObject *Self, PyObject *Args, PyObject *Keywds)
+static PyObject* PluginWriteToConsole(PyObject *Self, PyObject *Args)
 {
   const char *Str;
   TColor Color = clBlack;
@@ -99,7 +125,20 @@ static PyObject* PluginWriteToConsole(PyObject *Self, PyObject *Args, PyObject *
   return PyReturnNone();
 }
 //---------------------------------------------------------------------------
-static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args, PyObject *Keywds)
+static PyObject* PluginInputQuery(PyObject *Self, PyObject *Args)
+{
+  const char *Caption = "Python input";
+  const char *Prompt = "";
+  if(!PyArg_ParseTuple(Args, "|ss", &Caption, &Prompt))
+    return NULL;
+  AnsiString Value;
+  if(InputQuery(Caption, Prompt, Value))
+    return PyString_FromString(Value.c_str());
+
+  return PyReturnNone();
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args)
 {
   TTntAction *Action = new TTntAction(Application);
   Action->Category = _("Plugins");
@@ -170,7 +209,7 @@ static PyObject* PluginSetActionAttr(PyObject *Self, PyObject *Args, PyObject *K
   return PyReturnNone();
 }
 //---------------------------------------------------------------------------
-static PyObject* PluginGetActionAttr(PyObject *Self, PyObject *Args, PyObject *Keywds)
+static PyObject* PluginGetActionAttr(PyObject *Self, PyObject *Args)
 {
   TAction *Action = reinterpret_cast<TAction*>(PyInt_AsLong(Args));
   if(PyErr_Occurred())
@@ -286,7 +325,7 @@ static PyObject* PluginEvalComplex(PyObject *Self, PyObject *Args)
       return NULL;
 
     Func32::TComplex Result = Func32::EvalComplex(Expression, Form1->Data.CustomFunctions.SymbolList, Degrees ? Func32::Degree : Func32::Radian);
-    return PyComplex_FromDoubles(real(Result), imag(Result));    
+    return PyComplex_FromDoubles(real(Result), imag(Result));
   }
   catch(Func32::EFuncError &E)
   {
@@ -295,15 +334,148 @@ static PyObject* PluginEvalComplex(PyObject *Self, PyObject *Args)
   }
 }
 //---------------------------------------------------------------------------
+static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args)
+{
+  const char *FileName = PyString_AsString(Args);
+  TImageOptions ImageOptions(Form1->Image1->Width, Form1->Image1->Height);
+  switch(Form1->SaveAsImage(FileName, ImageOptions))
+  {
+    case seFileAccess:
+      PyErr_SetString(PyEGraphError, AnsiString(LoadRes(RES_FILE_ACCESS, FileName)).c_str());
+      return NULL;
+
+    case seOutOfResources:
+      PyErr_SetString(PyEGraphError, AnsiString(LoadRes(RES_OUT_OF_RESOURCES)).c_str());
+      return NULL;
+  }
+  return PyReturnNone();
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginUpdate(PyObject *Self, PyObject *Args)
+{
+  Form1->Draw.AbortUpdate();
+  Form1->Data.ClearCache();
+  Form1->Data.Update();
+  Form1->UpdateTreeView();
+  Form1->Data.SetModified();
+  Form1->Redraw(); //Activates thread; must be done after OLE update
+  return PyReturnNone();
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginGetConstantNames(PyObject *Self, PyObject *Args)
+{
+  const TCustomFunctions &Functions = Form1->Data.CustomFunctions;
+  TCustomFunctions::TConstIterator Begin = Functions.Begin();
+  TCustomFunctions::TConstIterator End = Functions.End();
+  PyObject *ConstantNames = PyList_New(End - Begin);
+
+  int Index = 0;
+  for(TCustomFunctions::TConstIterator Iter = Begin; Iter != End; ++Iter, ++Index)
+    PyList_SetItem(ConstantNames, Index, PyString_FromString(Iter->Name.c_str()));
+  return ConstantNames;  
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginGetConstant(PyObject *Self, PyObject *Args)
+{
+  const char *Name = PyString_AsString(Args);
+  if(Name == NULL)
+    return NULL;
+    
+  try
+  {
+    const TCustomFunction &Function = Form1->Data.CustomFunctions.GetValue(Name);
+    if(Function.Arguments.empty())
+      return Py_BuildValue("ss", NULL, Function.Text.c_str());
+    else
+    {
+      PyObject *Args = PyTuple_New(Function.Arguments.size());
+      for(unsigned I = 0; I < Function.Arguments.size(); I++)
+        PyTuple_SetItem(Args, I, PyString_FromString(Function.Arguments[I].c_str()));
+      return Py_BuildValue("Ns", Args, Function.Text.c_str());
+    }
+  }
+  catch(ECustomFunctionError &E)
+  {
+    PyErr_SetString(PyExc_KeyError, Name);
+    return NULL;
+  }
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginSetConstant(PyObject *Self, PyObject *Args)
+{
+  try
+  {
+    const char *Name;
+    PyObject *Arguments;
+    const char *Text;
+    if(!PyArg_ParseTuple(Args, "sOs", &Name, &Arguments, &Text))
+      return NULL;
+    TCustomFunctions &Functions = Form1->Data.CustomFunctions;
+    std::vector<std::string> ArgList;
+    if(Arguments != PyNone())
+    {
+      if(!PyTuple_Check(Arguments))
+      {
+        PyErr_SetString(PyExc_TypeError, "Function arguments must be a tuple or None");
+        return NULL;
+      }
+
+      int Size = PyTuple_Size(Arguments);
+      if(Size == -1)
+        return NULL;
+      for(int I = 0; I < Size; I++)
+      {
+        const char *Str = PyString_AsString(PyTuple_GetItem(Arguments, I));
+        if(Str == NULL)
+          return NULL;
+        ArgList.push_back(Str);
+      }
+    }
+    Functions.Add(Name, ArgList, Text);
+    return PyReturnNone();
+  }
+  catch(Func32::EFuncError &E)
+  {
+    PyErr_SetString(PyEFuncError, AnsiString(GetErrorMsg(E)).c_str());
+    return NULL;
+  }
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginDelConstant(PyObject *Self, PyObject *Args)
+{
+  const char *Name = PyString_AsString(Args);
+  if(Name == NULL)
+    return NULL;
+
+  try
+  {
+    TCustomFunctions &Functions = Form1->Data.CustomFunctions;
+    Functions.Delete(Name);
+    return PyReturnNone();
+  }
+  catch(ECustomFunctionError &E)
+  {
+    PyErr_SetString(PyExc_KeyError, Name);
+    return NULL;
+  }
+}
+//---------------------------------------------------------------------------
 static PyMethodDef GraphMethods[] = {
-  {"CreateAction", reinterpret_cast<PyCFunction>(PluginCreateAction), METH_NOARGS, ""},
-  {"SetActionAttr", reinterpret_cast<PyCFunction>(PluginSetActionAttr), METH_VARARGS | METH_KEYWORDS, "Test"},
-  {"GetActionAttr", reinterpret_cast<PyCFunction>(PluginGetActionAttr), METH_O, ""},
-  {"CreateParametricFunction", PluginCreateParametricFunction, METH_VARARGS, ""},
-  {"CreateCustomFunction", PluginCreateCustomFunction, METH_VARARGS, ""},
-  {"WriteToConsole", reinterpret_cast<PyCFunction>(PluginWriteToConsole), METH_VARARGS, ""},
-  {"Eval", reinterpret_cast<PyCFunction>(PluginEval), METH_VARARGS, ""},
-  {"EvalComplex", reinterpret_cast<PyCFunction>(PluginEvalComplex), METH_VARARGS, ""},
+  {"CreateAction",              PluginCreateAction, METH_NOARGS, ""},
+  {"SetActionAttr",             reinterpret_cast<PyCFunction>(PluginSetActionAttr), METH_VARARGS | METH_KEYWORDS, "Test"},
+  {"GetActionAttr",             PluginGetActionAttr, METH_O, ""},
+  {"CreateParametricFunction",  PluginCreateParametricFunction, METH_VARARGS, ""},
+  {"CreateCustomFunction",      PluginCreateCustomFunction, METH_VARARGS, ""},
+  {"WriteToConsole",            PluginWriteToConsole, METH_VARARGS, ""},
+  {"InputQuery",                PluginInputQuery, METH_VARARGS, ""},
+  {"Eval",                      PluginEval, METH_VARARGS, ""},
+  {"EvalComplex",               PluginEvalComplex, METH_VARARGS, ""},
+  {"SaveAsImage",               PluginSaveAsImage, METH_O, ""},
+  {"Update",                    PluginUpdate, METH_NOARGS, ""},
+  {"GetConstantNames",          PluginGetConstantNames, METH_NOARGS, ""},
+  {"GetConstant",               PluginGetConstant, METH_O, ""},
+  {"SetConstant",               PluginSetConstant, METH_VARARGS, ""},
+  {"DelConstant",               PluginDelConstant, METH_O, ""},
   {NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
@@ -332,6 +504,7 @@ void InitPlugins()
     InitPyVcl();
 
     PyEFuncError = PyErr_NewException("GraphImpl.EFuncError", NULL, NULL);
+    PyEGraphError = PyErr_NewException("GraphImpl.EGraphError", NULL, NULL);
 
     TVersionInfo Info;
     TVersion Version = Info.FileVersion();
@@ -343,8 +516,14 @@ void InitPlugins()
       "    self._color = color\n"
       "  def write(self, str):\n"
       "    GraphImpl.WriteToConsole(str, self._color)\n"
+      "  def readline(self):\n"
+      "    value = GraphImpl.InputQuery()\n"
+      "    if value == None: raise KeyboardInterrupt, 'operation cancelled'\n"
+      "    return value + '\\n'\n"
+
       "sys.stdout = ConsoleWriter(0)\n"
       "sys.stderr = ConsoleWriter(0xFF)\n"
+      "sys.stdin = sys.stdout\n"
 
       "import GraphImpl\n"
       "GraphImpl.version_info = (%d,%d,%d,'%s',%d)\n"
@@ -360,13 +539,12 @@ void InitPlugins()
       "import Graph\n"
       "import vcl\n"
       "import PyVcl\n"
+      "sys.stdin = sys.stdout\n"
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
       , Application->Handle
       , Form1
       , ExtractFileDir(Application->ExeName).c_str()
     ).c_str());
-
-    Form22->WriteText(">>> ");
   }
   else
   {
@@ -375,6 +553,19 @@ void InitPlugins()
   }
 }
 //---------------------------------------------------------------------------
+void ExecutePluginEvent(TPluginEvent PluginEvent)
+{
+  static const char*const EventList[] =
+  {
+    "OnNew",
+    "OnLoad",
+    "OnSelect",
+  };
+  std::string Command = "Graph.ExecuteEvent(Graph. " + std::string(EventList[PluginEvent]) + ")";
+  PyRun_SimpleString(Command.c_str());
+}
+//---------------------------------------------------------------------------
+}
 
 
 

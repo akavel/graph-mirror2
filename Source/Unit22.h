@@ -21,10 +21,13 @@ __published:	// IDE-managed Components
   void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
   int LastIndex;
+  int PromptIndex;
   bool FAllowChange;
   std::vector<AnsiString> TextCache;
   int CacheIndex;
   AnsiString Command;
+
+  void WritePrompt();
 
 public:		// User declarations
   __fastcall TForm22(TComponent* Owner);

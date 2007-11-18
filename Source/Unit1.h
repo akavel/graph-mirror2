@@ -458,6 +458,8 @@ __published:	// IDE-managed Components
   void __fastcall Panel4GetSiteInfo(TObject *Sender, TControl *DockClient,
           TRect &InfluenceRect, TPoint &MousePos, bool &CanDock);
   void __fastcall Timer2Timer(TObject *Sender);
+  void __fastcall TreeViewEndDrag(TObject *Sender, TObject *Target, int X,
+          int Y);
 
 private:	// User declarations
   friend class TAddView;
@@ -481,7 +483,7 @@ private:	// User declarations
   TData PreviewData;
   boost::scoped_ptr<TDraw> PreviewDraw; //Only availble while open dialog is shown
   const int FixedImages; //Number of fixed images in ImageList1 (The rest are dynamically added and deleted)
-  boost::scoped_ptr<struct TImageOptions> ImageOptions; //Used when saving as image
+  boost::scoped_ptr<struct TImageOptions> ActionImageOptions; //Used when saving as image from menu
 
   int HelpError; //Errorcode used for showing help file
   int StatusIcon;
@@ -561,8 +563,8 @@ public:		// User declarations
   void __fastcall BeginUpdate();
   void __fastcall EndUpdate();
 
-  TSaveError SaveAsImage(const AnsiString &FileName);
-  TSaveError SaveAsImage(const AnsiString &FileName, int ImageFileType);
+  TSaveError SaveAsImage(const AnsiString &FileName, const TImageOptions &ImageOptions);
+  TSaveError SaveAsImage(const AnsiString &FileName, int ImageFileType, const TImageOptions &ImageOptions);
   bool LoadFromFile(const AnsiString &FileName, bool AddToRecent = true, bool ShowErrorMessages = true);
   void LoadDefault();
 };

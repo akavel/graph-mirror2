@@ -258,9 +258,23 @@ void TCustomFunctions::Add(const std::string &Str, const std::string &Value)
   SymbolList.Add(CustomFunction.Name, "0", CustomFunction.Arguments);
 }
 //---------------------------------------------------------------------------
+void TCustomFunctions::Add(const std::string &Name, const Func32::TArgType &Args, const std::string &Text)
+{
+  TCustomFunction CustomFunction(Name, Args, Text);
+  SymbolList.Add(Name, Text, CustomFunction.Arguments);
+  std::string LowerName = ToLower(Name);
+  for(TIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
+    if(ToLower(Iter->Name) == LowerName)
+    {
+      *Iter = CustomFunction;
+      return;
+    }
+  Functions.push_back(CustomFunction);
+}
+//---------------------------------------------------------------------------
 void TCustomFunctions::Replace(const std::string &Name, const std::string &Value)
 {
-  for(Iterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
+  for(TIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
     if(Iter->Name == Name)
     {
       Iter->Text = Value;
@@ -272,7 +286,7 @@ void TCustomFunctions::Replace(const std::string &Name, const std::string &Value
 //---------------------------------------------------------------------------
 void TCustomFunctions::Replace(const std::string &Name, long double Value)
 {
-  for(Iterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
+  for(TIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
     if(Iter->Name == Name)
     {
       Iter->Text = ToString(Value);
@@ -282,13 +296,23 @@ void TCustomFunctions::Replace(const std::string &Name, long double Value)
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
 }
 //---------------------------------------------------------------------------
-const std::string& TCustomFunctions::GetValue(const std::string &Name) const
+void TCustomFunctions::Delete(const std::string &Name)
 {
-  for(ConstIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
+  for(TIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
     if(Iter->Name == Name)
     {
-      return Iter->Text;
+      Functions.erase(Iter);
+      SymbolList.Erase(Name);
+      return;
     }
+  throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
+}
+//---------------------------------------------------------------------------
+const TCustomFunction& TCustomFunctions::GetValue(const std::string &Name) const
+{
+  for(TConstIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
+    if(Iter->Name == Name)
+      return *Iter;
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
 }
 //---------------------------------------------------------------------------
@@ -323,7 +347,7 @@ void TCustomFunctions::Update()
 //---------------------------------------------------------------------------
 void TCustomFunctions::WriteToIni(TConfigFile &IniFile) const
 {
-  for(ConstIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
+  for(TConstIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
     IniFile.Write("CustomFunctions", Iter->GetName(), Iter->Text);
 }
 //---------------------------------------------------------------------------

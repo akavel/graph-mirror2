@@ -48,4 +48,6 @@ WideString ToWideString(const std::wstring &Str);
 WideString ToWideString(const std::string &Str);
 WideString ToWideString(const AnsiString &Str);
 
+std::string ToLower(const std::string &Str);
+
 #endif
