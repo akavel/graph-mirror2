@@ -1,7 +1,7 @@
 ;This file was created by Graph (http://www.padowan.dk)
 ;Do not change this file from other programs.
 [Graph]
-Version = 4.3.0.378
+Version = 4.4.0.390
 MinVersion = 2.5
 OS = Windows XP 5.1 Service Pack 2
 
@@ -36,8 +36,8 @@ BackgroundColor = clNone
 ShowInLegend = 0
 
 [Label2]
-Placement = 0
-Pos = -9.79130434782609;-4.43877551020408
+Placement = 6
+Pos = -9.79130434782609;-8.31632653061224
 Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1030{\\fonttbl{\\f0\\fnil\\fprq4\\fcharset0 Times New Roman;}}\n\\viewkind4\\uc1\\pard\\f0\\fs20 Choose Calc|Animate in the menu \\par\nand select one of the constants. \\par\nWhen you click on the Animate \\par\nbutton you will see what happens \\par\nwhen the constant changes.\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
