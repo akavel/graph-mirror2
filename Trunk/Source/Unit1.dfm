@@ -228,6 +228,7 @@ object Form1: TForm1
       OnDblClick = TreeViewDblClick
       OnDragDrop = TreeViewDragDrop
       OnDragOver = TreeViewDragOver
+      OnEndDrag = TreeViewEndDrag
       OnKeyDown = TreeViewKeyDown
       OnKeyPress = TreeViewKeyPress
       OnMouseDown = TreeViewMouseDown

@@ -26,7 +26,7 @@ __fastcall TForm17::TForm17(TComponent* Owner, TData &AData)
 
   unsigned I = 1;
   Grid1->RowCount = Data.CustomFunctions.End() - Data.CustomFunctions.Begin() + 2;
-  for(TCustomFunctions::ConstIterator Iter = Data.CustomFunctions.Begin(); Iter != Data.CustomFunctions.End(); ++Iter, I++)
+  for(TCustomFunctions::TConstIterator Iter = Data.CustomFunctions.Begin(); Iter != Data.CustomFunctions.End(); ++Iter, I++)
   {
     Grid1->Cells[0][I] = Iter->GetName().c_str();
     Grid1->Cells[1][I] = Iter->Text.c_str();

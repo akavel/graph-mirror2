@@ -10,7 +10,18 @@
 #ifndef PythonBindH
 #define PythonBindH
 //---------------------------------------------------------------------------
-void InitPlugins();
-bool ExecutePythonCommand(const AnsiString &Command);
-void ShowPythonConsole();
+namespace PythonBind
+{
+  enum TPluginEvent
+  {
+    peNew,
+    peLoad,
+    peSelect
+  };
+
+  void InitPlugins();
+  bool ExecutePythonCommand(const AnsiString &Command);
+  void ShowPythonConsole();
+  void ExecutePluginEvent(TPluginEvent PluginEvent);
+}
 #endif

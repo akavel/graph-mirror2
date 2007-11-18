@@ -142,6 +142,8 @@ struct TCustomFunction
   std::string Text;
   std::vector<std::string> Arguments;
   TCustomFunction(const std::string &Str, const std::string &AText);
+  TCustomFunction(const std::string &AName, const std::vector<std::string> &AArguments, const std::string &AText)
+    : Name(AName), Arguments(AArguments), Text(AText) {}
   std::string GetName() const;
   static std::string CheckAndTrimName(const std::string &Str, unsigned Offset);
 };
@@ -149,26 +151,28 @@ struct TCustomFunction
 class TCustomFunctions
 {
   std::vector<TCustomFunction> Functions;
-  typedef std::vector<TCustomFunction>::iterator Iterator;
+  typedef std::vector<TCustomFunction>::iterator TIterator;
   const TData &Data;
 
 public:
-  typedef std::vector<TCustomFunction>::const_iterator ConstIterator;
+  typedef std::vector<TCustomFunction>::const_iterator TConstIterator;
   Func32::TSymbolList SymbolList;
   Func32::TSymbolList GlobalSymbolList;
 
   TCustomFunctions(const TData &AData) : Data(AData) {}
   void Add(const std::string &Str, const std::string &Value);
+  void Add(const std::string &Name, const Func32::TArgType &Args, const std::string &Text);
   void Replace(const std::string &Name, const std::string &Value);
   void Replace(const std::string &Name, long double Value);
-  const std::string& GetValue(const std::string &Name) const;
+  void Delete(const std::string &Name);
+  const TCustomFunction& GetValue(const std::string &Name) const;
   void Update();
   void Clear();
   void Swap(TCustomFunctions &Other) {Functions.swap(Other.Functions); SymbolList.Swap(Other.SymbolList);}
   void WriteToIni(TConfigFile &IniFile) const;
   void ReadFromIni(const TConfigFile &IniFile);
-  ConstIterator Begin() const {return Functions.begin();}
-  ConstIterator End() const {return Functions.end();}
+  TConstIterator Begin() const {return Functions.begin();}
+  TConstIterator End() const {return Functions.end();}
 };
 
 struct TAnimationConstant

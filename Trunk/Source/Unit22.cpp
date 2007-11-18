@@ -3,14 +3,16 @@
 #pragma hdrstop
 #include "Unit22.h"
 #include "PythonBind.h"
+#include <clipbrd.hpp>
 //---------------------------------------------------------------------------
 #pragma link "IRichEdit"
 #pragma resource "*.dfm"
 TForm22 *Form22 = NULL;
 //---------------------------------------------------------------------------
 __fastcall TForm22::TForm22(TComponent* Owner)
-  : TForm(Owner), LastIndex(0), FAllowChange(false), CacheIndex(0), TextCache(1)
+  : TForm(Owner), LastIndex(0), FAllowChange(false), CacheIndex(0), TextCache(1), PromptIndex(0)
 {
+  WritePrompt();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm22::FormHide(TObject *Sender)
@@ -23,12 +25,14 @@ void TForm22::WriteText(const AnsiString &Str, TColor Color)
 {
   FAllowChange = true;
   IRichEdit1->TextFormat.SetColor(Color);
-  IRichEdit1->SelStart = LastIndex;
+  int OldSelStart = IRichEdit1->SelStart;
+  IRichEdit1->SelStart = PromptIndex;
   IRichEdit1->SelText = Str;
-  LastIndex = IRichEdit1->SelStart;
-  IRichEdit1->GlobalTextFormat.SetProtected(true);
-  IRichEdit1->SelLength = 1;
-  IRichEdit1->TextFormat.SetProtected(false);
+  int IndexChange = IRichEdit1->SelStart - PromptIndex;
+  LastIndex += IndexChange;
+  PromptIndex = IRichEdit1->SelStart;
+  IRichEdit1->SelStart = OldSelStart + IndexChange;
+  IRichEdit1->TextFormat.SetProtected(true);
   IRichEdit1->SelLength = 0;
   FAllowChange = false;
   SendMessage(IRichEdit1->Handle, WM_VSCROLL, SB_BOTTOM, 0);
@@ -43,6 +47,15 @@ void __fastcall TForm22::IRichEdit1ProtectChange(TObject *Sender,
 void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
+  //Catch Paste (Ctrl+V or Shift+Insert)
+  if((Shift == (TShiftState() << ssCtrl) && Key == 'V') ||
+     (Shift == (TShiftState() << ssShift) && Key == VK_INSERT))
+  {
+    IRichEdit1->SelText = Clipboard()->AsText;
+    Key = 0;
+    return;
+  }
+
   if(!Shift.Empty())
     return;
     
@@ -93,11 +106,12 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
       AnsiString Str = IRichEdit1->GetText(LastIndex, MAXINT);
       IRichEdit1->SelStart = MAXINT;
       IRichEdit1->SelText = "\r";
-      LastIndex = IRichEdit1->SelStart;
+      PromptIndex = IRichEdit1->SelStart;
       Command += Str;
-      if(ExecutePythonCommand(Command))
+
+      if(PythonBind::ExecutePythonCommand(Command))
       {
-        WriteText(">>> ");
+        WritePrompt();
         Command = "";
       }
       else
@@ -131,6 +145,23 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
 void __fastcall TForm22::FormShow(TObject *Sender)
 {
   IRichEdit1->SelStart = MAXINT;
+}
+//---------------------------------------------------------------------------
+void TForm22::WritePrompt()
+{
+//  WriteText(">>> ");
+  FAllowChange = true;
+  IRichEdit1->TextFormat.SetColor(clBlack);
+  IRichEdit1->SelStart = MAXINT;
+  PromptIndex = IRichEdit1->SelStart;
+  IRichEdit1->SelText = ">>> ";
+  LastIndex = IRichEdit1->SelStart;
+  IRichEdit1->GlobalTextFormat.SetProtected(true);
+  IRichEdit1->SelLength = 1;
+  IRichEdit1->TextFormat.SetProtected(false);
+  IRichEdit1->SelLength = 0;
+  FAllowChange = false;
+  SendMessage(IRichEdit1->Handle, WM_VSCROLL, SB_BOTTOM, 0);
 }
 //---------------------------------------------------------------------------
 

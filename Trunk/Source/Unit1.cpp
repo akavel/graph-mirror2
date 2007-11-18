@@ -185,10 +185,10 @@ void TForm1::HandleCommandLine()
       {
         int ImageWidth = CommandList["width"].ToIntDef(Image1->Width);
         int ImageHeight = CommandList["height"].ToIntDef(Image1->Height);
-        ImageOptions.reset(new TImageOptions(ImageWidth, ImageHeight));
-        ImageOptions->UseCustomSize = true;
+        TImageOptions ImageOptions(ImageWidth, ImageHeight);
+        ImageOptions.UseCustomSize = true;
         AnsiString FileName = Iter->second;
-        SaveAsImage(FileName);
+        SaveAsImage(FileName, ImageOptions);
         Close();
       }
     }
@@ -222,7 +222,7 @@ void __fastcall TForm1::FormShow(TObject *Sender)
   PostMessage(Handle, WM_USER, 0, 0);
 
   TreeView->SetFocus();
-  ShowPythonConsole();
+  PythonBind::ShowPythonConsole();
 }
 //---------------------------------------------------------------------------
 void TForm1::Initialize()
@@ -753,7 +753,7 @@ void TForm1::LoadSettings(void)
   IPrintDialog1->Orientation = Registry.ReadEnum("Orientation", poPortrait);
   UndoList.SetMaxUndo(Registry.Read("MaxUndo", 50));
 
-  InitPlugins();
+  PythonBind::InitPlugins();
 
   if(Registry.ValueExists("ToolBar"))
     CreateToolBar(Registry.Read("ToolBar", "").c_str());
@@ -902,7 +902,7 @@ void TForm1::UpdateMenu()
 
   //Enable animation if there are any constants defined
   AnimateAction->Enabled = false;
-  for(TCustomFunctions::ConstIterator Iter = Data.CustomFunctions.Begin(); Iter != Data.CustomFunctions.End(); ++Iter)
+  for(TCustomFunctions::TConstIterator Iter = Data.CustomFunctions.Begin(); Iter != Data.CustomFunctions.End(); ++Iter)
     if(Iter->Arguments.empty())
     {
       AnimateAction->Enabled = true;
@@ -1326,7 +1326,7 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       break;
   }
 
-  if(Shift.Contains(ssCtrl))
+  if(Shift.Contains(ssCtrl) && !Shift.Contains(ssAlt))
   {
     if(Shift.Contains(ssShift))
     {
@@ -1416,8 +1416,11 @@ void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
   SetScrollPos(TreeView->Handle, SB_VERT, Pos, false);
   SendMessage(TreeView->Parent->Handle, WM_SETREDRAW, true, 0);
   RedrawWindow(TreeView->Parent->Handle, NULL, 0, RDW_INVALIDATE | RDW_ALLCHILDREN);
-  if(Selected)
-    PostMessage(TreeView->Handle, TVM_ENSUREVISIBLE, 0, (LONG)TreeView->Selected->ItemId);
+  if(TreeView->Selected)
+    PostMessage(TreeView->Handle, TVM_ENSUREVISIBLE, 0, (LONG)TreeView->Selected->ItemId); //SendMessage doesn't work
+  //If the item is wider than the tree view, TVM_ENSUREVISIBLE will center the tree view.
+  //PostMessage WM_HSCROLL will move the scroll bar back.
+  PostMessage(TreeView->Handle, WM_HSCROLL, SB_TOP, 0);
 }
 //---------------------------------------------------------------------------
 void TForm1::ChangeVisible(boost::shared_ptr<TGraphElem> GraphElem)
@@ -1743,12 +1746,12 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
     "Joint Photographic Experts Group [*.jpg,*.jpeg]|*.jpg;*.jpeg|"
     "Portable Document Format [*.pdf]|*.pdf";
 
-  ImageOptions.reset(new TImageOptions(Image1->Width, Image1->Height));
-  ImageOptions->LoadSettings();
+  ActionImageOptions.reset(new TImageOptions(Image1->Width, Image1->Height));
+  ActionImageOptions->LoadSettings();
   if(SaveDialogEx1->Execute())
   {
     AnsiString FileName = SaveDialogEx1->FileName; //SaveAsImage() calls ProcessMessages() and may change SaveDialogEx1
-    switch(SaveAsImage(FileName, SaveDialogEx1->FilterIndex))
+    switch(SaveAsImage(FileName, SaveDialogEx1->FilterIndex, *ActionImageOptions))
     {
       case seFileAccess:
         MessageBox(LoadRes(RES_FILE_ACCESS, FileName), LoadRes(RES_ERROR), MB_OK | MB_ICONSTOP);
@@ -2794,8 +2797,8 @@ TSaveError SaveAsPdf(const AnsiString &FileName, Graphics::TBitmap *Bitmap, cons
     return sePdfError;
   }
 }
-
-TSaveError TForm1::SaveAsImage(const AnsiString &FileName)
+//---------------------------------------------------------------------------
+TSaveError TForm1::SaveAsImage(const AnsiString &FileName, const TImageOptions &ImageOptions)
 {
   int ImageFileType;
   AnsiString FileExt = ExtractFileExt(FileName);
@@ -2812,14 +2815,14 @@ TSaveError TForm1::SaveAsImage(const AnsiString &FileName)
   else
     return seUnknownFileType;
 
-  return SaveAsImage(FileName, ImageFileType);
+  return SaveAsImage(FileName, ImageFileType, ImageOptions);
 }
-
-TSaveError TForm1::SaveAsImage(const AnsiString &FileName, int ImageFileType)
+//---------------------------------------------------------------------------
+TSaveError TForm1::SaveAsImage(const AnsiString &FileName, int ImageFileType, const TImageOptions &ImageOptions)
 {
   try
   {
-    bool SameSize = !ImageOptions->UseCustomSize;
+    bool SameSize = !ImageOptions.UseCustomSize;
 
     //Show save icon in status bar
     SetStatusIcon(iiSave);
@@ -2829,13 +2832,13 @@ TSaveError TForm1::SaveAsImage(const AnsiString &FileName, int ImageFileType)
     if(ImageFileType == ifMetafile/* || ImageFileType == ifPostScript*/)
     {
       std::auto_ptr<TMetafile> Metafile(new TMetafile);
-      Metafile->Width = ImageOptions->CustomWidth;
-      Metafile->Height = ImageOptions->CustomHeight;
+      Metafile->Width = ImageOptions.CustomWidth;
+      Metafile->Height = ImageOptions.CustomHeight;
 
       std::auto_ptr<TMetafileCanvas> Meta(new TMetafileCanvas(Metafile.get(), 0));
       TData MetaData(Data);
       TDraw FileDraw(Meta.get(), SameSize ? &Data : &MetaData, false, "Metafile DrawThread");
-      FileDraw.SetArea(TRect(0, 0, ImageOptions->CustomWidth, ImageOptions->CustomHeight));  //Set drawing area
+      FileDraw.SetArea(TRect(0, 0, ImageOptions.CustomWidth, ImageOptions.CustomHeight));  //Set drawing area
 
       FileDraw.DrawAll();
       if(SameSize)
@@ -2858,9 +2861,9 @@ TSaveError TForm1::SaveAsImage(const AnsiString &FileName, int ImageFileType)
     else
     {
       std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-      Bitmap->Width = ImageOptions->CustomWidth;
-      Bitmap->Height = ImageOptions->CustomHeight;
-      TRect Rect(0, 0, ImageOptions->CustomWidth, ImageOptions->CustomHeight);
+      Bitmap->Width = ImageOptions.CustomWidth;
+      Bitmap->Height = ImageOptions.CustomHeight;
+      TRect Rect(0, 0, ImageOptions.CustomWidth, ImageOptions.CustomHeight);
       if(SameSize)
         Bitmap->Canvas->CopyRect(Rect, Image1->Picture->Bitmap->Canvas, Rect);
       else
@@ -2897,15 +2900,15 @@ TSaveError TForm1::SaveAsImage(const AnsiString &FileName, int ImageFileType)
         {
           std::auto_ptr<TJPEGImage> Image(new TJPEGImage);
           Image->Assign(Bitmap.get());
-          Image->CompressionQuality = ImageOptions->Jpeg.Quality;
-          Image->ProgressiveEncoding = ImageOptions->Jpeg.ProgressiveEncoding;
+          Image->CompressionQuality = ImageOptions.Jpeg.Quality;
+          Image->ProgressiveEncoding = ImageOptions.Jpeg.ProgressiveEncoding;
           Image->Compress();
           Image->SaveToFile(FileName);
           break;
         }
 
         case ifPdf:
-          return SaveAsPdf(FileName, Bitmap.get(), Data.GetFileName(), ToString(Data.Axes.Title), ImageOptions->Pdf.Orientation);
+          return SaveAsPdf(FileName, Bitmap.get(), Data.GetFileName(), ToString(Data.Axes.Title), ImageOptions.Pdf.Orientation);
       }
     }
   }
@@ -3064,6 +3067,7 @@ void TForm1::LoadDefault()
   Caption = NAME;
   Application->Title = NAME;
   UpdateMenu();
+  PythonBind::ExecutePluginEvent(PythonBind::peNew);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::OpenPreviewDialog1Show(TObject *Sender)
@@ -3289,7 +3293,7 @@ void __fastcall TForm1::CustomFunctionsActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::SaveDialogEx1Help(TObject *Sender)
 {
-  CreateForm<TForm18>()->EditOptions(*ImageOptions, static_cast<TImageFormat>(SaveDialogEx1->FilterIndex), Image1->Width, Image1->Height);
+  CreateForm<TForm18>()->EditOptions(*ActionImageOptions, static_cast<TImageFormat>(SaveDialogEx1->FilterIndex), Image1->Width, Image1->Height);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::PlacementClick(TObject *Sender)
@@ -3684,7 +3688,27 @@ void __fastcall TForm1::Panel4GetSiteInfo(TObject *Sender,
 void __fastcall TForm1::Timer2Timer(TObject *Sender)
 {
   TPoint Pos = TreeView->ScreenToClient(Mouse->CursorPos);
-  PostMessage(TreeView->Handle, WM_VSCROLL, Pos.y < 10 ? SB_LINEUP : SB_LINEDOWN, 0);
+  if(Pos.y < 10)
+  {
+    if(TTntTreeNode *Node = TreeView->TopItem->getPrevSibling())
+    {
+      TreeView->TopItem = Node;
+      TreeView->Invalidate();
+    }
+  }
+  else if(Pos.y > TreeView->Height - 15)
+    if(TTntTreeNode *Node = TreeView->TopItem->getNextSibling())
+    {
+      TreeView->TopItem = Node;
+      TreeView->Invalidate();
+    }
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::TreeViewEndDrag(TObject *Sender, TObject *Target,
+      int X, int Y)
+{
+  Timer2->Enabled = false;
+}
+//---------------------------------------------------------------------------
+
 

@@ -8,7 +8,6 @@ import GraphImpl
 def InitPlugins():
     print "Loading plugins..."
 
-    sys.stdin = None
     PluginsDir = os.path.dirname(sys.argv[0]) + '\\Plugins'
     sys.path.append(PluginsDir)
 
@@ -38,5 +37,35 @@ class Action(object):
     def __setattr__(self, name, value):
         GraphImpl.SetActionAttr(self.id, **{name:value})
 
+import UserDict
+class ConstantsType(UserDict.DictMixin):
+    def keys(self):
+        return GraphImpl.GetConstantNames()
+    def __getitem__(self, name):
+        value = GraphImpl.GetConstant(name)
+        return value[1] if value[0] == None else (value[1],) + value[0]
+    def __setitem__(self, name, value):
+        if value.__class__ == tuple:
+            GraphImpl.SetConstant(name, value[1:], str(value[0]))
+        else:
+            GraphImpl.SetConstant(name, None, str(value))
+    def __delitem__(self, name):
+        GraphImpl.DelConstant(name)
+
+def ExecuteEvent(eventlist):
+    for action in eventlist:
+        try:
+            action()
+        except:
+            traceback.print_exc()
+        
+Constants = ConstantsType()
+
 Eval = GraphImpl.Eval
 EvalComplex = GraphImpl.EvalComplex
+SaveAsImage = GraphImpl.SaveAsImage
+Update = GraphImpl.Update
+
+OnNew = []
+OnLoad = []
+OnSelect = []
