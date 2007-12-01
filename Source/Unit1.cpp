@@ -55,7 +55,7 @@
 #include "ConfigRegistry.h"
 #include <TypInfo.hpp>
 #include "OleObjectElem.h"
-#include "PythonBind.h"
+#include "PyGraph.h"
 #include "Encode.h"
 #include "ICompCommon.h"
 //---------------------------------------------------------------------------
@@ -222,7 +222,7 @@ void __fastcall TForm1::FormShow(TObject *Sender)
   PostMessage(Handle, WM_USER, 0, 0);
 
   TreeView->SetFocus();
-  PythonBind::ShowPythonConsole();
+  Python::ShowPythonConsole();
 }
 //---------------------------------------------------------------------------
 void TForm1::Initialize()
@@ -753,7 +753,7 @@ void TForm1::LoadSettings(void)
   IPrintDialog1->Orientation = Registry.ReadEnum("Orientation", poPortrait);
   UndoList.SetMaxUndo(Registry.Read("MaxUndo", 50));
 
-  PythonBind::InitPlugins();
+  Python::InitPlugins();
 
   if(Registry.ValueExists("ToolBar"))
     CreateToolBar(Registry.Read("ToolBar", "").c_str());
@@ -1251,6 +1251,7 @@ void __fastcall TForm1::TreeViewChange(TObject *Sender, TTreeNode *Node)
   //Necessary because Form9 may not have been loaded yet
   if(Form9)
     Form9->FuncChanged(GetGraphElem(Node));
+  Python::ExecutePluginEvent(Python::peSelect);  
 }
 //---------------------------------------------------------------------------
 void TForm1::ChangeLanguage(const AnsiString &Lang)
@@ -1396,7 +1397,7 @@ void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
   int Pos = GetScrollPos(TreeView->Handle, SB_VERT);
 
   int Index = TreeView->Selected ? TreeView->Selected->AbsoluteIndex : -1;
-  TreeView->Selected = NULL;
+//  TreeView->Selected = NULL;
   TreeView->Items->Clear();
 
   while(ImageList1->Count > FixedImages)
@@ -2406,7 +2407,7 @@ AnsiString TForm1::GetToolBar()
     TContainedAction *Action = ActionToolBar1->ActionClient->Items->ActionClients[I]->Action;
     if(Action == NULL)
       Str += "-,";
-    else
+    else if(!Action->Name.IsEmpty())
       Str += Action->Name + ',';
   }
   return Str;
@@ -2999,6 +3000,7 @@ bool TForm1::LoadFromFile(const AnsiString &FileName, bool AddToRecent, bool Sho
 
   Application->Title = AnsiString(NAME) + " - " + ExtractFileName(FileName);
   UpdateMenu();
+  Python::ExecutePluginEvent(Python::peLoad);
   return true;
 }
 //---------------------------------------------------------------------------
@@ -3067,7 +3069,7 @@ void TForm1::LoadDefault()
   Caption = NAME;
   Application->Title = NAME;
   UpdateMenu();
-  PythonBind::ExecutePluginEvent(PythonBind::peNew);
+  Python::ExecutePluginEvent(Python::peNew);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::OpenPreviewDialog1Show(TObject *Sender)
@@ -3708,6 +3710,13 @@ void __fastcall TForm1::TreeViewEndDrag(TObject *Sender, TObject *Target,
       int X, int Y)
 {
   Timer2->Enabled = false;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::ExecuteFunction(TMessage &Message)
+{
+  typedef int (*TFunction)(int Arg);
+  TFunction Function = (TFunction)Message.WParam;
+  Message.Result = Function(Message.LParam);
 }
 //---------------------------------------------------------------------------
 

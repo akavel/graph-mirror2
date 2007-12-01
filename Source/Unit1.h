@@ -522,6 +522,7 @@ private:	// User declarations
   void __fastcall WMEnterSizeMove(TMessage &Message);
   void __fastcall WMExitSizeMove(TMessage &Message);
   void __fastcall WMUser(TMessage &Message);
+  void __fastcall ExecuteFunction(TMessage &Message);
 
   //Workaround for bug in VCL
   void __fastcall WndProc(TMessage &Message);
@@ -531,6 +532,7 @@ BEGIN_MESSAGE_MAP
   VCL_MESSAGE_HANDLER(WM_ENTERSIZEMOVE,TMessage, WMEnterSizeMove)
   VCL_MESSAGE_HANDLER(WM_EXITSIZEMOVE,TMessage, WMExitSizeMove)
   VCL_MESSAGE_HANDLER(WM_USER, TMessage, WMUser)
+  VCL_MESSAGE_HANDLER(WM_USER+1, TMessage, ExecuteFunction);
 END_MESSAGE_MAP(TForm)
 
 public:		// User declarations

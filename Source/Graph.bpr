@@ -10,14 +10,14 @@
       ..\Obj\Encode.obj ..\Obj\Graph.obj ..\Obj\GraphElem.obj 
       ..\Obj\GuiHelper.obj ..\Obj\GuiUtil.obj ..\Obj\IGraphic.obj 
       ..\Obj\OleObjectElem.obj ..\Obj\OleServerImpl.obj ..\Obj\PngHelper.obj 
-      ..\Obj\PythonBind.obj ..\Obj\PyVcl.obj ..\Obj\Settings.obj 
-      ..\Obj\StackTrace.obj ..\Obj\VersionInfo.obj ..\Obj\Undo.obj 
-      ..\Obj\Unit1.obj ..\Obj\Unit2.obj ..\Obj\Unit3.obj ..\Obj\Unit4.obj 
-      ..\Obj\Unit5.obj ..\Obj\Unit6.obj ..\Obj\Unit7.obj ..\Obj\Unit8.obj 
-      ..\Obj\Unit9.obj ..\Obj\Unit10.obj ..\Obj\Unit11.obj ..\Obj\Unit12.obj 
-      ..\Obj\Unit13.obj ..\Obj\Unit14.obj ..\Obj\Unit15.obj ..\Obj\Unit16.obj 
-      ..\Obj\Unit17.obj ..\Obj\Unit18.obj ..\Obj\Unit19.obj ..\Obj\Unit20.obj 
-      ..\Obj\Unit21.obj ..\Obj\Unit22.obj ..\Obj\Tokenizer.obj 
+      ..\Obj\PyGraph.obj ..\Obj\PythonBind.obj ..\Obj\PyVcl.obj 
+      ..\Obj\Settings.obj ..\Obj\StackTrace.obj ..\Obj\VersionInfo.obj 
+      ..\Obj\Undo.obj ..\Obj\Unit1.obj ..\Obj\Unit2.obj ..\Obj\Unit3.obj 
+      ..\Obj\Unit4.obj ..\Obj\Unit5.obj ..\Obj\Unit6.obj ..\Obj\Unit7.obj 
+      ..\Obj\Unit8.obj ..\Obj\Unit9.obj ..\Obj\Unit10.obj ..\Obj\Unit11.obj 
+      ..\Obj\Unit12.obj ..\Obj\Unit13.obj ..\Obj\Unit14.obj ..\Obj\Unit15.obj 
+      ..\Obj\Unit16.obj ..\Obj\Unit17.obj ..\Obj\Unit18.obj ..\Obj\Unit19.obj 
+      ..\Obj\Unit20.obj ..\Obj\Unit21.obj ..\Obj\Unit22.obj ..\Obj\Tokenizer.obj 
       ..\Obj\TStdFuncFrame.obj ..\Obj\TParFuncFrame.obj ..\Obj\TPolFuncFrame.obj 
       ..\Obj\TTanFrame.obj ..\Obj\TAreaFrame.obj ..\Obj\pdflib.obj 
       ..\..\dxgettext\gnugettext.obj"/>
@@ -105,6 +105,7 @@
       <FILE FILENAME="OleObjectElem.cpp" FORMNAME="" UNITNAME="OleObjectElem" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="OleServerImpl.cpp" FORMNAME="" UNITNAME="OleServerImpl" COCLASSES="OleServer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\Components\Common\PngHelper.cpp" FORMNAME="" UNITNAME="PngHelper" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="PyGraph.cpp" FORMNAME="" UNITNAME="PyGraph" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="PythonBind.cpp" FORMNAME="" UNITNAME="PythonBind" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="PyVcl.cpp" FORMNAME="" UNITNAME="PyVcl" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Settings.cpp" FORMNAME="" UNITNAME="Settings" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>

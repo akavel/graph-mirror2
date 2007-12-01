@@ -4,15 +4,17 @@ class TObject(object):
     def __init__(self, handle=0, owned=True, **keywords):
         object.__setattr__(self, "_handle", handle)
         object.__setattr__(self, "_owned", owned)
+        object.__setattr__(self, "Components", VclListWrapperType(handle, "Components", "ComponentCount"))
+        object.__setattr__(self, "Actions", VclListWrapperType(handle, "Actions", "ActionCount"))
         for name, value in keywords.iteritems():
-            PyVcl.SetProperty(handle, name, value, self)
+            self.__setattr__(name, value)
 
     @property
     def PropertyList(self):
         return PyVcl.GetPropertyList(self._handle)
         
     def __del__(self):
-        if self._owned:
+        if "_owned" in self.__dict__ and self._owned:
             PyVcl.DeleteObject(self._handle)
     def __getattr__(self, name):
         result = PyVcl.GetProperty(self._handle, name)
@@ -22,13 +24,16 @@ class TObject(object):
     def __setattr__(self, name, value):
         PyVcl.SetProperty(self._handle, name, value, self)
 
+    def __repr__(self):
+        return "<object '%s' of type '%s' instance of %s.%s>" % (self.Name, self.ClassName, self.__class__.__module__, self.__class__.__name__)
+
 class TForm(TObject):
     def __init__(self, handle = 0, **keywords):
         TObject.__init__(self, PyVcl.CreateObject("TForm") if handle == 0 else handle, **keywords)
     def __setattr__(self, name, value):
         try:
             PyVcl.SetProperty(self._handle, name, value, self)
-        except PyVcl.PropertyError:
+        except PropertyError:
             object.__setattr__(self, name, value)
     def ShowModal(self):
         PyVcl.CallMethod(self._handle, "ShowModal")
@@ -72,5 +77,34 @@ class SimpleDialog(TForm):
     def OnOk(self, sender):
         self.Close()
 
-def test(*args):
-    print args
+class TAction(TObject):
+    def __init__(self, **keywords):
+        import GraphImpl
+        TObject.__init__(self, GraphImpl.CreateAction(), owned=False, **keywords)
+    def __setattr__(self, name, value):
+        if name == "ShortCut":
+            TObject.__setattr__(self, "ShortCut", PyVcl.CallFunction("TextToShortCut", int, value) & 0xFFFF)
+        else:
+            TObject.__setattr__(self, name, value)
+    @property
+    def ShortCut(self):
+        return PyVcl.CallFunction("ShortCutToText", str, TObject.__getattr__(self, "ShortCut"))
+
+import UserList
+class VclListWrapperType(UserList.UserList):
+    def __init__(self, handle, listname, countname):
+        self._handle = handle
+        self._listname = listname
+        self._countname = countname
+    def __getitem__(self, key):
+        try:
+            return TObject(PyVcl.GetProperty(self._handle, self._listname, key)[0], owned=False)
+        except VclError:
+            raise IndexError
+    def __len__(self):
+        return PyVcl.GetProperty(self._handle, self._countname)[0]
+    def __repr__(self):
+        return repr(list(self))
+
+PropertyError = PyVcl.PropertyError
+VclError = PyVcl.VclError
