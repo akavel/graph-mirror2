@@ -10,18 +10,19 @@
 #ifndef PythonBindH
 #define PythonBindH
 //---------------------------------------------------------------------------
-namespace PythonBind
-{
-  enum TPluginEvent
-  {
-    peNew,
-    peLoad,
-    peSelect
-  };
+struct _object;
+struct _typeobject;
 
-  void InitPlugins();
-  bool ExecutePythonCommand(const AnsiString &Command);
-  void ShowPythonConsole();
-  void ExecutePluginEvent(TPluginEvent PluginEvent);
+namespace Python
+{
+extern _typeobject &PyTuple_Type;
+extern _typeobject &PyInt_Type;
+extern _typeobject &PyString_Type;
+extern _typeobject &PyUnicode_Type;
+extern _object *PyExc_TypeError;
+extern _object *PyExc_KeyError;
+extern _object &_Py_NoneStruct;
+
+bool IsPythonInstalled();
 }
 #endif

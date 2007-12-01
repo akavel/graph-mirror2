@@ -34,9 +34,18 @@ object Form22: TForm22
     Font.Height = -13
     Font.Name = 'Courier New'
     Font.Style = []
+    PopupMenu = PopupMenu1
     ParentFont = False
     TabOrder = 0
     OnKeyDown = IRichEdit1KeyDown
     OnProtectChange = IRichEdit1ProtectChange
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 8
+    Top = 8
+    object Clear1: TMenuItem
+      Caption = 'Clear'
+      OnClick = Clear1Click
+    end
   end
 end

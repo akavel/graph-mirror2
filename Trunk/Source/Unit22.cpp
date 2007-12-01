@@ -2,7 +2,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit22.h"
-#include "PythonBind.h"
+#include "PyGraph.h"
 #include <clipbrd.hpp>
 //---------------------------------------------------------------------------
 #pragma link "IRichEdit"
@@ -10,9 +10,16 @@
 TForm22 *Form22 = NULL;
 //---------------------------------------------------------------------------
 __fastcall TForm22::TForm22(TComponent* Owner)
-  : TForm(Owner), LastIndex(0), FAllowChange(false), CacheIndex(0), TextCache(1), PromptIndex(0)
+  : TForm(Owner), LastIndex(0), FAllowChange(false), CacheIndex(0), TextCache(1), PromptIndex(0),
+    IndentLevel(0)
 {
   WritePrompt();
+  Canvas->Font->Assign(IRichEdit1->Font);
+  int CharWidth = (Canvas->TextWidth("A") * 15)/20;
+  IRichEdit1->Paragraph->TabCount = 22;
+  int x = CharWidth * 4;
+  for(int I = 0; I < IRichEdit1->Paragraph->TabCount; I++, x+=CharWidth*2)
+    IRichEdit1->Paragraph->Tab[I] = x;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm22::FormHide(TObject *Sender)
@@ -24,15 +31,14 @@ void __fastcall TForm22::FormHide(TObject *Sender)
 void TForm22::WriteText(const AnsiString &Str, TColor Color)
 {
   FAllowChange = true;
-  IRichEdit1->TextFormat.SetColor(Color);
   int OldSelStart = IRichEdit1->SelStart;
   IRichEdit1->SelStart = PromptIndex;
+  IRichEdit1->TextFormat.SetColor(Color);
   IRichEdit1->SelText = Str;
   int IndexChange = IRichEdit1->SelStart - PromptIndex;
   LastIndex += IndexChange;
   PromptIndex = IRichEdit1->SelStart;
   IRichEdit1->SelStart = OldSelStart + IndexChange;
-  IRichEdit1->TextFormat.SetProtected(true);
   IRichEdit1->SelLength = 0;
   FAllowChange = false;
   SendMessage(IRichEdit1->Handle, WM_VSCROLL, SB_BOTTOM, 0);
@@ -97,27 +103,31 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
           IRichEdit1->SelLength = MAXINT;
           IRichEdit1->SelText = TextCache[++CacheIndex];
         }
-        Key = 0;  
+        Key = 0;
       }
       break;
 
     case VK_RETURN:
     {
       AnsiString Str = IRichEdit1->GetText(LastIndex, MAXINT);
+      Str = Str.TrimRight();
       IRichEdit1->SelStart = MAXINT;
       IRichEdit1->SelText = "\r";
       PromptIndex = IRichEdit1->SelStart;
       Command += Str;
 
-      if(PythonBind::ExecutePythonCommand(Command))
+      if(Python::ExecutePythonCommand(Command))
       {
         WritePrompt();
         Command = "";
+        IndentLevel = 0;
       }
       else
       {
-        WriteText("... ");
+        WritePrompt("... ");
         Command += "\n";
+        if(!Str.IsEmpty() && Str[Str.Length()] == ':')
+          IndentLevel++;
       }
 
       if(!Str.IsEmpty())
@@ -126,10 +136,7 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
         TextCache.push_back(AnsiString());
       }
       CacheIndex = TextCache.size() - 1;
-
-      if(!Str.IsEmpty() && Str[Str.Length()] == ':')
-        IRichEdit1->SelText = "\t";
-
+      IRichEdit1->SelText = AnsiString::StringOfChar('\t', IndentLevel);
       Key = 0;
       break;
     }
@@ -147,14 +154,13 @@ void __fastcall TForm22::FormShow(TObject *Sender)
   IRichEdit1->SelStart = MAXINT;
 }
 //---------------------------------------------------------------------------
-void TForm22::WritePrompt()
+void TForm22::WritePrompt(const AnsiString &Str)
 {
-//  WriteText(">>> ");
   FAllowChange = true;
   IRichEdit1->TextFormat.SetColor(clBlack);
   IRichEdit1->SelStart = MAXINT;
   PromptIndex = IRichEdit1->SelStart;
-  IRichEdit1->SelText = ">>> ";
+  IRichEdit1->SelText = Str;
   LastIndex = IRichEdit1->SelStart;
   IRichEdit1->GlobalTextFormat.SetProtected(true);
   IRichEdit1->SelLength = 1;
@@ -164,4 +170,16 @@ void TForm22::WritePrompt()
   SendMessage(IRichEdit1->Handle, WM_VSCROLL, SB_BOTTOM, 0);
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm22::Clear1Click(TObject *Sender)
+{
+  FAllowChange = true;
+  IRichEdit1->Clear();
+  FAllowChange = false;
+  LastIndex = 0;
+  PromptIndex = 0;
+  WritePrompt();
+}
+//---------------------------------------------------------------------------
+
+
 

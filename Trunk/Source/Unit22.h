@@ -8,17 +8,21 @@
 #include <Forms.hpp>
 #include <ComCtrls.hpp>
 #include "IRichEdit.h"
+#include <Menus.hpp>
 //---------------------------------------------------------------------------
 class TForm22 : public TForm
 {
 __published:	// IDE-managed Components
   TIRichEdit *IRichEdit1;
+  TPopupMenu *PopupMenu1;
+  TMenuItem *Clear1;
   void __fastcall FormHide(TObject *Sender);
   void __fastcall IRichEdit1ProtectChange(TObject *Sender, int StartPos,
           int EndPos, bool &AllowChange);
   void __fastcall IRichEdit1KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
   void __fastcall FormShow(TObject *Sender);
+  void __fastcall Clear1Click(TObject *Sender);
 private:	// User declarations
   int LastIndex;
   int PromptIndex;
@@ -26,8 +30,9 @@ private:	// User declarations
   std::vector<AnsiString> TextCache;
   int CacheIndex;
   AnsiString Command;
+  int IndentLevel;
 
-  void WritePrompt();
+  void WritePrompt(const AnsiString &Str = ">>> ");
 
 public:		// User declarations
   __fastcall TForm22(TComponent* Owner);

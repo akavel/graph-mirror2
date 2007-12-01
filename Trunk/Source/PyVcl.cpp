@@ -12,14 +12,28 @@
 #include "PyVcl.h"
 #undef _DEBUG
 #include <python.h>
+#include "PythonBind.h"
 
 //Workaround for name mangling bug in GetPropList()
 #pragma alias "@Typinfo@GetPropList$qqrp14System@TObjectrpp17Typinfo@TPropInfo"\
 ="@Typinfo@GetPropList$qqrp14System@TObjectrpa16380$p17Typinfo@TPropInfo"
+
+#define NAME_VALUE_ENTRY(x) {#x, (TFastcallFunction)x}
+
+namespace Python
+{
 //---------------------------------------------------------------------------
 static PyObject *PyPropertyException = NULL;
 static PyObject *PyVclException = NULL;
-
+//---------------------------------------------------------------------------
+template<class T> T VclCast(TObject *Object)
+{
+  if(T O = dynamic_cast<T>(Object))
+    return O;
+  throw EConvertError(AnsiString().sprintf("Cannot convert object of type '%s' to '%s'",
+    AnsiString(Object->ClassName()).c_str(), typeid(T).name()));  
+}
+//---------------------------------------------------------------------------
 struct TPythonCallback : public TObject
 {
   PyObject *Callback;
@@ -60,19 +74,7 @@ struct TPythonCallback : public TObject
   }
 };
 //---------------------------------------------------------------------------
-PyObject* PyNone()
-{
-  static PyObject *None = Py_BuildValue("");
-  return None;
-}
-//---------------------------------------------------------------------------
-PyObject* PyReturnNone()
-{
-  Py_INCREF(PyNone());
-  return PyNone();
-}
-//---------------------------------------------------------------------------
-static PyObject* CreateObject(PyObject *Self, PyObject *Args)
+static PyObject* VclCreateObject(PyObject *Self, PyObject *Args)
 {
   try
   {
@@ -94,7 +96,7 @@ static PyObject* CreateObject(PyObject *Self, PyObject *Args)
   }
 }
 //---------------------------------------------------------------------------
-static PyObject* DeleteObject(PyObject *Self, PyObject *Args)
+static PyObject* VclDeleteObject(PyObject *Self, PyObject *Args)
 {
   try
   {
@@ -103,7 +105,7 @@ static PyObject* DeleteObject(PyObject *Self, PyObject *Args)
       return NULL;
 
     delete Object;
-    return PyReturnNone();
+    Py_RETURN_NONE;
   }
   catch(Exception &E)
   {
@@ -113,7 +115,7 @@ static PyObject* DeleteObject(PyObject *Self, PyObject *Args)
 
 }
 //---------------------------------------------------------------------------
-static PyObject* SetProperty(PyObject *Self, PyObject *Args)
+static PyObject* VclSetProperty(PyObject *Self, PyObject *Args)
 {
   try
   {
@@ -128,7 +130,7 @@ static PyObject* SetProperty(PyObject *Self, PyObject *Args)
     if(ClassName == "Parent")
     {
       Control->Parent = reinterpret_cast<TWinControl*>(PyInt_AsLong(Value));
-      return PyReturnNone();
+      Py_RETURN_NONE;
     }
 
     TPropInfo *PropInfo = GetPropInfo(Control, Name);
@@ -214,7 +216,7 @@ static PyObject* SetProperty(PyObject *Self, PyObject *Args)
         break;
       }
     }
-    return PyErr_Occurred() ? NULL : PyReturnNone();
+    return PyErr_Occurred() ? NULL : (Py_INCREF(Py_None), Py_None);
   }
   catch(Exception &E)
   {
@@ -223,18 +225,29 @@ static PyObject* SetProperty(PyObject *Self, PyObject *Args)
   }
 }
 //---------------------------------------------------------------------------
-static PyObject* GetProperty(PyObject *Self, PyObject *Args)
+static PyObject* VclGetProperty(PyObject *Self, PyObject *Args)
 {
   try
   {
     TControl *Control;
     const char *Name;
-    if(!PyArg_ParseTuple(Args, "is", &Control, &Name))
+    int Index = 0;
+    if(!PyArg_ParseTuple(Args, "is|i", &Control, &Name, &Index))
       return NULL;
 
     AnsiString ClassName = Name;
     if(ClassName == "Parent")
-      return PyInt_FromLong(reinterpret_cast<long>(Control->Parent));
+      return Py_BuildValue("ii", Control->Parent, tkClass);
+    else if(ClassName == "ComponentCount")
+      return Py_BuildValue("ii", Control->ComponentCount, tkInteger);
+    else if(ClassName == "Components")
+      return Py_BuildValue("ii", Control->Components[Index], tkClass);
+    else if(ClassName == "ClassName")
+      return Py_BuildValue("si", AnsiString(Control->ClassName()).c_str(), tkString);
+    else if(ClassName == "ActionCount")
+      return Py_BuildValue("ii", VclCast<TActionManager*>(Control)->ActionCount, tkInteger);
+    else if(ClassName == "Actions")
+      return Py_BuildValue("ii", VclCast<TActionManager*>(Control)->Actions[Index], tkClass);
 
     TPropInfo *PropInfo = GetPropInfo(Control, Name);
     if(PropInfo == NULL)
@@ -274,12 +287,12 @@ static PyObject* GetProperty(PyObject *Self, PyObject *Args)
       {
         void *Data = GetMethodProp(Control, PropInfo).Data;
         TPythonCallback *PythonCallback = dynamic_cast<TPythonCallback*>(static_cast<TObject*>(Data));
-        PyObject *Result = PythonCallback ? PythonCallback->Callback : PyNone();
+        PyObject *Result = PythonCallback ? PythonCallback->Callback : Py_None;
         return Py_BuildValue("Oi", Result, Kind);
       }
 
       default:
-        return PyReturnNone();
+        Py_RETURN_NONE;
     }
   }
   catch(Exception &E)
@@ -289,7 +302,7 @@ static PyObject* GetProperty(PyObject *Self, PyObject *Args)
   }
 }
 //---------------------------------------------------------------------------
-static PyObject* GetPropertyList(PyObject *Self, PyObject *Args)
+static PyObject* VclGetPropertyList(PyObject *Self, PyObject *Args)
 {
   TObject *Object = reinterpret_cast<TObject*>(PyInt_AsLong(Args));
   if(PyErr_Occurred())
@@ -303,7 +316,7 @@ static PyObject* GetPropertyList(PyObject *Self, PyObject *Args)
   return List;
 }
 //---------------------------------------------------------------------------
-static PyObject* CallMethod(PyObject *Self, PyObject *Args)
+static PyObject* VclCallMethod(PyObject *Self, PyObject *Args)
 {
   try
   {
@@ -320,7 +333,88 @@ static PyObject* CallMethod(PyObject *Self, PyObject *Args)
       else if(Method == "Close")
         Form->Close();
     }
-    return PyReturnNone();
+    Py_RETURN_NONE;
+  }
+  catch(Exception &E)
+  {
+    PyErr_SetString(PyVclException, E.Message.c_str());
+    return NULL;
+  }
+}
+//---------------------------------------------------------------------------
+typedef int __fastcall (*TFastcallFunction)(int,int);
+struct TFunctionEntry
+{
+  const char *Name;
+  TFastcallFunction Function;
+};
+
+TFunctionEntry FunctionList[] =
+{
+  NAME_VALUE_ENTRY(ShortCutToText),
+  NAME_VALUE_ENTRY(TextToShortCut),
+};
+//---------------------------------------------------------------------------
+static PyObject* VclCallFunction(PyObject *Self, PyObject *Args)
+{
+  try
+  {
+    const char *Name;
+    PyObject *Arg1;
+    PyObject *ResultType;
+    if(!PyArg_ParseTuple(Args, "sOO", &Name, &ResultType, &Arg1))
+      return NULL;
+    TFastcallFunction Function = NULL;
+    AnsiString FunctionName = Name;
+    for(int I = 0; I < sizeof(FunctionList) / sizeof(FunctionList[0]); I++)
+      if(FunctionName == FunctionList[I].Name)
+      {
+        Function = FunctionList[I].Function;
+        break;
+      }
+      
+    if(Function == NULL)
+      Py_RETURN_NONE;
+
+    int pArg1 = 0, pArg2 = 0, pResult = 0;
+    AnsiString Str1, Str2;
+    WideString WStr1, WStr2;
+    if(PyString_Check(Arg1))
+    {
+      Str1 = PyString_AsString(Arg1);
+      pArg1 = (int)Str1.data();
+    }
+    else if(PyUnicode_Check(Arg1))
+    {
+      WStr1 = (wchar_t*)PyUnicode_AsUnicode(Arg1);
+      pArg1 = (int)&WStr1;
+    }
+    else if(PyInt_Check(Arg1))
+      pArg1 = (int)PyInt_AsLong(Arg1);
+    else
+      Py_RETURN_NONE;
+
+    if(ResultType == (PyObject*)&PyString_Type)
+      pArg2 = (int)&Str2;
+    else if(ResultType == (PyObject*)&PyUnicode_Type)
+      pArg2 = (int)&WStr2;
+    else if(ResultType == (PyObject*)&PyInt_Type)
+      ;//pResult = (int)&Int;
+    else
+      Py_RETURN_NONE;
+
+//    Int = TextToShortCut(Str1);
+//    Str1 = ShortCutToText(Int);
+    pResult = Function(pArg1, pArg2);
+
+    if(ResultType == (PyObject*)&PyString_Type)
+      return PyString_FromString(Str2.c_str());
+    else if(ResultType == (PyObject*)&PyUnicode_Type)
+      return PyUnicode_FromWideChar(WStr2.c_bstr(), WStr2.Length());
+    else if(ResultType == (PyObject*)&PyInt_Type)
+      return PyInt_FromLong(pResult);
+    else
+      Py_RETURN_NONE;
   }
   catch(Exception &E)
   {
@@ -330,12 +424,13 @@ static PyObject* CallMethod(PyObject *Self, PyObject *Args)
 }
 //---------------------------------------------------------------------------
 static PyMethodDef PyVclMethods[] = {
-  {"CreateObject", CreateObject, METH_VARARGS, ""},
-  {"DeleteObject", DeleteObject, METH_VARARGS, ""},
-  {"SetProperty", SetProperty, METH_VARARGS, ""},
-  {"GetProperty", GetProperty, METH_VARARGS, ""},
-  {"CallMethod", CallMethod, METH_VARARGS, ""},
-  {"GetPropertyList", GetPropertyList, METH_O, ""},
+  {"CreateObject", VclCreateObject, METH_VARARGS, ""},
+  {"DeleteObject", VclDeleteObject, METH_VARARGS, ""},
+  {"SetProperty", VclSetProperty, METH_VARARGS, ""},
+  {"GetProperty", VclGetProperty, METH_VARARGS, ""},
+  {"CallMethod", VclCallMethod, METH_VARARGS, ""},
+  {"GetPropertyList", VclGetPropertyList, METH_O, ""},
+  {"CallFunction", VclCallFunction, METH_VARARGS, ""},
   {NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
@@ -359,29 +454,7 @@ void InitPyVcl()
   PyModule_AddObject(PyVclModule, "VclError", PyVclException);
 }
 //---------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 

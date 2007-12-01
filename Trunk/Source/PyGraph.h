@@ -7,11 +7,21 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#ifndef PyVclH
-#define PyVclH
+#ifndef PyGraphH
+#define PyGraphH
 //---------------------------------------------------------------------------
 namespace Python
 {
-void InitPyVcl();
+  enum TPluginEvent
+  {
+    peNew,
+    peLoad,
+    peSelect
+  };
+
+  void InitPlugins();
+  bool ExecutePythonCommand(const AnsiString &Command);
+  void ShowPythonConsole();
+  void ExecutePluginEvent(TPluginEvent PluginEvent);
 }
 #endif

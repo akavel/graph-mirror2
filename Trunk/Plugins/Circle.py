@@ -20,8 +20,8 @@ class CircleDialog(vcl.SimpleDialog):
         GraphImpl.CreateParametricFunction(self.edit2.Text + "+" + self.edit1.Text + "*cos t", self.edit3.Text + "+" + self.edit1.Text + "*sin t")
         self.Close()
 
-def execute_action():
+def execute_action(action):
     d = CircleDialog()
     d.ShowModal()
 
-action = Graph.Action("Create circle...", execute_action, icon="Graph.bmp", hint="Create circle from center and radius", shortcut="Ctrl+Shift+C")
+action = vcl.TAction(Name="CircleAction", Caption="Create circle...", OnExecute=execute_action, Hint="Create circle from center and radius", ShortCut="Ctrl+Shift+C")

@@ -575,7 +575,7 @@ void TDraw::DrawAxes()
           //Check if we are not too close to the sides of the window
           //Compare with 0 instead of AxesRect.Left because it is okay to write in the blank area
           if(xPixel - TextWidth / 2 >= 0 && xPixel + TextWidth / 2 <= AxesRect.Right)
-          {
+          {                                                  
             xPixel -= Axes.NumberPlacement == npCenter ? TextWidth / 2 : TextWidth;
             Context.DrawText(Str, xPixel, yPixel);
           }
@@ -659,7 +659,8 @@ void TDraw::DrawAxes()
     if(Axes.yAxis.ShowTicks && (!Axes.yAxis.ShowGrid || Axes.yAxis.TickUnit <= Axes.yAxis.GridUnit))
       //Show coordinate points on the y-axis
       for(double y = yPointExact(yTickMin); y > AxesRect.Top + Size(5); y -= yPixelScl)
-        if(std::abs(y - yPixelCross) > 1) //Don't show at or beside axis (when scaled it might be moved a pixel or two)
+        if(std::abs(y - yPixelCross) > 1 &&  //Don't show at or beside axis (when scaled it might be moved a pixel or two)
+            y < AxesRect.Bottom - 4) //Don't show too close to bottom
           Context.DrawLine(X - Size(5)-1, y + 0.5, X + Size(5)+1, y + 0.5);
   }
 }

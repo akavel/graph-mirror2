@@ -23,27 +23,16 @@ def InitPlugins():
                 Modules.append(ModuleName)
                 __import__(ModuleName)
 
-            except ImportError, e:
+            except Exception, e:
                 traceback.print_exc()
 
-
-class Action(object):
-    def __init__(self, caption, event, **keywords):
-        object.__setattr__(self, "id", GraphImpl.CreateAction())
-        GraphImpl.SetActionAttr(self.id, caption=caption, event=event, **keywords)
-
-    def __getattr__(self, name):
-        return GraphImpl.GetActionAttr(self.id)[name]
-    def __setattr__(self, name, value):
-        GraphImpl.SetActionAttr(self.id, **{name:value})
 
 import UserDict
 class ConstantsType(UserDict.DictMixin):
     def keys(self):
         return GraphImpl.GetConstantNames()
     def __getitem__(self, name):
-        value = GraphImpl.GetConstant(name)
-        return value[1] if value[0] == None else (value[1],) + value[0]
+        return GraphImpl.GetConstant(name)
     def __setitem__(self, name, value):
         if value.__class__ == tuple:
             GraphImpl.SetConstant(name, value[1:], str(value[0]))
@@ -59,6 +48,13 @@ def ExecuteEvent(eventlist):
         except:
             traceback.print_exc()
         
+def FindAction(name):
+    for o in Form1.Components:
+        if o.Name == "ActionManager":
+            for a in o.Actions:
+                if a.Name == name:
+                    return a
+
 Constants = ConstantsType()
 
 Eval = GraphImpl.Eval
