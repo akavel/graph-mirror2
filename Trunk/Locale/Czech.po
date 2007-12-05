@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2007-07-30 19:49\n"
-"PO-Revision-Date: 2007-07-30 19:51+0100\n"
+"PO-Revision-Date: 2007-12-05 23:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1957,7 +1957,7 @@ msgid "<Language> translation by <Translator>"
 msgstr ""
 "Český překlad: Martin Stružský, Pavlína Krausová\n"
 "Web: http://soustruh.atlasweb.cz\n"
-"E-mail: soustruh@gmail.com"
+"E-mail: struzsky.m@gmail.com"
 
 #. Form2("About Graph")..Panel1..Version("Version %s")..Caption
 #. %s is replaced with version number
