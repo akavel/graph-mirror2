@@ -1,0 +1,114 @@
+ASAP
++ Comments in po-files
+- Replacement for rtf files to generate help.
++ Rename SetupGraph.exe to SetupGraph-4.1.exe
+- Document how to put Graph on a memory stick or server.
+- Distribute binary zip package.
+- Update web site.
++ Animations don't work under Windows Vista.
++ Save From and To animation range to grf file.
+- Remove change list from Check for update.
+- Replace max limit for animation with resize of animation.
+- Save animation as a sequence of bitmap files.
+- Preview of arrows are inconsistent with the way it is actually drawn.
+- Saving animation frames doesn't work under Windows 98.
+- Import/export user defined trendline models.
+- Fix labels attached to axes when axes are boxed.
+
+Graph 4.3
+- Animation Player: Add buttons to move to first and last frame for easy compare.
+- Link to GPL in About dialog.
++ Link to Graph Examples in Start menu.
+- Make the avi files work in other players than MS Media Player (VideoLAN for example). See mails from Pär Smårs.
+- Create PDF documentation.
+- Convert EMF to PDF
+- Convert EMF to SVG
+- Add trendlines as TGraphElem derivative
+- Add differentiations f'(x) as TGraphElem derivative
+- Split Custom functions into Local/Global
+- Select graph elements by clicking on them on the image.
++ Set TrackBar1->Frequency in Unit20
++ Improve speed in drawing relations, especially when printing.
+- Improve the Integrate(), Sum(), etc. functions
+- Printed axes are too thin (change axes width?)
++ Calculate area under parametric function.
++ Zoom|Square should be Checked/Unchecked item.
+- Save unicode descriptions as UTF8.
++ Convert the rest of the components into Unicode.
+- Open Office Formula doesn't work in Graph.
+- The variable in shadings should be able to go backwards.
++ Show Visible as check boxes in tree list.
+- Improve accuracy in eval of arc and area. See mail from Rafael Karrer at 19/02-07. Area under ln(x)/sqrt(x^3) for [2;100000] should be 4.
+- Document limitations in arc and area calculations.
+- Improve simplify in Func32. 
++ Convert a^(b/c) to powdiv(a,b,c)
++ Save animation setting (From, To, Step) in grf files.
+- f(x)=ln(x) doesn't show optimal when not maximized.
+- Is 0^0=1 still needed? Show warning?
+- Make it possible to store configuration data in ini file instead of registry (Check for Graph.ini). This makes it easier to run Graph from a memory stick.
+- Place labels left/bottom of graphing area (in boxed axes mode). [see email from Don Margerison at 31/12-07]
+
+Graph 4.4
+- Calculate area for inequalities. (Use area of pixels + more accuracy at the border of the inequality)
+- Markers to mark specific coordinates (may be added from Calc|Evaluate)
+- Add tangents from Calc|Evaluate.
+- Enable use of codecs in avi files.
+- Polar axes.
+- Calc|Evaluate can find where a function intersects with itself.
+- Calc|Evaluate should precalculate extremums and intersections.
+- Report name of function that failed. 
+- Add support for bookbarks (save zoom settings).
+- Change relations to use the same algorithm as GrafEq. See p77-tupper.pdf.
+- Add "Auto color" to color boxes in function, tangent diff, etc dialogs. 
+- Rotate text labels with the mouse.
+- Choose width of axes.
+- Save as image: Lock aspect ratio.
+- Store expressions in the Axes dialog, and not just the evaluated number.
+- Add support for Python plugins.
+- Make it possible to add Python code to text labels.
+
+Graph 4.5
+- Convert EMF to EPS
+- Add a second toolbar with color, width, etc.
+- Fix problems with avi files that cannot be played with all players.
+- Add "Save frame as" to the animation player
+- Major/minor ticks
+- Fix overlapping numbers on the axes. (Scientific notation, what do other programs do?)
+- Real boxed axes
+
+Later
+- Select elements by clicking on them in the graph area.
+- Indicate the selected element in the graph area (to make it easier to identify the selected element)
+- Change evaluations to use less stack space to allow for larger recursive functions and larger functions in general (see mail from Morten at 03-04-2007)
+- Stack overflow causes Graph to disappear. The exception handler is probably using even more stack space.
+- Point series labels should be placed so they don't overlap with the error bars.
+- Improve the Automatic Draw type.
+- Reimplement calc in Func32 for optimal speed.
+- Show overlapping solid shadings/inequalities (use alpha blending?)
+- Make solid shadings/inequalities transparent (alpha blending) so the axes can be seen behind them.
+
+To be considered
+- Reverse direction of axes.
+- Make one of the axes invisible.
+- Use mng files instead of avi (http://www.libpng.org/pub/mng/)
+- List of common functions (like http://www.eclectasy.com/Fractal-Explorer/)
+- Add placement and rotation settings to the label dialog.
+- Select several elements in the function list. 
+- Implement groups (and sub groups?) which functions and similar can be added to. This makes it easier to handle (copy, visible) several elements at once.
+- More than one coordinate system in a grf file (like in Excel).
+- Show min and max values on the axes (boxed only?)
+- Export as AutoCad dwg files. See http://www.opendwg.org
+- Scientific calculator.
+- Show asymptotes.
++ Change "Zoom|All points" to "Zoom|Fit all"
+- Use error bars when finding trendline.
+- Allow the use of comma as decimal separator.
+- Several axes in one coordinate system. (MS Excel: Secondary axes)
+- Show Custom functions/constants dialog if there are undefined functions/constants used in Insert function dialog.
+- Change zoom to not change Axes settings but similar to WYSIWYG.
+
+Plugins:
+- Cirlce item
+- Convert points, i.e. pass through a function.
+- Add custom names to axes, e.g. sqrt(2).
+- Implement the erf(x) and erfc(x) functions. (See email from profesor de ciencias at 29/12-07)
