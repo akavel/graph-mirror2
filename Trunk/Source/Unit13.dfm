@@ -510,6 +510,7 @@ object Form13: TForm13
         Width = 321
         Height = 121
         ItemHeight = 13
+        PopupMenu = TntPopupMenu1
         TabOrder = 1
         OnClick = ListBox1Click
         OnDblClick = Button1Click
@@ -579,5 +580,31 @@ object Form13: TForm13
     TabOrder = 6
     Text = '0'
     OnChange = Edit5Change
+  end
+  object TntPopupMenu1: TTntPopupMenu
+    Left = 416
+    Top = 264
+    object Popup_Import: TTntMenuItem
+      Caption = 'Import from file...'
+      Hint = 'Import user models from a file.'
+      OnClick = Popup_ImportClick
+    end
+    object Popup_Export: TTntMenuItem
+      Caption = 'Export all to file...'
+      Hint = 'Export user models to a file.'
+      OnClick = Popup_ExportClick
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = 'ini'
+    Filter = 'Ini file [*.ini]|*.ini'
+    Options = [ofOverwritePrompt, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing]
+    Left = 480
+    Top = 264
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Ini file [*.ini]|*.ini|All files [*.*]|*.*'
+    Left = 448
+    Top = 264
   end
 end

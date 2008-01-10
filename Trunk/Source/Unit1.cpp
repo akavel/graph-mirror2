@@ -768,7 +768,16 @@ void TForm1::LoadSettings(void)
   Data.Property.Read(Registry);
 
   StartToolBar = GetToolBar(); //Save shown toolbar
-  Data.LoadUserModels();
+
+  const char *Models =  "[Hyperbolic fit]\nModel=$a+$b/x\n$a=1\n$b=1\n"
+                          "[Sinusoidal]\nModel=$a+$b*sin($c*x+$d)\n$a=1\n$b=1\n$c=1\n$d=1\n"
+                          "[Rational function]\nModel=($a+$b*x)/(1+$c*x+$d*x^2)\n$a=1\n$b=1\n$c=0\n$d=0\n"
+                          "[Saturation-Growth rate]\nModel=$a/($b+x)\n$a=1\n$b=1\n"
+                          "[BET model]\nModel=x/($a+$b*x-($a+$b)*x^2)\n$a=1\n$b=1\n"
+                          "[Reciprocal]\nModel=1/($a*x+$b)\n$a=1\n$b=1\n"
+                          "[Exponential association]\nModel=$a+$b*exp($c*x)\n$a=0\n$b=1\n$c=-1\n";
+
+  Data.ImportUserModels(Registry.Read("UserModels", Models));
 }
 //---------------------------------------------------------------------------
 void TForm1::SaveSettings(void)
@@ -810,7 +819,7 @@ void TForm1::SaveSettings(void)
       Data.Property.Write(Registry);
   }
 
-  Data.SaveUserModels();
+  Registry.Write("UserModels", Data.ExportUserModels());
 }
 //---------------------------------------------------------------------------
 void TForm1::UpdateMenu()
@@ -932,6 +941,7 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
     else
       AbortPrinting = true;
   }
+  Python::ExecutePluginEvent(Python::peClose);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Math_MonotoniClick(TObject *Sender)
@@ -3719,5 +3729,4 @@ void __fastcall TForm1::ExecuteFunction(TMessage &Message)
   Message.Result = Function(Message.LParam);
 }
 //---------------------------------------------------------------------------
-
 

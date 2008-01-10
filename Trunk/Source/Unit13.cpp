@@ -19,6 +19,8 @@
 #pragma link "TntComCtrls"
 #pragma link "TntExtCtrls"
 #pragma link "TntStdCtrls"
+#pragma link "TntDialogs"
+#pragma link "TntMenus"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm13::TForm13(TComponent* Owner, TData &AData)
@@ -37,7 +39,7 @@ __fastcall TForm13::TForm13(TComponent* Owner, TData &AData)
 void __fastcall TForm13::ImageClick(TObject *Sender)
 {
   if(Sender == Image1)
-  {
+  {                                  
     if(RadioButton1->CanFocus())
       RadioButton1->SetFocus();
   }
@@ -105,10 +107,12 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       std::vector<std::string> Arguments = Func32::FindUnknowns(ToString(Edit3->Text));
       std::vector<long double> Values(Arguments.size(), 1);
 
+      std::wstring ModelName = ToWString(ListBox1->Items->Strings[ListBox1->ItemIndex]);
+      TUserModel &Model = Data.UserModels[ModelName];
       if(ListBox1->ItemIndex != -1)
       {
-        for(unsigned I = 0; I < Data.UserModels[ListBox1->ItemIndex].Defaults.size(); I++)
-          Values[I] = Data.UserModels[ListBox1->ItemIndex].Defaults[I].second;
+        for(unsigned I = 0; I < Model.Defaults.size(); I++)
+          Values[I] = Model.Defaults[I].second;
       }
 
       Arguments.insert(Arguments.begin(), "x");
@@ -193,58 +197,34 @@ void __fastcall TForm13::Button3Click(TObject *Sender)
   Application->HelpContext(HelpContext);
 }
 //---------------------------------------------------------------------------
-void TForm13::ShowUserModels()
+void TForm13::ShowUserModels(const std::wstring &Selected)
 {
-  for(unsigned I = 0; I < Data.UserModels.size(); I++)
-    ListBox1->AddItem(Data.UserModels[I].Name.c_str(), NULL);
+  ListBox1->Clear();
+  for(TUserModels::const_iterator Iter = Data.UserModels.begin(); Iter != Data.UserModels.end(); ++Iter)
+    ListBox1->AddItem(Iter->first.c_str(), NULL);
+  ListBox1->ItemIndex = ListBox1->Items->IndexOf(Selected.c_str());
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm13::ListBox1Click(TObject *Sender)
 {
-  Edit3->Text = Data.UserModels[ListBox1->ItemIndex].Model.c_str();
+  Edit3->Text = Data.UserModels[ToWString(ListBox1->Items->Strings[ListBox1->ItemIndex])].Model.c_str();
   Button5->Enabled = true;
   Button6->Enabled = true;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm13::Button4Click(TObject *Sender)
 {
-  TUserModel UserModel;
-  UserModel.Model = ToString(Edit3->Text);
-  std::vector<std::string> Unknowns = Func32::FindUnknowns(ToString(Edit3->Text));
-
-  if(Unknowns.empty())
-  {
-    MessageBox(LoadRes(529), LoadRes(RES_ERROR));
-    return;
-  }
-
-  Unknowns.insert(Unknowns.begin(), "x");
-
-  //Putting more code inside the try block can crash Graph when an exception is thrown when compiled with bcc 5.6.4
   try
   {
-    Func32::TCustomFunc TempFunc(ToString(Edit3->Text), Unknowns, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
+    std::wstring ModelName;
+    if(CreateForm<TForm8>(Data)->AddModel(ToString(Edit3->Text), ModelName))
+      ShowUserModels(ModelName);
   }
   catch(Func32::EFuncError &Error)
   {
     Edit3->SetFocus();
     ShowErrorMsg(Error, Edit3);
     return;
-  }
-
-  std::auto_ptr<TForm8> Form8(new TForm8(Application, Data, -1));
-  for(unsigned I = 1; I < Unknowns.size(); I++)
-    Form8->ValueListEditor1->Values[Unknowns[I].c_str()] = 1;
-
-  if(Form8->ShowModal() == mrOk)
-  {
-    for(std::vector<std::string>::const_iterator Iter = Unknowns.begin() + 1; Iter != Unknowns.end(); ++Iter)
-      UserModel.Defaults.push_back(std::make_pair(*Iter, Form8->ValueListEditor1->Values[Iter->c_str()].ToDouble()));
-
-    UserModel.Name = ToWString(Form8->Edit1->Text);
-    Data.UserModels.push_back(UserModel);
-    ListBox1->Items->Add(UserModel.Name.c_str());
-    ListBox1->ItemIndex = ListBox1->Items->Count - 1;
   }
 }
 //---------------------------------------------------------------------------
@@ -253,23 +233,9 @@ void __fastcall TForm13::Button6Click(TObject *Sender)
   if(ListBox1->ItemIndex == -1)
     return;
 
-  TForm8 *Form8 = new TForm8(Application, Data, ListBox1->ItemIndex);
-  TUserModel &UserModel = Data.UserModels[ListBox1->ItemIndex];
-
-  Form8->Caption = LoadRes(503);
-  Form8->Edit1->Text = UserModel.Name.c_str();
-  for(unsigned I = 0; I < UserModel.Defaults.size(); I++)
-    Form8->ValueListEditor1->Values[UserModel.Defaults[I].first.c_str()] = UserModel.Defaults[I].second;
-
-  if(Form8->ShowModal() == mrOk)
-  {
-    for(unsigned I = 0; I < UserModel.Defaults.size(); I++)
-    UserModel.Defaults[I].second = Form8->ValueListEditor1->Values[UserModel.Defaults[I].first.c_str()].ToDouble();
-
-    UserModel.Name = ToWString(Form8->Edit1->Text);
-    ListBox1->Items->Strings[ListBox1->ItemIndex] = UserModel.Name.c_str();
-  }
-  delete Form8;
+  std::wstring ModelName = ToWString(ListBox1->Items->Strings[ListBox1->ItemIndex]);
+  if(CreateForm<TForm8>(Data)->EditModel(ModelName))
+    ShowUserModels(ModelName);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm13::Button5Click(TObject *Sender)
@@ -279,7 +245,7 @@ void __fastcall TForm13::Button5Click(TObject *Sender)
 
   if(MessageBox(LoadRes(RES_DELETE_MODEL, ListBox1->Items->Strings[ListBox1->ItemIndex]), LoadRes(RES_CAPTION_DELETE), MB_ICONQUESTION | MB_YESNO) == IDYES)
   {
-    Data.UserModels.erase(Data.UserModels.begin() + ListBox1->ItemIndex);
+    Data.UserModels.erase(ToWString(ListBox1->Items->Strings[ListBox1->ItemIndex]));
     ListBox1->Items->Delete(ListBox1->ItemIndex);
   }
 }
@@ -335,7 +301,7 @@ int TForm13::InsertTrendline(const boost::shared_ptr<TPointSeries> &ASeries)
   UpDown2->Max = Series->PointList.size() - 1;
   UpDown3->Max = Series->PointList.size() - 1;
 
-  ShowUserModels();
+  ShowUserModels(L"");
   return ShowModal();
 }
 //---------------------------------------------------------------------------
@@ -378,5 +344,25 @@ void __fastcall TForm13::CheckBox1Click(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TForm13::Popup_ImportClick(TObject *Sender)
+{
+  if(OpenDialog1->Execute())
+  {
+    std::auto_ptr<TStrings> Strings(new TStringList);
+    Strings->LoadFromFile(OpenDialog1->FileName);
+    Data.ImportUserModels(Strings->Text.c_str());
+    ShowUserModels(L"");
+  }
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm13::Popup_ExportClick(TObject *Sender)
+{
+  if(SaveDialog1->Execute())
+  {
+    std::auto_ptr<TStrings> Strings(new TStringList);
+    Strings->Text = Data.ExportUserModels().c_str();
+    Strings->SaveToFile(SaveDialog1->FileName);
+  }
+}
+//---------------------------------------------------------------------------
 

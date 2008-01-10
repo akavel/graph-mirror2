@@ -333,6 +333,8 @@ static PyObject* VclCallMethod(PyObject *Self, PyObject *Args)
       else if(Method == "Close")
         Form->Close();
     }
+    else if(TAction *Action = dynamic_cast<TAction*>(Object))
+      Action->Execute();
     Py_RETURN_NONE;
   }
   catch(Exception &E)

@@ -26,6 +26,10 @@
 #include "TntComCtrls.hpp"
 #include "TntExtCtrls.hpp"
 #include "TntStdCtrls.hpp"
+#include "TntDialogs.hpp"
+#include "TntMenus.hpp"
+#include <Dialogs.hpp>
+#include <Menus.hpp>
 //---------------------------------------------------------------------------
 class TForm13 : public TTntForm
 {
@@ -76,6 +80,11 @@ __published:	// IDE-managed Components
   TExtColorBox *ExtColorBox1;
   TMyEdit *Edit5;
   TTntCheckBox *CheckBox1;
+        TTntPopupMenu *TntPopupMenu1;
+        TTntMenuItem *Popup_Export;
+        TTntMenuItem *Popup_Import;
+        TSaveDialog *SaveDialog1;
+        TOpenDialog *OpenDialog1;
   void __fastcall ImageClick(TObject *Sender);
   void __fastcall EditKeyPress(TObject *Sender, char &Key);
   void __fastcall Button1Click(TObject *Sender);
@@ -88,12 +97,14 @@ __published:	// IDE-managed Components
   void __fastcall RadioButtonClick(TObject *Sender);
   void __fastcall Edit5Change(TObject *Sender);
   void __fastcall CheckBox1Click(TObject *Sender);
+        void __fastcall Popup_ImportClick(TObject *Sender);
+        void __fastcall Popup_ExportClick(TObject *Sender);
 
 private:	// User declarations
   boost::shared_ptr<TPointSeries> Series;
   TData &Data;
 
-  void ShowUserModels();
+  void ShowUserModels(const std::wstring &Selected);
 
 public:		// User declarations
   __fastcall TForm13(TComponent* Owner, TData &AData);
