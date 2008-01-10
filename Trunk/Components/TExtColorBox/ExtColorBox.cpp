@@ -10,6 +10,9 @@
 #include "IColorSelect.h"
 #include <TntGraphics.hpp>
 #pragma package(smart_init)
+//Workaround for name mangling bug in TTntCustomComboBox::ComboWndProc
+#pragma alias "@Tntstdctrls@TTntCustomComboBox@ComboWndProc$qqrr17Messages@TMessagepvt2"\
+="@Tntstdctrls@TTntCustomComboBox@ComboWndProc$qqrr17Messages@TMessageuipv"
 //---------------------------------------------------------------------------
 static TColor ColorList[] =
 {

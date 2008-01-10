@@ -6,6 +6,10 @@
 #pragma hdrstop
 #include "LineSelect.h"
 #pragma package(smart_init)
+
+//Workaround for name mangling bug in TTntCustomComboBox::ComboWndProc
+#pragma alias "@Tntstdctrls@TTntCustomComboBox@ComboWndProc$qqrr17Messages@TMessagepvt2"\
+="@Tntstdctrls@TTntCustomComboBox@ComboWndProc$qqrr17Messages@TMessageuipv"
 //---------------------------------------------------------------------------
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
@@ -90,4 +94,12 @@ void __fastcall TLineSelect::ChangeScale(int M, int D)
   ItemHeight = (ItemHeight * M) / D; 
 }
 //---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
 

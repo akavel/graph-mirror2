@@ -11,8 +11,6 @@ class TExtColorBox;
 typedef void __fastcall (__closure *TPickColorEvent)(TExtColorBox* Sender, TColor &Color);
 enum TColorDialogType {cdtColorDialog, cdtColorSelect};
 
-//Notice: In case of unresolved external TTntCustomComboBox::ComboWndProc, replace
-//"HWND ComboWnd" with "unsigned ComboWnd" in TntStdCtrls.pas
 class PACKAGE TExtColorBox : public TTntCustomComboBox
 {
 private:

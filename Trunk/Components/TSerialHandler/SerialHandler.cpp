@@ -20,7 +20,7 @@ namespace Serialhandler
   void __fastcall PACKAGE Register()
   {
      TComponentClass classes[1] = {__classid(TSerialHandler)};
-     RegisterComponents("B&&O", classes, 0);
+     RegisterComponents("IComp", classes, 0);   
   }
 }
 //---------------------------------------------------------------------------

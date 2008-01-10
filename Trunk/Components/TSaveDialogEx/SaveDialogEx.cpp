@@ -7,6 +7,10 @@
 #include "SaveDialogEx.h"
 #include "Dlgs.h"
 #pragma package(smart_init)
+
+//Workaround for name mangling bug in TTntCustomComboBox::ComboWndProc
+#pragma alias "@Dialogs@TSaveDialog@Execute$qqrpv"\
+="@Dialogs@TSaveDialog@Execute$qqrui"
 //---------------------------------------------------------------------------
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
