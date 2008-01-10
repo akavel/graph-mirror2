@@ -16,7 +16,8 @@ namespace Python
   {
     peNew,
     peLoad,
-    peSelect
+    peSelect,
+    peClose
   };
 
   void InitPlugins();

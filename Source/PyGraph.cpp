@@ -467,6 +467,7 @@ void ExecutePluginEvent(TPluginEvent PluginEvent)
     "OnNew",
     "OnLoad",
     "OnSelect",
+    "OnClose",
   };
   std::string Command = "Graph.ExecuteEvent(Graph. " + std::string(EventList[PluginEvent]) + ")";
   PyEval_RestoreThread(ThreadState);

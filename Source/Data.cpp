@@ -329,29 +329,15 @@ boost::shared_ptr<TTextLabel> TData::FindLabel(int X, int Y)
   return boost::shared_ptr<TTextLabel>();
 }
 //---------------------------------------------------------------------------
-void TData::LoadUserModels()
+void TData::ImportUserModels(const std::string &Str)
 {
-  const char *Models =  "[Hyperbolic fit]\nModel=$a+$b/x\n$a=1\n$b=1\n"
-                            "[Sinusoidal]\nModel=$a+$b*sin($c*x+$d)\n$a=1\n$b=1\n$c=1\n$d=1\n"
-                            "[Rational function]\nModel=($a+$b*x)/(1+$c*x+$d*x^2)\n$a=1\n$b=1\n$c=0\n$d=0\n"
-                            "[Saturation-Growth rate]\nModel=$a/($b+x)\n$a=1\n$b=1\n"
-                            "[BET model]\nModel=x/($a+$b*x-($a+$b)*x^2)\n$a=1\n$b=1\n"
-                            "[Reciprocal]\nModel=1/($a*x+$b)\n$a=1\n$b=1\n"
-                            "[Exponential association]\nModel=$a+$b*exp($c*x)\n$a=0\n$b=1\n$c=-1\n";
-
-  std::auto_ptr<TRegistry> Registry(new TRegistry);
   TConfigFile IniFile;
-
-  if(Registry->OpenKeyReadOnly(REGISTRY_KEY) && Registry->ValueExists("UserModels"))
-    IniFile.LoadFromString(Registry->ReadString("UserModels").c_str());
-  else
-    IniFile.LoadFromString(Models);
+  IniFile.LoadFromString(Str);
 
   for(unsigned I = 0; I < IniFile.SectionCount(); I++)
   {
     std::string Section = IniFile.GetSection(I);
     TUserModel UserModel;
-    UserModel.Name = ToWString(Section);
     UserModel.Model = IniFile.Read(Section, "Model", "$a*x+$b");
 
     std::pair<TConfigFile::TSectionIterator, TConfigFile::TSectionIterator> Iterators = IniFile.GetSectionData(Section);
@@ -361,28 +347,24 @@ void TData::LoadUserModels()
         UserModel.Defaults.push_back(std::make_pair(Iter->first, Calc(Iter->second)));
     }
 
-    UserModels.push_back(UserModel);
+    UserModels[ToWString(Section)] = UserModel;
   }
 }
 //---------------------------------------------------------------------------
-void TData::SaveUserModels() const
+std::string TData::ExportUserModels() const
 {
-  std::auto_ptr<TRegistry> Registry(new TRegistry);
-  if(Registry->OpenKey(REGISTRY_KEY, true))
+  TConfigFile IniFile;
+
+  for(TUserModels::const_iterator Iter = UserModels.begin(); Iter != UserModels.end(); ++Iter)
   {
-    TConfigFile IniFile;
+    const std::string Section = ToString(Iter->first);
+    IniFile.Write(Section, "Model", Iter->second.Model);
 
-    for(unsigned I = 0; I < UserModels.size(); I++)
-    {
-      const std::string Section = ToString(UserModels[I].Name);
-      IniFile.Write(Section, "Model", UserModels[I].Model);
-
-      for(unsigned J = 0; J < UserModels[I].Defaults.size(); J++)
-        IniFile.Write(Section, UserModels[I].Defaults[J].first, UserModels[I].Defaults[J].second);
-    }
-
-    Registry->WriteString("UserModels", IniFile.GetAsString().c_str());
+    for(unsigned J = 0; J < Iter->second.Defaults.size(); J++)
+      IniFile.Write(Section, Iter->second.Defaults[J].first, Iter->second.Defaults[J].second);
   }
+
+  return IniFile.GetAsString();
 }
 //---------------------------------------------------------------------------
 void TData::SetModified()

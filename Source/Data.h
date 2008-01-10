@@ -15,10 +15,11 @@
 
 struct TUserModel
 {
-  std::wstring Name;
   std::string Model;
   std::vector<std::pair<std::string, double> > Defaults;
 };
+
+typedef std::map<std::wstring, TUserModel> TUserModels;
 
 typedef bool (__closure *TAbortUpdateEvent)();
 
@@ -36,7 +37,7 @@ class TData
 public:
   TAxes Axes;
   TProperty Property;
-  std::vector<TUserModel> UserModels;
+  TUserModels UserModels;
   TCustomFunctions CustomFunctions;
   ::TAnimationInfo AnimationInfo;
 
@@ -59,8 +60,8 @@ public:
   std::wstring CreatePointSeriesDescription();
   boost::shared_ptr<TTextLabel> FindLabel(int X, int Y); //NULL indicates not label found
   void DeleteLabel(int Index);
-  void LoadUserModels();
-  void SaveUserModels() const;
+  void ImportUserModels(const std::string &Str);
+  std::string ExportUserModels() const;
   void SetModified();
   bool IsModified() const {return Modified;}
   double FindInterception(const TBaseFuncType *Func, int X, int Y, long double Tol) const;
