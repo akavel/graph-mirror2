@@ -269,6 +269,7 @@ void __stl_debug_terminate(void)
 
 void Test()
 {
+  Test("1E5000", 1, 1/*StrToDouble("1E5000")*/); //Number too large
   //Test redundant space
   Test("x*sin x", PI/2, PI/2);
   Test("  x*sin x", PI/2, PI/2);
@@ -292,6 +293,8 @@ void Test()
   TestEval<TComplex>("i*i", 0, -1);
   TestErrorEval<long double>("i*i", 0, ecComplexError);
   Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4
+  Test("1E4000", 1, StrToDouble("1E4000")); //2E400 doesn't work directly with BCC 5.6.4
+  Test("1E5000", 1, 1/*StrToDouble("1E5000")*/); //Number too large
   TestError("1.2.3", 0, ecInvalidNumber);
   TestError("5.", 0, ecInvalidNumber);
 
