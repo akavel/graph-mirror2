@@ -14,6 +14,7 @@
 #include <deque>
 #include <iosfwd>
 #include <iomanip>
+#include <algorithm>
 
 class TConfigFile
 {

@@ -13,8 +13,8 @@
       ..\Obj\RichEditOle.obj ..\Obj\RichEditOleCallback.obj ..\Obj\PrintForm.obj 
       ..\Obj\IPrintDialog.obj ..\Obj\SaveDialogEx.obj ..\Obj\ExtColorBox.obj 
       ..\Obj\SymbolDialog.obj ..\Obj\IRichEdit.obj ..\Obj\SymbolForm.obj 
-      ..\Obj\TRecent.obj ..\Obj\SerialHandler.obj ..\Obj\SerialThread.obj 
-      ..\Obj\MediaPlayerEx.obj ..\Obj\ICompCommon.obj"/>
+      ..\Obj\TRecent.obj ..\Obj\SerialThread.obj ..\Obj\MediaPlayerEx.obj 
+      ..\Obj\ICompCommon.obj ..\Obj\SerialHandler.obj"/>
     <RESFILES value="IComp.res TCross\Cross.dcr TIColorBox\IColorBox.dcr 
       TLineSelect\LineSelect.dcr TPointSelect\PointSelect.dcr 
       TProgress\Progress.dcr TProgressForm\ProgressForm.dcr TRecent\TRecent.dcr 
@@ -109,10 +109,10 @@
       <FILE FILENAME="TRecent\TRecent.cpp" FORMNAME="" UNITNAME="TRecent" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="d:\program files\borland\cbuilder6\Lib\TSerialHandler\TSerialHandler\Func32\vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="d:\program files\borland\cbuilder6\Lib\TSerialHandler\TSerialHandler\Func32\TntLibR.bpi" FORMNAME="" UNITNAME="TntLibR" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="TSerialHandler\SerialHandler.cpp" FORMNAME="" UNITNAME="SerialHandler" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="TSerialHandler\SerialThread.cpp" FORMNAME="" UNITNAME="SerialThread" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="TMediaPlayerEx\MediaPlayerEx.cpp" FORMNAME="" UNITNAME="MediaPlayerEx" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Common\ICompCommon.cpp" FORMNAME="" UNITNAME="ICompCommon" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TSerialHandler\SerialHandler.cpp" FORMNAME="" UNITNAME="SerialHandler" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
