@@ -1,17 +1,15 @@
 import Graph
 
-def OnNew():
-    print "OnNew"
-
-def OnLoad():
-    print "OnLoad"
-
-def OnSelect():
-    print "OnSelect"
-
-#Graph.OnNew.append(OnNew)
-#Graph.OnLoad.append(OnLoad)
-#Graph.OnSelect.append(OnSelect)
+class EventLogger:
+    def __init__(self, s):
+        self.s = s
+    def __call__(self):
+        print self.s
+        
+Graph.OnNew.append(EventLogger("OnNew"))
+Graph.OnLoad.append(EventLogger("OnLoad"))
+Graph.OnSelect.append(EventLogger("OnSelect"))
+Graph.OnClose.append(EventLogger("OnClose"))
 
 def test():
     import time
