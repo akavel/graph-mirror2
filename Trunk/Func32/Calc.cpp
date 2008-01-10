@@ -238,7 +238,7 @@ long double Fact(unsigned x)
 }
 //---------------------------------------------------------------------------
 /** Calculates the gamma function ( n! = Gamma(n+1) ), Gamma(z) is not defined for z=0
- *  Implemented from description on http://www.rskey.org/gamma.htm
+ *  Implemented as Lanczos approximation from description on http://www.rskey.org/gamma.htm
  *  The alogirthm is a modification of the one found in Numerical Recipes in C
  *  \param z: The argument to the Gamma function
  */
