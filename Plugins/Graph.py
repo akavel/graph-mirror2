@@ -65,3 +65,4 @@ Update = GraphImpl.Update
 OnNew = []
 OnLoad = []
 OnSelect = []
+OnClose = []
