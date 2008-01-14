@@ -264,35 +264,29 @@ int TForm13::InsertTrendline(const boost::shared_ptr<TPointSeries> &ASeries)
 {
   Series = ASeries;
 
-  bool NegXFound = false;
-  bool NegYFound = false;
+  bool NegXFound = false, NegYFound = false, ZeroXFound = false, ZeroYFound = false;
 
   for(std::vector<TPointSeriesPoint>::const_iterator i = Series->PointList.begin(); i != Series->PointList.end(); ++i)
   {
-    if(i->x <= 0)
-    {
+    if(i->x < 0)
       NegXFound = true;
-      if(NegYFound)
-        break;
-    }
-    if(i->y <= 0)
-    {
+    else if(i->x == 0)
+      ZeroXFound = true;
+
+    if(i->y < 0)
       NegYFound = true;
-      if(NegXFound)
-        break;
-    }
+    else if(i->y == 0)
+      ZeroYFound = true;  
   }
 
-  if(NegXFound)
-  {
+  if(NegXFound || ZeroXFound)
     RadioButton2->Enabled = false;
-    RadioButton4->Enabled = false;
-  }
-  if(NegYFound)
-  {
-    RadioButton4->Enabled = false;
+
+  if(NegYFound || ZeroYFound)
     RadioButton5->Enabled = false;
-  }
+
+  if(NegXFound || NegYFound)
+    RadioButton4->Enabled = false;
 
   LineSelect1->LineStyle = static_cast<TPenStyle>(Data.Property.DefaultTrendline.Style);
   ExtColorBox1->Selected = Data.Property.DefaultTrendline.Color;

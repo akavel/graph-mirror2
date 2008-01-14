@@ -103,7 +103,7 @@ Count=1
 Item0=_DEBUG
 
 [Debugging]
-DebugSourceDirs=$(BCB)\source\vcl
+DebugSourceDirs=$(BCB)\source\vcl;D:\Projects\spirit\boost\spirit\core\scanner\;D:\Projects\spirit\boost\spirit\core\composite\;D:\Projects\spirit\boost\spirit\core\composite\impl\;D:\Projects\spirit\boost\spirit\core\non_terminal\impl\;D:\Projects\spirit\boost\spirit\debug\
 
 [Parameters]
 RunParams=

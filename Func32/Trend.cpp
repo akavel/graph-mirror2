@@ -149,14 +149,21 @@ TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, u
 
         for(std::vector<TDblPoint>::const_iterator Iter = Points.begin(); Iter != Points.end(); ++Iter)
         {
-          if(Iter->x <= 0 || Iter->y <= 0)
+          //The power function is not defined for negative values. The algorithm cannot handle x=0 and y=0, and
+          //as (0,0) is defined for the function, we ignore points with x=0 or y=0
+          if(Iter->x < 0 || Iter->y < 0)
             throw EFuncError(ecInvalidValue);
-          double LogX = std::log(Iter->x);
-          double LogY = std::log(Iter->y);
-          SumX += LogX;
-          SumY += LogY;
-          SumXY += LogX * LogY;
-          SumSqrX += LogX * LogX;
+          else if(Iter->x == 0 || Iter->y == 0)
+            n--;
+          else
+          {
+            double LogX = std::log(Iter->x);
+            double LogY = std::log(Iter->y);
+            SumX += LogX;
+            SumY += LogY;
+            SumXY += LogX * LogY;
+            SumSqrX += LogX * LogX;
+          }
         }
 
         double d = n*SumSqrX-SumX*SumX;
@@ -445,7 +452,7 @@ double ScaledRMS(const std::vector<TDblPoint> &Points, const TFunc &Func)
 }
 //---------------------------------------------------------------------------
 /** Finds the correlation coefficient (R^2) for the linear best fit.
- *  The closer the correlation is to 1 the nearer the points are to a strait line.
+ *  The closer the correlation is to 1 the nearer the points are to a straight line.
  *  \param Points: Series of data points
  */
 double LinearCorrelation(const std::vector<TDblPoint> &Points)
