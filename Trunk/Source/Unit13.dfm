@@ -139,8 +139,8 @@ object Form13: TForm13
     Top = 8
     Width = 345
     Height = 241
-    ActivePage = TabSheet2
-    TabIndex = 1
+    ActivePage = TabSheet1
+    TabIndex = 0
     TabOrder = 0
     OnChange = RadioButtonClick
     object TabSheet1: TTntTabSheet
