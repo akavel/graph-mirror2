@@ -213,7 +213,7 @@ double FindNearestPoint(const TBaseFuncType *Func, int X, int Y)
 //---------------------------------------------------------------------------
 //Find interception between Func and other functions
 //Returns NAN if no interception is found
-double TData::FindInterception(const TBaseFuncType *Func, int X, int Y, long double Tol) const
+double TData::FindInterception(const TBaseFuncType *Func, int X, int Y) const
 {
   if(Func->Points.size() < 3)
     return NAN;
@@ -252,7 +252,7 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y, long dou
               try
               {
                 if(Sign(p1->y - Func32::GetReal(StdFunc2->CalcY(Func32::TComplex(p1->x)))) != Sign(p2->y - Func32::GetReal(StdFunc2->CalcY(Func32::TComplex(p2->x)))))
-                  return Func32::FindCrossing(Func->GetFunc(), p1->t, p2->t, *StdFunc2, p1->x, p2->x, Tol);
+                  return Func32::FindCrossing(Func->GetFunc(), p1->t, p2->t, *StdFunc2, p1->x, p2->x);
               }
               catch(Func32::EFuncError&) //Errors are ignored; Just continue
               {
@@ -265,7 +265,7 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y, long dou
                 unsigned N = Range<unsigned>(1, p1 - Begin, Func->sList.size() - 3);
                 unsigned M = Range<unsigned>(1, Iter - Func2->sList.begin(), Func2->sList.size() - 3);
                 //Use binary search to increase acuracy of found position
-                return Func32::FindCrossing(Func->GetFunc(), Func->sList[N].t, Func->sList[N+1].t, Func2->GetFunc(), Func2->sList[M].t, Func2->sList[M+1].t, Tol);
+                return Func32::FindCrossing(Func->GetFunc(), Func->sList[N].t, Func->sList[N+1].t, Func2->GetFunc(), Func2->sList[M].t, Func2->sList[M+1].t);
               }
             }
           }
@@ -277,7 +277,7 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y, long dou
               try
               {
                 if(Sign(p3->y - Func32::GetReal(StdFunc2->CalcY(Func32::TComplex(p3->x)))) != Sign(p4->y - Func32::GetReal(StdFunc2->CalcY(Func32::TComplex(p4->x)))))
-                  return Func32::FindCrossing(Func->GetFunc(), p3->t, p4->t, *StdFunc2, p3->x, p4->x, Tol);
+                  return Func32::FindCrossing(Func->GetFunc(), p3->t, p4->t, *StdFunc2, p3->x, p4->x);
               }
               catch(Func32::EFuncError&) //Errors are ignored; Just continue
               {
@@ -289,7 +289,7 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y, long dou
               {
                 unsigned N = Range<unsigned>(1, p3 - Begin, Func->Points.size() - 3);
                 unsigned M = Range<unsigned>(1, Iter - Func2->sList.begin(), Func2->sList.size() - 3);
-                return Func32::FindCrossing(Func->GetFunc(), Func->sList[N].t, Func->sList[N+1].t, Func2->GetFunc(), Func2->sList[M].t, Func2->sList[M+1].t, Tol);
+                return Func32::FindCrossing(Func->GetFunc(), Func->sList[N].t, Func->sList[N+1].t, Func2->GetFunc(), Func2->sList[M].t, Func2->sList[M+1].t);
               }
             }
           }
@@ -401,7 +401,7 @@ double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int
       return FindNearestPoint(Func, X, Y); //Returns NAN if no point found
 
     case ttIntersection:
-      return Data.FindInterception(Func, X, Y, 1E-15);
+      return Data.FindInterception(Func, X, Y);
 
     case ttXAxis:
     case ttYAxis:

@@ -666,7 +666,7 @@ TComplex EvalComplex(const std::string &Expr, TTrigonometry Trig = Radian);
 TComplex EvalComplex(const std::string &Expr, const TSymbolList &SymbolList, TTrigonometry Trig = Radian);
 TComplex EvalComplex(const std::string &Expr, TComplex x, const std::string &Var = "x", TTrigonometry Trig = Radian);
 
-long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double Max1, const TBaseFunc &Func2, long double Min2, long double Max2, long double Tol);
+long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double Max1, const TBaseFunc &Func2, long double Min2, long double Max2);
 std::vector<std::string> FindUnknowns(const std::string &Str);
 bool IsValidName(const std::string &Name);
 
