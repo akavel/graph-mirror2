@@ -140,20 +140,25 @@ bool IsCrossing(const TCoord<long double> &p1, const TCoord<long double> &p2, co
  *  \param Func2: Second function to find crossing between. The crossing must be located in the range [Min2;Max2]
  *  \param Min2: Start range for Func2 to check.
  *  \param Max2: End range for Func2 to check.
- *  \param Tol: The tolerance. The search stops when the distence between too calculated poinst becomes less than Tol
  */
-long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double Max1, const TBaseFunc &Func2, long double Min2, long double Max2, long double Tol)
+long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double Max1, const TBaseFunc &Func2, long double Min2, long double Max2)
 {
   TCoord<long double> p1 = GetReal(Func1.Calc(TComplex(Min1)));
   TCoord<long double> p2 = GetReal(Func1.Calc(TComplex(Max1)));
   TCoord<long double> q1 = GetReal(Func2.Calc(TComplex(Min2)));
   TCoord<long double> q2 = GetReal(Func2.Calc(TComplex(Max2)));
 
-  while(Max1 - Min1 > Tol)
+  const int MaxIterations = 100;
+  int IterLeft = MaxIterations;
+
+  while(--IterLeft > 0)
   {
-    //TODO: What if s and t stops changing because Tol cannot get any better?
     long double s = (Max1 + Min1) / 2;
     long double t = (Max2 + Min2) / 2;
+
+    //Continue until we cannot find a more accurate result
+    if(s == Max1 || s == Min1 || t == Max2 || t == Min2)
+      break;
 
     TCoord<long double> p = GetReal(Func1.Calc(TComplex(s)));
     TCoord<long double> q = GetReal(Func2.Calc(TComplex(t)));
@@ -169,6 +174,7 @@ long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double M
     else
       return s;
   }
+
   return (Max1 + Min1) / 2;
 }
 //---------------------------------------------------------------------------

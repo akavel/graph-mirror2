@@ -64,7 +64,7 @@ public:
   std::string ExportUserModels() const;
   void SetModified();
   bool IsModified() const {return Modified;}
-  double FindInterception(const TBaseFuncType *Func, int X, int Y, long double Tol) const;
+  double FindInterception(const TBaseFuncType *Func, int X, int Y) const;
   void Delete(const boost::shared_ptr<TGraphElem> &Elem);
   void Insert(const boost::shared_ptr<TGraphElem> &Elem, unsigned Index);
   void Add(const boost::shared_ptr<TGraphElem> &Elem);

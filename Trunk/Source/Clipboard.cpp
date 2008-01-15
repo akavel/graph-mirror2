@@ -156,3 +156,4 @@ void TGraphClipboard::CopyPngData(const std::string &Str)
 
 
 
+

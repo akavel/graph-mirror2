@@ -47,6 +47,7 @@ struct TTextValue
   TTextValue(double AValue, const std::string &AText) : Value(AValue), Text(AText) {}
   bool operator==(const TTextValue &TextValue) const {return Value == TextValue.Value;}
   bool operator!=(const TTextValue &TextValue) const {return !(*this == TextValue);}
+  bool operator==(double a) const {return Value == a;}
   bool operator<(double a) const {return Value < a;}
   bool operator>(double a) const {return Value > a;}
   bool operator<=(double a) const {return Value <= a;}
