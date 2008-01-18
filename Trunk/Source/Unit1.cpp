@@ -98,6 +98,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   }
                                                                   
   SetCompTranslateFunc(gettext);
+  SetApplicationExceptionHandler(true);
   InitDebug();
 #endif
 
@@ -3732,4 +3733,5 @@ void __fastcall TForm1::ExecuteFunction(TMessage &Message)
   Message.Result = Function(Message.LParam);
 }
 //---------------------------------------------------------------------------
+
 
