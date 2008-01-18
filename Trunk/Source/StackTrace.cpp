@@ -397,7 +397,7 @@ void __stl_debug_message(const char * format_str, ...)
   File << "DEBUG MESSAGE";
   File << Buffer;
   File << "-----------------------------------------" << std::endl << std::endl;
-
+  OutputDebugString(Buffer);
   va_end(Args);
 }
 //---------------------------------------------------------------------------

@@ -108,6 +108,8 @@ To be considered
 - Show Custom functions/constants dialog if there are undefined functions/constants used in Insert function dialog.
 - Change zoom to not change Axes settings but similar to WYSIWYG.
 - Group several elements in a subtree. (See email from Michael Boutte at 31-12-07)
+- Improve algorithm for finding intersections between functions.
+- More possibilities for control how numbers are shown.
 
 Plugins:
 - Cirlce item

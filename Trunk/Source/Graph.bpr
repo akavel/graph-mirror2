@@ -21,7 +21,7 @@
       ..\Obj\TStdFuncFrame.obj ..\Obj\TParFuncFrame.obj ..\Obj\TPolFuncFrame.obj 
       ..\Obj\TTanFrame.obj ..\Obj\TAreaFrame.obj ..\Obj\pdflib.obj 
       ..\..\dxgettext\gnugettext.obj"/>
-    <RESFILES value="Graph.res Resource.res"/>
+    <RESFILES value="Graph.res Resource.res Icons.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
     <DEFFILE value=""/>
@@ -144,6 +144,7 @@
       <FILE FILENAME="..\Func32\Func32.lib" FORMNAME="" UNITNAME="Func32.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Resource.rc" FORMNAME="" UNITNAME="Resource.rc" CONTAINERID="RC" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\dxgettext\gnugettext.obj" FORMNAME="" UNITNAME="gnugettext.obj" CONTAINERID="OBJTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Icons.res" FORMNAME="" UNITNAME="Icons.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -155,7 +156,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=4
 Release=0
-Build=392
+Build=393
 Debug=1
 PreRelease=0
 Special=0
@@ -167,7 +168,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.4.0.392
+FileVersion=4.4.0.393
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2007
 LegalTrademarks=

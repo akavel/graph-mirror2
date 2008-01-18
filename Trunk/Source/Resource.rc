@@ -1,7 +1,5 @@
 #include "Resource.h"
 
-ICON1 ICON "graph.ico"
-ICON2 ICON "icon.ico"
 MOVECURSOR1 CURSOR "hand1.cur"
 MOVECURSOR2 CURSOR "hand2.cur"
 FLAG AVI LOADONCALL DISCARDABLE Flag.avi
