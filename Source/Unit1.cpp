@@ -1251,7 +1251,10 @@ void __fastcall TForm1::Splitter1DblClick(TObject *Sender)
     if(StrWidth > MaxWidth)
       MaxWidth = StrWidth;
   }
-  Panel3->Width = MaxWidth + 30;
+  MaxWidth += 30;
+  if(MaxWidth > Width / 2)
+    MaxWidth = Width / 2;
+  Panel3->Width = MaxWidth;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::TreeViewChange(TObject *Sender, TTreeNode *Node)

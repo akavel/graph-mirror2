@@ -183,33 +183,38 @@ bool ArgCountValid(TIdent Ident, unsigned Args)
   return FuncTable(Ident).ArgCountValid(Args);
 }
 //---------------------------------------------------------------------------
-/** Copy another function into this object and replace all arguments with copies of custom functions.
+/** Copy another function into List and replaces all arguments with copies of custom functions.
  *  This is used as part of differentiation.
+ *  \param List: Data vector to copy elemnets into.
  *  \param Iter: Iterator pointing to first element in function to copy
- *  \param Args: Vector of iterators pointing to functions to replace arguments with.
+ *  \param Args: Value of arguments. Arg0 is replaced by Args[0], etc.
  *  \todo Throw exception on recursive functions
  */
-void TFuncData::CopyReplace(TConstIterator Iter, const std::vector<TConstIterator> &Args)
+void TFuncData::CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const std::vector<std::vector<TElem> > &Args)
 {
   DEBUG_LOG(std::clog << "CopyReplace: " << MakeText(Iter));
-  DEBUG_LOG(for(unsigned I = 0; I < Args.size(); I++) std::clog << ";   Arg" << I << "=" << MakeText(Args[I]));
+  DEBUG_LOG(for(unsigned I = 0; I < Args.size(); I++) std::clog << ";   Arg" << I << "=" << MakeText(Args[I].begin()));
   DEBUG_LOG(std::clog << std::endl);
 
+  const static std::vector<std::vector<TElem> > Dummy;
   TConstIterator End = FindEnd(Iter);
   for(; Iter != End; ++Iter)
     if(Iter->Ident == CodeCustom && Iter->Arguments > 0)
     {
-      std::vector<TConstIterator> NewArgs;
-      NewArgs.push_back(Iter + 1);
-      for(unsigned I = 1; I < Iter->Arguments; I++)
-        NewArgs.push_back(FindEnd(NewArgs.back()));
-      CopyReplace(Iter->FuncData->Data.begin(), NewArgs);
-      Iter = FindEnd(NewArgs.back()) - 1;
+      std::vector<std::vector<TElem> > NewArgs(Iter->Arguments);
+      TConstIterator Iter2 = Iter + 1;
+      for(unsigned I = 0; I < NewArgs.size(); I++)
+      {
+        CopyReplace(NewArgs[I], Iter2, Args);
+        Iter2 = FindEnd(Iter2);
+      }
+      CopyReplace(List, Iter->FuncData->Data.begin(), NewArgs);
+      Iter = Iter2 - 1;
     }
     else if(Iter->Ident == CodeVariable && !Args.empty())
-      CopyReplace(Args[Iter->Arguments], std::vector<TConstIterator>());
+      CopyReplace(List, Args[Iter->Arguments].begin(), Dummy);
     else
-      Data.push_back(*Iter);
+      List.push_back(*Iter);
 }
 //---------------------------------------------------------------------------
 /** Replace all occurences of OldElem with NewElem.

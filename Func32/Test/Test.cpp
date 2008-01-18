@@ -546,6 +546,7 @@ void Test()
 
   //Test differentiation of special functions
   TestDif("dnorm(x)", "-exp(-x^2/2)*x*sqrt(2pi)/2pi");
+  TestDif("dnorm(x, 0, 1)", "-exp(-x^2/2)*x*sqrt(2pi)/2pi");
 
   //Test differentiation of inverse trigonometric functions
   TestDif("acot(x)", 1, -28.647889756541160438399077407053, Degree);

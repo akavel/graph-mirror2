@@ -203,10 +203,10 @@ class TFuncData
   static std::string MakeText(TConstIterator Iter);
   static TConstIterator CreateText(TConstIterator Iter, std::string &Str, const std::vector<std::string> &Args);
   static TConstIterator CreateTextInPar(TConstIterator Iter, std::string &Str, const std::vector<std::string> &Args);
-  void CopyReplace(TConstIterator Iter, const std::vector<TConstIterator> &Args);
   bool CheckRecursive(std::vector<const TFuncData*> &FuncStack) const;
   bool CheckRecursive() const;
   static void HandleParseError(const EParseError &E, const char* Where, unsigned Pos);
+  static void CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const std::vector<std::vector<TElem> > &Args);
 
 public:
   TFuncData() {}
