@@ -469,10 +469,13 @@ void ExecutePluginEvent(TPluginEvent PluginEvent)
     "OnSelect",
     "OnClose",
   };
-  std::string Command = "Graph.ExecuteEvent(Graph. " + std::string(EventList[PluginEvent]) + ")";
-  PyEval_RestoreThread(ThreadState);
-  PyRun_SimpleString(Command.c_str());
-  ThreadState = PyEval_SaveThread();
+  if(IsPythonInstalled())
+  {
+    std::string Command = "Graph.ExecuteEvent(Graph. " + std::string(EventList[PluginEvent]) + ")";
+    PyEval_RestoreThread(ThreadState);
+    PyRun_SimpleString(Command.c_str());
+    ThreadState = PyEval_SaveThread();
+  }
 }
 //---------------------------------------------------------------------------
 } //namespace Python
