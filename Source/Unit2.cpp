@@ -12,15 +12,15 @@
 #include "Unit2.h"
 #include "VersionInfo.h"
 //---------------------------------------------------------------------------
-#pragma link "TntStdCtrls"
-#pragma link "SymbolDialog"
+#pragma link "TntStdCtrls"                     
+#pragma link "SymbolDialog"              
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm2::TForm2(TComponent* Owner)
-	: TTntForm(Owner)
+	: TTntForm(Owner)                               
 {
   Label6->Width = Comments->Width;
-  TranslateProperties(this);
+  TranslateProperties(this);                                     
   Animate1->ResName = "FLAG";
   reinterpret_cast<TEdit*>(Animate1)->OnDblClick = ProgramIconDblClick; //Nasty hack. Don't do this at home kids
   Label2->Left = Label1->Left + Label1->Width + 5;

@@ -321,8 +321,8 @@ object Form5: TForm5
       Width = 241
       Height = 21
       Hint = 
-        'Write a descriptive text to show in the legend. If empty the equ' +
-        'ation will be used.'
+        'Write a descriptive text to show in the legend and function list' +
+        '. If empty the formula will be used.'
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 0
     end

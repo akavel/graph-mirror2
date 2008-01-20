@@ -74,7 +74,7 @@
     <RFLAGS value=""/>
     <AFLAGS value="/mx /w2 /zi"/>
     <LFLAGS value="-I..\Obj -dPDFlib.dll -dpython25.dll -dgdiplus.dll -D&quot;&quot; -S:0x500000 -aa 
-      -Tpe -GD -x -v"/>
+      -Tpe -GD -x -w-dup -v"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -156,8 +156,8 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=4
 Release=0
-Build=394
-Debug=1
+Build=395
+Debug=0
 PreRelease=0
 Special=0
 Private=0
@@ -168,9 +168,9 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.4.0.394
+FileVersion=4.4.0.395
 InternalName=Graph
-LegalCopyright=Copyright Ivan Johansen 2007
+LegalCopyright=Copyright Ivan Johansen 2008
 LegalTrademarks=
 OriginalFilename=Graph.exe
 ProductName=Graph
