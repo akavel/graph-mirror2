@@ -11,9 +11,9 @@
 #pragma hdrstop
 #include "Unit2.h"
 #include "Unit3.h"
-#include "Unit4.h"
+#include "Unit4.h"       
 #include "Unit5.h"
-#include "Unit6.h"
+#include "Unit6.h"                 
 #include "Unit7.h"
 #include "Unit9.h"
 #include "Unit10.h"
@@ -101,9 +101,10 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   SetApplicationExceptionHandler(true);
   InitDebug();
 #endif
-
+                                                    
   Font->Name = "MS Shell Dlg";
   Data.SetAbortUpdateEvent(&Draw.AbortUpdate);
+  Application->Icon->Handle = LoadIcon(MainInstance, "ICON1");
 
   //Set "AllowOLE" to 1 in the Registry to use OLE with instances not started with "-Embedding"
   if(!FindCmdLineSwitch("EMBEDDING") && !GetRegValue(REGISTRY_KEY, "AllowOLE", HKEY_CURRENT_USER, 0))
