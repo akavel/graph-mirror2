@@ -1,5 +1,8 @@
 Redirect /graph/SetupGraphBeta.exe http://padowan.dk/graph/DownloadBeta.php
 Redirect /graph/SetupGraph.exe http://padowan.dk/graph/DownloadGraph.php
+Redirect /graph/SetupGraph-4.2.exe http://padowan.dk/graph/DownloadGraph.php
 
 Redirect /graph/donate.html http://padowan.dk/graph/Donation.php
 Redirect /graph/support.html http://padowan.dk/graph/Forum.php
+
+Redirect /graph/download.php http://padowan.dk/graph/DownloadGraph.php
