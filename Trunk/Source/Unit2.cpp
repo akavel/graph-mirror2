@@ -56,7 +56,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm2::Label2Click(TObject *Sender)
 {
-  std::string Str = "Mailto:";
+  std::string Str = "Mailto:";                           
   Str += EMAIL;
   Str += "?Subject=Bug report/suggestions for Graph " + TVersionInfo().StringValue("ProductVersion");
   ShellExecute(Handle, NULL, Str.c_str(), NULL, NULL, SW_SHOWDEFAULT);
