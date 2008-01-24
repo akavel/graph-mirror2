@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "../dtd/dblite.dtd">
+<book id="Graph" lang="en" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Graph</title>
+	<subtitle><graphic fileref="Images/GraphIcon.png"/></subtitle>
+	<xi:include href="version.xml"/>
+	<bookinfo>
+		<edition>First</edition>
+		<authorgroup>
+			<author>
+				<firstname>Ivan</firstname>
+				<surname>Johansen</surname>
+			</author>
+		</authorgroup>
+	</bookinfo>
+	<!-- include external files -->
+	<xi:include href="Installation.xml"/>
+	<xi:include href="AxesDialog.xml"/>
+	<xi:include href="OptionsDialog.xml"/>
+	<xi:include href="Glossary.xml"/>
+	<!-- <index id="Graph-Index"/> -->
+</book>
