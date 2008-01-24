@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<!ENTITY % Symbols SYSTEM "Symbols.ent">
+%Symbols;
+]>
+<chapter id="Edit-Options-Dialog">
+	<title>Edit|Options</title>
+	<indexterm>
+		<primary>Edit|Options dialog</primary>
+	</indexterm>
+	<simplesect>
+	</simplesect>
+</chapter>

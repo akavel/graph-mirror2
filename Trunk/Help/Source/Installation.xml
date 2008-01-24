@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd">
+<chapter id="Installtion">
+	<title>Installation and startup</title>
+	<indexterm>
+		<primary>Installation and startup</primary>
+	</indexterm>
+	<simplesect>
+		<para>
+			The program is distributed as a self extracting installation program 
+			usually named SetupGraph.exe. To install, just execute the installation 
+			and follow the instructions. The installation will install the following 
+			files in the selected directory and subdirectories: 
+			<table id="InstalledFilesTable">
+  			<tgroup cols="2">
+					<colspec colnum="1" colwidth="1*"/>
+					<colspec colnum="2" colwidth="3*"/>
+    			<tbody>
+      			<row>
+        			<entry condition="pot">Graph.exe</entry>
+        			<entry>The program file.</entry>
+      			</row>
+      			<row>
+        			<entry condition="pot">*.mo</entry>
+        			<entry>Translations of the program.</entry>
+      			</row>
+      			<row>
+        			<entry condition="pot">*.hlp</entry>
+        			<entry>Help files in different languages.</entry>
+      			</row>
+      			<row>
+        			<entry condition="pot">*.cnt</entry>
+        			<entry>Content for the corresponding help file.</entry>
+      			</row>
+      			<row>
+        			<entry condition="pot">*.grf</entry>
+        			<entry>Some examples that can be opened by the program.</entry>
+      			</row>
+      			<row>
+        			<entry condition="pot">Thumbnails.dll</entry>
+        			<entry>Shell extension for showing thumbnails of grf-files in Explorer.</entry>
+      			</row>
+    			</tbody>
+  			</tgroup>
+			</table>			
+		</para>
+
+		<para>
+			The installation will create a shortcut in the Start menu, which may be used to start the program. 
+			Under the installation you can select the preferred language. This can later be changed from the 
+			<xref linkend="Edit-Options-Dialog"/>.
+		</para>
+		<para>
+			If an older version of the program is already installed, the installation suggests you install in the same directory. 
+			You can just install over the old version. There is no need to uninstall the old version first, but make sure the old 
+			version is not running while installing.
+		</para>
+		<para>
+			Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>. 
+			Just select Graph and click on the <emphasis>Change/Remove button</emphasis>. This will remove all traces of the program. 
+			If files were added to the installation directory after the installation, you will be asked if you want to delete them. 
+			Make sure the program is not running while uninstalling.
+		</para>
+	</simplesect>
+</chapter>
