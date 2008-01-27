@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd">
-<chapter id="Installtion">
+<chapter id="Installation">
 	<title>Installation and startup</title>
-	<indexterm>
-		<primary>Installation and startup</primary>
-	</indexterm>
+	<indexterm><primary>installation</primary></indexterm>
+	<indexterm><primary>uninstall</primary></indexterm>
+	<indexterm><primary>Graph.exe</primary></indexterm>
+	<indexterm><primary>language</primary></indexterm>
+	<indexterm><primary>.mo</primary></indexterm>
+	<indexterm><primary>Control panel</primary></indexterm>
+	<indexterm><primary>Add/Remove Programs</primary></indexterm>
+	<indexterm><primary>remove</primary></indexterm>
 	<simplesect>
 		<para>
 			The program is distributed as a self extracting installation program 
@@ -12,6 +17,7 @@
 			and follow the instructions. The installation will install the following 
 			files in the selected directory and subdirectories: 
 			<table id="InstalledFilesTable">
+			<title>Installed files</title>
   			<tgroup cols="2">
 					<colspec colnum="1" colwidth="1*"/>
 					<colspec colnum="2" colwidth="3*"/>
@@ -48,7 +54,7 @@
 		<para>
 			The installation will create a shortcut in the Start menu, which may be used to start the program. 
 			Under the installation you can select the preferred language. This can later be changed from the 
-			<xref linkend="Edit-Options-Dialog"/>.
+			<xref linkend="OptionsDialog"/>.
 		</para>
 		<para>
 			If an older version of the program is already installed, the installation suggests you install in the same directory. 

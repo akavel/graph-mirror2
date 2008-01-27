@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<!ENTITY % Symbols SYSTEM "Symbols.ent">
+%Symbols;
+]>
+<section id="Trigonometric">
+	<title>Trigonometric</title>
+	<section>
+		<title>sin function</title>
+		<indexterm><primary>sin function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>sine</primary></indexterm>
+		<para>
+			Returns the sine of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>sin(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>sin</function> function calculates the sine of an angle <parameter>z</parameter>,
+				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. 
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates 
+				to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. 
+				If <parameter>z</parameter> is a real number, the result will be in the range -1 to 1. 
+			</para>
+		</simplesect>
+		<simplesect>
+			<title>Remarks</title>
+			<para>
+				For arguments with a large magnitude, the function will begin to lose precision. 
+			</para>
+		</simplesect>
+	</section>
+</section>

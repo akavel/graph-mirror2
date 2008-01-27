@@ -3,12 +3,31 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<chapter id="Edit-Axes-Dialog">
+<section id="AxesDialog">
 	<title>Edit|Axes</title>
-	<indexterm>
-		<primary>Edit|Axes dialog</primary>
-	</indexterm>
-	<simplesect>
+	<indexterm><primary>Axes dialog</primary></indexterm>
+	<indexterm><primary>x-axis</primary></indexterm>
+	<indexterm><primary>y-axis</primary></indexterm>
+	<indexterm><primary>minimum</primary></indexterm>
+	<indexterm><primary>maximum</primary></indexterm>
+	<indexterm><primary>unit</primary></indexterm>
+	<indexterm><primary>logarithmic scale</primary></indexterm>
+	<indexterm><primary>coordinates</primary></indexterm>
+	<indexterm><primary>grid</primary></indexterm>
+	<indexterm><primary>label</primary></indexterm>
+	<indexterm><primary>arrow</primary></indexterm>
+	<indexterm><primary>colors</primary></indexterm>
+	<indexterm><primary>crossing</primary></indexterm>
+	<indexterm><primary>step</primary></indexterm>
+	<indexterm><primary>tick</primary></indexterm>
+	<indexterm><primary>legend</primary></indexterm>
+	<indexterm><primary>complex numbers</primary></indexterm>
+	<indexterm><primary>axes style</primary></indexterm>
+	<indexterm><primary>trigonometry</primary></indexterm>
+	<indexterm><primary>fonts</primary></indexterm>
+	<indexterm><primary>auto grid</primary></indexterm>
+	<indexterm><primary>auto tick</primary></indexterm>
+	<indexterm><primary>background color</primary></indexterm>
 		<para>
 			When you choose the menu item 
 			<menuchoice>
@@ -19,9 +38,9 @@
 			The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis. 
 			The tab with options for the y-axis is completely analog to this.
 		</para>
-		<sect1>
+		<section>
 			<title>x-axis/y-axis</title>
-			<graphic fileref="Images/DialogAxes1.png"/>
+			<graphic fileref="DialogAxes1.png"/>
 			<variablelist>
 				<varlistentry>
 					<term>Minimum:</term>
@@ -140,6 +159,5 @@
 					</listitem>
 				</varlistentry>
 			</variablelist>
-		</sect1>
-	</simplesect>
-</chapter>
+		</section>
+</section>
