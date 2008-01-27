@@ -17,6 +17,8 @@
 <xsl:param name="table.cell.border.style" select="'solid'"></xsl:param>
 <xsl:param name="table.cell.border.color" select="'#7099C5'"></xsl:param>
 
+<xsl:param name="img.src.path">../Images/</xsl:param>
+
 <xsl:param name="formal.title.placement">
   figure after
   example after

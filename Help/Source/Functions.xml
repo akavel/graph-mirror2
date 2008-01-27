@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+]>
+<chapter id="Functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Functions</title>
+	<xi:include href="Trigonometric.xml"/>
+</chapter>

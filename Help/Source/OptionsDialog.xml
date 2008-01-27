@@ -3,11 +3,17 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<chapter id="Edit-Options-Dialog">
+<sect1 id="OptionsDialog">
 	<title>Edit|Options</title>
-	<indexterm>
-		<primary>Edit|Options dialog</primary>
-	</indexterm>
-	<simplesect>
-	</simplesect>
-</chapter>
+	<indexterm><primary>Options dialog</primary></indexterm>
+	<para>
+		<mediaobject  id="MousePicture">
+	  		<imageobject  role="fo">
+    				<imagedata  format="SVG"  fileref="Math.svg"/>
+			</imageobject>
+  			<imageobject  role="html">
+    				<imagedata  format="EMF"  fileref="Test.emf"/>
+  			</imageobject>
+		</mediaobject>
+	</para>
+</sect1>
