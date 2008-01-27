@@ -204,3 +204,17 @@ msgstr ""
 
 msgid "LabeledEdit1"
 msgstr ""
+
+msgid "ini"
+msgstr ""
+
+msgid "png"
+msgstr ""
+
+msgid "Courier New"
+msgstr ""
+
+msgid "Windows Bitmap [*.bmp]|*.bmp|Portable Network Graphics "
+"[*.png]|*.png|Joint Photographic Experts Group [*.jpg, "
+"*.jpeg]|*.jpg;*.jpeg"
+msgstr ""
