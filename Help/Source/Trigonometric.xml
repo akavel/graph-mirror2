@@ -3,7 +3,7 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<section id="Trigonometric">
+<section>
 	<title>Trigonometric</title>
 	<section>
 		<title>sin function</title>
@@ -34,4 +34,69 @@
 			</para>
 		</simplesect>
 	</section>
+
+
+	<section>
+		<title>cos function</title>
+		<indexterm><primary>cos function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>cosine</primary></indexterm>
+		<para>
+			Returns the cosine of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>cos(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>cos</function> function calculates the cosine of an angle <parameter>z</parameter>, 
+				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. 
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates 
+				to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. 
+				If <parameter>z</parameter> is a real number, the result will be in the range -1 to 1. 
+			</para>
+		</simplesect>
+		<simplesect>
+			<title>Remarks</title>
+			<para>
+				For arguments with a large magnitude, the function will begin to lose precision. 
+			</para>
+		</simplesect>
+	</section>	
+
+
+	<section>
+		<title>tan function</title>
+		<indexterm><primary>tan function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>tangent</primary></indexterm>
+		<para>
+			Returns the tangent of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>tan(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>tan</function> function calculates the tangent of an angle <parameter>z</parameter>, 
+				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. 
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates 
+				to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. 
+			</para>
+		</simplesect>
+		<simplesect>
+			<title>Remarks</title>
+			<para>
+				For arguments with a large magnitude, the function will begin to lose precision. 
+				<function>tan</function> is undefined at <mathphrase>z = p*&pgr;/2</mathphrase>, 
+				where p is an <glossterm>integer</glossterm>, 
+				but the function returns a very large number if <parameter>z</parameter> is near the undefined value.
+			</para>
+		</simplesect>
+	</section>
+
 </section>
