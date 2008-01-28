@@ -3,5 +3,11 @@
 ]>
 <chapter id="Functions" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Functions</title>
+	<xi:include href="PowerAndLog.xml"/>
 	<xi:include href="Trigonometric.xml"/>
+	<xi:include href="Hyperbolic.xml"/>
+	<xi:include href="Complex.xml"/>
+	<xi:include href="Rounding.xml"/>
+	<xi:include href="Piecewise.xml"/>
+	<xi:include href="Special.xml"/>
 </chapter>
