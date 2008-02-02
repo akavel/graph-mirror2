@@ -5,7 +5,285 @@
 ]>
 <section id="Hyperbolic">
 	<title>Hyperbolic</title>
-	<section>
+	<section id="sinh">
 		<title>sinh function</title>
+		<indexterm><primary>sinh function</primary></indexterm>
+		<indexterm><primary>hyperbolic sine</primary></indexterm>
+		<para>
+			Returns the hyperbolic sine of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>sinh(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>sinh</function> function calculates the hyperbolic sine of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+			</para>
+			<para>
+				Hyperbolic sine is defined as: <mathphrase>sinh(z) = &frac12;(e<superscript>z</superscript>-e<superscript>-z</superscript>)</mathphrase>
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="cosh">
+		<title>cosh function</title>
+		<indexterm><primary>cosh function</primary></indexterm>
+		<indexterm><primary>hyperbolic cosine</primary></indexterm>
+		<para>
+			Returns the hyperbolic cosine of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>cosh(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>cosh</function> function calculates the hyperbolic cosine of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+			</para>
+			<para>
+				Hyperbolic cosine is defined as: <mathphrase>cosh(z) = &frac12;(e<superscript>z</superscript>+e<superscript>-z</superscript>)</mathphrase>
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="tanh">
+		<title>tanh function</title>
+		<indexterm><primary>tanh function</primary></indexterm>
+		<indexterm><primary>hyperbolic tangent</primary></indexterm>
+		<para>
+			Returns the hyperbolic tangent of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>tanh(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>tanh</function> function calculates the hyperbolic tangent of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+			</para>
+			<para>
+				Hyperbolic tangent is defined as: <mathphrase>tanh(z) = sinh(z)/cosh(z)</mathphrase>
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="asinh">
+		<title>asinh function</title>
+		<indexterm><primary>asinh function</primary></indexterm>
+		<indexterm><primary>hyperbolic sine</primary></indexterm>
+		<indexterm><primary>inverse hyperbolic sine</primary></indexterm>
+		<para>
+			Returns the inverse hyperbolic sine of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>asinh(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>asinh</function> function calculates the inverse hyperbolic sine of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				<function>asinh</function> is the reverse of <function><link linkend="sinh">sinh</link></function>, i.e. <mathphrase>asinh(sinh(z)) = z</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="acosh">
+		<title>acosh function</title>
+		<indexterm><primary>acosh function</primary></indexterm>
+		<indexterm><primary>hyperbolic cosine</primary></indexterm>
+		<indexterm><primary>inverse hyperbolic cosine</primary></indexterm>
+		<para>
+			Returns the inverse hyperbolic cosine of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>acosh(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>acosh</function> function calculates the inverse hyperbolic cosine of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				<function>acosh</function> is the reverse of <function><link linkend="cosh">cosh</link></function>, i.e. <mathphrase>acosh(cosh(z)) = z</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="atanh">
+		<title>atanh function</title>
+		<indexterm><primary>atanh function</primary></indexterm>
+		<indexterm><primary>hyperbolic tangent</primary></indexterm>
+		<indexterm><primary>inverse hyperbolic tangent</primary></indexterm>
+		<para>
+			Returns the inverse hyperbolic tangent of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>atanh(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>atanh</function> function calculates the inverse hyperbolic tangent of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				<function>atanh</function> is the reverse of <function><link linkend="tanh">tanh</link></function>, i.e. <mathphrase>atanh(tanh(z)) = z</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="csch">
+		<title>csch function</title>
+		<indexterm><primary>csch function</primary></indexterm>
+		<indexterm><primary>hyperbolic cosecant</primary></indexterm>
+		<para>
+			Returns the hyperbolic cosecant of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>csch(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>csch</function> function calculates the hyperbolic cosecant of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+			</para>
+			<para>
+				Hyperbolic cosecant is defined as: <mathphrase>csc(z) = 1/sinh(z) = 2/(e<superscript>z</superscript>-e<superscript>-z</superscript>)</mathphrase>
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="sech">
+		<title>sech function</title>
+		<indexterm><primary>sech function</primary></indexterm>
+		<indexterm><primary>hyperbolic secant</primary></indexterm>
+		<para>
+			Returns the hyperbolic secant of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>sech(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>sech</function> function calculates the hyperbolic secant of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+			</para>
+			<para>
+				Hyperbolic secant is defined as: <mathphrase>csc(z) = 1/cosh(z) = 2/(e<superscript>z</superscript>+e<superscript>-z</superscript>)</mathphrase>
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="coth">
+		<title>coth function</title>
+		<indexterm><primary>coth function</primary></indexterm>
+		<indexterm><primary>hyperbolic cotangent</primary></indexterm>
+		<para>
+			Returns the hyperbolic cotangent of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>coth(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>coth</function> function calculates the hyperbolic cotangent of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+			</para>
+			<para>
+				Hyperbolic cotangent is defined as: <mathphrase>csc(z) = 1/tanh(z) = cosh(z)/sinh(z)</mathphrase>
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="acsch">
+		<title>acsch function</title>
+		<indexterm><primary>acsch function</primary></indexterm>
+		<indexterm><primary>hyperbolic cosecanr</primary></indexterm>
+		<indexterm><primary>inverse hyperbolic cosecant</primary></indexterm>
+		<para>
+			Returns the inverse hyperbolic cosecant of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>acsch(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>acsch</function> function calculates the inverse hyperbolic cosecant of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				<function>acsch</function> is the reverse of <function><link linkend="csch">csch</link></function>, i.e. <mathphrase>acsch(csch(z)) = z</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="asech">
+		<title>asech function</title>
+		<indexterm><primary>asech function</primary></indexterm>
+		<indexterm><primary>hyperbolic secanr</primary></indexterm>
+		<indexterm><primary>inverse hyperbolic secant</primary></indexterm>
+		<para>
+			Returns the inverse hyperbolic secant of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>asech(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>asech</function> function calculates the inverse hyperbolic secant of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				<function>asech</function> is the reverse of <function><link linkend="sech">sech</link></function>, i.e. <mathphrase>asech(sech(z)) = z</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="acoth">
+		<title>acoth function</title>
+		<indexterm><primary>acoth function</primary></indexterm>
+		<indexterm><primary>hyperbolic cotangent</primary></indexterm>
+		<indexterm><primary>inverse hyperbolic cotangent</primary></indexterm>
+		<para>
+			Returns the inverse hyperbolic cotangent of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>acoth(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>acoth</function> function calculates the inverse hyperbolic cotangent of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				<function>acoth</function> is the reverse of <function><link linkend="coth">coth</link></function>, i.e. <mathphrase>acoth(coth(z)) = z</mathphrase>.
+				For real numbers <function>acoth</function> is undefined in the interval [-1;1].
+			</para>
+		</simplesect>
 	</section>
 </section>

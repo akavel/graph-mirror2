@@ -5,7 +5,7 @@
 ]>
 <section>
 	<title>Trigonometric</title>
-	<section>
+	<section id="sin">
 		<title>sin function</title>
 		<indexterm><primary>sin function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -21,22 +21,22 @@
 			<title>Description</title>
 			<para>
 				The <function>sin</function> function calculates the sine of an angle <parameter>z</parameter>,
-				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. 
-				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates 
-				to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. 
-				If <parameter>z</parameter> is a real number, the result will be in the range -1 to 1. 
+				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates
+				to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				If <parameter>z</parameter> is a real number, the result will be in the range -1 to 1.
 			</para>
 		</simplesect>
 		<simplesect>
 			<title>Remarks</title>
 			<para>
-				For arguments with a large magnitude, the function will begin to lose precision. 
+				For arguments with a large magnitude, the function will begin to lose precision.
 			</para>
 		</simplesect>
 	</section>
 
 
-	<section>
+	<section id="cos">
 		<title>cos function</title>
 		<indexterm><primary>cos function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -51,23 +51,23 @@
 		<simplesect>
 			<title>Description</title>
 			<para>
-				The <function>cos</function> function calculates the cosine of an angle <parameter>z</parameter>, 
-				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. 
-				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates 
-				to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. 
-				If <parameter>z</parameter> is a real number, the result will be in the range -1 to 1. 
+				The <function>cos</function> function calculates the cosine of an angle <parameter>z</parameter>,
+				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates
+				to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				If <parameter>z</parameter> is a real number, the result will be in the range -1 to 1.
 			</para>
 		</simplesect>
 		<simplesect>
 			<title>Remarks</title>
 			<para>
-				For arguments with a large magnitude, the function will begin to lose precision. 
+				For arguments with a large magnitude, the function will begin to lose precision.
 			</para>
 		</simplesect>
-	</section>	
+	</section>
 
 
-	<section>
+	<section id="tan">
 		<title>tan function</title>
 		<indexterm><primary>tan function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -82,21 +82,270 @@
 		<simplesect>
 			<title>Description</title>
 			<para>
-				The <function>tan</function> function calculates the tangent of an angle <parameter>z</parameter>, 
-				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. 
-				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates 
-				to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. 
+				The <function>tan</function> function calculates the tangent of an angle <parameter>z</parameter>,
+				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates
+				to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 			</para>
 		</simplesect>
 		<simplesect>
 			<title>Remarks</title>
 			<para>
-				For arguments with a large magnitude, the function will begin to lose precision. 
-				<function>tan</function> is undefined at <mathphrase>z = p*&pgr;/2</mathphrase>, 
-				where p is an <glossterm>integer</glossterm>, 
+				For arguments with a large magnitude, the function will begin to lose precision.
+				<function>tan</function> is undefined at <mathphrase>z = p*&pgr;/2</mathphrase>,
+				where p is an <glossterm>integer</glossterm>,
 				but the function returns a very large number if <parameter>z</parameter> is near the undefined value.
 			</para>
 		</simplesect>
 	</section>
 
+
+	<section id="asin">
+		<title>asin function</title>
+		<indexterm><primary>asin function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>sine</primary></indexterm>
+		<indexterm><primary>inverse sine</primary></indexterm>
+		<para>
+			Returns the inverse sine of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>asin(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>asin</function> function calculates the inverse sine of <parameter>z</parameter>.
+				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<parameter>z</parameter> may be any numeric expression that evaluates to a <glossterm>real number</glossterm>.
+				This is the reverse of the <link linkend="sin"><function>sin</function></link> function.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="acos">
+		<title>acos function</title>
+		<indexterm><primary>acos function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>cosine</primary></indexterm>
+		<indexterm><primary>inverse cosine</primary></indexterm>
+		<para>
+			Returns the inverse cosine of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>acos(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>acos</function> function calculates the inverse cosine of <parameter>z</parameter>.
+				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
+				This is the reverse of the <link linkend="cos"><function>cos</function></link> function.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="atan">
+		<title>atan function</title>
+		<indexterm><primary>atan function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>tangent</primary></indexterm>
+		<indexterm><primary>inverse tangent</primary></indexterm>
+		<para>
+			Returns the inverse tangent of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>atan(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>atan</function> function calculates the inverse tangent of <parameter>z</parameter>.
+				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a real number.
+				This is the reverse of the <link linkend="tan"><function>tan</function></link> function.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="sec">
+		<title>sec function</title>
+		<indexterm><primary>sec function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>secant</primary></indexterm>
+		<para>
+			Returns the secant of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>sec(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>sec</function> function calculates the secant of an angle <parameter>z</parameter>,
+				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<mathphrase>sec(z)</mathphrase> is the same as <inlineequation>1/cos(z)</inlineequation>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+			</para>
+		</simplesect>
+		<simplesect>
+			<title>Remarks</title>
+			<para>
+				For arguments with a large magnitude, the function will begin to lose precision.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="csc">
+		<title>csc function</title>
+		<indexterm><primary>csc function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>cosecant</primary></indexterm>
+		<para>
+			Returns the cosecant of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>csc(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>csc</function> function calculates the cosecant of an angle <parameter>z</parameter>,
+				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<mathphrase>csc(z)</mathphrase> is the same as <inlineequation>1/sin(z)</inlineequation>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+			</para>
+		</simplesect>
+		<simplesect>
+			<title>Remarks</title>
+			<para>
+				For arguments with a large magnitude, the function will begin to lose precision.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="cot">
+		<title>cot function</title>
+		<indexterm><primary>cot function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>cotangent</primary></indexterm>
+		<para>
+			Returns the cotangent of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>cot(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>cot</function> function calculates the secant of an angle <parameter>z</parameter>,
+				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<mathphrase>cot(z)</mathphrase> is the same as <mathphrase>1/tan(z)</mathphrase>.
+				<parameter>z</parameter> may be any numeric expression that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+			</para>
+		</simplesect>
+		<simplesect>
+			<title>Remarks</title>
+			<para>
+				For arguments with a large magnitude, the function will begin to lose precision.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="asec">
+		<title>asec function</title>
+		<indexterm><primary>asec function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>secant</primary></indexterm>
+		<indexterm><primary>inverse secant</primary></indexterm>
+		<para>
+			Returns the inverse secant of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>asec(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>asec</function> function calculates the inverse secant of <parameter>z</parameter>.
+				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<mathphrase>asec(z)</mathphrase> is the same as <mathphrase>acos(1/z)</mathphrase>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
+				This is the reverse of the <function><link linkend="sec">sec</link></function> function.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="acsc">
+		<title>acsc function</title>
+		<indexterm><primary>acsc function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>cosecant</primary></indexterm>
+		<indexterm><primary>inverse cosecant</primary></indexterm>
+		<para>
+			Returns the inverse cosecant of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>acsc(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>acsc</function> function calculates the inverse cosecant of <parameter>z</parameter>.
+				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<mathphrase>acsc(z)</mathphrase> is the same as <mathphrase>asin(1/z)</mathphrase>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
+				This is the reverse of the <function><link linkend="csc">csc</link></function> function.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="acot">
+		<title>acot function</title>
+		<indexterm><primary>acot function</primary></indexterm>
+		<indexterm><primary>trigonometry</primary></indexterm>
+		<indexterm><primary>cotangent</primary></indexterm>
+		<indexterm><primary>inverse cotangent</primary></indexterm>
+		<para>
+			Returns the inverse cotangent of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>acot(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>acot</function> function calculates the inverse cotangent of <parameter>z</parameter>.
+				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				<mathphrase>acot(z)</mathphrase> is the same as <mathphrase>atan(1/z)</mathphrase>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
+				This is the reverse of the <function><link linkend="cot">cot</link></function> function.
+			</para>
+		</simplesect>
+		<simplesect>
+			<title>Remarks</title>
+			<para>
+				The <function>acot</function> function returns a value in the range ]-&pgr;/2;&pgr;/2] (]-90;90] when calculating in degrees),
+				which is the most common definition, though some may define it to be in the range ]0;&pgr;[.
+			</para>
+		</simplesect>
+	</section>
 </section>

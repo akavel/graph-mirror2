@@ -18,5 +18,4 @@
 	<xi:include href="Functions.xml"/>
 	<xi:include href="Dialogs.xml"/>
 	<xi:include href="Glossary.xml"/>
-	<!-- <index id="Graph-Index"/> -->
 </book>

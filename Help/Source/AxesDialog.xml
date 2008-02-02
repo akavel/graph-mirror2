@@ -29,16 +29,16 @@
 	<indexterm><primary>auto tick</primary></indexterm>
 	<indexterm><primary>background color</primary></indexterm>
 		<para>
-			When you choose the menu item 
+			When you choose the menu item
 			<menuchoice>
 				<guimenu>Edit</guimenu>
 				<guimenuitem>Axes...</guimenuitem>
 			</menuchoice>
-			, the dialog shown below will appear. In this dialog you can configure all options which are related to the axes. 
-			The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis. 
+			, the dialog shown below will appear. In this dialog you can configure all options which are related to the axes.
+			The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis.
 			The tab with options for the y-axis is completely analog to this.
 		</para>
-		<section>
+		<simplesect>
 			<title>x-axis/y-axis</title>
 			<graphic fileref="DialogAxes1.png"/>
 			<variablelist>
@@ -62,12 +62,12 @@
 					<term>Tick unit:</term>
 					<listitem>
 						<para>
-							This is the distance between the tick marks on the axis. 
-							Tick marks are shown as small lines perpendicular to the axis. 
-							<guilabel>Tick unit</guilabel> is used for both tick marks and for showing numbers. 
-							With a logarithmic axis the <guilabel>Tick unit</guilabel> indicates the factor between the markers. 
-							For example a <guilabel>Tick unit</guilabel> for 4 will show 1, 4, 16, 64, etc. on a logarithmic axis 
-							while it will show 0, 4, 8, 12, etc. on a normal axis. 						
+							This is the distance between the tick marks on the axis.
+							Tick marks are shown as small lines perpendicular to the axis.
+							<guilabel>Tick unit</guilabel> is used for both tick marks and for showing numbers.
+							With a logarithmic axis the <guilabel>Tick unit</guilabel> indicates the factor between the markers.
+							For example a <guilabel>Tick unit</guilabel> for 4 will show 1, 4, 16, 64, etc. on a logarithmic axis
+							while it will show 0, 4, 8, 12, etc. on a normal axis.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -99,8 +99,8 @@
 					<term>Label:</term>
 					<listitem>
 						<para>
-							When this field is checked, the text in the edit box will be shown just above the x-axis in the right side of 
-							the coordinate system. For the y-axis, the text will be shown at the top to the right of the axis. You may use 
+							When this field is checked, the text in the edit box will be shown just above the x-axis in the right side of
+							the coordinate system. For the y-axis, the text will be shown at the top to the right of the axis. You may use
 							this to show what unit is used for the axes.
 						</para>
 					</listitem>
@@ -109,7 +109,7 @@
 					<term>The x-axis crosses at / The y-axis crosses at:</term>
 					<listitem>
 						<para>
-							This is the coordinate where the axis will cross the other axis. This is only used when <guilabel>Axes style</guilabel> 
+							This is the coordinate where the axis will cross the other axis. This is only used when <guilabel>Axes style</guilabel>
 							is <literal>Crossed</literal>. Default: 0
 						</para>
 					</listitem>
@@ -118,7 +118,7 @@
 					<term>Auto tick</term>
 					<listitem>
 						<para>
-							When checked the program will choose a value for <guilabel>Tick unit</guilabel> that is 
+							When checked the program will choose a value for <guilabel>Tick unit</guilabel> that is
 							fitting for the axes dimensions and size of the window.
 						</para>
 					</listitem>
@@ -127,7 +127,7 @@
 					<term>Auto grid</term>
 					<listitem>
 						<para>
-							When checked, <guilabel>Grid unit</guilabel> will have the same value as <guilabel>Tick unit</guilabel>. 
+							When checked, <guilabel>Grid unit</guilabel> will have the same value as <guilabel>Tick unit</guilabel>.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -135,7 +135,7 @@
 					<term>Show ticks</term>
 					<listitem>
 						<para>
-							When this field is checked tick marks are shown as small lines on the axis with the distance chosen under 
+							When this field is checked tick marks are shown as small lines on the axis with the distance chosen under
 							<guilabel>Tick unit</guilabel>.
 						</para>
 					</listitem>
@@ -144,7 +144,7 @@
 					<term>Show grid:</term>
 					<listitem>
 						<para>
-							When this field is marked grid lines will be shown as dotted lines perpendicular to the axes with the color chosen under 
+							When this field is marked grid lines will be shown as dotted lines perpendicular to the axes with the color chosen under
 							<guilabel>Font and color</guilabel> and with the distance chosen at <guilabel>Grid unit</guilabel>.
 						</para>
 					</listitem>
@@ -153,11 +153,11 @@
 					<term>Show as a multiple of pi:</term>
 					<listitem>
 						<para>
-							When this is enabled the numbers on the axis are shown as fractions multiplied by &pgr;, for example 3&pgr;/2. 
+							When this is enabled the numbers on the axis are shown as fractions multiplied by &pgr;, for example 3&pgr;/2.
 							<guilabel>Show numbers</guilabel> must be enabled for this option to be available.
 						</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
-		</section>
+		</simplesect>
 </section>
