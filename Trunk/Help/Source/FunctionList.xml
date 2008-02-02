@@ -70,7 +70,7 @@
  	   				<entry>The imaginary unit. Defined as &imag;<superscript>2</superscript> = -1. Only useful when working with complex numbers.</entry>
 		 			</row>
  	   			<row>
- 	   				<entry>rand</entry>
+ 	   				<entry><link linkend="rand">rand</link></entry>
  	   				<entry>Evaluates to a random number between 0 and 1.</entry>
     			</row>
  				</tbody>
@@ -179,15 +179,15 @@
 						<entry namest="col1" nameend="col2" align="center"><emphasis>Trigonometric</emphasis></entry>
 					</row>
 					<row>
-						<entry>sin</entry>
+						<entry><link linkend="sin">sin</link></entry>
 						<entry>Returns the sine of the argument, which may be in radians or degrees.</entry>
 					</row>
 					<row>
-						<entry>cos</entry>
+						<entry><link linkend="cos">cos</link></entry>
 						<entry>Returns the cosine of the argument, which may be in radians or degrees.</entry>
 					</row>
 					<row>
-						<entry>tan</entry>
+						<entry><link linkend="tan">tan</link></entry>
    					<entry>Returns the tangent of the argument, which may be in radians or degrees.</entry>
    				</row>
 	 				<row>
