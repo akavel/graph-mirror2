@@ -5,7 +5,49 @@
 ]>
 <section>
 	<title>Piecewise</title>
-	<section>
+	<section id="sign">
 		<title>sign function</title>
+		<indexterm><primary>sign function</primary></indexterm>
+		<para>
+			Returns the sign of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>sign(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>sign</function> function returns the sign of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
+				The function is undefined when <parameter>z</parameter> has an imaginary part.
+				<mathphrase>sign(z)</mathphrase> returns 1 for <parameter>z</parameter>>0 and -1 for <parameter>z</parameter>&lt;0.
+				<mathphrase>sign(z)</mathphrase> is undefiend for <parameter>z</parameter>=0.
+			</para>
+		</simplesect>
 	</section>
+
+
+	<section id="u">
+		<title>u function</title>
+		<indexterm><primary>u function</primary></indexterm>
+		<para>
+			The unit step function.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>u(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				<mathphrase>u(z)</mathphrase> is commonly known as the unit step function.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
+				The function is undefined when <parameter>z</parameter> has an imaginary part.
+				<mathphrase>u(z)</mathphrase> returns 1 for <parameter>z</parameter>&ge;0 and 0 for <parameter>z</parameter>&lt;0.
+			</para>
+		</simplesect>
+	</section>
+
+
 </section>

@@ -1,5 +1,6 @@
-<!ENTITY pgr	"<symbol role='symbolfont'>&#x03C0;</symbol>"> <!-- GREEK SMALL LETTER PI -->
-<!ENTITY thgr	"<symbol role='symbolfont'>&#x003B8;</symbol>"> <!-- GREEK SMALL LETTER THETA -->
+<!ENTITY pi	"<symbol role='symbolfont'>&#x03C0;</symbol>"> <!-- GREEK SMALL LETTER PI -->
+<!ENTITY theta	"<symbol role='symbolfont'>&#x003B8;</symbol>"> <!-- GREEK SMALL LETTER THETA -->
+<!ENTITY Gamma	"<symbol role='symbolfont'>&#x00393;</symbol>"> <!-- GREEK SMALL LETTER THETA -->
 <!ENTITY ang	"<symbol role='symbolfont'>&#x02220;</symbol>"> <!-- ANGLE -->
 <!ENTITY deg	"&#x00B0;"> <!-- DEGREE SIGN -->
 <!ENTITY imag "<emphasis role='bold'>i</emphasis>"> <!-- Imaginary unit -->

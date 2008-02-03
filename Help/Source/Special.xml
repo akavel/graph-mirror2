@@ -5,7 +5,53 @@
 ]>
 <section>
 	<title>Special</title>
-	<section>
-		<title>integrate function</title>
+	<section id="fact">
+		<title>fact function</title>
+		<indexterm><primary>fact function</primary></indexterm>
+		<indexterm><primary>factorial</primary></indexterm>
+		<para>
+			Returns the factorial of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>fact(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+			  The <function>fact</function> function returns the factorial of <parameter>n</parameter>, commonly written as n!.
+				<parameter>n</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a positive integer.
+				The function is defined as <mathphrase>fact(n)=n(n-1)(n-2)...1</mathphrase>,
+				and relates to the <function><link linkend="gamma">gamma</link></function> function as <mathphrase>fact(n)=gamma(n+1)</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="gamma">
+		<title>gamma function</title>
+		<indexterm><primary>gamma function</primary></indexterm>
+		<indexterm><primary>factorial</primary></indexterm>
+		<para>
+			Returns the value of the Euler gamma function of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>gamma(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>gamma</function> function returns the result of the Euler gamma function of <parameter>z</parameter>, commonly written as &Gamma;(z).
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				The gamma function relates to the factorial function as <mathphrase>fact(n)=gamma(n+1)</mathphrase>.
+				The mathematical definition of the gamma function is:
+				<mediaobject>
+	  			<imageobject  role="fo"><imagedata  format="SVG"  fileref="Dummy.svg"/></imageobject>
+  				<imageobject  role="html"><imagedata  format="EMF"  fileref="Gamma.emf"/></imageobject>
+				</mediaobject>
+				This cannot be calculated precisely, so Graph is using the so-called Lanczos approximation to calculate the <function>gamma</function> function.
+			</para>
+		</simplesect>
 	</section>
 </section>
