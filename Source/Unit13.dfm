@@ -597,13 +597,13 @@ object Form13: TForm13
   end
   object SaveDialog1: TSaveDialog
     DefaultExt = 'ini'
-    Filter = 'Ini file [*.ini]|*.ini'
+    Filter = 'User models [*.ini]|*.ini'
     Options = [ofOverwritePrompt, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing]
     Left = 480
     Top = 264
   end
   object OpenDialog1: TOpenDialog
-    Filter = 'Ini file [*.ini]|*.ini|All files [*.*]|*.*'
+    Filter = 'User models [*.ini]|*.ini'
     Left = 448
     Top = 264
   end

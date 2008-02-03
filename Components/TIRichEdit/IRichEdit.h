@@ -82,6 +82,7 @@ private:
   TColor FBackgroundColor;
   ::TParaFormat *FParagraph;
   TLinkEvent FOnLink;
+  bool FProtectedChange;
 
   void __fastcall SetTransparent(bool Value);
   void __fastcall SetBackgroundColor(TColor Color);
@@ -139,6 +140,7 @@ __published:
   __property bool AutoUrlDetect = {read=GetAutoUrlDetect, write=SetAutoUrlDetect};
   __property TOleErrorEvent OnOleError = {read=FOnOleError, write=FOnOleError, default=NULL};
   __property TLinkEvent OnLink = {read=FOnLink, write=SetOnLink, default=NULL};
+  __property bool ProtectedChange = {read=FProtectedChange, write=FProtectedChange, default=false};
 
   __property BorderStyle;
   __property WordWrap;

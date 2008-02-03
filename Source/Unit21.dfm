@@ -81,7 +81,7 @@ object Form21: TForm21
     Top = 48
     Width = 121
     Height = 21
-    Hint = 'Enter coordinate to lock label at.'
+    Hint = 'Enter a coordinate to lock label at.'
     TabOrder = 1
   end
   object Edit2: TMyEdit
@@ -89,7 +89,7 @@ object Form21: TForm21
     Top = 76
     Width = 121
     Height = 21
-    Hint = 'Enter coordinate to lock label at.'
+    Hint = 'Enter a coordinate to lock label at.'
     TabOrder = 2
   end
 end

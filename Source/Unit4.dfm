@@ -134,8 +134,8 @@ object Form4: TForm4
     Width = 274
     Height = 17
     Hint = 
-      'Save the size of the main window when the program exists. This i' +
-      's used the next time Graph is run.'
+      'Save the size of the main window when the program exits. This is' +
+      ' used the next time Graph is run.'
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Save workspace on exit'
     ParentShowHint = False

@@ -672,7 +672,7 @@ object Form1: TForm1
       end
       object Tree_Rotation_Custom: TTntMenuItem
         Caption = 'Custom...'
-        Hint = 'Specify a rotation of the label.'
+        Hint = 'Specify the angle of rotation for the label.'
         RadioItem = True
         OnClick = RotationClick
       end
@@ -3884,7 +3884,7 @@ object Form1: TForm1
     object InsertLabelAction: TTntAction
       Category = 'Function'
       Caption = 'Insert label...'
-      Hint = 'Insert a text label'
+      Hint = 'Insert a text label.'
       ImageIndex = 46
       ShortCut = 119
       OnExecute = InsertLabelActionExecute
@@ -4081,7 +4081,7 @@ object Form1: TForm1
       end
       object Label_Rotation_Custom: TTntMenuItem
         Caption = 'Custom...'
-        Hint = 'Specify a rotation of the label.'
+        Hint = 'Specify the angle of rotation for the label.'
         RadioItem = True
         OnClick = RotationClick
       end

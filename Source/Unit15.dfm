@@ -139,14 +139,14 @@ object Form15: TForm15
       AutoCheck = True
       Caption = 'Show %s'
       Checked = True
-      Hint = 'Show the f'#39'(x) coloumn in the table.'
+      Hint = 'Show the f'#39'(x) column in the table.'
       OnClick = Popup1_Show
     end
     object Popup1_Show_ddf: TTntMenuItem
       AutoCheck = True
       Caption = 'Show %s'
       Checked = True
-      Hint = 'Show the f'#39#39'(x) coloumn in the table.'
+      Hint = 'Show the f'#39#39'(x) column in the table.'
       OnClick = Popup1_Show
     end
     object N1: TTntMenuItem
