@@ -3,16 +3,16 @@
 <head>
 
 
-  
-  
-  
-  
+
+
+
+
   <title>Graph - Translations</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 
 
-  
-  
+
+
   <link rel="stylesheet" href="Graph.css" type="text/css">
 </head>
 
@@ -20,20 +20,20 @@
 <body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
 
 
-<div id="main"> 
-      
+<div id="main">
+
 <h1 align="center"><font size="+7"><b><font color="#0000ff" size="+7">
       </font><font color="#0000ff">Translations</font></b></font></h1>
 
 
 
-      
+
 <p><font size="+1"> Graph currently supports
 the following languages:</font></p>
 
 
 
-      
+
 <table border="1" width="97%">
 
 
@@ -51,8 +51,8 @@ the following languages:</font></p>
 
 
             <td width="17%">
-            
-      
+
+
       <div align="center"><b>Program</b></div>
 
 
@@ -62,8 +62,8 @@ the following languages:</font></p>
 
 
             <td width="16%">
-            
-      
+
+
       <div align="center"><b>Help file</b></div>
 
 
@@ -89,8 +89,8 @@ the following languages:</font></p>
 
 
             <td width="17%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -100,8 +100,8 @@ the following languages:</font></p>
 
 
             <td width="16%">
-            
-      
+
+
       <p align="center">No</p>
 
 
@@ -151,8 +151,8 @@ the following languages:</font></p>
 
 
             <td width="17%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -162,8 +162,8 @@ the following languages:</font></p>
 
 
             <td width="16%">
-            
-      
+
+
       <p align="center">No</p>
 
 
@@ -172,7 +172,7 @@ the following languages:</font></p>
 
 
 
-            <td width="48%">Martin Stru&#382;sk&yacute; </td>
+            <td width="48%">Martin Stru&#382;sk&yacute; and Pavlína Krausová </td>
 
 
 
@@ -189,8 +189,8 @@ the following languages:</font></p>
 
 
             <td width="17%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
