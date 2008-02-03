@@ -294,6 +294,7 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
   RichEdit->Visible = false;
   RichEdit->Transparent = true;
   RichEdit->WordWrap = false; //Must be false for LineIndex() to find the correct line
+  RichEdit->ProtectedChange = true;
 
   RichEdit->Parent = Application->MainForm;
   TRichEditOle RichEditOle(RichEdit.get());
@@ -303,12 +304,12 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
 
   //We need to add a space to the end of each lines. Else the width will be too
   //small if the line ends with an italic character
-  int LineCount = RichEdit->LineCount();
-  for(int I = 0; I < LineCount; I++)
+  int LineCount = RichEdit->LineCount();                              
+  for(int I = 0; I < LineCount; I++)                              
   {
-    int Start = RichEdit->LineIndex(I);
+    int Start = RichEdit->LineIndex(I);                                         
     RichEdit->SelStart = Start + RichEdit->LineLength(Start);
-    RichEdit->SelText = " ";
+    RichEdit->SelText = L" "; 
   }
 
   //We need to add an empty line to the end, because GetTextSize doesn't count
@@ -316,7 +317,7 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
   RichEdit->SelText = "\n";
 
   //We need to left align the text because there is no specific right side
-  RichEdit->SelectAll();
+  RichEdit->SelectAll();                                                                
   RichEdit->Paragraph->Alignment = pfaLeft;
 
   return RichEdit->GetTextSize();

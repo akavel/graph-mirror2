@@ -57,8 +57,8 @@ object StdFuncFrame: TStdFuncFrame
     Width = 135
     Height = 21
     Hint = 
-      'Enter a number for which you want to evaluate the function, or c' +
-      'lick on the graph in the main window.'
+      'Enter a value for which you want to evaluate the function, or cl' +
+      'ick on the graph in the graphing area.'
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
   end

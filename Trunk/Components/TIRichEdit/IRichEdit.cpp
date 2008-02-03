@@ -25,7 +25,7 @@ namespace Irichedit
 __fastcall TIRichEdit::TIRichEdit(TComponent* Owner)
   : TCustomRichEdit(Owner), FTransparent(false), TextFormat(this, false),
     GlobalTextFormat(this, true), FOnOleError(NULL), FBackgroundColor(clDefault),
-    FParagraph(new ::TParaFormat(this)), FOnLink(NULL)
+    FParagraph(new ::TParaFormat(this)), FOnLink(NULL), FProtectedChange(false)
 {
   ControlStyle = ControlStyle >> csSetCaption;
 }
@@ -69,7 +69,7 @@ void __fastcall TIRichEdit::DestroyWnd(void)
 //---------------------------------------------------------------------------
 void __fastcall TIRichEdit::SetTransparent(bool Value)
 {
-	FTransparent = Value;
+  FTransparent = Value;
 
   //We cannot change style if there is no handle
   if(HandleAllocated())
@@ -393,7 +393,7 @@ void __fastcall TIRichEdit::WMNotify(TMessage &Message)
     case EN_PROTECTED:
     {
       ENPROTECTED *Protected = reinterpret_cast<ENPROTECTED*>(Message.LParam);
-      bool AllowChange = false;
+      bool AllowChange = ProtectedChange;
       switch(Protected->msg)
       {
         case WM_COPY:

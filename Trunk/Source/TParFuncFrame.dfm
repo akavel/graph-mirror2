@@ -133,7 +133,7 @@ object ParFuncFrame: TParFuncFrame
     Height = 21
     Hint = 
       'Enter the independent variable for which you want to evaluate th' +
-      'e function, or click on the graph in the main window.'
+      'e function, or click on the graph in the graphing area.'
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
   end

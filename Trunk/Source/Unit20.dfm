@@ -225,8 +225,8 @@ object Form20: TForm20
     object Saveimagesequence1: TTntMenuItem
       Caption = 'Save all frames...'
       Hint = 
-        'Save all frames  in the animation to image files. This will crea' +
-        'te as many files as there are frames in the animation.'
+        'Save all frames in the animation to image files. This will creat' +
+        'e as many files as there are frames in the animation.'
       OnClick = Saveimagesequence1Click
     end
   end

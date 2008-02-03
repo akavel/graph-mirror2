@@ -45,7 +45,7 @@ object TanFrame: TTanFrame
     Top = 8
     Width = 135
     Height = 21
-    Hint = 'Enter an x-coordinate or click in the main window.'
+    Hint = 'Enter an x-coordinate or click in the graphing area.'
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
   end
