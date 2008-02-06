@@ -5,7 +5,116 @@
 ]>
 <section>
 	<title>Complex</title>
-	<section>
+	<section id="abs">
 		<title>abs function</title>
+		<indexterm><primary>abs function</primary></indexterm>
+		<indexterm><primary>absolute value</primary></indexterm>
+		<indexterm><primary>numeric value</primary></indexterm>
+		<para>
+			Returns the absolute value of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>abs(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>abs</function> function returns the absolute or numeric value of <parameter>z</parameter>, commonly written as |z|.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				<mathphrase>abs(z)</mathphrase> always returns a postive real value.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="arg">
+		<title>arg function</title>
+		<indexterm><primary>arg function</primary></indexterm>
+		<indexterm><primary>argument</primary></indexterm>
+		<indexterm><primary>angle</primary></indexterm>
+		<para>
+			Returns the argument of the parameter.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>arg(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+			  The <function>arg</function> function returns the argument or angle of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				<mathphrase>arg(z)</mathphrase> always returns a real number.
+				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
+				The angle is always between -&pi; and &pi;.
+				If <parameter>z</parameter> is a real number, <mathphrase>arg(z)</mathphrase> is 0 for positive numbers and &pi; for negative numbers.
+				<mathphrase>arg(0)</mathphrase> is undefined.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="conj">
+		<title>conj function</title>
+		<indexterm><primary>conj function</primary></indexterm>
+		<indexterm><primary>conjugate</primary></indexterm>
+		<para>
+			Returns the conjugate of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>conj(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+			  The <function>conj</function> function returns the conjugate of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				The function is defined as: <mathphrase>conj(z) = re(z) - &imag;*im(z)</mathphrase>
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="re">
+		<title>re function</title>
+		<indexterm><primary>re function</primary></indexterm>
+		<indexterm><primary>real value</primary></indexterm>
+		<para>
+			Returns the real part of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>re(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+			  The <function>re</function> function returns the real part of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="im">
+		<title>im function</title>
+		<indexterm><primary>im function</primary></indexterm>
+		<indexterm><primary>imaginary value</primary></indexterm>
+		<para>
+			Returns the imaginary part of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>im(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+			  The <function>im</function> function returns the imaginary part of <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+			</para>
+		</simplesect>
 	</section>
 </section>
