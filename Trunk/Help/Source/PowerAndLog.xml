@@ -91,7 +91,7 @@
 		<simplesect>
 			<title>Remarks</title>
 			<para>
-				When the calculation is done with real numbers, the function is only defined for <parameter>z</parameter>&lt;0 if <parameter>n</parameter> is an odd integer.
+				When the calculation is done with real numbers, the function is only defined for <parameter>z</parameter>&lt;0 if <parameter>n</parameter> is an odd <glossterm>integer</glossterm>.
 				For calculations with complex numbers, <function>root</function> is defined for the whole complex plane except at the pole <parameter>n</parameter>=0.
 				Notice that for calculations with complex numbers the result will always have an imaginary part when <parameter>z</parameter>&lt;0
 				even though the result is real when calculations are done with real numbers and <parameter>n</parameter> is an odd integer.

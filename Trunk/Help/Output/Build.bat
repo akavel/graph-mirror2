@@ -12,7 +12,7 @@ call ..\..\Tools\fop\fop.bat -q -fo ..\Output\Temp\Graph.fo -pdf ..\Output\Graph
 
 echo.
 echo Create CHM file...
-..\..\Tools\xsltproc.exe --nonet --xinclude --stringparam html.stylesheet styles_chm.css --stringparam use.id.as.filename 1 --output ..\Output\Temp\Graph ..\xsl\htmlhelp.xsl Graph.xml
+..\..\Tools\xsltproc.exe --nonet --xinclude --output ..\Output\Temp\Graph ..\xsl\htmlhelp.xsl Graph.xml
 ..\..\Tools\hhc.exe ..\Output\Temp\htmlhelp.hhp
 
 echo.

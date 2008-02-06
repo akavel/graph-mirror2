@@ -5,7 +5,130 @@
 ]>
 <section>
 	<title>Rounding</title>
-	<section>
+	<section id="trunc">
 		<title>trunc function</title>
+		<indexterm><primary>trunc function</primary></indexterm>
+		<indexterm><primary>rounding</primary></indexterm>
+		<indexterm><primary>truncate</primary></indexterm>
+		<para>
+			Removes the fractional part of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>trunc(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+			  The <function>trunc</function> function returns the <glossterm>integer</glossterm> part of <parameter>z</parameter>.
+				The function removes the decimal part of <parameter>z</parameter>, i.e. rounds against zero.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				If <parameter>z</parameter> is a complex number, the function returns <mathphrase>trunc(re(z))+trunc(im(z))&imag;</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="fract">
+		<title>fract function</title>
+		<indexterm><primary>fract function</primary></indexterm>
+		<indexterm><primary>rounding</primary></indexterm>
+		<indexterm><primary>fractional part</primary></indexterm>
+		<indexterm><primary>decimal part</primary></indexterm>
+		<para>
+			Returns the fractional part of the argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>fract(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+			  The <function>fract</function> function returns the fractional part of <parameter>z</parameter>.
+				The function removes the <glossterm>integer</glossterm> part of <parameter>z</parameter>, i.e. <mathphrase>fract(z) = z - trunc(z)</mathphrase>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				If <parameter>z</parameter> is a complex number, the function returns <mathphrase>fract(re(z))+fract(im(z))&imag;</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="ceil">
+		<title>ceil function</title>
+		<indexterm><primary>ceil function</primary></indexterm>
+		<indexterm><primary>rounding</primary></indexterm>
+		<indexterm><primary>round up</primary></indexterm>
+		<para>
+			Rounds the argument up.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>ceil(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+			  The <function>ceil</function> function finds the smallest <glossterm>integer</glossterm> not less than <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				If <parameter>z</parameter> is a complex number, the function returns <mathphrase>ceil(re(z))+ceil(im(z))&imag;</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="floor">
+		<title>floor function</title>
+		<indexterm><primary>floor function</primary></indexterm>
+		<indexterm><primary>rounding</primary></indexterm>
+		<indexterm><primary>round down</primary></indexterm>
+		<para>
+			Rounds the argument down.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>floor(z)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+			  The <function>floor</function> function finds the largest <glossterm>integer</glossterm> not greater than <parameter>z</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				If <parameter>z</parameter> is a complex number, the function returns <mathphrase>floor(re(z))+floor(im(z))&imag;</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="round">
+		<title>round function</title>
+		<indexterm><primary>floor function</primary></indexterm>
+		<para>
+			Rounds a number to the specified number of decimals.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>round(z,n)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>round</function> function rounds <parameter>z</parameter> to the number of decimals given by <parameter>n</parameter>.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				If <parameter>z</parameter> is a complex number, the function returns <mathphrase>round(re(z),n)+round(im(z),n)&imag;</mathphrase>.
+				<parameter>n</parameter> may be any numeric expression that evaluates to an <glossterm>integer</glossterm>.
+				If <parameter>n</parameter>&lt;0, <parameter>z</parameter> is rounded to <parameter>n</parameter> places to the left of the decimal point.
+			</para>
+		</simplesect>
+		<simplesect>
+			<title>Examples</title>
+			<simplelist>
+				<member>round(412.4572,3) = 412.457</member>
+				<member>round(412.4572,2) = 412.46</member>
+				<member>round(412.4572,1) = 412.5</member>
+				<member>round(412.4572,0) = 412</member>
+				<member>round(412.4572,-2) = 400</member>
+			</simplelist>
+		</simplesect>
 	</section>
 </section>

@@ -22,7 +22,12 @@
 <xsl:param name="generate.toc"></xsl:param>
 <xsl:param name="chunk.section.depth" select="2"/> 
 <xsl:param name="section.autolabel" select="0"/>
+<xsl:param name="chapter.autolabel" select="0"/>
+<xsl:param name="example.autolabel" select="0"/>
 <xsl:param name="generate.index" select="1"/>
 <xsl:param name="htmlhelp.hhc.show.root" select="0"/>
+<xsl:param name="glossterm.auto.link" select="1"/>
+<xsl:param name="html.stylesheet">styles_chm.css</xsl:param>
+<xsl:param name="use.id.as.filename" select="1"/>
 
 </xsl:stylesheet> 
