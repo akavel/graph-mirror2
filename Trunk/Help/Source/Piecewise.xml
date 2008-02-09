@@ -5,7 +5,7 @@
 ]>
 <section>
 	<title>Piecewise</title>
-	<section id="sign">
+	<section id="sign" xreflabel="sign">
 		<title>sign function</title>
 		<indexterm><primary>sign function</primary></indexterm>
 		<para>
@@ -28,7 +28,7 @@
 	</section>
 
 
-	<section id="u">
+	<section id="u" xreflabel="u">
 		<title>u function</title>
 		<indexterm><primary>u function</primary></indexterm>
 		<para>
@@ -50,4 +50,122 @@
 	</section>
 
 
+<section id="min" xreflabel="min">
+		<title>min function</title>
+		<indexterm><primary>min function</primary></indexterm>
+		<indexterm><primary>minimum</primary></indexterm>
+		<para>
+			Finds and returns the minimum of the values passed as arguments.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>min(A,B,...)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>min</function> function returns the minimum value of its arguments.
+				<function>min</function> can take any number of arguments not less than 2.
+				The arguments may be any <glossterm baseform="numeric expression">numeric expressions</glossterm>
+				that evaluate to <glossterm baseform="real number">real numbers</glossterm> or <glossterm baseform="complex number">complex numbers</glossterm>.
+				If the arguments are complex numbers, the function returns <mathphrase>min(re(A), re(B), ...) + min(im(A), im(B), ...)&imag;</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="max" xreflabel="max">
+		<title>max function</title>
+		<indexterm><primary>max function</primary></indexterm>
+		<indexterm><primary>maximum</primary></indexterm>
+		<para>
+			Finds and returns the maximum of the values passed as arguments.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>max(A,B,...)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>max</function> function returns the maximum value of its arguments.
+				<function>max</function> can take any number of arguments not less than 2.
+				The arguments may be any <glossterm baseform="numeric expression">numeric expressions</glossterm>
+				that evaluate to <glossterm baseform="real number">real numbers</glossterm> or <glossterm baseform="complex number">complex numbers</glossterm>.
+				If the arguments are complex numbers, the function returns <mathphrase>max(re(A), re(B), ...) + max(im(A), im(B), ...)&imag;</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="range" xreflabel="range">
+		<title>range function</title>
+		<indexterm><primary>range function</primary></indexterm>
+		<para>
+			Returns the second argument if it is in the range between the first argument and the third argument.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>range(A,z,B)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>range</function> function returns <parameter>z</parameter>,
+				if <parameter>z</parameter> is greater than <parameter>A</parameter> and less than <parameter>B</parameter>.
+				If <parameter>z</parameter> &lt; <parameter>A</parameter> then <parameter>A</parameter> is returned.
+				If <parameter>z</parameter> > <parameter>B</parameter> then <parameter>B</parameter> is returned.
+				The arguments may be any <glossterm baseform="numeric expression">numeric expressions</glossterm>
+				that evaluate to <glossterm baseform="real number">real numbers</glossterm> or <glossterm baseform="complex number">complex numbers</glossterm>.
+				The function has the same effect as <mathphrase>max(A, min(z, B))</mathphrase>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="if" xreflabel="if">
+		<title>if function</title>
+		<indexterm><primary>if function</primary></indexterm>
+		<para>
+			Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>if(cond,a,b)</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>if</function> function returns <parameter>a</parameter> if <parameter>cond</parameter> evaluates to a value different from 0.
+				If <parameter>cond</parameter> evaluates to 0, <parameter>b</parameter> is returned.
+				The arguments may be any <glossterm baseform="numeric expression">numeric expressions</glossterm>
+				that evaluate to <glossterm baseform="real number">real numbers</glossterm> or <glossterm baseform="complex number">complex numbers</glossterm>.
+			</para>
+		</simplesect>
+	</section>
+
+
+	<section id="ifseq" xreflabel="ifseq">
+		<title>ifseq function</title>
+		<indexterm><primary>ifseq function</primary></indexterm>
+		<para>
+			Evaluates a sequence of if functions and returns the first result found with a condition different from zero.
+		</para>
+		<simplesect>
+			<title>Syntax</title>
+			<para>ifseq(cond1, f1, cond2, f2, ... , condn, fn [,fz])</para>
+		</simplesect>
+		<simplesect>
+			<title>Description</title>
+			<para>
+				The <function>ifseq</function> function evaluates <parameter>cond1</parameter> and if it is different from 0 then <parameter>f1</parameter> is evaluated and returned.
+				Else <parameter>cond2</parameter> is evaluated and if it is different from 0 then <parameter>f2</parameter> is returned and so forth.
+				If none of the conditions are true <parameter>fz</parameter> is returned.
+				<parameter>fz</parameter> is optional and if not specified <function>ifseq</function> returns an error if none of the conditions are true.
+				If <parameter>ifseq</parameter> has 3 arguments it will be the same as the <function>if</function> function.
+				The arguments may be any <glossterm baseform="numeric expression">numeric expressions</glossterm>
+				that evaluate to <glossterm baseform="real number">real numbers</glossterm> or <glossterm baseform="complex number">complex numbers</glossterm>.
+			</para>
+		</simplesect>
+	</section>
 </section>

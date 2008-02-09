@@ -153,7 +153,7 @@
 					<term>Show as a multiple of pi:</term>
 					<listitem>
 						<para>
-							When this is enabled the numbers on the axis are shown as fractions multiplied by &pgr;, for example 3&pgr;/2.
+							When this is enabled the numbers on the axis are shown as fractions multiplied by &pi;, for example 3&pi;/2.
 							<guilabel>Show numbers</guilabel> must be enabled for this option to be available.
 						</para>
 					</listitem>

@@ -5,7 +5,7 @@
 ]>
 <section>
 	<title>Rounding</title>
-	<section id="trunc">
+	<section id="trunc" xreflabel="trunc">
 		<title>trunc function</title>
 		<indexterm><primary>trunc function</primary></indexterm>
 		<indexterm><primary>rounding</primary></indexterm>
@@ -29,7 +29,7 @@
 	</section>
 
 
-	<section id="fract">
+	<section id="fract" xreflabel="fract">
 		<title>fract function</title>
 		<indexterm><primary>fract function</primary></indexterm>
 		<indexterm><primary>rounding</primary></indexterm>
@@ -54,7 +54,7 @@
 	</section>
 
 
-	<section id="ceil">
+	<section id="ceil" xreflabel="ceil">
 		<title>ceil function</title>
 		<indexterm><primary>ceil function</primary></indexterm>
 		<indexterm><primary>rounding</primary></indexterm>
@@ -77,7 +77,7 @@
 	</section>
 
 
-	<section id="floor">
+	<section id="floor" xreflabel="floor">
 		<title>floor function</title>
 		<indexterm><primary>floor function</primary></indexterm>
 		<indexterm><primary>rounding</primary></indexterm>
@@ -100,7 +100,7 @@
 	</section>
 
 
-	<section id="round">
+	<section id="round" xreflabel="round">
 		<title>round function</title>
 		<indexterm><primary>floor function</primary></indexterm>
 		<para>

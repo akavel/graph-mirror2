@@ -5,7 +5,7 @@
 ]>
 <section>
 	<title>Complex</title>
-	<section id="abs">
+	<section id="abs" xreflabel="abs">
 		<title>abs function</title>
 		<indexterm><primary>abs function</primary></indexterm>
 		<indexterm><primary>absolute value</primary></indexterm>
@@ -28,7 +28,7 @@
 	</section>
 
 
-	<section id="arg">
+	<section id="arg" xreflabel="arg">
 		<title>arg function</title>
 		<indexterm><primary>arg function</primary></indexterm>
 		<indexterm><primary>argument</primary></indexterm>
@@ -55,7 +55,7 @@
 	</section>
 
 
-	<section id="conj">
+	<section id="conj" xreflabel="conj">
 		<title>conj function</title>
 		<indexterm><primary>conj function</primary></indexterm>
 		<indexterm><primary>conjugate</primary></indexterm>
@@ -77,7 +77,7 @@
 	</section>
 
 
-	<section id="re">
+	<section id="re" xreflabel="re">
 		<title>re function</title>
 		<indexterm><primary>re function</primary></indexterm>
 		<indexterm><primary>real value</primary></indexterm>
@@ -98,7 +98,7 @@
 	</section>
 
 
-	<section id="im">
+	<section id="im" xreflabel="im">
 		<title>im function</title>
 		<indexterm><primary>im function</primary></indexterm>
 		<indexterm><primary>imaginary value</primary></indexterm>
