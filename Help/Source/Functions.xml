@@ -5,9 +5,9 @@
 	<title>Functions</title>
 	<xi:include href="FunctionList.xml"/>
 	<xi:include href="Constants.xml"/>
-	<xi:include href="PowerAndLog.xml"/>
 	<xi:include href="Trigonometric.xml"/>
 	<xi:include href="Hyperbolic.xml"/>
+	<xi:include href="PowerAndLog.xml"/>
 	<xi:include href="Complex.xml"/>
 	<xi:include href="Rounding.xml"/>
 	<xi:include href="Piecewise.xml"/>

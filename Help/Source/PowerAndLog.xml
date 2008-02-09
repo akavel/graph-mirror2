@@ -5,7 +5,7 @@
 ]>
 <section>
 	<title>Power and logarithm</title>
-	<section id="sqr">
+	<section id="sqr" xreflabel="sqr">
 		<title>sqr function</title>
 		<indexterm><primary>sqr function</primary></indexterm>
 		<indexterm><primary>square</primary></indexterm>
@@ -26,7 +26,7 @@
 	</section>
 
 
-	<section id="exp">
+	<section id="exp" xreflabel="exp">
 		<title>exp function</title>
 		<indexterm><primary>exp function</primary></indexterm>
 		<indexterm><primary>exponential</primary></indexterm>
@@ -48,7 +48,7 @@
 	</section>
 
 
-	<section id="sqrt">
+	<section id="sqrt" xreflabel="sqrt">
 		<title>sqrt function</title>
 		<indexterm><primary>sqrt function</primary></indexterm>
 		<indexterm><primary>square root</primary></indexterm>
@@ -70,7 +70,7 @@
 	</section>
 
 
-	<section id="root">
+	<section id="root" xreflabel="root">
 		<title>root function</title>
 		<indexterm><primary>root function</primary></indexterm>
 		<para>
@@ -106,7 +106,7 @@
 	</section>
 
 
-	<section id="ln">
+	<section id="ln" xreflabel="ln">
 		<title>ln function</title>
 		<indexterm><primary>ln function</primary></indexterm>
 		<indexterm><primary>logarithm</primary></indexterm>
@@ -131,7 +131,7 @@
 	</section>
 
 
-	<section id="log">
+	<section id="log" xreflabel="log">
 		<title>log function</title>
 		<indexterm><primary>log function</primary></indexterm>
 		<indexterm><primary>logarithm</primary></indexterm>
@@ -154,7 +154,7 @@
 	</section>
 
 
-	<section id="logb">
+	<section id="logb" xreflabel="logb">
 		<title>logb function</title>
 		<indexterm><primary>logb function</primary></indexterm>
 		<indexterm><primary>logarithm</primary></indexterm>

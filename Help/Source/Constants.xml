@@ -4,7 +4,7 @@
 ] >
 <section>
 	<title>Constants</title>
-	<section id="rand">
+	<section id="rand" xreflabel="rand">
 		<title>rand constant</title>
 		<indexterm><primary>rand</primary></indexterm>
 		<indexterm><primary>random</primary></indexterm>

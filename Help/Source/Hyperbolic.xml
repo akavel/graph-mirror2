@@ -5,7 +5,7 @@
 ]>
 <section id="Hyperbolic">
 	<title>Hyperbolic</title>
-	<section id="sinh">
+	<section id="sinh" xreflabel="sinh">
 		<title>sinh function</title>
 		<indexterm><primary>sinh function</primary></indexterm>
 		<indexterm><primary>hyperbolic sine</primary></indexterm>
@@ -29,7 +29,7 @@
 	</section>
 
 
-	<section id="cosh">
+	<section id="cosh" xreflabel="cosh">
 		<title>cosh function</title>
 		<indexterm><primary>cosh function</primary></indexterm>
 		<indexterm><primary>hyperbolic cosine</primary></indexterm>
@@ -53,7 +53,7 @@
 	</section>
 
 
-	<section id="tanh">
+	<section id="tanh" xreflabel="tanh">
 		<title>tanh function</title>
 		<indexterm><primary>tanh function</primary></indexterm>
 		<indexterm><primary>hyperbolic tangent</primary></indexterm>
@@ -77,7 +77,7 @@
 	</section>
 
 
-	<section id="asinh">
+	<section id="asinh" xreflabel="asinh">
 		<title>asinh function</title>
 		<indexterm><primary>asinh function</primary></indexterm>
 		<indexterm><primary>hyperbolic sine</primary></indexterm>
@@ -94,13 +94,13 @@
 			<para>
 				The <function>asinh</function> function calculates the inverse hyperbolic sine of <parameter>z</parameter>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
-				<function>asinh</function> is the reverse of <function><link linkend="sinh">sinh</link></function>, i.e. <mathphrase>asinh(sinh(z)) = z</mathphrase>.
+				<function>asinh</function> is the reverse of <function linkend="sinh">sinh</function>, i.e. <mathphrase>asinh(sinh(z)) = z</mathphrase>.
 			</para>
 		</simplesect>
 	</section>
 
 
-	<section id="acosh">
+	<section id="acosh" xreflabel="acosh">
 		<title>acosh function</title>
 		<indexterm><primary>acosh function</primary></indexterm>
 		<indexterm><primary>hyperbolic cosine</primary></indexterm>
@@ -117,13 +117,13 @@
 			<para>
 				The <function>acosh</function> function calculates the inverse hyperbolic cosine of <parameter>z</parameter>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
-				<function>acosh</function> is the reverse of <function><link linkend="cosh">cosh</link></function>, i.e. <mathphrase>acosh(cosh(z)) = z</mathphrase>.
+				<function>acosh</function> is the reverse of <function linkend="cosh">cosh</function>, i.e. <mathphrase>acosh(cosh(z)) = z</mathphrase>.
 			</para>
 		</simplesect>
 	</section>
 
 
-	<section id="atanh">
+	<section id="atanh" xreflabel="atanh">
 		<title>atanh function</title>
 		<indexterm><primary>atanh function</primary></indexterm>
 		<indexterm><primary>hyperbolic tangent</primary></indexterm>
@@ -140,13 +140,13 @@
 			<para>
 				The <function>atanh</function> function calculates the inverse hyperbolic tangent of <parameter>z</parameter>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
-				<function>atanh</function> is the reverse of <function><link linkend="tanh">tanh</link></function>, i.e. <mathphrase>atanh(tanh(z)) = z</mathphrase>.
+				<function>atanh</function> is the reverse of <function linkend="tanh">tanh</function>, i.e. <mathphrase>atanh(tanh(z)) = z</mathphrase>.
 			</para>
 		</simplesect>
 	</section>
 
 
-	<section id="csch">
+	<section id="csch" xreflabel="csch">
 		<title>csch function</title>
 		<indexterm><primary>csch function</primary></indexterm>
 		<indexterm><primary>hyperbolic cosecant</primary></indexterm>
@@ -170,7 +170,7 @@
 	</section>
 
 
-	<section id="sech">
+	<section id="sech" xreflabel="sech">
 		<title>sech function</title>
 		<indexterm><primary>sech function</primary></indexterm>
 		<indexterm><primary>hyperbolic secant</primary></indexterm>
@@ -194,7 +194,7 @@
 	</section>
 
 
-	<section id="coth">
+	<section id="coth" xreflabel="coth">
 		<title>coth function</title>
 		<indexterm><primary>coth function</primary></indexterm>
 		<indexterm><primary>hyperbolic cotangent</primary></indexterm>
@@ -218,7 +218,7 @@
 	</section>
 
 
-	<section id="acsch">
+	<section id="acsch" xreflabel="acsch">
 		<title>acsch function</title>
 		<indexterm><primary>acsch function</primary></indexterm>
 		<indexterm><primary>hyperbolic cosecanr</primary></indexterm>
@@ -235,13 +235,13 @@
 			<para>
 				The <function>acsch</function> function calculates the inverse hyperbolic cosecant of <parameter>z</parameter>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
-				<function>acsch</function> is the reverse of <function><link linkend="csch">csch</link></function>, i.e. <mathphrase>acsch(csch(z)) = z</mathphrase>.
+				<function>acsch</function> is the reverse of <function linkend="csch">csch</function>, i.e. <mathphrase>acsch(csch(z)) = z</mathphrase>.
 			</para>
 		</simplesect>
 	</section>
 
 
-	<section id="asech">
+	<section id="asech" xreflabel="asech">
 		<title>asech function</title>
 		<indexterm><primary>asech function</primary></indexterm>
 		<indexterm><primary>hyperbolic secanr</primary></indexterm>
@@ -258,13 +258,13 @@
 			<para>
 				The <function>asech</function> function calculates the inverse hyperbolic secant of <parameter>z</parameter>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
-				<function>asech</function> is the reverse of <function><link linkend="sech">sech</link></function>, i.e. <mathphrase>asech(sech(z)) = z</mathphrase>.
+				<function>asech</function> is the reverse of <function linkend="sech">sech</function>, i.e. <mathphrase>asech(sech(z)) = z</mathphrase>.
 			</para>
 		</simplesect>
 	</section>
 
 
-	<section id="acoth">
+	<section id="acoth" xreflabel="acoth">
 		<title>acoth function</title>
 		<indexterm><primary>acoth function</primary></indexterm>
 		<indexterm><primary>hyperbolic cotangent</primary></indexterm>
@@ -281,7 +281,7 @@
 			<para>
 				The <function>acoth</function> function calculates the inverse hyperbolic cotangent of <parameter>z</parameter>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
-				<function>acoth</function> is the reverse of <function><link linkend="coth">coth</link></function>, i.e. <mathphrase>acoth(coth(z)) = z</mathphrase>.
+				<function>acoth</function> is the reverse of <function linkend="coth">coth</function>, i.e. <mathphrase>acoth(coth(z)) = z</mathphrase>.
 				For real numbers <function>acoth</function> is undefined in the interval [-1;1].
 			</para>
 		</simplesect>

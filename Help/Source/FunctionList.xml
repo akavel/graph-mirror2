@@ -59,7 +59,7 @@
 					</row>
 					<row>
 						<entry>pi</entry>
- 	   				<entry>The constant &pgr;, which in this program is defined as pi=3.141592653589793238462643</entry>
+ 	   				<entry>The constant &pi;, which in this program is defined as pi=3.141592653589793238462643</entry>
  	   			</row>
 		 			<row>
  	   				<entry>undef</entry>
@@ -70,7 +70,7 @@
  	   				<entry>The imaginary unit. Defined as &imag;<superscript>2</superscript> = -1. Only useful when working with complex numbers.</entry>
 		 			</row>
  	   			<row>
- 	   				<entry><link linkend="rand">rand</link></entry>
+ 	   				<entry><xref linkend="rand"/></entry>
  	   				<entry>Evaluates to a random number between 0 and 1.</entry>
     			</row>
  				</tbody>
@@ -179,253 +179,253 @@
 						<entry namest="col1" nameend="col2" align="center"><emphasis>Trigonometric</emphasis></entry>
 					</row>
 					<row>
-						<entry><link linkend="sin">sin</link></entry>
+						<entry><xref linkend="sin"/></entry>
 						<entry>Returns the sine of the argument, which may be in radians or degrees.</entry>
 					</row>
 					<row>
-						<entry><link linkend="cos">cos</link></entry>
+						<entry><xref linkend="cos"/></entry>
 						<entry>Returns the cosine of the argument, which may be in radians or degrees.</entry>
 					</row>
 					<row>
-						<entry><link linkend="tan">tan</link></entry>
+						<entry><xref linkend="tan"/></entry>
    					<entry>Returns the tangent of the argument, which may be in radians or degrees.</entry>
    				</row>
 	 				<row>
-   					<entry>asin</entry>
+   					<entry><xref linkend="asin"/></entry>
      				<entry>Returns the inverse sine of the argument. The returned value may be in radians or degrees.</entry>
    				</row>
    				<row>
-   					<entry>acos</entry>
+   					<entry><xref linkend="acos"/></entry>
    					<entry>Returns the inverse cosine of the argument. The returned value may be in radians or degrees.</entry>
 		 			</row>
    				<row>
-   					<entry>atan</entry>
+   					<entry><xref linkend="atan"/></entry>
    					<entry>Returns the inverse tangent of the argument. The returned value may be in radians or degrees.</entry>
    				</row>
    				<row>
-   					<entry>csc</entry>
-   					<entry>Returns the cosecant of the argument, which may be in radians or degrees.</entry>
-   				</row>
-   				<row>
-   					<entry>sec</entry>
+   					<entry><xref linkend="sec"/></entry>
    					<entry>Returns the secant of the argument, which may be in radians or degrees.</entry>
    				</row>
    				<row>
-   					<entry>cot</entry>
+   					<entry><xref linkend="csc"/></entry>
+   					<entry>Returns the cosecant of the argument, which may be in radians or degrees.</entry>
+   				</row>
+   				<row>
+   					<entry><xref linkend="cot"/></entry>
    					<entry>Returns the cotangent of the argument, which may be in radians or degrees.</entry>
    				</row>
    				<row>
-   					<entry>acsc</entry>
-   					<entry>Returns the inverse cosecant of the argument. The returned value may be in radians or degrees</entry>
-   				</row>
-   				<row>
-   					<entry>asec</entry>
+   					<entry><xref linkend="asec"/></entry>
    					<entry>Returns the inverse secant of the argument. The returned value may be in radians or degrees.</entry>
    				</row>
    				<row>
-   					<entry>acot</entry>
+   					<entry><xref linkend="acsc"/></entry>
+   					<entry>Returns the inverse cosecant of the argument. The returned value may be in radians or degrees</entry>
+   				</row>
+   				<row>
+   					<entry><xref linkend="acot"/></entry>
    					<entry>Returns the inverse cotangent of the argument. The returned value may be in radians or degrees.</entry>
    				</row>
 					<row>
-						<entry namest="col1" nameend="col2" align="center"><emphasis>Trigonometric</emphasis></entry>
+						<entry namest="col1" nameend="col2" align="center"><emphasis>Hyperbolic</emphasis></entry>
 					</row>
 					<row>
-						<entry>sinh</entry>
+						<entry><xref linkend="sinh"/></entry>
 						<entry>Returns the hyperbolic sine of the argument.</entry>
 					</row>
 					<row>
-						<entry>cosh</entry>
+						<entry><xref linkend="cosh"/></entry>
 						<entry>Returns the hyperbolic cosine of the argument.</entry>
 					</row>
 					<row>
-						<entry>tanh</entry>
+						<entry><xref linkend="tanh"/></entry>
 						<entry>Returns the hyperbolic tangent of the argument.</entry>
 					</row>
 					<row>
-						<entry>asinh</entry>
+						<entry><xref linkend="asinh"/></entry>
 						<entry>Returns the inverse hyperbolic sine of the argument.</entry>
 					</row>
 					<row>
-						<entry>acosh</entry>
+						<entry><xref linkend="acosh"/></entry>
 						<entry>Returns the inverse hyperbolic cosine of the argument.</entry>
 					</row>
 					<row>
-						<entry>atanh</entry>
+						<entry><xref linkend="atanh"/></entry>
 						<entry>Returns the inverse hyperbolic tangent of the argument.</entry>
 					</row>
 					<row>
-						<entry>csch</entry>
+						<entry><xref linkend="csch"/></entry>
 						<entry>Returns the hyperbolic cosecant of the argument.</entry>
 					</row>
 					<row>
-						<entry>sech</entry>
+						<entry><xref linkend="sech"/></entry>
 						<entry>Returns the hyperbolic secant of the argument.</entry>
 					</row>
 					<row>
-						<entry>coth</entry>
+						<entry><xref linkend="coth"/></entry>
 						<entry>Returns the hyperbolic cotangent of the argument.</entry>
 					</row>
 					<row>
-						<entry>acsch</entry>
+						<entry><xref linkend="acsch"/></entry>
 						<entry>Returns the inverse hyperbolic cosecant of the argument.</entry>
 					</row>
 					<row>
-						<entry>asech</entry>
+						<entry><xref linkend="asech"/></entry>
 						<entry>Returns the inverse hyperbolic secant of the argument.</entry>
 					</row>
 					<row>
-						<entry>acoth</entry>
+						<entry><xref linkend="acoth"/></entry>
 						<entry>Returns the inverse hyperbolic cotangent of the argument.</entry>
 					</row>
 					<row>
 						<entry namest="col1" nameend="col2" align="center"><emphasis>Power and Logarithm</emphasis></entry>
 					</row>
 					<row>
-						<entry>sqr</entry>
+						<entry><xref linkend="sqr"/></entry>
 						<entry>Returns the square of the argument, i.e. the power of two.</entry>
 					</row>
 					<row>
-						<entry>exp</entry>
+						<entry><xref linkend="exp"/></entry>
 						<entry>Returns e raised to the power of the argument.</entry>
 					</row>
 					<row>
-						<entry>sqrt</entry>
+						<entry><xref linkend="sqrt"/></entry>
 						<entry>Returns the square root of the argument.</entry>
 					</row>
 					<row>
-						<entry>root</entry>
+						<entry><xref linkend="root"/></entry>
 						<entry>Returns the n'th root of the argument.</entry>
 					</row>
 					<row>
-						<entry>ln</entry>
+						<entry><xref linkend="ln"/></entry>
 						<entry>Returns the logarithm with base e to the argument.</entry>
 					</row>
 					<row>
-						<entry>log</entry>
+						<entry><xref linkend="log"/></entry>
 						<entry>Returns the logarithm with base 10 to the argument.</entry>
 					</row>
 					<row>
-						<entry>logb</entry>
+						<entry><xref linkend="logb"/></entry>
 						<entry>Returns the logarithm with base n to the argument.</entry>
 					</row>
 					<row>
 						<entry namest="col1" nameend="col2" align="center"><emphasis>Complex</emphasis></entry>
 					</row>
 					<row>
-						<entry>abs</entry>
+						<entry><xref linkend="abs"/></entry>
 						<entry>Returns the absolute value of the argument.</entry>
 					</row>
 					<row>
-						<entry>arg</entry>
+						<entry><xref linkend="arg"/></entry>
 						<entry>Returns the angle of the argument in radians or degrees.</entry>
 					</row>
 					<row>
-						<entry>conj</entry>
+						<entry><xref linkend="conj"/></entry>
 						<entry>Returns the conjugate of the argument.</entry>
 					</row>
 					<row>
-						<entry>re</entry>
+						<entry><xref linkend="re"/></entry>
 						<entry>Returns the real part of the argument.</entry>
 					</row>
 					<row>
-						<entry>im</entry>
+						<entry><xref linkend="im"/></entry>
 						<entry>Returns the imaginary part of the argument.</entry>
 					</row>
 					<row>
 						<entry namest="col1" nameend="col2" align="center"><emphasis>Rounding</emphasis></entry>
 					</row>
 					<row>
-						<entry>trunc</entry>
+						<entry><xref linkend="trunc"/></entry>
 						<entry>Returns the integer part of the argument.</entry>
 					</row>
 					<row>
-						<entry>fract</entry>
+						<entry><xref linkend="fract"/></entry>
 						<entry>Returns the fractional part of the argument.</entry>
 					</row>
 					<row>
-						<entry>ceil</entry>
+						<entry><xref linkend="ceil"/></entry>
 						<entry>Rounds the argument up to nearest integer.</entry>
 					</row>
 					<row>
-						<entry>floor</entry>
+						<entry><xref linkend="floor"/></entry>
 						<entry>Rounds the argument down to the nearest integer.</entry>
 					</row>
 					<row>
-						<entry>round</entry>
+						<entry><xref linkend="round"/></entry>
 						<entry>Rounds the first argument to the number of decimals given by the second argument.</entry>
 					</row>
 					<row>
 						<entry namest="col1" nameend="col2" align="center"><emphasis>Piecewise</emphasis></entry>
 					</row>
 					<row>
-						<entry>sign</entry>
+						<entry><xref linkend="sign"/></entry>
 						<entry>Returns the sign of the argument: 1 if the argument is greater than 0, and -1 if the argument if less than 0.</entry>
 					</row>
 					<row>
-						<entry>u</entry>
+						<entry><xref linkend="u"/></entry>
 						<entry>Unit step: Returns 1 if the argument is greater than or equal 0, and 0 otherwise.</entry>
 					</row>
 					<row>
-						<entry>min</entry>
+						<entry><xref linkend="min"/></entry>
 						<entry>Returns the smallest of the arguments.</entry>
 					</row>
 					<row>
-						<entry>max</entry>
+						<entry><xref linkend="max"/></entry>
 						<entry>Returns the greatest of the arguments.</entry>
 					</row>
 					<row>
-						<entry>range</entry>
+						<entry><xref linkend="range"/></entry>
 						<entry>Returns the second argument if it is in the range of the first and third argument.</entry>
 					</row>
 					<row>
-						<entry>if</entry>
+						<entry><xref linkend="if"/></entry>
 						<entry>Returns the second argument if the first argument does not evaluate to 0; Else the third argument is returned.</entry>
 					</row>
 					<row>
-						<entry>ifseq</entry>
+						<entry><xref linkend="ifseq"/></entry>
 						<entry>The same as a sequence of if functions.</entry>
 					</row>
 					<row>
 						<entry namest="col1" nameend="col2" align="center"><emphasis>Special</emphasis></entry>
 					</row>
 					<row>
-						<entry>integrate</entry>
+						<entry><xref linkend="integrate"/></entry>
 						<entry>Returns the numeric integral of the first argument from the second argument to the third argument.</entry>
 					</row>
 					<row>
-						<entry>sum</entry>
+						<entry><xref linkend="sum"/></entry>
 						<entry>Returns the sum of the first argument evaluated for each integer in the range from the second to third argument.</entry>
 					</row>
 					<row>
-						<entry>product</entry>
+						<entry><xref linkend="product"/></entry>
 						<entry>Returns the product of the first argument evaluated for each integer in the range from the second to third argument.</entry>
 					</row>
 					<row>
-						<entry>fact</entry>
+						<entry><xref linkend="fact"/></entry>
 						<entry>Returns the factorial of the argument.</entry>
 					</row>
 					<row>
-						<entry>gamma</entry>
+						<entry><xref linkend="gamma"/></entry>
 						<entry>Returns the Euler gamma function of the argument.</entry>
 					</row>
 					<row>
-						<entry>beta</entry>
+						<entry><xref linkend="beta"/></entry>
 						<entry>Returns the beta function evaluated for the arguments.</entry>
 					</row>
 					<row>
-						<entry>W</entry>
+						<entry><xref linkend="w"/></entry>
 						<entry>Returns the Lambert W-function evaluated for the argument.</entry>
 					</row>
 					<row>
-						<entry>zeta</entry>
+						<entry><xref linkend="zeta"/></entry>
 						<entry>Returns the Riemann Zeta function evaluated for the argument.</entry>
 					</row>
 					<row>
-						<entry>mod</entry>
+						<entry><xref linkend="mod"/></entry>
 						<entry>Returns the remainder of the first argument divided by the second argument.</entry>
 					</row>
 					<row>
-						<entry>dnorm</entry>
+						<entry><xref linkend="dnorm"/></entry>
 						<entry>The probability function of the normal distribution in a variate with mean and standard </entry>
 					</row>
 				</tbody>

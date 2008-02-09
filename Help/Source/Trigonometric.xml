@@ -5,7 +5,7 @@
 ]>
 <section>
 	<title>Trigonometric</title>
-	<section id="sin">
+	<section id="sin" xreflabel="sin">
 		<title>sin function</title>
 		<indexterm><primary>sin function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -36,7 +36,7 @@
 	</section>
 
 
-	<section id="cos">
+	<section id="cos" xreflabel="cos">
 		<title>cos function</title>
 		<indexterm><primary>cos function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -67,7 +67,7 @@
 	</section>
 
 
-	<section id="tan">
+	<section id="tan" xreflabel="tan">
 		<title>tan function</title>
 		<indexterm><primary>tan function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -92,7 +92,7 @@
 			<title>Remarks</title>
 			<para>
 				For arguments with a large magnitude, the function will begin to lose precision.
-				<function>tan</function> is undefined at <mathphrase>z = p*&pgr;/2</mathphrase>,
+				<function>tan</function> is undefined at <mathphrase>z = p*&pi;/2</mathphrase>,
 				where p is an <glossterm>integer</glossterm>,
 				but the function returns a very large number if <parameter>z</parameter> is near the undefined value.
 			</para>
@@ -100,7 +100,7 @@
 	</section>
 
 
-	<section id="asin">
+	<section id="asin" xreflabel="asin">
 		<title>asin function</title>
 		<indexterm><primary>asin function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -119,13 +119,13 @@
 				The <function>asin</function> function calculates the inverse sine of <parameter>z</parameter>.
 				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
 				<parameter>z</parameter> may be any numeric expression that evaluates to a <glossterm>real number</glossterm>.
-				This is the reverse of the <link linkend="sin"><function>sin</function></link> function.
+				This is the reverse of the <function linkend="sin">sin</function> function.
 			</para>
 		</simplesect>
 	</section>
 
 
-	<section id="acos">
+	<section id="acos" xreflabel="acos">
 		<title>acos function</title>
 		<indexterm><primary>acos function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -144,13 +144,13 @@
 				The <function>acos</function> function calculates the inverse cosine of <parameter>z</parameter>.
 				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
-				This is the reverse of the <link linkend="cos"><function>cos</function></link> function.
+				This is the reverse of the <function linkend="cos">cos</function> function.
 			</para>
 		</simplesect>
 	</section>
 
 
-	<section id="atan">
+	<section id="atan" xreflabel="atan">
 		<title>atan function</title>
 		<indexterm><primary>atan function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -169,13 +169,13 @@
 				The <function>atan</function> function calculates the inverse tangent of <parameter>z</parameter>.
 				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a real number.
-				This is the reverse of the <link linkend="tan"><function>tan</function></link> function.
+				This is the reverse of the <function linkend="tan">tan</function> function.
 			</para>
 		</simplesect>
 	</section>
 
 
-	<section id="sec">
+	<section id="sec" xreflabel="sec">
 		<title>sec function</title>
 		<indexterm><primary>sec function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -205,7 +205,7 @@
 	</section>
 
 
-	<section id="csc">
+	<section id="csc" xreflabel="csc">
 		<title>csc function</title>
 		<indexterm><primary>csc function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -235,7 +235,7 @@
 	</section>
 
 
-	<section id="cot">
+	<section id="cot" xreflabel="cot">
 		<title>cot function</title>
 		<indexterm><primary>cot function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -265,7 +265,7 @@
 	</section>
 
 
-	<section id="asec">
+	<section id="asec" xreflabel="asec">
 		<title>asec function</title>
 		<indexterm><primary>asec function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -285,13 +285,13 @@
 				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
 				<mathphrase>asec(z)</mathphrase> is the same as <mathphrase>acos(1/z)</mathphrase>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
-				This is the reverse of the <function><link linkend="sec">sec</link></function> function.
+				This is the reverse of the <function linkend="sec">sec</function> function.
 			</para>
 		</simplesect>
 	</section>
 
 
-	<section id="acsc">
+	<section id="acsc" xreflabel="acsc">
 		<title>acsc function</title>
 		<indexterm><primary>acsc function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -311,13 +311,13 @@
 				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
 				<mathphrase>acsc(z)</mathphrase> is the same as <mathphrase>asin(1/z)</mathphrase>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
-				This is the reverse of the <function><link linkend="csc">csc</link></function> function.
+				This is the reverse of the <function linkend="csc">csc</function> function.
 			</para>
 		</simplesect>
 	</section>
 
 
-	<section id="acot">
+	<section id="acot" xreflabel="acot">
 		<title>acot function</title>
 		<indexterm><primary>acot function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
@@ -337,14 +337,14 @@
 				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
 				<mathphrase>acot(z)</mathphrase> is the same as <mathphrase>atan(1/z)</mathphrase>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
-				This is the reverse of the <function><link linkend="cot">cot</link></function> function.
+				This is the reverse of the <function linkend="cot">cot</function> function.
 			</para>
 		</simplesect>
 		<simplesect>
 			<title>Remarks</title>
 			<para>
-				The <function>acot</function> function returns a value in the range ]-&pgr;/2;&pgr;/2] (]-90;90] when calculating in degrees),
-				which is the most common definition, though some may define it to be in the range ]0;&pgr;[.
+				The <function>acot</function> function returns a value in the range ]-&pi;/2;&pi;/2] (]-90;90] when calculating in degrees),
+				which is the most common definition, though some may define it to be in the range ]0;&pi;[.
 			</para>
 		</simplesect>
 	</section>
