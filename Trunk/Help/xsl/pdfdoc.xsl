@@ -5,10 +5,10 @@
 
 <xsl:import href="./db_pdfdoc.xsl"/>
 <xsl:import href="./defaults.xsl"/>
-<xsl:param name="paper.type" select="'A4'"></xsl:param>
-<xsl:param name="double.sided" select="0"></xsl:param>
+<xsl:param name="paper.type" select="'A4'"/>
+<xsl:param name="double.sided" select="0"/>
 <xsl:param name="variablelist.as.blocks" select="1"></xsl:param>
-<xsl:param name="symbol.font.family" select="'Symbol,ZapfDingbats'"></xsl:param>
+<xsl:param name="symbol.font.family" select="'Symbol,ZapfDingbats'"/>
 
 <xsl:param name="table.frame.border.thickness" select="'1pt'"></xsl:param>
 <xsl:param name="table.frame.border.style" select="'solid'"></xsl:param>

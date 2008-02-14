@@ -102,7 +102,7 @@
 
 	<section id="round" xreflabel="round">
 		<title>round function</title>
-		<indexterm><primary>floor function</primary></indexterm>
+		<indexterm><primary>round function</primary></indexterm>
 		<para>
 			Rounds a number to the specified number of decimals.
 		</para>
