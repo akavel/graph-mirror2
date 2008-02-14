@@ -114,5 +114,5 @@ To be considered
 Plugins:
 - Cirlce item
 - Convert points, i.e. pass through a function.
-- Add custom names to axes, e.g. sqrt(2).
+- Add custom names to axes, e.g. sqrt(2) or hh:mm.
 - Implement the erf(x) and erfc(x) functions. (See email from profesor de ciencias at 29/12-07)

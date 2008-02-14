@@ -278,7 +278,7 @@ void TCustomFunctions::Replace(const std::string &Name, const std::string &Value
     if(Iter->Name == Name)
     {
       Iter->Text = Value;
-      SymbolList.Add(Name, Value, Iter->Arguments);
+      SymbolList.Add(Name, Func32::TCustomFunc(Value, Iter->Arguments, SymbolList));
       return;
     }
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
@@ -412,7 +412,12 @@ void TDefaultData::Set(unsigned AStyle, TColor AColor, unsigned ASize)
 void TAnimationInfo::WriteToIni(TConfigFile &IniFile) const
 {
   if(!Constant.empty())
+  {
     IniFile.Write("Animate", "Constant", Constant);
+    IniFile.Write("Animate", "FramesPerSecond", FramesPerSecond);
+    IniFile.Write("Animate", "Width", Width, 0U);
+    IniFile.Write("Animate", "Height", Height, 0U);
+  }
   for(std::map<std::string, TAnimationConstant>::const_iterator Iter = ConstantList.begin(); Iter != ConstantList.end(); ++Iter)
     IniFile.Write("Animate", '%' + Iter->first, Iter->second.Min + ';' + Iter->second.Max + ';' + Iter->second.Step);
 }
@@ -422,6 +427,9 @@ void TAnimationInfo::ReadFromIni(const TConfigFile &IniFile)
   if(IniFile.SectionExists("Animate"))
   {
     Constant = IniFile.Read("Animate", "Constant", "");
+    FramesPerSecond = IniFile.Read("Animate", "FramesPerSecond", 1);
+    Width = IniFile.Read("Animate", "Width", 0);
+    Height = IniFile.Read("Animate", "Height", 0);
     std::pair<TConfigFile::TSectionIterator, TConfigFile::TSectionIterator> Section = IniFile.GetSectionData("Animate");
     for(TConfigFile::TSectionIterator Iter = Section.first; Iter != Section.second; ++Iter)
       if(Iter->first[0] == '%')
