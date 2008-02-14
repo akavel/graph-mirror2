@@ -58,6 +58,7 @@
 #include "PyGraph.h"
 #include "Encode.h"
 #include "ICompCommon.h"
+//#include <HtmlHelp.h>
 //---------------------------------------------------------------------------
 #pragma link "TRecent"
 #pragma link "Cross"
@@ -77,6 +78,7 @@
 #pragma link "Wininet.lib" //Used for InternetGetConnectedState()
 #pragma link "../../BMGLib/BMGLibPNG.lib"  //Used to save png files
 #pragma link "PDFlib.lib"
+#pragma link "htmlhelp.lib"
 #pragma resource "*.dfm"
 TForm1 *Form1;
 const TCursor crMoveHand1 = 1;
@@ -1277,11 +1279,11 @@ void TForm1::ChangeLanguage(const AnsiString &Lang)
   AnsiString Path = ExtractFilePath(Application->ExeName);
   UseLanguage(Lang); //dxGetText will not update translation unless langugae has been changed
   DefaultInstance->bindtextdomainToFile("default", Path + "locale\\" + Lang + ".mo");
-  AnsiString HelpFile = Path + "Help\\" + Lang + ".hlp";
+  AnsiString HelpFile = Path + "Help\\Graph-" + Lang + ".chm";
   if(FileExists(HelpFile))
     Application->HelpFile = HelpFile;
   else
-    Application->HelpFile = Path + "Help\\English.hlp";
+    Application->HelpFile = Path + "Help\\Graph-English.chm";
 
   //Special handling for Chinese
   MainMenu->AutoHotkeys = Lang == "Chinese" ? maManual : maAutomatic;
@@ -2205,12 +2207,12 @@ void __fastcall TForm1::TableActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ContentsActionExecute(TObject *Sender)
 {
-  Application->HelpCommand(HELP_FINDER,0);
+  Application->HelpJump("");
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ListActionExecute(TObject *Sender)
 {
-  Application->HelpJump("FUNCTIONS");
+  Application->HelpJump("FunctionList.html");
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::HomePageActionExecute(TObject *Sender)
@@ -3734,5 +3736,6 @@ void __fastcall TForm1::ExecuteFunction(TMessage &Message)
   Message.Result = Function(Message.LParam);
 }
 //---------------------------------------------------------------------------
+
 
 

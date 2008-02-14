@@ -14,6 +14,7 @@
 #include "vfw.h"
 #include "BMGLibPNG.h"                     //Used to save png files
 #include <Jpeg.hpp>
+#include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
 #pragma link "TntMenus"
 #pragma link "MediaPlayerEx"
@@ -32,6 +33,13 @@ __fastcall TForm20::TForm20(TComponent* Owner, const std::string &Constant, doub
   Panel1->DoubleBuffered;
   LabeledEdit1->EditLabel->Caption = Constant.c_str() + AnsiString("=");
   LabeledEdit1->Text = Min;
+
+  TConfigRegistry Registry;
+  if(Registry.OpenKey(REGISTRY_KEY "\\Animation"))
+  {
+    Repeat1->Checked = Registry.Read("Repeat", false);
+    Reverse1->Checked = Registry.Read("AutoReverse", false);
+  }
 }
 //---------------------------------------------------------------------------
 void TForm20::ShowAnimation(const AnsiString &FileName)
@@ -166,6 +174,12 @@ void __fastcall TForm20::TntFormClose(TObject *Sender,
       TCloseAction &Action)
 {
   MediaPlayer1->Stop();
+  TConfigRegistry Registry;
+  if(Registry.CreateKey(REGISTRY_KEY "\\Animation"))
+  {
+    Registry.Write("Repeat", Repeat1->Checked);
+    Registry.Write("AutoReverse", Reverse1->Checked);
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm20::TrackBar1Change(TObject *Sender)

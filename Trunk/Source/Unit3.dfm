@@ -1,7 +1,8 @@
 object Form3: TForm3
   Left = 413
   Top = 210
-  HelpContext = 30
+  HelpType = htKeyword
+  HelpKeyword = 'Axes dialog'
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Edit axes'

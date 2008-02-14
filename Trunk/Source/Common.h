@@ -29,12 +29,13 @@ void SetGlobalFocus(TWinControl *Control);
 std::string EncodeEscapeSequence(const std::string &Str);
 std::string DecodeEscapeSequence(const std::string &Str);
 void GetLanguageList(TStrings *List);
+
 void RemoveRegistryKey(const AnsiString &Key, HKEY RootKey);
 AnsiString GetRegValue(const AnsiString &Key, const AnsiString &ValueName, HKEY RootKey, const AnsiString &Default);
 unsigned GetRegValue(const AnsiString &Key, const AnsiString &ValueName, HKEY RootKey, unsigned Default);
 bool RegKeyExists(const AnsiString &Key, HKEY RootKey);
-AnsiString GetTempFileName(const AnsiString &Prefix, const AnsiString &Ext);
 
+AnsiString GetTempFileName(const AnsiString &Prefix, const AnsiString &Ext);
 AnsiString GetTempPath();
 
 inline bool InsideRect(const TRect &Rect, const TPoint &P) {return P.x >= Rect.Left && P.x <= Rect.Right && P.y >= Rect.Top && P.y <= Rect.Bottom;}
