@@ -3,10 +3,10 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<sect1 id="OptionsDialog">
+<section id="OptionsDialog">
 	<title>Edit|Options</title>
 	<indexterm><primary>Options dialog</primary></indexterm>
 	<para>
 
 	</para>
-</sect1>
+</section>
