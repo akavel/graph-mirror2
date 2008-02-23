@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<!ENTITY % Symbols SYSTEM "Symbols.ent">
+%Symbols;
+]>
+<chapter id="Acknowledgements">
+	<title>Acknowledgements</title>
+	<indexterm><primary>acknowledgements</primary></indexterm>
+	<indexterm><primary>libraries</primary></indexterm>
+	<indexterm><primary>translators</primary></indexterm>
+	<indexterm><primary>logo</primary></indexterm>
+	<simplesect>
+		<title>Libraries</title>
+		<para>
+			<simplelist>
+				<member>Parts of Graph is using the Spirit parser library:</member>
+				<member>Copyright &copy; 1998-2002 Spirit-Dev</member>
+				<member><ulink url="http://spirit.sourceforge.net/">http://spirit.sourceforge.net/</ulink></member>
+			</simplelist>
+		</para>
+
+		<para>
+			<simplelist>
+				<member>Graph uses BMGLib for saving images as Portable Network Graphics:</member>
+				<member>BMGLib is Copyright &copy; 2000-2002 M. Scott Heiman</member>
+				<member>libPNG is Copyright &copy; 1995, 1996 Guy Eric Schalnat, Group 42, Inc.</member>
+				<member>zLib Copyright &copy; 1995-1998 Jean-loup Gailly.</member>
+			</simplelist>
+		</para>
+
+		<para>
+			<simplelist>
+				<member>Graph uses dxgettext as translation library:</member>
+				<member>dxgettext is Copyright by Lars B. Dybdahl (<email>Lars@dybdahl.dk</email>) and others</member>
+				<member><ulink url="http://dybdahl.dk/dxgettext/"/></member>
+			</simplelist>
+		</para>
+
+		<para>
+			<simplelist>
+				<member>For shell extensions the EasyNSE library is used:</member>
+				<member>Copyright &copy; 2005 Cool Breeze Software</member>
+				<member><ulink url="http://www.mustangpeak.net"/></member>
+			</simplelist>
+		</para>
+
+		<para>
+			<simplelist>
+				<member>The PDFlib-Lite library is used to create PDF files:</member>
+				<member>Copyright &copy; 1997-2005 Thomas Merz and PDFlib GmbH.</member>
+				<member><ulink url="http://www.pdflib.com"/></member>
+			</simplelist>
+		</para>
+
+		<para>
+			<simplelist>
+				<member>Tnt Delphi Unicode Controls</member>
+				<member>Copyright &copy; 2002-2005, Troy Wolbrink</member>
+				<member><ulink url="http://www.tntware.com/delphicontrols/unicode/"/></member>
+			</simplelist>
+		</para>
+
+		<para>
+			<simplelist>
+				<member>Python is used for plugin support:</member>
+				<member>Copyright &copy; 2001-2006 Python Software Foundation; All Rights Reserved</member>
+				<member><ulink url="http://www.python.org"/></member>
+			</simplelist>
+		</para>
+	</simplesect>
+
+	<simplesect>
+		<title>Translations</title>
+		<table>
+			<tgroup cols="4">
+				<thead>
+					<row>
+						<entry>Language</entry>
+						<entry>Program</entry>
+						<entry>Help file</entry>
+						<entry>Translator(s)</entry>
+					</row>
+				</thead>
+				<tbody>
+					<row>
+						<entry>Chinese (Traditional)</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Dung Jian-Jie</entry>
+					</row>
+
+					<row>
+						<entry>Chinese (Simplified)</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Lala Sha</entry>
+					</row>
+
+					<row>
+						<entry>Croatian</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Hasan Osmanagić</entry>
+					</row>
+
+					<row>
+						<entry>Czech</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Martin Stružský &amp; Pavlína Krausová</entry>
+					</row>
+
+					<row>
+						<entry>Danish</entry>
+						<entry>Yes</entry>
+						<entry>Yes</entry>
+						<entry>Ivan Johansen, Michael Bach Ipsen &amp; Erik Lyngholt Nielsen</entry>
+					</row>
+
+					<row>
+						<entry>Dutch</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Etienne Goemaere</entry>
+					</row>
+
+					<row>
+						<entry>English</entry>
+						<entry>Yes</entry>
+						<entry>Yes</entry>
+						<entry>Ivan Johansen</entry>
+					</row>
+
+					<row>
+						<entry>Finnish</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Pekka Lerssi</entry>
+					</row>
+
+					<row>
+						<entry>French</entry>
+						<entry>Yes</entry>
+						<entry>Yes</entry>
+						<entry>Jean-Pierre Fontaine</entry>
+					</row>
+
+					<row>
+						<entry>German</entry>
+						<entry>Yes</entry>
+						<entry>Yes</entry>
+						<entry>Frank Httemeister, Michael Bach Ipsen &amp; Sebastian Stütz</entry>
+					</row>
+
+					<row>
+						<entry>Greek</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Theodoros Kannas</entry>
+					</row>
+
+					<row>
+						<entry>Hungarian</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Gabor Magyari</entry>
+					</row>
+
+					<row>
+						<entry>Italian</entry>
+						<entry>Yes</entry>
+						<entry>Yes</entry>
+						<entry>Serena Alessandro &amp; Attilio Ridomi</entry>
+					</row>
+
+					<row>
+						<entry>Mongolian</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Batnasan Davaa</entry>
+					</row>
+
+					<row>
+						<entry>Norwegian</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Tore Ottinsen</entry>
+					</row>
+
+					<row>
+						<entry>Polish</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Paweł Gląb</entry>
+					</row>
+
+					<row>
+						<entry>Portuguese</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Jorge, Mara, Deivid &amp; Fernanda</entry>
+					</row>
+
+					<row>
+						<entry>Russian</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Ivans Leonovs</entry>
+					</row>
+
+					<row>
+						<entry>Serbian</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Jasmina Malinovic &amp; Branimir Krstic</entry>
+					</row>
+
+					<row>
+						<entry>Slovenian</entry>
+						<entry>Yes</entry>
+						<entry>Yes</entry>
+						<entry>Jernej Baša, Rok Štokelj &amp; Barbara Pušnar</entry>
+					</row>
+
+					<row>
+						<entry>Spanish</entry>
+						<entry>Yes</entry>
+						<entry>Yes</entry>
+						<entry>Dr. Gustavo Criscuolo, Francisco Oliver, Alejandro Arce</entry>
+					</row>
+
+					<row>
+						<entry>Swedish</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Pär Smårs</entry>
+					</row>
+
+					<row>
+						<entry>Vietnamese</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Trung</entry>
+					</row>
+		 		</tbody>
+			</tgroup>
+		</table>
+	</simplesect>
+
+	<simplesect>
+		<title>Miscellaneous</title>
+		<para>
+			The icon was designed by Jonathan Holvey.
+		</para>
+	</simplesect>
+</chapter>

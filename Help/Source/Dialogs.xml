@@ -5,4 +5,7 @@
 	<title>Dialogs</title>
 	<xi:include href="AxesDialog.xml"/>
 	<xi:include href="OptionsDialog.xml"/>
+	<xi:include href="InsertFunctionDialog.xml"/>
+	<xi:include href="SaveImageDialog.xml"/>
+	<xi:include href="EvaluateDialog.xml"/>
 </chapter>

@@ -222,5 +222,10 @@ div.table td {
 	border-color: #900;
 }
 
-.term { border-bottom: 1px dotted black; }
+.term {
+	border-bottom: 1px dotted black; 
+}
 
+div.variablelist dt {
+  	margin-top: 1em;
+}

@@ -160,4 +160,109 @@
 			</varlistentry>
 		</variablelist>
 	</simplesect>
+
+
+	<simplesect>
+		<title>Settings</title>
+		<graphic fileref="DialogAxes3.png"/>
+		<variablelist>
+			<varlistentry>
+				<term>Title:</term>
+				<listitem>
+					<para>
+						Here you can enter a title that is shown above the coordinate system. Use the button to the right to change the font.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Show legend:</term>
+				<listitem>
+					<para>
+						Check this to show the <glossterm>legend</glossterm> with a list of functions and point series in the upper right corner of the coordinate system.
+						You may change the font under <guilabel>Font and color</guilabel>.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Legend placement:</term>
+				<listitem>
+					<para>
+						Here you may choose in which of the four corners you want the <glossterm>legend</glossterm> to be placed.
+						You can also change this by right clicking on the legend in the graphing area.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Calculate with complex numbers:</term>
+				<listitem>
+					<para>
+						Check this field to use <glossterm baseform="complex number">complex numbers</glossterm> for calculations while drawing graphs.
+						This will increase the time for drawing graphs but may be necessary in rare situations where the workings are complex.
+						The final result must be real for the graph to be drawn.
+						This will not interfere with evaluations.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Axes style:</term>
+				<listitem>
+					<para>
+						Select <guilabel>None</guilabel> if you don't want the axes to be shown.
+						Select <guilabel>Crossed</guilabel> if you want a normal coordinate system.
+						The location of the axes may be changed from <guilabel>The y-axis crosses at</guilabel> and <guilabel>The x-axis crosses at</guilabel>.
+						Select <guilabel>Boxed</guilabel> if you want the axes to be shown at the bottom and left side of the coordinate system,
+						which will overwrite <guilabel>The y-axis crosses at</guilabel> / <guilabel>The x-axis crosses at</guilabel>.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Trigonometry:</term>
+				<listitem>
+					<para>
+						Choose whether trigonometric functions should calculate in <glossterm><guilabel>radians</guilabel></glossterm> or <guilabel>degrees</guilabel>.
+						This is also used for showing <glossterm baseform="complex number">complex numbers</glossterm> in the polar format.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</simplesect>
+
+	<simplesect>
+		<title>Font and color</title>
+		<graphic fileref="DialogAxes4.png"/>
+		<variablelist>
+			<varlistentry>
+				<term>Colors:</term>
+				<listitem>
+					<para>
+						You may change the background color, the color of the axes and the color used for drawing grid lines.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Fonts:</term>
+				<listitem>
+					<para>
+						You may change the fonts used for drawing axes labels, the font to draw numbers at the axes, and the font used for the <glossterm>legend</glossterm>.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</simplesect>
+
+
+	<simplesect>
+		<variablelist>
+			<varlistentry>
+				<term>Save as default:</term>
+				<listitem>
+					<para>
+						Check this to save all the current settings in the dialog to be used as default in the future.
+						These settings are used the next time you choose to create a new coordinate system.
+						The default settings are per user basis, i.e. each user will have his/her own default settings.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</simplesect>
 </section>

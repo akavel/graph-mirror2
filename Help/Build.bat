@@ -7,7 +7,7 @@ XCopy Source\*.css Temp /Q /Y
 cd Source
 echo.
 echo Create PDF file...
-..\..\Tools\xsltproc.exe --nonet --xinclude --output ..\Temp\Graph.fo ..\xsl\pdfdoc.xsl Graph.xml
+ ..\..\Tools\xsltproc.exe --nonet --xinclude --output ..\Temp\Graph.fo ..\xsl\pdfdoc.xsl Graph.xml
 call ..\..\Tools\fop\fop.bat -q -fo ..\Temp\Graph.fo -pdf ..\Graph-English.pdf
 
 echo.
