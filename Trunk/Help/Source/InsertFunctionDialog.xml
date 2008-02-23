@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<!ENTITY % Symbols SYSTEM "Symbols.ent">
+%Symbols;
+]>
+<section id="InsertFunctionDialog">
+	<title>Function|Insert function</title>
+	<indexterm><primary>insert</primary></indexterm>
+	<indexterm><primary>function</primary></indexterm>
+	<indexterm><primary>parametric function</primary></indexterm>
+	<indexterm><primary>polar function</primary></indexterm>
+	<indexterm><primary>draw</primary></indexterm>
+	<indexterm><primary>plot</primary></indexterm>
+	<para>
+		When you want to insert a function or edit an earlier inserted function you use the insert function dialog.
+	</para>
+
+	<graphic fileref="DialogFunction.png"/>
+
+	<variablelist>
+		<varlistentry>
+			<term>Function type:</term>
+			<listitem>
+				<para>
+					You can choose between 3 different types of functions: <guilabel>Standard function</guilabel>, <guilabel>parametric function</guilabel> and <guilabel>polar function</guilabel>.
+					A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, thought it may be undefined for some x-coordinates.
+				</para>
+				<para>
+					For a parametric function the x- and y-coordinates are calculated from an independent variable called t,
+					i.e. a parametric function is defined as two functions: x(t) and y(t).
+				</para>
+				<para>
+					A polar function r(t) indicates an equation to calculate the distance from the origin to a point on the function given an angle t.
+					t is the direct angle between the initial ray and the point on the function.
+					This means that the x- and y-coordinates are givens as x(t)=r(t)*cos(t), y(t)=r(t)*sin(t).
+				</para>
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Function equation:</term>
+			<listitem>
+				Here you enter the equation for the function. This can be f(x), x(t),y(t) or r(t) depending on the function type.
+				Under <xref linkend="FunctionList"/> you can see all the available variables, constants and function, which may be used to draw the graphs.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Argument range:</term>
+			<listitem>
+				You can choose an interval for the independent variable.
+				<guilabel>From</guilabel> and <guilabel>To</guilabel> indicates the start and end of the interval.
+				If the function is a standard function, you can leave one or both of them blank to draw the graph from minus infinity to plus infinity. If the function is a parametric function or a polar function, you always have to specify an interval.
+
+				If the function is a parametric or polar function, you have to specify the number of steps you want calculated.
+				The more steps you specify, the more smooth the graph of the function will be, but it will take longer to draw too.
+				It is preferred to leave the <guilabel>Steps</guilabel> field blank for standard functions to let Graph decide the optimal number of steps.
+				You can however enter the number of steps if the graph doesn't show enough details, for example if an asymptote is not shown correctly.
+				Notice that the <guilabel>Steps</guilabel> only specify a minimum number of calculations.
+				Graph may add more steps at critical points if <guilabel>Draw type</guilabel> is set to <guilabel>Automatic</guilabel>.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Endpoints:</term>
+			<listitem>
+				Here you can choose to show markers at the start and end of the interval.
+				If no range is specified, the endpoints will be showed where the function enters and leaves the image.
+				The default is not to show any markers.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Legend text:</term>
+			<listitem>
+				Enter a description to be shown in the <glossterm>legend</glossterm>.
+				If the text is empty, the function equation will be shown in the legend.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Graph properties:</term>
+			<listitem>
+				You can choose between different line styles for which you want the graph to be drawn.
+				You can choose between solid, dashed, dotted or a combination of these.
+				<guilabel>Line styles</guilabel> are only available when <guilabel>Draw type</guilabel> is set to <guilabel>Lines</guilabel> or <guilabel>Automatic</guilabel>.
+				When <guilabel>Draw type</guilabel> is <guilabel>Dots</guilabel>, only a dot is shown at each calculated point.
+				Likewise the <guilabel>Lines</guilabel> <guilabel>Draw type</guilabel> will connect the calculated points with lines.
+				<guilabel>Automatic</guilabel> will also draw lines, but Graph will do more calculations at critical points if it thinks it will improve the graph.
+				It will also break the line if it thinks there is an asymptote.
+				You can also choose the width of the graph.
+				The width is notified in screen pixels.
+				There are also a lot of different colors you can choose between.
+				The program will remember and suggest the same properties last used.
+			</listitem>
+		</varlistentry>
+	</variablelist>
+</section>

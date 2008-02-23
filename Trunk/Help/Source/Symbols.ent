@@ -2,7 +2,8 @@
 <!ENTITY theta	"<symbol role='symbolfont'>&#x003B8;</symbol>"> <!-- GREEK SMALL LETTER THETA -->
 <!ENTITY Gamma	"<symbol role='symbolfont'>&#x00393;</symbol>"> <!-- GREEK SMALL LETTER GAMMA -->
 <!ENTITY sigma	"<symbol role='symbolfont'>&#x003C3;</symbol>"> <!-- GREEK SMALL LETTER SIGMA -->
-<!ENTITY mu	"&#x003BC;"> <!-- GREEK SMALL LETTER MU -->
+<!ENTITY mu	"&#x003BC;"> 					<!-- GREEK SMALL LETTER MU -->
 <!ENTITY ang	"<symbol role='symbolfont'>&#x02220;</symbol>"> <!-- ANGLE -->
-<!ENTITY deg	"&#x00B0;"> <!-- DEGREE SIGN -->
-<!ENTITY imag "<emphasis role='bold'>i</emphasis>"> <!-- Imaginary unit -->
+<!ENTITY deg	"&#x00B0;"> 					<!-- DEGREE SIGN -->
+<!ENTITY imag 	"<emphasis role='bold'>i</emphasis>"> 		<!-- Imaginary unit -->
+<!ENTITY copy	"&#x00A9;"> 					<!-- COPYRIGHT SIGN -->

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<!ENTITY % Symbols SYSTEM "Symbols.ent">
+%Symbols;
+]>
+<section id="SaveImageDialog">
+	<title>File|Save as image</title>
+	<indexterm><primary>save</primary></indexterm>
+	<indexterm><primary>picture</primary></indexterm>
+	<indexterm><primary>image</primary></indexterm>
+	<indexterm><primary>metafile</primary></indexterm>
+	<indexterm><primary>bitmap</primary></indexterm>
+	<indexterm><primary>bmp</primary></indexterm>
+	<indexterm><primary>emf</primary></indexterm>
+	<indexterm><primary>png</primary></indexterm>
+	<indexterm><primary>gif</primary></indexterm>
+	<indexterm><primary>jpg</primary></indexterm>
+	<para>
+		Choose this menu item if you want to save the shown graphs in an image file.
+		The program supports five formats: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), JPEG (jpg) and Portable Document Format (pdf).
+		When the menu item has been chosen, a standard save as dialog will appear.
+		In this dialog you write a filename, choose a directory and select one of the image types.
+	</para>
+	<para>
+		bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen.
+		Emf files are used for vector graphics.
+		The Options button in the save dialog can be used to change to image size.
+		You may also be able to change other settings depending on the chosen image format.
+	</para>
+	<para>
+		Metafiles (emf) should be the preferred format, because it is small and looks nice even then it is scaled.
+		Windows Bitmap (bmp) is a standard format supported by almost all Windows programs that can read graphics files.
+		Portable Network Graphics (png) is a format that is better compressed than bmp files.
+		This is the most sustainable format for web pages, because it is small and can be understood by all browsers.
+	</para>
+	<para>
+		JPEG (jpg) is a bitmap format with loss.
+		It is supported but not recommended because graphs will usually become blurred.
+	</para>
+	<para>
+		Portable Document Format (pdf) is actually not an image format.
+		It is a way to store documents as postscript in a portable way.
+		Graph will store the image as PNG inside the pdf file.
+	</para>
+	<para>
+		CompuServe Graphics Interchange (gif) is not supported because it uses the LZW compression, which is patented by Unisys.
+	</para>
+</section>

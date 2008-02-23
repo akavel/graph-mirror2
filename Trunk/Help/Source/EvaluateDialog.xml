@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<!ENTITY % Symbols SYSTEM "Symbols.ent">
+%Symbols;
+]>
+<section id="EvaluateDialog">
+	<title>Calc|Evaluate</title>
+	<para>
+		This dialog is used for interactive calculations on functions.
+		The dialog may be docked below the function list, which is default, or undocked to a floating dialog.
+	</para>
+	<simplesect>
+		<title>Evaluate</title>
+		<para>
+			When
+			<menuchoice>
+				<guimenu>Calc</guimenu>
+				<guimenuitem>Evaluate</guimenuitem>
+			</menuchoice>
+			is selected the dialog is used to evaluate the selected function at a given value either entered in the dialog or traced with the mouse.
+		</para>
+		<para>
+			Below you can see the dialog, that appears when a standard functions is selected.
+			The dialog will look a little different when a parametric function, polar function or tangent is selected.
+		</para>
+
+		<graphic fileref="DialogEval.png"/>
+
+		<para>
+			You can enter a value for which you want to evaluate the function.
+			The value will be evaluated for the function selected in the <glossterm>function list</glossterm>.
+			If the result is on the graph within the shown coordinate system, it will be marked with a cross.
+			You can also trace the drawn graph with the mouse.
+			Just click on the graph with the mouse and the function will be evaluated at the nearest point.
+		</para>
+		<para>
+			It may happen that the result of an evaluation is a complex number with an imaginary part.
+			This number will either be written as a+b&imag;, a&ang;&theta; or not written at all depending of the choice under <xref linkend="OptionsDialog"/>.
+		</para>
+		<para>
+			When you click with the mouse on the image you may choose what the cursor will snap to:
+			<variablelist>
+				<varlistentry>
+					<term>Function</term>
+					<listitem>The cursor will snap to the nearest point on the selected function.</listitem>
+				</varlistentry>
+				<varlistentry>
+					<item>Intersection</item>
+					<listitem>The cursor will snap to the nearest intersection between the selected function and all functions (including the selected function).</listitem>
+				</varlistentry>
+				<varlistentry>
+					<item>x-axis</item>
+					<listitem>The cursor will snap to the nearest intersection between the selected function and the x-axis.</listitem>
+				</varlistentry>
+				<varlistentry>
+					<item>y-axis</item>
+					<listitem>The cursor will snap to the nearest intersection between the selected function and the y-axis. Not available for standard functions.</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Extreme x-value</term>
+					<listitem>The cursor will snap to the nearest local extreme value for the x-coordinate. Not available for standard functions.</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Extreme y-value (Extremum)</term>
+					<listitem>The cursor will snap to the nearest local extreme value for the y-coordinate.</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</simplesect>
+
+	<simplesect>
+		<title>Area</title>
+		<para>
+			When
+			<menuchoice>
+				<guimenu>Calc</guimenu>
+				<guimenuitem>Area</guimenuitem>
+			</menuchoice>
+			is selected the dialog is used to calculate signed areas.
+			This can only be done on standard functions, polar functions and tangents, but not on parametric functions.
+			For standard functions, parametric functions and tangents the result is the signed area between the graph and the x-axis
+			(the real x-axis and not necessarily the visible one) for the given range.
+		</para>
+		<para>
+			For polar functions the signed area is the one between the graph in the given range and origo.
+			The area is considered negative when the angle goes from a higher to a lower value (clockwise).
+		</para>
+		<para>
+			For the other functions the area is considered negative when the graph is below the x-axis or when the function goes from a higher to a lower x-value.
+		</para>
+		<para>
+			You can either enter the range in the edit boxes or select the range with the mouse.
+			The calculated area will be shown below the range, and the area will be marked in the coordinate system.
+			The calculation is done using Simpson's formula with 1000 iterations
+		</para>
+	</simplesect>
+
+	<simplesect>
+		<title>Length of path</title>
+		<para>
+			When
+			<menuchoice>
+				<guimenu>Calc</guimenu>
+				<guimenuitem>Length of path</guimenuitem>
+			</menuchoice>
+			is selected the dialog is used to calculate the distance between two points on the function along the curve.
+			You may either enter the range in the dialog or use the mouse to mark it.
+			The range will be marked in the coordinate system.
+			The calculation is done by converting it to an integration and use Simpson's formula with 1000 iterations.
+		</para>
+	</simplesect>
+</section>

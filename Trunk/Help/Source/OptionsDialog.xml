@@ -7,6 +7,119 @@
 	<title>Edit|Options</title>
 	<indexterm><primary>Options dialog</primary></indexterm>
 	<para>
-
+		When you choose the menu item
+		<menuchoice>
+			<guimenu>Edit</guimenu>
+			<guimenuitem>Options</guimenuitem>
+		</menuchoice>
+		the dialog shown below will appear.
+		In this dialog, you can change general program options.
 	</para>
+
+	<graphic fileref="DialogOptions.png"/>
+
+	<variablelist>
+		<varlistentry>
+			<term>Decimals:</term>
+			<listitem>
+				This is the number of decimals that all results are shown width.
+				The number has no influence on the calculations or the shown graphs.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Recent files:</term>
+			<listitem>
+				This is the maximum number of recent used files that is shown in the File menu.
+				The number must be between 0 and 9.
+				0 means that no recent used files are shown.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Max steps of undo:</term>
+			<listitem>
+				Each time you make a change, the program will save enough information to undo it.
+				As default <guilabel>Max undo steps</guilabel> are 50, which mean that you are able to undo the last 50 changes you made in the program.
+				The undo steps will take up a small amount of memory.
+				If your system is low on RAM, you may be able to free some memory by decreasing the <guilabel>Max undo steps</guilabel>.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Font scale:</term>
+			<listitem>
+				You can use this to change the scale of the fonts and most of the user interface.
+				This is mostly useful if your screen resolution is very high or you for some other reason are having difficulties reading the user interface.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Language</term>
+			<listitem>
+				This shows a list of available languages for the program.
+				The selected language will be used by the program in the future.
+				The language can be selected differently for each user.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Associate .grf files:</term>
+			<listitem>
+				A check mark in this field indicates that the file type .grf is associated with this program.
+				The program will automatically start and load the file when you double-click on it in Explorer.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Show tooltip:</term>
+			<listitem>
+				When there is a mark in this field, you will see a little note with a description,
+				when you are holding the mouse over an object with a description associated, for a few seconds.
+				The description is also shown in the status bar at the bottom of the main window.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Save workspace on exit:</term>
+			<listitem>
+				When there is a mark in this field the program will save the size of the main window before it quits.
+				The next time you start the program the saved size will be used.
+				In addition the width of the <glossterm>function list</glossterm> is also stored.
+				When the field doesn't have a mark the options that were last saved will be used.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Complex form:</term>
+			<listitem>
+				Choose how you want a complex number to be shown in the <link linkend="EvaluateDialog">evaluate</link> frame.
+				<guilabel>Real</guilabel> means that only <glossterm>real numbers</glossterm> are shown.
+				If a number has an imaginary part then the number won't be shown and instead you get an error.
+				<guilabel>Rectangular</guilabel> means that <glossterm>complex numbers</glossterm> are shown as a+b&imag;, where a is the real part and b is the imaginary part.
+				<guilabel>Polar</guilabel> means that numbers are shown as a&ang;&theta;, where a is the absolute value of the number and &theta; is the angle of the number.
+				&theta; is dependent of the choice between <guilabel>radian</guilabel> and <guilabel>degree</guilabel> under <guilabel>Trigonometry</guilabel> in the
+				<link linkend="AxesDialog">Edit Axes</link> dialog.
+
+				Notice that in some cases you may get a different result in the evaluate frame depending on the ilabel><guilabel>Complex form</guilabel> setting:
+				When <guilabel>Real</guilabel> is chosen, Graph will try to find a real result if possible,
+				while <guilabel>Rectangular</guilabel> and <guilabel>Polar</guilabel> may give a non-real result for the same evaluation.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Check for new version of Graph at startup</term>
+			<listitem>
+				When checked each time the program starts it will contact the web site to see if a newer version of Graph is available.
+				If a new version is found you will be asked if you want to visit the home page to upgrade, If no new version is available you will not see any messages.
+				If disabled, you can still use
+				<menuchoice>
+					<guimenu>Help</guimenu>
+					<guimenuitem>Internet</guimenuitem>
+					<guimenuitem>Check for update</guimenuitem>
+				</menuchoice>
+				to see if a new version is available.
+			</listitem>
+		</varlistentry>
+	</variablelist>
 </section>

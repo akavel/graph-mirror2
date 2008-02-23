@@ -14,7 +14,14 @@
 		</authorgroup>
 	</bookinfo>
 	<!-- include external files -->
+	<xi:include href="Introduction.xml"/>
+	<xi:include href="HowToUse.xml"/>
 	<xi:include href="Installation.xml"/>
+	<!--xi:include href="FAQ.xml"/-->
+	<xi:include href="OLE.xml"/>
+	<xi:include href="MenuItems.xml"/>
+	<xi:include href="Errors.xml"/>
+	<xi:include href="Acknowledgements.xml"/>
 	<xi:include href="Functions.xml"/>
 	<xi:include href="Dialogs.xml"/>
 	<xi:include href="Glossary.xml"/>
