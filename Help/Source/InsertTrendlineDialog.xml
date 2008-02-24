@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<!ENTITY % Symbols SYSTEM "Symbols.ent">
+%Symbols;
+]>
+<section id="InsertTrendlineDialog">
+	<title>Function|Insert trendline</title>
+	<indexterm><primary>insert</primary></indexterm>
+	<indexterm><primary>trendline</primary></indexterm>
+	<indexterm><primary>line of best fit</primary></indexterm>
+	<indexterm><primary>linear</primary></indexterm>
+	<indexterm><primary>logarithmic</primary></indexterm>
+	<indexterm><primary>power</primary></indexterm>
+	<indexterm><primary>exponential</primary></indexterm>
+	<indexterm><primary>polyline</primary></indexterm>
+	<indexterm><primary>function</primary></indexterm>
+	<indexterm><primary>regression</primary></indexterm>
+	<para>
+	</para>
+</section>

@@ -6,6 +6,16 @@
 	<xi:include href="AxesDialog.xml"/>
 	<xi:include href="OptionsDialog.xml"/>
 	<xi:include href="InsertFunctionDialog.xml"/>
-	<xi:include href="SaveImageDialog.xml"/>
+	<xi:include href="InsertTangentDialog.xml"/>
+	<xi:include href="InsertShadingDialog.xml"/>
+	<xi:include href="InsertPointSeriesDialog.xml"/>
+	<xi:include href="InsertTrendlineDialog.xml"/>
+	<xi:include href="InsertLabelDialog.xml"/>
+	<xi:include href="InsertRelationDialog.xml"/>
+	<xi:include href="InsertDerivativeDialog.xml"/>
+	<xi:include href="CustomFunctionsDialog.xml"/>
 	<xi:include href="EvaluateDialog.xml"/>
+	<xi:include href="TableDialog.xml"/>
+	<xi:include href="AnimateDialog.xml"/>
+	<xi:include href="SaveImageDialog.xml"/>
 </chapter>

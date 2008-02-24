@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<!ENTITY % Symbols SYSTEM "Symbols.ent">
+%Symbols;
+]>
+<section id="InsertPointSeriesDialog">
+	<title>Function|Insert point series</title>
+	<indexterm><primary>insert</primary></indexterm>
+	<indexterm><primary>point series</primary></indexterm>
+	<indexterm><primary>markers</primary></indexterm>
+	<indexterm><primary>smooth line</primary></indexterm>
+	<indexterm><primary>trendline</primary></indexterm>
+	<indexterm><primary>interpolation</primary></indexterm>
+	<indexterm><primary>labels</primary></indexterm>
+	<indexterm><primary>error bars</primary></indexterm>
+	<para>
+	</para>
+</section>

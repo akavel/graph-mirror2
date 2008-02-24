@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<!ENTITY % Symbols SYSTEM "Symbols.ent">
+%Symbols;
+]>
+<section id="TableDialog">
+	<title>Calc|Table</title>
+	<indexterm><primary>calc</primary></indexterm>
+	<indexterm><primary>table</primary></indexterm>
+	<indexterm><primary>evaluate</primary></indexterm>
+	<para>
+	</para>
+</section>
