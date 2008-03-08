@@ -231,6 +231,19 @@ void TestDif(const char *Str, long double x, long double y, TTrigonometry Trigon
   }
 }
 
+void TestSimplify(const char *Str, const char *Str2)
+{
+  TFunc Func(Str);
+  Func.Simplify();
+  if(Func != TFunc(Str2))
+  {
+    cerr << "f(x)=" << Str << std::endl;
+    cerr << "Simplified to: f(x)=" << Func.MakeText() << std::endl;;
+    cerr << "Expected: f(x)=" << Str2 << std::endl << std::endl;
+    cin.ignore();
+  }
+}
+
 /** Called when BOOST_ASSERT fails.
  */
 namespace boost
@@ -555,12 +568,20 @@ void Test()
   TestDif("x^(1/3)", "1/3*x^(-2/3)");
   TestDif("2^(x/3)", "1/3*ln(2)*2^(x/3)");
   TestDif("2^(1/x)", "-ln(2)*2^(1/x)/x^2");
+
+  //Test the simplify code
+  TestSimplify("ln(e)", "1");
+//  TestSimplify("log(10)", "1");
 }
 
 int main()
 {
   std::stringstream DebugStreamBuf;
   std::clog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
+
+  TFunc Func("ln(e)");
+  Func.Simplify();
+  std::cout << Func << std::endl;
 
   try
   {
