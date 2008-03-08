@@ -135,6 +135,19 @@ enum TIdent
   CodePar2Par,          //!< Elemetn indicating the first argument of the second argument of the function
 };
 //---------------------------------------------------------------------------
+inline unsigned FunctionArguments(TIdent Ident)
+{
+  if(Ident < FirstFunction1P)
+    return 0;
+  else if(Ident < FirstFunction2P)
+    return 1;
+  else if(Ident < FirstFunction3P)
+    return 2;
+  else if(Ident < FirstFunctionVariableP)
+    return 3;
+  return 0;
+}
+//---------------------------------------------------------------------------
 struct TElem
 {
   TIdent Ident;
@@ -154,7 +167,7 @@ struct TElem
   };
 
   TElem() : Ident(CodeNull), Arguments(0) {};
-  TElem(TIdent AIdent) : Ident(AIdent), Arguments(0) {}
+  TElem(TIdent AIdent) : Ident(AIdent), Arguments(FunctionArguments(AIdent)) {}
   TElem(TIdent AIdent, long double AVal) : Ident(AIdent), Number(AVal) {}
   TElem(TIdent AIdent, unsigned AArguments, int) : Ident(AIdent), Arguments(AArguments) {}
   TElem(long double AVal) : Ident(CodeNumber), Number(AVal) {}

@@ -94,6 +94,8 @@ std::vector<TElem>::const_iterator TFuncData::CreateText(TConstIterator Iter, st
       //Don't use std::ostringstream; It will fail for numbers >MAXDOUBLE under STLport. sprintf() seems to work fine
       char S[30];
       std::sprintf(S, "%.8LG", Elem.Number);
+      if(Elem.Number < 0 && !Str.empty() && *Str.rbegin() == '+')
+        Str.erase(Str.end() - 1), Str += S;
       if(Elem.Number < 0 && !Str.empty() && IsOperator(*Str.rbegin()))
         Str += std::string("(") + S + ")";
       else
