@@ -7,25 +7,25 @@
 	<title>Error messages</title>
 	<indexterm><primary>Errors</primary></indexterm>
 	<variablelist>
-		<varlistentry>
+		<varlistentry id="Error01">
 			<term>Error 01: An error occurred while evaluating power function.</term>
 			<listitem>
 				This error occurs when a number raised to the power of another number resulted in an error.
-				For example (-4)^(-5.1) gives an error, because a negative number cannot be raised to a negative non integer number when calculating with real numbers.
+				For example (-4)^(-5.1) gives an error, because a negative number cannot be raised to a negative non integer number when calculating with <glossterm baseform="real number">real numbers</glossterm>.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error02">
 			<term>Error 02: Tangent to 90&deg;+p180&deg; is undefined.</term>
 			<listitem>tan(x) is undefined for x= &pi;/2+&pi;p = 90&deg;+p180&deg;, where p is an integer.</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error03">
 			<term>Error 03: Fact can only be calculated for positive integers.</term>
 			<listitem>fact(x), which calculates the factorial number of x, is only defined for positive integers of x.</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error04">
 			<term>Error 04: Cannot take logarithm to number equal or less than zero.</term>
 			<listitem>
 				The logarithmic functions ln(x) and log(x) are undefined for x&lE;0, when the calculation is done for real numbers.
@@ -33,7 +33,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error05">
 			<term>Error 05: sqrt is undefined for negative numbers.</term>
 			<listitem>
 				sqrt(x) is undefined for x&lt;0, when the calculations are done for real numbers.
@@ -41,7 +41,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error06">
 			<term>Error 06: A part of the evaluation gave a number with an imaginary part.</term>
 			<listitem>
 				This error may occur when calculations are done with real numbers.
@@ -50,7 +50,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error07">
 			<term>Error 07: Division by zero.</term>
 			<listitem>
 				The program tried to divide by zero when calculating.
@@ -58,7 +58,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error08">
 			<term>Error 08: Inverse trigonometric function out of range [-1;1]</term>
 			<listitem>
 				The inverse trigonometric functions asin(x) and acos(x) are only defined in the range [-1;1], and they are not defined for any numbers with an imaginary part.
@@ -67,7 +67,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error09">
 			<term>Error 09: The function is not defined for this value.</term>
 			<listitem>
 				This error may occur for functions that are not defined for a specific point.
@@ -75,12 +75,12 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error10">
 			<term>Error 10: atanh evaluated at undefined value.</term>
 			<listitem>Inverse hyperbolic tangent atanh(x) is undefined at x=1, and only defined when using complex numbers outside the interval x=]-1;1[.</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error11">
 			<term>Error 11: acosh evaluated at undefined value.</term>
 			<listitem>
 				Inverse hyperbolic cosine acosh(x) is only defined for x 1 when using real numbers.
@@ -88,28 +88,28 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error12">
 			<term>Error 12: arg(0) is undefined.</term>
 			<listitem>
 				The argument of zero is undefined because 0 does not have an angle.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error13">
 			<term>Error 13: Evaluation failed.</term>
 			<listitem>
 				This error occurs when a more complicated function like W(z) is evaluated, and the evaluation failed to find an accurate result.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error14">
 			<term>Error 14: Argument produced a function result with total loss of precision.</term>
 			<listitem>
 				An argument to a function call produced a result with total loss of significant digits, such as sin(1E70) which gives an arbitrary number in the range [-1;1].
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error15">
 			<term>Error 15: The custom function/constant '%s' was not found or has the wrong number of arguments.</term>
 			<listitem>
 				A custom function or constant no longer exists.
@@ -118,7 +118,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error16">
 			<term>Error 16: Too many recursive calls</term>
 			<listitem>
 				Too many recursive calls have been executed.
@@ -127,7 +127,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error17">
 			<term>Error 17: Overflow: A function returned a value too large to handle.</term>
 			<listitem>
 				A function call resulted in value too large to handle.
@@ -135,7 +135,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error50">
 			<term>Error 50: Unexpected operator. Operator %s cannot be placed here</term>
 			<listitem>
 				An operator +, -, *, / or ^ was misplaced.
@@ -143,14 +143,14 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error55">
 			<term>Error 55: Right bracket missing.</term>
 			<listitem>
 				A right bracket is missing. Make sure you have the same number of left and right brackets.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error56">
 			<term>Error 56: Invalid number of arguments supplied for function '%s'</term>
 			<listitem>
 				You passed a wrong number of arguments to the specified function.
@@ -159,7 +159,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error57">
 			<term>Error 57: comparison operator misplaced.</term>
 			<listitem>
 				Only two comparison operators in sequence are allowed.
@@ -167,7 +167,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error58">
 			<term>Error 58: Invalid number found. Use the format: -5.475E-8</term>
 			<listitem>
 				Something that looked like a number but wasn't has been found.
@@ -187,91 +187,91 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error59">
 			<term>Error 59: String is empty. You need to enter a function.</term>
 			<listitem>
 				You didn't enter anything in the box. This is not allowed. You need to enter an expression.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error60">
 			<term>Error 60: Comma not allowed here; Use dot as decimal separator.</term>
 			<listitem>
 				Commas may not be used. You have to use a '.' to separate the fraction from the integer part.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error61">
 			<term>Error 61: Unexpected right bracket.</term>
 			<listitem>
 				A right bracket was found unexpectedly. Make sure the number of left and right brackets match.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error63">
 			<term>Error 63: Number, constant or function expected.</term>
 			<listitem>
 				A factor, which may be a number, constant, variable or function, was expected.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error64">
 			<term>Error 64: Parameter after constant or variable not allowed.</term>
 			<listitem>
 				Brackets may not be placed after a constant or variable. For example this is invalid: f(x)=x(5). Use f(x)=x*5 instead.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error65">
 			<term>Error 65: Expression expected.</term>
 			<listitem>
 				An expression was expected. This may happen if you have empty brackets: f(x)=sin()
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error66">
 			<term>Error 66: Unknown variable, function or constant: %s</term>
 			<listitem>
 				You entered something that looks like a variable, function or constant but is unknown. Note that "x5" is not the same as "x*5".
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error67">
 			<term>Error 67: Unknown character: %s</term>
 			<listitem>
 				An unknown character was found.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error68">
 			<term>Error 68: The end of the expression was unexpected.</term>
 			<listitem>
 				The end of the expression was found unexpectedly.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error70">
 			<term>Error 70: Error parsing function text</term>
 			<listitem>
 				An error happened while parsing the function text. The string is not a valid function.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error71">
 			<term>Error 71: A calculation resulted in an overflow.</term>
 			<listitem>
 				An overflow occurred under the calculation. This may happen when the numbers get too big.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error73">
 			<term>Error 73: An invalid value was used in the calculation.</term>
 			<listitem>
 				An invalid value was used as data for the calculation.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error74">
 			<term>Error 74: Not enough points for calculation.</term>
 			<listitem>
 				Not enough data points were provided to calculate the trendline.
@@ -281,7 +281,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error75">
 			<term>Error 75: Illegal name %s for user defined function or constant.</term>
 			<listitem>
 				Names for user defined functions and constants must start with a letter and only contain letters and decimal digits.
@@ -289,14 +289,14 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error76">
 			<term>Error 76: Cannot differentiate recursive function.</term>
 			<listitem>
 				It is not possible to differentiate a recursive function because the resulting function will be infinitely large.
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error79">
 			<term>Error 79: Function cannot be differentiated.</term>
 			<listitem>
 				The function cannot be differentiated, because some part of the function does not have a first derivative.
@@ -304,7 +304,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error86">
 			<term>Error 86: Not further specified error occurred under calculation.</term>
 			<listitem>
 				An error occurred while calculating.
@@ -314,7 +314,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error87">
 			<term>Error 87: No solution found. Try another guess or another model.</term>
 			<listitem>
 				The given guess, which may be the default one, did not give any solution.
@@ -323,7 +323,7 @@
 			</listitem>
 		</varlistentry>
 
-		<varlistentry>
+		<varlistentry id="Error99">
 			<term>Error 99: Internal error. Please notify the programmer with as much information as possible.</term>
 			<listitem>
 				An internal error happened.

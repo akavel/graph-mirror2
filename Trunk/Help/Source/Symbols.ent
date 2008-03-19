@@ -7,3 +7,4 @@
 <!ENTITY deg	"&#x00B0;"> 					<!-- DEGREE SIGN -->
 <!ENTITY imag 	"<emphasis role='bold'>i</emphasis>"> 		<!-- Imaginary unit -->
 <!ENTITY copy	"&#x00A9;"> 					<!-- COPYRIGHT SIGN -->
+<!ENTITY Sigma  "&#x03A3;">					<!-- GREEK CAPITAL LETTER SIGMA -->

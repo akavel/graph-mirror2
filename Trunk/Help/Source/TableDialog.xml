@@ -4,10 +4,42 @@
 %Symbols;
 ]>
 <section id="TableDialog">
+	<?dbhh topicname="IDH_DIALOG_TABLE" topicid="150"?>
 	<title>Calc|Table</title>
 	<indexterm><primary>calc</primary></indexterm>
 	<indexterm><primary>table</primary></indexterm>
 	<indexterm><primary>evaluate</primary></indexterm>
 	<para>
+		The dialog shown below is used to evaluate the selected function for a range of x-coordinates.
+		You specify the first and last x-coordinate in the range, and set the distance between the x-values in the interval.
+		When you press the button labeled <guibutton>Calc</guibutton>,
+		the table will be filled with the x-values in the interval and their corresponding values for f(x), f'(x) and f''(x).
+		While the values are calculated, the program displays a progress indicator, which indicates how much of the calculations have been done.
+	</para>
+
+	<graphic fileref="DialogTable.png"/>
+
+	<para>
+		After the table has been filled you may look through them by scrolling with the panel to the right.
+		You can select some cells with the mouse and right click with the mouse and choose <guimenuitem>Copy</guimenuitem> to copy the cells to the clipboard.
+		From the clipboard the data may be pasted into other programs as Microsoft Excel.
+	</para>
+
+	<para>
+		When you move the mouse to the left side of the table the cursor changes to a right pointing arrow.
+		Now you can select whole rows with the mouse.
+		When you move the mouse to the top of the table the cursor changes to a down pointing arrow.
+		Now you can select whole columns with the mouse.
+		The whole table may be selected by right clicking and selecting <guimenuitem>Select all</guimenuitem>.
+		It is also possible to select cells by holding down the shift key and using the arrow keys on the keyboard.
+	</para>
+
+	<para>
+		From the right click menu it is also possible to export the selected data to a file as comma or tab delimited text.
+	</para>
+
+	<para>
+		Note that is you choose to create a lot of values in the table, it may take some time to calculate.
+		Many values may also take up a lot of memory from the system.
 	</para>
 </section>

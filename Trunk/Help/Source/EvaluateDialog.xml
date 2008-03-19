@@ -4,6 +4,7 @@
 %Symbols;
 ]>
 <section id="EvaluateDialog">
+	<?dbhh topicname="IDH_DIALOG_EVALUATE" topicid="100"?>
 	<title>Calc|Evaluate</title>
 	<para>
 		This dialog is used for interactive calculations on functions.

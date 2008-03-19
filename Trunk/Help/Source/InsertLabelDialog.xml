@@ -4,6 +4,7 @@
 %Symbols;
 ]>
 <section id="InsertLabelDialog">
+	<?dbhh topicname="IDH_DIALOG_LABEL" topicid="10"?>
 	<title>Function|Insert label</title>
 	<indexterm><primary>insert</primary></indexterm>
 	<indexterm><primary>label</primary></indexterm>
@@ -20,5 +21,44 @@
 	<indexterm><primary>italic</primary></indexterm>
 	<indexterm><primary>underline</primary></indexterm>
 	<para>
+		This dialog is used to insert or edit text labels.
+		To insert a label you select the menu item
+		<menuchoice>
+			<guimenu>Function</guimenu>
+			<guimenuitem>Insert label</guimenuitem>
+		</menuchoice>
+		in the main window and click with the mouse on the image where you want the label placed.
+	</para>
+
+	<graphic fileref="DialogLabel.png"/>
+
+	<para>
+		The text is entered in the editing area.
+		You can change text styles for independent parts of the text.
+		The background color, which may be any solid color or transparent, can be set for the whole label only.
+		The <guibutton>Insert Symbol</guibutton> button can be used to insert special characters like mathematical symbols and Greek characters.
+	</para>
+
+	<para>
+		A text label can also contain any <link linkend="OLE">OLE object</link>, for example an image or MS Equation.
+		You can paste an OLE object into the editing area like text.
+		A new object can be created at the cursor position by selecting <guimenuitem>Insert object</guimenuitem> in the context menu.
+		If there is more than one representation in the clipboard, you can use <guimenuitem>Paste special</guimenuitem> in the context menu to select the representation to paste.
+	</para>
+
+	<para>
+		When the <guibutton>OK</guibutton> button is pressed, the label will be shown in the main window.
+		The label can be moved by dragging it around with the mouse or it can be locked to one of the axes by right clicking on it and selecting a placement from the context menu.
+		From the context menu it is also possible to rotate the label, for example to show the text vertical.
+	</para>
+
+	<para>
+		A label can contain and evaluate a <glossterm>numeric expression</glossterm>.
+		This is very useful when you want to show the value of <link linkend="CustomFunctionsDialog">custom constants</link> in a label.
+		Graph will try to evaluate any expression in a label if placed in brackets after a percent sign (%).
+		If you have 3 custom constants a=2.5, b=-3, and c=8.75, you can create a label with the text <literal>f(x)=%(a)x^2+%(b)x+%(c)</literal>.
+		This label will be shown as <literal>f(x)=2.5x^2-3x+8.75</literal> in the main window.
+		When you change the constants, the label will be updated to reflect the new values.
+		In the above case, the + preceding %(b) is removed because b evaluates to a negative number.
 	</para>
 </section>

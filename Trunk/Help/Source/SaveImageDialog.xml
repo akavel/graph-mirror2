@@ -4,6 +4,7 @@
 %Symbols;
 ]>
 <section id="SaveImageDialog">
+	<?dbhh topicname="IDH_DIALOG_SAVE_IMAGE" topicid="80"?>
 	<title>File|Save as image</title>
 	<indexterm><primary>save</primary></indexterm>
 	<indexterm><primary>picture</primary></indexterm>
