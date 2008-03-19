@@ -7,6 +7,13 @@
 	<indexterm><primary>tips</primary></indexterm>
 	<indexterm><primary>tricks</primary></indexterm>
 	<qandaset defaultlabel='qanda'>
+		<qandaentry role="fo">  <!-- Workaround for silly bug -->
+			<question>
+			</question>
+			<answer>
+			</answer>
+		</qandaentry>
+
 		<qandaentry>
 			<question>
 				<para>

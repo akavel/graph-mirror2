@@ -4,6 +4,7 @@
 %Symbols;
 ]>
 <section id="AnimateDialog">
+	<?dbhh topicname="IDH_DIALOG_ANIMATE" topicid="160"?>
 	<title>Calc|Animate</title>
 	<indexterm><primary>animate</primary></indexterm>
 	<indexterm><primary>constant</primary></indexterm>
@@ -14,5 +15,56 @@
 	<indexterm><primary>custom constant</primary></indexterm>
 	<indexterm><primary>frames per second</primary></indexterm>
 	<para>
+		This dialog is used to create an animation by changing a custom constant.
+		The animation can be played directly, saved to a file or copied into a document.
+		The animation can contain all elements supported by Graph, for example functions, relations, point series, labels, etc.
 	</para>
+
+	<graphic fileref="DialogAnimate.png"/>
+
+	<variablelist>
+		<varlistentry>
+			<term>Constant</term>
+			<listitem>
+				Here you select which constant you want to change in the animation.
+				The constant must already have been created in the <link linkend="CustomFunctionsDialog">Custom functions</link> dialog.
+				The selected constant will be changed in each frame in the animation.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Range</term>
+			<listitem>
+				You need to specify the range of the selected constant in the animation.
+				The <guilabel>Step</guilabel> value indicates how much the constant is changed between two frames.
+				The number of frames is given by (<guilabel>To</guilabel> - <guilabel>From</guilabel>) / <guilabel>Step</guilabel>.
+				More frames will give a smoother animation but it will also take longer to create and take up more space in the disk file.
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Image information</term>
+			<listitem>
+				<para>
+					You can specify the image size of the animation.
+					This will affect the file size and the time it takes to create the animation.
+					The <guilabel>Frames per second</guilabel> indicates the default speed of the animation.
+					Most players will be able to adjust the speed when the animation is played.
+				</para>
+				<para>
+					When you press the <guibutton>Animate</guibutton> button, an animation is created from the settings you have specified.
+					This may take some time depending on what elements exist in the coordinate system and how many frames are needed.
+				</para>
+				<para>
+					When the animation is finished, a very simple player is shown.
+					You can use this to play the animation.
+					The rightmost button will give you some additional options, for example to save the animation to a file, which can be played by any media player.
+					You can also have the player repeat playing the animation until you stop it.
+					The <guimenuitem>Auto reverse</guimenuitem> option will make the animation run backwards when it reaches the end.
+					This is very useful in combination with the <guimenuitem>Repeat</guimenuitem> option to make the animation oscillate between the two ends.
+					You can also make some changes to the speed, though a more accurate speed needs to be set before the animation is created.
+				</para>
+			</listitem>
+		</varlistentry>
+	</variablelist>
 </section>

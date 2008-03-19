@@ -4,6 +4,7 @@
 %Symbols;
 ]>
 <section id="InsertTangentDialog">
+	<?dbhh topicname="IDH_DIALOG_TANGENT" topicid="60"?>
 	<title>Function|Insert tangent/normal</title>
 	<indexterm><primary>insert</primary></indexterm>
 	<indexterm><primary>tangent</primary></indexterm>

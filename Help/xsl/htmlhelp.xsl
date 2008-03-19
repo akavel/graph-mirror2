@@ -28,4 +28,8 @@
 <xsl:param name="use.id.as.filename" select="1"/>
 <xsl:param name="chunk.quietly" select="1"/>
 <xsl:param name="chunk.first.sections" select="1"/>
+
+<xsl:template match="qandaentry[@role = 'fo']">
+</xsl:template>
+
 </xsl:stylesheet>

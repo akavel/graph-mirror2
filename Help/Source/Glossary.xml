@@ -27,6 +27,7 @@
 			</para>
 		</glossdef>
 	</glossentry>
+
 	<glossentry>
 		<glossterm>function list</glossterm>
 		<indexterm><primary>function list</primary></indexterm>
@@ -40,6 +41,7 @@
 			</para>
 		</glossdef>
 	</glossentry>
+
 	<glossentry>
 		<glossterm>integer</glossterm>
 		<indexterm><primary>integer</primary></indexterm>
@@ -50,6 +52,7 @@
 			</para>
 		</glossdef>
 	</glossentry>
+
 	<glossentry>
 		<glossterm>legend</glossterm>
 		<indexterm><primary>legend</primary></indexterm>
@@ -64,6 +67,7 @@
 			</para>
 		</glossdef>
 	</glossentry>
+
 	<glossentry>
 		<glossterm>numeric expression</glossterm>
 		<indexterm><primary>numeric expression</primary></indexterm>
@@ -74,6 +78,7 @@
 			</para>
 		</glossdef>
 	</glossentry>
+
 	<glossentry>
 		<glossterm>radians</glossterm>
 		<indexterm><primary>radians</primary></indexterm>
@@ -86,7 +91,8 @@
 			</para>
 		</glossdef>
 	</glossentry>
-	<glossentry>
+
+	<glossentry id="RealNumber">
 		<glossterm>real number</glossterm>
 		<indexterm><primary>real number</primary></indexterm>
 		<glossdef>
