@@ -527,41 +527,26 @@ Kannas </td>
 
 
           <tr>
-
-
-
             <td width="20%">Mongolian</td>
-
-
-
-            <td width="17%">
-            
-      
+            <td width="17%">     
       <p align="center">Yes</p>
-
-
-
             </td>
-
-
-
-            <td width="16%">
-            
-      
+            <td width="16%">          
       <p align="center">No</p>
-
-
-
             </td>
-
-
-
             <td width="48%">Batnasan Davaa</td>
-
-
-
           </tr>
 
+          <tr>
+            <td width="20%">Norwegian</td>
+            <td width="17%">     
+      <p align="center">Yes</p>
+            </td>
+            <td width="16%">          
+      <p align="center">No</p>
+            </td>
+            <td width="48%">Tore Ottinsen</td>
+          </tr>
 
 
           <tr>
