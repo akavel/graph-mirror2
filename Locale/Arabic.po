@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2007-07-30 19:49\n"
-"PO-Revision-Date: 2008-03-17 18:15+0100\n"
+"PO-Revision-Date: 2008-03-20 10:44+0100\n"
 "Last-Translator: Abdellah Chelli (Sneetsher) <sneetsher@yahoo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-Language: Arabic\n"
 "X-Poedit-Country: ALGERIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Bookmarks: -1,-1,-1,-1,-1,-1,751,-1,-1,-1\n"
+"X-Poedit-Bookmarks: 806,-1,-1,-1,-1,-1,751,-1,-1,-1\n"
 
 #. AreaFrame..Label1("From:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label4("From:")..Caption
@@ -116,7 +116,7 @@ msgstr "إختر أين يوضع المؤشر حينما تنقر على الص�
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Category
 #. Form1..ActionManager..InsertObjectAction("Insert object...")..Category
 msgid "Function"
-msgstr "دالة"
+msgstr "وظيفة"
 
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
@@ -139,15 +139,13 @@ msgstr "المحور y"
 
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Extreme x-value"
-msgstr "قيمة y للذروة"
+msgstr "ذروة y"
 
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Extreme y-value"
-msgstr "قيمة x للذروة"
+msgstr "ذروة x"
 
 #. PolFuncFrame..Edit2..Hint
 msgid "The distance to the function evaluated for the given angle."
@@ -396,9 +394,8 @@ msgid "Open..."
 msgstr "فتح ..."
 
 #. Form1..ActionManager..OpenAction("Open...")..Hint
-#, fuzzy
 msgid "Read coordinate system and functions from a file."
-msgstr "استخراج  معلم و دوال من ملف."
+msgstr "قراءة المعلم و الدوال من ملف."
 
 #. Form1..ActionManager..SaveAction("Save")..Caption
 msgid "Save"
@@ -422,9 +419,8 @@ msgid "Save copy as..."
 msgstr "حفظ نسخة باسم ..."
 
 #. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Hint
-#, fuzzy
 msgid "Saves a copy of the current coordinate system."
-msgstr "حفظ نسخة من المعلم و الدوال في ملف آخر."
+msgstr "حفظ نسخة من المعلم و الدوال الحالية."
 
 #. Form1..ActionManager..SaveAsImageAction("Save as image...")..Caption
 msgid "Save as image..."
@@ -461,7 +457,6 @@ msgstr "تراجع عن الخطوة الأخيرة."
 
 #. Form1..ActionManager..RedoAction("Redo")..Caption
 #. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Caption
-#, fuzzy
 msgid "Redo"
 msgstr "إعادة"
 
@@ -617,9 +612,8 @@ msgid "Window"
 msgstr "نافذة"
 
 #. Form1..ActionManager..ZoomWindowAction("Window")..Hint
-#, fuzzy
 msgid "Zoom to user selected window."
-msgstr "تكبير الصورة بمقدار النافذة التي حددها المستخدم."
+msgstr "تكبير الجزء الذي حدده المستخدم."
 
 #. Form1..ActionManager..ZoomSquareAction("Square")..Caption
 msgid "Square"
@@ -715,7 +709,6 @@ msgid "Shows an evaluation table."
 msgstr "عرض جدول تقييم للدالة المحددة."
 
 #. Form1..ActionManager..ContentsAction("Contents and index")..Caption
-#, fuzzy
 msgid "Contents and index"
 msgstr "المحتويات و الفهرس"
 
@@ -1009,9 +1002,8 @@ msgid "Show tips at startup"
 msgstr "عرض نصائح مفيدة عند التشغيل."
 
 #. Form10("Tip of the day")..Panel1..Label1("Did you know...")..Caption
-#, fuzzy
 msgid "Did you know..."
-msgstr "هل كنت تعلم أنه..."
+msgstr "هل تعلم أنه..."
 
 #. Form11("Insert relation")..Caption
 msgid "Insert relation"
@@ -1126,9 +1118,8 @@ msgid "Select the style used for drawing the inequality. Not used for equations.
 msgstr "اختر النمط المستخدم لرسم المتراجحة. (لا يستخدم للمعادلات)"
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-#, fuzzy
 msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "عرض (بـ البكسل) لخط الرسم لحلول المعادلة أو لحافة حلول المتراجحة."
+msgstr "العرض (بـ البكسل) لخط الرسم لحلول المعادلة أو لحدود حلول المتراجحة."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
@@ -1988,9 +1979,7 @@ msgstr "البناء %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
 msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
-msgstr ""
-"هذا البرنامج مجاني، مرحب بتوزيعه تحت إتفاقية جنو (GNU General Public License) . \n"
-"إن كان هنالك أية أخطاء أو إقترحات أرجو أن تعلموا المبرمج بذلك."
+msgstr "هذا البرنامج مجاني، مرحب بتوزيعه تحت إتفاقية جنو (GNU General Public License) .إن كان هنالك أية أخطاء أو إقترحات أرجو أن تزودوا المبرمج بمعلومات وافية."
 
 #. Form2("About Graph")..Panel1..Label4("The newest version as well as the source code are available ")..Caption
 msgid "The newest version as well as the source code are available at:"
@@ -2363,7 +2352,6 @@ msgid "Recent files:"
 msgstr "الملفات السابقة:"
 
 #. Form4("Options")..Label3("Max undo steps:")..Caption
-#, fuzzy
 msgid "Max undo steps:"
 msgstr "أقصى عدد للتراجع:"
 
@@ -2553,12 +2541,10 @@ msgid "Strikethrough (Ctrl+S)"
 msgstr "تشطيب (Ctrl+S)"
 
 #. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton9..Hint
-#, fuzzy
 msgid "Superscript (Ctrl++)"
 msgstr "رمز علوي (Ctrl++)"
 
 #. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton10..Hint
-#, fuzzy
 msgid "Subscript (Ctrl+=)"
 msgstr "رمز سفلي (Ctrl+=)"
 
@@ -2758,13 +2744,13 @@ msgid "The function is not defined for this value."
 msgstr "الدالة غير معرفة من أجل هذه القيمة."
 
 msgid "atanh evaluated at undefined value."
-msgstr "atanh حسبت عند قيمة غير معرفة."
+msgstr "حساب atanh عند قيمة غير معرفة."
 
 msgid "acosh evaluated at undefined value."
-msgstr "acosh حسبت عند قيمة غير معرفة."
+msgstr "حساب acosh عند قيمة غير معرفة."
 
 msgid "arg(0) is undefined."
-msgstr "arg(0) غير معرف."
+msgstr "العدد الأول في المعطيات arg(0) غير معرف."
 
 msgid "Evaluation failed."
 msgstr "فشل التقييم."
@@ -2773,13 +2759,13 @@ msgid "Argument produced a function result with total loss of precision."
 msgstr "المعطيات أنتجت حاصل دالة بخسارة كلية لدقة العدد."
 
 msgid "The custom function/constant '%s' was not found or has the wrong number of arguments."
-msgstr "الدالة/الثابت المخصص(ة)  '%s' لا يمكن العثور عليه (ها) أو تملك عدد المعطيات خاطئ."
+msgstr "الدالة/الثابت المخصص(ة)  '%s' لا يمكن العثور عليه (ها) أو ان الدالة تملك عدد المعطيات خاطئ."
 
 msgid "Too many recursive calls."
-msgstr "Too many recursive calls."
+msgstr "نداءات متكررة (تراجعية) كثيرة."
 
 msgid "Overflow: A function returned a value too large to handle."
-msgstr "قيمة حاصل الدالة كبيرة و لا يمكن التعامل معها. (Overflow)"
+msgstr "فيض (Overflow):قيمة حاصل الدالة كبيرة و لا يمكن التعامل معها."
 
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "عملية غير متوقعة. لا يمكن وضع العملية '%s' هنا."
@@ -2788,10 +2774,10 @@ msgid "The right bracket is missing."
 msgstr "القوس الأيمن مفقود."
 
 msgid "Invalid number of arguments supplied for function '%s'"
-msgstr "عدد غير مقبول من المعطيات قدم للدالة  '%s'"
+msgstr "قدم للدالة  '%s' عدد غير مقبول من المعطيات."
 
 msgid "Comparison operator misplaced."
-msgstr "لا يمكن وضع عملية المقارنة في ذلك المكان."
+msgstr "عملية المقارنة في مكان خاطئ."
 
 msgid "Invalid number found. Use the format: -5.475E-8"
 msgstr "العثور على عدد غير مقبول. استخدم الشكل التالي: -5.475E-8"
@@ -2809,10 +2795,10 @@ msgid "Number, constant or function expected."
 msgstr "من المتوقع: عدد، ثابت أو دالة."
 
 msgid "Parameter after constant or variable not allowed."
-msgstr "وسيط (موسطي) بعد ثابت أو متغير غير مسموح به."
+msgstr "وسيط بعد ثابت أو متغير غير مسموح به."
 
 msgid "Expression expected."
-msgstr "عبارة متوقعة."
+msgstr "من المتوقع: عبارة."
 
 msgid "Unknown variable, function or constant: \"%s\""
 msgstr "متغير، دالة أو ثابت مجهول:  \"%s\""
@@ -2824,13 +2810,13 @@ msgid "The end of the expression was unexpected."
 msgstr "نهاية العبارة غير متوقعة."
 
 msgid "Error parsing function text."
-msgstr "خطأ في إعراب نص الدالة."
+msgstr "خطأ في تفسير نص الدالة."
 
 msgid "A calculation resulted in an overflow."
-msgstr "نتج عن الحساب خروج عن النطاق (overflow)."
+msgstr "نتج فيض (overflow) عند الحساب."
 
 msgid "An invalid value was used in the calculation."
-msgstr "قيمة غير مقبولة ستخدمت في الحساب."
+msgstr "استخدمت قيمة غير مقبولة في الحساب."
 
 msgid "Not enough points for calculation."
 msgstr "نقاط غير كافية لإجراء الحسابات."
@@ -2848,7 +2834,7 @@ msgid "Function cannot be differentiated."
 msgstr "لا يمكن اشتقاق الدالة."
 
 msgid "Not further specified error occurred under calculation."
-msgstr "لم يحدث أي خطأ معين أثناء الحساب."
+msgstr "حدث خطأ غير معروف أثناء الحساب."
 
 msgid "No solution found. Try another guess or another model."
 msgstr "لم يعثر على أي حل، حاول التخمين مجددا أو جرب نموذجا آخرا."
@@ -2857,7 +2843,7 @@ msgid "Internal error. Please notify the programmer with as much information as 
 msgstr "خطأ داخلي. أرجوا أن تعلم المبرمج بمعلومات وافية قدر ما تستطيع."
 
 msgid "You need to enter a name for the function/constant."
-msgstr "يجب عليك إدخال اسم للدالة/الثابت"
+msgstr "يجب عليك إدخال اسم للدالة/الثابت."
 
 msgid ""
 "Invalid function/constant name '%s'.\n"
@@ -2866,7 +2852,7 @@ msgid ""
 msgstr ""
 "اسم دالة/ثابت غير مقبول '%s'.\n"
 "الاسم يمكن أن يحتوي على حروف و أرقام، و يجب أن يبدا دائما بحرف.\n"
-"بالإضافة لا يمكن إعادلة تعريف الأسماء المعرفة مسبقا (كـ pi و cos)."
+"بالإضافة إلى ذلك لا يمكن إعادلة تعريف الأسماء المعرفة مسبقا (كـ pi و cos)."
 
 msgid "You need to enter a name for the argument."
 msgstr "يجب أن تدخل اسما لأحد المعطيات."
@@ -2878,10 +2864,10 @@ msgid ""
 msgstr ""
 "اسم أحد المعطيات غير مقبول '%s'.\n"
 "الاسم يمكن أن يحتوي على حروف و أرقام، و يجب أن يبدا دائما بحرف.\n"
-"بالإضافة لا يمكن إعادلة تعريف الأسماء المعرفة مسبقا (كـ pi و cos)."
+"بالإضافة إلى ذلك لا يمكن إعادلة تعريف الأسماء المعرفة مسبقا (كـ pi و cos)."
 
 msgid "Character found after brackets."
-msgstr "حرف موجود"
+msgstr "عثر على حرف (أو رمز) بعد الأقواس."
 
 msgid "Symbol \"%s\" defined more than once."
 msgstr "الرمز \"%s\" عرف أكثر من مرة."
@@ -2904,11 +2890,11 @@ msgstr "حفظ تغييرات في %s ؟"
 
 #. Written in status bar when trying to zoom in too much
 msgid "You have reached the maximum range of zoom."
-msgstr "لقد وصلت إلى أقصى مقياس."
+msgstr "لقد وصلت إلى أقصى مدى للتكبير."
 
 #. Written in status bar when trying to zoom out too much
 msgid "You have reached the minimum range of zoom."
-msgstr "لقد وصلت إلى أدنى مقياس."
+msgstr "لقد وصلت إلى أقصى مدى للتصغير."
 
 #. Error message when an invalid value is entered.
 msgid "Error in value"
@@ -2918,23 +2904,23 @@ msgid "'%s' has to be an integer value greater or equal to 0."
 msgstr "'%s' يجب أن يكون عددا صحيحا أكبر من أو يساوي 0."
 
 msgid "'%s' must be greater than zero."
-msgstr "'%s' يجب أن يكون أكبر من 0."
+msgstr "'%s' يجب أن يكون أكبر من الصفر."
 
 msgid "'%s' must be an integer greater than zero."
-msgstr "'%s' يجب أن يكون عددا صحيحا أكبر من 0."
+msgstr "'%s' يجب أن يكون عددا صحيحا أكبر من الصفر."
 
 #. Error message in Axes dialog when zoom in/out too much
 msgid "Trying to break zoom limit."
-msgstr "محاولة تخطي حدود المقياس."
+msgstr "محاولة تخطي حدود التكبير/التصغير."
 
 msgid "'%s' must be greater than '%s'"
 msgstr "'%s' يجب أ ن يكون أكبر من '%s'"
 
 msgid "The maximum value must be greater than the minimum value."
-msgstr "القيمة القصوى يجب أن تكون أكبر من القيمة الدنيا."
+msgstr "القيمة العليا يجب أن تكون أكبر من القيمة الدنيا."
 
 msgid "You need to enter a value."
-msgstr "يجب أن تدخل قيمة"
+msgstr "يجب أن تدخل قيمة."
 
 msgid ""
 "This file was created with Graph %s.\n"
@@ -2975,10 +2961,10 @@ msgid ""
 "Access denied. Check that the file is not in use or write protected."
 msgstr ""
 "لا يمكن الكتابة إلى الملف: %s\n"
-"الوصول مرفوض. تأكد من أن الملف ليس مستعملا من برنامج آخر أو محميا من الكتابة."
+"الوصول مرفوض. تأكد من أن الملف ليس مستعملا من قبل برنامج آخر أو محميا ضد الكتابة."
 
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
-msgstr "الخط \"%s\" غير موجود. الخط القياسي سيستخدم مكانه."
+msgstr "الخط \"%s\" غير موجود. الخط القياسي استخدم مكانه."
 
 #. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
@@ -3006,7 +2992,7 @@ msgid "Object error"
 msgstr "خطأ في الكائن"
 
 msgid "Windows does not have enough resources to save an image that large."
-msgstr "لا يملك لنظام الموارد الكافية لحفظ صورة ذات حجم كبير."
+msgstr "لا يملك النظام الموارد الكافية لحفظ صورة ذات حجم كبير."
 
 msgid "'%1%' must be between %2% and %3%."
 msgstr "'%1%' يجب أن يكون بين %2% و %3%."
@@ -3035,38 +3021,38 @@ msgid "Are you sure you want to delete the model: %s?"
 msgstr "هل أنت متأكد من أنك تريد حذف النموذج: %s؟"
 
 msgid "Maximum number on x-axis must be greater than the minimum value."
-msgstr "القيمة القصوى على المحور x يجب أن تكون أكبر من القيمة الدنيا."
+msgstr "القيمة العليا على المحور x يجب أن تكون أكبر من القيمة الدنيا."
 
 msgid "Maximum number on y-axis must be greater than the minimum value."
-msgstr "القيمة القصوى على المحور y يجب أن تكون أكبر من القيمة الدنيا."
+msgstr "القيمة العليا على المحور y يجب أن تكون أكبر من القيمة الدنيا."
 
 #. Error message when trying to activate an OLE object
 msgid "Server application not found."
-msgstr "تطبيق الملقم غير موجود."
+msgstr "تطبيق البرمجي للملقم غير موجود."
 
 msgid "Maximum number for t must be greater than the minimum value."
-msgstr "القيمة القصوى لـ  t يجب أن تكون أكبر من القيمة الدنيا."
+msgstr "يجب أن تكون القيمة العليا لـ  t أكبر من القيمة الدنيا."
 
 msgid "The step value for t must be a number greater than 0."
 msgstr "قيمة الخطوة لـ t يجب أن تكون أكبر من 0."
 
 msgid "The minimum value for the x-axis must be greater than 0, when the x-axis is logarithmic scaled."
-msgstr "القيمة الدنيا للمحور x يجب أن تكون أكبر من 0، عندما يكون ذو مقياس لوغاريتمي."
+msgstr "يجب أن تكون القيمة الدنيا على المحور x أكبر من 0، عندما يكون ذو مقياس لوغاريتمي."
 
 msgid "The cross point of the y-axis must be greater than 0, when the x-axis is logarithmic scaled."
-msgstr "يجب ان تكون إحداثيات نقطة المبدأ للمحور y أكبر من 0. عندما يكون المحور x بمقياس لوغاريتمي."
+msgstr "يجب ان تكون إحداثية التقاطع للمحور y أكبر من 0. عندما يكون المحور x بمقياس لوغاريتمي."
 
 msgid "The minimum value for the y-axis must be greater than 0, when the y-axis is logarithmic scaled."
-msgstr "القيمة الدنيا للمحور y يجب أن تكون أكبر من 0، عندما يكون ذو مقياس لوغاريتمي."
+msgstr "يجب أن تكون القيمة الدنيا على المحور y أكبر من 0، عندما يكون ذو مقياس لوغاريتمي."
 
 msgid "The cross point of the x-axis must be greater than 0, when the y-axis is logarithmic scaled."
-msgstr "مبدأ المحور x يجب أن يكون أكبر من 0، عندما يكون المحور y بالمقياس اللوغاريتمي."
+msgstr "يجب أن تكون إحداثية التقاطع للمحور x أكبر من 0، عندما يكون المحور y بالمقياس اللوغاريتمي."
 
 msgid "'Recent files' must be between 0 and 9."
-msgstr "'ملفات سابقة' يجب أن تكون بين 0 و 9."
+msgstr "يجب أن يكون عدد 'الملفات السابقة' بين 0 و 9."
 
 msgid "The end of interval must be greater than the start of interval."
-msgstr "نهاية المجال يجب أن تكون أكبر من بدايته."
+msgstr "يجب أن تكون نهاية المجال أكبر من بدايته."
 
 msgid "Error in interval."
 msgstr "خطأ في المجال."
@@ -3078,19 +3064,19 @@ msgid "Error in width"
 msgstr "خطأ في العرض"
 
 msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
-msgstr "نهاية المجال يجب أن تكون أكبر من بدايته و أن يكون %s أكبر من 0."
+msgstr "يجب أن تكون نهاية المجال أكبر من بدايته و أن يكون %s أكبر من 0."
 
 msgid "Invalid model name."
 msgstr "اسم النموذج غير مقبول."
 
 msgid "A model of that name already exist."
-msgstr "نموذج بهذا الاسم موجود مسبقا."
+msgstr "يوجد نموذج آخر بهذا الاسم."
 
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "مشتق الدالة غير معرف عند %s=%s"
 
 msgid "Coordinate not defined."
-msgstr "الإحداثيات غير معرفة"
+msgstr "الإحداثية غير معرفة"
 
 msgid "Checking for newer version..."
 msgstr "التحقق من وجود إصدار جديد ..."
@@ -3105,16 +3091,16 @@ msgid "Calculate length of path"
 msgstr "حساب طول المسار"
 
 msgid "Edit function"
-msgstr "تحرير دالة"
+msgstr "تحرير الدالة"
 
 msgid "Edit tangent/normal"
-msgstr "تحرير مماس/عمود"
+msgstr "تحرير المماس/العمود"
 
 msgid "Error processing file '%s' at line %s."
 msgstr "خطأ أثناء معالجة الملف '%s' في السطر %s ."
 
 msgid "'%s' has to be an integer value between 0 and 1000."
-msgstr "'%s' يجب أن يكون عدد صحيح بين 0 و 1000."
+msgstr "يجب أن يكون '%s' عدد صحيح بين 0 و 1000."
 
 msgid "Printing error"
 msgstr "خطأ أثناء الطباعة"
@@ -3124,7 +3110,7 @@ msgstr "وقع خطأ مجهول أثناء الطباعة."
 
 #. Error message title in Point series dialog
 msgid "Error while adding points"
-msgstr "خطأ أثناء إضافة نقاط"
+msgstr "خطأ أثناء إضافة النقاط"
 
 msgid "Each point needs both an x- and a y-coordinate."
 msgstr "كل نقطة تحتاج إلى الإحداثيتين x و y."
@@ -3156,14 +3142,14 @@ msgid ""
 "Would you like to visit the web site?"
 msgstr ""
 "Graph %s متوفر للتحميل من www.padowan.dk \n"
-"بهذه الميزات الجديدة عن الإصدار السابق: \n"
+"و يتفوق على الإصدار السابق بهذه الميزات الجديدة: \n"
 "\n"
 "%s\n"
 "\n"
 "هل تريد زيارة الموقع؟"
 
 msgid "No new version"
-msgstr "لا نسخة جديدة"
+msgstr "لا إصدار جديدة"
 
 msgid "You are already using the most recent version of the program."
 msgstr "أنت تستخدم آخر إصدارللبرنامج."
@@ -3177,15 +3163,15 @@ msgstr ""
 
 #. Communication error when checking for newer version
 msgid "Socket error %s"
-msgstr "خطأ %s في المقبس"
+msgstr "خطأ %s في المقبس (Socket)"
 
 #. Communication error when checking for newer version
 msgid "The server responded with the message '%s'"
-msgstr "أجاب الملقم بالرسالة '%s'"
+msgstr "أجاب الملقم بالرسالة: '%s'"
 
 #. Communication error when checking for newer version
 msgid "Protocol reply error %s"
-msgstr "Protocol reply error %s"
+msgstr "الخطأ %s في إجابة نظام الإتصال (Protocol)"
 
 msgid ""
 "The file cannot be opened by this version of the program.\n"
@@ -3208,21 +3194,21 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"إذا كنت لا تريد أن تسأل مرة أخرى، هذة الخاصية يمكن إيقافها من قائمة تحرير|خيارات."
+"إذا كنت لا تريد أن تسأل مرة أخرى، هذة الخاصية يمكن إيقافها من قائمة 'تحرير|خيارات'."
 
 msgid "Edit relation"
-msgstr "تحرير علاقة"
+msgstr "تحرير العلاقة"
 
 #. Customize toolbar dialog
 msgid "Commands"
-msgstr "أوامر"
+msgstr "الأوامر"
 
 #. Customize toolbar dialog
 msgid "(All Commands)"
 msgstr "(كل الأوامر)"
 
 msgid "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
-msgstr "لإضافة أمر إلى لوحة الأدوات ببساطة إختر صنفا و اسحب الأمر خارج نافذة الحوار إلى لوحة الأدوات."
+msgstr "لإضافة أمر إلى لوحة الأدوات ببساطة اختر صنفا و اسحب الأمر خارج نافذة الحوار إلى لوحة الأدوات."
 
 msgid "Edit f'(x)"
 msgstr "تحرير f'(x)"
@@ -3240,7 +3226,7 @@ msgstr "هذه نصيحة  اليوم التي تستطيع إعطاءك معل�
 
 #. Tip of the Day
 msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
-msgstr "يمكنك إرسال إقترحات من أجل الإصدارات القادمة، تقارير عن الأخطاء البرمجية و تعليقات إلى graph@padowan.dk ."
+msgstr "يمكنك إرسال إقترحات من أجل الإصدارات القادمة، تقارير عن الأخطاء البرمجية أو تعليقات إلى graph@padowan.dk."
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
@@ -3252,27 +3238,27 @@ msgstr "بدل حذف دالة  يمكنك جعلها غير مرئية بنقر
 
 #. Tip of the Day
 msgid "You can paste images into a text label."
-msgstr "يمكنك لصق صور إلى نص استدلالي."
+msgstr "يمكنك لصق صور إلى نص."
 
 #. Tip of the Day
 msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
-msgstr "النص الإستدلالي يمكن أن يحتوي على أي نوع من كائنات OLE، مثلا معادلة Microsoft. عند تحرير النص بنقرة يمنى في موضع التحرير ثم 'إدراج كائن'."
+msgstr "النص يمكن أن يحتوي على أي نوع من كائنات OLE، مثلا Equation Microsoft. بنقرة يمنى في موضع التحرير للنص ثم 'إدراج كائن'."
 
 #. Tip of the Day
 msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
-msgstr "يمكنك تصدير نقاط من سلسلة نقطية إلى ملف تستطيع برامج أخرى قراءته، مثلا Microsoft Excel . عند تحرير السلسلة النقطية حدد النقاط، نقرة يمنى تم اختر 'تصدير إلى ملف'."
+msgstr "يمكنك تصدير نقاط من سلسلة نقطية إلى ملف و الذي تستطيع برامج أخرى قراءته، مثلا Microsoft Excel . عند تحرير السلسلة النقطية حدد النقاط، نقرة يمنى تم اختر 'تصدير إلى ملف'."
 
 #. Tip of the Day
 msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
-msgstr "خط عمودي عند x=5 يمكن رسمه كدالة وسيطية x(t)=5، y(t)=t أو كعلاقة x=5."
+msgstr "يمكن رسم خط عمودي عند x=5 كدالة وسيطية x(t)=5، y(t)=t أو كعلاقة x=5."
 
 #. Tip of the Day
 msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
-msgstr "يمكنك استعمال تكبير|مربع لجعل المحاور تبدوا متقايسة. و هذا ذو أهمية عند رسم الدوائر و الدوال المشابهة."
+msgstr "يمكنك استعمال 'عرض|مربع' لجعل المحاور تبدوا متقايسة. و هذا ذو أهمية عند رسم الدوائر و الدوال المشابهة."
 
 #. Tip of the Day
 msgid "You can find a list of all available functions in the help."
-msgstr "يمكنك إيجاد قائمة بكل الداول المتوفرة في قائمة مساعدة."
+msgstr "يمكنك إيجاد قائمة بكل الداول المتوفرة في قائمة المساعدة."
 
 #. Tip of the Day
 msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
@@ -3284,7 +3270,7 @@ msgstr "يمكنك استيراد محتويات ملف Graph آخر إلى ال
 
 #. Tip of the Day
 msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new files."
-msgstr "إذا اخترت 'حفظ كإفتراضي' في نافذة الحوار للمحاور، الخيارات الحالية ستستخدم كخيارات إفتراضية  عند إنشاء ملف جديد."
+msgstr "إذا اخترت 'حفظ كإعدادات إفتراضية' في نافذة الحوار للمحاور، الإعدادات الحالية ستستخدم كإعدادات إفتراضية  عند إنشاء ملف جديد."
 
 #. Tip of the Day
 msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
@@ -3300,19 +3286,19 @@ msgstr "يمكنك استعمال عجلة الفأرة لتكبير و تصغي
 
 #. Tip of the Day
 msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
-msgstr "إذا كنت لا تريد عرض عنصر في مفتاح الرسم، نقرة يمنى على العنصر في قائمة الدوال ثم ألغي اختيار 'عرض في مفتاح الرسم'."
+msgstr "إذا كنت لا تريد إظهار عنصر في مفتاح الرسم، نقرة يمنى على العنصر في قائمة الدوال ثم ألغ اختيار 'إظهار في مفتاح الرسم'."
 
 #. Tip of the Day
 msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
-msgstr "إذا كنت تريد المحاور أن تعرض على يسار و أسفل الصورة، يمكنك اختيار نمط المحاور كـ 'معلب' في نافذة إعدادات المحاور."
+msgstr "إذا كنت تريد المحاور أن تعرض على يسار و أسفل الصورة، يمكنك اختيار نمط المحاور 'جانبية' في نافذة إعدادات المحاور."
 
 #. Tip of the Day
 msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
-msgstr "يمكن لـ Graph أن يحفظ المعلم الظاهر إلى خمسة أنواع من الصور: bmp، emf، png، jpg و pdf."
+msgstr "يمكن لـ Graph أن يحفظ صورة للمعلم في خمسة أنواع من الصور: bmp، emf، png، jpg و pdf."
 
 #. Tip of the Day
 msgid "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."
-msgstr "يمكنك استخدام تحرير|نسخ صورة لنسخ المعلم إلى الحافظة و لصقها إلى برنامج آخر."
+msgstr "يمكنك استخدام 'تحرير|نسخ صورة' لنسخ صورة للمعلم إلى الحافظة و لصقها إلى برنامج آخر."
 
 #. Tip of the Day
 msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
@@ -3320,19 +3306,19 @@ msgstr "يمكنك فتح ملف (grf) محفوظ في نافذة جديدة ل�
 
 #. Tip of the Day
 msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
-msgstr "يمكنك أ ن تسحب ملف (grf) من مستعرض Windows إلى نافذة Graph لفتحه."
+msgstr "يمكنك أ ن تسحب ملف (grf) من المستعرض (explorer) إلى نافذة Graph لفتحه."
 
 #. Tip of the Day
 msgid "Graph will remember the size and placement of the main window between executions. This can be disabled from the Options dialog."
-msgstr "يحفظ Graph موضع و حجم النافذة الرئيسية عند الإغلاق. يمكن إيقاف هذه الخاصية من نافذة الحوار للخيارات."
+msgstr "يحفظ Graph موضع و حجم النافذة الرئيسية عند الإغلاق. يمكن إيقاف هذه الخاصية من نافذة الخيارات."
 
 #. Tip of the Day
 msgid "Calc|Table can be used to create a table with evaluation values for a function."
-msgstr "حساب|جدول يمكن لإنشاء جدول بقيم لدالة على طول المجال."
+msgstr "يمكنك 'حساب|جدول' من إنشاء جدول بقيم الدالة على طول المجال."
 
 #. Tip of the Day
 msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
-msgstr "يمكن تصدير جزء أو كامل جدول التقييم إلى ملف بنقرة يمنى ثم 'تصدير إلى ملف'.و يمكن بعد ذلك فتح الملف بواسطة برامج أخرى كـ Microsoft Excel."
+msgstr "يمكنك تصدير جزء أو كامل جدول التقييم إلى ملف بنقرة يمنى ثم 'تصدير إلى ملف'.و يمكن بعد ذلك فتح الملف بواسطة برامج أخرى كـ Microsoft Excel."
 
 #. Tip of the Day
 msgid "Data from the evaluation table can be copied to another program like Microsoft Excel using the clipboard."
@@ -3344,15 +3330,15 @@ msgstr "يمكن نسخ معطيات السلاسل النقطية من و إل�
 
 #. Tip of the Day
 msgid "Functions can be copied from one instance of the program to another through the clipboard using Edit|Copy."
-msgstr "يمكن نسخ الدوال من من نسخة مشغلة من البرنامج إلى أخرى باستخدام تحرير|نسخ"
+msgstr "يمكن نسخ الدوال من نسخة مشغلة من البرنامج إلى أخرى باستخدام 'تحرير|نسخ'."
 
 #. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
-msgstr "يمكنك دائما التراجع عن الخطوات الأخيرة باستعمال تحرير|تراجع."
+msgstr "يمكنك دائما التراجع عن الخطوات الأخيرة باستعمال 'تحرير|تراجع'."
 
 #. Tip of the Day
 msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
-msgstr "إذا استخدمت تحرير|تراجع عن طريق الخطأ، فيمكنك استخدام تحرير|إعادة لإستعادة ما تراجعت عنه."
+msgstr "إذا استخدمت 'تحرير|تراجع' عن طريق الخطأ، فيمكنك استخدام 'تحرير|إعادة' لإستعادة ما تراجعت عنه."
 
 #. Tip of the Day
 msgid "In the Axes dialog you can add a title to the coordinate system."
@@ -3368,11 +3354,11 @@ msgstr "حينما تدر ج سلسلة نقطية ، يمكنك نسخ المع
 
 #. Tip of the Day
 msgid "You can use 'Zoom|All points' to change the coordinate system so all point series are visible."
-msgstr "يمكنك استخدام 'مقياس الرسم|كل النقاط'  لتغيير المعلم بحيث تظهر كل السلاسل النقطية."
+msgstr "يمكنك استخدام 'عرض|كل النقاط'  لتغيير المعلم بحيث تظهر كل السلسلة النقطية."
 
 #. Tip of the Day
 msgid "You can use Zoom|Fit to change the coordinate system to show the selected function or point series."
-msgstr "يمكنك استخدام 'مقياس الرسم|ملائم'  لتغيير المعلم بحيث يعرض الدالة أو السلسلة النقطية المحددة."
+msgstr "يمكنك استخدام 'عرض|ملائم'  لتغيير المعلم بحيث يعرض الدالة أو السلسلة النقطية المحددة."
 
 #. Tip of the Day
 msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
@@ -3380,7 +3366,7 @@ msgstr "مع إبقاء المفتاح Shift مضغوطا يمكنك سحب ال
 
 #. Tip of the Day
 msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
-msgstr "يمكنك استخدام حساب|تقييم لإيجاد نقاط التقاطع بين الدوال، ومع المحاور ونقاط الذروة."
+msgstr "يمكنك استخدام 'حساب|تقييم' لإيجاد نقاط التقاطع بين الدوال، و مع المحاور ونقاط الذروة."
 
 #. Tip of the Day
 msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
@@ -3396,7 +3382,7 @@ msgstr "يمكنك استعمال علاقة لرسم أي معادلة، مثل
 
 #. Tip of the Day
 msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
-msgstr "العناصر (دالة، تظليل، اسم إستدلالي، علاقة، و غيرها) ترسم بنفس الترتيب الذي تظهر به في قائمة الدوال إلى اليسار."
+msgstr "العناصر (دالة، تظليل، نص، علاقة، و غيرها) ترسم بنفس الترتيب الذي تظهر به في قائمة الدوال إلى اليسار."
 
 #. Tip of the Day
 msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
@@ -3404,19 +3390,19 @@ msgstr "يمكنك تغيير ترتيب العنصر المحدد في قائم
 
 #. Tip of the Day
 msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
-msgstr "يمكنك عرض دوال و عناصر أخرى خلف المحاور بتحريك العنصر فوق المحاور قي قائمة الدوال على اليسار. لتحريك تظليل أو مماس يجب عليك تحريك الدالة الملحقان بها."
+msgstr "يمكنك عرض دوال و عناصر أخرى خلف المحاور بتحريك العنصر فوق المحاور في قائمة الدوال على اليسار. لتحريك تظليل أو مماس يجب عليك تحريك الدالة الملحقان بها."
 
 #. Tip of the Day
 msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
-msgstr "يمكن وصل اسم إستدلالي بالمحاور بنقرة يمنى عليه اختيار موضع من القائمة المنسدلة."
+msgstr "يمكن وصل نص بالمحاور بنقرة يمنى عليه اختيار موضع من القائمة المنسدلة."
 
 #. Tip of the Day
 msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
-msgstr "يمكن تحريك مفتاح الرسم بحرية أو وصلها بإحدى الزوايا بنقر يمنى على مفتاح الرسم و اختيارموضع من القائمة المنسدلة."
+msgstr "يمكن تحريك مفتاح الرسم بحرية أو إلصاقه بإحدى الزوايا بنقر يمنى عليه و اختيارموضع من القائمة المنسدلة."
 
 #. Tip of the Day
 msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
-msgstr "كبديل للشفافية، يمكنك اختيار لوم مخصص لخلفية النص الإستدلالي. خصوصا إذا النص موضوعا فوق تظليل."
+msgstr "كبديل للشفافية، يمكنك اختيار لون مخصص لخلفية النص. خصوصا إذا كان النص واقعا فوق تظليل."
 
 #. Tip of the Day
 msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
@@ -3424,11 +3410,11 @@ msgstr "في أغلب الحالات كالسلاسل النقطية، إعدا�
 
 #. Tip of the Day
 msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
-msgstr "يمكنك إنشاء ثوابت مخصصة و الخاصة بك بواسطة دوال|دوال مخصصة لاستخدامها في دوال، سلاسل نقطية، و غيرها. كمثال: g=9.80665،  R=8.31"
+msgstr "يمكنك إنشاء ثوابت مخصصة و الخاصة بك بواسطة 'وظيفة|دوال مخصصة' لاستخدامها في دوال، سلاسل نقطية، و غيرها. كمثال: g=9.80665،  R=8.31"
 
 #. Tip of the Day
 msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
-msgstr "يمكنك إنشاء دوال مخصصة و الخاصة بك بواسطة دوال|دوال مخصصة لاستخدامها في رسم دوال، علاقات، و غيرها. كمثال: sinc(x)=if(x=0, 0, sin(x)/x)"
+msgstr "يمكنك إنشاء دوال مخصصة و الخاصة بك بواسطة 'وظيفة|دوال مخصصة' لاستخدامها في رسم دوال ، علاقات، و غيرها. كمثال: sinc(x)=if(x=0, 0, sin(x)/x)"
 
 #. Tip of the Day
 msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
@@ -3442,7 +3428,7 @@ msgid "Insert symbol"
 msgstr "إدراج رمز"
 
 msgid "Subset:"
-msgstr "مجموعة جزئية:"
+msgstr "المجموعة الجزئية:"
 
 msgid "Insert"
 msgstr "إدراج"
@@ -3451,7 +3437,7 @@ msgid "Customize"
 msgstr "تخصيص"
 
 msgid "Description"
-msgstr "وصف"
+msgstr "الوصف"
 
 msgid "Cannot open clipboard"
 msgstr "لا يمكن فتح الحافظة"
@@ -3480,19 +3466,19 @@ msgstr "النوع:"
 
 #. PrintFrm("Print")..GroupBox1("Printer")..Label8("Where:")..Caption
 msgid "Where:"
-msgstr "أين:"
+msgstr "الموقع:"
 
 #. PrintFrm("Print")..GroupBox1("Printer")..Label9("Comment:")..Caption
 msgid "Comment:"
-msgstr "تعليق:"
+msgstr "التعليق:"
 
 #. PrintFrm("Print")..GroupBox1("Printer")..ComboBox1....Hint
 msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
-msgstr "إختر طابعة لاستخدامها، و يمكن استخدام زر 'خصائص' لتعديل إعدادات متقدمة للطابعة."
+msgstr "اختر طابعة لاستخدامها، و يمكنك استخدام زر 'الخصائص' لتعديل الإعدادات المتقدمة للطابعة."
 
 #. PrintFrm("Print")..RadioGroup2("Print output")....Hint
 msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
-msgstr "إختر طباعة بالألوان (أو تدرج رمادي إذا كانت الطابعة ليست طابعة ملونة) أو تحويل كل الألوان إلى الأسود."
+msgstr "اختر طباعة بالألوان (أو تدرج رمادي إذا كانت الطابعة ليست طابعة ملونة) أو تحويل كل الألوان إلى الأسود."
 
 #. PrintFrm("Print")..RadioGroup2("Print output")..Caption
 msgid "Print output"
@@ -3500,7 +3486,7 @@ msgstr "ألوان الطباعة"
 
 #. PrintFrm("Print")..RadioGroup2("Print output")....Items.Strings
 msgid "Color"
-msgstr "اللون"
+msgstr "كل الألوان"
 
 #. PrintFrm("Print")..RadioGroup2("Print output")....Items.Strings
 msgid "Black && white"
@@ -3508,7 +3494,7 @@ msgstr "أبيض و أسود"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Caption
 msgid "Position (millimeters)"
-msgstr "الموضع (mm)"
+msgstr "الموضع (ميليمتر)"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Label3("Left margin:")..Caption
 msgid "Left margin:"
@@ -3520,11 +3506,11 @@ msgstr "الهامش العلوي:"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
 msgid "Select to place the image on the middle of the page."
-msgstr "وصع الصورة في وسط الصفحة."
+msgstr "وضع الصورة في وسط الصفحة."
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
-msgstr "توسيط على الصفحة"
+msgstr "توسيط"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1..Hint
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2..Hint
@@ -3537,9 +3523,9 @@ msgstr "عدد النسخ:"
 
 #. PrintFrm("Print")..GroupBox3..Edit3..Hint
 msgid "Choose number of copies to print."
-msgstr "إختر عدد النسخ لطباعتها."
+msgstr "اختر عدد النسخ لطباعتها."
 
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
-msgstr "أدخل النسبة مقارنة للحجم أصلي."
+msgstr "أدخل النسبة مقارنة بالحجم الأصلي."
 
