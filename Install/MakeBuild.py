@@ -7,6 +7,9 @@ import traceback
 import datetime
 
 try:
+  # Test that Graph can be started without some obscure dll files
+  os.system("Graph.exe /regserver")
+
   print "Updating Graph.iss ..."
   File = open("Graph.iss")
   Lines = File.readlines()
