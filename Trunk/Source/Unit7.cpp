@@ -20,7 +20,6 @@
 __fastcall TForm7::TForm7(TComponent* Owner, TData &AData)
     : TTntForm(Owner), Data(AData)
 {
-  ScaleForm(this);
   TranslateProperties(this);
   TranslateStrings(ExtColorBox1->Items);
   SetAccelerators(this);
@@ -35,6 +34,8 @@ __fastcall TForm7::TForm7(TComponent* Owner, TData &AData)
   LineSelect1->ItemIndex = Data.Property.DefaultDif.Style;
   ExtColorBox1->Selected = Data.Property.DefaultDif.Color;
   UpDown1->Position = Data.Property.DefaultDif.Size;
+
+  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm7::Button1Click(TObject *Sender)

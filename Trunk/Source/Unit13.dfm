@@ -2,6 +2,7 @@ object Form13: TForm13
   Left = 366
   Top = 206
   HelpContext = 130
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Insert trendline'
@@ -14,6 +15,7 @@ object Form13: TForm13
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   DesignSize = (

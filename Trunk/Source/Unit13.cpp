@@ -26,14 +26,16 @@
 __fastcall TForm13::TForm13(TComponent* Owner, TData &AData)
         : TTntForm(Owner), Data(AData)
 {
-  ScaleForm(this);
+  int OldTextWidth = WideCanvasTextWidth(Canvas, CheckBox1->Caption);
   TranslateProperties(this);
   TranslateStrings(ExtColorBox1->Items);
   SetAccelerators(this);
   int LabelWidth = TMaxWidth(Label5)(Label6)(Label7);
   if(LabelWidth > 32)
     Width = Width + LabelWidth - 32;
+  ResizeControl(Edit5, Edit5->Left + WideCanvasTextWidth(Canvas, CheckBox1->Caption) - OldTextWidth);
   PageControl1->ActivePage = TabSheet1;
+  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm13::ImageClick(TObject *Sender)

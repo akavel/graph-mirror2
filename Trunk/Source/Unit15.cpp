@@ -21,8 +21,6 @@
 __fastcall TForm15::TForm15(TComponent* Owner)
         : TTntForm(Owner), Func(NULL)
 {
-  ScaleForm(this);
-
   Popup1_Show_df->Caption = LoadRes(RES_SHOW, "f'(x)");
   Popup1_Show_ddf->Caption = LoadRes(RES_SHOW, "f''(x)");
 
@@ -33,6 +31,7 @@ __fastcall TForm15::TForm15(TComponent* Owner)
 
   //Initialize as dialog and change to sizeable to prevent change in client size when the border size changes
   BorderStyle = bsSizeable;
+  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm15::Button2Click(TObject *Sender)

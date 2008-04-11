@@ -26,7 +26,6 @@
 __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
     : TTntForm(Owner), Data(AData)
 {
-  ScaleForm(this);
   Translate();
 
   FontDialog1->Font->Assign(Data.Property.DefaultPointLabelFont);
@@ -43,6 +42,8 @@ __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
   ComboBox1->ItemIndex = 1;
   UpdateErrorBars();
   PageControl1->ActivePage = TabSheet1;
+
+  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void TForm14::Translate()

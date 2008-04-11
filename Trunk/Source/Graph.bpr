@@ -70,7 +70,7 @@
       -I..\Components\TRecent -I..\Components\TShadeSelect -boa"/>
     <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -xp -X- -r- -a8 -6 -b- -d -k -y -v 
       -vi- -c -tW -tWM"/>
-    <PFLAGS value="-N2..\Obj -N0..\Obj -$Y+ -$W -$O- -$C- -$A8 -v -JPHNE -M"/>
+    <PFLAGS value="-N2..\Obj -N0..\Obj -H- -$Y+ -$W -$O- -$C- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
     <AFLAGS value="/mx /w2 /zi"/>
     <LFLAGS value="-I..\Obj -dPDFlib.dll -dpython25.dll -dgdiplus.dll -D&quot;&quot; -S:0x500000 -aa 

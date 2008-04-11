@@ -2,6 +2,7 @@ object Form11: TForm11
   Left = 342
   Top = 215
   HelpContext = 20
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Insert relation'
@@ -14,6 +15,7 @@ object Form11: TForm11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   DesignSize = (

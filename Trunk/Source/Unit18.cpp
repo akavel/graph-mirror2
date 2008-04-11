@@ -20,7 +20,6 @@
 __fastcall TForm18::TForm18(TComponent* Owner)
   : TTntForm(Owner)
 {
-  ScaleForm(this);
   TranslateProperties(this);
   SetAccelerators(this);
 
@@ -28,6 +27,7 @@ __fastcall TForm18::TForm18(TComponent* Owner)
   ResizeControl(Edit2, Label1, Label2);
   ComboBox1->Left = Label3->Left + Label3->Width + 5;
   PageControl1->ActivePage = TabSheet1;
+  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm18::EditKeyPress(TObject *Sender, char &Key)
@@ -152,5 +152,6 @@ void TImageOptions::SaveSettings() const
   }
 }
 //---------------------------------------------------------------------------
+
 
 

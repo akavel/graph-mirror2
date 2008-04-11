@@ -4,6 +4,7 @@ object Form15: TForm15
   HelpContext = 150
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
+  BiDiMode = bdLeftToRight
   BorderIcons = []
   BorderStyle = bsDialog
   Caption = 'Calculate table'
@@ -18,6 +19,7 @@ object Form15: TForm15
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   OnResize = FormResize
@@ -112,6 +114,8 @@ object Form15: TForm15
     Top = 80
     Width = 289
     Height = 337
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    BiDiMode = bdLeftToRight
     ColCount = 4
     DefaultRowHeight = 16
     FixedCols = 0
@@ -122,6 +126,7 @@ object Form15: TForm15
     Font.Name = 'Lucida Sans Unicode'
     Font.Style = []
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goThumbTracking]
+    ParentBiDiMode = False
     ParentFont = False
     PopupMenu = PopupMenu1
     TabOrder = 4

@@ -22,28 +22,30 @@
 __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
 	: TTntForm(Owner), Data(AData)
 {
-  ScaleForm(this);
   TranslateProperties(this);
   SetAccelerators(this);
   int Left = Label1->Left + TMaxWidth(Label1)(Label2)(Label3) + 5;
-  int DeltaWidth = Canvas->TextWidth(CheckBox7->Caption) + 20 - CheckBox7->Width;
+  int DeltaWidth = Canvas->TextWidth(CheckBox4->Caption) + 20 - CheckBox4->Width;
   Width = Width + TMaxWidth(Left - Edit1->Left)(DeltaWidth);
 
   const TProperty &Property = Data.Property;
   CheckBox1->Checked = CheckAssocation(".grf", "GraphFile");
   CheckBox2->Checked = Application->ShowHint;
-  CheckBox4->Checked = Property.SavePos;
-  CheckBox7->Checked = Property.CheckForUpdate;
+  CheckBox3->Checked = Property.SavePos;
+  CheckBox4->Checked = Property.CheckForUpdate;
   UpDown1->Position = Property.RoundTo;
   UpDown2->Position = Form1->Recent1->MaxFiles;
   UpDown3->Position = UndoList.GetMaxUndo();
   RadioGroup1->ItemIndex = Property.ComplexFormat;
 
   //Put the language codes into a ComboBox
-  GetLanguageList(ComboBox1->Items->AnsiStrings);
-  OldLanguageIndex = ComboBox1->Items->IndexOf(Data.Property.Language);
-  ComboBox1->ItemIndex = OldLanguageIndex;
-  ComboBox2->Text = AnsiString(Data.Property.FontScale) + "%";
+  GetLanguageList(ComboBox2->Items->AnsiStrings);
+  OldLanguageIndex = ComboBox2->Items->IndexOf(Data.Property.Language);
+  ComboBox2->ItemIndex = OldLanguageIndex;
+  ComboBox1->Text = AnsiString(Data.Property.FontScale) + "%";
+
+  ScaleForm(this);
+  ComboBox1->SelLength = 0; //Don't know why this is necesarry
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Button1Click(TObject *Sender)
@@ -56,10 +58,10 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
   if(!CheckLimit(Edit3, LoadRes(530, Label3->Caption),0,1000))
     return;
 
-  int FontScale = AnsiReplaceStr(ComboBox2->Text, "%", "").ToInt();
+  int FontScale = AnsiReplaceStr(ComboBox1->Text, "%", "").ToInt();
   if(FontScale < 75 || FontScale > 200)
   {
-    ComboBox2->SetFocus();
+    ComboBox1->SetFocus();
     MessageBox(LoadRes(RES_VALUE_RANGE, Label5->Caption, 75, 200), LoadRes(RES_ERROR_IN_VALUE));
     return;
   }
@@ -79,14 +81,14 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
   else
     RemoveAsociation(".grf", "GraphFile");
   Application->ShowHint = CheckBox2->Checked;
-  Property.SavePos = CheckBox4->Checked;
-  Property.CheckForUpdate = CheckBox7->Checked;
+  Property.SavePos = CheckBox3->Checked;
+  Property.CheckForUpdate = CheckBox4->Checked;
 
   //Load new resource dll if the setting was changed
-  if(OldLanguageIndex != ComboBox1->ItemIndex && ComboBox1->ItemIndex != -1)
+  if(OldLanguageIndex != ComboBox2->ItemIndex && ComboBox2->ItemIndex != -1)
   {
-    Form1->ChangeLanguage(ComboBox1->Text);
-    CreateRegKey(REGISTRY_KEY, "Language", ComboBox1->Text, reinterpret_cast<unsigned>(HKEY_CURRENT_USER));
+    Form1->ChangeLanguage(ComboBox2->Text);
+    CreateRegKey(REGISTRY_KEY, "Language", ComboBox2->Text, reinterpret_cast<unsigned>(HKEY_CURRENT_USER));
   }
 
   if(FontScale != Property.FontScale)
@@ -104,7 +106,7 @@ void __fastcall TForm4::Button3Click(TObject *Sender)
   Application->HelpContext(HelpContext);
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm4::ComboBox2KeyPress(TObject *Sender, char &Key)
+void __fastcall TForm4::ComboBox1KeyPress(TObject *Sender, char &Key)
 {
   if(!std::isdigit(Key) && Key != VK_BACK && Key != '%')
     Key = 0;

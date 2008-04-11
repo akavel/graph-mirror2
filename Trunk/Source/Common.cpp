@@ -373,7 +373,12 @@ std::wstring ReduceString(const std::wstring &Str, unsigned MaxLength)
 //---------------------------------------------------------------------------
 TMaxWidth::TMaxWidth(TControl *Control)
 {
-  Value = WideCanvasTextWidth(Form1->Canvas, TntControl_GetText(Control));
+  TCanvas *Canvas = Form1->Canvas;
+  if(TCustomLabel *Label = dynamic_cast<TCustomLabel*>(Control))
+    Canvas = Label->Canvas;
+  else if(TForm *Form = dynamic_cast<TForm*>(Control->Owner))
+    Canvas = Form->Canvas;
+  Value = WideCanvasTextWidth(Canvas, TntControl_GetText(Control));
 }
 //---------------------------------------------------------------------------
 AnsiString GetTempPath()
