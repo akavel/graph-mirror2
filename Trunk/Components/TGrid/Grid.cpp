@@ -1077,7 +1077,7 @@ void __fastcall TGrid::ChangeScale(int M, int D)
   }
 }
 //---------------------------------------------------------------------------
-void __fastcall TGrid::SetTitleCaptions(TStrings *Strings)
+void __fastcall TGrid::SetTitleCaptions(TTntStrings *Strings)
 {
   for(int I = 0; I < Strings->Count; I++)
     DoSetText(I, 0, Strings->Strings[I]);

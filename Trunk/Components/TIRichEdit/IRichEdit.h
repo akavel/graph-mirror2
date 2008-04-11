@@ -159,6 +159,8 @@ __published:
   __property ParentFont;
   __property TabOrder;
   __property Enabled;
+  __property BiDiMode;
+  __property ParentBiDiMode;
 
   __property OnChange;
   __property OnSelectionChange;
