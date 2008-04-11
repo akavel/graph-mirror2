@@ -17,14 +17,17 @@ DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
 LicenseFile=License.txt
-OutputBaseFilename=SetupGraphBeta-4.4.0.385
+;Run on Windows 98 and up
+MinVersion = 4.1.1998,4.0.1381
+OutputBaseFilename=SetupGraphBeta-4.4.0.397
 OutputDir=.
 SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.4.0.385
+VersionInfoVersion=4.4.0.397
 
 
 [Languages]
+Name: "Arabic"; MessagesFile: "compiler:Languages\Arabic.isl"
 Name: "Chinese_Traditional"; MessagesFile: "compiler:Languages\ChineseTrad.isl"
 Name: "Chinese_Simplified"; MessagesFile: "compiler:Languages\ChineseSimp.isl"
 Name: "Croatian"; MessagesFile:  "compiler:Languages\Croatian.isl"
@@ -39,6 +42,7 @@ Name: "Greek"; MessagesFile: "compiler:Languages\Greek.isl"
 Name: "Hungarian"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "Italian"; MessagesFile: "compiler:Languages\Italian.isl"
 ;Name: "Mongolian"; MessagesFile: "compiler:Languages\Mongolian.isl"
+Name: "Norwegian"; MessagesFile:  "compiler:Languages\Norwegian.isl"
 Name: "Polish"; MessagesFile:  "compiler:Languages\Polish.isl"
 Name: "Portuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "Russian"; MessagesFile: "compiler:Languages\Russian.isl"
@@ -59,8 +63,7 @@ Source: "PDFlib.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Thumbnails.dll"; DestDir: "{app}"; Flags: regserver noregerror ignoreversion restartreplace uninsrestartdelete; Check: not FilesEqual('Thumbnails.dll')
 Source: "License.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
-Source: "Help\*.hlp"; DestDir: "{app}\Help"; Flags: ignoreversion
-Source: "Help\*.cnt"; DestDir: "{app}\Help"; Flags: ignoreversion overwritereadonly
+Source: "Help\*.chm"; DestDir: "{app}\Help"; Flags: ignoreversion
 Source: "Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritereadonly
 Source: "Plugins\*.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 ;Source: "Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
@@ -98,6 +101,8 @@ Root: HKCU; Subkey: "Software\Ivan\Graph"; ValueType: dword; ValueName: "Install
 Type: files; Name: "{app}\uninstall.exe"
 Type: files; Name: "{app}\uninstall.ini"
 Type: files; Name: "{app}\Help\*.gid"
+Type: files; Name: "{app}\Help\*.hlp"
+Type: files; Name: "{app}\Help\*.cnt"
 Type: files; Name: "{app}\Examples\*.grf"
 Type: files; Name: "{userprograms}\Graph.lnk"
 Type: files; Name: "{commonprograms}\Graph.lnk"
