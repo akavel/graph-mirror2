@@ -2,6 +2,7 @@ object Form12: TForm12
   Left = 459
   Top = 264
   HelpContext = 60
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Insert tangent/normal'
@@ -14,6 +15,7 @@ object Form12: TForm12
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   DesignSize = (

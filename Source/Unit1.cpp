@@ -231,8 +231,6 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 //---------------------------------------------------------------------------
 void TForm1::Initialize()
 {
-  Application->BiDiMode = static_cast<TBiDiMode>(GetRegValue(REGISTRY_KEY, "BiDiMode", HKEY_CURRENT_USER, bdLeftToRight));
-
   //Prevent flicker from Image1 and Panel1 when the form is resized
   ControlStyle = ControlStyle << csOpaque;
 
@@ -1277,7 +1275,7 @@ void TForm1::ChangeLanguage(const AnsiString &Lang)
     return;
 
   AnsiString Path = ExtractFilePath(Application->ExeName);
-  UseLanguage(Lang); //dxGetText will not update translation unless langugae has been changed
+  UseLanguage(Lang); //dxGetText will not update translation unless language has been changed
   DefaultInstance->bindtextdomainToFile("default", Path + "locale\\" + Lang + ".mo");
   AnsiString HelpFile = Path + "Help\\Graph-" + Lang + ".chm";
   if(FileExists(HelpFile))
@@ -1285,8 +1283,11 @@ void TForm1::ChangeLanguage(const AnsiString &Lang)
   else
     Application->HelpFile = Path + "Help\\Graph-English.chm";
 
-  //Special handling for Chinese
-  MainMenu->AutoHotkeys = Lang == "Chinese" ? maManual : maAutomatic;
+  int DefaultBiDiMode = GetRegValue(REGISTRY_KEY, "BiDiMode", HKEY_CURRENT_USER, bdLeftToRight);
+  Application->BiDiMode = static_cast<TBiDiMode>(ToIntDef(DefaultInstance->GetTranslationProperty("BiDiMode"), DefaultBiDiMode));
+  if(SysLocale.MiddleEast != Application->BiDiMode)
+    FlipChildren(true);
+  SysLocale.MiddleEast = Application->BiDiMode;
 
   if(Lang != Data.Property.Language)
     Translate();
@@ -1348,8 +1349,8 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
   {
     if(Shift.Contains(ssShift))
     {
-      const char* Languages[] = {"Dutch", "Greek", "Finnish", "Chinese", "Mongolian", "Swedish"};
-      if(Key >= '1' && Key <='6')
+      const char* Languages[] = {"Dutch", "Greek", "Finnish", "Chinese (Traditional)", "Chinese (Simplified)", "Mongolian", "Swedish", "Arabic"};
+      if(Key >= '1' && Key <='8')
         ChangeLanguage(Languages[Key - '1']);
     }
     else if(Key >= '0' && Key <='9')
@@ -1640,7 +1641,7 @@ bool __fastcall TForm1::ApplicationEventsHelp(WORD Command, int Data,
   //This function is called from the error dialog shown at EFuncError exceptions
   //and when Help|Contents is selected
   if(Command != HELP_FINDER && HelpError)
-    Application->HelpJump(AnsiString().sprintf("ERROR_%02d", HelpError));
+    Application->HelpJump(AnsiString().sprintf("Errors.html#Error%02d", HelpError));
   return false;
 }
 //---------------------------------------------------------------------------
@@ -2497,7 +2498,7 @@ void __fastcall TForm1::ZoomFitAllActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FaqActionExecute(TObject *Sender)
 {
-  Application->HelpJump("FAQ");
+  Application->HelpJump("FAQ.html");
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Panel4DockDrop(TObject *Sender,
@@ -2960,6 +2961,7 @@ void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,
         UndoList.Push(TUndoMove(Elem, Node->Index));
         Data.Delete(Elem);
         Data.Insert(Elem, PrevNode->Index);
+        Data.SetModified();
         UpdateTreeView(GetGraphElem(PrevNode));
         Redraw();
         break;
@@ -2977,6 +2979,7 @@ void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,
         UndoList.Push(TUndoMove(Elem, Node->Index));
         Data.Delete(Elem);
         Data.Insert(Elem, NextNode->Index);
+        Data.SetModified();
         UpdateTreeView(GetGraphElem(NextNode));
         Redraw();
         break;
@@ -3230,6 +3233,7 @@ void __fastcall TForm1::TreeViewDragDrop(TObject *Sender, TObject *Source,
     UndoList.Push(TUndoMove(Elem, Data.GetIndex(Elem)));
     Data.Delete(Elem);
     Data.Insert(Elem, Node->Index);
+    Data.SetModified();
     UpdateTreeView(Elem);
     Redraw();
   }
@@ -3736,6 +3740,8 @@ void __fastcall TForm1::ExecuteFunction(TMessage &Message)
   Message.Result = Function(Message.LParam);
 }
 //---------------------------------------------------------------------------
+
+
 
 
 

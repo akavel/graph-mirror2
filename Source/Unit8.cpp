@@ -19,7 +19,7 @@ __fastcall TForm8::TForm8(TComponent* Owner, TData &AData)
 {
   ScaleForm(this);
   TranslateProperties(this);
-  Label1->Caption = "&" + Label1->Caption;
+  SetAccelerators(this);
 }
 //---------------------------------------------------------------------------
 bool TForm8::EditModel(std::wstring &Name)

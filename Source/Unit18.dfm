@@ -1,6 +1,7 @@
 object Form18: TForm18
   Left = 346
   Top = 182
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Image options'
@@ -13,6 +14,7 @@ object Form18: TForm18
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   DesignSize = (

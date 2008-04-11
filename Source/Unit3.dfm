@@ -1,13 +1,13 @@
 object Form3: TForm3
-  Left = 413
-  Top = 210
-  HelpType = htKeyword
-  HelpKeyword = 'Axes dialog'
+  Left = 414
+  Top = 211
+  HelpContext = 30
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Edit axes'
-  ClientHeight = 272
-  ClientWidth = 411
+  ClientHeight = 270
+  ClientWidth = 409
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,19 +16,20 @@ object Form3: TForm3
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   OnShow = FormShow
   DesignSize = (
-    411
-    272)
+    409
+    270)
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl1: TTntPageControl
     Left = 8
     Top = 8
-    Width = 393
-    Height = 215
+    Width = 391
+    Height = 213
     ActivePage = TabSheet1
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabIndex = 0
@@ -36,8 +37,8 @@ object Form3: TForm3
     object TabSheet1: TTntTabSheet
       Caption = 'x-axis'
       DesignSize = (
-        385
-        187)
+        383
+        185)
       object Label1: TTntLabel
         Left = 8
         Top = 12
@@ -84,6 +85,7 @@ object Form3: TForm3
         Width = 100
         Height = 21
         Hint = 'Minimum x-value.'
+        Anchors = [akLeft, akTop, akRight]
         ParentShowHint = False
         ShowHint = True
         TabOrder = 0
@@ -94,6 +96,7 @@ object Form3: TForm3
         Width = 100
         Height = 21
         Hint = 'Maximum x-value.'
+        Anchors = [akLeft, akTop, akRight]
         ParentShowHint = False
         ShowHint = True
         TabOrder = 1
@@ -104,6 +107,7 @@ object Form3: TForm3
         Width = 100
         Height = 21
         Hint = 'Units between ticks on the x-axis.'
+        Anchors = [akLeft, akTop, akRight]
         ParentShowHint = False
         ShowHint = True
         TabOrder = 2
@@ -137,7 +141,7 @@ object Form3: TForm3
       object Edit5: TMyEdit
         Left = 243
         Top = 8
-        Width = 135
+        Width = 133
         Height = 21
         Hint = 'Edit the label for the axis here.'
         Anchors = [akLeft, akTop, akRight]
@@ -160,7 +164,7 @@ object Form3: TForm3
       object Edit6: TMyEdit
         Left = 299
         Top = 40
-        Width = 79
+        Width = 77
         Height = 21
         Hint = 'The x-axis will intersect with the y-axis at this value.'
         Anchors = [akLeft, akTop, akRight]
@@ -174,6 +178,7 @@ object Form3: TForm3
         Width = 100
         Height = 21
         Hint = 'Units between the grid lines perpendicular to the x-axis.'
+        Anchors = [akLeft, akTop, akRight]
         TabOrder = 3
       end
       object CheckBox4: TTntCheckBox
@@ -227,8 +232,8 @@ object Form3: TForm3
     object TabSheet2: TTntTabSheet
       Caption = 'y-axis'
       DesignSize = (
-        385
-        187)
+        383
+        185)
       object Label5: TTntLabel
         Left = 8
         Top = 12
@@ -338,7 +343,7 @@ object Form3: TForm3
       object Edit11: TMyEdit
         Left = 243
         Top = 8
-        Width = 135
+        Width = 133
         Height = 21
         Hint = 'Edit the label for the axis here.'
         Anchors = [akLeft, akTop, akRight]
@@ -349,7 +354,7 @@ object Form3: TForm3
       object Edit12: TMyEdit
         Left = 299
         Top = 40
-        Width = 79
+        Width = 77
         Height = 21
         Hint = 'The y-axis will intersect with the x-axis at this value.'
         Anchors = [akLeft, akTop, akRight]
@@ -419,8 +424,8 @@ object Form3: TForm3
       Caption = 'Settings'
       ImageIndex = 2
       DesignSize = (
-        385
-        187)
+        383
+        185)
       object Label16: TTntLabel
         Left = 8
         Top = 12
@@ -440,7 +445,7 @@ object Form3: TForm3
         OnClick = CheckBox15Click
       end
       object RadioGroup1: TTntRadioGroup
-        Left = 152
+        Left = 150
         Top = 64
         Width = 105
         Height = 73
@@ -458,7 +463,7 @@ object Form3: TForm3
         OnClick = RadioGroup1Click
       end
       object RadioGroup2: TTntRadioGroup
-        Left = 272
+        Left = 270
         Top = 64
         Width = 97
         Height = 57
@@ -478,14 +483,14 @@ object Form3: TForm3
       object Edit13: TMyEdit
         Left = 40
         Top = 8
-        Width = 321
+        Width = 319
         Height = 21
         Hint = 'Enter a title to show above the coordinate system.'
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 0
       end
       object BitBtn1: TTntBitBtn
-        Left = 360
+        Left = 358
         Top = 8
         Width = 21
         Height = 21
@@ -520,7 +525,7 @@ object Form3: TForm3
       object CheckBox19: TTntCheckBox
         Left = 152
         Top = 40
-        Width = 225
+        Width = 223
         Height = 17
         Hint = 
           'Check this to use complex numbers for calculations. Notice that ' +
@@ -534,8 +539,8 @@ object Form3: TForm3
       Caption = 'Font and color'
       ImageIndex = 3
       DesignSize = (
-        385
-        187)
+        383
+        185)
       object GroupBox3: TTntGroupBox
         Left = 8
         Top = 8
@@ -608,7 +613,7 @@ object Form3: TForm3
         end
       end
       object GroupBox4: TTntGroupBox
-        Left = 224
+        Left = 222
         Top = 8
         Width = 145
         Height = 113
@@ -697,8 +702,8 @@ object Form3: TForm3
     end
   end
   object Button2: TTntButton
-    Left = 240
-    Top = 237
+    Left = 238
+    Top = 235
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]
@@ -708,8 +713,8 @@ object Form3: TForm3
     TabOrder = 3
   end
   object Button3: TTntButton
-    Left = 328
-    Top = 237
+    Left = 326
+    Top = 235
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]
@@ -719,7 +724,7 @@ object Form3: TForm3
   end
   object CheckBox16: TTntCheckBox
     Left = 4
-    Top = 241
+    Top = 239
     Width = 149
     Height = 17
     Hint = 'Select this to use these settings as defaults in the future.'
@@ -728,8 +733,8 @@ object Form3: TForm3
     TabOrder = 1
   end
   object Button1: TTntButton
-    Left = 152
-    Top = 237
+    Left = 150
+    Top = 235
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]

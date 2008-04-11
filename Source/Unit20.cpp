@@ -25,7 +25,6 @@ const double MaxHeight = Screen->Height - 180;
 __fastcall TForm20::TForm20(TComponent* Owner, const std::string &Constant, double AMin, double AStep)
   : TTntForm(Owner), BackwardDirection(false), Min(AMin), Step(AStep)
 {
-  ScaleForm(this);
   TranslateProperties(this);
   SetAccelerators(this);
 
@@ -60,6 +59,9 @@ void TForm20::ShowAnimation(const AnsiString &FileName)
   MediaPlayer1->SetSignal(0, 1);
   MediaPlayer1->DisplayRect = DisplayRect;
 
+  ScaleForm(this);
+  if(BiDiMode != bdLeftToRight)
+    LabeledEdit1->LabelPosition = lpRight;
   if(!Visible)
     ShowModal();
 }

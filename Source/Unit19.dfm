@@ -1,7 +1,8 @@
 object Form19: TForm19
   Left = 409
-  Top = 177
+  Top = 178
   HelpContext = 160
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Animate'
@@ -14,6 +15,7 @@ object Form19: TForm19
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   PixelsPerInch = 96
@@ -139,14 +141,14 @@ object Form19: TForm19
     Top = 168
     Width = 193
     Height = 105
-    Caption = 'Image options'
+    Caption = 'Frame options'
     TabOrder = 2
     object Label5: TTntLabel
       Left = 8
       Top = 20
       Width = 60
       Height = 13
-      Caption = 'Image width:'
+      Caption = 'Frame width:'
       FocusControl = Edit4
     end
     object Label6: TTntLabel
@@ -154,7 +156,7 @@ object Form19: TForm19
       Top = 48
       Width = 64
       Height = 13
-      Caption = 'Image height:'
+      Caption = 'Frame height:'
       FocusControl = Edit5
     end
     object Label7: TTntLabel

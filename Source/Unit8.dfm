@@ -37,6 +37,8 @@ object Form8: TForm8
     Top = 40
     Width = 306
     Height = 212
+    BiDiMode = bdLeftToRight
+    ParentBiDiMode = False
     TabOrder = 1
     TitleCaptions.Strings = (
       'Constant'

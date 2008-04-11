@@ -14,6 +14,7 @@ ASAP
 - Saving animation frames doesn't work under Windows 98.
 - Import/export user defined trendline models.
 - Fix labels attached to axes when axes are boxed.
+- Add a colored circle to the point series markers.
 
 Graph 4.3
 - Animation Player: Add buttons to move to first and last frame for easy compare.
@@ -67,6 +68,7 @@ Graph 4.4
 - Add support for Python plugins.
 - Make it possible to add Python code to text labels.
 - Show element text (and legend) when cursor is over an element in the graphing area.
+- Some way to autoguess the intial guess for custom trendlines. For sinusoidal it could be a=Ymean, b=(Ymax-Ymin)
 
 Graph 4.5
 - Convert EMF to EPS
@@ -110,6 +112,7 @@ To be considered
 - Group several elements in a subtree. (See email from Michael Boutte at 31-12-07)
 - Improve algorithm for finding intersections between functions. (Also find points that only intersect but don't cross; Find least distance)
 - More possibilities for control how numbers are shown.
+- Add reidual plot when creating regressions.
 
 Plugins:
 - Cirlce item

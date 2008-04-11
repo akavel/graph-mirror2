@@ -22,7 +22,6 @@
 __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
 	: TTntForm(Owner), Data(AData)
 {
-  ScaleForm(this);
   Translate();
 
   const TAxes &Axes = Data.Axes;
@@ -72,6 +71,7 @@ __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
   NumberFont = Axes.NumberFont;
   LegendFont = Axes.LegendFont;
 
+  ScaleForm(this);
   UpdateEnabledControls();
 }
 //---------------------------------------------------------------------------

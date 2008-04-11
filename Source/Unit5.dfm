@@ -2,6 +2,7 @@ object Form5: TForm5
   Left = 379
   Top = 228
   HelpContext = 50
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Insert function'
@@ -15,6 +16,7 @@ object Form5: TForm5
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   DesignSize = (

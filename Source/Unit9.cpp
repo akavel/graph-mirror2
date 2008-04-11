@@ -34,12 +34,13 @@
 __fastcall TForm9::TForm9(TComponent* Owner)
     : TTntForm(Owner), VisibleFrame(NULL), SizeDif(Height - ClientHeight), EvalType(etEval)
 {
-  ScaleForm(this);
+  BiDiMode = bdLeftToRight;
   StdFuncStrings->Assign(StdFuncFrame1->ComboBox1->Items);
   ParFuncStrings->Assign(ParFuncFrame1->ComboBox1->Items);
   PolFuncStrings->Assign(PolFuncFrame1->ComboBox1->Items);
   TranslateComponent(this);
   Translate();
+  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void TForm9::Translate()

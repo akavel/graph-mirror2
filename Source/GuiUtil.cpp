@@ -72,10 +72,31 @@ void ScaleComponent(TComponent *Component, unsigned Scale)
     ScaleComponent(Component->Components[I], Scale);
 }
 //---------------------------------------------------------------------------
+void FlipAnchors(TControl *Control)
+{
+  TAnchors Anchors;
+  if(Control->Anchors.Contains(akTop)) Anchors << akTop;
+  if(Control->Anchors.Contains(akBottom)) Anchors << akBottom;
+  if(Control->Anchors.Contains(akLeft)) Anchors << akRight;
+  if(Control->Anchors.Contains(akRight)) Anchors << akLeft;
+  Control->Anchors = Anchors;
+  if(TWinControl *WinControl = dynamic_cast<TWinControl*>(Control))
+    for(int I = 0; I < WinControl->ControlCount; I++)
+      FlipAnchors(WinControl->Controls[I]);
+}
+//---------------------------------------------------------------------------
 void ScaleForm(TForm *Form)
 {
   //Change font for form. All components should have ParentFont=true
   Form->Font->Name = "MS Shell Dlg";
+
+  if(SysLocale.MiddleEast)
+  {
+    Form->FlipChildren(true);
+    Form->ParentBiDiMode = true;
+    if(Form->BorderStyle != bsDialog)
+      FlipAnchors(Form);
+  }
 
   //Set FontScale to 100 to disable scaling
   int FontScale = Form1->Data.Property.FontScale;
@@ -410,8 +431,7 @@ namespace Menus
 }
 //---------------------------------------------------------------------------
 //Replaces the function WideShortCutToText() in TntMenus.pas
-//This function asks the keyboard driver for the key names instead of using hardcoded names
-//We better make sure this also works on a Chinese system
+//This function translates the key names instead of using hardcoded names
 namespace Tntmenus
 {
   WideString __fastcall WideShortCutToText(TShortCut ShortCut)

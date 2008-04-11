@@ -58,7 +58,7 @@ object Form2: TForm2
     object Label5: TTntLabel
       Left = 8
       Top = 252
-      Width = 65
+      Width = 281
       Height = 13
       Cursor = crHandPoint
       Caption = 'Home page'
@@ -73,7 +73,7 @@ object Form2: TForm2
     object ProductName: TTntLabel
       Left = 144
       Top = 8
-      Width = 29
+      Width = 145
       Height = 13
       Caption = 'Graph'
       IsControl = True
@@ -81,7 +81,7 @@ object Form2: TForm2
     object Version: TTntLabel
       Left = 144
       Top = 32
-      Width = 51
+      Width = 145
       Height = 13
       Caption = 'Version %s'
       IsControl = True
@@ -89,7 +89,7 @@ object Form2: TForm2
     object Copyright: TTntLabel
       Left = 144
       Top = 72
-      Width = 68
+      Width = 145
       Height = 13
       Caption = 'Copyright note'
       IsControl = True
@@ -99,12 +99,14 @@ object Form2: TForm2
       Top = 200
       Width = 28
       Height = 13
+      BiDiMode = bdLeftToRight
       Caption = 'Email:'
+      ParentBiDiMode = False
     end
     object Label2: TTntLabel
       Left = 48
       Top = 200
-      Width = 83
+      Width = 185
       Height = 13
       Cursor = crHandPoint
       Caption = 'E-mail address'
@@ -119,7 +121,7 @@ object Form2: TForm2
     object Label3: TTntLabel
       Left = 144
       Top = 48
-      Width = 39
+      Width = 145
       Height = 13
       Caption = 'Build %s'
     end

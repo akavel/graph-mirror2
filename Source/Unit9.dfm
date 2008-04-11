@@ -1,6 +1,7 @@
 object Form9: TForm9
   Left = 449
   Top = 279
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsToolWindow
   Caption = 'Evaluate'
@@ -16,6 +17,7 @@ object Form9: TForm9
   Font.Style = []
   FormStyle = fsStayOnTop
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   OnEndDock = FormEndDock

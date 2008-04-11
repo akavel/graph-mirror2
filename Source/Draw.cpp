@@ -379,6 +379,8 @@ void TDraw::PreCalcYAxis()
   {
     int TextDist = Size(40);
     int Ticks = AxesRect.Height() / TextDist;
+    if(Ticks == 0)
+      Ticks = 1; //Avoid division by zero, just in case.
     double Dist = (Axes.yAxis.LogScl ? std::log10(Axes.yAxis.Max / Axes.yAxis.Min) : Axes.yAxis.Max - Axes.yAxis.Min) / Ticks;
     if(Axes.yAxis.LogScl)
       Axes.yAxis.TickUnit = std::pow10(std::ceil(Dist));

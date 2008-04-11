@@ -131,8 +131,8 @@ object PolFuncFrame: TPolFuncFrame
     Width = 127
     Height = 21
     Hint = 
-      'Enter the independent variable for which you want to evaluate th' +
-      'e function, or click on the graph in the graphing area.'
+      'Enter the value of the polar angle for which you want to evaluat' +
+      'e the function, or click on the graph in the graphing area.'
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
   end

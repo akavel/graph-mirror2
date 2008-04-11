@@ -2,6 +2,7 @@ object Form7: TForm7
   Left = 476
   Top = 259
   HelpContext = 70
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Insert f'#39'(x)'
@@ -14,6 +15,7 @@ object Form7: TForm7
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   PixelsPerInch = 96

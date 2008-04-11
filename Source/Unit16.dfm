@@ -2,6 +2,7 @@ object Form16: TForm16
   Left = 306
   Top = 190
   HelpContext = 140
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Insert shading'
@@ -14,6 +15,7 @@ object Form16: TForm16
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   OnShow = FormShow

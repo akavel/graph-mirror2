@@ -54,7 +54,7 @@ object StdFuncFrame: TStdFuncFrame
   object Edit1: TMyEdit
     Left = 40
     Top = 8
-    Width = 135
+    Width = 137
     Height = 21
     Hint = 
       'Enter a value for which you want to evaluate the function, or cl' +

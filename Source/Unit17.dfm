@@ -69,10 +69,12 @@ object Form17: TForm17
     Width = 413
     Height = 300
     Anchors = [akLeft, akTop, akRight, akBottom]
+    BiDiMode = bdLeftToRight
     ColCount = 2
     DefaultRowHeight = 16
     FixedCols = 0
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goColSizing, goEditing, goTabs, goAlwaysShowEditor, goThumbTracking]
+    ParentBiDiMode = False
     PopupMenu = PopupMenu1
     TabOrder = 0
     AutoAddRows = True

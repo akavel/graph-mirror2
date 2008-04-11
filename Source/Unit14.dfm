@@ -2,6 +2,7 @@ object Form14: TForm14
   Left = 381
   Top = 114
   HelpContext = 120
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Insert point series'
@@ -14,6 +15,7 @@ object Form14: TForm14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   OnShow = FormShow
@@ -47,12 +49,14 @@ object Form14: TForm14
     Width = 236
     Height = 400
     Anchors = [akLeft, akTop, akRight, akBottom]
+    BiDiMode = bdLeftToRight
     ColCount = 2
     DefaultColWidth = 105
     DefaultRowHeight = 16
     FixedCols = 0
     RowCount = 2
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing, goTabs, goAlwaysShowEditor, goThumbTracking]
+    ParentBiDiMode = False
     PopupMenu = PopupMenu1
     TabOrder = 1
     MinColWidth = 50

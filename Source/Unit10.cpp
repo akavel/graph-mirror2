@@ -17,7 +17,6 @@
 __fastcall TForm10::TForm10(TComponent* Owner, TProperty &AProperty)
   : TTntForm(Owner), Property(AProperty)
 {
-  ScaleForm(this);
   TranslateProperties(this);
   SetAccelerators(this);
 
@@ -29,6 +28,7 @@ __fastcall TForm10::TForm10(TComponent* Owner, TProperty &AProperty)
   Label2->Caption = LoadRes(Property.NextTip);
 
   Width = Width - Button3->Width + Canvas->TextWidth(Button3->Caption) + 20;
+  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm10::Button2Click(TObject *Sender)

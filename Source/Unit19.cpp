@@ -24,7 +24,6 @@
 __fastcall TForm19::TForm19(TComponent* Owner, TData &AData)
   : TTntForm(Owner), Data(AData), AnimationInfo(AData.AnimationInfo)
 {
-  ScaleForm(this);
   TranslateProperties(this);
   SetAccelerators(this);
 
@@ -74,6 +73,8 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData)
   Edit4->Text = ToWideString(ImageWidth);
   Edit5->Text = ToWideString(ImageHeight);
   Edit6->Text = ToWideString(AnimationInfo.FramesPerSecond);
+
+  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button1Click(TObject *Sender)

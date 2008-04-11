@@ -21,7 +21,6 @@
 __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)
 	: TTntForm(Owner), OldItemIndex(0), Data(AData)
 {
-  ScaleForm(this);
   LineSelect1->Height = (LineSelect1->Height * Data.Property.FontScale) / 100;
   Translate();
 
@@ -33,6 +32,7 @@ __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)
   ExtColorBox1->Selected = Data.Property.DefaultFunction.Color;
   UpDown1->Position = Data.Property.DefaultFunction.Size;
 
+  ScaleForm(this);
   ComboBox1Change(NULL);
 }
 //---------------------------------------------------------------------------
@@ -40,7 +40,7 @@ void TForm5::Translate()
 {
   TranslateProperties(ExtColorBox1);
   TranslateProperties(this);
-  TranslateStrings(ExtColorBox1->Items); 
+  TranslateStrings(ExtColorBox1->Items);
   SetAccelerators(this);
 
   ResizeControl(ComboBox1, Label1);

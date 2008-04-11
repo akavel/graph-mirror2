@@ -205,7 +205,7 @@ BEGIN
   600 "This Tip of the day can give you a lot of information about the program that most users don't know."                                                       //Tip of the Day
   601 "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"                                                                //Tip of the Day
   602 "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."                                                                     //Tip of the Day
-  603 "Instead of deleting a function, you can make it non-visible by removing the check mark for the item in the function list."                                  //Tip of the Day
+  603 "Instead of deleting a function, you can make it invisible by removing the check mark for the item in the function list."                                  //Tip of the Day
   604 "You can paste images into a text label."                                                                                                                   //Tip of the Day
   605 "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."  //Tip of the Day
   606 "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'." //Tip of the Day

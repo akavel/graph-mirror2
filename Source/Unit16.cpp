@@ -24,7 +24,6 @@
 __fastcall TForm16::TForm16(TComponent* Owner, TData &AData)
   : TTntForm(Owner), Data(AData)
 {
-  ScaleForm(this);
   TranslateProperties(this);
   TranslateStrings(ExtColorBox1->Items);
   SetAccelerators(this);
@@ -48,6 +47,8 @@ __fastcall TForm16::TForm16(TComponent* Owner, TData &AData)
             Found = true;
   }
   Edit5->Text = CmpStr;
+
+  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void TForm16::ShowFuncList()
