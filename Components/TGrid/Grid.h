@@ -7,7 +7,7 @@
 //---------------------------------------------------------------------------
 #include <SysUtils.hpp>
 #include <Controls.hpp>
-#include <Classes.hpp>
+#include <TntClasses.hpp>
 #include <Forms.hpp>
 #include <Grids.hpp>
 #include <vector>
@@ -48,7 +48,7 @@ class TGrid : public TDrawGrid
   bool LeftButtonPressed;
   int CursorPos;
   std::vector<std::vector<WideString> > Data;
-  TVclObject<TStringList> FTitleCaptions;
+  TVclObject<TTntStringList> FTitleCaptions;
 
   TInplaceEdit* __fastcall CreateEditor(void);
   DYNAMIC void __fastcall KeyDown(Word &Key, Classes::TShiftState Shift);
@@ -79,8 +79,8 @@ class TGrid : public TDrawGrid
   WideString DoGetText(unsigned ACol, unsigned ARow);
   void DoSetText(unsigned ACol, unsigned ARow, const WideString &Value);
   DYNAMIC void __fastcall ChangeScale(int M, int D);
-  TStrings* __fastcall GetTitleCaptions() {return FTitleCaptions;}
-  void __fastcall SetTitleCaptions(TStrings *Strings);
+  TTntStrings* __fastcall GetTitleCaptions() {return FTitleCaptions;}
+  void __fastcall SetTitleCaptions(TTntStrings *Strings);
   void __fastcall TitleCaptionsChange(TObject *Sender);
 
   //Declare function to handle WM_SetCursor
@@ -125,7 +125,7 @@ __published:
   __property bool ExportFixedRows = {read=FExportFixedRows, write=FExportFixedRows, default=true};
   __property bool ReplaceDecimalSeparator = {read=FReplaceDecimalSeparator, write=FReplaceDecimalSeparator, default=true};
   __property TPopupMenu* EditorPopupMenu = {read=FEditorPopupMenu, write=SetEditorPopupMenu, default=NULL};
-  __property TStrings* TitleCaptions = {read=GetTitleCaptions, write=SetTitleCaptions};
+  __property TTntStrings* TitleCaptions = {read=GetTitleCaptions, write=SetTitleCaptions};
 
   __property TEditorKeyPressEvent OnEditorKeyPress = {read=FOnEditorKeyPress, write=FOnEditorKeyPress, default=NULL};
   __property TGetTextEvent OnGetText = {read=FOnGetText, write=FOnGetText, default=NULL};
