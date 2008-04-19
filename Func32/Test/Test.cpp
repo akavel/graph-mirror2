@@ -416,9 +416,13 @@ void Test()
   TestEval<TComplex>("root(4,x)", -4, TComplex(1, 1));
 
   Test("fact(x)", 5, 120);
+
   Test("sign(x)", 7.98, 1);
   Test("sign(x)", -7.98, -1);
-  TestError("sign(x)", 0, ecNotDefError);
+  Test("sign(x)", 0, 0);
+  TestEval<TComplex>("sign(x)", TComplex(5, 5), TComplex(M_SQRT_2, M_SQRT_2));
+  TestEval<TComplex>("sign(x)", TComplex(4, -3), TComplex(4.0/5, -3.0/5));
+
   Test("u(x)", 7.98, 1);
   Test("u(x)", -7.98, 0);
   Test("u(x)", 0, 1);
