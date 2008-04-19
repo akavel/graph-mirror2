@@ -460,6 +460,9 @@ __published:	// IDE-managed Components
   void __fastcall Timer2Timer(TObject *Sender);
   void __fastcall TreeViewEndDrag(TObject *Sender, TObject *Target, int X,
           int Y);
+  void __fastcall MainMenuChange(TObject *Sender, TMenuItem *Source,
+          bool Rebuild);
+  void __fastcall StatusBar1Hint(TObject *Sender);
 
 private:	// User declarations
   friend class TAddView;
@@ -550,9 +553,9 @@ public:		// User declarations
   bool Zoom(double xZoomRate, double yZoomRate, bool ChangeUnits=true);
   void ShowStatusError(const WideString &Str, TColor = clRed, unsigned Timeout = 5000);
   void CancelStatusError();
-  void ShowStatusMessage(const AnsiString &Str);
+  void ShowStatusMessage(const WideString &Str, bool AutoHint=false);
   void SetHelpError(int AHelpError) {HelpError = AHelpError;}
-  void SetStatusIcon(int AStatusIcon) {StatusIcon = AStatusIcon; StatusBar1->Repaint();}
+  void SetStatusIcon(int AStatusIcon);
 
   void UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected = boost::shared_ptr<TGraphElem>());
 

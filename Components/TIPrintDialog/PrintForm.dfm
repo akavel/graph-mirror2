@@ -1,6 +1,7 @@
 object PrintFrm: TPrintFrm
   Left = 378
   Top = 209
+  BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Print'
@@ -13,6 +14,7 @@ object PrintFrm: TPrintFrm
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
   OnClose = FormClose
@@ -269,19 +271,17 @@ object PrintFrm: TPrintFrm
     Height = 57
     TabOrder = 4
     object Label5: TTntLabel
-      Left = 8
+      Left = 12
       Top = 24
-      Width = 97
+      Width = 86
       Height = 13
-      Alignment = taRightJustify
-      AutoSize = False
       Caption = 'Number of copies:'
       FocusControl = Edit3
     end
     object Edit3: TTntEdit
       Left = 112
       Top = 20
-      Width = 33
+      Width = 41
       Height = 21
       Hint = 'Choose number of copies to print.'
       TabOrder = 0
@@ -289,7 +289,7 @@ object PrintFrm: TPrintFrm
       OnKeyPress = EditKeyPress
     end
     object UpDown3: TUpDown
-      Left = 145
+      Left = 153
       Top = 20
       Width = 15
       Height = 21

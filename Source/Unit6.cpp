@@ -234,9 +234,9 @@ void TForm6::UpdateFont()
 
   switch(IRichEdit1->Paragraph->Alignment)
   {
-    case pfaLeft:    ToolButton5->Down = true; break;
-    case pfaCenter:  ToolButton6->Down = true; break;
-    case pfaRight:   ToolButton7->Down = true; break;
+    case pfaLeft:    ToolButton5->Down = true; ToolButton6->Down = false; ToolButton7->Down = false; break;
+    case pfaCenter:  ToolButton6->Down = true; ToolButton5->Down = false; ToolButton7->Down = false; break;
+    case pfaRight:   ToolButton7->Down = true; ToolButton5->Down = false; ToolButton6->Down = false; break;
   }
 
   ToolButton9->Down = IRichEdit1->TextFormat.GetSuperscript();

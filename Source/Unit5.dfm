@@ -87,14 +87,18 @@ object Form5: TForm5
       Top = 20
       Width = 20
       Height = 13
+      BiDiMode = bdLeftToRight
       Caption = 'x(t)='
+      ParentBiDiMode = False
     end
     object Label3: TTntLabel
       Left = 8
       Top = 48
       Width = 20
       Height = 13
+      BiDiMode = bdLeftToRight
       Caption = 'y(t)='
+      ParentBiDiMode = False
     end
     object Edit1: TMyEdit
       Left = 32
@@ -102,6 +106,8 @@ object Form5: TForm5
       Width = 282
       Height = 21
       Anchors = [akLeft, akTop, akRight]
+      BiDiMode = bdLeftToRight
+      ParentBiDiMode = False
       TabOrder = 0
     end
     object Edit2: TMyEdit
@@ -110,6 +116,8 @@ object Form5: TForm5
       Width = 282
       Height = 21
       Anchors = [akLeft, akTop, akRight]
+      BiDiMode = bdLeftToRight
+      ParentBiDiMode = False
       TabOrder = 1
     end
   end

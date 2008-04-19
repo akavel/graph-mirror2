@@ -190,6 +190,8 @@ object Form11: TForm11
     Height = 21
     Hint = 'Enter the relation, for example "x^2+y^2 = 25" or "y < sin(x)"'
     Anchors = [akLeft, akTop, akRight]
+    BiDiMode = bdLeftToRight
+    ParentBiDiMode = False
     TabOrder = 0
   end
   object Edit2: TMyEdit
@@ -200,6 +202,8 @@ object Form11: TForm11
     Hint = 
       'Enter constraints for the relation, for example "x > 0 and y < 5' +
       '"'
+    BiDiMode = bdLeftToRight
+    ParentBiDiMode = False
     TabOrder = 1
   end
 end

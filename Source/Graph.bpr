@@ -20,7 +20,8 @@
       ..\Obj\Unit20.obj ..\Obj\Unit21.obj ..\Obj\Unit22.obj ..\Obj\Tokenizer.obj 
       ..\Obj\TStdFuncFrame.obj ..\Obj\TParFuncFrame.obj ..\Obj\TPolFuncFrame.obj 
       ..\Obj\TTanFrame.obj ..\Obj\TAreaFrame.obj ..\Obj\pdflib.obj 
-      ..\..\dxgettext\gnugettext.obj ..\Obj\HTMLHelpViewer.obj"/>
+      ..\..\dxgettext\gnugettext.obj ..\Obj\HTMLHelpViewer.obj 
+      ..\Obj\SvgWriter.obj ..\Obj\EmfParser.obj"/>
     <RESFILES value="Graph.res Resource.res Icons.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
@@ -146,6 +147,8 @@
       <FILE FILENAME="..\..\dxgettext\gnugettext.obj" FORMNAME="" UNITNAME="gnugettext.obj" CONTAINERID="OBJTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Icons.res" FORMNAME="" UNITNAME="Icons.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="HTMLHelpViewer.pas" FORMNAME="" UNITNAME="HTMLHelpViewer" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\Components\Common\SvgWriter.cpp" FORMNAME="" UNITNAME="SvgWriter.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\Components\Common\EmfParser.cpp" FORMNAME="" UNITNAME="EmfParser.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -157,7 +160,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=4
 Release=0
-Build=398
+Build=401
 Debug=1
 PreRelease=0
 Special=0
@@ -169,7 +172,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.4.0.398
+FileVersion=4.4.0.401
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2008
 LegalTrademarks=

@@ -552,6 +552,8 @@ object Form13: TForm13
         Width = 281
         Height = 21
         Hint = 'Enter a function model to base the trendline on.'
+        BiDiMode = bdLeftToRight
+        ParentBiDiMode = False
         TabOrder = 0
         OnChange = Edit3Change
       end
