@@ -1,0 +1,16 @@
+Version 4.4
+- Implemented support for Python plugins.
+- Images can now be saved as SVG (Scaleable Vector Graphics).
+- Added support for complex numbers in the Calc|Table dialog.
+- A single frame of an animation can now be saved as an image file.
+- An animation can now be saved as a series of images.
+- Animations no longer has a maximum size limit, but will may be downscaled when played.
+- User defined trendline models can now be exported/imported.
+- Several minor improvements.
+- Chinese (Simplified) translation added.
+- Basque translation added.
+- Arabic translation added.
+- The help file has been converted to chm and pdf.
+- Fixed bug preventing the use of custom functions/constants in trendline models.
+- The sign function has been corrected for sign(0) and complex numbers.
+- A lot of minor bugs are fixed.

@@ -20,7 +20,7 @@
 #include "TntExtCtrls.hpp"
 #include "TntStdCtrls.hpp"
 //---------------------------------------------------------------------------
-enum TImageFormat {ifMetafile = 1, /*ifPostScript,*/ ifBitmap, ifPng, ifJpeg, ifPdf};
+enum TImageFormat {ifMetafile = 1, /*ifPostScript,*/ ifSvg, ifBitmap, ifPng, ifJpeg, ifPdf};
 
 class TForm18 : public TTntForm
 {

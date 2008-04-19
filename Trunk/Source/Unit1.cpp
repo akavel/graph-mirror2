@@ -58,7 +58,8 @@
 #include "PyGraph.h"
 #include "Encode.h"
 #include "ICompCommon.h"
-//#include <HtmlHelp.h>
+#include "EmfParser.h"
+#include "SvgWriter.h"
 //---------------------------------------------------------------------------
 #pragma link "TRecent"
 #pragma link "Cross"
@@ -138,7 +139,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   Application->HintHidePause = 10000;
 
   LoadSettings();
-  ScaleForm(this);
+  ScaleForm(this, false);
   ActionToolBar1->ActionClient->Items->SmallIcons = Data.Property.FontScale < 150;
 
   //Don't create Form9 before settings are loaded. Scaling and other settings are needed in the constructor.
@@ -226,7 +227,13 @@ void __fastcall TForm1::FormShow(TObject *Sender)
   PostMessage(Handle, WM_USER, 0, 0);
 
   TreeView->SetFocus();
-  Python::ShowPythonConsole();
+  if(Form22)
+    Form22->ManualDock(Panel6);
+  Python::ShowPythonConsole(false);
+
+  //Stupid workaround for bug that hides size grip
+  StatusBar1->Visible = false;
+  StatusBar1->Visible = true;
 }
 //---------------------------------------------------------------------------
 void TForm1::Initialize()
@@ -525,14 +532,14 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift,
           Shape1->Top = Y;
         else
           Shape1->Top = yZoom;
-        StatusBar1->Panels->Items[0]->Text = "(" + RoundToStr(Draw.xCoord(xZoom), Data) + " ; " +
+        ShowStatusMessage("(" + RoundToStr(Draw.xCoord(xZoom), Data) + " ; " +
           RoundToStr(Draw.yCoord(yZoom), Data) + ")->(" + RoundToStr(Draw.xCoord(X), Data) + " ; " +
-          RoundToStr(Draw.yCoord(Y), Data) + ")";
-        Application->ProcessMessages();
+          RoundToStr(Draw.yCoord(Y), Data) + ")", true);
+//        Application->ProcessMessages();
       }
       else if(X >= 0 && X < Image1->Width && Y >= 0 && Y < Image1->Height)
-        StatusBar1->Panels->Items[0]->Text = "(" + RoundToStr(Draw.xCoord(X), Data) + " ; " +
-          RoundToStr(Draw.yCoord(Y), Data) + ")";
+        ShowStatusMessage("(" + RoundToStr(Draw.xCoord(X), Data) + " ; " +
+          RoundToStr(Draw.yCoord(Y), Data) + ")", true);
       break;
 
     case csMoving:
@@ -1048,7 +1055,7 @@ void __fastcall TForm1::WMDropFiles(TMessage &Message)
 //satusbar is resized
 void __fastcall TForm1::StatusBar1Resize(TObject *Sender)
 {
-  StatusBar1->Panels->Items[0]->Width = StatusBar1->Width - StatusBar1->Panels->Items[1]->Width - 40;
+  StatusBar1->Panels->Items[0]->Width = SysLocale.MiddleEast ? 40 : StatusBar1->Width - StatusBar1->Panels->Items[1]->Width - 40;
   StatusBar1->Invalidate();
 }
 //---------------------------------------------------------------------------
@@ -1056,27 +1063,30 @@ void __fastcall TForm1::StatusBar1Resize(TObject *Sender)
 void __fastcall TForm1::StatusBar1DrawPanel(TStatusBar *StatusBar,
       TStatusPanel *Panel, const TRect &Rect)
 {
-  if(Panel == StatusBar->Panels->Items[0])
+  if((SysLocale.MiddleEast && Panel->Index == 2) ||
+     (!SysLocale.MiddleEast && Panel->Index == 0))
   {
     StatusBar1->Canvas->FillRect(Rect);
     StatusBar1->Canvas->Font->Color = StatusErrorColor;
     StatusBar1->Canvas->TextOut(5, 4, StatusError);
   }
-  else if(Panel == StatusBar->Panels->Items[2])
+  else if((SysLocale.MiddleEast && Panel->Index == 0) ||
+         (!SysLocale.MiddleEast && Panel->Index == 2))
     if(StatusIcon != -1)
       //Draw icon number StatusIcon from the image list on the statusbar
       ImageList1->Draw(StatusBar->Canvas, Rect.Left+2, Rect.Top, StatusIcon, true);
 }
 //---------------------------------------------------------------------------
 //This constructor shows a message in the stausbar
-void TForm1::ShowStatusMessage(const AnsiString &Str)
+void TForm1::ShowStatusMessage(const WideString &Str, bool AutoHint)
 {
   //Do not disable timer; Warnings may not be overwritten
 
   //Don't show hints if Str not empty
-  StatusBar1->AutoHint = Str.IsEmpty();
+  StatusBar1->AutoHint = Str.IsEmpty() || AutoHint;
   //Show message
-  StatusBar1->Panels->Items[0]->Text = Str;
+  StatusBar1->Panels->Items[SysLocale.MiddleEast ? 2 : 0]->Text = Str;
+  StatusBar1->Panels->Items[SysLocale.MiddleEast ? 2 : 0]->Style = psText;
   StatusBar1->Update();
 }
 //---------------------------------------------------------------------------
@@ -1086,7 +1096,7 @@ void TForm1::ShowStatusMessage(const AnsiString &Str)
 void TForm1::ShowStatusError(const WideString &Str, TColor Color, unsigned Timeout)
 {
   //Set statusbar to owner drawn; don't show hints, show error message
-  StatusBar1->Panels->Items[0]->Style = psOwnerDraw;
+  StatusBar1->Panels->Items[SysLocale.MiddleEast ? 2 : 0]->Style = psOwnerDraw;
   //Save message; written by Statusbar1DrawPanel()
   StatusError = Str;
   StatusErrorColor = Color;
@@ -1099,7 +1109,7 @@ void TForm1::ShowStatusError(const WideString &Str, TColor Color, unsigned Timeo
 //---------------------------------------------------------------------------
 void TForm1::CancelStatusError()
 {
-  StatusBar1->Panels->Items[0]->Style = psText;
+  ShowStatusMessage("", true);
   Timer1->Enabled = false;
 }
 //---------------------------------------------------------------------------
@@ -1284,10 +1294,11 @@ void TForm1::ChangeLanguage(const AnsiString &Lang)
     Application->HelpFile = Path + "Help\\Graph-English.chm";
 
   int DefaultBiDiMode = GetRegValue(REGISTRY_KEY, "BiDiMode", HKEY_CURRENT_USER, bdLeftToRight);
-  Application->BiDiMode = static_cast<TBiDiMode>(ToIntDef(DefaultInstance->GetTranslationProperty("BiDiMode"), DefaultBiDiMode));
-  if(SysLocale.MiddleEast != Application->BiDiMode)
+  TBiDiMode Mode = static_cast<TBiDiMode>(ToIntDef(DefaultInstance->GetTranslationProperty("BiDiMode"), DefaultBiDiMode));
+  if(Mode != Application->BiDiMode)
     FlipChildren(true);
-  SysLocale.MiddleEast = Application->BiDiMode;
+  SysLocale.MiddleEast = Mode;
+  Application->BiDiMode = Mode;
 
   if(Lang != Data.Property.Language)
     Translate();
@@ -1330,13 +1341,7 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       break;
 
     case VK_F11:
-      if(Form22)
-      {
-        Form22->Visible = true;
-        if(Panel6->VisibleDockClientCount) 
-          Panel5->Height = 150;
-        Splitter2->Visible = true;
-      }
+      Python::ShowPythonConsole(true);
       break;
 
     case VK_SHIFT:
@@ -1400,10 +1405,10 @@ void __fastcall TForm1::TreeViewMouseMove(TObject *Sender,
       std::wstring LegendText = GraphElem->MakeLegendText();
       if(!LegendText.empty() && Str != LegendText)
         Str += L"    \"" + LegendText + L'\"';
-      StatusBar1->Panels->Items[0]->Text = Str.c_str();
+      ShowStatusMessage(Str.c_str(), true);
     }
     else
-      StatusBar1->Panels->Items[0]->Text = "";
+      ShowStatusMessage(L"", true);
   }
 }
 //---------------------------------------------------------------------------
@@ -1759,7 +1764,7 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
   SaveDialogEx1->Filter =
     "Windows Enhanced Meta File [*.emf]|*.emf|"
 //    "Encapsulated PostScript [*.eps]|*.eps|"
-//    "Scaleable Vector Graphic [*.svg]|*.svg|"
+    "Scaleable Vector Graphic [*.svg]|*.svg|"
     "Windows Bitmap [*.bmp]|*.bmp|"
     "Portable Network Graphics [*.png]|*.png|"
     "Joint Photographic Experts Group [*.jpg,*.jpeg]|*.jpg;*.jpeg|"
@@ -2623,7 +2628,7 @@ void TForm1::SetCursorState(TCursorState State)
       MoveAction->Checked = false;
       Shape1->Visible = false;
       if(CursorState == csZoomWindow)
-        StatusBar1->Panels->Items[0]->Text = ""; //Only if state has changed
+        ShowStatusMessage("", true); //Only if state has changed
       TPoint Pos = Image1->ScreenToClient(Mouse->CursorPos);
       if(!!Data.FindLabel(Pos.x, Pos.y) || Draw.InsideLegend(Pos.x, Pos.y))
         Panel2->Cursor = crSizeAll;
@@ -2831,6 +2836,8 @@ TSaveError TForm1::SaveAsImage(const AnsiString &FileName, const TImageOptions &
     ImageFileType = ifJpeg;
   else if(FileExt.AnsiCompareIC(".pdf") == 0)
     ImageFileType = ifPdf;
+  else if(FileExt.AnsiCompareIC(".svg") == 0)
+    ImageFileType = ifSvg;
   else
     return seUnknownFileType;
 
@@ -2848,7 +2855,7 @@ TSaveError TForm1::SaveAsImage(const AnsiString &FileName, int ImageFileType, co
     TCallOnRelease Dummy(&SetStatusIcon, -1);
     Draw.Wait();
 
-    if(ImageFileType == ifMetafile/* || ImageFileType == ifPostScript*/)
+    if(ImageFileType == ifMetafile || ImageFileType == ifSvg)
     {
       std::auto_ptr<TMetafile> Metafile(new TMetafile);
       Metafile->Width = ImageOptions.CustomWidth;
@@ -2869,12 +2876,14 @@ TSaveError TForm1::SaveAsImage(const AnsiString &FileName, int ImageFileType, co
           Application->ProcessMessages();
         }
       Meta.reset();
-/*      if(ImageFileType == ifPostScript)
+      if(ImageFileType == ifSvg)
       {
-        TEmfToEps EmfToEps(reinterpret_cast<HENHMETAFILE>(Metafile->Handle));
-        EmfToEps.SaveToFile(FileName.c_str());
+        TEmfParser EmfParser;
+        std::ofstream File(FileName.c_str());
+        TSvgWriter SvgWriter(File);
+        EmfParser.Parse(reinterpret_cast<HENHMETAFILE>(Metafile->Handle), SvgWriter);
       }
-      else*/
+      else
         Metafile->SaveToFile(FileName);
     }
     else
@@ -3141,10 +3150,10 @@ void __fastcall TForm1::IPrintDialog1Show(TObject *Sender)
   if(IPrintDialog1->PrintForm)
   {
     TPrintFrm *Form = IPrintDialog1->PrintForm;
-    ScaleForm(Form);
-    TranslateProperties(Form);
+    TranslateProperties(Form);  
+    ScaleForm(Form, false);
     SetAccelerators(Form);
-  }
+  }                                  
 }
 //---------------------------------------------------------------------------
 boost::shared_ptr<TGraphElem> TForm1::GetGraphElem(TTreeNode *Node)
@@ -3163,7 +3172,7 @@ TTntTreeNode* TForm1::GetRootNode(unsigned Index)
   for(unsigned I = 0; I < Index; I++)
     Node = Node->getNextSibling();
   return Node;
-}
+}                                       
 //---------------------------------------------------------------------------
 TTntTreeNode* TForm1::GetNode(const boost::shared_ptr<const TGraphElem> &Elem)
 {
@@ -3740,8 +3749,45 @@ void __fastcall TForm1::ExecuteFunction(TMessage &Message)
   Message.Result = Function(Message.LParam);
 }
 //---------------------------------------------------------------------------
-
-
+void __fastcall TForm1::MainMenuChange(TObject *Sender, TMenuItem *Source,
+      bool Rebuild)
+{
+  //This seems to be necesarry when Windows is configured to Arabic for non-Unicode
+  //and Arabic is selected as language in Graph.
+  if(SysLocale.MiddleEast)
+  {
+    MENUITEMINFO  mii;
+    char szBuffer [80];
+    //get current menu alignment
+    mii.cbSize = sizeof (MENUITEMINFO);
+    mii.fMask = MIIM_TYPE;
+    mii.dwTypeData= szBuffer;
+    mii.cch = sizeof (szBuffer);
+    GetMenuItemInfo(MainMenu->Handle, 0, true, &mii);
+    //update menu alignment
+    mii.fMask = MIIM_TYPE;
+    mii.fType |= MFT_RIGHTJUSTIFY | MFT_RIGHTORDER;
+    SetMenuItemInfo(MainMenu->Handle, 0, true, &mii);
+    DrawMenuBar(Handle);
+  }
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::StatusBar1Hint(TObject *Sender)
+{
+  //Add spaces to the end when Panel2 is used to avoid the size grip
+  if(SysLocale.MiddleEast)
+    StatusBar1->Panels->Items[2]->Text = WideString(L"     ") + TntApplication->Hint;
+  else
+    StatusBar1->Panels->Items[0]->Text = TntApplication->Hint;
+}
+//---------------------------------------------------------------------------
+void TForm1::SetStatusIcon(int AStatusIcon)
+{
+  StatusBar1->Panels->Items[SysLocale.MiddleEast ? 0 : 2]->Style = psOwnerDraw;
+  StatusIcon = AStatusIcon;
+  StatusBar1->Repaint();
+}
+//---------------------------------------------------------------------------
 
 
 

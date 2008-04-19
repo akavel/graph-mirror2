@@ -30,7 +30,7 @@ void MoveControl(TControl *Control, TCustomLabel *Label);
 void SetAccelerators(TWinControl *WinControl);
 
 void ScaleComponent(TComponent *Component, unsigned Scale);
-void ScaleForm(TForm *Form);
+void ScaleForm(TForm *Form, bool Flip=true);
 
 void TranslateStrings(TStrings *Strings);
 void TranslateStrings(Tntclasses::TTntStrings *Strings);

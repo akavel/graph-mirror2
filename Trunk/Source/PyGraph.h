@@ -22,7 +22,7 @@ namespace Python
 
   void InitPlugins();
   bool ExecutePythonCommand(const AnsiString &Command);
-  void ShowPythonConsole();
+  void ShowPythonConsole(bool Visible);
   void ExecutePluginEvent(TPluginEvent PluginEvent);
 }
 #endif

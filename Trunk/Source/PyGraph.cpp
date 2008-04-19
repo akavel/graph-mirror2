@@ -384,14 +384,13 @@ static PyMethodDef GraphMethods[] = {
   {NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
-void ShowPythonConsole()
+void ShowPythonConsole(bool Visible)
 {
   if(Form22)
   {
-    Form22->ManualDock(Form1->Panel6);
-    Form22->Show();
-    if(Form1->Panel6->VisibleDockClientCount)
-      Form1->Panel5->Height = 150;
+    Form22->Visible = Visible;
+    Form1->Panel5->Height = Form1->Panel6->VisibleDockClientCount ? 150 : Form1->StatusBar1->Height;
+    Form1->Splitter2->Visible = Visible;
   }
 }
 //---------------------------------------------------------------------------

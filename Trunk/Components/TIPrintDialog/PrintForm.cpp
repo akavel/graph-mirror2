@@ -60,7 +60,10 @@ void __fastcall TPrintFrm::CheckBox1Click(TObject *Sender)
 void TPrintFrm::ResizePaper()
 {
   double FontScale = Width / 449.0; //Divide by the original width in case it was scaled
-  const TPoint PaperCenter(373 * FontScale, 209 * FontScale);
+  TPoint PaperCenter(373 * FontScale, 209 * FontScale);
+
+  if(SysLocale.MiddleEast)
+    PaperCenter.x = ClientWidth - PaperCenter.x;
 
   //DevMode->dmPaperWidth doesn't always work. Don't know why
   //Instead we create a DC ask that for the size
@@ -177,9 +180,23 @@ void __fastcall TPrintFrm::FormShow(TObject *Sender)
   Edit1->Width = Right - Edit1->Left;
   Edit2->Width = Right - Edit2->Left;
 
+  Right = Edit3->Left + Edit3->Width;
+  Edit3->Left = Label5->Left + Label5->Width + 10;
+  Edit3->Width = Right - Edit3->Left;
+
+  if(SysLocale.MiddleEast)
+  {
+    FlipChildren(true);
+    BiDiMode = bdRightToLeft;
+  }
+
   //WARNING: These names will be "%PrinterName%" on Windows NT, but "%PrinterName% on %Port%" on Windows 9x
   ComboBox1->Items->Assign(Printer()->Printers);
   ComboBox1->ItemIndex = Printer()->PrinterIndex;
+
+  //This is necesarry when Arabic language is used. I have no idea why.
+  UpDown4->Associate = NULL;
+  UpDown4->Associate = Edit4;
 
   PrinterChanged();
 }

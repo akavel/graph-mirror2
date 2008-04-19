@@ -281,7 +281,8 @@ object Form1: TForm1
           Width = 150
         end
         item
-          Alignment = taRightJustify
+          BiDiMode = bdRightToLeft
+          ParentBiDiMode = False
           Style = psOwnerDraw
           Width = 50
         end>
@@ -290,6 +291,7 @@ object Form1: TForm1
       ShowHint = False
       SimplePanel = False
       UseSystemFont = False
+      OnHint = StatusBar1Hint
       OnDrawPanel = StatusBar1DrawPanel
       OnResize = StatusBar1Resize
     end
@@ -316,6 +318,7 @@ object Form1: TForm1
   end
   object MainMenu: TTntMainMenu
     Images = ImageList2
+    OnChange = MainMenuChange
     Left = 208
     Top = 176
     object File_: TTntMenuItem

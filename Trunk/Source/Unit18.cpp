@@ -55,13 +55,6 @@ void TForm18::EditOptions(TImageOptions &Options, TImageFormat ImageFormat, int 
 
   switch(ImageFormat)
   {
-    case ifMetafile:
-    case ifBitmap:
-    case ifPng:
-      TabSheet2->TabVisible = false;
-      TabSheet3->TabVisible = false;
-      break;
-
     case ifJpeg:
       TabSheet2->TabVisible = true;
       TabSheet3->TabVisible = false;
@@ -70,6 +63,15 @@ void TForm18::EditOptions(TImageOptions &Options, TImageFormat ImageFormat, int 
     case ifPdf:
       TabSheet2->TabVisible = false;
       TabSheet3->TabVisible = true;
+      break;
+
+    case ifMetafile:
+    case ifBitmap:
+    case ifPng:
+    case ifSvg:
+    default:
+      TabSheet2->TabVisible = false;
+      TabSheet3->TabVisible = false;
       break;
   }
 

@@ -6,7 +6,7 @@ object Form18: TForm18
   BorderStyle = bsDialog
   Caption = 'Image options'
   ClientHeight = 250
-  ClientWidth = 304
+  ClientWidth = 323
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,14 +18,14 @@ object Form18: TForm18
   Position = poMainFormCenter
   ShowHint = True
   DesignSize = (
-    304
+    323
     250)
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl1: TTntPageControl
     Left = 8
     Top = 8
-    Width = 287
+    Width = 306
     Height = 193
     ActivePage = TabSheet1
     Anchors = [akLeft, akTop, akRight]
@@ -98,7 +98,7 @@ object Form18: TForm18
       ImageIndex = 1
       ParentFont = False
       DesignSize = (
-        279
+        298
         165)
       object RadioGroup1: TTntRadioGroup
         Left = 8
@@ -118,19 +118,19 @@ object Form18: TForm18
       object GroupBox1: TTntGroupBox
         Left = 8
         Top = 8
-        Width = 263
+        Width = 282
         Height = 57
         Hint = 'Select a compression quality.'
         Anchors = [akLeft, akTop, akRight]
         Caption = 'Quality'
         TabOrder = 1
         DesignSize = (
-          263
+          282
           57)
         object TrackBar1: TTrackBar
           Left = 43
           Top = 12
-          Width = 212
+          Width = 231
           Height = 40
           Anchors = [akLeft, akTop, akRight]
           Max = 99
@@ -206,7 +206,7 @@ object Form18: TForm18
     end
   end
   object Button2: TTntButton
-    Left = 222
+    Left = 241
     Top = 216
     Width = 75
     Height = 25
@@ -219,14 +219,14 @@ object Form18: TForm18
   object CheckBox1: TTntCheckBox
     Left = 8
     Top = 220
-    Width = 129
+    Width = 145
     Height = 17
     Hint = 'Select this to use these settings as defaults in the future.'
     Caption = 'Save as default'
     TabOrder = 3
   end
   object Button1: TTntButton
-    Left = 134
+    Left = 153
     Top = 216
     Width = 75
     Height = 25

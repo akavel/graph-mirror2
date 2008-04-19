@@ -85,12 +85,12 @@ void FlipAnchors(TControl *Control)
       FlipAnchors(WinControl->Controls[I]);
 }
 //---------------------------------------------------------------------------
-void ScaleForm(TForm *Form)
+void ScaleForm(TForm *Form, bool Flip)
 {
   //Change font for form. All components should have ParentFont=true
   Form->Font->Name = "MS Shell Dlg";
 
-  if(SysLocale.MiddleEast)
+  if(Flip && SysLocale.MiddleEast)
   {
     Form->FlipChildren(true);
     Form->ParentBiDiMode = true;
