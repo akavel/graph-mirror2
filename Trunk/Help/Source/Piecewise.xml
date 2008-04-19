@@ -19,10 +19,10 @@
 			<title>Description</title>
 			<para>
 				The <function>sign</function> function returns the sign of <parameter>z</parameter>.
-				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
-				The function is undefined when <parameter>z</parameter> has an imaginary part.
-				<mathphrase>sign(z)</mathphrase> returns 1 for <parameter>z</parameter>>0 and -1 for <parameter>z</parameter>&lt;0.
-				<mathphrase>sign(z)</mathphrase> is undefiend for <parameter>z</parameter>=0.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
+				When <parameter>z</parameter> is a real number, <mathphrase>sign(z)</mathphrase> returns 1 for <parameter>z</parameter>>0 and -1 for <parameter>z</parameter>&lt;0.
+				<mathphrase>sign(z)</mathphrase> returns 0 for <parameter>z</parameter>=0.
+				When <parameter>z</parameter> evaluates to a complex number, <mathphrase>sign(z)</mathphrase> returns <mathphrase>z/abs(z)</mathphrase>.
 			</para>
 		</simplesect>
 	</section>
