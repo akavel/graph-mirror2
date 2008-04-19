@@ -821,9 +821,11 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       return 0;
 
     case CodeSign:
-      if(imag(Temp) || !real(Temp))
-        ErrorCode = ecNotDefError;
-      return real(Temp) < 0 ? -1 : 1;
+      if(!Temp) //if(Temp == 0)
+        return 0;
+      if(TComplexTrait<T>::HasImagUnit)
+        return Temp / abs(Temp); //As defined by MathWorld
+      return real(Temp) < 0 ? -1 : 1; //Optimized version for real numbers
 
     case CodeU:
       if(imag(Temp))
