@@ -25,11 +25,10 @@ namespace Python
 {
 PyObject *PyEFuncError = NULL;
 PyObject *PyEGraphError = NULL;
-PyThreadState *ThreadState = NULL;
 //---------------------------------------------------------------------------
 bool ExecutePythonCommand(const AnsiString &Command)
 {
-  PyEval_RestoreThread(ThreadState);
+  AllocGIL();
 
   PyObject *Module = PyImport_ImportModule("code");
   bool Result = true;
@@ -67,8 +66,7 @@ bool ExecutePythonCommand(const AnsiString &Command)
     Py_DECREF(Module);
   }
 
-  ThreadState = PyEval_SaveThread(); 
-
+  FreeGIL();
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -450,7 +448,7 @@ void InitPlugins()
       , ExtractFileDir(Application->ExeName).c_str()
     ).c_str());
 
-    ThreadState = PyEval_SaveThread();
+    FreeGIL();
   }
   else
   {
@@ -471,9 +469,9 @@ void ExecutePluginEvent(TPluginEvent PluginEvent)
   if(IsPythonInstalled())
   {
     std::string Command = "Graph.ExecuteEvent(Graph. " + std::string(EventList[PluginEvent]) + ")";
-    PyEval_RestoreThread(ThreadState);
+    AllocGIL();
     PyRun_SimpleString(Command.c_str());
-    ThreadState = PyEval_SaveThread();
+    FreeGIL();
   }
 }
 //---------------------------------------------------------------------------

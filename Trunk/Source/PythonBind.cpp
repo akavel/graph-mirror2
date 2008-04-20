@@ -18,6 +18,8 @@ namespace Python
 {
 PyTypeObject& GetPythonType(const char *Name);
 PyObject* GetPythonAddress(const char *Name);
+PyThreadState *ThreadState = NULL;
+int GILUseCount = 1;
 
 HINSTANCE PythonInstance = NULL;
 
@@ -60,6 +62,19 @@ PyObject* PyReturnNone()
 {
   Py_INCREF(Py_None);
   return Py_None;
+}
+//---------------------------------------------------------------------------
+void AllocGIL()
+{
+  if(GILUseCount++ == 0)
+    PyEval_RestoreThread(ThreadState);
+  ThreadState = NULL;
+}
+//---------------------------------------------------------------------------
+void FreeGIL()
+{
+  if(--GILUseCount == 0)
+    ThreadState = PyEval_SaveThread();
 }
 //---------------------------------------------------------------------------
 }
