@@ -24,5 +24,7 @@ extern _object *PyExc_KeyError;
 extern _object &_Py_NoneStruct;
 
 bool IsPythonInstalled();
+void AllocGIL();
+void FreeGIL();
 }
 #endif

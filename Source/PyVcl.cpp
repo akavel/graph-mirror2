@@ -47,6 +47,7 @@ struct TPythonCallback : public TObject
   void __fastcall Method(TObject *Sender)
   {
     int Arg3 = _ECX;
+    AllocGIL();
     PyObject *Args = PyTuple_New(TypeData->ParamCount);
     PyTuple_SetItem(Args, 0, PySender);
     char *Ptr = TypeData->ParamList;
@@ -71,6 +72,7 @@ struct TPythonCallback : public TObject
     if(Result == NULL)
       PyErr_Print();
     Py_XDECREF(Result);
+    FreeGIL();
   }
 };
 //---------------------------------------------------------------------------
@@ -210,6 +212,7 @@ static PyObject* VclSetProperty(PyObject *Self, PyObject *Args)
       {
         PTypeData TypeData = GetTypeData(*PropInfo->PropType);
         Py_INCREF(Value);
+        Py_INCREF(Sender);
         TPythonCallback *PythonCallback = new TPythonCallback(Value, Sender, TypeData);
         TNotifyEvent Event = &PythonCallback->Method;
         SetMethodProp(Control, PropInfo, reinterpret_cast<TMethod&>(Event));
@@ -457,6 +460,9 @@ void InitPyVcl()
 }
 //---------------------------------------------------------------------------
 }
+
+
+
 
 
 
