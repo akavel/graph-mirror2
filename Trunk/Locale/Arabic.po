@@ -6,14 +6,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-07-30 19:49\n"
-"PO-Revision-Date: 2008-03-20 10:44+0100\n"
+"POT-Creation-Date: 2008-04-20 01:34\n"
+"PO-Revision-Date: 2008-04-26 05:10+0100\n"
 "Last-Translator: Abdellah Chelli (Sneetsher) <sneetsher@yahoo.com>\n"
+"Language-Team: Abdellah Chelli <sneetsher@yahoo.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: dxgettext 1.2.1\n"
-"Language-Team: Abdellah Chelli <sneetsher@yahoo.com>\n"
 "X-Poedit-Language: Arabic\n"
 "X-Poedit-Country: ALGERIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -76,26 +76,25 @@ msgstr "الإحداثية y مقدرة من أجل الوسيط t ."
 
 #. ParFuncFrame..Edit4..Hint
 msgid "The derivative of x(t) evaluated for the entered t-parameter."
-msgstr "مشتق x(t) مقدر من أجل الوسيط t المعطى."
+msgstr "مشتق ‪x(t)‬ مقدر من أجل الوسيط t المعطى."
 
 #. ParFuncFrame..Edit5..Hint
 msgid "The derivative of y(t) evaluated for the entered t-parameter."
-msgstr "مشتق y(t) مقدر من أجل الوسيط t المعطى."
+msgstr "مشتق ‪y(t)‬ مقدر من أجل الوسيط t المعطى."
 
 #. ParFuncFrame..Edit6..Hint
 msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr "ميل الدالة مقدر من أجل الوسيط t المعطى."
 
 #. ParFuncFrame..Edit1....Hint
-#. PolFuncFrame..Edit1....Hint
-msgid "Enter the independent variable for which you want to evaluate the function, or click on the function in the main window."
-msgstr "أدخل قيمة المتغير التي من أجلها تريد تقييم الدالة، أو أنقر على بيان الدالة مباشرة."
+msgid "Enter the value for the parameter t for which you want to evaluate the function, or click on the graph in the graphing area."
+msgstr "أدخل القيمة التي من أجلها تريد تقييم الدالة، أو أنقر على بيان الدالة مباشرة."
 
 #. ParFuncFrame..ComboBox1....Hint
 #. StdFuncFrame..ComboBox1....Hint
 #. Form9("Evaluate")..PolFuncFrame1....Hint
 msgid "Select where the cursor will be placed when you click on the image."
-msgstr "إختر أين يوضع المؤشر حينما تنقر على الصورة."
+msgstr "اختر أين يوضع المؤشر حينما تنقر على البيان."
 
 #. ParFuncFrame..ComboBox1..Text
 #. ParFuncFrame..ComboBox1....Items.Strings
@@ -117,7 +116,7 @@ msgstr "إختر أين يوضع المؤشر حينما تنقر على الص�
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Category
 #. Form1..ActionManager..InsertObjectAction("Insert object...")..Category
 msgid "Function"
-msgstr "وظيفة"
+msgstr "دالة"
 
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
@@ -168,9 +167,13 @@ msgstr "مشتق الدالة مقدر من أجل الزاوية المعينة
 msgid "The slope of the function evaluated for the given angle."
 msgstr "ميل الدالة مقدر من أجل الزاوية المعينة."
 
+#. PolFuncFrame..Edit1....Hint
+msgid "Enter the value of the polar angle for which you want to evaluate the function, or click on the graph in the graphing area."
+msgstr "أدخل قيمة الزاوية القطبية التي من أجلها تريد تقييم الدالة، أو أنقر على بيان الدالة مباشرة."
+
 #. StdFuncFrame..Edit1....Hint
-msgid "Enter a number for which you want to evaluate the function, or click on the function in the main window."
-msgstr "أدخل العدد الذي من أجله تريد تقييم الدالة، أو أنقر على بيان الدالة مباشرة."
+msgid "Enter a value for which you want to evaluate the function, or click on the graph in the graphing area."
+msgstr "أدخل القيمة التي من أجلها تريد تقييم الدالة، أو أنقر على بيان الدالة مباشرة."
 
 #. StdFuncFrame..ComboBox1....Items.Strings
 msgid "Extremum"
@@ -185,16 +188,16 @@ msgid "This is the first derivative of the function evaluated for the entered va
 msgstr " قيمة المشتق الأول للدالة المقدرة من أجل قيمة x المعينة."
 
 #. StdFuncFrame..Edit4....Hint
-msgid "This is the functions second derivative evaluated for the entered value."
-msgstr "قيمة المشتق الثاني للدالة المقدرة من أجل قيمة x المعينة."
+msgid "This is the second derivative of the function evaluated for the entered value."
+msgstr "هذه هي قيمة المشتق الثاني للدالة مقدرة من أجل القيمة المعينة."
 
 #. TanFrame..Edit2....Hint
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
 msgstr "الإحداثية y المقدرة من أجل الإحداثية x المعينة."
 
 #. TanFrame..Edit1..Hint
-msgid "Enter an x-coordinate or click in the main window."
-msgstr "أدخل الإحداثية x أو أنقر على الصورة."
+msgid "Enter an x-coordinate or click in the graphing area."
+msgstr "أدخل إحداثية x أو أنقر على الرسم مباشرة."
 
 #. Form1..MainMenu..File_("File")..Caption
 #. Form1..ActionManager..NewAction("New")..Category
@@ -233,7 +236,7 @@ msgstr "تحرير"
 #. Form1..ActionManager..ZoomSquareAction("Square")..Category
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Category
 #. Form1..ActionManager..ZoomFitAction("Fit")..Category
-#. Form1..ActionManager..ZoomAllPointsAction("All points")..Category
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Category
 #. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Category
 #. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Category
 #. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Category
@@ -258,7 +261,7 @@ msgstr "ملحقات"
 #. Form1..MainMenu..Help_("Help")..Caption
 #. Form1..ActionManager..ContentsAction("Contents and index")..Category
 #. Form1..ActionManager..ListAction("List of functions")..Category
-#. Form1..ActionManager..HomePageAction("Go to home page")..Category
+#. Form1..ActionManager..HomePageAction("Graph web site")..Category
 #. Form1..ActionManager..UpdateAction("Check for update")..Category
 #. Form1..ActionManager..AboutAction("About Graph...")..Category
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Category
@@ -276,7 +279,7 @@ msgstr "ملحقات"
 #. Form3("Edit axes")..Button3("Help")..Caption
 #. Form4("Options")..Button3("Help")..Caption
 #. Form5("Insert function")..Button3("Help")..Caption
-#. Form6("Text label")..Button3("Help")..Caption
+#. Form6("Insert text label")..Button3("Help")..Caption
 #. Form7("Insert f'(x)")..Button3("Help")..Caption
 msgid "Help"
 msgstr "مساعدة"
@@ -287,7 +290,7 @@ msgstr "أنترنيت"
 
 #. Form1..Recent1..Hint
 msgid "Open file: %s"
-msgstr "فتح الملف: %s"
+msgstr "فتح الملف: ‪%s"
 
 #. Form1..PopupMenu1..Tree_ShowInLegend("Show in legend")..Caption
 msgid "Show in legend"
@@ -359,17 +362,27 @@ msgstr "ضع النص مباشرة على يمين المحور y في الأع�
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
 #. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
-#. Form6("Text label")..ColorBox1..CustomName
-#. Form6("Text label")..ColorBox2..CustomName
+#. Form6("Insert text label")..ColorBox1..CustomName
+#. Form6("Insert text label")..ColorBox2..CustomName
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "تخصيص ..."
+
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Hint
+msgid "Place the label at a custom position."
+msgstr "وضع النص في مكان مخصص."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Caption
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
 #. Shown in rotation dialog
 msgid "Rotation"
 msgstr "استدارة"
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
+msgid "Specify the angle of rotation for the label."
+msgstr "عين زاوية الإستدارة للنص."
 
 #. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
@@ -395,16 +408,16 @@ msgid "Open..."
 msgstr "فتح ..."
 
 #. Form1..ActionManager..OpenAction("Open...")..Hint
-msgid "Read coordinate system and functions from a file."
-msgstr "قراءة المعلم و الدوال من ملف."
+msgid "Read a coordinate system from a file."
+msgstr "قراءة المعلم من ملف."
 
 #. Form1..ActionManager..SaveAction("Save")..Caption
 msgid "Save"
 msgstr "حفظ"
 
 #. Form1..ActionManager..SaveAction("Save")..Hint
-msgid "Write coordinate system and functions to a file."
-msgstr "حفظ المعلم و الدوال في ملف."
+msgid "Save the current coordinate system to a file."
+msgstr "حفظ  المعلم و الدوال الحالية في ملف."
 
 #. Form1..ActionManager..SaveAsAction("Save as...")..Caption
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Caption
@@ -448,7 +461,7 @@ msgid "Quit the program."
 msgstr "إغلاق البرنامج."
 
 #. Form1..ActionManager..UndoAction("Undo")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Undo("Undo")..Caption
 msgid "Undo"
 msgstr "تراجع"
 
@@ -457,7 +470,7 @@ msgid "Undo the last action."
 msgstr "تراجع عن الخطوة الأخيرة."
 
 #. Form1..ActionManager..RedoAction("Redo")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Redo("Redo")..Caption
 msgid "Redo"
 msgstr "إعادة"
 
@@ -468,7 +481,7 @@ msgstr "إعادة تنفيذ الخطوة المتراجع عنها."
 #. Form1..ActionManager..CutAction("Cut")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Caption
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Cut("Cut")..Caption
 msgid "Cut"
 msgstr "قص"
 
@@ -480,7 +493,7 @@ msgstr "قص الدالة أو السلسلة النقطية المعينة إل
 #. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Caption
 #. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Caption
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Copy("Copy")..Caption
 msgid "Copy"
 msgstr "نسخ"
 
@@ -491,7 +504,7 @@ msgstr "نسخ الدالة أو السلسلة النقطية المعينة إ
 #. Form1..ActionManager..PasteAction("Paste")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")..Caption
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Paste("Paste")..Caption
 msgid "Paste"
 msgstr "لصق"
 
@@ -586,7 +599,7 @@ msgstr "حدف العنصر المحدد: دالة، مماس، سلسلة نق�
 
 #. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Caption
 msgid "Insert f'(x)..."
-msgstr "إدراج f'(x) ..."
+msgstr "إدراج (f'(x ..."
 
 #. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Hint
 msgid "Insert the first derivative of the selected function."
@@ -629,8 +642,8 @@ msgid "Standard"
 msgstr "نموذجي"
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Hint
-msgid "Zoom to standard coordinates."
-msgstr "الرجوع إلى الحجم النموذجي."
+msgid "Resets the axes to their default settings."
+msgstr "إعادة التنضيد المحاور إلى الإعدادات الإفتراضية."
 
 #. Form1..ActionManager..MoveUpAction("Move up")..Category
 #. Form1..ActionManager..MoveDownAction("Move down")..Category
@@ -699,7 +712,7 @@ msgstr "تقييم"
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Hint
 msgid "Evaluate or trace the selected function."
-msgstr "تقييم أو تتبع الدالة المحددة."
+msgstr "تقييم أو تتبع قيم الدالة المحددة."
 
 #. Form1..ActionManager..TableAction("Table...")..Caption
 msgid "Table..."
@@ -725,11 +738,11 @@ msgstr "قائمة الدوال"
 msgid "Shows a list of built-in functions that can be used for graphing."
 msgstr "عرض قائمة الدوال الأساسية التي يمكن إستخدامها للرسم البياني."
 
-#. Form1..ActionManager..HomePageAction("Go to home page")..Caption
-msgid "Go to home page"
-msgstr "زيارة الصفحة الرئيسية"
+#. Form1..ActionManager..HomePageAction("Graph web site")..Caption
+msgid "Graph web site"
+msgstr "موقع Graph"
 
-#. Form1..ActionManager..HomePageAction("Go to home page")....Hint
+#. Form1..ActionManager..HomePageAction("Graph web site")....Hint
 msgid "Opens the default browser and shows the home page of the program."
 msgstr "فتح المتفح و عرض الصفحة الرئيسية للبرنامج."
 
@@ -759,16 +772,16 @@ msgid "Fit"
 msgstr "ملائم"
 
 #. Form1..ActionManager..ZoomFitAction("Fit")..Hint
-msgid "Zoom to show the selected function."
-msgstr "تغيير حجم الصورة لإظهار الدالة المحددة بشكل واضح."
+msgid "Zoom to show the selected element."
+msgstr "تغيير حجم الصورة لإظهار العنصر المحدد."
 
-#. Form1..ActionManager..ZoomAllPointsAction("All points")..Caption
-msgid "All points"
-msgstr "كل النقاط"
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Caption
+msgid "Fit all"
+msgstr "ملائم للكل"
 
-#. Form1..ActionManager..ZoomAllPointsAction("All points")..Hint
-msgid "Zoom as much as all points are visible."
-msgstr "تغيير حجم الصورة بحيث تظهر كل النقاط بشكل واضح."
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Hint
+msgid "Zoom to show all elements."
+msgstr "تغيير حجم الصورة لإظهار كل العناصر."
 
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Caption
 msgid "Frequently Asked Questions"
@@ -783,8 +796,8 @@ msgid "Insert label..."
 msgstr "إدراج نص ..."
 
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
-msgid "Insert a text label"
-msgstr "إدراج نص إلى الرسم."
+msgid "Insert a text label."
+msgstr "إدراج نص."
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -885,13 +898,13 @@ msgid "Import point series from a data file."
 msgstr "استيراد سلسلة نقطية من ملف."
 
 #. Form1..ActionManager..InsertObjectAction("Insert object...")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
 msgid "Insert object..."
 msgstr "إدراج كائن ..."
 
-#. Form1..ColorSelect("Select color")..Caption
-msgid "Select color"
-msgstr "اختر لونا"
+#. Form1..ActionManager..InsertObjectAction("Insert object...")..Hint
+msgid "Insert an OLE object such as a drawing or an equation."
+msgstr "إدراج كائن OLE على سبيل المثال رسم أو معادلة."
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -1030,7 +1043,7 @@ msgstr "الشروط الضرورية:"
 #. Form3("Edit axes")..Button1("OK")..Caption
 #. Form4("Options")..Button1("OK")..Caption
 #. Form5("Insert function")..Button1("OK")..Caption
-#. Form6("Text label")..Button1("OK")..Caption
+#. Form6("Insert text label")..Button1("OK")..Caption
 #. Form7("Insert f'(x)")..Button1("OK")..Caption
 #. Form8("Add model")..Button1("OK")..Caption
 #. PrintFrm("Print")..Button1("OK")..Caption
@@ -1050,7 +1063,7 @@ msgstr "موافق"
 #. Form3("Edit axes")..Button2("Cancel")..Caption
 #. Form4("Options")..Button2("Cancel")..Caption
 #. Form5("Insert function")..Button2("Cancel")..Caption
-#. Form6("Text label")..Button2("Cancel")..Caption
+#. Form6("Insert text label")..Button2("Cancel")..Caption
 #. Form7("Insert f'(x)")..Button2("Cancel")..Caption
 #. Form8("Add model")..Button2("Cancel")..Caption
 #. PrintFrm("Print")..Button2("Cancel")..Caption
@@ -1074,11 +1087,9 @@ msgid "Description:"
 msgstr "الوصف:"
 
 #. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
-#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
 #. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
-#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
-msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
-msgstr "أكتب نص وصفي يعرض داخل مفتاح الرسم.  إذا تركته فارغا فسوف تستخدم المعادلة مكانه."
+msgid "Write a descriptive text to show in the legend and function list. If empty the formula will be used."
+msgstr "أكتب نص وصفي يعرض داخل مفتاح الرسم و قائمة الدوال.  إذا تركته فارغا فسوف تستخدم المعادلة مكانه."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
@@ -1128,11 +1139,11 @@ msgstr "اختر لونا لرسم العلاقة."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
-msgstr "أدخل علاقة، مثلا \"x^2+y^2 = 25\" أو \"y < sin(x)\""
+msgstr "أدخل علاقة، مثلا ‪\"x^2+y^2 = 25\" أو \"y < sin(x)\""
 
 #. Form11("Insert relation")..Edit2....Hint
 msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
-msgstr "أدخل الشروط الضرورية للعلاقة، مثلا \"x > 0 and y < 5\""
+msgstr "أدخل الشروط الضرورية للعلاقة، مثلا ‪\"x > 0 and y < 5\""
 
 #. Form12("Insert tangent/normal")..Caption
 msgid "Insert tangent/normal"
@@ -1157,6 +1168,11 @@ msgstr "مماس"
 #. Form12("Insert tangent/normal")..RadioGroup1("Type")....Items.Strings
 msgid "Normal"
 msgstr "عمود"
+
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
+msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
+msgstr "أكتب نص وصفي يعرض داخل مفتاح الرسم.  إذا تركته فارغا فسوف تستخدم المعادلة مكانه."
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Caption
 #. Form5("Insert function")..GroupBox4("Graph properties")..Caption
@@ -1249,23 +1265,23 @@ msgstr "قياسي"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel1..Image1..Hint
 msgid "Create a linear function: f(x)=ax+b"
-msgstr "إنشاء دالة خطية: f(x)=ax+b"
+msgstr "إنشاء دالة خطية: ‭f(x)=ax+b"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel2..Image2..Hint
 msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
-msgstr "إنشاء دالة لوغاريتمية: f(x)=a*ln(x)+b"
+msgstr "إنشاء دالة لوغاريتمية: ‭f(x)=a*ln(x)+b"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel3..Image3..Hint
 msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
-msgstr "إنشاء دالة كثيرة الحدود: f(x)=ax^3+bx^2+cx+d"
+msgstr "إنشاء دالة كثيرة الحدود: ‭f(x)=ax^3+bx^2+cx+d"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel4..Image4..Hint
 msgid "Create a power function: f(x)=ax^b"
-msgstr "إنشاء دالة القوة: f(x)=ax^b"
+msgstr "إنشاء دالة القوة: ‭f(x)=ax^b"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel5..Image5..Hint
 msgid "Create a exponential function: f(x)=a*b^x"
-msgstr "إنشاء دالة أسية: f(x)=a*b^x"
+msgstr "إنشاء دالة أسية: ‭f(x)=a*b^x"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit1..Hint
 msgid "The order of the polynomium. For example 2 means a parable."
@@ -1346,6 +1362,29 @@ msgstr "أكتب قيمة لتعيين أين تريد من خط الإتجاه 
 #. Form13("Insert trendline")..CheckBox1("Intercept =")..Caption
 msgid "Intercept ="
 msgstr "نقطة التقاطع ="
+
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Import("Import from file...")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Caption
+msgid "Import from file..."
+msgstr "استيراد من ملف ..."
+
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Import("Import from file...")..Hint
+msgid "Import user models from a file."
+msgstr "استيراد نماذج  من ملف."
+
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Caption
+msgid "Export all to file..."
+msgstr "تصدير الكل إلى ملف ..."
+
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Hint
+msgid "Export user models to a file."
+msgstr "تصدير نماذج المستخدم إلى ملف."
+
+#. Form13("Insert trendline")..SaveDialog1..Filter
+#. Form13("Insert trendline")..OpenDialog1..Filter
+msgid "User models [*.ini]|*.ini"
+msgstr "User models [*.ini]|*.ini"
 
 #. Form14("Insert point series")..Caption
 msgid "Insert point series"
@@ -1537,13 +1576,13 @@ msgstr "كل حدود الخطأ لها نفس النسبة المئوية لل�
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
-#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 msgid "Cut the selected text to the clipboard."
 msgstr "قص النص المحدد إلى الحافظة."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Hint
-#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Copy("Copy")..Hint
 msgid "Copy the selected text to the clipboard."
 msgstr "نسخ النص المحدد إلى الحافظة."
 
@@ -1587,11 +1626,6 @@ msgstr "تحديد الكل"
 msgid "Select all cells."
 msgstr "تحديد كل الخلايا."
 
-#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Caption
-#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Caption
-msgid "Import from file..."
-msgstr "استيراد من ملف ..."
-
 #. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Hint
 msgid "Import data from a file and place it at the selected cell."
@@ -1607,8 +1641,8 @@ msgid "Calculate table"
 msgstr "جدول الحساب"
 
 #. Form15("Calculate table")..Edit3....Hint
-msgid "The step value. This is the distance between the x-values in the interval."
-msgstr "قيمة الخطوة. و هي البعد بين كل قيمتين لـ x داخل المجال."
+msgid "The step value. This is the difference between two adjoining values in the defined interval."
+msgstr "قيمة الخطوة. و هي الفرق بين كل قيمتين متتابعتين ضمن المجال."
 
 #. Form15("Calculate table")..Edit1..Hint
 msgid "The first x-value in the interval."
@@ -1622,7 +1656,15 @@ msgstr "القيمة الأخيرة لـ x في المجال."
 #. Form15("Calculate table")..PopupMenu1..Popup1_Show_ddf("Show %s")..Caption
 #. Context menu in Calc|Table dialog
 msgid "Show %s"
-msgstr "إظهار %s"
+msgstr "إظهار ‭%s"
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show_df("Show %s")..Hint
+msgid "Show the f'(x) column in the table."
+msgstr "إظهار عمود ‭f'(x)‬ في الجدول."
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show_ddf("Show %s")..Hint
+msgid "Show the f''(x) column in the table."
+msgstr "إظهار عمود ‭f''(x)‬ في الجدول."
 
 #. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Hint
 msgid "Copy selected cells to the clipboard."
@@ -1814,22 +1856,20 @@ msgid "Size"
 msgstr "الحجم"
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Label1("Image width:")..Caption
-#. Form19("Animate")..TntGroupBox2("Image information")..Label5("Image width:")..Caption
 msgid "Image width:"
 msgstr "العرض:"
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Label2("Image height:")..Caption
-#. Form19("Animate")..TntGroupBox2("Image information")..Label6("Image height:")..Caption
 msgid "Image height:"
 msgstr "الإرتفاع:"
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit1..Hint
-msgid "Set a custom image width."
-msgstr "تعيين عرض صورة مخصص."
+msgid "Set a custom image width in pixels."
+msgstr "تعيين عرض صورة مخصص، بـ بكسل."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit2..Hint
-msgid "Set a custom image height."
-msgstr "تعيين إرتفاع صورة مخصص."
+msgid "Set a custom image height in pixels."
+msgstr "تعيين إرتفاع صورة مخصص، بـ بكسل."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
 msgid "Choose to use the same size as shown on the screen or a custom image size."
@@ -1938,15 +1978,31 @@ msgstr "القيمة الأخيرة للثابت."
 msgid "The chosen constant is changed by this value between each frame."
 msgstr "الثابت المختار سيغير بهذه القيمة في كل لقطة."
 
-#. Form19("Animate")..TntGroupBox2("Image information")..Caption
-msgid "Image information"
-msgstr "معلومات الصورة"
+#. Form19("Animate")..TntGroupBox2("Frame options")..Caption
+msgid "Frame options"
+msgstr "خيارات اللقطة"
 
-#. Form19("Animate")..TntGroupBox2("Image information")..Label7("Frames/second:")..Caption
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label5("Frame width:")..Caption
+msgid "Frame width:"
+msgstr "عرض اللقطة:"
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label6("Frame height:")..Caption
+msgid "Frame height:"
+msgstr "إرتفاع اللقطة:"
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label7("Frames/second:")..Caption
 msgid "Frames/second:"
 msgstr "لقطة في الثانية:"
 
-#. Form19("Animate")..TntGroupBox2("Image information")..Edit6..Hint
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit4..Hint
+msgid "Width of each frame, in pixels."
+msgstr "عرض كل لقطة، بـ البكسل."
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit5..Hint
+msgid "Height of each frame, in pixels."
+msgstr "إرتفاع كل لقطة، بـ البكسل."
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit6..Hint
 msgid "Number of frames per second used when the animation is played."
 msgstr "عدد اللقطات في الثانية المستخدم أثناء تشغيل الرسوم المتحركة."
 
@@ -1967,7 +2023,7 @@ msgstr ""
 #. Form2("About Graph")..Panel1..Version("Version %s")..Caption
 #. %s is replaced with version number
 msgid "Version %s"
-msgstr "الإصدار %s"
+msgstr "الإصدار ‪%s"
 
 #. Form2("About Graph")..Panel1..Label1("Email:")..Caption
 msgid "Email:"
@@ -1976,7 +2032,7 @@ msgstr "البريد الإلكتروني:"
 #. Form2("About Graph")..Panel1..Label3("Build %s")..Caption
 #. %s is replaced with build number
 msgid "Build %s"
-msgstr "البناء %s"
+msgstr "البناء ‪%s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
 msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
@@ -2042,6 +2098,39 @@ msgstr "تشغيل الرسوم المتحركة عكسيا عندما تصل إ
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
 msgstr "حفظ الرسوم المتحركة إلى ملف."
+
+#. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Caption
+msgid "Save frame..."
+msgstr "حفظ اللقطة ..."
+
+#. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Hint
+msgid "Save the shown frame to an image file."
+msgstr "حفظ اللقطة الحالية كصورة."
+
+#. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")..Caption
+msgid "Save all frames..."
+msgstr "حفظ كل اللقطات..."
+
+#. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")....Hint
+msgid "Save all frames in the animation to image files. This will create as many files as there are frames in the animation."
+msgstr "حفظ كل اللقطات إلى ملفات صور. هذا سينشئ ملفات كثيرة بعدد اللقطات الموجودة."
+
+#. Form21("Placement")..ComboBox1..Hint
+msgid "Choose which corner of the label should be locked."
+msgstr "اختر أي الزاوية تريد وضع مفتاح الرسم عندها."
+
+#. Form21("Placement")..Edit1..Hint
+#. Form21("Placement")..Edit2..Hint
+msgid "Enter a coordinate to lock label at."
+msgstr "أدخل إحداثية، لوضع النص عندها."
+
+#. Form22("Python interpreter")..Caption
+msgid "Python interpreter"
+msgstr "مترجم Python"
+
+#. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
+msgid "Clear"
+msgstr "مسح"
 
 #. Form3("Edit axes")..Caption
 msgid "Edit axes"
@@ -2300,7 +2389,7 @@ msgid "Axes color:"
 msgstr "لون المحاور:"
 
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label19("Background color:")..Caption
-#. Form6("Text label")..Label4("Background color:")..Caption
+#. Form6("Insert text label")..Label4("Background color:")..Caption
 msgid "Background color:"
 msgstr "لون الخلفية:"
 
@@ -2344,97 +2433,97 @@ msgstr "اختر الخط المستخدم لعرض الأعداد على الم
 msgid "Select the font used to show the legend text."
 msgstr "اختر الخط المستخدم لعرض نص مفتاح الرسم."
 
-#. Form4("Options")..Label1("Decimals:")..Caption
+#. Form4("Options")..GroupBox1..Label1("Decimals:")..Caption
 msgid "Decimals:"
 msgstr "الأرقم العشرية:"
 
-#. Form4("Options")..Label2("Recent files:")..Caption
+#. Form4("Options")..GroupBox1..Label2("Recent files:")..Caption
 msgid "Recent files:"
 msgstr "الملفات السابقة:"
 
-#. Form4("Options")..Label3("Max undo steps:")..Caption
+#. Form4("Options")..GroupBox1..Label3("Max undo steps:")..Caption
 msgid "Max undo steps:"
 msgstr "أقصى عدد للتراجع:"
 
-#. Form4("Options")..Label4("Language:")..Caption
-msgid "Language:"
-msgstr "اللغة:"
-
-#. Form4("Options")..Label5("Font scale:")..Caption
+#. Form4("Options")..GroupBox1..Label5("Font scale:")..Caption
 msgid "Font scale:"
 msgstr "حجم الخط:"
 
-#. Form4("Options")..Edit1..Hint
+#. Form4("Options")..GroupBox1..Label4("Language:")..Caption
+msgid "Language:"
+msgstr "اللغة:"
+
+#. Form4("Options")..GroupBox1..Edit1..Hint
 msgid "Number of decimals used when results are shown."
 msgstr "عدد الأرقام العشرية المستخدمة في إظهار النتائج."
 
-#. Form4("Options")..CheckBox1("Associate .grf files")..Hint
-msgid "Associate *.grf files with Graph."
-msgstr "جعل Graph البرنامج الإفتراضي لفتح الملفات  (*.grf)."
-
-#. Form4("Options")..CheckBox1("Associate .grf files")..Caption
-msgid "Associate .grf files"
-msgstr "ربط الملفات (*.grf) بـ Graph"
-
-#. Form4("Options")..Edit2..Hint
-msgid "The number of most recent used files shown in the File menu."
-msgstr "عدد آخر الملفات المستخدمة المعروضة في قائمة 'ملف'."
-
-#. Form4("Options")..CheckBox4("Save workspace on exit")....Hint
-msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
-msgstr "حفظ موضع النافذة عند إغلاق البرنامج. يستخدم هذا الخيار عند تشغيل البرنامج في المرة التالية."
-
-#. Form4("Options")..CheckBox4("Save workspace on exit")..Caption
-msgid "Save workspace on exit"
-msgstr "حفظ فضاء العمل عن الخروج"
-
-#. Form4("Options")..RadioGroup1("Complex form")..Hint
+#. Form4("Options")..GroupBox1..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "الشكل المستخدم لعرض الأعداد المركبة."
 
-#. Form4("Options")..RadioGroup1("Complex form")..Caption
+#. Form4("Options")..GroupBox1..RadioGroup1("Complex form")..Caption
 msgid "Complex form"
 msgstr "صيغة الأعداد المركبة"
 
-#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
+#. Form4("Options")..GroupBox1..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "حقيقية"
 
-#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
+#. Form4("Options")..GroupBox1..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "ديكارتية"
 
-#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
+#. Form4("Options")..GroupBox1..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "قطبية"
 
-#. Form4("Options")..CheckBox2("Show tooltip")..Hint
-msgid "Show the tooltip when the cursor is over an item."
-msgstr "عرض  الإرشادات عند وضع المؤشر فوق العنصر."
+#. Form4("Options")..GroupBox1..Edit2..Hint
+msgid "The number of most recent used files shown in the File menu."
+msgstr "عدد آخر الملفات المستخدمة المعروضة في قائمة 'ملف'."
 
-#. Form4("Options")..CheckBox2("Show tooltip")..Caption
-msgid "Show tooltip"
-msgstr "عرض الإرشادات"
-
-#. Form4("Options")..Edit3....Hint
+#. Form4("Options")..GroupBox1..Edit3....Hint
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
 msgstr "أقصى عدد لخطوات التراجع  المحفوظة. لمنع التراجع عدل القيمة إلى 0."
 
-#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")....Hint
-msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
-msgstr "عند تشغيل البرنامج سيقوم بالإتصال بالملقم و يرى ما إذا كان هنالك إصدار جديد."
+#. Form4("Options")..GroupBox1..ComboBox1....Hint
+msgid "This is used to scale the user interface if you are having problems reading the text."
+msgstr "استخدم هذا لتغيير حجم الخط لواجهة المستعمل إذا كنت تجد صعوبة في قراءة النص."
 
-#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")..Caption
-msgid "Check for new version of Graph at startup"
-msgstr "التحقق من توفر إصدار جديد من Graph عند التشغيل"
-
-#. Form4("Options")..ComboBox1..Hint
+#. Form4("Options")..GroupBox1..ComboBox2..Hint
 msgid "Select the language to use for the user interface."
 msgstr "اختر اللغة المستخدمة لواجهة المستعمل."
 
-#. Form4("Options")..ComboBox2....Hint
-msgid "This is used to scale the user interface if you are having problems reading the text."
-msgstr "استخدم هذا لتغيير حجم الخط لواجهة المستعمل إذا كنت تجد صعوبة في قراءة النص."
+#. Form4("Options")..GroupBox1..CheckBox1("Associate .grf files")..Hint
+msgid "Associate *.grf files with Graph."
+msgstr "جعل Graph البرنامج الإفتراضي لفتح الملفات  (*.grf)."
+
+#. Form4("Options")..GroupBox1..CheckBox1("Associate .grf files")..Caption
+msgid "Associate .grf files"
+msgstr "ربط الملفات (*.grf) بـ Graph"
+
+#. Form4("Options")..GroupBox1..CheckBox2("Show tooltip")..Hint
+msgid "Show the tooltip when the cursor is over an item."
+msgstr "عرض  الإرشادات عند وضع المؤشر فوق العنصر."
+
+#. Form4("Options")..GroupBox1..CheckBox2("Show tooltip")..Caption
+msgid "Show tooltip"
+msgstr "عرض الإرشادات"
+
+#. Form4("Options")..GroupBox1..CheckBox3("Save workspace on exit")....Hint
+msgid "Save the size of the main window when the program exits. This is used the next time Graph is run."
+msgstr "حفظ حجم النافذة عند إغلاق البرنامج. يستخدم هذا الخيار عند تشغيل البرنامج في المرة التالية."
+
+#. Form4("Options")..GroupBox1..CheckBox3("Save workspace on exit")..Caption
+msgid "Save workspace on exit"
+msgstr "حفظ فضاء العمل عن الخروج"
+
+#. Form4("Options")..GroupBox1..CheckBox4("Check for new version of Graph at startup")....Hint
+msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
+msgstr "عند تشغيل البرنامج سيقوم بالإتصال بالملقم و يرى ما إذا كان هنالك إصدار جديد."
+
+#. Form4("Options")..GroupBox1..CheckBox4("Check for new version of Graph at startup")..Caption
+msgid "Check for new version of Graph at startup"
+msgstr "التحقق من توفر إصدار جديد من Graph عند التشغيل"
 
 #. Form5("Insert function")..Caption
 msgid "Insert function"
@@ -2450,15 +2539,15 @@ msgstr "اختر نوع الدالة المراد رسمها."
 
 #. Form5("Insert function")..ComboBox1....Items.Strings
 msgid "Standard function   y=f(x)"
-msgstr "دالة قياسية  y=f(x)"
+msgstr "دالة قياسية    ‪y=f(x)"
 
 #. Form5("Insert function")..ComboBox1....Items.Strings
 msgid "Parametric function x(t), y(t)"
-msgstr "دالة وسيطية x(t), y(t)"
+msgstr "دالة وسيطية   ‪x(t), y(t)"
 
 #. Form5("Insert function")..ComboBox1....Items.Strings
 msgid "Polar function         r=f(t)"
-msgstr "دالة قطبية  r=f(t)"
+msgstr "دالة قطبية      ‪r=f(t)"
 
 #. Form5("Insert function")..GroupBox1("Function equation")..Caption
 msgid "Function equation"
@@ -2493,126 +2582,126 @@ msgstr "نقاط"
 msgid "Lines"
 msgstr "خطوط"
 
-#. Form6("Text label")..Caption
-msgid "Text label"
-msgstr "نص"
+#. Form6("Insert text label")..Caption
+msgid "Insert text label"
+msgstr "إدراج نص"
 
-#. Form6("Text label")..Label1("Font name:")..Caption
+#. Form6("Insert text label")..Label1("Font name:")..Caption
 msgid "Font name:"
 msgstr "اسم الخط:"
 
-#. Form6("Text label")..Label2("Font size:")..Caption
+#. Form6("Insert text label")..Label2("Font size:")..Caption
 msgid "Font size:"
 msgstr "حجم الخط:"
 
-#. Form6("Text label")..Label3("Font color:")..Caption
+#. Form6("Insert text label")..Label3("Font color:")..Caption
 msgid "Font color:"
 msgstr "لون الخط:"
 
-#. Form6("Text label")..ComboBox1..Hint
+#. Form6("Insert text label")..ComboBox1..Hint
 msgid "Text size."
 msgstr "حجم النص."
 
-#. Form6("Text label")..GroupBox1("Text string")..Caption
+#. Form6("Insert text label")..GroupBox1("Text string")..Caption
 msgid "Text string"
 msgstr "النص"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton11..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton11..Hint
 msgid "Insert symbol (Ctrl+G)"
 msgstr "إدراج رمز (Ctrl+G)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
 msgid "Insert object"
 msgstr "إدراج كائن"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
 msgstr "عريض (Ctrl+B)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton2..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton2..Hint
 msgid "Italic (Ctrl+I)"
 msgstr "مائل (Ctrl+I)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton3..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton3..Hint
 msgid "Underline (Ctrl+U)"
 msgstr "تسطير (Ctrl+U)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton4..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton4..Hint
 msgid "Strikethrough (Ctrl+S)"
 msgstr "تشطيب (Ctrl+S)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton9..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton9..Hint
 msgid "Superscript (Ctrl++)"
 msgstr "رمز علوي (Ctrl++)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton10..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton10..Hint
 msgid "Subscript (Ctrl+=)"
 msgstr "رمز سفلي (Ctrl+=)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton5..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton5..Hint
 msgid "Align left (Ctrl+L)"
 msgstr "محاذاة إلى اليسار (Ctrl+L)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton6..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton6..Hint
 msgid "Center (Ctrl+E)"
 msgstr "توسيط (Ctrl+E)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton7..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton7..Hint
 msgid "Align right (Ctrl+R)"
 msgstr "محاذاة إلى اليمين (Ctrl+R)"
 
-#. Form6("Text label")..IFontBox1..Hint
+#. Form6("Insert text label")..IFontBox1..Hint
 msgid "Text font."
 msgstr "خط النص."
 
-#. Form6("Text label")..ColorBox1..Hint
+#. Form6("Insert text label")..ColorBox1..Hint
 msgid "Text color."
 msgstr "لون النص."
 
-#. Form6("Text label")..ColorBox2..Hint
+#. Form6("Insert text label")..ColorBox2..Hint
 msgid "Select background color of the text label."
 msgstr "اختر لون خلفية النص."
 
-#. Form6("Text label")..ColorBox2..DefaultName
+#. Form6("Insert text label")..ColorBox2..DefaultName
 #. May be selected as background color in Insert label dialog
 msgid "Transparent"
 msgstr "شفاف"
 
-#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "التراجع عن الخطوة الأخيرة."
 
-#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Redo("Redo")..Hint
 msgid "Redo last undone action."
 msgstr "إعادة القيام بالخطوة الأخيرة المتراجع عنها."
 
-#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Paste("Paste")..Hint
 msgid "Paste the contents of the clipboard."
 msgstr "لصق محتويات الحافظة."
 
-#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Caption
 msgid "Paste special..."
 msgstr "لصق خاص ..."
 
-#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Hint
 msgid "Select which clipboard representation you want to paste."
 msgstr "اختر على أي شكل تريد لصق الحافظة."
 
-#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
 msgid "Create a new OLE object."
 msgstr "إنشاء كائن OLE جديد."
 
-#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_EditObject("Edit object")..Caption
 msgid "Edit object"
 msgstr "تحرير كائن"
 
-#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_EditObject("Edit object")..Hint
 msgid "Edit selected OLE object."
 msgstr "تحرير كائن OLE المحدد."
 
 #. Form7("Insert f'(x)")..Caption
 msgid "Insert f'(x)"
-msgstr "إدراج f'(x)"
+msgstr "إدراج ‪f'(x)"
 
 #. Form8("Add model")..Label1("Name:")..Caption
 #. PrintFrm("Print")..GroupBox1("Printer")..Label1("Name:")..Caption
@@ -2647,7 +2736,7 @@ msgstr "نص"
 
 #. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
-msgstr "الخطأ - %s"
+msgstr "الخطأ - ‪%s"
 
 #. Shown in the function list
 msgid "Axes"
@@ -2751,7 +2840,7 @@ msgid "acosh evaluated at undefined value."
 msgstr "حساب acosh عند قيمة غير معرفة."
 
 msgid "arg(0) is undefined."
-msgstr "العدد الأول في المعطيات arg(0) غير معرف."
+msgstr "العدد الأول في المعطيات ‪arg(0)‬ غير معرف."
 
 msgid "Evaluation failed."
 msgstr "فشل التقييم."
@@ -2760,7 +2849,7 @@ msgid "Argument produced a function result with total loss of precision."
 msgstr "المعطيات أنتجت حاصل دالة بخسارة كلية لدقة العدد."
 
 msgid "The custom function/constant '%s' was not found or has the wrong number of arguments."
-msgstr "الدالة/الثابت المخصص(ة)  '%s' لا يمكن العثور عليه (ها) أو ان الدالة تملك عدد المعطيات خاطئ."
+msgstr "الدالة/الثابت المخصص(ة)  '‪%s‬' لا يمكن العثور عليه (ها) أو أن الدالة تملك عدد المعطيات خاطئ."
 
 msgid "Too many recursive calls."
 msgstr "نداءات متكررة (تراجعية) كثيرة."
@@ -2769,19 +2858,19 @@ msgid "Overflow: A function returned a value too large to handle."
 msgstr "فيض (Overflow):قيمة حاصل الدالة كبيرة و لا يمكن التعامل معها."
 
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
-msgstr "عملية غير متوقعة. لا يمكن وضع العملية '%s' هنا."
+msgstr "عملية غير متوقعة. لا يمكن وضع العملية '‪%s‬' هنا."
 
 msgid "The right bracket is missing."
 msgstr "القوس الأيمن مفقود."
 
 msgid "Invalid number of arguments supplied for function '%s'"
-msgstr "قدم للدالة  '%s' عدد غير مقبول من المعطيات."
+msgstr "قدم للدالة  '‪%s‬' عدد غير مقبول من المعطيات."
 
 msgid "Comparison operator misplaced."
 msgstr "عملية المقارنة في مكان خاطئ."
 
 msgid "Invalid number found. Use the format: -5.475E-8"
-msgstr "العثور على عدد غير مقبول. استخدم الشكل التالي: -5.475E-8"
+msgstr "العثور على عدد غير مقبول. استخدم الشكل التالي: ‭-5.475E-8"
 
 msgid "String is empty. You need to enter a function."
 msgstr "النص فارغ. تحتاج لإدخال دالة."
@@ -2802,10 +2891,10 @@ msgid "Expression expected."
 msgstr "من المتوقع: عبارة."
 
 msgid "Unknown variable, function or constant: \"%s\""
-msgstr "متغير، دالة أو ثابت مجهول:  \"%s\""
+msgstr "متغير، دالة أو ثابت مجهول:  \"‪%s‬\""
 
 msgid "Unknown character: \"%s\""
-msgstr "حرف مجهول: \"%s\""
+msgstr "حرف مجهول: \"‪%s‬\""
 
 msgid "The end of the expression was unexpected."
 msgstr "نهاية العبارة غير متوقعة."
@@ -2823,7 +2912,7 @@ msgid "Not enough points for calculation."
 msgstr "نقاط غير كافية لإجراء الحسابات."
 
 msgid "Illegal name \"%s\" for user defined function or constant."
-msgstr " \"%s\" اسم غير مقبول للدالة أو  الثابت."
+msgstr " \"‪%s‬\" اسم غير مقبول للدالة أو  الثابت."
 
 msgid "Cannot differentiate recursive function."
 msgstr "لا يمكن إشتقاق دالة تراجعية."
@@ -2851,7 +2940,7 @@ msgid ""
 "The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 "In addition you are not allowed to redefine built-in names."
 msgstr ""
-"اسم دالة/ثابت غير مقبول '%s'.\n"
+"اسم دالة/ثابت غير مقبول '‪%s‬'.\n"
 "الاسم يمكن أن يحتوي على حروف و أرقام، و يجب أن يبدا دائما بحرف.\n"
 "بالإضافة إلى ذلك لا يمكن إعادلة تعريف الأسماء المعرفة مسبقا (كـ pi و cos)."
 
@@ -2863,7 +2952,7 @@ msgid ""
 "The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 " In addition you are not allowed to use built-in names as argument names."
 msgstr ""
-"اسم أحد المعطيات غير مقبول '%s'.\n"
+"اسم أحد المعطيات غير مقبول '‪%s‬'.\n"
 "الاسم يمكن أن يحتوي على حروف و أرقام، و يجب أن يبدا دائما بحرف.\n"
 "بالإضافة إلى ذلك لا يمكن إعادلة تعريف الأسماء المعرفة مسبقا (كـ pi و cos)."
 
@@ -2871,7 +2960,7 @@ msgid "Character found after brackets."
 msgstr "عثر على حرف (أو رمز) بعد الأقواس."
 
 msgid "Symbol \"%s\" defined more than once."
-msgstr "الرمز \"%s\" عرف أكثر من مرة."
+msgstr "الرمز \"‪%s‬\" عرف أكثر من مرة."
 
 msgid "Invalid equation or inequality."
 msgstr "معادلة أو متراجحة غير مقبولة."
@@ -2887,7 +2976,7 @@ msgstr "حفظ تغييرات؟"
 
 #. Asked when trying to exit
 msgid "Save changes in %s?"
-msgstr "حفظ تغييرات في %s ؟"
+msgstr "حفظ تغييرات في ‪%s‬ ؟"
 
 #. Written in status bar when trying to zoom in too much
 msgid "You have reached the maximum range of zoom."
@@ -2902,20 +2991,20 @@ msgid "Error in value"
 msgstr "خطأ في القيمة"
 
 msgid "'%s' has to be an integer value greater or equal to 0."
-msgstr "'%s' يجب أن يكون عددا صحيحا أكبر من أو يساوي 0."
+msgstr "'‪%s‬' يجب أن يكون عددا صحيحا أكبر من أو يساوي 0."
 
 msgid "'%s' must be greater than zero."
-msgstr "'%s' يجب أن يكون أكبر من الصفر."
+msgstr "'‪%s‬' يجب أن يكون أكبر من الصفر."
 
 msgid "'%s' must be an integer greater than zero."
-msgstr "'%s' يجب أن يكون عددا صحيحا أكبر من الصفر."
+msgstr "'‪%s‬' يجب أن يكون عددا صحيحا أكبر من الصفر."
 
 #. Error message in Axes dialog when zoom in/out too much
 msgid "Trying to break zoom limit."
 msgstr "محاولة تخطي حدود التكبير/التصغير."
 
 msgid "'%s' must be greater than '%s'"
-msgstr "'%s' يجب أ ن يكون أكبر من '%s'"
+msgstr "'‪%s‬' يجب أ ن يكون أكبر من '‪%s‬'"
 
 msgid "The maximum value must be greater than the minimum value."
 msgstr "القيمة العليا يجب أن تكون أكبر من القيمة الدنيا."
@@ -2927,31 +3016,31 @@ msgid ""
 "This file was created with Graph %s.\n"
 "Only files from version %s and higher can be opened."
 msgstr ""
-"هذا الملف أنشئ بـ Graph %s.\n"
-"إلا الملفات من الإصدار %s و أعلى يمكن فتحها."
+"هذا الملف أنشئ بـ ‪Graph %s.\n"
+"إلا الملفات من الإصدار ‪%s‬ و أعلى يمكن فتحها."
 
 msgid "'%s' is not a valid number."
-msgstr "'%s' ليس عددا مقبولا."
+msgstr "'‪%s‬' ليس عددا مقبولا."
 
 #. Hint for recent file menu items
 msgid "Open the file %s."
-msgstr "فتح الملف %s."
+msgstr "فتح الملف ‪%s‬."
 
 msgid "'%s' must be a positive number."
-msgstr "'%s' يجب أن يكون عددا موجبا."
+msgstr "'‪%s‬' يجب أن يكون عددا موجبا."
 
 msgid "File not found: %s"
-msgstr "لا يمكن العثور على الملف: %s"
+msgstr "لا يمكن العثور على الملف: ‪%s"
 
 msgid ""
 "Error reading file: %s\n"
 "The file is not a correct Graph file."
 msgstr ""
-"خطأ أثناء قراءة الملف: %s\n"
+"خطأ أثناء قراءة الملف: ‪%s\n"
 "الملف ليس ملف Graph صحيح."
 
 msgid "Unknown error while reading file: %s"
-msgstr "خطأ مجهول أثناء قراءة الملف: %s"
+msgstr "خطأ مجهول أثناء قراءة الملف: ‪%s"
 
 #. Used in Save as dialog
 msgid "Graph files [*.grf]|*.grf"
@@ -2961,11 +3050,11 @@ msgid ""
 "Cannot write to file: %s\n"
 "Access denied. Check that the file is not in use or write protected."
 msgstr ""
-"لا يمكن الكتابة إلى الملف: %s\n"
+"لا يمكن الكتابة إلى الملف: ‪%s\n"
 "الوصول مرفوض. تأكد من أن الملف ليس مستعملا من قبل برنامج آخر أو محميا ضد الكتابة."
 
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
-msgstr "الخط \"%s\" غير موجود. الخط القياسي استخدم مكانه."
+msgstr "الخط \"‪%s‬\" غير موجود. الخط القياسي استخدم مكانه."
 
 #. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
@@ -2996,7 +3085,7 @@ msgid "Windows does not have enough resources to save an image that large."
 msgstr "لا يملك النظام الموارد الكافية لحفظ صورة ذات حجم كبير."
 
 msgid "'%1%' must be between %2% and %3%."
-msgstr "'%1%' يجب أن يكون بين %2% و %3%."
+msgstr "'‪%1%‬' يجب أن يكون بين ‪%2%‬ و ‪%3%‬."
 
 msgid "File not found"
 msgstr "لا يمكن العثور على الملف"
@@ -3008,7 +3097,7 @@ msgid "Confirm delete"
 msgstr "تأكيد الحذف"
 
 msgid "Are you sure you want to delete %s?"
-msgstr "هل أنت متأكد من أنك تريد حذف %s؟"
+msgstr "هل أنت متأكد من أنك تريد حذف ‪%s‬؟"
 
 #. Save as dialog
 msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
@@ -3019,7 +3108,7 @@ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 msgstr "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 
 msgid "Are you sure you want to delete the model: %s?"
-msgstr "هل أنت متأكد من أنك تريد حذف النموذج: %s؟"
+msgstr "هل أنت متأكد من أنك تريد حذف النموذج: ‪%s‬؟"
 
 msgid "Maximum number on x-axis must be greater than the minimum value."
 msgstr "القيمة العليا على المحور x يجب أن تكون أكبر من القيمة الدنيا."
@@ -3074,9 +3163,10 @@ msgid "A model of that name already exist."
 msgstr "يوجد نموذج آخر بهذا الاسم."
 
 msgid "The derivative of the function is not defined at %s=%s"
-msgstr "مشتق الدالة غير معرف عند %s=%s"
+msgstr "مشتق الدالة غير معرف عند ‪%s=%s"
 
-msgid "Coordinate not defined."
+#. Caption of message box when trying to insert tangent at undefined coordinate
+msgid "Coordinate not defined"
 msgstr "الإحداثية غير معرفة"
 
 msgid "Checking for newer version..."
@@ -3098,10 +3188,16 @@ msgid "Edit tangent/normal"
 msgstr "تحرير المماس/العمود"
 
 msgid "Error processing file '%s' at line %s."
-msgstr "خطأ أثناء معالجة الملف '%s' في السطر %s ."
+msgstr "خطأ أثناء معالجة الملف '‪%s‬' في السطر ‪%s‬ ."
+
+msgid "Edit text label"
+msgstr "تحرير النص"
+
+msgid "The model needs some constants (starting with a $) for Graph to find."
+msgstr "النموذج يحتاج لبعض الثوابت (تبدأ بـ $) من أجل إيجاد البيان."
 
 msgid "'%s' has to be an integer value between 0 and 1000."
-msgstr "يجب أن يكون '%s' عدد صحيح بين 0 و 1000."
+msgstr "يجب أن يكون '‪%s‬' عدد صحيح بين 0 و 1000."
 
 msgid "Printing error"
 msgstr "خطأ أثناء الطباعة"
@@ -3117,7 +3213,7 @@ msgid "Each point needs both an x- and a y-coordinate."
 msgstr "كل نقطة تحتاج إلى الإحداثيتين x و y."
 
 msgid "\"%s\" is not a valid number."
-msgstr "\"%s\" ليس عددا مقبولا."
+msgstr "\"‭%s‬\" ليس عددا مقبولا."
 
 msgid "You didn't add any points. You need to specify some x- and y-coordinates in the grid."
 msgstr "لم تضف أية نقطة. يجب أن تكتب بعض الإحداثيات x و y في الشبكة."
@@ -3142,10 +3238,10 @@ msgid ""
 "\n"
 "Would you like to visit the web site?"
 msgstr ""
-"Graph %s متوفر للتحميل من www.padowan.dk \n"
+"‪Graph %s‬ متوفر للتحميل من www.padowan.dk \n"
 "و يتفوق على الإصدار السابق بهذه الميزات الجديدة: \n"
 "\n"
-"%s\n"
+"‪%s\n"
 "\n"
 "هل تريد زيارة الموقع؟"
 
@@ -3164,22 +3260,22 @@ msgstr ""
 
 #. Communication error when checking for newer version
 msgid "Socket error %s"
-msgstr "خطأ %s في المقبس (Socket)"
+msgstr "خطأ ‪%s‬ في المقبس (Socket)"
 
 #. Communication error when checking for newer version
 msgid "The server responded with the message '%s'"
-msgstr "أجاب الملقم بالرسالة: '%s'"
+msgstr "أجاب الملقم بالرسالة: '‪%s‬'"
 
 #. Communication error when checking for newer version
 msgid "Protocol reply error %s"
-msgstr "الخطأ %s في إجابة نظام الإتصال (Protocol)"
+msgstr "الخطأ - ‪%s‬ في إجابة نظام الإتصال (Protocol)"
 
 msgid ""
 "The file cannot be opened by this version of the program.\n"
 "You need at least Graph %s to open this file."
 msgstr ""
 "لا يمكن فتح الملف بواسطة هذا الإصدار من البرنامج.\n"
-"تحتاج على الأقل Graph %s لفتح هذا الملف."
+"تحتاج على الأقل ‪Graph %s‬ لفتح هذا الملف."
 
 msgid ""
 "This file was saved by an outdated version of Graph,\n"
@@ -3212,7 +3308,7 @@ msgid "To add a command to a toolbar simply select a category and drag the comma
 msgstr "لإضافة أمر إلى لوحة الأدوات ببساطة اختر صنفا و اسحب الأمر خارج نافذة الحوار إلى لوحة الأدوات."
 
 msgid "Edit f'(x)"
-msgstr "تحرير f'(x)"
+msgstr "تحرير ‪f'(x)"
 
 msgid "Edit trendline"
 msgstr "تحرير خط الإتجاه"
@@ -3234,8 +3330,8 @@ msgid "You can customize the toolbar by right clicking on it and select 'Customi
 msgstr "يمكنك تخصيص لوحة الأدوات بنقرة يمنى عليها و اختر 'تخصيص لوحة الأدوات'."
 
 #. Tip of the Day
-msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
-msgstr "بدل حذف دالة  يمكنك جعلها غير مرئية بنقرة يمنى عليها في قائمة الدوال ثم 'إظهار' في القائمة المنسدلة."
+msgid "Instead of deleting a function, you can make it invisible by removing the check mark for the item in the function list."
+msgstr "بدل حذف دالة ، يمكنك جعلها غير مرئية بإزلة علامة التحديد الخاصة بها في قائمة الدوال."
 
 #. Tip of the Day
 msgid "You can paste images into a text label."
@@ -3263,7 +3359,7 @@ msgstr "يمكنك إيجاد قائمة بكل الداول المتوفرة ف
 
 #. Tip of the Day
 msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
-msgstr "يمكنك تركيب دالتين في واحدة بواسطة 'if'. مثلا الدالة f(x)=x من أجل x<1 و f(x)=x^2 من اجل x>=1 يمكن كتابتها f(x)=if(x<1, x, x^2)."
+msgstr "يمكنك تركيب دالتين في واحدة بواسطة 'if'. مثلا الدالة f(x)=x من أجل x<1 و f(x)=x^2 من اجل x>=1 يمكن كتابتها ‪f(x)=if(x<1, x, x^2)‬."
 
 #. Tip of the Day
 msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
@@ -3375,11 +3471,11 @@ msgstr "عندما تكون سلسلة نقطية محددة، يمكنك إضا
 
 #. Tip of the Day
 msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
-msgstr "يمكنك استعمال علاقة لرسم أي متراجحة، مثلا sin(x^2) < cos(y^2)"
+msgstr "يمكنك استعمال علاقة لرسم أي متراجحة، مثلا ‪sin(x^2) < cos(y^2)"
 
 #. Tip of the Day
 msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
-msgstr "يمكنك استعمال علاقة لرسم أي معادلة، مثلا x*sin x = y*cos y"
+msgstr "يمكنك استعمال علاقة لرسم أي معادلة، مثلا ‪x*sin x = y*cos y"
 
 #. Tip of the Day
 msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
@@ -3411,11 +3507,11 @@ msgstr "في أغلب الحالات كالسلاسل النقطية، إعدا�
 
 #. Tip of the Day
 msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
-msgstr "يمكنك إنشاء ثوابت مخصصة و الخاصة بك بواسطة 'وظيفة|دوال مخصصة' لاستخدامها في دوال، سلاسل نقطية، و غيرها. كمثال: g=9.80665،  R=8.31"
+msgstr "يمكنك إنشاء ثوابت مخصصة و الخاصة بك بواسطة 'دالة|دوال مخصصة' لاستخدامها في دوال، سلاسل نقطية، و غيرها. كمثال: g=9.80665،  R=8.31"
 
 #. Tip of the Day
 msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
-msgstr "يمكنك إنشاء دوال مخصصة و الخاصة بك بواسطة 'وظيفة|دوال مخصصة' لاستخدامها في رسم دوال ، علاقات، و غيرها. كمثال: sinc(x)=if(x=0, 0, sin(x)/x)"
+msgstr "يمكنك إنشاء دوال مخصصة و الخاصة بك بواسطة 'دالة|دوال مخصصة' لاستخدامها في رسم دوال ، علاقات، و غيرها. كمثال: ‪sinc(x)=if(x=0, 0, sin(x)/x)"
 
 #. Tip of the Day
 msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
@@ -3433,6 +3529,9 @@ msgstr "المجموعة الجزئية:"
 
 msgid "Insert"
 msgstr "إدراج"
+
+msgid "Select color"
+msgstr "اختر لونا"
 
 msgid "Customize"
 msgstr "تخصيص"
@@ -3529,4 +3628,20 @@ msgstr "اختر عدد النسخ لطباعتها."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "أدخل النسبة مقارنة بالحجم الأصلي."
+
+#~ msgid ""
+#~ "This is the functions second derivative evaluated for the entered value."
+#~ msgstr "قيمة المشتق الثاني للدالة المقدرة من أجل قيمة x المعينة."
+#~ msgid "Write coordinate system and functions to a file."
+#~ msgstr "حفظ المعلم و الدوال في ملف."
+#~ msgid "Zoom to standard coordinates."
+#~ msgstr "الرجوع إلى الحجم النموذجي."
+#~ msgid "Go to home page"
+#~ msgstr "زيارة الصفحة الرئيسية"
+#~ msgid "All points"
+#~ msgstr "كل النقاط"
+#~ msgid "Zoom as much as all points are visible."
+#~ msgstr "تغيير حجم الصورة بحيث تظهر كل النقاط بشكل واضح."
+#~ msgid "Image information"
+#~ msgstr "معلومات الصورة"
 
