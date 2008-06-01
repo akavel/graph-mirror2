@@ -11,24 +11,32 @@
 #define SvgWriterH
 #include "EmfParser.h"
 #include <fstream>
+#include <vector>
 //---------------------------------------------------------------------------
 class TSvgWriter : public TGraphicWriter
 {
   std::ostream &Stream;
-  std::string FontName;
-  int FontSize;
-  int FontColor;
+  RECTL ViewBox;
+  TPenInfo Pen;
+  TBrushInfo Brush;
+  std::vector<TBrushInfo> PatternList;
+
+  void WritePen();
+  void WriteBrush(bool UseBrush=true);
+  unsigned CreatePattern();
 
 public:
   TSvgWriter(std::ostream &AStream) : Stream(AStream) {}
-  void BeginFile(int Width, int Height);
+  void BeginFile(const RECTL &Rect, unsigned Width, unsigned Height);
   void EndOfFile();
   void Line(int X1, int Y1, int X2, int Y2);
-  void SetPen(int Style, int Width, int Color);
   void Polygon(const POINTS *Points, int Count);
   void Polyline(const POINTS *Points, int Count);
   void Rectangle(const RECTL &Rect);
-  void Text(int X, int Y, const char *Str, int Size);
-  void SetFont(const char *Name, int Size, int Color);
+  void Ellipse(const RECTL &Rect);
+  void Text(int X, int Y, const char *Str, const TFontInfo &Font);
+  void SetPen(const TPenInfo &APen);
+  void SetBrush(const TBrushInfo &ABrush);
+  void ExcludeClipRect(const RECTL &Rect);
 };
 #endif

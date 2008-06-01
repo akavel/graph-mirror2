@@ -42,7 +42,7 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
     case EMR_MOVETOEX:
     {
       EMRMOVETOEX* MoveTo = (EMRMOVETOEX*)lpEMFR;
-      Pos = MoveTo->ptl;;
+      Pos = MoveTo->ptl;
       break;
     }
     case EMR_LINETO:
@@ -54,8 +54,28 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
 
     case EMR_CREATEPEN:
     {
-      EMRCREATEPEN* LogPen = (EMRCREATEPEN*)lpEMFR;
-      Writer->SetPen(LogPen->lopn.lopnStyle, LogPen->lopn.lopnWidth.x, LogPen->lopn.lopnColor);
+      EMRCREATEPEN *LogPen = (EMRCREATEPEN*)lpEMFR;
+      TPenInfo Pen(LogPen->lopn.lopnStyle, LogPen->lopn.lopnWidth.x, SwapColor(LogPen->lopn.lopnColor));
+      PenList[LogPen->ihPen] = Pen;
+      Writer->SetPen(Pen);
+      break;
+    }
+
+    case EMR_EXTCREATEPEN:
+    {
+      EMREXTCREATEPEN *ExtPen = (EMREXTCREATEPEN*)lpEMFR;
+      TPenInfo Pen(ExtPen->elp.elpPenStyle, Pen.Width = ExtPen->elp.elpWidth, SwapColor(ExtPen->elp.elpColor));
+      PenList[ExtPen->ihPen] = Pen;
+      Writer->SetPen(Pen);
+      break;
+    }
+
+    case EMR_CREATEBRUSHINDIRECT:
+    {
+      EMRCREATEBRUSHINDIRECT  *LogBrush = (EMRCREATEBRUSHINDIRECT*)lpEMFR;
+      TBrushInfo Brush(LogBrush->lb.lbStyle, SwapColor(LogBrush->lb.lbColor), LogBrush->lb.lbHatch);
+      BrushList[LogBrush->ihBrush] = Brush;
+      Writer->SetBrush(Brush);
       break;
     }
 
@@ -75,13 +95,19 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
 
     case EMR_EXTCREATEFONTINDIRECTW:
     {
-      EMREXTCREATEFONTINDIRECTW *Font = (EMREXTCREATEFONTINDIRECTW*)lpEMFR;
-      std::wstring Temp = Font->elfw.elfLogFont.lfFaceName;
-      std::string FontName(Temp.begin(), Temp.end());
-      Writer->SetFont(FontName.c_str(), -Font->elfw.elfLogFont.lfHeight, 0);
+      EMREXTCREATEFONTINDIRECTW *ExtFont = (EMREXTCREATEFONTINDIRECTW*)lpEMFR;
+      std::wstring Temp = ExtFont->elfw.elfLogFont.lfFaceName;
+      Font.Name = std::string(Temp.begin(), Temp.end());
+      Font.Size = -ExtFont->elfw.elfLogFont.lfHeight;
+      FontList[ExtFont->ihFont] = Font;
       break;
     }
-    
+
+    case EMR_SETTEXTCOLOR:
+      Font.Color = reinterpret_cast<const EMRSETTEXTCOLOR*>(lpEMFR)->crColor;
+      SwapColor(Font.Color);
+      break;
+
     case EMR_EXTTEXTOUTW:
     {
       EMREXTTEXTOUTW *Text = (EMREXTTEXTOUTW*)lpEMFR;
@@ -91,19 +117,88 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
       std::vector<char> NewStr(NewSize + 1);
       WideCharToMultiByte(CP_ACP, 0, Str, Size, &NewStr[0], NewSize, NULL, NULL);
       NewStr.back() = 0; //Zero terminate
-      Writer->Text(Text->rclBounds.left, Text->rclBounds.bottom, &NewStr[0], Text->rclBounds.bottom - Text->rclBounds.top);
+      Font.Size = Text->rclBounds.bottom - Text->rclBounds.top;
+      Writer->Text(Text->rclBounds.left, Text->rclBounds.bottom, &NewStr[0], Font);
       break;
     }
 
     case EMR_RECTANGLE:
+      Writer->Rectangle(reinterpret_cast<const EMRRECTANGLE*>(lpEMFR)->rclBox);
+      break;
+
+    case EMR_ELLIPSE:
     {
-      EMRRECTANGLE *Rectangle = (EMRRECTANGLE*)lpEMFR;
-      Writer->Rectangle(Rectangle->rclBox);
+      Writer->Ellipse(reinterpret_cast<const EMRELLIPSE*>(lpEMFR)->rclBox);
       break;
     }
 
-    default:
+    case EMR_SELECTOBJECT:
+    {
+      unsigned Index = reinterpret_cast<const EMRSELECTOBJECT*>(lpEMFR)->ihObject;
+      if(Index & 0x80000000)
+        //Object is a stock object. See MSN article Q142319
+        switch(Index & 0x7FFFFFFF)
+        {
+          case BLACK_BRUSH:  Writer->SetBrush(TBrushInfo(BS_SOLID, 0x00FFFFFF, 0)); break;
+          case DKGRAY_BRUSH: Writer->SetBrush(TBrushInfo(BS_SOLID, 0x00808080, 0)); break;
+          case GRAY_BRUSH:   Writer->SetBrush(TBrushInfo(BS_SOLID, 0x00808080, 0)); break;
+          case LTGRAY_BRUSH: Writer->SetBrush(TBrushInfo(BS_SOLID, 0x00C0C0C0, 0)); break;
+          case NULL_BRUSH:   Writer->SetBrush(TBrushInfo(BS_NULL, 0, 0));           break;
+          case WHITE_BRUSH:  Writer->SetBrush(TBrushInfo(BS_SOLID, 0x00000000, 0)); break;
+          case BLACK_PEN:    Writer->SetPen(TPenInfo(PS_SOLID, 1, 0x00FFFFFF));     break;
+          case NULL_PEN:     Writer->SetPen(TPenInfo(PS_NULL, 0, 0));               break;
+          case WHITE_PEN:    Writer->SetPen(TPenInfo(PS_SOLID, 1, 0x00000000));     break;
+        }
+      else if(PenList.count(Index))
+        Writer->SetPen(PenList[Index]);
+      else if(BrushList.count(Index))
+        Writer->SetBrush(BrushList[Index]);
+      else if(FontList.count(Index))
+        Font = FontList[Index];
       break;
+    }
+
+    case EMR_DELETEOBJECT:
+    {
+      unsigned Index = reinterpret_cast<const EMRDELETEOBJECT*>(lpEMFR)->ihObject;
+      PenList.erase(Index);
+      BrushList.erase(Index);
+      FontList.erase(Index);
+      break;
+    }
+
+    case EMR_EXCLUDECLIPRECT:
+      Writer->ExcludeClipRect(reinterpret_cast<const EMREXCLUDECLIPRECT*>(lpEMFR)->rclClip);
+      break;
+
+    case EMR_FILLRGN:
+    {
+      const EMRFILLRGN *Region = reinterpret_cast<const EMRFILLRGN*>(lpEMFR);
+      const RGNDATA *RegionData = reinterpret_cast<const RGNDATA*>(Region->RgnData);
+      const RECT *Data = reinterpret_cast<const RECT*>(RegionData->Buffer);
+      if(BrushList.count(Region->ihBrush))
+      {
+        Writer->SetBrush(BrushList[Region->ihBrush]);
+        for(unsigned I = 0; I < RegionData->rdh.nCount; I++)
+          Writer->Rectangle(reinterpret_cast<const RECTL&>(Data[I]));
+      }
+      break;
+    }
+
+    case EMR_PAINTRGN:
+    {
+      const EMRPAINTRGN *Region = reinterpret_cast<const EMRPAINTRGN*>(lpEMFR);
+      const RGNDATA *RegionData = reinterpret_cast<const RGNDATA*>(Region->RgnData);
+      const RECT *Data = reinterpret_cast<const RECT*>(RegionData->Buffer);
+      for(unsigned I = 0; I < RegionData->rdh.nCount; I++)
+        Writer->Rectangle(reinterpret_cast<const RECTL&>(Data[I]));
+      break;
+    }
+    default:
+    {
+//      int Command = lpEMFR->iType;
+      break;
+    }
   }
 }
 //---------------------------------------------------------------------------
@@ -116,7 +211,12 @@ void TEmfParser::Parse(HENHMETAFILE Handle, TGraphicWriter &AWriter)
 //  ps_echel(CmPerPixel, Header.rclFrame.bottom/(1000.*Header.rclBounds.bottom), 0., Header.rclFrame.bottom/1000., 1., 0.);
 
   Writer = &AWriter;
-  Writer->BeginFile(Header.rclBounds.right - Header.rclBounds.left - 1, Header.rclBounds.bottom - Header.rclBounds.top - 2);
+  Writer->BeginFile(Header.rclBounds, Header.rclFrame.right - Header.rclFrame.left, Header.rclFrame.bottom - Header.rclFrame.top);
+
+//  unsigned Size = GetEnhMetaFileDescription(Handle, 0, NULL);
+//  std::vector<char> Str(Size);
+//  GetEnhMetaFileDescription(Handle, Size, &Str[0]); 
+
   EnumEnhMetaFile(NULL, Handle, &EnhMetaFileProc, this, NULL);
   Writer->EndOfFile();
 }
@@ -126,6 +226,11 @@ void TEmfParser::Parse(const char *FileName, TGraphicWriter &AWriter)
   HENHMETAFILE Handle = GetEnhMetaFile(FileName);
   Parse(Handle, AWriter);
   DeleteEnhMetaFile(Handle);
+}
+//---------------------------------------------------------------------------
+unsigned TEmfParser::SwapColor(unsigned Color)
+{
+  return ((Color & 0xFF) << 16) | (Color & 0xFF00) | ((Color & 0xFF0000) >> 16); // Swap Red and Blue
 }
 //---------------------------------------------------------------------------
 
