@@ -667,6 +667,13 @@ void __fastcall TMyInplaceEdit::WMKillFocus(TMessage &Message)
   TInplaceEdit::Dispatch(&Message);
 }
 //---------------------------------------------------------------------------
+void __fastcall TMyInplaceEdit::WMDeadChar(TMessage &Message)
+{
+  //I am not sure why this works, but it does
+  if(Message.WParam == '^')
+    PostMessage(Handle, WM_KEYUP, VK_SPACE, 0);
+}
+//---------------------------------------------------------------------------
 void __fastcall TGrid::InplaceEditEnter(TObject *Sender)
 {
   TDrawGrid::PopupMenu = NULL;
@@ -850,25 +857,36 @@ void __fastcall TMyInplaceEdit::KeyPress(char &Key)
       if(MyGrid->OnEditorKeyPress)
         MyGrid->OnEditorKeyPress(this, Key);
 
-  //Check if key is escape
-  if(Key == 27)
-    //Simulate escape key pressed when grid has focus. This usually activates
-    //the button with the Cancel property set to true.
-    Grid->Perform(CN_KEYDOWN, 27, 65537);
-  if(Key == '\n')
-    Key = 0; //Ignore Ctrl-Enter
-  else if(Key == '\r')
+  switch(Key)
   {
-    if(TGrid *MyGrid = dynamic_cast<TGrid*>(Grid))
-    {
-      MyGrid->AjustRows();
-      MyGrid->NextCell();
-      Key = 0;
-    }
+    case VK_ESCAPE:
+      //Simulate escape key pressed when grid has focus. This usually activates
+      //the button with the Cancel property set to true.
+      Grid->Perform(CN_KEYDOWN, 27, 65537);
+      break;
+
+    case '\n':
+      Key = 0; //Ignore Ctrl-Enter
+      break;
+
+    case '\r':
+      if(TGrid *MyGrid = dynamic_cast<TGrid*>(Grid))
+      {
+        MyGrid->AjustRows();
+        MyGrid->NextCell();
+        Key = 0;
+      }
+      break;
+
+    case 0xB2: //Superscript 2
+      SendMessage(Handle, WM_CHAR, '^', 0);
+      Key = '2';
+      break;
+
+    default:
+      //Call inherited
+      TInplaceEdit::KeyPress(Key);
   }
-  else
-    //Call inherited
-    TInplaceEdit::KeyPress(Key);
 }
 //---------------------------------------------------------------------------
 void TGrid::NextCell()

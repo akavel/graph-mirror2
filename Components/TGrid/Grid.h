@@ -134,10 +134,12 @@ __published:
 
 class TMyInplaceEdit : public TInplaceEdit
 {
+  void __fastcall WMDeadChar(TMessage &Message);
   void __fastcall WMSetFocus(TMessage &Message);
   void __fastcall WMKillFocus(TMessage &Message);
   void __fastcall WMPaste(TMessage &Message);
 BEGIN_MESSAGE_MAP
+  VCL_MESSAGE_HANDLER(WM_DEADCHAR, TMessage, WMDeadChar)
   VCL_MESSAGE_HANDLER(WM_SETFOCUS, TMessage, WMSetFocus)
   VCL_MESSAGE_HANDLER(WM_KILLFOCUS, TMessage, WMKillFocus)
   VCL_MESSAGE_HANDLER(WM_PASTE, TMessage, WMPaste);
