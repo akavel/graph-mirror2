@@ -6,6 +6,7 @@ Version 4.4
 - An animation can now be saved as a series of images.
 - Animations no longer has a maximum size limit, but will may be downscaled when played.
 - User defined trendline models can now be exported/imported.
+- When Zoom|Move system is active (or Shift is held down), you can just click on a coordinate to center it in the graphing area.
 - Several minor improvements.
 - Chinese (Simplified) translation added.
 - Basque translation added.

@@ -15,6 +15,9 @@ ASAP
 - Import/export user defined trendline models.
 - Fix labels attached to axes when axes are boxed.
 - Add a colored circle to the point series markers.
+- Adjust size of grid lines (especially when printed to be read by blind users)
+- Adjust axes size (especially when printed to be read by blind users)
+- Grid: Replace dotted lines with dots/crosses where the grids intersect
 
 Graph 4.3
 - Animation Player: Add buttons to move to first and last frame for easy compare.
@@ -119,3 +122,9 @@ Plugins:
 - Convert points, i.e. pass through a function.
 - Add custom names to axes, e.g. sqrt(2) or hh:mm.
 - Implement the erf(x) and erfc(x) functions. (See email from profesor de ciencias at 29/12-07)
+- FFT of point series.
+
+Translations:
+New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>
+New Arabic help file: Abdellah Chelli <sneetsher@yahoo.com>
+New Spanish help file: Francisco Oliver <fran_oliver@ono.com>

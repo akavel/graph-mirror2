@@ -8,6 +8,7 @@
 	<section id="sign" xreflabel="sign">
 		<title>sign function</title>
 		<indexterm><primary>sign function</primary></indexterm>
+		<indexterm><primary>signum</primary></indexterm>
 		<para>
 			Returns the sign of the argument.
 		</para>
@@ -18,7 +19,7 @@
 		<simplesect>
 			<title>Description</title>
 			<para>
-				The <function>sign</function> function returns the sign of <parameter>z</parameter>.
+				The <function>sign</function> function, which is also called signum, returns the sign of <parameter>z</parameter>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 				When <parameter>z</parameter> is a real number, <mathphrase>sign(z)</mathphrase> returns 1 for <parameter>z</parameter>>0 and -1 for <parameter>z</parameter>&lt;0.
 				<mathphrase>sign(z)</mathphrase> returns 0 for <parameter>z</parameter>=0.

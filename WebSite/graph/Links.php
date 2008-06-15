@@ -16,10 +16,10 @@
 <div id="main">
 <h1 align="center"><font color="#0000ff" size="+7"><b> Links</b></font></h1>
 
-<p> <font size="+1"><b> More information
-about Graph:</b></font><br>
+<p> <font size="+1"><b> More information about Graph:</b></font><br>
 
 <font size="+1">Graph use cases: </font><a href="http://graphguide.blogspot.com" target="_blank"><font size="4">http://graphguide.blogspot.com</font></a><br>
+<font size="+1">Spanish tutorials: </font><a href="http://observatorio.cnice.mec.es/" target="_blank"><font size="4">http://observatorio.cnice.mec.es/</font></a><br>
 
 </p>
 
