@@ -59,7 +59,7 @@ void TForm20::ShowAnimation(const AnsiString &FileName)
   MediaPlayer1->SetSignal(0, 1);
   MediaPlayer1->DisplayRect = DisplayRect;
 
-  ScaleForm(this);
+//  ScaleForm(this);
   if(BiDiMode != bdLeftToRight)
     LabeledEdit1->LabelPosition = lpRight;
   if(!Visible)
@@ -258,4 +258,5 @@ void TForm20::SaveFrame(const AnsiString &FileName, int FilterIndex)
   MediaPlayer1->DisplayRect = DisplayRect; 
 }
 //---------------------------------------------------------------------------
+
 

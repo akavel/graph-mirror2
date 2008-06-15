@@ -33,7 +33,8 @@ __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)
   UpDown1->Position = Data.Property.DefaultFunction.Size;
 
   //Now this is silly: We don't want to flip the group box, so we flip it twice
-  GroupBox1->FlipChildren(false);
+  if(SysLocale.MiddleEast)
+    GroupBox1->FlipChildren(false);
 
   ScaleForm(this);
   ComboBox1Change(NULL);

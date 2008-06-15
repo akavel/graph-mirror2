@@ -9,8 +9,10 @@
 //---------------------------------------------------------------------------
 #ifndef ConvertH
 #define ConvertH
+#include <boost/function.hpp>
 //---------------------------------------------------------------------------
 double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr=WideString(), double Min=-MAXDOUBLE, double Max=MAXDOUBLE);
+double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr, const boost::function1<bool, double> &Interval);
 int MakeInt(TCustomEdit *Edit, const AnsiString &Caption);
 void ComplexToRTF(const Func32::TComplex &C, TRichEdit *RichEdit);
 WideString ComplexToWideString(const Func32::TComplex &C);

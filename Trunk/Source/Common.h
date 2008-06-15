@@ -289,6 +289,13 @@ TOutputIterator Transform(TInputIterator First, TInputIterator Last,
     return Result;
 }
 
+//Check if a is very close to zero
+//From an article "The G3D Graphics Engine" by Morgan McGuire in CUJ Dec. 2004
+inline bool IsZero(long double a)
+{
+  return a == 0 || std::abs(a) <= 0.0000001L * (std::abs(a) + 1);
+}
+
 extern const bool IsWinNT;
 extern const double NAN;
 extern const double INF;

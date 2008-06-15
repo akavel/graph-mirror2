@@ -15,6 +15,9 @@
 #include "vfw.h"
 #include "IGraphic.h"
 #include <cmath>
+#include <boost/spirit/phoenix/operators.hpp>
+#include <boost/spirit/phoenix/primitives.hpp>
+using phoenix::arg1;
 //---------------------------------------------------------------------------
 #pragma link "TntStdCtrls"
 #pragma link "ProgressForm"
@@ -104,7 +107,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 
   double Min = MakeFloat(Edit1);
   double Max = MakeFloat(Edit2);
-  double Step = std::abs(MakeFloat(Edit3));
+  double Step = std::abs(MakeFloat(Edit3, LoadRes(RES_NOT_EQUAL_ZERO, Label4->Caption), phoenix::arg1 != 0));
   if(Max < Min)
     Step = -Step;
   AnimationInfo.FramesPerSecond = MakeFloat(Edit6, LoadRes(RES_GREATER_ZERO, Label7->Caption), 0.01);

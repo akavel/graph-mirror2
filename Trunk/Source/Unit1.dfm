@@ -118,6 +118,7 @@ object Form1: TForm1
       Align = alClient
       ParentShowHint = False
       ShowHint = False
+      OnClick = Image1Click
       OnDblClick = Image1DblClick
       OnMouseDown = Image1MouseDown
       OnMouseMove = Image1MouseMove
@@ -163,6 +164,7 @@ object Form1: TForm1
       PolyFillMode = pfmWinding
       Visible = False
       Align = alClient
+      OnClick = Image1Click
       OnDblClick = Image1DblClick
       OnMouseDown = Image1MouseDown
       OnMouseMove = Image1MouseMove
@@ -3743,6 +3745,8 @@ object Form1: TForm1
       Hint = 'Move the window up along the coordinate system.'
       ImageIndex = 26
       ShortCut = 16422
+      SecondaryShortCuts.Strings = (
+        'Ctrl+Shift+Up')
       OnExecute = MoveUpActionExecute
     end
     object MoveDownAction: TTntAction
@@ -3751,6 +3755,8 @@ object Form1: TForm1
       Hint = 'Move the window down along the coordinate system.'
       ImageIndex = 27
       ShortCut = 16424
+      SecondaryShortCuts.Strings = (
+        'Ctrl+Shift+Down')
       OnExecute = MoveDownActionExecute
     end
     object MoveLeftAction: TTntAction
@@ -3759,6 +3765,8 @@ object Form1: TForm1
       Hint = 'Move the window to the left along the coordinate system.'
       ImageIndex = 28
       ShortCut = 16421
+      SecondaryShortCuts.Strings = (
+        'Ctrl+Shift+Left')
       OnExecute = MoveLeftActionExecute
     end
     object MoveRightAction: TTntAction
@@ -3767,6 +3775,8 @@ object Form1: TForm1
       Hint = 'Move the window to the right along the coordinate system.'
       ImageIndex = 29
       ShortCut = 16423
+      SecondaryShortCuts.Strings = (
+        'Ctrl+Shift+Right')
       OnExecute = MoveRightActionExecute
     end
     object MoveAction: TTntAction

@@ -101,7 +101,7 @@ BEGIN
   RES_SAVE_CHANGES_IN     "Save changes in %s?" //Asked when trying to exit
   RES_MAX_ZOOM            "You have reached the maximum range of zoom."  //Written in status bar when trying to zoom in too much
   RES_MIN_ZOOM            "You have reached the minimum range of zoom."  //Written in status bar when trying to zoom out too much
-
+  RES_NOT_EQUAL_ZERO      "'%s' must not be zero."
   RES_ERROR_IN_VALUE      "Error in value"  //Error message when an invalid value is entered.
   RES_LIMIT_ZERO          "'%s' has to be an integer value greater or equal to 0."
   RES_GREATER_ZERO        "'%s' must be greater than zero."

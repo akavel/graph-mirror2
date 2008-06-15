@@ -13,8 +13,11 @@
 #include "Convert.h"
 #include "Grid.h"
 #include "GuiUtil.h"
+#include <boost/spirit/phoenix/operators.hpp>
+#include <boost/spirit/phoenix/primitives.hpp>
+using phoenix::arg1;
 //---------------------------------------------------------------------------
-double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr, double Min, double Max)
+double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr, const boost::function1<bool, double> &Interval)
 {
   AnsiString Text = TntControl_GetText(Edit);
   if(Text.IsEmpty())
@@ -28,7 +31,7 @@ double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr, double Min, doub
   {
     double Number = Form1->Data.Calc(Text.c_str());
 
-    if(Number < Min || Number > Max)
+    if(!Interval(Number))
     {
       SetGlobalFocus(Edit);
       if(ErrorStr.IsEmpty())
@@ -45,6 +48,11 @@ double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr, double Min, doub
     ShowErrorMsg(Error, Edit);
     throw EAbort("");
   }
+}
+//---------------------------------------------------------------------------
+double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr, double Min, double Max)
+{
+  return MakeFloat(Edit, ErrorStr, arg1 >= Min && arg1 <= Max);
 }
 //---------------------------------------------------------------------------
 int MakeInt(TCustomEdit *Edit, const AnsiString &Caption)

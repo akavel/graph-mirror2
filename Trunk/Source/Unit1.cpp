@@ -283,6 +283,7 @@ void TForm1::Translate()
       TranslateList.push_back(MainMenu->Items->Items[I]);
 
     TranslateList.push_back(File_Import);
+    TranslateList.push_back(Help_Internet);
 
     TranslateList.push_back(Tree_Export);
     TranslateList.push_back(Tree_ShowInLegend);
@@ -374,6 +375,7 @@ void TForm1::Redraw(void)
 void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
 	TShiftState Shift, int X, int Y)
 {
+  MouseDownPos = TPoint(X, Y);
   if(Shift.Contains(ssDouble))
     return;
 
@@ -931,7 +933,7 @@ void TForm1::UpdateMenu()
   RedoAction->Enabled = UndoList.CanRedo();
   PasteAction->Enabled = GraphClipboard.HasData();
   ZoomFitAction->Enabled = dynamic_cast<TBaseFuncType*>(Elem.get()) || dynamic_cast<TPointSeries*>(Elem.get()) || dynamic_cast<TRelation*>(Elem.get());
-  ZoomFitAllAction->Enabled = ZoomFitAction->Enabled;
+//  ZoomFitAllAction->Enabled = ZoomFitAction->Enabled;
   ZoomSquareAction->Enabled = Data.Axes.xAxis.LogScl == Data.Axes.yAxis.LogScl;
 
 #ifdef LIMITED_EDITION
@@ -2166,6 +2168,9 @@ void __fastcall TForm1::ZoomStandardActionExecute(TObject *Sender)
 
   Data.Axes.xAxis = xAxis;
   Data.Axes.yAxis = yAxis;
+
+  if(Data.Axes.ZoomSquare)
+    ZoomWindow(Data.Axes.xAxis.Min, Data.Axes.xAxis.Max, Data.Axes.yAxis.Min, Data.Axes.yAxis.Max, false, false);
 
   Data.ClearCache();
   Data.SetModified();
@@ -3788,6 +3793,20 @@ void TForm1::SetStatusIcon(int AStatusIcon)
   StatusBar1->Repaint();
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TForm1::Image1Click(TObject *Sender)
+{
+  switch(CursorState)
+  {
+    case csMoving:
+    case csMove:
+      if(std::abs((int)MouseDownPos.x - (int)LastMousePos.x) < Mouse->DragThreshold && std::abs((int)MouseDownPos.y - (int)LastMousePos.y) < Mouse->DragThreshold)
+      {
+        UndoList.Push(TUndoAxes());
+        Zoom(Image1->ScreenToClient(Mouse->CursorPos), 0.5, false);
+      }
+      break;
+  }
+}
+//---------------------------------------------------------------------------
 
 
