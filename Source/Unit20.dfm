@@ -16,6 +16,7 @@ object Form20: TForm20
   KeyPreview = True
   OldCreateOrder = False
   Position = poMainFormCenter
+  Scaled = False
   ShowHint = True
   OnClose = TntFormClose
   DesignSize = (

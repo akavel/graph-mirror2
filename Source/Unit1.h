@@ -463,6 +463,7 @@ __published:	// IDE-managed Components
   void __fastcall MainMenuChange(TObject *Sender, TMenuItem *Source,
           bool Rebuild);
   void __fastcall StatusBar1Hint(TObject *Sender);
+  void __fastcall Image1Click(TObject *Sender);
 
 private:	// User declarations
   friend class TAddView;
@@ -493,6 +494,7 @@ private:	// User declarations
   int xZoom, yZoom;
   bool AbortPrinting; //Set in OnClose to signal that we should abort printing
   TPoint ImagePos;   //The actual Position of Image2. The real position may vary from this when it snaps
+  TPoint MouseDownPos; //Set from OnMouseDown on Image1
 
   bool AskSave();
   void LoadSettings();

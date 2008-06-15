@@ -135,16 +135,22 @@ void TDrawThread::PrepareFunction(TBaseFuncType *F)
       ds = LogScl ? std::exp(std::log(Axes.xAxis.Max / Axes.xAxis.Min) / AxesRect.Width()) : 1/Draw->xScale;
     else if(Steps == 1)
       MinMax.second = MinMax.first, ds = 1;
+    else if(F->From.IsFinite() && F->To.IsFinite())
+      ds = (F->To.Value - F->From.Value) / (Steps - 1); //If Steps, From and To are defined, ds must be exact
     else
       ds = (MinMax.second - MinMax.first) / (Steps - 1); //Remove 1 so two steps only plots at Min and Max
 
     if(ds  <= 0)
       ds = 1; //ds must always be a positive number
 
-    if(Data->Axes.CalcComplex)
-      CalcFunc<std::complex<long double> >(*F, MinMax.first, MinMax.second, ds, LogScl);
-    else
-      CalcFunc<long double>(*F, MinMax.first, MinMax.second, ds, LogScl);
+    //Avoid calculations on an empty range  
+    if(!IsZero(MinMax.second - MinMax.first))
+    {
+      if(Data->Axes.CalcComplex)
+        CalcFunc<std::complex<long double> >(*F, MinMax.first, MinMax.second, ds, LogScl);
+      else
+        CalcFunc<long double>(*F, MinMax.first, MinMax.second, ds, LogScl);
+    }
   }
 }
 //---------------------------------------------------------------------------

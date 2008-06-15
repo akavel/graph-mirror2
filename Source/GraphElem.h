@@ -54,6 +54,7 @@ struct TTextValue
   bool operator>=(double a) const {return Value >= a;}
   void Update(const class TData &Data);
   void Set(const std::string AText, const TData &Data, bool IgnoreErrors = false);
+  bool IsFinite() const {return std::_finite(Value);}
 };
 
 std::ostream& operator<<(std::ostream &Stream, const TTextValue &TextValue);

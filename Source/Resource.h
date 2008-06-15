@@ -104,7 +104,7 @@
 #define RES_SAVE_CHANGES_IN     302
 #define RES_MAX_ZOOM            303
 #define RES_MIN_ZOOM            304
-
+#define RES_NOT_EQUAL_ZERO      305
 #define RES_ERROR_IN_VALUE      306
 #define RES_LIMIT_ZERO          307
 #define RES_GREATER_ZERO        308
