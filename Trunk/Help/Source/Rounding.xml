@@ -15,7 +15,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>trunc(z)</para>
+			<mathphrase>trunc(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -40,7 +40,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>fract(z)</para>
+			<mathphrase>fract(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -64,7 +64,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>ceil(z)</para>
+			<mathphrase>ceil(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -87,7 +87,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>floor(z)</para>
+			<mathphrase>floor(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -108,7 +108,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>round(z,n)</para>
+			<mathphrase>round(z,n)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>

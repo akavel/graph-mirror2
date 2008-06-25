@@ -15,7 +15,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>integrate(f,a,b)</para>
+			<mathphrase>integrate(f,a,b)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -46,7 +46,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>sum(f,a,b)</para>
+			<mathphrase>sum(f,a,b)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -73,7 +73,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>product(f,a,b)</para>
+			<mathphrase>product(f,a,b)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -101,7 +101,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>fact(z)</para>
+			<mathphrase>fact(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -124,7 +124,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>gamma(z)</para>
+			<mathphrase>gamma(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -151,7 +151,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>beta(m, n)</para>
+			<mathphrase>beta(m, n)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -176,7 +176,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>W(z)</para>
+			<mathphrase>W(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -204,7 +204,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>zeta(z)</para>
+			<mathphrase>zeta(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -232,7 +232,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>mod(m,n)</para>
+			<mathphrase>mod(m,n)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -255,7 +255,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>dnorm(x, [&mu;,&sigma;])</para>
+			<mathphrase>dnorm(x, [&mu;,&sigma;])</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
