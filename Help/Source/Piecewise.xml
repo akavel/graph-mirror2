@@ -14,7 +14,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>sign(z)</para>
+			<mathphrase>sign(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -37,7 +37,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>u(z)</para>
+			<mathphrase>u(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -60,7 +60,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>min(A,B,...)</para>
+			<mathphrase>min(A,B,...)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -84,7 +84,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>max(A,B,...)</para>
+			<mathphrase>max(A,B,...)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -107,7 +107,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>range(A,z,B)</para>
+			<mathphrase>range(A,z,B)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -132,7 +132,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>if(cond,a,b)</para>
+			<mathphrase>if(cond,a,b)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -154,7 +154,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>ifseq(cond1, f1, cond2, f2, ... , condn, fn [,fz])</para>
+			<mathphrase>ifseq(cond1, f1, cond2, f2, ... , condn, fn [,fz])</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>

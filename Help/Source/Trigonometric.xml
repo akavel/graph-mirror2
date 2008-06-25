@@ -15,7 +15,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>sin(z)</para>
+			<mathphrase>sin(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -46,7 +46,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>cos(z)</para>
+			<mathphrase>cos(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -77,7 +77,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>tan(z)</para>
+			<mathphrase>tan(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -111,7 +111,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>asin(z)</para>
+			<mathphrase>asin(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -136,7 +136,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>acos(z)</para>
+			<mathphrase>acos(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -161,7 +161,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>atan(z)</para>
+			<mathphrase>atan(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -185,14 +185,14 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>sec(z)</para>
+			<mathphrase>sec(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
 			<para>
 				The <function>sec</function> function calculates the secant of an angle <parameter>z</parameter>,
 				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
-				<mathphrase>sec(z)</mathphrase> is the same as <inlineequation>1/cos(z)</inlineequation>.
+				<mathphrase>sec(z)</mathphrase> is the same as <mathphrase>1/cos(z)</mathphrase>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 			</para>
 		</simplesect>
@@ -215,14 +215,14 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>csc(z)</para>
+			<mathphrase>csc(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
 			<para>
 				The <function>csc</function> function calculates the cosecant of an angle <parameter>z</parameter>,
 				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
-				<mathphrase>csc(z)</mathphrase> is the same as <inlineequation>1/sin(z)</inlineequation>.
+				<mathphrase>csc(z)</mathphrase> is the same as <mathphrase>1/sin(z)</mathphrase>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 			</para>
 		</simplesect>
@@ -245,7 +245,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>cot(z)</para>
+			<mathphrase>cot(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -276,7 +276,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>asec(z)</para>
+			<mathphrase>asec(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -302,7 +302,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>acsc(z)</para>
+			<mathphrase>acsc(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -328,7 +328,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para>acot(z)</para>
+			<mathphrase>acot(z)</mathphrase>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>

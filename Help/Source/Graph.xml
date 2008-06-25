@@ -5,7 +5,6 @@
 	<subtitle><graphic fileref="GraphIcon.png"/></subtitle>
 	<xi:include href="version.xml"/>
 	<bookinfo>
-		<edition>First</edition>
 		<authorgroup>
 			<author>
 				<firstname>Ivan</firstname>
