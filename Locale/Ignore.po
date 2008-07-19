@@ -142,15 +142,6 @@ msgstr ""
 msgid "A6"
 msgstr ""
 
-msgid "Letter"
-msgstr ""
-
-msgid "Ledger"
-msgstr ""
-
-msgid "Legal"
-msgstr ""
-
 msgid "10%"
 msgstr ""
 
