@@ -12,7 +12,7 @@ class TObject(object):
     @property
     def PropertyList(self):
         return PyVcl.GetPropertyList(self._handle)
-        
+
     def __del__(self):
         if "_owned" in self.__dict__ and self._owned:
             PyVcl.DeleteObject(self._handle)
@@ -25,7 +25,10 @@ class TObject(object):
         PyVcl.SetProperty(self._handle, name, value, self)
 
     def __repr__(self):
-        return "<object '%s' of type '%s' instance of %s.%s>" % (self.Name, self.ClassName, self.__class__.__module__, self.__class__.__name__)
+        try:
+            return "<object '%s' of type '%s' instance of %s.%s>" % (self.Name, self.ClassName, self.__class__.__module__, self.__class__.__name__)
+        except PyVcl.PropertyError:
+            return "<object of type '%s' instance of %s.%s>" % (self.ClassName, self.__class__.__module__, self.__class__.__name__)
 
 class TForm(TObject):
     def __init__(self, handle = 0, **keywords):
