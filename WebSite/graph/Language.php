@@ -200,8 +200,8 @@ the following languages:</font></p>
 
 
             <td width="16%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
@@ -228,8 +228,8 @@ Ipsen and Erik Lyngholt Nielsen</td>
 
 
             <td width="17%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -239,8 +239,8 @@ Ipsen and Erik Lyngholt Nielsen</td>
 
 
             <td width="16%">
-            
-      
+
+
       <p align="center">No</p>
 
 
@@ -266,8 +266,8 @@ Ipsen and Erik Lyngholt Nielsen</td>
 
 
             <td width="17%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -277,8 +277,8 @@ Ipsen and Erik Lyngholt Nielsen</td>
 
 
             <td width="16%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -304,8 +304,8 @@ Ipsen and Erik Lyngholt Nielsen</td>
 
 
             <td width="17%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -315,8 +315,8 @@ Ipsen and Erik Lyngholt Nielsen</td>
 
 
             <td width="16%">
-            
-      
+
+
       <p align="center">No</p>
 
 
@@ -343,8 +343,8 @@ Lerssi</td>
 
 
             <td width="17%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -354,8 +354,8 @@ Lerssi</td>
 
 
             <td width="16%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -381,8 +381,8 @@ Lerssi</td>
 
 
             <td width="17%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
@@ -392,8 +392,8 @@ Lerssi</td>
 
 
             <td width="16%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
@@ -420,8 +420,8 @@ Michael Bach Ipsen and Sebastian St&uuml;tz</td>
 
 
             <td width="17%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
@@ -431,8 +431,8 @@ Michael Bach Ipsen and Sebastian St&uuml;tz</td>
 
 
             <td width="16%">
-            
-      
+
+
       <div align="center">No</div>
 
 
@@ -459,8 +459,8 @@ Kannas </td>
 
 
             <td width="17%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -470,8 +470,8 @@ Kannas </td>
 
 
             <td width="16%">
-            
-      
+
+
       <p align="center">No</p>
 
 
@@ -497,8 +497,8 @@ Kannas </td>
 
 
             <td width="17%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
@@ -508,8 +508,8 @@ Kannas </td>
 
 
             <td width="16%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
@@ -528,10 +528,10 @@ Kannas </td>
 
           <tr>
             <td width="20%">Mongolian</td>
-            <td width="17%">     
+            <td width="17%">
       <p align="center">Yes</p>
             </td>
-            <td width="16%">          
+            <td width="16%">
       <p align="center">No</p>
             </td>
             <td width="48%">Batnasan Davaa</td>
@@ -539,10 +539,10 @@ Kannas </td>
 
           <tr>
             <td width="20%">Norwegian</td>
-            <td width="17%">     
+            <td width="17%">
       <p align="center">Yes</p>
             </td>
-            <td width="16%">          
+            <td width="16%">
       <p align="center">No</p>
             </td>
             <td width="48%">Tore Ottinsen</td>
@@ -558,8 +558,8 @@ Kannas </td>
 
 
             <td width="17%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -569,8 +569,8 @@ Kannas </td>
 
 
             <td width="16%">
-            
-      
+
+
       <p align="center">No</p>
 
 
@@ -580,8 +580,8 @@ Kannas </td>
 
 
             <td width="48%">
-            
-      
+
+
       <p>Pawe&#322; Gl&#261;b</p>
 
 
@@ -603,8 +603,8 @@ Kannas </td>
 
 
             <td width="17%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
@@ -614,8 +614,8 @@ Kannas </td>
 
 
             <td width="16%">
-            
-      
+
+
       <div align="center">No</div>
 
 
@@ -642,8 +642,8 @@ Fernanda</td>
 
 
             <td height="24" width="17%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -653,8 +653,8 @@ Fernanda</td>
 
 
             <td height="24" width="16%">
-            
-      
+
+
       <p align="center">No</p>
 
 
@@ -681,8 +681,8 @@ Leonovs</td>
 
 
             <td height="24" width="17%">
-            
-      
+
+
       <p align="center">Yes</p>
 
 
@@ -692,8 +692,8 @@ Leonovs</td>
 
 
             <td height="24" width="16%">
-            
-      
+
+
       <p align="center">No</p>
 
 
@@ -720,8 +720,8 @@ Malinovic &amp; Branimir Krstic</td>
 
 
             <td height="24" width="17%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
@@ -731,8 +731,8 @@ Malinovic &amp; Branimir Krstic</td>
 
 
             <td height="24" width="16%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
@@ -742,8 +742,8 @@ Malinovic &amp; Branimir Krstic</td>
 
 
             <td height="24" width="48%">
-            
-      
+
+
       <p>Jernej Ba&scaron;a, Rok &Scaron;tokelj and
             <br>
 
@@ -770,8 +770,8 @@ Barbara Pu&scaron;nar</p>
 
 
             <td height="24" width="17%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
@@ -781,8 +781,8 @@ Barbara Pu&scaron;nar</p>
 
 
             <td height="24" width="16%">
-            
-      
+
+
       <div align="center">No</div>
 
 
@@ -810,8 +810,8 @@ Gustavo Criscuolo, Francisco Oliver, Alejandro Arce
 
 
             <td height="24" width="17%">
-            
-      
+
+
       <div align="center">Yes</div>
 
 
@@ -821,8 +821,8 @@ Gustavo Criscuolo, Francisco Oliver, Alejandro Arce
 
 
             <td height="24" width="16%">
-            
-      
+
+
       <div align="center">No</div>
 
 
@@ -834,6 +834,24 @@ Gustavo Criscuolo, Francisco Oliver, Alejandro Arce
             <td height="24" width="48%">P&auml;r
 Sm&aring;rs </td>
 
+
+
+          </tr>
+
+
+          <tr>
+
+
+            <td>Turkish</td>
+
+
+            <td style="text-align: center;">Yes</td>
+
+
+            <td style="text-align: center;">No</td>
+
+
+            <td>Mumtaz Murat Arik</td>
 
 
           </tr>
@@ -858,22 +876,22 @@ Sm&aring;rs </td>
 
 
 
-        
-  
+
+
   </tbody>
-      
+
 </table>
 
 
 
-      
+
 <p><font size="+1">If you would like to see
 Graph in your own language, you are very welcome to perform the
 translation, and your effort will be approved of!</font></p>
 
 
 
-      
+
 <p><font size="+1">If you wish to help
 voluntarily, please contact me, and I will supply you with the
 necessary files. No particular programming skills are required, however
