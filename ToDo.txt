@@ -15,9 +15,11 @@ ASAP
 - Import/export user defined trendline models.
 - Fix labels attached to axes when axes are boxed.
 - Add a colored circle to the point series markers.
+- Add more point series markers, eg. vertical line.
 - Adjust size of grid lines (especially when printed to be read by blind users)
 - Adjust axes size (especially when printed to be read by blind users)
 - Grid: Replace dotted lines with dots/crosses where the grids intersect
+- Create a real forum. Look at phpBB
 
 Graph 4.3
 - Animation Player: Add buttons to move to first and last frame for easy compare.
@@ -92,6 +94,7 @@ Later
 - Reimplement calc in Func32 for optimal speed.
 - Show overlapping solid shadings/inequalities (use alpha blending?)
 - Make solid shadings/inequalities transparent (alpha blending) so the axes can be seen behind them.
+- Specify exact coordiante distances, eg. 1 mm between ticks or 1 cm between grid lines.
 
 To be considered
 - Reverse direction of axes.
@@ -116,6 +119,8 @@ To be considered
 - Improve algorithm for finding intersections between functions. (Also find points that only intersect but don't cross; Find least distance)
 - More possibilities for control how numbers are shown.
 - Add reidual plot when creating regressions.
+- Increase size/width of ticks (especially when printed for blind users)
+- Make it possible to see the direction of a parametric curve.
 
 Plugins:
 - Cirlce item
@@ -123,6 +128,7 @@ Plugins:
 - Add custom names to axes, e.g. sqrt(2) or hh:mm.
 - Implement the erf(x) and erfc(x) functions. (See email from profesor de ciencias at 29/12-07)
 - FFT of point series.
+- Create data for point series, ie. add plugin to context menu in Insert Point Series dialog.
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>
