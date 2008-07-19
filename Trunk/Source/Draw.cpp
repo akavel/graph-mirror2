@@ -440,14 +440,11 @@ void TDraw::DrawAxes()
   //Calculate font height for numbers
   Context.SetFont(Axes.NumberFont);
 
-  if(Axes.xAxis.ShowGrid)
+  std::vector<int> xGridMajor, xGridMinor, yGridMajor, yGridMinor;
+
+  if(Axes.xAxis.ShowGrid || Axes.GridStyle == gsDots)
   {
     //Show grid parallel with y-axis
-    if(Axes.xAxis.LogScl)
-      Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-    else
-      Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-
     double GridMin = GetMinValue(Axes.xAxis.GridUnit, Axes.xAxis.Min, Axes.xAxis.Max, yAxisCross, Axes.xAxis.LogScl);
     double GridPixelScl = xScale * (Axes.xAxis.LogScl ? std::log(Axes.xAxis.GridUnit) : Axes.xAxis.GridUnit);
 
@@ -468,41 +465,34 @@ void TDraw::DrawAxes()
       for(; x < x2 + 1; x += GridPixelScl)
         //Don't show at or beside axis (when scaled it might be moved a pixel or two)
         if(std::abs(x - xPixelCross) > 1)
-          Context.DrawLine(x + 0.5, AxesRect.Top, x + 0.5, AxesRect.Bottom);
+          if(Axes.xAxis.LogScl)
+            xGridMajor.push_back(x + 0.5);
+          else
+            xGridMinor.push_back(x + 0.5);
 
       if(x < x2 + 1 && x> x2 - 1)
         x += GridPixelScl;
 
       if(ShowGridTick && x2 < MaxPixel)
-      {
         //Draw solid lines instead of ticks
-        Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-        Context.DrawLine(x2 + 0.5, AxesRect.Top, x2 + 0.5, AxesRect.Bottom);
-        Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-      }
+        xGridMajor.push_back(x2 + 0.5);
     }
 
     if(Axes.xAxis.LogScl)
     {
-      Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
       for(double x = GridMin / Axes.xAxis.GridUnit; x < Axes.xAxis.Max; x *= Axes.xAxis.GridUnit)
         for(unsigned n = 1; n < 9; n++)
         {
           int X = xPoint(x*(1+(Axes.xAxis.GridUnit-1)*n/9));
           //Don't draw outside area (if Axes Style is Boxed)
           if(X > AxesRect.Left)
-            Context.DrawLine(X, AxesRect.Top, X, AxesRect.Bottom);
+            xGridMinor.push_back(X);
         }
     }
   }
 
-  if(Axes.yAxis.ShowGrid)
+  if(Axes.yAxis.ShowGrid || Axes.GridStyle == gsDots)
   {
-    if(Axes.yAxis.LogScl)
-      Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-    else
-      Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-
     double GridMin = GetMinValue(Axes.yAxis.GridUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
     double GridPixelScl = yScale * (Axes.yAxis.LogScl ? std::log(Axes.yAxis.GridUnit) : Axes.yAxis.GridUnit);
 
@@ -521,32 +511,57 @@ void TDraw::DrawAxes()
       for(; y > y2 + 1; y -= GridPixelScl)
         //Don't show at or beside axis (when scaled it might be moved a pixel or two)
         if(std::abs(y - yPixelCross) > 1)
-          Context.DrawLine(AxesRect.Left, y + 0.5, AxesRect.Right, y + 0.5);
+          if(Axes.yAxis.LogScl)
+            yGridMajor.push_back(y + 0.5);
+          else
+            yGridMinor.push_back(y + 0.5);
 
       if(y < y2 + 1 && y > y2 - 1)
         y -= GridPixelScl;
 
       if(ShowGridTick && y2 > MaxPixel)
-      {
         //Draw solid lines instead of ticks
-        Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-        Context.DrawLine(AxesRect.Left, y2 + 0.5, AxesRect.Right, y2 + 0.5);
-        Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
-      }
+        yGridMajor.push_back(y2 + 0.5);
     }
 
     if(Axes.yAxis.LogScl)
     {
-      Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
       for(double y = GridMin / Axes.yAxis.GridUnit; y < Axes.yAxis.Max; y *= Axes.yAxis.GridUnit)
         for(unsigned n = 1; n < 9; n++)
         {
           double Y = yPoint(y*(1+(Axes.yAxis.GridUnit-1)*n/9));
           if(Y < AxesRect.Top || Y > AxesRect.Bottom)
             break;
-          Context.DrawLine(AxesRect.Left, Y, AxesRect.Right, Y);
+          yGridMinor.push_back(Y);
         }
     }
+  }
+
+  if(Axes.GridStyle == gsLines)
+  {
+    //Draw solid lines
+    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
+    for(std::vector<int>::const_iterator Iter = xGridMajor.begin(); Iter != xGridMajor.end(); ++Iter)
+      Context.DrawLine(*Iter, AxesRect.Top, *Iter, AxesRect.Bottom);
+    for(std::vector<int>::const_iterator Iter = yGridMajor.begin(); Iter != yGridMajor.end(); ++Iter)
+      Context.DrawLine(AxesRect.Left, *Iter, AxesRect.Right, *Iter);
+
+    //Draw dotted lines
+    Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
+    for(std::vector<int>::const_iterator Iter = xGridMinor.begin(); Iter != xGridMinor.end(); ++Iter)
+      Context.DrawLine(*Iter, AxesRect.Top, *Iter, AxesRect.Bottom);
+    for(std::vector<int>::const_iterator Iter = yGridMinor.begin(); Iter != yGridMinor.end(); ++Iter)
+      Context.DrawLine(AxesRect.Left, *Iter, AxesRect.Right, *Iter);
+  }
+  else
+  {
+    int Width = Size(Axes.GridSize);
+    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, 1);
+    Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.GridColor);
+    for(std::vector<int>::const_iterator xIter = xGridMinor.begin(); xIter != xGridMinor.end(); ++xIter)
+      for(std::vector<int>::const_iterator yIter = yGridMinor.begin(); yIter != yGridMinor.end(); ++yIter)
+        Context.DrawEllipse(*xIter - Width, *yIter - Width, *xIter + Width, *yIter + Width);
+    //Draw a dot where the grid lines would cross
   }
 
   //If axes are diabled, don't draw axes, numbers and labels

@@ -27,7 +27,7 @@ object Form18: TForm18
     Top = 8
     Width = 306
     Height = 193
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     Anchors = [akLeft, akTop, akRight]
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -35,7 +35,7 @@ object Form18: TForm18
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabIndex = 0
+    TabIndex = 2
     TabOrder = 0
     object TabSheet1: TTntTabSheet
       Caption = 'Size'
@@ -190,9 +190,7 @@ object Form18: TForm18
         Hint = 'Choose paper size to use.'
         Style = csDropDownList
         ItemHeight = 13
-        ItemIndex = 2
         TabOrder = 1
-        Text = 'A4'
         Items.Strings = (
           'A2'
           'A3'
@@ -200,8 +198,8 @@ object Form18: TForm18
           'A5'
           'A6'
           'Letter'
-          'Legal'
-          'Ledger')
+          'Ledger'
+          'Legal')
       end
     end
   end

@@ -49,6 +49,11 @@ enum TNumberPlacement
   npBefore
 };
 
+enum TGridStyle
+{
+  gsLines, gsDots
+};
+
 struct TAxes
 {
   TAxis xAxis;
@@ -71,6 +76,7 @@ struct TAxes
   bool ZoomSquare;
   TAxesArrows AxesArrows;
   TNumberPlacement NumberPlacement;
+  TGridStyle GridStyle;
 
   TAxes();
   void WriteToIni(TConfigFile &IniFile) const;
