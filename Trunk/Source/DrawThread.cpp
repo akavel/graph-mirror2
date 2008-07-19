@@ -132,7 +132,7 @@ void TDrawThread::PrepareFunction(TBaseFuncType *F)
     bool LogScl = Axes.xAxis.LogScl && !Steps;
     double ds;
     if(Steps <= 0)
-      ds = LogScl ? std::exp(std::log(Axes.xAxis.Max / Axes.xAxis.Min) / AxesRect.Width()) : 1/Draw->xScale;
+      ds = LogScl ? std::exp(1/Draw->xScale) : 1/Draw->xScale;
     else if(Steps == 1)
       MinMax.second = MinMax.first, ds = 1;
     else if(F->From.IsFinite() && F->To.IsFinite())
@@ -1139,9 +1139,14 @@ void TDrawThread::Visit(TAxesView &AxesView)
 //---------------------------------------------------------------------------
 void TDrawThread::CreateInequality(TRelation &Relation)
 {
-  double dx = 1/Draw->xScale;
-  double dy = -1/Draw->yScale;
-  int dX = Draw->Width > 1200 ? Draw->Width / 120 : 1;
+  bool xLogScl = Axes.xAxis.LogScl;
+  bool yLogScl = Axes.yAxis.LogScl;
+  int dX = (Draw->Width > 1200) ? Draw->Width / 120 : 1;
+  std::exp(1.0); //Workaround for stupid bug in bcc 5.6.4
+  double dx = xLogScl ? std::exp(dX/Draw->xScale) : dX/Draw->xScale;
+  double dx2 = xLogScl ? std::exp(1/Draw->xScale) : 1/Draw->xScale;
+  double dy = yLogScl ? std::exp(-1/Draw->yScale) : -1/Draw->yScale;
+  std::exp(1.0); //Workaround for stupid bug in bcc 5.6.4
 
   std::vector<TRect> Points;
   Points.reserve(500);
@@ -1150,20 +1155,24 @@ void TDrawThread::CreateInequality(TRelation &Relation)
   Func32::ECalcError CalcError;
 
   double y = Axes.yAxis.Max;
-  for(int Y = AxesRect.Top; Y < AxesRect.Bottom + 1; Y++, y += dy)
+  for(int Y = AxesRect.Top; Y < AxesRect.Bottom + 1; Y++)
   {
     Args[1] = y;
     bool LastResult = false;
-    double x = Axes.xAxis.Min - dx/2;
-    for(int X = AxesRect.Left - 1; X < AxesRect.Right + dX; X += dX, x += dx * dX)
+    double x;
+    if(xLogScl)
+      x = Axes.xAxis.Min / std::sqrt(dx2);
+    else
+      x = Axes.xAxis.Min - dx2/2;
+    for(int X = AxesRect.Left - 1; X < AxesRect.Right + dX; X += dX)
     {
       Args[0] = x;
       long double Temp = Relation.Eval(Args, CalcError);
       bool Result = !_isnanl(Temp) && Temp != 0;
       if(Result != LastResult)
       {
-        double x2 = x - dx * (dX - 1);
-        for(int X2 = X - dX + 1; X2 <= X; x2 += dx, X2++)
+        double x2 =  xLogScl ? x / dx * dx2 : x - dx + dx2;
+        for(int X2 = X - dX + 1; X2 <= X; X2++, xLogScl ? x2 *= dx2 : x2 += dx2)
         {
           Args[0] = x2;
           Temp = Relation.Eval(Args, CalcError);
@@ -1179,12 +1188,14 @@ void TDrawThread::CreateInequality(TRelation &Relation)
         }
       }
       LastResult = Result;
+      xLogScl ? x *= dx : x += dx;
     }
 
     if(Aborted)
       return;
     if(LastResult)
       Points.push_back(TRect(XStart, Y, AxesRect.Right + 1, Y + 1));
+    yLogScl ? y *= dy : y += dy;  
   }
 
   Relation.Region.reset(new TRegion(Points));
@@ -1235,10 +1246,13 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
   Func32::ECalcError CalcError;
   double ds1 = Loop ? 1/Draw->xScale : -1/Draw->yScale;
   double ds2 = Loop ? -1/Draw->yScale : 1/Draw->xScale;
+  bool LogScl1 = Loop ? Axes.xAxis.LogScl : Axes.yAxis.LogScl;
+  bool LogScl2 = Loop ? Axes.yAxis.LogScl : Axes.xAxis.LogScl;
+
   int M1 = Size(Relation.GetSize()) / 2;
   int M2 = Size(Relation.GetSize() + 1) / 2;
 
-  double s1Min = Loop ? Axes.xAxis.Min - ds1/2 : Axes.yAxis.Max - ds1/2;
+  double s1Min = Loop ? Axes.xAxis.Min : Axes.yAxis.Max;
   double s2Min = Loop ? Axes.yAxis.Max : Axes.xAxis.Min;
 
   int S1Min = Loop ? AxesRect.Left - 1 : AxesRect.Top - 1;
@@ -1250,20 +1264,30 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
   int dS1 = Draw->Width > 1200 ? Draw->Width / 120 : 5;
   int dS2 = M2;
 
+  LogScl1 ? s1Min /= std::exp(ds1/2) : s1Min -= ds1/2;
+
+  double ds3 = LogScl1 ? std::exp(ds1) : ds1;
+  ds1 *= dS1;
+  ds2 *= dS2;
+  if(LogScl1)
+    ds1 = std::exp(ds1);
+  if(LogScl2)
+    ds2 = std::exp(ds2);
+
   double s2 = s2Min;
-  for(int S2 = S2Min; S2 < S2Max && !Aborted; S2 += dS2, s2 += ds2 * dS2)
+  for(int S2 = S2Min; S2 < S2Max && !Aborted; S2 += dS2, LogScl2 ? s2 *= ds2 : s2 += ds2)
   {
     Args[Loop] = s2;
     double Result[3] = {NAN, NAN};
     double s1 = s1Min;
-    for(int S1 = S1Min; S1 < S1Max; S1 += dS1, s1 += ds1 * dS1)
+    for(int S1 = S1Min; S1 < S1Max; S1 += dS1)
     {
       Args[!Loop] = s1;
       Result[2] = Relation.Eval(Args, CalcError);
       if(CheckResult1(Result))
       {
-        double s3 = s1 - ds1 * (dS1-1);
-        for(int S3 = S1 - dS1 + 1; S3 <= S1; S3++, s3 += ds1)
+        double s3 = LogScl1 ? s1 / ds1 * ds3 : s1 - ds1 + ds3;
+        for(int S3 = S1 - dS1 + 1; S3 <= S1; S3++)
         {
           Args[!Loop] = s3;
           Result[2] = Relation.Eval(Args, CalcError);
@@ -1274,10 +1298,19 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
               Points.push_back(TRect(S2 - M1, S3 - M1, S2 + M2, S3 + M2));
           Result[0] = Result[1];
           Result[1] = Result[2];
+          if(LogScl1)
+            s3 *= ds3;
+          else
+            s3 += ds3;
         }
       }
       else
-      Result[0] = Result[1], Result[1] = Result[2];
+        Result[0] = Result[1], Result[1] = Result[2];
+
+      if(LogScl1)
+        s1 *= ds1;
+      else
+        s1 += ds1;
     }
   }
 }
