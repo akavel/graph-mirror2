@@ -35,6 +35,7 @@ public:
   void Write(const std::string &Name, int Value);
   std::string Read(const std::string &Name, const std::string &Default) const;
   std::string Read(const std::string &Name, const char *Default) const {return Read(Name, std::string(Default));}
+  int Read(const std::string &Name) const;
   int Read(const std::string &Name, int Default) const;
   template<typename T>
   T ReadEnum(const std::string &Name, const T &Default) const {return Read(Name, static_cast<int>(Default));}
