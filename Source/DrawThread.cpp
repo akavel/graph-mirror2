@@ -260,12 +260,12 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
         }
 
         //If no error occured: Check if Pos and LastPos are not outside the image on the same side
-        if(!Err && F.DrawType == dtAuto)
+        if(!Err && F.DrawType == dtAuto && !Finished)
           if(!((Pos.x < 0 && LastPos.x < 0) || (Pos.x > AxesRect.Right && LastPos.x > AxesRect.Right) || (Pos.y < 0 && LastPos.y < 0) || (Pos.y > AxesRect.Bottom && LastPos.y > AxesRect.Bottom)))
           {
             unsigned Count = MaxExtraPoints; //Use a max loop count to prevent the algorithm from running wild
             //If there is more than 10 pixels between the two points, calculate a point in the middle.
-            //We use virtual and horizontal dist to avoid overflow in square calculation
+            //We use virtical and horizontal dist to avoid overflow in square calculation
             while(--Count && MaxDist(Pos, LastPos) > MaxPixelDist)
             {
               double sMiddle = LogScl ? std::sqrt(s*sLast) : (s + sLast) / 2; // Average between s and sLast
@@ -740,8 +740,8 @@ void TDrawThread::DrawShade(const TDrawShadeData &ShadeData)
   Context.SetPen(psClear, clWhite, 1);
   Context.SetBrush(Shade.BrushStyle, ForceBlack ? clBlack : Shade.Color);
 
-  //Draw marked area
-  Context.DrawPolygon(Points);
+  //Draw marked area, and clip at AxesRect
+  Context.DrawPolygon(Points, AxesRect);
 
   //Draw start and end of shading
   Context.SetPen(psSolid, ForceBlack ? clBlack : Shade.Color, 1);

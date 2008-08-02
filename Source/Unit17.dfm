@@ -122,10 +122,12 @@ object Form17: TForm17
     end
     object Popup_Insert: TTntMenuItem
       Caption = 'Insert row'
+      Hint = 'Inserts a row in the grid moving rows below one down.'
       OnClick = Popup_InsertClick
     end
     object Popup_Remove: TTntMenuItem
       Caption = 'Remove row'
+      Hint = 'Removes the selected rows.'
       OnClick = Popup_RemoveClick
     end
     object N2: TTntMenuItem

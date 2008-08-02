@@ -96,13 +96,22 @@ inline void TContext::Clip(TPoint &P1, const TPoint &P2, TOutCode OutCode, const
   }
 }
 //---------------------------------------------------------------------------
-//Draw polyline and clip to Rect. Clipping is implemented using the a modified
+//Draw polyline and clip to Rect.
+//NOTICE: data pointed to by Points may be changed temorarely but is always restored before exiting the function.
+void TContext::DrawPolyline(const TPoint *Points, unsigned Size, const TRect &Rect)
+{
+  TClipCallback Callback = &this->DrawPolyline;
+  ClipToRect(Callback, Points, Size, Rect, false);
+}
+//---------------------------------------------------------------------------
+//Splits Points into segments that fits into Rect, and call ClipCallback for each segment
+//Clipping is implemented using the a modified
 //Cohen-Sutherland algorithm. More information at:
 //http://shamimkhaliq.50megs.com/Java/lineclipper.htm
 //http://www.cc.gatech.edu/grads/h/Hao-wei.Hsieh/Haowei.Hsieh/mm.html
 //NOTICE: data pointed to by Points may be changed temorarely but is always restored before exiting the function.
 //NOTICE: Only 31 bit signed integer may be used as points. The calculation may overflow if the points exceeds MAXINT/2
-void TContext::DrawPolyline(const TPoint *Points, unsigned Size, const TRect &Rect)
+void TContext::ClipToRect(TClipCallback ClipCallback, const TPoint *Points, unsigned Size, const TRect &Rect, bool DoCrop)
 {
   if(Size < 2)
     return;
@@ -110,21 +119,41 @@ void TContext::DrawPolyline(const TPoint *Points, unsigned Size, const TRect &Re
   TPoint *Begin = const_cast<TPoint*>(Points);
   TPoint *End = Begin + Size;
 
+  if(DoCrop)
+  {
+    //Clip line between first and last point
+    TOutCode OutCode1 = CompOutCode(*(End-1), Rect);
+    TOutCode OutCode2 = CompOutCode(*Begin, Rect);
+    if(!(OutCode1 & OutCode2))
+    {
+      TPoint P[2] = {*(End-1), *Begin};
+      Clip(P[0], P[1], OutCode1, Rect);
+      Clip(P[0], P[1], CompOutCode(P[0], Rect), Rect);
+      Clip(P[1], P[0], OutCode2, Rect);
+      Clip(P[1], P[0], CompOutCode(P[1], Rect), Rect);
+      ClipCallback(P, 2);
+    }
+  }
+
   for(TPoint *P2 = Begin+1; P2 != End; ++P2)
   {
     TOutCode OutCode1 = CompOutCode(*(P2-1), Rect); //Position of P1
     TOutCode OutCode2 = CompOutCode(*P2, Rect); //Position of P2
 
     //Search for line that goes inside Rect (Loop while line is only outside)
-    while((OutCode1 & OutCode2) && P2 != End)
-      if(++P2 != End)
+    while((OutCode1 & OutCode2))
+    {
+      if(DoCrop && OutCode1 != OutCode2)
       {
-        OutCode1 = OutCode2;
-        OutCode2 = CompOutCode(*P2, Rect);
+        TPoint Temp = Crop(OutCode1, OutCode2, Rect);
+        ClipCallback(&Temp, 1);
       }
 
-    if(P2 == End)
-      return; //No more to draw
+      if(++P2 == End)
+        return;
+      OutCode1 = OutCode2;
+      OutCode2 = CompOutCode(*P2, Rect);
+    }
 
     //Store old P1 value and move P1 inside Rect
     TPoint *P1 = P2-1; //Start of polyline segment
@@ -139,7 +168,7 @@ void TContext::DrawPolyline(const TPoint *Points, unsigned Size, const TRect &Re
     if(P2 == End)
     {
       //Draw last segment and return
-      DrawPolyline(P1, P2 - P1);
+      ClipCallback(P1, P2 - P1);
       return;
     }
 
@@ -149,10 +178,18 @@ void TContext::DrawPolyline(const TPoint *Points, unsigned Size, const TRect &Re
     Clip(*P2, *(P2-1), CompOutCode(*P2, Rect), Rect);
 
     //Draw the line segment and restore start and end points
-    DrawPolyline(P1, P2 - P1 + 1);
+    ClipCallback(P1, P2 - P1 + 1);
     *P1 = OldP1;
     *P2 = OldP2;
   }
+}
+//---------------------------------------------------------------------------
+TPoint TContext::Crop(TOutCode OutCode1, TOutCode OutCode2, const TRect &Rect)
+{
+  return Point(
+    (OutCode1 | OutCode2) & ocLeft ? Rect.Left : Rect.Right,
+    (OutCode1 | OutCode2) & ocTop  ? Rect.Top  : Rect.Bottom
+  );
 }
 //---------------------------------------------------------------------------
 void TContext::DrawLine(int X1, int Y1, int X2, int Y2)
@@ -300,6 +337,23 @@ void TContext::DrawPolygon(const TPoint *Points, unsigned Size)
 {
   SetPolyFillMode(Canvas->Handle, WINDING);
   Canvas->Polygon(Points, Size-1);
+}
+//---------------------------------------------------------------------------
+void TContext::DrawPolygon(const TPoint *Points, unsigned Size, const TRect &Rect)
+{
+  struct
+  {
+    std::vector<TPoint> PointList;
+    void Append(const TPoint *Points, unsigned Size) {PointList.insert(PointList.end(), Points, Points + Size);}
+  } PointHandler;
+  ClipToRect(&PointHandler.Append, Points, Size, Rect, true);
+  DrawPolygon(PointHandler.PointList);
+}
+//---------------------------------------------------------------------------
+void TContext::DrawPolygon(const std::vector<TPoint> &Points, const TRect &Rect)
+{
+  if(!Points.empty())
+    DrawPolygon(&Points.front(), Points.size(), Rect);
 }
 //---------------------------------------------------------------------------
 void TContext::FillRect(const TRect &Rect)
@@ -509,5 +563,6 @@ TPoint TContext::ClipLine(const TPoint &P1, const TPoint &P2, const TRect &Rect)
   return P;
 }
 //---------------------------------------------------------------------------
+
 
 

@@ -8,6 +8,7 @@ Version 4.4
 - User defined trendline models can now be exported/imported.
 - When Zoom|Move system is active (or Shift is held down), you can just click on a coordinate to center it in the graphing area.
 - Now relations work correctly with logarithmic axes.
+- Fixed problem that might cause some shadings to be be shown or not shown correctly.
 - Several minor improvements.
 - Chinese (Simplified) translation added.
 - Basque translation added.

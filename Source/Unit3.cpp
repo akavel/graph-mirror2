@@ -71,6 +71,12 @@ __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
   NumberFont = Axes.NumberFont;
   LegendFont = Axes.LegendFont;
 
+  //Make sure the check boxes have space enough
+  CheckBox6->Width = Width;
+  CheckBox7->Width = Width;
+  CheckBox13->Width = Width;
+  CheckBox14->Width = Width;
+
   ScaleForm(this);
   UpdateEnabledControls();
 }

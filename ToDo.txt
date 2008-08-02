@@ -121,6 +121,7 @@ To be considered
 - Add reidual plot when creating regressions.
 - Increase size/width of ticks (especially when printed for blind users)
 - Make it possible to see the direction of a parametric curve.
+- Optionally disable accelerator characters in dialogs.
 
 Plugins:
 - Cirlce item
@@ -129,6 +130,7 @@ Plugins:
 - Implement the erf(x) and erfc(x) functions. (See email from profesor de ciencias at 29/12-07)
 - FFT of point series.
 - Create data for point series, ie. add plugin to context menu in Insert Point Series dialog.
+- Make the number of iterations optional when integrating (both for the integrate function and for area calculation)
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>

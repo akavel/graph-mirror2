@@ -59,7 +59,7 @@ public:		// User declarations
   void EditOptions(struct TImageOptions &Options, TImageFormat ImageFormat, int AWidth, int AHeight);
 };
 
-enum TPaperSize {psA2, psA3, psA4, psA5, psA6, psLetter, psLegal, psLedger};
+enum TPaperSize {psA2, psA3, psA4, psA5, psA6, psLetter, psLedger, psLegal};
 struct TImageOptions
 {
   int CustomWidth;
