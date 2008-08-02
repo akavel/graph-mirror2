@@ -356,7 +356,7 @@ object Form14: TForm14
         object CheckBox2: TTntCheckBox
           Left = 11
           Top = 16
-          Width = 113
+          Width = 126
           Height = 17
           Hint = 'Check to show the coordinate at each point.'
           Caption = 'Show coordinates'

@@ -774,6 +774,9 @@ void TForm1::LoadSettings(void)
   else
     ChangeLanguage(GetRegValue(REGISTRY_KEY, "Language", HKEY_LOCAL_MACHINE, "English"));
 
+  if(Registry.ValueExists("IntegrateSteps"))
+    Func32::IntegrateSteps = Registry.Read("IntegrateSteps");
+
   if(Registry.KeyExists(REGISTRY_KEY "\\Property"))
     Registry.OpenKey(REGISTRY_KEY "\\Property");
   Data.Property.Read(Registry);
@@ -1766,7 +1769,7 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
   SaveDialogEx1->Filter =
     "Windows Enhanced Meta File [*.emf]|*.emf|"
 //    "Encapsulated PostScript [*.eps]|*.eps|"
-    "Scaleable Vector Graphic [*.svg]|*.svg|"
+    "Scalable Vector Graphics [*.svg]|*.svg|"
     "Windows Bitmap [*.bmp]|*.bmp|"
     "Portable Network Graphics [*.png]|*.png|"
     "Joint Photographic Experts Group [*.jpg,*.jpeg]|*.jpg;*.jpeg|"

@@ -13,6 +13,8 @@
 #include <string>
 #include <boost/shared_ptr.hpp>
 
+typedef void (__closure *TClipCallback)(const TPoint *Points, unsigned Size);
+
 class TContext
 {
   enum TOutCode {ocInside=0, ocTop=1, ocBottom=2, ocLeft=4, ocRight=8};
@@ -27,7 +29,9 @@ class TContext
   void DrawPolyline2(const TPoint *Points, unsigned Size);
   void DrawPolyline(const std::vector<TPoint> &Points);
   static void Clip(TPoint &P1, const TPoint &P2, TOutCode OutCode, const TRect &Rect);
+  static TPoint Crop(TOutCode OutCode1, TOutCode OutCode2, const TRect &Rect);
   static TOutCode CompOutCode(const TPoint &P, const TRect &Rect);
+  static void ClipToRect(TClipCallback ClipCallback, const TPoint *Points, unsigned Size, const TRect &Rect, bool DoCrop);
 
 public:
   TContext(Graphics::TCanvas *ACanvas) : Canvas(ACanvas) {}
@@ -39,8 +43,12 @@ public:
 
   void DrawPolyline(const TPoint *Points, unsigned Size);
   void DrawPolyline(const TPoint *Points, unsigned Size, const TRect &Rect);
+
   void DrawPolygon(const std::vector<TPoint> &Points);
+  void DrawPolygon(const std::vector<TPoint> &Points, const TRect &Rect);
   void DrawPolygon(const TPoint *Points, unsigned Size);
+  void DrawPolygon(const TPoint *Points, unsigned Size, const TRect &Rect);
+
   void DrawLine(int X1, int Y1, int X2, int Y2);
   void DrawLine(const TPoint &P1, const TPoint &P2);
   void DrawText(const std::string &Str, int X, int Y);
