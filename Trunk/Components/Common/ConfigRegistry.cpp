@@ -72,16 +72,28 @@ std::string TConfigRegistry::Read(const std::string &Name, const std::string &De
   return &Result[0];
 }
 //---------------------------------------------------------------------------
-int TConfigRegistry::Read(const std::string &Name, int Default) const
+int TConfigRegistry::Read(const std::string &Name) const
 {
   if(GetValueSize(Name, REG_DWORD) == 0)
-    return Default;
+    throw ERegistryError();
   int Result;
   DWORD Size = sizeof(Result);
   LONG Error = RegQueryValueEx(Handle, Name.c_str(), 0, NULL, reinterpret_cast<BYTE*>(&Result), &Size);
   if(Error != ERROR_SUCCESS)
-    return Default;
+    throw ERegistryError();
   return Result;
+}
+//---------------------------------------------------------------------------
+int TConfigRegistry::Read(const std::string &Name, int Default) const
+{
+  try
+  {
+    return Read(Name);
+  }
+  catch(ERegistryError &E)
+  {
+    return Default;
+  }
 }
 //---------------------------------------------------------------------------
 bool TConfigRegistry::KeyExists(const std::string &Key, HKEY RootKey)
