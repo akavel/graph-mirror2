@@ -36,6 +36,7 @@ using std::log;
 using std::sqrt;
 
 const unsigned MaxRecursion = 100; //Maximum number of recursive calls allowed
+unsigned IntegrateSteps = 100; //Number of steps used by the integrate function
 
 /** Delay creation of table until first use. The rest of the library must be initialized first
  *  \param Ident: Id to get data for.
@@ -543,7 +544,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       long double Max = real(CalcF(Iter, DynData));
       if(ErrorCode)
         return 0;
-      return IntegrateT<T>(F, Min, Max, 100, DynData.Trigonometry, ErrorCode);
+      return IntegrateT<T>(F, Min, Max, IntegrateSteps, DynData.Trigonometry, ErrorCode);
     }
 
     case CodeSum:

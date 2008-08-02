@@ -689,6 +689,9 @@ public:
 
 enum TAnalyseType {atXAxisCross, atYAxisCross};
 std::vector<TCoordSet> AnalyseFunction(const TBaseFunc &Func, long double Min, long double Max, unsigned Steps, long double Tol, TAnalyseType AnalyseType);
+
+//Global variables (rarely changed)
+extern unsigned IntegrateSteps; //!<Number of steps used by the integrate function
 } //namespace Func32
 //---------------------------------------------------------------------------
 
