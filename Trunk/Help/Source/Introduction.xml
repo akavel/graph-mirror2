@@ -16,8 +16,8 @@
 	<para>
 		Graph is a program designed for drawing graphs of mathematical functions in a coordinate system and similar things.
 		The program is a standard Windows program with menus and dialogs.
-		The program is capable of drawing normal functions, parametric functions, polar functions, tangents, point series, shadings and relations.
-		It is also possible to evaluate points on the graphs, trace a graph with the mouse and much more.
+		The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations.
+		It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more.
 		For more information on using the program see <xref linkend="HowToUse"/>.
 	</para>
 	<para>
@@ -35,7 +35,7 @@
 			<listitem>
 				<para>
 					Which version are you using?
-					This is shown in the programs about box.
+					This is shown in the <menuchoice><guimenu>Help</guimenu><guimenuitem>About Graph...</guimenuitem></menuchoice> dialog box.
 					You should check if this is the newest version, else the bug may have been fixed already.
 				</para>
 			</listitem>
@@ -46,8 +46,8 @@
 			</listitem>
 			<listitem>
 				<para>
-					Explain very careful how I can reproduce the bug.
-					If I can't see what you see, it is very difficult for me to change the behavior.
+					Explain carefully how I can reproduce the bug.
+					If I can't see what you see, it is very difficult for me to solve the problem.
 				</para>
 			</listitem>
 		</itemizedlist>

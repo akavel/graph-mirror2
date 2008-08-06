@@ -5,7 +5,7 @@
 ]>
 <section id="AxesDialog">
 	<?dbhh topicname="IDH_DIALOG_AXES" topicid="30"?>
-	<title>Edit|Axes</title>
+	<title>Edit | Axes</title>
 	<indexterm><primary>Axes dialog</primary></indexterm>
 	<indexterm><primary>x-axis</primary></indexterm>
 	<indexterm><primary>y-axis</primary></indexterm>

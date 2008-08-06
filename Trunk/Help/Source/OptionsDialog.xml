@@ -5,13 +5,13 @@
 ]>
 <section id="OptionsDialog">
 	<?dbhh topicname="IDH_DIALOG_OPTIONS" topicid="40"?>
-	<title>Edit|Options</title>
+	<title>Edit | Options</title>
 	<indexterm><primary>Options dialog</primary></indexterm>
 	<para>
 		When you choose the menu item
 		<menuchoice>
 			<guimenu>Edit</guimenu>
-			<guimenuitem>Options</guimenuitem>
+			<guimenuitem>Options...</guimenuitem>
 		</menuchoice>
 		the dialog shown below will appear.
 		In this dialog, you can change general program options.

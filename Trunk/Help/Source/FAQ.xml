@@ -6,14 +6,8 @@
 	<indexterm><primary>questions</primary></indexterm>
 	<indexterm><primary>tips</primary></indexterm>
 	<indexterm><primary>tricks</primary></indexterm>
+	<!--
 	<qandaset defaultlabel='qanda'>
-		<qandaentry role="fo">  <!-- Workaround for silly bug -->
-			<question>
-			</question>
-			<answer>
-			</answer>
-		</qandaentry>
-
 		<qandaentry>
 			<question>
 				<para>
@@ -141,7 +135,7 @@
 			</question>
 			<answer>
 				<para>
-					I know a lot of countries uses comma to separate the decimal part from the integer part, but Graph uses comma for separating function arguments.
+					I know a lot of countries use comma to separate the decimal part from the integer part, but Graph uses comma for separating function arguments.
 					The program always uses a period to separate decimals from the integer value, no matter your local settings.
 				</para>
 			</answer>
@@ -158,8 +152,8 @@
 					A standard function cannot be vertical, but it can have a slope so large that it looks vertical.
 					The function <userinput>f(x)=1000(x-5)</userinput> looks like a vertical line at x=5.
 					A real vertical line can be drawn as a parametric function.
-					Select <guilabel>Parametric function</guilabel> as <guilabel>function type</guilabel> when adding the function.
-					You can when add the vertical line x=5 as <userinput>x(t)=5, y(t)=t</userinput>.
+					Select <guilabel>Parametric function</guilabel> as <guilabel>Function type</guilabel> when adding the function.
+					You can then add the vertical line at x=5 as <userinput>x(t)=5, y(t)=t</userinput>.
 					Alternatively you can add x=5 as a relation.
 				</para>
 			</answer>
@@ -174,7 +168,7 @@
 			<answer>
 				<para>
 					To draw a function with y as the independent variable, you need to use a parametric function.
-					Select <guilabel>Parametric function</guilabel> as <guilabel>function type</guilabel> when adding the function.
+					Select <guilabel>Parametric function</guilabel> as <guilabel>Function type</guilabel> when adding the function.
 					If you want to draw the function x=sin(y), you can now enter the function as <userinput>x(t)=sin(t), y(t)=t</userinput>.
 					Alternatively you can draw it as a relation where you can enter <userinput>x=sin(y)</userinput> directly.
 				</para>
@@ -229,7 +223,7 @@
 		<qandaentry>
 			<question>
 				<para>
-					Can I copy a functionor point series from one instance of the program to another?
+					Can I copy a function or point series from one instance of the program to another?
 				</para>
 			</question>
 			<answer>
@@ -306,7 +300,7 @@
 					<link linkend="SaveImageDialog">
 						<menuchoice>
 							<guimenu>File</guimenu>
-							<guimenuitem>Save as image</guimenuitem>
+							<guimenuitem>Save as image...</guimenuitem>
 						</menuchoice>
 					</link>
 					dialog.
@@ -326,6 +320,6 @@
 				</para>
 			</answer>
 		</qandaentry>
-
 	</qandaset>
+-->
 </chapter>
