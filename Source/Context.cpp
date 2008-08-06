@@ -264,7 +264,9 @@ void TContext::DrawText(const std::string &Str, int X, int Y)
 //---------------------------------------------------------------------------
 void TContext::DrawText(const std::wstring &Str, int X, int Y)
 {
-  TextOutW(Canvas->Handle, X, Y, Str.c_str(), Str.size());
+  //It looks like ExtTextOutW() is using 16 bit integers
+  if(X > -MAXSHORT && X < MAXSHORT && Y > -MAXSHORT && Y < MAXSHORT)
+    ExtTextOutW(Canvas->Handle, X, Y, 0, NULL, Str.c_str(), Str.size(), NULL);
   Changed();
 }
 //---------------------------------------------------------------------------
@@ -382,7 +384,9 @@ void TContext::DrawPolydots(const TPoint *Points, unsigned Size, TColor Color)
 //---------------------------------------------------------------------------
 void TContext::DrawEllipse(int X1, int Y1, int X2, int Y2)
 {
-  Canvas->Ellipse(X1, Y1, X2, Y2);
+  //Ellipse() seems to use 16 bit integers
+  if(X1 > -MAXSHORT && Y1 > -MAXSHORT && X2 < MAXSHORT && Y2 < MAXSHORT)
+    Canvas->Ellipse(X1, Y1, X2, Y2);
 }
 //---------------------------------------------------------------------------
 void TContext::DrawArc(int X1, int Y1, int X2, int Y2, int X3, int Y3, int X4, int Y4)
