@@ -5,7 +5,7 @@
 ]>
 <section id="InsertRelationDialog">
 	<?dbhh topicname="IDH_DIALOG_RELATION" topicid="20"?>
-	<title>Function|Insert relation</title>
+	<title>Function | Insert relation</title>
 	<indexterm><primary>relation</primary></indexterm>
 	<indexterm><primary>equation</primary></indexterm>
 	<indexterm><primary>equality</primary></indexterm>
@@ -16,7 +16,7 @@
 		To insert a relation you select the menu item
 		<menuchoice>
 			<guimenu>Function</guimenu>
-			<guimenuitem>Insert relation</guimenuitem>
+			<guimenuitem>Insert relation...</guimenuitem>
 		</menuchoice>
 		.
 	</para>

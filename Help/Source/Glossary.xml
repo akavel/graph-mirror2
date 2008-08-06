@@ -29,6 +29,17 @@
 	</glossentry>
 
 	<glossentry>
+		<glossterm>graph element</glossterm>
+		<indexterm><primary>graph element</primary></indexterm>
+		<glossdef>
+			<para>
+				 A graph element is something that is shown in the coordinate system. This can be a function, point series, label, relation, etc.
+				 The graph elements are also shown in the function list where they can be manipulated from the <guimenu>Function</guimenu> menu or the context menu.
+			</para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry>
 		<glossterm>function list</glossterm>
 		<indexterm><primary>function list</primary></indexterm>
 		<glossdef>
@@ -36,7 +47,7 @@
 				The function list is shown in the left side of the main window. This list shows a list
 				of all functions, tangents, point series, shadings and relations. When you want to manipulate
 				an item, you first have to select it. The selected item is normally marked in blue, but it will
-				be marked in gray when the coordinate system has focus. You can manipulate the element through
+				be marked in gray when something other than the function list has focus. You can manipulate the selected element through
 				the menu <guimenu>Function</guimenu> or through the context menu appearing when you <action>right click</action> on the element.
 			</para>
 		</glossdef>

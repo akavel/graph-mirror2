@@ -5,12 +5,12 @@
 ]>
 <section id="EvaluateDialog">
 	<?dbhh topicname="IDH_DIALOG_EVALUATE" topicid="100"?>
-	<title>Calc|Evaluate</title>
+	<title>Calc | Evaluate</title>
 	<para>
 		This dialog is used for interactive calculations on functions.
 		The dialog may be docked below the function list, which is default, or undocked to a floating dialog.
 	</para>
-	<simplesect>
+	<simplesect id="EvaluateFrame">
 		<title>Evaluate</title>
 		<para>
 			When
@@ -69,7 +69,7 @@
 		</para>
 	</simplesect>
 
-	<simplesect>
+	<simplesect id="AreaFrame">
 		<title>Area</title>
 		<para>
 			When
@@ -96,7 +96,7 @@
 		</para>
 	</simplesect>
 
-	<simplesect>
+	<simplesect id="LengthOfPathFrame">
 		<title>Length of path</title>
 		<para>
 			When
