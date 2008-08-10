@@ -172,6 +172,7 @@ BEGIN
   527 "Evaluate"
   528 "Edit text label"
   529 "The model needs some constants (starting with a $) for Graph to find."
+  530 "<Language> translation by <Translator>"  //Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
 
   530 "'%s' has to be an integer value between 0 and 1000."
   531 "Printing error"
