@@ -172,8 +172,6 @@ BEGIN
   527 "Evaluate"
   528 "Edit text label"
   529 "The model needs some constants (starting with a $) for Graph to find."
-  530 "<Language> translation by <Translator>"  //Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
-
   530 "'%s' has to be an integer value between 0 and 1000."
   531 "Printing error"
   532 "An unknown error occurred while printing."
@@ -202,6 +200,7 @@ BEGIN
   555 "Edit f'(x)"
   556 "Edit trendline"
   557 "Categories:"     //Customize toolbar dialog
+  558 "<Language> translation by <Translator>"  //Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
 
   600 "This Tip of the day can give you a lot of information about the program that most users don't know."                                                       //Tip of the Day
   601 "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"                                                                //Tip of the Day
