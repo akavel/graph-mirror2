@@ -241,8 +241,7 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y) const
         {
           const Func32::TFunc *StdFunc2 = dynamic_cast<const Func32::TFunc*>(&Func2->GetFunc());
 
-          //Temp change: Don't search the function itself. It doesn't work
-          if(/*StdFunc2 &&*/ Func == Func2)
+          if(StdFunc2 && Func == Func2)
             continue; //If it is the same function, and the function is a TFunc there is no crossing
 
           if(p1 != Begin)
@@ -259,7 +258,15 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y) const
               }
             else
             {
-              TCoordSetIter Iter = FindCrossing(p1, Func2->sList.begin(), Func2->sList.end());
+              TCoordSetIter Iter;
+              if(Func == Func2)
+              { //Special handling for crossing with self: Split the search in two
+                Iter = FindCrossing(p1, Func->sList.begin(), p1-2);
+                if(Iter == p1-2)
+                  Iter = FindCrossing(p1, p1+2, Func->sList.end());
+              }
+              else
+                Iter = FindCrossing(p1, Func2->sList.begin(), Func2->sList.end());
               if(Iter != Func2->sList.end())
               {
                 unsigned N = Range<unsigned>(1, p1 - Begin, Func->sList.size() - 3);
@@ -284,7 +291,15 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y) const
               }
             else
             {
-              TCoordSetIter Iter = FindCrossing(p3, Func2->sList.begin(), Func2->sList.end());
+              TCoordSetIter Iter;
+              if(Func == Func2)
+              { //Special handling for crossing with self: Split the search in two
+                Iter = FindCrossing(p3, Func->sList.begin(), p3-2);
+                if(Iter == p3-2)
+                  Iter = FindCrossing(p3, p3+2, Func->sList.end());
+              }
+              else
+                Iter = FindCrossing(p3, Func2->sList.begin(), Func2->sList.end());
               if(Iter != Func2->sList.end())
               {
                 unsigned N = Range<unsigned>(1, p3 - Begin, Func->Points.size() - 3);
