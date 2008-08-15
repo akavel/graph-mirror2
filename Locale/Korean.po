@@ -6,14 +6,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-07-30 19:49\n"
-"PO-Revision-Date: 2008-08-07 17:18+0900\n"
+"POT-Creation-Date: 2008-08-12 22:02\n"
+"PO-Revision-Date: 2008-08-13 19:55+0900\n"
 "Last-Translator: The Darkness <xgate32@hotmail.com>\n"
+"Language-Team: Graph Korean Translation Team <xgate32@hotmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: dxgettext 1.2.1\n"
-"Language-Team: Graph Korean Translation Team <xgate32@hotmail.com>\n"
 "X-Poedit-Language: Korean\n"
 "X-Poedit-Country: KOREA, REPUBLIC OF\n"
 "X-Poedit-Basepath: C:\\Program Files\\Graph\\Locale\n"
@@ -85,9 +85,8 @@ msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr "입력된 매개변수 t에 대해 함수의 기울기를 구함."
 
 #. ParFuncFrame..Edit1....Hint
-#. PolFuncFrame..Edit1....Hint
-msgid "Enter the independent variable for which you want to evaluate the function, or click on the function in the main window."
-msgstr "검토하려는 함수에 종속변수를 입력하거나 메인창에서 함수를 클릭하세요."
+msgid "Enter the value for the parameter t for which you want to evaluate the function, or click on the graph in the graphing area."
+msgstr "검토하길 원하는 함수에 변수값을 입력하거나, 그래프 영역에서 그래프를 클릭하세요."
 
 #. ParFuncFrame..ComboBox1....Hint
 #. StdFuncFrame..ComboBox1....Hint
@@ -166,9 +165,13 @@ msgstr "주어진 각에 대한 함수의 도함수를 구함."
 msgid "The slope of the function evaluated for the given angle."
 msgstr "주어진 각에 대한 함수의 경사를 구함."
 
+#. PolFuncFrame..Edit1....Hint
+msgid "Enter the value of the polar angle for which you want to evaluate the function, or click on the graph in the graphing area."
+msgstr "검토하려는 함수에 극각을 입력하거나, 그래프 영역에서 그래프를 클릭하세요."
+
 #. StdFuncFrame..Edit1....Hint
-msgid "Enter a number for which you want to evaluate the function, or click on the function in the main window."
-msgstr "검토하길 원하는 함수에 숫자를 입력하거나, 메인창에서 함수를 클릭하세요."
+msgid "Enter a value for which you want to evaluate the function, or click on the graph in the graphing area."
+msgstr "검토하길 원하는 함수에 숫자를 입력하거나, 그래프 영역에서 그래프를 클릭하세요."
 
 #. StdFuncFrame..ComboBox1....Items.Strings
 msgid "Extremum"
@@ -183,16 +186,16 @@ msgid "This is the first derivative of the function evaluated for the entered va
 msgstr "입력된 값에 대해 함수의 첫번째 도함수를 구합니다."
 
 #. StdFuncFrame..Edit4....Hint
-msgid "This is the functions second derivative evaluated for the entered value."
-msgstr "입력된 값에 대해 함수의 두번째 도함수를 구합니다."
+msgid "This is the second derivative of the function evaluated for the entered value."
+msgstr "이것은 입력된 값에 대한 함수의 두번째 도함수입니다."
 
 #. TanFrame..Edit2....Hint
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
 msgstr "입력된 x-좌표에 y-좌표를 대응시킵니다."
 
 #. TanFrame..Edit1..Hint
-msgid "Enter an x-coordinate or click in the main window."
-msgstr "x-좌표를 입력하거나 메인창에서 클릭하세요."
+msgid "Enter an x-coordinate or click in the graphing area."
+msgstr "x-좌표를 입력하거나 그래프 영역에서 클릭."
 
 #. Form1..MainMenu..File_("File")..Caption
 #. Form1..ActionManager..NewAction("New")..Category
@@ -231,7 +234,7 @@ msgstr "편집"
 #. Form1..ActionManager..ZoomSquareAction("Square")..Category
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Category
 #. Form1..ActionManager..ZoomFitAction("Fit")..Category
-#. Form1..ActionManager..ZoomAllPointsAction("All points")..Category
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Category
 #. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Category
 #. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Category
 #. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Category
@@ -256,7 +259,7 @@ msgstr "플러그인"
 #. Form1..MainMenu..Help_("Help")..Caption
 #. Form1..ActionManager..ContentsAction("Contents and index")..Category
 #. Form1..ActionManager..ListAction("List of functions")..Category
-#. Form1..ActionManager..HomePageAction("Go to home page")..Category
+#. Form1..ActionManager..HomePageAction("Graph web site")..Category
 #. Form1..ActionManager..UpdateAction("Check for update")..Category
 #. Form1..ActionManager..AboutAction("About Graph...")..Category
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Category
@@ -274,7 +277,7 @@ msgstr "플러그인"
 #. Form3("Edit axes")..Button3("Help")..Caption
 #. Form4("Options")..Button3("Help")..Caption
 #. Form5("Insert function")..Button3("Help")..Caption
-#. Form6("Text label")..Button3("Help")..Caption
+#. Form6("Insert text label")..Button3("Help")..Caption
 #. Form7("Insert f'(x)")..Button3("Help")..Caption
 msgid "Help"
 msgstr "도움말"
@@ -357,17 +360,27 @@ msgstr "이미지 위의 y-축 오른편에 제목 배치."
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
 #. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
-#. Form6("Text label")..ColorBox1..CustomName
-#. Form6("Text label")..ColorBox2..CustomName
+#. Form6("Insert text label")..ColorBox1..CustomName
+#. Form6("Insert text label")..ColorBox2..CustomName
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "사용자 정의..."
+
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Hint
+msgid "Place the label at a custom position."
+msgstr "사용자 위치에 제목 놓기."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Caption
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
 #. Shown in rotation dialog
 msgid "Rotation"
 msgstr "회전"
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
+msgid "Specify the angle of rotation for the label."
+msgstr "제목 회전각 정의."
 
 #. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
@@ -393,16 +406,16 @@ msgid "Open..."
 msgstr "열기..."
 
 #. Form1..ActionManager..OpenAction("Open...")..Hint
-msgid "Read coordinate system and functions from a file."
-msgstr "파일에서 좌표계와 함수 읽기."
+msgid "Read a coordinate system from a file."
+msgstr "파일에서 좌표계 읽기."
 
 #. Form1..ActionManager..SaveAction("Save")..Caption
 msgid "Save"
 msgstr "저장"
 
 #. Form1..ActionManager..SaveAction("Save")..Hint
-msgid "Write coordinate system and functions to a file."
-msgstr "파일에 좌표계와 함수 쓰기."
+msgid "Save the current coordinate system to a file."
+msgstr "현재 좌표계를 파일로 저장."
 
 #. Form1..ActionManager..SaveAsAction("Save as...")..Caption
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Caption
@@ -446,7 +459,7 @@ msgid "Quit the program."
 msgstr "프로그램 종료."
 
 #. Form1..ActionManager..UndoAction("Undo")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Undo("Undo")..Caption
 msgid "Undo"
 msgstr "되돌리기"
 
@@ -455,7 +468,7 @@ msgid "Undo the last action."
 msgstr "마지막 작동 되돌리기."
 
 #. Form1..ActionManager..RedoAction("Redo")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Redo("Redo")..Caption
 msgid "Redo"
 msgstr "다시 실행"
 
@@ -466,7 +479,7 @@ msgstr "완료되지 않은 마지막 명령 다시하기."
 #. Form1..ActionManager..CutAction("Cut")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Caption
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Cut("Cut")..Caption
 msgid "Cut"
 msgstr "잘라내기"
 
@@ -478,7 +491,7 @@ msgstr "선택된 함수 또는 포인트 시리즈를 클립보드로 잘라내
 #. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Caption
 #. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Caption
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Copy("Copy")..Caption
 msgid "Copy"
 msgstr "복사하기"
 
@@ -489,7 +502,7 @@ msgstr "선택된 함수 또는 포인트 시리즈를 클립보드로 복사하
 #. Form1..ActionManager..PasteAction("Paste")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")..Caption
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Paste("Paste")..Caption
 msgid "Paste"
 msgstr "붙여넣기"
 
@@ -596,7 +609,7 @@ msgstr "확대"
 
 #. Form1..ActionManager..ZoomInAction("In")..Hint
 msgid "Zoom in."
-msgstr "축소."
+msgstr "확대."
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Caption
 msgid "Out"
@@ -604,7 +617,7 @@ msgstr "축소"
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Hint
 msgid "Zoom out."
-msgstr "확대."
+msgstr "축소."
 
 #. Form1..ActionManager..ZoomWindowAction("Window")..Caption
 msgid "Window"
@@ -627,8 +640,8 @@ msgid "Standard"
 msgstr "표준"
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Hint
-msgid "Zoom to standard coordinates."
-msgstr "표준좌표계로 확대/축소."
+msgid "Resets the axes to their default settings."
+msgstr "기본 설정값으로 축 초기화."
 
 #. Form1..ActionManager..MoveUpAction("Move up")..Category
 #. Form1..ActionManager..MoveDownAction("Move down")..Category
@@ -646,6 +659,10 @@ msgstr "위로 이동"
 msgid "Move the window up along the coordinate system."
 msgstr "좌표계를 따라 창을 위로 이동."
 
+#. Form1..ActionManager..MoveUpAction("Move up")....SecondaryShortCuts.Strings
+msgid "Ctrl+Shift+Up"
+msgstr "Ctrl+Shift+Up"
+
 #. Form1..ActionManager..MoveDownAction("Move down")..Caption
 msgid "Move down"
 msgstr "아래로 이동"
@@ -653,6 +670,10 @@ msgstr "아래로 이동"
 #. Form1..ActionManager..MoveDownAction("Move down")..Hint
 msgid "Move the window down along the coordinate system."
 msgstr "좌표계를 따라 창을 아래로 이동."
+
+#. Form1..ActionManager..MoveDownAction("Move down")....SecondaryShortCuts.Strings
+msgid "Ctrl+Shift+Down"
+msgstr "Ctrl+Shift+Down"
 
 #. Form1..ActionManager..MoveLeftAction("Move left")..Caption
 msgid "Move left"
@@ -662,6 +683,10 @@ msgstr "왼쪽으로 이동"
 msgid "Move the window to the left along the coordinate system."
 msgstr "좌표계를 따라 창을 왼쪽으로 이동."
 
+#. Form1..ActionManager..MoveLeftAction("Move left")....SecondaryShortCuts.Strings
+msgid "Ctrl+Shift+Left"
+msgstr "Ctrl+Shift+Left"
+
 #. Form1..ActionManager..MoveRightAction("Move right")..Caption
 msgid "Move right"
 msgstr "오른쪽으로 이동"
@@ -669,6 +694,10 @@ msgstr "오른쪽으로 이동"
 #. Form1..ActionManager..MoveRightAction("Move right")..Hint
 msgid "Move the window to the right along the coordinate system."
 msgstr "좌표계를 따라 창을 오른쪽으로 이동."
+
+#. Form1..ActionManager..MoveRightAction("Move right")....SecondaryShortCuts.Strings
+msgid "Ctrl+Shift+Right"
+msgstr "Ctrl+Shift+Right"
 
 #. Form1..ActionManager..MoveAction("Move system")..Caption
 msgid "Move system"
@@ -723,11 +752,11 @@ msgstr "함수 목록"
 msgid "Shows a list of built-in functions that can be used for graphing."
 msgstr "그래프 작성에 사용될 수 있는 만들어진 함수 목록 보이기"
 
-#. Form1..ActionManager..HomePageAction("Go to home page")..Caption
-msgid "Go to home page"
-msgstr "홈페이지로 가기"
+#. Form1..ActionManager..HomePageAction("Graph web site")..Caption
+msgid "Graph web site"
+msgstr "Graph 웹사이트"
 
-#. Form1..ActionManager..HomePageAction("Go to home page")....Hint
+#. Form1..ActionManager..HomePageAction("Graph web site")....Hint
 msgid "Opens the default browser and shows the home page of the program."
 msgstr "기본 브라우져를 열고 프로그램의 홈페이지 보이기."
 
@@ -757,16 +786,16 @@ msgid "Fit"
 msgstr "맞춤"
 
 #. Form1..ActionManager..ZoomFitAction("Fit")..Hint
-msgid "Zoom to show the selected function."
-msgstr "선택된 함수를 보여주기 위해 확대/축소."
+msgid "Zoom to show the selected element."
+msgstr "선택된 요소를 보여주기 위해 확대/축소."
 
-#. Form1..ActionManager..ZoomAllPointsAction("All points")..Caption
-msgid "All points"
-msgstr "모든 점"
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Caption
+msgid "Fit all"
+msgstr "전체 맞춤"
 
-#. Form1..ActionManager..ZoomAllPointsAction("All points")..Hint
-msgid "Zoom as much as all points are visible."
-msgstr "모든 점이 보일 정도로 확대/축소."
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Hint
+msgid "Zoom to show all elements."
+msgstr "모든 요소를 보여주기 위해 확대/축소."
 
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Caption
 msgid "Frequently Asked Questions"
@@ -781,8 +810,8 @@ msgid "Insert label..."
 msgstr "제목 삽입..."
 
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
-msgid "Insert a text label"
-msgstr "텍스트 제목 삽입"
+msgid "Insert a text label."
+msgstr "텍스트 제목 삽입."
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -883,13 +912,13 @@ msgid "Import point series from a data file."
 msgstr "데이터 파일에서 포인트 시리즈 불러오기."
 
 #. Form1..ActionManager..InsertObjectAction("Insert object...")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
 msgid "Insert object..."
 msgstr "객체 삽입..."
 
-#. Form1..ColorSelect("Select color")..Caption
-msgid "Select color"
-msgstr "색상 선택"
+#. Form1..ActionManager..InsertObjectAction("Insert object...")..Hint
+msgid "Insert an OLE object such as a drawing or an equation."
+msgstr "그림이나 방정식 같은 OLE 객체를 삽입."
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -1028,7 +1057,7 @@ msgstr "제약조건:"
 #. Form3("Edit axes")..Button1("OK")..Caption
 #. Form4("Options")..Button1("OK")..Caption
 #. Form5("Insert function")..Button1("OK")..Caption
-#. Form6("Text label")..Button1("OK")..Caption
+#. Form6("Insert text label")..Button1("OK")..Caption
 #. Form7("Insert f'(x)")..Button1("OK")..Caption
 #. Form8("Add model")..Button1("OK")..Caption
 #. PrintFrm("Print")..Button1("OK")..Caption
@@ -1048,7 +1077,7 @@ msgstr "확인"
 #. Form3("Edit axes")..Button2("Cancel")..Caption
 #. Form4("Options")..Button2("Cancel")..Caption
 #. Form5("Insert function")..Button2("Cancel")..Caption
-#. Form6("Text label")..Button2("Cancel")..Caption
+#. Form6("Insert text label")..Button2("Cancel")..Caption
 #. Form7("Insert f'(x)")..Button2("Cancel")..Caption
 #. Form8("Add model")..Button2("Cancel")..Caption
 #. PrintFrm("Print")..Button2("Cancel")..Caption
@@ -1072,11 +1101,9 @@ msgid "Description:"
 msgstr "설명:"
 
 #. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
-#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
 #. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
-#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
-msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
-msgstr "범례에 보이는 설명문 쓰기. 공백이면 방정식이 사용됨."
+msgid "Write a descriptive text to show in the legend and function list. If empty the formula will be used."
+msgstr "범례와 함수 목록에 보이는 설명문 쓰기. 공백이면 방정식이 사용됨."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
@@ -1155,6 +1182,11 @@ msgstr "접선"
 #. Form12("Insert tangent/normal")..RadioGroup1("Type")....Items.Strings
 msgid "Normal"
 msgstr "법선"
+
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
+msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
+msgstr "범례에 보이는 설명문 쓰기. 공백이면 방정식이 사용됨."
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Caption
 #. Form5("Insert function")..GroupBox4("Graph properties")..Caption
@@ -1281,7 +1313,7 @@ msgstr "다항식"
 msgid "Logarithmic"
 msgstr "로그"
 
-#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton1("Linear")..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton1("Linear").Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Linear"
 msgstr "선형"
@@ -1302,7 +1334,7 @@ msgstr "직선의 시리즈와 같은 평균 이동을 생성."
 msgid "Moving average"
 msgstr "이동 평균"
 
-#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText2("Period:")..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText2("Period:").Caption
 msgid "Period:"
 msgstr "구간:"
 
@@ -1345,6 +1377,29 @@ msgstr "절편 상자에 y-축과 만나는 추세선 절편값을 입력합니�
 msgid "Intercept ="
 msgstr "절편 ="
 
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Import("Import from file...")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Caption
+msgid "Import from file..."
+msgstr "파일에서 불러오기..."
+
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Import("Import from file...")..Hint
+msgid "Import user models from a file."
+msgstr "파일에서 사용자 모델 불러오기."
+
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Caption
+msgid "Export all to file..."
+msgstr "파일로 모두 내보내기..."
+
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Hint
+msgid "Export user models to a file."
+msgstr "파일로 사용자 모델 내보내기."
+
+#. Form13("Insert trendline")..SaveDialog1..Filter
+#. Form13("Insert trendline")..OpenDialog1..Filter
+msgid "User models [*.ini]|*.ini"
+msgstr "사용자 모델 [*.ini]|*.ini"
+
 #. Form14("Insert point series")..Caption
 msgid "Insert point series"
 msgstr "포인트 시리즈 삽입"
@@ -1378,7 +1433,7 @@ msgstr "표시"
 msgid "Size:"
 msgstr "크기:"
 
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Edit2..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Edit2.Hint
 msgid "Choose the size of the markers."
 msgstr "표시의 크기 선택."
 
@@ -1535,13 +1590,13 @@ msgstr "모든 오차 막대는 y-좌표의 동일한 퍼센트입니다."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
-#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 msgid "Cut the selected text to the clipboard."
 msgstr "선택된 텍스트를 클립보드로 잘라내기."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Hint
-#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Copy("Copy")..Hint
 msgid "Copy the selected text to the clipboard."
 msgstr "선택된 텍스트를 클립보드로 복사."
 
@@ -1561,6 +1616,7 @@ msgid "Insert row"
 msgstr "열 삽입"
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Insert("Insert row")..Hint
 msgid "Inserts a row in the grid moving rows below one down."
 msgstr "격자에 행을 삽입하여 그 아래로 행을 이동."
 
@@ -1570,6 +1626,7 @@ msgid "Remove row"
 msgstr "열 삭제"
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Remove("Remove row")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Remove("Remove row")..Hint
 msgid "Removes the selected rows."
 msgstr "선택된 열 삭제."
 
@@ -1584,11 +1641,6 @@ msgstr "전체 선택"
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Select("Select all")..Hint
 msgid "Select all cells."
 msgstr "모든 셀 선택."
-
-#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Caption
-#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Caption
-msgid "Import from file..."
-msgstr "파일에서 불러오기..."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Hint
@@ -1605,8 +1657,8 @@ msgid "Calculate table"
 msgstr "테이블 계산"
 
 #. Form15("Calculate table")..Edit3....Hint
-msgid "The step value. This is the distance between the x-values in the interval."
-msgstr "단계 값. x-값 간격의 거리이다."
+msgid "The step value. This is the difference between two adjoining values in the defined interval."
+msgstr "단계 값. 이것은 정의된 간격에서 두 개의 인접한 값사이의 차이다."
 
 #. Form15("Calculate table")..Edit1..Hint
 msgid "The first x-value in the interval."
@@ -1621,6 +1673,14 @@ msgstr "간격의 마지막 x-값."
 #. Context menu in Calc|Table dialog
 msgid "Show %s"
 msgstr "%s 보기"
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show_df("Show %s")..Hint
+msgid "Show the f'(x) column in the table."
+msgstr "테이블에 f'(x)열 보이기."
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show_ddf("Show %s")..Hint
+msgid "Show the f''(x) column in the table."
+msgstr "테이블에 f''(x)열 보이기."
 
 #. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Hint
 msgid "Copy selected cells to the clipboard."
@@ -1713,12 +1773,12 @@ msgstr "옵션"
 msgid "Range"
 msgstr "범위"
 
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1.Hint
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit3..Hint
 msgid "Coordinate where the shading starts."
 msgstr "무늬채우기가 시작될 좌표."
 
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2.Hint
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit4..Hint
 msgid "Coordinate where the shading ends."
 msgstr "무늬채우기가 끝나는 좌표."
@@ -1812,21 +1872,19 @@ msgid "Size"
 msgstr "크기"
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Label1("Image width:")..Caption
-#. Form19("Animate")..TntGroupBox2("Image information")..Label5("Image width:")..Caption
 msgid "Image width:"
 msgstr "이미지 너비:"
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Label2("Image height:")..Caption
-#. Form19("Animate")..TntGroupBox2("Image information")..Label6("Image height:")..Caption
 msgid "Image height:"
 msgstr "이미지 높이:"
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit1..Hint
-msgid "Set a custom image width."
+msgid "Set a custom image width in pixels."
 msgstr "사용자 이미지 너비 설정."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit2..Hint
-msgid "Set a custom image height."
+msgid "Set a custom image height in pixels."
 msgstr "사용자 이미지 높이 설정."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
@@ -1897,6 +1955,18 @@ msgstr "가로방향"
 msgid "Choose paper size to use."
 msgstr "사용할 용지 크기 선택"
 
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
+msgid "Letter"
+msgstr "Letter"
+
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
+msgid "Ledger"
+msgstr "Ledger"
+
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
+msgid "Legal"
+msgstr "Legal"
+
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
 msgid "Select this to use these settings as defaults in the future."
@@ -1936,15 +2006,31 @@ msgstr "상수의 마지막 값."
 msgid "The chosen constant is changed by this value between each frame."
 msgstr "선택된 상수는 각 프레임사이에 이 값에 의해 변경됩니다."
 
-#. Form19("Animate")..TntGroupBox2("Image information")..Caption
-msgid "Image information"
-msgstr "이미지 정보"
+#. Form19("Animate")..TntGroupBox2("Frame options")..Caption
+msgid "Frame options"
+msgstr "프레임 옵션"
 
-#. Form19("Animate")..TntGroupBox2("Image information")..Label7("Frames/second:")..Caption
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label5("Frame width:")..Caption
+msgid "Frame width:"
+msgstr "프레임 너비:"
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label6("Frame height:")..Caption
+msgid "Frame height:"
+msgstr "프레임 높이:"
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label7("Frames/second:")..Caption
 msgid "Frames/second:"
 msgstr "초당 프레임:"
 
-#. Form19("Animate")..TntGroupBox2("Image information")..Edit6..Hint
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit4..Hint
+msgid "Width of each frame, in pixels."
+msgstr "각 프레임의 너비(픽셀)."
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit5..Hint
+msgid "Height of each frame, in pixels."
+msgstr "각 프레임의 높이(픽셀)."
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit6..Hint
 msgid "Number of frames per second used when the animation is played."
 msgstr "애니메이션이 재생될 때 사용되는 초당 프레임 수."
 
@@ -1957,8 +2043,9 @@ msgid "About Graph"
 msgstr "Graph에 대하여"
 
 #. Form2("About Graph")..Panel1..Label6("<Language> translation by <Translator>")..Caption
+#. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
 msgid "<Language> translation by <Translator>"
-msgstr "<Language> 번역 <Translator>"
+msgstr "<Language> 번역 : <Translator>"
 
 #. Form2("About Graph")..Panel1..Version("Version %s")..Caption
 #. %s is replaced with version number
@@ -2038,6 +2125,39 @@ msgstr "애니메이션의 끝에 도달하면 거꾸로 재생. 이것은 \"반
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
 msgstr "애니메이션을 파일로 저장."
+
+#. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Caption
+msgid "Save frame..."
+msgstr "프레임 저장..."
+
+#. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Hint
+msgid "Save the shown frame to an image file."
+msgstr "이미지 파일로 보이는 프레임 저장."
+
+#. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")..Caption
+msgid "Save all frames..."
+msgstr "모든 프레임 저장..."
+
+#. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")....Hint
+msgid "Save all frames in the animation to image files. This will create as many files as there are frames in the animation."
+msgstr "애니메이션의 모든 프레임을 이미지 파일로 저장. 애니메이션이 있는 프레임 만큼 많은 파일을 생성합니다."
+
+#. Form21("Placement")..ComboBox1..Hint
+msgid "Choose which corner of the label should be locked."
+msgstr "범례가 고정될 모서리 선택."
+
+#. Form21("Placement")..Edit1..Hint
+#. Form21("Placement")..Edit2..Hint
+msgid "Enter a coordinate to lock label at."
+msgstr "제목을 고정할 좌표를 입력하세요."
+
+#. Form22("Python interpreter")..Caption
+msgid "Python interpreter"
+msgstr "Python 해석기"
+
+#. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
+msgid "Clear"
+msgstr "지우기"
 
 #. Form3("Edit axes")..Caption
 msgid "Edit axes"
@@ -2239,19 +2359,19 @@ msgstr "교차"
 msgid "Boxed"
 msgstr "네모"
 
-#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")...Hint
 msgid "Choose if trigonometric functions should calculate in radians or degrees."
 msgstr "삼각함수를 라디안 또는 각도로 계산할 것을 선택한다."
 
-#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry").Caption
 msgid "Trigonometry"
 msgstr "삼각법"
 
-#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")...Items.Strings
 msgid "Radian"
 msgstr "라디안"
 
-#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")...Items.Strings
 msgid "Degree"
 msgstr "각도"
 
@@ -2296,7 +2416,7 @@ msgid "Axes color:"
 msgstr "축 색상:"
 
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label19("Background color:")..Caption
-#. Form6("Text label")..Label4("Background color:")..Caption
+#. Form6("Insert text label")..Label4("Background color:")..Caption
 msgid "Background color:"
 msgstr "배경 색상:"
 
@@ -2340,97 +2460,97 @@ msgstr "축에 숫자를 보이기 위해 사용되는 글꼴 선택."
 msgid "Select the font used to show the legend text."
 msgstr "범례를 보이기 위해 사용되는 글꼴 선택."
 
-#. Form4("Options")..Label1("Decimals:")..Caption
+#. Form4("Options")..GroupBox1..Label1("Decimals:")..Caption
 msgid "Decimals:"
 msgstr "소수 자릿수:"
 
-#. Form4("Options")..Label2("Recent files:")..Caption
+#. Form4("Options")..GroupBox1..Label2("Recent files:")..Caption
 msgid "Recent files:"
 msgstr "최근 사용한 파일:"
 
-#. Form4("Options")..Label3("Max undo steps:")..Caption
+#. Form4("Options")..GroupBox1..Label3("Max undo steps:")..Caption
 msgid "Max undo steps:"
 msgstr "최대 되돌리기 단계:"
 
-#. Form4("Options")..Label4("Language:")..Caption
-msgid "Language:"
-msgstr "언어:"
-
-#. Form4("Options")..Label5("Font scale:")..Caption
+#. Form4("Options")..GroupBox1..Label5("Font scale:")..Caption
 msgid "Font scale:"
 msgstr "글꼴 크기조정:"
 
-#. Form4("Options")..Edit1..Hint
+#. Form4("Options")..GroupBox1..Label4("Language:")..Caption
+msgid "Language:"
+msgstr "언어:"
+
+#. Form4("Options")..GroupBox1..Edit1..Hint
 msgid "Number of decimals used when results are shown."
 msgstr "결과가 보일 때 사용되는 소수 자릿수."
 
-#. Form4("Options")..CheckBox1("Associate .grf files")..Hint
-msgid "Associate *.grf files with Graph."
-msgstr "Graph로 *.grf 파일 연결."
-
-#. Form4("Options")..CheckBox1("Associate .grf files")..Caption
-msgid "Associate .grf files"
-msgstr ".grf 파일 연결"
-
-#. Form4("Options")..Edit2..Hint
-msgid "The number of most recent used files shown in the File menu."
-msgstr "파일 메뉴에서 보여질 가장 최근에 사용된 파일 수."
-
-#. Form4("Options")..CheckBox4("Save workspace on exit")....Hint
-msgid "Save window position when the program quits. This setting is used the next time the program is used.|Save window state on exit."
-msgstr "프로그램 종료 시 창 위치 저장. 이 설정은 프로그램이 다음에 사용될 때 사용된다. |종료시 창 상태 저장."
-
-#. Form4("Options")..CheckBox4("Save workspace on exit")..Caption
-msgid "Save workspace on exit"
-msgstr "종료시 작업공간 저장"
-
-#. Form4("Options")..RadioGroup1("Complex form")..Hint
+#. Form4("Options")..GroupBox1..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "복소수가 보일 때 사용될 형식."
 
-#. Form4("Options")..RadioGroup1("Complex form")..Caption
+#. Form4("Options")..GroupBox1..RadioGroup1("Complex form")..Caption
 msgid "Complex form"
 msgstr "복소수 형태"
 
-#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
+#. Form4("Options")..GroupBox1..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "실수"
 
-#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
+#. Form4("Options")..GroupBox1..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "직각좌표"
 
-#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
+#. Form4("Options")..GroupBox1..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "극좌표"
 
-#. Form4("Options")..CheckBox2("Show tooltip")..Hint
-msgid "Show the tooltip when the cursor is over an item."
-msgstr "커서가 항목에 있을 때 도구막대 보이기."
+#. Form4("Options")..GroupBox1..Edit2..Hint
+msgid "The number of most recent used files shown in the File menu."
+msgstr "파일 메뉴에서 보여질 가장 최근에 사용된 파일 수."
 
-#. Form4("Options")..CheckBox2("Show tooltip")..Caption
-msgid "Show tooltip"
-msgstr "툴팁 보이기"
-
-#. Form4("Options")..Edit3....Hint
+#. Form4("Options")..GroupBox1..Edit3....Hint
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
 msgstr "되돌리기 단계의 최대값을 저장함. 이것을 0으로 하면 되돌리기를 못한다."
 
-#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")....Hint
-msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
-msgstr "체크되면 프로그램이 시작될 때 새 버젼이 있으면 웹서버에 접속하게 된다."
+#. Form4("Options")..GroupBox1..ComboBox1....Hint
+msgid "This is used to scale the user interface if you are having problems reading the text."
+msgstr "텍스트를 읽는데 문제가 생긴다면 사용자 인터페이스의 크기를 조정하는데 사용됩니다."
 
-#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")..Caption
-msgid "Check for new version of Graph at startup"
-msgstr "시작시 Graph의 새 버젼 확인"
-
-#. Form4("Options")..ComboBox1..Hint
+#. Form4("Options")..GroupBox1..ComboBox2..Hint
 msgid "Select the language to use for the user interface."
 msgstr "사용자 인터페이스에 사용할 언어 선택."
 
-#. Form4("Options")..ComboBox2....Hint
-msgid "This is used to scale the user interface if you are having problems reading the text."
-msgstr "텍스트를 읽는데 문제가 생긴다면 사용자 인터페이스의 크기를 조정하는데 사용됩니다."
+#. Form4("Options")..GroupBox1..CheckBox1("Associate .grf files")..Hint
+msgid "Associate *.grf files with Graph."
+msgstr "Graph로 *.grf 파일 연결."
+
+#. Form4("Options")..GroupBox1..CheckBox1("Associate .grf files")..Caption
+msgid "Associate .grf files"
+msgstr ".grf 파일 연결"
+
+#. Form4("Options")..GroupBox1..CheckBox2("Show tooltip")..Hint
+msgid "Show the tooltip when the cursor is over an item."
+msgstr "커서가 항목에 있을 때 도구막대 보이기."
+
+#. Form4("Options")..GroupBox1..CheckBox2("Show tooltip")..Caption
+msgid "Show tooltip"
+msgstr "툴팁 보이기"
+
+#. Form4("Options")..GroupBox1..CheckBox3("Save workspace on exit")....Hint
+msgid "Save the size of the main window when the program exits. This is used the next time Graph is run."
+msgstr "프로그램 종료 시 메인창의 크기 저장. 이 설정은 Graph를 다음번에 실행할 때 사용된다."
+
+#. Form4("Options")..GroupBox1..CheckBox3("Save workspace on exit")..Caption
+msgid "Save workspace on exit"
+msgstr "종료시 작업공간 저장"
+
+#. Form4("Options")..GroupBox1..CheckBox4("Check for new version of Graph at startup")....Hint
+msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
+msgstr "체크되면 프로그램이 시작될 때 새 버젼이 있으면 웹서버에 접속하게 된다."
+
+#. Form4("Options")..GroupBox1..CheckBox4("Check for new version of Graph at startup")..Caption
+msgid "Check for new version of Graph at startup"
+msgstr "시작시 Graph의 새 버젼 확인"
 
 #. Form5("Insert function")..Caption
 msgid "Insert function"
@@ -2489,120 +2609,120 @@ msgstr "점"
 msgid "Lines"
 msgstr "선"
 
-#. Form6("Text label")..Caption
-msgid "Text label"
-msgstr "텍스트 제목"
+#. Form6("Insert text label")..Caption
+msgid "Insert text label"
+msgstr "텍스트 제목 삽입"
 
-#. Form6("Text label")..Label1("Font name:")..Caption
+#. Form6("Insert text label")..Label1("Font name:")..Caption
 msgid "Font name:"
 msgstr "글꼴 이름:"
 
-#. Form6("Text label")..Label2("Font size:")..Caption
+#. Form6("Insert text label")..Label2("Font size:")..Caption
 msgid "Font size:"
 msgstr "글꼴 크기:"
 
-#. Form6("Text label")..Label3("Font color:")..Caption
+#. Form6("Insert text label")..Label3("Font color:")..Caption
 msgid "Font color:"
 msgstr "글꼴 색상:"
 
-#. Form6("Text label")..ComboBox1..Hint
+#. Form6("Insert text label")..ComboBox1..Hint
 msgid "Text size."
 msgstr "텍스트 크기"
 
-#. Form6("Text label")..GroupBox1("Text string")..Caption
+#. Form6("Insert text label")..GroupBox1("Text string")..Caption
 msgid "Text string"
 msgstr "텍스트 문자열"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton11..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton11..Hint
 msgid "Insert symbol (Ctrl+G)"
 msgstr "심볼 삽입 (Ctrl+G)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
 msgid "Insert object"
 msgstr "객체 삽입"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
 msgstr "진하게 (Ctrl+B)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton2..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton2..Hint
 msgid "Italic (Ctrl+I)"
 msgstr "기울임 (Ctrl+I)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton3..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton3..Hint
 msgid "Underline (Ctrl+U)"
 msgstr "밑줄 (Ctrl+U)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton4..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton4..Hint
 msgid "Strikethrough (Ctrl+S)"
 msgstr "취소선 (Ctrl+S)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton9..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton9..Hint
 msgid "Superscript (Ctrl++)"
 msgstr "위 첨자 (Ctrl++)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton10..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton10..Hint
 msgid "Subscript (Ctrl+=)"
 msgstr "아래 첨자 (Ctrl+=)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton5..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton5..Hint
 msgid "Align left (Ctrl+L)"
 msgstr "왼쪽 정렬 (Ctrl+L)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton6..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton6..Hint
 msgid "Center (Ctrl+E)"
 msgstr "가운데 정렬 (Ctrl+E)"
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton7..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton7..Hint
 msgid "Align right (Ctrl+R)"
 msgstr "오른쪽 정렬 (Ctrl+R)"
 
-#. Form6("Text label")..IFontBox1..Hint
+#. Form6("Insert text label")..IFontBox1..Hint
 msgid "Text font."
 msgstr "텍스트 글꼴"
 
-#. Form6("Text label")..ColorBox1..Hint
+#. Form6("Insert text label")..ColorBox1..Hint
 msgid "Text color."
 msgstr "텍스트 색상."
 
-#. Form6("Text label")..ColorBox2..Hint
+#. Form6("Insert text label")..ColorBox2..Hint
 msgid "Select background color of the text label."
 msgstr "텍스트 제목의 배경 색상 선택."
 
-#. Form6("Text label")..ColorBox2..DefaultName
+#. Form6("Insert text label")..ColorBox2..DefaultName
 #. May be selected as background color in Insert label dialog
 msgid "Transparent"
 msgstr "투명"
 
-#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "마지막 행동 되돌리기."
 
-#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Redo("Redo")..Hint
 msgid "Redo last undone action."
 msgstr "마지막 미완성된 행동 다시하기."
 
-#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Paste("Paste")..Hint
 msgid "Paste the contents of the clipboard."
 msgstr "클립보드 내용 붙이기."
 
-#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Caption
 msgid "Paste special..."
 msgstr "골라 붙이기..."
 
-#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Hint
 msgid "Select which clipboard representation you want to paste."
 msgstr "붙이기를 원하는 클립보드 내용 선택."
 
-#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
 msgid "Create a new OLE object."
 msgstr "새로운 OLE 객체 생성."
 
-#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_EditObject("Edit object")..Caption
 msgid "Edit object"
 msgstr "객체 편집"
 
-#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_EditObject("Edit object")..Hint
 msgid "Edit selected OLE object."
 msgstr "선택된 OLE 객체 편집"
 
@@ -2893,6 +3013,9 @@ msgstr "줌의 최대 범위에 도달하였습니다."
 msgid "You have reached the minimum range of zoom."
 msgstr "줌의 최소 범위에 도달하였습니다."
 
+msgid "'%s' must not be zero."
+msgstr "'%s' 는 0이 아니어야 합니다."
+
 #. Error message when an invalid value is entered.
 msgid "Error in value"
 msgstr "값에 에러"
@@ -3072,8 +3195,9 @@ msgstr "모델명이 이미 존재합니다."
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "함수의 도함수는 %s=%s에서 정의되지 않았음."
 
-msgid "Coordinate not defined."
-msgstr "좌표 정의되지 않음."
+#. Caption of message box when trying to insert tangent at undefined coordinate
+msgid "Coordinate not defined"
+msgstr "좌표 정의되지 않음"
 
 msgid "Checking for newer version..."
 msgstr "새로운 버젼 확인중..."
@@ -3095,6 +3219,12 @@ msgstr "접선/법선 편집"
 
 msgid "Error processing file '%s' at line %s."
 msgstr "파일 '%s'를 처리중에  %s 번 줄에서 에러."
+
+msgid "Edit text label"
+msgstr "텍스트 제목 편집"
+
+msgid "The model needs some constants (starting with a $) for Graph to find."
+msgstr "Graph에서 찾기 위해 모델은 몇가지 상수($로 시작하는)를 필요로 합니다."
 
 msgid "'%s' has to be an integer value between 0 and 1000."
 msgstr "'%s'는 0과 1000사이의 정수임."
@@ -3230,8 +3360,8 @@ msgid "You can customize the toolbar by right clicking on it and select 'Customi
 msgstr "도구막대를 오른쪽 클릭하여 '도구막대 사용자 정의'를 선택해서 고칠 수 있습니다."
 
 #. Tip of the Day
-msgid "Instead of deleting a function you can make it invisible by right clicking on it in the function list and removing the check at the 'Visible' menu item."
-msgstr "함수를 삭제하는 대신 함수 목록에서 오른쪽 클릭을 하여 안보이게 할 수 있으며, 메뉴 항목에서 '보임'을 체크하여 해제할 수 있습니다."
+msgid "Instead of deleting a function, you can make it invisible by removing the check mark for the item in the function list."
+msgstr "함수를 삭제하는 대신 함수 목록에서 항목에 대한 표시를 지워 안보이게 할 수 있다."
 
 #. Tip of the Day
 msgid "You can paste images into a text label."
@@ -3430,6 +3560,9 @@ msgstr "부분집합:"
 msgid "Insert"
 msgstr "삽입"
 
+msgid "Select color"
+msgstr "색상 선택"
+
 msgid "Customize"
 msgstr "사용자 정의"
 
@@ -3451,7 +3584,7 @@ msgstr "인쇄"
 
 #. PrintFrm("Print")..Label6("Scale:")..Caption
 msgid "Scale:"
-msgstr "종류"
+msgstr "배율:"
 
 #. PrintFrm("Print")..GroupBox1("Printer")..Caption
 msgid "Printer"
@@ -3459,15 +3592,15 @@ msgstr "프린터"
 
 #. PrintFrm("Print")..GroupBox1("Printer")..Label7("Type:")..Caption
 msgid "Type:"
-msgstr "형식:"
+msgstr "종류:"
 
 #. PrintFrm("Print")..GroupBox1("Printer")..Label8("Where:")..Caption
 msgid "Where:"
-msgstr "어디:"
+msgstr "위치:"
 
 #. PrintFrm("Print")..GroupBox1("Printer")..Label9("Comment:")..Caption
 msgid "Comment:"
-msgstr "코멘트:"
+msgstr "설명:"
 
 #. PrintFrm("Print")..GroupBox1("Printer")..ComboBox1....Hint
 msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
@@ -3503,11 +3636,11 @@ msgstr "위 여백:"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
 msgid "Select to place the image on the middle of the page."
-msgstr "페이지의 중앙에 놓을 이미지 선택."
+msgstr "페이지의 중앙에 이미지 배치 선택."
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
-msgstr "페이지의 중앙에"
+msgstr "페이지 중앙"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1..Hint
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2..Hint
@@ -3525,4 +3658,20 @@ msgstr "인쇄 매수 선택. "
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "원본 크기의 퍼센트 입력."
+
+#~ msgid ""
+#~ "This is the functions second derivative evaluated for the entered value."
+#~ msgstr "입력된 값에 대해 함수의 두번째 도함수를 구합니다."
+#~ msgid "Write coordinate system and functions to a file."
+#~ msgstr "파일에 좌표계와 함수 쓰기."
+#~ msgid "Zoom to standard coordinates."
+#~ msgstr "표준좌표계로 확대/축소."
+#~ msgid "Go to home page"
+#~ msgstr "홈페이지로 가기"
+#~ msgid "All points"
+#~ msgstr "모든 점"
+#~ msgid "Zoom as much as all points are visible."
+#~ msgstr "모든 점이 보일 정도로 확대/축소."
+#~ msgid "Image information"
+#~ msgstr "이미지 정보"
 
