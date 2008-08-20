@@ -47,7 +47,7 @@
 				<term>Minimum:</term>
 				<listitem>
 					<para>
-						This is the lowest value on the axis. Default: -10
+						This is the lowest value on the selected axis. Default: -10
 					</para>
 				</listitem>
 			</varlistentry>
@@ -55,7 +55,7 @@
 				<term>Maximum:</term>
 				<listitem>
 					<para>
-						This is the highest value on the axis. Default: 10
+						This is the highest value on the selected axis. Default: 10
 					</para>
 				</listitem>
 			</varlistentry>
@@ -63,7 +63,7 @@
 				<term>Tick unit:</term>
 				<listitem>
 					<para>
-						This is the distance between the tick marks on the axis.
+						This is the distance between the tick marks on the selected axis.
 						Tick marks are shown as small lines perpendicular to the axis.
 						<guilabel>Tick unit</guilabel> is used for both tick marks and for showing numbers.
 						With a logarithmic axis the <guilabel>Tick unit</guilabel> indicates the factor between the markers.
@@ -119,7 +119,7 @@
 				<term>Auto tick</term>
 				<listitem>
 					<para>
-						When checked the program will choose a value for <guilabel>Tick unit</guilabel> that is
+						When checked the program will automatically choose a value for <guilabel>Tick unit</guilabel> that is
 						fitting for the axes dimensions and size of the window.
 					</para>
 				</listitem>
@@ -136,7 +136,7 @@
 				<term>Show ticks</term>
 				<listitem>
 					<para>
-						When this field is checked tick marks are shown as small lines on the axis with the distance chosen under
+						When this field is checked, tick marks are shown as small lines on the axis with the distance chosen under
 						<guilabel>Tick unit</guilabel>.
 					</para>
 				</listitem>
@@ -145,7 +145,7 @@
 				<term>Show grid:</term>
 				<listitem>
 					<para>
-						When this field is marked grid lines will be shown as dotted lines perpendicular to the axes with the color chosen under
+						When this field is checked, grid lines will be shown as dotted lines perpendicular to the axis with the color chosen under
 						<guilabel>Font and color</guilabel> and with the distance chosen at <guilabel>Grid unit</guilabel>.
 					</para>
 				</listitem>
@@ -198,7 +198,7 @@
 				<listitem>
 					<para>
 						Check this field to use <glossterm baseform="complex number">complex numbers</glossterm> for calculations while drawing graphs.
-						This will increase the time for drawing graphs but may be necessary in rare situations where the workings are complex.
+						This will increase the time for drawing graphs but may be necessary in rare situations where the intermediate result are complex.
 						The final result must be real for the graph to be drawn.
 						This will not interfere with evaluations.
 					</para>
@@ -244,7 +244,7 @@
 				<term>Fonts:</term>
 				<listitem>
 					<para>
-						You may change the fonts used for drawing axes labels, the font to draw numbers at the axes, and the font used for the <glossterm>legend</glossterm>.
+						You may change the fonts used to show axes labels, the font to draw numbers at the axes, and the font used for the <glossterm>legend</glossterm>.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -260,7 +260,7 @@
 					<para>
 						Check this to save all the current settings in the dialog to be used as default in the future.
 						These settings are used the next time you choose to create a new coordinate system.
-						The default settings are per user basis, i.e. each user will have his/her own default settings.
+						The default settings are stored in your Windows user profile, i.e. each Windows user will have his/her own default settings in Graph.
 					</para>
 				</listitem>
 			</varlistentry>

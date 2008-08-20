@@ -28,9 +28,9 @@
 		The following is a list of all variables, constants, operators and functions supported by the program.
 		The list of operators shows the operators with the highest precedence first.
 		The precedence of operators can be changed through the use of brackets.
-		Both (), {} and [] may be used as brackets. Notice that the parser is case insensitive.
-		There is no difference between upper and lower case characters.
-		The only exception is <function>e</function> in Euler's constant and E in a <glossterm baseform="real number">number</glossterm>.
+		(), {} and [] may all be used alike.
+		Notice that expressions in Graph are case insensitive, i.e. there are no difference between upper and lower case characters.
+		The only exception is <function>e</function> as the Euler's constant and E as the exponent in a <glossterm baseform="real number">number</glossterm> in scientific notation.
 	</para>
 	<para>
 		<informaltable>
@@ -47,11 +47,11 @@
 				<tbody>
 					<row>
 						<entry>x</entry>
-						<entry>The variable used in standard functions.</entry>
+						<entry>The independent variable used in standard functions.</entry>
 					</row>
 					<row>
 						<entry>t</entry>
-						<entry>The variable used in parametric and polar functions.</entry>
+						<entry>The independent variable called parameter for parametric functions and polar angle for polar functions.</entry>
 					</row>
 					<row>
 						<entry>e</entry>
@@ -138,15 +138,15 @@
 		      		</row>
 		     		<row>
 		     			<entry>Equal (=)</entry>
-		     			<entry>Indicates if two expressions evaluates to the exact same value.</entry>
+		     			<entry>Indicates if two expressions evaluate to the exact same value.</entry>
 		      		</row>
 		     		<row>
 		     			<entry>Not equal (&lt;>)</entry>
-		     			<entry>Indicates if two expressions does not evaluates to the exact same value.</entry>
+		     			<entry>Indicates if two expressions does not evaluate to the exact same value.</entry>
 		      		</row>
 		     		<row>
 		     			<entry>Logical AND (and)</entry>
-		     			<entry>Indicates if two expressions both evaluates to a value different from 0.</entry>
+		     			<entry>Indicates if two expressions both evaluate to a value different from 0.</entry>
 		      		</row>
 		     		<row>
 		     			<entry>Logical OR (or)</entry>
@@ -220,7 +220,7 @@
    				</row>
    				<row>
    					<entry><xref linkend="acsc"/></entry>
-   					<entry>Returns the inverse cosecant of the argument. The returned value may be in radians or degrees</entry>
+   					<entry>Returns the inverse cosecant of the argument. The returned value may be in radians or degrees.</entry>
    				</row>
    				<row>
    					<entry><xref linkend="acot"/></entry>
@@ -294,7 +294,7 @@
 					</row>
 					<row>
 						<entry><xref linkend="root"/></entry>
-						<entry>Returns the n'th root of the argument.</entry>
+						<entry>Returns the n<superscript>th</superscript> root of the argument.</entry>
 					</row>
 					<row>
 						<entry><xref linkend="ln"/></entry>

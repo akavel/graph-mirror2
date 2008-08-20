@@ -17,14 +17,14 @@
 	<indexterm><primary>gif</primary></indexterm>
 	<indexterm><primary>jpg</primary></indexterm>
 	<para>
-		Choose this menu item if you want to save the shown graphs in an image file.
-		The program supports five formats: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), JPEG (jpg) and Portable Document Format (pdf).
-		When the menu item has been chosen, a standard save as dialog will appear.
+		Use the menu item <menuchoice><guimenu>File</guimenu><guimenuitem>Save as image...</guimenuitem></menuchoice> to save the shown coordinate system as an image file.
+		Graph supports five formats: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) and Portable Document Format (pdf).
+		When the menu item has been chosen, a standard Save As dialog will appear.
 		In this dialog you write a filename, choose a directory and select one of the image types.
 	</para>
 	<para>
 		bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen.
-		Emf files are used for vector graphics.
+		emf files are used for vector graphics.
 		The Options button in the save dialog can be used to change to image size.
 		You may also be able to change other settings depending on the chosen image format.
 	</para>
@@ -35,13 +35,13 @@
 		This is the most sustainable format for web pages, because it is small and can be understood by all browsers.
 	</para>
 	<para>
-		JPEG (jpg) is a bitmap format with loss.
+		Joint Photographic Experts Group (jpeg) is a bitmap format with loss.
 		It is supported but not recommended because graphs will usually become blurred.
 	</para>
 	<para>
 		Portable Document Format (pdf) is actually not an image format.
 		It is a way to store documents as postscript in a portable way.
-		Graph will store the image as PNG inside the pdf file.
+		Graph will store the image as Portable Network Graphics inside the pdf file.
 	</para>
 	<para>
 		CompuServe Graphics Interchange (gif) is not supported because it uses the LZW compression, which is patented by Unisys.

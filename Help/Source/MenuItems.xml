@@ -386,7 +386,7 @@
 					</menuchoice>
 				</term>
 				<listitem>
-					This will zoom in at the center of the graphing area, so you will see a &frac14; of the previous image.
+					This will zoom in at the center of the graphing area, so you will see a &frac14; of the previous graphing area.
 				</listitem>
 			</varlistentry>
 
@@ -398,7 +398,7 @@
 					</menuchoice>
 				</term>
 				<listitem>
-					This will zoom out so you see 4 times as much as on the previous image.
+					This will zoom out so you see 4 times as much as on the previous graphing area.
 				</listitem>
 			</varlistentry>
 
@@ -410,7 +410,7 @@
 					</menuchoice>
 				</term>
 				<listitem>
-					Hold down the  <action>left mouse button</action> while you select the area you want to fill the whole image.
+					Hold down the <action>left mouse button</action> while you select the area you want to fill the whole graphing area.
 					<action>Right click</action> or press <keycap>Esc</keycap> to cancel the command.
 				</listitem>
 			</varlistentry>

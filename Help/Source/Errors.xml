@@ -154,13 +154,13 @@
 			<term>Error 56: Invalid number of arguments supplied for function '%s'</term>
 			<listitem>
 				You passed a wrong number of arguments to the specified function.
-				Check the help to find the required number of arguments the function needs.
+				Check the <xref linkend="FunctionList" /> to find the required number of arguments the function needs.
 				This error may occur if you for example write sin(x,3).
 			</listitem>
 		</varlistentry>
 
 		<varlistentry id="Error57">
-			<term>Error 57: comparison operator misplaced.</term>
+			<term>Error 57: Comparison operator misplaced.</term>
 			<listitem>
 				Only two comparison operators in sequence are allowed.
 				For example "sin(x) &lt; y %lt; cos(x)" is okay while "sin(x) &lt; x &lt; y &lt; cos(x)" is invalid because there are three &lt;-operators in sequence.
@@ -182,7 +182,7 @@
 					<member>-5.475E-8</member>
 					<member>-0.55</member>
 					<member>.75</member>
-					<member>23.E4</member>
+					<member>23E4</member>
 				</simplelist>
 			</listitem>
 		</varlistentry>
@@ -195,9 +195,9 @@
 		</varlistentry>
 
 		<varlistentry id="Error60">
-			<term>Error 60: Comma not allowed here; Use dot as decimal separator.</term>
+			<term>Error 60: Comma is not allowed here. Use dot as decimal separator.</term>
 			<listitem>
-				Commas may not be used. You have to use a '.' to separate the fraction from the integer part.
+				Commas may not be used as decimal separator. You have to use a '.' to separate the fraction from the integer part.
 			</listitem>
 		</varlistentry>
 
@@ -276,7 +276,7 @@
 			<listitem>
 				Not enough data points were provided to calculate the trendline.
 				A polynomial needs at least one more point than the degree of the polynomial.
-				A polynomial of third degree needs at leas 4 points.
+				A polynomial of third degree needs at least 4 points.
 				All other functions need at least two points.
 			</listitem>
 		</varlistentry>
@@ -310,7 +310,7 @@
 				An error occurred while calculating.
 				The exact cause is unknown.
 				If you get this error, you may try to contact the programmer with a description of how to reproduce the error.
-				When he might be able to improve the error message or prevent the error from occurring.
+				Then he might be able to improve the error message or prevent the error from occurring.
 			</listitem>
 		</varlistentry>
 
@@ -319,7 +319,7 @@
 			<listitem>
 				The given guess, which may be the default one, did not give any solution.
 				This can be caused by a bad guess, and a better guess may result in a solution.
-				It can also be because the given model doesn't fit the data, in which case you should try another model.
+				It can also be because the given trendline model doesn't fit the data, in which case you should try another model.
 			</listitem>
 		</varlistentry>
 

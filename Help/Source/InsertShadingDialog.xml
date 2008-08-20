@@ -14,7 +14,9 @@
 	<indexterm><primary>inside</primary></indexterm>
 	<indexterm><primary>between</primary></indexterm>
 	<para>
-		The dialog below is used to add shading to the selected function.
+		The dialog below is used to add a shading to the selected function.
+		To insert a new shading, you use <menuchoice><guimenu>Function</guimenu><guimenuitem>Insert shading...</guimenuitem></menuchoice>.
+		To change an existing shading, you first select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 		The shading is used to mark an area between the function graph and something else.
 	</para>
 
@@ -30,7 +32,7 @@
 			<listitem>
 				This is the most commonly used type of shading.
 				This will shade the area between the graph of the function and the x-axis in the selected interval.
-				If you check <guilabel>decrease to intersection</guilabel> or <guilabel>increase to intersection</guilabel>,
+				If you check <guilabel>Decrease to intersection</guilabel> or <guilabel>Increase to intersection</guilabel>,
 				the interval will decrease or increase until the graph is crossing the x-axis.
 			</listitem>
 		</varlistentry>
@@ -41,7 +43,7 @@
 				This will shade the area between the graph of the function and the y-axis in the selected interval.
 				This is rarely used and probably most useful for parametric functions.
 				Notice that you still use the x-coordinates for the interval.
-				If you check <guilabel>decrease to intersection</guilabel> or <guilabel>increase to intersection</guilabel>,
+				If you check <guilabel>Decrease to intersection</guilabel> or <guilabel>Increase to intersection</guilabel>,
 				the interval will decrease or increase until the graph is crossing the y-axis.
 			</listitem>
 		</varlistentry>
@@ -49,18 +51,18 @@
 		<varlistentry>
 			<term>Below function</term>
 			<listitem>
-				This will shade the area below the graph of the function down to the bottom of the image in the selected interval.
-				If you check <guilabel>decrease to intersection</guilabel> or <guilabel>increase to intersection</guilabel>,
-				the interval will decrease or increase until the graph is crossing the bottom of the window.
+				This will shade the area below the graph of the function down to the bottom of the graphing area in the selected interval.
+				If you check <guilabel>Decrease to intersection</guilabel> or <guilabel>Increase to intersection</guilabel>,
+				the interval will decrease or increase until the graph is crossing the bottom of the graphing area.
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Above function</term>
 			<listitem>
-				This will shade the area above the graph of the function up to the top of the image in the selected interval.
-				If you check <guilabel>decrease to intersection</guilabel> or <guilabel>increase to intersection</guilabel>,
-				the interval will decrease or increase until the graph is crossing the top of the window.
+				This will shade the area above the graph of the function up to the top of the graphing area in the selected interval.
+				If you check <guilabel>Decrease to intersection</guilabel> or <guilabel>Increase to intersection</guilabel>,
+				the interval will decrease or increase until the graph is crossing the top of the graphing area.
 			</listitem>
 		</varlistentry>
 
@@ -68,7 +70,7 @@
 			<term>Inside function</term>
 			<listitem>
 				This will shade the area inside the graph of the function in the selected interval.
-				If you check <guilabel>decrease to intersection</guilabel> or <guilabel>increase to intersection</guilabel>,
+				If you check <guilabel>Decrease to intersection</guilabel> or <guilabel>Increase to intersection</guilabel>,
 				the interval will decrease or increase until the graph is crossing itself.
 				This is especially useful to shade a closed part of a parametric or polar function, but it can also be used to shade standard functions.
 			</listitem>
@@ -88,31 +90,33 @@
 	</variablelist>
 
 	<para>
-		At the <guilabel>options</guilabel> tab shown below, you may change the options for the shading.
+		At the <guilabel>Options</guilabel> tab shown below, you may change the options for the shading.
 	</para>
 
 	<graphic fileref="DialogShade2.png"/>
 
 	<variablelist>
 		<varlistentry>
-			<term>Start</term>
+			<term>From</term>
 			<listitem>
-				Here you may enter the x-coordinate or t-value if you are using parametric functions, where you want the shading to start.
-				If you don't enter a value, the shading will start at minus infinity.
-				If you place a check mark in <guilabel>decrease to intersection</guilabel>,
-				the shadings start coordinate will be decreased from the entered value to the coordinate where the graph is crossing the axis,
-				the edge, itself or another graph, depending of the shading type selected.
+				Here you may enter a value, for which you want the shading to start.
+				You specify the x-coordinate if you are using a standard function or the t-parameter if you are using a parametric or polar function.
+				If you don't enter a value, the shading will start at negative infinity.
+				If you place a check mark in <guilabel>Decrease to intersection</guilabel>,
+				the start coordinate of the shading will be decreased from the entered value to the coordinate where the graph is crossing the axis,
+				the edge of the graphing area, itself or another graph, depending of the type of shading selected.
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
-			<term>End</term>
+			<term>To</term>
 			<listitem>
-				Here you may enter the x-coordinate or t-value if you are using parametric functions, where you want the shading to stop.
-				If you don't enter a value, the shading will continue until infinity.
-				If you place a check mark in <guilabel>increase to intersection</guilabel>,
-				the shadings end coordinate will be increased from the entered value to the coordinate where the graph is crossing the axis,
-				the edge, itself or another graph depending of the shading type selected.
+				Here you may enter a value, for which you want the shading to stop.
+				You specify the x-coordinate if you are using a standard function or the t-parameter if you are using a parametric or polar function.
+				If you don't enter a value, the shading will continue until positive infinity.
+				If you place a check mark in <guilabel>Increase to intersection</guilabel>,
+				the end coordinate of the shading will be increased from the entered value to the coordinate where the graph is crossing the axis,
+				the edge of the graphing area, itself or another graph depending of the type of shading selected.
 			</listitem>
 		</varlistentry>
 

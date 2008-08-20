@@ -8,7 +8,7 @@
 	<title>Calc | Evaluate</title>
 	<para>
 		This dialog is used for interactive calculations on functions.
-		The dialog may be docked below the function list, which is default, or undocked to a floating dialog.
+		The dialog may be docked below the function list, which is default, or undocked as a floating dialog.
 	</para>
 	<simplesect id="EvaluateFrame">
 		<title>Evaluate</title>
@@ -21,7 +21,7 @@
 			is selected the dialog is used to evaluate the selected function at a given value either entered in the dialog or traced with the mouse.
 		</para>
 		<para>
-			Below you can see the dialog, that appears when a standard functions is selected.
+			Below you can see the dialog, that appears when a standard function is selected.
 			The dialog will look a little different when a parametric function, polar function or tangent is selected.
 		</para>
 
@@ -30,7 +30,7 @@
 		<para>
 			You can enter a value for which you want to evaluate the function.
 			The value will be evaluated for the function selected in the <glossterm>function list</glossterm>.
-			If the result is on the graph within the shown coordinate system, it will be marked with a cross.
+			If the result is on the graph within the shown coordinate system, it will be marked with a dashed cross.
 			You can also trace the drawn graph with the mouse.
 			Just click on the graph with the mouse and the function will be evaluated at the nearest point.
 		</para>
@@ -39,7 +39,7 @@
 			This number will either be written as a+b&imag;, a&ang;&theta; or not written at all depending of the choice under <xref linkend="OptionsDialog"/>.
 		</para>
 		<para>
-			When you click with the mouse on the image you may choose what the cursor will snap to:
+			When you click with the mouse on the graphing area you may choose what the cursor will snap to:
 			<variablelist>
 				<varlistentry>
 					<term>Function</term>
@@ -47,7 +47,7 @@
 				</varlistentry>
 				<varlistentry>
 					<item>Intersection</item>
-					<listitem>The cursor will snap to the nearest intersection between the selected function and all functions (including the selected function).</listitem>
+					<listitem>The cursor will snap to the nearest intersection between the selected function and every function displayed (including the function itself).</listitem>
 				</varlistentry>
 				<varlistentry>
 					<item>x-axis</item>
@@ -83,7 +83,7 @@
 			(the real x-axis and not necessarily the visible one) for the given range.
 		</para>
 		<para>
-			For polar functions the signed area is the one between the graph in the given range and origo.
+			For polar functions, the signed area is the one between the graph in the given range and origin.
 			The area is considered negative when the angle goes from a higher to a lower value (clockwise).
 		</para>
 		<para>
@@ -91,8 +91,8 @@
 		</para>
 		<para>
 			You can either enter the range in the edit boxes or select the range with the mouse.
-			The calculated area will be shown below the range, and the area will be marked in the coordinate system.
-			The calculation is done using Simpson's formula with 1000 iterations
+			The calculated area will be shown below the range, and the area will be marked with a shade in the coordinate system.
+			The calculation is done using Simpson's formula through 1000 iterations
 		</para>
 	</simplesect>
 
@@ -107,7 +107,7 @@
 			is selected the dialog is used to calculate the distance between two points on the function along the curve.
 			You may either enter the range in the dialog or use the mouse to mark it.
 			The range will be marked in the coordinate system.
-			The calculation is done by converting it to an integration and use Simpson's formula with 1000 iterations.
+			The calculation is done by converting it to an integration and using Simpson's formula through 1000 iterations.
 		</para>
 	</simplesect>
 </section>

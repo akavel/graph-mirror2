@@ -10,19 +10,29 @@
 	<indexterm><primary>table</primary></indexterm>
 	<indexterm><primary>evaluate</primary></indexterm>
 	<para>
-		The dialog shown below is used to evaluate the selected function for a range of x-coordinates.
-		You specify the first and last x-coordinate in the range, and set the distance between the x-values in the interval.
+		The dialog shown below is used to evaluate the selected function for a range.
+		First select a function in the <glossterm>function list</glossterm> and use the menu item
+		<menuchoice><guimenu>Calc</guimenu><guimenuitem>Table</guimenuitem></menuchoice> to show the dialog.
+		You specify the first and last value of the independen variable and set the increment of the independent variable at each evaluation.
+	</para>
+
+	<para>
 		When you press the button labeled <guibutton>Calc</guibutton>,
-		the table will be filled with the x-values in the interval and their corresponding values for f(x), f'(x) and f''(x).
-		While the values are calculated, the program displays a progress indicator, which indicates how much of the calculations have been done.
+		the table will be filled with the independent variable in the first coloumn.
+		The rest of the coloumns dependes on the type of function.
+		For a standard function, the table will show f(x), f'(x) and f''(x).
+		For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx.
+		For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx.
+		Unneeded coloumns can be hidden from the context menu.
+		If the calculations takes a long time, a progress indicator will be shown.
 	</para>
 
 	<graphic fileref="DialogTable.png"/>
 
 	<para>
-		After the table has been filled you may look through them by scrolling with the panel to the right.
-		You can select some cells with the mouse and right click with the mouse and choose <guimenuitem>Copy</guimenuitem> to copy the cells to the clipboard.
-		From the clipboard the data may be pasted into other programs as Microsoft Excel.
+		You can select some cells with the mouse and <action>right click</action> with the mouse and use
+		<guimenuitem>Copy</guimenuitem> from the context menu to copy the cells to the clipboard.
+		From the clipboard the data may be pasted into another program, e.g. Microsoft Excel.
 	</para>
 
 	<para>
@@ -30,16 +40,16 @@
 		Now you can select whole rows with the mouse.
 		When you move the mouse to the top of the table the cursor changes to a down pointing arrow.
 		Now you can select whole columns with the mouse.
-		The whole table may be selected by right clicking and selecting <guimenuitem>Select all</guimenuitem>.
+		The whole table may be selected by <action>right clicking</action> and selecting <guimenuitem>Select all</guimenuitem>.
 		It is also possible to select cells by holding down the shift key and using the arrow keys on the keyboard.
 	</para>
 
 	<para>
-		From the right click menu it is also possible to export the selected data to a file as comma or tab delimited text.
+		From the context menu it is also possible to export the selected data to a file as comma or tab delimited text.
 	</para>
 
 	<para>
-		Note that is you choose to create a lot of values in the table, it may take some time to calculate.
+		Note that is you choose to create a lot of values in the table, it may take some time to calculate them.
 		Many values may also take up a lot of memory from the system.
 	</para>
 </section>

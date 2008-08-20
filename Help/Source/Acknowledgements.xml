@@ -13,7 +13,7 @@
 		<title>Libraries</title>
 		<para>
 			<simplelist>
-				<member>Parts of Graph is using the Spirit parser library:</member>
+				<member>Parts of Graph are using the Spirit parser library:</member>
 				<member>Copyright &copy; 1998-2002 Spirit-Dev</member>
 				<member><ulink url="http://spirit.sourceforge.net/">http://spirit.sourceforge.net/</ulink></member>
 			</simplelist>
@@ -185,6 +185,13 @@
 						<entry>Yes</entry>
 						<entry>Yes</entry>
 						<entry>Serena Alessandro &amp; Attilio Ridomi</entry>
+					</row>
+
+					<row>
+						<entry>Korean</entry>
+						<entry>Yes</entry>
+						<entry>No</entry>
+						<entry>Choe Hyeon-gyu</entry>
 					</row>
 
 					<row>

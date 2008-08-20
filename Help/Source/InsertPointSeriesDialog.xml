@@ -15,14 +15,31 @@
 	<indexterm><primary>labels</primary></indexterm>
 	<indexterm><primary>error bars</primary></indexterm>
 	<para>
-		The dialog shown below is used to add series of points to the coordinate system.
+		You can use the dialog below to add a series of points to the coordinate system.
 		The points will be shown in the coordinate system in the main window as a series of markers at the positions entered in this dialog.
+		To insert a new point series, you use <menuchoice><guimenu>Function</guimenu><guimenuitem>Insert point series...</guimenuitem></menuchoice>.
+		To change an existing point series, you first select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 	</para>
 
 	<graphic fileref="DialogPoints.png"/>
 
 	<para>
-		After adding a point series, you may add a <link linkend="InsertTrendlineDialog">trendline</link> which is the function that fits the points in the series best.
+		After adding a point series, you may add a <link linkend="InsertTrendlineDialog">trendline</link> which is the curve of best fit for the points.
+	</para>
+	<para>
+		In the grid you can enter the x- and y-coordinates of the points.
+		You may enter any number of points you want, but all points need both an x-coordinate and a y-coordinate.
+	</para>
+	<para>
+		You can select some points and use the right click menu to copy them to another program.
+		Likewise you may copy data from other programs like MS Word or MS Excel and paste them into this the grid in dialog.
+	</para>
+	<para>
+		From the context menu, you can also choose to import data from a file.
+		Graph can import text files with data separated by either tabs, commas or semicolons.
+		The data will be placed at the position of the caret.
+		This makes it possible to load data from more than one file, or to have x-coordinates in one file and y-coordinates in another file.
+		In the usual case where you have all data in one file, you should make sure that the caret is located at the upper left cell before you import.
 	</para>
 
 	<variablelist>
@@ -39,7 +56,7 @@
 				<para>
 					To the right you can choose between different types of markers.
 					The style may be a circle, a square, a triangle, etc.
-					You may also change the color and the size of the markers.
+					You may also change the color and size of the markers.
 					If the size is set to 0, neither markers nor error bars will be shown.
 				</para>
 				<para>
@@ -56,7 +73,7 @@
 				<para>
 					It is possible to draw lines between the markers.
 					The line will always be drawn between points in the same order they appear in the grid.
-					You can choose between different styles, colors and with of the lines.
+					You can choose between different styles, colors and widths for the lines.
 					You can also choose to draw no line at all.
 				</para>
 				<para>
@@ -72,23 +89,9 @@
 			<term>Labels</term>
 			<listitem>
 				<para>
-					Put a check in <guilabel>Show coordinates</guilabel> to show the coordinate at each point.
-					You may use the button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points.
-				</para>
-				<para>
-					In the grid you can enter the x- and y-coordinates of the points.
-					You may enter any number of points you want, but all points need both an x-coordinate and a y-coordinate.
-				</para>
-				<para>
-					You can select some points and use the right click menu to copy them to another program.
-					Likewise you may copy data from other programs like MS Word or MS Excel and paste them into this dialog.
-				</para>
-				<para>
-					From the context menu, you can also choose to import data from a file.
-					The program supports two formats: tab delimited files and semicolon delimited files.
-					The data will be placed at the position of the marker.
-					This makes it possible to load data from more than one file, or to have x-coordinates in one file and y-coordinates in another file.
-					In the usual case where you have all data in one file, you should make sure that the marker is located at the upper left cell before you import.
+					Put a check in <guilabel>Show coordinates</guilabel> to show the x- and y-coordinates at each point.
+					You may use the <guibutton><inlinegraphic fileref="Font.bmp" /></guibutton>
+					button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points.
 				</para>
 			</listitem>
 		</varlistentry>
@@ -100,8 +103,8 @@
 				They are shown as thin bars at each point in the point series indicating the uncertainty of the point.
 				There are three ways to indicate the size of the error bars:
 				<guilabel>Fixed</guilabel> is used to specify that all points have the same uncertainty.
-				<guilabel>Relative</guilabel> is used to specify a percent of the x- or y-coordinate for each point as uncertain.
-				<guilabel>Custom</guilabel> will add an extra column to the table where you may specify an uncertainty for each point.
+				<guilabel>Relative</guilabel> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty.
+				<guilabel>Custom</guilabel> will add an extra column to the table where you may specify a different uncertainty value for each point.
 				All uncertainties are +/-values.
 			</listitem>
 		</varlistentry>
