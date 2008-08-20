@@ -12,7 +12,8 @@
 	<indexterm><primary>constants</primary></indexterm>
 	<para>
 		Graph allows you to define your own custom functions and constants, which you can use in other expressions in the program.
-		You may want to use this to factor out common used constants and sub expressions to make it faster and easier to use these common constants and sub expressions.
+		You may want to use this to factor out frequently used constants and subexpressions to make it faster and easier to use these items.
+		Use the <menuchoice><guimenu>Function</guimenu><guimenuitem>Custom functions...</guimenuitem></menuchoice> menu item to show the dialog.
 	</para>
 
 	<graphic fileref="DialogCustomFunctions.png"/>

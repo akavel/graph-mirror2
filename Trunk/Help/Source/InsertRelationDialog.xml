@@ -12,13 +12,10 @@
 	<indexterm><primary>inequality</primary></indexterm>
 	<indexterm><primary>constraints</primary></indexterm>
 	<para>
-		This dialog is used to insert and edit relations, which is a common name for inequalities and equations.
-		To insert a relation you select the menu item
-		<menuchoice>
-			<guimenu>Function</guimenu>
-			<guimenuitem>Insert relation...</guimenuitem>
-		</menuchoice>
-		.
+		This dialog is used to insert a relation in the coordinate system.
+		<literal>Relation</literal> is a common name for inequalities and equations.
+		To insert a relation you use the menu item <menuchoice><guimenu>Function</guimenu><guimenuitem>Insert relation...</guimenuitem></menuchoice>.
+		To change an existing relation, you first select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 	</para>
 
 	<graphic fileref="DialogRelation.png"/>
@@ -32,7 +29,7 @@
 					This must either be an equation or an inequality.
 					<parameter>x</parameter> and <parameter>y</parameter> are used as the independent variables.
 					An equation is a statement that one quantity equals another and the quantities must be separated by the = operator.
-					For example the equation <mathphrase>x^2 + y^2 = 25</mathphrase> will plot a circle.
+					For example the equation <literal>x^2 + y^2 = 25</literal> will plot a circle of radius 5.
 				</para>
 				<para>
 					An inequality is a statement that one quantity is greater or less than another, and the quantities must be separated by one of the four operators: &lt;, >, &lt;=, >=.
@@ -56,7 +53,7 @@
 					As for the relation <parameter>x</parameter> and <parameter>y</parameter> are used as the independent variables.
 				</para>
 				<para>
-					For example if you have the relation <literal>x^2 + y^2 &lt; 25</literal>, which is a filled circle,
+					For example if you have the relation <literal>x^2 + y^2 &lt; 25</literal>, which is a shaded circle,
 					the constraints <literal>x > 0 and y &lt; 0</literal> will only show the part of the circle in the 4<superscript>th</superscript> quadrant.
 				</para>
 			</listitem>
@@ -66,7 +63,7 @@
 			<term>Description</term>
 			<listitem>
 				Here you may enter a descriptive text to show in the <glossterm>legend</glossterm>.
-				If the field is left empty, the relation and constraints will be shown in the legend.
+				If this field is left empty, the relation and constraints will be shown in the legend.
 			</listitem>
 		</varlistentry>
 

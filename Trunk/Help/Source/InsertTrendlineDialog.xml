@@ -18,8 +18,9 @@
 	<indexterm><primary>regression</primary></indexterm>
 	<para>
 		Use the dialog shown below to insert a trendline that is the function that fits a <link linkend="InsertPointSeriesDialog">point series</link> best.
-		A trendline is a function that shows a trend in a series of points, i.e. a trendline is the function of a specific type that fits the points best.
-		The trendline is added as an ordinary function, and is calculated from the point series selected when the dialog is opened.
+		A trendline is a function that shows a trend in a series of points, i.e. a trendline is the curve of bets fit of a specific type for a series of points.
+		The trendline is added as an ordinary function.
+		To create a trendline, you select the point series you want to base the trendline on and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Insert point series...</guimenuitem></menuchoice>.
 	</para>
 
 	<simplesect>
@@ -59,8 +60,8 @@
 						To add a logarithmic function, no point in the series may have an x-coordinate that is negative or zero.
 					</para>
 					<para>
-						A logarithmic function is a strait line in a semi logarithmic coordinate system.
-						The point series is therefore converted to a semi logarithmic coordinate system and the logarithmic function with the smallest sum of squares (SSQ) is found.
+						A logarithmic function is a straight line in a semilogarithmic coordinate system.
+						The point series is therefore converted to a semilogarithmic coordinate system and the logarithmic function with the smallest sum of squares (SSQ) is found.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -86,7 +87,7 @@
 						To add a power function, no point in the series may have an x- or y-coordinate that is negative or zero.
 					</para>
 					<para>
-						A power function is a strait line in a double logarithmic coordinate system.
+						A power function is a straight line in a double logarithmic coordinate system.
 						The point series is therefore converted to a double logarithmic coordinate system and the power function with the smallest sum of squares (SSQ) is found.
 					</para>
 				</listitem>
@@ -101,8 +102,8 @@
 						To add an exponential function, no point in the series may have a y-coordinate that is negative or zero.
 					</para>
 					<para>
-						An Exponential function is a strait line in a semi logarithmic coordinate system with the y-axis as the logarithmic axis.
-						The point series is therefore converted to a semi logarithmic coordinate system and the exponential function with the smallest sum of squares (SSQ) is found.
+						An Exponential function is a straight line in a semilogarithmic coordinate system with the y-axis as the logarithmic axis.
+						The point series is therefore converted to a semilogarithmic coordinate system and the exponential function with the smallest sum of squares (SSQ) is found.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -142,14 +143,14 @@
 
 		<para>
 			The program needs a guess for where to start the search for the optimum.
-			As default the guess for all constants are 1, but this can be changed for models added to the list.
+			As default the guess for all constants is 1, but this can be changed for models added to the list.
 			A better guess will increase the possibility that an optimum can be found.
 		</para>
 
 		<para>
 			Graph will try to find the constants for the model f(x) so the sum of squares
 			<mathphrase>&Sigma;(y<subscript>i</subscript>-f(x<subscript>i</subscript>))<superscript>2</superscript></mathphrase>
-			will be smallest possible.
+			will be the smallest possible.
 			The program will start with the guess and move towards the minimum of the sum of squares.
 			If a solution is not found after 100 iterations or the given guess is not valid, the program gives up.
 		</para>
@@ -164,7 +165,7 @@
 			For example this model has a redundant constant: <mathphrase>f(x)=$c+$d/($a*x+$b)</mathphrase>.
 			Notice the relation between the constants <constant>$a</constant>, <constant>$b</constant> and <constant>$d</constant>.
 			If you multiply <constant>$a</constant>, <constant>$b</constant> and <constant>$d</constant> with the same value the resulting function will not be changed.
-			This means that there are an infinite number of best solutions, because you can always multiply with a value.
+			This means that there are an infinite number of best solutions, because you can always multiply by a value.
 			This may confuse the program when it tries to find the best one.
 			Therefore either <constant>$a</constant>, <constant>$b</constant> or <constant>$d</constant> should be removed.
 		</para>

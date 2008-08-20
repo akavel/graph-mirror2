@@ -69,7 +69,7 @@
 		<indexterm><primary>legend</primary></indexterm>
 		<glossdef>
 			<para>
-				The legend is a box in the upper right corner of the image that shows a list of functions, tangents, shades,
+				The legend is a box in the upper right corner of the graphing area that shows a list of functions, tangents, shades,
 				and point series in the coordinate system. Select <guilabel>Show legend</guilabel> under <guilabel>Settings</guilabel>
 				in the Edit axes dialog to show the legend. <action>Right click</action> on an item in the function list and deselect
 				<guimenuitem>Show in legend</guimenuitem> if you don't want the item shown in the legend.

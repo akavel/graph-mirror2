@@ -13,7 +13,10 @@
 	<indexterm><primary>draw</primary></indexterm>
 	<indexterm><primary>plot</primary></indexterm>
 	<para>
-		When you want to insert a function or edit an earlier inserted function you use the insert function dialog.
+		When you want to insert a function, you use the menu item <menuchoice><guimenu>Function</guimenu><guimenuitem>Insert function...</guimenuitem></menuchoice>
+		to show the dialog below.
+		To edit an existing function, you select it in the <glossterm>function list</glossterm> and use the
+		<menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice> menu item.
 	</para>
 
 	<graphic fileref="DialogFunction.png"/>
@@ -23,17 +26,17 @@
 			<term>Function type:</term>
 			<listitem>
 				<para>
-					You can choose between 3 different types of functions: <guilabel>Standard function</guilabel>, <guilabel>parametric function</guilabel> and <guilabel>polar function</guilabel>.
+					You can choose between three different types of functions: <guilabel>Standard function</guilabel>, <guilabel>parametric function</guilabel> and <guilabel>polar function</guilabel>.
 					A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, thought it may be undefined for some x-coordinates.
 				</para>
 				<para>
-					For a parametric function the x- and y-coordinates are calculated from an independent variable called t,
+					For a parametric function the x- and y-coordinates are calculated from an independent variable <parameter>t</parameter>, called the parameter,
 					i.e. a parametric function is defined as two functions: x(t) and y(t).
 				</para>
 				<para>
-					A polar function r(t) indicates an equation to calculate the distance from the origin to a point on the function given an angle t.
-					t is the direct angle between the initial ray and the point on the function.
-					This means that the x- and y-coordinates are givens as x(t)=r(t)*cos(t), y(t)=r(t)*sin(t).
+					A polar function r(t) indicates an equation to calculate the distance from the origin to a point on the function given an angle <parameter>t</parameter>.
+					<parameter>t</parameter> is the direct angle between the initial ray and the point on the function.
+					This means that the x- and y-coordinates are given as <mathphrase>x(t)=r(t)*cos(t), y(t)=r(t)*sin(t)</mathphrase>.
 				</para>
 			</listitem>
 		</varlistentry>
@@ -42,7 +45,7 @@
 			<term>Function equation:</term>
 			<listitem>
 				Here you enter the equation for the function. This can be f(x), x(t),y(t) or r(t) depending on the function type.
-				Under <xref linkend="FunctionList"/> you can see all the available variables, constants and function, which may be used to draw the graphs.
+				Under <xref linkend="FunctionList"/> you can see all the available variables, constants and functions, which may be used to draw the graphs.
 			</listitem>
 		</varlistentry>
 
@@ -53,8 +56,8 @@
 				<guilabel>From</guilabel> and <guilabel>To</guilabel> indicates the start and end of the interval.
 				If the function is a standard function, you can leave one or both of them blank to draw the graph from minus infinity to plus infinity. If the function is a parametric function or a polar function, you always have to specify an interval.
 
-				If the function is a parametric or polar function, you have to specify the number of steps you want calculated.
-				The more steps you specify, the more smooth the graph of the function will be, but it will take longer to draw too.
+				If the function is a parametric or polar function, you have to specify the number of steps for which you want the function to be evaluated.
+				When you specify a higher number of steps, the graph will appear more smooth, but it will take longer to plot.
 				It is preferred to leave the <guilabel>Steps</guilabel> field blank for standard functions to let Graph decide the optimal number of steps.
 				You can however enter the number of steps if the graph doesn't show enough details, for example if an asymptote is not shown correctly.
 				Notice that the <guilabel>Steps</guilabel> only specify a minimum number of calculations.
@@ -65,8 +68,8 @@
 		<varlistentry>
 			<term>Endpoints:</term>
 			<listitem>
-				Here you can choose to show markers at the start and end of the interval.
-				If no range is specified, the endpoints will be showed where the function enters and leaves the image.
+				Here you can choose to show markers at the start and/or end of the interval.
+				If no range is specified, the endpoints will be showed where the function enters and leaves the graphing area.
 				The default is not to show any markers.
 			</listitem>
 		</varlistentry>

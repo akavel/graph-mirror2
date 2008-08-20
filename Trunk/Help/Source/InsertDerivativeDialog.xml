@@ -13,7 +13,10 @@
 	<indexterm><primary>slope</primary></indexterm>
 	<indexterm><primary>function</primary></indexterm>
 	<para>
-		The dialog shown below is used to insert the first derivative of the selected function.
+		The dialog shown below is used to create the first derivative of a function.
+		To create a derivative, you select the function you want to differentiate and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Insert f'(x)...</guimenuitem></menuchoice>.
+	</para>
+	<para>
 		If the function is a standard function, the first derivative is the slope of the function, and it is defined as the function differentiated with respect to x:
 		<mathphrase>f'(x) = df(x)/dx</mathphrase>
 	</para>
@@ -21,7 +24,7 @@
 	<graphic fileref="DialogDiff.png"/>
 
 	<para>
-		You can select interval, line style, width in pixels and color of the functions derivative.
+		You can select an interval, line style, width in pixels and color for the derivative of the function.
 		The derivative is inserted as a function and can be edited as such.
 		The derivative will not change if you edit the original function.
 	</para>

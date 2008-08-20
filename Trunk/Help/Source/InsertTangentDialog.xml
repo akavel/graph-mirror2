@@ -13,9 +13,13 @@
 	<indexterm><primary>normal</primary></indexterm>
 	<para>
 		You can use the dialog below to insert or edit a tangent or normal to a function.
-		A tangent is a strait line that touches the function graph in one defined point without crossing it.
-		The tangent may cross the graph elsewhere.
-		A normal is a strait line perpendicular to the function graph at a given point.
+		To insert a new tangent or normal, you use <menuchoice><guimenu>Function</guimenu><guimenuitem>Insert tangent/normal...</guimenuitem></menuchoice>.
+		To change an existing tangent or normal, you first select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
+	</para>
+	<para>
+		A tangent is a straight line that touches the graph of the function at a given point without crossing it.
+		The tangent may however cross the graph elsewhere.
+		A normal is a straight line perpendicular to the graph of the function at a given point.
 		If the item is a standard function the point is identified by the x-coordinate,
 		while the point is identified from the independent t-parameter for parametric and polar functions.
 	</para>
@@ -35,8 +39,8 @@
 		<varlistentry>
 			<term>Endpoints:</term>
 			<listitem>
-				Here you can choose to show markers at the start and end of the interval.
-				The markers are only used if you have specified an argument range.
+				Here you can choose to show markers at the start and/or end of the interval.
+				If no interval is specified, the markers will be shown at the edge of the graphing area.
 				The default is not to show any markers.
 			</listitem>
 		</varlistentry>
