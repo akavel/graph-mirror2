@@ -163,7 +163,7 @@
 	</simplesect>
 
 
-	<simplesect>
+	<simplesect id="AxesDialogSettings" xreflabel="Settings">
 		<title>Settings</title>
 		<graphic fileref="DialogAxes3.png"/>
 		<variablelist>

@@ -74,7 +74,7 @@
 		<title>root function</title>
 		<indexterm><primary>root function</primary></indexterm>
 		<para>
-			Returns the n'th root of the argument.
+			Returns the <parameter>n</parameter><superscript>th</superscript> root of the argument.
 		</para>
 		<simplesect>
 			<title>Syntax</title>
@@ -83,7 +83,7 @@
 		<simplesect>
 			<title>Description</title>
 			<para>
-				The <function>root</function> function calculates the <parameter>n</parameter>'th root of <parameter>z</parameter>.
+				The <function>root</function> function calculates the <parameter>n</parameter><superscript>th</superscript> root of <parameter>z</parameter>.
 				<parameter>n</parameter> and <parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 				If the calculation is done with real numbers, the argument is only defined for <parameter>z</parameter> &ge; 0.
 			</para>

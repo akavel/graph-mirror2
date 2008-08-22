@@ -23,7 +23,6 @@
 <xsl:param name="chunk.section.depth" select="2"/>
 <xsl:param name="example.autolabel" select="0"/>
 <xsl:param name="htmlhelp.hhc.show.root" select="0"/>
-<xsl:param name="glossterm.auto.link" select="1"/>
 <xsl:param name="html.stylesheet">styles_chm.css</xsl:param>
 <xsl:param name="use.id.as.filename" select="1"/>
 <xsl:param name="chunk.quietly" select="1"/>

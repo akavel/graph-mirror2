@@ -21,7 +21,7 @@
 			<title>Description</title>
 			<para>
 				The <function>integrate</function> function returns the numeric integral of <parameter>f</parameter> from <parameter>a</parameter> to <parameter>b</parameter>.
-				This is mathematical written as:
+				This is mathematically written as:
 				<mediaobject>
 	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Dummy.svg"/></imageobject>
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Integrate.emf"/></imageobject>
@@ -52,7 +52,7 @@
 			<title>Description</title>
 			<para>
 				The <function>sum</function> function returns the summation of <parameter>f</parameter> evaluated for all integers from <parameter>a</parameter> to <parameter>b</parameter>.
-				This is mathematical written as:
+				This is mathematically written as:
 				<mediaobject>
 	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Dummy.svg"/></imageobject>
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Sum.emf"/></imageobject>
@@ -79,7 +79,7 @@
 			<title>Description</title>
 			<para>
 				The <function>product</function> function returns the product of <parameter>f</parameter> evaluated for all integers from <parameter>a</parameter> to <parameter>b</parameter>.
-				This is mathematical written as:
+				This is mathematically written as:
 				<mediaobject>
 	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Dummy.svg"/></imageobject>
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Product.emf"/></imageobject>
