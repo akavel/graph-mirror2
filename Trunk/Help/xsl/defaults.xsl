@@ -86,4 +86,10 @@
 
   </xsl:attribute-set>
 
+<xsl:template match="guilabel">
+  <xsl:call-template name="inline.italicseq"/>
+</xsl:template>
+
+<xsl:param name="glossary.sort" select="1"/>
+
 </xsl:stylesheet>

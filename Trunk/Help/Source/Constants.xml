@@ -25,7 +25,7 @@
 			<title>Remarks</title>
 			<para>
 				Because <function>rand</function> returns a new value each time it is evaluated, a graph using <function>rand</function> will not look the same each time it is drawn.
-				A graph using <function>rand</function> will also change when the program is forced to redraw it because the system move, resize or zoom.
+				A graph using <function>rand</function> will also change when the program is forced to redraw, e.g. because the coordinate system is moved, resized or zoomed.
 			</para>
 		</simplesect>
 		<simplesect>
