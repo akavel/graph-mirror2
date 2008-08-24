@@ -42,8 +42,11 @@ __published:	// IDE-managed Components
   TTntMenuItem *Popup1_Export;
   TSaveDialog *SaveDialog1;
   TTntMenuItem *N1;
-  TTntMenuItem *Popup1_Show_df;
-  TTntMenuItem *Popup1_Show_ddf;
+  TTntMenuItem *Popup1_Show1;
+  TTntMenuItem *Popup1_Show5;
+  TTntMenuItem *Popup1_Show3;
+  TTntMenuItem *Popup1_Show4;
+  TTntMenuItem *Popup1_Show2;
   void __fastcall Button2Click(TObject *Sender);
   void __fastcall Popup1_CopyClick(TObject *Sender);
   void __fastcall Popup1_SelectClick(TObject *Sender);
@@ -54,6 +57,8 @@ __published:	// IDE-managed Components
 private:	// User declarations
   const TBaseFuncType *Func;
 
+  void SetCaptions(const char*const* Captions);
+  
 public:		// User declarations
   __fastcall TForm15(TComponent* Owner);
   void ShowTable(const TBaseFuncType *F);

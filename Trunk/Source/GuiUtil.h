@@ -27,7 +27,7 @@ void ResizeControl(TControl *Control, TCustomLabel *Label1, TCustomLabel *Label2
 void MoveLabel(TControl *Control, TCustomLabel *Label);
 void MoveControl(TControl *Control, TCustomLabel *Label);
 
-void SetAccelerators(TWinControl *WinControl);
+void SetAccelerators(TForm *WinControl);
 
 void ScaleComponent(TComponent *Component, unsigned Scale);
 void ScaleForm(TForm *Form, bool Flip=true);

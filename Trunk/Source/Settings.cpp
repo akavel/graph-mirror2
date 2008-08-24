@@ -119,6 +119,29 @@ void TAxes::ReadFromIni(const TConfigFile &IniFile)
   GridStyle = IniFile.ReadEnum("Axes", "GridStyle", gsLines);
 }
 //---------------------------------------------------------------------------
+void TAxes::HandleZoomSquare(double xyScale)
+{
+  if(ZoomSquare && xAxis.LogScl == yAxis.LogScl)
+  {
+    if(xAxis.LogScl)
+    {
+      double yMiddle = std::exp((std::log(yAxis.Max) + std::log(yAxis.Min)) / 2);
+      double dy = std::exp(xyScale * (std::log(xAxis.Max) - std::log(xAxis.Min)) / 2);
+      yAxis.Min = yMiddle / dy;
+      yAxis.Max = yMiddle * dy;
+    }
+    else
+    {
+      double yMiddle = (yAxis.Min + yAxis.Max) /2;
+      double dy = xyScale * (xAxis.Max - xAxis.Min);
+      yAxis.Min = yMiddle - dy / 2;
+      yAxis.Max = yMiddle + dy / 2;
+    }
+  }
+  else
+    ZoomSquare = false;
+}
+//---------------------------------------------------------------------------
 ///////////////
 // TProperty //
 ///////////////
