@@ -165,12 +165,23 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
       RangeCheck(xAxis.AxisCross>0, Edit6, LoadRes(509));
   }
 
-  //Set zoom data for axes; This will push all data on undo stack
-  if(!Form1->ZoomWindow(xAxis.Min, xAxis.Max, yAxis.Min, yAxis.Max, false))
+  //Check for out of range
+  if(xAxis.Max-xAxis.Min < 1E-10 || yAxis.Max-yAxis.Min < 1E-10)
   {
-    MessageBox(LoadRes(RES_ERROR_ZOOM), LoadRes(RES_ERROR_IN_VALUE));
+    MessageBox(LoadRes(RES_ERROR_IN_VALUE), LoadRes(RES_MAX_ZOOM));
     return;
   }
+
+  //Check if we have zoomed so much out that log10(xMin/xMax) can no longer be evaluated
+  if(xAxis.Max>1E15 || yAxis.Max>1E15 || xAxis.Min < -1E15 || yAxis.Min < -1E15)
+  {
+    MessageBox(LoadRes(RES_ERROR_IN_VALUE), LoadRes(RES_MIN_ZOOM));
+    return;
+  }
+
+  Data.AbortUpdate();
+  Data.ClearCache();
+  UndoList.Push(TUndoAxes());
 
   xAxis.LogScl = CheckBox1->Checked;
   xAxis.ShowNumbers = CheckBox2->Checked;
@@ -191,8 +202,6 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
   yAxis.ShowTicks = CheckBox13->Checked;
   yAxis.ShowGrid = CheckBox14->Checked;
   yAxis.MultiplyOfPi = CheckBox18->Checked;
-  yAxis.Min = Data.Axes.yAxis.Min; //This is starting to get silly, but ZoomWindow may have changed the y-axis if ZoomSquare=true
-  yAxis.Max = Data.Axes.yAxis.Max;
 
   TAxes &Axes = Data.Axes;
   Axes.xAxis = xAxis;
@@ -213,6 +222,9 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
   Axes.LabelFont = LabelFont;
   Axes.NumberFont = NumberFont;
   Axes.LegendFont = LegendFont;
+
+  //Handle Zoom Square
+  Axes.HandleZoomSquare(Form1->Draw.GetScaledYAxis());
 
   //Set trigonometry property for all functions if the setting changed
   if(OldTrig != Axes.Trigonometry)

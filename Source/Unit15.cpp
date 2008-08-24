@@ -21,9 +21,6 @@
 __fastcall TForm15::TForm15(TComponent* Owner)
         : TTntForm(Owner), Func(NULL)
 {
-  Popup1_Show_df->Caption = LoadRes(RES_SHOW, "f'(x)");
-  Popup1_Show_ddf->Caption = LoadRes(RES_SHOW, "f''(x)");
-
   TranslateProperties(this);
   MoveControl(Edit1, Label1);
   MoveLabel(Edit2, Label2);
@@ -105,28 +102,46 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
   else if(const TParFunc *ParFunc = dynamic_cast<const TParFunc*>(Func))
   {
     double t = Min;
+    Func32::TParamFunc F = ParFunc->GetFunc();
+    Func32::TParamFunc Dif = F.MakeDif();
     for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
     {
       AnsiString Str = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
       //Calculate back to take care of rounding. What is written is also what is used for evaluation
       t = Str.ToDouble();
       Grid1->Cells[0][N] = Str;
+      long double xDif = 0;
+      long double yDif = 0;
+      try
+      {
+        Grid1->Cells[1][N] = DoubleToStr(F.CalcX(t));
+        xDif = Dif.CalcX(t);
+        Grid1->Cells[3][N] = DoubleToStr(xDif);
+      }
+      catch(Func32::EFuncError&)
+      {
+        Grid1->Cells[1][N] = "";
+        Grid1->Cells[3][N] = "";
+      }
 
       try
       {
-        Grid1->Cells[1][N] = DoubleToStr(ParFunc->GetFunc().CalcX(t));
+        Grid1->Cells[2][N] = DoubleToStr(F.CalcY(t));
+        yDif = Dif.CalcY(t);
+        Grid1->Cells[4][N] = DoubleToStr(yDif);
       }
       catch(Func32::EFuncError&)
       {
+        Grid1->Cells[2][N] = "";
+        Grid1->Cells[4][N] = "";
       }
-      try
-      {
-        Grid1->Cells[2][N] = DoubleToStr(ParFunc->GetFunc().CalcY(t));
-      }
-      catch(Func32::EFuncError&)
-      {
-      }
-      if(N%1000 == 0)
+
+      if(xDif != 0)
+        Grid1->Cells[5][N] = DoubleToStr(yDif / xDif);
+      else
+        Grid1->Cells[5][N] = "";
+
+      if(N % 1000 == 0)
         ProgressForm1->StepIt();
       if(ProgressForm1->AbortProgress)
         break;
@@ -134,6 +149,8 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
   }
   else if(const TPolFunc *PolFunc = dynamic_cast<const TPolFunc*>(Func))
   {
+    Func32::TPolarFunc F = PolFunc->GetFunc();
+    Func32::TPolarFunc Dif = F.MakeDif();
     double t = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
     {
@@ -141,12 +158,14 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
       //Calculate back to take care of rounding. What is written is also what is used for evaluation
       t = Str.ToDouble();
       Grid1->Cells[0][N] = Str;
-      AnsiString r, x, y;
+      AnsiString r, x, y, dr, dydx;
       try
       {
-        r = DoubleToStr(PolFunc->GetFunc().CalcR(t));
-        x = DoubleToStr(PolFunc->GetFunc().CalcX(t));
-        y = DoubleToStr(PolFunc->GetFunc().CalcY(t));
+        r = DoubleToStr(F.CalcR(t));
+        x = DoubleToStr(F.CalcX(t));
+        y = DoubleToStr(F.CalcY(t));
+        dr = DoubleToStr(Dif.CalcR(t));
+        dydx = DoubleToStr(F.CalcSlope(t));
       }
       catch(Func32::ECalcError&)
       { //Ignore errors and continue
@@ -155,8 +174,10 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
       Grid1->Cells[1][N] = r;
       Grid1->Cells[2][N] = x;
       Grid1->Cells[3][N] = y;
+      Grid1->Cells[4][N] = dr;
+      Grid1->Cells[5][N] = dydx;
 
-      if(N%1000 == 0)
+      if(N % 1000 == 0)
         ProgressForm1->StepIt();
       if(ProgressForm1->AbortProgress)
         break;
@@ -165,39 +186,44 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
   ProgressForm1->Close();
 }
 //---------------------------------------------------------------------------
+void TForm15::SetCaptions(const char*const* Captions)
+{
+  for(int I = 0; I < 5; I++)
+  {
+    Grid1->Cells[I+1][0] = ToWideString(Captions[I]);
+    PopupMenu1->Items->Items[I]->Caption = LoadRes(RES_SHOW, Captions[I]);
+    PopupMenu1->Items->Items[I]->Hint = AnsiString().sprintf(PopupMenu1->Items->Items[I]->Hint.c_str(), Captions[I]);
+    PopupMenu1->Items->Items[I]->Visible = Captions[I][0] != '\0';
+  }
+}
+//---------------------------------------------------------------------------
 void TForm15::ShowTable(const TBaseFuncType *F)
 {
   Func = F;
 
   if(dynamic_cast<const TStdFunc*>(Func))
   {
+    const char *Captions[] = {"f(x)", "f'(x)", "f''(x)", "", ""};
     Grid1->ColCount = 4;
     Grid1->Cells[0][0] = "x";
-    Grid1->Cells[1][0] = "f(x)";
-    Grid1->Cells[2][0] = "f'(x)";
-    Grid1->Cells[3][0] = "f''(x)";
+    SetCaptions(Captions);
     Label4->Caption = L"\x394x=";
   }
   else if(dynamic_cast<const TParFunc*>(Func))
   {
-    Popup1_Show_df->Visible = false;
-    Popup1_Show_ddf->Visible = false;
-    Grid1->ColCount = 3;
+    const char *Captions[] = {"x(t)", "y(t)", "dx/dt", "dy/dt", "dy/dx"};
+    Grid1->ColCount = 6;
     Grid1->Cells[0][0] = "t";
-    Grid1->Cells[1][0] = "x(t)";
-    Grid1->Cells[2][0] = "y(t)";
     Label4->Caption = L"\x394t=";
+    SetCaptions(Captions);
   }
   else if(dynamic_cast<const TPolFunc*>(Func))
   {
-    Popup1_Show_df->Visible = false;
-    Popup1_Show_ddf->Visible = false;
-    Grid1->ColCount = 4;
+    const char *Captions[] = {"r(t)", "x(t)", "y(t)", "dr/dt", "dy/dx"};
+    Grid1->ColCount = 6;
     Grid1->Cells[0][0] = "t";
-    Grid1->Cells[1][0] = "r(t)";
-    Grid1->Cells[2][0] = "x(t)";
-    Grid1->Cells[3][0] = "y(t)";
     Label4->Caption = L"\x394t=";
+    SetCaptions(Captions);
   }
 
   ShowModal();
@@ -233,8 +259,9 @@ void __fastcall TForm15::Popup1_ExportClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm15::Popup1_Show(TObject *Sender)
 {
-  Grid1->ColWidths[2] = Popup1_Show_df->Checked ? Grid1->DefaultColWidth : 0;
-  Grid1->ColWidths[3] = Popup1_Show_ddf->Checked ? Grid1->DefaultColWidth : 0;
+  TMenuItem *MenuItem = static_cast<TMenuItem*>(Sender);
+  int Index = MenuItem->MenuIndex;
+  Grid1->ColWidths[Index+1] = MenuItem->Checked ? Grid1->DefaultColWidth : -1;
 }
 //---------------------------------------------------------------------------
 

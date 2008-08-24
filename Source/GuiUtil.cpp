@@ -87,9 +87,6 @@ void FlipAnchors(TControl *Control)
 //---------------------------------------------------------------------------
 void ScaleForm(TForm *Form, bool Flip)
 {
-  //Change font for form. All components should have ParentFont=true
-  Form->Font->Name = "MS Shell Dlg";
-
   if(Flip && SysLocale.MiddleEast)
   {
     Form->FlipChildren(true);
@@ -198,11 +195,14 @@ void SetAccelerators(TWinControl *WinControl, std::set<wchar_t> &Accelerators)
       }
 }
 //---------------------------------------------------------------------------
-void SetAccelerators(TWinControl *WinControl)
+void SetAccelerators(TForm *Form)
 {
+  //Change font for form. All components should have ParentFont=true
+  Form->Font->Name = "MS Shell Dlg";
+
   const wchar_t Accelerators[] = L"abcdefghijklmnopqrstuvwxyz0123456789";
   std::set<wchar_t> Temp(Accelerators, Accelerators + sizeof(Accelerators) - 1);
-  SetAccelerators(WinControl, Temp);
+  SetAccelerators(Form, Temp);
 }
 //---------------------------------------------------------------------------
 void TranslateStrings(TStrings *Strings)

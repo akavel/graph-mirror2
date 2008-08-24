@@ -140,18 +140,39 @@ object Form15: TForm15
   object PopupMenu1: TTntPopupMenu
     Left = 8
     Top = 432
-    object Popup1_Show_df: TTntMenuItem
+    object Popup1_Show1: TTntMenuItem
       AutoCheck = True
       Caption = 'Show %s'
       Checked = True
-      Hint = 'Show the f'#39'(x) column in the table.'
+      Hint = 'Show the %s column in the table.'
       OnClick = Popup1_Show
     end
-    object Popup1_Show_ddf: TTntMenuItem
+    object Popup1_Show2: TTntMenuItem
       AutoCheck = True
       Caption = 'Show %s'
       Checked = True
-      Hint = 'Show the f'#39#39'(x) column in the table.'
+      Hint = 'Show the %s column in the table.'
+      OnClick = Popup1_Show
+    end
+    object Popup1_Show3: TTntMenuItem
+      AutoCheck = True
+      Caption = 'Show %s'
+      Checked = True
+      Hint = 'Show the %s column in the table.'
+      OnClick = Popup1_Show
+    end
+    object Popup1_Show4: TTntMenuItem
+      AutoCheck = True
+      Caption = 'Show %s'
+      Checked = True
+      Hint = 'Show the %s column in the table.'
+      OnClick = Popup1_Show
+    end
+    object Popup1_Show5: TTntMenuItem
+      AutoCheck = True
+      Caption = 'Show %s'
+      Checked = True
+      Hint = 'Show the %s column in the table.'
       OnClick = Popup1_Show
     end
     object N1: TTntMenuItem

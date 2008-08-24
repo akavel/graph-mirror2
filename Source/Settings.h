@@ -81,6 +81,7 @@ struct TAxes
   TAxes();
   void WriteToIni(TConfigFile &IniFile) const;
   void ReadFromIni(const TConfigFile &);
+  void HandleZoomSquare(double xyScale);
 };
 
 enum TComplexFormat {cfReal,cfRectangular,cfPolar};

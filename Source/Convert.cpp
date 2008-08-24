@@ -469,6 +469,11 @@ WideString ToWideString(const AnsiString &Str)
   return Str;
 }
 //--------------------------------------------------------------------------
+WideString ToWideString(const char *Str)
+{
+  return AnsiString(Str);
+}
+//--------------------------------------------------------------------------
 void Trim(std::string &Str)
 {
   unsigned Pos1 = Str.find_first_not_of(" ");

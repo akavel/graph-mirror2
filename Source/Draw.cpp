@@ -780,7 +780,7 @@ void TDraw::SetClippingRegion()
     Context.ExcludeClipRect(LegendRect);
 }
 //---------------------------------------------------------------------------
-//Return the needed dy=yMax-yMin to make x- and y-axes scale equal
+//Return the needed dy/dx for scaling the axes equal, i.e. d/dx is the visual difference in the pixels
 double TDraw::GetScaledYAxis() const
 {
   HDC DC = GetDC(0);

@@ -998,32 +998,14 @@ bool TForm1::ZoomWindow(double xMin, double xMax, double yMin, double yMax, bool
   if(SaveUndo)
     UndoList.Push(TUndoAxes());
 
-  if(Data.Axes.ZoomSquare && Data.Axes.xAxis.LogScl == Data.Axes.yAxis.LogScl)
-  {
-    if(Data.Axes.xAxis.LogScl)
-    {
-      double yMiddle = std::exp((std::log(yMax) + std::log(yMin)) / 2);
-      double dy = std::exp(Draw.GetScaledYAxis() * (std::log(xMax) - std::log(xMin)) / 2);
-      yMin = yMiddle / dy;
-      yMax = yMiddle * dy;
-    }
-    else
-    {
-      double yMiddle = (yMin + yMax) /2;
-      double dy = Draw.GetScaledYAxis() * (xMax - xMin);
-      yMin = yMiddle - dy / 2;
-      yMax = yMiddle + dy / 2;
-    }
-  }
-  else
-    Data.Axes.ZoomSquare = false;
-
   //Set min and max for axes
   Data.Axes.xAxis.Min = xMin;
   Data.Axes.xAxis.Max = xMax;
   Data.Axes.yAxis.Min = yMin;
   Data.Axes.yAxis.Max = yMax;
 
+  Data.Axes.HandleZoomSquare(Draw.GetScaledYAxis());
+  
   Data.ClearCache();
   if(Update)
   {
@@ -3811,5 +3793,6 @@ void __fastcall TForm1::Image1Click(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+
 
 

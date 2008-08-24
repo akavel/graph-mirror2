@@ -24,7 +24,7 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
 {
   TranslateProperties(this);
   SetAccelerators(this);
-  int Left = Label1->Left + TMaxWidth(Label1)(Label2)(Label3) + 5;
+  int Left = Label1->Left + TMaxWidth(Label1)(Label2)(Label3)(Label4)(Label5) + 5;
   int DeltaWidth = Canvas->TextWidth(CheckBox4->Caption) + 20 - CheckBox4->Width;
   Width = Width + TMaxWidth(Left - Edit1->Left)(DeltaWidth);
 

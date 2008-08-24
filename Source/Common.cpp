@@ -378,7 +378,8 @@ TMaxWidth::TMaxWidth(TControl *Control)
     Canvas = Label->Canvas;
   else if(TForm *Form = dynamic_cast<TForm*>(Control->Owner))
     Canvas = Form->Canvas;
-  Value = WideCanvasTextWidth(Canvas, TntControl_GetText(Control));
+  WideString Str = TntControl_GetText(Control);
+  Value = WideCanvasTextWidth(Canvas, Str);
 }
 //---------------------------------------------------------------------------
 AnsiString GetTempPath()
