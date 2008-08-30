@@ -404,6 +404,18 @@ AnsiString GetTempFileName(const AnsiString &Prefix, const AnsiString &Ext)
   return FileName;
 }
 //---------------------------------------------------------------------------
+void LoadLanguage(const AnsiString &Lang)
+{
+  AnsiString Path = ExtractFilePath(Application->ExeName);
+  UseLanguage(Lang); //dxGetText will not update translation unless language has been changed
+  DefaultInstance->bindtextdomainToFile("default", Path + "locale\\" + Lang + ".mo");
+  AnsiString HelpFile = Path + "Help\\Graph-" + Lang + ".chm";
+  if(FileExists(HelpFile))
+    Application->HelpFile = HelpFile;
+  else
+    Application->HelpFile = Path + "Help\\Graph-English.chm";
+}
+//---------------------------------------------------------------------------
 
 
 

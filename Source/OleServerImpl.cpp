@@ -230,9 +230,9 @@ bool TOleServerImpl::Register(bool AllUsers)
     //The /automation switch is needed to prevent an extra instance that doesn't close when inserting from file in Word; Don't know why
     //Don't use Quotes; Quotes prevents arguments from being passed under Windows 9x
     CreateRegKey(ClassKey + "\\LocalServer32", "", Application->ExeName + " /automation", RootKey);
-    CreateRegKey(ClassKey + "\\Verb\\0", "", "&Open,0,2", RootKey);
+    CreateRegKey(ClassKey + "\\Verb\\0", "", "&" + LoadRes(RES_OLE_OPEN) + ",0,2", RootKey);
     CreateRegKey(ClassKey + "\\DefaultIcon", "", "\"" + Application->ExeName + "\",1", RootKey);
-    CreateRegKey(ClassKey + "\\AuxUserType\\2", "", "Graph System", RootKey);
+    CreateRegKey(ClassKey + "\\AuxUserType\\2", "", LoadRes(RES_OLE_GRAPH_SYSTEM), RootKey);
     CreateRegKey(ClassKey + "\\AuxUserType\\3", "", "Graph", RootKey);
     CreateRegKey(ClassKey + "\\MiscStatus", "", OLEMISC_RENDERINGISDEVICEINDEPENDENT, RootKey);
     CreateRegKey(ClassKey + "\\DataFormats\\DefaultFile", "", "Embed Souce", RootKey);
@@ -243,7 +243,7 @@ bool TOleServerImpl::Register(bool AllUsers)
     CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\4", "", AnsiString("PNG") + "," + DVASPECT_CONTENT + "," + TYMED_ISTREAM + "," + DATADIR_GET, RootKey);
     CreateRegKey(ClassKey + "\\ProgID", "", GetProgID(), RootKey);
 
-    CreateRegKey(ProgID, "", "Graph system", RootKey);
+    CreateRegKey(ProgID, "", LoadRes(RES_OLE_GRAPH_SYSTEM), RootKey);
     CreateRegKey(ProgID + "\\DefaultIcon", "", Application->ExeName + ",1", RootKey);
     CreateRegKey(ProgID + "\\shell\\open\\command", "", "\"" + Application->ExeName + "\" \"%1\"", RootKey);
     CreateRegKey(ProgID + "\\Insertable", "", "", RootKey);

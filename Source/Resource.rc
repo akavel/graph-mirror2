@@ -41,7 +41,7 @@ BEGIN
   RES_KEY_SPACE     "Space"       //Shortcut key
 
   RES_PowCalcError        "An error occurred while evaluating power function."
-  RES_TanError            "Tangent to 90+p180 is undefined."
+  RES_TanError            "Tangent to pi/2+n*pi (90+n180 in degrees) is undefined."
   RES_FactError           "Fact can only be calculated for positive integers."
   RES_LogError            "Cannot take logarithm to number equal or less than zero."
   RES_SqrtError           "sqrt is undefined for negative numbers."
@@ -60,10 +60,10 @@ BEGIN
 
   RES_OperatorError       "Unexpected operator. Operator '%s' cannot be placed here."
   RES_NoEndPar            "The right bracket is missing."
-  RES_ArgCountError       "Invalid number of arguments supplied for function '%s'"
+  RES_ArgCountError       "Invalid number of arguments supplied for the function '%s'"
   RES_InvalidCompare      "Comparison operator misplaced."
   RES_InvalidNumber       "Invalid number found. Use the format: -5.475E-8"
-  RES_EmptyString         "String is empty. You need to enter a function."
+  RES_EmptyString         "String is empty. You need to enter a formula."
   RES_CommaError          "Comma is not allowed here. Use dot as decimal separator."
   RES_InvalidEndPar       "Unexpected end of brackets."
   RES_FactorExpected      "Number, constant or function expected."
@@ -72,7 +72,7 @@ BEGIN
   RES_UnknownVar          "Unknown variable, function or constant: \"%s\""
   RES_UnknownChar         "Unknown character: \"%s\""
   RES_UnexpectedEnd       "The end of the expression was unexpected."
-  RES_ParseError          "Error parsing function text."
+  RES_ParseError          "Error parsing expression."
 
   RES_Overflow            "A calculation resulted in an overflow."
   RES_InvalidValue        "An invalid value was used in the calculation."
@@ -120,7 +120,8 @@ BEGIN
   RES_FILE_FILTER         "Graph files [*.grf]|*.grf" //Used in Save as dialog
   RES_FILE_ACCESS         "Cannot write to file: %s\nAccess denied. Check that the file is not in use or write protected."
   RES_UNKNOWN_FONT        "The font \"%s\" doesn't exist. Standard font is used instead."
-
+  RES_OLE_GRAPH_SYSTEM    "Graph system" //Description of grf file
+  RES_OLE_OPEN            "Open"         //Menu item shown in OLE client to open a Graph system object in Graph
   RES_SELECTION_ERROR     "Selection error" //Error in Insert shading dialog when you need to select a function
   RES_FILE_ERROR          "File error"      //Title in error message when reading a grf-file failed
   RES_WRITE_FAILED        "Write access failed"
@@ -196,7 +197,7 @@ BEGIN
   551 "Edit relation"
   552 "Commands"        //Customize toolbar dialog
   553 "(All Commands)"  //Customize toolbar dialog
-  554 "To add a command to a toolbar simply select a category and drag the command out of this dialog box to a toolbar."
+  554 "To add a command to the toolbar simply select a category and drag the command out of this dialog box to the toolbar."
   555 "Edit f'(x)"
   556 "Edit trendline"
   557 "Categories:"     //Customize toolbar dialog
@@ -214,29 +215,29 @@ BEGIN
   609 "You can find a list of all available functions in the help."                                                                                               //Tip of the Day
   610 "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."    //Tip of the Day
   611 "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."                                      //Tip of the Day
-  612 "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new files."                                   //Tip of the Day
+  612 "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new coordinate systems."                                   //Tip of the Day
   613 "While you hold down the Ctrl key, you can use the arrow keys to move the system."                                                                          //Tip of the Day
   614 "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."                                                                        //Tip of the Day
   615 "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."                                                       //Tip of the Day
   616 "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."                        //Tip of the Day
   617 "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."                //Tip of the Day
   618 "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."                                                   //Tip of the Day
-  619 "You can use 'Edit|Copy image' to copy the coordinate system to the clipboard and paste it into another program."                                           //Tip of the Day
+  619 "You can use 'Edit|Copy image' to copy the coordinate system and paste it into another program, for example, Microsoft Word. Later you can usually edit the image in Graph by double clicking on it in the other program."  //Tip of the Day
   620 "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."                                                      //Tip of the Day
   621 "You can drag a grf-file from explorer into an open instance of Graph to open the file."                                                                    //Tip of the Day
-  622 "Graph will remember the size and placement of the main window between executions. This can be disabled from the Options dialog."                           //Tip of the Day
+  622 "Graph will remember the size of the main window between executions. This can be disabled from the Options dialog."                           //Tip of the Day
   623 "Calc|Table can be used to create a table with evaluation values for a function."                                                                           //Tip of the Day
   624 "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel." //Tip of the Day
-  625 "Data from the evaluation table can be copied to another program like Microsoft Excel using the clipboard."                                                 //Tip of the Day
-  626 "The data points in a point series can be copied to and from other programs like Microsoft Excel through the clipboard."                                    //Tip of the Day
-  627 "Functions can be copied from one instance of the program to another through the clipboard using Edit|Copy."                                                //Tip of the Day
+  625 "Data from the evaluation table can be copied to another program like Microsoft Excel."                                                 //Tip of the Day
+  626 "The data points in a point series can be copied to and from other programs like Microsoft Excel."                                    //Tip of the Day
+  627 "Elements as functions, point series, etc. can be copied from one instance of the program to another using Edit|Copy."                                                //Tip of the Day
   628 "You can always undo the last thing you did using Edit|Undo."                                                                                               //Tip of the Day
   629 "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."                                                                     //Tip of the Day
   630 "In the Axes dialog you can add a title to the coordinate system."                                                                                          //Tip of the Day
   631 "You can import point series from files saved by other programs, like Microsoft Excel."                                                                     //Tip of the Day
-  632 "When inserting a point series you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."                            //Tip of the Day
-  633 "You can use 'Zoom|All points' to change the coordinate system so all point series are visible."                                                            //Tip of the Day
-  634 "You can use Zoom|Fit to change the coordinate system to show the selected function or point series."                                                       //Tip of the Day
+  632 "When inserting a point series, you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."                            //Tip of the Day
+  633 "You can use 'Zoom|Fit all' to change the coordinate system so all functions and point series are visible."                                                            //Tip of the Day
+  634 "You can use Zoom|Fit to change the coordinate system to show the selected function or point series in an optimal way."                                                       //Tip of the Day
   635 "When you hold down the Shift key you can drag the coordinate system around with the mouse."                                                                //Tip of the Day
   636 "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."                                           //Tip of the Day
   637 "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."                                       //Tip of the Day

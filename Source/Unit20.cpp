@@ -95,7 +95,7 @@ void __fastcall TForm20::ToolButton1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm20::ToolButton2Click(TObject *Sender)
 {
-  MediaPlayer1->Pause();
+  MediaPlayer1->Stop(); //Pause is causing trouble. It will step each time the window is updated
   ToolButton1->Enabled = true;
 }
 //---------------------------------------------------------------------------
@@ -162,7 +162,7 @@ void __fastcall TForm20::MediaPlayer1Notify(TMediaPlayerEx *Sender,
   {
     ToolButton1->Enabled = true;
     ToolButton2->Enabled = false;
-    ToolButton3->Enabled = false;
+    ToolButton3->Enabled = NotifyValue == nvAborted;
   }
 }
 //---------------------------------------------------------------------------

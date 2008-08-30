@@ -140,7 +140,7 @@ object Form6: TForm6
       object ToolButton13: TTntToolButton
         Left = 238
         Top = 0
-        Hint = 'Insert object'
+        Hint = 'Insert object.'
         ImageIndex = 10
         OnClick = ToolButton13Click
       end

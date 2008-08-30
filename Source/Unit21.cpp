@@ -24,7 +24,6 @@ __fastcall TForm21::TForm21(TComponent* Owner, TData &AData, const boost::shared
   TranslateProperties(this);
   SetAccelerators(this);
 
-  Label1->Caption = Label1->Caption + L":";
   const int PlacementToIndex[] = {0, -1, -1, -1, -1, 1, 2, 3};
   ComboBox1->ItemIndex = PlacementToIndex[Label->GetPlacement()];
   Edit1->Text = ToWideString(Label->GetXPos().Text);

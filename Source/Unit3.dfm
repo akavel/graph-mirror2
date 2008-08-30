@@ -127,8 +127,8 @@ object Form3: TForm3
         Width = 150
         Height = 17
         Hint = 
-          'Show the label at the right side of the main window, above the x' +
-          '-axis.'
+          'Show the label at the right side of the graphing area, above the' +
+          ' x-axis.'
         Caption = 'Label:'
         ParentShowHint = False
         ShowHint = True
@@ -330,8 +330,8 @@ object Form3: TForm3
         Width = 166
         Height = 17
         Hint = 
-          'Show the label at the top of the main window, to the right of th' +
-          'e y-axis.'
+          'Show the label at the top of the graphing area, to the right of ' +
+          'the y-axis.'
         Caption = 'Label:'
         TabOrder = 6
         OnClick = CheckBoxClick

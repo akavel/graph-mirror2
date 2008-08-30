@@ -57,7 +57,7 @@ object Form12: TForm12
     Top = 16
     Width = 265
     Height = 21
-    Hint = 'Coordinate where the tangent/normal will cross the function.'
+    Hint = 'Value where the tangent/normal will interact with the function.'
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
   end

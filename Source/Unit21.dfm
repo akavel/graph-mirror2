@@ -20,9 +20,10 @@ object Form21: TForm21
   object Label1: TTntLabel
     Left = 8
     Top = 20
-    Width = 50
+    Width = 34
     Height = 13
-    Caption = 'Placement'
+    Caption = 'Corner:'
+    FocusControl = ComboBox1
   end
   object Label2: TTntLabel
     Left = 8

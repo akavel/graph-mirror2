@@ -74,7 +74,7 @@
     <PFLAGS value="-N2..\Obj -N0..\Obj -H- -$Y+ -$W -$O- -$C- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
     <AFLAGS value="/mx /w2 /zi"/>
-    <LFLAGS value="-I..\Obj -dPDFlib.dll -dpython25.dll -dgdiplus.dll -D&quot;&quot; -S:0x500000 -aa 
+    <LFLAGS value="-dPDFlib.dll -dpython25.dll -dgdiplus.dll -I..\Obj -D&quot;&quot; -S:0x500000 -aa 
       -Tpe -GD -x -w-dup -v"/>
     <OTHERFILES value=""/>
   </OPTIONS>
@@ -160,7 +160,7 @@ AutoIncBuild=1
 MajorVer=4
 MinorVer=4
 Release=0
-Build=407
+Build=408
 Debug=1
 PreRelease=0
 Special=0
@@ -172,7 +172,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Ivan Johansen
 FileDescription=Graph
-FileVersion=4.4.0.407
+FileVersion=4.4.0.408
 InternalName=Graph
 LegalCopyright=Copyright Ivan Johansen 2008
 LegalTrademarks=
@@ -292,7 +292,7 @@ Item0=..
 DebugSourceDirs=C:\Program Files\Borland\CBuilder6\Source\Indy\
 
 [Parameters]
-RunParams=/c
+RunParams=
 Launcher=
 UseLauncher=0
 DebugCWD=
