@@ -3512,7 +3512,7 @@ object Form1: TForm1
     object NewAction: TTntAction
       Category = 'File'
       Caption = 'New'
-      Hint = 'Creates a new coordinate system.'
+      Hint = 'Create a new coordinate system.'
       ImageIndex = 0
       ShortCut = 16462
       OnExecute = NewActionExecute
@@ -3528,7 +3528,7 @@ object Form1: TForm1
     object SaveAction: TTntAction
       Category = 'File'
       Caption = 'Save'
-      Hint = 'Save the current coordinate system to a file.'
+      Hint = 'Write the current coordinate system to a file.'
       ImageIndex = 2
       ShortCut = 16467
       OnExecute = SaveActionExecute
@@ -3536,21 +3536,21 @@ object Form1: TForm1
     object SaveAsAction: TTntAction
       Category = 'File'
       Caption = 'Save as...'
-      Hint = 'Saves the coordinate system as a new name.'
+      Hint = 'Write the current coordinate system to a file with a new name.'
       ImageIndex = 3
       OnExecute = SaveAsActionExecute
     end
     object SaveCopyAsAction: TTntAction
       Category = 'File'
       Caption = 'Save copy as...'
-      Hint = 'Saves a copy of the current coordinate system.'
+      Hint = 'Save a copy of the current coordinate system to a file.'
       ImageIndex = 49
       OnExecute = SaveCopyAsActionExecute
     end
     object SaveAsImageAction: TTntAction
       Category = 'File'
       Caption = 'Save as image...'
-      Hint = 'Saves the shown coordinate system as an image.'
+      Hint = 'Save the shown coordinate system as an image.'
       ImageIndex = 45
       ShortCut = 16450
       OnExecute = SaveAsImageActionExecute
@@ -3590,14 +3590,14 @@ object Form1: TForm1
     object CutAction: TTntAction
       Category = 'Edit'
       Caption = 'Cut'
-      Hint = 'Cuts the selected function or point series to the clipboard.'
+      Hint = 'Cut the selected function or point series to the clipboard.'
       ImageIndex = 9
       OnExecute = CutActionExecute
     end
     object CopyAction: TTntAction
       Category = 'Edit'
       Caption = 'Copy'
-      Hint = 'Copies the selected function or point series to the clipboard.'
+      Hint = 'Copy the selected function or point series to the clipboard.'
       ImageIndex = 10
       OnExecute = CopyActionExecute
     end
@@ -3605,15 +3605,15 @@ object Form1: TForm1
       Category = 'Edit'
       Caption = 'Paste'
       Hint = 
-        'Pastes a function or point series from the clipboard into the co' +
-        'ordinate system.'
+        'Paste a function or point series from the clipboard into the coo' +
+        'rdinate system.'
       ImageIndex = 11
       OnExecute = PasteActionExecute
     end
     object CopyImageAction: TTntAction
       Category = 'Edit'
       Caption = 'Copy image'
-      Hint = 'Copies the shown coordinate system to the clipboard.'
+      Hint = 'Copy the shown coordinate system to the clipboard.'
       ImageIndex = 4
       ShortCut = 16457
       OnExecute = CopyImageActionExecute
@@ -3734,7 +3734,7 @@ object Form1: TForm1
     object ZoomStandardAction: TTntAction
       Category = 'Zoom'
       Caption = 'Standard'
-      Hint = 'Resets the axes to their default settings.'
+      Hint = 'Reset the axes to their default settings.'
       ImageIndex = 25
       ShortCut = 16452
       OnExecute = ZoomStandardActionExecute
@@ -3742,7 +3742,7 @@ object Form1: TForm1
     object MoveUpAction: TTntAction
       Category = 'Move'
       Caption = 'Move up'
-      Hint = 'Move the window up along the coordinate system.'
+      Hint = 'Move the graphing area up along the coordinate system.'
       ImageIndex = 26
       ShortCut = 16422
       SecondaryShortCuts.Strings = (
@@ -3752,7 +3752,7 @@ object Form1: TForm1
     object MoveDownAction: TTntAction
       Category = 'Move'
       Caption = 'Move down'
-      Hint = 'Move the window down along the coordinate system.'
+      Hint = 'Move the graphing area down along the coordinate system.'
       ImageIndex = 27
       ShortCut = 16424
       SecondaryShortCuts.Strings = (
@@ -3762,7 +3762,7 @@ object Form1: TForm1
     object MoveLeftAction: TTntAction
       Category = 'Move'
       Caption = 'Move left'
-      Hint = 'Move the window to the left along the coordinate system.'
+      Hint = 'Move the graphing area to the left along the coordinate system.'
       ImageIndex = 28
       ShortCut = 16421
       SecondaryShortCuts.Strings = (
@@ -3772,7 +3772,7 @@ object Form1: TForm1
     object MoveRightAction: TTntAction
       Category = 'Move'
       Caption = 'Move right'
-      Hint = 'Move the window to the right along the coordinate system.'
+      Hint = 'Move the graphing area to the right along the coordinate system.'
       ImageIndex = 29
       ShortCut = 16423
       SecondaryShortCuts.Strings = (
@@ -3794,8 +3794,8 @@ object Form1: TForm1
       Caption = 'Length of path'
       GroupIndex = 1
       Hint = 
-        'Calculates the length of path between two given points on the cu' +
-        'rve.'
+        'Calculate the length of path between two given points on the cur' +
+        've.'
       ImageIndex = 31
       OnExecute = PathActionExecute
     end
@@ -3804,7 +3804,7 @@ object Form1: TForm1
       AutoCheck = True
       Caption = 'Area'
       GroupIndex = 1
-      Hint = 'Calculates the area under the path of the selected function.'
+      Hint = 'Calculate the area under the path of the selected function.'
       ImageIndex = 32
       OnExecute = AreaActionExecute
     end
@@ -3821,7 +3821,7 @@ object Form1: TForm1
     object TableAction: TTntAction
       Category = 'Calc'
       Caption = 'Table...'
-      Hint = 'Shows an evaluation table.'
+      Hint = 'Show an evaluation table.'
       ImageIndex = 34
       OnExecute = TableActionExecute
     end
@@ -3836,9 +3836,7 @@ object Form1: TForm1
     object ListAction: TTntAction
       Category = 'Help'
       Caption = 'List of functions'
-      Hint = 
-        'Shows a list of built-in functions that can be used for graphing' +
-        '.'
+      Hint = 'Show a list of built-in functions that can be used for graphing.'
       ImageIndex = 36
       ShortCut = 16496
       OnExecute = ListActionExecute
@@ -3846,9 +3844,7 @@ object Form1: TForm1
     object HomePageAction: TTntAction
       Category = 'Help'
       Caption = 'Graph web site'
-      Hint = 
-        'Opens the default browser and shows the home page of the program' +
-        '.'
+      Hint = 'Open the default browser and shows the home page of the program.'
       ImageIndex = 40
       OnExecute = HomePageActionExecute
     end
@@ -3890,7 +3886,7 @@ object Form1: TForm1
     object FaqAction: TTntAction
       Category = 'Help'
       Caption = 'Frequently Asked Questions'
-      Hint = 'Shows a list of frequently asked questions and their answers.'
+      Hint = 'Show a list of frequently asked questions and their answers.'
       ImageIndex = 42
       OnExecute = FaqActionExecute
     end

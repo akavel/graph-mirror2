@@ -123,7 +123,8 @@
 #define RES_FILE_FILTER         321
 #define RES_FILE_ACCESS         322
 #define RES_UNKNOWN_FONT        324
-
+#define RES_OLE_GRAPH_SYSTEM    325
+#define RES_OLE_OPEN            326
 #define RES_SELECTION_ERROR     327
 #define RES_FILE_ERROR          328
 #define RES_WRITE_FAILED        329

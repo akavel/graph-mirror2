@@ -123,9 +123,9 @@ object Form14: TForm14
     Top = 24
     Width = 194
     Height = 352
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Anchors = [akTop, akRight, akBottom]
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 2
     object TabSheet1: TTntTabSheet
       Caption = 'Markers'
@@ -416,7 +416,7 @@ object Form14: TForm14
         Width = 170
         Height = 112
         Anchors = [akLeft, akTop, akRight]
-        Caption = 'X error bars'
+        Caption = 'X error amount'
         TabOrder = 0
         DesignSize = (
           170
@@ -500,7 +500,7 @@ object Form14: TForm14
         Width = 170
         Height = 112
         Anchors = [akLeft, akTop, akRight]
-        Caption = 'Y error bars'
+        Caption = 'Y error amount'
         TabOrder = 1
         DesignSize = (
           170

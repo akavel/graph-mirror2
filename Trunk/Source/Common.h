@@ -40,6 +40,7 @@ AnsiString GetTempPath();
 
 inline bool InsideRect(const TRect &Rect, const TPoint &P) {return P.x >= Rect.Left && P.x <= Rect.Right && P.y >= Rect.Top && P.y <= Rect.Bottom;}
 std::wstring ReduceString(const std::wstring &Str, unsigned MaxLength);
+void LoadLanguage(const AnsiString &Lang);
 
 
 //Allow comparasion between shared_ptr<> and pointer

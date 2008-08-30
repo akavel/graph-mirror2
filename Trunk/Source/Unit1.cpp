@@ -185,6 +185,7 @@ void TForm1::HandleCommandLine()
         }
       }
 
+      //Example of command line: Graph.exe File.grf /si=Image.png /width=600 /height=500
       TCommandList::iterator Iter = CommandList.find("si");
       if(Iter != CommandList.end())
       {
@@ -1263,7 +1264,7 @@ void __fastcall TForm1::TreeViewChange(TObject *Sender, TTreeNode *Node)
   //Necessary because Form9 may not have been loaded yet
   if(Form9)
     Form9->FuncChanged(GetGraphElem(Node));
-  Python::ExecutePluginEvent(Python::peSelect);  
+  Python::ExecutePluginEvent(Python::peSelect);
 }
 //---------------------------------------------------------------------------
 void TForm1::ChangeLanguage(const AnsiString &Lang)
@@ -1271,14 +1272,7 @@ void TForm1::ChangeLanguage(const AnsiString &Lang)
   if(Lang.IsEmpty())
     return;
 
-  AnsiString Path = ExtractFilePath(Application->ExeName);
-  UseLanguage(Lang); //dxGetText will not update translation unless language has been changed
-  DefaultInstance->bindtextdomainToFile("default", Path + "locale\\" + Lang + ".mo");
-  AnsiString HelpFile = Path + "Help\\Graph-" + Lang + ".chm";
-  if(FileExists(HelpFile))
-    Application->HelpFile = HelpFile;
-  else
-    Application->HelpFile = Path + "Help\\Graph-English.chm";
+  LoadLanguage(Lang);  
 
   int DefaultBiDiMode = GetRegValue(REGISTRY_KEY, "BiDiMode", HKEY_CURRENT_USER, bdLeftToRight);
   TBiDiMode Mode = static_cast<TBiDiMode>(ToIntDef(DefaultInstance->GetTranslationProperty("BiDiMode"), DefaultBiDiMode));

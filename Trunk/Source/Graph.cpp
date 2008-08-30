@@ -16,7 +16,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 //---------------------------------------------------------------------------
-#include <vcl.h>
+#include "Graph.h"
 #pragma hdrstop
 //---------------------------------------------------------------------------
 #include <atl\atlmod.h>
@@ -69,6 +69,13 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
   try
   {
+    //Translations are used by UpdateRegistry(), which is called from TApplication::Initialize()
+    AnsiString Language = GetRegValue(REGISTRY_KEY, "Language", HKEY_CURRENT_USER, "");
+    if(Language.IsEmpty())
+      LoadLanguage(GetRegValue(REGISTRY_KEY, "Language", HKEY_LOCAL_MACHINE, "English"));
+    else
+      LoadLanguage(Language);
+
     Application->Initialize();
     Application->Title = "Graph";
 

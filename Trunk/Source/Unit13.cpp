@@ -137,7 +137,11 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       }
 
       unsigned N = ToInt(Edit4->Text);
-      boost::shared_ptr<TParFunc> Func(new TParFunc(Func32::MovingAverage(Points, N)));
+
+      //Workaround for compiler bug in bcc 5.6.4. The following two lines may not be put together.
+      boost::shared_ptr<TParFunc> Func;
+      Func.reset(new TParFunc(Func32::MovingAverage(Points, N)));
+
       Func->From.Value = 0;
       Func->From.Text = "0";
       Func->To.Value = Points.size() - N;
@@ -361,4 +365,6 @@ void __fastcall TForm13::Popup_ExportClick(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+
+
 
