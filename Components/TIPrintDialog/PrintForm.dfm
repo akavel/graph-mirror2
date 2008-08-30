@@ -212,7 +212,7 @@ object PrintFrm: TPrintFrm
       Top = 24
       Width = 145
       Height = 17
-      Hint = 'Select to place the image on the middle of the page.'
+      Hint = 'Center the printing area on the page.'
       Caption = 'Center on page'
       TabOrder = 0
       OnClick = CheckBox1Click
@@ -222,7 +222,9 @@ object PrintFrm: TPrintFrm
       Top = 48
       Width = 57
       Height = 21
-      Hint = 'Enter the image position on the page.'
+      Hint = 
+        'Specify the printing area of the page. The printer will print on' +
+        'ly within these margins.'
       TabOrder = 1
       Text = '0'
       OnChange = Edit1Change
