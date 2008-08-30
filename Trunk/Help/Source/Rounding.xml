@@ -82,6 +82,7 @@
 		<indexterm><primary>floor function</primary></indexterm>
 		<indexterm><primary>rounding</primary></indexterm>
 		<indexterm><primary>round down</primary></indexterm>
+		<indexterm><primary>greatest inetger</primary></indexterm>
 		<para>
 			Rounds the argument down.
 		</para>
@@ -92,7 +93,7 @@
 		<simplesect>
 			<title>Description</title>
 			<para>
-			  The <function>floor</function> function finds the largest <glossterm>integer</glossterm> not greater than <parameter>z</parameter>.
+			  The <function>floor</function> function, which is also called the greatest integer function, gives the largest <glossterm>integer</glossterm> not greater than <parameter>z</parameter>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 				If <parameter>z</parameter> is a complex number, the function returns <mathphrase>floor(re(z))+floor(im(z))&imag;</mathphrase>.
 			</para>

@@ -16,7 +16,7 @@
 	<indexterm><primary>error bars</primary></indexterm>
 	<para>
 		You can use the dialog below to add a series of points to the coordinate system.
-		The points will be shown in the coordinate system in the main window as a series of markers at the positions entered in this dialog.
+		The points will be shown in the coordinate system in the graphing area as a series of markers at the positions entered in this dialog.
 		To insert a new point series, you use <menuchoice><guimenu>Function</guimenu><guimenuitem>Insert point series...</guimenuitem></menuchoice>.
 		To change an existing point series, you first select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 	</para>

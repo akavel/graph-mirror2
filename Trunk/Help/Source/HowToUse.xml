@@ -14,7 +14,7 @@
 	<indexterm><primary>plot</primary></indexterm>
 	<para>
 		When the program starts, you will see the main window shown below.
-		This window shows the coordinate system to the right where the graphs you insert will be shown.
+		This window shows the graphing area to the right with the coordinate system where the graphs you insert will be shown.
 		You can use the menu or the buttons on the toolbar to show different dialog boxes to insert a function, edit functions, delete functions etc.
 		You can find a <link linkend="MenuItems">description</link> of all the menu items.
 	</para>

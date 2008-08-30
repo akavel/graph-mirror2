@@ -80,7 +80,7 @@
 			<term>Between functions</term>
 			<listitem>
 				This will shade the area between the graphs of two functions.
-				The first function is the one you selected in the main window, before you invoked the dialog.
+				The first function is the one you selected in the <glossterm>function list</glossterm> in the main window, before you invoked the dialog.
 				The second function is selected in the list box in the <guilabel>2nd function</guilabel> tab.
 				For standard functions, the interval will be the same for the two functions.
 				For parametric functions, you may select different intervals for the two functions.
