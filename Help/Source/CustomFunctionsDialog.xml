@@ -23,13 +23,18 @@
 			<term>Entering functions</term>
 			<listitem>
 				<para>
-					The function and constant names are entered in the first column and the corresponding expressions are entered in the second column.
+					The function and constant names are entered in the first column.
 					The name may contain any combination of letters, digits and underscore but it must always start with a letter.
 					You may not use a name that is already assigned to a built-in function or variable.
 				</para>
 				<para>
-					Function arguments are entered after the name in brackets separated by comma, e.g. f(x,y,z) is a function named f taking three arguments named x, y and z.
+					Function arguments are entered after the name in brackets separated by comma, e.g. <literal>f(x,y,z)</literal> is a function named f taking three arguments named x, y and z.
 					Like the function name, the argument names must start with a letter and only contain letters and digits.
+				</para>
+				<para>
+					 The expressions you want to define are entered in the second column.
+					 The expressions can use the arguments specified in the first column and all built-in functions, other custom functions and constants, and even call itself recursively.
+					 A comment can be written after a # symbol at the end of an expression.
 				</para>
 			</listitem>
 		</varlistentry>
@@ -41,11 +46,12 @@
 					You can remove a function or constant by clearing the name and definition or selecting <guimenuitem>Remove row</guimenuitem> from the context menu.
 					All elements using the deleted function or constant will fail when evaluated.
 				</para>
-				<para>
-					When you press <guibutton>OK</guibutton> or <guibutton>Apply</guibutton> in the shown dialog,
-					all elements are updated to reflect any changes to the functions and constants.
-				</para>
 			</listitem>
 		</varlistentry>
 	</variablelist>
+
+	<para>
+		When you press <guibutton>OK</guibutton> or <guibutton>Apply</guibutton> in the shown dialog,
+		all elements are updated to reflect any changes to the functions and constants.
+	</para>
 </section>

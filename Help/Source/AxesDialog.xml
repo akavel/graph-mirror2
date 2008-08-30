@@ -120,7 +120,7 @@
 				<listitem>
 					<para>
 						When checked the program will automatically choose a value for <guilabel>Tick unit</guilabel> that is
-						fitting for the axes dimensions and size of the window.
+						fitting for the axes dimensions and size of the graphing area.
 					</para>
 				</listitem>
 			</varlistentry>

@@ -91,7 +91,7 @@
 		</para>
 		<para>
 			You can either enter the range in the edit boxes or select the range with the mouse.
-			The calculated area will be shown below the range, and the area will be marked with a shade in the coordinate system.
+			The calculated area will be shown below the range, and the area will be marked with a shading in the coordinate system.
 			The calculation is done using Simpson's formula through 1000 iterations
 		</para>
 	</simplesect>

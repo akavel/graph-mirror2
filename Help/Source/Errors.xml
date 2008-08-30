@@ -16,7 +16,7 @@
 		</varlistentry>
 
 		<varlistentry id="Error02">
-			<term>Error 02: Tangent to 90&deg;+p180&deg; is undefined.</term>
+			<term>Error 02: Tangent to pi/2+n*pi (90&deg;+n180&deg; in degrees) is undefined.</term>
 			<listitem>tan(x) is undefined for x= &pi;/2+&pi;p = 90&deg;+p180&deg;, where p is an integer.</listitem>
 		</varlistentry>
 
@@ -151,7 +151,7 @@
 		</varlistentry>
 
 		<varlistentry id="Error56">
-			<term>Error 56: Invalid number of arguments supplied for function '%s'</term>
+			<term>Error 56: Invalid number of arguments supplied for the function '%s'</term>
 			<listitem>
 				You passed a wrong number of arguments to the specified function.
 				Check the <xref linkend="FunctionList" /> to find the required number of arguments the function needs.
@@ -188,7 +188,7 @@
 		</varlistentry>
 
 		<varlistentry id="Error59">
-			<term>Error 59: String is empty. You need to enter a function.</term>
+			<term>Error 59: String is empty. You need to enter a formula.</term>
 			<listitem>
 				You didn't enter anything in the box. This is not allowed. You need to enter an expression.
 			</listitem>
@@ -251,7 +251,7 @@
 		</varlistentry>
 
 		<varlistentry id="Error70">
-			<term>Error 70: Error parsing function text</term>
+			<term>Error 70: Error parsing expression</term>
 			<listitem>
 				An error happened while parsing the function text. The string is not a valid function.
 			</listitem>
