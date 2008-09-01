@@ -92,4 +92,15 @@
 
 <xsl:param name="glossary.sort" select="1"/>
 
+<!-- Only use title in xref references -->
+<xsl:param name="local.l10n.xml" select="document('')"/>
+<l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
+  <l:l10n language="en">
+    <l:context name="xref">
+      <l:template name="section" text="%t"/>
+      <l:template name="simplesect" text="%t"/>
+    </l:context>
+  </l:l10n>
+</l:i18n>
+
 </xsl:stylesheet>

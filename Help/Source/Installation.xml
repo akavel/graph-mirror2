@@ -11,60 +11,163 @@
 	<indexterm><primary>Add/Remove Programs</primary></indexterm>
 	<indexterm><primary>remove</primary></indexterm>
 	<simplesect>
+		<title>Installation</title>
 		<para>
-			The program is distributed as a self extracting installation program 
-			usually named SetupGraph.exe. To install, just execute the installation 
-			and follow the instructions. The installation will install the following 
-			files in the selected directory and subdirectories: 
+			The program is distributed as a self extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version name.
+			To install, just execute the installation and follow the instructions.
+			The installation will install the following	files in the selected directory and subdirectories:
 			<informaltable id="InstalledFilesTable">
-  				<tgroup cols="2">
-					<colspec colnum="1" colwidth="1*"/>
-					<colspec colnum="2" colwidth="3*"/>
-    					<tbody>
-      					<row>
-        						<entry condition="pot">Graph.exe</entry>
-        						<entry>The program file.</entry>
-      					</row>
-      					<row>
-        						<entry condition="pot">*.mo</entry>
-        						<entry>Translations of the program.</entry>
-      					</row>
-      					<row>
-        						<entry condition="pot">*.hlp</entry>
-        						<entry>Help files in different languages.</entry>
-      					</row>
-	      				<row>
-     	   					<entry condition="pot">*.cnt</entry>
-        						<entry>Content for the corresponding help file.</entry>
-      					</row>
-      					<row>
-        						<entry condition="pot">*.grf</entry>
-        						<entry>Some examples that can be opened by the program.</entry>
-	      				</row>
-     	 				<row>
-        						<entry condition="pot">Thumbnails.dll</entry>
-        						<entry>Shell extension for showing thumbnails of grf-files in Explorer.</entry>
-      					</row>
-    					</tbody>
-  				</tgroup>
-			</informaltable>			
+ 				<tgroup cols="2">
+					<thead>
+						<row>
+							<entry>File(s)</entry>
+							<entry>Description</entry>
+						</row>
+					</thead>
+ 					<tbody>
+      			<row>
+        			<entry condition="pot">Graph.exe</entry>
+        			<entry>The program file.</entry>
+      			</row>
+     	 			<row>
+        			<entry condition="pot">Thumbnails.dll</entry>
+        			<entry>Shell extension for showing thumbnails of grf-files in Explorer.</entry>
+      			</row>
+      			<row>
+        			<entry condition="pot">Locale\*.mo</entry>
+        			<entry>Translations of the program.</entry>
+      			</row>
+      			<row>
+        			<entry condition="pot">Help\*.chm</entry>
+        			<entry>Help files in different languages.</entry>
+      			</row>
+	      		<row>
+     	   			<entry condition="pot">Plugins\*.py</entry>
+        			<entry>Some examples of plugins. Custom plugins can be placed here too.</entry>
+      			</row>
+      			<row>
+        			<entry condition="pot">Examples\*.grf</entry>
+        			<entry>Some examples that can be opened in Graph.</entry>
+	      		</row>
+ 					</tbody>
+ 				</tgroup>
+			</informaltable>
 		</para>
 
 		<para>
-			The installation will create a shortcut in the Start menu, which may be used to start the program. 
-			Under the installation you can select the preferred language. This can later be changed from the 
-			<xref linkend="OptionsDialog"/>.
+			The installation will create a shortcut in the Start menu, which may be used to start the program.
+			Under the installation you select the preferred language. This can later be changed from the
+			<xref linkend="OptionsDialog"/> dialog.
 		</para>
 		<para>
-			If an older version of the program is already installed, the installation suggests you install in the same directory. 
-			You can just install over the old version. There is no need to uninstall the old version first, but make sure the old 
+			If an older version of the program is already installed, the installation suggests you install in the same directory.
+			You can just install over the old version. There is no need to uninstall the old version first, but make sure the old
 			version is not running while installing.
 		</para>
 		<para>
-			Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>. 
-			Just select Graph and click on the <emphasis>Change/Remove button</emphasis>. This will remove all traces of the program. 
-			If files were added to the installation directory after the installation, you will be asked if you want to delete them. 
-			Make sure the program is not running while uninstalling.
+			The Graph Setup can take the parameters specified in the table below.
+			These are especially useful when you want to automate the installation.
 		</para>
+
+		<informaltable>
+ 			<tgroup cols="2">
+				<thead>
+					<row>
+						<entry>Parameter</entry>
+						<entry>Description</entry>
+					</row>
+				</thead>
+ 				<tbody>
+      		<row>
+        		<entry condition="pot">/SILENT</entry>
+        		<entry>
+							Instructs the Setup to be silent, which means that the wizard and the background window are not displayed but the installation progress window is.
+							Everything else is normal so for example error messages during installation are displayed.
+							If a restart is necessary, a <guilabel>Reboot now?</guilabel> message box is displayed.
+						</entry>
+      		</row>
+     	 		<row>
+        		<entry condition="pot">/VERYSILENT</entry>
+        		<entry>
+							Instructs the Setup to be very silent. This is the same as silent with the addition that the installation progress window is not displayed either.
+							If a restart is necessary, the Setup will reboot without asking.
+						</entry>
+      		</row>
+      		<row>
+        		<entry condition="pot">/NORESTART</entry>
+        		<entry>
+							Instructs Setup not to reboot even if it's necessary.
+						</entry>
+      		</row>
+      		<row>
+        		<entry condition="pot">/LANG=language</entry>
+        		<entry>
+							Specifies the language to use.
+							<emphasis>language</emphasis> specifies the English name of the language.
+							When a valid /LANG parameter is used, the <guilabel>Select language</guilabel> dialog will be suppressed.
+						</entry>
+      		</row>
+	      	<row>
+     	   		<entry condition="pot">/DIR=x:\dirname</entry>
+        		<entry>
+							Overrides the default directory name displayed on the <guilabel>Select destination location</guilabel> wizard page.
+							A fully qualified pathname must be specified.
+						</entry>
+      		</row>
+ 				</tbody>
+ 			</tgroup>
+		</informaltable>
+
+	</simplesect>
+
+	<simplesect>
+		<title>Uninstallation</title>
+		<para>
+			Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>.
+			Just select Graph and click on the <emphasis>Change/Remove button</emphasis>. This will remove all traces of the program.
+			If files were added to the installation directory after the installation, you will be asked if you want to delete them.
+			Make sure Graph is not running while uninstalling.
+		</para>
+	</simplesect>
+
+	<simplesect>
+		<title>Startup</title>
+		<para>
+			Usually Graph is started from the link in the <guibutton>Start</guibutton> menu.
+			A .grf file can be passed as parameter, in which case Graph will open the specified file.
+			In addition to this the parameters in the table below can be passed to Graph on the command line.
+		</para>
+
+		<informaltable>
+ 			<tgroup cols="2">
+				<thead>
+					<row>
+						<entry>Parameter</entry>
+						<entry>Description</entry>
+					</row>
+				</thead>
+ 				<tbody>
+      		<row>
+        		<entry condition="pot">/SI=file</entry>
+        		<entry>
+							Used to save an opened .grf file as an image file.
+							The file type can be any of the <link linkend="SaveImageDialog">image formats</link> supported by Graph.
+						</entry>
+      		</row>
+      		<row>
+        		<entry condition="pot">/WIDTH=width</entry>
+        		<entry>
+							Used in combination with /SI to specify the width in pixels of the saved image.
+						</entry>
+      		</row>
+      		<row>
+        		<entry condition="pot">/HEIGHT=height</entry>
+        		<entry>
+							Used in combination with /SI to specify the height in pixels of the saved image.
+						</entry>
+      		</row>
+				</tbody>
+			</tgroup>
+		</informaltable>
 	</simplesect>
 </chapter>

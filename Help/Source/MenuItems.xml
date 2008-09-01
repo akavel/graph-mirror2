@@ -125,7 +125,7 @@
 					</menuchoice>
 				</term>
 				<listitem>
-					Use this to undo the last thing you did. You can choose how many undo steps that are saved in the <link linkend="OptionsDialog">Options</link> dialog.
+					Use this to undo the last thing you did. You can choose how many undo steps that are saved in the <xref linkend="OptionsDialog" /> dialog.
 				</listitem>
 			</varlistentry>
 
