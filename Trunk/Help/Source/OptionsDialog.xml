@@ -94,17 +94,20 @@
 		<varlistentry>
 			<term>Complex form:</term>
 			<listitem>
-				Choose how you want a complex number to be shown in the <link linkend="EvaluateDialog">evaluate</link> frame.
-				<guilabel>Real</guilabel> means that only <glossterm baseform="real number">real numbers</glossterm> are shown.
-				If a number has an imaginary part then the number won't be shown and instead you get an error.
-				<guilabel>Rectangular</guilabel> means that <glossterm baseform="complex number">complex numbers</glossterm> are shown as a+b&imag;, where a is the real part and b is the imaginary part.
-				<guilabel>Polar</guilabel> means that numbers are shown as a&ang;&theta;, where a is the absolute value of the number and &theta; is the angle of the number.
-				&theta; is dependent of the choice between <guilabel>radian</guilabel> and <guilabel>degree</guilabel> under <guilabel>Trigonometry</guilabel> in the
-				<link linkend="AxesDialog">Edit Axes</link> dialog.
-
-				Notice that in some cases you may get a different result in the evaluate frame depending on the ilabel><guilabel>Complex form</guilabel> setting:
-				When <guilabel>Real</guilabel> is chosen, Graph will try to find a real result if possible,
-				while <guilabel>Rectangular</guilabel> and <guilabel>Polar</guilabel> may give a non-real result for the same evaluation.
+				<para>
+					Choose how you want a complex number to be shown in the <xref linkend="EvaluateDialog" /> frame.
+					<guilabel>Real</guilabel> means that only <glossterm baseform="real number">real numbers</glossterm> are shown.
+					If a number has an imaginary part then the number won't be shown and instead you get an error.
+					<guilabel>Rectangular</guilabel> means that <glossterm baseform="complex number">complex numbers</glossterm> are shown as a+b&imag;, where a is the real part and b is the imaginary part.
+					<guilabel>Polar</guilabel> means that numbers are shown as a&ang;&theta;, where a is the absolute value of the number and &theta; is the angle of the number.
+					&theta; is dependent of the choice between <guilabel>radian</guilabel> and <guilabel>degree</guilabel> under <guilabel>Trigonometry</guilabel> in the
+					<xref linkend="AxesDialog" /> dialog.
+				</para>
+				<para>
+					Notice that in some cases you may get a different result in the <xref linkend="EvaluateDialog" /> frame depending on the <guilabel>Complex form</guilabel> setting:
+					When <guilabel>Real</guilabel> is chosen, Graph will try to find a real result if possible,
+					while <guilabel>Rectangular</guilabel> and <guilabel>Polar</guilabel> may give a non-real result for the same evaluation.
+				</para>
 			</listitem>
 		</varlistentry>
 

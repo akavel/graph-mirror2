@@ -27,7 +27,7 @@
 			<term>Constant</term>
 			<listitem>
 				Here you select which constant you want to change in the animation.
-				The constant must already have been created in the <link linkend="CustomFunctionsDialog">Custom functions</link> dialog.
+				The constant must already have been created in the <xref linkend="CustomFunctionsDialog" /> dialog.
 				The selected constant will be changed in each frame in the animation.
 			</listitem>
 		</varlistentry>

@@ -105,7 +105,7 @@
 			</question>
 			<answer>
 				<para>
-					Set the desired default settings in the <link linkend="AxesDialog">Edit axes</link> dialog,
+					Set the desired default settings in the <xref linkend="AxesDialog" /> dialog,
 					and put a mark in <guilabel>Save as default</guilabel> before pressing the <guibutton>OK</guibutton> button.
 					Next time you create a new coordinate system, the saved default settings will be used.
 				</para>
@@ -120,7 +120,7 @@
 			</question>
 			<answer>
 				<para>
-					When you select <guilabel>Save workspace on exit</guilabel> in the <link linkend="OptionsDialog">Options dialog</link>
+					When you select <guilabel>Save workspace on exit</guilabel> in the <xref linkend="OptionsDialog" /> dialog.
 					Graph will save the position and size of the main window when the program quits.
 					The next time the program starts the same size and position is used.
 				</para>
@@ -282,7 +282,7 @@
 					As default Graph will evaluate the function for each pixel on the x-axis.
 					But if the graph has a steep slope that goes against infinite and back between two pixels, Graph will not notice it.
 					To plot the function correctly you can tell Graph how many evaluations to perform.
-					This may be entered in the <guilabel>Steps</guilabel> field in the <link linkend="InsertFunctionDialog">Insert function</link> dialog.
+					This may be entered in the <guilabel>Steps</guilabel> field in the <xref linkend="InsertFunctionDialog" /> dialog.
 					A number around 100000 will usually show the function correctly.
 				</para>
 			</answer>
@@ -296,14 +296,7 @@
 			</question>
 			<answer>
 				<para>
-					You can choose to save as PDF in the
-					<link linkend="SaveImageDialog">
-						<menuchoice>
-							<guimenu>File</guimenu>
-							<guimenuitem>Save as image...</guimenuitem>
-						</menuchoice>
-					</link>
-					dialog.
+					You can choose to save as PDF in the <xref linkend="SaveImageDialog" /> dialog.
 				</para>
 			</answer>
 		</qandaentry>
