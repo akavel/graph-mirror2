@@ -5,7 +5,7 @@
 ]>
 <section id="InsertDerivativeDialog">
 	<?dbhh topicname="IDH_DIALOG_DERIVATIVE" topicid="70"?>
-	<title>Function | Insert f'(x)</title>
+	<title>Insert f'(x)</title>
 	<indexterm><primary>insert</primary></indexterm>
 	<indexterm><primary>f'(x)</primary></indexterm>
 	<indexterm><primary>differentiate</primary></indexterm>

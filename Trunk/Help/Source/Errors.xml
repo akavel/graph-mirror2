@@ -179,10 +179,10 @@
 				The exponent is only needed if the E is there. Notice that 5E8 is the same as 5*10^8.
 				Here are some examples of numbers:
 				<simplelist>
-					<member>-5.475E-8</member>
-					<member>-0.55</member>
-					<member>.75</member>
-					<member>23E4</member>
+					<member><constant>-5.475E-8</constant></member>
+					<member><constant>-0.55</constant></member>
+					<member><constant>.75</constant></member>
+					<member><constant>23E4</constant></member>
 				</simplelist>
 			</listitem>
 		</varlistentry>

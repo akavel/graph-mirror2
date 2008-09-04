@@ -5,7 +5,7 @@
 ]>
 <section id="EvaluateDialog">
 	<?dbhh topicname="IDH_DIALOG_EVALUATE" topicid="100"?>
-	<title>Calc | Evaluate</title>
+	<title>Evaluate</title>
 	<para>
 		This dialog is used for interactive calculations on functions.
 		The dialog may be docked below the function list, which is default, or undocked as a floating dialog.

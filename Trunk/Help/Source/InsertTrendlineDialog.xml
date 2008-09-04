@@ -5,7 +5,7 @@
 ]>
 <section id="InsertTrendlineDialog">
 	<?dbhh topicname="IDH_DIALOG_TRENDLINE" topicid="130"?>
-	<title>Function | Insert trendline</title>
+	<title>Insert trendline</title>
 	<indexterm><primary>insert</primary></indexterm>
 	<indexterm><primary>trendline</primary></indexterm>
 	<indexterm><primary>line of best fit</primary></indexterm>
@@ -112,10 +112,10 @@
 				<term>Moving average</term>
 				<listitem>
 					Moving average is a series of straight lines based on the average of the previous points.
-					The <guilabel>period</guilabel> determines how many points are used for the average.
-					If <guilabel>period</guilabel> is 1 only one point is used, which actually isn't an average.
+					The <guilabel>Period</guilabel> determines how many points are used for the average.
+					If <guilabel>Period</guilabel> is 1 only one point is used, which actually isn't an average.
 					This will draw a line directly between the points.
-					When <guilabel>period</guilabel> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point.
+					When <guilabel>Period</guilabel> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point.
 					Instead it will be an average of the previous points.
 				</listitem>
 			</varlistentry>
@@ -138,7 +138,7 @@
 			An example of a model could be <mathphrase>f(x)=$a*x^$b+$c</mathphrase>.
 			The program tries to calculate the constants <constant>$a</constant>, <constant>$b</constant> and <constant>$c</constant>
 			so that f(x) will be as close to the point series as possible.
-			You can use the <guilabel>Add model</guilabel> button to add the model to the saved list with a name.
+			You can use the <guibutton>Add model</guibutton> button to add the model to the saved list with a name.
 		</para>
 
 		<para>
@@ -171,8 +171,8 @@
 		</para>
 
 		<para>
-			When the trendline is added, the correlation coefficient R<superscript>2</superscript> is shown in the comment.
-			The closer R<superscript>2</superscript> is to 1 the closer the trendline is to the points.
+			When the trendline is added, the correlation coefficient <mathphrase>R<superscript>2</superscript></mathphrase> is shown in the comment.
+			The closer <mathphrase>R<superscript>2</superscript></mathphrase> is to 1 the closer the trendline is to the points.
 	  </para>
 	</simplesect>
 </section>

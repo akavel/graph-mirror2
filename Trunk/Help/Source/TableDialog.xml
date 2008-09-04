@@ -5,7 +5,7 @@
 ]>
 <section id="TableDialog">
 	<?dbhh topicname="IDH_DIALOG_TABLE" topicid="150"?>
-	<title>Calc | Table</title>
+	<title>Table</title>
 	<indexterm><primary>calc</primary></indexterm>
 	<indexterm><primary>table</primary></indexterm>
 	<indexterm><primary>evaluate</primary></indexterm>
@@ -17,7 +17,7 @@
 	</para>
 
 	<para>
-		When you press the button labeled <guibutton>Calc</guibutton>,
+		When you press the <guibutton>Calc</guibutton> button,
 		the table will be filled with the independent variable in the first coloumn.
 		The rest of the coloumns dependes on the type of function.
 		For a standard function, the table will show f(x), f'(x) and f''(x).

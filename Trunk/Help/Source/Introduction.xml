@@ -5,9 +5,9 @@
 ]>
 <chapter id="Introduction">
 	<title>What is Graph?</title>
-	<indexterm><primary>Graph</primary></indexterm>
+	<indexterm><primary><application>Graph</application></primary></indexterm>
 	<indexterm><primary>license</primary></indexterm>
-	<indexterm><primary>Windows</primary></indexterm>
+	<indexterm><primary><application>Windows</application></primary></indexterm>
 	<indexterm><primary>open source</primary></indexterm>
 	<indexterm><primary>payment</primary></indexterm>
 	<indexterm><primary>web site</primary></indexterm>
@@ -53,6 +53,6 @@
 		</itemizedlist>
 	</para>
 	<para>
-		<emphasis role="bold">Copyright &copy; 2001-2008 by Ivan Johansen</emphasis>
+		<!--emphasis role="bold">Copyright &copy; 2001-2008 by Ivan Johansen</emphasis-->
 	</para>
 </chapter>

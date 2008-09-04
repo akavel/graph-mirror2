@@ -24,7 +24,7 @@
 			<para>
 				Complex numbers are used in the <guilabel>Evaluate</guilabel> dialog for standard functions and for graphing functions when
 				<guilabel>Calculate with complex numbers</guilabel> is enabled under the <xref linkend="AxesDialogSettings"/> tab in the
-				<guilabel>Edit Axes</guilabel> dialog.
+				<guilabel>Edit axes</guilabel> dialog.
 			</para>
 		</glossdef>
 	</glossentry>
@@ -100,7 +100,7 @@
 				The angle of a whole circle is 360&deg; or 2&pi; radians. An angle in radians can be converted to degrees by
 				multiplying with 180&deg;/&pi;. An angle in degrees can be converted to radians by multiplying with &pi;/180&deg;.
 				You can choose to use radians or degrees for trigonometric functions in the
-				<guilabel>Edit Axes</guilabel> dialog under the <xref linkend="AxesDialogSettings"/> tab.
+				<guilabel>Edit axes</guilabel> dialog under the <xref linkend="AxesDialogSettings"/> tab.
 			</para>
 		</glossdef>
 	</glossentry>

@@ -10,7 +10,7 @@
 	<indexterm><primary>x-variable</primary></indexterm>
 	<indexterm><primary>t-variable</primary></indexterm>
 	<indexterm><primary>Euler's constant</primary></indexterm>
-	<indexterm><primary>pi</primary></indexterm>
+	<indexterm><primary><constant>pi</constant></primary></indexterm>
 	<indexterm><primary>operators</primary></indexterm>
 	<indexterm><primary>addition</primary></indexterm>
 	<indexterm><primary>subtraction</primary></indexterm>
@@ -46,28 +46,28 @@
 				</thead>
 				<tbody>
 					<row>
-						<entry>x</entry>
+						<entry><varname>x</varname></entry>
 						<entry>The independent variable used in standard functions.</entry>
 					</row>
 					<row>
-						<entry>t</entry>
+						<entry><varname>t</varname></entry>
 						<entry>The independent variable called parameter for parametric functions and polar angle for polar functions.</entry>
 					</row>
 					<row>
-						<entry>e</entry>
-						<entry>Euler's constant. In this program defined as e=2.718281828459045235360287</entry>
+						<entry><constant>e</constant></entry>
+						<entry>Euler's constant. In this program defined as <mathphrase>e=2.718281828459045235360287</mathphrase></entry>
 					</row>
 					<row>
-						<entry>pi</entry>
- 	   				<entry>The constant &pi;, which in this program is defined as pi=3.141592653589793238462643</entry>
+						<entry><constant>pi</constant></entry>
+ 	   				<entry>The constant &pi;, which in this program is defined as <mathphrase>pi=3.141592653589793238462643</mathphrase></entry>
  	   			</row>
 		 			<row>
- 	   				<entry>undef</entry>
+ 	   				<entry><constant>undef</constant></entry>
  	   				<entry>Always returns an error. Used to indicate that part of a function is undefined.</entry>
  	   			</row>
  	   			<row>
- 	   				<entry>&imag;</entry>
- 	   				<entry>The imaginary unit. Defined as &imag;<superscript>2</superscript> = -1. Only useful when working with complex numbers.</entry>
+ 	   				<entry><constant>&imag;</constant></entry>
+ 	   				<entry>The imaginary unit. Defined as <mathphrase>&imag;<superscript>2</superscript> = -1</mathphrase>. Only useful when working with complex numbers.</entry>
 		 			</row>
  	   			<row>
  	   				<entry><xref linkend="rand"/></entry>
