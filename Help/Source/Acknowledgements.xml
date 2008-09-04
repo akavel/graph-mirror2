@@ -14,7 +14,7 @@
 		<para>
 			<simplelist>
 				<member>Parts of Graph are using the Spirit parser library:</member>
-				<member>Copyright &copy; 1998-2002 Spirit-Dev</member>
+				<member><orgname>Copyright &copy; 1998-2002 Spirit-Dev</orgname></member>
 				<member><ulink url="http://spirit.sourceforge.net/">http://spirit.sourceforge.net/</ulink></member>
 			</simplelist>
 		</para>
@@ -22,16 +22,16 @@
 		<para>
 			<simplelist>
 				<member>Graph uses BMGLib for saving images as Portable Network Graphics:</member>
-				<member>BMGLib is Copyright &copy; 2000-2002 M. Scott Heiman</member>
-				<member>libPNG is Copyright &copy; 1995, 1996 Guy Eric Schalnat, Group 42, Inc.</member>
-				<member>zLib Copyright &copy; 1995-1998 Jean-loup Gailly.</member>
+				<member><orgname>BMGLib is Copyright &copy; 2000-2002 M. Scott Heiman</orgname></member>
+				<member><orgname>libPNG is Copyright &copy; 1995, 1996 Guy Eric Schalnat, Group 42, Inc.</orgname></member>
+				<member><orgname>zLib Copyright &copy; 1995-1998 Jean-loup Gailly.</orgname></member>
 			</simplelist>
 		</para>
 
 		<para>
 			<simplelist>
 				<member>Graph uses dxgettext as translation library:</member>
-				<member>dxgettext is Copyright by Lars B. Dybdahl (<email>Lars@dybdahl.dk</email>) and others</member>
+				<member><orgname>dxgettext is Copyright by Lars B. Dybdahl (<email>Lars@dybdahl.dk</email>) and others</orgname></member>
 				<member><ulink url="http://dybdahl.dk/dxgettext/"/></member>
 			</simplelist>
 		</para>
@@ -39,7 +39,7 @@
 		<para>
 			<simplelist>
 				<member>For shell extensions the EasyNSE library is used:</member>
-				<member>Copyright &copy; 2005 Cool Breeze Software</member>
+				<member><orgname>Copyright &copy; 2005 Cool Breeze Software</orgname></member>
 				<member><ulink url="http://www.mustangpeak.net"/></member>
 			</simplelist>
 		</para>
@@ -47,7 +47,7 @@
 		<para>
 			<simplelist>
 				<member>The PDFlib-Lite library is used to create PDF files:</member>
-				<member>Copyright &copy; 1997-2005 Thomas Merz and PDFlib GmbH.</member>
+				<member><orgname>Copyright &copy; 1997-2005 Thomas Merz and PDFlib GmbH.</orgname></member>
 				<member><ulink url="http://www.pdflib.com"/></member>
 			</simplelist>
 		</para>
@@ -55,7 +55,7 @@
 		<para>
 			<simplelist>
 				<member>Tnt Delphi Unicode Controls</member>
-				<member>Copyright &copy; 2002-2005, Troy Wolbrink</member>
+				<member><orgname>Copyright &copy; 2002-2005, Troy Wolbrink</orgname></member>
 				<member><ulink url="http://www.tntware.com/delphicontrols/unicode/"/></member>
 			</simplelist>
 		</para>
@@ -63,7 +63,7 @@
 		<para>
 			<simplelist>
 				<member>Python is used for plugin support:</member>
-				<member>Copyright &copy; 2001-2006 Python Software Foundation; All Rights Reserved</member>
+				<member><orgname>Copyright &copy; 2001-2006 Python Software Foundation; All Rights Reserved</orgname></member>
 				<member><ulink url="http://www.python.org"/></member>
 			</simplelist>
 		</para>
@@ -86,189 +86,189 @@
 						<entry>Arabic</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Abdellah Chelli</entry>
+						<entry><personname>Abdellah Chelli</personname></entry>
 					</row>
 
 					<row>
 						<entry>Basque</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Xabier Maiza</entry>
+						<entry><personname>Xabier Maiza</personname></entry>
 					</row>
 
 					<row>
 						<entry>Chinese (Traditional)</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Dung Jian-Jie</entry>
+						<entry><personname>Dung Jian-Jie</personname></entry>
 					</row>
 
 					<row>
 						<entry>Chinese (Simplified)</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Lala Sha</entry>
+						<entry><personname>Lala Sha</personname></entry>
 					</row>
 
 					<row>
 						<entry>Croatian</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Hasan Osmanagić</entry>
+						<entry><personname>Hasan Osmanagić</personname></entry>
 					</row>
 
 					<row>
 						<entry>Czech</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Martin Stružský &amp; Pavlína Krausová</entry>
+						<entry><personname>Martin Stružský &amp; Pavlína Krausová</personname></entry>
 					</row>
 
 					<row>
 						<entry>Danish</entry>
 						<entry>Yes</entry>
 						<entry>Yes</entry>
-						<entry>Ivan Johansen, Michael Bach Ipsen &amp; Erik Lyngholt Nielsen</entry>
+						<entry><personname>Ivan Johansen, Michael Bach Ipsen &amp; Erik Lyngholt Nielsen</personname></entry>
 					</row>
 
 					<row>
 						<entry>Dutch</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Etienne Goemaere</entry>
+						<entry><personname>Etienne Goemaere</personname></entry>
 					</row>
 
 					<row>
 						<entry>English</entry>
 						<entry>Yes</entry>
 						<entry>Yes</entry>
-						<entry>Ivan Johansen</entry>
+						<entry><personname>Ivan Johansen</personname></entry>
 					</row>
 
 					<row>
 						<entry>Finnish</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Pekka Lerssi</entry>
+						<entry><personname>Pekka Lerssi</personname></entry>
 					</row>
 
 					<row>
 						<entry>French</entry>
 						<entry>Yes</entry>
 						<entry>Yes</entry>
-						<entry>Jean-Pierre Fontaine</entry>
+						<entry><personname>Jean-Pierre Fontaine</personname></entry>
 					</row>
 
 					<row>
 						<entry>German</entry>
 						<entry>Yes</entry>
 						<entry>Yes</entry>
-						<entry>Frank Httemeister, Michael Bach Ipsen &amp; Sebastian Stütz</entry>
+						<entry><personname>Frank Httemeister, Michael Bach Ipsen &amp; Sebastian Stütz</personname></entry>
 					</row>
 
 					<row>
 						<entry>Greek</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Theodoros Kannas</entry>
+						<entry><personname>Theodoros Kannas</personname></entry>
 					</row>
 
 					<row>
 						<entry>Hungarian</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Gabor Magyari</entry>
+						<entry><personname>Gabor Magyari</personname></entry>
 					</row>
 
 					<row>
 						<entry>Italian</entry>
 						<entry>Yes</entry>
 						<entry>Yes</entry>
-						<entry>Serena Alessandro &amp; Attilio Ridomi</entry>
+						<entry><personname>Serena Alessandro &amp; Attilio Ridomi</personname></entry>
 					</row>
 
 					<row>
 						<entry>Korean</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Choe Hyeon-gyu</entry>
+						<entry><personname>Choe Hyeon-gyu</personname></entry>
 					</row>
 
 					<row>
 						<entry>Mongolian</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Batnasan Davaa</entry>
+						<entry><personname>Batnasan Davaa</personname></entry>
 					</row>
 
 					<row>
 						<entry>Norwegian</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Tore Ottinsen</entry>
+						<entry><personname>Tore Ottinsen</personname></entry>
 					</row>
 
 					<row>
 						<entry>Polish</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Paweł Gląb</entry>
+						<entry><personname>Paweł Gląb</personname></entry>
 					</row>
 
 					<row>
 						<entry>Portuguese</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Jorge, Mara, Deivid &amp; Fernanda</entry>
+						<entry><personname>Jorge, Mara, Deivid &amp; Fernanda</personname></entry>
 					</row>
 
 					<row>
 						<entry>Russian</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Ivans Leonovs</entry>
+						<entry><personname>Ivans Leonovs</personname></entry>
 					</row>
 
 					<row>
 						<entry>Serbian</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Jasmina Malinovic &amp; Branimir Krstic</entry>
+						<entry><personname>Jasmina Malinovic &amp; Branimir Krstic</personname></entry>
 					</row>
 
 					<row>
 						<entry>Slovenian</entry>
 						<entry>Yes</entry>
 						<entry>Yes</entry>
-						<entry>Jernej Baša, Rok Štokelj &amp; Barbara Pušnar</entry>
+						<entry><personname>Jernej Baša, Rok Štokelj &amp; Barbara Pušnar</personname></entry>
 					</row>
 
 					<row>
 						<entry>Spanish</entry>
 						<entry>Yes</entry>
 						<entry>Yes</entry>
-						<entry>Dr. Gustavo Criscuolo, Francisco Oliver, Alejandro Arce</entry>
+						<entry><personname>Dr. Gustavo Criscuolo, Francisco Oliver &amp; Alejandro Arce</personname></entry>
 					</row>
 
 					<row>
 						<entry>Swedish</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Pär Smårs</entry>
+						<entry><personname>Pär Smårs</personname></entry>
 					</row>
 
 					<row>
 						<entry>Turkish</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Mumtaz Murat Arik</entry>
+						<entry><personname>Mumtaz Murat Arik</personname></entry>
 					</row>
 
 					<row>
 						<entry>Vietnamese</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry>Trung</entry>
+						<entry><personname>Trung</personname></entry>
 					</row>
 		 		</tbody>
 			</tgroup>
@@ -278,7 +278,7 @@
 	<simplesect>
 		<title>Miscellaneous</title>
 		<para>
-			The icon was designed by Jonathan Holvey.
+			The icon was designed by <personname>Jonathan Holvey</personname>.
 		</para>
 	</simplesect>
 </chapter>

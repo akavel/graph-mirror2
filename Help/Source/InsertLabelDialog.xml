@@ -5,8 +5,7 @@
 ]>
 <section id="InsertLabelDialog">
 	<?dbhh topicname="IDH_DIALOG_LABEL" topicid="10"?>
-	<title>Function | Insert label</title>
-	<titleabbrev>Hello world</titleabbrev>
+	<title>Insert label</title>
 	<indexterm><primary>insert</primary></indexterm>
 	<indexterm><primary>label</primary></indexterm>
 	<indexterm><primary>expression</primary></indexterm>

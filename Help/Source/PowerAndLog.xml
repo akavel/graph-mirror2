@@ -74,7 +74,7 @@
 		<title>root function</title>
 		<indexterm><primary>root function</primary></indexterm>
 		<para>
-			Returns the <parameter>n</parameter><superscript>th</superscript> root of the argument.
+			Returns the <mathphrase><parameter>n</parameter><superscript>th</superscript></mathphrase> root of the argument.
 		</para>
 		<simplesect>
 			<title>Syntax</title>

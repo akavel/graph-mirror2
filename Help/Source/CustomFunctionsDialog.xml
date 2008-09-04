@@ -5,7 +5,7 @@
 ]>
 <section id="CustomFunctionsDialog">
 	<?dbhh topicname="IDH_DIALOG_CUSTOM" topicid="90"?>
-	<title>Function | Custom functions</title>
+	<title>Custom functions/constants</title>
 	<indexterm><primary>custom function</primary></indexterm>
 	<indexterm><primary>custom constant</primary></indexterm>
 	<indexterm><primary>functions</primary></indexterm>

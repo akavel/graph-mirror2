@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE book SYSTEM "../dtd/dblite.dtd">
 <book id="Graph" lang="en" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Graph</title>
+	<title><application>Graph</application></title>
 	<subtitle><graphic fileref="GraphIcon.png"/></subtitle>
 	<xi:include href="version.xml"/>
 	<bookinfo>
@@ -11,6 +11,10 @@
 				<surname>Johansen</surname>
 			</author>
 		</authorgroup>
+		<copyright>
+			<year>2008</year>
+			<holder>Ivan Johansen</holder>
+		</copyright>
 	</bookinfo>
 	<!-- include external files -->
 	<xi:include href="Introduction.xml"/>

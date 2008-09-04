@@ -4,9 +4,9 @@
 	<title>Installation and startup</title>
 	<indexterm><primary>installation</primary></indexterm>
 	<indexterm><primary>uninstall</primary></indexterm>
-	<indexterm><primary>Graph.exe</primary></indexterm>
+	<indexterm><primary><filename>Graph.exe</filename></primary></indexterm>
 	<indexterm><primary>language</primary></indexterm>
-	<indexterm><primary>.mo</primary></indexterm>
+	<indexterm><primary><filename>.mo</filename></primary></indexterm>
 	<indexterm><primary>Control panel</primary></indexterm>
 	<indexterm><primary>Add/Remove Programs</primary></indexterm>
 	<indexterm><primary>remove</primary></indexterm>
@@ -26,27 +26,27 @@
 					</thead>
  					<tbody>
       			<row>
-        			<entry condition="pot">Graph.exe</entry>
+        			<entry condition="pot"><filename>Graph.exe</filename></entry>
         			<entry>The program file.</entry>
       			</row>
      	 			<row>
-        			<entry condition="pot">Thumbnails.dll</entry>
+        			<entry condition="pot"><filename>Thumbnails.dll</filename></entry>
         			<entry>Shell extension for showing thumbnails of grf-files in Explorer.</entry>
       			</row>
       			<row>
-        			<entry condition="pot">Locale\*.mo</entry>
+        			<entry condition="pot"><filename>Locale\*.mo</filename></entry>
         			<entry>Translations of the program.</entry>
       			</row>
       			<row>
-        			<entry condition="pot">Help\*.chm</entry>
+        			<entry condition="pot"><filename>Help\*.chm</filename></entry>
         			<entry>Help files in different languages.</entry>
       			</row>
 	      		<row>
-     	   			<entry condition="pot">Plugins\*.py</entry>
+     	   			<entry condition="pot"><filename>Plugins\*.py</filename></entry>
         			<entry>Some examples of plugins. Custom plugins can be placed here too.</entry>
       			</row>
       			<row>
-        			<entry condition="pot">Examples\*.grf</entry>
+        			<entry condition="pot"><filename>Examples\*.grf</filename></entry>
         			<entry>Some examples that can be opened in Graph.</entry>
 	      		</row>
  					</tbody>
@@ -79,7 +79,7 @@
 				</thead>
  				<tbody>
       		<row>
-        		<entry condition="pot">/SILENT</entry>
+        		<entry condition="pot"><parameter>/SILENT</parameter></entry>
         		<entry>
 							Instructs the Setup to be silent, which means that the wizard and the background window are not displayed but the installation progress window is.
 							Everything else is normal so for example error messages during installation are displayed.
@@ -87,20 +87,20 @@
 						</entry>
       		</row>
      	 		<row>
-        		<entry condition="pot">/VERYSILENT</entry>
+        		<entry condition="pot"><parameter>/VERYSILENT</parameter></entry>
         		<entry>
 							Instructs the Setup to be very silent. This is the same as silent with the addition that the installation progress window is not displayed either.
 							If a restart is necessary, the Setup will reboot without asking.
 						</entry>
       		</row>
       		<row>
-        		<entry condition="pot">/NORESTART</entry>
+        		<entry condition="pot"><parameter>/NORESTART</parameter></entry>
         		<entry>
 							Instructs Setup not to reboot even if it's necessary.
 						</entry>
       		</row>
       		<row>
-        		<entry condition="pot">/LANG=language</entry>
+        		<entry condition="pot"><parameter>/LANG=language</parameter></entry>
         		<entry>
 							Specifies the language to use.
 							<emphasis>language</emphasis> specifies the English name of the language.
@@ -108,7 +108,7 @@
 						</entry>
       		</row>
 	      	<row>
-     	   		<entry condition="pot">/DIR=x:\dirname</entry>
+     	   		<entry condition="pot"><parameter>/DIR=x:\dirname</parameter></entry>
         		<entry>
 							Overrides the default directory name displayed on the <guilabel>Select destination location</guilabel> wizard page.
 							A fully qualified pathname must be specified.
@@ -148,20 +148,20 @@
 				</thead>
  				<tbody>
       		<row>
-        		<entry condition="pot">/SI=file</entry>
+        		<entry condition="pot"><parameter>/SI=file</parameter></entry>
         		<entry>
 							Used to save an opened .grf file as an image file.
 							The file type can be any of the <link linkend="SaveImageDialog">image formats</link> supported by Graph.
 						</entry>
       		</row>
       		<row>
-        		<entry condition="pot">/WIDTH=width</entry>
+        		<entry condition="pot"><parameter>/WIDTH=width</parameter></entry>
         		<entry>
 							Used in combination with /SI to specify the width in pixels of the saved image.
 						</entry>
       		</row>
       		<row>
-        		<entry condition="pot">/HEIGHT=height</entry>
+        		<entry condition="pot"><parameter>/HEIGHT=height</parameter></entry>
         		<entry>
 							Used in combination with /SI to specify the height in pixels of the saved image.
 						</entry>

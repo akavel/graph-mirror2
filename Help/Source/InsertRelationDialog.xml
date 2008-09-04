@@ -5,7 +5,7 @@
 ]>
 <section id="InsertRelationDialog">
 	<?dbhh topicname="IDH_DIALOG_RELATION" topicid="20"?>
-	<title>Function | Insert relation</title>
+	<title>Insert relation</title>
 	<indexterm><primary>relation</primary></indexterm>
 	<indexterm><primary>equation</primary></indexterm>
 	<indexterm><primary>equality</primary></indexterm>

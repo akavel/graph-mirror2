@@ -2,7 +2,7 @@
 <!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd">
 <chapter id="HowToUse">
 	<title>How to use Graph</title>
-	<indexterm><primary>Graph</primary></indexterm>
+	<indexterm><primary><application>Graph</application></primary></indexterm>
 	<indexterm><primary>use</primary></indexterm>
 	<indexterm><primary>main window</primary></indexterm>
 	<indexterm><primary>function list</primary></indexterm>

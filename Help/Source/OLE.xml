@@ -2,8 +2,8 @@
 <!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd">
 <chapter id="OLE">
 	<title>OLE server/client</title>
-	<indexterm><primary>OLE</primary></indexterm>
-	<indexterm><primary>COM</primary></indexterm>
+	<indexterm><primary><acronym>OLE</acronym></primary></indexterm>
+	<indexterm><primary><acronym>COM</acronym></primary></indexterm>
 	<indexterm><primary>linking</primary></indexterm>
 	<indexterm><primary>embedded</primary></indexterm>
 	<indexterm><primary>automation</primary></indexterm>

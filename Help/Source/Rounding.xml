@@ -124,11 +124,11 @@
 		<simplesect>
 			<title>Examples</title>
 			<simplelist>
-				<member>round(412.4572,3) = 412.457</member>
-				<member>round(412.4572,2) = 412.46</member>
-				<member>round(412.4572,1) = 412.5</member>
-				<member>round(412.4572,0) = 412</member>
-				<member>round(412.4572,-2) = 400</member>
+				<member><mathphrase>round(412.4572,3) = 412.457</mathphrase></member>
+				<member><mathphrase>round(412.4572,2) = 412.46</mathphrase></member>
+				<member><mathphrase>round(412.4572,1) = 412.5</mathphrase></member>
+				<member><mathphrase>round(412.4572,0) = 412</mathphrase></member>
+				<member><mathphrase>round(412.4572,-2) = 400</mathphrase></member>
 			</simplelist>
 		</simplesect>
 	</section>

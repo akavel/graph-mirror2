@@ -5,7 +5,7 @@
 ]>
 <section id="AxesDialog">
 	<?dbhh topicname="IDH_DIALOG_AXES" topicid="30"?>
-	<title>Edit | Axes</title>
+	<title>Edit axes</title>
 	<indexterm><primary>Axes dialog</primary></indexterm>
 	<indexterm><primary>x-axis</primary></indexterm>
 	<indexterm><primary>y-axis</primary></indexterm>
@@ -44,7 +44,7 @@
 		<graphic fileref="DialogAxes1.png"/>
 		<variablelist>
 			<varlistentry>
-				<term>Minimum:</term>
+				<term>Minimum</term>
 				<listitem>
 					<para>
 						This is the lowest value on the selected axis. Default: -10
@@ -52,7 +52,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Maximum:</term>
+				<term>Maximum</term>
 				<listitem>
 					<para>
 						This is the highest value on the selected axis. Default: 10
@@ -60,20 +60,20 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Tick unit:</term>
+				<term>Tick unit</term>
 				<listitem>
 					<para>
 						This is the distance between the tick marks on the selected axis.
 						Tick marks are shown as small lines perpendicular to the axis.
 						<guilabel>Tick unit</guilabel> is used for both tick marks and for showing numbers.
 						With a logarithmic axis the <guilabel>Tick unit</guilabel> indicates the factor between the markers.
-						For example a <guilabel>Tick unit</guilabel> for 4 will show 1, 4, 16, 64, etc. on a logarithmic axis
+						For example <guilabel>Tick unit</guilabel> set to 4 will show 1, 4, 16, 64, etc. on a logarithmic axis
 						while it will show 0, 4, 8, 12, etc. on a normal axis.
 					</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Grid unit:</term>
+				<term>Grid unit</term>
 				<listitem>
 					<para>
 						This is the distance between the gridlines perpendicular to the axis. This is only used if grid lines are shown.
@@ -81,7 +81,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Logarithmic scale:</term>
+				<term>Logarithmic scale</term>
 				<listitem>
 					<para>
 						Check this field if you want the axis to be scaled logarithmically.
@@ -89,7 +89,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Show numbers:</term>
+				<term>Show numbers</term>
 				<listitem>
 					<para>
 						When this field is checked numbers are shown on the axis with the distance chosen under <guilabel>Tick unit</guilabel>.
@@ -97,7 +97,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Label:</term>
+				<term>Label</term>
 				<listitem>
 					<para>
 						When this field is checked, the text in the edit box will be shown just above the x-axis in the right side of
@@ -111,7 +111,7 @@
 				<listitem>
 					<para>
 						This is the coordinate where the axis will cross the other axis. This is only used when <guilabel>Axes style</guilabel>
-						is <literal>Crossed</literal>. Default: 0
+						is <guilabel>Crossed</guilabel>. Default: 0
 					</para>
 				</listitem>
 			</varlistentry>
@@ -142,7 +142,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Show grid:</term>
+				<term>Show grid</term>
 				<listitem>
 					<para>
 						When this field is checked, grid lines will be shown as dotted lines perpendicular to the axis with the color chosen under
@@ -151,7 +151,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Show as a multiple of pi:</term>
+				<term>Show as a multiple of pi</term>
 				<listitem>
 					<para>
 						When this is enabled the numbers on the axis are shown as fractions multiplied by &pi;, for example 3&pi;/2.
@@ -168,7 +168,7 @@
 		<graphic fileref="DialogAxes3.png"/>
 		<variablelist>
 			<varlistentry>
-				<term>Title:</term>
+				<term>Title</term>
 				<listitem>
 					<para>
 						Here you can enter a title that is shown above the coordinate system. Use the button to the right to change the font.
@@ -176,7 +176,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Show legend:</term>
+				<term>Show legend</term>
 				<listitem>
 					<para>
 						Check this to show the <glossterm>legend</glossterm> with a list of functions and point series in the upper right corner of the coordinate system.
@@ -185,7 +185,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Legend placement:</term>
+				<term>Legend placement</term>
 				<listitem>
 					<para>
 						Here you may choose in which of the four corners you want the <glossterm>legend</glossterm> to be placed.
@@ -194,7 +194,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Calculate with complex numbers:</term>
+				<term>Calculate with complex numbers</term>
 				<listitem>
 					<para>
 						Check this field to use <glossterm baseform="complex number">complex numbers</glossterm> for calculations while drawing graphs.
@@ -205,7 +205,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Axes style:</term>
+				<term>Axes style</term>
 				<listitem>
 					<para>
 						Select <guilabel>None</guilabel> if you don't want the axes to be shown.
@@ -217,10 +217,10 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Trigonometry:</term>
+				<term>Trigonometry</term>
 				<listitem>
 					<para>
-						Choose whether trigonometric functions should calculate in <glossterm><guilabel>radians</guilabel></glossterm> or <guilabel>degrees</guilabel>.
+						Choose whether trigonometric functions should calculate in <glossterm baseform="radians"><guilabel>Radian</guilabel></glossterm> or <guilabel>Degree</guilabel>.
 						This is also used for showing <glossterm baseform="complex number">complex numbers</glossterm> in the polar format.
 					</para>
 				</listitem>
@@ -233,7 +233,7 @@
 		<graphic fileref="DialogAxes4.png"/>
 		<variablelist>
 			<varlistentry>
-				<term>Colors:</term>
+				<term>Colors</term>
 				<listitem>
 					<para>
 						You may change the background color, the color of the axes and the color used for drawing grid lines.
@@ -241,7 +241,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Fonts:</term>
+				<term>Fonts</term>
 				<listitem>
 					<para>
 						You may change the fonts used to show axes labels, the font to draw numbers at the axes, and the font used for the <glossterm>legend</glossterm>.
@@ -255,7 +255,7 @@
 	<simplesect>
 		<variablelist>
 			<varlistentry>
-				<term>Save as default:</term>
+				<term>Save as default</term>
 				<listitem>
 					<para>
 						Check this to save all the current settings in the dialog to be used as default in the future.
