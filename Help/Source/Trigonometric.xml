@@ -6,8 +6,8 @@
 <section>
 	<title>Trigonometric</title>
 	<section id="sin" xreflabel="sin">
-		<title>sin function</title>
-		<indexterm><primary>sin function</primary></indexterm>
+		<title><markup>sin</markup> function</title>
+		<indexterm><primary><function>sin</function> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>sine</primary></indexterm>
 		<para>
@@ -37,8 +37,8 @@
 
 
 	<section id="cos" xreflabel="cos">
-		<title>cos function</title>
-		<indexterm><primary>cos function</primary></indexterm>
+		<title><markup>cos</markup> function</title>
+		<indexterm><primary><function>cos</function> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>cosine</primary></indexterm>
 		<para>
@@ -68,8 +68,8 @@
 
 
 	<section id="tan" xreflabel="tan">
-		<title>tan function</title>
-		<indexterm><primary>tan function</primary></indexterm>
+		<title><markup>tan</markup> function</title>
+		<indexterm><primary><function>tan</function> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>tangent</primary></indexterm>
 		<para>
@@ -101,8 +101,8 @@
 
 
 	<section id="asin" xreflabel="asin">
-		<title>asin function</title>
-		<indexterm><primary>asin function</primary></indexterm>
+		<title><markup>asin</markup> function</title>
+		<indexterm><primary><function>asin</function> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>sine</primary></indexterm>
 		<indexterm><primary>inverse sine</primary></indexterm>
@@ -126,8 +126,8 @@
 
 
 	<section id="acos" xreflabel="acos">
-		<title>acos function</title>
-		<indexterm><primary>acos function</primary></indexterm>
+		<title><markup>acos</markup> function</title>
+		<indexterm><primary><function>acos</function> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>cosine</primary></indexterm>
 		<indexterm><primary>inverse cosine</primary></indexterm>
@@ -151,8 +151,8 @@
 
 
 	<section id="atan" xreflabel="atan">
-		<title>atan function</title>
-		<indexterm><primary>atan function</primary></indexterm>
+		<title><markup>atan</markup> function</title>
+		<indexterm><primary><function>atan</function> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>tangent</primary></indexterm>
 		<indexterm><primary>inverse tangent</primary></indexterm>
@@ -176,8 +176,8 @@
 
 
 	<section id="sec" xreflabel="sec">
-		<title>sec function</title>
-		<indexterm><primary>sec function</primary></indexterm>
+		<title><markup>sec</markup> function</title>
+		<indexterm><primary><function>sec</function> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>secant</primary></indexterm>
 		<para>
@@ -206,8 +206,8 @@
 
 
 	<section id="csc" xreflabel="csc">
-		<title>csc function</title>
-		<indexterm><primary>csc function</primary></indexterm>
+		<title><markup>csc</markup> function</title>
+		<indexterm><primary><function>csc</function> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>cosecant</primary></indexterm>
 		<para>
@@ -236,8 +236,8 @@
 
 
 	<section id="cot" xreflabel="cot">
-		<title>cot function</title>
-		<indexterm><primary>cot function</primary></indexterm>
+		<title><markup>cot</markup> function</title>
+		<indexterm><primary><markup>cot</markup> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>cotangent</primary></indexterm>
 		<para>
@@ -266,8 +266,8 @@
 
 
 	<section id="asec" xreflabel="asec">
-		<title>asec function</title>
-		<indexterm><primary>asec function</primary></indexterm>
+		<title><markup>asec</markup> function</title>
+		<indexterm><primary><function>asec</function> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>secant</primary></indexterm>
 		<indexterm><primary>inverse secant</primary></indexterm>
@@ -292,8 +292,8 @@
 
 
 	<section id="acsc" xreflabel="acsc">
-		<title>acsc function</title>
-		<indexterm><primary>acsc function</primary></indexterm>
+		<title><markup>acsc</markup> function</title>
+		<indexterm><primary><function>acsc</function> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>cosecant</primary></indexterm>
 		<indexterm><primary>inverse cosecant</primary></indexterm>
@@ -318,8 +318,8 @@
 
 
 	<section id="acot" xreflabel="acot">
-		<title>acot function</title>
-		<indexterm><primary>acot function</primary></indexterm>
+		<title><markup>acot</markup> function</title>
+		<indexterm><primary><function>acot</function> function</primary></indexterm>
 		<indexterm><primary>trigonometry</primary></indexterm>
 		<indexterm><primary>cotangent</primary></indexterm>
 		<indexterm><primary>inverse cotangent</primary></indexterm>

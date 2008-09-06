@@ -6,8 +6,8 @@
 <section>
 	<title>Rounding</title>
 	<section id="trunc" xreflabel="trunc">
-		<title>trunc function</title>
-		<indexterm><primary>trunc function</primary></indexterm>
+		<title><markup>trunc</markup> function</title>
+		<indexterm><primary><function>trunc</function> function</primary></indexterm>
 		<indexterm><primary>rounding</primary></indexterm>
 		<indexterm><primary>truncate</primary></indexterm>
 		<para>
@@ -30,8 +30,8 @@
 
 
 	<section id="fract" xreflabel="fract">
-		<title>fract function</title>
-		<indexterm><primary>fract function</primary></indexterm>
+		<title><markup>fract</markup> function</title>
+		<indexterm><primary><function>fract</function> function</primary></indexterm>
 		<indexterm><primary>rounding</primary></indexterm>
 		<indexterm><primary>fractional part</primary></indexterm>
 		<indexterm><primary>decimal part</primary></indexterm>
@@ -55,8 +55,8 @@
 
 
 	<section id="ceil" xreflabel="ceil">
-		<title>ceil function</title>
-		<indexterm><primary>ceil function</primary></indexterm>
+		<title><markup>ceil</markup> function</title>
+		<indexterm><primary><function>ceil</function> function</primary></indexterm>
 		<indexterm><primary>rounding</primary></indexterm>
 		<indexterm><primary>round up</primary></indexterm>
 		<para>
@@ -78,8 +78,8 @@
 
 
 	<section id="floor" xreflabel="floor">
-		<title>floor function</title>
-		<indexterm><primary>floor function</primary></indexterm>
+		<title><markup>floor</markup> function</title>
+		<indexterm><primary><function>floor</function> function</primary></indexterm>
 		<indexterm><primary>rounding</primary></indexterm>
 		<indexterm><primary>round down</primary></indexterm>
 		<indexterm><primary>greatest inetger</primary></indexterm>
@@ -102,8 +102,8 @@
 
 
 	<section id="round" xreflabel="round">
-		<title>round function</title>
-		<indexterm><primary>round function</primary></indexterm>
+		<title><markup>round</markup> function</title>
+		<indexterm><primary><function>round</function> function</primary></indexterm>
 		<para>
 			Rounds a number to the specified number of decimals.
 		</para>

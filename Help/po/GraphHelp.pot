@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2008-09-05 00:56Romance Standard Time\n"
+"POT-Creation-Date: 2008-09-06 02:09Romance Standard Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: <LL@li.org>\n"
@@ -13,8 +13,8 @@ msgstr ""
 msgid "Trigonometric"
 msgstr ""
 
-#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) 
-msgid "sin function"
+#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:40(title) Trigonometric.xml:41(primary) Trigonometric.xml:71(title) Trigonometric.xml:72(primary) Trigonometric.xml:104(title) Trigonometric.xml:105(primary) Trigonometric.xml:129(title) Trigonometric.xml:130(primary) Trigonometric.xml:154(title) Trigonometric.xml:155(primary) Trigonometric.xml:179(title) Trigonometric.xml:180(primary) Trigonometric.xml:209(title) Trigonometric.xml:210(primary) Trigonometric.xml:239(title) Trigonometric.xml:240(primary) Trigonometric.xml:269(title) Trigonometric.xml:270(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:321(title) Trigonometric.xml:322(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:41(title) Special.xml:42(primary) Special.xml:69(title) Special.xml:70(primary) Special.xml:96(title) Special.xml:97(primary) Special.xml:119(title) Special.xml:120(primary) Special.xml:147(title) Special.xml:148(primary) Special.xml:170(title) Special.xml:171(primary) Special.xml:199(title) Special.xml:200(primary) Special.xml:226(title) Special.xml:227(primary) Special.xml:251(title) Special.xml:252(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:33(title) Rounding.xml:34(primary) Rounding.xml:58(title) Rounding.xml:59(primary) Rounding.xml:81(title) Rounding.xml:82(primary) Rounding.xml:105(title) Rounding.xml:106(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:52(title) PowerAndLog.xml:53(primary) PowerAndLog.xml:74(title) PowerAndLog.xml:75(primary) PowerAndLog.xml:110(title) PowerAndLog.xml:111(primary) PowerAndLog.xml:135(title) PowerAndLog.xml:136(primary) PowerAndLog.xml:158(title) PowerAndLog.xml:159(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:33(title) Piecewise.xml:34(primary) Piecewise.xml:55(title) Piecewise.xml:56(primary) Piecewise.xml:79(title) Piecewise.xml:80(primary) Piecewise.xml:103(title) Piecewise.xml:104(primary) Piecewise.xml:128(title) Piecewise.xml:129(primary) Piecewise.xml:150(title) Piecewise.xml:151(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:33(title) Hyperbolic.xml:34(primary) Hyperbolic.xml:57(title) Hyperbolic.xml:58(primary) Hyperbolic.xml:81(title) Hyperbolic.xml:82(primary) Hyperbolic.xml:104(title) Hyperbolic.xml:105(primary) Hyperbolic.xml:127(title) Hyperbolic.xml:128(primary) Hyperbolic.xml:150(title) Hyperbolic.xml:151(primary) Hyperbolic.xml:174(title) Hyperbolic.xml:175(primary) Hyperbolic.xml:198(title) Hyperbolic.xml:199(primary) Hyperbolic.xml:222(title) Hyperbolic.xml:223(primary) Hyperbolic.xml:245(title) Hyperbolic.xml:246(primary) Hyperbolic.xml:268(title) Hyperbolic.xml:269(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:32(title) Complex.xml:33(primary) Complex.xml:59(title) Complex.xml:60(primary) Complex.xml:81(title) Complex.xml:82(primary) Complex.xml:102(title) Complex.xml:103(primary) 
+msgid "<placeholder-1/> function"
 msgstr ""
 
 #. Trigonometric.xml:11(primary) Trigonometric.xml:42(primary) Trigonometric.xml:73(primary) Trigonometric.xml:106(primary) Trigonometric.xml:131(primary) Trigonometric.xml:156(primary) Trigonometric.xml:181(primary) Trigonometric.xml:211(primary) Trigonometric.xml:241(primary) Trigonometric.xml:271(primary) Trigonometric.xml:297(primary) Trigonometric.xml:323(primary) AxesDialog.xml:27(primary) 
@@ -49,10 +49,6 @@ msgstr ""
 msgid "For arguments with a large magnitude, the function will begin to lose precision."
 msgstr ""
 
-#. Trigonometric.xml:40(title) Trigonometric.xml:41(primary) 
-msgid "cos function"
-msgstr ""
-
 #. Trigonometric.xml:43(primary) Trigonometric.xml:132(primary) 
 msgid "cosine"
 msgstr ""
@@ -63,10 +59,6 @@ msgstr ""
 
 #. Trigonometric.xml:53(para) 
 msgid "The <placeholder-1/> function calculates the cosine of an angle <placeholder-2/>, which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. If <placeholder-4/> is a real number, the result will be in the range -1 to 1."
-msgstr ""
-
-#. Trigonometric.xml:71(title) Trigonometric.xml:72(primary) 
-msgid "tan function"
 msgstr ""
 
 #. Trigonometric.xml:74(primary) Trigonometric.xml:157(primary) InsertTangentDialog.xml:10(primary) 
@@ -85,10 +77,6 @@ msgstr ""
 msgid "For arguments with a large magnitude, the function will begin to lose precision. <placeholder-1/> is undefined at <placeholder-2/>, where p is an <glossterm>integer</glossterm>, but the function returns a very large number if <placeholder-3/> is near the undefined value."
 msgstr ""
 
-#. Trigonometric.xml:104(title) Trigonometric.xml:105(primary) 
-msgid "asin function"
-msgstr ""
-
 #. Trigonometric.xml:108(primary) 
 msgid "inverse sine"
 msgstr ""
@@ -99,10 +87,6 @@ msgstr ""
 
 #. Trigonometric.xml:118(para) 
 msgid "The <placeholder-1/> function calculates the inverse sine of <placeholder-2/>. The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> may be any numeric expression that evaluates to a <glossterm>real number</glossterm>. This is the reverse of the <placeholder-4/> function."
-msgstr ""
-
-#. Trigonometric.xml:129(title) Trigonometric.xml:130(primary) 
-msgid "acos function"
 msgstr ""
 
 #. Trigonometric.xml:133(primary) 
@@ -117,10 +101,6 @@ msgstr ""
 msgid "The <placeholder-1/> function calculates the inverse cosine of <placeholder-2/>. The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>. This is the reverse of the <placeholder-4/> function."
 msgstr ""
 
-#. Trigonometric.xml:154(title) Trigonometric.xml:155(primary) 
-msgid "atan function"
-msgstr ""
-
 #. Trigonometric.xml:158(primary) 
 msgid "inverse tangent"
 msgstr ""
@@ -131,10 +111,6 @@ msgstr ""
 
 #. Trigonometric.xml:168(para) 
 msgid "The <placeholder-1/> function calculates the inverse tangent of <placeholder-2/>. The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a real number. This is the reverse of the <placeholder-4/> function."
-msgstr ""
-
-#. Trigonometric.xml:179(title) Trigonometric.xml:180(primary) 
-msgid "sec function"
 msgstr ""
 
 #. Trigonometric.xml:182(primary) Trigonometric.xml:272(primary) 
@@ -149,10 +125,6 @@ msgstr ""
 msgid "The <placeholder-1/> function calculates the secant of an angle <placeholder-2/>, which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> is the same as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
 msgstr ""
 
-#. Trigonometric.xml:209(title) Trigonometric.xml:210(primary) 
-msgid "csc function"
-msgstr ""
-
 #. Trigonometric.xml:212(primary) Trigonometric.xml:298(primary) 
 msgid "cosecant"
 msgstr ""
@@ -163,10 +135,6 @@ msgstr ""
 
 #. Trigonometric.xml:222(para) 
 msgid "The <placeholder-1/> function calculates the cosecant of an angle <placeholder-2/>, which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> is the same as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-msgstr ""
-
-#. Trigonometric.xml:239(title) Trigonometric.xml:240(primary) 
-msgid "cot function"
 msgstr ""
 
 #. Trigonometric.xml:242(primary) Trigonometric.xml:324(primary) 
@@ -181,10 +149,6 @@ msgstr ""
 msgid "The <placeholder-1/> function calculates the secant of an angle <placeholder-2/>, which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> is the same as <placeholder-4/>. <placeholder-5/> may be any numeric expression that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
 msgstr ""
 
-#. Trigonometric.xml:269(title) Trigonometric.xml:270(primary) 
-msgid "asec function"
-msgstr ""
-
 #. Trigonometric.xml:273(primary) 
 msgid "inverse secant"
 msgstr ""
@@ -197,10 +161,6 @@ msgstr ""
 msgid "The <placeholder-1/> function calculates the inverse secant of <placeholder-2/>. The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> is the same as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>. This is the reverse of the <placeholder-6/> function."
 msgstr ""
 
-#. Trigonometric.xml:295(title) Trigonometric.xml:296(primary) 
-msgid "acsc function"
-msgstr ""
-
 #. Trigonometric.xml:299(primary) 
 msgid "inverse cosecant"
 msgstr ""
@@ -211,10 +171,6 @@ msgstr ""
 
 #. Trigonometric.xml:309(para) 
 msgid "The <placeholder-1/> function calculates the inverse cosecant of <placeholder-2/>. The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> is the same as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>. This is the reverse of the <placeholder-6/> function."
-msgstr ""
-
-#. Trigonometric.xml:321(title) Trigonometric.xml:322(primary) 
-msgid "acot function"
 msgstr ""
 
 #. Trigonometric.xml:325(primary) 
@@ -289,10 +245,6 @@ msgstr ""
 msgid "Special"
 msgstr ""
 
-#. Special.xml:9(title) Special.xml:10(primary) 
-msgid "integrate function"
-msgstr ""
-
 #. Special.xml:11(primary) 
 msgid "numeric integral"
 msgstr ""
@@ -309,10 +261,6 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the numeric integral of <placeholder-2/> from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/> This integral is the same as the area between the function <placeholder-6/> and the x-axis from <placeholder-7/> to <placeholder-8/> where the area under the axis is counted negative. <placeholder-9/> may be any function with x as variable if the function is used in a normal function and t as variable if it is a parameteric function. <placeholder-10/> and <placeholder-11/> may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm>. <placeholder-12/> does not calculate the integral exact. Instead the calculation is done using Simpson's Rule with 100 steps."
 msgstr ""
 
-#. Special.xml:41(title) Special.xml:42(primary) 
-msgid "sum function"
-msgstr ""
-
 #. Special.xml:43(primary) 
 msgid "summation"
 msgstr ""
@@ -325,20 +273,12 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the summation of <placeholder-2/> evaluated for all integers from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/>\n\t\t\t\t<placeholder-6/> may be any function with x as variable if the function is used in a normal function and t as variable if it is a parameteric or polar function. <placeholder-7/> and <placeholder-8/> may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm>. <placeholder-9/> does not calculate the integral exact."
 msgstr ""
 
-#. Special.xml:69(title) Special.xml:70(primary) 
-msgid "product function"
-msgstr ""
-
 #. Special.xml:71(para) 
 msgid "Returns the product of the first argument evaluated for all integers from the second to the third parameter."
 msgstr ""
 
 #. Special.xml:80(para) 
 msgid "The <placeholder-1/> function returns the product of <placeholder-2/> evaluated for all integers from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/>\n\t\t\t\t<placeholder-6/> may be any function with x as variable if the function is used in a normal function and t as variable if it is a parameteric or polar function. <placeholder-7/> and <placeholder-8/> may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm>. <placeholder-9/> does not calculate the integral exact."
-msgstr ""
-
-#. Special.xml:96(title) Special.xml:97(primary) 
-msgid "fact function"
 msgstr ""
 
 #. Special.xml:98(primary) Special.xml:121(primary) 
@@ -353,10 +293,6 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the factorial of <placeholder-2/>, commonly written as n!. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a positive <glossterm>integer</glossterm>. The function is defined as <placeholder-4/>, and relates to the <placeholder-5/> function as <placeholder-6/>."
 msgstr ""
 
-#. Special.xml:119(title) Special.xml:120(primary) 
-msgid "gamma function"
-msgstr ""
-
 #. Special.xml:122(para) 
 msgid "Returns the value of the Euler gamma function of the argument."
 msgstr ""
@@ -365,20 +301,12 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the result of the Euler gamma function of <placeholder-2/>, commonly written as &Gamma;(z). <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. The gamma function relates to the factorial function as <placeholder-4/>. The mathematical definition of the gamma function is: <placeholder-5/> This cannot be calculated precisely, so Graph is using the so-called Lanczos approximation to calculate the <placeholder-6/> function."
 msgstr ""
 
-#. Special.xml:147(title) Special.xml:148(primary) 
-msgid "beta function"
-msgstr ""
-
 #. Special.xml:149(para) 
 msgid "Returns the value of the Euler beta function evaluated for the arguments."
 msgstr ""
 
 #. Special.xml:158(para) 
 msgid "The <placeholder-1/> function returns the result of the Euler beta function evaluated for <placeholder-2/> and <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> or <glossterm baseform=\"complex number\">complex numbers</glossterm>. The <placeholder-6/> function relates to the <placeholder-7/> function as <placeholder-8/>."
-msgstr ""
-
-#. Special.xml:170(title) Special.xml:171(primary) 
-msgid "W function"
 msgstr ""
 
 #. Special.xml:172(primary) 
@@ -401,10 +329,6 @@ msgstr ""
 msgid "The <placeholder-1/> function is not defined for real values of <placeholder-2/> when <placeholder-3/> &lt; -1/e."
 msgstr ""
 
-#. Special.xml:199(title) Special.xml:200(primary) 
-msgid "zeta function"
-msgstr ""
-
 #. Special.xml:201(primary) 
 msgid "Riemann Zeta function"
 msgstr ""
@@ -421,10 +345,6 @@ msgstr ""
 msgid "The <placeholder-1/> function is defined for the whole complex plane except for the pole at <placeholder-2/>=1."
 msgstr ""
 
-#. Special.xml:226(title) Special.xml:227(primary) 
-msgid "mod function"
-msgstr ""
-
 #. Special.xml:228(primary) 
 msgid "modulus"
 msgstr ""
@@ -439,10 +359,6 @@ msgstr ""
 
 #. Special.xml:239(para) 
 msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>=0, mod returns 0. <placeholder-8/> and <placeholder-9/> may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm>."
-msgstr ""
-
-#. Special.xml:251(title) Special.xml:252(primary) 
-msgid "dnorm function"
 msgstr ""
 
 #. Special.xml:253(para) 
@@ -513,10 +429,6 @@ msgstr ""
 msgid "Rounding"
 msgstr ""
 
-#. Rounding.xml:9(title) Rounding.xml:10(primary) 
-msgid "trunc function"
-msgstr ""
-
 #. Rounding.xml:11(primary) Rounding.xml:35(primary) Rounding.xml:60(primary) Rounding.xml:83(primary) 
 msgid "rounding"
 msgstr ""
@@ -531,10 +443,6 @@ msgstr ""
 
 #. Rounding.xml:22(para) 
 msgid "The <placeholder-1/> function returns the <glossterm>integer</glossterm> part of <placeholder-2/>. The function removes the decimal part of <placeholder-3/>, i.e. rounds against zero. <placeholder-4/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. If <placeholder-5/> is a complex number, the function returns <placeholder-6/>."
-msgstr ""
-
-#. Rounding.xml:33(title) Rounding.xml:34(primary) 
-msgid "fract function"
 msgstr ""
 
 #. Rounding.xml:36(primary) 
@@ -553,10 +461,6 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the fractional part of <placeholder-2/>. The function removes the <glossterm>integer</glossterm> part of <placeholder-3/>, i.e. <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. If <placeholder-6/> is a complex number, the function returns <placeholder-7/>."
 msgstr ""
 
-#. Rounding.xml:58(title) Rounding.xml:59(primary) 
-msgid "ceil function"
-msgstr ""
-
 #. Rounding.xml:61(primary) 
 msgid "round up"
 msgstr ""
@@ -567,10 +471,6 @@ msgstr ""
 
 #. Rounding.xml:71(para) 
 msgid "The <placeholder-1/> function finds the smallest <glossterm>integer</glossterm> not less than <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. If <placeholder-4/> is a complex number, the function returns <placeholder-5/>."
-msgstr ""
-
-#. Rounding.xml:81(title) Rounding.xml:82(primary) 
-msgid "floor function"
 msgstr ""
 
 #. Rounding.xml:84(primary) 
@@ -589,10 +489,6 @@ msgstr ""
 msgid "The <placeholder-1/> function, which is also called the greatest integer function, gives the largest <glossterm>integer</glossterm> not greater than <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. If <placeholder-4/> is a complex number, the function returns <placeholder-5/>."
 msgstr ""
 
-#. Rounding.xml:105(title) Rounding.xml:106(primary) 
-msgid "round function"
-msgstr ""
-
 #. Rounding.xml:107(para) 
 msgid "Rounds a number to the specified number of decimals."
 msgstr ""
@@ -609,10 +505,6 @@ msgstr ""
 msgid "Power and logarithm"
 msgstr ""
 
-#. PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) 
-msgid "sqr function"
-msgstr ""
-
 #. PowerAndLog.xml:11(primary) 
 msgid "square"
 msgstr ""
@@ -623,10 +515,6 @@ msgstr ""
 
 #. PowerAndLog.xml:21(para) 
 msgid "The <placeholder-1/> function calculates the square of <placeholder-2/>, i.e. <placeholder-3/> raised to the power of 2. <placeholder-4/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-msgstr ""
-
-#. PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) 
-msgid "exp function"
 msgstr ""
 
 #. PowerAndLog.xml:32(primary) InsertTrendlineDialog.xml:15(primary) 
@@ -641,10 +529,6 @@ msgstr ""
 msgid "The <placeholder-1/> function is used to raise <emphasis>e</emphasis>, Euler's constant, to the power of <placeholder-2/>. This is the same as <placeholder-3/>. <placeholder-4/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
 msgstr ""
 
-#. PowerAndLog.xml:52(title) PowerAndLog.xml:53(primary) 
-msgid "sqrt function"
-msgstr ""
-
 #. PowerAndLog.xml:54(primary) 
 msgid "square root"
 msgstr ""
@@ -655,10 +539,6 @@ msgstr ""
 
 #. PowerAndLog.xml:64(para) 
 msgid "The <placeholder-1/> function calculates the square root of <placeholder-2/>, i.e. <placeholder-3/> raised to the power of &frac12;. <placeholder-4/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. If the calculation is done with real numbers, the argument is only defined for <placeholder-5/> &ge; 0."
-msgstr ""
-
-#. PowerAndLog.xml:74(title) PowerAndLog.xml:75(primary) 
-msgid "root function"
 msgstr ""
 
 #. PowerAndLog.xml:76(para) 
@@ -681,10 +561,6 @@ msgstr ""
 msgid "Instead of <placeholder-1/>, you can use <placeholder-2/>."
 msgstr ""
 
-#. PowerAndLog.xml:110(title) PowerAndLog.xml:111(primary) 
-msgid "ln function"
-msgstr ""
-
 #. PowerAndLog.xml:112(primary) PowerAndLog.xml:137(primary) PowerAndLog.xml:160(primary) 
 msgid "logarithm"
 msgstr ""
@@ -701,20 +577,12 @@ msgstr ""
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <emphasis>e</emphasis>, which is Euler's constant. <placeholder-3/> is commonly known as the natural logarithm. <placeholder-4/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. If the calculation is done with real numbers, the argument is only defined for <placeholder-5/>&gt;0. When calculating with complex numbers, <placeholder-6/> is defined for all numbers except <placeholder-7/>=0."
 msgstr ""
 
-#. PowerAndLog.xml:135(title) PowerAndLog.xml:136(primary) 
-msgid "log function"
-msgstr ""
-
 #. PowerAndLog.xml:138(para) 
 msgid "Returns the base 10 logarithm of the argument."
 msgstr ""
 
 #. PowerAndLog.xml:147(para) 
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base 10. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. If the calculation is done with real numbers, the argument is only defined for <placeholder-4/>&gt;0. When calculating with complex numbers, <placeholder-5/> is defined for all numbers except <placeholder-6/>=0."
-msgstr ""
-
-#. PowerAndLog.xml:158(title) PowerAndLog.xml:159(primary) 
-msgid "logb function"
 msgstr ""
 
 #. PowerAndLog.xml:161(para) 
@@ -729,10 +597,6 @@ msgstr ""
 msgid "Piecewise"
 msgstr ""
 
-#. Piecewise.xml:9(title) Piecewise.xml:10(primary) 
-msgid "sign function"
-msgstr ""
-
 #. Piecewise.xml:11(primary) 
 msgid "signum"
 msgstr ""
@@ -745,20 +609,12 @@ msgstr ""
 msgid "The <placeholder-1/> function, which is also called signum, returns the sign of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. When <placeholder-4/> is a real number, <placeholder-5/> returns 1 for <placeholder-6/>&gt;0 and -1 for <placeholder-7/>&lt;0. <placeholder-8/> returns 0 for <placeholder-9/>=0. When <placeholder-10/> evaluates to a complex number, <placeholder-11/> returns <placeholder-12/>."
 msgstr ""
 
-#. Piecewise.xml:33(title) Piecewise.xml:34(primary) 
-msgid "u function"
-msgstr ""
-
 #. Piecewise.xml:35(para) 
 msgid "The unit step function."
 msgstr ""
 
 #. Piecewise.xml:44(para) 
 msgid "<placeholder-1/> is commonly known as the unit step function. <placeholder-2/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>. The function is undefined when <placeholder-3/> has an imaginary part. <placeholder-4/> returns 1 for <placeholder-5/>&ge;0 and 0 for <placeholder-6/>&lt;0."
-msgstr ""
-
-#. Piecewise.xml:55(title) Piecewise.xml:56(primary) 
-msgid "min function"
 msgstr ""
 
 #. Piecewise.xml:57(primary) AxesDialog.xml:12(primary) 
@@ -773,10 +629,6 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the minimum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> or <glossterm baseform=\"complex number\">complex numbers</glossterm>. If the arguments are complex numbers, the function returns <placeholder-3/>."
 msgstr ""
 
-#. Piecewise.xml:79(title) Piecewise.xml:80(primary) 
-msgid "max function"
-msgstr ""
-
 #. Piecewise.xml:81(primary) AxesDialog.xml:13(primary) 
 msgid "maximum"
 msgstr ""
@@ -789,10 +641,6 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the maximum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> or <glossterm baseform=\"complex number\">complex numbers</glossterm>. If the arguments are complex numbers, the function returns <placeholder-3/>."
 msgstr ""
 
-#. Piecewise.xml:103(title) Piecewise.xml:104(primary) 
-msgid "range function"
-msgstr ""
-
 #. Piecewise.xml:105(para) 
 msgid "Returns the second argument if it is in the range between the first argument and the third argument."
 msgstr ""
@@ -801,20 +649,12 @@ msgstr ""
 msgid "The <placeholder-1/> function returns <placeholder-2/>, if <placeholder-3/> is greater than <placeholder-4/> and less than <placeholder-5/>. If <placeholder-6/> &lt; <placeholder-7/> then <placeholder-8/> is returned. If <placeholder-9/> &gt; <placeholder-10/> then <placeholder-11/> is returned. The arguments may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> or <glossterm baseform=\"complex number\">complex numbers</glossterm>. The function has the same effect as <placeholder-12/>."
 msgstr ""
 
-#. Piecewise.xml:128(title) Piecewise.xml:129(primary) 
-msgid "if function"
-msgstr ""
-
 #. Piecewise.xml:130(para) 
 msgid "Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned."
 msgstr ""
 
 #. Piecewise.xml:139(para) 
 msgid "The <placeholder-1/> function returns <placeholder-2/> if <placeholder-3/> evaluates to a value different from 0. If <placeholder-4/> evaluates to 0, <placeholder-5/> is returned. The arguments may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> or <glossterm baseform=\"complex number\">complex numbers</glossterm>."
-msgstr ""
-
-#. Piecewise.xml:150(title) Piecewise.xml:151(primary) 
-msgid "ifseq function"
 msgstr ""
 
 #. Piecewise.xml:152(para) 
@@ -2461,10 +2301,6 @@ msgstr ""
 msgid "Hyperbolic"
 msgstr ""
 
-#. Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) 
-msgid "sinh function"
-msgstr ""
-
 #. Hyperbolic.xml:11(primary) Hyperbolic.xml:83(primary) 
 msgid "hyperbolic sine"
 msgstr ""
@@ -2479,10 +2315,6 @@ msgstr ""
 
 #. Hyperbolic.xml:25(para) 
 msgid "Hyperbolic sine is defined as: <placeholder-1/>"
-msgstr ""
-
-#. Hyperbolic.xml:33(title) Hyperbolic.xml:34(primary) 
-msgid "cosh function"
 msgstr ""
 
 #. Hyperbolic.xml:35(primary) Hyperbolic.xml:106(primary) 
@@ -2501,10 +2333,6 @@ msgstr ""
 msgid "Hyperbolic cosine is defined as: <placeholder-1/>"
 msgstr ""
 
-#. Hyperbolic.xml:57(title) Hyperbolic.xml:58(primary) 
-msgid "tanh function"
-msgstr ""
-
 #. Hyperbolic.xml:59(primary) Hyperbolic.xml:129(primary) 
 msgid "hyperbolic tangent"
 msgstr ""
@@ -2521,10 +2349,6 @@ msgstr ""
 msgid "Hyperbolic tangent is defined as: <placeholder-1/>"
 msgstr ""
 
-#. Hyperbolic.xml:81(title) Hyperbolic.xml:82(primary) 
-msgid "asinh function"
-msgstr ""
-
 #. Hyperbolic.xml:84(primary) 
 msgid "inverse hyperbolic sine"
 msgstr ""
@@ -2535,10 +2359,6 @@ msgstr ""
 
 #. Hyperbolic.xml:94(para) 
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic sine of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> is the reverse of <placeholder-5/>, i.e. <placeholder-6/>."
-msgstr ""
-
-#. Hyperbolic.xml:104(title) Hyperbolic.xml:105(primary) 
-msgid "acosh function"
 msgstr ""
 
 #. Hyperbolic.xml:107(primary) 
@@ -2553,10 +2373,6 @@ msgstr ""
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosine of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> is the reverse of <placeholder-5/>, i.e. <placeholder-6/>."
 msgstr ""
 
-#. Hyperbolic.xml:127(title) Hyperbolic.xml:128(primary) 
-msgid "atanh function"
-msgstr ""
-
 #. Hyperbolic.xml:130(primary) 
 msgid "inverse hyperbolic tangent"
 msgstr ""
@@ -2567,10 +2383,6 @@ msgstr ""
 
 #. Hyperbolic.xml:140(para) 
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> is the reverse of <placeholder-5/>, i.e. <placeholder-6/>."
-msgstr ""
-
-#. Hyperbolic.xml:150(title) Hyperbolic.xml:151(primary) 
-msgid "csch function"
 msgstr ""
 
 #. Hyperbolic.xml:152(primary) 
@@ -2589,10 +2401,6 @@ msgstr ""
 msgid "Hyperbolic cosecant is defined as: <placeholder-1/>"
 msgstr ""
 
-#. Hyperbolic.xml:174(title) Hyperbolic.xml:175(primary) 
-msgid "sech function"
-msgstr ""
-
 #. Hyperbolic.xml:176(primary) 
 msgid "hyperbolic secant"
 msgstr ""
@@ -2607,10 +2415,6 @@ msgstr ""
 
 #. Hyperbolic.xml:190(para) 
 msgid "Hyperbolic secant is defined as: <placeholder-1/>"
-msgstr ""
-
-#. Hyperbolic.xml:198(title) Hyperbolic.xml:199(primary) 
-msgid "coth function"
 msgstr ""
 
 #. Hyperbolic.xml:200(primary) Hyperbolic.xml:270(primary) 
@@ -2629,10 +2433,6 @@ msgstr ""
 msgid "Hyperbolic cotangent is defined as: <placeholder-1/>"
 msgstr ""
 
-#. Hyperbolic.xml:222(title) Hyperbolic.xml:223(primary) 
-msgid "acsch function"
-msgstr ""
-
 #. Hyperbolic.xml:224(primary) 
 msgid "hyperbolic cosecanr"
 msgstr ""
@@ -2649,10 +2449,6 @@ msgstr ""
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> is the reverse of <placeholder-5/>, i.e. <placeholder-6/>."
 msgstr ""
 
-#. Hyperbolic.xml:245(title) Hyperbolic.xml:246(primary) 
-msgid "asech function"
-msgstr ""
-
 #. Hyperbolic.xml:247(primary) 
 msgid "hyperbolic secanr"
 msgstr ""
@@ -2667,10 +2463,6 @@ msgstr ""
 
 #. Hyperbolic.xml:258(para) 
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> is the reverse of <placeholder-5/>, i.e. <placeholder-6/>."
-msgstr ""
-
-#. Hyperbolic.xml:268(title) Hyperbolic.xml:269(primary) 
-msgid "acoth function"
 msgstr ""
 
 #. Hyperbolic.xml:271(primary) 
@@ -3789,10 +3581,6 @@ msgstr ""
 msgid "<placeholder-1/> uses a multiplicative congruential random number generator with period 2 to the 32<superscript>nd</superscript> power to return successive pseudo-random numbers in the range from 0 to 1."
 msgstr ""
 
-#. Complex.xml:9(title) Complex.xml:10(primary) 
-msgid "abs function"
-msgstr ""
-
 #. Complex.xml:11(primary) 
 msgid "absolute value"
 msgstr ""
@@ -3803,10 +3591,6 @@ msgstr ""
 
 #. Complex.xml:22(para) 
 msgid "The <placeholder-1/> function returns the absolute or numeric value of <placeholder-2/>, commonly written as |z|. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> always returns a postive real value."
-msgstr ""
-
-#. Complex.xml:32(title) Complex.xml:33(primary) 
-msgid "arg function"
 msgstr ""
 
 #. Complex.xml:34(primary) 
@@ -3825,10 +3609,6 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the argument or angle of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> always returns a real number. The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings. The angle is always between -&pi; and &pi;. If <placeholder-5/> is a real number, <placeholder-6/> is 0 for positive numbers and &pi; for negative numbers. <placeholder-7/> is undefined."
 msgstr ""
 
-#. Complex.xml:59(title) Complex.xml:60(primary) 
-msgid "conj function"
-msgstr ""
-
 #. Complex.xml:61(primary) 
 msgid "conjugate"
 msgstr ""
@@ -3837,20 +3617,12 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the conjugate of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. The function is defined as: <placeholder-4/>"
 msgstr ""
 
-#. Complex.xml:81(title) Complex.xml:82(primary) 
-msgid "re function"
-msgstr ""
-
 #. Complex.xml:83(primary) 
 msgid "real value"
 msgstr ""
 
 #. Complex.xml:93(para) 
 msgid "The <placeholder-1/> function returns the real part of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-msgstr ""
-
-#. Complex.xml:102(title) Complex.xml:103(primary) 
-msgid "im function"
 msgstr ""
 
 #. Complex.xml:104(primary) 
