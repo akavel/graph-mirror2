@@ -6,8 +6,8 @@
 <section>
 	<title>Piecewise</title>
 	<section id="sign" xreflabel="sign">
-		<title>sign function</title>
-		<indexterm><primary>sign function</primary></indexterm>
+		<title><markup>sign</markup> function</title>
+		<indexterm><primary><function>sign</function> function</primary></indexterm>
 		<indexterm><primary>signum</primary></indexterm>
 		<para>
 			Returns the sign of the argument.
@@ -30,8 +30,8 @@
 
 
 	<section id="u" xreflabel="u">
-		<title>u function</title>
-		<indexterm><primary>u function</primary></indexterm>
+		<title><markup>u</markup> function</title>
+		<indexterm><primary><function>u</function> function</primary></indexterm>
 		<para>
 			The unit step function.
 		</para>
@@ -52,8 +52,8 @@
 
 
 <section id="min" xreflabel="min">
-		<title>min function</title>
-		<indexterm><primary>min function</primary></indexterm>
+		<title><markup>min</markup> function</title>
+		<indexterm><primary><function>min</function> function</primary></indexterm>
 		<indexterm><primary>minimum</primary></indexterm>
 		<para>
 			Finds and returns the minimum of the values passed as arguments.
@@ -76,8 +76,8 @@
 
 
 	<section id="max" xreflabel="max">
-		<title>max function</title>
-		<indexterm><primary>max function</primary></indexterm>
+		<title><markup>max</markup> function</title>
+		<indexterm><primary><function>max</function> function</primary></indexterm>
 		<indexterm><primary>maximum</primary></indexterm>
 		<para>
 			Finds and returns the maximum of the values passed as arguments.
@@ -100,8 +100,8 @@
 
 
 	<section id="range" xreflabel="range">
-		<title>range function</title>
-		<indexterm><primary>range function</primary></indexterm>
+		<title><markup>range</markup> function</title>
+		<indexterm><primary><function>range</function> function</primary></indexterm>
 		<para>
 			Returns the second argument if it is in the range between the first argument and the third argument.
 		</para>
@@ -125,8 +125,8 @@
 
 
 	<section id="if" xreflabel="if">
-		<title>if function</title>
-		<indexterm><primary>if function</primary></indexterm>
+		<title><markup>if</markup> function</title>
+		<indexterm><primary><function>if</function> function</primary></indexterm>
 		<para>
 			Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned.
 		</para>
@@ -147,8 +147,8 @@
 
 
 	<section id="ifseq" xreflabel="ifseq">
-		<title>ifseq function</title>
-		<indexterm><primary>ifseq function</primary></indexterm>
+		<title><markup>ifseq</markup> function</title>
+		<indexterm><primary><function>ifseq</function> function</primary></indexterm>
 		<para>
 			Evaluates a sequence of if functions and returns the first result found with a condition different from zero.
 		</para>

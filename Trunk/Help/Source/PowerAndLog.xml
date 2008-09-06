@@ -6,8 +6,8 @@
 <section>
 	<title>Power and logarithm</title>
 	<section id="sqr" xreflabel="sqr">
-		<title>sqr function</title>
-		<indexterm><primary>sqr function</primary></indexterm>
+		<title><markup>sqr</markup> function</title>
+		<indexterm><primary><function>sqr</function> function</primary></indexterm>
 		<indexterm><primary>square</primary></indexterm>
 		<para>
 			Returns the square of the argument.
@@ -27,8 +27,8 @@
 
 
 	<section id="exp" xreflabel="exp">
-		<title>exp function</title>
-		<indexterm><primary>exp function</primary></indexterm>
+		<title><markup>exp</markup> function</title>
+		<indexterm><primary><function>exp</function> function</primary></indexterm>
 		<indexterm><primary>exponential</primary></indexterm>
 		<para>
 			Returns <emphasis>e</emphasis> raised to the power of the argument.
@@ -49,8 +49,8 @@
 
 
 	<section id="sqrt" xreflabel="sqrt">
-		<title>sqrt function</title>
-		<indexterm><primary>sqrt function</primary></indexterm>
+		<title><markup>sqrt</markup> function</title>
+		<indexterm><primary><function>sqrt</function> function</primary></indexterm>
 		<indexterm><primary>square root</primary></indexterm>
 		<para>
 			Returns the square root of the argument.
@@ -71,8 +71,8 @@
 
 
 	<section id="root" xreflabel="root">
-		<title>root function</title>
-		<indexterm><primary>root function</primary></indexterm>
+		<title><markup>root</markup> function</title>
+		<indexterm><primary><function>root</function> function</primary></indexterm>
 		<para>
 			Returns the <mathphrase><parameter>n</parameter><superscript>th</superscript></mathphrase> root of the argument.
 		</para>
@@ -107,8 +107,8 @@
 
 
 	<section id="ln" xreflabel="ln">
-		<title>ln function</title>
-		<indexterm><primary>ln function</primary></indexterm>
+		<title><markup>ln</markup> function</title>
+		<indexterm><primary><function>ln</function> function</primary></indexterm>
 		<indexterm><primary>logarithm</primary></indexterm>
 		<indexterm><primary>natural logarithm</primary></indexterm>
 		<para>
@@ -132,8 +132,8 @@
 
 
 	<section id="log" xreflabel="log">
-		<title>log function</title>
-		<indexterm><primary>log function</primary></indexterm>
+		<title><markup>log</markup> function</title>
+		<indexterm><primary><function>log</function> function</primary></indexterm>
 		<indexterm><primary>logarithm</primary></indexterm>
 		<para>
 			Returns the base 10 logarithm of the argument.
@@ -155,8 +155,8 @@
 
 
 	<section id="logb" xreflabel="logb">
-		<title>logb function</title>
-		<indexterm><primary>logb function</primary></indexterm>
+		<title><markup>logb</markup> function</title>
+		<indexterm><primary><function>logb</function> function</primary></indexterm>
 		<indexterm><primary>logarithm</primary></indexterm>
 		<para>
 			Returns the base <parameter>n</parameter> logarithm of the argument.

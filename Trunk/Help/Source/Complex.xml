@@ -6,8 +6,8 @@
 <section>
 	<title>Complex</title>
 	<section id="abs" xreflabel="abs">
-		<title>abs function</title>
-		<indexterm><primary>abs function</primary></indexterm>
+		<title><markup>abs</markup> function</title>
+		<indexterm><primary><function>abs</function> function</primary></indexterm>
 		<indexterm><primary>absolute value</primary></indexterm>
 		<indexterm><primary>numeric value</primary></indexterm>
 		<para>
@@ -29,8 +29,8 @@
 
 
 	<section id="arg" xreflabel="arg">
-		<title>arg function</title>
-		<indexterm><primary>arg function</primary></indexterm>
+		<title><markup>arg</markup> function</title>
+		<indexterm><primary><function>arg</function> function</primary></indexterm>
 		<indexterm><primary>argument</primary></indexterm>
 		<indexterm><primary>angle</primary></indexterm>
 		<para>
@@ -56,8 +56,8 @@
 
 
 	<section id="conj" xreflabel="conj">
-		<title>conj function</title>
-		<indexterm><primary>conj function</primary></indexterm>
+		<title><markup>conj</markup> function</title>
+		<indexterm><primary><function>conj</function> function</primary></indexterm>
 		<indexterm><primary>conjugate</primary></indexterm>
 		<para>
 			Returns the conjugate of the argument.
@@ -78,8 +78,8 @@
 
 
 	<section id="re" xreflabel="re">
-		<title>re function</title>
-		<indexterm><primary>re function</primary></indexterm>
+		<title><markup>re</markup> function</title>
+		<indexterm><primary><function>re</function> function</primary></indexterm>
 		<indexterm><primary>real value</primary></indexterm>
 		<para>
 			Returns the real part of the argument.
@@ -99,8 +99,8 @@
 
 
 	<section id="im" xreflabel="im">
-		<title>im function</title>
-		<indexterm><primary>im function</primary></indexterm>
+		<title><markup>im</markup> function</title>
+		<indexterm><primary><function>im</function> function</primary></indexterm>
 		<indexterm><primary>imaginary value</primary></indexterm>
 		<para>
 			Returns the imaginary part of the argument.

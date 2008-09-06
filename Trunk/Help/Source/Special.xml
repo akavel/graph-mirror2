@@ -6,8 +6,8 @@
 <section>
 	<title>Special</title>
 <section id="integrate" xreflabel="integrate">
-		<title>integrate function</title>
-		<indexterm><primary>integrate function</primary></indexterm>
+		<title><markup>integrate</markup> function</title>
+		<indexterm><primary><function>integrate</function> function</primary></indexterm>
 		<indexterm><primary>numeric integral</primary></indexterm>
 		<indexterm><primary>area</primary></indexterm>
 		<para>
@@ -38,8 +38,8 @@
 
 
 	<section id="sum" xreflabel="sum">
-		<title>sum function</title>
-		<indexterm><primary>sum function</primary></indexterm>
+		<title><markup>sum</markup> function</title>
+		<indexterm><primary><function>sum</function> function</primary></indexterm>
 		<indexterm><primary>summation</primary></indexterm>
 		<para>
 			Returns the summation of the first argument evaluated for all integers from the second to the third parameter.
@@ -66,8 +66,8 @@
 
 
 	<section id="product" xreflabel="product">
-		<title>product function</title>
-		<indexterm><primary>product function</primary></indexterm>
+		<title><markup>product</markup> function</title>
+		<indexterm><primary><function>product</function> function</primary></indexterm>
 		<para>
 			Returns the product of the first argument evaluated for all integers from the second to the third parameter.
 		</para>
@@ -93,8 +93,8 @@
 
 
 	<section id="fact" xreflabel="fact">
-		<title>fact function</title>
-		<indexterm><primary>fact function</primary></indexterm>
+		<title><markup>fact</markup> function</title>
+		<indexterm><primary><function>fact</function> function</primary></indexterm>
 		<indexterm><primary>factorial</primary></indexterm>
 		<para>
 			Returns the factorial of the argument.
@@ -116,8 +116,8 @@
 
 
 	<section id="gamma" xreflabel="gamma">
-		<title>gamma function</title>
-		<indexterm><primary>gamma function</primary></indexterm>
+		<title><markup>gamma</markup> function</title>
+		<indexterm><primary><function>gamma</function> function</primary></indexterm>
 		<indexterm><primary>factorial</primary></indexterm>
 		<para>
 			Returns the value of the Euler gamma function of the argument.
@@ -144,8 +144,8 @@
 
 
 	<section id="beta" xreflabel="beta">
-		<title>beta function</title>
-		<indexterm><primary>beta function</primary></indexterm>
+		<title><markup>beta</markup> function</title>
+		<indexterm><primary><function>beta</function> function</primary></indexterm>
 		<para>
 			Returns the value of the Euler beta function evaluated for the arguments.
 		</para>
@@ -167,8 +167,8 @@
 
 
 	<section id="w" xreflabel="W">
-		<title>W function</title>
-		<indexterm><primary>W function</primary></indexterm>
+		<title><markup>W</markup> function</title>
+		<indexterm><primary><function>W</function> function</primary></indexterm>
 		<indexterm><primary>Lambert W-function</primary></indexterm>
 		<indexterm><primary>omega function</primary></indexterm>
 		<para>
@@ -196,8 +196,8 @@
 
 
 	<section id="zeta" xreflabel="zeta">
-		<title>zeta function</title>
-		<indexterm><primary>zeta function</primary></indexterm>
+		<title><markup>zeta</markup> function</title>
+		<indexterm><primary><function>zeta</function> function</primary></indexterm>
 		<indexterm><primary>Riemann Zeta function</primary></indexterm>
 		<para>
 			Returns the value of the Riemann Zeta function evaluated for the argument.
@@ -223,8 +223,8 @@
 
 
 	<section id="mod" xreflabel="mod">
-		<title>mod function</title>
-		<indexterm><primary>mod function</primary></indexterm>
+		<title><markup>mod</markup> function</title>
+		<indexterm><primary><function>mod</function> function</primary></indexterm>
 		<indexterm><primary>modulus</primary></indexterm>
 		<indexterm><primary>remainder</primary></indexterm>
 		<para>
@@ -248,8 +248,8 @@
 
 
 	<section id="dnorm" xreflabel="dnorm">
-		<title>dnorm function</title>
-		<indexterm><primary>dnorm function</primary></indexterm>
+		<title><markup>dnorm</markup> function</title>
+		<indexterm><primary><function>dnorm</function> function</primary></indexterm>
 		<para>
 			Returns the normal distribution of the first argument with optional mean value and standard deviation.
 		</para>

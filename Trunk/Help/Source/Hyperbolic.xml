@@ -6,8 +6,8 @@
 <section id="Hyperbolic">
 	<title>Hyperbolic</title>
 	<section id="sinh" xreflabel="sinh">
-		<title>sinh function</title>
-		<indexterm><primary>sinh function</primary></indexterm>
+		<title><markup>sinh</markup> function</title>
+		<indexterm><primary><function>sinh</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic sine</primary></indexterm>
 		<para>
 			Returns the hyperbolic sine of the argument.
@@ -30,8 +30,8 @@
 
 
 	<section id="cosh" xreflabel="cosh">
-		<title>cosh function</title>
-		<indexterm><primary>cosh function</primary></indexterm>
+		<title><markup>cosh</markup> function</title>
+		<indexterm><primary><function>cosh</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic cosine</primary></indexterm>
 		<para>
 			Returns the hyperbolic cosine of the argument.
@@ -54,8 +54,8 @@
 
 
 	<section id="tanh" xreflabel="tanh">
-		<title>tanh function</title>
-		<indexterm><primary>tanh function</primary></indexterm>
+		<title><markup>tanh</markup> function</title>
+		<indexterm><primary><function>tanh</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic tangent</primary></indexterm>
 		<para>
 			Returns the hyperbolic tangent of the argument.
@@ -78,8 +78,8 @@
 
 
 	<section id="asinh" xreflabel="asinh">
-		<title>asinh function</title>
-		<indexterm><primary>asinh function</primary></indexterm>
+		<title><markup>asinh</markup> function</title>
+		<indexterm><primary><function>asinh</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic sine</primary></indexterm>
 		<indexterm><primary>inverse hyperbolic sine</primary></indexterm>
 		<para>
@@ -101,8 +101,8 @@
 
 
 	<section id="acosh" xreflabel="acosh">
-		<title>acosh function</title>
-		<indexterm><primary>acosh function</primary></indexterm>
+		<title><markup>acosh</markup> function</title>
+		<indexterm><primary><function>acosh</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic cosine</primary></indexterm>
 		<indexterm><primary>inverse hyperbolic cosine</primary></indexterm>
 		<para>
@@ -124,8 +124,8 @@
 
 
 	<section id="atanh" xreflabel="atanh">
-		<title>atanh function</title>
-		<indexterm><primary>atanh function</primary></indexterm>
+		<title><markup>atanh</markup> function</title>
+		<indexterm><primary><function>atanh</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic tangent</primary></indexterm>
 		<indexterm><primary>inverse hyperbolic tangent</primary></indexterm>
 		<para>
@@ -147,8 +147,8 @@
 
 
 	<section id="csch" xreflabel="csch">
-		<title>csch function</title>
-		<indexterm><primary>csch function</primary></indexterm>
+		<title><markup>csch</markup> function</title>
+		<indexterm><primary><function>csch</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic cosecant</primary></indexterm>
 		<para>
 			Returns the hyperbolic cosecant of the argument.
@@ -171,8 +171,8 @@
 
 
 	<section id="sech" xreflabel="sech">
-		<title>sech function</title>
-		<indexterm><primary>sech function</primary></indexterm>
+		<title><markup>sech</markup> function</title>
+		<indexterm><primary><function>sech</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic secant</primary></indexterm>
 		<para>
 			Returns the hyperbolic secant of the argument.
@@ -195,8 +195,8 @@
 
 
 	<section id="coth" xreflabel="coth">
-		<title>coth function</title>
-		<indexterm><primary>coth function</primary></indexterm>
+		<title><markup>coth</markup> function</title>
+		<indexterm><primary><function>coth</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic cotangent</primary></indexterm>
 		<para>
 			Returns the hyperbolic cotangent of the argument.
@@ -219,8 +219,8 @@
 
 
 	<section id="acsch" xreflabel="acsch">
-		<title>acsch function</title>
-		<indexterm><primary>acsch function</primary></indexterm>
+		<title><markup>acsch</markup> function</title>
+		<indexterm><primary><function>acsch</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic cosecanr</primary></indexterm>
 		<indexterm><primary>inverse hyperbolic cosecant</primary></indexterm>
 		<para>
@@ -242,8 +242,8 @@
 
 
 	<section id="asech" xreflabel="asech">
-		<title>asech function</title>
-		<indexterm><primary>asech function</primary></indexterm>
+		<title><markup>asech</markup> function</title>
+		<indexterm><primary><function>asech</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic secanr</primary></indexterm>
 		<indexterm><primary>inverse hyperbolic secant</primary></indexterm>
 		<para>
@@ -265,8 +265,8 @@
 
 
 	<section id="acoth" xreflabel="acoth">
-		<title>acoth function</title>
-		<indexterm><primary>acoth function</primary></indexterm>
+		<title><markup>acoth</markup> function</title>
+		<indexterm><primary><function>acoth</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic cotangent</primary></indexterm>
 		<indexterm><primary>inverse hyperbolic cotangent</primary></indexterm>
 		<para>
