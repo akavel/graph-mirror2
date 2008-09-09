@@ -52,7 +52,7 @@ public:
   virtual void Polyline(const POINTS *Points, int Count)=0;
   virtual void Rectangle(const RECTL &Rect)=0;
   virtual void Ellipse(const RECTL &Rect)=0;
-  virtual void Text(int X, int Y, const char *Str, const TFontInfo &Font)=0;
+  virtual void Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font)=0;
   virtual void SetPen(const TPenInfo &APen)=0;
   virtual void SetBrush(const TBrushInfo &ABrush)=0;
   virtual void ExcludeClipRect(const RECTL &Rect)=0;

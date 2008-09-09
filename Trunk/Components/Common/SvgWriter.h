@@ -34,7 +34,7 @@ public:
   void Polyline(const POINTS *Points, int Count);
   void Rectangle(const RECTL &Rect);
   void Ellipse(const RECTL &Rect);
-  void Text(int X, int Y, const char *Str, const TFontInfo &Font);
+  void Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font);
   void SetPen(const TPenInfo &APen);
   void SetBrush(const TBrushInfo &ABrush);
   void ExcludeClipRect(const RECTL &Rect);

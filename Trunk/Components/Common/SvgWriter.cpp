@@ -14,13 +14,36 @@
 #include <vector>
 #include <iomanip>
 //---------------------------------------------------------------------------
+std::string Utf8Encode(const std::wstring &Str)
+{
+  std::string Result;
+  for(unsigned I = 0; I < Str.size(); I++)
+  {
+    wchar_t ch = Str[I];
+    if(ch <= 0x7F)
+      Result.push_back(ch);
+    else if(ch > 0x7FF)
+    {
+      Result.push_back(0xE0 | (ch >> 12));
+      Result.push_back(0x80 | ((ch >> 6) & 0x3F));
+      Result.push_back(0x80 | (ch & 0x3F));
+    }
+    else // 0x7F < ch <= 0x7FF
+    {
+      Result.push_back(0xC0 | (ch >> 6));
+      Result.push_back(0x80 | (ch & 0x3F));
+    }
+  }
+  return Result;
+}
+//---------------------------------------------------------------------------
 void TSvgWriter::BeginFile(const RECTL &Rect, unsigned Width, unsigned Height)
 {
   ViewBox = Rect;
   Stream <<
-    "<?xml version=\"1.0\" standalone=\"no\"?>\n"
+    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
     "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n"
-    "<svg width=\"" << Width/1000.0 << "cm\" height=\"" << Height/1000.0 << "cm\" viewbox=\""
+    "<svg " /*<< "width=\"" << Width/1000.0 << "cm\" height=\"" << Height/1000.0 << "cm\" " */ << "viewbox=\""
       << Rect.left << " " << Rect.top << " " << (Rect.right - Rect.left) << " " << (Rect.bottom - Rect.top)
       << "\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n";
   Stream << "  <g>\n";
@@ -84,10 +107,10 @@ void TSvgWriter::Ellipse(const RECTL &Rect)
   Stream << "\" />\n";
 }
 //---------------------------------------------------------------------------
-void TSvgWriter::Text(int X, int Y, const char *Str, const TFontInfo &Font)
+void TSvgWriter::Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font)
 {
   Stream << "  <text x=\"" << X << "\" y=\"" << Y << "\" font-family=\"" <<
-    Font.Name << "\" font-size=\"" << Font.Size << "\">" << Str << "</text>\n";
+    Font.Name << "\" font-size=\"" << Font.Size << "\">" << Utf8Encode(Str) << "</text>\n";
 }
 //---------------------------------------------------------------------------
 void TSvgWriter::WritePen()
