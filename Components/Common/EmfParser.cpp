@@ -98,7 +98,8 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
       EMREXTCREATEFONTINDIRECTW *ExtFont = (EMREXTCREATEFONTINDIRECTW*)lpEMFR;
       std::wstring Temp = ExtFont->elfw.elfLogFont.lfFaceName;
       Font.Name = std::string(Temp.begin(), Temp.end());
-      Font.Size = -ExtFont->elfw.elfLogFont.lfHeight;
+      int Scale = 25; //Magic number
+      Font.Size = -ExtFont->elfw.elfLogFont.lfHeight / Scale;
       FontList[ExtFont->ihFont] = Font;
       break;
     }
@@ -113,12 +114,8 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
       EMREXTTEXTOUTW *Text = (EMREXTTEXTOUTW*)lpEMFR;
       wchar_t *Str = (wchar_t*)(((char*)Text)+Text->emrtext.offString);
       int Size = Text->emrtext.nChars;
-      int NewSize = WideCharToMultiByte(CP_ACP, 0, Str, Size, NULL, 0, NULL, NULL);
-      std::vector<char> NewStr(NewSize + 1);
-      WideCharToMultiByte(CP_ACP, 0, Str, Size, &NewStr[0], NewSize, NULL, NULL);
-      NewStr.back() = 0; //Zero terminate
-      Font.Size = Text->rclBounds.bottom - Text->rclBounds.top;
-      Writer->Text(Text->rclBounds.left, Text->rclBounds.bottom, &NewStr[0], Font);
+//      Font.Size = Text->rclBounds.bottom - Text->rclBounds.top;
+      Writer->Text(Text->rclBounds.left, Text->rclBounds.bottom, std::wstring(Str, Size), Font);
       break;
     }
 
@@ -194,9 +191,39 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
         Writer->Rectangle(reinterpret_cast<const RECTL&>(Data[I]));
       break;
     }
+
+    case EMR_GDICOMMENT: //Application specific data
+      break;
+
+    case EMR_SETMAPMODE:
+    {
+      const EMRSETMAPMODE *MapMode = reinterpret_cast<const EMRSETMAPMODE*>(lpEMFR);
+//      assert(MapMode->iMode == MM_TEXT);
+      break;
+    }
+    case EMR_SETVIEWPORTEXTEX:
+    {
+      const EMRSETVIEWPORTEXTEX *ViewPort = reinterpret_cast<const EMRSETVIEWPORTEXTEX*>(lpEMFR);
+      break;
+    }
+    case EMR_SETWINDOWEXTEX:
+    {
+      const EMRSETWINDOWEXTEX *Windows = reinterpret_cast<const EMRSETWINDOWEXTEX*>(lpEMFR);
+      break;
+    }
+    case EMR_SETTEXTALIGN:
+    {
+      const EMRSETTEXTALIGN *TextAlign = reinterpret_cast<const EMRSETTEXTALIGN*>(lpEMFR);
+      break;
+    }
+    case EMR_SETWINDOWORGEX:
+    {
+      const EMRSETWINDOWORGEX *WindowOrg = reinterpret_cast<const EMRSETWINDOWORGEX*>(lpEMFR);
+      break;
+    }
     default:
     {
-//      int Command = lpEMFR->iType;
+      int Command = lpEMFR->iType;
       break;
     }
   }
@@ -206,16 +233,9 @@ void TEmfParser::Parse(HENHMETAFILE Handle, TGraphicWriter &AWriter)
 {
   ENHMETAHEADER Header;
   assert(GetEnhMetaFileHeader(Handle, sizeof(Header), &Header));
-//  ps_iniplot(const_cast<char*>(FileName), Header.rclFrame.right/1000.0);
-//  CmPerPixel = Header.rclFrame.right/(1000.*Header.rclBounds.right);
-//  ps_echel(CmPerPixel, Header.rclFrame.bottom/(1000.*Header.rclBounds.bottom), 0., Header.rclFrame.bottom/1000., 1., 0.);
 
   Writer = &AWriter;
   Writer->BeginFile(Header.rclBounds, Header.rclFrame.right - Header.rclFrame.left, Header.rclFrame.bottom - Header.rclFrame.top);
-
-//  unsigned Size = GetEnhMetaFileDescription(Handle, 0, NULL);
-//  std::vector<char> Str(Size);
-//  GetEnhMetaFileDescription(Handle, Size, &Str[0]); 
 
   EnumEnhMetaFile(NULL, Handle, &EnhMetaFileProc, this, NULL);
   Writer->EndOfFile();
@@ -224,6 +244,8 @@ void TEmfParser::Parse(HENHMETAFILE Handle, TGraphicWriter &AWriter)
 void TEmfParser::Parse(const char *FileName, TGraphicWriter &AWriter)
 {
   HENHMETAFILE Handle = GetEnhMetaFile(FileName);
+  if(Handle == NULL)
+    return;
   Parse(Handle, AWriter);
   DeleteEnhMetaFile(Handle);
 }
