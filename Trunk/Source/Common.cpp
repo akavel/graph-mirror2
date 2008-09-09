@@ -245,7 +245,7 @@ int _matherr(_exception *a)
       default:        Error = "Unknown"; break;
     }
 
-    AnsiString Str = "Internal error! Please report this to the programmer with steps to reproduce:\n" + AnsiString(a->name) + '(' + a->arg1 + ',' + a->arg2 + "): " + Error + " error\nContinue?";
+    AnsiString Str = LoadStr(RES_InternalError) + "\n" + AnsiString(a->name) + '(' + a->arg1 + ',' + a->arg2 + "): " + Error + " error\nContinue?";
 
     int Result = MessageDlg(Str, mtError, TMsgDlgButtons() << mbYes << mbYesToAll << mbAbort, 0);
     if(Result == mrYesToAll)
