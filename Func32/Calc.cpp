@@ -294,6 +294,8 @@ T Omega(T z, TErrorCode &ErrorCode)
 
   if(abs(z) > 3)
     w = w-log(w);
+  else if(w == -1.0L) //Definition from MathWorld
+    return -1;
 
   for(int i = 0; i < 20; i++)
   {

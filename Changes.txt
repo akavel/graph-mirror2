@@ -16,4 +16,5 @@ Version 4.4
 - The help file has been converted to chm and pdf.
 - Fixed bug preventing the use of custom functions/constants in trendline models.
 - The sign function has been corrected for sign(0) and complex numbers.
+- Fixed crash when trying to evaluate W(-e^-1)
 - A lot of minor bugs are fixed.
