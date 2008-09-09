@@ -16,7 +16,7 @@ ASAP
 - Fix labels attached to axes when axes are boxed.
 - Add a colored circle to the point series markers.
 - Add more point series markers, eg. vertical line.
-- Adjust size of grid lines (especially when printed to be read by blind users)
+- Adjust size of grid lines (especially when printed to be read by blind users, but also when shown on a smartboard)
 - Adjust axes size (especially when printed to be read by blind users)
 - Grid: Replace dotted lines with dots/crosses where the grids intersect
 - Create a real forum. Look at phpBB
@@ -131,6 +131,7 @@ Plugins:
 - FFT of point series.
 - Create data for point series, ie. add plugin to context menu in Insert Point Series dialog.
 - Make the number of iterations optional when integrating (both for the integrate function and for area calculation)
+- Add the function chi-square, x²(x,f)
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>
