@@ -3,12 +3,10 @@ import os
 import gettext
 import codecs
 
-SourcePath = "../Source/"
-OutFile = "..\\po\\GraphHelp.pot"
 Languages = ["Danish", "Croatian", "Spanish"]
 LocalePath = "d:\\Projects\\Graph\\Locale\\"
 
-os.chdir(SourcePath)
+os.chdir("../Source/")
 Files = glob.glob("*.xml")
 os.system("..\\..\\Tools\\xml2po\\xml2po.py -k -o " + OutFile + " " + " ".join(Files))
 os.chdir("..\\po")

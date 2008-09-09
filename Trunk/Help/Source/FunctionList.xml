@@ -30,7 +30,7 @@
 		The precedence of operators can be changed through the use of brackets.
 		(), {} and [] may all be used alike.
 		Notice that expressions in Graph are case insensitive, i.e. there are no difference between upper and lower case characters.
-		The only exception is <function>e</function> as the Euler's constant and E as the exponent in a <glossterm baseform="real number">number</glossterm> in scientific notation.
+		The only exception is <function>e</function> as Euler's constant and E as the exponent in a <glossterm baseform="real number">number</glossterm> in scientific notation.
 	</para>
 	<para>
 		<informaltable>

@@ -76,7 +76,7 @@
 			<term>Show tooltip</term>
 			<listitem>
 				When there is a mark in this field, you will see a small box with an explanation
-				when you are holding the mouse over an object, like an edit field, selection box, etc., for a few seconds.
+				when you are holding the mouse pointer over an object, like an edit field, selection box, etc., for a few seconds.
 				The description is also shown in the status bar at the bottom of the main window.
 			</listitem>
 		</varlistentry>

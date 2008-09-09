@@ -57,7 +57,7 @@
 				If the function is a standard function, you can leave one or both of them blank to draw the graph from minus infinity to plus infinity. If the function is a parametric function or a polar function, you always have to specify an interval.
 
 				If the function is a parametric or polar function, you have to specify the number of steps for which you want the function to be evaluated.
-				When you specify a higher number of steps, the graph will appear more smooth, but it will take longer to plot.
+				When you specify a higher number of steps, the graph will appear smoother, but it will take longer to plot.
 				It is preferred to leave the <guilabel>Steps</guilabel> field blank for standard functions to let Graph decide the optimal number of steps.
 				You can however enter the number of steps if the graph doesn't show enough details, for example if an asymptote is not shown correctly.
 				Notice that the <guilabel>Steps</guilabel> only specify a minimum number of calculations.
