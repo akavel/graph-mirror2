@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2008-09-06 02:09Romance Standard Time\n"
+"POT-Creation-Date: 2008-09-07 22:22Romance Standard Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: <LL@li.org>\n"
@@ -214,7 +214,7 @@ msgid "The dialog shown below is used to evaluate the selected function for a ra
 msgstr ""
 
 #. TableDialog.xml:19(para) 
-msgid "When you press the <guibutton>Calc</guibutton> button, the table will be filled with the independent variable in the first coloumn. The rest of the coloumns dependes on the type of function. For a standard function, the table will show f(x), f'(x) and f''(x). For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx. For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx. Unneeded coloumns can be hidden from the context menu. If the calculations takes a long time, a progress indicator will be shown."
+msgid "When you press the <guibutton>Calc</guibutton> button, the table will be filled with the independent variable in the first column. The rest of the columns dependes on the type of function. For a standard function, the table will show f(x), f'(x) and f''(x). For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx. For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx. Unneeded columns can be hidden from the context menu. If the calculations takes a long time, a progress indicator will be shown."
 msgstr ""
 
 #. TableDialog.xml:34(guimenuitem) MenuItems.xml:159(guimenuitem) 
@@ -401,8 +401,12 @@ msgstr ""
 msgid "Save as image..."
 msgstr ""
 
+#. SaveImageDialog.xml:22(guilabel) 
+msgid "Save As"
+msgstr ""
+
 #. SaveImageDialog.xml:19(para) 
-msgid "Use the menu item <placeholder-1/> to save the shown coordinate system as an image file. Graph supports five formats: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) and Portable Document Format (pdf). When the menu item has been chosen, a standard Save As dialog will appear. In this dialog you write a filename, choose a directory and select one of the image types."
+msgid "Use the menu item <placeholder-1/> to save the shown coordinate system as an image file. Graph supports five formats: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) and Portable Document Format (pdf). When the menu item has been chosen, a standard <placeholder-2/> dialog will appear. In this dialog you write a filename, choose a directory and select one of the image types."
 msgstr ""
 
 #. SaveImageDialog.xml:25(para) 
@@ -742,7 +746,7 @@ msgid "Show tooltip"
 msgstr ""
 
 #. OptionsDialog.xml:77(listitem) 
-msgid "When there is a mark in this field, you will see a small box with an explanation when you are holding the mouse over an object, like an edit field, selection box, etc., for a few seconds. The description is also shown in the status bar at the bottom of the main window."
+msgid "When there is a mark in this field, you will see a small box with an explanation when you are holding the mouse pointer over an object, like an edit field, selection box, etc., for a few seconds. The description is also shown in the status bar at the bottom of the main window."
 msgstr ""
 
 #. OptionsDialog.xml:85(term) 
@@ -2238,7 +2242,7 @@ msgid "Automatic"
 msgstr ""
 
 #. InsertFunctionDialog.xml:54(listitem) 
-msgid "You can choose an interval for the independent variable. <placeholder-1/> and <placeholder-2/> indicates the start and end of the interval. If the function is a standard function, you can leave one or both of them blank to draw the graph from minus infinity to plus infinity. If the function is a parametric function or a polar function, you always have to specify an interval. If the function is a parametric or polar function, you have to specify the number of steps for which you want the function to be evaluated. When you specify a higher number of steps, the graph will appear more smooth, but it will take longer to plot. It is preferred to leave the <placeholder-3/> field blank for standard functions to let Graph decide the optimal number of steps. You can however enter the number of steps if the graph doesn't show enough details, for example if an asymptote is not shown correctly. Notice that the <placeholder-4/> only specify a minimum number of calculations. Graph may add more steps at critical points if <placeholder-5/> is set to <placeholder-6/>."
+msgid "You can choose an interval for the independent variable. <placeholder-1/> and <placeholder-2/> indicates the start and end of the interval. If the function is a standard function, you can leave one or both of them blank to draw the graph from minus infinity to plus infinity. If the function is a parametric function or a polar function, you always have to specify an interval. If the function is a parametric or polar function, you have to specify the number of steps for which you want the function to be evaluated. When you specify a higher number of steps, the graph will appear smoother, but it will take longer to plot. It is preferred to leave the <placeholder-3/> field blank for standard functions to let Graph decide the optimal number of steps. You can however enter the number of steps if the graph doesn't show enough details, for example if an asymptote is not shown correctly. Notice that the <placeholder-4/> only specify a minimum number of calculations. Graph may add more steps at critical points if <placeholder-5/> is set to <placeholder-6/>."
 msgstr ""
 
 #. InsertFunctionDialog.xml:70(listitem) 
@@ -2674,7 +2678,7 @@ msgid "not operator"
 msgstr ""
 
 #. FunctionList.xml:27(para) 
-msgid "The following is a list of all variables, constants, operators and functions supported by the program. The list of operators shows the operators with the highest precedence first. The precedence of operators can be changed through the use of brackets. (), {} and [] may all be used alike. Notice that expressions in Graph are case insensitive, i.e. there are no difference between upper and lower case characters. The only exception is <placeholder-1/> as the Euler's constant and E as the exponent in a <glossterm baseform=\"real number\">number</glossterm> in scientific notation."
+msgid "The following is a list of all variables, constants, operators and functions supported by the program. The list of operators shows the operators with the highest precedence first. The precedence of operators can be changed through the use of brackets. (), {} and [] may all be used alike. Notice that expressions in Graph are case insensitive, i.e. there are no difference between upper and lower case characters. The only exception is <placeholder-1/> as Euler's constant and E as the exponent in a <glossterm baseform=\"real number\">number</glossterm> in scientific notation."
 msgstr ""
 
 #. FunctionList.xml:43(entry) 
@@ -3150,7 +3154,7 @@ msgid "For the other functions the area is considered negative when the graph is
 msgstr ""
 
 #. EvaluateDialog.xml:92(para) 
-msgid "You can either enter the range in the edit boxes or select the range with the mouse. The calculated area will be shown below the range, and the area will be marked with a shading in the coordinate system. The calculation is done using Simpson's formula through 1000 iterations"
+msgid "You can either enter the range in the edit boxes or select the range with the mouse. The calculated area will be shown below the range, and the area will be marked with a shading in the coordinate system. The calculation is done using Simpson's formula through 1000 iterations."
 msgstr ""
 
 #. EvaluateDialog.xml:101(para) 

@@ -23,7 +23,7 @@
 				The <function>integrate</function> function returns the numeric integral of <parameter>f</parameter> from <parameter>a</parameter> to <parameter>b</parameter>.
 				This is mathematically written as:
 				<mediaobject>
-	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Dummy.svg"/></imageobject>
+	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Integrate.svg"/></imageobject>
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Integrate.emf"/></imageobject>
 				</mediaobject>
 				This integral is the same as the area between the function <parameter>f</parameter> and the x-axis from <parameter>a</parameter> to <parameter>b</parameter>
