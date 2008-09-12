@@ -43,7 +43,7 @@ void TSvgWriter::BeginFile(const RECTL &Rect, unsigned Width, unsigned Height)
   Stream <<
     "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
     "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n"
-    "<svg " /*<< "width=\"" << Width/1000.0 << "cm\" height=\"" << Height/1000.0 << "cm\" " */ << "viewbox=\""
+    "<svg " /*<< "width=\"" << Width/1000.0 << "cm\" height=\"" << Height/1000.0 << "cm\" " */ << "viewBox=\""
       << Rect.left << " " << Rect.top << " " << (Rect.right - Rect.left) << " " << (Rect.bottom - Rect.top)
       << "\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n";
   Stream << "  <g>\n";
@@ -215,6 +215,12 @@ void TSvgWriter::ExcludeClipRect(const RECTL &Rect)
   Stream << "  </clipPath>\n";
 
   Stream << "  <g clip-path=\"url(#clippath)\">\n";
+}
+//---------------------------------------------------------------------------
+void TSvgWriter::SetWindowMapping(SIZEL WindowSize, SIZEL ViewportSize, POINTL WindowOrg)
+{
+  Stream << "  <svg width=\"" << ViewportSize.cx << "\" height=\"" << ViewportSize.cy <<
+    "\" viewBox=\"0 0 " << WindowSize.cx << " " << WindowSize.cy << "\">\r";
 }
 //---------------------------------------------------------------------------
 
