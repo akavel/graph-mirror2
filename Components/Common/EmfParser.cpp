@@ -204,11 +204,14 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
     case EMR_SETVIEWPORTEXTEX:
     {
       const EMRSETVIEWPORTEXTEX *ViewPort = reinterpret_cast<const EMRSETVIEWPORTEXTEX*>(lpEMFR);
+      ViewportSize = ViewPort->szlExtent;
       break;
     }
     case EMR_SETWINDOWEXTEX:
     {
-      const EMRSETWINDOWEXTEX *Windows = reinterpret_cast<const EMRSETWINDOWEXTEX*>(lpEMFR);
+      const EMRSETWINDOWEXTEX *Window = reinterpret_cast<const EMRSETWINDOWEXTEX*>(lpEMFR);
+      WindowSize = Window->szlExtent;
+      Writer->SetWindowMapping(WindowSize, ViewportSize, WindowOrg);
       break;
     }
     case EMR_SETTEXTALIGN:
@@ -218,9 +221,18 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
     }
     case EMR_SETWINDOWORGEX:
     {
-      const EMRSETWINDOWORGEX *WindowOrg = reinterpret_cast<const EMRSETWINDOWORGEX*>(lpEMFR);
+      const EMRSETWINDOWORGEX *EmrWindowOrg = reinterpret_cast<const EMRSETWINDOWORGEX*>(lpEMFR);
+      WindowOrg = EmrWindowOrg->ptlOrigin;
       break;
     }
+
+    case EMR_SETBKMODE:
+    case EMR_SETBKCOLOR:
+    case EMR_SELECTPALETTE:
+    case EMR_EXTSELECTCLIPRGN:
+    case EMR_EOF:
+      break;
+
     default:
     {
       int Command = lpEMFR->iType;

@@ -38,5 +38,6 @@ public:
   void SetPen(const TPenInfo &APen);
   void SetBrush(const TBrushInfo &ABrush);
   void ExcludeClipRect(const RECTL &Rect);
+  void SetWindowMapping(SIZEL WindowSize, SIZEL ViewportSize, POINTL WindowOrg);
 };
 #endif

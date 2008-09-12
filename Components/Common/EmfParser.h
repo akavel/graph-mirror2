@@ -56,6 +56,7 @@ public:
   virtual void SetPen(const TPenInfo &APen)=0;
   virtual void SetBrush(const TBrushInfo &ABrush)=0;
   virtual void ExcludeClipRect(const RECTL &Rect)=0;
+  virtual void SetWindowMapping(SIZEL WindowSize, SIZEL ViewportSize, POINTL WindowOrg)=0;
 };
 
 class TEmfParser
@@ -66,6 +67,8 @@ class TEmfParser
   std::map<unsigned, TPenInfo> PenList;
   std::map<unsigned, TBrushInfo> BrushList;
   std::map<unsigned, TFontInfo> FontList;
+  SIZEL WindowSize, ViewportSize;
+  POINTL WindowOrg;
 
   static int CALLBACK EnhMetaFileProc(HDC hDC, HANDLETABLE *lpHTable, const ENHMETARECORD *lpEMFR, int nObj, LPARAM lpData);
   void HandleRecord(const ENHMETARECORD *lpEMFR);
