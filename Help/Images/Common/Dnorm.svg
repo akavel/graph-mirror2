@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg viewbox="2 3 197 49" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg height="30mm" width="60mm" viewBox="2 25 197 49" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <svg width="203" height="54" viewBox="0 0 4608 1216">    <line stroke="#000000" stroke-width="16" x1="2799" y1="1011" x2="2848" y2="983" />
     <line stroke="#000000" stroke-width="32" x1="2848" y1="991" x2="2919" y2="1121" />
     <line stroke="#000000" stroke-width="16" x1="2927" y1="1121" x2="3021" y2="733" />
