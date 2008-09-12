@@ -54,7 +54,7 @@
 				The <function>sum</function> function returns the summation of <parameter>f</parameter> evaluated for all integers from <parameter>a</parameter> to <parameter>b</parameter>.
 				This is mathematically written as:
 				<mediaobject>
-	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Dummy.svg"/></imageobject>
+	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Sum.svg"/></imageobject>
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Sum.emf"/></imageobject>
 				</mediaobject>
 				<parameter>f</parameter> may be any function with x as variable if the function is used in a normal function and t as variable if it is a parameteric or polar function.
@@ -81,7 +81,7 @@
 				The <function>product</function> function returns the product of <parameter>f</parameter> evaluated for all integers from <parameter>a</parameter> to <parameter>b</parameter>.
 				This is mathematically written as:
 				<mediaobject>
-	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Dummy.svg"/></imageobject>
+	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Product.svg"/></imageobject>
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Product.emf"/></imageobject>
 				</mediaobject>
 				<parameter>f</parameter> may be any function with x as variable if the function is used in a normal function and t as variable if it is a parameteric or polar function.
@@ -133,10 +133,12 @@
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 				The gamma function relates to the factorial function as <mathphrase>fact(n)=gamma(n+1)</mathphrase>.
 				The mathematical definition of the gamma function is:
+				<informalfigure>
 				<mediaobject>
-	  			<imageobject  role="fo"><imagedata  format="SVG"  fileref="Dummy.svg"/></imageobject>
+	  			<imageobject  role="fo"><imagedata  format="SVG"  fileref="Gamma.svg"/></imageobject>
   				<imageobject  role="html"><imagedata  format="EMF"  fileref="Gamma.emf"/></imageobject>
 				</mediaobject>
+				</informalfigure>
 				This cannot be calculated precisely, so Graph is using the so-called Lanczos approximation to calculate the <function>gamma</function> function.
 			</para>
 		</simplesect>
@@ -268,7 +270,7 @@
 				that evaluate to <glossterm baseform="real number">real numbers</glossterm> where &sigma; > 0.
 				The normal distribution is defined as:
 				<mediaobject>
-	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Dummy.svg"/></imageobject>
+	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Dnorm.svg"/></imageobject>
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Dnorm.emf"/></imageobject>
 				</mediaobject>
 			</para>
