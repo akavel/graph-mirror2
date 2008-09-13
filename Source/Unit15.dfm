@@ -41,6 +41,7 @@ object Form15: TForm15
     Width = 26
     Height = 13
     Caption = 'From:'
+    FocusControl = Edit1
   end
   object Label2: TTntLabel
     Left = 138
@@ -48,6 +49,7 @@ object Form15: TForm15
     Width = 16
     Height = 13
     Caption = 'To:'
+    FocusControl = Edit2
   end
   object Edit3: TTntEdit
     Left = 48
