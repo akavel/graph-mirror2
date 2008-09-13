@@ -65,7 +65,7 @@ div.figure p {
     color: black;
 }
 
-div.navheader, 
+div.navheader,
 div.navfooter {
   width:100%; filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr='#809BC8', endColorstr='#FFFFFF', gradientType='0');
   color: white;
@@ -83,7 +83,7 @@ div.navheader table th {
 div.navfooter table td {
 	color: black;
 }
-    
+
 div.navheader table td a,
 div.navfooter table td a {
 	color: #black;
@@ -108,12 +108,12 @@ div.navheader hr, div.navfooter hr{
 
 div.book,
 div.chapter,
-div.sect1, 
+div.sect1,
 div.sect2,
 div.sect3,
 div.preface,
-div.appendix, 
-div.section, 
+div.appendix,
+div.section,
 div.glossary {
 	margin: 20px;
 }
@@ -176,15 +176,15 @@ div.table td {
 	clear: both;
 }
 
-.action, .guibutton, .guimenu, .guimenuitem {
+.action, .guibutton, .guimenu, .guisubmenu, .guimenuitem {
   font-weight: bold;
 }
 
-.guibutton, .guimenu, .guimenuitem {
+.guibutton, .guimenu, .guisubmenu, .guimenuitem {
   padding: 0px 0.5em 0px 0.5em;
 }
 
-.guimenu, .guimenuitem, .guilabel {
+.guimenu, .guisubmenu, .guimenuitem, .guilabel {
 /*	font-size: 10pt; */
 	background-color: #EEE;
 }
@@ -223,9 +223,13 @@ div.table td {
 }
 
 .term {
-	border-bottom: 1px dotted black; 
+	border-bottom: 1px dotted black;
 }
 
 div.variablelist dt {
   	margin-top: 1em;
+}
+
+.symbol {
+   font-family: "Symbol";
 }

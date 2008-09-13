@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
@@ -212,7 +212,7 @@
 						<entry>Polish</entry>
 						<entry>Yes</entry>
 						<entry>No</entry>
-						<entry><personname>Paweł Gląb</personname></entry>
+						<entry><personname>Paweł Głąb</personname></entry>
 					</row>
 
 					<row>

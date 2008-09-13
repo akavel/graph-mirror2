@@ -107,10 +107,13 @@
   </xsl:attribute>
 </xsl:attribute-set>
 
-<xsl:template match="symbol[@role = 'symbolfont']">
+<xsl:template match="markup[@role = 'symbolfont']">
   <fo:inline font-family="Symbol">
     <xsl:call-template name="inline.charseq"/>
   </fo:inline>
+</xsl:template>
+
+<xsl:template match="symbol[@role = 'html']">
 </xsl:template>
 
 </xsl:stylesheet>
