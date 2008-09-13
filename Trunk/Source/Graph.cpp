@@ -69,6 +69,10 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
   try
   {
+    //Always initialize to Western settings, so the deafult English interface looks correct.
+    SysLocale.MiddleEast = false;
+    Application->BiDiMode = bdLeftToRight;
+
     //Translations are used by UpdateRegistry(), which is called from TApplication::Initialize()
     AnsiString Language = GetRegValue(REGISTRY_KEY, "Language", HKEY_CURRENT_USER, "");
     if(Language.IsEmpty())
@@ -83,7 +87,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
       Application->ShowMainForm = false;
 
     Application->CreateForm(__classid(TForm1), &Form1);
-     Application->Run();
+    Application->Run();
   }
   catch (Exception &E)
   {
