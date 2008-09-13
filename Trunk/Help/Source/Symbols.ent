@@ -1,9 +1,9 @@
 <!ENTITY pi	"<symbol role='symbolfont'>&#x003C0;</symbol>"> <!-- GREEK SMALL LETTER PI -->
-<!ENTITY theta	"<symbol role='symbolfont'>&#x003B8;</symbol>"> <!-- GREEK SMALL LETTER THETA -->
-<!ENTITY Gamma	"<symbol role='symbolfont'>&#x00393;</symbol>"> <!-- GREEK SMALL LETTER GAMMA -->
-<!ENTITY sigma	"<symbol role='symbolfont'>&#x003C3;</symbol>"> <!-- GREEK SMALL LETTER SIGMA -->
+<!ENTITY theta  "<markup role='symbolfont'>&#x003B8;</markup>"> <!-- GREEK SMALL LETTER THETA -->
+<!ENTITY Gamma  "<markup role='symbolfont'>&#x00393;</markup>"> <!-- GREEK SMALL LETTER GAMMA -->
+<!ENTITY sigma  "<markup role='symbolfont'>&#x003C3;</markup>"> <!-- GREEK SMALL LETTER SIGMA -->
 <!ENTITY mu	"&#x003BC;"> 					<!-- GREEK SMALL LETTER MU -->
-<!ENTITY ang	"<symbol role='symbolfont'>&#x02220;</symbol>"> <!-- ANGLE -->
+<!ENTITY ang  "<markup role='fo'><markup role='symbolfont'>&#x02220;</markup></markup><symbol role='html'>&#xD0;</symbol>"> <!-- ANGLE -->
 <!ENTITY deg	"&#x00B0;"> 					<!-- DEGREE SIGN -->
 <!ENTITY imag 	"<emphasis role='bold'>i</emphasis>"> 		<!-- Imaginary unit -->
 <!ENTITY copy	"&#x00A9;"> 					<!-- COPYRIGHT SIGN -->
