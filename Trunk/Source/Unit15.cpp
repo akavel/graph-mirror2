@@ -29,6 +29,7 @@ __fastcall TForm15::TForm15(TComponent* Owner)
   //Initialize as dialog and change to sizeable to prevent change in client size when the border size changes
   BorderStyle = bsSizeable;
   ScaleForm(this);
+  SetAccelerators(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm15::Button2Click(TObject *Sender)
@@ -264,4 +265,5 @@ void __fastcall TForm15::Popup1_Show(TObject *Sender)
   Grid1->ColWidths[Index+1] = MenuItem->Checked ? Grid1->DefaultColWidth : -1;
 }
 //---------------------------------------------------------------------------
+
 
