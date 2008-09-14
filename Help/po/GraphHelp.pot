@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2008-09-07 22:22Romance Standard Time\n"
+"POT-Creation-Date: 2008-09-14 12:39Romance Standard Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: <LL@li.org>\n"
@@ -13,7 +13,7 @@ msgstr ""
 msgid "Trigonometric"
 msgstr ""
 
-#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:40(title) Trigonometric.xml:41(primary) Trigonometric.xml:71(title) Trigonometric.xml:72(primary) Trigonometric.xml:104(title) Trigonometric.xml:105(primary) Trigonometric.xml:129(title) Trigonometric.xml:130(primary) Trigonometric.xml:154(title) Trigonometric.xml:155(primary) Trigonometric.xml:179(title) Trigonometric.xml:180(primary) Trigonometric.xml:209(title) Trigonometric.xml:210(primary) Trigonometric.xml:239(title) Trigonometric.xml:240(primary) Trigonometric.xml:269(title) Trigonometric.xml:270(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:321(title) Trigonometric.xml:322(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:41(title) Special.xml:42(primary) Special.xml:69(title) Special.xml:70(primary) Special.xml:96(title) Special.xml:97(primary) Special.xml:119(title) Special.xml:120(primary) Special.xml:147(title) Special.xml:148(primary) Special.xml:170(title) Special.xml:171(primary) Special.xml:199(title) Special.xml:200(primary) Special.xml:226(title) Special.xml:227(primary) Special.xml:251(title) Special.xml:252(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:33(title) Rounding.xml:34(primary) Rounding.xml:58(title) Rounding.xml:59(primary) Rounding.xml:81(title) Rounding.xml:82(primary) Rounding.xml:105(title) Rounding.xml:106(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:52(title) PowerAndLog.xml:53(primary) PowerAndLog.xml:74(title) PowerAndLog.xml:75(primary) PowerAndLog.xml:110(title) PowerAndLog.xml:111(primary) PowerAndLog.xml:135(title) PowerAndLog.xml:136(primary) PowerAndLog.xml:158(title) PowerAndLog.xml:159(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:33(title) Piecewise.xml:34(primary) Piecewise.xml:55(title) Piecewise.xml:56(primary) Piecewise.xml:79(title) Piecewise.xml:80(primary) Piecewise.xml:103(title) Piecewise.xml:104(primary) Piecewise.xml:128(title) Piecewise.xml:129(primary) Piecewise.xml:150(title) Piecewise.xml:151(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:33(title) Hyperbolic.xml:34(primary) Hyperbolic.xml:57(title) Hyperbolic.xml:58(primary) Hyperbolic.xml:81(title) Hyperbolic.xml:82(primary) Hyperbolic.xml:104(title) Hyperbolic.xml:105(primary) Hyperbolic.xml:127(title) Hyperbolic.xml:128(primary) Hyperbolic.xml:150(title) Hyperbolic.xml:151(primary) Hyperbolic.xml:174(title) Hyperbolic.xml:175(primary) Hyperbolic.xml:198(title) Hyperbolic.xml:199(primary) Hyperbolic.xml:222(title) Hyperbolic.xml:223(primary) Hyperbolic.xml:245(title) Hyperbolic.xml:246(primary) Hyperbolic.xml:268(title) Hyperbolic.xml:269(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:32(title) Complex.xml:33(primary) Complex.xml:59(title) Complex.xml:60(primary) Complex.xml:81(title) Complex.xml:82(primary) Complex.xml:102(title) Complex.xml:103(primary) 
+#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:40(title) Trigonometric.xml:41(primary) Trigonometric.xml:71(title) Trigonometric.xml:72(primary) Trigonometric.xml:104(title) Trigonometric.xml:105(primary) Trigonometric.xml:129(title) Trigonometric.xml:130(primary) Trigonometric.xml:154(title) Trigonometric.xml:155(primary) Trigonometric.xml:179(title) Trigonometric.xml:180(primary) Trigonometric.xml:209(title) Trigonometric.xml:210(primary) Trigonometric.xml:239(title) Trigonometric.xml:240(primary) Trigonometric.xml:269(title) Trigonometric.xml:270(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:321(title) Trigonometric.xml:322(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:41(title) Special.xml:42(primary) Special.xml:69(title) Special.xml:70(primary) Special.xml:96(title) Special.xml:97(primary) Special.xml:119(title) Special.xml:120(primary) Special.xml:149(title) Special.xml:150(primary) Special.xml:172(title) Special.xml:173(primary) Special.xml:201(title) Special.xml:202(primary) Special.xml:228(title) Special.xml:229(primary) Special.xml:253(title) Special.xml:254(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:33(title) Rounding.xml:34(primary) Rounding.xml:58(title) Rounding.xml:59(primary) Rounding.xml:81(title) Rounding.xml:82(primary) Rounding.xml:105(title) Rounding.xml:106(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:52(title) PowerAndLog.xml:53(primary) PowerAndLog.xml:74(title) PowerAndLog.xml:75(primary) PowerAndLog.xml:110(title) PowerAndLog.xml:111(primary) PowerAndLog.xml:135(title) PowerAndLog.xml:136(primary) PowerAndLog.xml:158(title) PowerAndLog.xml:159(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:33(title) Piecewise.xml:34(primary) Piecewise.xml:55(title) Piecewise.xml:56(primary) Piecewise.xml:79(title) Piecewise.xml:80(primary) Piecewise.xml:103(title) Piecewise.xml:104(primary) Piecewise.xml:128(title) Piecewise.xml:129(primary) Piecewise.xml:150(title) Piecewise.xml:151(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:33(title) Hyperbolic.xml:34(primary) Hyperbolic.xml:57(title) Hyperbolic.xml:58(primary) Hyperbolic.xml:81(title) Hyperbolic.xml:82(primary) Hyperbolic.xml:104(title) Hyperbolic.xml:105(primary) Hyperbolic.xml:127(title) Hyperbolic.xml:128(primary) Hyperbolic.xml:150(title) Hyperbolic.xml:151(primary) Hyperbolic.xml:174(title) Hyperbolic.xml:175(primary) Hyperbolic.xml:198(title) Hyperbolic.xml:199(primary) Hyperbolic.xml:222(title) Hyperbolic.xml:223(primary) Hyperbolic.xml:245(title) Hyperbolic.xml:246(primary) Hyperbolic.xml:268(title) Hyperbolic.xml:269(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:32(title) Complex.xml:33(primary) Complex.xml:59(title) Complex.xml:60(primary) Complex.xml:81(title) Complex.xml:82(primary) Complex.xml:102(title) Complex.xml:103(primary) 
 msgid "<placeholder-1/> function"
 msgstr ""
 
@@ -29,11 +29,11 @@ msgstr ""
 msgid "Returns the sine of the argument."
 msgstr ""
 
-#. Trigonometric.xml:17(title) Trigonometric.xml:48(title) Trigonometric.xml:79(title) Trigonometric.xml:113(title) Trigonometric.xml:138(title) Trigonometric.xml:163(title) Trigonometric.xml:187(title) Trigonometric.xml:217(title) Trigonometric.xml:247(title) Trigonometric.xml:278(title) Trigonometric.xml:304(title) Trigonometric.xml:330(title) Special.xml:17(title) Special.xml:48(title) Special.xml:75(title) Special.xml:103(title) Special.xml:126(title) Special.xml:153(title) Special.xml:178(title) Special.xml:206(title) Special.xml:234(title) Special.xml:257(title) Rounding.xml:17(title) Rounding.xml:42(title) Rounding.xml:66(title) Rounding.xml:90(title) Rounding.xml:111(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:59(title) PowerAndLog.xml:80(title) PowerAndLog.xml:118(title) PowerAndLog.xml:142(title) PowerAndLog.xml:165(title) Piecewise.xml:16(title) Piecewise.xml:39(title) Piecewise.xml:62(title) Piecewise.xml:86(title) Piecewise.xml:109(title) Piecewise.xml:134(title) Piecewise.xml:156(title) Hyperbolic.xml:16(title) Hyperbolic.xml:40(title) Hyperbolic.xml:64(title) Hyperbolic.xml:89(title) Hyperbolic.xml:112(title) Hyperbolic.xml:135(title) Hyperbolic.xml:157(title) Hyperbolic.xml:181(title) Hyperbolic.xml:205(title) Hyperbolic.xml:230(title) Hyperbolic.xml:253(title) Hyperbolic.xml:276(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:40(title) Complex.xml:66(title) Complex.xml:88(title) Complex.xml:109(title) 
+#. Trigonometric.xml:17(title) Trigonometric.xml:48(title) Trigonometric.xml:79(title) Trigonometric.xml:113(title) Trigonometric.xml:138(title) Trigonometric.xml:163(title) Trigonometric.xml:187(title) Trigonometric.xml:217(title) Trigonometric.xml:247(title) Trigonometric.xml:278(title) Trigonometric.xml:304(title) Trigonometric.xml:330(title) Special.xml:17(title) Special.xml:48(title) Special.xml:75(title) Special.xml:103(title) Special.xml:126(title) Special.xml:155(title) Special.xml:180(title) Special.xml:208(title) Special.xml:236(title) Special.xml:259(title) Rounding.xml:17(title) Rounding.xml:42(title) Rounding.xml:66(title) Rounding.xml:90(title) Rounding.xml:111(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:59(title) PowerAndLog.xml:80(title) PowerAndLog.xml:118(title) PowerAndLog.xml:142(title) PowerAndLog.xml:165(title) Piecewise.xml:16(title) Piecewise.xml:39(title) Piecewise.xml:62(title) Piecewise.xml:86(title) Piecewise.xml:109(title) Piecewise.xml:134(title) Piecewise.xml:156(title) Hyperbolic.xml:16(title) Hyperbolic.xml:40(title) Hyperbolic.xml:64(title) Hyperbolic.xml:89(title) Hyperbolic.xml:112(title) Hyperbolic.xml:135(title) Hyperbolic.xml:157(title) Hyperbolic.xml:181(title) Hyperbolic.xml:205(title) Hyperbolic.xml:230(title) Hyperbolic.xml:253(title) Hyperbolic.xml:276(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:40(title) Complex.xml:66(title) Complex.xml:88(title) Complex.xml:109(title) 
 msgid "Syntax"
 msgstr ""
 
-#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:79(title) Special.xml:107(title) Special.xml:130(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:24(entry) Installation.xml:77(entry) Installation.xml:146(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:139(title) Hyperbolic.xml:161(title) Hyperbolic.xml:185(title) Hyperbolic.xml:209(title) Hyperbolic.xml:234(title) Hyperbolic.xml:257(title) Hyperbolic.xml:280(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:174(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title) 
+#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:79(title) Special.xml:107(title) Special.xml:130(title) Special.xml:159(title) Special.xml:184(title) Special.xml:212(title) Special.xml:240(title) Special.xml:263(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:24(entry) Installation.xml:77(entry) Installation.xml:146(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:139(title) Hyperbolic.xml:161(title) Hyperbolic.xml:185(title) Hyperbolic.xml:209(title) Hyperbolic.xml:234(title) Hyperbolic.xml:257(title) Hyperbolic.xml:280(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:174(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title) 
 msgid "Description"
 msgstr ""
 
@@ -41,7 +41,7 @@ msgstr ""
 msgid "The <placeholder-1/> function calculates the sine of an angle <placeholder-2/>, which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. If <placeholder-4/> is a real number, the result will be in the range -1 to 1."
 msgstr ""
 
-#. Trigonometric.xml:31(title) Trigonometric.xml:62(title) Trigonometric.xml:92(title) Trigonometric.xml:200(title) Trigonometric.xml:230(title) Trigonometric.xml:260(title) Trigonometric.xml:344(title) Special.xml:190(title) Special.xml:217(title) PowerAndLog.xml:92(title) Constants.xml:25(title) 
+#. Trigonometric.xml:31(title) Trigonometric.xml:62(title) Trigonometric.xml:92(title) Trigonometric.xml:200(title) Trigonometric.xml:230(title) Trigonometric.xml:260(title) Trigonometric.xml:344(title) Special.xml:192(title) Special.xml:219(title) PowerAndLog.xml:92(title) Constants.xml:25(title) 
 msgid "Remarks"
 msgstr ""
 
@@ -205,7 +205,7 @@ msgstr ""
 msgid "evaluate"
 msgstr ""
 
-#. TableDialog.xml:15(guimenu) MenuItems.xml:486(guimenu) MenuItems.xml:499(guimenu) MenuItems.xml:512(guimenu) MenuItems.xml:529(guimenu) MenuItems.xml:542(guimenu) HowToUse.xml:49(guimenu) EvaluateDialog.xml:18(guimenu) EvaluateDialog.xml:77(guimenu) EvaluateDialog.xml:104(guimenu) 
+#. TableDialog.xml:15(guimenu) MenuItems.xml:486(guimenu) MenuItems.xml:499(guimenu) MenuItems.xml:512(guimenu) MenuItems.xml:529(guimenu) MenuItems.xml:542(guimenu) HowToUse.xml:49(guimenu) FAQ.xml:214(guimenu) EvaluateDialog.xml:18(guimenu) EvaluateDialog.xml:77(guimenu) EvaluateDialog.xml:104(guimenu) 
 msgid "Calc"
 msgstr ""
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "When you press the <guibutton>Calc</guibutton> button, the table will be filled with the independent variable in the first column. The rest of the columns dependes on the type of function. For a standard function, the table will show f(x), f'(x) and f''(x). For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx. For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx. Unneeded columns can be hidden from the context menu. If the calculations takes a long time, a progress indicator will be shown."
 msgstr ""
 
-#. TableDialog.xml:34(guimenuitem) MenuItems.xml:159(guimenuitem) 
+#. TableDialog.xml:34(guimenuitem) MenuItems.xml:159(guimenuitem) FAQ.xml:233(guimenuitem) 
 msgid "Copy"
 msgstr ""
 
@@ -301,71 +301,71 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the result of the Euler gamma function of <placeholder-2/>, commonly written as &Gamma;(z). <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. The gamma function relates to the factorial function as <placeholder-4/>. The mathematical definition of the gamma function is: <placeholder-5/> This cannot be calculated precisely, so Graph is using the so-called Lanczos approximation to calculate the <placeholder-6/> function."
 msgstr ""
 
-#. Special.xml:149(para) 
+#. Special.xml:151(para) 
 msgid "Returns the value of the Euler beta function evaluated for the arguments."
 msgstr ""
 
-#. Special.xml:158(para) 
+#. Special.xml:160(para) 
 msgid "The <placeholder-1/> function returns the result of the Euler beta function evaluated for <placeholder-2/> and <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> or <glossterm baseform=\"complex number\">complex numbers</glossterm>. The <placeholder-6/> function relates to the <placeholder-7/> function as <placeholder-8/>."
 msgstr ""
 
-#. Special.xml:172(primary) 
+#. Special.xml:174(primary) 
 msgid "Lambert W-function"
 msgstr ""
 
-#. Special.xml:173(primary) 
+#. Special.xml:175(primary) 
 msgid "omega function"
 msgstr ""
 
-#. Special.xml:174(para) 
+#. Special.xml:176(para) 
 msgid "Returns the value of the Lambert W-function evaluated for the argument."
 msgstr ""
 
-#. Special.xml:183(para) 
+#. Special.xml:185(para) 
 msgid "The <placeholder-1/> function returns the result of the Lambert W-function, also known as the omega function, evaluated for <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. The inverse of the <placeholder-4/> function is given by <placeholder-5/>."
 msgstr ""
 
-#. Special.xml:191(para) 
+#. Special.xml:193(para) 
 msgid "The <placeholder-1/> function is not defined for real values of <placeholder-2/> when <placeholder-3/> &lt; -1/e."
 msgstr ""
 
-#. Special.xml:201(primary) 
+#. Special.xml:203(primary) 
 msgid "Riemann Zeta function"
 msgstr ""
 
-#. Special.xml:202(para) 
+#. Special.xml:204(para) 
 msgid "Returns the value of the Riemann Zeta function evaluated for the argument."
 msgstr ""
 
-#. Special.xml:211(para) 
+#. Special.xml:213(para) 
 msgid "The <placeholder-1/> function returns the result of the Riemann Zeta function, commonly written as &zeta;(s). <placeholder-2/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
 msgstr ""
 
-#. Special.xml:218(para) 
+#. Special.xml:220(para) 
 msgid "The <placeholder-1/> function is defined for the whole complex plane except for the pole at <placeholder-2/>=1."
 msgstr ""
 
-#. Special.xml:228(primary) 
+#. Special.xml:230(primary) 
 msgid "modulus"
 msgstr ""
 
-#. Special.xml:229(primary) 
+#. Special.xml:231(primary) 
 msgid "remainder"
 msgstr ""
 
-#. Special.xml:230(para) FunctionList.xml:425(entry) 
+#. Special.xml:232(para) FunctionList.xml:425(entry) 
 msgid "Returns the remainder of the first argument divided by the second argument."
 msgstr ""
 
-#. Special.xml:239(para) 
+#. Special.xml:241(para) 
 msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>=0, mod returns 0. <placeholder-8/> and <placeholder-9/> may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm>."
 msgstr ""
 
-#. Special.xml:253(para) 
+#. Special.xml:255(para) 
 msgid "Returns the normal distribution of the first argument with optional mean value and standard deviation."
 msgstr ""
 
-#. Special.xml:262(para) 
+#. Special.xml:264(para) 
 msgid "The <placeholder-1/> function is the probability density of the normal distribution, also called Gaussian distribution. <placeholder-2/> is the variate, <placeholder-3/> is the mean value and &sigma; is the standard deviation. <placeholder-4/> and &sigma; are optional and if left out the standard normal distribution is used where <placeholder-5/>=0 and &sigma;=1. <placeholder-6/>, <placeholder-7/> and &sigma; may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> where &sigma; &gt; 0. The normal distribution is defined as: <placeholder-8/>"
 msgstr ""
 
@@ -677,7 +677,7 @@ msgstr ""
 msgid "Options dialog"
 msgstr ""
 
-#. OptionsDialog.xml:13(guimenu) OLE.xml:19(guimenu) OLE.xml:25(guimenu) OLE.xml:32(guimenu) MenuItems.xml:123(guimenu) MenuItems.xml:135(guimenu) MenuItems.xml:140(guimenu) MenuItems.xml:147(guimenu) MenuItems.xml:159(guimenu) MenuItems.xml:171(guimenu) MenuItems.xml:183(guimenu) MenuItems.xml:196(guimenu) MenuItems.xml:210(guimenu) AxesDialog.xml:35(guimenu) 
+#. OptionsDialog.xml:13(guimenu) OLE.xml:19(guimenu) OLE.xml:25(guimenu) OLE.xml:32(guimenu) MenuItems.xml:123(guimenu) MenuItems.xml:135(guimenu) MenuItems.xml:140(guimenu) MenuItems.xml:147(guimenu) MenuItems.xml:159(guimenu) MenuItems.xml:171(guimenu) MenuItems.xml:183(guimenu) MenuItems.xml:196(guimenu) MenuItems.xml:210(guimenu) FAQ.xml:232(guimenu) AxesDialog.xml:35(guimenu) 
 msgid "Edit"
 msgstr ""
 
@@ -749,7 +749,7 @@ msgstr ""
 msgid "When there is a mark in this field, you will see a small box with an explanation when you are holding the mouse pointer over an object, like an edit field, selection box, etc., for a few seconds. The description is also shown in the status bar at the bottom of the main window."
 msgstr ""
 
-#. OptionsDialog.xml:85(term) 
+#. OptionsDialog.xml:85(term) FAQ.xml:122(guilabel) 
 msgid "Save workspace on exit"
 msgstr ""
 
@@ -1125,7 +1125,7 @@ msgstr ""
 msgid "This shows a dialog used to create custom functions and constants in addition to the built-in ones."
 msgstr ""
 
-#. MenuItems.xml:384(guimenu) MenuItems.xml:396(guimenu) MenuItems.xml:408(guimenu) MenuItems.xml:421(guimenu) MenuItems.xml:435(guimenu) MenuItems.xml:447(guimenu) MenuItems.xml:461(guimenu) MenuItems.xml:472(guimenu) 
+#. MenuItems.xml:384(guimenu) MenuItems.xml:396(guimenu) MenuItems.xml:408(guimenu) MenuItems.xml:421(guimenu) MenuItems.xml:435(guimenu) MenuItems.xml:447(guimenu) MenuItems.xml:461(guimenu) MenuItems.xml:472(guimenu) FAQ.xml:75(guimenu) FAQ.xml:190(guimenu) 
 msgid "Zoom"
 msgstr ""
 
@@ -1161,7 +1161,7 @@ msgstr ""
 msgid "Hold down the <placeholder-1/> while you select the area you want to fill the whole graphing area. <placeholder-2/> or press <keycap>Esc</keycap> to cancel the command."
 msgstr ""
 
-#. MenuItems.xml:421(guimenuitem) 
+#. MenuItems.xml:421(guimenuitem) FAQ.xml:191(guimenuitem) 
 msgid "Square"
 msgstr ""
 
@@ -1177,7 +1177,7 @@ msgstr ""
 msgid "Returns the axes settings to the same default settings used when creating a new coordinate system."
 msgstr ""
 
-#. MenuItems.xml:447(guimenuitem) 
+#. MenuItems.xml:447(guimenuitem) FAQ.xml:76(guimenuitem) 
 msgid "Move system"
 msgstr ""
 
@@ -1213,7 +1213,7 @@ msgstr ""
 msgid "Calculates the distance along the path between two points on the selected graph."
 msgstr ""
 
-#. MenuItems.xml:499(guimenuitem) EvaluateDialog.xml:73(title) EvaluateDialog.xml:78(guimenuitem) 
+#. MenuItems.xml:499(guimenuitem) FAQ.xml:215(guimenuitem) EvaluateDialog.xml:73(title) EvaluateDialog.xml:78(guimenuitem) 
 msgid "Area"
 msgstr ""
 
@@ -2201,7 +2201,7 @@ msgstr ""
 msgid "When you want to insert a function, you use the menu item <placeholder-1/> to show the dialog below. To edit an existing function, you select it in the <glossterm>function list</glossterm> and use the <placeholder-2/> menu item."
 msgstr ""
 
-#. InsertFunctionDialog.xml:26(term) 
+#. InsertFunctionDialog.xml:26(term) FAQ.xml:154(guilabel) FAQ.xml:170(guilabel) FAQ.xml:186(guilabel) 
 msgid "Function type"
 msgstr ""
 
@@ -2229,7 +2229,7 @@ msgstr ""
 msgid "Here you enter the equation for the function. This can be f(x), x(t),y(t) or r(t) depending on the function type. Under <placeholder-1/> you can see all the available variables, constants and functions, which may be used to draw the graphs."
 msgstr ""
 
-#. InsertFunctionDialog.xml:61(guilabel) InsertFunctionDialog.xml:63(guilabel) 
+#. InsertFunctionDialog.xml:61(guilabel) InsertFunctionDialog.xml:63(guilabel) FAQ.xml:284(guilabel) 
 msgid "Steps"
 msgstr ""
 
@@ -2545,7 +2545,7 @@ msgstr ""
 msgid "Complex numbers are a superset of real numbers. Complex numbers are two dimensional and is most often written on rectangular form as a+b<emphasis role=\"bold\">i</emphasis> where <emphasis>a</emphasis> is the real part and <emphasis>b</emphasis> is the imaginary part. The imaginary unit &imag; is defined as &imag;^2=-1. Complex numbers can also be shown on polar form as a&ang;&theta; where <emphasis>a</emphasis> is the absolute value of the number and &theta; is the angle of the number in radians or degrees."
 msgstr ""
 
-#. Glossary.xml:26(guilabel) AxesDialog.xml:197(term) 
+#. Glossary.xml:26(guilabel) FAQ.xml:267(guilabel) AxesDialog.xml:197(term) 
 msgid "Calculate with complex numbers"
 msgstr ""
 
@@ -3071,6 +3071,166 @@ msgstr ""
 
 #. FAQ.xml:8(primary) 
 msgid "tricks"
+msgstr ""
+
+#. FAQ.xml:12(para) 
+msgid "What are the system requirements of Graph?"
+msgstr ""
+
+#. FAQ.xml:17(para) 
+msgid "Graph requires 32 bit Windows. It has been tested under Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is able to run Windows, it should be able to run the program, though Windows 95 is no longer supported."
+msgstr ""
+
+#. FAQ.xml:27(para) 
+msgid "Will Graph run under Linux?"
+msgstr ""
+
+#. FAQ.xml:32(para) 
+msgid "Graph is a native Windows application and not tested under Linux, but several users have informed me that Graph runs without problems under Linux with Wine."
+msgstr ""
+
+#. FAQ.xml:40(para) 
+msgid "Will Graph run on a Macintosh?"
+msgstr ""
+
+#. FAQ.xml:45(para) 
+msgid "As with the above, you cannot run Graph directly on a Mac. But it should be possible with some kind of Windows emulator."
+msgstr ""
+
+#. FAQ.xml:53(para) 
+msgid "When will the next version be released?"
+msgstr ""
+
+#. FAQ.xml:58(para) 
+msgid "When it is ready."
+msgstr ""
+
+#. FAQ.xml:66(para) 
+msgid "How can I move the coordinate system?"
+msgstr ""
+
+#. FAQ.xml:71(para) 
+msgid "When you hold down the <keycap>Ctrl</keycap> key you can use the arrow keys to move the coordinate system. You can also use <placeholder-1/> and drag the coordinate system around with the mouse."
+msgstr ""
+
+#. FAQ.xml:85(para) 
+msgid "How can I easily zoom in and out?"
+msgstr ""
+
+#. FAQ.xml:90(para) 
+msgid "When you hold down the <keycap>Ctrl</keycap> key you can use the <keycap>+</keycap> and <keycap>-</keycap> keys to zoom in and out. The scroll wheel on the mouse can be used for zooming at the cursor position. When you move the scroll wheel up the program will zoom into the coordinate system and center the graphing area at the position of the mouse cursor. When you move the scroll wheel down the program zooms out."
+msgstr ""
+
+#. FAQ.xml:101(para) 
+msgid "How do I save default settings?"
+msgstr ""
+
+#. FAQ.xml:108(guilabel) AxesDialog.xml:258(term) 
+msgid "Save as default"
+msgstr ""
+
+#. FAQ.xml:106(para) 
+msgid "Set the desired default settings in the <placeholder-1/> dialog, and put a mark in <placeholder-2/> before pressing the <guibutton>OK</guibutton> button. Next time you create a new coordinate system, the saved default settings will be used."
+msgstr ""
+
+#. FAQ.xml:116(para) 
+msgid "Can I make the program remember the size and position of the window?"
+msgstr ""
+
+#. FAQ.xml:121(para) 
+msgid "When you select <placeholder-1/> in the <placeholder-2/> dialog. Graph will save the position and size of the main window when the program quits. The next time the program starts the same size and position is used."
+msgstr ""
+
+#. FAQ.xml:131(para) 
+msgid "Why does the program not accept a comma as decimals separator?"
+msgstr ""
+
+#. FAQ.xml:136(para) 
+msgid "I know a lot of countries use comma to separate the decimal part from the integer part, but Graph uses comma for separating function arguments. The program always uses a period to separate decimals from the integer value, no matter your local settings."
+msgstr ""
+
+#. FAQ.xml:145(para) 
+msgid "How do I plot a vertical line?"
+msgstr ""
+
+#. FAQ.xml:154(guilabel) FAQ.xml:170(guilabel) FAQ.xml:186(guilabel) 
+msgid "Parametric function"
+msgstr ""
+
+#. FAQ.xml:150(para) 
+msgid "A standard function cannot be vertical, but it can have a slope so large that it looks vertical. The function <userinput>f(x)=1000(x-5)</userinput> looks like a vertical line at x=5. A real vertical line can be drawn as a parametric function. Select <placeholder-1/> as <placeholder-2/> when adding the function. You can then add the vertical line at x=5 as <userinput>x(t)=5, y(t)=t</userinput>. Alternatively you can add x=5 as a relation."
+msgstr ""
+
+#. FAQ.xml:163(para) 
+msgid "How do I plot a function x=f(y)?"
+msgstr ""
+
+#. FAQ.xml:168(para) 
+msgid "To draw a function with y as the independent variable, you need to use a parametric function. Select <placeholder-1/> as <placeholder-2/> when adding the function. If you want to draw the function x=sin(y), you can now enter the function as <userinput>x(t)=sin(t), y(t)=t</userinput>. Alternatively you can draw it as a relation where you can enter <userinput>x=sin(y)</userinput> directly."
+msgstr ""
+
+#. FAQ.xml:179(para) 
+msgid "How do I plot a circle?"
+msgstr ""
+
+#. FAQ.xml:184(para) 
+msgid "You need to use a parametric function to draw a circle. When inserting the function, select <placeholder-1/> as <placeholder-2/>. You can now add a circle with radius 5 and center in (2,3) as <userinput>x(t)=5cos(t)+2, y(t)=5sin(t)+3</userinput>. You may need to use <placeholder-3/> to make the axes equally scaled. Else the circle may look like an ellipse. A circle can also be added as a polar function, but only with center in (0,0). A circle with radius 5 may be added as the polar function <userinput>r(t)=5</userinput>. Alternatively you can use a relation and add the circle as <userinput>(x-2)^2+(y-3)^2=5^2</userinput>."
+msgstr ""
+
+#. FAQ.xml:204(para) 
+msgid "How do I calculate the area between two functions?"
+msgstr ""
+
+#. FAQ.xml:209(para) 
+msgid "If you want to find the area between two functions f1(x)=3x and f2(x)=x^2, the easiest way is to create a new function that is the difference between the two functions: f(x)=f1(x)-f2(x)=3x-x^2. You can then use <placeholder-1/> to calculate the area for a given interval."
+msgstr ""
+
+#. FAQ.xml:224(para) 
+msgid "Can I copy a function or point series from one instance of the program to another?"
+msgstr ""
+
+#. FAQ.xml:229(para) 
+msgid "Yes, you can select a function or point series and use the <placeholder-1/> menu item to place a copy of the selected item in the clipboard. You can then paste the item into another coordinate system."
+msgstr ""
+
+#. FAQ.xml:243(para) 
+msgid "How can I draw the negative part of f(x)=sqrt(x+2) ?"
+msgstr ""
+
+#. FAQ.xml:248(para) 
+msgid "For each value x, f(x) will evaluate to at most one value. f(x)=sqrt(x+2) will therefore only have positive values of f(x). To plot it for negative f(x) too, you will have to create two separate functions: f(x)=sqrt(x+2) and f(x)=-sqrt(x+2). Alternatively you can plot it as the relation: y^2=x+2."
+msgstr ""
+
+#. FAQ.xml:259(para) 
+msgid "How do I plot a complex function like f(t)=e^(i*t)?"
+msgstr ""
+
+#. FAQ.xml:264(para) 
+msgid "You probably want to show the real part on the x-axis and the imaginary part on the y-axis. In that case you can draw the function as the parametric function x(t)=re(e^(i*t)), y(t)=im(e^(i*t)). Notice that <placeholder-1/> must be enabled in the <placeholder-2/> dialog."
+msgstr ""
+
+#. FAQ.xml:274(para) 
+msgid "How can I make Graph plot functions with vertical asymptotes correctly?"
+msgstr ""
+
+#. FAQ.xml:279(para) 
+msgid "Functions like f(x)=tan(x) with vertical asymptotes may not always be shown correctly. As default Graph will evaluate the function for each pixel on the x-axis. But if the graph has a steep slope that goes against infinite and back between two pixels, Graph will not notice it. To plot the function correctly you can tell Graph how many evaluations to perform. This may be entered in the <placeholder-1/> field in the <placeholder-2/> dialog. A number around 100000 will usually show the function correctly."
+msgstr ""
+
+#. FAQ.xml:292(para) 
+msgid "How to create a PDF file from Graph?"
+msgstr ""
+
+#. FAQ.xml:297(para) 
+msgid "You can choose to save as PDF in the <placeholder-1/> dialog."
+msgstr ""
+
+#. FAQ.xml:305(para) 
+msgid "Why will the program not start under Windows 95?"
+msgstr ""
+
+#. FAQ.xml:310(para) 
+msgid "Graph no longer supports Windows 95. The last version to run under Windows 95 was Graph 4.2."
 msgstr ""
 
 #. EvaluateDialog.xml:9(para) 
@@ -3891,10 +4051,6 @@ msgstr ""
 
 #. AxesDialog.xml:246(para) 
 msgid "You may change the fonts used to show axes labels, the font to draw numbers at the axes, and the font used for the <glossterm>legend</glossterm>."
-msgstr ""
-
-#. AxesDialog.xml:258(term) 
-msgid "Save as default"
 msgstr ""
 
 #. AxesDialog.xml:260(para) 
