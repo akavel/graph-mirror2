@@ -3,13 +3,13 @@ import os
 import gettext
 import codecs
 
-Languages = ["Danish", "Croatian", "Spanish"]
+Languages = ["Danish", "Croatian", "Spanish", "German", "Swedish", "French"]
 LocalePath = "d:\\Projects\\Graph\\Locale\\"
 
-os.chdir("../Source/")
+os.chdir("../Source")
 Files = glob.glob("*.xml")
-os.system("..\\..\\Tools\\xml2po\\xml2po.py -k -o " + OutFile + " " + " ".join(Files))
-os.chdir("..\\po")
+os.system("..\\Scripts\\xml2po.py -k -o ..\\po\\GraphHelp.pot " + " ".join(Files))
+os.chdir("../po")
 
 for Language in Languages:
     # This is a hack to trick gettext into laoding the .mo file
