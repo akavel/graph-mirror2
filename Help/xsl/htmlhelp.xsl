@@ -31,7 +31,4 @@
 <xsl:template match="markup[@role = 'fo']">
 </xsl:template>
 
-<xsl:template match="qandaentry[@role = 'fo']">
-</xsl:template>
-
 </xsl:stylesheet>

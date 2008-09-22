@@ -71,7 +71,7 @@
 
 	<simplesect>
 		<title>Translations</title>
-		<table>
+		<informaltable>
 			<tgroup cols="4">
 				<thead>
 					<row>
@@ -272,7 +272,7 @@
 					</row>
 		 		</tbody>
 			</tgroup>
-		</table>
+		</informaltable>
 	</simplesect>
 
 	<simplesect>

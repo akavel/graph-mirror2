@@ -75,30 +75,30 @@ div.navfooter {
   border-right: 0;
 }
 
-div.navheader table th {
+div.navheader informaltable th {
 	font-size: medium;
 }
 
 /* normal text in the footer */
-div.navfooter table td {
+div.navfooter informaltable td {
 	color: black;
 }
 
-div.navheader table td a,
-div.navfooter table td a {
+div.navheader informaltable td a,
+div.navfooter informaltable td a {
 	color: #black;
 	text-decoration: none;
 }
 
 /* links in header and footer */
-div.navheader table td a:hover,
-div.navfooter table td a:hover {
+div.navheader informaltable td a:hover,
+div.navfooter informaltable td a:hover {
 	text-decoration: underline;
 	background-color: transparent;
 }
 
-div.navheader table td a:visited,
-div.navfooter table td a:visited {
+div.navheader informaltable td a:visited,
+div.navfooter informaltable td a:visited {
 	color: black;
 }
 
@@ -143,14 +143,14 @@ div.book div.toc {
 	font-size: medium;
 }
 
-div.table title { background-color: #FFFFFF; width:100%; border: 0px; }
-div.table p { text-align: center; }
-div.table table {
+div.informaltable title { background-color: #FFFFFF; width:100%; border: 0px; }
+div.informaltable p { text-align: center; }
+div.informaltable table {
 	background-color: #7099C5;
 	font-size: 90%;
 	border-width: 0px;
 }
-div.table th {
+div.informaltable th {
 	text-align: center;
 	color: white;
 	background-color: #7099C5;
@@ -158,10 +158,10 @@ div.table th {
 	border: none;
 	vertical-align: top;
 }
-div.table tr {
+div.informaltable tr {
 	background-color: #f0f0ff;
 }
-div.table td {
+div.informaltable td {
 	vertical-align: top;
 	padding: 2px 4px 1px 4px;
 	border: none;
