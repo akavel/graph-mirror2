@@ -2,11 +2,12 @@
 
   <xsl:param name="draft.mode" select="no"/>
 
-  <xsl:param name="fop.extensions" select="1" />
+  <xsl:param name="fop1.extensions" select="1" />
   <xsl:param name="section.autolabel" select="0" />
   <xsl:param name="section.label.includes.component.label" select="1" />
   <xsl:param name="chapter.autolabel" select="0"/>
   <xsl:param name="generate.index" select="1" />
+  <xsl:param name="qanda.defaultlabel">qanda</xsl:param>
 
 <xsl:attribute-set name="table.cell.padding">
   <xsl:attribute name="padding-left">4pt</xsl:attribute>

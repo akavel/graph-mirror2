@@ -2,7 +2,7 @@
 <!DOCTYPE book SYSTEM "../dtd/dblite.dtd">
 <book id="Graph" lang="en" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title><application>Graph</application></title>
-	<subtitle><graphic fileref="GraphIcon.png"/></subtitle>
+	<subtitle><inlinegraphic fileref="GraphIcon.png"/></subtitle>
 	<xi:include href="version.xml"/>
 	<bookinfo>
 		<authorgroup>
