@@ -13,7 +13,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>rand</mathphrase>
+			<para><mathphrase>rand</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>

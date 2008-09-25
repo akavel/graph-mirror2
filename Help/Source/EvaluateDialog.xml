@@ -25,7 +25,11 @@
 			The dialog will look a little different when a parametric function, polar function or tangent is selected.
 		</para>
 
-		<graphic fileref="DialogEval.png"/>
+		<mediaobject>
+  		<imageobject>
+  	  	<imagedata fileref="DialogEval.png"/>
+  		</imageobject>
+		</mediaobject>
 
 		<para>
 			You can enter a value for which you want to evaluate the function.
@@ -43,27 +47,51 @@
 			<variablelist>
 				<varlistentry>
 					<term>Function</term>
-					<listitem>The cursor will snap to the nearest point on the selected function.</listitem>
+					<listitem>
+						<para>
+							The cursor will snap to the nearest point on the selected function.
+						</para>
+					</listitem>
 				</varlistentry>
 				<varlistentry>
 					<item>Intersection</item>
-					<listitem>The cursor will snap to the nearest intersection between the selected function and every function displayed (including the function itself).</listitem>
+					<listitem>
+						<para>
+							The cursor will snap to the nearest intersection between the selected function and every function displayed (including the function itself).
+						</para>
+					</listitem>
 				</varlistentry>
 				<varlistentry>
 					<item>x-axis</item>
-					<listitem>The cursor will snap to the nearest intersection between the selected function and the x-axis.</listitem>
+					<listitem>
+						<para>
+							The cursor will snap to the nearest intersection between the selected function and the x-axis.
+						</para>
+					</listitem>
 				</varlistentry>
 				<varlistentry>
 					<item>y-axis</item>
-					<listitem>The cursor will snap to the nearest intersection between the selected function and the y-axis. Not available for standard functions.</listitem>
+					<listitem>
+						<para>
+							The cursor will snap to the nearest intersection between the selected function and the y-axis. Not available for standard functions.
+						</para>
+					</listitem>
 				</varlistentry>
 				<varlistentry>
 					<term>Extreme x-value</term>
-					<listitem>The cursor will snap to the nearest local extreme value for the x-coordinate. Not available for standard functions.</listitem>
+					<listitem>
+						<para>
+							The cursor will snap to the nearest local extreme value for the x-coordinate. Not available for standard functions.
+						</para>
+					</listitem>
 				</varlistentry>
 				<varlistentry>
 					<term>Extreme y-value (Extremum)</term>
-					<listitem>The cursor will snap to the nearest local extreme value for the y-coordinate.</listitem>
+					<listitem>
+						<para>
+							The cursor will snap to the nearest local extreme value for the y-coordinate.
+						</para>
+					</listitem>
 				</varlistentry>
 			</variablelist>
 		</para>

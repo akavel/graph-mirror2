@@ -6,10 +6,10 @@
 	<xi:include href="version.xml"/>
 	<bookinfo>
 		<authorgroup>
-			<author>
+<!--			<author>
 				<firstname>Ivan</firstname>
 				<surname>Johansen</surname>
-			</author>
+			</author>-->
 		</authorgroup>
 		<copyright>
 			<year>2008</year>

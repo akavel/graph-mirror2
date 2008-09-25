@@ -15,7 +15,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>integrate(f,a,b)</mathphrase>
+			<para><mathphrase>integrate(f,a,b)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -46,7 +46,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>sum(f,a,b)</mathphrase>
+			<para><mathphrase>sum(f,a,b)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -73,7 +73,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>product(f,a,b)</mathphrase>
+			<para><mathphrase>product(f,a,b)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -101,7 +101,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>fact(z)</mathphrase>
+			<para><mathphrase>fact(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -124,7 +124,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>gamma(z)</mathphrase>
+			<para><mathphrase>gamma(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -153,7 +153,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>beta(m, n)</mathphrase>
+			<para><mathphrase>beta(m, n)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -178,7 +178,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>W(z)</mathphrase>
+			<para><mathphrase>W(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -206,7 +206,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>zeta(z)</mathphrase>
+			<para><mathphrase>zeta(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -234,7 +234,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>mod(m,n)</mathphrase>
+			<para><mathphrase>mod(m,n)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -257,7 +257,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>dnorm(x, [&mu;,&sigma;])</mathphrase>
+			<para><mathphrase>dnorm(x, [&mu;,&sigma;])</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>

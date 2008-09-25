@@ -17,77 +17,97 @@
 		In this dialog, you can change general program options.
 	</para>
 
-	<graphic fileref="DialogOptions.png"/>
+	<mediaobject>
+  	<imageobject>
+    	<imagedata fileref="DialogOptions.png"/>
+  	</imageobject>
+	</mediaobject>
 
 	<variablelist>
 		<varlistentry>
 			<term>Decimals</term>
 			<listitem>
-				This is the number of decimals that all results are shown with.
-				The number has no influence on the calculations or the shown graphs.
+				<para>
+					This is the number of decimals that all results are shown with.
+					The number has no influence on the calculations or the shown graphs.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Recent files</term>
 			<listitem>
-				This is the maximum number of recent used files that is shown in the <guimenu>File</guimenu> menu.
-				The number must be between 0 and 9.
-				0 means that no recent used files are shown.
+				<para>
+					This is the maximum number of recent used files that is shown in the <guimenu>File</guimenu> menu.
+					The number must be between 0 and 9.
+					0 means that no recent used files are shown.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Max undo steps</term>
 			<listitem>
-				Each time you make a change, the program will save enough information to undo it.
-				As default <guilabel>Max undo steps</guilabel> are 50, which mean that you are able to undo the last 50 changes you made in the program.
-				The undo steps will take up a small amount of memory.
-				If your system is low on RAM, you may be able to free some memory by decreasing the <guilabel>Max undo steps</guilabel>.
+				<para>
+					Each time you make a change, the program will save enough information to undo it.
+					As default <guilabel>Max undo steps</guilabel> are 50, which mean that you are able to undo the last 50 changes you made in the program.
+					The undo steps will take up a small amount of memory.
+					If your system is low on RAM, you may be able to free some memory by decreasing the <guilabel>Max undo steps</guilabel>.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Font scale</term>
 			<listitem>
-				You can use this to change the scale of the fonts and most of the user interface.
-				This is mostly useful if your screen resolution is very high, or for some other reason, you are having difficulties reading the user interface.
+				<para>
+					You can use this to change the scale of the fonts and most of the user interface.
+					This is mostly useful if your screen resolution is very high, or for some other reason, you are having difficulties reading the user interface.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Language</term>
 			<listitem>
-				This shows a list of available languages for the program.
-				The selected language will be the one used by the program in the future.
-				The language can be selected differently for each user.
+				<para>
+					This shows a list of available languages for the program.
+					The selected language will be the one used by the program in the future.
+					The language can be selected differently for each user.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Associate .grf files</term>
 			<listitem>
-				A check mark in this field indicates that the file type .grf is associated with this program.
-				The program will automatically start and load the file when you <action>double-click</action> on it in Explorer.
+				<para>
+					A check mark in this field indicates that the file type .grf is associated with this program.
+					The program will automatically start and load the file when you <action>double-click</action> on it in Explorer.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Show tooltip</term>
 			<listitem>
-				When there is a mark in this field, you will see a small box with an explanation
-				when you are holding the mouse pointer over an object, like an edit field, selection box, etc., for a few seconds.
-				The description is also shown in the status bar at the bottom of the main window.
+				<para>
+					When there is a mark in this field, you will see a small box with an explanation
+					when you are holding the mouse pointer over an object, like an edit field, selection box, etc., for a few seconds.
+					The description is also shown in the status bar at the bottom of the main window.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Save workspace on exit</term>
 			<listitem>
-				When there is a mark in this field, Graph will save the size of the main window before it quits.
-				The next time you start the program the saved size will be used.
-				In addition the width of the <glossterm>function list</glossterm> is also stored.
-				When the field doesn't have a mark the options that were last saved will be used.
+				<para>
+					When there is a mark in this field, Graph will save the size of the main window before it quits.
+					The next time you start the program the saved size will be used.
+					In addition the width of the <glossterm>function list</glossterm> is also stored.
+					When the field doesn't have a mark the options that were last saved will be used.
+				</para>
 			</listitem>
 		</varlistentry>
 
@@ -114,16 +134,18 @@
 		<varlistentry>
 			<term>Check for new version of Graph at startup</term>
 			<listitem>
-				When checked each time the program starts it will check if a newer version of Graph is available on the Internet.
-				If a new version is found you will be asked if you want to visit the web site for Graph to upgrade.
-				If no new version is available you will not see any messages.
-				If disabled, you can still use
-				<menuchoice>
-					<guimenu>Help</guimenu>
-					<guisubmenu>Internet</guisubmenu>
-					<guimenuitem>Check for update</guimenuitem>
-				</menuchoice>
-				to see if a new version is available.
+				<para>
+					When checked each time the program starts it will check if a newer version of Graph is available on the Internet.
+					If a new version is found you will be asked if you want to visit the web site for Graph to upgrade.
+					If no new version is available you will not see any messages.
+					If disabled, you can still use
+					<menuchoice>
+						<guimenu>Help</guimenu>
+						<guisubmenu>Internet</guisubmenu>
+						<guimenuitem>Check for update</guimenuitem>
+					</menuchoice>
+					to see if a new version is available.
+				</para>
 			</listitem>
 		</varlistentry>
 	</variablelist>

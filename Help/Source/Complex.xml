@@ -15,7 +15,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>abs(z)</mathphrase>
+			<para><mathphrase>abs(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -38,7 +38,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>arg(z)</mathphrase>
+			<para><mathphrase>arg(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -64,7 +64,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>conj(z)</mathphrase>
+			<para><mathphrase>conj(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -86,7 +86,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>re(z)</mathphrase>
+			<para><mathphrase>re(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -107,7 +107,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>im(z)</mathphrase>
+			<para><mathphrase>im(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>

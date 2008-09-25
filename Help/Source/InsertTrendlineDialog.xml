@@ -25,10 +25,12 @@
 
 	<simplesect>
 		<title>Built-in</title>
-
-		<graphic fileref="DialogTrendline1.png"/>
-
 		<para>
+			<mediaobject>
+  			<imageobject>
+  		  	<imagedata fileref="DialogTrendline1.png"/>
+  			</imageobject>
+			</mediaobject>
 			You may choose between the following built-in functions.
 			These functions will give an accurate result.
 			For <guilabel>Linear</guilabel>, <guilabel>Polynomial</guilabel> and <guilabel>Exponential</guilabel> trendlines,
@@ -69,12 +71,14 @@
 			<varlistentry>
 				<term>Polynomial</term>
 				<listitem>
-				  A polynomial is a function given by
-					<mathphrase>f(x) = a<subscript>n</subscript>*x<superscript>n</superscript> + ... + a<subscript>3</subscript>*x<superscript>3</superscript> +
-					a<subscript>2</subscript>*x<superscript>2</superscript> + a<subscript>1</subscript>*x + a<subscript>0</subscript></mathphrase>,
-					where <constant>a<subscript>0</subscript></constant>...<constant>a<subscript>n</subscript></constant> are constants.
-					<constant>n</constant> is the order of the polynomial.
-					You need at least one more point than the order.
+					<para>
+				  	A polynomial is a function given by
+						<mathphrase>f(x) = a<subscript>n</subscript>*x<superscript>n</superscript> + ... + a<subscript>3</subscript>*x<superscript>3</superscript> +
+						a<subscript>2</subscript>*x<superscript>2</superscript> + a<subscript>1</subscript>*x + a<subscript>0</subscript></mathphrase>,
+						where <constant>a<subscript>0</subscript></constant>...<constant>a<subscript>n</subscript></constant> are constants.
+						<constant>n</constant> is the order of the polynomial.
+						You need at least one more point than the order.
+					</para>
 				</listitem>
 			</varlistentry>
 
@@ -111,12 +115,14 @@
 			<varlistentry>
 				<term>Moving average</term>
 				<listitem>
-					Moving average is a series of straight lines based on the average of the previous points.
-					The <guilabel>Period</guilabel> determines how many points are used for the average.
-					If <guilabel>Period</guilabel> is 1 only one point is used, which actually isn't an average.
-					This will draw a line directly between the points.
-					When <guilabel>Period</guilabel> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point.
-					Instead it will be an average of the previous points.
+					<para>
+						Moving average is a series of straight lines based on the average of the previous points.
+						The <guilabel>Period</guilabel> determines how many points are used for the average.
+						If <guilabel>Period</guilabel> is 1 only one point is used, which actually isn't an average.
+						This will draw a line directly between the points.
+						When <guilabel>Period</guilabel> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point.
+						Instead it will be an average of the previous points.
+					</para>
 				</listitem>
 			</varlistentry>
 		</variablelist>
@@ -124,10 +130,8 @@
 
 	<simplesect>
 		<title>User defined</title>
-
-		<graphic fileref="DialogTrendline2.png"/>
-
 		<para>
+			<graphic fileref="DialogTrendline2.png"/>
 			In this tab you can enter your own trendline models.
 			The model is entered as a standard function,
 			where all the constants that you want Graph to find are named with a $ followed by any combination of characters (a-z) and digits (0-9).

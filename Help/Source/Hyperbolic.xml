@@ -14,7 +14,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>sinh(z)</mathphrase>
+			<para><mathphrase>sinh(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -38,7 +38,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>cosh(z)</mathphrase>
+			<para><mathphrase>cosh(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -62,7 +62,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>tanh(z)</mathphrase>
+			<para><mathphrase>tanh(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -87,7 +87,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>asinh(z)</mathphrase>
+			<para><mathphrase>asinh(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -110,7 +110,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>acosh(z)</mathphrase>
+			<para><mathphrase>acosh(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -133,7 +133,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>atanh(z)</mathphrase>
+			<para><mathphrase>atanh(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -155,7 +155,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>csch(z)</mathphrase>
+			<para><mathphrase>csch(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -179,7 +179,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>sech(z)</mathphrase>
+			<para><mathphrase>sech(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -203,7 +203,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>coth(z)</mathphrase>
+			<para><mathphrase>coth(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -228,7 +228,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>acsch(z)</mathphrase>
+			<para><mathphrase>acsch(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -251,7 +251,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>asech(z)</mathphrase>
+			<para><mathphrase>asech(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -274,7 +274,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>acoth(z)</mathphrase>
+			<para><mathphrase>acoth(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>

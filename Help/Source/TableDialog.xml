@@ -27,7 +27,11 @@
 		If the calculations takes a long time, a progress indicator will be shown.
 	</para>
 
-	<graphic fileref="DialogTable.png"/>
+	<mediaobject>
+  	<imageobject>
+    	<imagedata fileref="DialogTable.png"/>
+  	</imageobject>
+	</mediaobject>
 
 	<para>
 		You can select some cells with the mouse and <action>right click</action> with the mouse and use

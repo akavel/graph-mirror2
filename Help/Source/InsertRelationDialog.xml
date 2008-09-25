@@ -18,7 +18,11 @@
 		To change an existing relation, you first select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 	</para>
 
-	<graphic fileref="DialogRelation.png"/>
+	<mediaobject>
+  	<imageobject>
+    	<imagedata fileref="DialogRelation.png"/>
+  	</imageobject>
+	</mediaobject>
 
 	<variablelist>
 		<varlistentry>
@@ -62,19 +66,23 @@
 		<varlistentry>
 			<term>Description</term>
 			<listitem>
-				Here you may enter a descriptive text to show in the <glossterm>legend</glossterm>.
-				If this field is left empty, the relation and constraints will be shown in the legend.
+				<para>
+					Here you may enter a descriptive text to show in the <glossterm>legend</glossterm>.
+					If this field is left empty, the relation and constraints will be shown in the legend.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Properties</term>
 			<listitem>
-				Here you may select a shading style for inequalities, color and width for equations.
-				The shading <guilabel>Style</guilabel> is only used for inequalities and is ignored for equations.
-				To see overlapping inequalities they must use different styles.
-				The <guilabel>Width</guilabel> indicates the size of the line drawn for equations and the width of the border line for inequalities.
-				For inequalities the width can be set to 0 to avoid drawing the border line.
+				<para>
+					Here you may select a shading style for inequalities, color and width for equations.
+					The shading <guilabel>Style</guilabel> is only used for inequalities and is ignored for equations.
+					To see overlapping inequalities they must use different styles.
+					The <guilabel>Width</guilabel> indicates the size of the line drawn for equations and the width of the border line for inequalities.
+					For inequalities the width can be set to 0 to avoid drawing the border line.
+				</para>
 			</listitem>
 		</varlistentry>
 	</variablelist>

@@ -7,6 +7,7 @@
 	<indexterm><primary>tips</primary></indexterm>
 	<indexterm><primary>tricks</primary></indexterm>
 	<simplesect>
+	<para>
 		<qandaset>
 			<qandaentry>
 				<question>
@@ -314,5 +315,6 @@
 				</answer>
 			</qandaentry>
 		</qandaset>
+		</para>
 	</simplesect>
 </chapter>
