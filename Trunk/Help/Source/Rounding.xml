@@ -15,7 +15,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>trunc(z)</mathphrase>
+			<para><mathphrase>trunc(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -40,7 +40,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>fract(z)</mathphrase>
+			<para><mathphrase>fract(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -64,7 +64,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>ceil(z)</mathphrase>
+			<para><mathphrase>ceil(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -88,7 +88,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>floor(z)</mathphrase>
+			<para><mathphrase>floor(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -109,7 +109,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>round(z,n)</mathphrase>
+			<para><mathphrase>round(z,n)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -123,13 +123,15 @@
 		</simplesect>
 		<simplesect>
 			<title>Examples</title>
-			<simplelist>
-				<member><mathphrase>round(412.4572,3) = 412.457</mathphrase></member>
-				<member><mathphrase>round(412.4572,2) = 412.46</mathphrase></member>
-				<member><mathphrase>round(412.4572,1) = 412.5</mathphrase></member>
-				<member><mathphrase>round(412.4572,0) = 412</mathphrase></member>
-				<member><mathphrase>round(412.4572,-2) = 400</mathphrase></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><mathphrase>round(412.4572,3) = 412.457</mathphrase></member>
+					<member><mathphrase>round(412.4572,2) = 412.46</mathphrase></member>
+					<member><mathphrase>round(412.4572,1) = 412.5</mathphrase></member>
+					<member><mathphrase>round(412.4572,0) = 412</mathphrase></member>
+					<member><mathphrase>round(412.4572,-2) = 400</mathphrase></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 </section>

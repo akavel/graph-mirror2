@@ -21,7 +21,11 @@
 		To change an existing point series, you first select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 	</para>
 
-	<graphic fileref="DialogPoints.png"/>
+	<mediaobject>
+  	<imageobject>
+    	<imagedata fileref="DialogPoints.png"/>
+  	</imageobject>
+	</mediaobject>
 
 	<para>
 		After adding a point series, you may add a <link linkend="InsertTrendlineDialog">trendline</link> which is the curve of best fit for the points.
@@ -46,7 +50,9 @@
 		<varlistentry>
 			<term>Description</term>
 			<listitem>
-				In the edit box at the top of the dialog, you can enter a name for the series, which will be shown in the <glossterm>legend</glossterm>.
+				<para>
+					In the edit box at the top of the dialog, you can enter a name for the series, which will be shown in the <glossterm>legend</glossterm>.
+				</para>
 			</listitem>
 		</varlistentry>
 
@@ -99,13 +105,15 @@
 		<varlistentry>
 			<term>Error bars</term>
 			<listitem>
-				Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars.
-				They are shown as thin bars at each point in the point series indicating the uncertainty of the point.
-				There are three ways to indicate the size of the error bars:
-				<guilabel>Fixed</guilabel> is used to specify that all points have the same uncertainty.
-				<guilabel>Relative</guilabel> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty.
-				<guilabel>Custom</guilabel> will add an extra column to the table where you may specify a different uncertainty value for each point.
-				All uncertainties are +/-values.
+				<para>
+					Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars.
+					They are shown as thin bars at each point in the point series indicating the uncertainty of the point.
+					There are three ways to indicate the size of the error bars:
+					<guilabel>Fixed</guilabel> is used to specify that all points have the same uncertainty.
+					<guilabel>Relative</guilabel> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty.
+					<guilabel>Custom</guilabel> will add an extra column to the table where you may specify a different uncertainty value for each point.
+					All uncertainties are +/-values.
+				</para>
 			</listitem>
 		</varlistentry>
 	</variablelist>

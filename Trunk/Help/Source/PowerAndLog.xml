@@ -14,7 +14,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>sqr(z)</mathphrase>
+			<para><mathphrase>sqr(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -35,7 +35,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>exp(z)</mathphrase>
+			<para><mathphrase>exp(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -57,7 +57,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>sqrt(z)</mathphrase>
+			<para><mathphrase>sqrt(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -78,7 +78,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>root(n, z)</mathphrase>
+			<para><mathphrase>root(n, z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -116,7 +116,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>ln(z)</mathphrase>
+			<para><mathphrase>ln(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -140,7 +140,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>log(z)</mathphrase>
+			<para><mathphrase>log(z)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
@@ -163,7 +163,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<mathphrase>logb(z, n)</mathphrase>
+			<para><mathphrase>logb(z, n)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>

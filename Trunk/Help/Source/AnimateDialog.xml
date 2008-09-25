@@ -20,25 +20,33 @@
 		The animation can contain all elements supported by Graph, for example functions, relations, point series, labels, etc.
 	</para>
 
-	<graphic fileref="DialogAnimate.png"/>
+	<mediaobject>
+  	<imageobject>
+    	<imagedata fileref="DialogAnimate.png"/>
+  	</imageobject>
+	</mediaobject>
 
 	<variablelist>
 		<varlistentry>
 			<term>Constant</term>
 			<listitem>
-				Here you select which constant you want to change in the animation.
-				The constant must already have been created in the <xref linkend="CustomFunctionsDialog" /> dialog.
-				The selected constant will be changed in each frame in the animation.
+				<para>
+					Here you select which constant you want to change in the animation.
+					The constant must already have been created in the <xref linkend="CustomFunctionsDialog" /> dialog.
+					The selected constant will be changed in each frame in the animation.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Range</term>
 			<listitem>
-				In the <guilabel>From</guilabel> and <guilabel>To</guilabel> fields you need to specify the range of the selected constant in the animation.
-				The <guilabel>Step</guilabel> value indicates how much the constant is changed between two frames.
-				The number of frames is given by (<guilabel>To</guilabel> - <guilabel>From</guilabel>) / <guilabel>Step</guilabel>.
-				More frames will give a smoother animation but it will also take longer to create and take up more space in the disk file.
+				<para>
+					In the <guilabel>From</guilabel> and <guilabel>To</guilabel> fields you need to specify the range of the selected constant in the animation.
+					The <guilabel>Step</guilabel> value indicates how much the constant is changed between two frames.
+					The number of frames is given by (<guilabel>To</guilabel> - <guilabel>From</guilabel>) / <guilabel>Step</guilabel>.
+					More frames will give a smoother animation but it will also take longer to create and take up more space in the disk file.
+				</para>
 			</listitem>
 		</varlistentry>
 

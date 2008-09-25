@@ -24,42 +24,54 @@
 		while the point is identified from the independent t-parameter for parametric and polar functions.
 	</para>
 
-	<graphic fileref="DialogTangent.png"/>
+	<mediaobject>
+  	<imageobject>
+    	<imagedata fileref="DialogTangent.png"/>
+  	</imageobject>
+	</mediaobject>
 
 	<variablelist>
 		<varlistentry>
 			<term>Argument range</term>
 			<listitem>
-				You can choose an interval for the tangent/normal.
-				<guilabel>From</guilabel> and <guilabel>To</guilabel> indicates the start and end of the interval.
-				You can leave one or both of them blank to draw the graph from minus infinity to plus infinity.
+				<para>
+					You can choose an interval for the tangent/normal.
+					<guilabel>From</guilabel> and <guilabel>To</guilabel> indicates the start and end of the interval.
+					You can leave one or both of them blank to draw the graph from minus infinity to plus infinity.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Endpoints</term>
 			<listitem>
-				Here you can choose to show markers at the start and/or end of the interval.
-				If no interval is specified, the markers will be shown at the edge of the graphing area.
-				The default is not to show any markers.
+				<para>
+					Here you can choose to show markers at the start and/or end of the interval.
+					If no interval is specified, the markers will be shown at the edge of the graphing area.
+					The default is not to show any markers.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Legend text</term>
 			<listitem>
-				Enter a description to show in the <glossterm>legend</glossterm>. If empty the function equation will be used.
+				<para>
+					Enter a description to show in the <glossterm>legend</glossterm>. If empty the function equation will be used.
+				</para>
 			</listitem>
 		</varlistentry>
 
 		<varlistentry>
 			<term>Graph properties</term>
 			<listitem>
-				You can choose between different line styles for which you want the tangent/normal to be drawn.
-				You can choose between solid, dashed, dotted or a combination of these.
-				You can also choose the width of the tangent/normal.
-				The width is notified in screen pixels.
-				There are also a lot of different colors you can choose between.
+				<para>
+					You can choose between different line styles for which you want the tangent/normal to be drawn.
+					You can choose between solid, dashed, dotted or a combination of these.
+					You can also choose the width of the tangent/normal.
+					The width is notified in screen pixels.
+					There are also a lot of different colors you can choose between.
+				</para>
 			</listitem>
 		</varlistentry>
 	</variablelist>
