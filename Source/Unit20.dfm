@@ -135,7 +135,7 @@ object Form20: TForm20
   end
   object SaveDialog1: TSaveDialog
     DefaultExt = 'avi'
-    Filter = 'Video for Windows [*.avi]|*.avi'
+    Filter = 'Audio Video Interleave [*.avi]|*.avi'
     Options = [ofOverwritePrompt, ofHideReadOnly, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing, ofDontAddToRecent]
     Left = 16
     Top = 16

@@ -1743,7 +1743,7 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
   SaveDialogEx1->FileName = ChangeFileExt(Data.GetFileName().c_str(), "");
   SaveDialogEx1->DefaultExt = "emf";
   SaveDialogEx1->Filter =
-    "Windows Enhanced Meta File [*.emf]|*.emf|"
+    "Windows Enhanced Metafile [*.emf]|*.emf|"
 //    "Encapsulated PostScript [*.eps]|*.eps|"
     "Scalable Vector Graphics [*.svg]|*.svg|"
     "Windows Bitmap [*.bmp]|*.bmp|"
