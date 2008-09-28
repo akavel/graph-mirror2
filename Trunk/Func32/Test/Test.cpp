@@ -541,6 +541,12 @@ void Test()
   TestError("zeta(x)", 1, ecNotDefError);
   Test("zeta(x)", -5, -1.0/252);
 
+  //Test Omega function
+  TestErrorEval<long double>("W(x)", -M_PI/2, ecComplexError);
+  TestEval<TComplex>("W(x)", -M_PI/2, TComplex(0, M_PI/2));
+  Test("W(-1/e)", 0, -1);
+  Test("W(x)", 0, 0);
+
   //Test vertical trend lines
   TDblPoint Vertical[] = {TDblPoint(5,1), TDblPoint(5,7)};
   TestTrendLineError(ttPower, Vertical, 2, 0, ecOverflow);

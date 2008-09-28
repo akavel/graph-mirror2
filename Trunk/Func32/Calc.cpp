@@ -273,9 +273,9 @@ T Gamma(const T &z)
 template<typename T>
 T Omega(T z, TErrorCode &ErrorCode)
 {
-  if(imag(z) == 0 && real(z) < -1/EULER)
+  if(!TComplexTrait<T>::HasImagUnit && real(z) < -1/EULER)
   {
-    ErrorCode = ecNotDefError; //Not defined for z<-1/e when z is real
+    ErrorCode = ecComplexError; //Not defined for z<-1/e when we are not using complex numbers
     return -1;
   }
 
