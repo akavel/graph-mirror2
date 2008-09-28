@@ -25,11 +25,7 @@
 			The dialog will look a little different when a parametric function, polar function or tangent is selected.
 		</para>
 
-		<mediaobject>
-  		<imageobject>
-  	  	<imagedata fileref="DialogEval.png"/>
-  		</imageobject>
-		</mediaobject>
+  	<graphic fileref="DialogEval.png" align="center"/>
 
 		<para>
 			You can enter a value for which you want to evaluate the function.

@@ -16,11 +16,7 @@
 		Use the <menuchoice><guimenu>Function</guimenu><guimenuitem>Custom functions...</guimenuitem></menuchoice> menu item to show the dialog.
 	</para>
 
-	<mediaobject>
-  	<imageobject>
-    	<imagedata fileref="DialogCustomFunctions.png"/>
-  	</imageobject>
-	</mediaobject>
+  <graphic fileref="DialogCustomFunctions.png" align="center"/>
 
 	<variablelist>
 		<varlistentry>

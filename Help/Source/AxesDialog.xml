@@ -42,11 +42,7 @@
 	<simplesect>
 		<title>x-axis/y-axis</title>
 		<para>
-			<mediaobject>
-  			<imageobject>
-    			<imagedata fileref="DialogAxes1.png"/>
-  			</imageobject>
-			</mediaobject>
+    	<graphic fileref="DialogAxes1.png" align="center"/>
 
 			<variablelist>
 				<varlistentry>
@@ -173,11 +169,7 @@
 	<simplesect id="AxesDialogSettings">
 		<title>Settings</title>
 		<para>
-			<mediaobject>
-  			<imageobject>
-    			<imagedata fileref="DialogAxes3.png"/>
-  			</imageobject>
-			</mediaobject>
+    	<graphic fileref="DialogAxes3.png" align="center"/>
 
 			<variablelist>
 				<varlistentry>
@@ -245,11 +237,7 @@
 	<simplesect>
 		<title>Font and color</title>
 		<para>
-			<mediaobject>
-  			<imageobject>
-    			<imagedata fileref="DialogAxes4.png"/>
-  			</imageobject>
-			</mediaobject>
+    	<graphic fileref="DialogAxes4.png" align="center"/>
 
 			<variablelist>
 				<varlistentry>

@@ -26,11 +26,7 @@
 	<simplesect>
 		<title>Built-in</title>
 		<para>
-			<mediaobject>
-  			<imageobject>
-  		  	<imagedata fileref="DialogTrendline1.png"/>
-  			</imageobject>
-			</mediaobject>
+  		<graphic fileref="DialogTrendline1.png" align="center"/>
 			You may choose between the following built-in functions.
 			These functions will give an accurate result.
 			For <guilabel>Linear</guilabel>, <guilabel>Polynomial</guilabel> and <guilabel>Exponential</guilabel> trendlines,

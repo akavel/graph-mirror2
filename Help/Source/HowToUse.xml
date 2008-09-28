@@ -25,11 +25,7 @@
 			The status bar at the bottom of the window shows tooltips or other information to the left and the coordinates located at the cursor to the right.
 		</para>
 
-		<mediaobject>
-  		<imageobject>
-  	  	<imagedata fileref="DialogMain.png"/>
-  		</imageobject>
-		</mediaobject>
+  	<graphic fileref="DialogMain.png" align="center"/>
 
 		<para>
 			You can add new elements to the coordinate system from the Function menu.

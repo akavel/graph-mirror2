@@ -23,11 +23,7 @@
 	<simplesect>
 		<title>Shading</title>
 		<para>
-			<mediaobject>
-  			<imageobject>
-  		  	<imagedata fileref="DialogShade1.png"/>
-  			</imageobject>
-			</mediaobject>
+  		<graphic fileref="DialogShade1.png" align="center"/>
 			In the <guilabel>Shading</guilabel> tab you can choose between the following types of shadings:
 		</para>
 

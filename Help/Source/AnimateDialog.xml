@@ -20,11 +20,7 @@
 		The animation can contain all elements supported by Graph, for example functions, relations, point series, labels, etc.
 	</para>
 
-	<mediaobject>
-  	<imageobject>
-    	<imagedata fileref="DialogAnimate.png"/>
-  	</imageobject>
-	</mediaobject>
+ 	<graphic fileref="DialogAnimate.png" align="center"/>
 
 	<variablelist>
 		<varlistentry>
@@ -59,18 +55,74 @@
 					The <guilabel>Frames/second</guilabel> indicates the default speed of the animation.
 					Most players will be able to adjust the speed when the animation is played.
 				</para>
+			</listitem>
+		</varlistentry>
+	</variablelist>
+
+	<para>
+		When you press the <guibutton>Animate</guibutton> button, an animation is created from the settings you have specified.
+		This may take some time depending on what elements exist in the coordinate system and how many frames are needed.
+	</para>
+	<para>
+		When the animation is finished, a very simple player is shown.
+		You can use this to play the animation.
+		The <guibutton><inlinegraphic fileref="AnimationMenu.bmp"/></guibutton> button will give you some additional options.
+	</para>
+	<variablelist>
+		<varlistentry>
+			<term>Speed</term>
+			<listitem>
 				<para>
-					When you press the <guibutton>Animate</guibutton> button, an animation is created from the settings you have specified.
-					This may take some time depending on what elements exist in the coordinate system and how many frames are needed.
+					Here you can change the playback speed.
+					This will only affect the playback and not the file saved.
 				</para>
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Repeat</term>
+			<listitem>
 				<para>
-					When the animation is finished, a very simple player is shown.
-					You can use this to play the animation.
-					The rightmost button will give you some additional options, for example to save the animation to a file, which can be played by any media player.
-					You can also have the player repeat playing the animation until you stop it.
-					The <guimenuitem>Auto reverse</guimenuitem> option will make the animation run backwards when it reaches the end.
-					This is very useful in combination with the <guimenuitem>Repeat</guimenuitem> option to make the animation oscillate between the two ends.
-					You can also make some changes to the speed, though a more accurate speed needs to be set before the animation is created.
+					When checked the animation will continue playing. When finsihed it will start over again.
+				</para>
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Auto reverse</term>
+			<listitem>
+				<para>
+					This will make the animation run backwards when it reaches the end.
+					This is most useful in combination with the <guimenuitem>Repeat</guimenuitem> option, which will make the animation oscillate between the two ends.
+				</para>
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Save as...</term>
+			<listitem>
+				<para>
+					This will save the animation as an Audio Video Interleave (avi) file, which can be played by any media player.
+				</para>
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Save frame...</term>
+			<listitem>
+				<para>
+					This will save the currently shown frame as a bitmap file.
+					This can be either Windows Bitmap (bmp), Portable Network Graphics (png) or Joint Photographic Experts Group (jpeg).
+				</para>
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
+			<term>Save all frames...</term>
+			<listitem>
+				<para>
+					This will save all frames as single bitmap files.
+					This is the same as repeating <guimenuitem>Save frame...</guimenuitem> for each frame in the animation.
 				</para>
 			</listitem>
 		</varlistentry>

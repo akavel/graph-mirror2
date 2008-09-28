@@ -18,11 +18,7 @@
 		To change an existing relation, you first select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 	</para>
 
-	<mediaobject>
-  	<imageobject>
-    	<imagedata fileref="DialogRelation.png"/>
-  	</imageobject>
-	</mediaobject>
+  <graphic fileref="DialogRelation.png" align="center"/>
 
 	<variablelist>
 		<varlistentry>

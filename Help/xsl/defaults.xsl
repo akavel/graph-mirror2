@@ -9,37 +9,37 @@
   <xsl:param name="generate.index" select="1" />
   <xsl:param name="qanda.defaultlabel">qanda</xsl:param>
 
-<xsl:attribute-set name="table.cell.padding">
-  <xsl:attribute name="padding-left">4pt</xsl:attribute>
-  <xsl:attribute name="padding-right">4pt</xsl:attribute>
-  <xsl:attribute name="padding-top">2pt</xsl:attribute>
-  <xsl:attribute name="padding-bottom">2pt</xsl:attribute>
-</xsl:attribute-set>
+  <xsl:attribute-set name="table.cell.padding">
+    <xsl:attribute name="padding-left">4pt</xsl:attribute>
+    <xsl:attribute name="padding-right">4pt</xsl:attribute>
+    <xsl:attribute name="padding-top">2pt</xsl:attribute>
+    <xsl:attribute name="padding-bottom">2pt</xsl:attribute>
+  </xsl:attribute-set>
 
-<xsl:attribute-set name="section.title.level1.properties">
-  <xsl:attribute name="font-size">
-    <xsl:value-of select="$body.font.master * 1.44"/>
-    <xsl:text>pt</xsl:text>
-  </xsl:attribute>
-</xsl:attribute-set>
-<xsl:attribute-set name="section.title.level2.properties">
-  <xsl:attribute name="font-size">
-    <xsl:value-of select="$body.font.master * 1.2"/>
-    <xsl:text>pt</xsl:text>
-  </xsl:attribute>
-</xsl:attribute-set>
-<xsl:attribute-set name="section.title.level3.properties">
-  <xsl:attribute name="font-size">
-    <xsl:value-of select="$body.font.master * 1.1"/>
-    <xsl:text>pt</xsl:text>
-  </xsl:attribute>
-</xsl:attribute-set>
-<xsl:attribute-set name="section.title.level4.properties">
-  <xsl:attribute name="font-size">
-    <xsl:value-of select="$body.font.master * 1.05"/>
-    <xsl:text>pt</xsl:text>
-  </xsl:attribute>
-</xsl:attribute-set>
+  <xsl:attribute-set name="section.title.level1.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master * 1.44"/>
+      <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="section.title.level2.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master * 1.25"/>
+      <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="section.title.level3.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master"/>
+      <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="section.title.level4.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master * 3"/>
+      <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+  </xsl:attribute-set>
 
 
   <xsl:param name="admon.graphics" select="1"></xsl:param>

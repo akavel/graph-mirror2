@@ -24,11 +24,7 @@
 		while the point is identified from the independent t-parameter for parametric and polar functions.
 	</para>
 
-	<mediaobject>
-  	<imageobject>
-    	<imagedata fileref="DialogTangent.png"/>
-  	</imageobject>
-	</mediaobject>
+  <graphic fileref="DialogTangent.png" align="center"/>
 
 	<variablelist>
 		<varlistentry>

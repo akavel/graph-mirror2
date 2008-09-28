@@ -32,7 +32,7 @@
 				<term>Error 04: Cannot take logarithm to number equal or less than zero.</term>
 				<listitem>
 					<para>
-						The logarithmic functions ln(x) and log(x) are undefined for x&lE;0, when the calculation is done for real numbers.
+						The logarithmic functions ln(x) and log(x) are undefined for x&le;0, when the calculation is done for real numbers.
 						When the calculations are done with complex numbers, x is only undefined at 0.
 					</para>
 				</listitem>
@@ -199,7 +199,7 @@
 				<listitem>
 					<para>
 						Only two comparison operators in sequence are allowed.
-						For example "sin(x) &lt; y %lt; cos(x)" is okay while "sin(x) &lt; x &lt; y &lt; cos(x)" is invalid because there are three &lt;-operators in sequence.
+						For example "sin(x) &lt; y &lt; cos(x)" is okay while "sin(x) &lt; x &lt; y &lt; cos(x)" is invalid because there are three &lt;-operators in sequence.
 					</para>
 				</listitem>
 			</varlistentry>

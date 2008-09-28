@@ -5,19 +5,23 @@
 
 <xsl:import href="./db_pdfdoc.xsl"/>
 <xsl:import href="./defaults.xsl"/>
+<xsl:import href="./titlepage.xsl"/>
 <xsl:param name="paper.type" select="'A4'"/>
 <xsl:param name="double.sided" select="0"/>
-<xsl:param name="variablelist.as.blocks" select="1"></xsl:param>
-<xsl:param name="symbol.font.family" select="'Symbol,ZapfDingbats'"/>
+<xsl:param name="variablelist.as.blocks" select="1"/>
+<xsl:param name="symbol.font.family">Symbol,ZapfDingbats</xsl:param>
+<xsl:param name="body.start.indent">0pt</xsl:param> <!-- Body text indention -->
+<xsl:param name="title.margin.left">-1em</xsl:param> <!-- Body text indention -->
 
-<xsl:param name="table.frame.border.thickness" select="'1pt'"></xsl:param>
-<xsl:param name="table.frame.border.style" select="'solid'"></xsl:param>
-<xsl:param name="table.frame.border.color" select="'#7099C5'"></xsl:param>
-<xsl:param name="table.cell.border.thickness" select="'1pt'"></xsl:param>
-<xsl:param name="table.cell.border.style" select="'solid'"></xsl:param>
-<xsl:param name="table.cell.border.color" select="'#7099C5'"></xsl:param>
+<xsl:param name="table.frame.border.thickness" select="'1pt'"/>
+<xsl:param name="table.frame.border.style" select="'solid'"/>
+<xsl:param name="table.frame.border.color" select="'#7099C5'"/>
+<xsl:param name="table.cell.border.thickness" select="'1pt'"/>
+<xsl:param name="table.cell.border.style" select="'solid'"/>
+<xsl:param name="table.cell.border.color" select="'#7099C5'"/>
 
 <xsl:param name="img.src.path">Images/</xsl:param>
+<xsl:param name="glossary.as.blocks" select="1"/>
 
 <xsl:param name="formal.title.placement">
   figure after
@@ -113,7 +117,7 @@
   </fo:inline>
 </xsl:template>
 
-<xsl:template match="symbol[@role = 'html']">
-</xsl:template>
+<xsl:template match="symbol[@role = 'html']" />
 
 </xsl:stylesheet>
+

@@ -27,11 +27,7 @@
 		To change an existing label, you either <action>double click</action> on it in the graphing area or you select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 	</para>
 
-	<mediaobject>
-  	<imageobject>
-    	<imagedata fileref="DialogLabel.png"/>
-  	</imageobject>
-	</mediaobject>
+  <graphic fileref="DialogLabel.png" align="center"/>
 
 	<para>
 		The text is entered in the editing area.
