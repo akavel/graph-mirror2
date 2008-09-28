@@ -21,11 +21,7 @@
 		To change an existing point series, you first select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 	</para>
 
-	<mediaobject>
-  	<imageobject>
-    	<imagedata fileref="DialogPoints.png"/>
-  	</imageobject>
-	</mediaobject>
+  <graphic fileref="DialogPoints.png" align="center"/>
 
 	<para>
 		After adding a point series, you may add a <link linkend="InsertTrendlineDialog">trendline</link> which is the curve of best fit for the points.

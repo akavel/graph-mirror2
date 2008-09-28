@@ -17,11 +17,7 @@
 		In this dialog, you can change general program options.
 	</para>
 
-	<mediaobject>
-  	<imageobject>
-    	<imagedata fileref="DialogOptions.png"/>
-  	</imageobject>
-	</mediaobject>
+  <graphic fileref="DialogOptions.png" align="center"/>
 
 	<variablelist>
 		<varlistentry>

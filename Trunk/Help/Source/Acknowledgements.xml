@@ -73,6 +73,9 @@
 		<title>Translations</title>
 		<informaltable>
 			<tgroup cols="4">
+				<colspec colnum="1" colwidth="2.2cm"/>
+				<colspec colnum="2" colwidth="1.7cm"/>
+				<colspec colnum="3" colwidth="1.7cm"/>
 				<thead>
 					<row>
 						<entry>Language</entry>

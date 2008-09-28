@@ -21,11 +21,7 @@
 		<mathphrase>f'(x) = df(x)/dx</mathphrase>
 	</para>
 
-	<mediaobject>
-  	<imageobject>
-    	<imagedata fileref="DialogDiff.png"/>
-  	</imageobject>
-	</mediaobject>
+  <graphic fileref="DialogDiff.png" align="center"/>
 
 	<para>
 		You can select an interval, line style, width in pixels and color for the derivative of the function.

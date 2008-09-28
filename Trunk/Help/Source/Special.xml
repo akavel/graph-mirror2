@@ -191,7 +191,7 @@
 		<simplesect>
 			<title>Remarks</title>
 			<para>
-				The <function>W</function> function is not defined for real values of <parameter>z</parameter> when <parameter>z</parameter> &lt; -1/e.
+				For real values of <parameter>z</parameter> when <parameter>z</parameter> &lt; -1/e, the <function>W</function> function will evaluate to values with an imaginary part.
 			</para>
 		</simplesect>
 	</section>

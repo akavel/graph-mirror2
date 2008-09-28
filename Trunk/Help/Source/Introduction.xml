@@ -15,7 +15,7 @@
 	<indexterm><primary>bug report</primary></indexterm>
 	<simplesect>
 		<para>
-			Graph is a program designed for drawing graphs of mathematical functions in a coordinate system and similar things.
+			Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things.
 			The program is a standard Windows program with menus and dialogs.
 			The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations.
 			It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more.
@@ -37,7 +37,7 @@
 					<para>
 						Which version are you using?
 						This is shown in the <menuchoice><guimenu>Help</guimenu><guimenuitem>About Graph...</guimenuitem></menuchoice> dialog box.
-						You should check if this is the newest version, else the bug may have been fixed already.
+						You should check that you are using the newest version, else the bug may have been fixed already.
 					</para>
 				</listitem>
 				<listitem>

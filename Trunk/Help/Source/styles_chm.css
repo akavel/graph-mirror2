@@ -246,8 +246,14 @@ h2 {
    margin-bottom: -0.7em;
 }
 
-h3 {
-   margin-bottom: -1em;
+div.section div.simplesect h3 {
+   font-size: 120%;
+   margin-bottom: -0.7em;
+}
+
+div.section h3 {
+   font-size: 170%;
+   margin-bottom: -0.7em;
 }
 
 h4 {
@@ -258,16 +264,17 @@ table.simplelist {
    margin-top: -1em;
 }
 
-div.mediaobject {
-  text-align: center;
-}
-
 div.simplesect h2 {
    font-size: 120%;
 }
 
 h3.othercredit {
   font-size: 100%
+  margin-top: -1em;
+}
+
+p.copyright {
+  margin-top: -1em;
 }
 
 div.authorgroup {

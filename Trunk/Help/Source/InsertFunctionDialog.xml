@@ -19,11 +19,7 @@
 		<menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice> menu item.
 	</para>
 
-	<mediaobject>
-  	<imageobject>
-    	<imagedata fileref="DialogFunction.png"/>
-  	</imageobject>
-	</mediaobject>
+  <graphic fileref="DialogFunction.png" align="center"/>
 
 	<variablelist>
 		<varlistentry>
