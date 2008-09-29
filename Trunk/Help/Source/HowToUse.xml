@@ -21,8 +21,8 @@
 		</para>
 		<para>
 			The toolbar may be customized by right clicking on the bar and selecting <guimenuitem>Customize toolbar...</guimenuitem> from the popup menu.
-			You can when customize the toolbar by dragging actions to and from the bar.
-			The status bar at the bottom of the window shows tooltips or other information to the left and the coordinates located at the cursor to the right.
+			You can then customize the toolbar by dragging commands to and from the bar.
+			The status bar at the bottom of the window shows tooltips or other information to the left and the coordinates located at the mouse pointer to the right.
 		</para>
 
   	<graphic fileref="DialogMain.png" align="center"/>
@@ -36,7 +36,7 @@
 					<guimenuitem>Insert function...</guimenuitem>
 				</menuchoice>
 			</link>
-			.
+
 		</para>
 		<para>
 			The <glossterm>function list</glossterm> to the left shows a list of functions, tangents, point series, shadings and relations you have added.
@@ -45,7 +45,7 @@
 			An item may be edited by double clicking on it.
 		</para>
 		<para>
-			The <guimenu>Calc</guimenu> menu contains commands to calculate on functions, for example evaluations at specific coordinates and calculations in a table.
+			The <guimenu>Calc</guimenu> menu contains commands to make calculations on functions, for example evaluations at specific coordinates or given intervals.
 		</para>
 	</simplesect>
 </chapter>

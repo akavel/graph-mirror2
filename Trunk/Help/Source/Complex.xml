@@ -71,7 +71,7 @@
 			<para>
 			  The <function>conj</function> function returns the conjugate of <parameter>z</parameter>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
-				The function is defined as: <mathphrase>conj(z) = re(z) - &imag;*im(z)</mathphrase>
+				The function is defined as: <mathphrase>conj(z) = re(z) - &imag;*im(z)</mathphrase>.
 			</para>
 		</simplesect>
 	</section>

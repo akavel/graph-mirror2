@@ -123,15 +123,13 @@
 		</simplesect>
 		<simplesect>
 			<title>Examples</title>
-			<para>
-				<simplelist>
-					<member><mathphrase>round(412.4572,3) = 412.457</mathphrase></member>
-					<member><mathphrase>round(412.4572,2) = 412.46</mathphrase></member>
-					<member><mathphrase>round(412.4572,1) = 412.5</mathphrase></member>
-					<member><mathphrase>round(412.4572,0) = 412</mathphrase></member>
-					<member><mathphrase>round(412.4572,-2) = 400</mathphrase></member>
-				</simplelist>
-			</para>
+			<simplelist>
+				<member><mathphrase>round(412.4572,3) = 412.457</mathphrase></member>
+				<member><mathphrase>round(412.4572,2) = 412.46</mathphrase></member>
+				<member><mathphrase>round(412.4572,1) = 412.5</mathphrase></member>
+				<member><mathphrase>round(412.4572,0) = 412</mathphrase></member>
+				<member><mathphrase>round(412.4572,-2) = 400</mathphrase></member>
+			</simplelist>
 		</simplesect>
 	</section>
 </section>

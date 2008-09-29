@@ -215,13 +215,7 @@
 						The fraction part is optional, but either the integer part or the fraction part must be there.
 						E is the exponent separator and must be an 'E' in upper case. eee is the exponent optionally preceded by '-'.
 						The exponent is only needed if the E is there. Notice that 5E8 is the same as 5*10^8.
-						Here are some examples of numbers:
-						<simplelist>
-							<member><constant>-5.475E-8</constant></member>
-							<member><constant>-0.55</constant></member>
-							<member><constant>.75</constant></member>
-							<member><constant>23E4</constant></member>
-						</simplelist>
+						Here are some examples of numbers: <constant>-5.475E-8, -0.55, .75, 23E4</constant>
 					</para>
 				</listitem>
 			</varlistentry>

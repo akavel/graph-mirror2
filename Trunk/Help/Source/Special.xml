@@ -28,10 +28,10 @@
 				</mediaobject>
 				This integral is the same as the area between the function <parameter>f</parameter> and the x-axis from <parameter>a</parameter> to <parameter>b</parameter>
 				where the area under the axis is counted negative.
-				<parameter>f</parameter> may be any function with x as variable if the function is used in a normal function and t as variable if it is a parameteric function.
+				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric function.
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm baseform="numeric expression">numeric expressions</glossterm> that evaluate to <glossterm baseform="real number">real numbers</glossterm>.
-				<function>integrate</function> does not calculate the integral exact.
-				Instead the calculation is done using Simpson's Rule with 100 steps.
+				<function>integrate</function> does not calculate the integral exactly.
+				Instead the calculation is done using Simpson's formula through 100 iterations.
 			</para>
 		</simplesect>
 	</section>
@@ -57,9 +57,8 @@
 	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Sum.svg"/></imageobject>
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Sum.emf"/></imageobject>
 				</mediaobject>
-				<parameter>f</parameter> may be any function with x as variable if the function is used in a normal function and t as variable if it is a parameteric or polar function.
+				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function.
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm baseform="numeric expression">numeric expressions</glossterm> that evaluate to <glossterm baseform="real number">real numbers</glossterm>.
-				<function>integrate</function> does not calculate the integral exact.
 			</para>
 		</simplesect>
 	</section>
@@ -84,9 +83,8 @@
 	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Product.svg"/></imageobject>
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Product.emf"/></imageobject>
 				</mediaobject>
-				<parameter>f</parameter> may be any function with x as variable if the function is used in a normal function and t as variable if it is a parameteric or polar function.
+				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function.
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm baseform="numeric expression">numeric expressions</glossterm> that evaluate to <glossterm baseform="real number">real numbers</glossterm>.
-				<function>integrate</function> does not calculate the integral exact.
 			</para>
 		</simplesect>
 	</section>
@@ -242,7 +240,7 @@
 				Calculates <parameter>m</parameter> modulo <parameter>n</parameter>, the remainder of <mathphrase>m/n</mathphrase>.
 				<function>mod</function> calculates the remainder f, where <mathphrase>m = a*n + f</mathphrase> for some integer a.
 				The sign of f is always the same as the sign of <parameter>n</parameter>.
-				When <parameter>n</parameter>=0, mod returns 0.
+				When <parameter>n</parameter>=0, <function>mod</function> returns 0.
 				<parameter>m</parameter> and <parameter>n</parameter> may be any <glossterm baseform="numeric expression">numeric expressions</glossterm> that evaluate to <glossterm baseform="real number">real numbers</glossterm>.
 			</para>
 		</simplesect>
