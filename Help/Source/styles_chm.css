@@ -261,7 +261,7 @@ h4 {
 }
 
 table.simplelist {
-   margin-top: -1em;
+   margin-top: 0.5em;
 }
 
 div.simplesect h2 {
@@ -269,7 +269,7 @@ div.simplesect h2 {
 }
 
 h3.othercredit {
-  font-size: 100%
+  font-size: 100%;
   margin-top: -1em;
 }
 
@@ -280,3 +280,12 @@ p.copyright {
 div.authorgroup {
   margin-top: 3em;
 }
+
+em.parameter {
+  font-size: 130%;
+}
+
+code.function {
+  font-size: 130%;
+}
+

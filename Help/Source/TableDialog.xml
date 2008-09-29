@@ -13,7 +13,7 @@
 		The dialog shown below is used to evaluate the selected function for a range.
 		First select a function in the <glossterm>function list</glossterm> and use the menu item
 		<menuchoice><guimenu>Calc</guimenu><guimenuitem>Table</guimenuitem></menuchoice> to show the dialog.
-		You specify the first and last value of the independen variable and set the increment of the independent variable at each evaluation.
+		You specify the first and last value of the independent variable and set the increment of the independent variable at each evaluation.
 	</para>
 
 	<para>
@@ -36,9 +36,9 @@
 	</para>
 
 	<para>
-		When you move the mouse to the left side of the table the cursor changes to a right pointing arrow.
+		When you move the mouse to the left side of the table the mouse pointer changes to a right pointing arrow.
 		Now you can select whole rows with the mouse.
-		When you move the mouse to the top of the table the cursor changes to a down pointing arrow.
+		When you move the mouse to the top of the table, the pointer changes to a down pointing arrow.
 		Now you can select whole columns with the mouse.
 		The whole table may be selected by <action>right clicking</action> and selecting <guimenuitem>Select all</guimenuitem>.
 		It is also possible to select cells by holding down the shift key and using the arrow keys on the keyboard.

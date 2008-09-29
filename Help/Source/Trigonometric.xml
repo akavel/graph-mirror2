@@ -250,7 +250,7 @@
 		<simplesect>
 			<title>Description</title>
 			<para>
-				The <function>cot</function> function calculates the secant of an angle <parameter>z</parameter>,
+				The <function>cot</function> function calculates the cotangent of an angle <parameter>z</parameter>,
 				which may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
 				<mathphrase>cot(z)</mathphrase> is the same as <mathphrase>1/tan(z)</mathphrase>.
 				<parameter>z</parameter> may be any numeric expression that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.

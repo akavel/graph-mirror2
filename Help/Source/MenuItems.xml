@@ -517,7 +517,7 @@
 					</term>
 					<listitem>
 						<para>
-							When selected the cursor changes to a hand. You may now use the mouse to drag the coordinate system around.
+							When selected the mouse pointer changes to a hand. You may now use the mouse to drag the coordinate system around.
 							Select the menu item again, <action>right click</action> or press <keycap>Esc</keycap> to return to normal mode.
 							As an alternative to this menu item, you may hold down the <keycap>Shift</keycap> key and drag the coordinate system around.
 						</para>

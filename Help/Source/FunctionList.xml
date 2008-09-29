@@ -434,18 +434,16 @@
 
 	<simplesect>
 		<title>Notice the following relations:</title>
-		<para>
-			<simplelist>
-				<member>sin(x)^2= (sin(x))^2</member>
-				<member>sin 2x = sin(2x)</member>
-				<member>sin 2+x = sin(2)+x</member>
-				<member>sin x^2	= sin(x^2)</member>
-				<member>2(x+3)x	= 2*(x+3)*x</member>
-				<member>-x^2 = -(x^2)</member>
-				<member>2x = 2*x</member>
-				<member>e^2x = e^(2*x)</member>
-			</simplelist>
-		</para>
+		<simplelist>
+			<member>sin(x)^2= (sin(x))^2</member>
+			<member>sin 2x = sin(2x)</member>
+			<member>sin 2+x = sin(2)+x</member>
+			<member>sin x^2	= sin(x^2)</member>
+			<member>2(x+3)x	= 2*(x+3)*x</member>
+			<member>-x^2 = -(x^2)</member>
+			<member>2x = 2*x</member>
+			<member>e^2x = e^(2*x)</member>
+		</simplelist>
 	</simplesect>
 </section>
 
