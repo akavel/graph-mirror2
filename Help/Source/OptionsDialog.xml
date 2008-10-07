@@ -17,7 +17,7 @@
 		In this dialog, you can change general program options.
 	</para>
 
-  <graphic fileref="DialogOptions.png" align="center"/>
+  <graphic fileref="DialogOptions.png" align="center" scale="60"/>
 
 	<variablelist>
 		<varlistentry>

@@ -1,4 +1,4 @@
-<!ENTITY pi	"<symbol role='symbolfont'>&#x003C0;</symbol>"> <!-- GREEK SMALL LETTER PI -->
+<!ENTITY pi "<markup role='symbolfont'>&#x003C0;</markup>"> <!-- GREEK SMALL LETTER PI -->
 <!ENTITY theta  "<markup role='symbolfont'>&#x003B8;</markup>"> <!-- GREEK SMALL LETTER THETA -->
 <!ENTITY Gamma  "<markup role='symbolfont'>&#x00393;</markup>"> <!-- GREEK SMALL LETTER GAMMA -->
 <!ENTITY sigma  "<markup role='symbolfont'>&#x003C3;</markup>"> <!-- GREEK SMALL LETTER SIGMA -->

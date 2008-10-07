@@ -24,8 +24,8 @@
 	<xi:include href="OLE.xml"/>
 	<xi:include href="MenuItems.xml"/>
 	<xi:include href="Errors.xml"/>
-	<xi:include href="Acknowledgements.xml"/>
 	<xi:include href="Functions.xml"/>
 	<xi:include href="Dialogs.xml"/>
+	<xi:include href="Acknowledgements.xml"/>
 	<xi:include href="Glossary.xml"/>
 </book>
