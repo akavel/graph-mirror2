@@ -247,7 +247,7 @@ void TSymbolFrm::UpdateImage()
   else
   {
     StatusBar1->Panels->Items[0]->Text = "";
-    StatusBar1->Panels->Items[1]->Text = (int)Selected;
+    StatusBar1->Panels->Items[1]->Text = "0x" + IntToHex(Selected, 2) + " (" + (int)Selected + ")";
   }
 
   Image1->Repaint();
