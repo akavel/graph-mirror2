@@ -112,7 +112,7 @@ BEGIN
   RES_VALUE_NEEDED        "You need to enter a value."
   RES_INVALID_VERSION     "This file was created with Graph %s.\nOnly files from version %s and higher can be opened."
   RES_NOT_VALID_NUMBER    "'%s' is not a valid number."
-  RES_OPEN_FILE           "Open the file %s."                //Hint for recent file menu items
+  RES_OPEN_FILE           "Open file: %s"                //Hint for recent file menu items
   RES_POSITIVE            "'%s' must be a positive number."
   RES_FILE_NOT_FOUND      "File not found: %s"
   RES_NOT_GRAPH_FILE      "Error reading file: %s\nThe file is not a correct Graph file."

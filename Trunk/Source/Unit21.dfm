@@ -67,15 +67,13 @@ object Form21: TForm21
     Hint = 'Choose which corner of the label should be locked.'
     Style = csDropDownList
     ItemHeight = 13
-    ItemIndex = 0
     TabOrder = 0
-    Text = 'Top Left'
     OnChange = ComboBox1Change
     Items.Strings = (
-      'Top Left'
-      'Top Right'
-      'Bottom Left'
-      'Bottom Right')
+      'Upper Left'
+      'Upper Right'
+      'Lower Left'
+      'Lower Right')
   end
   object Edit1: TMyEdit
     Left = 64
