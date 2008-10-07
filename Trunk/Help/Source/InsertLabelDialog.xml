@@ -27,13 +27,13 @@
 		To change an existing label, you either <action>double click</action> on it in the graphing area or you select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 	</para>
 
-  <graphic fileref="DialogLabel.png" align="center"/>
+  <graphic fileref="DialogLabel.png" align="center" scale="80"/>
 
 	<para>
 		The text is entered in the editing area.
 		You can change text styles for different parts of the text.
 		The background color, which may be any solid color or transparent, can be set for the whole label only.
-		The <guibutton><inlinegraphic fileref="Font_Symbol.bmp" /></guibutton> button can be used to insert special characters like mathematical symbols and Greek characters.
+		The <guibutton><inlinegraphic fileref="Font_Symbol.bmp" scale="60"/></guibutton> button can be used to insert special characters like mathematical symbols and Greek characters.
 	</para>
 
 	<para>

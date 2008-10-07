@@ -21,7 +21,7 @@
 		To change an existing point series, you first select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 	</para>
 
-  <graphic fileref="DialogPoints.png" align="center"/>
+  <graphic fileref="DialogPoints.png" align="center" scale="80"/>
 
 	<para>
 		After adding a point series, you may add a <link linkend="InsertTrendlineDialog">trendline</link> which is the curve of best fit for the points.
@@ -92,7 +92,7 @@
 			<listitem>
 				<para>
 					Put a check in <guilabel>Show coordinates</guilabel> to show the x- and y-coordinates at each point.
-					You may use the <guibutton><inlinegraphic fileref="Font.bmp" /></guibutton>
+					You may use the <guibutton><inlinegraphic fileref="Font.bmp" scale="60"/></guibutton>
 					button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points.
 				</para>
 			</listitem>

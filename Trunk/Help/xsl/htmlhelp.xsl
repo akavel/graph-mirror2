@@ -27,6 +27,8 @@
 <xsl:param name="use.id.as.filename" select="1"/>
 <xsl:param name="chunk.quietly" select="1"/>
 <xsl:param name="chunk.first.sections" select="1"/>
+<xsl:param name="ignore.image.scaling" select="1"/>
+<xsl:param name="generate.index" select="1" />
 
 <xsl:template match="markup[@role = 'fo']">
 </xsl:template>

@@ -26,7 +26,7 @@
 	<simplesect>
 		<title>Built-in</title>
 		<para>
-  		<graphic fileref="DialogTrendline1.png" align="center"/>
+  		<graphic fileref="DialogTrendline1.png" align="center" scale="60"/>
 			You may choose between the following built-in functions.
 			These functions will give an accurate result.
 			For <guilabel>Linear</guilabel>, <guilabel>Polynomial</guilabel> and <guilabel>Exponential</guilabel> trendlines,
@@ -127,7 +127,7 @@
 	<simplesect>
 		<title>User defined</title>
 		<para>
-			<graphic fileref="DialogTrendline2.png"/>
+			<graphic fileref="DialogTrendline2.png" align="center" scale="60"/>
 			In this tab you can enter your own trendline models.
 			The model is entered as a standard function,
 			where all the constants that you want Graph to find are named with a $ followed by any combination of characters (a-z) and digits (0-9).

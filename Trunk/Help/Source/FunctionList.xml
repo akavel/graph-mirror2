@@ -161,6 +161,7 @@
 	</para>
 
 
+	<?hard-pagebreak?>
 	<para>
 		<informaltable>
 			<?dbhtml table-width="90%" ?>
@@ -446,4 +447,4 @@
 		</simplelist>
 	</simplesect>
 </section>
-
+<?hard-pagebreak?>

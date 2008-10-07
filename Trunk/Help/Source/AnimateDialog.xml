@@ -20,7 +20,7 @@
 		The animation can contain all elements supported by Graph, for example functions, relations, point series, labels, etc.
 	</para>
 
- 	<graphic fileref="DialogAnimate.png" align="center"/>
+ 	<graphic fileref="DialogAnimate.png" align="center" scale="60"/>
 
 	<variablelist>
 		<varlistentry>
@@ -66,7 +66,7 @@
 	<para>
 		When the animation is finished, a very simple player is shown.
 		You can use this to play the animation.
-		The <guibutton><inlinegraphic fileref="AnimationMenu.bmp"/></guibutton> button will give you some additional options.
+		The <guibutton><inlinegraphic fileref="AnimationMenu.bmp" scale="60"/></guibutton> button will give you some additional options.
 	</para>
 	<variablelist>
 		<varlistentry>

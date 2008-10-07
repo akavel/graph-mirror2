@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd">
+<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+]>
 <chapter id="FAQ">
 	<title>Frequently Asked Questions</title>
 	<indexterm><primary>FAQ</primary></indexterm>
 	<indexterm><primary>questions</primary></indexterm>
 	<indexterm><primary>tips</primary></indexterm>
 	<indexterm><primary>tricks</primary></indexterm>
-	<simplesect>
 	<para>
 		<qandaset>
 			<qandaentry>
@@ -315,6 +315,5 @@
 				</answer>
 			</qandaentry>
 		</qandaset>
-		</para>
-	</simplesect>
+	</para>
 </chapter>

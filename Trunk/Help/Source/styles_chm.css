@@ -289,3 +289,8 @@ code.function {
   font-size: 130%;
 }
 
+/* Make space between answer and question in FAQ */
+tr.answer td {
+  border-bottom: solid 1em rgb(255,255,255);
+}
+

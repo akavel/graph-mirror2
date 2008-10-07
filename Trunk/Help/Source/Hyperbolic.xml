@@ -124,10 +124,12 @@
 
 
 	<section id="atanh" xreflabel="atanh">
-		<title><markup>atanh</markup> function</title>
+
 		<indexterm><primary><function>atanh</function> function</primary></indexterm>
 		<indexterm><primary>hyperbolic tangent</primary></indexterm>
 		<indexterm><primary>inverse hyperbolic tangent</primary></indexterm>
+
+		<title><markup>atanh</markup> function</title>
 		<para>
 			Returns the inverse hyperbolic tangent of the argument.
 		</para>

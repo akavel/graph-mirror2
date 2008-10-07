@@ -261,7 +261,7 @@
 			<title>Description</title>
 			<para>
 				The <function>dnorm</function> function is the probability density of the normal distribution, also called Gaussian distribution.
-				<parameter>x</parameter> is the variate, <parameter>&mu;</parameter> is the mean value and &sigma; is the standard deviation.
+				<parameter>x</parameter> is the variate, also known as the random variable, <parameter>&mu;</parameter> is the mean value and &sigma; is the standard deviation.
 				<parameter>&mu;</parameter> and &sigma; are optional
 				and if left out the standard normal distribution is used where <parameter>&mu;</parameter>=0 and &sigma;=1.
 				<parameter>x</parameter>, <parameter>&mu;</parameter> and &sigma; may be any <glossterm baseform="numeric expression">numeric expressions</glossterm>

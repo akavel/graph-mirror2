@@ -21,7 +21,7 @@
 			<member>Graph uses BMGLib for saving images as Portable Network Graphics:</member>
 			<member><orgname>BMGLib is Copyright &copy; 2000-2002 M. Scott Heiman</orgname></member>
 			<member><orgname>libPNG is Copyright &copy; 1995, 1996 Guy Eric Schalnat, Group 42, Inc.</orgname></member>
-			<member><orgname>zLib Copyright &copy; 1995-1998 Jean-loup Gailly.</orgname></member>
+			<member><orgname>zLib Copyright &copy; 1995-1998 Jean-Loup Gailly.</orgname></member>
 		</simplelist>
 
 		<simplelist>
@@ -55,6 +55,7 @@
 		</simplelist>
 	</simplesect>
 
+	<?hard-pagebreak?>
 	<simplesect>
 		<title>Translations</title>
 		<para>

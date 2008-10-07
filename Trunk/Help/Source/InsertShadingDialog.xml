@@ -23,7 +23,7 @@
 	<simplesect>
 		<title>Shading</title>
 		<para>
-  		<graphic fileref="DialogShade1.png" align="center"/>
+  		<graphic fileref="DialogShade1.png" align="center" scale="80"/>
 			In the <guilabel>Shading</guilabel> tab you can choose between the following types of shadings:
 		</para>
 
@@ -109,7 +109,7 @@
 			At the <guilabel>Options</guilabel> tab shown below, you may change the options for the shading.
 		</para>
 
-		<graphic fileref="DialogShade2.png"/>
+		<graphic fileref="DialogShade2.png" align="center" scale="60"/>
 
 		<variablelist>
 			<varlistentry>
@@ -189,7 +189,7 @@
 			The dialog with the <guilabel>2nd function</guilabel> tab is shown below.
 		</para>
 
-		<graphic fileref="DialogShade3.png"/>
+		<graphic fileref="DialogShade3.png" align="center" scale="60"/>
 
 		<variablelist>
 			<varlistentry>

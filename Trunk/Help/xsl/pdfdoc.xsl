@@ -7,12 +7,14 @@
   <xsl:import href="./defaults.xsl"/>
   <xsl:import href="./titlepage.xsl"/>
 
+  <xsl:param name="fop1.extensions" select="1" />
   <xsl:param name="paper.type" select="'A4'"/>
   <xsl:param name="double.sided" select="0"/>
   <xsl:param name="variablelist.as.blocks" select="1"/>
   <xsl:param name="symbol.font.family">Symbol,ZapfDingbats</xsl:param>
   <xsl:param name="body.start.indent">0pt</xsl:param> <!-- Body text indention -->
   <xsl:param name="title.margin.left">-1em</xsl:param> <!-- Body text indention -->
+  <xsl:param name="generate.index" select="0" /> <!-- Don't generate index for pdf file -->
 
   <xsl:param name="table.frame.border.thickness" select="'1pt'"/>
   <xsl:param name="table.frame.border.style" select="'solid'"/>
@@ -104,12 +106,7 @@
   </xsl:template>
 
   <xsl:attribute-set name="xref.properties">
-    <xsl:attribute name="color">
-      <xsl:choose>
-        <xsl:when test="self::ulink">blue</xsl:when>
-        <xsl:otherwise>red</xsl:otherwise>
-      </xsl:choose>
-    </xsl:attribute>
+    <xsl:attribute name="color">blue</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:template match="markup[@role = 'symbolfont']">
@@ -122,12 +119,10 @@
 
   <xsl:attribute-set name="section.title.level1.properties">
     <xsl:attribute name="font-size">
-      <xsl:value-of select="$body.font.master * 1.60"/>
+      <xsl:value-of select="$body.font.master * 2.00"/>
       <xsl:text>pt</xsl:text>
     </xsl:attribute>
-    <xsl:attribute name="space-after.minimum">-0.5em</xsl:attribute>
-    <xsl:attribute name="space-after.optimum">-0.5em</xsl:attribute>
-    <xsl:attribute name="space-after.maximum">-0.5em</xsl:attribute>
+    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="section.title.level2.properties">
@@ -135,9 +130,7 @@
       <xsl:value-of select="$body.font.master * 1.40"/>
       <xsl:text>pt</xsl:text>
     </xsl:attribute>
-    <xsl:attribute name="space-after.minimum">-0.8em</xsl:attribute>
-    <xsl:attribute name="space-after.optimum">-0.8em</xsl:attribute>
-    <xsl:attribute name="space-after.maximum">-0.8em</xsl:attribute>
+    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="section.title.level3.properties">
@@ -145,11 +138,26 @@
       <xsl:value-of select="$body.font.master"/>
       <xsl:text>pt</xsl:text>
     </xsl:attribute>
-    <xsl:attribute name="space-after.minimum">-1.0em</xsl:attribute>
-    <xsl:attribute name="space-after.optimum">-1.0em</xsl:attribute>
-    <xsl:attribute name="space-after.maximum">-1.0em</xsl:attribute>
     <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
   </xsl:attribute-set>
+
+  <xsl:attribute-set name="normal.para.spacing">
+    <xsl:attribute name="space-before.optimum">0em</xsl:attribute>
+    <xsl:attribute name="space-before.minimum">0em</xsl:attribute>
+    <xsl:attribute name="space-before.maximum">0em</xsl:attribute>
+    <xsl:attribute name="space-after.optimum">1.0em</xsl:attribute>
+    <xsl:attribute name="space-after.minimum">0.8em</xsl:attribute>
+    <xsl:attribute name="space-after.maximum">1.2em</xsl:attribute>
+  </xsl:attribute-set>
+
+  <!-- Make it possible to use <?hard-pagebreak?> in the xml to force a hard page break -->
+  <xsl:template match="processing-instruction('hard-pagebreak')">
+    <fo:block break-after='page'/>
+  </xsl:template>
+
+  <!-- Remove the <indexterm> from the processing as it else will prevent keep-with-next from working
+       because the <indexterm> will be between <title> and <para> in the output. -->
+  <xsl:template match="indexterm" />
 
 </xsl:stylesheet>
 
