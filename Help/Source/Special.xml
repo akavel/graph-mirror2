@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<!DOCTYPE chapter SYSTEM "dtd/dblite.dtd" [
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
@@ -189,7 +189,7 @@
 		<simplesect>
 			<title>Remarks</title>
 			<para>
-				For real values of <parameter>z</parameter> when <parameter>z</parameter> &lt; -1/e, the <function>W</function> function will evaluate to values with an imaginary part.
+				For real values of <parameter>z</parameter> when <mathphrase><parameter>z</parameter> &lt; -1/e</mathphrase>, the <function>W</function> function will evaluate to values with an imaginary part.
 			</para>
 		</simplesect>
 	</section>

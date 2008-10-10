@@ -1,5 +1,5 @@
 Graph is an appliation used for drawing functions in a coordinate system. The program is licensed under the GNU Gneral Public License. This pacakge contains the following parts necesarry to rebuild the application:
-
+=============
 Graph
 The program itself written by Ivan Johansen in Borland C++ Builder. The GPL license (see COPYING) covers all files found in the Graph catalog and subcatalogs. 
 
@@ -18,8 +18,10 @@ Library for handling mathematical functions written by Ivan Johansen specific fo
 Thumbnail Handler
 Shell extension for showing thumbnails of grf files. This is written in Delphi and uses the EasyNSE library. It is basically just an example that follows EasyNSE modified to show grf files.
 
-The following third party libraries are needed to build Graph:
 
+
+The following third party libraries are needed to build Graph:
+=============
 BMGLib
 This is a stripped down version of BMGLib (http://members.cox.net/scottheiman/bmglib.htm) used for writing PNG files. 
 
@@ -43,4 +45,16 @@ The Tnt Delphi Unicode Controls (http://www.tntware.com/delphicontrols/unicode/)
 
 
 The program can be compiled with Borland C++ Builder 6 Pro/Enterprise. To compile with other versions some changes to the code is probably requeried.
- 
+
+
+The following is required to compile the help file in the Help directory:
+=============
+Python 2.5 (http://python.org)
+Python libxml2 bindings (http://users.skynet.be/sbi/libxml-python/)
+Programs from the Tools package:
+  - Microsoft HTML Help Compiler
+  - xmllint
+  - xsltproc
+  - The FOP processor
+  - The DocBook stylesheet files
+   

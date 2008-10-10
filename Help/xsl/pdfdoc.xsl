@@ -11,10 +11,12 @@
   <xsl:param name="paper.type" select="'A4'"/>
   <xsl:param name="double.sided" select="0"/>
   <xsl:param name="variablelist.as.blocks" select="1"/>
-  <xsl:param name="symbol.font.family">Symbol,ZapfDingbats</xsl:param>
+  <!--xsl:param name="symbol.font.family">Symbol,ZapfDingbats</xsl:param-->
+  <xsl:param name="symbol.font.family">serif</xsl:param> <!-- This avoids a strange warning -->
   <xsl:param name="body.start.indent">0pt</xsl:param> <!-- Body text indention -->
   <xsl:param name="title.margin.left">-1em</xsl:param> <!-- Body text indention -->
   <xsl:param name="generate.index" select="0" /> <!-- Don't generate index for pdf file -->
+  <xsl:param name="hyphenate">false</xsl:param>  <!-- Disable hyphernation. It doesn't seem to work anyway. -->
 
   <xsl:param name="table.frame.border.thickness" select="'1pt'"/>
   <xsl:param name="table.frame.border.style" select="'solid'"/>
@@ -41,7 +43,7 @@
   </xsl:template>
 
   <xsl:template match="guilabel">
-    <fo:inline font-family="Helvetica">
+    <fo:inline font-family="Helvetica" font-style="italic">
       <xsl:call-template name="inline.charseq"/>
     </fo:inline>
   </xsl:template>

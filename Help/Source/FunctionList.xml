@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<!DOCTYPE chapter SYSTEM "dtd/dblite.dtd" [
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
@@ -37,6 +37,7 @@
 			<?dbhtml table-width="90%" ?>
 			<tgroup cols="2">
 				<colspec colnum="1" colwidth="1.7cm"/>
+				<colspec colnum="2" colwidth="*"/>
 				<thead>
 					<row>
 						<entry>Constant</entry>
@@ -167,7 +168,7 @@
 			<?dbhtml table-width="90%" ?>
 			<tgroup cols="2">
 				<colspec colnum="1" colname="col1" colwidth="1.7cm"/>
-				<colspec colnum="2" colname="col2"/>
+				<colspec colnum="2" colname="col2" colwidth="*"/>
 				<thead>
 					<row>
 						<entry>Function</entry>
