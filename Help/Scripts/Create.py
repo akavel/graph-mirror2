@@ -6,6 +6,9 @@ import codecs
 Languages = ["Danish", "Croatian", "Spanish", "German", "Swedish", "French"]
 LocalePath = "d:\\Projects\\Graph\\Locale\\"
 
+def Encode(Str):
+    return Str.replace('"', '\\"')
+
 os.chdir("../Source")
 Files = glob.glob("*.xml")
 os.system("..\\Scripts\\xml2po.py -k -o ..\\po\\GraphHelp.pot " + " ".join(Files))
@@ -30,5 +33,5 @@ for Language in Languages:
                 if Str2 == Str:
                     Str2 = Lang.ugettext(Str + ":")[:-1]
                 if Str2 != Str:
-                    OutFile.write("msgstr \"%s\"\n" % (Str2,))
+                    OutFile.write('msgstr "%s"\n' % (Encode(Str2),))
                     IgnoreNext = True
