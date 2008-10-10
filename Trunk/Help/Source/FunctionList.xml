@@ -36,7 +36,7 @@
 		<informaltable>
 			<?dbhtml table-width="90%" ?>
 			<tgroup cols="2">
-				<colspec colnum="1" colwidth="1.7cm"/>
+				<colspec colnum="1" colwidth="1.9cm"/>
 				<colspec colnum="2" colwidth="*"/>
 				<thead>
 					<row>
@@ -167,7 +167,7 @@
 		<informaltable>
 			<?dbhtml table-width="90%" ?>
 			<tgroup cols="2">
-				<colspec colnum="1" colname="col1" colwidth="1.7cm"/>
+				<colspec colnum="1" colname="col1" colwidth="1.9cm"/>
 				<colspec colnum="2" colname="col2" colwidth="*"/>
 				<thead>
 					<row>

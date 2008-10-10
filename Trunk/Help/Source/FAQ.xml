@@ -9,6 +9,7 @@
 	<indexterm><primary>tricks</primary></indexterm>
 	<para>
 		<qandaset>
+			<?dbfo label-width="$LabelWidth"?>
 			<qandaentry>
 				<question>
 					<para>
