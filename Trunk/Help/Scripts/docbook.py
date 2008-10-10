@@ -59,7 +59,7 @@ class docbookXmlMode:
         "Returns array of tags to be considered 'final'."
         return ['para', 'formalpara', 'simpara',
                 'releaseinfo', 'revnumber', 'title',
-                'date', 'term', 'programlisting', 'menuchoice', 'guilabel', 'guimenu', 'guimenuitem'] + self.objects + self.lists
+                'date', 'term', 'programlisting', 'menuchoice', 'guilabel', 'guimenu', 'guimenuitem', 'glossterm'] + self.objects + self.lists
 
     def getSpacePreserveTags(self):
         "Returns array of tags in which spaces are to be preserved."

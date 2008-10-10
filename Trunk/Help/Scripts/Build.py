@@ -12,6 +12,7 @@ print "Copying image files..."
 os.system("XCopy ..\\Images\\Common\\*.* ..\\Temp\\Images /I /Q /Y > NUL")
 os.system("XCopy ..\\Images\\English\\*.* ..\\Temp\\Images /I /Q /Y > NUL")
 os.system("XCopy ..\\Images\\dtd ..\\Temp\\Images\\dtd /I /Q /Y > NUL")
+os.system("XCopy ..\\Source\\dtd ..\\Temp\\dtd /S /I /Q /Y > NUL")
 os.system("XCopy ..\\Source\\*.css ..\\Temp /Q /Y > NUL")
 
 os.chdir("..\\Source")
@@ -33,6 +34,6 @@ for Lang in Languages:
 
     print "Creating %s CHM file..." % Lang[:1]
     os.system(ToolsDir + "xsltproc.exe --nonet --xinclude --stringparam htmlhelp.chm ..\\Graph-%s.chm --output ..\\Temp\\Graph ..\\xsl\\htmlhelp.xsl %s"  % (Lang[0], InFile))
-    os.system(ToolsDir + "hhc.exe ..\\Temp\\htmlhelp.hhp")
+    os.system(ToolsDir + "hhc.exe ..\\Temp\\htmlhelp.hhp > NUL")
 
 os.remove(".xml2po.mo")

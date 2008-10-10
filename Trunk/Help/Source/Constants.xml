@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE chapter SYSTEM "../dtd/dblite.dtd" [
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE chapter SYSTEM "dtd/dblite.dtd" [
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ] >
