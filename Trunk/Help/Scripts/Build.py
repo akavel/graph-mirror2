@@ -35,11 +35,16 @@ def HandleLanguage(Language, Lang, Dict):
     print "Creating %s PDF file..." % (Language,)
     InFile = "..\\Temp\\Graph2.tmp" if Language != "English" else "..\\Temp\\Graph.tmp"
     ReplaceStrings(InFile, Dict)
-    os.system(ToolsDir + "xsltproc.exe --nonet --xinclude --output ..\\Temp\\Graph.fo ..\\xsl\\pdfdoc.xsl " + InFile)
-    os.system(ToolsDir + "fop\\fop.bat -q -fo ..\\Temp\\Graph.fo -pdf ..\\Graph-%s.pdf" % (Language,))
+
+    StyleSheet = "..\\xsl\\pdfdoc.xsl" if not os.path.exists("..\\xsl\\%s\\pdfdoc.xsl" % (Language,)) else "..\\xsl\\%s\\pdfdoc.xsl" % (Language,)
+    os.system(ToolsDir + "xsltproc.exe --nonet --xinclude --output ..\\Temp\\Graph.fo %s %s" % (StyleSheet, InFile))
+
+    UserConfig = "" if not os.path.exists("..\\xsl\\%s\\userconfig.xml" % (Language,)) else "-c ..\\xsl\\%s\\userconfig.xml" % (Language,)
+    os.system(ToolsDir + "fop\\fop.bat -q %s -fo ..\\Temp\\Graph.fo -pdf ..\\Graph-%s.pdf" % (UserConfig, Language,))
 
     print "Creating %s CHM file..." % (Language,)
-    os.system(ToolsDir + "xsltproc.exe --nonet --xinclude --stringparam htmlhelp.chm ..\\Graph-%s.chm --output ..\\Temp\\Graph ..\\xsl\\htmlhelp.xsl %s"  % (Language, InFile))
+    StyleSheet = "..\\xsl\\htmlhelp.xsl" if not os.path.exists("..\\xsl\\%s\\htmlhelp.xsl" % (Language,)) else "..\\xsl\\%s\\htmlhelp.xsl" % (Language,)
+    os.system(ToolsDir + "xsltproc.exe --nonet --xinclude --stringparam htmlhelp.chm ..\\Graph-%s.chm --output ..\\Temp\\Graph %s %s"  % (Language, StyleSheet, InFile))
     os.system(ToolsDir + "hhc.exe ..\\Temp\\htmlhelp.hhp > NUL")
 
 
