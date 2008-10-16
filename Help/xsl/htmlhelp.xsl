@@ -3,6 +3,7 @@
 <xsl:import href="./db_htmlhelp.xsl"/>
 <xsl:import href="./defaults.xsl"/>
 
+<xsl:param name="htmlhelp.title">Graph</xsl:param>
 <xsl:param name="suppress.navigation" select="0"/>
 <xsl:param name="toc.section.depth" select="4"/>
 <xsl:param name="htmlhelp.force.map.and.alias" select="1"/>
@@ -11,9 +12,6 @@
 <xsl:param name="htmlhelp.hhc.folders.instead.books" select="1"/>
 <xsl:param name="htmlhelp.hhc.binary" select="0"/>
 <xsl:param name="htmlhelp.use.hhk" select="0"/>
-<xsl:param name="htmlhelp.hhp.tail">
-[FILES]
-</xsl:param>
 
 <xsl:param name="img.src.path">Images/</xsl:param>
 <xsl:param name="glossterm.auto.link" select="1"/>
@@ -30,7 +28,6 @@
 <xsl:param name="ignore.image.scaling" select="1"/>
 <xsl:param name="generate.index" select="1" />
 
-<xsl:template match="markup[@role = 'fo']">
-</xsl:template>
+<xsl:template match="markup[@role = 'fo']" />
 
 </xsl:stylesheet>

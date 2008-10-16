@@ -26,7 +26,7 @@
 
 		<simplelist>
 			<member>Graph uses dxgettext as translation library:</member>
-			<member><orgname>dxgettext is Copyright by Lars B. Dybdahl (<email>Lars@dybdahl.dk</email>) and others</orgname></member>
+			<member><orgname>dxgettext is Copyright by Lars B. Dybdahl <email>Lars@dybdahl.dk</email> and others</orgname></member>
 			<member><ulink url="http://dybdahl.dk/dxgettext/"/></member>
 		</simplelist>
 

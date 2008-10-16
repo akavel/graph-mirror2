@@ -18,6 +18,7 @@
   <xsl:param name="generate.index" select="0" /> <!-- Don't generate index for pdf file -->
   <xsl:param name="hyphenate">false</xsl:param>  <!-- Disable hyphernation. It doesn't seem to work anyway. -->
 
+
   <xsl:param name="table.frame.border.thickness" select="'1pt'"/>
   <xsl:param name="table.frame.border.style" select="'solid'"/>
   <xsl:param name="table.frame.border.color" select="'#7099C5'"/>
@@ -36,19 +37,19 @@
     procedure after
   </xsl:param>
 
-  <xsl:template match="menuchoice">
-    <fo:inline font-family="Helvetica">
-      <xsl:call-template name="process.menuchoice"/>
-    </fo:inline>
-  </xsl:template>
-
   <xsl:template match="guilabel">
     <fo:inline font-family="Helvetica" font-style="italic">
       <xsl:call-template name="inline.charseq"/>
     </fo:inline>
   </xsl:template>
 
-  <xsl:template match="guibutton">
+  <xsl:template match="menuchoice">
+    <fo:inline font-family="Helvetica">
+      <xsl:call-template name="process.menuchoice"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="guibutton|guimenu|guisubmenu|guimenuitem">
     <fo:inline font-family="Helvetica">
       <xsl:call-template name="inline.charseq"/>
     </fo:inline>
