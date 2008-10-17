@@ -15,14 +15,19 @@ os.system("..\\Scripts\\xml2po.py -k -o ..\\po\\GraphHelp.pot " + " ".join(Files
 os.chdir("../po")
 
 for Language in Languages:
+    print
+    print Language + ":"
+    # Merge with old translation
+    os.system("..\\..\\Tools\\msgmerge -U -v -q --backup=off GraphHelp_%s.po GraphHelp.pot" % (Language,))
+
     # This is a hack to trick gettext into laoding the .mo file
     Lang = gettext.translation(LocalePath + Language, languages=["test"])
     Lang.install()
 
-    InFile = codecs.open("GraphHelp.pot", "r", "utf-8")
-    OutFile = codecs.open("GraphHelp_" + Language + ".po", "w", "utf-8")
+    Lines = codecs.open("GraphHelp_%s.po" % (Language,), "r", "utf-8").readlines()
+    OutFile = codecs.open("GraphHelp_%s.po" % (Language,), "w", "utf-8")
     IgnoreNext = False
-    for Line in InFile:
+    for Line in Lines:
         if not IgnoreNext:
             OutFile.write(Line)
         IgnoreNext = False
