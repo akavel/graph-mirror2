@@ -373,7 +373,7 @@ bool TData::ImportData(const std::string &FileName)
     Series->Font->Assign(Property.DefaultPointLabelFont);
     Series->PointList.swap(Points[I]);
     Series->SetLegendText(CreatePointSeriesDescription());
-    ElemList.push_back(Series);
+    Add(Series);
     UndoList.Push(TUndoAdd(Series));
   }
 

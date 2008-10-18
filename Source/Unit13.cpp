@@ -109,10 +109,10 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       std::vector<std::string> Arguments = Func32::FindUnknowns(ToString(Edit3->Text));
       std::vector<long double> Values(Arguments.size(), 1);
 
-      std::wstring ModelName = ToWString(ListBox1->Items->Strings[ListBox1->ItemIndex]);
-      TUserModel &Model = Data.UserModels[ModelName];
       if(ListBox1->ItemIndex != -1)
       {
+        std::wstring ModelName = ToWString(ListBox1->Items->Strings[ListBox1->ItemIndex]);
+        TUserModel &Model = Data.UserModels[ModelName];
         for(unsigned I = 0; I < Model.Defaults.size(); I++)
           Values[I] = Model.Defaults[I].second;
       }

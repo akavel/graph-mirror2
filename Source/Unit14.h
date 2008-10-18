@@ -32,6 +32,7 @@
 #include "TntComCtrls.hpp"
 #include "TntMenus.hpp"
 #include "TntStdCtrls.hpp"
+#include "SaveDialogEx.h"
 //---------------------------------------------------------------------------
 class TForm14 : public TTntForm
 {
@@ -58,7 +59,7 @@ __published:	// IDE-managed Components
   TOpenDialog *OpenDialog1;
   TFontDialog *FontDialog1;
   TTntMenuItem *Popup_Export;
-  TSaveDialog *SaveDialog1;
+  TSaveDialogEx *SaveDialog1;
   TTntPageControl *PageControl1;
   TTntTabSheet *TabSheet1;
   TTntTabSheet *TabSheet2;
