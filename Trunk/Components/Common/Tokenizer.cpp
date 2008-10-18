@@ -52,17 +52,12 @@ void TTokenizer::Extract(std::string &S)
   NextDelimiter = FDelimiter;
 }
 //---------------------------------------------------------------------------
-void TTokenizer::Ignore(unsigned Length)
+//Ignore the next Count tokens
+void TTokenizer::Ignore(unsigned Count)
 {
-  while(Length--)
-  {
-    if(Iter == Str.end())
-    {
-      FFailed = true;
-      return;
-    }
-    ++Iter;
-  }
+  std::string Temp;
+  while(Count--)
+    Extract(Temp);
 }
 //---------------------------------------------------------------------------
 
