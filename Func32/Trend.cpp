@@ -506,6 +506,8 @@ double Correlation(const std::vector<TDblPoint> &Points, const TFunc &Func)
     Sy += Sqr(Iter->y - Func(Iter->x));
   }
 
+  if(St == 0) //Prevent division by zero. St==0 means that the line is a perfect fit.
+    return 1;
   return 1 - Sy/St;
 }
 //---------------------------------------------------------------------------
