@@ -202,6 +202,8 @@ BEGIN
   556 "Edit trendline"
   557 "Categories:"     //Customize toolbar dialog
   558 "<Language> translation by <Translator>"  //Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
+  559 "The program seems to be stuck in an infinite loop.\nIf you cancel the operation the program will become unstable.\nYou should therefore save your data under a new name and restart the application." //An error message that hopefully is never seen by the user
+  560 "Thread is not responding"
 
   600 "This Tip of the day can give you a lot of information about the program that most users don't know."                                                       //Tip of the Day
   601 "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"                                                                //Tip of the Day
@@ -270,6 +272,8 @@ BEGIN
 
 //Error messages in the VCL
 "Cannot open clipboard"  //Another application has locked the clipboard
+
+"Install for all users"  //Text from the installation
 
 "Local"
 "Global"

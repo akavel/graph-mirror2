@@ -658,7 +658,7 @@ object Form14: TForm14
     Left = 88
     Top = 328
   end
-  object SaveDialog1: TSaveDialog
+  object SaveDialog1: TSaveDialogEx
     DefaultExt = 'csv'
     Options = [ofOverwritePrompt, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing]
     Left = 120

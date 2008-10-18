@@ -787,7 +787,7 @@ void TForm1::LoadSettings(void)
   const char *Models =  "[Hyperbolic fit]\nModel=$a+$b/x\n$a=1\n$b=1\n"
                           "[Sinusoidal]\nModel=$a+$b*sin($c*x+$d)\n$a=1\n$b=1\n$c=1\n$d=1\n"
                           "[Rational function]\nModel=($a+$b*x)/(1+$c*x+$d*x^2)\n$a=1\n$b=1\n$c=0\n$d=0\n"
-                          "[Saturation-Growth rate]\nModel=$a/($b+x)\n$a=1\n$b=1\n"
+                          "[Saturation-Growth rate]\nModel=$a*x/($b+x)\n$a=1\n$b=1\n"
                           "[BET model]\nModel=x/($a+$b*x-($a+$b)*x^2)\n$a=1\n$b=1\n"
                           "[Reciprocal]\nModel=1/($a*x+$b)\n$a=1\n$b=1\n"
                           "[Exponential association]\nModel=$a+$b*exp($c*x)\n$a=0\n$b=1\n$c=-1\n";
@@ -3787,6 +3787,7 @@ void __fastcall TForm1::Image1Click(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+
 
 
 

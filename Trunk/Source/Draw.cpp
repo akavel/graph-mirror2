@@ -217,7 +217,7 @@ bool TDraw::Wait()
       {
         Loop = false;
         if(Thread->IdleEvent.WaitFor(1000) == wrTimeout)
-          if(MessageBox("The program seems to be stuck in an infinite loop.\nIf you cancel the operation the program will become unstable.\nYou should therefore save your data under a new name and restart the application.", "Thread is not responding", MB_RETRYCANCEL|MB_ICONSTOP) == IDCANCEL)
+          if(MessageBox(LoadRes(559), LoadRes(560), MB_RETRYCANCEL|MB_ICONSTOP) == IDCANCEL)
             AbortWait = true;
           else
             Loop = true;

@@ -20,6 +20,8 @@ ASAP
 - Adjust axes size (especially when printed to be read by blind users)
 - Grid: Replace dotted lines with dots/crosses where the grids intersect
 - Create a real forum. Look at phpBB
+- Numbers next to tick marks (currently F9)
+- Show end points (arrows) at each line segment.
 
 Graph 4.3
 - Animation Player: Add buttons to move to first and last frame for easy compare.

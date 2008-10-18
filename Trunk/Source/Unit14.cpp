@@ -21,6 +21,7 @@
 #pragma link "TntComCtrls"
 #pragma link "TntMenus"
 #pragma link "TntStdCtrls"
+#pragma link "SaveDialogEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
@@ -44,7 +45,7 @@ __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
   PageControl1->ActivePage = TabSheet1;
 
   ScaleForm(this);
-}
+}              
 //---------------------------------------------------------------------------
 void TForm14::Translate()
 {
