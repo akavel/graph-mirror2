@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-09-14 12:39Romance Standard Time\n"
-"PO-Revision-Date: 2008-10-19 18:14+0100\n"
+"PO-Revision-Date: 2008-10-19 23:36+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -54,9 +54,8 @@ msgid "complex number"
 msgstr "komplekst tal"
 
 #. Trigonometric.xml:22(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the sine of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a real number, the result will be in the range -1 to 1."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner sinus til vinklen <placeholder-2/>, der kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-6/> eller et <placeholder-7/>. Hvis <placeholder-8/> er et reelt tal, ligger resultatet på intervallet -1 til 1."
 
 #. Trigonometric.xml:31(title) Trigonometric.xml:62(title) Trigonometric.xml:92(title) Trigonometric.xml:200(title) Trigonometric.xml:230(title) Trigonometric.xml:260(title) Trigonometric.xml:344(title) Special.xml:190(title) Special.xml:217(title) PowerAndLog.xml:92(title) Constants.xml:25(title)
 msgid "Remarks"
@@ -75,9 +74,8 @@ msgid "Returns the cosine of the argument."
 msgstr "Returnerer cosinus til argumentet."
 
 #. Trigonometric.xml:53(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the cosine of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a real number, the result will be in the range -1 to 1."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner cosinus til vinklen <placeholder-2/>, der kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-6/> eller et <placeholder-7/>. Hvis <placeholder-8/> er et reelt tal, ligger resultatet på intervallet -1 til 1."
 
 #. Trigonometric.xml:74(primary) Trigonometric.xml:157(primary) InsertTangentDialog.xml:10(primary)
 msgid "tangent"
@@ -85,12 +83,11 @@ msgstr "tangens"
 
 #. Trigonometric.xml:75(para)
 msgid "Returns the tangent of the argument."
-msgstr ""
+msgstr "Returner tangens til argumentet."
 
 #. Trigonometric.xml:84(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the tangent of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner tangens til vinklen <placeholder-2/>, der kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-6/> eller et <placeholder-7/>."
 
 #. Trigonometric.xml:96(glossterm) Special.xml:108(glossterm) Rounding.xml:23(glossterm) Rounding.xml:49(glossterm) Rounding.xml:72(glossterm) Rounding.xml:96(glossterm) Rounding.xml:120(glossterm) PowerAndLog.xml:94(glossterm) Glossary.xml:58(glossterm) Glossary.xml:59(primary)
 msgid "integer"
@@ -98,7 +95,7 @@ msgstr "heltal"
 
 #. Trigonometric.xml:93(para)
 msgid "For arguments with a large magnitude, the function will begin to lose precision. <placeholder-1/> is undefined at <placeholder-2/>, where p is an <placeholder-3/>, but the function returns a very large number if <placeholder-4/> is near the undefined value."
-msgstr ""
+msgstr "For store argumenter vil funktionen begynde at miste præcision. <placeholder-1/> er udefineret for <placeholder-2/>, hvor p er et <placeholder-3/>; men funktionen returnerer et meget stort tal, hvis <placeholder-4/> er tæt på den udefinerede værdi."
 
 #. Trigonometric.xml:108(primary)
 msgid "inverse sine"
@@ -106,12 +103,11 @@ msgstr "invers sinus"
 
 #. Trigonometric.xml:109(para)
 msgid "Returns the inverse sine of the argument."
-msgstr ""
+msgstr "Returnerer invers sinus til argumentet."
 
 #. Trigonometric.xml:118(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse sine of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any numeric expression that evaluates to a <placeholder-5/>. This is the reverse of the <placeholder-6/> function."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner invers sinus til vinklen <placeholder-2/>, der kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>. Dette er den omvendte af funktionen <placeholder-6/>."
 
 #. Trigonometric.xml:133(primary)
 msgid "inverse cosine"
@@ -119,12 +115,11 @@ msgstr "invers cosinus"
 
 #. Trigonometric.xml:134(para)
 msgid "Returns the inverse cosine of the argument."
-msgstr ""
+msgstr "Returnerer invers cosinus til argumentet."
 
 #. Trigonometric.xml:143(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse cosine of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/>. This is the reverse of the <placeholder-7/> function."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner invers cosinus til vinklen <placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-6/>. Dette er den omvendte af funktionen <placeholder-7/>."
 
 #. Trigonometric.xml:158(primary)
 msgid "inverse tangent"
@@ -132,94 +127,87 @@ msgstr "invers tangens"
 
 #. Trigonometric.xml:159(para)
 msgid "Returns the inverse tangent of the argument."
-msgstr ""
+msgstr "Returnerer invers tangens til argumentet."
 
 #. Trigonometric.xml:168(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse tangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a real number. This is the reverse of the <placeholder-6/> function."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner invers tangens til vinklen <placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et reelt tal. Dette er den omvendte af funktionen <placeholder-6/>."
 
 #. Trigonometric.xml:182(primary) Trigonometric.xml:272(primary)
 msgid "secant"
-msgstr ""
+msgstr "sekans"
 
 #. Trigonometric.xml:183(para)
 msgid "Returns the secant of the argument."
-msgstr ""
+msgstr "Returnerer sekans til argumentet."
 
 #. Trigonometric.xml:192(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the secant of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner sekans til vinklen <placeholder-2/>, der kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> er det samme som <placeholder-5/>. <placeholder-6/> kan være et hvilket som helst <placeholder-7/>, der evalueres til et <placeholder-8/> eller et <placeholder-9/>."
 
 #. Trigonometric.xml:212(primary) Trigonometric.xml:298(primary)
 msgid "cosecant"
-msgstr ""
+msgstr "cosekans"
 
 #. Trigonometric.xml:213(para)
 msgid "Returns the cosecant of the argument."
-msgstr ""
+msgstr "Returnerer cosekans til argumentet."
 
 #. Trigonometric.xml:222(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the cosecant of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner cosekans til vinklen <placeholder-2/>, der kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> er det samme som <placeholder-5/>. <placeholder-6/> kan være et hvilket som helst <placeholder-7/>, der evalueres til et <placeholder-8/> eller et <placeholder-9/>."
 
 #. Trigonometric.xml:242(primary) Trigonometric.xml:324(primary)
 msgid "cotangent"
-msgstr ""
+msgstr "cotangens"
 
 #. Trigonometric.xml:243(para)
 msgid "Returns the cotangent of the argument."
-msgstr ""
+msgstr "Returnerer cotangens til argumentet."
 
 #. Trigonometric.xml:252(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the cotangent of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any numeric expression that evaluates to a <placeholder-7/> or a <placeholder-8/>."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner cotangens til vinklen <placeholder-2/>, der kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> er det samme som <placeholder-5/>. <placeholder-6/> kan være et hvilket som helst numerisk udtryk, der evalueres til et <placeholder-7/> eller et <placeholder-8/>."
 
 #. Trigonometric.xml:273(primary)
 msgid "inverse secant"
-msgstr ""
+msgstr "invers sekans"
 
 #. Trigonometric.xml:274(para)
 msgid "Returns the inverse secant of the argument."
-msgstr ""
+msgstr "Returnerer invers sekans til argumentet."
 
 #. Trigonometric.xml:283(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse secant of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner invers sekans til vinklen <placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> er det samme som <placeholder-5/>. <placeholder-6/> kan være et hvilket som helst <placeholder-7/>, der evalueres til et <placeholder-8/>. Dette er den omvendte af funktionen <placeholder-9/>."
 
 #. Trigonometric.xml:299(primary)
 msgid "inverse cosecant"
-msgstr ""
+msgstr "invers cosekans"
 
 #. Trigonometric.xml:300(para)
 msgid "Returns the inverse cosecant of the argument."
-msgstr ""
+msgstr "Returnerer invers cosekans til argumentet."
 
 #. Trigonometric.xml:309(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse cosecant of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner invers cosekans til vinklen <placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> er det samme som <placeholder-5/>. <placeholder-6/> kan være et hvilket som helst <placeholder-7/>, der evalueres til et <placeholder-8/>. Dette er den omvendte af funktionen <placeholder-9/>."
 
 #. Trigonometric.xml:325(primary)
 msgid "inverse cotangent"
-msgstr ""
+msgstr "invers cotangens"
 
 #. Trigonometric.xml:326(para)
 msgid "Returns the inverse cotangent of the argument."
-msgstr ""
+msgstr "Returnerer invers cotangens til argumentet."
 
 #. Trigonometric.xml:335(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse cotangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
-msgstr "<placeholder-1/>-funktionen beregner sinus til en vinkel <placeholder-2/>, som kan være i <glossterm>radianer</glossterm> eller grader, afhængig af de aktuelle indstillinger. <placeholder-3/> kan være ethvert <glossterm>numerisk udtryk</glossterm>, der evalueres til et <glossterm>reelt tal</glossterm> eller et <glossterm>komplekst tal</glossterm>. Hvis <placeholder-4/> er et reelt tal, vil resultatet befinde sig i intervallet  -1 til 1."
+msgstr "Funktionen <placeholder-1/> beregner invers cotangens til vinklen <placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> er det samme som <placeholder-5/>. <placeholder-6/> kan være et hvilket som helst <placeholder-7/>, der evalueres til et <placeholder-8/>. Dette er den omvendte af funktionen <placeholder-9/>."
 
 #. Trigonometric.xml:345(para)
 msgid "The <placeholder-1/> function returns a value in the range ]-&pi;/2;&pi;/2] (]-90;90] when calculating in degrees), which is the most common definition, though some may define it to be in the range ]0;&pi;[."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer en værdi på intervallet ]-&pi;/2;&pi;/2] (]-90;90] når man regner i grader), hvilket er den mest almindelige definition. Nogle vil imidlertid definere det til at være på intervallet ]0;&pi;[."
 
 #. TableDialog.xml:8(title) TableDialog.xml:15(guimenuitem)
 msgid "Table"
@@ -279,11 +267,11 @@ msgstr ""
 
 #. Special.xml:7(title) FunctionList.xml:390(emphasis)
 msgid "Special"
-msgstr ""
+msgstr "Speciel"
 
 #. Special.xml:11(primary)
 msgid "numeric integral"
-msgstr ""
+msgstr "numerisk integral"
 
 #. Special.xml:12(primary)
 msgid "area"
@@ -291,7 +279,7 @@ msgstr "areal"
 
 #. Special.xml:13(para)
 msgid "Returns the numeric integral of the first argument from the second to the third argument."
-msgstr ""
+msgstr "Returnerer det numeriske integral af det første argument i intervallet fra det andet til det tredje argument."
 
 #. Special.xml:32(glossterm) Special.xml:61(glossterm) Special.xml:87(glossterm) Special.xml:160(glossterm) Special.xml:244(glossterm) Special.xml:267(glossterm) Piecewise.xml:70(glossterm) Piecewise.xml:94(glossterm) Piecewise.xml:119(glossterm) Piecewise.xml:142(glossterm) Piecewise.xml:167(glossterm)
 msgid "numeric expressions"
@@ -303,11 +291,11 @@ msgstr "reelle tal"
 
 #. Special.xml:22(para)
 msgid "The <placeholder-1/> function returns the numeric integral of <placeholder-2/> from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/> This integral is the same as the area between the function <placeholder-6/> and the x-axis from <placeholder-7/> to <placeholder-8/> where the area under the axis is counted negative. <placeholder-9/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric function. <placeholder-10/> and <placeholder-11/> may be any <placeholder-12/> that evaluate to <placeholder-13/>. <placeholder-14/> does not calculate the integral exactly. Instead the calculation is done using Simpson's formula through 100 iterations."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer det bestemte integral af <placeholder-2/> fra <placeholder-3/> til <placeholder-4/>. Dette skrives matematisk således: <placeholder-5/> Resultatet af integralet er det samme som arealet af punktmængden afgrænset af grafen for <placeholder-6/>, x-aksen og linjerne med ligningerne x = <placeholder-7/> og x = <placeholder-8/>, idet arealer af punktmængder under x-aksen betragtes som negative. <placeholder-9/> kan være et hvilket som helst funktionsudtryk med x som variabel, hvis funktionen bruges i en standardfunktion, og med t som variabel, hvis det er en parameterfunktion. <placeholder-10/> og <placeholder-11/> er <placeholder-12/>, der evalueres til <placeholder-13/>. <placeholder-14/> beregner ikke integralet eksakt, men beregner resultatet ved hjælp af Simpsons Regel med 100 trin."
 
 #. Special.xml:43(primary)
 msgid "summation"
-msgstr ""
+msgstr "sum"
 
 #. Special.xml:44(para)
 msgid "Returns the summation of the first argument evaluated for all integers from the second to the third parameter."
@@ -318,6 +306,8 @@ msgid ""
 "The <placeholder-1/> function returns the summation of <placeholder-2/> evaluated for all integers from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/>\n"
 "\t\t\t\t<placeholder-6/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function. <placeholder-7/> and <placeholder-8/> may be any <placeholder-9/> that evaluate to <placeholder-10/>."
 msgstr ""
+"Funktionen <placeholder-1/> returnerer summen af <placeholder-2/> evalueret for alle heltal fra <placeholder-3/> til <placeholder-4/>. Dette kan matematisk skrives som: <placeholder-5/>\n"
+"\t\t\t\t<placeholder-6/> kan være et hvilket som helst funktionsudtryk med x som variabel, hvis funktionen bruges i en standardfunktion, og med t som variabel, hvis det er en parameterfunktion eller en polær funktion. <placeholder-7/> og <placeholder-8/> er <placeholder-9/>, der evalueres til <placeholder-10/>."
 
 #. Special.xml:70(para)
 msgid "Returns the product of the first argument evaluated for all integers from the second to the third parameter."
@@ -355,7 +345,7 @@ msgstr ""
 
 #. Special.xml:161(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:117(glossterm) AxesDialog.xml:25(primary) AxesDialog.xml:205(glossterm) AxesDialog.xml:229(glossterm)
 msgid "complex numbers"
-msgstr ""
+msgstr "komplekse tal"
 
 #. Special.xml:158(para)
 msgid "The <placeholder-1/> function returns the result of the Euler beta function evaluated for <placeholder-2/> and <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluate to <placeholder-7/> or <placeholder-8/>. The <placeholder-9/> function relates to the <placeholder-10/> function as <placeholder-11/>."
@@ -423,27 +413,27 @@ msgstr ""
 
 #. SaveImageDialog.xml:8(title)
 msgid "Save as image"
-msgstr ""
+msgstr "Gem som billede"
 
 #. SaveImageDialog.xml:9(primary)
 msgid "save"
-msgstr ""
+msgstr "gem"
 
 #. SaveImageDialog.xml:10(primary)
 msgid "picture"
-msgstr ""
+msgstr "billede"
 
 #. SaveImageDialog.xml:11(primary)
 msgid "image"
-msgstr ""
+msgstr "billede"
 
 #. SaveImageDialog.xml:12(primary)
 msgid "metafile"
-msgstr ""
+msgstr "metafil"
 
 #. SaveImageDialog.xml:13(primary)
 msgid "bitmap"
-msgstr ""
+msgstr "bitmap"
 
 #. SaveImageDialog.xml:20(guimenu) OptionsDialog.xml:37(guimenu) MenuItems.xml:15(guimenu) MenuItems.xml:29(guimenu) MenuItems.xml:43(guimenu) MenuItems.xml:55(guimenu) MenuItems.xml:67(guimenu) MenuItems.xml:82(guimenu) MenuItems.xml:95(guimenu) MenuItems.xml:112(guimenu) MenuItems.xml:126(guimenu)
 msgid "File"
@@ -455,7 +445,7 @@ msgstr "Gem som billede..."
 
 #. SaveImageDialog.xml:22(guilabel)
 msgid "Save As"
-msgstr ""
+msgstr "Gem som"
 
 #. SaveImageDialog.xml:19(para)
 msgid "Use the menu item <placeholder-1/> to save the shown coordinate system as an image file. Graph supports five formats: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) and Portable Document Format (pdf). When the menu item has been chosen, a standard <placeholder-2/> dialog will appear. In this dialog you write a filename, choose a directory and select one of the image types."
@@ -483,11 +473,11 @@ msgstr ""
 
 #. Rounding.xml:7(title) FunctionList.xml:336(emphasis)
 msgid "Rounding"
-msgstr ""
+msgstr "Afrunding"
 
 #. Rounding.xml:11(primary) Rounding.xml:35(primary) Rounding.xml:60(primary) Rounding.xml:83(primary)
 msgid "rounding"
-msgstr ""
+msgstr "afrunding"
 
 #. Rounding.xml:12(primary)
 msgid "truncate"
@@ -519,11 +509,11 @@ msgstr ""
 
 #. Rounding.xml:61(primary)
 msgid "round up"
-msgstr ""
+msgstr "rund op"
 
 #. Rounding.xml:62(para)
 msgid "Rounds the argument up."
-msgstr ""
+msgstr "Runder argumentet op."
 
 #. Rounding.xml:71(para)
 msgid "The <placeholder-1/> function finds the smallest <placeholder-2/> not less than <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>."
@@ -531,15 +521,15 @@ msgstr ""
 
 #. Rounding.xml:84(primary)
 msgid "round down"
-msgstr ""
+msgstr "rund ned"
 
 #. Rounding.xml:85(primary)
 msgid "greatest inetger"
-msgstr ""
+msgstr "største heltal"
 
 #. Rounding.xml:86(para)
 msgid "Rounds the argument down."
-msgstr ""
+msgstr "Runder argumentet ned."
 
 #. Rounding.xml:95(para)
 msgid "The <placeholder-1/> function, which is also called the greatest integer function, gives the largest <placeholder-2/> not greater than <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>."
@@ -555,19 +545,19 @@ msgstr ""
 
 #. Rounding.xml:125(title)
 msgid "Examples"
-msgstr ""
+msgstr "Eksempler"
 
 #. PowerAndLog.xml:7(title)
 msgid "Power and logarithm"
-msgstr ""
+msgstr "Potens og logaritme"
 
 #. PowerAndLog.xml:11(primary)
 msgid "square"
-msgstr ""
+msgstr "kvadrat"
 
 #. PowerAndLog.xml:12(para)
 msgid "Returns the square of the argument."
-msgstr ""
+msgstr "Returnerer kvadratet på argumentet."
 
 #. PowerAndLog.xml:21(para)
 msgid "The <placeholder-1/> function calculates the square of <placeholder-2/>, i.e. <placeholder-3/> raised to the power of 2. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>."
@@ -587,11 +577,11 @@ msgstr ""
 
 #. PowerAndLog.xml:54(primary)
 msgid "square root"
-msgstr ""
+msgstr "kvadratrod"
 
 #. PowerAndLog.xml:55(para) FunctionList.xml:294(entry)
 msgid "Returns the square root of the argument."
-msgstr ""
+msgstr "Returnerer kvadratroden af argumentet."
 
 #. PowerAndLog.xml:64(para)
 msgid "The <placeholder-1/> function calculates the square root of <placeholder-2/>, i.e. <placeholder-3/> raised to the power of &frac12;. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/> &ge; 0."
@@ -619,11 +609,11 @@ msgstr ""
 
 #. PowerAndLog.xml:112(primary) PowerAndLog.xml:137(primary) PowerAndLog.xml:160(primary)
 msgid "logarithm"
-msgstr ""
+msgstr "logaritme"
 
 #. PowerAndLog.xml:113(primary)
 msgid "natural logarithm"
-msgstr ""
+msgstr "naturlig logaritme"
 
 #. PowerAndLog.xml:114(para)
 msgid "Returns the natural logarithm of the argument."
@@ -651,7 +641,7 @@ msgstr ""
 
 #. Piecewise.xml:7(title) FunctionList.xml:359(emphasis)
 msgid "Piecewise"
-msgstr ""
+msgstr "stykkevis"
 
 #. Piecewise.xml:11(primary)
 msgid "signum"
@@ -675,7 +665,7 @@ msgstr ""
 
 #. Piecewise.xml:57(primary) AxesDialog.xml:12(primary)
 msgid "minimum"
-msgstr ""
+msgstr "minimum"
 
 #. Piecewise.xml:58(para)
 msgid "Finds and returns the minimum of the values passed as arguments."
@@ -687,7 +677,7 @@ msgstr ""
 
 #. Piecewise.xml:81(primary) AxesDialog.xml:13(primary)
 msgid "maximum"
-msgstr ""
+msgstr "maksimum"
 
 #. Piecewise.xml:82(para)
 msgid "Finds and returns the maximum of the values passed as arguments."
@@ -727,7 +717,7 @@ msgstr "Indstillinger"
 
 #. OptionsDialog.xml:9(primary)
 msgid "Options dialog"
-msgstr ""
+msgstr "dialogen Indstillinger"
 
 #. OptionsDialog.xml:13(guimenu) OLE.xml:19(guimenu) OLE.xml:25(guimenu) OLE.xml:32(guimenu) MenuItems.xml:142(guimenu) MenuItems.xml:156(guimenu) MenuItems.xml:162(guimenu) MenuItems.xml:170(guimenu) MenuItems.xml:184(guimenu) MenuItems.xml:198(guimenu) MenuItems.xml:212(guimenu) MenuItems.xml:227(guimenu) MenuItems.xml:243(guimenu) FAQ.xml:235(guimenu) AxesDialog.xml:35(guimenu)
 msgid "Edit"
@@ -823,7 +813,7 @@ msgstr "Polær"
 
 #. OptionsDialog.xml:119(guilabel) AxesDialog.xml:228(guilabel)
 msgid "Radian"
-msgstr ""
+msgstr "Radian"
 
 #. OptionsDialog.xml:119(guilabel) AxesDialog.xml:228(guilabel)
 msgid "Degree"
@@ -851,7 +841,7 @@ msgstr "Hjælp"
 
 #. OptionsDialog.xml:140(guisubmenu) MenuItems.xml:694(guisubmenu) MenuItems.xml:707(guisubmenu) MenuItems.xml:720(guisubmenu) MenuItems.xml:733(guisubmenu)
 msgid "Internet"
-msgstr ""
+msgstr "Internet"
 
 #. OptionsDialog.xml:141(guimenuitem) MenuItems.xml:733(guimenuitem)
 msgid "Check for update"
@@ -863,7 +853,7 @@ msgstr ""
 
 #. OLE.xml:4(title)
 msgid "OLE server/client"
-msgstr ""
+msgstr "OLE-server/-klient"
 
 #. OLE.xml:7(primary)
 msgid "linking"
@@ -907,7 +897,7 @@ msgstr "Indsæt"
 
 #. OLE.xml:41(guimenuitem)
 msgid "Object..."
-msgstr ""
+msgstr "Objekt..."
 
 #. OLE.xml:43(guilabel)
 msgid "Graph system"
@@ -1311,7 +1301,7 @@ msgstr ""
 
 #. MenuItems.xml:694(guimenuitem)
 msgid "Graph web site"
-msgstr ""
+msgstr "Graphs hjemmeside"
 
 #. MenuItems.xml:698(para)
 msgid "Shows the web site for Graph in your default web browser."
@@ -1351,7 +1341,7 @@ msgstr ""
 
 #. Introduction.xml:7(title)
 msgid "What is Graph?"
-msgstr ""
+msgstr "Hvad er Graph?"
 
 #. Introduction.xml:9(primary)
 msgid "license"
@@ -1379,15 +1369,15 @@ msgstr "fejlrapport"
 
 #. Introduction.xml:17(para)
 msgid "Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things. The program is a standard Windows program with menus and dialogs. The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations. It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more. For more information on using the program see <placeholder-1/>."
-msgstr ""
+msgstr "Graph er et program til tegning af grafer for matematiske funktioner i et koordinatsystem. Programmet er opbygget som et standard Windows-program med menuer og dialogbokse. Det understøtter tegning af standardfunktioner, parameterfunktioner og polærfunktioner. Desuden kan der indsættes tangenter, laves evalueringer af punkter på de indsatte funktioner, indsættes skraveringer, laves serier af punkter og meget mere. For yderligere information om anvendelse af programmet se <placeholder-1/>."
 
 #. Introduction.xml:24(para)
 msgid "This program is free software; you can redistribute it and/or modify it under the terms of the <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink>. Newest version of the program as well as the source code may be downloaded from <ulink url=\"http://www.padowan.dk\"/>."
-msgstr ""
+msgstr "Dette program er fri software, og du må distribuere det og/eller ændre det under begrænsningerne angivet i <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink>. Nyeste version og programmets kildekode kan frit hentes fra <ulink url=\"http://www.padowan.dk\"/>."
 
 #. Introduction.xml:29(para)
 msgid "The program has been tested under Microsoft Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista, but there may still be bugs left. Please report bugs and suggestions for improvements to <placeholder-1/>."
-msgstr ""
+msgstr "Programmet er testet under Microsoft Windows 95, Windows 98, Windows Me, Windows 2000 og Windows XP, men der kan stadig være nogle fejl tilbage. Fejl og forslag til forbedringer bedes sendt til følgende e-mail: <placeholder-1/>"
 
 #. Introduction.xml:37(para)
 msgid "Which version are you using? This is shown in the <placeholder-1/> dialog box. You should check that you are using the newest version, else the bug may have been fixed already."
@@ -1555,7 +1545,7 @@ msgstr "Indsæt tendenslinje"
 
 #. InsertTrendlineDialog.xml:9(primary) InsertTangentDialog.xml:9(primary) InsertShadingDialog.xml:9(primary) InsertPointSeriesDialog.xml:9(primary) InsertLabelDialog.xml:9(primary) InsertFunctionDialog.xml:9(primary) InsertDerivativeDialog.xml:9(primary)
 msgid "insert"
-msgstr ""
+msgstr "indsæt"
 
 #. InsertTrendlineDialog.xml:10(primary) InsertPointSeriesDialog.xml:13(primary)
 msgid "trendline"
@@ -1711,15 +1701,15 @@ msgstr "Indsæt tangent/normal"
 
 #. InsertTangentDialog.xml:11(primary)
 msgid "standard function"
-msgstr ""
+msgstr "standardfunktion"
 
 #. InsertTangentDialog.xml:12(primary) InsertFunctionDialog.xml:11(primary) InsertFunctionDialog.xml:29(guilabel)
 msgid "parametric function"
-msgstr ""
+msgstr "parameterfunktion"
 
 #. InsertTangentDialog.xml:13(primary)
 msgid "normal"
-msgstr ""
+msgstr "normal"
 
 #. InsertTangentDialog.xml:16(guimenuitem)
 msgid "Insert tangent/normal..."
@@ -1763,7 +1753,7 @@ msgstr "Signaturtekst"
 
 #. InsertTangentDialog.xml:56(glossterm) InsertRelationDialog.xml:66(glossterm) InsertPointSeriesDialog.xml:50(glossterm) InsertFunctionDialog.xml:87(glossterm) Glossary.xml:69(glossterm) Glossary.xml:70(primary) AxesDialog.xml:24(primary) AxesDialog.xml:187(glossterm) AxesDialog.xml:196(glossterm) AxesDialog.xml:255(glossterm)
 msgid "legend"
-msgstr ""
+msgstr "signaturforklaring"
 
 #. InsertTangentDialog.xml:55(para)
 msgid "Enter a description to show in the <placeholder-1/>. If empty the function equation will be used."
@@ -1783,27 +1773,27 @@ msgstr "Indsæt skravering"
 
 #. InsertShadingDialog.xml:10(primary)
 msgid "shading"
-msgstr ""
+msgstr "skravering"
 
 #. InsertShadingDialog.xml:11(primary)
 msgid "interval"
-msgstr ""
+msgstr "interval"
 
 #. InsertShadingDialog.xml:12(primary)
 msgid "above"
-msgstr ""
+msgstr "over"
 
 #. InsertShadingDialog.xml:13(primary)
 msgid "below"
-msgstr ""
+msgstr "under"
 
 #. InsertShadingDialog.xml:14(primary)
 msgid "inside"
-msgstr ""
+msgstr "indeni"
 
 #. InsertShadingDialog.xml:15(primary)
 msgid "between"
-msgstr ""
+msgstr "imellem"
 
 #. InsertShadingDialog.xml:16(para)
 msgid "The dialog below is used to add a shading to the selected function. To insert a new shading, you use <placeholder-1/>. To change an existing shading, you first select it in the <placeholder-2/> and use <placeholder-3/>. The shading is used to mark an area between the function graph and something else."
@@ -2035,7 +2025,7 @@ msgstr "etiketter"
 
 #. InsertPointSeriesDialog.xml:16(primary)
 msgid "error bars"
-msgstr ""
+msgstr "usikkerhedssøjler"
 
 #. InsertPointSeriesDialog.xml:17(para)
 msgid "You can use the dialog below to add a series of points to the coordinate system. The points will be shown in the coordinate system in the graphing area as a series of markers at the positions entered in this dialog. To insert a new point series, you use <placeholder-1/>. To change an existing point series, you first select it in the <placeholder-2/> and use <placeholder-3/>."
@@ -2239,7 +2229,7 @@ msgstr "Funktionstype"
 
 #. InsertFunctionDialog.xml:29(guilabel)
 msgid "Standard function"
-msgstr ""
+msgstr "Standardfunktion"
 
 #. InsertFunctionDialog.xml:28(para)
 msgid "You can choose between three different types of functions: <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, thought it may be undefined for some x-coordinates."
@@ -2355,7 +2345,7 @@ msgstr ""
 
 #. Hyperbolic.xml:35(primary) Hyperbolic.xml:106(primary)
 msgid "hyperbolic cosine"
-msgstr ""
+msgstr "hyperbolsk cosinus"
 
 #. Hyperbolic.xml:36(para) FunctionList.xml:239(entry)
 msgid "Returns the hyperbolic cosine of the argument."
@@ -2371,7 +2361,7 @@ msgstr ""
 
 #. Hyperbolic.xml:59(primary) Hyperbolic.xml:129(primary)
 msgid "hyperbolic tangent"
-msgstr ""
+msgstr "hyperbolsk tangens"
 
 #. Hyperbolic.xml:60(para) FunctionList.xml:243(entry)
 msgid "Returns the hyperbolic tangent of the argument."
@@ -2647,7 +2637,7 @@ msgstr "Eulers konstant"
 
 #. FunctionList.xml:14(primary)
 msgid "operators"
-msgstr "operatorer"
+msgstr "operatører"
 
 #. FunctionList.xml:15(primary)
 msgid "addition"
@@ -2675,19 +2665,19 @@ msgstr "potensopløftning"
 
 #. FunctionList.xml:22(primary)
 msgid "and operator"
-msgstr "and-operator"
+msgstr "and-operatør"
 
 #. FunctionList.xml:23(primary)
 msgid "or operator"
-msgstr "or-operator"
+msgstr "or-operatør"
 
 #. FunctionList.xml:24(primary)
 msgid "xor operator"
-msgstr "xor-operator"
+msgstr "xor-operatør"
 
 #. FunctionList.xml:25(primary)
 msgid "not operator"
-msgstr "not-operator"
+msgstr "not-operatør"
 
 #. FunctionList.xml:33(glossterm)
 msgid "number"
@@ -2731,7 +2721,7 @@ msgstr ""
 
 #. FunctionList.xml:90(entry)
 msgid "Operator"
-msgstr "Operator"
+msgstr "Operatør"
 
 #. FunctionList.xml:96(entry)
 msgid "Exponentation (^)"
@@ -3099,47 +3089,47 @@ msgstr ""
 
 #. FAQ.xml:30(para)
 msgid "Will Graph run under Linux?"
-msgstr ""
+msgstr "Kan Graph køre under Linux?"
 
 #. FAQ.xml:35(para)
 msgid "Graph is a native Windows application and not tested under Linux, but several users have informed me that Graph runs without problems under Linux with Wine."
-msgstr ""
+msgstr "Graph er oprindeligt et Windows-program og er ikke testet under Linux, men adskillige brugere har gjort opmærksom på, at Graph kører uden problemer under Linux med Wine."
 
 #. FAQ.xml:43(para)
 msgid "Will Graph run on a Macintosh?"
-msgstr ""
+msgstr "Kan Graph køre på en Macintosh?"
 
 #. FAQ.xml:48(para)
 msgid "As with the above, you cannot run Graph directly on a Mac. But it should be possible with some kind of Windows emulator."
-msgstr ""
+msgstr "Som ovenfor: Graph kan ikke køre direkte på en Mac. Men det burde være muligt med en form for Windows-emulator."
 
 #. FAQ.xml:56(para)
 msgid "When will the next version be released?"
-msgstr ""
+msgstr "Hvornår bliver den næste version frigivet?"
 
 #. FAQ.xml:61(para)
 msgid "When it is ready."
-msgstr ""
+msgstr "Når den er klar."
 
 #. FAQ.xml:69(para)
 msgid "How can I move the coordinate system?"
-msgstr ""
+msgstr "Hvordan kan jeg flytte på koordinatsystemet?"
 
 #. FAQ.xml:74(para)
 msgid "When you hold down the <keycap>Ctrl</keycap> key you can use the arrow keys to move the coordinate system. You can also use <placeholder-1/> and drag the coordinate system around with the mouse."
-msgstr ""
+msgstr "Når du holder <keycap>Ctrl</keycap> nede, kan du bruge piletasterne til at flytte koordinatsystemet. Du kan også bruge <placeholder-1/> til at hive koordinatsystemet rundt med musen."
 
 #. FAQ.xml:88(para)
 msgid "How can I easily zoom in and out?"
-msgstr ""
+msgstr "Hvordan kan jeg nemt zoome ind og ud?"
 
 #. FAQ.xml:93(para)
 msgid "When you hold down the <keycap>Ctrl</keycap> key you can use the <keycap>+</keycap> and <keycap>-</keycap> keys to zoom in and out. The scroll wheel on the mouse can be used for zooming at the position of the mouse pointer. When you move the scroll wheel up the program will zoom into the coordinate system and center the graphing area at the position of the mouse pointer. When you move the scroll wheel down the program zooms out."
-msgstr ""
+msgstr "Når du holder <keycap>Ctrl</keycap> nede, kan du bruge <keycap>+</keycap> og <keycap>–</keycap> tasterne til at zoome ind og ud. Hvis din mus har et hjul, kan dette bruges til at zoome ind eller ud på cursorens position. Når hjulet drejes op, zoomes ind på det sted, hvor musecursoren er, mens der zoomes ud, når hjulet drejes nedad."
 
 #. FAQ.xml:104(para)
 msgid "How do I save default settings?"
-msgstr ""
+msgstr "Hvordan kan jeg gemme standardindstillinger?"
 
 #. FAQ.xml:111(guilabel) AxesDialog.xml:268(term)
 msgid "Save as default"
@@ -3147,15 +3137,15 @@ msgstr "Gem som standard"
 
 #. FAQ.xml:109(para)
 msgid "Set the desired default settings in the <placeholder-1/> dialog, and put a mark in <placeholder-2/> before pressing the <guibutton>OK</guibutton> button. Next time you create a new coordinate system, the saved default settings will be used."
-msgstr ""
+msgstr "Hvis du har indstillinger, som du ønsker, at programmet skal starte op med, kan du vælge disse indstillinger under <placeholder-1/> og sætte en markering i <placeholder-2/>, inden du klikker på <guibutton>OK</guibutton>. Næste gang du opretter et nyt koordinatsystem, vil de gemte indstillinger blive brugt."
 
 #. FAQ.xml:119(para)
 msgid "Can I make the program remember the size and position of the window?"
-msgstr ""
+msgstr "Er det muligt at få programmet til at huske vinduets størrelse og placering?"
 
 #. FAQ.xml:124(para)
 msgid "When you select <placeholder-1/> in the <placeholder-2/> dialog. Graph will save the position and size of the main window when the program quits. The next time the program starts the same size and position is used."
-msgstr ""
+msgstr "Hvis du vælger <placeholder-1/> i dialogen <placeholder-2/>, vil hovedvinduets position og størrelse blive gemt, når programmet afsluttes. Derved får programmet samme størrelse og position næste gang, det startes."
 
 #. FAQ.xml:134(para)
 msgid "Why does the program not accept a comma as decimals separator?"
@@ -3171,7 +3161,7 @@ msgstr ""
 
 #. FAQ.xml:157(guilabel) FAQ.xml:173(guilabel) FAQ.xml:189(guilabel)
 msgid "Parametric function"
-msgstr ""
+msgstr "Parameterfunktion"
 
 #. FAQ.xml:153(para)
 msgid "A standard function cannot be vertical, but it can have a slope so large that it looks vertical. The function <userinput>f(x)=1000(x-5)</userinput> looks like a vertical line at x=5. A real vertical line can be drawn as a parametric function. Select <placeholder-1/> as <placeholder-2/> when adding the function. You can then add the vertical line at x=5 as <userinput>x(t)=5, y(t)=t</userinput>. Alternatively you can add x=5 as a relation."
@@ -3339,7 +3329,7 @@ msgstr ""
 
 #. Errors.xml:7(title)
 msgid "Error messages"
-msgstr ""
+msgstr "Fejlmeddelelser"
 
 #. Errors.xml:8(primary)
 msgid "Errors"
@@ -3363,319 +3353,319 @@ msgstr "tan(x) er udefineret for x = &pi;/2+&pi;p = 90&deg;+p180&deg;, hvor p er
 
 #. Errors.xml:27(term)
 msgid "Error 03: Fact can only be calculated for positive integers."
-msgstr ""
+msgstr "Fejl 03: Fakultet kan kun evalueres for positive heltal."
 
 #. Errors.xml:28(para)
 msgid "fact(x), which calculates the factorial number of x, is only defined for positive integers of x."
-msgstr ""
+msgstr "fact(x), der bruges til at beregne x-fakultet, formelt x!, er kun defineret for positive heltal."
 
 #. Errors.xml:32(term)
 msgid "Error 04: Cannot take logarithm to number equal or less than zero."
-msgstr ""
+msgstr "Fejl 04: Kan ikke tage logaritmen til et tal, der er mindre end eller lig med 0."
 
 #. Errors.xml:34(para)
 msgid "The logarithmic functions ln(x) and log(x) are undefined for x&le;0, when the calculation is done for real numbers. When the calculations are done with complex numbers, x is only undefined at 0."
-msgstr ""
+msgstr "Logaritmefunktionerne ln(x) og log(x) er udefinerede for x&le;0, når der regnes med reelle tal. Når der regnes med komplekse tal, er funktionerne kun udefinerede i x=0."
 
 #. Errors.xml:42(term)
 msgid "Error 05: sqrt is undefined for negative numbers."
-msgstr ""
+msgstr "Fejl 05: sqrt er udefineret for negative tal."
 
 #. Errors.xml:44(para)
 msgid "sqrt(x) is undefined for x&lt;0, when the calculations are done for real numbers. sqrt(x) is defined for all numbers, when the calculations are done with complex numbers."
-msgstr ""
+msgstr "sqrt(x) er udefineret for x&lt;0, når der regnes med reelle tal. sqrt(x) er defineret for alle tal, når der regnes med komplekse tal."
 
 #. Errors.xml:52(term)
 msgid "Error 06: A part of the evaluation gave a number with an imaginary part."
-msgstr ""
+msgstr "Fejl 06: En delberegning resulterede i et resultat med en imaginær del."
 
 #. Errors.xml:54(para)
 msgid "This error may occur when calculations are done with real numbers. If a part of the calculation resulted in a number with an imaginary part, the calculation cannot continue. An example of this is: sin(x+&imag;)"
-msgstr ""
+msgstr "Denne fejl opstår, når derregnes med reelle tal, og et delresultat har en imaginær del, så beregningen ikke kan fortsætte. Et eksempel er: sin(x+&imag;)."
 
 #. Errors.xml:63(term)
 msgid "Error 07: Division by zero."
-msgstr ""
+msgstr "Fejl 07: Division med nul."
 
 #. Errors.xml:65(para)
 msgid "The program tried to divide by zero when calculating. A function is undefined for values where a division by zero is needed. For example the function f(x)=1/x is undefined at x=0."
-msgstr ""
+msgstr "Programmet forsøgte at dividere med 0. En funktion er udefineret for argumenter, som resulterer i division med 0. For eksempel er funktionen f(x)=1/x udefineret for x=0."
 
 #. Errors.xml:73(term)
 msgid "Error 08: Inverse trigonometric function out of range [-1;1]"
-msgstr ""
+msgstr "Fejl 08: Invers trigonometrisk funktion uden for definitionsområdet [-1;1]."
 
 #. Errors.xml:75(para)
 msgid "The inverse trigonometric functions asin(x) and acos(x) are only defined in the range [-1;1], and they are not defined for any numbers with an imaginary part. The function atan(x) is defined for all numbers without an imaginary part. This error may also happen if you are trying to take arg(0)."
-msgstr ""
+msgstr "De inverse trigonometriske funktioner asin(x) og acos(x) er kun defineret på intervallet [-1;1], og de er ikke defineret for tal med en imaginær del. Funktionen atan(x) er defineret for alle tal uden en imaginær del. Denne fejl kan også opstå, hvis du forsøger at tage arg(0)."
 
 #. Errors.xml:84(term)
 msgid "Error 09: The function is not defined for this value."
-msgstr ""
+msgstr "Fejl 09: Funktionen er ikke defineret for denne værdi."
 
 #. Errors.xml:86(para)
 msgid "This error may occur for functions that are not defined for a specific point. This is for example the case for sign(x) and u(x) at x=0."
-msgstr ""
+msgstr "Denne fejl kan forekomme for funktioner, der ikke er defineret i et specifikt punkt. Dette er for eksempel tilfældet for sign(x) og u(x) i x=0."
 
 #. Errors.xml:94(term)
 msgid "Error 10: atanh evaluated at undefined value."
-msgstr ""
+msgstr "Fejl 10: atanh evalueret for en udefineret værdi."
 
 #. Errors.xml:95(para)
 msgid "Inverse hyperbolic tangent atanh(x) is undefined at x=1, and only defined when using complex numbers outside the interval x=]-1;1[."
-msgstr ""
+msgstr "Invers hyperbolsk tangens atanh(x) er ikke defineret for x=1 og er kun defineret for komplekse tal uden for intervallet ]-1;1[."
 
 #. Errors.xml:99(term)
 msgid "Error 11: acosh evaluated at undefined value."
-msgstr ""
+msgstr "Fejl 11: acosh evalueret for en udefineret værdi."
 
 #. Errors.xml:101(para)
 msgid "Inverse hyperbolic cosine acosh(x) is only defined for x 1 when using real numbers. acosh(x) is defined for all numbers when calculating with complex numbers."
-msgstr ""
+msgstr "Invers hyperbolsk cosinus acosh(x) er kun defineret for x&ge;1 når der regnes med reelle tal, mens acosh(x) er defineret for alle tal, når der regnes med komplekse tal."
 
 #. Errors.xml:109(term)
 msgid "Error 12: arg(0) is undefined."
-msgstr ""
+msgstr "Fejl 12: arg(0) er udefineret."
 
 #. Errors.xml:111(para)
 msgid "The argument of zero is undefined because 0 does not have an angle."
-msgstr ""
+msgstr "Argumentet til 0 er udefineret, fordi 0 ikke har nogen vinkel."
 
 #. Errors.xml:118(term)
 msgid "Error 13: Evaluation failed."
-msgstr ""
+msgstr "Fejl 13: Evaluering fejlede."
 
 #. Errors.xml:120(para)
 msgid "This error occurs when a more complicated function like W(z) is evaluated, and the evaluation failed to find an accurate result."
-msgstr ""
+msgstr "Denne fejl opstår ved evaluering af en mere kompliceret funktion som f.eks. W(z), fordi der ved evalueringen ikke kan findes et nøjagtigt resultat."
 
 #. Errors.xml:127(term)
 msgid "Error 14: Argument produced a function result with total loss of precision."
-msgstr ""
+msgstr "Fejl 14: Argumentet til en funktion gav et resultat med totalt tab af præcision."
 
 #. Errors.xml:129(para)
 msgid "An argument to a function call produced a result with total loss of significant digits, such as sin(1E70) which gives an arbitrary number in the range [-1;1]."
-msgstr ""
+msgstr "Et argument i en funktion har givet et resultat uden betydende cifre, som f.eks. sin(1E70), der kan give en hvilken som helst værdi på intervallet [-1;1]."
 
 #. Errors.xml:136(term)
 msgid "Error 15: The custom function/constant '%s' was not found or has the wrong number of arguments."
-msgstr ""
+msgstr "Fejl 15: Den brugerdefinerede funktion/konstant '%s' blev ikke fundet eller har et forkert antal argumenter."
 
 #. Errors.xml:138(para)
 msgid "A custom function or constant no longer exists. You can either define it again or remove all uses of the symbol. This may also happen if a custom constant has been changed to a function or vice versa, or if the number of arguments to a custom function has been changed."
-msgstr ""
+msgstr "En brugerdefineret funktion eller konstant eksisterer ikke længere. Du kan enten definere den igen eller slette symbolet alle de steder, hvor det er brugt. Dette kan også ske, hvis en brugerdefineret konstant er blevet ændret til en funktion eller omvendt, eller hvis antallet af argumenter til en brugerdefineret funktion er blevet ændret."
 
 #. Errors.xml:147(term)
 msgid "Error 16: Too many recursive calls"
-msgstr ""
+msgstr "Fejl 16: For mange rekursive kald."
 
 #. Errors.xml:149(para)
 msgid "Too many recursive calls have been executed. This is most likely caused by a function that calls itself recursively an infinite number of times, for example foo(x)=2*foo(x). The error may also occur if you just call too many functions recursively."
-msgstr ""
+msgstr "Der er udført for mange rekursive funktionskald. Dette skyldes højst sandsynligt, at en funktion kalder sig selv i det uendelige, f.eks. foo(x)=2*foo(x). Fejlen kan også opstå, hvis du blot kalder for mange funktioner rekursivt."
 
 #. Errors.xml:158(term)
 msgid "Error 17: Overflow: A function returned a value too large to handle."
-msgstr ""
+msgstr "Error 17: Dataoverløb: En funktion har returneret en værdi så stor, at den ikke kan håndteres."
 
 #. Errors.xml:160(para)
 msgid "A function call resulted in value too large to handle. This for example happens if you try to evaluate sinh(20000)"
-msgstr ""
+msgstr "Et funktionskald har givet en værdi, som er for stor til at kunne håndteres. Dette sker f.eks., hvis man forsøger at evaluere sinh(20000)."
 
 #. Errors.xml:168(term)
 msgid "Error 50: Unexpected operator. Operator %s cannot be placed here"
-msgstr ""
+msgstr "Fejl 50: Uventet operatør. Operatøren %s kan ikke placeres her."
 
 #. Errors.xml:170(para)
 msgid "An operator +, -, *, / or ^ was misplaced. This can happen if you try entering the function f(x)=^2, and it usually means that you forgot something in front of the operator."
-msgstr ""
+msgstr "En operator +, -, *, / eller ^ er blevet fejlplaceret. Dette kan ske, hvis du prøver at indtaste funktionen f(x)=^2, og det betyder som regel, at der er glemt noget før operatøren."
 
 #. Errors.xml:178(term)
 msgid "Error 55: Right bracket missing."
-msgstr ""
+msgstr "Fejl 55: Slutparentes mangler."
 
 #. Errors.xml:180(para)
 msgid "A right bracket is missing. Make sure you have the same number of left and right brackets."
-msgstr ""
+msgstr "Der mangler en slutparentes. Vær sikker på, at der er lige mange start- og slutparenteser."
 
 #. Errors.xml:187(term)
 msgid "Error 56: Invalid number of arguments supplied for the function '%s'"
-msgstr ""
+msgstr "Fejl 56: Forkert antal argumenter angivet for funktionen '%s'."
 
 #. Errors.xml:189(para)
 msgid "You passed a wrong number of arguments to the specified function. Check the <placeholder-1/> to find the required number of arguments the function needs. This error may occur if you for example write sin(x,3)."
-msgstr ""
+msgstr "Du har ikke angivet det rigtige antal argumenter til den angivne funktion. Tjek i <placeholder-1/>, hvor mange argumenter funktionen skal have. Denne fejl kan for eksempel ske, hvis du skriver sin(x,3)."
 
 #. Errors.xml:198(term)
 msgid "Error 57: Comparison operator misplaced."
-msgstr ""
+msgstr "Fejl 57: Sammenligningsoperator fejlplaceret."
 
 #. Errors.xml:200(para)
 msgid "Only two comparison operators in sequence are allowed. For example \"sin(x) &lt; y &lt; cos(x)\" is okay while \"sin(x) &lt; x &lt; y &lt; cos(x)\" is invalid because there are three &lt;-operators in sequence."
-msgstr ""
+msgstr "Kun to sammenligningsoperatorer er tilladt i samme udtryk. F.eks. accepteres \"sin(x) &lt; y &lt; cos(x)\", hvorimod \"sin(x) &lt; x &lt; y &lt; cos(x)\" er et ugyldigt udtryk, fordi der er tre &lt;-operatorer i træk."
 
 #. Errors.xml:208(term)
 msgid "Error 58: Invalid number found. Use the format: -5.475E-8"
-msgstr ""
+msgstr "Fejl 58: Ugyldigt tal. Brug formatet: -5.475E-8"
 
 #. Errors.xml:210(para)
 msgid "Something that looked like a number but wasn't has been found. For example this is an invalid number: 4.5E. A number should be on the form nnn.fffEeee where nnn is the whole number part that may be negative. fff is the fraction part that is separated from the integer part with a dot '.'. The fraction part is optional, but either the integer part or the fraction part must be there. E is the exponent separator and must be an 'E' in upper case. eee is the exponent optionally preceded by '-'. The exponent is only needed if the E is there. Notice that 5E8 is the same as 5*10^8. Here are some examples of numbers: <placeholder-1/>"
-msgstr ""
+msgstr "Der blev fundet noget, som ligner et tal men ikke er det. Dette er for eksempel et ugyldigt tal: 4.5E. Et tal skal opfylde formen nnn.fffEeee, hvor nnn er heltalsdelen, der eventuel kan være negativ. fff er decimaldelen, som adskilles fra heltalsdelen med et punktum og aldrig et komma. Decimaldelen er valgfri, men enten heltalsdelen eller decimaldelen skal være til stede. E er eksponentadskiller og skal skrives med stort. eee er eksponenten, der eventuelt kan være negativ. Eksponenten er kun nødvendig, hvis E’et er der. Bemærk, at 5E8 er det samme som 5*10^8. Her er nogle eksempler på gyldige tal: <placeholder-1/>"
 
 #. Errors.xml:224(term)
 msgid "Error 59: String is empty. You need to enter a formula."
-msgstr ""
+msgstr "Fejl 59: Strengen er tom. Du skal indtaste en funktion."
 
 #. Errors.xml:226(para)
 msgid "You didn't enter anything in the box. This is not allowed. You need to enter an expression."
-msgstr ""
+msgstr "Der blev ikke indtastet nogen tekst. Dette er ikke gyldigt. Der skal indtastes et udtryk."
 
 #. Errors.xml:233(term)
 msgid "Error 60: Comma is not allowed here. Use dot as decimal separator."
-msgstr ""
+msgstr "Fejl 60: Komma er ikke tilladt her. Brug punktum som decimaladskiller."
 
 #. Errors.xml:235(para)
 msgid "Commas may not be used as decimal separator. You have to use a '.' to separate the fraction from the integer part."
-msgstr ""
+msgstr "Komma bruges ikke som decimaladskiller. Brug et punktum til at adskille decimaler fra heltalsdelen i stedet for komma."
 
 #. Errors.xml:242(term)
 msgid "Error 61: Unexpected right bracket."
-msgstr ""
+msgstr "Fejl 61: Uventet slutparentes fundet."
 
 #. Errors.xml:244(para)
 msgid "A right bracket was found unexpectedly. Make sure the number of left and right brackets match."
-msgstr ""
+msgstr "En uventet slutparentes blev fundet. Kontroller, at start- og slutparenteser passer sammen."
 
 #. Errors.xml:251(term)
 msgid "Error 63: Number, constant or function expected."
-msgstr ""
+msgstr "Fejl 63: Tal, konstant eller funktion forventet."
 
 #. Errors.xml:253(para)
 msgid "A factor, which may be a number, constant, variable or function, was expected."
-msgstr ""
+msgstr "En faktor, som kan være en konstant, en variabel  eller en funktion, blev forventet her."
 
 #. Errors.xml:260(term)
 msgid "Error 64: Parameter after constant or variable not allowed."
-msgstr ""
+msgstr "Fejl 64: Parameter efter konstant eller variabel ikke tilladt."
 
 #. Errors.xml:262(para)
 msgid "Brackets may not be placed after a constant or variable. For example this is invalid: f(x)=x(5). Use f(x)=x*5 instead."
-msgstr ""
+msgstr "Det er ikke tilladt at sætte en parentes med en parameter efter en variabel. For eksempel er dette ugyldigt: f(x)=x(5). Brug f(x)=x*5 i stedet."
 
 #. Errors.xml:269(term)
 msgid "Error 65: Expression expected."
-msgstr ""
+msgstr "Fejl 65: Udtryk forventet."
 
 #. Errors.xml:271(para)
 msgid "An expression was expected. This may happen if you have empty brackets: f(x)=sin()"
-msgstr ""
+msgstr "Et udtryk mangler. Dette kan for eksempel skyldes en tom parentes: f(x)=sin()"
 
 #. Errors.xml:278(term)
 msgid "Error 66: Unknown variable, function or constant: %s"
-msgstr ""
+msgstr "Fejl 66: Ukendt variabel, funktion eller konstant: %s"
 
 #. Errors.xml:280(para)
 msgid "You entered something that looks like a variable, function or constant but is unknown. Note that \"x5\" is not the same as \"x*5\"."
-msgstr ""
+msgstr "Der blev fundet noget, som ligner en variabel, en konstant eller en funktion, men som er ukendt. Bemærk, at \"x5\" ikke er det samme som \"x*5\"."
 
 #. Errors.xml:287(term)
 msgid "Error 67: Unknown character: %s"
-msgstr ""
+msgstr "Fejl 67: Ukendt tegn: %s"
 
 #. Errors.xml:289(para)
 msgid "An unknown character was found."
-msgstr ""
+msgstr "Et ukendt tegn blev fundet."
 
 #. Errors.xml:296(term)
 msgid "Error 68: The end of the expression was unexpected."
-msgstr ""
+msgstr "Fejl 68: Uventet afslutning på udtrykket."
 
 #. Errors.xml:298(para)
 msgid "The end of the expression was found unexpectedly."
-msgstr ""
+msgstr "Uventet afslutning på udtrykket. Der mangler noget i enden."
 
 #. Errors.xml:305(term)
 msgid "Error 70: Error parsing expression"
-msgstr ""
+msgstr "Fejl 70: Fejl i funktionsudtryk."
 
 #. Errors.xml:307(para)
 msgid "An error happened while parsing the function text. The string is not a valid function."
-msgstr ""
+msgstr "Der opstod en fejl ved forsøget på at forstå funktionsteksten. Strengen er ikke en gyldig funktion."
 
 #. Errors.xml:314(term)
 msgid "Error 71: A calculation resulted in an overflow."
-msgstr ""
+msgstr "Fejl 71: En beregning resulterede i et overløb."
 
 #. Errors.xml:316(para)
 msgid "An overflow occurred under the calculation. This may happen when the numbers get too big."
-msgstr ""
+msgstr "Et dataoverløb opstod under en beregning. Dette kan skyldes, at et tal er blevet for stort."
 
 #. Errors.xml:323(term)
 msgid "Error 73: An invalid value was used in the calculation."
-msgstr ""
+msgstr "Fejl 73: En ugyldig værdi blev brugt i beregningen."
 
 #. Errors.xml:325(para)
 msgid "An invalid value was used as data for the calculation."
-msgstr ""
+msgstr "En ugyldig værdi blev brugt som data ved en beregning."
 
 #. Errors.xml:332(term)
 msgid "Error 74: Not enough points for calculation."
-msgstr ""
+msgstr "Fejl 74: Der er ikke nok punkter til at foretage beregningen."
 
 #. Errors.xml:334(para)
 msgid "Not enough data points were provided to calculate the trendline. A polynomial needs at least one more point than the degree of the polynomial. A polynomial of third degree needs at least 4 points. All other functions need at least two points."
-msgstr ""
+msgstr "Der er ikke nok punkter til at finde en tendenslinje. Til et polynomium skal der bruges mindst et punkt mere end graden af polynomiet. Et tredjegradspolynomium skal dermed bruge mindst 4 punkter. Alle andre typer funktioner skal bruge mindst 2 punkter."
 
 #. Errors.xml:344(term)
 msgid "Error 75: Illegal name %s for user defined function or constant."
-msgstr ""
+msgstr "Fejl 75: Ugyldigt navn %s til brugerdefineret funktion eller konstant."
 
 #. Errors.xml:346(para)
 msgid "Names for user defined functions and constants must start with a letter and only contain letters and decimal digits. You cannot use names that are already used by built-in functions and constants."
-msgstr ""
+msgstr "Navne på brugerdefinerede funktioner og konstanter skal begynde med et bogstav og må kun indeholde bogstaver og tal. Du kan ikke bruge navne, som allerede er tildelt indbyggede funktioner og konstanter."
 
 #. Errors.xml:354(term)
 msgid "Error 76: Cannot differentiate recursive function."
-msgstr ""
+msgstr "Fejl 76: Rekursiv funktion kan ikke differentieres."
 
 #. Errors.xml:356(para)
 msgid "It is not possible to differentiate a recursive function because the resulting function will be infinitely large."
-msgstr ""
+msgstr "Det er ikke muligt at differentiere en rekursiv funktion, fordi udtrykket for den afledede funktion vil fortsætte i det uendelige."
 
 #. Errors.xml:363(term)
 msgid "Error 79: Function cannot be differentiated."
-msgstr ""
+msgstr "Fejl 79: Funktionen kan ikke differentieres."
 
 #. Errors.xml:365(para)
 msgid "The function cannot be differentiated, because some part of the function does not have a first derivative. This is for example the case for arg(x), conj(x), re(x) and im(x)."
-msgstr ""
+msgstr "Funktionen kan ikke differentieres, fordi en del af den ikke har nogen afledet. Dette gælder for eksempel for arg(x), conj(x), re(x) og im(x)."
 
 #. Errors.xml:373(term)
 msgid "Error 86: Not further specified error occurred under calculation."
-msgstr ""
+msgstr "Fejl 86: Fejl under beregning."
 
 #. Errors.xml:375(para)
 msgid "An error occurred while calculating. The exact cause is unknown. If you get this error, you may try to contact the programmer with a description of how to reproduce the error. Then he might be able to improve the error message or prevent the error from occurring."
-msgstr ""
+msgstr "Der opstod en fejl under beregningen. Yderligere information om fejlen er ikke tilgængelig. Du kan eventuelt prøve at kontakte programmøren og fortælle ham, hvordan fejlen kan genskabes. Så kan det være, at han kan forbedre fejlmeddelelsen eller forhindre fejlen i at opstå."
 
 #. Errors.xml:385(term)
 msgid "Error 87: No solution found. Try another guess or another model."
-msgstr ""
+msgstr "Fejl 87: Ingen løsning fundet. Prøv et andet gæt eller en anden model."
 
 #. Errors.xml:387(para)
 msgid "The given guess, which may be the default one, did not give any solution. This can be caused by a bad guess, and a better guess may result in a solution. It can also be because the given trendline model doesn't fit the data, in which case you should try another model."
-msgstr ""
+msgstr "Det givne gæt, som kan være det der bruges som standard, gav ikke nogen løsning. Det kan skyldes et dårligt gæt, og et bedre gæt vil måske resultere i en løsning. Det kan også skyldes, at modellen ikke passer til de givne data, så du  bør prøve en anden model."
 
 #. Errors.xml:396(term)
 msgid "Error 99: Internal error. Please notify the programmer with as much information as possible."
-msgstr ""
+msgstr "Fejl 99: Intern fejl. Vær venlig at kontakte programmøren med så megen information som muligt."
 
 #. Errors.xml:398(para)
 msgid "An internal error happened. This means that the program has done something that is impossible but happened anyway. Please contact the programmer with as much information as necessary to reproduce the problem."
-msgstr ""
+msgstr "Der opstod en intern fejl. Dette betyder, at programmet har gjort noget, der ikke burde kunne lade sig gøre. Være venlig at kontakte programmøren og give ham så meget information som muligt, så han kan genskabe fejlen og rette den."
 
 #. Dialogs.xml:5(title)
 msgid "Dialogs"
-msgstr ""
+msgstr "Dialoger"
 
 #. CustomFunctionsDialog.xml:8(title)
 msgid "Custom functions/constants"
@@ -3811,19 +3801,19 @@ msgstr ""
 
 #. AxesDialog.xml:9(primary)
 msgid "Axes dialog"
-msgstr ""
+msgstr "dialogen Akser"
 
 #. AxesDialog.xml:14(primary)
 msgid "unit"
-msgstr ""
+msgstr "enhed"
 
 #. AxesDialog.xml:15(primary)
 msgid "logarithmic scale"
-msgstr ""
+msgstr "logaritmisk skala"
 
 #. AxesDialog.xml:16(primary)
 msgid "coordinates"
-msgstr ""
+msgstr "koordinater"
 
 #. AxesDialog.xml:17(primary)
 msgid "grid"
@@ -3839,7 +3829,7 @@ msgstr "farver"
 
 #. AxesDialog.xml:21(primary)
 msgid "crossing"
-msgstr ""
+msgstr "skæring"
 
 #. AxesDialog.xml:22(primary)
 msgid "step"
@@ -3851,7 +3841,7 @@ msgstr "markering"
 
 #. AxesDialog.xml:26(primary)
 msgid "axes style"
-msgstr ""
+msgstr "aksetype"
 
 #. AxesDialog.xml:28(primary)
 msgid "fonts"
@@ -4083,19 +4073,19 @@ msgstr "avi"
 
 #. AnimateDialog.xml:12(primary)
 msgid "repeat"
-msgstr ""
+msgstr "gentag"
 
 #. AnimateDialog.xml:13(primary)
 msgid "reverse"
-msgstr ""
+msgstr "baglæns"
 
 #. AnimateDialog.xml:14(primary)
 msgid "auto reverse"
-msgstr ""
+msgstr "kør automatisk tilbage"
 
 #. AnimateDialog.xml:16(primary)
 msgid "frames per second"
-msgstr ""
+msgstr "billeder pr. sekund"
 
 #. AnimateDialog.xml:17(para)
 msgid "This dialog is used to create an animation by changing a custom constant. The animation can be played directly, saved to a file or copied into a document. The animation can contain all elements supported by Graph, for example functions, relations, point series, labels, etc."
