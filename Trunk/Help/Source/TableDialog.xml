@@ -49,7 +49,7 @@
 	</para>
 
 	<para>
-		Note that is you choose to create a lot of values in the table, it may take some time to calculate them.
+		Note that if you choose to create a lot of values in the table, it may take some time to calculate them.
 		Many values may also take up a lot of memory from the system.
 	</para>
 </section>

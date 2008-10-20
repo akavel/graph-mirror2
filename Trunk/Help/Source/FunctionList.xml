@@ -395,11 +395,11 @@
 					</row>
 					<row>
 						<entry><xref linkend="sum"/></entry>
-						<entry>Returns the sum of the first argument evaluated for each integer in the range from the second to third argument.</entry>
+						<entry>Returns the sum of the first argument evaluated for each integer in the range from the second to the third argument.</entry>
 					</row>
 					<row>
 						<entry><xref linkend="product"/></entry>
-						<entry>Returns the product of the first argument evaluated for each integer in the range from the second to third argument.</entry>
+						<entry>Returns the product of the first argument evaluated for each integer in the range from the second to the third argument.</entry>
 					</row>
 					<row>
 						<entry><xref linkend="fact"/></entry>

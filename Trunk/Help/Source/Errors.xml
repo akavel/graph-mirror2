@@ -99,8 +99,8 @@
 				<term>Error 11: acosh evaluated at undefined value.</term>
 				<listitem>
 					<para>
-						Inverse hyperbolic cosine acosh(x) is only defined for x 1 when using real numbers.
-						acosh(x) is defined for all numbers when calculating with complex numbers.
+						Inverse hyperbolic cosine acosh(x) is only defined for x&ge;1 when using <glossterm baseform="real number">real numbers</glossterm>.
+						acosh(x) is defined for all numbers when calculating with <glossterm baseform="complex number">complex numbers</glossterm>.
 					</para>
 				</listitem>
 			</varlistentry>

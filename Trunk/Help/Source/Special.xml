@@ -42,7 +42,7 @@
 		<indexterm><primary><function>sum</function> function</primary></indexterm>
 		<indexterm><primary>summation</primary></indexterm>
 		<para>
-			Returns the summation of the first argument evaluated for all integers from the second to the third parameter.
+			Returns the summation of the first argument evaluated for all integers from the second to the third argument.
 		</para>
 		<simplesect>
 			<title>Syntax</title>
@@ -68,7 +68,7 @@
 		<title><markup>product</markup> function</title>
 		<indexterm><primary><function>product</function> function</primary></indexterm>
 		<para>
-			Returns the product of the first argument evaluated for all integers from the second to the third parameter.
+			Returns the product of the first argument evaluated for all integers from the second to the third argument.
 		</para>
 		<simplesect>
 			<title>Syntax</title>
