@@ -168,7 +168,7 @@
 			<para>
 				The <function>atan</function> function calculates the inverse tangent of <parameter>z</parameter>.
 				The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings.
-				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a real number.
+				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>.
 				This is the reverse of the <function linkend="tan">tan</function> function.
 			</para>
 		</simplesect>

@@ -92,7 +92,7 @@
 			<listitem>
 				<para>
 					Put a check in <guilabel>Show coordinates</guilabel> to show the x- and y-coordinates at each point.
-					You may use the <guibutton><inlinegraphic fileref="Font.bmp" scale="60"/></guibutton>
+					You may use the <guibutton><inlinegraphic fileref="Font.png" scale="60"/></guibutton>
 					button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points.
 				</para>
 			</listitem>

@@ -82,7 +82,7 @@
 		<indexterm><primary><function>floor</function> function</primary></indexterm>
 		<indexterm><primary>rounding</primary></indexterm>
 		<indexterm><primary>round down</primary></indexterm>
-		<indexterm><primary>greatest inetger</primary></indexterm>
+		<indexterm><primary>greatest integer</primary></indexterm>
 		<para>
 			Rounds the argument down.
 		</para>

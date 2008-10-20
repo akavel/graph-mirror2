@@ -24,7 +24,7 @@ def ReplaceStrings(FileName, Dict):
         File.write(Str)
 
 def HandleLanguage(Language, Lang, Dict):
-    os.system(ToolsDir + "xmllint --nonet --xinclude --output ..\\Temp\Graph.tmp Graph.xml")
+    os.system("xmllint --nonet --xinclude --output ..\\Temp\Graph.tmp Graph.xml")
 
     if Language != "English":
         print
@@ -37,15 +37,15 @@ def HandleLanguage(Language, Lang, Dict):
     ReplaceStrings(InFile, Dict)
 
     StyleSheet = "..\\xsl\\pdfdoc.xsl" if not os.path.exists("..\\xsl\\%s\\pdfdoc.xsl" % (Language,)) else "..\\xsl\\%s\\pdfdoc.xsl" % (Language,)
-    os.system(ToolsDir + "xsltproc.exe --nonet --xinclude --output ..\\Temp\\Graph.fo %s %s" % (StyleSheet, InFile))
+    os.system("xsltproc.exe --nonet --xinclude --output ..\\Temp\\Graph.fo %s %s" % (StyleSheet, InFile))
 
     UserConfig = "" if not os.path.exists("..\\xsl\\%s\\userconfig.xml" % (Language,)) else "-c ..\\xsl\\%s\\userconfig.xml" % (Language,)
     os.system(ToolsDir + "fop\\fop.bat -q %s -fo ..\\Temp\\Graph.fo -pdf ..\\Graph-%s.pdf" % (UserConfig, Language,))
 
     print "Creating %s CHM file..." % (Language,)
     StyleSheet = "..\\xsl\\htmlhelp.xsl" if not os.path.exists("..\\xsl\\%s\\htmlhelp.xsl" % (Language,)) else "..\\xsl\\%s\\htmlhelp.xsl" % (Language,)
-    os.system(ToolsDir + "xsltproc.exe --nonet --xinclude --stringparam htmlhelp.chm ..\\Graph-%s.chm --output ..\\Temp\\Graph %s %s"  % (Language, StyleSheet, InFile))
-    os.system(ToolsDir + "hhc.exe ..\\Temp\\htmlhelp.hhp > NUL")
+    os.system("xsltproc.exe --nonet --xinclude --stringparam htmlhelp.chm ..\\Graph-%s.chm --output ..\\Temp\\Graph %s %s"  % (Language, StyleSheet, InFile))
+    os.system("hhc.exe ..\\Temp\\htmlhelp.hhp > NUL")
 
 
 print "Copying image files..."
@@ -56,10 +56,12 @@ os.system("XCopy ..\\Source\\dtd ..\\Temp\\dtd /S /I /Q /Y > NUL")
 os.system("XCopy ..\\Source\\*.css ..\\Temp /Q /Y > NUL")
 
 os.chdir("..\\Source")
-os.system(ToolsDir + "xsltproc.exe --output ..\\xsl\\titlepage.xsl " + ToolsDir + "xsl\\template\\titlepage.xsl ..\\xsl\\titlepage.xml")
+os.environ["path"] += ";" + ToolsDir
+os.system("xsltproc.exe --output ..\\xsl\\titlepage.xsl " + ToolsDir + "xsl\\template\\titlepage.xsl ..\\xsl\\titlepage.xml")
 
 for Language, Lang, Dict in Languages:
     if len(sys.argv) == 1 or Language in sys.argv:
         HandleLanguage(Language, Lang, Dict)
 
-os.remove(".xml2po.mo")
+if os.path.exists(".xml2po.mo"):
+    os.remove(".xml2po.mo")
