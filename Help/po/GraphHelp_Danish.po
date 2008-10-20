@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-09-14 12:39Romance Standard Time\n"
-"PO-Revision-Date: 2008-10-19 23:36+0100\n"
+"PO-Revision-Date: 2008-10-20 09:24+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -235,11 +235,11 @@ msgstr "Beregn"
 
 #. TableDialog.xml:12(para)
 msgid "The dialog shown below is used to evaluate the selected function for a range. First select a function in the <placeholder-1/> and use the menu item <placeholder-2/> to show the dialog. You specify the first and last value of the independent variable and set the increment of the independent variable at each evaluation."
-msgstr ""
+msgstr "Nedenstående dialogboks anvendes til at evaluere den markerede funktion i et interval af x-koordinater. Vælg først en funktion i <placeholder-1/> og brug <placeholder-2/> til at vise dialogboksen. Ved hver enkelt evaluering indtaster du den første og sidste x-værdi i intervallet, samt den forskel, der skal være mellem x-værdierne i intervallet."
 
 #. TableDialog.xml:19(para)
 msgid "When you press the <guibutton>Calc</guibutton> button, the table will be filled with the independent variable in the first column. The rest of the columns dependes on the type of function. For a standard function, the table will show f(x), f'(x) and f''(x). For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx. For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx. Unneeded columns can be hidden from the context menu. If the calculations takes a long time, a progress indicator will be shown."
-msgstr ""
+msgstr "Når du trykker på knappen <guibutton>Beregn</guibutton>, bliver tabellen fyldt med x-værdierne i intervallet. De øvrige kolonner afhænger af funktionstypen. For normale funktioner viser tabellen f(x), f'(x) og f''(x). For parameterfunktioner viser den x(t), y(t), dx/dt, dy/dt og dy/dx. For polære funktioner viser den r(t), x(t), y(t), dr/dt og dy/dx. Overflødige kolonner kan fjernes vha. undermenuen. Hvis beregningen tager lang tid, viser programmet en indikator, mens værdierne beregnes, hvoraf det fremgår, hvor langt programmet er med beregningerne."
 
 #. TableDialog.xml:34(guimenuitem) MenuItems.xml:184(guimenuitem) FAQ.xml:236(guimenuitem)
 msgid "Copy"
@@ -247,7 +247,7 @@ msgstr "Kopier"
 
 #. TableDialog.xml:32(para)
 msgid "You can select some cells with the mouse and <action>right click</action> with the mouse and use <placeholder-1/> from the context menu to copy the cells to the clipboard. From the clipboard the data may be pasted into another program, e.g. Microsoft Excel."
-msgstr ""
+msgstr "Det er muligt at markere koordinater og kopiere dem ind i et andet program ved hjælp af den menu, som fremkommer, når der højreklikkes i tabellen. Det er også muligt at kopiere data fra et andet program, som MS Word eller MS Excel, og indsætte dem i tabellen. "
 
 #. TableDialog.xml:43(guimenuitem)
 msgid "Select all"
@@ -255,15 +255,15 @@ msgstr "Marker alt"
 
 #. TableDialog.xml:38(para)
 msgid "When you move the mouse to the left side of the table the mouse pointer changes to a right pointing arrow. Now you can select whole rows with the mouse. When you move the mouse to the top of the table, the pointer changes to a down pointing arrow. Now you can select whole columns with the mouse. The whole table may be selected by <action>right clicking</action> and selecting <placeholder-1/>. It is also possible to select cells by holding down the shift key and using the arrow keys on the keyboard."
-msgstr ""
+msgstr "Når musen flyttes ud i venstre side af tabellen, skifter cursoren til en pil, der peger mod højre. Du kan nu markere hele rækker ad gangen. Flyttes musen op i toppen af tabellen, vil cursoren skifte til en nedadrettet pil, hvilket angiver, at hele kolonner kan markeres. Hele tabellen kan markeres ved at vælge <placeholder-1/> fra den menu, som fremkommer, når der <action>højreklikkes</action> med musen. Det er også muligt at markere celler ved at holde Shift-tasten nede, mens der markeres med piletasterne."
 
 #. TableDialog.xml:47(para)
 msgid "From the context menu it is also possible to export the selected data to a file as comma or tab delimited text."
-msgstr ""
+msgstr "Fra højreklikmenuen er det også muligt at eksportere de markerede celler til en fil som komma- eller tabulatorsepareret tekst."
 
 #. TableDialog.xml:51(para)
 msgid "Note that is you choose to create a lot of values in the table, it may take some time to calculate them. Many values may also take up a lot of memory from the system."
-msgstr ""
+msgstr "Bemærk, at hvis du opretter mange værdier i tabellen, kan det tage meget lang tid for programmet at foretage beregningerne. Desuden vil mange værdier optage en hel del hukommelse fra systemet."
 
 #. Special.xml:7(title) FunctionList.xml:390(emphasis)
 msgid "Special"
@@ -291,7 +291,7 @@ msgstr "reelle tal"
 
 #. Special.xml:22(para)
 msgid "The <placeholder-1/> function returns the numeric integral of <placeholder-2/> from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/> This integral is the same as the area between the function <placeholder-6/> and the x-axis from <placeholder-7/> to <placeholder-8/> where the area under the axis is counted negative. <placeholder-9/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric function. <placeholder-10/> and <placeholder-11/> may be any <placeholder-12/> that evaluate to <placeholder-13/>. <placeholder-14/> does not calculate the integral exactly. Instead the calculation is done using Simpson's formula through 100 iterations."
-msgstr "Funktionen <placeholder-1/> returnerer det bestemte integral af <placeholder-2/> fra <placeholder-3/> til <placeholder-4/>. Dette skrives matematisk således: <placeholder-5/> Resultatet af integralet er det samme som arealet af punktmængden afgrænset af grafen for <placeholder-6/>, x-aksen og linjerne med ligningerne x = <placeholder-7/> og x = <placeholder-8/>, idet arealer af punktmængder under x-aksen betragtes som negative. <placeholder-9/> kan være et hvilket som helst funktionsudtryk med x som variabel, hvis funktionen bruges i en standardfunktion, og med t som variabel, hvis det er en parameterfunktion. <placeholder-10/> og <placeholder-11/> er <placeholder-12/>, der evalueres til <placeholder-13/>. <placeholder-14/> beregner ikke integralet eksakt, men beregner resultatet ved hjælp af Simpsons Regel med 100 trin."
+msgstr "Funktionen <placeholder-1/> returnerer det bestemte integral af <placeholder-2/> fra <placeholder-3/> til <placeholder-4/>. Dette skrives matematisk således: <placeholder-5/> Resultatet af integralet er det samme som arealet af punktmængden afgrænset af grafen for <placeholder-6/>, x-aksen og linjerne med ligningerne x = <placeholder-7/> og x = <placeholder-8/>, idet arealer af punktmængder under x-aksen betragtes som negative. <placeholder-9/> kan være et hvilket som helst funktionsudtryk med x som variabel, hvis funktionen bruges i en normal funktion, og med t som variabel, hvis det er en parameterfunktion. <placeholder-10/> og <placeholder-11/> er <placeholder-12/>, der evalueres til <placeholder-13/>. <placeholder-14/> beregner ikke integralet eksakt, men beregner resultatet ved hjælp af Simpsons Regel med 100 trin."
 
 #. Special.xml:43(primary)
 msgid "summation"
@@ -299,7 +299,7 @@ msgstr "sum"
 
 #. Special.xml:44(para)
 msgid "Returns the summation of the first argument evaluated for all integers from the second to the third parameter."
-msgstr ""
+msgstr "Returnerer summen af det første argument evalueret for alle heltal fra det andet til det tredje argument."
 
 #. Special.xml:53(para)
 msgid ""
@@ -307,41 +307,43 @@ msgid ""
 "\t\t\t\t<placeholder-6/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function. <placeholder-7/> and <placeholder-8/> may be any <placeholder-9/> that evaluate to <placeholder-10/>."
 msgstr ""
 "Funktionen <placeholder-1/> returnerer summen af <placeholder-2/> evalueret for alle heltal fra <placeholder-3/> til <placeholder-4/>. Dette kan matematisk skrives som: <placeholder-5/>\n"
-"\t\t\t\t<placeholder-6/> kan være et hvilket som helst funktionsudtryk med x som variabel, hvis funktionen bruges i en standardfunktion, og med t som variabel, hvis det er en parameterfunktion eller en polær funktion. <placeholder-7/> og <placeholder-8/> er <placeholder-9/>, der evalueres til <placeholder-10/>."
+"\t\t\t\t<placeholder-6/> kan være et hvilket som helst funktionsudtryk med x som variabel, hvis funktionen bruges i en normal funktion, og med t som variabel, hvis det er en parameter- eller polær funktion. <placeholder-7/> og <placeholder-8/> er <placeholder-9/>, der evalueres til <placeholder-10/>."
 
 #. Special.xml:70(para)
 msgid "Returns the product of the first argument evaluated for all integers from the second to the third parameter."
-msgstr ""
+msgstr "Returnerer produktet af det første argument evalueret for hvert heltal i intervallet fra den anden til den tredje parameter."
 
 #. Special.xml:79(para)
 msgid ""
 "The <placeholder-1/> function returns the product of <placeholder-2/> evaluated for all integers from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/>\n"
 "\t\t\t\t<placeholder-6/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function. <placeholder-7/> and <placeholder-8/> may be any <placeholder-9/> that evaluate to <placeholder-10/>."
 msgstr ""
+"Funktionen <placeholder-1/> returnerer produktet af <placeholder-2/> evalueret for alle heltal fra <placeholder-3/> til <placeholder-4/>. Dette skrives matematisk som: <placeholder-5/>\n"
+"\t\t\t\t<placeholder-6/> kan være enhver funktion med x som variabel, hvis funktionen bruges i en normal funktion, og med t som variabel, hvis det er en parameter- eller polærfunktion. <placeholder-7/> og <placeholder-8/> er <placeholder-9/>, der evalueres til <placeholder-10/>."
 
 #. Special.xml:96(primary) Special.xml:119(primary)
 msgid "factorial"
-msgstr ""
+msgstr "fakultet"
 
 #. Special.xml:97(para) FunctionList.xml:406(entry)
 msgid "Returns the factorial of the argument."
-msgstr ""
+msgstr "Returnerer argumentets fakultet."
 
 #. Special.xml:106(para)
 msgid "The <placeholder-1/> function returns the factorial of <placeholder-2/>, commonly written as n!. <placeholder-3/> may be any <placeholder-4/> that evaluates to a positive <placeholder-5/>. The function is defined as <placeholder-6/>, and relates to the <placeholder-7/> function as <placeholder-8/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer <placeholder-2/> fakultet, der ofte skrives som n!. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et positivt <placeholder-5/>. Funktionen er defineret som <placeholder-6/> og har en sammenhæng med <placeholder-7/>-funktionen angivet ved <placeholder-8/>."
 
 #. Special.xml:120(para)
 msgid "Returns the value of the Euler gamma function of the argument."
-msgstr ""
+msgstr "Returnerer værdien af Eulers gammafunktion evalueret for argumentet."
 
 #. Special.xml:129(para)
 msgid "The <placeholder-1/> function returns the result of the Euler gamma function of <placeholder-2/>, commonly written as &Gamma;(z). <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The gamma function relates to the factorial function as <placeholder-7/>. The mathematical definition of the gamma function is: <placeholder-8/> This cannot be calculated precisely, so Graph is using the so-called Lanczos approximation to calculate the <placeholder-9/> function."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer resultatet af Eulers gammafunktion for <placeholder-2/>, almindeligvis skrevet som &Gamma;(z). <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>, og funktionen har en sammenhæng med funktionen fact givet ved <placeholder-7/>. Den matematiske definition af gammafunktionen er: <placeholder-8/> Dette kan ikke beregnes præcist, så Graph bruger den såkaldte Lanczos-tilnærmelse til at beregne funktionen <placeholder-9/>."
 
 #. Special.xml:149(para)
 msgid "Returns the value of the Euler beta function evaluated for the arguments."
-msgstr ""
+msgstr "Returnerer værdien af Eulers betafunktion evalueret for argumenterne."
 
 #. Special.xml:161(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:117(glossterm) AxesDialog.xml:25(primary) AxesDialog.xml:205(glossterm) AxesDialog.xml:229(glossterm)
 msgid "complex numbers"
@@ -349,67 +351,67 @@ msgstr "komplekse tal"
 
 #. Special.xml:158(para)
 msgid "The <placeholder-1/> function returns the result of the Euler beta function evaluated for <placeholder-2/> and <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluate to <placeholder-7/> or <placeholder-8/>. The <placeholder-9/> function relates to the <placeholder-10/> function as <placeholder-11/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer resultatet af Eulers betafunktion evalueret for <placeholder-2/> og <placeholder-3/>. <placeholder-4/> og <placeholder-5/> kan være hvilke som helst <placeholder-6/>, der evalueres til <placeholder-7/> eller <placeholder-8/>. Funktionen <placeholder-9/> har en sammenhæng med funktionen <placeholder-10/> givet ved: <placeholder-11/>."
 
 #. Special.xml:172(primary)
 msgid "Lambert W-function"
-msgstr ""
+msgstr "Lambert W-funktion"
 
 #. Special.xml:173(primary)
 msgid "omega function"
-msgstr ""
+msgstr "omega-funktion"
 
 #. Special.xml:174(para)
 msgid "Returns the value of the Lambert W-function evaluated for the argument."
-msgstr ""
+msgstr "Returnerer værdien af Lamberts W-funktion evalueret for argumentet."
 
 #. Special.xml:183(para)
 msgid "The <placeholder-1/> function returns the result of the Lambert W-function, also known as the omega function, evaluated for <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The inverse of the <placeholder-7/> function is given by <placeholder-8/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer resultatet af Lamberts W-funktion, også kendt som omega-funktionen, evalueret for <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. Den inverse funktion til <placeholder-7/> er givet ved: <placeholder-8/>."
 
 #. Special.xml:191(para)
 msgid "For real values of <placeholder-1/> when <placeholder-2/>, the <placeholder-3/> function will evaluate to values with an imaginary part."
-msgstr ""
+msgstr "For reelle værdier af <placeholder-1/>, når <placeholder-2/>, vil funktionen <placeholder-3/> blive evalueret til værdier med en imaginær del."
 
 #. Special.xml:201(primary)
 msgid "Riemann Zeta function"
-msgstr ""
+msgstr "Riemann Zetafunktion"
 
 #. Special.xml:202(para)
 msgid "Returns the value of the Riemann Zeta function evaluated for the argument."
-msgstr ""
+msgstr "Returnerer værdien af Riemann Zetafunktionen evalueret for argumentet."
 
 #. Special.xml:211(para)
 msgid "The <placeholder-1/> function returns the result of the Riemann Zeta function, commonly written as &zeta;(s). <placeholder-2/> may be any <placeholder-3/> that evaluates to a <placeholder-4/> or a <placeholder-5/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer resulatet af Riemann Zetafunktionen, sædvanligvis skrevet som &zeta;(s). <placeholder-2/> kan være et hvilket som helst <placeholder-3/>, der evalueres til et <placeholder-4/> eller et <placeholder-5/>."
 
 #. Special.xml:218(para)
 msgid "The <placeholder-1/> function is defined for the whole complex plane except for the pole at <placeholder-2/>=1."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> er defineret for hele det komplekse plan undtagen for polen i <placeholder-2/>=1."
 
 #. Special.xml:228(primary)
 msgid "modulus"
-msgstr ""
+msgstr "modulus"
 
 #. Special.xml:229(primary)
 msgid "remainder"
-msgstr ""
+msgstr "rest"
 
 #. Special.xml:230(para) FunctionList.xml:426(entry)
 msgid "Returns the remainder of the first argument divided by the second argument."
-msgstr ""
+msgstr "Returnerer resten, når det første argument divideres med det andet argument."
 
 #. Special.xml:239(para)
 msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>=0, <placeholder-8/> returns 0. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
-msgstr ""
+msgstr "Beregner <placeholder-1/> modulo <placeholder-2/>, dvs. resten fra <placeholder-3/>. <placeholder-4/> beregner resten f, så <placeholder-5/> for et heltal a og 0 &le; f &lt; n. f vil altid have samme fortegn som <placeholder-6/>. Når <placeholder-7/>=0, vil <placeholder-8/> returnere 0. <placeholder-9/> og <placeholder-10/> er <placeholder-11/>, der evalueres til <placeholder-12/>."
 
 #. Special.xml:253(para)
 msgid "Returns the normal distribution of the first argument with optional mean value and standard deviation."
-msgstr ""
+msgstr "Returnerer normalfordelingen af det første argument med valgfri middelværdi og spredning."
 
 #. Special.xml:262(para)
 msgid "The <placeholder-1/> function is the probability density of the normal distribution, also called Gaussian distribution. <placeholder-2/> is the variate, also known as the random variable, <placeholder-3/> is the mean value and &sigma; is the standard deviation. <placeholder-4/> and &sigma; are optional and if left out the standard normal distribution is used where <placeholder-5/>=0 and &sigma;=1. <placeholder-6/>, <placeholder-7/> and &sigma; may be any <placeholder-8/> that evaluate to <placeholder-9/> where &sigma; &gt; 0. The normal distribution is defined as: <placeholder-10/>"
-msgstr ""
+msgstr "Funktionen <placeholder-1/> er sandsynlighedstætheden for normalfordelingen, også kaldet den gaussiske fordeling. <placeholder-2/> er den stokastiske variabel, <placeholder-3/> er middelværdien, og &sigma; er spredningen. <placeholder-4/> og &sigma; er valgfrie parametre, og hvis de udelades, benyttes standardnormalfordelingen, hvor <placeholder-5/>=0 og &sigma;=1. <placeholder-6/>, <placeholder-7/> og &sigma; kan være hvilke som helst <placeholder-8/>, der evalueres til <placeholder-9/>, hvor &sigma; &gt; 0. Normalfordelingen er defineret ved: <placeholder-10/>"
 
 #. SaveImageDialog.xml:8(title)
 msgid "Save as image"
@@ -1369,7 +1371,7 @@ msgstr "fejlrapport"
 
 #. Introduction.xml:17(para)
 msgid "Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things. The program is a standard Windows program with menus and dialogs. The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations. It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more. For more information on using the program see <placeholder-1/>."
-msgstr "Graph er et program til tegning af grafer for matematiske funktioner i et koordinatsystem. Programmet er opbygget som et standard Windows-program med menuer og dialogbokse. Det understøtter tegning af standardfunktioner, parameterfunktioner og polærfunktioner. Desuden kan der indsættes tangenter, laves evalueringer af punkter på de indsatte funktioner, indsættes skraveringer, laves serier af punkter og meget mere. For yderligere information om anvendelse af programmet se <placeholder-1/>."
+msgstr "Graph er et program til tegning af grafer for matematiske funktioner i et koordinatsystem. Programmet er opbygget som et standard Windows-program med menuer og dialogbokse. Det understøtter tegning af normale funktioner, parameterfunktioner og polærfunktioner. Desuden kan der indsættes tangenter, laves evalueringer af punkter på de indsatte funktioner, indsættes skraveringer, laves serier af punkter og meget mere. For yderligere information om anvendelse af programmet se <placeholder-1/>."
 
 #. Introduction.xml:24(para)
 msgid "This program is free software; you can redistribute it and/or modify it under the terms of the <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink>. Newest version of the program as well as the source code may be downloaded from <ulink url=\"http://www.padowan.dk\"/>."
@@ -1701,7 +1703,7 @@ msgstr "Indsæt tangent/normal"
 
 #. InsertTangentDialog.xml:11(primary)
 msgid "standard function"
-msgstr "standardfunktion"
+msgstr "normal funktion"
 
 #. InsertTangentDialog.xml:12(primary) InsertFunctionDialog.xml:11(primary) InsertFunctionDialog.xml:29(guilabel)
 msgid "parametric function"
@@ -2229,7 +2231,7 @@ msgstr "Funktionstype"
 
 #. InsertFunctionDialog.xml:29(guilabel)
 msgid "Standard function"
-msgstr "Standardfunktion"
+msgstr "Normal funktion"
 
 #. InsertFunctionDialog.xml:28(para)
 msgid "You can choose between three different types of functions: <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, thought it may be undefined for some x-coordinates."
