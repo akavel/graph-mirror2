@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2008-09-14 12:39Romance Standard Time\n"
-"PO-Revision-Date: 2008-10-20 10:17+0100\n"
+"POT-Creation-Date: 2008-10-20 18:51Romance Standard Time\n"
+"PO-Revision-Date: 2008-10-20 22:13+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr "radianer"
 msgid "numeric expression"
 msgstr "numerisk udtryk"
 
-#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:121(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:262(glossterm) Hyperbolic.xml:285(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
+#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:121(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:262(glossterm) Hyperbolic.xml:285(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
 msgid "real number"
 msgstr "reelt tal"
 
@@ -130,8 +130,8 @@ msgid "Returns the inverse tangent of the argument."
 msgstr "Returnerer invers tangens til argumentet."
 
 #. Trigonometric.xml:168(para)
-msgid "The <placeholder-1/> function calculates the inverse tangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a real number. This is the reverse of the <placeholder-6/> function."
-msgstr "Funktionen <placeholder-1/> beregner invers tangens til vinklen <placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et reelt tal. Dette er den omvendte af funktionen <placeholder-6/>."
+msgid "The <placeholder-1/> function calculates the inverse tangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/>. This is the reverse of the <placeholder-7/> function."
+msgstr "Funktionen <placeholder-1/> beregner invers tangens til vinklen <placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-6/>. Dette er den omvendte af funktionen <placeholder-7/>."
 
 #. Trigonometric.xml:182(primary) Trigonometric.xml:272(primary)
 msgid "secant"
@@ -262,7 +262,7 @@ msgid "From the context menu it is also possible to export the selected data to 
 msgstr "Fra højreklikmenuen er det også muligt at eksportere de markerede celler til en fil som komma- eller tabulatorsepareret tekst."
 
 #. TableDialog.xml:51(para)
-msgid "Note that is you choose to create a lot of values in the table, it may take some time to calculate them. Many values may also take up a lot of memory from the system."
+msgid "Note that if you choose to create a lot of values in the table, it may take some time to calculate them. Many values may also take up a lot of memory from the system."
 msgstr "Bemærk, at hvis du opretter mange værdier i tabellen, kan det tage meget lang tid for programmet at foretage beregningerne. Desuden vil mange værdier optage en hel del hukommelse fra systemet."
 
 #. Special.xml:7(title) FunctionList.xml:390(emphasis)
@@ -285,7 +285,7 @@ msgstr "Returnerer det numeriske integral af det første argument i intervallet 
 msgid "numeric expressions"
 msgstr "numeriske udtryk"
 
-#. Special.xml:32(glossterm) Special.xml:61(glossterm) Special.xml:87(glossterm) Special.xml:161(glossterm) Special.xml:244(glossterm) Special.xml:268(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:115(glossterm) Errors.xml:16(glossterm)
+#. Special.xml:32(glossterm) Special.xml:61(glossterm) Special.xml:87(glossterm) Special.xml:161(glossterm) Special.xml:244(glossterm) Special.xml:268(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:115(glossterm) Errors.xml:16(glossterm) Errors.xml:102(glossterm)
 msgid "real numbers"
 msgstr "reelle tal"
 
@@ -298,7 +298,7 @@ msgid "summation"
 msgstr "sum"
 
 #. Special.xml:44(para)
-msgid "Returns the summation of the first argument evaluated for all integers from the second to the third parameter."
+msgid "Returns the summation of the first argument evaluated for all integers from the second to the third argument."
 msgstr "Returnerer summen af det første argument evalueret for alle heltal fra det andet til det tredje argument."
 
 #. Special.xml:53(para)
@@ -310,8 +310,8 @@ msgstr ""
 "\t\t\t\t<placeholder-6/> kan være et hvilket som helst funktionsudtryk med x som variabel, hvis funktionen bruges i en normal funktion, og med t som variabel, hvis det er en parameter- eller polær funktion. <placeholder-7/> og <placeholder-8/> er <placeholder-9/>, der evalueres til <placeholder-10/>."
 
 #. Special.xml:70(para)
-msgid "Returns the product of the first argument evaluated for all integers from the second to the third parameter."
-msgstr "Returnerer produktet af det første argument evalueret for hvert heltal i intervallet fra den anden til den tredje parameter."
+msgid "Returns the product of the first argument evaluated for all integers from the second to the third argument."
+msgstr "Returnerer produktet af det første argument evalueret for hvert heltal i intervallet fra det andet til det tredje argument."
 
 #. Special.xml:79(para)
 msgid ""
@@ -345,7 +345,7 @@ msgstr "Funktionen <placeholder-1/> returnerer resultatet af Eulers gammafunktio
 msgid "Returns the value of the Euler beta function evaluated for the arguments."
 msgstr "Returnerer værdien af Eulers betafunktion evalueret for argumenterne."
 
-#. Special.xml:161(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:117(glossterm) AxesDialog.xml:25(primary) AxesDialog.xml:205(glossterm) AxesDialog.xml:229(glossterm)
+#. Special.xml:161(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:117(glossterm) Errors.xml:103(glossterm) AxesDialog.xml:25(primary) AxesDialog.xml:205(glossterm) AxesDialog.xml:229(glossterm)
 msgid "complex numbers"
 msgstr "komplekse tal"
 
@@ -491,7 +491,7 @@ msgstr "Fjerner argumentets brøkdel."
 
 #. Rounding.xml:22(para)
 msgid "The <placeholder-1/> function returns the <placeholder-2/> part of <placeholder-3/>. The function removes the decimal part of <placeholder-4/>, i.e. rounds against zero. <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If <placeholder-9/> is a complex number, the function returns <placeholder-10/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer <placeholder-2/>-delen af <placeholder-3/>. Funktionen fjerner decimaldelen af <placeholder-4/>, dvs. den runder mod nul. <placeholder-5/> kan være et hvilket som <placeholder-6/>, der evalueres til et <placeholder-7/> eller et <placeholder-8/>. Hvis <placeholder-9/> er et komplekst tal, returnerer funktionen <placeholder-10/>."
 
 #. Rounding.xml:36(primary)
 msgid "fractional part"
@@ -507,7 +507,7 @@ msgstr "Returnerer argumentets brøkdel."
 
 #. Rounding.xml:47(para)
 msgid "The <placeholder-1/> function returns the fractional part of <placeholder-2/>. The function removes the <placeholder-3/> part of <placeholder-4/>, i.e. <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>. If <placeholder-10/> is a complex number, the function returns <placeholder-11/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer brøkdelen af <placeholder-2/>. Funktionen fjerner <placeholder-3/>-delen af <placeholder-4/>, dvs. <placeholder-5/>. <placeholder-6/> kan være ethvert <placeholder-7/>, der evalueres til et <placeholder-8/> eller et <placeholder-9/>. Hvis <placeholder-10/> er et komplekst tal, returnerer funktionen <placeholder-11/>."
 
 #. Rounding.xml:61(primary)
 msgid "round up"
@@ -519,14 +519,14 @@ msgstr "Runder argumentet op."
 
 #. Rounding.xml:71(para)
 msgid "The <placeholder-1/> function finds the smallest <placeholder-2/> not less than <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> finder den mindste <placeholder-2/>, som ikke er mindre end <placeholder-3/>. <placeholder-4/> kan være ethvert <placeholder-5/>, der evalueres til et <placeholder-6/> eller et <placeholder-7/>. Hvis <placeholder-8/> er et komplekst tal, returnerer funktionen <placeholder-9/>."
 
 #. Rounding.xml:84(primary)
 msgid "round down"
 msgstr "rund ned"
 
 #. Rounding.xml:85(primary)
-msgid "greatest inetger"
+msgid "greatest integer"
 msgstr "største heltal"
 
 #. Rounding.xml:86(para)
@@ -535,11 +535,11 @@ msgstr "Runder argumentet ned."
 
 #. Rounding.xml:95(para)
 msgid "The <placeholder-1/> function, which is also called the greatest integer function, gives the largest <placeholder-2/> not greater than <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/>, som også kaldes funktionen for det største heltal, finder den største <placeholder-2/>, som ikke er større end <placeholder-3/>. <placeholder-4/> kan være ethvert <placeholder-5/>, der evalueres til et <placeholder-6/> eller et <placeholder-7/>. Hvis <placeholder-8/> er et komplekst tal, returnerer funktionen <placeholder-9/>."
 
 #. Rounding.xml:107(para)
 msgid "Rounds a number to the specified number of decimals."
-msgstr ""
+msgstr "Afrunder et tal til det angivne antal decimaler."
 
 #. Rounding.xml:116(para)
 msgid "The <placeholder-1/> function rounds <placeholder-2/> to the number of decimals given by <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>. <placeholder-10/> may be any numeric expression that evaluates to an <placeholder-11/>. If <placeholder-12/>&lt;0, <placeholder-13/> is rounded to <placeholder-14/> places to the left of the decimal point."
@@ -1571,7 +1571,7 @@ msgstr "potens"
 
 #. InsertTrendlineDialog.xml:16(primary)
 msgid "polyline"
-msgstr ""
+msgstr "polyline"
 
 #. InsertTrendlineDialog.xml:17(primary) InsertFunctionDialog.xml:10(primary) InsertDerivativeDialog.xml:14(primary)
 msgid "function"
@@ -2098,7 +2098,7 @@ msgid "Show coordinates"
 msgstr "Vis koordinater"
 
 #. InsertPointSeriesDialog.xml:93(para)
-msgid "Put a check in <placeholder-1/> to show the x- and y-coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.bmp\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
+msgid "Put a check in <placeholder-1/> to show the x- and y-coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
 msgstr ""
 
 #. InsertPointSeriesDialog.xml:102(term)
@@ -2182,7 +2182,7 @@ msgid "This dialog is used to insert or edit text labels. To insert a label you 
 msgstr ""
 
 #. InsertLabelDialog.xml:32(para)
-msgid "The text is entered in the editing area. You can change text styles for different parts of the text. The background color, which may be any solid color or transparent, can be set for the whole label only. The <guibutton><inlinegraphic fileref=\"Font_Symbol.bmp\" scale=\"60\"/></guibutton> button can be used to insert special characters like mathematical symbols and Greek characters."
+msgid "The text is entered in the editing area. You can change text styles for different parts of the text. The background color, which may be any solid color or transparent, can be set for the whole label only. The <guibutton><inlinegraphic fileref=\"Font_Symbol.png\" scale=\"60\"/></guibutton> button can be used to insert special characters like mathematical symbols and Greek characters."
 msgstr ""
 
 #. InsertLabelDialog.xml:42(guimenuitem)
@@ -2379,7 +2379,7 @@ msgstr ""
 
 #. Hyperbolic.xml:84(primary)
 msgid "inverse hyperbolic sine"
-msgstr ""
+msgstr "invers hyperbolsk sinus"
 
 #. Hyperbolic.xml:85(para) FunctionList.xml:247(entry)
 msgid "Returns the inverse hyperbolic sine of the argument."
@@ -2462,7 +2462,6 @@ msgid "Hyperbolic cotangent is defined as: <placeholder-1/>"
 msgstr ""
 
 #. Hyperbolic.xml:226(primary)
-#, fuzzy
 msgid "hyperbolic cosecanr"
 msgstr "hyperbolsk cosekans"
 
@@ -2479,7 +2478,6 @@ msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosecant 
 msgstr ""
 
 #. Hyperbolic.xml:249(primary)
-#, fuzzy
 msgid "hyperbolic secanr"
 msgstr "hyperbolsk sekans"
 
@@ -3004,12 +3002,12 @@ msgid "Returns the numeric integral of the first argument from the second argume
 msgstr ""
 
 #. FunctionList.xml:398(entry)
-msgid "Returns the sum of the first argument evaluated for each integer in the range from the second to third argument."
-msgstr ""
+msgid "Returns the sum of the first argument evaluated for each integer in the range from the second to the third argument."
+msgstr "Returnerer summen af det første argument evalueret for alle heltal fra det andet til det tredje argument."
 
 #. FunctionList.xml:402(entry)
-msgid "Returns the product of the first argument evaluated for each integer in the range from the second to third argument."
-msgstr ""
+msgid "Returns the product of the first argument evaluated for each integer in the range from the second to the third argument."
+msgstr "Returnerer produktet af det første argument evalueret for hvert heltal i intervallet fra det anden til det tredje argument."
 
 #. FunctionList.xml:410(entry)
 msgid "Returns the Euler gamma function of the argument."
@@ -3301,7 +3299,7 @@ msgstr ""
 
 #. EvaluateDialog.xml:85(term)
 msgid "Extreme y-value (Extremum)"
-msgstr ""
+msgstr "Ekstrem y-værdi (ekstremum)"
 
 #. EvaluateDialog.xml:87(para)
 msgid "The cursor will snap to the nearest local extreme value for the y-coordinate."
@@ -3424,8 +3422,8 @@ msgid "Error 11: acosh evaluated at undefined value."
 msgstr "Fejl 11: acosh evalueret for en udefineret værdi."
 
 #. Errors.xml:101(para)
-msgid "Inverse hyperbolic cosine acosh(x) is only defined for x 1 when using real numbers. acosh(x) is defined for all numbers when calculating with complex numbers."
-msgstr "Invers hyperbolsk cosinus acosh(x) er kun defineret for x&ge;1 når der regnes med reelle tal, mens acosh(x) er defineret for alle tal, når der regnes med komplekse tal."
+msgid "Inverse hyperbolic cosine acosh(x) is only defined for x&ge;1 when using <placeholder-1/>. acosh(x) is defined for all numbers when calculating with <placeholder-2/>."
+msgstr "Invers hyperbolsk cosinus acosh(x) er kun defineret for x&ge;1 når <placeholder-1/>, mens acosh(x) er defineret for alle tal, når der regnes med <placeholder-2/>."
 
 #. Errors.xml:109(term)
 msgid "Error 12: arg(0) is undefined."
@@ -3725,11 +3723,11 @@ msgstr "Konstanter"
 
 #. Constants.xml:8(title)
 msgid "rand constant"
-msgstr ""
+msgstr "rand-konstant"
 
 #. Constants.xml:10(primary)
 msgid "random"
-msgstr ""
+msgstr "tilfældig"
 
 #. Constants.xml:11(para)
 msgid "Returns a random number in the range 0 to 1."
@@ -3745,7 +3743,7 @@ msgstr ""
 
 #. Constants.xml:32(title)
 msgid "Implementation"
-msgstr ""
+msgstr "Implementering"
 
 #. Constants.xml:33(para)
 msgid "<placeholder-1/> uses a multiplicative congruential random number generator with period 2 to the 32<superscript>nd</superscript> power to return successive pseudo-random numbers in the range from 0 to 1."
@@ -3929,7 +3927,7 @@ msgstr ""
 
 #. AxesDialog.xml:112(term)
 msgid "The x-axis crosses at / The y-axis crosses at:"
-msgstr ""
+msgstr "x-aksen krydser i / y-aksen krydser i:"
 
 #. AxesDialog.xml:115(guilabel) AxesDialog.xml:213(term)
 msgid "Axes style"
@@ -4128,7 +4126,7 @@ msgid "When you press the <guibutton>Animate</guibutton> button, an animation is
 msgstr ""
 
 #. AnimateDialog.xml:66(para)
-msgid "When the animation is finished, a very simple player is shown. You can use this to play the animation. The <guibutton><inlinegraphic fileref=\"AnimationMenu.bmp\" scale=\"60\"/></guibutton> button will give you some additional options."
+msgid "When the animation is finished, a very simple player is shown. You can use this to play the animation. The <guibutton><inlinegraphic fileref=\"AnimationMenu.png\" scale=\"60\"/></guibutton> button will give you some additional options."
 msgstr ""
 
 #. AnimateDialog.xml:73(term)
@@ -4369,7 +4367,19 @@ msgstr "Ikonet er designet af <placeholder-1/>."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #. Acknowledgements.xml:0(None)
-#, fuzzy
 msgid "translator-credits"
 msgstr "Michael Bach Ipsen <rosenthall@hotmail.com>, 2003, 2008"
+
+#~ msgid ""
+#~ "The <placeholder-1/> function calculates the inverse tangent of "
+#~ "<placeholder-2/>. The result may be in <placeholder-3/> or degrees "
+#~ "depending on the current settings. <placeholder-4/> may be any "
+#~ "<placeholder-5/> that evaluates to a real number. This is the reverse of "
+#~ "the <placeholder-6/> function."
+#~ msgstr ""
+#~ "Funktionen <placeholder-1/> beregner invers tangens til vinklen "
+#~ "<placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader "
+#~ "afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et "
+#~ "hvilket som helst <placeholder-5/>, der evalueres til et reelt tal. Dette "
+#~ "er den omvendte af funktionen <placeholder-6/>."
 
