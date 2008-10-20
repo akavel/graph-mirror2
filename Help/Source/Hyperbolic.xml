@@ -223,7 +223,7 @@
 	<section id="acsch" xreflabel="acsch">
 		<title><markup>acsch</markup> function</title>
 		<indexterm><primary><function>acsch</function> function</primary></indexterm>
-		<indexterm><primary>hyperbolic cosecanr</primary></indexterm>
+		<indexterm><primary>hyperbolic cosecant</primary></indexterm>
 		<indexterm><primary>inverse hyperbolic cosecant</primary></indexterm>
 		<para>
 			Returns the inverse hyperbolic cosecant of the argument.
@@ -246,7 +246,7 @@
 	<section id="asech" xreflabel="asech">
 		<title><markup>asech</markup> function</title>
 		<indexterm><primary><function>asech</function> function</primary></indexterm>
-		<indexterm><primary>hyperbolic secanr</primary></indexterm>
+		<indexterm><primary>hyperbolic secant</primary></indexterm>
 		<indexterm><primary>inverse hyperbolic secant</primary></indexterm>
 		<para>
 			Returns the inverse hyperbolic secant of the argument.

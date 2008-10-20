@@ -58,7 +58,7 @@
 
 		<para>
 			The installation will create a shortcut in the Start menu, which may be used to start the program.
-			Under the installation you select the preferred language. This can later be changed from the
+			During the installation you select the preferred language. This can later be changed from the
 			<xref linkend="OptionsDialog"/> dialog.
 		</para>
 		<para>
