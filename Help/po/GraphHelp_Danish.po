@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-09-14 12:39Romance Standard Time\n"
-"PO-Revision-Date: 2008-10-20 09:24+0100\n"
+"PO-Revision-Date: 2008-10-20 10:17+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -451,27 +451,27 @@ msgstr "Gem som"
 
 #. SaveImageDialog.xml:19(para)
 msgid "Use the menu item <placeholder-1/> to save the shown coordinate system as an image file. Graph supports five formats: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) and Portable Document Format (pdf). When the menu item has been chosen, a standard <placeholder-2/> dialog will appear. In this dialog you write a filename, choose a directory and select one of the image types."
-msgstr ""
+msgstr "Vælg menupunktet <placeholder-1/>, hvis du ønsker at gemme de viste grafer i en billedfil. Programmet understøtter fem formater: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), JPEG (jpg) og Portable Document Format (pdf). Når menupunktet vælges, fremkommer en standard <placeholder-2/>-dialogboks, hvor det ønskede filnavn skrives, og filtypen vælges."
 
 #. SaveImageDialog.xml:25(para)
 msgid "bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen. emf files are used for vector graphics. The Options button in the save dialog can be used to change to image size. You may also be able to change other settings depending on the chosen image format."
-msgstr ""
+msgstr "Vælges filtypen til at være bmp eller png, gemmes et billede som bitmap nøjagtigt magen til det, som vises på skærmen. emf-filer gemmes som vektorgrafik. Knappen Indstillinger i dialogen Gem som billede kan bruges til at ændre billedstørrelsen. Afhængig af det valgte format kan det også være muligt at ændre yderligere indstillinger."
 
 #. SaveImageDialog.xml:31(para)
 msgid "Metafiles (emf) should be the preferred format, because it is small and looks nice even then it is scaled. Windows Bitmap (bmp) is a standard format supported by almost all Windows programs that can read graphics files. Portable Network Graphics (png) is a format that is better compressed than bmp files. This is the most sustainable format for web pages, because it is small and can be understood by all browsers."
-msgstr ""
+msgstr "Windows Enhanced Metafile (emf) bør være det foretrukne valg, fordi filen kun fylder lidt, og billedet ser pænt ud, selvom størrelsen ændres. Windows Bitmap (bmp) er et standard format, som er understøttet af de fleste Windows-programmer, der kan læse grafikfiler. Portable Network Graphics (png) er et bitmap format, der er bedre komprimeret end bmp filer. Dette er det bedste format til hjemmesider, da filerne er små og kan læses af alle browsere."
 
 #. SaveImageDialog.xml:37(para)
 msgid "Joint Photographic Experts Group (jpeg) is a bitmap format with loss. It is supported but not recommended because graphs will usually become blurred."
-msgstr ""
+msgstr "JPEG (jpg) er et bitmapformat med tab. Det er understøttet, men ikke anbefalet, fordi graferne som regel bliver slørede."
 
 #. SaveImageDialog.xml:41(para)
 msgid "Portable Document Format (pdf) is actually not an image format. It is a way to store documents as postscript in a portable way. Graph will store the image as Portable Network Graphics inside the pdf file."
-msgstr ""
+msgstr "ortable Document Format (pdf) er ikke et egentligt billedformat. Det er en metode til at gemme dokumenter som postscript, således at de kan transporteres. Graph vil gemme billedet som PNG inde i pdf-filen."
 
 #. SaveImageDialog.xml:46(para)
 msgid "CompuServe Graphics Interchange (gif) is not supported because it uses the LZW compression, which is patented by Unisys."
-msgstr ""
+msgstr "CompuServe Graphics Interchange (gif) er ikke understøttet, da formatet anvender LZW komprimering, som er patenteret af Unisys."
 
 #. Rounding.xml:7(title) FunctionList.xml:336(emphasis)
 msgid "Rounding"
@@ -483,11 +483,11 @@ msgstr "afrunding"
 
 #. Rounding.xml:12(primary)
 msgid "truncate"
-msgstr ""
+msgstr "afrund"
 
 #. Rounding.xml:13(para)
 msgid "Removes the fractional part of the argument."
-msgstr ""
+msgstr "Fjerner argumentets brøkdel."
 
 #. Rounding.xml:22(para)
 msgid "The <placeholder-1/> function returns the <placeholder-2/> part of <placeholder-3/>. The function removes the decimal part of <placeholder-4/>, i.e. rounds against zero. <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If <placeholder-9/> is a complex number, the function returns <placeholder-10/>."
@@ -495,15 +495,15 @@ msgstr ""
 
 #. Rounding.xml:36(primary)
 msgid "fractional part"
-msgstr ""
+msgstr "brøkdel"
 
 #. Rounding.xml:37(primary)
 msgid "decimal part"
-msgstr ""
+msgstr "decimaldel"
 
 #. Rounding.xml:38(para) FunctionList.xml:344(entry)
 msgid "Returns the fractional part of the argument."
-msgstr ""
+msgstr "Returnerer argumentets brøkdel."
 
 #. Rounding.xml:47(para)
 msgid "The <placeholder-1/> function returns the fractional part of <placeholder-2/>. The function removes the <placeholder-3/> part of <placeholder-4/>, i.e. <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>. If <placeholder-10/> is a complex number, the function returns <placeholder-11/>."
@@ -567,7 +567,7 @@ msgstr ""
 
 #. PowerAndLog.xml:32(primary) InsertTrendlineDialog.xml:15(primary)
 msgid "exponential"
-msgstr ""
+msgstr "eksponentiel"
 
 #. PowerAndLog.xml:33(para)
 msgid "Returns <emphasis>e</emphasis> raised to the power of the argument."
@@ -603,7 +603,7 @@ msgstr ""
 
 #. PowerAndLog.xml:101(title)
 msgid "Example"
-msgstr ""
+msgstr "Eksempel"
 
 #. PowerAndLog.xml:102(para)
 msgid "Instead of <placeholder-1/>, you can use <placeholder-2/>."
@@ -647,11 +647,11 @@ msgstr "stykkevis"
 
 #. Piecewise.xml:11(primary)
 msgid "signum"
-msgstr ""
+msgstr "fortegn"
 
 #. Piecewise.xml:12(para)
 msgid "Returns the sign of the argument."
-msgstr ""
+msgstr "Returnerer argumentets fortegn."
 
 #. Piecewise.xml:21(para)
 msgid "The <placeholder-1/> function, which is also called signum, returns the sign of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. When <placeholder-7/> is a real number, <placeholder-8/> returns 1 for <placeholder-9/>&gt;0 and -1 for <placeholder-10/>&lt;0. <placeholder-11/> returns 0 for <placeholder-12/>=0. When <placeholder-13/> evaluates to a complex number, <placeholder-14/> returns <placeholder-15/>."
@@ -659,11 +659,11 @@ msgstr ""
 
 #. Piecewise.xml:35(para)
 msgid "The unit step function."
-msgstr ""
+msgstr "Funktionen unit step."
 
 #. Piecewise.xml:44(para)
 msgid "<placeholder-1/> is commonly known as the unit step function. <placeholder-2/> may be any <placeholder-3/> that evaluates to a <placeholder-4/>. The function is undefined when <placeholder-5/> has an imaginary part. <placeholder-6/> returns 1 for <placeholder-7/>&ge;0 and 0 for <placeholder-8/>&lt;0."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> kaldes ofte unit step. <placeholder-2/> kan være et hvilket som helst <placeholder-3/>, der evalueres til et <placeholder-4/>. Funktionen er udefineret, hvis <placeholder-5/> har en imaginær del. <placeholder-6/> returnerer 1 for <placeholder-7/>&ge;0 og 0 for <placeholder-8/>&lt;0."
 
 #. Piecewise.xml:57(primary) AxesDialog.xml:12(primary)
 msgid "minimum"
@@ -859,19 +859,19 @@ msgstr "OLE-server/-klient"
 
 #. OLE.xml:7(primary)
 msgid "linking"
-msgstr ""
+msgstr "sammenkædning"
 
 #. OLE.xml:8(primary)
 msgid "embedded"
-msgstr ""
+msgstr "indbygget"
 
 #. OLE.xml:9(primary)
 msgid "automation"
-msgstr ""
+msgstr "automatisering"
 
 #. OLE.xml:11(title)
 msgid "OLE server"
-msgstr ""
+msgstr "OLE-server"
 
 #. OLE.xml:12(para)
 msgid "Graph has been implemented as an OLE (Object Linking and Embedding) server, which means that Graph objects can be placed (embedded) into an OLE client. Many applications can work as OLE clients, for example Microsoft Word."
@@ -887,7 +887,7 @@ msgstr "Sæt ind"
 
 #. OLE.xml:33(guimenuitem)
 msgid "Paste Special..."
-msgstr ""
+msgstr "Indsæt speciel..."
 
 #. OLE.xml:16(para)
 msgid "You can use <placeholder-1/> in Graph to copy the current content to the clipboard. Afterwards you can select <placeholder-2/> in Word (or similar in another OLE client) to insert the Graph object from the clipboard. When you double click on the object a new instance of Graph will start where you can edit the object. If you don't want to paste the data as a Graph object into Word, you can use <placeholder-3/> in Word to paste as a picture instead."
@@ -935,11 +935,11 @@ msgstr ""
 
 #. MenuItems.xml:4(title)
 msgid "List of menu items"
-msgstr ""
+msgstr "Liste over menupunkter"
 
 #. MenuItems.xml:5(primary)
 msgid "menu items"
-msgstr ""
+msgstr "menupunkter"
 
 #. MenuItems.xml:6(primary)
 msgid "shortcuts"
@@ -1039,7 +1039,7 @@ msgstr "Klip"
 
 #. MenuItems.xml:176(glossterm) MenuItems.xml:190(glossterm) MenuItems.xml:204(glossterm) MenuItems.xml:403(glossterm) MenuItems.xml:417(glossterm) MenuItems.xml:535(glossterm) Glossary.xml:33(glossterm) Glossary.xml:34(primary)
 msgid "graph element"
-msgstr ""
+msgstr "grafelement"
 
 #. MenuItems.xml:175(para)
 msgid "This will copy the selected <placeholder-1/> to the clipboard. The element will be deleted afterwards."
@@ -1399,7 +1399,7 @@ msgstr ""
 
 #. Installation.xml:4(title)
 msgid "Installation and startup"
-msgstr ""
+msgstr "Installation og opstart"
 
 #. Installation.xml:5(primary)
 msgid "installation"
@@ -1463,15 +1463,15 @@ msgstr ""
 
 #. Installation.xml:59(para)
 msgid "The installation will create a shortcut in the Start menu, which may be used to start the program. Under the installation you select the preferred language. This can later be changed from the <placeholder-1/> dialog."
-msgstr ""
+msgstr "Installationen opretter en genvej i startmenuen, som kan bruges til at starte programmet. Under installationen vælges det foretrukne sprog. Dette kan senere ændres i dialogen <placeholder-1/>."
 
 #. Installation.xml:64(para)
 msgid "If an older version of the program is already installed, the installation suggests you install in the same directory. You can just install over the old version. There is no need to uninstall the old version first, but make sure the old version is not running while installing."
-msgstr ""
+msgstr "Hvis en ældre version af programmet er installeret i forvejen, vil du blive foreslået at installere i det samme katalog. Du kan roligt installere oven i den gamle version. Det er ikke nødvendigt at fjerne den gamle installation først, men sørg for at den gamle version af programmet ikke kører, mens der installeres."
 
 #. Installation.xml:69(para)
 msgid "The Graph Setup can take the parameters specified in the table below. These are especially useful when you want to automate the installation."
-msgstr ""
+msgstr "Graph kan installeres med parametrene i tabellen nedenfor. Dette er især anvendeligt, hvis du vil automatisere installationen."
 
 #. Installation.xml:80(entry) Installation.xml:151(entry)
 msgid "Parameter"
@@ -1527,7 +1527,7 @@ msgstr ""
 
 #. Installation.xml:160(link)
 msgid "image formats"
-msgstr ""
+msgstr "billedformater"
 
 #. Installation.xml:158(entry)
 msgid "Used to save an opened .grf file as an image file. The file type can be any of the <placeholder-1/> supported by Graph."
@@ -2019,7 +2019,7 @@ msgstr "glat linje"
 
 #. InsertPointSeriesDialog.xml:14(primary)
 msgid "interpolation"
-msgstr ""
+msgstr "interpolation"
 
 #. InsertPointSeriesDialog.xml:15(primary)
 msgid "labels"
@@ -2063,7 +2063,7 @@ msgstr ""
 
 #. InsertPointSeriesDialog.xml:66(guilabel)
 msgid "Interpolation"
-msgstr ""
+msgstr "Interpolation"
 
 #. InsertPointSeriesDialog.xml:64(para)
 msgid "Notice that if you select an arrow as marker, the arrow will be shown pointing tangential to the line at the point. The actual direction therefore depends on the <placeholder-1/> setting. The first point is never shown when the marker is an arrow."
@@ -2079,7 +2079,7 @@ msgstr ""
 
 #. InsertPointSeriesDialog.xml:83(guilabel)
 msgid "Cubic splines"
-msgstr ""
+msgstr "Cubic splines"
 
 #. InsertPointSeriesDialog.xml:84(guilabel)
 msgid "Half cosine"
@@ -2279,7 +2279,7 @@ msgstr ""
 
 #. InsertFunctionDialog.xml:99(guilabel)
 msgid "Line styles"
-msgstr ""
+msgstr "Linjetyper"
 
 #. InsertFunctionDialog.xml:99(guilabel) InsertFunctionDialog.xml:101(guilabel)
 msgid "Lines"
@@ -2391,7 +2391,7 @@ msgstr ""
 
 #. Hyperbolic.xml:107(primary)
 msgid "inverse hyperbolic cosine"
-msgstr ""
+msgstr "invers hyperbolsk cosinus"
 
 #. Hyperbolic.xml:108(para) FunctionList.xml:251(entry)
 msgid "Returns the inverse hyperbolic cosine of the argument."
@@ -2403,7 +2403,7 @@ msgstr ""
 
 #. Hyperbolic.xml:130(primary)
 msgid "inverse hyperbolic tangent"
-msgstr ""
+msgstr "invers hyperbolsk tangens"
 
 #. Hyperbolic.xml:133(para) FunctionList.xml:255(entry)
 msgid "Returns the inverse hyperbolic tangent of the argument."
@@ -2415,7 +2415,7 @@ msgstr ""
 
 #. Hyperbolic.xml:154(primary)
 msgid "hyperbolic cosecant"
-msgstr ""
+msgstr "hyperbolsk cosekans"
 
 #. Hyperbolic.xml:155(para) FunctionList.xml:259(entry)
 msgid "Returns the hyperbolic cosecant of the argument."
@@ -2431,7 +2431,7 @@ msgstr ""
 
 #. Hyperbolic.xml:178(primary)
 msgid "hyperbolic secant"
-msgstr ""
+msgstr "hyperbolsk sekans"
 
 #. Hyperbolic.xml:179(para) FunctionList.xml:263(entry)
 msgid "Returns the hyperbolic secant of the argument."
@@ -2447,7 +2447,7 @@ msgstr ""
 
 #. Hyperbolic.xml:202(primary) Hyperbolic.xml:272(primary)
 msgid "hyperbolic cotangent"
-msgstr ""
+msgstr "hyperbolsk cotangens"
 
 #. Hyperbolic.xml:203(para) FunctionList.xml:267(entry)
 msgid "Returns the hyperbolic cotangent of the argument."
@@ -2462,12 +2462,13 @@ msgid "Hyperbolic cotangent is defined as: <placeholder-1/>"
 msgstr ""
 
 #. Hyperbolic.xml:226(primary)
+#, fuzzy
 msgid "hyperbolic cosecanr"
-msgstr ""
+msgstr "hyperbolsk cosekans"
 
 #. Hyperbolic.xml:227(primary)
 msgid "inverse hyperbolic cosecant"
-msgstr ""
+msgstr "invers hyperbolsk cosekans"
 
 #. Hyperbolic.xml:228(para) FunctionList.xml:271(entry)
 msgid "Returns the inverse hyperbolic cosecant of the argument."
@@ -2478,12 +2479,13 @@ msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosecant 
 msgstr ""
 
 #. Hyperbolic.xml:249(primary)
+#, fuzzy
 msgid "hyperbolic secanr"
-msgstr ""
+msgstr "hyperbolsk sekans"
 
 #. Hyperbolic.xml:250(primary)
 msgid "inverse hyperbolic secant"
-msgstr ""
+msgstr "invers hyperbolsk sekans"
 
 #. Hyperbolic.xml:251(para) FunctionList.xml:275(entry)
 msgid "Returns the inverse hyperbolic secant of the argument."
@@ -2495,7 +2497,7 @@ msgstr ""
 
 #. Hyperbolic.xml:273(primary)
 msgid "inverse hyperbolic cotangent"
-msgstr ""
+msgstr "invers hyperbolsk cotangens"
 
 #. Hyperbolic.xml:274(para) FunctionList.xml:279(entry)
 msgid "Returns the inverse hyperbolic cotangent of the argument."
@@ -3083,11 +3085,11 @@ msgstr "tricks"
 
 #. FAQ.xml:15(para)
 msgid "What are the system requirements of Graph?"
-msgstr ""
+msgstr "Hvad er kravene for at køre Graph?"
 
 #. FAQ.xml:20(para)
 msgid "Graph requires 32 bit Windows. It has been tested under Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is able to run Windows, it should be able to run the program, though Windows 95 is no longer supported."
-msgstr ""
+msgstr "Graph kræver 32 bit Windows. Programmet er testet under Windows 95, Windows 98, Windows ME, Windows 2000 og Windows XP. Hvis systemet kan køre Windows, burde det også kunne køre programmet."
 
 #. FAQ.xml:30(para)
 msgid "Will Graph run under Linux?"
@@ -3151,15 +3153,15 @@ msgstr "Hvis du vælger <placeholder-1/> i dialogen <placeholder-2/>, vil hovedv
 
 #. FAQ.xml:134(para)
 msgid "Why does the program not accept a comma as decimals separator?"
-msgstr ""
+msgstr "Hvorfor accepterer programmet ikke tal med komma i?"
 
 #. FAQ.xml:139(para)
 msgid "I know a lot of countries use comma to separate the decimal part from the integer part, but Graph uses comma for separating function arguments. The program always uses a period to separate decimals from the integer value, no matter your local settings."
-msgstr ""
+msgstr "Jeg ved, at mange lande bruger komma til at adskille decimaldelen fra heltalsdelen, men Graph bruger komma til at adskille argumenter i et funktionskald.  Programmet bruger altid punktum til at adskille decimaler fra heltal, uanset de lokale indstillinger."
 
 #. FAQ.xml:148(para)
 msgid "How do I plot a vertical line?"
-msgstr ""
+msgstr "Hvordan tegner jeg en lodret linje?"
 
 #. FAQ.xml:157(guilabel) FAQ.xml:173(guilabel) FAQ.xml:189(guilabel)
 msgid "Parametric function"
@@ -3167,79 +3169,79 @@ msgstr "Parameterfunktion"
 
 #. FAQ.xml:153(para)
 msgid "A standard function cannot be vertical, but it can have a slope so large that it looks vertical. The function <userinput>f(x)=1000(x-5)</userinput> looks like a vertical line at x=5. A real vertical line can be drawn as a parametric function. Select <placeholder-1/> as <placeholder-2/> when adding the function. You can then add the vertical line at x=5 as <userinput>x(t)=5, y(t)=t</userinput>. Alternatively you can add x=5 as a relation."
-msgstr ""
+msgstr "Grafen for en standardfunktion kan ikke være lodret, men den kan have en hældning, der er så stor, at den ser ud til at være lodret. Grafen for funktionen <userinput>f(x)=1000(x-5)</userinput> ser ud til at være lodret ved x=5. En lodret linje kan tegnes som graf for en parameterfunktion. Vælg <placeholder-1/> som <placeholder-2/>, når funktionen indsættes. Grafen for parameterfunktionen <userinput>x(t)=5, y(t)=t</userinput> er lodret. Alternativt kan du indsætte relationen x=5."
 
 #. FAQ.xml:166(para)
 msgid "How do I plot a function x=f(y)?"
-msgstr ""
+msgstr "Hvordan tegner jeg grafen for en funktion f(y)?"
 
 #. FAQ.xml:171(para)
 msgid "To draw a function with y as the independent variable, you need to use a parametric function. Select <placeholder-1/> as <placeholder-2/> when adding the function. If you want to draw the function x=sin(y), you can now enter the function as <userinput>x(t)=sin(t), y(t)=t</userinput>. Alternatively you can draw it as a relation where you can enter <userinput>x=sin(y)</userinput> directly."
-msgstr ""
+msgstr "For at tegne en funktion hvor y er den uafhængige variabel, skal du bruge en parameterfunktion. Vælg <placeholder-1/> som <placeholder-2/>, når funktionen indsættes. Hvis du vil tegne grafen for funktionen x=sin(y), indtaster du funktionen som <userinput>x(t)=sin(t), y(t)=t</userinput>. Alternativt kan du tegne den som en relation, hvor du direkte indtaster <userinput>x=sin(y)</userinput>."
 
 #. FAQ.xml:182(para)
 msgid "How do I plot a circle?"
-msgstr ""
+msgstr "Hvordan tegner jeg en cirkel?"
 
 #. FAQ.xml:187(para)
 msgid "You need to use a parametric function to draw a circle. When inserting the function, select <placeholder-1/> as <placeholder-2/>. You can now add a circle with radius 5 and center in (2,3) as <userinput>x(t)=5cos(t)+2, y(t)=5sin(t)+3</userinput>. You may need to use <placeholder-3/> to make the axes equally scaled. Else the circle may look like an ellipse. A circle can also be added as a polar function, but only with center in (0,0). A circle with radius 5 may be added as the polar function <userinput>r(t)=5</userinput>. Alternatively you can use a relation and add the circle as <userinput>(x-2)^2+(y-3)^2=5^2</userinput>."
-msgstr ""
+msgstr "For at tegne en cirkel skal du bruge en parameterfunktion. Vælg <placeholder-1/> som <placeholder-2/>, når du indsætter funktionen. Du kan nu indsætte en cirkel med radius 5 og centrum i (2,3) som graf for parameterfunktionen <userinput>x(t)=5cos(t)+2, y(t)=5sin(t)+3</userinput>. Det kan være nødvendigt at vælge <placeholder-3/> for at skalere akserne ens, ellers kan cirklen ligne en ellipse. En cirkel kan også blive vist som en polærfunktion, men kun med centrum i (0,0). En cirkel med radius 5 kan tilføjes som graf for den polære funktion <userinput>r(t)=5</userinput>. Alternativt kan du bruge cirklens ligning som relation: <userinput>(x-2)^2+(y-3)^2=5^2</userinput>."
 
 #. FAQ.xml:207(para)
 msgid "How do I calculate the area between two functions?"
-msgstr ""
+msgstr "Hvordan beregner jeg arealet af en punktmængde mellem graferne for to funktioner?"
 
 #. FAQ.xml:212(para)
 msgid "If you want to find the area between two functions f1(x)=3x and f2(x)=x^2, the easiest way is to create a new function that is the difference between the two functions: f(x)=f1(x)-f2(x)=3x-x^2. You can then use <placeholder-1/> to calculate the area for a given interval."
-msgstr ""
+msgstr "Hvis du vil bestemme arealet mellem graferne for to funktioner, f1(x)=3x og f2(x)=x^2, er den letteste metode at definere en ny funktion, som er differensen mellem de to funktioner: f(x)=f1(x)-f2(x)=3x-x^2. Du kan så bruge <placeholder-1/> til at beregne arealet for et givet interval."
 
 #. FAQ.xml:227(para)
 msgid "Can I copy a function or point series from one instance of the program to another?"
-msgstr ""
+msgstr "Kan jeg kopiere en funktion eller punktserie fra en instans af programmet til en anden?"
 
 #. FAQ.xml:232(para)
 msgid "Yes, you can select a function or point series and use the <placeholder-1/> menu item to place a copy of the selected item in the clipboard. You can then paste the item into another coordinate system."
-msgstr ""
+msgstr "Ja, du kan bruge menupunktet <placeholder-1/> til at kopiere den markerede funktion eller punktserie til udklipsholderen. Den kan herefter indsættes i et andet koordinatsystem."
 
 #. FAQ.xml:246(para)
 msgid "How can I draw the negative part of f(x)=sqrt(x+2) ?"
-msgstr ""
+msgstr "Hvordan kan jeg tegne den negative del af f(x)=sqrt(x+2)?"
 
 #. FAQ.xml:251(para)
 msgid "For each value x, f(x) will evaluate to at most one value. f(x)=sqrt(x+2) will therefore only have positive values of f(x). To plot it for negative f(x) too, you will have to create two separate functions: f(x)=sqrt(x+2) and f(x)=-sqrt(x+2). Alternatively you can plot it as the relation: y^2=x+2."
-msgstr ""
+msgstr "For hver x-værdi vil f(x) højst evaluere én værdi. Derfor vil f(x)=sqrt(x+2) kun have positive værdier af f(x). For også at plotte den negative værdier af f(x), er det nødvendigt at oprette to separate funktioner: f(x)=sqrt(x+2) og f(x)=-sqrt(x+2). Som alternativ hertil kan man plotte funktionen ved at indsætte relationen: y^2=x+2."
 
 #. FAQ.xml:262(para)
 msgid "How do I plot a complex function like f(t)=e^(i*t)?"
-msgstr ""
+msgstr "Hvordan plotter jeg en kompleks funktion, f.eks. f(t)=e^(i*t)?"
 
 #. FAQ.xml:267(para)
 msgid "You probably want to show the real part on the x-axis and the imaginary part on the y-axis. In that case you can draw the function as the parametric function x(t)=re(e^(i*t)), y(t)=im(e^(i*t)). Notice that <placeholder-1/> must be enabled in the <placeholder-2/> dialog."
-msgstr ""
+msgstr "Du ønsker antageligvis at få den reelle del vist på x-aksen og den imaginære del på y-aksen. Hvis dette er tilfældet, kan funktionen tegnes som en parameterfunktion x(t)=re(e^(i*t)), y(t)=im(e^(i*t)). Bemærk at <placeholder-1/> skal være slået til i dialogen <placeholder-2/>."
 
 #. FAQ.xml:277(para)
 msgid "How can I make Graph plot functions with vertical asymptotes correctly?"
-msgstr ""
+msgstr "Hvordan plotter jeg funktioner med lodrette asymptoter korrekt?"
 
 #. FAQ.xml:282(para)
 msgid "Functions like f(x)=tan(x) with vertical asymptotes may not always be shown correctly. As default Graph will evaluate the function for each pixel on the x-axis. But if the graph has a steep slope that goes against infinite and back between two pixels, Graph will not notice it. To plot the function correctly you can tell Graph how many evaluations to perform. This may be entered in the <placeholder-1/> field in the <placeholder-2/> dialog. A number around 100000 will usually show the function correctly."
-msgstr ""
+msgstr "Funktioner som f(x)=tan(x) med lodrette asymptoter vises måske ikke altid korrekt. Som standard evaluerer Graph funktionen for hver pixel på x-aksen. Hvis grafen har en stejl hældning, der går mod uendelig og tilbage igen mellem to pixels, vil Graph imidlertid ikke bemærke det. For at plotte funktionen korrekt, kan man instruere Graph i, hvor mange evalueringer der skal foretages. Dette kan indtastes i feltet <placeholder-1/> i dialogen <placeholder-2/>. En tal i omegnen af 100000 vil som regel få funktionen til at blive vist korrekt."
 
 #. FAQ.xml:295(para)
 msgid "How to create a PDF file from Graph?"
-msgstr ""
+msgstr "Hvordan opretter man en PDF-fil fra Graph?"
 
 #. FAQ.xml:300(para)
 msgid "You can choose to save as PDF in the <placeholder-1/> dialog."
-msgstr ""
+msgstr "Du kan vælge at gemme som PDF i dialogen <placeholder-1/>."
 
 #. FAQ.xml:308(para)
 msgid "Why will the program not start under Windows 95?"
-msgstr ""
+msgstr "Programmet vil ikke starte under Windows 95?"
 
 #. FAQ.xml:313(para)
 msgid "Graph no longer supports Windows 95. The last version to run under Windows 95 was Graph 4.2."
-msgstr ""
+msgstr "Graph understøtter ikke længere Windows 95. Den seneste version, der kan køre under Windows 95, er Graph 4.2."
 
 #. EvaluateDialog.xml:9(para)
 msgid "This dialog is used for interactive calculations on functions. The dialog may be docked below the function list, which is default, or undocked as a floating dialog."
@@ -3751,11 +3753,11 @@ msgstr ""
 
 #. Complex.xml:11(primary)
 msgid "absolute value"
-msgstr ""
+msgstr "absolut værdi"
 
 #. Complex.xml:12(primary)
 msgid "numeric value"
-msgstr ""
+msgstr "numerisk værdi"
 
 #. Complex.xml:22(para)
 msgid "The <placeholder-1/> function returns the absolute or numeric value of <placeholder-2/>, commonly written as |z|. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> always returns a postive real value."
@@ -3763,11 +3765,11 @@ msgstr ""
 
 #. Complex.xml:34(primary)
 msgid "argument"
-msgstr ""
+msgstr "argument"
 
 #. Complex.xml:35(primary)
 msgid "angle"
-msgstr ""
+msgstr "vinkel"
 
 #. Complex.xml:36(para)
 msgid "Returns the argument of the parameter."
@@ -3787,7 +3789,7 @@ msgstr ""
 
 #. Complex.xml:83(primary)
 msgid "real value"
-msgstr ""
+msgstr "reel værdi"
 
 #. Complex.xml:93(para)
 msgid "The <placeholder-1/> function returns the real part of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
@@ -3795,7 +3797,7 @@ msgstr ""
 
 #. Complex.xml:104(primary)
 msgid "imaginary value"
-msgstr ""
+msgstr "imaginær værdi"
 
 #. Complex.xml:114(para)
 msgid "The <placeholder-1/> function returns the imaginary part of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
@@ -4019,11 +4021,11 @@ msgstr "Ingen"
 
 #. AxesDialog.xml:218(guilabel) AxesDialog.xml:220(guilabel)
 msgid "The y-axis crosses at"
-msgstr ""
+msgstr "y-aksen krydser i"
 
 #. AxesDialog.xml:218(guilabel) AxesDialog.xml:220(guilabel)
 msgid "The x-axis crosses at"
-msgstr ""
+msgstr "x-aksen krydser i"
 
 #. AxesDialog.xml:219(guilabel)
 msgid "Boxed"
@@ -4199,19 +4201,19 @@ msgstr "Biblioteker"
 
 #. Acknowledgements.xml:15(member)
 msgid "Parts of Graph are using the Spirit parser library:"
-msgstr ""
+msgstr "Dele af Graph benytter Spirit parser library:"
 
 #. Acknowledgements.xml:21(member)
 msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
-msgstr ""
+msgstr "Graph benytter BMGLib til at gemme billeder som Portable Network Graphics:"
 
 #. Acknowledgements.xml:28(member)
 msgid "Graph uses dxgettext as translation library:"
-msgstr ""
+msgstr "Graph benytter dxgettext som oversættelsesbibliotek:"
 
 #. Acknowledgements.xml:34(member)
 msgid "For shell extensions the EasyNSE library is used:"
-msgstr ""
+msgstr "Til shell extensions benyttes biblioteket EasyNSE:"
 
 #. Acknowledgements.xml:40(member)
 msgid "The PDFlib-Lite library is used to create PDF files:"
@@ -4219,7 +4221,7 @@ msgstr "The PDFlib-Lite library bruges til at fremstille PDF-filer:"
 
 #. Acknowledgements.xml:46(member)
 msgid "Tnt Delphi Unicode Controls"
-msgstr ""
+msgstr "Tnt Delphi Unicode Controls"
 
 #. Acknowledgements.xml:52(member)
 msgid "Python is used for plugin support:"
@@ -4363,10 +4365,11 @@ msgstr "Øvrigt"
 
 #. Acknowledgements.xml:273(para)
 msgid "The icon was designed by <placeholder-1/>."
-msgstr ""
+msgstr "Ikonet er designet af <placeholder-1/>."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #. Acknowledgements.xml:0(None)
+#, fuzzy
 msgid "translator-credits"
-msgstr ""
+msgstr "Michael Bach Ipsen <rosenthall@hotmail.com>, 2003, 2008"
 
