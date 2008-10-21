@@ -13,7 +13,7 @@
 				<listitem>
 					<para>
 						This error occurs when a number raised to the power of another number resulted in an error.
-						For example (-4)^(-5.1) gives an error, because a negative number cannot be raised to a negative non integer number when calculating with <glossterm baseform="real number">real numbers</glossterm>.
+						For example (-4)^(-5.1) gives an error, because a negative number cannot be raised to a negative non integer number when calculating with <glossterm linkend="RealNumber">real numbers</glossterm>.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -99,8 +99,8 @@
 				<term>Error 11: acosh evaluated at undefined value.</term>
 				<listitem>
 					<para>
-						Inverse hyperbolic cosine acosh(x) is only defined for x&ge;1 when using <glossterm baseform="real number">real numbers</glossterm>.
-						acosh(x) is defined for all numbers when calculating with <glossterm baseform="complex number">complex numbers</glossterm>.
+						Inverse hyperbolic cosine acosh(x) is only defined for x&ge;1 when using <glossterm linkend="RealNumber">real numbers</glossterm>.
+						acosh(x) is defined for all numbers when calculating with <glossterm linkend="ComplexNumber">complex numbers</glossterm>.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -188,7 +188,7 @@
 				<listitem>
 					<para>
 						You passed a wrong number of arguments to the specified function.
-						Check the <xref linkend="FunctionList" /> to find the required number of arguments the function needs.
+						Check the <xref linkend="ListOfFunctions" /> to find the required number of arguments the function needs.
 						This error may occur if you for example write sin(x,3).
 					</para>
 				</listitem>

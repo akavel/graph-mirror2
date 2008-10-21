@@ -37,7 +37,7 @@
 					Two operators can be used to specify a range, for example <literal>y &lt; sin(x) &lt; 0.5</literal>.
 				</para>
 				<para>
-					You can use the same operators and <link linkend="FunctionList">built-in functions</link> as for plotting graphs of functions.
+					You can use the same operators and <link linkend="ListOfFunctions">built-in functions</link> as for plotting graphs of functions.
 					In addition you can also create <link linkend="CustomFunctionsDialog">custom functions</link>.
 				</para>
 			</listitem>

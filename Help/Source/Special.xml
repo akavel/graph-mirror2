@@ -29,7 +29,7 @@
 				This integral is the same as the area between the function <parameter>f</parameter> and the x-axis from <parameter>a</parameter> to <parameter>b</parameter>
 				where the area under the axis is counted negative.
 				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric function.
-				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm baseform="numeric expression">numeric expressions</glossterm> that evaluate to <glossterm baseform="real number">real numbers</glossterm>.
+				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
 				<function>integrate</function> does not calculate the integral exactly.
 				Instead the calculation is done using Simpson's formula through 100 iterations.
 			</para>
@@ -58,7 +58,7 @@
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Sum.emf"/></imageobject>
 				</mediaobject>
 				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function.
-				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm baseform="numeric expression">numeric expressions</glossterm> that evaluate to <glossterm baseform="real number">real numbers</glossterm>.
+				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
 			</para>
 		</simplesect>
 	</section>
@@ -84,7 +84,7 @@
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Product.emf"/></imageobject>
 				</mediaobject>
 				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function.
-				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm baseform="numeric expression">numeric expressions</glossterm> that evaluate to <glossterm baseform="real number">real numbers</glossterm>.
+				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
 			</para>
 		</simplesect>
 	</section>
@@ -157,8 +157,8 @@
 			<title>Description</title>
 			<para>
 				The <function>beta</function> function returns the result of the Euler beta function evaluated for <parameter>m</parameter> and <parameter>n</parameter>.
-				<parameter>m</parameter> and <parameter>n</parameter> may be any <glossterm baseform="numeric expression">numeric expressions</glossterm>
-				that evaluate to <glossterm baseform="real number">real numbers</glossterm> or <glossterm baseform="complex number">complex numbers</glossterm>.
+				<parameter>m</parameter> and <parameter>n</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm>
+				that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm> or <glossterm linkend="ComplexNumber">complex numbers</glossterm>.
 				The <function>beta</function> function relates to the <function linkend="gamma">gamma</function> function as
 				<mathphrase>beta(m, n) = gamma(m) * gamma(n) / gamma(m+n)</mathphrase>.
 			</para>
@@ -240,8 +240,8 @@
 				Calculates <parameter>m</parameter> modulo <parameter>n</parameter>, the remainder of <mathphrase>m/n</mathphrase>.
 				<function>mod</function> calculates the remainder f, where <mathphrase>m = a*n + f</mathphrase> for some integer a.
 				The sign of f is always the same as the sign of <parameter>n</parameter>.
-				When <parameter>n</parameter>=0, <function>mod</function> returns 0.
-				<parameter>m</parameter> and <parameter>n</parameter> may be any <glossterm baseform="numeric expression">numeric expressions</glossterm> that evaluate to <glossterm baseform="real number">real numbers</glossterm>.
+				When <mathphrase><parameter>n</parameter>=0</mathphrase>, <function>mod</function> returns 0.
+				<parameter>m</parameter> and <parameter>n</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
 			</para>
 		</simplesect>
 	</section>
@@ -263,9 +263,9 @@
 				The <function>dnorm</function> function is the probability density of the normal distribution, also called Gaussian distribution.
 				<parameter>x</parameter> is the variate, also known as the random variable, <parameter>&mu;</parameter> is the mean value and &sigma; is the standard deviation.
 				<parameter>&mu;</parameter> and &sigma; are optional
-				and if left out the standard normal distribution is used where <parameter>&mu;</parameter>=0 and &sigma;=1.
-				<parameter>x</parameter>, <parameter>&mu;</parameter> and &sigma; may be any <glossterm baseform="numeric expression">numeric expressions</glossterm>
-				that evaluate to <glossterm baseform="real number">real numbers</glossterm> where &sigma; > 0.
+				and if left out the standard normal distribution is used where <mathphrase><parameter>&mu;</parameter>=0</mathphrase> and &sigma;=1.
+				<parameter>x</parameter>, <parameter>&mu;</parameter> and &sigma; may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm>
+				that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm> where &sigma; > 0.
 				The normal distribution is defined as:
 				<mediaobject>
 	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Dnorm.svg"/></imageobject>
