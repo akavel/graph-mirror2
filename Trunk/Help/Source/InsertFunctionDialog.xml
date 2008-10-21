@@ -46,7 +46,7 @@
 			<listitem>
 				<para>
 					Here you enter the equation for the function. This can be f(x), x(t),y(t) or r(t) depending on the function type.
-					Under <xref linkend="FunctionList"/> you can see all the available variables, constants and functions, which may be used to draw the graphs.
+					Under <xref linkend="ListOfFunctions"/> you can see all the available variables, constants and functions, which may be used to draw the graphs.
 				</para>
 			</listitem>
 		</varlistentry>

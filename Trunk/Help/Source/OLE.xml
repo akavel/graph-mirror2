@@ -7,7 +7,7 @@
 	<indexterm><primary>linking</primary></indexterm>
 	<indexterm><primary>embedded</primary></indexterm>
 	<indexterm><primary>automation</primary></indexterm>
-	<simplesect>
+	<simplesect renderas="sect2">
 		<title>OLE server</title>
 		<para>
 			Graph has been implemented as an OLE (Object Linking and Embedding) server, which means that Graph objects can be placed (embedded) into an OLE client.
@@ -51,7 +51,8 @@
 			If Graph is not installed you will still be able to see the image but not edit it.
 		</para>
 	</simplesect>
-	<simplesect>
+
+	<simplesect renderas="sect2">
 		<title>OLE client</title>
 		<para>
 			Graph can work as an OLE client as a text label in Graph is an OLE container.

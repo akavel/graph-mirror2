@@ -9,7 +9,7 @@
 	<indexterm><primary>libraries</primary></indexterm>
 	<indexterm><primary>translators</primary></indexterm>
 	<indexterm><primary>logo</primary></indexterm>
-	<simplesect>
+	<simplesect renderas="sect2">
 		<title>Libraries</title>
 		<simplelist>
 			<member>Parts of Graph are using the Spirit parser library:</member>
@@ -56,14 +56,14 @@
 	</simplesect>
 
 	<?hard-pagebreak?>
-	<simplesect>
+	<simplesect renderas="sect2">
 		<title>Translations</title>
 		<para>
 			<informaltable>
 				<tgroup cols="4">
-					<colspec colnum="1" colwidth="2.2cm"/>
-					<colspec colnum="2" colwidth="1.7cm"/>
-					<colspec colnum="3" colwidth="1.7cm"/>
+					<colspec colnum="1" colwidth="2.5cm"/>
+					<colspec colnum="2" colwidth="2.0cm"/>
+					<colspec colnum="3" colwidth="2.0cm"/>
 					<colspec colnum="4" colwidth="*"/>
 					<thead>
 						<row>
@@ -268,7 +268,7 @@
 		</para>
 	</simplesect>
 
-	<simplesect>
+	<simplesect renderas="sect2">
 		<title>Miscellaneous</title>
 		<para>
 			The icon was designed by <personname>Jonathan Holvey</personname>.

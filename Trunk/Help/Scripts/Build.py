@@ -39,8 +39,8 @@ def HandleLanguage(Language, Lang, Dict):
     StyleSheet = "..\\xsl\\pdfdoc.xsl" if not os.path.exists("..\\xsl\\%s\\pdfdoc.xsl" % (Language,)) else "..\\xsl\\%s\\pdfdoc.xsl" % (Language,)
     os.system("xsltproc.exe --nonet --xinclude --output ..\\Temp\\Graph.fo %s %s" % (StyleSheet, InFile))
 
-    UserConfig = "" if not os.path.exists("..\\xsl\\%s\\userconfig.xml" % (Language,)) else "-c ..\\xsl\\%s\\userconfig.xml" % (Language,)
-    os.system(ToolsDir + "fop\\fop.bat -q %s -fo ..\\Temp\\Graph.fo -pdf ..\\Graph-%s.pdf" % (UserConfig, Language,))
+    UserConfig = "..\\xsl\\userconfig.xml" if not os.path.exists("..\\xsl\\%s\\userconfig.xml" % (Language,)) else "..\\xsl\\%s\\userconfig.xml" % (Language,)
+    os.system(ToolsDir + "fop\\fop.bat -q -c %s -fo ..\\Temp\\Graph.fo -pdf ..\\Graph-%s.pdf" % (UserConfig, Language,))
 
     print "Creating %s CHM file..." % (Language,)
     StyleSheet = "..\\xsl\\htmlhelp.xsl" if not os.path.exists("..\\xsl\\%s\\htmlhelp.xsl" % (Language,)) else "..\\xsl\\%s\\htmlhelp.xsl" % (Language,)

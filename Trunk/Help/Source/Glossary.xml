@@ -9,7 +9,7 @@
 -->
 <glossary id="Graph-glossary">
 	<title>Glossary</title>
-	<glossentry>
+	<glossentry id="ComplexNumber">
 		<glossterm>complex number</glossterm>
 		<indexterm><primary>complex number</primary></indexterm>
 		<glossdef>
@@ -29,7 +29,7 @@
 		</glossdef>
 	</glossentry>
 
-	<glossentry>
+	<glossentry id="GraphElement">
 		<glossterm>graph element</glossterm>
 		<indexterm><primary>graph element</primary></indexterm>
 		<glossdef>
@@ -40,7 +40,7 @@
 		</glossdef>
 	</glossentry>
 
-	<glossentry>
+	<glossentry id="FunctionList">
 		<glossterm>function list</glossterm>
 		<indexterm><primary>function list</primary></indexterm>
 		<glossdef>
@@ -54,7 +54,7 @@
 		</glossdef>
 	</glossentry>
 
-	<glossentry>
+	<glossentry id="Integer">
 		<glossterm>integer</glossterm>
 		<indexterm><primary>integer</primary></indexterm>
 		<glossdef>
@@ -65,7 +65,7 @@
 		</glossdef>
 	</glossentry>
 
-	<glossentry>
+	<glossentry id="Legend">
 		<glossterm>legend</glossterm>
 		<indexterm><primary>legend</primary></indexterm>
 		<glossdef>
@@ -80,7 +80,7 @@
 		</glossdef>
 	</glossentry>
 
-	<glossentry>
+	<glossentry id="NumericExpression">
 		<glossterm>numeric expression</glossterm>
 		<indexterm><primary>numeric expression</primary></indexterm>
 		<glossdef>
@@ -91,7 +91,7 @@
 		</glossdef>
 	</glossentry>
 
-	<glossentry>
+	<glossentry id="Radians">
 		<glossterm>radians</glossterm>
 		<indexterm><primary>radians</primary></indexterm>
 		<glossdef>

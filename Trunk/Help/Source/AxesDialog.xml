@@ -202,7 +202,7 @@
 					<term>Calculate with complex numbers</term>
 					<listitem>
 						<para>
-							Check this field to use <glossterm baseform="complex number">complex numbers</glossterm> for calculations while drawing graphs.
+							Check this field to use <glossterm linkend="ComplexNumber">complex numbers</glossterm> for calculations while drawing graphs.
 							This will increase the time for drawing graphs but may be necessary in rare situations where the intermediate result are complex.
 							The final result must be real for the graph to be drawn.
 							This will not interfere with evaluations.
@@ -225,8 +225,8 @@
 					<term>Trigonometry</term>
 					<listitem>
 						<para>
-							Choose whether trigonometric functions should calculate in <glossterm baseform="radians"><guilabel>Radian</guilabel></glossterm> or <guilabel>Degree</guilabel>.
-							This is also used for showing <glossterm baseform="complex number">complex numbers</glossterm> in the polar format.
+							Choose whether trigonometric functions should calculate in <glossterm linkend="Radians"><guilabel>Radian</guilabel></glossterm> or <guilabel>Degree</guilabel>.
+							This is also used for showing <glossterm linkend="ComplexNumber">complex numbers</glossterm> in the polar format.
 						</para>
 					</listitem>
 				</varlistentry>

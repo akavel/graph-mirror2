@@ -10,7 +10,7 @@
 	<indexterm><primary>Control panel</primary></indexterm>
 	<indexterm><primary>Add/Remove Programs</primary></indexterm>
 	<indexterm><primary>remove</primary></indexterm>
-	<simplesect>
+	<simplesect renderas="sect2">
 		<title>Installation</title>
 		<para>
 			The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version name.
@@ -124,7 +124,7 @@
 
 	</simplesect>
 
-	<simplesect>
+	<simplesect renderas="sect2">
 		<title>Uninstallation</title>
 		<para>
 			Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>.
@@ -134,7 +134,7 @@
 		</para>
 	</simplesect>
 
-	<simplesect>
+	<simplesect renderas="sect2">
 		<title>Startup</title>
 		<para>
 			Usually Graph is started from the link in the <guibutton>Start</guibutton> menu.

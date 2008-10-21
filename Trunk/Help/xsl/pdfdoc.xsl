@@ -43,6 +43,12 @@
     </fo:inline>
   </xsl:template>
 
+  <xsl:template match="personname">
+    <fo:inline font-family="Times" font-style="normal">
+      <xsl:call-template name="inline.charseq"/>
+    </fo:inline>
+  </xsl:template>
+
   <xsl:template match="menuchoice">
     <fo:inline font-family="Helvetica">
       <xsl:call-template name="process.menuchoice"/>
