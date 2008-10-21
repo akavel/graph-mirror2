@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-10-20 18:51Romance Standard Time\n"
-"PO-Revision-Date: 2008-10-21 22:18+0100\n"
+"PO-Revision-Date: 2008-10-21 22:54+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -355,7 +355,7 @@ msgstr "Funktionen <placeholder-1/> returnerer resultatet af Eulers betafunktion
 
 #. Special.xml:172(primary)
 msgid "Lambert W-function"
-msgstr "Lambert W-funktion"
+msgstr "Lamberts W-funktion"
 
 #. Special.xml:173(primary)
 msgid "omega function"
@@ -875,7 +875,7 @@ msgstr "OLE-server"
 
 #. OLE.xml:12(para)
 msgid "Graph has been implemented as an OLE (Object Linking and Embedding) server, which means that Graph objects can be placed (embedded) into an OLE client. Many applications can work as OLE clients, for example Microsoft Word."
-msgstr ""
+msgstr "Graph er implementeret som en OLE (Object Linking and Embedding) server, hvilket betyder, at et Graph objekt kan indsættes i en OLE klient. Der findes mange applikationer, der kan fungere som OLE klienter, for eksempel Microsoft Word."
 
 #. OLE.xml:20(guimenuitem) MenuItems.xml:212(guimenuitem)
 msgid "Copy image"
@@ -891,7 +891,7 @@ msgstr "Indsæt speciel..."
 
 #. OLE.xml:16(para)
 msgid "You can use <placeholder-1/> in Graph to copy the current content to the clipboard. Afterwards you can select <placeholder-2/> in Word (or similar in another OLE client) to insert the Graph object from the clipboard. When you double click on the object a new instance of Graph will start where you can edit the object. If you don't want to paste the data as a Graph object into Word, you can use <placeholder-3/> in Word to paste as a picture instead."
-msgstr ""
+msgstr "Du kan bruge <placeholder-1/> i Graph til at kopiere det aktuelle indhold til udklipsholderen. Bagefter kan du bruge <placeholder-2/> i Word (og lignende i andre OLE klienter) til at indsætte et Graph objekt fra udklipsholderen. Når du dobbeltklikker på objektet startes en ny instans af Graph, hvor du kan redigere objektet. Hvis du ikke vil indsætte data som et Graph objekt, kan du i Word bruge <placeholder-3/> til at indsætte som et billede i stedet."
 
 #. OLE.xml:40(guimenu)
 msgid "Insert"
@@ -915,11 +915,11 @@ msgstr "Link til fil"
 
 #. OLE.xml:37(para)
 msgid "You may create a new Graph object in Word by choosing the <placeholder-1/> menu item and selecting <placeholder-2/> as <placeholder-3/>. The same dialog can be used to create an embedded Graph object from an existing grf-file. If you select <placeholder-4/>, you will get a linked object instead of an embedded object. This way all changes to the object will be reflected in the original grf-file. If the grf-file is not available you will not be able to edit the object, but you can still see the image in Word."
-msgstr ""
+msgstr "Du kan oprette et nyt Graph objekt i Word ved at vælge menupunktet <placeholder-1/> og vælge <placeholder-2/> som <placeholder-3/>. Den samme dialogboks kan bruges til at oprette et Graph objekt fra en eksisterende grf-fil. Hvis du vælger <placeholder-4/>, får du et kædet objekt i stedet for et indbygget objekt. Det betyder, at ændringer til objektet vil blive gemt i den oprindelige grf-fil. Hvis grf-filen ikke er tilgængelig, vil du ikke kunne redigere i objektet men kun kunne se det som et billede i Word."
 
 #. OLE.xml:49(para)
 msgid "To edit a Graph object you must have Graph installed on the system. If Graph is not installed you will still be able to see the image but not edit it."
-msgstr ""
+msgstr "For at kunne redigere et Graph objekt skal Graph være installeret på systemet. Hvis Graph ikke er installeret, vil du kun være i stand til at se objektet som et billede, men ikke kunne redigere i det."
 
 #. OLE.xml:55(title)
 msgid "OLE client"
@@ -931,7 +931,7 @@ msgstr "Indsæt objekt..."
 
 #. OLE.xml:56(para)
 msgid "Graph can work as an OLE client as a text label in Graph is an OLE container. This means that you can paste images and OLE objects into the editor used to add labels. As in any other OLE container you can edit the object by double clicking on it. From the context menu you can use <placeholder-1/> to create a new OLE object in the label. The same dialog can be used to create an object from a file. You can for example insert an image file this way. To edit an OLE object the server must be installed on the system, else you will only be able to see object but not edit it."
-msgstr ""
+msgstr "Graph kan fungere som en OLE klient, da en tekstetiket i Graph virker som en OLE beholder. Det betyder, at du kan indsætte billeder og OLE objekter fra udklipsholderen  i editoren, som bruges til at lave etiketter. Som enhver anden OLE klient kan du redigere et objekt ved at dobbeltklikke på det. Du bruger <placeholder-1/> fra højreklikmenuen til at indsætte et nyt OLE objekt i etiketten. Den samme dialogboks kan også bruges til at oprette et objekt fra en fil. Du kan f.eks. indsætte et billede på den måde. For at redigere et OLE objekt skal serveren til objektet være installeret på systemet, ellers vil du kun være i stand til at se objektet, men ikke kunne redigere i det."
 
 #. MenuItems.xml:4(title)
 msgid "List of menu items"
@@ -1515,7 +1515,7 @@ msgstr "Afinstallation"
 
 #. Installation.xml:129(para)
 msgid "Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>. Just select Graph and click on the <emphasis>Change/Remove button</emphasis>. This will remove all traces of the program. If files were added to the installation directory after the installation, you will be asked if you want to delete them. Make sure Graph is not running while uninstalling."
-msgstr ""
+msgstr "Afinstallation foretages fra <emphasis>Tilføj/Fjern Programmer</emphasis> i <emphasis>Kontrolpanelet</emphasis>. Marker Graph og klik på knappen <emphasis>Tilføj/Fjern</emphasis>. Dette vil fjerne alle spor af programmet. Hvis der er blevet tilføjet filer til installationskataloget efter installationen, vil du blive spurgt, om de skal fjernes. Vær sikker på at programmet ikke kører, mens det afinstalleres."
 
 #. Installation.xml:138(title)
 msgid "Startup"
@@ -2343,7 +2343,7 @@ msgstr ""
 
 #. Hyperbolic.xml:25(para)
 msgid "Hyperbolic sine is defined as: <placeholder-1/>"
-msgstr ""
+msgstr "Hyperbolsk sinus er givet ved: <placeholder-1/>"
 
 #. Hyperbolic.xml:35(primary) Hyperbolic.xml:106(primary)
 msgid "hyperbolic cosine"
@@ -2359,7 +2359,7 @@ msgstr ""
 
 #. Hyperbolic.xml:49(para)
 msgid "Hyperbolic cosine is defined as: <placeholder-1/>"
-msgstr ""
+msgstr "Hyperbolsk cosinus er givet ved: <placeholder-1/>"
 
 #. Hyperbolic.xml:59(primary) Hyperbolic.xml:129(primary)
 msgid "hyperbolic tangent"
@@ -2687,7 +2687,7 @@ msgstr "tal"
 
 #. FunctionList.xml:27(para)
 msgid "The following is a list of all variables, constants, operators and functions supported by the program. The list of operators shows the operators with the highest precedence first. The precedence of operators can be changed through the use of brackets. (), {} and [] may all be used alike. Notice that expressions in Graph are case insensitive, i.e. there are no difference between upper and lower case characters. The only exception is <placeholder-1/> as Euler's constant and E as the exponent in a <placeholder-2/> in scientific notation."
-msgstr ""
+msgstr "Følgende er en liste over samtlige variable, konstanter, operatorer og funktioner, der er understøttet af programmet. Listen over operatorer viser operatorer med den største præcedens først. Operatorernes præcedens kan dog ændres med parenteser. Både (), {} og [] kan bruges som parenteser. Bemærk, at programmet ikke skelner mellem store og små bogstaver, bortset fra at Eulers konstant <placeholder-1/> skal skrives med småt, mens angivelse af eksponentiel notation E i et <placeholder-2/> skal skrives med stort."
 
 #. FunctionList.xml:43(entry) AnimateDialog.xml:27(term)
 msgid "Constant"
@@ -2695,31 +2695,31 @@ msgstr "Konstant"
 
 #. FunctionList.xml:50(entry)
 msgid "The independent variable used in standard functions."
-msgstr ""
+msgstr "Den uafhængige variabel i normale funktioner."
 
 #. FunctionList.xml:54(entry)
 msgid "The independent variable called parameter for parametric functions and polar angle for polar functions."
-msgstr ""
+msgstr "Den uafhængige variabel, kaldet parameter, i parameterfunktioner og polære vinkel i polærfunktioner."
 
 #. FunctionList.xml:58(entry)
 msgid "Euler's constant. In this program defined as <placeholder-1/>"
-msgstr ""
+msgstr "Eulers konstant, der i programmet er defineret til <placeholder-1/>."
 
 #. FunctionList.xml:62(entry)
 msgid "The constant &pi;, which in this program is defined as <placeholder-1/>"
-msgstr ""
+msgstr "Konstanten &pi;, der i programmet er defineret til <placeholder-1/>."
 
 #. FunctionList.xml:66(entry)
 msgid "Always returns an error. Used to indicate that part of a function is undefined."
-msgstr ""
+msgstr "Returnerer altid fejl. Bruges til at indikere, at en del af funktionen er udefineret."
 
 #. FunctionList.xml:70(entry)
 msgid "The imaginary unit. Defined as <placeholder-1/>. Only useful when working with complex numbers."
-msgstr ""
+msgstr "Den imaginære enhed. Defineret ved <placeholder-1/>. Kun brugbar når der arbejdes med komplekse tal."
 
 #. FunctionList.xml:74(entry)
 msgid "Evaluates to a random number between 0 and 1."
-msgstr ""
+msgstr "Evalueres til et tilfældigt tal mellem 0 og 1."
 
 #. FunctionList.xml:90(entry)
 msgid "Operator"
@@ -2731,7 +2731,7 @@ msgstr "Potensopløftning (^)"
 
 #. FunctionList.xml:97(entry)
 msgid "Raise to the power of an exponent. Example: f(x)=2^x"
-msgstr ""
+msgstr "Opløfter til den angivne potens. Eksempel: f(x)=2^x"
 
 #. FunctionList.xml:100(entry)
 msgid "Negation (-)"
@@ -2739,7 +2739,7 @@ msgstr "Negation (-)"
 
 #. FunctionList.xml:101(entry)
 msgid "The negative value of a factor. Example: f(x)=-x"
-msgstr ""
+msgstr "Den negative værdi af en faktor. Eksempel: f(x)=-x"
 
 #. FunctionList.xml:104(entry)
 msgid "Logical NOT (not)"
@@ -2747,7 +2747,7 @@ msgstr "Logisk NOT (not)"
 
 #. FunctionList.xml:105(entry)
 msgid "Indicates if a term evaluates to 0."
-msgstr ""
+msgstr "Indikerer om et udtryk evalueres til 0."
 
 #. FunctionList.xml:108(entry)
 msgid "Multiplication (*)"
@@ -2755,7 +2755,7 @@ msgstr "Multiplikation (*)"
 
 #. FunctionList.xml:109(entry)
 msgid "Multiplies the two factors. Example: f(x)=2*x"
-msgstr ""
+msgstr "Multiplicerer de to faktorer. Eksempel: f(x)=2*x"
 
 #. FunctionList.xml:112(entry)
 msgid "Division (/)"
@@ -2763,7 +2763,7 @@ msgstr "Division (/)"
 
 #. FunctionList.xml:113(entry)
 msgid "Divide the two factors. Example: f(x)=2/x"
-msgstr ""
+msgstr "Dividerer tæller med nævner. Eksempel: f(x)=2/x"
 
 #. FunctionList.xml:116(entry)
 msgid "Addition (+)"
@@ -2771,7 +2771,7 @@ msgstr "Addition (+)"
 
 #. FunctionList.xml:117(entry)
 msgid "Add the two terms. Example: f(x)=2+x"
-msgstr ""
+msgstr "Adderer de to addender. Eksempel: f(x)=2+x"
 
 #. FunctionList.xml:120(entry)
 msgid "Subtraction (-)"
@@ -2779,7 +2779,7 @@ msgstr "Subtraktion (-)"
 
 #. FunctionList.xml:121(entry)
 msgid "Subtract two terms. Example f(x)=2-x"
-msgstr ""
+msgstr "Trækker subtrahenden fra minuenden. Eksempel f(x)=2-x"
 
 #. FunctionList.xml:124(entry)
 msgid "Greater than (&gt;)"
@@ -2787,7 +2787,7 @@ msgstr "Større end (&gt;)"
 
 #. FunctionList.xml:125(entry)
 msgid "Indicates if an expression is greater than another expression."
-msgstr ""
+msgstr "Indikerer om et udtryk er større end et andet udtryk."
 
 #. FunctionList.xml:128(entry)
 msgid "Greater or equal (&gt;=)"
@@ -2795,7 +2795,7 @@ msgstr "Større end eller lig med (&gt;=)"
 
 #. FunctionList.xml:129(entry)
 msgid "Indicates if an expression is greater or equal to another expression."
-msgstr ""
+msgstr "Indikerer om et udtryk er større end eller lig med et andet udtryk."
 
 #. FunctionList.xml:132(entry)
 msgid "Less than (&lt;)"
@@ -2803,7 +2803,7 @@ msgstr "Mindre end (&lt;)"
 
 #. FunctionList.xml:133(entry)
 msgid "Indicates if an expression is less than another expression."
-msgstr ""
+msgstr "Indikerer om et udtryk er mindre end et andet udtryk."
 
 #. FunctionList.xml:136(entry)
 msgid "Less or equal (&lt;=)"
@@ -2811,7 +2811,7 @@ msgstr "Mindre end eller lig med (&lt;=)"
 
 #. FunctionList.xml:137(entry)
 msgid "Indicates if an expression is less or equal to another expression."
-msgstr ""
+msgstr "Indikerer om et udtryk er mindre end eller lig med et andet udtryk."
 
 #. FunctionList.xml:140(entry)
 msgid "Equal (=)"
@@ -2819,7 +2819,7 @@ msgstr "Lig med (=)"
 
 #. FunctionList.xml:141(entry)
 msgid "Indicates if two expressions evaluate to the exact same value."
-msgstr ""
+msgstr "Indikerer om to udtryk evalueres til præcist samme værdi."
 
 #. FunctionList.xml:144(entry)
 msgid "Not equal (&lt;&gt;)"
@@ -2827,7 +2827,7 @@ msgstr "Forskellig fra (&lt;&gt;)"
 
 #. FunctionList.xml:145(entry)
 msgid "Indicates if two expressions does not evaluate to the exact same value."
-msgstr ""
+msgstr "Indikerer om to udtryk ikke evalueres til samme værdi."
 
 #. FunctionList.xml:148(entry)
 msgid "Logical AND (and)"
@@ -2835,7 +2835,7 @@ msgstr "Logisk AND (and)"
 
 #. FunctionList.xml:149(entry)
 msgid "Indicates if two expressions both evaluate to a value different from 0."
-msgstr ""
+msgstr "Indikerer om to udtryk begge evalueres til en værdi forskellig fra 0."
 
 #. FunctionList.xml:152(entry)
 msgid "Logical OR (or)"
@@ -2843,7 +2843,7 @@ msgstr "Logisk OR (or)"
 
 #. FunctionList.xml:153(entry)
 msgid "Indicates if at least one of two expressions evaluates to a value different from 0."
-msgstr ""
+msgstr "Indikerer om mindst et af to udtryk evalueres til en værdi forskellig fra 0."
 
 #. FunctionList.xml:156(entry)
 msgid "Logical XOR (xor)"
@@ -2851,55 +2851,55 @@ msgstr "Logisk XOR (xor)"
 
 #. FunctionList.xml:157(entry)
 msgid "Indicates if exactly one of two expressions evaluates to a value different from 0."
-msgstr ""
+msgstr "Indikerer om præcist et af to udtryk evalueres til en værdi forskellig fra 0."
 
 #. FunctionList.xml:184(entry)
 msgid "Returns the sine of the argument, which may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer sinus til argumentet, der kan være i radianer eller grader."
 
 #. FunctionList.xml:188(entry)
 msgid "Returns the cosine of the argument, which may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer cosinus til argumentet, der kan være i radianer eller grader."
 
 #. FunctionList.xml:192(entry)
 msgid "Returns the tangent of the argument, which may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer tangens til argumentet, der kan være i radianer eller grader."
 
 #. FunctionList.xml:196(entry)
 msgid "Returns the inverse sine of the argument. The returned value may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer invers sinus til argumentet. Resultatet kan være i radianer eller grader."
 
 #. FunctionList.xml:200(entry)
 msgid "Returns the inverse cosine of the argument. The returned value may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer invers cosinus til argumentet. Resultatet kan være i radianer eller grader."
 
 #. FunctionList.xml:204(entry)
 msgid "Returns the inverse tangent of the argument. The returned value may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer invers tangens til argumentet. Resultatet kan være i radianer eller grader."
 
 #. FunctionList.xml:208(entry)
 msgid "Returns the secant of the argument, which may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer sekans til argumentet, der kan være i radianer eller grader."
 
 #. FunctionList.xml:212(entry)
 msgid "Returns the cosecant of the argument, which may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer cosekans til argumentet, der kan være i radianer eller grader."
 
 #. FunctionList.xml:216(entry)
 msgid "Returns the cotangent of the argument, which may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer cotangens til argumentet, der kan være i radianer eller grader."
 
 #. FunctionList.xml:220(entry)
 msgid "Returns the inverse secant of the argument. The returned value may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer invers sekans til argumentet. Resultatet kan være i radianer eller grader."
 
 #. FunctionList.xml:224(entry)
 msgid "Returns the inverse cosecant of the argument. The returned value may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer invers cosekans til argumentet. Resultatet kan være i radianer eller grader."
 
 #. FunctionList.xml:228(entry)
 msgid "Returns the inverse cotangent of the argument. The returned value may be in radians or degrees."
-msgstr ""
+msgstr "Returnerer invers cotangens til argumentet. Resultatet kan være i radianer eller grader."
 
 #. FunctionList.xml:282(emphasis)
 msgid "Power and Logarithm"
@@ -2907,27 +2907,27 @@ msgstr "Potens og Logaritme"
 
 #. FunctionList.xml:286(entry)
 msgid "Returns the square of the argument, i.e. the power of two."
-msgstr ""
+msgstr "Returnerer kvadratet på argumentet, det vil sige argumentet i anden."
 
 #. FunctionList.xml:290(entry)
 msgid "Returns e raised to the power of the argument."
-msgstr ""
+msgstr "Returnerer e opløftet til argumentets potens."
 
 #. FunctionList.xml:298(entry)
 msgid "Returns the n<superscript>th</superscript> root of the argument."
-msgstr ""
+msgstr "Returnerer den n’te rod af argumentet."
 
 #. FunctionList.xml:302(entry)
 msgid "Returns the logarithm with base e to the argument."
-msgstr ""
+msgstr "Returnerer logaritmen med grundtal e til argumentet."
 
 #. FunctionList.xml:306(entry)
 msgid "Returns the logarithm with base 10 to the argument."
-msgstr ""
+msgstr "Returnerer 10-talslogaritmen til argumentet."
 
 #. FunctionList.xml:310(entry)
 msgid "Returns the logarithm with base n to the argument."
-msgstr ""
+msgstr "Returnerer logaritmen med grundtal n til argumentet."
 
 #. FunctionList.xml:313(emphasis) Complex.xml:7(title)
 msgid "Complex"
@@ -2935,71 +2935,71 @@ msgstr "Komplekst"
 
 #. FunctionList.xml:317(entry) Complex.xml:13(para)
 msgid "Returns the absolute value of the argument."
-msgstr ""
+msgstr "Returnerer argumentets absolutte værdi."
 
 #. FunctionList.xml:321(entry)
 msgid "Returns the angle of the argument in radians or degrees."
-msgstr ""
+msgstr "Returnerer argumentets vinkel i radianer eller grader."
 
 #. FunctionList.xml:325(entry) Complex.xml:62(para)
 msgid "Returns the conjugate of the argument."
-msgstr ""
+msgstr "Returnerer argumentet konjugeret."
 
 #. FunctionList.xml:329(entry) Complex.xml:84(para)
 msgid "Returns the real part of the argument."
-msgstr ""
+msgstr "Returnerer argumentets reelle del."
 
 #. FunctionList.xml:333(entry) Complex.xml:105(para)
 msgid "Returns the imaginary part of the argument."
-msgstr ""
+msgstr "Returnerer argumentets imaginære del."
 
 #. FunctionList.xml:340(entry)
 msgid "Returns the integer part of the argument."
-msgstr ""
+msgstr "Returnerer argumentets heltalsdel."
 
 #. FunctionList.xml:348(entry)
 msgid "Rounds the argument up to nearest integer."
-msgstr ""
+msgstr "Runder argumentet op til nærmeste heltal."
 
 #. FunctionList.xml:352(entry)
 msgid "Rounds the argument down to the nearest integer."
-msgstr ""
+msgstr "Runder argumentet ned til nærmeste heltal."
 
 #. FunctionList.xml:356(entry)
 msgid "Rounds the first argument to the number of decimals given by the second argument."
-msgstr ""
+msgstr "Afrunder det første argument til antallet af decimaler givet ved det andet argument."
 
 #. FunctionList.xml:363(entry)
 msgid "Returns the sign of the argument: 1 if the argument is greater than 0, and -1 if the argument if less than 0."
-msgstr ""
+msgstr "Returnerer argumentets fortegn: 1 hvis argumentet er større end 0, og -1 hvis argumentet er mindre end 0."
 
 #. FunctionList.xml:367(entry)
 msgid "Unit step: Returns 1 if the argument is greater than or equal 0, and 0 otherwise."
-msgstr ""
+msgstr "Unit step: Returnerer 1, hvis argumentet er større end eller lig med 0 og 0, hvis argumentet er mindre end 0."
 
 #. FunctionList.xml:371(entry)
 msgid "Returns the smallest of the arguments."
-msgstr ""
+msgstr "Returnerer det mindste af argumenterne."
 
 #. FunctionList.xml:375(entry)
 msgid "Returns the greatest of the arguments."
-msgstr ""
+msgstr "Returnerer det største af argumenterne."
 
 #. FunctionList.xml:379(entry)
 msgid "Returns the second argument if it is in the range of the first and third argument."
-msgstr ""
+msgstr "Returnerer det andet argument, hvis det ligger i intervallet fra det første til det tredje argument."
 
 #. FunctionList.xml:383(entry)
 msgid "Returns the second argument if the first argument does not evaluate to 0; Else the third argument is returned."
-msgstr ""
+msgstr "Returnerer det andet argument, hvis det første argument ikke evalueres til 0; ellers returneres det tredje argument."
 
 #. FunctionList.xml:387(entry)
 msgid "The same as a sequence of if functions."
-msgstr ""
+msgstr "Det samme som en sekvens af if-funktioner."
 
 #. FunctionList.xml:394(entry)
 msgid "Returns the numeric integral of the first argument from the second argument to the third argument."
-msgstr ""
+msgstr "Returnerer det numeriske integral af det første argument i intervallet fra det andet til det tredje argument."
 
 #. FunctionList.xml:398(entry)
 msgid "Returns the sum of the first argument evaluated for each integer in the range from the second to the third argument."
@@ -3011,27 +3011,27 @@ msgstr "Returnerer produktet af det første argument evalueret for hvert heltal 
 
 #. FunctionList.xml:410(entry)
 msgid "Returns the Euler gamma function of the argument."
-msgstr ""
+msgstr "Returnerer Eulers gammafunktion til argumentet."
 
 #. FunctionList.xml:414(entry)
 msgid "Returns the beta function evaluated for the arguments."
-msgstr ""
+msgstr "Returnerer betafunktionen evalueret for argumenterne."
 
 #. FunctionList.xml:418(entry)
 msgid "Returns the Lambert W-function evaluated for the argument."
-msgstr ""
+msgstr "Returnerer Lamberts W-funktion evalueret for argumentet."
 
 #. FunctionList.xml:422(entry)
 msgid "Returns the Riemann Zeta function evaluated for the argument."
-msgstr ""
+msgstr "Returnerer Riemann Zetafunktionen evalueret for argumentet."
 
 #. FunctionList.xml:430(entry)
 msgid "The probability function of the normal distribution in a variate with mean and standard"
-msgstr ""
+msgstr "Sandsynlighedsfunktionen for en stokastisk variabels normalfordeling med middelværdi og spredning."
 
 #. FunctionList.xml:438(title)
 msgid "Notice the following relations:"
-msgstr ""
+msgstr "Bemærk følgende sammenhænge:"
 
 #. FunctionList.xml:440(member)
 msgid "sin(x)^2= (sin(x))^2"
@@ -3703,7 +3703,7 @@ msgstr ""
 
 #. CustomFunctionsDialog.xml:43(term)
 msgid "Changing and removing functions"
-msgstr ""
+msgstr "Ændring og fjernelse af funktioner"
 
 #. CustomFunctionsDialog.xml:46(guimenuitem)
 msgid "Remove row"
@@ -3731,7 +3731,7 @@ msgstr "tilfældig"
 
 #. Constants.xml:11(para)
 msgid "Returns a random number in the range 0 to 1."
-msgstr ""
+msgstr "Returnerer et tilfældigt tal i intervallet 0 til 1."
 
 #. Constants.xml:20(para)
 msgid "<placeholder-1/> is used as a constant but returns a new pseudo-random number each time it is evaluated. The value is a real number in the range [0;1]."
@@ -3771,7 +3771,7 @@ msgstr "vinkel"
 
 #. Complex.xml:36(para)
 msgid "Returns the argument of the parameter."
-msgstr ""
+msgstr "Returnerer parametrens argument."
 
 #. Complex.xml:45(para)
 msgid "The <placeholder-1/> function returns the argument or angle of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> always returns a real number. The result may be in <placeholder-8/> or degrees depending on the current settings. The angle is always between -&pi; and &pi;. If <placeholder-9/> is a real number, <placeholder-10/> is 0 for positive numbers and &pi; for negative numbers. <placeholder-11/> is undefined."
@@ -3779,7 +3779,7 @@ msgstr ""
 
 #. Complex.xml:61(primary)
 msgid "conjugate"
-msgstr ""
+msgstr "konjuger"
 
 #. Complex.xml:71(para)
 msgid "The <placeholder-1/> function returns the conjugate of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The function is defined as: <placeholder-7/>."
@@ -4119,15 +4119,15 @@ msgstr "Billeder/sekund"
 
 #. AnimateDialog.xml:52(para)
 msgid "You can specify the image size of the animation. This will affect the file size and the time it takes to create the animation. The <placeholder-1/> indicates the default speed of the animation. Most players will be able to adjust the speed when the animation is played."
-msgstr ""
+msgstr "Du kan vælge størrelsen på animationsbilledet. Dette vil påvirke størrelsen på filen og den tid, det tager at oprette animationen. <placeholder-1/> indikerer animationens standardhastighed. De fleste afspillere vil være i stand til at justere hastigheden, når animationen afspilles."
 
 #. AnimateDialog.xml:62(para)
 msgid "When you press the <guibutton>Animate</guibutton> button, an animation is created from the settings you have specified. This may take some time depending on what elements exist in the coordinate system and how many frames are needed."
-msgstr ""
+msgstr "Når du trykker på knappen <guibutton>Animer</guibutton>, vil en animation blive oprettet i henhold til de valgte indstillinger. Dette kan tage nogen tid, afhængig af elementerne i koordinatsystemet og det nødvendige antal billeder."
 
 #. AnimateDialog.xml:66(para)
 msgid "When the animation is finished, a very simple player is shown. You can use this to play the animation. The <guibutton><inlinegraphic fileref=\"AnimationMenu.png\" scale=\"60\"/></guibutton> button will give you some additional options."
-msgstr ""
+msgstr "Når animationen er færdig, vises en meget simpel afspiller, som kan bruges til at afspille animationen. Knappen <guibutton><inlinegraphic fileref=\"AnimationMenu.png\" scale=\"60\"/></guibutton> giver mulighed for yderligere indstillinger."
 
 #. AnimateDialog.xml:73(term)
 msgid "Speed"
