@@ -1,3 +1,8 @@
+Known bug:
+1. Insert the relation "(x^2+y^2)^2 = (x^2-y^2)"
+2. Edit the relation and press OK.
+3. Now the Precision Control register is changed from 2 to 0 and all numbers are shown with a very low precision.
+
 ASAP
 + Comments in po-files
 - Replacement for rtf files to generate help.

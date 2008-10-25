@@ -57,6 +57,7 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
   if(Max < Min)
     ds = -ds;
 
+  bool UseReal = Form1->Data.Property.ComplexFormat == cfReal;
   if(const TStdFunc *F = dynamic_cast<const TStdFunc*>(Func))
   {
     Func32::TFunc Dif1;
@@ -70,7 +71,6 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
     {
     }
 
-    bool UseReal = Form1->Data.Property.ComplexFormat == cfReal;
     long double x = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, x += ds)
     {
@@ -104,41 +104,49 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
   {
     double t = Min;
     Func32::TParamFunc F = ParFunc->GetFunc();
-    Func32::TParamFunc Dif = F.MakeDif();
+    Func32::TParamFunc Dif;
+    try
+    {
+       Dif = F.MakeDif();
+    }
+    catch(Func32::EFuncError&)
+    {
+    }
+    
     for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
     {
       AnsiString Str = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
       //Calculate back to take care of rounding. What is written is also what is used for evaluation
       t = Str.ToDouble();
       Grid1->Cells[0][N] = Str;
-      long double xDif = 0;
-      long double yDif = 0;
+      Func32::TComplex xDif = 0;
+      Func32::TComplex yDif = 0;
       try
       {
-        Grid1->Cells[1][N] = DoubleToStr(F.CalcX(t));
-        xDif = Dif.CalcX(t);
-        Grid1->Cells[3][N] = DoubleToStr(xDif);
+        Grid1->Cells[1][N] = "";
+        Grid1->Cells[1][N] = ComplexToWideString(UseReal ? Func32::TComplex(F.CalcX(t)) : F.CalcX(Func32::TComplex(t)));
+        xDif = UseReal ? Func32::TComplex(Dif.CalcX(t)) : Dif.CalcX(Func32::TComplex(t));
+        Grid1->Cells[3][N] = ComplexToWideString(xDif);
       }
       catch(Func32::EFuncError&)
       {
-        Grid1->Cells[1][N] = "";
         Grid1->Cells[3][N] = "";
       }
 
       try
       {
-        Grid1->Cells[2][N] = DoubleToStr(F.CalcY(t));
-        yDif = Dif.CalcY(t);
-        Grid1->Cells[4][N] = DoubleToStr(yDif);
+        Grid1->Cells[2][N] = "";
+        Grid1->Cells[2][N] = ComplexToWideString(UseReal ? Func32::TComplex(F.CalcY(t)) : F.CalcY(Func32::TComplex(t)));
+        yDif = UseReal ? Func32::TComplex(Dif.CalcY(t)) : Dif.CalcY(Func32::TComplex(t));
+        Grid1->Cells[4][N] = ComplexToWideString(yDif);
       }
       catch(Func32::EFuncError&)
       {
-        Grid1->Cells[2][N] = "";
         Grid1->Cells[4][N] = "";
       }
 
-      if(xDif != 0)
-        Grid1->Cells[5][N] = DoubleToStr(yDif / xDif);
+      if(real(xDif) != 0 || imag(xDif) != 0)
+        Grid1->Cells[5][N] = ComplexToWideString(yDif / xDif);
       else
         Grid1->Cells[5][N] = "";
 
@@ -151,7 +159,15 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
   else if(const TPolFunc *PolFunc = dynamic_cast<const TPolFunc*>(Func))
   {
     Func32::TPolarFunc F = PolFunc->GetFunc();
-    Func32::TPolarFunc Dif = F.MakeDif();
+    Func32::TPolarFunc Dif;
+    try
+    {
+      Dif = F.MakeDif();
+    }
+    catch(Func32::EFuncError&)
+    {
+    }
+    
     double t = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
     {
@@ -159,14 +175,14 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
       //Calculate back to take care of rounding. What is written is also what is used for evaluation
       t = Str.ToDouble();
       Grid1->Cells[0][N] = Str;
-      AnsiString r, x, y, dr, dydx;
+      WideString r, x, y, dr, dydx;
       try
       {
-        r = DoubleToStr(F.CalcR(t));
-        x = DoubleToStr(F.CalcX(t));
-        y = DoubleToStr(F.CalcY(t));
-        dr = DoubleToStr(Dif.CalcR(t));
-        dydx = DoubleToStr(F.CalcSlope(t));
+        r = ComplexToWideString(Func32::TComplex(F.CalcR(t)));
+        x = ComplexToWideString(UseReal ? Func32::TComplex(F.CalcX(t)) : F.CalcX(Func32::TComplex(t)));
+        y = ComplexToWideString(UseReal ? Func32::TComplex(F.CalcY(t)) : F.CalcY(Func32::TComplex(t)));
+        dr = ComplexToWideString(Dif.CalcR(t));
+        dydx = ComplexToWideString(F.CalcSlope(t));
       }
       catch(Func32::ECalcError&)
       { //Ignore errors and continue

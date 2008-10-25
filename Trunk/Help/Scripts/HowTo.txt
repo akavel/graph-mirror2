@@ -1,3 +1,4 @@
+This describes how to create the help files for Graph:
 1. Download and install Java from http://java.com/en/download/. Most will already have Java installed.
 
 2. Download and install Python 2.5 from http://python.org/ftp/python/2.5.2/python-2.5.2.msi
@@ -8,10 +9,9 @@
 
 The po files with translations are placed under Help\po
 
-To compile all languages you just run the Build.py script in the Help\Scripts folder.
+To compile all languages you just run the Build_All.bat file in the Help\Scripts folder.
+There are also bat files for compiling the help file for a single language. For example you can use Build_Spanish.bat to compile the Spanish help.
 
-If you just want to compile for one language, I have created some bat files. For example you can use Build_Spanish.bat to compile the Spanish help.
-
-You can update a translation by opening the po file in poEdit, selecting
+You can update a translation to the latest version by opening the po file in poEdit, selecting
 "Catalog|Update from POT file" in the menu, and selecting the file GraphHelp.pot.
 
