@@ -286,7 +286,7 @@ TConvertRelation(TContext::member1 &AContainer) : Container(AContainer) {}
  */
 void TFuncData::Parse(const std::string &Str, const std::vector<std::string> &Args, const TSymbolList *SymbolList)
 {
-TFuncSymbols FuncSymbols;
+  TFuncSymbols FuncSymbols;
   TNoCaseSymbols NoCaseSymbols;
 
   //Add arguments before symbol names, so they take precedens.
@@ -367,76 +367,76 @@ TFuncSymbols FuncSymbols;
       )   >> !('^' >> FactorSeq[TDoOperator(Factor.List, CodePow)])
       ;
 
-BOOST_SPIRIT_DEBUG_RULE(Expression);
-BOOST_SPIRIT_DEBUG_RULE(Relation);
-BOOST_SPIRIT_DEBUG_RULE(Term);
-BOOST_SPIRIT_DEBUG_RULE(Sum);
-BOOST_SPIRIT_DEBUG_RULE(FactorSeq);
-BOOST_SPIRIT_DEBUG_RULE(Factor);
-BOOST_SPIRIT_DEBUG_RULE(Parentheses);
-BOOST_SPIRIT_DEBUG_RULE(Power);
-BOOST_SPIRIT_DEBUG_RULE(Function);
-BOOST_SPIRIT_DEBUG_RULE(Constant);
-BOOST_SPIRIT_DEBUG_RULE(Neg);
+  BOOST_SPIRIT_DEBUG_RULE(Expression);
+  BOOST_SPIRIT_DEBUG_RULE(Relation);
+  BOOST_SPIRIT_DEBUG_RULE(Term);
+  BOOST_SPIRIT_DEBUG_RULE(Sum);
+  BOOST_SPIRIT_DEBUG_RULE(FactorSeq);
+  BOOST_SPIRIT_DEBUG_RULE(Factor);
+  BOOST_SPIRIT_DEBUG_RULE(Parentheses);
+  BOOST_SPIRIT_DEBUG_RULE(Power);
+  BOOST_SPIRIT_DEBUG_RULE(Function);
+  BOOST_SPIRIT_DEBUG_RULE(Constant);
+  BOOST_SPIRIT_DEBUG_RULE(Neg);
 
-if(Str.empty())
-  throw EParseError(ecEmptyString);
+  if(Str.empty())
+    throw EParseError(ecEmptyString);
 
-const char *Begin = &Str[0];
-const char *End = &Str[0] + Str.size();
+  const char *Begin = &Str[0];
+  const char *End = &Str[0] + Str.size();
 
-try
-{
-  //Parse expression and ignore spaces at the end
-  std::deque<TElem> Temp;
-  parse_info<> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
-  std::vector<TElem> Temp2(Temp.begin(), Temp.end());
-
-  if(!Info.full)
+  try
   {
-  if(std::isalpha(*Info.stop))
-  {
-    const char *Ch;
-    for(Ch = Info.stop; std::isalnum(*Ch); ++Ch);
-    throw EParseError(ecUnknownVar, Info.stop - Begin, std::string(Info.stop, Ch));
-  }
-  if(*Info.stop == ',')
-    throw EParseError(ecCommaError, Info.stop - Begin);
-  if(*Info.stop == 0)
-    throw EParseError(ecUnexpectedEnd, Info.stop - Begin);
-  if(std::string("+-/*^").find_first_of(*Info.stop) != std::string::npos)
-    throw EParseError(ecOperatorError, Info.stop - Begin, std::string(1, *Info.stop));
-  if(*Info.stop == ')')
-    throw EParseError(ecInvalidEndPar, Info.stop - Begin);
-  if(*Info.stop == '.' || std::isdigit(*Info.stop))
-    throw EParseError(ecInvalidNumber, Info.stop - Begin);
-  if(*Info.stop == '<' || *Info.stop == '>' || *Info.stop == '=')
-    throw EParseError(ecInvalidCompare, Info.stop - Begin);
-  if(!std::isdigit(*Info.stop) && std::string(".( ").find_first_of(*Info.stop) == std::string::npos)
-    throw EParseError(ecUnknownChar, Info.stop - Begin, std::string(1, *Info.stop));
-  throw EParseError(ecParseError, Info.stop - Begin);
-  }
+    //Parse expression and ignore spaces at the end
+    std::deque<TElem> Temp;
+    parse_info<> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
+    std::vector<TElem> Temp2(Temp.begin(), Temp.end());
 
-//      DEBUG_LOG(std::clog << MakeText(Temp2.begin()) << std::endl);
-  Data.swap(Temp2);
-}
-//Should not be necesarry. Bug in BCB6? Error on "sin ¤" is not caught without
-catch(parser_error<const EParseError, const char*> &E)
-{
-  HandleParseError(E.descriptor, E.where, E.where - Begin);
-}
-catch(parser_error<EParseError, const char*> &E)
-{
-  HandleParseError(E.descriptor, E.where, E.where - Begin);
-}
-catch(EFuncError &E)
-{
-  throw;
-}
-catch(...)
-{
-  throw EFuncError(ecInternalError);
-}
+    if(!Info.full)
+    {
+      if(std::isalpha(*Info.stop))
+      {
+        const char *Ch;
+        for(Ch = Info.stop; std::isalnum(*Ch); ++Ch);
+        throw EParseError(ecUnknownVar, Info.stop - Begin, std::string(Info.stop, Ch));
+      }
+      if(*Info.stop == ',')
+        throw EParseError(ecCommaError, Info.stop - Begin);
+      if(*Info.stop == 0)
+        throw EParseError(ecUnexpectedEnd, Info.stop - Begin);
+      if(std::string("+-/*^").find_first_of(*Info.stop) != std::string::npos)
+        throw EParseError(ecOperatorError, Info.stop - Begin, std::string(1, *Info.stop));
+      if(*Info.stop == ')')
+        throw EParseError(ecInvalidEndPar, Info.stop - Begin);
+      if(*Info.stop == '.' || std::isdigit(*Info.stop))
+        throw EParseError(ecInvalidNumber, Info.stop - Begin);
+      if(*Info.stop == '<' || *Info.stop == '>' || *Info.stop == '=')
+        throw EParseError(ecInvalidCompare, Info.stop - Begin);
+      if(!std::isdigit(*Info.stop) && std::string(".( ").find_first_of(*Info.stop) == std::string::npos)
+        throw EParseError(ecUnknownChar, Info.stop - Begin, std::string(1, *Info.stop));
+      throw EParseError(ecParseError, Info.stop - Begin);
+    }
+
+  //      DEBUG_LOG(std::clog << MakeText(Temp2.begin()) << std::endl);
+    Data.swap(Temp2);
+  }
+  //Should not be necesarry. Bug in BCB6? Error on "sin ¤" is not caught without
+  catch(parser_error<const EParseError, const char*> &E)
+  {
+    HandleParseError(E.descriptor, E.where, E.where - Begin);
+  }
+  catch(parser_error<EParseError, const char*> &E)
+  {
+    HandleParseError(E.descriptor, E.where, E.where - Begin);
+  }
+  catch(EFuncError &E)
+  {
+    throw;
+  }
+  catch(...)
+  {
+    throw EFuncError(ecInternalError);
+  }
 }
 //---------------------------------------------------------------------------
 void TFuncData::HandleParseError(const EParseError &E, const char* Where, unsigned Pos)
