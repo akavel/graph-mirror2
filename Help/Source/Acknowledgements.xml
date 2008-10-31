@@ -43,7 +43,7 @@
 		</simplelist>
 
 		<simplelist>
-			<member>Tnt Delphi Unicode Controls</member>
+			<member><orgname>Tnt Delphi Unicode Controls</orgname></member>
 			<member><orgname>Copyright &copy; 2002-2005, Troy Wolbrink</orgname></member>
 			<member><ulink url="http://www.tntware.com/delphicontrols/unicode/"/></member>
 		</simplelist>
@@ -62,7 +62,7 @@
 			<informaltable>
 				<tgroup cols="4">
 					<colspec colnum="1" colwidth="2.5cm"/>
-					<colspec colnum="2" colwidth="2.0cm"/>
+					<colspec colnum="2" colwidth="2.2cm"/>
 					<colspec colnum="3" colwidth="2.0cm"/>
 					<colspec colnum="4" colwidth="*"/>
 					<thead>

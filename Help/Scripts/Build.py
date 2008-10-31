@@ -29,7 +29,7 @@ def HandleLanguage(Language, Lang, Dict):
     if Language != "English":
         print
         print "Creating %s translation" % (Language,)
-        os.system("..\\Scripts\\xml2po.py -p ..\\po\\GraphHelp_%s.po -l %s -o ../Temp/Graph2.tmp ../Temp/Graph.tmp" % (Language, Lang))
+        os.system("..\\Scripts\\xml2po.py -k -p ..\\po\\GraphHelp_%s.po -l %s -o ../Temp/Graph2.tmp ../Temp/Graph.tmp" % (Language, Lang))
         os.system("XCopy ..\\Images\\%s\\*.* ..\\Temp\\Images /I /Q /Y > NUL" % (Language,))
 
     print "Creating %s PDF file..." % (Language,)

@@ -96,7 +96,7 @@
 				<para>
 					You can choose between different line styles for which you want the graph to be drawn.
 					You can choose between solid, dashed, dotted or a combination of these.
-					<guilabel>Line styles</guilabel> are only available when <guilabel>Draw type</guilabel> is set to <guilabel>Lines</guilabel> or <guilabel>Automatic</guilabel>.
+					<guilabel>Line style</guilabel> is only available when <guilabel>Draw type</guilabel> is set to <guilabel>Lines</guilabel> or <guilabel>Automatic</guilabel>.
 					When <guilabel>Draw type</guilabel> is <guilabel>Dots</guilabel>, only a dot is shown at each calculated point.
 					Likewise the <guilabel>Lines</guilabel> <guilabel>Draw type</guilabel> will connect the calculated points with lines.
 					<guilabel>Automatic</guilabel> will also draw lines, but Graph will do more calculations at critical points if it thinks it will improve the graph.
