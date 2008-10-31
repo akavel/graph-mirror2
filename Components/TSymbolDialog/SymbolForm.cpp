@@ -8,7 +8,6 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "FocusPanel"
-#pragma link "TntStdCtrls"
 #pragma resource "*.dfm"
 
 struct TSubset
@@ -113,7 +112,7 @@ const TSubset Subsets[] = {
 };
 //---------------------------------------------------------------------------
 __fastcall TSymbolFrm::TSymbolFrm(TComponent* Owner, bool AShowUnicode, wchar_t Symbol)
-  : TTntForm(Owner), Selected(Symbol), hUNameDll(NULL), pGetUNameFunc(NULL), ShowUnicode(AShowUnicode),
+  : TForm(Owner), Selected(Symbol), hUNameDll(NULL), pGetUNameFunc(NULL), ShowUnicode(AShowUnicode),
     hGdi32Dll(NULL), pGetFontUnicodeRanges(NULL), Glyphset(NULL),
     FontSize(12), PreviewFontSize(30), Delta(20)
 {
@@ -124,11 +123,11 @@ __fastcall TSymbolFrm::TSymbolFrm(TComponent* Owner, bool AShowUnicode, wchar_t 
   Button2->Caption = TranslateCompText(L"Insert");
   ComboBox1->Left = Label1->Left + Label1->Width + 5;
 
-  hUNameDll = LoadLibrary("GETUNAME.DLL");
+  hUNameDll = LoadLibrary(L"GETUNAME.DLL");
   if(hUNameDll)
     pGetUNameFunc = reinterpret_cast<TGetUNameFunc>(GetProcAddress(hUNameDll, "GetUName"));
 
-  hGdi32Dll = LoadLibrary("GDI32.DLL");
+  hGdi32Dll = LoadLibrary(L"GDI32.DLL");
   if(hGdi32Dll)
     pGetFontUnicodeRanges = reinterpret_cast<TGetFontUnicodeRanges>(GetProcAddress(hGdi32Dll, "GetFontUnicodeRanges"));
 

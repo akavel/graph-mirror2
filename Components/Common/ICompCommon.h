@@ -2,8 +2,8 @@
 #ifndef ICompCommonH
 #define ICompCommonH
 //---------------------------------------------------------------------------
-typedef WideString __fastcall (*TTranslateFunc)(WideString);
+typedef String __fastcall (*TTranslateFunc)(String);
 
-WideString TranslateCompText(const WideString &Str);
+String TranslateCompText(const String &Str);
 void SetCompTranslateFunc(TTranslateFunc Func);
 #endif

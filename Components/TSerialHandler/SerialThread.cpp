@@ -68,11 +68,11 @@ void __fastcall TSerialThread::Execute()
     }
     catch(Exception &E)
     {
-      Application->MessageBox(E.Message.c_str(), "Exception", MB_ICONSTOP);
+      Application->MessageBox(E.Message.c_str(), L"Exception", MB_ICONSTOP);
     }
     catch(...)
     {
-      Application->MessageBox("Unknown exception in thread", "Exception", MB_ICONSTOP);
+      Application->MessageBox(L"Unknown exception in thread", L"Exception", MB_ICONSTOP);
     }
   }
   CloseHandle(Overlapped.hEvent);

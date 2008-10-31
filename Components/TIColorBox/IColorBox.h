@@ -25,7 +25,7 @@ private:
   void __fastcall Paint();
   DYNAMIC void __fastcall DoEnter();
   DYNAMIC void __fastcall DoExit();
-  DYNAMIC void __fastcall KeyPress(char &Key);
+  DYNAMIC void __fastcall KeyPress(Char &Key);
   DYNAMIC void __fastcall Click();
   DYNAMIC void __fastcall DblClick();
   void __fastcall ShowFocus();

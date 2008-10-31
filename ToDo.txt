@@ -67,6 +67,7 @@ Graph 4.4
 - Add tangents from Calc|Evaluate.
 - Enable use of codecs in avi files.
 - Polar axes.
+- Propability paper axes. (see http://en.wikipedia.org/wiki/Graph_paper)
 - Calc|Evaluate can find where a function intersects with itself.
 - Calc|Evaluate should precalculate extremums and intersections.
 - Report name of function that failed. 
@@ -139,6 +140,7 @@ Plugins:
 - Create data for point series, ie. add plugin to context menu in Insert Point Series dialog.
 - Make the number of iterations optional when integrating (both for the integrate function and for area calculation)
 - Add the function chi-square, x²(x,f)
+- Find distance from point to graph
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>

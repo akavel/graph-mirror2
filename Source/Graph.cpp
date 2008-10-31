@@ -18,41 +18,38 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
-//---------------------------------------------------------------------------
-#include <atl\atlmod.h>
-#include <atl\atlmod.h>
+#include <tchar.h>
 #include <atl\atlmod.h>
 #include "OleServerImpl.h"
 #include "StackTrace.h"
-#include <exception>
-
-USEFORM("Unit1.cpp", Form1);
-USEFORM("Unit2.cpp", Form2);
-USEFORM("Unit3.cpp", Form3);
-USEFORM("Unit4.cpp", Form4);
-USEFORM("Unit5.cpp", Form5);
-USEFORM("Unit6.cpp", Form6);
-USEFORM("Unit7.cpp", Form7);
-USEFORM("Unit8.cpp", Form8);
-USEFORM("Unit9.cpp", Form9);
-USEFORM("Unit10.cpp", Form10);
-USEFORM("Unit11.cpp", Form11);
-USEFORM("Unit12.cpp", Form12);
-USEFORM("Unit13.cpp", Form13);
-USEFORM("Unit14.cpp", Form14);
-USEFORM("Unit15.cpp", Form15);
-USEFORM("Unit16.cpp", Form16);
-USEFORM("Unit17.cpp", Form17);
-USEFORM("Unit18.cpp", Form18);
-USEFORM("Unit19.cpp", Form19);
-USEFORM("Unit20.cpp", Form20);
-USEFORM("Unit21.cpp", Form21);
-USEFORM("Unit22.cpp", Form22);
-USEFORM("TStdFuncFrame.cpp", StdFuncFrame); /* TFrame: File Type */
-USEFORM("TParFuncFrame.cpp", ParFuncFrame); /* TFrame: File Type */
-USEFORM("TPolFuncFrame.cpp", PolFuncFrame); /* TFrame: File Type */
-USEFORM("TTanFrame.cpp", TanFrame); /* TFrame: File Type */
-USEFORM("TAreaFrame.cpp", AreaFrame); /* TFrame: File Type */
+//---------------------------------------------------------------------------
+USEFORM("Forms\Unit5.cpp", Form5);
+USEFORM("Forms\Unit6.cpp", Form6);
+USEFORM("Forms\Unit3.cpp", Form3);
+USEFORM("Forms\Unit4.cpp", Form4);
+USEFORM("Forms\Unit9.cpp", Form9);
+USEFORM("Forms\Unit10.cpp", Form10);
+USEFORM("Forms\Unit7.cpp", Form7);
+USEFORM("Forms\Unit8.cpp", Form8);
+USEFORM("Forms\Unit1.cpp", Form1);
+USEFORM("Forms\Unit22.cpp", Form22);
+USEFORM("Forms\Unit2.cpp", Form2);
+USEFORM("Forms\Unit21.cpp", Form21);
+USEFORM("Frames\TTanFrame.cpp", TanFrame); /* TFrame: File Type */
+USEFORM("Forms\Unit19.cpp", Form19);
+USEFORM("Forms\Unit20.cpp", Form20);
+USEFORM("Frames\TPolFuncFrame.cpp", PolFuncFrame); /* TFrame: File Type */
+USEFORM("Frames\TStdFuncFrame.cpp", StdFuncFrame); /* TFrame: File Type */
+USEFORM("Frames\TAreaFrame.cpp", AreaFrame); /* TFrame: File Type */
+USEFORM("Frames\TParFuncFrame.cpp", ParFuncFrame); /* TFrame: File Type */
+USEFORM("Forms\Unit13.cpp", Form13);
+USEFORM("Forms\Unit14.cpp", Form14);
+USEFORM("Forms\Unit11.cpp", Form11);
+USEFORM("Forms\Unit12.cpp", Form12);
+USEFORM("Forms\Unit17.cpp", Form17);
+USEFORM("Forms\Unit18.cpp", Form18);
+USEFORM("Forms\Unit15.cpp", Form15);
+USEFORM("Forms\Unit16.cpp", Form16);
 //---------------------------------------------------------------------------
 TComModule _ProjectModule(0 /*InitATLServer*/);
 TComModule &_Module = _ProjectModule;
@@ -65,7 +62,7 @@ BEGIN_OBJECT_MAP(ObjectMap)
   OBJECT_ENTRY(CLSID_OleServer, TOleServerImpl)
 END_OBJECT_MAP()
 //---------------------------------------------------------------------------
-WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
+WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
   try
   {
@@ -80,14 +77,11 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
     else
       LoadLanguage(Language);
 
-    Application->Initialize();
-    Application->Title = "Graph";
-
-    if(FindCmdLineSwitch("EMBEDDING"))
-      Application->ShowMainForm = false;
-
-    Application->CreateForm(__classid(TForm1), &Form1);
-    Application->Run();
+     Application->Initialize();
+     Application->MainFormOnTaskBar = true;
+     Application->Title = "Graph";
+     Application->CreateForm(__classid(TForm1), &Form1);
+     Application->Run();
   }
   catch (Exception &E)
   {
@@ -95,18 +89,18 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
   }
   catch(std::exception &E)
   {
-    Application->MessageBox(("Uncaught exception with message:\n" + AnsiString(E.what())).c_str(), "Application error", MB_ICONSTOP);
+    MessageBox(L"Uncaught exception with message:\n" + String(E.what()), L"Application error", MB_ICONSTOP);
   }
   catch (...)
   {
-    try
-    {
+     try
+     {
       throw Exception("Unknown exception escaped from WinMain");
     }
-    catch (Exception &exception)
-    {
-      Application->ShowException(&exception);
-    }
+     catch (Exception &exception)
+     {
+       Application->ShowException(&exception);
+     }
   }
   return 0;
 }

@@ -236,8 +236,8 @@ void TMediaPlayerEx::MciCheck(MCIERROR Error)
 {
   if(Error != 0)
   {
-    char Str[128];
-    mciGetErrorString(Error, Str, sizeof(Str));
+	wchar_t Str[128];
+	mciGetErrorString(Error, Str, sizeof(Str)/sizeof(Str[0]));
     throw EMCIDeviceError(Str);
   }
 }
@@ -338,9 +338,9 @@ void TMediaPlayerEx::Next(bool Wait)
 //---------------------------------------------------------------------------
 void TMediaPlayerEx::Open(bool Wait)
 {
-const char* DeviceName[] = {"", "AVIVideo", "CDAudio", "DAT",
-    "DigitalVideo", "MMMovie", "Other", "Overlay", "Scanner", "Sequencer",
-    "VCR", "Videodisc" "WaveAudio"};
+const wchar_t* DeviceName[] = {L"", L"AVIVideo", L"CDAudio", L"DAT",
+	L"DigitalVideo", L"MMMovie", L"Other", L"Overlay", L"Scanner", L"Sequencer",
+	L"VCR", L"Videodisc" L"WaveAudio"};
 
   MCI_OPEN_PARMS OpenParm;
   TRect DisplayR;

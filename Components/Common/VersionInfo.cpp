@@ -50,13 +50,13 @@ void TVersionInfo::LoadVersionInfo()
 {
   FInfoAvailable = false;
   if(FFileName.empty())
-    FFileName = Application->ExeName.c_str();
+    FFileName = AnsiString(Application->ExeName).c_str();
 
   unsigned int puLen;//Length of file info structure
   DWORD Dummy;
 
   //Get size of Resource data
-  int DataSize = GetFileVersionInfoSize(const_cast<char*>(FFileName.c_str()), &Dummy);
+  int DataSize = GetFileVersionInfoSizeA(const_cast<char*>(FFileName.c_str()), &Dummy);
   if(DataSize == 0)
     return; //Return on error
 
@@ -64,28 +64,29 @@ void TVersionInfo::LoadVersionInfo()
   std::vector<char> Data(DataSize);
 
   //Get version info from file
-  if(GetFileVersionInfo(const_cast<char*>(FFileName.c_str()), 0, Data.size(), &Data[0]))
+  if(GetFileVersionInfoA(const_cast<char*>(FFileName.c_str()), 0, Data.size(), &Data[0]))
   {
     //Get pointer to file info structure
     VS_FIXEDFILEINFO *FileInfo;//Pointer to file info structure
-    if(VerQueryValue(&Data[0],"\\", &(void*)FileInfo, &puLen))
+    if(VerQueryValueA(&Data[0],"\\", &(void*)FileInfo, &puLen))
     {
       FFileVersion.VersionMS = FileInfo->dwFileVersionMS;
       FFileVersion.VersionLS = FileInfo->dwFileVersionLS;
       FProductVersion.VersionMS = FileInfo->dwProductVersionMS;
       FProductVersion.VersionLS = FileInfo->dwProductVersionLS;
 
-      FFileFlags = ffNone;
+      int Flags = ffNone;
       if(FileInfo->dwFileFlags & VS_FF_DEBUG)
-        FFileFlags |= ffDebug;
+        Flags |= ffDebug;
       if(FileInfo->dwFileFlags & VS_FF_PATCHED)
-        FFileFlags |= ffPatched;
+        Flags |= ffPatched;
       if(FileInfo->dwFileFlags & VS_FF_PRERELEASE)
-        FFileFlags |= ffPrerelease;
+        Flags |= ffPrerelease;
       if(FileInfo->dwFileFlags & VS_FF_PRIVATEBUILD)
-        FFileFlags |= ffPrivateBuild;
+        Flags |= ffPrivateBuild;
       if(FileInfo->dwFileFlags & VS_FF_SPECIALBUILD)
-        FFileFlags |= ffSpecialBuild;
+        Flags |= ffSpecialBuild;
+      FFileFlags = static_cast<TFileFlags>(Flags);
       FFileType = FileInfo->dwFileType;
       FFileSubtype = FileInfo->dwFileSubtype;
     }
@@ -101,14 +102,14 @@ std::string TVersionInfo::StringValue(const std::string &Ident) const
   DWORD Dummy;
 
   //Get size of Resource data
-  int DataSize = GetFileVersionInfoSize(const_cast<char*>(FFileName.c_str()), &Dummy);
+  int DataSize = GetFileVersionInfoSizeA(const_cast<char*>(FFileName.c_str()), &Dummy);
   if(DataSize == 0)
     return ""; //Return on error
 
   //Allocate memory to data
   std::vector<char> Data(DataSize);
   //Get version info from file
-  if(!GetFileVersionInfo(const_cast<char*>(FFileName.c_str()), 0, Data.size(), &Data[0]))
+  if(!GetFileVersionInfoA(const_cast<char*>(FFileName.c_str()), 0, Data.size(), &Data[0]))
     return "";
 
   // *** Now the Character translation tables ***
@@ -118,13 +119,13 @@ std::string TVersionInfo::StringValue(const std::string &Ident) const
     WORD charset;
   }m_translation;
 
-  if(!VerQueryValue(&Data[0], "VarFileInfo\\Translation", &(void*)FileInfo, &puLen))
+  if(!VerQueryValueA(&Data[0], "VarFileInfo\\Translation", &(void*)FileInfo, &puLen))
     return "";
 
   m_translation = *(TRANSLATION*)FileInfo;
   // *** Now we are ready to Build Queries ***
   AnsiString Query = "StringFileInfo\\" + IntToHex(m_translation.langID, 4) + IntToHex(m_translation.charset, 4) + "\\" + Ident.c_str();
-  if(!VerQueryValue(&Data[0], Query.c_str(), &(void*)FileInfo, &puLen))
+  if(!VerQueryValueA(&Data[0], Query.c_str(), &(void*)FileInfo, &puLen))
     return "";
 
   std::string Str = reinterpret_cast<char*>(FileInfo);
@@ -219,7 +220,7 @@ int TVersionInfo::GetLanguage() const
   DWORD Dummy;
 
   //Get size of Resource data
-  int DataSize = GetFileVersionInfoSize(const_cast<char*>(FFileName.c_str()), &Dummy);
+  int DataSize = GetFileVersionInfoSizeA(const_cast<char*>(FFileName.c_str()), &Dummy);
   if(!DataSize)
     return 0; //Return on error
 
@@ -227,7 +228,7 @@ int TVersionInfo::GetLanguage() const
   std::vector<char> Data(DataSize);
 
   //Get version info from file
-  if(!GetFileVersionInfo(const_cast<char*>(FFileName.c_str()), 0, DataSize, &Data.front()))
+  if(!GetFileVersionInfoA(const_cast<char*>(FFileName.c_str()), 0, DataSize, &Data.front()))
     return 0;
 
   // *** Now the Character translation tables ***
@@ -238,7 +239,7 @@ int TVersionInfo::GetLanguage() const
   }m_translation;
 
   VS_FIXEDFILEINFO *FileInfo;//Pointer to file info structure
-  VerQueryValue(&Data.front(), "VarFileInfo\\Translation", &(void*)FileInfo, &puLen);
+  VerQueryValueA(&Data.front(), "VarFileInfo\\Translation", &(void*)FileInfo, &puLen);
   m_translation = *(TRANSLATION*)FileInfo;
   return m_translation.langID;
 }
@@ -250,7 +251,7 @@ std::string TVersionInfo::GetLanguageName() const
     return "";
 
   char Buffer[100];
-  if(GetLocaleInfo(Lang, LOCALE_SENGLANGUAGE, Buffer, sizeof(Buffer)))
+  if(GetLocaleInfoA(Lang, LOCALE_SENGLANGUAGE, Buffer, sizeof(Buffer)))
     return std::string(Buffer);
   return "";
 }

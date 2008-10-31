@@ -8,11 +8,7 @@
 #include <memory>
 #include "ExtColorBox.h"
 #include "IColorSelect.h"
-#include <TntGraphics.hpp>
 #pragma package(smart_init)
-//Workaround for name mangling bug in TTntCustomComboBox::ComboWndProc
-#pragma alias "@Tntstdctrls@TTntCustomComboBox@ComboWndProc$qqrr17Messages@TMessagepvt2"\
-="@Tntstdctrls@TTntCustomComboBox@ComboWndProc$qqrr17Messages@TMessageuipv"
 //---------------------------------------------------------------------------
 static TColor ColorList[] =
 {
@@ -55,7 +51,7 @@ namespace Extcolorbox
 }
 //---------------------------------------------------------------------------
 __fastcall TExtColorBox::TExtColorBox(TComponent* Owner)
-  : TTntCustomComboBox(Owner), FOnPickColor(NULL), FColorDialogType(cdtColorSelect), FDroppedWidth(0),
+  : TCustomComboBox(Owner), FOnPickColor(NULL), FColorDialogType(cdtColorSelect), FDroppedWidth(0),
     FAutoDroppedWidth(true), DroppedWidthFound(false), FShowDefault(false), FShowCustom(true),
     FDefaultName("Default"), FCustomName("Custom...")
 {
@@ -65,9 +61,9 @@ __fastcall TExtColorBox::TExtColorBox(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TExtColorBox::Loaded()
 {
-  TTntCustomComboBox::Loaded();
   PopulateList();
   Selected = FSelected;
+  TCustomComboBox::Loaded();
 }
 //---------------------------------------------------------------------------
 bool __fastcall TExtColorBox::PickCustomColor()
@@ -123,7 +119,7 @@ bool __fastcall TExtColorBox::GetExtendedUI()
 //---------------------------------------------------------------------------
 void __fastcall TExtColorBox::SetSelected(TColor Value)
 {
-  if(ComponentState.Contains(csReading))
+  if(ComponentState.Contains(csLoading) || Parent == NULL)
   {
     FSelected = Value;
     return;
@@ -157,12 +153,12 @@ void __fastcall TExtColorBox::DrawItem(int Index, const Types::TRect &Rect, TOwn
   TColor BackgroundColor = Canvas->Brush->Color;
   TRect LRect = Rect;
   if(Index < ShowCustom + ShowDefault)
-    LRect.Right = LRect.Height() + LRect.Left;
+	LRect.Right = LRect.Height() + LRect.Left;
 
   InflateRect(&LRect, -1, -1);
   TColor Color = reinterpret_cast<TColor>(Items->Objects[Index]);
   if(Color == clDefault)
-    Color = clWhite;
+	Color = clWhite;
   Canvas->Brush->Color = Color;
   Canvas->Pen->Color = clBlack;
   Canvas->Rectangle(LRect);
@@ -170,9 +166,9 @@ void __fastcall TExtColorBox::DrawItem(int Index, const Types::TRect &Rect, TOwn
 
   if(Index < ShowCustom + ShowDefault)
   {
-    LRect = TRect(LRect.Right + 5, Rect.Top, Rect.Right, Rect.Bottom);
-    WideString Str = ShowCustom && Index == 0 ? CustomName : DefaultName;
-    WideCanvasTextRect(Canvas, LRect, LRect.Left,
+	LRect = TRect(LRect.Right + 5, Rect.Top, Rect.Right, Rect.Bottom);
+	WideString Str = ShowCustom && Index == 0 ? CustomName : DefaultName;
+	Canvas->TextRect(LRect, LRect.Left,
       (LRect.Bottom + LRect.Top - Canvas->TextHeight(Str)) / 2, Str);
   }
 }
@@ -185,11 +181,11 @@ void TExtColorBox::PopulateList()
   if(ShowDefault)
     AddItem("", reinterpret_cast<TObject*>(clDefault));
 
-  for(int I = 0; I < sizeof(ColorList)/sizeof(ColorList[0]); I++)
+  for(unsigned I = 0; I < sizeof(ColorList)/sizeof(ColorList[0]); I++)
     AddItem("", reinterpret_cast<TObject*>(ColorList[I]));
 }
 //---------------------------------------------------------------------------
-void __fastcall TExtColorBox::KeyPress(char &Key)
+void __fastcall TExtColorBox::KeyPress(Char &Key)
 {
   inherited::KeyPress(Key);
   if(Key == VK_RETURN && ShowCustom && ItemIndex == 0)

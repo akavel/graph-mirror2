@@ -22,13 +22,13 @@ std::string TConfigRegistry::GetKey(const std::string &Key)
 bool TConfigRegistry::CreateKey(const std::string &Key, HKEY RootKey)
 {
   CloseKey();
-  return RegCreateKeyEx(RootKey, GetKey(Key).c_str(), 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &Handle, NULL) == ERROR_SUCCESS;
+  return RegCreateKeyExA(RootKey, GetKey(Key).c_str(), 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &Handle, NULL) == ERROR_SUCCESS;
 }
 //---------------------------------------------------------------------------
 bool TConfigRegistry::OpenKey(const std::string &Key, HKEY RootKey)
 {
   CloseKey();
-  return RegOpenKeyEx(RootKey, GetKey(Key).c_str(), 0, KEY_ALL_ACCESS, &Handle) == ERROR_SUCCESS;
+  return RegOpenKeyExA(RootKey, GetKey(Key).c_str(), 0, KEY_ALL_ACCESS, &Handle) == ERROR_SUCCESS;
 }
 //---------------------------------------------------------------------------
 void TConfigRegistry::CloseKey()
@@ -40,12 +40,12 @@ void TConfigRegistry::CloseKey()
 //---------------------------------------------------------------------------
 void TConfigRegistry::Write(const std::string &Name, const std::string &Value)
 {
-  RegSetValueEx(Handle, Name.c_str(), 0, REG_SZ, reinterpret_cast<const BYTE*>(Value.c_str()), Value.size() + 1);
+  RegSetValueExA(Handle, Name.c_str(), 0, REG_SZ, reinterpret_cast<const BYTE*>(Value.c_str()), Value.size() + 1);
 }
 //---------------------------------------------------------------------------
 void TConfigRegistry::Write(const std::string &Name, int Value)
 {
-  RegSetValueEx(Handle, Name.c_str(), 0, REG_DWORD, reinterpret_cast<const BYTE*>(&Value), sizeof(Value));
+  RegSetValueExA(Handle, Name.c_str(), 0, REG_DWORD, reinterpret_cast<const BYTE*>(&Value), sizeof(Value));
 }
 //---------------------------------------------------------------------------
 unsigned TConfigRegistry::GetValueSize(const std::string &Name, unsigned ValueType) const
@@ -54,7 +54,7 @@ unsigned TConfigRegistry::GetValueSize(const std::string &Name, unsigned ValueTy
     return 0;
   DWORD TempValueType;
   DWORD Size;
-  if(RegQueryValueEx(Handle, Name.c_str(), 0, &TempValueType, NULL, &Size) != ERROR_SUCCESS)
+  if(RegQueryValueExA(Handle, Name.c_str(), 0, &TempValueType, NULL, &Size) != ERROR_SUCCESS)
     return 0;
   if(ValueType != REG_NONE && ValueType != TempValueType)
     return 0;
@@ -67,7 +67,7 @@ std::string TConfigRegistry::Read(const std::string &Name, const std::string &De
   if(Size == 0)
     return Default;
   std::vector<char> Result(Size);
-  if(RegQueryValueEx(Handle, Name.c_str(), 0, NULL, reinterpret_cast<BYTE*>(&Result[0]), &Size) != ERROR_SUCCESS)
+  if(RegQueryValueExA(Handle, Name.c_str(), 0, NULL, reinterpret_cast<BYTE*>(&Result[0]), &Size) != ERROR_SUCCESS)
     return Default;
   return &Result[0];
 }
@@ -78,7 +78,7 @@ int TConfigRegistry::Read(const std::string &Name) const
     throw ERegistryError();
   int Result;
   DWORD Size = sizeof(Result);
-  LONG Error = RegQueryValueEx(Handle, Name.c_str(), 0, NULL, reinterpret_cast<BYTE*>(&Result), &Size);
+  LONG Error = RegQueryValueExA(Handle, Name.c_str(), 0, NULL, reinterpret_cast<BYTE*>(&Result), &Size);
   if(Error != ERROR_SUCCESS)
     throw ERegistryError();
   return Result;
@@ -99,7 +99,7 @@ int TConfigRegistry::Read(const std::string &Name, int Default) const
 bool TConfigRegistry::KeyExists(const std::string &Key, HKEY RootKey)
 {
   HKEY TempHandle;
-  LONG Result = RegOpenKeyEx(RootKey, GetKey(Key).c_str(), 0, KEY_ALL_ACCESS, &TempHandle);
+  LONG Result = RegOpenKeyExA(RootKey, GetKey(Key).c_str(), 0, KEY_ALL_ACCESS, &TempHandle);
   if(Result == ERROR_SUCCESS)
     RegCloseKey(TempHandle);
   return Result == ERROR_SUCCESS;

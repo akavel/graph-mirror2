@@ -13,6 +13,7 @@
 #include <cassert>
 #include <vector>
 #include <iomanip>
+#include <algorithm>
 //---------------------------------------------------------------------------
 std::string Utf8Encode(const std::wstring &Str)
 {
@@ -156,7 +157,7 @@ void TSvgWriter::WriteBrush(bool UseBrush)
         break;
 
       case BS_HATCHED:
-        Stream << "fill=\"url(#pattern" << (1+(find(PatternList.begin(), PatternList.end(), Brush) - PatternList.begin())) << ")\" ";
+        Stream << "fill=\"url(#pattern" << (1+(std::find(PatternList.begin(), PatternList.end(), Brush) - PatternList.begin())) << ")\" ";
         break;
         
       case BS_SOLID:
@@ -182,7 +183,7 @@ void TSvgWriter::SetBrush(const TBrushInfo &ABrush)
 //---------------------------------------------------------------------------
 unsigned TSvgWriter::CreatePattern()
 {
-  std::vector<TBrushInfo>::iterator Iter = find(PatternList.begin(), PatternList.end(), Brush);
+  std::vector<TBrushInfo>::iterator Iter = std::find(PatternList.begin(), PatternList.end(), Brush);
   unsigned Index = (Iter - PatternList.begin()) + 1;
   if(Iter == PatternList.end())
   {

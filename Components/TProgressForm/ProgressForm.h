@@ -8,8 +8,6 @@
 #include <SysUtils.hpp>
 #include <Controls.hpp>
 #include <Classes.hpp>
-#include <TntForms.hpp>
-#include <TntStdCtrls.hpp>
 #include "Progress.h"
 //---------------------------------------------------------------------------
 class TProgressForm : public TComponent
@@ -29,10 +27,10 @@ private:
   TNotifyEvent FOnShow;
   TNotifyEvent FOnCancel;
 
-  TTntForm *Form;
+  TForm *Form;
   TTimer *Timer;
   TProgress *Progress;
-  TTntButton *Button;
+  TButton *Button;
 
   void __fastcall SetCaption(WideString Str);
   void __fastcall SetButtonCaption(WideString Str);

@@ -104,7 +104,7 @@ void __fastcall TIColorBox::DoExit()
 }
 //---------------------------------------------------------------------------
 //This function is called then a key is pressed
-void __fastcall TIColorBox::KeyPress(char &Key)
+void __fastcall TIColorBox::KeyPress(Char &Key)
 {
   //If space is pressed
   if(Key==' ')

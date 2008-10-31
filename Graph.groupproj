@@ -1,0 +1,72 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{C609907F-158C-47A1-99C2-88FFFB732ED1}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="Components\IComp.cbproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Func32\Func32.cbproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Func32\Test\Test.cbproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Source\Graph.cbproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="IComp">
+			<MSBuild Projects="Components\IComp.cbproj"/>
+		</Target>
+		<Target Name="IComp:Clean">
+			<MSBuild Targets="Clean" Projects="Components\IComp.cbproj"/>
+		</Target>
+		<Target Name="IComp:Make">
+			<MSBuild Targets="Make" Projects="Components\IComp.cbproj"/>
+		</Target>
+		<Target Name="Func32">
+			<MSBuild Projects="Func32\Func32.cbproj"/>
+		</Target>
+		<Target Name="Func32:Clean">
+			<MSBuild Targets="Clean" Projects="Func32\Func32.cbproj"/>
+		</Target>
+		<Target Name="Func32:Make">
+			<MSBuild Targets="Make" Projects="Func32\Func32.cbproj"/>
+		</Target>
+		<Target Name="Test">
+			<MSBuild Projects="Func32\Test\Test.cbproj"/>
+		</Target>
+		<Target Name="Test:Clean">
+			<MSBuild Targets="Clean" Projects="Func32\Test\Test.cbproj"/>
+		</Target>
+		<Target Name="Test:Make">
+			<MSBuild Targets="Make" Projects="Func32\Test\Test.cbproj"/>
+		</Target>
+		<Target Name="Graph">
+			<MSBuild Projects="Source\Graph.cbproj"/>
+		</Target>
+		<Target Name="Graph:Clean">
+			<MSBuild Targets="Clean" Projects="Source\Graph.cbproj"/>
+		</Target>
+		<Target Name="Graph:Make">
+			<MSBuild Targets="Make" Projects="Source\Graph.cbproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="IComp;Func32;Test;Graph"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="IComp:Clean;Func32:Clean;Test:Clean;Graph:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="IComp:Make;Func32:Make;Test:Make;Graph:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

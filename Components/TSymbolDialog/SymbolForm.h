@@ -5,11 +5,9 @@
 #include <Classes.hpp>
 #include <Controls.hpp>
 #include <StdCtrls.hpp>
-#include <TntForms.hpp>
 #include <ComCtrls.hpp>
 #include <ExtCtrls.hpp>
 #include "FocusPanel.h"
-#include "TntStdCtrls.hpp"
 #include <vector>
 //---------------------------------------------------------------------------
 typedef __declspec(dllimport) int (FAR WINAPI *TGetUNameFunc)(DWORD,LPVOID);
@@ -18,19 +16,19 @@ typedef DWORD (WINAPI *TGetFontUnicodeRanges)(HDC, LPGLYPHSET);
 const int ColCount = 20;
 const int RowCount = 12;
 
-class TSymbolFrm : public TTntForm
+class TSymbolFrm : public TForm
 {
 __published:	// IDE-managed Components
-  TTntButton *Button1;
-  TTntButton *Button2;
+  TButton *Button1;
+  TButton *Button2;
   TComboBox *ComboBox1;
   TStatusBar *StatusBar1;
   TImage *Image2;
   TFocusPanel *FocusPanel1;
   TImage *Image1;
-  TTntLabel *Label1;
+  TLabel *Label1;
   TScrollBar *ScrollBar1;
-  TTntLabel *Label2;
+  TLabel *Label2;
   TComboBox *ComboBox2;
   void __fastcall FormShow(TObject *Sender);
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button,

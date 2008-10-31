@@ -43,14 +43,14 @@
 #ifdef _DEBUG
   #define BOOST_ENABLE_ASSERT_HANDLER //Assertion handler defined in application
 
-  #define _STLP_DEBUG  //Debugging version of STLport
-  #define _STLP_NO_FORCE_INSTANTIATE
-  #define _STLP_USE_EXCEPTIONS
-  #undef _STLP_NO_DEBUG_EXCEPTIONS
-  #define _STLP_DEBUG_TERMINATE 1  //Call __stl_debug_terminate() to terminate (eg. on assertion failed and similar)
-  #define _STLP_DEBUG_MESSAGE 1    //Call __stl_debug_message() to write debug text
-  #include <cstdio>
-  using std::vsnprintf;
+//  #define _STLP_DEBUG  //Debugging version of STLport
+//  #define _STLP_NO_FORCE_INSTANTIATE
+//  #define _STLP_USE_EXCEPTIONS
+//  #undef _STLP_NO_DEBUG_EXCEPTIONS
+//  #define _STLP_DEBUG_TERMINATE 1  //Call __stl_debug_terminate() to terminate (eg. on assertion failed and similar)
+//  #define _STLP_DEBUG_MESSAGE 1    //Call __stl_debug_message() to write debug text
+//  #include <cstdio>
+//  using std::vsnprintf;
 #endif
 #include <vector>
 #include <complex>

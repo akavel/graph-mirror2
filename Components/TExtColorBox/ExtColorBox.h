@@ -5,13 +5,12 @@
 #include <SysUtils.hpp>
 #include <Classes.hpp>
 #include <Controls.hpp>
-#include <TntStdCtrls.hpp>
 //---------------------------------------------------------------------------
 class TExtColorBox;
 typedef void __fastcall (__closure *TPickColorEvent)(TExtColorBox* Sender, TColor &Color);
 enum TColorDialogType {cdtColorDialog, cdtColorSelect};
 
-class PACKAGE TExtColorBox : public TTntCustomComboBox
+class PACKAGE TExtColorBox : public TCustomComboBox
 {
 private:
   TColorDialogType FColorDialogType;
@@ -36,7 +35,7 @@ private:
 
 protected:
   void __fastcall DrawItem(int Index, const Types::TRect &Rect, TOwnerDrawState State);
-  DYNAMIC void __fastcall KeyPress(char &Key);
+  DYNAMIC void __fastcall KeyPress(Char &Key);
   DYNAMIC void __fastcall Select();
   void __fastcall Loaded();
   DYNAMIC void __fastcall CloseUp();

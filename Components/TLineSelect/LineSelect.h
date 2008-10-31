@@ -9,9 +9,8 @@
 #include <Controls.hpp>
 #include <Classes.hpp>
 #include <Forms.hpp>
-#include <TntStdCtrls.hpp>
 //---------------------------------------------------------------------------
-class TLineSelect : public TTntCustomComboBox
+class TLineSelect : public TCustomComboBox
 {
 private:
   TColor FColor;

@@ -84,7 +84,7 @@ void __fastcall TRecent::SetFileMenu(TMenuItem *Value)
   ShowMenuItems();//Show menu items in a new place
 }
 //---------------------------------------------------------------------------
-int TRecent::FileIndex(const AnsiString &FileName)
+int TRecent::FileIndex(const String &FileName)
 {
   for(unsigned I = 0; I < Impl->FileList.size(); I++)
     if(Impl->FileList[I].first.AnsiCompareIC(FileName) == 0)
@@ -101,7 +101,7 @@ int TRecent::ObjectIndex(TObject *Object)
 }
 //---------------------------------------------------------------------------
 //Called by user to indicate that file have been used
-void __fastcall TRecent::FileUsed(const AnsiString &FileName)
+void __fastcall TRecent::FileUsed(const String &FileName)
 {
   if(FMaxFiles)
   {
@@ -136,9 +136,9 @@ void __fastcall TRecent::MenuClick(TObject *Sender)
       FileUsed(FileName);                       //Move FileName to first position in file list
 }
 //---------------------------------------------------------------------------
-static AnsiString CompactPath(const AnsiString &Path, unsigned MaxLen)
+static String CompactPath(const String &Path, unsigned MaxLen)
 {
-  std::vector<char> Str(MaxLen + 1);
+  std::vector<wchar_t> Str(MaxLen + 1);
   PathCompactPathEx(&Str[0], Path.c_str(), MaxLen+1, 0);
   return &Str[0];
 }
@@ -263,7 +263,7 @@ void __fastcall TRecent::SetEnabled(bool AEnabled)
 }
 //---------------------------------------------------------------------------
 //WARNING: Do not change the argument to a reference. It will crash the IDE
-void __fastcall TRecent::SetHint(AnsiString Str)
+void __fastcall TRecent::SetHint(String Str)
 {
   FHint = Str;
   for(unsigned I = 0; I < Impl->FileList.size(); I++)

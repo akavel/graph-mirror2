@@ -9,18 +9,17 @@
 #include <Controls.hpp>
 #include <Classes.hpp>
 #include <Forms.hpp>
-#include <TntStdCtrls.hpp>
 //---------------------------------------------------------------------------
-class TMyEdit : public TTntEdit
+class TMyEdit : public TEdit
 {
 private:
-  DYNAMIC void __fastcall KeyPress(char &Key);
+  DYNAMIC void __fastcall KeyPress(Char &Key);
 
   void __fastcall WMDeadChar(TMessage &Message);
 
   BEGIN_MESSAGE_MAP
     VCL_MESSAGE_HANDLER(WM_DEADCHAR, TMessage, WMDeadChar)
-  END_MESSAGE_MAP(TTntEdit)
+  END_MESSAGE_MAP(TEdit)
 protected:
   WideString ConvertToGreek(WideString Str);
 public:

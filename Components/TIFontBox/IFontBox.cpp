@@ -43,7 +43,7 @@ void __fastcall TIFontBox::DrawItem(int Index, const Types::TRect &Rect, TOwnerD
   int TextHeight = Canvas->TextHeight('M');
   Canvas->TextRect(Rect, Rect.Left + 3, Rect.Top + (Rect.Height() - TextHeight) / 2, Items->Strings[Index]);
 
-  AnsiString Str = FSample.IsEmpty() ? Items->Strings[Index] : FSample;
+  String Str = FSample.IsEmpty() ? Items->Strings[Index] : FSample;
   Canvas->Font->Name = Items->Strings[Index];
   Canvas->Font->Size = 12;
   TextHeight = Canvas->TextHeight(Str);
@@ -60,7 +60,7 @@ void __fastcall TIFontBox::MeasureItem(int Index, int &H)
 //---------------------------------------------------------------------------
 AnsiString __fastcall TIFontBox::GetFontName()
 {
-  return ItemIndex != -1 ? Items->Strings[ItemIndex] : AnsiString();
+  return ItemIndex != -1 ? Items->Strings[ItemIndex] : String();
 }
 //---------------------------------------------------------------------------
 void __fastcall TIFontBox::SetFontName(const AnsiString &Str)

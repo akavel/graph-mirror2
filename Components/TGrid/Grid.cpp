@@ -42,8 +42,8 @@ __fastcall TGrid::TGrid(TComponent* Owner)
   //Initialize to invalid value
   SelStart.X = -1;
   SelStart.Y = -1;
-  Screen->Cursors[crColCursor] = LoadCursor(HInstance, "COL");
-  Screen->Cursors[crRowCursor] = LoadCursor(HInstance, "ROW");
+  Screen->Cursors[crColCursor] = LoadCursor(HInstance, L"COL");
+  Screen->Cursors[crRowCursor] = LoadCursor(HInstance, L"ROW");
   FTitleCaptions->OnChange = TitleCaptionsChange;
 }
 //---------------------------------------------------------------------------
@@ -204,7 +204,7 @@ void __fastcall TGrid::KeyDown(Word &Key, Classes::TShiftState Shift)
     PostMessage(Parent->Handle, WM_NEXTDLGCTL, Shift.Contains(ssShift), 0);
 }
 //---------------------------------------------------------------------------
-void __fastcall TGrid::KeyPress(char &Key)
+void __fastcall TGrid::KeyPress(Char &Key)
 {
   TDrawGrid::KeyPress(Key);
   if(LeftButtonPressed)
@@ -495,7 +495,7 @@ AnsiString TGrid::ExportText(char Delimiter)
   }
 
   //Replace decimal separator if it is different than '.'
-  char DecimalBuffer[2];
+  wchar_t DecimalBuffer[2];
   if(ReplaceDecimalSeparator && GetLocaleInfo(LOCALE_USER_DEFAULT,LOCALE_SDECIMAL, DecimalBuffer, sizeof(DecimalBuffer)))
     if(DecimalBuffer[0] != '.')
       for(int I = 1; I <= Str.Length(); I++)
@@ -542,8 +542,8 @@ void TGrid::ImportText(AnsiString Str)
   }
 
   //Replace decimal separator if it is different than '.'
-  char DecimalBuffer[2];
-  if(ReplaceDecimalSeparator && GetLocaleInfo(LOCALE_USER_DEFAULT,LOCALE_SDECIMAL,DecimalBuffer,sizeof(DecimalBuffer)))
+  wchar_t DecimalBuffer[2];
+  if(ReplaceDecimalSeparator && GetLocaleInfo(LOCALE_USER_DEFAULT, LOCALE_SDECIMAL, DecimalBuffer, sizeof(DecimalBuffer)))
     if(DecimalBuffer[0] != '.')
       for(int I = 1; I <= Str.Length(); I++)
         if(Str[I] == DecimalBuffer[0])
@@ -826,15 +826,15 @@ void TGrid::CopyRtfToClipboard()
   Str += "}";
 
   //Replace decimal separator if it is different than '.'
-  char DecimalBuffer[2];
-  if(ReplaceDecimalSeparator && GetLocaleInfo(LOCALE_USER_DEFAULT,LOCALE_SDECIMAL,DecimalBuffer,sizeof(DecimalBuffer)))
+  wchar_t DecimalBuffer[2];
+  if(ReplaceDecimalSeparator && GetLocaleInfo(LOCALE_USER_DEFAULT,LOCALE_SDECIMAL, DecimalBuffer, sizeof(DecimalBuffer)))
     if(DecimalBuffer[0] != '.')
       for(int I = 1; I <= Str.Length(); I++)
         if(Str[I] == '.')
           Str[I] = DecimalBuffer[0];
 
   //Copy rtf text to clipboard
-  unsigned int RtfFormat = RegisterClipboardFormat("Rich Text Format");
+  unsigned int RtfFormat = RegisterClipboardFormat(L"Rich Text Format");
   SetClipboardData(RtfFormat, Str.c_str(), Str.Length()+1);
 }
 //---------------------------------------------------------------------------
@@ -849,7 +849,7 @@ void TGrid::SetClipboardData(unsigned int Format, void *Data, unsigned int DataS
   Clipboard()->SetAsHandle(Format, (unsigned int)DataHandle);
 }
 //---------------------------------------------------------------------------
-void __fastcall TMyInplaceEdit::KeyPress(char &Key)
+void __fastcall TMyInplaceEdit::KeyPress(Char &Key)
 {
   //Don't call OnEditorKeyPress() for Ctrl-C, Ctrl-V, etc.
   if(!iscntrl(Key) || Key == '\n' || Key == '\r')
@@ -885,7 +885,7 @@ void __fastcall TMyInplaceEdit::KeyPress(char &Key)
 
     default:
       //Call inherited
-      TInplaceEdit::KeyPress(Key);
+	  TInplaceEdit::KeyPress(Key);
   }
 }
 //---------------------------------------------------------------------------
@@ -1066,12 +1066,12 @@ void __fastcall TGrid::DrawCell(int ACol, int ARow, const TRect &ARect, TGridDra
   TDrawGrid::DrawCell(ACol, ARow, ARect, AState);
 }
 //---------------------------------------------------------------------------
-AnsiString __fastcall TGrid::GetEditText(int ACol, int ARow)
+String __fastcall TGrid::GetEditText(int ACol, int ARow)
 {
   return DoGetText(ACol, ARow);
 }
 //---------------------------------------------------------------------------
-void __fastcall TGrid::SetEditText(int ACol, int ARow, const AnsiString Value)
+void __fastcall TGrid::SetEditText(int ACol, int ARow, const String Value)
 {
   EditUpdate++; //Don't invalidate inplace editor
   DoSetText(ACol, ARow, Value);
@@ -1095,7 +1095,7 @@ void __fastcall TGrid::ChangeScale(int M, int D)
   }
 }
 //---------------------------------------------------------------------------
-void __fastcall TGrid::SetTitleCaptions(TTntStrings *Strings)
+void __fastcall TGrid::SetTitleCaptions(TStrings *Strings)
 {
   for(int I = 0; I < Strings->Count; I++)
     DoSetText(I, 0, Strings->Strings[I]);

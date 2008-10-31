@@ -10,6 +10,7 @@
 #include "Config.h"
 #pragma hdrstop
 #include "Encode.h"
+#include <algorithm>
 //---------------------------------------------------------------------------
 const char *Base64Table = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 

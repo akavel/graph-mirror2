@@ -94,7 +94,7 @@ void TConfigFile::SetComment(const std::string &Str)
   Comment = Str;
   if(!Comment.empty())
   {
-    int Pos = -1;
+    unsigned Pos = -1;
     do
     {
       Comment.insert(Pos+1, ";");

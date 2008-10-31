@@ -32,7 +32,7 @@ public:
   void SetStrikeOut(bool Value);
   void SetSubscript(bool Value);
   void SetSuperscript(bool Value);
-  void SetName(const AnsiString &Str);
+  void SetName(const String &Str);
   void SetSize(unsigned Value);
   void SetColor(TColor Color);
   void SetBackgroundColor(TColor Color);

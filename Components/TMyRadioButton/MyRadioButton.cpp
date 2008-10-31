@@ -22,7 +22,7 @@ namespace Myradiobutton
 }
 //---------------------------------------------------------------------------
 __fastcall TMyRadioButton::TMyRadioButton(TComponent* Owner)
-        : TTntRadioButton(Owner), FOnCheckedChange(NULL), FMultiLine(false)
+        : TRadioButton(Owner), FOnCheckedChange(NULL), FMultiLine(false)
 {
 }
 //---------------------------------------------------------------------------
