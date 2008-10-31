@@ -7,6 +7,7 @@
 #include <Config.h>
 #pragma hdrstop
 #include "RichEditOle.h"
+#undef _ASSERTE //prevent double definition
 #include "Debug.h"
 #include <Atl/atlbase.h>
 #pragma package(smart_init)
@@ -168,10 +169,10 @@ TRichEditOle::TRichEditOle(TCustomRichEdit* ARichEdit)
 
 	//Register clipboard formats used in ole (so we'll have the clipboard
 	//format IDs for ole clipboard operations (like OleUIPasteSpecial)
-	CFObjectDescriptor = RegisterClipboardFormat("Object Descriptor");
-	CFEmbeddedObject = RegisterClipboardFormat("Embedded Object");
-	CFEmbedSource = RegisterClipboardFormat("Embed Source");
-	CFLinkSource = RegisterClipboardFormat("Link Source");
+	CFObjectDescriptor = RegisterClipboardFormat(L"Object Descriptor");
+	CFEmbeddedObject = RegisterClipboardFormat(L"Embedded Object");
+	CFEmbedSource = RegisterClipboardFormat(L"Embed Source");
+	CFLinkSource = RegisterClipboardFormat(L"Link Source");
 	CFRtf = RegisterClipboardFormat(CF_RTF);
 	CFRtfNoObjs = RegisterClipboardFormat(CF_RTFNOOBJS);
 	CFReTextObjs = RegisterClipboardFormat(CF_RETEXTOBJ);
@@ -297,7 +298,7 @@ bool TRichEditOle::InsertObject()
 	if(IsEqualCLSID(Obj.clsid, CLSID_NULL))
   {
 #ifdef UNICODE
-		GetClassFile(buf, &reObj.clsid);
+		GetClassFile(Buf, &Obj.clsid);
 #else
 		WCHAR BufFile[MAX_PATH];
 		MultiByteToWideChar(CP_ACP, 0, Buf, -1, BufFile, sizeof(BufFile));
@@ -310,7 +311,7 @@ bool TRichEditOle::InsertObject()
   {
 		int Update;
 		if(OleStdSwitchDisplayAspect(OleObject, &Obj.dvaspect, DVASPECT_ICON, io.hMetaPict, true, false, 0, &Update))
-			Application->MessageBox("Cannot display object as icon.", "Insert Object", MB_OK | MB_ICONWARNING);
+			Application->MessageBox(L"Cannot display object as icon.", L"Insert Object", MB_OK | MB_ICONWARNING);
 	}
 
 	//Insert the object into the richedit
@@ -348,7 +349,7 @@ bool TRichEditOle::InsertObject()
 bool TRichEditOle::PasteSpecial()
 {
   OLEUIPASTESPECIAL Data;
-	OLEUIPASTEENTRY Formats[8];
+	::OLEUIPASTEENTRY Formats[8];
 
 	memset(&Data, 0, sizeof(Data));
 	memset(&Formats, 0, sizeof(Formats));
@@ -367,73 +368,73 @@ bool TRichEditOle::PasteSpecial()
 	Formats[0].fmtetc.dwAspect = DVASPECT_CONTENT;
 	Formats[0].fmtetc.lindex = -1;
 	Formats[0].fmtetc.tymed = TYMED_ISTREAM;//TYMED_ISTORAGE;
-	Formats[0].lpstrFormatName = "%s";
-	Formats[0].lpstrResultText = "%s";
+	Formats[0].lpstrFormatName = L"%s";
+	Formats[0].lpstrResultText = L"%s";
 	Formats[0].dwFlags = OLEUIPASTE_PASTE | OLEUIPASTE_ENABLEICON;
 
 	Formats[1].fmtetc.cfFormat = CFLinkSource;
 	Formats[1].fmtetc.dwAspect = DVASPECT_CONTENT;
 	Formats[1].fmtetc.lindex = -1;
 	Formats[1].fmtetc.tymed = TYMED_ISTREAM;
-	Formats[1].lpstrFormatName = "%s";
-	Formats[1].lpstrResultText = "%s";
+	Formats[1].lpstrFormatName = L"%s";
+	Formats[1].lpstrResultText = L"%s";
 	Formats[1].dwFlags = OLEUIPASTE_LINKTYPE1 | OLEUIPASTE_ENABLEICON;
 
 	Formats[2].fmtetc.cfFormat = CF_TEXT;
 	Formats[2].fmtetc.dwAspect = DVASPECT_CONTENT;
 	Formats[2].fmtetc.lindex = -1;
 	Formats[2].fmtetc.tymed = TYMED_HGLOBAL;
-	Formats[2].lpstrFormatName = "Unformatted Text";
-	Formats[2].lpstrResultText = "text without any formatting";
+	Formats[2].lpstrFormatName = L"Unformatted Text";
+	Formats[2].lpstrResultText = L"text without any formatting";
 	Formats[2].dwFlags = OLEUIPASTE_PASTEONLY;
 
 	Formats[3].fmtetc.cfFormat = CFRtf;
 	Formats[3].fmtetc.dwAspect = DVASPECT_CONTENT;
 	Formats[3].fmtetc.lindex = -1;
 	Formats[3].fmtetc.tymed = TYMED_HGLOBAL;
-	Formats[3].lpstrFormatName = "Formatted Text (RTF)";
-	Formats[3].lpstrResultText = "text with font and paragraph formatting";
+	Formats[3].lpstrFormatName = L"Formatted Text (RTF)";
+	Formats[3].lpstrResultText = L"text with font and paragraph formatting";
 	Formats[3].dwFlags = OLEUIPASTE_PASTEONLY;
 
 	Formats[4].fmtetc.cfFormat = CF_ENHMETAFILE;
 	Formats[4].fmtetc.dwAspect = DVASPECT_CONTENT;
 	Formats[4].fmtetc.lindex = -1;
 	Formats[4].fmtetc.tymed = TYMED_ENHMF;
-	Formats[4].lpstrFormatName = "Picture (Enhanced Metafile)";
-	Formats[4].lpstrResultText = "a picture";
+	Formats[4].lpstrFormatName = L"Picture (Enhanced Metafile)";
+	Formats[4].lpstrResultText = L"a picture";
 	Formats[4].dwFlags = OLEUIPASTE_PASTEONLY;
 
 	Formats[5].fmtetc.cfFormat = CF_METAFILEPICT;
 	Formats[5].fmtetc.dwAspect = DVASPECT_CONTENT;
 	Formats[5].fmtetc.lindex = -1;
 	Formats[5].fmtetc.tymed = TYMED_MFPICT;
-	Formats[5].lpstrFormatName = "Picture (Metafile)";
-	Formats[5].lpstrResultText = "a picture";
+	Formats[5].lpstrFormatName = L"Picture (Metafile)";
+	Formats[5].lpstrResultText = L"a picture";
 	Formats[5].dwFlags = OLEUIPASTE_PASTEONLY;
 
 	Formats[6].fmtetc.cfFormat = CF_DIB;
 	Formats[6].fmtetc.dwAspect = DVASPECT_CONTENT;
 	Formats[6].fmtetc.lindex = -1;
 	Formats[6].fmtetc.tymed = TYMED_MFPICT;
-	Formats[6].lpstrFormatName = "Device Independent Bitmap";
-	Formats[6].lpstrResultText = "a device independent bitmap";
+	Formats[6].lpstrFormatName = L"Device Independent Bitmap";
+	Formats[6].lpstrResultText = L"a device independent bitmap";
 	Formats[6].dwFlags = OLEUIPASTE_PASTEONLY;
 
 	Formats[7].fmtetc.cfFormat = CF_BITMAP;
 	Formats[7].fmtetc.dwAspect = DVASPECT_CONTENT;
 	Formats[7].fmtetc.lindex = -1;
 	Formats[7].fmtetc.tymed = TYMED_GDI;
-	Formats[7].lpstrFormatName = "Bitmap";
-	Formats[7].lpstrResultText = "a bitmap";
+	Formats[7].lpstrFormatName = L"Bitmap";
+	Formats[7].lpstrResultText = L"a bitmap";
 	Formats[7].dwFlags = OLEUIPASTE_PASTEONLY;
 
 	DWORD RetVal = LOG_OLEUI_CALL(OleUIPasteSpecial(&Data));
 	if(RetVal == OLEUI_OK)
-  {
+	{
 		//Apparently, richedit handles linking for us; unfortunately, some
 		//objects do not embed (MS Word/Office 97 simply fails to embed,
 		//although linking works...
-    HRESULT Result = LOG_FUNCTION_CALL(RichEditOle->ImportDataObject(Data.lpSrcDataObj,
+		HRESULT Result = LOG_FUNCTION_CALL(RichEditOle->ImportDataObject(Data.lpSrcDataObj,
 			Formats[Data.nSelectedIndex].fmtetc.cfFormat,
 			(Data.dwFlags & PSF_CHECKDISPLAYASICON) ? Data.hMetaPict : 0));
 

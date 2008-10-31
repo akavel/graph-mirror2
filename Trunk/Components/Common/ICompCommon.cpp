@@ -6,7 +6,7 @@
 #pragma package(smart_init)
 static TTranslateFunc TranslateFunc = NULL;
 
-WideString TranslateCompText(const WideString &Str)
+String TranslateCompText(const String &Str)
 {
   if(TranslateFunc)
     return TranslateFunc(Str);

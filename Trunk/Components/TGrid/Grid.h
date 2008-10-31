@@ -7,13 +7,12 @@
 //---------------------------------------------------------------------------
 #include <SysUtils.hpp>
 #include <Controls.hpp>
-#include <TntClasses.hpp>
 #include <Forms.hpp>
 #include <Grids.hpp>
 #include <vector>
 #include "VclObject.h"
 //---------------------------------------------------------------------------
-typedef void __fastcall (__closure *TEditorKeyPressEvent)(TInplaceEdit *InplaceEdit, char &Key);
+typedef void __fastcall (__closure *TEditorKeyPressEvent)(TInplaceEdit *InplaceEdit, Char &Key);
 typedef void __fastcall (__closure *TGetTextEvent)(System::TObject* Sender, long ACol, long ARow, WideString &Value);
 typedef void __fastcall (__closure *TSetTextEvent)(System::TObject* Sender, long ACol, long ARow, const WideString &Value);
 
@@ -48,19 +47,19 @@ class TGrid : public TDrawGrid
   bool LeftButtonPressed;
   int CursorPos;
   std::vector<std::vector<WideString> > Data;
-  TVclObject<TTntStringList> FTitleCaptions;
+  TVclObject<TStringList> FTitleCaptions;
 
   TInplaceEdit* __fastcall CreateEditor(void);
   DYNAMIC void __fastcall KeyDown(Word &Key, Classes::TShiftState Shift);
-  DYNAMIC void __fastcall KeyPress(char &Key);
+  DYNAMIC void __fastcall KeyPress(Char &Key);
   DYNAMIC void __fastcall MouseMove(TShiftState Shift,int X,int Y);
   DYNAMIC void __fastcall MouseDown(TMouseButton Button,TShiftState Shift,int X,int Y);
   DYNAMIC void __fastcall MouseUp(TMouseButton Button,TShiftState Shift,int X,int Y);
   DYNAMIC void __fastcall DblClick();
   DYNAMIC void __fastcall ColWidthsChanged();
   DYNAMIC void __fastcall RowHeightsChanged();
-  DYNAMIC AnsiString __fastcall GetEditText(int ACol, int ARow);
-  DYNAMIC void __fastcall SetEditText(int ACol, int ARow, const AnsiString Value);
+  DYNAMIC String __fastcall GetEditText(int ACol, int ARow);
+  DYNAMIC void __fastcall SetEditText(int ACol, int ARow, String Value);
 
   void __fastcall DrawCell(int ACol, int ARow, const TRect &ARect, TGridDrawState AState);
   void __fastcall SetOptions(TGridOptions GridOptions);
@@ -79,8 +78,8 @@ class TGrid : public TDrawGrid
   WideString DoGetText(unsigned ACol, unsigned ARow);
   void DoSetText(unsigned ACol, unsigned ARow, const WideString &Value);
   DYNAMIC void __fastcall ChangeScale(int M, int D);
-  TTntStrings* __fastcall GetTitleCaptions() {return FTitleCaptions;}
-  void __fastcall SetTitleCaptions(TTntStrings *Strings);
+  TStrings* __fastcall GetTitleCaptions() {return FTitleCaptions;}
+  void __fastcall SetTitleCaptions(TStrings *Strings);
   void __fastcall TitleCaptionsChange(TObject *Sender);
 
   //Declare function to handle WM_SetCursor
@@ -125,7 +124,7 @@ __published:
   __property bool ExportFixedRows = {read=FExportFixedRows, write=FExportFixedRows, default=true};
   __property bool ReplaceDecimalSeparator = {read=FReplaceDecimalSeparator, write=FReplaceDecimalSeparator, default=true};
   __property TPopupMenu* EditorPopupMenu = {read=FEditorPopupMenu, write=SetEditorPopupMenu, default=NULL};
-  __property TTntStrings* TitleCaptions = {read=GetTitleCaptions, write=SetTitleCaptions};
+  __property TStrings* TitleCaptions = {read=GetTitleCaptions, write=SetTitleCaptions};
 
   __property TEditorKeyPressEvent OnEditorKeyPress = {read=FOnEditorKeyPress, write=FOnEditorKeyPress, default=NULL};
   __property TGetTextEvent OnGetText = {read=FOnGetText, write=FOnGetText, default=NULL};
@@ -145,7 +144,7 @@ BEGIN_MESSAGE_MAP
   VCL_MESSAGE_HANDLER(WM_PASTE, TMessage, WMPaste);
 END_MESSAGE_MAP(TInplaceEdit)
 
-  DYNAMIC void __fastcall KeyPress(char &Key);
+  DYNAMIC void __fastcall KeyPress(Char &Key);
   DYNAMIC void __fastcall KeyDown(Word &Key, TShiftState Shift);
 
 public:

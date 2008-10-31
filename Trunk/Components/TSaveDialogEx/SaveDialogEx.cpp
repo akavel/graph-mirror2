@@ -77,7 +77,7 @@ void __fastcall TSaveDialogEx::DoTypeChange()
 {
   if(FAutoExt)
   {
-    TTokenizer Tokenizer(Filter.c_str(), '|');
+    TTokenizer Tokenizer(AnsiString(Filter).c_str(), '|');
     Tokenizer.Ignore(FilterIndex*2-1);
     AnsiString Extension = Tokenizer.Next().c_str();
     Extension = Extension.SubString(Extension.LastDelimiter("."), MaxInt);

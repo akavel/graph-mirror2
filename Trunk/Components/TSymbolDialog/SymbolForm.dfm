@@ -27,7 +27,7 @@ object SymbolFrm: TSymbolFrm
     Height = 65
     Anchors = [akTop, akRight]
   end
-  object Label1: TTntLabel
+  object Label1: TLabel
     Left = 8
     Top = 12
     Width = 53
@@ -35,7 +35,7 @@ object SymbolFrm: TSymbolFrm
     Caption = 'Font name:'
     FocusControl = ComboBox1
   end
-  object Label2: TTntLabel
+  object Label2: TLabel
     Left = 216
     Top = 12
     Width = 36
@@ -44,7 +44,7 @@ object SymbolFrm: TSymbolFrm
     Caption = 'Subset:'
     FocusControl = ComboBox2
   end
-  object Button1: TTntButton
+  object Button1: TButton
     Left = 439
     Top = 79
     Width = 75
@@ -55,7 +55,7 @@ object SymbolFrm: TSymbolFrm
     TabOrder = 4
     OnClick = Button1Click
   end
-  object Button2: TTntButton
+  object Button2: TButton
     Left = 439
     Top = 39
     Width = 75
@@ -71,7 +71,7 @@ object SymbolFrm: TSymbolFrm
     Width = 129
     Height = 21
     Style = csDropDownList
-    ItemHeight = 13
+    ItemHeight = 0
     TabOrder = 0
     OnSelect = ComboBox1Select
   end
@@ -87,7 +87,6 @@ object SymbolFrm: TSymbolFrm
       item
         Width = 50
       end>
-    SimplePanel = False
     SizeGrip = False
   end
   object FocusPanel1: TFocusPanel
@@ -130,7 +129,7 @@ object SymbolFrm: TSymbolFrm
     Width = 170
     Height = 21
     Style = csDropDownList
-    ItemHeight = 13
+    ItemHeight = 0
     TabOrder = 1
     OnChange = ComboBox2Change
   end

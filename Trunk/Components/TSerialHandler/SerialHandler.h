@@ -38,7 +38,7 @@ private:
   TSerialThread *Thread;
   OVERLAPPED Overlapped;
 
-  AnsiString FPort;
+  String FPort;
   unsigned FSpeed;
   unsigned FByteSize;
   TParityBit FParity;
@@ -78,7 +78,7 @@ public:
   __property TStrings* SerialPorts = {read=GetSerialPorts};
 
 __published:
-  __property AnsiString Port = {read=FPort, write=FPort};
+  __property String Port = {read=FPort, write=FPort};
   __property unsigned Speed = {read=FSpeed, write=FSpeed, default=19200};
   __property unsigned ByteSize = {read=FByteSize, write=FByteSize, default=8};
   __property TParityBit Parity = {read=FParity, write=FParity, default=pbNoParity};

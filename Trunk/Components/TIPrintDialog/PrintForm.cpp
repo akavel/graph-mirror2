@@ -11,15 +11,13 @@
 #include <cmath>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
-#pragma link "TntExtCtrls"
-#pragma link "TntStdCtrls"
 #pragma resource "*.dfm"
 
 class TPrinterHandle
 {
   HANDLE hPrinter;
 public:
-  TPrinterHandle(const AnsiString &PrinterName)
+  TPrinterHandle(const String &PrinterName)
   {
     if(!OpenPrinter(PrinterName.c_str(), &hPrinter, NULL))
       RaiseLastOSError();
@@ -36,7 +34,7 @@ public:
 
 //---------------------------------------------------------------------------
 __fastcall TPrintFrm::TPrintFrm(TComponent* Owner, TIPrintDialog *APrintDialog)
-  : TTntForm(Owner), PrintDialog(APrintDialog)
+  : TForm(Owner), PrintDialog(APrintDialog)
 {
   //Prevent flicker when paper is redrawn
   ControlStyle = ControlStyle << csOpaque;
@@ -209,7 +207,7 @@ void __fastcall TPrintFrm::FormClose(TObject *Sender, TCloseAction &Action)
 //---------------------------------------------------------------------------
 void TPrintFrm::PrinterChanged()
 {
-  char Device[255], Driver[255], Port[255];
+  wchar_t Device[255], Driver[255], Port[255];
   THandle DeviceMode;
   Printer()->GetPrinter(Device, Driver, Port, DeviceMode);
   TPrinterHandle PrinterHandle(Device); //Don't trust ComboBox1->Text
@@ -237,7 +235,7 @@ void __fastcall TPrintFrm::ComboBox1Change(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TPrintFrm::Button3Click(TObject *Sender)
 {
-  char Device[255], Driver[255], Port[255];
+  wchar_t Device[255], Driver[255], Port[255];
   THandle DeviceMode;
   Printer()->GetPrinter(Device, Driver, Port, DeviceMode);
   DEVMODE *DevMode = static_cast<DEVMODE*>(GlobalLock(reinterpret_cast<HGLOBAL>(DeviceMode)));

@@ -25,11 +25,11 @@ namespace Myedit
 }
 //---------------------------------------------------------------------------
 __fastcall TMyEdit::TMyEdit(TComponent* Owner)
-        : TTntEdit(Owner)
+		: TEdit(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TMyEdit::KeyPress(char &Key)
+void __fastcall TMyEdit::KeyPress(Char &Key)
 {
   if(Key == 0x07) //Ctrl+G
   {
@@ -44,13 +44,13 @@ void __fastcall TMyEdit::KeyPress(char &Key)
       SelText = ConvertToGreek(SelText);
     Key = 0;
   }
-  else if(Key == '\xB2') //Superscript 2
+  else if(Key == L'\xB2') //Superscript 2
   {
     SendMessage(Handle, WM_CHAR, '^', 0);
     Key = '2';
   }
   else
-    TTntEdit::KeyPress(Key);
+    TEdit::KeyPress(Key);
 }
 //---------------------------------------------------------------------------
 void __fastcall TMyEdit::WMDeadChar(TMessage &Message)

@@ -6,8 +6,6 @@
 #pragma hdrstop
 #include "Config.h"
 #include "ProgressForm.h"
-#include <TntForms.hpp>
-#include <TntStdCtrls.hpp>
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
 // ValidCtrCheck is used to assure that the components created do not have
@@ -37,7 +35,7 @@ __fastcall TProgressForm::TProgressForm(TComponent* Owner)
   Timer->Enabled = false;
   Timer->OnTimer = ShowForm;
 
-  Form = new TTntForm(this);
+  Form = new TForm(this);
   Form->Caption = FCaption;
   Form->Width = 263;
   Form->Height = 152;
@@ -55,7 +53,7 @@ __fastcall TProgressForm::TProgressForm(TComponent* Owner)
   Progress->Left = 24;
   Progress->Width = 209;
 
-  Button = new TTntButton(this);
+  Button = new TButton(this);
   Button->Parent = Form;
   Button->Top = 80;
   Button->Left = 88;

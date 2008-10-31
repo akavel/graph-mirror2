@@ -187,7 +187,7 @@ class TMutex
   TMutex(const TMutex&);
 
 public:
-  TMutex(const char *Name, bool InitialOwner = false)
+  TMutex(const Char *Name, bool InitialOwner = false)
   {
     Handle = CreateMutex(NULL, InitialOwner, Name);
     if(Handle == NULL)

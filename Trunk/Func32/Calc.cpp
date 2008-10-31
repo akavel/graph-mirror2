@@ -63,6 +63,7 @@ inline bool operator!(const std::complex<T> &C)
 }
 //---------------------------------------------------------------------------
 // Returns the number itself; Exists for generic use with real(std::complex<T>)
+/*
 inline long double real(long double x)
 {
   return x;
@@ -73,17 +74,25 @@ inline long double imag(long double x)
 {
   return 0;
 }
+*/
 //---------------------------------------------------------------------------
 //Returns the number itself; Exists for generic use with arg(std::complex<T>)
+/*
 inline long double arg(long double x)
 {
   return x >= 0 ? 0 : PI;
 }
+*/
 //---------------------------------------------------------------------------
 //Returns the number itself; Exists for generic use with conj(std::complex<T>)
-inline long double conj(long double x)
+inline long double Conj(long double x)
 {
   return x;
+}
+//---------------------------------------------------------------------------
+inline TComplex Conj(TComplex x)
+{
+  return conj(x);
 }
 //---------------------------------------------------------------------------
 //Returns the inverse hyperbolic sine to x
@@ -273,17 +282,19 @@ T Gamma(const T &z)
 template<typename T>
 T Omega(T z, TErrorCode &ErrorCode)
 {
-  if(!TComplexTrait<T>::HasImagUnit && real(z) < -1/EULER)
+/*
+  const long double Limit = -1/EULER - LDBL_EPSILON;
+  if(!TComplexTrait<T>::HasImagUnit && real(z) < Limit)
   {
     ErrorCode = ecComplexError; //Not defined for z<-1/e when we are not using complex numbers
     return -1;
   }
-
+*/
   const double eps = 0.00001; //Accuracy
   T p, w;
   if(!z)
     return 0.0;
-
+  errno = 0;
   if(abs(z) < 1)
   {
     p = sqrt(2.0L * (EULER * z + 1.0L));
@@ -291,6 +302,12 @@ T Omega(T z, TErrorCode &ErrorCode)
   }
   else
     w = log(z);
+
+  if(errno)
+  {
+    ErrorCode = ecComplexError; //Not defined for z<-1/e when we are not using complex numbers
+    return -1;
+  }
 
   if(abs(z) > 3)
     w = w-log(w);
@@ -864,7 +881,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       return Temp;
 
     case CodeAbs:   return abs(Temp);
-    case CodeConj:  return conj(Temp);
+    case CodeConj:  return Conj(Temp);
     case CodeRe:    return real(Temp);
     case CodeIm:    return imag(Temp);
     case CodeTrunc: return Trunc(Temp);
@@ -1059,11 +1076,12 @@ long double TFuncData::Integrate(long double Min, long double Max, unsigned n, T
 //Math error handler
 //Called on any math errors; Just set errno
 #ifdef __BORLANDC__
-int _matherrl(_exceptionl *a)
+int _RTLENTRY _matherrl(_exceptionl *a)
 {
   using namespace std;
   DEBUG_LOG(std::clog << "Math error: " << a->name << "(" << a->arg1 << ", " << a->arg2 << ")" << std::endl);
   a->retval = 0;//NAN gives problems with log(-0)
+//  a->retval = std::numeric_limits<long double>::quiet_NaN();
   errno = a->type;
   return 1;
 }
@@ -1075,16 +1093,4 @@ int _matherrl(_exceptionl *a)
 #ifndef DOXYGEN
 template long double Func32::TFuncData::CalcF<long double>(TDynData<long double>&) const;
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
 

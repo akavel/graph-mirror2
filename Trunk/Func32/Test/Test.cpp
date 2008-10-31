@@ -282,13 +282,14 @@ void __stl_debug_terminate(void)
 
 void Test()
 {
-  Test("1E5000", 1, 1/*StrToDouble("1E5000")*/); //Number too large
   //Test redundant space
   Test("x*sin x", PI/2, PI/2);
   Test("  x*sin x", PI/2, PI/2);
   Test("x * sin x", PI/2, PI/2);
   Test("x*sin x   ", PI/2, PI/2);
   Test("x*sin    x", PI/2, PI/2);
+  TestError("", 0, ecEmptyString);
+  TestError("     ", 0, ecEmptyString);
 
   //Test case (in)sesitivity
   Test("Sin X+x/pI", 0, 0);
@@ -307,9 +308,16 @@ void Test()
   TestErrorEval<long double>("i*i", 0, ecComplexError);
   Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4
   Test("1E4000", 1, StrToDouble("1E4000")); //2E400 doesn't work directly with BCC 5.6.4
-  Test("1E5000", 1, 1/*StrToDouble("1E5000")*/); //Number too large
+  TestError("1E5000", 1, ecParseError); //Number too large
   TestError("1.2.3", 0, ecInvalidNumber);
   TestError("5.", 0, ecInvalidNumber);
+
+  //Test constants
+  Test("e", 0, EULER);
+  Test("pi", 0, PI);
+  TestErrorEval<long double>("i", 0, ecComplexError);
+  TestEval<TComplex>("i", 0, TComplex(0, 1));
+  TestErrorEval("undef", 0, ecNotDefError);
 
   //Test functions with arguments
   TestError("round x", 1.2345, ecArgCountError);
@@ -403,6 +411,7 @@ void Test()
   Test("logb(x,2)", 32, 5);
   Test("ln(x)", EULER*EULER, 2);
   Test("exp(x)", 2, EULER*EULER);
+  TestError("log(-x)", 0, ecLogError);
 
   //Test square and roots
   Test("sqr(x)", 5, 25);
@@ -546,6 +555,9 @@ void Test()
   TestEval<TComplex>("W(x)", -M_PI/2, TComplex(0, M_PI/2));
   Test("W(-1/e)", 0, -1);
   Test("W(x)", 0, 0);
+  Test("W(x)", -M_LN2/2, -M_LN2);
+  Test("W(x)", 1, 0.5671432904097838729999686622);
+  Test("W(x)", M_E, 1);
 
   //Test vertical trend lines
   TDblPoint Vertical[] = {TDblPoint(5,1), TDblPoint(5,7)};
@@ -584,15 +596,15 @@ void Test()
 //  TestSimplify("log(10)", "1");
 }
 
+std::stringstream DebugStreamBuf;
 int main()
 {
-  std::stringstream DebugStreamBuf;
   std::clog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
-
+/*
   TFunc Func("ln(e)");
   Func.Simplify();
   std::cout << Func << std::endl;
-
+*/
   try
   {
     Test();

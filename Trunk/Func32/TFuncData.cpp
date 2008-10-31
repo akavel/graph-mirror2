@@ -27,6 +27,7 @@ struct TFuncTable
 };
 
 using phoenix::arg1;
+const boost::function1<bool, unsigned> Dummy;
 
 inline const TFuncTable& FuncTable(TIdent Ident)
 {
@@ -46,7 +47,7 @@ static const TFuncTable Table[] = {
 /*CodeFact*/        TFuncTable("fact",  arg1 == 1),
 /*CodeSign*/        TFuncTable("sign",  arg1 == 1),
 /*CodeU*/           TFuncTable("u",     arg1 == 1),
-/*CodeNeg*/         TFuncTable("",      0,         NULL, "-dx"), //Argument and name is not used
+/*CodeNeg*/         TFuncTable("",      Dummy,     NULL, "-dx"), //Argument and name is not used
 /*CodeSinh*/        TFuncTable("sinh",  arg1 == 1, NULL, "cosh(x)*dx"),
 /*CodeCosh*/        TFuncTable("cosh",  arg1 == 1, NULL, "sinh(x)*dx"),
 /*CodeTanh*/        TFuncTable("tanh",  arg1 == 1, NULL, "1/cosh(x)^2*dx"),
@@ -80,15 +81,15 @@ static const TFuncTable Table[] = {
 /*CodeASech*/       TFuncTable("asech", arg1 == 1, "acosh(1/x)", "-1/(abs(x)*sqrt(1-x^2))*dx"),
 /*CodeACoth*/       TFuncTable("acoth", arg1 == 1, "atanh(1/x)", "1/(1-x^2)*dx"),
 
-/*CodeAdd*/         TFuncTable("",      0, NULL, "dx+dx2"),
-/*CodeSub*/         TFuncTable("",      0, NULL, "dx-dx2"),
-/*CodeMul*/         TFuncTable("",      0, NULL, "dx*x2+x*dx2"),
-/*CodeDiv*/         TFuncTable("",      0, NULL, "(dx*x2-x*dx2)/x2^2"),
-/*CodePow*/         TFuncTable("",      0, NULL, "x2*x^(x2-1)*dx+x^x2*ln(x)*dx2"),
-/*CodeCompare1*/    TFuncTable("",      0),
-/*CodeAnd*/         TFuncTable("",      0),
-/*CodeOr*/          TFuncTable("",      0),
-/*CodeXor*/         TFuncTable("",      0),
+/*CodeAdd*/         TFuncTable("",      Dummy, NULL, "dx+dx2"),
+/*CodeSub*/         TFuncTable("",      Dummy, NULL, "dx-dx2"),
+/*CodeMul*/         TFuncTable("",      Dummy, NULL, "dx*x2+x*dx2"),
+/*CodeDiv*/         TFuncTable("",      Dummy, NULL, "(dx*x2-x*dx2)/x2^2"),
+/*CodePow*/         TFuncTable("",      Dummy, NULL, "x2*x^(x2-1)*dx+x^x2*ln(x)*dx2"),
+/*CodeCompare1*/    TFuncTable("",      Dummy),
+/*CodeAnd*/         TFuncTable("",      Dummy),
+/*CodeOr*/          TFuncTable("",      Dummy),
+/*CodeXor*/         TFuncTable("",      Dummy),
 /*CodeMod*/         TFuncTable("mod",   arg1 == 2),
 /*CodeRound*/       TFuncTable("round", arg1 == 2),
 /*CodeLogB*/        TFuncTable("logb",  arg1 == 2, NULL, "dx/(ln(x2)*x) - (ln(x)*dx2)/(x2*ln(x2)^2)"),
@@ -101,13 +102,13 @@ static const TFuncTable Table[] = {
 /*CodeSum*/         TFuncTable("sum",   arg1 == 3),
 /*CodeProduct*/     TFuncTable("product", arg1 == 3),
 /*CodeCompare2*/    TFuncTable("",      arg1 == 3),
-/*CodePowDiv*/      TFuncTable("",      0, NULL, "x2/x3*x^((x2-x3)/x3)*dx + x^(x2/x3)*ln(x)*(dx2*x3-x2*dx3)/x3^2"),
+/*CodePowDiv*/      TFuncTable("",      Dummy, NULL, "x2/x3*x^((x2-x3)/x3)*dx + x^(x2/x3)*ln(x)*(dx2*x3-x2*dx3)/x3^2"),
 
 /*CodeMin*/         TFuncTable("min",   arg1 >= 2),
 /*CodeMax*/         TFuncTable("max",   arg1 >= 2),
 /*CodeIfSeq*/       TFuncTable("ifseq", arg1 >= 2),
-/*CodeCustom*/      TFuncTable("",      0),
-/*CodeExtFunc*/     TFuncTable("",      0),
+/*CodeCustom*/      TFuncTable("",      Dummy),
+/*CodeExtFunc*/     TFuncTable("",      Dummy),
 /*CodeDNorm*/       TFuncTable("dnorm", arg1 == 1 || arg1 == 3, "exp(-sqr(x-x2)/(2sqr(x3))) / (x3*sqrt(2pi))"),
 };
 

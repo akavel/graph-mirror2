@@ -97,7 +97,7 @@ public:
     return Default;
   }
 
-  template<>
+//  template<>
   std::string Read(const std::string &Section, const std::string &Key, const std::string &Default) const
   {
     TConfigData::const_iterator Iter = std::find_if(ConfigData.begin(), ConfigData.end(), TCmpString(Section));

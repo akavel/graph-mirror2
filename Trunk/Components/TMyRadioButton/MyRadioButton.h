@@ -9,9 +9,8 @@
 #include <Controls.hpp>
 #include <Classes.hpp>
 #include <Forms.hpp>
-#include <TntStdCtrls.hpp>
 //---------------------------------------------------------------------------
-class TMyRadioButton : public TTntRadioButton
+class TMyRadioButton : public TRadioButton
 {
 private:
   TNotifyEvent FOnCheckedChange;

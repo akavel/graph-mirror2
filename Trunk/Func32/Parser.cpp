@@ -10,6 +10,7 @@
 #include "Func32Impl.h"
 #pragma hdrstop
 #include <stack>
+#undef _DEBUG
 #ifdef _DEBUG
 #define BOOST_SPIRIT_DEBUG
 #define BOOST_SPIRIT_DEBUG_OUT DebugOutput
@@ -379,17 +380,22 @@ void TFuncData::Parse(const std::string &Str, const std::vector<std::string> &Ar
   BOOST_SPIRIT_DEBUG_RULE(Constant);
   BOOST_SPIRIT_DEBUG_RULE(Neg);
 
-  if(Str.empty())
-    throw EParseError(ecEmptyString);
-
+  //Set pointers to start and end of string.
+  //Ignore ending spaces as the parser doesn seem to handle this.
   const char *Begin = &Str[0];
-  const char *End = &Str[0] + Str.size();
+  const char *End = &Str[0] + Str.find_last_not_of(" ") + 1;
+  if(Begin == End)
+    throw EParseError(ecEmptyString);
 
   try
   {
-    //Parse expression and ignore spaces at the end
+    //Parse expression and ignore spaces
     std::deque<TElem> Temp;
+    errno = 0;
     parse_info<> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
+    if(errno)
+      //Throw error if a calculation error occured under parsing
+      throw EParseError(ecParseError, Info.stop - Begin);
     std::vector<TElem> Temp2(Temp.begin(), Temp.end());
 
     if(!Info.full)
@@ -456,17 +462,5 @@ void TFuncData::HandleParseError(const EParseError &E, const char* Where, unsign
 }
 //---------------------------------------------------------------------------
 } //namespace Func32
-
-
-
-
-
-
-
-
-
-
-
-
 
 

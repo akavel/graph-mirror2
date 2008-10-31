@@ -61,9 +61,9 @@ __fastcall TIPageSetupDialog::~TIPageSetupDialog()
 bool __fastcall TIPageSetupDialog::Execute(HWND ParentWnd)
 {
   PAGESETUPDLG psd;
-  char device[255];
-  char driver[255];
-  char port[255];
+  wchar_t device[255];
+  wchar_t driver[255];
+  wchar_t port[255];
   unsigned devmode;	// help file is wrong (it says "int")
 
   //Check if a dialog is already in use
@@ -147,12 +147,12 @@ bool __fastcall TIPageSetupDialog::Execute(HWND ParentWnd)
     if(psd.hDevNames)
     {
       DEVNAMES *dn = (DEVNAMES*) ::GlobalLock(psd.hDevNames);
-      char *pdriver = (char*)dn + dn->wDriverOffset;
-      char *pdevice = (char*)dn + dn->wDeviceOffset;
-      char *pport = (char*)dn + dn->wOutputOffset;
+	  UnicodeString Driver = (char*)dn + dn->wDriverOffset;
+	  String Device = (char*)dn + dn->wDeviceOffset;
+	  String Port = (char*)dn + dn->wOutputOffset;
 
-      //Set the printer to the device, driver, port, and device mode returned
-      Printer()->SetPrinter(pdevice, pdriver, pport, (int) psd.hDevMode);
+	  //Set the printer to the device, driver, port, and device mode returned
+	  Printer()->SetPrinter(Device.c_str(), Driver.c_str(), Port.c_str(), (int) psd.hDevMode);
 
       //TPrinter takes care of freeing the hDevMode global memory (or
       //so I believe and very much hope) but we still have to free
@@ -234,10 +234,10 @@ void __fastcall TIPageSetupDialog::SetOptionFlags(int Flags)
 void CenterWindow(HWND Wnd)
 {
   TRect Rect;
-  TMonitor *Monitor;
+  Forms::TMonitor *Monitor;
   GetWindowRect(Wnd, &Rect);
   if(Application->MainForm != NULL)
-    Monitor = Application->MainForm->Monitor;
+	Monitor = Application->MainForm->Monitor;
   else
     Monitor = Screen->Monitors[0];
   SetWindowPos(Wnd, 0,

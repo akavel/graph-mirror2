@@ -255,7 +255,7 @@ void TEmfParser::Parse(HENHMETAFILE Handle, TGraphicWriter &AWriter)
 //---------------------------------------------------------------------------
 void TEmfParser::Parse(const char *FileName, TGraphicWriter &AWriter)
 {
-  HENHMETAFILE Handle = GetEnhMetaFile(FileName);
+  HENHMETAFILE Handle = GetEnhMetaFileA(FileName);
   if(Handle == NULL)
     return;
   Parse(Handle, AWriter);

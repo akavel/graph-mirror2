@@ -26,7 +26,7 @@ private:
   int FFrames;
   int FSpeed;
   TWinControl *FDisplay;
-  AnsiString FFileName;
+  String FFileName;
   TMPDevCapsSet FCapabilities;
   TMPDeviceTypes FDeviceType;
 
@@ -93,7 +93,7 @@ public:
 
 __published:
   __property TWinControl* Display = {read=FDisplay, write=SetDisplay, default=NULL};
-  __property AnsiString FileName = {read=FFileName, write=FFileName};
+  __property String FileName = {read=FFileName, write=FFileName};
   __property TMPDeviceTypes DeviceType = {read=FDeviceType, write=FDeviceType, default=dtAutoSelect};
   __property bool Repeat = {read=FRepeat, write=FRepeat, default=false};
   __property bool Reverse = {read=FReverse, write=FReverse, default=false};

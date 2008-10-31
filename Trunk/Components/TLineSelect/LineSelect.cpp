@@ -28,7 +28,7 @@ namespace Lineselect
 }
 //---------------------------------------------------------------------------
 __fastcall TLineSelect::TLineSelect(TComponent* Owner)
-        : TTntCustomComboBox(Owner), FColor(clBlack), FEnableClear(false)
+		: TCustomComboBox(Owner), FColor(clBlack), FEnableClear(false)
 {
   Style = csOwnerDrawFixed;
   Width = 81;

@@ -37,6 +37,8 @@ public:
   std::string Read(const std::string &Name, const char *Default) const {return Read(Name, std::string(Default));}
   int Read(const std::string &Name) const;
   int Read(const std::string &Name, int Default) const;
+  bool Read(const std::string &Name, bool Default) const {return Read(Name, static_cast<int>(Default));}
+  bool Read(const std::string &Name, unsigned Default) const {return Read(Name, static_cast<int>(Default));}
   template<typename T>
   T ReadEnum(const std::string &Name, const T &Default) const {return Read(Name, static_cast<int>(Default));}
   bool ValueExists(const std::string &Name) const {return GetValueSize(Name) != 0;}

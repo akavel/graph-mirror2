@@ -38,9 +38,9 @@ __fastcall TOpenPreviewDialog::TOpenPreviewDialog(TComponent* Owner)
   Panel->DoubleBuffered = true;
 }
 //---------------------------------------------------------------------------
-AnsiString TOpenPreviewDialog::ResolveIt(const AnsiString &FileName)
+String TOpenPreviewDialog::ResolveIt(const String &FileName)
 {
-  char szGotPath[MAX_PATH] = {0};
+  wchar_t szGotPath[MAX_PATH] = {0};
 
   // Get a pointer to the IShellLink interface.
   IShellLink* psl;
@@ -54,7 +54,7 @@ AnsiString TOpenPreviewDialog::ResolveIt(const AnsiString &FileName)
     if(SUCCEEDED(hres))
     {
       // Load the shortcut.
-      hres = ppf->Load(WideString(FileName), STGM_READ);
+      hres = ppf->Load(FileName.c_str(), STGM_READ);
       if(SUCCEEDED(hres))
       {
         // Resolve the link.
@@ -75,7 +75,7 @@ AnsiString TOpenPreviewDialog::ResolveIt(const AnsiString &FileName)
     // Release the pointer to the IShellLink interface.
     psl->Release();
   }
-  return szGotPath[0] ? AnsiString(szGotPath) : FileName;
+  return szGotPath[0] ? String(szGotPath) : FileName;
 }
 //---------------------------------------------------------------------------
 void __fastcall TOpenPreviewDialog::DoSelectionChange()

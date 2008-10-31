@@ -42,13 +42,13 @@ __fastcall TIRichEdit::~TIRichEdit()
 void __fastcall TIRichEdit::CreateParams(Controls::TCreateParams &Params)
 {
 	// modified from TCustomRichEdit
-	FLibHandle = LoadLibrary("RICHED20.DLL");
+	FLibHandle = LoadLibrary(L"RICHED20.DLL");
 	if(!FLibHandle)
     FLibHandle = 0;
 
 	TCustomMemo::CreateParams(Params); //Don't call TCustomRichEdit::CreateParams
 
-	CreateSubClass(Params, "RichEdit20W" /*RICHEDIT_CLASS*/);
+	CreateSubClass(Params, L"RichEdit20W" /*RICHEDIT_CLASS*/);
 	Params.Style = Params.Style |
 		(HideScrollBars ? 0 : ES_DISABLENOSCROLL) |
 		(HideSelection ? 0 : ES_NOHIDESEL);
@@ -97,7 +97,7 @@ void TIRichEdit::SetRichText(const AnsiString &Str)
 //---------------------------------------------------------------------------
 AnsiString TIRichEdit::GetRichText()
 {
-  std::auto_ptr<TStringStream> Stream(new TStringStream(""));
+  std::auto_ptr<TStringStream> Stream(new TStringStream(String()));
   Lines->SaveToStream(Stream.get());
 
   //The string will have a '\0' embedded as the last character
@@ -254,10 +254,10 @@ unsigned GetCharset(const AnsiString &FontName)
   return Charset;
 }
 //---------------------------------------------------------------------------
-void TTextFormat::SetName(const AnsiString &Str)
+void TTextFormat::SetName(const String &Str)
 {
   ::CHARFORMAT2 Format;
-  strncpy(Format.szFaceName, Str.c_str(), sizeof(Format.szFaceName));
+  wcsncpy(Format.szFaceName, Str.c_str(), sizeof(Format.szFaceName));
   Format.szFaceName[sizeof(Format.szFaceName) - 1] = 0;
   Format.bCharSet = GetCharset(Str);
   SetFormat(Format, CFM_FACE);    //We must set the font name first and the charset afterwards
