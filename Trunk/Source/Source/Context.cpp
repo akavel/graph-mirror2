@@ -19,27 +19,6 @@ void TContext::DrawPolyline(const std::vector<TPoint> &Points)
 //---------------------------------------------------------------------------
 void TContext::DrawPolyline(const TPoint *Points, unsigned Size)
 {
-  if(!IsWinNT && PenStyle != psSolid && PenWidth > 1)
-  {
-    std::vector<TPoint> TempPoints;
-    TempPoints.reserve(Size);
-
-    for(unsigned I = 0; I < Size; I++)
-      TempPoints.push_back(TPoint(Points[I].x, Points[I].y - (PenWidth+1)/2));
-
-    for(int I = 0; I < PenWidth; I++)
-    {
-      DrawPolyline2(&TempPoints[0], Size);
-      for(unsigned I = 0; I < Size; I++)
-        TempPoints[I].y++;
-    }
-  }
-  else
-    DrawPolyline2(Points, Size);
-}
-//---------------------------------------------------------------------------
-void TContext::DrawPolyline2(const TPoint *Points, unsigned Size)
-{
   unsigned WinLimit = PenWidth > 1 ? 4096 : 16384; //An undocumented limit in Windows
   while(Size > WinLimit)
   {
@@ -302,8 +281,7 @@ void TContext::SetPen(TPenStyle Style, TColor Color, int Width)
   PenColor = Color;
   PenWidth = Width;
 
-  //Windows 9x does not support line width larger than one, except for solid lines
-  if(IsWinNT && Width > 1 /*&& Style != psSolid*/)
+  if(Width > 1 /*&& Style != psSolid*/)
   {
     LOGBRUSH LogBrush = {BS_SOLID, Color};
     Canvas->Pen->Handle = ExtCreatePen(PS_GEOMETRIC | Style, Width, &LogBrush, 0, NULL);
@@ -316,7 +294,7 @@ void TContext::SetGridPen(TColor Color, unsigned Width)
 {
   //PS_ALTERNATE is not supported on Win9x and apparently most printers.
   //It may also cause problems if PS_ALTERNATE is used in a metafile and printed afterwards,
-  if(Width > 1 || !IsWinNT || Canvas == Printer()->Canvas || dynamic_cast<TMetafileCanvas*>(Canvas))
+  if(Width > 1 || Canvas == Printer()->Canvas || dynamic_cast<TMetafileCanvas*>(Canvas))
   {
     SetPen(psDot, Color, Width);
     return;

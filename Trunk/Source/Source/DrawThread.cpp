@@ -404,7 +404,7 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
 HPEN TDrawThread::SetPen(TColor Color, TPenStyle Style, int Width)
 {
   Width = Size(Width);
-  if(IsWinNT && Width > 1 && Style != psSolid)
+  if(Width > 1 && Style != psSolid)
   {
     LOGBRUSH LogBrush;
     LogBrush.lbStyle = BS_SOLID;
@@ -1320,12 +1320,6 @@ void TDrawThread::CreateEquation(TRelation &Relation)
 
   EquationLoop(Relation, Points, 1);
   EquationLoop(Relation, Points, 0);
-
-  if(!IsWinNT && Points.size() > 4000)
-  {
-    Synchronize(&Form1->ShowStatusError, AnsiString("The relation is too complex to plot under Windows 9x"));
-    Points.clear();
-  }
 
   if(!Aborted)
     Relation.Region.reset(new TRegion(Points));

@@ -42,7 +42,7 @@ bool ExecutePythonCommand(const AnsiString &Command)
       {
         PyObject *Type, *Value, *Traceback;
 	      PyErr_Fetch(&Type, &Value, &Traceback);
-        PyErr_Restore(Type, Value, NULL);
+         PyErr_Restore(Type, Value, NULL);
         Py_XDECREF(Traceback);
         PyErr_Print();
       }
@@ -445,7 +445,7 @@ void InitPlugins()
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
       , Application->Handle
       , Form1
-      , ExtractFileDir(Application->ExeName).c_str()
+      , AnsiString(ExtractFileDir(Application->ExeName)).c_str()
     ).c_str());
 
     FreeGIL();

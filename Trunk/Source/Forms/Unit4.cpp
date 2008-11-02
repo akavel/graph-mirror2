@@ -73,7 +73,7 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
   Property.ComplexFormat = (TComplexFormat)RadioGroup1->ItemIndex;;
   if(CheckBox1->Checked)
   {
-    bool AllUsers = GetRegValue(REGISTRY_KEY, "InstallAllUsers", HKEY_CURRENT_USER, 0) || !IsWinNT;
+    bool AllUsers = GetRegValue(REGISTRY_KEY, "InstallAllUsers", HKEY_CURRENT_USER, 0);
     AssociateExt(".grf", "", "GraphFile", "Graph system", Application->ExeName + ",1", AllUsers);
   }
   else

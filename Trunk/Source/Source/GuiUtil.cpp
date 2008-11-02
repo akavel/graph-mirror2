@@ -7,6 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
+#pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
 #include "Graph.h"
 #pragma hdrstop
 #include "GuiUtil.h"
@@ -260,9 +261,6 @@ WideString LoadRes(short Ident, const AnsiString &Par1, const AnsiString &Par2, 
 //---------------------------------------------------------------------------
 WideString LoadRes(short Ident)
 {
-  if(!IsWinNT)
-    return LoadStr(Ident);
-
   //Don't use undocumented Windows feature: When LoadStringW is passed nBufferMax=0 a pointer to the string is returned.
   //It doesn't work under Wine.
   wchar_t Temp[512];

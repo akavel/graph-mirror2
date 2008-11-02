@@ -294,7 +294,6 @@ inline bool IsZero(long double a)
   return a == 0 || std::abs(a) <= 0.0000001L * (std::abs(a) + 1);
 }
 
-extern const bool IsWinNT;
 extern const double NAN;
 extern const double INF;
 #endif

@@ -18,6 +18,7 @@
 #include <Graphics.hpp>
 #include <ComCtrls.hpp>
 #include "SymbolDialog.h"
+#include <pngimage.hpp>
 //---------------------------------------------------------------------------
 class TForm2 : public TForm
 {

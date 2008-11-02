@@ -131,7 +131,8 @@ static PyObject* VclSetProperty(PyObject *Self, PyObject *Args)
     AnsiString ClassName = Name;
     if(ClassName == "Parent")
     {
-      Control->Parent = reinterpret_cast<TWinControl*>(PyInt_AsLong(Value));
+      long LongValue = Value == Py_None ? 0 : PyInt_AsLong(Value);
+      Control->Parent = reinterpret_cast<TWinControl*>(LongValue);
       Py_RETURN_NONE;
     }
 
@@ -187,6 +188,7 @@ static PyObject* VclSetProperty(PyObject *Self, PyObject *Args)
       }
 
       case tkWString:
+      case tkUString:
       {
         PyObject *Object = PyUnicode_FromObject(Value);
         if(Object == NULL)
@@ -195,7 +197,7 @@ static PyObject* VclSetProperty(PyObject *Self, PyObject *Args)
         const wchar_t *Str = reinterpret_cast<wchar_t*>(PyUnicode_AsUnicode(Object));
         if(Str == NULL)
           return NULL;
-        SetWideStrProp(Control, PropInfo, Str);
+        SetUnicodeStrProp(Control, PropInfo, Str);
         Py_DECREF(Object);
         break;
       }
@@ -218,6 +220,10 @@ static PyObject* VclSetProperty(PyObject *Self, PyObject *Args)
         SetMethodProp(Control, PropInfo, reinterpret_cast<TMethod&>(Event));
         break;
       }
+
+      default:
+        PyErr_SetString(PyPropertyException, AnsiString("Unknown type of property " + ClassName + " in class " + Control->ClassName()).c_str());
+        return NULL;
     }
     return PyErr_Occurred() ? NULL : (Py_INCREF(Py_None), Py_None);
   }
@@ -278,8 +284,9 @@ static PyObject* VclGetProperty(PyObject *Self, PyObject *Args)
         return Py_BuildValue("si", GetStrProp(Control, PropInfo).c_str(), Kind);
 
       case tkWString:
+      case tkUString:
       {
-        WideString Str = GetWideStrProp(Control, PropInfo);
+        WideString Str = GetUnicodeStrProp(Control, PropInfo);
         return Py_BuildValue("ui", !Str.IsEmpty() ? Str.c_bstr() : L"", Kind);
       }
 
@@ -295,7 +302,8 @@ static PyObject* VclGetProperty(PyObject *Self, PyObject *Args)
       }
 
       default:
-        Py_RETURN_NONE;
+        PyErr_SetString(PyPropertyException, AnsiString("Unknown type of property " + ClassName + " in class " + Control->ClassName()).c_str());
+        return NULL;
     }
   }
   catch(Exception &E)

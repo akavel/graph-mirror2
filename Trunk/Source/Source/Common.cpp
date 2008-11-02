@@ -17,7 +17,6 @@
 #include "VersionInfo.h"
 #include "ConfigFile.h"
 
-const bool IsWinNT = Win32Platform == VER_PLATFORM_WIN32_NT;
 //Do not use std::numeric_limits<double>::quiet_NaN(), which makes the program crash
 const double NAN = 0.0/0.0;
 const double INF = 1.0/0.0;

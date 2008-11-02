@@ -286,7 +286,7 @@ HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
       //This prevent a registration for each user if there is a machine wide registration available.
       //As far as I know it is not possible to register for current user only under Windows 9x
       if(FindCmdLineSwitch("REGSERVER") || !CheckRegistration())
-        if(GetRegValue(REGISTRY_KEY, "InstallAllUsers", HKEY_CURRENT_USER, 0) || !IsWinNT)
+        if(GetRegValue(REGISTRY_KEY, "InstallAllUsers", HKEY_CURRENT_USER, 0))
         {
           if(!Register(true))
             Register(false);
