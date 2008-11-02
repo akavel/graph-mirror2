@@ -22,7 +22,7 @@ class TObject(object):
             return TObject(result[0], owned=False) if result[0] != 0 else None
         return result[0]
     def __setattr__(self, name, value):
-        PyVcl.SetProperty(self._handle, name, value, self)
+        PyVcl.SetProperty(self._handle, name, value._handle if isinstance(value, TObject) else value, self) # Handle objects as values
 
     def __repr__(self):
         try:
@@ -49,7 +49,7 @@ class TLabel(TObject):
 
 class TEdit(TObject):
     def __init__(self, Parent, **keywords):
-        TObject.__init__(self, PyVcl.CreateObject("TEdit"), Parent = Parent._handle, **keywords)
+        TObject.__init__(self, PyVcl.CreateObject("TEdit"), Parent = Parent._handle if Parent else 0, **keywords)
 
 class TButton(TObject):
     def __init__(self, Parent, **keywords):
