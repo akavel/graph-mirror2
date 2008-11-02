@@ -88,15 +88,15 @@ type
 // HtmlHelp API function.
 // You can use this to directly control HTML Help.
 // However, using Application.HelpContext() etc. is recommended.
-function HtmlHelp(hwndCaller: THandle; pszFile: PChar; uCommand: cardinal; dwData: longint): THandle; stdcall;
+//function HtmlHelp(hwndCaller: THandle; pszFile: PChar; uCommand: cardinal; dwData: longint): THandle; stdcall;
 
 implementation
 
 uses
   HelpIntfs, WinHelpViewer;
 
-function HtmlHelp(hwndCaller: THandle; pszFile: PChar; uCommand: cardinal; dwData: longint): THandle; stdcall;
-         external 'hhctrl.ocx' name 'HtmlHelpA';
+//function HtmlHelp(hwndCaller: THandle; pszFile: PChar; uCommand: cardinal; dwData: longint): THandle; stdcall;
+//         external 'hhctrl.ocx' name 'HtmlHelpA';
 
 type
   THTMLHelpViewer = class(TInterfacedObject, ICustomHelpViewer, IExtendedHelpViewer)
@@ -187,23 +187,23 @@ begin
   AKLink.pszMsgTitle := nil;
   AKLink.pszWindow := nil;
   AKLink.fIndexOnFail := True;
-  HTMLHelp(HelpManager.GetHandle, PChar(HelpManager.GetHelpFile), HH_KEYWORD_LOOKUP, Integer(@AKLink));
+  HTMLHelpW(HelpManager.GetHandle, PChar(HelpManager.GetHelpFile), HH_KEYWORD_LOOKUP, Integer(@AKLink));
 end;
 
 procedure THTMLHelpViewer.ShowTableOfContents;
 begin
-  HTMLHelp(HelpManager.GetHandle, PChar(HelpManager.GetHelpFile), HH_DISPLAY_TOC, 0);
+  HTMLHelpW(HelpManager.GetHandle, PChar(HelpManager.GetHelpFile), HH_DISPLAY_TOC, 0);
 end;
 
 procedure THTMLHelpViewer.ShutDown;
 begin
-  HTMLHelp(0, nil, HH_CLOSE_ALL, 0);
+  HTMLHelpW(0, nil, HH_CLOSE_ALL, 0);
   FHelpManager := nil;
 end;
 
 procedure THTMLHelpViewer.SoftShutDown;
 begin
-  HTMLHelp(0, nil, HH_CLOSE_ALL, 0);
+  HTMLHelpW(0, nil, HH_CLOSE_ALL, 0);
 end;
 
 function THTMLHelpViewer.UnderstandsKeyword(const HelpString: String): Integer;
@@ -216,7 +216,7 @@ end;
 
 procedure THTMLHelpViewer.DisplayHelpByContext(const ContextID: Integer; const HelpFileName: String);
 begin
-  HTMLHelp(HelpManager.GetHandle, PChar(HelpFileName), HH_HELP_CONTEXT, ContextID);
+  HTMLHelpW(HelpManager.GetHandle, PChar(HelpFileName), HH_HELP_CONTEXT, ContextID);
 end;
 
 procedure THTMLHelpViewer.DisplayTopic(const Topic: String);
@@ -226,7 +226,7 @@ begin
   if Topic = '' then URL := ''
     else if Topic[1] = '/' then URL := '::' + Topic
     else URL := '::/' + Topic;
-  HTMLHelp(HelpManager.GetHandle, PChar(HelpManager.GetHelpFile + URL), HH_DISPLAY_TOPIC, 0);
+  HTMLHelpW(HelpManager.GetHandle, PChar(HelpManager.GetHelpFile + URL), HH_DISPLAY_TOPIC, 0);
 end;
 
 function THTMLHelpViewer.UnderstandsContext(const ContextID: Integer; const HelpFileName: String): Boolean;

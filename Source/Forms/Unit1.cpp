@@ -256,9 +256,6 @@ void TForm1::Initialize()
     Tree_Rotation->Items[I]->Caption = Tree_Rotation->Items[I]->Caption + WideString(L'\xB0');
   }
 
-  //Label rotation doesn't work under Windows 9x
-  Label_Rotation->Visible = IsWinNT;
-
   //Be careful about using TreeView->Items before OnShow. It has probably not been streamed yet
 }
 //---------------------------------------------------------------------------
@@ -2193,7 +2190,7 @@ void __fastcall TForm1::ContentsActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ListActionExecute(TObject *Sender)
 {
-  Application->HelpJump("FunctionList.html");
+  Application->HelpJump("ListOfFunctions.html");
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::HomePageActionExecute(TObject *Sender)

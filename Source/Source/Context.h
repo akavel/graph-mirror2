@@ -26,7 +26,6 @@ class TContext
 
   TContext(const TContext&); //Not implemented
   TContext& operator=(const TContext&); //Not implemented
-  void DrawPolyline2(const TPoint *Points, unsigned Size);
   void DrawPolyline(const std::vector<TPoint> &Points);
   static void Clip(TPoint &P1, const TPoint &P2, TOutCode OutCode, const TRect &Rect);
   static TPoint Crop(TOutCode OutCode1, TOutCode OutCode2, const TRect &Rect);
