@@ -20,9 +20,6 @@ void RemoveAsociation(AnsiString Ext,AnsiString Ident);
 bool CheckAssocation(AnsiString Ext,AnsiString Ident);
 WideString GetErrorMsg(const Func32::EFuncError &Error);
 WideString GetErrorMsg(Func32::TErrorCode ErrorCode);
-void ShowErrorMsg(const Func32::EFuncError &Error, TCustomEdit *Edit=NULL);//Shows error message corresponding to ErrorCode in Error
-void ShowErrorMsg(const class ECustomFunctionError &Error, TCustomEdit *Edit=NULL);
-void ShowErrorMsg(const class EGraphError &Error, TCustomEdit *Edit=NULL);
 void InvertBitmap(Graphics::TBitmap *Bitmap);
 double AdjustUnit(double Number);
 void SetGlobalFocus(TWinControl *Control);

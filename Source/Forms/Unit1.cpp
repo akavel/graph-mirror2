@@ -9,6 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#include "Unit1.h"
 #include "Unit2.h"
 #include "Unit3.h"
 #include "Unit4.h"       
@@ -104,6 +105,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   Font->Name = "MS Shell Dlg";
   Data.SetAbortUpdateEvent(&Draw.AbortUpdate);
   Application->Icon->Handle = LoadIcon(MainInstance, L"ICON1");
+//  Application->Icon->LoadFromResourceName((THandle)MainInstance, "ICON1");
 
   //Set "AllowOLE" to 1 in the Registry to use OLE with instances not started with "-Embedding"
   if(!FindCmdLineSwitch("EMBEDDING") && !GetRegValue(REGISTRY_KEY, "AllowOLE", HKEY_CURRENT_USER, 0))
@@ -136,7 +138,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
   LoadSettings();
   ScaleForm(this, false);
-  ActionToolBar1->ActionClient->Items->SmallIcons = Data.Property.FontScale < 150;
+  ActionToolBar1->ActionClient->Items->SmallIcons = Property.FontScale < 150;
 
   //Don't create Form9 before settings are loaded. Scaling and other settings are needed in the constructor.
   Form9.reset(new TForm9(NULL));
@@ -216,7 +218,7 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 
   HandleCommandLine();
 
-  if(Data.Property.CheckForUpdate)
+  if(Property.CheckForUpdate)
   {
     ShowStatusError(LoadRes(520), clGreen, 0);
     CallFromThread(&CheckForUpdate, true, &CancelStatusError);
@@ -381,10 +383,10 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
         case csAddLabel:
         {
           SetCursorState(csIdle);
-          std::auto_ptr<TForm6> Form6(new TForm6(Application, Data.Property.DefaultLabelFont, NAME, Data.GetFileName().c_str()));
+          std::auto_ptr<TForm6> Form6(new TForm6(Application, Property.DefaultLabelFont, NAME, Data.GetFileName().c_str()));
           if(Form6->ShowModal() == mrOk && !Form6->IsEmpty())
           {
-            Data.Property.DefaultLabelFont = Form6->GetFont();
+            Property.DefaultLabelFont = Form6->GetFont();
             boost::shared_ptr<TTextLabel> Label(new TTextLabel(
               Form6->GetText().c_str(),
               lpUserTopLeft,
@@ -396,7 +398,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
             Data.Add(Label);
             Label->Update();
             Redraw();
-            UndoList.Push(TUndoAdd(Data.Back()));
+            UndoList.Push(TUndoAdd(Data, Data.Back()));
             UpdateTreeView();
             UpdateMenu();
             Data.SetModified();
@@ -412,7 +414,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
           break;
 
         case csMove:
-          UndoList.Push(TUndoAxes());
+          UndoList.Push(TUndoAxes(Data));
           MovePos = Func32::TDblPoint(Draw.xCoord(X), Draw.yCoord(Y));
           SetCursorState(csMoving);
           break;
@@ -646,7 +648,7 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
           if(MovingLabelPlacement == lpUserBottomLeft || MovingLabelPlacement == lpUserBottomRight)
             Y += Image2->Height;
 
-          UndoList.Push(TUndoChange(MovingLabel, Data.GetIndex(MovingLabel)));
+          UndoList.Push(TUndoChange(Data, MovingLabel, Data.GetIndex(MovingLabel)));
           boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
             MovingLabel->GetText(),
             MovingLabelPlacement,
@@ -671,7 +673,7 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
       case csMoveLegend:
         Image2->Visible = false;
         Data.Axes.ShowLegend = true;
-        UndoList.Push(TUndoAxes());
+        UndoList.Push(TUndoAxes(Data));
         Data.Axes.LegendPlacement = LegendPlacement;
         Data.Axes.LegendPos = Draw.xyCoord(Image2->Left, Image2->Top);
         Data.SetModified();
@@ -773,7 +775,7 @@ void TForm1::LoadSettings(void)
 
   if(Registry.KeyExists(REGISTRY_KEY "\\Property"))
     Registry.OpenKey(REGISTRY_KEY "\\Property");
-  Data.Property.Read(Registry);
+  Property.Read(Registry);
 
   StartToolBar = GetToolBar(); //Save shown toolbar
 
@@ -804,7 +806,7 @@ void TForm1::SaveSettings(void)
     Registry.Write("Orientation", IPrintDialog1->Orientation);
 
     Registry.Write("DockCalcForm", Panel4->DockClientCount);
-    if(Data.Property.SavePos)
+    if(Property.SavePos)
     {
       Registry.Write("Maximized", WindowState == wsMaximized);
       if(WindowState == wsNormal)
@@ -824,7 +826,7 @@ void TForm1::SaveSettings(void)
       Registry.Write("ToolBar", ToolBar.c_str());
 
     if(Registry.CreateKey(REGISTRY_KEY "\\Property"))
-      Data.Property.Write(Registry);
+      Property.Write(Registry);
   }
 
   Registry.Write("UserModels", Data.ExportUserModels());
@@ -985,7 +987,7 @@ bool TForm1::ZoomWindow(double xMin, double xMax, double yMin, double yMax, bool
 
   Draw.AbortUpdate();
   if(SaveUndo)
-    UndoList.Push(TUndoAxes());
+    UndoList.Push(TUndoAxes(Data));
 
   //Set min and max for axes
   Data.Axes.xAxis.Min = xMin;
@@ -1053,7 +1055,7 @@ void __fastcall TForm1::StatusBar1DrawPanel(TStatusBar *StatusBar,
       ImageList1->Draw(StatusBar->Canvas, Rect.Left+2, Rect.Top, StatusIcon, true);
 }
 //---------------------------------------------------------------------------
-//This constructor shows a message in the stausbar
+//This shows a message in the stausbar
 void TForm1::ShowStatusMessage(const WideString &Str, bool AutoHint)
 {
   //Do not disable timer; Warnings may not be overwritten
@@ -1269,10 +1271,10 @@ void TForm1::ChangeLanguage(const AnsiString &Lang)
   SysLocale.MiddleEast = Mode;
   Application->BiDiMode = Mode;
 
-  if(Lang != Data.Property.Language)
+  if(Lang != Property.Language)
     Translate();
 
-  Data.Property.Language = Lang;
+  Property.Language = Lang;
 
   //Store unicode version of hint in tool buttons and add shortcuts
   for(int I = 0; I < ActionToolBar1->ActionClient->Items->Count; I++)
@@ -2068,12 +2070,12 @@ void TForm1::DeleteGraphElem(const boost::shared_ptr<TGraphElem> &GraphElem)
         if(boost::shared_ptr<TShade> Shade = boost::dynamic_pointer_cast<TShade>(Data.GetElem(I)->ChildList[J]))
           if(Shade->Func2 == GraphElem)
           {
-            UndoList.Push(TUndoDel(Shade, I));
+            UndoList.Push(TUndoDel(Data, Shade, I));
             Data.Delete(Shade);
           }
 
   GraphElem->ClearCache();
-  UndoList.Push(TUndoDel(GraphElem, Data.GetIndex(GraphElem)));
+  UndoList.Push(TUndoDel(Data, GraphElem, Data.GetIndex(GraphElem)));
   UndoList.EndMultiUndo();
 
   Data.Delete(GraphElem);
@@ -2121,7 +2123,7 @@ void __fastcall TForm1::ZoomWindowActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomStandardActionExecute(TObject *Sender)
 {
-  UndoList.Push(TUndoAxes());
+  UndoList.Push(TUndoAxes(Data));
   TAxis xAxis, yAxis;
 
   AnsiString Str = GetRegValue(REGISTRY_KEY, "DefaultAxes", HKEY_CURRENT_USER, "");
@@ -2538,7 +2540,7 @@ void __fastcall TForm1::ZoomSquareActionExecute(TObject *Sender)
   if(Axes.xAxis.LogScl != Axes.yAxis.LogScl)
     return; //Invalid
 
-  UndoList.Push(TUndoAxes());
+  UndoList.Push(TUndoAxes(Data));
   Axes.ZoomSquare = !Axes.ZoomSquare;
 
   //Don't save undo info. We have already done that
@@ -2560,10 +2562,10 @@ void __fastcall TForm1::Tree_ShowInLegendClick(TObject *Sender)
 void __fastcall TForm1::InsertLabelActionExecute(TObject *Sender)
 {
 //  SetCursorState(csAddLabel);
-  std::auto_ptr<TForm6> Form6(new TForm6(Application, Data.Property.DefaultLabelFont, NAME, Data.GetFileName().c_str()));
+  std::auto_ptr<TForm6> Form6(new TForm6(Application, Property.DefaultLabelFont, NAME, Data.GetFileName().c_str()));
   if(Form6->ShowModal() == mrOk && !Form6->IsEmpty())
   {
-    Data.Property.DefaultLabelFont = Form6->GetFont();
+    Property.DefaultLabelFont = Form6->GetFont();
     boost::shared_ptr<TTextLabel> Label(new TTextLabel(
       Form6->GetText().c_str(),
       lpUserTopLeft,
@@ -2575,7 +2577,7 @@ void __fastcall TForm1::InsertLabelActionExecute(TObject *Sender)
     Data.Add(Label);
     Label->Update();
     Redraw();
-    UndoList.Push(TUndoAdd(Data.Back()));
+    UndoList.Push(TUndoAdd(Data, Data.Back()));
     UpdateTreeView();
     UpdateMenu();
     Data.SetModified();
@@ -2647,7 +2649,7 @@ void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
 {
   if(Label)
   {
-    std::auto_ptr<TForm6> Form6(new TForm6(Application, Data.Property.DefaultLabelFont, NAME, Data.GetFileName().c_str()));
+    std::auto_ptr<TForm6> Form6(new TForm6(Application, Property.DefaultLabelFont, NAME, Data.GetFileName().c_str()));
     Form6->SetText(Label->GetText().c_str());
     Form6->SetBackgroundColor(Label->GetBackgroundColor());
     Form6->Caption = LoadRes(528);
@@ -2656,13 +2658,13 @@ void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
       //If text is empty, remove label
       if(Form6->IsEmpty())
       {
-        UndoList.Push(TUndoDel(Label, Data.GetIndex(Label)));
+        UndoList.Push(TUndoDel(Data, Label, Data.GetIndex(Label)));
         Data.Delete(Label);
       }
       else
       {
-        Data.Property.DefaultLabelFont = Form6->GetFont();
-        UndoList.Push(TUndoChange(Label, Data.GetIndex(Label)));
+        Property.DefaultLabelFont = Form6->GetFont();
+        UndoList.Push(TUndoChange(Data, Label, Data.GetIndex(Label)));
         boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
           Form6->GetText().c_str(),
           Label->GetPlacement(),
@@ -2687,7 +2689,7 @@ void __fastcall TForm1::Label_DeleteClick(TObject *Sender)
   boost::shared_ptr<TTextLabel> Label = Data.FindLabel(LastMousePos.x, LastMousePos.y);
   if(Label)
   {
-    UndoList.Push(TUndoDel(Label, Data.GetIndex(Label)));
+    UndoList.Push(TUndoDel(Data, Label, Data.GetIndex(Label)));
     Data.Delete(Label);
     Data.SetModified();
     UpdateTreeView();
@@ -2703,14 +2705,14 @@ void __fastcall TForm1::DonateActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::TipActionExecute(TObject *Sender)
 {
-  ShowForm<TForm10>(Data.Property);
+  ShowForm<TForm10>();
 }
 //---------------------------------------------------------------------------
 //Called when message loop is up and running
 void __fastcall TForm1::WMUser(TMessage &Message)
 {
-  if(Data.Property.ShowTipsAtStartup)
-    ShowForm<TForm10>(Data.Property);
+  if(Property.ShowTipsAtStartup)
+    ShowForm<TForm10>();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
@@ -2934,7 +2936,7 @@ void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,
           return; //Node already at top
 
         TGraphElemPtr Elem = GetGraphElem(Node);
-        UndoList.Push(TUndoMove(Elem, Node->Index));
+        UndoList.Push(TUndoMove(Data, Elem, Node->Index));
         Data.Delete(Elem);
         Data.Insert(Elem, PrevNode->Index);
         Data.SetModified();
@@ -2952,7 +2954,7 @@ void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,
           return; //Node already at bottom
 
         TGraphElemPtr Elem = GetGraphElem(Node);
-        UndoList.Push(TUndoMove(Elem, Node->Index));
+        UndoList.Push(TUndoMove(Data, Elem, Node->Index));
         Data.Delete(Elem);
         Data.Insert(Elem, NextNode->Index);
         Data.SetModified();
@@ -3206,7 +3208,7 @@ void __fastcall TForm1::TreeViewDragDrop(TObject *Sender, TObject *Source,
     TTreeNode *Node = TreeView->GetNodeAt(X, Y);
     boost::shared_ptr<TGraphElem> Elem = GetGraphElem(TreeView->Selected);
     Draw.AbortUpdate();
-    UndoList.Push(TUndoMove(Elem, Data.GetIndex(Elem)));
+    UndoList.Push(TUndoMove(Data, Elem, Data.GetIndex(Elem)));
     Data.Delete(Elem);
     Data.Insert(Elem, Node->Index);
     Data.SetModified();
@@ -3311,12 +3313,12 @@ void __fastcall TForm1::PlacementClick(TObject *Sender)
 
     if(MenuItem->MenuIndex == 4)
     {
-      if(!CreateForm<TForm21>(Data, TextLabel)->ShowModal() == mrOk)
+      if(!CreateForm<TForm21>(Data, Draw, TextLabel)->ShowModal() == mrOk)
         return;
     }
     else
     {
-      UndoList.Push(TUndoChange(TextLabel, Data.GetIndex(TextLabel)));
+      UndoList.Push(TUndoChange(Data, TextLabel, Data.GetIndex(TextLabel)));
       boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
         TextLabel->GetText(),
         static_cast<TLabelPlacement>(MenuItem->MenuIndex + 1),
@@ -3541,7 +3543,7 @@ void __fastcall TForm1::RotationClick(TObject *Sender)
     else
       Rotation = MenuItem->MenuIndex * 90;
 
-    UndoList.Push(TUndoChange(TextLabel, Data.GetIndex(TextLabel)));
+    UndoList.Push(TUndoChange(Data, TextLabel, Data.GetIndex(TextLabel)));
     boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
       TextLabel->GetText(),
       TextLabel->GetPlacement(),
@@ -3566,7 +3568,7 @@ void __fastcall TForm1::DebugLine(System::TObject* Sender, const String Line, bo
 //---------------------------------------------------------------------------
 void __fastcall TForm1::AnimateActionExecute(TObject *Sender)
 {
-  CreateForm<TForm19>(Data)->ShowModal();
+  CreateForm<TForm19>(Data, Image1->Width, Image1->Height)->ShowModal();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ImportGraphFileActionExecute(TObject *Sender)
@@ -3580,7 +3582,7 @@ void __fastcall TForm1::ImportGraphFileActionExecute(TObject *Sender)
     {
       UndoList.BeginMultiUndo();
       for(unsigned I = Count; I < Data.ElemCount(); I++)
-        UndoList.Push(TUndoAdd(Data.GetElem(I)));
+        UndoList.Push(TUndoAdd(Data, Data.GetElem(I)));
       UndoList.EndMultiUndo();
       UpdateTreeView();
       UpdateMenu();
@@ -3624,7 +3626,7 @@ void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
   if(!OleObject->InsertObjectDialog())
     return;
 
-  UndoList.Push(TUndoAdd(OleObject));
+  UndoList.Push(TUndoAdd(Data, OleObject));
   Data.Add(OleObject);
   UpdateTreeView();
   TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
@@ -3763,7 +3765,7 @@ void __fastcall TForm1::Image1Click(TObject *Sender)
     case csMove:
       if(std::abs((int)MouseDownPos.x - (int)LastMousePos.x) < Mouse->DragThreshold && std::abs((int)MouseDownPos.y - (int)LastMousePos.y) < Mouse->DragThreshold)
       {
-        UndoList.Push(TUndoAxes());
+        UndoList.Push(TUndoAxes(Data));
         Zoom(Image1->ScreenToClient(Mouse->CursorPos), 0.5, false);
       }
       break;

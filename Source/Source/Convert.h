@@ -29,7 +29,7 @@ double StringToDouble(const AnsiString &Str);
 bool CheckLimit(TWinControl *Control, AnsiString Str, int Min=-MaxInt, int Max=MaxInt);
 std::pair<int, int> FloatToFract(double f, double Epsilon = 0.01);
 inline std::string RoundToString(long double Number, unsigned Decimals) {return RoundToStr(Number, Decimals).c_str();}
-inline std::string RoundToString(long double Number, const TData &Data) {return RoundToStr(Number, Data.Property.RoundTo).c_str();}
+inline std::string RoundToString(long double Number, const TData &Data) {return RoundToStr(Number, Property.RoundTo).c_str();}
 std::string RtfToPlainText(const std::string &Str);
 void Trim(std::string &Str);
 

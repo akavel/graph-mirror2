@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "PyVcl.h"
+#include <ActnMan.hpp>
 #undef _DEBUG
 #include <python.h>
 #include "PythonBind.h"

@@ -33,10 +33,9 @@ __published:	// IDE-managed Components
   void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 
 private:	// User declarations
-  TProperty &Property;
 
 public:		// User declarations
-  __fastcall TForm10(TComponent* Owner, TProperty &AProperty);
+  __fastcall TForm10(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
 #endif

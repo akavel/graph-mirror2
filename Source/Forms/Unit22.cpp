@@ -1,6 +1,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#include "Unit1.h"
 #include "Unit22.h"
 #include "PyGraph.h"
 #include <clipbrd.hpp>

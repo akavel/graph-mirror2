@@ -29,7 +29,7 @@ TOleObjectElem::TOleObjectElem()
 TOleObjectElem::TOleObjectElem(const Func32::TDblPoint &APos)
   : Pos(APos), OleContainer(new TOleContainer((TComponent*)NULL))
 {
-  OleContainer->Parent = Form1->Panel2;
+//  OleContainer->Parent = Form1->Panel2;
   OleContainer->AllowInPlace = false;
   OleContainer->Left = 200;
   OleContainer->Top = 100;

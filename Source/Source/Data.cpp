@@ -27,7 +27,7 @@
 
 TUndoList UndoList(50);
 //---------------------------------------------------------------------------
-TData::TData(const TData &OldData) : Axes(OldData.Axes), Property(OldData.Property), CustomFunctions(OldData.CustomFunctions),
+TData::TData(const TData &OldData) : Axes(OldData.Axes), CustomFunctions(OldData.CustomFunctions),
   Modified(false), OnAbortUpdate(NULL)
 {
   for(unsigned int I = 0; I < OldData.ElemList.size(); I++)
@@ -440,7 +440,7 @@ double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int
         F = Func->GetFunc().ConvYToFunc().MakeDif();
       else
         F = Func->GetFunc().ConvXToFunc().MakeDif();
-      std::vector<Func32::TCoordSet> List = AnalyseFunction(F, Range.first, Range.second, Form1->Image1->Width, 1E-16, Func32::atXAxisCross);
+      std::vector<Func32::TCoordSet> List = AnalyseFunction(F, Range.first, Range.second, Draw.GetAxesRect().Width(), 1E-16, Func32::atXAxisCross);
 
       //Convert the list of f'(x) coordinates to f(x) coordinates. Notice that List2 may have less
       //elements than List, because we may have found some extremums that don't have valid coordinates.

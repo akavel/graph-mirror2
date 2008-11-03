@@ -18,8 +18,9 @@
 __fastcall TForm2::TForm2(TComponent* Owner)
 	: TForm(Owner)
 {
+  String TranslatorString = Label6->Caption;
   Label6->Width = Comments->Width;
-  TranslateProperties(this);                                     
+  TranslateProperties(this);
   Animate1->ResName = "FLAG";
   reinterpret_cast<TEdit*>(Animate1)->OnDblClick = ProgramIconDblClick; //Nasty hack. Don't do this at home kids
   Label2->Left = Label1->Left + Label1->Width + 5;
@@ -39,7 +40,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
   Label2->Caption = EMAIL;
   Label5->Caption = HOMEPAGE;
 
-  if(Form1->Data.Property.Language != "English")
+  if(Label6->Caption != TranslatorString)
   {
     Label6->Visible = true;
     Label6->Top = Label6->Top + 25;

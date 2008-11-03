@@ -25,16 +25,16 @@ __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
 {
   Translate();
 
-  FontDialog1->Font->Assign(Data.Property.DefaultPointLabelFont);
+  FontDialog1->Font->Assign(Property.DefaultPointLabelFont);
   Edit1->Text = Data.CreatePointSeriesDescription().c_str();
 
-  PointSelect1->ItemIndex = Data.Property.DefaultPoint.Style;
-  ExtColorBox1->Selected = Data.Property.DefaultPoint.Color;
-  UpDown1->Position = Data.Property.DefaultPoint.Size;
+  PointSelect1->ItemIndex = Property.DefaultPoint.Style;
+  ExtColorBox1->Selected = Property.DefaultPoint.Color;
+  UpDown1->Position = Property.DefaultPoint.Size;
 
-  LineSelect1->LineStyle = static_cast<TPenStyle>(Data.Property.DefaultPointLine.Style);
-  ExtColorBox2->Selected = Data.Property.DefaultPointLine.Color;
-  UpDown2->Position = Data.Property.DefaultPointLine.Size;
+  LineSelect1->LineStyle = static_cast<TPenStyle>(Property.DefaultPointLine.Style);
+  ExtColorBox2->Selected = Property.DefaultPointLine.Color;
+  UpDown2->Position = Property.DefaultPointLine.Size;
 
   ComboBox1->ItemIndex = 1;
   UpdateErrorBars();
@@ -194,18 +194,18 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
     PointSeries->SetVisible(Series->GetVisible());
     PointSeries->SetShowInLegend(Series->GetShowInLegend());
     int Index = Data.GetIndex(Series);
-    UndoList.Push(TUndoChange(Series, Index));
+    UndoList.Push(TUndoChange(Data, Series, Index));
     Data.Replace(Index, PointSeries);
   }
   else
   {
-    UndoList.Push(TUndoAdd(PointSeries));
+    UndoList.Push(TUndoAdd(Data, PointSeries));
     Data.Add(PointSeries);
   }
 
-  Data.Property.DefaultPoint.Set(PointSelect1->ItemIndex, ExtColorBox1->Selected, ToInt(Edit2->Text));
-  Data.Property.DefaultPointLine.Set(LineSelect1->LineStyle, ExtColorBox2->Selected, ToInt(Edit3->Text));
-  Data.Property.DefaultPointLabelFont->Assign(FontDialog1->Font);
+  Property.DefaultPoint.Set(PointSelect1->ItemIndex, ExtColorBox1->Selected, ToInt(Edit2->Text));
+  Property.DefaultPointLine.Set(LineSelect1->LineStyle, ExtColorBox2->Selected, ToInt(Edit3->Text));
+  Property.DefaultPointLabelFont->Assign(FontDialog1->Font);
 
   ModalResult = mrOk;
 }

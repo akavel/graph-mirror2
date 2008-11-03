@@ -9,6 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#include "Unit1.h"
 #include "Unit17.h"
 //---------------------------------------------------------------------------
 #pragma link "Grid"
@@ -55,7 +56,7 @@ void __fastcall TForm17::Button3Click(TObject *Sender)
     CustomFunctions.Update();
     Data.AbortUpdate();
     Data.CustomFunctions.Swap(CustomFunctions);
-    UndoList.Push(TUndoCustomFunctions(CustomFunctions));
+    UndoList.Push(TUndoCustomFunctions(Data));
     Data.Update();
   }
   catch(Func32::EFuncError &E)

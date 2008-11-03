@@ -10,6 +10,7 @@
 #ifndef OleObjectElemH
 #define OleObjectElemH
 #include "GraphElem.h"
+#include <OleCtnrs.hpp>
 //---------------------------------------------------------------------------
 class TOleObjectElem : public TGraphElem
 {

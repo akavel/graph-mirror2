@@ -16,6 +16,7 @@
 #include <algorithm>
 #include "VersionInfo.h"
 #include "ConfigFile.h"
+#include <ComObj.hpp>
 
 //Do not use std::numeric_limits<double>::quiet_NaN(), which makes the program crash
 const double NAN = 0.0/0.0;
@@ -117,40 +118,6 @@ WideString GetErrorMsg(const Func32::EFuncError &Error)
 WideString GetErrorMsg(Func32::TErrorCode ErrorCode)
 {
   return GetErrorMsg(Func32::EFuncError(ErrorCode));
-}
-//---------------------------------------------------------------------------
-//Shows error message corresponding to ErrorCode in Func
-//If Edit parameter is suported the Edit box gets focus and
-//the cursor position is set to where the error ocoured
-void ShowErrorMsg(const Func32::EFuncError &Error, TCustomEdit *Edit)
-{
-  WideString str = LoadRes(RES_ERROR) + " " + WideString(AnsiString(Error.ErrorCode));
-  Form1->SetHelpError(Error.ErrorCode);
-  MessageBox(GetErrorMsg(Error), str, MB_ICONWARNING | MB_HELP);
-  Form1->SetHelpError(0);
-  if(Edit)
-  {
-    SetGlobalFocus(Edit);
-    if(const Func32::EParseError *ParseError = dynamic_cast<const Func32::EParseError*>(&Error))
-      Edit->SelStart = ParseError->ErrorPos;
-  }
-}
-//---------------------------------------------------------------------------
-void ShowErrorMsg(const ECustomFunctionError &Error, TCustomEdit *Edit)
-{
-  MessageBox(LoadRes(Error.ErrorCode + 200, Error.Text), LoadRes(RES_ERROR), MB_ICONWARNING);
-  if(Edit)
-  {
-    SetGlobalFocus(Edit);
-    Edit->SelStart = Error.ErrorPos;
-  }
-}
-//---------------------------------------------------------------------------
-void ShowErrorMsg(const EGraphError &Error, TCustomEdit *Edit)
-{
-  MessageBox(LoadRes(Error.ErrorCode + 210), LoadRes(RES_ERROR), MB_ICONWARNING);
-  if(Edit)
-    SetGlobalFocus(Edit);
 }
 //---------------------------------------------------------------------------
 //Draws a curved line between a series of points
@@ -371,7 +338,7 @@ std::wstring ReduceString(const std::wstring &Str, unsigned MaxLength)
 //---------------------------------------------------------------------------
 TMaxWidth::TMaxWidth(TControl *Control)
 {
-  TCanvas *Canvas = Form1->Canvas;
+  TCanvas *Canvas = Application->MainForm->Canvas;
   if(TCustomLabel *Label = dynamic_cast<TCustomLabel*>(Control))
     Canvas = Label->Canvas;
   else if(TForm *Form = dynamic_cast<TForm*>(Control->Owner))

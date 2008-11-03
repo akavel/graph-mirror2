@@ -1,11 +1,11 @@
 object Form22: TForm22
   Left = 335
   Top = 276
-  Width = 506
-  Height = 230
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSizeToolWin
   Caption = 'Python interpreter'
+  ClientHeight = 206
+  ClientWidth = 498
   Color = clBtnFace
   DragKind = dkDock
   DragMode = dmAutomatic
@@ -25,7 +25,7 @@ object Form22: TForm22
     Left = 0
     Top = 0
     Width = 498
-    Height = 203
+    Height = 206
     HideScrollBars = False
     ScrollBars = ssVertical
     Align = alClient

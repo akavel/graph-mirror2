@@ -238,7 +238,7 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
     try
     {
       std::string Expression = Str.substr(Pos+2, Pos2-Pos-2);
-      bool UseReal = Form1->Data.Property.ComplexFormat == cfReal;
+      bool UseReal = Property.ComplexFormat == cfReal;
       WideString Value = ComplexToWideString(UseReal ? Func32::TComplex(Data.Calc(Expression)) : Data.CalcComplex(Expression));
 
       //If %() is preceded by a '+' and the value is negative, the '+' will be removed to avoid such as "2x+-3"

@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include <float.h>
+#include "Unit1.h"
 #include "TPolFuncFrame.h"
 //---------------------------------------------------------------------------
 #pragma link "MyEdit"
@@ -63,7 +64,7 @@ void TPolFuncFrame::SetPoint(const TGraphElem *Elem, int X, int Y)
     if(_isnan(t))
       Edit1->Text = "";
     else
-      Edit1->Text = RoundToStr(t, ComboBox1->ItemIndex == 0 ? Form1->Data.Property.RoundTo : 8);
+      Edit1->Text = RoundToStr(t, ComboBox1->ItemIndex == 0 ? Property.RoundTo : 8);
   }
 }
 //---------------------------------------------------------------------------

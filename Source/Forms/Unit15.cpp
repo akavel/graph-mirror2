@@ -55,7 +55,7 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
   if(Max < Min)
     ds = -ds;
 
-  bool UseReal = Form1->Data.Property.ComplexFormat == cfReal;
+  bool UseReal = Property.ComplexFormat == cfReal;
   if(const TStdFunc *F = dynamic_cast<const TStdFunc*>(Func))
   {
     Func32::TFunc Dif1;
@@ -215,7 +215,6 @@ void TForm15::SetCaptions(const char*const* Captions)
 void TForm15::ShowTable(const TBaseFuncType *F)
 {
   Func = F;
-
   if(dynamic_cast<const TStdFunc*>(Func))
   {
     const char *Captions[] = {"f(x)", "f'(x)", "f''(x)", "", ""};

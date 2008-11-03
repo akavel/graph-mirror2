@@ -20,16 +20,16 @@
 __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)
 	: TForm(Owner), OldItemIndex(0), Data(AData)
 {
-  LineSelect1->Height = (LineSelect1->Height * Data.Property.FontScale) / 100;
+  LineSelect1->Height = (LineSelect1->Height * Property.FontScale) / 100;
   Translate();
 
   TempData[1].From = TempData[2].From = "-10";
   TempData[1].To = TempData[2].To = "10";
   TempData[1].Steps = TempData[2].Steps = "1000";
 
-  LineSelect1->LineStyle = static_cast<TPenStyle>(Data.Property.DefaultFunction.Style);
-  ExtColorBox1->Selected = Data.Property.DefaultFunction.Color;
-  UpDown1->Position = Data.Property.DefaultFunction.Size;
+  LineSelect1->LineStyle = static_cast<TPenStyle>(Property.DefaultFunction.Style);
+  ExtColorBox1->Selected = Property.DefaultFunction.Color;
+  UpDown1->Position = Property.DefaultFunction.Size;
 
   //Now this is silly: We don't want to flip the group box, so we flip it twice
   if(SysLocale.MiddleEast)
@@ -143,17 +143,17 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
   {
     Func->SetVisible(F->GetVisible());
     Func->SetShowInLegend(F->GetShowInLegend());
-    UndoList.Push(TUndoChangeFunc(F, Func));
+    UndoList.Push(TUndoChangeFunc(Data, F, Func));
     Data.Replace(F, Func);
   }
   else
   {
-    UndoList.Push(TUndoAdd(Func));
+    UndoList.Push(TUndoAdd(Data, Func));
     Data.Add(Func);
   }
 
   Func->Update(); //Make sure tangents are updated
-  Data.Property.DefaultFunction.Set(LineSelect1->LineStyle, ExtColorBox1->Selected, ToInt(Edit6->Text));
+  Property.DefaultFunction.Set(LineSelect1->LineStyle, ExtColorBox1->Selected, ToInt(Edit6->Text));
   ModalResult = mrOk;
 }
 //---------------------------------------------------------------------------

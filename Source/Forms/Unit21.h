@@ -32,9 +32,10 @@ private:	// User declarations
   TLabelPlacement OldPlacement;
   boost::shared_ptr<TTextLabel> Label;
   TData &Data;
+  const TDraw &Draw;
 
 public:		// User declarations
-  __fastcall TForm21(TComponent* Owner, TData &AData, const boost::shared_ptr<TTextLabel> &ALabel);
+  __fastcall TForm21(TComponent* Owner, TData &AData, const TDraw &ADraw, const boost::shared_ptr<TTextLabel> &ALabel);
 };
 //---------------------------------------------------------------------------
 #endif

@@ -30,9 +30,9 @@ __fastcall TForm7::TForm7(TComponent* Owner, TData &AData)
   LineSelect1->Left = Left;
   ExtColorBox1->Left = Left;
 
-  LineSelect1->ItemIndex = Data.Property.DefaultDif.Style;
-  ExtColorBox1->Selected = Data.Property.DefaultDif.Color;
-  UpDown1->Position = Data.Property.DefaultDif.Size;
+  LineSelect1->ItemIndex = Property.DefaultDif.Style;
+  ExtColorBox1->Selected = Property.DefaultDif.Color;
+  UpDown1->Position = Property.DefaultDif.Size;
 
   ScaleForm(this);
 }
@@ -65,8 +65,8 @@ void __fastcall TForm7::Button1Click(TObject *Sender)
     Dif->SetSteps(TTextValue(0, ""));
 
     Data.Add(Dif);
-    UndoList.Push(TUndoAdd(Dif));
-    Data.Property.DefaultDif.Set(LineSelect1->ItemIndex, ExtColorBox1->Selected, ToIntDef(Edit4->Text, 1));
+    UndoList.Push(TUndoAdd(Data, Dif));
+    Property.DefaultDif.Set(LineSelect1->ItemIndex, ExtColorBox1->Selected, ToIntDef(Edit4->Text, 1));
     ModalResult = mrOk;
   }
   catch(Func32::EFuncError &E)

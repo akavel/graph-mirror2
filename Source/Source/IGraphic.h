@@ -17,7 +17,7 @@ void CompressBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<RG
 bool SaveCompressedBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const AnsiString &FileName);
 void FillBitmapInfoHeader(BITMAPINFOHEADER &BitmapHeader, Graphics::TBitmap *Bitmap, const TRect &Rect, unsigned Colors, unsigned DataSize);
 
-void RenderRichText(const AnsiString &Str, TCanvas *Canvas, const TPoint &Pos, int width = MAXSHORT, TColor BackgroundColor = clNone, const TData *Data = NULL);
+void RenderRichText(const AnsiString &Str, TCanvas *Canvas, const TPoint &Pos, int width = MAXSHORT, TColor BackgroundColor = Graphics::clNone, const TData *Data = NULL);
 TPoint RichTextSize(const std::string &Str, const TData *Data = NULL);
 
 void Interpolate(std::vector<TPoint> &Points, const std::vector<TPoint> &P, TInterpolationAlgorithm Algorithm);

@@ -26,8 +26,8 @@ __fastcall TForm16::TForm16(TComponent* Owner, TData &AData)
   SetAccelerators(this);
   ResizeControl(Edit5, Label12);
 
-  ShadeSelect1->ShadeStyle = static_cast<TBrushStyle>(Data.Property.DefaultShade.Style);
-  ExtColorBox1->Selected = Data.Property.DefaultShade.Color;
+  ShadeSelect1->ShadeStyle = static_cast<TBrushStyle>(Property.DefaultShade.Style);
+  ExtColorBox1->Selected = Property.DefaultShade.Color;
   EnableGroupBox2(false);
 
   int I = 1;
@@ -169,16 +169,16 @@ void __fastcall TForm16::Button1Click(TObject *Sender)
     Shade->SetVisible(OldShade->GetVisible());
     Shade->SetShowInLegend(OldShade->GetShowInLegend());
     int Index = IndexOf(OldShade->ParentFunc()->ChildList, OldShade);
-    UndoList.Push(TUndoChange(OldShade, Index));
+    UndoList.Push(TUndoChange(Data, OldShade, Index));
     OldShade->ParentFunc()->ReplaceChild(Index, Shade);
   }
   else
   {
-    UndoList.Push(TUndoAdd(Shade));
+    UndoList.Push(TUndoAdd(Data, Shade));
     Func->AddChild(Shade);
   }
 
-  Data.Property.DefaultShade.Set(ShadeSelect1->ShadeStyle, ExtColorBox1->Selected, 0);
+  Property.DefaultShade.Set(ShadeSelect1->ShadeStyle, ExtColorBox1->Selected, 0);
   ModalResult = mrOk;
 }
 //---------------------------------------------------------------------------

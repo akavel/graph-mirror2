@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "Unit19.h"
 #include "Unit20.h"
+#include <ComObj.hpp>
 #include <iterator>
 #include "vfw.h"
 #include "IGraphic.h"
@@ -23,7 +24,7 @@ using phoenix::arg1;
 #pragma link "MyEdit"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
-__fastcall TForm19::TForm19(TComponent* Owner, TData &AData)
+__fastcall TForm19::TForm19(TComponent* Owner, TData &AData, int AWidth, int AHeight)
   : TForm(Owner), Data(AData), AnimationInfo(AData.AnimationInfo)
 {
   TranslateProperties(this);
@@ -57,8 +58,8 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData)
       ComboBox1->Items->Add(Iter->Name.c_str());
     }
 
-  unsigned ImageWidth = AnimationInfo.Width == 0 ? Form1->Image1->Width : AnimationInfo.Width;
-  unsigned ImageHeight = AnimationInfo.Height == 0 ? Form1->Image1->Height : AnimationInfo.Height;
+  unsigned ImageWidth = AnimationInfo.Width == 0 ? AWidth : AnimationInfo.Width;
+  unsigned ImageHeight = AnimationInfo.Height == 0 ? AHeight : AnimationInfo.Height;
 
   int Index = ComboBox1->Items->IndexOf(ToWideString(AnimationInfo.Constant));
   ComboBox1->ItemIndex = Index == -1 ? 0 : Index;

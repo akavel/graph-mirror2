@@ -13,8 +13,8 @@
 //---------------------------------------------------------------------------
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
-__fastcall TForm10::TForm10(TComponent* Owner, TProperty &AProperty)
-  : TForm(Owner), Property(AProperty)
+__fastcall TForm10::TForm10(TComponent* Owner)
+  : TForm(Owner)
 {
   TranslateProperties(this);
   SetAccelerators(this);

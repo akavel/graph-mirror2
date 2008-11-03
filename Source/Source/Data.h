@@ -32,11 +32,10 @@ class TData
   std::string GrfName;
   TAbortUpdateEvent OnAbortUpdate;
   std::vector<boost::shared_ptr<TGraphElem> > ElemList;
-  void SaveImage(TConfigFile &IniFile);
+  void SaveImage(TConfigFile &IniFile, TCanvas *Canvas, int Width, int Height);
 
 public:
   TAxes Axes;
-  TProperty Property;
   TUserModels UserModels;
   TCustomFunctions CustomFunctions;
   ::TAnimationInfo AnimationInfo;
