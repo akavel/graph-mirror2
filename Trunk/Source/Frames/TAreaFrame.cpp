@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include <algorithm>
 #include "float.h"
+#include "Unit1.h"
 #include "TAreaFrame.h"
 //---------------------------------------------------------------------------
 #pragma link "MyEdit"

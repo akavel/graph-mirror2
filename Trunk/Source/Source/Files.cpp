@@ -188,13 +188,13 @@ bool TData::Import(const std::string &FileName)
   return true;
 }
 //---------------------------------------------------------------------------
-void TData::SaveImage(TConfigFile &IniFile)
+void TData::SaveImage(TConfigFile &IniFile, TCanvas *Canvas, int Width, int Height)
 {
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-  Bitmap->Width = Form1->Image1->Width;
-  Bitmap->Height = Form1->Image1->Height;
+  Bitmap->Width = Width;
+  Bitmap->Height = Height;
   TRect Rect(0, 0, Bitmap->Width, Bitmap->Height);
-  Bitmap->Canvas->CopyRect(Rect, Form1->Image1->Picture->Bitmap->Canvas, Rect);
+  Bitmap->Canvas->CopyRect(Rect, Canvas, Rect);
 
   std::stringstream Stream;
   Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
@@ -224,7 +224,7 @@ bool TData::Save(const std::string &FileName, bool Remember)
     if(Remember)
     {
       GrfName = FileName;
-      Form1->Caption = AnsiString(NAME) + " - " + GrfName.c_str();
+      Application->MainForm->Caption = AnsiString(NAME) + " - " + GrfName.c_str();
       Application->Title = AnsiString(NAME) + " - " + ExtractFileName(GrfName.c_str());
       Modified = false;
     }
@@ -375,7 +375,7 @@ bool TData::ImportData(const std::string &FileName)
     Series->PointList.swap(Points[I]);
     Series->SetLegendText(CreatePointSeriesDescription());
     Add(Series);
-    UndoList.Push(TUndoAdd(Series));
+    UndoList.Push(TUndoAdd(*this, Series));
   }
 
   UndoList.EndMultiUndo();

@@ -34,9 +34,9 @@ __fastcall TForm12::TForm12(TComponent* Owner, TData &AData)
   MoveControl(ComboBox1, Label11);
   MoveLabel(ComboBox2, Label12);
 
-  LineSelect1->ItemIndex = Data.Property.DefaultTangent.Style;
-  ExtColorBox1->Selected = Data.Property.DefaultTangent.Color;
-  UpDown1->Position = Data.Property.DefaultTangent.Size;
+  LineSelect1->ItemIndex = Property.DefaultTangent.Style;
+  ExtColorBox1->Selected = Property.DefaultTangent.Color;
+  UpDown1->Position = Property.DefaultTangent.Size;
 
   ScaleForm(this);
 }
@@ -93,17 +93,17 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
   if(Index == -1)
   {
     Func->AddChild(Tan);
-    UndoList.Push(TUndoAdd(Func->ChildList.back()));
+    UndoList.Push(TUndoAdd(Data, Func->ChildList.back()));
   }
   else
   {
     Tan->SetVisible(Func->ChildList[Index]->GetVisible());
     Tan->SetShowInLegend(Func->ChildList[Index]->GetShowInLegend());
-    UndoList.Push(TUndoChange(Func->ChildList[Index], Index));
+    UndoList.Push(TUndoChange(Data, Func->ChildList[Index], Index));
     Func->ReplaceChild(Index, Tan);
   }
 
-  Data.Property.DefaultTangent.Set(LineSelect1->ItemIndex, ExtColorBox1->Selected, ToInt(Edit3->Text));
+  Property.DefaultTangent.Set(LineSelect1->ItemIndex, ExtColorBox1->Selected, ToInt(Edit3->Text));
 
   ModalResult=mrOk;
 }

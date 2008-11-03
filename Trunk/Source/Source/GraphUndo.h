@@ -13,62 +13,67 @@
 
 struct TUndoAdd
 {
+  TData &Data;
   boost::shared_ptr<TGraphElem> GraphElem;
 
-  TUndoAdd(const boost::shared_ptr<TGraphElem> &AGraphElem) : GraphElem(AGraphElem) {}
+  TUndoAdd(TData &AData, const boost::shared_ptr<TGraphElem> &AGraphElem)
+    : Data(AData), GraphElem(AGraphElem) {}
   void operator()(TUndoList &UndoList) const;
 };
 
 struct TUndoChange
 {
+  TData &Data;
   boost::shared_ptr<TGraphElem> Elem;
   unsigned Index;
 
-  TUndoChange(const boost::shared_ptr<TGraphElem> &AElem, unsigned AIndex)
-    : Elem(AElem), Index(AIndex) {Elem->ClearCache();}
+  TUndoChange(TData &AData, const boost::shared_ptr<TGraphElem> &AElem, unsigned AIndex)
+    : Data(AData), Elem(AElem), Index(AIndex) {Elem->ClearCache();}
   void operator()(TUndoList &UndoList) const
   {
-    UndoList.Push(TUndoChange(Form1->Data.Replace(Index, Elem), Index));
+    UndoList.Push(TUndoChange(Data, Data.Replace(Index, Elem), Index));
   }
 };
 
 //Special class for use with TBaseFuncBase changes; Use this instead of TUndoChange
 struct TUndoChangeFunc
 {
+  TData &Data;
   boost::shared_ptr<TBaseFuncType> OldFunc;
   boost::shared_ptr<TBaseFuncType> NewFunc;
 
-  TUndoChangeFunc(const boost::shared_ptr<TBaseFuncType> &AOldFunc, const boost::shared_ptr<TBaseFuncType> &ANewFunc)
-    : OldFunc(AOldFunc), NewFunc(ANewFunc)
+  TUndoChangeFunc(TData &AData, const boost::shared_ptr<TBaseFuncType> &AOldFunc, const boost::shared_ptr<TBaseFuncType> &ANewFunc)
+    : Data(AData), OldFunc(AOldFunc), NewFunc(ANewFunc)
   {
     OldFunc->ClearCache();
   }
 
   void operator()(TUndoList &UndoList) const
   {
-    UndoList.Push(TUndoChangeFunc(NewFunc, OldFunc));
-    Form1->Data.Replace(Form1->Data.GetIndex(NewFunc), OldFunc);
+    UndoList.Push(TUndoChangeFunc(Data, NewFunc, OldFunc));
+    Data.Replace(Data.GetIndex(NewFunc), OldFunc);
   }
 };
 
 struct TUndoDel
 {
+  TData &Data;
   int Index;
   boost::shared_ptr<TGraphElem> GraphElem;
 
-  TUndoDel(const boost::shared_ptr<TGraphElem> &AGraphElem, int AIndex)
-    : Index(AIndex), GraphElem(AGraphElem)  { }
+  TUndoDel(TData &AData, const boost::shared_ptr<TGraphElem> &AGraphElem, int AIndex)
+    : Data(AData), Index(AIndex), GraphElem(AGraphElem)  { }
   void operator()(TUndoList &UndoList) const
   {
-    UndoList.Push(TUndoAdd(GraphElem));
-    Form1->Data.Insert(GraphElem, Index);
+    UndoList.Push(TUndoAdd(Data, GraphElem));
+    Data.Insert(GraphElem, Index);
   }
 };
 
 inline void TUndoAdd::operator()(TUndoList &UndoList) const
 {
-  UndoList.Push(TUndoDel(GraphElem, Form1->Data.GetIndex(GraphElem)));
-  Form1->Data.Delete(GraphElem);
+  UndoList.Push(TUndoDel(Data, GraphElem, Data.GetIndex(GraphElem)));
+  Data.Delete(GraphElem);
 }
 
 
@@ -88,40 +93,45 @@ struct TUndoObject
 struct TUndoAxes
 {
   TAxes Axes;
-  TUndoAxes() : Axes(Form1->Data.Axes) {}
+  TData &Data;
+  TUndoAxes(TData &AData) : Data(AData), Axes(AData.Axes) {}
   void operator()(TUndoList &UndoList)
   {
-    UndoList.Push(TUndoAxes());
-    Form1->Data.Axes = Axes;
-    Form1->Data.ClearCache();
-    Form1->Data.Update(); //In case trigonmetry has changed
+    UndoList.Push(TUndoAxes(Data));
+    Data.Axes = Axes;
+    Data.ClearCache();
+    Data.Update(); //In case trigonmetry has changed
   }
 };
 
 struct TUndoCustomFunctions
 {
   TCustomFunctions CustomFunctions;
-  TUndoCustomFunctions(const TCustomFunctions &ACustomFunctions) : CustomFunctions(ACustomFunctions) {}
+  TData &Data;
+  TUndoCustomFunctions(TData &AData)
+    : Data(AData), CustomFunctions(AData.CustomFunctions) {}
   void operator()(TUndoList &UndoList)
   {
-    Form1->Data.CustomFunctions.Swap(CustomFunctions);
+    Data.CustomFunctions.Swap(CustomFunctions);
     UndoList.Push(*this);
-    Form1->Data.Update();
-    Form1->Data.ClearCache();
+    Data.Update();
+    Data.ClearCache();
   }
 };
 
 struct TUndoMove
 {
+  TData &Data;
   TGraphElemPtr Elem;
   unsigned Index;
 
-  TUndoMove(const TGraphElemPtr &AElem, unsigned AIndex) : Elem(AElem), Index(AIndex) {}
+  TUndoMove(TData &AData, const TGraphElemPtr &AElem, unsigned AIndex)
+    : Data(AData), Elem(AElem), Index(AIndex) {}
   void operator()(TUndoList &UndoList)
   {
-    UndoList.Push(TUndoMove(Elem, Form1->Data.GetIndex(Elem)));
-    Form1->Data.Delete(Elem);
-    Form1->Data.Insert(Elem, Index);
+    UndoList.Push(TUndoMove(Data, Elem, Data.GetIndex(Elem)));
+    Data.Delete(Elem);
+    Data.Insert(Elem, Index);
   }
 };
 

@@ -203,4 +203,6 @@ struct TAnimationInfo
   void Clear();
 };
 
+extern TProperty Property;
+
 #endif

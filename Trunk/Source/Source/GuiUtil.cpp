@@ -10,6 +10,7 @@
 #pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
 #include "Graph.h"
 #pragma hdrstop
+#include "Unit1.h"
 #include "GuiUtil.h"
 #include "PointSelect.h"
 #include <ValueEdit.hpp>
@@ -95,7 +96,7 @@ void ScaleForm(TForm *Form, bool Flip)
   }
 
   //Set FontScale to 100 to disable scaling
-  int FontScale = Form1->Data.Property.FontScale;
+  int FontScale = Property.FontScale;
   if(FontScale != 100)
   {
     Form->ScaleBy(FontScale, 100);
@@ -322,6 +323,45 @@ int MessageBox(const String &Text, const String &Caption, int Flags)
 int MessageBox(const std::string &Text, const std::string &Caption, int Flags)
 {
   return MessageBox(AnsiString(Text.c_str()), AnsiString(Caption.c_str()), Flags);
+}
+//---------------------------------------------------------------------------
+//Shows error message corresponding to ErrorCode in Func
+//If Edit parameter is suported the Edit box gets focus and
+//the cursor position is set to where the error ocoured
+void ShowErrorMsg(const Func32::EFuncError &Error, TCustomEdit *Edit)
+{
+  WideString str = LoadRes(RES_ERROR) + " " + WideString(AnsiString(Error.ErrorCode));
+  Form1->SetHelpError(Error.ErrorCode);
+  MessageBox(GetErrorMsg(Error), str, MB_ICONWARNING | MB_HELP);
+  Form1->SetHelpError(0);
+  if(Edit)
+  {
+    SetGlobalFocus(Edit);
+    if(const Func32::EParseError *ParseError = dynamic_cast<const Func32::EParseError*>(&Error))
+      Edit->SelStart = ParseError->ErrorPos;
+  }
+}
+//---------------------------------------------------------------------------
+void ShowErrorMsg(const ECustomFunctionError &Error, TCustomEdit *Edit)
+{
+  MessageBox(LoadRes(Error.ErrorCode + 200, Error.Text), LoadRes(RES_ERROR), MB_ICONWARNING);
+  if(Edit)
+  {
+    SetGlobalFocus(Edit);
+    Edit->SelStart = Error.ErrorPos;
+  }
+}
+//---------------------------------------------------------------------------
+void ShowErrorMsg(const EGraphError &Error, TCustomEdit *Edit)
+{
+  MessageBox(LoadRes(Error.ErrorCode + 210), LoadRes(RES_ERROR), MB_ICONWARNING);
+  if(Edit)
+    SetGlobalFocus(Edit);
+}
+//---------------------------------------------------------------------------
+void ShowStatusError(const String &Str)
+{
+  Form1->ShowStatusError(Str);
 }
 //---------------------------------------------------------------------------
 class TInputQueryForm : public TForm

@@ -12,8 +12,8 @@
 #include <Registry.hpp>
 #include <StrUtils.hpp>
 #include "Common.h"
+#include "Unit1.h"
 #include "Unit4.h"
-#include "Unit9.h"
 //---------------------------------------------------------------------------
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
@@ -26,7 +26,6 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
   int DeltaWidth = Canvas->TextWidth(CheckBox4->Caption) + 20 - CheckBox4->Width;
   Width = Width + TMaxWidth(Left - Edit1->Left)(DeltaWidth);
 
-  const TProperty &Property = Data.Property;
   CheckBox1->Checked = CheckAssocation(".grf", "GraphFile");
   CheckBox2->Checked = Application->ShowHint;
   CheckBox3->Checked = Property.SavePos;
@@ -38,9 +37,9 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
 
   //Put the language codes into a ComboBox
   GetLanguageList(ComboBox2->Items);
-  OldLanguageIndex = ComboBox2->Items->IndexOf(Data.Property.Language);
+  OldLanguageIndex = ComboBox2->Items->IndexOf(Property.Language);
   ComboBox2->ItemIndex = OldLanguageIndex;
-  ComboBox1->Text = AnsiString(Data.Property.FontScale) + "%";
+  ComboBox1->Text = AnsiString(Property.FontScale) + "%";
 
   ScaleForm(this);
   ComboBox1->SelLength = 0; //Don't know why this is necesarry
@@ -48,7 +47,6 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Button1Click(TObject *Sender)
 {
-  TProperty &Property = Data.Property;
   if(!CheckLimit(Edit1, LoadRes(RES_LIMIT_ZERO, Label1->Caption),0))
     return;
   if(!CheckLimit(Edit2, LoadRes(510), 0, 9))

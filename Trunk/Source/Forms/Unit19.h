@@ -52,7 +52,7 @@ private:	// User declarations
   ::TAnimationInfo &AnimationInfo;
 
 public:		// User declarations
-  __fastcall TForm19(TComponent* Owner, TData &AData);
+  __fastcall TForm19(TComponent* Owner, TData &AData, int AWidth, int AHeight);
 };
 //---------------------------------------------------------------------------
 #endif

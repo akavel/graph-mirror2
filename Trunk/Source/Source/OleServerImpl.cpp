@@ -19,6 +19,7 @@
 #include "HandlePng.h"
 #include "ConfigFile.h"
 #include "Debug.h"
+#include "Unit1.h"
 
 TOleServerImpl *OleServerImpl;
 

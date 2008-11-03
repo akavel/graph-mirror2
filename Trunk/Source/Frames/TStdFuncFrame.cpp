@@ -9,6 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#include "Unit1.h"
 #include "TStdFuncFrame.h"
 #include <float.h>
 //---------------------------------------------------------------------------
@@ -40,7 +41,7 @@ void TStdFuncFrame::Eval(const TGraphElem *Elem)
 
     ErrorPrefix = "f(x): ";
     Func32::TComplex y;
-    bool UseReal = Form1->Data.Property.ComplexFormat == cfReal;
+    bool UseReal = Property.ComplexFormat == cfReal;
     y = UseReal ? Func32::TComplex(Func->GetFunc().CalcY(real(x))): Func->GetFunc().CalcY(x);
 
     if(!x.imag() && std::abs(y.imag()) < MIN_ZERO)
@@ -77,7 +78,7 @@ void TStdFuncFrame::SetPoint(const TGraphElem *Elem, int X, int Y)
     if(_isnan(t))
       Edit1->Text = "";
     else
-      Edit1->Text = RoundToStr(t, ComboBox1->ItemIndex == 0 ? Form1->Data.Property.RoundTo : 8);
+      Edit1->Text = RoundToStr(t, ComboBox1->ItemIndex == 0 ? Property.RoundTo : 8);
   }
 }
 //---------------------------------------------------------------------------

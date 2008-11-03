@@ -21,9 +21,9 @@ __fastcall TForm11::TForm11(TComponent* Owner, TData &AData)
 {
   Translate();
 
-  ShadeSelect1->ShadeStyle = static_cast<TBrushStyle>(Data.Property.DefaultRelation.Style);
-  ExtColorBox1->Selected = Data.Property.DefaultRelation.Color;
-  UpDown1->Position = Data.Property.DefaultRelation.Size;
+  ShadeSelect1->ShadeStyle = static_cast<TBrushStyle>(Property.DefaultRelation.Style);
+  ExtColorBox1->Selected = Property.DefaultRelation.Color;
+  UpDown1->Position = Property.DefaultRelation.Size;
 
   ScaleForm(this);
 }
@@ -92,17 +92,17 @@ void __fastcall TForm11::Button1Click(TObject *Sender)
     {
       NewRelation->SetVisible(Relation->GetVisible());
       NewRelation->SetShowInLegend(Relation->GetShowInLegend());
-      UndoList.Push(TUndoChange(Relation, Data.GetIndex(Relation)));
+      UndoList.Push(TUndoChange(Data, Relation, Data.GetIndex(Relation)));
       Data.Replace(Data.GetIndex(Relation), NewRelation);
     }
     else
     {
-      UndoList.Push(TUndoAdd(NewRelation));
+      UndoList.Push(TUndoAdd(Data, NewRelation));
       Data.Add(NewRelation);
     }
     Data.SetModified();
 
-    Data.Property.DefaultRelation.Set(ShadeSelect1->ShadeStyle, ExtColorBox1->Selected, ToInt(Edit4->Text));
+    Property.DefaultRelation.Set(ShadeSelect1->ShadeStyle, ExtColorBox1->Selected, ToInt(Edit4->Text));
     ModalResult = mrOk;
   }
   catch(Func32::EFuncError &E)

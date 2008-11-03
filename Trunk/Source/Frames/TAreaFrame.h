@@ -16,16 +16,18 @@
 #include <Forms.hpp>
 #include "MyEdit.h"
 #include "TStdFuncFrame.h"
+#include <ExtCtrls.hpp>
 //---------------------------------------------------------------------------
 class TAreaFrame : public TFrame, public TEvalFrame
 {
 __published:	// IDE-managed Components
-  TMyEdit *Edit1;
-  TMyEdit *Edit2;
-  TEdit *Edit3;
+  TGridPanel *GridPanel1;
   TLabel *Label1;
+  TMyEdit *Edit1;
   TLabel *Label2;
+  TMyEdit *Edit2;
   TLabel *Label3;
+  TEdit *Edit3;
 private:	// User declarations
 
 public:		// User declarations

@@ -178,7 +178,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
     BaseFunc->Size = ToInt(Edit2->Text);
     BaseFunc->Style = LineSelect1->LineStyle;
     Data.Add(BaseFunc);
-    UndoList.Push(TUndoAdd(BaseFunc));
+    UndoList.Push(TUndoAdd(Data, BaseFunc));
   }
   catch(Func32::EFuncError &Error)
   {
@@ -189,7 +189,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
     return;
   }
 
-  Data.Property.DefaultTrendline.Set(LineSelect1->LineStyle, ExtColorBox1->Selected, ToInt(Edit2->Text));
+  Property.DefaultTrendline.Set(LineSelect1->LineStyle, ExtColorBox1->Selected, ToInt(Edit2->Text));
   ModalResult = mrOk;
 }
 //---------------------------------------------------------------------------
@@ -289,9 +289,9 @@ int TForm13::InsertTrendline(const boost::shared_ptr<TPointSeries> &ASeries)
   if(NegXFound || NegYFound)
     RadioButton4->Enabled = false;
 
-  LineSelect1->LineStyle = static_cast<TPenStyle>(Data.Property.DefaultTrendline.Style);
-  ExtColorBox1->Selected = Data.Property.DefaultTrendline.Color;
-  UpDown1->Position = Data.Property.DefaultTrendline.Size;
+  LineSelect1->LineStyle = static_cast<TPenStyle>(Property.DefaultTrendline.Style);
+  ExtColorBox1->Selected = Property.DefaultTrendline.Color;
+  UpDown1->Position = Property.DefaultTrendline.Size;
 
   UpDown2->Max = Series->PointList.size() - 1;
   UpDown3->Max = Series->PointList.size() - 1;

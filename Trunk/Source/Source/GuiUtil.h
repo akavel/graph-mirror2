@@ -49,6 +49,11 @@ std::wstring LoadString(unsigned Ident);
 int MessageBox(const std::string &Text, const std::string &Caption, int Flags = MB_OK | MB_ICONWARNING);
 int MessageBox(const String &Text, const String &Caption, int Flags = MB_OK | MB_ICONWARNING);
 
+void ShowErrorMsg(const Func32::EFuncError &Error, TCustomEdit *Edit=NULL);//Shows error message corresponding to ErrorCode in Error
+void ShowErrorMsg(const class ECustomFunctionError &Error, TCustomEdit *Edit=NULL);
+void ShowErrorMsg(const class EGraphError &Error, TCustomEdit *Edit=NULL);
+void ShowStatusError(const String &Str);
+
 bool InputQuery(const AnsiString &Caption, const AnsiString &Prompt, int &Value);
 
 #endif

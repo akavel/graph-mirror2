@@ -9,6 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#include "Unit1.h"
 #include "Convert.h"
 #include "Grid.h"
 #include "GuiUtil.h"
@@ -93,7 +94,7 @@ void ComplexToRTF(Func32::TComplex C, TRichEdit *RichEdit)
   //Font f1: Symbol
   AnsiString Str = "{\\rtf1\\ansi\\deff0{\\fonttbl{\\f0\\fswiss\\fprq2\\fcharset0 MS Sans Serif;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}}\n\\f0\\fs18 ";
 
-  switch(Data.Property.ComplexFormat)
+  switch(Property.ComplexFormat)
   {
   case cfReal:
     //Check for an imaginary part
@@ -148,7 +149,7 @@ WideString ComplexToWideString(const Func32::TComplex &C)
   const TData &Data = Form1->Data;
   WideString Str;
 
-  switch(Data.Property.ComplexFormat)
+  switch(Property.ComplexFormat)
   {
     case cfReal:
       //Check for an imaginary part
@@ -200,7 +201,7 @@ WideString ComplexToWideString(const Func32::TComplex &C)
 //The number of decimals will be determined by Property.RoundTo
 AnsiString DoubleToStr(long double Number)
 {
-  return DoubleToStr(Number, Form1->Data.Property.RoundTo);
+  return DoubleToStr(Number, Property.RoundTo);
 }
 //---------------------------------------------------------------------------
 //This function converts a floating point number to a string
@@ -355,7 +356,7 @@ AnsiString RoundToStr(long double Number, unsigned Decimals)
 //---------------------------------------------------------------------------
 AnsiString RoundToStr(long double Number, const TData &Data)
 {
-  return RoundToStr(Number, Data.Property.RoundTo);
+  return RoundToStr(Number, Property.RoundTo);
 }
 //---------------------------------------------------------------------------
 double CellToDouble(TGrid *Grid, int Col, int Row)

@@ -16,8 +16,8 @@
 
 const TLabelPlacement IndexToPlacement[] = {lpUserTopLeft, lpUserTopRight, lpUserBottomLeft, lpUserBottomRight};
 //---------------------------------------------------------------------------
-__fastcall TForm21::TForm21(TComponent* Owner, TData &AData, const boost::shared_ptr<TTextLabel> &ALabel)
-  : TForm(Owner), Label(ALabel), Data(AData), OldPlacement(ALabel->GetPlacement())
+__fastcall TForm21::TForm21(TComponent* Owner, TData &AData, const TDraw &ADraw, const boost::shared_ptr<TTextLabel> &ALabel)
+  : TForm(Owner), Label(ALabel), Data(AData), Draw(ADraw), OldPlacement(ALabel->GetPlacement())
 {
   ScaleForm(this);
   TranslateProperties(this);
@@ -31,7 +31,7 @@ __fastcall TForm21::TForm21(TComponent* Owner, TData &AData, const boost::shared
 //---------------------------------------------------------------------------
 void __fastcall TForm21::TntButton1Click(TObject *Sender)
 {
-  UndoList.Push(TUndoChange(Label, Data.GetIndex(Label)));
+  UndoList.Push(TUndoChange(Data, Label, Data.GetIndex(Label)));
   TTextValue xPos;
   TTextValue yPos;
   xPos.Value = MakeFloat(Edit1);
@@ -62,8 +62,8 @@ void __fastcall TForm21::ComboBox1Change(TObject *Sender)
   double xPos = Data.Calc(::ToString(Edit1->Text));
   double yPos = Data.Calc(::ToString(Edit2->Text));
 
-  double Width = Form1->Draw.xCoord(Label->GetRect().Right) - Form1->Draw.xCoord(Label->GetRect().Left);
-  double Height = Form1->Draw.yCoord(Label->GetRect().Top) - Form1->Draw.yCoord(Label->GetRect().Bottom);
+  double Width = Draw.xCoord(Label->GetRect().Right) - Draw.xCoord(Label->GetRect().Left);
+  double Height = Draw.yCoord(Label->GetRect().Top) - Draw.yCoord(Label->GetRect().Bottom);
   switch(OldPlacement)
   {
     case lpUserTopRight:    xPos -= Width; break;

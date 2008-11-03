@@ -15,6 +15,7 @@
 #include "IGraphic.h"
 #include "Tokenizer.h"
 #include "VersionInfo.h"
+#include "GuiUtil.h"
 #include <boost/lexical_cast.hpp>
 #include <boost/mem_fn.hpp>
 //---------------------------------------------------------------------------
@@ -266,7 +267,7 @@ void TStdFunc::ReadFromIni(const TConfigFile &IniFile, const std::string &Sectio
   }
   catch(Func32::EParseError &E)
   {
-    Form1->ShowStatusError(GetErrorMsg(E));
+    ShowStatusError(GetErrorMsg(E));
   }
 }
 //---------------------------------------------------------------------------
@@ -315,7 +316,7 @@ void TParFunc::ReadFromIni(const TConfigFile &IniFile, const std::string &Sectio
   }
   catch(Func32::EParseError &E)
   {
-    Form1->ShowStatusError(GetErrorMsg(E));
+    ShowStatusError(GetErrorMsg(E));
   }
   TBaseFuncType::ReadFromIni(IniFile, Section);
 }
@@ -359,7 +360,7 @@ void TPolFunc::ReadFromIni(const TConfigFile &IniFile, const std::string &Sectio
   }
   catch(Func32::EParseError &E)
   {
-    Form1->ShowStatusError(GetErrorMsg(E));
+    ShowStatusError(GetErrorMsg(E));
   }
 
   TBaseFuncType::ReadFromIni(IniFile, Section);
@@ -753,7 +754,7 @@ void TPointSeries::ReadFromIni(const TConfigFile &IniFile, const std::string &Se
     }
     catch(Func32::EParseError &E)
     {
-      Form1->ShowStatusError(GetErrorMsg(E));
+      ShowStatusError(GetErrorMsg(E));
       PointList.push_back(TPointSeriesPoint(GetData(), x, y, xError, yError, true));
     }
   }

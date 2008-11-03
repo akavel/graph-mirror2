@@ -9,6 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#include "Unit1.h"
 #include "Unit3.h"
 //---------------------------------------------------------------------------
 #pragma link "ExtColorBox"
@@ -177,7 +178,7 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
 
   Data.AbortUpdate();
   Data.ClearCache();
-  UndoList.Push(TUndoAxes());
+  UndoList.Push(TUndoAxes(Data));
 
   xAxis.LogScl = CheckBox1->Checked;
   xAxis.ShowNumbers = CheckBox2->Checked;

@@ -12,6 +12,7 @@
 #include "GuiHelper.h"
 #include "PointSelect.h"
 #include "OleObjectElem.h"
+#include "Unit1.h"
 #include <float.h>
 //---------------------------------------------------------------------------
 //////////////

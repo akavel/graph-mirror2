@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "PyGraph.h"
+#include "Unit1.h"
 #include "Unit22.h"
 #include "PythonBind.h"
 #include "VersionInfo.h"
@@ -149,7 +150,7 @@ static PyObject* PluginCreateParametricFunction(PyObject *Self, PyObject *Args)
   Func->SetSteps(TTextValue(1000));
 
   Data.AbortUpdate();
-  UndoList.Push(TUndoAdd(Func));
+  UndoList.Push(TUndoAdd(Data, Func));
   Data.Add(Func);
   Form1->UpdateTreeView();
   Data.SetModified();
