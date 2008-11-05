@@ -95,7 +95,7 @@ class EPageSetup : public Exception
 {
   int FErrorCode;
 public:
-  EPageSetup(AnsiString Msg, int Error);
+  EPageSetup(String Msg, int Error);
   __property int ErrorCode = {read=FErrorCode};
 };
 //---------------------------------------------------------------------------

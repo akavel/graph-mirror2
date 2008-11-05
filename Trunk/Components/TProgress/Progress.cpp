@@ -140,7 +140,7 @@ void __fastcall TProgress::Update(void)
       Percent = 0;
     if(Percent == 0 && Position > FMin)
       Percent = 1;
-    AnsiString Str = IntToStr(Percent) + "%";
+    String Str = IntToStr(Percent) + "%";
 
     Bitmap->Canvas->FillRect(ClientRect);//Bitmap is filled with the color clBlack
     Bitmap->Canvas->Font = Font;//Set font

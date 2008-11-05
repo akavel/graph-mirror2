@@ -141,7 +141,7 @@ object PrintFrm: TPrintFrm
         'Select the printer to use. The Properties button may be used to ' +
         'change more advanced settings for the printer.'
       Style = csDropDownList
-      ItemHeight = 13
+      ItemHeight = 0
       TabOrder = 0
       OnChange = ComboBox1Change
     end

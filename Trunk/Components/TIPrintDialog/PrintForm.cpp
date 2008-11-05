@@ -110,7 +110,7 @@ void TPrintFrm::ResizePaper()
 //---------------------------------------------------------------------------
 void TPrintFrm::DoPaintSample()
 {
-  double Scale = AnsiString(Edit4->Text).ToIntDef(100) / 100.0;
+  double Scale = Edit4->Text.ToIntDef(100) / 100.0;
 
   //LOGPIXELSX doesn't work. Always returns 96 for screen
   HDC ScreenDC = GetDC(NULL);
@@ -128,12 +128,12 @@ void TPrintFrm::DoPaintSample()
   {
     UpDown1->Position = std::floor((PaperWidth - PrintDialog->ImageWidth * xScale * Scale) / 2 + 0.5);
     UpDown2->Position = std::floor((PaperHeight - PrintDialog->ImageHeight * yScale * Scale) / 2 + 0.5);
-    Edit1->Text = AnsiString(UpDown1->Position);
-    Edit2->Text = AnsiString(UpDown2->Position);
+    Edit1->Text = UpDown1->Position;
+    Edit2->Text = UpDown2->Position;
   }
 
-  int Left = AnsiString(Edit1->Text).ToIntDef(0);
-  int Top = AnsiString(Edit2->Text).ToIntDef(0);
+  int Left = Edit1->Text.ToIntDef(0);
+  int Top = Edit2->Text.ToIntDef(0);
 
   TRect PaintRect;
   PaintRect.Left = Left * Image1->Width / PaperWidth;

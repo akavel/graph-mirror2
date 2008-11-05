@@ -461,9 +461,9 @@ void TGrid::CopyTextToClipboard()
   Clipboard()->AsText = ExportText('\t');
 }
 //---------------------------------------------------------------------------
-AnsiString TGrid::ExportText(char Delimiter)
+String TGrid::ExportText(char Delimiter)
 {
-  AnsiString Str;
+  String Str;
   TGridRect GridRect = Selection;
   if(GridRect.Top == GridRect.Bottom && GridRect.Left == GridRect.Right)
     GridRect = GetCompleteGridRect();
@@ -532,7 +532,7 @@ void TGrid::PasteFromClipboard()
   ImportText(Clipboard()->AsText);
 }
 //---------------------------------------------------------------------------
-void TGrid::ImportText(AnsiString Str)
+void TGrid::ImportText(String Str)
 {
   //If there is only one cell to insert: Paste at cursor position
   if(Str.Pos('\n') == 0 && EditorMode)
@@ -818,7 +818,17 @@ void TGrid::CopyRtfToClipboard()
   {
     Str += "\\intbl";
     for(int ACol = GridRect.Left; ACol <= GridRect.Right; ACol++)
-      Str += AnsiString(" ") + DoGetText(ACol, ARow) + "\\cell";
+    {
+      Str += " ";
+      String CellStr = DoGetText(ACol, ARow);
+      //Convert all non-ascii characters to Unicode encoding
+      for(int I = 1; I <= CellStr.Length(); I++)
+        if(CellStr[I] < 128)
+          Str += CellStr[I];
+        else
+          Str += "{\\u" + IntToStr(CellStr[I]) + "}";
+      Str += "\\cell";
+    }
     Str += "\\row\n";
   }
 
@@ -957,7 +967,7 @@ void TGrid::InsertRows(int Index, int Count)
 
   for(int Row = Index+Count-1; Row >= Index ; Row--)
     for(int Col = 0; Col < ColCount; Col++)
-      DoSetText(Col, Row, AnsiString());
+      DoSetText(Col, Row, String());
 }
 //---------------------------------------------------------------------------
 void TGrid::RemoveRows(int Index, int Count)
@@ -975,7 +985,7 @@ void TGrid::RemoveRows(int Index, int Count)
   if(AutoAddRows && RowCount-Count == FixedRows)
   {
     for(int Col = 0; Col < ColCount; Col++)
-      DoSetText(Col, FixedRows, AnsiString());
+      DoSetText(Col, FixedRows, String());
     RowCount = FixedRows+1;
   }
   else
@@ -996,13 +1006,13 @@ bool TGrid::CanCopy()
   return true;
 }
 //---------------------------------------------------------------------------
-bool TGrid::ImportFromFile(const AnsiString &FileName)
+bool TGrid::ImportFromFile(const String &FileName)
 {
   std::ifstream Stream(FileName.c_str());
   if(!Stream)
     return false;
 
-  //Bug in operator>>(istream&, AnsiString&); AnsiString cannot load more than 4096 bytes from a stream  
+  //Bug in operator>>(istream&, AnsiString&); AnsiString cannot load more than 4096 bytes from a stream
   std::string Str;
   std::getline(Stream, Str, '§'); //Read whole file (up to non existing delimiter)
 
@@ -1010,13 +1020,19 @@ bool TGrid::ImportFromFile(const AnsiString &FileName)
   return true;
 }
 //---------------------------------------------------------------------------
-bool TGrid::ExportToFile(const AnsiString &FileName, char Delimiter)
+bool TGrid::ExportToFile(const String &FileName, char Delimiter, bool Utf8)
 {
   //Save binary; \r\n is already used as line feed
   std::ofstream Stream(FileName.c_str(), std::ios::binary);
   if(!Stream)
     return false;
-  Stream << ExportText(Delimiter);
+  if(Utf8)
+  {
+    Stream << "\xEF\xBB\xBF"; //Start with Byte Order Marker
+    Stream << UTF8Encode(ExportText(Delimiter)).c_str();
+  }
+  else
+    Stream << ExportText(Delimiter).c_str();
   return true;
 }
 //---------------------------------------------------------------------------
@@ -1030,9 +1046,9 @@ TGridRect TGrid::GetCompleteGridRect()
   return GridRect;
 }
 //---------------------------------------------------------------------------
-WideString TGrid::DoGetText(unsigned ACol, unsigned ARow)
+String TGrid::DoGetText(unsigned ACol, unsigned ARow)
 {
-  WideString Value;
+  String Value;
   if(FOnGetText)
     FOnGetText(this, ACol, ARow, Value);
   else if(ACol < Data.size())
@@ -1042,7 +1058,7 @@ WideString TGrid::DoGetText(unsigned ACol, unsigned ARow)
   return Value;
 }
 //---------------------------------------------------------------------------
-void TGrid::DoSetText(unsigned ACol, unsigned ARow, const WideString &Value)
+void TGrid::DoSetText(unsigned ACol, unsigned ARow, const String &Value)
 {
   if(FOnSetText)
     FOnSetText(this, ACol, ARow, Value);
@@ -1061,8 +1077,8 @@ void TGrid::DoSetText(unsigned ACol, unsigned ARow, const WideString &Value)
 //Replaces TStringGrid::DrawCell()
 void __fastcall TGrid::DrawCell(int ACol, int ARow, const TRect &ARect, TGridDrawState AState)
 {
-  WideString Str = DoGetText(ACol, ARow);
-  ExtTextOutW(Canvas->Handle, ARect.Left+2, ARect.Top+2, ETO_CLIPPED, &ARect, Str.c_bstr(), Str.Length(), NULL);
+  String Str = DoGetText(ACol, ARow);
+  ExtTextOut(Canvas->Handle, ARect.Left+2, ARect.Top+2, ETO_CLIPPED, &ARect, Str.c_str(), Str.Length(), NULL);
   TDrawGrid::DrawCell(ACol, ARow, ARect, AState);
 }
 //---------------------------------------------------------------------------

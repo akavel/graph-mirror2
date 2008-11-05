@@ -9,16 +9,16 @@
 //---------------------------------------------------------------------------
 static inline void ValidCtrCheck(TMyRadioButton *)
 {
-        new TMyRadioButton(NULL);
+  new TMyRadioButton(NULL);
 }
 //---------------------------------------------------------------------------
 namespace Myradiobutton
 {
-        void __fastcall PACKAGE Register()
-        {
-                 TComponentClass classes[1] = {__classid(TMyRadioButton)};
-                 RegisterComponents("IComp", classes, 0);
-        }
+  void __fastcall PACKAGE Register()
+  {
+    TComponentClass classes[1] = {__classid(TMyRadioButton)};
+    RegisterComponents("IComp", classes, 0);
+  }
 }
 //---------------------------------------------------------------------------
 __fastcall TMyRadioButton::TMyRadioButton(TComponent* Owner)

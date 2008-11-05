@@ -12,16 +12,16 @@
 //
 static inline void ValidCtrCheck(TPointSelect *)
 {
-        new TPointSelect(NULL);
+  new TPointSelect(NULL);
 }
 //---------------------------------------------------------------------------
 namespace Pointselect
 {
-        void __fastcall PACKAGE Register()
-        {
-                 TComponentClass classes[1] = {__classid(TPointSelect)};
-                 RegisterComponents("IComp", classes, 0);
-        }
+  void __fastcall PACKAGE Register()
+  {
+    TComponentClass classes[1] = {__classid(TPointSelect)};
+    RegisterComponents("IComp", classes, 0);
+  }
 }
 //---------------------------------------------------------------------------
 __fastcall TPointSelect::TPointSelect(TComponent* Owner)

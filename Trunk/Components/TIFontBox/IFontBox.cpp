@@ -58,12 +58,12 @@ void __fastcall TIFontBox::MeasureItem(int Index, int &H)
     H = 20;
 }
 //---------------------------------------------------------------------------
-AnsiString __fastcall TIFontBox::GetFontName()
+String __fastcall TIFontBox::GetFontName()
 {
   return ItemIndex != -1 ? Items->Strings[ItemIndex] : String();
 }
 //---------------------------------------------------------------------------
-void __fastcall TIFontBox::SetFontName(const AnsiString &Str)
+void __fastcall TIFontBox::SetFontName(const String &Str)
 {
   ItemIndex = Items->IndexOf(Str);
 }

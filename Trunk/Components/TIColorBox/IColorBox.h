@@ -20,7 +20,7 @@ private:
   TIColorSelect *FColorSelect;
   TNotifyEvent FOnChange;
   TNotifyEvent FBeforeChange;
-  AnsiString FCaption;
+  String FCaption;
   void __fastcall SetColor(TColor Value);
   void __fastcall Paint();
   DYNAMIC void __fastcall DoEnter();
@@ -45,7 +45,7 @@ __published:
   __property TColor Color = {read=FColor, write=SetColor, default=clRed};
   __property bool Ctl3D = {read=FCtl3D, write=SetCtl3D, default=true};
   __property TIColorSelect* ColorSelect={read=FColorSelect,write=FColorSelect, default=NULL};
-  __property AnsiString Caption = {read=FCaption, write=FCaption};
+  __property String Caption = {read=FCaption, write=FCaption};
 
   __property OnEnter;
   __property OnExit;

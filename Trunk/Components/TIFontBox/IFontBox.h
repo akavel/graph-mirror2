@@ -15,8 +15,8 @@ private:
   int FSamplePos;
   int OldItemIndex;
 
-  AnsiString __fastcall GetFontName();
-  void __fastcall SetFontName(const AnsiString &Str);
+  String __fastcall GetFontName();
+  void __fastcall SetFontName(const String &Str);
   DYNAMIC void __fastcall ChangeScale(int M, int D);
 
 protected:
