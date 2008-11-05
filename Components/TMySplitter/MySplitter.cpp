@@ -13,7 +13,7 @@
 
 static inline void ValidCtrCheck(TMySplitter *)
 {
-        new TMySplitter(NULL);
+  new TMySplitter(NULL);
 }
 //---------------------------------------------------------------------------
 __fastcall TMySplitter::TMySplitter(TComponent* Owner)
@@ -23,11 +23,11 @@ __fastcall TMySplitter::TMySplitter(TComponent* Owner)
 //---------------------------------------------------------------------------
 namespace Mysplitter
 {
-        void __fastcall PACKAGE Register()
-        {
-                 TComponentClass classes[1] = {__classid(TMySplitter)};
-                 RegisterComponents("IComp", classes, 0);
-        }
+  void __fastcall PACKAGE Register()
+  {
+    TComponentClass classes[1] = {__classid(TMySplitter)};
+    RegisterComponents("IComp", classes, 0);
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TMySplitter::DblClick(void)

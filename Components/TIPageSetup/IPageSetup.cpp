@@ -147,7 +147,7 @@ bool __fastcall TIPageSetupDialog::Execute(HWND ParentWnd)
     if(psd.hDevNames)
     {
       DEVNAMES *dn = (DEVNAMES*) ::GlobalLock(psd.hDevNames);
-	  UnicodeString Driver = (char*)dn + dn->wDriverOffset;
+	  String Driver = (char*)dn + dn->wDriverOffset;
 	  String Device = (char*)dn + dn->wDeviceOffset;
 	  String Port = (char*)dn + dn->wOutputOffset;
 
@@ -382,7 +382,7 @@ TRect TIPageSetupDialog::GetDrawingArea()
   return TRect(xOffset,yOffset,xOffsetOfRightMargin,yOffsetOfBottomMargin);
 }
 //---------------------------------------------------------------------------
-EPageSetup::EPageSetup(AnsiString Msg, int Error)
+EPageSetup::EPageSetup(String Msg, int Error)
   : Exception(Msg), FErrorCode(Error)
 {
 }

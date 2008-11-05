@@ -6,25 +6,21 @@
 #pragma hdrstop
 #include "LineSelect.h"
 #pragma package(smart_init)
-
-//Workaround for name mangling bug in TTntCustomComboBox::ComboWndProc
-#pragma alias "@Tntstdctrls@TTntCustomComboBox@ComboWndProc$qqrr17Messages@TMessagepvt2"\
-="@Tntstdctrls@TTntCustomComboBox@ComboWndProc$qqrr17Messages@TMessageuipv"
 //---------------------------------------------------------------------------
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 static inline void ValidCtrCheck(TLineSelect *)
 {
-        new TLineSelect(NULL);
+  new TLineSelect(NULL);
 }
 //---------------------------------------------------------------------------
 namespace Lineselect
 {
-        void __fastcall PACKAGE Register()
-        {
-                 TComponentClass classes[1] = {__classid(TLineSelect)};
-                 RegisterComponents("IComp", classes, 0);
-        }
+  void __fastcall PACKAGE Register()
+  {
+    TComponentClass classes[1] = {__classid(TLineSelect)};
+    RegisterComponents("IComp", classes, 0);
+  }
 }
 //---------------------------------------------------------------------------
 __fastcall TLineSelect::TLineSelect(TComponent* Owner)

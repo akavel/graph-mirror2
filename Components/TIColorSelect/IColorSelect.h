@@ -12,7 +12,7 @@
 class EArrayIndex : public Exception
 {
 public:
-  __fastcall EArrayIndex(const AnsiString Msg):Exception(Msg){};
+  __fastcall EArrayIndex(const String &Msg):Exception(Msg){};
 };
 
 class TIColorSelect : public TComponent
@@ -25,7 +25,7 @@ private:
   std::vector<TColor> FColorList;
   int FRowCount;
   int FColCount;
-  AnsiString FCaption;
+  String FCaption;
   int FHelpContext;
   TColor FColor;
   TPoint SelectedBox;
@@ -56,7 +56,7 @@ public:
   __property std::vector<TColor> ColorListVector = {read=FColorList};
 
 __published:
-  __property AnsiString Caption = {read=FCaption, write=FCaption};
+  __property String Caption = {read=FCaption, write=FCaption};
   __property int HelpContext = {read=FHelpContext, write=FHelpContext,default=0};
   __property int RowCount = {read=FRowCount, write=SetRowCount,default=16};
   __property int ColCount = {read=FColCount, write=SetColCount,default=16};

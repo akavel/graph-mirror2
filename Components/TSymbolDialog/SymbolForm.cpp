@@ -117,8 +117,8 @@ __fastcall TSymbolFrm::TSymbolFrm(TComponent* Owner, bool AShowUnicode, wchar_t 
     FontSize(12), PreviewFontSize(30), Delta(20)
 {
   Caption = TranslateCompText(L"Insert symbol");
-  Label1->Caption = WideString(L"&") + TranslateCompText(L"Font name:");
-  Label2->Caption = WideString(L"&") + TranslateCompText(L"Subset:");
+  Label1->Caption = L"&" + TranslateCompText(L"Font name:");
+  Label2->Caption = L"&" + TranslateCompText(L"Subset:");
   Button1->Caption = TranslateCompText(L"Close");
   Button2->Caption = TranslateCompText(L"Insert");
   ComboBox1->Left = Label1->Left + Label1->Width + 5;
@@ -240,7 +240,7 @@ void TSymbolFrm::UpdateImage()
   {
     wchar_t CharInfo[200];
     pGetUNameFunc(Selected, CharInfo);
-    StatusBar1->Panels->Items[0]->Text = WideString(CharInfo);
+    StatusBar1->Panels->Items[0]->Text = CharInfo;
     StatusBar1->Panels->Items[1]->Text = "U+" + IntToHex(Selected, 4) + " (" + (int)Selected + ")";
   }
   else

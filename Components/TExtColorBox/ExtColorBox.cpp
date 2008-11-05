@@ -167,7 +167,7 @@ void __fastcall TExtColorBox::DrawItem(int Index, const Types::TRect &Rect, TOwn
   if(Index < ShowCustom + ShowDefault)
   {
 	LRect = TRect(LRect.Right + 5, Rect.Top, Rect.Right, Rect.Bottom);
-	WideString Str = ShowCustom && Index == 0 ? CustomName : DefaultName;
+	String Str = ShowCustom && Index == 0 ? CustomName : DefaultName;
 	Canvas->TextRect(LRect, LRect.Left,
       (LRect.Bottom + LRect.Top - Canvas->TextHeight(Str)) / 2, Str);
   }

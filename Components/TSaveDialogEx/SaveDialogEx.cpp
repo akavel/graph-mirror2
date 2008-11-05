@@ -9,10 +9,6 @@
 #include <vector>
 #include "Tokenizer.h"
 #pragma package(smart_init)
-
-//Workaround for name mangling bug in TTntCustomComboBox::ComboWndProc
-#pragma alias "@Dialogs@TSaveDialog@Execute$qqrpv"\
-="@Dialogs@TSaveDialog@Execute$qqrui"
 //---------------------------------------------------------------------------
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
@@ -50,7 +46,7 @@ void __fastcall TSaveDialogEx::DoShow()
     SendMessage(GetParent(Handle), CDM_SETCONTROLTEXT, pshHelp, reinterpret_cast<long>(HelpCaption.c_str()));
 }
 //---------------------------------------------------------------------------
-void __fastcall TSaveDialogEx::SetFileName(const AnsiString &AFileName)
+void __fastcall TSaveDialogEx::SetFileName(const String &AFileName)
 {
   if(Handle == NULL)
     inherited::FileName = AFileName;
@@ -58,7 +54,7 @@ void __fastcall TSaveDialogEx::SetFileName(const AnsiString &AFileName)
     SendMessage(GetParent(Handle), CDM_SETCONTROLTEXT, 1152, reinterpret_cast<DWORD>(AFileName.c_str()));
 }
 //---------------------------------------------------------------------------
-AnsiString __fastcall TSaveDialogEx::GetFileName()
+String __fastcall TSaveDialogEx::GetFileName()
 {
   if(Handle == NULL)
     return inherited::FileName;
@@ -79,7 +75,7 @@ void __fastcall TSaveDialogEx::DoTypeChange()
   {
     TTokenizer Tokenizer(AnsiString(Filter).c_str(), '|');
     Tokenizer.Ignore(FilterIndex*2-1);
-    AnsiString Extension = Tokenizer.Next().c_str();
+    String Extension = Tokenizer.Next().c_str();
     Extension = Extension.SubString(Extension.LastDelimiter("."), MaxInt);
     FileName = ChangeFileExt(FileName, Extension);
   }

@@ -61,7 +61,7 @@ TStrings* __fastcall TIPolygon::GetPoints()
   FPoints->Clear();
   char OldDecimalSeparator = DecimalSeparator;
   for(unsigned I = 0; I < PointList.size(); I++)
-    FPoints->Add(AnsiString(PointList[I].x) + ',' + PointList[I].y);
+    FPoints->Add(String(PointList[I].x) + ',' + PointList[I].y);
   DecimalSeparator = OldDecimalSeparator;
   FPoints->OnChange = PointsChange;
   return FPoints;
@@ -74,7 +74,7 @@ void __fastcall TIPolygon::PointsChange(TObject *Sender)
 
   for(int I = 0; I < FPoints->Count; I++)
   {
-    AnsiString Str = FPoints->Strings[I].Trim();
+    String Str = FPoints->Strings[I].Trim();
     if(Str.IsEmpty())
       continue;
     int Pos = Str.Pos(',');

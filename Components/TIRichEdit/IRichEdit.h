@@ -44,7 +44,7 @@ public:
   bool GetStrikeOut() const;
   bool GetSubscript() const;
   bool GetSuperscript() const;
-  AnsiString GetName() const;
+  String GetName() const;
   unsigned GetSize() const;
   TColor GetColor() const;
   TColor GetBackgroundColor() const;
@@ -89,8 +89,6 @@ private:
   void __fastcall SetAutoUrlDetect(bool Value);
   bool __fastcall GetAutoUrlDetect();
   void __fastcall SetOnLink(TLinkEvent Value);
-  void __fastcall SetWideSelText(const WideString &Str);
-  WideString __fastcall GetWideSelText();
 
   void __fastcall WMNotify(TMessage &Message);
 
@@ -119,24 +117,23 @@ public:
   bool CanRedo();
   bool CanPaste();
   void SetUndoLimit(unsigned Limit);
-  AnsiString GetPlainText() {return Lines->Text;}
+  String GetPlainText() {return Lines->Text;}
   int LineIndex(int Line);
   int LineCount();
   int LineLength(int Index);
   int GetLine(int Index);
-  void SetSelText(wchar_t Ch, const AnsiString &FontName, unsigned Size);
-  void SetSelText(char Ch, const AnsiString &FontName, unsigned Size);
+  void SetSelText(wchar_t Ch, const String &FontName, unsigned Size);
+  void SetSelText(char Ch, const String &FontName, unsigned Size);
   void SetEventMask(DWORD Mask, DWORD Value);
   int TextSize();
 
   __property ::TParaFormat *Paragraph = {read=FParagraph};
-  __property WideString SelText = {read=GetWideSelText, write=SetWideSelText};
 //  __property Lines; //Don't use this
-  WideString GetText(int Min, int Max);
+  String GetText(int Min, int Max);
 
 __published:
   __property bool Transparent = {read=FTransparent, write=SetTransparent, default=false};
-  __property TColor BackgroundColor = {read=FBackgroundColor, write=SetBackgroundColor, default=clDefault};
+  __property TColor BackgroundColor = {read=FBackgroundColor, write=SetBackgroundColor, default=Graphics::clDefault};
   __property bool AutoUrlDetect = {read=GetAutoUrlDetect, write=SetAutoUrlDetect};
   __property TOleErrorEvent OnOleError = {read=FOnOleError, write=FOnOleError, default=NULL};
   __property TLinkEvent OnLink = {read=FOnLink, write=SetOnLink, default=NULL};

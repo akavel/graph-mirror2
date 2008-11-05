@@ -21,7 +21,7 @@ SHSTDAPI_(void) SHAddToRecentDocs(UINT uFlags, LPCVOID pv);
 
 struct TImpl
 {
-  std::deque<std::pair<AnsiString,TMenuItem*> > FileList; //We dont want deque in the interface; Size problem with debug version of STLport
+  std::deque<std::pair<String,TMenuItem*> > FileList; //We dont want deque in the interface; Size problem with debug version of STLport
 };
 //---------------------------------------------------------------------------
 static inline void ValidCtrCheck(TRecent *)
@@ -69,7 +69,7 @@ void __fastcall TRecent::SetMaxFiles(unsigned Value)
   ShowMenuItems();//Show menu items again
 }
 //---------------------------------------------------------------------------
-void __fastcall TRecent::SetRegistryKey(const AnsiString &Value)
+void __fastcall TRecent::SetRegistryKey(const String &Value)
 {
   RemoveMenuItems();//Remove shown menu items
   FRegistryKey = Value;//Change used registry key
@@ -87,7 +87,7 @@ void __fastcall TRecent::SetFileMenu(TMenuItem *Value)
 int TRecent::FileIndex(const String &FileName)
 {
   for(unsigned I = 0; I < Impl->FileList.size(); I++)
-    if(Impl->FileList[I].first.AnsiCompareIC(FileName) == 0)
+    if(Impl->FileList[I].first.CompareIC(FileName) == 0)
       return I;
   return -1;
 }
@@ -116,7 +116,7 @@ void __fastcall TRecent::FileUsed(const String &FileName)
     else
       Impl->FileList.erase(Impl->FileList.begin() + Index);//Remove FileName from list
 
-    Impl->FileList.push_front(std::pair<AnsiString, TMenuItem*>(FileName, NULL));//Add FileName to start of list
+    Impl->FileList.push_front(std::pair<String, TMenuItem*>(FileName, NULL));//Add FileName to start of list
     SaveToRegistry();//Write new file list to registry
     ShowMenuItems();//Show new list of menu items
   }
@@ -130,7 +130,7 @@ void __fastcall TRecent::FileUsed(const String &FileName)
 void __fastcall TRecent::MenuClick(TObject *Sender)
 {
   int Index = ObjectIndex(Sender);    //Get index of selected menu item in list
-  AnsiString FileName = Impl->FileList[Index].first; //Get file name coresponding to menu item
+  String FileName = Impl->FileList[Index].first; //Get file name coresponding to menu item
   if(FOnLoadFile)                               //If event handler sat
     if(FOnLoadFile(this, FileName))             //Call user selected event handler with FileName as parameter
       FileUsed(FileName);                       //Move FileName to first position in file list
@@ -173,7 +173,7 @@ void __fastcall TRecent::ShowMenuItems(void)
   {
     //Loop through all file names
     TMenuItem *MenuItem = new TMenuItem(NULL);//Make new menu item
-    MenuItem->Caption = "&"+AnsiString(I+1) + " " + CompactPath(Impl->FileList[I].first, FMaxPathLen);
+    MenuItem->Caption = "&" + String(I+1) + " " + CompactPath(Impl->FileList[I].first, FMaxPathLen);
     //Call MenuClick() then menu item is pressed
     MenuItem->OnClick = &MenuClick;
     //Set hint and substitute %s with the filename
@@ -225,8 +225,8 @@ void __fastcall TRecent::ReadFromRegistry(void)
   std::auto_ptr<TRegistry> Registry(new TRegistry());
   if(Registry->OpenKeyReadOnly(FRegistryKey))
     for(unsigned I = 1; I <= FMaxFiles; I++)//Loop through all values in registry
-      if(Registry->ValueExists("Recent" + AnsiString(I)))
-        Impl->FileList.push_back(std::pair<AnsiString,TMenuItem*>(Registry->ReadString("Recent" + AnsiString(I)), NULL));//Add file name to list
+      if(Registry->ValueExists("Recent" + String(I)))
+        Impl->FileList.push_back(std::pair<String,TMenuItem*>(Registry->ReadString("Recent" + String(I)), NULL));//Add file name to list
 }
 //---------------------------------------------------------------------------
 //This function saves file names to the registry
@@ -243,10 +243,10 @@ void __fastcall TRecent::SaveToRegistry(void)
   {
     //Open key;Create key if not found
     for(unsigned I = 0; I < Impl->FileList.size(); I++)//Loop through recent files in list
-      Registry->WriteString("Recent" + AnsiString(I+1), Impl->FileList[I].first);//Write file name to registry
+      Registry->WriteString("Recent" + String(I+1), Impl->FileList[I].first);//Write file name to registry
 
-    for(unsigned I = Impl->FileList.size(); Registry->ValueExists("Recent" + AnsiString(I+1)); I++)//Loop through until no more fake values
-      Registry->DeleteValue("Recent"+AnsiString(I+1));//Delete file name
+    for(unsigned I = Impl->FileList.size(); Registry->ValueExists("Recent" + String(I+1)); I++)//Loop through until no more fake values
+      Registry->DeleteValue("Recent"+String(I+1));//Delete file name
   }
 }
 //---------------------------------------------------------------------------

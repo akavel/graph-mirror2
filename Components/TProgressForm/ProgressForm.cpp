@@ -13,16 +13,16 @@
 //
 static inline void ValidCtrCheck(TProgressForm *)
 {
-        new TProgressForm(NULL);
+  new TProgressForm(NULL);
 }
 //---------------------------------------------------------------------------
 namespace Progressform
 {
-        void __fastcall PACKAGE Register()
-        {
-                 TComponentClass classes[1] = {__classid(TProgressForm)};
-                 RegisterComponents("IComp", classes, 0);
-        }
+  void __fastcall PACKAGE Register()
+  {
+    TComponentClass classes[1] = {__classid(TProgressForm)};
+    RegisterComponents("IComp", classes, 0);
+  }
 }
 //---------------------------------------------------------------------------
 __fastcall TProgressForm::TProgressForm(TComponent* Owner)
@@ -67,10 +67,10 @@ __fastcall TProgressForm::~TProgressForm()
   Close();
 }
 //---------------------------------------------------------------------------
-void __fastcall TProgressForm::SetCaption(WideString Str)
+void __fastcall TProgressForm::SetCaption(String Str)
 {
   FCaption = Str;
-  Form->Caption = Str;
+  Form->Caption = FCaption;
 }
 //---------------------------------------------------------------------------
 void __fastcall TProgressForm::SetMin(int Value)
@@ -179,7 +179,7 @@ void __fastcall TProgressForm::SetColor(TColor AColor)
   Progress->Color = AColor;
 }
 //---------------------------------------------------------------------------
-void __fastcall TProgressForm::SetButtonCaption(WideString Str)
+void __fastcall TProgressForm::SetButtonCaption(String Str)
 {
   FButtonCaption = Str;
   Button->Caption = Str;

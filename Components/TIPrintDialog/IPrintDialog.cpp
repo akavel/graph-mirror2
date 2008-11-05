@@ -42,8 +42,8 @@ bool TIPrintDialog::Execute()
   Printer()->PrinterIndex; //This will throw EPrinter if no default printer exists
 
   PrintFrm = new TPrintFrm(NULL, this);
-  PrintFrm->Edit1->Text = AnsiString(FLeftMargin) / 100.0;
-  PrintFrm->Edit2->Text = AnsiString(FTopMargin) / 100.0;
+  PrintFrm->Edit1->Text = String(FLeftMargin) / 100.0;
+  PrintFrm->Edit2->Text = String(FTopMargin) / 100.0;
   PrintFrm->UpDown3->Position = std::max(1, FCopies);
   PrintFrm->UpDown4->Position = FScale;
   PrintFrm->CheckBox1->Checked = FCenterOnPage;
@@ -53,10 +53,10 @@ bool TIPrintDialog::Execute()
 
   if(PrintFrm->ShowModal() == mrOk)
   {
-    FLeftMargin = AnsiString(PrintFrm->Edit1->Text).ToIntDef(0) * 100;
-    FTopMargin = AnsiString(PrintFrm->Edit2->Text).ToIntDef(0) * 100;
-    FCopies = AnsiString(PrintFrm->Edit3->Text).ToIntDef(1);
-    FScale = AnsiString(PrintFrm->Edit4->Text).ToIntDef(100);
+    FLeftMargin = PrintFrm->Edit1->Text.ToIntDef(0) * 100;
+    FTopMargin = PrintFrm->Edit2->Text.ToIntDef(0) * 100;
+    FCopies = PrintFrm->Edit3->Text.ToIntDef(1);
+    FScale = PrintFrm->Edit4->Text.ToIntDef(100);
     FCenterOnPage = PrintFrm->CheckBox1->Checked;
     FPrintOutput = PrintFrm->RadioGroup2->ItemIndex ? poBlackWhite : poColor;
     FOrientation = PrintFrm->RadioGroup1->ItemIndex ? poLandscape  : poPortrait;

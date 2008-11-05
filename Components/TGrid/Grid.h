@@ -13,8 +13,8 @@
 #include "VclObject.h"
 //---------------------------------------------------------------------------
 typedef void __fastcall (__closure *TEditorKeyPressEvent)(TInplaceEdit *InplaceEdit, Char &Key);
-typedef void __fastcall (__closure *TGetTextEvent)(System::TObject* Sender, long ACol, long ARow, WideString &Value);
-typedef void __fastcall (__closure *TSetTextEvent)(System::TObject* Sender, long ACol, long ARow, const WideString &Value);
+typedef void __fastcall (__closure *TGetTextEvent)(System::TObject* Sender, long ACol, long ARow, String &Value);
+typedef void __fastcall (__closure *TSetTextEvent)(System::TObject* Sender, long ACol, long ARow, const String &Value);
 
 class TGrid : public TDrawGrid
 {
@@ -46,7 +46,7 @@ class TGrid : public TDrawGrid
   int State;
   bool LeftButtonPressed;
   int CursorPos;
-  std::vector<std::vector<WideString> > Data;
+  std::vector<std::vector<String> > Data;
   TVclObject<TStringList> FTitleCaptions;
 
   TInplaceEdit* __fastcall CreateEditor(void);
@@ -71,12 +71,12 @@ class TGrid : public TDrawGrid
 
   TGridOptions __fastcall GetOptions(){return TDrawGrid::Options;};
   void AjustRows();
-  void ImportText(AnsiString Str);
-  AnsiString ExportText(char Delimiter);
+  void ImportText(String Str);
+  String ExportText(char Delimiter);
   void __fastcall SetEditorPopupMenu(TPopupMenu *Menu);
   TGridRect GetCompleteGridRect();
-  WideString DoGetText(unsigned ACol, unsigned ARow);
-  void DoSetText(unsigned ACol, unsigned ARow, const WideString &Value);
+  String DoGetText(unsigned ACol, unsigned ARow);
+  void DoSetText(unsigned ACol, unsigned ARow, const String &Value);
   DYNAMIC void __fastcall ChangeScale(int M, int D);
   TStrings* __fastcall GetTitleCaptions() {return FTitleCaptions;}
   void __fastcall SetTitleCaptions(TStrings *Strings);
@@ -102,8 +102,8 @@ public:
   void CutToClipboard();
   void PasteFromClipboard();
   bool CanCopy();
-  bool ImportFromFile(const AnsiString &FileName);
-  bool ExportToFile(const AnsiString &FileName, char Delimiter);
+  bool ImportFromFile(const String &FileName);
+  bool ExportToFile(const String &FileName, char Delimiter, bool Utf8=false);
   void AutoSizeCol(int ColIndex);
   void LastCell();
   void NextCell();
@@ -111,7 +111,7 @@ public:
   void RemoveRows(int Index, int Count);
   void SetCursorPos(int Pos);
 
-  __property WideString Cells[unsigned ACol][unsigned ARow] = {read=DoGetText, write=DoSetText};
+  __property String Cells[unsigned ACol][unsigned ARow] = {read=DoGetText, write=DoSetText};
 
 __published:
   __property bool SelectCols = {read=FSelectCols, write=FSelectCols, default=true};

@@ -6,8 +6,8 @@
 #include <Classes.hpp>
 //---------------------------------------------------------------------------
 class TSymbolDialog;
-typedef void __fastcall (__closure *TInsertAnsiCharEvent)(TSymbolDialog *Sender, char Symbol, const AnsiString &FontName);
-typedef void __fastcall (__closure *TInsertWideCharEvent)(TSymbolDialog *Sender, wchar_t Symbol, const AnsiString &FontName);
+typedef void __fastcall (__closure *TInsertAnsiCharEvent)(TSymbolDialog *Sender, char Symbol, const String &FontName);
+typedef void __fastcall (__closure *TInsertWideCharEvent)(TSymbolDialog *Sender, wchar_t Symbol, const String &FontName);
 enum TCharacterSet {csAnsiSet, csUnicodeSet};
 
 class PACKAGE TSymbolDialog : public TComponent

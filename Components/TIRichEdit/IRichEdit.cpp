@@ -316,7 +316,7 @@ unsigned TTextFormat::GetSize() const
   return GetFormat().yHeight / 20;
 }
 //---------------------------------------------------------------------------
-AnsiString TTextFormat::GetName() const
+String TTextFormat::GetName() const
 {
   return GetFormat().szFaceName;
 }
@@ -419,7 +419,7 @@ void __fastcall TIRichEdit::SetBackgroundColor(TColor Color)
   SendMessage(Handle, EM_SETBKGNDCOLOR, Color == clDefault, ColorToRGB(Color));
 }
 //---------------------------------------------------------------------------
-void TIRichEdit::SetSelText(wchar_t Ch, const AnsiString &FontName, unsigned Size)
+void TIRichEdit::SetSelText(wchar_t Ch, const String &FontName, unsigned Size)
 {
   SETTEXTEX SetTextEx = {ST_KEEPUNDO | ST_SELECTION, CP_ACP};
   AnsiString Temp;
@@ -429,7 +429,7 @@ void TIRichEdit::SetSelText(wchar_t Ch, const AnsiString &FontName, unsigned Siz
   SendMessage(Handle, EM_SETTEXTEX, reinterpret_cast<long>(&SetTextEx), reinterpret_cast<long>(Temp.c_str()));
 }
 //---------------------------------------------------------------------------
-void TIRichEdit::SetSelText(char Ch, const AnsiString &FontName, unsigned Size)
+void TIRichEdit::SetSelText(char Ch, const String &FontName, unsigned Size)
 {
   SETTEXTEX SetTextEx = {ST_KEEPUNDO | ST_SELECTION, CP_ACP};
   AnsiString Temp;
@@ -529,15 +529,15 @@ bool TIRichEdit::DoLink(UINT Msg, unsigned Min, unsigned Max)
   }
 }
 //---------------------------------------------------------------------------
-WideString TIRichEdit::GetText(int Min, int Max)
+String TIRichEdit::GetText(int Min, int Max)
 {
   int Length = GetWindowTextLengthW(Handle);
   if(Max > Length)
     Max = Length;
 
-  WideString Str;
+  String Str;
   Str.SetLength(Length);
-  ::TEXTRANGEW Range = {{Min, Max}, Str.c_bstr()};
+  ::TEXTRANGEW Range = {{Min, Max}, Str.c_str()};
   int Length2 = SendMessage(Handle, EM_GETTEXTRANGE, 0, reinterpret_cast<LONG>(&Range));
   Str.SetLength(Length2);
   return Str;
@@ -551,21 +551,6 @@ int TIRichEdit::GetLine(int Index)
 int TIRichEdit::TextSize()
 {
   return GetWindowTextLengthW(Handle);
-}
-//---------------------------------------------------------------------------
-void __fastcall TIRichEdit::SetWideSelText(const WideString &Str)
-{
-//  SendMessage(Handle, EM_REPLACESEL, 0, reinterpret_cast<LONG>(AnsiString(Str).c_str()));
-  SETTEXTEX Text = {ST_SELECTION, 1200}; //1200=Unicode
-  SendMessage(Handle, EM_SETTEXTEX, reinterpret_cast<LONG>(&Text), reinterpret_cast<LONG>(Str.c_bstr()));
-}
-//---------------------------------------------------------------------------
-WideString __fastcall TIRichEdit::GetWideSelText()
-{
-  WideString Str;
-  Str.SetLength(GetSelLength() + 1);
-  Str.SetLength(SendMessage(Handle, EM_GETSELTEXT, 0, reinterpret_cast<LONG>(Str.c_bstr())));
-  return Str;
 }
 //---------------------------------------------------------------------------
 

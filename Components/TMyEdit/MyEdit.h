@@ -21,7 +21,7 @@ private:
     VCL_MESSAGE_HANDLER(WM_DEADCHAR, TMessage, WMDeadChar)
   END_MESSAGE_MAP(TEdit)
 protected:
-  WideString ConvertToGreek(WideString Str);
+  String ConvertToGreek(String Str);
 public:
   __fastcall TMyEdit(TComponent* Owner);
 __published:

@@ -60,7 +60,7 @@ void __fastcall TMyEdit::WMDeadChar(TMessage &Message)
     PostMessage(Handle, WM_KEYUP, VK_SPACE, 0);
 }
 //---------------------------------------------------------------------------
-WideString TMyEdit::ConvertToGreek(WideString Str)
+String TMyEdit::ConvertToGreek(String Str)
 {
   for(int I = 1; I <= Str.Length(); I++)
     if(Str[I] >= L'a' && Str[I] <= L'z')

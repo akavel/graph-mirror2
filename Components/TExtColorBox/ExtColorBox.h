@@ -20,8 +20,8 @@ private:
   bool DroppedWidthFound;
   bool FShowDefault;
   bool FShowCustom;
-  WideString FDefaultName;
-  WideString FCustomName;
+  String FDefaultName;
+  String FCustomName;
   TColor FSelected; //Used until we have finished loading
   bool ListSelected;
 
@@ -96,8 +96,8 @@ __published:
   __property bool ShowCustom = {read=FShowCustom, write=FShowCustom, default=true};
   __property bool ShowDefault = {read=FShowDefault, write=FShowDefault, default=false};
   __property TColor Selected = {read=GetSelected, write=SetSelected};
-  __property WideString DefaultName = {read=FDefaultName, write=FDefaultName};
-  __property WideString CustomName = {read=FCustomName, write=FCustomName};
+  __property String DefaultName = {read=FDefaultName, write=FDefaultName};
+  __property String CustomName = {read=FCustomName, write=FCustomName};
 };
 //---------------------------------------------------------------------------
 #endif
