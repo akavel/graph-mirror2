@@ -897,7 +897,7 @@ void TDrawLegend::Visit(TRelation &Relation)
   y += TextHeight + Size(6);
 }
 //---------------------------------------------------------------------------
-void TDraw::DrawPointLabel(TCanvas *Canvas, TPoint Pos, int PointSize, const std::string &Label, TLabelPosition LabelPosition)
+void TDraw::DrawPointLabel(TCanvas *Canvas, TPoint Pos, int PointSize, const std::wstring &Label, TLabelPosition LabelPosition)
 {
   Canvas->Brush->Style = bsClear;
   TSize TextSize = Canvas->TextExtent(Label.c_str());

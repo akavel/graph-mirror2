@@ -72,17 +72,17 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
     long double x = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, x += ds)
     {
-      AnsiString Str = DoubleToStr(x, (x >= 10000 || x <= -10000) ? 3 : Digits);
+      String Str = DoubleToStr(x, (x >= 10000 || x <= -10000) ? 3 : Digits);
       //Calculate back to take care of rounding. What is written is also what is used for evaluation
       x = Str.ToDouble();
       Grid1->Cells[0][N] = Str;
-      WideString y, dy, ddy; //Default to empty string
+      String y, dy, ddy; //Default to empty string
       const Func32::TFunc &StdFunc = F->GetFunc();
       try
       {
-        y = ComplexToWideString(UseReal ? Func32::TComplex(StdFunc.CalcY(x)) : StdFunc.CalcY(Func32::TComplex(x)));
-        dy = ComplexToWideString(UseReal ? Func32::TComplex(Dif1.CalcY(x)) : Dif1.CalcY(Func32::TComplex(x)));
-        ddy = ComplexToWideString(UseReal ? Func32::TComplex(Dif2.CalcY(x)) : Dif2.CalcY(Func32::TComplex(x)));
+        y = ComplexToString(UseReal ? Func32::TComplex(StdFunc.CalcY(x)) : StdFunc.CalcY(Func32::TComplex(x)));
+        dy = ComplexToString(UseReal ? Func32::TComplex(Dif1.CalcY(x)) : Dif1.CalcY(Func32::TComplex(x)));
+        ddy = ComplexToString(UseReal ? Func32::TComplex(Dif2.CalcY(x)) : Dif2.CalcY(Func32::TComplex(x)));
       }
       catch(Func32::ECalcError&)
       { //Ignore errors and continue
@@ -110,10 +110,10 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
     catch(Func32::EFuncError&)
     {
     }
-    
+
     for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
     {
-      AnsiString Str = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
+      String Str = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
       //Calculate back to take care of rounding. What is written is also what is used for evaluation
       t = Str.ToDouble();
       Grid1->Cells[0][N] = Str;
@@ -122,9 +122,9 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
       try
       {
         Grid1->Cells[1][N] = "";
-        Grid1->Cells[1][N] = ComplexToWideString(UseReal ? Func32::TComplex(F.CalcX(t)) : F.CalcX(Func32::TComplex(t)));
+        Grid1->Cells[1][N] = ComplexToString(UseReal ? Func32::TComplex(F.CalcX(t)) : F.CalcX(Func32::TComplex(t)));
         xDif = UseReal ? Func32::TComplex(Dif.CalcX(t)) : Dif.CalcX(Func32::TComplex(t));
-        Grid1->Cells[3][N] = ComplexToWideString(xDif);
+        Grid1->Cells[3][N] = ComplexToString(xDif);
       }
       catch(Func32::EFuncError&)
       {
@@ -134,9 +134,9 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
       try
       {
         Grid1->Cells[2][N] = "";
-        Grid1->Cells[2][N] = ComplexToWideString(UseReal ? Func32::TComplex(F.CalcY(t)) : F.CalcY(Func32::TComplex(t)));
+        Grid1->Cells[2][N] = ComplexToString(UseReal ? Func32::TComplex(F.CalcY(t)) : F.CalcY(Func32::TComplex(t)));
         yDif = UseReal ? Func32::TComplex(Dif.CalcY(t)) : Dif.CalcY(Func32::TComplex(t));
-        Grid1->Cells[4][N] = ComplexToWideString(yDif);
+        Grid1->Cells[4][N] = ComplexToString(yDif);
       }
       catch(Func32::EFuncError&)
       {
@@ -144,7 +144,7 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
       }
 
       if(real(xDif) != 0 || imag(xDif) != 0)
-        Grid1->Cells[5][N] = ComplexToWideString(yDif / xDif);
+        Grid1->Cells[5][N] = ComplexToString(yDif / xDif);
       else
         Grid1->Cells[5][N] = "";
 
@@ -169,18 +169,18 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
     double t = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
     {
-      AnsiString Str = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
+      String Str = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
       //Calculate back to take care of rounding. What is written is also what is used for evaluation
       t = Str.ToDouble();
       Grid1->Cells[0][N] = Str;
-      WideString r, x, y, dr, dydx;
+      String r, x, y, dr, dydx;
       try
       {
-        r = ComplexToWideString(Func32::TComplex(F.CalcR(t)));
-        x = ComplexToWideString(UseReal ? Func32::TComplex(F.CalcX(t)) : F.CalcX(Func32::TComplex(t)));
-        y = ComplexToWideString(UseReal ? Func32::TComplex(F.CalcY(t)) : F.CalcY(Func32::TComplex(t)));
-        dr = ComplexToWideString(Dif.CalcR(t));
-        dydx = ComplexToWideString(F.CalcSlope(t));
+        r = ComplexToString(Func32::TComplex(F.CalcR(t)));
+        x = ComplexToString(UseReal ? Func32::TComplex(F.CalcX(t)) : F.CalcX(Func32::TComplex(t)));
+        y = ComplexToString(UseReal ? Func32::TComplex(F.CalcY(t)) : F.CalcY(Func32::TComplex(t)));
+        dr = ComplexToString(Dif.CalcR(t));
+        dydx = ComplexToString(F.CalcSlope(t));
       }
       catch(Func32::ECalcError&)
       { //Ignore errors and continue
@@ -201,13 +201,13 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
   ProgressForm1->Close();
 }
 //---------------------------------------------------------------------------
-void TForm15::SetCaptions(const char*const* Captions)
+void TForm15::SetCaptions(const wchar_t*const* Captions)
 {
   for(int I = 0; I < 5; I++)
   {
-    Grid1->Cells[I+1][0] = ToWideString(Captions[I]);
-    PopupMenu1->Items->Items[I]->Caption = LoadRes(RES_SHOW, Captions[I]);
-    PopupMenu1->Items->Items[I]->Hint = AnsiString().sprintf(AnsiString(PopupMenu1->Items->Items[I]->Hint).c_str(), Captions[I]);
+    Grid1->Cells[I+1][0] = Captions[I];
+    PopupMenu1->Items->Items[I]->Caption = LoadRes(RES_SHOW, String(Captions[I]));
+    PopupMenu1->Items->Items[I]->Hint = String().sprintf(PopupMenu1->Items->Items[I]->Hint.c_str(), Captions[I]);
     PopupMenu1->Items->Items[I]->Visible = Captions[I][0] != '\0';
   }
 }
@@ -217,7 +217,7 @@ void TForm15::ShowTable(const TBaseFuncType *F)
   Func = F;
   if(dynamic_cast<const TStdFunc*>(Func))
   {
-    const char *Captions[] = {"f(x)", "f'(x)", "f''(x)", "", ""};
+    const wchar_t *Captions[] = {L"f(x)", L"f'(x)", L"f''(x)", L"", L""};
     Grid1->ColCount = 4;
     Grid1->Cells[0][0] = "x";
     SetCaptions(Captions);
@@ -225,7 +225,7 @@ void TForm15::ShowTable(const TBaseFuncType *F)
   }
   else if(dynamic_cast<const TParFunc*>(Func))
   {
-    const char *Captions[] = {"x(t)", "y(t)", "dx/dt", "dy/dt", "dy/dx"};
+    const wchar_t *Captions[] = {L"x(t)", L"y(t)", L"dx/dt", L"dy/dt", L"dy/dx"};
     Grid1->ColCount = 6;
     Grid1->Cells[0][0] = "t";
     Label4->Caption = L"\x394t=";
@@ -233,7 +233,7 @@ void TForm15::ShowTable(const TBaseFuncType *F)
   }
   else if(dynamic_cast<const TPolFunc*>(Func))
   {
-    const char *Captions[] = {"r(t)", "x(t)", "y(t)", "dr/dt", "dy/dx"};
+    const wchar_t *Captions[] = {L"r(t)", L"x(t)", L"y(t)", L"dr/dt", L"dy/dx"};
     Grid1->ColCount = 6;
     Grid1->Cells[0][0] = "t";
     Label4->Caption = L"\x394t=";
@@ -267,7 +267,7 @@ void __fastcall TForm15::FormResize(TObject *Sender)
 void __fastcall TForm15::Popup1_ExportClick(TObject *Sender)
 {
   if(SaveDialog1->Execute())
-    if(!Grid1->ExportToFile(SaveDialog1->FileName, SaveDialog1->FilterIndex == 1 ? ';' : '\t'))
+    if(!Grid1->ExportToFile(SaveDialog1->FileName, SaveDialog1->FilterIndex == 1 ? ';' : '\t', true))
       MessageBox(LoadRes(RES_FILE_ACCESS, SaveDialog1->FileName), LoadRes(RES_WRITE_FAILED), MB_ICONSTOP);
 }
 //---------------------------------------------------------------------------

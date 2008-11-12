@@ -22,6 +22,7 @@
 #include <atl\atlmod.h>
 #include "OleServerImpl.h"
 #include "StackTrace.h"
+#include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
 USEFORM("Forms\Unit5.cpp", Form5);
 USEFORM("Forms\Unit6.cpp", Form6);
@@ -71,11 +72,11 @@ WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
     Application->BiDiMode = bdLeftToRight;
 
     //Translations are used by UpdateRegistry(), which is called from TApplication::Initialize()
-    AnsiString Language = GetRegValue(REGISTRY_KEY, "Language", HKEY_CURRENT_USER, "");
-    if(Language.IsEmpty())
-      LoadLanguage(GetRegValue(REGISTRY_KEY, "Language", HKEY_LOCAL_MACHINE, "English"));
+    std::wstring Language = GetRegValue(REGISTRY_KEY, L"Language", HKEY_CURRENT_USER, L"");
+    if(Language.empty())
+      LoadLanguage(GetRegValue(REGISTRY_KEY, L"Language", HKEY_LOCAL_MACHINE, L"English").c_str());
     else
-      LoadLanguage(Language);
+      LoadLanguage(Language.c_str());
 
      Application->Initialize();
      Application->MainFormOnTaskBar = true;

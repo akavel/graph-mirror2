@@ -25,8 +25,8 @@ TTreeNode* TAddView::AddNode(TGraphElem &Elem, int ImageIndex)
   std::replace(Str.begin(), Str.end(), L'-', L'\x2212');
 
   TTreeNode *Node = Elem.ParentFunc() ?
-    Form1->TreeView->Items->AddChild(Form1->GetNode(Elem.ParentFunc()), ToWideString(Str)) :
-    Form1->TreeView->Items->Add(NULL, ToWideString(Str));
+    Form1->TreeView->Items->AddChild(Form1->GetNode(Elem.ParentFunc()), Str.c_str()) :
+    Form1->TreeView->Items->Add(NULL, Str.c_str());
 
   Node->ImageIndex = ImageIndex;
   Node->SelectedIndex = ImageIndex;

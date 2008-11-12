@@ -120,9 +120,9 @@ __published:	// IDE-managed Components
   void __fastcall RadioButtonClick(TObject *Sender);
   void __fastcall EditChange(TObject *Sender);
   void __fastcall GridGetText(TObject *Sender, long ACol, long ARow,
-          WideString &Value);
+          String &Value);
   void __fastcall GridSetText(TObject *Sender, long ACol, long ARow,
-          const WideString &Value);
+          const String &Value);
 
 private:	// User declarations
   boost::shared_ptr<TPointSeries> Series;
@@ -131,7 +131,7 @@ private:	// User declarations
 
   static HPEN SetPen(TColor Color, TPenStyle Style, int Width);
   void UpdateErrorBars();
-  std::string& GetText(int ACol, int ARow);
+  std::wstring& GetText(int ACol, int ARow);
   void Translate();
 
 public:		// User declarations

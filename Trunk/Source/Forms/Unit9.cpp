@@ -110,7 +110,7 @@ void TForm9::EndValueChanged(int X, int Y)
   {
     double t = FindNearestPoint(Func, X, Y);
     if(EvalType == etArea || EvalType == etArc)
-      AreaFrame1->Edit2->Text = _isnan(t) ? AnsiString("") : RoundToStr(t, Form1->Data);
+      AreaFrame1->Edit2->Text = _isnan(t) ? String("") : RoundToStr(t, Form1->Data);
   }
 }
 //---------------------------------------------------------------------------
@@ -201,7 +201,7 @@ void __fastcall TForm9::Edit1Change(TObject *Sender)
   catch(Func32::EFuncError &Error)
   {
     if(Error.ErrorCode != Func32::ecEmptyString)
-      Form1->ShowStatusError(ToWideString(VisibleFrame->GetErrorPrefix()) + GetErrorMsg(Error));
+      Form1->ShowStatusError(ToUString(VisibleFrame->GetErrorPrefix()) + GetErrorMsg(Error));
   }
   catch(EOverflow&)
   {

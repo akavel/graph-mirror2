@@ -21,8 +21,8 @@ public:
   TOleObjectElem();
   TOleObjectElem(const Func32::TDblPoint &APos);
   std::wstring MakeText() const;
-  void WriteToIni(class TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
+  void WriteToIni(class TConfigFileSection &IniFile) const;
+  void ReadFromIni(const TConfigFileSection &IniFile);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TOleObjectElem(*this));}
   bool InsertObjectDialog();

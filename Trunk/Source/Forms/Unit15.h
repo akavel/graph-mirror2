@@ -55,7 +55,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
   const TBaseFuncType *Func;
 
-  void SetCaptions(const char*const* Captions);
+  void SetCaptions(const wchar_t*const* Captions);
 
 public:		// User declarations
   __fastcall TForm15(TComponent* Owner);

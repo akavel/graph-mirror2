@@ -32,8 +32,8 @@ struct TAxis
   double GridUnit;
 
   TAxis();
-  void WriteToIni(TConfigFile &IniFile, const std::string &Prefix) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Prefix);
+  void WriteToIni(TConfigFileSection &IniFile, const std::wstring &Prefix) const;
+  void ReadFromIni(const TConfigFileSection &IniFile, const std::wstring &Prefix);
 };
 
 enum TAxesArrows
@@ -79,8 +79,8 @@ struct TAxes
   TGridStyle GridStyle;
 
   TAxes();
-  void WriteToIni(TConfigFile &IniFile) const;
-  void ReadFromIni(const TConfigFile &);
+  void WriteToIni(TConfigFileSection &IniFile) const;
+  void ReadFromIni(const TConfigFileSection &IniFile);
   void HandleZoomSquare(double xyScale);
 };
 
@@ -92,8 +92,8 @@ struct TDefaultData
   unsigned Style;
   TColor Color;
   unsigned Size;
-  std::string ToString() const;
-  void FromString(const std::string &Str, unsigned AStyle, TColor AColor, unsigned ASize);
+  std::wstring ToString() const;
+  void FromString(const std::wstring &Str, unsigned AStyle, TColor AColor, unsigned ASize);
   void Set(unsigned AStyle, TColor AColor, unsigned ASize);
 };
 
@@ -176,8 +176,8 @@ public:
   void Update();
   void Clear();
   void Swap(TCustomFunctions &Other) {Functions.swap(Other.Functions); SymbolList.Swap(Other.SymbolList);}
-  void WriteToIni(TConfigFile &IniFile) const;
-  void ReadFromIni(const TConfigFile &IniFile);
+  void WriteToIni(TConfigFileSection &IniFile) const;
+  void ReadFromIni(const TConfigFileSection &IniFile);
   TConstIterator Begin() const {return Functions.begin();}
   TConstIterator End() const {return Functions.end();}
 };
@@ -198,8 +198,8 @@ struct TAnimationInfo
   double FramesPerSecond;
 
   TAnimationInfo() : Width(0), Height(0), FramesPerSecond(1) {}
-  void WriteToIni(TConfigFile &IniFile) const;
-  void ReadFromIni(const TConfigFile &IniFile);
+  void WriteToIni(TConfigFileSection &IniFile) const;
+  void ReadFromIni(const TConfigFileSection &IniFile);
   void Clear();
 };
 

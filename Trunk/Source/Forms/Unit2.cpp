@@ -32,10 +32,10 @@ __fastcall TForm2::TForm2(TComponent* Owner)
     TVersion FileVersion = Info.FileVersion();
     Label3->Caption = LoadRes(RES_BUILD, FileVersion.Build);
     FileVersion.Build = 0;
-    Version->Caption = LoadRes(RES_VERSION, FileVersion.Text());
+    Version->Caption = ToUString(LoadRes(RES_VERSION, FileVersion.Text()));
     if(Info.FileFlags() & ffDebug)
       Version->Caption = Version->Caption + " beta";
-    Copyright->Caption = Info.StringValue("LegalCopyright").c_str();
+    Copyright->Caption = Info.StringValue(L"LegalCopyright").c_str();
   }
   Label2->Caption = EMAIL;
   Label5->Caption = HOMEPAGE;
@@ -58,7 +58,7 @@ void __fastcall TForm2::Label2Click(TObject *Sender)
 {
   std::wstring Str = L"Mailto:";
   Str += EMAIL;
-  Str += L"?Subject=Bug report/suggestions for Graph " + ToWString(TVersionInfo().StringValue("ProductVersion"));
+  Str += L"?Subject=Bug report/suggestions for Graph " + TVersionInfo().StringValue(L"ProductVersion");
   ShellExecute(Handle, NULL, Str.c_str(), NULL, NULL, SW_SHOWDEFAULT);
 }
 //---------------------------------------------------------------------------

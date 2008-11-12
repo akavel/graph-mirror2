@@ -61,21 +61,21 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData, int AWidth, int AHe
   unsigned ImageWidth = AnimationInfo.Width == 0 ? AWidth : AnimationInfo.Width;
   unsigned ImageHeight = AnimationInfo.Height == 0 ? AHeight : AnimationInfo.Height;
 
-  int Index = ComboBox1->Items->IndexOf(ToWideString(AnimationInfo.Constant));
+  int Index = ComboBox1->Items->IndexOf(ToUString(AnimationInfo.Constant));
   ComboBox1->ItemIndex = Index == -1 ? 0 : Index;
 
   if(Index == -1)
     ComboBox1Change(ComboBox1);
   else
   {
-    Edit1->Text = ToWideString(AnimationInfo.ConstantList[AnimationInfo.Constant].Min);
-    Edit2->Text = ToWideString(AnimationInfo.ConstantList[AnimationInfo.Constant].Max);
-    Edit3->Text = ToWideString(AnimationInfo.ConstantList[AnimationInfo.Constant].Step);
+    Edit1->Text = ToUString(AnimationInfo.ConstantList[AnimationInfo.Constant].Min);
+    Edit2->Text = ToUString(AnimationInfo.ConstantList[AnimationInfo.Constant].Max);
+    Edit3->Text = ToUString(AnimationInfo.ConstantList[AnimationInfo.Constant].Step);
   }
 
-  Edit4->Text = ToWideString(ImageWidth);
-  Edit5->Text = ToWideString(ImageHeight);
-  Edit6->Text = ToWideString(AnimationInfo.FramesPerSecond);
+  Edit4->Text = ImageWidth;
+  Edit5->Text = ImageHeight;
+  Edit6->Text = AnimationInfo.FramesPerSecond;
 
   ScaleForm(this);
 }
@@ -88,8 +88,8 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     return;
 
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-  unsigned ImageWidth = ToInt(Edit4->Text);
-  unsigned ImageHeight = ToInt(Edit5->Text);;
+  unsigned ImageWidth = Edit4->Text.ToInt();
+  unsigned ImageHeight = Edit5->Text.ToInt();
   if(Edit4->Modified || Edit5->Modified)
   {
     AnimationInfo.Width = ImageWidth;
@@ -247,9 +247,9 @@ void __fastcall TForm19::ComboBox1Change(TObject *Sender)
 
   AnimationInfo.Constant = ::ToString(ComboBox1->Text);
   TAnimationConstant &AnimationConstant = AnimationInfo.ConstantList[::ToString(ComboBox1->Text)];
-  Edit1->Text = ToWideString(AnimationConstant.Min);
-  Edit2->Text = ToWideString(AnimationConstant.Max);
-  Edit3->Text = ToWideString(AnimationConstant.Step);
+  Edit1->Text = ToUString(AnimationConstant.Min);
+  Edit2->Text = ToUString(AnimationConstant.Max);
+  Edit3->Text = ToUString(AnimationConstant.Step);
 }
 //---------------------------------------------------------------------------
 

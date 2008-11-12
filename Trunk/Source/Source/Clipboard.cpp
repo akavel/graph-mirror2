@@ -31,10 +31,10 @@ void TGraphClipboard::Copy(const TBaseFuncType *Func)
 {
   TConfigFile IniFile;
   TData::WriteInfoToIni(IniFile);
-  IniFile.Write("Data", "FuncCount", 1);
-  Func->WriteToIni(IniFile, "Func1");
+  IniFile.Section(L"Data").Write(L"FuncCount", 1);
+  Func->WriteToIni(IniFile.Section(L"Func1"));
 
-  std::string Str = IniFile.GetAsString();
+  std::wstring Str = IniFile.GetAsString();
   SetClipboardData(ClipboardFormat, Str.c_str(), Str.size());
 }
 //---------------------------------------------------------------------------
@@ -42,10 +42,10 @@ void TGraphClipboard::Copy(const TPointSeries *PointSeries)
 {
   TConfigFile IniFile;
   TData::WriteInfoToIni(IniFile);
-  IniFile.Write("Data", "PointSeriesCount", 1);
-  PointSeries->WriteToIni(IniFile, "PointSeries1");
+  IniFile.Section(L"Data").Write(L"PointSeriesCount", 1);
+  PointSeries->WriteToIni(IniFile.Section(L"PointSeries1"));
 
-  std::string Str = IniFile.GetAsString();
+  std::wstring Str = IniFile.GetAsString();
   SetClipboardData(ClipboardFormat, Str.c_str(), Str.size());
 }
 //---------------------------------------------------------------------------
@@ -53,10 +53,10 @@ void TGraphClipboard::Copy(const TTextLabel *Label)
 {
   TConfigFile IniFile;
   TData::WriteInfoToIni(IniFile);
-  IniFile.Write("Data", "LabelCount", 1);
-  Label->WriteToIni(IniFile, "Label1");
+  IniFile.Section(L"Data").Write(L"LabelCount", 1);
+  Label->WriteToIni(IniFile.Section(L"Label1"));
 
-  std::string Str = IniFile.GetAsString();
+  std::wstring Str = IniFile.GetAsString();
   SetClipboardData(ClipboardFormat, Str.c_str(), Str.size());
 }
 //---------------------------------------------------------------------------
@@ -64,10 +64,10 @@ void TGraphClipboard::Copy(const TRelation *Relation)
 {
   TConfigFile IniFile;
   TData::WriteInfoToIni(IniFile);
-  IniFile.Write("Data", "RelationCount", 1);
-  Relation->WriteToIni(IniFile, "Relation1");
+  IniFile.Section(L"Data").Write(L"RelationCount", 1);
+  Relation->WriteToIni(IniFile.Section(L"Relation1"));
 
-  std::string Str = IniFile.GetAsString();
+  std::wstring Str = IniFile.GetAsString();
   SetClipboardData(ClipboardFormat, Str.c_str(), Str.size());
 }
 //---------------------------------------------------------------------------
@@ -82,7 +82,7 @@ void TGraphClipboard::Paste(TData &Data)
     std::vector<char> Str(DataSize+1);  //It looks like we need a zero termination
     GetClipboardData(ClipboardFormat, &Str[0], DataSize);
     TConfigFile IniFile;
-    IniFile.LoadFromString(&Str[0]);
+    IniFile.LoadFromString(String(&Str[0]).c_str());
 
     unsigned ElemNo = Data.ElemCount();
 

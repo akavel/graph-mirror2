@@ -117,30 +117,30 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       Regression(Points, TempFunc, Values);
 
       boost::shared_ptr<TStdFunc> Func(new TStdFunc(TempFunc.ConvToFunc(Values, 0)));
-      Func->SetLegendText(Func->MakeText() + L"; R²=" + ToWString(RoundToString(Correlation(Points, Func->GetFunc()), Data)));
+      Func->SetLegendText(Func->MakeText() + L"; R²=" + RoundToString(Correlation(Points, Func->GetFunc()), Data));
       Func->From.Value = -INF;
       Func->To.Value = +INF;
-      Func->SetSteps(TTextValue(0, ""));
+      Func->SetSteps(TTextValue(0, L""));
       BaseFunc = Func;
     }
     else if(RadioButton6->Checked) //Moving average
     {
-      if(ToInt(Edit4->Text) == 0)
+      if(Edit4->Text.ToInt() == 0)
       {
         MessageBox(LoadRes(RES_INT_GREATER_ZERO, StaticText2->Caption), LoadRes(RES_ERROR_IN_VALUE));
         return;
       }
 
-      unsigned N = ToInt(Edit4->Text);
+      unsigned N = Edit4->Text.ToInt();
 
       //Workaround for compiler bug in bcc 5.6.4. The following two lines may not be put together.
       boost::shared_ptr<TParFunc> Func;
       Func.reset(new TParFunc(Func32::MovingAverage(Points, N)));
 
       Func->From.Value = 0;
-      Func->From.Text = "0";
+      Func->From.Text = L"0";
       Func->To.Value = Points.size() - N;
-      Func->To.Text = ::ToString(Func->To.Value);
+      Func->To.Text = ToWString(Func->To.Value);
       Func->SetSteps(TTextValue(1000));
       BaseFunc = Func;
     }
@@ -160,22 +160,22 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       else
         throw Exception("No radio button selected!");
 
-      unsigned N = ToInt(Edit1->Text);
+      unsigned N = Edit1->Text.ToInt();
       //WARNING: Do not initialize Func with pointer. It will crash if Trendline() fails because of bug in Bcc 5.6.4
       boost::shared_ptr<TStdFunc> Func;
       if(CheckBox1->Checked)
         Func.reset(new TStdFunc(TrendLine(Type, Points, N, MakeFloat(Edit5))));
       else
         Func.reset(new TStdFunc(TrendLine(Type, Points, N)));
-      Func->SetLegendText(Func->MakeText() + L"; R²=" + ToWString(RoundToString(Correlation(Points, Func->GetFunc()), Data)));
+      Func->SetLegendText(Func->MakeText() + L"; R²=" + RoundToString(Correlation(Points, Func->GetFunc()), Data));
       Func->From.Value = -INF;
       Func->To.Value = +INF;
-      Func->SetSteps(TTextValue(0, ""));
+      Func->SetSteps(TTextValue(0, L""));
       BaseFunc = Func;
     }
 
     BaseFunc->Color = ExtColorBox1->Selected;
-    BaseFunc->Size = ToInt(Edit2->Text);
+    BaseFunc->Size = Edit2->Text.ToInt();
     BaseFunc->Style = LineSelect1->LineStyle;
     Data.Add(BaseFunc);
     UndoList.Push(TUndoAdd(Data, BaseFunc));
@@ -189,7 +189,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
     return;
   }
 
-  Property.DefaultTrendline.Set(LineSelect1->LineStyle, ExtColorBox1->Selected, ToInt(Edit2->Text));
+  Property.DefaultTrendline.Set(LineSelect1->LineStyle, ExtColorBox1->Selected, Edit2->Text.ToInt());
   ModalResult = mrOk;
 }
 //---------------------------------------------------------------------------
@@ -218,7 +218,7 @@ void __fastcall TForm13::Button4Click(TObject *Sender)
   try
   {
     std::wstring ModelName;
-    if(CreateForm<TForm8>(Data)->AddModel(::ToString(Edit3->Text), ModelName))
+    if(CreateForm<TForm8>(Data)->AddModel(::ToWString(Edit3->Text), ModelName))
       ShowUserModels(ModelName);
   }
   catch(Func32::EFuncError &Error)
@@ -345,7 +345,7 @@ void __fastcall TForm13::Popup_ImportClick(TObject *Sender)
   {
     std::auto_ptr<TStrings> Strings(new TStringList);
     Strings->LoadFromFile(OpenDialog1->FileName);
-    Data.ImportUserModels(AnsiString(Strings->Text).c_str());
+    Data.ImportUserModels(Strings->Text.c_str());
     ShowUserModels(L"");
   }
 }

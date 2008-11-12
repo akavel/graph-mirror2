@@ -108,7 +108,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //  Application->Icon->LoadFromResourceName((THandle)MainInstance, "ICON1");
 
   //Set "AllowOLE" to 1 in the Registry to use OLE with instances not started with "-Embedding"
-  if(!FindCmdLineSwitch("EMBEDDING") && !GetRegValue(REGISTRY_KEY, "AllowOLE", HKEY_CURRENT_USER, 0))
+  if(!FindCmdLineSwitch(L"EMBEDDING") && !GetRegValue(REGISTRY_KEY, L"AllowOLE", HKEY_CURRENT_USER, 0))
     //Prevent OLE instantiation if not started for use with OLE
     _Module.RevokeClassObjects();
 
@@ -168,11 +168,11 @@ void TForm1::HandleCommandLine()
 
     if(ParamCount() > 1)
     {
-      typedef std::map<AnsiString,AnsiString> TCommandList;
+      typedef std::map<String,String> TCommandList;
       TCommandList CommandList;
       for(int I = 1; I <= ParamCount(); I++)
       {
-        AnsiString Str = ParamStr(I);
+        String Str = ParamStr(I);
         if(Str[1] == '-' || Str[1] == '/')
         {
           int I = Str.Pos('=');
@@ -191,7 +191,7 @@ void TForm1::HandleCommandLine()
         int ImageHeight = CommandList["height"].ToIntDef(Image1->Height);
         TImageOptions ImageOptions(ImageWidth, ImageHeight);
         ImageOptions.UseCustomSize = true;
-        AnsiString FileName = Iter->second;
+        String FileName = Iter->second;
         SaveAsImage(FileName, ImageOptions);
         Close();
       }
@@ -209,7 +209,7 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 
   //Form9 must be created before it can be docked
   //Wait with docking until the form is shown. Else the COM client will blink in the title when we are running as COM server
-  if(GetRegValue(REGISTRY_KEY, "DockCalcForm", HKEY_CURRENT_USER, true))
+  if(GetRegValue(REGISTRY_KEY, L"DockCalcForm", HKEY_CURRENT_USER, true))
   {
     if(Form9)
       Form9->ManualDock(Panel4);
@@ -254,8 +254,8 @@ void TForm1::Initialize()
   //Add degree symbols (°) so we get 270° in the rotation menus, but ignore the last "Custom..."
   for(int I = 0; I < Label_Placement->Count - 1; I++)
   {
-    Label_Rotation->Items[I]->Caption = Label_Rotation->Items[I]->Caption + WideString(L'\xB0');
-    Tree_Rotation->Items[I]->Caption = Tree_Rotation->Items[I]->Caption + WideString(L'\xB0');
+    Label_Rotation->Items[I]->Caption = Label_Rotation->Items[I]->Caption + L'\xB0';
+    Tree_Rotation->Items[I]->Caption = Tree_Rotation->Items[I]->Caption + '\xB0';
   }
 
   //Be careful about using TreeView->Items before OnShow. It has probably not been streamed yet
@@ -264,10 +264,10 @@ void TForm1::Initialize()
   struct TComponentInfo
   {
     TComponent *Component;
-    AnsiString Caption;
-    AnsiString Hint;
+    String Caption;
+    String Hint;
     TComponentInfo(TComponent *AComponent)
-      : Component(AComponent), Caption(GetWideStrProp(AComponent, "Caption")), Hint(GetWideStrProp(AComponent, "Hint")) {}
+      : Component(AComponent), Caption(GetStrProp(AComponent, "Caption")), Hint(GetStrProp(AComponent, "Hint")) {}
   };
 
 void TForm1::Translate()
@@ -323,7 +323,7 @@ void TForm1::Translate()
   //Else the menu will change color from grey to white.
   //Warning: Graph will throw EMenuError at the line "MainMenu->Images = NULL;" under startup when run in Wine under Linux.
   //I have no ide why. It looks like we can detect Wine by looking for the registry key HKCU\Software\Wine.
-  if(!RegKeyExists("Software\\Wine", HKEY_CURRENT_USER))
+  if(!RegKeyExists(L"Software\\Wine", HKEY_CURRENT_USER))
     MainMenu->Images = NULL;
 
   for(unsigned I = 0; I < TranslateList.size(); I++)
@@ -612,7 +612,7 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift,
   if(yDigits < 0)
     yDigits = 0;
 
-  WideString Str = "x = " + FloatToStrF(Draw.xCoord(X), ffFixed, xPrecision, xDigits) + "    y = " +
+  String Str = L"x = " + FloatToStrF(Draw.xCoord(X), ffFixed, xPrecision, xDigits) + L"    y = " +
     FloatToStrF(Draw.yCoord(Y), ffFixed, yPrecision, yDigits);
   for(int I = 1; I <= Str.Length(); I++)
     if(Str[I] == '-')
@@ -695,7 +695,7 @@ bool TForm1::AskSave(void)
   bool Result = true;
   if(Data.IsModified())
   {
-    WideString Str = Data.GetFileName().empty() ? LoadRes(RES_SAVE_CHANGES) : LoadRes(RES_SAVE_CHANGES_IN, ExtractFileName(Data.GetFileName().c_str()));
+    String Str = Data.GetFileName().empty() ? LoadRes(RES_SAVE_CHANGES) : LoadRes(RES_SAVE_CHANGES_IN, ExtractFileName(Data.GetFileName().c_str()));
     switch(MessageBox(Str, NAME, MB_YESNOCANCEL | MB_ICONEXCLAMATION))
     {
       case IDYES:
@@ -762,24 +762,23 @@ void TForm1::LoadSettings(void)
 
   Python::InitPlugins();
 
-  if(Registry.ValueExists("ToolBar"))
-    CreateToolBar(Registry.Read("ToolBar", "").c_str());
+  if(Registry.ValueExists(L"ToolBar"))
+    CreateToolBar(Registry.Read(L"ToolBar", L"").c_str());
 
-  if(Registry.ValueExists("Language"))
-    ChangeLanguage(Registry.Read("Language", "English").c_str());
+  if(Registry.ValueExists(L"Language"))
+    ChangeLanguage(Registry.Read(L"Language", L"English").c_str());
   else
-    ChangeLanguage(GetRegValue(REGISTRY_KEY, "Language", HKEY_LOCAL_MACHINE, "English"));
+    ChangeLanguage(GetRegValue(REGISTRY_KEY, L"Language", HKEY_LOCAL_MACHINE, L"English").c_str());
 
-  if(Registry.ValueExists("IntegrateSteps"))
-    Func32::IntegrateSteps = Registry.Read("IntegrateSteps");
+  Func32::IntegrateSteps = Registry.Read("IntegrateSteps", Func32::IntegrateSteps);
 
-  if(Registry.KeyExists(REGISTRY_KEY "\\Property"))
-    Registry.OpenKey(REGISTRY_KEY "\\Property");
+  if(Registry.KeyExists(REGISTRY_KEY L"\\Property"))
+    Registry.OpenKey(REGISTRY_KEY L"\\Property");
   Property.Read(Registry);
 
   StartToolBar = GetToolBar(); //Save shown toolbar
 
-  const char *Models =  "[Hyperbolic fit]\nModel=$a+$b/x\n$a=1\n$b=1\n"
+  const wchar_t *Models =  L"[Hyperbolic fit]\nModel=$a+$b/x\n$a=1\n$b=1\n"
                           "[Sinusoidal]\nModel=$a+$b*sin($c*x+$d)\n$a=1\n$b=1\n$c=1\n$d=1\n"
                           "[Rational function]\nModel=($a+$b*x)/(1+$c*x+$d*x^2)\n$a=1\n$b=1\n$c=0\n$d=0\n"
                           "[Saturation-Growth rate]\nModel=$a*x/($b+x)\n$a=1\n$b=1\n"
@@ -787,7 +786,7 @@ void TForm1::LoadSettings(void)
                           "[Reciprocal]\nModel=1/($a*x+$b)\n$a=1\n$b=1\n"
                           "[Exponential association]\nModel=$a+$b*exp($c*x)\n$a=0\n$b=1\n$c=-1\n";
 
-  Data.ImportUserModels(Registry.Read("UserModels", Models));
+  Data.ImportUserModels(Registry.Read(L"UserModels", Models));
 }
 //---------------------------------------------------------------------------
 void TForm1::SaveSettings(void)
@@ -821,15 +820,15 @@ void TForm1::SaveSettings(void)
 
     Registry.Write("MaxUndo", UndoList.GetMaxUndo());
 
-    AnsiString ToolBar = GetToolBar();
+    String ToolBar = GetToolBar();
     if(StartToolBar != GetToolBar())
-      Registry.Write("ToolBar", ToolBar.c_str());
+      Registry.Write(L"ToolBar", ToolBar.c_str());
 
     if(Registry.CreateKey(REGISTRY_KEY "\\Property"))
       Property.Write(Registry);
   }
 
-  Registry.Write("UserModels", Data.ExportUserModels());
+  Registry.Write(L"UserModels", Data.ExportUserModels());
 }
 //---------------------------------------------------------------------------
 void TForm1::UpdateMenu()
@@ -1056,7 +1055,7 @@ void __fastcall TForm1::StatusBar1DrawPanel(TStatusBar *StatusBar,
 }
 //---------------------------------------------------------------------------
 //This shows a message in the stausbar
-void TForm1::ShowStatusMessage(const WideString &Str, bool AutoHint)
+void TForm1::ShowStatusMessage(const String &Str, bool AutoHint)
 {
   //Do not disable timer; Warnings may not be overwritten
 
@@ -1071,7 +1070,7 @@ void TForm1::ShowStatusMessage(const WideString &Str, bool AutoHint)
 //Show error message in status bar. This overwrite a normal message.
 //Timeout indicates how long the message is shown
 //Timeout=0 will show the message until CancelStatusError() is called
-void TForm1::ShowStatusError(const WideString &Str, TColor Color, unsigned Timeout)
+void TForm1::ShowStatusError(const String &Str, TColor Color, unsigned Timeout)
 {
   //Set statusbar to owner drawn; don't show hints, show error message
   StatusBar1->Panels->Items[SysLocale.MiddleEast ? 2 : 0]->Style = psOwnerDraw;
@@ -1096,7 +1095,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
   CancelStatusError();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::ApplicationEventsShowHint(AnsiString &HintStr,
+void __fastcall TForm1::ApplicationEventsShowHint(String &HintStr,
       bool &CanShow, THintInfo &HintInfo)
 {
   //Maximum length in pixels of hint text before line wrap
@@ -1257,14 +1256,14 @@ void __fastcall TForm1::TreeViewChange(TObject *Sender, TTreeNode *Node)
   Python::ExecutePluginEvent(Python::peSelect);
 }
 //---------------------------------------------------------------------------
-void TForm1::ChangeLanguage(const AnsiString &Lang)
+void TForm1::ChangeLanguage(const String &Lang)
 {
   if(Lang.IsEmpty())
     return;
 
   LoadLanguage(Lang);  
 
-  int DefaultBiDiMode = GetRegValue(REGISTRY_KEY, "BiDiMode", HKEY_CURRENT_USER, bdLeftToRight);
+  int DefaultBiDiMode = GetRegValue(REGISTRY_KEY, L"BiDiMode", HKEY_CURRENT_USER, bdLeftToRight);
   TBiDiMode Mode = static_cast<TBiDiMode>(ToIntDef(DefaultInstance->GetTranslationProperty("BiDiMode"), DefaultBiDiMode));
   if(Mode != Application->BiDiMode)
     FlipChildren(true);
@@ -1617,7 +1616,7 @@ bool __fastcall TForm1::ApplicationEventsHelp(WORD Command, int Data,
   //This function is called from the error dialog shown at EFuncError exceptions
   //and when Help|Contents is selected
   if(Command != HELP_FINDER && HelpError)
-    Application->HelpJump(AnsiString().sprintf("Errors.html#Error%02d", HelpError));
+    Application->HelpJump(String().sprintf(L"Errors.html#Error%02d", HelpError));
   return false;
 }
 //---------------------------------------------------------------------------
@@ -1693,7 +1692,7 @@ void __fastcall TForm1::OpenActionExecute(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-bool TForm1::DoSave(const AnsiString &FileName, bool Remember)
+bool TForm1::DoSave(const String &FileName, bool Remember)
 {
   bool Result = false;
   if(FileName.IsEmpty())
@@ -1703,7 +1702,7 @@ bool TForm1::DoSave(const AnsiString &FileName, bool Remember)
     SaveDialog->Filter = LoadRes(RES_FILE_FILTER);
     if(SaveDialog->Execute())
     {
-      Result = Data.Save(AnsiString(SaveDialog->FileName).c_str(), Remember);
+      Result = Data.Save(SaveDialog->FileName.c_str(), Remember);
       if(Result)
         Recent1->FileUsed(SaveDialog->FileName);
     }
@@ -1745,7 +1744,7 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
   ActionImageOptions->LoadSettings();
   if(SaveDialogEx1->Execute())
   {
-    AnsiString FileName = SaveDialogEx1->FileName; //SaveAsImage() calls ProcessMessages() and may change SaveDialogEx1
+    String FileName = SaveDialogEx1->FileName; //SaveAsImage() calls ProcessMessages() and may change SaveDialogEx1
     switch(SaveAsImage(FileName, SaveDialogEx1->FilterIndex, *ActionImageOptions))
     {
       case seFileAccess:
@@ -2126,11 +2125,11 @@ void __fastcall TForm1::ZoomStandardActionExecute(TObject *Sender)
   UndoList.Push(TUndoAxes(Data));
   TAxis xAxis, yAxis;
 
-  AnsiString Str = GetRegValue(REGISTRY_KEY, "DefaultAxes", HKEY_CURRENT_USER, "");
+  std::wstring Str = GetRegValue(REGISTRY_KEY, L"DefaultAxes", HKEY_CURRENT_USER, L"");
   TConfigFile ConfigFile;
   ConfigFile.LoadFromString(Str.c_str());
-  xAxis.ReadFromIni(ConfigFile, "x");
-  yAxis.ReadFromIni(ConfigFile, "y");
+  xAxis.ReadFromIni(ConfigFile.Section(L"Axes"), L"x");
+  yAxis.ReadFromIni(ConfigFile.Section(L"Axes"), L"y");
 
   xAxis.Label = Data.Axes.xAxis.Label;
   yAxis.Label = Data.Axes.yAxis.Label;
@@ -2213,12 +2212,12 @@ void TForm1::CheckForUpdate(bool StartupCheck)
     std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
     std::auto_ptr<TIdHTTP> IdHTTP(new TIdHTTP(NULL));
 
-    IdHTTP->Request->UserAgent = ("Mozilla/3.0 (compatible; Graph " + Info.StringValue("ProductVersion") + ')').c_str();
+    IdHTTP->Request->UserAgent = (L"Mozilla/3.0 (compatible; Graph " + Info.StringValue(L"ProductVersion") + L')').c_str();
     IdHTTP->HandleRedirects = true;
 
-    AnsiString Url = GetRegValue(REGISTRY_KEY, "InfFile", HKEY_CURRENT_USER, INF_FILE);
-    Url += AnsiString("?Version=") + AnsiString(Info.StringValue("ProductVersion").c_str());
-    IdHTTP->Get(Url, Stream.get());
+    std::wstring Url = GetRegValue(REGISTRY_KEY, L"InfFile", HKEY_CURRENT_USER, INF_FILE);
+    Url += L"?Version=" + Info.StringValue(L"ProductVersion");
+    IdHTTP->Get(Url.c_str(), Stream.get());
 
     Stream->Position = 0;
     std::auto_ptr<TStringList> StringList(new TStringList);
@@ -2231,14 +2230,14 @@ void TForm1::CheckForUpdate(bool StartupCheck)
     String DownloadPage = IniFile->ReadString("Graph", "DownloadPage", "http:\/\/www.padowan.dk");
     std::auto_ptr<TStringList> LanguageSection(new TStringList);
 
-    AnsiString Section = IniFile->SectionExists(GetCurrentLanguage()) ? GetCurrentLanguage() : String("English");
+    String Section = IniFile->SectionExists(GetCurrentLanguage()) ? GetCurrentLanguage() : String("English");
     IniFile->ReadSectionValues(Section, LanguageSection.get());
 
-    AnsiString NewFeatures;
+    String NewFeatures;
     for(int I = 0; I < LanguageSection->Count; I++)
       if(LanguageSection->Names[I] == "NewFeatures")
       {
-        AnsiString Line = LanguageSection->Strings[I];
+        String Line = LanguageSection->Strings[I];
         if(!NewFeatures.IsEmpty())
           NewFeatures += '\n';
         NewFeatures += StringReplace(Line.SubString(Line.Pos('=') + 1, 0x7FFFFFFF), "\\n", "\r\n", TReplaceFlags() << rfReplaceAll); //Replace all "\\n" with '\n'
@@ -2252,10 +2251,10 @@ void TForm1::CheckForUpdate(bool StartupCheck)
         (Minor == Version.Minor && (Release > Version.Release ||
         (Release == Version.Release && (Info.FileFlags() & ffDebug)))))))
       {
-        AnsiString VersionString = AnsiString(Major) + '.' + Minor;
+        String VersionString = String(Major) + '.' + Minor;
         if(Release)
-          VersionString += "." + AnsiString(Release);
-        AnsiString Str = LoadRes(541, VersionString, NewFeatures);
+          VersionString += "." + String(Release);
+        String Str = LoadRes(541, VersionString, NewFeatures);
         if(StartupCheck)
           Str += LoadRes(550);
         if(MessageBox(Str, LoadRes(540), MB_YESNO) == ID_YES)
@@ -2359,14 +2358,14 @@ void __fastcall TForm1::SeparatorActionUpdate(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-void TForm1::CreateToolBar(AnsiString Str)
+void TForm1::CreateToolBar(String Str)
 {
   int Pos;
-  AnsiString LastName;
+  String LastName;
   ActionToolBar1->ActionClient->Items->Clear();
   while((Pos = Str.Pos(',')) != 0)
   {
-    AnsiString ButtonName = Str.SubString(1, Pos - 1);
+    String ButtonName = Str.SubString(1, Pos - 1);
     Str.Delete(1, Pos);
     if(ButtonName == '-')
     {
@@ -2391,9 +2390,9 @@ void TForm1::CreateToolBar(AnsiString Str)
   ActionToolBar1->Align = alTop; //Makes sure a second line is removed if empty
 }
 //---------------------------------------------------------------------------
-AnsiString TForm1::GetToolBar()
+String TForm1::GetToolBar()
 {
-  AnsiString Str;
+  String Str;
   for(int I = 0; I < ActionToolBar1->ActionClient->Items->Count; I++)
   {
     TContainedAction *Action = ActionToolBar1->ActionClient->Items->ActionClients[I]->Action;
@@ -2416,7 +2415,7 @@ void __fastcall TForm1::ToolBar_CustomizeClick(TObject *Sender)
   TCustomizeFrm *Form = CustomizeDlg->CustomizeForm;
   TranslateProperties(Form);
   Form->Tabs->Pages[1]->Caption = LoadRes(552);
-  Form->ActionsActionsLbl->Caption = LoadRes(552) + AnsiString(':');
+  Form->ActionsActionsLbl->Caption = LoadRes(552) + L':';
   Form->CatList->Items->Strings[Form->CatList->Items->Count-1] = LoadRes(553);
   Form->InfoLbl->Caption = LoadRes(554);
   Form->ActionsCatLbl->Caption = LoadRes(557);
@@ -2436,13 +2435,11 @@ void __fastcall TForm1::CustomizeDlgClose(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ApplicationEventsSettingChange(TObject *Sender,
-      int Flag, const AnsiString Section, int &Result)
+      int Flag, const String Section, int &Result)
 {
   //If local options has changed
   if(Flag == 0)
-  {
     DecimalSeparator = '.';
-  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomFitAllActionExecute(TObject *Sender)
@@ -2745,7 +2742,7 @@ void TForm1::ActivateOleUserInterface()
   Recent1->Enabled = false;
 }
 //---------------------------------------------------------------------------
-TSaveError SaveAsPdf(const AnsiString &FileName, Graphics::TBitmap *Bitmap, const std::string &Title, const std::string &Subject, Printers::TPrinterOrientation Orientation)
+TSaveError SaveAsPdf(const std::string &FileName, Graphics::TBitmap *Bitmap, const std::string &Title, const std::string &Subject, Printers::TPrinterOrientation Orientation)
 {
   std::ostringstream Stream;
   Bitmap->PixelFormat = pf8bit;
@@ -2757,12 +2754,12 @@ TSaveError SaveAsPdf(const AnsiString &FileName, Graphics::TBitmap *Bitmap, cons
   try
   {
     PDFlib p;
-    if (p.begin_document(FileName.c_str(), "") == -1)
+    if (p.begin_document(FileName, "") == -1)
       return seFileAccess;
 
-    std::string Creator = NAME " " + TVersionInfo().StringValue("ProductVersion");
-    p.set_info("Creator", Creator);
-    p.set_info("Author", Creator);
+    std::wstring Creator = NAME " " + TVersionInfo().StringValue(L"ProductVersion");
+    p.set_info("Creator", ::ToString(Creator));
+    p.set_info("Author", ::ToString(Creator));
     p.set_info("Title", Title);
     p.set_info("Subject", Subject);
     p.begin_page_ext(Width, Height, "");
@@ -2786,26 +2783,27 @@ TSaveError SaveAsPdf(const AnsiString &FileName, Graphics::TBitmap *Bitmap, cons
   }
   catch(PDFlib::Exception &ex)
   {
-    MessageBox("PDFlib exception: [" + ToString(ex.get_errnum()) + "] " + ex.get_apiname() + ": " + ex.get_errmsg(), "PDFlib exception");
+    MessageBox(L"PDFlib exception: [" + ToWString(ex.get_errnum()) + L"] " +
+      ToWString(ex.get_apiname()) + L": " + ToWString(ex.get_errmsg()), L"PDFlib exception");
     return sePdfError;
   }
 }
 //---------------------------------------------------------------------------
-TSaveError TForm1::SaveAsImage(const AnsiString &FileName, const TImageOptions &ImageOptions)
+TSaveError TForm1::SaveAsImage(const String &FileName, const TImageOptions &ImageOptions)
 {
   int ImageFileType;
-  AnsiString FileExt = ExtractFileExt(FileName);
-  if(FileExt.AnsiCompareIC(".emf") == 0)
+  String FileExt = ExtractFileExt(FileName);
+  if(FileExt.CompareIC(".emf") == 0)
     ImageFileType = ifMetafile;
-  else if(FileExt.AnsiCompareIC(".bmp") == 0)
+  else if(FileExt.CompareIC(".bmp") == 0)
     ImageFileType = ifBitmap;
-  else if(FileExt.AnsiCompareIC(".png") == 0)
+  else if(FileExt.CompareIC(".png") == 0)
     ImageFileType = ifPng;
-  else if(FileExt.AnsiCompareIC(".jpeg") == 0 || FileExt.AnsiCompareIC(".jpg") == 0)
+  else if(FileExt.CompareIC(".jpeg") == 0 || FileExt.CompareIC(".jpg") == 0)
     ImageFileType = ifJpeg;
-  else if(FileExt.AnsiCompareIC(".pdf") == 0)
+  else if(FileExt.CompareIC(".pdf") == 0)
     ImageFileType = ifPdf;
-  else if(FileExt.AnsiCompareIC(".svg") == 0)
+  else if(FileExt.CompareIC(".svg") == 0)
     ImageFileType = ifSvg;
   else
     return seUnknownFileType;
@@ -2813,7 +2811,7 @@ TSaveError TForm1::SaveAsImage(const AnsiString &FileName, const TImageOptions &
   return SaveAsImage(FileName, ImageFileType, ImageOptions);
 }
 //---------------------------------------------------------------------------
-TSaveError TForm1::SaveAsImage(const AnsiString &FileName, int ImageFileType, const TImageOptions &ImageOptions)
+TSaveError TForm1::SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions &ImageOptions)
 {
   try
   {
@@ -2905,7 +2903,7 @@ TSaveError TForm1::SaveAsImage(const AnsiString &FileName, int ImageFileType, co
         }
 
         case ifPdf:
-          return SaveAsPdf(FileName, Bitmap.get(), Data.GetFileName(), ::ToString(Data.Axes.Title), ImageOptions.Pdf.Orientation);
+          return SaveAsPdf(::ToString(FileName), Bitmap.get(), ::ToString(Data.GetFileName()), ::ToString(Data.Axes.Title), ImageOptions.Pdf.Orientation);
       }
     }
   }
@@ -2980,7 +2978,7 @@ void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,
       }
 }
 //---------------------------------------------------------------------------
-bool TForm1::LoadFromFile(const AnsiString &FileName, bool AddToRecent, bool ShowErrorMessages)
+bool TForm1::LoadFromFile(const String &FileName, bool AddToRecent, bool ShowErrorMessages)
 {
   Draw.AbortUpdate();
   if(!Data.LoadFromFile(FileName.c_str(), ShowErrorMessages))
@@ -2991,19 +2989,19 @@ bool TForm1::LoadFromFile(const AnsiString &FileName, bool AddToRecent, bool Sho
   }
 
   UpdateTreeView();
-  Caption = AnsiString(NAME) + " - " + FileName;
+  Caption = String(NAME) + L" - " + FileName;
   if(AddToRecent)
     Recent1->FileUsed(FileName);
   UndoList.Clear();
 
-  Application->Title = AnsiString(NAME) + " - " + ExtractFileName(FileName);
+  Application->Title = String(NAME) + L" - " + ExtractFileName(FileName);
   UpdateMenu();
   Python::ExecutePluginEvent(Python::peLoad);
   return true;
 }
 //---------------------------------------------------------------------------
 bool __fastcall TForm1::OpenPreviewDialog1PreviewFile(
-      TOpenPreviewDialog *Dialog, const AnsiString &FileName,
+      TOpenPreviewDialog *Dialog, const String &FileName,
       TCanvas *Canvas, const TRect &Rect)
 {
   PreviewDraw->AbortUpdate();
@@ -3053,13 +3051,9 @@ bool __fastcall TForm1::OpenPreviewDialog1PreviewFile(
 //---------------------------------------------------------------------------
 void TForm1::LoadDefault()
 {
-  std::auto_ptr<TRegistry> Registry(new TRegistry);
-  AnsiString Str;
-  if(Registry->OpenKeyReadOnly(REGISTRY_KEY))
-    if(Registry->ValueExists("DefaultAxes"))
-      Str = Registry->ReadString("DefaultAxes");
+  std::wstring Str = GetRegValue(REGISTRY_KEY, L"DefaultAxes", HKEY_CURRENT_USER, L"");
 
-  if(Str.IsEmpty() || !Data.LoadFromString(Str.c_str()))
+  if(Str.empty() || !Data.LoadFromString(::ToString(Str)))
     Data.LoadDefault();
 
   UndoList.Clear();
@@ -3089,7 +3083,7 @@ void __fastcall TForm1::Tree_ExportClick(TObject *Sender)
   {
     SaveDialog->Filter = LoadRes(RES_EXPORT_DATA_FILTER);
     if(SaveDialog->Execute())
-      if(!ExportPointSeries(Series, AnsiString(SaveDialog->FileName).c_str(), SaveDialog->FilterIndex == 1 ? ';' : '\t'))
+      if(!ExportPointSeries(Series, SaveDialog->FileName.c_str(), SaveDialog->FilterIndex == 1 ? ';' : '\t'))
         MessageBox(LoadRes(RES_FILE_ACCESS, SaveDialog->FileName), LoadRes(RES_WRITE_FAILED), MB_ICONSTOP);
   }
 }
@@ -3578,7 +3572,7 @@ void __fastcall TForm1::ImportGraphFileActionExecute(TObject *Sender)
   {
     unsigned Count = Data.ElemCount();
 
-    if(Data.Import(AnsiString(OpenPreviewDialog1->FileName).c_str()))
+    if(Data.Import(OpenPreviewDialog1->FileName.c_str()))
     {
       UndoList.BeginMultiUndo();
       for(unsigned I = Count; I < Data.ElemCount(); I++)
@@ -3597,7 +3591,7 @@ void __fastcall TForm1::ImportPointSeriesActionExecute(TObject *Sender)
   if(OpenDialog->Execute())
   {
     for(int I = 0; I < OpenDialog->Files->Count; I++)
-      if(!Data.ImportData(AnsiString(OpenDialog->Files->Strings[I]).c_str()))
+      if(!Data.ImportData(OpenDialog->Files->Strings[I].c_str()))
         return;
 
     UpdateTreeView();
@@ -3745,7 +3739,7 @@ void __fastcall TForm1::StatusBar1Hint(TObject *Sender)
 {
   //Add spaces to the end when Panel2 is used to avoid the size grip
   if(SysLocale.MiddleEast)
-    StatusBar1->Panels->Items[2]->Text = WideString(L"     ") + Application->Hint;
+    StatusBar1->Panels->Items[2]->Text = L"     " + Application->Hint;
   else
     StatusBar1->Panels->Items[0]->Text = Application->Hint;
 }

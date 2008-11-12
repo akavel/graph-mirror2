@@ -17,7 +17,7 @@
 #include <boost/spirit/phoenix/primitives.hpp>
 using phoenix::arg1;
 //---------------------------------------------------------------------------
-double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr, const boost::function1<bool, double> &Interval)
+double MakeFloat(TCustomEdit *Edit, const String &ErrorStr, const boost::function1<bool, double> &Interval)
 {
   AnsiString Text = Edit->Text;
   if(Text.IsEmpty())
@@ -50,14 +50,14 @@ double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr, const boost::fun
   }
 }
 //---------------------------------------------------------------------------
-double MakeFloat(TCustomEdit *Edit, const WideString &ErrorStr, double Min, double Max)
+double MakeFloat(TCustomEdit *Edit, const String &ErrorStr, double Min, double Max)
 {
   return MakeFloat(Edit, ErrorStr, arg1 >= Min && arg1 <= Max);
 }
 //---------------------------------------------------------------------------
-int MakeInt(TCustomEdit *Edit, const AnsiString &Caption)
+int MakeInt(TCustomEdit *Edit, const String &Caption)
 {
-  AnsiString Text = Edit->Text;
+  String Text = Edit->Text;
   if(Text.IsEmpty())
   {
     MessageBox(LoadRes(RES_VALUE_NEEDED), LoadRes(RES_ERROR));
@@ -144,10 +144,10 @@ void ComplexToRTF(Func32::TComplex C, TRichEdit *RichEdit)
   RichEdit->Lines->LoadFromStream(Stream.get());
 }
 //---------------------------------------------------------------------------
-WideString ComplexToWideString(const Func32::TComplex &C)
+String ComplexToString(const Func32::TComplex &C)
 {
   const TData &Data = Form1->Data;
-  WideString Str;
+  String Str;
 
   switch(Property.ComplexFormat)
   {
@@ -160,8 +160,8 @@ WideString ComplexToWideString(const Func32::TComplex &C)
     case cfRectangular:
     {
       //Round numbers to chosen number of decimals
-      AnsiString Real = RoundToStr(C.real(), Data);
-      AnsiString Imag = RoundToStr(std::abs(C.imag()), Data);
+      String Real = RoundToStr(C.real(), Data);
+      String Imag = RoundToStr(std::abs(C.imag()), Data);
 
       if(Imag == "0" || std::abs(C.imag()) < MIN_ZERO)  //(-1.50)^2 = 2.25+2.4395E-19i
         Str += Real;
@@ -186,10 +186,10 @@ WideString ComplexToWideString(const Func32::TComplex &C)
 
       Str += RoundToStr(abs(C), Data); //Get numeric value as a string
       //Add angle symbol to text in Symbol font
-      Str += WideString(L'\x2220');
+      Str += L'\x2220';
       if(Data.Axes.Trigonometry == Func32::Degree)
         //Add degree symbol, if angle is in degree
-        Str += RoundToStr(std::arg(C) * 180 / M_PI, Data) + WideString(L'\xB0');
+        Str += RoundToStr(std::arg(C) * 180 / M_PI, Data) + L'\xB0';
       else
         Str += RoundToStr(arg(C), Data);
   }
@@ -199,14 +199,14 @@ WideString ComplexToWideString(const Func32::TComplex &C)
 //---------------------------------------------------------------------------
 //This function converts a floating point number to a string
 //The number of decimals will be determined by Property.RoundTo
-AnsiString DoubleToStr(long double Number)
+String DoubleToStr(long double Number)
 {
   return DoubleToStr(Number, Property.RoundTo);
 }
 //---------------------------------------------------------------------------
 //This function converts a floating point number to a string
 //Decimals indicate the fixed number of decimals in the string
-AnsiString DoubleToStr(long double Number,int Decimals)
+String DoubleToStr(long double Number,int Decimals)
 {
   if(std::abs(Number) < MIN_ZERO)
     return 0;
@@ -226,56 +226,56 @@ int GetDecimals(double Number)
 }
 //---------------------------------------------------------------------------
 //Coverts a TFont objet to a AnsiString
-std::string FontToStr(TFont *Font)
+std::wstring FontToStr(TFont *Font)
 {
   //String with Name,Size,Color
-  std::string Str = std::string(AnsiString(Font->Name).c_str()) + "," + ToString(Font->Size) + "," + AnsiString(ColorToString(Font->Color)).c_str();
+  std::wstring Str = (Font->Name + "," + Font->Size + "," + ColorToString(Font->Color)).c_str();
 
   if(!Font->Style.Empty())
-    Str += ",";
+    Str += L",";
 
   //Add B, I or U acording to the font style
   if(Font->Style.Contains(fsBold))
-    Str += "B";
+    Str += L"B";
   if(Font->Style.Contains(fsItalic))
-    Str += "I";
+    Str += L"I";
   if(Font->Style.Contains(fsUnderline))
-    Str += "U";
+    Str += L"U";
   return Str;
 }
 //---------------------------------------------------------------------------
 //Converts a AnsiString into a TFont object
 //Format: Name,Size,Color,Style
-void StrToFont(const std::string &Str, TFont *Font)
+void StrToFont(const std::wstring &Str, TFont *Font)
 {
   if(Str.empty())
     return;
 
-  unsigned Pos = Str.find(',');
+  unsigned Pos = Str.find(L',');
   //Get font name from string
   Font->Name = Str.substr(0, Pos).c_str();
 
-  unsigned Pos2 = Str.find(',', Pos+1);
+  unsigned Pos2 = Str.find(L',', Pos+1);
   //Get font size from string
   Font->Size = ToIntDef(Str.substr(Pos+1, Pos2-Pos-1), 10);
 
-  unsigned Pos3 = Str.find(',', Pos2+1);
+  unsigned Pos3 = Str.find(L',', Pos2+1);
   //Get font color from string
   Font->Color = StringToColor(Str.substr(Pos2+1, Pos3-Pos2-1).c_str());
   Font->Style = Font->Style.Clear(); //Clear font style
 
   //Loop through the rest of the characters in string
-  if(Pos3 != std::string::npos)
+  if(Pos3 != std::wstring::npos)
     for(unsigned N = Pos3+1; N < Str.size(); N++)
       switch(Str[N])
       {
-        case ',': return; //Return if a ',' is found
-        case 'B': //Add Bold to font style
-        case 'b': Font->Style = Font->Style << fsBold; break;
-        case 'I': //Add Italic to font style
-        case 'i': Font->Style = Font->Style << fsItalic; break;
-        case 'U': //Add Underlined to font style
-        case 'u': Font->Style = Font->Style << fsUnderline;
+        case L',': return; //Return if a ',' is found
+        case L'B': //Add Bold to font style
+        case L'b': Font->Style = Font->Style << fsBold; break;
+        case L'I': //Add Italic to font style
+        case L'i': Font->Style = Font->Style << fsItalic; break;
+        case L'U': //Add Underlined to font style
+        case L'u': Font->Style = Font->Style << fsUnderline;
       }
 
   //If font does not exists
@@ -300,12 +300,12 @@ double StringToDouble(const AnsiString &Str)
   return Str.ToDouble();
 }
 //---------------------------------------------------------------------------
-bool CheckLimit(TWinControl *Control, AnsiString Str, int Min, int Max)
+bool CheckLimit(TWinControl *Control, String Str, int Min, int Max)
 {
   bool Error = false;
   try
   {
-    int Value = ToInt(GetControlText(Control));
+    int Value = GetControlText(Control).ToInt();
     if(Value < Min || Value > Max)
       Error = true;
   }
@@ -322,7 +322,7 @@ bool CheckLimit(TWinControl *Control, AnsiString Str, int Min, int Max)
   return true;
 }
 //---------------------------------------------------------------------------
-AnsiString RoundToStr(long double Number, unsigned Decimals)
+String RoundToStr(long double Number, unsigned Decimals)
 {
   if(std::_isnanl(Number))
     return "NAN";
@@ -331,7 +331,7 @@ AnsiString RoundToStr(long double Number, unsigned Decimals)
   if(std::abs(Number) < MIN_ZERO)
     return 0;
 
-  AnsiString Str;
+  String Str;
   if(std::abs(Number) >= 10000 || std::abs(Number) <= 1E-4)
   {
     Str = FloatToStrF(Number, ffExponent, Decimals + 1, 0);
@@ -354,7 +354,7 @@ AnsiString RoundToStr(long double Number, unsigned Decimals)
   return Str;
 }
 //---------------------------------------------------------------------------
-AnsiString RoundToStr(long double Number, const TData &Data)
+String RoundToStr(long double Number, const TData &Data)
 {
   return RoundToStr(Number, Property.RoundTo);
 }
@@ -414,12 +414,12 @@ std::string RtfToPlainText(const std::string &Str)
   return Result.Trim().c_str();
 }
 //---------------------------------------------------------------------------
-std::string ToString(unsigned Value)
+std::string ToString(int Value)
 {
   return AnsiString(Value).c_str();
 }
 //---------------------------------------------------------------------------
-std::string ToString(int Value)
+std::string ToString(unsigned Value)
 {
   return AnsiString(Value).c_str();
 }
@@ -431,55 +431,55 @@ std::string ToString(long double Value)
 //---------------------------------------------------------------------------
 std::string ToString(const std::wstring &Str)
 {
-  return AnsiString(WideString(Str.c_str())).c_str();
+  return AnsiString(String(Str.c_str())).c_str();
 }
 //---------------------------------------------------------------------------
-std::string ToString(const WideString &Str)
+std::string ToString(const String &Str)
 {
   return AnsiString(Str).c_str();
 }
 //---------------------------------------------------------------------------
 std::wstring ToWString(int Value)
 {
-  return WideString(AnsiString(Value)).c_bstr();
+  return String(Value).c_str();
+}
+//---------------------------------------------------------------------------
+std::wstring ToWString(long double Value)
+{
+  return FloatToStr(Value).c_str();
 }
 //---------------------------------------------------------------------------
 std::wstring ToWString(const std::string &Str)
 {
-  return Str.empty() ? std::wstring() : std::wstring(WideString(AnsiString(Str.c_str())).c_bstr());
+  return String(Str.c_str()).c_str();
 }
 //--------------------------------------------------------------------------
-std::wstring ToWString(const WideString &Str)
+std::wstring ToWString(const String &Str)
 {
-  return Str.IsEmpty() ? std::wstring() : std::wstring(Str.c_bstr());
+  return Str.c_str();
 }
 //--------------------------------------------------------------------------
-WideString ToWideString(const std::wstring &Str)
+std::wstring ToWString(const char *Str)
 {
-  return WideString(Str.c_str());
+  return String(Str).c_str();
 }
 //--------------------------------------------------------------------------
-WideString ToWideString(const std::string &Str)
+String ToUString(const std::wstring &Str)
 {
-  return WideString(AnsiString(Str.c_str()));
+  return Str.c_str();
 }
 //--------------------------------------------------------------------------
-WideString ToWideString(const AnsiString &Str)
+String ToUString(const std::string &Str)
 {
-  return Str;
+  return Str.c_str();
 }
 //--------------------------------------------------------------------------
-WideString ToWideString(const char *Str)
+void Trim(std::wstring &Str)
 {
-  return AnsiString(Str);
-}
-//--------------------------------------------------------------------------
-void Trim(std::string &Str)
-{
-  unsigned Pos1 = Str.find_first_not_of(" ");
-  unsigned Pos2 = Str.find_last_not_of(" ");
+  unsigned Pos1 = Str.find_first_not_of(L" ");
+  unsigned Pos2 = Str.find_last_not_of(L" ");
   if(!Str.empty() && (Pos1 != 0 || Pos2 != Str.size()-1))
-    Str.replace(0, std::string::npos, Str, Pos1, Pos2 - Pos1 + 1);
+    Str.replace(0, std::wstring::npos, Str, Pos1, Pos2 - Pos1 + 1);
 }
 //--------------------------------------------------------------------------
 std::string ToLower(const std::string &Str)

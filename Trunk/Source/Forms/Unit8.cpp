@@ -43,11 +43,11 @@ bool TForm8::EditModel(std::wstring &Name)
   return false;
 }
 //---------------------------------------------------------------------------
-bool TForm8::AddModel(const std::string &Model, std::wstring &ModelName)
+bool TForm8::AddModel(const std::wstring &Model, std::wstring &ModelName)
 {
   TUserModel UserModel;
   UserModel.Model = Model;
-  std::vector<std::string> Unknowns = Func32::FindUnknowns(Model);
+  std::vector<std::string> Unknowns = Func32::FindUnknowns(::ToString(Model));
 
   if(Unknowns.empty())
   {
@@ -57,7 +57,7 @@ bool TForm8::AddModel(const std::string &Model, std::wstring &ModelName)
 
   Unknowns.insert(Unknowns.begin(), "x");
 
-  Func32::TCustomFunc TempFunc(Model, Unknowns, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
+  Func32::TCustomFunc TempFunc(::ToString(Model), Unknowns, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
 
   for(unsigned I = 1; I < Unknowns.size(); I++)
     ValueListEditor1->Values[Unknowns[I].c_str()] = 1;
@@ -65,7 +65,7 @@ bool TForm8::AddModel(const std::string &Model, std::wstring &ModelName)
   if(ShowModal() == mrOk)
   {
     for(std::vector<std::string>::const_iterator Iter = Unknowns.begin() + 1; Iter != Unknowns.end(); ++Iter)
-      UserModel.Defaults.push_back(std::make_pair(*Iter, ValueListEditor1->Values[Iter->c_str()].ToDouble()));
+      UserModel.Defaults.push_back(std::make_pair(ToWString(*Iter), ValueListEditor1->Values[Iter->c_str()].ToDouble()));
 
     ModelName = ToWString(Edit1->Text);
     Data.UserModels[ModelName] = UserModel;

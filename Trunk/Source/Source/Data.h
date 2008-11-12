@@ -12,16 +12,19 @@
 #include "VclObject.h"
 #include "GraphElem.h"
 #include "Settings.h"
+#include "Convert.h"
 
 struct TUserModel
 {
-  std::string Model;
-  std::vector<std::pair<std::string, double> > Defaults;
+  std::wstring Model;
+  std::vector<std::pair<std::wstring, double> > Defaults;
 };
 
 typedef std::map<std::wstring, TUserModel> TUserModels;
 
 typedef bool (__closure *TAbortUpdateEvent)();
+
+class TConfigFile;
 
 class TData
 {
@@ -29,7 +32,7 @@ class TData
 
   void SaveData(TConfigFile &IniFile);
   const TData& operator=(const TData&);             //Not implemented
-  std::string GrfName;
+  std::wstring GrfName;
   TAbortUpdateEvent OnAbortUpdate;
   std::vector<boost::shared_ptr<TGraphElem> > ElemList;
   void SaveImage(TConfigFile &IniFile, TCanvas *Canvas, int Width, int Height);
@@ -45,22 +48,22 @@ public:
   void ClearCache();
   void Clear();
   void LoadDefault();
-  bool LoadFromFile(const std::string &FileName, bool ShowErrorMessages = true);
+  bool LoadFromFile(const std::wstring &FileName, bool ShowErrorMessages = true);
   bool LoadFromString(const std::string &Str);
-  bool Save(const std::string &FileName, bool Remember);
-  std::string SaveToString(bool ResetModified);
+  bool Save(const std::wstring &FileName, bool Remember);
+  std::wstring SaveToString(bool ResetModified);
   void SaveDefault();
   bool CheckIniInfo(const TConfigFile &IniFile, bool ShowErrorMessages = true);
   static void WriteInfoToIni(TConfigFile &IniFile);
   void LoadData(const TConfigFile &IniFile);
   void PreprocessGrfFile(TConfigFile &IniFile);
-  bool Import(const std::string &FileName);
-  bool ImportData(const std::string &FileName);
+  bool Import(const std::wstring &FileName);
+  bool ImportData(const std::wstring &FileName);
   std::wstring CreatePointSeriesDescription();
   boost::shared_ptr<TTextLabel> FindLabel(int X, int Y); //NULL indicates not label found
   void DeleteLabel(int Index);
-  void ImportUserModels(const std::string &Str);
-  std::string ExportUserModels() const;
+  void ImportUserModels(const std::wstring &Str);
+  std::wstring ExportUserModels() const;
   void SetModified();
   bool IsModified() const {return Modified;}
   double FindInterception(const TBaseFuncType *Func, int X, int Y) const;
@@ -70,7 +73,7 @@ public:
   int GetIndex(const boost::shared_ptr<const TGraphElem> &Elem);
   boost::shared_ptr<TGraphElem> Replace(unsigned Index, const boost::shared_ptr<TGraphElem> &Elem);
   void Replace(const boost::shared_ptr<TGraphElem> &OldElem, const boost::shared_ptr<TGraphElem> &NewElem);
-  const std::string& GetFileName() const {return GrfName;}
+  const std::wstring& GetFileName() const {return GrfName;}
   boost::shared_ptr<TBaseFuncType> GetFuncFromIndex(unsigned Index) const;
   TGraphElemPtr Back() const;
   const TGraphElemPtr& GetElem(unsigned Index) const;
@@ -91,13 +94,23 @@ public:
   {
     return EvalComplex(Str, CustomFunctions.SymbolList, Axes.Trigonometry);
   }
+
+  long double Calc(const std::wstring &Str) const
+  {
+    return Calc(::ToString(Str));
+  }
+
+  Func32::TComplex CalcComplex(const std::wstring &Str) const
+  {
+    return CalcComplex(::ToString(Str));
+  }
 };
 //---------------------------------------------------------------------------
 //extern TData Data;
 
 enum TTraceType {ttTrace, ttIntersection, ttXAxis, ttYAxis, ttExtremeX, ttExtremeY};
 double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int Y, const TData &Data, const class TDraw &Draw);
-bool ExportPointSeries(const TPointSeries *Series, const char *FileName, char Delimiter);
+bool ExportPointSeries(const TPointSeries *Series, const wchar_t *FileName, char Delimiter);
 double FindNearestPoint(const TBaseFuncType *Func, int X, int Y);
 
 //---------------------------------------------------------------------------

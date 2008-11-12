@@ -18,22 +18,22 @@
 #include "Encode.h"
 #include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
-bool TData::LoadFromFile(const std::string &FileName, bool ShowErrorMessages)
+bool TData::LoadFromFile(const std::wstring &FileName, bool ShowErrorMessages)
 {
   TConfigFile IniFile(FileName);
 
   if(!CheckIniInfo(IniFile, ShowErrorMessages))
     return false;
 
-  std::string SavedByVersion = IniFile.Read("Graph", "Version", "NA");
-  if(SavedByVersion == "NA")
+  std::wstring SavedByVersion = IniFile.Section(L"Graph").Read(L"Version", L"NA");
+  if(SavedByVersion == L"NA")
   {
     if(ShowErrorMessages)
     {
-      if(std::access(FileName.c_str(), 0))
-        MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), LoadRes(RES_FILE_DOESNT_EXIST), MB_ICONSTOP);
+      if(std::_waccess(FileName.c_str(), 0))
+        MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), LoadString(RES_FILE_DOESNT_EXIST), MB_ICONSTOP);
       else
-        MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadRes(RES_FILE_READ_ERROR), MB_ICONSTOP);
+        MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadString(RES_FILE_READ_ERROR), MB_ICONSTOP);
     }
     return false;
   }
@@ -46,10 +46,10 @@ bool TData::LoadFromFile(const std::string &FileName, bool ShowErrorMessages)
     Clear();
 
     PreprocessGrfFile(IniFile);
-    Axes.ReadFromIni(IniFile);
+    Axes.ReadFromIni(IniFile.Section(L"Axes"));
 
     //Adjust TickUnit and GridUnit if saved by an outdated version
-    if(SavedByVersion < TVersion("3.2"))
+    if(SavedByVersion < TVersion(L"3.2"))
     {
       if(Axes.xAxis.LogScl)
       {
@@ -63,14 +63,14 @@ bool TData::LoadFromFile(const std::string &FileName, bool ShowErrorMessages)
       }
     }
 
-    if(SavedByVersion < TVersion("4.0"))
+    if(SavedByVersion < TVersion(L"4.0"))
     {
       std::swap(Axes.xAxis.AxisCross, Axes.yAxis.AxisCross);
     }
 
-    CustomFunctions.ReadFromIni(IniFile);
+    CustomFunctions.ReadFromIni(IniFile.Section(L"CustomFunctions"));
     LoadData(IniFile);
-    AnimationInfo.ReadFromIni(IniFile);
+    AnimationInfo.ReadFromIni(IniFile.Section(L"Animate"));
   }
   catch(Func32::EFuncError &Error)
   {
@@ -81,7 +81,7 @@ bool TData::LoadFromFile(const std::string &FileName, bool ShowErrorMessages)
   catch(...)
   {
     if(ShowErrorMessages)
-      MessageBox(LoadRes(RES_ERROR_READING_FILE, FileName), "File read error", MB_ICONSTOP);
+      MessageBox(LoadRes(RES_ERROR_READING_FILE, FileName), L"File read error", MB_ICONSTOP);
     return false;
   }
 
@@ -92,15 +92,15 @@ bool TData::LoadFromFile(const std::string &FileName, bool ShowErrorMessages)
 bool TData::LoadFromString(const std::string &Str)
 {
   TConfigFile IniFile;
-  IniFile.LoadFromString(Str);
+  IniFile.LoadFromUtf8String(Str);
 
   if(!CheckIniInfo(IniFile))
     return false;
 
-  std::string SavedByVersion = IniFile.Read("Graph", "Version", "NA");
-  if(SavedByVersion == "NA")
+  std::wstring SavedByVersion = IniFile.Section(L"Graph").Read(L"Version", L"NA");
+  if(SavedByVersion == L"NA")
   {
-    MessageBox(LoadRes(RES_INVALID_OBJECT), LoadRes(RES_OBJECT_ERROR), MB_ICONSTOP);
+    MessageBox(LoadString(RES_INVALID_OBJECT), LoadString(RES_OBJECT_ERROR), MB_ICONSTOP);
     return false;
   }
 
@@ -112,10 +112,10 @@ bool TData::LoadFromString(const std::string &Str)
     Clear();
 
     PreprocessGrfFile(IniFile);
-    Axes.ReadFromIni(IniFile);
-    CustomFunctions.ReadFromIni(IniFile);
+    Axes.ReadFromIni(IniFile.Section(L"Axes"));
+    CustomFunctions.ReadFromIni(IniFile.Section(L"CustomFunctions"));
     LoadData(IniFile);
-    AnimationInfo.ReadFromIni(IniFile);
+    AnimationInfo.ReadFromIni(IniFile.Section(L"Animate"));
   }
   catch(Func32::EFuncError &Error)
   {
@@ -130,20 +130,20 @@ bool TData::LoadFromString(const std::string &Str)
   return true;
 }
 //---------------------------------------------------------------------------
-bool TData::Import(const std::string &FileName)
+bool TData::Import(const std::wstring &FileName)
 {
   TConfigFile IniFile(FileName);
 
   if(!CheckIniInfo(IniFile))
     return false;
 
-  std::string SavedByVersion = IniFile.Read("Graph", "Version", "NA");
-  if(SavedByVersion == "NA")
+  std::wstring SavedByVersion = IniFile.Section(L"Graph").Read(L"Version", L"NA");
+  if(SavedByVersion == L"NA")
   {
-    if(std::access(FileName.c_str(), 0))
-      MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), LoadRes(RES_FILE_DOESNT_EXIST), MB_ICONSTOP);
+    if(std::_waccess(FileName.c_str(), 0))
+      MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), LoadString(RES_FILE_DOESNT_EXIST), MB_ICONSTOP);
     else
-      MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadRes(RES_FILE_READ_ERROR), MB_ICONSTOP);
+      MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadString(RES_FILE_READ_ERROR), MB_ICONSTOP);
     return false;
   }
 
@@ -156,9 +156,9 @@ bool TData::Import(const std::string &FileName)
     //same over the whole world
     DecimalSeparator = '.';
 
-    if(SavedByVersion != "NA" && TVersion(SavedByVersion) <= "2.4")
+    if(SavedByVersion != L"NA" && TVersion(SavedByVersion) <= L"2.4")
     {
-      MessageBox(LoadRes(RES_INVALID_VERSION, SavedByVersion, "2.5"), "Invalid version");
+      MessageBox(LoadRes(RES_INVALID_VERSION, SavedByVersion, L"2.5"), L"Invalid version");
       return false;
     }
 
@@ -166,9 +166,9 @@ bool TData::Import(const std::string &FileName)
     std::vector<boost::shared_ptr<TGraphElem> > Temp;
     Temp.swap(ElemList);
     PreprocessGrfFile(IniFile);
-    CustomFunctions.ReadFromIni(IniFile);
+    CustomFunctions.ReadFromIni(IniFile.Section(L"CustomFunctions"));
     LoadData(IniFile);
-    AnimationInfo.ReadFromIni(IniFile);
+    AnimationInfo.ReadFromIni(IniFile.Section(L"Animate"));
     for(unsigned I = 0; I < ElemList.size(); I++)
       if(!dynamic_cast<TAxesView*>(ElemList[I].get())) //We only want 1 TAxesView
         Temp.push_back(ElemList[I]);
@@ -180,7 +180,7 @@ bool TData::Import(const std::string &FileName)
   }
   catch(...)
   {
-    MessageBox(LoadRes(RES_ERROR_READING_FILE, FileName), "File read error", MB_ICONSTOP);
+    MessageBox(LoadRes(RES_ERROR_READING_FILE, FileName), L"File read error", MB_ICONSTOP);
   }
   //Set decimal separator back
   DecimalSeparator = OldDecimalSeparator;
@@ -198,27 +198,27 @@ void TData::SaveImage(TConfigFile &IniFile, TCanvas *Canvas, int Width, int Heig
 
   std::stringstream Stream;
   Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
-  if(SaveBitmapToPngStream(Bitmap->Handle, Stream))
-    IniFile.Write("Image", "Png", Base64Encode(Stream.str().data(), Stream.str().size()));
+//  if(SaveBitmapToPngStream(Bitmap->Handle, Stream))
+//    IniFile.Section(L"Image").Write(L"Png", Base64Encode(Stream.str().data(), Stream.str().size()));
 }
 //---------------------------------------------------------------------------
 //Saves data to file given in FileName; if empty the user is requested a file name
 //If Remember is true this will be the new current file name
-bool TData::Save(const std::string &FileName, bool Remember)
+bool TData::Save(const std::wstring &FileName, bool Remember)
 {
   try
   {
     TConfigFile IniFile;
-    std::string Comment = "This file was created by Graph (http://www.padowan.dk)\nDo not change this file from other programs.";
+    std::wstring Comment = L"This file was created by Graph (http://www.padowan.dk)\nDo not change this file from other programs.";
     IniFile.SetComment(Comment);
 
     WriteInfoToIni(IniFile);
     SaveData(IniFile);
-    CustomFunctions.WriteToIni(IniFile);
-    AnimationInfo.WriteToIni(IniFile);
+    CustomFunctions.WriteToIni(IniFile.Section(L"CustomFunctions"));
+    AnimationInfo.WriteToIni(IniFile.Section(L"Animate"));
 //    SaveImage(IniFile);
 
-    if(!IniFile.SaveToFile(FileName))
+    if(!IniFile.SaveToUtf8File(FileName))
       return false;
 
     if(Remember)
@@ -234,20 +234,20 @@ bool TData::Save(const std::string &FileName, bool Remember)
   }
   catch(EFCreateError &E)
   {
-    MessageBox(LoadRes(RES_FILE_ACCESS, FileName), LoadRes(RES_WRITE_FAILED), MB_ICONSTOP);
+    MessageBox(LoadRes(RES_FILE_ACCESS, FileName), LoadString(RES_WRITE_FAILED), MB_ICONSTOP);
     return false;
   }
 }
 //---------------------------------------------------------------------------
 //Returns the saved data as a string
-std::string TData::SaveToString(bool ResetModified)
+std::wstring TData::SaveToString(bool ResetModified)
 {
   TConfigFile IniFile;
   WriteInfoToIni(IniFile);
-  Axes.WriteToIni(IniFile);
+  Axes.WriteToIni(IniFile.Section(L"Axes"));
   SaveData(IniFile);
-  CustomFunctions.WriteToIni(IniFile);
-  AnimationInfo.WriteToIni(IniFile);
+  CustomFunctions.WriteToIni(IniFile.Section(L"CustomFunctions"));
+  AnimationInfo.WriteToIni(IniFile.Section(L"Animate"));
 
   if(ResetModified)
     Modified = false;
@@ -261,8 +261,8 @@ void TData::SaveDefault()
   {
     TConfigFile IniFile;
     WriteInfoToIni(IniFile);
-    Axes.WriteToIni(IniFile);
-    Registry.Write("DefaultAxes", IniFile.GetAsString().c_str());
+    Axes.WriteToIni(IniFile.Section(L"Axes"));
+    Registry.Write(L"DefaultAxes", IniFile.GetAsString().c_str());
   }
 }
 //---------------------------------------------------------------------------
@@ -276,14 +276,14 @@ char GetSeparator(const std::string &Str)
   return 0;
 }
 //---------------------------------------------------------------------------
-bool TData::ImportData(const std::string &FileName)
+bool TData::ImportData(const std::wstring &FileName)
 {
   const TColor Colors[] = {clRed, clGreen, clBlue, clYellow, clPurple, clAqua, clBlack, clGray, clSkyBlue	, clMoneyGreen, clDkGray};
 
   std::ifstream Stream(FileName.c_str());
   if(!Stream)
   {
-    MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
+    MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadString(RES_FILE_ERROR), MB_ICONSTOP);
     return false;
   }
 
@@ -325,7 +325,7 @@ bool TData::ImportData(const std::string &FileName)
 
         //Check if there are too many numbers on the line
         if(Col < Points.size())
-          Points[Col].push_back(TPointSeriesPoint(*this, xText, yText));
+          Points[Col].push_back(TPointSeriesPoint(*this, ToWString(xText), ToWString(yText)));
         else
         {
           MessageBox(LoadRes(526, FileName.c_str(), Line), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
@@ -393,20 +393,20 @@ void TData::LoadDefault()
 
   Add(boost::shared_ptr<TAxesView>(new TAxesView));
 
-  Axes.ReadFromIni(IniFile);
+  Axes.ReadFromIni(IniFile.Section(L"Axes"));
   Modified = false;
 }
 //---------------------------------------------------------------------------
 void TData::PreprocessGrfFile(TConfigFile &IniFile)
 {
-  std::string SavedByVersion = IniFile.Read("Graph", "Version", "NA");
-  if(SavedByVersion < TVersion("4.2"))
+  std::wstring SavedByVersion = IniFile.Section(L"Graph").Read(L"Version", L"NA");
+  if(SavedByVersion < TVersion(L"4.2"))
   {
-    std::string Str = IniFile.GetAsString();
+    std::wstring Str = IniFile.GetAsString();
     unsigned Size = Str.size();
     for(unsigned I = 0; I < Str.size(); I++)
       if(Str[I] == '.' && !isdigit(Str[I+1]))
-        Str.erase(I, 1); 
+        Str.erase(I, 1);
     if(Size != Str.size())
       IniFile.LoadFromString(Str);
   }

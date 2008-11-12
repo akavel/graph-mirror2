@@ -35,7 +35,7 @@ object Form19: TForm19
     Height = 21
     Hint = 'Choose a constant to change between each frame.'
     Style = csDropDownList
-    ItemHeight = 13
+    ItemHeight = 0
     TabOrder = 0
     OnChange = ComboBox1Change
   end

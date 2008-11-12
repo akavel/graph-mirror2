@@ -41,32 +41,32 @@
 #include "GraphUndo.h"
 #include "GuiUtil.h"
 
-#define NAME "Graph"
-#define MINVERSION "2.5"  //Minimum version needed to read files written by this version
-#define MIN_SAVED_VERSION "2.5" //Minimum version used to write file to load with this version
+#define NAME L"Graph"
+#define MINVERSION L"2.5"  //Minimum version needed to read files written by this version
+#define MIN_SAVED_VERSION L"2.5" //Minimum version used to write file to load with this version
 
 #define HOMEPAGE L"http:\/\/www.padowan.dk"
 #define EMAIL L"graph@padowan.dk"
-#define DOWNLOADPAGE "http:\/\/www.padowan.dk/graph"
+#define DOWNLOADPAGE L"http:\/\/www.padowan.dk/graph"
 #define DONATE_PAGE L"http:\/\/www.padowan.dk/graph/donate.html"
 #define SUPPORT_PAGE L"http:\/\/www.padowan.dk/graph/support.html"
-#define INF_FILE "http:\/\/www.padowan.dk/graph/GraphVersion.php"
+#define INF_FILE L"http:\/\/www.padowan.dk/graph/GraphVersion.php"
 #define CLIPBOARDFORMAT L"Graph Data"
 
-#define REGISTRY_KEY "Software\\Ivan\\Graph"//Registry key to use
+#define REGISTRY_KEY L"Software\\Ivan\\Graph"//Registry key to use
 
 //The default font used if the chosen one can't be found
-#define DEFAULT_FONT "Times New Roman"
+#define DEFAULT_FONT L"Times New Roman"
 
 //Default font used for labels and numbers
-#define DEFAULT_NUMBER_FONT     "Times New Roman,10,clBlack"
-#define DEFAULT_LABEL_FONT      "Times New Roman,12,clBlack,B" //Used for axes labels
-#define DEFAULT_TEXT_LABEL_FONT "Times New Roman,12,clBlack"   //Used for text labels
-#define DEFAULT_LEGEND_FONT     "Times New Roman,8,clBlack"
-#define DEFAULT_TITLE_FONT      "Times New Roman,20,clBlack,B"
-#define DEFAULT_POINT_FONT      "Times New Roman,8,clBlack"
+#define DEFAULT_NUMBER_FONT     L"Times New Roman,10,clBlack"
+#define DEFAULT_LABEL_FONT      L"Times New Roman,12,clBlack,B" //Used for axes labels
+#define DEFAULT_TEXT_LABEL_FONT L"Times New Roman,12,clBlack"   //Used for text labels
+#define DEFAULT_LEGEND_FONT     L"Times New Roman,8,clBlack"
+#define DEFAULT_TITLE_FONT      L"Times New Roman,20,clBlack,B"
+#define DEFAULT_POINT_FONT      L"Times New Roman,8,clBlack"
 
-#define CLIPBOARD_FORMAT "Ivan's Graph"
+#define CLIPBOARD_FORMAT L"Ivan's Graph"
 
 #define MIN_ZERO   1E-14 //Numbers less than this is zero
 

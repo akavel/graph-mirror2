@@ -12,6 +12,7 @@
 #include "StackTrace.h"
 #include <fstream>
 #include <iomanip>
+#undef _ASSERTE //Prevent definition warning
 #include <crtdbg.h>       //Declares _ErrorMessage()
 #include "VersionInfo.h"
 #include <cstdio>
@@ -86,7 +87,7 @@ void LogUncaughtException(TObject *Sender, Exception *E)
 {
   std::ofstream File(ChangeFileExt(Application->ExeName, ".err").c_str(), std::ios_base::app);
   File << "UNCAUGHT EXCEPTION\n";
-  File << "Version: " << TVersionInfo().FileVersion().Text() << std::endl;
+  File << "Version: " << ToString(TVersionInfo().FileVersion().Text()) << std::endl;
   File << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
   File << "Exception: " << E->ClassName() << std::endl;
   File << "Message: " << E->Message << std::endl;
@@ -109,7 +110,7 @@ void LogUncaughtCppException(const char *Message, const char *Thread)
 {
   std::ofstream File(ChangeFileExt(Application->ExeName, ".err").c_str(), std::ios_base::app);
   File << "UNCAUGHT C++ EXCEPTION\n";
-  File << "Version: " << TVersionInfo().FileVersion().Text() << std::endl;
+  File << "Version: " << ToString(TVersionInfo().FileVersion().Text()) << std::endl;
   File << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
   if(Thread)
     File << "Thread: " << Thread << std::endl;
@@ -278,7 +279,7 @@ void LogOsException(EExternal *E, unsigned IgnoreFrames)
   Sysutils::TExceptionRecord *Record = E->ExceptionRecord;
   std::ofstream File(LogFileName.c_str(), std::ios_base::app);
   File << "OS EXCEPTION" << std::endl;
-  File << "Version: " << TVersionInfo().FileVersion().Text() << std::endl;
+  File << "Version: " << ToString(TVersionInfo().FileVersion().Text()) << std::endl;
   File << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
   File << "Exception: " << E->ClassName() << std::endl;
   File << "Message: " << E->Message << std::endl;
@@ -336,7 +337,7 @@ void boost::assertion_failed(char const * expr, char const * function, char cons
 {
   std::ofstream File(LogFileName.c_str(), std::ios_base::app);
   File << "ASSERTION FAILED" << std::endl;
-  File << "Version: " << TVersionInfo().FileVersion().Text() << std::endl;
+  File << "Version: " << ToString(TVersionInfo().FileVersion().Text()) << std::endl;
   File << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
   File << "Expression: " << expr << std::endl;
   File << "Function: " << function << std::endl;

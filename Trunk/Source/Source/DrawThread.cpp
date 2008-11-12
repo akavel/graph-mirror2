@@ -1044,7 +1044,7 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
 
         if(PointSeries.ShowLabels)
         {
-          std::string Str = "(" + iter->x.Text + "," + iter->y.Text + ")";
+          std::wstring Str = L"(" + iter->x.Text + L"," + iter->y.Text + L")";
           int PointSize = Size(PointSeries.Size);
           TDraw::DrawPointLabel(Context.GetCanvas(), Pos, PointSize, Str, PointSeries.LabelPosition);
         }

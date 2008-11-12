@@ -14,6 +14,7 @@
 #include "Common.h"
 #include "Unit1.h"
 #include "Unit4.h"
+#include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
@@ -65,13 +66,13 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
   Data.AbortUpdate();
   UndoList.Push(MakeUndoObject(Property));
 
-  Property.RoundTo = ToInt(Edit1->Text);
-  Form1->Recent1->MaxFiles = ToInt(Edit2->Text);
-  UndoList.SetMaxUndo(ToInt(Edit3->Text));
+  Property.RoundTo = Edit1->Text.ToInt();
+  Form1->Recent1->MaxFiles = Edit2->Text.ToInt();
+  UndoList.SetMaxUndo(Edit3->Text.ToInt());
   Property.ComplexFormat = (TComplexFormat)RadioGroup1->ItemIndex;;
   if(CheckBox1->Checked)
   {
-    bool AllUsers = GetRegValue(REGISTRY_KEY, "InstallAllUsers", HKEY_CURRENT_USER, 0);
+    bool AllUsers = GetRegValue(REGISTRY_KEY, L"InstallAllUsers", HKEY_CURRENT_USER, false);
     AssociateExt(".grf", "", "GraphFile", "Graph system", Application->ExeName + ",1", AllUsers);
   }
   else

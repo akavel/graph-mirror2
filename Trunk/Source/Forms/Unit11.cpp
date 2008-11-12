@@ -52,7 +52,7 @@ int TForm11::EditRelation(const boost::shared_ptr<TRelation> &ARelation)
 
   Edit1->Text = Relation->GetText().c_str();
   Edit2->Text = Relation->GetConstraints().c_str();
-  Edit3->Text = ToWideString(Relation->GetLegendText());
+  Edit3->Text = ToUString(Relation->GetLegendText());
   UpDown1->Position = Relation->GetSize();
   ExtColorBox1->Selected = Relation->GetColor();
   ShadeSelect1->ShadeStyle = Relation->GetBrushStyle();
@@ -65,16 +65,16 @@ void __fastcall TForm11::Button1Click(TObject *Sender)
   try
   {
     boost::shared_ptr<TRelation> NewRelation(new TRelation(
-      ::ToString(Edit1->Text),
+      ToWString(Edit1->Text),
       Data.CustomFunctions.SymbolList,
       ExtColorBox1->Selected,
       ShadeSelect1->ShadeStyle,
-      ToInt(Edit4->Text),
+      Edit4->Text.ToInt(),
       Data.Axes.Trigonometry
     ));
     try
     {
-      NewRelation->SetConstraints(::ToString(Edit2->Text), Data.CustomFunctions.SymbolList);
+      NewRelation->SetConstraints(ToWString(Edit2->Text), Data.CustomFunctions.SymbolList);
     }
     catch(Func32::EParseError &E)
     {
@@ -102,7 +102,7 @@ void __fastcall TForm11::Button1Click(TObject *Sender)
     }
     Data.SetModified();
 
-    Property.DefaultRelation.Set(ShadeSelect1->ShadeStyle, ExtColorBox1->Selected, ToInt(Edit4->Text));
+    Property.DefaultRelation.Set(ShadeSelect1->ShadeStyle, ExtColorBox1->Selected, Edit4->Text.ToInt());
     ModalResult = mrOk;
   }
   catch(Func32::EFuncError &E)

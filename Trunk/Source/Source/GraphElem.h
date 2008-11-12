@@ -40,11 +40,11 @@ struct TGraphElemVisitor
 
 struct TTextValue
 {
-  std::string Text;
+  std::wstring Text;
   double Value;
   TTextValue() : Value(0) {}
   explicit TTextValue(double AValue);
-  TTextValue(double AValue, const std::string &AText) : Value(AValue), Text(AText) {}
+  TTextValue(double AValue, const std::wstring &AText) : Value(AValue), Text(AText) {}
   bool operator==(const TTextValue &TextValue) const {return Value == TextValue.Value;}
   bool operator!=(const TTextValue &TextValue) const {return !(*this == TextValue);}
   bool operator==(double a) const {return Value == a;}
@@ -53,11 +53,11 @@ struct TTextValue
   bool operator<=(double a) const {return Value <= a;}
   bool operator>=(double a) const {return Value >= a;}
   void Update(const class TData &Data);
-  void Set(const std::string AText, const TData &Data, bool IgnoreErrors = false);
+  void Set(const std::wstring AText, const TData &Data, bool IgnoreErrors = false);
   bool IsFinite() const {return std::_finite(Value);}
 };
 
-std::ostream& operator<<(std::ostream &Stream, const TTextValue &TextValue);
+std::wostream& operator<<(std::wostream &Stream, const TTextValue &TextValue);
 
 class TData;
 class TBaseFuncType;
@@ -80,8 +80,8 @@ public:
   virtual void SetParentFunc(const boost::shared_ptr<TBaseFuncType> &AFunc) {}
   virtual boost::shared_ptr<TBaseFuncType> ParentFunc() const {return boost::shared_ptr<TBaseFuncType>();}
   virtual std::wstring MakeText() const = 0;
-  virtual void WriteToIni(class TConfigFile &IniFile, const std::string &Section) const=0;
-  virtual void ReadFromIni(const TConfigFile &IniFile, const std::string &Section) =0;
+  virtual void WriteToIni(class TConfigFileSection &Section) const=0;
+  virtual void ReadFromIni(const TConfigFileSection &Section) =0;
   virtual void Accept(TGraphElemVisitor&) =0;
   virtual boost::shared_ptr<TGraphElem> Clone() const = 0;
   virtual void ClearCache() {};
@@ -128,8 +128,8 @@ class TTextLabel : public TGraphElem
 public:
   TTextLabel() : LabelPlacement(lpUserTopLeft), Rect(0,0,0,0), Rotation(0) {}
   TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation);
-  void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
+  void WriteToIni(TConfigFileSection &Section) const;
+  void ReadFromIni(const TConfigFileSection &Section);
   std::wstring MakeText() const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   int UpdateRect(int X, int Y) {int Width = Rect.Width(); int Height = Rect.Height(); Rect = TRect(X, Y, X + Width, Y + Height); return Width;}
@@ -169,8 +169,8 @@ public:
   TDrawType DrawType;
 
   TBaseFuncType();
-  void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
+  void WriteToIni(TConfigFileSection &Section) const;
+  void ReadFromIni(const TConfigFileSection &Section);
   virtual boost::shared_ptr<TBaseFuncType> MakeDifFunc() =0;
   virtual std::pair<double,double> GetCurrentRange() const {return std::make_pair(From.Value, To.Value);}
   virtual const TTextValue& GetSteps() const {return Steps;}
@@ -198,8 +198,8 @@ public:
 
   TTan::TTan();
   std::wstring MakeText() const;
-  void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
+  void WriteToIni(TConfigFileSection &Section) const;
+  void ReadFromIni(const TConfigFileSection &Section);
   std::wstring MakeLegendText() const;
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TBaseFuncType>(new TTan(*this));}
   boost::shared_ptr<TBaseFuncType> MakeDifFunc() {throw Exception("Tangent cannot be differentiated");}
@@ -218,66 +218,66 @@ public:
 class TStdFunc : public TBaseFuncType
 {
   friend class TStdFuncImpl;
-  std::string Text;
+  std::wstring Text;
   Func32::TFunc Func;
 
 public:
   TStdFunc() {}
-  TStdFunc(const std::string &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
-  TStdFunc(const Func32::TFunc &AFunc) : Text(AFunc.MakeText()), Func(AFunc) {}
+  TStdFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
+  TStdFunc(const Func32::TFunc &AFunc);
 
   boost::shared_ptr<TGraphElem> Clone() const {return CloneWithTangents(new TStdFunc(*this), this);}
   std::wstring MakeText() const;
-  void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
+  void WriteToIni(TConfigFileSection &Section) const;
+  void ReadFromIni(const TConfigFileSection &Section);
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
   std::pair<double,double> GetCurrentRange() const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   std::string GetVariable() const {return "x";}
   const Func32::TFunc& GetFunc() const {return Func;}
-  const std::string& GetText() const {return Text;}
+  const std::wstring& GetText() const {return Text;}
 };
 
 class TParFunc : public TBaseFuncType
 {
-  std::string xText,yText;
+  std::wstring xText,yText;
   Func32::TParamFunc Func;
 
 public:
   TParFunc() {}
-  TParFunc(const std::string &AxText, const std::string &AyText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
-  TParFunc(const Func32::TParamFunc &AFunc) : xText(AFunc.MakeXText()), yText(AFunc.MakeYText()), Func(AFunc) {}
+  TParFunc(const std::wstring &AxText, const std::wstring &AyText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
+  TParFunc(const Func32::TParamFunc &AFunc);
 
   boost::shared_ptr<TGraphElem> Clone() const {return CloneWithTangents(new TParFunc(*this), this);}
   std::wstring MakeText() const;
-  void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
+  void WriteToIni(TConfigFileSection &Section) const;
+  void ReadFromIni(const TConfigFileSection &Section);
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   std::string GetVariable() const {return "t";}
   const Func32::TParamFunc& GetFunc() const {return Func;}
-  const std::string& GetxText() const {return xText;}
-  const std::string& GetyText() const {return yText;}
+  const std::wstring& GetxText() const {return xText;}
+  const std::wstring& GetyText() const {return yText;}
 };
 
 class TPolFunc : public TBaseFuncType
 {
-  std::string Text;
+  std::wstring Text;
   Func32::TPolarFunc Func;
 
 public:
   TPolFunc() {}
-  TPolFunc(const std::string &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
+  TPolFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
 
   boost::shared_ptr<TGraphElem> Clone() const {return CloneWithTangents(new TPolFunc(*this), this);}
   std::wstring MakeText() const;
-  void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
+  void WriteToIni(TConfigFileSection &Section) const;
+  void ReadFromIni(const TConfigFileSection &Section);
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   std::string GetVariable() const {return "t";}
   const Func32::TPolarFunc& GetFunc() const {return Func;}
-  const std::string& GetText() const {return Text;}
+  const std::wstring& GetText() const {return Text;}
 };
 
 enum TErrorBarType {ebtNone, ebtFixed, ebtRelative, ebtCustom};
@@ -289,7 +289,7 @@ struct TPointSeriesPoint
   TPointSeriesPoint() {}
   TPointSeriesPoint(double X, double Y, double XError = 0, double YError = 0)
     : x(X), y(Y), xError(XError), yError(YError) {}
-  TPointSeriesPoint(const TData &Data, const std::string &X, const std::string &Y, const std::string &XError = "", const std::string &YError = "", bool IgnoreErrors=false);
+  TPointSeriesPoint(const TData &Data, const std::wstring &X, const std::wstring &Y, const std::wstring &XError = L"", const std::wstring &YError = L"", bool IgnoreErrors=false);
 };
 
 enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
@@ -313,8 +313,8 @@ struct TPointSeries : public TGraphElem
 
   TPointSeries();
   std::wstring MakeText() const {return L"";}
-  void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
+  void WriteToIni(TConfigFileSection &Section) const;
+  void ReadFromIni(const TConfigFileSection &Section);
   Func32::TDblPoint FindCoord(double x) const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   double GetXError(unsigned Index) const;
@@ -350,8 +350,8 @@ struct TShade : public TGraphElem
     double AsMin, double AsMax, double AsMin2, double AsMax2, bool AExtendMinToIntercept, bool AExtendMaxToIntercept,
     bool AExtendMin2ToIntercept, bool AExtendMax2ToIntercept);
   std::wstring MakeText() const;
-  void WriteToIni(TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
+  void WriteToIni(TConfigFileSection &Section) const;
+  void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TShade(*this));}
   boost::shared_ptr<TBaseFuncType> ParentFunc() const {return Func.lock();}
@@ -362,8 +362,8 @@ struct TShade : public TGraphElem
 enum TRelationType {rtEquation, rtInequality};
 class TRelation : public TGraphElem
 {
-  std::string Text;
-  std::string ConstraintsText;
+  std::wstring Text;
+  std::wstring ConstraintsText;
   Func32::TCustomFunc Func;
   Func32::TCustomFunc Constraints;
   TColor Color;
@@ -376,20 +376,20 @@ public:
   boost::shared_ptr<class TRegion> BoundingRegion; //Used to draw the frame around Region for inequalities
 
   TRelation();
-  TRelation(const std::string &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig);
+  TRelation(const std::wstring &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig);
   TRelation(const TRelation &Relation);
   std::wstring MakeText() const;
-  void WriteToIni(class TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section);
+  void WriteToIni(TConfigFileSection &Section) const;
+  void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TRelation(*this));}
-  void SetConstraints(const std::string &AConstraintsText, const Func32::TSymbolList &SymbolList);
+  void SetConstraints(const std::wstring &AConstraintsText, const Func32::TSymbolList &SymbolList);
   void Update();
 
   TColor GetColor() const {return Color;}
   TBrushStyle GetBrushStyle() const {return BrushStyle;}
-  const std::string& GetText() const {return Text;}
-  const std::string& GetConstraints() const {return ConstraintsText;}
+  const std::wstring& GetText() const {return Text;}
+  const std::wstring& GetConstraints() const {return ConstraintsText;}
   long double Eval(const std::vector<long double> &Args, Func32::ECalcError &E);
   void ClearCache();
   TRelationType GetRelationType() const {return RelationType;}
@@ -401,8 +401,8 @@ class TAxesView : public TGraphElem
 public:
   TAxesView() {SetShowInLegend(false);}
   std::wstring MakeText() const {return L"";}
-  void WriteToIni(class TConfigFile &IniFile, const std::string &Section) const;
-  void ReadFromIni(const TConfigFile &IniFile, const std::string &Section) {SetShowInLegend(false);}
+  void WriteToIni(TConfigFileSection &Section) const;
+  void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TAxesView(*this));}
   int GetVisible() const;

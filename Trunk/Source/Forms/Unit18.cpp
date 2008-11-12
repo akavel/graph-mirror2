@@ -41,8 +41,8 @@ void TForm18::EditOptions(TImageOptions &Options, TImageFormat ImageFormat, int 
   CustomHeight = Options.CustomHeight;
 
   RadioGroup3->ItemIndex = Options.UseCustomSize;
-  Edit1->Text = ToWideString(Options.UseCustomSize ? CustomWidth : ScreenWidth);
-  Edit2->Text = ToWideString(Options.UseCustomSize ? CustomHeight : CustomHeight);
+  Edit1->Text = Options.UseCustomSize ? CustomWidth : ScreenWidth;
+  Edit2->Text = Options.UseCustomSize ? CustomHeight : CustomHeight;
   Edit1->Enabled = Options.UseCustomSize;
   Edit2->Enabled = Options.UseCustomSize;
   Edit3->Text = Options.Jpeg.Quality;
@@ -75,8 +75,8 @@ void TForm18::EditOptions(TImageOptions &Options, TImageFormat ImageFormat, int 
   if(!ShowModal())
     return;
 
-  Options.CustomWidth = ToInt(Edit1->Text);
-  Options.CustomHeight = ToInt(Edit2->Text);
+  Options.CustomWidth = Edit1->Text.ToInt();
+  Options.CustomHeight = Edit2->Text.ToInt();
   Options.UseCustomSize = RadioGroup3->ItemIndex;
   Options.Jpeg.Quality = TrackBar1->Position;
   Options.Jpeg.ProgressiveEncoding = RadioGroup1->ItemIndex;
@@ -109,15 +109,15 @@ void __fastcall TForm18::RadioGroup3Click(TObject *Sender)
   Edit2->Enabled = RadioGroup3->ItemIndex == 1;
   if(RadioGroup3->ItemIndex == 1)
   {
-    Edit1->Text = ToWideString(CustomWidth);
-    Edit2->Text = ToWideString(CustomHeight);
+    Edit1->Text = CustomWidth;
+    Edit2->Text = CustomHeight;
   }
   else
   {
-    CustomWidth = ToInt(Edit1->Text);
-    CustomHeight = ToInt(Edit2->Text);
-    Edit1->Text = ToWideString(ScreenWidth);
-    Edit2->Text = ToWideString(ScreenHeight);
+    CustomWidth = Edit1->Text.ToInt();
+    CustomHeight = Edit2->Text.ToInt();
+    Edit1->Text = ScreenWidth;
+    Edit2->Text = ScreenHeight;
   }
 }
 //---------------------------------------------------------------------------

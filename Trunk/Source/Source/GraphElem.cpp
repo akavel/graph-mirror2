@@ -19,13 +19,17 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/mem_fn.hpp>
 //---------------------------------------------------------------------------
+std::wistream& operator >>(std::wistream &Stream, const Func32::TDblPoint&)
+{
+  return Stream;
+}
 ////////////////
 // TTextValue //
 ////////////////
 TTextValue::TTextValue(double AValue) : Value(AValue)
 {
   if(_finite(Value))
-    Text = AnsiString(AValue).c_str();
+    Text = ToWString(AValue);
 }
 //---------------------------------------------------------------------------
 void TTextValue::Update(const TData &Data)
@@ -42,17 +46,17 @@ void TTextValue::Update(const TData &Data)
   }
 }
 //---------------------------------------------------------------------------
-void TTextValue::Set(const std::string AText, const TData &Data, bool IgnoreErrors)
+void TTextValue::Set(const std::wstring AText, const TData &Data, bool IgnoreErrors)
 {
   Text = AText;
-  if(Text == "INF" || Text == "+INF")
+  if(Text == L"INF" || Text == L"+INF")
   {
-    Text = "";
+    Text = L"";
     Value = INF;
   }
-  else if(Text == "-INF")
+  else if(Text == L"-INF")
   {
-    Text = "";
+    Text = L"";
     Value = -INF;
   }
   else
@@ -64,17 +68,17 @@ void TTextValue::Set(const std::string AText, const TData &Data, bool IgnoreErro
     {
       if(!IgnoreErrors)
         throw;
-      Text = "";  
+      Text = L"";
       Value = NAN;
     }
 }
 //---------------------------------------------------------------------------
-std::ostream& operator<<(std::ostream &Stream, const TTextValue &TextValue)
+std::wostream& operator<<(std::wostream &Stream, const TTextValue &TextValue)
 {
   if(TextValue.Value == INF)
-    return Stream << "+INF";
+    return Stream << L"+INF";
   else if(TextValue.Value == -INF)
-    return Stream << "-INF";
+    return Stream << L"-INF";
   return Stream << TextValue.Text;
 }
 //---------------------------------------------------------------------------
@@ -87,18 +91,18 @@ TGraphElem::TGraphElem(const TGraphElem &Elem)
   //Do not copy ChildList; It must be copyed from the derived class to be able to call SetParentFunc()
 }
 //---------------------------------------------------------------------------
-void TGraphElem::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+void TGraphElem::WriteToIni(TConfigFileSection &Section) const
 {
-  IniFile.Write(Section, "Visible", Visible, true);
-  IniFile.Write(Section, "ShowInLegend", ShowInLegend, true);
-  IniFile.Write(Section, "LegendText", ToString(LegendText), std::string());
+  Section.Write(L"Visible", Visible, true);
+  Section.Write(L"ShowInLegend", ShowInLegend, true);
+  Section.Write(L"LegendText", LegendText, std::wstring());
 }
 //---------------------------------------------------------------------------
-void TGraphElem::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
+void TGraphElem::ReadFromIni(const TConfigFileSection &Section)
 {
-  Visible = IniFile.Read(Section, "Visible", true);
-  ShowInLegend = IniFile.Read(Section, "ShowInLegend", true);
-  LegendText = ToWString(IniFile.Read(Section, "LegendText", ""));
+  Visible = Section.Read(L"Visible", true);
+  ShowInLegend = Section.Read(L"ShowInLegend", true);
+  LegendText = Section.Read(L"LegendText", L"");
 }
 //---------------------------------------------------------------------------
 void TGraphElem::AddChild(const TGraphElemPtr &Elem)
@@ -142,55 +146,38 @@ TBaseFuncType::TBaseFuncType(const TBaseFuncType &F) : TGraphElem(F), DrawType(F
 {
 }
 //---------------------------------------------------------------------------
-void TBaseFuncType::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+void TBaseFuncType::WriteToIni(TConfigFileSection &Section) const
 {
-  TGraphElem::WriteToIni(IniFile, Section);
+  TGraphElem::WriteToIni(Section);
 
-  IniFile.Write(Section, "From", From.Text, std::string());
-  IniFile.Write(Section, "To", To.Text, std::string());
-  IniFile.Write(Section, "Steps", Steps.Text, std::string());
-  IniFile.Write(Section, "Style", Style, psSolid);
-  IniFile.Write(Section, "Color", Color);
-  IniFile.Write(Section, "Size", Size, 1U);
-  IniFile.Write(Section, "StartPoint", StartPointStyle, 0U);
-  IniFile.Write(Section, "EndPoint", EndPointStyle, 0U);
-  IniFile.Write(Section, "DrawType", DrawType, dtAuto);
-
-  //Write tangents
-  unsigned TanCount = 0;
-  for(unsigned N = 0; N < ChildList.size(); N++)
-    if(dynamic_cast<TTan*>(ChildList[N].get()))
-    ChildList[N]->WriteToIni(IniFile, Section + "Tan" + ToString(++TanCount));
-  IniFile.Write(Section, "TanCount", TanCount, 0U);
+  Section.Write(L"From", From.Text, std::wstring());
+  Section.Write(L"To", To.Text, std::wstring());
+  Section.Write(L"Steps", Steps.Text, std::wstring());
+  Section.Write(L"Style", Style, psSolid);
+  Section.Write(L"Color", Color);
+  Section.Write(L"Size", Size, 1U);
+  Section.Write(L"StartPoint", StartPointStyle, 0U);
+  Section.Write(L"EndPoint", EndPointStyle, 0U);
+  Section.Write(L"DrawType", DrawType, dtAuto);
 }
 //---------------------------------------------------------------------------
-void TBaseFuncType::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
+void TBaseFuncType::ReadFromIni(const TConfigFileSection &Section)
 {
   GetFunc().SetTrigonometry(GetData().Axes.Trigonometry);
-  Style = IniFile.ReadEnum(Section, "Style", psSolid);
-  Color = IniFile.Read(Section, "Color", clRed);
-  Size = IniFile.Read(Section, "Size", 1);
-  if(IniFile.KeyExists(Section, ">From"))
-    From.Set(IniFile.Read(Section, ">From", "-INF"), GetData()); //Caused by bug in MS Outlook Express
+  Style = Section.Read(L"Style", psSolid);
+  Color = Section.Read(L"Color", clRed);
+  Size = Section.Read(L"Size", 1);
+  if(Section.KeyExists(L">From"))
+    From.Set(Section.Read(L">From", L"-INF"), GetData()); //Caused by bug in MS Outlook Express
   else
-    From.Set(IniFile.Read(Section, "From", "-INF"), GetData());
-  To.Set(IniFile.Read(Section, "To", "+INF"), GetData());
-  Steps.Set(IniFile.Read(Section, "Steps", ""), GetData(), true);
-  int TanCount = IniFile.Read(Section, "TanCount", 0);
-  StartPointStyle = IniFile.Read(Section, "StartPoint", 0);
-  EndPointStyle = IniFile.Read(Section, "EndPoint", 0);
-  DrawType = IniFile.ReadEnum(Section, "DrawType", dtAuto);
+    From.Set(Section.Read(L"From", L"-INF"), GetData());
+  To.Set(Section.Read(L"To", L"+INF"), GetData());
+  Steps.Set(Section.Read(L"Steps", L""), GetData(), true);
+  StartPointStyle = Section.Read(L"StartPoint", 0);
+  EndPointStyle = Section.Read(L"EndPoint", 0);
+  DrawType = Section.Read(L"DrawType", dtAuto);
 
-  //Create list of tangents
-  for(int I = 0; I < TanCount; I++)
-  {
-    boost::shared_ptr<TTan> Tan(new TTan);
-    Tan->SetData(&GetData());
-    Tan->ReadFromIni(IniFile, Section + "Tan" + ToString(I+1));
-    ChildList.push_back(Tan);
-  }
-
-  TGraphElem::ReadFromIni(IniFile, Section);
+  TGraphElem::ReadFromIni(Section);
 }
 //---------------------------------------------------------------------------
 const boost::shared_ptr<TBaseFuncType> TBaseFuncType::CloneWithTangents(TBaseFuncType *Dest, const TBaseFuncType *Src)
@@ -243,27 +230,32 @@ long double TBaseFuncType::CalcArea(long double From, long double To) const
 //////////////
 // TStdFunc //
 //////////////
-TStdFunc::TStdFunc(const std::string &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
-  : Text(AText), Func(AText, "x", SymbolList, Trig)
+TStdFunc::TStdFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
+  : Text(AText), Func(ToString(AText), "x", SymbolList, Trig)
 {
 }
 //---------------------------------------------------------------------------
-void TStdFunc::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+TStdFunc::TStdFunc(const Func32::TFunc &AFunc)
+  : Text(ToWString(AFunc.MakeText())), Func(AFunc)
 {
-  IniFile.Write(Section, "FuncType", ftStdFunc);
-  IniFile.Write(Section, "y", Text);
+}
+//---------------------------------------------------------------------------
+void TStdFunc::WriteToIni(TConfigFileSection &Section) const
+{
+  Section.Write(L"FuncType", ftStdFunc);
+  Section.Write(L"y", Text);
 
-  TBaseFuncType::WriteToIni(IniFile, Section);
+  TBaseFuncType::WriteToIni(Section);
 }
 //---------------------------------------------------------------------------
-void TStdFunc::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
+void TStdFunc::ReadFromIni(const TConfigFileSection &Section)
 {
-  TBaseFuncType::ReadFromIni(IniFile, Section);
-  Text = IniFile.Read(Section, "y", "");
+  TBaseFuncType::ReadFromIni(Section);
+  Text = Section.Read(L"y", L"");
 
   try
   {
-    Func.SetFunc(Text, "x", GetData().CustomFunctions.SymbolList);
+    Func.SetFunc(ToString(Text), "x", GetData().CustomFunctions.SymbolList);
   }
   catch(Func32::EParseError &E)
   {
@@ -273,14 +265,14 @@ void TStdFunc::ReadFromIni(const TConfigFile &IniFile, const std::string &Sectio
 //---------------------------------------------------------------------------
 std::wstring TStdFunc::MakeText() const
 {
-  return ToWString("f(x)=" + Text);
+  return L"f(x)=" + Text;
 }
 //---------------------------------------------------------------------------
 boost::shared_ptr<TBaseFuncType> TStdFunc::MakeDifFunc()
 {
   boost::shared_ptr<TStdFunc> DifFunc(new TStdFunc);
   DifFunc->Func = Func.MakeDif();
-  DifFunc->Text = DifFunc->Func.MakeText();
+  DifFunc->Text = ToWString(DifFunc->Func.MakeText());
   return DifFunc;
 }
 //---------------------------------------------------------------------------
@@ -292,90 +284,95 @@ std::pair<double,double> TStdFunc::GetCurrentRange() const
 //////////////
 // TParFunc //
 //////////////
-TParFunc::TParFunc(const std::string &AxText, const std::string &AyText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
-  : xText(AxText), yText(AyText), Func(AxText, AyText, "t", SymbolList, Trig)
+TParFunc::TParFunc(const std::wstring &AxText, const std::wstring &AyText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
+  : xText(AxText), yText(AyText), Func(ToString(AxText), ToString(AyText), "t", SymbolList, Trig)
 {
 }
 //---------------------------------------------------------------------------
-void TParFunc::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+TParFunc::TParFunc(const Func32::TParamFunc &AFunc)
+  : xText(ToWString(AFunc.MakeXText())), yText(ToWString(AFunc.MakeYText())), Func(AFunc)
 {
-  IniFile.Write(Section, "FuncType", ftParFunc);
-  IniFile.Write(Section, "x", xText);
-  IniFile.Write(Section, "y", yText);
+}
+//---------------------------------------------------------------------------
+void TParFunc::WriteToIni(TConfigFileSection &Section) const
+{
+  Section.Write(L"FuncType", ftParFunc);
+  Section.Write(L"x", xText);
+  Section.Write(L"y", yText);
 
-  TBaseFuncType::WriteToIni(IniFile, Section);
+  TBaseFuncType::WriteToIni(Section);
 }
 //---------------------------------------------------------------------------
-void TParFunc::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
+void TParFunc::ReadFromIni(const TConfigFileSection &Section)
 {
   try
   {
-    xText = IniFile.Read(Section, "x", "");
-    yText = IniFile.Read(Section, "y", "");
-    Func.SetFunc(xText, yText, "t", GetData().CustomFunctions.SymbolList);
+    xText = Section.Read(L"x", L"");
+    yText = Section.Read(L"y", L"");
+    Func.SetFunc(ToString(xText), ToString(yText), "t", GetData().CustomFunctions.SymbolList);
   }
   catch(Func32::EParseError &E)
   {
     ShowStatusError(GetErrorMsg(E));
   }
-  TBaseFuncType::ReadFromIni(IniFile, Section);
+  TBaseFuncType::ReadFromIni(Section);
 }
 //---------------------------------------------------------------------------
 std::wstring TParFunc::MakeText() const
 {
-  return ToWString("x(t)=" + xText + " , y(t)=" + yText);
+  return L"x(t)=" + xText + L" , y(t)=" + yText;
 }
 //---------------------------------------------------------------------------
 boost::shared_ptr<TBaseFuncType> TParFunc::MakeDifFunc()
 {
   boost::shared_ptr<TParFunc> DifFunc(new TParFunc);
   DifFunc->Func = Func.MakeDif();
-  DifFunc->xText = DifFunc->Func.MakeXText();
-  DifFunc->yText = DifFunc->Func.MakeYText();
+  DifFunc->xText = ToWString(DifFunc->Func.MakeXText());
+  DifFunc->yText = ToWString(DifFunc->Func.MakeYText());
   return DifFunc;
 }
 //---------------------------------------------------------------------------
 //////////////
 // TPolFunc //
 //////////////
-TPolFunc::TPolFunc(const std::string &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
-  : Text(AText), Func(AText, "t", SymbolList, Trig)
+TPolFunc::TPolFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
+  : Text(AText), Func(ToString(AText), "t", SymbolList, Trig)
 {
 }
 //---------------------------------------------------------------------------
-void TPolFunc::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+void TPolFunc::WriteToIni(TConfigFileSection &Section) const
 {
-  IniFile.Write(Section, "FuncType", ftPolFunc);
-  IniFile.Write(Section, "r", Text);
+  Section.Write(L"FuncType", ftPolFunc);
+  Section.Write(L"r", Text);
 
-  TBaseFuncType::WriteToIni(IniFile, Section);
+  TBaseFuncType::WriteToIni(Section);
 }
 //---------------------------------------------------------------------------
-void TPolFunc::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
+void TPolFunc::ReadFromIni(const TConfigFileSection &Section)
 {
   try
   {
-    Text = IniFile.Read(Section, "r", "");
-    Func.SetFunc(Text, "t", GetData().CustomFunctions.SymbolList);
+    Text = Section.Read(L"r", L"");
+    Func.SetFunc(ToString(Text), "t", GetData().CustomFunctions.SymbolList);
   }
   catch(Func32::EParseError &E)
   {
     ShowStatusError(GetErrorMsg(E));
   }
 
-  TBaseFuncType::ReadFromIni(IniFile, Section);
+  TBaseFuncType::ReadFromIni(Section);
 }
 //---------------------------------------------------------------------------
 std::wstring TPolFunc::MakeText() const
 {
-  return ToWString("r(t)=" + Text);
+  return L"r(t)=" + Text;
 }
 //---------------------------------------------------------------------------
 boost::shared_ptr<TBaseFuncType> TPolFunc::MakeDifFunc()
 {
   boost::shared_ptr<TPolFunc> DifFunc(new TPolFunc);
   DifFunc->Func = Func.MakeDif();
-  DifFunc->Text = DifFunc->Func.MakeText();
+  DifFunc->Text = ToWString(DifFunc->Func.MakeText());
   return DifFunc;
 }
 //---------------------------------------------------------------------------
@@ -387,32 +384,32 @@ TTan::TTan()
   DrawType = dtLines;
 }
 //---------------------------------------------------------------------------
-void TTan::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+void TTan::WriteToIni(TConfigFileSection &Section) const
 {
-  IniFile.Write(Section, "t", t.Text);
-  IniFile.Write(Section, "From", From, TTextValue(-INF));
-  IniFile.Write(Section, "To", To, TTextValue(+INF));
-  IniFile.Write(Section, "Style", Style, psSolid);
-  IniFile.Write(Section, "Color", Color);
-  IniFile.Write(Section, "Size", Size, 1U);
-  IniFile.Write(Section, "TangentType", TangentType, ttTangent);
+  Section.Write(L"t", t.Text);
+  Section.Write(L"From", From, TTextValue(-INF));
+  Section.Write(L"To", To, TTextValue(+INF));
+  Section.Write(L"Style", Style, psSolid);
+  Section.Write(L"Color", Color);
+  Section.Write(L"Size", Size, 1U);
+  Section.Write(L"TangentType", TangentType, ttTangent);
 
-  TBaseFuncType::WriteToIni(IniFile, Section);
+  TBaseFuncType::WriteToIni(Section);
 }
 //---------------------------------------------------------------------------
-void TTan::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
+void TTan::ReadFromIni(const TConfigFileSection &Section)
 {
-  t.Text = IniFile.Read(Section, "t", "0");
+  t.Text = Section.Read(L"t", L"0");
   t.Value = GetData().Calc(t.Text);
-  TangentType = IniFile.ReadEnum(Section, "TangentType", ttTangent);
+  TangentType = Section.Read(L"TangentType", ttTangent);
 
-  TBaseFuncType::ReadFromIni(IniFile, Section);
+  TBaseFuncType::ReadFromIni(Section);
   DrawType = dtLines; //Overwrite the default from TBaseFuncType::ReadFromIni()
 }
 //---------------------------------------------------------------------------
 std::wstring TTan::MakeText() const
 {
-  return ToWString(Func.lock()->GetVariable() + "=" + t.Text);
+  return ToWString(Func.lock()->GetVariable()) + L"=" + t.Text;
 }
 //---------------------------------------------------------------------------
 std::wstring TTan::MakeLegendText() const
@@ -423,13 +420,13 @@ std::wstring TTan::MakeLegendText() const
   if(_isnan(a))
     return L"";
   if(!_finite(a))
-    return ToWString("x=" + RoundToString(q, GetData()));
-  return ToWString("y=" + RoundToString(a, GetData()) + "x" + (q < 0 ? '-' : '+') + RoundToString(std::abs(q), GetData()));
+    return L"x=" + RoundToString(q, GetData());
+  return L"y=" + RoundToString(a, GetData()) + L"x" + (q < 0 ? L'-' : L'+') + RoundToString(std::abs(q), GetData());
 }
 //---------------------------------------------------------------------------
 const TTextValue& TTan::GetSteps() const
 {
-  return _finite(a) ? TTextValue(0, "") : TTextValue(2, "");
+  return _finite(a) ? TTextValue(0, L"") : TTextValue(2, L"");
 }
 //---------------------------------------------------------------------------
 void TTan::UpdateTan(double a1, double q1)
@@ -518,13 +515,13 @@ TShade::TShade(TShadeStyle AShadeStyle, TBrushStyle ABrushStyle, TColor AColor,
   sMax2.Value = AsMax2;
 }
 //---------------------------------------------------------------------------
-void TShade::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+void TShade::WriteToIni(TConfigFileSection &Section) const
 {
-  TGraphElem::WriteToIni(IniFile, Section);
+  TGraphElem::WriteToIni(Section);
 
-  IniFile.Write(Section, "ShadeStyle", ShadeStyle);
-  IniFile.Write(Section, "BrushStyle", BrushStyle);
-  IniFile.Write(Section, "Color", Color);
+  Section.Write(L"ShadeStyle", ShadeStyle);
+  Section.Write(L"BrushStyle", BrushStyle);
+  Section.Write(L"Color", Color);
 
   unsigned FuncCount = 0;
   unsigned FuncNo = 0;
@@ -541,55 +538,55 @@ void TShade::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
 
   BOOST_ASSERT(!Func2 || Func2No); //If Func2 is defined we must have a number for it
 
-  IniFile.Write(Section, "FuncNo", FuncNo);
-  IniFile.Write(Section, "Func2No", Func2No, 0U);
-  IniFile.Write(Section, "sMin", sMin, TTextValue(-INF));
-  IniFile.Write(Section, "sMax", sMax, TTextValue(+INF));
-  IniFile.Write(Section, "sMin2", sMin2, TTextValue(-INF));
-  IniFile.Write(Section, "sMax2", sMax2, TTextValue(+INF));
-  IniFile.Write(Section, "ExtendMinToIntercept", ExtendMinToIntercept, false);
-  IniFile.Write(Section, "ExtendMaxToIntercept", ExtendMaxToIntercept, false);
-  IniFile.Write(Section, "ExtendMin2ToIntercept", ExtendMin2ToIntercept, false);
-  IniFile.Write(Section, "ExtendMax2ToIntercept", ExtendMax2ToIntercept, false);
-  IniFile.Write(Section, "MarkStart", MarkStart, true);
-  IniFile.Write(Section, "MarkEnd", MarkEnd, true);
+  Section.Write(L"FuncNo", FuncNo);
+  Section.Write(L"Func2No", Func2No, 0U);
+  Section.Write(L"sMin", sMin, TTextValue(-INF));
+  Section.Write(L"sMax", sMax, TTextValue(+INF));
+  Section.Write(L"sMin2", sMin2, TTextValue(-INF));
+  Section.Write(L"sMax2", sMax2, TTextValue(+INF));
+  Section.Write(L"ExtendMinToIntercept", ExtendMinToIntercept, false);
+  Section.Write(L"ExtendMaxToIntercept", ExtendMaxToIntercept, false);
+  Section.Write(L"ExtendMin2ToIntercept", ExtendMin2ToIntercept, false);
+  Section.Write(L"ExtendMax2ToIntercept", ExtendMax2ToIntercept, false);
+  Section.Write(L"MarkStart", MarkStart, true);
+  Section.Write(L"MarkEnd", MarkEnd, true);
 }
 //---------------------------------------------------------------------------
-void TShade::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
+void TShade::ReadFromIni(const TConfigFileSection &Section)
 {
-  TGraphElem::ReadFromIni(IniFile, Section);
+  TGraphElem::ReadFromIni(Section);
 
   //For backward compatibility
   if(GetLegendText().empty())
     SetLegendText(LoadString(RES_SHADE));
 
-  ShadeStyle = IniFile.ReadEnum(Section, "ShadeStyle", ssXAxis);
-  BrushStyle = IniFile.ReadEnum(Section, "BrushStyle", bsBDiagonal);
-  Color = IniFile.Read(Section, "Color", clGreen);
+  ShadeStyle = Section.Read(L"ShadeStyle", ssXAxis);
+  BrushStyle = Section.Read(L"BrushStyle", bsBDiagonal);
+  Color = Section.Read(L"Color", clGreen);
 
-  Func = GetData().GetFuncFromIndex(IniFile.Read(Section, "FuncNo", 0) - 1);
+  Func = GetData().GetFuncFromIndex(Section.Read(L"FuncNo", 0) - 1);
 
-  int Func2No = IniFile.Read(Section, "Func2No", 0) - 1;
+  int Func2No = Section.Read(L"Func2No", 0) - 1;
   Func2.reset();
   if(Func2No != -1)
     Func2 = GetData().GetFuncFromIndex(Func2No);
 
-  sMin.Set(IniFile.Read(Section, "sMin", "-INF"), GetData(), true);
-  sMax.Set(IniFile.Read(Section, "sMax", "+INF"), GetData(), true);
-  sMin2.Set(IniFile.Read(Section, "sMin2", "-INF"), GetData(), true);
-  sMax2.Set(IniFile.Read(Section, "sMax2", "+INF"), GetData(), true);
-  ExtendMinToIntercept = IniFile.Read(Section, "ExtendMinToIntercept", false);
-  ExtendMaxToIntercept = IniFile.Read(Section, "ExtendMaxToIntercept", false);
-  ExtendMin2ToIntercept = IniFile.Read(Section, "ExtendMin2ToIntercept", false);
-  ExtendMax2ToIntercept = IniFile.Read(Section, "ExtendMax2ToIntercept", false);
-  MarkStart = IniFile.Read(Section, "MarkStart", true);
-  MarkEnd = IniFile.Read(Section, "MarkEnd", true);
+  sMin.Set(Section.Read(L"sMin", L"-INF"), GetData(), true);
+  sMax.Set(Section.Read(L"sMax", L"+INF"), GetData(), true);
+  sMin2.Set(Section.Read(L"sMin2", L"-INF"), GetData(), true);
+  sMax2.Set(Section.Read(L"sMax2", L"+INF"), GetData(), true);
+  ExtendMinToIntercept = Section.Read(L"ExtendMinToIntercept", false);
+  ExtendMaxToIntercept = Section.Read(L"ExtendMaxToIntercept", false);
+  ExtendMin2ToIntercept = Section.Read(L"ExtendMin2ToIntercept", false);
+  ExtendMax2ToIntercept = Section.Read(L"ExtendMax2ToIntercept", false);
+  MarkStart = Section.Read(L"MarkStart", true);
+  MarkEnd = Section.Read(L"MarkEnd", true);
 
   //For backweards compatibility
-  if(_isnan(sMin.Value)) sMin.Set("-INF", GetData());
-  if(_isnan(sMax.Value)) sMax.Set("+INF", GetData());
-  if(_isnan(sMin2.Value)) sMin2.Set("-INF", GetData());
-  if(_isnan(sMax2.Value)) sMax2.Set("+INF", GetData());
+  if(_isnan(sMin.Value)) sMin.Set(L"-INF", GetData());
+  if(_isnan(sMax.Value)) sMax.Set(L"+INF", GetData());
+  if(_isnan(sMin2.Value)) sMin2.Set(L"-INF", GetData());
+  if(_isnan(sMax2.Value)) sMax2.Set(L"+INF", GetData());
 
 }
 //---------------------------------------------------------------------------
@@ -608,7 +605,7 @@ void TShade::Update()
 //////////////////
 // TPointSeries //
 //////////////////
-TPointSeriesPoint::TPointSeriesPoint(const TData &Data, const std::string &X, const std::string &Y, const std::string &XError, const std::string &YError, bool IgnoreErrors)
+TPointSeriesPoint::TPointSeriesPoint(const TData &Data, const std::wstring &X, const std::wstring &Y, const std::wstring &XError, const std::wstring &YError, bool IgnoreErrors)
   : xError(XError.empty() ? 0 : Data.Calc(XError), XError), yError(YError.empty() ? 0 : Data.Calc(YError), YError)
 {
   x.Text = X;
@@ -618,7 +615,7 @@ TPointSeriesPoint::TPointSeriesPoint(const TData &Data, const std::string &X, co
   try
   {
     //Make sure there is no 'e' (Euler's constant) as it will be interpretted as 'E'
-    if(X.find("e") == std::string::npos && Y.find("e") == std::string::npos)
+    if(X.find(L"e") == std::wstring::npos && Y.find(L"e") == std::wstring::npos)
     {
       x.Value = boost::lexical_cast<double>(X);
       y.Value = boost::lexical_cast<double>(Y);
@@ -654,21 +651,21 @@ TPointSeries::TPointSeries()
 {
 }
 //---------------------------------------------------------------------------
-void TPointSeries::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+void TPointSeries::WriteToIni(TConfigFileSection &Section) const
 {
-  IniFile.Write(Section, "FrameColor", FrameColor, clBlack);
-  IniFile.Write(Section, "FillColor", FillColor);
-  IniFile.Write(Section, "LineColor", LineColor);
-  IniFile.Write(Section, "Size", Size);
-  IniFile.Write(Section, "Style", Style);
-  IniFile.Write(Section, "LineSize", LineSize, 1U);
-  IniFile.Write(Section, "LineStyle", LineStyle, psClear);
-  IniFile.Write(Section, "Interpolation", Interpolation, iaLinear);
-  IniFile.Write(Section, "ShowLabels", ShowLabels, false);
-  IniFile.Write(Section, "Font", FontToStr(Font), std::string(DEFAULT_POINT_FONT));
-  IniFile.Write(Section, "LabelPosition", LabelPosition);
+  Section.Write(L"FrameColor", FrameColor, clBlack);
+  Section.Write(L"FillColor", FillColor);
+  Section.Write(L"LineColor", LineColor);
+  Section.Write(L"Size", Size);
+  Section.Write(L"Style", Style);
+  Section.Write(L"LineSize", LineSize, 1U);
+  Section.Write(L"LineStyle", LineStyle, psClear);
+  Section.Write(L"Interpolation", Interpolation, iaLinear);
+  Section.Write(L"ShowLabels", ShowLabels, false);
+  Section.Write(L"Font", FontToStr(Font), DEFAULT_POINT_FONT);
+  Section.Write(L"LabelPosition", LabelPosition);
 
-  std::ostringstream Str;
+  std::wostringstream Str;
   for(unsigned N = 0; N < PointList.size(); N++)
   {
     if(PointList[N].x.Text.find(',') == std::string::npos)
@@ -681,75 +678,75 @@ void TPointSeries::WriteToIni(TConfigFile &IniFile, const std::string &Section) 
     else
       Str << '"' << PointList[N].y.Text << "\";";
   }
-  IniFile.Write(Section, "Points", Str.str());
+  Section.Write(L"Points", Str.str());
 
-  IniFile.Write(Section, "xErrorBarType", xErrorBarType, ebtNone);
-  IniFile.Write(Section, "xErrorBarValue", xErrorValue, 0.0);
+  Section.Write(L"xErrorBarType", xErrorBarType, ebtNone);
+  Section.Write(L"xErrorBarValue", xErrorValue, 0.0);
   if(xErrorBarType == ebtCustom)
   {
-    Str.str("");
+    Str.str(L"");
     for(unsigned N = 0; N < PointList.size(); N++)
       Str << PointList[N].xError << ';';
-    IniFile.Write(Section, "xErrorBarData", Str.str(), std::string());
+    Section.Write(L"xErrorBarData", Str.str(), std::wstring());
   }
 
-  IniFile.Write(Section, "yErrorBarType", yErrorBarType, ebtNone);
-  IniFile.Write(Section, "yErrorBarValue", yErrorValue, 0.0);
+  Section.Write(L"yErrorBarType", yErrorBarType, ebtNone);
+  Section.Write(L"yErrorBarValue", yErrorValue, 0.0);
   if(yErrorBarType == ebtCustom)
   {
-    Str.str("");
+    Str.str(L"");
     for(unsigned N = 0; N < PointList.size(); N++)
         Str << PointList[N].yError << ';';
-    IniFile.Write(Section, "yErrorBarData", Str.str(), std::string());
+    Section.Write(L"yErrorBarData", Str.str(), std::wstring());
   }
 
-  TGraphElem::WriteToIni(IniFile, Section);
+  TGraphElem::WriteToIni(Section);
 }
 //---------------------------------------------------------------------------
-void TPointSeries::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
+void TPointSeries::ReadFromIni(const TConfigFileSection &Section)
 {
-  TGraphElem::ReadFromIni(IniFile, Section);
+  TGraphElem::ReadFromIni(Section);
   //For backward compatibility
   if(GetLegendText().empty())
-    SetLegendText(ToWString(IniFile.Read(Section, "Text", Section)));
+    SetLegendText(Section.Read(L"Text", Section.GetName()));
 
-  FrameColor = IniFile.Read(Section, "FrameColor", clBlack);
-  FillColor = IniFile.Read(Section, "FillColor", clRed);
-  LineColor = IniFile.Read(Section, "LineColor", clBlue);
-  Size = IniFile.Read(Section, "Size", 5);
-  Style = IniFile.Read(Section, "Style", 0);
-  LineSize = IniFile.Read(Section, "LineSize", 1);
-  LineStyle = IniFile.ReadEnum(Section, "LineStyle", psClear);
-  if(IniFile.KeyExists(Section, "SmoothLine"))
-    Interpolation = IniFile.ReadEnum(Section, "SmoothLine", iaLinear);
+  FrameColor = Section.Read(L"FrameColor", clBlack);
+  FillColor = Section.Read(L"FillColor", clRed);
+  LineColor = Section.Read(L"LineColor", clBlue);
+  Size = Section.Read(L"Size", 5);
+  Style = Section.Read(L"Style", 0);
+  LineSize = Section.Read(L"LineSize", 1);
+  LineStyle = Section.Read(L"LineStyle", psClear);
+  if(Section.KeyExists(L"SmoothLine"))
+    Interpolation = Section.Read(L"SmoothLine", iaLinear);
   else
-    Interpolation = IniFile.ReadEnum(Section, "Interpolation", iaLinear);
-  ShowLabels = IniFile.Read(Section, "ShowLabels", false);
-  StrToFont(IniFile.Read(Section, "Font", DEFAULT_POINT_FONT), Font);
-  LabelPosition = IniFile.ReadEnum(Section, "LabelPosition", lpBelow);
+    Interpolation = Section.Read(L"Interpolation", iaLinear);
+  ShowLabels = Section.Read(L"ShowLabels", false);
+  StrToFont(Section.Read(L"Font", DEFAULT_POINT_FONT), Font);
+  LabelPosition = Section.Read(L"LabelPosition", lpBelow);
 
-  TTokenizer Tokens(IniFile.Read(Section, "Points", ""), ';');
-  std::istringstream xStream(IniFile.Read(Section, "xErrorBarData", ""));
-  std::istringstream yStream(IniFile.Read(Section, "yErrorBarData", ""));
-  TTokenizer Token("", ',', '"');
+  TTokenizer Tokens(Section.Read(L"Points", L""), L';');
+  std::wistringstream xStream(Section.Read(L"xErrorBarData", L""));
+  std::wistringstream yStream(Section.Read(L"yErrorBarData", L""));
+  TTokenizer Token(L"", L',', L'"');
 
-  std::string SavedByVersion = IniFile.Read("Graph", "Version", "NA");
-  bool BackwardCompatibility = SavedByVersion < TVersion("4.0"); //Before 4.0 the number 3,000,000 would be saved as "3e6"
+//  std::string SavedByVersion = Section.Read("Graph", "Version", "NA");
+//  bool BackwardCompatibility = SavedByVersion < TVersion("4.0"); //Before 4.0 the number 3,000,000 would be saved as "3e6"
 
   while(Token = Tokens.Next(), Tokens)
   {
-    std::string x, y, xError, yError;
+    std::wstring x, y, xError, yError;
     Token >> x >> y;
 
-    getline(xStream, xError, ';');
-    getline(yStream, yError, ';');
+    getline(xStream, xError, L';');
+    getline(yStream, yError, L';');
 
     try
     {
-      using boost::lexical_cast;
-      if(BackwardCompatibility)
-        PointList.push_back(TPointSeriesPoint(lexical_cast<double>(x), lexical_cast<double>(y), xError.empty() ? 0.0 : lexical_cast<double>(yError), xError.empty() ? 0.0 : lexical_cast<double>(yError)));
-      else
+//      using boost::lexical_cast;
+//      if(BackwardCompatibility)
+//        PointList.push_back(TPointSeriesPoint(lexical_cast<double>(x), lexical_cast<double>(y), xError.empty() ? 0.0 : lexical_cast<double>(yError), xError.empty() ? 0.0 : lexical_cast<double>(yError)));
+//      else
         PointList.push_back(TPointSeriesPoint(GetData(), x, y, xError, yError));
     }
     catch(Func32::EParseError &E)
@@ -759,11 +756,11 @@ void TPointSeries::ReadFromIni(const TConfigFile &IniFile, const std::string &Se
     }
   }
 
-  xErrorBarType = IniFile.ReadEnum(Section, "xErrorBarType", ebtNone);
-  xErrorValue = IniFile.Read(Section, "xErrorBarValue", 0.0);
+  xErrorBarType = Section.Read(L"xErrorBarType", ebtNone);
+  xErrorValue = Section.Read(L"xErrorBarValue", 0.0);
 
-  yErrorBarType = IniFile.ReadEnum(Section, "yErrorBarType", ebtNone);
-  yErrorValue = IniFile.Read(Section, "yErrorBarValue", 0.0);
+  yErrorBarType = Section.Read(L"yErrorBarType", ebtNone);
+  yErrorValue = Section.Read(L"yErrorBarValue", 0.0);
 }
 //---------------------------------------------------------------------------
 double TPointSeries::GetXError(unsigned Index) const
@@ -848,27 +845,27 @@ TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const 
   //Update() must be called after Label is added to Data
 }
 //---------------------------------------------------------------------------
-void TTextLabel::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+void TTextLabel::WriteToIni(TConfigFileSection &Section) const
 {
-  IniFile.Write(Section, "Placement", LabelPlacement);
+  Section.Write(L"Placement", LabelPlacement);
   if(LabelPlacement == lpUserTopLeft || LabelPlacement >= lpUserTopRight)
-    IniFile.Write(Section, "Pos", xPos.Text + ";" + yPos.Text);
-  IniFile.Write(Section, "Rotation", Rotation, 0U);
-  IniFile.Write(Section, "Text", EncodeEscapeSequence(Text));
-  IniFile.Write(Section, "BackgroundColor", BackgroundColor);
+    Section.Write(L"Pos", xPos.Text + L";" + yPos.Text);
+  Section.Write(L"Rotation", Rotation, 0U);
+  Section.Write(L"Text", ToWString(EncodeEscapeSequence(Text)));
+  Section.Write(L"BackgroundColor", BackgroundColor);
 
-  TGraphElem::WriteToIni(IniFile, Section);
+  TGraphElem::WriteToIni(Section);
 }
 //---------------------------------------------------------------------------
-void TTextLabel::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
+void TTextLabel::ReadFromIni(const TConfigFileSection &Section)
 {
-  LabelPlacement = IniFile.ReadEnum(Section, "Placement", lpUserTopLeft);
-  std::string Temp = IniFile.Read(Section, "Pos", "0;0");
-  unsigned n = Temp.find(";");
+  LabelPlacement = Section.Read(L"Placement", lpUserTopLeft);
+  std::wstring Temp = Section.Read(L"Pos", L"0;0");
+  unsigned n = Temp.find(L";");
   if(n == std::string::npos)
   {
     //For backwards compatibility
-    Func32::TDblPoint Pos = IniFile.Read(Section, "Pos", Func32::TDblPoint(0,0));
+    Func32::TDblPoint Pos = Section.Read(L"Pos", Func32::TDblPoint(0,0));
     xPos = TTextValue(Pos.x);
     yPos = TTextValue(Pos.y);
   }
@@ -878,14 +875,14 @@ void TTextLabel::ReadFromIni(const TConfigFile &IniFile, const std::string &Sect
     yPos.Set(Temp.substr(n+1), GetData(), true);
   }
 
-  Rotation = IniFile.Read(Section, "Rotation", 0U);
-  Text = DecodeEscapeSequence(IniFile.Read(Section, "Text", "ERROR"));
-  BackgroundColor = IniFile.Read(Section, "BackgroundColor", clNone);
+  Rotation = Section.Read(L"Rotation", 0U);
+  Text = DecodeEscapeSequence(ToString(Section.Read(L"Text", L"ERROR")));
+  BackgroundColor = Section.Read(L"BackgroundColor", clNone);
 
   Update();
   StatusText = ToWString(RtfToPlainText(Text));
 
-  TGraphElem::ReadFromIni(IniFile, Section);
+  TGraphElem::ReadFromIni(Section);
   SetShowInLegend(false); //Overwrite data; Label is never shown in legend
 }
 //---------------------------------------------------------------------------
@@ -925,7 +922,7 @@ TRelation::TRelation()
 {
 }
 //---------------------------------------------------------------------------
-TRelation::TRelation(const std::string &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig)
+TRelation::TRelation(const std::wstring &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig)
   : Text(AText), Color(AColor), BrushStyle(Style), Size(ASize)
 {
   std::vector<std::string> Args;
@@ -933,7 +930,7 @@ TRelation::TRelation(const std::string &AText, const Func32::TSymbolList &Symbol
   Args.push_back("y");
   Func.SetTrigonometry(Trig);
   Constraints.SetTrigonometry(Trig);
-  Func.SetFunc(Text, Args, SymbolList);
+  Func.SetFunc(ToString(Text), Args, SymbolList);
   if(Func.GetFunctionType() != Func32::ftInequality && Func.GetFunctionType() != Func32::ftEquation)
     throw EGraphError(geInvalidRelation);
 
@@ -952,50 +949,50 @@ TRelation::TRelation(const TRelation &Relation)
 {
 }
 //---------------------------------------------------------------------------
-void TRelation::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+void TRelation::WriteToIni(TConfigFileSection &Section) const
 {
-  IniFile.Write(Section, "Relation", Text);
-  IniFile.Write(Section, "Constraints", ConstraintsText, std::string());
-  IniFile.Write(Section, "Style", BrushStyle);
-  IniFile.Write(Section, "Color", Color);
-  IniFile.Write(Section, "Size", Size, 1U);
+  Section.Write(L"Relation", Text);
+  Section.Write(L"Constraints", ConstraintsText, std::wstring());
+  Section.Write(L"Style", BrushStyle);
+  Section.Write(L"Color", Color);
+  Section.Write(L"Size", Size, 1U);
 
-  TGraphElem::WriteToIni(IniFile, Section);
+  TGraphElem::WriteToIni(Section);
 }
 //---------------------------------------------------------------------------
-void TRelation::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
+void TRelation::ReadFromIni(const TConfigFileSection &Section)
 {
   Func.SetTrigonometry(GetData().Axes.Trigonometry);
   Constraints.SetTrigonometry(GetData().Axes.Trigonometry);
-  Text = IniFile.Read(Section, "Relation", "");
-  ConstraintsText = IniFile.Read(Section, "Constraints", "");
-  BrushStyle = IniFile.ReadEnum(Section, "Style", bsBDiagonal);
-  Color = IniFile.Read(Section, "Color", clGreen);
-  Size = IniFile.Read(Section, "Size", 1);
+  Text = Section.Read(L"Relation", L"");
+  ConstraintsText = Section.Read(L"Constraints", L"");
+  BrushStyle = Section.Read(L"Style", bsBDiagonal);
+  Color = Section.Read(L"Color", clGreen);
+  Size = Section.Read(L"Size", 1);
   std::vector<std::string> Args;
   Args.push_back("x");
   Args.push_back("y");
-  Func.SetFunc(Text, Args, GetData().CustomFunctions.SymbolList);
+  Func.SetFunc(ToString(Text), Args, GetData().CustomFunctions.SymbolList );
   if(!ConstraintsText.empty())
-    Constraints.SetFunc(ConstraintsText, Args, GetData().CustomFunctions.SymbolList);
+    Constraints.SetFunc(ToString(ConstraintsText), Args, GetData().CustomFunctions.SymbolList);
   RelationType = Func.GetFunctionType() == Func32::ftInequality ? rtInequality : rtEquation;
   if(Func.GetFunctionType() == Func32::ftEquation)
     Func.RemoveRelation();
 
-  TGraphElem::ReadFromIni(IniFile, Section);
+  TGraphElem::ReadFromIni(Section);
 }
 //---------------------------------------------------------------------------
 std::wstring TRelation::MakeText() const
 {
-  return ConstraintsText.empty() ? ToWString(Text) : ToWString(Text + "; " + ConstraintsText);
+  return ConstraintsText.empty() ? Text : Text + L"; " + ConstraintsText;
 }
 //---------------------------------------------------------------------------
-void TRelation::SetConstraints(const std::string &AConstraintsText, const Func32::TSymbolList &SymbolList)
+void TRelation::SetConstraints(const std::wstring &AConstraintsText, const Func32::TSymbolList &SymbolList)
 {
   std::vector<std::string> Args;
   Args.push_back("x");
   Args.push_back("y");
-  Constraints.SetFunc(AConstraintsText, Args, SymbolList);
+  Constraints.SetFunc(ToString(AConstraintsText), Args, SymbolList);
   ConstraintsText = AConstraintsText;
 }
 //---------------------------------------------------------------------------
@@ -1031,9 +1028,14 @@ void TRelation::Update()
 ///////////////
 // TAxesView //
 ///////////////
-void TAxesView::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+void TAxesView::ReadFromIni(const TConfigFileSection &Section)
 {
-  GetData().Axes.WriteToIni(IniFile);
+  SetShowInLegend(false);
+}
+//---------------------------------------------------------------------------
+void TAxesView::WriteToIni(TConfigFileSection &Section) const
+{
+  GetData().Axes.WriteToIni(Section);
 }
 //---------------------------------------------------------------------------
 int TAxesView::GetVisible() const

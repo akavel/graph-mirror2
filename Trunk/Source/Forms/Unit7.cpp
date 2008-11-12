@@ -45,8 +45,8 @@ void __fastcall TForm7::Button1Click(TObject *Sender)
   {
     boost::shared_ptr<TBaseFuncType> Dif(Func->MakeDifFunc());
 
-    Dif->From.Text = ::ToString(Edit1->Text);
-    Dif->To.Text = ::ToString(Edit2->Text);
+    Dif->From.Text = ToWString(Edit1->Text);
+    Dif->To.Text = ToWString(Edit2->Text);
 
     if(Edit1->Text.IsEmpty())
       Dif->From.Value = -INF;
@@ -62,7 +62,7 @@ void __fastcall TForm7::Button1Click(TObject *Sender)
     Dif->Style = LineSelect1->LineStyle;
     Dif->Color = ExtColorBox1->Selected;
     Dif->SetLegendText(ToWString(Edit3->Text));
-    Dif->SetSteps(TTextValue(0, ""));
+    Dif->SetSteps(TTextValue(0, L""));
 
     Data.Add(Dif);
     UndoList.Push(TUndoAdd(Data, Dif));

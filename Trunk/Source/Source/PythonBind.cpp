@@ -12,6 +12,7 @@
 #include "PythonBind.h"
 #undef _DEBUG
 #include <python.h>
+#include "ConfigRegistry.h"
 #pragma link "python25.lib"
 //---------------------------------------------------------------------------
 namespace Python
@@ -36,7 +37,7 @@ bool IsPythonInstalled()
   static int Result = -1;
   if(Result == -1)
   {
-    PythonInstance = LoadLibraryA(GetRegValue("Software\\Ivan\\Graph", "PythonDll", HKEY_CURRENT_USER, "Python25.dll").c_str());
+    PythonInstance = LoadLibrary(GetRegValue(L"Software\\Ivan\\Graph", L"PythonDll", HKEY_CURRENT_USER, L"Python25.dll").c_str());
     Result = PythonInstance != NULL;
   }
   return Result;
