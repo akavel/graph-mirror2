@@ -305,7 +305,7 @@ __published:	// IDE-managed Components
   void __fastcall StatusBar1DrawPanel(TStatusBar *StatusBar,
   TStatusPanel *Panel, const TRect &Rect);
   void __fastcall Timer1Timer(TObject *Sender);
-  void __fastcall ApplicationEventsShowHint(AnsiString &HintStr,
+  void __fastcall ApplicationEventsShowHint(String &HintStr,
   bool &CanShow, THintInfo &HintInfo);
   void __fastcall TreeViewCollapsing(TObject *Sender,
   TTreeNode *Node, bool &AllowCollapse);
@@ -383,7 +383,7 @@ __published:	// IDE-managed Components
   void __fastcall ToolBar_ResetClick(TObject *Sender);
   void __fastcall CustomizeDlgClose(TObject *Sender);
   void __fastcall ApplicationEventsSettingChange(TObject *Sender, int Flag,
-    const AnsiString Section, int &Result);
+    const String Section, int &Result);
   void __fastcall ZoomFitAllActionExecute(TObject *Sender);
   void __fastcall FaqActionExecute(TObject *Sender);
   void __fastcall Panel4DockDrop(TObject *Sender, TDragDockObject *Source,
@@ -407,7 +407,7 @@ __published:	// IDE-managed Components
   void __fastcall TreeViewKeyDown(TObject *Sender, WORD &Key,
     TShiftState Shift);
   bool __fastcall OpenPreviewDialog1PreviewFile(TOpenPreviewDialog *Dialog,
-    const AnsiString &FileName, TCanvas *Canvas, const TRect &Rect);
+    const String &FileName, TCanvas *Canvas, const TRect &Rect);
   void __fastcall OpenPreviewDialog1Show(TObject *Sender);
   void __fastcall OpenPreviewDialog1Close(TObject *Sender);
   void __fastcall Tree_ExportClick(TObject *Sender);
@@ -466,15 +466,15 @@ private:	// User declarations
 
   //Form pos in standard size
   int StdTop, StdLeft, StdWidth, StdHeight;
-  WideString StatusError;
+  String StatusError;
   TColor StatusErrorColor;
   int IsResizing;     // >0 when the window is being resized or dragged
   bool Reseized;      // true if windo was resized
   int Updating;
   Func32::TDblPoint MovePos; //Position when moving system with mouse; Coordinate where left button was pressed
   TPoint LastMousePos; //Last coordiante for mouse
-  AnsiString DefaultToolBar; //List of tool bar buttons from design time
-  AnsiString StartToolBar;   //The toolbar shown a startup; Not necessarily the one saved
+  String DefaultToolBar; //List of tool bar buttons from design time
+  String StartToolBar;   //The toolbar shown a startup; Not necessarily the one saved
   boost::shared_ptr<TTextLabel> MovingLabel; //Label being moved
   TLabelPlacement MovingLabelPlacement; //Used while moving a text label
   TLegendPlacement LegendPlacement; //Used while moving the legend
@@ -495,8 +495,8 @@ private:	// User declarations
   bool AskSave();
   void LoadSettings();
   void SaveSettings();
-  void CreateToolBar(AnsiString Str);
-  AnsiString GetToolBar();
+  void CreateToolBar(String Str);
+  String GetToolBar();
   void Initialize();
   void SetCursorState(TCursorState State);
   void EditLabel(const boost::shared_ptr<TTextLabel> &Label);
@@ -507,7 +507,7 @@ private:	// User declarations
   TTreeNode* GetNode(const boost::shared_ptr<const TGraphElem> &Elem);
   void CopyAsImageToClipboard();
   TTreeNode* GetRootNode(unsigned Index);
-  bool DoSave(const AnsiString &FileName, bool Remember);
+  bool DoSave(const String &FileName, bool Remember);
   void MoveAndSnapLegend(int dx, int dy, bool Snap);
   void MoveAndSnapLabel(int dx, int dy, bool Snap);
   void MoveLabel(int X, int Y, TLabelPlacement Placement, bool Snap);
@@ -549,9 +549,9 @@ public:		// User declarations
   bool Zoom(double x, double y, double xZoomRate, double yZoomRate, bool ChangeUnits=true);
   bool Zoom(double ZoomRate, bool ChangeUnits=true);
   bool Zoom(double xZoomRate, double yZoomRate, bool ChangeUnits=true);
-  void ShowStatusError(const WideString &Str, TColor = clRed, unsigned Timeout = 5000);
+  void ShowStatusError(const String &Str, TColor = clRed, unsigned Timeout = 5000);
   void CancelStatusError();
-  void ShowStatusMessage(const WideString &Str, bool AutoHint=false);
+  void ShowStatusMessage(const String &Str, bool AutoHint=false);
   void SetHelpError(int AHelpError) {HelpError = AHelpError;}
   void SetStatusIcon(int AStatusIcon);
 
@@ -559,16 +559,16 @@ public:		// User declarations
 
   void SetCross(int X, int Y);
   void SetCrossPos(long double x, long double y);
-  void ChangeLanguage(const AnsiString &Ext);
+  void ChangeLanguage(const String &Ext);
   void ActivateOleUserInterface();
 
   void __fastcall UpdateEval();
   void __fastcall BeginUpdate();
   void __fastcall EndUpdate();
 
-  TSaveError SaveAsImage(const AnsiString &FileName, const TImageOptions &ImageOptions);
-  TSaveError SaveAsImage(const AnsiString &FileName, int ImageFileType, const TImageOptions &ImageOptions);
-  bool LoadFromFile(const AnsiString &FileName, bool AddToRecent = true, bool ShowErrorMessages = true);
+  TSaveError SaveAsImage(const String &FileName, const TImageOptions &ImageOptions);
+  TSaveError SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions &ImageOptions);
+  bool LoadFromFile(const String &FileName, bool AddToRecent = true, bool ShowErrorMessages = true);
   void LoadDefault();
 };
 

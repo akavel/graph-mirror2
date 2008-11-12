@@ -320,15 +320,15 @@ void __fastcall TForm3::CheckBox1Click(TObject *Sender)
     return;   //Don't adjust while initializing form
 
   if(!Edit1->Modified)
-    Edit1->Text = ToWideString(CheckBox1->Checked ? 0.1 : -10);
+    Edit1->Text = CheckBox1->Checked ? 0.1 : -10;
   if(!Edit2->Modified)
-    Edit2->Text = ToWideString(CheckBox1->Checked ? 1000 : 10);
+    Edit2->Text = CheckBox1->Checked ? 1000 : 10;
   if(!Edit3->Modified)
-    Edit3->Text = ToWideString(CheckBox1->Checked ? 10 : 1);
+    Edit3->Text = CheckBox1->Checked ? 10 : 1;
   if(!Edit4->Modified)
-    Edit4->Text = ToWideString(CheckBox1->Checked ? 10 : 1);
+    Edit4->Text = CheckBox1->Checked ? 10 : 1;
   if(!Edit12->Modified)
-    Edit12->Text = ToWideString(CheckBox1->Checked ? 1 : 0);
+    Edit12->Text = CheckBox1->Checked ? 1 : 0;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm3::CheckBox8Click(TObject *Sender)
@@ -337,15 +337,15 @@ void __fastcall TForm3::CheckBox8Click(TObject *Sender)
     return;   //Don't adjust while initializing form
 
   if(!Edit7->Modified)
-    Edit7->Text = ToWideString(CheckBox8->Checked ? 0.1 : -10);
+    Edit7->Text = CheckBox8->Checked ? 0.1 : -10;
   if(!Edit8->Modified)
-    Edit8->Text = ToWideString(CheckBox8->Checked ? 1000 : 10);
+    Edit8->Text = CheckBox8->Checked ? 1000 : 10;
   if(!Edit9->Modified)
-    Edit9->Text = ToWideString(CheckBox8->Checked ? 10 : 1);
+    Edit9->Text = CheckBox8->Checked ? 10 : 1;
   if(!Edit10->Modified)
-    Edit10->Text = ToWideString(CheckBox8->Checked ? 10 : 1);
+    Edit10->Text = CheckBox8->Checked ? 10 : 1;
   if(!Edit6->Modified)
-    Edit6->Text = ToWideString(CheckBox8->Checked ? 1 : 0);
+    Edit6->Text = CheckBox8->Checked ? 1 : 0;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm3::CheckBox15Click(TObject *Sender)

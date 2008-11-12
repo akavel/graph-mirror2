@@ -29,7 +29,7 @@ __fastcall TForm20::TForm20(TComponent* Owner, const std::string &Constant, doub
 
   dwICValue = dwICValue; //Avoid stupid warning
   Panel1->DoubleBuffered;
-  LabeledEdit1->EditLabel->Caption = Constant.c_str() + AnsiString("=");
+  LabeledEdit1->EditLabel->Caption = ToUString(Constant + "=");
   LabeledEdit1->Text = Min;
 
   TConfigRegistry Registry;
@@ -40,7 +40,7 @@ __fastcall TForm20::TForm20(TComponent* Owner, const std::string &Constant, doub
   }
 }
 //---------------------------------------------------------------------------
-void TForm20::ShowAnimation(const AnsiString &FileName)
+void TForm20::ShowAnimation(const String &FileName)
 {
   MediaPlayer1->FileName = FileName;
   MediaPlayer1->Open();
@@ -219,7 +219,7 @@ void __fastcall TForm20::Saveimagesequence1Click(TObject *Sender)
     int OldPosition = MediaPlayer1->Position;
     for(int I = 0; I < FrameCount; I++)
     {
-      AnsiString FileName = ChangeFileExt(SaveDialog2->FileName, AnsiString().sprintf(" %0*d%s", Size, I+1, ExtractFileExt(SaveDialog2->FileName).c_str()));
+      String FileName = ChangeFileExt(SaveDialog2->FileName, String().sprintf(L" %0*d%s", Size, I+1, ExtractFileExt(SaveDialog2->FileName).c_str()));
       MediaPlayer1->Position = I;
       SaveFrame(FileName, SaveDialog2->FilterIndex);
     }
@@ -227,7 +227,7 @@ void __fastcall TForm20::Saveimagesequence1Click(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-void TForm20::SaveFrame(const AnsiString &FileName, int FilterIndex)
+void TForm20::SaveFrame(const String &FileName, int FilterIndex)
 {
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
   MediaPlayer1->DisplayRect = MediaPlayer1->SourceRect;

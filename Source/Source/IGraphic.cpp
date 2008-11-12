@@ -222,7 +222,7 @@ unsigned FindEndPar(const std::string &Str, unsigned Pos)
 //---------------------------------------------------------------------------
 void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
 {
-  std::string Str = AnsiString(RichEdit->Text).c_str();
+  std::string Str = ToString(RichEdit->Text);
   for(int I = Str.size()-1; I >=0; I--)
     if(Str[I] == '\r')
       Str.erase(I, 1);
@@ -239,7 +239,7 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
     {
       std::string Expression = Str.substr(Pos+2, Pos2-Pos-2);
       bool UseReal = Property.ComplexFormat == cfReal;
-      WideString Value = ComplexToWideString(UseReal ? Func32::TComplex(Data.Calc(Expression)) : Data.CalcComplex(Expression));
+      String Value = ComplexToString(UseReal ? Func32::TComplex(Data.Calc(Expression)) : Data.CalcComplex(Expression));
 
       //If %() is preceded by a '+' and the value is negative, the '+' will be removed to avoid such as "2x+-3"
       if(Value[1] == '-' && Pos > 0 && Str[Pos - 1] == '+')

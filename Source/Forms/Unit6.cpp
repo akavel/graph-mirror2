@@ -210,7 +210,7 @@ void __fastcall TForm6::ComboBox1Exit(TObject *Sender)
 {
   try
   {
-    IRichEdit1->TextFormat.SetSize(ToInt(ComboBox1->Text));
+    IRichEdit1->TextFormat.SetSize(ComboBox1->Text.ToInt());
     UpdateFont();
   }
   catch(EConvertError&)
@@ -221,7 +221,7 @@ void __fastcall TForm6::ComboBox1Exit(TObject *Sender)
 void TForm6::UpdateFont()
 {
   IFontBox1->FontName = IRichEdit1->TextFormat.GetName();
-  ComboBox1->Text = ToWideString(IRichEdit1->TextFormat.GetSize());
+  ComboBox1->Text = IRichEdit1->TextFormat.GetSize();
   ComboBox1->ItemIndex = ComboBox1->Items->IndexOf(ComboBox1->Text);
   ColorBox1->Selected = IRichEdit1->TextFormat.GetColor();
   ColorBox2->Selected = IRichEdit1->BackgroundColor;
@@ -360,7 +360,7 @@ void __fastcall TForm6::ToolButton13Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::SymbolDialog1InsertWideChar(TSymbolDialog *Sender,
-      wchar_t Symbol, const AnsiString &FontName)
+      wchar_t Symbol, const String &FontName)
 {
   AnsiString OldName = IRichEdit1->TextFormat.GetName();
   IRichEdit1->SetSelText(Symbol, FontName, ToIntDef(ComboBox1->Text, 12));
@@ -368,7 +368,7 @@ void __fastcall TForm6::SymbolDialog1InsertWideChar(TSymbolDialog *Sender,
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::SymbolDialog1InsertAnsiChar(TSymbolDialog *Sender,
-      char Symbol, const AnsiString &FontName)
+      char Symbol, const String &FontName)
 {
   AnsiString OldName = IRichEdit1->TextFormat.GetName();
   IRichEdit1->SetSelText(Symbol, FontName, ToIntDef(ComboBox1->Text, 12));

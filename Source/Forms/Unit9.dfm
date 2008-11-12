@@ -81,19 +81,59 @@ object Form9: TForm9
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 4
     Visible = False
-    inherited Label1: TLabel
-      Width = 26
-      ExplicitWidth = 26
-    end
-    inherited Label3: TLabel
-      Width = 22
-      ExplicitWidth = 22
-    end
-    inherited Edit1: TMyEdit
-      OnChange = Edit1Change
-    end
-    inherited Edit2: TMyEdit
-      OnChange = Edit1Change
+    ExplicitWidth = 184
+    ExplicitHeight = 102
+    inherited GridPanel1: TGridPanel
+      ControlCollection = <
+        item
+          Column = 0
+          Control = AreaFrame1.Label1
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = AreaFrame1.Edit1
+          Row = 0
+        end
+        item
+          Column = 0
+          Control = AreaFrame1.Label2
+          Row = 1
+        end
+        item
+          Column = 1
+          Control = AreaFrame1.Edit2
+          Row = 1
+        end
+        item
+          Column = 0
+          Control = AreaFrame1.Label3
+          Row = 2
+        end
+        item
+          Column = 1
+          Control = AreaFrame1.Edit3
+          Row = 2
+        end>
+      inherited Label1: TLabel
+        Width = 26
+        Height = 13
+        ExplicitWidth = 26
+      end
+      inherited Edit1: TMyEdit
+        OnChange = Edit1Change
+      end
+      inherited Label2: TLabel
+        Height = 13
+      end
+      inherited Edit2: TMyEdit
+        OnChange = Edit1Change
+      end
+      inherited Label3: TLabel
+        Width = 22
+        Height = 13
+        ExplicitWidth = 22
+      end
     end
   end
   inline PolFuncFrame1: TPolFuncFrame

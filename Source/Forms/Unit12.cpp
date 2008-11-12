@@ -53,7 +53,7 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
     return;
   }
 
-  Tan->t.Text = ::ToString(Edit1->Text);
+  Tan->t.Text = ToWString(Edit1->Text);
   Tan->t.Value = MakeFloat(Edit1);
 
   Data.AbortUpdate();
@@ -67,8 +67,8 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
 
   Tan->From.Value = -INF;
   Tan->To.Value = INF;
-  Tan->From.Text = ::ToString(Edit4->Text);
-  Tan->To.Text = ::ToString(Edit5->Text);
+  Tan->From.Text = ToWString(Edit4->Text);
+  Tan->To.Text = ToWString(Edit5->Text);
 
   Tan->StartPointStyle = ComboBox1->ItemIndex;
   Tan->EndPointStyle = ComboBox2->ItemIndex;
@@ -86,7 +86,7 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
 
   if(!Tan->CalcTan())
   {
-    MessageBox(LoadRes(518, Tan->ParentFunc()->GetVariable(), Tan->t.Text), LoadRes(519));
+    MessageBox(LoadRes(518, ToWString(Tan->ParentFunc()->GetVariable()), Tan->t.Text), LoadString(519));
     return;
   }
 
@@ -103,7 +103,7 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
     Func->ReplaceChild(Index, Tan);
   }
 
-  Property.DefaultTangent.Set(LineSelect1->ItemIndex, ExtColorBox1->Selected, ToInt(Edit3->Text));
+  Property.DefaultTangent.Set(LineSelect1->ItemIndex, ExtColorBox1->Selected, Edit3->Text.ToInt());
 
   ModalResult=mrOk;
 }
@@ -125,7 +125,7 @@ int TForm12::EditTan(const boost::shared_ptr<TBaseFuncType> &F, int AIndex)
   LineSelect1->LineStyle = Tan->Style;
   ExtColorBox1->Selected = Tan->Color;
   Label1->Caption = (Tan->ParentFunc()->GetVariable() + "=").c_str();
-  Edit2->Text = ToWideString(Tan->GetLegendText());
+  Edit2->Text = ToUString(Tan->GetLegendText());
   RadioGroup1->ItemIndex = Tan->TangentType;
   Edit4->Text = Tan->From.Text.c_str();
   Edit5->Text = Tan->To.Text.c_str();

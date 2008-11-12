@@ -48,15 +48,15 @@ void TStdFuncFrame::Eval(const TGraphElem *Elem)
       Form1->SetCrossPos(x.real(), y.real());
 
     ErrorPrefix = "f'(x): ";
-    Edit2->Text = ComplexToWideString(y);
+    Edit2->Text = ComplexToString(y);
     Func32::TFunc Dif1 = Func->GetFunc().MakeDif();
     Func32::TComplex yDif1 = UseReal ? Func32::TComplex(Dif1.CalcY(real(x))) : Dif1.CalcY(x);
-    Edit3->Text = ComplexToWideString(yDif1);
+    Edit3->Text = ComplexToString(yDif1);
 
     ErrorPrefix = "f''(x): ";
     Func32::TFunc Dif2 = Dif1.MakeDif();
     Func32::TComplex yDif2 = UseReal ? Func32::TComplex(Dif2.CalcY(real(x))) : Dif2.CalcY(x);
-    Edit4->Text = ComplexToWideString(yDif2);
+    Edit4->Text = ComplexToString(yDif2);
   }
 }
 //---------------------------------------------------------------------------

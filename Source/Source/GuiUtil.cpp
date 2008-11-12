@@ -225,104 +225,54 @@ void TranslateStrings(TStrings *Strings)
     Strings->Strings[I] = gettext(Strings->Strings[I]);
 }
 //---------------------------------------------------------------------------
-WideString LoadRes(short Ident, WideString Par1, WideString Par2, WideString Par3)
+String LoadRes(short Ident, String Par1, String Par2, String Par3)
 {
-  WideString ResStr = LoadRes(Ident);
-  if(ResStr.IsEmpty())
+  return ToUString(LoadRes(Ident, ToWString(Par1), ToWString(Par2), ToWString(Par3)));
+}
+//---------------------------------------------------------------------------
+std::wstring LoadRes(short Ident, std::wstring Par1, std::wstring Par2, const std::wstring &Par3)
+{
+  std::wstring ResStr = LoadString(Ident);
+  if(ResStr.empty())
   {
-    MessageBox("Resource " + AnsiString(Ident) + " not found!", "Error", MB_ICONSTOP);
-    return "";
+    MessageBox(L"Resource " + ToWString(Ident) + L" not found!", L"Error", MB_ICONSTOP);
+    return L"";
   }
 
-  for(int I = 1; I <= Par1.Length(); I++)
+  for(unsigned I = 0; I < Par1.size(); I++)
     if(Par1[I] == L'&')
-      Par1.Delete(I, 1);
+      Par1.erase(I, 1);
 
-  for(int I = 1; I <= Par2.Length(); I++)
+  for(unsigned I = 0; I <= Par2.size(); I++)
     if(Par2[I] == L'&')
-      Par2.Delete(I, 1);
+      Par2.erase(I, 1);
 
-  if(!Par1.IsEmpty() && Par1[Par1.Length()] == L':')
-    Par1.Delete(Par1.Length(), 1);
+  if(!Par1.empty() && Par1[Par1.size()-1] == L':')
+    Par1.erase(Par1.end());
 
-  boost::wformat fmter(ToWString(ResStr));
+  boost::wformat fmter(ResStr);
   fmter.exceptions(boost::io::all_error_bits ^ boost::io::too_many_args_bit);
-  return WideString((fmter % ToWString(Par1) % ToWString(Par2) % ToWString(Par3)).str().c_str());
-}
-//---------------------------------------------------------------------------
-WideString LoadRes(short Ident, const std::string &Par1, const std::string &Par2, const std::string &Par3)
-{
-  return LoadRes(Ident, WideString(Par1.c_str()), Par2.c_str(), Par3.c_str());
-}
-//---------------------------------------------------------------------------
-WideString LoadRes(short Ident, const AnsiString &Par1, const AnsiString &Par2, const AnsiString &Par3)
-{
-  return LoadRes(Ident, WideString(Par1), WideString(Par2), WideString(Par3));
-}
-//---------------------------------------------------------------------------
-WideString LoadRes(short Ident)
-{
-  //Don't use undocumented Windows feature: When LoadStringW is passed nBufferMax=0 a pointer to the string is returned.
-  //It doesn't work under Wine.
-  wchar_t Temp[512];
-  LoadStringW(HInstance, Ident, Temp, sizeof(Temp)/sizeof(Temp[0]));
-  return gettext(Temp);
+  return (fmter % Par1 % Par2 % Par3).str();
 }
 //---------------------------------------------------------------------------
 std::wstring LoadString(unsigned Ident)
 {
-  return LoadRes(Ident).c_bstr();
+  return LoadStr(Ident).c_str();
 }
 //---------------------------------------------------------------------------
-/*
-int MessageBox(const char *Text, const char *Caption, int Flags)
+int MessageBox(const wchar_t *Text, const wchar_t *Caption, int Flags)
 {
   return Application->MessageBox(Text, Caption, Flags);
 }
 //---------------------------------------------------------------------------
-//Unicode version of Application::MessageBox
-int MessageBox(const WideString &Text, const WideString &Caption, int Flags)
-{
-  HWND ActiveWindow = (HWND)GetActiveWindow();
-  HMONITOR MBMonitor = MonitorFromWindow(ActiveWindow, MONITOR_DEFAULTTONEAREST);
-  HMONITOR AppMonitor = MonitorFromWindow(Application->Handle, MONITOR_DEFAULTTONEAREST);
-  TRect Rect;
-  if(MBMonitor != AppMonitor)
-  {
-    MONITORINFO MonInfo;
-    MonInfo.cbSize = sizeof(MONITORINFO);
-    GetMonitorInfo(MBMonitor, &MonInfo);
-    GetWindowRect(Application->Handle, &Rect);
-    SetWindowPos(Application->Handle, 0,
-      MonInfo.rcMonitor.left + ((MonInfo.rcMonitor.right - MonInfo.rcMonitor.left) / 2),
-      MonInfo.rcMonitor.top + ((MonInfo.rcMonitor.bottom - MonInfo.rcMonitor.top) / 2),
-      0, 0, SWP_NOACTIVATE | SWP_NOREDRAW | SWP_NOSIZE | SWP_NOZORDER);
-  }
-  void *WindowList = DisableTaskWindows(0);
-  TFocusState FocusState = SaveFocusState;
-  if(Application->UseRightToLeftReading())
-    Flags = Flags | MB_RTLREADING;
-
-  int Result = MessageBoxW(Application->Handle, Text, Caption, Flags);
-  if(MBMonitor != AppMonitor)
-    SetWindowPos(Application-> Handle, 0,
-      Rect.Left + Rect.Width() / 2,
-      Rect.Top + Rect.Height() / 2,
-      0, 0, SWP_NOACTIVATE | SWP_NOREDRAW | SWP_NOSIZE | SWP_NOZORDER);
-  EnableTaskWindows(WindowList);
-  SetActiveWindow(ActiveWindow);
-  RestoreFocusState(FocusState);
-  return Result;
-}
-*/
 int MessageBox(const String &Text, const String &Caption, int Flags)
 {
   return Application->MessageBox(Text.c_str(), Caption.c_str(), Flags);
 }
 //---------------------------------------------------------------------------
-int MessageBox(const std::string &Text, const std::string &Caption, int Flags)
+int MessageBox(const std::wstring &Text, const std::wstring &Caption, int Flags)
 {
-  return MessageBox(AnsiString(Text.c_str()), AnsiString(Caption.c_str()), Flags);
+  return MessageBox(Text.c_str(), Caption.c_str(), Flags);
 }
 //---------------------------------------------------------------------------
 //Shows error message corresponding to ErrorCode in Func
@@ -344,7 +294,7 @@ void ShowErrorMsg(const Func32::EFuncError &Error, TCustomEdit *Edit)
 //---------------------------------------------------------------------------
 void ShowErrorMsg(const ECustomFunctionError &Error, TCustomEdit *Edit)
 {
-  MessageBox(LoadRes(Error.ErrorCode + 200, Error.Text), LoadRes(RES_ERROR), MB_ICONWARNING);
+  MessageBox(LoadRes(Error.ErrorCode + 200, ToUString(Error.Text)), LoadRes(RES_ERROR), MB_ICONWARNING);
   if(Edit)
   {
     SetGlobalFocus(Edit);

@@ -35,12 +35,12 @@ __fastcall TForm16::TForm16(TComponent* Owner, TData &AData)
   bool Found = true;
   while(Found)
   {
-    CmpStr = LoadRes(RES_SHADE) + L" " + ToWideString(I++);
+    CmpStr = LoadRes(RES_SHADE) + L" " + I++;
     Found = false;
     for(unsigned N = 0; N < Data.ElemCount(); N++)
       for(unsigned J = 0; J < Data.GetElem(N)->ChildList.size(); J++)
         if(boost::shared_ptr<TShade> Shade = boost::dynamic_pointer_cast<TShade>(Data.GetElem(N)->ChildList[J]))
-          if(CmpStr == ToWideString(Shade->GetLegendText()))
+          if(CmpStr == ToUString(Shade->GetLegendText()))
             Found = true;
   }
   Edit5->Text = CmpStr;
@@ -55,7 +55,7 @@ void TForm16::ShowFuncList()
       if(F != Func)
       {
         FuncList.push_back(F);
-        ListBox1->Items->Add(ToWideString(F->MakeLegendText()));
+        ListBox1->Items->Add(ToUString(F->MakeLegendText()));
       }
 
   if(ListBox1->Items->Count)
@@ -110,8 +110,8 @@ void __fastcall TForm16::Button1Click(TObject *Sender)
   Shade->Func = Func;
 
   Shade->SetLegendText(ToWString(Edit5->Text));
-  Shade->sMin.Text = ::ToString(Edit1->Text);
-  Shade->sMax.Text = ::ToString(Edit2->Text);
+  Shade->sMin.Text = ToWString(Edit1->Text);
+  Shade->sMax.Text = ToWString(Edit2->Text);
   if(Edit1->Text.IsEmpty())
     Shade->sMin.Value = -INF;
   else
@@ -145,8 +145,8 @@ void __fastcall TForm16::Button1Click(TObject *Sender)
     Shade->Func2 = FuncList[ListBox1->ItemIndex];
     if(!Edit3->Text.IsEmpty() || !Edit4->Text.IsEmpty())
     {
-      Shade->sMin2.Text = ::ToString(Edit3->Text);
-      Shade->sMax2.Text = ::ToString(Edit4->Text);
+      Shade->sMin2.Text = ToWString(Edit3->Text);
+      Shade->sMax2.Text = ToWString(Edit4->Text);
       if(Edit3->Text.IsEmpty())
         Shade->sMin2.Value = -INF;
       else
@@ -214,7 +214,7 @@ int TForm16::EditShade(const boost::shared_ptr<TShade> &AShade)
     CheckBox2->Checked = OldShade->ExtendMaxToIntercept;
     CheckBox5->Checked = OldShade->MarkStart;
     CheckBox6->Checked = OldShade->MarkEnd;
-    Edit5->Text = ToWideString(OldShade->GetLegendText());
+    Edit5->Text = ToUString(OldShade->GetLegendText());
 
     GroupBox2->Enabled = false;
     switch(OldShade->ShadeStyle)

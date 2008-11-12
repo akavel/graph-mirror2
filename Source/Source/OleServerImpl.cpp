@@ -20,6 +20,7 @@
 #include "ConfigFile.h"
 #include "Debug.h"
 #include "Unit1.h"
+#include "ConfigRegistry.h"
 
 TOleServerImpl *OleServerImpl;
 
@@ -202,11 +203,13 @@ bool TOleServerImpl::CheckRegistration()
 {
   try
   {
-    AnsiString ClassKey = "CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
-    AnsiString ProgID = GetProgID();
+    String ClassKey = "CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
+    String ProgID = GetProgID();
 
-    if(GetRegValue(ClassKey + "\\LocalServer32", "", HKEY_CLASSES_ROOT, "") == Application->ExeName + " /automation" &&
-       GetRegValue(ProgID + "\\shell\\open\\command", "", HKEY_CLASSES_ROOT, "") == "\"" + Application->ExeName + "\" \"%1\"")
+    if(GetRegValue(ToWString(ClassKey + L"\\LocalServer32"), L"", HKEY_CLASSES_ROOT, L"")
+        == ToWString(Application->ExeName) + L" /automation" &&
+        GetRegValue(ToWString(ProgID + L"\\shell\\open\\command"), L"", HKEY_CLASSES_ROOT, L"")
+        == L"\"" + ToWString(Application->ExeName) + L"\" \"%1\"")
       return true;
   }
   catch(...)
@@ -219,9 +222,9 @@ bool TOleServerImpl::Register(bool AllUsers)
 {
   try
   {
-    AnsiString Clsid = Comobj::GUIDToString(CLSID_OleServer);
-    AnsiString ClassKey = "Software\\Classes\\CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
-    AnsiString ProgID = AnsiString("Software\\Classes\\") + GetProgID();
+    String Clsid = Comobj::GUIDToString(CLSID_OleServer);
+    String ClassKey = "Software\\Classes\\CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
+    String ProgID = AnsiString("Software\\Classes\\") + GetProgID();
     DWORD RootKey = reinterpret_cast<DWORD>(AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER);
 
     CreateRegKey(ClassKey, "", GetDescription(), RootKey);
@@ -253,8 +256,8 @@ bool TOleServerImpl::Register(bool AllUsers)
     //Remove local registration to prevent it from overwriting the global one
     if(AllUsers)
     {
-      RemoveRegistryKey(ClassKey, HKEY_CURRENT_USER);
-      RemoveRegistryKey(ProgID, HKEY_CURRENT_USER);
+      RemoveRegistryKey(ToWString(ClassKey), HKEY_CURRENT_USER);
+      RemoveRegistryKey(ToWString(ProgID), HKEY_CURRENT_USER);
     }
     return true;
   }
@@ -268,18 +271,18 @@ HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
 {
   try
   {
-    AnsiString ClassKey = "CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
-    AnsiString ProgID = GetProgID();
+    String ClassKey = "CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
+    String ProgID = GetProgID();
 
     //Set "DontRegisterOLE" to 1 in the registry to disable writing to registry when Graph is started
     //This is for debuging purpose
-    if(GetRegValue(REGISTRY_KEY, "DontRegisterOLE", HKEY_CURRENT_USER, 0))
+    if(GetRegValue(REGISTRY_KEY, L"DontRegisterOLE", HKEY_CURRENT_USER, 0))
       return S_OK;
 
     if(bRegister)
     {
       //Update version info to last registered version for current user
-      CreateRegKey(REGISTRY_KEY, "Version", TVersionInfo().ProductVersion().Text().c_str(), (unsigned)HKEY_CURRENT_USER);
+      CreateRegKey(REGISTRY_KEY, L"Version", TVersionInfo().ProductVersion().Text().c_str(), (unsigned)HKEY_CURRENT_USER);
 
       //If "Install for all users" was selected under installation,
       //first try to register for all users. If that fails, register for current user only.
@@ -287,7 +290,7 @@ HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
       //This prevent a registration for each user if there is a machine wide registration available.
       //As far as I know it is not possible to register for current user only under Windows 9x
       if(FindCmdLineSwitch("REGSERVER") || !CheckRegistration())
-        if(GetRegValue(REGISTRY_KEY, "InstallAllUsers", HKEY_CURRENT_USER, 0))
+        if(GetRegValue(REGISTRY_KEY, L"InstallAllUsers", HKEY_CURRENT_USER, 0))
         {
           if(!Register(true))
             Register(false);
@@ -300,7 +303,7 @@ HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
       //SHDeleteKey() deletes a key and all subkeys
       RemoveRegistryKey(ClassKey.c_str(), HKEY_CLASSES_ROOT);
       RemoveRegistryKey(ProgID.c_str(), HKEY_CLASSES_ROOT);
-      RemoveRegistryKey(".grf", HKEY_CLASSES_ROOT);
+      RemoveRegistryKey(L".grf", HKEY_CLASSES_ROOT);
     }
 
     return S_OK;
@@ -978,10 +981,11 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Load(
   HRESULT Result = Form1->Data.LoadFromString(Str) ? S_OK : E_FAIL;
 
   TConfigFile ConfigFile;
-  ConfigFile.LoadFromString(Str);
-  if(ConfigFile.KeyExists("Image", "Width"))
+  ConfigFile.LoadFromUtf8String(Str);
+  const TConfigFileSection &Section = ConfigFile.Section(L"Image");
+  if(Section.KeyExists(L"Width"))
   {
-    SetSize(ConfigFile.Read("Image", "Width", 500), ConfigFile.Read("Image", "Height", 500));
+    SetSize(Section.Read(L"Width", 500), Section.Read(L"Height", 500));
     LOG_DATA(AnsiString("Width=") + GetWidth());
     LOG_DATA(AnsiString("Height=") + GetHeight());
   }
@@ -1006,13 +1010,13 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Save(
   if(FAILED(LOG_FUNCTION_CALL(pStgSave->CreateStream(L"Graph", GrfMode, 0, 0, &Stream))))
     return LOG_RESULT(E_FAIL);
 
-  std::string Str = Form1->Data.SaveToString(fSameAsLoad);
+  std::wstring Str = Form1->Data.SaveToString(fSameAsLoad);
   LOG_DATA(AnsiString("Width=") + GetWidth());
   LOG_DATA(AnsiString("Height=") + GetHeight());
   TConfigFile ConfigFile;
   ConfigFile.LoadFromString(Str);
-  ConfigFile.Write("Image", "Width", GetWidth());
-  ConfigFile.Write("Image", "Height", GetHeight());
+  ConfigFile.Section(L"Image").Write(L"Width", GetWidth());
+  ConfigFile.Section(L"Image").Write(L"Height", GetHeight());
   Str = ConfigFile.GetAsString();
 
   HRESULT Result = S_OK;
@@ -1064,7 +1068,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Save(
 {
   DEBUG_CALL();
   LOG_ARG(AnsiString("FileName=") + pszFileName + ", fRemember=" + fRemember);
-  return LOG_RESULT(Form1->Data.Save(pszFileName ? AnsiString(pszFileName).c_str() : Form1->Data.GetFileName().c_str(), fRemember));
+  return LOG_RESULT(Form1->Data.Save(pszFileName ? std::wstring(pszFileName) : Form1->Data.GetFileName(), fRemember));
 }
 //---------------------------------------------------------------------------
 HRESULT STDMETHODCALLTYPE TOleServerImpl::SaveCompleted(

@@ -52,22 +52,23 @@ TData::TData(const TData &OldData) : Axes(OldData.Axes), CustomFunctions(OldData
 void TData::WriteInfoToIni(TConfigFile &IniFile)
 {
   TVersionInfo VerInfo;
-  IniFile.Write("Graph", "Version", VerInfo.FileVersion().Text());
-  IniFile.Write("Graph", "MinVersion", MINVERSION);
-  IniFile.Write("Graph", "OS", GetWindowsVersion());
+  TConfigFileSection &Section = IniFile.Section(L"Data");
+  Section.Write(L"Version", VerInfo.FileVersion().Text());
+  Section.Write(L"MinVersion", MINVERSION);
+  Section.Write(L"OS", GetWindowsVersion());
 }
 //---------------------------------------------------------------------------
 bool TData::CheckIniInfo(const TConfigFile &IniFile, bool ShowErrorMessages)
 {
-  std::string MinVersion = IniFile.Read("Graph", "MinVersion", "1.0");
+  std::wstring MinVersion = IniFile.Section(L"Graph").Read(L"MinVersion", L"1.0");
   if(TVersion(MinVersion) > TVersionInfo().ProductVersion())
   {
     if(ShowErrorMessages)
-      MessageBox(LoadRes(548, MinVersion), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
+      MessageBox(LoadRes(548, MinVersion), LoadString(RES_FILE_ERROR), MB_ICONSTOP);
     return false;
   }
 
-  TVersion SavedByVersion = IniFile.Read("Graph", "Version", TVersion(100));
+  TVersion SavedByVersion = IniFile.Section(L"Graph").Read(L"Version", TVersion(100));
   if(SavedByVersion < MIN_SAVED_VERSION)
   {
     if(ShowErrorMessages)
@@ -102,30 +103,41 @@ void TData::SaveData(TConfigFile &IniFile)
   for(unsigned I = 0; I < ElemList.size(); I++)
   {
     if(TBaseFuncType *Func = dynamic_cast<TBaseFuncType*>(ElemList[I].get()))
-      Func->WriteToIni(IniFile, "Func" + ToString(++FuncCount));
+    {
+      std::wstring SectionName = L"Func" + ToWString(++FuncCount);
+      Func->WriteToIni(IniFile.Section(SectionName));
+
+      //Write tangents
+      unsigned TanCount = 0;
+      for(unsigned N = 0; N < Func->ChildList.size(); N++)
+        if(dynamic_cast<TTan*>(Func->ChildList[N].get()))
+          Func->ChildList[N]->WriteToIni(IniFile.Section(SectionName + L"Tan" + ToWString(++TanCount)));
+      IniFile.Section(SectionName).Write(L"TanCount", TanCount, 0U);
+    }
     else if(TPointSeries *Series = dynamic_cast<TPointSeries*>(ElemList[I].get()))
-      Series->WriteToIni(IniFile, "PointSeries" + ToString(++PointSeriesCount));
+      Series->WriteToIni(IniFile.Section(L"PointSeries" + ToWString(++PointSeriesCount)));
     else if(TTextLabel *Label = dynamic_cast<TTextLabel*>(ElemList[I].get()))
-      Label->WriteToIni(IniFile, "Label" + ToString(++LabelCount));
+      Label->WriteToIni(IniFile.Section(L"Label" + ToWString(++LabelCount)));
     else if(TRelation *Relation = dynamic_cast<TRelation*>(ElemList[I].get()))
-      Relation->WriteToIni(IniFile, "Relation" + ToString(++RelationCount));
+      Relation->WriteToIni(IniFile.Section(L"Relation" + ToWString(++RelationCount)));
     else if(TAxesView *AxesView = dynamic_cast<TAxesView*>(ElemList[I].get()))
-      AxesView->WriteToIni(IniFile, "Axes");
+      AxesView->WriteToIni(IniFile.Section(L"Axes"));
     else if(TOleObjectElem *OleObjectElem = dynamic_cast<TOleObjectElem*>(ElemList[I].get()))
-      OleObjectElem->WriteToIni(IniFile, "OleObject" + ToString(++OleObjectCount));
+      OleObjectElem->WriteToIni(IniFile.Section(L"OleObject" + ToWString(++OleObjectCount)));
 
     for(unsigned J = 0; J < ElemList[I]->ChildList.size(); J++)
       if(dynamic_cast<TShade*>(ElemList[I]->ChildList[J].get()))
-        ElemList[I]->ChildList[J]->WriteToIni(IniFile, "Shade" + ToString(++ShadeCount));
+        ElemList[I]->ChildList[J]->WriteToIni(IniFile.Section(L"Shade" + ToWString(++ShadeCount)));
   }
 
+  TConfigFileSection &DataSection = IniFile.Section(L"Data");
   //Don't use "LabelCount" because it gives problems in version 2.7.1
-  IniFile.Write("Data", "TextLabelCount", LabelCount);
-  IniFile.Write("Data", "FuncCount", FuncCount);
-  IniFile.Write("Data", "PointSeriesCount", PointSeriesCount);
-  IniFile.Write("Data", "ShadeCount", ShadeCount);
-  IniFile.Write("Data", "RelationCount", RelationCount);
-  IniFile.Write("Data", "OleObjectCount", OleObjectCount);
+  DataSection.Write(L"TextLabelCount", LabelCount);
+  DataSection.Write(L"FuncCount", FuncCount);
+  DataSection.Write(L"PointSeriesCount", PointSeriesCount);
+  DataSection.Write(L"ShadeCount", ShadeCount);
+  DataSection.Write(L"RelationCount", RelationCount);
+  DataSection.Write(L"OleObjectCount", OleObjectCount);
 }
 //---------------------------------------------------------------------------
 void TData::LoadData(const TConfigFile &IniFile)
@@ -133,47 +145,55 @@ void TData::LoadData(const TConfigFile &IniFile)
   for(unsigned I = 0; I < IniFile.SectionCount(); I++)
   {
     boost::shared_ptr<TGraphElem> Elem;
-    const std::string& Section = IniFile.GetSection(I);
-    if(Section.substr(0, 4) == "Func" && Section.find("Tan") == std::string::npos)
-      switch(IniFile.ReadEnum(Section, "FuncType", ftStdFunc))
+    const TConfigFileSection& Section = IniFile.Section(I);
+    const std::wstring SectionName = Section.GetName();
+    if(SectionName.substr(0, 4) == L"Func" && SectionName.find(L"Tan") == std::wstring::npos)
+      switch(Section.Read(L"FuncType", ftStdFunc))
       {
         case ftStdFunc: Elem.reset(new TStdFunc); break;
         case ftParFunc: Elem.reset(new TParFunc); break;
         case ftPolFunc: Elem.reset(new TPolFunc); break;
         default: continue; //Ignore unknown function types
       }
-    else if(Section.substr(0, 11) == "PointSeries")
+    else if(SectionName.substr(0, 11) == L"PointSeries")
       Elem.reset(new TPointSeries);
-    else if(Section.substr(0, 5) == "Label")
+    else if(SectionName.substr(0, 5) == L"Label")
       Elem.reset(new TTextLabel);
-    else if(Section.substr(0, 8) == "Relation")
+    else if(SectionName.substr(0, 8) == L"Relation")
       Elem.reset(new TRelation);
-    else if(Section.substr(0, 10) == "Axes")
+    else if(SectionName.substr(0, 10) == L"Axes")
       Elem.reset(new TAxesView);
-    else if(Section.substr(0, 9) == "OleObject")
+    else if(SectionName.substr(0, 9) == L"OleObject")
       Elem.reset(new TOleObjectElem);
     else
       continue; //No known elem type
 
     //Stream data from inifile
     Elem->SetData(this);
-    Elem->ReadFromIni(IniFile, Section);
+    Elem->ReadFromIni(Section);
 
-    //Assign all children (tangents) to the function
-    for(unsigned I = 0; I < Elem->ChildList.size(); I++)
-      Elem->ChildList[I]->SetParentFunc(boost::dynamic_pointer_cast<TBaseFuncType>(Elem));
+    //Create list of tangents
+    int TanCount = Section.Read(L"TanCount", 0);
+    for(int I = 0; I < TanCount; I++)
+    {
+      boost::shared_ptr<TTan> Tan(new TTan);
+      Tan->SetData(this);
+      Tan->ReadFromIni(IniFile.Section(L"Tan" + ToWString(I+1)));
+      Elem->ChildList.push_back(Tan);
+      Tan->SetParentFunc(boost::dynamic_pointer_cast<TBaseFuncType>(Elem));
+    }
 
     ElemList.push_back(Elem);
     Elem->Update(); //Needed to update a and q for tangents. Must be called after ParentFunc is set
   }
 
   //We need to load shades after all functions are loaded
-  unsigned ShadeCount = IniFile.Read("Data", "ShadeCount", 0U);
+  unsigned ShadeCount = IniFile.Section(L"Data").Read(L"ShadeCount", 0U);
   for(unsigned I = 0; I < ShadeCount; I++)
   {
     boost::shared_ptr<TGraphElem> Shade(new TShade);
     Shade->SetData(this);
-    Shade->ReadFromIni(IniFile, "Shade" + ToString(I+1));
+    Shade->ReadFromIni(IniFile.Section(L"Shade" + ToWString(I+1)));
     if(Shade->ParentFunc())
       Shade->ParentFunc()->ChildList.push_back(Shade);
   }
@@ -345,39 +365,38 @@ boost::shared_ptr<TTextLabel> TData::FindLabel(int X, int Y)
   return boost::shared_ptr<TTextLabel>();
 }
 //---------------------------------------------------------------------------
-void TData::ImportUserModels(const std::string &Str)
+void TData::ImportUserModels(const std::wstring &Str)
 {
   TConfigFile IniFile;
   IniFile.LoadFromString(Str);
 
   for(unsigned I = 0; I < IniFile.SectionCount(); I++)
   {
-    std::string Section = IniFile.GetSection(I);
+    const TConfigFileSection &Section = IniFile.Section(I);
     TUserModel UserModel;
-    UserModel.Model = IniFile.Read(Section, "Model", "$a*x+$b");
+    UserModel.Model = Section.Read(L"Model", L"$a*x+$b");
 
-    std::pair<TConfigFile::TSectionIterator, TConfigFile::TSectionIterator> Iterators = IniFile.GetSectionData(Section);
-    for(TConfigFile::TSectionIterator Iter = Iterators.first; Iter != Iterators.second; ++Iter)
+    for(TConfigFileSection::TIterator Iter = Section.Begin(); Iter != Section.End(); ++Iter)
     {
       if(Iter->first[0] == '$')
         UserModel.Defaults.push_back(std::make_pair(Iter->first, Calc(Iter->second)));
     }
 
-    UserModels[ToWString(Section)] = UserModel;
+    UserModels[Section.GetName()] = UserModel;
   }
 }
 //---------------------------------------------------------------------------
-std::string TData::ExportUserModels() const
+std::wstring TData::ExportUserModels() const
 {
   TConfigFile IniFile;
 
   for(TUserModels::const_iterator Iter = UserModels.begin(); Iter != UserModels.end(); ++Iter)
   {
-    const std::string Section = ToString(Iter->first);
-    IniFile.Write(Section, "Model", Iter->second.Model);
+    TConfigFileSection &Section = IniFile.Section(Iter->first);
+    Section.Write(L"Model", Iter->second.Model);
 
     for(unsigned J = 0; J < Iter->second.Defaults.size(); J++)
-      IniFile.Write(Section, Iter->second.Defaults[J].first, Iter->second.Defaults[J].second);
+      Section.Write(Iter->second.Defaults[J].first, Iter->second.Defaults[J].second);
   }
 
   return IniFile.GetAsString();
@@ -456,9 +475,9 @@ double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int
   }
 }
 //---------------------------------------------------------------------------
-bool ExportPointSeries(const TPointSeries *Series, const char *FileName, char Delimiter)
+bool ExportPointSeries(const TPointSeries *Series, const wchar_t *FileName, char Delimiter)
 {
-  std::ofstream File(FileName);
+  std::wofstream File(FileName);
   if(!File)
     return false;
 

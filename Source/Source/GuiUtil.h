@@ -36,17 +36,13 @@ void ScaleComponent(TComponent *Component, unsigned Scale);
 void ScaleForm(TForm *Form, bool Flip=true);
 
 void TranslateStrings(TStrings *Strings);
-inline WideString _(const char* Str) {return _(AnsiString(Str));}
 
-WideString LoadRes(short Ident, WideString Par1, WideString Par2 = WideString(), WideString Par3 = WideString());
-WideString LoadRes(short Ident, const std::string &Par1, const std::string &Par2 = std::string(), const std::string &Par3 = std::string());
-WideString LoadRes(short Ident, const AnsiString &Par1, const AnsiString &Par2 = AnsiString(), const AnsiString &Par3 = AnsiString());
-WideString LoadRes(short Ident);
+String LoadRes(short Ident, String Par1 = String(), String Par2 = String(), String Par3 = String());
+std::wstring LoadRes(short Ident, std::wstring Par1, std::wstring Par2 = std::wstring(), const std::wstring &Par3 = std::wstring());
 std::wstring LoadString(unsigned Ident);
 
-//int MessageBox(const char *Text, const char *Caption, int Flags = MB_OK | MB_ICONWARNING);
-//int MessageBox(const WideString &Text, const WideString &Caption, int Flags = MB_OK | MB_ICONWARNING);
-int MessageBox(const std::string &Text, const std::string &Caption, int Flags = MB_OK | MB_ICONWARNING);
+int MessageBox(const wchar_t *Text, const wchar_t *Caption, int Flags = MB_OK | MB_ICONWARNING);
+int MessageBox(const std::wstring &Text, const std::wstring &Caption, int Flags = MB_OK | MB_ICONWARNING);
 int MessageBox(const String &Text, const String &Caption, int Flags = MB_OK | MB_ICONWARNING);
 
 void ShowErrorMsg(const Func32::EFuncError &Error, TCustomEdit *Edit=NULL);//Shows error message corresponding to ErrorCode in Error

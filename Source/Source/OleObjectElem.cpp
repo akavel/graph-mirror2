@@ -61,22 +61,22 @@ std::wstring TOleObjectElem::MakeText() const
   return ToWString(Result);
 }
 //---------------------------------------------------------------------------
-void TOleObjectElem::WriteToIni(TConfigFile &IniFile, const std::string &Section) const
+void TOleObjectElem::WriteToIni(TConfigFileSection &Section) const
 {
   std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
   OleContainer->SaveToStream(Stream.get());
-  IniFile.Write(Section, "Pos", Pos);
-  IniFile.Write(Section, "Object", Base64Encode(Stream->Memory, Stream->Size));
+//  Section.Write(L"Pos", Pos);
+//  Section.Write(L"Object", Base64Encode(Stream->Memory, Stream->Size));
 }
 //---------------------------------------------------------------------------
-void TOleObjectElem::ReadFromIni(const TConfigFile &IniFile, const std::string &Section)
+void TOleObjectElem::ReadFromIni(const TConfigFileSection  &Section)
 {
   std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
-  std::string Str = IniFile.Read(Section, "Object", "");
+  std::wstring Str = Section.Read(L"Object", L"");
   Stream->Size = (Str.size() * 3) / 4;
-  Stream->Size = Base64Decode(Str, Stream->Memory);
+//  Stream->Size = Base64Decode(Str, Stream->Memory);
   OleContainer->LoadFromStream(Stream.get());
-  Pos = IniFile.Read(Section, "Pos", Func32::TDblPoint(0,0));
+//  Pos = Section.Read(L"Pos", Func32::TDblPoint(0,0));
 }
 //---------------------------------------------------------------------------
 void TOleObjectElem::Copy()

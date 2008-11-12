@@ -89,7 +89,7 @@ public:
   double GetScaledYAxis() const;
   void SetSizeMul(double xSizeMul, double ySizeMul);
   bool InsideLegend(int X, int Y) const {return Data->Axes.ShowLegend && InsideRect(LegendRect, TPoint(X, Y));}
-  static void DrawPointLabel(TCanvas *Canvas, TPoint Pos, int PointSize, const std::string &Label, TLabelPosition LabelPosition);
+  static void DrawPointLabel(TCanvas *Canvas, TPoint Pos, int PointSize, const std::wstring &Label, TLabelPosition LabelPosition);
   void SetOnComplete(TOnCompleteEvent AOnComplete) {OnComplete = AOnComplete;}
   const TRect& GetLegendRect() const {return LegendRect;}
   void SetCanvas(TCanvas *Canvas) {Context.SetCanvas(Canvas);}

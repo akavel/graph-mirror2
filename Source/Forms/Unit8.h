@@ -34,7 +34,7 @@ private:	// User declarations
 public:		// User declarations
   __fastcall TForm8(TComponent* Owner, TData &AData);
   bool EditModel(std::wstring &Name);
-  bool AddModel(const std::string &model, std::wstring &Name);
+  bool AddModel(const std::wstring &model, std::wstring &Name);
 };
 //---------------------------------------------------------------------------
 #endif

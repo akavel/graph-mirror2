@@ -107,9 +107,9 @@ __published:	// IDE-managed Components
   void __fastcall ToolButton11Click(TObject *Sender);
   void __fastcall ToolButton13Click(TObject *Sender);
   void __fastcall SymbolDialog1InsertWideChar(TSymbolDialog *Sender,
-          wchar_t Symbol, const AnsiString &FontName);
+          wchar_t Symbol, const String &FontName);
   void __fastcall SymbolDialog1InsertAnsiChar(TSymbolDialog *Sender,
-          char Symbol, const AnsiString &FontName);
+          char Symbol, const String &FontName);
   void __fastcall SymbolDialog1Show(TObject *Sender);
 private:	// User declarations
   TRichEditOle RichEditOle;

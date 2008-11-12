@@ -82,11 +82,11 @@ private:	// User declarations
   TRect DisplayRect;
 
   void PosChanged(unsigned Position);
-  void SaveFrame(const AnsiString &FileName, int FilterIndex);
+  void SaveFrame(const String &FileName, int FilterIndex);
 
 public:		// User declarations
   __fastcall TForm20(TComponent* Owner, const std::string &Constant, double AMin, double AStep);
-  void ShowAnimation(const AnsiString &FileName);
+  void ShowAnimation(const String &FileName);
 };
 //---------------------------------------------------------------------------
 #endif

@@ -112,8 +112,8 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
   PointSeries->FrameColor = clBlack;
   PointSeries->FillColor = ExtColorBox1->Selected;
   PointSeries->LineColor = ExtColorBox2->Selected;
-  PointSeries->Size = ToInt(Edit2->Text);
-  PointSeries->LineSize = ToInt(Edit3->Text);
+  PointSeries->Size = Edit2->Text.ToInt();
+  PointSeries->LineSize = Edit3->Text.ToInt();
   PointSeries->Style = PointSelect1->ItemIndex;
   PointSeries->LineStyle = LineSelect1->LineStyle;
   PointSeries->Interpolation = static_cast<TInterpolationAlgorithm>(ComboBox2->ItemIndex);
@@ -203,8 +203,8 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
     Data.Add(PointSeries);
   }
 
-  Property.DefaultPoint.Set(PointSelect1->ItemIndex, ExtColorBox1->Selected, ToInt(Edit2->Text));
-  Property.DefaultPointLine.Set(LineSelect1->LineStyle, ExtColorBox2->Selected, ToInt(Edit3->Text));
+  Property.DefaultPoint.Set(PointSelect1->ItemIndex, ExtColorBox1->Selected, Edit2->Text.ToInt());
+  Property.DefaultPointLine.Set(LineSelect1->LineStyle, ExtColorBox2->Selected, Edit3->Text.ToInt());
   Property.DefaultPointLabelFont->Assign(FontDialog1->Font);
 
   ModalResult = mrOk;
@@ -216,7 +216,7 @@ int TForm14::EditPointSeries(const boost::shared_ptr<TPointSeries> &P)
   if(P)
   {
     Caption = LoadRes(537);
-    Edit1->Text = ToWideString(P->GetLegendText());
+    Edit1->Text = ToUString(P->GetLegendText());
     ExtColorBox1->Selected = P->FillColor;
     UpDown1->Position = P->Size;
     PointSelect1->ItemIndex = P->Style;
@@ -237,12 +237,12 @@ int TForm14::EditPointSeries(const boost::shared_ptr<TPointSeries> &P)
     {
       case ebtFixed:
         RadioButton1->Checked = true;
-        Edit4->Text = ToWideString(P->xErrorValue);
+        Edit4->Text = P->xErrorValue;
         break;
 
       case ebtRelative:
         RadioButton2->Checked = true;
-        Edit5->Text = ToWideString(P->xErrorValue);
+        Edit5->Text = P->xErrorValue;
         break;
 
       case ebtCustom:
@@ -255,12 +255,12 @@ int TForm14::EditPointSeries(const boost::shared_ptr<TPointSeries> &P)
     {
       case ebtFixed:
         RadioButton4->Checked = true;
-        Edit6->Text = ToWideString(P->yErrorValue);
+        Edit6->Text = P->yErrorValue;
         break;
 
       case ebtRelative:
         RadioButton5->Checked = true;
-        Edit7->Text = ToWideString(P->yErrorValue);
+        Edit7->Text = P->yErrorValue;
         break;
 
       case ebtCustom:
@@ -277,7 +277,7 @@ void __fastcall TForm14::PaintBox1Paint(TObject *Sender)
   {
     int X = PaintBox1->Width / 2;
     int Y = PaintBox1->Height / 2;
-    int PointSize = ToInt(Edit2->Text);
+    int PointSize = Edit2->Text.ToInt();
 
     PaintBox1->Canvas->Pen->Width = 1;
     PaintBox1->Canvas->Pen->Color = clBlack;
@@ -301,7 +301,7 @@ void __fastcall TForm14::PaintBox1Paint(TObject *Sender)
       PaintBox1->Canvas->LineTo(X + 5, Y + 10);
     }
 
-    PaintBox1->Canvas->Pen->Handle = SetPen(ExtColorBox2->Selected, LineSelect1->LineStyle, ToInt(Edit3->Text));
+    PaintBox1->Canvas->Pen->Handle = SetPen(ExtColorBox2->Selected, LineSelect1->LineStyle, Edit3->Text.ToInt());
     PaintBox1->Canvas->MoveTo(0, Y);
     PaintBox1->Canvas->LineTo(PaintBox1->Width, Y);
 
@@ -309,7 +309,7 @@ void __fastcall TForm14::PaintBox1Paint(TObject *Sender)
 
     if(CheckBox2->Checked)
     {
-      std::string Str = "(2.37,9.53)";
+      std::wstring Str = L"(2.37,9.53)";
       PaintBox1->Canvas->Font->Assign(FontDialog1->Font);
       TDraw::DrawPointLabel(PaintBox1->Canvas, TPoint(X, Y), PointSize, Str, static_cast<TLabelPosition>(ComboBox1->ItemIndex));
     }
@@ -363,7 +363,7 @@ void __fastcall TForm14::Popup_ImportClick(TObject *Sender)
   {
     Grid->ImportFromFile(OpenDialog1->FileName);
     int Row = Grid->Selection.Top;
-    if(Grid->Cells[0][Row] == WideString(L"X") && Grid->Cells[1][Row] == WideString(L"Y"))
+    if(Grid->Cells[0][Row] == L"X" && Grid->Cells[1][Row] == L"Y")
       Grid->RemoveRows(Row, 1);
   }
 }
@@ -416,7 +416,7 @@ void TForm14::UpdateErrorBars()
   Edit7->Enabled = CheckBox4->Checked;
 }
 //---------------------------------------------------------------------------
-std::string& TForm14::GetText(int ACol, int ARow)
+std::wstring& TForm14::GetText(int ACol, int ARow)
 {
   DataPoints.resize(std::max(Grid->RowCount - 1, ARow));
   switch(ACol)
@@ -442,7 +442,7 @@ void __fastcall TForm14::EditChange(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm14::GridGetText(TObject *Sender, long ACol, long ARow,
-      WideString &Value)
+      String &Value)
 {
   if(ARow == 0)
     switch(ACol)
@@ -457,10 +457,10 @@ void __fastcall TForm14::GridGetText(TObject *Sender, long ACol, long ARow,
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm14::GridSetText(TObject *Sender, long ACol, long ARow,
-      const WideString &Value)
+      const String &Value)
 {
   if(ARow > 0)
-    GetText(ACol, ARow) = ::ToString(Value);
+    GetText(ACol, ARow) = ToWString(Value);
 }
 //---------------------------------------------------------------------------
 

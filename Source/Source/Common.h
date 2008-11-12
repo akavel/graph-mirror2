@@ -27,11 +27,6 @@ std::string EncodeEscapeSequence(const std::string &Str);
 std::string DecodeEscapeSequence(const std::string &Str);
 void GetLanguageList(TStrings *List);
 
-void RemoveRegistryKey(const AnsiString &Key, HKEY RootKey);
-AnsiString GetRegValue(const AnsiString &Key, const AnsiString &ValueName, HKEY RootKey, const AnsiString &Default);
-unsigned GetRegValue(const AnsiString &Key, const AnsiString &ValueName, HKEY RootKey, unsigned Default);
-bool RegKeyExists(const AnsiString &Key, HKEY RootKey);
-
 AnsiString GetTempFileName(const AnsiString &Prefix, const AnsiString &Ext);
 AnsiString GetTempPath();
 

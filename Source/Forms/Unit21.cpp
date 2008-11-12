@@ -25,8 +25,8 @@ __fastcall TForm21::TForm21(TComponent* Owner, TData &AData, const TDraw &ADraw,
 
   const int PlacementToIndex[] = {0, -1, -1, -1, -1, 1, 2, 3};
   ComboBox1->ItemIndex = PlacementToIndex[Label->GetPlacement()];
-  Edit1->Text = ToWideString(Label->GetXPos().Text);
-  Edit2->Text = ToWideString(Label->GetYPos().Text);
+  Edit1->Text = ToUString(Label->GetXPos().Text);
+  Edit2->Text = ToUString(Label->GetYPos().Text);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm21::TntButton1Click(TObject *Sender)
@@ -36,8 +36,8 @@ void __fastcall TForm21::TntButton1Click(TObject *Sender)
   TTextValue yPos;
   xPos.Value = MakeFloat(Edit1);
   yPos.Value = MakeFloat(Edit2);
-  xPos.Text = ::ToString(Edit1->Text);
-  yPos.Text = ::ToString(Edit2->Text);
+  xPos.Text = ToWString(Edit1->Text);
+  yPos.Text = ToWString(Edit2->Text);
 
   int Index = ComboBox1->ItemIndex;
   if(Index == -1)
