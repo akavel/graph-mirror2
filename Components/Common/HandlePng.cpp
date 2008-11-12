@@ -12,7 +12,7 @@
 #include <windows.h>
 #include "HandlePng.h"
 //---------------------------------------------------------------------------
-bool SaveBitmapToPNGFile(HBITMAP Bitmap, const char *FileName)
+bool SaveBitmapToPNGFile(HBITMAP Bitmap, const wchar_t *FileName)
 {
   return false;
 }

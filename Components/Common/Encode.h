@@ -15,7 +15,7 @@
 class EInvalidBase64Char : public std::exception
 {
 public:
-  const char* waht() throw() {return "Invalid Base 64 character";}
+  const char* what() const throw() {return "Invalid Base 64 character";}
 };
 
 std::string EncodeEscapeSequence(const std::string &Str);
