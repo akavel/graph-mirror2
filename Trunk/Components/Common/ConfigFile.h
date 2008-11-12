@@ -15,80 +15,72 @@
 #include <iosfwd>
 #include <iomanip>
 #include <algorithm>
+#include <boost/type_traits/integral_promotion.hpp>
 
-class TConfigFile
+class TConfigFileSection
 {
-  typedef std::deque<std::pair<std::string, std::string> > TSection;
-  typedef std::deque<std::pair<std::string, TSection> > TConfigData;
-  TConfigData ConfigData;
-  std::string Comment;
-
-  bool ReadString(const std::string &Section, const std::string &Key, std::string &Result) const;
-  static std::string TrimString(const std::string &Str);
-
+private:
   struct TCmpString
   {
-    const std::string &Str;
-    TCmpString(const std::string &AStr) : Str(AStr) {}
-    template<class T>
-    bool operator()(const std::pair<std::string, T> &Pair) const {return Str == Pair.first;}
+    const std::wstring &Str;
+    TCmpString(const std::wstring &AStr) : Str(AStr) {}
+    bool operator()(const std::pair<std::wstring, std::wstring> &Pair) const {return Str == Pair.first;}
+    bool operator()(const TConfigFileSection &Section) const {return Str == Section.Name;}
   };
 
-public:
-  typedef TSection::const_iterator TSectionIterator;
+  friend class TConfigFile;
+  friend TCmpString;
+  typedef std::deque<std::pair<std::wstring, std::wstring> > TSection;
+  std::wstring Name;
+  TSection Section;
 
-  TConfigFile() {}
-  TConfigFile(const std::string &FileName);
-  bool LoadFromFile(const std::string &FileName);
-  bool SaveToFile(const std::string &FileName) const;
-  void LoadFromStream(std::istream &Stream);
-  void SaveToStream(std::ostream &Stream) const;
-  void LoadFromString(const std::string &Str);
-  std::string GetAsString() const;
-  void SetComment(const std::string &Str);
-  void Clear() {ConfigData.clear();}
-  void DeleteKey(const std::string &Section, const std::string &Key);
-  void DeleteSection(const std::string &Section);
-  bool SectionExists(const std::string &Section) const;
-  bool KeyExists(const std::string &Section, const std::string &Key) const;
-  void Write(const std::string &Section, const std::string &Key, const std::string &Value);
+  TConfigFileSection() {}
+  TConfigFileSection(const std::wstring &AName) : Name(AName) {}
+  bool ReadString(const std::wstring &Key, std::wstring &Result) const;
+
+  void Write(const std::wstring&, const std::string&); //Not implemented; Compiler error
+  void Write(const std::wstring&, const std::string&, const std::string&); //Not implemented; Compiler error
+  void Read(const std::wstring&, const std::string&) const; //Not implemented; Compiler error
+
+public:
+  typedef TSection::const_iterator TIterator;
+
+  TIterator Begin() const {return Section.begin();}
+  TIterator End() const {return Section.end();}
+  const std::wstring GetName() const {return Name;}
+  bool KeyExists(const std::wstring &Key) const;
+  void DeleteKey(const std::wstring &Key);
+  bool Empty() const {return Section.empty();}
+
+  void Write(const std::wstring &Key, const std::wstring &Value);
+  void Write(const std::wstring &Key, const std::wstring &Value, const std::wstring &Default);
 
   template<class T>
-  void Write(const std::string &Section, const std::string &Key, const T &Value)
+  void Write(const std::wstring &Key, const T &Value)
   {
-    std::ostringstream Stream;
+    std::wostringstream Stream;
     Stream << std::setprecision(15) << std::uppercase << Value;
-    Write(Section, Key, Stream.str());
+    Write(Key, Stream.str());
   }
 
   template<class T>
-  void Write(const std::string &Section, const std::string &Key, const T &Value, const T &Default)
+  void Write(const std::wstring &Key, const T &Value, const T &Default)
   {
     if(Value == Default)
-      DeleteKey(Section, Key);
+      DeleteKey(Key);
     else
-      Write(Section, Key, Value);
+      Write(Key, Value);
   }
 
   template<class T>
-  T Read(const std::string &Section, const std::string &Key, const T &Default) const
+  T Read(const std::wstring &Key, const T &Default) const
   {
     try
     {
-      TConfigData::const_iterator Iter = std::find_if(ConfigData.begin(), ConfigData.end(), TCmpString(Section));
-      if(Iter != ConfigData.end())
-      {
-        //Section found
-        TSection::const_iterator Iter2 = std::find_if(Iter->second.begin(), Iter->second.end(), TCmpString(Key));
-        if(Iter2 != Iter->second.end())
-        {
-          //Key found
-          std::istringstream Stream(Iter2->second);
-          T Value;
-          if(Stream >> Value)
-            return Value;
-        }
-      }
+      std::wistringstream Stream(Read(Key, std::wstring()));
+      boost::integral_promotion<T>::type Value;
+      if(Stream >> Value)
+        return Value;
     }
     //Just return default if any exceptions occur
     catch(...)
@@ -98,35 +90,52 @@ public:
   }
 
 //  template<>
-  std::string Read(const std::string &Section, const std::string &Key, const std::string &Default) const
+  std::wstring Read(const std::wstring &Key, const std::wstring &Default) const
   {
-    TConfigData::const_iterator Iter = std::find_if(ConfigData.begin(), ConfigData.end(), TCmpString(Section));
-    if(Iter != ConfigData.end())
-    {
-      //Section found
-      TSection::const_iterator Iter2 = std::find_if(Iter->second.begin(), Iter->second.end(), TCmpString(Key));
-      if(Iter2 != Iter->second.end())
-        return Iter2->second;
-    }
+    TIterator Iter = std::find_if(Section.begin(), Section.end(), TCmpString(Key));
+    if(Iter != Section.end())
+      return Iter->second;
     return Default;
   }
 
-  //Return a std::string if instantiated with a char* as default
-  std::string Read(const std::string &Section, const std::string &Key, const char* Default) const
+  //Return a std::wstring if instantiated with a wchar_t* as default
+  std::wstring Read(const std::wstring &Key, const wchar_t* Default) const
   {
-    return Read<std::string>(Section, Key, Default);
+    return Read<std::wstring>(Key, Default);
   }
+};
 
-  //This will read as an int and cast to T, which should be an enum
-  template<typename T>
-  T ReadEnum(const std::string &Section, const std::string &Key, T Default) const
-  {
-    return static_cast<T>(Read<int>(Section, Key, Default));
-  }
+class TConfigFile
+{
+  typedef std::deque<TConfigFileSection> TConfigData;
+  typedef TConfigFileSection::TCmpString TCmpString;
+
+  TConfigData ConfigData;
+  std::wstring Comment;
+
+  static std::wstring TrimString(const std::wstring &Str);
+
+public:
+  TConfigFile() {}
+  TConfigFile(const std::wstring &FileName);
+  bool LoadFromAnsiFile(const std::wstring &FileName);
+  bool LoadFromUtf8File(const std::wstring &FileName);
+  bool SaveToUtf8File(const std::wstring &FileName) const;
+  void LoadFromStream(std::wistream &Stream);
+  void SaveToStream(std::wostream &Stream) const;
+  void LoadFromString(const std::wstring &Str);
+  void LoadFromUtf8String(const std::string &Str);
+  std::wstring GetAsString() const;
+  void SetComment(const std::wstring &Str);
+  void Clear() {ConfigData.clear();}
+  void DeleteSection(const std::wstring &Section);
+  bool SectionExists(const std::wstring &Section) const;
 
   unsigned SectionCount() const {return ConfigData.size();}
-  const std::string& GetSection(unsigned Index) const {return ConfigData.at(Index).first;}
-  std::pair<TSectionIterator, TSectionIterator> GetSectionData(const std::string &Section) const;
+  const TConfigFileSection& Section(unsigned Index) const {return ConfigData.at(Index);}
+  TConfigFileSection& Section(const std::wstring &ASection);
+  const TConfigFileSection& Section(const std::wstring &ASection) const;
 };
+
 
 #endif

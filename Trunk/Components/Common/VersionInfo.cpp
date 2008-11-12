@@ -24,20 +24,20 @@ TVersionInfo::TVersionInfo()
   LoadVersionInfo();
 }
 //---------------------------------------------------------------------------
-TVersionInfo::TVersionInfo(const std::string &FileName) : FFileName(FileName)
+TVersionInfo::TVersionInfo(const std::wstring &FileName) : FFileName(FileName)
 {
   LoadVersionInfo();
 }
 //---------------------------------------------------------------------------
-void TVersionInfo::SetFileName(const std::string &FileName)
+void TVersionInfo::SetFileName(const std::wstring &FileName)
 {
   FFileName = FileName;
   LoadVersionInfo();
 }
 //---------------------------------------------------------------------------
-std::string TVersion::Text() const
+std::wstring TVersion::Text() const
 {
-  std::ostringstream Stream;
+  std::wostringstream Stream;
   Stream << Major << '.' << Minor;
   if(Release || Build)
     Stream << '.' << Release;
@@ -50,13 +50,13 @@ void TVersionInfo::LoadVersionInfo()
 {
   FInfoAvailable = false;
   if(FFileName.empty())
-    FFileName = AnsiString(Application->ExeName).c_str();
+    FFileName = Application->ExeName.c_str();
 
   unsigned int puLen;//Length of file info structure
   DWORD Dummy;
 
   //Get size of Resource data
-  int DataSize = GetFileVersionInfoSizeA(const_cast<char*>(FFileName.c_str()), &Dummy);
+  int DataSize = GetFileVersionInfoSize(FFileName.c_str(), &Dummy);
   if(DataSize == 0)
     return; //Return on error
 
@@ -64,7 +64,7 @@ void TVersionInfo::LoadVersionInfo()
   std::vector<char> Data(DataSize);
 
   //Get version info from file
-  if(GetFileVersionInfoA(const_cast<char*>(FFileName.c_str()), 0, Data.size(), &Data[0]))
+  if(GetFileVersionInfo(FFileName.c_str(), 0, Data.size(), &Data[0]))
   {
     //Get pointer to file info structure
     VS_FIXEDFILEINFO *FileInfo;//Pointer to file info structure
@@ -95,22 +95,22 @@ void TVersionInfo::LoadVersionInfo()
   FInfoAvailable = true;
 }
 //---------------------------------------------------------------------------
-std::string TVersionInfo::StringValue(const std::string &Ident) const
+std::wstring TVersionInfo::StringValue(const std::wstring &Ident) const
 {
   unsigned int puLen;//Length of file info structure
   VS_FIXEDFILEINFO *FileInfo;//Pointer to file info structure
   DWORD Dummy;
 
   //Get size of Resource data
-  int DataSize = GetFileVersionInfoSizeA(const_cast<char*>(FFileName.c_str()), &Dummy);
+  int DataSize = GetFileVersionInfoSize(FFileName.c_str(), &Dummy);
   if(DataSize == 0)
-    return ""; //Return on error
+    return L""; //Return on error
 
   //Allocate memory to data
   std::vector<char> Data(DataSize);
   //Get version info from file
-  if(!GetFileVersionInfoA(const_cast<char*>(FFileName.c_str()), 0, Data.size(), &Data[0]))
-    return "";
+  if(!GetFileVersionInfo(FFileName.c_str(), 0, Data.size(), &Data[0]))
+    return L"";
 
   // *** Now the Character translation tables ***
   struct TRANSLATION
@@ -120,23 +120,23 @@ std::string TVersionInfo::StringValue(const std::string &Ident) const
   }m_translation;
 
   if(!VerQueryValueA(&Data[0], "VarFileInfo\\Translation", &(void*)FileInfo, &puLen))
-    return "";
+    return L"";
 
   m_translation = *(TRANSLATION*)FileInfo;
   // *** Now we are ready to Build Queries ***
   AnsiString Query = "StringFileInfo\\" + IntToHex(m_translation.langID, 4) + IntToHex(m_translation.charset, 4) + "\\" + Ident.c_str();
   if(!VerQueryValueA(&Data[0], Query.c_str(), &(void*)FileInfo, &puLen))
-    return "";
+    return L"";
 
-  std::string Str = reinterpret_cast<char*>(FileInfo);
+  std::wstring Str = reinterpret_cast<wchar_t*>(FileInfo);
   return Str;
 }
 //---------------------------------------------------------------------------
-void TVersion::Init(const char *Str)
+void TVersion::Init(const wchar_t *Str)
 {
   Major = Minor = Release = Build = 0;
 
-  std::stringstream Stream(Str);
+  std::wstringstream Stream(Str);
   Stream >> *this;
 }
 //---------------------------------------------------------------------------
@@ -177,11 +177,11 @@ bool operator>=(const TVersion &Ver1, const TVersion &Ver2)
   return !(Ver1 < Ver2);
 }
 //---------------------------------------------------------------------------
-std::string GetWindowsVersion()
+std::wstring GetWindowsVersion()
 {
   OSVERSIONINFO VerInfo;
   VerInfo.dwOSVersionInfoSize = sizeof(VerInfo);
-  std::ostringstream Stream;
+  std::wostringstream Stream;
   if(GetVersionEx(&VerInfo))
   {
     switch(VerInfo.dwPlatformId)
@@ -220,7 +220,7 @@ int TVersionInfo::GetLanguage() const
   DWORD Dummy;
 
   //Get size of Resource data
-  int DataSize = GetFileVersionInfoSizeA(const_cast<char*>(FFileName.c_str()), &Dummy);
+  int DataSize = GetFileVersionInfoSize(FFileName.c_str(), &Dummy);
   if(!DataSize)
     return 0; //Return on error
 
@@ -228,7 +228,7 @@ int TVersionInfo::GetLanguage() const
   std::vector<char> Data(DataSize);
 
   //Get version info from file
-  if(!GetFileVersionInfoA(const_cast<char*>(FFileName.c_str()), 0, DataSize, &Data.front()))
+  if(!GetFileVersionInfo(FFileName.c_str(), 0, DataSize, &Data.front()))
     return 0;
 
   // *** Now the Character translation tables ***
@@ -244,27 +244,27 @@ int TVersionInfo::GetLanguage() const
   return m_translation.langID;
 }
 //---------------------------------------------------------------------------
-std::string TVersionInfo::GetLanguageName() const
+std::wstring TVersionInfo::GetLanguageName() const
 {
   int Lang = GetLanguage();
   if(Lang == 0)
-    return "";
+    return L"";
 
-  char Buffer[100];
-  if(GetLocaleInfoA(Lang, LOCALE_SENGLANGUAGE, Buffer, sizeof(Buffer)))
-    return std::string(Buffer);
-  return "";
+  wchar_t Buffer[100];
+  if(GetLocaleInfo(Lang, LOCALE_SENGLANGUAGE, Buffer, sizeof(Buffer)/sizeof(Buffer[0])))
+    return std::wstring(Buffer);
+  return L"";
 }
 //---------------------------------------------------------------------------
-std::ostream& operator<<(std::ostream &Stream, const TVersion &Ver)
+std::wostream& operator<<(std::wostream &Stream, const TVersion &Ver)
 {
   Stream << Ver.Text();
   return Stream;
 }
 //---------------------------------------------------------------------------
-std::istream& operator>>(std::istream &Stream, TVersion &Ver)
+std::wistream& operator>>(std::wistream &Stream, TVersion &Ver)
 {
-  char Ch;
+  wchar_t Ch;
   Stream >> Ver.Major >> Ch >> Ver.Minor;
   if(!Stream)
     return Stream;

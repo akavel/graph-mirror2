@@ -21,28 +21,45 @@ class TConfigRegistry
 {
   HKEY Handle;
 
-  static std::string GetKey(const std::string &Key);
+  static std::wstring GetKey(const std::wstring &Key);
+  unsigned GetValueSize(const std::wstring &Name, unsigned ValueType = REG_NONE) const;
   unsigned GetValueSize(const std::string &Name, unsigned ValueType = REG_NONE) const;
 
 public:
   TConfigRegistry() : Handle(NULL) {}
+  TConfigRegistry(const std::wstring &Key, HKEY RootKey = HKEY_CURRENT_USER, bool ReadOnly = true);
   ~TConfigRegistry() {CloseKey();}
-  bool CreateKey(const std::string &Key, HKEY RootKey = HKEY_CURRENT_USER);
-  bool OpenKey(const std::string &Key, HKEY RootKey = HKEY_CURRENT_USER);
+  bool CreateKey(const std::wstring &Key, HKEY RootKey = HKEY_CURRENT_USER);
+  bool OpenKey(const std::wstring &Key, HKEY RootKey = HKEY_CURRENT_USER);
   void CloseKey();
   bool IsOpen() const {return Handle;}
+
   void Write(const std::string &Name, const std::string &Value);
+  void Write(const std::wstring &Name, const std::wstring &Value);
+  void Write(const std::wstring &Name, int Value);
   void Write(const std::string &Name, int Value);
-  std::string Read(const std::string &Name, const std::string &Default) const;
-  std::string Read(const std::string &Name, const char *Default) const {return Read(Name, std::string(Default));}
+
+  std::wstring Read(const std::wstring &Name, const std::wstring &Default) const;
+  std::wstring Read(const std::wstring &Name, const wchar_t *Default) const {return Read(Name, std::wstring(Default));}
+  int Read(const std::wstring &Name) const;
+  int Read(const std::wstring &Name, int Default) const;
+  bool Read(const std::wstring &Name, bool Default) const;
+  unsigned Read(const std::wstring &Name, unsigned Default) const;
+
   int Read(const std::string &Name) const;
   int Read(const std::string &Name, int Default) const;
   bool Read(const std::string &Name, bool Default) const {return Read(Name, static_cast<int>(Default));}
-  bool Read(const std::string &Name, unsigned Default) const {return Read(Name, static_cast<int>(Default));}
+  unsigned Read(const std::string &Name, unsigned Default) const {return Read(Name, static_cast<int>(Default));}
+
   template<typename T>
   T ReadEnum(const std::string &Name, const T &Default) const {return Read(Name, static_cast<int>(Default));}
-  bool ValueExists(const std::string &Name) const {return GetValueSize(Name) != 0;}
-  static bool KeyExists(const std::string &Key, HKEY RootKey = HKEY_CURRENT_USER);
+  bool ValueExists(const std::wstring &Name) const {return GetValueSize(Name) != 0;}
+  static bool KeyExists(const std::wstring &Key, HKEY RootKey = HKEY_CURRENT_USER);
 };
+
+void RemoveRegistryKey(const std::wstring &Key, HKEY RootKey);
+std::wstring GetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, const std::wstring &Default);
+unsigned GetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, unsigned Default);
+bool RegKeyExists(const std::wstring &Key, HKEY RootKey);
 
 #endif

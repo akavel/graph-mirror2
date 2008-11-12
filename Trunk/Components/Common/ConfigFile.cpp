@@ -13,34 +13,76 @@
 #include "ConfigFile.h"
 #include <sstream>
 //---------------------------------------------------------------------------
+////////////////////////
+// TConfigFileSection //
+////////////////////////
+void TConfigFileSection::DeleteKey(const std::wstring &Key)
+{
+  TSection::iterator Iter = std::find_if(Section.begin(), Section.end(), TCmpString(Key));
+  if(Iter != Section.end())
+    //Key found;
+    Section.erase(Iter);
+}
+//---------------------------------------------------------------------------
+bool TConfigFileSection::KeyExists(const std::wstring &Key) const
+{
+  return  std::find_if(Section.begin(), Section.end(), TCmpString(Key)) != Section.end();
+}
+//---------------------------------------------------------------------------
+void TConfigFileSection::Write(const std::wstring &Key, const std::wstring &Value)
+{
+  TSection::iterator Iter = std::find_if(Section.begin(), Section.end(), TCmpString(Key));
+  if(Iter == Section.end())
+    Section.push_back(std::make_pair(Key, Value));
+  else
+    Iter->second = Value;
+}
+//---------------------------------------------------------------------------
+void TConfigFileSection::Write(const std::wstring &Key, const std::wstring &Value, const std::wstring &Default)
+{
+  if(Value == Default)
+    DeleteKey(Key);
+  else
+    Write(Key, Value);
+}
+//---------------------------------------------------------------------------
+/////////////////
+// TConfigFile //
+/////////////////
 //Trim spaces around string
-std::string TConfigFile::TrimString(const std::string &Str)
+std::wstring TConfigFile::TrimString(const std::wstring &Str)
 {
-  unsigned First = Str.find_first_not_of(" \t");
-  unsigned Last = Str.find_last_not_of(" \t\r"); //If Line feed is \r\n, \r may stay and only the \n is detected as end of line
-  if(First == std::string::npos)
-    return std::string();
-  return std::string(Str, First, Last + 1 - First);
+  unsigned First = Str.find_first_not_of(L" \t");
+  unsigned Last = Str.find_last_not_of(L" \t\r"); //If Line feed is \r\n, \r may stay and only the \n is detected as end of line
+  if(First == std::wstring::npos)
+    return std::wstring();
+  return std::wstring(Str, First, Last + 1 - First);
 }
 //---------------------------------------------------------------------------
-TConfigFile::TConfigFile(const std::string &FileName)
+TConfigFile::TConfigFile(const std::wstring &FileName)
 {
-  LoadFromFile(FileName);
+  LoadFromUtf8File(FileName);
 }
 //---------------------------------------------------------------------------
-bool TConfigFile::LoadFromFile(const std::string &FileName)
+bool TConfigFile::LoadFromAnsiFile(const std::wstring &FileName)
 {
-  std::ifstream File(FileName.c_str());
+/*  std::ifwstream File(FileName.c_str());
   if(!File)
     return false;
   LoadFromStream(File);
+  */
   return true;
 }
 //---------------------------------------------------------------------------
-void TConfigFile::LoadFromStream(std::istream &Stream)
+bool TConfigFile::LoadFromUtf8File(const std::wstring &FileName)
+{
+  return false;
+}
+//---------------------------------------------------------------------------
+void TConfigFile::LoadFromStream(std::wistream &Stream)
 {
   ConfigData.clear();
-  std::string Line;
+  std::wstring Line;
 
   while(std::getline(Stream, Line))
   {
@@ -50,46 +92,49 @@ void TConfigFile::LoadFromStream(std::istream &Stream)
 
     if(Line[0] == '[' && Line[Line.size() - 1] == ']')
     {
-      ConfigData.push_back(std::make_pair(Line.substr(1, Line.size() - 2), TSection()));
+      //Add new empty section
+      ConfigData.push_back(TConfigFileSection(Line.substr(1, Line.size() - 2)));
       continue;
     }
 
     unsigned Pos = Line.find('=');
-    if(Pos == std::string::npos || ConfigData.empty())
+    if(Pos == std::wstring::npos || ConfigData.empty())
       continue; //Ignore Lies with errors
 
-    std::string Key = TrimString(Line.substr(0, Pos));
-    std::string Value = TrimString(Line.substr(Pos + 1));
+    std::wstring Key = TrimString(Line.substr(0, Pos));
+    std::wstring Value = TrimString(Line.substr(Pos + 1));
 
     //Ignore empty keys
     if(!Key.empty())
-      ConfigData.back().second.push_back(std::make_pair(Key, Value));
+      ConfigData.back().Section.push_back(std::make_pair(Key, Value));
   }
 }
 //---------------------------------------------------------------------------
-bool TConfigFile::SaveToFile(const std::string &FileName) const
+bool TConfigFile::SaveToUtf8File(const std::wstring &FileName) const
 {
+/*
   std::ofstream File(FileName.c_str());
   if(!File)
     return false;
   SaveToStream(File);
+*/
   return true;
 }
 //---------------------------------------------------------------------------
-void TConfigFile::SaveToStream(std::ostream &Stream) const
+void TConfigFile::SaveToStream(std::wostream &Stream) const
 {
   Stream << Comment << std::endl;
   for(TConfigData::const_iterator Iter = ConfigData.begin(); Iter != ConfigData.end(); ++Iter)
   {
-    Stream << '[' << Iter->first << ']' << std::endl;
-    for(TSection::const_iterator Iter2 = Iter->second.begin(); Iter2 != Iter->second.end(); ++Iter2)
+    Stream << '[' << Iter->Name << ']' << std::endl;
+    for(TConfigFileSection::TSection::const_iterator Iter2 = Iter->Section.begin(); Iter2 != Iter->Section.end(); ++Iter2)
       Stream << Iter2->first << " = " << Iter2->second << std::endl;
     Stream << std::endl;
   }
 }
 //---------------------------------------------------------------------------
 //Set comment string, and add a ';' in front of each line
-void TConfigFile::SetComment(const std::string &Str)
+void TConfigFile::SetComment(const std::wstring &Str)
 {
   Comment = Str;
   if(!Comment.empty())
@@ -97,38 +142,29 @@ void TConfigFile::SetComment(const std::string &Str)
     unsigned Pos = -1;
     do
     {
-      Comment.insert(Pos+1, ";");
+      Comment.insert(Pos+1, L";");
       Pos = Comment.find('\n', Pos+2);
-    } while(Pos != std::string::npos);
+    } while(Pos != std::wstring::npos);
   }
 }
 //---------------------------------------------------------------------------
-void TConfigFile::LoadFromString(const std::string &Str)
+void TConfigFile::LoadFromString(const std::wstring &Str)
 {
-  LoadFromStream(std::stringstream(Str));
+  LoadFromStream(std::wstringstream(Str));
 }
 //---------------------------------------------------------------------------
-std::string TConfigFile::GetAsString() const
+void TConfigFile::LoadFromUtf8String(const std::string &Str)
 {
-  std::stringstream Stream;
+}
+//---------------------------------------------------------------------------
+std::wstring TConfigFile::GetAsString() const
+{
+  std::wstringstream Stream;
   SaveToStream(Stream);
   return Stream.str();
 }
 //---------------------------------------------------------------------------
-void TConfigFile::DeleteKey(const std::string &Section, const std::string &Key)
-{
-  TConfigData::iterator Iter = std::find_if(ConfigData.begin(), ConfigData.end(), TCmpString(Section));
-  if(Iter != ConfigData.end())
-  {
-    //Section found
-    TSection::iterator Iter2 = std::find_if(Iter->second.begin(), Iter->second.end(), TCmpString(Key));
-    if(Iter2 != Iter->second.end())
-      //Key found;
-      Iter->second.erase(Iter2);
-  }
-}
-//---------------------------------------------------------------------------
-void TConfigFile::DeleteSection(const std::string &Section)
+void TConfigFile::DeleteSection(const std::wstring &Section)
 {
   TConfigData::iterator Iter = std::find_if(ConfigData.begin(), ConfigData.end(), TCmpString(Section));
   if(Iter != ConfigData.end())
@@ -136,40 +172,33 @@ void TConfigFile::DeleteSection(const std::string &Section)
     ConfigData.erase(Iter);
 }
 //---------------------------------------------------------------------------
-bool TConfigFile::SectionExists(const std::string &Section) const
+bool TConfigFile::SectionExists(const std::wstring &Section) const
 {
   return std::find_if(ConfigData.begin(), ConfigData.end(), TCmpString(Section)) != ConfigData.end();
 }
 //---------------------------------------------------------------------------
-bool TConfigFile::KeyExists(const std::string &Section, const std::string &Key) const
+TConfigFileSection& TConfigFile::Section(const std::wstring &ASection)
 {
-  TConfigData::const_iterator Iter = std::find_if(ConfigData.begin(), ConfigData.end(), TCmpString(Section));
-  if(Iter != ConfigData.end())
-    //Section found
-    return  std::find_if(Iter->second.begin(), Iter->second.end(), TCmpString(Key)) != Iter->second.end();
-  return false;
-}
-//---------------------------------------------------------------------------
-void TConfigFile::Write(const std::string &Section, const std::string &Key, const std::string &Value)
-{
-  TConfigData::iterator Iter = std::find_if(ConfigData.begin(), ConfigData.end(), TCmpString(Section));
+  TConfigData::iterator Iter = std::find_if(ConfigData.begin(), ConfigData.end(), TCmpString(ASection));
   if(Iter == ConfigData.end())
-    Iter = ConfigData.insert(ConfigData.end(), std::make_pair(Section, TSection()));
-
-  TSection::iterator Iter2 = std::find_if(Iter->second.begin(), Iter->second.end(), TCmpString(Key));
-  if(Iter2 == Iter->second.end())
-    Iter->second.push_back(std::make_pair(Key, Value));
-  else
-    Iter2->second = Value;
+  {
+    //Create new empty section
+    ConfigData.push_back(TConfigFileSection(ASection));
+    return ConfigData.back();
+  }
+  return *Iter;
 }
 //---------------------------------------------------------------------------
-std::pair<TConfigFile::TSectionIterator, TConfigFile::TSectionIterator> TConfigFile::GetSectionData(const std::string &Section) const
+  const TConfigFileSection& TConfigFile::Section(const std::wstring &ASection) const
 {
-  TConfigData::const_iterator Iter = std::find_if(ConfigData.begin(), ConfigData.end(), TCmpString(Section));
+  TConfigData::const_iterator Iter = std::find_if(ConfigData.begin(), ConfigData.end(), TCmpString(ASection));
   if(Iter != ConfigData.end())
     //Section found
-    return make_pair(Iter->second.begin(), Iter->second.end());
-  throw std::runtime_error("Section " + Section + " not found!");
+    return *Iter;
+
+  //If no section exist, return an empty section
+  static const TConfigFileSection EmptySection;
+  return EmptySection;
 }
 //---------------------------------------------------------------------------
 

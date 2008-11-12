@@ -9,13 +9,12 @@
 //---------------------------------------------------------------------------
 #include "Config.h"
 #pragma hdrstop
-#include <sstream>
 #include "Tokenizer.h"
 //---------------------------------------------------------------------------
-void TTokenizer::Extract(std::string &S)
+void TTokenizer::Extract(TTokenString &S)
 {
-  std::string::const_iterator Start = Iter;
-  std::string::const_iterator End = Str.end();
+  TTokenString::const_iterator Start = Iter;
+  TTokenString::const_iterator End = Str.end();
 
   if(Iter == End)
   {
@@ -32,7 +31,7 @@ void TTokenizer::Extract(std::string &S)
       FFailed = true;
       return;
     }
-    S = std::string(Start, Iter++);
+    S = TTokenString(Start, Iter++);
     NextDelimiter = FDelimiter;
     if(Iter != End && *(++Iter) != FQuote)
       FFailed = true;
@@ -43,19 +42,19 @@ void TTokenizer::Extract(std::string &S)
   {
     if(*Iter == NextDelimiter)
     {
-      S = std::string(Start, Iter++);
+      S = TTokenString(Start, Iter++);
       NextDelimiter = FDelimiter;
       return;
     }
   }
-  S = std::string(Start, End);
+  S = TTokenString(Start, End);
   NextDelimiter = FDelimiter;
 }
 //---------------------------------------------------------------------------
 //Ignore the next Count tokens
 void TTokenizer::Ignore(unsigned Count)
 {
-  std::string Temp;
+  TTokenString Temp;
   while(Count--)
     Extract(Temp);
 }

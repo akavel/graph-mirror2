@@ -13,7 +13,7 @@
 //---------------------------------------------------------------------------
 class TVersion
 {
-  void Init(const char *Str);
+  void Init(const wchar_t *Str);
 
 public:
   union
@@ -32,12 +32,12 @@ public:
     };
   };
 
-  TVersion(const char *Str) {Init(Str);}
-  TVersion(const std::string &Str) {Init(Str.c_str());}
+  TVersion(const wchar_t *Str) {Init(Str);}
+  TVersion(const std::wstring &Str) {Init(Str.c_str());}
   TVersion(unsigned short AMajor=0, unsigned short AMinor=0, unsigned short ARelease=0, unsigned short ABuild=0)
    : Major(AMajor), Minor(AMinor), Release(ARelease), Build(ABuild) {}
   unsigned PackedVersion() const;
-  std::string Text() const;
+  std::wstring Text() const;
 };
 
 bool operator<(const TVersion &Ver1, const TVersion &Ver2);
@@ -46,15 +46,15 @@ bool operator==(const TVersion &Ver1, const TVersion &Ver2);
 bool operator!=(const TVersion &Ver1, const TVersion &Ver2);
 bool operator>(const TVersion &Ver1, const TVersion &Ver2);
 bool operator>=(const TVersion &Ver1, const TVersion &Ver2);
-std::ostream& operator<<(std::ostream &Stream, const TVersion &Ver);
-std::istream& operator>>(std::istream &Stream, TVersion &Ver);
+std::wostream& operator<<(std::wostream &Stream, const TVersion &Ver);
+std::wistream& operator>>(std::wistream &Stream, TVersion &Ver);
 
 enum TFileFlags {ffNone=0, ffDebug=1, ffPatched=2, ffPrerelease=4, ffPrivateBuild=8, ffSpecialBuild=16};
 
 class TVersionInfo
 {
 private:
-  std::string FFileName;
+  std::wstring FFileName;
   TVersion FFileVersion;
   TVersion FProductVersion;
   TFileFlags FFileFlags;
@@ -67,9 +67,9 @@ private:
 protected:
 public:
   TVersionInfo();
-  TVersionInfo(const std::string &FileName);
-  std::string StringValue(const std::string &Ident) const;
-  void SetFileName(const std::string &FileName);
+  TVersionInfo(const std::wstring &FileName);
+  std::wstring StringValue(const std::wstring &Ident) const;
+  void SetFileName(const std::wstring &FileName);
   TVersion FileVersion() const {return FFileVersion;}
   TVersion ProductVersion() const {return FProductVersion;}
   TFileFlags FileFlags() const {return FFileFlags;}
@@ -77,9 +77,9 @@ public:
   unsigned FileSubtype() const {return FFileSubtype;}
   bool InfoAvailable() const {return FInfoAvailable;}
   int GetLanguage() const;
-  std::string GetLanguageName() const;
+  std::wstring GetLanguageName() const;
 };
 
-std::string GetWindowsVersion();
+std::wstring GetWindowsVersion();
 //---------------------------------------------------------------------------
 #endif

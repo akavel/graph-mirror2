@@ -11,7 +11,7 @@
 #define HandlePngH
 #include <iosfwd>
 //---------------------------------------------------------------------------
-bool SaveBitmapToPNGFile(HBITMAP Bitmap, const char *FileName);
+bool SaveBitmapToPNGFile(HBITMAP Bitmap, const wchar_t *FileName);
 bool SaveBitmapToPngStream(HBITMAP hBitmap, std::ostream &Stream);
 //HBITMAP CreateBitmapFromPNGMemory(const void *Data, unsigned Size);
 #endif
