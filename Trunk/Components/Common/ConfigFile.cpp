@@ -12,6 +12,9 @@
 #include <fstream>
 #include "ConfigFile.h"
 #include <sstream>
+#include <libs/filesystem/src/utf8_codecvt_facet.hpp>
+#pragma warn -8068 //Disable warning in utf8_codecvt_facet.cpp
+#include <libs/filesystem/src/utf8_codecvt_facet.cpp>
 //---------------------------------------------------------------------------
 ////////////////////////
 // TConfigFileSection //
@@ -66,16 +69,27 @@ TConfigFile::TConfigFile(const std::wstring &FileName)
 //---------------------------------------------------------------------------
 bool TConfigFile::LoadFromAnsiFile(const std::wstring &FileName)
 {
-/*  std::ifwstream File(FileName.c_str());
-  if(!File)
-    return false;
-  LoadFromStream(File);
-  */
-  return true;
+  std::locale ansi_locale(std::locale(), new std::codecvt<wchar_t, char, mbstate_t>());
+  std::wifstream Stream(FileName.c_str());
+  if(Stream)
+  {
+    Stream.imbue(ansi_locale);
+    LoadFromStream(Stream);
+    return true;
+  }
+  return false;
 }
 //---------------------------------------------------------------------------
 bool TConfigFile::LoadFromUtf8File(const std::wstring &FileName)
 {
+  std::locale utf8_locale(std::locale(), new boost::filesystem::detail::utf8_codecvt_facet());
+  std::wifstream Stream(FileName.c_str());
+  if(Stream)
+  {
+    Stream.imbue(utf8_locale);
+    LoadFromStream(Stream);
+    return true;
+  }
   return false;
 }
 //---------------------------------------------------------------------------
@@ -112,12 +126,13 @@ void TConfigFile::LoadFromStream(std::wistream &Stream)
 //---------------------------------------------------------------------------
 bool TConfigFile::SaveToUtf8File(const std::wstring &FileName) const
 {
-/*
-  std::ofstream File(FileName.c_str());
+  std::locale utf8_locale(std::locale(), new boost::filesystem::detail::utf8_codecvt_facet());
+
+  std::wofstream File(FileName.c_str());
   if(!File)
     return false;
+  File.imbue(utf8_locale);
   SaveToStream(File);
-*/
   return true;
 }
 //---------------------------------------------------------------------------
@@ -125,12 +140,13 @@ void TConfigFile::SaveToStream(std::wostream &Stream) const
 {
   Stream << Comment << std::endl;
   for(TConfigData::const_iterator Iter = ConfigData.begin(); Iter != ConfigData.end(); ++Iter)
-  {
-    Stream << '[' << Iter->Name << ']' << std::endl;
-    for(TConfigFileSection::TSection::const_iterator Iter2 = Iter->Section.begin(); Iter2 != Iter->Section.end(); ++Iter2)
-      Stream << Iter2->first << " = " << Iter2->second << std::endl;
-    Stream << std::endl;
-  }
+    if(!Iter->Section.empty())
+    {
+      Stream << '[' << Iter->Name << ']' << std::endl;
+      for(TConfigFileSection::TSection::const_iterator Iter2 = Iter->Section.begin(); Iter2 != Iter->Section.end(); ++Iter2)
+        Stream << Iter2->first << " = " << Iter2->second << std::endl;
+      Stream << std::endl;
+    }
 }
 //---------------------------------------------------------------------------
 //Set comment string, and add a ';' in front of each line
@@ -151,10 +167,6 @@ void TConfigFile::SetComment(const std::wstring &Str)
 void TConfigFile::LoadFromString(const std::wstring &Str)
 {
   LoadFromStream(std::wstringstream(Str));
-}
-//---------------------------------------------------------------------------
-void TConfigFile::LoadFromUtf8String(const std::string &Str)
-{
 }
 //---------------------------------------------------------------------------
 std::wstring TConfigFile::GetAsString() const

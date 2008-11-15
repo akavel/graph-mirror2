@@ -119,13 +119,13 @@ std::wstring TVersionInfo::StringValue(const std::wstring &Ident) const
     WORD charset;
   }m_translation;
 
-  if(!VerQueryValueA(&Data[0], "VarFileInfo\\Translation", &(void*)FileInfo, &puLen))
+  if(!VerQueryValue(&Data[0], L"VarFileInfo\\Translation", &(void*)FileInfo, &puLen))
     return L"";
 
   m_translation = *(TRANSLATION*)FileInfo;
   // *** Now we are ready to Build Queries ***
-  AnsiString Query = "StringFileInfo\\" + IntToHex(m_translation.langID, 4) + IntToHex(m_translation.charset, 4) + "\\" + Ident.c_str();
-  if(!VerQueryValueA(&Data[0], Query.c_str(), &(void*)FileInfo, &puLen))
+  String Query = L"StringFileInfo\\" + IntToHex(m_translation.langID, 4) + IntToHex(m_translation.charset, 4) + "\\" + Ident.c_str();
+  if(!VerQueryValue(&Data[0], Query.c_str(), &(void*)FileInfo, &puLen))
     return L"";
 
   std::wstring Str = reinterpret_cast<wchar_t*>(FileInfo);
