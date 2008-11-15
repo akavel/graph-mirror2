@@ -49,7 +49,7 @@ public:
   void Clear();
   void LoadDefault();
   bool LoadFromFile(const std::wstring &FileName, bool ShowErrorMessages = true);
-  bool LoadFromString(const std::string &Str);
+  bool LoadFromString(const std::wstring &Str);
   bool Save(const std::wstring &FileName, bool Remember);
   std::wstring SaveToString(bool ResetModified);
   void SaveDefault();

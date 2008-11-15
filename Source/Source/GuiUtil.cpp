@@ -406,28 +406,19 @@ WideString GetWideKeyName(UINT Key)
   return WideString();
 }
 //---------------------------------------------------------------------------
-/*
 namespace Menus
 {
-  AnsiString __fastcall ShortCutToText(TShortCut ShortCut)
-  {
-    return WideShortCutToText(ShortCut);
-  }
-}
-//---------------------------------------------------------------------------
-//Replaces the function WideShortCutToText() in TntMenus.pas
+//Replaces the function ShortCutToText() in Menus.pas
 //This function translates the key names instead of using hardcoded names
-namespace Tntmenus
-{
-  WideString __fastcall WideShortCutToText(TShortCut ShortCut)
+  String __fastcall ShortCutToText(TShortCut ShortCut)
   {
-    WideString Str;
+    String Str;
     if(ShortCut & scShift)
-      Str += LoadRes(RES_KEY_SHIFT);
+      Str += LoadRes(RES_KEY_SHIFT) + "+";
     if(ShortCut & scCtrl)
-      Str += LoadRes(RES_KEY_CTRL);
+      Str += LoadRes(RES_KEY_CTRL) + "+";
     if(ShortCut & scAlt)
-      Str += LoadRes(RES_KEY_ALT);
+      Str += LoadRes(RES_KEY_ALT) + "+";
 
     switch(ShortCut & 0xFF)
     {
@@ -447,13 +438,11 @@ namespace Tntmenus
       case VK_UP:     Str += LoadRes(RES_KEY_UP); break;
       case VK_DOWN:   Str += LoadRes(RES_KEY_DOWN); break;
       default:
-        Str += Win32PlatformIsUnicode ? GetWideKeyName(ShortCut & 0xFF) : WideString(GetKeyName(ShortCut & 0xFF));
+        Str += GetKeyName(ShortCut & 0xFF);
     }
-
     return Str;
   }
 }
-*/
 //---------------------------------------------------------------------------
 //Workaround for bug in C++ Builder 2009 where TPen::SetHandle() is broken
 namespace Graphics

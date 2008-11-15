@@ -6,13 +6,13 @@
 			<Projects Include="Components\IComp.cbproj">
 				<Dependencies/>
 			</Projects>
+			<Projects Include="Source\Graph.cbproj">
+				<Dependencies/>
+			</Projects>
 			<Projects Include="Func32\Func32.cbproj">
 				<Dependencies/>
 			</Projects>
 			<Projects Include="Func32\Test\Test.cbproj">
-				<Dependencies/>
-			</Projects>
-			<Projects Include="Source\Graph.cbproj">
 				<Dependencies/>
 			</Projects>
 		</ItemGroup>
@@ -32,6 +32,15 @@
 		<Target Name="IComp:Make">
 			<MSBuild Targets="Make" Projects="Components\IComp.cbproj"/>
 		</Target>
+		<Target Name="Graph">
+			<MSBuild Projects="Source\Graph.cbproj"/>
+		</Target>
+		<Target Name="Graph:Clean">
+			<MSBuild Targets="Clean" Projects="Source\Graph.cbproj"/>
+		</Target>
+		<Target Name="Graph:Make">
+			<MSBuild Targets="Make" Projects="Source\Graph.cbproj"/>
+		</Target>
 		<Target Name="Func32">
 			<MSBuild Projects="Func32\Func32.cbproj"/>
 		</Target>
@@ -50,23 +59,14 @@
 		<Target Name="Test:Make">
 			<MSBuild Targets="Make" Projects="Func32\Test\Test.cbproj"/>
 		</Target>
-		<Target Name="Graph">
-			<MSBuild Projects="Source\Graph.cbproj"/>
-		</Target>
-		<Target Name="Graph:Clean">
-			<MSBuild Targets="Clean" Projects="Source\Graph.cbproj"/>
-		</Target>
-		<Target Name="Graph:Make">
-			<MSBuild Targets="Make" Projects="Source\Graph.cbproj"/>
-		</Target>
 		<Target Name="Build">
-			<CallTarget Targets="IComp;Func32;Test;Graph"/>
+			<CallTarget Targets="IComp;Graph;Func32;Test"/>
 		</Target>
 		<Target Name="Clean">
-			<CallTarget Targets="IComp:Clean;Func32:Clean;Test:Clean;Graph:Clean"/>
+			<CallTarget Targets="IComp:Clean;Graph:Clean;Func32:Clean;Test:Clean"/>
 		</Target>
 		<Target Name="Make">
-			<CallTarget Targets="IComp:Make;Func32:Make;Test:Make;Graph:Make"/>
+			<CallTarget Targets="IComp:Make;Graph:Make;Func32:Make;Test:Make"/>
 		</Target>
 		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 	</Project>

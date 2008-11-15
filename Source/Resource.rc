@@ -21,9 +21,9 @@ BEGIN
   RES_TRANSPARENT "Transparent" //May be selected as background color in Insert label dialog
   RES_AXES        "Axes"        //Shown in the function list
 
-  RES_KEY_CTRL      "Ctrl+"       //Shortcut key
-  RES_KEY_ALT       "Alt+"        //Shortcut key
-  RES_KEY_SHIFT     "Shift+"      //Shortcut key
+  RES_KEY_CTRL      "Ctrl"       //Shortcut key
+  RES_KEY_ALT       "Alt"        //Shortcut key
+  RES_KEY_SHIFT     "Shift"      //Shortcut key
   RES_KEY_DEL       "Del"         //Shortcut key
   RES_KEY_INS       "Ins"         //Shortcut key
   RES_KEY_HOME      "Home"        //Shortcut key
