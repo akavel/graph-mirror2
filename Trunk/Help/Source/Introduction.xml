@@ -32,29 +32,27 @@
 		</para>
 		<para>
 			When you send a bug report, please write the following:
-			<itemizedlist>
-				<listitem>
-					<para>
-						Which version are you using?
-						This is shown in the <menuchoice><guimenu>Help</guimenu><guimenuitem>About Graph...</guimenuitem></menuchoice> dialog box.
-						You should check that you are using the newest version, else the bug may have been fixed already.
-					</para>
-				</listitem>
-				<listitem>
-					<para>
-						Explain what happens and what you expected to happen.
-					</para>
-				</listitem>
-				<listitem>
-					<para>
-						Explain carefully how I can reproduce the bug.
-						If I can't see what you see, it is very difficult for me to solve the problem.
-					</para>
-				</listitem>
-			</itemizedlist>
 		</para>
-		<para>
-			<!--emphasis role="bold">Copyright &copy; 2001-2008 by Ivan Johansen</emphasis-->
-		</para>
+
+		<itemizedlist>
+			<listitem>
+				<para>
+					Which version are you using?
+					This is shown in the <menuchoice><guimenu>Help</guimenu><guimenuitem>About Graph...</guimenuitem></menuchoice> dialog box.
+					You should check that you are using the newest version, else the bug may have been fixed already.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					Explain what happens and what you expected to happen.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					Explain carefully how I can reproduce the bug.
+					If I can't see what you see, it is very difficult for me to solve the problem.
+				</para>
+			</listitem>
+		</itemizedlist>
 	</simplesect>
 </chapter>

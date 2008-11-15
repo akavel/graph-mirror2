@@ -3,7 +3,7 @@ import os
 import gettext
 import codecs
 
-Languages = ["Danish", "Croatian", "Spanish", "German", "Swedish", "French"]
+Languages = ["Danish", "Croatian", "Spanish", "German", "Swedish", "French", "Portuguese"]
 LocalePath = "d:\\Projects\\Graph\\Locale\\"
 
 def Encode(Str):
@@ -38,7 +38,7 @@ for Language in Languages:
             OutFile.write(Line)
         IgnoreNext = False
         if Line[:5] == "msgid":
-            Str = Line[7:-2]
+            Str = Line[7 : Line.find('"', 7)]
             if Str:
                 Str2 = Lang.ugettext(Str)
                 if Str2 == Str:

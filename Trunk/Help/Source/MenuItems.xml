@@ -13,7 +13,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>File</guimenu><guimenuitem>New</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>N</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -27,7 +27,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>File</guimenu><guimenuitem>Open...</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>O</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -41,7 +41,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>File</guimenu><guimenuitem>Save</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>S</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>S</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -65,7 +65,7 @@
 						<link linkend="SaveImageDialog">
 							<menuchoice>
 								<guimenu>File</guimenu><guimenuitem>Save as image...</guimenuitem>
-								<shortcut><keycombo><keycap>Ctrl</keycap><keycap>B</keycap></keycombo></shortcut>
+								<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>B</markup></keycap></keycombo></shortcut>
 							</menuchoice>
 						</link>
 					</term>
@@ -110,7 +110,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>File</guimenu><guimenuitem>Print...</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>P</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -124,7 +124,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>File</guimenu><guimenuitem>Exit</guimenuitem>
-							<shortcut><keycombo><keycap>Alt</keycap><keycap>F4</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Alt</keycap><keycap><markup>F4</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -140,7 +140,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Edit</guimenu><guimenuitem>Undo</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>Z</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>Z</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -154,7 +154,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Edit</guimenu><guimenuitem>Redo</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>Y</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>Y</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -168,7 +168,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Edit</guimenu><guimenuitem>Cut</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>X</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -182,7 +182,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Edit</guimenu><guimenuitem>Copy</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>C</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -196,7 +196,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Edit</guimenu><guimenuitem>Paste</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>V</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -210,7 +210,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Edit</guimenu><guimenuitem>Copy image</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>I</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>I</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -225,7 +225,7 @@
 						<link linkend="AxesDialog">
 							<menuchoice>
 								<guimenu>Edit</guimenu><guimenuitem>Axes...</guimenuitem>
-								<shortcut><keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo></shortcut>
+								<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>A</markup></keycap></keycombo></shortcut>
 							</menuchoice>
 						</link>
 					</term>
@@ -275,7 +275,7 @@
 						<link linkend="InsertTangentDialog">
 							<menuchoice>
 								<guimenu>Function</guimenu><guimenuitem>Insert tangent...</guimenuitem>
-								<shortcut><keycap>F2</keycap></shortcut>
+								<shortcut><keycap><markup>F2</markup></keycap></shortcut>
 							</menuchoice>
 						</link>
 					</term>
@@ -292,7 +292,7 @@
 						<link linkend="InsertShadingDialog">
 							<menuchoice>
 								<guimenu>Function</guimenu><guimenuitem>Insert shading...</guimenuitem>
-								<shortcut><keycap>F3</keycap></shortcut>
+								<shortcut><keycap><markup>F3</markup></keycap></shortcut>
 							</menuchoice>
 						</link>
 					</term>
@@ -310,7 +310,7 @@
 						<link linkend="InsertDerivativeDialog">
 							<menuchoice>
 								<guimenu>Function</guimenu><guimenuitem>Insert f'(x)...</guimenuitem>
-								<shortcut><keycap>F7</keycap></shortcut>
+								<shortcut><keycap><markup>F7</markup></keycap></shortcut>
 							</menuchoice>
 						</link>
 					</term>
@@ -326,7 +326,7 @@
 						<link linkend="InsertPointSeriesDialog">
 							<menuchoice>
 								<guimenu>Function</guimenu><guimenuitem>Insert point series...</guimenuitem>
-								<shortcut><keycap>F4</keycap></shortcut>
+								<shortcut><keycap><markup>F4</markup></keycap></shortcut>
 							</menuchoice>
 						</link>
 					</term>
@@ -344,7 +344,7 @@
 						<link linkend="InsertTrendlineDialog">
 							<menuchoice>
 								<guimenu>Function</guimenu><guimenuitem>Insert trendline...</guimenuitem>
-								<shortcut><keycombo><keycap>Ctrl</keycap><keycap>T</keycap></keycombo></shortcut>
+								<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>T</markup></keycap></keycombo></shortcut>
 							</menuchoice>
 						</link>
 					</term>
@@ -361,7 +361,7 @@
 						<link linkend="InsertRelationDialog">
 							<menuchoice>
 								<guimenu>Function</guimenu><guimenuitem>Insert relation...</guimenuitem>
-								<shortcut><keycap>F6</keycap></shortcut>
+								<shortcut><keycap><markup>F6</markup></keycap></shortcut>
 							</menuchoice>
 						</link>
 					</term>
@@ -379,7 +379,7 @@
 						<link linkend="InsertLabelDialog">
 							<menuchoice>
 								<guimenu>Function</guimenu><guimenuitem>Insert label...</guimenuitem>
-								<shortcut><keycap>F8</keycap></shortcut>
+								<shortcut><keycap><markup>F8</markup></keycap></shortcut>
 							</menuchoice>
 						</link>
 					</term>
@@ -423,7 +423,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Function</guimenu><guimenuitem>Custom functions...</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>F</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -439,7 +439,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Zoom</guimenu><guimenuitem>In</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>+</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>+</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -453,7 +453,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Zoom</guimenu><guimenuitem>Out</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>-</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>-</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -467,7 +467,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Zoom</guimenu><guimenuitem>Window</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>W</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -482,7 +482,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Zoom</guimenu><guimenuitem>Square</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>Q</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -498,7 +498,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Zoom</guimenu><guimenuitem>Standard</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>D</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>D</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -512,7 +512,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Zoom</guimenu><guimenuitem>Move system</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>M</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>M</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -587,7 +587,7 @@
 						<link linkend="EvaluateFrame">
 							<menuchoice>
 								<guimenu>Calc</guimenu><guimenuitem>Evaluate</guimenuitem>
-								<shortcut><keycombo><keycap>Ctrl</keycap><keycap>E</keycap></keycombo></shortcut>
+								<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>E</markup></keycap></keycombo></shortcut>
 							</menuchoice>
 						</link>
 					</term>
@@ -638,7 +638,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Help</guimenu><guimenuitem>Contents and index</guimenuitem>
-							<shortcut><keycap>F1</keycap></shortcut>
+							<shortcut><keycap><markup>F1</markup></keycap></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -652,7 +652,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Help</guimenu><guimenuitem>List of functions</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap>F1</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>F1</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>
@@ -745,7 +745,7 @@
 					<term>
 						<menuchoice>
 							<guimenu>Help</guimenu><guimenuitem>About Graph...</guimenuitem>
-							<shortcut><keycombo><keycap>Alt</keycap><keycap>F1</keycap></keycombo></shortcut>
+							<shortcut><keycombo><keycap>Alt</keycap><keycap><markup>F1</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
 					<listitem>

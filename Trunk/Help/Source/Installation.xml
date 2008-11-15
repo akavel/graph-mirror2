@@ -16,45 +16,46 @@
 			The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version name.
 			To install, just execute the installation and follow the instructions.
 			The installation will install the following	files in the selected directory and subdirectories:
-			<informaltable id="InstalledFilesTable">
- 				<tgroup cols="2">
-					<colspec colnum="1" colwidth="3.5cm"/>
-					<colspec colnum="2" colwidth="*"/>
-					<thead>
-						<row>
-							<entry>File(s)</entry>
-							<entry>Description</entry>
-						</row>
-					</thead>
- 					<tbody>
-      			<row>
-        			<entry condition="pot"><filename>Graph.exe</filename></entry>
-        			<entry>The program file.</entry>
-      			</row>
-     	 			<row>
-        			<entry condition="pot"><filename>Thumbnails.dll</filename></entry>
-        			<entry>Shell extension for showing thumbnails of grf-files in Explorer.</entry>
-      			</row>
-      			<row>
-        			<entry condition="pot"><filename>Locale\*.mo</filename></entry>
-        			<entry>Translations of the program.</entry>
-      			</row>
-      			<row>
-        			<entry condition="pot"><filename>Help\*.chm</filename></entry>
-        			<entry>Help files in different languages.</entry>
-      			</row>
-	      		<row>
-     	   			<entry condition="pot"><filename>Plugins\*.py</filename></entry>
-        			<entry>Some examples of plugins. Custom plugins can be placed here too.</entry>
-      			</row>
-      			<row>
-        			<entry condition="pot"><filename>Examples\*.grf</filename></entry>
-        			<entry>Some examples that can be opened in Graph.</entry>
-	      		</row>
- 					</tbody>
- 				</tgroup>
-			</informaltable>
 		</para>
+
+		<informaltable id="InstalledFilesTable">
+ 			<tgroup cols="2">
+				<colspec colnum="1" colwidth="3.5cm"/>
+				<colspec colnum="2" colwidth="*"/>
+				<thead>
+					<row>
+						<entry>File(s)</entry>
+						<entry>Description</entry>
+					</row>
+				</thead>
+ 				<tbody>
+      		<row>
+        		<entry condition="pot"><filename>Graph.exe</filename></entry>
+        		<entry>The program file.</entry>
+      		</row>
+     	 		<row>
+        		<entry condition="pot"><filename>Thumbnails.dll</filename></entry>
+        		<entry>Shell extension for showing thumbnails of grf-files in Explorer.</entry>
+      		</row>
+      		<row>
+        		<entry condition="pot"><filename>Locale\*.mo</filename></entry>
+        		<entry>Translations of the program.</entry>
+      		</row>
+      		<row>
+        		<entry condition="pot"><filename>Help\*.chm</filename></entry>
+        		<entry>Help files in different languages.</entry>
+      		</row>
+	      	<row>
+     	   		<entry condition="pot"><filename>Plugins\*.py</filename></entry>
+        		<entry>Some examples of plugins. Custom plugins can be placed here too.</entry>
+      		</row>
+      		<row>
+        		<entry condition="pot"><filename>Examples\*.grf</filename></entry>
+        		<entry>Some examples that can be opened in Graph.</entry>
+	      	</row>
+ 				</tbody>
+ 			</tgroup>
+		</informaltable>
 
 		<para>
 			The installation will create a shortcut in the Start menu, which may be used to start the program.

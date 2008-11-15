@@ -519,9 +519,12 @@ def processElementTag(node, replacements, restart = 0):
 
         if restart or worth:
             i = 0
+            original_translation = translation
             while i < len(myrepl):
                 replacement = '<%s>%s</%s>' % (myrepl[i][0], myrepl[i][3], myrepl[i][2])
                 i += 1
+                if '<placeholder-%d/>' % (i) not in translation:
+                   print >> sys.stderr, "WARNING: Missing <placeholder-%d/> in translation.\nOriginal string:\n%s\nTranslation:\n%s\n" % (i, normalizeString(outtxt), original_translation)
                 translation = translation.replace('<placeholder-%d/>' % (i), replacement)
 
             if worth:

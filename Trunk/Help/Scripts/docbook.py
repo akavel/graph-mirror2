@@ -52,7 +52,7 @@ class docbookXmlMode:
 
     def getIgnoredTags(self):
         "Returns array of tags to be ignored."
-        return  self.objects + self.lists + ['subtitle', 'firstname', 'surname', 'personname', 'year', 'holder', 'orgname', 'ulink', 'keycap',
+        return  self.objects + self.lists + ['subtitle', 'firstname', 'surname', 'personname', 'year', 'holder', 'orgname', 'ulink',
           'superscript', 'subscript', 'application', 'acronym']
 
     def getFinalTags(self):
