@@ -101,7 +101,7 @@ public:
   //Return a std::wstring if instantiated with a wchar_t* as default
   std::wstring Read(const std::wstring &Key, const wchar_t* Default) const
   {
-    return Read<std::wstring>(Key, Default);
+    return Read(Key, std::wstring(Default));
   }
 };
 
@@ -124,7 +124,6 @@ public:
   void LoadFromStream(std::wistream &Stream);
   void SaveToStream(std::wostream &Stream) const;
   void LoadFromString(const std::wstring &Str);
-  void LoadFromUtf8String(const std::string &Str);
   std::wstring GetAsString() const;
   void SetComment(const std::wstring &Str);
   void Clear() {ConfigData.clear();}
