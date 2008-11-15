@@ -1,21 +1,21 @@
 ;This file was created by Graph (http://www.padowan.dk)
 ;Do not change this file from other programs.
 [Graph]
-Version = 4.3.0.380
+Version = 4.4.0.413
 MinVersion = 2.5
-OS = Windows XP 5.1 Service Pack 2
+OS = Windows XP 5.1 Service Pack 3
 
 [Axes]
-xMin = -5.5
-xMax = 5.5
+xMin = -5.53947368
+xMax = 5.46052632
 xTickUnit = 1
 xGridUnit = 1
 xShowTicks = 0
 xShowNumbers = 0
-yMin = -5.5
-yMax = 5.5
-yTickUnit = 2
-yGridUnit = 2
+yMin = -4.86573311
+yMax = 6.13426689
+yTickUnit = 1
+yGridUnit = 1
 yShowTicks = 0
 yShowNumbers = 0
 AxesColor = clBlack
@@ -33,7 +33,7 @@ AxesStyle = 0
 FuncType = 1
 x = 5cos t
 y = 4sin t
-From = 0
+>From = 0
 To = 2pi
 Steps = 1000
 Color = clBlack
@@ -41,7 +41,7 @@ Color = clBlack
 [Func2]
 FuncType = 0
 y = if((x<-3),(-1.696*x+(-5.088)),(9.71429*x+29.1429))
-From = -4.25
+>From = -4.25
 To = -2.66
 Style = 2
 Color = clBlack
@@ -50,7 +50,7 @@ Color = clBlack
 LegendText = Area 1
 ShadeStyle = 4
 BrushStyle = 5
-Color = clBlack
+Color = clSilver
 FuncNo = 2
 Func2No = 1
 sMin = -4.25
@@ -63,7 +63,7 @@ MarkEnd = 0
 [Func3]
 FuncType = 0
 y = 0.186441*x+0.559322
-From = -3
+>From = -3
 To = 4.67
 Style = 2
 Color = clBlack
@@ -71,7 +71,7 @@ Color = clBlack
 [Func4]
 FuncType = 0
 y = 0.256757*x+0.77027
-From = -3
+>From = -3
 To = 4.4
 Style = 2
 Color = clBlack
@@ -80,7 +80,7 @@ Color = clBlack
 LegendText = Area 2
 ShadeStyle = 4
 BrushStyle = 5
-Color = clBlack
+Color = 0x0066CC66
 FuncNo = 4
 Func2No = 3
 sMin = -3
@@ -99,10 +99,11 @@ LineSize = 5
 Font = Times New Roman,14,clBlack
 LabelPosition = 1
 Points = 0,0;
+ShowInLegend = 0
 LegendText = Centrum
 
 [PointSeries2]
-FillColor = clBlack
+FillColor = clYellow
 LineColor = clBlack
 Size = 15
 Style = 0
@@ -125,16 +126,67 @@ LegendText = Planet
 
 [Label1]
 Placement = 0
-Pos = -3.39644;-0.263612
+Pos = -3.27631578526316;-0.335255350527183
 Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1030{\\fonttbl{\\f0\\fdecor\\fprq15\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs48 Sun\\i\\fs28\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 
+[Label2]
+Placement = 0
+Pos = -5.23684210526316;5.88056013179571
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24 A line joining a planet and the sun (radius vector) sweeps out equal areas in equal times.\\par\nIn the attached figure, A1=A2. \\par\n\\par\nNote: The eccentricity of the orbit has been exaggerated for illustrative purposes.\\fs28\\par\n}\n
+BackgroundColor = 0x00FFCC99
+ShowInLegend = 0
+
+[Label3]
+Placement = 0
+Pos = -3.44736842105263;1.94810543657331
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}{\\f1\\fnil Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs28 A1\\f1\\fs24\\par\n}\n
+BackgroundColor = clNone
+ShowInLegend = 0
+
+[Label4]
+Placement = 0
+Pos = 3.28947368421053;1.60378912685338
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs28 A2\\b\\par\n}\n
+BackgroundColor = clNone
+ShowInLegend = 0
+
+[Label5]
+Placement = 0
+Pos = -2.69736842105264;3.832784184514
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24 1\\par\n}\n
+BackgroundColor = clNone
+ShowInLegend = 0
+
+[Label6]
+Placement = 0
+Pos = -4.38157894736842;2.47364085667216
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24 2\\par\n}\n
+BackgroundColor = clNone
+ShowInLegend = 0
+
+[Label7]
+Placement = 0
+Pos = 4.81578947368421;1.65815485996705
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24 3\\par\n}\n
+BackgroundColor = clNone
+ShowInLegend = 0
+
+[Label8]
+Placement = 0
+Pos = 4.53947368421052;2.12932454695222
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24 4\\par\n}\n
+BackgroundColor = clNone
+ShowInLegend = 0
+
 [Data]
-TextLabelCount = 1
+TextLabelCount = 8
 FuncCount = 4
 PointSeriesCount = 3
 ShadeCount = 2
 RelationCount = 0
 OleObjectCount = 0
+
+
 
