@@ -5,7 +5,7 @@ Known bug:
 
 ASAP
 + Comments in po-files
-- Replacement for rtf files to generate help.
++ Replacement for rtf files to generate help.
 + Rename SetupGraph.exe to SetupGraph-4.1.exe
 - Document how to put Graph on a memory stick or server.
 - Distribute binary zip package.
@@ -146,3 +146,6 @@ Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>
 New Arabic help file: Abdellah Chelli <sneetsher@yahoo.com>
 New Spanish help file: Francisco Oliver <fran_oliver@ono.com>
+
+Help file:
+Split Evaluate, Area and Length of Path into separate sections.

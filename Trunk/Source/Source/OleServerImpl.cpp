@@ -978,10 +978,10 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Load(
   }
   while(BytesRead == Buffer.size());
 
-  HRESULT Result = Form1->Data.LoadFromString(Str) ? S_OK : E_FAIL;
+  HRESULT Result = Form1->Data.LoadFromString(ToWString(Str)) ? S_OK : E_FAIL;
 
   TConfigFile ConfigFile;
-  ConfigFile.LoadFromUtf8String(Str);
+  ConfigFile.LoadFromString(ToWString(Str));
   const TConfigFileSection &Section = ConfigFile.Section(L"Image");
   if(Section.KeyExists(L"Width"))
   {

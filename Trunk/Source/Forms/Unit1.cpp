@@ -1274,19 +1274,6 @@ void TForm1::ChangeLanguage(const String &Lang)
     Translate();
 
   Property.Language = Lang;
-
-  //Store unicode version of hint in tool buttons and add shortcuts
-  for(int I = 0; I < ActionToolBar1->ActionClient->Items->Count; I++)
-  {
-    TActionClientItem *Item = ActionToolBar1->ActionClient->Items->ActionClients[I];
-    if(TAction *Action = dynamic_cast<TAction*>(Item->Action))
-    {
-      String Str = Action->Hint;
-      if(Action->ShortCut != 0)
-        Str += L" (" + ShortCutToText(Action->ShortCut) + L")";
-      Item->Control->Hint = Str;
-    }
-  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
@@ -3053,7 +3040,7 @@ void TForm1::LoadDefault()
 {
   std::wstring Str = GetRegValue(REGISTRY_KEY, L"DefaultAxes", HKEY_CURRENT_USER, L"");
 
-  if(Str.empty() || !Data.LoadFromString(::ToString(Str)))
+  if(Str.empty() || !Data.LoadFromString(Str))
     Data.LoadDefault();
 
   UndoList.Clear();
