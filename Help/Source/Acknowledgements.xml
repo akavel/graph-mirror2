@@ -3,27 +3,14 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<chapter id="Acknowledgements">
-	<title>Acknowledgements</title>
+<chapter id="Acknowledgments">
+	<title>Acknowledgments</title>
 	<indexterm><primary>acknowledgements</primary></indexterm>
 	<indexterm><primary>libraries</primary></indexterm>
 	<indexterm><primary>translators</primary></indexterm>
 	<indexterm><primary>logo</primary></indexterm>
 	<simplesect renderas="sect2">
 		<title>Libraries</title>
-		<simplelist>
-			<member>Parts of Graph are using the Spirit parser library:</member>
-			<member><orgname>Copyright &copy; 1998-2002 Spirit-Dev</orgname></member>
-			<member><ulink url="http://spirit.sourceforge.net/">http://spirit.sourceforge.net/</ulink></member>
-		</simplelist>
-
-		<simplelist>
-			<member>Graph uses BMGLib for saving images as Portable Network Graphics:</member>
-			<member><orgname>BMGLib is Copyright &copy; 2000-2002 M. Scott Heiman</orgname></member>
-			<member><orgname>libPNG is Copyright &copy; 1995, 1996 Guy Eric Schalnat, Group 42, Inc.</orgname></member>
-			<member><orgname>zLib Copyright &copy; 1995-1998 Jean-Loup Gailly.</orgname></member>
-		</simplelist>
-
 		<simplelist>
 			<member>Graph uses dxgettext as translation library:</member>
 			<member><orgname>dxgettext is Copyright by Lars B. Dybdahl <email>Lars@dybdahl.dk</email> and others</orgname></member>
@@ -40,12 +27,6 @@
 			<member>The PDFlib-Lite library is used to create PDF files:</member>
 			<member><orgname>Copyright &copy; 1997-2005 Thomas Merz and PDFlib GmbH.</orgname></member>
 			<member><ulink url="http://www.pdflib.com"/></member>
-		</simplelist>
-
-		<simplelist>
-			<member><orgname>Tnt Delphi Unicode Controls</orgname></member>
-			<member><orgname>Copyright &copy; 2002-2005, Troy Wolbrink</orgname></member>
-			<member><ulink url="http://www.tntware.com/delphicontrols/unicode/"/></member>
 		</simplelist>
 
 		<simplelist>

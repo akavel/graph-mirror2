@@ -4,13 +4,14 @@ import sys
 
 ToolsDir = "..\\..\\Tools\\"
 Languages = [
-    ("English",  "en", {"$LabelWidth": "2em"}),
-    ("Danish",   "da", {"$LabelWidth": "5em"}),
-    ("German",   "de", {"$LabelWidth": "2em"}),
-    ("Spanish",  "es", {"$LabelWidth": "2em"}),
-    ("Swedish",  "sv", {"$LabelWidth": "4em"}),
-    ("French",   "fr", {"$LabelWidth": "2em"}),
-    ("Croatian", "hr", {"$LabelWidth": "5em"}),
+    ("English",     "en",   {"$LabelWidth": "2em"}),
+    ("Danish",      "da",   {"$LabelWidth": "5em"}),
+    ("German",      "de",   {"$LabelWidth": "2em"}),
+    ("Spanish",     "es",   {"$LabelWidth": "2em"}),
+    ("Swedish",     "sv",   {"$LabelWidth": "4em"}),
+    ("French",      "fr",   {"$LabelWidth": "2em"}),
+    ("Croatian",    "hr",   {"$LabelWidth": "5em"}),
+    ("Portuguese",  "pt_br",{"$LabelWidth": "2em"}),
 ]
 
 def ReplaceStrings(FileName, Dict):
