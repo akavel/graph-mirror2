@@ -19,9 +19,9 @@ namespace Func32
  *  \throw EParseError: Thrown if an error occurs while parsing the expression
  *  \throw ECalcError: Thrown if a calculation error occurs
  */
-long double Eval(const std::string &Expr, TTrigonometry Trig)
+long double Eval(const std::wstring &Expr, TTrigonometry Trig)
 {
-  TFunc Func(Expr, "", Trig);
+  TFunc Func(Expr, L"", Trig);
   return Func(0);
 }
 //---------------------------------------------------------------------------
@@ -33,9 +33,9 @@ long double Eval(const std::string &Expr, TTrigonometry Trig)
  *  \throw EParseError: Thrown if an error occurs while parsing the expression
  *  \throw ECalcError: Thrown if a calculation error occurs
  */
-long double Eval(const std::string &Expr, const TSymbolList &SymbolList, TTrigonometry Trig)
+long double Eval(const std::wstring &Expr, const TSymbolList &SymbolList, TTrigonometry Trig)
 {
-  TFunc Func(Expr, "", SymbolList, Trig);
+  TFunc Func(Expr, L"", SymbolList, Trig);
   return Func(0);
 }
 //---------------------------------------------------------------------------
@@ -48,7 +48,7 @@ long double Eval(const std::string &Expr, const TSymbolList &SymbolList, TTrigon
  *  \throw EParseError: Thrown if an error occurs while parsing the expression
  *  \throw ECalcError: Thrown if a calculation error occurs
  */
-long double Eval(const std::string &Expr, long double x, const std::string &Var, TTrigonometry Trig)
+long double Eval(const std::wstring &Expr, long double x, const std::wstring &Var, TTrigonometry Trig)
 {
   TFunc Func(Expr, Var, Trig);
   return Func(x);
@@ -61,9 +61,9 @@ long double Eval(const std::string &Expr, long double x, const std::string &Var,
  *  \throw EParseError: Thrown if an error occurs while parsing the expression
  *  \throw ECalcError: Thrown if a calculation error occurs
  */
-TComplex EvalComplex(const std::string &Expr, TTrigonometry Trig)
+TComplex EvalComplex(const std::wstring &Expr, TTrigonometry Trig)
 {
-  TFunc Func(Expr, "", Trig);
+  TFunc Func(Expr, L"", Trig);
   return Func.CalcY(TComplex(0));
 }
 //---------------------------------------------------------------------------
@@ -75,9 +75,9 @@ TComplex EvalComplex(const std::string &Expr, TTrigonometry Trig)
  *  \throw EParseError: Thrown if an error occurs while parsing the expression
  *  \throw ECalcError: Thrown if a calculation error occurs
  */
-TComplex EvalComplex(const std::string &Expr, const TSymbolList &SymbolList, TTrigonometry Trig)
+TComplex EvalComplex(const std::wstring &Expr, const TSymbolList &SymbolList, TTrigonometry Trig)
 {
-  TFunc Func(Expr, "", SymbolList, Trig);
+  TFunc Func(Expr, L"", SymbolList, Trig);
   return Func.CalcY(TComplex(0));
 }
 //---------------------------------------------------------------------------
@@ -90,7 +90,7 @@ TComplex EvalComplex(const std::string &Expr, const TSymbolList &SymbolList, TTr
  *  \throw EParseError: Thrown if an error occurs while parsing the expression
  *  \throw ECalcError: Thrown if a calculation error occurs
  */
-TComplex EvalComplex(const std::string &Expr, TComplex x, const std::string &Var, TTrigonometry Trig)
+TComplex EvalComplex(const std::wstring &Expr, TComplex x, const std::wstring &Var, TTrigonometry Trig)
 {
   TFunc Func(Expr, Var, Trig);
   return Func.CalcY(TComplex(x));
@@ -254,9 +254,9 @@ std::vector<TCoordSet> AnalyseFunction(const TBaseFunc &Func, long double Min, l
   return Data;
 }
 //---------------------------------------------------------------------------
-std::vector<std::string> FindUnknowns(const std::string &Str)
+std::vector<std::wstring> FindUnknowns(const std::wstring &Str)
 {
-  std::vector<std::string> Vector;
+  std::vector<std::wstring> Vector;
   unsigned Pos = Str.find('$');
   while(Pos != std::string::npos)
   {
@@ -274,15 +274,15 @@ std::vector<std::string> FindUnknowns(const std::string &Str)
   return Vector;
 }
 //---------------------------------------------------------------------------
-std::string ToLower(const std::string &Str)
+std::wstring ToLower(const std::wstring &Str)
 {
-  std::string Result;
+  std::wstring Result;
   for(unsigned I = 0; I < Str.size(); I++)
     Result += std::tolower(Str[I]);
   return Result;
 }
 //---------------------------------------------------------------------------
-bool IsValidName(const std::string &Name)
+bool IsValidName(const std::wstring &Name)
 {
   if(Name.empty())
     return false;
@@ -297,12 +297,12 @@ bool IsValidName(const std::string &Name)
   for(int I = FirstFunction1P; I <= LastFunction; I++)
   {
     TIdent Ident = static_cast<TIdent>(I);
-    const char *Str = FunctionName(Ident);
+    const wchar_t *Str = FunctionName(Ident);
     if(Str && Str == Name)
       return false;
   }
 
-  if(Name == "i" || Name == "e" || Name == "pi" || Name == "rand" || Name == "undef")
+  if(Name == L"i" || Name == L"e" || Name == L"pi" || Name == L"rand" || Name == L"undef")
     return false;
 
   return true;

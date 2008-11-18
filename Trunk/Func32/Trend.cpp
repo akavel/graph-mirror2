@@ -55,8 +55,8 @@ TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, u
         double a = (n*SumXY-SumX*SumY) / d;
         double b = (SumY - a*SumX) / n;
         if(b < 0)
-          return TFunc(a) * TFunc("x") - TFunc(-b);
-        return TFunc(a) * TFunc("x") + TFunc(b);
+          return TFunc(a) * TFunc(L"x") - TFunc(-b);
+        return TFunc(a) * TFunc(L"x") + TFunc(b);
       }
 
       case ttLogarithmic:
@@ -89,7 +89,7 @@ TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, u
 
         double a = ((n*SumXY-SumX*SumY) / d);
         double b = (SumY - a*SumX) / n;
-        return TFunc(a) * log(TFunc("x")) + TFunc(b);
+        return TFunc(a) * log(TFunc(L"x")) + TFunc(b);
       }
 
       case ttPolynomial:
@@ -118,7 +118,7 @@ TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, u
 
         std::vector<long double> a = M.Gauss();
         TFunc Func;
-        TFunc xFunc("x");
+        TFunc xFunc(L"x");
         for(unsigned n = a.size()-1; n >= 2; n--)
           if(a[n] < 0)
             Func -= -a[n] * pow(xFunc, n);
@@ -175,7 +175,7 @@ TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, u
         long double b = (n*SumXY - SumX*SumY) / d;
         long double a = std::exp((SumY - b*SumX) / n);
 
-        return TFunc(a) * pow(TFunc("x"),TFunc(b));
+        return TFunc(a) * pow(TFunc(L"x"),TFunc(b));
       }
 
       case ttExponential:
@@ -210,7 +210,7 @@ TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, u
         long double LogA = (SumY - LogB*SumX) / n;
         long double a = std::expl(LogA);
         long double b = std::expl(LogB);
-        return TFunc(a) * pow(TFunc(b),TFunc("x"));
+        return TFunc(a) * pow(TFunc(b),TFunc(L"x"));
       }
 
       default:
@@ -255,8 +255,8 @@ TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, unsigned 
       double b = Intercept;
       double a = (SumXY - b * SumX) / SumSqrX;
       if(b < 0)
-        return TFunc(a) * TFunc("x") - TFunc(-b);
-      return TFunc(a) * TFunc("x") + TFunc(b);
+        return TFunc(a) * TFunc(L"x") - TFunc(-b);
+      return TFunc(a) * TFunc(L"x") + TFunc(b);
     }
 
     case ttPolynomial:
@@ -286,7 +286,7 @@ TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, unsigned 
 
         std::vector<long double> a = M.Gauss();
         TFunc Func;
-        TFunc xFunc("x");
+        TFunc xFunc(L"x");
         for(unsigned n = a.size()-1; n >= 1; n--)
           if(a[n] < 0)
             Func -= -a[n] * pow(xFunc, n+1);
@@ -329,7 +329,7 @@ TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, unsigned 
 
         double a = Intercept;
         double b = std::exp((SumXY - std::log(a) * SumX) / SumSqrX);
-        return TFunc(a) * pow(TFunc(b),TFunc("x"));
+        return TFunc(a) * pow(TFunc(b),TFunc(L"x"));
       }
 
     case ttLogarithmic:
@@ -356,7 +356,7 @@ TParamFunc MovingAverage(const std::vector<TDblPoint> &Points, unsigned N)
     Average += Points[I].y;
   Average /= N;
 
-  std::ostringstream xStr, yStr;
+  std::wostringstream xStr, yStr;
   xStr << "ifseq(";
   yStr << "ifseq(";
 
@@ -536,17 +536,17 @@ void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, s
     if(m < n)
       throw EFuncError(ecTooFewPoints);
 
-    DEBUG_LOG(std::clog << "f(" << Func.GetArguments()[0] << ")=" << Func.MakeText() << std::endl);
+    DEBUG_LOG(std::wclog << "f(" << Func.GetArguments()[0] << L")=" << Func.MakeText() << std::endl);
     std::vector<TCustomFunc> PartialDif;
     for(unsigned J = 0; J < n; J++)
     {
       PartialDif.push_back(Func.MakeDif(J+1));
-      DEBUG_LOG(std::clog << "f'(" << Func.GetArguments()[J+1] << ")=" << PartialDif.back().MakeText() << std::endl);
+      DEBUG_LOG(std::wclog << "f'(" << Func.GetArguments()[J+1] << L")=" << PartialDif.back().MakeText() << std::endl);
     }
 
-    DEBUG_LOG(std::clog << "It " << 0 << "   ");
-    DEBUG_LOG(for(unsigned J = 1; J < Args.size(); J++) std::clog << Func.GetArguments()[J] << " = " << Args[J] << "  ");
-    DEBUG_LOG(std::clog << std::endl);
+    DEBUG_LOG(std::wclog << "It " << 0 << L"   ");
+    DEBUG_LOG(for(unsigned J = 1; J < Args.size(); J++) std::wclog << Func.GetArguments()[J] << " = " << Args[J] << "  ");
+    DEBUG_LOG(std::wclog << std::endl);
 
     const TMatrix<double> I = IdentityMatrix<double>(n);
     double LastSum = CalcSSQ(Points, Func, Args);
@@ -555,7 +555,7 @@ void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, s
     if(LastSum == std::numeric_limits<double>::infinity())
       throw EFuncError(ecBadGuess);
 
-    DEBUG_LOG(std::clog << std::string("SquareError = ") << LastSum << std::endl);
+    DEBUG_LOG(std::wclog << L"SquareError = " << LastSum << std::endl);
 
     std::vector<long double> LastArgs = Args;
 
@@ -599,13 +599,13 @@ void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, s
       for(unsigned J = 1; J < Args.size(); J++)
       {
         Args[J] = LastArgs[J] + s(J-1, 0);
-        DEBUG_LOG(std::clog << Func.GetArguments()[J] << " = " << Args[J] << "  ");
+        DEBUG_LOG(std::wclog << Func.GetArguments()[J] << " = " << Args[J] << "  ");
       }
-      DEBUG_LOG(std::clog << std::endl);
+      DEBUG_LOG(std::wclog << std::endl);
 
       double Sum = CalcSSQ(Points, Func, Args);
 
-      DEBUG_LOG(std::clog << std::string("SquareError = ") << Sum << "   LastError = " << LastSum << "   My = " << My << std::endl);
+      DEBUG_LOG(std::wclog << L"SquareError = " << Sum << L"   LastError = " << LastSum << L"   My = " << My << std::endl);
 
       if(std::abs(Sum - LastSum) < Tol)
       {

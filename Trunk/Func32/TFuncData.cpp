@@ -18,11 +18,11 @@ namespace Func32
 {
 struct TFuncTable
 {
-  const char *FuncName;
+  const wchar_t *FuncName;
   boost::function1<bool, unsigned> ArgCountValid;
-  const char *Definition;
-  const char *Dif;
-  TFuncTable(const char *AFuncName, const boost::function1<bool, unsigned> &AArgCountValid, const char *ADefinition = NULL, const char *ADif = NULL)
+  const wchar_t *Definition;
+  const wchar_t *Dif;
+  TFuncTable(const wchar_t *AFuncName, const boost::function1<bool, unsigned> &AArgCountValid, const wchar_t *ADefinition = NULL, const wchar_t *ADif = NULL)
     : FuncName(AFuncName), ArgCountValid(AArgCountValid), Definition(ADefinition), Dif(ADif) {}
 };
 
@@ -32,84 +32,84 @@ const boost::function1<bool, unsigned> Dummy;
 inline const TFuncTable& FuncTable(TIdent Ident)
 {
 static const TFuncTable Table[] = {
-/*CodeSin*/         TFuncTable("sin",   arg1 == 1, NULL, "cos(x)*dx"),
-/*CodeCos*/         TFuncTable("cos",   arg1 == 1, NULL, "-sin(x)*dx"),
-/*CodeTan*/         TFuncTable("tan",   arg1 == 1, NULL, "(1+tan(x)^2)*dx"),
-/*CodeASin*/        TFuncTable("asin",  arg1 == 1, NULL, "1/sqrt(1-x^2)*dx"),
-/*CodeACos*/        TFuncTable("acos",  arg1 == 1, NULL, "-1/sqrt(1-x^2)*dx"),
-/*CodeATan*/        TFuncTable("atan",  arg1 == 1, NULL, "1/(1+x^2)*dx"),
+/*CodeSin*/         TFuncTable(L"sin",   arg1 == 1, NULL, L"cos(x)*dx"),
+/*CodeCos*/         TFuncTable(L"cos",   arg1 == 1, NULL, L"-sin(x)*dx"),
+/*CodeTan*/         TFuncTable(L"tan",   arg1 == 1, NULL, L"(1+tan(x)^2)*dx"),
+/*CodeASin*/        TFuncTable(L"asin",  arg1 == 1, NULL, L"1/sqrt(1-x^2)*dx"),
+/*CodeACos*/        TFuncTable(L"acos",  arg1 == 1, NULL, L"-1/sqrt(1-x^2)*dx"),
+/*CodeATan*/        TFuncTable(L"atan",  arg1 == 1, NULL, L"1/(1+x^2)*dx"),
 
-/*CodeLog*/         TFuncTable("log",   arg1 == 1, NULL, "1/(x*ln(10))*dx"),
-/*CodeLn*/          TFuncTable("ln",    arg1 == 1, NULL, "1/x*dx"),
-/*CodeExp*/         TFuncTable("exp",   arg1 == 1, NULL, "exp(x)*dx"),
-/*CodeSqr*/         TFuncTable("sqr",   arg1 == 1, NULL, "2x*dx"),
-/*CodeSqrt*/        TFuncTable("sqrt",  arg1 == 1, NULL, "0.5/sqrt(x)*dx"),
-/*CodeFact*/        TFuncTable("fact",  arg1 == 1),
-/*CodeSign*/        TFuncTable("sign",  arg1 == 1),
-/*CodeU*/           TFuncTable("u",     arg1 == 1),
-/*CodeNeg*/         TFuncTable("",      Dummy,     NULL, "-dx"), //Argument and name is not used
-/*CodeSinh*/        TFuncTable("sinh",  arg1 == 1, NULL, "cosh(x)*dx"),
-/*CodeCosh*/        TFuncTable("cosh",  arg1 == 1, NULL, "sinh(x)*dx"),
-/*CodeTanh*/        TFuncTable("tanh",  arg1 == 1, NULL, "1/cosh(x)^2*dx"),
-/*CodeASinh*/       TFuncTable("asinh", arg1 == 1, NULL, "1/sqrt(x^2+1)*dx"),
-/*CodeACosh*/       TFuncTable("acosh", arg1 == 1, NULL, "1/sqrt(x^2-1)*dx"),
-/*CodeATanh*/       TFuncTable("atanh", arg1 == 1, NULL, "1/(1-x^2)*dx"),
-/*CodeAbs*/         TFuncTable("abs",   arg1 == 1, NULL, "sign(x)*dx"),
-/*CodeArg*/         TFuncTable("arg",   arg1 == 1),
-/*CodeConj*/        TFuncTable("conj",  arg1 == 1),
-/*CodeRe*/          TFuncTable("re",    arg1 == 1),
-/*CodeIm*/          TFuncTable("im",    arg1 == 1),
-/*CodeTrunc*/       TFuncTable("trunc", arg1 == 1),
-/*CodeFract*/       TFuncTable("fract", arg1 == 1),
-/*CodeCeil*/        TFuncTable("ceil",  arg1 == 1),
-/*CodeFloor*/       TFuncTable("floor", arg1 == 1),
-/*CodeNot*/         TFuncTable("not",   arg1 == 1),
-/*CodeGamma*/       TFuncTable("gamma", arg1 == 1),
-/*CodeW*/           TFuncTable("w",     arg1 == 1, NULL, "W(x)/(x*(1+W(x)))*dx"),
-/*CodeZeta*/        TFuncTable("zeta",  arg1 == 1),
+/*CodeLog*/         TFuncTable(L"log",   arg1 == 1, NULL, L"1/(x*ln(10))*dx"),
+/*CodeLn*/          TFuncTable(L"ln",    arg1 == 1, NULL, L"1/x*dx"),
+/*CodeExp*/         TFuncTable(L"exp",   arg1 == 1, NULL, L"exp(x)*dx"),
+/*CodeSqr*/         TFuncTable(L"sqr",   arg1 == 1, NULL, L"2x*dx"),
+/*CodeSqrt*/        TFuncTable(L"sqrt",  arg1 == 1, NULL, L"0.5/sqrt(x)*dx"),
+/*CodeFact*/        TFuncTable(L"fact",  arg1 == 1),
+/*CodeSign*/        TFuncTable(L"sign",  arg1 == 1),
+/*CodeU*/           TFuncTable(L"u",     arg1 == 1),
+/*CodeNeg*/         TFuncTable(L"",      Dummy,     NULL, L"-dx"), //Argument and name is not used
+/*CodeSinh*/        TFuncTable(L"sinh",  arg1 == 1, NULL, L"cosh(x)*dx"),
+/*CodeCosh*/        TFuncTable(L"cosh",  arg1 == 1, NULL, L"sinh(x)*dx"),
+/*CodeTanh*/        TFuncTable(L"tanh",  arg1 == 1, NULL, L"1/cosh(x)^2*dx"),
+/*CodeASinh*/       TFuncTable(L"asinh", arg1 == 1, NULL, L"1/sqrt(x^2+1)*dx"),
+/*CodeACosh*/       TFuncTable(L"acosh", arg1 == 1, NULL, L"1/sqrt(x^2-1)*dx"),
+/*CodeATanh*/       TFuncTable(L"atanh", arg1 == 1, NULL, L"1/(1-x^2)*dx"),
+/*CodeAbs*/         TFuncTable(L"abs",   arg1 == 1, NULL, L"sign(x)*dx"),
+/*CodeArg*/         TFuncTable(L"arg",   arg1 == 1),
+/*CodeConj*/        TFuncTable(L"conj",  arg1 == 1),
+/*CodeRe*/          TFuncTable(L"re",    arg1 == 1),
+/*CodeIm*/          TFuncTable(L"im",    arg1 == 1),
+/*CodeTrunc*/       TFuncTable(L"trunc", arg1 == 1),
+/*CodeFract*/       TFuncTable(L"fract", arg1 == 1),
+/*CodeCeil*/        TFuncTable(L"ceil",  arg1 == 1),
+/*CodeFloor*/       TFuncTable(L"floor", arg1 == 1),
+/*CodeNot*/         TFuncTable(L"not",   arg1 == 1),
+/*CodeGamma*/       TFuncTable(L"gamma", arg1 == 1),
+/*CodeW*/           TFuncTable(L"w",     arg1 == 1, NULL, L"W(x)/(x*(1+W(x)))*dx"),
+/*CodeZeta*/        TFuncTable(L"zeta",  arg1 == 1),
 
-/*CodeCsc*/         TFuncTable("csc",   arg1 == 1, "1/sin(x)", "-csc(x)*cot(x)*dx"),
-/*CodeSec*/         TFuncTable("sec",   arg1 == 1, "1/cos(x)", "sec(x)*tan(x)*dx"),
-/*CodeCot*/         TFuncTable("cot",   arg1 == 1, "1/tan(x)", "-csc(x)^2*dx"),
-/*CodeACsc*/        TFuncTable("acsc",  arg1 == 1, "asin(1/x)", "-1/(abs(x)*sqrt(x^2-1))*dx"),
-/*CodeASec*/        TFuncTable("asec",  arg1 == 1, "acos(1/x)", "1/(abs(x)*sqrt(x^2-1))*dx"),
-/*CodeACot*/        TFuncTable("acot",  arg1 == 1, "if(x, atan(1/x), acos(0))", "-1/(1+x^2)*dx"),
-/*CodeCsch*/        TFuncTable("csch",  arg1 == 1, "1/sinh(x)", "-csch(x)*coth(x)*dx"),
-/*CodeSech*/        TFuncTable("sech",  arg1 == 1, "1/cosh(x)", "-sech(x)*tanh(x)*dx"),
-/*CodeCoth*/        TFuncTable("coth",  arg1 == 1, "1/tanh(x)", "-csch(x)^2*dx"),
-/*CodeACsch*/       TFuncTable("acsch", arg1 == 1, "asinh(1/x)", "-1/(abs(x)*sqrt(1+x^2))*dx"),
-/*CodeASech*/       TFuncTable("asech", arg1 == 1, "acosh(1/x)", "-1/(abs(x)*sqrt(1-x^2))*dx"),
-/*CodeACoth*/       TFuncTable("acoth", arg1 == 1, "atanh(1/x)", "1/(1-x^2)*dx"),
+/*CodeCsc*/         TFuncTable(L"csc",   arg1 == 1, L"1/sin(x)", L"-csc(x)*cot(x)*dx"),
+/*CodeSec*/         TFuncTable(L"sec",   arg1 == 1, L"1/cos(x)", L"sec(x)*tan(x)*dx"),
+/*CodeCot*/         TFuncTable(L"cot",   arg1 == 1, L"1/tan(x)", L"-csc(x)^2*dx"),
+/*CodeACsc*/        TFuncTable(L"acsc",  arg1 == 1, L"asin(1/x)", L"-1/(abs(x)*sqrt(x^2-1))*dx"),
+/*CodeASec*/        TFuncTable(L"asec",  arg1 == 1, L"acos(1/x)", L"1/(abs(x)*sqrt(x^2-1))*dx"),
+/*CodeACot*/        TFuncTable(L"acot",  arg1 == 1, L"if(x, atan(1/x), acos(0))", L"-1/(1+x^2)*dx"),
+/*CodeCsch*/        TFuncTable(L"csch",  arg1 == 1, L"1/sinh(x)", L"-csch(x)*coth(x)*dx"),
+/*CodeSech*/        TFuncTable(L"sech",  arg1 == 1, L"1/cosh(x)", L"-sech(x)*tanh(x)*dx"),
+/*CodeCoth*/        TFuncTable(L"coth",  arg1 == 1, L"1/tanh(x)", L"-csch(x)^2*dx"),
+/*CodeACsch*/       TFuncTable(L"acsch", arg1 == 1, L"asinh(1/x)", L"-1/(abs(x)*sqrt(1+x^2))*dx"),
+/*CodeASech*/       TFuncTable(L"asech", arg1 == 1, L"acosh(1/x)", L"-1/(abs(x)*sqrt(1-x^2))*dx"),
+/*CodeACoth*/       TFuncTable(L"acoth", arg1 == 1, L"atanh(1/x)", L"1/(1-x^2)*dx"),
 
-/*CodeAdd*/         TFuncTable("",      Dummy, NULL, "dx+dx2"),
-/*CodeSub*/         TFuncTable("",      Dummy, NULL, "dx-dx2"),
-/*CodeMul*/         TFuncTable("",      Dummy, NULL, "dx*x2+x*dx2"),
-/*CodeDiv*/         TFuncTable("",      Dummy, NULL, "(dx*x2-x*dx2)/x2^2"),
-/*CodePow*/         TFuncTable("",      Dummy, NULL, "x2*x^(x2-1)*dx+x^x2*ln(x)*dx2"),
-/*CodeCompare1*/    TFuncTable("",      Dummy),
-/*CodeAnd*/         TFuncTable("",      Dummy),
-/*CodeOr*/          TFuncTable("",      Dummy),
-/*CodeXor*/         TFuncTable("",      Dummy),
-/*CodeMod*/         TFuncTable("mod",   arg1 == 2),
-/*CodeRound*/       TFuncTable("round", arg1 == 2),
-/*CodeLogB*/        TFuncTable("logb",  arg1 == 2, NULL, "dx/(ln(x2)*x) - (ln(x)*dx2)/(x2*ln(x2)^2)"),
-/*CodeRoot*/        TFuncTable("root",  arg1 == 2, NULL, "root(x, x2) * (dx2/(x2*x) - ln(x2)/x^2*dx)"),
-/*CodeBeta*/        TFuncTable("beta",  arg1 == 2),
+/*CodeAdd*/         TFuncTable(L"",      Dummy, NULL, L"dx+dx2"),
+/*CodeSub*/         TFuncTable(L"",      Dummy, NULL, L"dx-dx2"),
+/*CodeMul*/         TFuncTable(L"",      Dummy, NULL, L"dx*x2+x*dx2"),
+/*CodeDiv*/         TFuncTable(L"",      Dummy, NULL, L"(dx*x2-x*dx2)/x2^2"),
+/*CodePow*/         TFuncTable(L"",      Dummy, NULL, L"x2*x^(x2-1)*dx+x^x2*ln(x)*dx2"),
+/*CodeCompare1*/    TFuncTable(L"",      Dummy),
+/*CodeAnd*/         TFuncTable(L"",      Dummy),
+/*CodeOr*/          TFuncTable(L"",      Dummy),
+/*CodeXor*/         TFuncTable(L"",      Dummy),
+/*CodeMod*/         TFuncTable(L"mod",   arg1 == 2),
+/*CodeRound*/       TFuncTable(L"round", arg1 == 2),
+/*CodeLogB*/        TFuncTable(L"logb",  arg1 == 2, NULL, L"dx/(ln(x2)*x) - (ln(x)*dx2)/(x2*ln(x2)^2)"),
+/*CodeRoot*/        TFuncTable(L"root",  arg1 == 2, NULL, L"root(x, x2) * (dx2/(x2*x) - ln(x2)/x^2*dx)"),
+/*CodeBeta*/        TFuncTable(L"beta",  arg1 == 2),
 
-/*CodeIf*/          TFuncTable("if",    arg1 == 3),
-/*CodeRange*/       TFuncTable("range", arg1 == 3),
-/*CodeIntegrate*/   TFuncTable("integrate", arg1 == 3),
-/*CodeSum*/         TFuncTable("sum",   arg1 == 3),
-/*CodeProduct*/     TFuncTable("product", arg1 == 3),
-/*CodeCompare2*/    TFuncTable("",      arg1 == 3),
-/*CodePowDiv*/      TFuncTable("",      Dummy, NULL, "x2/x3*x^((x2-x3)/x3)*dx + x^(x2/x3)*ln(x)*(dx2*x3-x2*dx3)/x3^2"),
+/*CodeIf*/          TFuncTable(L"if",    arg1 == 3),
+/*CodeRange*/       TFuncTable(L"range", arg1 == 3),
+/*CodeIntegrate*/   TFuncTable(L"integrate", arg1 == 3),
+/*CodeSum*/         TFuncTable(L"sum",   arg1 == 3),
+/*CodeProduct*/     TFuncTable(L"product", arg1 == 3),
+/*CodeCompare2*/    TFuncTable(L"",      arg1 == 3),
+/*CodePowDiv*/      TFuncTable(L"",      Dummy, NULL, L"x2/x3*x^((x2-x3)/x3)*dx + x^(x2/x3)*ln(x)*(dx2*x3-x2*dx3)/x3^2"),
 
-/*CodeMin*/         TFuncTable("min",   arg1 >= 2),
-/*CodeMax*/         TFuncTable("max",   arg1 >= 2),
-/*CodeIfSeq*/       TFuncTable("ifseq", arg1 >= 2),
-/*CodeCustom*/      TFuncTable("",      Dummy),
-/*CodeExtFunc*/     TFuncTable("",      Dummy),
-/*CodeDNorm*/       TFuncTable("dnorm", arg1 == 1 || arg1 == 3, "exp(-sqr(x-x2)/(2sqr(x3))) / (x3*sqrt(2pi))"),
+/*CodeMin*/         TFuncTable(L"min",   arg1 >= 2),
+/*CodeMax*/         TFuncTable(L"max",   arg1 >= 2),
+/*CodeIfSeq*/       TFuncTable(L"ifseq", arg1 >= 2),
+/*CodeCustom*/      TFuncTable(L"",      Dummy),
+/*CodeExtFunc*/     TFuncTable(L"",      Dummy),
+/*CodeDNorm*/       TFuncTable(L"dnorm", arg1 == 1 || arg1 == 3, L"exp(-sqr(x-x2)/(2sqr(x3))) / (x3*sqrt(2pi))"),
 };
 
   assert(Ident >= FirstFunction1P && Ident <= LastFunction);
@@ -119,7 +119,7 @@ static const TFuncTable Table[] = {
 /** Return name of function corresponding to the given ident.
  *  Ident: Id to lookup.
  */
-const char* FunctionName(TIdent Ident)
+const wchar_t* FunctionName(TIdent Ident)
 {
   return FuncTable(Ident).FuncName;
 }
@@ -127,7 +127,7 @@ const char* FunctionName(TIdent Ident)
 /** Return name of function/constant in the element.
  *  \param Elem: Element to find name for.
  */
-const char* FunctionName(const TElem &Elem)
+const wchar_t* FunctionName(const TElem &Elem)
 {
   if(Elem.Ident == CodeCustom)
     return Elem.Text;
@@ -137,7 +137,7 @@ const char* FunctionName(const TElem &Elem)
 /** Return definition of function given by Ident. Might return NULL.
  *  \param Ident: Function to return definition for.
  */
-const char* FunctionDefinition(TIdent Ident)
+const wchar_t* FunctionDefinition(TIdent Ident)
 {
   return FuncTable(Ident).Definition;
 }
@@ -152,14 +152,14 @@ const TFuncData& GetDif(TIdent Ident)
   if(Table.empty())
   {
     TSymbolList SymbolList;
-    SymbolList.Add("dx");
-    SymbolList.Add("x2");
-    SymbolList.Add("dx2");
-    SymbolList.Add("x3");
-    SymbolList.Add("dx3");
+    SymbolList.Add(L"dx");
+    SymbolList.Add(L"x2");
+    SymbolList.Add(L"dx2");
+    SymbolList.Add(L"x3");
+    SymbolList.Add(L"dx3");
 
     Table.reserve(LastFunction-FirstFunction1P+1);
-    std::vector<std::string> Variable(1, "x");
+    std::vector<std::wstring> Variable(1, L"x");
 
     for(unsigned Ident = FirstFunction1P; Ident <= LastFunction; Ident++)
       if(FuncTable(static_cast<TIdent>(Ident)).Dif)
@@ -193,9 +193,9 @@ bool ArgCountValid(TIdent Ident, unsigned Args)
  */
 void TFuncData::CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const std::vector<std::vector<TElem> > &Args)
 {
-  DEBUG_LOG(std::clog << "CopyReplace: " << MakeText(Iter));
-  DEBUG_LOG(for(unsigned I = 0; I < Args.size(); I++) std::clog << ";   Arg" << I << "=" << MakeText(Args[I].begin()));
-  DEBUG_LOG(std::clog << std::endl);
+  DEBUG_LOG(std::wclog << L"CopyReplace: " << MakeText(Iter));
+  DEBUG_LOG(for(unsigned I = 0; I < Args.size(); I++) std::wclog << L";   Arg" << I << L"=" << MakeText(Args[I].begin()));
+  DEBUG_LOG(std::wclog << std::endl);
 
   const static std::vector<std::vector<TElem> > Dummy;
   TConstIterator End = FindEnd(Iter);

@@ -29,16 +29,16 @@ boost::shared_ptr<TFuncData> TFuncData::MakeDif(const TElem &Var, TTrigonometry 
 
   boost::shared_ptr<TFuncData> Temp(new TFuncData);
   CopyReplace(Temp->Data, Data.begin(), std::vector<std::vector<TElem> >());
-  DEBUG_LOG(std::clog << "f(x)=" << MakeText(Temp->Data.begin()) << std::endl);
+  DEBUG_LOG(std::wclog << L"f(x)=" << MakeText(Temp->Data.begin()) << std::endl);
   boost::shared_ptr<TFuncData> Dest(new TFuncData);
   Dest->AddDif(Temp->Data.begin(), Var, Trigonometry, 0);
 
   //It is sometimes necesarry to optimize. For example d(x^2) needs an ln(x) optimized away
-  DEBUG_LOG(std::clog << "Before simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
+  DEBUG_LOG(std::wclog << L"Before simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
   Dest->Simplify();
-  DEBUG_LOG(std::clog << "After simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
+  DEBUG_LOG(std::wclog << L"After simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
   Dest->Simplify();
-  DEBUG_LOG(std::clog << "After simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
+  DEBUG_LOG(std::wclog << L"After simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
   return Dest;
 }
 //---------------------------------------------------------------------------
@@ -136,10 +136,10 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
 
     case CodeDNorm:
     {
-      std::vector<std::string> ArgNames;
-      ArgNames.push_back("x");
-      ArgNames.push_back("x2");
-      ArgNames.push_back("x3");
+      std::vector<std::wstring> ArgNames;
+      ArgNames.push_back(L"x");
+      ArgNames.push_back(L"x2");
+      ArgNames.push_back(L"x3");
       TFuncData Temp(FunctionDefinition(CodeDNorm), ArgNames);
       TFuncData Temp2;
       std::vector<std::vector<TElem> > Args(3);
@@ -196,15 +196,15 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
     for(TConstIterator Elem = DifData.Data.begin(); Elem != End; ++Elem)
       if(Elem->Ident == CodeVariable)
         Data.insert(Data.end(), FirstPar, SecondPar);
-      else if(*Elem == TElem(CodeCustom, "dx"))
+      else if(*Elem == TElem(CodeCustom, L"dx"))
         AddDif(FirstPar, Var, Trigonometry, Level);
-      else if(*Elem == TElem(CodeCustom, "x2"))
+      else if(*Elem == TElem(CodeCustom, L"x2"))
         Data.insert(Data.end(), SecondPar, ThirdPar);
-      else if(*Elem == TElem(CodeCustom, "dx2"))
+      else if(*Elem == TElem(CodeCustom, L"dx2"))
         AddDif(SecondPar, Var, Trigonometry, Level);
-      else if(*Elem == TElem(CodeCustom, "x3"))
+      else if(*Elem == TElem(CodeCustom, L"x3"))
         Data.insert(Data.end(), ThirdPar, FindEnd(ThirdPar));
-      else if(*Elem == TElem(CodeCustom, "dx3"))
+      else if(*Elem == TElem(CodeCustom, L"dx3"))
         AddDif(ThirdPar, Var, Trigonometry, Level);
       else
         Data.push_back(*Elem);

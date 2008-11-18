@@ -29,7 +29,7 @@ std::stringstream DebugOutput;
 #include <boost/bind.hpp>
 //---------------------------------------------------------------------------
 #ifdef _DEBUG
-std::ostream& operator<<(std::ostream& Stream, const std::deque<Func32::TElem>&)
+std::wostream& operator<<(std::wostream& Stream, const std::deque<Func32::TElem>&)
 {
   return Stream;
 }
@@ -47,7 +47,7 @@ struct TFuncSymbols : public symbols<TElem>
     for(int I = FirstFunction1P; I <= LastFunction; I++)
     {
       TIdent Ident = static_cast<TIdent>(I);
-      const char *Name = FunctionName(Ident);
+      const wchar_t *Name = FunctionName(Ident);
       if(*Name)
         add(Name, Ident);
     }
@@ -59,19 +59,19 @@ struct TSymbols : symbols<TElem>
 {
   TSymbols()
   {
-     add("e",  Codee)
-        ("i",  Codei);
+     add(L"e",  Codee)
+        (L"i",  Codei);
   }
 } Symbols;
 //---------------------------------------------------------------------------
 //Case sensitive symbols
-struct TNoCaseSymbols : symbols<TElem>
+struct TNoCaseSymbols : symbols<TElem, wchar_t>
 {
   TNoCaseSymbols()
   {
-     add("pi",    CodePi)
-        ("rand",  CodeRand)
-        ("undef", CodeUndef);
+     add(L"pi",    CodePi)
+        (L"rand",  CodeRand)
+        (L"undef", CodeUndef);
   }
 };
 //---------------------------------------------------------------------------
@@ -88,7 +88,7 @@ struct TCompareSymbols : symbols<TElem>
 } CompareSymbols;
 //---------------------------------------------------------------------------
 //User defined symbols
-struct TUserSymbols : symbols<std::string>
+struct TUserSymbols : symbols<std::wstring>
 {
   TUserSymbols(const TSymbolList *Symbols)
   {
@@ -108,17 +108,22 @@ struct TContext : boost::spirit::closure<TContext, std::deque<TElem>, unsigned>
   member2 Arg;
 };
 //---------------------------------------------------------------------------
+void ThrowParseError(const wchar_t *Begin, const EParseError &E)
+{
+  throw parser_error<EParseError, const wchar_t*>(Begin, E);
+}
+//---------------------------------------------------------------------------
 //Action: Throws an error from the place where the action is invoked
 class TDoError
 {
   TErrorCode ErrorCode;
 public:
   TDoError(TErrorCode AErrorCode): ErrorCode(AErrorCode) {}
-  void operator()(const char *Begin, const char*) const
+  void operator()(const wchar_t *Begin, const wchar_t*) const
   {
     if(ErrorCode == ecUnknownChar)
-      throw parser_error<EParseError>(Begin, EParseError(ecUnknownChar, 0, std::string(1, *Begin)));
-    throw parser_error<EParseError>(Begin, ErrorCode);
+      ThrowParseError(Begin, EParseError(ecUnknownChar, 0, std::wstring(1, *Begin)));
+    ThrowParseError(Begin, ErrorCode);
   }
 };
 //---------------------------------------------------------------------------
@@ -161,6 +166,7 @@ struct TDoNegate
   }
 };
 //---------------------------------------------------------------------------
+
 struct TDoFuncSymbol
 {
   TContext::member1 &Container;
@@ -168,7 +174,7 @@ struct TDoFuncSymbol
 
   TDoFuncSymbol(TContext::member1 &AContainer, const TContext::member2 &AArg)
     : Container(AContainer), Arg(AArg) {}
-  void operator()(const char *Begin, const char*) const
+  void operator()(const wchar_t *Begin, const wchar_t*) const
   {
     TElem &Elem = Container().front();
     unsigned ActualArg = Arg();
@@ -176,12 +182,12 @@ struct TDoFuncSymbol
     if(Elem.Ident == CodeCustom)
     {
       if(Elem.Arguments != ActualArg)
-        throw parser_error<EParseError>(Begin, EParseError(ecArgCountError, -1, FunctionName(Elem)));
-    }
+       ThrowParseError(Begin, EParseError(ecArgCountError, -1, FunctionName(Elem)));
+   }
     else
     {
       if(!ArgCountValid(Elem.Ident, ActualArg))
-        throw parser_error<EParseError>(Begin, EParseError(ecArgCountError, -1, FunctionName(Elem.Ident)));
+        ThrowParseError(Begin, EParseError(ecArgCountError, -1, FunctionName(Elem.Ident)));
       Elem.Arguments = ActualArg;
     }
   }
@@ -285,7 +291,7 @@ TConvertRelation(TContext::member1 &AContainer) : Container(AContainer) {}
  *  \param SymbolList: List of global symbols
  *  \throw EParseError on parsing errors
  */
-void TFuncData::Parse(const std::string &Str, const std::vector<std::string> &Args, const TSymbolList *SymbolList)
+void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &Args, const TSymbolList *SymbolList)
 {
   TFuncSymbols FuncSymbols;
   TNoCaseSymbols NoCaseSymbols;
@@ -307,7 +313,7 @@ void TFuncData::Parse(const std::string &Str, const std::vector<std::string> &Ar
         FuncSymbols.add(Iter->first.c_str(), TElem(CodeCustom, Iter->first, Iter->second.Args.size(), Iter->second.FuncData));
   }
 
-  rule<phrase_scanner_t, TContext::context_t> Term, Expression, Factor, Constant, Function, Parentheses, Power, FactorSeq, Sum, Neg, Relation;
+  rule<wide_phrase_scanner_t, TContext::context_t> Term, Expression, Factor, Constant, Function, Parentheses, Power, FactorSeq, Sum, Neg, Relation;
 
   //A constant may not be followed by a alpha-numeric character
   //A constant may not be followed a a parenthesis
@@ -382,8 +388,8 @@ void TFuncData::Parse(const std::string &Str, const std::vector<std::string> &Ar
 
   //Set pointers to start and end of string.
   //Ignore ending spaces as the parser doesn seem to handle this.
-  const char *Begin = &Str[0];
-  const char *End = &Str[0] + Str.find_last_not_of(" ") + 1;
+  const wchar_t *Begin = &Str[0];
+  const wchar_t *End = &Str[0] + Str.find_last_not_of(L" ") + 1;
   if(Begin == End)
     throw EParseError(ecEmptyString);
 
@@ -392,7 +398,7 @@ void TFuncData::Parse(const std::string &Str, const std::vector<std::string> &Ar
     //Parse expression and ignore spaces
     std::deque<TElem> Temp;
     errno = 0;
-    parse_info<> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
+    parse_info<const wchar_t*> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
     if(errno)
       //Throw error if a calculation error occured under parsing
       throw EParseError(ecParseError, Info.stop - Begin);
@@ -402,16 +408,16 @@ void TFuncData::Parse(const std::string &Str, const std::vector<std::string> &Ar
     {
       if(std::isalpha(*Info.stop))
       {
-        const char *Ch;
+        const wchar_t *Ch;
         for(Ch = Info.stop; std::isalnum(*Ch); ++Ch);
-        throw EParseError(ecUnknownVar, Info.stop - Begin, std::string(Info.stop, Ch));
+        throw EParseError(ecUnknownVar, Info.stop - Begin, std::wstring(Info.stop, Ch));
       }
       if(*Info.stop == ',')
         throw EParseError(ecCommaError, Info.stop - Begin);
       if(*Info.stop == 0)
         throw EParseError(ecUnexpectedEnd, Info.stop - Begin);
       if(std::string("+-/*^").find_first_of(*Info.stop) != std::string::npos)
-        throw EParseError(ecOperatorError, Info.stop - Begin, std::string(1, *Info.stop));
+        throw EParseError(ecOperatorError, Info.stop - Begin, std::wstring(1, *Info.stop));
       if(*Info.stop == ')')
         throw EParseError(ecInvalidEndPar, Info.stop - Begin);
       if(*Info.stop == '.' || std::isdigit(*Info.stop))
@@ -419,7 +425,7 @@ void TFuncData::Parse(const std::string &Str, const std::vector<std::string> &Ar
       if(*Info.stop == '<' || *Info.stop == '>' || *Info.stop == '=')
         throw EParseError(ecInvalidCompare, Info.stop - Begin);
       if(!std::isdigit(*Info.stop) && std::string(".( ").find_first_of(*Info.stop) == std::string::npos)
-        throw EParseError(ecUnknownChar, Info.stop - Begin, std::string(1, *Info.stop));
+        throw EParseError(ecUnknownChar, Info.stop - Begin, std::wstring(1, *Info.stop));
       throw EParseError(ecParseError, Info.stop - Begin);
     }
 
@@ -427,11 +433,11 @@ void TFuncData::Parse(const std::string &Str, const std::vector<std::string> &Ar
     Data.swap(Temp2);
   }
   //Should not be necesarry. Bug in BCB6? Error on "sin ¤" is not caught without
-  catch(parser_error<const EParseError, const char*> &E)
+  catch(parser_error<const EParseError, const wchar_t*> &E)
   {
     HandleParseError(E.descriptor, E.where, E.where - Begin);
   }
-  catch(parser_error<EParseError, const char*> &E)
+  catch(parser_error<EParseError, const wchar_t*> &E)
   {
     HandleParseError(E.descriptor, E.where, E.where - Begin);
   }
@@ -445,13 +451,13 @@ void TFuncData::Parse(const std::string &Str, const std::vector<std::string> &Ar
   }
 }
 //---------------------------------------------------------------------------
-void TFuncData::HandleParseError(const EParseError &E, const char* Where, unsigned Pos)
+void TFuncData::HandleParseError(const EParseError &E, const wchar_t* Where, unsigned Pos)
 {
   if(E.ErrorCode != ecArgCountError && std::isalpha(*Where))
   {
-    const char *Ch;
+    const wchar_t *Ch;
     for(Ch = Where; std::isalnum(*Ch); ++Ch);
-    throw EParseError(ecUnknownVar, Pos, std::string(Where, Ch));
+    throw EParseError(ecUnknownVar, Pos, std::wstring(Where, Ch));
   }
 
 //Convert to a comma error if the error was detected at a comma (eg. "(0,8)")
