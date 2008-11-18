@@ -25,8 +25,8 @@ TFunc::TFunc() : FuncData(new TFuncData)
  *  \param ATrigonometry: Choose to use radians or degrees for trigonometric functions. Defaults to Radian.
  *  \throw EParseError: Thrown if parsing fails
  */
-TFunc::TFunc(const std::string &Text, const std::string &AVariable, TTrigonometry ATrigonometry)
-  : TBaseFunc(ATrigonometry), FuncData(new TFuncData(Text, std::vector<std::string>(1, AVariable)))
+TFunc::TFunc(const std::wstring &Text, const std::wstring &AVariable, TTrigonometry ATrigonometry)
+  : TBaseFunc(ATrigonometry), FuncData(new TFuncData(Text, std::vector<std::wstring>(1, AVariable)))
 {
 }
 //---------------------------------------------------------------------------
@@ -37,7 +37,7 @@ TFunc::TFunc(const std::string &Text, const std::string &AVariable, TTrigonometr
  *  \param ATrigonometry: Choose to use radians or degrees for trigonometric functions. Defaults to Radian.
  *  \throw EParseError: Thrown if parsing fails
  */
-TFunc::TFunc(const std::string &Text, const std::string &AVariable, const TSymbolList &SymbolList, TTrigonometry ATrigonometry)
+TFunc::TFunc(const std::wstring &Text, const std::wstring &AVariable, const TSymbolList &SymbolList, TTrigonometry ATrigonometry)
   : TBaseFunc(ATrigonometry), FuncData(new TFuncData(Text, AVariable, SymbolList))
 {
 }
@@ -65,7 +65,7 @@ inline void TFunc::Unique()
  *  \param Variable: The functions variable.
  *  \throw EParseError: Thrown if parsing fails
  */
-void TFunc::SetFunc(const std::string &Text, const std::string &Variable)
+void TFunc::SetFunc(const std::wstring &Text, const std::wstring &Variable)
 {
   FuncData.reset(new TFuncData(Text, Variable)); //Make new data
 }
@@ -76,9 +76,9 @@ void TFunc::SetFunc(const std::string &Text, const std::string &Variable)
  *  \param SymbolList: List of custom functions/constants to be used by the function.
  *  \throw EParseError: Thrown if parsing fails
  */
-void TFunc::SetFunc(const std::string &Text, const std::string &Variable, const TSymbolList &SymbolList)
+void TFunc::SetFunc(const std::wstring &Text, const std::wstring &Variable, const TSymbolList &SymbolList)
 {
-  FuncData.reset(new TFuncData(Text, std::vector<std::string>(1, Variable), SymbolList)); //Make new data
+  FuncData.reset(new TFuncData(Text, std::vector<std::wstring>(1, Variable), SymbolList)); //Make new data
 }
 //---------------------------------------------------------------------------
 /** Clears the function. After this the function will be empty.
@@ -147,7 +147,7 @@ TFunc* TFunc::MakeDifPtr() const
  *  \param Var: Name of variabel/constant to differentiate with respect to.
  *  \throw EFuncError: If differentiation fails.
  */
-TFunc* TFunc::MakeDifPtr(const std::string &Var) const
+TFunc* TFunc::MakeDifPtr(const std::wstring &Var) const
 {
   return new TFunc(FuncData->MakeDif(TElem(CodeCustom, Var), Trigonometry), Trigonometry);
 }
@@ -166,7 +166,7 @@ TFunc TFunc::MakeDif() const
  *  \param Var: Name of variabel/constant to differentiate with respect to.
  *  \throw EFuncError: Thrown if function could not be differentiated.
  */
-TFunc TFunc::MakeDif(const std::string &Var) const
+TFunc TFunc::MakeDif(const std::wstring &Var) const
 {
   return TFunc(FuncData->MakeDif(TElem(CodeCustom, Var), Trigonometry), Trigonometry);
 }
@@ -174,9 +174,9 @@ TFunc TFunc::MakeDif(const std::string &Var) const
 /** Converts from internal format to at text string.
  *  \param Variable: Name to use as the variable. The default is "x".
  */
-std::string TFunc::MakeText(const std::string &Variable) const
+std::wstring TFunc::MakeText(const std::wstring &Variable) const
 {
-  return FuncData->MakeText(std::vector<std::string>(1, Variable));
+  return FuncData->MakeText(std::vector<std::wstring>(1, Variable));
 }
 //---------------------------------------------------------------------------
 /** Assigns another function to the object.
@@ -366,7 +366,7 @@ TFunc sqrt(const TFunc &Func1)
 //---------------------------------------------------------------------------
 /** Convert the objects to text and add it to the stream
  */
-std::ostream& operator<<(std::ostream &os, const TFunc &Func)
+std::wostream& operator<<(std::wostream &os, const TFunc &Func)
 {
   return os << Func.MakeText();
 }
@@ -374,9 +374,9 @@ std::ostream& operator<<(std::ostream &os, const TFunc &Func)
 /** Functions text is retrieve from the stream. The rest of the line is parsed as the function text.
  *  \throw EParseError: Thrown if parsing fails.
  */
-std::istream& operator>>(std::istream &is, TFunc &Func)
+std::wistream& operator>>(std::wistream &is, TFunc &Func)
 {
-  std::string Str;
+  std::wstring Str;
   std::getline(is, Str);
   Func.SetFunc(Str);
   return is;

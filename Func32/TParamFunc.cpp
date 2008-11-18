@@ -26,7 +26,7 @@ TParamFunc::TParamFunc() : xFuncData(new TFuncData), yFuncData(new TFuncData)
  *  \param ATrigonometry: Select to use radians or degrees for trigonometric functions. Defaults to Radian.
  *  \throw EParseError: Thrown on parse errors in one of the function parts
  */
-TParamFunc::TParamFunc(const std::string &xText, const std::string &yText, const std::string &Variable, TTrigonometry ATrigonometry)
+TParamFunc::TParamFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable, TTrigonometry ATrigonometry)
   : TBaseFunc(ATrigonometry), xFuncData(new TFuncData(xText, Variable))
 {
   try
@@ -48,7 +48,7 @@ TParamFunc::TParamFunc(const std::string &xText, const std::string &yText, const
  *  \param ATrigonometry: Select to use radians or degrees for trigonometric functions. Defaults to Radian.
  *  \throw EParseError: Thrown on parse errors in one of the function parts
  */
-TParamFunc::TParamFunc(const std::string &xText, const std::string &yText, const std::string &Variable, const TSymbolList &SymbolList, TTrigonometry ATrigonometry)
+TParamFunc::TParamFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable, const TSymbolList &SymbolList, TTrigonometry ATrigonometry)
   : TBaseFunc(ATrigonometry), xFuncData(new TFuncData(xText, Variable, SymbolList))
 {
   try
@@ -102,7 +102,7 @@ inline void TParamFunc::Unique()
  *  \param Variable: Name of the paramater variable. Defaults to "t"
  *  \throw EParseError: Thrown on parse errors
  */
-void TParamFunc::SetFunc(const std::string &xText, const std::string &yText, const std::string &Variable)
+void TParamFunc::SetFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable)
 {
   boost::shared_ptr<TFuncData> TempData;
   try
@@ -134,7 +134,7 @@ void TParamFunc::SetFunc(const std::string &xText, const std::string &yText, con
  *  \param SymbolList: List of custom functions/constants
  *  \throw EParseError: Thrown on parse errors
  */
-void TParamFunc::SetFunc(const std::string &xText, const std::string &yText, const std::string &Variable, const TSymbolList &SymbolList)
+void TParamFunc::SetFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable, const TSymbolList &SymbolList)
 {
   boost::shared_ptr<TFuncData> TempData;
   try
@@ -203,7 +203,7 @@ TParamFunc* TParamFunc::MakeDifPtr() const
  *  \param Var: Variable to differentiate with respect to.
  *  \throw EFuncError: If the differentiation fails.
  */
-TParamFunc* TParamFunc::MakeDifPtr(const std::string &Var) const
+TParamFunc* TParamFunc::MakeDifPtr(const std::wstring &Var) const
 {
   return new TParamFunc(xDifData->MakeDif(TElem(CodeCustom, Var), Trigonometry),
                         yDifData->MakeDif(TElem(CodeCustom, Var), Trigonometry), Trigonometry);
@@ -222,7 +222,7 @@ TParamFunc TParamFunc::MakeDif() const
  *  \param Var: Name of variable/constant to differentiate with respect to.
  *  \throw EFuncError: If differentiation fails.
  */
-TParamFunc TParamFunc::MakeDif(const std::string &Var) const
+TParamFunc TParamFunc::MakeDif(const std::wstring &Var) const
 {
   return TParamFunc(xDifData->MakeDif(TElem(CodeCustom, Var), Trigonometry),
                     yDifData->MakeDif(TElem(CodeCustom, Var), Trigonometry), Trigonometry);
@@ -246,18 +246,18 @@ bool TParamFunc::IsEmpty() const
  *  \param Variable: Name of paramater variable.
  *  \return The string with the x(t) part of the function.
  */
-std::string TParamFunc::MakeXText(const std::string &Variable) const
+std::wstring TParamFunc::MakeXText(const std::wstring &Variable) const
 {
-  return xFuncData->MakeText(std::vector<std::string>(1, Variable));
+  return xFuncData->MakeText(std::vector<std::wstring>(1, Variable));
 }
 //---------------------------------------------------------------------------
 /** Creates a string containing y(t)
  *  \param Variable: Name of paramater variable.
  *  \return The string with the y(t) part of the function.
  */
-std::string TParamFunc::MakeYText(const std::string &Variable) const
+std::wstring TParamFunc::MakeYText(const std::wstring &Variable) const
 {
-  return yFuncData->MakeText(std::vector<std::string>(1, Variable));
+  return yFuncData->MakeText(std::vector<std::wstring>(1, Variable));
 }
 //---------------------------------------------------------------------------
 /** Assigns Func to the parameter function

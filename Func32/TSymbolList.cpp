@@ -12,32 +12,32 @@
 namespace Func32
 {
 //---------------------------------------------------------------------------
-void TSymbolList::Add(const std::string &Key)
+void TSymbolList::Add(const std::wstring &Key)
 {
-  std::string Name = ToLower(Key);
+  std::wstring Name = ToLower(Key);
   if(!IsValidName(Name))
     throw EFuncError(ecIllegalName, Name);
   List[Name];
 }
 //---------------------------------------------------------------------------
-void TSymbolList::Add(const std::string &Key, const std::string &Str, const std::vector<std::string> &Args)
+void TSymbolList::Add(const std::wstring &Key, const std::wstring &Str, const std::vector<std::wstring> &Args)
 {
-  std::string Name = ToLower(Key);
+  std::wstring Name = ToLower(Key);
   if(!IsValidName(Name))
     throw EFuncError(ecIllegalName, Name);
   List[Name].FuncData.reset(new TFuncData(Str, Args));
   List[Name].Args = Args;
 }
 //---------------------------------------------------------------------------
-void TSymbolList::Add(const std::string &Key, const TCustomFunc &CustomFunc)
+void TSymbolList::Add(const std::wstring &Key, const TCustomFunc &CustomFunc)
 {
-  std::string Name = ToLower(Key);
+  std::wstring Name = ToLower(Key);
   if(!IsValidName(Name))
     throw EFuncError(ecIllegalName, Key);
   List[Name] = CustomFunc;
 }
 //---------------------------------------------------------------------------
-const TCustomFunc& TSymbolList::Get(const std::string &Key) const
+const TCustomFunc& TSymbolList::Get(const std::wstring &Key) const
 {
   TConstIterator Iter = List.find(ToLower(Key));
   if(Iter == List.end())
@@ -48,12 +48,12 @@ const TCustomFunc& TSymbolList::Get(const std::string &Key) const
   return Iter->second;
 }
 //---------------------------------------------------------------------------
-bool TSymbolList::Exists(const std::string &Key) const
+bool TSymbolList::Exists(const std::wstring &Key) const
 {
   return List.count(ToLower(Key));
 }
 //---------------------------------------------------------------------------
-void TSymbolList::Erase(const std::string &Key)
+void TSymbolList::Erase(const std::wstring &Key)
 {
   List.erase(ToLower(Key));
 }

@@ -54,8 +54,13 @@ inline bool IsEqual(TComplex a, TComplex b)
   return IsEqual(real(a), real(b)) && IsEqual(imag(a), imag(b));
 }
 
+std::wstring ToWString(const std::string &Str)
+{
+  return std::wstring(Str.begin(), Str.end());
+}
+
 template<typename T>
-void TestEval(const char *Str, T x, T y, TTrigonometry Trig = Radian)
+void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian)
 {
   try
   {
@@ -64,31 +69,36 @@ void TestEval(const char *Str, T x, T y, TTrigonometry Trig = Radian)
     T f = Func.CalcY(x);
     if(!IsEqual(f, y))
     {
-      cerr << "Function:     " << Str << std::endl;
-      cerr << "x:            " << setprecision(10) << x << std::endl;
-      cerr << "Evaluated to: " << setprecision(10) << f << std::endl;
-      cerr << "Expected:     " << setprecision(10) << y << std::endl << std::endl;
-      cin.ignore();
+      wcerr << "Function:     " << Str << std::endl;
+      wcerr << "x:            " << setprecision(10) << x << std::endl;
+      wcerr << "Evaluated to: " << setprecision(10) << f << std::endl;
+      wcerr << "Expected:     " << setprecision(10) << y << std::endl << std::endl;
+      wcin.ignore();
     }
   }
   catch(EFuncError &E)
   {
-    cerr << "Function:  " << Str << std::endl;
-    cerr << "x:         " << setprecision(10) << x << std::endl;
-    cerr << "ErrorCode: " << E.ErrorCode << std::endl ;
-    cerr << "Expected:  " << setprecision(10) << y << std::endl << std::endl;
-    cin.ignore();
+    wcerr << "Function:  " << Str << std::endl;
+    wcerr << "x:         " << setprecision(10) << x << std::endl;
+    wcerr << "ErrorCode: " << E.ErrorCode << std::endl ;
+    wcerr << "Expected:  " << setprecision(10) << y << std::endl << std::endl;
+    wcin.ignore();
   }
 }
 
-void Test(const char *Str, long double x, long double y, TTrigonometry Trig = Radian)
+void Test(const std::wstring &Str, long double x, long double y, TTrigonometry Trig = Radian)
 {
   TestEval<long double>(Str, x, y, Trig);
   TestEval<TComplex>(Str, x, y, Trig);
 }
 
+void Test(const std::string &Str, long double x, long double y, TTrigonometry Trig = Radian)
+{
+  Test(ToWString(Str), x, y, Trig);
+}
+
 template<typename T>
-void TestErrorEval(const char *Str, T x, Func32::TErrorCode Error, TTrigonometry Trig = Radian)
+void TestErrorEval(const std::wstring &Str, T x, Func32::TErrorCode Error, TTrigonometry Trig = Radian)
 {
   try
   {
@@ -96,31 +106,35 @@ void TestErrorEval(const char *Str, T x, Func32::TErrorCode Error, TTrigonometry
     Func.SetTrigonometry(Trig);
     T f = Func.CalcY(x);
 
-    cerr << "Function:       " << Str << std::endl;
-    cerr << "x:              " << setprecision(10) << x << std::endl;
-    cerr << "Evaluated to:   " << setprecision(10) << f << std::endl;
-    cerr << "Expected error: " << Error << std::endl << std::endl;
-    cin.ignore();
+    wcerr << "Function:       " << Str << std::endl;
+    wcerr << "x:              " << setprecision(10) << x << std::endl;
+    wcerr << "Evaluated to:   " << setprecision(10) << f << std::endl;
+    wcerr << "Expected error: " << Error << std::endl << std::endl;
+    wcin.ignore();
   }
   catch(EFuncError &E)
   {
     if(E.ErrorCode != Error)
     {
-      cerr << "Function:       " << Str << std::endl;
-      cerr << "x:              " << setprecision(10) << x << std::endl;
-      cerr << "Error code:     " << E.ErrorCode << std::endl;
-      cerr << "Expected error: " << Error << std::endl << std::endl;
-      cin.ignore();
+      wcerr << "Function:       " << Str << std::endl;
+      wcerr << "x:              " << setprecision(10) << x << std::endl;
+      wcerr << "Error code:     " << E.ErrorCode << std::endl;
+      wcerr << "Expected error: " << Error << std::endl << std::endl;
+      wcin.ignore();
     }
   }
 }
 
-void TestError(const char *Str, long double x, TErrorCode Error, TTrigonometry Trig = Radian)
+void TestError(const std::wstring &Str, long double x, TErrorCode Error, TTrigonometry Trig = Radian)
 {
   TestErrorEval<long double>(Str, x, Error, Trig);
   TestErrorEval<TComplex>(Str, x, Error, Trig);
 }
 
+void TestError(const std::string &Str, long double x, TErrorCode Error, TTrigonometry Trig = Radian)
+{
+  TestError(ToWString(Str), x, Error, Trig);
+}
 
 void TestTrendLine(Func32::TTrendType Type, const TDblPoint *Points, unsigned Size, unsigned N)
 {
@@ -179,69 +193,83 @@ bool CompareFunc(const TFunc &f1, const TFunc &f2)
   return true;
 }
 
-void TestDif(const char *f, const char *df, TTrigonometry Trigonometry = Radian)
+void TestDif(const std::wstring &f, const std::wstring &df, TTrigonometry Trig = Radian)
 {
   try
   {
-    TFunc Func(f, "x", Trigonometry);
+    TFunc Func(f, L"x", Trig);
     TFunc Dif = Func.MakeDif();
-    TFunc Dif2(df, "x", Trigonometry);
+    TFunc Dif2(df, L"x", Trig);
 
     if(!CompareFunc(Dif, Dif2))
     {
-      cerr << "f(x)=" << f << std::endl;
-      cerr << "f'(x)=" << Dif.MakeText() << std::endl;
-      cerr << "Expected f'(x)=" << df << std::endl << std::endl;
-      cin.ignore();
+      wcerr << "f(x)=" << f << std::endl;
+      wcerr << "f'(x)=" << Dif.MakeText() << std::endl;
+      wcerr << "Expected f'(x)=" << df << std::endl << std::endl;
+      wcin.ignore();
     }
   }
   catch(EFuncError &E)
   {
-    cerr << "f(x)=" << f << std::endl;
-    cerr << "Expected f'(x)=" << df << std::endl;
-    cerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
-    cin.ignore();
+    wcerr << "f(x)=" << f << std::endl;
+    wcerr << "Expected f'(x)=" << df << std::endl;
+    wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
+    wcin.ignore();
   }
 }
 
+void TestDif(const std::string &f, const std::string &df, TTrigonometry Trig = Radian)
+{
+  TestDif(ToWString(f), ToWString(df), Trig);
+}
 
-void TestDif(const char *Str, long double x, long double y, TTrigonometry Trigonometry = Radian)
+void TestDif(const std::wstring &Str, long double x, long double y, TTrigonometry Trig = Radian)
 {
   try
   {
-    TFunc Func(Str, "x", Trigonometry);
+    TFunc Func(Str, L"x", Trig);
     TFunc Dif = Func.MakeDif();
     long double f = Dif(x);
 
     if(!IsEqual(f, y))
     {
-      cerr << "f(x)=" << Str << std::endl;
-      cerr << "f'(x)=" << Dif.MakeText() << std::endl;
-      cerr << "f'(" << x << ")=" << f << std::endl;
-      cerr << "Expected f'(" << x << ")=" << y << std::endl << std::endl;
-      cin.ignore();
+      wcerr << "f(x)=" << Str << std::endl;
+      wcerr << "f'(x)=" << Dif.MakeText() << std::endl;
+      wcerr << "f'(" << x << ")=" << f << std::endl;
+      wcerr << "Expected f'(" << x << ")=" << y << std::endl << std::endl;
+      wcin.ignore();
     }
   }
   catch(EFuncError &E)
   {
-    cerr << "f(x)=" << Str << std::endl;
-    cerr << "Expected f'(" << x << ")=" << y << std::endl;
-    cerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
-    cin.ignore();
+    wcerr << "f(x)=" << Str << std::endl;
+    wcerr << "Expected f'(" << x << ")=" << y << std::endl;
+    wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
+    wcin.ignore();
   }
 }
 
-void TestSimplify(const char *Str, const char *Str2)
+void TestDif(const std::string &Str, long double x, long double y, TTrigonometry Trig = Radian)
+{
+  TestDif(ToWString(Str), x, y, Trig);
+}
+
+void TestSimplify(const std::wstring &Str, const std::wstring &Str2)
 {
   TFunc Func(Str);
   Func.Simplify();
   if(Func != TFunc(Str2))
   {
-    cerr << "f(x)=" << Str << std::endl;
-    cerr << "Simplified to: f(x)=" << Func.MakeText() << std::endl;;
-    cerr << "Expected: f(x)=" << Str2 << std::endl << std::endl;
-    cin.ignore();
+    wcerr << "f(x)=" << Str << std::endl;
+    wcerr << "Simplified to: f(x)=" << Func.MakeText() << std::endl;;
+    wcerr << "Expected: f(x)=" << Str2 << std::endl << std::endl;
+    wcin.ignore();
   }
+}
+
+void TestSimplify(const std::string &Str, const std::string &Str2)
+{
+  TestSimplify(ToWString(Str), ToWString(Str2));
 }
 
 /** Called when BOOST_ASSERT fails.
@@ -304,8 +332,8 @@ void Test()
   Test("pi", 0, PI);
   Test("e", 0, EULER);
   TestError("E", 0, ecUnknownVar);
-  TestEval<TComplex>("i*i", 0, -1);
-  TestErrorEval<long double>("i*i", 0, ecComplexError);
+  TestEval<TComplex>(L"i*i", 0, -1);
+  TestErrorEval<long double>(L"i*i", 0, ecComplexError);
   Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4
   Test("1E4000", 1, StrToDouble("1E4000")); //2E400 doesn't work directly with BCC 5.6.4
   TestError("1E5000", 1, ecParseError); //Number too large
@@ -315,9 +343,9 @@ void Test()
   //Test constants
   Test("e", 0, EULER);
   Test("pi", 0, PI);
-  TestErrorEval<long double>("i", 0, ecComplexError);
-  TestEval<TComplex>("i", 0, TComplex(0, 1));
-  TestErrorEval("undef", 0, ecNotDefError);
+  TestErrorEval<long double>(L"i", 0, ecComplexError);
+  TestEval<TComplex>(L"i", 0, TComplex(0, 1));
+  TestErrorEval(L"undef", 0, ecNotDefError);
 
   //Test functions with arguments
   TestError("round x", 1.2345, ecArgCountError);
@@ -354,24 +382,24 @@ void Test()
   Test("0^x", 456.789, 0);   //Important test
   Test("log(x)^2", 100, 4);
   TestError("x/(x^2-4)", -2, ecDivByZero);
-  TestErrorEval<long double>("(-2)^x", 2.2, ecPowCalcError);
-  TestEval<TComplex>("(-2)^x", 2.2, TComplex(3.717265962,2.70075181));
-  TestErrorEval<long double>("(-2)^x", 2.3, ecPowCalcError);
+  TestErrorEval<long double>(L"(-2)^x", 2.2, ecPowCalcError);
+  TestEval<TComplex>(L"(-2)^x", 2.2, TComplex(3.717265962,2.70075181));
+  TestErrorEval<long double>(L"(-2)^x", 2.3, ecPowCalcError);
   TestError("x^(-1)", 0, ecPowCalcError);
-  TestErrorEval<TComplex>("0^x", TComplex(3,1), ecPowCalcError);
-  TestEval<TComplex>("0^x", TComplex(3,0), 0);
+  TestErrorEval<TComplex>(L"0^x", TComplex(3,1), ecPowCalcError);
+  TestEval<TComplex>(L"0^x", TComplex(3,0), 0);
   Test("e^(2x)", 2, M_E*M_E*M_E*M_E);
   Test("e^2x", 2, M_E*M_E*M_E*M_E); //Same as the above
   Test("x^2^3", 10, 1E8);
   Test("(x^2)^3", 10, 1E6);
 
   //Test special power function handling
-  TestEval<long double>("x^(1/3)", -8, -2);
-  TestEval<TComplex>("x^(1/3)", -8, TComplex(1,1.732050807568877));
-  TestEval<long double>("x^(2/6)", -8, -2);
-  TestEval<TComplex>("x^(2/6)", -8, TComplex(1,1.732050807568877));
-  TestEval<long double>("x^(2/3)", -8, 4);
-  TestEval<TComplex>("x^(2/3)", -8, TComplex(-2, 3.464101615137755));
+  TestEval<long double>(L"x^(1/3)", -8, -2);
+  TestEval<TComplex>(L"x^(1/3)", -8, TComplex(1,1.732050807568877));
+  TestEval<long double>(L"x^(2/6)", -8, -2);
+  TestEval<TComplex>(L"x^(2/6)", -8, TComplex(1,1.732050807568877));
+  TestEval<long double>(L"x^(2/3)", -8, 4);
+  TestEval<TComplex>(L"x^(2/3)", -8, TComplex(-2, 3.464101615137755));
   TestError("x^(2/0)", -8, ecDivByZero);
   Test("x^(2/3)", 0, 0);
   Test("x^(4/2)", -2, 4);
@@ -417,20 +445,20 @@ void Test()
   Test("sqr(x)", 5, 25);
   Test("sqrt(x)", 100, 10);
   Test("root(3,x)", 125, 5);
-  TestEval<long double>("root(3,x)", -27, -3);
-  TestEval<TComplex>("root(3,x)", -27, TComplex(1.5, 2.598076211));
-  TestErrorEval<long double>("root(3.5, x)", -27, ecPowCalcError);
+  TestEval<long double>(L"root(3,x)", -27, -3);
+  TestEval<TComplex>(L"root(3,x)", -27, TComplex(1.5, 2.598076211));
+  TestErrorEval<long double>(L"root(3.5, x)", -27, ecPowCalcError);
   Test("root(4,x)", 625, 5);
-  TestErrorEval<long double>("root(4,x)", -625, ecPowCalcError);
-  TestEval<TComplex>("root(4,x)", -4, TComplex(1, 1));
+  TestErrorEval<long double>(L"root(4,x)", -625, ecPowCalcError);
+  TestEval<TComplex>(L"root(4,x)", -4, TComplex(1, 1));
 
   Test("fact(x)", 5, 120);
 
   Test("sign(x)", 7.98, 1);
   Test("sign(x)", -7.98, -1);
   Test("sign(x)", 0, 0);
-  TestEval<TComplex>("sign(x)", TComplex(5, 5), TComplex(M_SQRT_2, M_SQRT_2));
-  TestEval<TComplex>("sign(x)", TComplex(4, -3), TComplex(4.0/5, -3.0/5));
+  TestEval<TComplex>(L"sign(x)", TComplex(5, 5), TComplex(M_SQRT_2, M_SQRT_2));
+  TestEval<TComplex>(L"sign(x)", TComplex(4, -3), TComplex(4.0/5, -3.0/5));
 
   Test("u(x)", 7.98, 1);
   Test("u(x)", -7.98, 0);
@@ -445,12 +473,12 @@ void Test()
   Test("atanh(x)", 0.5, 0.54930614);
 
   Test("abs(x)", -4.67, 4.67);
-  TestEval<TComplex>("abs(x)", TComplex(3, 4), 5);
-  TestEval<TComplex>("arg(x)", TComplex(3, 4), 0.927295218);
-  TestEval<TComplex>("arg(x)", TComplex(3, 4), 53.13010235, Degree);
-  TestEval<TComplex>("conj(x)", TComplex(3, 4), TComplex(3, -4));
-  TestEval<TComplex>("re(x)", TComplex(3, 4), 3);
-  TestEval<TComplex>("im(x)", TComplex(3, 4), 4);
+  TestEval<TComplex>(L"abs(x)", TComplex(3, 4), 5);
+  TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 0.927295218);
+  TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 53.13010235, Degree);
+  TestEval<TComplex>(L"conj(x)", TComplex(3, 4), TComplex(3, -4));
+  TestEval<TComplex>(L"re(x)", TComplex(3, 4), 3);
+  TestEval<TComplex>(L"im(x)", TComplex(3, 4), 4);
   Test("re(x)", 3, 3);
   Test("im(x)", 3, 0);
 
@@ -551,8 +579,8 @@ void Test()
   Test("zeta(x)", -5, -1.0/252);
 
   //Test Omega function
-  TestErrorEval<long double>("W(x)", -M_PI/2, ecComplexError);
-  TestEval<TComplex>("W(x)", -M_PI/2, TComplex(0, M_PI/2));
+  TestErrorEval<long double>(L"W(x)", -M_PI/2, ecComplexError);
+  TestEval<TComplex>(L"W(x)", -M_PI/2, TComplex(0, M_PI/2));
   Test("W(-1/e)", 0, -1);
   Test("W(x)", 0, 0);
   Test("W(x)", -M_LN2/2, -M_LN2);
@@ -596,10 +624,10 @@ void Test()
 //  TestSimplify("log(10)", "1");
 }
 
-std::stringstream DebugStreamBuf;
+std::wstringstream DebugStreamBuf;
 int main()
 {
-  std::clog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
+  std::wclog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
 /*
   TFunc Func("ln(e)");
   Func.Simplify();

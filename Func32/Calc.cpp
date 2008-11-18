@@ -667,7 +667,10 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       return Temp - CalcF(Iter, DynData);
 
     case CodeMul:
-      return Temp * CalcF(Iter, DynData);
+    {
+      T Temp2 = CalcF(Iter, DynData);
+      return Temp * Temp2;
+    }
 
     case CodeDiv:
     {
@@ -1079,7 +1082,7 @@ long double TFuncData::Integrate(long double Min, long double Max, unsigned n, T
 int _RTLENTRY _matherrl(_exceptionl *a)
 {
   using namespace std;
-  DEBUG_LOG(std::clog << "Math error: " << a->name << "(" << a->arg1 << ", " << a->arg2 << ")" << std::endl);
+  DEBUG_LOG(std::wclog << "Math error: " << a->name << "(" << a->arg1 << ", " << a->arg2 << ")" << std::endl);
   a->retval = 0;//NAN gives problems with log(-0)
 //  a->retval = std::numeric_limits<long double>::quiet_NaN();
   errno = a->type;

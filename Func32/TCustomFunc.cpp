@@ -24,7 +24,7 @@ TCustomFunc::TCustomFunc() : FuncData(new TFuncData)
  *  \param Trig: Indicates weither trigonometric functions uses radians or degrees. Defaults to Radian.
  *  \throw EParseError if parsing fails
  */
-TCustomFunc::TCustomFunc(const std::string &Text, const std::vector<std::string> &AArgs, TTrigonometry Trig)
+TCustomFunc::TCustomFunc(const std::wstring &Text, const std::vector<std::wstring> &AArgs, TTrigonometry Trig)
   : FuncData(new TFuncData(Text, AArgs)), Args(AArgs), Trigonometry(Trig)
 {
 }
@@ -36,7 +36,7 @@ TCustomFunc::TCustomFunc(const std::string &Text, const std::vector<std::string>
  *  \param Trig: Indicates weither trigonometric functions uses radians or degrees.
  *  \throw EParseError if parsing fails
  */
-TCustomFunc::TCustomFunc(const std::string &Text, const TArgType &AArgs, const TSymbolList &SymbolList, TTrigonometry Trig)
+TCustomFunc::TCustomFunc(const std::wstring &Text, const TArgType &AArgs, const TSymbolList &SymbolList, TTrigonometry Trig)
   : FuncData(new TFuncData(Text, AArgs, SymbolList)), Args(AArgs), Trigonometry(Trig)
 {
 }
@@ -87,9 +87,9 @@ TCustomFunc::TCustomFunc(TExtFunc ExtFunc, TExtFuncComplex ExtFuncComplex, unsig
  *  \param AArgs: A vector for strings with the argument names, for example {"a", "b"}
  *  \throw EParseError if parsing fails
  */
-void TCustomFunc::SetFunc(const std::string &Text, const std::vector<std::string> &AArgs)
+void TCustomFunc::SetFunc(const std::wstring &Text, const std::vector<std::wstring> &AArgs)
 {
-  std::vector<std::string> Temp(AArgs); // To make the function strong exception safe
+  std::vector<std::wstring> Temp(AArgs); // To make the function strong exception safe
   FuncData.reset(new TFuncData(Text, AArgs));
   Args.swap(Temp);
 }
@@ -100,9 +100,9 @@ void TCustomFunc::SetFunc(const std::string &Text, const std::vector<std::string
  *  \param SymbolList: A Symbol list with custom functions, for example the "sinc" function.
  *  \throw EParseError if parsing fails
  */
-void TCustomFunc::SetFunc(const std::string &Text, const TArgType &AArgs, const TSymbolList &SymbolList)
+void TCustomFunc::SetFunc(const std::wstring &Text, const TArgType &AArgs, const TSymbolList &SymbolList)
 {
-  std::vector<std::string> Temp(AArgs); // To make the function strong exception safe
+  std::vector<std::wstring> Temp(AArgs); // To make the function strong exception safe
   FuncData.reset(new TFuncData(Text, AArgs, SymbolList));
   Args.swap(Temp);
 }
@@ -206,7 +206,7 @@ TFunc TCustomFunc::ConvToFunc(const std::vector<long double> &Values, unsigned V
 /** Converts the function to a text string.
  *  \return A text string, for example "10*sinc(a)+b")
  */
-std::string TCustomFunc::MakeText() const
+std::wstring TCustomFunc::MakeText() const
 {
   return FuncData->MakeText(Args);
 }

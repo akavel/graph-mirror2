@@ -156,7 +156,7 @@ struct TElem
   union
   {
     long double Number; //A value if Ident is CodeNumber
-    char Text[16];
+    wchar_t Text[8];
     TCompareMethod Compare[2];
     struct
     {
@@ -171,15 +171,15 @@ struct TElem
   TElem(TIdent AIdent, long double AVal) : Ident(AIdent), Number(AVal) {}
   TElem(TIdent AIdent, unsigned AArguments, int) : Ident(AIdent), Arguments(AArguments) {}
   TElem(long double AVal) : Ident(CodeNumber), Number(AVal) {}
-  TElem(TIdent AIdent, const char *Str, unsigned Args=0, const boost::shared_ptr<TFuncData> &AFuncData = boost::shared_ptr<TFuncData>())
+  TElem(TIdent AIdent, const wchar_t *Str, unsigned Args=0, const boost::shared_ptr<TFuncData> &AFuncData = boost::shared_ptr<TFuncData>())
     : Ident(AIdent), Arguments(Args), FuncData(AFuncData)
-  {strncpy(Text, Str, sizeof(Text)); Text[sizeof(Text)-1] = 0;}
-  TElem(TIdent AIdent, const std::string &Str, unsigned Args=0, const boost::shared_ptr<TFuncData> &AFuncData = boost::shared_ptr<TFuncData>())
+  {wcsncpy(Text, Str, sizeof(Text)); Text[sizeof(Text)-1] = 0;}
+  TElem(TIdent AIdent, const std::wstring &Str, unsigned Args=0, const boost::shared_ptr<TFuncData> &AFuncData = boost::shared_ptr<TFuncData>())
     : Ident(AIdent), Arguments(Args), FuncData(AFuncData)
-  {strncpy(Text, Str.c_str(), sizeof(Text)); Text[sizeof(Text)-1] = 0;}
+  {wcsncpy(Text, Str.c_str(), sizeof(Text)); Text[sizeof(Text)-1] = 0;}
   TElem(TCompareMethod Compare1) : Ident(CodeCompare1), Arguments(0) {Compare[0] = Compare1;}
   TElem(TCompareMethod Compare1, TCompareMethod Compare2) : Ident(CodeCompare2), Arguments(0) {Compare[0] = Compare1; Compare[1] = Compare2;}
-  bool operator ==(const TElem &E) const {return Ident==E.Ident && (Ident==CodeNumber ? Number==E.Number : (Ident==CodeCustom ? !stricmp(Text, E.Text) : Arguments==E.Arguments));}
+  bool operator ==(const TElem &E) const {return Ident==E.Ident && (Ident==CodeNumber ? Number==E.Number : (Ident==CodeCustom ? !_wcsicmp(Text, E.Text) : Arguments==E.Arguments));}
   bool operator !=(const TElem &E) const {return !(*this == E);}
 };
 //---------------------------------------------------------------------------
@@ -189,7 +189,7 @@ struct TDynData
   const T *Args;
   TTrigonometry Trigonometry;
   TErrorCode ErrorCode;
-  const char *ErrorStr;
+  const wchar_t *ErrorStr;
   unsigned Recursion;
 
   TDynData(const T *AArgs, TTrigonometry ATrigonometry)
@@ -213,26 +213,26 @@ class TFuncData
   template<typename T>
   static long double IntegrateT(TConstIterator Iter, long double Min, long double Max, unsigned n, TTrigonometry Trigonometry, TErrorCode &ErrorCode);
   void AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trigonometry, unsigned Level);
-  static std::string MakeText(TConstIterator Iter);
-  static TConstIterator CreateText(TConstIterator Iter, std::string &Str, const std::vector<std::string> &Args);
-  static TConstIterator CreateTextInPar(TConstIterator Iter, std::string &Str, const std::vector<std::string> &Args);
+  static std::wstring MakeText(TConstIterator Iter);
+  static TConstIterator CreateText(TConstIterator Iter, std::wstring &Str, const std::vector<std::wstring> &Args);
+  static TConstIterator CreateTextInPar(TConstIterator Iter, std::wstring &Str, const std::vector<std::wstring> &Args);
   bool CheckRecursive(std::vector<const TFuncData*> &FuncStack) const;
   bool CheckRecursive() const;
-  static void HandleParseError(const EParseError &E, const char* Where, unsigned Pos);
+  static void HandleParseError(const EParseError &E, const wchar_t* Where, unsigned Pos);
   static void CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const std::vector<std::vector<TElem> > &Args);
 
 public:
   TFuncData() {}
   TFuncData(const TFuncData &FuncData) : Data(FuncData.Data) {}
-  TFuncData(const std::string &Str){Parse(Str, std::vector<std::string>(1, "x"));}
-  TFuncData(const std::string &Str, const std::string &Variable) {Parse(Str, std::vector<std::string>(1, Variable));}
-  TFuncData(const std::string &Str, const std::vector<std::string> &Args, const TSymbolList &SymbolList)
+  TFuncData(const std::wstring &Str){Parse(Str, std::vector<std::wstring>(1, L"x"));}
+  TFuncData(const std::wstring &Str, const std::wstring &Variable) {Parse(Str, std::vector<std::wstring>(1, Variable));}
+  TFuncData(const std::wstring &Str, const std::vector<std::wstring> &Args, const TSymbolList &SymbolList)
   {Parse(Str, Args, &SymbolList);}
-  TFuncData(const std::string &Str, const std::string &Variable, const TSymbolList &SymbolList)
-  {Parse(Str, std::vector<std::string>(1, Variable), &SymbolList);}
-  TFuncData(const std::string &Str, const std::vector<std::string> &Args) {Parse(Str, Args);}
+  TFuncData(const std::wstring &Str, const std::wstring &Variable, const TSymbolList &SymbolList)
+  {Parse(Str, std::vector<std::wstring>(1, Variable), &SymbolList);}
+  TFuncData(const std::wstring &Str, const std::vector<std::wstring> &Args) {Parse(Str, Args);}
 
-  void Parse(const std::string &Str, const std::vector<std::string> &Args, const TSymbolList *SymbolList = NULL);
+  void Parse(const std::wstring &Str, const std::vector<std::wstring> &Args, const TSymbolList *SymbolList = NULL);
 
   template<typename T>
   T Calc(const T *Args, TTrigonometry Trigonometry, ECalcError &CalcError) const
@@ -251,7 +251,7 @@ public:
     TDynData<T> DynData(Args, Trigonometry);
     T Result = CalcF(DynData);
     if(DynData.ErrorCode)
-      throw ECalcError(DynData.ErrorCode, DynData.ErrorStr ? DynData.ErrorStr : "");
+      throw ECalcError(DynData.ErrorCode, DynData.ErrorStr ? DynData.ErrorStr : L"");
     return Result;
   }
 
@@ -259,7 +259,7 @@ public:
   void Simplify();
   void ReplaceConst();
   void Replace(const TElem &OldElem, const TElem &NewElem);
-  std::string MakeText(const std::vector<std::string> &Args) const;
+  std::wstring MakeText(const std::vector<std::wstring> &Args) const;
   bool Update(const TSymbolList &SymbolList);
 
   bool IsEmpty() const {return Data.empty();}
@@ -277,13 +277,13 @@ std::list<TElem>::iterator SimplifyData(std::list<TElem> &List, std::list<TElem>
 std::list<TElem>::const_iterator ValidateData(std::list<TElem>::const_iterator Iter);
 void ValidateData(const std::list<TElem> &Data);
 
-const char* FunctionName(TIdent Ident);
-const char* FunctionName(const TElem &Elem);
-const char* FunctionDefinition(TIdent Ident);
+const wchar_t* FunctionName(TIdent Ident);
+const wchar_t* FunctionName(const TElem &Elem);
+const wchar_t* FunctionDefinition(TIdent Ident);
 bool ArgCountValid(TIdent Ident, unsigned Args);
 const TFuncData& GetDif(TIdent Ident);
 std::vector<TElem>::const_iterator FindEnd(std::vector<TElem>::const_iterator Iter);
-std::string ToLower(const std::string &Str);
+std::wstring ToLower(const std::wstring &Str);
 
 //---------------------------------------------------------------------------
 inline bool IsConstant(const TElem &Elem)

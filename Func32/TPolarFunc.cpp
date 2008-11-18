@@ -28,7 +28,7 @@ TPolarFunc::TPolarFunc() : FuncData(new TFuncData)
  *  \param ATrigonometry: Choose to use radians or degrees for trignometric functions. Defaults to Radian.
  *  \throw EParseError: Thrown on parse errors
  */
-TPolarFunc::TPolarFunc(const std::string &Text, const std::string &Variable, TTrigonometry ATrigonometry)
+TPolarFunc::TPolarFunc(const std::wstring &Text, const std::wstring &Variable, TTrigonometry ATrigonometry)
   : TBaseFunc(ATrigonometry), FuncData(new TFuncData(Text, Variable))
 {
 }
@@ -40,7 +40,7 @@ TPolarFunc::TPolarFunc(const std::string &Text, const std::string &Variable, TTr
  *  \param ATrigonometry: Choose to use radians or degrees for trignometric functions. Defaults to Radian.
  *  \throw EParseError: Thrown on parse errors
  */
-TPolarFunc::TPolarFunc(const std::string &Text, const std::string &Variable, const TSymbolList &SymbolList, TTrigonometry ATrigonometry)
+TPolarFunc::TPolarFunc(const std::wstring &Text, const std::wstring &Variable, const TSymbolList &SymbolList, TTrigonometry ATrigonometry)
   : TBaseFunc(ATrigonometry), FuncData(new TFuncData(Text, Variable, SymbolList))
 {
 }
@@ -59,7 +59,7 @@ inline void TPolarFunc::Unique()
  *  \param Variable: The name of the variable. Defaults to "t".
  *  \throw EParseError: Thrown if parsing fails
  */
-void TPolarFunc::SetFunc(const std::string &Text, const std::string &Variable)
+void TPolarFunc::SetFunc(const std::wstring &Text, const std::wstring &Variable)
 {
   FuncData.reset(new TFuncData(Text, Variable));
 }
@@ -70,7 +70,7 @@ void TPolarFunc::SetFunc(const std::string &Text, const std::string &Variable)
  *  \param SymbolList: List of custom functions/constants.
  *  \throw EParseError: Thrown if parsing fails
  */
-void TPolarFunc::SetFunc(const std::string &Text, const std::string &Variable, const TSymbolList &SymbolList)
+void TPolarFunc::SetFunc(const std::wstring &Text, const std::wstring &Variable, const TSymbolList &SymbolList)
 {
   FuncData.reset(new TFuncData(Text, Variable, SymbolList));
 }
@@ -119,7 +119,7 @@ TPolarFunc* TPolarFunc::MakeDifPtr() const
  *  \param Var: Name of variabel to differentiate with respect to.
  *  \throw EFuncError: If the differentiation fails.
  */
-TPolarFunc* TPolarFunc::MakeDifPtr(const std::string &Var) const
+TPolarFunc* TPolarFunc::MakeDifPtr(const std::wstring &Var) const
 {
   return new TPolarFunc(FuncData->MakeDif(TElem(CodeCustom, Var), Trigonometry), Trigonometry);
 }
@@ -138,7 +138,7 @@ TPolarFunc TPolarFunc::MakeDif() const
  *  \param Var: Name of variable/constant to differentiate with respect to.
  *  \throw EFuncError: If the differentiation fails.
  */
-TPolarFunc TPolarFunc::MakeDif(const std::string &Var) const
+TPolarFunc TPolarFunc::MakeDif(const std::wstring &Var) const
 {
   return TPolarFunc(FuncData->MakeDif(TElem(CodeCustom, Var), Trigonometry), Trigonometry);
 }
@@ -161,9 +161,9 @@ bool TPolarFunc::IsEmpty() const
 /** Converts from internal format to at text string.
  *  \param Variable: Variable name to use in the text.
  */
-std::string TPolarFunc::MakeText(const std::string &Variable) const
+std::wstring TPolarFunc::MakeText(const std::wstring &Variable) const
 {
-  return FuncData->MakeText(std::vector<std::string>(1, Variable));
+  return FuncData->MakeText(std::vector<std::wstring>(1, Variable));
 }
 //---------------------------------------------------------------------------
 //! Assigns the content of Func to this object
@@ -251,14 +251,14 @@ TCoord<TComplex> TPolarFunc::Calc(TComplex t, ECalcError &E) const
  */
 TFunc TPolarFunc::ConvXToFunc() const
 {
-  return TFunc(FuncData, Trigonometry) * TFunc("cos x", "x", Trigonometry);
+  return TFunc(FuncData, Trigonometry) * TFunc(L"cos x", L"x", Trigonometry);
 }
 //---------------------------------------------------------------------------
 /** Create a TFunc object with the y-part of the function.
  */
 TFunc TPolarFunc::ConvYToFunc() const
 {
-  return TFunc(FuncData, Trigonometry) * TFunc("sin x", "x", Trigonometry);
+  return TFunc(FuncData, Trigonometry) * TFunc(L"sin x", L"x", Trigonometry);
 }
 //---------------------------------------------------------------------------
 //! Converts the polar function to a standard function.
