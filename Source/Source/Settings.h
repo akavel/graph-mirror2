@@ -107,7 +107,7 @@ struct TProperty
   TVclObject<TFont> DefaultPointLabelFont, DefaultLabelFont;
   bool ShowTipsAtStartup;
   unsigned NextTip;
-  AnsiString Language;
+  std::wstring Language;
   int FontScale; //Window scale in percent
 
   TProperty();

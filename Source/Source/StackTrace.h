@@ -13,7 +13,7 @@
 class EDllLoadError : public Exception
 {
 public:
-  EDllLoadError(const AnsiString &Str) : Exception(Str) {}
+  EDllLoadError(const String &Str) : Exception(Str) {}
 };
 
 void SetApplicationExceptionHandler(bool ALogAllExceptions);

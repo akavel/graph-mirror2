@@ -1270,10 +1270,10 @@ void TForm1::ChangeLanguage(const String &Lang)
   SysLocale.MiddleEast = Mode;
   Application->BiDiMode = Mode;
 
-  if(Lang != Property.Language)
+  if(Lang != ToUString(Property.Language))
     Translate();
 
-  Property.Language = Lang;
+  Property.Language = ToWString(Lang);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,

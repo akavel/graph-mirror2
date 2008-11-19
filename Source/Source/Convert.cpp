@@ -19,7 +19,7 @@ using phoenix::arg1;
 //---------------------------------------------------------------------------
 double MakeFloat(TCustomEdit *Edit, const String &ErrorStr, const boost::function1<bool, double> &Interval)
 {
-  AnsiString Text = Edit->Text;
+  String Text = Edit->Text;
   if(Text.IsEmpty())
   {
     SetGlobalFocus(Edit);
@@ -83,65 +83,6 @@ int MakeInt(TCustomEdit *Edit, const String &Caption)
     ShowErrorMsg(Error, Edit);
     throw EAbort("");
   }
-}
-//---------------------------------------------------------------------------
-//This function writes the complex number into the RichEdit
-void ComplexToRTF(Func32::TComplex C, TRichEdit *RichEdit)
-{
-  const TData &Data = Form1->Data;
-  //Create rtf string to everything to become bold
-  //Font f0: MS Sans Serif
-  //Font f1: Symbol
-  AnsiString Str = "{\\rtf1\\ansi\\deff0{\\fonttbl{\\f0\\fswiss\\fprq2\\fcharset0 MS Sans Serif;}{\\f1\\froman\\fprq2\\fcharset2 Symbol;}}\n\\f0\\fs18 ";
-
-  switch(Property.ComplexFormat)
-  {
-  case cfReal:
-    //Check for an imaginary part
-    if(std::abs(C.imag()) < MIN_ZERO)
-      Str += RoundToStr(C.real(), Data);
-    break;
-  case cfRectangular:
-  {
-    //Round numbers to chosen number of decimals
-    AnsiString Real = RoundToStr(C.real(), Data);
-    AnsiString Imag = RoundToStr(std::abs(C.imag()), Data);
-
-    if(Imag == "0" || std::abs(C.imag()) < MIN_ZERO)  //(-1.50)^2 = 2.25+2.4395E-19i
-      Str += Real;
-    else //If there is a imaginary part
-    {
-      if(Real != "0")
-        Str += Real + (C.imag() < 0 ? '-' : '+');
-      //Add imaginary part to string
-      if(Imag != "1")
-        Str += Imag;
-      Str += "\\b i";
-    }
-    break;
-  }
-  case cfPolar: //Polar format
-    //The complex number 0 does not have an angle
-    if(C.real() == 0 && C.imag() == 0)
-    {
-      Str += '0';
-      break;
-    }
-
-    Str += RoundToStr(abs(C), Data); //Get numeric value as a string
-    //Add angle symbol to text in Symbol font
-    Str += "\\f1\\fs20 \xD0\\f0\\fs18 ";
-    if(Data.Axes.Trigonometry == Func32::Degree)
-      //Add degree symbol, if angle is in degree
-      Str += RoundToStr(std::arg(C) * 180 / M_PI, Data) + "\\f1\\fs20 \xB0";
-    else
-      Str += RoundToStr(arg(C), Data);
-  }
-
-  Str += "\n}";
-  //Use stream to put data into RichEdit; Only thing that works under Win9x
-  std::auto_ptr<TStringStream> Stream(new TStringStream(Str));
-  RichEdit->Lines->LoadFromStream(Stream.get());
 }
 //---------------------------------------------------------------------------
 String ComplexToString(const Func32::TComplex &C)
@@ -225,7 +166,7 @@ int GetDecimals(double Number)
   return Decimals;
 }
 //---------------------------------------------------------------------------
-//Coverts a TFont objet to a AnsiString
+//Coverts a TFont objet to a String
 std::wstring FontToStr(TFont *Font)
 {
   //String with Name,Size,Color
@@ -244,7 +185,7 @@ std::wstring FontToStr(TFont *Font)
   return Str;
 }
 //---------------------------------------------------------------------------
-//Converts a AnsiString into a TFont object
+//Converts a String into a TFont object
 //Format: Name,Size,Color,Style
 void StrToFont(const std::wstring &Str, TFont *Font)
 {
@@ -288,13 +229,13 @@ void StrToFont(const std::wstring &Str, TFont *Font)
 //---------------------------------------------------------------------------
 //Coverts a string to a double
 //Takes care of INF, -INF and +INF
-double StringToDouble(const AnsiString &Str)
+double StringToDouble(const String &Str)
 {
   //Chek for INF or +INF
-  if(!Str.AnsiCompareIC("INF") || !Str.AnsiCompareIC("+INF"))
+  if(!Str.CompareIC("INF") || !Str.CompareIC("+INF"))
     return std::numeric_limits<double>::infinity();
   //Check for -INF
-  if(!Str.AnsiCompareIC("-INF"))
+  if(!Str.CompareIC("-INF"))
     return -std::numeric_limits<double>::infinity();
   //Convert number to double
   return Str.ToDouble();
@@ -365,7 +306,7 @@ double CellToDouble(TGrid *Grid, int Col, int Row)
   {
     //First try to convert as a number as optimization. If it fails parse using Calc()
     double Result;
-    AnsiString Str = Grid->Cells[Col][Row];
+    String Str = Grid->Cells[Col][Row];
     if(Str.Pos("e") == -1 && TryStrToFloat(Str, Result))
       return Result;
     return Form1->Data.Calc(ToWString(Str));
@@ -404,14 +345,14 @@ std::string RtfToPlainText(const std::string &Str)
   RichEdit->Parent = Application->MainForm;
   RichEdit->WordWrap = false;
   RichEdit->SetRichText(Str.c_str());
-  AnsiString Text = RichEdit->GetPlainText();
-  AnsiString Result;
+  String Text = RichEdit->GetPlainText();
+  String Result;
   for(int I = 1; I <= Text.Length(); I++)
     if(Text[I] == '\n')
       Result += ' ';
     else if(Text[I] != '\r' && Text[I] != '\v')
       Result += Text[I];
-  return Result.Trim().c_str();
+  return ToString(Result.Trim());
 }
 //---------------------------------------------------------------------------
 std::string ToString(int Value)

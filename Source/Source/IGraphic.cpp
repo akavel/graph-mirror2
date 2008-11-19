@@ -113,7 +113,7 @@ void GetColors(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<RGBQUAD
   }
 }
 //---------------------------------------------------------------------------
-bool SaveCompressedBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const AnsiString &FileName)
+bool SaveCompressedBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const String &FileName)
 {
   BITMAPFILEHEADER FileHeader;
   BITMAPINFOHEADER BitmapHeader;
@@ -254,7 +254,7 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
     }
     catch(Func32::EFuncError &Error)
     {
-      WideString ErrorMessage = GetErrorMsg(Error);
+      String ErrorMessage = GetErrorMsg(Error);
       RichEdit->SelStart = Pos;
       RichEdit->SelLength = Length;
       RichEdit->SelText = ErrorMessage;
@@ -270,7 +270,7 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
   }
 }
 //---------------------------------------------------------------------------
-void RenderRichText(const AnsiString &Str, TCanvas *Canvas, const TPoint &Pos, int Width, TColor BackgroundColor, const TData *Data)
+void RenderRichText(const String &Str, TCanvas *Canvas, const TPoint &Pos, int Width, TColor BackgroundColor, const TData *Data)
 {
   //We need a parent window; just use main form
   std::auto_ptr<TIRichEdit> RichEdit(new TIRichEdit(Application->MainForm));

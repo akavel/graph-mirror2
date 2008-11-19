@@ -435,8 +435,7 @@ void TDraw::DrawAxes()
     Context.ExcludeClipRect(LegendRect);
 
   int xLabelWidth;
-  AnsiString Str; //A generel used string
-
+ 
   //Calculate font height for numbers
   Context.SetFont(Axes.NumberFont);
 

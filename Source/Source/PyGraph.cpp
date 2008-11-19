@@ -27,7 +27,7 @@ namespace Python
 PyObject *PyEFuncError = NULL;
 PyObject *PyEGraphError = NULL;
 //---------------------------------------------------------------------------
-bool ExecutePythonCommand(const AnsiString &Command)
+bool ExecutePythonCommand(const String &Command)
 {
   AllocGIL();
 
@@ -73,7 +73,7 @@ bool ExecutePythonCommand(const AnsiString &Command)
 //---------------------------------------------------------------------------
 static int WriteToConsole(int Arg)
 {
-  std::pair<AnsiString, TColor> *Pair = (std::pair<AnsiString, TColor>*)Arg;
+  std::pair<String, TColor> *Pair = (std::pair<String, TColor>*)Arg;
   if(Form22)
     Form22->WriteText(Pair->first, Pair->second);
   delete Pair;  
@@ -91,7 +91,7 @@ static PyObject* PluginWriteToConsole(PyObject *Self, PyObject *Args)
 
   if(GetCurrentThreadId() != MainThreadID)
   {
-    std::pair<AnsiString,TColor> *Pair = new std::pair<AnsiString, TColor>(Str, Color);
+    std::pair<String,TColor> *Pair = new std::pair<String, TColor>(Str, Color);
     PostMessage(Form1->Handle, WM_USER+1, (DWORD)WriteToConsole, (DWORD)Pair);
   }
   else if(Form22)

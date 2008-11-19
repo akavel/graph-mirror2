@@ -40,12 +40,12 @@ class __declspec(uuid("FD536B77-5DF5-448C-90D1-2C04B3C1D1BD")) ATL_NO_VTABLE TOl
   int Width;
   int Height;
 
-  static void DebugFunctionCall(const AnsiString &Str);
+  static void DebugFunctionCall(const String &Str);
   static HRESULT DebugLogReturn(HRESULT Result);
-  static void DebugLogArg(const AnsiString &Str);
-  static void DebugLogData(const AnsiString &Str);
-  static AnsiString ClipboardFormatToStr(CLIPFORMAT Format);
-  static AnsiString DeviceToStr(const DVTARGETDEVICE *Device);
+  static void DebugLogArg(const String &Str);
+  static void DebugLogData(const String &Str);
+  static String ClipboardFormatToStr(CLIPFORMAT Format);
+  static String DeviceToStr(const DVTARGETDEVICE *Device);
   template<typename T> static void ReleaseCom(T *&Unknown);
   static bool CheckRegistration();
   static bool Register(bool AllUsers);

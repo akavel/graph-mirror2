@@ -69,7 +69,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
   struct TTempData
   {
-    AnsiString Text1, Text2, From, To, Steps;
+    String Text1, Text2, From, To, Steps;
   };
 
   TTempData TempData[3];

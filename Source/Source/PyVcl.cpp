@@ -287,8 +287,8 @@ static PyObject* VclGetProperty(PyObject *Self, PyObject *Args)
       case tkWString:
       case tkUString:
       {
-        WideString Str = GetUnicodeStrProp(Control, PropInfo);
-        return Py_BuildValue("ui", !Str.IsEmpty() ? Str.c_bstr() : L"", Kind);
+        String Str = GetUnicodeStrProp(Control, PropInfo);
+        return Py_BuildValue("ui", !Str.IsEmpty() ? Str.c_str() : L"", Kind);
       }
 
       case tkSet:
@@ -392,7 +392,7 @@ static PyObject* VclCallFunction(PyObject *Self, PyObject *Args)
 
     int pArg1 = 0, pArg2 = 0, pResult = 0;
     AnsiString Str1, Str2;
-    WideString WStr1, WStr2;
+    String WStr1, WStr2;
     if(PyString_Check(Arg1))
     {
       Str1 = PyString_AsString(Arg1);
@@ -424,7 +424,7 @@ static PyObject* VclCallFunction(PyObject *Self, PyObject *Args)
     if(ResultType == (PyObject*)&PyString_Type)
       return PyString_FromString(Str2.c_str());
     else if(ResultType == (PyObject*)&PyUnicode_Type)
-      return PyUnicode_FromWideChar(WStr2.c_bstr(), WStr2.Length());
+      return PyUnicode_FromWideChar(WStr2.c_str(), WStr2.Length());
     else if(ResultType == (PyObject*)&PyInt_Type)
       return PyInt_FromLong(pResult);
     else

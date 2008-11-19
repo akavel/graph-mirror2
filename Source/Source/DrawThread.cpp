@@ -86,17 +86,17 @@ void __fastcall TDrawThread::Execute()
     catch(Exception &E)
     {
       LogUncaughtException(this, &E);
-      Synchronize(&Form1->ShowStatusError, AnsiString("Internal error. Log file Graph.err created."));
+      Synchronize(&Form1->ShowStatusError, String("Internal error. Log file Graph.err created."));
     }
     catch(std::exception &E)
     {
       LogUncaughtCppException(E.what(), "DrawThread");
-      Synchronize(&Form1->ShowStatusError, AnsiString("Internal error. Log file Graph.err created."));
+      Synchronize(&Form1->ShowStatusError, String("Internal error. Log file Graph.err created."));
     }
     catch(...)
     {
       LogUncaughtCppException(NULL, "DrawThread");
-      Synchronize(&Form1->ShowStatusError, AnsiString("Internal error. Log file Graph.err created."));
+      Synchronize(&Form1->ShowStatusError, String("Internal error. Log file Graph.err created."));
     }
     Synchronize(&EndUpdate);
   }
@@ -394,11 +394,11 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
   }
   catch(std::exception &E)
   {
-    Synchronize(&Form1->ShowStatusError, "Internal error. Unexpected exception: " + AnsiString(E.what()));
+    Synchronize(&Form1->ShowStatusError, "Internal error. Unexpected exception: " + String(E.what()));
   }
   catch(...)
   {
-    Synchronize(&Form1->ShowStatusError, AnsiString("Internal error. Unknown exception"));
+    Synchronize(&Form1->ShowStatusError, String("Internal error. Unknown exception"));
   }
 }
 //---------------------------------------------------------------------------

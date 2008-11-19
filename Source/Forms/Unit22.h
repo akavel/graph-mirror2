@@ -27,16 +27,16 @@ private:	// User declarations
   int LastIndex;
   int PromptIndex;
   bool FAllowChange;
-  std::vector<AnsiString> TextCache;
+  std::vector<String> TextCache;
   int CacheIndex;
-  AnsiString Command;
+  String Command;
   int IndentLevel;
 
-  void WritePrompt(const AnsiString &Str = ">>> ");
+  void WritePrompt(const String &Str = ">>> ");
 
 public:		// User declarations
   __fastcall TForm22(TComponent* Owner);
-  void WriteText(const AnsiString &Str, TColor Color = clBlack);
+  void WriteText(const String &Str, TColor Color = clBlack);
 };
 //---------------------------------------------------------------------------
 extern TForm22 *Form22;

@@ -111,7 +111,7 @@ template<typename T> void TOleServerImpl::ReleaseCom(T *&Unknown)
   Unknown = NULL;
 }
 //---------------------------------------------------------------------------
-void TOleServerImpl::DebugFunctionCall(const AnsiString &Str)
+void TOleServerImpl::DebugFunctionCall(const String &Str)
 {
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
   if(out)
@@ -126,21 +126,21 @@ HRESULT TOleServerImpl::DebugLogReturn(HRESULT Result)
   return Result;
 }
 //---------------------------------------------------------------------------
-void TOleServerImpl::DebugLogArg(const AnsiString &Str)
+void TOleServerImpl::DebugLogArg(const String &Str)
 {
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
   if(out)
     out << "(" << Str.c_str() << ")" << std::flush;
 }
 //---------------------------------------------------------------------------
-void TOleServerImpl::DebugLogData(const AnsiString &Str)
+void TOleServerImpl::DebugLogData(const String &Str)
 {
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
   if(out)
     out << ", [" << Str.c_str() << "]" << std::flush;
 }
 //---------------------------------------------------------------------------
-AnsiString TOleServerImpl::ClipboardFormatToStr(CLIPFORMAT Format)
+String TOleServerImpl::ClipboardFormatToStr(CLIPFORMAT Format)
 {
   char Str[100];
   switch(Format)
@@ -165,19 +165,19 @@ AnsiString TOleServerImpl::ClipboardFormatToStr(CLIPFORMAT Format)
     case CF_DIBV5:        return "CF_DIBV5";
     default:
       GetClipboardFormatNameA(Format, Str, sizeof(Str));
-      return "\"" + AnsiString(Str) + "\"";
+      return "\"" + String(Str) + "\"";
   }
 }
 //---------------------------------------------------------------------------
-AnsiString TOleServerImpl::DeviceToStr(const DVTARGETDEVICE *Device)
+String TOleServerImpl::DeviceToStr(const DVTARGETDEVICE *Device)
 {
   if(Device == NULL)
     return "NULL";
-  AnsiString Str = "[";
+  String Str = "[";
   if(Device->tdDriverNameOffset)
-    Str += "DriverName=" + WideString((wchar_t*)((char*)Device + Device->tdDriverNameOffset));
+    Str += "DriverName=" + String((wchar_t*)((char*)Device + Device->tdDriverNameOffset));
   if(Device->tdDeviceNameOffset)
-    Str += ",DeviceName=" + WideString((wchar_t*)((char*)Device + Device->tdDeviceNameOffset));
+    Str += ",DeviceName=" + String((wchar_t*)((char*)Device + Device->tdDeviceNameOffset));
   return Str + "]";
 }
 //---------------------------------------------------------------------------
@@ -435,8 +435,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetHostNames(
     /* [unique][in] */ LPCOLESTR szContainerObj)
 {
   DEBUG_CALL();
-  LOG_ARG(AnsiString("App=") + szContainerApp + ", Obj=" + szContainerObj);
-  Application->MainForm->Caption = "Graph - " + AnsiString(szContainerApp) + " (" + szContainerObj + ")";
+  LOG_ARG(String("App=") + szContainerApp + ", Obj=" + szContainerObj);
+  Application->MainForm->Caption = "Graph - " + String(szContainerApp) + " (" + szContainerObj + ")";
   return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------
@@ -444,7 +444,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Close(
     /* [in] */ DWORD dwSaveOption)
 {
   DEBUG_CALL();
-  LOG_ARG(AnsiString("dwSaveOption=") + dwSaveOption);
+  LOG_ARG(String("dwSaveOption=") + dwSaveOption);
 
   if(OleClientSite)
   {
@@ -488,7 +488,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetMoniker(
     /* [unique][in] */ IMoniker *pmk)
 {
   DEBUG_CALL();
-  LOG_ARG(AnsiString("dwWhichMoniker=") + dwWhichMoniker);
+  LOG_ARG(String("dwWhichMoniker=") + dwWhichMoniker);
 
   return LOG_RESULT(E_NOTIMPL);
 }
@@ -528,7 +528,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::DoVerb(
     /* [unique][in] */ LPCRECT lprcPosRect)
 {
   DEBUG_CALL();
-  LOG_ARG(AnsiString("iVerb=") + iVerb);
+  LOG_ARG(String("iVerb=") + iVerb);
 
   try
   {
@@ -652,8 +652,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::GetExtent(
     return LOG_RESULT(DV_E_DVASPECT);
 
   SIZEL Size = {GetWidth(), GetHeight()};
-  LOG_DATA(AnsiString("cx=") + Size.cx);
-  LOG_DATA(AnsiString("cy=") + Size.cy);
+  LOG_DATA(String("cx=") + Size.cx);
+  LOG_DATA(String("cy=") + Size.cy);
   AtlPixelToHiMetric(&Size, pSizel);
 
   return LOG_RESULT(S_OK);
@@ -724,7 +724,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
   {
     if(pFormatetcIn->cfFormat == CF_ENHMETAFILE && (pFormatetcIn->tymed & TYMED_ENHMF))
     {
-      LOG_DATA(AnsiString("Width=") + ImageWidth + ", Height=" + ImageHeight);
+      LOG_DATA(String("Width=") + ImageWidth + ", Height=" + ImageHeight);
       std::auto_ptr<TMetafile> Metafile(new TMetafile);
       DrawMetafile(Metafile.get());
 
@@ -733,7 +733,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     }
     else if(pFormatetcIn->cfFormat == CF_METAFILEPICT && (pFormatetcIn->tymed & TYMED_MFPICT))
     {
-      LOG_DATA(AnsiString("Width=") + ImageWidth + ", Height=" + ImageHeight);
+      LOG_DATA(String("Width=") + ImageWidth + ", Height=" + ImageHeight);
       std::auto_ptr<TMetafile> Metafile(new TMetafile);
       DrawMetafile(Metafile.get());
 
@@ -757,7 +757,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     }
     else if(pFormatetcIn->cfFormat == CF_BITMAP && (pFormatetcIn->tymed & TYMED_GDI))
     {
-      LOG_DATA(AnsiString("Width=") + ImageWidth + ", Height=" + ImageHeight);
+      LOG_DATA(String("Width=") + ImageWidth + ", Height=" + ImageHeight);
       Form1->Draw.Wait();
       std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
       Bitmap->Width = ImageWidth;
@@ -768,8 +768,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     }
     else if(pFormatetcIn->cfFormat == cfObjectDescriptor && (pFormatetcIn->tymed & TYMED_HGLOBAL))
     {
-      WideString UserTypeName = GetDescription();
-      WideString SrcOfCopy = Form1->Data.GetFileName().c_str();
+      String UserTypeName = GetDescription();
+      String SrcOfCopy = Form1->Data.GetFileName().c_str();
 
       //Get memory handle; Remember memory for text and zero terminations (zero termination is 2*2 bytes)
       HGLOBAL hMem = GlobalAlloc(GMEM_SHARE | GMEM_MOVEABLE, sizeof(OBJECTDESCRIPTOR) + 2*UserTypeName.Length() + 2*SrcOfCopy.Length() + 4);
@@ -791,8 +791,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
       ObjectDescriptor->dwStatus = OLEMISC_RENDERINGISDEVICEINDEPENDENT;
       ObjectDescriptor->dwFullUserTypeName = sizeof(OBJECTDESCRIPTOR); //Index to User Type Name
       ObjectDescriptor->dwSrcOfCopy = sizeof(OBJECTDESCRIPTOR) + 2*UserTypeName.Length() + 2; //Index to Src Of Copy
-      wcscpy(reinterpret_cast<wchar_t*>(ObjectDescriptor) + ObjectDescriptor->dwFullUserTypeName/2, UserTypeName.c_bstr());
-      wcscpy(reinterpret_cast<wchar_t*>(ObjectDescriptor) + ObjectDescriptor->dwSrcOfCopy/2, SrcOfCopy.IsEmpty() ? L"" : SrcOfCopy.c_bstr());
+      wcscpy(reinterpret_cast<wchar_t*>(ObjectDescriptor) + ObjectDescriptor->dwFullUserTypeName/2, UserTypeName.c_str());
+      wcscpy(reinterpret_cast<wchar_t*>(ObjectDescriptor) + ObjectDescriptor->dwSrcOfCopy/2, SrcOfCopy.IsEmpty() ? L"" : SrcOfCopy.c_str());
 
       GlobalUnlock(hMem);
 
@@ -839,7 +839,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     return LOG_RESULT(OleSave(this, pmedium->pstg, FALSE));
   else if(pformatetc->cfFormat == cfPng && (pformatetc->tymed & TYMED_ISTREAM))
   {
-    LOG_DATA(AnsiString("Width=") + ImageWidth + ", Height=" + ImageHeight);
+    LOG_DATA(String("Width=") + ImageWidth + ", Height=" + ImageHeight);
     Form1->Draw.Wait();
     std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
     Bitmap->Width = ImageWidth;
@@ -986,8 +986,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Load(
   if(Section.KeyExists(L"Width"))
   {
     SetSize(Section.Read(L"Width", 500), Section.Read(L"Height", 500));
-    LOG_DATA(AnsiString("Width=") + GetWidth());
-    LOG_DATA(AnsiString("Height=") + GetHeight());
+    LOG_DATA(String("Width=") + GetWidth());
+    LOG_DATA(String("Height=") + GetHeight());
   }
 
   UndoList.Clear();
@@ -1004,15 +1004,15 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Save(
   /* [in] */ BOOL fSameAsLoad)
 {
   DEBUG_CALL();
-  LOG_ARG(AnsiString("fSameAsLoad=") + fSameAsLoad);
+  LOG_ARG(String("fSameAsLoad=") + fSameAsLoad);
   IStream *Stream = NULL;
   DWORD GrfMode = STGM_WRITE | STGM_SHARE_EXCLUSIVE | STGM_CREATE;
   if(FAILED(LOG_FUNCTION_CALL(pStgSave->CreateStream(L"Graph", GrfMode, 0, 0, &Stream))))
     return LOG_RESULT(E_FAIL);
 
   std::wstring Str = Form1->Data.SaveToString(fSameAsLoad);
-  LOG_DATA(AnsiString("Width=") + GetWidth());
-  LOG_DATA(AnsiString("Height=") + GetHeight());
+  LOG_DATA(String("Width=") + GetWidth());
+  LOG_DATA(String("Height=") + GetHeight());
   TConfigFile ConfigFile;
   ConfigFile.LoadFromString(Str);
   ConfigFile.Section(L"Image").Write(L"Width", GetWidth());
@@ -1056,7 +1056,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Load(
   /* [in] */ DWORD dwMode)
 {
   DEBUG_CALL();
-  LOG_ARG("FileName=" + AnsiString(pszFileName));
+  LOG_ARG("FileName=" + String(pszFileName));
   HRESULT Result = Form1->LoadFromFile(pszFileName, false, false) ? S_OK : E_FAIL;
   Form1->Redraw();
   return LOG_RESULT(Result);
@@ -1067,7 +1067,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Save(
   /* [in] */ BOOL fRemember)
 {
   DEBUG_CALL();
-  LOG_ARG(AnsiString("FileName=") + pszFileName + ", fRemember=" + fRemember);
+  LOG_ARG(String("FileName=") + pszFileName + ", fRemember=" + fRemember);
   return LOG_RESULT(Form1->Data.Save(pszFileName ? std::wstring(pszFileName) : Form1->Data.GetFileName(), fRemember));
 }
 //---------------------------------------------------------------------------
@@ -1092,10 +1092,10 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::GetCurFile(
     return LOG_RESULT(S_FALSE);
   }
 
-  WideString FileName = Form1->Data.GetFileName().c_str();
+  String FileName = Form1->Data.GetFileName().c_str();
   if((*ppszFileName = static_cast<wchar_t*>(CoTaskMemAlloc(FileName.Length() * 2 + 2))) == NULL)
     return LOG_RESULT(E_OUTOFMEMORY);
-  wcscpy(*ppszFileName, FileName.c_bstr());
+  wcscpy(*ppszFileName, FileName.c_str());
   return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------

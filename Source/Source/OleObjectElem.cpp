@@ -55,7 +55,7 @@ bool TOleObjectElem::Edit()
 std::wstring TOleObjectElem::MakeText() const
 {
   LPOLESTR Str = NULL;
-  WideString Result;
+  String Result;
   if(OleContainer->OleObjectInterface->GetUserType(USERCLASSTYPE_SHORT, &Str) == S_OK)
     Result = Str;
   return ToWString(Result);

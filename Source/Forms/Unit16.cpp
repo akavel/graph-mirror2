@@ -31,7 +31,7 @@ __fastcall TForm16::TForm16(TComponent* Owner, TData &AData)
   EnableGroupBox2(false);
 
   int I = 1;
-  WideString CmpStr;
+  String CmpStr;
   bool Found = true;
   while(Found)
   {
