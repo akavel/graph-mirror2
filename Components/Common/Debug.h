@@ -18,8 +18,8 @@ extern const TNameValue HResultList[];
 #define NAME_VALUE_END {NULL, 0}
 
 HRESULT DebugLogFunctionCall(const char *Name, const TNameValue List[], HRESULT Result);
-AnsiString ValueToStr(const TNameValue List[], unsigned Value);
-AnsiString FlagsToStr(const TNameValue List[], unsigned Value);
+String ValueToStr(const TNameValue List[], unsigned Value);
+String FlagsToStr(const TNameValue List[], unsigned Value);
 
 void InitDebug();
 
