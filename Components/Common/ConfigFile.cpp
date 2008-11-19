@@ -49,6 +49,32 @@ void TConfigFileSection::Write(const std::wstring &Key, const std::wstring &Valu
     Write(Key, Value);
 }
 //---------------------------------------------------------------------------
+const std::wstring& TConfigFileSection::Get(const std::wstring &Key) const
+{
+  static std::wstring Empty;
+  TIterator Iter = std::find_if(Section.begin(), Section.end(), TCmpString(Key));
+  if(Iter != Section.end())
+    return Iter->second;
+  return Empty;
+}
+//---------------------------------------------------------------------------
+const std::wstring& TConfigFileSection::Read(const std::wstring &Key, const std::wstring &Default) const
+{
+  const std::wstring &Result = Get(Key);
+  if(Result.empty())
+    return Default;
+  return Result;
+}
+//---------------------------------------------------------------------------
+//Return a std::wstring if instantiated with a wchar_t* as default
+std::wstring TConfigFileSection::Read(const std::wstring &Key, const wchar_t* Default) const
+{
+  const std::wstring &Result = Get(Key);
+  if(Result.empty())
+    return Default;
+  return Result;
+}
+//---------------------------------------------------------------------------
 /////////////////
 // TConfigFile //
 /////////////////
