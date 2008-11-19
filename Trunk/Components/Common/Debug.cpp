@@ -83,6 +83,7 @@ HRESULT DebugLogFunctionCall(const char *Name, const TNameValue List[], HRESULT 
 }
 //---------------------------------------------------------------------------
 extern void __stdcall OutputDebugStringA(const char* lpOutputString);
+extern void __stdcall OutputDebugStringW(const wchar_t* lpOutputString);
 class TDebugStreamBuf : public std::stringbuf
 {
 protected:
@@ -94,13 +95,26 @@ protected:
   }
 };
 //---------------------------------------------------------------------------
+class TDebugWideStreamBuf : public std::wstringbuf
+{
+protected:
+  int sync()
+  {
+    OutputDebugStringW(str().c_str());
+    str(L"");
+    return std::wstringbuf::sync();
+  }
+};
+//---------------------------------------------------------------------------
 void InitDebug()
 {
   static TDebugStreamBuf DebugStreamBuf;
+  static TDebugWideStreamBuf DebugWideStreamBuf;
   std::clog.rdbuf(&DebugStreamBuf);
+  std::wclog.rdbuf(&DebugWideStreamBuf);
 }
 //---------------------------------------------------------------------------
-AnsiString ValueToStr(const TNameValue List[], unsigned Value)
+String ValueToStr(const TNameValue List[], unsigned Value)
 {
   for(unsigned I = 0; List[I].Name != NULL; I++)
     if(Value == List[I].Value)
@@ -108,13 +122,13 @@ AnsiString ValueToStr(const TNameValue List[], unsigned Value)
   return "0x" + IntToHex(static_cast<int>(Value), 8);
 }
 //---------------------------------------------------------------------------
-AnsiString FlagsToStr(const TNameValue List[], unsigned Value)
+String FlagsToStr(const TNameValue List[], unsigned Value)
 {
-  AnsiString Str;
+  String Str;
   for(unsigned I = 0; List[I].Name != NULL; I++)
     if(Value & List[I].Value)
-      Str += List[I].Name + AnsiString('|');
-  return Str.IsEmpty() ? AnsiString(0) : Str;
+      Str += List[I].Name + String('|');
+  return Str.IsEmpty() ? String(0) : Str;
 }
 //---------------------------------------------------------------------------
 
