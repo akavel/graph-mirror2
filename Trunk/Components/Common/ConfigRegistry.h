@@ -14,7 +14,11 @@
 
 struct ERegistryError : std::exception
 {
-  const char* what() const throw() {return "Registry read error!";}
+  unsigned ErrorCode;
+  std::string ErrorStr;
+  const char* what() const throw() {return ErrorStr.c_str();}
+  ERegistryError(unsigned AErrorCode, const std::string &AErrorStr)
+    : ErrorCode(AErrorCode), ErrorStr(AErrorStr) {}
 };
 
 class TConfigRegistry
@@ -27,10 +31,12 @@ class TConfigRegistry
 
 public:
   TConfigRegistry() : Handle(NULL) {}
-  TConfigRegistry(const std::wstring &Key, HKEY RootKey = HKEY_CURRENT_USER, bool ReadOnly = true);
+  TConfigRegistry(const std::wstring &Key, HKEY RootKey = HKEY_CURRENT_USER, bool Create = false);
   ~TConfigRegistry() {CloseKey();}
+
+  HKEY CurrentKey() const {return Handle;}
   bool CreateKey(const std::wstring &Key, HKEY RootKey = HKEY_CURRENT_USER);
-  bool OpenKey(const std::wstring &Key, HKEY RootKey = HKEY_CURRENT_USER);
+  bool OpenKey(const std::wstring &Key, HKEY RootKey = HKEY_CURRENT_USER, bool ReadOnly = true);
   void CloseKey();
   bool IsOpen() const {return Handle;}
 
@@ -54,12 +60,16 @@ public:
   template<typename T>
   T ReadEnum(const std::string &Name, const T &Default) const {return Read(Name, static_cast<int>(Default));}
   bool ValueExists(const std::wstring &Name) const {return GetValueSize(Name) != 0;}
+
   static bool KeyExists(const std::wstring &Key, HKEY RootKey = HKEY_CURRENT_USER);
+  void DeleteKey(const std::wstring &Key);
+  unsigned NumSubKeys() const;
+  std::wstring SubKey(unsigned Index);
 };
 
 void RemoveRegistryKey(const std::wstring &Key, HKEY RootKey);
 std::wstring GetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, const std::wstring &Default);
 unsigned GetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, unsigned Default);
 bool RegKeyExists(const std::wstring &Key, HKEY RootKey);
-
+void CreateRegKey(const std::wstring &Key, const std::wstring &ValueName, const std::wstring &Value, HKEY RootKey);
 #endif

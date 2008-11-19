@@ -17,6 +17,19 @@
 #include <algorithm>
 #include <boost/type_traits/integral_promotion.hpp>
 
+namespace ConfigFileImpl
+{
+  template<typename T>
+  std::wistream& operator>>(std::wistream &Stream, T &Value)
+  {
+//    boost::integral_promotion<T>::type TempValue;
+    int TempValue;
+    if(Stream >> TempValue)
+      Value = static_cast<T>(TempValue);
+    return Stream;
+  }
+}
+
 class TConfigFileSection
 {
 private:
@@ -36,7 +49,7 @@ private:
 
   TConfigFileSection() {}
   TConfigFileSection(const std::wstring &AName) : Name(AName) {}
-  bool ReadString(const std::wstring &Key, std::wstring &Result) const;
+  const std::wstring& Get(const std::wstring &Key) const;
 
   void Write(const std::wstring&, const std::string&); //Not implemented; Compiler error
   void Write(const std::wstring&, const std::string&, const std::string&); //Not implemented; Compiler error
@@ -77,10 +90,15 @@ public:
   {
     try
     {
-      std::wistringstream Stream(Read(Key, std::wstring()));
-      boost::integral_promotion<T>::type Value;
-      if(Stream >> Value)
-        return Value;
+      using namespace ConfigFileImpl;
+      const std::wstring &Str = Get(Key);
+      if(!Str.empty())
+      {
+        std::wistringstream Stream(Str);
+        T Value;
+        if(Stream >> Value)
+          return Value;
+      }
     }
     //Just return default if any exceptions occur
     catch(...)
@@ -89,20 +107,8 @@ public:
     return Default;
   }
 
-//  template<>
-  std::wstring Read(const std::wstring &Key, const std::wstring &Default) const
-  {
-    TIterator Iter = std::find_if(Section.begin(), Section.end(), TCmpString(Key));
-    if(Iter != Section.end())
-      return Iter->second;
-    return Default;
-  }
-
-  //Return a std::wstring if instantiated with a wchar_t* as default
-  std::wstring Read(const std::wstring &Key, const wchar_t* Default) const
-  {
-    return Read(Key, std::wstring(Default));
-  }
+  const std::wstring& Read(const std::wstring &Key, const std::wstring &Default) const;
+  std::wstring Read(const std::wstring &Key, const wchar_t* Default) const;
 };
 
 class TConfigFile

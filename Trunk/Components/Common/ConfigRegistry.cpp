@@ -14,13 +14,23 @@
 #include <vector>
 #include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
-TConfigRegistry::TConfigRegistry(const std::wstring &Key, HKEY RootKey, bool ReadOnly)
+void CheckRegistryResult(DWORD ErrorCode)
+{
+  if(ErrorCode != ERROR_SUCCESS)
+  {
+    char Str[100];
+    FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM, NULL, ErrorCode, 0, Str, sizeof(Str), NULL);
+    throw ERegistryError(ErrorCode, Str);
+  }
+}
+//---------------------------------------------------------------------------
+TConfigRegistry::TConfigRegistry(const std::wstring &Key, HKEY RootKey, bool Create)
   : Handle(NULL)
 {
-  if(ReadOnly)
-    OpenKey(Key, RootKey);
+  if(Create)
+    CheckRegistryResult(RegCreateKeyEx(RootKey, GetKey(Key).c_str(), 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &Handle, NULL));
   else
-    CreateKey(Key, RootKey);
+    CheckRegistryResult(RegOpenKeyEx(RootKey, GetKey(Key).c_str(), 0, KEY_READ, &Handle));
 }
 //---------------------------------------------------------------------------
 std::wstring TConfigRegistry::GetKey(const std::wstring &Key)
@@ -37,10 +47,10 @@ bool TConfigRegistry::CreateKey(const std::wstring &Key, HKEY RootKey)
   return RegCreateKeyEx(RootKey, GetKey(Key).c_str(), 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &Handle, NULL) == ERROR_SUCCESS;
 }
 //---------------------------------------------------------------------------
-bool TConfigRegistry::OpenKey(const std::wstring &Key, HKEY RootKey)
+bool TConfigRegistry::OpenKey(const std::wstring &Key, HKEY RootKey, bool ReadOnly)
 {
   CloseKey();
-  return RegOpenKeyEx(RootKey, GetKey(Key).c_str(), 0, KEY_ALL_ACCESS, &Handle) == ERROR_SUCCESS;
+  return RegOpenKeyEx(RootKey, GetKey(Key).c_str(), 0, ReadOnly ? KEY_READ : KEY_ALL_ACCESS, &Handle) == ERROR_SUCCESS;
 }
 //---------------------------------------------------------------------------
 void TConfigRegistry::CloseKey()
@@ -110,12 +120,10 @@ std::wstring TConfigRegistry::Read(const std::wstring &Name, const std::wstring 
 int TConfigRegistry::Read(const std::wstring &Name) const
 {
   if(GetValueSize(Name, REG_DWORD) == 0)
-    throw ERegistryError();
+    throw ERegistryError(0, "Registry value is of wrong type.");
   int Result;
   DWORD Size = sizeof(Result);
-  LONG Error = RegQueryValueEx(Handle, Name.c_str(), 0, NULL, reinterpret_cast<BYTE*>(&Result), &Size);
-  if(Error != ERROR_SUCCESS)
-    throw ERegistryError();
+  CheckRegistryResult(RegQueryValueEx(Handle, Name.c_str(), 0, NULL, reinterpret_cast<BYTE*>(&Result), &Size));
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -134,12 +142,10 @@ int TConfigRegistry::Read(const std::wstring &Name, int Default) const
 int TConfigRegistry::Read(const std::string &Name) const
 {
   if(GetValueSize(Name, REG_DWORD) == 0)
-    throw ERegistryError();
+    throw ERegistryError(0, "Registry value is of wrong type.");
   int Result;
   DWORD Size = sizeof(Result);
-  LONG Error = RegQueryValueExA(Handle, Name.c_str(), 0, NULL, reinterpret_cast<BYTE*>(&Result), &Size);
-  if(Error != ERROR_SUCCESS)
-    throw ERegistryError();
+  CheckRegistryResult(RegQueryValueExA(Handle, Name.c_str(), 0, NULL, reinterpret_cast<BYTE*>(&Result), &Size));
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -174,19 +180,48 @@ bool TConfigRegistry::KeyExists(const std::wstring &Key, HKEY RootKey)
   return Result == ERROR_SUCCESS;
 }
 //---------------------------------------------------------------------------
+//Delete key and all sub keys
+void TConfigRegistry::DeleteKey(const std::wstring &Key)
+{
+  TConfigRegistry SubRegistry;
+  if(SubRegistry.OpenKey(Key, Handle, false))
+  {
+    unsigned SubKeys = SubRegistry.NumSubKeys();
+    if(SubKeys > 0)
+    {
+      for(int I = SubKeys-1; I >= 0; I--)  //Count down to prevent looping through deleted keys
+        SubRegistry.DeleteKey(SubRegistry.SubKey(I));
+    }
+    SubRegistry.CloseKey();
+    CheckRegistryResult(RegDeleteKey(Handle, Key.c_str()));
+  }
+}
+//---------------------------------------------------------------------------
+unsigned TConfigRegistry::NumSubKeys() const
+{
+  DWORD SubKeys;
+  CheckRegistryResult(RegQueryInfoKey(Handle, NULL, NULL, NULL, &SubKeys, NULL, NULL, NULL, NULL, NULL, NULL, NULL));
+  return SubKeys;
+}
+//---------------------------------------------------------------------------
+std::wstring TConfigRegistry::SubKey(unsigned Index)
+{
+  wchar_t Str[100];
+  DWORD Size = sizeof(Str)/sizeof(Str[0]);
+  CheckRegistryResult(RegEnumKeyEx(Handle, Index, Str, &Size, NULL, NULL, NULL, NULL));
+  return std::wstring(Str);
+}
+//---------------------------------------------------------------------------
 //Remove Key and all subkeys from the registry
 void RemoveRegistryKey(const std::wstring &Key, HKEY RootKey)
 {
   //To be implemented
-/*
+  unsigned Pos = Key.find(L'\\');
+  std::wstring ParentKey = Key.substr(0, Pos == std::wstring::npos ? 0 : Pos);
+  std::wstring KeyToDelete = Key.substr(Pos + 1, std::wstring::npos);
   TConfigRegistry Registry;
-  int Pos = Key.find(L'\\');
-  if(Pos == std::wstring::npos)
-    Pos = 0;
-  std::wstring ParentKey = Key.substr(0, Pos - 1);
-  std::wstring KeyToDelete = Key.substr(Pos, Key.size());
-  if(Registry.OpenKey(ParentKey, RootKey))
-    Registry.DeleteKey(KeyToDelete);*/
+  if(Registry.OpenKey(ParentKey, RootKey, false))
+    Registry.DeleteKey(KeyToDelete);
 }
 //---------------------------------------------------------------------------
 std::wstring GetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, const std::wstring &Default)
@@ -202,6 +237,12 @@ unsigned GetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKE
 bool RegKeyExists(const std::wstring &Key, HKEY RootKey)
 {
   return TConfigRegistry().OpenKey(Key, RootKey);
+}
+//---------------------------------------------------------------------------
+void CreateRegKey(const std::wstring &Key, const std::wstring &ValueName, const std::wstring &Value, HKEY RootKey)
+{
+  TConfigRegistry Registry(Key, RootKey, true);
+  Registry.Write(ValueName, Value);
 }
 //---------------------------------------------------------------------------
 

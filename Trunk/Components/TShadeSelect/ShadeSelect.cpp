@@ -61,7 +61,10 @@ void __fastcall TShadeSelect::DrawItem(int Index, const TRect &Rect, TOwnerDrawS
     case 5: Canvas->Brush->Handle = CreateHatchBrush(HS_CROSS, Color); break;
     case 6: Canvas->Brush->Handle = CreateHatchBrush(HS_DIAGCROSS, Color); break;
   }
+  unsigned OldColor = GetBkColor(Canvas->Handle);
+  SetBkColor(Canvas->Handle, clWhite);
   Canvas->FillRect(Rect);
+  SetBkColor(Canvas->Handle, OldColor);
 }
 //---------------------------------------------------------------------------
 void __fastcall TShadeSelect::SetParent(TWinControl* AParent)
