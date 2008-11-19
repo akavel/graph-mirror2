@@ -21,7 +21,7 @@
 const double MaxWidth = Screen->Width - 50;
 const double MaxHeight = Screen->Height - 180;
 //--------------------------------------------------------------------------
-__fastcall TForm20::TForm20(TComponent* Owner, const std::string &Constant, double AMin, double AStep)
+__fastcall TForm20::TForm20(TComponent* Owner, const std::wstring &Constant, double AMin, double AStep)
   : TForm(Owner), BackwardDirection(false), Min(AMin), Step(AStep)
 {
   TranslateProperties(this);
@@ -29,7 +29,7 @@ __fastcall TForm20::TForm20(TComponent* Owner, const std::string &Constant, doub
 
   dwICValue = dwICValue; //Avoid stupid warning
   Panel1->DoubleBuffered;
-  LabeledEdit1->EditLabel->Caption = ToUString(Constant + "=");
+  LabeledEdit1->EditLabel->Caption = ToUString(Constant + L"=");
   LabeledEdit1->Text = Min;
 
   TConfigRegistry Registry;

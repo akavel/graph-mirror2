@@ -52,7 +52,7 @@ TData::TData(const TData &OldData) : Axes(OldData.Axes), CustomFunctions(OldData
 void TData::WriteInfoToIni(TConfigFile &IniFile)
 {
   TVersionInfo VerInfo;
-  TConfigFileSection &Section = IniFile.Section(L"Data");
+  TConfigFileSection &Section = IniFile.Section(L"Graph");
   Section.Write(L"Version", VerInfo.FileVersion().Text());
   Section.Write(L"MinVersion", MINVERSION);
   Section.Write(L"OS", GetWindowsVersion());

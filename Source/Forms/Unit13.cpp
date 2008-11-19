@@ -101,7 +101,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
 
     if(PageControl1->TabIndex == 1)
     {
-      std::vector<std::string> Arguments = Func32::FindUnknowns(::ToString(Edit3->Text));
+      std::vector<std::wstring> Arguments = Func32::FindUnknowns(ToWString(Edit3->Text));
       std::vector<long double> Values(Arguments.size(), 1);
 
       if(ListBox1->ItemIndex != -1)
@@ -112,8 +112,8 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
           Values[I] = Model.Defaults[I].second;
       }
 
-      Arguments.insert(Arguments.begin(), "x");
-      Func32::TCustomFunc TempFunc(::ToString(Edit3->Text), Arguments, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
+      Arguments.insert(Arguments.begin(), L"x");
+      Func32::TCustomFunc TempFunc(ToWString(Edit3->Text), Arguments, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
       Regression(Points, TempFunc, Values);
 
       boost::shared_ptr<TStdFunc> Func(new TStdFunc(TempFunc.ConvToFunc(Values, 0)));

@@ -18,8 +18,8 @@ void CenterForm(TForm *Form);
 void AssociateExt(AnsiString Ext,AnsiString ProgramName,AnsiString Ident,AnsiString Description,AnsiString Icon, bool AllUsers);
 void RemoveAsociation(AnsiString Ext,AnsiString Ident);
 bool CheckAssocation(AnsiString Ext,AnsiString Ident);
-WideString GetErrorMsg(const Func32::EFuncError &Error);
-WideString GetErrorMsg(Func32::TErrorCode ErrorCode);
+String GetErrorMsg(const Func32::EFuncError &Error);
+String GetErrorMsg(Func32::TErrorCode ErrorCode);
 void InvertBitmap(Graphics::TBitmap *Bitmap);
 double AdjustUnit(double Number);
 void SetGlobalFocus(TWinControl *Control);
@@ -240,17 +240,22 @@ inline void TranslateProperties(TObject *Object)
 }
 
 //The operator<<() in dstring.h doesn't seem to compile
-inline std::ostream& operator<<(std::ostream &Stream, const AnsiString &Str)
+inline std::wostream& operator<<(std::wostream &Stream, const String &Str)
 {
   return Stream << Str.c_str();
 }
 
-inline std::ostream& operator<<(std::ostream &Stream, TColor Color)
+inline std::ostream& operator<<(std::ostream &Stream, const String &Str)
+{
+  return Stream << Str.c_str();
+}
+
+inline std::wostream& operator<<(std::wostream &Stream, TColor Color)
 {
   return Stream << ColorToString(Color);
 }
 
-std::istream& operator>>(std::istream &Stream, TColor &Color);
+std::wistream& operator>>(std::wistream &Stream, TColor &Color);
 
 class TMaxWidth
 {

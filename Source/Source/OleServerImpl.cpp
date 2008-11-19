@@ -203,12 +203,12 @@ bool TOleServerImpl::CheckRegistration()
 {
   try
   {
-    String ClassKey = "CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
-    String ProgID = GetProgID();
+    std::wstring ClassKey = L"CLSID\\" + ToWString(Comobj::GUIDToString(CLSID_OleServer));
+    std::wstring ProgID = GetProgID();
 
-    if(GetRegValue(ToWString(ClassKey + L"\\LocalServer32"), L"", HKEY_CLASSES_ROOT, L"")
+    if(GetRegValue(ClassKey + L"\\LocalServer32", L"", HKEY_CLASSES_ROOT, L"")
         == ToWString(Application->ExeName) + L" /automation" &&
-        GetRegValue(ToWString(ProgID + L"\\shell\\open\\command"), L"", HKEY_CLASSES_ROOT, L"")
+        GetRegValue(ProgID + L"\\shell\\open\\command", L"", HKEY_CLASSES_ROOT, L"")
         == L"\"" + ToWString(Application->ExeName) + L"\" \"%1\"")
       return true;
   }
@@ -224,7 +224,7 @@ bool TOleServerImpl::Register(bool AllUsers)
   {
     String Clsid = Comobj::GUIDToString(CLSID_OleServer);
     String ClassKey = "Software\\Classes\\CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
-    String ProgID = AnsiString("Software\\Classes\\") + GetProgID();
+    String ProgID = "Software\\Classes\\" + String(GetProgID());
     DWORD RootKey = reinterpret_cast<DWORD>(AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER);
 
     CreateRegKey(ClassKey, "", GetDescription(), RootKey);
@@ -234,17 +234,17 @@ bool TOleServerImpl::Register(bool AllUsers)
     //The /automation switch is needed to prevent an extra instance that doesn't close when inserting from file in Word; Don't know why
     //Don't use Quotes; Quotes prevents arguments from being passed under Windows 9x
     CreateRegKey(ClassKey + "\\LocalServer32", "", Application->ExeName + " /automation", RootKey);
-    CreateRegKey(ClassKey + "\\Verb\\0", "", "&" + LoadRes(RES_OLE_OPEN) + ",0,2", RootKey);
-    CreateRegKey(ClassKey + "\\DefaultIcon", "", "\"" + Application->ExeName + "\",1", RootKey);
+    CreateRegKey(ClassKey + "\\Verb\\0", "", "&" + LoadRes(RES_OLE_OPEN) + L",0,2", RootKey);
+    CreateRegKey(ClassKey + "\\DefaultIcon", "", "\"" + Application->ExeName + L"\",1", RootKey);
     CreateRegKey(ClassKey + "\\AuxUserType\\2", "", LoadRes(RES_OLE_GRAPH_SYSTEM), RootKey);
     CreateRegKey(ClassKey + "\\AuxUserType\\3", "", "Graph", RootKey);
     CreateRegKey(ClassKey + "\\MiscStatus", "", OLEMISC_RENDERINGISDEVICEINDEPENDENT, RootKey);
     CreateRegKey(ClassKey + "\\DataFormats\\DefaultFile", "", "Embed Souce", RootKey);
-    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\0", "", AnsiString("Embed Source,") + DVASPECT_CONTENT + "," + TYMED_ISTORAGE + "," + DATADIR_GET, RootKey);
-    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\1", "", AnsiString(CF_ENHMETAFILE) + "," + DVASPECT_CONTENT + "," + TYMED_ENHMF + "," + DATADIR_GET, RootKey);
-    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\2", "", AnsiString(CF_METAFILEPICT) + "," + DVASPECT_CONTENT + "," + TYMED_MFPICT + "," + DATADIR_GET, RootKey);
-    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\3", "", AnsiString(CF_BITMAP) + "," + DVASPECT_CONTENT + "," + TYMED_GDI + "," + DATADIR_GET, RootKey);
-    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\4", "", AnsiString("PNG") + "," + DVASPECT_CONTENT + "," + TYMED_ISTREAM + "," + DATADIR_GET, RootKey);
+    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\0", "", String("Embed Source,") + DVASPECT_CONTENT + "," + TYMED_ISTORAGE + "," + DATADIR_GET, RootKey);
+    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\1", "", String(CF_ENHMETAFILE) + "," + DVASPECT_CONTENT + "," + TYMED_ENHMF + "," + DATADIR_GET, RootKey);
+    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\2", "", String(CF_METAFILEPICT) + "," + DVASPECT_CONTENT + "," + TYMED_MFPICT + "," + DATADIR_GET, RootKey);
+    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\3", "", String(CF_BITMAP) + "," + DVASPECT_CONTENT + "," + TYMED_GDI + "," + DATADIR_GET, RootKey);
+    CreateRegKey(ClassKey + "\\DataFormats\\GetSet\\4", "", String("PNG") + "," + DVASPECT_CONTENT + "," + TYMED_ISTREAM + "," + DATADIR_GET, RootKey);
     CreateRegKey(ClassKey + "\\ProgID", "", GetProgID(), RootKey);
 
     CreateRegKey(ProgID, "", LoadRes(RES_OLE_GRAPH_SYSTEM), RootKey);

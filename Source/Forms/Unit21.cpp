@@ -59,8 +59,8 @@ void __fastcall TForm21::TntButton1Click(TObject *Sender)
 void __fastcall TForm21::ComboBox1Change(TObject *Sender)
 {
   TLabelPlacement NewPlacement = IndexToPlacement[ComboBox1->ItemIndex];
-  double xPos = Data.Calc(::ToString(Edit1->Text));
-  double yPos = Data.Calc(::ToString(Edit2->Text));
+  double xPos = Data.Calc(ToWString(Edit1->Text));
+  double yPos = Data.Calc(ToWString(Edit2->Text));
 
   double Width = Draw.xCoord(Label->GetRect().Right) - Draw.xCoord(Label->GetRect().Left);
   double Height = Draw.yCoord(Label->GetRect().Top) - Draw.yCoord(Label->GetRect().Bottom);

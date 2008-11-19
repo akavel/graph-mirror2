@@ -51,9 +51,9 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData, int AWidth, int AHe
         double Value = Func32::Eval(Iter->Name, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
         double Min = (Value == 0) ? 10 : Value / 10;
         double Max = (Value == 0) ? 10 : Value * 10;
-        AnimationConstant.Min = ::ToString(Min);
-        AnimationConstant.Max = ::ToString(Max);
-        AnimationConstant.Step = ::ToString(std::abs((Max - Min) / 9));
+        AnimationConstant.Min = ToWString(Min);
+        AnimationConstant.Max = ToWString(Max);
+        AnimationConstant.Step = ToWString(std::abs((Max - Min) / 9));
       }
       ComboBox1->Items->Add(Iter->Name.c_str());
     }
@@ -99,7 +99,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   Bitmap->Width = ImageWidth;
   Bitmap->Height = ImageHeight;
 
-  AnimationInfo.Constant = ::ToString(ComboBox1->Text);
+  AnimationInfo.Constant = ToWString(ComboBox1->Text);
   TDraw Draw(Bitmap->Canvas, &Data, false, "Animate thread");
   Draw.SetArea(TRect(0, 0, ImageWidth, ImageHeight));
 
@@ -127,7 +127,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   BITMAPINFO *BitmapInfo = reinterpret_cast<BITMAPINFO*>(&BitmapInfoData[0]);
   FillBitmapInfoHeader(BitmapInfo->bmiHeader, Bitmap.get(), Rect, 256, 0);
   AnsiString TempFile = GetTempFileName("Graph", "avi");
-  std::string OriginalValue = Data.CustomFunctions.GetValue(AnimationInfo.Constant).Text;
+  std::wstring OriginalValue = Data.CustomFunctions.GetValue(AnimationInfo.Constant).Text;
 
   AVIFileInit();
   TCallOnRelease Dummy2(AVIFileExit);
@@ -240,13 +240,13 @@ void __fastcall TForm19::ComboBox1Change(TObject *Sender)
   if(!AnimationInfo.Constant.empty())
   {
     TAnimationConstant &AnimationConstant = AnimationInfo.ConstantList[AnimationInfo.Constant];
-    AnimationConstant.Min = ::ToString(Edit1->Text);
-    AnimationConstant.Max = ::ToString(Edit2->Text);
-    AnimationConstant.Step = ::ToString(Edit3->Text);
+    AnimationConstant.Min = ToWString(Edit1->Text);
+    AnimationConstant.Max = ToWString(Edit2->Text);
+    AnimationConstant.Step = ToWString(Edit3->Text);
   }
 
-  AnimationInfo.Constant = ::ToString(ComboBox1->Text);
-  TAnimationConstant &AnimationConstant = AnimationInfo.ConstantList[::ToString(ComboBox1->Text)];
+  AnimationInfo.Constant = ToWString(ComboBox1->Text);
+  TAnimationConstant &AnimationConstant = AnimationInfo.ConstantList[ToWString(ComboBox1->Text)];
   Edit1->Text = ToUString(AnimationConstant.Min);
   Edit2->Text = ToUString(AnimationConstant.Max);
   Edit3->Text = ToUString(AnimationConstant.Step);

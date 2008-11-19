@@ -191,9 +191,9 @@ static Func32::TComplex CallCustomFunction(void *Custom, const Func32::TComplex 
 static PyObject* PluginCreateCustomFunction(PyObject *Self, PyObject *Args)
 {
   //The number of arguments are in func_code.co_argcount
-  const char *Name;
+  const wchar_t *Name;
   PyObject *Function;
-  if(!PyArg_ParseTuple(Args, "sO", &Name, &Function))
+  if(!PyArg_ParseTuple(Args, "uO", &Name, &Function))
     return NULL;
 
   PyObject *FuncCode = PyObject_GetAttrString(Function, "func_code");
@@ -212,8 +212,8 @@ static PyObject* PluginEval(PyObject *Self, PyObject *Args)
   try
   {
     int Degrees = Form1->Data.Axes.Trigonometry == Func32::Degree;
-    const char *Expression;
-    if(!PyArg_ParseTuple(Args, "s|i", &Expression, &Degrees))
+    const wchar_t *Expression;
+    if(!PyArg_ParseTuple(Args, "u|i", &Expression, &Degrees))
       return NULL;
 
     return PyFloat_FromDouble(Func32::Eval(Expression, Form1->Data.CustomFunctions.SymbolList, Degrees ? Func32::Degree : Func32::Radian));
@@ -230,8 +230,8 @@ static PyObject* PluginEvalComplex(PyObject *Self, PyObject *Args)
   try
   {
     int Degrees = Form1->Data.Axes.Trigonometry == Func32::Degree;
-    const char *Expression;
-    if(!PyArg_ParseTuple(Args, "s|i", &Expression, &Degrees))
+    const wchar_t *Expression;
+    if(!PyArg_ParseTuple(Args, "u|i", &Expression, &Degrees))
       return NULL;
 
     Func32::TComplex Result = Func32::EvalComplex(Expression, Form1->Data.CustomFunctions.SymbolList, Degrees ? Func32::Degree : Func32::Radian);
@@ -281,7 +281,7 @@ static PyObject* PluginGetConstantNames(PyObject *Self, PyObject *Args)
 
   int Index = 0;
   for(TCustomFunctions::TConstIterator Iter = Begin; Iter != End; ++Iter, ++Index)
-    PyList_SetItem(ConstantNames, Index, PyString_FromString(Iter->Name.c_str()));
+    PyList_SetItem(ConstantNames, Index, PyUnicode_FromWideChar(Iter->Name.c_str(), Iter->Name.size()));
   return ConstantNames;  
 }
 //---------------------------------------------------------------------------
@@ -293,11 +293,11 @@ static PyObject* PluginGetConstant(PyObject *Self, PyObject *Args)
     
   try
   {
-    const TCustomFunction &Function = Form1->Data.CustomFunctions.GetValue(Name);
+    const TCustomFunction &Function = Form1->Data.CustomFunctions.GetValue(ToWString(Name));
     PyObject *Args = PyTuple_New(Function.Arguments.size() + 1);
-    PyTuple_SetItem(Args, 0, PyString_FromString(Function.Text.c_str()));
+    PyTuple_SetItem(Args, 0, PyUnicode_FromWideChar(Function.Text.c_str(), Function.Text.size()));
     for(unsigned I = 0; I < Function.Arguments.size(); I++)
-      PyTuple_SetItem(Args, I+1, PyString_FromString(Function.Arguments[I].c_str()));
+      PyTuple_SetItem(Args, I+1, PyUnicode_FromWideChar(Function.Arguments[I].c_str(), Function.Arguments[I].size()));
     return Args;
   }
   catch(ECustomFunctionError &E)
@@ -317,7 +317,7 @@ static PyObject* PluginSetConstant(PyObject *Self, PyObject *Args)
     if(!PyArg_ParseTuple(Args, "sOs", &Name, &Arguments, &Text))
       return NULL;
     TCustomFunctions &Functions = Form1->Data.CustomFunctions;
-    std::vector<std::string> ArgList;
+    std::vector<std::wstring> ArgList;
     if(Arguments != Py_None)
     {
       if(!PyTuple_Check(Arguments))
@@ -334,10 +334,10 @@ static PyObject* PluginSetConstant(PyObject *Self, PyObject *Args)
         const char *Str = PyString_AsString(PyTuple_GetItem(Arguments, I));
         if(Str == NULL)
           return NULL;
-        ArgList.push_back(Str);
+        ArgList.push_back(ToWString(Str));
       }
     }
-    Functions.Add(Name, ArgList, Text);
+    Functions.Add(ToWString(Name), ArgList, ToWString(Text));
     Py_RETURN_NONE;
   }
   catch(Func32::EFuncError &E)
@@ -356,7 +356,7 @@ static PyObject* PluginDelConstant(PyObject *Self, PyObject *Args)
   try
   {
     TCustomFunctions &Functions = Form1->Data.CustomFunctions;
-    Functions.Delete(Name);
+    Functions.Delete(ToWString(Name));
     Py_RETURN_NONE;
   }
   catch(ECustomFunctionError &E)

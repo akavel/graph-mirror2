@@ -51,6 +51,6 @@ std::wstring ToWString(const char *Str);
 String ToUString(const std::wstring &Str);
 String ToUString(const std::string &Str);
 
-std::string ToLower(const std::string &Str);
+std::wstring ToLower(const std::wstring &Str);
 
 #endif

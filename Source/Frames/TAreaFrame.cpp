@@ -32,8 +32,8 @@ void TAreaFrame::EvalArea(const TGraphElem *GraphElem)
 
   if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(GraphElem))
   {
-    long double From = Form1->Data.Calc(::ToString(Edit1->Text));
-    long double To = Form1->Data.Calc(::ToString(Edit2->Text));
+    long double From = Form1->Data.Calc(ToWString(Edit1->Text));
+    long double To = Form1->Data.Calc(ToWString(Edit2->Text));
 
     Edit3->Text = RoundToStr(Func->CalcArea(From, To), Form1->Data);
 
@@ -79,8 +79,8 @@ void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
   if(!GraphElem->GetVisible())
     return;
 
-  double Min = Form1->Data.Calc(::ToString(Edit1->Text));
-  double Max = Form1->Data.Calc(::ToString(Edit2->Text));
+  double Min = Form1->Data.Calc(ToWString(Edit1->Text));
+  double Max = Form1->Data.Calc(ToWString(Edit2->Text));
 
   if(Max < Min)
     std::swap(Min, Max);

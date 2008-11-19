@@ -107,15 +107,15 @@ bool CheckAssocation(AnsiString Ext,AnsiString Ident)
   return Result;
 }
 //---------------------------------------------------------------------------
-WideString GetErrorMsg(const Func32::EFuncError &Error)
+String GetErrorMsg(const Func32::EFuncError &Error)
 {
-  WideString ErrorStr = LoadRes(Error.ErrorCode+100, Error.Str.c_str());
+  String ErrorStr = LoadRes(Error.ErrorCode+100, ToUString(Error.Str));
   if(ErrorStr.IsEmpty())
     ErrorStr = "Unknown error code.\nCould not find error message for this error.";
   return ErrorStr;
 }
 //---------------------------------------------------------------------------
-WideString GetErrorMsg(Func32::TErrorCode ErrorCode)
+String GetErrorMsg(Func32::TErrorCode ErrorCode)
 {
   return GetErrorMsg(Func32::EFuncError(ErrorCode));
 }
@@ -253,9 +253,9 @@ void GetLanguageList(TStrings *List)
 }
 //---------------------------------------------------------------------------
 //WARNING don't inline this function. It gives problems in release mode
-std::istream& operator>>(std::istream &Stream, TColor &Color)
+std::wistream& operator>>(std::wistream &Stream, TColor &Color)
 {
-  std::string Str;
+  std::wstring Str;
   Stream >> Str;
   Color = StringToColor(Str.c_str());
   return Stream;

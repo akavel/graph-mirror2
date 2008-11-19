@@ -15,14 +15,6 @@
 //---------------------------------------------------------------------------
 TProperty Property;
 //---------------------------------------------------------------------------
-std::wistream& operator >>(std::wistream &Stream, const Func32::TDblPoint&)
-{
-  return Stream;
-}
-std::wostream& operator <<(std::wostream &Stream, const Func32::TDblPoint&)
-{
-  return Stream;
-}
 ///////////
 // TAxes //
 ///////////
@@ -223,14 +215,14 @@ void TProperty::Write(TConfigRegistry &Registry)
 /////////////////////
 // TCustomFunction //
 /////////////////////
-std::string TCustomFunction::CheckAndTrimName(const std::string &Str, unsigned Offset)
+std::wstring TCustomFunction::CheckAndTrimName(const std::wstring &Str, unsigned Offset)
 {
-  unsigned Begin = Str.find_first_not_of(" ");
-  unsigned End = Str.find_last_not_of(" ");
-  if(Begin == std::string::npos)
+  unsigned Begin = Str.find_first_not_of(L" ");
+  unsigned End = Str.find_last_not_of(L" ");
+  if(Begin == std::wstring::npos)
     throw ECustomFunctionError(Offset ? cfeEmptyArg : cfeEmptyName, Offset);
 
-  std::string Name = Str.substr(Begin, End - Begin + 1);
+  std::wstring Name = Str.substr(Begin, End - Begin + 1);
   if(Name[0] == '$')
     throw ECustomFunctionError(Offset ? cfeInvalidArg : cfeInvalidName, Begin + Offset, Name);
 
@@ -240,11 +232,11 @@ std::string TCustomFunction::CheckAndTrimName(const std::string &Str, unsigned O
   return Name;
 }
 //---------------------------------------------------------------------------
-TCustomFunction::TCustomFunction(const std::string &Str, const std::string &AText)
+TCustomFunction::TCustomFunction(const std::wstring &Str, const std::wstring &AText)
   : Text(AText)
 {
   unsigned Begin = Str.find('(');
-  if(Begin == std::string::npos)
+  if(Begin == std::wstring::npos)
     Name = CheckAndTrimName(Str, 0);
   else
   {
@@ -259,7 +251,7 @@ TCustomFunction::TCustomFunction(const std::string &Str, const std::string &ATex
     }
 
     End = Str.find(')', Begin);
-    if(End == std::string::npos)
+    if(End == std::wstring::npos)
       throw ECustomFunctionError(cfeEndParMissing, End);
 
     if(End != Str.size() - 1)
@@ -268,15 +260,15 @@ TCustomFunction::TCustomFunction(const std::string &Str, const std::string &ATex
   }
 }
 //---------------------------------------------------------------------------
-std::string TCustomFunction::GetName() const
+std::wstring TCustomFunction::GetName() const
 {
-  std::string Str = Name;
+  std::wstring Str = Name;
   if(!Arguments.empty())
   {
     Str += '(';
     for(unsigned I = 0; I < Arguments.size() - 1; I++)
-      Str += Arguments[I] + ',';
-    Str += Arguments.back() + ')';
+      Str += Arguments[I] + L',';
+    Str += Arguments.back() + L')';
   }
   return Str;
 }
@@ -284,20 +276,20 @@ std::string TCustomFunction::GetName() const
 //////////////////////
 // TCustomFunctions //
 //////////////////////
-void TCustomFunctions::Add(const std::string &Str, const std::string &Value)
+void TCustomFunctions::Add(const std::wstring &Str, const std::wstring &Value)
 {
   TCustomFunction CustomFunction(Str, Value);
   if(SymbolList.Exists(CustomFunction.Name))
     throw ECustomFunctionError(cfeDoubleDefinedSymbol, 0, Str);
   Functions.push_back(CustomFunction);
-  SymbolList.Add(CustomFunction.Name, "0", CustomFunction.Arguments);
+  SymbolList.Add(CustomFunction.Name, L"0", CustomFunction.Arguments);
 }
 //---------------------------------------------------------------------------
-void TCustomFunctions::Add(const std::string &Name, const Func32::TArgType &Args, const std::string &Text)
+void TCustomFunctions::Add(const std::wstring &Name, const Func32::TArgType &Args, const std::wstring &Text)
 {
   TCustomFunction CustomFunction(Name, Args, Text);
   SymbolList.Add(Name, Text, CustomFunction.Arguments);
-  std::string LowerName = ToLower(Name);
+  std::wstring LowerName = ToLower(Name);
   for(TIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
     if(ToLower(Iter->Name) == LowerName)
     {
@@ -307,7 +299,7 @@ void TCustomFunctions::Add(const std::string &Name, const Func32::TArgType &Args
   Functions.push_back(CustomFunction);
 }
 //---------------------------------------------------------------------------
-void TCustomFunctions::Replace(const std::string &Name, const std::string &Value)
+void TCustomFunctions::Replace(const std::wstring &Name, const std::wstring &Value)
 {
   for(TIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
     if(Iter->Name == Name)
@@ -319,19 +311,19 @@ void TCustomFunctions::Replace(const std::string &Name, const std::string &Value
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
 }
 //---------------------------------------------------------------------------
-void TCustomFunctions::Replace(const std::string &Name, long double Value)
+void TCustomFunctions::Replace(const std::wstring &Name, long double Value)
 {
   for(TIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
     if(Iter->Name == Name)
     {
-      Iter->Text = ToString(Value);
+      Iter->Text = ToWString(Value);
       SymbolList.Add(Name, Func32::TCustomFunc(Value));
       return;
     }
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
 }
 //---------------------------------------------------------------------------
-void TCustomFunctions::Delete(const std::string &Name)
+void TCustomFunctions::Delete(const std::wstring &Name)
 {
   for(TIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
     if(Iter->Name == Name)
@@ -343,7 +335,7 @@ void TCustomFunctions::Delete(const std::string &Name)
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
 }
 //---------------------------------------------------------------------------
-const TCustomFunction& TCustomFunctions::GetValue(const std::string &Name) const
+const TCustomFunction& TCustomFunctions::GetValue(const std::wstring &Name) const
 {
   for(TConstIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
     if(Iter->Name == Name)
@@ -358,7 +350,7 @@ void TCustomFunctions::Update()
   {
     for(I = 0; I < Functions.size(); I++)
     {
-      std::string Expression = Functions[I].Text.substr(0, Functions[I].Text.find("#"));
+      std::wstring Expression = Functions[I].Text.substr(0, Functions[I].Text.find(L"#"));
       SymbolList.Add(Functions[I].Name, Func32::TCustomFunc(Expression, Functions[I].Arguments, SymbolList));
     }
     SymbolList.Update();
@@ -383,7 +375,7 @@ void TCustomFunctions::Update()
 void TCustomFunctions::WriteToIni(TConfigFileSection &Section) const
 {
   for(TConstIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
-    Section.Write(ToWString(Iter->GetName()), ToWString(Iter->Text));
+    Section.Write(Iter->GetName(), Iter->Text);
 }
 //---------------------------------------------------------------------------
 void TCustomFunctions::ReadFromIni(const TConfigFileSection &Section)
@@ -391,7 +383,7 @@ void TCustomFunctions::ReadFromIni(const TConfigFileSection &Section)
   if(!Section.Empty())
   {
     for(TConfigFileSection::TIterator Iter = Section.Begin(); Iter != Section.End(); ++Iter)
-      Add(ToString(Iter->first), ToString(Iter->second));
+      Add(Iter->first, Iter->second);
     Update();
   }
 }
@@ -447,32 +439,32 @@ void TAnimationInfo::WriteToIni(TConfigFileSection &Section) const
 {
   if(!Constant.empty())
   {
-    Section.Write(L"Constant", ToWString(Constant));
+    Section.Write(L"Constant", Constant);
     Section.Write(L"FramesPerSecond", FramesPerSecond);
     Section.Write(L"Width", Width, 0U);
     Section.Write(L"Height", Height, 0U);
   }
-  for(std::map<std::string, TAnimationConstant>::const_iterator Iter = ConstantList.begin(); Iter != ConstantList.end(); ++Iter)
-    Section.Write(ToWString('%' + Iter->first), ToWString(Iter->second.Min + ';' + Iter->second.Max + ';' + Iter->second.Step));
+  for(std::map<std::wstring, TAnimationConstant>::const_iterator Iter = ConstantList.begin(); Iter != ConstantList.end(); ++Iter)
+    Section.Write(L'%' + Iter->first, Iter->second.Min + L';' + Iter->second.Max + L';' + Iter->second.Step);
 }
 //---------------------------------------------------------------------------
 void TAnimationInfo::ReadFromIni(const TConfigFileSection &Section)
 {
   if(!Section.Empty())
   {
-    Constant = ToString(Section.Read(L"Constant", L""));
+    Constant = Section.Read(L"Constant", L"");
     FramesPerSecond = Section.Read(L"FramesPerSecond", 1);
     Width = Section.Read(L"Width", 0);
     Height = Section.Read(L"Height", 0);
     for(TConfigFileSection::TIterator Iter = Section.Begin(); Iter != Section.End(); ++Iter)
       if(Iter->first[0] == '%')
       {
-        TAnimationConstant &AnimationConstant = ConstantList[ToString(Iter->first.substr(1))];
+        TAnimationConstant &AnimationConstant = ConstantList[Iter->first.substr(1)];
         int Pos = Iter->second.find(';');
-        AnimationConstant.Min = ToString(Iter->second.substr(0, Pos));
+        AnimationConstant.Min = Iter->second.substr(0, Pos);
         int Pos2 = Iter->second.find(';', Pos+1);
-        AnimationConstant.Max = ToString(Iter->second.substr(Pos+1, Pos2 - Pos - 1));
-        AnimationConstant.Step = ToString(Iter->second.substr(Pos2+1));
+        AnimationConstant.Max = Iter->second.substr(Pos+1, Pos2 - Pos - 1);
+        AnimationConstant.Step = Iter->second.substr(Pos2+1);
       }
   }
 }

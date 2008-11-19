@@ -88,7 +88,7 @@ void LogUncaughtException(TObject *Sender, Exception *E)
   std::ofstream File(ChangeFileExt(Application->ExeName, ".err").c_str(), std::ios_base::app);
   File << "UNCAUGHT EXCEPTION\n";
   File << "Version: " << ToString(TVersionInfo().FileVersion().Text()) << std::endl;
-  File << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
+  File << "Date: " << DateTimeToStr(Now()) << std::endl;
   File << "Exception: " << E->ClassName() << std::endl;
   File << "Message: " << E->Message << std::endl;
   File << "ExceptAddr: 0x" << std::hex << std::uppercase << ExceptAddr() << std::endl;
@@ -111,7 +111,7 @@ void LogUncaughtCppException(const char *Message, const char *Thread)
   std::ofstream File(ChangeFileExt(Application->ExeName, ".err").c_str(), std::ios_base::app);
   File << "UNCAUGHT C++ EXCEPTION\n";
   File << "Version: " << ToString(TVersionInfo().FileVersion().Text()) << std::endl;
-  File << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
+  File << "Date: " << DateTimeToStr(Now()) << std::endl;
   if(Thread)
     File << "Thread: " << Thread << std::endl;
   File << "Exception name: " << __ThrowExceptionName() << std::endl;
@@ -280,7 +280,7 @@ void LogOsException(EExternal *E, unsigned IgnoreFrames)
   std::ofstream File(LogFileName.c_str(), std::ios_base::app);
   File << "OS EXCEPTION" << std::endl;
   File << "Version: " << ToString(TVersionInfo().FileVersion().Text()) << std::endl;
-  File << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
+  File << "Date: " << DateTimeToStr(Now()) << std::endl;
   File << "Exception: " << E->ClassName() << std::endl;
   File << "Message: " << E->Message << std::endl;
   File << "Exception code: " << std::hex << std::uppercase << std::setw(8) << std::setfill('0') << Record->ExceptionCode << std::endl;
@@ -338,7 +338,7 @@ void boost::assertion_failed(char const * expr, char const * function, char cons
   std::ofstream File(LogFileName.c_str(), std::ios_base::app);
   File << "ASSERTION FAILED" << std::endl;
   File << "Version: " << ToString(TVersionInfo().FileVersion().Text()) << std::endl;
-  File << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
+  File << "Date: " << DateTimeToStr(Now()) << std::endl;
   File << "Expression: " << expr << std::endl;
   File << "Function: " << function << std::endl;
   File << "File: " << file << std::endl;

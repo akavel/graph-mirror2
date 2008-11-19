@@ -25,7 +25,7 @@ void TTanFrame::EvalTan(const TTan *Tan)
 {
   Edit2->Text = "";
 
-  double x = Form1->Data.Calc(::ToString(Edit1->Text));
+  double x = Form1->Data.Calc(ToWString(Edit1->Text));
   double y = Tan->GetFunc().CalcY(x);
   Edit2->Text = RoundToStr(y, Form1->Data);
 
@@ -36,7 +36,7 @@ void TTanFrame::EvalSeries(const TPointSeries *Series)
 {
   Edit2->Text = "";
 
-  Func32::TDblPoint Coord = Series->FindCoord(Form1->Data.Calc(::ToString(Edit1->Text)));
+  Func32::TDblPoint Coord = Series->FindCoord(Form1->Data.Calc(ToWString(Edit1->Text)));
   Edit2->Text = RoundToStr(Coord.y, Form1->Data);
 
   Form1->SetCrossPos(Coord.x, Coord.y);

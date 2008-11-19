@@ -19,10 +19,6 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/mem_fn.hpp>
 //---------------------------------------------------------------------------
-std::wistream& operator >>(std::wistream &Stream, const Func32::TDblPoint&)
-{
-  return Stream;
-}
 ////////////////
 // TTextValue //
 ////////////////
@@ -231,12 +227,12 @@ long double TBaseFuncType::CalcArea(long double From, long double To) const
 // TStdFunc //
 //////////////
 TStdFunc::TStdFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
-  : Text(AText), Func(ToString(AText), "x", SymbolList, Trig)
+  : Text(AText), Func(AText, L"x", SymbolList, Trig)
 {
 }
 //---------------------------------------------------------------------------
 TStdFunc::TStdFunc(const Func32::TFunc &AFunc)
-  : Text(ToWString(AFunc.MakeText())), Func(AFunc)
+  : Text(AFunc.MakeText()), Func(AFunc)
 {
 }
 //---------------------------------------------------------------------------
@@ -255,7 +251,7 @@ void TStdFunc::ReadFromIni(const TConfigFileSection &Section)
 
   try
   {
-    Func.SetFunc(ToString(Text), "x", GetData().CustomFunctions.SymbolList);
+    Func.SetFunc(Text, L"x", GetData().CustomFunctions.SymbolList);
   }
   catch(Func32::EParseError &E)
   {
@@ -272,7 +268,7 @@ boost::shared_ptr<TBaseFuncType> TStdFunc::MakeDifFunc()
 {
   boost::shared_ptr<TStdFunc> DifFunc(new TStdFunc);
   DifFunc->Func = Func.MakeDif();
-  DifFunc->Text = ToWString(DifFunc->Func.MakeText());
+  DifFunc->Text = DifFunc->Func.MakeText();
   return DifFunc;
 }
 //---------------------------------------------------------------------------
@@ -285,12 +281,12 @@ std::pair<double,double> TStdFunc::GetCurrentRange() const
 // TParFunc //
 //////////////
 TParFunc::TParFunc(const std::wstring &AxText, const std::wstring &AyText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
-  : xText(AxText), yText(AyText), Func(ToString(AxText), ToString(AyText), "t", SymbolList, Trig)
+  : xText(AxText), yText(AyText), Func(AxText, AyText, L"t", SymbolList, Trig)
 {
 }
 //---------------------------------------------------------------------------
 TParFunc::TParFunc(const Func32::TParamFunc &AFunc)
-  : xText(ToWString(AFunc.MakeXText())), yText(ToWString(AFunc.MakeYText())), Func(AFunc)
+  : xText(AFunc.MakeXText()), yText(AFunc.MakeYText()), Func(AFunc)
 {
 }
 //---------------------------------------------------------------------------
@@ -309,7 +305,7 @@ void TParFunc::ReadFromIni(const TConfigFileSection &Section)
   {
     xText = Section.Read(L"x", L"");
     yText = Section.Read(L"y", L"");
-    Func.SetFunc(ToString(xText), ToString(yText), "t", GetData().CustomFunctions.SymbolList);
+    Func.SetFunc(xText, yText, L"t", GetData().CustomFunctions.SymbolList);
   }
   catch(Func32::EParseError &E)
   {
@@ -327,8 +323,8 @@ boost::shared_ptr<TBaseFuncType> TParFunc::MakeDifFunc()
 {
   boost::shared_ptr<TParFunc> DifFunc(new TParFunc);
   DifFunc->Func = Func.MakeDif();
-  DifFunc->xText = ToWString(DifFunc->Func.MakeXText());
-  DifFunc->yText = ToWString(DifFunc->Func.MakeYText());
+  DifFunc->xText = DifFunc->Func.MakeXText();
+  DifFunc->yText = DifFunc->Func.MakeYText();
   return DifFunc;
 }
 //---------------------------------------------------------------------------
@@ -336,7 +332,7 @@ boost::shared_ptr<TBaseFuncType> TParFunc::MakeDifFunc()
 // TPolFunc //
 //////////////
 TPolFunc::TPolFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
-  : Text(AText), Func(ToString(AText), "t", SymbolList, Trig)
+  : Text(AText), Func(AText, L"t", SymbolList, Trig)
 {
 }
 //---------------------------------------------------------------------------
@@ -353,7 +349,7 @@ void TPolFunc::ReadFromIni(const TConfigFileSection &Section)
   try
   {
     Text = Section.Read(L"r", L"");
-    Func.SetFunc(ToString(Text), "t", GetData().CustomFunctions.SymbolList);
+    Func.SetFunc(Text, L"t", GetData().CustomFunctions.SymbolList);
   }
   catch(Func32::EParseError &E)
   {
@@ -372,7 +368,7 @@ boost::shared_ptr<TBaseFuncType> TPolFunc::MakeDifFunc()
 {
   boost::shared_ptr<TPolFunc> DifFunc(new TPolFunc);
   DifFunc->Func = Func.MakeDif();
-  DifFunc->Text = ToWString(DifFunc->Func.MakeText());
+  DifFunc->Text = DifFunc->Func.MakeText();
   return DifFunc;
 }
 //---------------------------------------------------------------------------
@@ -434,9 +430,9 @@ void TTan::UpdateTan(double a1, double q1)
   a = a1;
   q = q1;
   if(_finite(a))
-    TanFunc.SetFunc("t", (AnsiString(a) + "t+" + q).c_str());
+    TanFunc.SetFunc(L"t", ToWString(a) + L"t+" + ToWString(q));
   else if(_finite(q))
-    TanFunc.SetFunc(AnsiString(q).c_str(), "t");
+    TanFunc.SetFunc(ToWString(q), L"t");
   else
     TanFunc.Clear();
   Points.clear();
@@ -925,12 +921,12 @@ TRelation::TRelation()
 TRelation::TRelation(const std::wstring &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig)
   : Text(AText), Color(AColor), BrushStyle(Style), Size(ASize)
 {
-  std::vector<std::string> Args;
-  Args.push_back("x");
-  Args.push_back("y");
+  std::vector<std::wstring> Args;
+  Args.push_back(L"x");
+  Args.push_back(L"y");
   Func.SetTrigonometry(Trig);
   Constraints.SetTrigonometry(Trig);
-  Func.SetFunc(ToString(Text), Args, SymbolList);
+  Func.SetFunc(Text, Args, SymbolList);
   if(Func.GetFunctionType() != Func32::ftInequality && Func.GetFunctionType() != Func32::ftEquation)
     throw EGraphError(geInvalidRelation);
 
@@ -969,12 +965,12 @@ void TRelation::ReadFromIni(const TConfigFileSection &Section)
   BrushStyle = Section.Read(L"Style", bsBDiagonal);
   Color = Section.Read(L"Color", clGreen);
   Size = Section.Read(L"Size", 1);
-  std::vector<std::string> Args;
-  Args.push_back("x");
-  Args.push_back("y");
-  Func.SetFunc(ToString(Text), Args, GetData().CustomFunctions.SymbolList );
+  std::vector<std::wstring> Args;
+  Args.push_back(L"x");
+  Args.push_back(L"y");
+  Func.SetFunc(Text, Args, GetData().CustomFunctions.SymbolList );
   if(!ConstraintsText.empty())
-    Constraints.SetFunc(ToString(ConstraintsText), Args, GetData().CustomFunctions.SymbolList);
+    Constraints.SetFunc(ConstraintsText, Args, GetData().CustomFunctions.SymbolList);
   RelationType = Func.GetFunctionType() == Func32::ftInequality ? rtInequality : rtEquation;
   if(Func.GetFunctionType() == Func32::ftEquation)
     Func.RemoveRelation();
@@ -989,10 +985,10 @@ std::wstring TRelation::MakeText() const
 //---------------------------------------------------------------------------
 void TRelation::SetConstraints(const std::wstring &AConstraintsText, const Func32::TSymbolList &SymbolList)
 {
-  std::vector<std::string> Args;
-  Args.push_back("x");
-  Args.push_back("y");
-  Constraints.SetFunc(ToString(AConstraintsText), Args, SymbolList);
+  std::vector<std::wstring> Args;
+  Args.push_back(L"x");
+  Args.push_back(L"y");
+  Constraints.SetFunc(AConstraintsText, Args, SymbolList);
   ConstraintsText = AConstraintsText;
 }
 //---------------------------------------------------------------------------
