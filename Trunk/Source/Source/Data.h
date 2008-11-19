@@ -85,24 +85,14 @@ public:
   void AbortUpdate() const {if(OnAbortUpdate) OnAbortUpdate();}
   void Swap(unsigned Index1, unsigned Index2) {boost::swap(ElemList[Index1], ElemList[Index2]);}
 
-  long double Calc(const std::string &Str) const
+  long double Calc(const std::wstring &Str) const
   {
     return Eval(Str, CustomFunctions.SymbolList, Axes.Trigonometry);
   }
 
-  Func32::TComplex CalcComplex(const std::string &Str) const
-  {
-    return EvalComplex(Str, CustomFunctions.SymbolList, Axes.Trigonometry);
-  }
-
-  long double Calc(const std::wstring &Str) const
-  {
-    return Calc(::ToString(Str));
-  }
-
   Func32::TComplex CalcComplex(const std::wstring &Str) const
   {
-    return CalcComplex(::ToString(Str));
+    return EvalComplex(Str, CustomFunctions.SymbolList, Axes.Trigonometry);
   }
 };
 //---------------------------------------------------------------------------

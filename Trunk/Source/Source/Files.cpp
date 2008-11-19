@@ -45,6 +45,9 @@ bool TData::LoadFromFile(const std::wstring &FileName, bool ShowErrorMessages)
     //Free mem in function lists
     Clear();
 
+    if(SavedByVersion < TVersion(L"4.4.0.414"))
+      IniFile.LoadFromAnsiFile(FileName);
+
     PreprocessGrfFile(IniFile);
     Axes.ReadFromIni(IniFile.Section(L"Axes"));
 

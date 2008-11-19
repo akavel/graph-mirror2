@@ -132,12 +132,12 @@ struct ECustomFunctionError
 {
   TCustomFunctionErrorCode ErrorCode;
   int ErrorPos;
-  std::string Text;
+  std::wstring Text;
   Func32::EParseError ParseError;
 
   ECustomFunctionError(TCustomFunctionErrorCode AErrorCode, int AErrorPos = 0)
     : ErrorCode(AErrorCode), ErrorPos(AErrorPos) {}
-  ECustomFunctionError(TCustomFunctionErrorCode AErrorCode, int AErrorPos, const std::string &AText)
+  ECustomFunctionError(TCustomFunctionErrorCode AErrorCode, int AErrorPos, const std::wstring &AText)
     : ErrorCode(AErrorCode), ErrorPos(AErrorPos), Text(AText) {}
   ECustomFunctionError(TCustomFunctionErrorCode AErrorCode, int AErrorPos, const Func32::EParseError &AParseError)
     : ErrorCode(AErrorCode), ErrorPos(AErrorPos), ParseError(AParseError) {}
@@ -145,14 +145,14 @@ struct ECustomFunctionError
 
 struct TCustomFunction
 {
-  std::string Name;
-  std::string Text;
-  std::vector<std::string> Arguments;
-  TCustomFunction(const std::string &Str, const std::string &AText);
-  TCustomFunction(const std::string &AName, const std::vector<std::string> &AArguments, const std::string &AText)
+  std::wstring Name;
+  std::wstring Text;
+  std::vector<std::wstring> Arguments;
+  TCustomFunction(const std::wstring &Str, const std::wstring &AText);
+  TCustomFunction(const std::wstring &AName, const std::vector<std::wstring> &AArguments, const std::wstring &AText)
     : Name(AName), Arguments(AArguments), Text(AText) {}
-  std::string GetName() const;
-  static std::string CheckAndTrimName(const std::string &Str, unsigned Offset);
+  std::wstring GetName() const;
+  static std::wstring CheckAndTrimName(const std::wstring &Str, unsigned Offset);
 };
 
 class TCustomFunctions
@@ -167,12 +167,12 @@ public:
   Func32::TSymbolList GlobalSymbolList;
 
   TCustomFunctions(const TData &AData) : Data(AData) {}
-  void Add(const std::string &Str, const std::string &Value);
-  void Add(const std::string &Name, const Func32::TArgType &Args, const std::string &Text);
-  void Replace(const std::string &Name, const std::string &Value);
-  void Replace(const std::string &Name, long double Value);
-  void Delete(const std::string &Name);
-  const TCustomFunction& GetValue(const std::string &Name) const;
+  void Add(const std::wstring &Str, const std::wstring &Value);
+  void Add(const std::wstring &Name, const Func32::TArgType &Args, const std::wstring &Text);
+  void Replace(const std::wstring &Name, const std::wstring &Value);
+  void Replace(const std::wstring &Name, long double Value);
+  void Delete(const std::wstring &Name);
+  const TCustomFunction& GetValue(const std::wstring &Name) const;
   void Update();
   void Clear();
   void Swap(TCustomFunctions &Other) {Functions.swap(Other.Functions); SymbolList.Swap(Other.SymbolList);}
@@ -184,15 +184,15 @@ public:
 
 struct TAnimationConstant
 {
-  std::string Min;
-  std::string Max;
-  std::string Step;
+  std::wstring Min;
+  std::wstring Max;
+  std::wstring Step;
 };
 
 struct TAnimationInfo
 {
-  std::string Constant;
-  std::map<std::string, TAnimationConstant> ConstantList;
+  std::wstring Constant;
+  std::map<std::wstring, TAnimationConstant> ConstantList;
   unsigned Width;
   unsigned Height;
   double FramesPerSecond;

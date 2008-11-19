@@ -1273,8 +1273,12 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
     ds2 = std::exp(ds2);
 
   double s2 = s2Min;
-  for(int S2 = S2Min; S2 < S2Max && !Aborted; S2 += dS2, LogScl2 ? s2 *= ds2 : s2 += ds2)
+  for(int S2 = S2Min; S2 < S2Max && !Aborted; S2 += dS2)
   {
+    if(LogScl2)
+      s2 *= ds2;  //Don't integrate in for loop. It will trigger a bug in CB2009
+    else
+      s2 += ds2;
     Args[Loop] = s2;
     double Result[3] = {NAN, NAN};
     double s1 = s1Min;

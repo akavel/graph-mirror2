@@ -29,7 +29,7 @@ double MakeFloat(TCustomEdit *Edit, const String &ErrorStr, const boost::functio
 
   try
   {
-    double Number = Form1->Data.Calc(Text.c_str());
+    double Number = Form1->Data.Calc(ToWString(Text));
 
     if(!Interval(Number))
     {
@@ -368,7 +368,7 @@ double CellToDouble(TGrid *Grid, int Col, int Row)
     AnsiString Str = Grid->Cells[Col][Row];
     if(Str.Pos("e") == -1 && TryStrToFloat(Str, Result))
       return Result;
-    return Form1->Data.Calc(Str.c_str());
+    return Form1->Data.Calc(ToWString(Str));
   }
   catch(Func32::EParseError &E)
   {
@@ -482,9 +482,9 @@ void Trim(std::wstring &Str)
     Str.replace(0, std::wstring::npos, Str, Pos1, Pos2 - Pos1 + 1);
 }
 //--------------------------------------------------------------------------
-std::string ToLower(const std::string &Str)
+std::wstring ToLower(const std::wstring &Str)
 {
-  std::string Result;
+  std::wstring Result;
   for(unsigned I = 0; I < Str.size(); I++)
     Result += std::tolower(Str[I]);
   return Result;

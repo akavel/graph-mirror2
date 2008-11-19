@@ -85,7 +85,7 @@ private:	// User declarations
   void SaveFrame(const String &FileName, int FilterIndex);
 
 public:		// User declarations
-  __fastcall TForm20(TComponent* Owner, const std::string &Constant, double AMin, double AStep);
+  __fastcall TForm20(TComponent* Owner, const std::wstring &Constant, double AMin, double AStep);
   void ShowAnimation(const String &FileName);
 };
 //---------------------------------------------------------------------------

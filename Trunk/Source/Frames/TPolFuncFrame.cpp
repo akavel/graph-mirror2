@@ -27,7 +27,7 @@ void TPolFuncFrame::Eval(const TGraphElem *Elem)
   {
     Clear();
 
-    long double t = Form1->Data.Calc(::ToString(Edit1->Text));
+    long double t = Form1->Data.Calc(ToWString(Edit1->Text));
     long double r = Func->GetFunc().CalcR(t);
     long double x = Func->GetFunc().CalcX(t);
     long double y = Func->GetFunc().CalcY(t);

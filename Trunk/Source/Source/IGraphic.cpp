@@ -208,7 +208,7 @@ void CompressBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<RG
   Data.push_back(1);                //End of bitmap
 }
 //---------------------------------------------------------------------------
-unsigned FindEndPar(const std::string &Str, unsigned Pos)
+unsigned FindEndPar(const std::wstring &Str, unsigned Pos)
 {
   unsigned Count = 0;
   for(unsigned I = Pos; I <= Str.size(); I++)
@@ -217,18 +217,18 @@ unsigned FindEndPar(const std::string &Str, unsigned Pos)
     else if(Str[I] == ')')
       if(--Count == 0)
         return I;
-  return std::string::npos;
+  return std::wstring::npos;
 }
 //---------------------------------------------------------------------------
 void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
 {
-  std::string Str = ToString(RichEdit->Text);
+  std::wstring Str = ToWString(RichEdit->Text);
   for(int I = Str.size()-1; I >=0; I--)
     if(Str[I] == '\r')
       Str.erase(I, 1);
 
-  unsigned Pos = std::string::npos;
-  while((Pos = Str.rfind("%(", Pos-1)) != std::string::npos)
+  unsigned Pos = std::wstring::npos;
+  while((Pos = Str.rfind(L"%(", Pos-1)) != std::wstring::npos)
   {
     unsigned Pos2 = FindEndPar(Str, Pos);
     if(Pos2 == std::string::npos)
@@ -237,7 +237,7 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
 
     try
     {
-      std::string Expression = Str.substr(Pos+2, Pos2-Pos-2);
+      std::wstring Expression = Str.substr(Pos+2, Pos2-Pos-2);
       bool UseReal = Property.ComplexFormat == cfReal;
       String Value = ComplexToString(UseReal ? Func32::TComplex(Data.Calc(Expression)) : Data.CalcComplex(Expression));
 

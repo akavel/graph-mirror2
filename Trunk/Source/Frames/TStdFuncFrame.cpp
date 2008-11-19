@@ -37,7 +37,7 @@ void TStdFuncFrame::Eval(const TGraphElem *Elem)
   {
     Clear();
     ErrorPrefix = "x: ";
-    Func32::TComplex x = Form1->Data.CalcComplex(::ToString(Edit1->Text));
+    Func32::TComplex x = Form1->Data.CalcComplex(ToWString(Edit1->Text));
 
     ErrorPrefix = "f(x): ";
     Func32::TComplex y;
