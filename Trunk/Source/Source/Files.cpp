@@ -227,8 +227,8 @@ bool TData::Save(const std::wstring &FileName, bool Remember)
     if(Remember)
     {
       GrfName = FileName;
-      Application->MainForm->Caption = AnsiString(NAME) + " - " + GrfName.c_str();
-      Application->Title = AnsiString(NAME) + " - " + ExtractFileName(GrfName.c_str());
+      Application->MainForm->Caption = String(NAME) + " - " + GrfName.c_str();
+      Application->Title = String(NAME) + " - " + ExtractFileName(GrfName.c_str());
       Modified = false;
     }
 

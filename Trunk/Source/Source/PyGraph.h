@@ -21,7 +21,7 @@ namespace Python
   };
 
   void InitPlugins();
-  bool ExecutePythonCommand(const AnsiString &Command);
+  bool ExecutePythonCommand(const String &Command);
   void ShowPythonConsole(bool Visible);
   void ExecutePluginEvent(TPluginEvent PluginEvent);
 }

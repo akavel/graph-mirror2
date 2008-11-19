@@ -15,9 +15,9 @@
 #include <comctrls.hpp>
 //---------------------------------------------------------------------------
 void CenterForm(TForm *Form);
-void AssociateExt(AnsiString Ext,AnsiString ProgramName,AnsiString Ident,AnsiString Description,AnsiString Icon, bool AllUsers);
-void RemoveAsociation(AnsiString Ext,AnsiString Ident);
-bool CheckAssocation(AnsiString Ext,AnsiString Ident);
+void AssociateExt(String Ext, String ProgramName, String Ident, String Description, String Icon, bool AllUsers);
+void RemoveAsociation(String Ext, String Ident);
+bool CheckAssocation(const String &Ext, const String &Ident);
 String GetErrorMsg(const Func32::EFuncError &Error);
 String GetErrorMsg(Func32::TErrorCode ErrorCode);
 void InvertBitmap(Graphics::TBitmap *Bitmap);
@@ -27,12 +27,12 @@ std::string EncodeEscapeSequence(const std::string &Str);
 std::string DecodeEscapeSequence(const std::string &Str);
 void GetLanguageList(TStrings *List);
 
-AnsiString GetTempFileName(const AnsiString &Prefix, const AnsiString &Ext);
-AnsiString GetTempPath();
+String GetTempFileName(const String &Prefix, const String &Ext);
+String GetTempPath();
 
 inline bool InsideRect(const TRect &Rect, const TPoint &P) {return P.x >= Rect.Left && P.x <= Rect.Right && P.y >= Rect.Top && P.y <= Rect.Bottom;}
 std::wstring ReduceString(const std::wstring &Str, unsigned MaxLength);
-void LoadLanguage(const AnsiString &Lang);
+void LoadLanguage(const String &Lang);
 
 
 //Allow comparasion between shared_ptr<> and pointer
@@ -216,7 +216,7 @@ public:
   template<typename F>
   TCallOnRelease(F Func)
     : Impl(new TCallOnReleaseImpl<F>(Func)) {}
-  template<typename F, typename T>
+  template<typename T, typename F>
   TCallOnRelease(F Func, const T &Data)
     : Impl(new TCallOnReleaseImpl1<F, T>(Func, Data)) {}
   ~TCallOnRelease() {delete Impl;}

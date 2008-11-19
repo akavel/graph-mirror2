@@ -233,7 +233,7 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
   ModalResult = mrOk;
 }
 //---------------------------------------------------------------------------
-void TForm3::RangeCheck(bool Condition, TWinControl *WinControl, const AnsiString &Str)
+void TForm3::RangeCheck(bool Condition, TWinControl *WinControl, const String &Str)
 {
   if(!Condition)
   {

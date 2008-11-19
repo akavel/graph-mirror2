@@ -15,7 +15,6 @@
 double MakeFloat(TCustomEdit *Edit, const String &ErrorStr=String(), double Min=-MaxDouble, double Max=MaxDouble);
 double MakeFloat(TCustomEdit *Edit, const String &ErrorStr, const boost::function1<bool, double> &Interval);
 int MakeInt(TCustomEdit *Edit, const String &Caption);
-void ComplexToRTF(const Func32::TComplex &C, TRichEdit *RichEdit);
 String ComplexToString(const Func32::TComplex &C);
 String RoundToStr(long double Number, unsigned Decimals);
 String RoundToStr(long double Number, const TData &Data);

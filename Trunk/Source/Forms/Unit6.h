@@ -123,7 +123,7 @@ private:	// User declarations
   void UpdateFont();
 
 public:		// User declarations
-  __fastcall TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, const AnsiString &HostApp, const AnsiString &HostDoc);
+  __fastcall TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, const String &HostApp, const String &HostDoc);
   AnsiString __fastcall GetText();
   void __fastcall SetText(const AnsiString &Str);
   bool IsEmpty();

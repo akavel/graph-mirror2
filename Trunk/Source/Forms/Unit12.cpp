@@ -138,7 +138,7 @@ int TForm12::EditTan(const boost::shared_ptr<TBaseFuncType> &F, int AIndex)
 int TForm12::InsertTan(const boost::shared_ptr<TBaseFuncType> &F)
 {
   Func = F;
-  Label1->Caption = F->GetVariable().c_str() + AnsiString('=');
+  Label1->Caption = F->GetVariable().c_str() + String('=');
   return ShowModal();
 }
 //---------------------------------------------------------------------------

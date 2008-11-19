@@ -39,15 +39,15 @@ struct TStackInfo
 typedef Exception* (__fastcall *TGetExceptionObject)(Windows::PExceptionRecord P);
 
 static __thread std::vector<TStackInfo> *GlobalStackInfo = NULL; //Must be a pointer because __thread does not work with classes
-static AnsiString LogFileName = ChangeFileExt(Application->ExeName, ".err");
+static String LogFileName = ChangeFileExt(Application->ExeName, ".err");
 static bool LogAllExceptions = false;
 static TGetExceptionObject OldExceptObjProc = NULL;
 //---------------------------------------------------------------------------
 //Called when delay loading a DLL failes
 FARPROC WINAPI DllLoadFailure(dliNotification dliNotify, DelayLoadInfo *pdli)
 {
-  MessageBox("Error loading " + AnsiString(pdli->szDll), "Error loading DLL", MB_ICONSTOP);
-  throw EDllLoadError("Error loading " + AnsiString(pdli->szDll));
+  MessageBox("Error loading " + String(pdli->szDll), "Error loading DLL", MB_ICONSTOP);
+  throw EDllLoadError("Error loading " + String(pdli->szDll));
 }
 //---------------------------------------------------------------------------
 /** Write stack trace from StackInfoList to Stream.
@@ -346,7 +346,7 @@ void boost::assertion_failed(char const * expr, char const * function, char cons
   WriteStackFrameToStream(File, 0);
   File << "-----------------------------------------" << std::endl << std::endl;
 
-  AnsiString Message = "Assertion failed: " + AnsiString(expr) + ", File: " + file + ", Line " + line;
+  AnsiString Message = "Assertion failed: " + String(expr) + ", File: " + file + ", Line " + line;
   Message += "\nLogfile " + ExtractFileName(LogFileName) + " created.";
   _ErrorMessage(Message.c_str());
   abort();

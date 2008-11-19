@@ -29,7 +29,7 @@ void __fastcall TForm22::FormHide(TObject *Sender)
   Form1->Splitter2->Visible = false;
 }
 //---------------------------------------------------------------------------
-void TForm22::WriteText(const AnsiString &Str, TColor Color)
+void TForm22::WriteText(const String &Str, TColor Color)
 {
   FAllowChange = true;
   int OldSelStart = IRichEdit1->SelStart;
@@ -71,7 +71,7 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
     case VK_HOME:
     {
       int Index = IRichEdit1->LineIndex(-1);
-      AnsiString Str = IRichEdit1->GetText(Index, Index + 4);
+      String Str = IRichEdit1->GetText(Index, Index + 4);
       if(Str == ">>> ")
       {
         IRichEdit1->SelStart = Index + 4;
@@ -110,7 +110,7 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
 
     case VK_RETURN:
     {
-      AnsiString Str = IRichEdit1->GetText(LastIndex, MAXINT);
+      String Str = IRichEdit1->GetText(LastIndex, MAXINT);
       Str = Str.TrimRight();
       IRichEdit1->SelStart = MAXINT;
       IRichEdit1->SelText = "\r";
@@ -134,10 +134,10 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
       if(!Str.IsEmpty())
       {
         TextCache.back() = Str;
-        TextCache.push_back(AnsiString());
+        TextCache.push_back(String());
       }
       CacheIndex = TextCache.size() - 1;
-      IRichEdit1->SelText = AnsiString::StringOfChar('\t', IndentLevel);
+      IRichEdit1->SelText = String::StringOfChar('\t', IndentLevel);
       Key = 0;
       break;
     }
@@ -155,7 +155,7 @@ void __fastcall TForm22::FormShow(TObject *Sender)
   IRichEdit1->SelStart = MAXINT;
 }
 //---------------------------------------------------------------------------
-void TForm22::WritePrompt(const AnsiString &Str)
+void TForm22::WritePrompt(const String &Str)
 {
   FAllowChange = true;
   IRichEdit1->TextFormat.SetColor(clBlack);

@@ -18,7 +18,7 @@
 #pragma link "SymbolDialog"                                                    
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
-__fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, const AnsiString &HostApp, const AnsiString &HostDoc)
+__fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, const String &HostApp, const String &HostDoc)
   : TForm(Owner), RichEditOle(IRichEdit1)
 {
   ScaleForm(this);
@@ -362,7 +362,7 @@ void __fastcall TForm6::ToolButton13Click(TObject *Sender)
 void __fastcall TForm6::SymbolDialog1InsertWideChar(TSymbolDialog *Sender,
       wchar_t Symbol, const String &FontName)
 {
-  AnsiString OldName = IRichEdit1->TextFormat.GetName();
+  String OldName = IRichEdit1->TextFormat.GetName();
   IRichEdit1->SetSelText(Symbol, FontName, ToIntDef(ComboBox1->Text, 12));
   IRichEdit1->TextFormat.SetName(OldName);
 }
@@ -370,7 +370,7 @@ void __fastcall TForm6::SymbolDialog1InsertWideChar(TSymbolDialog *Sender,
 void __fastcall TForm6::SymbolDialog1InsertAnsiChar(TSymbolDialog *Sender,
       char Symbol, const String &FontName)
 {
-  AnsiString OldName = IRichEdit1->TextFormat.GetName();
+  String OldName = IRichEdit1->TextFormat.GetName();
   IRichEdit1->SetSelText(Symbol, FontName, ToIntDef(ComboBox1->Text, 12));
   IRichEdit1->TextFormat.SetName(OldName);
 }

@@ -38,9 +38,9 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
 
   //Put the language codes into a ComboBox
   GetLanguageList(ComboBox2->Items);
-  OldLanguageIndex = ComboBox2->Items->IndexOf(Property.Language);
+  OldLanguageIndex = ComboBox2->Items->IndexOf(ToUString(Property.Language));
   ComboBox2->ItemIndex = OldLanguageIndex;
-  ComboBox1->Text = AnsiString(Property.FontScale) + "%";
+  ComboBox1->Text = String(Property.FontScale) + "%";
 
   ScaleForm(this);
   ComboBox1->SelLength = 0; //Don't know why this is necesarry

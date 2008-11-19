@@ -40,13 +40,13 @@ void CenterForm(TForm *Form)
 //Description:  A description of the file type
 //Icon:         Path and name of icon file and the number of icon in the file
 //              Ex. "C:\\WINWORD.EXE,0"
-void AssociateExt(AnsiString Ext, AnsiString ProgramName, AnsiString Ident, AnsiString Description, AnsiString Icon, bool AllUsers)
+void AssociateExt(String Ext, String ProgramName, String Ident, String Description, String Icon, bool AllUsers)
 {
   try
   {
     //Make sure there is a dot before the extention
     if(Ext[1] != '.')
-      Ext = AnsiString('.') + Ext;
+      Ext = String('.') + Ext;
     //If no program name specified then use the application name
     if(ProgramName.IsEmpty())
       ProgramName = Application->ExeName;
@@ -77,11 +77,11 @@ void AssociateExt(AnsiString Ext, AnsiString ProgramName, AnsiString Ident, Ansi
 //This function removes an association between a file type and a program
 //Ext is the file type. Ex. ".doc"
 //Ident is the identifier used when the association was made. Ex. "docfile"
-void RemoveAsociation(AnsiString Ext, AnsiString Ident)
+void RemoveAsociation(String Ext, String Ident)
 {
   //Make sure there is a dot before the extention
   if(Ext[1] != '.')
-    Ext = AnsiString('.') + Ext;
+    Ext = String('.') + Ext;
 
   if(GetRegStringValue(Ext, "") == Ident)
     DeleteRegKey(Ext);
@@ -95,16 +95,14 @@ void RemoveAsociation(AnsiString Ext, AnsiString Ident)
 //This function checks if a file type is associated with a program
 //Ext:   The file extention. Ex. ".doc"
 //Ident: The identifier used when the asocation was made. Ex. "docfile"
-bool CheckAssocation(AnsiString Ext,AnsiString Ident)
+bool CheckAssocation(const String &Ext, const String &Ident)
 {
-  bool Result=false;
-  TRegistry *Registry=new TRegistry();
+  std::auto_ptr<TRegistry> Registry(new TRegistry());
   Registry->RootKey=HKEY_CLASSES_ROOT;
-  if(Registry->OpenKey(AnsiString('\\')+Ext,false))
-    if(Registry->ReadString("")==Ident)
-      Result=true;
-  delete Registry;
-  return Result;
+  if(Registry->OpenKey(String('\\') + Ext, false))
+    if(Registry->ReadString("") == Ident)
+      return true;
+  return false;
 }
 //---------------------------------------------------------------------------
 String GetErrorMsg(const Func32::EFuncError &Error)
@@ -199,7 +197,7 @@ int _matherr(_exception *a)
     if(IgnoreAll)
       return 1;
 
-    AnsiString Error;
+    String Error;
     switch(a->type)
     {
       case DOMAIN:    Error = "DOMAIN"; break;
@@ -210,7 +208,7 @@ int _matherr(_exception *a)
       default:        Error = "Unknown"; break;
     }
 
-    AnsiString Str = LoadStr(RES_InternalError) + "\n" + AnsiString(a->name) + '(' + a->arg1 + ',' + a->arg2 + "): " + Error + " error\nContinue?";
+    String Str = LoadStr(RES_InternalError) + "\n" + String(a->name) + '(' + a->arg1 + ',' + a->arg2 + "): " + Error + " error\nContinue?";
 
     int Result = MessageDlg(Str, mtError, TMsgDlgButtons() << mbYes << mbYesToAll << mbAbort, 0);
     if(Result == mrYesToAll)
@@ -241,7 +239,7 @@ void GetLanguageList(TStrings *List)
   TempList->Add("English"); //We always have English
 
   TSearchRec SearchRec;
-  AnsiString Path = ExtractFilePath(Application->ExeName) + "locale\\";
+  String Path = ExtractFilePath(Application->ExeName) + "locale\\";
   int Result = FindFirst(Path + "*.mo", faReadOnly | faArchive, SearchRec);
   while(Result == 0)
   {
@@ -278,17 +276,17 @@ TMaxWidth::TMaxWidth(TControl *Control)
   Value = Canvas->TextWidth(GetControlText(Control));
 }
 //---------------------------------------------------------------------------
-AnsiString GetTempPath()
+String GetTempPath()
 {
-  unsigned Length = GetTempPath(0, NULL);
-  std::vector<char> Result(Length);
-  Win32Check(GetTempPathA(Length, &Result[0]));
+  unsigned Length = GetTempPathW(0, NULL);
+  std::vector<wchar_t> Result(Length);
+  Win32Check(GetTempPathW(Length, &Result[0]));
   return &Result[0];
 }
 //---------------------------------------------------------------------------
-AnsiString GetTempFileName(const AnsiString &Prefix, const AnsiString &Ext)
+String GetTempFileName(const String &Prefix, const String &Ext)
 {
-  AnsiString FileName;
+  String FileName;
   int Count = 0;
   do
   {
@@ -300,12 +298,12 @@ AnsiString GetTempFileName(const AnsiString &Prefix, const AnsiString &Ext)
   return FileName;
 }
 //---------------------------------------------------------------------------
-void LoadLanguage(const AnsiString &Lang)
+void LoadLanguage(const String &Lang)
 {
-  AnsiString Path = ExtractFilePath(Application->ExeName);
+  String Path = ExtractFilePath(Application->ExeName);
   UseLanguage(Lang); //dxGetText will not update translation unless language has been changed
   DefaultInstance->bindtextdomainToFile("default", Path + "locale\\" + Lang + ".mo");
-  AnsiString HelpFile = Path + "Help\\Graph-" + Lang + ".chm";
+  String HelpFile = Path + "Help\\Graph-" + Lang + ".chm";
   if(FileExists(HelpFile))
     Application->HelpFile = HelpFile;
   else

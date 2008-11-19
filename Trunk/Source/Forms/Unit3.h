@@ -112,7 +112,7 @@ private:	// User declarations
   TVclObject<TFont> TitleFont, NumberFont, LabelFont, LegendFont;
   TData &Data;
 
-  void RangeCheck(bool Condition, TWinControl *WinControl, const AnsiString &Str);
+  void RangeCheck(bool Condition, TWinControl *WinControl, const String &Str);
   void UpdateEnabledControls();
   void Translate();
 

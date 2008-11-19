@@ -78,8 +78,8 @@ void __fastcall TForm21::ComboBox1Change(TObject *Sender)
     case lpUserBottomRight: xPos += Width; yPos -= Height; break;
   }
 
-  Edit1->Text = AnsiString(xPos);
-  Edit2->Text = AnsiString(yPos);
+  Edit1->Text = xPos;
+  Edit2->Text = yPos;
   OldPlacement = NewPlacement;
 }
 //---------------------------------------------------------------------------

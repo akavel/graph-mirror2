@@ -147,8 +147,8 @@ void AddAccelerator(TControl *Control, std::set<wchar_t> &Accelerators)
   if(dynamic_cast<TCustomEdit*>(Control) != NULL || dynamic_cast<TCustomComboBox*>(Control) != NULL)
     return;
 
-  WideString Caption = GetControlText(Control);
-  WideString LowerCaption = WideLowerCase(Caption);
+  String Caption = GetControlText(Control);
+  String LowerCaption = LowerCase(Caption);
 
   for(int I = 1; I <= LowerCaption.Length(); I++)
   {
@@ -156,7 +156,7 @@ void AddAccelerator(TControl *Control, std::set<wchar_t> &Accelerators)
     if(Accelerators.count(Ch))
     {
       Accelerators.erase(Ch);
-      Caption.Insert(WideString(L'&'), I);
+      Caption.Insert(L'&', I);
       SetControlText(Control, Caption);
       break;
     }
@@ -280,9 +280,9 @@ int MessageBox(const std::wstring &Text, const std::wstring &Caption, int Flags)
 //the cursor position is set to where the error ocoured
 void ShowErrorMsg(const Func32::EFuncError &Error, TCustomEdit *Edit)
 {
-  WideString str = LoadRes(RES_ERROR) + " " + WideString(AnsiString(Error.ErrorCode));
+  String Str = LoadRes(RES_ERROR) + L" " + Error.ErrorCode;
   Form1->SetHelpError(Error.ErrorCode);
-  MessageBox(GetErrorMsg(Error), str, MB_ICONWARNING | MB_HELP);
+  MessageBox(GetErrorMsg(Error), Str, MB_ICONWARNING | MB_HELP);
   Form1->SetHelpError(0);
   if(Edit)
   {
@@ -323,7 +323,7 @@ class TInputQueryForm : public TForm
   int &Value;
 
 public:
-  __fastcall TInputQueryForm(const AnsiString &ACaption, const AnsiString &APrompt, int &AValue)
+  __fastcall TInputQueryForm(const String &ACaption, const String &APrompt, int &AValue)
     : TForm(NULL, 0), Value(AValue)
   {
     Caption = ACaption;
@@ -370,40 +370,25 @@ public:
   }
 };
 //---------------------------------------------------------------------------
-bool InputQuery(const AnsiString &Caption, const AnsiString &Prompt, int &Value)
+bool InputQuery(const String &Caption, const String &Prompt, int &Value)
 {
   std::auto_ptr<TForm> Form(new TInputQueryForm(Caption, Prompt, Value));
   return Form->ShowModal() == mrOk;
 }
 //---------------------------------------------------------------------------
-AnsiString GetKeyName(UINT Key)
+String GetKeyName(UINT Key)
 {
-  UINT ScanCode = MapVirtualKeyA(Key, 0) << 16;
-  if(ScanCode != 0)
-  {
-    if(Key > VK_ESCAPE && Key < 'A' /*VK_A*/) //Not sure about this range
-      ScanCode |= 0x01000000;
-    char KeyName[20];
-    GetKeyNameTextA(ScanCode, KeyName, sizeof(KeyName));
-    AnsiStrLower(&KeyName[1]);
-    return AnsiString(KeyName);
-  }
-  return AnsiString();
-}
-//---------------------------------------------------------------------------
-WideString GetWideKeyName(UINT Key)
-{
-  UINT ScanCode = MapVirtualKeyW(Key, 0) << 16;
+  UINT ScanCode = MapVirtualKey(Key, 0) << 16;
   if(ScanCode != 0)
   {
     if(Key > VK_ESCAPE && Key < 'A' /*VK_A*/) //Not sure about this range
       ScanCode |= 0x01000000;
     wchar_t KeyName[20];
-    GetKeyNameTextW(ScanCode, KeyName, sizeof(KeyName) / sizeof(KeyName[0]));
-    CharLowerW(&KeyName[1]);
-    return WideString(KeyName);
+    GetKeyNameText(ScanCode, KeyName, sizeof(KeyName) / sizeof(KeyName[0]));
+    CharLower(&KeyName[1]);
+    return String(KeyName);
   }
-  return WideString();
+  return String();
 }
 //---------------------------------------------------------------------------
 namespace Menus

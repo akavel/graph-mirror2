@@ -126,17 +126,17 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   std::vector<char> BitmapInfoData(256 * sizeof(RGBQUAD) + sizeof(BITMAPINFOHEADER));
   BITMAPINFO *BitmapInfo = reinterpret_cast<BITMAPINFO*>(&BitmapInfoData[0]);
   FillBitmapInfoHeader(BitmapInfo->bmiHeader, Bitmap.get(), Rect, 256, 0);
-  AnsiString TempFile = GetTempFileName("Graph", "avi");
+  String TempFile = GetTempFileName("Graph", "avi");
   std::wstring OriginalValue = Data.CustomFunctions.GetValue(AnimationInfo.Constant).Text;
 
   AVIFileInit();
   TCallOnRelease Dummy2(AVIFileExit);
-  TCallOnRelease Dummy3(DeleteFileA, TempFile.c_str());
+  TCallOnRelease Dummy3(::DeleteFileW, TempFile.c_str());
 
   //Inner scope needed to release the avi file when the creation is finished.
   {
     PAVIFILE pFile = NULL;
-    OleCheck(AVIFileOpenA(&pFile, TempFile.c_str(), OF_WRITE | OF_CREATE, NULL));
+    OleCheck(AVIFileOpen(&pFile, TempFile.c_str(), OF_WRITE | OF_CREATE, NULL));
     TCallOnRelease Dummy4(AVIFileRelease, pFile);
 
     PAVISTREAM pStream = NULL;

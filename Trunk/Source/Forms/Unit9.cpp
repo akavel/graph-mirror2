@@ -42,7 +42,7 @@ void TForm9::Translate()
   TranslateStrings(ParFuncFrame1->ComboBox1->Items);
   PolFuncFrame1->ComboBox1->Items->Assign(PolFuncStrings);
   TranslateStrings(PolFuncFrame1->ComboBox1->Items);
-  AreaFrame1->Label3->Caption = LoadRes(EvalType == etArea ? RES_AREA : RES_LENGTH) + WideString(L':');
+  AreaFrame1->Label3->Caption = LoadRes(EvalType == etArea ? RES_AREA : RES_LENGTH) + L':';
   SetAccelerators(this);
 /*
   int Left = AreaFrame1->Label1->Left + TMaxWidth(AreaFrame1->Label1)(AreaFrame1->Label2)(Canvas->TextWidth(LoadRes(RES_AREA)))(Canvas->TextWidth(LoadRes(RES_LENGTH))) + 5;
@@ -298,7 +298,7 @@ void TForm9::SetEvalType(TEvalType AEvalType)
 
     case etArea:
     case etArc:
-      AreaFrame1->Label3->Caption = LoadRes(EvalType == etArea ? RES_AREA : RES_LENGTH) + WideString(L':');
+      AreaFrame1->Label3->Caption = LoadRes(EvalType == etArea ? RES_AREA : RES_LENGTH) + L':';
       Caption = LoadRes(EvalType == etArea ? 522 : 523);
       break;
   }

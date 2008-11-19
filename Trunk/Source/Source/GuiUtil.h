@@ -50,6 +50,6 @@ void ShowErrorMsg(const class ECustomFunctionError &Error, TCustomEdit *Edit=NUL
 void ShowErrorMsg(const class EGraphError &Error, TCustomEdit *Edit=NULL);
 void ShowStatusError(const String &Str);
 
-bool InputQuery(const AnsiString &Caption, const AnsiString &Prompt, int &Value);
+bool InputQuery(const String &Caption, const String &Prompt, int &Value);
 
 #endif
