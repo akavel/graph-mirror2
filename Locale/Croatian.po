@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.2\n"
 "POT-Creation-Date: 2008-09-05 19:40\n"
-"PO-Revision-Date: 2008-09-08 18:24+0100\n"
+"PO-Revision-Date: 2008-11-18 00:21+0100\n"
 "Last-Translator: Hasan Osmanagić <hasan.osmanagic@public.carnet.hr>\n"
 "Language-Team:  <hasan.osmanagic@public.srce.hr>\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Ploština"
 
 #. AreaFrame..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
-msgstr "Unesite početne koordinate ili ih označite povlačenjem miša po krivulji."
+msgstr "Unesite početne koordinate ili ih označite povlačenjem miša po grafu."
 
 #. AreaFrame..Edit2....Hint
 msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
@@ -61,7 +61,7 @@ msgstr "Ploština ili duljina izračunata zadanim rasponom pomoću Simpsonove fo
 #. PolFuncFrame..Label7("Snap to:")..Caption
 #. StdFuncFrame..Label5("Snap to:")..Caption
 msgid "Snap to:"
-msgstr "Postavi na"
+msgstr "Kusor na"
 
 #. ParFuncFrame..Edit2..Hint
 msgid "The x-coordinate evaluated for the t-parameter."
@@ -85,7 +85,7 @@ msgstr "Nagib funkcije  procijenjen za dani parametar t:"
 
 #. ParFuncFrame..Edit1....Hint
 msgid "Enter the value for the parameter t for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Unesite vrijednost parametra t za koji želite vrijednost funkcije ili kliknite mišem na funkciju."
+msgstr "Unesite vrijednost parametra za koji želite izračun funkcije, ili kliknite mišem na funkciju."
 
 #. ParFuncFrame..ComboBox1....Hint
 #. StdFuncFrame..ComboBox1....Hint
@@ -166,11 +166,11 @@ msgstr "Nagib funkcije za dani kut."
 
 #. PolFuncFrame..Edit1....Hint
 msgid "Enter the value of the polar angle for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Unesite vrijednost polarnog kuta za koji želite vrijednost funkcije, ili kliknite mišem na funkciju."
+msgstr "Unesite vrijednost polarnog kuta za koji želite vrijednost funkcije, ili kliknite mišem na funkciju u grafu."
 
 #. StdFuncFrame..Edit1....Hint
 msgid "Enter a value for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Unesite broj za koji želite vrijednost funkcije ili kliknite mišem na funkciju."
+msgstr "Unesite vrijednost za koju želite vrijednost funkcije, ili kliknite mišem na funkciju u grafu."
 
 #. StdFuncFrame..ComboBox1....Items.Strings
 msgid "Extremum"
@@ -186,7 +186,7 @@ msgstr "Prva derivacija funkcije za danu vrijednost."
 
 #. StdFuncFrame..Edit4....Hint
 msgid "This is the second derivative of the function evaluated for the entered value."
-msgstr "Druga derivacija funkcije za danu vrijednost."
+msgstr "Ovo je druga derivacija funkcije izračunata za danu vrijednost."
 
 #. TanFrame..Edit2....Hint
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
@@ -367,7 +367,7 @@ msgstr "Po želji..."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Hint
 msgid "Place the label at a custom position."
-msgstr "Postava tekstnog okvira prema želji."
+msgstr "Postavljanje tekst okvira na željeni položaj."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Caption
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
@@ -378,7 +378,7 @@ msgstr "Rotacija"
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
 msgid "Specify the angle of rotation for the label."
-msgstr "Unesite kut zakretanja tekstnog okvira."
+msgstr "Odredite kut zakretanja tekstnog okvira."
 
 #. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
@@ -397,7 +397,7 @@ msgstr "Nova"
 
 #. Form1..ActionManager..NewAction("New")..Hint
 msgid "Create a new coordinate system."
-msgstr "Kreiranje novog koordinatnog sustava"
+msgstr "Stvaranje novog grafa."
 
 #. Form1..ActionManager..OpenAction("Open...")..Caption
 msgid "Open..."
@@ -405,7 +405,7 @@ msgstr "Otvori"
 
 #. Form1..ActionManager..OpenAction("Open...")..Hint
 msgid "Read a coordinate system from a file."
-msgstr "Unos koordinatnog sustava iz datoteke."
+msgstr "Učitanje grafa iz datoteke."
 
 #. Form1..ActionManager..SaveAction("Save")..Caption
 msgid "Save"
@@ -413,7 +413,7 @@ msgstr "Pohrani"
 
 #. Form1..ActionManager..SaveAction("Save")..Hint
 msgid "Write the current coordinate system to a file."
-msgstr "Pohrana koordinatnog sustava u datoteku."
+msgstr "Pohrana grafa u datoteku."
 
 #. Form1..ActionManager..SaveAsAction("Save as...")..Caption
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Caption
@@ -422,7 +422,7 @@ msgstr "Pohrani kao"
 
 #. Form1..ActionManager..SaveAsAction("Save as...")..Hint
 msgid "Write the current coordinate system to a file with a new name."
-msgstr "Pohrana koordinatnog sustav u datoteku s novim nazivom."
+msgstr "Pohrana grafa u datoteku pod novim nazivom."
 
 #. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Caption
 msgid "Save copy as..."
@@ -430,7 +430,7 @@ msgstr "Pohrani kopiju kao"
 
 #. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Hint
 msgid "Save a copy of the current coordinate system to a file."
-msgstr "Pohrana kopije trenutnog koordinatnog sustava u datoteku."
+msgstr "Pohrana kopije ovog grafa u datoteku."
 
 #. Form1..ActionManager..SaveAsImageAction("Save as image...")..Caption
 msgid "Save as image..."
@@ -438,7 +438,7 @@ msgstr "Pohrani kao sliku"
 
 #. Form1..ActionManager..SaveAsImageAction("Save as image...")..Hint
 msgid "Save the shown coordinate system as an image."
-msgstr "Pohrana trenutnog koordinatnog sustava kao slike."
+msgstr "Pohrana ovog grafa kao slike."
 
 #. Form1..ActionManager..PrintAction("Print...")..Caption
 msgid "Print..."
@@ -483,7 +483,7 @@ msgstr "Odreži"
 
 #. Form1..ActionManager..CutAction("Cut")..Hint
 msgid "Cut the selected function or point series to the clipboard."
-msgstr "Uklanja selektiranu funkciju ili skup podataka u međuspremnik."
+msgstr "Uklanja selektiranu funkciju ili skup podataka (u međuspremnik)."
 
 #. Form1..ActionManager..CopyAction("Copy")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Caption
@@ -495,7 +495,7 @@ msgstr "Kopiraj"
 
 #. Form1..ActionManager..CopyAction("Copy")..Hint
 msgid "Copy the selected function or point series to the clipboard."
-msgstr "Kopira selektiranu funkciju ili skup podataka u međuspremnik"
+msgstr "Kopira selektiranu funkciju ili skup podataka u međuspremnik."
 
 #. Form1..ActionManager..PasteAction("Paste")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")..Caption
@@ -506,7 +506,7 @@ msgstr "Zalijepi"
 
 #. Form1..ActionManager..PasteAction("Paste")....Hint
 msgid "Paste a function or point series from the clipboard into the coordinate system."
-msgstr "Lijepi selektiranu funkciju ili skup podataka (iz međuspremnika) u koordinatni sustav."
+msgstr "Lijepi selektiranu funkciju ili skup podataka iz međuspremnika ugraf."
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Caption
 msgid "Copy image"
@@ -514,7 +514,7 @@ msgstr "Kopiraj sliku"
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Hint
 msgid "Copy the shown coordinate system to the clipboard."
-msgstr "Kopira ovaj koordinatni sustav u u međuspremnik."
+msgstr "Kopira ovaj graf u međuspremnik."
 
 #. Form1..ActionManager..AxesAction("Axes...")..Caption
 msgid "Axes..."
@@ -537,7 +537,7 @@ msgstr "Uređivanje raznih mogućnosti izgleda i značajki programa"
 
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Caption
 msgid "Insert function..."
-msgstr "Umetni funkciju"
+msgstr "Umetni funkciju..."
 
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Hint
 msgid "Insert a new function."
@@ -561,7 +561,7 @@ msgstr "Dodavanje šrafure za odabranu funkciju"
 
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Caption
 msgid "Insert point series..."
-msgstr "Unesi skup točaka"
+msgstr "Unesi točke..."
 
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Hint
 msgid "Insert a point series."
@@ -569,7 +569,7 @@ msgstr "Unašanje skupa  točaka"
 
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Caption
 msgid "Insert trendline..."
-msgstr "Umetni liniju trenda"
+msgstr "Umetni liniju trenda..."
 
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Hint
 msgid "Insert a curve of best fit for the selected point series."
@@ -595,7 +595,7 @@ msgstr "Brisanje selektiranih elemente funkcije ili skupa podataka"
 
 #. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Caption
 msgid "Insert f'(x)..."
-msgstr "Umetni f'(x)..."
+msgstr "Umetni derivaciju f'(x)..."
 
 #. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Hint
 msgid "Insert the first derivative of the selected function."
@@ -639,7 +639,7 @@ msgstr "Standardno"
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Hint
 msgid "Reset the axes to their default settings."
-msgstr "Vrati koordinatne osi u početno stanje"
+msgstr "Vraćanje osi na njihovo početno stanje."
 
 #. Form1..ActionManager..MoveUpAction("Move up")..Category
 #. Form1..ActionManager..MoveDownAction("Move down")..Category
@@ -655,7 +655,7 @@ msgstr "Premjesti gore"
 
 #. Form1..ActionManager..MoveUpAction("Move up")..Hint
 msgid "Move the graphing area up along the coordinate system."
-msgstr "Premještanje okna grafa gore duž koordinatnog sustava."
+msgstr "Pomicanje iscrtane plohe prema gore, duž koordinatnog sustava."
 
 #. Form1..ActionManager..MoveUpAction("Move up")....SecondaryShortCuts.Strings
 msgid "Ctrl+Shift+Up"
@@ -667,11 +667,11 @@ msgstr "Premjesti dolje"
 
 #. Form1..ActionManager..MoveDownAction("Move down")..Hint
 msgid "Move the graphing area down along the coordinate system."
-msgstr "Premještanje okna grafa dolje duž koordinatnog sustava."
+msgstr "Pomicanje iscrtane plohe prema dolje, duž koordinatnog sustava."
 
 #. Form1..ActionManager..MoveDownAction("Move down")....SecondaryShortCuts.Strings
 msgid "Ctrl+Shift+Down"
-msgstr "Ctrl+Shift+s.dolje"
+msgstr "Ctrl+Shift+dole"
 
 #. Form1..ActionManager..MoveLeftAction("Move left")..Caption
 msgid "Move left"
@@ -679,11 +679,11 @@ msgstr "Premjesti lijevo"
 
 #. Form1..ActionManager..MoveLeftAction("Move left")..Hint
 msgid "Move the graphing area to the left along the coordinate system."
-msgstr "Premještanje okna grafa u lijevo duž koordinatnog sustava."
+msgstr "Pomicanje iscrtane plohe u lijevo, duž koordinatnog sustava."
 
 #. Form1..ActionManager..MoveLeftAction("Move left")....SecondaryShortCuts.Strings
 msgid "Ctrl+Shift+Left"
-msgstr "Ctrl+Shift+s.lijevo"
+msgstr "Ctrl+Shift+lijevo"
 
 #. Form1..ActionManager..MoveRightAction("Move right")..Caption
 msgid "Move right"
@@ -691,11 +691,11 @@ msgstr "Premjesti desno"
 
 #. Form1..ActionManager..MoveRightAction("Move right")..Hint
 msgid "Move the graphing area to the right along the coordinate system."
-msgstr "Premještanje okna grafa u desno duž koordinatnog sustava."
+msgstr "Pomicanje iscrtane plohe u desno, duž koordinatnog sustava."
 
 #. Form1..ActionManager..MoveRightAction("Move right")....SecondaryShortCuts.Strings
 msgid "Ctrl+Shift+Right"
-msgstr "Ctrl+Shift+s.desno"
+msgstr "Ctrl+Shift+desno"
 
 #. Form1..ActionManager..MoveAction("Move system")..Caption
 msgid "Move system"
@@ -711,16 +711,16 @@ msgstr "Duljina krivulje"
 
 #. Form1..ActionManager..PathAction("Length of path")....Hint
 msgid "Calculate the length of path between two given points on the curve."
-msgstr "Izračun duljine krivulje između dviju datih točaka."
+msgstr "Izračun duljine krivulje između danih dviju točaka."
 
 #. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the area under the path of the selected function."
-msgstr "Izračun ploštine ispod krivulje između datih točaka."
+msgstr "Izračun ploštine ispod selektirane krivulje."
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
 msgid "Evaluate"
-msgstr "Izračunaj"
+msgstr "Izračun"
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Hint
 msgid "Evaluate or trace the selected function."
@@ -732,7 +732,7 @@ msgstr "Tablica..."
 
 #. Form1..ActionManager..TableAction("Table...")..Hint
 msgid "Show an evaluation table."
-msgstr "Prikaz tablice vrijednosti."
+msgstr "Prikaz tablice izračuna."
 
 #. Form1..ActionManager..ContentsAction("Contents and index")..Caption
 msgid "Contents and index"
@@ -748,11 +748,11 @@ msgstr "Popis funkcija"
 
 #. Form1..ActionManager..ListAction("List of functions")..Hint
 msgid "Show a list of built-in functions that can be used for graphing."
-msgstr "Prikaz popisa raspoloživih funkcija grafova"
+msgstr "Prikaz popisa raspoloživih funkcija za korištenje u grafu."
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Caption
 msgid "Graph web site"
-msgstr "Graph na Web-u"
+msgstr "Graph Web stranica"
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
 msgid "Open the default browser and shows the home page of the program."
@@ -785,15 +785,15 @@ msgstr "Podesi"
 
 #. Form1..ActionManager..ZoomFitAction("Fit")..Hint
 msgid "Zoom to show the selected element."
-msgstr "Povećani prikaz selektiranog elementa."
+msgstr "Prikaz selektiranog dijela."
 
 #. Form1..ActionManager..ZoomFitAllAction("Fit all")..Caption
 msgid "Fit all"
-msgstr "Podesi sve"
+msgstr "Prikaži sve"
 
 #. Form1..ActionManager..ZoomFitAllAction("Fit all")..Hint
 msgid "Zoom to show all elements."
-msgstr "Povećani prikaz svih elemenata."
+msgstr "Prikaz svih dijelova."
 
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Caption
 msgid "Frequently Asked Questions"
@@ -801,7 +801,7 @@ msgstr "Česta pitanja"
 
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Hint
 msgid "Show a list of frequently asked questions and their answers."
-msgstr "Prikaz često postavljanih pitanja i odgovora"
+msgstr "Prikaz često postavljanih pitanja i odgovora."
 
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Caption
 msgid "Insert label..."
@@ -809,7 +809,7 @@ msgstr "Umetni tekstni okvir..."
 
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
 msgid "Insert a text label."
-msgstr "Umetni tekstni okvir."
+msgstr "Umetni tekstni okvir..."
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -871,7 +871,7 @@ msgstr "Smanjivanje samo y-os"
 
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Caption
 msgid "Insert relation..."
-msgstr "Umetni jednadžbu"
+msgstr "Umetni jednadžbu..."
 
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Hint
 msgid "Insert a new equation or inequality."
@@ -916,7 +916,7 @@ msgstr "Umetni objekt..."
 
 #. Form1..ActionManager..InsertObjectAction("Insert object...")..Hint
 msgid "Insert an OLE object such as a drawing or an equation."
-msgstr "Umetanje OLE objekta, npr.: Slike i jednadžbe"
+msgstr "Umetanje OLE objekta kao slike ili jednadžbe."
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -924,7 +924,7 @@ msgstr "Vrati na početno stanje"
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
 msgid "Reset the toolbar icons to the installation default."
-msgstr "Vrati ikone alatne trake na početno stanje"
+msgstr "Vraćanje ikona alatne trake na početno stanje."
 
 #. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
 msgid "Customize toolbar..."
@@ -1033,7 +1033,7 @@ msgstr "Jeste li znali..."
 
 #. Form11("Insert relation")..Caption
 msgid "Insert relation"
-msgstr "Umetni jednadžbu"
+msgstr "Umetanje jednadžbe"
 
 #. Form11("Insert relation")..Label1("Relation:")..Caption
 msgid "Relation:"
@@ -1101,7 +1101,7 @@ msgstr "Upis:"
 #. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
 #. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
 msgid "Write a descriptive text to show in the legend and function list. If empty the formula will be used."
-msgstr "Unos teksta opisa za prikaz u legendi. Ako polje ostane prazno, upisat će se jednadžba."
+msgstr "Unos teksta opisa za prikaz u legendi i popisu funkcija. Ako polje ostane prazno, upisat će se jednadžba."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
@@ -1159,11 +1159,11 @@ msgstr "Unos ograničenja, npr.:  \"x > 0 and y < 5\""
 
 #. Form12("Insert tangent/normal")..Caption
 msgid "Insert tangent/normal"
-msgstr "Umetni tangentu ili normalu"
+msgstr "Umetanje tangente ili normale"
 
 #. Form12("Insert tangent/normal")..Edit1..Hint
 msgid "Value where the tangent/normal will interact with the function."
-msgstr "Koordinate točke funkcije za tangentu ili normalu"
+msgstr "Vrijednost u kojoj tangenta/normala dodiruje funkciju."
 
 #. Form12("Insert tangent/normal")..RadioGroup1("Type")..Hint
 msgid "Choose if you want a tangent or a normal."
@@ -1264,7 +1264,7 @@ msgstr "Upis točke kraja intervala (samo ako je interval zadan)."
 
 #. Form13("Insert trendline")..Caption
 msgid "Insert trendline"
-msgstr "Umetni liniju trenda"
+msgstr "Umetanje linije trenda"
 
 #. Form13("Insert trendline")..GroupBox1("Line")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Caption
@@ -1383,28 +1383,28 @@ msgstr "Uvoz iz datoteke..."
 
 #. Form13("Insert trendline")..TntPopupMenu1..Popup_Import("Import from file...")..Hint
 msgid "Import user models from a file."
-msgstr "Uvoz korisnikova modela iz datoteke."
+msgstr "Uvoz korisničkog modela iz datoteke."
 
 #. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Caption
 msgid "Export all to file..."
-msgstr "Izvoz svega u datoteku"
+msgstr "Izvoz u datoteku..."
 
 #. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Hint
 msgid "Export user models to a file."
-msgstr "Izvoz korisnikova modela u datoteku."
+msgstr "Izvoz korisničkog modela u datoteku."
 
 #. Form13("Insert trendline")..SaveDialog1..Filter
 #. Form13("Insert trendline")..OpenDialog1..Filter
 msgid "User models [*.ini]|*.ini"
-msgstr "Korisnikovi modeli [*.ini]|*.ini"
+msgstr "Korisnikov model [*.ini]|*.ini"
 
 #. Form14("Insert point series")..Caption
 msgid "Insert point series"
-msgstr "Unesi skup točaka"
+msgstr "Unošenje točaka"
 
 #. Form14("Insert point series")..Edit1....Hint
 msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
-msgstr "Naziv skupa točaka koji će se prikazati u popisu lijevom oknu."
+msgstr "Naziv skupa točaka koji će se prikazati u popisu u lijevom panelu."
 
 #. Form14("Insert point series")..Edit1..Text
 #. Default description in the Insert point series dialog
@@ -1521,7 +1521,7 @@ msgstr "Traka grešaka"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..Caption
 msgid "X error amount"
-msgstr "X traka grešaka"
+msgstr "X veličina greške"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..CheckBox3("Show x-bars")..Hint
 msgid "Show horizontal error bars."
@@ -1572,7 +1572,7 @@ msgstr "Unos vrijednosti razmjera u postotcima."
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..Caption
 msgid "Y error amount"
-msgstr "Y traka grešaka"
+msgstr "Y veličina greške"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..CheckBox4("Show y-bars")..Hint
 msgid "Show vertical error bars."
@@ -1611,7 +1611,7 @@ msgstr "Brisanje označene ćelije."
 #. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Caption
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Insert("Insert row")..Caption
 msgid "Insert row"
-msgstr "Umetni redak"
+msgstr "Umetanje retka"
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Insert("Insert row")..Hint
@@ -1656,7 +1656,7 @@ msgstr "Tabelarni izračun"
 
 #. Form15("Calculate table")..Edit3....Hint
 msgid "The step value. This is the difference between two adjoining values in the defined interval."
-msgstr "Korak udaljenosti oznaka na x-osi."
+msgstr "Vrijednost koraka. To je razlika između dviju susjednih vrijednosti u određenom intervalu."
 
 #. Form15("Calculate table")..Edit1..Hint
 msgid "The first x-value in the interval."
@@ -1681,7 +1681,7 @@ msgstr "Prikaži %s"
 #. Form15("Calculate table")..PopupMenu1..Popup1_Show4("Show %s")..Hint
 #. Form15("Calculate table")..PopupMenu1..Popup1_Show5("Show %s")..Hint
 msgid "Show the %s column in the table."
-msgstr "Prikaz %s kolone u tabeli."
+msgstr "Prikaz %s colone u tabeli."
 
 #. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Hint
 msgid "Copy selected cells to the clipboard."
@@ -1702,7 +1702,7 @@ msgstr "CSV (Zarezom odijeljeni) [*.csv]|*.csv|Text [*.txt]|*.txt"
 
 #. Form16("Insert shading")..Caption
 msgid "Insert shading"
-msgstr "Umetni šrafuru"
+msgstr "Umetanje šrafure"
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
 #. Default name in Insert shading dialog
@@ -1882,11 +1882,11 @@ msgstr "Visina slike:"
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit1..Hint
 msgid "Set a custom image width in pixels."
-msgstr "Unos širine slike u pikselima."
+msgstr "Željena širine slike u pikselima."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit2..Hint
 msgid "Set a custom image height in pixels."
-msgstr "Unos visine slike u pikselima."
+msgstr "Željena visina slike u pikselima."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
 msgid "Choose to use the same size as shown on the screen or a custom image size."
@@ -1958,15 +1958,15 @@ msgstr "Izbor veličine papira."
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Letter"
-msgstr "Pismo"
+msgstr "Slovo"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Ledger"
-msgstr "Vodilica"
+msgstr "Saldo"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Legal"
-msgstr "Legal"
+msgstr "Dopušteno"
 
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
@@ -2009,15 +2009,15 @@ msgstr "Konstanta za koju će se mijenjati vrijednost svake sličice."
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Caption
 msgid "Frame options"
-msgstr "Mogućnosti slike"
+msgstr "Mogućnosti sličica"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Label5("Frame width:")..Caption
 msgid "Frame width:"
-msgstr "Širina slike:"
+msgstr "Širina sličice:"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Label6("Frame height:")..Caption
 msgid "Frame height:"
-msgstr "Visina slike:"
+msgstr "Visina sličice:"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Label7("Frames/second:")..Caption
 msgid "Frames/second:"
@@ -2025,11 +2025,11 @@ msgstr "Slika u sekundi"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Edit4..Hint
 msgid "Width of each frame, in pixels."
-msgstr "Širina okvira u pikselima."
+msgstr "Debljina svake sličice u pikselima"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Edit5..Hint
 msgid "Height of each frame, in pixels."
-msgstr "Visina okvira u pikselima"
+msgstr "Visina svake sličice u pikselima"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Edit6..Hint
 msgid "Number of frames per second used when the animation is played."
@@ -2129,19 +2129,19 @@ msgstr "Pohrana animacije u datoteku."
 
 #. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Caption
 msgid "Save frame..."
-msgstr "Pohrani okvir..."
+msgstr "Pohrani sličice..."
 
 #. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Hint
 msgid "Save the shown frame to an image file."
-msgstr "Pohrana okvira kao slike."
+msgstr "Pohrana ove sličice u datoteku slike."
 
 #. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")..Caption
 msgid "Save all frames..."
-msgstr "Pohrani sve okvire..."
+msgstr "Pohrani sve sličice..."
 
 #. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")....Hint
 msgid "Save all frames in the animation to image files. This will create as many files as there are frames in the animation."
-msgstr "Pohrani sve kadrove animacije u datoteku. Stvorit će se isti broj datoteka kao i kadrova animacije."
+msgstr "Pohrana svih sličica animaciju u datoteku slike. To će stvoriti onoliko datoteka koliko je sličica u animaciji."
 
 #. Form21("Placement")..Label1("Corner:")..Caption
 msgid "Corner:"
@@ -2149,12 +2149,12 @@ msgstr "Ugao:"
 
 #. Form21("Placement")..ComboBox1..Hint
 msgid "Choose which corner of the label should be locked."
-msgstr "Izbor ugla tekstnog okvira koji će biti fiksiran."
+msgstr "Izbor ugla tekstnog okvira koji je fiksiran."
 
 #. Form21("Placement")..Edit1..Hint
 #. Form21("Placement")..Edit2..Hint
 msgid "Enter a coordinate to lock label at."
-msgstr "Unesite koordinatu fiksiranja tekstnog okvira."
+msgstr "Unos koordinata na koje se smješta tekstni okvir."
 
 #. Form22("Python interpreter")..Caption
 msgid "Python interpreter"
@@ -2215,7 +2215,7 @@ msgstr "Logaritamsko mjerilo"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")....Hint
 msgid "Show the label at the right side of the graphing area, above the x-axis."
-msgstr "Tekstni okvir na desnu stranu iznad x-osi."
+msgstr "Prikaz tekstnog okvira na desnoj strani grafa iznad x-osi."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")..Caption
@@ -2318,7 +2318,7 @@ msgstr "Prikaz vrijednosti na y-osi."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")....Hint
 msgid "Show the label at the top of the graphing area, to the right of the y-axis."
-msgstr "Tekstni okvir na vrhu, desno od y-osi."
+msgstr "Prikaz tekstnog okvira u vrhu grafa s desne strane y-osi."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit12..Hint
 msgid "The y-axis will intersect with the x-axis at this value."
@@ -2495,7 +2495,7 @@ msgstr "Oblik prikaza kompleksnih brojeva."
 
 #. Form4("Options")..GroupBox1..RadioGroup1("Complex form")..Caption
 msgid "Complex form"
-msgstr "Oblik kompleks. broja"
+msgstr "Kompleksni oblik"
 
 #. Form4("Options")..GroupBox1..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
@@ -2543,7 +2543,7 @@ msgstr "Prikaži natuknice opisa"
 
 #. Form4("Options")..GroupBox1..CheckBox3("Save workspace on exit")....Hint
 msgid "Save the size of the main window when the program exits. This is used the next time Graph is run."
-msgstr "Pohrani veličinu okna programa pri izlazu. Postavka će biti korištena pri slijedećem pokretanju programa."
+msgstr "Pohrana položaja okna programa pri izlazu. Postavka će biti korištena pri slijedećem pokretanju programa."
 
 #. Form4("Options")..GroupBox1..CheckBox3("Save workspace on exit")..Caption
 msgid "Save workspace on exit"
@@ -2559,7 +2559,7 @@ msgstr "Pri pokretanju provjeri postoji li nova verzija."
 
 #. Form5("Insert function")..Caption
 msgid "Insert function"
-msgstr "Umetni funkciju"
+msgstr "Umetanje funkciju"
 
 #. Form5("Insert function")..Label1("Function type:")..Caption
 msgid "Function type:"
@@ -2616,7 +2616,7 @@ msgstr "Linije"
 
 #. Form6("Insert text label")..Caption
 msgid "Insert text label"
-msgstr "Umetni tekstni okvir"
+msgstr "Umetanje tekstnog okvira"
 
 #. Form6("Insert text label")..Label1("Font name:")..Caption
 msgid "Font name:"
@@ -2644,7 +2644,7 @@ msgstr "Umetanje simbola"
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
 msgid "Insert object."
-msgstr "Umetni objekt."
+msgstr "Umetanje objekta."
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
@@ -2733,7 +2733,7 @@ msgstr "Uređivanje ovog objekta."
 
 #. Form7("Insert f'(x)")..Caption
 msgid "Insert f'(x)"
-msgstr "Umetni f'(x)"
+msgstr "Umetanje derivacije f'(x)"
 
 #. Form8("Add model")..Label1("Name:")..Caption
 #. PrintFrm("Print")..GroupBox1("Printer")..Label1("Name:")..Caption
@@ -2842,7 +2842,7 @@ msgid "An error occurred while evaluating power function."
 msgstr "Došlo je do greške pri izračunu eksponencijalne funkcije."
 
 msgid "Tangent to pi/2+n*pi (90+n180 in degrees) is undefined."
-msgstr "Tangenta pi/2+n*pi (90+n*180 u stupnjevima) je neodređena."
+msgstr "Tangenta u pi/2+n*pi (90°+n*180°) je neodređena."
 
 msgid "Fact can only be calculated for positive integers."
 msgstr "Podatak može biti izračunat samo za pozitivne cijele brojeve."
@@ -2887,7 +2887,7 @@ msgid "Too many recursive calls."
 msgstr "Previše rekurzivnih ćelija"
 
 msgid "Overflow: A function returned a value too large to handle."
-msgstr "Previše: Funkcija postaje prevelika za procesiranje."
+msgstr "Prekoračenje: Funkcija daje preveliki rezultat."
 
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Neočekivan operator '%s' i ne može biti ovdje."
@@ -2896,7 +2896,7 @@ msgid "The right bracket is missing."
 msgstr "Nedostaje desna zagrada."
 
 msgid "Invalid number of arguments supplied for the function '%s'"
-msgstr "Pogrešan broj argumenata funkcije '%s'"
+msgstr "Krivi broj argumenata je unesen uz funkciju '%s'"
 
 msgid "Comparison operator misplaced."
 msgstr "Izostavljen operator usporedbe."
@@ -2905,7 +2905,7 @@ msgid "Invalid number found. Use the format: -5.475E-8"
 msgstr "Pogrešan broj. koristite format format: -5.475E-8"
 
 msgid "String is empty. You need to enter a formula."
-msgstr "Pojam je prazan. Potrebno je unijeti jednadžbu."
+msgstr "Pojam je prazan. Potrebno je unijeti sadržaj."
 
 msgid "Comma is not allowed here. Use dot as decimal separator."
 msgstr "Zarez nije dozvoljen. Koristite točku kao decimalni separator."
@@ -2932,7 +2932,7 @@ msgid "The end of the expression was unexpected."
 msgstr "Neočekivan kraj jednadžbe."
 
 msgid "Error parsing expression."
-msgstr "Pogrešno rastavljanje."
+msgstr "Greška u rastavljanje jednadžbe."
 
 msgid "A calculation resulted in an overflow."
 msgstr "Rezultat izračuna prekoračuje kapacitet."
@@ -3008,7 +3008,7 @@ msgstr "Želite li pohraniti promjene?"
 
 #. Asked when trying to exit
 msgid "Save changes in %s?"
-msgstr "Pohraniti promjene %s?"
+msgstr "Želite li pohraniti promjene %s?"
 
 #. Written in status bar when trying to zoom in too much
 msgid "You have reached the maximum range of zoom."
@@ -3071,7 +3071,7 @@ msgid ""
 "Error reading file: %s\n"
 "The file is not a correct Graph file."
 msgstr ""
-"Greška pri učitavanju datoteke: %s\n"
+"Greška pri učitanju datoteke: %s\n"
 "Datoteka nije ispravna Graph datoteka."
 
 msgid "Unknown error while reading file: %s"
@@ -3093,7 +3093,7 @@ msgstr "Font \"%s\" ne postoji. Koristite standardne fontove."
 
 #. Description of grf file
 msgid "Graph system"
-msgstr "Sustav grafa"
+msgstr "Graph sistem"
 
 #. Menu item shown in OLE client to open a Graph system object in Graph
 msgid "Open"
@@ -3203,14 +3203,14 @@ msgid "Invalid model name."
 msgstr "Krivi naziv modela."
 
 msgid "A model of that name already exist."
-msgstr "Model ovog naziva već postoji."
+msgstr "MOdel tog naziva već postoji"
 
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Derivacija funkcije je neodređena u %s=%s"
 
 #. Caption of message box when trying to insert tangent at undefined coordinate
 msgid "Coordinate not defined"
-msgstr "Koordinate nisu određene."
+msgstr "Koordinate nisu određene"
 
 msgid "Checking for newer version..."
 msgstr "Provjeravanje postojanja nove inačice..."
@@ -3237,7 +3237,7 @@ msgid "Edit text label"
 msgstr "Uređivanje tekstnog okvira"
 
 msgid "The model needs some constants (starting with a $) for Graph to find."
-msgstr "Model treba sadržavati nekoliko konstanti (počev s $) koje Graph nalazi."
+msgstr "Model treba sadržavati neke konstante (počinju s $) da ih Graph nađe."
 
 msgid "'%s' has to be an integer value between 0 and 1000."
 msgstr "'%s' nije cijeli broj između 0 i 1000."
@@ -3348,7 +3348,7 @@ msgid "(All Commands)"
 msgstr "(Sve naredbe)"
 
 msgid "To add a command to the toolbar simply select a category and drag the command out of this dialog box to the toolbar."
-msgstr "Dodajte naredbu u alatnu traku izborom vrste i prevlačenjem naredbe iz ovog dijaloga u traku alata."
+msgstr "Dodajte naredbu u alatnu traku izborom vrste i prevlačenjem naredbe iz ovog okna u traku."
 
 msgid "Edit f'(x)"
 msgstr "Uređivanje  f'(x)"
@@ -3374,7 +3374,7 @@ msgstr "Traka alata se može prilagoditi desnim klikom miša i izborom 'Prilagod
 
 #. Tip of the Day
 msgid "Instead of deleting a function, you can make it invisible by removing the check mark for the item in the function list."
-msgstr "Umjesto brisanja, funkciju možete učiniti nevidljivom u popisu funkcija. Desnim klikom miša uklonite kvačicu ispred. "
+msgstr "Umjesto brisanja, funkciju možete učiniti nevidljivom uklanjanjem kvačice ispred željene stavke u popisu funkcija."
 
 #. Tip of the Day
 msgid "You can paste images into a text label."
@@ -3410,7 +3410,7 @@ msgstr "Možete uvesti drugu Graph datoteku u trenutni koordinatni sustav korist
 
 #. Tip of the Day
 msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new coordinate systems."
-msgstr "Ako označite 'Pohrani kao standard', mogućnost u dijalog oknu uređivanja osi, taj izgled će te moći koristiti kod stvaranja nove datoteke."
+msgstr "Ako označite 'Pohrani kao standard', u dijalog oknu uređivanja osi, taj izgled će te moći koristiti kao standardni pri stvaranja nove datoteke."
 
 #. Tip of the Day
 msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
@@ -3438,7 +3438,7 @@ msgstr "Graph može pohraniti prikazani graf u pet različitih slikovnih formata
 
 #. Tip of the Day
 msgid "You can use 'Edit|Copy image' to copy the coordinate system and paste it into another program, for example, Microsoft Word. Later you can usually edit the image in Graph by double clicking on it in the other program."
-msgstr "Kopiranje grafa u druge programe vrši se izborom 'Uređivanje|Kopiraj sliku' i lijepljenjem u željeni program. Kasnije, dvoklikom možete uređivati graf u tom programu."
+msgstr "Kopiranje grafa u druge programe, npr. Microsoft Word, vrši se naredbom 'Uređivanje|Kopiraj sliku' i lijepljenjem u željeni program."
 
 #. Tip of the Day
 msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
@@ -3446,7 +3446,7 @@ msgstr "*.grf datoteke možete otvarati dvoklikom izravno iz Explorer-a, a onda 
 
 #. Tip of the Day
 msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
-msgstr "*.grf datoteke možete otvoriti i povlačenjem u otvoreno okno programa."
+msgstr "*.grf datoteke možete otvoriti i povlačenjem u okno programa."
 
 #. Tip of the Day
 msgid "Graph will remember the size of the main window between executions. This can be disabled from the Options dialog."
@@ -3462,15 +3462,15 @@ msgstr "Dio ili cijeli tabelarni izračun može biti desnim klikom miša i izbor
 
 #. Tip of the Day
 msgid "Data from the evaluation table can be copied to another program like Microsoft Excel."
-msgstr "Podaci iz tabelarnog izračuna mogu biti kopirani u druge programe kao npr. Microsoft Excel."
+msgstr "Podaci iz tabelarnog izračuna mogu biti izravno kopirani u druge programe kao npr. Microsoft Excel."
 
 #. Tip of the Day
 msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel."
-msgstr "Vrijednosti skupa točaka grafa mogu biti kopirani u druge programe kao npr. Microsoft Excel."
+msgstr "Vrijednosti skupa točaka grafa mogu biti izravno kopirani u druge programe kao npr. Microsoft Excel."
 
 #. Tip of the Day
 msgid "Elements as functions, point series, etc. can be copied from one instance of the program to another using Edit|Copy."
-msgstr "Funkcije skupovi točaka i dr. mogu se kopirati u drugo okno Graph-a koristeći 'Uređivanje|Kopiraj'."
+msgstr "Funkcije mogu biti izravno kopirane u drugi Graph preko 'Uređivanje|Kopiraj'."
 
 #. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
@@ -3490,15 +3490,15 @@ msgstr "Skup točaka možete uvesti iz datoteka drugih programa kao npr. Microso
 
 #. Tip of the Day
 msgid "When inserting a point series, you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
-msgstr "Umetanje skupa točaka iz drugih programa kao npr. Microsoft Excel. možete izvesti kopiranjem u tabelu Grapha."
+msgstr "Umetanje skupa točaka iz drugih programa kao npr. Microsoft Excela možete izvesti i izravnim ljepljenjem u mrežu Graph-a."
 
 #. Tip of the Day
 msgid "You can use 'Zoom|Fit all' to change the coordinate system so all functions and point series are visible."
-msgstr "Želite li vidjeti cijeli skup točaka, koristite naredbu 'Povećanje|Sve točke'."
+msgstr "Kada želite vidjeti sve točke i funkcije grafa, koristite naredbu 'Povećanje|Prikaži sve'."
 
 #. Tip of the Day
 msgid "You can use Zoom|Fit to change the coordinate system to show the selected function or point series in an optimal way."
-msgstr "Želite li povećati dio grafa, koristite naredbu 'Povećanje|Povećaj plohu' i označite željenu plohu."
+msgstr "Kada želite povećati dio grafa, koristite naredbu 'Povećanje|Povećaj plohu' i označite željenu plohu."
 
 #. Tip of the Day
 msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
@@ -3506,7 +3506,7 @@ msgstr "Ako držite pritisnutu \"Shift\" tipku, mišem možete pomicati koordina
 
 #. Tip of the Day
 msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
-msgstr "Korištenjem 'Izračun|Izračunaj' možete odrediti vrijednosti točaka presjecišta, ekstrema i dr."
+msgstr "Korištenjem 'Izračun' možete odrediti vrijednosti točaka presjecišta, ekstrema i dr."
 
 #. Tip of the Day
 msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
@@ -3522,15 +3522,15 @@ msgstr "Korištenjem jednadžbe moguće je iscrtati svaku funkciju, npr.:  x*sin
 
 #. Tip of the Day
 msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
-msgstr "Elementi grafa (funkcije, šrafure, tekstni okviri, jednadžbe i dr.) pojavljuju se istim redoslijedom kao i u popis u lijevom oknu."
+msgstr "Elementi grafa (funkcije, šrafure, tekstni okviri, jednadžbe i dr.) pojavljuju se istim redoslijedom kao i u popis u lijevom panelu."
 
 #. Tip of the Day
 msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
-msgstr "Redoslijed izabrane stavke popisa u lijevom oknu možete mijenjati povlačenjem mišem ili strelicama, držeći pritisnutu tipku \"Alt\"."
+msgstr "Redoslijed izabrane stavke popisa u lijevom panelu možete mijenjati povlačenjem mišem ili strelicama, držeći pritisnutu tipku \"Alt\"."
 
 #. Tip of the Day
 msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
-msgstr "Prikaz dijelova slike iznad ili ispod osi, ovisi o njihovu redoslijedu u popisu u lijevom oknu. Pomicanje šrafura i tangenti vrši se mijenjanjem redoslijeda funkcije na koju se odnose."
+msgstr "Prikaz dijelova slike iznad ili ispod osi, ovisi o njihovu redoslijedu u popisu u lijevom panelu. Pomicanje šrafura i tangenti vrši se mijenjanjem redoslijeda funkcije na koju se odnose."
 
 #. Tip of the Day
 msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
@@ -3542,7 +3542,7 @@ msgstr "Legenda se može slobodno pomicati mišom ili desnim klikom miša na okv
 
 #. Tip of the Day
 msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
-msgstr "Obojena pozadina je dobro došla alternativa prozirnoj pozadini kad su tekstne oznake unutar šrafura."
+msgstr "Obojena pozadina je dobro došla alternativa prozirnoj pozadini kad su tekstne oznake iznad šrafura."
 
 #. Tip of the Day
 msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
@@ -3565,13 +3565,13 @@ msgid "Point series can have arrows as markers. A point series with arrows as ma
 msgstr "Skup točaka može biti označen strelicama. Na taj način točke mogu prikazivati vektore."
 
 msgid "Insert symbol"
-msgstr "Umetni simbol"
+msgstr "Umetanje simbola"
 
 msgid "Subset:"
 msgstr "Podskup"
 
 msgid "Insert"
-msgstr "Umetni"
+msgstr "Umetanje"
 
 msgid "Select color"
 msgstr "Odabir boje"
@@ -3649,7 +3649,7 @@ msgstr "Gornja margina:"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
 msgid "Center the printing area on the page."
-msgstr "Unos položaja slike na stranici."
+msgstr "Centriranje plohe grafa na ispisnoj stranici."
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
@@ -3657,7 +3657,7 @@ msgstr "U sredini stranice"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1....Hint
 msgid "Specify the printing area of the page. The printer will print only within these margins."
-msgstr "Određivanje plohe ispisa. Pisač je omeđen marginama."
+msgstr "Određivanje plohe isoisa. Pisač ispisuje samo unutar zadanih margina."
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2..Hint
 msgid "Enter the image position on the page."
