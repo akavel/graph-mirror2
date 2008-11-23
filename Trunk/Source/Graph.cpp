@@ -90,12 +90,12 @@ WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
   }
   catch(std::exception &E)
   {
-    MessageBox(L"Uncaught exception with message:\n" + String(E.what()), L"Application error", MB_ICONSTOP);
+    MessageBox(String("Uncaught exception detected in main().\nType: ") + typeid(E).name() + "\nMessage: " + String(E.what()), L"Application error", MB_ICONSTOP);
   }
   catch (...)
   {
-     try
-     {
+    try
+    {
       throw Exception("Unknown exception escaped from WinMain");
     }
      catch (Exception &exception)

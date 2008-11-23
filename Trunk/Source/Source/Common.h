@@ -15,9 +15,11 @@
 #include <comctrls.hpp>
 //---------------------------------------------------------------------------
 void CenterForm(TForm *Form);
-void AssociateExt(String Ext, String ProgramName, String Ident, String Description, String Icon, bool AllUsers);
-void RemoveAsociation(String Ext, String Ident);
-bool CheckAssocation(const String &Ext, const String &Ident);
+
+void AssociateExt(std::wstring Ext, std::wstring ProgramName, std::wstring Ident, std::wstring Description, std::wstring Icon, bool AllUsers);
+void RemoveAsociation(const std::wstring &Ext, const std::wstring &Ident);
+bool CheckAssocation(const std::wstring &Ext, const std::wstring &Ident);
+
 String GetErrorMsg(const Func32::EFuncError &Error);
 String GetErrorMsg(Func32::TErrorCode ErrorCode);
 void InvertBitmap(Graphics::TBitmap *Bitmap);

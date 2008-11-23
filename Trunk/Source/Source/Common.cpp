@@ -9,7 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
-#include <Registry.hpp>
+#include "ConfigRegistry.h"
 #include <complex>
 #include <sstream>
 #include <iomanip>
@@ -40,31 +40,31 @@ void CenterForm(TForm *Form)
 //Description:  A description of the file type
 //Icon:         Path and name of icon file and the number of icon in the file
 //              Ex. "C:\\WINWORD.EXE,0"
-void AssociateExt(String Ext, String ProgramName, String Ident, String Description, String Icon, bool AllUsers)
+void AssociateExt(std::wstring Ext, std::wstring ProgramName, std::wstring Ident, std::wstring Description, std::wstring Icon, bool AllUsers)
 {
   try
   {
     //Make sure there is a dot before the extention
-    if(Ext[1] != '.')
-      Ext = String('.') + Ext;
+    if(Ext[0] != L'.')
+      Ext = L'.' + Ext;
     //If no program name specified then use the application name
-    if(ProgramName.IsEmpty())
-      ProgramName = Application->ExeName;
+    if(ProgramName.empty())
+      ProgramName = ToWString(Application->ExeName);
     //If no identifier when use the exe name without extention
-    if(Ident.IsEmpty())
-      Ident = Application->ExeName.SubString(1, Application->ExeName.Pos("."));
+    if(Ident.empty())
+      Ident = ToWString(Application->ExeName.SubString(1, Application->ExeName.Pos(".")));
     //If no icon when use the icon from ProgramName
-    if(Icon.IsEmpty())
-      Icon = ProgramName + ",0";
+    if(Icon.empty())
+      Icon = ProgramName + L",0";
     //Change ProgramName to format: "Name.ext" "%1"
-    ProgramName = "\"" + ProgramName + "\" \"%1\"";
+    ProgramName = L"\"" + ProgramName + L"\" \"%1\"";
 
-    DWORD RootKey = reinterpret_cast<DWORD>(AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER);
+    HKEY RootKey = AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER;
 
-    CreateRegKey("Software\\Classes\\" + Ext, "", Ident, RootKey);
-    CreateRegKey("Software\\Classes\\" + Ident, "", Description, RootKey);
-    CreateRegKey("Software\\Classes\\" + Ident + "\\DefaultIcon", "", Icon, RootKey);
-    CreateRegKey("Software\\Classes\\" + Ident + "\\shell\\open\\command", "", ProgramName, RootKey);
+    CreateRegKey(L"Software\\Classes\\" + Ext, L"", Ident, RootKey);
+    CreateRegKey(L"Software\\Classes\\" + Ident, L"", Description, RootKey);
+    CreateRegKey(L"Software\\Classes\\" + Ident + L"\\DefaultIcon", L"", Icon, RootKey);
+    CreateRegKey(L"Software\\Classes\\" + Ident + L"\\shell\\open\\command", L"", ProgramName, RootKey);
 
     //Tell the shell that a file association has been changed
     SHChangeNotify(SHCNE_ASSOCCHANGED, 0, NULL, NULL);
@@ -77,16 +77,13 @@ void AssociateExt(String Ext, String ProgramName, String Ident, String Descripti
 //This function removes an association between a file type and a program
 //Ext is the file type. Ex. ".doc"
 //Ident is the identifier used when the association was made. Ex. "docfile"
-void RemoveAsociation(String Ext, String Ident)
+void RemoveAsociation(const std::wstring &Ext, const std::wstring &Ident)
 {
   //Make sure there is a dot before the extention
-  if(Ext[1] != '.')
-    Ext = String('.') + Ext;
+  if(GetRegValue(Ext[0] != L'.' ? L'.' + Ext : Ext, L"", HKEY_CLASSES_ROOT, L"") == Ident)
+    RemoveRegistryKey(Ext[0] != L'.' ? L'.' + Ext : Ext, HKEY_CLASSES_ROOT);
 
-  if(GetRegStringValue(Ext, "") == Ident)
-    DeleteRegKey(Ext);
-
-  DeleteRegKey(Ident);
+  RemoveRegistryKey(Ident, HKEY_CLASSES_ROOT);
 
   //Tell the shell that a file association has been changed
   SHChangeNotify(SHCNE_ASSOCCHANGED, 0, NULL, NULL);
@@ -95,14 +92,9 @@ void RemoveAsociation(String Ext, String Ident)
 //This function checks if a file type is associated with a program
 //Ext:   The file extention. Ex. ".doc"
 //Ident: The identifier used when the asocation was made. Ex. "docfile"
-bool CheckAssocation(const String &Ext, const String &Ident)
+bool CheckAssocation(const std::wstring &Ext, const std::wstring &Ident)
 {
-  std::auto_ptr<TRegistry> Registry(new TRegistry());
-  Registry->RootKey=HKEY_CLASSES_ROOT;
-  if(Registry->OpenKey(String('\\') + Ext, false))
-    if(Registry->ReadString("") == Ident)
-      return true;
-  return false;
+  return GetRegValue(Ext, L"", HKEY_CLASSES_ROOT, L"") == Ident;
 }
 //---------------------------------------------------------------------------
 String GetErrorMsg(const Func32::EFuncError &Error)

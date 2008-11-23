@@ -219,7 +219,7 @@ object Form4: TForm4
       Hint = 'Select the language to use for the user interface.'
       Style = csDropDownList
       Anchors = [akTop, akRight]
-      ItemHeight = 0
+      ItemHeight = 13
       Sorted = True
       TabOrder = 7
     end

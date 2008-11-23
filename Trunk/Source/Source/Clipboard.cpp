@@ -13,6 +13,7 @@
 #include "Clipboard.h"
 #include "VersionInfo.h"
 #include "ConfigFile.h"
+#include "HandlePng.h"
 //---------------------------------------------------------------------------
 TGraphClipboard GraphClipboard;
 //---------------------------------------------------------------------------
@@ -27,15 +28,19 @@ bool TGraphClipboard::HasData()
   return Clipboard()->HasFormat(ClipboardFormat);
 }
 //---------------------------------------------------------------------------
-void TGraphClipboard::Copy(const TBaseFuncType *Func)
+void TGraphClipboard::Copy(const TConfigFile &ConfigFile)
+{
+  std::wstring Str = ConfigFile.GetAsString();
+  SetClipboardData(ClipboardFormat, Str.c_str(), Str.size()*sizeof(wchar_t));
+}
+//---------------------------------------------------------------------------
+  void TGraphClipboard::Copy(const TBaseFuncType *Func)
 {
   TConfigFile IniFile;
   TData::WriteInfoToIni(IniFile);
   IniFile.Section(L"Data").Write(L"FuncCount", 1);
   Func->WriteToIni(IniFile.Section(L"Func1"));
-
-  std::wstring Str = IniFile.GetAsString();
-  SetClipboardData(ClipboardFormat, Str.c_str(), Str.size());
+  Copy(IniFile);
 }
 //---------------------------------------------------------------------------
 void TGraphClipboard::Copy(const TPointSeries *PointSeries)
@@ -44,9 +49,7 @@ void TGraphClipboard::Copy(const TPointSeries *PointSeries)
   TData::WriteInfoToIni(IniFile);
   IniFile.Section(L"Data").Write(L"PointSeriesCount", 1);
   PointSeries->WriteToIni(IniFile.Section(L"PointSeries1"));
-
-  std::wstring Str = IniFile.GetAsString();
-  SetClipboardData(ClipboardFormat, Str.c_str(), Str.size());
+  Copy(IniFile);
 }
 //---------------------------------------------------------------------------
 void TGraphClipboard::Copy(const TTextLabel *Label)
@@ -55,9 +58,7 @@ void TGraphClipboard::Copy(const TTextLabel *Label)
   TData::WriteInfoToIni(IniFile);
   IniFile.Section(L"Data").Write(L"LabelCount", 1);
   Label->WriteToIni(IniFile.Section(L"Label1"));
-
-  std::wstring Str = IniFile.GetAsString();
-  SetClipboardData(ClipboardFormat, Str.c_str(), Str.size());
+  Copy(IniFile);
 }
 //---------------------------------------------------------------------------
 void TGraphClipboard::Copy(const TRelation *Relation)
@@ -66,9 +67,7 @@ void TGraphClipboard::Copy(const TRelation *Relation)
   TData::WriteInfoToIni(IniFile);
   IniFile.Section(L"Data").Write(L"RelationCount", 1);
   Relation->WriteToIni(IniFile.Section(L"Relation1"));
-
-  std::wstring Str = IniFile.GetAsString();
-  SetClipboardData(ClipboardFormat, Str.c_str(), Str.size());
+  Copy(IniFile);
 }
 //---------------------------------------------------------------------------
 void TGraphClipboard::Paste(TData &Data)
@@ -79,10 +78,10 @@ void TGraphClipboard::Paste(TData &Data)
       return;
 
     int DataSize = GetClipboardDataSize(ClipboardFormat);
-    std::vector<char> Str(DataSize+1);  //It looks like we need a zero termination
+    std::wstring Str(DataSize/sizeof(wchar_t), 0);
     GetClipboardData(ClipboardFormat, &Str[0], DataSize);
     TConfigFile IniFile;
-    IniFile.LoadFromString(String(&Str[0]).c_str());
+    IniFile.LoadFromString(Str);
 
     unsigned ElemNo = Data.ElemCount();
 
@@ -136,9 +135,14 @@ int TGraphClipboard::GetClipboardDataSize(unsigned Format)
   return Size;
 }
 //---------------------------------------------------------------------------
-void TGraphClipboard::CopyPngData(const std::string &Str)
+void TGraphClipboard::CopyPngData(Graphics::TBitmap *Bitmap)
 {
-  SetClipboardData(PngFormat, Str.c_str(), Str.size());
+  std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
+  //Warning: It looks like TStreamAdapter is automatically freed, probably because of reference counting
+  TStreamAdapter *Adapter = new TStreamAdapter(Stream.get(), soReference);
+  Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
+  if(SaveBitmapToPngStream(Bitmap->Handle, *Adapter))
+    SetClipboardData(PngFormat, Stream->Memory, Stream->Size);
 }
 //---------------------------------------------------------------------------
 

@@ -92,11 +92,8 @@ bool TData::LoadFromFile(const std::wstring &FileName, bool ShowErrorMessages)
   return true;
 }
 //---------------------------------------------------------------------------
-bool TData::LoadFromString(const std::wstring &Str)
+bool TData::Load(TConfigFile &IniFile)
 {
-  TConfigFile IniFile;
-  IniFile.LoadFromString(Str);
-
   if(!CheckIniInfo(IniFile))
     return false;
 

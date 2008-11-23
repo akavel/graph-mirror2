@@ -27,7 +27,7 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
   int DeltaWidth = Canvas->TextWidth(CheckBox4->Caption) + 20 - CheckBox4->Width;
   Width = Width + TMaxWidth(Left - Edit1->Left)(DeltaWidth);
 
-  CheckBox1->Checked = CheckAssocation(".grf", "GraphFile");
+  CheckBox1->Checked = CheckAssocation(L".grf", L"GraphFile");
   CheckBox2->Checked = Application->ShowHint;
   CheckBox3->Checked = Property.SavePos;
   CheckBox4->Checked = Property.CheckForUpdate;
@@ -73,10 +73,10 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
   if(CheckBox1->Checked)
   {
     bool AllUsers = GetRegValue(REGISTRY_KEY, L"InstallAllUsers", HKEY_CURRENT_USER, false);
-    AssociateExt(".grf", "", "GraphFile", "Graph system", Application->ExeName + ",1", AllUsers);
+    AssociateExt(L".grf", L"", L"GraphFile", L"Graph system", ToWString(Application->ExeName) + L",1", AllUsers);
   }
   else
-    RemoveAsociation(".grf", "GraphFile");
+    RemoveAsociation(L".grf", L"GraphFile");
   Application->ShowHint = CheckBox2->Checked;
   Property.SavePos = CheckBox3->Checked;
   Property.CheckForUpdate = CheckBox4->Checked;
