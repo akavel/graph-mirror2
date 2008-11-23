@@ -30,7 +30,7 @@ TConfigRegistry::TConfigRegistry(const std::wstring &Key, HKEY RootKey, bool Cre
   if(Create)
     CheckRegistryResult(RegCreateKeyEx(RootKey, GetKey(Key).c_str(), 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &Handle, NULL));
   else
-    CheckRegistryResult(RegOpenKeyEx(RootKey, GetKey(Key).c_str(), 0, KEY_READ, &Handle));
+    RegOpenKeyEx(RootKey, GetKey(Key).c_str(), 0, KEY_READ, &Handle);
 }
 //---------------------------------------------------------------------------
 std::wstring TConfigRegistry::GetKey(const std::wstring &Key)

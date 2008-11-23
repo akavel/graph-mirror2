@@ -88,9 +88,9 @@ std::wstring TConfigFile::TrimString(const std::wstring &Str)
   return std::wstring(Str, First, Last + 1 - First);
 }
 //---------------------------------------------------------------------------
-TConfigFile::TConfigFile(const std::wstring &FileName)
+TConfigFile::TConfigFile(const std::wstring &Str)
 {
-  LoadFromUtf8File(FileName);
+  LoadFromString(Str);
 }
 //---------------------------------------------------------------------------
 bool TConfigFile::LoadFromAnsiFile(const std::wstring &FileName)
