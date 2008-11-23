@@ -18,6 +18,7 @@ class TGraphClipboard
   void SetClipboardData(unsigned Format, const void *Data, unsigned DataSize);
   bool GetClipboardData(unsigned Format, void *Data, unsigned DataSize);
   int GetClipboardDataSize(unsigned Format);
+  void Copy(const TConfigFile &ConfigFile);
 
   public:
   TGraphClipboard();
@@ -27,7 +28,7 @@ class TGraphClipboard
   void Copy(const TRelation *Relation);
   void Paste(TData &Data);
   bool HasData();
-  void CopyPngData(const std::string &Str);
+  void CopyPngData(Graphics::TBitmap *Bitmap);
 };
 
 extern TGraphClipboard GraphClipboard;

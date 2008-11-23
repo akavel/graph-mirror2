@@ -101,11 +101,10 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   SetApplicationExceptionHandler(true);
   InitDebug();
 #endif
-                                                    
+
   Font->Name = "MS Shell Dlg";
   Data.SetAbortUpdateEvent(&Draw.AbortUpdate);
-  Application->Icon->Handle = LoadIcon(MainInstance, L"ICON1");
-//  Application->Icon->LoadFromResourceName((THandle)MainInstance, "ICON1");
+  Icon->LoadFromResourceName((THandle)MainInstance, L"ICON1");
 
   //Set "AllowOLE" to 1 in the Registry to use OLE with instances not started with "-Embedding"
   if(!FindCmdLineSwitch(L"EMBEDDING") && !GetRegValue(REGISTRY_KEY, L"AllowOLE", HKEY_CURRENT_USER, 0))
@@ -2731,10 +2730,11 @@ void TForm1::ActivateOleUserInterface()
 //---------------------------------------------------------------------------
 TSaveError SaveAsPdf(const std::string &FileName, Graphics::TBitmap *Bitmap, const std::string &Title, const std::string &Subject, Printers::TPrinterOrientation Orientation)
 {
-  std::ostringstream Stream;
+  std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
+  //Warning: It looks like TStreamAdapter is automatically freed, probably because of reference counting
+  TStreamAdapter *Adapter = new TStreamAdapter(Stream.get(), soReference);
   Bitmap->PixelFormat = pf8bit;
-  SaveBitmapToPngStream(Bitmap->Handle, Stream);
-  std::string Str = Stream.str();
+  SaveBitmapToPngStream(Bitmap->Handle, *Adapter);
   double Width = Orientation == poPortrait ? a4_width : a4_height;
   double Height = Orientation == poPortrait ? a4_height : a4_width;
 
@@ -2751,7 +2751,7 @@ TSaveError SaveAsPdf(const std::string &FileName, Graphics::TBitmap *Bitmap, con
     p.set_info("Subject", Subject);
     p.begin_page_ext(Width, Height, "");
     int image;
-    p.create_pvf("/pvf/image/Temp.png" , Str.data(), Str.size(), "");
+    p.create_pvf("/pvf/image/Temp.png" , Stream->Memory, Stream->Size, "");
     if((image = p.load_image("auto", "/pvf/image/Temp.png", "")) == -1)
     {
       MessageBox(L"Error: Couldn't read image file.", L"PDF error");
@@ -2876,7 +2876,7 @@ TSaveError TForm1::SaveAsImage(const String &FileName, int ImageFileType, const 
           //Warning: There seems to be a bug in BMGlib that may crash the program if we do not use 8 bit bitmaps.
           //But there is no reason to use a higher color depth anyway.
           Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
-          return SaveBitmapToPNGFile(Bitmap->Handle, FileName.c_str()) == 0 ? seNoError : seFileAccess;
+          return SaveBitmapToPNGFile(Bitmap->Handle, FileName.c_str()) ? seNoError : seFileAccess;
 
         case ifJpeg:
         {
@@ -3040,7 +3040,7 @@ void TForm1::LoadDefault()
 {
   std::wstring Str = GetRegValue(REGISTRY_KEY, L"DefaultAxes", HKEY_CURRENT_USER, L"");
 
-  if(Str.empty() || !Data.LoadFromString(Str))
+  if(Str.empty() || !Data.Load(TConfigFile(Str)))
     Data.LoadDefault();
 
   UndoList.Clear();
@@ -3162,10 +3162,7 @@ void TForm1::CopyAsImageToClipboard()
   Bitmap->Canvas->CopyRect(TRect(0,0,Image1->Width,Image1->Height), Image1->Canvas,Image1->ClientRect);
   Clipboard()->Assign(Bitmap.get());
 
-  std::stringstream Stream;
-  Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
-  if(SaveBitmapToPngStream(Bitmap->Handle, Stream))
-    GraphClipboard.CopyPngData(Stream.str());
+  GraphClipboard.CopyPngData(Bitmap.get());
 
   Clipboard()->Close();
 }

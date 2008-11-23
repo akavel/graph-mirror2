@@ -38,7 +38,7 @@ bool ExecutePythonCommand(const String &Command)
     PyObject *Function = PyObject_GetAttrString(Module, "compile_command");
     if(Function)
     {
-      PyObject *Code = PyObject_CallFunction(Function, "ss", Command.c_str(), "<console>");
+      PyObject *Code = PyObject_CallFunction(Function, "us", Command.c_str(), "<console>");
       if(Code == NULL)
       {
         PyObject *Type, *Value, *Traceback;

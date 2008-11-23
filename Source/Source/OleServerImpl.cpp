@@ -847,9 +847,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     Bitmap->Canvas->CopyRect(TRect(0, 0, ImageWidth, ImageHeight), Form1->Image1->Canvas, Form1->Image1->ClientRect);
     Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
 
-    std::stringstream Stream;
-    if(SaveBitmapToPngStream(Bitmap->Handle, Stream))
-      return LOG_RESULT(pmedium->pstm->Write(Stream.str().c_str(), Stream.str().size(), NULL));
+    return LOG_RESULT(SaveBitmapToPngStream(Bitmap->Handle, pmedium->pstm) ? S_OK : E_FAIL);
   }
 
   return LOG_RESULT(DV_E_FORMATETC);
@@ -969,19 +967,22 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Load(
     return LOG_RESULT(E_FAIL);
 
   std::vector<char> Buffer(10000);
-  std::string Str;
+  RawByteString Str;
   ULONG BytesRead;
   do
   {
     LOG_FUNCTION_CALL(Stream->Read(&Buffer[0], Buffer.size(), &BytesRead));
-    Str += std::string(&Buffer[0], BytesRead);
+    Str += RawByteString(&Buffer[0], BytesRead);
   }
   while(BytesRead == Buffer.size());
 
-  HRESULT Result = Form1->Data.LoadFromString(ToWString(Str)) ? S_OK : E_FAIL;
-
   TConfigFile ConfigFile;
-  ConfigFile.LoadFromString(ToWString(Str));
+  ConfigFile.LoadFromString(ToWString(UTF8ToString(Str)));
+  std::wstring SavedVersion = ConfigFile.Section(L"Graph").Read(L"Version", L"NA");
+  if(SavedVersion < TVersion(L"4.4.0.414"))
+    ConfigFile.LoadFromString(String(Str.c_str()).c_str());
+  HRESULT Result = Form1->Data.Load(ConfigFile) ? S_OK : E_FAIL;
+
   const TConfigFileSection &Section = ConfigFile.Section(L"Image");
   if(Section.KeyExists(L"Width"))
   {
@@ -1018,9 +1019,10 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Save(
   ConfigFile.Section(L"Image").Write(L"Width", GetWidth());
   ConfigFile.Section(L"Image").Write(L"Height", GetHeight());
   Str = ConfigFile.GetAsString();
+  RawByteString Utf8Str = UTF8Encode(ToUString(Str.c_str()));
 
   HRESULT Result = S_OK;
-  if(FAILED(LOG_FUNCTION_CALL(Stream->Write(Str.c_str(), Str.size(), NULL))))
+  if(FAILED(LOG_FUNCTION_CALL(Stream->Write(Utf8Str.c_str(), Utf8Str.Length(), NULL))))
     Result = E_FAIL;
 
   Stream->Release();
