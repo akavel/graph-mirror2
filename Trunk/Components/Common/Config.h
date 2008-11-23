@@ -2,6 +2,7 @@
 #ifndef ConfigH
 #define ConfigH
 //---------------------------------------------------------------------------
+#define STRICT
 #ifdef _DEBUG
   #define BOOST_ENABLE_ASSERT_HANDLER
 

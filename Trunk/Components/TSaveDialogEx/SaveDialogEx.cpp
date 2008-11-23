@@ -63,7 +63,7 @@ String __fastcall TSaveDialogEx::GetFileName()
     int Length = SendMessage(GetParent(Handle), CDM_GETSPEC, 0, 0);
     if(Length == 0)
       return "";
-    std::vector<char> FileName(Length);
+    std::wstring FileName(Length, 0);
     SendMessage(GetParent(Handle), CDM_GETSPEC, Length, reinterpret_cast<DWORD>(&FileName[0]));
     return &FileName[0];
   }

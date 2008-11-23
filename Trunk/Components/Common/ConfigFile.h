@@ -123,7 +123,7 @@ class TConfigFile
 
 public:
   TConfigFile() {}
-  TConfigFile(const std::wstring &FileName);
+  TConfigFile(const std::wstring &Str);
   bool LoadFromAnsiFile(const std::wstring &FileName);
   bool LoadFromUtf8File(const std::wstring &FileName);
   bool SaveToUtf8File(const std::wstring &FileName) const;
