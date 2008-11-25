@@ -1729,22 +1729,15 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
   ActionImageOptions.reset(new TImageOptions(Image1->Width, Image1->Height));
   ActionImageOptions->LoadSettings();
   if(SaveDialogEx1->Execute())
-  {
-    String FileName = SaveDialogEx1->FileName; //SaveAsImage() calls ProcessMessages() and may change SaveDialogEx1
-    switch(SaveAsImage(FileName, SaveDialogEx1->FilterIndex, *ActionImageOptions))
+    try
     {
-      case seFileAccess:
-        MessageBox(LoadRes(RES_FILE_ACCESS, FileName), LoadRes(RES_ERROR), MB_OK | MB_ICONSTOP);
-        break;
-
-      case seOutOfResources:
-        MessageBox(LoadRes(RES_OUT_OF_RESOURCES), LoadRes(RES_ERROR), MB_OK | MB_ICONSTOP);
-        break;
-
-      case sePdfError:
-        break;
+      String FileName = SaveDialogEx1->FileName; //SaveAsImage() calls ProcessMessages() and may change SaveDialogEx1
+      SaveAsImage(FileName, SaveDialogEx1->FilterIndex, *ActionImageOptions);
     }
-  }
+    catch(Exception &E)
+    {
+      MessageBox(E.Message, LoadRes(RES_ERROR), MB_OK | MB_ICONSTOP);
+    }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::PrintActionExecute(TObject *Sender)
@@ -2728,13 +2721,16 @@ void TForm1::ActivateOleUserInterface()
   Recent1->Enabled = false;
 }
 //---------------------------------------------------------------------------
-TSaveError SaveAsPdf(const std::string &FileName, Graphics::TBitmap *Bitmap, const std::string &Title, const std::string &Subject, Printers::TPrinterOrientation Orientation)
+void SaveAsPdf(const std::string &FileName, Graphics::TBitmap *Bitmap, const std::string &Title, const std::string &Subject, Printers::TPrinterOrientation Orientation)
 {
+  if(!CheckGdiPlus())
+    throw ESaveError("Failed to load GdiPlus.dll");
   std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
   //Warning: It looks like TStreamAdapter is automatically freed, probably because of reference counting
   TStreamAdapter *Adapter = new TStreamAdapter(Stream.get(), soReference);
   Bitmap->PixelFormat = pf8bit;
-  SaveBitmapToPngStream(Bitmap->Handle, *Adapter);
+  if(!SaveBitmapToPngStream(Bitmap->Handle, *Adapter))
+    throw ESaveError("Error saving PNG file.");
   double Width = Orientation == poPortrait ? a4_width : a4_height;
   double Height = Orientation == poPortrait ? a4_height : a4_width;
 
@@ -2742,7 +2738,7 @@ TSaveError SaveAsPdf(const std::string &FileName, Graphics::TBitmap *Bitmap, con
   {
     PDFlib p;
     if (p.begin_document(FileName, "") == -1)
-      return seFileAccess;
+      throw ESaveError(LoadRes(RES_FILE_ACCESS, ToUString(FileName)));
 
     std::wstring Creator = NAME " " + TVersionInfo().StringValue(L"ProductVersion");
     p.set_info("Creator", ::ToString(Creator));
@@ -2753,30 +2749,21 @@ TSaveError SaveAsPdf(const std::string &FileName, Graphics::TBitmap *Bitmap, con
     int image;
     p.create_pvf("/pvf/image/Temp.png" , Stream->Memory, Stream->Size, "");
     if((image = p.load_image("auto", "/pvf/image/Temp.png", "")) == -1)
-    {
-      MessageBox(L"Error: Couldn't read image file.", L"PDF error");
-      return sePdfError;
-    }
+      throw ESaveError(L"Error: Couldn't read logical image file when creating PDF file.");
 
     p.fit_image(image, Width*0.05, Height*0.05, "boxsize {" + ToString(Width*0.9) + " " + ToString(Height*0.9) + "} position 50 fitmethod meet");
     p.close_image(image);
     p.end_page_ext("");
     p.end_document("");
-    return seNoError;
-  }
-  catch(EDllLoadError&)
-  {
-    return seDllError;
   }
   catch(PDFlib::Exception &ex)
   {
-    MessageBox(L"PDFlib exception: [" + ToWString(ex.get_errnum()) + L"] " +
-      ToWString(ex.get_apiname()) + L": " + ToWString(ex.get_errmsg()), L"PDFlib exception");
-    return sePdfError;
+    throw ESaveError(L"PDFlib exception: [" + String(ex.get_errnum()) + L"] " +
+      ToUString(ex.get_apiname()) + L": " + ToUString(ex.get_errmsg()));
   }
 }
 //---------------------------------------------------------------------------
-TSaveError TForm1::SaveAsImage(const String &FileName, const TImageOptions &ImageOptions)
+void TForm1::SaveAsImage(const String &FileName, const TImageOptions &ImageOptions)
 {
   int ImageFileType;
   String FileExt = ExtractFileExt(FileName);
@@ -2793,12 +2780,12 @@ TSaveError TForm1::SaveAsImage(const String &FileName, const TImageOptions &Imag
   else if(FileExt.CompareIC(".svg") == 0)
     ImageFileType = ifSvg;
   else
-    return seUnknownFileType;
+    throw ESaveError("Unknown file type");
 
   return SaveAsImage(FileName, ImageFileType, ImageOptions);
 }
 //---------------------------------------------------------------------------
-TSaveError TForm1::SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions &ImageOptions)
+void TForm1::SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions &ImageOptions)
 {
   try
   {
@@ -2875,8 +2862,11 @@ TSaveError TForm1::SaveAsImage(const String &FileName, int ImageFileType, const 
         case ifPng:
           //Warning: There seems to be a bug in BMGlib that may crash the program if we do not use 8 bit bitmaps.
           //But there is no reason to use a higher color depth anyway.
-          Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
-          return SaveBitmapToPNGFile(Bitmap->Handle, FileName.c_str()) ? seNoError : seFileAccess;
+//          Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
+          if(!CheckGdiPlus())
+            throw ESaveError("Failed to load GDIplus.dll");
+          if(!SaveBitmapToPNGFile(Bitmap->Handle, FileName.c_str()))
+            throw ESaveError(LoadRes(RES_FILE_ACCESS, FileName));
 
         case ifJpeg:
         {
@@ -2890,19 +2880,14 @@ TSaveError TForm1::SaveAsImage(const String &FileName, int ImageFileType, const 
         }
 
         case ifPdf:
-          return SaveAsPdf(::ToString(FileName), Bitmap.get(), ::ToString(Data.GetFileName()), ::ToString(Data.Axes.Title), ImageOptions.Pdf.Orientation);
+          SaveAsPdf(::ToString(FileName), Bitmap.get(), ::ToString(Data.GetFileName()), ::ToString(Data.Axes.Title), ImageOptions.Pdf.Orientation);
       }
     }
   }
   catch(EOutOfResources &E)
   {
-    return seOutOfResources;
+    throw ESaveError(LoadStr(RES_OUT_OF_RESOURCES));
   }
-  catch(...)
-  {
-    return seFileAccess;
-  }
-  return seNoError;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,

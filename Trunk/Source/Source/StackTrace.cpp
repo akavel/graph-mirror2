@@ -46,8 +46,7 @@ static TGetExceptionObject OldExceptObjProc = NULL;
 //Called when delay loading a DLL failes
 FARPROC WINAPI DllLoadFailure(dliNotification dliNotify, DelayLoadInfo *pdli)
 {
-  MessageBox("Error loading " + String(pdli->szDll), "Error loading DLL", MB_ICONSTOP);
-  throw EDllLoadError("Error loading " + String(pdli->szDll));
+  throw EDllLoadError("Failed to load " + String(pdli->szDll));
 }
 //---------------------------------------------------------------------------
 /** Write stack trace from StackInfoList to Stream.
@@ -380,8 +379,8 @@ void SetApplicationExceptionHandler(bool ALogAllExceptions)
 //  RaiseExceptionProc = MyRaiseException;
 //  OldExceptObjProc = reinterpret_cast<TGetExceptionObject>(ExceptObjProc);
 //  ExceptObjProc = MyGetExceptionObject;
-//  LogAllExceptions = ALogAllExceptions;
-//  __pfnDliFailureHook = DllLoadFailure;
+  LogAllExceptions = ALogAllExceptions;
+  __pfnDliFailureHook = DllLoadFailure;
 }
 //---------------------------------------------------------------------------
 #ifdef _STLP_DEBUG

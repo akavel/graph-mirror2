@@ -55,7 +55,11 @@
 #include <boost/scoped_ptr.hpp>
 //---------------------------------------------------------------------------
 enum TCursorState {csIdle, csAddLabel, csMoveLabel, csMoveLegend, csZoomWindow, csMove, csMoving};
-enum TSaveError {seNoError, seFileAccess, seOutOfResources, sePdfError, seDllError, seUnknownFileType};
+class ESaveError : public Exception
+{
+public:
+  ESaveError(const String &Str) : Exception(Str) {}
+};
 
 enum TIconIndex
 {
@@ -566,8 +570,8 @@ public:		// User declarations
   void __fastcall BeginUpdate();
   void __fastcall EndUpdate();
 
-  TSaveError SaveAsImage(const String &FileName, const TImageOptions &ImageOptions);
-  TSaveError SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions &ImageOptions);
+  void SaveAsImage(const String &FileName, const TImageOptions &ImageOptions);
+  void SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions &ImageOptions);
   bool LoadFromFile(const String &FileName, bool AddToRecent = true, bool ShowErrorMessages = true);
   void LoadDefault();
 };

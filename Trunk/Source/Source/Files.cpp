@@ -20,7 +20,8 @@
 //---------------------------------------------------------------------------
 bool TData::LoadFromFile(const std::wstring &FileName, bool ShowErrorMessages)
 {
-  TConfigFile IniFile(FileName);
+  TConfigFile IniFile;
+  IniFile.LoadFromUtf8File(FileName);
 
   if(!CheckIniInfo(IniFile, ShowErrorMessages))
     return false;
