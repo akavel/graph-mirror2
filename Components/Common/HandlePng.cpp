@@ -46,8 +46,23 @@ int GetEncoderClsid(const WCHAR* format, CLSID* pClsid)
    return -1;  // Failure
 }
 //---------------------------------------------------------------------------
+bool CheckGdiPlus()
+{
+  static int Result = -1;
+  if(Result == -1)
+  {
+    HINSTANCE hGDIPlus = LoadLibrary(L"Gdiplus.dll");
+    Result = hGDIPlus != NULL;
+    FreeLibrary(hGDIPlus);
+  }
+  return Result;
+}
+//---------------------------------------------------------------------------
 bool SaveBitmapToPNGFile(HBITMAP HBitmap, const wchar_t *FileName)
 {
+  if(!CheckGdiPlus())
+    return false;
+
   // Initialize GDI+.
   Gdiplus::GdiplusStartupInput gdiplusStartupInput;
   ULONG_PTR gdiplusToken;
@@ -65,6 +80,9 @@ bool SaveBitmapToPNGFile(HBITMAP HBitmap, const wchar_t *FileName)
 //---------------------------------------------------------------------------
 bool SaveBitmapToPngStream(HBITMAP hBitmap, IStream *Stream)
 {
+  if(!CheckGdiPlus())
+    return false;
+
   // Initialize GDI+.
   Gdiplus::GdiplusStartupInput gdiplusStartupInput;
   ULONG_PTR gdiplusToken;
