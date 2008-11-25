@@ -11,6 +11,7 @@
 #define HandlePngH
 #include <iosfwd>
 //---------------------------------------------------------------------------
+bool CheckGdiPlus();
 bool SaveBitmapToPNGFile(HBITMAP Bitmap, const wchar_t *FileName);
 bool SaveBitmapToPngStream(HBITMAP hBitmap, IStream *Stream);
 #endif

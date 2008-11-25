@@ -71,7 +71,7 @@ String __fastcall TSaveDialogEx::GetFileName()
 //---------------------------------------------------------------------------
 void __fastcall TSaveDialogEx::DoTypeChange()
 {
-  if(FAutoExt)
+  if(FAutoExt && !FileName.IsEmpty())
   {
     TTokenizer Tokenizer(Filter.c_str(), L'|');
     Tokenizer.Ignore(FilterIndex*2-1);
