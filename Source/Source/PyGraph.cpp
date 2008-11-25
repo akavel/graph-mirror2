@@ -248,15 +248,14 @@ static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args)
 {
   const char *FileName = PyString_AsString(Args);
   TImageOptions ImageOptions(Form1->Image1->Width, Form1->Image1->Height);
-  switch(Form1->SaveAsImage(FileName, ImageOptions))
+  try
   {
-    case seFileAccess:
-      PyErr_SetString(PyEGraphError, AnsiString(LoadRes(RES_FILE_ACCESS, FileName)).c_str());
-      return NULL;
-
-    case seOutOfResources:
-      PyErr_SetString(PyEGraphError, AnsiString(LoadRes(RES_OUT_OF_RESOURCES)).c_str());
-      return NULL;
+    Form1->SaveAsImage(FileName, ImageOptions);
+  }
+  catch(ESaveError &E)
+  {
+    PyErr_SetString(PyEGraphError, ToString(E.Message).c_str());
+    return NULL;
   }
   Py_RETURN_NONE;
 }

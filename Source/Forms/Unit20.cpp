@@ -241,6 +241,8 @@ void TForm20::SaveFrame(const String &FileName, int FilterIndex)
     case 2: //png
      Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
      SaveBitmapToPNGFile(Bitmap->Handle, FileName.c_str());
+     if(!CheckGdiPlus())
+       MessageBox("Failed to load GDIPLUS.DLL", LoadRes(RES_ERROR), MB_ICONSTOP);
      break;
 
     case 3: //jpeg
