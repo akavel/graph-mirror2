@@ -141,6 +141,8 @@ Plugins:
 - Make the number of iterations optional when integrating (both for the integrate function and for area calculation)
 - Add the function chi-square, x²(x,f)
 - Find distance from point to graph
+- Plot triangles created from side lengths and/or angles
+- Copy only part of the image.
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>
