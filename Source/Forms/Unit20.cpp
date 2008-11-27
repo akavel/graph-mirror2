@@ -12,8 +12,8 @@
 #include "Unit19.h"
 #include "Unit20.h"
 #include "vfw.h"
-#include "HandlePng.h"                     //Used to save png files
 #include <Jpeg.hpp>
+#include <PngImage.hpp>
 #include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
 #pragma link "MediaPlayerEx"
@@ -239,12 +239,13 @@ void TForm20::SaveFrame(const String &FileName, int FilterIndex)
       break;
 
     case 2: //png
+    {
      Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
-     SaveBitmapToPNGFile(Bitmap->Handle, FileName.c_str());
-     if(!CheckGdiPlus())
-       MessageBox("Failed to load GDIPLUS.DLL", LoadRes(RES_ERROR), MB_ICONSTOP);
+     std::auto_ptr<TPngImage> PngImage(new TPngImage);
+     PngImage->Assign(Bitmap.get());
+     PngImage->SaveToFile(FileName);
      break;
-
+    }
     case 3: //jpeg
     {
       std::auto_ptr<TJPEGImage> Image(new TJPEGImage);

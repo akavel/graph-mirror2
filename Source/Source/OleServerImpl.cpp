@@ -10,13 +10,12 @@
 // OLESERVERIMPL : Implementation of TOleServerImpl (CoClass: OleServer, Interface: IOleServer)
 #include "Graph.h"
 #pragma hdrstop
-
+#include <PngImage.hpp>
 #include <atl\atlvcl.h> //Needed by OleServerImpl.h
 #include "OleServerImpl.h"
 #include "VersionInfo.h"
 #include <fstream>
 #include <iomanip>
-#include "HandlePng.h"
 #include "ConfigFile.h"
 #include "Debug.h"
 #include "Unit1.h"
@@ -841,13 +840,12 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
   {
     LOG_DATA(String("Width=") + ImageWidth + ", Height=" + ImageHeight);
     Form1->Draw.Wait();
-    std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-    Bitmap->Width = ImageWidth;
-    Bitmap->Height = ImageHeight;
-    Bitmap->Canvas->CopyRect(TRect(0, 0, ImageWidth, ImageHeight), Form1->Image1->Canvas, Form1->Image1->ClientRect);
-    Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
-
-    return LOG_RESULT(SaveBitmapToPngStream(Bitmap->Handle, pmedium->pstm) ? S_OK : E_FAIL);
+    std::auto_ptr<TPngImage> Image(new TPngImage(COLOR_RGB, 8, ImageWidth, ImageHeight));
+    Image->Canvas->CopyRect(TRect(0, 0, ImageWidth, ImageHeight), Form1->Image1->Canvas, Form1->Image1->ClientRect);
+//    Image->PixelFormat = pf8bit; //Change bitmap to 8 bit
+    std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
+    Image->SaveToStream(Stream.get());
+    return LOG_RESULT(pmedium->pstm->Write(Stream->Memory, Stream->Size, NULL));
   }
 
   return LOG_RESULT(DV_E_FORMATETC);

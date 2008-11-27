@@ -14,7 +14,6 @@
 #include "VersionInfo.h"
 #include "ConfigFile.h"
 #include "OleServer.h"
-#include "HandlePng.h"
 #include "Encode.h"
 #include "ConfigRegistry.h"
 //---------------------------------------------------------------------------

@@ -59,7 +59,6 @@
 #include "ICompCommon.h"
 #include "EmfParser.h"
 #include "SvgWriter.h"
-#include "HandlePng.h"
 //---------------------------------------------------------------------------
 #pragma link "TRecent"
 #pragma link "Cross"
@@ -2723,14 +2722,11 @@ void TForm1::ActivateOleUserInterface()
 //---------------------------------------------------------------------------
 void SaveAsPdf(const std::string &FileName, Graphics::TBitmap *Bitmap, const std::string &Title, const std::string &Subject, Printers::TPrinterOrientation Orientation)
 {
-  if(!CheckGdiPlus())
-    throw ESaveError("Failed to load GdiPlus.dll");
   std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
-  //Warning: It looks like TStreamAdapter is automatically freed, probably because of reference counting
-  TStreamAdapter *Adapter = new TStreamAdapter(Stream.get(), soReference);
   Bitmap->PixelFormat = pf8bit;
-  if(!SaveBitmapToPngStream(Bitmap->Handle, *Adapter))
-    throw ESaveError("Error saving PNG file.");
+  std::auto_ptr<TPngImage> PngImage(new TPngImage);
+  PngImage->Assign(Bitmap);
+  PngImage->SaveToStream(Stream.get());
   double Width = Orientation == poPortrait ? a4_width : a4_height;
   double Height = Orientation == poPortrait ? a4_height : a4_width;
 
@@ -2860,14 +2856,13 @@ void TForm1::SaveAsImage(const String &FileName, int ImageFileType, const TImage
           break;
 
         case ifPng:
-          //Warning: There seems to be a bug in BMGlib that may crash the program if we do not use 8 bit bitmaps.
-          //But there is no reason to use a higher color depth anyway.
-//          Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
-          if(!CheckGdiPlus())
-            throw ESaveError("Failed to load GDIplus.dll");
-          if(!SaveBitmapToPNGFile(Bitmap->Handle, FileName.c_str()))
-            throw ESaveError(LoadRes(RES_FILE_ACCESS, FileName));
-
+        {
+          Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit to keep file size down
+          std::auto_ptr<TPngImage> PngImage(new TPngImage);
+          PngImage->Assign(Bitmap.get());
+          PngImage->SaveToFile(FileName);
+          break;
+        }
         case ifJpeg:
         {
           std::auto_ptr<TJPEGImage> Image(new TJPEGImage);

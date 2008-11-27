@@ -9,11 +9,11 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
-#include "Clipbrd.hpp"
+#include <PngImage.hpp>
+#include <Clipbrd.hpp>
 #include "Clipboard.h"
 #include "VersionInfo.h"
 #include "ConfigFile.h"
-#include "HandlePng.h"
 //---------------------------------------------------------------------------
 TGraphClipboard GraphClipboard;
 //---------------------------------------------------------------------------
@@ -138,11 +138,11 @@ int TGraphClipboard::GetClipboardDataSize(unsigned Format)
 void TGraphClipboard::CopyPngData(Graphics::TBitmap *Bitmap)
 {
   std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
-  //Warning: It looks like TStreamAdapter is automatically freed, probably because of reference counting
-  TStreamAdapter *Adapter = new TStreamAdapter(Stream.get(), soReference);
   Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit
-  if(SaveBitmapToPngStream(Bitmap->Handle, *Adapter))
-    SetClipboardData(PngFormat, Stream->Memory, Stream->Size);
+  std::auto_ptr<TPngImage> PngImage(new TPngImage);
+  PngImage->Assign(Bitmap);
+  PngImage->SaveToStream(Stream.get());
+  SetClipboardData(PngFormat, Stream->Memory, Stream->Size);
 }
 //---------------------------------------------------------------------------
 
