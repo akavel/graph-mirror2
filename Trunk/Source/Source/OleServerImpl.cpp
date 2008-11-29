@@ -842,7 +842,6 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     Form1->Draw.Wait();
     std::auto_ptr<TPngImage> Image(new TPngImage(COLOR_RGB, 8, ImageWidth, ImageHeight));
     Image->Canvas->CopyRect(TRect(0, 0, ImageWidth, ImageHeight), Form1->Image1->Canvas, Form1->Image1->ClientRect);
-//    Image->PixelFormat = pf8bit; //Change bitmap to 8 bit
     std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
     Image->SaveToStream(Stream.get());
     return LOG_RESULT(pmedium->pstm->Write(Stream->Memory, Stream->Size, NULL));
