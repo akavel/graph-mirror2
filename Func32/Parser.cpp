@@ -409,7 +409,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
       if(std::isalpha(*Info.stop))
       {
         const wchar_t *Ch;
-        for(Ch = Info.stop; std::isalnum(*Ch); ++Ch);
+        for(Ch = Info.stop; std::isalnum(*Ch) || *Ch == L'_'; ++Ch);
         throw EParseError(ecUnknownVar, Info.stop - Begin, std::wstring(Info.stop, Ch));
       }
       if(*Info.stop == ',')

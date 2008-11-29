@@ -130,7 +130,7 @@ const wchar_t* FunctionName(TIdent Ident)
 const wchar_t* FunctionName(const TElem &Elem)
 {
   if(Elem.Ident == CodeCustom)
-    return Elem.Text;
+    return Elem.Text.c_str();
   return FunctionName(Elem.Ident);
 }
 
