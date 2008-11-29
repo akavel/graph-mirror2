@@ -153,10 +153,10 @@ struct TElem
   TIdent Ident;
   unsigned Arguments;
   boost::shared_ptr<TFuncData> FuncData;
+  std::wstring Text;
   union
   {
     long double Number; //A value if Ident is CodeNumber
-    wchar_t Text[8];
     TCompareMethod Compare[2];
     struct
     {
@@ -171,15 +171,11 @@ struct TElem
   TElem(TIdent AIdent, long double AVal) : Ident(AIdent), Number(AVal) {}
   TElem(TIdent AIdent, unsigned AArguments, int) : Ident(AIdent), Arguments(AArguments) {}
   TElem(long double AVal) : Ident(CodeNumber), Number(AVal) {}
-  TElem(TIdent AIdent, const wchar_t *Str, unsigned Args=0, const boost::shared_ptr<TFuncData> &AFuncData = boost::shared_ptr<TFuncData>())
-    : Ident(AIdent), Arguments(Args), FuncData(AFuncData)
-  {wcsncpy(Text, Str, sizeof(Text)); Text[sizeof(Text)-1] = 0;}
   TElem(TIdent AIdent, const std::wstring &Str, unsigned Args=0, const boost::shared_ptr<TFuncData> &AFuncData = boost::shared_ptr<TFuncData>())
-    : Ident(AIdent), Arguments(Args), FuncData(AFuncData)
-  {wcsncpy(Text, Str.c_str(), sizeof(Text)); Text[sizeof(Text)-1] = 0;}
+    : Ident(AIdent), Arguments(Args), FuncData(AFuncData), Text(Str) {}
   TElem(TCompareMethod Compare1) : Ident(CodeCompare1), Arguments(0) {Compare[0] = Compare1;}
   TElem(TCompareMethod Compare1, TCompareMethod Compare2) : Ident(CodeCompare2), Arguments(0) {Compare[0] = Compare1; Compare[1] = Compare2;}
-  bool operator ==(const TElem &E) const {return Ident==E.Ident && (Ident==CodeNumber ? Number==E.Number : (Ident==CodeCustom ? !_wcsicmp(Text, E.Text) : Arguments==E.Arguments));}
+  bool operator ==(const TElem &E) const {return Ident==E.Ident && (Ident==CodeNumber ? Number==E.Number : (Ident==CodeCustom ? Text == E.Text : Arguments==E.Arguments));}
   bool operator !=(const TElem &E) const {return !(*this == E);}
 };
 //---------------------------------------------------------------------------

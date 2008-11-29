@@ -620,7 +620,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       }
 
       ErrorCode = ecSymbolNotFound;
-      DynData.ErrorStr = Elem.Text;
+      DynData.ErrorStr = Elem.Text.c_str();
       return 0;
     }
 
