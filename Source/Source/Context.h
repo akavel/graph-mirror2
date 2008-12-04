@@ -28,7 +28,7 @@ class TContext
   TContext& operator=(const TContext&); //Not implemented
   void DrawPolyline(const std::vector<TPoint> &Points);
   static void Clip(TPoint &P1, const TPoint &P2, TOutCode OutCode, const TRect &Rect);
-  static TPoint Crop(TOutCode OutCode1, TOutCode OutCode2, const TRect &Rect);
+  static TPoint Crop(TOutCode OutCode, const TRect &Rect);
   static TOutCode CompOutCode(const TPoint &P, const TRect &Rect);
   static void ClipToRect(TClipCallback ClipCallback, const TPoint *Points, unsigned Size, const TRect &Rect, bool DoCrop);
 

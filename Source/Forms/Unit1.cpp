@@ -2115,6 +2115,7 @@ void __fastcall TForm1::ZoomStandardActionExecute(TObject *Sender)
   Data.Axes.xAxis = xAxis;
   Data.Axes.yAxis = yAxis;
 
+  Data.Axes.ZoomSquare = ConfigFile.Section(L"Axes").Read(L"ZoomSquare", false);
   if(Data.Axes.ZoomSquare)
     ZoomWindow(Data.Axes.xAxis.Min, Data.Axes.xAxis.Max, Data.Axes.yAxis.Min, Data.Axes.yAxis.Max, false, false);
 
