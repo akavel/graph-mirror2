@@ -122,10 +122,11 @@ void TContext::ClipToRect(TClipCallback ClipCallback, const TPoint *Points, unsi
     //Search for line that goes inside Rect (Loop while line is only outside)
     while((OutCode1 & OutCode2))
     {
+      //Check if line is crossing Rect
       if(DoCrop && OutCode1 != OutCode2)
       {
-        TPoint Temp = Crop(OutCode1, OutCode2, Rect);
-        ClipCallback(&Temp, 1);
+        TPoint Temp[2] = {Crop(OutCode1, Rect), Crop(OutCode2, Rect)};
+        ClipCallback(Temp, 2);
       }
 
       if(++P2 == End)
@@ -163,11 +164,12 @@ void TContext::ClipToRect(TClipCallback ClipCallback, const TPoint *Points, unsi
   }
 }
 //---------------------------------------------------------------------------
-TPoint TContext::Crop(TOutCode OutCode1, TOutCode OutCode2, const TRect &Rect)
+//Move a point with OutCode, which is outside, inside Rect
+TPoint TContext::Crop(TOutCode OutCode, const TRect &Rect)
 {
   return Point(
-    (OutCode1 | OutCode2) & ocLeft ? Rect.Left : Rect.Right,
-    (OutCode1 | OutCode2) & ocTop  ? Rect.Top  : Rect.Bottom
+    OutCode & ocLeft ? Rect.Left : Rect.Right,
+    OutCode & ocTop  ? Rect.Top  : Rect.Bottom
   );
 }
 //---------------------------------------------------------------------------

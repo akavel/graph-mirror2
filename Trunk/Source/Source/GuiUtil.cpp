@@ -429,17 +429,4 @@ namespace Menus
   }
 }
 //---------------------------------------------------------------------------
-//Workaround for bug in C++ Builder 2009 where TPen::SetHandle() is broken
-namespace Graphics
-{
-  void __fastcall TPen::SetHandle(HPEN Value)
-  {
-    TPenData PenData = {
-      Value,
-      clBlack,
-      1,
-      psSolid};
-    SetData(PenData);
-  }
-}
 
