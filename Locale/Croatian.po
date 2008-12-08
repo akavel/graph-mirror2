@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.2\n"
 "POT-Creation-Date: 2008-09-05 19:40\n"
-"PO-Revision-Date: 2008-11-18 00:21+0100\n"
+"PO-Revision-Date: 2008-12-08 09:44+0100\n"
 "Last-Translator: Hasan Osmanagić <hasan.osmanagic@public.carnet.hr>\n"
 "Language-Team:  <hasan.osmanagic@public.srce.hr>\n"
 "MIME-Version: 1.0\n"
@@ -389,7 +389,7 @@ msgstr "Izvoz u datoteku"
 
 #. Form1..PopupMenu1..Tree_Export("Export to file...")..Hint
 msgid "Export the selected point series to a file."
-msgstr "Izvoz selektiranog skup vrijednosti u datoteku"
+msgstr "Izvoz selektirane serije vrijednosti u datoteku."
 
 #. Form1..ActionManager..NewAction("New")..Caption
 msgid "New"
@@ -483,7 +483,7 @@ msgstr "Odreži"
 
 #. Form1..ActionManager..CutAction("Cut")..Hint
 msgid "Cut the selected function or point series to the clipboard."
-msgstr "Uklanja selektiranu funkciju ili skup podataka (u međuspremnik)."
+msgstr "Uklanja selektiranu funkciju ili seriju podataka (u međuspremnik)."
 
 #. Form1..ActionManager..CopyAction("Copy")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Caption
@@ -495,7 +495,7 @@ msgstr "Kopiraj"
 
 #. Form1..ActionManager..CopyAction("Copy")..Hint
 msgid "Copy the selected function or point series to the clipboard."
-msgstr "Kopira selektiranu funkciju ili skup podataka u međuspremnik."
+msgstr "Kopira selektiranu funkciju ili seriju podataka u međuspremnik."
 
 #. Form1..ActionManager..PasteAction("Paste")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")..Caption
@@ -506,7 +506,7 @@ msgstr "Zalijepi"
 
 #. Form1..ActionManager..PasteAction("Paste")....Hint
 msgid "Paste a function or point series from the clipboard into the coordinate system."
-msgstr "Lijepi selektiranu funkciju ili skup podataka iz međuspremnika ugraf."
+msgstr "Lijepi selektiranu funkciju ili seriju podataka iz međuspremnika u graf."
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Caption
 msgid "Copy image"
@@ -537,19 +537,19 @@ msgstr "Uređivanje raznih mogućnosti izgleda i značajki programa"
 
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Caption
 msgid "Insert function..."
-msgstr "Umetni funkciju..."
+msgstr "Unos funkcije..."
 
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Hint
 msgid "Insert a new function."
-msgstr "Umetanje nove funkcije"
+msgstr "Unos nove funkcije"
 
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Caption
 msgid "Insert tangent/normal..."
-msgstr "Umetni tangentu ili normalu..."
+msgstr "Unos tangente ili normale..."
 
 #. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Hint
 msgid "Insert a tangent or normal for the selected function."
-msgstr "Umetanje tangente ili normale na odabranu funkciju"
+msgstr "Unos tangente ili normale na odabranu funkciju"
 
 #. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
 msgid "Insert shading..."
@@ -561,27 +561,27 @@ msgstr "Dodavanje šrafure za odabranu funkciju"
 
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Caption
 msgid "Insert point series..."
-msgstr "Unesi točke..."
+msgstr "Unos serije točaka..."
 
 #. Form1..ActionManager..InsertPointsAction("Insert point series...")..Hint
 msgid "Insert a point series."
-msgstr "Unašanje skupa  točaka"
+msgstr "Unos serije  točaka"
 
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Caption
 msgid "Insert trendline..."
-msgstr "Umetni liniju trenda..."
+msgstr "Unos linije trenda..."
 
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Hint
 msgid "Insert a curve of best fit for the selected point series."
-msgstr "Umetanje krivulje koja najbolje odgovara datom skupu podataka"
+msgstr "Unos krivulje koja najbolje odgovara odabranoj seriji podataka."
 
 #. Form1..ActionManager..EditAction("Edit...")..Caption
 msgid "Edit..."
-msgstr "Uredi..."
+msgstr "Uređivanje..."
 
 #. Form1..ActionManager..EditAction("Edit...")..Hint
 msgid "Edit the selected element: Function, tangent, point series, etc."
-msgstr "Uređivanje selektiranih elemenata: Funkcije, tangente, skupa  podataka i dr."
+msgstr "Uređivanje selektiranih elemenata: Funkcije, tangente, serije podataka i dr."
 
 #. Form1..ActionManager..DeleteAction("Delete")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Caption
@@ -591,15 +591,15 @@ msgstr "Obriši"
 
 #. Form1..ActionManager..DeleteAction("Delete")..Hint
 msgid "Delete the selected function, tangent or point series."
-msgstr "Brisanje selektiranih elemente funkcije ili skupa podataka"
+msgstr "Brisanje selektiranih elemenata funkcije ili serije podataka"
 
 #. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Caption
 msgid "Insert f'(x)..."
-msgstr "Umetni derivaciju f'(x)..."
+msgstr "Unos derivacije f'(x)..."
 
 #. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Hint
 msgid "Insert the first derivative of the selected function."
-msgstr "Umetanje prve derivacije selektirane funkcije."
+msgstr "Unos prve derivacije selektirane funkcije."
 
 #. Form1..ActionManager..ZoomInAction("In")..Caption
 msgid "In"
@@ -805,11 +805,11 @@ msgstr "Prikaz često postavljanih pitanja i odgovora."
 
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Caption
 msgid "Insert label..."
-msgstr "Umetni tekstni okvir..."
+msgstr "Unos teksta..."
 
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
 msgid "Insert a text label."
-msgstr "Umetni tekstni okvir..."
+msgstr "Unos teksta."
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -871,11 +871,11 @@ msgstr "Smanjivanje samo y-os"
 
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Caption
 msgid "Insert relation..."
-msgstr "Umetni jednadžbu..."
+msgstr "Unos relacije..."
 
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Hint
 msgid "Insert a new equation or inequality."
-msgstr "Umetanje nove jednadžbe ili nejednadžbe."
+msgstr "Unos nove jednadžbe ili nejednadžbe."
 
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Caption
 msgid "Custom functions..."
@@ -903,11 +903,11 @@ msgstr "Uvoz Graf datoteke u ovaj graf."
 
 #. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Caption
 msgid "Point series..."
-msgstr "Skup točaka..."
+msgstr "Serija točaka..."
 
 #. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Hint
 msgid "Import point series from a data file."
-msgstr "Uvoz skupa točaka iz podatkovne datoteke."
+msgstr "Uvoz serije točaka iz podatkovne datoteke."
 
 #. Form1..ActionManager..InsertObjectAction("Insert object...")..Caption
 #. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
@@ -1033,11 +1033,11 @@ msgstr "Jeste li znali..."
 
 #. Form11("Insert relation")..Caption
 msgid "Insert relation"
-msgstr "Umetanje jednadžbe"
+msgstr "Unos relacije"
 
 #. Form11("Insert relation")..Label1("Relation:")..Caption
 msgid "Relation:"
-msgstr "Jednadžba:"
+msgstr "Relacija:"
 
 #. Form11("Insert relation")..Label2("Constraints:")..Caption
 msgid "Constraints:"
@@ -1147,19 +1147,19 @@ msgstr "Debljina jednadžbe ili okvira nejednadžbe u pikselima."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
-msgstr "Izbor boje za prikaz jednadžbe."
+msgstr "Izbor boje prikaza relacije."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
-msgstr "Unos jednadžbe, npr.:  \"x^2+y^2 = 25\" or \"y < sin(x)\""
+msgstr "Unos relacije, npr.:  \"x^2+y^2 = 25\" or \"y < sin(x)\""
 
 #. Form11("Insert relation")..Edit2....Hint
 msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
-msgstr "Unos ograničenja, npr.:  \"x > 0 and y < 5\""
+msgstr "Unos ograničenja relacije, npr.:  \"x > 0 and y < 5\""
 
 #. Form12("Insert tangent/normal")..Caption
 msgid "Insert tangent/normal"
-msgstr "Umetanje tangente ili normale"
+msgstr "Unos tangente ili normale"
 
 #. Form12("Insert tangent/normal")..Edit1..Hint
 msgid "Value where the tangent/normal will interact with the function."
@@ -1264,7 +1264,7 @@ msgstr "Upis točke kraja intervala (samo ako je interval zadan)."
 
 #. Form13("Insert trendline")..Caption
 msgid "Insert trendline"
-msgstr "Umetanje linije trenda"
+msgstr "Unos linije trenda"
 
 #. Form13("Insert trendline")..GroupBox1("Line")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Caption
@@ -1318,7 +1318,7 @@ msgstr "Linearna"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton4("Power")..Caption
 msgid "Power"
-msgstr "Eksponent"
+msgstr "Potencijalna"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton5("Exponential")..Caption
 msgid "Exponential"
@@ -1364,12 +1364,12 @@ msgstr "Uredi model"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Edit3..Hint
 msgid "Enter a function model to base the trendline on."
-msgstr "Unašanje modela funkcije kao bazne trend krivulje."
+msgstr "Unos modela funkcije kao bazne trend krivulje."
 
 #. Form13("Insert trendline")..CheckBox1("Intercept =")....Hint
 #. Form13("Insert trendline")..Edit5....Hint
 msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
-msgstr "Unašanje željene vrijednosti presjecišta trend linije i y-osi. Mogućnost samo za linearne, polinomne i eksponencijalne krivulje."
+msgstr "Unos željene vrijednosti presjecišta trend linije i y-osi. Mogućnost samo za linearne, polinomne i eksponencijalne krivulje."
 
 #. Form13("Insert trendline")..CheckBox1("Intercept =")..Caption
 msgid "Intercept ="
@@ -1404,7 +1404,7 @@ msgstr "Unošenje točaka"
 
 #. Form14("Insert point series")..Edit1....Hint
 msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
-msgstr "Naziv skupa točaka koji će se prikazati u popisu u lijevom panelu."
+msgstr "Naziv serije točaka koji će se prikazati u popisu u lijevom panelu."
 
 #. Form14("Insert point series")..Edit1..Text
 #. Default description in the Insert point series dialog
@@ -1830,7 +1830,7 @@ msgstr "Oznaka početka raspona."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
-msgstr "Unašanje opisa za prikaz u legendi"
+msgstr "Unos opisa za prikaz u legendi"
 
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..Caption
 msgid "2nd function"
@@ -2117,7 +2117,7 @@ msgstr "Ponavljanje animacije do prekida."
 
 #. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")..Caption
 msgid "Auto reverse"
-msgstr "Samoponavljanje"
+msgstr "Od kraja --> naprijed"
 
 #. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")....Hint
 msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
@@ -2382,7 +2382,7 @@ msgstr "Stupnjevi"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Edit13..Hint
 msgid "Enter a title to show above the coordinate system."
-msgstr "Unašanje naziva sadržaja koji će biti prikazan."
+msgstr "Unos naziva sadržaja koji će biti prikazan."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..BitBtn1..Hint
 msgid "Select the font for the title."
@@ -2495,7 +2495,7 @@ msgstr "Oblik prikaza kompleksnih brojeva."
 
 #. Form4("Options")..GroupBox1..RadioGroup1("Complex form")..Caption
 msgid "Complex form"
-msgstr "Kompleksni oblik"
+msgstr "Kompleksni broj, oblik"
 
 #. Form4("Options")..GroupBox1..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
@@ -2559,7 +2559,7 @@ msgstr "Pri pokretanju provjeri postoji li nova verzija."
 
 #. Form5("Insert function")..Caption
 msgid "Insert function"
-msgstr "Umetanje funkciju"
+msgstr "Unos funkcije"
 
 #. Form5("Insert function")..Label1("Function type:")..Caption
 msgid "Function type:"
@@ -2583,7 +2583,7 @@ msgstr "Polarni oblik:     r=f(t)"
 
 #. Form5("Insert function")..GroupBox1("Function equation")..Caption
 msgid "Function equation"
-msgstr "Unesi jednadžbu funkcije"
+msgstr "Unos jednadžbe funkcije"
 
 #. Form5("Insert function")..GroupBox2("Argument range")..Label6("Steps:")..Caption
 msgid "Steps:"
@@ -2616,7 +2616,7 @@ msgstr "Linije"
 
 #. Form6("Insert text label")..Caption
 msgid "Insert text label"
-msgstr "Umetanje tekstnog okvira"
+msgstr "Unos teksta"
 
 #. Form6("Insert text label")..Label1("Font name:")..Caption
 msgid "Font name:"
@@ -2664,7 +2664,7 @@ msgstr "Precrtano"
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton9..Hint
 msgid "Superscript (Ctrl++)"
-msgstr "Eksponent"
+msgstr "Eksponent (Ctrl++)"
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton10..Hint
 msgid "Subscript (Ctrl+=)"
@@ -2733,7 +2733,7 @@ msgstr "Uređivanje ovog objekta."
 
 #. Form7("Insert f'(x)")..Caption
 msgid "Insert f'(x)"
-msgstr "Umetanje derivacije f'(x)"
+msgstr "Unos derivacije f'(x)"
 
 #. Form8("Add model")..Label1("Name:")..Caption
 #. PrintFrm("Print")..GroupBox1("Printer")..Label1("Name:")..Caption
@@ -3250,7 +3250,7 @@ msgstr "Nepoznata greška tokom ispisa."
 
 #. Error message title in Point series dialog
 msgid "Error while adding points"
-msgstr "Greška tokom unosa točaka"
+msgstr "Greška pri dodavanju točaka"
 
 msgid "Each point needs both an x- and a y-coordinate."
 msgstr "Svaka točka zahtijeva obje, x- i y-koordinate."
@@ -3262,7 +3262,7 @@ msgid "You didn't add any points. You need to specify some x- and y-coordinates 
 msgstr "Niste unijeli ni jednu točku. Trebate unijeti neke x- i y-koordinate u mrežu."
 
 msgid "Edit point series"
-msgstr "Uređivanje zadanog skupa točaka"
+msgstr "Uređivanje zadane serije točaka"
 
 msgid "Edit shading"
 msgstr "Uređivanje šrafure"
@@ -3337,7 +3337,7 @@ msgstr ""
 "Ako ne želite ponovni upit, ovo možete onemogućiti na 'Uređivanje|Mogućnosti'."
 
 msgid "Edit relation"
-msgstr "Uređivanje jednadžbe"
+msgstr "Uređivanje relacije"
 
 #. Customize toolbar dialog
 msgid "Commands"
@@ -3386,11 +3386,11 @@ msgstr "Tekstni okvir ne može sadržavati bilo koji OLE objekt, npr. Microsoft 
 
 #. Tip of the Day
 msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
-msgstr "Skup točaka možete eksportirati u datoteku koja je čitljiva za druge programe, npr. Microsoft Excel. Pri uređivanju točaka, označite ih pa desni klik miša i odaberite 'Izvoz u datoteku'."
+msgstr "Serija točaka možete eksportirati u datoteku koja je čitljiva za druge programe, npr. Microsoft Excel. Pri uređivanju točaka, označite ih pa desni klik miša i odaberite 'Izvoz u datoteku'."
 
 #. Tip of the Day
 msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
-msgstr "Okomita linija u x=5 može biti ucrtana kao parametarska funkcija    x(t)=5, y(t)=t   ili jednadžbom    x=5."
+msgstr "Okomita linija u x=5 može biti ucrtana kao parametarska funkcija x(t)=5, y(t)=t ili jednadžbom    x=5."
 
 #. Tip of the Day
 msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
@@ -3466,7 +3466,7 @@ msgstr "Podaci iz tabelarnog izračuna mogu biti izravno kopirani u druge progra
 
 #. Tip of the Day
 msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel."
-msgstr "Vrijednosti skupa točaka grafa mogu biti izravno kopirani u druge programe kao npr. Microsoft Excel."
+msgstr "Vrijednosti serije točaka grafa mogu biti izravno kopirani u druge programe kao npr. Microsoft Excel."
 
 #. Tip of the Day
 msgid "Elements as functions, point series, etc. can be copied from one instance of the program to another using Edit|Copy."
@@ -3486,11 +3486,11 @@ msgstr "Naslov grafa možete unijeti u dijaloškom okviru 'Osi|Mogućnosti'."
 
 #. Tip of the Day
 msgid "You can import point series from files saved by other programs, like Microsoft Excel."
-msgstr "Skup točaka možete uvesti iz datoteka drugih programa kao npr. Microsoft Excel."
+msgstr "Serija točaka možete uvesti iz datoteka drugih programa kao npr. Microsoft Excel."
 
 #. Tip of the Day
 msgid "When inserting a point series, you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
-msgstr "Umetanje skupa točaka iz drugih programa kao npr. Microsoft Excela možete izvesti i izravnim ljepljenjem u mrežu Graph-a."
+msgstr "Unos serije točaka iz drugih programa kao npr. Microsoft Excela možete izvesti i izravnim ljepljenjem u mrežu Graph-a."
 
 #. Tip of the Day
 msgid "You can use 'Zoom|Fit all' to change the coordinate system so all functions and point series are visible."
@@ -3510,7 +3510,7 @@ msgstr "Korištenjem 'Izračun' možete odrediti vrijednosti točaka presjecišt
 
 #. Tip of the Day
 msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
-msgstr "Ako selektirate skup točaka, dodavanje novih moguće je izvršiti klikom na krivulju dok istovremeno držite pritisnutu tipku Ctrl."
+msgstr "Ako selektirate seriju točaka, dodavanje novih moguće je izvršiti klikom na krivulju dok istovremeno držite pritisnutu tipku Ctrl."
 
 #. Tip of the Day
 msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
@@ -3518,7 +3518,7 @@ msgstr "Korištenjem jednadžbe moguće je iscrtati njen graf, npr. sin(x^2) < c
 
 #. Tip of the Day
 msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
-msgstr "Korištenjem jednadžbe moguće je iscrtati svaku funkciju, npr.:  x*sin x = y*cos y"
+msgstr "Korištenjem jednadžbe moguće je iscrtati svaku funkciju, npr.: x*sin x = y*cos y"
 
 #. Tip of the Day
 msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
@@ -3546,15 +3546,15 @@ msgstr "Obojena pozadina je dobro došla alternativa prozirnoj pozadini kad su t
 
 #. Tip of the Day
 msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
-msgstr "Na mnogim mjestima kao npr. skup točaka, osi, rasponi funkcija i dr. moguće je koristiti vrijednost pi/4 umjesto brojeva."
+msgstr "Na mnogim mjestima kao npr. serije točaka, osi, rasponi funkcija i dr. moguće je koristiti vrijednost pi/4 umjesto brojeva."
 
 #. Tip of the Day
 msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
-msgstr "Možete stvoriti vlastite konstante kroz 'Funkcije|Korisničke funkcije' koristeći ih u funkcijama, skupu točaka, i dr.  Na primjer:  g = 9.80665, R = 8.31"
+msgstr "Možete stvoriti vlastite konstante kroz 'Funkcije|Korisničke funkcije' koristeći ih u funkcijama, serije točaka, i dr.  Na primjer:  g = 9.80665, R = 8.31"
 
 #. Tip of the Day
 msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
-msgstr "Možete stvoriti svoju funkciju 'Funkcije|Korisničke funkcije' za korištenje pri ispisu funkcija, jednadžbi i dr.  Na primjer:  sin(x)=if(x=0, 0, sin(x)/x)"
+msgstr "Možete stvoriti svoju funkciju 'Funkcije|Korisničke funkcije' za korištenje pri ispisu funkcija, jednadžbi i dr. Npr.: sin(x)=if(x=0, 0, sin(x)/x)"
 
 #. Tip of the Day
 msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
@@ -3562,7 +3562,7 @@ msgstr "Pri pohrani slike, moguće je odrediti rezoluciju slike. Vrlo korisna mo
 
 #. Tip of the Day
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
-msgstr "Skup točaka može biti označen strelicama. Na taj način točke mogu prikazivati vektore."
+msgstr "Serija točaka može biti označen strelicama. Na taj način točke mogu prikazivati vektore."
 
 msgid "Insert symbol"
 msgstr "Umetanje simbola"
@@ -3571,7 +3571,7 @@ msgid "Subset:"
 msgstr "Podskup"
 
 msgid "Insert"
-msgstr "Umetanje"
+msgstr "Unos"
 
 msgid "Select color"
 msgstr "Odabir boje"
@@ -3661,7 +3661,7 @@ msgstr "Određivanje plohe isoisa. Pisač ispisuje samo unutar zadanih margina."
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2..Hint
 msgid "Enter the image position on the page."
-msgstr "Unašanje položaja slike na stranici."
+msgstr "Unos položaja slike na stranici."
 
 #. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
 msgid "Number of copies:"
@@ -3673,7 +3673,7 @@ msgstr "Izbor broja kopija."
 
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
-msgstr "Unašanje postotka od izvorne veličine"
+msgstr "Unos postotka od izvorne veličine"
 
 #~ msgid ""
 #~ "This is the functions second derivative evaluated for the entered value."
