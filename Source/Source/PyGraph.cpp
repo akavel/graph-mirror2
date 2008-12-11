@@ -126,11 +126,13 @@ static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args)
   Action->Category = _("Plugins");
   Action->ActionList = Form1->ActionManager;
 
-  TMenuItem *MenuItem = new TMenuItem(Form1->MainMenu);
-  MenuItem->Action = Action;
-  Form1->Plugins_->Add(MenuItem);
-  Form1->Plugins_->Visible = true;
-
+  TActionClients *MenuItems = Form1->ActionMainMenuBar1->ActionClient->Items;
+  TActionClientItem *PluginsItem = MenuItems->ActionClients[5];
+  TActionClientItem *Item = PluginsItem->Items->ActionClients[0];
+  if(Item->Action != NULL) //Workaround for bug in CB2009: There must always be at least one item
+    Item = PluginsItem->Items->Add();
+  Item->Action = Action;
+  PluginsItem->Visible = true;
   return PyInt_FromLong(reinterpret_cast<long>(Action));
 }
 //---------------------------------------------------------------------------

@@ -40,7 +40,7 @@ object Form22: TForm22
     OnKeyDown = IRichEdit1KeyDown
     OnProtectChange = IRichEdit1ProtectChange
   end
-  object PopupMenu1: TPopupMenu
+  object PopupMenu1: TPopupActionBar
     Left = 8
     Top = 8
     object Clear1: TMenuItem

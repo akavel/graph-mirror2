@@ -150,6 +150,9 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
   Screen->Cursors[crMoveHand2] = LoadCursor(HInstance, L"MOVECURSOR1");
   Screen->Cursors[crMoveHand1] = LoadCursor(HInstance, L"MOVECURSOR2");
+
+  Recent1->FileMenu = ActionMainMenuBar1->ActionClient->Items->ActionClients[0]->Items;
+
   BOOST_ASSERT(Screen->Cursors[crMoveHand1]);
   BOOST_ASSERT(Screen->Cursors[crMoveHand2]);
   BOOST_ASSERT(TreeView->Items->Count == 0);
@@ -253,7 +256,7 @@ void TForm1::Initialize()
   for(int I = 0; I < Label_Placement->Count - 1; I++)
   {
     Label_Rotation->Items[I]->Caption = Label_Rotation->Items[I]->Caption + L'\xB0';
-    Tree_Rotation->Items[I]->Caption = Tree_Rotation->Items[I]->Caption + '\xB0';
+    Tree_Rotation->Items[I]->Caption = Tree_Rotation->Items[I]->Caption + L'\xB0';
   }
 
   //Be careful about using TreeView->Items before OnShow. It has probably not been streamed yet
@@ -261,11 +264,15 @@ void TForm1::Initialize()
 //---------------------------------------------------------------------------
   struct TComponentInfo
   {
-    TComponent *Component;
+    TPersistent *Component;
     String Caption;
     String Hint;
-    TComponentInfo(TComponent *AComponent)
-      : Component(AComponent), Caption(GetStrProp(AComponent, "Caption")), Hint(GetStrProp(AComponent, "Hint")) {}
+    TComponentInfo(TActionClientItem *AComponent)
+      : Component(AComponent), Caption(AComponent->Caption) {}
+    TComponentInfo(TMenuItem *AComponent)
+      : Component(AComponent), Caption(AComponent->Caption), Hint(AComponent->Hint) {}
+    TComponentInfo(TAction *AComponent)
+      : Component(AComponent), Caption(AComponent->Caption), Hint(AComponent->Hint) {}
   };
 
 void TForm1::Translate()
@@ -273,11 +280,14 @@ void TForm1::Translate()
   static std::vector<TComponentInfo> TranslateList;
   if(TranslateList.empty())
   {
-    for(int I = 0; I < MainMenu->Items->Count; I++)
-      TranslateList.push_back(MainMenu->Items->Items[I]);
+    TActionClients *MenuItems = ActionMainMenuBar1->ActionClient->Items;
+    for(int I = 0; I < MenuItems->Count; I++)
+      TranslateList.push_back(MenuItems->ActionClients[I]);
 
-    TranslateList.push_back(File_Import);
-    TranslateList.push_back(Help_Internet);
+    //Translate File->Import
+    TranslateList.push_back(ActionMainMenuBar1->ActionClient->Items->ActionClients[0]->Items->ActionClients[7]);
+    //Translate Help->Internet
+    TranslateList.push_back(ActionMainMenuBar1->ActionClient->Items->ActionClients[6]->Items->ActionClients[5]);
 
     TranslateList.push_back(Tree_Export);
     TranslateList.push_back(Tree_ShowInLegend);
@@ -314,24 +324,24 @@ void TForm1::Translate()
 
     //Translate actions
     for(int I = 0; I < ActionManager->ActionCount; I++)
-      TranslateList.push_back(ActionManager->Actions[I]);
+      TranslateList.push_back(static_cast<TAction*>(ActionManager->Actions[I]));
   }
-
+/*
   //As a workaround on a bug in Windows XP set MainMenu->Images to NULL while the menu is changed.
   //Else the menu will change color from grey to white.
   //Warning: Graph will throw EMenuError at the line "MainMenu->Images = NULL;" under startup when run in Wine under Linux.
   //I have no ide why. It looks like we can detect Wine by looking for the registry key HKCU\Software\Wine.
   if(!RegKeyExists(L"Software\\Wine", HKEY_CURRENT_USER))
     MainMenu->Images = NULL;
-
+*/
   for(unsigned I = 0; I < TranslateList.size(); I++)
   {
-    TComponent *Component = TranslateList[I].Component;
-    SetWideStrProp(Component, GetPropInfo(Component, "Caption"), gettext(StripHotkey(TranslateList[I].Caption)));
+    TPersistent *Component = TranslateList[I].Component;
+    SetStrProp(Component, GetPropInfo(Component, "Caption"), gettext(StripHotkey(TranslateList[I].Caption)));
     if(!TranslateList[I].Hint.IsEmpty())
-      SetWideStrProp(Component, GetPropInfo(Component, "Hint"), gettext(TranslateList[I].Hint));
+      SetStrProp(Component, GetPropInfo(Component, "Hint"), gettext(TranslateList[I].Hint));
   }
-  MainMenu->Images = ImageList2; //Remember to restore the images
+//  MainMenu->Images = ImageList2; //Remember to restore the images
 
   UpdateTreeView(); //Translate "Axes"
 
@@ -1303,6 +1313,11 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       if(CursorState == csIdle)
         SetCursorState(csMove);
       break;
+
+    case VK_OEM_MINUS: //Handle Ctrl+Shift+-  (Normal shortcut handling doesn't seem to work)
+      if(Shift == TShiftState() << ssCtrl << ssShift)
+        ZoomOutAction->Execute();
+      break;
   }
 
   if(Shift.Contains(ssCtrl) && !Shift.Contains(ssAlt))
@@ -1507,7 +1522,7 @@ bool TForm1::Zoom(double xZoomRate, double yZoomRate, bool ChangeUnits)
 }
 //---------------------------------------------------------------------------
 //Use this function to zoom in at a given position
-//ZoomRate = sqrt(Z/4), where is the relative window size
+//ZoomRate = sqrt(Z/4), where Z is the relative window size
 //If you want the new window to be 1/4 of the current:  Z=0.25 => ZoomRate=0.25
 //If you want the new window to be 4 times the current: Z=4    => ZoomRate=1
 bool TForm1::Zoom(double x, double y, double xZoomRate, double yZoomRate, bool ChangeUnits)
@@ -1605,8 +1620,7 @@ bool __fastcall TForm1::ApplicationEventsHelp(WORD Command, int Data,
   return false;
 }
 //---------------------------------------------------------------------------
-bool __fastcall TForm1::Recent1LoadFile(TRecent *Sender,
-      const String &FileName)
+bool __fastcall TForm1::Recent1LoadFile(TRecent *Sender, String FileName)
 {
   if(AskSave())
   {
@@ -2084,13 +2098,13 @@ void __fastcall TForm1::InsertDifActionExecute(TObject *Sender)
 void __fastcall TForm1::ZoomInActionExecute(TObject *Sender)
 {
   //Zoom in; New window is 1/4 of the original
-  Zoom(0.25, false);
+  Zoom(GetKeyState(ssShift) ? 0.25 : 0.45, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomOutActionExecute(TObject *Sender)
 {
-  //Zoom out; New window is the doubble of the original
-  Zoom(1, false);
+  //Zoom out; New window is the double of the original
+  Zoom(GetKeyState(ssShift) ? 1 : 10.0/18.0, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomWindowActionExecute(TObject *Sender)
@@ -2271,7 +2285,7 @@ void __fastcall TForm1::AboutActionExecute(TObject *Sender)
 void __fastcall TForm1::MoveRightActionExecute(TObject *Sender)
 {
   const TAxes &Axes = Data.Axes;
-  double StepSize = GetKeyState(VK_SHIFT) & 0x8000 ? 0.1 : 0.01;
+  double StepSize = GetKeyState(ssShift) ? 0.1 : 0.01;
   double MoveWidth=(Axes.xAxis.Max-Axes.xAxis.Min) * StepSize;
   if(Axes.xAxis.LogScl)
   {
@@ -2285,7 +2299,7 @@ void __fastcall TForm1::MoveRightActionExecute(TObject *Sender)
 void __fastcall TForm1::MoveLeftActionExecute(TObject *Sender)
 {
   const TAxes &Axes = Data.Axes;
-  double StepSize = GetKeyState (VK_SHIFT) & 0x8000 ? 0.1 : 0.01;
+  double StepSize = GetKeyState(ssShift) ? 0.1 : 0.01;
   double MoveWidth=(Axes.xAxis.Max - Axes.xAxis.Min) * StepSize;
   if(Axes.xAxis.LogScl)
   {
@@ -2299,7 +2313,7 @@ void __fastcall TForm1::MoveLeftActionExecute(TObject *Sender)
 void __fastcall TForm1::MoveUpActionExecute(TObject *Sender)
 {
   const TAxes &Axes = Data.Axes;
-  double StepSize = GetKeyState (VK_SHIFT) & 0x8000 ? 0.1 : 0.01;
+  double StepSize = GetKeyState(ssShift) ? 0.1 : 0.01;
   double MoveHeight=(Axes.yAxis.Max-Axes.yAxis.Min) * StepSize;
   if(Axes.yAxis.LogScl)
   {
@@ -2313,7 +2327,7 @@ void __fastcall TForm1::MoveUpActionExecute(TObject *Sender)
 void __fastcall TForm1::MoveDownActionExecute(TObject *Sender)
 {
   const TAxes &Axes = Data.Axes;
-  double StepSize = GetKeyState (VK_SHIFT) & 0x8000 ? 0.1 : 0.01;
+  double StepSize = GetKeyState(ssShift) ? 0.1 : 0.01;
   double MoveHeight=(Axes.yAxis.Max - Axes.yAxis.Min) * StepSize;
   if(Axes.yAxis.LogScl)
   {
@@ -2400,6 +2414,7 @@ void __fastcall TForm1::ToolBar_CustomizeClick(TObject *Sender)
   Form->ActionsCatLbl->Caption = LoadRes(557);
   Form->ToolbarsTab->TabVisible = false;
   Form->OptionsTab->TabVisible = false;
+  Form->SeparatorBtn->Visible = false;
   SetAccelerators(Form);
 }
 //---------------------------------------------------------------------------
@@ -2606,8 +2621,10 @@ void TForm1::SetCursorState(TCursorState State)
 
   CursorState = State;
 
-  //Necesarry, else cursor is not changed when captured; It will also change the cursor instantly
-  if(Screen->Cursor == crDefault)
+  //Necesarry if the cursor is inside the area,
+  //else cursor is not changed when captured; It will also change the cursor instantly
+  if(Screen->Cursor == crDefault &&
+     Panel2->ClientRect.Contains(Panel2->ScreenToClient(Mouse->CursorPos)))
     ::SetCursor(Screen->Cursors[Panel2->Cursor]);
 }
 //---------------------------------------------------------------------------
@@ -2717,7 +2734,7 @@ void TForm1::ActivateOleUserInterface()
   if(Data.GetFileName().empty())
     SaveAction->Enabled = false;
   SaveAsAction->Enabled = false;
-  File_SaveCopyAs->Visible = true;
+  SaveCopyAsAction->Visible = true;
   Recent1->Enabled = false;
 }
 //---------------------------------------------------------------------------
@@ -3189,6 +3206,7 @@ void __fastcall TForm1::LegendPlacementClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Legend_ShowClick(TObject *Sender)
 {
+  UndoList.Push(TUndoAxes(Data));
   Data.Axes.ShowLegend = Legend_Show->Checked;
   Data.SetModified();
   Redraw();
@@ -3213,25 +3231,25 @@ void __fastcall TForm1::SupportActionExecute(TObject *Sender)
 void __fastcall TForm1::ZoomXInActionExecute(TObject *Sender)
 {
   //Zoom in on x-axis only
-  Zoom(0.25, 0.5);
+  Zoom(GetKeyState(ssShift) ? 0.25 : 0.45, 0.5);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomXOutActionExecute(TObject *Sender)
 {
   //Zoom out on x-axis only
-  Zoom(1, 0.5);
+  Zoom(GetKeyState(ssShift) ? 1 : 10.0/18.0, 0.5);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomYInActionExecute(TObject *Sender)
 {
   //Zoom in on y-axis only
-  Zoom(0.5, 0.25);
+  Zoom(0.5, GetKeyState(ssShift) ? 0.25 : 0.45);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomYOutActionExecute(TObject *Sender)
 {
   //Zoom out on y-axis only
-  Zoom(0.5, 1.0);
+  Zoom(0.5, GetKeyState(ssShift) ? 1.0 : 10.0/18.0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::InsertRelationActionExecute(TObject *Sender)
@@ -3320,11 +3338,11 @@ void __fastcall TForm1::PopupMenu1Popup(TObject *Sender)
   {
     int Index = (TextLabel->GetPlacement() == lpUserTopLeft || TextLabel->GetPlacement() >= lpUserTopRight) ? 4 : TextLabel->GetPlacement() - 1;
     for(int I = 0; I < Tree_Placement->Count; I++)
-      Tree_Placement->Items[I]->ImageIndex = (I == Index) ? iiBullet : -1;
+      Tree_Placement->Items[I]->ImageIndex = (I == Index) ? 60/*iiBullet*/ : -1;
 
     Index = TextLabel->GetRotation() % 90 == 0 ? TextLabel->GetRotation() / 90 : 4;
     for(int I = 0; I < Tree_Rotation->Count; I++)
-      Tree_Rotation->Items[I]->ImageIndex = (I == Index) ? iiBullet : -1;
+      Tree_Rotation->Items[I]->ImageIndex = (I == Index) ? 60/*iiBullet*/ : -1;
   }
 }
 //---------------------------------------------------------------------------
@@ -3682,7 +3700,7 @@ void __fastcall TForm1::MainMenuChange(TObject *Sender, TMenuItem *Source,
 {
   //This seems to be necesarry when Windows is configured to Arabic for non-Unicode
   //and Arabic is selected as language in Graph.
-  if(SysLocale.MiddleEast)
+/*  if(SysLocale.MiddleEast)
   {
     MENUITEMINFO  mii;
     wchar_t szBuffer [80];
@@ -3697,7 +3715,7 @@ void __fastcall TForm1::MainMenuChange(TObject *Sender, TMenuItem *Source,
     mii.fType |= MFT_RIGHTJUSTIFY | MFT_RIGHTORDER;
     SetMenuItemInfo(MainMenu->Handle, 0, true, &mii);
     DrawMenuBar(Handle);
-  }
+  }*/
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::StatusBar1Hint(TObject *Sender)
@@ -3731,6 +3749,7 @@ void __fastcall TForm1::Image1Click(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+
 
 
 

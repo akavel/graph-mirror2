@@ -1,12 +1,12 @@
 object Form1: TForm1
-  Left = 304
-  Top = 194
+  Left = 320
+  Top = 150
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   ActiveControl = Panel2
   AlphaBlendValue = 100
   Caption = 'Graph'
-  ClientHeight = 431
+  ClientHeight = 450
   ClientWidth = 630
   Color = clBtnFace
   Constraints.MinHeight = 300
@@ -132,8 +132,8 @@ object Form1: TForm1
     E3FFF8F9E7FFFC78E7FFFC7CE7FFFE3C67FFFE1E0FFFFE0E0FFFFF030FFFFE00
     07FFFF1841FFFF3FE07FFFBFFC7FFFFFFFFFFFFFFFFF}
   KeyPreview = True
-  Menu = MainMenu
   OldCreateOrder = False
+  Position = poDesigned
   ShowHint = True
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
@@ -149,27 +149,30 @@ object Form1: TForm1
   TextHeight = 13
   object Splitter1: TMySplitter
     Left = 161
-    Top = 30
-    Height = 298
+    Top = 53
+    Height = 294
     AutoSnap = False
     Beveled = True
     MinSize = 120
     OnDblClick = Splitter1DblClick
+    ExplicitTop = 30
+    ExplicitHeight = 298
   end
   object Splitter2: TSplitter
     Left = 0
-    Top = 328
+    Top = 347
     Width = 630
     Height = 3
     Cursor = crVSplit
     Align = alBottom
     MinSize = 1
+    ExplicitTop = 328
   end
   object Panel2: TFocusPanel
     Left = 164
-    Top = 30
+    Top = 53
     Width = 466
-    Height = 298
+    Height = 294
     Align = alClient
     BevelOuter = bvNone
     FullRepaint = False
@@ -182,7 +185,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 466
-      Height = 298
+      Height = 294
       Align = alClient
       ParentShowHint = False
       ShowHint = False
@@ -191,12 +194,13 @@ object Form1: TForm1
       OnMouseDown = Image1MouseDown
       OnMouseMove = Image1MouseMove
       OnMouseUp = Image1MouseUp
+      ExplicitHeight = 298
     end
     object Cross: TCross
       Left = 0
       Top = 0
       Width = 466
-      Height = 298
+      Height = 294
       Style = psDot
       Mode = pmNot
       X = 30
@@ -207,6 +211,7 @@ object Form1: TForm1
       OnMouseUp = Image1MouseUp
       OnMouseMove = Image1MouseMove
       OnDblClick = Image1DblClick
+      ExplicitHeight = 298
     end
     object Shape1: TShape
       Left = 96
@@ -221,7 +226,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 466
-      Height = 298
+      Height = 294
       Brush.Color = 13395660
       Brush.Style = bsBDiagonal
       Points.Strings = (
@@ -237,6 +242,7 @@ object Form1: TForm1
       OnMouseDown = Image1MouseDown
       OnMouseMove = Image1MouseMove
       OnMouseUp = Image1MouseUp
+      ExplicitHeight = 298
     end
     object Image2: TImage
       Left = 344
@@ -250,7 +256,7 @@ object Form1: TForm1
   end
   object ActionToolBar1: TActionToolBar
     Left = 0
-    Top = 0
+    Top = 23
     Width = 630
     Height = 30
     ActionManager = ActionManager
@@ -264,9 +270,9 @@ object Form1: TForm1
   end
   object Panel3: TPanel
     Left = 0
-    Top = 30
+    Top = 53
     Width = 161
-    Height = 298
+    Height = 294
     Align = alLeft
     BevelOuter = bvNone
     DragKind = dkDock
@@ -275,7 +281,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 161
-      Height = 298
+      Height = 294
       Align = alClient
       BevelInner = bvNone
       BevelOuter = bvNone
@@ -305,7 +311,7 @@ object Form1: TForm1
     end
     object Panel1: TPanel
       Left = 0
-      Top = 298
+      Top = 294
       Width = 161
       Height = 0
       Align = alBottom
@@ -329,7 +335,7 @@ object Form1: TForm1
   end
   object Panel5: TPanel
     Left = 0
-    Top = 331
+    Top = 350
     Width = 630
     Height = 100
     Align = alBottom
@@ -378,251 +384,28 @@ object Form1: TForm1
       OnUnDock = Panel6UnDock
     end
   end
+  object ActionMainMenuBar1: TActionMainMenuBar
+    Left = 0
+    Top = 0
+    Width = 630
+    Height = 23
+    UseSystemFont = False
+    ActionManager = ActionManager
+    ColorMap.HighlightColor = 14410210
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = 14410210
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Spacing = 0
+  end
   object OpenDialog: TOpenDialog
     DefaultExt = 'grf'
     Options = [ofHideReadOnly, ofAllowMultiSelect, ofPathMustExist, ofFileMustExist, ofEnableSizing]
     Left = 248
     Top = 176
-  end
-  object MainMenu: TMainMenu
-    Images = ImageList2
-    OnChange = MainMenuChange
-    Left = 208
-    Top = 176
-    object File_: TMenuItem
-      Caption = 'File'
-      object File_New: TMenuItem
-        Action = NewAction
-      end
-      object File_Open: TMenuItem
-        Action = OpenAction
-        Bitmap.Data = {
-          EE000000424DEE0000000000000076000000280000000F0000000F0000000100
-          0400000000007800000000000000000000001000000010000000000000000000
-          8000008000000080800080000000800080008080000080808000C0C0C0000000
-          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
-          8880000000000008888000333333333088800F033333333308800BF033333333
-          30800FBF0333333333000BFBF000000000000FBFBFBFBF0888800BFBFBFBFB08
-          88800FBF00000008888080008888888800008888888888888000888888880888
-          0800888888888000888F8888888888888880}
-      end
-      object File_Save: TMenuItem
-        Action = SaveAction
-      end
-      object File_SaveAs: TMenuItem
-        Action = SaveAsAction
-      end
-      object File_SaveCopyAs: TMenuItem
-        Action = SaveCopyAsAction
-        Visible = False
-      end
-      object N1: TMenuItem
-        Caption = '-'
-      end
-      object File_SaveAsPicture: TMenuItem
-        Action = SaveAsImageAction
-      end
-      object File_Import: TMenuItem
-        Caption = 'Import'
-        object File_Import_GraphFile: TMenuItem
-          Action = ImportGraphFileAction
-        end
-        object File_Import_PointSeries: TMenuItem
-          Action = ImportPointSeriesAction
-        end
-      end
-      object N4: TMenuItem
-        Caption = '-'
-      end
-      object File_Print: TMenuItem
-        Action = PrintAction
-      end
-      object N2: TMenuItem
-        Caption = '-'
-      end
-      object File_Exit: TMenuItem
-        Action = ExitAction
-      end
-    end
-    object Edit_: TMenuItem
-      Caption = 'Edit'
-      object Edit_Undo: TMenuItem
-        Action = UndoAction
-      end
-      object Edit_Redo: TMenuItem
-        Action = RedoAction
-      end
-      object N5: TMenuItem
-        Caption = '-'
-      end
-      object Edit_Cut: TMenuItem
-        Action = CutAction
-      end
-      object Edit_Copy: TMenuItem
-        Action = CopyAction
-      end
-      object Edit_Paste: TMenuItem
-        Action = PasteAction
-      end
-      object N9: TMenuItem
-        Caption = '-'
-      end
-      object Edit_CopyImage: TMenuItem
-        Action = CopyImageAction
-      end
-      object N3: TMenuItem
-        Caption = '-'
-      end
-      object Axes1: TMenuItem
-        Action = AxesAction
-      end
-      object Edit_Property: TMenuItem
-        Action = OptionsAction
-      end
-    end
-    object Function_: TMenuItem
-      Caption = 'Function'
-      object Function_InsFunc: TMenuItem
-        Action = InsertFunctionAction
-      end
-      object Function_InsTan: TMenuItem
-        Action = InsertTangentAction
-      end
-      object Function_InsShade: TMenuItem
-        Action = InsertShadeAction
-      end
-      object Function_InsertDiff: TMenuItem
-        Action = InsertDifAction
-      end
-      object N6: TMenuItem
-        Caption = '-'
-      end
-      object Function_InsPoints: TMenuItem
-        Action = InsertPointsAction
-      end
-      object Function_InsTrend: TMenuItem
-        Action = InsertTrendlineAction
-      end
-      object N16: TMenuItem
-        Caption = '-'
-      end
-      object Insertinequation1: TMenuItem
-        Action = InsertRelationAction
-      end
-      object Insertlabel1: TMenuItem
-        Action = InsertLabelAction
-      end
-      object Insertobject1: TMenuItem
-        Action = InsertObjectAction
-      end
-      object N7: TMenuItem
-        Caption = '-'
-      end
-      object Function_Edit: TMenuItem
-        Action = EditAction
-      end
-      object Function_Delete: TMenuItem
-        Action = DeleteAction
-      end
-      object Customfunctions1: TMenuItem
-        Action = CustomFunctionsAction
-      end
-    end
-    object Zoom_: TMenuItem
-      Caption = 'Zoom'
-      object Zoom_In: TMenuItem
-        Action = ZoomInAction
-      end
-      object Zoom_Out: TMenuItem
-        Action = ZoomOutAction
-      end
-      object Zoom_Window: TMenuItem
-        Action = ZoomWindowAction
-      end
-      object Square1: TMenuItem
-        Action = ZoomSquareAction
-      end
-      object Zoom_Standard: TMenuItem
-        Action = ZoomStandardAction
-      end
-      object N14: TMenuItem
-        Caption = '-'
-      end
-      object Movesystem1: TMenuItem
-        Action = MoveAction
-        AutoCheck = True
-      end
-      object N13: TMenuItem
-        Caption = '-'
-      end
-      object Fit1: TMenuItem
-        Action = ZoomFitAction
-      end
-      object Allpoints1: TMenuItem
-        Action = ZoomFitAllAction
-      end
-    end
-    object Math_: TMenuItem
-      Caption = 'Calc'
-      object Math_Arc: TMenuItem
-        Action = PathAction
-        AutoCheck = True
-      end
-      object Math_Area: TMenuItem
-        Action = AreaAction
-        AutoCheck = True
-      end
-      object Math_Eval: TMenuItem
-        Action = EvalAction
-        AutoCheck = True
-      end
-      object Math_Table: TMenuItem
-        Action = TableAction
-      end
-      object Math_Animate: TMenuItem
-        Action = AnimateAction
-      end
-    end
-    object Plugins_: TMenuItem
-      Caption = 'Plugins'
-      Visible = False
-    end
-    object Help_: TMenuItem
-      Caption = 'Help'
-      object Help_Contents: TMenuItem
-        Action = ContentsAction
-      end
-      object Help_Functions: TMenuItem
-        Action = ListAction
-      end
-      object Help_Faq: TMenuItem
-        Action = FaqAction
-      end
-      object Help_Tip: TMenuItem
-        Action = TipAction
-      end
-      object N12: TMenuItem
-        Caption = '-'
-      end
-      object Help_Internet: TMenuItem
-        Caption = 'Internet'
-        object Internet_HomePage: TMenuItem
-          Action = HomePageAction
-        end
-        object Internet_Support: TMenuItem
-          Action = SupportAction
-        end
-        object Internet_Donate: TMenuItem
-          Action = DonateAction
-        end
-        object Internet_Update: TMenuItem
-          Action = UpdateAction
-        end
-      end
-      object Help_About: TMenuItem
-        Action = AboutAction
-      end
-    end
   end
   object SaveDialog: TSaveDialog
     DefaultExt = 'grf'
@@ -632,13 +415,12 @@ object Form1: TForm1
   end
   object Recent1: TRecent
     OnLoadFile = Recent1LoadFile
-    FileMenu = File_Exit
     Hint = 'Open file: %s'
     MaxPathLen = 40
     Left = 368
     Top = 176
   end
-  object PopupMenu1: TPopupMenu
+  object PopupMenu1: TPopupActionBar
     Images = ImageList2
     OnPopup = PopupMenu1Popup
     Left = 368
@@ -1325,7 +1107,7 @@ object Form1: TForm1
     Left = 208
     Top = 256
     Bitmap = {
-      494C01013C003E00040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01013D003F00040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000000001000001002000000000000000
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3377,11 +3159,11 @@ object Form1: TForm1
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000424D3E000000000000003E000000
       2800000040000000000100000100010000000000000800000000000000000000
-      000000000000000000000000FFFFFF0000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000000000FFFFFFF3C001C001FFFFF0F3C001C001
+      000000000000000000000000FFFFFF00FFFF000000000000FFFF000000000000
+      FFFF000000000000FFFF000000000000FFFF000000000000FC3F000000000000
+      F81F000000000000F81F000000000000F81F000000000000F81F000000000000
+      FC3F000000000000FFFF000000000000FFFF000000000000FFFF000000000000
+      FFFF000000000000FFFF000000000000FFFFFFF3C001C001FFFFF0F3C001C001
       0000E073C001C0010000CF33C001C00100009F93C001C0010000BFD3C001C001
       00003FC3C001C00100007FE3C001C0010000FFE3C001C00100000003C001C001
       00000009C001C0010000FFF9C001C0010000FFFCC001C0010000FFFEC003C003
@@ -3571,6 +3353,519 @@ object Form1: TForm1
             ShortCut = 16461
           end>
         ActionBar = ActionToolBar1
+      end
+      item
+        Items.Customizable = False
+        Items.HideUnused = False
+        Items.CaptionOptions = coAll
+        Items = <
+          item
+            Items.HideUnused = False
+            Items = <
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = NewAction
+                Caption = '&New'
+                ImageIndex = 0
+                ShortCut = 16462
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = OpenAction
+                Caption = '&Open...'
+                ImageIndex = 1
+                ShortCut = 16463
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = SaveAction
+                Caption = '&Save'
+                ImageIndex = 2
+                ShortCut = 16467
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = SaveAsAction
+                Caption = 'S&ave as...'
+                ImageIndex = 3
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Visible = False
+                Action = SaveCopyAsAction
+                Caption = 'Sa&ve copy as...'
+                ImageIndex = 49
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Caption = '-'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = SaveAsImageAction
+                Caption = 'Sav&e as image...'
+                ImageIndex = 45
+                ShortCut = 16450
+              end
+              item
+                Items.HideUnused = False
+                Items = <
+                  item
+                    Items.HideUnused = False
+                    Items = <>
+                    Action = ImportGraphFileAction
+                    Caption = '&Graph file...'
+                    ImageIndex = 58
+                  end
+                  item
+                    Items.HideUnused = False
+                    Items = <>
+                    Action = ImportPointSeriesAction
+                    Caption = '&Point series...'
+                    ImageIndex = 17
+                  end>
+                Caption = 'I&mport'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Caption = '-'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = PrintAction
+                Caption = '&Print...'
+                ImageIndex = 5
+                ShortCut = 16464
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Caption = '-'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = ExitAction
+                Caption = 'E&xit'
+                ImageIndex = 6
+                ShortCut = 32883
+              end>
+            Caption = '&File'
+          end
+          item
+            Items.HideUnused = False
+            Items = <
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = UndoAction
+                Caption = '&Undo'
+                ImageIndex = 7
+                ShortCut = 16474
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = RedoAction
+                Caption = '&Redo'
+                ImageIndex = 8
+                ShortCut = 16473
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Caption = '-'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = CutAction
+                Caption = '&Cut'
+                ImageIndex = 9
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = CopyAction
+                Caption = 'C&opy'
+                ImageIndex = 10
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = PasteAction
+                Caption = '&Paste'
+                ImageIndex = 11
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Caption = '-'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = CopyImageAction
+                Caption = 'Cop&y image'
+                ImageIndex = 4
+                ShortCut = 16457
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Caption = '-'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = AxesAction
+                Caption = '&Axes...'
+                ImageIndex = 12
+                ShortCut = 16449
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = OptionsAction
+                Caption = 'Op&tions...'
+                ImageIndex = 13
+              end>
+            Caption = '&Edit'
+          end
+          item
+            Items.HideUnused = False
+            Items = <
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = InsertFunctionAction
+                Caption = '&Insert function...'
+                ImageIndex = 14
+                ShortCut = 45
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = InsertTangentAction
+                Caption = 'I&nsert tangent/normal...'
+                ImageIndex = 15
+                ShortCut = 113
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = InsertShadeAction
+                Caption = 'In&sert shading...'
+                ImageIndex = 16
+                ShortCut = 114
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = InsertDifAction
+                Caption = 'Inser&t f'#39'(x)...'
+                ImageIndex = 21
+                ShortCut = 118
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Caption = '-'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = InsertPointsAction
+                Caption = 'Ins&ert point series...'
+                ImageIndex = 17
+                ShortCut = 115
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = InsertTrendlineAction
+                Caption = 'Inse&rt trendline...'
+                ImageIndex = 18
+                ShortCut = 16468
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Caption = '-'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = InsertRelationAction
+                Caption = 'Insert relati&on...'
+                ImageIndex = 54
+                ShortCut = 117
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = InsertLabelAction
+                Caption = 'Insert l&abel...'
+                ImageIndex = 46
+                ShortCut = 119
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Visible = False
+                Action = InsertObjectAction
+                ImageIndex = 59
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Caption = '-'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = EditAction
+                Caption = 'E&dit...'
+                ImageIndex = 19
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = DeleteAction
+                Caption = 'De&lete'
+                ImageIndex = 20
+                ShortCut = 16430
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = CustomFunctionsAction
+                Caption = '&Custom functions...'
+                ImageIndex = 55
+                ShortCut = 16454
+              end>
+            Caption = 'F&unction'
+          end
+          item
+            Items.HideUnused = False
+            Items = <
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = ZoomInAction
+                Caption = '&In'
+                ImageIndex = 22
+                ShortCut = 16571
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = ZoomOutAction
+                Caption = '&Out'
+                ImageIndex = 23
+                ShortCut = 16495
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = ZoomWindowAction
+                Caption = '&Window'
+                ImageIndex = 24
+                ShortCut = 16471
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = ZoomSquareAction
+                Caption = '&Square'
+                ImageIndex = 44
+                ShortCut = 16465
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = ZoomStandardAction
+                Caption = 'S&tandard'
+                ImageIndex = 25
+                ShortCut = 16452
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Caption = '-'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = MoveAction
+                Caption = '&Move system'
+                ImageIndex = 30
+                ShortCut = 16461
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Caption = '-'
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = ZoomFitAction
+                Caption = '&Fit'
+                ImageIndex = 43
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = ZoomFitAllAction
+                Caption = 'Fit &all'
+                ImageIndex = 41
+              end>
+            Caption = '&Zoom'
+          end
+          item
+            Items.HideUnused = False
+            Items = <
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = PathAction
+                Caption = '&Length of path'
+                ImageIndex = 31
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = AreaAction
+                Caption = '&Area'
+                ImageIndex = 32
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = EvalAction
+                Caption = '&Evaluate'
+                ImageIndex = 33
+                ShortCut = 16453
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = TableAction
+                Caption = '&Table...'
+                ImageIndex = 34
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = AnimateAction
+                Caption = 'A&nimate...'
+                ImageIndex = 56
+              end>
+            Caption = '&Calc'
+          end
+          item
+            Items = <
+              item
+                Caption = '&ActionClientItem0'
+              end>
+            Visible = False
+            Caption = '&Plugins'
+          end
+          item
+            Items.HideUnused = False
+            Items = <
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = ContentsAction
+                Caption = '&Contents and index'
+                ImageIndex = 35
+                ShortCut = 112
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = ListAction
+                Caption = '&List of functions'
+                ImageIndex = 36
+                ShortCut = 16496
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = FaqAction
+                Caption = '&Frequently Asked Questions'
+                ImageIndex = 42
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = TipAction
+                Caption = '&Tip of the day'
+                ImageIndex = 47
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = UpdateAction
+                Caption = '-'
+                ImageIndex = 39
+              end
+              item
+                Items.HideUnused = False
+                Items = <
+                  item
+                    Items.HideUnused = False
+                    Items = <>
+                    Action = HomePageAction
+                    Caption = '&Graph web site'
+                    ImageIndex = 40
+                  end
+                  item
+                    Items.HideUnused = False
+                    Items = <>
+                    Action = SupportAction
+                    Caption = '&Support'
+                    ImageIndex = 40
+                  end
+                  item
+                    Items.HideUnused = False
+                    Items = <>
+                    Action = DonateAction
+                    Caption = '&Donate'
+                    ImageIndex = 48
+                  end
+                  item
+                    Items.HideUnused = False
+                    Items = <>
+                    Action = UpdateAction
+                    Caption = 'C&heck for update'
+                    ImageIndex = 39
+                  end>
+                Caption = '&Internet'
+                UsageCount = 1
+              end
+              item
+                Items.HideUnused = False
+                Items = <>
+                Action = AboutAction
+                Caption = '&About Graph...'
+                ImageIndex = 37
+                ShortCut = 32880
+              end>
+            Caption = '&Help'
+          end>
+        ActionBar = ActionMainMenuBar1
       end>
     Images = ImageList2
     Left = 288
@@ -3766,17 +4061,21 @@ object Form1: TForm1
     object ZoomInAction: TAction
       Category = 'Zoom'
       Caption = 'In'
-      Hint = 'Zoom in.'
+      Hint = 'Zoom in. Hold down Shift to zoom with larger steps.'
       ImageIndex = 22
       ShortCut = 16571
+      SecondaryShortCuts.Strings = (
+        'Ctrl+Shift++')
       OnExecute = ZoomInActionExecute
     end
     object ZoomOutAction: TAction
       Category = 'Zoom'
       Caption = 'Out'
-      Hint = 'Zoom out.'
+      Hint = 'Zoom out. Hold down Shift to zoom with larger steps.'
       ImageIndex = 23
       ShortCut = 16495
+      SecondaryShortCuts.Strings = (
+        'Ctrl+Shift+-')
       OnExecute = ZoomOutActionExecute
     end
     object ZoomWindowAction: TAction
@@ -3809,7 +4108,9 @@ object Form1: TForm1
     object MoveUpAction: TAction
       Category = 'Move'
       Caption = 'Move up'
-      Hint = 'Move the graphing area up along the coordinate system.'
+      Hint = 
+        'Move the graphing area up along the coordinate system. Hold down' +
+        ' Shift to move in larger steps.'
       ImageIndex = 26
       ShortCut = 16422
       SecondaryShortCuts.Strings = (
@@ -3819,7 +4120,9 @@ object Form1: TForm1
     object MoveDownAction: TAction
       Category = 'Move'
       Caption = 'Move down'
-      Hint = 'Move the graphing area down along the coordinate system.'
+      Hint = 
+        'Move the graphing area down along the coordinate system. Hold do' +
+        'wn Shift to move in larger steps.'
       ImageIndex = 27
       ShortCut = 16424
       SecondaryShortCuts.Strings = (
@@ -3829,7 +4132,9 @@ object Form1: TForm1
     object MoveLeftAction: TAction
       Category = 'Move'
       Caption = 'Move left'
-      Hint = 'Move the graphing area to the left along the coordinate system.'
+      Hint = 
+        'Move the graphing area to the left along the coordinate system. ' +
+        'Hold down Shift to move in larger steps.'
       ImageIndex = 28
       ShortCut = 16421
       SecondaryShortCuts.Strings = (
@@ -3839,7 +4144,9 @@ object Form1: TForm1
     object MoveRightAction: TAction
       Category = 'Move'
       Caption = 'Move right'
-      Hint = 'Move the graphing area to the right along the coordinate system.'
+      Hint = 
+        'Move the graphing area to the right along the coordinate system.' +
+        ' Hold down Shift to move in larger steps.'
       ImageIndex = 29
       ShortCut = 16423
       SecondaryShortCuts.Strings = (
@@ -3989,36 +4296,52 @@ object Form1: TForm1
     object ZoomXInAction: TAction
       Category = 'Zoom'
       Caption = 'Zoom x-axis in'
-      Hint = 'Zoom in on the x-axis only.'
+      Hint = 
+        'Zoom in on the x-axis only. Hold down Shift to zoom with larger ' +
+        'steps.'
       ImageIndex = 53
       ShortCut = 16420
+      SecondaryShortCuts.Strings = (
+        'Ctrl+Shift+Home')
       OnExecute = ZoomXInActionExecute
       OnUpdate = ZoomActionUpdate
     end
     object ZoomXOutAction: TAction
       Category = 'Zoom'
       Caption = 'Zoom x-axis out'
-      Hint = 'Zoom out on the x-axis only.'
+      Hint = 
+        'Zoom out on the x-axis only. Hold down Shift to zoom with larger' +
+        ' steps.'
       ImageIndex = 51
       ShortCut = 16419
+      SecondaryShortCuts.Strings = (
+        'Ctrl+Shift+End')
       OnExecute = ZoomXOutActionExecute
       OnUpdate = ZoomActionUpdate
     end
     object ZoomYInAction: TAction
       Category = 'Zoom'
       Caption = 'Zoom y-axis in'
-      Hint = 'Zoom in on the y-axis only.'
+      Hint = 
+        'Zoom in on the y-axis only. Hold down Shift to zoom with larger ' +
+        'steps.'
       ImageIndex = 52
       ShortCut = 16417
+      SecondaryShortCuts.Strings = (
+        'Ctrl+Shift+PgUp')
       OnExecute = ZoomYInActionExecute
       OnUpdate = ZoomActionUpdate
     end
     object ZoomYOutAction: TAction
       Category = 'Zoom'
       Caption = 'Zoom y-axis out'
-      Hint = 'Zoom out on the y-axis only.'
+      Hint = 
+        'Zoom out on the y-axis only. Hold down Shift to zoom with larger' +
+        ' steps.'
       ImageIndex = 50
       ShortCut = 16418
+      SecondaryShortCuts.Strings = (
+        'Ctrl+Shift+PgDn')
       OnExecute = ZoomYOutActionExecute
       OnUpdate = ZoomActionUpdate
     end
@@ -4069,7 +4392,7 @@ object Form1: TForm1
       OnExecute = InsertObjectActionExecute
     end
   end
-  object PopupMenu2: TPopupMenu
+  object PopupMenu2: TPopupActionBar
     Left = 328
     Top = 256
     object ToolBar_Reset: TMenuItem
@@ -4086,7 +4409,8 @@ object Form1: TForm1
       OnClick = ToolBar_CustomizeClick
     end
   end
-  object PopupMenu3: TPopupMenu
+  object PopupMenu3: TPopupActionBar
+    Images = ImageList2
     OnPopup = PopupMenu3Popup
     Left = 368
     Top = 256
@@ -4165,11 +4489,13 @@ object Form1: TForm1
     object Label_Edit: TMenuItem
       Caption = 'Edit label...'
       Hint = 'Edit the label under the cursor.'
+      ImageIndex = 19
       OnClick = Label_EditClick
     end
     object Label_Delete: TMenuItem
       Caption = 'Delete label'
       Hint = 'Delete the label under the cursor.'
+      ImageIndex = 20
       OnClick = Label_DeleteClick
     end
   end
@@ -4189,51 +4515,6 @@ object Form1: TForm1
     Left = 328
     Top = 216
   end
-  object PopupMenu4: TPopupMenu
-    OnPopup = PopupMenu4Popup
-    Left = 408
-    Top = 216
-    object Legend_Show: TMenuItem
-      AutoCheck = True
-      Caption = 'Show legend'
-      Checked = True
-      Hint = 'Select to show a legend in the coordinate system.'
-      OnClick = Legend_ShowClick
-    end
-    object Legend_Font: TMenuItem
-      Caption = 'Font...'
-      Hint = 'Change the font of the legend.'
-      OnClick = Legend_FontClick
-    end
-    object Legend_Placement: TMenuItem
-      Caption = 'Placement'
-      object Legend_TopRight: TMenuItem
-        Caption = 'Top Right'
-        Checked = True
-        Hint = 'Show the legend in the upper right corner.'
-        RadioItem = True
-        OnClick = LegendPlacementClick
-      end
-      object Legend_BottomRight: TMenuItem
-        Caption = 'Bottom Right'
-        Hint = 'Show the legend in the bottom right corner.'
-        RadioItem = True
-        OnClick = LegendPlacementClick
-      end
-      object Legend_TopLeft: TMenuItem
-        Caption = 'Top Left'
-        Hint = 'Show the legend in the upper left corner.'
-        RadioItem = True
-        OnClick = LegendPlacementClick
-      end
-      object Legend_BottomLeft: TMenuItem
-        Caption = 'Bottom Left'
-        Hint = 'Show the legend in the bottom left corner.'
-        RadioItem = True
-        OnClick = LegendPlacementClick
-      end
-    end
-  end
   object SaveDialogEx1: TSaveDialogEx
     Options = [ofOverwritePrompt, ofHideReadOnly, ofShowHelp, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing]
     HelpCaption = 'Options...'
@@ -4247,5 +4528,52 @@ object Form1: TForm1
     OnTimer = Timer2Timer
     Left = 408
     Top = 256
+  end
+  object PopupMenu4: TPopupActionBar
+    OnPopup = PopupMenu4Popup
+    Left = 208
+    Top = 176
+    object Legend_Show: TMenuItem
+      AutoCheck = True
+      Caption = 'Show legend'
+      Checked = True
+      OnClick = Legend_ShowClick
+    end
+    object Legend_Font: TMenuItem
+      Caption = 'Font...'
+      OnClick = Legend_FontClick
+    end
+    object Legend_Placement: TMenuItem
+      Caption = 'Placement'
+      object Legend_TopRight: TMenuItem
+        Caption = 'Top Right'
+        Checked = True
+        GroupIndex = 1
+        Hint = 'Show the legend in the upper right corner.'
+        RadioItem = True
+        OnClick = LegendPlacementClick
+      end
+      object Legend_BottomRight: TMenuItem
+        Caption = 'Bottom Right'
+        GroupIndex = 1
+        Hint = 'Show the legend in the bottom right corner.'
+        RadioItem = True
+        OnClick = LegendPlacementClick
+      end
+      object Legend_TopLeft: TMenuItem
+        Caption = 'Top Left'
+        GroupIndex = 1
+        Hint = 'Show the legend in the upper left corner.'
+        RadioItem = True
+        OnClick = LegendPlacementClick
+      end
+      object Legend_BottomLeft: TMenuItem
+        Caption = 'Bottom Left'
+        GroupIndex = 1
+        Hint = 'Show the legend in the bottom left corner.'
+        RadioItem = True
+        OnClick = LegendPlacementClick
+      end
+    end
   end
 end

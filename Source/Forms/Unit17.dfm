@@ -89,7 +89,7 @@ object Form17: TForm17
       76
       328)
   end
-  object PopupMenu1: TPopupMenu
+  object PopupMenu1: TPopupActionBar
     Top = 328
     object Popup_Cut: TMenuItem
       Caption = 'Cut'
@@ -105,7 +105,7 @@ object Form17: TForm17
     end
     object Popup_Paste: TMenuItem
       Caption = 'Paste'
-      Hint = 
+      Hint =
         'Paste text from the clipboard into the grid. Other cells may be ' +
         'overwritten by the text from the clipboard.'
       ShortCut = 16470

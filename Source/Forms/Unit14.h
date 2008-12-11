@@ -29,13 +29,15 @@
 #include "ExtColorBox.h"
 #include "MyEdit.h"
 #include "SaveDialogEx.h"
+#include <ActnPopup.hpp>
+#include <PlatformDefaultStyleActnCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm14 : public TForm
 {
 __published:	// IDE-managed Components
   TButton *Button1;
   TGrid *Grid;
-  TPopupMenu *PopupMenu1;
+  TPopupActionBar *PopupMenu1;
   TMenuItem *Popup_Cut;
   TMenuItem *Popup_Copy;
   TMenuItem *Popup_Paste;

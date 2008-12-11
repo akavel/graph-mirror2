@@ -376,6 +376,16 @@ bool InputQuery(const String &Caption, const String &Prompt, int &Value)
   return Form->ShowModal() == mrOk;
 }
 //---------------------------------------------------------------------------
+bool GetKeyState(Classes__1 Key)
+{
+  switch(Key)
+  {
+    case ssShift:
+      return GetKeyState(VK_SHIFT) & 0x8000;
+  }
+  return false;
+}
+//---------------------------------------------------------------------------
 String GetKeyName(UINT Key)
 {
   UINT ScanCode = MapVirtualKey(Key, 0) << 16;
@@ -399,29 +409,29 @@ namespace Menus
   {
     String Str;
     if(ShortCut & scShift)
-      Str += LoadRes(RES_KEY_SHIFT) + "+";
+      Str += LoadStr(RES_KEY_SHIFT) + "+";
     if(ShortCut & scCtrl)
-      Str += LoadRes(RES_KEY_CTRL) + "+";
+      Str += LoadStr(RES_KEY_CTRL) + "+";
     if(ShortCut & scAlt)
-      Str += LoadRes(RES_KEY_ALT) + "+";
+      Str += LoadStr(RES_KEY_ALT) + "+";
 
     switch(ShortCut & 0xFF)
     {
-      case VK_DELETE: Str += LoadRes(RES_KEY_DEL); break;
-      case VK_INSERT: Str += LoadRes(RES_KEY_INS); break;
-      case VK_HOME:   Str += LoadRes(RES_KEY_HOME); break;
-      case VK_PRIOR:  Str += LoadRes(RES_KEY_PGUP); break;
-      case VK_NEXT:   Str += LoadRes(RES_KEY_PGDN); break;
-      case VK_END:    Str += LoadRes(RES_KEY_END); break;
-      case VK_ESCAPE: Str += LoadRes(RES_KEY_ESC); break;
-      case VK_RETURN: Str += LoadRes(RES_KEY_ENTER); break;
-      case VK_SPACE:  Str += LoadRes(RES_KEY_SPACE); break;
-      case VK_BACK:   Str += LoadRes(RES_KEY_BKSP); break;
-      case VK_TAB:    Str += LoadRes(RES_KEY_TAB); break;
-      case VK_LEFT:   Str += LoadRes(RES_KEY_LEFT); break;
-      case VK_RIGHT:  Str += LoadRes(RES_KEY_RIGHT); break;
-      case VK_UP:     Str += LoadRes(RES_KEY_UP); break;
-      case VK_DOWN:   Str += LoadRes(RES_KEY_DOWN); break;
+      case VK_DELETE: Str += LoadStr(RES_KEY_DEL); break;
+      case VK_INSERT: Str += LoadStr(RES_KEY_INS); break;
+      case VK_HOME:   Str += LoadStr(RES_KEY_HOME); break;
+      case VK_PRIOR:  Str += LoadStr(RES_KEY_PGUP); break;
+      case VK_NEXT:   Str += LoadStr(RES_KEY_PGDN); break;
+      case VK_END:    Str += LoadStr(RES_KEY_END); break;
+      case VK_ESCAPE: Str += LoadStr(RES_KEY_ESC); break;
+      case VK_RETURN: Str += LoadStr(RES_KEY_ENTER); break;
+      case VK_SPACE:  Str += LoadStr(RES_KEY_SPACE); break;
+      case VK_BACK:   Str += LoadStr(RES_KEY_BKSP); break;
+      case VK_TAB:    Str += LoadStr(RES_KEY_TAB); break;
+      case VK_LEFT:   Str += LoadStr(RES_KEY_LEFT); break;
+      case VK_RIGHT:  Str += LoadStr(RES_KEY_RIGHT); break;
+      case VK_UP:     Str += LoadStr(RES_KEY_UP); break;
+      case VK_DOWN:   Str += LoadStr(RES_KEY_DOWN); break;
       default:
         Str += GetKeyName(ShortCut & 0xFF);
     }

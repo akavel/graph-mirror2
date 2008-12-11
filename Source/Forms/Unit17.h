@@ -28,7 +28,7 @@ __published:	// IDE-managed Components
   TButton *Button4;
   TButton *Button3;
   TGrid *Grid1;
-  TPopupMenu *PopupMenu1;
+  TPopupActionBar *PopupMenu1;
   TMenuItem *Popup_Insert;
   TMenuItem *Popup_Remove;
   TMenuItem *Popup_Cut;

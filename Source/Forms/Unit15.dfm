@@ -11,8 +11,8 @@ object Form15: TForm15
   ClientHeight = 469
   ClientWidth = 322
   Color = clBtnFace
-  Constraints.MinHeight = 496
-  Constraints.MinWidth = 330
+  Constraints.MinHeight = 494
+  Constraints.MinWidth = 328
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -139,7 +139,7 @@ object Form15: TForm15
       64
       64)
   end
-  object PopupMenu1: TPopupMenu
+  object PopupMenu1: TPopupActionBar
     Left = 8
     Top = 432
     object Popup1_Show1: TMenuItem
