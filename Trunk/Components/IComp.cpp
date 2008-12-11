@@ -2,8 +2,8 @@
 
 #include <basepch.h>
 #pragma hdrstop
-USEFORM("TIPrintDialog\PrintForm.cpp", PrintFrm);
 USEFORM("TSymbolDialog\SymbolForm.cpp", SymbolFrm);
+USEFORM("TIPrintDialog\PrintForm.cpp", PrintFrm);
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 //---------------------------------------------------------------------------

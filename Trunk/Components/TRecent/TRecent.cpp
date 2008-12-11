@@ -2,9 +2,8 @@
 // Copyright © 2003 Ivan Johansen
 // TRecent.cpp
 //===========================================================================
-#include <vcl.h>
-#pragma hdrstop
 #include "Config.h"
+#pragma hdrstop
 #include <Registry.hpp>
 #include "TRecent.h"
 #include <deque>
@@ -19,9 +18,15 @@
 #define SHARD_PATH     0x00000002L
 SHSTDAPI_(void) SHAddToRecentDocs(UINT uFlags, LPCVOID pv);
 
-struct TImpl
+class TOpenFileAction : public TCustomAction
 {
-  std::deque<std::pair<String,TMenuItem*> > FileList; //We dont want deque in the interface; Size problem with debug version of STLport
+  String FileName;
+  TRecent *Recent;
+
+public:
+  TOpenFileAction(const String &AFileName, TRecent *ARecent)
+    : TCustomAction(NULL), FileName(AFileName), Recent(ARecent) {}
+  DYNAMIC bool __fastcall Execute() {if(Recent->OnLoadFile) Recent->OnLoadFile(Recent, FileName); return true;}
 };
 //---------------------------------------------------------------------------
 static inline void ValidCtrCheck(TRecent *)
@@ -40,7 +45,7 @@ namespace Trecent
 //---------------------------------------------------------------------------
 //Constructor initialzes values and allocates memory
 __fastcall TRecent::TRecent(TComponent* Owner)
-	: TComponent(Owner), FEnabled(true), Impl(new TImpl), FMaxFiles(4), FOnLoadFile(NULL),
+	: TComponent(Owner), FEnabled(true), FMaxFiles(4), FOnLoadFile(NULL),
     FFileMenu(NULL), FAddToRecentDocs(true), Seperator1(NULL), Seperator2(NULL), FMaxPathLen(50)
 {
   ReadFromRegistry();//Read file names from registry
@@ -49,8 +54,7 @@ __fastcall TRecent::TRecent(TComponent* Owner)
 //Destructor deallocates memory
 __fastcall TRecent::~TRecent()
 {
-  RemoveMenuItems();//Remove shown menu items
-  delete Impl;
+  //Nothing to do here
 }
 //---------------------------------------------------------------------------
 void __fastcall TRecent::SetMaxFiles(unsigned Value)
@@ -60,10 +64,11 @@ void __fastcall TRecent::SetMaxFiles(unsigned Value)
     FMaxFiles = MaxRecentFiles;
   else
     FMaxFiles = Value;
-  while(Impl->FileList.size() > FMaxFiles)
+  while(FileList.size() > FMaxFiles)
   {
-    delete Impl->FileList.back().second;
-    Impl->FileList.pop_back(); //Make sure there are only MaxFiles file names in list
+    //This will also remove the TActionClientItem
+    delete FileList.back().second->Action;
+    FileList.pop_back(); //Make sure there are only MaxFiles file names in list
   }
   SaveToRegistry();
   ShowMenuItems();//Show menu items again
@@ -77,7 +82,7 @@ void __fastcall TRecent::SetRegistryKey(const String &Value)
   ShowMenuItems();//Show menu items
 }
 //---------------------------------------------------------------------------
-void __fastcall TRecent::SetFileMenu(TMenuItem *Value)
+void __fastcall TRecent::SetFileMenu(TActionClients *Value)
 {
   RemoveMenuItems();//Remove shown menu items
   FFileMenu = Value;
@@ -86,16 +91,16 @@ void __fastcall TRecent::SetFileMenu(TMenuItem *Value)
 //---------------------------------------------------------------------------
 int TRecent::FileIndex(const String &FileName)
 {
-  for(unsigned I = 0; I < Impl->FileList.size(); I++)
-    if(Impl->FileList[I].first.CompareIC(FileName) == 0)
+  for(unsigned I = 0; I < FileList.size(); I++)
+    if(SameFileName(FileList[I].first, FileName))
       return I;
   return -1;
 }
 //---------------------------------------------------------------------------
 int TRecent::ObjectIndex(TObject *Object)
 {
-  for(unsigned I = 0; I < Impl->FileList.size(); I++)
-    if(Impl->FileList[I].second == Object)
+  for(unsigned I = 0; I < FileList.size(); I++)
+    if(FileList[I].second == Object)
       return I;
   return -1;
 }
@@ -110,13 +115,13 @@ void __fastcall TRecent::FileUsed(const String &FileName)
     int Index = FileIndex(FileName);//Get index of FileName in list
     if(Index == -1)//If FileName not in list
     {
-      if(Impl->FileList.size() == static_cast<unsigned>(FMaxFiles))//If list is full
-        Impl->FileList.pop_back();//Erase last file name in list
+      if(FileList.size() == static_cast<unsigned>(FMaxFiles))//If list is full
+        FileList.pop_back();//Erase last file name in list
     }
     else
-      Impl->FileList.erase(Impl->FileList.begin() + Index);//Remove FileName from list
+      FileList.erase(FileList.begin() + Index);//Remove FileName from list
 
-    Impl->FileList.push_front(std::pair<String, TMenuItem*>(FileName, NULL));//Add FileName to start of list
+    FileList.push_front(std::pair<String, TActionClientItem*>(FileName, NULL));//Add FileName to start of list
     SaveToRegistry();//Write new file list to registry
     ShowMenuItems();//Show new list of menu items
   }
@@ -130,7 +135,7 @@ void __fastcall TRecent::FileUsed(const String &FileName)
 void __fastcall TRecent::MenuClick(TObject *Sender)
 {
   int Index = ObjectIndex(Sender);    //Get index of selected menu item in list
-  String FileName = Impl->FileList[Index].first; //Get file name coresponding to menu item
+  String FileName = FileList[Index].first; //Get file name coresponding to menu item
   if(FOnLoadFile)                               //If event handler sat
     if(FOnLoadFile(this, FileName))             //Call user selected event handler with FileName as parameter
       FileUsed(FileName);                       //Move FileName to first position in file list
@@ -146,20 +151,14 @@ static String CompactPath(const String &Path, unsigned MaxLen)
 //This function shows file names in the menu
 void __fastcall TRecent::ShowMenuItems(void)
 {
-  if(!FFileMenu || Impl->FileList.empty() || !Enabled)//If nowhere to show or nothing to show
+  if(!FFileMenu || FileList.empty() || !Enabled)//If nowhere to show or nothing to show
     return;
 
-  //If item, to place after, is not a seperator
-  if(FFileMenu->Caption != '-')
-  {
-    Seperator1 = new TMenuItem(NULL);
-    Seperator1->Caption = '-';//Make seperator
-    //Add seperator after FFileMenu
-    FFileMenu->Parent->Insert(FFileMenu->MenuIndex+1, Seperator1);
-  }
+  Seperator1 = FFileMenu->Add();
+  Seperator1->Caption = '-';//Make seperator
 
   //If FFileMenu is not the last menu item
-  if(FFileMenu->MenuIndex+1 + (Seperator1 != NULL) < FFileMenu->Parent->Count)
+/*  if(FFileMenu->MenuIndex+1 + (Seperator1 != NULL) < FFileMenu->Parent->Count)
     //If the next item is not a seperator
     if(FFileMenu->Parent->Items[FFileMenu->MenuIndex+1+ (Seperator1!=NULL)]->Caption != '-')
     {
@@ -168,46 +167,46 @@ void __fastcall TRecent::ShowMenuItems(void)
       Seperator2->Caption = '-';//Add seperator after the other one
       FFileMenu->Parent->Insert(FFileMenu->MenuIndex+1, Seperator2);
     }
-
-  for(unsigned I = 0; I < Impl->FileList.size(); I++)
+*/
+  for(unsigned I = 0; I < FileList.size(); I++)
   {
     //Loop through all file names
-    TMenuItem *MenuItem = new TMenuItem(NULL);//Make new menu item
-    MenuItem->Caption = "&" + String(I+1) + " " + CompactPath(Impl->FileList[I].first, FMaxPathLen);
-    //Call MenuClick() then menu item is pressed
-    MenuItem->OnClick = &MenuClick;
+    //Add menu item at the bottom
+    TActionClientItem *MenuItem = FFileMenu->Add();
+    TOpenFileAction *Action = new TOpenFileAction(FileList[I].first, this);
+    MenuItem->Action = Action;
+    MenuItem->Caption = "&" + String(I+1) + " " + CompactPath(FileList[I].first, FMaxPathLen);
     //Set hint and substitute %s with the filename
-    MenuItem->Hint = AnsiReplaceStr(FHint, "%s", Impl->FileList[I].first);
-    Impl->FileList[I].second = MenuItem;//Add pointer to menu item to FileList
-    //Add menu item to menu
-    FFileMenu->Parent->Insert(FileMenu->MenuIndex + I+1 + (Seperator1 != NULL), MenuItem);
+    Action->Hint = ReplaceStr(FHint, "%s", FileList[I].first);
+    FileList[I].second = MenuItem;//Add pointer to menu item to FileList
   }
 }
 //---------------------------------------------------------------------------
 //This function removes all menu items added by this component
 void __fastcall TRecent::RemoveMenuItems()
 {
-  if(!FFileMenu || Impl->FileList.empty())//If no FileMenu or no file names to show
-    return;
-
-  if(!FFileMenu->Parent)//If parent to FFileMenu has been deleted
+  if(!FFileMenu || FileList.empty())//If no FileMenu or no file names to show
     return;
 
   if(Seperator1)
   {
-    delete Seperator1;//Remove seperator before menu items
+    FFileMenu->Delete(Seperator1->Index);//Remove seperator before menu items
     Seperator1 = NULL;
   }
 
-  for(unsigned I = 0; I < Impl->FileList.size(); I++)//Loop through each made menu item
+  for(unsigned I = 0; I < FileList.size(); I++)//Loop through each made menu item
   {
-    delete Impl->FileList[I].second;//Remove menu item
-    Impl->FileList[I].second = NULL;//File name no more have a menu item attached
+    if(FileList[I].second)
+    {
+      TActionClientItem *Item = FileList[I].second;
+      delete Item->Action; //This will also remove the TActionClientItem
+    }
+    FileList[I].second = NULL;//File name no more have a menu item attached
   }
 
   if(Seperator2)
   {
-    delete Seperator2;//Remove seperator after menu items
+    FFileMenu->Delete(Seperator2->Index);//Remove seperator after menu items
     Seperator2 = NULL;
   }
 }
@@ -218,7 +217,7 @@ void __fastcall TRecent::ReadFromRegistry(void)
   if(ComponentState.Contains(csDesigning))//If design time
     return;//don't load registry
 
-  Impl->FileList.clear();//Make sure there are no files in list
+  FileList.clear();//Make sure there are no files in list
   if(FRegistryKey.IsEmpty())//If no registry key set
     return;//Don't read data from registry
 
@@ -226,7 +225,7 @@ void __fastcall TRecent::ReadFromRegistry(void)
   if(Registry->OpenKeyReadOnly(FRegistryKey))
     for(unsigned I = 1; I <= FMaxFiles; I++)//Loop through all values in registry
       if(Registry->ValueExists("Recent" + String(I)))
-        Impl->FileList.push_back(std::pair<String,TMenuItem*>(Registry->ReadString("Recent" + String(I)), NULL));//Add file name to list
+        FileList.push_back(std::pair<String,TActionClientItem*>(Registry->ReadString("Recent" + String(I)), NULL));//Add file name to list
 }
 //---------------------------------------------------------------------------
 //This function saves file names to the registry
@@ -242,10 +241,10 @@ void __fastcall TRecent::SaveToRegistry(void)
   if(Registry->OpenKey(FRegistryKey, true))
   {
     //Open key;Create key if not found
-    for(unsigned I = 0; I < Impl->FileList.size(); I++)//Loop through recent files in list
-      Registry->WriteString("Recent" + String(I+1), Impl->FileList[I].first);//Write file name to registry
+    for(unsigned I = 0; I < FileList.size(); I++)//Loop through recent files in list
+      Registry->WriteString("Recent" + String(I+1), FileList[I].first);//Write file name to registry
 
-    for(unsigned I = Impl->FileList.size(); Registry->ValueExists("Recent" + String(I+1)); I++)//Loop through until no more fake values
+    for(unsigned I = FileList.size(); Registry->ValueExists("Recent" + String(I+1)); I++)//Loop through until no more fake values
       Registry->DeleteValue("Recent"+String(I+1));//Delete file name
   }
 }
@@ -266,9 +265,9 @@ void __fastcall TRecent::SetEnabled(bool AEnabled)
 void __fastcall TRecent::SetHint(String Str)
 {
   FHint = Str;
-  for(unsigned I = 0; I < Impl->FileList.size(); I++)
-    if(Impl->FileList[I].second)
-      Impl->FileList[I].second->Hint = AnsiReplaceStr(FHint, "%s", Impl->FileList[I].first);
+  for(unsigned I = 0; I < FileList.size(); I++)
+    if(FileList[I].second)
+      static_cast<TCustomAction*>(FileList[I].second->Action)->Hint = ReplaceStr(FHint, "%s", FileList[I].first);
 }
 //---------------------------------------------------------------------------
 

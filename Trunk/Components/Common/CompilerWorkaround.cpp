@@ -19,12 +19,17 @@
  */
 #undef _SYSCH
 #define _SYSCH(x) L##x
+#undef _Sysch_t
+#define _Sysch_t wchar_t
+#undef _CSTD
+#define _CSTD
+#define _Xfopen	_wfopen
 namespace std
 {
-FILE *_Fiopen(const wchar_t *filename,
+_CRTIMP2 FILE *_Fiopen(const _CSTD _Sysch_t *filename,
 	ios_base::openmode mode, int)	// protection currently unused
 	{	// open a file with native name
-	static const wchar_t *mods[] =
+	static const _CSTD _Sysch_t *mods[] =
 		{	// fopen mode strings corresponding to valid[i]
 		_SYSCH("r"), _SYSCH("w"), _SYSCH("w"), _SYSCH("a"),
 		_SYSCH("rb"), _SYSCH("wb"), _SYSCH("wb"), _SYSCH("ab"),
@@ -69,7 +74,7 @@ FILE *_Fiopen(const wchar_t *filename,
 	if (valid[n] == 0)
 		return (0);	// no valid mode
 	else if (norepflag && mode & (ios_base::out || ios_base::app)
-		&& (fp = _wfopen(filename, _SYSCH("r"))) != 0)
+		&& (fp = _Xfopen(filename, _SYSCH("r"))) != 0)
 		{	// file must not exist, close and fail
 		fclose(fp);
 		return (0);
@@ -77,7 +82,7 @@ FILE *_Fiopen(const wchar_t *filename,
 	else if (fp != 0 && fclose(fp) != 0)
 		return (0);	// can't close after test open
 // should open with protection here, if other than default
-	else if ((fp = _wfopen(filename, mods[n])) == 0)
+	else if ((fp = _Xfopen(filename, mods[n])) == 0)
 		return (0);	// open failed
 
 	if (!atendflag || fseek(fp, 0, SEEK_END) == 0)
@@ -86,20 +91,6 @@ FILE *_Fiopen(const wchar_t *filename,
 	fclose(fp);	// can't position at end
 	return (0);
 		}
-}
-//---------------------------------------------------------------------------
-//Workaround for bug in C++ Builder 2009 where TPen::SetHandle() is broken
-namespace Graphics
-{
-  void __fastcall TPen::SetHandle(HPEN Value)
-  {
-    TPenData PenData = {
-      Value,
-      clBlack,
-      1,
-      psSolid};
-    SetData(PenData);
-  }
 }
 //---------------------------------------------------------------------------
 
