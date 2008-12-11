@@ -128,10 +128,6 @@ object Form14: TForm14
     TabOrder = 2
     object TabSheet1: TTabSheet
       Caption = 'Markers'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         186
         324)
@@ -408,10 +404,6 @@ object Form14: TForm14
     object TabSheet2: TTabSheet
       Caption = 'Error bars'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         186
         324)
@@ -585,7 +577,7 @@ object Form14: TForm14
       end
     end
   end
-  object PopupMenu1: TPopupMenu
+  object PopupMenu1: TPopupActionBar
     OnPopup = PopupMenu1Popup
     Left = 24
     Top = 328

@@ -9,12 +9,14 @@
 #include <ComCtrls.hpp>
 #include "IRichEdit.h"
 #include <Menus.hpp>
+#include <ActnPopup.hpp>
+#include <PlatformDefaultStyleActnCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm22 : public TForm
 {
 __published:	// IDE-managed Components
   TIRichEdit *IRichEdit1;
-  TPopupMenu *PopupMenu1;
+  TPopupActionBar *PopupMenu1;
   TMenuItem *Clear1;
   void __fastcall FormHide(TObject *Sender);
   void __fastcall IRichEdit1ProtectChange(TObject *Sender, int StartPos,

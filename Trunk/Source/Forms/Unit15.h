@@ -19,6 +19,8 @@
 #include <Menus.hpp>
 #include <Dialogs.hpp>
 #include "ProgressForm.h"
+#include <ActnPopup.hpp>
+#include <PlatformDefaultStyleActnCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm15 : public TForm
 {
@@ -31,7 +33,7 @@ __published:	// IDE-managed Components
   TEdit *Edit1;
   TLabel *Label2;
   TEdit *Edit2;
-  TPopupMenu *PopupMenu1;
+  TPopupActionBar *PopupMenu1;
   TMenuItem *Popup1_Copy;
   TMenuItem *Popup1_Select;
   TButton *Button3;

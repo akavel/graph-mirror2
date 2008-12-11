@@ -25,6 +25,8 @@
 #include <Menus.hpp>
 #include "ExtColorBox.h"
 #include "SymbolDialog.h"
+#include <ActnPopup.hpp>
+#include <PlatformDefaultStyleActnCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm6 : public TForm
 {
@@ -51,7 +53,7 @@ __published:	// IDE-managed Components
   TIRichEdit *IRichEdit1;
   TToolButton *ToolButton9;
   TToolButton *ToolButton10;
-  TPopupMenu *PopupMenu1;
+  TPopupActionBar *PopupMenu1;
   TMenuItem *Popup_Cut;
   TMenuItem *Popup_Copy;
   TMenuItem *Popup_Paste;

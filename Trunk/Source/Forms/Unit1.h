@@ -51,6 +51,8 @@
 #include "SaveDialogEx.h"
 #include <ListActns.hpp>
 #include <PlatformDefaultStyleActnCtrls.hpp>
+#include <ActnMenus.hpp>
+#include <ActnPopup.hpp>
 #include <stack>
 #include <boost/scoped_ptr.hpp>
 //---------------------------------------------------------------------------
@@ -81,12 +83,9 @@ class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
   TOpenDialog *OpenDialog;
-  TMainMenu *MainMenu;
-  TMenuItem *File_;
-  TMenuItem *Edit_;
   TSaveDialog *SaveDialog;
   TRecent *Recent1;
-  TPopupMenu *PopupMenu1;
+  TPopupActionBar *PopupMenu1;
   TMenuItem *Tree_Delete;
   TMenuItem *Tree_Properties;
   TApplicationEvents *ApplicationEvents;
@@ -105,8 +104,6 @@ __published:	// IDE-managed Components
   TMenuItem *Tree_InsDiff;
   TMenuItem *Tree_InsTrend;
   TMenuItem *Tree_InsShade;
-  TMenuItem *Internet_HomePage;
-  TMenuItem *Internet_Update;
   TImageList *ImageList2;
   TCustomizeDlg *CustomizeDlg;
   TActionManager *ActionManager;
@@ -153,7 +150,7 @@ __published:	// IDE-managed Components
   TAction *UpdateAction;
   TAction *AboutAction;
   TAction *SeparatorAction;
-  TPopupMenu *PopupMenu2;
+  TPopupActionBar *PopupMenu2;
   TMenuItem *ToolBar_Reset;
   TMenuItem *ToolBar_Customize;
   TMenuItem *N11;
@@ -169,29 +166,18 @@ __published:	// IDE-managed Components
   TMenuItem *Tree_ShowInLegend;
   TMenuItem *N15;
   TIPolygon *IPolygon1;
-  TMenuItem *File_Import_PointSeries;
-  TMenuItem *File_Import_GraphFile;
   TAction *InsertLabelAction;
   TImage *Image2;
-  TPopupMenu *PopupMenu3;
+  TPopupActionBar *PopupMenu3;
   TMenuItem *Label_Edit;
   TMenuItem *Label_Delete;
-  TMenuItem *Internet_Donate;
   TAction *DonateAction;
   TAction *TipAction;
   TAction *SaveCopyAsAction;
   TOpenPreviewDialog *OpenPreviewDialog1;
   TMenuItem *Tree_Export;
   TIPrintDialog *IPrintDialog1;
-  TPopupMenu *PopupMenu4;
-  TMenuItem *Legend_Show;
-  TMenuItem *Legend_Placement;
-  TMenuItem *Legend_TopRight;
-  TMenuItem *Legend_BottomRight;
-  TMenuItem *Legend_TopLeft;
-  TMenuItem *Legend_BottomLeft;
   TAction *SupportAction;
-  TMenuItem *Internet_Support;
   TAction *ZoomXInAction;
   TAction *ZoomXOutAction;
   TAction *ZoomYInAction;
@@ -214,75 +200,10 @@ __published:	// IDE-managed Components
   TMenuItem *Rotation_180;
   TMenuItem *Rotation_270;
   TMenuItem *Rotation_0;
-  TMenuItem *File_Exit;
-  TMenuItem *N2;
-  TMenuItem *File_Print;
-  TMenuItem *N4;
-  TMenuItem *File_Import;
-  TMenuItem *File_SaveAsPicture;
-  TMenuItem *N1;
-  TMenuItem *File_SaveCopyAs;
-  TMenuItem *File_SaveAs;
-  TMenuItem *File_Save;
-  TMenuItem *File_Open;
-  TMenuItem *File_New;
-  TMenuItem *Help_;
-  TMenuItem *Math_;
-  TMenuItem *Zoom_;
-  TMenuItem *Function_;
-  TMenuItem *Edit_Property;
-  TMenuItem *Axes1;
-  TMenuItem *N3;
-  TMenuItem *Edit_CopyImage;
-  TMenuItem *N9;
-  TMenuItem *Edit_Paste;
-  TMenuItem *Edit_Copy;
-  TMenuItem *Edit_Cut;
-  TMenuItem *N5;
-  TMenuItem *Edit_Redo;
-  TMenuItem *Edit_Undo;
-  TMenuItem *Customfunctions1;
-  TMenuItem *Function_Delete;
-  TMenuItem *Function_Edit;
-  TMenuItem *N7;
-  TMenuItem *Insertlabel1;
-  TMenuItem *Insertinequation1;
-  TMenuItem *N16;
-  TMenuItem *Function_InsTrend;
-  TMenuItem *Function_InsPoints;
-  TMenuItem *N6;
-  TMenuItem *Function_InsertDiff;
-  TMenuItem *Function_InsShade;
-  TMenuItem *Function_InsTan;
-  TMenuItem *Function_InsFunc;
-  TMenuItem *Allpoints1;
-  TMenuItem *Fit1;
-  TMenuItem *N13;
-  TMenuItem *Movesystem1;
-  TMenuItem *N14;
-  TMenuItem *Zoom_Standard;
-  TMenuItem *Square1;
-  TMenuItem *Zoom_Window;
-  TMenuItem *Zoom_Out;
-  TMenuItem *Zoom_In;
-  TMenuItem *Math_Table;
-  TMenuItem *Math_Eval;
-  TMenuItem *Math_Area;
-  TMenuItem *Math_Arc;
-  TMenuItem *Help_About;
-  TMenuItem *Help_Internet;
-  TMenuItem *N12;
-  TMenuItem *Help_Tip;
-  TMenuItem *Help_Faq;
-  TMenuItem *Help_Functions;
-  TMenuItem *Help_Contents;
-  TMenuItem *Math_Animate;
   TAction *AnimateAction;
   TAction *ImportGraphFileAction;
   TAction *ImportPointSeriesAction;
-  TMenuItem *Legend_Font;
   TAction *InsertObjectAction;
-  TMenuItem *Insertobject1;
   TMenuItem *Label_Rotation_Custom;
   TMenuItem *Tree_Rotation;
   TMenuItem *Tree_Rotation_0;
@@ -290,7 +211,6 @@ __published:	// IDE-managed Components
   TMenuItem *Tree_Rotation_180;
   TMenuItem *Tree_Rotation_270;
   TMenuItem *Tree_Rotation_Custom;
-  TMenuItem *Plugins_;
   TMenuItem *Tree_Placement_Custom;
   TMenuItem *Label_Placement_Custom;
   TPanel *Panel5;
@@ -298,6 +218,15 @@ __published:	// IDE-managed Components
   TStatusBar *StatusBar1;
   TPanel *Panel6;
   TTimer *Timer2;
+  TActionMainMenuBar *ActionMainMenuBar1;
+  TPopupActionBar *PopupMenu4;
+  TMenuItem *Legend_Show;
+  TMenuItem *Legend_Font;
+  TMenuItem *Legend_Placement;
+  TMenuItem *Legend_BottomLeft;
+  TMenuItem *Legend_TopLeft;
+  TMenuItem *Legend_BottomRight;
+  TMenuItem *Legend_TopRight;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);
@@ -337,7 +266,7 @@ __published:	// IDE-managed Components
   bool __fastcall ApplicationEventsHelp(WORD Command, int Data,
     bool &CallHelp);
   bool __fastcall Recent1LoadFile(TRecent *Sender,
-    const String &FileName);
+    String FileName);
   void __fastcall xPageSetupDialogPaintText(TIPageSetupDialog *Sender,
     TCanvas *PageCanvas, const TRect &UpdateRect,
     const TRect &PaperSize);
