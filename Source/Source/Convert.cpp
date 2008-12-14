@@ -415,6 +415,11 @@ String ToUString(const std::string &Str)
   return Str.c_str();
 }
 //--------------------------------------------------------------------------
+String ToUString(long double Value)
+{
+  return FloatToStr(Value);
+}
+//---------------------------------------------------------------------------
 void Trim(std::wstring &Str)
 {
   unsigned Pos1 = Str.find_first_not_of(L" ");

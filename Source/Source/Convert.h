@@ -49,6 +49,7 @@ std::wstring ToWString(const char *Str);
 
 String ToUString(const std::wstring &Str);
 String ToUString(const std::string &Str);
+String ToUString(long double Value);
 
 std::wstring ToLower(const std::wstring &Str);
 

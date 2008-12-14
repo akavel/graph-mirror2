@@ -35,10 +35,6 @@ object Form3: TForm3
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'x-axis'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         396
         185)
@@ -230,10 +226,6 @@ object Form3: TForm3
     end
     object TabSheet2: TTabSheet
       Caption = 'y-axis'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         396
         185)

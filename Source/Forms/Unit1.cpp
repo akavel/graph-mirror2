@@ -73,7 +73,6 @@
 #pragma link "SaveDialogEx"
 
 #pragma link "Wininet.lib" //Used for InternetGetConnectedState()
-#pragma link "../../BMGLib/BMGLibPNG.lib"  //Used to save png files
 #pragma link "PDFlib.lib"
 #pragma link "htmlhelp.lib"
 #pragma resource "*.dfm"
@@ -145,8 +144,12 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   CenterForm(this);
 
   //Set shortcuts that depends on the locale settings
+//  ZoomInAction->ShortCut = ShortCut(VK_ADD, TShiftState() << ssCtrl);
   ZoomInAction->ShortCut = ShortCut(VkKeyScan('+') & 0xFF, TShiftState() << ssCtrl);
+  ZoomInAction->SecondaryShortCuts->AddObject("Ctrl+Shift++", (TObject*)ShortCut(VkKeyScan('+') & 0xFF, TShiftState() << ssCtrl << ssShift));
+
   ZoomOutAction->ShortCut = ShortCut(VkKeyScan('-') & 0xFF, TShiftState() << ssCtrl);
+  ZoomOutAction->SecondaryShortCuts->AddObject("Ctrl+Shift+-", (TObject*)ShortCut(VkKeyScan('-') & 0xFF, TShiftState() << ssCtrl << ssShift));
 
   Screen->Cursors[crMoveHand2] = LoadCursor(HInstance, L"MOVECURSOR1");
   Screen->Cursors[crMoveHand1] = LoadCursor(HInstance, L"MOVECURSOR2");
@@ -1002,7 +1005,7 @@ bool TForm1::ZoomWindow(double xMin, double xMax, double yMin, double yMax, bool
   Data.Axes.yAxis.Min = yMin;
   Data.Axes.yAxis.Max = yMax;
 
-  Data.Axes.HandleZoomSquare(Draw.GetScaledYAxis());
+//  Data.Axes.HandleZoomSquare(Draw.GetScaledYAxis());
   
   Data.ClearCache();
   if(Update)
@@ -1152,8 +1155,8 @@ void __fastcall TForm1::Panel2Resize(TObject *Sender)
     {
       IPolygon1->Visible = false;
       Draw.AbortUpdate();
-      if(Data.Axes.ZoomSquare)
-        ZoomWindow(Data.Axes.xAxis.Min, Data.Axes.xAxis.Max, Data.Axes.yAxis.Min, Data.Axes.yAxis.Max, false, false);
+//      if(Data.Axes.ZoomSquare)
+//        ZoomWindow(Data.Axes.xAxis.Min, Data.Axes.xAxis.Max, Data.Axes.yAxis.Min, Data.Axes.yAxis.Max, false, false);
       //Set width and height
       Draw.SetSize(Image1->Width,Image1->Height);
       //Make sure background is drawn
@@ -1315,8 +1318,8 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       break;
 
     case VK_OEM_MINUS: //Handle Ctrl+Shift+-  (Normal shortcut handling doesn't seem to work)
-      if(Shift == TShiftState() << ssCtrl << ssShift)
-        ZoomOutAction->Execute();
+//      if(Shift == TShiftState() << ssCtrl << ssShift)
+//        ZoomOutAction->Execute();
       break;
   }
 
@@ -2129,9 +2132,9 @@ void __fastcall TForm1::ZoomStandardActionExecute(TObject *Sender)
   Data.Axes.xAxis = xAxis;
   Data.Axes.yAxis = yAxis;
 
-  Data.Axes.ZoomSquare = ConfigFile.Section(L"Axes").Read(L"ZoomSquare", false);
-  if(Data.Axes.ZoomSquare)
-    ZoomWindow(Data.Axes.xAxis.Min, Data.Axes.xAxis.Max, Data.Axes.yAxis.Min, Data.Axes.yAxis.Max, false, false);
+//  Data.Axes.ZoomSquare = ConfigFile.Section(L"Axes").Read(L"ZoomSquare", false);
+//  if(Data.Axes.ZoomSquare)
+//    ZoomWindow(Data.Axes.xAxis.Min, Data.Axes.xAxis.Max, Data.Axes.yAxis.Min, Data.Axes.yAxis.Max, false, false);
 
   Data.ClearCache();
   Data.SetModified();
@@ -2532,11 +2535,12 @@ void __fastcall TForm1::ZoomSquareActionExecute(TObject *Sender)
     return; //Invalid
 
   UndoList.Push(TUndoAxes(Data));
-  Axes.ZoomSquare = !Axes.ZoomSquare;
+//  Axes.ZoomSquare = !Axes.ZoomSquare;
 
   //Don't save undo info. We have already done that
-  if(Axes.ZoomSquare)
-    ZoomWindow(Axes.xAxis.Min, Axes.xAxis.Max, Axes.yAxis.Min, Axes.yAxis.Max, true, false);
+//  if(Axes.ZoomSquare)
+  Data.Axes.HandleZoomSquare(Draw.GetScaledYAxis());
+  ZoomWindow(Axes.xAxis.Min, Axes.xAxis.Max, Axes.yAxis.Min, Axes.yAxis.Max, true, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Tree_ShowInLegendClick(TObject *Sender)
@@ -3613,12 +3617,12 @@ void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomSquareActionUpdate(TObject *Sender)
 {
-  ZoomSquareAction->Checked = Data.Axes.ZoomSquare;
+//  ZoomSquareAction->Checked = Data.Axes.ZoomSquare;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomActionUpdate(TObject *Sender)
 {
-  static_cast<TAction*>(Sender)->Enabled = !Data.Axes.ZoomSquare;
+//  static_cast<TAction*>(Sender)->Enabled = !Data.Axes.ZoomSquare;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Panel6UnDock(TObject *Sender, TControl *Client,
@@ -3749,8 +3753,11 @@ void __fastcall TForm1::Image1Click(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-
-
+void __fastcall TForm1::FormShortCut(TWMKey &Msg, bool &Handled)
+{
+  TShortCut ShortCut = TextToShortCut("Ctrl+Shift+-");
+}
+//---------------------------------------------------------------------------
 
 
 

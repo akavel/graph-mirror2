@@ -221,7 +221,7 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
   Axes.LegendFont = LegendFont;
 
   //Handle Zoom Square
-  Axes.HandleZoomSquare(Form1->Draw.GetScaledYAxis());
+//  Axes.HandleZoomSquare(Form1->Draw.GetScaledYAxis());
 
   //Set trigonometry property for all functions if the setting changed
   if(OldTrig != Axes.Trigonometry)
@@ -273,8 +273,8 @@ void __fastcall TForm3::BitBtn3Click(TObject *Sender)
 void TForm3::UpdateEnabledControls()
 {
   //Min and Max for the y-axis are not available when Zoom|Square is enabled.
-  Edit7->Enabled = !Data.Axes.ZoomSquare;
-  Edit8->Enabled = !Data.Axes.ZoomSquare;
+//  Edit7->Enabled = !Data.Axes.ZoomSquare;
+//  Edit8->Enabled = !Data.Axes.ZoomSquare;
 
   Edit3->Enabled = !CheckBox4->Checked;
   Edit4->Enabled = !CheckBox5->Checked;

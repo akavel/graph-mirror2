@@ -295,6 +295,8 @@ struct TPointSeriesPoint
 enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
 struct TPointSeries : public TGraphElem
 {
+  typedef std::vector<TPointSeriesPoint> TPointList;
+
   TColor FrameColor;
   TColor FillColor;
   TColor LineColor;
@@ -306,7 +308,7 @@ struct TPointSeries : public TGraphElem
   bool ShowLabels;
   TLabelPosition LabelPosition;
   TVclObject<TFont> Font;
-  std::vector<TPointSeriesPoint> PointList;
+  TPointList PointList;
   TErrorBarType xErrorBarType, yErrorBarType;
   double xErrorValue, yErrorValue; //Data for error bars; only used if Uncertainty!=utCustom
   void Update();
@@ -315,12 +317,13 @@ struct TPointSeries : public TGraphElem
   std::wstring MakeText() const {return L"";}
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
-  Func32::TDblPoint FindCoord(double x) const;
+  Func32::TDblPoint FindCoord(TPointList::const_iterator Iter, double x) const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   double GetXError(unsigned Index) const;
   double GetYError(unsigned Index) const;
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TPointSeries(*this));}
   Func32::TDblPoint GetPoint(unsigned Index) const {return Func32::TDblPoint(PointList[Index].x.Value, PointList[Index].y.Value);}
+  TPointList::const_iterator FindPoint(double x) const;
   void AddPoint(const Func32::TDblPoint &Point) {PointList.push_back(TPointSeriesPoint(Point.x, Point.y));}
 };
 

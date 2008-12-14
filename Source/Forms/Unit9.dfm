@@ -84,6 +84,8 @@ object Form9: TForm9
     ExplicitWidth = 184
     ExplicitHeight = 102
     inherited GridPanel1: TGridPanel
+      Width = 184
+      Height = 102
       ControlCollection = <
         item
           Column = 0
@@ -117,22 +119,25 @@ object Form9: TForm9
         end>
       inherited Label1: TLabel
         Width = 26
-        Height = 13
         ExplicitWidth = 26
       end
       inherited Edit1: TMyEdit
+        Left = 34
+        Width = 146
         OnChange = Edit1Change
       end
-      inherited Label2: TLabel
-        Height = 13
-      end
       inherited Edit2: TMyEdit
+        Left = 34
+        Width = 146
         OnChange = Edit1Change
       end
       inherited Label3: TLabel
         Width = 22
-        Height = 13
         ExplicitWidth = 22
+      end
+      inherited Edit3: TEdit
+        Left = 34
+        Width = 146
       end
     end
   end

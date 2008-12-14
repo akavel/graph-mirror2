@@ -29,11 +29,14 @@ __published:	// IDE-managed Components
   TLabel *Label3;
   TEdit *Edit3;
 private:	// User declarations
+  void EvalArea(const TBaseFuncType *Func, long double From, long double To);
+  void EvalArea(const TPointSeries *PointSeries, long double From, long double To);
 
 public:		// User declarations
   __fastcall TAreaFrame(TComponent* Owner);
   void Eval(const TGraphElem *Elem) {} //Dummy
-  void SetPoint(const TGraphElem *Elem, int X, int Y) {} //Dummy
+  void SetPoint(const TGraphElem *Elem, int X, int Y);
+  void SetEndPoint(const TGraphElem *Elem, int X, int Y);
   void EvalArea(const TGraphElem *Elem);
   void EvalArc(const TGraphElem *Elem);
   std::string GetErrorPrefix() {return std::string();}

@@ -144,6 +144,7 @@ object Form1: TForm1
   OnMouseWheelDown = FormMouseWheelDown
   OnMouseWheelUp = FormMouseWheelUp
   OnResize = FormResize
+  OnShortCut = FormShortCut
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -4064,8 +4065,6 @@ object Form1: TForm1
       Hint = 'Zoom in. Hold down Shift to zoom with larger steps.'
       ImageIndex = 22
       ShortCut = 16571
-      SecondaryShortCuts.Strings = (
-        'Ctrl+Shift++')
       OnExecute = ZoomInActionExecute
     end
     object ZoomOutAction: TAction
@@ -4074,8 +4073,6 @@ object Form1: TForm1
       Hint = 'Zoom out. Hold down Shift to zoom with larger steps.'
       ImageIndex = 23
       ShortCut = 16495
-      SecondaryShortCuts.Strings = (
-        'Ctrl+Shift+-')
       OnExecute = ZoomOutActionExecute
     end
     object ZoomWindowAction: TAction
