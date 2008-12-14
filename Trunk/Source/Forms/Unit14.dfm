@@ -55,12 +55,13 @@ object Form14: TForm14
     DefaultRowHeight = 16
     FixedCols = 0
     RowCount = 2
-    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing, goTabs, goAlwaysShowEditor, goThumbTracking]
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goColSizing, goEditing, goTabs, goAlwaysShowEditor, goThumbTracking]
     ParentBiDiMode = False
     PopupMenu = PopupMenu1
     TabOrder = 1
     MinColWidth = 50
     AutoAddRows = True
+    ExportFixedRows = False
     EditorPopupMenu = PopupMenu1
     OnEditorKeyPress = GridEditorKeyPress
     OnGetText = GridGetText

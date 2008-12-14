@@ -791,17 +791,24 @@ double TPointSeries::GetYError(unsigned Index) const
   return 0;
 }
 //---------------------------------------------------------------------------
-Func32::TDblPoint TPointSeries::FindCoord(double x) const
+Func32::TDblPoint TPointSeries::FindCoord(TPointList::const_iterator Iter, double x) const
 {
   if(Interpolation == iaLinear)
-    for(unsigned I = 0; I < PointList.size() - 1; I++)
-      if((PointList[I].x.Value < x && PointList[I+1].x.Value > x) ||
-         (PointList[I].x.Value > x && PointList[I+1].x.Value < x))
-      {
-        double a = (PointList[I+1].y.Value - PointList[I].y.Value) / (PointList[I+1].x.Value - PointList[I].x.Value);
-        double b = PointList[I].y.Value - a * PointList[I].x.Value;
-        return Func32::TDblPoint(x, a*x+b);
-      }
+  {
+    double a = ((Iter+1)->y.Value - Iter->y.Value) / ((Iter+1)->x.Value - Iter->x.Value);
+    double b = Iter->y.Value - a * Iter->x.Value;
+    return Func32::TDblPoint(x, a*x+b);
+  }
+
+  throw EAbort("");
+}
+//---------------------------------------------------------------------------
+TPointSeries::TPointList::const_iterator TPointSeries::FindPoint(double x) const
+{
+  for(unsigned I = 0; I < PointList.size() - 1; I++)
+    if((PointList[I].x.Value <= x && PointList[I+1].x.Value >= x) ||
+       (PointList[I].x.Value >= x && PointList[I+1].x.Value <= x))
+      return PointList.begin() + I;
 
   throw EAbort("");
 }

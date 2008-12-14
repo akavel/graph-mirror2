@@ -26,7 +26,7 @@ TAxis::TAxis() : Min(-10), Max(10), LogScl(false), ShowGrid(false), MultiplyOfPi
 //---------------------------------------------------------------------------
 TAxes::TAxes() : ShowLegend(true), AxesColor(clBlue),
   GridColor(static_cast<TColor>(0x00FF9999)), BackgroundColor(clWhite), Trigonometry(Func32::Radian),
-  AxesStyle(asCrossed), LegendPlacement(lpTopRight), GridSize(1), CalcComplex(false), ZoomSquare(false),
+  AxesStyle(asCrossed), LegendPlacement(lpTopRight), GridSize(1), CalcComplex(false), //ZoomSquare(false),
   LegendPos(0,0), AxesArrows(aaPositiveEnd), NumberPlacement(npCenter), GridStyle(gsLines)  
 {
 }
@@ -70,7 +70,7 @@ void TAxes::WriteToIni(TConfigFileSection &Section) const
     Section.Write(L"LegendPos", LegendPos);
   Section.Write(L"GridSize", GridSize, 1U);
   Section.Write(L"CalcComplex", CalcComplex, false);
-  Section.Write(L"ZoomSquare", ZoomSquare, false);
+//  Section.Write(L"ZoomSquare", ZoomSquare, false);
   Section.Write(L"AxesArrows", AxesArrows, aaPositiveEnd);
   Section.Write(L"NumberPlacement", NumberPlacement, npCenter);
   Section.Write(L"GridStyle", GridStyle, gsLines);
@@ -115,7 +115,7 @@ void TAxes::ReadFromIni(const TConfigFileSection &Section)
   LegendPos = Section.Read(L"LegendPos", Func32::TDblPoint(0, 0));
   GridSize = Section.Read(L"GridSize", 1);
   CalcComplex = Section.Read(L"CalcComplex", false);
-  ZoomSquare = Section.Read(L"ZoomSquare", false);
+//  ZoomSquare = Section.Read(L"ZoomSquare", false);
   AxesArrows = Section.Read(L"AxesArrows", aaPositiveEnd);
   NumberPlacement = Section.Read(L"NumberPlacement", npCenter);
   GridStyle = Section.Read(L"GridStyle", gsLines);
@@ -123,7 +123,7 @@ void TAxes::ReadFromIni(const TConfigFileSection &Section)
 //---------------------------------------------------------------------------
 void TAxes::HandleZoomSquare(double xyScale)
 {
-  if(ZoomSquare && xAxis.LogScl == yAxis.LogScl)
+  if(/*ZoomSquare &&*/ xAxis.LogScl == yAxis.LogScl)
   {
     if(xAxis.LogScl)
     {
@@ -140,8 +140,8 @@ void TAxes::HandleZoomSquare(double xyScale)
       yAxis.Max = yMiddle + dy / 2;
     }
   }
-  else
-    ZoomSquare = false;
+//  else
+//    ZoomSquare = false;
 }
 //---------------------------------------------------------------------------
 ///////////////

@@ -71,31 +71,8 @@ void TForm9::StartValueChanged(int X, int Y)
     if(!Elem || !Visible)
       return;
 
-    switch(EvalType)
-    {
-      case etArea:
-      case etArc:
-        if(TBaseFuncType *Func = dynamic_cast<TBaseFuncType*>(Elem.get()))
-        {
-          double t = FindNearestPoint(Func, X, Y); //Returns NAN if no point found
-          if(_isnan(t))
-          {
-            Form1->Cross->Hide();
-            AreaFrame1->Edit1->Text = "";
-            AreaFrame1->Edit2->Text = "";
-          }
-          else
-          {
-            AreaFrame1->Edit1->Text = RoundToStr(t, Form1->Data);
-            AreaFrame1->Edit2->Text = AreaFrame1->Edit1->Text;
-          }
-        }
-        break;
-
-      default:
-        if(VisibleFrame)
-          VisibleFrame->SetPoint(Elem.get(), X, Y);
-    }
+    if(VisibleFrame)
+      VisibleFrame->SetPoint(Elem.get(), X, Y);
   }
   catch(Func32::EFuncError &Error)
   {
@@ -106,12 +83,8 @@ void TForm9::StartValueChanged(int X, int Y)
 //---------------------------------------------------------------------------
 void TForm9::EndValueChanged(int X, int Y)
 {
-  if(TBaseFuncType *Func = dynamic_cast<TBaseFuncType*>(Elem.get()))
-  {
-    double t = FindNearestPoint(Func, X, Y);
-    if(EvalType == etArea || EvalType == etArc)
-      AreaFrame1->Edit2->Text = _isnan(t) ? String("") : RoundToStr(t, Form1->Data);
-  }
+  if(VisibleFrame)
+    VisibleFrame->SetEndPoint(Elem.get(), X, Y);
 }
 //---------------------------------------------------------------------------
 void TForm9::FuncChanged(const boost::shared_ptr<TGraphElem> &AElem)
@@ -141,7 +114,8 @@ void TForm9::FuncChanged(const boost::shared_ptr<TGraphElem> &AElem)
 
     case etArea:
     case etArc:
-      if(dynamic_cast<TBaseFuncType*>(Elem.get()))
+      if(dynamic_cast<TBaseFuncType*>(Elem.get()) ||
+         dynamic_cast<TPointSeries*>(Elem.get()))
       {
         ShowFrame(AreaFrame1); //Only show area frame for functions and tangents
         Edit1Change(NULL);
@@ -300,6 +274,9 @@ void TForm9::SetEvalType(TEvalType AEvalType)
     case etArc:
       AreaFrame1->Label3->Caption = LoadRes(EvalType == etArea ? RES_AREA : RES_LENGTH) + L':';
       Caption = LoadRes(EvalType == etArea ? 522 : 523);
+      //Update grid panel. Setting AutoSize=true might have working if it was accesible
+      AreaFrame1->GridPanel1->Align = alNone;
+      AreaFrame1->GridPanel1->Align = alClient;
       break;
   }
   FuncChanged(Elem);

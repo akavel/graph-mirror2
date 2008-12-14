@@ -127,7 +127,7 @@ object Form15: TForm15
     Font.Height = -11
     Font.Name = 'Lucida Sans Unicode'
     Font.Style = []
-    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goThumbTracking]
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goColSizing, goThumbTracking]
     ParentBiDiMode = False
     ParentFont = False
     PopupMenu = PopupMenu1

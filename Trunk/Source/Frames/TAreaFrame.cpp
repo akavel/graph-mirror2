@@ -30,44 +30,89 @@ void TAreaFrame::EvalArea(const TGraphElem *GraphElem)
   if(!GraphElem->GetVisible())
     return;
 
+  long double From = Form1->Data.Calc(ToWString(Edit1->Text));
+  long double To = Form1->Data.Calc(ToWString(Edit2->Text));
+
   if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(GraphElem))
-  {
-    long double From = Form1->Data.Calc(ToWString(Edit1->Text));
-    long double To = Form1->Data.Calc(ToWString(Edit2->Text));
-
-    Edit3->Text = RoundToStr(Func->CalcArea(From, To), Form1->Data);
-
-    if(From > To)
-      std::swap(From, To);
-
-    Func32::TCoord<long double> Min = Func->Eval(From);
-    Func32::TCoord<long double> Max = Func->Eval(To);
-
-    unsigned N1 = std::lower_bound(Func->sList.begin(), Func->sList.end(), From, TCompCoordSet()) - Func->sList.begin();
-    unsigned N2 = std::lower_bound(Func->sList.begin() + N1, Func->sList.end(), To, TCompCoordSet()) - Func->sList.begin();
-    if(N1 != N2)
-    {
-      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Min.x, Min.y));
-      Form1->IPolygon1->AddPoints(&Func->Points[N1], N2 - N1);
-      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Max.x, Max.y));
-    }
-
-    if(const TPolFunc *PolFunc = dynamic_cast<const TPolFunc*>(GraphElem))
-    {
-      if(N1 != N2)
-        Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xyPoint(Form1->Data.Axes.yAxis.AxisCross, Form1->Data.Axes.xAxis.AxisCross)));
-    }
-    else
-    {
-      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Max.x, Form1->Data.Axes.xAxis.AxisCross));
-      Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Min.x, Form1->Data.Axes.xAxis.AxisCross));
-    }
-
-    Form1->IPolygon1->Pen->Width = Func->Size;
-  }
+    EvalArea(Func, From, To);
+  else if(const TPointSeries *PointSeries = dynamic_cast<const TPointSeries*>(GraphElem))
+    EvalArea(PointSeries, From, To);
 
   Form1->IPolygon1->PolygonType = ptPolygon;
   Form1->IPolygon1->Visible = true;
+}
+//---------------------------------------------------------------------------
+void TAreaFrame::EvalArea(const TBaseFuncType *Func, long double From, long double To)
+{
+  Edit3->Text = RoundToStr(Func->CalcArea(From, To), Form1->Data);
+
+  if(From > To)
+    std::swap(From, To);
+
+  Func32::TCoord<long double> Min = Func->Eval(From);
+  Func32::TCoord<long double> Max = Func->Eval(To);
+
+  unsigned N1 = std::lower_bound(Func->sList.begin(), Func->sList.end(), From, TCompCoordSet()) - Func->sList.begin();
+  unsigned N2 = std::lower_bound(Func->sList.begin() + N1, Func->sList.end(), To, TCompCoordSet()) - Func->sList.begin();
+  if(N1 != N2)
+  {
+    Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Min.x, Min.y));
+    Form1->IPolygon1->AddPoints(&Func->Points[N1], N2 - N1);
+    Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Max.x, Max.y));
+  }
+
+  if(const TPolFunc *PolFunc = dynamic_cast<const TPolFunc*>(Func))
+  {
+    if(N1 != N2)
+      Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xyPoint(Form1->Data.Axes.yAxis.AxisCross, Form1->Data.Axes.xAxis.AxisCross)));
+  }
+  else
+  {
+    Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Max.x, Form1->Data.Axes.xAxis.AxisCross));
+    Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Min.x, Form1->Data.Axes.xAxis.AxisCross));
+  }
+
+  Form1->IPolygon1->Pen->Width = Func->Size;
+}
+//---------------------------------------------------------------------------
+void TAreaFrame::EvalArea(const TPointSeries *PointSeries, long double From, long double To)
+{
+  TPointSeries::TPointList::const_iterator FromIter = PointSeries->FindPoint(From);
+  TPointSeries::TPointList::const_iterator ToIter = PointSeries->FindPoint(To);
+  Func32::TDblPoint FromCoord = PointSeries->FindCoord(FromIter, From);
+  Func32::TDblPoint ToCoord = PointSeries->FindCoord(ToIter, To);
+
+  Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Func32::TDblPoint(FromCoord.x, 0)));
+  Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(FromCoord));
+  if(To > From)
+    ++FromIter, ++ToIter;
+  for(TPointSeries::TPointList::const_iterator Iter = FromIter; Iter != ToIter; To > From ? ++Iter : --Iter)
+    Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Iter->x.Value, Iter->y.Value));
+  Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(ToCoord));
+  Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Func32::TDblPoint(ToCoord.x, 0)));
+
+  //Area between x-axis and line from P1 to P2: A=(x2-x1)*(y2+y1)/2
+  long double Area = 0;
+  if(FromIter == ToIter)
+    Area = (ToCoord.x - FromCoord.x) * (ToCoord.y + FromCoord.y) / 2;
+  else
+  {
+    Area = (FromIter->x.Value - FromCoord.x) * (FromIter->y.Value + FromCoord.y) / 2;
+    if(To > From)
+    {
+      --ToIter;
+      for(TPointSeries::TPointList::const_iterator Iter = FromIter; Iter != ToIter; ++Iter)
+        Area += ((Iter+1)->x.Value - Iter->x.Value) * ((Iter+1)->y.Value + Iter->y.Value) / 2;
+    }
+    else
+    {
+      ++ToIter;
+      for(TPointSeries::TPointList::const_iterator Iter = FromIter; Iter != ToIter; --Iter)
+        Area += ((Iter-1)->x.Value - Iter->x.Value) * ((Iter-1)->y.Value + Iter->y.Value) / 2;
+    }
+    Area += (ToCoord.x - ToIter->x.Value) * (ToCoord.y + ToIter->y.Value) / 2;
+  }
+  Edit3->Text = ToUString(Area);
 }
 //---------------------------------------------------------------------------
 void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
@@ -120,7 +165,38 @@ void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
   Form1->IPolygon1->Visible = true;
 }
 //---------------------------------------------------------------------------
-
+void TAreaFrame::SetPoint(const TGraphElem *Elem, int X, int Y)
+{
+  if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(Elem))
+  {
+    double t = FindNearestPoint(Func, X, Y); //Returns NAN if no point found
+    if(_isnan(t))
+    {
+      Form1->Cross->Hide();
+      Edit1->Text = "";
+      Edit2->Text = "";
+    }
+    else
+    {
+      Edit1->Text = RoundToStr(t, Form1->Data);
+      Edit2->Text = Edit1->Text;
+    }
+  }
+  else if(const TPointSeries *PointSeries = dynamic_cast<const TPointSeries*>(Elem))
+    Edit1->Text = RoundToStr(Form1->Draw.xCoord(X), Form1->Data);
+}
+//---------------------------------------------------------------------------
+void TAreaFrame::SetEndPoint(const TGraphElem *Elem, int X, int Y)
+{
+  if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(Elem))
+  {
+    double t = FindNearestPoint(Func, X, Y);
+    Edit2->Text = _isnan(t) ? String("") : RoundToStr(t, Form1->Data);
+  }
+  else if(const TPointSeries *PointSeries = dynamic_cast<const TPointSeries*>(Elem))
+    Edit2->Text = RoundToStr(Form1->Draw.xCoord(X), Form1->Data);
+}
+//---------------------------------------------------------------------------
 
 
 

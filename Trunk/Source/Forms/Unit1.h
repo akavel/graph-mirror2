@@ -393,6 +393,8 @@ __published:	// IDE-managed Components
           bool Rebuild);
   void __fastcall StatusBar1Hint(TObject *Sender);
   void __fastcall Image1Click(TObject *Sender);
+  void __fastcall FormShortCut(TWMKey &Msg, bool &Handled);
+
 
 private:	// User declarations
   friend class TAddView;
