@@ -42,7 +42,8 @@ std::string ToString(const std::wstring &Str);
 std::string ToString(const String &Str);
 
 std::wstring ToWString(int Value);
-std::wstring TOWString(long double Value);
+std::wstring ToWString(unsigned Value);
+std::wstring ToWString(long double Value);
 std::wstring ToWString(const std::string &Str);
 std::wstring ToWString(const String &Str);
 std::wstring ToWString(const char *Str);
