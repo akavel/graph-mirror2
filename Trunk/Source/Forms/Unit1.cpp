@@ -541,10 +541,9 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift,
           Shape1->Top = Y;
         else
           Shape1->Top = yZoom;
-        ShowStatusMessage("(" + RoundToStr(Draw.xCoord(xZoom), Data) + " ; " +
-          RoundToStr(Draw.yCoord(yZoom), Data) + ")->(" + RoundToStr(Draw.xCoord(X), Data) + " ; " +
-          RoundToStr(Draw.yCoord(Y), Data) + ")", true);
-//        Application->ProcessMessages();
+          ShowStatusMessage("(" + RoundToStr(Draw.xCoord(xZoom), Data) + " ; " +
+            RoundToStr(Draw.yCoord(yZoom), Data) + ")->(" + RoundToStr(Draw.xCoord(X), Data) + " ; " +
+            RoundToStr(Draw.yCoord(Y), Data) + ")", true);
       }
       else if(X >= 0 && X < Image1->Width && Y >= 0 && Y < Image1->Height)
         ShowStatusMessage("(" + RoundToStr(Draw.xCoord(X), Data) + " ; " +
@@ -1776,7 +1775,7 @@ void __fastcall TForm1::PrintActionExecute(TObject *Sender)
   }
   catch(EPrinter &E)
   {
-    MessageBox(E.Message, "Printer error", MB_ICONSTOP);
+    MessageBox(E.Message, LoadRes(RES_PRINTER_ERROR), MB_ICONSTOP);
     return;
   }
 
@@ -2738,8 +2737,14 @@ void TForm1::ActivateOleUserInterface()
   if(Data.GetFileName().empty())
     SaveAction->Enabled = false;
   SaveAsAction->Enabled = false;
-  SaveCopyAsAction->Visible = true;
   Recent1->Enabled = false;
+
+//  SaveCopyAsAction->Visible = true;
+  //Make "File->Save copy as..." visible
+  TActionClients *MenuItems = ActionMainMenuBar1->ActionClient->Items;
+  TActionClientItem *FilesItem = MenuItems->ActionClients[0];
+  TActionClientItem *Item = FilesItem->Items->ActionClients[4];
+  Item->Visible = true;
 }
 //---------------------------------------------------------------------------
 void SaveAsPdf(const std::string &FileName, Graphics::TBitmap *Bitmap, const std::string &Title, const std::string &Subject, Printers::TPrinterOrientation Orientation)
@@ -3453,19 +3458,19 @@ void TForm1::MoveAndSnapLabel(int dx, int dy, bool Snap)
   int yAxesCoord = Draw.yPoint(Data.Axes.xAxis.AxisCross);
 
   //Check for label above x-axis
-  if(RightDist < SnapDist && std::abs(Image2->Top + Image2->Height -4 - yAxesCoord) < SnapDist)
+  if(RightDist < SnapDist && std::abs(ImagePos.y + Image2->Height -4 - yAxesCoord) < SnapDist)
     MoveLabel(Rect.Width() - Image2->Width + 2, yAxesCoord - Image2->Height - 4, lpAboveX, true);
 
   //Check for label below x-axis
-  else if(RightDist < SnapDist && std::abs(Image2->Top - yAxesCoord) < SnapDist)
+  else if(RightDist < SnapDist && std::abs(ImagePos.y - yAxesCoord) < SnapDist)
     MoveLabel(Rect.Width() - Image2->Width + 2, yAxesCoord, lpBelowX, true);
 
   //Check for label left of y-axis
-  else if(TopDist < SnapDist && std::abs(Image2->Left + Image2->Width - xAxesCoord) < SnapDist)
+  else if(TopDist < SnapDist && std::abs(ImagePos.x + Image2->Width - xAxesCoord) < SnapDist)
     MoveLabel(xAxesCoord - Image2->Width, Rect.Top + 1, lpLeftOfY, true);
 
   //Check for label right of y-axis
-  else if(TopDist < SnapDist && std::abs(Image2->Left + 12 - xAxesCoord) < SnapDist)
+  else if(TopDist < SnapDist && std::abs(ImagePos.x - 12 - xAxesCoord) < SnapDist)
     MoveLabel(xAxesCoord + 12, Rect.Top + 1, lpRightOfY, true);
   else
   {

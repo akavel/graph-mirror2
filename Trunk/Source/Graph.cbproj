@@ -69,141 +69,39 @@
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>
-			<CppCompile Include="Source\GuiHelper.cpp">
-				<DependentOn>Source\GuiHelper.h</DependentOn>
-				<BuildOrder>43</BuildOrder>
+			<CppCompile Include="Forms\Unit1.cpp">
+				<Form>Form1</Form>
+				<DependentOn>Forms\Unit1.h</DependentOn>
+				<BuildOrder>7</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Source\GraphElem.cpp">
-				<DependentOn>Source\GraphElem.h</DependentOn>
-				<BuildOrder>42</BuildOrder>
+			<ResFiles Include="Graph.res">
+				<BuildOrder>1</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="Graph.cpp">
+				<BuildOrder>0</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Source\Files.cpp">
-				<BuildOrder>41</BuildOrder>
+			<CppCompile Include="Forms\Unit22.cpp">
+				<Form>Form22</Form>
+				<DependentOn>Forms\Unit22.h</DependentOn>
+				<BuildOrder>8</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Source\GuiUtil.cpp">
-				<HasBuildEvent>true</HasBuildEvent>
-				<DependentOn>Source\GuiUtil.h</DependentOn>
-				<BuildOrder>44</BuildOrder>
+			<CppCompile Include="Forms\Unit2.cpp">
+				<Form>Form2</Form>
+				<DependentOn>Forms\Unit2.h</DependentOn>
+				<BuildOrder>7</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Source\OleServerImpl.cpp">
-				<DependentOn>Source\OleServerImpl.h</DependentOn>
-				<BuildOrder>47</BuildOrder>
+			<CppCompile Include="Forms\Unit19.cpp">
+				<Form>Form19</Form>
+				<DependentOn>Forms\Unit19.h</DependentOn>
+				<BuildOrder>25</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Source\Data.cpp">
-				<DependentOn>Source\Data.h</DependentOn>
-				<BuildOrder>38</BuildOrder>
+			<CppCompile Include="pdflib\pdflib.cpp">
+				<BuildOrder>5</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Source\IGraphic.cpp">
-				<DependentOn>Source\IGraphic.h</DependentOn>
-				<BuildOrder>45</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\PyGraph.cpp">
-				<DependentOn>Source\PyGraph.h</DependentOn>
-				<BuildOrder>48</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Common.cpp">
-				<DependentOn>Source\Common.h</DependentOn>
-				<BuildOrder>35</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Clipboard.cpp">
-				<BuildOrder>34</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\StackTrace.cpp">
-				<DependentOn>Source\StackTrace.h</DependentOn>
-				<BuildOrder>33</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Context.cpp">
-				<DependentOn>Source\Context.h</DependentOn>
-				<BuildOrder>36</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Draw.cpp">
-				<DependentOn>Source\Draw.h</DependentOn>
-				<BuildOrder>39</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\OleObjectElem.cpp">
-				<DependentOn>Source\OleObjectElem.h</DependentOn>
-				<BuildOrder>46</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Convert.cpp">
-				<DependentOn>Source\Convert.h</DependentOn>
-				<BuildOrder>37</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\DrawThread.cpp">
-				<DependentOn>Source\DrawThread.h</DependentOn>
-				<BuildOrder>40</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\ConfigRegistry.cpp">
-				<DependentOn>..\Components\Common\ConfigRegistry.h</DependentOn>
-				<BuildOrder>59</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\ConfigFile.cpp">
-				<DependentOn>..\Components\Common\ConfigFile.h</DependentOn>
-				<BuildOrder>58</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\Undo.cpp">
-				<DependentOn>..\Components\Common\Undo.h</DependentOn>
-				<BuildOrder>57</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\Debug.cpp">
-				<DependentOn>..\Components\Common\Debug.h</DependentOn>
-				<BuildOrder>59</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\Encode.cpp">
-				<DependentOn>..\Components\Common\Encode.h</DependentOn>
-				<BuildOrder>62</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\CompilerWorkaround.cpp">
-				<DependentOn>..\Components\Common\CompilerWorkaround.h</DependentOn>
-				<BuildOrder>63</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\VersionInfo.cpp">
-				<DependentOn>..\Components\Common\VersionInfo.h</DependentOn>
-				<BuildOrder>61</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\EmfParser.cpp">
-				<DependentOn>..\Components\Common\EmfParser.h</DependentOn>
-				<BuildOrder>60</BuildOrder>
-			</CppCompile>
-			<DelphiCompile Include="Source\HTMLHelpViewer.pas">
-				<BuildOrder>51</BuildOrder>
-			</DelphiCompile>
-			<CppCompile Include="..\Components\Common\SvgWriter.cpp">
-				<DependentOn>..\Components\Common\SvgWriter.h</DependentOn>
-				<BuildOrder>55</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\PyVcl.cpp">
-				<DependentOn>Source\PyVcl.h</DependentOn>
-				<BuildOrder>50</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\PythonBind.cpp">
-				<DependentOn>Source\PythonBind.h</DependentOn>
-				<BuildOrder>49</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\Tokenizer.cpp">
-				<DependentOn>..\Components\Common\Tokenizer.h</DependentOn>
-				<BuildOrder>56</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Settings.cpp">
-				<DependentOn>Source\Settings.h</DependentOn>
-				<BuildOrder>51</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit5.cpp">
-				<Form>Form5</Form>
-				<DependentOn>Forms\Unit5.h</DependentOn>
-				<BuildOrder>11</BuildOrder>
-			</CppCompile>
-			<DelphiCompile Include="dxgettext\gnugettext.pas">
-				<BuildOrder>52</BuildOrder>
-			</DelphiCompile>
-			<CppCompile Include="Forms\Unit3.cpp">
-				<Form>Form3</Form>
-				<DependentOn>Forms\Unit3.h</DependentOn>
-				<BuildOrder>9</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit10.cpp">
-				<Form>Form10</Form>
-				<DependentOn>Forms\Unit10.h</DependentOn>
-				<BuildOrder>16</BuildOrder>
+			<CppCompile Include="Forms\Unit21.cpp">
+				<Form>Form21</Form>
+				<DependentOn>Forms\Unit21.h</DependentOn>
+				<BuildOrder>27</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Forms\Unit9.cpp">
 				<Form>Form9</Form>
@@ -214,6 +112,25 @@
 				<Form>Form4</Form>
 				<DependentOn>Forms\Unit4.h</DependentOn>
 				<BuildOrder>10</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Forms\Unit3.cpp">
+				<Form>Form3</Form>
+				<DependentOn>Forms\Unit3.h</DependentOn>
+				<BuildOrder>9</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Forms\Unit10.cpp">
+				<Form>Form10</Form>
+				<DependentOn>Forms\Unit10.h</DependentOn>
+				<BuildOrder>16</BuildOrder>
+			</CppCompile>
+			<LibFiles Include="..\Func32\Debug\Func32.lib">
+				<IgnorePath>true</IgnorePath>
+				<BuildOrder>3</BuildOrder>
+			</LibFiles>
+			<CppCompile Include="Forms\Unit8.cpp">
+				<Form>Form8</Form>
+				<DependentOn>Forms\Unit8.h</DependentOn>
+				<BuildOrder>14</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Forms\Unit7.cpp">
 				<Form>Form7</Form>
@@ -226,52 +143,53 @@
 				<DependentOn>Frames\TTanFrame.h</DependentOn>
 				<BuildOrder>28</BuildOrder>
 			</CppCompile>
-			<LibFiles Include="..\Func32\Debug\Func32.lib">
-				<IgnorePath>true</IgnorePath>
-				<BuildOrder>3</BuildOrder>
-			</LibFiles>
-			<CppCompile Include="Forms\Unit8.cpp">
-				<Form>Form8</Form>
-				<DependentOn>Forms\Unit8.h</DependentOn>
-				<BuildOrder>14</BuildOrder>
+			<CppCompile Include="Forms\Unit12.cpp">
+				<Form>Form12</Form>
+				<DependentOn>Forms\Unit12.h</DependentOn>
+				<BuildOrder>18</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Graph.cpp">
-				<BuildOrder>0</BuildOrder>
+			<CppCompile Include="Forms\Unit15.cpp">
+				<Form>Form15</Form>
+				<DependentOn>Forms\Unit15.h</DependentOn>
+				<BuildOrder>21</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Forms\Unit22.cpp">
-				<Form>Form22</Form>
-				<DependentOn>Forms\Unit22.h</DependentOn>
-				<BuildOrder>8</BuildOrder>
+			<CppCompile Include="Forms\Unit18.cpp">
+				<Form>Form18</Form>
+				<DependentOn>Forms\Unit18.h</DependentOn>
+				<BuildOrder>24</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Forms\Unit1.cpp">
-				<Form>Form1</Form>
-				<DependentOn>Forms\Unit1.h</DependentOn>
-				<BuildOrder>7</BuildOrder>
+			<CppCompile Include="Forms\Unit17.cpp">
+				<Form>Form17</Form>
+				<DependentOn>Forms\Unit17.h</DependentOn>
+				<BuildOrder>23</BuildOrder>
 			</CppCompile>
-			<ResFiles Include="Graph.res">
-				<BuildOrder>1</BuildOrder>
-			</ResFiles>
-			<ResourceCompile Include="Resource.rc">
+			<CppCompile Include="Forms\Unit16.cpp">
+				<Form>Form16</Form>
+				<DependentOn>Forms\Unit16.h</DependentOn>
+				<BuildOrder>22</BuildOrder>
+			</CppCompile>
+			<ResourceCompile Include="Source\Resource.rc">
 				<Form>Resource.res</Form>
-				<BuildOrder>6</BuildOrder>
+				<BuildOrder>63</BuildOrder>
 			</ResourceCompile>
-			<CppCompile Include="pdflib\pdflib.cpp">
-				<BuildOrder>5</BuildOrder>
+			<CppCompile Include="Forms\Unit14.cpp">
+				<Form>Form14</Form>
+				<DependentOn>Forms\Unit14.h</DependentOn>
+				<BuildOrder>20</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Forms\Unit21.cpp">
-				<Form>Form21</Form>
-				<DependentOn>Forms\Unit21.h</DependentOn>
-				<BuildOrder>27</BuildOrder>
+			<ResFiles Include="Icons.res">
+				<BuildOrder>63</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="Forms\Unit20.cpp">
+				<Form>Form20</Form>
+				<DependentOn>Forms\Unit20.h</DependentOn>
+				<BuildOrder>26</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Forms\Unit2.cpp">
-				<Form>Form2</Form>
-				<DependentOn>Forms\Unit2.h</DependentOn>
-				<BuildOrder>7</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit19.cpp">
-				<Form>Form19</Form>
-				<DependentOn>Forms\Unit19.h</DependentOn>
-				<BuildOrder>25</BuildOrder>
+			<CppCompile Include="Frames\TAreaFrame.cpp">
+				<Form>AreaFrame</Form>
+				<DesignClass>TFrame</DesignClass>
+				<DependentOn>Frames\TAreaFrame.h</DependentOn>
+				<BuildOrder>29</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Frames\TStdFuncFrame.cpp">
 				<Form>StdFuncFrame</Form>
@@ -285,27 +203,6 @@
 				<DependentOn>Frames\TPolFuncFrame.h</DependentOn>
 				<BuildOrder>31</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Forms\Unit20.cpp">
-				<Form>Form20</Form>
-				<DependentOn>Forms\Unit20.h</DependentOn>
-				<BuildOrder>26</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Frames\TAreaFrame.cpp">
-				<Form>AreaFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>Frames\TAreaFrame.h</DependentOn>
-				<BuildOrder>29</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit6.cpp">
-				<Form>Form6</Form>
-				<DependentOn>Forms\Unit6.h</DependentOn>
-				<BuildOrder>12</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit13.cpp">
-				<Form>Form13</Form>
-				<DependentOn>Forms\Unit13.h</DependentOn>
-				<BuildOrder>19</BuildOrder>
-			</CppCompile>
 			<CppCompile Include="Frames\TParFuncFrame.cpp">
 				<Form>ParFuncFrame</Form>
 				<DesignClass>TFrame</DesignClass>
@@ -317,66 +214,169 @@
 				<DependentOn>Forms\Unit11.h</DependentOn>
 				<BuildOrder>17</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Forms\Unit18.cpp">
-				<Form>Form18</Form>
-				<DependentOn>Forms\Unit18.h</DependentOn>
-				<BuildOrder>24</BuildOrder>
+			<CppCompile Include="Forms\Unit6.cpp">
+				<Form>Form6</Form>
+				<DependentOn>Forms\Unit6.h</DependentOn>
+				<BuildOrder>12</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Forms\Unit17.cpp">
-				<Form>Form17</Form>
-				<DependentOn>Forms\Unit17.h</DependentOn>
-				<BuildOrder>23</BuildOrder>
+			<CppCompile Include="Forms\Unit13.cpp">
+				<Form>Form13</Form>
+				<DependentOn>Forms\Unit13.h</DependentOn>
+				<BuildOrder>19</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Forms\Unit12.cpp">
-				<Form>Form12</Form>
-				<DependentOn>Forms\Unit12.h</DependentOn>
-				<BuildOrder>18</BuildOrder>
+			<CppCompile Include="Source\StackTrace.cpp">
+				<DependentOn>Source\StackTrace.h</DependentOn>
+				<BuildOrder>33</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Forms\Unit15.cpp">
-				<Form>Form15</Form>
-				<DependentOn>Forms\Unit15.h</DependentOn>
-				<BuildOrder>21</BuildOrder>
+			<CppCompile Include="Source\Context.cpp">
+				<DependentOn>Source\Context.h</DependentOn>
+				<BuildOrder>36</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Forms\Unit14.cpp">
-				<Form>Form14</Form>
-				<DependentOn>Forms\Unit14.h</DependentOn>
-				<BuildOrder>20</BuildOrder>
+			<CppCompile Include="Source\Common.cpp">
+				<DependentOn>Source\Common.h</DependentOn>
+				<BuildOrder>35</BuildOrder>
 			</CppCompile>
-			<ResFiles Include="Icons.res">
+			<CppCompile Include="Source\Clipboard.cpp">
+				<BuildOrder>34</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\Convert.cpp">
+				<DependentOn>Source\Convert.h</DependentOn>
+				<BuildOrder>37</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\DrawThread.cpp">
+				<DependentOn>Source\DrawThread.h</DependentOn>
+				<BuildOrder>40</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\Draw.cpp">
+				<DependentOn>Source\Draw.h</DependentOn>
+				<BuildOrder>39</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\OleObjectElem.cpp">
+				<DependentOn>Source\OleObjectElem.h</DependentOn>
+				<BuildOrder>46</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\Files.cpp">
+				<BuildOrder>41</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\GuiUtil.cpp">
+				<HasBuildEvent>true</HasBuildEvent>
+				<DependentOn>Source\GuiUtil.h</DependentOn>
+				<BuildOrder>44</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\GuiHelper.cpp">
+				<DependentOn>Source\GuiHelper.h</DependentOn>
+				<BuildOrder>43</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\GraphElem.cpp">
+				<DependentOn>Source\GraphElem.h</DependentOn>
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\IGraphic.cpp">
+				<DependentOn>Source\IGraphic.h</DependentOn>
+				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\PyGraph.cpp">
+				<DependentOn>Source\PyGraph.h</DependentOn>
+				<BuildOrder>48</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\OleServerImpl.cpp">
+				<DependentOn>Source\OleServerImpl.h</DependentOn>
+				<BuildOrder>47</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\Data.cpp">
+				<DependentOn>Source\Data.h</DependentOn>
+				<BuildOrder>38</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\PyVcl.cpp">
+				<DependentOn>Source\PyVcl.h</DependentOn>
+				<BuildOrder>50</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\PythonBind.cpp">
+				<DependentOn>Source\PythonBind.h</DependentOn>
+				<BuildOrder>49</BuildOrder>
+			</CppCompile>
+			<DelphiCompile Include="Source\HTMLHelpViewer.pas">
+				<BuildOrder>51</BuildOrder>
+			</DelphiCompile>
+			<CppCompile Include="..\Components\Common\SvgWriter.cpp">
+				<DependentOn>..\Components\Common\SvgWriter.h</DependentOn>
+				<BuildOrder>55</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Forms\Unit5.cpp">
+				<Form>Form5</Form>
+				<DependentOn>Forms\Unit5.h</DependentOn>
+				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<DelphiCompile Include="dxgettext\gnugettext.pas">
+				<BuildOrder>52</BuildOrder>
+			</DelphiCompile>
+			<CppCompile Include="..\Components\Common\Tokenizer.cpp">
+				<DependentOn>..\Components\Common\Tokenizer.h</DependentOn>
+				<BuildOrder>56</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\Settings.cpp">
+				<DependentOn>Source\Settings.h</DependentOn>
+				<BuildOrder>51</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\Components\Common\Undo.cpp">
+				<DependentOn>..\Components\Common\Undo.h</DependentOn>
+				<BuildOrder>57</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\Components\Common\Debug.cpp">
+				<DependentOn>..\Components\Common\Debug.h</DependentOn>
+				<BuildOrder>59</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\Components\Common\ConfigRegistry.cpp">
+				<DependentOn>..\Components\Common\ConfigRegistry.h</DependentOn>
+				<BuildOrder>59</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\Components\Common\ConfigFile.cpp">
+				<DependentOn>..\Components\Common\ConfigFile.h</DependentOn>
+				<BuildOrder>58</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\Components\Common\VersionInfo.cpp">
+				<DependentOn>..\Components\Common\VersionInfo.h</DependentOn>
+				<BuildOrder>61</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\Components\Common\EmfParser.cpp">
+				<DependentOn>..\Components\Common\EmfParser.h</DependentOn>
+				<BuildOrder>60</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\Components\Common\Encode.cpp">
+				<DependentOn>..\Components\Common\Encode.h</DependentOn>
+				<BuildOrder>62</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\Components\Common\CompilerWorkaround.cpp">
+				<DependentOn>..\Components\Common\CompilerWorkaround.h</DependentOn>
 				<BuildOrder>63</BuildOrder>
-			</ResFiles>
-			<CppCompile Include="Forms\Unit16.cpp">
-				<Form>Form16</Form>
-				<DependentOn>Forms\Unit16.h</DependentOn>
-				<BuildOrder>22</BuildOrder>
 			</CppCompile>
-			<FormResources Include="Forms\Unit5.dfm"/>
-			<FormResources Include="Forms\Unit3.dfm"/>
-			<FormResources Include="Forms\Unit10.dfm"/>
-			<FormResources Include="Forms\Unit9.dfm"/>
-			<FormResources Include="Forms\Unit4.dfm"/>
-			<FormResources Include="Forms\Unit7.dfm"/>
-			<FormResources Include="Frames\TTanFrame.dfm"/>
-			<FormResources Include="Forms\Unit8.dfm"/>
-			<FormResources Include="Forms\Unit22.dfm"/>
 			<FormResources Include="Forms\Unit1.dfm"/>
-			<FormResources Include="Forms\Unit21.dfm"/>
+			<FormResources Include="Forms\Unit22.dfm"/>
 			<FormResources Include="Forms\Unit2.dfm"/>
 			<FormResources Include="Forms\Unit19.dfm"/>
-			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
-			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
-			<FormResources Include="Forms\Unit20.dfm"/>
-			<FormResources Include="Frames\TAreaFrame.dfm"/>
-			<FormResources Include="Forms\Unit6.dfm"/>
-			<FormResources Include="Forms\Unit13.dfm"/>
-			<FormResources Include="Frames\TParFuncFrame.dfm"/>
-			<FormResources Include="Forms\Unit11.dfm"/>
-			<FormResources Include="Forms\Unit18.dfm"/>
-			<FormResources Include="Forms\Unit17.dfm"/>
+			<FormResources Include="Forms\Unit21.dfm"/>
+			<FormResources Include="Forms\Unit9.dfm"/>
+			<FormResources Include="Forms\Unit4.dfm"/>
+			<FormResources Include="Forms\Unit3.dfm"/>
+			<FormResources Include="Forms\Unit10.dfm"/>
+			<FormResources Include="Forms\Unit8.dfm"/>
+			<FormResources Include="Forms\Unit7.dfm"/>
+			<FormResources Include="Frames\TTanFrame.dfm"/>
 			<FormResources Include="Forms\Unit12.dfm"/>
 			<FormResources Include="Forms\Unit15.dfm"/>
-			<FormResources Include="Forms\Unit14.dfm"/>
+			<FormResources Include="Forms\Unit18.dfm"/>
+			<FormResources Include="Forms\Unit17.dfm"/>
 			<FormResources Include="Forms\Unit16.dfm"/>
+			<FormResources Include="Forms\Unit14.dfm"/>
+			<FormResources Include="Forms\Unit20.dfm"/>
+			<FormResources Include="Frames\TAreaFrame.dfm"/>
+			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
+			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
+			<FormResources Include="Frames\TParFuncFrame.dfm"/>
+			<FormResources Include="Forms\Unit11.dfm"/>
+			<FormResources Include="Forms\Unit6.dfm"/>
+			<FormResources Include="Forms\Unit13.dfm"/>
+			<FormResources Include="Forms\Unit5.dfm"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>
@@ -404,7 +404,7 @@
 						<VersionInfo Name="MajorVer">4</VersionInfo>
 						<VersionInfo Name="MinorVer">4</VersionInfo>
 						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">419</VersionInfo>
+						<VersionInfo Name="Build">420</VersionInfo>
 						<VersionInfo Name="Debug">True</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -416,7 +416,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.4.0.419</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">4.4.0.420</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>

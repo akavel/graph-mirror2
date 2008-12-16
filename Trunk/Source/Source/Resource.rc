@@ -4,7 +4,7 @@ MOVECURSOR1 CURSOR "hand1.cur"
 MOVECURSOR2 CURSOR "hand2.cur"
 FLAG AVI LOADONCALL DISCARDABLE Flag.avi
 
-STRINGTABLE
+STRINGTABLE LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 BEGIN
   RES_ERROR       "Error"       //Used in titles of error message boxes
   RES_SHADE       "Shading"     //Default name in Insert shading dialog
@@ -133,6 +133,7 @@ BEGIN
   RES_VALUE_RANGE         "'%1%' must be between %2% and %3%."
   RES_FILE_DOESNT_EXIST   "File not found"
   RES_FILE_READ_ERROR     "Error reading file"
+  RES_PRINTER_ERROR       "Printer error"
 
   RES_CAPTION_DELETE      "Confirm delete"
   RES_SHOW                "Show %s"     //Context menu in Calc|Table dialog
@@ -270,7 +271,8 @@ BEGIN
 "Description"  //Customize toolbar dialog
 
 //Error messages in the VCL
-"Cannot open clipboard"  //Another application has locked the clipboard
+"Cannot open clipboard: %s"  //Another application has locked the clipboard
+"There is no default printer currently selected."
 
 "Install for all users"  //Text from the installation
 

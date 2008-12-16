@@ -1,7 +1,7 @@
 ;This file was created by Graph (http://www.padowan.dk)
 ;Do not change this file from other programs.
 [Graph]
-Version = 4.4.0.413
+Version = 4.4.0.420
 MinVersion = 2.5
 OS = Windows XP 5.1 Service Pack 3
 
@@ -12,10 +12,10 @@ xTickUnit = 1
 xGridUnit = 1
 xShowTicks = 0
 xShowNumbers = 0
-yMin = -4.86573311
-yMax = 6.13426689
-yTickUnit = 1
-yGridUnit = 1
+yMin = -4.31573311
+yMax = 6.68426689
+yTickUnit = 2
+yGridUnit = 2
 yShowTicks = 0
 yShowNumbers = 0
 AxesColor = clBlack
@@ -33,7 +33,7 @@ AxesStyle = 0
 FuncType = 1
 x = 5cos t
 y = 4sin t
->From = 0
+From = 0
 To = 2pi
 Steps = 1000
 Color = clBlack
@@ -41,7 +41,7 @@ Color = clBlack
 [Func2]
 FuncType = 0
 y = if((x<-3),(-1.696*x+(-5.088)),(9.71429*x+29.1429))
->From = -4.25
+From = -4.25
 To = -2.66
 Style = 2
 Color = clBlack
@@ -63,7 +63,7 @@ MarkEnd = 0
 [Func3]
 FuncType = 0
 y = 0.186441*x+0.559322
->From = -3
+From = -3
 To = 4.67
 Style = 2
 Color = clBlack
@@ -71,7 +71,7 @@ Color = clBlack
 [Func4]
 FuncType = 0
 y = 0.256757*x+0.77027
->From = -3
+From = -3
 To = 4.4
 Style = 2
 Color = clBlack
@@ -133,8 +133,8 @@ ShowInLegend = 0
 
 [Label2]
 Placement = 0
-Pos = -5.23684210526316;5.88056013179571
-Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24 A line joining a planet and the sun (radius vector) sweeps out equal areas in equal times.\\par\nIn the attached figure, A1=A2. \\par\n\\par\nNote: The eccentricity of the orbit has been exaggerated for illustrative purposes.\\fs28\\par\n}\n
+Pos = -5.34816933217391;6.62575625170213
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\ul\\b\\f0\\fs24 Kepler's Second Law\\ulnone\\b0\\par\nA line joining a planet and the sun (radius vector) sweeps \\par\nout equal areas in equal times, i.e. A1=A2. \\par\nNote: The eccentricity of the orbit has been exaggerated for illustrative purposes.\\fs28\\par\n}\n
 BackgroundColor = 0x00FFCC99
 ShowInLegend = 0
 
@@ -147,35 +147,35 @@ ShowInLegend = 0
 
 [Label4]
 Placement = 0
-Pos = 3.28947368421053;1.60378912685338
+Pos = 3.33704805913044;1.68160731553192
 Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs28 A2\\b\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 
 [Label5]
-Placement = 0
-Pos = -2.69736842105264;3.832784184514
+Placement = 7
+Pos = -2.62191095598566;3.2904684403876
 Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24 1\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 
 [Label6]
-Placement = 0
-Pos = -4.38157894736842;2.47364085667216
+Placement = 7
+Pos = -4.18911525706093;2.04550720007752
 Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24 2\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 
 [Label7]
-Placement = 0
-Pos = 4.81578947368421;1.65815485996705
+Placement = 6
+Pos = 4.73356979826087;1.21352220914894
 Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24 3\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 
 [Label8]
-Placement = 0
-Pos = 4.53947368421052;2.12932454695222
+Placement = 6
+Pos = 4.50400458086957;1.76937327297872
 Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24 4\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
@@ -187,6 +187,4 @@ PointSeriesCount = 3
 ShadeCount = 2
 RelationCount = 0
 OleObjectCount = 0
-
-
 

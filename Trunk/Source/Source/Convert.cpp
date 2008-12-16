@@ -385,6 +385,11 @@ std::wstring ToWString(int Value)
   return String(Value).c_str();
 }
 //---------------------------------------------------------------------------
+std::wstring ToWString(unsigned Value)
+{
+  return String(Value).c_str();
+}
+//---------------------------------------------------------------------------
 std::wstring ToWString(long double Value)
 {
   return FloatToStr(Value).c_str();
