@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2008-10-30 23:28Romance Standard Time\n"
-"PO-Revision-Date: 2008-12-08 09:46+0100\n"
-"Last-Translator: Hasan Osmanagić <hasan.osmanagic@public.carnet.hr>\n"
+"POT-Creation-Date: 2008-12-18 22:10Romance Standard Time\n"
+"PO-Revision-Date: 2008-12-18 22:11+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,7 +33,7 @@ msgstr "daje sinus argumenta."
 msgid "Syntax"
 msgstr "Sintaksa"
 
-#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:78(title) Special.xml:105(title) Special.xml:128(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:26(entry) Installation.xml:81(entry) Installation.xml:152(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:141(title) Hyperbolic.xml:163(title) Hyperbolic.xml:187(title) Hyperbolic.xml:211(title) Hyperbolic.xml:236(title) Hyperbolic.xml:259(title) Hyperbolic.xml:282(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title)
+#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:78(title) Special.xml:105(title) Special.xml:128(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:28(entry) Installation.xml:82(entry) Installation.xml:153(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:141(title) Hyperbolic.xml:163(title) Hyperbolic.xml:187(title) Hyperbolic.xml:211(title) Hyperbolic.xml:236(title) Hyperbolic.xml:259(title) Hyperbolic.xml:282(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title)
 msgid "Description"
 msgstr "Opis"
 
@@ -443,7 +443,7 @@ msgstr "Datoteka"
 
 #. SaveImageDialog.xml:20(guimenuitem) MenuItems.xml:67(guimenuitem)
 msgid "Save as image..."
-msgstr "Pohrani kao sliku..."
+msgstr "Pohrani kao sliku"
 
 #. SaveImageDialog.xml:22(guilabel)
 msgid "Save As"
@@ -751,7 +751,7 @@ msgstr "To je najveći broj zadnje otvaranih datoteka koje će biti vidljive u i
 
 #. OptionsDialog.xml:45(term) OptionsDialog.xml:49(guilabel) OptionsDialog.xml:51(guilabel)
 msgid "Max undo steps"
-msgstr "Broj poništenja"
+msgstr "Br. poništenj"
 
 #. OptionsDialog.xml:47(para)
 msgid "Each time you make a change, the program will save enough information to undo it. As default <placeholder-1/> are 50, which mean that you are able to undo the last 50 changes you made in the program. The undo steps will take up a small amount of memory. If your system is low on RAM, you may be able to free some memory by decreasing the <placeholder-2/>."
@@ -765,7 +765,7 @@ msgstr "Mjerilo fonta"
 msgid "You can use this to change the scale of the fonts and most of the user interface. This is mostly useful if your screen resolution is very high, or for some other reason, you are having difficulties reading the user interface."
 msgstr "Koristi se za smanjenje mjerila fonta korisničkog sučelja. To je korisno kada je rezolucija zaslona vrlo velika ili ako zbog nečeg drugog slabo vidite čitati."
 
-#. OptionsDialog.xml:67(term) Acknowledgements.xml:70(entry)
+#. OptionsDialog.xml:67(term) Acknowledgements.xml:51(entry)
 msgid "Language"
 msgstr "Jezik"
 
@@ -815,7 +815,7 @@ msgstr "Polarni"
 
 #. OptionsDialog.xml:119(guilabel) AxesDialog.xml:228(guilabel)
 msgid "Radian"
-msgstr "Radijan"
+msgstr "Radijani"
 
 #. OptionsDialog.xml:119(guilabel) AxesDialog.xml:228(guilabel)
 msgid "Degree"
@@ -835,9 +835,9 @@ msgstr "Imajte na umu da se ponekad rezultati u <placeholder-1/> oknu razlikuju,
 
 #. OptionsDialog.xml:131(term)
 msgid "Check for new version of Graph at startup"
-msgstr "Pri pokretanju provjeri ima li dogradnja."
+msgstr "Pri pokretanju provjeri postoji li nova verzija."
 
-#. OptionsDialog.xml:139(guimenu) MenuItems.xml:640(guimenu) MenuItems.xml:654(guimenu) MenuItems.xml:668(guimenu) MenuItems.xml:681(guimenu) MenuItems.xml:694(guimenu) MenuItems.xml:707(guimenu) MenuItems.xml:720(guimenu) MenuItems.xml:733(guimenu) MenuItems.xml:747(guimenu) Introduction.xml:39(guimenu)
+#. OptionsDialog.xml:139(guimenu) MenuItems.xml:640(guimenu) MenuItems.xml:654(guimenu) MenuItems.xml:668(guimenu) MenuItems.xml:681(guimenu) MenuItems.xml:694(guimenu) MenuItems.xml:707(guimenu) MenuItems.xml:720(guimenu) MenuItems.xml:733(guimenu) MenuItems.xml:747(guimenu) Introduction.xml:41(guimenu)
 msgid "Help"
 msgstr "Pomoć"
 
@@ -847,7 +847,7 @@ msgstr "Internet"
 
 #. OptionsDialog.xml:141(guimenuitem) MenuItems.xml:733(guimenuitem)
 msgid "Check for update"
-msgstr "Ima li dogradnja"
+msgstr "Ima li nova verzija"
 
 #. OptionsDialog.xml:133(para)
 msgid "When checked each time the program starts it will check if a newer version of Graph is available on the Internet. If a new version is found you will be asked if you want to visit the web site for Graph to upgrade. If no new version is available you will not see any messages. If disabled, you can still use <placeholder-1/> to see if a new version is available."
@@ -895,7 +895,7 @@ msgstr "U izborniku odaberite <placeholder-1/>, što će kopirati trenutni graf 
 
 #. OLE.xml:40(guimenu)
 msgid "Insert"
-msgstr "Umetni"
+msgstr "Unos"
 
 #. OLE.xml:41(guimenuitem)
 msgid "Object..."
@@ -949,6 +949,10 @@ msgstr "prečice"
 msgid "New"
 msgstr "Nova"
 
+#. MenuItems.xml:16(keycap) MenuItems.xml:30(keycap) MenuItems.xml:44(keycap) MenuItems.xml:68(keycap) MenuItems.xml:113(keycap) MenuItems.xml:143(keycap) MenuItems.xml:157(keycap) MenuItems.xml:171(keycap) MenuItems.xml:185(keycap) MenuItems.xml:199(keycap) MenuItems.xml:213(keycap) MenuItems.xml:228(keycap) MenuItems.xml:347(keycap) MenuItems.xml:426(keycap) MenuItems.xml:442(keycap) MenuItems.xml:456(keycap) MenuItems.xml:470(keycap) MenuItems.xml:485(keycap) MenuItems.xml:501(keycap) MenuItems.xml:515(keycap) MenuItems.xml:590(keycap) MenuItems.xml:655(keycap)
+msgid "Ctrl"
+msgstr ""
+
 #. MenuItems.xml:20(para)
 msgid "Use this to create a new coordinate system for drawing graphs in."
 msgstr "Stvara novi prazan graf."
@@ -987,7 +991,7 @@ msgstr "Uvezi"
 
 #. MenuItems.xml:82(guimenuitem)
 msgid "Graph file..."
-msgstr "Graph datoteku..."
+msgstr "Grapf datoteku..."
 
 #. MenuItems.xml:86(para)
 msgid "Imports the contents of another Graph file into the current coordinate system."
@@ -1012,6 +1016,10 @@ msgstr "Ispisuje trenutni graf"
 #. MenuItems.xml:126(guimenuitem)
 msgid "Exit"
 msgstr "Izlaz"
+
+#. MenuItems.xml:127(keycap) MenuItems.xml:748(keycap)
+msgid "Alt"
+msgstr ""
 
 #. MenuItems.xml:131(para)
 msgid "Quits the program. You may be asked to save the file."
@@ -1077,6 +1085,11 @@ msgstr "Funkcije"
 msgid "Insert function..."
 msgstr "Unos funkcije..."
 
+#. MenuItems.xml:261(keycap)
+#, fuzzy
+msgid "Ins"
+msgstr "Povećaj"
+
 #. MenuItems.xml:266(para)
 msgid "Inserts a function into the coordinate system. Functions may be added with different width and color, and you can choose to only show the graph in a specified interval, and specify other settings too."
 msgstr "Unos funkcije u graf. Krivulje mogu biti u raznim bojama, intervalima i imati druge određene postavke."
@@ -1105,7 +1118,7 @@ msgstr "Unos derivacije f'(x)..."
 msgid "This dialog is used to add the first derivative to the selected function."
 msgstr "Dijalog okno kojim umećete derivaciju odabrane funkcije"
 
-#. MenuItems.xml:328(guimenuitem) InsertTrendlineDialog.xml:23(guimenuitem) InsertPointSeriesDialog.xml:20(guimenuitem)
+#. MenuItems.xml:328(guimenuitem) InsertPointSeriesDialog.xml:20(guimenuitem)
 msgid "Insert point series..."
 msgstr "Unos serije točaka..."
 
@@ -1113,7 +1126,7 @@ msgstr "Unos serije točaka..."
 msgid "Inserts a new point series into the coordinate system. An infinite number of points defined by their x- and y-coordinates may be added. It is possible to choose color, size, and style of the point series."
 msgstr "Dijalog okno kojim u graf umećete seriju točaka. Moguće je dodati \"bezbroj\" točaka s koordinatama x i y. Možete odabrati boju, veličinu i stil unosa točaka."
 
-#. MenuItems.xml:346(guimenuitem)
+#. MenuItems.xml:346(guimenuitem) InsertTrendlineDialog.xml:23(guimenuitem)
 msgid "Insert trendline..."
 msgstr "Unos linije trenda..."
 
@@ -1141,12 +1154,22 @@ msgstr "Dijalog okno kojim umećete i oblikujete tekstni okvir koji kasnije mož
 msgid "Edit..."
 msgstr "Uređivanje..."
 
+#. MenuItems.xml:398(keycap)
+#, fuzzy
+msgid "Enter"
+msgstr "cijeli broj"
+
 #. MenuItems.xml:402(para)
 msgid "This will show a dialog where you can change the selected <placeholder-1/> in the <placeholder-2/>."
 msgstr "Dijalog okno kojim uređujete odabrani <placeholder-1/> iz panela <placeholder-2/>."
 
 #. MenuItems.xml:411(guimenuitem)
 msgid "Delete"
+msgstr "Obriši"
+
+#. MenuItems.xml:412(keycap)
+#, fuzzy
+msgid "Del"
 msgstr "Obriši"
 
 #. MenuItems.xml:416(para)
@@ -1223,7 +1246,7 @@ msgstr "Promjena postavki osi koja označeni <placeholder-1/> čini vidljivim u 
 
 #. MenuItems.xml:543(guimenuitem)
 msgid "Fit all"
-msgstr "Podesi sve"
+msgstr "Prikaži sve"
 
 #. MenuItems.xml:547(para)
 msgid "This will change the axes settings to show all parts of all the elements in the <placeholder-1/>."
@@ -1279,7 +1302,7 @@ msgstr "Prikaz sadržaja datoteke pomoći."
 
 #. MenuItems.xml:654(guimenuitem) FunctionList.xml:7(title)
 msgid "List of functions"
-msgstr "Popis svih unosa"
+msgstr "Popis funkcija"
 
 #. MenuItems.xml:659(para)
 msgid "Shows a list of functions and constants that may be used for plotting graphs."
@@ -1303,7 +1326,7 @@ msgstr "Prikaz natuknica kako koristiti Graph na optimalan način i ponešto o G
 
 #. MenuItems.xml:694(guimenuitem)
 msgid "Graph web site"
-msgstr "Graph na Web-u"
+msgstr "Graph Web stranica"
 
 #. MenuItems.xml:698(para)
 msgid "Shows the web site for Graph in your default web browser."
@@ -1329,7 +1352,7 @@ msgstr "Otvaranje Web stranice kroz koju možete donacijom poduprijeti razvoj Gr
 msgid "This will check if a new version of Graph is available. If there is a new version, you will be asked if you want to visit the web site of Graph to download the new version."
 msgstr "Provjera postoji li nova inačica Graph-a. Ako postoji, pojavit će se upit o posjeti Web stranici Graph-a i njenom preuzimanju."
 
-#. MenuItems.xml:747(guimenuitem) Introduction.xml:39(guimenuitem)
+#. MenuItems.xml:747(guimenuitem) Introduction.xml:41(guimenuitem)
 msgid "About Graph..."
 msgstr "O Graph-u..."
 
@@ -1378,24 +1401,26 @@ msgid "This program is free software; you can redistribute it and/or modify it u
 msgstr "Program je slobodan softver. To znači da ga možete redistribuirati i/ili mijenjati pod uvjetima <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle> GNU javne licence</citetitle></ulink>. Najnoviju verziju programa i izvorni kod možete preuzeti s <ulink url=\"http://www.padowan.dk\"/>."
 
 #. Introduction.xml:29(para)
-msgid "The program has been tested under Microsoft Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista, but there may still be bugs left. Please report bugs and suggestions for improvements to <placeholder-1/>."
+#, fuzzy
+msgid "The program has been tested under Microsoft Windows 2000, Windows XP and Windows Vista, but there may still be bugs left. Please report bugs and suggestions for improvements to <placeholder-1/>."
 msgstr "Iako je program ispitan pod  Microsoft Windows 98, Windows ME, Windows 2000, Windows XP i Windows Vista o.s., uvijek su može potkrasti bag. U tom slučaju, kao i sa svojim prijedlozima za poboljšanja, molimo vas da nam javite na <placeholder-1/>."
 
-#. Introduction.xml:37(para)
+#. Introduction.xml:33(para)
+#, fuzzy
+msgid "When you send a bug report, please write the following:"
+msgstr "Pri slanju izvještaja o bagu, molimo upišite slijedeće: <placeholder-1/>"
+
+#. Introduction.xml:39(para)
 msgid "Which version are you using? This is shown in the <placeholder-1/> dialog box. You should check that you are using the newest version, else the bug may have been fixed already."
 msgstr "Koju verziju programa koristite? To ćete naći u dijalog oknu u izborniku, <placeholder-1/>. Provjerite koristite li najnoviju verziju, jer možda je bag već ispravljen."
 
-#. Introduction.xml:44(para)
+#. Introduction.xml:46(para)
 msgid "Explain what happens and what you expected to happen."
 msgstr "Opišite što se događa, a što vi očekujete."
 
-#. Introduction.xml:49(para)
+#. Introduction.xml:51(para)
 msgid "Explain carefully how I can reproduce the bug. If I can't see what you see, it is very difficult for me to solve the problem."
 msgstr "Pažljivo opišite postupak kako ću izazivati bag. Ako ja ne vidim isto što i vi, teško da ću riješiti problem."
-
-#. Introduction.xml:33(para)
-msgid "When you send a bug report, please write the following: <placeholder-1/>"
-msgstr "Pri slanju izvještaja o bagu, molimo upišite slijedeće: <placeholder-1/>"
 
 #. Installation.xml:4(title)
 msgid "Installation and startup"
@@ -1409,7 +1434,7 @@ msgstr "instalacija"
 msgid "uninstall"
 msgstr "deinstalacija"
 
-#. Installation.xml:8(primary) Installation.xml:110(emphasis)
+#. Installation.xml:8(primary) Installation.xml:111(emphasis)
 msgid "language"
 msgstr "jezik"
 
@@ -1429,115 +1454,116 @@ msgstr "uklanjanje"
 msgid "Installation"
 msgstr "Instalacija"
 
-#. Installation.xml:25(entry)
+#. Installation.xml:15(para)
+#, fuzzy
+msgid "The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version name. To install, just execute the installation and follow the instructions. The installation will install the following files in the selected directory and subdirectories:"
+msgstr "Program se isporučuje kao samoraspakirajuća instalacijska datoteka SetupGraph-x.y.exe, gdje x.y označava inačicu. Pokrenite instalaciju i slijedite upute. U odabranu mapu, instalacija će kopirati slijedeće datoteke i mape: <placeholder-1/>"
+
+#. Installation.xml:27(entry)
 msgid "File(s)"
 msgstr "Datoteka(e)"
 
-#. Installation.xml:32(entry)
+#. Installation.xml:34(entry)
 msgid "The program file."
 msgstr "Datoteka programa."
 
-#. Installation.xml:36(entry)
+#. Installation.xml:38(entry)
 msgid "Shell extension for showing thumbnails of grf-files in Explorer."
 msgstr "Prečica kontekst izbornika za otvaranje grf datoteka u Explorer-u."
 
-#. Installation.xml:40(entry)
+#. Installation.xml:42(entry)
 msgid "Translations of the program."
 msgstr "Prijevodi programa."
 
-#. Installation.xml:44(entry)
+#. Installation.xml:46(entry)
 msgid "Help files in different languages."
 msgstr "Pomoć na različitim jezicima."
 
-#. Installation.xml:48(entry)
+#. Installation.xml:50(entry)
 msgid "Some examples of plugins. Custom plugins can be placed here too."
 msgstr "Primjeri dodataka dodataka. Vlastite dodatke možete pohraniti u ovu mapu."
 
-#. Installation.xml:52(entry)
+#. Installation.xml:54(entry)
 msgid "Some examples that can be opened in Graph."
 msgstr "Primjeri koje možete pregledati Graph-om."
 
-#. Installation.xml:15(para)
-msgid "The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version name. To install, just execute the installation and follow the instructions. The installation will install the following files in the selected directory and subdirectories: <placeholder-1/>"
-msgstr "Program se isporučuje kao samoraspakirajuća instalacijska datoteka SetupGraph-x.y.exe, gdje x.y označava inačicu. Pokrenite instalaciju i slijedite upute. U odabranu mapu, instalacija će kopirati slijedeće datoteke i mape: <placeholder-1/>"
-
-#. Installation.xml:59(para)
+#. Installation.xml:60(para)
 msgid "The installation will create a shortcut in the Start menu, which may be used to start the program. During the installation you select the preferred language. This can later be changed from the <placeholder-1/> dialog."
 msgstr "Instalacija će u početnom izborniku stvoriti prečicu koju koristite za pokretanje programa. Kroz instalaciju odaberite željeni jezik. Kasnije ga možete promjeniti kroz izbornik, okno <placeholder-1/>."
 
-#. Installation.xml:64(para)
+#. Installation.xml:65(para)
 msgid "If an older version of the program is already installed, the installation suggests you install in the same directory. You can just install over the old version. There is no need to uninstall the old version first, but make sure the old version is not running while installing."
 msgstr "Nova instalacija će prepoznati staru, postojeću, i predložiti istu mapu. To će natpisati staru inačicu. Dakle, nema potrebe za deinstalacijom stare inačice, ali stara inačica ne smije raditi u trenutku instalacije."
 
-#. Installation.xml:69(para)
+#. Installation.xml:70(para)
 msgid "The Graph Setup can take the parameters specified in the table below. These are especially useful when you want to automate the installation."
 msgstr "Instalacija Graph-a se može izvršiti uz niže opisane parametre. To je posebno korisno pri automatiziranoj instalaciji."
 
-#. Installation.xml:80(entry) Installation.xml:151(entry)
+#. Installation.xml:81(entry) Installation.xml:152(entry)
 msgid "Parameter"
 msgstr "Parametar"
 
-#. Installation.xml:90(guilabel)
+#. Installation.xml:91(guilabel)
 msgid "Reboot now?"
 msgstr "Ponovo pokrenuti odmah?"
 
-#. Installation.xml:87(entry)
+#. Installation.xml:88(entry)
 msgid "Instructs the Setup to be silent, which means that the wizard and the background window are not displayed but the installation progress window is. Everything else is normal so for example error messages during installation are displayed. If a restart is necessary, a <placeholder-1/> message box is displayed."
 msgstr "Instalacija bez pomoćnih okana i slikovnog praćenja napretka. Sve ostalo je isto, uključujuću i ev. poruke o greškama. Na kraju će se pojaviti okno: <placeholder-1/>."
 
-#. Installation.xml:95(entry)
+#. Installation.xml:96(entry)
 msgid "Instructs the Setup to be very silent. This is the same as silent with the addition that the installation progress window is not displayed either. If a restart is necessary, the Setup will reboot without asking."
 msgstr "Instalacija je potpuno automatizirana, uključivo i automatsko ponovno pokretanje računala, ako je potrebno."
 
-#. Installation.xml:102(entry)
+#. Installation.xml:103(entry)
 msgid "Instructs Setup not to reboot even if it's necessary."
 msgstr "Instalacija neće tražiti ponovno pokretanje."
 
-#. Installation.xml:111(guilabel)
+#. Installation.xml:112(guilabel)
 msgid "Select language"
 msgstr "Izbor jezika"
 
-#. Installation.xml:108(entry)
+#. Installation.xml:109(entry)
 msgid "Specifies the language to use. <placeholder-1/> specifies the English name of the language. When a valid /LANG parameter is used, the <placeholder-2/> dialog will be suppressed."
 msgstr "Određuje koji <placeholder-1/> (engleski naziv) će biti korišten. Ukoliko se koristi /LANG parametar, neće se pojaviti okno, <placeholder-2/>."
 
-#. Installation.xml:117(guilabel)
+#. Installation.xml:118(guilabel)
 msgid "Select destination location"
 msgstr "Izbor odredišne lokacije"
 
-#. Installation.xml:116(entry)
+#. Installation.xml:117(entry)
 msgid "Overrides the default directory name displayed on the <placeholder-1/> wizard page. A fully qualified pathname must be specified."
 msgstr "Natpisuje pretpostavljenu mapu u oknu: <placeholder-1/>. Mora se upisati puna i ispravna staza."
 
-#. Installation.xml:128(title)
+#. Installation.xml:129(title)
 msgid "Uninstallation"
 msgstr "Deinstalacija"
 
-#. Installation.xml:129(para)
+#. Installation.xml:130(para)
 msgid "Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>. Just select Graph and click on the <emphasis>Change/Remove button</emphasis>. This will remove all traces of the program. If files were added to the installation directory after the installation, you will be asked if you want to delete them. Make sure Graph is not running while uninstalling."
 msgstr "Deinstalacija se vrši kroz <emphasis>Add/Remove Programs</emphasis> u <emphasis>Control Panel-u</emphasis>. Označite Graph i kliknite na tipku <emphasis>Add/Remove</emphasis>. Ovo će ukloniti sve tragove programa. Za datoteke dodane nakon instalacije, pojavit će se upit za odobrenje brisanja. Graph mora biti ugašen prije deinstalacije."
 
-#. Installation.xml:138(title)
+#. Installation.xml:139(title)
 msgid "Startup"
 msgstr "Pokretanje"
 
-#. Installation.xml:139(para)
+#. Installation.xml:140(para)
 msgid "Usually Graph is started from the link in the <guibutton>Start</guibutton> menu. A .grf file can be passed as parameter, in which case Graph will open the specified file. In addition to this the parameters in the table below can be passed to Graph on the command line."
 msgstr "Uobičajeno, Graph se pokreće prečicom u <guibutton>Start</guibutton> izborniku. Željenu .grf datoteku, Graph će na dvoklikom miša otvoriti automatski. U donjoj tabeli navedeni su parametri naredbenog retka."
 
-#. Installation.xml:160(link)
+#. Installation.xml:161(link)
 msgid "image formats"
 msgstr "oblik slike"
 
-#. Installation.xml:158(entry)
+#. Installation.xml:159(entry)
 msgid "Used to save an opened .grf file as an image file. The file type can be any of the <placeholder-1/> supported by Graph."
 msgstr "Otvorenu datoteku pohranjuje kao sliku. Graph podržava tipove datoteka opisane u <placeholder-1/>."
 
-#. Installation.xml:165(entry)
+#. Installation.xml:166(entry)
 msgid "Used in combination with /SI to specify the width in pixels of the saved image."
 msgstr "U kombinaciji s parametrom /SI, određuje širinu pohranjene slike u pikselima."
 
-#. Installation.xml:171(entry)
+#. Installation.xml:172(entry)
 msgid "Used in combination with /SI to specify the height in pixels of the saved image."
 msgstr "U kombinaciji s parametrom /SI, određuje visinu pohranjene slike u pikselima."
 
@@ -1763,7 +1789,7 @@ msgstr "Unos teksta koji će prikazati <placeholder-1/>. Ako nema unosa, prikaza
 
 #. InsertTangentDialog.xml:62(term) InsertFunctionDialog.xml:94(term)
 msgid "Graph properties"
-msgstr "Izgled linije"
+msgstr "Izgled grafa"
 
 #. InsertTangentDialog.xml:64(para)
 msgid "You can choose between different line styles for which you want the tangent/normal to be drawn. You can choose between solid, dashed, dotted or a combination of these. You can also choose the width of the tangent/normal. The width is notified in screen pixels. There are also a lot of different colors you can choose between."
@@ -1919,7 +1945,7 @@ msgstr "Kroz okno kartice <placeholder-1/> odabirete drugu funkciju za šrafiran
 
 #. InsertShadingDialog.xml:198(term)
 msgid "Shading range for 2nd function"
-msgstr "Raspon šrafure za drugu funkciju"
+msgstr "Raspon šrafure za 2, funkciju"
 
 #. InsertShadingDialog.xml:200(para)
 msgid "This is used to select the interval for the second function, just like you selected the interval for the first function in the <placeholder-1/> tab. This is only available for parametric functions and not for standard functions. For standard functions the interval for the second function is always the same as the interval for the first function. If you enter neither a start nor an end of interval for a parametric function, the values for the first function will be used for the second function as well."
@@ -2003,7 +2029,7 @@ msgstr "Ovdje odabirete stil, boju i debljinu iscrtavanja linije relacije. <plac
 
 #. InsertPointSeriesDialog.xml:8(title)
 msgid "Insert point series"
-msgstr "Unos serije točaka"
+msgstr "Unošenje točaka"
 
 #. InsertPointSeriesDialog.xml:10(primary)
 msgid "point series"
@@ -2083,7 +2109,7 @@ msgstr "Kubna linija"
 
 #. InsertPointSeriesDialog.xml:84(guilabel)
 msgid "Half cosine"
-msgstr "Pola kosinusoide"
+msgstr "Pola sinusoide"
 
 #. InsertPointSeriesDialog.xml:81(para)
 msgid "You can choose between three types of interpolation: <placeholder-1/> will draw a straight line between the markers. <placeholder-2/> will draw a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a half cosine curve between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
@@ -2227,7 +2253,7 @@ msgstr "Kada poželite unijeti funkciju, izborom stavke izbornika <placeholder-1
 
 #. InsertFunctionDialog.xml:26(term) FAQ.xml:157(guilabel) FAQ.xml:173(guilabel) FAQ.xml:189(guilabel)
 msgid "Function type"
-msgstr "Tip funkcije"
+msgstr "Tip funkcij"
 
 #. InsertFunctionDialog.xml:29(guilabel)
 msgid "Standard function"
@@ -2279,7 +2305,7 @@ msgstr "Unos sadržaja koji će <placeholder-1/> prikazati. Ako ostavite prazno,
 
 #. InsertFunctionDialog.xml:99(guilabel)
 msgid "Line style"
-msgstr "Stil linije"
+msgstr "Stil linij"
 
 #. InsertFunctionDialog.xml:99(guilabel) InsertFunctionDialog.xml:101(guilabel)
 msgid "Lines"
@@ -2527,7 +2553,7 @@ msgstr "Kada pokrenete program, vidjet ćete glavno okno prikazano niže. Desni 
 
 #. HowToUse.xml:23(guimenuitem)
 msgid "Customize toolbar..."
-msgstr "Prilagodba alatne trake..."
+msgstr "Prilagodi alatnu traku..."
 
 #. HowToUse.xml:22(para)
 msgid "The toolbar may be customized by right clicking on the bar and selecting <placeholder-1/> from the popup menu. You can then customize the toolbar by dragging commands to and from the bar. The status bar at the bottom of the window shows tooltips or other information to the left and the coordinates located at the mouse pointer to the right."
@@ -3627,7 +3653,7 @@ msgstr "Dijalozi"
 
 #. CustomFunctionsDialog.xml:8(title)
 msgid "Custom functions/constants"
-msgstr "Korisničke funkcije ili konstante "
+msgstr "Korisničke funkcije ili konstante"
 
 #. CustomFunctionsDialog.xml:9(primary)
 msgid "custom function"
@@ -3887,7 +3913,7 @@ msgstr "Presjecište x-osi / presjecište y-osi:"
 
 #. AxesDialog.xml:115(guilabel) AxesDialog.xml:213(term)
 msgid "Axes style"
-msgstr "Stil osi"
+msgstr "Smještaj osi"
 
 #. AxesDialog.xml:116(guilabel) AxesDialog.xml:217(guilabel)
 msgid "Crossed"
@@ -4067,7 +4093,7 @@ msgstr "Podaci o slici"
 
 #. AnimateDialog.xml:55(guilabel)
 msgid "Frames/second"
-msgstr "Slika u sekundi"
+msgstr "Slika u sekund"
 
 #. AnimateDialog.xml:52(para)
 msgid "You can specify the image size of the animation. This will affect the file size and the time it takes to create the animation. The <placeholder-1/> indicates the default speed of the animation. Most players will be able to adjust the speed when the animation is played."
@@ -4111,7 +4137,7 @@ msgstr "Pohrana animacije u Audio Video Interleave (avi) datoteku koju mogu pokr
 
 #. AnimateDialog.xml:111(term) AnimateDialog.xml:125(guimenuitem)
 msgid "Save frame..."
-msgstr "Pohrani sličicu..."
+msgstr "Pohrani sličice..."
 
 #. AnimateDialog.xml:113(para)
 msgid "This will save the currently shown frame as a bitmap file. This can be either Windows Bitmap (bmp), Portable Network Graphics (png) or Joint Photographic Experts Group (jpeg)."
@@ -4126,7 +4152,7 @@ msgid "This will save all frames as single bitmap files. This is the same as rep
 msgstr "Pohrana svih sličica na način kao pri <placeholder-1/>."
 
 #. Acknowledgements.xml:7(title)
-msgid "Acknowledgements"
+msgid "Acknowledgments"
 msgstr "Zahvale"
 
 #. Acknowledgements.xml:8(primary)
@@ -4150,166 +4176,158 @@ msgid "Libraries"
 msgstr "Bibliografija"
 
 #. Acknowledgements.xml:15(member)
-msgid "Parts of Graph are using the Spirit parser library:"
-msgstr "Dijelovi Grapha koriste Spirit biblioteku sinteze:"
-
-#. Acknowledgements.xml:21(member)
-msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
-msgstr "Graph koristi BMGLib za pohranu kao Portable Network Grafike:"
-
-#. Acknowledgements.xml:28(member)
 msgid "Graph uses dxgettext as translation library:"
 msgstr "Graph koristi dxgettext kao prevoditeljsku biblioteku:"
 
-#. Acknowledgements.xml:34(member)
+#. Acknowledgements.xml:21(member)
 msgid "For shell extensions the EasyNSE library is used:"
 msgstr "Graph koristi EasyNSE biblioteku za ekstenzije:"
 
-#. Acknowledgements.xml:40(member)
+#. Acknowledgements.xml:27(member)
 msgid "The PDFlib-Lite library is used to create PDF files:"
 msgstr "Graph koristi PDFlib-Lite biblioteku za stvaranje PDF datoteka:"
 
-#. Acknowledgements.xml:52(member)
+#. Acknowledgements.xml:33(member)
 msgid "Python is used for plugin support:"
 msgstr "Python se koristi za podršku dodacima:"
 
-#. Acknowledgements.xml:60(title)
+#. Acknowledgements.xml:41(title)
 msgid "Translations"
 msgstr "Prijevodi"
 
-#. Acknowledgements.xml:71(entry)
+#. Acknowledgements.xml:52(entry)
 msgid "Program"
 msgstr "Program"
 
-#. Acknowledgements.xml:72(entry)
+#. Acknowledgements.xml:53(entry)
 msgid "Help file"
 msgstr "Pomoć"
 
-#. Acknowledgements.xml:73(entry)
+#. Acknowledgements.xml:54(entry)
 msgid "Translator(s)"
 msgstr "Prevoditelj(i)"
 
-#. Acknowledgements.xml:78(entry)
+#. Acknowledgements.xml:59(entry)
 msgid "Arabic"
 msgstr "Arapski"
 
-#. Acknowledgements.xml:79(entry) Acknowledgements.xml:86(entry) Acknowledgements.xml:93(entry) Acknowledgements.xml:100(entry) Acknowledgements.xml:107(entry) Acknowledgements.xml:114(entry) Acknowledgements.xml:121(entry) Acknowledgements.xml:122(entry) Acknowledgements.xml:128(entry) Acknowledgements.xml:135(entry) Acknowledgements.xml:136(entry) Acknowledgements.xml:142(entry) Acknowledgements.xml:149(entry) Acknowledgements.xml:150(entry) Acknowledgements.xml:156(entry) Acknowledgements.xml:157(entry) Acknowledgements.xml:163(entry) Acknowledgements.xml:170(entry) Acknowledgements.xml:177(entry) Acknowledgements.xml:178(entry) Acknowledgements.xml:184(entry) Acknowledgements.xml:191(entry) Acknowledgements.xml:198(entry) Acknowledgements.xml:205(entry) Acknowledgements.xml:212(entry) Acknowledgements.xml:219(entry) Acknowledgements.xml:226(entry) Acknowledgements.xml:233(entry) Acknowledgements.xml:234(entry) Acknowledgements.xml:240(entry) Acknowledgements.xml:241(entry) Acknowledgements.xml:247(entry) Acknowledgements.xml:254(entry) Acknowledgements.xml:261(entry)
+#. Acknowledgements.xml:60(entry) Acknowledgements.xml:67(entry) Acknowledgements.xml:74(entry) Acknowledgements.xml:81(entry) Acknowledgements.xml:88(entry) Acknowledgements.xml:95(entry) Acknowledgements.xml:102(entry) Acknowledgements.xml:103(entry) Acknowledgements.xml:109(entry) Acknowledgements.xml:116(entry) Acknowledgements.xml:117(entry) Acknowledgements.xml:123(entry) Acknowledgements.xml:130(entry) Acknowledgements.xml:131(entry) Acknowledgements.xml:137(entry) Acknowledgements.xml:138(entry) Acknowledgements.xml:144(entry) Acknowledgements.xml:151(entry) Acknowledgements.xml:158(entry) Acknowledgements.xml:159(entry) Acknowledgements.xml:165(entry) Acknowledgements.xml:172(entry) Acknowledgements.xml:179(entry) Acknowledgements.xml:186(entry) Acknowledgements.xml:193(entry) Acknowledgements.xml:200(entry) Acknowledgements.xml:207(entry) Acknowledgements.xml:214(entry) Acknowledgements.xml:215(entry) Acknowledgements.xml:221(entry) Acknowledgements.xml:222(entry) Acknowledgements.xml:228(entry) Acknowledgements.xml:235(entry) Acknowledgements.xml:242(entry)
 msgid "Yes"
 msgstr "Da"
 
-#. Acknowledgements.xml:80(entry) Acknowledgements.xml:87(entry) Acknowledgements.xml:94(entry) Acknowledgements.xml:101(entry) Acknowledgements.xml:108(entry) Acknowledgements.xml:115(entry) Acknowledgements.xml:129(entry) Acknowledgements.xml:143(entry) Acknowledgements.xml:164(entry) Acknowledgements.xml:171(entry) Acknowledgements.xml:185(entry) Acknowledgements.xml:192(entry) Acknowledgements.xml:199(entry) Acknowledgements.xml:206(entry) Acknowledgements.xml:213(entry) Acknowledgements.xml:220(entry) Acknowledgements.xml:227(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:255(entry) Acknowledgements.xml:262(entry)
+#. Acknowledgements.xml:61(entry) Acknowledgements.xml:68(entry) Acknowledgements.xml:75(entry) Acknowledgements.xml:82(entry) Acknowledgements.xml:89(entry) Acknowledgements.xml:96(entry) Acknowledgements.xml:110(entry) Acknowledgements.xml:124(entry) Acknowledgements.xml:145(entry) Acknowledgements.xml:152(entry) Acknowledgements.xml:166(entry) Acknowledgements.xml:173(entry) Acknowledgements.xml:180(entry) Acknowledgements.xml:187(entry) Acknowledgements.xml:194(entry) Acknowledgements.xml:201(entry) Acknowledgements.xml:208(entry) Acknowledgements.xml:229(entry) Acknowledgements.xml:236(entry) Acknowledgements.xml:243(entry)
 msgid "No"
 msgstr "Ne"
 
-#. Acknowledgements.xml:85(entry)
+#. Acknowledgements.xml:66(entry)
 msgid "Basque"
 msgstr ""
 
-#. Acknowledgements.xml:92(entry)
+#. Acknowledgements.xml:73(entry)
 msgid "Chinese (Traditional)"
 msgstr ""
 
-#. Acknowledgements.xml:99(entry)
+#. Acknowledgements.xml:80(entry)
 msgid "Chinese (Simplified)"
 msgstr ""
 
-#. Acknowledgements.xml:106(entry)
+#. Acknowledgements.xml:87(entry)
 msgid "Croatian"
 msgstr "Hrvatski"
 
-#. Acknowledgements.xml:113(entry)
+#. Acknowledgements.xml:94(entry)
 msgid "Czech"
 msgstr ""
 
-#. Acknowledgements.xml:120(entry)
+#. Acknowledgements.xml:101(entry)
 msgid "Danish"
 msgstr ""
 
-#. Acknowledgements.xml:127(entry)
+#. Acknowledgements.xml:108(entry)
 msgid "Dutch"
 msgstr ""
 
-#. Acknowledgements.xml:134(entry)
+#. Acknowledgements.xml:115(entry)
 msgid "English"
 msgstr ""
 
-#. Acknowledgements.xml:141(entry)
+#. Acknowledgements.xml:122(entry)
 msgid "Finnish"
 msgstr ""
 
-#. Acknowledgements.xml:148(entry)
+#. Acknowledgements.xml:129(entry)
 msgid "French"
 msgstr ""
 
-#. Acknowledgements.xml:155(entry)
+#. Acknowledgements.xml:136(entry)
 msgid "German"
 msgstr ""
 
-#. Acknowledgements.xml:162(entry)
+#. Acknowledgements.xml:143(entry)
 msgid "Greek"
 msgstr ""
 
-#. Acknowledgements.xml:169(entry)
+#. Acknowledgements.xml:150(entry)
 msgid "Hungarian"
 msgstr ""
 
-#. Acknowledgements.xml:176(entry)
+#. Acknowledgements.xml:157(entry)
 msgid "Italian"
 msgstr "Talijanski"
 
-#. Acknowledgements.xml:183(entry)
+#. Acknowledgements.xml:164(entry)
 msgid "Korean"
 msgstr "Korean"
 
-#. Acknowledgements.xml:190(entry)
+#. Acknowledgements.xml:171(entry)
 msgid "Mongolian"
 msgstr ""
 
-#. Acknowledgements.xml:197(entry)
+#. Acknowledgements.xml:178(entry)
 msgid "Norwegian"
 msgstr ""
 
-#. Acknowledgements.xml:204(entry)
+#. Acknowledgements.xml:185(entry)
 msgid "Polish"
 msgstr ""
 
-#. Acknowledgements.xml:211(entry)
+#. Acknowledgements.xml:192(entry)
 msgid "Portuguese"
 msgstr "Portuguese"
 
-#. Acknowledgements.xml:218(entry)
+#. Acknowledgements.xml:199(entry)
 msgid "Russian"
 msgstr "Ruski"
 
-#. Acknowledgements.xml:225(entry)
+#. Acknowledgements.xml:206(entry)
 msgid "Serbian"
 msgstr "Srpski"
 
-#. Acknowledgements.xml:232(entry)
+#. Acknowledgements.xml:213(entry)
 msgid "Slovenian"
 msgstr "Slovski"
 
-#. Acknowledgements.xml:239(entry)
+#. Acknowledgements.xml:220(entry)
 msgid "Spanish"
 msgstr ""
 
-#. Acknowledgements.xml:246(entry)
+#. Acknowledgements.xml:227(entry)
 msgid "Swedish"
 msgstr ""
 
-#. Acknowledgements.xml:253(entry)
+#. Acknowledgements.xml:234(entry)
 msgid "Turkish"
 msgstr "Turski"
 
-#. Acknowledgements.xml:260(entry)
+#. Acknowledgements.xml:241(entry)
 msgid "Vietnamese"
 msgstr ""
 
-#. Acknowledgements.xml:272(title)
+#. Acknowledgements.xml:253(title)
 msgid "Miscellaneous"
 msgstr "Ostalo"
 
-#. Acknowledgements.xml:273(para)
+#. Acknowledgements.xml:254(para)
 msgid "The icon was designed by <placeholder-1/>."
 msgstr "Ikone je stvorio <placeholder-1/>."
 
@@ -4317,4 +4335,9 @@ msgstr "Ikone je stvorio <placeholder-1/>."
 #. Acknowledgements.xml:0(None)
 msgid "translator-credits"
 msgstr "vjerodostojni prevoditelj"
+
+#~ msgid "Parts of Graph are using the Spirit parser library:"
+#~ msgstr "Dijelovi Grapha koriste Spirit biblioteku sinteze:"
+#~ msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
+#~ msgstr "Graph koristi BMGLib za pohranu kao Portable Network Grafike:"
 
