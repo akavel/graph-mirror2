@@ -159,11 +159,12 @@ bool TPolarFunc::IsEmpty() const
 }
 //---------------------------------------------------------------------------
 /** Converts from internal format to at text string.
+ *  \param Decimals: Number of decimals in numbers.
  *  \param Variable: Variable name to use in the text.
  */
-std::wstring TPolarFunc::MakeText(const std::wstring &Variable) const
+std::wstring TPolarFunc::MakeText(const std::wstring &Variable, unsigned Decimals) const
 {
-  return FuncData->MakeText(std::vector<std::wstring>(1, Variable));
+  return FuncData->MakeText(std::vector<std::wstring>(1, Variable), Decimals);
 }
 //---------------------------------------------------------------------------
 //! Assigns the content of Func to this object

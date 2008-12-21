@@ -12,53 +12,76 @@
 #include <cmath>
 #include <limits>
 #include "Matrix.h"
+#include <boost\math\special_functions\fpclassify.hpp>
+#include <limits>
 
 namespace Func32
 {
 //---------------------------------------------------------------------------
-/** Returns the curve of best fit for the point series
+/** Create a linear curve y=a*x+b of best fit using Least Squares method.
+ *  If Variance is not empty, the Sum of Squares is weighted by the inverse of each variance value.
+ *  \param Points: The point series to find trendline for
+ *  \param Weights: The weight for each point. The size of Weights must be the same as the size of Points or 0.
+ *         The wight is usually 1/(sigma*sigma) where sigma is the uncertainty.
+ *  \param Intercept: Indicate the interception with the y-axis. If Intercept==NaN, Intercept is considered unknown.
+ *  \return The trendline for the points
+ */
+TFunc CreateLinearTrendLine(const std::vector<TDblPoint> &Points, const std::vector<double> &Weights, double Intercept)
+{
+  if(Points.empty() || (boost::math::isfinite(Intercept) && Points.size() < 2))
+    throw EFuncError(ecTooFewPoints);
+  int n = Points.size();
+  double SumX = 0;
+  double SumY = 0;
+  double SumXY = 0;
+  double SumSqrX = 0;
+  double SumWeight = 0;
+
+  for(int I = 0; I < n; I++)
+  {
+    double Weight = Weights.empty() ? 1 : Weights[I];
+    SumX += Points[I].x * Weight;
+    SumY += Points[I].y * Weight;
+    SumXY += Points[I].x * Points[I].y * Weight;
+    SumSqrX += Points[I].x * Points[I].x * Weight;
+    SumWeight += Weight;
+  }
+
+  double a;
+  double b = Intercept;
+  if(boost::math::isfinite(Intercept)) //If an interception with y-axis is given
+    a = (SumXY - b * SumX) / (SumWeight*SumSqrX);
+  else
+  {
+    double d = SumWeight*SumSqrX - SumX*SumX;
+
+    //Take care of division by zero
+    if(IsZero(d))
+      throw EFuncError(ecOverflow);
+    a = (SumWeight*SumXY - SumX*SumY) / d;
+    b = (SumY - a*SumX) / SumWeight;
+  }
+
+  return TFunc(a) * TFunc(L"x") + TFunc(b);
+}
+//---------------------------------------------------------------------------
+/** Returns the curve of best fit for the point series using the Least Squares fit.
+ *  If Variance is not empty, the Sum of Squares is weighted by the inverse of each variance value.
  *  \param Type: Indicates the type of trend to find
  *  \param Points: The point series to find trendline for
+ *  \param Weights: The weight for each point. The size of Weights must be the same as the size of Points or 0.
+           The wight is usually 1/(sigma*sigma) where sigma is the uncertainty.
  *  \param N: Only used for polygons (order)
  *  \return The trendline for the points
  */
-TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, unsigned N)
+TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, const std::vector<double> &Weights, unsigned N)
 {
+  if(!Weights.empty() && Weights.size() != Points.size())
+    throw EFuncError(ecInvalidWeight);
   try
   {
     switch(Type)
     {
-      case ttLinear:
-      {
-        //y = a*x + b
-        if(Points.size() < 2)
-          throw EFuncError(ecTooFewPoints);
-        int n = Points.size();
-        double SumX = 0;
-        double SumY = 0;
-        double SumXY = 0;
-        double SumSqrX = 0;
-
-        for(std::vector<TDblPoint>::const_iterator Iter = Points.begin(); Iter != Points.end(); ++Iter)
-        {
-          SumX += Iter->x;
-          SumY += Iter->y;
-          SumXY += Iter->x * Iter->y;
-          SumSqrX += Iter->x * Iter->x;
-        }
-        double d = n*SumSqrX-SumX*SumX;
-
-        //Take care of division by zero
-        if(IsZero(d))
-          throw EFuncError(ecOverflow);
-
-        double a = (n*SumXY-SumX*SumY) / d;
-        double b = (SumY - a*SumX) / n;
-        if(b < 0)
-          return TFunc(a) * TFunc(L"x") - TFunc(-b);
-        return TFunc(a) * TFunc(L"x") + TFunc(b);
-      }
-
       case ttLogarithmic:
       {
         //y = a*ln(x) + b
@@ -214,7 +237,7 @@ TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, u
       }
 
       default:
-        throw EFuncError(ecInternalError);
+        return TrendLine(Type, Points, Weights, N, std::numeric_limits<double>::quiet_NaN());
     }
   }
   catch(EMatrix& M)
@@ -223,119 +246,108 @@ TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, u
   }
 }
 //---------------------------------------------------------------------------
-/** Returns the curve of best fit, that is crossing the y-axis at a specific coordinate, for the point series
+/** Returns the curve of best fit for the point series using the Least Squares fit.
+ *  If Variance is not empty, the Sum of Squares is weighted by the inverse of each variance value.
  *  \param Type: Indicates the type of trend to find
  *  \param Points: The point series to find trendline for
+ *  \param Weights: The weight for each point. The size of Weights must be the same as the size of Points or 0.
+           The wight is usually 1/(sigma*sigma) where sigma is the uncertainty.
  *  \param N: Only used for polygons (order)
- *  \param Intercept: Crossing with the y-axis.
+ *  \param Intercept: If not NaN, indicates the crossing with the y-axis.
  *  \return The trendline for the points
  */
-TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, unsigned N, double Intercept)
+TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, const std::vector<double> &Weights, unsigned N, double Intercept)
 {
-  switch(Type)
+  try
   {
-    case ttLinear:
-    { //y = a*x + b, b=Intercept
-      if(Points.size() < 1)
-        throw EFuncError(ecTooFewPoints);
-      double SumX = 0;
-      double SumXY = 0;
-      double SumSqrX = 0;
+    switch(Type)
+    {
+      case ttLinear:
+        //y = a*x + b, b=Intercept
+        return CreateLinearTrendLine(Points, Weights, Intercept);
 
-      for(std::vector<TDblPoint>::const_iterator Iter = Points.begin(); Iter != Points.end(); ++Iter)
-      {
-        SumX += Iter->x;
-        SumXY += Iter->x * Iter->y;
-        SumSqrX += Iter->x * Iter->x;
-      }
-
-      if(IsZero(SumSqrX))
-        throw EFuncError(ecOverflow);
-
-      double b = Intercept;
-      double a = (SumXY - b * SumX) / SumSqrX;
-      if(b < 0)
-        return TFunc(a) * TFunc(L"x") - TFunc(-b);
-      return TFunc(a) * TFunc(L"x") + TFunc(b);
-    }
-
-    case ttPolynomial:
-      {
-        //y = an*x^n + ... + a3*x^3 + a2*x^2 + a1*x + a0, where a0=const
-        if(Points.size() < N)
-          throw EFuncError(ecTooFewPoints);
-
-        double q = Intercept;
-        TMatrix<long double> M(N, N+1);
-        std::vector<long double> SumX(2*N, 0);
-        for(std::vector<TDblPoint>::const_iterator Iter = Points.begin(); Iter != Points.end(); ++Iter)
+      case ttPolynomial:
         {
-          long double PowX = 1;
-          for(unsigned n = 0; n < 2*N; n++)
+          //y = an*x^n + ... + a3*x^3 + a2*x^2 + a1*x + a0, where a0=const
+          if(Points.size() < N)
+            throw EFuncError(ecTooFewPoints);
+
+          double q = Intercept;
+          TMatrix<long double> M(N, N+1);
+          std::vector<long double> SumX(2*N, 0);
+          for(std::vector<TDblPoint>::const_iterator Iter = Points.begin(); Iter != Points.end(); ++Iter)
           {
-            PowX *= Iter->x;
-            SumX[n] += PowX;
-            if(n < N)
-              M[n][N] += PowX * (Iter->y - q);
+            long double PowX = 1;
+            for(unsigned n = 0; n < 2*N; n++)
+            {
+              PowX *= Iter->x;
+              SumX[n] += PowX;
+              if(n < N)
+                M[n][N] += PowX * (Iter->y - q);
+            }
           }
+
+          for(unsigned j = 0; j < N; j++)
+            for(unsigned k = 0; k < N; k++)
+              M[j][k] = SumX[j+k+1];
+
+          std::vector<long double> a = M.Gauss();
+          TFunc Func;
+          TFunc xFunc(L"x");
+          for(unsigned n = a.size()-1; n >= 1; n--)
+            if(a[n] < 0)
+              Func -= -a[n] * pow(xFunc, n+1);
+            else
+              Func += a[n] * pow(xFunc, n+1);
+          if(N>0)
+            if(a[0] < 0)
+              Func -= -a[0] * xFunc;
+            else
+              Func += a[0] * xFunc;
+          if(q < 0)
+            Func -= -q;
+          else
+            Func += q;
+          return Func;
         }
 
-        for(unsigned j = 0; j < N; j++)
-          for(unsigned k = 0; k < N; k++)
-            M[j][k] = SumX[j+k+1];
-
-        std::vector<long double> a = M.Gauss();
-        TFunc Func;
-        TFunc xFunc(L"x");
-        for(unsigned n = a.size()-1; n >= 1; n--)
-          if(a[n] < 0)
-            Func -= -a[n] * pow(xFunc, n+1);
-          else
-            Func += a[n] * pow(xFunc, n+1);
-        if(N>0)
-          if(a[0] < 0)
-            Func -= -a[0] * xFunc;
-          else
-            Func += a[0] * xFunc;
-        if(q < 0)
-          Func -= -q;
-        else
-          Func += q;
-        return Func;
-      }
-
-    case ttExponential:
-      {
-        //y = a*b^x, ln y = ln a + (ln b)*x, a=Intercept
-        if(Points.size() < 1)
-          throw EFuncError(ecTooFewPoints);
-          if(Intercept <= 0)
-            throw EFuncError(ecInvalidValue);
-        double SumX = 0;
-        double SumXY = 0;
-        double SumSqrX = 0;
-
-        for(std::vector<TDblPoint>::const_iterator Iter = Points.begin(); Iter != Points.end(); ++Iter)
+      case ttExponential:
         {
-          if(Iter->y <= 0)
-            throw EFuncError(ecInvalidValue);
-          SumX += Iter->x;
-          SumXY += Iter->x * std::log(Iter->y);
-          SumSqrX += Iter->x * Iter->x;
+          //y = a*b^x, ln y = ln a + (ln b)*x, a=Intercept
+          if(Points.size() < 1)
+            throw EFuncError(ecTooFewPoints);
+            if(Intercept <= 0)
+              throw EFuncError(ecInvalidValue);
+          double SumX = 0;
+          double SumXY = 0;
+          double SumSqrX = 0;
+
+          for(std::vector<TDblPoint>::const_iterator Iter = Points.begin(); Iter != Points.end(); ++Iter)
+          {
+            if(Iter->y <= 0)
+              throw EFuncError(ecInvalidValue);
+            SumX += Iter->x;
+            SumXY += Iter->x * std::log(Iter->y);
+            SumSqrX += Iter->x * Iter->x;
+          }
+
+          if(IsZero(SumSqrX))
+            throw EFuncError(ecOverflow);
+
+          double a = Intercept;
+          double b = std::exp((SumXY - std::log(a) * SumX) / SumSqrX);
+          return TFunc(a) * pow(TFunc(b),TFunc(L"x"));
         }
 
-        if(IsZero(SumSqrX))
-          throw EFuncError(ecOverflow);
-
-        double a = Intercept;
-        double b = std::exp((SumXY - std::log(a) * SumX) / SumSqrX);
-        return TFunc(a) * pow(TFunc(b),TFunc(L"x"));
-      }
-
-    case ttLogarithmic:
-    case ttPower:
-    default:
-      throw EFuncError(ecInternalError);
+      case ttLogarithmic:
+      case ttPower:
+      default:
+        throw EFuncError(ecInternalError);
+    }
+  }
+  catch(EMatrix& M)
+  {
+    throw EFuncError(ecCalcError);
   }
 }
 //---------------------------------------------------------------------------

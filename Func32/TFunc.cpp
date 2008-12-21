@@ -173,10 +173,12 @@ TFunc TFunc::MakeDif(const std::wstring &Var) const
 //---------------------------------------------------------------------------
 /** Converts from internal format to at text string.
  *  \param Variable: Name to use as the variable. The default is "x".
+ *  \param Decimals: Number of decimals in numbers.
+ *  \return The function as a text string.
  */
-std::wstring TFunc::MakeText(const std::wstring &Variable) const
+std::wstring TFunc::MakeText(const std::wstring &Variable, unsigned Decimals) const
 {
-  return FuncData->MakeText(std::vector<std::wstring>(1, Variable));
+  return FuncData->MakeText(std::vector<std::wstring>(1, Variable), Decimals);
 }
 //---------------------------------------------------------------------------
 /** Assigns another function to the object.

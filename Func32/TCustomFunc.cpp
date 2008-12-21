@@ -204,11 +204,12 @@ TFunc TCustomFunc::ConvToFunc(const std::vector<long double> &Values, unsigned V
 }
 //---------------------------------------------------------------------------
 /** Converts the function to a text string.
+ *  \param Decimals: Number of decimals in numbers.
  *  \return A text string, for example "10*sinc(a)+b")
  */
-std::wstring TCustomFunc::MakeText() const
+std::wstring TCustomFunc::MakeText(unsigned Decimals) const
 {
-  return FuncData->MakeText(Args);
+  return FuncData->MakeText(Args, Decimals);
 }
 //---------------------------------------------------------------------------
 /** Update the function from the Symbol list.
