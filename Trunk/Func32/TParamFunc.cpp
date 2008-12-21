@@ -243,21 +243,23 @@ bool TParamFunc::IsEmpty() const
 }
 //---------------------------------------------------------------------------
 /** Creates a string containing x(t)
+ *  \param Decimals: Number of decimals in numbers.
  *  \param Variable: Name of paramater variable.
  *  \return The string with the x(t) part of the function.
  */
-std::wstring TParamFunc::MakeXText(const std::wstring &Variable) const
+std::wstring TParamFunc::MakeXText(const std::wstring &Variable, unsigned Decimals) const
 {
-  return xFuncData->MakeText(std::vector<std::wstring>(1, Variable));
+  return xFuncData->MakeText(std::vector<std::wstring>(1, Variable), Decimals);
 }
 //---------------------------------------------------------------------------
 /** Creates a string containing y(t)
+ *  \param Decimals: Number of decimals in numbers.
  *  \param Variable: Name of paramater variable.
  *  \return The string with the y(t) part of the function.
  */
-std::wstring TParamFunc::MakeYText(const std::wstring &Variable) const
+std::wstring TParamFunc::MakeYText(const std::wstring &Variable, unsigned Decimals) const
 {
-  return yFuncData->MakeText(std::vector<std::wstring>(1, Variable));
+  return yFuncData->MakeText(std::vector<std::wstring>(1, Variable), Decimals);
 }
 //---------------------------------------------------------------------------
 /** Assigns Func to the parameter function

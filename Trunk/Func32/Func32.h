@@ -118,6 +118,7 @@ enum TErrorCode
   ecTooFewPoints    = 74, //!< Not enough points for calculation
   ecIllegalName     = 75, //!< Built-in function names cannot be used for custom function names
   ecRecursiveDif    = 76, //!< Cannot differentiate recursve functions
+  ecInvalidWeight   = 77, //!< Invalid number of wight values parsed to TrendLine()
   ecNoFunc          = 78, //!< No function defined
   ecNotDifAble      = 79, //!< Function cannot be differentiated
   ecErrorType       = 85, //!< The function passed as parameter is not correct type
@@ -368,7 +369,7 @@ public:
 
   void Clear();
   bool IsEmpty() const; //throw()
-  std::wstring MakeText(const std::wstring &Variable = L"x") const;
+  std::wstring MakeText(const std::wstring &Variable = L"x", unsigned Decimals=8) const;
 
   void Simplify();
   void Swap(TFunc &Func); //throw()
@@ -446,8 +447,8 @@ public:
 
   void Clear();
   bool IsEmpty() const; //throw()
-  std::wstring MakeXText(const std::wstring &Variable = L"t") const;
-  std::wstring MakeYText(const std::wstring &Variable = L"t") const;
+  std::wstring MakeXText(const std::wstring &Variable = L"t", unsigned Decimals=8) const;
+  std::wstring MakeYText(const std::wstring &Variable = L"t", unsigned Decimals=8) const;
 
   TFunc ConvXToFunc() const;
   TFunc ConvYToFunc() const;
@@ -519,7 +520,7 @@ public:
 
   void Clear();
   bool IsEmpty() const; //throw()
-  std::wstring MakeText(const std::wstring &Variable = L"t") const;
+  std::wstring MakeText(const std::wstring &Variable = L"t", unsigned Decimals=8) const;
 
   TFunc ConvXToFunc() const;
   TFunc ConvYToFunc() const;
@@ -574,7 +575,7 @@ public:
   void SetTrigonometry(TTrigonometry Trig) {Trigonometry = Trig;}
   TTrigonometry GetTrigonometry() const {return Trigonometry;}
   TFunc ConvToFunc(const std::vector<long double> &Values, unsigned Variable) const;
-  std::wstring MakeText() const;
+  std::wstring MakeText(unsigned Decimals=8) const;
   bool Update(const TSymbolList &SymbolList);
   TFunctionType GetFunctionType() const;
   void RemoveRelation();
@@ -648,8 +649,8 @@ enum TTrendType
   ttExponential,  //!< Exponential trend (y = a*b^x)
 };
 
-TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, unsigned N);
-TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, unsigned N, double Intercept);
+TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, const std::vector<double> &Weights, unsigned N);
+TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, const std::vector<double> &Weights, unsigned N, double Intercept);
 TParamFunc MovingAverage(const std::vector<TDblPoint> &Points, unsigned N);
 void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, std::vector<long double> &Values, unsigned MaxIter = 100, double Tol = 1E-6);
 double CalcSSQ(const std::vector<TDblPoint> &Points, const TFunc &Func);

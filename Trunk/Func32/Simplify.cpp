@@ -23,10 +23,11 @@ struct TSimplify
   TSimplify() {}
 };
 
+const unsigned TableSize = 27;
 const TSimplify& SimplifyTable(unsigned Index)
 {
 
-static const TSimplify Table[] = {
+static const TSimplify Table[TableSize] = {
 TSimplify(CodeAdd, CodeIgnore, 0, CodePar1),
 TSimplify(CodeAdd, 0, CodeIgnore, CodePar2),
 TSimplify(CodeAdd, CodeIgnore, CodeNeg, CodeSub, CodePar1, CodePar2Par),
@@ -57,6 +58,7 @@ TSimplify(CodePow, CodeIgnore, 0, 1),
 TSimplify(CodePow, CodeIgnore, 1, CodePar1),
 
 TSimplify(CodeLn, Codee, CodeIgnore, 1),
+TSimplify(CodeLog, 10, CodeIgnore, 1),
 TSimplify(CodeSqr, CodeSqrt, CodeIgnore, CodePar1Par)
 };
 
@@ -134,7 +136,7 @@ std::list<TElem>::iterator SimplifyData(std::list<TElem> &List, std::list<TElem>
   else
     throw EFuncError(ecInternalError);
 
-  for(unsigned I = 0; I < 25/*sizeof(SimplifyTable) / sizeof(SimplifyTable[0])*/; I++)
+  for(unsigned I = 0; I < TableSize; I++)
   {
     const TSimplify &Entry = SimplifyTable(I);
     if(*Iter == Entry.Function && (Entry.Par1 == CodeIgnore || *Begin1 == Entry.Par1) &&

@@ -46,7 +46,7 @@ inline bool IsEqual(long double a, long double b)
   frexp(a, &a_exp);
   frexp(b, &b_exp);
   frexp(a - b, &exp);
-  return IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 50);
+  return IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 40);
 }
 
 inline bool IsEqual(TComplex a, TComplex b)
@@ -57,6 +57,28 @@ inline bool IsEqual(TComplex a, TComplex b)
 std::wstring ToWString(const std::string &Str)
 {
   return std::wstring(Str.begin(), Str.end());
+}
+
+bool CompareFunc(const TFunc &f1, const TFunc &f2, double x)
+{
+  ECalcError E1;
+  ECalcError E2;
+  long double y1 = f1.CalcY(x, E1);
+  long double y2 = f2.CalcY(x, E2);
+  if(E1.ErrorCode != E2.ErrorCode)
+    return false;
+  if(E1.ErrorCode == ecNoError)
+    return IsEqual(y1, y2);
+  return true;
+}
+
+bool CompareFunc(const TFunc &f1, const TFunc &f2)
+{
+  double x[] = {-1000, -100, -10, -1, 0, 1, 10, 100, 1000};
+  for(unsigned I = 0; I < sizeof(x)/sizeof(x[0]); I++)
+    if(!CompareFunc(f1, f2, x[I]))
+      return false;
+  return true;
 }
 
 template<typename T>
@@ -136,11 +158,24 @@ void TestError(const std::string &Str, long double x, TErrorCode Error, TTrigono
   TestError(ToWString(Str), x, Error, Trig);
 }
 
-void TestTrendLine(Func32::TTrendType Type, const TDblPoint *Points, unsigned Size, unsigned N)
+void TestTrendLine(Func32::TTrendType Type, const TDblPoint *Points, unsigned Size, const double *Weights, unsigned N, const std::wstring &Str)
 {
   try
   {
-    TrendLine(Type, std::vector<TDblPoint>(Points, Points + Size), N);
+    TFunc Func(Str);
+    std::vector<TDblPoint> P(Points, Points + Size);
+    std::vector<double> W;
+    if(Weights)
+      W.insert(W.begin(), Weights, Weights + Size);
+    TFunc Result = TrendLine(Type, P, W, N);
+    if(!CompareFunc(Result, Func))
+    {
+      wcerr << "-- Trendline --" << endl;
+      wcerr << "Expected trendline: f(x)=" << Str << std::endl;
+      wcerr << "Evaluated to:       f(x)=" << Result << std::endl << std::endl;
+      wcin.ignore();
+
+    }
   }
   catch(EFuncError &E)
   {
@@ -154,7 +189,8 @@ void TestTrendLineError(Func32::TTrendType Type, const TDblPoint *Points, unsign
 {
   try
   {
-    TrendLine(Type, std::vector<TDblPoint>(Points, Points + Size), N);
+    std::vector<double> W;
+    TrendLine(Type, std::vector<TDblPoint>(Points, Points + Size), W, N);
 
     cerr << "-- Trendline --" << endl;
     cerr << "Expected error code:     " << ErrorCode << endl << endl;
@@ -171,27 +207,6 @@ void TestTrendLineError(Func32::TTrendType Type, const TDblPoint *Points, unsign
   }
 }
 
-bool CompareFunc(const TFunc &f1, const TFunc &f2, double x)
-{
-  ECalcError E1;
-  ECalcError E2;
-  long double y1 = f1.CalcY(x, E1);
-  long double y2 = f2.CalcY(x, E2);
-  if(E1.ErrorCode != E2.ErrorCode)
-    return false;
-  if(E1.ErrorCode == ecNoError)
-    return IsEqual(y1, y2);
-  return true;
-}
-
-bool CompareFunc(const TFunc &f1, const TFunc &f2)
-{
-  double x[] = {-1000, -100, -10, -1, 0, 1, 10, 100, 1000};
-  for(unsigned I = 0; I < sizeof(x)/sizeof(x[0]); I++)
-    if(!CompareFunc(f1, f2, x[I]))
-      return false;
-  return true;
-}
 
 void TestDif(const std::wstring &f, const std::wstring &df, TTrigonometry Trig = Radian)
 {
@@ -307,6 +322,8 @@ void __stl_debug_terminate(void)
   cerr << "DEBUG TERMINATE" << std::endl;
   abort();
 }
+
+double ErrorToWeight(double x) {return 1/(x*x);}
 
 void Test()
 {
@@ -593,7 +610,14 @@ void Test()
 
   //Test difficult trend line
   TDblPoint Points[] = {TDblPoint(1950,1571), TDblPoint(1970,524), TDblPoint(1980, 208), TDblPoint(2003, 29)};
-  TestTrendLine(ttPower, Points, 4, 0);
+  TestTrendLine(ttPower, Points, 4, NULL, 0, L"7.23106321804096256E+498*x^(-150.630652337941856)");
+
+  //Test sample linear trendline
+  TDblPoint P[] = {TDblPoint(0,0.1), TDblPoint(1,0.9), TDblPoint(2,1.9), TDblPoint(3,2.7), TDblPoint(4,4.7)};
+  double W[] = {0.1, 0.13, 0.16, 0.2, 0.25};
+  std::transform(W, W+5, W, ErrorToWeight); //Perform x=1/(x*x)
+  TestTrendLine(ttLinear, P, 5, NULL, 0, L"1.1*x-0.14");
+  TestTrendLine(ttLinear, P, 5, W, 0, L"1.010848*x+0.0036755592");
 
   //Test differentiation of common operators
   TestDif("-0.5796", "0");
@@ -621,7 +645,7 @@ void Test()
 
   //Test the simplify code
   TestSimplify("ln(e)", "1");
-//  TestSimplify("log(10)", "1");
+  TestSimplify("log(10)", "1");
 }
 
 std::wstringstream DebugStreamBuf;

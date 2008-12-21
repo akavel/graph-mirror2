@@ -192,6 +192,14 @@ struct TDynData
     : Args(AArgs), Trigonometry(ATrigonometry), ErrorCode(ecNoError), ErrorStr(NULL), Recursion(0) {}
 };
 
+struct TMakeTextData
+{
+  std::vector<TElem>::const_iterator Iter; //!< Iterator pointing to next element to convert.
+  const std::vector<std::wstring> &Args;   //!< Vector of argument names.
+  unsigned Decimals;                       //!< The number of decimlas in numbers.
+  std::wstring Str;                        //!< String to add result to.
+};
+
 class TFuncData
 {
   typedef std::vector<TElem>::iterator TIterator;
@@ -209,9 +217,8 @@ class TFuncData
   template<typename T>
   static long double IntegrateT(TConstIterator Iter, long double Min, long double Max, unsigned n, TTrigonometry Trigonometry, TErrorCode &ErrorCode);
   void AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trigonometry, unsigned Level);
-  static std::wstring MakeText(TConstIterator Iter);
-  static TConstIterator CreateText(TConstIterator Iter, std::wstring &Str, const std::vector<std::wstring> &Args);
-  static TConstIterator CreateTextInPar(TConstIterator Iter, std::wstring &Str, const std::vector<std::wstring> &Args);
+  static std::wstring MakeText(TConstIterator Iter, unsigned Decimals=8);
+  static void CreateText(TMakeTextData &TextData, bool AddPar=false);
   bool CheckRecursive(std::vector<const TFuncData*> &FuncStack) const;
   bool CheckRecursive() const;
   static void HandleParseError(const EParseError &E, const wchar_t* Where, unsigned Pos);
@@ -255,7 +262,7 @@ public:
   void Simplify();
   void ReplaceConst();
   void Replace(const TElem &OldElem, const TElem &NewElem);
-  std::wstring MakeText(const std::vector<std::wstring> &Args) const;
+  std::wstring MakeText(const std::vector<std::wstring> &Args, unsigned Decimals) const;
   bool Update(const TSymbolList &SymbolList);
 
   bool IsEmpty() const {return Data.empty();}
