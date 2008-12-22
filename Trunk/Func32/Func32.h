@@ -394,6 +394,7 @@ public:
   bool operator!=(const TFunc &Func) const;
   long double operator()(long double x) const;
   TComplex operator()(TComplex x) const;
+  friend std::wostream& operator<<(std::wostream &os, const TFunc &Func);
 };
 //---------------------------------------------------------------------------
 /*! \brief The TParamFunc class is derived from TBaseFunc. It models a parameter
@@ -652,12 +653,11 @@ enum TTrendType
 TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, const std::vector<double> &Weights, unsigned N);
 TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, const std::vector<double> &Weights, unsigned N, double Intercept);
 TParamFunc MovingAverage(const std::vector<TDblPoint> &Points, unsigned N);
-void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, std::vector<long double> &Values, unsigned MaxIter = 100, double Tol = 1E-6);
+void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, std::vector<long double> &Values, const std::vector<double> &Weights=std::vector<double>(), unsigned MaxIter = 100, double Tol = 1E-6);
 double CalcSSQ(const std::vector<TDblPoint> &Points, const TFunc &Func);
 double LinearCorrelation(const std::vector<TDblPoint> &Points);
 double Correlation(const std::vector<TDblPoint> &Points, const TFunc &Func);
 
-std::wostream& operator<<(std::wostream &os, const TFunc &Func);
 std::wistream& operator>>(std::wistream &is, TFunc &Func);
 
 long double Eval(const std::wstring &Expr, TTrigonometry Trig = Radian);

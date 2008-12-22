@@ -176,9 +176,13 @@ struct TElem
   TElem(TCompareMethod Compare1) : Ident(CodeCompare1), Arguments(0) {Compare[0] = Compare1;}
   TElem(TCompareMethod Compare1, TCompareMethod Compare2) : Ident(CodeCompare2), Arguments(0) {Compare[0] = Compare1; Compare[1] = Compare2;}
   bool operator ==(const TElem &E) const {return Ident==E.Ident && (Ident==CodeNumber ? Number==E.Number : (Ident==CodeCustom ? Text == E.Text : Arguments==E.Arguments));}
+  bool operator ==(TIdent AIdent) const {return Ident == AIdent;}
   bool operator !=(const TElem &E) const {return !(*this == E);}
 };
 //---------------------------------------------------------------------------
+typedef std::vector<TElem>::iterator TIterator;
+typedef std::vector<TElem>::const_iterator TConstIterator;
+
 template<typename T>
 struct TDynData
 {
@@ -194,17 +198,13 @@ struct TDynData
 
 struct TMakeTextData
 {
-  std::vector<TElem>::const_iterator Iter; //!< Iterator pointing to next element to convert.
+  TConstIterator Iter;                     //!< Iterator pointing to next element to convert.
   const std::vector<std::wstring> &Args;   //!< Vector of argument names.
-  unsigned Decimals;                       //!< The number of decimlas in numbers.
-  std::wstring Str;                        //!< String to add result to.
+  std::wostream &Stream;                   //!< Stream to write result to.
 };
 
 class TFuncData
 {
-  typedef std::vector<TElem>::iterator TIterator;
-  typedef std::vector<TElem>::const_iterator TConstIterator;
-
   std::vector<TElem> Data;
 
   template<typename T>
@@ -217,7 +217,7 @@ class TFuncData
   template<typename T>
   static long double IntegrateT(TConstIterator Iter, long double Min, long double Max, unsigned n, TTrigonometry Trigonometry, TErrorCode &ErrorCode);
   void AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trigonometry, unsigned Level);
-  static std::wstring MakeText(TConstIterator Iter, unsigned Decimals=8);
+  static std::wstring MakeText(TConstIterator Iter);
   static void CreateText(TMakeTextData &TextData, bool AddPar=false);
   bool CheckRecursive(std::vector<const TFuncData*> &FuncStack) const;
   bool CheckRecursive() const;
@@ -262,7 +262,7 @@ public:
   void Simplify();
   void ReplaceConst();
   void Replace(const TElem &OldElem, const TElem &NewElem);
-  std::wstring MakeText(const std::vector<std::wstring> &Args, unsigned Decimals) const;
+  void MakeText(const std::vector<std::wstring> &Args, std::wostream &Stream) const;
   bool Update(const TSymbolList &SymbolList);
 
   bool IsEmpty() const {return Data.empty();}
@@ -316,7 +316,7 @@ inline bool IsFunctionVariableP(const TElem &Elem)
 //---------------------------------------------------------------------------
 inline bool IsOperator(const TElem &Elem)
 {
-  return Elem.Ident >= FirstFunction2P && Elem.Ident <= CodePow;
+  return (Elem.Ident >= FirstFunction2P && Elem.Ident <= CodePow);
 }
 //---------------------------------------------------------------------------
 inline unsigned FunctionArguments(const TElem &Elem)

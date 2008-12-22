@@ -142,6 +142,9 @@ struct TDoOperator
       Elements().push_front(CodePowDiv);
       Elements().insert(Elements().end(), List.begin()+1, List.end());
     }
+    //a^2 will be converted to CodeSqr(a) instead of CodePow(a,2)
+    else if(Ident == CodePow && List[0] == 2)
+      Elements().push_front(CodeSqr);
     else
     {
       Elements().push_front(Ident);
