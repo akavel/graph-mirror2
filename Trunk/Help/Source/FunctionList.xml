@@ -445,6 +445,7 @@
 			<member><mathphrase>-x^2 = -(x^2)</mathphrase></member>
 			<member><mathphrase>2x = 2*x</mathphrase></member>
 			<member><mathphrase>e^2x = e^(2*x)</mathphrase></member>
+			<member><mathphrase>x^2^3 = x^(2^3)</mathphrase></member>
 		</simplelist>
 	</simplesect>
 </section>
