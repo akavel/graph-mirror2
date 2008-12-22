@@ -95,9 +95,20 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
 
     //We need to create a copy to be compatible with the Regression(), MovingAverage() and TrendLine() functions
     std::vector<Func32::TDblPoint> Points;
-    Points.reserve(Series->PointList.size());
-    for(std::vector<TPointSeriesPoint>::const_iterator Iter = Series->PointList.begin(); Iter != Series->PointList.end(); ++Iter)
-      Points.push_back(Func32::TDblPoint(Iter->x.Value, Iter->y.Value));
+    std::vector<double> Weights;
+    unsigned Count = Series->PointCount();
+    Points.reserve(Count);
+    for(unsigned I = 0; I < Count; I++)
+    {
+      Points.push_back(Series->GetPoint(I));
+      if(Series->yErrorBarType != ebtNone)
+      {
+        double yError = Series->GetYError(I);
+        if(yError == 0)
+          throw Exception(LoadRes(RES_NOT_EQUAL_ZERO, LoadRes(RES_UNCERTAINTY, "Y")));
+        Weights.push_back(1/(yError*yError));
+      }
+    }
 
     if(PageControl1->TabIndex == 1)
     {
@@ -114,7 +125,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
 
       Arguments.insert(Arguments.begin(), L"x");
       Func32::TCustomFunc TempFunc(ToWString(Edit3->Text), Arguments, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
-      Regression(Points, TempFunc, Values);
+      Regression(Points, TempFunc, Values, Weights);
 
       boost::shared_ptr<TStdFunc> Func(new TStdFunc(TempFunc.ConvToFunc(Values, 0)));
       Func->SetLegendText(Func->MakeText() + L"; R²=" + RoundToString(Correlation(Points, Func->GetFunc()), Data));
@@ -164,9 +175,9 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       //WARNING: Do not initialize Func with pointer. It will crash if Trendline() fails because of bug in Bcc 5.6.4
       boost::shared_ptr<TStdFunc> Func;
       if(CheckBox1->Checked)
-        Func.reset(new TStdFunc(TrendLine(Type, Points, N, MakeFloat(Edit5))));
+        Func.reset(new TStdFunc(TrendLine(Type, Points, Weights, N, MakeFloat(Edit5))));
       else
-        Func.reset(new TStdFunc(TrendLine(Type, Points, N)));
+        Func.reset(new TStdFunc(TrendLine(Type, Points, Weights, N)));
       Func->SetLegendText(Func->MakeText() + L"; R²=" + RoundToString(Correlation(Points, Func->GetFunc()), Data));
       Func->From.Value = -INF;
       Func->To.Value = +INF;

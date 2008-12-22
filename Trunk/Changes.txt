@@ -10,6 +10,7 @@ Version 4.4
 - Now relations work correctly with logarithmic axes.
 - Fixed problem that might cause some shadings to be be shown or not shown correctly.
 - Now it is possible to calculate the area between the x-axis and a line connecting the points in a point series.
+- The y-errors for point series are now taken into account then calculating trendlines.
 - Several minor improvements.
 - Chinese (Simplified) translation added.
 - Basque translation added.
