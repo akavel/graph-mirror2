@@ -81,6 +81,19 @@ bool CompareFunc(const TFunc &f1, const TFunc &f2)
   return true;
 }
 
+void TestText(const std::wstring &Str)
+{
+  TFunc Func(Str);
+  std::wstring Str2 = Func.MakeText();
+  TFunc Func2(Str2);
+  if(Func != Func2)
+  {
+    std::wcerr << "Failed to convert function back to text!" << std::endl;
+    std::wcerr << "Function: " << Str << std::endl;
+    std::wcerr << "Result:   " << Str2 << std::endl << std::endl;
+  }
+}
+
 template<typename T>
 void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian)
 {
@@ -95,7 +108,6 @@ void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian)
       wcerr << "x:            " << setprecision(10) << x << std::endl;
       wcerr << "Evaluated to: " << setprecision(10) << f << std::endl;
       wcerr << "Expected:     " << setprecision(10) << y << std::endl << std::endl;
-      wcin.ignore();
     }
   }
   catch(EFuncError &E)
@@ -104,19 +116,19 @@ void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian)
     wcerr << "x:         " << setprecision(10) << x << std::endl;
     wcerr << "ErrorCode: " << E.ErrorCode << std::endl ;
     wcerr << "Expected:  " << setprecision(10) << y << std::endl << std::endl;
-    wcin.ignore();
   }
 }
 
-void Test(const std::wstring &Str, long double x, long double y, TTrigonometry Trig = Radian)
+void Test(const std::wstring &Str, long double x, long double y, TTrigonometry Trig = Radian, const std::wstring &ConvToText = L"")
 {
   TestEval<long double>(Str, x, y, Trig);
   TestEval<TComplex>(Str, x, y, Trig);
+  TestText(ConvToText.empty() ? Str : ConvToText);
 }
 
-void Test(const std::string &Str, long double x, long double y, TTrigonometry Trig = Radian)
+void Test(const std::string &Str, long double x, long double y, TTrigonometry Trig = Radian, const std::string &ConvToText = "")
 {
-  Test(ToWString(Str), x, y, Trig);
+  Test(ToWString(Str), x, y, Trig, ToWString(ConvToText));
 }
 
 template<typename T>
@@ -132,7 +144,6 @@ void TestErrorEval(const std::wstring &Str, T x, Func32::TErrorCode Error, TTrig
     wcerr << "x:              " << setprecision(10) << x << std::endl;
     wcerr << "Evaluated to:   " << setprecision(10) << f << std::endl;
     wcerr << "Expected error: " << Error << std::endl << std::endl;
-    wcin.ignore();
   }
   catch(EFuncError &E)
   {
@@ -142,7 +153,6 @@ void TestErrorEval(const std::wstring &Str, T x, Func32::TErrorCode Error, TTrig
       wcerr << "x:              " << setprecision(10) << x << std::endl;
       wcerr << "Error code:     " << E.ErrorCode << std::endl;
       wcerr << "Expected error: " << Error << std::endl << std::endl;
-      wcin.ignore();
     }
   }
 }
@@ -158,22 +168,17 @@ void TestError(const std::string &Str, long double x, TErrorCode Error, TTrigono
   TestError(ToWString(Str), x, Error, Trig);
 }
 
-void TestTrendLine(Func32::TTrendType Type, const TDblPoint *Points, unsigned Size, const double *Weights, unsigned N, const std::wstring &Str)
+void TestTrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &P, const std::vector<double> &W, unsigned N, double Intercept, const std::wstring &Str)
 {
   try
   {
     TFunc Func(Str);
-    std::vector<TDblPoint> P(Points, Points + Size);
-    std::vector<double> W;
-    if(Weights)
-      W.insert(W.begin(), Weights, Weights + Size);
-    TFunc Result = TrendLine(Type, P, W, N);
+    TFunc Result = TrendLine(Type, P, W, N, Intercept);
     if(!CompareFunc(Result, Func))
     {
       wcerr << "-- Trendline --" << endl;
       wcerr << "Expected trendline: f(x)=" << Str << std::endl;
-      wcerr << "Evaluated to:       f(x)=" << Result << std::endl << std::endl;
-      wcin.ignore();
+      wcerr << "Evaluated to:       f(x)=" << std::setprecision(15) << Result << std::endl << std::endl;
 
     }
   }
@@ -181,7 +186,32 @@ void TestTrendLine(Func32::TTrendType Type, const TDblPoint *Points, unsigned Si
   {
     cerr << "-- Trendline --" << endl;
     cerr << "Error code:     " << E.ErrorCode << std::endl << std::endl;
-    cin.ignore();
+  }
+}
+
+void TestCustomTrendLine(const std::wstring &Model, const std::vector<TDblPoint> &P, const std::vector<double> &W, const std::wstring &Str)
+{
+  try
+  {
+    std::vector<std::wstring> Unknowns = FindUnknowns(Model);
+    std::vector<long double> Values(Unknowns.size(), 1);
+    Unknowns.insert(Unknowns.begin(), L"x");
+    TCustomFunc Func(Model, Unknowns);
+    Regression(P, Func, Values, W);
+    std::wstring Str2 = Func.ConvToFunc(Values, 0).MakeText(L"x", 5);
+    if(Str != Str2)
+    {
+      wcerr << "-- Custom trendline --" << endl;
+      wcerr << "Model:              f(x)=" << Model << std::endl;
+      wcerr << "Expected trendline: f(x)=" << Str << std::endl;
+      wcerr << "Evaluated to:       f(x)=" << Str2 << std::endl << std::endl;
+    }
+  }
+  catch(EFuncError &E)
+  {
+    wcerr << "-- Custom trendline --" << endl;
+    wcerr << "Model:      f(x)=" << Model << std::endl;
+    wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
   }
 }
 
@@ -194,7 +224,6 @@ void TestTrendLineError(Func32::TTrendType Type, const TDblPoint *Points, unsign
 
     cerr << "-- Trendline --" << endl;
     cerr << "Expected error code:     " << ErrorCode << endl << endl;
-    cin.ignore();
   }
   catch(EFuncError &E)
   {
@@ -202,7 +231,6 @@ void TestTrendLineError(Func32::TTrendType Type, const TDblPoint *Points, unsign
     {
       cerr << "-- Trendline --" << endl;
       cerr << "Error code:     " << E.ErrorCode << endl << endl;
-      cin.ignore();
     }
   }
 }
@@ -221,7 +249,6 @@ void TestDif(const std::wstring &f, const std::wstring &df, TTrigonometry Trig =
       wcerr << "f(x)=" << f << std::endl;
       wcerr << "f'(x)=" << Dif.MakeText() << std::endl;
       wcerr << "Expected f'(x)=" << df << std::endl << std::endl;
-      wcin.ignore();
     }
   }
   catch(EFuncError &E)
@@ -229,7 +256,6 @@ void TestDif(const std::wstring &f, const std::wstring &df, TTrigonometry Trig =
     wcerr << "f(x)=" << f << std::endl;
     wcerr << "Expected f'(x)=" << df << std::endl;
     wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
-    wcin.ignore();
   }
 }
 
@@ -252,7 +278,6 @@ void TestDif(const std::wstring &Str, long double x, long double y, TTrigonometr
       wcerr << "f'(x)=" << Dif.MakeText() << std::endl;
       wcerr << "f'(" << x << ")=" << f << std::endl;
       wcerr << "Expected f'(" << x << ")=" << y << std::endl << std::endl;
-      wcin.ignore();
     }
   }
   catch(EFuncError &E)
@@ -260,7 +285,6 @@ void TestDif(const std::wstring &Str, long double x, long double y, TTrigonometr
     wcerr << "f(x)=" << Str << std::endl;
     wcerr << "Expected f'(" << x << ")=" << y << std::endl;
     wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
-    wcin.ignore();
   }
 }
 
@@ -278,7 +302,6 @@ void TestSimplify(const std::wstring &Str, const std::wstring &Str2)
     wcerr << "f(x)=" << Str << std::endl;
     wcerr << "Simplified to: f(x)=" << Func.MakeText() << std::endl;;
     wcerr << "Expected: f(x)=" << Str2 << std::endl << std::endl;
-    wcin.ignore();
   }
 }
 
@@ -409,6 +432,7 @@ void Test()
   Test("e^2x", 2, M_E*M_E*M_E*M_E); //Same as the above
   Test("x^2^3", 10, 1E8);
   Test("(x^2)^3", 10, 1E6);
+  Test("3^x^2", 4, 43046721);
 
   //Test special power function handling
   TestEval<long double>(L"x^(1/3)", -8, -2);
@@ -609,15 +633,45 @@ void Test()
   TestTrendLineError(ttPower, Vertical, 2, 0, ecOverflow);
 
   //Test difficult trend line
-  TDblPoint Points[] = {TDblPoint(1950,1571), TDblPoint(1970,524), TDblPoint(1980, 208), TDblPoint(2003, 29)};
-  TestTrendLine(ttPower, Points, 4, NULL, 0, L"7.23106321804096256E+498*x^(-150.630652337941856)");
+  TDblPoint Points1[] = {TDblPoint(1950,1571), TDblPoint(1970,524), TDblPoint(1980, 208), TDblPoint(2003, 29)};
+  std::vector<double> Empty;
+  std::vector<TDblPoint> Points(Points1, Points1 + 4);
+  TestTrendLine(ttPower, Points, Empty, 0, NaN, L"7.23106321804096256E+498*x^(-150.630652337941856)");
 
-  //Test sample linear trendline
-  TDblPoint P[] = {TDblPoint(0,0.1), TDblPoint(1,0.9), TDblPoint(2,1.9), TDblPoint(3,2.7), TDblPoint(4,4.7)};
-  double W[] = {0.1, 0.13, 0.16, 0.2, 0.25};
-  std::transform(W, W+5, W, ErrorToWeight); //Perform x=1/(x*x)
-  TestTrendLine(ttLinear, P, 5, NULL, 0, L"1.1*x-0.14");
-  TestTrendLine(ttLinear, P, 5, W, 0, L"1.010848*x+0.0036755592");
+  //Test sample trendline
+  TDblPoint P1[] = {TDblPoint(0,0.1), TDblPoint(1,0.9), TDblPoint(2,1.9), TDblPoint(3,2.7), TDblPoint(4,4.7)};
+  double W1[] = {0.1, 0.13, 0.16, 0.2, 0.25};
+  std::vector<TDblPoint> P(P1, P1 + 5);
+  std::vector<double> W(5);
+  std::transform(W1, W1+5, W.begin(), ErrorToWeight); //Perform x=1/(x*x)
+
+  TestTrendLine(ttLinear, P, Empty, 0, NaN, L"1.1*x-0.14");
+  TestTrendLine(ttLinear, P, Empty, 0, 1, L"0.72*x+1"); //Force crossing with y-axis
+  TestTrendLine(ttLinear, P, W, 0, NaN, L"1.01084802043554*x+0.00367555924507695");
+  TestTrendLine(ttLinear, P, W, 0, 1, L"0.615568703919657*x+1"); //Force crossing with y-axis
+
+  TestTrendLine(ttPolynomial, P, Empty, 2, NaN, L"0.157142857142857*x^2+0.471428571428571*x+0.174285714285714");
+  TestTrendLine(ttPolynomial, P, Empty, 2, 1, L"0.290322580645161*x^2-0.247741935483871*x+1"); //Force crossing
+  TestTrendLine(ttPolynomial, P, W, 2, NaN, L"0.123428984493036*x^2+0.596597125830378*x+0.12279529365147");
+  TestTrendLine(ttPolynomial, P, W, 2, 1, L"0.292651922716118*x^2-0.254573787956674*x+1");
+
+  TestTrendLine(ttPower, P, Empty, 0, NaN, L"0.872147571158689*x^1.14047602443827");
+  TestTrendLine(ttPower, P, W, 0, NaN, L"0.890072586434138*x^1.10326113209501");
+
+  TestTrendLine(ttExponential, P, Empty, 0, NaN, L"0.200922305275277*2.41063632810424^x");
+  TestTrendLine(ttExponential, P, Empty, 0, 1, L"1.41191238522143^x");
+  TestTrendLine(ttExponential, P, W, 0, NaN, L"0.14747627125184*2.92012743745353^x");
+  TestTrendLine(ttExponential, P, W, 0, 1, L"1.36647807441143^x");
+
+  TestCustomTrendLine(L"$a*x+$b", P, Empty, L"1.1*x-0.14");
+  TestCustomTrendLine(L"$a*x+1", P, Empty, L"0.72*x+1");
+  TestCustomTrendLine(L"$a*x+$b", P, W, L"1.0108*x+0.0036756");
+  TestCustomTrendLine(L"$a*x+1", P, W, L"0.61557*x+1");
+
+  TestCustomTrendLine(L"$a*x^2+$b*x+$c", P, Empty, L"0.15714*x^2+0.47143*x+0.17429");
+  TestCustomTrendLine(L"$a*x^2+$b*x+1", P, Empty, L"0.29032*x^2-0.24774*x+1");
+  TestCustomTrendLine(L"$a*x^2+$b*x+$c", P, W, L"0.12343*x^2+0.5966*x+0.1228");
+  TestCustomTrendLine(L"$a*x^2+$b*x+1", P, W, L"0.29265*x^2-0.25457*x+1");
 
   //Test differentiation of common operators
   TestDif("-0.5796", "0");
@@ -667,7 +721,8 @@ int main()
     std::cin.ignore();
     return 1;
   }
-  cout << "Test finished";
+  cout << "Test finished" << std::endl;
+  std::cin.ignore();
   return 0;
 }
 //---------------------------------------------------------------------------

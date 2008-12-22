@@ -249,7 +249,10 @@ bool TParamFunc::IsEmpty() const
  */
 std::wstring TParamFunc::MakeXText(const std::wstring &Variable, unsigned Decimals) const
 {
-  return xFuncData->MakeText(std::vector<std::wstring>(1, Variable), Decimals);
+  std::wostringstream Stream;
+  Stream << std::setprecision(Decimals);
+  xFuncData->MakeText(std::vector<std::wstring>(1, Variable), Stream);
+  return Stream.str();
 }
 //---------------------------------------------------------------------------
 /** Creates a string containing y(t)
@@ -259,7 +262,10 @@ std::wstring TParamFunc::MakeXText(const std::wstring &Variable, unsigned Decima
  */
 std::wstring TParamFunc::MakeYText(const std::wstring &Variable, unsigned Decimals) const
 {
-  return yFuncData->MakeText(std::vector<std::wstring>(1, Variable), Decimals);
+  std::wostringstream Stream;
+  Stream << std::setprecision(Decimals);
+  yFuncData->MakeText(std::vector<std::wstring>(1, Variable), Stream);
+  return Stream.str();
 }
 //---------------------------------------------------------------------------
 /** Assigns Func to the parameter function

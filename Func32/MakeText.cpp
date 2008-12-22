@@ -13,19 +13,26 @@
 //---------------------------------------------------------------------------
 namespace Func32
 {
-/** Returns true if Ch is an operator (+, -, *, /, or ^)
- *  \param Ch: Character to check.
+/** Finds out if the next non-operator is a negative number or CodeNeg.
+ *  e.g. CodeMul(-2, x) will be true.
+ *  \param Iter: Iterator to start the search from.
  */
-bool IsOperator(char Ch)
+bool IsNextNeg(TConstIterator Iter)
 {
-  return Ch == '+' || Ch == '-' || Ch == '*' || Ch == '/' || Ch == '^';
+  if(IsOperator(*Iter))
+    return IsNextNeg(++Iter);
+  if(Iter->Ident == CodeNeg)
+    return true;
+  if(Iter->Ident == CodeNumber && Iter->Number < 0)
+    return true;
+  return false;
 }
 //---------------------------------------------------------------------------
 /** Create text defining function pointed to by the iterator. For debug use only.
  *  \param Iter: Iterator pointing to the first element in the function.
- *  \param Decimals: Number of decimals in numbers.
+ *  \return Converted function text
  */
-std::wstring TFuncData::MakeText(TConstIterator Iter, unsigned Decimals)
+std::wstring TFuncData::MakeText(TConstIterator Iter)
 {
   std::vector<std::wstring> Args;
   Args.push_back(L"Arg0");
@@ -37,26 +44,25 @@ std::wstring TFuncData::MakeText(TConstIterator Iter, unsigned Decimals)
   Args.push_back(L"Arg6");
   Args.push_back(L"Arg7");
   Args.push_back(L"Arg8");
-  TMakeTextData TextData = {Iter, Args, Decimals, std::wstring()};
+  std::wstringstream Stream;
+  TMakeTextData TextData = {Iter, Args, Stream};
   CreateText(TextData);
-  return TextData.Str;
+  return Stream.str();
 }
 //---------------------------------------------------------------------------
 /** Create text from internal data in the object.
  *  \param Args: Vector of strings with the argument names.
- *  \param Decimals: Number of decimals in numbers.
- *  \return String with definition of the function.
+ *  \param Stream: Stream to write converted function text to.
  *  \throw EFuncError: Thrown if the object is empty.
  */
-std::wstring TFuncData::MakeText(const std::vector<std::wstring> &Args, unsigned Decimals) const
+void TFuncData::MakeText(const std::vector<std::wstring> &Args, std::wostream &Stream) const
 {
   if(Data.empty())
     throw EFuncError(ecNoFunc);
-  TMakeTextData TextData = {Data.begin(), Args, Decimals, std::wstring()};
+  TMakeTextData TextData = {Data.begin(), Args, Stream};
   CreateText(TextData);
   if(TextData.Iter != Data.end())
     throw EFuncError(ecInternalError);
-  return TextData.Str;
 }
 //---------------------------------------------------------------------------
 /** Returns a string indicating the type of comparasion.
@@ -83,118 +89,105 @@ std::wstring GetCompareString(TCompareMethod CompareMethod)
  */
 void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
 {
-  std::wstring &Str = TextData.Str;
-  const TConstIterator &Iter = TextData.Iter;
+  std::wostream &Stream = TextData.Stream;
   const TElem &Elem = *TextData.Iter++;
+  const TConstIterator &Iter = TextData.Iter;
   if(AddPar)
-    Str += L'(';
+    Stream << L'(';
   switch(Elem.Ident)
   {
     case CodeNumber:
-    {
-      //Don't use std::ostringstream; It will fail for numbers >MAXDOUBLE under STLport. sprintf() seems to work fine
-      wchar_t S[30];
-      std::swprintf(S, L"%.*LG", TextData.Decimals, Elem.Number);
-      if(Elem.Number < 0 && !Str.empty() && *Str.rbegin() == '+')
-        Str.erase(Str.end() - 1), Str += S;
-      else if(Elem.Number < 0 && !Str.empty() && IsOperator(*Str.rbegin()))
-        Str += std::wstring(L"(") + S + L")";
-      else
-        Str += S;
+      //std::uppercase is used to show E in 5E3 in uppercase
+      Stream << std::uppercase << Elem.Number;
       break;
-    }
 
     case CodeVariable:
       BOOST_ASSERT(Elem.Arguments < TextData.Args.size());
-      Str += TextData.Args[Elem.Arguments];
+      Stream << TextData.Args[Elem.Arguments];
       break;
 
     case Codee:
-      Str += L'e';
+      Stream << L'e';
       break;
 
     case CodePi:
-      Str += L"pi";
+      Stream << L"pi";
       break;
 
     case CodeUndef:
-      Str += L"undef";
+      Stream << L"undef";
       break;
 
     case Codei:
-      Str += L'i';
+      Stream << L'i';
       break;
 
     case CodeRand:
-      Str += L"rand";
+      Stream << L"rand";
       break;
 
     case CodeAdd:
       CreateText(TextData);
-      Str += L'+';
+      if(!IsNextNeg(Iter))
+        Stream << L'+';
       CreateText(TextData);
       break;
 
     case CodeSub:
       CreateText(TextData);
-      Str += L'-';
-      CreateText(TextData, Iter->Ident == CodeAdd || Iter->Ident == CodeSub);
+      Stream << L'-';
+      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub || IsNextNeg(Iter));
       break;
 
     case CodeMul:
-      CreateText(TextData, Iter->Ident == CodeAdd || Iter->Ident == CodeSub);
-      Str += L'*';
-      CreateText(TextData, Iter->Ident == CodeAdd || Iter->Ident == CodeSub);
+      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
+      Stream << L'*';
+      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
       break;
 
     case CodeDiv:
-      CreateText(TextData, Iter->Ident == CodeAdd || Iter->Ident == CodeSub);
-      Str += L'/';
-      CreateText(TextData, Iter->Ident == CodeAdd || Iter->Ident == CodeSub || Iter->Ident == CodeMul || Iter->Ident == CodeDiv);
+      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
+      Stream << L'/';
+      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub || *Iter == CodeMul || *Iter == CodeDiv);
       break;
 
     case CodePow:
-      CreateText(TextData, IsOperator(*Iter) || Iter->Ident == CodeNeg || (Iter->Ident == CodeNumber && Iter->Number < 0));
-      Str += L'^';
+      CreateText(TextData, IsOperator(*Iter) || *Iter == CodeSqr || IsNextNeg(Iter));
+      Stream << L'^';
       CreateText(TextData, IsOperator(*Iter));
       break;
 
     case CodePowDiv:
-      CreateText(TextData, IsOperator(*Iter) || Iter->Ident == CodeNeg || (Iter->Ident == CodeNumber && Iter->Number < 0));
-      Str += L"^(";
-      CreateText(TextData, Iter->Ident == CodeAdd || Iter->Ident == CodeSub);
-      Str += L'/';
-      CreateText(TextData, Iter->Ident == CodeAdd || Iter->Ident == CodeSub || Iter->Ident == CodeMul || Iter->Ident == CodeDiv);
-      Str += L')';
+      CreateText(TextData, IsOperator(*Iter) || *Iter == CodeSqr || IsNextNeg(Iter));
+      Stream << L"^(";
+      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
+      Stream << L'/';
+      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub || *Iter == CodeMul || *Iter == CodeDiv);
+      Stream << L')';
       break;
 
     case CodeNeg:
     {
-      bool Parenthese = !Str.empty() && IsOperator(*Str.rbegin());
-      if(Parenthese)
-        Str += L'(';
-      Str += L'-';
-      CreateText(TextData, Iter->Ident == CodeAdd || Iter->Ident == CodeSub);
-      if(Parenthese)
-        Str += L')';
+      Stream << L'-';
+      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
       break;
     }
     case CodeSqr:
-      CreateText(TextData, IsOperator(*Iter) || Iter->Ident == CodeNeg || (Iter->Ident == CodeNumber &&Iter->Number < 0));
-      Str += L"^2";
+      CreateText(TextData, IsOperator(*Iter) || IsNextNeg(Iter));
+      Stream << L"^2";
       break;
 
     case CodeCompare1:
       CreateText(TextData);
-      Str += GetCompareString(Elem.Compare[0]);
+      Stream << GetCompareString(Elem.Compare[0]);
       CreateText(TextData);
       break;
 
     case CodeCompare2:
       CreateText(TextData);
-      Str += GetCompareString(Elem.Compare[0]);
+      Stream << GetCompareString(Elem.Compare[0]);
       CreateText(TextData);
-      Str += GetCompareString(Elem.Compare[1]);
+      Stream << GetCompareString(Elem.Compare[1]);
       CreateText(TextData);
       break;
 
@@ -202,28 +195,28 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
     case CodeOr:
     case CodeXor:
       CreateText(TextData);
-      Str += Elem.Ident == CodeAnd ? L" and " : Elem.Ident == CodeOr ? L" or " : L" xor ";
-      CreateText(TextData, Iter->Ident == CodeAnd || Iter->Ident == CodeOr || Iter->Ident == CodeXor);
+      Stream << (Elem == CodeAnd ? L" and " : Elem == CodeOr ? L" or " : L" xor ");
+      CreateText(TextData, *Iter == CodeAnd || *Iter == CodeOr || *Iter == CodeXor);
       break;
 
     default:
       if(Elem.Ident > LastFunction)
         throw EFuncError(ecInternalError);
-      Str += FunctionName(Elem);
+      Stream << FunctionName(Elem);
       if(FunctionArguments(Elem) == 0)
         break;
-      Str += L'(';
+      Stream << L'(';
       CreateText(TextData);
       for(unsigned I = 1; I < FunctionArguments(Elem); I++)
       {
-        Str += L',';
+        Stream << L',';
         CreateText(TextData);
       }
-      Str += L')';
+      Stream << L')';
       break;
   }
   if(AddPar)
-    Str += L')';
+    Stream << L')';
 }
 //---------------------------------------------------------------------------
 } //namespace Func32
