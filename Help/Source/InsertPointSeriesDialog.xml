@@ -108,7 +108,7 @@
 					<guilabel>Fixed</guilabel> is used to specify that all points have the same uncertainty.
 					<guilabel>Relative</guilabel> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty.
 					<guilabel>Custom</guilabel> will add an extra column to the table where you may specify a different uncertainty value for each point.
-					All uncertainties are +/-values.
+					All uncertainties are +/-values. Custom Y-errors are also used to weight the points when creating trendlines.
 				</para>
 			</listitem>
 		</varlistentry>

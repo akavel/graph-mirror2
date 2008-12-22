@@ -20,7 +20,13 @@
 		Use the dialog shown below to insert a trendline that is the function that fits a <link linkend="InsertPointSeriesDialog">point series</link> best.
 		A trendline is a function that shows a trend in a series of points, i.e. a trendline is the curve of bets fit of a specific type for a series of points.
 		The trendline is added as an ordinary function.
-		To create a trendline, you select the point series you want to base the trendline on and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Insert point series...</guimenuitem></menuchoice>.
+		To create a trendline, you select the point series you want to base the trendline on and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Insert trendline...</guimenuitem></menuchoice>.
+	</para>
+
+	<para>
+		If the point series has custom Y-errors defined, these values are used to weight the points.
+		The weight for each point is <mathphrase>1/&sigma;<superscript>2</superscript></mathphrase> where &sigma; is the Y-error for the point.
+		X-errors are not used.
 	</para>
 
 	<simplesect>
