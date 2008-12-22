@@ -14,7 +14,7 @@ for I in range(len(Lines) - 1, 0, -1):
 		List[Line[3:]] = MsgId
 
 OutFile = open("Graph.pot", "w")
-RcFile = open("../Source/Resource.rc")
+RcFile = open("../Source/Source/Resource.rc")
 RcLines = RcFile.readlines()
 
 for Line in Lines:
@@ -23,7 +23,7 @@ for Line in Lines:
 	elif Line[:21] == "#. Programmer's name:":
 		ID = Line[22:-1]
 		for RcLine in RcLines:
-			if RcLine.find(ID) != -1:				
+			if RcLine.find(ID) != -1:
 				Pos = RcLine.find("//")
 				if Pos != -1:
 					OutFile.write("#. " + RcLine[Pos+2:])

@@ -323,6 +323,7 @@ struct TPointSeries : public TGraphElem
   double GetYError(unsigned Index) const;
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TPointSeries(*this));}
   Func32::TDblPoint GetPoint(unsigned Index) const {return Func32::TDblPoint(PointList[Index].x.Value, PointList[Index].y.Value);}
+  unsigned PointCount() const {return PointList.size();}
   TPointList::const_iterator FindPoint(double x) const;
   void AddPoint(const Func32::TDblPoint &Point) {PointList.push_back(TPointSeriesPoint(Point.x, Point.y));}
 };
