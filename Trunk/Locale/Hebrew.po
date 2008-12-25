@@ -1,0 +1,105 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Graph\n"
+"POT-Creation-Date: 2008-12-19 23:57\n"
+"PO-Revision-Date: 2008-12-20 16:39+0200\n"
+"Last-Translator: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: dxgettext 1.2.1\n"
+"BiDiMode: 1\n"
+"Language-Team: \n"
+
+msgid "Black && white"
+msgstr "שחור לבן"
+
+msgid "Cancel"
+msgstr "בטל"
+
+msgid "Center on page"
+msgstr "במרכז הנייר"
+
+msgid "Center the printing area on the page."
+msgstr ".מרכז אזור הדפסה על הנייר"
+
+msgid "Choose number of copies to print."
+msgstr ".בחר מספר עותקים להדפסה"
+
+msgid "Choose paper orientation."
+msgstr ".בחר כיוון נייר"
+
+msgid "Color"
+msgstr "צבע"
+
+msgid "Comment:"
+msgstr ":הערה"
+
+msgid "Enter percent of original size."
+msgstr "הכנס אחוז של הגודל המקורי"
+
+msgid "Landscape"
+msgstr "אופקי"
+
+msgid "Left margin:"
+msgstr ":רווח שמאלי"
+
+msgid "Name:"
+msgstr ":שם"
+
+msgid "Number of copies:"
+msgstr ":מספר עותקים"
+
+msgid "OK"
+msgstr "אישור"
+
+msgid "Orientation"
+msgstr "כיוון"
+
+msgid "Portrait"
+msgstr "אנכי"
+
+msgid "Position (millimeters)"
+msgstr "(מיקום (מילימטרים"
+
+msgid "Print"
+msgstr "הדפס"
+
+msgid "Print output"
+msgstr "פלט הדפסה"
+
+msgid "Printer"
+msgstr "מדפסת"
+
+msgid "Properties"
+msgstr "מאפיינים"
+
+msgid "Scale:"
+msgstr "קני מידה"
+
+msgid ""
+"Select the printer to use. The Properties button may be used to change more "
+"advanced settings for the printer."
+msgstr ""
+".בחר מדפסת. בעזרת כפתור המאפיינים ניתן לשנות הגדרות יותר מתקדמות למדפסת "
+
+msgid ""
+"Select to print in color (or grayscale if your printer is not a color "
+"printer) or convert all colors to black."
+msgstr ""
+" .בחר להדפסה צבעונית (או גווני אפור אם המדפסת אינה צבעונית) או המר את כל "
+"הצבעים לשחור"
+
+msgid ""
+"Specify the printing area of the page. The printer will print only within "
+"these margins."
+msgstr ".בחר אזור הדפסה על הנייר. המדפסת תדפיס רק אזור זה  "
+
+msgid "Top margin:"
+msgstr ":רווח עליון"
+
+msgid "Type:"
+msgstr ":סוג"
+
+msgid "Where:"
+msgstr ":איפה"
