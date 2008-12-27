@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-09-14 12:39Romance Standard Time\n"
-"PO-Revision-Date: 2008-10-19 13:15+0100\n"
-"Last-Translator: Gnaftimil <Gnaftimil@wuzz.kem>\n"
+"PO-Revision-Date: 2008-12-27 11:04+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -417,27 +417,30 @@ msgstr "Speichern als"
 
 #. SaveImageDialog.xml:19(para)
 msgid "Use the menu item <placeholder-1/> to save the shown coordinate system as an image file. Graph supports five formats: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) and Portable Document Format (pdf). When the menu item has been chosen, a standard <placeholder-2/> dialog will appear. In this dialog you write a filename, choose a directory and select one of the image types."
-msgstr ""
+msgstr "Mit dem Menüpunkt <placeholder-1/> können Sie das angezeigte Koordinatensystem als Bild-Datei speichern. Graph unterstützt fünf Formate: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) und Portable Document Format (pdf). Nachdem ein Menüpunkt gewählt wurde, erscheint ein Standard- <placeholder-2/> Dialog, in dem Sie einen Dateinamen mit Ordner auswählen und einen Bildtyp festlegen."
 
+# change to image size
+# -->>
+# change the image size
 #. SaveImageDialog.xml:25(para)
 msgid "bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen. emf files are used for vector graphics. The Options button in the save dialog can be used to change to image size. You may also be able to change other settings depending on the chosen image format."
-msgstr ""
+msgstr "bmp und png sind beides Bitmaps, und das Bild wird genauso gespeichert, wie Sie es auf dem Bildschirm sehen. emf-Dateien werden für Vector-Grafiken verwendet. Mit dem Knopf \"Einstellungen\" läßt sich per \"Speichern\"-Dialog die Bildgröße ändern. Sie können - abhängig vom Bildformat - auch andere Einstellungen ändern."
 
 #. SaveImageDialog.xml:31(para)
 msgid "Metafiles (emf) should be the preferred format, because it is small and looks nice even then it is scaled. Windows Bitmap (bmp) is a standard format supported by almost all Windows programs that can read graphics files. Portable Network Graphics (png) is a format that is better compressed than bmp files. This is the most sustainable format for web pages, because it is small and can be understood by all browsers."
-msgstr ""
+msgstr "MetaDateien (emf) sollte das bevorzugte Format sein, weil es klein ist und auch skaliert gut aussieht. Windows Bitmap (bmp) ist ein Standard-Format und wird von fast allen Windows-Programmen unterstützt, die Grafik-Dateien lesen können. Portable Network Graphics (png) ist besser komprimiert als bmp-Dateien. Dies ist das besten vertretbare Format für Web-Seiten, weil es klein ist und von allen Browser verstanden werden kann."
 
 #. SaveImageDialog.xml:37(para)
 msgid "Joint Photographic Experts Group (jpeg) is a bitmap format with loss. It is supported but not recommended because graphs will usually become blurred."
-msgstr ""
+msgstr "Joint Photographic Experts Group (jpeg) ist ein verlustbehaftetes Bitmap-Format. Es wird unterstützt, aber nicht empfohlen, weil die Grafiken üblicherweise unscharf werden."
 
 #. SaveImageDialog.xml:41(para)
 msgid "Portable Document Format (pdf) is actually not an image format. It is a way to store documents as postscript in a portable way. Graph will store the image as Portable Network Graphics inside the pdf file."
-msgstr ""
+msgstr "Portable Document Format (pdf) ist genau genommen kein Bild-Format. Es ist ein Weg, Dokumente portabel als Postscript zu speichern. Graph speichert das Bild als Portable Network Grafik innerhalb der PDF-Datei."
 
 #. SaveImageDialog.xml:46(para)
 msgid "CompuServe Graphics Interchange (gif) is not supported because it uses the LZW compression, which is patented by Unisys."
-msgstr ""
+msgstr "Das gif-Format (CompuServe Grafik Interchange) wird nicht unterstützt, weil es die von Unisys patentierte LZW Kompression verwendet."
 
 #. Rounding.xml:7(title) FunctionList.xml:335(emphasis)
 msgid "Rounding"
@@ -447,9 +450,7 @@ msgstr "Runden"
 msgid "rounding"
 msgstr "runden"
 
-# ich weiß den Kontext nicht ...
 #. Rounding.xml:12(primary)
-#, fuzzy
 msgid "truncate"
 msgstr "abschneiden"
 
@@ -628,11 +629,11 @@ msgstr "Die <placeholder-1/>-Funktion, auch Signum genannt, liefert das Vorzeich
 
 #. Piecewise.xml:35(para)
 msgid "The unit step function."
-msgstr ""
+msgstr "Die Einheits-Sprungfunktion."
 
 #. Piecewise.xml:44(para)
 msgid "<placeholder-1/> is commonly known as the unit step function. <placeholder-2/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>. The function is undefined when <placeholder-3/> has an imaginary part. <placeholder-4/> returns 1 for <placeholder-5/>&ge;0 and 0 for <placeholder-6/>&lt;0."
-msgstr ""
+msgstr "<placeholder-1/> ist allgemein unter dem Namen \"Einheits-Sprungfunktion\" bekannt. <placeholder-2/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> darstellt. Die Funktion ist nicht definiert, wenn <placeholder-3/> einen imaginaren Anteil hat. <placeholder-4/> liefert 1 für <placeholder-5/>&ge;0 und 0 für <placeholder-6/>&lt;0."
 
 #. Piecewise.xml:57(primary) AxesDialog.xml:12(primary)
 msgid "minimum"
@@ -644,7 +645,7 @@ msgstr "Findet und liefert den Minimalwert der Argumente."
 
 #. Piecewise.xml:67(para)
 msgid "The <placeholder-1/> function returns the minimum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> or <glossterm baseform=\"complex number\">complex numbers</glossterm>. If the arguments are complex numbers, the function returns <placeholder-3/>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion liefert den kleinsten Wert ihrer Argumente. <placeholder-2/> muß mindestens 2 Argumente haben. Die Argumente können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> oder <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> ergeben. Wenn die Argumente komplexe Zahlen sind, liefert die Funktion <placeholder-3/>."
 
 #. Piecewise.xml:81(primary) AxesDialog.xml:13(primary)
 msgid "maximum"
@@ -656,31 +657,31 @@ msgstr "Findet und liefert den Maximalwert der Argumente."
 
 #. Piecewise.xml:91(para)
 msgid "The <placeholder-1/> function returns the maximum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> or <glossterm baseform=\"complex number\">complex numbers</glossterm>. If the arguments are complex numbers, the function returns <placeholder-3/>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion liefert den größten Wert ihrer Argumente. <placeholder-2/> muß mindestens 2 Argumente haben. Die Argumente können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> oder <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> ergeben. Wenn die Argumente komplexe Zahlen sind, liefert die Funktion <placeholder-3/>."
 
 #. Piecewise.xml:105(para)
 msgid "Returns the second argument if it is in the range between the first argument and the third argument."
-msgstr ""
+msgstr "Liefert das zweite Argument, wenn es im Bereich zwischen dem ersten und dem dritten Argument ist."
 
 #. Piecewise.xml:114(para)
 msgid "The <placeholder-1/> function returns <placeholder-2/>, if <placeholder-3/> is greater than <placeholder-4/> and less than <placeholder-5/>. If <placeholder-6/> &lt; <placeholder-7/> then <placeholder-8/> is returned. If <placeholder-9/> &gt; <placeholder-10/> then <placeholder-11/> is returned. The arguments may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> or <glossterm baseform=\"complex number\">complex numbers</glossterm>. The function has the same effect as <placeholder-12/>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion liefert <placeholder-2/>, if <placeholder-3/> is größer als <placeholder-4/> und kleiner als <placeholder-5/>. Ist <placeholder-6/> &lt; <placeholder-7/> , wird <placeholder-8/> zurückgeliefert. Ist <placeholder-9/> &gt; <placeholder-10/> , wird <placeholder-11/> zurückgeliefert. Die Argumente können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> oder <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> ergeben. Die Funktion hat dieselbe Wirkung wie <placeholder-12/>."
 
 #. Piecewise.xml:130(para)
 msgid "Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned."
-msgstr ""
+msgstr "Liefert das zweite Argument, wenn das erste Argument einen von Null unterschiedlichen Wert ergibt, sonst wird das dritte Argument zurückgeliefert."
 
 #. Piecewise.xml:139(para)
 msgid "The <placeholder-1/> function returns <placeholder-2/> if <placeholder-3/> evaluates to a value different from 0. If <placeholder-4/> evaluates to 0, <placeholder-5/> is returned. The arguments may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> or <glossterm baseform=\"complex number\">complex numbers</glossterm>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion liefert <placeholder-2/> , wenn <placeholder-3/> einen von Null unterschiedlichen Wert ergibt. Ergibt <placeholder-4/> 0, wird <placeholder-5/> zurückgegeben. Die Argumente können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> oder <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> ergeben."
 
 #. Piecewise.xml:152(para)
 msgid "Evaluates a sequence of if functions and returns the first result found with a condition different from zero."
-msgstr ""
+msgstr "Wertet eine Reihe von if-Abfragen aus und liefert das erste Ergebnis, dessen Bedingung ungleich 0 ist."
 
 #. Piecewise.xml:161(para)
 msgid "The <placeholder-1/> function evaluates <placeholder-2/> and if it is different from 0 then <placeholder-3/> is evaluated and returned. Else <placeholder-4/> is evaluated and if it is different from 0 then <placeholder-5/> is returned and so forth. If none of the conditions are true <placeholder-6/> is returned. <placeholder-7/> is optional and if not specified <placeholder-8/> returns an error if none of the conditions are true. If <placeholder-9/> has 3 arguments it will be the same as the <placeholder-10/> function. The arguments may be any <glossterm baseform=\"numeric expression\">numeric expressions</glossterm> that evaluate to <glossterm baseform=\"real number\">real numbers</glossterm> or <glossterm baseform=\"complex number\">complex numbers</glossterm>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet <placeholder-2/> , und wenn das Ergebnis von Null unterschiedlich ist, wird <placeholder-3/> berechnet und zurückgegeben. Andernfalls wird <placeholder-4/> berechnet, und wenn das Ergebnis von Null unterschiedlich ist, wird <placeholder-5/> zurückgeliefert usw. Wenn keine der Bedingungen wahr ist, wird <placeholder-6/> zurückgeliefert. <placeholder-7/> ist optional; wenn nicht angegeben, liefert <placeholder-8/> einen Fehler, wenn keine Bedingung zutrifft. Hat <placeholder-9/> 3 Argumente, verhält sie sich so wie die <placeholder-10/>-Funktion. Die Argumente können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> oder <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> ergeben."
 
 #. OptionsDialog.xml:8(title) InsertShadingDialog.xml:93(guilabel) InsertShadingDialog.xml:168(guilabel)
 msgid "Options"
@@ -700,7 +701,7 @@ msgstr "Einstellungen..."
 
 #. OptionsDialog.xml:10(para)
 msgid "When you choose the menu item <placeholder-1/> the dialog shown below will appear. In this dialog, you can change general program options."
-msgstr ""
+msgstr "Mit dem Menü-Punkt <placeholder-1/> wird der folgende Dialog angezeigt. In diesem Dialog lassen sich allgemeine Programmeinstellungen ändern."
 
 #. OptionsDialog.xml:24(term)
 msgid "Decimals"
@@ -708,7 +709,7 @@ msgstr "Dezimalstelle"
 
 #. OptionsDialog.xml:25(listitem)
 msgid "This is the number of decimals that all results are shown with. The number has no influence on the calculations or the shown graphs."
-msgstr ""
+msgstr "Mit dieser Anzahl Dezimalstellen werden alle Ergebnisse angezeigt. Die Zahl hat keinen Einfluß auf Berechnungen oder angezeigte Graphen."
 
 #. OptionsDialog.xml:32(term)
 msgid "Recent files"
@@ -716,7 +717,7 @@ msgstr "Letzte Dateien"
 
 #. OptionsDialog.xml:33(listitem)
 msgid "This is the maximum number of recent used files that is shown in the <placeholder-1/> menu. The number must be between 0 and 9. 0 means that no recent used files are shown."
-msgstr ""
+msgstr "Dies ist die höchste Anzahl zuletzt benutzer Dateien, die im <placeholder-1/>-Menü angezeigt werden. Die Zahl muß zwischen 0 und 9 sein. 0 bedeutet, daß die zuletzt benutzten Dateien nicht angezeigt werden."
 
 #. OptionsDialog.xml:41(term) OptionsDialog.xml:44(guilabel) OptionsDialog.xml:46(guilabel)
 msgid "Max undo steps"
@@ -724,15 +725,16 @@ msgstr "Max. rückgängig"
 
 #. OptionsDialog.xml:42(listitem)
 msgid "Each time you make a change, the program will save enough information to undo it. As default <placeholder-1/> are 50, which mean that you are able to undo the last 50 changes you made in the program. The undo steps will take up a small amount of memory. If your system is low on RAM, you may be able to free some memory by decreasing the <placeholder-2/>."
-msgstr ""
+msgstr "Bei jeder von Ihnen gemachten Änderung, behält sich das Programm Informationen, um die Änderung rückgängig zu machen. Voreingestellt sind 50 <placeholder-1/>; Sie können also die letzten 50 im Programm gemachten Änderungen zurücknehmen. Die Rücknahmeschritte verbrauchen Speicher. Falls Ihr System wenig RAM hat, können Sie durch Verringern von <placeholder-2/> RAM-Platz freigeben."
 
 #. OptionsDialog.xml:51(term)
 msgid "Font scale"
 msgstr "Schriftgröße"
 
 #. OptionsDialog.xml:52(listitem)
+#, fuzzy
 msgid "You can use this to change the scale of the fonts and most of the user interface. This is mostly useful if your screen resolution is very high, or for some other reason, you are having difficulties reading the user interface."
-msgstr ""
+msgstr "Hiermit können Sie die Schriftgröße und das meiste von der Benutzerschnittstelle ändern; besonders nützlich bei sehr hohen Bildschirmauflösungen oder falls es schwierig ist, die Benutzerschnittstelle zu lesen."
 
 #. OptionsDialog.xml:59(term) Acknowledgements.xml:78(entry)
 msgid "Language"
@@ -740,21 +742,21 @@ msgstr "Sprache"
 
 #. OptionsDialog.xml:60(listitem)
 msgid "This shows a list of available languages for the program. The selected language will be the one used by the program in the future. The language can be selected differently for each user."
-msgstr ""
+msgstr "Dies zeigt eine Liste der für das Programm verfügbaren Sprachen. Das Programm wird in Zukunft die ausgewählte Sprache verwenden. Für jeden Benutzer kann eine andere Sprache gewählt werden."
 
 #. OptionsDialog.xml:68(term)
 msgid "Associate .grf files"
 msgstr ".grf-Dateien verknüpfen"
 
-# kein Kontext; könnte auch ein Verb sein.
+# Noun or verb?
 #. OptionsDialog.xml:71(action)
 #, fuzzy
 msgid "double-click"
-msgstr "Doppelklick"
+msgstr "doppelklicken"
 
 #. OptionsDialog.xml:69(listitem)
 msgid "A check mark in this field indicates that the file type .grf is associated with this program. The program will automatically start and load the file when you <placeholder-1/> on it in Explorer."
-msgstr ""
+msgstr "Ein Häkchen in diesem Feld zeigt an, daß der Dateityp .grf mit diesem Programm verknüpft ist. Das Programm startet automatisch und lädt die Datei, wenn Sie darauf im Explorer <placeholder-1/>."
 
 #. OptionsDialog.xml:76(term)
 msgid "Show tooltip"
@@ -762,7 +764,7 @@ msgstr "Quickinfo zeigen"
 
 #. OptionsDialog.xml:77(listitem)
 msgid "When there is a mark in this field, you will see a small box with an explanation when you are holding the mouse pointer over an object, like an edit field, selection box, etc., for a few seconds. The description is also shown in the status bar at the bottom of the main window."
-msgstr ""
+msgstr "Bei markiertem Feld sehen Sie für einige Sekunden ein kleines Fenster mit einer Erläuterung, wenn der Maus-Zeiger über dem Objekt steht, (z. B. ein Edit-Feld, eine Selektion usw.). Die Beschreibung wird auch in der Statusleiste am unteren Rand des Hauptfensters angezeigt."
 
 #. OptionsDialog.xml:85(term) FAQ.xml:122(guilabel)
 msgid "Save workspace on exit"
@@ -774,7 +776,7 @@ msgstr "Funktionsliste"
 
 #. OptionsDialog.xml:86(listitem)
 msgid "When there is a mark in this field, Graph will save the size of the main window before it quits. The next time you start the program the saved size will be used. In addition the width of the <placeholder-1/> is also stored. When the field doesn't have a mark the options that were last saved will be used."
-msgstr ""
+msgstr "Bei markiertem Feld merkt sich Graph vor dem Beenden die Größe des Hauptfensters und übernimmt beim nächsten Start die gespeicherte Größe. Zusätzlich wird auch die Breite der <placeholder-1/> gespeichert. Ohne eine Markierung werden die zuletzt gespeicherten Einstellungen benutzt."
 
 #. OptionsDialog.xml:95(term) OptionsDialog.xml:107(guilabel)
 msgid "Complex form"
@@ -794,7 +796,7 @@ msgstr "Polarform"
 
 #. OptionsDialog.xml:103(guilabel) AxesDialog.xml:223(guilabel)
 msgid "Radian"
-msgstr ""
+msgstr "Rad"
 
 #. OptionsDialog.xml:103(guilabel) AxesDialog.xml:223(guilabel)
 msgid "Degree"
@@ -804,13 +806,15 @@ msgstr "Grad"
 msgid "Trigonometry"
 msgstr "Trigonometrie"
 
+# 081220
 #. OptionsDialog.xml:97(para)
 msgid "Choose how you want a complex number to be shown in the <placeholder-1/> frame. <placeholder-2/> means that only <glossterm baseform=\"real number\">real numbers</glossterm> are shown. If a number has an imaginary part then the number won't be shown and instead you get an error. <placeholder-3/> means that <glossterm baseform=\"complex number\">complex numbers</glossterm> are shown as a+b&imag;, where a is the real part and b is the imaginary part. <placeholder-4/> means that numbers are shown as a&ang;&theta;, where a is the absolute value of the number and &theta; is the angle of the number. &theta; is dependent of the choice between <placeholder-5/> and <placeholder-6/> under <placeholder-7/> in the <placeholder-8/> dialog."
-msgstr ""
+msgstr "Wählen Sie hier, wie komplexe Zahlen im <placeholder-1/>-Fenster angezeigt werden sollen. <placeholder-2/> bedeutet, daß nur <glossterm baseform=\"real number\">reelle Zahlen</glossterm> angezeigt werden. Hat eine Zahl einen imaginären Anteil, erhalten Sie statt derZahl einen Fehler. <placeholder-3/> bedeutet, daß <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> als a+b&imag; angezeigt werden, mit a als Realteil und b als Imaginärteil. <placeholder-4/> bedeutet, daß Zahlen als a&ang;&theta; angezeigt werden, mit a als Absolutwert und &theta; als Winkel. &theta; ist abhängig von der Einstellung <placeholder-5/> oder <placeholder-6/> unter <placeholder-7/> im <placeholder-8/>-Dialog."
 
+# 081220
 #. OptionsDialog.xml:106(para)
 msgid "Notice that in some cases you may get a different result in the <placeholder-1/> frame depending on the <placeholder-2/> setting: When <placeholder-3/> is chosen, Graph will try to find a real result if possible, while <placeholder-4/> and <placeholder-5/> may give a non-real result for the same evaluation."
-msgstr ""
+msgstr "Beachten Sie, daß Sie in einigen Fällen - je nach <placeholder-2/>-Einstellung - unterschiedliche Resultate erhalten können: Bei <placeholder-3/> versucht Graph, ein reelles Ergebnis zu finden, während <placeholder-4/> und <placeholder-5/> ein nicht-reelles Ergebnis für dieselbe Berechnung liefern können."
 
 #. OptionsDialog.xml:115(term)
 msgid "Check for new version of Graph at startup"
@@ -828,25 +832,26 @@ msgstr "Internet"
 msgid "Check for update"
 msgstr "Nach Aktualisierung suchen"
 
+# 081220
 #. OptionsDialog.xml:116(listitem)
 msgid "When checked each time the program starts it will check if a newer version of Graph is available on the Internet. If a new version is found you will be asked if you want to visit the web site for Graph to upgrade. If no new version is available you will not see any messages. If disabled, you can still use <placeholder-1/> to see if a new version is available."
-msgstr ""
+msgstr "Wenn aktiviert, wird bei jedem Programmstart im Internet nach einer neuen Version von Graph gesucht. Wenn eine neue Version gefunden wurde, werden Sie gefragt, ob Sie die Webseite für ein Update besuchen wollen; ansonsten erscheint keine Meldung. Wenn nicht aktiviert, können Sie mit <placeholder-1/> nach einer neuen Version sehen."
 
 #. OLE.xml:4(title)
 msgid "OLE server/client"
-msgstr ""
+msgstr "OLE-Server/Client"
 
 #. OLE.xml:7(primary)
 msgid "linking"
-msgstr ""
+msgstr "linking"
 
 #. OLE.xml:8(primary)
 msgid "embedded"
-msgstr ""
+msgstr "eingebettetes"
 
 #. OLE.xml:9(primary)
 msgid "automation"
-msgstr ""
+msgstr "Automatisierung"
 
 #. OLE.xml:11(title)
 msgid "OLE server"
@@ -854,7 +859,7 @@ msgstr "OLE-Server"
 
 #. OLE.xml:12(para)
 msgid "Graph has been implemented as an OLE (Object Linking and Embedding) server, which means that Graph objects can be placed (embedded) into an OLE client. Many applications can work as OLE clients, for example Microsoft Word."
-msgstr ""
+msgstr "Graph ist als OLE-Server (Object Linking und Embedding) implementiert; d. h. daß Graph-Objekte in andere OLE-fähige Applikationen eingebettet werden können, z. B. auch in Microsoft Word."
 
 #. OLE.xml:20(guimenuitem) MenuItems.xml:183(guimenuitem)
 msgid "Copy image"
@@ -866,11 +871,11 @@ msgstr "Einfügen"
 
 #. OLE.xml:33(guimenuitem)
 msgid "Paste Special..."
-msgstr ""
+msgstr "Spezielles Einfügen..."
 
 #. OLE.xml:16(para)
 msgid "You can use <placeholder-1/> in Graph to copy the current content to the clipboard. Afterwards you can select <placeholder-2/> in Word (or similar in another OLE client) to insert the Graph object from the clipboard. When you double click on the object a new instance of Graph will start where you can edit the object. If you don't want to paste the data as a Graph object into Word, you can use <placeholder-3/> in Word to paste as a picture instead."
-msgstr ""
+msgstr "Mit <placeholder-1/> läßt sich der aktuelle Inhalt in die Zwischenablage kopieren. Später können Sie das Graph-Objekt aus der Zwischenablage einfügen, z. B. mit <placeholder-2/> in Word (o. ä. in einem anderem OLE-Client). Beim Doppelklick auf das Objekt startet eine neue Instanz von Graph, mit der Sie das Objekt editieren können. Wenn Sie die Daten nicht als Graph-Objekt einfügen wollen, sondern als Bild, können Sie dazu in Word <placeholder-3/> verwenden."
 
 #. OLE.xml:40(guimenu)
 msgid "Insert"
@@ -878,7 +883,7 @@ msgstr "Einfügen"
 
 #. OLE.xml:41(guimenuitem)
 msgid "Object..."
-msgstr ""
+msgstr "Objekt..."
 
 #. OLE.xml:43(guilabel)
 msgid "Graph system"
@@ -894,23 +899,24 @@ msgstr "Mit Datei verknüpfen"
 
 #. OLE.xml:37(para)
 msgid "You may create a new Graph object in Word by choosing the <placeholder-1/> menu item and selecting <placeholder-2/> as <placeholder-3/>. The same dialog can be used to create an embedded Graph object from an existing grf-file. If you select <placeholder-4/>, you will get a linked object instead of an embedded object. This way all changes to the object will be reflected in the original grf-file. If the grf-file is not available you will not be able to edit the object, but you can still see the image in Word."
-msgstr ""
+msgstr "Sie können eine neues Graph-Objekt in Word erzeugen, indem Sie bei <placeholder-1/> als <placeholder-3/> <placeholder-2/> wählen. Mit demselben Dialog läßt sich ein eingebettetes Graph-Objekt aus einer grf-Datei erzeugen. Mit <placeholder-4/> erhalten Sie ein verlinktes statt eines eingebetteten Objekts. Auf diese Art werden alle Änderungen des Objekts auch in der ursprünglichen grf-Datei umgesetzt. Ist die grf-Datei ist nicht verfügbar, können Sie das Objekt zwar nicht editieren, aber das Bild ist in Word noch sichtbar."
 
 #. OLE.xml:49(para)
 msgid "To edit a Graph object you must have Graph installed on the system. If Graph is not installed you will still be able to see the image but not edit it."
-msgstr ""
+msgstr "Um ein Graph-Objekt zu bearbeiten, muß Graph installiert sein. Wenn Graph nicht installiert ist, können Sie zwar noch das Bild sehen, nicht aber bearbeiten."
 
 #. OLE.xml:55(title)
 msgid "OLE client"
-msgstr ""
+msgstr "OLE-Client"
 
 #. OLE.xml:60(guimenuitem)
 msgid "Insert object..."
 msgstr "Objekt einfügen..."
 
 #. OLE.xml:56(para)
+#, fuzzy
 msgid "Graph can work as an OLE client as a text label in Graph is an OLE container. This means that you can paste images and OLE objects into the editor used to add labels. As in any other OLE container you can edit the object by double clicking on it. From the context menu you can use <placeholder-1/> to create a new OLE object in the label. The same dialog can be used to create an object from a file. You can for example insert an image file this way. To edit an OLE object the server must be installed on the system, else you will only be able to see object but not edit it."
-msgstr ""
+msgstr "Graph als OLE-Client kann arbeiten, da ein Textfeld in Graph ein OLE-Container ist. Dies bedeutet, daß Sie Bilder und OLE-Objekte in den Editor einfügen können. Wie in allen anderen OLE-Containern läßt sich das Objekt per Doppelklick bearbeiten. Vom Kontext-Menü aus können Sie mit <placeholder-1/> ein neues OLE-Objekt im Label erzeugen. Mit demselben Dialog läßt sich ein Objekt aus einer Datei erzeugen. Sie können so z. B. eine Bild-Datei einfügen. Um ein OLE-Objekt zu bearbeiten, muß der Server installiert sein, ansonsten können Sie das Objekt nur sehen, nicht aber bearbeiten."
 
 #. MenuItems.xml:4(title)
 msgid "List of menu items"
@@ -930,7 +936,7 @@ msgstr "Neu"
 
 #. MenuItems.xml:18(listitem)
 msgid "Use this to create a new coordinate system for drawing graphs in."
-msgstr ""
+msgstr "Verwenden Sie dies, um ein ein neues Koordinatensystem zum Zeichnen von Graphen zu erzeugen."
 
 #. MenuItems.xml:26(guimenuitem)
 msgid "Open..."
@@ -938,7 +944,7 @@ msgstr "Öffnen..."
 
 #. MenuItems.xml:30(listitem)
 msgid "Reads an earlier saved coordinate system from a .grf file."
-msgstr ""
+msgstr "Liest ein schon gespeichertes Koordinatensystem aus einer .grf-Datei ein."
 
 #. MenuItems.xml:38(guimenuitem)
 msgid "Save"
@@ -970,7 +976,7 @@ msgstr "Graph-Datei..."
 
 #. MenuItems.xml:74(listitem)
 msgid "Imports the contents of another Graph file into the current coordinate system."
-msgstr ""
+msgstr "Importiert den Inhalt einer anderen Graph-Datei ins aktuelle Koordinatensystem."
 
 #. MenuItems.xml:82(guimenuitem)
 msgid "Point series..."
@@ -978,7 +984,7 @@ msgstr "Punktserie(n)..."
 
 #. MenuItems.xml:85(listitem)
 msgid "Imports one or several point series from a tab, comma or semicolon separated data file. The first column shall contain the x-coordinates. The following columns shall contain the y-coordinates. Graph will create as many point series as there are columns with y-coordinates in the file. There is no limit the number of point series possible in the data file as long as they share the same x-coordinates."
-msgstr ""
+msgstr "Importiert eine oder mehrere Punktserien aus einer Tabulator-, Komma- oder Semikolon-separierten Datei. Die erste Spalte muß die x-Koordinaten und die folgenden Spalten die y-Koordinaten enthalten. Graph erzeugt soviele Punktserien, wie die Datei Spalten mit y-Koordinaten enthält. Die Anzahl der Punktserien in der Datei ist nicht begrenzt, solange sie dieselben x-Koordinaten gemeinsam haben."
 
 #. MenuItems.xml:97(guimenuitem)
 msgid "Print..."
@@ -986,7 +992,7 @@ msgstr "Drucken..."
 
 #. MenuItems.xml:101(listitem)
 msgid "Sends the coordinate system and graphs to a printer."
-msgstr ""
+msgstr "Sendet das Koordinatensystem und die Graphen an einen Drucker."
 
 #. MenuItems.xml:109(guimenuitem)
 msgid "Exit"
@@ -994,7 +1000,7 @@ msgstr "Beenden"
 
 #. MenuItems.xml:113(listitem)
 msgid "Quits the program. You may be asked to save the file."
-msgstr ""
+msgstr "Beendent das Programm. Ggfs. bittet es Sie, die Datei zu speichern."
 
 #. MenuItems.xml:123(guimenuitem) MenuItems.xml:140(guimenuitem)
 msgid "Undo"
@@ -1002,7 +1008,7 @@ msgstr "Rückgängig"
 
 #. MenuItems.xml:127(listitem)
 msgid "Use this to undo the last thing you did. You can choose how many undo steps that are saved in the <placeholder-1/> dialog."
-msgstr ""
+msgstr "Hiermit läßt sich Ihre letzte Aktion rückgängig machen. Sie können die maximale Anzahl der im <placeholder-1/>-Dialog gespeicherten Rückgängig-Schritte einstellen."
 
 #. MenuItems.xml:135(guimenuitem)
 msgid "Redo"
@@ -1010,7 +1016,7 @@ msgstr "Wiederherstellen"
 
 #. MenuItems.xml:139(listitem)
 msgid "Use this to redo the last thing undone. This is only available after you have selected <placeholder-1/>."
-msgstr ""
+msgstr "Hiermit stellen Sie Ihre letzte rückgängiggemachte Aktion wieder her; vorausgesetzt, sie haben <placeholder-1/> ausgewählt."
 
 #. MenuItems.xml:147(guimenuitem)
 msgid "Cut"
@@ -1034,7 +1040,7 @@ msgstr "Dies fügt ein vorher kopiertes <placeholder-1/> von der Zwischenablage 
 
 #. MenuItems.xml:187(listitem)
 msgid "Copies the shown coordinate system to the clipboard as an image. You can then paste it into another program, i.e. Microsoft Word."
-msgstr ""
+msgstr "Kopiert das gezeigte Koordinatensystem als Bild in die Zwischenablage. Sie können es dann ein anderes Programm einfügen, z. B. Microsoft Word."
 
 #. MenuItems.xml:196(guimenuitem) AxesDialog.xml:36(guimenuitem)
 msgid "Axes..."
@@ -1042,11 +1048,11 @@ msgstr "Achsen..."
 
 #. MenuItems.xml:201(listitem)
 msgid "Edit specifications for the axes, e.g. scale, colors, legend placement, etc."
-msgstr ""
+msgstr "Bearbeitet die Eigenschaften der Achsen, z. B. Maßstab, Farben, Plazierung der Legende usw."
 
 #. MenuItems.xml:214(listitem)
 msgid "This will change global settings for Graph, e.g. association of .grf files, showing of tooltips, maximum number of undo stored undo steps, etc."
-msgstr ""
+msgstr "Ändert allgemeine Einstellungen für Graph, z. B. Zuordnung von .grf Dateien, Anzeigen von Tooltips, maximale Zahl gespeicherter Rückgängig-Schritte usw."
 
 #. MenuItems.xml:225(guimenu) MenuItems.xml:240(guimenu) MenuItems.xml:255(guimenu) MenuItems.xml:271(guimenu) MenuItems.xml:285(guimenu) MenuItems.xml:301(guimenu) MenuItems.xml:316(guimenu) MenuItems.xml:332(guimenu) MenuItems.xml:346(guimenu) MenuItems.xml:358(guimenu) MenuItems.xml:370(guimenu) InsertTrendlineDialog.xml:23(guimenu) InsertTangentDialog.xml:16(guimenu) InsertTangentDialog.xml:17(guimenu) InsertShadingDialog.xml:18(guimenu) InsertShadingDialog.xml:19(guimenu) InsertRelationDialog.xml:17(guimenu) InsertRelationDialog.xml:18(guimenu) InsertPointSeriesDialog.xml:20(guimenu) InsertPointSeriesDialog.xml:21(guimenu) InsertLabelDialog.xml:25(guimenu) InsertLabelDialog.xml:27(guimenu) InsertFunctionDialog.xml:16(guimenu) InsertFunctionDialog.xml:19(guimenu) InsertDerivativeDialog.xml:17(guimenu) HowToUse.xml:36(guimenu) HowToUse.xml:44(guimenu) Glossary.xml:38(guimenu) Glossary.xml:52(guimenu) FunctionList.xml:173(entry) EvaluateDialog.xml:45(term) CustomFunctionsDialog.xml:16(guimenu)
 msgid "Function"
@@ -1058,15 +1064,15 @@ msgstr "Funktion einfügen..."
 
 #. MenuItems.xml:230(listitem)
 msgid "Inserts a function into the coordinate system. Functions may be added with different width and color, and you can choose to only show the graph in a specified interval, and specify other settings too."
-msgstr ""
+msgstr "Fügt eine Funktion ins Koordinatensystem ein. Die Funktionen können unterschiedliche Breite und Farbe haben, Sie können den Graph in einem angegeben Intervall anzeigen und auch andere Dinge einstellen."
 
 #. MenuItems.xml:240(guimenuitem)
 msgid "Insert tangent..."
-msgstr ""
+msgstr "Tangente einfügen..."
 
 #. MenuItems.xml:245(listitem)
 msgid "Use this dialog to add a tangent to an already shown function at a user-specified point. The tangent will be added to the function selected in the <placeholder-1/>."
-msgstr ""
+msgstr "Erzeugt in einer bestehenden Funktion eine Tangente an einem vom Benutzer angegebenen Punkt. Die Tangente wird zur in <placeholder-1/> gewählten Funktion hinzugefügt."
 
 #. MenuItems.xml:255(guimenuitem) InsertShadingDialog.xml:18(guimenuitem)
 msgid "Insert shading..."
@@ -1074,7 +1080,7 @@ msgstr "Schraffur einfügen..."
 
 #. MenuItems.xml:260(listitem)
 msgid "This menu item is used to add a shading to the selected function. You may choose between different styles of shading and different colors. The shading may be added above the function, below the function, between the function and the x-axis, between the function and the y-axis, inside the function or between two functions."
-msgstr ""
+msgstr "Mit diesem Menüpunkt läßt sich zur selektierten Funktion eine Schraffur hinzufügen. Sie können verschiedene Schraffur-Arten und -Farben wählen. Die Schraffuren lassen sich über der Funktion, unter der Funktion, zwischen Funktion und x-Achse, zwischen Funktion und y-Achse, innerhalb der Funktion und zwischen zwei Funktionen hinzufügen."
 
 #. MenuItems.xml:271(guimenuitem) InsertDerivativeDialog.xml:17(guimenuitem)
 msgid "Insert f'(x)..."
@@ -1082,7 +1088,7 @@ msgstr "Ableitungsfunktion f'(x) einfügen..."
 
 #. MenuItems.xml:276(listitem)
 msgid "This dialog is used to add the first derivative to the selected function."
-msgstr ""
+msgstr "Mit diesem Dialog läßt sich die erste Ableitung der selektierten Funktion erstellen."
 
 #. MenuItems.xml:285(guimenuitem) InsertTrendlineDialog.xml:23(guimenuitem) InsertPointSeriesDialog.xml:20(guimenuitem)
 msgid "Insert point series..."
@@ -1090,7 +1096,7 @@ msgstr "Punktserie einfügen..."
 
 #. MenuItems.xml:290(listitem)
 msgid "Inserts a new point series into the coordinate system. An infinite number of points defined by their x- and y-coordinates may be added. It is possible to choose color, size, and style of the point series."
-msgstr ""
+msgstr "Fügt eine neue Punktserie ins Koordinatensystem ein, das ist eine unendliche Anzahl von Punkten, definiert durch ihre x- und y-Koordinaten. Farbe, Größe und Art der Punktserie lassen sich auswählen."
 
 #. MenuItems.xml:301(guimenuitem)
 msgid "Insert trendline..."
@@ -1098,7 +1104,7 @@ msgstr "Trendlinie einfügen..."
 
 #. MenuItems.xml:306(listitem)
 msgid "Inserts a trendline as the curve curve of best fit for the selected point series. You may choose between different kinds of functions for the trendline."
-msgstr ""
+msgstr "Fügt eine Trendlinie als Best-Fit-Kurve für die ausgewählte Punktserie ein. Sie können zwischen verschiedenen Funktionsarten für die Trendlinie wählen."
 
 #. MenuItems.xml:316(guimenuitem) InsertRelationDialog.xml:17(guimenuitem)
 msgid "Insert relation..."
@@ -1106,7 +1112,7 @@ msgstr "Relation einfügen..."
 
 #. MenuItems.xml:321(listitem)
 msgid "This inserts an equation or inequality into the coordinate system. Equations and inequalities are used to express relations between x- and y-coordinates with the same operators etc. as for graphs of functions. Relations may be added with different shading styles and colors."
-msgstr ""
+msgstr "Fügt eine Gleichung oder Ungleichung ins Koordinatensystem ein. Mit Gleichungen und Ungleichungen drückt man Relationen zwischen x- und y-Koordinaten mit denselben Operatoren aus, wie z. B. für Funktionsgraphen. Relationen können mit verschiedenen Schraffurtypen und -Farben hinzugefügt werden."
 
 #. MenuItems.xml:332(guimenuitem) InsertLabelDialog.xml:25(guimenuitem)
 msgid "Insert label..."
@@ -1130,7 +1136,7 @@ msgstr "Löschen"
 
 #. MenuItems.xml:362(listitem)
 msgid "This will delete the selected <placeholder-1/> in the <placeholder-2/>."
-msgstr ""
+msgstr "Dies löscht das ausgewählte <placeholder-1/> in der <placeholder-2/>."
 
 #. MenuItems.xml:370(guimenuitem) CustomFunctionsDialog.xml:16(guimenuitem)
 msgid "Custom functions..."
@@ -1214,7 +1220,7 @@ msgstr ""
 
 #. MenuItems.xml:472(guimenuitem)
 msgid "Fit all"
-msgstr ""
+msgstr "Alles"
 
 #. MenuItems.xml:475(listitem)
 msgid "This will change the axes settings to show all parts of all the elements in the <placeholder-1/>."
@@ -1390,15 +1396,13 @@ msgstr ""
 
 #. Installation.xml:4(title)
 msgid "Installation and startup"
-msgstr ""
+msgstr "Installation und erstes Starten"
 
 #. Installation.xml:5(primary)
 msgid "installation"
 msgstr "Installation"
 
-# das Verb könnte - je nach Kontext - anders gebeugt werden.
 #. Installation.xml:6(primary)
-#, fuzzy
 msgid "uninstall"
 msgstr "deinstallieren"
 
@@ -1408,15 +1412,13 @@ msgstr "Sprache"
 
 #. Installation.xml:10(primary)
 msgid "Control panel"
-msgstr ""
+msgstr "Systemsteuerung"
 
 #. Installation.xml:11(primary)
 msgid "Add/Remove Programs"
-msgstr ""
+msgstr "Programme hinzufügen/entfernen"
 
-# das Verb könnte - je nach Kontext - anders gebeugt werden.
 #. Installation.xml:12(primary)
-#, fuzzy
 msgid "remove"
 msgstr "entfernen"
 
@@ -1474,7 +1476,7 @@ msgstr "Parameter"
 
 #. Installation.xml:86(guilabel)
 msgid "Reboot now?"
-msgstr ""
+msgstr "Jetzt Neustart?"
 
 #. Installation.xml:83(entry)
 msgid "Instructs the Setup to be silent, which means that the wizard and the background window are not displayed but the installation progress window is. Everything else is normal so for example error messages during installation are displayed. If a restart is necessary, a <placeholder-1/> message box is displayed."
@@ -1498,7 +1500,7 @@ msgstr ""
 
 #. Installation.xml:113(guilabel)
 msgid "Select destination location"
-msgstr ""
+msgstr "Wählen Sie den Zielort"
 
 #. Installation.xml:112(entry)
 msgid "Overrides the default directory name displayed on the <placeholder-1/> wizard page. A fully qualified pathname must be specified."
@@ -1514,7 +1516,7 @@ msgstr ""
 
 #. Installation.xml:134(title)
 msgid "Startup"
-msgstr ""
+msgstr "Hochfahren"
 
 #. Installation.xml:135(para)
 msgid "Usually Graph is started from the link in the <guibutton>Start</guibutton> menu. A .grf file can be passed as parameter, in which case Graph will open the specified file. In addition to this the parameters in the table below can be passed to Graph on the command line."
@@ -1542,7 +1544,7 @@ msgstr "Trendlinie einfügen"
 
 #. InsertTrendlineDialog.xml:9(primary) InsertTangentDialog.xml:9(primary) InsertShadingDialog.xml:9(primary) InsertPointSeriesDialog.xml:9(primary) InsertLabelDialog.xml:9(primary) InsertFunctionDialog.xml:9(primary) InsertDerivativeDialog.xml:9(primary)
 msgid "insert"
-msgstr ""
+msgstr "einfügen"
 
 #. InsertTrendlineDialog.xml:10(primary) InsertPointSeriesDialog.xml:13(primary)
 msgid "trendline"
@@ -1550,7 +1552,7 @@ msgstr "Trendlinie"
 
 #. InsertTrendlineDialog.xml:11(primary)
 msgid "line of best fit"
-msgstr ""
+msgstr "Best-Fit-Kurve"
 
 #. InsertTrendlineDialog.xml:12(primary)
 msgid "linear"
@@ -1770,7 +1772,7 @@ msgstr "Schraffur einfügen..."
 
 #. InsertShadingDialog.xml:10(primary)
 msgid "shading"
-msgstr ""
+msgstr "Schraffur"
 
 #. InsertShadingDialog.xml:11(primary)
 msgid "interval"
@@ -1890,7 +1892,7 @@ msgstr "Farbe"
 
 #. InsertShadingDialog.xml:132(listitem)
 msgid "Here you may choose the color of the shading."
-msgstr ""
+msgstr "Hier können Sie die Farbe der Schraffur auswählen."
 
 #. InsertShadingDialog.xml:138(term)
 msgid "Mark start of range"
@@ -1930,7 +1932,7 @@ msgstr "Relation einfügen"
 
 #. InsertRelationDialog.xml:9(primary)
 msgid "relation"
-msgstr ""
+msgstr "Relation"
 
 #. InsertRelationDialog.xml:10(primary)
 msgid "equation"
@@ -1946,7 +1948,7 @@ msgstr "Ungleichheit"
 
 #. InsertRelationDialog.xml:13(primary)
 msgid "constraints"
-msgstr ""
+msgstr "Beschränkungen"
 
 #. InsertRelationDialog.xml:14(para)
 msgid "This dialog is used to insert a relation in the coordinate system. <literal>Relation</literal> is a common name for inequalities and equations. To insert a relation you use the menu item <placeholder-1/>. To change an existing relation, you first select it in the <glossterm>function list</glossterm> and use <placeholder-2/>."
@@ -1954,7 +1956,7 @@ msgstr ""
 
 #. InsertRelationDialog.xml:25(term)
 msgid "Relation"
-msgstr ""
+msgstr "Relation"
 
 #. InsertRelationDialog.xml:27(para)
 msgid "Here you enter the relation you want to graph. This must either be an equation or an inequality. <placeholder-1/> and <placeholder-2/> are used as the independent variables. An equation is a statement that one quantity equals another and the quantities must be separated by the = operator. For example the equation <literal>x^2 + y^2 = 25</literal> will plot a circle of radius 5."
@@ -2058,7 +2060,7 @@ msgstr ""
 
 #. InsertPointSeriesDialog.xml:64(guilabel)
 msgid "Interpolation"
-msgstr ""
+msgstr "Interpolation"
 
 #. InsertPointSeriesDialog.xml:62(para)
 msgid "Notice that if you select an arrow as marker, the arrow will be shown pointing tangential to the line at the point. The actual direction therefore depends on the <placeholder-1/> setting. The first point is never shown when the marker is an arrow."
@@ -2154,11 +2156,11 @@ msgstr "Symbol"
 
 #. InsertLabelDialog.xml:18(primary)
 msgid "superscript"
-msgstr ""
+msgstr "hochgestellt"
 
 #. InsertLabelDialog.xml:19(primary)
 msgid "subscript"
-msgstr ""
+msgstr "tiefgestellt"
 
 #. InsertLabelDialog.xml:20(primary)
 msgid "bold"
@@ -2186,7 +2188,7 @@ msgstr "Objekt einfügen..."
 
 #. InsertLabelDialog.xml:43(guimenuitem)
 msgid "Paste special"
-msgstr ""
+msgstr "Spezielles Einfügen"
 
 #. InsertLabelDialog.xml:39(para)
 msgid "A text label can also contain any <link linkend=\"OLE\">OLE object</link>, for example an image or MS Equation. You can paste an OLE object into the editing area like text. A new object can be created at the cursor position by selecting <placeholder-1/> in the context menu. If there is more than one representation in the clipboard, you can use <placeholder-2/> in the context menu to select the representation to paste."
@@ -2210,11 +2212,11 @@ msgstr "Polarfunktion"
 
 #. InsertFunctionDialog.xml:13(primary) HowToUse.xml:13(primary)
 msgid "draw"
-msgstr ""
+msgstr "zeichnen"
 
 #. InsertFunctionDialog.xml:14(primary) HowToUse.xml:14(primary)
 msgid "plot"
-msgstr ""
+msgstr "zeichnen"
 
 #. InsertFunctionDialog.xml:15(para)
 msgid "When you want to insert a function, you use the menu item <placeholder-1/> to show the dialog below. To edit an existing function, you select it in the <glossterm>function list</glossterm> and use the <placeholder-2/> menu item."
@@ -2322,139 +2324,139 @@ msgstr ""
 
 #. Hyperbolic.xml:7(title) FunctionList.xml:230(emphasis)
 msgid "Hyperbolic"
-msgstr ""
+msgstr "Hyperbolicus"
 
 #. Hyperbolic.xml:11(primary) Hyperbolic.xml:83(primary)
 msgid "hyperbolic sine"
-msgstr ""
+msgstr "Sinus Hyperbolicus"
 
 #. Hyperbolic.xml:12(para) FunctionList.xml:234(entry)
 msgid "Returns the hyperbolic sine of the argument."
-msgstr ""
+msgstr "Liefert den Sinus Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:21(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic sine of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Sinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
 
 #. Hyperbolic.xml:25(para)
 msgid "Hyperbolic sine is defined as: <placeholder-1/>"
-msgstr ""
+msgstr "Sinus Hyperbolicus ist als <placeholder-1/> definiert."
 
 #. Hyperbolic.xml:35(primary) Hyperbolic.xml:106(primary)
 msgid "hyperbolic cosine"
-msgstr ""
+msgstr "Cosinus Hyperbolicus"
 
 #. Hyperbolic.xml:36(para) FunctionList.xml:238(entry)
 msgid "Returns the hyperbolic cosine of the argument."
-msgstr ""
+msgstr "Liefert den Cosinus Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:45(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic cosine of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Cosinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
 
 #. Hyperbolic.xml:49(para)
 msgid "Hyperbolic cosine is defined as: <placeholder-1/>"
-msgstr ""
+msgstr "Cosinus Hyperbolicus ist als <placeholder-1/> definiert."
 
 #. Hyperbolic.xml:59(primary) Hyperbolic.xml:129(primary)
 msgid "hyperbolic tangent"
-msgstr ""
+msgstr "Tangens Hyperbolicus"
 
 #. Hyperbolic.xml:60(para) FunctionList.xml:242(entry)
 msgid "Returns the hyperbolic tangent of the argument."
-msgstr ""
+msgstr "Liefert den Tangens Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:69(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Tangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
 
 #. Hyperbolic.xml:73(para)
 msgid "Hyperbolic tangent is defined as: <placeholder-1/>"
-msgstr ""
+msgstr "Tangens Hyperbolicus ist als <placeholder-1/> definiert."
 
 #. Hyperbolic.xml:84(primary)
 msgid "inverse hyperbolic sine"
-msgstr ""
+msgstr "Arkussinus Hyperbolicus"
 
 #. Hyperbolic.xml:85(para) FunctionList.xml:246(entry)
 msgid "Returns the inverse hyperbolic sine of the argument."
-msgstr ""
+msgstr "Liefert den Arkussinus Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:94(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic sine of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> is the reverse of <placeholder-5/>, i.e. <placeholder-6/>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arcussinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist das reverse von <placeholder-5/>, also <placeholder-6/>."
 
 #. Hyperbolic.xml:107(primary)
 msgid "inverse hyperbolic cosine"
-msgstr ""
+msgstr "Arkuscosinus Hyperbolicus"
 
 #. Hyperbolic.xml:108(para) FunctionList.xml:250(entry)
 msgid "Returns the inverse hyperbolic cosine of the argument."
-msgstr ""
+msgstr "Liefert den Arkuscosinus Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:117(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosine of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> is the reverse of <placeholder-5/>, i.e. <placeholder-6/>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arkuscosinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist das reverse von <placeholder-5/>, also <placeholder-6/>."
 
 #. Hyperbolic.xml:130(primary)
 msgid "inverse hyperbolic tangent"
-msgstr ""
+msgstr "Arkustangens Hyperbolicus"
 
 #. Hyperbolic.xml:131(para) FunctionList.xml:254(entry)
 msgid "Returns the inverse hyperbolic tangent of the argument."
-msgstr ""
+msgstr "Liefert den Arkustangens Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:140(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> is the reverse of <placeholder-5/>, i.e. <placeholder-6/>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arkustangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist das reverse von <placeholder-5/>, also <placeholder-6/>."
 
 #. Hyperbolic.xml:152(primary)
 msgid "hyperbolic cosecant"
-msgstr ""
+msgstr "Cosecans Hyperbolicus"
 
 #. Hyperbolic.xml:153(para) FunctionList.xml:258(entry)
 msgid "Returns the hyperbolic cosecant of the argument."
-msgstr ""
+msgstr "Liefert den Cosecans Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:162(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Cosecans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
 
 #. Hyperbolic.xml:166(para)
 msgid "Hyperbolic cosecant is defined as: <placeholder-1/>"
-msgstr ""
+msgstr "Cosecans Hyperbolicus ist als <placeholder-1/> definiert."
 
 #. Hyperbolic.xml:176(primary)
 msgid "hyperbolic secant"
-msgstr ""
+msgstr "Secans Hyperbolicus"
 
 #. Hyperbolic.xml:177(para) FunctionList.xml:262(entry)
 msgid "Returns the hyperbolic secant of the argument."
-msgstr ""
+msgstr "Liefert den Secanshyperbolicus des Arguments."
 
 #. Hyperbolic.xml:186(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Secans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
 
 #. Hyperbolic.xml:190(para)
 msgid "Hyperbolic secant is defined as: <placeholder-1/>"
-msgstr ""
+msgstr "Hyperbolic Secans ist als <placeholder-1/> definiert."
 
 #. Hyperbolic.xml:200(primary) Hyperbolic.xml:270(primary)
 msgid "hyperbolic cotangent"
-msgstr ""
+msgstr "Cotangens Hyperbolicus"
 
 #. Hyperbolic.xml:201(para) FunctionList.xml:266(entry)
 msgid "Returns the hyperbolic cotangent of the argument."
-msgstr ""
+msgstr "Liefert den Cotangens Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:210(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Cotangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
 
 #. Hyperbolic.xml:214(para)
 msgid "Hyperbolic cotangent is defined as: <placeholder-1/>"
-msgstr ""
+msgstr "Hyperbolic Cotangens ist als <placeholder-1/> definiert."
 
 #. Hyperbolic.xml:224(primary)
 msgid "hyperbolic cosecanr"
@@ -2462,15 +2464,15 @@ msgstr ""
 
 #. Hyperbolic.xml:225(primary)
 msgid "inverse hyperbolic cosecant"
-msgstr ""
+msgstr "Arkuscosecans  Hyperbolicus"
 
 #. Hyperbolic.xml:226(para) FunctionList.xml:270(entry)
 msgid "Returns the inverse hyperbolic cosecant of the argument."
-msgstr ""
+msgstr "Liefert den Arkuscosecans Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:235(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> is the reverse of <placeholder-5/>, i.e. <placeholder-6/>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arkuscosecans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist das reverse von <placeholder-5/>, also <placeholder-6/>."
 
 #. Hyperbolic.xml:247(primary)
 msgid "hyperbolic secanr"
@@ -2478,27 +2480,27 @@ msgstr ""
 
 #. Hyperbolic.xml:248(primary)
 msgid "inverse hyperbolic secant"
-msgstr ""
+msgstr "Arkussecans Hyperbolicus"
 
 #. Hyperbolic.xml:249(para) FunctionList.xml:274(entry)
 msgid "Returns the inverse hyperbolic secant of the argument."
-msgstr ""
+msgstr "Liefert den Arkussecans Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:258(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> is the reverse of <placeholder-5/>, i.e. <placeholder-6/>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arkussecans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist das reverse von <placeholder-5/>, also <placeholder-6/>."
 
 #. Hyperbolic.xml:271(primary)
 msgid "inverse hyperbolic cotangent"
-msgstr ""
+msgstr "Arkuscotangens Hyperbolicus"
 
 #. Hyperbolic.xml:272(para) FunctionList.xml:278(entry)
 msgid "Returns the inverse hyperbolic cotangent of the argument."
-msgstr ""
+msgstr "Liefert den Arkuscotangens Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:281(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> is the reverse of <placeholder-5/>, i.e. <placeholder-6/>. For real numbers <placeholder-7/> is undefined in the interval [-1;1]."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arkus Cotangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist die Invertierung von <placeholder-5/>, also <placeholder-6/>. Für reelle Zahlen ist <placeholder-7/> im Interval [-1;1] nicht definiert"
 
 #. HowToUse.xml:4(title)
 msgid "How to use Graph"
@@ -2584,9 +2586,7 @@ msgstr ""
 msgid "The function list is shown in the left side of the main window. This list shows a list of all functions, tangents, point series, shadings and relations. When you want to manipulate an item, you first have to select it. The selected item is normally marked in blue, but it will be marked in gray when something other than the function list has focus. You can manipulate the selected element through the <placeholder-1/> menu or through the context menu appearing when you <action>right click</action> on the element."
 msgstr ""
 
-# könnte auch "ganzzahlig" heißen
 #. Glossary.xml:58(glossterm) Glossary.xml:59(primary)
-#, fuzzy
 msgid "integer"
 msgstr "Ganzzahl"
 
@@ -2732,7 +2732,7 @@ msgstr ""
 
 #. FunctionList.xml:74(entry)
 msgid "Evaluates to a random number between 0 and 1."
-msgstr ""
+msgstr "Erzeugt eine Zufallszahl zwischen 0 und 1."
 
 #. FunctionList.xml:90(entry)
 msgid "Operator/constant"
@@ -2752,7 +2752,7 @@ msgstr "Negation (-)"
 
 #. FunctionList.xml:101(entry)
 msgid "The negative value of a factor. Example: f(x)=-x"
-msgstr ""
+msgstr "Negativer Wert eines Faktors. Beispiel: f(x)=-x"
 
 #. FunctionList.xml:104(entry)
 msgid "Logical NOT (not)"
@@ -2768,7 +2768,7 @@ msgstr "Multiplikation (*)"
 
 #. FunctionList.xml:109(entry)
 msgid "Multiplies the two factors. Example: f(x)=2*x"
-msgstr ""
+msgstr "Multipliziert beide Faktoren. Beispiel: f(x)=2*x"
 
 #. FunctionList.xml:112(entry)
 msgid "Division (/)"
@@ -2776,7 +2776,7 @@ msgstr "Division (/)"
 
 #. FunctionList.xml:113(entry)
 msgid "Divide the two factors. Example: f(x)=2/x"
-msgstr ""
+msgstr "Dividiert beide Faktoren. Beispiel: f(x)=2/x"
 
 #. FunctionList.xml:116(entry)
 msgid "Addition (+)"
@@ -2784,7 +2784,7 @@ msgstr "Addition (+)"
 
 #. FunctionList.xml:117(entry)
 msgid "Add the two terms. Example: f(x)=2+x"
-msgstr ""
+msgstr "Addiert beide Terme. Beispiel: f(x)=2+x"
 
 #. FunctionList.xml:120(entry)
 msgid "Subtraction (-)"
@@ -2792,7 +2792,7 @@ msgstr "Subtraktion (-)"
 
 #. FunctionList.xml:121(entry)
 msgid "Subtract two terms. Example f(x)=2-x"
-msgstr ""
+msgstr "Subtrahiert beide Terme. Beispiel: f(x)=2-x"
 
 #. FunctionList.xml:124(entry)
 msgid "Greater than (&gt;)"
@@ -2800,7 +2800,7 @@ msgstr "Größer als (&gt;)"
 
 #. FunctionList.xml:125(entry)
 msgid "Indicates if an expression is greater than another expression."
-msgstr ""
+msgstr "Zeigt an, ob ein Ausdruck größer als ein anderer Ausdruck ist."
 
 #. FunctionList.xml:128(entry)
 msgid "Greater or equal (&gt;=)"
@@ -2808,7 +2808,7 @@ msgstr "Größer gleich (&gt;=)"
 
 #. FunctionList.xml:129(entry)
 msgid "Indicates if an expression is greater or equal to another expression."
-msgstr ""
+msgstr "Zeigt an, ob ein Ausdruck größer oder gleich einem anderen Ausdruck ist."
 
 #. FunctionList.xml:132(entry)
 msgid "Less than (&lt;)"
@@ -2816,7 +2816,7 @@ msgstr "Kleiner als (&lt;)"
 
 #. FunctionList.xml:133(entry)
 msgid "Indicates if an expression is less than another expression."
-msgstr ""
+msgstr "Zeigt an, ob ein Ausdruck kleiner als ein anderer Ausdruck ist."
 
 #. FunctionList.xml:136(entry)
 msgid "Less or equal (&lt;=)"
@@ -2824,7 +2824,7 @@ msgstr "Kleiner gleich (&lt;=)"
 
 #. FunctionList.xml:137(entry)
 msgid "Indicates if an expression is less or equal to another expression."
-msgstr ""
+msgstr "Zeigt an, ob ein Ausdruck kleiner oder gleich einem anderen Ausdruck ist."
 
 #. FunctionList.xml:140(entry)
 msgid "Equal (=)"
@@ -2832,7 +2832,7 @@ msgstr "Gleich (=)"
 
 #. FunctionList.xml:141(entry)
 msgid "Indicates if two expressions evaluate to the exact same value."
-msgstr ""
+msgstr "Zeigt an, ob zwei Ausdrücke exakt denselben Wert ergeben."
 
 #. FunctionList.xml:144(entry)
 msgid "Not equal (&lt;&gt;)"
@@ -2840,7 +2840,7 @@ msgstr "Ungleich (&lt;&gt;)"
 
 #. FunctionList.xml:145(entry)
 msgid "Indicates if two expressions does not evaluate to the exact same value."
-msgstr ""
+msgstr "Zeigt an, ob zwei Ausdrücke nicht exakt denselben Wert ergeben."
 
 #. FunctionList.xml:148(entry)
 msgid "Logical AND (and)"
@@ -2848,7 +2848,7 @@ msgstr "Logisches AND (und)"
 
 #. FunctionList.xml:149(entry)
 msgid "Indicates if two expressions both evaluate to a value different from 0."
-msgstr ""
+msgstr "Zeigt an, ob jeder der beiden Ausdrücke einen Wert ungleich Null ergibt."
 
 #. FunctionList.xml:152(entry)
 msgid "Logical OR (or)"
@@ -2856,7 +2856,7 @@ msgstr "Logisched OR (oder)"
 
 #. FunctionList.xml:153(entry)
 msgid "Indicates if at least one of two expressions evaluates to a value different from 0."
-msgstr ""
+msgstr "Zeigt an, ob mindestens einer von zwei Ausdrücken einen Wert ungleich Null ergibt."
 
 #. FunctionList.xml:156(entry)
 msgid "Logical XOR (xor)"
@@ -2864,7 +2864,7 @@ msgstr "Logisches XOR (exclusiv oder)"
 
 #. FunctionList.xml:157(entry)
 msgid "Indicates if exactly one of two expressions evaluates to a value different from 0."
-msgstr ""
+msgstr "Zeigt an, ob genau einer von zwei Ausdrücken einen Wert ungleich Null ergibt."
 
 #. FunctionList.xml:183(entry)
 msgid "Returns the sine of the argument, which may be in radians or degrees."
@@ -2920,7 +2920,7 @@ msgstr "Potenz und Logarithmus"
 
 #. FunctionList.xml:285(entry)
 msgid "Returns the square of the argument, i.e. the power of two."
-msgstr ""
+msgstr "Liefert das Quadrat des Arguments zurück, also hoch zwei."
 
 #. FunctionList.xml:289(entry)
 msgid "Returns e raised to the power of the argument."
@@ -2928,7 +2928,7 @@ msgstr ""
 
 #. FunctionList.xml:297(entry)
 msgid "Returns the n<superscript>th</superscript> root of the argument."
-msgstr ""
+msgstr "Liefert die n-te Wurzel des Arguments."
 
 #. FunctionList.xml:301(entry)
 msgid "Returns the logarithm with base e to the argument."
@@ -3048,7 +3048,7 @@ msgstr ""
 
 #. FunctionList.xml:437(title)
 msgid "Notice the following relations:"
-msgstr ""
+msgstr "Beachten Sie folgende Abhängigkeiten:"
 
 #. FunctionList.xml:440(member)
 msgid "sin(x)^2= (sin(x))^2"
@@ -3116,7 +3116,7 @@ msgstr ""
 
 #. FAQ.xml:40(para)
 msgid "Will Graph run on a Macintosh?"
-msgstr ""
+msgstr "Läuft Graph auf einem Macintosh?"
 
 #. FAQ.xml:45(para)
 msgid "As with the above, you cannot run Graph directly on a Mac. But it should be possible with some kind of Windows emulator."
@@ -3124,15 +3124,15 @@ msgstr ""
 
 #. FAQ.xml:53(para)
 msgid "When will the next version be released?"
-msgstr ""
+msgstr "Wann kommt die nächste Version?"
 
 #. FAQ.xml:58(para)
 msgid "When it is ready."
-msgstr ""
+msgstr "Wenn es feritig ist."
 
 #. FAQ.xml:66(para)
 msgid "How can I move the coordinate system?"
-msgstr ""
+msgstr "Wie kann ich das Koordinatensystem bewegen?"
 
 #. FAQ.xml:71(para)
 msgid "When you hold down the <keycap>Ctrl</keycap> key you can use the arrow keys to move the coordinate system. You can also use <placeholder-1/> and drag the coordinate system around with the mouse."
@@ -3140,7 +3140,7 @@ msgstr ""
 
 #. FAQ.xml:85(para)
 msgid "How can I easily zoom in and out?"
-msgstr ""
+msgstr "Wie kann man einfach zoomen?"
 
 #. FAQ.xml:90(para)
 msgid "When you hold down the <keycap>Ctrl</keycap> key you can use the <keycap>+</keycap> and <keycap>-</keycap> keys to zoom in and out. The scroll wheel on the mouse can be used for zooming at the cursor position. When you move the scroll wheel up the program will zoom into the coordinate system and center the graphing area at the position of the mouse cursor. When you move the scroll wheel down the program zooms out."
@@ -3148,7 +3148,7 @@ msgstr ""
 
 #. FAQ.xml:101(para)
 msgid "How do I save default settings?"
-msgstr ""
+msgstr "Wie speichert man die Voreinstellungen?"
 
 #. FAQ.xml:108(guilabel) AxesDialog.xml:258(term)
 msgid "Save as default"
@@ -3797,7 +3797,7 @@ msgstr ""
 
 #. Complex.xml:45(para)
 msgid "The <placeholder-1/> function returns the argument or angle of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. <placeholder-4/> always returns a real number. The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings. The angle is always between -&pi; and &pi;. If <placeholder-5/> is a real number, <placeholder-6/> is 0 for positive numbers and &pi; for negative numbers. <placeholder-7/> is undefined."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion liefert das Argument oder den Winkel von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> immer liefert eine reelle Zahl. Das Ergebnis kann in <glossterm>Rad</glossterm> oder Grad sein, abhängig von den aktuellen Einstellungen. Das Winkel ist immer zwischen -&pi; und &pi;. Wenn <placeholder-5/> eine reelle Zahl ist, ist <placeholder-6/> 0 für positive Zahlen und &pi; für negative Zahlen. <placeholder-7/> ist nicht definiert."
 
 #. Complex.xml:61(primary)
 msgid "conjugate"
@@ -3805,7 +3805,7 @@ msgstr ""
 
 #. Complex.xml:71(para)
 msgid "The <placeholder-1/> function returns the conjugate of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>. The function is defined as: <placeholder-4/>"
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion liefert die konjugierte Zahl von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Die Funktion ist folgendermaßen definiert: <placeholder-4/>"
 
 #. Complex.xml:83(primary)
 msgid "real value"
@@ -3813,7 +3813,7 @@ msgstr ""
 
 #. Complex.xml:93(para)
 msgid "The <placeholder-1/> function returns the real part of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion liefert den Realteil von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
 
 #. Complex.xml:104(primary)
 msgid "imaginary value"
@@ -3821,7 +3821,7 @@ msgstr ""
 
 #. Complex.xml:114(para)
 msgid "The <placeholder-1/> function returns the imaginary part of <placeholder-2/>. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-msgstr ""
+msgstr "Die <placeholder-1/>-Funktion liefert den Imaginärteill von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
 
 #. AxesDialog.xml:9(primary)
 msgid "Axes dialog"
@@ -3851,6 +3851,7 @@ msgstr "Pfeil"
 msgid "colors"
 msgstr "Farben"
 
+# It is probably a noun and not a verb.
 #. AxesDialog.xml:21(primary)
 #, fuzzy
 msgid "crossing"
@@ -4092,9 +4093,7 @@ msgstr "Animieren"
 msgid "animate"
 msgstr ""
 
-# Könnte - je nach Kontext - auch ein Adjektiv sein.
 #. AnimateDialog.xml:10(primary)
-#, fuzzy
 msgid "constant"
 msgstr "Konstante"
 
@@ -4364,6 +4363,10 @@ msgstr ""
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #. Acknowledgements.xml:0(None)
+#, fuzzy
 msgid "translator-credits"
 msgstr ""
+"Frank Hüttemeister <EMAIL>, 2004, 2009\n"
+"Sebastian Stütz <EMAIL>, 2004, 2009\n"
+"Michael Bach Ipsen <rosenthall@hotmail.com>, 2003, 2009"
 
