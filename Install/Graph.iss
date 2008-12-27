@@ -19,15 +19,16 @@ DisableProgramGroupPage=yes
 LicenseFile=License.txt
 ;Run on Windows 98 and up
 MinVersion = 4.1.1998,4.0.1381
-OutputBaseFilename=SetupGraphBeta-4.4.0.397
+OutputBaseFilename=SetupGraphBeta-4.4.0.423
 OutputDir=.
 SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.4.0.397
-
+VersionInfoVersion=4.4.0.423
+PrivilegesRequired=None
 
 [Languages]
 Name: "Arabic"; MessagesFile: "compiler:Languages\Arabic.isl"
+Name: "Basque"; MessagesFile: "compiler:Languages\Basque.isl"
 Name: "Chinese_Traditional"; MessagesFile: "compiler:Languages\ChineseTrad.isl"
 Name: "Chinese_Simplified"; MessagesFile: "compiler:Languages\ChineseSimp.isl"
 Name: "Croatian"; MessagesFile:  "compiler:Languages\Croatian.isl"
@@ -39,12 +40,15 @@ Name: "Finnish"; MessagesFile: "compiler:Languages\Finnish.isl"
 Name: "French"; MessagesFile: "compiler:Languages\French.isl"
 Name: "German"; MessagesFile: "compiler:Languages\German.isl"
 Name: "Greek"; MessagesFile: "compiler:Languages\Greek.isl"
+Name: "Hebrew"; MessagesFile: "compiler:Languages\Hebrew.isl"
 Name: "Hungarian"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "Italian"; MessagesFile: "compiler:Languages\Italian.isl"
+Name: "Korean"; MessagesFile: "compiler:Languages\Korean.isl"
 ;Name: "Mongolian"; MessagesFile: "compiler:Languages\Mongolian.isl"
 Name: "Norwegian"; MessagesFile:  "compiler:Languages\Norwegian.isl"
 Name: "Polish"; MessagesFile:  "compiler:Languages\Polish.isl"
-Name: "Portuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
+Name: "Portuguese_Brazil"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
+Name: "Portuguese_Portugal"; MessagesFile: "compiler:Languages\Portuguese.isl"
 Name: "Russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "Serbian"; MessagesFile: "compiler:Languages\Serbian.isl"
 Name: "Slovenian"; MessagesFile: "compiler:Languages\Slovenian.isl"
@@ -85,12 +89,8 @@ Filename: "{app}\Graph.exe"; Description: "{cm:LaunchProgram,Graph}"; Flags: now
 [Registry]
 Root: HKCU; Subkey: "Software\Classes\.grf"; ValueType: string; ValueName: ""; ValueData: "GraphFile"; Flags: uninsdeletevalue noerror; Tasks: not InstallAllUsers
 Root: HKLM; Subkey: "Software\Classes\.grf"; ValueType: string; ValueName: ""; ValueData: "GraphFile"; Flags: uninsdeletevalue noerror; Tasks: InstallAllUsers
-Root: HKCU; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "{language}"; Flags: noerror
-Root: HKCU; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "Chinese (Traditional)"; Flags: noerror; Languages: Chinese_Traditional
-Root: HKCU; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "Chinese (Simplified)"; Flags: noerror; Languages: Chinese_Simplified
-Root: HKLM; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "{language}"; Flags: noerror; Tasks: InstallAllUsers
-Root: HKLM; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "Chinese (Traditional)"; Flags: noerror; Tasks: InstallAllUsers; Languages: Chinese_Traditional
-Root: HKLM; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "Chinese (Simplified)"; Flags: noerror; Tasks: InstallAllUsers; Languages: Chinese_Simplified
+Root: HKCU; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "{code:GetLang}"; Flags: noerror
+Root: HKLM; Subkey: "Software\Ivan\Graph"; ValueType: string; ValueName: "Language"; ValueData: "{code:GetLang}"; Flags: noerror; Tasks: InstallAllUsers
 Root: HKCU; Subkey: "Software\Ivan\Graph"; Flags: uninsdeletekey noerror
 Root: HKLM; Subkey: "Software\Ivan\Graph"; Flags: uninsdeletekey noerror
 Root: HKLM; SubKey: "Software\Microsoft\Windows\CurrentVersion\Uninstall\Graph"; Flags: deletekey
@@ -107,6 +107,7 @@ Type: files; Name: "{app}\Examples\*.grf"
 Type: files; Name: "{userprograms}\Graph.lnk"
 Type: files; Name: "{commonprograms}\Graph.lnk"
 Type: files; Name: "{app}\Locale\Chinese.mo"
+Type: files; Name: "{app}\Locale\Portuguese.mo"
 
 [UninstallRun]
 Filename: "{app}\Graph.exe"; Parameters: "/unregserver"
@@ -132,7 +133,8 @@ InstallAllUsers=Install for all users
 Danish.InstallAllUsers=Installér for alle brugere
 German.InstallAllUsers=Für alle Benutzer installieren
 Spanish.InstallAllUsers=Instalar para todos los usuarios
-Portuguese.InstallAllUsers=Instala para todos os usuários
+Portuguese_Brazil.InstallAllUsers=Instala para todos os usuários
+Portuguese_Portugal.InstallAllUsers=Instala para todos os usuários
 Italian.InstallAllUsers=Installa per tutti gli utenti
 Hungarian.InstallAllUsers=Telepítés minden felhasználónak
 Slovenian.InstallAllUsers=Namesti za vse uporabnike
@@ -171,3 +173,12 @@ begin
   RegDeleteKeyIncludingSubkeys(HKEY_LOCAL_MACHINE, 'Software\Classes\GraphTest');
 end;
 
+function GetLang(S:string):string;
+var
+  I : Byte;
+begin
+  Result := ActiveLanguage();
+  I := Pos('_', Result);
+  if I <> 0 then
+    Result := Copy(Result, 1, I-1) + ' (' + Copy(Result, I+1, MaxInt) + ')';
+end;
