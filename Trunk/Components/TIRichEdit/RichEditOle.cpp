@@ -245,8 +245,7 @@ bool TRichEditOle::InsertObject()
 	OleCheck(LOG_FUNCTION_CALL(RichEditCallback->GetNewStorage(&Stg)));
 
 	//Display the InsertObject dialog
-	TCHAR Buf[MAX_PATH];
-	Buf[0] = 0;
+	TCHAR Buf[MAX_PATH] = {0};
 	OLEUIINSERTOBJECT io;
 
 	memset(&io, 0, sizeof(io));
@@ -255,7 +254,7 @@ bool TRichEditOle::InsertObject()
 		IOF_SELECTCREATENEW | IOF_CREATELINKOBJECT;
 	io.hWndOwner = RichEdit->Handle;
 	io.lpszFile = Buf;
-	io.cchFile = sizeof(Buf);
+	io.cchFile = MAX_PATH;
 	io.iid = IID_IOleObject;
 	io.oleRender = OLERENDER_DRAW;
 	io.lpIOleClientSite = ClientSite;
