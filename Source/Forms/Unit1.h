@@ -394,6 +394,7 @@ __published:	// IDE-managed Components
   void __fastcall StatusBar1Hint(TObject *Sender);
   void __fastcall Image1Click(TObject *Sender);
   void __fastcall FormShortCut(TWMKey &Msg, bool &Handled);
+  void __fastcall TreeViewMouseLeave(TObject *Sender);
 
 
 private:	// User declarations

@@ -2145,6 +2145,7 @@ void __fastcall TForm1::ZoomStandardActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::PathActionExecute(TObject *Sender)
 {
+  PathAction->Checked = !PathAction->Checked;
   if(PathAction->Checked)
     Form9->SetEvalType(etArc);
   else
@@ -2153,6 +2154,7 @@ void __fastcall TForm1::PathActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::AreaActionExecute(TObject *Sender)
 {
+  AreaAction->Checked = !AreaAction->Checked;
   if(AreaAction->Checked)
     Form9->SetEvalType(etArea);
   else
@@ -2161,6 +2163,7 @@ void __fastcall TForm1::AreaActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::EvalActionExecute(TObject *Sender)
 {
+  EvalAction->Checked = !EvalAction->Checked;
   if(EvalAction->Checked)
   {
     Form9->SetEvalType(etEval);
@@ -3763,6 +3766,10 @@ void __fastcall TForm1::FormShortCut(TWMKey &Msg, bool &Handled)
   TShortCut ShortCut = TextToShortCut("Ctrl+Shift+-");
 }
 //---------------------------------------------------------------------------
-
-
+void __fastcall TForm1::TreeViewMouseLeave(TObject *Sender)
+{
+  if(StatusBar1->AutoHint)
+    ShowStatusMessage(L"", true);
+}
+//---------------------------------------------------------------------------
 

@@ -308,6 +308,7 @@ object Form1: TForm1
       OnKeyDown = TreeViewKeyDown
       OnKeyPress = TreeViewKeyPress
       OnMouseDown = TreeViewMouseDown
+      OnMouseLeave = TreeViewMouseLeave
       OnMouseMove = TreeViewMouseMove
     end
     object Panel1: TPanel
@@ -4161,7 +4162,6 @@ object Form1: TForm1
     end
     object PathAction: TAction
       Category = 'Calc'
-      AutoCheck = True
       Caption = 'Length of path'
       GroupIndex = 1
       Hint = 
@@ -4172,7 +4172,6 @@ object Form1: TForm1
     end
     object AreaAction: TAction
       Category = 'Calc'
-      AutoCheck = True
       Caption = 'Area'
       GroupIndex = 1
       Hint = 'Calculate the area under the path of the selected function.'
@@ -4181,7 +4180,6 @@ object Form1: TForm1
     end
     object EvalAction: TAction
       Category = 'Calc'
-      AutoCheck = True
       Caption = 'Evaluate'
       GroupIndex = 1
       Hint = 'Evaluate or trace the selected function.'
