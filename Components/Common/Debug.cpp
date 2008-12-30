@@ -77,7 +77,7 @@ HRESULT DebugLogFunctionCall(const char *Name, const TNameValue List[], HRESULT 
   {
     std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
     if(out)
-      out << "\n  {" << Name << " : " << ValueToStr(List, Result).c_str() << "} " << std::flush;
+      out << "\n  {" << Name << " : " << AnsiString(ValueToStr(List, Result)).c_str() << "} " << std::flush;
   }
   return Result;
 }
