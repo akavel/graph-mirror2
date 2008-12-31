@@ -125,7 +125,7 @@
 		     			<entry>Indicates if an expression is greater than another expression.</entry>
 		      		</row>
 		     		<row>
-		     			<entry>Greater or equal (>=)</entry>
+		     			<entry>Greater than or equal to (>=)</entry>
 		     			<entry>Indicates if an expression is greater or equal to another expression.</entry>
 		      		</row>
 		     		<row>
@@ -133,7 +133,7 @@
 		     			<entry>Indicates if an expression is less than another expression.</entry>
 		      		</row>
 		     		<row>
-		     			<entry>Less or equal (&lt;=)</entry>
+		     			<entry>Less than or equal to (&lt;=)</entry>
 		     			<entry>Indicates if an expression is less or equal to another expression.</entry>
 		      		</row>
 		     		<row>
