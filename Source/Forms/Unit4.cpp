@@ -16,6 +16,7 @@
 #include "Unit4.h"
 #include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
+#pragma link "CheckBoxEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)

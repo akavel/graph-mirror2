@@ -4,6 +4,7 @@ object StdFuncFrame: TStdFuncFrame
   Width = 184
   Height = 167
   Anchors = [akLeft, akTop, akRight]
+  ParentBackground = False
   TabOrder = 0
   DesignSize = (
     184

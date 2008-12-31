@@ -117,6 +117,8 @@ object Form9: TForm9
           Control = AreaFrame1.Edit3
           Row = 2
         end>
+      ExplicitWidth = 184
+      ExplicitHeight = 102
       inherited Label1: TLabel
         Width = 26
         ExplicitWidth = 26
@@ -125,11 +127,15 @@ object Form9: TForm9
         Left = 34
         Width = 146
         OnChange = Edit1Change
+        ExplicitLeft = 34
+        ExplicitWidth = 146
       end
       inherited Edit2: TMyEdit
         Left = 34
         Width = 146
         OnChange = Edit1Change
+        ExplicitLeft = 34
+        ExplicitWidth = 146
       end
       inherited Label3: TLabel
         Width = 22
@@ -138,6 +144,8 @@ object Form9: TForm9
       inherited Edit3: TEdit
         Left = 34
         Width = 146
+        ExplicitLeft = 34
+        ExplicitWidth = 146
       end
     end
   end

@@ -80,9 +80,29 @@ void FlipAnchors(TControl *Control)
   if(Control->Anchors.Contains(akLeft)) Anchors << akRight;
   if(Control->Anchors.Contains(akRight)) Anchors << akLeft;
   Control->Anchors = Anchors;
+
+  Control->Margins->SetBounds(
+    Control->Margins->Right,
+    Control->Margins->Top,
+    Control->Margins->Left,
+    Control->Margins->Bottom);
+
   if(TWinControl *WinControl = dynamic_cast<TWinControl*>(Control))
     for(int I = 0; I < WinControl->ControlCount; I++)
       FlipAnchors(WinControl->Controls[I]);
+}
+//---------------------------------------------------------------------------
+void FlipMargins(TControl *Control)
+{
+  Control->Margins->SetBounds(
+    Control->Margins->Right,
+    Control->Margins->Top,
+    Control->Margins->Left,
+    Control->Margins->Bottom);
+
+  if(TWinControl *WinControl = dynamic_cast<TWinControl*>(Control))
+    for(int I = 0; I < WinControl->ControlCount; I++)
+      FlipMargins(WinControl->Controls[I]);
 }
 //---------------------------------------------------------------------------
 void ScaleForm(TForm *Form, bool Flip)
@@ -90,9 +110,10 @@ void ScaleForm(TForm *Form, bool Flip)
   if(Flip && SysLocale.MiddleEast)
   {
     Form->FlipChildren(true);
-    Form->ParentBiDiMode = true;
     if(Form->BorderStyle != bsDialog)
       FlipAnchors(Form);
+    FlipMargins(Form);
+    Form->ParentBiDiMode = true;
   }
 
   //Set FontScale to 100 to disable scaling

@@ -16,6 +16,7 @@
 #include <vcl\Forms.hpp>
 #include <vcl\ExtCtrls.hpp>
 #include <ComCtrls.hpp>
+#include "CheckBoxEx.h"
 //---------------------------------------------------------------------------
 class TForm4 : public TForm
 {
@@ -38,10 +39,10 @@ __published:	// IDE-managed Components
   TComboBox *ComboBox1;
   TComboBox *ComboBox2;
   TLabel *Label4;
-  TCheckBox *CheckBox1;
-  TCheckBox *CheckBox2;
-  TCheckBox *CheckBox3;
-  TCheckBox *CheckBox4;
+  TCheckBoxEx *CheckBox1;
+  TCheckBoxEx *CheckBox2;
+  TCheckBoxEx *CheckBox3;
+  TCheckBoxEx *CheckBox4;
 	void __fastcall Button1Click(TObject *Sender);
   void __fastcall Button3Click(TObject *Sender);
   void __fastcall ComboBox1KeyPress(TObject *Sender, char &Key);

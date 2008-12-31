@@ -4,6 +4,7 @@ object PolFuncFrame: TPolFuncFrame
   Width = 184
   Height = 230
   Anchors = [akLeft, akTop, akRight]
+  ParentBackground = False
   TabOrder = 0
   DesignSize = (
     184

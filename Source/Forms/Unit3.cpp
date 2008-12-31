@@ -14,6 +14,8 @@
 //---------------------------------------------------------------------------
 #pragma link "ExtColorBox"
 #pragma link "MyEdit"
+#pragma link "CheckBoxEx"
+#pragma link "GridPanelEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
@@ -68,11 +70,8 @@ __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
   NumberFont = Axes.NumberFont;
   LegendFont = Axes.LegendFont;
 
-  //Make sure the check boxes have space enough
-  CheckBox6->Width = Width;
-  CheckBox7->Width = Width;
-  CheckBox13->Width = Width;
-  CheckBox14->Width = Width;
+  Panel1->Align = alClient;
+  Panel2->Align = alClient;
 
   ScaleForm(this);
   UpdateEnabledControls();
@@ -85,33 +84,6 @@ void TForm3::Translate()
   TranslateStrings(ExtColorBox2->Items);
   TranslateStrings(ExtColorBox3->Items);
   SetAccelerators(this);
-
-  int Left = Label1->Left + TMaxWidth(Label1)(Label2)(Label3)(Label14) + 5;
-  ResizeControl(Edit1, Left);
-  ResizeControl(Edit2, Left);
-  ResizeControl(Edit3, Left);
-  ResizeControl(Edit4, Left);
-  ResizeControl(Edit7, Left);
-  ResizeControl(Edit8, Left);
-  ResizeControl(Edit9, Left);
-  ResizeControl(Edit10, Left);
-
-  Left = Label4->Left + TMaxWidth(Label4)(Label8) + 5;
-  ResizeControl(Edit6, Left);
-  ResizeControl(Edit12, Left);
-  ResizeControl(Edit13, Label16);
-
-  Left = CheckBox4->Left + TMaxWidth(CheckBox4) + 25;
-  CheckBox6->Left = Left;
-  CheckBox7->Left = Left;
-  CheckBox13->Left = Left;
-  CheckBox14->Left = Left;
-
-  Left = CheckBox3->Left + TMaxWidth(CheckBox3) + 20;
-  CheckBox3->Width = Left - CheckBox3->Left;
-  CheckBox10->Width = Left - CheckBox3->Left;
-  ResizeControl(Edit5, Left);
-  ResizeControl(Edit11, Left);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm3::Button1Click(TObject *Sender)
@@ -272,10 +244,6 @@ void __fastcall TForm3::BitBtn3Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void TForm3::UpdateEnabledControls()
 {
-  //Min and Max for the y-axis are not available when Zoom|Square is enabled.
-//  Edit7->Enabled = !Data.Axes.ZoomSquare;
-//  Edit8->Enabled = !Data.Axes.ZoomSquare;
-
   Edit3->Enabled = !CheckBox4->Checked;
   Edit4->Enabled = !CheckBox5->Checked;
   Edit5->Enabled = CheckBox3->Checked;
@@ -353,4 +321,5 @@ void __fastcall TForm3::CheckBox15Click(TObject *Sender)
   RadioGroup3->Enabled = CheckBox15->Checked;
 }
 //---------------------------------------------------------------------------
+
 

@@ -249,7 +249,7 @@ inline std::wostream& operator<<(std::wostream &Stream, const String &Str)
 
 inline std::ostream& operator<<(std::ostream &Stream, const String &Str)
 {
-  return Stream << Str.c_str();
+  return Stream << AnsiString(Str).c_str();
 }
 
 inline std::wostream& operator<<(std::wostream &Stream, TColor Color)

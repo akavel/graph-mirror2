@@ -101,7 +101,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
     for(unsigned I = 0; I < Count; I++)
     {
       Points.push_back(Series->GetPoint(I));
-      if(Series->yErrorBarType != ebtNone)
+      if(Series->yErrorBarType == ebtCustom)
       {
         double yError = Series->GetYError(I);
         if(yError == 0)
