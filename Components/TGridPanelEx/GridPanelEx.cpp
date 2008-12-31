@@ -39,8 +39,11 @@ void TGridPanelEx::RecalcCellDimensions(const TRect &Rect)
   double PercentX = 0.0;
   double PercentY = 0.0;
   int PercentXCount = 0;
+  int MaxSize[30] = {0};
   for(int I = 0; I < FColumnCollection->Count; I++)
   {
+    if(I > 0)
+      MaxSize[I] = Max(0, MaxSize[I] - MaxSize[I-1]);
     if(FColumnCollection->Items[I]->SizeStyle == ssAbsolute)
       XSize -= FColumnCollection->Items[I]->Value;
     else if(FColumnCollection->Items[I]->SizeStyle == ssPercent)
@@ -50,22 +53,20 @@ void TGridPanelEx::RecalcCellDimensions(const TRect &Rect)
     }
     else
     {
-      int MaxSize = 0;
       for(int J = 0; J < FRowCollection->Count; J++)
       {
         TControlItem *ControlItem = FControlCollection->ControlItems[I][J];
         if(ControlItem != NULL && ControlItem->Control != NULL &&
-           ControlItem->Column == I && ControlItem->Row == J &&
-           ControlItem->ColumnSpan == 1) //Added by Ivan to prevent the coloumn to fit to a control that spans more columns anyway
+           ControlItem->Column == I && ControlItem->Row == J)
         {
           int LSize = ControlItem->Control->Margins->ControlWidth + Padding->Left + Padding->Right;
-          if(LSize > MaxSize)
-            MaxSize = LSize;
+          if(LSize > MaxSize[I + ControlItem->ColumnSpan - 1])
+            MaxSize[I + ControlItem->ColumnSpan - 1] = LSize;
         }
       }
 
-      XSize -= MaxSize;
-      FColumnCollection->Items[I]->Size = MaxSize;
+      XSize -= MaxSize[I];
+      FColumnCollection->Items[I]->Size = MaxSize[I];
     }
   }
 
@@ -140,7 +141,8 @@ void TGridPanelEx::RecalcCellDimensions(const TRect &Rect)
 //---------------------------------------------------------------------------
 void __fastcall TGridPanelEx::UpdateControlOriginalParentSize(TControl *AControl, TPoint &AOriginalParentSize)
 {
-  if(FRecalcCellSizes && HandleAllocated())
+  //Always update grid cell sizes when a control changes its size
+  if(/*FRecalcCellSizes &&*/ HandleAllocated())
   {
     TRect Rect = GetClientRect();
     AdjustClientRect(Rect);
@@ -194,26 +196,26 @@ void TGridPanelEx::AdjustCellRect(TRect &Rect)
 //---------------------------------------------------------------------------
 void TGridPanelEx::ArrangeControls(TRect &Rect)
 {
-/*  var
-    I, J, K: Integer;
-    CellRect: TRect;
-    SpanRect: TRect;
-    ControlItem: TControlItem;
-    AlignInfo: TAlignInfo;
-*/
   TAlignInfo AlignInfo;
   AlignInfo.ControlIndex = 0;
   AlignInfo.AlignList = new TList;
   TRect CellRect;
   CellRect.Top = Rect.Top;
+  bool RightToLeft = UseRightToLeftAlignment();
   for(int J = 0; J < FRowCollection->Count; J++)
   {
-    CellRect.Left = Rect.Left;
+    if(RightToLeft) //Added by Ivan: Check for Right to Left
+      CellRect.Right = Rect.Right;
+    else
+      CellRect.Left = Rect.Left;
     CellRect.Bottom = CellRect.Top + FRowCollection->Items[J]->Size;
     for(int I = 0; I < FColumnCollection->Count; I++)
     {
       TControlItem *ControlItem = FControlCollection->ControlItems[I][J];
-      CellRect.Right = CellRect.Left + FColumnCollection->Items[I]->Size;
+      if(RightToLeft)
+        CellRect.Left = CellRect.Right - FColumnCollection->Items[I]->Size;
+      else
+        CellRect.Right = CellRect.Left + FColumnCollection->Items[I]->Size;
       if(ControlItem != NULL && ControlItem->Control != NULL &&
          ControlItem->Column == I && ControlItem->Row == J)
       {
@@ -223,14 +225,20 @@ void TGridPanelEx::ArrangeControls(TRect &Rect)
         TRect SpanRect = CellRect;
         if(ControlItem->ColumnSpan > 1)
           for(int K = I + 1; K < Min(I + ControlItem->ColumnSpan, FColumnCollection->Count); K++)
-            SpanRect.Right += FColumnCollection->Items[K]->Size;
+            if(RightToLeft)
+              SpanRect.Left -= FColumnCollection->Items[K]->Size;
+            else
+              SpanRect.Right += FColumnCollection->Items[K]->Size;
         if(ControlItem->RowSpan > 1)
           for(int K = J + 1; K < Min(J + ControlItem->RowSpan, FRowCollection->Count); K++)
             SpanRect.Bottom += FRowCollection->Items[K]->Size;
         AdjustCellRect(SpanRect);
         ArrangeControlInCell(ControlItem->Control, SpanRect, AlignInfo);
       }
-      CellRect.Left = CellRect.Right;
+      if(RightToLeft)
+        CellRect.Right = CellRect.Left;
+      else
+        CellRect.Left = CellRect.Right;
     }
     CellRect.Top = CellRect.Bottom;
   }
