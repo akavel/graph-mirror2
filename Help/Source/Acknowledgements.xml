@@ -153,6 +153,12 @@
 							<entry><personname>Gabor Magyari</personname></entry>
 						</row>
 
+            <row>
+              <entry>Hebrew</entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+              <entry><personname>רודני דני</personname></entry>
+            </row>
 						<row>
 							<entry>Italian</entry>
 							<entry>Yes</entry>
@@ -189,10 +195,17 @@
 						</row>
 
 						<row>
-							<entry>Portuguese</entry>
+							<entry>Portuguese (Brazil)</entry>
 							<entry>Yes</entry>
 							<entry>No</entry>
 							<entry><personname>Jorge, Mara, Deivid &amp; Fernanda</personname></entry>
+						</row>
+
+						<row>
+							<entry>Portuguese (Portugal)</entry>
+							<entry>Yes</entry>
+							<entry>No</entry>
+							<entry><personname>Jorge Geraldes</personname></entry>
 						</row>
 
 						<row>

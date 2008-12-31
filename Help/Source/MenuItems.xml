@@ -350,7 +350,7 @@
 					</term>
 					<listitem>
 						<para>
-							Inserts a trendline as the curve curve of best fit for the selected point series.
+							Inserts a trendline as the curve of best fit for the selected point series.
 							You may choose between different kinds of functions for the trendline.
 						</para>
 					</listitem>
