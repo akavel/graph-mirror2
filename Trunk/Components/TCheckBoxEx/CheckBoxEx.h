@@ -10,6 +10,7 @@
 class PACKAGE TCheckBoxEx : public TCheckBox
 {
 private:
+  bool FAutoSize;
   void __fastcall CMTextChanged(TMessage &Message);
   void __fastcall CMFontChanged(TMessage &Message);
 
@@ -19,12 +20,14 @@ BEGIN_MESSAGE_MAP
 END_MESSAGE_MAP(TCheckBox)
 
 protected:
-  bool __fastcall CanAutoSize(int &NewWidth, int &NewHeight);
+//  bool __fastcall CanAutoSize(int &NewWidth, int &NewHeight);
+  void AdjustBounds();
+  void __fastcall Loaded();
 
 public:
   __fastcall TCheckBoxEx(TComponent* Owner);
 __published:
-  __property AutoSize;
+  __property bool AutoSize = {read=FAutoSize, write=FAutoSize, default=true};
 };
 //---------------------------------------------------------------------------
 #endif

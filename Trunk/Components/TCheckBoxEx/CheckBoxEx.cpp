@@ -22,34 +22,42 @@ namespace Checkboxex
 }
 //---------------------------------------------------------------------------
 __fastcall TCheckBoxEx::TCheckBoxEx(TComponent* Owner)
-  : TCheckBox(Owner)
+  : TCheckBox(Owner), FAutoSize(true)
 {
-  AutoSize = true;
 }
 //---------------------------------------------------------------------------
-bool __fastcall TCheckBoxEx::CanAutoSize(int &NewWidth, int &NewHeight)
+void TCheckBoxEx::AdjustBounds()
 {
-  HDC DC = GetDC(Handle);
-  SelectObject(DC, Font->Handle);
-  SIZE Size;
-  bool Result = GetTextExtentPoint32(DC, Caption.c_str(), Caption.Length(), &Size);
-  ReleaseDC(Handle, DC);
-  int CheckWidth = GetSystemMetrics(SM_CXMENUCHECK);
-//  int BorderWidth = GetSystemMetrics(SM_CXBORDER);
-  NewWidth = Size.cx + CheckWidth + 6;
-  return Result;
+  if(!ComponentState.Contains(csReading) && !ComponentState.Contains(csLoading)&& AutoSize)
+  {
+    HDC DC = GetDC(0);
+    SelectObject(DC, Font->Handle);
+    SIZE Size;
+    GetTextExtentPoint32(DC, Caption.c_str(), Caption.Length(), &Size);
+    ReleaseDC(0, DC);
+    int CheckWidth = GetSystemMetrics(SM_CXMENUCHECK);
+    int NewWidth = Size.cx + CheckWidth + 6;
+    Width = NewWidth;
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TCheckBoxEx::CMTextChanged(TMessage &Message)
 {
+  TCheckBox::Dispatch(&Message);
   Invalidate();
-  AdjustSize();
+  AdjustBounds();
 }
 //---------------------------------------------------------------------------
 void __fastcall TCheckBoxEx::CMFontChanged(TMessage &Message)
 {
   TCheckBox::Dispatch(&Message);
-  AdjustSize();
+  AdjustBounds();
+}
+//---------------------------------------------------------------------------
+void __fastcall TCheckBoxEx::Loaded()
+{
+  TCheckBox::Loaded();
+  AdjustBounds();
 }
 //---------------------------------------------------------------------------
 
