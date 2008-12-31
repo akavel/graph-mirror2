@@ -5,6 +5,7 @@ object TanFrame: TTanFrame
   Height = 69
   HelpContext = 100
   Anchors = [akLeft, akTop, akRight]
+  ParentBackground = False
   TabOrder = 0
   DesignSize = (
     184

@@ -86,7 +86,7 @@ TOleServerImpl::TOleServerImpl()
   {
     out << std::endl << std::endl;
     out << "PID: 0x" << std::hex << std::uppercase << std::setw(8) << std::setfill('0') << GetCurrentProcessId() << std::endl;
-    out << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
+    out << "Date: " << DateTimeToStr(Now()) << std::endl;
     out << __FUNC__ << "(CmdLine=" << CmdLine << ")";
   }
 #endif
@@ -114,7 +114,7 @@ void TOleServerImpl::DebugFunctionCall(const String &Str)
 {
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
   if(out)
-    out << std::endl << Str.c_str();
+    out << std::endl << Str;
 }
 //---------------------------------------------------------------------------
 HRESULT TOleServerImpl::DebugLogReturn(HRESULT Result)
@@ -129,14 +129,14 @@ void TOleServerImpl::DebugLogArg(const String &Str)
 {
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
   if(out)
-    out << "(" << Str.c_str() << ")" << std::flush;
+    out << "(" << Str << ")" << std::flush;
 }
 //---------------------------------------------------------------------------
 void TOleServerImpl::DebugLogData(const String &Str)
 {
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
   if(out)
-    out << ", [" << Str.c_str() << "]" << std::flush;
+    out << ", [" << Str << "]" << std::flush;
 }
 //---------------------------------------------------------------------------
 String TOleServerImpl::ClipboardFormatToStr(CLIPFORMAT Format)
@@ -1016,7 +1016,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Save(
   ConfigFile.Section(L"Image").Write(L"Width", GetWidth());
   ConfigFile.Section(L"Image").Write(L"Height", GetHeight());
   Str = ConfigFile.GetAsString();
-  RawByteString Utf8Str = UTF8Encode(ToUString(Str.c_str()));
+  RawByteString Utf8Str = UTF8Encode(ToUString(Str));
 
   HRESULT Result = S_OK;
   if(FAILED(LOG_FUNCTION_CALL(Stream->Write(Utf8Str.c_str(), Utf8Str.Length(), NULL))))

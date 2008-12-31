@@ -27,7 +27,7 @@ ASAP
 - Create a real forum. Look at phpBB
 - Numbers next to tick marks (currently F9)
 - Show end points (arrows) at each line segment.
-- Use error bars when calculating trendlines (http://www-users.york.ac.uk/~mdc1/num_meth_files/weightedlsqsol.html)
++ Use error bars when calculating trendlines (http://www-users.york.ac.uk/~mdc1/num_meth_files/weightedlsqsol.html)
 
 Graph 4.3
 - Animation Player: Add buttons to move to first and last frame for easy compare.
@@ -135,6 +135,7 @@ To be considered
 - Create Zoom toolbar with Zoom in/out x/y-axis icons.
 - In a grid with a selection, the place of the cursor is marked marked with blue, which may be confusing to some.
 - Add a way to write notes, e.g. add a a tab to the Python interpretter frame. This could be used to write notes that don't belong in the image, like the text in "Solar system.grf".
+- Show uncertainty for each calculated constand when creating a trendline. (See email from Mike Cohler)
 
 Plugins:
 - Cirlce item
@@ -149,6 +150,7 @@ Plugins:
 - Plot triangles created from side lengths and/or angles
 - Copy only part of the image.
 - Change how much Zoom|In and Zoom|Out should zoom, e.g. PI/180.
+- Store window size in grf-file and restore it when the file is opened.
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>

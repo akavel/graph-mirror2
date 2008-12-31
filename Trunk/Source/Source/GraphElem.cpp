@@ -30,10 +30,25 @@ TTextValue::TTextValue(double AValue) : Value(AValue)
 //---------------------------------------------------------------------------
 void TTextValue::Update(const TData &Data)
 {
+  //Optimize for numbers
   try
   {
     if(Text.empty())
       return; //Nothing to update. It is already +/-INF
+
+    //Make sure there is no 'e' (Euler's constant) as it will be interpretted as 'E'
+    if(Text.find(L"e") == std::wstring::npos)
+    {
+      Value = boost::lexical_cast<double>(Text);
+      return;
+    }
+  }
+  catch(boost::bad_lexical_cast &E)
+  {
+  }
+
+  try
+  {
     Value = Data.Calc(Text);
   }
   catch(Func32::EFuncError &E)
@@ -56,6 +71,20 @@ void TTextValue::Set(const std::wstring AText, const TData &Data, bool IgnoreErr
     Value = -INF;
   }
   else
+  {
+    //Optimize for numbers
+    try
+    {
+      //Make sure there is no 'e' (Euler's constant) as it will be interpretted as 'E'
+      if(Text.find(L"e") == std::wstring::npos)
+      {
+        Value = boost::lexical_cast<double>(Text);
+        return;
+      }
+    }
+    catch(boost::bad_lexical_cast &E)
+    {
+    }
     try
     {
       Value = Data.Calc(Text);
@@ -67,6 +96,7 @@ void TTextValue::Set(const std::wstring AText, const TData &Data, bool IgnoreErr
       Text = L"";
       Value = NAN;
     }
+  }
 }
 //---------------------------------------------------------------------------
 std::wostream& operator<<(std::wostream &Stream, const TTextValue &TextValue)
@@ -604,42 +634,8 @@ void TShade::Update()
 TPointSeriesPoint::TPointSeriesPoint(const TData &Data, const std::wstring &X, const std::wstring &Y, const std::wstring &XError, const std::wstring &YError, bool IgnoreErrors)
   : xError(XError.empty() ? 0 : Data.Calc(XError), XError), yError(YError.empty() ? 0 : Data.Calc(YError), YError)
 {
-  x.Text = X;
-  y.Text = Y;
-
-  // Optimize for the case of numbers. If the text is not a valid number, fall back to calling Calc() to parse an expression
-  try
-  {
-    //Make sure there is no 'e' (Euler's constant) as it will be interpretted as 'E'
-    if(X.find(L"e") == std::wstring::npos && Y.find(L"e") == std::wstring::npos)
-    {
-      x.Value = boost::lexical_cast<double>(X);
-      y.Value = boost::lexical_cast<double>(Y);
-      return;
-    }
-  }
-  catch(boost::bad_lexical_cast &E)
-  {
-  }
-
-  //Allow calculation errors but not parse errors
-  try
-  {
-    x.Value = Data.Calc(X);
-    y.Value = Data.Calc(Y);
-  }
-  catch(Func32::ECalcError &E)
-  {
-    x.Value = NAN;
-    y.Value = NAN;
-  }
-  catch(...)
-  {
-    if(!IgnoreErrors)
-      throw;
-    x.Value = NAN;
-    y.Value = NAN;
-  }
+  x.Set(X, Data, IgnoreErrors);
+  y.Set(Y, Data, IgnoreErrors);
 }
 //---------------------------------------------------------------------------
 TPointSeries::TPointSeries()
@@ -739,10 +735,10 @@ void TPointSeries::ReadFromIni(const TConfigFileSection &Section)
 
     try
     {
-//      using boost::lexical_cast;
-//      if(BackwardCompatibility)
-//        PointList.push_back(TPointSeriesPoint(lexical_cast<double>(x), lexical_cast<double>(y), xError.empty() ? 0.0 : lexical_cast<double>(yError), xError.empty() ? 0.0 : lexical_cast<double>(yError)));
-//      else
+/*      using boost::lexical_cast;
+      if(BackwardCompatibility)
+        PointList.push_back(TPointSeriesPoint(lexical_cast<double>(x), lexical_cast<double>(y), xError.empty() ? 0.0 : lexical_cast<double>(yError), xError.empty() ? 0.0 : lexical_cast<double>(yError)));
+      else*/
         PointList.push_back(TPointSeriesPoint(GetData(), x, y, xError, yError));
     }
     catch(Func32::EParseError &E)
@@ -817,22 +813,10 @@ void TPointSeries::Update()
 {
   for(unsigned I = 0; I < PointList.size(); I++)
   {
-    try
-    {
-      PointList[I].x.Value = GetData().Calc(PointList[I].x.Text);
-      PointList[I].y.Value = GetData().Calc(PointList[I].y.Text);
-      if(!PointList[I].xError.Text.empty())
-        PointList[I].xError.Value = GetData().Calc(PointList[I].xError.Text);
-      if(!PointList[I].yError.Text.empty())
-        PointList[I].yError.Value = GetData().Calc(PointList[I].yError.Text);
-    }
-    catch(Func32::EFuncError &E)
-    {
-      PointList[I].x.Value = NAN;
-      PointList[I].y.Value = NAN;
-      PointList[I].xError.Value = NAN;
-      PointList[I].yError.Value = NAN;
-    }
+    PointList[I].x.Update(GetData());
+    PointList[I].y.Update(GetData());
+    PointList[I].xError.Update(GetData());
+    PointList[I].yError.Update(GetData());
   }
 }
 //---------------------------------------------------------------------------

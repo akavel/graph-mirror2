@@ -44,16 +44,6 @@ void TForm9::Translate()
   TranslateStrings(PolFuncFrame1->ComboBox1->Items);
   AreaFrame1->Label3->Caption = LoadRes(EvalType == etArea ? RES_AREA : RES_LENGTH) + L':';
   SetAccelerators(this);
-/*
-  int Left = AreaFrame1->Label1->Left + TMaxWidth(AreaFrame1->Label1)(AreaFrame1->Label2)(Canvas->TextWidth(LoadRes(RES_AREA)))(Canvas->TextWidth(LoadRes(RES_LENGTH))) + 5;
-  int Width = AreaFrame1->Width - Left - 9;
-  AreaFrame1->Edit1->Left = Left;
-  AreaFrame1->Edit1->Width = Width;
-  AreaFrame1->Edit2->Left = Left;
-  AreaFrame1->Edit2->Width = Width;
-  AreaFrame1->Edit3->Left = Left;
-  AreaFrame1->Edit3->Width = Width;
-*/
   ResizeControl(StdFuncFrame1->ComboBox1, StdFuncFrame1->Label5);
   ResizeControl(ParFuncFrame1->ComboBox1, ParFuncFrame1->Label7);
   ResizeControl(PolFuncFrame1->ComboBox1, PolFuncFrame1->Label7);
@@ -274,7 +264,7 @@ void TForm9::SetEvalType(TEvalType AEvalType)
     case etArc:
       AreaFrame1->Label3->Caption = LoadRes(EvalType == etArea ? RES_AREA : RES_LENGTH) + L':';
       Caption = LoadRes(EvalType == etArea ? 522 : 523);
-      //Update grid panel. Setting AutoSize=true might have working if it was accesible
+      //Update grid panel. Setting AutoSize=true might have worked if it was accesible
       AreaFrame1->GridPanel1->Align = alNone;
       AreaFrame1->GridPanel1->Align = alClient;
       break;

@@ -192,7 +192,7 @@ object Form4: TForm4
     object ComboBox1: TComboBox
       Left = 102
       Top = 112
-      Width = 123
+      Width = 139
       Height = 21
       Hint = 
         'This is used to scale the user interface if you are having probl' +
@@ -214,7 +214,7 @@ object Form4: TForm4
     object ComboBox2: TComboBox
       Left = 102
       Top = 144
-      Width = 123
+      Width = 139
       Height = 21
       Hint = 'Select the language to use for the user interface.'
       Style = csDropDownList
@@ -223,10 +223,10 @@ object Form4: TForm4
       Sorted = True
       TabOrder = 7
     end
-    object CheckBox1: TCheckBox
+    object CheckBox1: TCheckBoxEx
       Left = 16
       Top = 176
-      Width = 274
+      Width = 104
       Height = 17
       Hint = 'Associate *.grf files with Graph.'
       Anchors = [akLeft, akTop, akRight]
@@ -235,10 +235,10 @@ object Form4: TForm4
       ShowHint = True
       TabOrder = 8
     end
-    object CheckBox2: TCheckBox
+    object CheckBox2: TCheckBoxEx
       Left = 16
       Top = 200
-      Width = 274
+      Width = 77
       Height = 17
       Hint = 'Show the tooltip when the cursor is over an item.'
       Anchors = [akLeft, akTop, akRight]
@@ -247,10 +247,10 @@ object Form4: TForm4
       ShowHint = True
       TabOrder = 9
     end
-    object CheckBox3: TCheckBox
+    object CheckBox3: TCheckBoxEx
       Left = 16
       Top = 224
-      Width = 274
+      Width = 133
       Height = 17
       Hint = 
         'Save the size of the main window when the program exits. This is' +
@@ -261,10 +261,10 @@ object Form4: TForm4
       ShowHint = True
       TabOrder = 10
     end
-    object CheckBox4: TCheckBox
+    object CheckBox4: TCheckBoxEx
       Left = 16
       Top = 248
-      Width = 274
+      Width = 216
       Height = 17
       Hint = 
         'If checked the program will contact a web server when the progra' +

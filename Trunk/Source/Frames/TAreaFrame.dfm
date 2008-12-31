@@ -4,6 +4,7 @@ object AreaFrame: TAreaFrame
   Width = 182
   Height = 101
   Anchors = [akLeft, akTop, akRight]
+  ParentBackground = False
   TabOrder = 0
   object GridPanel1: TGridPanel
     Left = 0
@@ -69,8 +70,6 @@ object AreaFrame: TAreaFrame
         Value = 30.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 233
-    ExplicitHeight = 106
     object Label1: TLabel
       Left = 4
       Top = 8
@@ -79,8 +78,6 @@ object AreaFrame: TAreaFrame
       Align = alLeft
       Caption = 'From:'
       Layout = tlCenter
-      ExplicitLeft = 5
-      ExplicitTop = 5
       ExplicitHeight = 13
     end
     object Edit1: TMyEdit
@@ -93,9 +90,6 @@ object AreaFrame: TAreaFrame
         ' with the mouse.'
       Align = alClient
       TabOrder = 0
-      ExplicitLeft = 47
-      ExplicitTop = 4
-      ExplicitWidth = 250
     end
     object Label2: TLabel
       Left = 4
@@ -105,7 +99,6 @@ object AreaFrame: TAreaFrame
       Align = alLeft
       Caption = 'To:'
       Layout = tlCenter
-      ExplicitTop = 34
       ExplicitHeight = 13
     end
     object Edit2: TMyEdit
@@ -118,10 +111,6 @@ object AreaFrame: TAreaFrame
         'ith the mouse.'
       Align = alClient
       TabOrder = 1
-      ExplicitLeft = 33
-      ExplicitTop = 32
-      ExplicitWidth = 92
-      ExplicitHeight = 26
     end
     object Label3: TLabel
       Left = 4
@@ -131,7 +120,6 @@ object AreaFrame: TAreaFrame
       Align = alLeft
       Caption = 'Area'
       Layout = tlCenter
-      ExplicitTop = 64
       ExplicitHeight = 13
     end
     object Edit3: TEdit
@@ -146,9 +134,6 @@ object AreaFrame: TAreaFrame
       Color = clBtnFace
       ReadOnly = True
       TabOrder = 2
-      ExplicitLeft = 149
-      ExplicitTop = 66
-      ExplicitWidth = 92
     end
   end
 end
