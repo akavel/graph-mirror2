@@ -27,7 +27,7 @@ void ResizeControl(TControl *Control, TCustomLabel *Label1, TCustomLabel *Label2
 void MoveLabel(TControl *Control, TCustomLabel *Label);
 void MoveControl(TControl *Control, TCustomLabel *Label);
 
-void SetAccelerators(TForm *WinControl);
+void SetAccelerators(TWinControl *Control);
 
 String GetControlText(TControl *Control);
 void SetControlText(TControl *Control, const String &Str);

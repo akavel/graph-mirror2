@@ -107,11 +107,13 @@ void FlipMargins(TControl *Control)
 //---------------------------------------------------------------------------
 void ScaleForm(TForm *Form, bool Flip)
 {
+  //Change font for form. All components should have ParentFont=true
+  Form->Font->Name = "MS Shell Dlg";
+
   if(Flip && SysLocale.MiddleEast)
   {
     Form->FlipChildren(true);
-    if(Form->BorderStyle != bsDialog)
-      FlipAnchors(Form);
+    FlipAnchors(Form);
     FlipMargins(Form);
     Form->ParentBiDiMode = true;
   }
@@ -216,14 +218,11 @@ void SetAccelerators(TWinControl *WinControl, std::set<wchar_t> &Accelerators)
       }
 }
 //---------------------------------------------------------------------------
-void SetAccelerators(TForm *Form)
+void SetAccelerators(TWinControl *Control)
 {
-  //Change font for form. All components should have ParentFont=true
-  Form->Font->Name = "MS Shell Dlg";
-
   const wchar_t Accelerators[] = L"abcdefghijklmnopqrstuvwxyz0123456789";
   std::set<wchar_t> Temp(Accelerators, Accelerators + sizeof(Accelerators) - 1);
-  SetAccelerators(Form, Temp);
+  SetAccelerators(Control, Temp);
 }
 //---------------------------------------------------------------------------
 String GetControlText(TControl *Control)

@@ -1271,7 +1271,7 @@ void TForm1::ChangeLanguage(const String &Lang)
   if(Lang.IsEmpty())
     return;
 
-  LoadLanguage(Lang);  
+  LoadLanguage(Lang);
 
   int DefaultBiDiMode = GetRegValue(REGISTRY_KEY, L"BiDiMode", HKEY_CURRENT_USER, bdLeftToRight);
   TBiDiMode Mode = static_cast<TBiDiMode>(ToIntDef(DefaultInstance->GetTranslationProperty("BiDiMode"), DefaultBiDiMode));
@@ -1281,8 +1281,17 @@ void TForm1::ChangeLanguage(const String &Lang)
   Application->BiDiMode = Mode;
 
   if(Lang != ToUString(Property.Language))
+  {
     Translate();
 
+    //Necesarry to update all hot keys
+    ActionMainMenuBar1->ActionClient->Items->AutoHotKeys = false;
+    ActionMainMenuBar1->ActionClient->Items->AutoHotKeys = true;
+
+    //Workaround for bug in TActionClientsCollection.InternalRethinkHotkeys()
+    for(int I = 0; I < ActionMainMenuBar1->ActionClient->Items->Count; I++)
+      ActionMainMenuBar1->ActionClient->Items->ActionClients[I]->Control->Caption = ActionMainMenuBar1->ActionClient->Items->ActionClients[I]->Caption;
+  }
   Property.Language = ToWString(Lang);
 }
 //---------------------------------------------------------------------------

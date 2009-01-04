@@ -17,6 +17,8 @@
 #include <vcl\ExtCtrls.hpp>
 #include <ComCtrls.hpp>
 #include "CheckBoxEx.h"
+#include "GridPanelEx.h"
+#include "RadioGroupEx.h"
 //---------------------------------------------------------------------------
 class TForm4 : public TForm
 {
@@ -24,21 +26,24 @@ __published:	// IDE-managed Components
   TButton *Button1;
   TButton *Button2;
   TButton *Button3;
-  TGroupBox *GroupBox1;
+  TGridPanelEx *GridPanelEx1;
   TLabel *Label1;
+  TPanel *Panel1;
   TEdit *Edit1;
   TUpDown *UpDown1;
-  TRadioGroup *RadioGroup1;
-  TUpDown *UpDown2;
-  TEdit *Edit2;
+  TRadioGroupEx *RadioGroup1;
   TLabel *Label2;
+  TPanel *Panel2;
+  TEdit *Edit2;
+  TUpDown *UpDown2;
   TLabel *Label3;
+  TPanel *Panel3;
   TEdit *Edit3;
   TUpDown *UpDown3;
   TLabel *Label5;
   TComboBox *ComboBox1;
-  TComboBox *ComboBox2;
   TLabel *Label4;
+  TComboBox *ComboBox2;
   TCheckBoxEx *CheckBox1;
   TCheckBoxEx *CheckBox2;
   TCheckBoxEx *CheckBox3;
