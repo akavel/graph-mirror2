@@ -1,35 +1,40 @@
 //===========================================================================
 // Copyright © 2009 Ivan Johansen
-// CheckBoxEx.h
+// RadioGroupEx.h
 //===========================================================================
-#ifndef CheckBoxExH
-#define CheckBoxExH
+#ifndef RadioGroupExH
+#define RadioGroupExH
 //---------------------------------------------------------------------------
 #include <SysUtils.hpp>
 #include <Classes.hpp>
 #include <Controls.hpp>
+#include <ExtCtrls.hpp>
 #include <StdCtrls.hpp>
 //---------------------------------------------------------------------------
-class PACKAGE TCheckBoxEx : public TCheckBox
+class PACKAGE TRadioGroupEx : public TRadioGroup
 {
 private:
+  TNotifyEvent OldItemsChange;
   bool FAutoSize;
+
   void __fastcall CMTextChanged(TMessage &Message);
   void __fastcall CMFontChanged(TMessage &Message);
+  void __fastcall ItemsChange(TObject *Sender);
 
-BEGIN_MESSAGE_MAP
-  VCL_MESSAGE_HANDLER(CM_TEXTCHANGED, TMessage, CMTextChanged)
-  VCL_MESSAGE_HANDLER(CM_FONTCHANGED, TMessage, CMFontChanged)
-END_MESSAGE_MAP(TCheckBox)
+  BEGIN_MESSAGE_MAP
+    VCL_MESSAGE_HANDLER(CM_TEXTCHANGED, TMessage, CMTextChanged)
+    VCL_MESSAGE_HANDLER(CM_FONTCHANGED, TMessage, CMFontChanged)
+  END_MESSAGE_MAP(TRadioGroup)
 
 protected:
   void AdjustBounds();
   void __fastcall Loaded();
 
 public:
-  __fastcall TCheckBoxEx(TComponent* Owner);
+  __fastcall TRadioGroupEx(TComponent* Owner);
+
 __published:
-  __property bool AutoSize = {read=FAutoSize, write=FAutoSize, default=true};
+  bool __property AutoSize = {read=FAutoSize, write=FAutoSize, default=true};
 };
 //---------------------------------------------------------------------------
 #endif

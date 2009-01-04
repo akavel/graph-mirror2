@@ -1,4 +1,7 @@
-//---------------------------------------------------------------------------
+//===========================================================================
+// Copyright © 2009 Ivan Johansen
+// CheckBoxEx.cpp
+//===========================================================================
 #include <vcl.h>
 #pragma hdrstop
 #include "CheckBoxEx.h"
@@ -44,7 +47,7 @@ void TCheckBoxEx::AdjustBounds()
 void __fastcall TCheckBoxEx::CMTextChanged(TMessage &Message)
 {
   TCheckBox::Dispatch(&Message);
-  Invalidate();
+//  Invalidate();
   AdjustBounds();
 }
 //---------------------------------------------------------------------------
