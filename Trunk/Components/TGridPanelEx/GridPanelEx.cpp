@@ -1,3 +1,7 @@
+//===========================================================================
+// Copyright © 2009 Ivan Johansen
+// GridPanel.cpp
+//===========================================================================
 //This is a fixed version of TGridPanel
 //---------------------------------------------------------------------------
 //Nasty hacks because of purly designed class
@@ -6,6 +10,7 @@
 #include <vcl.h>
 #pragma hdrstop
 #include <Math.hpp>
+#include <vector>
 #include "GridPanelEx.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
@@ -39,11 +44,9 @@ void TGridPanelEx::RecalcCellDimensions(const TRect &Rect)
   double PercentX = 0.0;
   double PercentY = 0.0;
   int PercentXCount = 0;
-  int MaxSize[30] = {0};
+  std::vector<int> MaxPos(FColumnCollection->Count + 1, 0);
   for(int I = 0; I < FColumnCollection->Count; I++)
   {
-    if(I > 0)
-      MaxSize[I] = Max(0, MaxSize[I] - MaxSize[I-1]);
     if(FColumnCollection->Items[I]->SizeStyle == ssAbsolute)
       XSize -= FColumnCollection->Items[I]->Value;
     else if(FColumnCollection->Items[I]->SizeStyle == ssPercent)
@@ -60,16 +63,19 @@ void TGridPanelEx::RecalcCellDimensions(const TRect &Rect)
            ControlItem->Column == I && ControlItem->Row == J)
         {
           int LSize = ControlItem->Control->Margins->ControlWidth + Padding->Left + Padding->Right;
-          if(LSize > MaxSize[I + ControlItem->ColumnSpan - 1])
-            MaxSize[I + ControlItem->ColumnSpan - 1] = LSize;
+          int Size = MaxPos[I + ControlItem->ColumnSpan] - MaxPos[I];
+          if(LSize > Size)
+            MaxPos[I + ControlItem->ColumnSpan] = LSize + MaxPos[I];
         }
       }
 
-      XSize -= MaxSize[I];
-      FColumnCollection->Items[I]->Size = MaxSize[I];
+      int Size = MaxPos[I+1] - MaxPos[I];
+      XSize -= Size;
+      FColumnCollection->Items[I]->Size = Size;
     }
   }
 
+  MaxPos.swap(std::vector<int>(FRowCollection->Count + 1, 0));
   int PercentYCount = 0;
   for(int I = 0; I < FRowCollection->Count; I++)
   {
@@ -82,7 +88,6 @@ void TGridPanelEx::RecalcCellDimensions(const TRect &Rect)
     }
     else
     {
-      int MaxSize = 0;
       for(int J = 0; J < FColumnCollection->Count; J++)
       {
         TControlItem *ControlItem = FControlCollection->ControlItems[J][I];
@@ -90,13 +95,15 @@ void TGridPanelEx::RecalcCellDimensions(const TRect &Rect)
            ControlItem->Column == J && ControlItem->Row == I)
         {
           int LSize = ControlItem->Control->Margins->ControlHeight + Padding->Top + Padding->Bottom;
-          if(LSize > MaxSize)
-            MaxSize = LSize;
+          int Size = MaxPos[I + ControlItem->RowSpan] - MaxPos[I];
+          if(LSize > Size)
+            MaxPos[I + ControlItem->RowSpan] = MaxPos[I] + LSize;
         }
       }
 
-      YSize -= MaxSize;
-      FRowCollection->Items[I]->Size = MaxSize;
+      int Size = MaxPos[I+1] - MaxPos[I];
+      YSize -= Size;
+      FRowCollection->Items[I]->Size = Size;
     }
   }
 
@@ -109,7 +116,6 @@ void TGridPanelEx::RecalcCellDimensions(const TRect &Rect)
     TCellItem *Item = FColumnCollection->Items[I];
     if(Item->SizeStyle == ssPercent)
     {
-
       if(PercentX == 0)
         Item->Value = 100.0 / PercentXCount;
       else
@@ -147,6 +153,7 @@ void __fastcall TGridPanelEx::UpdateControlOriginalParentSize(TControl *AControl
     TRect Rect = GetClientRect();
     AdjustClientRect(Rect);
     RecalcCellDimensions(Rect);
+    Realign();
   }
   int Index = FControlCollection->IndexOf(AControl);
   if(Index > -1)
@@ -167,13 +174,14 @@ void TGridPanelEx::ArrangeControlInCell(TControl *AControl, TRect CellRect, TAli
   {
     TRect NewBounds;
     TAnchors AnchorSubset = AControl->Anchors * (TAnchors() << akLeft << akRight);
+    int MaxWidth = Max(AControl->Margins->ControlWidth, AControl->Margins->ExplicitWidth);
     if(AnchorSubset == TAnchors() << akLeft)
       NewBounds.Left = CellRect.Left;
     else if(AnchorSubset == TAnchors() << akRight)
-      NewBounds.Left = Max(CellRect.Left, (int)(CellRect.Right - AControl->Margins->ExplicitWidth));
+      NewBounds.Left = Max(CellRect.Left, (int)(CellRect.Right - MaxWidth));
     else
       NewBounds.Left = Max(CellRect.Left, (int)(CellRect.Left + ((CellRect.Right - CellRect.Left) - AControl->Margins->ControlWidth) / 2));
-    NewBounds.Right = NewBounds.Left + Min(CellRect.Right - CellRect.Left, AControl->Margins->ExplicitWidth);
+    NewBounds.Right = NewBounds.Left + Min(CellRect.Width(), MaxWidth);
     AnchorSubset = AControl->Anchors * (TAnchors() << akTop << akBottom);
     if(AnchorSubset == TAnchors() << akTop)
       NewBounds.Top = CellRect.Top;
@@ -252,6 +260,52 @@ void __fastcall TGridPanelEx::AlignControls(TControl *AControl, TRect &Rect)
     RecalcCellDimensions(Rect);
   if(ControlCount > 0)
     ArrangeControls(Rect);
+  AdjustSize();
+}
+//---------------------------------------------------------------------------
+bool __fastcall TGridPanelEx::CanAutoSize(int &NewWidth, int &NewHeight)
+{
+  TRect Rect = ClientRect;
+  AdjustClientRect(Rect);
+  int TempWidth = Width - Rect.Width();
+  for(int I = 0; I < FColumnCollection->Count; I++)
+  {
+    TempWidth += FColumnCollection->Items[I]->Size;
+    if(FColumnCollection->Items[I]->SizeStyle == ssPercent)
+    {
+      TempWidth = NewWidth;
+      break;
+    }
+  }
+
+  int TempHeight = Height - Rect.Height();
+  for(int I = 0; I < FRowCollection->Count; I++)
+  {
+    TempHeight += FRowCollection->Items[I]->Size;
+    if(FRowCollection->Items[I]->SizeStyle == ssPercent)
+    {
+      TempHeight = NewHeight;
+      break;
+    }
+  }
+
+  NewWidth = TempWidth;
+  NewHeight = TempHeight;
+  return true;
+}
+//---------------------------------------------------------------------------
+void __fastcall TGridPanelEx::ChangeScale(int M, int D)
+{
+  //Scale all the absolute values and leave the rest alone
+  for(int I = 0; I < RowCollection->Count; I++)
+    if(RowCollection->Items[I]->SizeStyle == ssAbsolute)
+      RowCollection->Items[I]->Value = MulDiv(RowCollection->Items[I]->Value, M, D);
+
+  for(int I = 0; I < ColumnCollection->Count; I++)
+    if(ColumnCollection->Items[I]->SizeStyle == ssAbsolute)
+      ColumnCollection->Items[I]->Value = MulDiv(ColumnCollection->Items[I]->Value, M, D);
+
+  TGridPanel::ChangeScale(M, D);
 }
 //---------------------------------------------------------------------------
 
