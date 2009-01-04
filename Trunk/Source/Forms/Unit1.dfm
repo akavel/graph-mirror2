@@ -3357,6 +3357,7 @@ object Form1: TForm1
         ActionBar = ActionToolBar1
       end
       item
+        Items.AutoHotKeys = False
         Items.Customizable = False
         Items.HideUnused = False
         Items.CaptionOptions = coAll

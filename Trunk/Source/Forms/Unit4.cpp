@@ -17,6 +17,8 @@
 #include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
 #pragma link "CheckBoxEx"
+#pragma link "GridPanelEx"
+#pragma link "RadioGroupEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
@@ -24,10 +26,6 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
 {
   TranslateProperties(this);
   SetAccelerators(this);
-  int Left = Label1->Left + TMaxWidth(Label1)(Label2)(Label3)(Label4)(Label5) + 5;
-  int DeltaWidth = Canvas->TextWidth(CheckBox4->Caption) + 20 - CheckBox4->Width;
-  Width = Width + TMaxWidth(Left - Edit1->Left)(DeltaWidth);
-
   CheckBox1->Checked = CheckAssocation(L".grf", L"GraphFile");
   CheckBox2->Checked = Application->ShowHint;
   CheckBox3->Checked = Property.SavePos;
@@ -44,6 +42,7 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
   ComboBox1->Text = String(Property.FontScale) + "%";
 
   ScaleForm(this);
+  ClientWidth = GridPanelEx1->Width + GridPanelEx1->Left * 2;
   ComboBox1->SelLength = 0; //Don't know why this is necesarry
 }
 //---------------------------------------------------------------------------
