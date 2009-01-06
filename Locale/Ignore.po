@@ -205,7 +205,39 @@ msgstr ""
 msgid "Courier New"
 msgstr ""
 
+msgid "Tahoma"
+msgstr ""
+
 msgid "Windows Bitmap [*.bmp]|*.bmp|Portable Network Graphics "
 "[*.png]|*.png|Joint Photographic Experts Group [*.jpg, "
 "*.jpeg]|*.jpg;*.jpeg"
 msgstr ""
+
+msgid "Platform Default"
+msgstr ""
+
+msgid "Ctrl+Shift+Up"
+msgstr ""
+
+msgid "Ctrl+Shift+Down"
+msgstr ""
+
+msgid "Ctrl+Shift+Left"
+msgstr ""
+
+msgid "Ctrl+Shift+Right"
+msgstr ""
+
+msgid "Ctrl+Shift+Home"
+msgstr ""
+
+msgid "Ctrl+Shift+End"
+msgstr ""
+
+msgid "Ctrl+Shift+PgUp"
+msgstr ""
+
+msgid "Ctrl+Shift+PgDn"
+msgstr ""
+
+
