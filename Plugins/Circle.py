@@ -24,4 +24,4 @@ def execute_action(action):
     d = CircleDialog()
     d.ShowModal()
 
-action = vcl.TAction(Name="CircleAction", Caption="Create circle...", OnExecute=execute_action, Hint="Create circle from center and radius", ShortCut="Ctrl+Shift+C")
+action = vcl.TAction(Name="CircleAction", Caption="Insert circle...", OnExecute=execute_action, Hint="Create circle from center and radius", ShortCut="Ctrl+Shift+C")
