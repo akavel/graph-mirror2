@@ -26,14 +26,10 @@ object Form16: TForm16
     Top = 16
     Width = 321
     Height = 257
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Shading'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel1: TPanel
         Left = 24
         Top = 16
@@ -577,7 +573,7 @@ object Form16: TForm16
       object RadioButton1: TMyRadioButton
         Left = 4
         Top = 88
-        Width = 110
+        Width = 105
         Height = 25
         Hint = 'Shades the area between the function and the x-axis.'
         Caption = 'Between function and x-axis'
@@ -602,7 +598,7 @@ object Form16: TForm16
       object RadioButton4: TMyRadioButton
         Left = 4
         Top = 192
-        Width = 110
+        Width = 105
         Height = 25
         Hint = 'Shades the area between the function and the y-axis.'
         Caption = 'Between function and y-axis'
@@ -622,7 +618,7 @@ object Form16: TForm16
       object RadioButton2: TMyRadioButton
         Left = 112
         Top = 88
-        Width = 97
+        Width = 95
         Height = 25
         Hint = 'Shades the area below the function.'
         Caption = 'Below function'
@@ -633,10 +629,6 @@ object Form16: TForm16
     object TabSheet2: TTabSheet
       Caption = 'Options'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label12: TLabel
         Left = 8
         Top = 12
@@ -784,10 +776,6 @@ object Form16: TForm16
     object TabSheet3: TTabSheet
       Caption = '2nd function'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label11: TLabel
         Left = 8
         Top = 8

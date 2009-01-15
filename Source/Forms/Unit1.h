@@ -57,11 +57,6 @@
 #include <boost/scoped_ptr.hpp>
 //---------------------------------------------------------------------------
 enum TCursorState {csIdle, csAddLabel, csMoveLabel, csMoveLegend, csZoomWindow, csMove, csMoving};
-class ESaveError : public Exception
-{
-public:
-  ESaveError(const String &Str) : Exception(Str) {}
-};
 
 enum TIconIndex
 {
@@ -374,8 +369,6 @@ __published:	// IDE-managed Components
   void __fastcall ImportPointSeriesActionExecute(TObject *Sender);
   void __fastcall Legend_FontClick(TObject *Sender);
   void __fastcall InsertObjectActionExecute(TObject *Sender);
-  void __fastcall ZoomSquareActionUpdate(TObject *Sender);
-  void __fastcall ZoomActionUpdate(TObject *Sender);
   void __fastcall Panel6UnDock(TObject *Sender, TControl *Client,
           TWinControl *NewTarget, bool &Allow);
   void __fastcall Panel6DockDrop(TObject *Sender, TDragDockObject *Source,
@@ -502,8 +495,6 @@ public:		// User declarations
   void __fastcall BeginUpdate();
   void __fastcall EndUpdate();
 
-  void SaveAsImage(const String &FileName, const TImageOptions &ImageOptions);
-  void SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions &ImageOptions);
   bool LoadFromFile(const String &FileName, bool AddToRecent = true, bool ShowErrorMessages = true);
   void LoadDefault();
 };
