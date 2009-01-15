@@ -310,6 +310,31 @@ void TestSimplify(const std::string &Str, const std::string &Str2)
   TestSimplify(ToWString(Str), ToWString(Str2));
 }
 
+void TestCustom(const std::wstring &Str, const TArgType &Args, const std::vector<TComplex> &Values, const TComplex &Result)
+{
+  try
+  {
+    Func32::TCustomFunc Func(Str, Args);
+    TComplex FuncResult = Func.Calc(Values);
+    if(!IsEqual(Result, FuncResult))
+    {
+      wcerr << "Function:     " << Str << std::endl;
+      for(unsigned I = 0; I < Values.size(); I++)
+        wcerr << Args[I] << ":            " << setprecision(10) << Values[I] << std::endl;
+      wcerr << "Evaluated to: " << setprecision(10) << FuncResult << std::endl;
+      wcerr << "Expected:     " << setprecision(10) << Result << std::endl << std::endl;
+    }
+  }
+  catch(EFuncError &E)
+  {
+    wcerr << "Function:     " << Str << std::endl;
+    for(unsigned I = 0; I < Values.size(); I++)
+      wcerr << Args[I] << ":            " << setprecision(10) << Values[I] << std::endl;
+    wcerr << "Error code   : " << E.ErrorCode << std::endl;
+    wcerr << "Expected:     " << setprecision(10) << Result << std::endl << std::endl;
+  }
+}
+
 /** Called when BOOST_ASSERT fails.
  */
 namespace boost
@@ -700,6 +725,12 @@ void Test()
   //Test the simplify code
   TestSimplify("ln(e)", "1");
   TestSimplify("log(10)", "1");
+
+  //Test custom functions
+  TArgType Args;
+  Args.push_back(L"x");
+  Args.push_back(L"y");
+  TestCustom(L"x*y+1=0", Args, std::vector<TComplex>(2, 0), 0);
 }
 
 std::wstringstream DebugStreamBuf;
