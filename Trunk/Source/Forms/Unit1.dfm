@@ -3369,7 +3369,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = NewAction
-                Caption = '&New'
                 ImageIndex = 0
                 ShortCut = 16462
               end
@@ -3377,7 +3376,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = OpenAction
-                Caption = '&Open...'
                 ImageIndex = 1
                 ShortCut = 16463
               end
@@ -3385,7 +3383,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = SaveAction
-                Caption = '&Save'
                 ImageIndex = 2
                 ShortCut = 16467
               end
@@ -3393,7 +3390,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = SaveAsAction
-                Caption = 'S&ave as...'
                 ImageIndex = 3
               end
               item
@@ -3401,7 +3397,6 @@ object Form1: TForm1
                 Items = <>
                 Visible = False
                 Action = SaveCopyAsAction
-                Caption = 'Sa&ve copy as...'
                 ImageIndex = 49
               end
               item
@@ -3413,7 +3408,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = SaveAsImageAction
-                Caption = 'Sav&e as image...'
                 ImageIndex = 45
                 ShortCut = 16450
               end
@@ -3424,17 +3418,15 @@ object Form1: TForm1
                     Items.HideUnused = False
                     Items = <>
                     Action = ImportGraphFileAction
-                    Caption = '&Graph file...'
                     ImageIndex = 58
                   end
                   item
                     Items.HideUnused = False
                     Items = <>
                     Action = ImportPointSeriesAction
-                    Caption = '&Point series...'
                     ImageIndex = 17
                   end>
-                Caption = 'I&mport'
+                Caption = 'Import'
               end
               item
                 Items.HideUnused = False
@@ -3445,7 +3437,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = PrintAction
-                Caption = '&Print...'
                 ImageIndex = 5
                 ShortCut = 16464
               end
@@ -3458,11 +3449,10 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = ExitAction
-                Caption = 'E&xit'
                 ImageIndex = 6
                 ShortCut = 32883
               end>
-            Caption = '&File'
+            Caption = 'File'
           end
           item
             Items.HideUnused = False
@@ -3471,7 +3461,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = UndoAction
-                Caption = '&Undo'
                 ImageIndex = 7
                 ShortCut = 16474
               end
@@ -3479,7 +3468,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = RedoAction
-                Caption = '&Redo'
                 ImageIndex = 8
                 ShortCut = 16473
               end
@@ -3492,21 +3480,18 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = CutAction
-                Caption = '&Cut'
                 ImageIndex = 9
               end
               item
                 Items.HideUnused = False
                 Items = <>
                 Action = CopyAction
-                Caption = 'C&opy'
                 ImageIndex = 10
               end
               item
                 Items.HideUnused = False
                 Items = <>
                 Action = PasteAction
-                Caption = '&Paste'
                 ImageIndex = 11
               end
               item
@@ -3518,7 +3503,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = CopyImageAction
-                Caption = 'Cop&y image'
                 ImageIndex = 4
                 ShortCut = 16457
               end
@@ -3531,7 +3515,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = AxesAction
-                Caption = '&Axes...'
                 ImageIndex = 12
                 ShortCut = 16449
               end
@@ -3539,10 +3522,9 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = OptionsAction
-                Caption = 'Op&tions...'
                 ImageIndex = 13
               end>
-            Caption = '&Edit'
+            Caption = 'Edit'
           end
           item
             Items.HideUnused = False
@@ -3551,7 +3533,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = InsertFunctionAction
-                Caption = '&Insert function...'
                 ImageIndex = 14
                 ShortCut = 45
               end
@@ -3559,7 +3540,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = InsertTangentAction
-                Caption = 'I&nsert tangent/normal...'
                 ImageIndex = 15
                 ShortCut = 113
               end
@@ -3567,7 +3547,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = InsertShadeAction
-                Caption = 'In&sert shading...'
                 ImageIndex = 16
                 ShortCut = 114
               end
@@ -3575,7 +3554,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = InsertDifAction
-                Caption = 'Inser&t f'#39'(x)...'
                 ImageIndex = 21
                 ShortCut = 118
               end
@@ -3588,7 +3566,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = InsertPointsAction
-                Caption = 'Ins&ert point series...'
                 ImageIndex = 17
                 ShortCut = 115
               end
@@ -3596,7 +3573,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = InsertTrendlineAction
-                Caption = 'Inse&rt trendline...'
                 ImageIndex = 18
                 ShortCut = 16468
               end
@@ -3609,7 +3585,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = InsertRelationAction
-                Caption = 'Insert relati&on...'
                 ImageIndex = 54
                 ShortCut = 117
               end
@@ -3617,7 +3592,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = InsertLabelAction
-                Caption = 'Insert l&abel...'
                 ImageIndex = 46
                 ShortCut = 119
               end
@@ -3637,14 +3611,12 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = EditAction
-                Caption = 'E&dit...'
                 ImageIndex = 19
               end
               item
                 Items.HideUnused = False
                 Items = <>
                 Action = DeleteAction
-                Caption = 'De&lete'
                 ImageIndex = 20
                 ShortCut = 16430
               end
@@ -3652,11 +3624,10 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = CustomFunctionsAction
-                Caption = '&Custom functions...'
                 ImageIndex = 55
                 ShortCut = 16454
               end>
-            Caption = 'F&unction'
+            Caption = 'Function'
           end
           item
             Items.HideUnused = False
@@ -3665,7 +3636,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = ZoomInAction
-                Caption = '&In'
                 ImageIndex = 22
                 ShortCut = 16571
               end
@@ -3673,7 +3643,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = ZoomOutAction
-                Caption = '&Out'
                 ImageIndex = 23
                 ShortCut = 16495
               end
@@ -3681,7 +3650,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = ZoomWindowAction
-                Caption = '&Window'
                 ImageIndex = 24
                 ShortCut = 16471
               end
@@ -3689,7 +3657,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = ZoomSquareAction
-                Caption = '&Square'
                 ImageIndex = 44
                 ShortCut = 16465
               end
@@ -3697,7 +3664,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = ZoomStandardAction
-                Caption = 'S&tandard'
                 ImageIndex = 25
                 ShortCut = 16452
               end
@@ -3710,7 +3676,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = MoveAction
-                Caption = '&Move system'
                 ImageIndex = 30
                 ShortCut = 16461
               end
@@ -3723,17 +3688,15 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = ZoomFitAction
-                Caption = '&Fit'
                 ImageIndex = 43
               end
               item
                 Items.HideUnused = False
                 Items = <>
                 Action = ZoomFitAllAction
-                Caption = 'Fit &all'
                 ImageIndex = 41
               end>
-            Caption = '&Zoom'
+            Caption = 'Zoom'
           end
           item
             Items.HideUnused = False
@@ -3742,21 +3705,16 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = PathAction
-                Caption = '&Length of path'
                 ImageIndex = 31
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = AreaAction
-                Caption = '&Area'
                 ImageIndex = 32
               end
               item
                 Items.HideUnused = False
                 Items = <>
                 Action = EvalAction
-                Caption = '&Evaluate'
                 ImageIndex = 33
                 ShortCut = 16453
               end
@@ -3764,25 +3722,23 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = TableAction
-                Caption = '&Table...'
                 ImageIndex = 34
               end
               item
                 Items.HideUnused = False
                 Items = <>
                 Action = AnimateAction
-                Caption = 'A&nimate...'
                 ImageIndex = 56
               end>
-            Caption = '&Calc'
+            Caption = 'Calc'
           end
           item
             Items = <
               item
-                Caption = '&ActionClientItem0'
+                Caption = 'Tahoma'
               end>
             Visible = False
-            Caption = '&Plugins'
+            Caption = 'Plugins'
           end
           item
             Items.HideUnused = False
@@ -3791,7 +3747,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = ContentsAction
-                Caption = '&Contents and index'
                 ImageIndex = 35
                 ShortCut = 112
               end
@@ -3799,7 +3754,6 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = ListAction
-                Caption = '&List of functions'
                 ImageIndex = 36
                 ShortCut = 16496
               end
@@ -3807,14 +3761,12 @@ object Form1: TForm1
                 Items.HideUnused = False
                 Items = <>
                 Action = FaqAction
-                Caption = '&Frequently Asked Questions'
                 ImageIndex = 42
               end
               item
                 Items.HideUnused = False
                 Items = <>
                 Action = TipAction
-                Caption = '&Tip of the day'
                 ImageIndex = 47
               end
               item
@@ -3831,42 +3783,37 @@ object Form1: TForm1
                     Items.HideUnused = False
                     Items = <>
                     Action = HomePageAction
-                    Caption = '&Graph web site'
                     ImageIndex = 40
                   end
                   item
                     Items.HideUnused = False
                     Items = <>
                     Action = SupportAction
-                    Caption = '&Support'
                     ImageIndex = 40
                   end
                   item
                     Items.HideUnused = False
                     Items = <>
                     Action = DonateAction
-                    Caption = '&Donate'
                     ImageIndex = 48
                   end
                   item
                     Items.HideUnused = False
                     Items = <>
                     Action = UpdateAction
-                    Caption = 'C&heck for update'
                     ImageIndex = 39
                   end>
-                Caption = '&Internet'
+                Caption = 'Internet'
                 UsageCount = 1
               end
               item
                 Items.HideUnused = False
                 Items = <>
                 Action = AboutAction
-                Caption = '&About Graph...'
                 ImageIndex = 37
                 ShortCut = 32880
               end>
-            Caption = '&Help'
+            Caption = 'Help'
           end>
         ActionBar = ActionMainMenuBar1
       end>
@@ -4094,7 +4041,6 @@ object Form1: TForm1
       ImageIndex = 44
       ShortCut = 16465
       OnExecute = ZoomSquareActionExecute
-      OnUpdate = ZoomSquareActionUpdate
     end
     object ZoomStandardAction: TAction
       Category = 'Zoom'
@@ -4164,7 +4110,6 @@ object Form1: TForm1
     object PathAction: TAction
       Category = 'Calc'
       Caption = 'Length of path'
-      GroupIndex = 1
       Hint = 
         'Calculate the length of path between two given points on the cur' +
         've.'
@@ -4174,7 +4119,6 @@ object Form1: TForm1
     object AreaAction: TAction
       Category = 'Calc'
       Caption = 'Area'
-      GroupIndex = 1
       Hint = 'Calculate the area under the path of the selected function.'
       ImageIndex = 32
       OnExecute = AreaActionExecute
@@ -4182,7 +4126,6 @@ object Form1: TForm1
     object EvalAction: TAction
       Category = 'Calc'
       Caption = 'Evaluate'
-      GroupIndex = 1
       Hint = 'Evaluate or trace the selected function.'
       ImageIndex = 33
       ShortCut = 16453
@@ -4300,7 +4243,6 @@ object Form1: TForm1
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+Home')
       OnExecute = ZoomXInActionExecute
-      OnUpdate = ZoomActionUpdate
     end
     object ZoomXOutAction: TAction
       Category = 'Zoom'
@@ -4313,7 +4255,6 @@ object Form1: TForm1
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+End')
       OnExecute = ZoomXOutActionExecute
-      OnUpdate = ZoomActionUpdate
     end
     object ZoomYInAction: TAction
       Category = 'Zoom'
@@ -4326,7 +4267,6 @@ object Form1: TForm1
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+PgUp')
       OnExecute = ZoomYInActionExecute
-      OnUpdate = ZoomActionUpdate
     end
     object ZoomYOutAction: TAction
       Category = 'Zoom'
@@ -4339,7 +4279,6 @@ object Form1: TForm1
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+PgDn')
       OnExecute = ZoomYOutActionExecute
-      OnUpdate = ZoomActionUpdate
     end
     object InsertRelationAction: TAction
       Category = 'Function'

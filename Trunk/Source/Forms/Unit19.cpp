@@ -14,7 +14,7 @@
 #include <ComObj.hpp>
 #include <iterator>
 #include "vfw.h"
-#include "IGraphic.h"
+#include "Images.h"
 #include <cmath>
 #include <boost/spirit/phoenix/operators.hpp>
 #include <boost/spirit/phoenix/primitives.hpp>

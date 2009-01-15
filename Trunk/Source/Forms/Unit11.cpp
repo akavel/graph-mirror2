@@ -62,9 +62,14 @@ int TForm11::EditRelation(const boost::shared_ptr<TRelation> &ARelation)
 //---------------------------------------------------------------------------
 void __fastcall TForm11::Button1Click(TObject *Sender)
 {
+  //Bug in CB2009
+  //Instantiation of NewRelation must be outside of the try block.
+  //Else trying to create an invalid equation followed by a correct equation will
+  //cause an Access Violation
+  boost::shared_ptr<TRelation> NewRelation;
   try
   {
-    boost::shared_ptr<TRelation> NewRelation(new TRelation(
+    NewRelation.reset(new TRelation(
       ToWString(Edit1->Text),
       Data.CustomFunctions.SymbolList,
       ExtColorBox1->Selected,

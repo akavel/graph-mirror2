@@ -336,17 +336,6 @@ object Form13: TForm13
           OnClick = ImageClick
         end
       end
-      object Edit1: TEdit
-        Left = 280
-        Top = 56
-        Width = 33
-        Height = 21
-        Hint = 'The order of the polynomium. For example 2 means a parable.'
-        Enabled = False
-        TabOrder = 13
-        Text = '2'
-        OnKeyPress = EditKeyPress
-      end
       object StaticText1: TStaticText
         Left = 280
         Top = 40
@@ -355,15 +344,6 @@ object Form13: TForm13
         Caption = 'Order:'
         FocusControl = Edit1
         TabOrder = 12
-      end
-      object UpDown2: TUpDown
-        Left = 313
-        Top = 56
-        Width = 15
-        Height = 21
-        Associate = Edit1
-        Position = 2
-        TabOrder = 14
       end
       object RadioButton3: TMyRadioButton
         Left = 200
@@ -488,6 +468,26 @@ object Form13: TForm13
         Min = 1
         Position = 2
         TabOrder = 17
+      end
+      object Edit1: TEdit
+        Left = 280
+        Top = 56
+        Width = 33
+        Height = 21
+        Hint = 'The order of the polynomium. For example 2 means a parable.'
+        Enabled = False
+        TabOrder = 13
+        Text = '2'
+        OnKeyPress = EditKeyPress
+      end
+      object UpDown2: TUpDown
+        Left = 313
+        Top = 56
+        Width = 15
+        Height = 21
+        Associate = Edit1
+        Position = 2
+        TabOrder = 14
       end
     end
     object TabSheet2: TTabSheet

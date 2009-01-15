@@ -350,6 +350,10 @@
 				<DependentOn>Forms\Unit3.h</DependentOn>
 				<BuildOrder>63</BuildOrder>
 			</CppCompile>
+			<CppCompile Include="Source\Images.cpp">
+				<DependentOn>Source\Images.h</DependentOn>
+				<BuildOrder>64</BuildOrder>
+			</CppCompile>
 			<FormResources Include="Forms\Unit1.dfm"/>
 			<FormResources Include="Forms\Unit22.dfm"/>
 			<FormResources Include="Forms\Unit19.dfm"/>
@@ -404,7 +408,7 @@
 						<VersionInfo Name="MajorVer">4</VersionInfo>
 						<VersionInfo Name="MinorVer">4</VersionInfo>
 						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">424</VersionInfo>
+						<VersionInfo Name="Build">426</VersionInfo>
 						<VersionInfo Name="Debug">True</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -416,7 +420,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.4.0.424</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">4.4.0.426</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>

@@ -20,6 +20,7 @@
 #include "PyVcl.h"
 #include <fstream>
 #include "IThread.h"
+#include "Images.h"
 
 //---------------------------------------------------------------------------
 namespace Python
@@ -252,7 +253,7 @@ static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args)
   TImageOptions ImageOptions(Form1->Image1->Width, Form1->Image1->Height);
   try
   {
-    Form1->SaveAsImage(FileName, ImageOptions);
+    SaveAsImage(FileName, ImageOptions);
   }
   catch(ESaveError &E)
   {

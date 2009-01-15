@@ -49,7 +49,6 @@
 #include "Debug.h"
 #include <iostream>
 #include "StackTrace.h"
-#include "pdflib.hpp"
 #include "ConfigFile.h"
 #include "ConfigRegistry.h"
 #include <TypInfo.hpp>
@@ -57,8 +56,7 @@
 #include "PyGraph.h"
 #include "Encode.h"
 #include "ICompCommon.h"
-#include "EmfParser.h"
-#include "SvgWriter.h"
+#include "Images.h"
 //---------------------------------------------------------------------------
 #pragma link "TRecent"
 #pragma link "Cross"
@@ -94,7 +92,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
     out << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
     out << "CmdLine: " << CmdLine << std::endl;
   }
-                                                                  
+
   SetCompTranslateFunc(gettext);
   SetApplicationExceptionHandler(true);
   InitDebug();
@@ -1110,13 +1108,6 @@ void __fastcall TForm1::ApplicationEventsShowHint(String &HintStr,
 {
   //Maximum length in pixels of hint text before line wrap
   HintInfo.HintMaxWidth = 200;
-/*
-  if(TAction *Action = dynamic_cast<TAction*>(HintInfo.HintControl->Action))
-  {
-    HintInfo.HintWindowClass = __classid(TTntHintWindow);
-    HintInfo.HintData = &HintInfo;
-    HintStr = TntControl_GetHint(HintInfo.HintControl);
-  }*/
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::WMEnterSizeMove(TMessage &Message)
@@ -1281,17 +1272,16 @@ void TForm1::ChangeLanguage(const String &Lang)
   Application->BiDiMode = Mode;
 
   if(Lang != ToUString(Property.Language))
-  {
     Translate();
 
-    //Necesarry to update all hot keys
-    ActionMainMenuBar1->ActionClient->Items->AutoHotKeys = false;
-    ActionMainMenuBar1->ActionClient->Items->AutoHotKeys = true;
+  //Necesarry to update all hot keys
+  ActionMainMenuBar1->ActionClient->Items->AutoHotKeys = false;
+  ActionMainMenuBar1->ActionClient->Items->AutoHotKeys = true;
 
-    //Workaround for bug in TActionClientsCollection.InternalRethinkHotkeys()
-    for(int I = 0; I < ActionMainMenuBar1->ActionClient->Items->Count; I++)
-      ActionMainMenuBar1->ActionClient->Items->ActionClients[I]->Control->Caption = ActionMainMenuBar1->ActionClient->Items->ActionClients[I]->Caption;
-  }
+  //Workaround for bug in TActionClientsCollection.InternalRethinkHotkeys()
+  for(int I = 0; I < ActionMainMenuBar1->ActionClient->Items->Count; I++)
+    ActionMainMenuBar1->ActionClient->Items->ActionClients[I]->Control->Caption = ActionMainMenuBar1->ActionClient->Items->ActionClients[I]->Caption;
+
   Property.Language = ToWString(Lang);
 }
 //---------------------------------------------------------------------------
@@ -2155,6 +2145,8 @@ void __fastcall TForm1::ZoomStandardActionExecute(TObject *Sender)
 void __fastcall TForm1::PathActionExecute(TObject *Sender)
 {
   PathAction->Checked = !PathAction->Checked;
+  EvalAction->Checked = false;
+  AreaAction->Checked = false;
   if(PathAction->Checked)
     Form9->SetEvalType(etArc);
   else
@@ -2164,6 +2156,8 @@ void __fastcall TForm1::PathActionExecute(TObject *Sender)
 void __fastcall TForm1::AreaActionExecute(TObject *Sender)
 {
   AreaAction->Checked = !AreaAction->Checked;
+  PathAction->Checked = false;
+  EvalAction->Checked = false;
   if(AreaAction->Checked)
     Form9->SetEvalType(etArea);
   else
@@ -2173,6 +2167,8 @@ void __fastcall TForm1::AreaActionExecute(TObject *Sender)
 void __fastcall TForm1::EvalActionExecute(TObject *Sender)
 {
   EvalAction->Checked = !EvalAction->Checked;
+  PathAction->Checked = false;
+  AreaAction->Checked = false;
   if(EvalAction->Checked)
   {
     Form9->SetEvalType(etEval);
@@ -2757,171 +2753,6 @@ void TForm1::ActivateOleUserInterface()
   TActionClientItem *FilesItem = MenuItems->ActionClients[0];
   TActionClientItem *Item = FilesItem->Items->ActionClients[4];
   Item->Visible = true;
-}
-//---------------------------------------------------------------------------
-void SaveAsPdf(const std::string &FileName, Graphics::TBitmap *Bitmap, const std::string &Title, const std::string &Subject, Printers::TPrinterOrientation Orientation)
-{
-  std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
-  Bitmap->PixelFormat = pf8bit;
-  std::auto_ptr<TPngImage> PngImage(new TPngImage);
-  PngImage->Assign(Bitmap);
-  PngImage->SaveToStream(Stream.get());
-  double Width = Orientation == poPortrait ? a4_width : a4_height;
-  double Height = Orientation == poPortrait ? a4_height : a4_width;
-
-  try
-  {
-    PDFlib p;
-    if (p.begin_document(FileName, "") == -1)
-      throw ESaveError(LoadRes(RES_FILE_ACCESS, ToUString(FileName)));
-
-    std::wstring Creator = NAME " " + TVersionInfo().StringValue(L"ProductVersion");
-    p.set_info("Creator", ::ToString(Creator));
-    p.set_info("Author", ::ToString(Creator));
-    p.set_info("Title", Title);
-    p.set_info("Subject", Subject);
-    p.begin_page_ext(Width, Height, "");
-    int image;
-    p.create_pvf("/pvf/image/Temp.png" , Stream->Memory, Stream->Size, "");
-    if((image = p.load_image("auto", "/pvf/image/Temp.png", "")) == -1)
-      throw ESaveError(L"Error: Couldn't read logical image file when creating PDF file.");
-
-    p.fit_image(image, Width*0.05, Height*0.05, "boxsize {" + ToString(Width*0.9) + " " + ToString(Height*0.9) + "} position 50 fitmethod meet");
-    p.close_image(image);
-    p.end_page_ext("");
-    p.end_document("");
-  }
-  catch(PDFlib::Exception &ex)
-  {
-    throw ESaveError(L"PDFlib exception: [" + String(ex.get_errnum()) + L"] " +
-      ToUString(ex.get_apiname()) + L": " + ToUString(ex.get_errmsg()));
-  }
-}
-//---------------------------------------------------------------------------
-void TForm1::SaveAsImage(const String &FileName, const TImageOptions &ImageOptions)
-{
-  int ImageFileType;
-  String FileExt = ExtractFileExt(FileName);
-  if(FileExt.CompareIC(".emf") == 0)
-    ImageFileType = ifMetafile;
-  else if(FileExt.CompareIC(".bmp") == 0)
-    ImageFileType = ifBitmap;
-  else if(FileExt.CompareIC(".png") == 0)
-    ImageFileType = ifPng;
-  else if(FileExt.CompareIC(".jpeg") == 0 || FileExt.CompareIC(".jpg") == 0)
-    ImageFileType = ifJpeg;
-  else if(FileExt.CompareIC(".pdf") == 0)
-    ImageFileType = ifPdf;
-  else if(FileExt.CompareIC(".svg") == 0)
-    ImageFileType = ifSvg;
-  else
-    throw ESaveError("Unknown file type");
-
-  return SaveAsImage(FileName, ImageFileType, ImageOptions);
-}
-//---------------------------------------------------------------------------
-void TForm1::SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions &ImageOptions)
-{
-  try
-  {
-    bool SameSize = !ImageOptions.UseCustomSize;
-
-    //Show save icon in status bar
-    SetStatusIcon(iiSave);
-    TCallOnRelease Dummy(&SetStatusIcon, -1);
-    Draw.Wait();
-
-    if(ImageFileType == ifMetafile || ImageFileType == ifSvg)
-    {
-      std::auto_ptr<TMetafile> Metafile(new TMetafile);
-      Metafile->Width = ImageOptions.CustomWidth;
-      Metafile->Height = ImageOptions.CustomHeight;
-
-      std::auto_ptr<TMetafileCanvas> Meta(new TMetafileCanvas(Metafile.get(), 0));
-      TData MetaData(Data);
-      TDraw FileDraw(Meta.get(), SameSize ? &Data : &MetaData, false, "Metafile DrawThread");
-      FileDraw.SetArea(TRect(0, 0, ImageOptions.CustomWidth, ImageOptions.CustomHeight));  //Set drawing area
-
-      FileDraw.DrawAll();
-      if(SameSize)
-        FileDraw.Wait(); //Wait if using Data object
-      else
-        while(FileDraw.Updating())
-        { //Process messages while waiting for draw thread to finish
-          Sleep(100);
-          Application->ProcessMessages();
-        }
-      Meta.reset();
-      if(ImageFileType == ifSvg)
-      {
-        TEmfParser EmfParser;
-        std::ofstream File(FileName.c_str());
-        TSvgWriter SvgWriter(File);
-        EmfParser.Parse(reinterpret_cast<HENHMETAFILE>(Metafile->Handle), SvgWriter);
-      }
-      else
-        Metafile->SaveToFile(FileName);
-    }
-    else
-    {
-      std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-      Bitmap->Width = ImageOptions.CustomWidth;
-      Bitmap->Height = ImageOptions.CustomHeight;
-      TRect Rect(0, 0, ImageOptions.CustomWidth, ImageOptions.CustomHeight);
-      if(SameSize)
-        Bitmap->Canvas->CopyRect(Rect, Image1->Picture->Bitmap->Canvas, Rect);
-      else
-      {
-        //Make sure background is drawn
-        Bitmap->Canvas->Brush->Style = bsSolid;
-        Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
-        Bitmap->Canvas->FillRect(Rect);
-
-        TData FileData(Data);
-        TDraw FileDraw(Bitmap->Canvas, &FileData, false, "Save as image DrawThread");
-        FileDraw.SetArea(Rect);  //Set drawing area
-        FileDraw.DrawAll();
-        while(FileDraw.Updating())
-        {
-          Sleep(100);
-          Application->ProcessMessages();
-        }
-      }
-
-      switch(ImageFileType)
-      {
-        case ifBitmap:
-          SaveCompressedBitmap(Bitmap.get(), Rect, FileName);
-          break;
-
-        case ifPng:
-        {
-          Bitmap->PixelFormat = pf8bit; //Change bitmap to 8 bit to keep file size down
-          std::auto_ptr<TPngImage> PngImage(new TPngImage);
-          PngImage->Assign(Bitmap.get());
-          PngImage->SaveToFile(FileName);
-          break;
-        }
-        case ifJpeg:
-        {
-          std::auto_ptr<TJPEGImage> Image(new TJPEGImage);
-          Image->Assign(Bitmap.get());
-          Image->CompressionQuality = ImageOptions.Jpeg.Quality;
-          Image->ProgressiveEncoding = ImageOptions.Jpeg.ProgressiveEncoding;
-          Image->Compress();
-          Image->SaveToFile(FileName);
-          break;
-        }
-
-        case ifPdf:
-          SaveAsPdf(::ToString(FileName), Bitmap.get(), ::ToString(Data.GetFileName()), ::ToString(Data.Axes.Title), ImageOptions.Pdf.Orientation);
-      }
-    }
-  }
-  catch(EOutOfResources &E)
-  {
-    throw ESaveError(LoadStr(RES_OUT_OF_RESOURCES));
-  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,
@@ -3632,16 +3463,6 @@ void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
   Redraw();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::ZoomSquareActionUpdate(TObject *Sender)
-{
-//  ZoomSquareAction->Checked = Data.Axes.ZoomSquare;
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::ZoomActionUpdate(TObject *Sender)
-{
-//  static_cast<TAction*>(Sender)->Enabled = !Data.Axes.ZoomSquare;
-}
-//---------------------------------------------------------------------------
 void __fastcall TForm1::Panel6UnDock(TObject *Sender, TControl *Client,
       TWinControl *NewTarget, bool &Allow)
 {
@@ -3781,4 +3602,5 @@ void __fastcall TForm1::TreeViewMouseLeave(TObject *Sender)
     ShowStatusMessage(L"", true);
 }
 //---------------------------------------------------------------------------
+
 
