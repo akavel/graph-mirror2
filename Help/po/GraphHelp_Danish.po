@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-10-20 18:51Romance Standard Time\n"
-"PO-Revision-Date: 2008-10-21 22:54+0100\n"
+"PO-Revision-Date: 2009-01-16 23:21+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -543,7 +543,7 @@ msgstr "Afrunder et tal til det angivne antal decimaler."
 
 #. Rounding.xml:116(para)
 msgid "The <placeholder-1/> function rounds <placeholder-2/> to the number of decimals given by <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>. <placeholder-10/> may be any numeric expression that evaluates to an <placeholder-11/>. If <placeholder-12/>&lt;0, <placeholder-13/> is rounded to <placeholder-14/> places to the left of the decimal point."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> afrunder <placeholder-2/> til <placeholder-3/> decimaler. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-6/> eller et <placeholder-7/>. Hvis <placeholder-8/> er et komplekst tal, returnerer funktionen <placeholder-9/>. <placeholder-10/> kan være et hvilket som helst numerisk udtryk, der evalueres til et <placeholder-11/>. Hvis <placeholder-12/>&lt;0, afrundes <placeholder-13/> til <placeholder-14/> ciffer til venstre for kommaet."
 
 #. Rounding.xml:125(title)
 msgid "Examples"
@@ -563,7 +563,7 @@ msgstr "Returnerer kvadratet på argumentet."
 
 #. PowerAndLog.xml:21(para)
 msgid "The <placeholder-1/> function calculates the square of <placeholder-2/>, i.e. <placeholder-3/> raised to the power of 2. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner kvadratet på <placeholder-2/>, dvs. <placeholder-3/> opløftet i anden potens. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-6/> eller et <placeholder-7/>."
 
 #. PowerAndLog.xml:32(primary) InsertTrendlineDialog.xml:15(primary)
 msgid "exponential"
@@ -587,19 +587,19 @@ msgstr "Returnerer kvadratroden af argumentet."
 
 #. PowerAndLog.xml:64(para)
 msgid "The <placeholder-1/> function calculates the square root of <placeholder-2/>, i.e. <placeholder-3/> raised to the power of &frac12;. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/> &ge; 0."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner kvadratroden af <placeholder-2/>, dvs. <placeholder-3/> opløftet til &frac12;. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-6/> eller et <placeholder-7/>. Hvis beregningen foretages med reelle tal, er funktionen kun defineret for <placeholder-8/> &ge; 0."
 
 #. PowerAndLog.xml:76(para)
 msgid "Returns the <placeholder-1/> root of the argument."
-msgstr ""
+msgstr "Returnerer argumentets <placeholder-1/>. rod."
 
 #. PowerAndLog.xml:85(para)
 msgid "The <placeholder-1/> function calculates the <placeholder-2/><superscript>th</superscript> root of <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-9/> &ge; 0."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner <placeholder-3/>s <placeholder-2/>. rod. <placeholder-4/> og <placeholder-5/> kan være hvilke som helst <placeholder-6/>, der evalueres til et <placeholder-7/> eller et <placeholder-8/>. Hvis beregningen foretages med reelle tal, er funktionen kun defineret for <placeholder-9/> &ge; 0."
 
 #. PowerAndLog.xml:93(para)
 msgid "When the calculation is done with real numbers, the function is only defined for <placeholder-1/>&lt;0 if <placeholder-2/> is an odd <placeholder-3/>. For calculations with complex numbers, <placeholder-4/> is defined for the whole complex plane except at the pole <placeholder-5/>=0. Notice that for calculations with complex numbers the result will always have an imaginary part when <placeholder-6/>&lt;0 even though the result is real when calculations are done with real numbers and <placeholder-7/> is an odd integer."
-msgstr ""
+msgstr "Hvis beregningen foretages med reelle tal, er funktionen kun defineret for <placeholder-1/>&lt;0, hvis <placeholder-2/> er et ulige <placeholder-3/>. For beregninger med komplekse tal er <placeholder-4/> defineret for hele det komplekse plan på nær i polen <placeholder-5/>=0. Bemærk at ved beregninger med komplekse tal vil resultatet altid have en imaginær del, hvis <placeholder-6/>&lt;0, selv om resultatet er reelt, når beregningerne foretages med reelle tal, og <placeholder-7/> er et ulige heltal."
 
 #. PowerAndLog.xml:101(title)
 msgid "Example"
@@ -607,7 +607,7 @@ msgstr "Eksempel"
 
 #. PowerAndLog.xml:102(para)
 msgid "Instead of <placeholder-1/>, you can use <placeholder-2/>."
-msgstr ""
+msgstr "<placeholder-1/> kan bruges i stedet for <placeholder-2/>."
 
 #. PowerAndLog.xml:112(primary) PowerAndLog.xml:137(primary) PowerAndLog.xml:160(primary)
 msgid "logarithm"
@@ -623,7 +623,7 @@ msgstr "Returnerer den naturlige logaritme til argumentet."
 
 #. PowerAndLog.xml:123(para)
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <emphasis>e</emphasis>, which is Euler's constant. <placeholder-3/> is commonly known as the natural logarithm. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/>&gt;0. When calculating with complex numbers, <placeholder-9/> is defined for all numbers except <placeholder-10/>=0."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner logaritmen af <placeholder-2/> med grundtallet <emphasis>e</emphasis>, som er Eulers konstant. <placeholder-3/> kaldes også for den naturlige logaritme. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-6/> eller et <placeholder-7/>. Hvis beregningen foretages med reelle tal, er funktionen kun defineret for <placeholder-8/>&gt;0. Når beregningen foretages med komplekse tal, er <placeholder-9/> defineret for ethvert <placeholder-10/> bortset fra 0."
 
 #. PowerAndLog.xml:138(para)
 msgid "Returns the base 10 logarithm of the argument."
@@ -631,15 +631,15 @@ msgstr "Returnerer 10-talslogaritmen til argumentet."
 
 #. PowerAndLog.xml:147(para)
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base 10. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-7/>&gt;0. When calculating with complex numbers, <placeholder-8/> is defined for all numbers except <placeholder-9/>=0."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner logaritmen af <placeholder-2/> med grundtallet 10. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. Hvis beregningen foretages med reelle tal, er funktionen kun defineret for <placeholder-7/>&gt;0. Når beregningen foretages med komplekse tal, er <placeholder-8/> defineret for ethvert <placeholder-9/> bortset fra 0."
 
 #. PowerAndLog.xml:161(para)
 msgid "Returns the base <placeholder-1/> logarithm of the argument."
-msgstr ""
+msgstr "Returnerer argumentets logartime med grundtallet <placeholder-1/>."
 
 #. PowerAndLog.xml:170(para)
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/>&gt;0. When calculating with complex numbers, <placeholder-9/> is defined for all numbers except <placeholder-10/>=0. <placeholder-11/> must evaluate to a positive real number."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner logaritmen af <placeholder-2/> med grundtallet <placeholder-3/>. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-6/> eller et <placeholder-7/>. Hvis beregningen foretages med reelle tal, er funktionen kun defineret for <placeholder-8/>&gt;0. Når beregningen foretages med komplekse tal, er <placeholder-9/> defineret for ethvert <placeholder-10/> bortset fra 0. <placeholder-11/> skal evalueres til et positivt reelt tal."
 
 #. Piecewise.xml:7(title) FunctionList.xml:359(emphasis)
 msgid "Piecewise"
@@ -655,7 +655,7 @@ msgstr "Returnerer argumentets fortegn."
 
 #. Piecewise.xml:21(para)
 msgid "The <placeholder-1/> function, which is also called signum, returns the sign of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. When <placeholder-7/> is a real number, <placeholder-8/> returns 1 for <placeholder-9/>&gt;0 and -1 for <placeholder-10/>&lt;0. <placeholder-11/> returns 0 for <placeholder-12/>=0. When <placeholder-13/> evaluates to a complex number, <placeholder-14/> returns <placeholder-15/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/>, som også kaldes signum, returnerer fortegnet på <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. Hvis <placeholder-7/> er et reelt tal, returnerer <placeholder-8/> 1 for <placeholder-9/>&gt;0 og -1 for <placeholder-10/>&lt;0. <placeholder-11/> returnerer 0 for <placeholder-12/>=0. Hvis <placeholder-13/> evalueres til et komplekst tal, returnerer <placeholder-14/> <placeholder-15/>."
 
 #. Piecewise.xml:35(para)
 msgid "The unit step function."
@@ -671,11 +671,11 @@ msgstr "minimum"
 
 #. Piecewise.xml:58(para)
 msgid "Finds and returns the minimum of the values passed as arguments."
-msgstr ""
+msgstr "Finder og returnerer det mindste af argumenterne."
 
 #. Piecewise.xml:67(para)
 msgid "The <placeholder-1/> function returns the minimum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <placeholder-3/> that evaluate to <placeholder-4/> or <placeholder-5/>. If the arguments are complex numbers, the function returns <placeholder-6/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer det mindste af de givne argumenter. <placeholder-2/> kan tage et vilkårligt antal argumenter, dog mindst 2. Argumenterne kan være hvilke som helst <placeholder-3/>, der evalueres til <placeholder-4/> eller <placeholder-5/>. Hvis argumenterne er komplekse tal, returnerer funktionen <placeholder-6/>."
 
 #. Piecewise.xml:81(primary) AxesDialog.xml:13(primary)
 msgid "maximum"
@@ -683,35 +683,35 @@ msgstr "maksimum"
 
 #. Piecewise.xml:82(para)
 msgid "Finds and returns the maximum of the values passed as arguments."
-msgstr ""
+msgstr "Finder og returnerer det største af argumenterne."
 
 #. Piecewise.xml:91(para)
 msgid "The <placeholder-1/> function returns the maximum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <placeholder-3/> that evaluate to <placeholder-4/> or <placeholder-5/>. If the arguments are complex numbers, the function returns <placeholder-6/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer det største af de givne argumenter. <placeholder-2/> kan tage et vilkårligt antal argumenter, dog mindst 2. Argumenterne kan være hvilke som helst <placeholder-3/>, der evalueres til <placeholder-4/> eller <placeholder-5/>. Hvis argumenterne er komplekse tal, returnerer funktionen <placeholder-6/>."
 
 #. Piecewise.xml:105(para)
 msgid "Returns the second argument if it is in the range between the first argument and the third argument."
-msgstr ""
+msgstr "Returnerer det andet argument, hvis det ligger i intervallet mellem det første og tredje argument."
 
 #. Piecewise.xml:114(para)
 msgid "The <placeholder-1/> function returns <placeholder-2/>, if <placeholder-3/> is greater than <placeholder-4/> and less than <placeholder-5/>. If <placeholder-6/> &lt; <placeholder-7/> then <placeholder-8/> is returned. If <placeholder-9/> &gt; <placeholder-10/> then <placeholder-11/> is returned. The arguments may be any <placeholder-12/> that evaluate to <placeholder-13/> or <placeholder-14/>. The function has the same effect as <placeholder-15/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returner <placeholder-2/>, hvis <placeholder-3/> er større end <placeholder-4/> og mindre end <placeholder-5/>. Hvis <placeholder-6/> &lt; <placeholder-7/>, returneres <placeholder-8/>. Hvis <placeholder-9/> &gt; <placeholder-10/>, returneres <placeholder-11/>. Argumenterne er kan være hvilke som helst <placeholder-12/>, der evalueres til <placeholder-13/> eller <placeholder-14/>. Funktionen har samme effekt som <placeholder-15/>."
 
 #. Piecewise.xml:130(para)
 msgid "Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned."
-msgstr ""
+msgstr "Returnerer det andet argument, hvis det første argument er forskelligt fra nul. Ellers returneres det tredje argument."
 
 #. Piecewise.xml:139(para)
 msgid "The <placeholder-1/> function returns <placeholder-2/> if <placeholder-3/> evaluates to a value different from 0. If <placeholder-4/> evaluates to 0, <placeholder-5/> is returned. The arguments may be any <placeholder-6/> that evaluate to <placeholder-7/> or <placeholder-8/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returner <placeholder-2/>, hvis <placeholder-3/> evalueres til en værdi forskellig fra 0. Hvis <placeholder-4/> evalueres til 0, returneres <placeholder-5/>. Argumenterne kan være hvilke som helst <placeholder-6/>, der evalueres til <placeholder-7/> eller <placeholder-8/>."
 
 #. Piecewise.xml:152(para)
 msgid "Evaluates a sequence of if functions and returns the first result found with a condition different from zero."
-msgstr ""
+msgstr "Evaluerer en sekvens af if-funktioner og returnerer det første resultat fundet med en betingelse forskellig fra nul."
 
 #. Piecewise.xml:161(para)
 msgid "The <placeholder-1/> function evaluates <placeholder-2/> and if it is different from 0 then <placeholder-3/> is evaluated and returned. Else <placeholder-4/> is evaluated and if it is different from 0 then <placeholder-5/> is returned and so forth. If none of the conditions are true <placeholder-6/> is returned. <placeholder-7/> is optional and if not specified <placeholder-8/> returns an error if none of the conditions are true. If <placeholder-9/> has 3 arguments it will be the same as the <placeholder-10/> function. The arguments may be any <placeholder-11/> that evaluate to <placeholder-12/> or <placeholder-13/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> evaluerer <placeholder-2/>, og hvis den er forskellig fra 0, vil <placeholder-3/> blive evalueret og returneret. Ellers vil <placeholder-4/> blive evalueret, og hvis resultatet er forskelligt fra 0, vil <placeholder-5/> blive returneret osv. Såfremt ingen af betingelserne er sande, vil <placeholder-6/> blive returneret. <placeholder-7/> er valgfri, og er denne ikke angivet, vil <placeholder-8/> returnere en fejl, såfremt ingen af betingelserne er sande. Hvis <placeholder-9/> har 3 argumenter, er den identisk med funktionen <placeholder-10/>. Argumenterne kan være hvilke som helst <placeholder-11/>, der evalueres til <placeholder-12/> eller <placeholder-13/>."
 
 #. OptionsDialog.xml:8(title) InsertShadingDialog.xml:109(title) InsertShadingDialog.xml:111(guilabel) InsertShadingDialog.xml:202(guilabel)
 msgid "Options"
@@ -731,7 +731,7 @@ msgstr "Indstillinger..."
 
 #. OptionsDialog.xml:10(para)
 msgid "When you choose the menu item <placeholder-1/> the dialog shown below will appear. In this dialog, you can change general program options."
-msgstr ""
+msgstr "Når menupunktet <placeholder-1/> vælges, fremkommer nedenstående dialogboks, hvor generelle indstillinger for programmet kan vælges."
 
 #. OptionsDialog.xml:24(term)
 msgid "Decimals"
@@ -739,7 +739,7 @@ msgstr "Decimaler"
 
 #. OptionsDialog.xml:26(para)
 msgid "This is the number of decimals that all results are shown with. The number has no influence on the calculations or the shown graphs."
-msgstr ""
+msgstr "Her angives det antal decimaler, som beregnede resultater vises med. Tallet påvirker ikke beregningerne og har ingen indflydelse på de viste grafer."
 
 #. OptionsDialog.xml:34(term)
 msgid "Recent files"
@@ -747,7 +747,7 @@ msgstr "Tidligere filer"
 
 #. OptionsDialog.xml:36(para)
 msgid "This is the maximum number of recent used files that is shown in the <placeholder-1/> menu. The number must be between 0 and 9. 0 means that no recent used files are shown."
-msgstr ""
+msgstr "Her angives det maksimale antal menupunkter med tidligere brugte filer, som vises i menuen Filer. Antallet kan være mellem 0 og 9. 0 betyder, at ingen tidligere filer vises."
 
 #. OptionsDialog.xml:45(term) OptionsDialog.xml:49(guilabel) OptionsDialog.xml:51(guilabel)
 msgid "Max undo steps"
@@ -755,7 +755,7 @@ msgstr "Maks. fortryd"
 
 #. OptionsDialog.xml:47(para)
 msgid "Each time you make a change, the program will save enough information to undo it. As default <placeholder-1/> are 50, which mean that you are able to undo the last 50 changes you made in the program. The undo steps will take up a small amount of memory. If your system is low on RAM, you may be able to free some memory by decreasing the <placeholder-2/>."
-msgstr ""
+msgstr "Hver gang en ændring foretages, gemmer programmet tilstrækkelig information til at fortryde den. Som standard vil <placeholder-1/> være 50. Dette betyder, at de 50 seneste ændringer i dokumentet kan fortrydes. Fortrydelsespunkterne bruger en lille smule hukommelse. Hvis systemet ikke har ret meget RAM, kan der frigøres hukommelse ved at reducere <placeholder-2/>."
 
 #. OptionsDialog.xml:57(term)
 msgid "Font scale"
@@ -763,7 +763,7 @@ msgstr "Skriftstørrelse"
 
 #. OptionsDialog.xml:59(para)
 msgid "You can use this to change the scale of the fonts and most of the user interface. This is mostly useful if your screen resolution is very high, or for some other reason, you are having difficulties reading the user interface."
-msgstr ""
+msgstr "Dette kan bruges til at ændre skriftstørrelsen og det meste af brugergrænsefladen. Det er mest anvendeligt, hvis skærmopløsningen er meget høj, eller hvis man af andre grunde har svært ved at læse brugergrænsefladen."
 
 #. OptionsDialog.xml:67(term) Acknowledgements.xml:70(entry)
 msgid "Language"
@@ -771,7 +771,7 @@ msgstr "Sprog"
 
 #. OptionsDialog.xml:69(para)
 msgid "This shows a list of available languages for the program. The selected language will be the one used by the program in the future. The language can be selected differently for each user."
-msgstr ""
+msgstr "Dette viser en liste over mulige sprog for programmet. Det valgte sprog vil blive brugt i fremtiden. Hver bruger kan vælge sin egen indstilling for sprog."
 
 #. OptionsDialog.xml:78(term)
 msgid "Associate .grf files"
@@ -779,7 +779,7 @@ msgstr "Associér .grf filer med Graph"
 
 #. OptionsDialog.xml:80(para)
 msgid "A check mark in this field indicates that the file type .grf is associated with this program. The program will automatically start and load the file when you <action>double-click</action> on it in Explorer."
-msgstr ""
+msgstr "Når dette felt er afkrydset, er filer af typen .grf associeret med programmet. Programmet kan derefter startes, og en tidligere gemt .grf fil indlæses ved at <action>dobbeltklikke</action> på den ønskede fil i Stifinder."
 
 #. OptionsDialog.xml:88(term)
 msgid "Show tooltip"
@@ -787,7 +787,7 @@ msgstr "Vis værktøjstip"
 
 #. OptionsDialog.xml:90(para)
 msgid "When there is a mark in this field, you will see a small box with an explanation when you are holding the mouse pointer over an object, like an edit field, selection box, etc., for a few seconds. The description is also shown in the status bar at the bottom of the main window."
-msgstr ""
+msgstr "Når dette felt er afkrydset, vil en lille ramme med en forklaring til en valgmulighed blive vist, når musen holdes over punktet i et par sekunder. Det være sig et indtastningsfelt, en menuboks osv. Under alle omstændigheder vil forklaringen blive vist i statusbaren nederst i hovedvinduet."
 
 #. OptionsDialog.xml:99(term) FAQ.xml:125(guilabel)
 msgid "Save workspace on exit"
@@ -795,7 +795,7 @@ msgstr "Gem arbejdsområde når programmet afsluttes"
 
 #. OptionsDialog.xml:101(para)
 msgid "When there is a mark in this field, Graph will save the size of the main window before it quits. The next time you start the program the saved size will be used. In addition the width of the <placeholder-1/> is also stored. When the field doesn't have a mark the options that were last saved will be used."
-msgstr ""
+msgstr "Når dette felt er afkrydset, vil størrelsen på programmets hovedvindue blive gemt, når programmet afsluttes. Næste gang programmet startes, vil de gemte indstillinger blive anvendt. <placeholder-1/>s bredde gemmes også. Når feltet ikke er afkrydset, vil programmet under opstart anvende de indstillinger, som sidst blev gemt."
 
 #. OptionsDialog.xml:111(term) OptionsDialog.xml:123(guilabel)
 msgid "Complex form"
@@ -827,11 +827,11 @@ msgstr "Trigonometri"
 
 #. OptionsDialog.xml:113(para)
 msgid "Choose how you want a complex number to be shown in the <placeholder-1/> frame. <placeholder-2/> means that only <placeholder-3/> are shown. If a number has an imaginary part then the number won't be shown and instead you get an error. <placeholder-4/> means that <placeholder-5/> are shown as a+b&imag;, where a is the real part and b is the imaginary part. <placeholder-6/> means that numbers are shown as a&ang;&theta;, where a is the absolute value of the number and &theta; is the angle of the number. &theta; is dependent of the choice between <placeholder-7/> and <placeholder-8/> under <placeholder-9/> in the <placeholder-10/> dialog."
-msgstr ""
+msgstr "Her vælges, hvordan komplekse tal skal vises i <placeholder-1/>. <placeholder-2/> betyder, at kun <placeholder-3/> skal vises. Et tal med en imaginær del bliver altså ikke vist, og der kommer i stedet en fejlmeddelelse. <placeholder-4/> betyder, at <placeholder-5/> vises på formen a+b&imag;, hvor a er den reelle del og b er den imaginære del. <placeholder-6/> betyder, at tal vises på formen a&ang;&theta;, hvor a er tallets absolutte værdi, og &theta; er vinklen fra standardbasisvektoren e = (1,0) til stedvektoren for det komplekse tal a+b&imag;, regnet med fortegn. &theta; er afhængig af valget mellem <placeholder-7/> og <placeholder-8/> under <placeholder-9/> i dialogen <placeholder-10/>."
 
 #. OptionsDialog.xml:122(para)
 msgid "Notice that in some cases you may get a different result in the <placeholder-1/> frame depending on the <placeholder-2/> setting: When <placeholder-3/> is chosen, Graph will try to find a real result if possible, while <placeholder-4/> and <placeholder-5/> may give a non-real result for the same evaluation."
-msgstr ""
+msgstr "Bemærk at der kan blive vist forskellige resultater i <placeholder-1/> afhængig af indstillingen <placeholder-2/>: Indstillingen <placeholder-3/> vil få Graph til at finde et reelt resultat, hvis det er muligt, mens <placeholder-4/> og <placeholder-5/> kan give et irreelt resultat for den samme evaluering."
 
 #. OptionsDialog.xml:131(term)
 msgid "Check for new version of Graph at startup"
@@ -851,7 +851,7 @@ msgstr "Tjek for opdatering"
 
 #. OptionsDialog.xml:133(para)
 msgid "When checked each time the program starts it will check if a newer version of Graph is available on the Internet. If a new version is found you will be asked if you want to visit the web site for Graph to upgrade. If no new version is available you will not see any messages. If disabled, you can still use <placeholder-1/> to see if a new version is available."
-msgstr ""
+msgstr "Når dette felt er afkrydset, vil programmet kontakte en web-server ved hver opstart af programmet for at se, om en nyere version er tilgængelig på nettet. Hvis en nyere version findes, vil du blive spurgt, om du ønsker at besøge hjemmesiden for at opgradere. Hvis der ikke er nogen ny version, vil du ikke se nogen meddelelse. Hvis dette er slået fra, kan <placeholder-1/> stadig bruges for at se, om en ny version er tilgængelig."
 
 #. OLE.xml:4(title)
 msgid "OLE server/client"
@@ -951,7 +951,7 @@ msgstr "Ny"
 
 #. MenuItems.xml:20(para)
 msgid "Use this to create a new coordinate system for drawing graphs in."
-msgstr ""
+msgstr "Bruges til at lave et nyt koordinatsystem til tegning af grafer."
 
 #. MenuItems.xml:29(guimenuitem)
 msgid "Open..."
@@ -959,7 +959,7 @@ msgstr "Åbn..."
 
 #. MenuItems.xml:34(para)
 msgid "Reads an earlier saved coordinate system from a .grf file."
-msgstr ""
+msgstr "Åbner et tidligere gemt koordinatsystem fra en grf-fil."
 
 #. MenuItems.xml:43(guimenuitem)
 msgid "Save"
@@ -967,7 +967,7 @@ msgstr "Gem"
 
 #. MenuItems.xml:48(para)
 msgid "Saves the coordinate system to a file."
-msgstr ""
+msgstr "Gemmer det aktuelle koordinatsystem i en fil."
 
 #. MenuItems.xml:55(guimenuitem) AnimateDialog.xml:102(term)
 msgid "Save as..."
@@ -975,7 +975,7 @@ msgstr "Gem som..."
 
 #. MenuItems.xml:57(para)
 msgid "Saves the coordinate system to a file with a new name."
-msgstr ""
+msgstr "Gemmer koordinatsystemet i en fil med et nyt navn."
 
 #. MenuItems.xml:73(para)
 msgid "Saves the shown coordinate system as an image."
@@ -991,7 +991,7 @@ msgstr "Graph fil..."
 
 #. MenuItems.xml:86(para)
 msgid "Imports the contents of another Graph file into the current coordinate system."
-msgstr ""
+msgstr "Importerer indholdet i en anden Graph-fil ind i det aktuelle koordinatsystem."
 
 #. MenuItems.xml:95(guimenuitem)
 msgid "Point series..."
@@ -999,7 +999,7 @@ msgstr "Punktserier..."
 
 #. MenuItems.xml:99(para)
 msgid "Imports one or several point series from a tab, comma or semicolon separated data file. The first column shall contain the x-coordinates. The following columns shall contain the y-coordinates. Graph will create as many point series as there are columns with y-coordinates in the file. There is no limit the number of point series possible in the data file as long as they share the same x-coordinates."
-msgstr ""
+msgstr "Importerer punktserier fra en tabulator- eller kommasepareret datafil. Den første kolonne skal indeholde x-koordinaterne, mens de efterfølgende kolonner skal indeholde y-koordinaterne. Graph opretter lige så mange punktserier, som der er kolonner med y-koordinater i filen. Man kan have lige så mange punktserier i filen, som man ønsker, så længe de deler de samme x-koordinater."
 
 #. MenuItems.xml:112(guimenuitem)
 msgid "Print..."
@@ -1007,7 +1007,7 @@ msgstr "Udskriv..."
 
 #. MenuItems.xml:117(para)
 msgid "Sends the coordinate system and graphs to a printer."
-msgstr ""
+msgstr "Her udskrives det viste koordinatsystem med grafer på en printer."
 
 #. MenuItems.xml:126(guimenuitem)
 msgid "Exit"
@@ -1015,7 +1015,7 @@ msgstr "Afslut"
 
 #. MenuItems.xml:131(para)
 msgid "Quits the program. You may be asked to save the file."
-msgstr ""
+msgstr "Lukker programmet. Der vil måske blive spurgt, om filen skal gemmes."
 
 #. MenuItems.xml:142(guimenuitem) MenuItems.xml:162(guimenuitem)
 msgid "Undo"
@@ -1023,7 +1023,7 @@ msgstr "Fortryd"
 
 #. MenuItems.xml:147(para)
 msgid "Use this to undo the last thing you did. You can choose how many undo steps that are saved in the <placeholder-1/> dialog."
-msgstr ""
+msgstr "Dette fortryder din sidste handling. Antallet af handlinger, det er muligt at fortryde, kan vælges under <placeholder-1/>."
 
 #. MenuItems.xml:156(guimenuitem)
 msgid "Redo"
@@ -1031,7 +1031,7 @@ msgstr "Gentag"
 
 #. MenuItems.xml:161(para)
 msgid "Use this to redo the last thing undone. This is only available after you have selected <placeholder-1/>."
-msgstr ""
+msgstr "Annullerer den netop fortrudte handling. Dette menupunkt kan kun vælges, efter at <placeholder-1/> har været valgt."
 
 #. MenuItems.xml:170(guimenuitem)
 msgid "Cut"
@@ -1043,19 +1043,19 @@ msgstr "grafelement"
 
 #. MenuItems.xml:175(para)
 msgid "This will copy the selected <placeholder-1/> to the clipboard. The element will be deleted afterwards."
-msgstr ""
+msgstr "Kopierer den markerede <placeholder-1/> til udklipsholderen. Det kopierede vil herefter blive slettet."
 
 #. MenuItems.xml:189(para)
 msgid "This will copy the selected <placeholder-1/> to the clipboard."
-msgstr ""
+msgstr "Kopierer den markerede <placeholder-1/> til udklipsholderen."
 
 #. MenuItems.xml:203(para)
 msgid "This will paste an earlier copied <placeholder-1/> from the clipboard into the coordinate system."
-msgstr ""
+msgstr "Indsætter en <placeholder-1/> fra udklipsholderen i koordinatsystemet."
 
 #. MenuItems.xml:217(para)
 msgid "Copies the shown coordinate system to the clipboard as an image. You can then paste it into another program, i.e. Microsoft Word."
-msgstr ""
+msgstr "Kopierer det viste koordinatsystem som et billede, så det kan indsættes i et andet program, som f.eks. Microsoft Word."
 
 #. MenuItems.xml:227(guimenuitem) AxesDialog.xml:36(guimenuitem)
 msgid "Axes..."
@@ -1063,11 +1063,11 @@ msgstr "Akser..."
 
 #. MenuItems.xml:233(para)
 msgid "Edit specifications for the axes, e.g. scale, colors, legend placement, etc."
-msgstr ""
+msgstr "Rediger indstillinger for akserne, f.eks. skalering, farver, placering af signaturforklaringen osv."
 
 #. MenuItems.xml:248(para)
 msgid "This will change global settings for Graph, e.g. association of .grf files, showing of tooltips, maximum number of undo stored undo steps, etc."
-msgstr ""
+msgstr "Dette vil ændre Graphs globale indstillinger, f.eks. association af grf-filer, visning af værktøjstip, det maksimale gemte antal handlinger, der kan fortrydes, osv."
 
 #. MenuItems.xml:260(guimenu) MenuItems.xml:277(guimenu) MenuItems.xml:294(guimenu) MenuItems.xml:312(guimenu) MenuItems.xml:328(guimenu) MenuItems.xml:346(guimenu) MenuItems.xml:363(guimenu) MenuItems.xml:381(guimenu) MenuItems.xml:397(guimenu) MenuItems.xml:411(guimenu) MenuItems.xml:425(guimenu) InsertTrendlineDialog.xml:23(guimenu) InsertTangentDialog.xml:16(guimenu) InsertTangentDialog.xml:17(guimenu) InsertShadingDialog.xml:18(guimenu) InsertShadingDialog.xml:19(guimenu) InsertRelationDialog.xml:17(guimenu) InsertRelationDialog.xml:18(guimenu) InsertPointSeriesDialog.xml:20(guimenu) InsertPointSeriesDialog.xml:21(guimenu) InsertLabelDialog.xml:25(guimenu) InsertLabelDialog.xml:27(guimenu) InsertFunctionDialog.xml:16(guimenu) InsertFunctionDialog.xml:19(guimenu) InsertDerivativeDialog.xml:17(guimenu) HowToUse.xml:35(guimenu) HowToUse.xml:43(guimenu) Glossary.xml:38(guimenu) Glossary.xml:52(guimenu) FunctionList.xml:174(entry) EvaluateDialog.xml:45(term) CustomFunctionsDialog.xml:16(guimenu)
 msgid "Function"
@@ -1079,7 +1079,7 @@ msgstr "Indsæt funktion..."
 
 #. MenuItems.xml:266(para)
 msgid "Inserts a function into the coordinate system. Functions may be added with different width and color, and you can choose to only show the graph in a specified interval, and specify other settings too."
-msgstr ""
+msgstr "Indsætter grafen en funktion i koordinatsystemet. Grafen kan have forskellig bredde og farve, og man kan vælge kun at vise grafen i et bestemt interval, ligesom man kan specificere andre indstillinger."
 
 #. MenuItems.xml:277(guimenuitem)
 msgid "Insert tangent..."
@@ -1087,7 +1087,7 @@ msgstr "Indsæt tangent..."
 
 #. MenuItems.xml:283(para)
 msgid "Use this dialog to add a tangent to an already shown function at a user-specified point. The tangent will be added to the function selected in the <placeholder-1/>."
-msgstr ""
+msgstr "Her indsættes en tangent i et brugerdefineret punkt på grafen for en allerede eksisterende funktion. Tangenten vil blive tilknyttet den funktion, der er markeret i <placeholder-1/>."
 
 #. MenuItems.xml:294(guimenuitem) InsertShadingDialog.xml:18(guimenuitem)
 msgid "Insert shading..."
@@ -1095,7 +1095,7 @@ msgstr "Indsæt skravering..."
 
 #. MenuItems.xml:300(para)
 msgid "This menu item is used to add a shading to the selected function. You may choose between different styles of shading and different colors. The shading may be added above the function, below the function, between the function and the x-axis, between the function and the y-axis, inside the function or between two functions."
-msgstr ""
+msgstr "Her tilføjes skravering til grafen for en funktion. Der kan vælges mellem flere forskellige typer skraveringer og farver. En skravering kan være over grafen, under grafen, mellem grafen og x-aksen, mellem grafen og y-aksen, inde i grafen eller mellem graferne for to funktioner."
 
 #. MenuItems.xml:312(guimenuitem) InsertDerivativeDialog.xml:17(guimenuitem)
 msgid "Insert f'(x)..."
@@ -1103,7 +1103,7 @@ msgstr "Indsæt f'(x)..."
 
 #. MenuItems.xml:318(para)
 msgid "This dialog is used to add the first derivative to the selected function."
-msgstr ""
+msgstr "I denne dialog kan du indsætte den første afledede af en allerede vist funktion."
 
 #. MenuItems.xml:328(guimenuitem) InsertTrendlineDialog.xml:23(guimenuitem) InsertPointSeriesDialog.xml:20(guimenuitem)
 msgid "Insert point series..."
@@ -1111,7 +1111,7 @@ msgstr "Indsæt punktserie..."
 
 #. MenuItems.xml:334(para)
 msgid "Inserts a new point series into the coordinate system. An infinite number of points defined by their x- and y-coordinates may be added. It is possible to choose color, size, and style of the point series."
-msgstr ""
+msgstr "Indsætter en ny serie af et vilkårligt antal punkter angivet ved deres x- og y-koordinater. Det er muligt at vælge farve, størrelse og forskellige punkttyper."
 
 #. MenuItems.xml:346(guimenuitem)
 msgid "Insert trendline..."
@@ -1119,7 +1119,7 @@ msgstr "Indsæt tendenslinje..."
 
 #. MenuItems.xml:352(para)
 msgid "Inserts a trendline as the curve curve of best fit for the selected point series. You may choose between different kinds of functions for the trendline."
-msgstr ""
+msgstr "Indsætter en tendenslinje ud fra den markerede punktserie. Der kan vælges mellem flere forskellige former for tendens."
 
 #. MenuItems.xml:363(guimenuitem) InsertRelationDialog.xml:17(guimenuitem)
 msgid "Insert relation..."
@@ -1127,7 +1127,7 @@ msgstr "Indsæt relation..."
 
 #. MenuItems.xml:369(para)
 msgid "This inserts an equation or inequality into the coordinate system. Equations and inequalities are used to express relations between x- and y-coordinates with the same operators etc. as for graphs of functions. Relations may be added with different shading styles and colors."
-msgstr ""
+msgstr "Indsætter en ligning eller ulighed i koordinatsystemet. Ligninger og uligheder bruges til at udtrykke relationer mellem mellem x- og y-koordinater ved de samme operatorer osv. som for funktioner. Relationer kan indsættes med forskellige skraveringer og farver."
 
 #. MenuItems.xml:381(guimenuitem) InsertLabelDialog.xml:25(guimenuitem)
 msgid "Insert label..."
