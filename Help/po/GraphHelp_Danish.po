@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-10-20 18:51Romance Standard Time\n"
-"PO-Revision-Date: 2009-01-16 23:21+0100\n"
+"PO-Revision-Date: 2009-01-17 18:01+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -239,7 +239,7 @@ msgstr "Nedenstående dialogboks anvendes til at evaluere den markerede funktion
 
 #. TableDialog.xml:19(para)
 msgid "When you press the <guibutton>Calc</guibutton> button, the table will be filled with the independent variable in the first column. The rest of the columns dependes on the type of function. For a standard function, the table will show f(x), f'(x) and f''(x). For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx. For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx. Unneeded columns can be hidden from the context menu. If the calculations takes a long time, a progress indicator will be shown."
-msgstr "Når du trykker på knappen <guibutton>Beregn</guibutton>, bliver tabellen fyldt med x-værdierne i intervallet. De øvrige kolonner afhænger af funktionstypen. For normale funktioner viser tabellen f(x), f'(x) og f''(x). For parameterfunktioner viser den x(t), y(t), dx/dt, dy/dt og dy/dx. For polære funktioner viser den r(t), x(t), y(t), dr/dt og dy/dx. Overflødige kolonner kan fjernes vha. undermenuen. Hvis beregningen tager lang tid, viser programmet en indikator, mens værdierne beregnes, hvoraf det fremgår, hvor langt programmet er med beregningerne."
+msgstr "Når du trykker på knappen <guibutton>Beregn</guibutton>, bliver tabellen fyldt med x-værdierne i intervallet. De øvrige kolonner afhænger af funktionstypen. For normale funktioner viser tabellen f(x), f'(x) og f''(x). For parameterfunktioner viser den x(t), y(t), dx/dt, dy/dt og dy/dx. For polærfunktioner viser den r(t), x(t), y(t), dr/dt og dy/dx. Overflødige kolonner kan fjernes vha. undermenuen. Hvis beregningen tager lang tid, viser programmet en indikator, mens værdierne beregnes, hvoraf det fremgår, hvor langt programmet er med beregningerne."
 
 #. TableDialog.xml:34(guimenuitem) MenuItems.xml:184(guimenuitem) FAQ.xml:236(guimenuitem)
 msgid "Copy"
@@ -1135,7 +1135,7 @@ msgstr "Indsæt etiket..."
 
 #. MenuItems.xml:387(para)
 msgid "This will show a dialog, which may be used to create a formatted text label. The label will always be created at the center of the graphing area but can afterwards be dragged to another place with the mouse."
-msgstr ""
+msgstr "Dette vil vise en dialog, som kanbruges til at oprette en formateret tekstetiket. Etiketten vil altid blive placeret midt i koordinatsystemet, men kan efterfølgende trækkes hen til andre positioner vha. musen."
 
 #. MenuItems.xml:397(guimenuitem) InsertTangentDialog.xml:17(guimenuitem) InsertShadingDialog.xml:19(guimenuitem) InsertRelationDialog.xml:18(guimenuitem) InsertPointSeriesDialog.xml:21(guimenuitem) InsertLabelDialog.xml:27(guimenuitem) InsertFunctionDialog.xml:19(guimenuitem)
 msgid "Edit..."
@@ -1143,7 +1143,7 @@ msgstr "Rediger..."
 
 #. MenuItems.xml:402(para)
 msgid "This will show a dialog where you can change the selected <placeholder-1/> in the <placeholder-2/>."
-msgstr ""
+msgstr "Dette vil vise en dialog, hvor den valgte <placeholder-1/> kan ændres i <placeholder-2/>."
 
 #. MenuItems.xml:411(guimenuitem)
 msgid "Delete"
@@ -1151,7 +1151,7 @@ msgstr "Slet"
 
 #. MenuItems.xml:416(para)
 msgid "This will delete the selected <placeholder-1/> in the <placeholder-2/>."
-msgstr ""
+msgstr "Dette vil slette den markerede <placeholder-1/> i <placeholder-2/>."
 
 #. MenuItems.xml:425(guimenuitem) CustomFunctionsDialog.xml:16(guimenuitem)
 msgid "Custom functions..."
@@ -1159,7 +1159,7 @@ msgstr "Brugerdefinerede funktioner..."
 
 #. MenuItems.xml:430(para)
 msgid "This shows a dialog used to create custom functions and constants in addition to the built-in ones."
-msgstr ""
+msgstr "Dette viser en dialog til oprettelse af brugerdefinerede funktioner og konstanter som supplement til de indbyggede."
 
 #. MenuItems.xml:441(guimenu) MenuItems.xml:455(guimenu) MenuItems.xml:469(guimenu) MenuItems.xml:484(guimenu) MenuItems.xml:500(guimenu) MenuItems.xml:514(guimenu) MenuItems.xml:530(guimenu) MenuItems.xml:543(guimenu) FAQ.xml:78(guimenu) FAQ.xml:193(guimenu)
 msgid "Zoom"
@@ -1171,7 +1171,7 @@ msgstr "Ind"
 
 #. MenuItems.xml:446(para)
 msgid "This will zoom in at the center of the graphing area, so you will see a &frac14; of the previous graphing area."
-msgstr ""
+msgstr "Dette vil zoome ind på grafområdets centrum, således at &frac14; af det tidligere område vises."
 
 #. MenuItems.xml:455(guimenuitem)
 msgid "Out"
@@ -1179,7 +1179,7 @@ msgstr "Ud"
 
 #. MenuItems.xml:460(para)
 msgid "This will zoom out so you see 4 times as much as on the previous graphing area."
-msgstr ""
+msgstr "Dette vil zoome ud, således at der vises 4 gange så meget af grafområdet."
 
 #. MenuItems.xml:469(guimenuitem)
 msgid "Window"
@@ -1187,7 +1187,7 @@ msgstr "Vindue"
 
 #. MenuItems.xml:474(para)
 msgid "Hold down the <action>left mouse button</action> while you select the area you want to fill the whole graphing area. <action>Right click</action> or press <keycap>Esc</keycap> to cancel the command."
-msgstr ""
+msgstr "Hold <action>venstre musetast</action> nede og markér det område, der skal fylde hele grafområdet. <action>Højreklik</action> eller tryk <keycap>Esc</keycap> for at annullere kommandoen."
 
 #. MenuItems.xml:484(guimenuitem) FAQ.xml:194(guimenuitem)
 msgid "Square"
@@ -1195,7 +1195,7 @@ msgstr "Kvadratisk"
 
 #. MenuItems.xml:489(para)
 msgid "This changes the y-axis to the same scale as the x-axis. It will make a circle look correctly instead of showing as an ellipse. The axes will stay equally scaled until disabled again."
-msgstr ""
+msgstr "Dette ændrer på y-aksens indstillinger, så den får samme skalering som x-aksen. Derved kommer en cirkel til at se rigtig ud i stedet for at ligne en ellipse. Akserne vil blive ved med at have samme skalering, indtil funktionen slås fra."
 
 #. MenuItems.xml:500(guimenuitem)
 msgid "Standard"
@@ -1203,7 +1203,7 @@ msgstr "Standard"
 
 #. MenuItems.xml:505(para)
 msgid "Returns the axes settings to the same default settings used when creating a new coordinate system."
-msgstr ""
+msgstr "Sætter det viste område af koordinatsystemet til de standardindstillinger, som også bruges ved oprettelse af et nyt koordinatsystem."
 
 #. MenuItems.xml:514(guimenuitem) FAQ.xml:79(guimenuitem)
 msgid "Move system"
@@ -1211,7 +1211,7 @@ msgstr "Flyt system"
 
 #. MenuItems.xml:519(para)
 msgid "When selected the mouse pointer changes to a hand. You may now use the mouse to drag the coordinate system around. Select the menu item again, <action>right click</action> or press <keycap>Esc</keycap> to return to normal mode. As an alternative to this menu item, you may hold down the <keycap>Shift</keycap> key and drag the coordinate system around."
-msgstr ""
+msgstr "Når dette punkt vælges, skifter cursoren til en hånd, som derefter kan bruges til at trække koordinatsystemet rundt. Vælg menupunktet igen, <action>højreklik</action> eller tryk <keycap>Esc</keycap> for at vende tilbage til normal brug. I stedet for dette menupunkt kan du vælge at holde <keycap>Shift</keycap>-tasten nede, mens du trækker koordinatsystemet rundt."
 
 #. MenuItems.xml:530(guimenuitem)
 msgid "Fit"
@@ -1219,7 +1219,7 @@ msgstr "Tilpas"
 
 #. MenuItems.xml:534(para)
 msgid "This will change the axes settings to show all parts of the selected <placeholder-1/>."
-msgstr ""
+msgstr "Dette vil ændre akseindstillingerne, så alle dele af den markerede <placeholder-1/> vises."
 
 #. MenuItems.xml:543(guimenuitem)
 msgid "Fit all"
@@ -1227,7 +1227,7 @@ msgstr "Tilpas alle"
 
 #. MenuItems.xml:547(para)
 msgid "This will change the axes settings to show all parts of all the elements in the <placeholder-1/>."
-msgstr ""
+msgstr "Dette vil ændre akseindstillingerne, så alle dele af alle elementer i <placeholder-1/> vises."
 
 #. MenuItems.xml:559(guimenuitem) EvaluateDialog.xml:124(title) EvaluateDialog.xml:129(guimenuitem)
 msgid "Length of path"
@@ -1235,7 +1235,7 @@ msgstr "Buelængde..."
 
 #. MenuItems.xml:564(para)
 msgid "Calculates the distance along the path between two points on the selected graph."
-msgstr ""
+msgstr "Beregner afstanden mellem to punkter langs grafen for den markerede funktion."
 
 #. MenuItems.xml:574(guimenuitem) FAQ.xml:218(guimenuitem) EvaluateDialog.xml:97(title) EvaluateDialog.xml:102(guimenuitem)
 msgid "Area"
@@ -1243,7 +1243,7 @@ msgstr "Areal"
 
 #. MenuItems.xml:579(para)
 msgid "Calculates the signed area between the graph and the x-axis. This is the same as the numerical integral."
-msgstr ""
+msgstr "Beregner arealet af punktmængden afgrænset af grafen, x-aksen samt to lodrette linjer. Det samme som det bestemte integral."
 
 #. MenuItems.xml:589(guimenuitem) Glossary.xml:25(guilabel) EvaluateDialog.xml:8(title) EvaluateDialog.xml:14(title) EvaluateDialog.xml:19(guimenuitem)
 msgid "Evaluate"
@@ -1251,7 +1251,7 @@ msgstr "Evaluer"
 
 #. MenuItems.xml:595(para)
 msgid "This will evaluate the selected function function for a given value. For standard functions f(x), f'(x) and f''(x) are evaluated. For parametric functions x(t), y(t), dx/dt, dy/dt and dy/dx are evaluated. For polar functions r(t), x(t), y(t), dr/dt and dy/dt are evaluated."
-msgstr ""
+msgstr "Dette vil evaluere funktionen til den markerede graf for en given værdi. For standardfunktioner evalueres f(x), f'(x) og f''(x). For parameterfunktioner evalueres x(t), y(t), dx/dt, dy/dt og dy/dx. For polærfunktioner evalueres r(t), x(t), y(t), dr/dt og dy/dt."
 
 #. MenuItems.xml:608(guimenuitem)
 msgid "Table..."
@@ -1259,7 +1259,7 @@ msgstr "Tabel..."
 
 #. MenuItems.xml:613(para)
 msgid "This dialog fills a table with a user specified range of values and the result of evaluating the selected function for the values."
-msgstr ""
+msgstr "Denne dialog udfylder en tabel med et brugerdefineret interval af værdier og de tilhørende evalueringsværdier for de markerede funktioner."
 
 #. MenuItems.xml:623(guimenuitem)
 msgid "Animate..."
@@ -1267,7 +1267,7 @@ msgstr "Animer..."
 
 #. MenuItems.xml:628(para)
 msgid "This dialog allows you to create an animation from the data in the coordinate system by changing an existing custom constant. This makes it easy to see what happens when the constant changes. The animation may be saved to a disk file."
-msgstr ""
+msgstr "Denne dialog giver mulighed for at oprette en animation ud fra dataene i koordinatsystemet ved at ændre en eksisterende brugerdefineret konstant. Dette gør det let at se, hvad der sker, når en konstant ændres, og animationen kan gemmes som en fil."
 
 #. MenuItems.xml:640(guimenuitem)
 msgid "Contents and index"
@@ -1275,7 +1275,7 @@ msgstr "Indhold og indeks"
 
 #. MenuItems.xml:645(para)
 msgid "Shows the contents and index of the help file."
-msgstr ""
+msgstr "Viser indholdsfortegnelse og indeks i hjælpefilen."
 
 #. MenuItems.xml:654(guimenuitem) FunctionList.xml:7(title)
 msgid "List of functions"
@@ -1283,7 +1283,7 @@ msgstr "Liste over funktioner"
 
 #. MenuItems.xml:659(para)
 msgid "Shows a list of functions and constants that may be used for plotting graphs."
-msgstr ""
+msgstr "Viser en liste over funktioner og konstanter, som kan anvendes til at tegne grafer."
 
 #. MenuItems.xml:668(guimenuitem) FAQ.xml:5(title)
 msgid "Frequently Asked Questions"
@@ -1291,7 +1291,7 @@ msgstr "Ofte Stillede Spørgsmål"
 
 #. MenuItems.xml:672(para)
 msgid "This will show a list of frequently asked questions and their answers."
-msgstr ""
+msgstr "Dette viser en liste over ofte stillede spørgsmål og besvarelser af disse. Dette kaldes ofte en FAQ (Frequently Asked Questions)."
 
 #. MenuItems.xml:681(guimenuitem)
 msgid "Tip of the day"
@@ -1299,7 +1299,7 @@ msgstr "Dagens tip"
 
 #. MenuItems.xml:685(para)
 msgid "This will show some tips about using Graph in a more optimal way, and certain features of Graph you may not know about."
-msgstr ""
+msgstr "Dette vil vise nogle tips til optimal brug af programmet og vise funktionalitet, som du måske ikke vidste, var i programmet."
 
 #. MenuItems.xml:694(guimenuitem)
 msgid "Graph web site"
@@ -1307,7 +1307,7 @@ msgstr "Graphs hjemmeside"
 
 #. MenuItems.xml:698(para)
 msgid "Shows the web site for Graph in your default web browser."
-msgstr ""
+msgstr "Viser Graphs hjemmeside i standardbrowseren."
 
 #. MenuItems.xml:707(guimenuitem)
 msgid "Support"
@@ -1315,7 +1315,7 @@ msgstr "Støtteforum"
 
 #. MenuItems.xml:711(para)
 msgid "Shows the support forum for Graph in your default web browser."
-msgstr ""
+msgstr "Viser Graphs supportforum i standardbrowseren."
 
 #. MenuItems.xml:720(guimenuitem)
 msgid "Donate"
@@ -1323,11 +1323,11 @@ msgstr "Donér"
 
 #. MenuItems.xml:724(para)
 msgid "Shows the web page that allows you to donate to the Graph project to support its development."
-msgstr ""
+msgstr "Viser hjemmesiden, der giver mulighed for at give donationer til Graph-projektet for at støtte dets udvikling."
 
 #. MenuItems.xml:737(para)
 msgid "This will check if a new version of Graph is available. If there is a new version, you will be asked if you want to visit the web site of Graph to download the new version."
-msgstr ""
+msgstr "Dette vil undersøge, om der er en nyere version af programmet tilgængelig. Hvis en ny version er tilgængelig, vil du blive spurgt, om du vil besøge Graphs hjemmeside for at downloade den nye version."
 
 #. MenuItems.xml:747(guimenuitem) Introduction.xml:39(guimenuitem)
 msgid "About Graph..."
@@ -1335,11 +1335,11 @@ msgstr "Om Graph..."
 
 #. MenuItems.xml:752(para)
 msgid "Shows version number, copyright and license information for Graph."
-msgstr ""
+msgstr "Viser Graphs versionsnummer samt ophavsret- og licensinformation."
 
 #. MenuItems.xml:8(para)
 msgid "The following is a list of all the menu items in the program: <placeholder-1/>"
-msgstr ""
+msgstr "Følgende er en liste over samtlige menupunkter i programmet: <placeholder-1/>"
 
 #. Introduction.xml:7(title)
 msgid "What is Graph?"
@@ -1383,19 +1383,19 @@ msgstr "Programmet er testet under Microsoft Windows 95, Windows 98, Windows Me,
 
 #. Introduction.xml:37(para)
 msgid "Which version are you using? This is shown in the <placeholder-1/> dialog box. You should check that you are using the newest version, else the bug may have been fixed already."
-msgstr ""
+msgstr "Hvilken version bruger du? Dette er vist i dialogen <placeholder-1/>. Du bør undersøge, om du bruger den nyeste version, da fejlen ellers måske allerede kan være rettet."
 
 #. Introduction.xml:44(para)
 msgid "Explain what happens and what you expected to happen."
-msgstr ""
+msgstr "Forklar hvad der sker, og hvad du havde forventet."
 
 #. Introduction.xml:49(para)
 msgid "Explain carefully how I can reproduce the bug. If I can't see what you see, it is very difficult for me to solve the problem."
-msgstr ""
+msgstr "Forklar udførligt, hvordan jeg kan genskabe fejlen. Hvis jeg ikke kan se det, du kan se, er det meget svært for mig at løse problemet."
 
 #. Introduction.xml:33(para)
 msgid "When you send a bug report, please write the following: <placeholder-1/>"
-msgstr ""
+msgstr "Skriv venligst følgende, når du sender en fejlrapport: <placeholder-1/>"
 
 #. Installation.xml:4(title)
 msgid "Installation and startup"
@@ -1439,7 +1439,7 @@ msgstr "Programfilen"
 
 #. Installation.xml:36(entry)
 msgid "Shell extension for showing thumbnails of grf-files in Explorer."
-msgstr ""
+msgstr "Shell extension til visning af miniaturebilleder af grf-filer i Stifinder."
 
 #. Installation.xml:40(entry)
 msgid "Translations of the program."
@@ -1451,15 +1451,15 @@ msgstr "Hjælp på forskellige sprog."
 
 #. Installation.xml:48(entry)
 msgid "Some examples of plugins. Custom plugins can be placed here too."
-msgstr ""
+msgstr "Nogle eksempler på plugins. Brugerdefinerede plugins kan også placeres her."
 
 #. Installation.xml:52(entry)
 msgid "Some examples that can be opened in Graph."
-msgstr ""
+msgstr "Nogle eksempler, der kan åbnes i Graph."
 
 #. Installation.xml:15(para)
 msgid "The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version name. To install, just execute the installation and follow the instructions. The installation will install the following files in the selected directory and subdirectories: <placeholder-1/>"
-msgstr ""
+msgstr "Programmet distribueres som et selvudpakkende installationsprogram, der som regel hedder SetupGraph-x.y.exe, hvor x.y er versionsnummeret. Eksekver filen og følg instruktionerne for at installere. Følgende filer vil blive installeret i den mappe og de undermapper, som du vælger under installationen: <placeholder-1/>"
 
 #. Installation.xml:59(para)
 msgid "The installation will create a shortcut in the Start menu, which may be used to start the program. Under the installation you select the preferred language. This can later be changed from the <placeholder-1/> dialog."
@@ -1483,15 +1483,15 @@ msgstr "Genstart nu?"
 
 #. Installation.xml:87(entry)
 msgid "Instructs the Setup to be silent, which means that the wizard and the background window are not displayed but the installation progress window is. Everything else is normal so for example error messages during installation are displayed. If a restart is necessary, a <placeholder-1/> message box is displayed."
-msgstr ""
+msgstr "Instruerer installationen til at være stille, dvs. installationsguiden og baggrundsvinduet vises ikke. Det gør vinduet for installationens fremskridt derimod. Alt andet er normalt, så evt. fejlmeddelelser under installationen vises. Hvis det er nødvendigt at genstarte, vises en <placeholder-1/>-meddelelse."
 
 #. Installation.xml:95(entry)
 msgid "Instructs the Setup to be very silent. This is the same as silent with the addition that the installation progress window is not displayed either. If a restart is necessary, the Setup will reboot without asking."
-msgstr ""
+msgstr "Instruerer installationen til at være meget stille. Dette er det samme som stille bortset fra, at vinduet for installationens fremskridt heller ikke vises. Hvis det er nødvendigt at genstarte, sker dette automatisk, uden at brugeren bliver spurgt."
 
 #. Installation.xml:102(entry)
 msgid "Instructs Setup not to reboot even if it's necessary."
-msgstr ""
+msgstr "Instruerer installationen til ikke at genstarte, selv om det måtte være nødvendigt."
 
 #. Installation.xml:111(guilabel)
 msgid "Select language"
@@ -1507,7 +1507,7 @@ msgstr "Vælg destinationsmappen."
 
 #. Installation.xml:116(entry)
 msgid "Overrides the default directory name displayed on the <placeholder-1/> wizard page. A fully qualified pathname must be specified."
-msgstr ""
+msgstr "Overskriver det standardmappenavn, der vises i installationsguiden. Et fuldgyldigt stinavn skal angives."
 
 #. Installation.xml:128(title)
 msgid "Uninstallation"
@@ -1523,7 +1523,7 @@ msgstr "Start"
 
 #. Installation.xml:139(para)
 msgid "Usually Graph is started from the link in the <guibutton>Start</guibutton> menu. A .grf file can be passed as parameter, in which case Graph will open the specified file. In addition to this the parameters in the table below can be passed to Graph on the command line."
-msgstr ""
+msgstr "Graph startes som regel fra genvejen i Menuen <guibutton>Start</guibutton>. En grf-fil kan angives som parameter. Graph vil i så fald åbne den angivne fil. Desuden kan parametrene i tabellen nedenfor bruges med Graph fra kommandoprompten."
 
 #. Installation.xml:160(link)
 msgid "image formats"
@@ -3183,7 +3183,7 @@ msgstr "Hvordan tegner jeg en cirkel?"
 
 #. FAQ.xml:187(para)
 msgid "You need to use a parametric function to draw a circle. When inserting the function, select <placeholder-1/> as <placeholder-2/>. You can now add a circle with radius 5 and center in (2,3) as <userinput>x(t)=5cos(t)+2, y(t)=5sin(t)+3</userinput>. You may need to use <placeholder-3/> to make the axes equally scaled. Else the circle may look like an ellipse. A circle can also be added as a polar function, but only with center in (0,0). A circle with radius 5 may be added as the polar function <userinput>r(t)=5</userinput>. Alternatively you can use a relation and add the circle as <userinput>(x-2)^2+(y-3)^2=5^2</userinput>."
-msgstr "For at tegne en cirkel skal du bruge en parameterfunktion. Vælg <placeholder-1/> som <placeholder-2/>, når du indsætter funktionen. Du kan nu indsætte en cirkel med radius 5 og centrum i (2,3) som graf for parameterfunktionen <userinput>x(t)=5cos(t)+2, y(t)=5sin(t)+3</userinput>. Det kan være nødvendigt at vælge <placeholder-3/> for at skalere akserne ens, ellers kan cirklen ligne en ellipse. En cirkel kan også blive vist som en polærfunktion, men kun med centrum i (0,0). En cirkel med radius 5 kan tilføjes som graf for den polære funktion <userinput>r(t)=5</userinput>. Alternativt kan du bruge cirklens ligning som relation: <userinput>(x-2)^2+(y-3)^2=5^2</userinput>."
+msgstr "For at tegne en cirkel skal du bruge en parameterfunktion. Vælg <placeholder-1/> som <placeholder-2/>, når du indsætter funktionen. Du kan nu indsætte en cirkel med radius 5 og centrum i (2,3) som graf for parameterfunktionen <userinput>x(t)=5cos(t)+2, y(t)=5sin(t)+3</userinput>. Det kan være nødvendigt at vælge <placeholder-3/> for at skalere akserne ens, ellers kan cirklen ligne en ellipse. En cirkel kan også blive vist som en polærfunktion, men kun med centrum i (0,0). En cirkel med radius 5 kan tilføjes som graf for polærfunktionen <userinput>r(t)=5</userinput>. Alternativt kan du bruge cirklens ligning som relation: <userinput>(x-2)^2+(y-3)^2=5^2</userinput>."
 
 #. FAQ.xml:207(para)
 msgid "How do I calculate the area between two functions?"
