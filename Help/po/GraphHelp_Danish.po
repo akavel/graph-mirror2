@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-10-20 18:51Romance Standard Time\n"
-"PO-Revision-Date: 2009-01-18 11:10+0100\n"
+"PO-Revision-Date: 2009-01-18 12:34+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1623,15 +1623,15 @@ msgstr "Logaritmisk"
 
 #. InsertTrendlineDialog.xml:57(para)
 msgid "A logarithmic line of best fit is given as <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants, and <placeholder-4/> is the natural logarithm function. To add a logarithmic function, no point in the series may have an x-coordinate that is negative or zero."
-msgstr ""
+msgstr "En logaritmisk tendenslinje er givet ved <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, og <placeholder-4/> er den naturlige logaritmefunktion. Når en logaritmisk tendenslinje indsættes, må punktserien ikke have x-koordinater, der er negative eller nul."
 
 #. InsertTrendlineDialog.xml:62(para)
 msgid "A logarithmic function is a straight line in a semilogarithmic coordinate system. The point series is therefore converted to a semilogarithmic coordinate system and the logarithmic function with the smallest sum of squares (SSQ) is found."
-msgstr ""
+msgstr "Grafen for en logaritmisk funktion er en ret linje i et enkeltlogaritmisk koordinatsystem. Punktserien konverteres derfor til et enkeltlogaritmisk koordinatsystem, hvor logaritmefunktionen med den mindste sum af kvadrater (SSQ) bestemmes."
 
 #. InsertTrendlineDialog.xml:72(para)
 msgid "A polynomial is a function given by <placeholder-1/>, where <placeholder-2/>...<placeholder-3/> are constants. <placeholder-4/> is the order of the polynomial. You need at least one more point than the order."
-msgstr ""
+msgstr "En polynomisk funktion er givet ved <placeholder-1/>, hvor <placeholder-2/>...<placeholder-3/> er konstanter. <placeholder-4/> er polynomiets orden. Der skal være mindst ét punkt mere en ordenen."
 
 #. InsertTrendlineDialog.xml:84(term)
 msgid "Power"
@@ -1639,19 +1639,19 @@ msgstr "Potens"
 
 #. InsertTrendlineDialog.xml:86(para)
 msgid "A power function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add a power function, no point in the series may have an x- or y-coordinate that is negative or zero."
-msgstr ""
+msgstr "En potensfunktion er givet ved <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, der beregnes således, at funktionen er punktseriens bedst tilnærmede tendenslinje. Når en potenstendenslinje indsættes, må punktserien ikke have x- eller y-koordinater, der er negative eller nul."
 
 #. InsertTrendlineDialog.xml:91(para)
 msgid "A power function is a straight line in a double logarithmic coordinate system. The point series is therefore converted to a double logarithmic coordinate system and the power function with the smallest sum of squares (SSQ) is found."
-msgstr ""
+msgstr "En potensfunktion er en ret linje i et dobbeltlogaritmisk koordinatsystem. Punktserierne konverteres derfor til et dobbeltlogaritmisk koordinatsystem, hvor potensfunktionen med den mindste sum af kvadrater (SSQ) bestemmes."
 
 #. InsertTrendlineDialog.xml:101(para)
 msgid "An exponential function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add an exponential function, no point in the series may have a y-coordinate that is negative or zero."
-msgstr ""
+msgstr "En eksponentialfunktion er givet <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, der beregnes således, at funktionen er punktseriens bedst tilnærmede tendenslinje. Når en eksponentiel tendenslinje indsættes, må punktserien ikke have y-koordinater, der er negative eller nul."
 
 #. InsertTrendlineDialog.xml:106(para)
 msgid "An Exponential function is a straight line in a semilogarithmic coordinate system with the y-axis as the logarithmic axis. The point series is therefore converted to a semilogarithmic coordinate system and the exponential function with the smallest sum of squares (SSQ) is found."
-msgstr ""
+msgstr "Grafen for en eksponentialfunktion er en ret linje i et enkeltlogaritmisk koordinatsystem, hvor y-aksen er den logaritmiske akse. Punktserien konverteres derfor til et enkeltlogaritmisk koordinatsystem, hvor eksponentialfunktionen med den mindste sum af kvadrater (SSQ) bestemmes."
 
 #. InsertTrendlineDialog.xml:114(term)
 msgid "Moving average"
@@ -1663,7 +1663,7 @@ msgstr "Periode"
 
 #. InsertTrendlineDialog.xml:116(para)
 msgid "Moving average is a series of straight lines based on the average of the previous points. The <placeholder-1/> determines how many points are used for the average. If <placeholder-2/> is 1 only one point is used, which actually isn't an average. This will draw a line directly between the points. When <placeholder-3/> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point. Instead it will be an average of the previous points."
-msgstr ""
+msgstr "Bevægeligt gennemsnit er en serie af rette linjer baseret på gennemsnittet af de foregående punkter. <placeholder-1/> bestemmer, hvor mange punkter der bruges til gennemsnittet. Hvis <placeholder-2/> er 1, bruges kun ét punkt, hvilket egentlig ikke er et gennemsnit. Dette vil tegne et linjestykke direkte mellem punkterne. Hvis <placeholder-3/> er større end 1, vil linjens y-koordinat ved hvert punkt ikke være det samme som punktets y-koordinat. Det vil i stedet være et gennemsnit af de foregående punkter."
 
 #. InsertTrendlineDialog.xml:130(title)
 msgid "User defined"
@@ -1671,27 +1671,27 @@ msgstr "Brugerdefineret"
 
 #. InsertTrendlineDialog.xml:134(para)
 msgid "In this tab you can enter your own trendline models. The model is entered as a standard function, where all the constants that you want Graph to find are named with a $ followed by any combination of characters (a-z) and digits (0-9). Examples of valid constants are: $a, $y0, $const."
-msgstr ""
+msgstr "I dette faneblad kan man indtaste sine egne tendenslinjemodeller. Modellen indtastes som en standardfunktion, hvor alle de konstanter, man vil have Graph til at beregne, navngives med et $-tegn efterfulgt af en hvilken som helst kombination af bogstaver (a-z) og tal (0-9). Eksempler på gyldige konstanter er: $a, $y0, $const."
 
 #. InsertTrendlineDialog.xml:141(para)
 msgid "An example of a model could be <placeholder-1/>. The program tries to calculate the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/> so that f(x) will be as close to the point series as possible. You can use the <guibutton>Add model</guibutton> button to add the model to the saved list with a name."
-msgstr ""
+msgstr "Et eksempel på en model kunne være <placeholder-1/>. Programmet forsøger at beregne konstanterne <placeholder-2/>, <placeholder-3/> og <placeholder-4/> således, at f(x) vil være så tæt på punktserien som muligt. Knappen <guibutton>Tilføj model</guibutton> kan bruges til at tilføje modellen til den gemte liste under et givet navn."
 
 #. InsertTrendlineDialog.xml:148(para)
 msgid "The program needs a guess for where to start the search for the optimum. As default the guess for all constants is 1, but this can be changed for models added to the list. A better guess will increase the possibility that an optimum can be found."
-msgstr ""
+msgstr "Programmet skal bruge et gæt på, hvor det skal starte søgningen efter den optimale værdi. Som standard er gættet for alle konstanter 1; men det kan ændres for modeller, der er tilføjet til listen. Et bedre gæt øger sandsynligheden for, at en optimal værdi kan bestemmes."
 
 #. InsertTrendlineDialog.xml:154(para)
 msgid "Graph will try to find the constants for the model f(x) so the sum of squares <placeholder-1/> will be the smallest possible. The program will start with the guess and move towards the minimum of the sum of squares. If a solution is not found after 100 iterations or the given guess is not valid, the program gives up."
-msgstr ""
+msgstr "Graph vil forsøge at finde konstanterne til modellen f(x), så kvadraternes sum <placeholder-1/> er minimal. Programmet starter søgningen med det valgte gæt og søger i retning af kvadraternes sums mindsteværdi. Hvis der ikke findes en løsning efter 100 forsøg, eller hvis det givne gæt ikke er gyldigt, giver programmet op."
 
 #. InsertTrendlineDialog.xml:162(para)
 msgid "It is possible, even though it rarely happens, that more than one minimum exists. In this case the minimum nearest to the guess will be found, even though this may not be the best."
-msgstr ""
+msgstr "Selv om det forekommer sjældent, er det muligt, at der findes mere end ét minimum. I så fald bestemmes det minimum, der ligger nærmest gættet, selv om det ikke nødvendigvis er det bedste."
 
 #. InsertTrendlineDialog.xml:167(para)
 msgid "Notice that you should avoid redundant constants as they might confuse the program. For example this model has a redundant constant: <placeholder-1/>. Notice the relation between the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. If you multiply <placeholder-5/>, <placeholder-6/> and <placeholder-7/> with the same value the resulting function will not be changed. This means that there are an infinite number of best solutions, because you can always multiply by a value. This may confuse the program when it tries to find the best one. Therefore either <placeholder-8/>, <placeholder-9/> or <placeholder-10/> should be removed."
-msgstr ""
+msgstr "Bemærk at overflødige konstanter bør undgås, da de kan forvirre programmet. F.eks. har denne model en overflødig konstant: <placeholder-1/>. Bemærk sammenhængen mellem konstanterne <placeholder-2/>, <placeholder-3/> og <placeholder-4/>. Hvis <placeholder-5/>, <placeholder-6/> og <placeholder-7/> multipliceres med den samme værdi, vil den resulterende funktion ikke blive ændret. Dette betyder, at der er et uendeligt antal af bedste løsninger, fordi der altid kan multipliceres med en værdi. Det kan forvirre programmet, når det forsøger at finde den bedste. Derfor bør enten <placeholder-8/>, <placeholder-9/> eller <placeholder-10/> udelades."
 
 #. InsertTrendlineDialog.xml:177(para)
 msgid "When the trendline is added, the correlation coefficient <placeholder-1/> is shown in the comment. The closer <placeholder-2/> is to 1 the closer the trendline is to the points."
