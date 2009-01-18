@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-10-20 18:51Romance Standard Time\n"
-"PO-Revision-Date: 2009-01-17 18:01+0100\n"
+"PO-Revision-Date: 2009-01-18 11:10+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1531,15 +1531,15 @@ msgstr "billedformater"
 
 #. Installation.xml:158(entry)
 msgid "Used to save an opened .grf file as an image file. The file type can be any of the <placeholder-1/> supported by Graph."
-msgstr ""
+msgstr "Bruges til at gemme en åben grf-fil som et billede. Filtypen kan være en hvilken som helst <placeholder-1/> understøttet af Graph."
 
 #. Installation.xml:165(entry)
 msgid "Used in combination with /SI to specify the width in pixels of the saved image."
-msgstr ""
+msgstr "Bruges sammen med /SI til at angive det gemte billedes bredde i pixels."
 
 #. Installation.xml:171(entry)
 msgid "Used in combination with /SI to specify the height in pixels of the saved image."
-msgstr ""
+msgstr "Bruges sammen med /SI til at angive det gemte billedes højde i pixels."
 
 #. InsertTrendlineDialog.xml:8(title)
 msgid "Insert trendline"
@@ -1583,7 +1583,7 @@ msgstr "regression"
 
 #. InsertTrendlineDialog.xml:19(para)
 msgid "Use the dialog shown below to insert a trendline that is the function that fits a <link linkend=\"InsertPointSeriesDialog\">point series</link> best. A trendline is a function that shows a trend in a series of points, i.e. a trendline is the curve of bets fit of a specific type for a series of points. The trendline is added as an ordinary function. To create a trendline, you select the point series you want to base the trendline on and use <placeholder-1/>."
-msgstr ""
+msgstr "Brug dialogen nedenfor til at indsætte en tendenslinje, dvs. den funktion, der er bedst tilnærmet en <link linkend=\"InsertPointSeriesDialog\">punktserie</link>. En tendenslinje er en funktion, der viser en tendens i en punktserie, dvs. en tendenslinje er den kurve, der er bedst tilnærmet en given punktserie. Tendenslinjen bliver indsat som en almindelig funktion. Vælg den punktserie, tendenslinjen skal baseres på, og brug <placeholder-1/> for at indsætte tendenslinjen."
 
 #. InsertTrendlineDialog.xml:27(title)
 msgid "Built-in"
@@ -1607,15 +1607,15 @@ msgstr "Skær"
 
 #. InsertTrendlineDialog.xml:31(para)
 msgid "You may choose between the following built-in functions. These functions will give an accurate result. For <placeholder-1/>, <placeholder-2/> and <placeholder-3/> trendlines, you may select the <placeholder-4/> field and specify the point where you want the trendline to meet the y-axis."
-msgstr ""
+msgstr "Man kan vælge mellem følgende indbyggede funktioner. Disse funktioner giver et præcist resultat. For <placeholder-1/>-, <placeholder-2/>- og <placeholder-3/>-tendenslinjer, kan man markere <placeholder-4/>-feltet og angive det punkt, hvor tendenslinjen skal skære y-aksen."
 
 #. InsertTrendlineDialog.xml:42(para)
 msgid "This is a straight line with the function f(x) = a*x+b, where a and b are constants calculated so the line is the best fit to the point series."
-msgstr ""
+msgstr "Dette er en ret linje med funktionsforskriften f(x) = a*x+b, hvor a og b er konstanter, der beregnes således, at linjen bedst tilnærmes punktserien."
 
 #. InsertTrendlineDialog.xml:45(para)
 msgid "The trendline is calculated so the sum of squares (SSQ) <placeholder-1/> will be as small as possible. If possible the function will cross the points in the series; else the function will be so close to the series that the summation cannot get any smaller."
-msgstr ""
+msgstr "Tendenslinjen beregnes således, at kvadraternes sum (SSQ) <placeholder-1/> bliver minimal. Hvis det er muligt, vil tendenslinjen krydse punkterne i punktserien. Ellers vil tendenslinjen være så tæt på punktserien, at summen ikke kan blive mindre."
 
 #. InsertTrendlineDialog.xml:55(term)
 msgid "Logarithmic"
