@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-10-20 18:51Romance Standard Time\n"
-"PO-Revision-Date: 2009-01-18 12:34+0100\n"
+"PO-Revision-Date: 2009-01-18 16:08+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1171,7 +1171,7 @@ msgstr "Ind"
 
 #. MenuItems.xml:446(para)
 msgid "This will zoom in at the center of the graphing area, so you will see a &frac14; of the previous graphing area."
-msgstr "Dette vil zoome ind på grafområdets centrum, således at &frac14; af det tidligere område vises."
+msgstr "Dette vil zoome ind på vinduets centrum, således at &frac14; af det tidligere område vises."
 
 #. MenuItems.xml:455(guimenuitem)
 msgid "Out"
@@ -1179,7 +1179,7 @@ msgstr "Ud"
 
 #. MenuItems.xml:460(para)
 msgid "This will zoom out so you see 4 times as much as on the previous graphing area."
-msgstr "Dette vil zoome ud, således at der vises 4 gange så meget af grafområdet."
+msgstr "Dette vil zoome ud, således at der vises 4 gange så meget af vinduet."
 
 #. MenuItems.xml:469(guimenuitem)
 msgid "Window"
@@ -1187,7 +1187,7 @@ msgstr "Vindue"
 
 #. MenuItems.xml:474(para)
 msgid "Hold down the <action>left mouse button</action> while you select the area you want to fill the whole graphing area. <action>Right click</action> or press <keycap>Esc</keycap> to cancel the command."
-msgstr "Hold <action>venstre musetast</action> nede og markér det område, der skal fylde hele grafområdet. <action>Højreklik</action> eller tryk <keycap>Esc</keycap> for at annullere kommandoen."
+msgstr "Hold <action>venstre musetast</action> nede og markér det område, der skal fylde hele vinduet. <action>Højreklik</action> eller tryk <keycap>Esc</keycap> for at annullere kommandoen."
 
 #. MenuItems.xml:484(guimenuitem) FAQ.xml:194(guimenuitem)
 msgid "Square"
@@ -1583,7 +1583,7 @@ msgstr "regression"
 
 #. InsertTrendlineDialog.xml:19(para)
 msgid "Use the dialog shown below to insert a trendline that is the function that fits a <link linkend=\"InsertPointSeriesDialog\">point series</link> best. A trendline is a function that shows a trend in a series of points, i.e. a trendline is the curve of bets fit of a specific type for a series of points. The trendline is added as an ordinary function. To create a trendline, you select the point series you want to base the trendline on and use <placeholder-1/>."
-msgstr "Brug dialogen nedenfor til at indsætte en tendenslinje, dvs. den funktion, der er bedst tilnærmet en <link linkend=\"InsertPointSeriesDialog\">punktserie</link>. En tendenslinje er en funktion, der viser en tendens i en punktserie, dvs. en tendenslinje er den kurve, der er bedst tilnærmet en given punktserie. Tendenslinjen bliver indsat som en almindelig funktion. Vælg den punktserie, tendenslinjen skal baseres på, og brug <placeholder-1/> for at indsætte tendenslinjen."
+msgstr "Brug nedenstående dialogboks til at indsætte en tendenslinje til en eksisterende <link linkend=\"InsertPointSeriesDialog\">punktserie</link>. En tendenslinje er grafen for en funktion af en given type, som bedst approksimerer punkterne. Tendenslinjen oprettes som graf for en standardfunktion. Vælg den punktserie, som tendenslinjen skal baseres på, og brug <placeholder-1/> for at oprette tendenslinjen."
 
 #. InsertTrendlineDialog.xml:27(title)
 msgid "Built-in"
@@ -1607,15 +1607,15 @@ msgstr "Skær"
 
 #. InsertTrendlineDialog.xml:31(para)
 msgid "You may choose between the following built-in functions. These functions will give an accurate result. For <placeholder-1/>, <placeholder-2/> and <placeholder-3/> trendlines, you may select the <placeholder-4/> field and specify the point where you want the trendline to meet the y-axis."
-msgstr "Man kan vælge mellem følgende indbyggede funktioner. Disse funktioner giver et præcist resultat. For <placeholder-1/>-, <placeholder-2/>- og <placeholder-3/>-tendenslinjer, kan man markere <placeholder-4/>-feltet og angive det punkt, hvor tendenslinjen skal skære y-aksen."
+msgstr "Der er mulighed for at vælge mellem følgende indbyggede funktioner. Disse funktioner vil give et præcist resultat. For <placeholder-1/>, <placeholder-2/> og <placeholder-3/> tendenslinjer kan man markere feltet <placeholder-4/> og vælge det punkt, hvori tendenslinjen skal skære y-aksen."
 
 #. InsertTrendlineDialog.xml:42(para)
 msgid "This is a straight line with the function f(x) = a*x+b, where a and b are constants calculated so the line is the best fit to the point series."
-msgstr "Dette er en ret linje med funktionsforskriften f(x) = a*x+b, hvor a og b er konstanter, der beregnes således, at linjen bedst tilnærmes punktserien."
+msgstr "Dette er en funktion med forskriften f(x) = a*x+b, hvor a og b er konstanter, beregnet så den rette linje kommer så tæt på punkterne som muligt."
 
 #. InsertTrendlineDialog.xml:45(para)
 msgid "The trendline is calculated so the sum of squares (SSQ) <placeholder-1/> will be as small as possible. If possible the function will cross the points in the series; else the function will be so close to the series that the summation cannot get any smaller."
-msgstr "Tendenslinjen beregnes således, at kvadraternes sum (SSQ) <placeholder-1/> bliver minimal. Hvis det er muligt, vil tendenslinjen krydse punkterne i punktserien. Ellers vil tendenslinjen være så tæt på punktserien, at summen ikke kan blive mindre."
+msgstr "Konstanterne a og b beregnes, så de lodrette kvadraters sum (Sum of Squares / SSQ) <placeholder-1/> bliver så lille som muligt. Hvis der er perfekt overensstemmelse, vil regressionslinjen  blive placeret oven i punkterne, og ellers vil linjen  komme til at ligge så tæt på punkterne som muligt."
 
 #. InsertTrendlineDialog.xml:55(term)
 msgid "Logarithmic"
@@ -1623,7 +1623,7 @@ msgstr "Logaritmisk"
 
 #. InsertTrendlineDialog.xml:57(para)
 msgid "A logarithmic line of best fit is given as <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants, and <placeholder-4/> is the natural logarithm function. To add a logarithmic function, no point in the series may have an x-coordinate that is negative or zero."
-msgstr "En logaritmisk tendenslinje er givet ved <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, og <placeholder-4/> er den naturlige logaritmefunktion. Når en logaritmisk tendenslinje indsættes, må punktserien ikke have x-koordinater, der er negative eller nul."
+msgstr "En logaritmisk tendenslinje er graf for funktionen <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, og <placeholder-4/> er den naturlige logaritmefunktion. For at anvende en logaritmisk funktion, må intet punkt i serien have en x-koordinat, der er negativ eller nul."
 
 #. InsertTrendlineDialog.xml:62(para)
 msgid "A logarithmic function is a straight line in a semilogarithmic coordinate system. The point series is therefore converted to a semilogarithmic coordinate system and the logarithmic function with the smallest sum of squares (SSQ) is found."
@@ -1631,7 +1631,7 @@ msgstr "Grafen for en logaritmisk funktion er en ret linje i et enkeltlogaritmis
 
 #. InsertTrendlineDialog.xml:72(para)
 msgid "A polynomial is a function given by <placeholder-1/>, where <placeholder-2/>...<placeholder-3/> are constants. <placeholder-4/> is the order of the polynomial. You need at least one more point than the order."
-msgstr "En polynomisk funktion er givet ved <placeholder-1/>, hvor <placeholder-2/>...<placeholder-3/> er konstanter. <placeholder-4/> er polynomiets orden. Der skal være mindst ét punkt mere en ordenen."
+msgstr "Et polynomium er en funktion på formen <placeholder-1/>, hvor <placeholder-2/>…<placeholder-3/> er konstanter, og <placeholder-4/> er heltallig og ikke-negativ. <placeholder-4/> angiver polynomiets orden. For <placeholder-4/>=1 er en polynomiumsregression det samme som en lineær regression. Antallet af punkter i punktserien skal mindst være en større end <placeholder-4/>."
 
 #. InsertTrendlineDialog.xml:84(term)
 msgid "Power"
@@ -1639,7 +1639,7 @@ msgstr "Potens"
 
 #. InsertTrendlineDialog.xml:86(para)
 msgid "A power function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add a power function, no point in the series may have an x- or y-coordinate that is negative or zero."
-msgstr "En potensfunktion er givet ved <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, der beregnes således, at funktionen er punktseriens bedst tilnærmede tendenslinje. Når en potenstendenslinje indsættes, må punktserien ikke have x- eller y-koordinater, der er negative eller nul."
+msgstr "En potensfunktion er givet ved forskriften <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, beregnet så grafen for funktionen kommer så tæt på punkterne som muligt. For at tilføje en potensfunktion, må ingen af punkterne i serien have en x- eller y-koordinat, der er negativ eller nul."
 
 #. InsertTrendlineDialog.xml:91(para)
 msgid "A power function is a straight line in a double logarithmic coordinate system. The point series is therefore converted to a double logarithmic coordinate system and the power function with the smallest sum of squares (SSQ) is found."
@@ -1647,7 +1647,7 @@ msgstr "En potensfunktion er en ret linje i et dobbeltlogaritmisk koordinatsyste
 
 #. InsertTrendlineDialog.xml:101(para)
 msgid "An exponential function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add an exponential function, no point in the series may have a y-coordinate that is negative or zero."
-msgstr "En eksponentialfunktion er givet <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, der beregnes således, at funktionen er punktseriens bedst tilnærmede tendenslinje. Når en eksponentiel tendenslinje indsættes, må punktserien ikke have y-koordinater, der er negative eller nul."
+msgstr "En eksponentiel funktion er givet ved <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, beregnet så grafen for funktionen ligger så tæt på punkterne som muligt. For at kunne tilføje en eksponentiel funktion, må ingen af punkterne i serien have en y-koordinat, der er negativ eller nul."
 
 #. InsertTrendlineDialog.xml:106(para)
 msgid "An Exponential function is a straight line in a semilogarithmic coordinate system with the y-axis as the logarithmic axis. The point series is therefore converted to a semilogarithmic coordinate system and the exponential function with the smallest sum of squares (SSQ) is found."
@@ -1663,7 +1663,7 @@ msgstr "Periode"
 
 #. InsertTrendlineDialog.xml:116(para)
 msgid "Moving average is a series of straight lines based on the average of the previous points. The <placeholder-1/> determines how many points are used for the average. If <placeholder-2/> is 1 only one point is used, which actually isn't an average. This will draw a line directly between the points. When <placeholder-3/> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point. Instead it will be an average of the previous points."
-msgstr "Bevægeligt gennemsnit er en serie af rette linjer baseret på gennemsnittet af de foregående punkter. <placeholder-1/> bestemmer, hvor mange punkter der bruges til gennemsnittet. Hvis <placeholder-2/> er 1, bruges kun ét punkt, hvilket egentlig ikke er et gennemsnit. Dette vil tegne et linjestykke direkte mellem punkterne. Hvis <placeholder-3/> er større end 1, vil linjens y-koordinat ved hvert punkt ikke være det samme som punktets y-koordinat. Det vil i stedet være et gennemsnit af de foregående punkter."
+msgstr "Bevægeligt gennemsnit består af en række rette linjer baseret på et gennemsnit af de foregående punkter. <placeholder-1/> angiver, hvor mange punkter der bruges til gennemsnittet. Hvis <placeholder-2/> er 1, vil der kun blive brugt ét punkt, hvilket egentlig ikke giver et gennemsnit. Dette vil tegne en linje direkte gennem alle punkterne. Når <placeholder-3/> er større end 1, vil y-koordinaten for linjen ved hvert punkt ikke være det samme som y-koordinaten for punktet. I stedet vil den være et gennemsnit af de foregående punkter."
 
 #. InsertTrendlineDialog.xml:130(title)
 msgid "User defined"
@@ -1671,31 +1671,31 @@ msgstr "Brugerdefineret"
 
 #. InsertTrendlineDialog.xml:134(para)
 msgid "In this tab you can enter your own trendline models. The model is entered as a standard function, where all the constants that you want Graph to find are named with a $ followed by any combination of characters (a-z) and digits (0-9). Examples of valid constants are: $a, $y0, $const."
-msgstr "I dette faneblad kan man indtaste sine egne tendenslinjemodeller. Modellen indtastes som en standardfunktion, hvor alle de konstanter, man vil have Graph til at beregne, navngives med et $-tegn efterfulgt af en hvilken som helst kombination af bogstaver (a-z) og tal (0-9). Eksempler på gyldige konstanter er: $a, $y0, $const."
+msgstr "I denne fane kan du indtaste dine egne modeller. Modellen indtastes som en standardfunktion, hvor alle konstanter, som du ønsker, at Graph skal bestemme, navngives med et $ efterfulgt af en kombination af bogstaver (a-z) og tal (0-9). Eksempler på gyldige konstanter er: $a, $y0, $const."
 
 #. InsertTrendlineDialog.xml:141(para)
 msgid "An example of a model could be <placeholder-1/>. The program tries to calculate the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/> so that f(x) will be as close to the point series as possible. You can use the <guibutton>Add model</guibutton> button to add the model to the saved list with a name."
-msgstr "Et eksempel på en model kunne være <placeholder-1/>. Programmet forsøger at beregne konstanterne <placeholder-2/>, <placeholder-3/> og <placeholder-4/> således, at f(x) vil være så tæt på punktserien som muligt. Knappen <guibutton>Tilføj model</guibutton> kan bruges til at tilføje modellen til den gemte liste under et givet navn."
+msgstr "Et eksempel på en model kunne være <placeholder-1/>. Programmet vil forsøge at beregne konstanterne <placeholder-2/>, <placeholder-3/> og <placeholder-4/>, så grafen for f kommer til at ligge så tæt på punktserien som muligt. Du kan bruge <guibutton>Tilføj model</guibutton> til at tilføje modellen med et navn til den gemte liste."
 
 #. InsertTrendlineDialog.xml:148(para)
 msgid "The program needs a guess for where to start the search for the optimum. As default the guess for all constants is 1, but this can be changed for models added to the list. A better guess will increase the possibility that an optimum can be found."
-msgstr "Programmet skal bruge et gæt på, hvor det skal starte søgningen efter den optimale værdi. Som standard er gættet for alle konstanter 1; men det kan ændres for modeller, der er tilføjet til listen. Et bedre gæt øger sandsynligheden for, at en optimal værdi kan bestemmes."
+msgstr "Programmet har brug for et gæt for  at starte søgningen efter de optimale værdier. Som standardgæt sættes alle konstanter til 1, men dette kan ændres, når en model tilføjes listen. Et bedre gæt øger sandsynligheden for, at en optimal værdi for konstanterne findes."
 
 #. InsertTrendlineDialog.xml:154(para)
 msgid "Graph will try to find the constants for the model f(x) so the sum of squares <placeholder-1/> will be the smallest possible. The program will start with the guess and move towards the minimum of the sum of squares. If a solution is not found after 100 iterations or the given guess is not valid, the program gives up."
-msgstr "Graph vil forsøge at finde konstanterne til modellen f(x), så kvadraternes sum <placeholder-1/> er minimal. Programmet starter søgningen med det valgte gæt og søger i retning af kvadraternes sums mindsteværdi. Hvis der ikke findes en løsning efter 100 forsøg, eller hvis det givne gæt ikke er gyldigt, giver programmet op."
+msgstr "Graph vil forsøge at finde manglende konstanter for modellen f(x), så SSQ <placeholder-1/> bliver så lille som muligt. Programmet vil starte med gættet og bevæge sig mod minimumspunktet for SSQ. Hvis en løsning ikke kan findes inden 100 iterationer, eller såfremt det givne gæt ikke er gyldigt, giver programmet op."
 
 #. InsertTrendlineDialog.xml:162(para)
 msgid "It is possible, even though it rarely happens, that more than one minimum exists. In this case the minimum nearest to the guess will be found, even though this may not be the best."
-msgstr "Selv om det forekommer sjældent, er det muligt, at der findes mere end ét minimum. I så fald bestemmes det minimum, der ligger nærmest gættet, selv om det ikke nødvendigvis er det bedste."
+msgstr "Det er muligt, selv om det meget sjældent sker, at mere end et minimum for SSQ eksisterer. I dette tilfælde vil det minimum, som ligger tættest på gættet, blive fundet, selv om det ikke nødvendigvis er det bedste."
 
 #. InsertTrendlineDialog.xml:167(para)
 msgid "Notice that you should avoid redundant constants as they might confuse the program. For example this model has a redundant constant: <placeholder-1/>. Notice the relation between the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. If you multiply <placeholder-5/>, <placeholder-6/> and <placeholder-7/> with the same value the resulting function will not be changed. This means that there are an infinite number of best solutions, because you can always multiply by a value. This may confuse the program when it tries to find the best one. Therefore either <placeholder-8/>, <placeholder-9/> or <placeholder-10/> should be removed."
-msgstr "Bemærk at overflødige konstanter bør undgås, da de kan forvirre programmet. F.eks. har denne model en overflødig konstant: <placeholder-1/>. Bemærk sammenhængen mellem konstanterne <placeholder-2/>, <placeholder-3/> og <placeholder-4/>. Hvis <placeholder-5/>, <placeholder-6/> og <placeholder-7/> multipliceres med den samme værdi, vil den resulterende funktion ikke blive ændret. Dette betyder, at der er et uendeligt antal af bedste løsninger, fordi der altid kan multipliceres med en værdi. Det kan forvirre programmet, når det forsøger at finde den bedste. Derfor bør enten <placeholder-8/>, <placeholder-9/> eller <placeholder-10/> udelades."
+msgstr "Bemærk, at man bør undgå overflødige konstanter, idet de kan forvirre programmet. For eksempel har denne model en overflødig konstant: <placeholder-1/>. Bemærk sammenhængen mellem konstanterne <placeholder-2/>, <placeholder-3/> og <placeholder-4/>. Den samlede funktion vil ikke blive ændret, selv om <placeholder-5/>, <placeholder-6/> og <placeholder-7/> hver især multipliceres med samme størrelse. Det betyder, at der er et uendeligt stort antal bedste løsninger, hvilket kan forvirre programmet, når det prøver at finde den bedste løsning. Derfor bør enten <placeholder-8/>, <placeholder-9/> eller <placeholder-10/> fjernes."
 
 #. InsertTrendlineDialog.xml:177(para)
 msgid "When the trendline is added, the correlation coefficient <placeholder-1/> is shown in the comment. The closer <placeholder-2/> is to 1 the closer the trendline is to the points."
-msgstr ""
+msgstr "Når tendenslinjen er tilføjet, vises korrelationskoefficienten <placeholder-1/> i kommentarfeltet. Jo tættere <placeholder-2/> er på 1, desto tættere er tendenslinjen på punkterne."
 
 #. InsertTangentDialog.xml:8(title)
 msgid "Insert tangent/normal"
@@ -1719,11 +1719,11 @@ msgstr "Indsæt tangent/normal..."
 
 #. InsertTangentDialog.xml:14(para)
 msgid "You can use the dialog below to insert or edit a tangent or normal to a function. To insert a new tangent or normal, you use <placeholder-1/>. To change an existing tangent or normal, you first select it in the <placeholder-2/> and use <placeholder-3/>."
-msgstr ""
+msgstr "Nedenstående dialogboks kan bruges til at indsætte og redigere en tangent eller normal til grafen for en funktion. Brug <placeholder-1/> for at indsætte en ny tangent eller normal. Markér en eksisterende tangent eller normal i <placeholder-2/> og brug <placeholder-3/> for at ændre den."
 
 #. InsertTangentDialog.xml:19(para)
 msgid "A tangent is a straight line that touches the graph of the function at a given point without crossing it. The tangent may however cross the graph elsewhere. A normal is a straight line perpendicular to the graph of the function at a given point. If the item is a standard function the point is identified by the x-coordinate, while the point is identified from the independent t-parameter for parametric and polar functions."
-msgstr ""
+msgstr "En tangent er en ret  linje, der rører grafen i et defineret punkt uden at krydse den. Tangenten må dog godt krydse grafen andre steder. En normal er en ret linje, som står vinkelret på tangenten til grafen for funktionen i et angivet punkt. Hvis der er tale om en normal funktion, vil punktet være identificeret ved x-koordinaten, mens punktet identificeres ud fra den uafhængige parameter, t for parameterfunktioner og polærfunktioner."
 
 #. InsertTangentDialog.xml:31(term) InsertFunctionDialog.xml:55(term)
 msgid "Argument range"
@@ -1739,7 +1739,7 @@ msgstr "Til"
 
 #. InsertTangentDialog.xml:33(para)
 msgid "You can choose an interval for the tangent/normal. <placeholder-1/> and <placeholder-2/> indicates the start and end of the interval. You can leave one or both of them blank to draw the graph from minus infinity to plus infinity."
-msgstr ""
+msgstr "Man kan vælge et interval for tangenten/normalen. <placeholder-1/> og <placeholder-2/> indikerer intervallets begyndelse og slutning. Hvis det ene eller begge felter er tomme, tegnes grafen fra minus uendelig og/eller til plus uendelig."
 
 #. InsertTangentDialog.xml:42(term) InsertFunctionDialog.xml:73(term)
 msgid "Endpoints"
@@ -1747,7 +1747,7 @@ msgstr "Endepunkter"
 
 #. InsertTangentDialog.xml:44(para)
 msgid "Here you can choose to show markers at the start and/or end of the interval. If no interval is specified, the markers will be shown at the edge of the graphing area. The default is not to show any markers."
-msgstr ""
+msgstr "Her kan man vælge at vise markører ved intervallets begyndelse og/eller slutning. Hvis der ikke vælges noget interval, vises markørerne ved kanten af vinduet. Det er standard ikke at vise markører."
 
 #. InsertTangentDialog.xml:53(term) InsertFunctionDialog.xml:84(term)
 msgid "Legend text"
@@ -1759,7 +1759,7 @@ msgstr "signaturforklaring"
 
 #. InsertTangentDialog.xml:55(para)
 msgid "Enter a description to show in the <placeholder-1/>. If empty the function equation will be used."
-msgstr ""
+msgstr "Indtast en beskrivelse, som vises i <placeholder-1/>. Funktionens ligning vil blive brugt, hvis feltet er tomt."
 
 #. InsertTangentDialog.xml:62(term) InsertFunctionDialog.xml:94(term)
 msgid "Graph properties"
@@ -1767,7 +1767,7 @@ msgstr "Grafegenskaber"
 
 #. InsertTangentDialog.xml:64(para)
 msgid "You can choose between different line styles for which you want the tangent/normal to be drawn. You can choose between solid, dashed, dotted or a combination of these. You can also choose the width of the tangent/normal. The width is notified in screen pixels. There are also a lot of different colors you can choose between."
-msgstr ""
+msgstr "Man kan vælge mellem forskellige linjetyper, som tangenten/normalen skal tegnes med. Man kan vælge imellem fast, stiplet, prikket eller en kombination af disse. Man kan også vælge bredden på tangenten/normalen. Bredden angives i skærmpixels. Der er også en række forskellige farver at vælge imellem."
 
 #. InsertShadingDialog.xml:8(title)
 msgid "Insert shading"
@@ -1799,7 +1799,7 @@ msgstr "imellem"
 
 #. InsertShadingDialog.xml:16(para)
 msgid "The dialog below is used to add a shading to the selected function. To insert a new shading, you use <placeholder-1/>. To change an existing shading, you first select it in the <placeholder-2/> and use <placeholder-3/>. The shading is used to mark an area between the function graph and something else."
-msgstr ""
+msgstr "Dialogen nedenfor bruges til at tilføje skravering til en markeret funktionsgraf. Brug <placeholder-1/> for at indsætte en ny skravering. Markér en eksisterende skravering i <placeholder-2/> og brug <placeholder-3/> for at ændre den. Skraveringen bruges til at markere et område mellem funktionsgrafen og noget andet."
 
 #. InsertShadingDialog.xml:24(title) InsertShadingDialog.xml:29(guilabel) InsertShadingDialog.xml:189(guilabel) InsertShadingDialog.xml:190(guilabel)
 msgid "Shading"
@@ -1807,7 +1807,7 @@ msgstr "Skravering"
 
 #. InsertShadingDialog.xml:28(para)
 msgid "In the <placeholder-1/> tab you can choose between the following types of shadings:"
-msgstr ""
+msgstr "I fanebladet <placeholder-1/> kan man vælge mellem forskellige typer af skraveringer."
 
 #. InsertShadingDialog.xml:34(term)
 msgid "Between function and x-axis"
@@ -1823,7 +1823,7 @@ msgstr "Forøg indtil skæring"
 
 #. InsertShadingDialog.xml:36(para)
 msgid "This is the most commonly used type of shading. This will shade the area between the graph of the function and the x-axis in the selected interval. If you check <placeholder-1/> or <placeholder-2/>, the interval will decrease or increase until the graph is crossing the x-axis."
-msgstr ""
+msgstr "Dette er den mest brugte form for skravering. Denne type vil skravere området mellem grafen for funktionen og x-aksen i det valgte interval. Hvis <placeholder-1/> eller <placeholder-2/> afkrydses, vil intervallet blive formindsket eller forøget, indtil grafen krydser x-aksen."
 
 #. InsertShadingDialog.xml:46(term)
 msgid "Between function and y-axis"
@@ -1831,7 +1831,7 @@ msgstr "Mellem funktionen og y-aksen"
 
 #. InsertShadingDialog.xml:48(para)
 msgid "This will shade the area between the graph of the function and the y-axis in the selected interval. This is rarely used and probably most useful for parametric functions. Notice that you still use the x-coordinates for the interval. If you check <placeholder-1/> or <placeholder-2/>, the interval will decrease or increase until the graph is crossing the y-axis."
-msgstr ""
+msgstr "Denne type vil skravere området mellem grafen for funktionen og y-aksen i det valgte interval. Dette bruges sjældent og er nok mest brugbart for parameterfunktioner. Bemærk, at det stadig er x-koordinaterne, der angiver intervallet for almindelige funktioner. Hvis <placeholder-1/> eller <placeholder-2/> afkrydses, vil intervallet blive formindsket eller forøget, indtil grafen krydser y-aksen."
 
 #. InsertShadingDialog.xml:59(term)
 msgid "Below function"
@@ -1839,7 +1839,7 @@ msgstr "Under funktionen"
 
 #. InsertShadingDialog.xml:61(para)
 msgid "This will shade the area below the graph of the function down to the bottom of the graphing area in the selected interval. If you check <placeholder-1/> or <placeholder-2/>, the interval will decrease or increase until the graph is crossing the bottom of the graphing area."
-msgstr ""
+msgstr "Denne type vil skravere området under grafen for funktionen ned til bunden af billedet. Hvis <placeholder-1/> eller <placeholder-2/> afkrydses, vil intervallet blive formindsket eller forøget, indtil grafen  krydser bunden af vinduet."
 
 #. InsertShadingDialog.xml:70(term)
 msgid "Above function"
@@ -1847,7 +1847,7 @@ msgstr "Over funktionen"
 
 #. InsertShadingDialog.xml:72(para)
 msgid "This will shade the area above the graph of the function up to the top of the graphing area in the selected interval. If you check <placeholder-1/> or <placeholder-2/>, the interval will decrease or increase until the graph is crossing the top of the graphing area."
-msgstr ""
+msgstr "Denne type vil skravere området over grafen for funktionen op til toppen af billedet. Hvis <placeholder-1/> eller <placeholder-2/> afkrydses, vil intervallet blive formindsket eller forøget, indtil funktionen krydser toppen af vinduet."
 
 #. InsertShadingDialog.xml:81(term)
 msgid "Inside function"
@@ -1855,7 +1855,7 @@ msgstr "Inde i funktionen"
 
 #. InsertShadingDialog.xml:83(para)
 msgid "This will shade the area inside the graph of the function in the selected interval. If you check <placeholder-1/> or <placeholder-2/>, the interval will decrease or increase until the graph is crossing itself. This is especially useful to shade a closed part of a parametric or polar function, but it can also be used to shade standard functions."
-msgstr ""
+msgstr "Denne type vil skravere området inde i grafen for funktionen i det valgte interval. Hvis <placeholder-1/> eller <placeholder-2/> afkrydses, vil intervallet blive formindsket eller forøget, indtil grafen  krydser sig selv. Dette er specielt brugbart til at skravere en lukket del af en parameterkurve, men kan også bruges til almindelige funktioner."
 
 #. InsertShadingDialog.xml:93(term) InsertShadingDialog.xml:190(guilabel)
 msgid "Between functions"
@@ -1867,19 +1867,19 @@ msgstr "2. funktion"
 
 #. InsertShadingDialog.xml:95(para)
 msgid "This will shade the area between the graphs of two functions. The first function is the one you selected in the <placeholder-1/> in the main window, before you invoked the dialog. The second function is selected in the list box in the <placeholder-2/> tab. For standard functions, the interval will be the same for the two functions. For parametric functions, you may select different intervals for the two functions. If you don't select an interval for the second function, it will use the same interval as the first function."
-msgstr ""
+msgstr "Denne type vil skravere området mellem graferne for to funktioner. Den første funktion blev valgt i <placeholder-1/> i hovedvinduet, inden dialogboksen blev fremkaldt. Den anden funktion vælges i listen under fanen <placeholder-2/>. For almindelige funktioner, er intervallet det samme for begge funktioner. For parameterfunktioner kan der vælges forskellige intervaller for de to funktioner. Hvis der ikke vælges et interval for den anden funktion, vil den bruge samme interval som den første."
 
 #. InsertShadingDialog.xml:110(para)
 msgid "At the <placeholder-1/> tab shown below, you may change the options for the shading."
-msgstr ""
+msgstr "I fanebladet placeholder-1/>, som vises herunder, er der mulighed for at vælge forskellige indstillinger for skraveringen."
 
 #. InsertShadingDialog.xml:120(para)
 msgid "Here you may enter a value, for which you want the shading to start. You specify the x-coordinate if you are using a standard function or the t-parameter if you are using a parametric or polar function. If you don't enter a value, the shading will start at negative infinity. If you place a check mark in <placeholder-1/>, the start coordinate of the shading will be decreased from the entered value to the coordinate where the graph is crossing the axis, the edge of the graphing area, itself or another graph, depending of the type of shading selected."
-msgstr ""
+msgstr "Her indtastes den x-koordinat, eller t-værdi hvis du bruger parameterfunktioner, hvor skraveringen skal starte. Hvis der ikke indtastes nogen værdi, vil skraveringen starte i minus uendelig. Hvis <placeholder-1/> afkrydses, vil startværdien blive formindsket til det punkt, hvori grafen for funktionen krydser en akse, kanten, sig selv eller grafen for en anden funktion, afhængig af hvilken type skravering, der er valgt."
 
 #. InsertShadingDialog.xml:134(para)
 msgid "Here you may enter a value, for which you want the shading to stop. You specify the x-coordinate if you are using a standard function or the t-parameter if you are using a parametric or polar function. If you don't enter a value, the shading will continue until positive infinity. If you place a check mark in <placeholder-1/>, the end coordinate of the shading will be increased from the entered value to the coordinate where the graph is crossing the axis, the edge of the graphing area, itself or another graph depending of the type of shading selected."
-msgstr ""
+msgstr "Her indtastes den x-koordinat, eller t-værdi hvis du bruger parameterfunktioner, hvor skraveringen skal slutte. Hvis der ikke indtastes nogen værdi, vil skraveringen slutte i uendelig. Hvis <placeholder-1/> afkrydses, vil slutværdien blive forøget til det punkt, hvori grafen for funktionen krydser en akse, kanten, sig selv eller grafen for en anden funktion, afhængig af hvilken type skravering, der er valgt."
 
 #. InsertShadingDialog.xml:146(term) InsertRelationDialog.xml:77(guilabel)
 msgid "Style"
@@ -1887,7 +1887,7 @@ msgstr "Type"
 
 #. InsertShadingDialog.xml:148(para)
 msgid "Here you may choose between different styles to use for the shading."
-msgstr ""
+msgstr "Her vælges hvilket udseende skraveringen skal have."
 
 #. InsertShadingDialog.xml:155(term)
 msgid "Color"
@@ -1895,7 +1895,7 @@ msgstr "Farve"
 
 #. InsertShadingDialog.xml:157(para)
 msgid "Here you may choose the color of the shading."
-msgstr ""
+msgstr "Her vælges skraveringens farve."
 
 #. InsertShadingDialog.xml:164(term)
 msgid "Mark start of range"
@@ -1903,7 +1903,7 @@ msgstr "Marker start"
 
 #. InsertShadingDialog.xml:166(para)
 msgid "Check this to draw a line at the start of the range. Uncheck it if you want two shadings to look as one."
-msgstr ""
+msgstr "Afkryds dette felt for at vise en linje ved skraveringens start. Fjern markeringen for at få to skraveringer til at se ud som en."
 
 #. InsertShadingDialog.xml:174(term)
 msgid "Mark end of range"
@@ -1911,11 +1911,11 @@ msgstr "Marker slutning"
 
 #. InsertShadingDialog.xml:176(para)
 msgid "Check this to draw a line at the end of the range. Uncheck it if you want two shadings to look as one."
-msgstr ""
+msgstr "Afkryds dette felt for at vise en linje ved skraveringens slutning. Fjern markeringen for at få to skraveringer til at se ud som en."
 
 #. InsertShadingDialog.xml:187(para)
 msgid "At the <placeholder-1/> tab, you may select the second function when you have chosen to create a shading between two functions in the <placeholder-2/> tab. This is only available when you have chosen <placeholder-3/> in the <placeholder-4/> tab. The dialog with the <placeholder-5/> tab is shown below."
-msgstr ""
+msgstr "Under fanebladet <placeholder-1/> vælges den anden funktion, når der er valgt skravering mellem graferne for to funktioner i fanebladet <placeholder-2/>. Dette er kun tilgængeligt, når <placeholder-3/> er valgt i fanebladet <placeholder-4/>. Dialogboksen med fanebladet <placeholder-5/> kan ses nedenfor."
 
 #. InsertShadingDialog.xml:198(term)
 msgid "Shading range for 2nd function"
@@ -1923,11 +1923,11 @@ msgstr "Skraveringsområde for 2. funktion"
 
 #. InsertShadingDialog.xml:200(para)
 msgid "This is used to select the interval for the second function, just like you selected the interval for the first function in the <placeholder-1/> tab. This is only available for parametric functions and not for standard functions. For standard functions the interval for the second function is always the same as the interval for the first function. If you enter neither a start nor an end of interval for a parametric function, the values for the first function will be used for the second function as well."
-msgstr ""
+msgstr "Her vælges intervallet for skraveringen langs grafen for den anden funktion på samme måde som intervallet for grafen for den første funktion under <placeholder-1/>. Dette er kun tilgængeligt for parameterfunktioner og ikke for almindelige funktioner. For almindelige funktioner, vil intervallet for den anden funktion altid være det samme som for den første funktion. Hvis der hverken indtastes en værdi i start eller slut for en parameterfunktion eller polærfunktion, vil værdierne for den første funktion blive brugt."
 
 #. InsertShadingDialog.xml:212(para)
 msgid "Shadings are a great way to mark an area, but if you get weird results, check that you selected the right function and the right interval. If you try to shade an interval crossing an asymptote or your shading is associated with a weird parametric function, you might get weird results. But really, what did you expect?"
-msgstr ""
+msgstr "En skravering er en hensigtsmæssig måde at markere et område på. Hvis der forekommer et underligt resultat, kontroller at det er den rigtige funktion og det rigtige interval, som skraveringen er tilføjet. Hvis en skravering krydser en asymptote eller skraveringen er tilføjet en underlig funktion, kan der forekomme et mærkeligt resultat. Men helt ærligt, hvad havde du egentlig forventet?"
 
 #. InsertRelationDialog.xml:8(title)
 msgid "Insert relation"
@@ -1955,7 +1955,7 @@ msgstr "begrænsninger"
 
 #. InsertRelationDialog.xml:14(para)
 msgid "This dialog is used to insert a relation in the coordinate system. <literal>Relation</literal> is a common name for inequalities and equations. To insert a relation you use the menu item <placeholder-1/>. To change an existing relation, you first select it in the <placeholder-2/> and use <placeholder-3/>."
-msgstr ""
+msgstr "Denne dialog bruges til at indsætte en relation i koordinatsystemet. <literal>Relation</literal> er et fællesbegreb for uligheder og ligninger. Vælg menupunktet <placeholder-1/> for at indsætte en relation. Markér en eksisterende relation i <placeholder-2/> og brug <placeholder-3/> for at ændre den."
 
 #. InsertRelationDialog.xml:25(term)
 msgid "Relation"
@@ -1963,15 +1963,15 @@ msgstr "Relation"
 
 #. InsertRelationDialog.xml:27(para)
 msgid "Here you enter the relation you want to graph. This must either be an equation or an inequality. <placeholder-1/> and <placeholder-2/> are used as the independent variables. An equation is a statement that one quantity equals another and the quantities must be separated by the = operator. For example the equation <literal>x^2 + y^2 = 25</literal> will plot a circle of radius 5."
-msgstr ""
+msgstr "Her indtastes den relation, som skal afbildes grafisk. Denne skal enten være en ligning eller en ulighed. <placeholder-1/> og <placeholder-2/> bruges som uafhængige variable. En ligning er et udsagn om, at en størrelse er lige så stor som en anden, og størrelserne skal adskilles opreatoren =. F.eks. vil ligningen <literal>x^2 + y^2 = 25</literal> plotte en cirkel med radius 5."
 
 #. InsertRelationDialog.xml:34(para)
 msgid "An inequality is a statement that one quantity is greater or less than another, and the quantities must be separated by one of the four operators: &lt;, &gt;, &lt;=, &gt;=. An inequality can for example be <literal>abs(x) + abs(y) &lt; 1</literal>. Two operators can be used to specify a range, for example <literal>y &lt; sin(x) &lt; 0.5</literal>."
-msgstr ""
+msgstr "En ulighed er et udsagn om, at et udtryk er større eller mindre end et andet, og størrelserne skal adskilles af en af følgende operatorer: &lt;, &gt;, &lt;=, &gt;=. En ulighed kan f.eks. være <literal>abs(x) + abs(y) &lt; 1</literal>. To operatorer kan bruges til at angive et interval, f.eks. <literal>y &lt; sin(x) &lt; 0.5</literal>."
 
 #. InsertRelationDialog.xml:39(para)
 msgid "You can use the same operators and <link linkend=\"FunctionList\">built-in functions</link> as for plotting graphs of functions. In addition you can also create <link linkend=\"CustomFunctionsDialog\">custom functions</link>."
-msgstr ""
+msgstr "Man kan bruge de samme operatorer og <link linkend=\"FunctionList\">indbyggede funktioner</link>, som man kan bruge til at plotte grafer for funktioner. Derudover kan man også oprette <link linkend=\"CustomFunctionsDialog\">brugerdefinerede funktioner</link>."
 
 #. InsertRelationDialog.xml:47(term)
 msgid "Constraints"
@@ -1979,15 +1979,15 @@ msgstr "Begrænsninger"
 
 #. InsertRelationDialog.xml:49(para)
 msgid "Here you enter the constraints for the relation. The constraints can be any <placeholder-1/> that evaluates to non-zero for the relation to be drawn and zero for the relation not to be drawn. The constraints usually consist of a series of inequalities separated with the logical operators (and, or, xor). As for the relation <placeholder-2/> and <placeholder-3/> are used as the independent variables."
-msgstr ""
+msgstr "Her kan eventuelle begrænsninger for relationen indtastes. Begrænsningerne kan være ethvert <placeholder-1/>. Evalueres udtrykket til noget forskelligt fra nul, tegnes relationen. Evalueres udtrykket til nul, tegnes relationen ikke. Begrænsningerne af en serie af uligheder, adskilt af de logiske operatorer (and, or, xor). I relationen bruges <placeholder-2/> og <placeholder-3/> som de uafhængige variable."
 
 #. InsertRelationDialog.xml:55(para)
 msgid "For example if you have the relation <literal>x^2 + y^2 &lt; 25</literal>, which is a shaded circle, the constraints <literal>x &gt; 0 and y &lt; 0</literal> will only show the part of the circle in the 4<superscript>th</superscript> quadrant."
-msgstr ""
+msgstr "Har du f.eks. relationen <literal>x^2 + y^2 &lt; 25</literal>, som er en udfyldt cirkel, vil begrænsningerne <literal>x &gt; 0 and y &lt; 0</literal> bevirke, at kun den del af den udfyldte cirkel, som ligger i 4. kvadrant, vises."
 
 #. InsertRelationDialog.xml:65(para)
 msgid "Here you may enter a descriptive text to show in the <placeholder-1/>. If this field is left empty, the relation and constraints will be shown in the legend."
-msgstr ""
+msgstr "Her kan du angive en beskrivelse, som skal vises i <placeholder-1/>. Ellers vil uligheden blive vist."
 
 #. InsertRelationDialog.xml:73(term)
 msgid "Properties"
@@ -1999,7 +1999,7 @@ msgstr "Tykkelse"
 
 #. InsertRelationDialog.xml:75(para)
 msgid "Here you may select a shading style for inequalities, color and width for equations. The shading <placeholder-1/> is only used for inequalities and is ignored for equations. To see overlapping inequalities they must use different styles. The <placeholder-2/> indicates the size of the line drawn for equations and the width of the border line for inequalities. For inequalities the width can be set to 0 to avoid drawing the border line."
-msgstr ""
+msgstr "Her kan man vælge en skravering eller farve til uligheder samt farve og bredde for ligninger. Skraveringen <placeholder-1/> bruges kun ved uligheder og ignoreres derfor ved ligninger. For at kunne se uligheder, som overlapper hinanden, skal de have forskellig stil. <placeholder-2/> angiver tykkelsen på linjen, som tegnes ved ligninger, og tykkelsen på kantlinjen, som tegnes ved uligheder. For uligheder kan bredden sættes til 0, hvis man vil undgå, at kantlinjen tegnes."
 
 #. InsertPointSeriesDialog.xml:8(title)
 msgid "Insert point series"
@@ -2031,27 +2031,27 @@ msgstr "usikkerhedssøjler"
 
 #. InsertPointSeriesDialog.xml:17(para)
 msgid "You can use the dialog below to add a series of points to the coordinate system. The points will be shown in the coordinate system in the graphing area as a series of markers at the positions entered in this dialog. To insert a new point series, you use <placeholder-1/>. To change an existing point series, you first select it in the <placeholder-2/> and use <placeholder-3/>."
-msgstr ""
+msgstr "Nedenstående dialogboks bruges til at føje en serie af punkter til koordinatsystemet. Punkterne vil blive vist i hovedvinduets koordinatsystem som en række markeringer ved de positioner, som blev indtastet i dialogboksen. Brug <placeholder-1/> for at indsætte en ny punktserie. Markér en eksisterende punktserie i <placeholder-2/> og brug <placeholder-3/> for at ændre den."
 
 #. InsertPointSeriesDialog.xml:26(para)
 msgid "After adding a point series, you may add a <link linkend=\"InsertTrendlineDialog\">trendline</link> which is the curve of best fit for the points."
-msgstr ""
+msgstr "Når punktserien er indtastet, har du mulighed for at indsætte en tendenslinje <link linkend=\"InsertTrendlineDialog\">tendenslinje</link>, som er grafen for den funktion, der bedst approksimerer punktserien."
 
 #. InsertPointSeriesDialog.xml:29(para)
 msgid "In the grid you can enter the x- and y-coordinates of the points. You may enter any number of points you want, but all points need both an x-coordinate and a y-coordinate."
-msgstr ""
+msgstr "I felterne indtastes x- og y-koordinater for punkterne. Der kan indtastes et vilkårligt antal punkter, men alle punkter skal have både en x-koordinat og en y-koordinat."
 
 #. InsertPointSeriesDialog.xml:33(para)
 msgid "You can select some points and use the right click menu to copy them to another program. Likewise you may copy data from other programs like MS Word or MS Excel and paste them into this the grid in dialog."
-msgstr ""
+msgstr "Det er muligt at markere koordinater og kopiere dem ind i et andet program ved hjælp af den menu, som fremkommer, når der højreklikkes i tabellen. Det er også muligt at kopiere data fra et andet program, som MS Word eller MS Excel, og indsætte dem i tabellen."
 
 #. InsertPointSeriesDialog.xml:37(para)
 msgid "From the context menu, you can also choose to import data from a file. Graph can import text files with data separated by either tabs, commas or semicolons. The data will be placed at the position of the caret. This makes it possible to load data from more than one file, or to have x-coordinates in one file and y-coordinates in another file. In the usual case where you have all data in one file, you should make sure that the caret is located at the upper left cell before you import."
-msgstr ""
+msgstr "Ved hjælp af højreklikmenuen er det også muligt at importere data fra en fil. Programmet understøtter to formater: tabulatoradskilte og semikolonadskilte filer. Data vil blive placeret ved markørens position. Dette gør det muligt at indlæse data fra mere end én fil eller at have x-koordinaterne i én fil og y-koordinaterne i en anden fil. I det almindelige tilfælde hvor alle data er i samme fil, skal man derfor sikre sig, at markøren står i øverste venstre celle, før der importeres."
 
 #. InsertPointSeriesDialog.xml:49(para)
 msgid "In the edit box at the top of the dialog, you can enter a name for the series, which will be shown in the <placeholder-1/>."
-msgstr ""
+msgstr "Øverst kan der indtastes et navn for serien, som vil blive vist i <placeholder-1/>."
 
 #. InsertPointSeriesDialog.xml:56(term)
 msgid "Marker"
@@ -2059,7 +2059,7 @@ msgstr "Markering"
 
 #. InsertPointSeriesDialog.xml:58(para)
 msgid "To the right you can choose between different types of markers. The style may be a circle, a square, a triangle, etc. You may also change the color and size of the markers. If the size is set to 0, neither markers nor error bars will be shown."
-msgstr ""
+msgstr "Til højre kan der vælges mellem forskellige typer markører. Udseendet kan være en cirkel, et kvadrat, en trekant, osv. Det er også muligt at ændre farve og størrelse på markørerne. Hvis størrelsen er sat til 0, vil der hverken blive vist markører eller usikkerhedssøjler."
 
 #. InsertPointSeriesDialog.xml:66(guilabel)
 msgid "Interpolation"
@@ -2067,7 +2067,7 @@ msgstr "Interpolation"
 
 #. InsertPointSeriesDialog.xml:64(para)
 msgid "Notice that if you select an arrow as marker, the arrow will be shown pointing tangential to the line at the point. The actual direction therefore depends on the <placeholder-1/> setting. The first point is never shown when the marker is an arrow."
-msgstr ""
+msgstr "Bemærk, at hvis en pil vælges som markør, vil pilens spids pege være parallel med linjen i det pågældende punkt. Den egentlige retning afhænger derfor af <placeholder-1/>-indstillingen. Det første punkt i en punktserie vises aldrig, hvis markøren er en pil."
 
 #. InsertPointSeriesDialog.xml:73(term)
 msgid "Line"
@@ -2075,7 +2075,7 @@ msgstr "Linje"
 
 #. InsertPointSeriesDialog.xml:75(para)
 msgid "It is possible to draw lines between the markers. The line will always be drawn between points in the same order they appear in the grid. You can choose between different styles, colors and widths for the lines. You can also choose to draw no line at all."
-msgstr ""
+msgstr "Det er muligt at tegne linjestykker mellem markeringerne. Linjerne vil altid blive tegnet mellem punkterne i samme rækkefølge, som de fremgår af tabellen. Der er mulighed for at vælge udseende, farve og linjetykkelse. Du kan også vælge slet ikke at tegne nogen linje."
 
 #. InsertPointSeriesDialog.xml:83(guilabel)
 msgid "Cubic splines"
@@ -2087,7 +2087,7 @@ msgstr "Halve cosinuskurver"
 
 #. InsertPointSeriesDialog.xml:81(para)
 msgid "You can choose between three types of interpolation: <placeholder-1/> will draw a straight line between the markers. <placeholder-2/> will draw a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a half cosine curve between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
-msgstr ""
+msgstr "Man kan vælge mellem tre typer af interpolationer: <placeholder-1/> tegner et linjestykke mellem markørerne. <placeholder-2/> tegner en glat, blød kurve, som består af tredjegradspolynomier, mellem markørerne. <placeholder-3/> tegner halve cosinuskurver mellem punkterne, hvilket kan få kurven til at se mindre blød ud end med <placeholder-2/>; men det vil til gengæld aldrig skyde for lavt eller for højt."
 
 #. InsertPointSeriesDialog.xml:91(term)
 msgid "Labels"
@@ -2099,7 +2099,7 @@ msgstr "Vis koordinater"
 
 #. InsertPointSeriesDialog.xml:93(para)
 msgid "Put a check in <placeholder-1/> to show the x- and y-coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
-msgstr ""
+msgstr "Marker <placeholder-1/> for at vise koordinatsæt ved hvert punkt i serien. Knappen <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> kan bruges til at ændre skrifttype, og rullemenuen kan bruges til at vælge, om teksterne skal vises over, under, til venstre eller til højre for punkterne."
 
 #. InsertPointSeriesDialog.xml:102(term)
 msgid "Error bars"
@@ -2119,7 +2119,7 @@ msgstr "Brugervalgt"
 
 #. InsertPointSeriesDialog.xml:104(para)
 msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are +/-values."
-msgstr ""
+msgstr "Her kan du vælge, om der skal vises vandrette og/eller lodrette usikkerhedssøjler. De er vist som tynde streger ved alle punkter i punktserien, og de viser, hvor stor usikkerheden er på det enkelte punkt. Der er tre måder, hvorpå man kan  vælge usikkerhedssøjlernes størrelse: <placeholder-1/> giver alle punkterne den samme absolutte usikkerhed. <placeholder-2/> gør en vis procentdel af alle punkterne usikre, dvs. alle punkterne har den samme relative usikkerhed. <placeholder-3/> opretter en ny kolonne i punktserien, hvor du selv kan indtaste usikkerheden for hvert punkt. Alle usikkerheder er +/– værdier."
 
 #. InsertLabelDialog.xml:8(title)
 msgid "Insert label"
@@ -2179,11 +2179,11 @@ msgstr "understreget"
 
 #. InsertLabelDialog.xml:23(para)
 msgid "This dialog is used to insert or edit text labels. To insert a label you use the menu item <placeholder-1/>. The label is inserted at the center of the graphing area, but can be dragged to another placement. To change an existing label, you either <action>double click</action> on it in the graphing area or you select it in the <placeholder-2/> and use <placeholder-3/>."
-msgstr ""
+msgstr "Denne dialog bruges til at indsætte og redigere etiketter. For at indsætte en etiket vælges menupunktet <placeholder-1/>. Etiketten indsættes altid midt i vinduet, men kan trækkes hen til en anden placering. <action>Dobbeltklik</action> på en eksisterende etiket i vinduet eller markér den i <placeholder-2/> og brug <placeholder-3/> for at ændre den."
 
 #. InsertLabelDialog.xml:32(para)
 msgid "The text is entered in the editing area. You can change text styles for different parts of the text. The background color, which may be any solid color or transparent, can be set for the whole label only. The <guibutton><inlinegraphic fileref=\"Font_Symbol.png\" scale=\"60\"/></guibutton> button can be used to insert special characters like mathematical symbols and Greek characters."
-msgstr ""
+msgstr "Teksten indtastes i redigeringsområdet. Du kan ændre formatering på individuelle dele af teksten. Baggrundsfarve, som kan være fast eller gennemsigtig, men skal være ens i hele etiketten. Knappen <guibutton><inlinegraphic fileref=\"Font_Symbol.png\" scale=\"60\"/></guibutton> kan bruges til at indsætte symboler som e.fkes. matematiske symboler eller græske bogstaver."
 
 #. InsertLabelDialog.xml:42(guimenuitem)
 msgid "Insert object"
@@ -2195,15 +2195,15 @@ msgstr "Indsæt speciel"
 
 #. InsertLabelDialog.xml:39(para)
 msgid "A text label can also contain any <link linkend=\"OLE\">OLE object</link>, for example an image or MS Equation. You can paste an OLE object into the editing area like text. A new object can be created at the cursor position by selecting <placeholder-1/> in the context menu. If there is more than one representation in the clipboard, you can use <placeholder-2/> in the context menu to select the representation to paste."
-msgstr ""
+msgstr "En tekstetiket kan også indeholde en hvilken som helst form for <link linkend=\"OLE\">OLE-objekt</link>, som f.eks. et billede eller en MS Equation. Du kan indsætte et OLE-objekt fra udklipsholderen på samme måde som med tekst. Et nyt objekt kan oprettes ved markørens placering ved at vælge <placeholder-1/> i højreklikmenuen. Hvis der er mere end en repræsentation i udklipsholderen, kan du bruge <placeholder-2/> i højreklikmenuen til at vælge, hvilken repræsentation, der skal indsættes."
 
 #. InsertLabelDialog.xml:46(para)
 msgid "When the <guibutton>OK</guibutton> button is pressed, the label will be shown in the graphing area. The label can be moved by dragging it around with the mouse or it can be locked to one of the axes by <action>right clicking</action> on it and selecting a placement from the context menu. From the context menu it is also possible to rotate the label, for example to show the text vertically."
-msgstr ""
+msgstr "Når der klikkes på <guibutton>OK</guibutton>, vil etiketten blive vist i hovedvinduet. Den kan flyttes ved, at man trækker den rundt med musen, eller den kan låses til en af akserne ved at <action>højreklikke</action> på den og vælge en placering fra undermenuen, hvor det desuden er muligt at rotere etiketten, så den f.eks. kan vise teksten lodret."
 
 #. InsertLabelDialog.xml:53(para)
 msgid "A label can contain and evaluate a <placeholder-1/>. This is very useful when you want to show the value of <link linkend=\"CustomFunctionsDialog\">custom constants</link> in a label. Graph will try to evaluate any expression in a label if placed in brackets after a percent sign (%). If you have 3 custom constants a=2.5, b=-3, and c=8.75, you can create a label with the text <literal>f(x)=%(a)x<superscript>2</superscript>+%(b)x+%(c)</literal>. This label will be shown as <literal>f(x)=2.5x<superscript>2</superscript>-3x+8.75</literal> in the graphing area. When you change the constants, the label will be updated to reflect the new values. In the above case, the + preceding %(b) is removed because b evaluates to a negative number."
-msgstr ""
+msgstr "En etiket kan indeholde og evaluere et <placeholder-1/>. Dette er meget anvendeligt, når man vil angive værdien af <link linkend=\"CustomFunctionsDialog\">brugerdefinerede konstanter</link> i en etiket. Graph vil forsøge at evaluere ethvert udtryk i en etiket, når det er placeret i parentes efter et procenttegn (%). Hvis der er 3 brugerdefinerede konstanter, a=2.5, b=-3 og c=8.75, kan man oprette en etiket med teksten <literal>f(x)=%(a)x<superscript>2</superscript>+%(b)x+%(c)</literal>. Denne etiket vil blive vist som <literal>f(x)=2.5x<superscript>2</superscript>-3x+8.75</literal> i hovedvinduet. Når konstanterne ændres, opdateres etiketten med de nye værdier. I ovenstående tilfælde vil tegnet + før %(b) blive fjernet, fordi b evalueres til et negativt tal."
 
 #. InsertFunctionDialog.xml:8(title)
 msgid "Insert function"
@@ -2223,7 +2223,7 @@ msgstr "plot"
 
 #. InsertFunctionDialog.xml:15(para)
 msgid "When you want to insert a function, you use the menu item <placeholder-1/> to show the dialog below. To edit an existing function, you select it in the <placeholder-2/> and use the <placeholder-3/> menu item."
-msgstr ""
+msgstr "Når du ønsker at indsætte en funktion, kan menupunktet <placeholder-1/> bruges til at fremkalde nedenstående dialogboks. Vælg <placeholder-2/> og brug menupunktet <placeholder-3/> for at redigere en eksisterende funktion."
 
 #. InsertFunctionDialog.xml:26(term) FAQ.xml:157(guilabel) FAQ.xml:173(guilabel) FAQ.xml:189(guilabel)
 msgid "Function type"
@@ -2235,23 +2235,25 @@ msgstr "Normal funktion"
 
 #. InsertFunctionDialog.xml:28(para)
 msgid "You can choose between three different types of functions: <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, thought it may be undefined for some x-coordinates."
-msgstr ""
+msgstr "Du kan vælge mellem 3 forskellige typer af funktioner: <placeholder-1/>, <placeholder-2/> og <placeholder-3/>. En standardfunktion er givet ved y=f(x). Til ethvert x, for hvilket funktionen er defineret, tilordnes netop én funktionsværdi. Funktionen er imidlertid ikke nødvendigvis defineret for alle x-koordinater."
 
 #. InsertFunctionDialog.xml:32(para)
 msgid "For a parametric function the x- and y-coordinates are calculated from an independent variable <placeholder-1/>, called the parameter, i.e. a parametric function is defined as two functions: x(t) and y(t)."
-msgstr ""
+msgstr "For en parameterfunktion beregnes x- og y-koordinaterne ud fra en uafhængig variabel <placeholder-1/>. Det vil sige, at en parameterfunktion er bestemt ved to koordinatfunktioner: x(t) og y(t)."
 
 #. InsertFunctionDialog.xml:36(para)
+#, fuzzy
 msgid "A polar function r(t) indicates an equation to calculate the distance from the origin to a point on the function given an angle <placeholder-1/>. <placeholder-2/> is the direct angle between the initial ray and the point on the function. This means that the x- and y-coordinates are given as <placeholder-3/>."
-msgstr ""
+msgstr "En polærfunktion r(t) beskriver  afstanden |r(t)| = sqrt(x(t)^2 + y(t)^2) fra origo (0,0)  til et punkt (x,y) på grafen for funktionen. En polærfunktion er en parameterfunktion med koordinatfunktionerne x(t) = r(t)*cos(t), y(t) = r(t)*sin(t).  Parameteren t betegner  vinklen fra  standardbasisvektoren e = (1,0) til stedvektoren for punktet (cos(t),sin(t)), regnet med fortegn."
 
 #. InsertFunctionDialog.xml:45(term)
 msgid "Function equation"
 msgstr "Funktionsforskrift"
 
 #. InsertFunctionDialog.xml:47(para)
+#, fuzzy
 msgid "Here you enter the equation for the function. This can be f(x), x(t),y(t) or r(t) depending on the function type. Under <placeholder-1/> you can see all the available variables, constants and functions, which may be used to draw the graphs."
-msgstr ""
+msgstr "Her indtastes forskriften for funktionen. Dette kan være f(x), x(t), y(t) eller r(t) afhængig af den valgte funktionstype. Du kan se under liste over funktioner,FUNCTIONS hvilke funktioner og konstanter du kan bruge til at tegne grafer."
 
 #. InsertFunctionDialog.xml:64(guilabel) InsertFunctionDialog.xml:66(guilabel) FAQ.xml:287(guilabel)
 msgid "Steps"
@@ -2266,16 +2268,18 @@ msgid "Automatic"
 msgstr "Automatisk"
 
 #. InsertFunctionDialog.xml:57(para)
+#, fuzzy
 msgid "You can choose an interval for the independent variable. <placeholder-1/> and <placeholder-2/> indicates the start and end of the interval. If the function is a standard function, you can leave one or both of them blank to draw the graph from minus infinity to plus infinity. If the function is a parametric function or a polar function, you always have to specify an interval. If the function is a parametric or polar function, you have to specify the number of steps for which you want the function to be evaluated. When you specify a higher number of steps, the graph will appear smoother, but it will take longer to plot. It is preferred to leave the <placeholder-3/> field blank for standard functions to let Graph decide the optimal number of steps. You can however enter the number of steps if the graph doesn't show enough details, for example if an asymptote is not shown correctly. Notice that the <placeholder-4/> only specify a minimum number of calculations. Graph may add more steps at critical points if <placeholder-5/> is set to <placeholder-6/>."
-msgstr ""
+msgstr "Du kan vælge et interval for den uafhængige variabel, som grafen vil blive begrænset til. Fra og Til angiver starten og slutningen på intervallet. Hvis funktionen er en standardfunktion, kan du efterlade det ene eller begge felter blanke for at tegne fra minus uendelig til plus uendelig. For parameterfunktioner og polærfunktioner skal der altid specificeres et interval. Desuden skal antallet af trin til at beregne de punkter, der bruges til at tegne grafen, specificeres for parameterfunktioner og polærfunktioner. Jo flere trin desto pænere bliver kurven, men den tager også længere tid at tegne. Trin bør efterlades blank for standardfunktioner for at lade Graph bestemme det optimale antal trin. Du kan dog angive antal trin, hvis grafen ikke vises tilstrækkelig detaljeret, f.eks. hvis en asymptote ikke vises korrekt. Bemærk, at Trin kun angiver et maksimalt antal beregninger. Graph kan finde på at tilføje flere trin ved kritiske punkter."
 
 #. InsertFunctionDialog.xml:75(para)
 msgid "Here you can choose to show markers at the start and/or end of the interval. If no range is specified, the endpoints will be showed where the function enters and leaves the graphing area. The default is not to show any markers."
-msgstr ""
+msgstr "Her kan du vælge, om begyndelsen og/eller slutningen på intervallet skal markeres. Hvis der ikke er valgt noget interval, vises endepunkterne der, hvor funktionens graf kommer ind i og forlader billedet. Som standard vises der ingen markører."
 
 #. InsertFunctionDialog.xml:86(para)
+#, fuzzy
 msgid "Enter a description to be shown in the <placeholder-1/>. If the text is empty, the function equation will be shown in the legend."
-msgstr ""
+msgstr "Indtast den beskrivelse, der skal vises for funktionen i signaturforklaringenDESC_LEGEND. Hvis feltet er tomt, vises forskriften for funktionen i signaturforklaringen DESC_LEGEND i stedet."
 
 #. InsertFunctionDialog.xml:99(guilabel)
 msgid "Line styles"
@@ -2290,8 +2294,9 @@ msgid "Dots"
 msgstr "Prikker"
 
 #. InsertFunctionDialog.xml:96(para)
+#, fuzzy
 msgid "You can choose between different line styles for which you want the graph to be drawn. You can choose between solid, dashed, dotted or a combination of these. <placeholder-1/> are only available when <placeholder-2/> is set to <placeholder-3/> or <placeholder-4/>. When <placeholder-5/> is <placeholder-6/>, only a dot is shown at each calculated point. Likewise the <placeholder-7/> <placeholder-8/> will connect the calculated points with lines. <placeholder-9/> will also draw lines, but Graph will do more calculations at critical points if it thinks it will improve the graph. It will also break the line if it thinks there is an asymptote. You can also choose the width of the graph. The width is notified in screen pixels. There are also a lot of different colors you can choose between. The program will remember and suggest the same properties last used."
-msgstr ""
+msgstr "Det er muligt at vælge mellem forskellige linjetyper, som funktionen skal tegnes med. Der kan vælges mellem udfyldte, stiplede, prikkede og kombinationer af disse. Linjetype kan kun vælges, når Tegnemetode er sat til Linjer, dvs. alle udregnede punkter på grafen for funktionen er forbundet med linjer. Når Tegnemetode er sat til Punkter, vises kun et punkt for hver udregnet funktionsværdi. Grafens tykkelse kan også indstilles. Denne angives i pixels. Desuden er der en lang række forskellige farver til grafen, som du kan vælge imellem . Programmet husker og foreslår de samme egenskaber, som blev brugt sidst."
 
 #. InsertDerivativeDialog.xml:8(title)
 msgid "Insert f'(x)"
@@ -2314,16 +2319,17 @@ msgid "slope"
 msgstr "hældning"
 
 #. InsertDerivativeDialog.xml:15(para)
+#, fuzzy
 msgid "The dialog shown below is used to create the first derivative of a function. To create a derivative, you select the function you want to differentiate and use <placeholder-1/>."
-msgstr ""
+msgstr "Nedenstående dialogboks bruges til at indsætte den markerede funktions første afledede. Hvis funktionen er en standardfunktion f(x), angiver den første afledede tangenthældningen i punktet (x,f(x)) på grafen for f. Den første afledede er  differentialkvotienten af f  med hensyn til x:"
 
 #. InsertDerivativeDialog.xml:19(para)
 msgid "If the function is a standard function, the first derivative is the slope of the function, and it is defined as the function differentiated with respect to x: <placeholder-1/>"
-msgstr ""
+msgstr "Hvis funktionen er en standardfunktion f(x), angiver den første afledede tangenthældningen i punktet (x,f(x)) på grafen for f. Den første afledede er differentialkvotienten af f med hensyn til x: <placeholder-1/>"
 
 #. InsertDerivativeDialog.xml:26(para)
 msgid "You can select an interval, line style, width in pixels and color for the derivative of the function. The derivative is inserted as a function and can be edited as such. The derivative will not change if you edit the original function."
-msgstr ""
+msgstr "Du kan vælge interval, linjetype, tykkelse i pixels og farve for funktionens afledede. Differentialkvotienten vil blive indsat som en funktion, og den kan redigeres som en sådan. Den afledede funktion vil ikke ændre sig, når den oprindelige funktion bliver redigeret."
 
 #. Hyperbolic.xml:7(title) FunctionList.xml:231(emphasis)
 msgid "Hyperbolic"
@@ -2534,8 +2540,9 @@ msgid "tool bar"
 msgstr "værktøjslinje"
 
 #. HowToUse.xml:16(para)
+#, fuzzy
 msgid "When the program starts, you will see the main window shown below. This window shows the graphing area to the right with the coordinate system where the graphs you insert will be shown. You can use the menu or the buttons on the toolbar to show different dialog boxes to insert a function, edit functions, delete functions etc. You can find a <link linkend=\"MenuItems\">description</link> of all the menu items."
-msgstr ""
+msgstr "Når programmet startes, ses nedenstående vindue. I dette vindue vises til højre et koordinatsystem, hvor der kan indsættes grafer. Forskellige dialogbokse kan fremkaldes enten ved hjælp af menupunkter eller ved hjælp af knapperne i værktøjslinjen. Klik herMENU for at se en beskrivelse af de forskellige menupunkter."
 
 #. HowToUse.xml:23(guimenuitem)
 msgid "Customize toolbar..."
@@ -2543,19 +2550,19 @@ msgstr "Tilpas værktøjslinje..."
 
 #. HowToUse.xml:22(para)
 msgid "The toolbar may be customized by right clicking on the bar and selecting <placeholder-1/> from the popup menu. You can then customize the toolbar by dragging commands to and from the bar. The status bar at the bottom of the window shows tooltips or other information to the left and the coordinates located at the mouse pointer to the right."
-msgstr ""
+msgstr "Værktøjslinjen kan tilpasses ved at højreklikke på den og vælge <placeholder-1/> i munderenuen. Herefter tilpasses værktøjslinjen ved at trække knapper til og fra linjen. Statuslinjen i bunden af vinduet viser information til venstre og koordinaterne ved cursorens placering til højre."
 
 #. HowToUse.xml:30(para)
 msgid "You can add new elements to the coordinate system from the Function menu. For example if you want to add a new function you use the menu item <placeholder-1/>"
-msgstr ""
+msgstr "Du kan tilføje nye elementer til koordinatsystemet i menuen Funktion. F.eks. benyttes menupunktet <placeholder-1/> funktion til at indsætte en ny funktion."
 
 #. HowToUse.xml:41(para)
 msgid "The <placeholder-1/> to the left shows a list of functions, tangents, point series, shadings and relations you have added. If you want to manipulate anything in the list, just select it and use the <placeholder-2/> menu. You can also right click on an item in the list to get the context menu with available commands. An item may be edited by double clicking on it."
-msgstr ""
+msgstr "<placeholder-1/> til venstre viser en liste over de indsatte funktioner, tangenter, punktserier, skraveringer og relationer. Hvis du ønsker at manipulere med en funktion eller tangent, markeres den, og menuen <placeholder-2/> bruges. Du kan også højreklikke på en funktion eller tangent for at få en undermenu med tilgængelige kommandoer. Desuden kan et emne redigeres ved at dobbeltklikke på det."
 
 #. HowToUse.xml:47(para)
 msgid "The <placeholder-1/> menu contains commands to make calculations on functions, for example evaluations at specific coordinates or given intervals."
-msgstr ""
+msgstr "Menuen <placeholder-1/> indeholder kommandoer til at foretge beregninger på funktioner, f.eks. evaluering i bestemte koordinater eller givne intervaller."
 
 #. Glossary.xml:11(title)
 msgid "Glossary"
