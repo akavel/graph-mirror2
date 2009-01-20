@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-10-20 18:51Romance Standard Time\n"
-"PO-Revision-Date: 2009-01-18 16:08+0100\n"
+"PO-Revision-Date: 2009-01-20 22:06+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -291,7 +291,7 @@ msgstr "reelle tal"
 
 #. Special.xml:22(para)
 msgid "The <placeholder-1/> function returns the numeric integral of <placeholder-2/> from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/> This integral is the same as the area between the function <placeholder-6/> and the x-axis from <placeholder-7/> to <placeholder-8/> where the area under the axis is counted negative. <placeholder-9/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric function. <placeholder-10/> and <placeholder-11/> may be any <placeholder-12/> that evaluate to <placeholder-13/>. <placeholder-14/> does not calculate the integral exactly. Instead the calculation is done using Simpson's formula through 100 iterations."
-msgstr "Funktionen <placeholder-1/> returnerer det bestemte integral af <placeholder-2/> fra <placeholder-3/> til <placeholder-4/>. Dette skrives matematisk således: <placeholder-5/> Resultatet af integralet er det samme som arealet af punktmængden afgrænset af grafen for <placeholder-6/>, x-aksen og linjerne med ligningerne x = <placeholder-7/> og x = <placeholder-8/>, idet arealer af punktmængder under x-aksen betragtes som negative. <placeholder-9/> kan være et hvilket som helst funktionsudtryk med x som variabel, hvis funktionen bruges i en normal funktion, og med t som variabel, hvis det er en parameterfunktion. <placeholder-10/> og <placeholder-11/> er <placeholder-12/>, der evalueres til <placeholder-13/>. <placeholder-14/> beregner ikke integralet eksakt, men beregner resultatet ved hjælp af Simpsons Regel med 100 trin."
+msgstr "Funktionen <placeholder-1/> returnerer det bestemte integral af <placeholder-2/> fra <placeholder-3/> til <placeholder-4/>. Dette skrives matematisk således: <placeholder-5/> Resultatet af integralet er det samme som arealet af punktmængden afgrænset af grafen for <placeholder-6/>, x-aksen og linjerne med ligningerne x = <placeholder-7/> og x = <placeholder-8/>, idet arealer af punktmængder under x-aksen betragtes som negative. <placeholder-9/> kan være et hvilket som helst funktionsudtryk med x som variabel, hvis funktionen bruges i en normal funktion, og med t som variabel, hvis det er en parameterfunktion. <placeholder-10/> og <placeholder-11/> er <placeholder-12/>, der evalueres til <placeholder-13/>. <placeholder-14/> beregner ikke integralet eksakt, men beregner resultatet ved hjælp af Simpsons Regel med 100 iterationer."
 
 #. Special.xml:43(primary)
 msgid "summation"
@@ -455,7 +455,7 @@ msgstr "Vælg menupunktet <placeholder-1/>, hvis du ønsker at gemme de viste gr
 
 #. SaveImageDialog.xml:25(para)
 msgid "bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen. emf files are used for vector graphics. The Options button in the save dialog can be used to change to image size. You may also be able to change other settings depending on the chosen image format."
-msgstr "Vælges filtypen til at være bmp eller png, gemmes et billede som bitmap nøjagtigt magen til det, som vises på skærmen. emf-filer gemmes som vektorgrafik. Knappen Indstillinger i dialogen Gem som billede kan bruges til at ændre billedstørrelsen. Afhængig af det valgte format kan det også være muligt at ændre yderligere indstillinger."
+msgstr "Vælges filtypen til at være bmp eller png, gemmes et billede som bitmap nøjagtigt magen til det, som vises på skærmen. emf-filer gemmes som vektorgrafik. Knappen Indstillinger i dialogboksen Gem som billede kan bruges til at ændre billedstørrelsen. Afhængig af det valgte format kan det også være muligt at ændre yderligere indstillinger."
 
 #. SaveImageDialog.xml:31(para)
 msgid "Metafiles (emf) should be the preferred format, because it is small and looks nice even then it is scaled. Windows Bitmap (bmp) is a standard format supported by almost all Windows programs that can read graphics files. Portable Network Graphics (png) is a format that is better compressed than bmp files. This is the most sustainable format for web pages, because it is small and can be understood by all browsers."
@@ -719,7 +719,7 @@ msgstr "Indstillinger"
 
 #. OptionsDialog.xml:9(primary)
 msgid "Options dialog"
-msgstr "dialogen Indstillinger"
+msgstr "Dialogboksen Indstillinger"
 
 #. OptionsDialog.xml:13(guimenu) OLE.xml:19(guimenu) OLE.xml:25(guimenu) OLE.xml:32(guimenu) MenuItems.xml:142(guimenu) MenuItems.xml:156(guimenu) MenuItems.xml:162(guimenu) MenuItems.xml:170(guimenu) MenuItems.xml:184(guimenu) MenuItems.xml:198(guimenu) MenuItems.xml:212(guimenu) MenuItems.xml:227(guimenu) MenuItems.xml:243(guimenu) FAQ.xml:235(guimenu) AxesDialog.xml:35(guimenu)
 msgid "Edit"
@@ -827,7 +827,7 @@ msgstr "Trigonometri"
 
 #. OptionsDialog.xml:113(para)
 msgid "Choose how you want a complex number to be shown in the <placeholder-1/> frame. <placeholder-2/> means that only <placeholder-3/> are shown. If a number has an imaginary part then the number won't be shown and instead you get an error. <placeholder-4/> means that <placeholder-5/> are shown as a+b&imag;, where a is the real part and b is the imaginary part. <placeholder-6/> means that numbers are shown as a&ang;&theta;, where a is the absolute value of the number and &theta; is the angle of the number. &theta; is dependent of the choice between <placeholder-7/> and <placeholder-8/> under <placeholder-9/> in the <placeholder-10/> dialog."
-msgstr "Her vælges, hvordan komplekse tal skal vises i <placeholder-1/>. <placeholder-2/> betyder, at kun <placeholder-3/> skal vises. Et tal med en imaginær del bliver altså ikke vist, og der kommer i stedet en fejlmeddelelse. <placeholder-4/> betyder, at <placeholder-5/> vises på formen a+b&imag;, hvor a er den reelle del og b er den imaginære del. <placeholder-6/> betyder, at tal vises på formen a&ang;&theta;, hvor a er tallets absolutte værdi, og &theta; er vinklen fra standardbasisvektoren e = (1,0) til stedvektoren for det komplekse tal a+b&imag;, regnet med fortegn. &theta; er afhængig af valget mellem <placeholder-7/> og <placeholder-8/> under <placeholder-9/> i dialogen <placeholder-10/>."
+msgstr "Her vælges, hvordan komplekse tal skal vises i <placeholder-1/>. <placeholder-2/> betyder, at kun <placeholder-3/> skal vises. Et tal med en imaginær del bliver altså ikke vist, og der kommer i stedet en fejlmeddelelse. <placeholder-4/> betyder, at <placeholder-5/> vises på formen a+b&imag;, hvor a er den reelle del og b er den imaginære del. <placeholder-6/> betyder, at tal vises på formen a&ang;&theta;, hvor a er tallets absolutte værdi, og &theta; er vinklen fra standardbasisvektoren e = (1,0) til stedvektoren for det komplekse tal a+b&imag;, regnet med fortegn. &theta; er afhængig af valget mellem <placeholder-7/> og <placeholder-8/> under <placeholder-9/> i dialogboksen <placeholder-10/>."
 
 #. OptionsDialog.xml:122(para)
 msgid "Notice that in some cases you may get a different result in the <placeholder-1/> frame depending on the <placeholder-2/> setting: When <placeholder-3/> is chosen, Graph will try to find a real result if possible, while <placeholder-4/> and <placeholder-5/> may give a non-real result for the same evaluation."
@@ -1103,7 +1103,7 @@ msgstr "Indsæt f'(x)..."
 
 #. MenuItems.xml:318(para)
 msgid "This dialog is used to add the first derivative to the selected function."
-msgstr "I denne dialog kan du indsætte den første afledede af en allerede vist funktion."
+msgstr "I denne dialogboks kan du indsætte den første afledede af en allerede vist funktion."
 
 #. MenuItems.xml:328(guimenuitem) InsertTrendlineDialog.xml:23(guimenuitem) InsertPointSeriesDialog.xml:20(guimenuitem)
 msgid "Insert point series..."
@@ -1135,7 +1135,7 @@ msgstr "Indsæt etiket..."
 
 #. MenuItems.xml:387(para)
 msgid "This will show a dialog, which may be used to create a formatted text label. The label will always be created at the center of the graphing area but can afterwards be dragged to another place with the mouse."
-msgstr "Dette vil vise en dialog, som kanbruges til at oprette en formateret tekstetiket. Etiketten vil altid blive placeret midt i koordinatsystemet, men kan efterfølgende trækkes hen til andre positioner vha. musen."
+msgstr "Dette vil vise en dialogboks, som kanbruges til at oprette en formateret tekstetiket. Etiketten vil altid blive placeret midt i koordinatsystemet, men kan efterfølgende trækkes hen til andre positioner vha. musen."
 
 #. MenuItems.xml:397(guimenuitem) InsertTangentDialog.xml:17(guimenuitem) InsertShadingDialog.xml:19(guimenuitem) InsertRelationDialog.xml:18(guimenuitem) InsertPointSeriesDialog.xml:21(guimenuitem) InsertLabelDialog.xml:27(guimenuitem) InsertFunctionDialog.xml:19(guimenuitem)
 msgid "Edit..."
@@ -1143,7 +1143,7 @@ msgstr "Rediger..."
 
 #. MenuItems.xml:402(para)
 msgid "This will show a dialog where you can change the selected <placeholder-1/> in the <placeholder-2/>."
-msgstr "Dette vil vise en dialog, hvor den valgte <placeholder-1/> kan ændres i <placeholder-2/>."
+msgstr "Dette vil vise en dialogboks, hvor den valgte <placeholder-1/> kan ændres i <placeholder-2/>."
 
 #. MenuItems.xml:411(guimenuitem)
 msgid "Delete"
@@ -1159,7 +1159,7 @@ msgstr "Brugerdefinerede funktioner..."
 
 #. MenuItems.xml:430(para)
 msgid "This shows a dialog used to create custom functions and constants in addition to the built-in ones."
-msgstr "Dette viser en dialog til oprettelse af brugerdefinerede funktioner og konstanter som supplement til de indbyggede."
+msgstr "Dette viser en dialogboks til oprettelse af brugerdefinerede funktioner og konstanter som supplement til de indbyggede."
 
 #. MenuItems.xml:441(guimenu) MenuItems.xml:455(guimenu) MenuItems.xml:469(guimenu) MenuItems.xml:484(guimenu) MenuItems.xml:500(guimenu) MenuItems.xml:514(guimenu) MenuItems.xml:530(guimenu) MenuItems.xml:543(guimenu) FAQ.xml:78(guimenu) FAQ.xml:193(guimenu)
 msgid "Zoom"
@@ -1259,7 +1259,7 @@ msgstr "Tabel..."
 
 #. MenuItems.xml:613(para)
 msgid "This dialog fills a table with a user specified range of values and the result of evaluating the selected function for the values."
-msgstr "Denne dialog udfylder en tabel med et brugerdefineret interval af værdier og de tilhørende evalueringsværdier for de markerede funktioner."
+msgstr "Denne dialogboks udfylder en tabel med et brugerdefineret interval af værdier og de tilhørende evalueringsværdier for de markerede funktioner."
 
 #. MenuItems.xml:623(guimenuitem)
 msgid "Animate..."
@@ -1267,7 +1267,7 @@ msgstr "Animer..."
 
 #. MenuItems.xml:628(para)
 msgid "This dialog allows you to create an animation from the data in the coordinate system by changing an existing custom constant. This makes it easy to see what happens when the constant changes. The animation may be saved to a disk file."
-msgstr "Denne dialog giver mulighed for at oprette en animation ud fra dataene i koordinatsystemet ved at ændre en eksisterende brugerdefineret konstant. Dette gør det let at se, hvad der sker, når en konstant ændres, og animationen kan gemmes som en fil."
+msgstr "Denne dialogboks giver mulighed for at oprette en animation ud fra dataene i koordinatsystemet ved at ændre en eksisterende brugerdefineret konstant. Dette gør det let at se, hvad der sker, når en konstant ændres, og animationen kan gemmes som en fil."
 
 #. MenuItems.xml:640(guimenuitem)
 msgid "Contents and index"
@@ -1383,7 +1383,7 @@ msgstr "Programmet er testet under Microsoft Windows 95, Windows 98, Windows Me,
 
 #. Introduction.xml:37(para)
 msgid "Which version are you using? This is shown in the <placeholder-1/> dialog box. You should check that you are using the newest version, else the bug may have been fixed already."
-msgstr "Hvilken version bruger du? Dette er vist i dialogen <placeholder-1/>. Du bør undersøge, om du bruger den nyeste version, da fejlen ellers måske allerede kan være rettet."
+msgstr "Hvilken version bruger du? Dette er vist i dialogboksen <placeholder-1/>. Du bør undersøge, om du bruger den nyeste version, da fejlen ellers måske allerede kan være rettet."
 
 #. Introduction.xml:44(para)
 msgid "Explain what happens and what you expected to happen."
@@ -1463,7 +1463,7 @@ msgstr "Programmet distribueres som et selvudpakkende installationsprogram, der 
 
 #. Installation.xml:59(para)
 msgid "The installation will create a shortcut in the Start menu, which may be used to start the program. Under the installation you select the preferred language. This can later be changed from the <placeholder-1/> dialog."
-msgstr "Installationen opretter en genvej i startmenuen, som kan bruges til at starte programmet. Under installationen vælges det foretrukne sprog. Dette kan senere ændres i dialogen <placeholder-1/>."
+msgstr "Installationen opretter en genvej i startmenuen, som kan bruges til at starte programmet. Under installationen vælges det foretrukne sprog. Dette kan senere ændres i dialogboksen <placeholder-1/>."
 
 #. Installation.xml:64(para)
 msgid "If an older version of the program is already installed, the installation suggests you install in the same directory. You can just install over the old version. There is no need to uninstall the old version first, but make sure the old version is not running while installing."
@@ -1499,7 +1499,7 @@ msgstr "Vælg sprog"
 
 #. Installation.xml:108(entry)
 msgid "Specifies the language to use. <placeholder-1/> specifies the English name of the language. When a valid /LANG parameter is used, the <placeholder-2/> dialog will be suppressed."
-msgstr "Angiver hvilket sprog, der skal anvendes. <placeholder-1/> angiver sprogets navn på engelsk. Når en gyldig /LANG-parameter er anvendt, vil <placeholder-2/>-dialogen blive tilsidesat."
+msgstr "Angiver hvilket sprog, der skal anvendes. <placeholder-1/> angiver sprogets navn på engelsk. Når en gyldig /LANG-parameter er anvendt, vil <placeholder-2/>-dialogboksen blive tilsidesat."
 
 #. Installation.xml:117(guilabel)
 msgid "Select destination location"
@@ -1767,7 +1767,7 @@ msgstr "Grafegenskaber"
 
 #. InsertTangentDialog.xml:64(para)
 msgid "You can choose between different line styles for which you want the tangent/normal to be drawn. You can choose between solid, dashed, dotted or a combination of these. You can also choose the width of the tangent/normal. The width is notified in screen pixels. There are also a lot of different colors you can choose between."
-msgstr "Man kan vælge mellem forskellige linjetyper, som tangenten/normalen skal tegnes med. Man kan vælge imellem fast, stiplet, prikket eller en kombination af disse. Man kan også vælge bredden på tangenten/normalen. Bredden angives i skærmpixels. Der er også en række forskellige farver at vælge imellem."
+msgstr "Man kan vælge mellem forskellige linjetyper, som tangenten/normalen skal tegnes med. Man kan vælge imellem udfyldt, stiplet, prikket eller en kombination af disse. Man kan også vælge bredden på tangenten/normalen. Bredden angives i skærmpixels. Der er også en række forskellige farver at vælge imellem."
 
 #. InsertShadingDialog.xml:8(title)
 msgid "Insert shading"
@@ -1799,7 +1799,7 @@ msgstr "imellem"
 
 #. InsertShadingDialog.xml:16(para)
 msgid "The dialog below is used to add a shading to the selected function. To insert a new shading, you use <placeholder-1/>. To change an existing shading, you first select it in the <placeholder-2/> and use <placeholder-3/>. The shading is used to mark an area between the function graph and something else."
-msgstr "Dialogen nedenfor bruges til at tilføje skravering til en markeret funktionsgraf. Brug <placeholder-1/> for at indsætte en ny skravering. Markér en eksisterende skravering i <placeholder-2/> og brug <placeholder-3/> for at ændre den. Skraveringen bruges til at markere et område mellem funktionsgrafen og noget andet."
+msgstr "Dialogboksen nedenfor bruges til at tilføje skravering til en markeret funktionsgraf. Brug <placeholder-1/> for at indsætte en ny skravering. Markér en eksisterende skravering i <placeholder-2/> og brug <placeholder-3/> for at ændre den. Skraveringen bruges til at markere et område mellem funktionsgrafen og noget andet."
 
 #. InsertShadingDialog.xml:24(title) InsertShadingDialog.xml:29(guilabel) InsertShadingDialog.xml:189(guilabel) InsertShadingDialog.xml:190(guilabel)
 msgid "Shading"
@@ -1955,7 +1955,7 @@ msgstr "begrænsninger"
 
 #. InsertRelationDialog.xml:14(para)
 msgid "This dialog is used to insert a relation in the coordinate system. <literal>Relation</literal> is a common name for inequalities and equations. To insert a relation you use the menu item <placeholder-1/>. To change an existing relation, you first select it in the <placeholder-2/> and use <placeholder-3/>."
-msgstr "Denne dialog bruges til at indsætte en relation i koordinatsystemet. <literal>Relation</literal> er et fællesbegreb for uligheder og ligninger. Vælg menupunktet <placeholder-1/> for at indsætte en relation. Markér en eksisterende relation i <placeholder-2/> og brug <placeholder-3/> for at ændre den."
+msgstr "Denne dialogboks bruges til at indsætte en relation i koordinatsystemet. <literal>Relation</literal> er et fællesbegreb for uligheder og ligninger. Vælg menupunktet <placeholder-1/> for at indsætte en relation. Markér en eksisterende relation i <placeholder-2/> og brug <placeholder-3/> for at ændre den."
 
 #. InsertRelationDialog.xml:25(term)
 msgid "Relation"
@@ -2179,7 +2179,7 @@ msgstr "understreget"
 
 #. InsertLabelDialog.xml:23(para)
 msgid "This dialog is used to insert or edit text labels. To insert a label you use the menu item <placeholder-1/>. The label is inserted at the center of the graphing area, but can be dragged to another placement. To change an existing label, you either <action>double click</action> on it in the graphing area or you select it in the <placeholder-2/> and use <placeholder-3/>."
-msgstr "Denne dialog bruges til at indsætte og redigere etiketter. For at indsætte en etiket vælges menupunktet <placeholder-1/>. Etiketten indsættes altid midt i vinduet, men kan trækkes hen til en anden placering. <action>Dobbeltklik</action> på en eksisterende etiket i vinduet eller markér den i <placeholder-2/> og brug <placeholder-3/> for at ændre den."
+msgstr "Denne dialogboks bruges til at indsætte og redigere etiketter. For at indsætte en etiket vælges menupunktet <placeholder-1/>. Etiketten indsættes altid midt i vinduet, men kan trækkes hen til en anden placering. <action>Dobbeltklik</action> på en eksisterende etiket i vinduet eller markér den i <placeholder-2/> og brug <placeholder-3/> for at ændre den."
 
 #. InsertLabelDialog.xml:32(para)
 msgid "The text is entered in the editing area. You can change text styles for different parts of the text. The background color, which may be any solid color or transparent, can be set for the whole label only. The <guibutton><inlinegraphic fileref=\"Font_Symbol.png\" scale=\"60\"/></guibutton> button can be used to insert special characters like mathematical symbols and Greek characters."
@@ -2242,18 +2242,16 @@ msgid "For a parametric function the x- and y-coordinates are calculated from an
 msgstr "For en parameterfunktion beregnes x- og y-koordinaterne ud fra en uafhængig variabel <placeholder-1/>. Det vil sige, at en parameterfunktion er bestemt ved to koordinatfunktioner: x(t) og y(t)."
 
 #. InsertFunctionDialog.xml:36(para)
-#, fuzzy
 msgid "A polar function r(t) indicates an equation to calculate the distance from the origin to a point on the function given an angle <placeholder-1/>. <placeholder-2/> is the direct angle between the initial ray and the point on the function. This means that the x- and y-coordinates are given as <placeholder-3/>."
-msgstr "En polærfunktion r(t) beskriver  afstanden |r(t)| = sqrt(x(t)^2 + y(t)^2) fra origo (0,0)  til et punkt (x,y) på grafen for funktionen. En polærfunktion er en parameterfunktion med koordinatfunktionerne x(t) = r(t)*cos(t), y(t) = r(t)*sin(t).  Parameteren t betegner  vinklen fra  standardbasisvektoren e = (1,0) til stedvektoren for punktet (cos(t),sin(t)), regnet med fortegn."
+msgstr "En polærfunktion r(t) beskriver afstanden fra origo til et punkt på grafen for funktionen givet en vinkel <placeholder-1/>. <placeholder-2/> er den direkte vinkel mellem begyndelsesradius og punktet på grafen. Dette betyder, at x- og y-koordinaterne er givet ved <placeholder-3/>."
 
 #. InsertFunctionDialog.xml:45(term)
 msgid "Function equation"
 msgstr "Funktionsforskrift"
 
 #. InsertFunctionDialog.xml:47(para)
-#, fuzzy
 msgid "Here you enter the equation for the function. This can be f(x), x(t),y(t) or r(t) depending on the function type. Under <placeholder-1/> you can see all the available variables, constants and functions, which may be used to draw the graphs."
-msgstr "Her indtastes forskriften for funktionen. Dette kan være f(x), x(t), y(t) eller r(t) afhængig af den valgte funktionstype. Du kan se under liste over funktioner,FUNCTIONS hvilke funktioner og konstanter du kan bruge til at tegne grafer."
+msgstr "Her indtastes forskriften for funktionen. Dette kan være f(x), x(t), y(t) eller r(t) afhængig af den valgte funktionstype. Du kan under <placeholder-1/> se alle variable, konstanter og funktioner, der kan bruges til at tegne grafer."
 
 #. InsertFunctionDialog.xml:64(guilabel) InsertFunctionDialog.xml:66(guilabel) FAQ.xml:287(guilabel)
 msgid "Steps"
@@ -2268,18 +2266,16 @@ msgid "Automatic"
 msgstr "Automatisk"
 
 #. InsertFunctionDialog.xml:57(para)
-#, fuzzy
 msgid "You can choose an interval for the independent variable. <placeholder-1/> and <placeholder-2/> indicates the start and end of the interval. If the function is a standard function, you can leave one or both of them blank to draw the graph from minus infinity to plus infinity. If the function is a parametric function or a polar function, you always have to specify an interval. If the function is a parametric or polar function, you have to specify the number of steps for which you want the function to be evaluated. When you specify a higher number of steps, the graph will appear smoother, but it will take longer to plot. It is preferred to leave the <placeholder-3/> field blank for standard functions to let Graph decide the optimal number of steps. You can however enter the number of steps if the graph doesn't show enough details, for example if an asymptote is not shown correctly. Notice that the <placeholder-4/> only specify a minimum number of calculations. Graph may add more steps at critical points if <placeholder-5/> is set to <placeholder-6/>."
-msgstr "Du kan vælge et interval for den uafhængige variabel, som grafen vil blive begrænset til. Fra og Til angiver starten og slutningen på intervallet. Hvis funktionen er en standardfunktion, kan du efterlade det ene eller begge felter blanke for at tegne fra minus uendelig til plus uendelig. For parameterfunktioner og polærfunktioner skal der altid specificeres et interval. Desuden skal antallet af trin til at beregne de punkter, der bruges til at tegne grafen, specificeres for parameterfunktioner og polærfunktioner. Jo flere trin desto pænere bliver kurven, men den tager også længere tid at tegne. Trin bør efterlades blank for standardfunktioner for at lade Graph bestemme det optimale antal trin. Du kan dog angive antal trin, hvis grafen ikke vises tilstrækkelig detaljeret, f.eks. hvis en asymptote ikke vises korrekt. Bemærk, at Trin kun angiver et maksimalt antal beregninger. Graph kan finde på at tilføje flere trin ved kritiske punkter."
+msgstr "Du kan vælge et interval for den uafhængige variabel. <placeholder-1/> og <placeholder-2/> angiver begyndelsen og slutningen på intervallet. Hvis funktionen er en standardfunktion, kan du efterlade det ene eller begge felter blanke for at tegne fra minus uendelig til plus uendelig. For parameterfunktioner og polærfunktioner skal der altid specificeres et interval. Desuden skal antallet af trin til at beregne de punkter, der bruges til at tegne grafen, specificeres for parameterfunktioner og polærfunktioner. Jo flere trin desto pænere bliver kurven, men den tager også længere tid at tegne. <placeholder-3/> bør efterlades blank for standardfunktioner for at lade Graph bestemme det optimale antal trin. Du kan dog angive antal trin, hvis grafen ikke vises tilstrækkelig detaljeret, f.eks. hvis en asymptote ikke vises korrekt. Bemærk, at <placeholder-4/> kun angiver et maksimalt antal beregninger. Graph kan finde på at tilføje flere trin ved kritiske punkter, hvis <placeholder-5/> er indstillet til <placeholder-6/>."
 
 #. InsertFunctionDialog.xml:75(para)
 msgid "Here you can choose to show markers at the start and/or end of the interval. If no range is specified, the endpoints will be showed where the function enters and leaves the graphing area. The default is not to show any markers."
 msgstr "Her kan du vælge, om begyndelsen og/eller slutningen på intervallet skal markeres. Hvis der ikke er valgt noget interval, vises endepunkterne der, hvor funktionens graf kommer ind i og forlader billedet. Som standard vises der ingen markører."
 
 #. InsertFunctionDialog.xml:86(para)
-#, fuzzy
 msgid "Enter a description to be shown in the <placeholder-1/>. If the text is empty, the function equation will be shown in the legend."
-msgstr "Indtast den beskrivelse, der skal vises for funktionen i signaturforklaringenDESC_LEGEND. Hvis feltet er tomt, vises forskriften for funktionen i signaturforklaringen DESC_LEGEND i stedet."
+msgstr "Indtast den beskrivelse, der skal vises i <placeholder-1/>. Hvis feltet er tomt, vises forskriften for funktionen i signaturforklaringen i stedet."
 
 #. InsertFunctionDialog.xml:99(guilabel)
 msgid "Line styles"
@@ -2294,9 +2290,8 @@ msgid "Dots"
 msgstr "Prikker"
 
 #. InsertFunctionDialog.xml:96(para)
-#, fuzzy
 msgid "You can choose between different line styles for which you want the graph to be drawn. You can choose between solid, dashed, dotted or a combination of these. <placeholder-1/> are only available when <placeholder-2/> is set to <placeholder-3/> or <placeholder-4/>. When <placeholder-5/> is <placeholder-6/>, only a dot is shown at each calculated point. Likewise the <placeholder-7/> <placeholder-8/> will connect the calculated points with lines. <placeholder-9/> will also draw lines, but Graph will do more calculations at critical points if it thinks it will improve the graph. It will also break the line if it thinks there is an asymptote. You can also choose the width of the graph. The width is notified in screen pixels. There are also a lot of different colors you can choose between. The program will remember and suggest the same properties last used."
-msgstr "Det er muligt at vælge mellem forskellige linjetyper, som funktionen skal tegnes med. Der kan vælges mellem udfyldte, stiplede, prikkede og kombinationer af disse. Linjetype kan kun vælges, når Tegnemetode er sat til Linjer, dvs. alle udregnede punkter på grafen for funktionen er forbundet med linjer. Når Tegnemetode er sat til Punkter, vises kun et punkt for hver udregnet funktionsværdi. Grafens tykkelse kan også indstilles. Denne angives i pixels. Desuden er der en lang række forskellige farver til grafen, som du kan vælge imellem . Programmet husker og foreslår de samme egenskaber, som blev brugt sidst."
+msgstr "Det er muligt at vælge mellem forskellige linjetyper, som grafen skal tegnes med. Der kan vælges mellem udfyldte, stiplede, prikkede og kombinationer af disse. <placeholder-1/> kan kun vælges, når <placeholder-2/> er sat til <placeholder-3/> eller <placeholder-4/>. Når <placeholder-5/> er <placeholder-6/>, vises der kun en prik ved hvert beregnet punkt. Ligeledes vil <placeholder-7/> <placeholder-8/> forbinde de beregnede punkter med linjestykker. <placeholder-9/> vil også tegne linjestykker; men Graph vil foretage flere beregninger ved kritiske punkter, hvis dette formodes at forbedre grafens udseende. Der vil også være et ophold i linjestykket, hvis der formodes at være en asymptote. Grafens tykkelse kan også indstilles. Denne angives i pixels. Desuden er der en lang række forskellige farver til grafen, som du kan vælge imellem. Programmet husker og foreslår de samme egenskaber, som blev brugt sidst."
 
 #. InsertDerivativeDialog.xml:8(title)
 msgid "Insert f'(x)"
@@ -2319,9 +2314,8 @@ msgid "slope"
 msgstr "hældning"
 
 #. InsertDerivativeDialog.xml:15(para)
-#, fuzzy
 msgid "The dialog shown below is used to create the first derivative of a function. To create a derivative, you select the function you want to differentiate and use <placeholder-1/>."
-msgstr "Nedenstående dialogboks bruges til at indsætte den markerede funktions første afledede. Hvis funktionen er en standardfunktion f(x), angiver den første afledede tangenthældningen i punktet (x,f(x)) på grafen for f. Den første afledede er  differentialkvotienten af f  med hensyn til x:"
+msgstr "Nedenstående dialogboks bruges til at indsætte den markerede funktions første afledede. Vælg den funktion, der skal differentieres og brug <placeholder-1/> for at indsætte den afledede."
 
 #. InsertDerivativeDialog.xml:19(para)
 msgid "If the function is a standard function, the first derivative is the slope of the function, and it is defined as the function differentiated with respect to x: <placeholder-1/>"
@@ -2345,7 +2339,7 @@ msgstr "Returnerer hyperbolsk sinus til argumentet."
 
 #. Hyperbolic.xml:21(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic sine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner hyperbolsk sinus til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>."
 
 #. Hyperbolic.xml:25(para)
 msgid "Hyperbolic sine is defined as: <placeholder-1/>"
@@ -2361,7 +2355,7 @@ msgstr "Returnerer hyperbolsk cosinus til argumentet."
 
 #. Hyperbolic.xml:45(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic cosine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner hyperbolsk cosinus til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>."
 
 #. Hyperbolic.xml:49(para)
 msgid "Hyperbolic cosine is defined as: <placeholder-1/>"
@@ -2377,7 +2371,7 @@ msgstr "Returnerer hyperbolsk tangens til argumentet."
 
 #. Hyperbolic.xml:69(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner hyperbolsk tangens til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>."
 
 #. Hyperbolic.xml:73(para)
 msgid "Hyperbolic tangent is defined as: <placeholder-1/>"
@@ -2393,7 +2387,7 @@ msgstr "Returnerer invers hyperbolsk sinus til argumentet."
 
 #. Hyperbolic.xml:94(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic sine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner invers hyperbolsk sinus til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. <placeholder-7/> er den omvendte funktion til <placeholder-8/>, dvs. <placeholder-9/>."
 
 #. Hyperbolic.xml:107(primary)
 msgid "inverse hyperbolic cosine"
@@ -2405,7 +2399,7 @@ msgstr "Returnerer invers hyperbolsk cosinus til argumentet."
 
 #. Hyperbolic.xml:117(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner invers hyperbolsk cosinus til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. <placeholder-7/> er den omvendte funktion til <placeholder-8/>, dvs. <placeholder-9/>."
 
 #. Hyperbolic.xml:130(primary)
 msgid "inverse hyperbolic tangent"
@@ -2417,7 +2411,7 @@ msgstr "Returnerer invers hyperbolsk tangens til argumentet."
 
 #. Hyperbolic.xml:142(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner invers hyperbolsk tangens til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. <placeholder-7/> er den omvendte funktion til <placeholder-8/>, dvs. <placeholder-9/>."
 
 #. Hyperbolic.xml:154(primary)
 msgid "hyperbolic cosecant"
@@ -2429,7 +2423,7 @@ msgstr "Returnerer hyperbolsk cosekans til argumentet."
 
 #. Hyperbolic.xml:164(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner hyperbolsk cosekans til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>."
 
 #. Hyperbolic.xml:168(para)
 msgid "Hyperbolic cosecant is defined as: <placeholder-1/>"
@@ -2445,7 +2439,7 @@ msgstr "Returnerer hyperbolsk sekans til argumentet."
 
 #. Hyperbolic.xml:188(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner hyperbolsk sekans til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>."
 
 #. Hyperbolic.xml:192(para)
 msgid "Hyperbolic secant is defined as: <placeholder-1/>"
@@ -2461,7 +2455,7 @@ msgstr "Returnerer hyperbolsk cotangens til argumentet."
 
 #. Hyperbolic.xml:212(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner hyperbolsk cotangens til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>."
 
 #. Hyperbolic.xml:216(para)
 msgid "Hyperbolic cotangent is defined as: <placeholder-1/>"
@@ -2481,7 +2475,7 @@ msgstr "Returnerer invers hyperbolsk cosekans til argumentet."
 
 #. Hyperbolic.xml:237(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner invers hyperbolsk cosekans til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. <placeholder-7/> er den omvendte funktion til <placeholder-8/>, dvs. <placeholder-9/>."
 
 #. Hyperbolic.xml:249(primary)
 msgid "hyperbolic secanr"
@@ -2497,7 +2491,7 @@ msgstr "Returnerer invers hyperbolsk sekans til argumentet."
 
 #. Hyperbolic.xml:260(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner invers hyperbolsk sekans til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. <placeholder-7/> er den omvendte funktion til <placeholder-8/>, dvs. <placeholder-9/>."
 
 #. Hyperbolic.xml:273(primary)
 msgid "inverse hyperbolic cotangent"
@@ -2509,7 +2503,7 @@ msgstr "Returnerer invers hyperbolsk cotangens til argumentet."
 
 #. Hyperbolic.xml:283(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>. For real numbers <placeholder-10/> is undefined in the interval [-1;1]."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> beregner invers hyperbolsk cotangens til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. <placeholder-7/> er den omvendte funktion til <placeholder-8/>, dvs. <placeholder-9/>. For reelle tal er <placeholder-10/> ikke defineret på intervallet [-1;1]."
 
 #. HowToUse.xml:4(title)
 msgid "How to use Graph"
@@ -2540,9 +2534,8 @@ msgid "tool bar"
 msgstr "værktøjslinje"
 
 #. HowToUse.xml:16(para)
-#, fuzzy
 msgid "When the program starts, you will see the main window shown below. This window shows the graphing area to the right with the coordinate system where the graphs you insert will be shown. You can use the menu or the buttons on the toolbar to show different dialog boxes to insert a function, edit functions, delete functions etc. You can find a <link linkend=\"MenuItems\">description</link> of all the menu items."
-msgstr "Når programmet startes, ses nedenstående vindue. I dette vindue vises til højre et koordinatsystem, hvor der kan indsættes grafer. Forskellige dialogbokse kan fremkaldes enten ved hjælp af menupunkter eller ved hjælp af knapperne i værktøjslinjen. Klik herMENU for at se en beskrivelse af de forskellige menupunkter."
+msgstr "Når programmet startes, ses hovedvinduet som vist nedenfor. I dette vindue vises til højre et koordinatsystem, hvor der kan indsættes grafer. Forskellige dialogbokse kan fremkaldes enten ved hjælp af menupunkter eller ved hjælp af knapperne i værktøjslinjen. Herfra er det muligt at indsætte, redigere, slette funktioner osv. <link linkend=\"MenuItems\">Beskrivelse</link> af de forskellige menupunkter."
 
 #. HowToUse.xml:23(guimenuitem)
 msgid "Customize toolbar..."
@@ -2582,11 +2575,11 @@ msgstr "Rediger akser"
 
 #. Glossary.xml:24(para)
 msgid "Complex numbers are used in the <placeholder-1/> dialog for standard functions and for graphing functions when <placeholder-2/> is enabled under the <placeholder-3/> tab in the <placeholder-4/> dialog."
-msgstr "Komplekse tal bruges i dialogen <placeholder-1/> for standardfunktioner og ved tegning af grafer, når <placeholder-2/> er slået til i fanen <placeholder-3/> i dialogen <placeholder-4/>."
+msgstr "Komplekse tal bruges i dialogboksen <placeholder-1/> for standardfunktioner og ved tegning af grafer, når <placeholder-2/> er slået til i fanen <placeholder-3/> i dialogboksen <placeholder-4/>."
 
 #. Glossary.xml:36(para)
 msgid "A graph element is something that is shown in the coordinate system. This can be a function, point series, label, relation, etc. The graph elements are also shown in the function list where they can be manipulated from the <placeholder-1/> menu or the context menu."
-msgstr ""
+msgstr "Et grafelement er noget, der vises i koordinatsystemet. Det kan være en en funktionsgraf, en punktserie, en etiket, en relation osv. Grafelementer vises også i funktionslisten, hvor de kan redigeres fra menuen <placeholder-1/> eller fra undermenuen."
 
 #. Glossary.xml:47(para)
 msgid "The function list is shown in the left side of the main window. This list shows a list of all functions, tangents, point series, shadings and relations. When you want to manipulate an item, you first have to select it. The selected item is normally marked in blue, but it will be marked in gray when something other than the function list has focus. You can manipulate the selected element through the <placeholder-1/> menu or through the context menu appearing when you <action>right click</action> on the element."
@@ -2606,7 +2599,7 @@ msgstr "Vis i signaturforklaring"
 
 #. Glossary.xml:72(para)
 msgid "The legend is a box that per default is placed at the upper right corner of the graphing area, and shows a list of the plotted functions, tangents, shadings, and point series in the coordinate system. Select <placeholder-1/> under <placeholder-2/> in the <placeholder-3/> dialog to show the legend. <action>Right click</action> on an item in the function list and deselect <placeholder-4/> if you don't want the item shown in the legend. When editing an item you can enter the text to be shown in the legend. For functions and tangents the function equation will be shown if no legend text is entered."
-msgstr "Signaturforklaringen vises som en firkant i øverste højre hjørne af billedet og viser en liste over funktioner, tangenter, skraveringer og punktserier i koordinatsystemet. Marker <placeholder-1/> under <placeholder-2/> i dialogen <placeholder-3/> for at vise signaturforklaringen. <action>Højreklik</action> på et element i funktionslisten og fjern markeringen ved <placeholder-4/>, hvis du ikke vil have det pågældende element vist. Når et element redigeres, kan du angive en tekst, som skal vises i signaturforklaringen. For funktioner og tangenter vises funktionsforskriften, hvis ikke andet er angivet."
+msgstr "Signaturforklaringen vises som en firkant i øverste højre hjørne af billedet og viser en liste over funktioner, tangenter, skraveringer og punktserier i koordinatsystemet. Marker <placeholder-1/> under <placeholder-2/> i dialogboksen <placeholder-3/> for at vise signaturforklaringen. <action>Højreklik</action> på et element i funktionslisten og fjern markeringen ved <placeholder-4/>, hvis du ikke vil have det pågældende element vist. Når et element redigeres, kan du angive en tekst, som skal vises i signaturforklaringen. For funktioner og tangenter vises funktionsforskriften, hvis ikke andet er angivet."
 
 #. Glossary.xml:87(para)
 msgid "An expression that can be evaluated as a number is called a numeric expression. The expression can include any combination of numbers, constants, variables, operators and functions."
@@ -2614,7 +2607,7 @@ msgstr "Et udtryk, der kan evalueres til et tal, kaldes et numerisk udtryk. Udtr
 
 #. Glossary.xml:98(para)
 msgid "Radians are a way to describe the size of an angle similar to degrees, but radians are not a unit like degrees. The angle of a whole circle is 360&deg; or 2&pi; radians. An angle in radians can be converted to degrees by multiplying with 180&deg;/&pi;. An angle in degrees can be converted to radians by multiplying with &pi;/180&deg;. You can choose to use radians or degrees for trigonometric functions in the <placeholder-1/> dialog under the <placeholder-2/> tab."
-msgstr "Radianer er et alternativt vinkelmål til gradtallet. Radiantallet angiver længden af den af centervinklen afskårne cirkelbue på enhedscirklen. Vinklen i en hel cirkel er på 360&deg; eller 2&pi; radianer. Omregning af radiantal til gradtal sker ved at multiplicere radiantallet med 180&deg;/&pi;. En vinkels gradtal kan konverteres til radianer ved at multiplicere  gradtallet med &pi;/180&deg;. I dialogen <placeholder-1/> under fanen <placeholder-2/> kan du vælge, om der skal regnes i radianer eller grader, når der benyttes trigonometriske funktioner."
+msgstr "Radianer er et alternativt vinkelmål til gradtallet. Radiantallet angiver længden af den af centervinklen afskårne cirkelbue på enhedscirklen. Vinklen i en hel cirkel er på 360&deg; eller 2&pi; radianer. Omregning af radiantal til gradtal sker ved at multiplicere radiantallet med 180&deg;/&pi;. En vinkels gradtal kan konverteres til radianer ved at multiplicere  gradtallet med &pi;/180&deg;. I dialogboksen <placeholder-1/> under fanen <placeholder-2/> kan du vælge, om der skal regnes i radianer eller grader, når der benyttes trigonometriske funktioner."
 
 #. Glossary.xml:112(para)
 msgid "A real number is on the form nnn.fffEeee where nnn is the whole number part that may be negative. fff is the fraction part that is separated from the integer part with a dot '.'. The fraction part is optional, but either the integer part or the fraction part must be there. E is the exponent separator and must be an 'E' in upper case. eee is the exponent optionally preceded by '-'. The exponent is only needed if the E is there. Notice that 5E8 is the same as 5*10^8."
@@ -3154,7 +3147,7 @@ msgstr "Er det muligt at få programmet til at huske vinduets størrelse og plac
 
 #. FAQ.xml:124(para)
 msgid "When you select <placeholder-1/> in the <placeholder-2/> dialog. Graph will save the position and size of the main window when the program quits. The next time the program starts the same size and position is used."
-msgstr "Hvis du vælger <placeholder-1/> i dialogen <placeholder-2/>, vil hovedvinduets position og størrelse blive gemt, når programmet afsluttes. Derved får programmet samme størrelse og position næste gang, det startes."
+msgstr "Hvis du vælger <placeholder-1/> i dialogboksen <placeholder-2/>, vil hovedvinduets position og størrelse blive gemt, når programmet afsluttes. Derved får programmet samme størrelse og position næste gang, det startes."
 
 #. FAQ.xml:134(para)
 msgid "Why does the program not accept a comma as decimals separator?"
@@ -3222,7 +3215,7 @@ msgstr "Hvordan plotter jeg en kompleks funktion, f.eks. f(t)=e^(i*t)?"
 
 #. FAQ.xml:267(para)
 msgid "You probably want to show the real part on the x-axis and the imaginary part on the y-axis. In that case you can draw the function as the parametric function x(t)=re(e^(i*t)), y(t)=im(e^(i*t)). Notice that <placeholder-1/> must be enabled in the <placeholder-2/> dialog."
-msgstr "Du ønsker antageligvis at få den reelle del vist på x-aksen og den imaginære del på y-aksen. Hvis dette er tilfældet, kan funktionen tegnes som en parameterfunktion x(t)=re(e^(i*t)), y(t)=im(e^(i*t)). Bemærk at <placeholder-1/> skal være slået til i dialogen <placeholder-2/>."
+msgstr "Du ønsker antageligvis at få den reelle del vist på x-aksen og den imaginære del på y-aksen. Hvis dette er tilfældet, kan funktionen tegnes som en parameterfunktion x(t)=re(e^(i*t)), y(t)=im(e^(i*t)). Bemærk at <placeholder-1/> skal være slået til i dialogboksen <placeholder-2/>."
 
 #. FAQ.xml:277(para)
 msgid "How can I make Graph plot functions with vertical asymptotes correctly?"
@@ -3230,7 +3223,7 @@ msgstr "Hvordan plotter jeg funktioner med lodrette asymptoter korrekt?"
 
 #. FAQ.xml:282(para)
 msgid "Functions like f(x)=tan(x) with vertical asymptotes may not always be shown correctly. As default Graph will evaluate the function for each pixel on the x-axis. But if the graph has a steep slope that goes against infinite and back between two pixels, Graph will not notice it. To plot the function correctly you can tell Graph how many evaluations to perform. This may be entered in the <placeholder-1/> field in the <placeholder-2/> dialog. A number around 100000 will usually show the function correctly."
-msgstr "Funktioner som f(x)=tan(x) med lodrette asymptoter vises måske ikke altid korrekt. Som standard evaluerer Graph funktionen for hver pixel på x-aksen. Hvis grafen har en stejl hældning, der går mod uendelig og tilbage igen mellem to pixels, vil Graph imidlertid ikke bemærke det. For at plotte funktionen korrekt, kan man instruere Graph i, hvor mange evalueringer der skal foretages. Dette kan indtastes i feltet <placeholder-1/> i dialogen <placeholder-2/>. En tal i omegnen af 100000 vil som regel få funktionen til at blive vist korrekt."
+msgstr "Funktioner som f(x)=tan(x) med lodrette asymptoter vises måske ikke altid korrekt. Som standard evaluerer Graph funktionen for hver pixel på x-aksen. Hvis grafen har en stejl hældning, der går mod uendelig og tilbage igen mellem to pixels, vil Graph imidlertid ikke bemærke det. For at plotte funktionen korrekt, kan man instruere Graph i, hvor mange evalueringer der skal foretages. Dette kan indtastes i feltet <placeholder-1/> i dialogboksen <placeholder-2/>. En tal i omegnen af 100000 vil som regel få funktionen til at blive vist korrekt."
 
 #. FAQ.xml:295(para)
 msgid "How to create a PDF file from Graph?"
@@ -3238,7 +3231,7 @@ msgstr "Hvordan opretter man en PDF-fil fra Graph?"
 
 #. FAQ.xml:300(para)
 msgid "You can choose to save as PDF in the <placeholder-1/> dialog."
-msgstr "Du kan vælge at gemme som PDF i dialogen <placeholder-1/>."
+msgstr "Du kan vælge at gemme som PDF i dialogboksen <placeholder-1/>."
 
 #. FAQ.xml:308(para)
 msgid "Why will the program not start under Windows 95?"
@@ -3250,27 +3243,27 @@ msgstr "Graph understøtter ikke længere Windows 95. Den seneste version, der k
 
 #. EvaluateDialog.xml:9(para)
 msgid "This dialog is used for interactive calculations on functions. The dialog may be docked below the function list, which is default, or undocked as a floating dialog."
-msgstr ""
+msgstr "Denne dialogboks bruges til interaktive beregninger på funktioner. Dialogboksen kan sættes fast under funktionslisten, hvilket er standard, eller den kan optræde i vinduet som en fritstående dialogboks."
 
 #. EvaluateDialog.xml:15(para)
 msgid "When <placeholder-1/> is selected the dialog is used to evaluate the selected function at a given value either entered in the dialog or traced with the mouse."
-msgstr ""
+msgstr "Når <placeholder-1/> vælges, bruges vinduet til at evaluere den markerede funktion ved en given værdi. Værdien, for hvilken funktionen ønskes evalueret, indtastes i boksen eller markeres grafisk med musen."
 
 #. EvaluateDialog.xml:23(para)
 msgid "Below you can see the dialog, that appears when a standard function is selected. The dialog will look a little different when a parametric function, polar function or tangent is selected."
-msgstr ""
+msgstr "Herunder ses den dialogboks, der fremkommer, når evaluering vælges, mens en standardfunktion er markeret. Dialogboksen ser lidt anderledes ud, hvis en parameterfunktion, polærfunktion eller tangent evalueres."
 
 #. EvaluateDialog.xml:30(para)
 msgid "You can enter a value for which you want to evaluate the function. The value will be evaluated for the function selected in the <placeholder-1/>. If the result is on the graph within the shown coordinate system, it will be marked with a dashed cross. You can also trace the drawn graph with the mouse. Just click on the graph with the mouse and the function will be evaluated at the nearest point."
-msgstr ""
+msgstr "Du kan indtaste en værdi i boksen, for hvilken funktionen ønskes evalueret. Værdien evalueres for den funktion, der er markeret i <placeholder-1/>. Hvis resultatet giver et punkt i det viste koordinatsystem vil dette punkt blive markeret med et stiplet kryds. Det er også muligt at evaluere en vist funktion med musen. Når der klikkes med musen i koordinatsystemet, mens dialogen vises, vil det nærmeste punkt på kurven blive evalueret."
 
 #. EvaluateDialog.xml:37(para)
 msgid "It may happen that the result of an evaluation is a complex number with an imaginary part. This number will either be written as a+b&imag;, a&ang;&theta; or not written at all depending of the choice under <placeholder-1/>."
-msgstr ""
+msgstr "Det kan forekomme, at den evaluerede funktion resulterer i et komplekst tal. Dette tal vil i så fald blive skrevet på formen a+b&imag;, a&ang;&theta; eller slet ikke blive skrevet. Dette afhænger af valget i <placeholder-1/>."
 
 #. EvaluateDialog.xml:47(para)
 msgid "The cursor will snap to the nearest point on the selected function."
-msgstr ""
+msgstr "Markøren vil følge den valgte funktion."
 
 #. EvaluateDialog.xml:53(item)
 msgid "Intersection"
@@ -3278,7 +3271,7 @@ msgstr "Skæring"
 
 #. EvaluateDialog.xml:55(para)
 msgid "The cursor will snap to the nearest intersection between the selected function and every function displayed (including the function itself)."
-msgstr ""
+msgstr "Markøren vil låses fast på den nærmeste skæring mellem den valgte funktions graf og de øvrige funktioners grafer eller grafen selv."
 
 #. EvaluateDialog.xml:61(item) AxesDialog.xml:10(primary)
 msgid "x-axis"
@@ -3286,7 +3279,7 @@ msgstr "x-akse"
 
 #. EvaluateDialog.xml:63(para)
 msgid "The cursor will snap to the nearest intersection between the selected function and the x-axis."
-msgstr ""
+msgstr "Markøren vil låse til den nærmeste skæring mellem den valgte funktions graf og x-aksen."
 
 #. EvaluateDialog.xml:69(item) AxesDialog.xml:11(primary)
 msgid "y-axis"
@@ -3294,7 +3287,7 @@ msgstr "y-akse"
 
 #. EvaluateDialog.xml:71(para)
 msgid "The cursor will snap to the nearest intersection between the selected function and the y-axis. Not available for standard functions."
-msgstr ""
+msgstr "Markøren vil låse til den nærmeste skæring mellem den valgte funktions graf og y-aksen. Dette er ikke tilgængeligt for standardfunktioner."
 
 #. EvaluateDialog.xml:77(term)
 msgid "Extreme x-value"
@@ -3302,7 +3295,7 @@ msgstr "Ekstrem x-værdi"
 
 #. EvaluateDialog.xml:79(para)
 msgid "The cursor will snap to the nearest local extreme value for the x-coordinate. Not available for standard functions."
-msgstr ""
+msgstr "Markøren vil låse til det nærmeste lokale maksimum eller minimum for x-koordinaten. Dette er ikke tilgængeligt for standardfunktioner."
 
 #. EvaluateDialog.xml:85(term)
 msgid "Extreme y-value (Extremum)"
@@ -3310,31 +3303,31 @@ msgstr "Ekstrem y-værdi (ekstremum)"
 
 #. EvaluateDialog.xml:87(para)
 msgid "The cursor will snap to the nearest local extreme value for the y-coordinate."
-msgstr ""
+msgstr "Markøren vil låse til det nærmeste lokale maksimum eller minimum for y-koordinaten."
 
 #. EvaluateDialog.xml:41(para)
 msgid "When you click with the mouse on the graphing area you may choose what the cursor will snap to: <placeholder-1/>"
-msgstr ""
+msgstr "Når der klikkes med musen i koordinatsystemet, kan du vælge, hvad cursoren skal låse sig fast til: <placeholder-1/>"
 
 #. EvaluateDialog.xml:98(para)
 msgid "When <placeholder-1/> is selected the dialog is used to calculate signed areas. This can only be done on standard functions, polar functions and tangents, but not on parametric functions. For standard functions, parametric functions and tangents the result is the signed area between the graph and the x-axis (the real x-axis and not necessarily the visible one) for the given range."
-msgstr ""
+msgstr "Når <placeholder-1/> vælges, bruges vinduet til at beregne arealer (med fortegn). Dette er kun muligt med standardfunktioner, polærfunktioner og tangenter, men ikke med parameterfunktioner. For standardfunktioner, parameterfunktioner og tangenter er resultatet arealet (med fortegn) mellem grafen for funktionen og x-aksen (den rigtige x-akse er ikke nødvendigvis den, der vises) i det angivne interval."
 
 #. EvaluateDialog.xml:109(para)
 msgid "For polar functions, the signed area is the one between the graph in the given range and origin. The area is considered negative when the angle goes from a higher to a lower value (clockwise)."
-msgstr ""
+msgstr "For polærfunktioner ligger arealet (med fortegn) mellem grafen for funktionen i det angivne interval og koordinatsystemets begyndelsespunkt. Arealet betragtes som negativt, når intervallet går fra en høj værdi til en lavere værdi (med uret)."
 
 #. EvaluateDialog.xml:113(para)
 msgid "For the other functions the area is considered negative when the graph is below the x-axis or when the function goes from a higher to a lower x-value."
-msgstr ""
+msgstr "For andre funktioner betragtes arealet som negativt, når grafen ligger under x-aksen, eller når funktionen går fra en højere til en lavere x-værdi."
 
 #. EvaluateDialog.xml:116(para)
 msgid "You can either enter the range in the edit boxes or select the range with the mouse. The calculated area will be shown below the range, and the area will be marked with a shading in the coordinate system. The calculation is done using Simpson's formula through 1000 iterations."
-msgstr ""
+msgstr "Du kan enten indtaste intervallet i vinduet eller markere det med musen i hovedvinduet. Det beregnede areal vil blive vist i vinduet og skraveret på billedet i hovedvinduet. Beregningen foretages med Simpsons regel med 1000 iterationer."
 
 #. EvaluateDialog.xml:125(para)
 msgid "When <placeholder-1/> is selected the dialog is used to calculate the distance between two points on the function along the curve. You may either enter the range in the dialog or use the mouse to mark it. The range will be marked in the coordinate system. The calculation is done by converting it to an integration and using Simpson's formula through 1000 iterations."
-msgstr ""
+msgstr "Når <placeholder-1/> vælges, bruges vinduet til at beregne afstanden mellem to punkter på grafen for funktionen langs med kurven. Du kan enten indtaste intervallet i vinduet eller bruge musen til at markere det. Beregningen foretages ved at beregne et integral numerisk med Simpsons formel med 1000 iterationer."
 
 #. Errors.xml:7(title)
 msgid "Error messages"
@@ -3690,7 +3683,7 @@ msgstr "brugerdefineret konstant"
 
 #. CustomFunctionsDialog.xml:13(para)
 msgid "Graph allows you to define your own custom functions and constants, which you can use in other expressions in the program. You may want to use this to factor out frequently used constants and subexpressions to make it faster and easier to use these items. Use the <placeholder-1/> menu item to show the dialog."
-msgstr ""
+msgstr "Graph giver dig mulighed for at definere dine egne funktioner og konstanter, som du kan bruge i andre udtryk i programmet. Dette kan bruges til at forenkle konstanter og udtryk, som bruges ofte, for at gøre det hurtigere og nemmere at bruge disse konstanter og udtryk. Brug menupunktet <placeholder-1/> for at fremkalde dialogboksen."
 
 #. CustomFunctionsDialog.xml:23(term)
 msgid "Entering functions"
@@ -3698,15 +3691,15 @@ msgstr "Indtastning af funktioner"
 
 #. CustomFunctionsDialog.xml:25(para)
 msgid "The function and constant names are entered in the first column. The name may contain any combination of letters, digits and underscore but it must always start with a letter. You may not use a name that is already assigned to a built-in function or variable."
-msgstr ""
+msgstr "Navne på funktioner og konstanter indtastes i første kolonne. Navnet kan indeholde enhver kombination af bogstaver, tal og understreg, men skal til enhver tid begynde med et bogstav. Navne, som allerede er tildelt indbyggede funktioner eller variable, må ikke bruges."
 
 #. CustomFunctionsDialog.xml:30(para)
 msgid "Function arguments are entered after the name in brackets separated by comma, e.g. <literal>f(x,y,z)</literal> is a function named f taking three arguments named x, y and z. Like the function name, the argument names must start with a letter and only contain letters and digits."
-msgstr ""
+msgstr "Funktionsargumenter indtastes efter navnet i parentes og adskilt af komma, f.eks. <literal>f(x,y,z)</literal> hvis funktionen hedder f og tager tre argumenter med navnene x, y og z. Ligesom funktionsnavnet skal også navnene på argumenterne begynde med et bogstav og må kun indeholde bogstaver og tal."
 
 #. CustomFunctionsDialog.xml:34(para)
 msgid "The expressions you want to define are entered in the second column. The expressions can use the arguments specified in the first column and all built-in functions, other custom functions and constants, and even call itself recursively. A comment can be written after a # symbol at the end of an expression."
-msgstr ""
+msgstr "De udtryk, der skal defineres, indtastes i den anden kolonne. Udtrykkene kan gøre brug af argumenter, som er definerede i den første kolonne, og alle indbyggede funktioner, andre brugerdefinerede funktioner og konstanter, og kan endda kalde sig selv rekursivt."
 
 #. CustomFunctionsDialog.xml:43(term)
 msgid "Changing and removing functions"
@@ -3718,11 +3711,11 @@ msgstr "Slet række"
 
 #. CustomFunctionsDialog.xml:45(para)
 msgid "You can remove a function or constant by clearing the name and definition or selecting <placeholder-1/> from the context menu. All elements using the deleted function or constant will fail when evaluated."
-msgstr ""
+msgstr "En funktion eller konstant fjernes ved at slette navnet og definitionen eller ved at vælge <placeholder-1/> fra undermenuen. Alle elementer, som gør brug af den slettede funktion eller konstant, kan ikke længere evalueres."
 
 #. CustomFunctionsDialog.xml:53(para)
 msgid "When you press <guibutton>OK</guibutton> or <guibutton>Apply</guibutton> in the shown dialog, all elements are updated to reflect any changes to the functions and constants."
-msgstr ""
+msgstr "Når du trykker <guibutton>OK</guibutton> eller <guibutton>Anvend</guibutton> i den viste dialogboks, opdateres alle elementer for at tage hensyn til eventuelle ændringer i funktioner eller konstanter."
 
 #. Constants.xml:6(title)
 msgid "Constants"
@@ -3810,7 +3803,7 @@ msgstr ""
 
 #. AxesDialog.xml:9(primary)
 msgid "Axes dialog"
-msgstr "dialogen Akser"
+msgstr "Dialogboksen Akser"
 
 #. AxesDialog.xml:14(primary)
 msgid "unit"
