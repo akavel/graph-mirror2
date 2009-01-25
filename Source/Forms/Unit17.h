@@ -19,6 +19,8 @@
 #include "Grid.h"
 #include <Menus.hpp>
 #include <Dialogs.hpp>
+#include <ActnPopup.hpp>
+#include <PlatformDefaultStyleActnCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm17 : public TForm
 {

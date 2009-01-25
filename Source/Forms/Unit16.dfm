@@ -32,7 +32,7 @@ object Form16: TForm16
       Caption = 'Shading'
       object Panel1: TPanel
         Left = 24
-        Top = 16
+        Top = 14
         Width = 68
         Height = 68
         BevelOuter = bvNone
@@ -120,7 +120,7 @@ object Form16: TForm16
       end
       object Panel2: TPanel
         Left = 120
-        Top = 16
+        Top = 14
         Width = 68
         Height = 68
         BevelOuter = bvNone
@@ -208,7 +208,7 @@ object Form16: TForm16
       end
       object Panel3: TPanel
         Left = 216
-        Top = 16
+        Top = 14
         Width = 68
         Height = 68
         BevelOuter = bvNone
@@ -562,19 +562,19 @@ object Form16: TForm16
       end
       object RadioButton3: TMyRadioButton
         Left = 208
-        Top = 88
+        Top = 83
         Width = 97
-        Height = 25
+        Height = 35
         Hint = 'Shades the area above the function.'
         Caption = 'Above function'
         TabOrder = 5
         MultiLine = True
       end
       object RadioButton1: TMyRadioButton
-        Left = 4
-        Top = 88
-        Width = 105
-        Height = 25
+        Left = 3
+        Top = 83
+        Width = 108
+        Height = 35
         Hint = 'Shades the area between the function and the x-axis.'
         Caption = 'Between function and x-axis'
         Checked = True
@@ -584,9 +584,9 @@ object Form16: TForm16
       end
       object RadioButton6: TMyRadioButton
         Left = 208
-        Top = 192
+        Top = 189
         Width = 89
-        Height = 25
+        Height = 35
         Hint = 
           'Shades the area between the main function and the function selec' +
           'ted in the list to the right.'
@@ -597,9 +597,9 @@ object Form16: TForm16
       end
       object RadioButton4: TMyRadioButton
         Left = 4
-        Top = 192
-        Width = 105
-        Height = 25
+        Top = 189
+        Width = 108
+        Height = 35
         Hint = 'Shades the area between the function and the y-axis.'
         Caption = 'Between function and y-axis'
         TabOrder = 7
@@ -607,9 +607,9 @@ object Form16: TForm16
       end
       object RadioButton5: TMyRadioButton
         Left = 112
-        Top = 192
+        Top = 189
         Width = 89
-        Height = 25
+        Height = 35
         Hint = 'Shades the area inside the function.'
         Caption = 'Inside function'
         TabOrder = 9
@@ -617,9 +617,9 @@ object Form16: TForm16
       end
       object RadioButton2: TMyRadioButton
         Left = 112
-        Top = 88
+        Top = 83
         Width = 95
-        Height = 25
+        Height = 35
         Hint = 'Shades the area below the function.'
         Caption = 'Below function'
         TabOrder = 3

@@ -55,8 +55,8 @@ void __fastcall TForm17::Button3Click(TObject *Sender)
 
     CustomFunctions.Update();
     Data.AbortUpdate();
-    Data.CustomFunctions.Swap(CustomFunctions);
     UndoList.Push(TUndoCustomFunctions(Data));
+    Data.CustomFunctions.Swap(CustomFunctions);
     Data.Update();
   }
   catch(Func32::EFuncError &E)

@@ -237,9 +237,9 @@ BEGIN
   629 "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."                                                                     //Tip of the Day
   630 "In the Axes dialog you can add a title to the coordinate system."                                                                                          //Tip of the Day
   631 "You can import point series from files saved by other programs, like Microsoft Excel."                                                                     //Tip of the Day
-  632 "When inserting a point series, you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."                            //Tip of the Day
-  633 "You can use 'Zoom|Fit all' to change the coordinate system so all functions and point series are visible."                                                            //Tip of the Day
-  634 "You can use Zoom|Fit to change the coordinate system to show the selected function or point series in an optimal way."                                                       //Tip of the Day
+  632 "When inserting a point series, you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."                           //Tip of the Day
+  633 "You can use 'Zoom|Fit all' to change the coordinate system so all functions and point series are visible."                                                 //Tip of the Day
+  634 "You can use Zoom|Fit to change the coordinate system to show all parts of the selected function or point series."                                          //Tip of the Day
   635 "When you hold down the Shift key you can drag the coordinate system around with the mouse."                                                                //Tip of the Day
   636 "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."                                           //Tip of the Day
   637 "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."                                       //Tip of the Day
