@@ -33,7 +33,7 @@
 				</para>
 				<para>
 					 The expressions you want to define are entered in the second column.
-					 The expressions can use the arguments specified in the first column and all built-in functions, other custom functions and constants, and even call itself recursively.
+					 The expressions can use the arguments specified in the first column and all built-in functions, other custom functions and constants, and even call themselves recursively.
 					 A comment can be written after a # symbol at the end of an expression.
 				</para>
 			</listitem>

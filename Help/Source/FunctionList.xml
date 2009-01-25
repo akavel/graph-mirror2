@@ -427,7 +427,7 @@
 					</row>
 					<row>
 						<entry><xref linkend="dnorm"/></entry>
-						<entry>The probability function of the normal distribution in a variate with mean and standard </entry>
+						<entry>Returns the normal distribution of the first argument with optional mean value and standard deviation.</entry>
 					</row>
 				</tbody>
  			</tgroup>
