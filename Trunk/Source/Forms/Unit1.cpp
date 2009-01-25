@@ -1325,8 +1325,8 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
   {
     if(Shift.Contains(ssShift))
     {
-      const char* Languages[] = {"Dutch", "Greek", "Finnish", "Chinese (Traditional)", "Chinese (Simplified)", "Mongolian", "Swedish", "Arabic"};
-      if(Key >= '1' && Key <='8')
+      const char* Languages[] = {"Czech", "Dutch", "Greek", "Finnish", "Chinese (Traditional)", "Chinese (Simplified)", "Mongolian", "Swedish", "Arabic", "Hebrew"};
+      if(Key >= '0' && Key <='9')
         ChangeLanguage(Languages[Key - '1']);
     }
     else if(Key >= '0' && Key <='9')
