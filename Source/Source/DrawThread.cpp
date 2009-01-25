@@ -138,7 +138,7 @@ void TDrawThread::PrepareFunction(TBaseFuncType *F)
     else
       ds = (MinMax.second - MinMax.first) / (Steps - 1); //Remove 1 so two steps only plots at Min and Max
 
-    if(ds  <= 0)
+    if(ds <= 0)
       ds = 1; //ds must always be a positive number
 
     //Avoid calculations on an empty range  
@@ -247,7 +247,10 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
             }
             while((Err || (LastPos != Pos && InsideImage(Pos))) && std::abs(s-s2) > 1E-12);
 
-            if(!Err)
+            //If we have a new position, add it. We do not check for error here.
+            //Even if the last calculation was an error, we may have a better position
+            //than LastPos
+            if(Pos != LastPos)
             {
               F.Points.push_back(Pos);
               F.sList.push_back(Func32::TCoordSet(s2, real(Coord.x), real(Coord.y)));
@@ -352,7 +355,9 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
             }
             while((Err || (LastPos != Pos2 && InsideImage(LastPos))) && std::abs(s1-s2) > 1E-12);
 
-            if(!Err)
+            //Add point if we have a new one. Don't check Err. Even if the last calculation
+            //was an error, Pos2 might be better than Pos
+            if(Pos2 != Pos)
             {
               F.Points.push_back(Pos2);
               F.sList.push_back(Func32::TCoordSet(s2, real(Coord2.x), real(Coord2.y)));
@@ -447,8 +452,8 @@ void TDrawThread::Visit(TShade &Shade)
   if(dynamic_cast<const TStdFunc*>(F))
   {
     //If Min or Max is outside coordinate system: Make sure they are just one pixel outside
-    Min = Range(Draw->xCoord(-1), sMin, Draw->xCoord(AxesRect.Right+1));
-    Max = Range(Draw->xCoord(-1), sMax, Draw->xCoord(AxesRect.Right+1));
+    Min = Range(std::max(Draw->xCoord(-1), F->From.Value), sMin, Draw->xCoord(AxesRect.Right+1));
+    Max = Range(Draw->xCoord(-1), sMax, std::min(Draw->xCoord(AxesRect.Right+1), F->To.Value));
   }
   else
   {
