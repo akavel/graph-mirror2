@@ -13,7 +13,7 @@
 	<simplesect renderas="sect2">
 		<title>Installation</title>
 		<para>
-			The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version name.
+			The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version number.
 			To install, just execute the installation and follow the instructions.
 			The installation will install the following	files in the selected directory and subdirectories:
 		</para>

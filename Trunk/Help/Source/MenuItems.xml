@@ -101,7 +101,7 @@
 							The first column shall contain the x-coordinates.
 							The following columns shall contain the y-coordinates.
 							Graph will create as many point series as there are columns with y-coordinates in the file.
-							There is no limit the number of point series possible in the data file as long as they share the same x-coordinates.
+							There is no limit to the number of point series possible in the data file as long as they share the same x-coordinates.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -593,7 +593,7 @@
 					</term>
 					<listitem>
 						<para>
-							This will evaluate the selected function function for a given value.
+							This will evaluate the selected function for a given value.
 							For standard functions f(x), f'(x) and f''(x) are evaluated.
 							For parametric functions x(t), y(t), dx/dt, dy/dt and dy/dx are evaluated.
 							For polar functions r(t), x(t), y(t), dr/dt and dy/dt are evaluated.

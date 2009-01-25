@@ -166,7 +166,7 @@
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 			</para>
 			<para>
-				Hyperbolic cosecant is defined as: <mathphrase>csc(z) = 1/sinh(z) = 2/(e<superscript>z</superscript>-e<superscript>-z</superscript>)</mathphrase>
+				Hyperbolic cosecant is defined as: <mathphrase>csch(z) = 1/sinh(z) = 2/(e<superscript>z</superscript>-e<superscript>-z</superscript>)</mathphrase>
 			</para>
 		</simplesect>
 	</section>
@@ -190,7 +190,7 @@
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 			</para>
 			<para>
-				Hyperbolic secant is defined as: <mathphrase>csc(z) = 1/cosh(z) = 2/(e<superscript>z</superscript>+e<superscript>-z</superscript>)</mathphrase>
+				Hyperbolic secant is defined as: <mathphrase>sech(z) = 1/cosh(z) = 2/(e<superscript>z</superscript>+e<superscript>-z</superscript>)</mathphrase>
 			</para>
 		</simplesect>
 	</section>
@@ -214,7 +214,8 @@
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 			</para>
 			<para>
-				Hyperbolic cotangent is defined as: <mathphrase>csc(z) = 1/tanh(z) = cosh(z)/sinh(z)</mathphrase>
+				Hyperbolic cotangent is defined as:
+				<mathphrase>coth(z) = 1/tanh(z) = cosh(z)/sinh(z) = (e<superscript>z</superscript> + e<superscript>-z</superscript>)/(e<superscript>z</superscript> - e<superscript>-z</superscript>)</mathphrase>
 			</para>
 		</simplesect>
 	</section>
