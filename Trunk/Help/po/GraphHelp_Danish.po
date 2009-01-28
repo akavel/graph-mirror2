@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-10-20 18:51Romance Standard Time\n"
-"PO-Revision-Date: 2009-01-20 22:06+0100\n"
+"PO-Revision-Date: 2009-01-26 14:22+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -3735,11 +3735,11 @@ msgstr "Returnerer et tilfældigt tal i intervallet 0 til 1."
 
 #. Constants.xml:20(para)
 msgid "<placeholder-1/> is used as a constant but returns a new pseudo-random number each time it is evaluated. The value is a real number in the range [0;1]."
-msgstr ""
+msgstr "<placeholder-1/> benyttes som en konstant, men returnerer et pseudovilkårligt tal, hver gang den evalueres. Værdien er et reelt tal i intervallet [0;1]."
 
 #. Constants.xml:26(para)
 msgid "Because <placeholder-1/> returns a new value each time it is evaluated, a graph using <placeholder-2/> will not look the same each time it is drawn. A graph using <placeholder-3/> will also change when the program is forced to redraw, e.g. because the coordinate system is moved, resized or zoomed."
-msgstr ""
+msgstr "Da <placeholder-1/> returnerer en ny værdi, hver gang den evalueres, vil en graf for en funktion, i hvis udtryk <placeholder-2/> indgår, se forskellig ud, hver gang den tegnes. Grafen vil ligeledes ændre forløb, når programmet tegner grafen igen, efter koordinatsystemet flyttes, ændrer vinduesstørrelse eller zoomes."
 
 #. Constants.xml:32(title)
 msgid "Implementation"
@@ -3747,7 +3747,7 @@ msgstr "Implementering"
 
 #. Constants.xml:33(para)
 msgid "<placeholder-1/> uses a multiplicative congruential random number generator with period 2 to the 32<superscript>nd</superscript> power to return successive pseudo-random numbers in the range from 0 to 1."
-msgstr ""
+msgstr "<placeholder-1/> bruger en multiplikativ tilfældighedsgenerator med en periode på 32. potens af 2 til at returnere et pseudovilkårligt tal i intervallet fra 0 til 1."
 
 #. Complex.xml:11(primary)
 msgid "absolute value"
@@ -3759,7 +3759,7 @@ msgstr "numerisk værdi"
 
 #. Complex.xml:22(para)
 msgid "The <placeholder-1/> function returns the absolute or numeric value of <placeholder-2/>, commonly written as |z|. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> always returns a postive real value."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer den absolutte eller numeriske værdi af <placeholder-2/>, ofte skrevet |z|. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. For reelle argumenter returnerer <placeholder-7/> altid en positiv reel værdi."
 
 #. Complex.xml:34(primary)
 msgid "argument"
@@ -3775,7 +3775,7 @@ msgstr "Returnerer parametrens argument."
 
 #. Complex.xml:45(para)
 msgid "The <placeholder-1/> function returns the argument or angle of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> always returns a real number. The result may be in <placeholder-8/> or degrees depending on the current settings. The angle is always between -&pi; and &pi;. If <placeholder-9/> is a real number, <placeholder-10/> is 0 for positive numbers and &pi; for negative numbers. <placeholder-11/> is undefined."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer <placeholder-2/>’s vinkel, der også kaldes argumentet til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. <placeholder-7/> returnerer altid et reelt tal. Resultatet kan være i <placeholder-8/> eller grader afhængig af de aktuelle indstillinger. Vinklen er altid mellem -&pi; og &pi;. Hvis <placeholder-9/> er et reelt tal, er <placeholder-10/> 0 for positive tal og &pi; for negative tal. <placeholder-11/> er udefineret."
 
 #. Complex.xml:61(primary)
 msgid "conjugate"
@@ -3783,7 +3783,7 @@ msgstr "konjuger"
 
 #. Complex.xml:71(para)
 msgid "The <placeholder-1/> function returns the conjugate of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The function is defined as: <placeholder-7/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer den konjugerede værdi af <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. Funktionen er defineret som: <placeholder-7/>."
 
 #. Complex.xml:83(primary)
 msgid "real value"
@@ -3791,7 +3791,7 @@ msgstr "reel værdi"
 
 #. Complex.xml:93(para)
 msgid "The <placeholder-1/> function returns the real part of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer den reelle del af <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>."
 
 #. Complex.xml:104(primary)
 msgid "imaginary value"
@@ -3799,7 +3799,7 @@ msgstr "imaginær værdi"
 
 #. Complex.xml:114(para)
 msgid "The <placeholder-1/> function returns the imaginary part of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr ""
+msgstr "Funktionen <placeholder-1/> returnerer den imaginære del af <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>."
 
 #. AxesDialog.xml:9(primary)
 msgid "Axes dialog"
@@ -3863,7 +3863,7 @@ msgstr "baggrundsfarve"
 
 #. AxesDialog.xml:32(para)
 msgid "When you choose the menu item <placeholder-1/> , the dialog shown below will appear. In this dialog you can configure all options which are related to the axes. The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis. The tab with options for the y-axis is completely analog to this."
-msgstr ""
+msgstr "Når menupunktet <placeholder-1/> vælges, fremkommer nedenstående dialogboks, hvor indstillinger vedrørende koordinatsystemets akser vælges. Dialogboksen indeholder 4 faner. Den første fane, som er vist nedenfor, bruges til at vælge indstillinger for x-aksen. Fanen, der bruges til at vælge indstillinger for y-aksen, er helt analog hertil."
 
 #. AxesDialog.xml:43(title)
 msgid "x-axis/y-axis"
@@ -3875,7 +3875,7 @@ msgstr "Minimum"
 
 #. AxesDialog.xml:51(para)
 msgid "This is the lowest value on the selected axis. Default: -10"
-msgstr ""
+msgstr "Den mindste værdi på den markerede akse. Standard: -10"
 
 #. AxesDialog.xml:57(term)
 msgid "Maximum"
@@ -3883,7 +3883,7 @@ msgstr "Maksimum"
 
 #. AxesDialog.xml:59(para)
 msgid "This is the highest value on the selected axis. Default: 10"
-msgstr ""
+msgstr "Den største værdi på den markerede akse. Standard: 10"
 
 #. AxesDialog.xml:65(term) AxesDialog.xml:70(guilabel) AxesDialog.xml:71(guilabel) AxesDialog.xml:72(guilabel) AxesDialog.xml:97(guilabel) AxesDialog.xml:124(guilabel) AxesDialog.xml:133(guilabel) AxesDialog.xml:142(guilabel)
 msgid "Tick unit"
@@ -3891,7 +3891,7 @@ msgstr "Skalaenhed"
 
 #. AxesDialog.xml:67(para)
 msgid "This is the distance between the tick marks on the selected axis. Tick marks are shown as small lines perpendicular to the axis. <placeholder-1/> is used for both tick marks and for showing numbers. With a logarithmic axis the <placeholder-2/> indicates the factor between the markers. For example <placeholder-3/> set to 4 will show 1, 4, 16, 64, etc. on a logarithmic axis while it will show 0, 4, 8, 12, etc. on a normal axis."
-msgstr ""
+msgstr "Her angives afstanden mellem skalastreger på aksen. Skalastreger bliver vist som små streger vinkelret på aksen. <placeholder-1/> bruges både til visning af skalastreger og tal på aksen. Med en logaritmisk akse indikerer <placeholder-2/> faktoren mellem skalastregerne. For eksempel vil en <placeholder-3/> på 4 vise 1, 4, 16, 64, osv. på en logaritmisk akse, mens det vil vise 0, 4, 8, 12, osv. på en normal akse."
 
 #. AxesDialog.xml:78(term) AxesDialog.xml:133(guilabel) AxesDialog.xml:151(guilabel)
 msgid "Grid unit"
@@ -3899,7 +3899,7 @@ msgstr "Gitterenhed"
 
 #. AxesDialog.xml:80(para)
 msgid "This is the distance between the gridlines perpendicular to the axis. This is only used if grid lines are shown."
-msgstr ""
+msgstr "Her angives afstanden mellem gitterstreger vinkelret på aksen. Dette bruges kun, når gitterlinjer bliver vist."
 
 #. AxesDialog.xml:86(term)
 msgid "Logarithmic scale"
@@ -3907,7 +3907,7 @@ msgstr "Logaritmisk skala"
 
 #. AxesDialog.xml:88(para)
 msgid "Check this field if you want the axis to be scaled logarithmically."
-msgstr ""
+msgstr "Afkryds dette felt, hvis du ønsker aksen inddelt logaritmisk."
 
 #. AxesDialog.xml:94(term) AxesDialog.xml:160(guilabel)
 msgid "Show numbers"
@@ -3915,7 +3915,7 @@ msgstr "Vis tal"
 
 #. AxesDialog.xml:96(para)
 msgid "When this field is checked numbers are shown on the axis with the distance chosen under <placeholder-1/>."
-msgstr ""
+msgstr "Når feltet er afkrydset, vises talenheder på aksen med den afstand, som blev valgt under <placeholder-1/>."
 
 #. AxesDialog.xml:102(term)
 msgid "Label"
@@ -3923,7 +3923,7 @@ msgstr "Etiket"
 
 #. AxesDialog.xml:104(para)
 msgid "When this field is checked, the text in the edit box will be shown just above the x-axis in the right side of the coordinate system. For the y-axis, the text will be shown at the top to the right of the axis. You may use this to show what unit is used for the axes."
-msgstr ""
+msgstr "Når dette felt er afkrydset, vil den tekst, som står i tekstboksen, blive vist lige over x-aksen i højre side af koordinatsystemet. For y-aksen vises etiketten i toppen til højre for aksen. Dette anvendes til at angive, hvilken enhed der vises på akserne."
 
 #. AxesDialog.xml:112(term)
 msgid "The x-axis crosses at / The y-axis crosses at:"
@@ -3939,7 +3939,7 @@ msgstr "Krydset"
 
 #. AxesDialog.xml:114(para)
 msgid "This is the coordinate where the axis will cross the other axis. This is only used when <placeholder-1/> is <placeholder-2/>. Default: 0"
-msgstr ""
+msgstr "Her angives det koordinat, ved hvilket aksen krydser den anden akse. Dette er kun tilgængeligt, når <placeholder-1/> er sat til <placeholder-1/>. Standard: 0."
 
 #. AxesDialog.xml:121(term)
 msgid "Auto tick"
@@ -3947,7 +3947,7 @@ msgstr "Automatisk"
 
 #. AxesDialog.xml:123(para)
 msgid "When checked the program will automatically choose a value for <placeholder-1/> that is fitting for the axes dimensions and size of the graphing area."
-msgstr ""
+msgstr "Når dette felt afkrydses, vil programmet selv vælge en værdi for <placeholder-1/> ud fra aksernes dimensioner og vinduets størrelse."
 
 #. AxesDialog.xml:130(term)
 msgid "Auto grid"
@@ -3955,7 +3955,7 @@ msgstr "Automatisk"
 
 #. AxesDialog.xml:132(para)
 msgid "When checked, <placeholder-1/> will have the same value as <placeholder-2/>."
-msgstr ""
+msgstr "Når dette felt afkrydses, vil <placeholder-1/> have samme værdi som <placeholder-2/>."
 
 #. AxesDialog.xml:138(term)
 msgid "Show ticks"
@@ -3963,7 +3963,7 @@ msgstr "Vis skalastreger"
 
 #. AxesDialog.xml:140(para)
 msgid "When this field is checked, tick marks are shown as small lines on the axis with the distance chosen under <placeholder-1/>."
-msgstr ""
+msgstr "Når dette felt er afkrydset, bliver skalastreger vist som små markeringer på aksen med den afstand, som er valgt under <placeholder-1/>."
 
 #. AxesDialog.xml:147(term)
 msgid "Show grid"
@@ -3975,7 +3975,7 @@ msgstr "Skrifttype og farver"
 
 #. AxesDialog.xml:149(para)
 msgid "When this field is checked, grid lines will be shown as dotted lines perpendicular to the axis with the color chosen under <placeholder-1/> and with the distance chosen at <placeholder-2/>."
-msgstr ""
+msgstr "Når dette felt er afkrydset, vil gitterlinjer blive vist som prikker vinkelret på aksen med den farve, som er valgt under <placeholder-1/>, og med den afstand, som er valgt under <placeholder-2/>."
 
 #. AxesDialog.xml:156(term)
 msgid "Show as a multiple of pi"
@@ -3983,7 +3983,7 @@ msgstr "Vis som brøk gange pi"
 
 #. AxesDialog.xml:158(para)
 msgid "When this is enabled the numbers on the axis are shown as fractions multiplied by &pi;, for example 3&pi;/2. <placeholder-1/> must be enabled for this option to be available."
-msgstr ""
+msgstr "Når dette er valgt, vil numre på aksen blive vist som en brøk gange &pi;, f.eks. 3&pi;/2. <placeholder-1/> skal være valgt, for at denne mulighed er tilgængelig."
 
 #. AxesDialog.xml:170(title)
 msgid "Settings"
@@ -3995,11 +3995,11 @@ msgstr "Titel"
 
 #. AxesDialog.xml:178(para)
 msgid "Here you can enter a title that is shown above the coordinate system. Use the button to the right to change the font."
-msgstr ""
+msgstr "Her kan du indtaste en titel, som vises over koordinatsystemet. Brug knappen til højre til at ændre på skrifttypen."
 
 #. AxesDialog.xml:186(para)
 msgid "Check this to show the <placeholder-1/> with a list of functions and point series in the upper right corner of the coordinate system. You may change the font under <placeholder-2/>."
-msgstr ""
+msgstr "Marker dette felt for at vise <placeholder-1/> med en liste over funktioner og punktserier i øverste højre hjørne af koordinatsystemet. Skrifttypen kan ændres under <placeholder-2/>."
 
 #. AxesDialog.xml:193(term)
 msgid "Legend placement"
@@ -4007,11 +4007,11 @@ msgstr "Placering"
 
 #. AxesDialog.xml:195(para)
 msgid "Here you may choose in which of the four corners you want the <placeholder-1/> to be placed. You can also change this by right clicking on the legend in the graphing area."
-msgstr ""
+msgstr "Her kan du vælge, i hvilket af de fire hjørner <placeholder-1/> skal placeres. Dette kan også ændres ved at højreklikke på signaturforklaringen i hovedvinduet."
 
 #. AxesDialog.xml:204(para)
 msgid "Check this field to use <placeholder-1/> for calculations while drawing graphs. This will increase the time for drawing graphs but may be necessary in rare situations where the intermediate result are complex. The final result must be real for the graph to be drawn. This will not interfere with evaluations."
-msgstr ""
+msgstr "Når dette felt er afkrydset, vil der blive anvendt <placeholder-1/> til mellemregninger, når en graf skal tegnes. Det vil tage længere tid at tegne grafer, når dette er valgt, men det kan i sjældne tilfælde være nødvendigt, hvis mellemregninger er komplekse. Resultatet skal være reelt, for at en graf kan tegnes. Dette påvirker ikke evaluering af funktionen."
 
 #. AxesDialog.xml:216(guilabel)
 msgid "None"
@@ -4031,11 +4031,11 @@ msgstr "Ramme"
 
 #. AxesDialog.xml:215(para)
 msgid "Select <placeholder-1/> if you don't want the axes to be shown. Select <placeholder-2/> if you want a normal coordinate system. The location of the axes may be changed from <placeholder-3/> and <placeholder-4/>. Select <placeholder-5/> if you want the axes to be shown at the bottom and left side of the coordinate system, which will overwrite <placeholder-6/> / <placeholder-7/>."
-msgstr ""
+msgstr "Vælg <placeholder-1/>, hvis du ikke ønsker akserne vist. Vælg <placeholder-2/>, hvis du ønsker et normalt koordinatsystem. Aksernes placering kan ændres fra <placeholder-3/> og <placeholder-4/>. Vælg <placeholder-5/>, hvis akserne altid skal vises i bunden og i venstre side af billedet. Dette vil overskrive <placeholder-6/> / <placeholder-7/>."
 
 #. AxesDialog.xml:227(para)
 msgid "Choose whether trigonometric functions should calculate in <placeholder-1/> or <placeholder-2/>. This is also used for showing <placeholder-3/> in the polar format."
-msgstr ""
+msgstr "Her vælges, om trigonometriske beregninger skal foretages med <placeholder-1/> eller <placeholder-2/>. Dette bruges også til at vise <placeholder-3/> i polært format."
 
 #. AxesDialog.xml:244(term)
 msgid "Colors"
@@ -4043,7 +4043,7 @@ msgstr "Farver"
 
 #. AxesDialog.xml:246(para)
 msgid "You may change the background color, the color of the axes and the color used for drawing grid lines."
-msgstr ""
+msgstr "Her kan du ændre på baggrundsfarven, farven på akserne og farven på gitterlinjerne."
 
 #. AxesDialog.xml:252(term)
 msgid "Fonts"
@@ -4051,11 +4051,11 @@ msgstr "Skrifttyper"
 
 #. AxesDialog.xml:254(para)
 msgid "You may change the fonts used to show axes labels, the font to draw numbers at the axes, and the font used for the <placeholder-1/>."
-msgstr ""
+msgstr "Her kan du ændre på den skrifttype, som bruges til i akseetiketterne, tallene på akserne og <placeholder-1/>."
 
 #. AxesDialog.xml:270(para)
 msgid "Check this to save all the current settings in the dialog to be used as default in the future. These settings are used the next time you choose to create a new coordinate system. The default settings are stored in your Windows user profile, i.e. each Windows user will have his/her own default settings in Graph."
-msgstr ""
+msgstr "Afkryds dette felt for at gemme de indstillinger, som er valgt i dialogboksen som standard til brug i fremtiden. Standarden vil have effekt, når du vælger at lave et nyt koordinatsystem. Den gemmes i din brugerkonto i Windows, dvs. forskellige brugere kan have hver deres standardindstillinger i Graph."
 
 #. AnimateDialog.xml:8(title)
 msgid "Animate"
@@ -4091,11 +4091,11 @@ msgstr "billeder pr. sekund"
 
 #. AnimateDialog.xml:17(para)
 msgid "This dialog is used to create an animation by changing a custom constant. The animation can be played directly, saved to a file or copied into a document. The animation can contain all elements supported by Graph, for example functions, relations, point series, labels, etc."
-msgstr ""
+msgstr "Denne dialog bruges til at lave en animation ved at ændre en brugerdefineret konstant. Animationen kan afspilles direkte, gemmes som en fil eller indsættes i et dokument. Animationen kan indeholde alle elementer, som understøttes af Graph, f.eks. funktioner, relationer, punktserier, tekstetiketter osv."
 
 #. AnimateDialog.xml:29(para)
 msgid "Here you select which constant you want to change in the animation. The constant must already have been created in the <placeholder-1/> dialog. The selected constant will be changed in each frame in the animation."
-msgstr ""
+msgstr "Her kan du vælge en konstant, som du vil have til at ændre sig i animationen. Konstanten skal allerede være oprettet i dialogboksen <placeholder-1/>. Den valgte konstant vil blive ændret i hvert enkelt billede i animationen."
 
 #. AnimateDialog.xml:38(term)
 msgid "Range"
@@ -4107,7 +4107,7 @@ msgstr "Trin"
 
 #. AnimateDialog.xml:40(para)
 msgid "In the <placeholder-1/> and <placeholder-2/> fields you need to specify the range of the selected constant in the animation. The <placeholder-3/> value indicates how much the constant is changed between two frames. The number of frames is given by (<placeholder-4/> - <placeholder-5/>) / <placeholder-6/>. More frames will give a smoother animation but it will also take longer to create and take up more space in the disk file."
-msgstr ""
+msgstr "Det er nødvendigt at vælge et interval for den valgte konstant i animationen i felterne <placeholder-1/> og <placeholder-2/>. Værdien <placeholder-3/> angiver, hvor meget konstanten skal ændre sig mellem hvert billede. Antallet af billeder er givet ved (<placeholder-4/> – <placeholder-5/>) / <placeholder-6/>. Flere rammer giver en mere glidende animation, men vil også tage længere tid at oprette og øge størrelsen på filen."
 
 #. AnimateDialog.xml:50(term)
 msgid "Image information"
@@ -4135,7 +4135,7 @@ msgstr "Hastighed"
 
 #. AnimateDialog.xml:75(para)
 msgid "Here you can change the playback speed. This will only affect the playback and not the file saved."
-msgstr ""
+msgstr "Her kan hastigheden for afspilningen ændres. Dette påvirker kun afspilningen og ikke den gemte fil."
 
 #. AnimateDialog.xml:83(term) AnimateDialog.xml:96(guimenuitem)
 msgid "Repeat"
@@ -4143,7 +4143,7 @@ msgstr "Gentag"
 
 #. AnimateDialog.xml:85(para)
 msgid "When checked the animation will continue playing. When finsihed it will start over again."
-msgstr ""
+msgstr "Når dette felt er afkrydset, vil animationen fortsat blive afspillet. Når den er slut, vil den blive vist forfra igen."
 
 #. AnimateDialog.xml:92(term)
 msgid "Auto reverse"
@@ -4151,11 +4151,11 @@ msgstr "Kør automatisk tilbage"
 
 #. AnimateDialog.xml:94(para)
 msgid "This will make the animation run backwards when it reaches the end. This is most useful in combination with the <placeholder-1/> option, which will make the animation oscillate between the two ends."
-msgstr ""
+msgstr "Dette vil få animationen til at køre baglæns, når den har noget slutningen. Dette er meget anvendeligt i forbindelse med funktionen <placeholder-1/>, der får animationen til at svinge mellem start og slut."
 
 #. AnimateDialog.xml:104(para)
 msgid "This will save the animation as an Audio Video Interleave (avi) file, which can be played by any media player."
-msgstr ""
+msgstr "Dette vil gemme animationen som en avi-fil (Audio Video Interleave), som kan afspilles af en hvilken som helst medieafspiller."
 
 #. AnimateDialog.xml:111(term) AnimateDialog.xml:125(guimenuitem)
 msgid "Save frame..."
@@ -4163,7 +4163,7 @@ msgstr "Gem ramme..."
 
 #. AnimateDialog.xml:113(para)
 msgid "This will save the currently shown frame as a bitmap file. This can be either Windows Bitmap (bmp), Portable Network Graphics (png) or Joint Photographic Experts Group (jpeg)."
-msgstr ""
+msgstr "Dette vil gemme det viste billede som en bitmapfil. Det være sig Windows Bitmap (bmp), Portable Network Graphics (png) eller Joint Photographic Experts Group (jpeg)."
 
 #. AnimateDialog.xml:121(term)
 msgid "Save all frames..."
@@ -4171,7 +4171,7 @@ msgstr "Gem alle rammer..."
 
 #. AnimateDialog.xml:123(para)
 msgid "This will save all frames as single bitmap files. This is the same as repeating <placeholder-1/> for each frame in the animation."
-msgstr ""
+msgstr "Dette vil gemme alle billederne som enkelte bitmap-filer. Det svarer til at gentage <placeholder-1/> for hvert enkelt billede i animationen."
 
 #. Acknowledgements.xml:7(title)
 msgid "Acknowledgements"
@@ -4368,7 +4368,7 @@ msgstr "Ikonet er designet af <placeholder-1/>."
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #. Acknowledgements.xml:0(None)
 msgid "translator-credits"
-msgstr "Michael Bach Ipsen <rosenthall@hotmail.com>, 2003, 2008"
+msgstr "Michael Bach Ipsen <rosenthall@hotmail.com>, 2003, 2009"
 
 #~ msgid ""
 #~ "The <placeholder-1/> function calculates the inverse tangent of "
