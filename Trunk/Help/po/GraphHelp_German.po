@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-09-14 12:39Romance Standard Time\n"
-"PO-Revision-Date: 2009-01-30 22:01+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2009-02-02 21:08+0100\n"
+"Last-Translator: Frank Hüttemeister <frank.huettemeister@padowan.dk>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -808,10 +808,9 @@ msgstr "Trigonometrie"
 msgid "Choose how you want a complex number to be shown in the <placeholder-1/> frame. <placeholder-2/> means that only <glossterm baseform=\"real number\">real numbers</glossterm> are shown. If a number has an imaginary part then the number won't be shown and instead you get an error. <placeholder-3/> means that <glossterm baseform=\"complex number\">complex numbers</glossterm> are shown as a+b&imag;, where a is the real part and b is the imaginary part. <placeholder-4/> means that numbers are shown as a&ang;&theta;, where a is the absolute value of the number and &theta; is the angle of the number. &theta; is dependent of the choice between <placeholder-5/> and <placeholder-6/> under <placeholder-7/> in the <placeholder-8/> dialog."
 msgstr "Wählen Sie hier, wie komplexe Zahlen im <placeholder-1/>-Fenster dargestellt werden sollen. <placeholder-2/> bedeutet, daß nur <glossterm baseform=\"real number\">reelle Zahlen</glossterm> angezeigt werden. Hat eine Zahl einen imaginären Anteil, erhalten Sie statt derZahl einen Fehler. <placeholder-3/> bedeutet, daß <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> als a+b&imag; dargestellt werden, mit a als Realteil und b als Imaginärteil. <placeholder-4/> bedeutet, daß Zahlen als a&ang;&theta; dargestellt werden, mit a als Absolutwert und &theta; als Winkel. &theta; ist abhängig von der Einstellung <placeholder-5/> oder <placeholder-6/> unter <placeholder-7/> im <placeholder-8/>-Dialog."
 
-# 081220
 #. OptionsDialog.xml:106(para)
 msgid "Notice that in some cases you may get a different result in the <placeholder-1/> frame depending on the <placeholder-2/> setting: When <placeholder-3/> is chosen, Graph will try to find a real result if possible, while <placeholder-4/> and <placeholder-5/> may give a non-real result for the same evaluation."
-msgstr "Beachten Sie, daß Sie in einigen Fällen - je nach <placeholder-2/>-Einstellung - unterschiedliche Resultate erhalten können: Bei <placeholder-3/> versucht Graph, ein reelles Ergebnis zu finden, während <placeholder-4/> und <placeholder-5/> ein nicht-reelles Ergebnis für dieselbe Berechnung liefern können."
+msgstr "Beachten Sie, daß Sie in der Eingabemaske <placeholder-1/> in einigen Fällen - je nach <placeholder-2/>-Einstellung - unterschiedliche Resultate erhalten können: Bei <placeholder-3/> versucht Graph, ein reelles Ergebnis zu finden, während <placeholder-4/> und <placeholder-5/> ein nicht-reelles Ergebnis für dieselbe Berechnung liefern können."
 
 #. OptionsDialog.xml:115(term)
 msgid "Check for new version of Graph at startup"
