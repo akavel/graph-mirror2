@@ -117,7 +117,11 @@ template<typename T>
 inline T atanh(T x)
 {
   if(x != 1.0L)
-    return 0.5L * log((1.0L + x) / (1.0L - x));
+  {
+    T Result = log((1.0L + x) / (1.0L - x));
+    if(errno == 0)
+      return Result * 0.5L;
+  }
   errno = SING;
   return std::numeric_limits<T>::quiet_NaN();
 }
