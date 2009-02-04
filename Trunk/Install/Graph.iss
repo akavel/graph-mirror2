@@ -19,11 +19,11 @@ DisableProgramGroupPage=yes
 LicenseFile=License.txt
 ;Run on Windows 98 and up
 MinVersion = 4.1.1998,4.0.1381
-OutputBaseFilename=SetupGraphBeta-4.4.0.423
+OutputBaseFilename=SetupGraphBeta-4.4.0.427
 OutputDir=.
 SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.4.0.423
+VersionInfoVersion=4.4.0.427
 PrivilegesRequired=None
 
 [Languages]
@@ -46,6 +46,7 @@ Name: "Italian"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "Korean"; MessagesFile: "compiler:Languages\Korean.isl"
 ;Name: "Mongolian"; MessagesFile: "compiler:Languages\Mongolian.isl"
 Name: "Norwegian"; MessagesFile:  "compiler:Languages\Norwegian.isl"
+Name: "Persian"; MessagesFile: "compiler:Languages\Farsi.isl"
 Name: "Polish"; MessagesFile:  "compiler:Languages\Polish.isl"
 Name: "Portuguese_Brazil"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "Portuguese_Portugal"; MessagesFile: "compiler:Languages\Portuguese.isl"
@@ -142,6 +143,7 @@ French.InstallAllUsers=Installer pour tous les utilisateurs
 Russian.InstallAllUsers=Σρςΰνξβθςό δλÿ βρευ οξλόηξβΰςελει
 Dutch.InstallAllUsers=Installeer voor elke gebruiker
 Greek.InstallAllUsers=Εγκατάσταση για όλους τους χρήστες
+Persian.InstallAllUsers=δΥΘ ΘΡΗν εγε ΗΡΘΡΗδ
 
 [code]
 function FilesEqual(FileName : String): Boolean;
