@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2009-01-25 19:59\n"
-"PO-Revision-Date: 2009-02-04 00:17+0100\n"
+"PO-Revision-Date: 2009-02-04 18:48+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Last-Translator: Yashar PourMohammad <YasharPM@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -1887,7 +1887,10 @@ msgstr "درمورد گراف"
 #. Form2("About Graph")..Panel1..Label6("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
 msgid "<Language> translation by <Translator>"
-msgstr "Farsi translation by Shayan Abyari & Yashar PourMohammad"
+msgstr ""
+"Farsi translation by\n"
+"Shayan Abyari (ShayanAbyari@gmail.com) &&\n"
+"Yashar PourMohammad (Yasharpm@yahoo.com)"
 
 #. Form2("About Graph")..Panel1..Version("Version %s")..Caption
 #. %s is replaced with version number
@@ -1896,7 +1899,7 @@ msgstr "Version %s"
 
 #. Form2("About Graph")..Panel1..Label1("Email:")..Caption
 msgid "Email:"
-msgstr "Email: ShayanAbyari@gmail.com & Yasharpm@yahoo.com"
+msgstr "Email:"
 
 #. Form2("About Graph")..Panel1..Label3("Build %s")..Caption
 #. %s is replaced with build number
