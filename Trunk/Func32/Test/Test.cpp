@@ -535,8 +535,15 @@ void Test()
   Test("cosh(x)", 5, 74.20994852);
   Test("tanh(x)", 5, 0.999909204);
   Test("asinh(x)", 5, 2.31243834);
+
   Test("acosh(x)", 5, 2.29243167);
+  Test("acosh(x)", 1, 0);
+  TestEval<TComplex>(L"acosh(x)", -1, TComplex(0, M_PI));
+  TestErrorEval<long double>(L"acosh(x)", -1, ecACoshError);
+
   Test("atanh(x)", 0.5, 0.54930614);
+  TestError("atanh(x)", 1, ecATanhError);
+  TestError("atanh(x)", -1, ecATanhError);
 
   Test("abs(x)", -4.67, 4.67);
   TestEval<TComplex>(L"abs(x)", TComplex(3, 4), 5);
