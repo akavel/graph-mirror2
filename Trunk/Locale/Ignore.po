@@ -240,4 +240,15 @@ msgstr ""
 msgid "Ctrl+Shift+PgDn"
 msgstr ""
 
+msgid "0°"
+msgstr ""
+
+msgid "90°"
+msgstr ""
+
+msgid "180°"
+msgstr ""
+
+msgid "270°"
+msgstr ""
 

@@ -1,6 +1,6 @@
 import os
 
-os.system(r"dxgettext ..\Source\Forms\*.dfm ..\Source\Frames\*.dfm ..\Source\Source\Resource.rc \..\Components\TIPrintDialog\*.dfm")
+os.system(r"dxgettext ..\Source\Forms\*.dfm ..\Source\Frames\*.dfm ..\Source\Source\Resource.rc \..\Components\TIPrintDialog\*.dfm --nonascii")
 os.system("msgremove default.po -i ignore.po -o temp.po")
 
 InFile = open("Temp.po")
