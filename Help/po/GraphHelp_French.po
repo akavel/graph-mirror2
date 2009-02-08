@@ -1,19 +1,24 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2008-10-21 23:59Romance Standard Time\n"
-"PO-Revision-Date: 2008-10-26 16:03+0100\n"
-"Last-Translator: JP Fontaine <pguichon@aol.com>\n"
+"POT-Creation-Date: 2009-02-08 17:49Romance Standard Time\n"
+"PO-Revision-Date: 2009-02-08 20:35+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Version.xml:2(subtitle)
+#, fuzzy
+msgid "Version <placeholder-1/>"
+msgstr "fonction <placeholder-1/>"
+
 #. Trigonometric.xml:7(title) FunctionList.xml:180(emphasis)
 msgid "Trigonometric"
 msgstr "Trigonométriques"
 
-#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:40(title) Trigonometric.xml:41(primary) Trigonometric.xml:71(title) Trigonometric.xml:72(primary) Trigonometric.xml:104(title) Trigonometric.xml:105(primary) Trigonometric.xml:129(title) Trigonometric.xml:130(primary) Trigonometric.xml:154(title) Trigonometric.xml:155(primary) Trigonometric.xml:179(title) Trigonometric.xml:180(primary) Trigonometric.xml:209(title) Trigonometric.xml:210(primary) Trigonometric.xml:239(title) Trigonometric.xml:240(primary) Trigonometric.xml:269(title) Trigonometric.xml:270(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:321(title) Trigonometric.xml:322(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:41(title) Special.xml:42(primary) Special.xml:68(title) Special.xml:69(primary) Special.xml:94(title) Special.xml:95(primary) Special.xml:117(title) Special.xml:118(primary) Special.xml:147(title) Special.xml:148(primary) Special.xml:170(title) Special.xml:171(primary) Special.xml:199(title) Special.xml:200(primary) Special.xml:226(title) Special.xml:227(primary) Special.xml:251(title) Special.xml:252(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:33(title) Rounding.xml:34(primary) Rounding.xml:58(title) Rounding.xml:59(primary) Rounding.xml:81(title) Rounding.xml:82(primary) Rounding.xml:105(title) Rounding.xml:106(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:52(title) PowerAndLog.xml:53(primary) PowerAndLog.xml:74(title) PowerAndLog.xml:75(primary) PowerAndLog.xml:110(title) PowerAndLog.xml:111(primary) PowerAndLog.xml:135(title) PowerAndLog.xml:136(primary) PowerAndLog.xml:158(title) PowerAndLog.xml:159(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:33(title) Piecewise.xml:34(primary) Piecewise.xml:55(title) Piecewise.xml:56(primary) Piecewise.xml:79(title) Piecewise.xml:80(primary) Piecewise.xml:103(title) Piecewise.xml:104(primary) Piecewise.xml:128(title) Piecewise.xml:129(primary) Piecewise.xml:150(title) Piecewise.xml:151(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:33(title) Hyperbolic.xml:34(primary) Hyperbolic.xml:57(title) Hyperbolic.xml:58(primary) Hyperbolic.xml:81(title) Hyperbolic.xml:82(primary) Hyperbolic.xml:104(title) Hyperbolic.xml:105(primary) Hyperbolic.xml:128(primary) Hyperbolic.xml:132(title) Hyperbolic.xml:152(title) Hyperbolic.xml:153(primary) Hyperbolic.xml:176(title) Hyperbolic.xml:177(primary) Hyperbolic.xml:200(title) Hyperbolic.xml:201(primary) Hyperbolic.xml:224(title) Hyperbolic.xml:225(primary) Hyperbolic.xml:247(title) Hyperbolic.xml:248(primary) Hyperbolic.xml:270(title) Hyperbolic.xml:271(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:32(title) Complex.xml:33(primary) Complex.xml:59(title) Complex.xml:60(primary) Complex.xml:81(title) Complex.xml:82(primary) Complex.xml:102(title) Complex.xml:103(primary)
+#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:40(title) Trigonometric.xml:41(primary) Trigonometric.xml:71(title) Trigonometric.xml:72(primary) Trigonometric.xml:104(title) Trigonometric.xml:105(primary) Trigonometric.xml:129(title) Trigonometric.xml:130(primary) Trigonometric.xml:154(title) Trigonometric.xml:155(primary) Trigonometric.xml:179(title) Trigonometric.xml:180(primary) Trigonometric.xml:209(title) Trigonometric.xml:210(primary) Trigonometric.xml:239(title) Trigonometric.xml:240(primary) Trigonometric.xml:269(title) Trigonometric.xml:270(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:321(title) Trigonometric.xml:322(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:41(title) Special.xml:42(primary) Special.xml:68(title) Special.xml:69(primary) Special.xml:94(title) Special.xml:95(primary) Special.xml:117(title) Special.xml:118(primary) Special.xml:147(title) Special.xml:148(primary) Special.xml:170(title) Special.xml:171(primary) Special.xml:199(title) Special.xml:200(primary) Special.xml:226(title) Special.xml:227(primary) Special.xml:251(title) Special.xml:252(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:33(title) Rounding.xml:34(primary) Rounding.xml:58(title) Rounding.xml:59(primary) Rounding.xml:81(title) Rounding.xml:82(primary) Rounding.xml:105(title) Rounding.xml:106(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:52(title) PowerAndLog.xml:53(primary) PowerAndLog.xml:74(title) PowerAndLog.xml:75(primary) PowerAndLog.xml:110(title) PowerAndLog.xml:111(primary) PowerAndLog.xml:135(title) PowerAndLog.xml:136(primary) PowerAndLog.xml:158(title) PowerAndLog.xml:159(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:33(title) Piecewise.xml:34(primary) Piecewise.xml:55(title) Piecewise.xml:56(primary) Piecewise.xml:79(title) Piecewise.xml:80(primary) Piecewise.xml:103(title) Piecewise.xml:104(primary) Piecewise.xml:128(title) Piecewise.xml:129(primary) Piecewise.xml:150(title) Piecewise.xml:151(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:33(title) Hyperbolic.xml:34(primary) Hyperbolic.xml:57(title) Hyperbolic.xml:58(primary) Hyperbolic.xml:81(title) Hyperbolic.xml:82(primary) Hyperbolic.xml:104(title) Hyperbolic.xml:105(primary) Hyperbolic.xml:128(primary) Hyperbolic.xml:132(title) Hyperbolic.xml:152(title) Hyperbolic.xml:153(primary) Hyperbolic.xml:176(title) Hyperbolic.xml:177(primary) Hyperbolic.xml:200(title) Hyperbolic.xml:201(primary) Hyperbolic.xml:225(title) Hyperbolic.xml:226(primary) Hyperbolic.xml:248(title) Hyperbolic.xml:249(primary) Hyperbolic.xml:271(title) Hyperbolic.xml:272(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:32(title) Complex.xml:33(primary) Complex.xml:59(title) Complex.xml:60(primary) Complex.xml:81(title) Complex.xml:82(primary) Complex.xml:102(title) Complex.xml:103(primary)
 msgid "<placeholder-1/> function"
 msgstr "fonction <placeholder-1/>"
 
@@ -29,11 +34,11 @@ msgstr "sinus"
 msgid "Returns the sine of the argument."
 msgstr "Donne le sinus de l'argument."
 
-#. Trigonometric.xml:17(title) Trigonometric.xml:48(title) Trigonometric.xml:79(title) Trigonometric.xml:113(title) Trigonometric.xml:138(title) Trigonometric.xml:163(title) Trigonometric.xml:187(title) Trigonometric.xml:217(title) Trigonometric.xml:247(title) Trigonometric.xml:278(title) Trigonometric.xml:304(title) Trigonometric.xml:330(title) Special.xml:17(title) Special.xml:48(title) Special.xml:74(title) Special.xml:101(title) Special.xml:124(title) Special.xml:153(title) Special.xml:178(title) Special.xml:206(title) Special.xml:234(title) Special.xml:257(title) Rounding.xml:17(title) Rounding.xml:42(title) Rounding.xml:66(title) Rounding.xml:90(title) Rounding.xml:111(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:59(title) PowerAndLog.xml:80(title) PowerAndLog.xml:118(title) PowerAndLog.xml:142(title) PowerAndLog.xml:165(title) Piecewise.xml:16(title) Piecewise.xml:39(title) Piecewise.xml:62(title) Piecewise.xml:86(title) Piecewise.xml:109(title) Piecewise.xml:134(title) Piecewise.xml:156(title) Hyperbolic.xml:16(title) Hyperbolic.xml:40(title) Hyperbolic.xml:64(title) Hyperbolic.xml:89(title) Hyperbolic.xml:112(title) Hyperbolic.xml:137(title) Hyperbolic.xml:159(title) Hyperbolic.xml:183(title) Hyperbolic.xml:207(title) Hyperbolic.xml:232(title) Hyperbolic.xml:255(title) Hyperbolic.xml:278(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:40(title) Complex.xml:66(title) Complex.xml:88(title) Complex.xml:109(title)
+#. Trigonometric.xml:17(title) Trigonometric.xml:48(title) Trigonometric.xml:79(title) Trigonometric.xml:113(title) Trigonometric.xml:138(title) Trigonometric.xml:163(title) Trigonometric.xml:187(title) Trigonometric.xml:217(title) Trigonometric.xml:247(title) Trigonometric.xml:278(title) Trigonometric.xml:304(title) Trigonometric.xml:330(title) Special.xml:17(title) Special.xml:48(title) Special.xml:74(title) Special.xml:101(title) Special.xml:124(title) Special.xml:153(title) Special.xml:178(title) Special.xml:206(title) Special.xml:234(title) Special.xml:257(title) Rounding.xml:17(title) Rounding.xml:42(title) Rounding.xml:66(title) Rounding.xml:90(title) Rounding.xml:111(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:59(title) PowerAndLog.xml:80(title) PowerAndLog.xml:118(title) PowerAndLog.xml:142(title) PowerAndLog.xml:165(title) Piecewise.xml:16(title) Piecewise.xml:39(title) Piecewise.xml:62(title) Piecewise.xml:86(title) Piecewise.xml:109(title) Piecewise.xml:134(title) Piecewise.xml:156(title) Hyperbolic.xml:16(title) Hyperbolic.xml:40(title) Hyperbolic.xml:64(title) Hyperbolic.xml:89(title) Hyperbolic.xml:112(title) Hyperbolic.xml:137(title) Hyperbolic.xml:159(title) Hyperbolic.xml:183(title) Hyperbolic.xml:207(title) Hyperbolic.xml:233(title) Hyperbolic.xml:256(title) Hyperbolic.xml:279(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:40(title) Complex.xml:66(title) Complex.xml:88(title) Complex.xml:109(title)
 msgid "Syntax"
 msgstr "Syntaxe"
 
-#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:78(title) Special.xml:105(title) Special.xml:128(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:26(entry) Installation.xml:81(entry) Installation.xml:152(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:141(title) Hyperbolic.xml:163(title) Hyperbolic.xml:187(title) Hyperbolic.xml:211(title) Hyperbolic.xml:236(title) Hyperbolic.xml:259(title) Hyperbolic.xml:282(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title)
+#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:78(title) Special.xml:105(title) Special.xml:128(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:28(entry) Installation.xml:82(entry) Installation.xml:153(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:141(title) Hyperbolic.xml:163(title) Hyperbolic.xml:187(title) Hyperbolic.xml:211(title) Hyperbolic.xml:237(title) Hyperbolic.xml:260(title) Hyperbolic.xml:283(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title)
 msgid "Description"
 msgstr "Description "
 
@@ -41,15 +46,15 @@ msgstr "Description "
 msgid "radians"
 msgstr "radians"
 
-#. Trigonometric.xml:25(glossterm) Trigonometric.xml:56(glossterm) Trigonometric.xml:87(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:108(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:262(glossterm) Hyperbolic.xml:285(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
+#. Trigonometric.xml:25(glossterm) Trigonometric.xml:56(glossterm) Trigonometric.xml:87(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:108(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
 msgid "numeric expression"
 msgstr "expression numérique"
 
-#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:121(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:262(glossterm) Hyperbolic.xml:285(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
+#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:121(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
 msgid "real number"
 msgstr "nombre réel"
 
-#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:262(glossterm) Hyperbolic.xml:285(glossterm) Glossary.xml:13(glossterm) Glossary.xml:14(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
+#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:13(glossterm) Glossary.xml:14(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
 msgid "complex number"
 msgstr "nombre complexe"
 
@@ -405,13 +410,13 @@ msgstr "Donne le reste de la division du premier par le second argument."
 msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>, <placeholder-8/> returns 0. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr "Donne <placeholder-1/> modulo <placeholder-2/>, reste de <placeholder-3/>. <placeholder-4/> calcule le reste f, où <placeholder-5/> avec a entier et f entier tel que 0&le;f&lt;n. Le signe de f est toujours le même que celui de <placeholder-6/>. Quand <placeholder-7/>, <placeholder-8/> donne 0. <placeholder-9/> et <placeholder-10/> peuvent être n'importe quelles <placeholder-11/> qui donnent des <placeholder-12/>."
 
-#. Special.xml:253(para)
+#. Special.xml:253(para) FunctionList.xml:430(entry)
 msgid "Returns the normal distribution of the first argument with optional mean value and standard deviation."
 msgstr "Donne la valeur de la loi normale pour le premier argument avec le choix de la moyenne et de l'écart-type."
 
 #. Special.xml:262(para)
 msgid "The <placeholder-1/> function is the probability density of the normal distribution, also called Gaussian distribution. <placeholder-2/> is the variate, also known as the random variable, <placeholder-3/> is the mean value and &sigma; is the standard deviation. <placeholder-4/> and &sigma; are optional and if left out the standard normal distribution is used where <placeholder-5/> and &sigma;=1. <placeholder-6/>, <placeholder-7/> and &sigma; may be any <placeholder-8/> that evaluate to <placeholder-9/> where &sigma; &gt; 0. The normal distribution is defined as: <placeholder-10/>"
-msgstr "La fonction <placeholder-1/> est la densité de probabilité de la loi normale, également appelée loi de Gauss. <placeholder-2/> est la variable, <placeholder-3/> est la moyenne et &sigma; est l'écart-type. <placeholder-4/> et &sigma; sont optionnels et par défaut la loi normale centrée réduite où <placeholder-5/>=0 et &sigma;=1 est utilisée. <placeholder-6/>, <placeholder-7/> et &sigma; peuvent être n'importe quelles <placeholder-8/> qui donnent des <placeholder-9> où &sigma; &gt; 0. La loi normale est définie par : <placeholder-10/>"
+msgstr "La fonction <placeholder-1/> est la densité de probabilité de la loi normale, également appelée loi de Gauss. <placeholder-2/> est la variable, <placeholder-3/> est la moyenne et &sigma; est l'écart-type. <placeholder-4/> et &sigma; sont optionnels et par défaut la loi normale centrée réduite où <placeholder-5/>=0 et &sigma;=1 est utilisée. <placeholder-6/>, <placeholder-7/> et &sigma; peuvent être n'importe quelles <placeholder-8/> qui donnent des <placeholder-9/> où &sigma; &gt; 0. La loi normale est définie par : <placeholder-10/>"
 
 #. SaveImageDialog.xml:8(title)
 msgid "Save as image"
@@ -454,7 +459,8 @@ msgid "Use the menu item <placeholder-1/> to save the shown coordinate system as
 msgstr "Utilisez l'item <placeholder-1/> du menu pour enregistrer le repère affiché comme fichier image. Graph supporte cinq formats: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) et Portable Document Format (pdf). Quand l'item du menu a été choisi, une boîte de dialogue standard  <placeholder-2/> apparaîtra. Dans cette boîte de dialogue vous écrirez un nom de fichier, choisirez un répertoire et sélectionnerez un des formats d'image. "
 
 #. SaveImageDialog.xml:25(para)
-msgid "bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen. emf files are used for vector graphics. The Options button in the save dialog can be used to change to image size. You may also be able to change other settings depending on the chosen image format."
+#, fuzzy
+msgid "bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen. emf files are used for vector graphics. The Options button in the save dialog can be used to change the image size. You may also be able to change other settings depending on the chosen image format."
 msgstr "bmp et png sont des formats matriciels et l'image sera enregistrée exactement telle que vous la voyez à l'écran. emf est un format vectoriel. Le bouton Options de la boîte de dialogue peut être utilisé pour changer la taille de l'image. D'autres paramètres peuvent être changés selon le format d'image choisi."
 
 #. SaveImageDialog.xml:31(para)
@@ -713,7 +719,7 @@ msgstr "Évalue une suite de conditions et donne le premier résultat trouvé no
 msgid "The <placeholder-1/> function evaluates <placeholder-2/> and if it is different from 0 then <placeholder-3/> is evaluated and returned. Else <placeholder-4/> is evaluated and if it is different from 0 then <placeholder-5/> is returned and so forth. If none of the conditions are true <placeholder-6/> is returned. <placeholder-7/> is optional and if not specified <placeholder-8/> returns an error if none of the conditions are true. If <placeholder-9/> has 3 arguments it will be the same as the <placeholder-10/> function. The arguments may be any <placeholder-11/> that evaluate to <placeholder-12/> or <placeholder-13/>."
 msgstr "La fonction <placeholder-1/> calcule <placeholder-2/> et s'il est différent de 0 donne le résultat du calcul de <placeholder-3/>. Sinon <placeholder-4/> est calculé et s'il est différent de 0 donne le résultat du calcul de <placeholder-5/> et ainsi de suite. Si aucune des conditions n'est vraie cela donne <placeholder-6/>. <placeholder-7/> est optionnel et s'il n'est pas précisé  <placeholder-8/> donne une erreur si aucune des conditions n'est vraie. Si <placeholder-9/> a 3 arguments cela sera identique à la fonction <placeholder-10/>. Les arguments peuvent être n'importe quelles <placeholder-11/> qui donnent des <placeholder-12/> ou des <placeholder-13/>."
 
-#. OptionsDialog.xml:8(title) InsertShadingDialog.xml:109(title) InsertShadingDialog.xml:111(guilabel) InsertShadingDialog.xml:202(guilabel)
+#. OptionsDialog.xml:8(title) InsertShadingDialog.xml:109(title) InsertShadingDialog.xml:111(guilabel) InsertShadingDialog.xml:201(guilabel)
 msgid "Options"
 msgstr "Options"
 
@@ -765,7 +771,7 @@ msgstr "Taille de la police "
 msgid "You can use this to change the scale of the fonts and most of the user interface. This is mostly useful if your screen resolution is very high, or for some other reason, you are having difficulties reading the user interface."
 msgstr "Vous pouvez utiliser ceci pour changer l'échelle des fontes et de la plupart des éléments de l'interface utilisateur. C'est très utile si votre résolution d'écran est très élevée, ou pour toute autre raison, vous gênant pour lire l'interface utilisateur."
 
-#. OptionsDialog.xml:67(term) Acknowledgements.xml:70(entry)
+#. OptionsDialog.xml:67(term) Acknowledgements.xml:51(entry)
 msgid "Language"
 msgstr "Langue "
 
@@ -837,7 +843,7 @@ msgstr "Remarquez que dans certains cas vous pouvez avoir un résultat différen
 msgid "Check for new version of Graph at startup"
 msgstr "Vérifier l'existence d'une nouvelle version au démarrage"
 
-#. OptionsDialog.xml:139(guimenu) MenuItems.xml:640(guimenu) MenuItems.xml:654(guimenu) MenuItems.xml:668(guimenu) MenuItems.xml:681(guimenu) MenuItems.xml:694(guimenu) MenuItems.xml:707(guimenu) MenuItems.xml:720(guimenu) MenuItems.xml:733(guimenu) MenuItems.xml:747(guimenu) Introduction.xml:39(guimenu)
+#. OptionsDialog.xml:139(guimenu) MenuItems.xml:640(guimenu) MenuItems.xml:654(guimenu) MenuItems.xml:668(guimenu) MenuItems.xml:681(guimenu) MenuItems.xml:694(guimenu) MenuItems.xml:707(guimenu) MenuItems.xml:720(guimenu) MenuItems.xml:733(guimenu) MenuItems.xml:747(guimenu) Introduction.xml:41(guimenu)
 msgid "Help"
 msgstr "Aide"
 
@@ -949,6 +955,10 @@ msgstr "raccourcis"
 msgid "New"
 msgstr "Nouveau"
 
+#. MenuItems.xml:16(keycap) MenuItems.xml:30(keycap) MenuItems.xml:44(keycap) MenuItems.xml:68(keycap) MenuItems.xml:113(keycap) MenuItems.xml:143(keycap) MenuItems.xml:157(keycap) MenuItems.xml:171(keycap) MenuItems.xml:185(keycap) MenuItems.xml:199(keycap) MenuItems.xml:213(keycap) MenuItems.xml:228(keycap) MenuItems.xml:347(keycap) MenuItems.xml:426(keycap) MenuItems.xml:442(keycap) MenuItems.xml:456(keycap) MenuItems.xml:470(keycap) MenuItems.xml:485(keycap) MenuItems.xml:501(keycap) MenuItems.xml:515(keycap) MenuItems.xml:590(keycap) MenuItems.xml:655(keycap)
+msgid "Ctrl"
+msgstr ""
+
 #. MenuItems.xml:20(para)
 msgid "Use this to create a new coordinate system for drawing graphs in."
 msgstr "Utilisez ceci pour créer un nouveau repère dans lequel tracer des graphiques."
@@ -998,7 +1008,8 @@ msgid "Point series..."
 msgstr "Série de points..."
 
 #. MenuItems.xml:99(para)
-msgid "Imports one or several point series from a tab, comma or semicolon separated data file. The first column shall contain the x-coordinates. The following columns shall contain the y-coordinates. Graph will create as many point series as there are columns with y-coordinates in the file. There is no limit the number of point series possible in the data file as long as they share the same x-coordinates."
+#, fuzzy
+msgid "Imports one or several point series from a tab, comma or semicolon separated data file. The first column shall contain the x-coordinates. The following columns shall contain the y-coordinates. Graph will create as many point series as there are columns with y-coordinates in the file. There is no limit to the number of point series possible in the data file as long as they share the same x-coordinates."
 msgstr "Importe une ou plusieurs séries de points d'un fichier avec pour séparateur la virgule, le point-virgule ou la tabulation. La première colonne contiendra les coordonnées en x. Les colonnes suivantes contiendront les coordonnées en y. Graph créera autant de séries de points qu'il y a de colonnes avec des coordonnées en y. Il n'y a pas de limite au nombre de séries de points possibles dans le fichier de données tant qu'elles partagent les mêmes coordonnées en x."
 
 #. MenuItems.xml:112(guimenuitem)
@@ -1012,6 +1023,10 @@ msgstr "Envoie le repère et les graphiques à une imprimante."
 #. MenuItems.xml:126(guimenuitem)
 msgid "Exit"
 msgstr "Quitter"
+
+#. MenuItems.xml:127(keycap) MenuItems.xml:748(keycap)
+msgid "Alt"
+msgstr ""
 
 #. MenuItems.xml:131(para)
 msgid "Quits the program. You may be asked to save the file."
@@ -1077,6 +1092,10 @@ msgstr "Fonction"
 msgid "Insert function..."
 msgstr "Insérer une fonction..."
 
+#. MenuItems.xml:261(keycap)
+msgid "Ins"
+msgstr "Inser"
+
 #. MenuItems.xml:266(para)
 msgid "Inserts a function into the coordinate system. Functions may be added with different width and color, and you can choose to only show the graph in a specified interval, and specify other settings too."
 msgstr "Insère une fonction dans le repère. Les fonctions peuvent être ajoutées avec différentes épaisseurs et couleurs, et vous pouvez choisir d'afficher le graphique dans un intevalle spécifié, et spécifier d'autres paramètres encore."
@@ -1105,7 +1124,7 @@ msgstr "Insérer f'(x)..."
 msgid "This dialog is used to add the first derivative to the selected function."
 msgstr "Cette boîte de dialogue est utilisée pour ajouter une dérivée première à la fonction sélectionnée."
 
-#. MenuItems.xml:328(guimenuitem) InsertTrendlineDialog.xml:23(guimenuitem) InsertPointSeriesDialog.xml:20(guimenuitem)
+#. MenuItems.xml:328(guimenuitem) InsertPointSeriesDialog.xml:20(guimenuitem)
 msgid "Insert point series..."
 msgstr "Insérer une série de points..."
 
@@ -1113,12 +1132,13 @@ msgstr "Insérer une série de points..."
 msgid "Inserts a new point series into the coordinate system. An infinite number of points defined by their x- and y-coordinates may be added. It is possible to choose color, size, and style of the point series."
 msgstr "Insère une nouvelle série de points dans le repère. Un nombre non limité de points définis par leurs coordonnées peuvent être ajoutés. Il est possible de choisir couleur, taille et style des séries de points. "
 
-#. MenuItems.xml:346(guimenuitem)
+#. MenuItems.xml:346(guimenuitem) InsertTrendlineDialog.xml:23(guimenuitem)
 msgid "Insert trendline..."
 msgstr "Insérer une courbe d'ajustement..."
 
 #. MenuItems.xml:352(para)
-msgid "Inserts a trendline as the curve curve of best fit for the selected point series. You may choose between different kinds of functions for the trendline."
+#, fuzzy
+msgid "Inserts a trendline as the curve of best fit for the selected point series. You may choose between different kinds of functions for the trendline."
 msgstr "Insère une courbe d'ajustement pour la série de points sélectionnée. Vous pouvez choisir entre différents types de fonctions pour la courbe d'ajustement."
 
 #. MenuItems.xml:363(guimenuitem) InsertRelationDialog.xml:17(guimenuitem)
@@ -1141,6 +1161,10 @@ msgstr "Ceci affichera une boîte de dialogue qui pourra être utilisée pour cr
 msgid "Edit..."
 msgstr "Éditer..."
 
+#. MenuItems.xml:398(keycap)
+msgid "Enter"
+msgstr "Entrée"
+
 #. MenuItems.xml:402(para)
 msgid "This will show a dialog where you can change the selected <placeholder-1/> in the <placeholder-2/>."
 msgstr "Ceci affichera une boîte de dialogue où vous pourrez changer l'<placeholder-1/> sélectionné dans la <placeholder-2/>."
@@ -1148,6 +1172,10 @@ msgstr "Ceci affichera une boîte de dialogue où vous pourrez changer l'<placeh
 #. MenuItems.xml:411(guimenuitem)
 msgid "Delete"
 msgstr "Supprimer"
+
+#. MenuItems.xml:412(keycap)
+msgid "Del"
+msgstr "Suppr"
 
 #. MenuItems.xml:416(para)
 msgid "This will delete the selected <placeholder-1/> in the <placeholder-2/>."
@@ -1250,7 +1278,8 @@ msgid "Evaluate"
 msgstr "Valeurs approchées"
 
 #. MenuItems.xml:595(para)
-msgid "This will evaluate the selected function function for a given value. For standard functions f(x), f'(x) and f''(x) are evaluated. For parametric functions x(t), y(t), dx/dt, dy/dt and dy/dx are evaluated. For polar functions r(t), x(t), y(t), dr/dt and dy/dt are evaluated."
+#, fuzzy
+msgid "This will evaluate the selected function for a given value. For standard functions f(x), f'(x) and f''(x) are evaluated. For parametric functions x(t), y(t), dx/dt, dy/dt and dy/dx are evaluated. For polar functions r(t), x(t), y(t), dr/dt and dy/dt are evaluated."
 msgstr "Ceci calculera l'image de la fonction sélectionnée pour une valeur donnée. Pour une fonction standard sont calculés f(x), f'(x) et f''(x). Pour les représentations paramétriques sont calculés x(t), y(t), dx/dt, dy/dt et dy/dx.Pour les fonctions polaires sont calculés r(t), x(t), y(t), dr/dt et dy/dt."
 
 #. MenuItems.xml:608(guimenuitem)
@@ -1329,7 +1358,7 @@ msgstr "Affiche la page web vous permettant d'effectuer des dons au projet Graph
 msgid "This will check if a new version of Graph is available. If there is a new version, you will be asked if you want to visit the web site of Graph to download the new version."
 msgstr "Ceci vérifiera si une nouvelle version de Graph est disponible. S'il y a une nouvelle version on vous proposera de visiter le site web de Graph pour télécharger cette nouvelle version."
 
-#. MenuItems.xml:747(guimenuitem) Introduction.xml:39(guimenuitem)
+#. MenuItems.xml:747(guimenuitem) Introduction.xml:41(guimenuitem)
 msgid "About Graph..."
 msgstr "À propos de Graph..."
 
@@ -1378,24 +1407,26 @@ msgid "This program is free software; you can redistribute it and/or modify it u
 msgstr "Ce programme est un logiciel libre ; vous pouvez le diffuser et/ou le modifier selon les termes de la <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>licence publique générale GNU</citetitle></ulink>. La version  la plus récente du progamme ainsi que son code source peuvent être téléchargés depuis <ulink url=\"http://www.padowan.dk\"/>."
 
 #. Introduction.xml:29(para)
-msgid "The program has been tested under Microsoft Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista, but there may still be bugs left. Please report bugs and suggestions for improvements to <placeholder-1/>."
+#, fuzzy
+msgid "The program has been tested under Microsoft Windows 2000, Windows XP and Windows Vista, but there may still be bugs left. Please report bugs and suggestions for improvements to <placeholder-1/>."
 msgstr "Ce programme a été testé sous Microsoft Windows 98,  Windows ME,  Windows 2000,  Windows XP et  Windows Vista, mais il peut subsister des bugs. S'il vous plaît faites des rapports de bugs et des suggestions d'amélioration à <placeholder-1/>."
 
-#. Introduction.xml:37(para)
-msgid "Which version are you using? This is shown in the <placeholder-1/> dialog box. You should check that you are using the newest version, else the bug may have been fixed already."
+#. Introduction.xml:33(para)
+msgid "When you send a bug report, please write the following:"
+msgstr "Quand vous envoyez un rapport de bug, s'il vous plaît écrivez ce qui suit:"
+
+#. Introduction.xml:39(para)
+#, fuzzy
+msgid "Which version are you using? This is shown in the <placeholder-1/> dialog box. You should check that you are using the newest version as the bug may have been fixed already."
 msgstr "Quelle version utilisez-vous ? Cela se voit dans la boîte de dialogue <placeholder-1/>. Vous devriez contrôler si c'est la dernière version disponible, sinon le bug est peut-être déjà corrigé."
 
-#. Introduction.xml:44(para)
+#. Introduction.xml:46(para)
 msgid "Explain what happens and what you expected to happen."
 msgstr "Expliquez ce qui arrive et ce que vous pensiez devoir arriver."
 
-#. Introduction.xml:49(para)
+#. Introduction.xml:51(para)
 msgid "Explain carefully how I can reproduce the bug. If I can't see what you see, it is very difficult for me to solve the problem."
 msgstr "Expliquez soigneusement comment je peux reproduire le bug. Si je ne peux pas voir se produire la même chose que vous il me sera très difficile de résoudre le problème."
-
-#. Introduction.xml:33(para)
-msgid "When you send a bug report, please write the following: <placeholder-1/>"
-msgstr "Quand vous envoyez un rapport de bug, s'il vous plaît écrivez ce qui suit : <placeholder-1/>"
 
 #. Installation.xml:4(title)
 msgid "Installation and startup"
@@ -1409,7 +1440,7 @@ msgstr "installation"
 msgid "uninstall"
 msgstr "désinstallation"
 
-#. Installation.xml:8(primary) Installation.xml:110(emphasis)
+#. Installation.xml:8(primary) Installation.xml:111(emphasis)
 msgid "language"
 msgstr "language"
 
@@ -1429,116 +1460,119 @@ msgstr "supprimer"
 msgid "Installation"
 msgstr "Installation"
 
-#. Installation.xml:25(entry)
+#. Installation.xml:15(para)
+#, fuzzy
+msgid "The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version number. To install, just execute the installation and follow the instructions. The installation will install the following files in the selected directory and subdirectories:"
+msgstr "Le programme est distribué sous forme d'un programme d'installation autoextractible habituellement nommé SetupGraph-x.y.exe, où x.y est le numéro de version. Pour installer, exécuter simplement le programme et suivez les instructions. L'installation placera les fichiers suivants dans le répertoire sélectionné et sous-répertoires:"
+
+#. Installation.xml:27(entry)
 msgid "File(s)"
 msgstr "Fichier(s)"
 
-#. Installation.xml:32(entry)
+#. Installation.xml:34(entry)
 msgid "The program file."
 msgstr "Le fichier programme."
 
-#. Installation.xml:36(entry)
+#. Installation.xml:38(entry)
 msgid "Shell extension for showing thumbnails of grf-files in Explorer."
 msgstr "Extension du shell pour afficher des vignettes de fichiers .grf dans l'explorateur."
 
-#. Installation.xml:40(entry)
+#. Installation.xml:42(entry)
 msgid "Translations of the program."
 msgstr "Traductions du programme."
 
-#. Installation.xml:44(entry)
+#. Installation.xml:46(entry)
 msgid "Help files in different languages."
 msgstr "Fichiers d'aide en différentes langues."
 
-#. Installation.xml:48(entry)
+#. Installation.xml:50(entry)
 msgid "Some examples of plugins. Custom plugins can be placed here too."
 msgstr "Quelques exemples de modules d'extension. Des extensions personnalisées peuvent être aussi placées ici."
 
-#. Installation.xml:52(entry)
+#. Installation.xml:54(entry)
 msgid "Some examples that can be opened in Graph."
 msgstr "Quelques exemples pouvant être ouverts dans Graph."
 
-#. Installation.xml:15(para)
-msgid "The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version name. To install, just execute the installation and follow the instructions. The installation will install the following files in the selected directory and subdirectories: <placeholder-1/>"
-msgstr "Le programme est distribué sous forme d'un programme d'installation autoextractible habituellement nommé SetupGraph-x.y.exe, où x.y est le numéro de version. Pour installer, exécuter simplement le programme et suivez les instructions. L'installation placera les fichiers suivants dans le répertoire sélectionné et sous-répertoires : <placeholder-1/>"
-
-#. Installation.xml:59(para)
+#. Installation.xml:60(para)
 msgid "The installation will create a shortcut in the Start menu, which may be used to start the program. During the installation you select the preferred language. This can later be changed from the <placeholder-1/> dialog."
 msgstr "L'installation créera un raccourci dans le menu Démarrer, qui pourra être utilisé pour démarrer le programme. C'est pendant l'installation que vous choisissez votre langage préféré. Cela peut être changé plus tard depuis la boîte de dialogue <placeholder-1/>."
 
-#. Installation.xml:64(para)
+#. Installation.xml:65(para)
 msgid "If an older version of the program is already installed, the installation suggests you install in the same directory. You can just install over the old version. There is no need to uninstall the old version first, but make sure the old version is not running while installing."
 msgstr "Si une ancienne version du programme est déjà installé, l'installation vous propose d'installer la nouvelle dans le même répertoire. Vous pouvez simplement installer par dessus l'ancienne version. Il n'y a pas nécessité de désinstaller d'abord l'ancienne version, mais soyez sûr que l'ancienne version n'est pas en cours d'exécution lors de l'installation. "
 
-#. Installation.xml:69(para)
+#. Installation.xml:70(para)
 msgid "The Graph Setup can take the parameters specified in the table below. These are especially useful when you want to automate the installation."
 msgstr "L'installateur de Graph peut prendre les paramètres spécifiés dans la table ci-dessous. C'est particulièrement utile lorsque vous voulez automatiser l'installation."
 
-#. Installation.xml:80(entry) Installation.xml:151(entry)
+#. Installation.xml:81(entry) Installation.xml:152(entry)
 msgid "Parameter"
 msgstr "Paramètre"
 
-#. Installation.xml:90(guilabel)
+#. Installation.xml:91(guilabel)
 msgid "Reboot now?"
 msgstr "Redémarrer maintenant ?"
 
-#. Installation.xml:87(entry)
+#. Installation.xml:88(entry)
 msgid "Instructs the Setup to be silent, which means that the wizard and the background window are not displayed but the installation progress window is. Everything else is normal so for example error messages during installation are displayed. If a restart is necessary, a <placeholder-1/> message box is displayed."
 msgstr "Indique à l'installateur d'être discret, ce qui signifie que l'assistant et le fenêtre d'arrière-plan ne seront pas affichés contrairement à la barre de progression. Tout le reste se déroule normalement  et par exemple les messages d'erreur pendant l'installation seront affichés. Si un redémarrage du système est nécessaire, une boîte de message <placeholder-1/> sera affichée."
 
-#. Installation.xml:95(entry)
+#. Installation.xml:96(entry)
 msgid "Instructs the Setup to be very silent. This is the same as silent with the addition that the installation progress window is not displayed either. If a restart is necessary, the Setup will reboot without asking."
 msgstr "Indique à l'installateur d'être très discret. En plus des caractéristiques du mode discret la barre de progression ne sera pas affichée non plus. Si un redémarrage du système est nécessaire, il se fera sans le demander."
 
-#. Installation.xml:102(entry)
+#. Installation.xml:103(entry)
 msgid "Instructs Setup not to reboot even if it's necessary."
 msgstr "Indique à l'installateur de ne pas redémarrer le système même si c'est nécessaire."
 
-#. Installation.xml:111(guilabel)
+#. Installation.xml:112(guilabel)
 msgid "Select language"
 msgstr "Sélectionner le langage"
 
-#. Installation.xml:108(entry)
+#. Installation.xml:109(entry)
 msgid "Specifies the language to use. <placeholder-1/> specifies the English name of the language. When a valid /LANG parameter is used, the <placeholder-2/> dialog will be suppressed."
 msgstr "Spécifie le langage à utiliser. <placeholder-1/> spécifie le nom anglais du langage. Quand un paramètre /LANG valide est utilisé, la boîte de dialogue <placeholder-2/> sera supprimée."
 
-#. Installation.xml:117(guilabel)
+#. Installation.xml:118(guilabel)
 msgid "Select destination location"
 msgstr "Sélectionner l'emplacement de destination."
 
-#. Installation.xml:116(entry)
+#. Installation.xml:117(entry)
 msgid "Overrides the default directory name displayed on the <placeholder-1/> wizard page. A fully qualified pathname must be specified."
 msgstr "Écrase le nom par défaut du répertoire affiché dans la page <placeholder-1/> de l'assistant. Un nom complet valide doit être indiqué. "
 
-#. Installation.xml:128(title)
+#. Installation.xml:129(title)
 msgid "Uninstallation"
 msgstr "Désinstallation."
 
-#. Installation.xml:129(para)
+#. Installation.xml:130(para)
 msgid "Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>. Just select Graph and click on the <emphasis>Change/Remove button</emphasis>. This will remove all traces of the program. If files were added to the installation directory after the installation, you will be asked if you want to delete them. Make sure Graph is not running while uninstalling."
 msgstr "La désinstallation se fait depuis l'option <emphasis>Ajout/Suppression de programmes</emphasis> du <emphasis> Panneau de configuration</emphasis>. Sélectionnez simplement Graph et cliquez sur le bouton <emphasis>Modifier/Supprimer</emphasis>. Cela  supprimera toute trace du programme. Si des fichiers ont été ajoutés dans le répertoire d'installation après l'installation, on vous demandera si vous voulez les supprimer. Soyez sûr que Graph n'est pas en cours de fonctionnement quand vous procédez à la désinstallation."
 
-#. Installation.xml:138(title)
+#. Installation.xml:139(title)
 msgid "Startup"
 msgstr "Démarrage"
 
-#. Installation.xml:139(para)
+#. Installation.xml:140(para)
 msgid "Usually Graph is started from the link in the <guibutton>Start</guibutton> menu. A .grf file can be passed as parameter, in which case Graph will open the specified file. In addition to this the parameters in the table below can be passed to Graph on the command line."
 msgstr "Habituellement Graph est lancé depuis le lien du menu <guibutton>Démarrer</guibutton>. Un fichier .grf peut être ajouté en paramètre et dans ce cas sera ouvert par Graph. De plus les paramètres de la table ci-dessous peuvent être transmis à Graph par la ligne de commande."
 
-#. Installation.xml:160(link)
+#. Installation.xml:161(link)
 msgid "image formats"
 msgstr "formats d'image"
 
-#. Installation.xml:158(entry)
+#. Installation.xml:159(entry)
 msgid "Used to save an opened .grf file as an image file. The file type can be any of the <placeholder-1/> supported by Graph."
 msgstr "Utilisé pour enregistrer un fichier .grf comme fichier image. Le type du fichier peut être n'importe lequel parmi les <placeholder-1/> supportés par Graph."
 
-#. Installation.xml:165(entry)
-msgid "Used in combination with /SI to specify the width in pixels of the saved image."
+#. Installation.xml:166(entry)
+#, fuzzy
+msgid "Used in combination with /SI to specify the width in pixels of the image to be saved."
 msgstr "Utilisé en combinaison avec /SI pour indiquer la largeur en pixels de l'image enregistrée."
 
-#. Installation.xml:171(entry)
-msgid "Used in combination with /SI to specify the height in pixels of the saved image."
+#. Installation.xml:172(entry)
+#, fuzzy
+msgid "Used in combination with /SI to specify the height in pixels of the image to be saved."
 msgstr "Utilisé en combinaison avec /SI pour indiquer la hauteur en pixels de l'image enregistrée."
 
 #. InsertTrendlineDialog.xml:8(title)
@@ -1585,115 +1619,120 @@ msgstr "régression"
 msgid "Use the dialog shown below to insert a trendline that is the function that fits a <link linkend=\"InsertPointSeriesDialog\">point series</link> best. A trendline is a function that shows a trend in a series of points, i.e. a trendline is the curve of bets fit of a specific type for a series of points. The trendline is added as an ordinary function. To create a trendline, you select the point series you want to base the trendline on and use <placeholder-1/>."
 msgstr "Utilisez la boîte de dialogue ci-dessous pour insérer une courbe d'ajustement qui approche au mieux une <link linkend=\"InsertPointSeriesDialog\">série de points</link>. Une courbe d'ajustement est une fonction qui montre la courbe d'un type spécifique qui approche le mieux une série de points. La courbe d'ajustement est ajoutée en tant que fonction standard. Pour créer une courbe d'ajustement vous sélectionnez la série de points sur laquelle faire l'ajustement et utilisez <placeholder-1/>."
 
-#. InsertTrendlineDialog.xml:27(title)
+#. InsertTrendlineDialog.xml:26(para)
+msgid "If the point series has custom Y-errors defined, these values are used to weight the points. The weight for each point is <placeholder-1/> where &sigma; is the Y-error for the point. X-errors are not used."
+msgstr ""
+
+#. InsertTrendlineDialog.xml:33(title)
 msgid "Built-in"
 msgstr "Intégré"
 
-#. InsertTrendlineDialog.xml:34(guilabel) InsertTrendlineDialog.xml:40(term) InsertPointSeriesDialog.xml:82(guilabel)
+#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:46(term) InsertPointSeriesDialog.xml:82(guilabel)
 msgid "Linear"
 msgstr "Affine"
 
-#. InsertTrendlineDialog.xml:34(guilabel) InsertTrendlineDialog.xml:70(term)
+#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:76(term)
 msgid "Polynomial"
 msgstr "Polynomiale"
 
-#. InsertTrendlineDialog.xml:34(guilabel) InsertTrendlineDialog.xml:99(term)
+#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:105(term)
 msgid "Exponential"
 msgstr "Exponentielle"
 
-#. InsertTrendlineDialog.xml:35(guilabel)
+#. InsertTrendlineDialog.xml:41(guilabel)
 msgid "Intercept"
 msgstr "Intersection"
 
-#. InsertTrendlineDialog.xml:31(para)
+#. InsertTrendlineDialog.xml:37(para)
 msgid "You may choose between the following built-in functions. These functions will give an accurate result. For <placeholder-1/>, <placeholder-2/> and <placeholder-3/> trendlines, you may select the <placeholder-4/> field and specify the point where you want the trendline to meet the y-axis."
 msgstr "Vous pouvez choisir parmi les fonctions intégrées suivantes. Ces fonctions donneront un résultat précis. Pour les courbes d'ajustement <placeholder-1/>, <placeholder-2/> et <placeholder-3/> vous pouvez sélectionner le champ <placeholder-4/> et spécifier le point d'intersection de la courbe d'ajustement avec l'axe des y."
 
-#. InsertTrendlineDialog.xml:42(para)
+#. InsertTrendlineDialog.xml:48(para)
 msgid "This is a straight line with the function f(x) = a*x+b, where a and b are constants calculated so the line is the best fit to the point series."
 msgstr "C'est une droite avec la fonction f(x) = a*x+b, où a et b sont des constantes calculées pour que la courbe donne le meilleur ajustement de la série de points."
 
-#. InsertTrendlineDialog.xml:45(para)
+#. InsertTrendlineDialog.xml:51(para)
 msgid "The trendline is calculated so the sum of squares (SSQ) <placeholder-1/> will be as small as possible. If possible the function will cross the points in the series; else the function will be so close to the series that the summation cannot get any smaller."
 msgstr "La courbe d'ajustement est déterminée de façon à minimiser la somme des carrés des écarts <placeholder-1/> (méthode des moindres carrés). Si c'est possible la courbe passera par les points de la série ; sinon elle sera proche des points de façon à ce que la somme des carrés des écarts ne puisse être plus petite."
 
-#. InsertTrendlineDialog.xml:55(term)
+#. InsertTrendlineDialog.xml:61(term)
 msgid "Logarithmic"
 msgstr "Logarithmique"
 
-#. InsertTrendlineDialog.xml:57(para)
+#. InsertTrendlineDialog.xml:63(para)
 msgid "A logarithmic line of best fit is given as <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants, and <placeholder-4/> is the natural logarithm function. To add a logarithmic function, no point in the series may have an x-coordinate that is negative or zero."
 msgstr "Une courbe d'ajustement logarithmique est définie par <placeholder-1/>, où <placeholder-2/> et <placeholder-3/> sont des constantes, et <placeholder-4/> le logarithme népérien. Pour ajouter une courbe d'ajustement logarithmique, aucun des points de la série ne doit avoir une abscisse négative ou nulle."
 
-#. InsertTrendlineDialog.xml:62(para)
+#. InsertTrendlineDialog.xml:68(para)
 msgid "A logarithmic function is a straight line in a semilogarithmic coordinate system. The point series is therefore converted to a semilogarithmic coordinate system and the logarithmic function with the smallest sum of squares (SSQ) is found."
 msgstr "Une courbe d'ajustement logarithmique est une droite dans un repère semi-logarithmique. La série de points est d'abord convertie dans un repère semi-logarithmique où la fonction logarithmique est représentée par la droite des moindres carrés."
 
-#. InsertTrendlineDialog.xml:72(para)
+#. InsertTrendlineDialog.xml:78(para)
 msgid "A polynomial is a function given by <placeholder-1/>, where <placeholder-2/>...<placeholder-3/> are constants. <placeholder-4/> is the order of the polynomial. You need at least one more point than the order."
 msgstr "Une fonction polynomiale est définie par <placeholder-1/>, où <placeholder-2/>...<placeholder-3/> sont des constantes. <placeholder-4/> est le degré du polynôme. Vous devez avoir au moins un point de plus que le degré."
 
-#. InsertTrendlineDialog.xml:84(term)
+#. InsertTrendlineDialog.xml:90(term)
 msgid "Power"
 msgstr "Puissance"
 
-#. InsertTrendlineDialog.xml:86(para)
+#. InsertTrendlineDialog.xml:92(para)
 msgid "A power function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add a power function, no point in the series may have an x- or y-coordinate that is negative or zero."
 msgstr "Une fonction puissance est définie par <placeholder-1/>, où <placeholder-2/> et <placeholder-3/> sont des constantes déterminées de façon à ajuster au mieux la série de points. Pour ajouter une fonction puissance, aucun point de la série ne doit avoir une abscisse ou une ordonnée négative ou nulle."
 
-#. InsertTrendlineDialog.xml:91(para)
+#. InsertTrendlineDialog.xml:97(para)
 msgid "A power function is a straight line in a double logarithmic coordinate system. The point series is therefore converted to a double logarithmic coordinate system and the power function with the smallest sum of squares (SSQ) is found."
 msgstr "Une fonction puissance est une droite dans un repère logarithmique. La série de points est d'abord convertie dans un repère logarithmique où la fonction puissance est représentée par la droite des moindres carrés."
 
-#. InsertTrendlineDialog.xml:101(para)
+#. InsertTrendlineDialog.xml:107(para)
 msgid "An exponential function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add an exponential function, no point in the series may have a y-coordinate that is negative or zero."
 msgstr "Une fonction exponentielle est définie par <placeholder-1/>, où <placeholder-2/> et <placeholder-3/> sont des constantes déterminées pour ajuster au mieux la série de points. Pour ajouter une fonction exponentielle, aucun point de la série ne doit avoir d'ordonnée négative ou nulle."
 
-#. InsertTrendlineDialog.xml:106(para)
+#. InsertTrendlineDialog.xml:112(para)
 msgid "An Exponential function is a straight line in a semilogarithmic coordinate system with the y-axis as the logarithmic axis. The point series is therefore converted to a semilogarithmic coordinate system and the exponential function with the smallest sum of squares (SSQ) is found."
 msgstr "Une courbe d'ajustement exponentielle est une droite dans un repère semi-logarithmique avec les logarithmes en ordonnée. La série de points est d'abord convertie dans un repère semi-logarithmique où la fonction exponentielle est représentée par la droite des moindres carrés."
 
-#. InsertTrendlineDialog.xml:114(term)
+#. InsertTrendlineDialog.xml:120(term)
 msgid "Moving average"
 msgstr "Moyenne mobile"
 
-#. InsertTrendlineDialog.xml:118(guilabel) InsertTrendlineDialog.xml:119(guilabel) InsertTrendlineDialog.xml:121(guilabel)
+#. InsertTrendlineDialog.xml:124(guilabel) InsertTrendlineDialog.xml:125(guilabel) InsertTrendlineDialog.xml:127(guilabel)
 msgid "Period"
 msgstr "Période "
 
-#. InsertTrendlineDialog.xml:116(para)
+#. InsertTrendlineDialog.xml:122(para)
 msgid "Moving average is a series of straight lines based on the average of the previous points. The <placeholder-1/> determines how many points are used for the average. If <placeholder-2/> is 1 only one point is used, which actually isn't an average. This will draw a line directly between the points. When <placeholder-3/> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point. Instead it will be an average of the previous points."
 msgstr "La moyenne mobile est une série de lignes droites définies par la moyenne des points précédents. La <placeholder-1/> détermine le nombre de points utilisés pour faire la moyenne. Si <placeholder-2/> vaut 1, un seul point sera utilisé, ce qui n'est pas réellement une moyenne. Cela tracera une ligne brisée joignant les points. Quand <placeholder-3/> est plus grand que 1, l'ordonnée de la ligne à chaque point ne sera pas celle du point mais sera celle de la moyenne des points précédents. "
 
-#. InsertTrendlineDialog.xml:130(title)
+#. InsertTrendlineDialog.xml:136(title)
 msgid "User defined"
 msgstr "Défini par l'utilisateur"
 
-#. InsertTrendlineDialog.xml:134(para)
+#. InsertTrendlineDialog.xml:140(para)
 msgid "In this tab you can enter your own trendline models. The model is entered as a standard function, where all the constants that you want Graph to find are named with a $ followed by any combination of characters (a-z) and digits (0-9). Examples of valid constants are: $a, $y0, $const."
 msgstr "Dans cet onglet vous pouvez définir vos modèles personnels de courbes d'ajustement. Le modèle est défini comme une fonction standard, où toutes les constantes qui doivent être déterminées par Graph sont nommées par un $ suivi de toute combinaison de caractères (a-z) et de chiffres (0-9). Exemples de noms de constantes valides : $a, $y0, $const."
 
-#. InsertTrendlineDialog.xml:141(para)
+#. InsertTrendlineDialog.xml:147(para)
 msgid "An example of a model could be <placeholder-1/>. The program tries to calculate the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/> so that f(x) will be as close to the point series as possible. You can use the <guibutton>Add model</guibutton> button to add the model to the saved list with a name."
 msgstr "<placeholder-1/> peut être un exemple de modèle. Le programme essaie de calculer les constantes <placeholder-2/>, <placeholder-3/> et <placeholder-4/> de manière à ce que f(x) approche au mieux les points de la série. Vous pouvez utiliser le bouton <guibutton>Ajouter un modèle</guibutton> pour ajouter le modèle à la liste enregistrée avec un nom."
 
-#. InsertTrendlineDialog.xml:148(para)
+#. InsertTrendlineDialog.xml:154(para)
 msgid "The program needs a guess for where to start the search for the optimum. As default the guess for all constants is 1, but this can be changed for models added to the list. A better guess will increase the possibility that an optimum can be found."
 msgstr "Le programme nécessite l'indication d'une prévision pour démarrer la recherche de l'optimum. Par défaut la valeur de cette prévision pour toutes les constantes est 1, mais cela peut être changé pour les modèles ajoutés à la liste. Meilleure est la prévision, meilleures sont les chances de trouver l'optimum."
 
-#. InsertTrendlineDialog.xml:154(para)
+#. InsertTrendlineDialog.xml:160(para)
 msgid "Graph will try to find the constants for the model f(x) so the sum of squares <placeholder-1/> will be the smallest possible. The program will start with the guess and move towards the minimum of the sum of squares. If a solution is not found after 100 iterations or the given guess is not valid, the program gives up."
 msgstr "Graph va essayer de trouver les constantes pour le modèle f(x) de façon que la somme des carrés (des écarts) soit le plus petite possible. Le programme démarrera avec les prévisions et convergera vers le minimum pour la somme des carrés. Si une solution n'est pas trouvée après 100 itérations ou que la valeur de prévision n'est pas valide, le programme abandonne."
 
-#. InsertTrendlineDialog.xml:162(para)
+#. InsertTrendlineDialog.xml:168(para)
 msgid "It is possible, even though it rarely happens, that more than one minimum exists. In this case the minimum nearest to the guess will be found, even though this may not be the best."
 msgstr "C'est possible, même si cela arrive rarement, que plus d'un minimum existe. Dans ce cas c'est le minimum le plus proche de la prévision qui est trouvé, même si ce n'est peut-être pas le meilleur."
 
-#. InsertTrendlineDialog.xml:167(para)
-msgid "Notice that you should avoid redundant constants as they might confuse the program. For example this model has a redundant constant: <placeholder-1/>. Notice the relation between the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. If you multiply <placeholder-5/>, <placeholder-6/> and <placeholder-7/> with the same value the resulting function will not be changed. This means that there are an infinite number of best solutions, because you can always multiply by a value. This may confuse the program when it tries to find the best one. Therefore either <placeholder-8/>, <placeholder-9/> or <placeholder-10/> should be removed."
+#. InsertTrendlineDialog.xml:173(para)
+#, fuzzy
+msgid "Notice that you should avoid redundant constants as they might confuse the program. For example this model has a redundant constant: <placeholder-1/>. Notice the relation between the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. If you multiply <placeholder-5/>, <placeholder-6/> and <placeholder-7/> with the same value the resulting function will not be changed. This means that there are an infinite number of combinations of constants with the same resulting function and hence an infinite number of best solutions. This may confuse the program when it tries to find the best one. Therefore either <placeholder-8/>, <placeholder-9/> or <placeholder-10/> should be removed."
 msgstr "Notez que vous devez éviter les constantes superflues qui pourraient embrouiller le programme. Par exemple ce modèle a une constante superflue : <placeholder-1/>. Notez la relation entre les constantes <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. Si vous multipliez <placeholder-5/>, <placeholder-6/> et <placeholder-7/> par la même valeur la fonction obtenue sera la même. Cela signifie qu'il y a une infinité de solutions puisque vous pouvez toujours multiplier par un coefficient. Cela peut embrouiller le programme quand il essaie de trouver la meilleure solution. Par conséquent l'une de <placeholder-8/>, <placeholder-9/> or <placeholder-10/> devrait être supprimée."
 
-#. InsertTrendlineDialog.xml:177(para)
+#. InsertTrendlineDialog.xml:183(para)
 msgid "When the trendline is added, the correlation coefficient <placeholder-1/> is shown in the comment. The closer <placeholder-2/> is to 1 the closer the trendline is to the points."
 msgstr "Quand la courbe d'ajustement est ajoutée, le coefficient de corrélation <placeholder-1/> est affiché en commentaire. Le plus proche de 1 est <placeholder-2/>, le plus proche des points est la courbe d'ajustement."
 
@@ -1801,7 +1840,7 @@ msgstr "entre"
 msgid "The dialog below is used to add a shading to the selected function. To insert a new shading, you use <placeholder-1/>. To change an existing shading, you first select it in the <placeholder-2/> and use <placeholder-3/>. The shading is used to mark an area between the function graph and something else."
 msgstr "La boîte de dialogue ci-dessous est utilisée pour ajouter des remplissages à la fonction sélectionnée. Pour insérer un nouveau remplissage, vous utilisez <placeholder-1/>. Pour modifier un remplissage existant, vous devez d'abord le sélectionner dans la <placeholder-2/> et utiliser <placeholder-3/>. Le remplissage est utilisé pour mettre en évidence une aire entre le graphique de la fonction et un autre élément de Graph."
 
-#. InsertShadingDialog.xml:24(title) InsertShadingDialog.xml:29(guilabel) InsertShadingDialog.xml:189(guilabel) InsertShadingDialog.xml:190(guilabel)
+#. InsertShadingDialog.xml:24(title) InsertShadingDialog.xml:29(guilabel)
 msgid "Shading"
 msgstr "Remplissage"
 
@@ -1857,11 +1896,11 @@ msgstr "À l'intérieur de la fonction"
 msgid "This will shade the area inside the graph of the function in the selected interval. If you check <placeholder-1/> or <placeholder-2/>, the interval will decrease or increase until the graph is crossing itself. This is especially useful to shade a closed part of a parametric or polar function, but it can also be used to shade standard functions."
 msgstr "Ceci remplira l'aire à l'intérieur du graphique de la fonction sur l'intervalle sélectionné. Si vous marquez <placeholder-1/> ou <placeholder-2/>, l'intervalle se prolongera jusqu'à ce que le graphique se recoupe. C'est particulièrement utile pour remplir une partie fermée d'une représentation paramétrique ou polaire, mais cela peur aussi être utilisé pour des fonctions standards."
 
-#. InsertShadingDialog.xml:93(term) InsertShadingDialog.xml:190(guilabel)
+#. InsertShadingDialog.xml:93(term) InsertShadingDialog.xml:188(guilabel)
 msgid "Between functions"
 msgstr "Entre fonctions"
 
-#. InsertShadingDialog.xml:98(guilabel) InsertShadingDialog.xml:186(title) InsertShadingDialog.xml:188(guilabel) InsertShadingDialog.xml:191(guilabel)
+#. InsertShadingDialog.xml:98(guilabel) InsertShadingDialog.xml:186(title) InsertShadingDialog.xml:189(guilabel) InsertShadingDialog.xml:190(guilabel)
 msgid "2nd function"
 msgstr "2nd fonction"
 
@@ -1899,7 +1938,7 @@ msgstr "Ici vous pouvez choisir la couleur du remplissage."
 
 #. InsertShadingDialog.xml:164(term)
 msgid "Mark start of range"
-msgstr "Marquer début d'intervalle"
+msgstr "Marquer début de plage"
 
 #. InsertShadingDialog.xml:166(para)
 msgid "Check this to draw a line at the start of the range. Uncheck it if you want two shadings to look as one."
@@ -1907,25 +1946,31 @@ msgstr "Validez cette option pour limiter le remplissage par un segment au débu
 
 #. InsertShadingDialog.xml:174(term)
 msgid "Mark end of range"
-msgstr "Marquer fin d'intervalle"
+msgstr "Marquer fin de plage."
 
 #. InsertShadingDialog.xml:176(para)
 msgid "Check this to draw a line at the end of the range. Uncheck it if you want two shadings to look as one."
 msgstr "Validez cette option pour limiter le remplissage par un segment à la fin de l'intervalle. Désactivez si vous souhaitez voir deux remplissages avoir l'aspect d'un seul."
 
+#. InsertShadingDialog.xml:188(guilabel)
+#, fuzzy
+msgid "Shadings"
+msgstr "Remplissage"
+
 #. InsertShadingDialog.xml:187(para)
-msgid "At the <placeholder-1/> tab, you may select the second function when you have chosen to create a shading between two functions in the <placeholder-2/> tab. This is only available when you have chosen <placeholder-3/> in the <placeholder-4/> tab. The dialog with the <placeholder-5/> tab is shown below."
+#, fuzzy
+msgid "When you have chosen <placeholder-1/> in the <placeholder-2/> tab, you may select the second function in the <placeholder-3/> tab. The dialog with the <placeholder-4/> tab is shown below."
 msgstr "Dans l'onglet <placeholder-1/>, vous vous pouvez sélectionner la seconde fonction quand vous avez choisi de créer un remplissage entre deux fonctions dans l'onglet <placeholder-2/>. Ceci n'est disponible que si vous avez choisi <placeholder-3/> dans l'onglet <placeholder-4/>. La boîte de dialogue avec l'onglet <placeholder-5/> est affichée ci-dessous."
 
-#. InsertShadingDialog.xml:198(term)
+#. InsertShadingDialog.xml:197(term)
 msgid "Shading range for 2nd function"
-msgstr "Intervalle de remplissage pour la seconde fonction."
+msgstr "Plage de remplissage pour la seconde fonction."
 
-#. InsertShadingDialog.xml:200(para)
+#. InsertShadingDialog.xml:199(para)
 msgid "This is used to select the interval for the second function, just like you selected the interval for the first function in the <placeholder-1/> tab. This is only available for parametric functions and not for standard functions. For standard functions the interval for the second function is always the same as the interval for the first function. If you enter neither a start nor an end of interval for a parametric function, the values for the first function will be used for the second function as well."
 msgstr "Ceci est utilisé pour sélectionner l'intervalle pour la seconde fonction, comme vous avez sélectionné l'intervalle pour la première dans l'onglet <placeholder-1/>. Ceci n'est disponible que pour les représentations paramétriques et non pour les fonctions classiques. Pour les fonctions classiques l'intervalle pour la seconde fonction est toujours le même que celui de la première fonction. Si vous n'entrez ni départ ni fin de l'intervalle pour une représentation paramétrique, les valeurs pour la première fonction seront utilisées pour la seconde."
 
-#. InsertShadingDialog.xml:212(para)
+#. InsertShadingDialog.xml:211(para)
 msgid "Shadings are a great way to mark an area, but if you get weird results, check that you selected the right function and the right interval. If you try to shade an interval crossing an asymptote or your shading is associated with a weird parametric function, you might get weird results. But really, what did you expect?"
 msgstr "Les remplissages sont  une manière appropriée de mettre en évidence des aires, mais si vous obtenez des résultats bizarres, contrôlez que vous avez sélectionné la bonne fonction et le bon intervalle. Si vous essayez de remplir sur un intervalle où le graphique coupe son asymptote ou pour une représentation paramétrique bizarre, vous pouvez obtenir des résultats curieux. Mais qu'espériez vous réellement ?"
 
@@ -2030,7 +2075,8 @@ msgid "error bars"
 msgstr "intervalles d'incertitude"
 
 #. InsertPointSeriesDialog.xml:17(para)
-msgid "You can use the dialog below to add a series of points to the coordinate system. The points will be shown in the coordinate system in the graphing area as a series of markers at the positions entered in this dialog. To insert a new point series, you use <placeholder-1/>. To change an existing point series, you first select it in the <placeholder-2/> and use <placeholder-3/>."
+#, fuzzy
+msgid "You can use the dialog below to add a series of points to the coordinate system. The points will be shown in the coordinate system in the graphing area as a series of markers. To insert a new point series, you use <placeholder-1/>. To change an existing point series, you first select it in the <placeholder-2/> and use <placeholder-3/>."
 msgstr "Vous pouvez utiliser la boîte de dialogue ci-dessous pour ajouter une série de points dans le repère. Les points seront affichés dans le repère dans la zone de dessin comme une série de marqueurs aux positions saisies dans la boîte de dialogue. Pour insérer une nouvelle série de points, utilisez <placeholder-1/>. Pour modifier une série de points existante, sélectionnez la d'abord dans la <placeholder-2/> et utilisez <placeholder-3/>."
 
 #. InsertPointSeriesDialog.xml:26(para)
@@ -2083,7 +2129,7 @@ msgstr "Splines cubiques"
 
 #. InsertPointSeriesDialog.xml:84(guilabel)
 msgid "Half cosine"
-msgstr "Demi-cosinus"
+msgstr "\"Half cosine\""
 
 #. InsertPointSeriesDialog.xml:81(para)
 msgid "You can choose between three types of interpolation: <placeholder-1/> will draw a straight line between the markers. <placeholder-2/> will draw a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a half cosine curve between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
@@ -2118,7 +2164,8 @@ msgid "Custom"
 msgstr "Choisi :"
 
 #. InsertPointSeriesDialog.xml:104(para)
-msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are +/-values."
+#, fuzzy
+msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are +/-values. Custom Y-errors are also used to weight the points when creating trendlines."
 msgstr "Ici vous pouvez choisir d'afficher les intervalles d'incertitude verticalement ou horizontalement. Ils sont affichés sous forme de fins segments à chaque point de la série indiquant l'incertitude sur le point. Il y a trois manières d'indiquer la grandeur des l'intervalles d'incertitude : <placeholder-1/> est utilisé pour spécifier que l'incertitude sur tous les points est la même. <placeholder-2/> est utilisé pour spécifier l'incertitude comme un pourcentage des coordonnées de chaque point. <placeholder-3/> sera utilisé pour ajouter une colonne à la table dans laquelle vous pourrez spécifier une incertitude différente pour chaque point. Toutes les incertitudes sont des valeurs algébriques."
 
 #. InsertLabelDialog.xml:8(title)
@@ -2234,7 +2281,8 @@ msgid "Standard function"
 msgstr "Fonction classqiue"
 
 #. InsertFunctionDialog.xml:28(para)
-msgid "You can choose between three different types of functions: <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, thought it may be undefined for some x-coordinates."
+#, fuzzy
+msgid "You can choose between three different types of functions: <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, though it may be undefined for some x-coordinates."
 msgstr "Vous pouvez choisir entre trois différents types de fonctions : <placeholder-1/>, <placeholder-2/> et <placeholder-3/>. Une fonction standard est définie par y=f(x), i.e. pour chaque abscisse il y a une ordonnée et une seule, bien que pour certaines valeurs de x il puisse ne pas y avoir d'image."
 
 #. InsertFunctionDialog.xml:32(para)
@@ -2278,8 +2326,8 @@ msgid "Enter a description to be shown in the <placeholder-1/>. If the text is e
 msgstr "Saisissez ici une descrition à placer dans la <placeholder-1/>. Si le texte est laissé vide, l'expression de la fonction sera affichée dans la légende."
 
 #. InsertFunctionDialog.xml:99(guilabel)
-msgid "Line styles"
-msgstr "Styles de ligne"
+msgid "Line style"
+msgstr "Style de ligne "
 
 #. InsertFunctionDialog.xml:99(guilabel) InsertFunctionDialog.xml:101(guilabel)
 msgid "Lines"
@@ -2290,16 +2338,13 @@ msgid "Dots"
 msgstr "Points"
 
 #. InsertFunctionDialog.xml:96(para)
-msgid "You can choose between different line styles for which you want the graph to be drawn. You can choose between solid, dashed, dotted or a combination of these. <placeholder-1/> are only available when <placeholder-2/> is set to <placeholder-3/> or <placeholder-4/>. When <placeholder-5/> is <placeholder-6/>, only a dot is shown at each calculated point. Likewise the <placeholder-7/> <placeholder-8/> will connect the calculated points with lines. <placeholder-9/> will also draw lines, but Graph will do more calculations at critical points if it thinks it will improve the graph. It will also break the line if it thinks there is an asymptote. You can also choose the width of the graph. The width is notified in screen pixels. There are also a lot of different colors you can choose between. The program will remember and suggest the same properties last used."
+#, fuzzy
+msgid "You can choose between different line styles for which you want the graph to be drawn. You can choose between solid, dashed, dotted or a combination of these. <placeholder-1/> is only available when <placeholder-2/> is set to <placeholder-3/> or <placeholder-4/>. When <placeholder-5/> is <placeholder-6/>, only a dot is shown at each calculated point. Likewise the <placeholder-7/> <placeholder-8/> will connect the calculated points with lines. <placeholder-9/> will also draw lines, but Graph will do more calculations at critical points if it thinks it will improve the graph. It will also break the line if it thinks there is an asymptote. You can also choose the width of the graph. The width is notified in screen pixels. There are also a lot of different colors you can choose between. The program will remember and suggest the same properties last used."
 msgstr "Vous pouvez choisir entre différents styles de ligne pour tracer le graphique. Vous pouvez choisir entre continu, tirets, pointillés ou une combinaison d'entre eux. <placeholder-1/> n'est disponible que si <placeholder-2/>vaut <placeholder-3/> ou <placeholder-4/>. Quand <placeholder-5/> a pour valeur <placeholder-6/>, ne sont dessinés que les points calculés. Quand le <placeholder-7/> est <placeholder-8/> les points calculés seront joints par des lignes. Le choix de <placeholder-9/> dessinera aussi des lignes, mais Graph fera davantage de calculs aux points critiques s'il pense que cela améliorera le graphique. Il interrompra la ligne s'il pense qu'il y a une asymptote. Vous pouvez également choisir l'épaisseur de la ligne. Cette épaisseur est indiquée en pixels d'écran. Vous pouvez également choisir entre un grand nombre de couleurs. Le programme mémorisera les paramètres utilisés pour les proposer par défaut la fois suivante."
 
 #. InsertDerivativeDialog.xml:8(title)
 msgid "Insert f'(x)"
 msgstr "Insérer f'(x)"
-
-#. InsertDerivativeDialog.xml:10(primary)
-msgid "f'(x)"
-msgstr "f'(x)"
 
 #. InsertDerivativeDialog.xml:11(primary)
 msgid "differentiate"
@@ -2413,7 +2458,7 @@ msgstr "Donne l'argument tangente hyperbolique de l'argument."
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "La fonction <placeholder-1/> donne l'argument tangente hyperbolique de <placeholder-2/>. <placeholder-3/> peut être n'importe quelle <placeholder-4/> qui donne un <placeholder-5/> ou un <placeholder-6/>. <placeholder-7/> est la réciproque de <placeholder-8/>, i.e. <placeholder-9/>."
 
-#. Hyperbolic.xml:154(primary) Hyperbolic.xml:226(primary)
+#. Hyperbolic.xml:154(primary) Hyperbolic.xml:227(primary)
 msgid "hyperbolic cosecant"
 msgstr "cosécante hyperbolique"
 
@@ -2429,7 +2474,7 @@ msgstr "La fonction <placeholder-1/> donne la cosécante hyperbolique de <placeh
 msgid "Hyperbolic cosecant is defined as: <placeholder-1/>"
 msgstr "La cosécante hyperbolique est définie par : <placeholder-1/>"
 
-#. Hyperbolic.xml:178(primary) Hyperbolic.xml:249(primary)
+#. Hyperbolic.xml:178(primary) Hyperbolic.xml:250(primary)
 msgid "hyperbolic secant"
 msgstr "sécante hyperbolique"
 
@@ -2445,7 +2490,7 @@ msgstr "La fonction <placeholder-1/> donne la sécante hyperbolique de <placehol
 msgid "Hyperbolic secant is defined as: <placeholder-1/>"
 msgstr "La sécante hyperbolique est définie par : <placeholder-1/>"
 
-#. Hyperbolic.xml:202(primary) Hyperbolic.xml:272(primary)
+#. Hyperbolic.xml:202(primary) Hyperbolic.xml:273(primary)
 msgid "hyperbolic cotangent"
 msgstr "cotangente hyperbolique"
 
@@ -2461,39 +2506,39 @@ msgstr "La fonction <placeholder-1/> donne la cotangente hyperbolique de <placeh
 msgid "Hyperbolic cotangent is defined as: <placeholder-1/>"
 msgstr "La cotangente hyperbolique est définie par : <placeholder-1/>"
 
-#. Hyperbolic.xml:227(primary)
+#. Hyperbolic.xml:228(primary)
 msgid "inverse hyperbolic cosecant"
 msgstr "argument cosécante hyperbolique"
 
-#. Hyperbolic.xml:228(para) FunctionList.xml:271(entry)
+#. Hyperbolic.xml:229(para) FunctionList.xml:271(entry)
 msgid "Returns the inverse hyperbolic cosecant of the argument."
 msgstr "Donne l'argument cosécante hyperbolique de l'argument."
 
-#. Hyperbolic.xml:237(para)
+#. Hyperbolic.xml:238(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "La fonction <placeholder-1/> donne l'argument cosécante hyperbolique de <placeholder-2/>. <placeholder-3/> peut être n'importe quelle <placeholder-4/> qui donne un <placeholder-5/> ou un <placeholder-6/>. <placeholder-7/> est la réciproque de <placeholder-8/>, i.e. <placeholder-9/>."
 
-#. Hyperbolic.xml:250(primary)
+#. Hyperbolic.xml:251(primary)
 msgid "inverse hyperbolic secant"
 msgstr "argument sécante hyperbolique"
 
-#. Hyperbolic.xml:251(para) FunctionList.xml:275(entry)
+#. Hyperbolic.xml:252(para) FunctionList.xml:275(entry)
 msgid "Returns the inverse hyperbolic secant of the argument."
 msgstr "Donne l'argument sécante hyperbolique de l'argument."
 
-#. Hyperbolic.xml:260(para)
+#. Hyperbolic.xml:261(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "La fonction <placeholder-1/> donne l'argument sécante hyperbolique de <placeholder-2/>. <placeholder-3/> peut être n'importe quelle <placeholder-4/> qui donne un <placeholder-5/> ou un <placeholder-6/>. <placeholder-7/> est la réciproque de <placeholder-8/>, i.e. <placeholder-9/>."
 
-#. Hyperbolic.xml:273(primary)
+#. Hyperbolic.xml:274(primary)
 msgid "inverse hyperbolic cotangent"
 msgstr "argument cotangente hyperbolique"
 
-#. Hyperbolic.xml:274(para) FunctionList.xml:279(entry)
+#. Hyperbolic.xml:275(para) FunctionList.xml:279(entry)
 msgid "Returns the inverse hyperbolic cotangent of the argument."
 msgstr "Donne l'argument cotangente hyperbolique de l'argument."
 
-#. Hyperbolic.xml:283(para)
+#. Hyperbolic.xml:284(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>. For real numbers <placeholder-10/> is undefined in the interval [-1;1]."
 msgstr "La fonction <placeholder-1/> donne l'argument cotangente hyperbolique de <placeholder-2/>. <placeholder-3/> peut être n'importe quelle <placeholder-4/> qui donne un <placeholder-5/> ou un <placeholder-6/>. <placeholder-7/> est la réciproque de <placeholder-8/>, i.e. <placeholder-9/>. Pour les nombres réels <placeholder-10/> n'est pas définie dans l'intervalle [-1;1]."
 
@@ -2782,7 +2827,8 @@ msgid "Indicates if an expression is greater than another expression."
 msgstr "Indique si une expression est plus grande qu'une autre."
 
 #. FunctionList.xml:128(entry)
-msgid "Greater or equal (&gt;=)"
+#, fuzzy
+msgid "Greater than or equal to (&gt;=)"
 msgstr "Plus grand ou égal à (&gt;=)"
 
 #. FunctionList.xml:129(entry)
@@ -2798,7 +2844,8 @@ msgid "Indicates if an expression is less than another expression."
 msgstr "Indique si une expression est plus petite qu'une autre."
 
 #. FunctionList.xml:136(entry)
-msgid "Less or equal (&lt;=)"
+#, fuzzy
+msgid "Less than or equal to (&lt;=)"
 msgstr "Plus petit ou égal à (&lt;=)"
 
 #. FunctionList.xml:137(entry)
@@ -3017,45 +3064,9 @@ msgstr "Donne la valeur de la fonction W de Lambert pour l'argument."
 msgid "Returns the Riemann Zeta function evaluated for the argument."
 msgstr "Donne la valeurde la fonction Zeta de Riemann pour l'argument."
 
-#. FunctionList.xml:430(entry)
-msgid "The probability function of the normal distribution in a variate with mean and standard"
-msgstr "La fonction densité de probabilité de la loi normale, avec valeurs optionnelles pour moyenne et écart-type."
-
 #. FunctionList.xml:438(title)
 msgid "Notice the following relations:"
 msgstr "Notez les relations suivantes :"
-
-#. FunctionList.xml:440(member)
-msgid "sin(x)^2= (sin(x))^2"
-msgstr "sin(x)^2= (sin(x))^2"
-
-#. FunctionList.xml:441(member)
-msgid "sin 2x = sin(2x)"
-msgstr "sin 2x = sin(2x)"
-
-#. FunctionList.xml:442(member)
-msgid "sin 2+x = sin(2)+x"
-msgstr "sin 2+x = sin(2)+x"
-
-#. FunctionList.xml:443(member)
-msgid "sin x^2 = sin(x^2)"
-msgstr "sin x^2 = sin(x^2)"
-
-#. FunctionList.xml:444(member)
-msgid "2(x+3)x = 2*(x+3)*x"
-msgstr "2(x+3)x = 2*(x+3)*x"
-
-#. FunctionList.xml:445(member)
-msgid "-x^2 = -(x^2)"
-msgstr "-x^2 = -(x^2)"
-
-#. FunctionList.xml:446(member)
-msgid "2x = 2*x"
-msgstr "2x = 2*x"
-
-#. FunctionList.xml:447(member)
-msgid "e^2x = e^(2*x)"
-msgstr "e^2x = e^(2*x)"
 
 #. FAQ.xml:6(primary)
 msgid "FAQ"
@@ -3283,7 +3294,7 @@ msgstr "Le curseur sautera à la plus proche intersection entre la fonction sél
 
 #. EvaluateDialog.xml:77(term)
 msgid "Extreme x-value"
-msgstr "Valeur extrème en x"
+msgstr "Extrémums abscisses"
 
 #. EvaluateDialog.xml:79(para)
 msgid "The cursor will snap to the nearest local extreme value for the x-coordinate. Not available for standard functions."
@@ -3406,7 +3417,8 @@ msgid "Error 10: atanh evaluated at undefined value."
 msgstr "Erreur 10 : atanh calculée en un point où elle n'est pas définie."
 
 #. Errors.xml:95(para)
-msgid "Inverse hyperbolic tangent atanh(x) is undefined at x=1, and only defined when using complex numbers outside the interval x=]-1;1[."
+#, fuzzy
+msgid "Inverse hyperbolic tangent atanh(x) is undefined at x=1 and x=-1, and not defined outside the interval x=]-1;1[ when calculating with real numbers only."
 msgstr "La réciproque de la tangente hyperbolique n'est pas définie en x=1, et n'est définie en dehors de l'intervalle ]-1;1[ qu'en utilisant les nombres complexes."
 
 #. Errors.xml:99(term)
@@ -3690,7 +3702,8 @@ msgid "Function arguments are entered after the name in brackets separated by co
 msgstr "Les arguments des fonctions sont saisis après le nom, entre parenthèses et séparés par des virgules, e.g. <literal>f(x,y,z)</literal> est une fonction nommée f ayant trois arguments nommés x, y et z. Comme les noms de fonctions, les noms des arguments doivent commencer par une lettre et ne contenir que des lettres et des chiffres."
 
 #. CustomFunctionsDialog.xml:34(para)
-msgid "The expressions you want to define are entered in the second column. The expressions can use the arguments specified in the first column and all built-in functions, other custom functions and constants, and even call itself recursively. A comment can be written after a # symbol at the end of an expression."
+#, fuzzy
+msgid "The expressions you want to define are entered in the second column. The expressions can use the arguments specified in the first column and all built-in functions, other custom functions and constants, and even call themselves recursively. A comment can be written after a # symbol at the end of an expression."
 msgstr "Les expressions que vous voulez définir sont saisies dans la seconde colonne. Les expressions peuvent utiliser les arguments définis dans le première colonne et toutes les fonctions intégrées ainsi que des fonctions et constantes personnelles, et peuvent même s'appeler récursivement. Un commentaire peut être écrit après un symbole # à la fin de l'expression."
 
 #. CustomFunctionsDialog.xml:43(term)
@@ -3854,7 +3867,8 @@ msgid "background color"
 msgstr "couleur de fond"
 
 #. AxesDialog.xml:32(para)
-msgid "When you choose the menu item <placeholder-1/> , the dialog shown below will appear. In this dialog you can configure all options which are related to the axes. The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis. The tab with options for the y-axis is completely analog to this."
+#, fuzzy
+msgid "When you choose the menu item <placeholder-1/>, the dialog shown below will appear. In this dialog you can configure all options which are related to the axes. The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis. The tab with options for the y-axis is completely analog to this."
 msgstr "Quand vous choisissez l'item <placeholder-1/> du menu, la boîte de dialogue affichée ci-dessous apparaîtra. Dans cette boîte de dialogue vous pouvez configurer toutes les options relatives aux axes. La boîte de dialogue comprend 4 onglets. Le premier onglet, affiché ci-dessous, contient les options pour l'axe des x. L'onglet avec les options de l'axe des y est analogue à celui-ci."
 
 #. AxesDialog.xml:43(title)
@@ -4061,10 +4075,6 @@ msgstr "animer"
 msgid "constant"
 msgstr "constante"
 
-#. AnimateDialog.xml:11(primary)
-msgid "avi"
-msgstr "avi"
-
 #. AnimateDialog.xml:12(primary)
 msgid "repeat"
 msgstr "répéter"
@@ -4095,7 +4105,7 @@ msgstr "Plage"
 
 #. AnimateDialog.xml:42(guilabel) AnimateDialog.xml:43(guilabel)
 msgid "Step"
-msgstr "Pas"
+msgstr "Un pas en avant"
 
 #. AnimateDialog.xml:40(para)
 msgid "In the <placeholder-1/> and <placeholder-2/> fields you need to specify the range of the selected constant in the animation. The <placeholder-3/> value indicates how much the constant is changed between two frames. The number of frames is given by (<placeholder-4/> - <placeholder-5/>) / <placeholder-6/>. More frames will give a smoother animation but it will also take longer to create and take up more space in the disk file."
@@ -4107,7 +4117,7 @@ msgstr "Information sur l'image"
 
 #. AnimateDialog.xml:55(guilabel)
 msgid "Frames/second"
-msgstr "Images/seconde "
+msgstr "Trames/seconde "
 
 #. AnimateDialog.xml:52(para)
 msgid "You can specify the image size of the animation. This will affect the file size and the time it takes to create the animation. The <placeholder-1/> indicates the default speed of the animation. Most players will be able to adjust the speed when the animation is played."
@@ -4166,7 +4176,8 @@ msgid "This will save all frames as single bitmap files. This is the same as rep
 msgstr "Ceci enregistrera toutes les images dans des fichiers bitmap individuels. C'est la même chose que de répéter <placeholder-1/> pour chaque image de l'animation."
 
 #. Acknowledgements.xml:7(title)
-msgid "Acknowledgements"
+#, fuzzy
+msgid "Acknowledgments"
 msgstr "Remerciements"
 
 #. Acknowledgements.xml:8(primary)
@@ -4190,170 +4201,177 @@ msgid "Libraries"
 msgstr "Librairies"
 
 #. Acknowledgements.xml:15(member)
-msgid "Parts of Graph are using the Spirit parser library:"
-msgstr "Des parties de Graph utilisent la librairie Spirit parser :"
-
-#. Acknowledgements.xml:21(member)
-msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
-msgstr "Graph utilise la librairie BMGLib pour enregistrer les images au format Portable Network Graphics (PNG) :"
-
-#. Acknowledgements.xml:28(member)
 msgid "Graph uses dxgettext as translation library:"
 msgstr "Graph utilise dxgettext comme librairie de traduction :"
 
-#. Acknowledgements.xml:34(member)
+#. Acknowledgements.xml:21(member)
 msgid "For shell extensions the EasyNSE library is used:"
 msgstr "La librairie EasyNSE est utilisée pour les extensions du shell :"
 
-#. Acknowledgements.xml:40(member)
+#. Acknowledgements.xml:27(member)
 msgid "The PDFlib-Lite library is used to create PDF files:"
 msgstr "La librairie  PDFlib-Lite est utilisée pour créer les fcihers PDF :"
 
-#. Acknowledgements.xml:46(member)
-msgid "Tnt Delphi Unicode Controls"
-msgstr "Tnt Delphi Unicode Controls"
-
-#. Acknowledgements.xml:52(member)
+#. Acknowledgements.xml:33(member)
 msgid "Python is used for plugin support:"
 msgstr "Python est utilisé pour les modules d'extension :"
 
-#. Acknowledgements.xml:60(title)
+#. Acknowledgements.xml:41(title)
 msgid "Translations"
 msgstr "Traductions"
 
-#. Acknowledgements.xml:71(entry)
+#. Acknowledgements.xml:52(entry)
 msgid "Program"
 msgstr "Programme"
 
-#. Acknowledgements.xml:72(entry)
+#. Acknowledgements.xml:53(entry)
 msgid "Help file"
 msgstr "Fichier d'aide"
 
-#. Acknowledgements.xml:73(entry)
+#. Acknowledgements.xml:54(entry)
 msgid "Translator(s)"
 msgstr "Traducteur(s)"
 
-#. Acknowledgements.xml:78(entry)
+#. Acknowledgements.xml:59(entry)
 msgid "Arabic"
 msgstr "Arabe"
 
-#. Acknowledgements.xml:79(entry) Acknowledgements.xml:86(entry) Acknowledgements.xml:93(entry) Acknowledgements.xml:100(entry) Acknowledgements.xml:107(entry) Acknowledgements.xml:114(entry) Acknowledgements.xml:121(entry) Acknowledgements.xml:122(entry) Acknowledgements.xml:128(entry) Acknowledgements.xml:135(entry) Acknowledgements.xml:136(entry) Acknowledgements.xml:142(entry) Acknowledgements.xml:149(entry) Acknowledgements.xml:150(entry) Acknowledgements.xml:156(entry) Acknowledgements.xml:157(entry) Acknowledgements.xml:163(entry) Acknowledgements.xml:170(entry) Acknowledgements.xml:177(entry) Acknowledgements.xml:178(entry) Acknowledgements.xml:184(entry) Acknowledgements.xml:191(entry) Acknowledgements.xml:198(entry) Acknowledgements.xml:205(entry) Acknowledgements.xml:212(entry) Acknowledgements.xml:219(entry) Acknowledgements.xml:226(entry) Acknowledgements.xml:233(entry) Acknowledgements.xml:234(entry) Acknowledgements.xml:240(entry) Acknowledgements.xml:241(entry) Acknowledgements.xml:247(entry) Acknowledgements.xml:254(entry) Acknowledgements.xml:261(entry)
+#. Acknowledgements.xml:60(entry) Acknowledgements.xml:67(entry) Acknowledgements.xml:74(entry) Acknowledgements.xml:81(entry) Acknowledgements.xml:88(entry) Acknowledgements.xml:95(entry) Acknowledgements.xml:102(entry) Acknowledgements.xml:103(entry) Acknowledgements.xml:109(entry) Acknowledgements.xml:116(entry) Acknowledgements.xml:117(entry) Acknowledgements.xml:123(entry) Acknowledgements.xml:130(entry) Acknowledgements.xml:131(entry) Acknowledgements.xml:137(entry) Acknowledgements.xml:138(entry) Acknowledgements.xml:144(entry) Acknowledgements.xml:151(entry) Acknowledgements.xml:158(entry) Acknowledgements.xml:164(entry) Acknowledgements.xml:165(entry) Acknowledgements.xml:171(entry) Acknowledgements.xml:178(entry) Acknowledgements.xml:185(entry) Acknowledgements.xml:192(entry) Acknowledgements.xml:199(entry) Acknowledgements.xml:206(entry) Acknowledgements.xml:213(entry) Acknowledgements.xml:220(entry) Acknowledgements.xml:227(entry) Acknowledgements.xml:234(entry) Acknowledgements.xml:235(entry) Acknowledgements.xml:241(entry) Acknowledgements.xml:242(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:255(entry) Acknowledgements.xml:262(entry)
 msgid "Yes"
 msgstr "Oui"
 
-#. Acknowledgements.xml:80(entry) Acknowledgements.xml:87(entry) Acknowledgements.xml:94(entry) Acknowledgements.xml:101(entry) Acknowledgements.xml:108(entry) Acknowledgements.xml:115(entry) Acknowledgements.xml:129(entry) Acknowledgements.xml:143(entry) Acknowledgements.xml:164(entry) Acknowledgements.xml:171(entry) Acknowledgements.xml:185(entry) Acknowledgements.xml:192(entry) Acknowledgements.xml:199(entry) Acknowledgements.xml:206(entry) Acknowledgements.xml:213(entry) Acknowledgements.xml:220(entry) Acknowledgements.xml:227(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:255(entry) Acknowledgements.xml:262(entry)
+#. Acknowledgements.xml:61(entry) Acknowledgements.xml:68(entry) Acknowledgements.xml:75(entry) Acknowledgements.xml:82(entry) Acknowledgements.xml:89(entry) Acknowledgements.xml:96(entry) Acknowledgements.xml:110(entry) Acknowledgements.xml:124(entry) Acknowledgements.xml:145(entry) Acknowledgements.xml:152(entry) Acknowledgements.xml:159(entry) Acknowledgements.xml:172(entry) Acknowledgements.xml:179(entry) Acknowledgements.xml:186(entry) Acknowledgements.xml:193(entry) Acknowledgements.xml:200(entry) Acknowledgements.xml:207(entry) Acknowledgements.xml:214(entry) Acknowledgements.xml:221(entry) Acknowledgements.xml:228(entry) Acknowledgements.xml:249(entry) Acknowledgements.xml:256(entry) Acknowledgements.xml:263(entry)
 msgid "No"
 msgstr "Non"
 
-#. Acknowledgements.xml:85(entry)
+#. Acknowledgements.xml:66(entry)
 msgid "Basque"
 msgstr "Basque"
 
-#. Acknowledgements.xml:92(entry)
+#. Acknowledgements.xml:73(entry)
 msgid "Chinese (Traditional)"
 msgstr "Chinois (traditionnel)"
 
-#. Acknowledgements.xml:99(entry)
+#. Acknowledgements.xml:80(entry)
 msgid "Chinese (Simplified)"
 msgstr "Chinois (simplifié)"
 
-#. Acknowledgements.xml:106(entry)
+#. Acknowledgements.xml:87(entry)
 msgid "Croatian"
 msgstr "Croate"
 
-#. Acknowledgements.xml:113(entry)
+#. Acknowledgements.xml:94(entry)
 msgid "Czech"
 msgstr "Tchèque"
 
-#. Acknowledgements.xml:120(entry)
+#. Acknowledgements.xml:101(entry)
 msgid "Danish"
 msgstr "Danois"
 
-#. Acknowledgements.xml:127(entry)
+#. Acknowledgements.xml:108(entry)
 msgid "Dutch"
 msgstr "Hollandais"
 
-#. Acknowledgements.xml:134(entry)
+#. Acknowledgements.xml:115(entry)
 msgid "English"
 msgstr "Anglais"
 
-#. Acknowledgements.xml:141(entry)
+#. Acknowledgements.xml:122(entry)
 msgid "Finnish"
 msgstr "Finnois"
 
-#. Acknowledgements.xml:148(entry)
+#. Acknowledgements.xml:129(entry)
 msgid "French"
 msgstr "Français"
 
-#. Acknowledgements.xml:155(entry)
+#. Acknowledgements.xml:136(entry)
 msgid "German"
 msgstr "Allemand"
 
-#. Acknowledgements.xml:162(entry)
+#. Acknowledgements.xml:143(entry)
 msgid "Greek"
 msgstr "Grec"
 
-#. Acknowledgements.xml:169(entry)
+#. Acknowledgements.xml:150(entry)
 msgid "Hungarian"
 msgstr "Hongrois"
 
-#. Acknowledgements.xml:176(entry)
+#. Acknowledgements.xml:157(entry)
+msgid "Hebrew"
+msgstr ""
+
+#. Acknowledgements.xml:163(entry)
 msgid "Italian"
 msgstr "Italien"
 
-#. Acknowledgements.xml:183(entry)
+#. Acknowledgements.xml:170(entry)
 msgid "Korean"
 msgstr "Coréen"
 
-#. Acknowledgements.xml:190(entry)
+#. Acknowledgements.xml:177(entry)
 msgid "Mongolian"
 msgstr "Mongolien"
 
-#. Acknowledgements.xml:197(entry)
+#. Acknowledgements.xml:184(entry)
 msgid "Norwegian"
 msgstr "Norvégien"
 
-#. Acknowledgements.xml:204(entry)
+#. Acknowledgements.xml:191(entry)
+#, fuzzy
+msgid "Persian"
+msgstr "Serbe"
+
+#. Acknowledgements.xml:194(entry)
+msgid "Shayan Abyari &amp; Yashar PourMohammad"
+msgstr ""
+
+#. Acknowledgements.xml:198(entry)
 msgid "Polish"
 msgstr "Polonais"
 
-#. Acknowledgements.xml:211(entry)
-msgid "Portuguese"
+#. Acknowledgements.xml:205(entry)
+#, fuzzy
+msgid "Portuguese (Brazil)"
 msgstr "Portugais"
 
-#. Acknowledgements.xml:218(entry)
+#. Acknowledgements.xml:212(entry)
+#, fuzzy
+msgid "Portuguese (Portugal)"
+msgstr "Portugais"
+
+#. Acknowledgements.xml:219(entry)
 msgid "Russian"
 msgstr "Russe"
 
-#. Acknowledgements.xml:225(entry)
+#. Acknowledgements.xml:226(entry)
 msgid "Serbian"
 msgstr "Serbe"
 
-#. Acknowledgements.xml:232(entry)
+#. Acknowledgements.xml:233(entry)
 msgid "Slovenian"
 msgstr "Slovène"
 
-#. Acknowledgements.xml:239(entry)
+#. Acknowledgements.xml:240(entry)
 msgid "Spanish"
 msgstr "Espagnol"
 
-#. Acknowledgements.xml:246(entry)
+#. Acknowledgements.xml:247(entry)
 msgid "Swedish"
 msgstr "Suédois"
 
-#. Acknowledgements.xml:253(entry)
+#. Acknowledgements.xml:254(entry)
 msgid "Turkish"
 msgstr "Turc"
 
-#. Acknowledgements.xml:260(entry)
+#. Acknowledgements.xml:261(entry)
 msgid "Vietnamese"
 msgstr "Vietnamien"
 
-#. Acknowledgements.xml:272(title)
+#. Acknowledgements.xml:273(title)
 msgid "Miscellaneous"
 msgstr "Divers"
 
-#. Acknowledgements.xml:273(para)
+#. Acknowledgements.xml:274(para)
 msgid "The icon was designed by <placeholder-1/>."
 msgstr "L'icône a été conçue par <placeholder-1/>."
 
@@ -4362,6 +4380,52 @@ msgstr "L'icône a été conçue par <placeholder-1/>."
 msgid "translator-credits"
 msgstr "translator-credits"
 
+#~ msgid ""
+#~ "The probability function of the normal distribution in a variate with "
+#~ "mean and standard"
+#~ msgstr ""
+#~ "La fonction densité de probabilité de la loi normale, avec valeurs "
+#~ "optionnelles pour moyenne et écart-type."
+
+#, fuzzy
+#~ msgid "I"
+#~ msgstr "Agrandir"
+
+#, fuzzy
+#~ msgid "T"
+#~ msgstr "À "
+
+#, fuzzy
+#~ msgid "N"
+#~ msgstr "Non"
+#~ msgid "Parts of Graph are using the Spirit parser library:"
+#~ msgstr "Des parties de Graph utilisent la librairie Spirit parser :"
+#~ msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
+#~ msgstr ""
+#~ "Graph utilise la librairie BMGLib pour enregistrer les images au format "
+#~ "Portable Network Graphics (PNG) :"
+#~ msgid "f'(x)"
+#~ msgstr "f'(x)"
+#~ msgid "sin(x)^2= (sin(x))^2"
+#~ msgstr "sin(x)^2= (sin(x))^2"
+#~ msgid "sin 2x = sin(2x)"
+#~ msgstr "sin 2x = sin(2x)"
+#~ msgid "sin 2+x = sin(2)+x"
+#~ msgstr "sin 2+x = sin(2)+x"
+#~ msgid "sin x^2 = sin(x^2)"
+#~ msgstr "sin x^2 = sin(x^2)"
+#~ msgid "2(x+3)x = 2*(x+3)*x"
+#~ msgstr "2(x+3)x = 2*(x+3)*x"
+#~ msgid "-x^2 = -(x^2)"
+#~ msgstr "-x^2 = -(x^2)"
+#~ msgid "2x = 2*x"
+#~ msgstr "2x = 2*x"
+#~ msgid "e^2x = e^(2*x)"
+#~ msgstr "e^2x = e^(2*x)"
+#~ msgid "avi"
+#~ msgstr "avi"
+#~ msgid "Tnt Delphi Unicode Controls"
+#~ msgstr "Tnt Delphi Unicode Controls"
 #~ msgid ""
 #~ "The <placeholder-1/> function calculates the inverse cosine of "
 #~ "<placeholder-2/>. The result may be in <glossterm>radians</glossterm> or "

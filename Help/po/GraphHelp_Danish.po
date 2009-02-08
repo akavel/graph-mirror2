@@ -1,19 +1,24 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2008-10-20 18:51Romance Standard Time\n"
-"PO-Revision-Date: 2009-01-30 22:00+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2009-02-08 17:49Romance Standard Time\n"
+"PO-Revision-Date: 2009-02-08 20:35+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Version.xml:2(subtitle)
+#, fuzzy
+msgid "Version <placeholder-1/>"
+msgstr "<placeholder-1/>-funktion"
+
 #. Trigonometric.xml:7(title) FunctionList.xml:180(emphasis)
 msgid "Trigonometric"
 msgstr "Trigonometrisk"
 
-#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:40(title) Trigonometric.xml:41(primary) Trigonometric.xml:71(title) Trigonometric.xml:72(primary) Trigonometric.xml:104(title) Trigonometric.xml:105(primary) Trigonometric.xml:129(title) Trigonometric.xml:130(primary) Trigonometric.xml:154(title) Trigonometric.xml:155(primary) Trigonometric.xml:179(title) Trigonometric.xml:180(primary) Trigonometric.xml:209(title) Trigonometric.xml:210(primary) Trigonometric.xml:239(title) Trigonometric.xml:240(primary) Trigonometric.xml:269(title) Trigonometric.xml:270(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:321(title) Trigonometric.xml:322(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:41(title) Special.xml:42(primary) Special.xml:68(title) Special.xml:69(primary) Special.xml:94(title) Special.xml:95(primary) Special.xml:117(title) Special.xml:118(primary) Special.xml:147(title) Special.xml:148(primary) Special.xml:170(title) Special.xml:171(primary) Special.xml:199(title) Special.xml:200(primary) Special.xml:226(title) Special.xml:227(primary) Special.xml:251(title) Special.xml:252(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:33(title) Rounding.xml:34(primary) Rounding.xml:58(title) Rounding.xml:59(primary) Rounding.xml:81(title) Rounding.xml:82(primary) Rounding.xml:105(title) Rounding.xml:106(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:52(title) PowerAndLog.xml:53(primary) PowerAndLog.xml:74(title) PowerAndLog.xml:75(primary) PowerAndLog.xml:110(title) PowerAndLog.xml:111(primary) PowerAndLog.xml:135(title) PowerAndLog.xml:136(primary) PowerAndLog.xml:158(title) PowerAndLog.xml:159(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:33(title) Piecewise.xml:34(primary) Piecewise.xml:55(title) Piecewise.xml:56(primary) Piecewise.xml:79(title) Piecewise.xml:80(primary) Piecewise.xml:103(title) Piecewise.xml:104(primary) Piecewise.xml:128(title) Piecewise.xml:129(primary) Piecewise.xml:150(title) Piecewise.xml:151(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:33(title) Hyperbolic.xml:34(primary) Hyperbolic.xml:57(title) Hyperbolic.xml:58(primary) Hyperbolic.xml:81(title) Hyperbolic.xml:82(primary) Hyperbolic.xml:104(title) Hyperbolic.xml:105(primary) Hyperbolic.xml:128(primary) Hyperbolic.xml:132(title) Hyperbolic.xml:152(title) Hyperbolic.xml:153(primary) Hyperbolic.xml:176(title) Hyperbolic.xml:177(primary) Hyperbolic.xml:200(title) Hyperbolic.xml:201(primary) Hyperbolic.xml:224(title) Hyperbolic.xml:225(primary) Hyperbolic.xml:247(title) Hyperbolic.xml:248(primary) Hyperbolic.xml:270(title) Hyperbolic.xml:271(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:32(title) Complex.xml:33(primary) Complex.xml:59(title) Complex.xml:60(primary) Complex.xml:81(title) Complex.xml:82(primary) Complex.xml:102(title) Complex.xml:103(primary)
+#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:40(title) Trigonometric.xml:41(primary) Trigonometric.xml:71(title) Trigonometric.xml:72(primary) Trigonometric.xml:104(title) Trigonometric.xml:105(primary) Trigonometric.xml:129(title) Trigonometric.xml:130(primary) Trigonometric.xml:154(title) Trigonometric.xml:155(primary) Trigonometric.xml:179(title) Trigonometric.xml:180(primary) Trigonometric.xml:209(title) Trigonometric.xml:210(primary) Trigonometric.xml:239(title) Trigonometric.xml:240(primary) Trigonometric.xml:269(title) Trigonometric.xml:270(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:321(title) Trigonometric.xml:322(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:41(title) Special.xml:42(primary) Special.xml:68(title) Special.xml:69(primary) Special.xml:94(title) Special.xml:95(primary) Special.xml:117(title) Special.xml:118(primary) Special.xml:147(title) Special.xml:148(primary) Special.xml:170(title) Special.xml:171(primary) Special.xml:199(title) Special.xml:200(primary) Special.xml:226(title) Special.xml:227(primary) Special.xml:251(title) Special.xml:252(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:33(title) Rounding.xml:34(primary) Rounding.xml:58(title) Rounding.xml:59(primary) Rounding.xml:81(title) Rounding.xml:82(primary) Rounding.xml:105(title) Rounding.xml:106(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:52(title) PowerAndLog.xml:53(primary) PowerAndLog.xml:74(title) PowerAndLog.xml:75(primary) PowerAndLog.xml:110(title) PowerAndLog.xml:111(primary) PowerAndLog.xml:135(title) PowerAndLog.xml:136(primary) PowerAndLog.xml:158(title) PowerAndLog.xml:159(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:33(title) Piecewise.xml:34(primary) Piecewise.xml:55(title) Piecewise.xml:56(primary) Piecewise.xml:79(title) Piecewise.xml:80(primary) Piecewise.xml:103(title) Piecewise.xml:104(primary) Piecewise.xml:128(title) Piecewise.xml:129(primary) Piecewise.xml:150(title) Piecewise.xml:151(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:33(title) Hyperbolic.xml:34(primary) Hyperbolic.xml:57(title) Hyperbolic.xml:58(primary) Hyperbolic.xml:81(title) Hyperbolic.xml:82(primary) Hyperbolic.xml:104(title) Hyperbolic.xml:105(primary) Hyperbolic.xml:128(primary) Hyperbolic.xml:132(title) Hyperbolic.xml:152(title) Hyperbolic.xml:153(primary) Hyperbolic.xml:176(title) Hyperbolic.xml:177(primary) Hyperbolic.xml:200(title) Hyperbolic.xml:201(primary) Hyperbolic.xml:225(title) Hyperbolic.xml:226(primary) Hyperbolic.xml:248(title) Hyperbolic.xml:249(primary) Hyperbolic.xml:271(title) Hyperbolic.xml:272(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:32(title) Complex.xml:33(primary) Complex.xml:59(title) Complex.xml:60(primary) Complex.xml:81(title) Complex.xml:82(primary) Complex.xml:102(title) Complex.xml:103(primary)
 msgid "<placeholder-1/> function"
 msgstr "<placeholder-1/>-funktion"
 
@@ -29,11 +34,11 @@ msgstr "sinus"
 msgid "Returns the sine of the argument."
 msgstr "Returnerer sinus til argumentet."
 
-#. Trigonometric.xml:17(title) Trigonometric.xml:48(title) Trigonometric.xml:79(title) Trigonometric.xml:113(title) Trigonometric.xml:138(title) Trigonometric.xml:163(title) Trigonometric.xml:187(title) Trigonometric.xml:217(title) Trigonometric.xml:247(title) Trigonometric.xml:278(title) Trigonometric.xml:304(title) Trigonometric.xml:330(title) Special.xml:17(title) Special.xml:48(title) Special.xml:74(title) Special.xml:101(title) Special.xml:124(title) Special.xml:153(title) Special.xml:178(title) Special.xml:206(title) Special.xml:234(title) Special.xml:257(title) Rounding.xml:17(title) Rounding.xml:42(title) Rounding.xml:66(title) Rounding.xml:90(title) Rounding.xml:111(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:59(title) PowerAndLog.xml:80(title) PowerAndLog.xml:118(title) PowerAndLog.xml:142(title) PowerAndLog.xml:165(title) Piecewise.xml:16(title) Piecewise.xml:39(title) Piecewise.xml:62(title) Piecewise.xml:86(title) Piecewise.xml:109(title) Piecewise.xml:134(title) Piecewise.xml:156(title) Hyperbolic.xml:16(title) Hyperbolic.xml:40(title) Hyperbolic.xml:64(title) Hyperbolic.xml:89(title) Hyperbolic.xml:112(title) Hyperbolic.xml:137(title) Hyperbolic.xml:159(title) Hyperbolic.xml:183(title) Hyperbolic.xml:207(title) Hyperbolic.xml:232(title) Hyperbolic.xml:255(title) Hyperbolic.xml:278(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:40(title) Complex.xml:66(title) Complex.xml:88(title) Complex.xml:109(title)
+#. Trigonometric.xml:17(title) Trigonometric.xml:48(title) Trigonometric.xml:79(title) Trigonometric.xml:113(title) Trigonometric.xml:138(title) Trigonometric.xml:163(title) Trigonometric.xml:187(title) Trigonometric.xml:217(title) Trigonometric.xml:247(title) Trigonometric.xml:278(title) Trigonometric.xml:304(title) Trigonometric.xml:330(title) Special.xml:17(title) Special.xml:48(title) Special.xml:74(title) Special.xml:101(title) Special.xml:124(title) Special.xml:153(title) Special.xml:178(title) Special.xml:206(title) Special.xml:234(title) Special.xml:257(title) Rounding.xml:17(title) Rounding.xml:42(title) Rounding.xml:66(title) Rounding.xml:90(title) Rounding.xml:111(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:59(title) PowerAndLog.xml:80(title) PowerAndLog.xml:118(title) PowerAndLog.xml:142(title) PowerAndLog.xml:165(title) Piecewise.xml:16(title) Piecewise.xml:39(title) Piecewise.xml:62(title) Piecewise.xml:86(title) Piecewise.xml:109(title) Piecewise.xml:134(title) Piecewise.xml:156(title) Hyperbolic.xml:16(title) Hyperbolic.xml:40(title) Hyperbolic.xml:64(title) Hyperbolic.xml:89(title) Hyperbolic.xml:112(title) Hyperbolic.xml:137(title) Hyperbolic.xml:159(title) Hyperbolic.xml:183(title) Hyperbolic.xml:207(title) Hyperbolic.xml:233(title) Hyperbolic.xml:256(title) Hyperbolic.xml:279(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:40(title) Complex.xml:66(title) Complex.xml:88(title) Complex.xml:109(title)
 msgid "Syntax"
 msgstr "Syntaks"
 
-#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:78(title) Special.xml:105(title) Special.xml:128(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:26(entry) Installation.xml:81(entry) Installation.xml:152(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:141(title) Hyperbolic.xml:163(title) Hyperbolic.xml:187(title) Hyperbolic.xml:211(title) Hyperbolic.xml:236(title) Hyperbolic.xml:259(title) Hyperbolic.xml:282(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title)
+#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:78(title) Special.xml:105(title) Special.xml:128(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:28(entry) Installation.xml:82(entry) Installation.xml:153(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:141(title) Hyperbolic.xml:163(title) Hyperbolic.xml:187(title) Hyperbolic.xml:211(title) Hyperbolic.xml:237(title) Hyperbolic.xml:260(title) Hyperbolic.xml:283(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title)
 msgid "Description"
 msgstr "Beskrivelse"
 
@@ -41,15 +46,15 @@ msgstr "Beskrivelse"
 msgid "radians"
 msgstr "radianer"
 
-#. Trigonometric.xml:25(glossterm) Trigonometric.xml:56(glossterm) Trigonometric.xml:87(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:108(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:262(glossterm) Hyperbolic.xml:285(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
+#. Trigonometric.xml:25(glossterm) Trigonometric.xml:56(glossterm) Trigonometric.xml:87(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:108(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
 msgid "numeric expression"
 msgstr "numerisk udtryk"
 
-#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:121(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:262(glossterm) Hyperbolic.xml:285(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
+#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:121(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
 msgid "real number"
 msgstr "reelt tal"
 
-#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:262(glossterm) Hyperbolic.xml:285(glossterm) Glossary.xml:13(glossterm) Glossary.xml:14(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
+#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:13(glossterm) Glossary.xml:14(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
 msgid "complex number"
 msgstr "komplekst tal"
 
@@ -130,8 +135,9 @@ msgid "Returns the inverse tangent of the argument."
 msgstr "Returnerer invers tangens til argumentet."
 
 #. Trigonometric.xml:168(para)
-msgid "The <placeholder-1/> function calculates the inverse tangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a real number. This is the reverse of the <placeholder-6/> function."
-msgstr "Funktionen <placeholder-1/> beregner invers tangens til vinklen <placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et reelt tal. Dette er den omvendte af funktionen <placeholder-6/>."
+#, fuzzy
+msgid "The <placeholder-1/> function calculates the inverse tangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/>. This is the reverse of the <placeholder-7/> function."
+msgstr "Funktionen <placeholder-1/> beregner invers cosinus til vinklen <placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et <placeholder-6/>. Dette er den omvendte af funktionen <placeholder-7/>."
 
 #. Trigonometric.xml:182(primary) Trigonometric.xml:272(primary)
 msgid "secant"
@@ -229,7 +235,7 @@ msgstr "evaluer"
 msgid "function list"
 msgstr "funktionsliste"
 
-#. TableDialog.xml:15(guimenu) MenuItems.xml:559(guimenu) MenuItems.xml:574(guimenu) MenuItems.xml:589(guimenu) MenuItems.xml:608(guimenu) MenuItems.xml:623(guimenu) HowToUse.xml:48(guimenu) FAQ.xml:216(guimenu) EvaluateDialog.xml:18(guimenu) EvaluateDialog.xml:101(guimenu) EvaluateDialog.xml:128(guimenu)
+#. TableDialog.xml:15(guimenu) MenuItems.xml:559(guimenu) MenuItems.xml:574(guimenu) MenuItems.xml:589(guimenu) MenuItems.xml:608(guimenu) MenuItems.xml:623(guimenu) HowToUse.xml:48(guimenu) FAQ.xml:217(guimenu) EvaluateDialog.xml:18(guimenu) EvaluateDialog.xml:101(guimenu) EvaluateDialog.xml:128(guimenu)
 msgid "Calc"
 msgstr "Beregn"
 
@@ -241,7 +247,7 @@ msgstr "Nedenstående dialogboks anvendes til at evaluere den markerede funktion
 msgid "When you press the <guibutton>Calc</guibutton> button, the table will be filled with the independent variable in the first column. The rest of the columns dependes on the type of function. For a standard function, the table will show f(x), f'(x) and f''(x). For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx. For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx. Unneeded columns can be hidden from the context menu. If the calculations takes a long time, a progress indicator will be shown."
 msgstr "Når du trykker på knappen <guibutton>Beregn</guibutton>, bliver tabellen fyldt med x-værdierne i intervallet. De øvrige kolonner afhænger af funktionstypen. For normale funktioner viser tabellen f(x), f'(x) og f''(x). For parameterfunktioner viser den x(t), y(t), dx/dt, dy/dt og dy/dx. For polærfunktioner viser den r(t), x(t), y(t), dr/dt og dy/dx. Overflødige kolonner kan fjernes vha. undermenuen. Hvis beregningen tager lang tid, viser programmet en indikator, mens værdierne beregnes, hvoraf det fremgår, hvor langt programmet er med beregningerne."
 
-#. TableDialog.xml:34(guimenuitem) MenuItems.xml:184(guimenuitem) FAQ.xml:235(guimenuitem)
+#. TableDialog.xml:34(guimenuitem) MenuItems.xml:184(guimenuitem) FAQ.xml:236(guimenuitem)
 msgid "Copy"
 msgstr "Kopier"
 
@@ -263,7 +269,7 @@ msgstr "Fra højreklikmenuen er det også muligt at eksportere de markerede cell
 
 #. TableDialog.xml:51(para)
 #, fuzzy
-msgid "Note that is you choose to create a lot of values in the table, it may take some time to calculate them. Many values may also take up a lot of memory from the system."
+msgid "Note that if you choose to create a lot of values in the table, it may take some time to calculate them. Many values may also take up a lot of memory from the system."
 msgstr "Bemærk, at hvis du opretter mange værdier i tabellen, kan det tage meget lang tid for programmet at foretage beregningerne. Desuden vil mange værdier optage en hel del hukommelse fra systemet."
 
 #. Special.xml:7(title) FunctionList.xml:390(emphasis)
@@ -286,7 +292,7 @@ msgstr "Returnerer det numeriske integral af det første argument i intervallet 
 msgid "numeric expressions"
 msgstr "numeriske udtryk"
 
-#. Special.xml:32(glossterm) Special.xml:61(glossterm) Special.xml:87(glossterm) Special.xml:161(glossterm) Special.xml:244(glossterm) Special.xml:268(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:115(glossterm) Errors.xml:16(glossterm)
+#. Special.xml:32(glossterm) Special.xml:61(glossterm) Special.xml:87(glossterm) Special.xml:161(glossterm) Special.xml:244(glossterm) Special.xml:268(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:115(glossterm) Errors.xml:16(glossterm) Errors.xml:102(glossterm)
 msgid "real numbers"
 msgstr "reelle tal"
 
@@ -300,7 +306,7 @@ msgstr "sum"
 
 #. Special.xml:44(para)
 #, fuzzy
-msgid "Returns the summation of the first argument evaluated for all integers from the second to the third parameter."
+msgid "Returns the summation of the first argument evaluated for all integers from the second to the third argument."
 msgstr "Returnerer summen af det første argument evalueret for alle heltal fra det andet til det tredje argument."
 
 #. Special.xml:53(para)
@@ -313,7 +319,7 @@ msgstr ""
 
 #. Special.xml:70(para)
 #, fuzzy
-msgid "Returns the product of the first argument evaluated for all integers from the second to the third parameter."
+msgid "Returns the product of the first argument evaluated for all integers from the second to the third argument."
 msgstr "Returnerer produktet af det første argument evalueret for hvert heltal i intervallet fra det andet til det tredje argument."
 
 #. Special.xml:79(para)
@@ -348,7 +354,7 @@ msgstr "Funktionen <placeholder-1/> returnerer resultatet af Eulers gammafunktio
 msgid "Returns the value of the Euler beta function evaluated for the arguments."
 msgstr "Returnerer værdien af Eulers betafunktion evalueret for argumenterne."
 
-#. Special.xml:161(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:117(glossterm) AxesDialog.xml:25(primary) AxesDialog.xml:205(glossterm) AxesDialog.xml:229(glossterm)
+#. Special.xml:161(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:117(glossterm) Errors.xml:103(glossterm) AxesDialog.xml:25(primary) AxesDialog.xml:205(glossterm) AxesDialog.xml:229(glossterm)
 msgid "complex numbers"
 msgstr "komplekse tal"
 
@@ -405,15 +411,17 @@ msgid "Returns the remainder of the first argument divided by the second argumen
 msgstr "Returnerer resten, når det første argument divideres med det andet argument."
 
 #. Special.xml:239(para)
-msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>=0, <placeholder-8/> returns 0. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
+#, fuzzy
+msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>, <placeholder-8/> returns 0. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr "Beregner <placeholder-1/> modulo <placeholder-2/>, dvs. resten fra <placeholder-3/>. <placeholder-4/> beregner resten f, så <placeholder-5/> for et heltal a og 0 &le; f &lt; n. f vil altid have samme fortegn som <placeholder-6/>. Når <placeholder-7/>=0, vil <placeholder-8/> returnere 0. <placeholder-9/> og <placeholder-10/> er <placeholder-11/>, der evalueres til <placeholder-12/>."
 
-#. Special.xml:253(para)
+#. Special.xml:253(para) FunctionList.xml:430(entry)
 msgid "Returns the normal distribution of the first argument with optional mean value and standard deviation."
 msgstr "Returnerer normalfordelingen af det første argument med valgfri middelværdi og spredning."
 
 #. Special.xml:262(para)
-msgid "The <placeholder-1/> function is the probability density of the normal distribution, also called Gaussian distribution. <placeholder-2/> is the variate, also known as the random variable, <placeholder-3/> is the mean value and &sigma; is the standard deviation. <placeholder-4/> and &sigma; are optional and if left out the standard normal distribution is used where <placeholder-5/>=0 and &sigma;=1. <placeholder-6/>, <placeholder-7/> and &sigma; may be any <placeholder-8/> that evaluate to <placeholder-9/> where &sigma; &gt; 0. The normal distribution is defined as: <placeholder-10/>"
+#, fuzzy
+msgid "The <placeholder-1/> function is the probability density of the normal distribution, also called Gaussian distribution. <placeholder-2/> is the variate, also known as the random variable, <placeholder-3/> is the mean value and &sigma; is the standard deviation. <placeholder-4/> and &sigma; are optional and if left out the standard normal distribution is used where <placeholder-5/> and &sigma;=1. <placeholder-6/>, <placeholder-7/> and &sigma; may be any <placeholder-8/> that evaluate to <placeholder-9/> where &sigma; &gt; 0. The normal distribution is defined as: <placeholder-10/>"
 msgstr "Funktionen <placeholder-1/> er sandsynlighedstætheden for normalfordelingen, også kaldet den gaussiske fordeling. <placeholder-2/> er den stokastiske variabel, <placeholder-3/> er middelværdien, og &sigma; er spredningen. <placeholder-4/> og &sigma; er valgfrie parametre, og hvis de udelades, benyttes standardnormalfordelingen, hvor <placeholder-5/>=0 og &sigma;=1. <placeholder-6/>, <placeholder-7/> og &sigma; kan være hvilke som helst <placeholder-8/>, der evalueres til <placeholder-9/>, hvor &sigma; &gt; 0. Normalfordelingen er defineret ved: <placeholder-10/>"
 
 #. SaveImageDialog.xml:8(title)
@@ -457,7 +465,8 @@ msgid "Use the menu item <placeholder-1/> to save the shown coordinate system as
 msgstr "Vælg menupunktet <placeholder-1/>, hvis du ønsker at gemme de viste grafer i en billedfil. Programmet understøtter fem formater: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), JPEG (jpg) og Portable Document Format (pdf). Når menupunktet vælges, fremkommer en standard <placeholder-2/>-dialogboks, hvor det ønskede filnavn skrives, og filtypen vælges."
 
 #. SaveImageDialog.xml:25(para)
-msgid "bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen. emf files are used for vector graphics. The Options button in the save dialog can be used to change to image size. You may also be able to change other settings depending on the chosen image format."
+#, fuzzy
+msgid "bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen. emf files are used for vector graphics. The Options button in the save dialog can be used to change the image size. You may also be able to change other settings depending on the chosen image format."
 msgstr "Vælges filtypen til at være bmp eller png, gemmes et billede som bitmap nøjagtigt magen til det, som vises på skærmen. emf-filer gemmes som vektorgrafik. Knappen Indstillinger i dialogboksen Gem som billede kan bruges til at ændre billedstørrelsen. Afhængig af det valgte format kan det også være muligt at ændre yderligere indstillinger."
 
 #. SaveImageDialog.xml:31(para)
@@ -530,7 +539,7 @@ msgstr "rund ned"
 
 #. Rounding.xml:85(primary)
 #, fuzzy
-msgid "greatest inetger"
+msgid "greatest integer"
 msgstr "største heltal"
 
 #. Rounding.xml:86(para)
@@ -717,7 +726,7 @@ msgstr "Evaluerer en sekvens af if-funktioner og returnerer det første resultat
 msgid "The <placeholder-1/> function evaluates <placeholder-2/> and if it is different from 0 then <placeholder-3/> is evaluated and returned. Else <placeholder-4/> is evaluated and if it is different from 0 then <placeholder-5/> is returned and so forth. If none of the conditions are true <placeholder-6/> is returned. <placeholder-7/> is optional and if not specified <placeholder-8/> returns an error if none of the conditions are true. If <placeholder-9/> has 3 arguments it will be the same as the <placeholder-10/> function. The arguments may be any <placeholder-11/> that evaluate to <placeholder-12/> or <placeholder-13/>."
 msgstr "Funktionen <placeholder-1/> evaluerer <placeholder-2/>, og hvis den er forskellig fra 0, vil <placeholder-3/> blive evalueret og returneret. Ellers vil <placeholder-4/> blive evalueret, og hvis resultatet er forskelligt fra 0, vil <placeholder-5/> blive returneret osv. Såfremt ingen af betingelserne er sande, vil <placeholder-6/> blive returneret. <placeholder-7/> er valgfri, og er denne ikke angivet, vil <placeholder-8/> returnere en fejl, såfremt ingen af betingelserne er sande. Hvis <placeholder-9/> har 3 argumenter, er den identisk med funktionen <placeholder-10/>. Argumenterne kan være hvilke som helst <placeholder-11/>, der evalueres til <placeholder-12/> eller <placeholder-13/>."
 
-#. OptionsDialog.xml:8(title) InsertShadingDialog.xml:109(title) InsertShadingDialog.xml:111(guilabel) InsertShadingDialog.xml:202(guilabel)
+#. OptionsDialog.xml:8(title) InsertShadingDialog.xml:109(title) InsertShadingDialog.xml:111(guilabel) InsertShadingDialog.xml:201(guilabel)
 msgid "Options"
 msgstr "Indstillinger"
 
@@ -725,7 +734,7 @@ msgstr "Indstillinger"
 msgid "Options dialog"
 msgstr "Dialogboksen Indstillinger"
 
-#. OptionsDialog.xml:13(guimenu) OLE.xml:19(guimenu) OLE.xml:25(guimenu) OLE.xml:32(guimenu) MenuItems.xml:142(guimenu) MenuItems.xml:156(guimenu) MenuItems.xml:162(guimenu) MenuItems.xml:170(guimenu) MenuItems.xml:184(guimenu) MenuItems.xml:198(guimenu) MenuItems.xml:212(guimenu) MenuItems.xml:227(guimenu) MenuItems.xml:243(guimenu) FAQ.xml:234(guimenu) AxesDialog.xml:35(guimenu)
+#. OptionsDialog.xml:13(guimenu) OLE.xml:19(guimenu) OLE.xml:25(guimenu) OLE.xml:32(guimenu) MenuItems.xml:142(guimenu) MenuItems.xml:156(guimenu) MenuItems.xml:162(guimenu) MenuItems.xml:170(guimenu) MenuItems.xml:184(guimenu) MenuItems.xml:198(guimenu) MenuItems.xml:212(guimenu) MenuItems.xml:227(guimenu) MenuItems.xml:243(guimenu) FAQ.xml:235(guimenu) AxesDialog.xml:35(guimenu)
 msgid "Edit"
 msgstr "Rediger"
 
@@ -769,7 +778,7 @@ msgstr "Skriftstørrelse"
 msgid "You can use this to change the scale of the fonts and most of the user interface. This is mostly useful if your screen resolution is very high, or for some other reason, you are having difficulties reading the user interface."
 msgstr "Dette kan bruges til at ændre skriftstørrelsen og det meste af brugergrænsefladen. Det er mest anvendeligt, hvis skærmopløsningen er meget høj, eller hvis man af andre grunde har svært ved at læse brugergrænsefladen."
 
-#. OptionsDialog.xml:67(term) Acknowledgements.xml:70(entry)
+#. OptionsDialog.xml:67(term) Acknowledgements.xml:51(entry)
 msgid "Language"
 msgstr "Sprog"
 
@@ -793,7 +802,7 @@ msgstr "Vis værktøjstip"
 msgid "When there is a mark in this field, you will see a small box with an explanation when you are holding the mouse pointer over an object, like an edit field, selection box, etc., for a few seconds. The description is also shown in the status bar at the bottom of the main window."
 msgstr "Når dette felt er afkrydset, vil en lille ramme med en forklaring til en valgmulighed blive vist, når musen holdes over punktet i et par sekunder. Det være sig et indtastningsfelt, en menuboks osv. Under alle omstændigheder vil forklaringen blive vist i statusbaren nederst i hovedvinduet."
 
-#. OptionsDialog.xml:99(term) FAQ.xml:124(guilabel)
+#. OptionsDialog.xml:99(term) FAQ.xml:125(guilabel)
 msgid "Save workspace on exit"
 msgstr "Gem arbejdsområde når programmet afsluttes"
 
@@ -841,7 +850,7 @@ msgstr "Bemærk at der kan blive vist forskellige resultater i <placeholder-1/> 
 msgid "Check for new version of Graph at startup"
 msgstr "Tjek for ny version af Graph ved opstart"
 
-#. OptionsDialog.xml:139(guimenu) MenuItems.xml:640(guimenu) MenuItems.xml:654(guimenu) MenuItems.xml:668(guimenu) MenuItems.xml:681(guimenu) MenuItems.xml:694(guimenu) MenuItems.xml:707(guimenu) MenuItems.xml:720(guimenu) MenuItems.xml:733(guimenu) MenuItems.xml:747(guimenu) Introduction.xml:39(guimenu)
+#. OptionsDialog.xml:139(guimenu) MenuItems.xml:640(guimenu) MenuItems.xml:654(guimenu) MenuItems.xml:668(guimenu) MenuItems.xml:681(guimenu) MenuItems.xml:694(guimenu) MenuItems.xml:707(guimenu) MenuItems.xml:720(guimenu) MenuItems.xml:733(guimenu) MenuItems.xml:747(guimenu) Introduction.xml:41(guimenu)
 msgid "Help"
 msgstr "Hjælp"
 
@@ -925,15 +934,15 @@ msgstr "Du kan oprette et nyt Graph objekt i Word ved at vælge menupunktet <pla
 msgid "To edit a Graph object you must have Graph installed on the system. If Graph is not installed you will still be able to see the image but not edit it."
 msgstr "For at kunne redigere et Graph objekt skal Graph være installeret på systemet. Hvis Graph ikke er installeret, vil du kun være i stand til at se objektet som et billede, men ikke kunne redigere i det."
 
-#. OLE.xml:55(title)
+#. OLE.xml:56(title)
 msgid "OLE client"
 msgstr "OLE-klient"
 
-#. OLE.xml:60(guimenuitem)
+#. OLE.xml:61(guimenuitem)
 msgid "Insert object..."
 msgstr "Indsæt objekt..."
 
-#. OLE.xml:56(para)
+#. OLE.xml:57(para)
 msgid "Graph can work as an OLE client as a text label in Graph is an OLE container. This means that you can paste images and OLE objects into the editor used to add labels. As in any other OLE container you can edit the object by double clicking on it. From the context menu you can use <placeholder-1/> to create a new OLE object in the label. The same dialog can be used to create an object from a file. You can for example insert an image file this way. To edit an OLE object the server must be installed on the system, else you will only be able to see object but not edit it."
 msgstr "Graph kan fungere som en OLE klient, da en tekstetiket i Graph virker som en OLE beholder. Det betyder, at du kan indsætte billeder og OLE objekter fra udklipsholderen  i editoren, som bruges til at lave etiketter. Som enhver anden OLE klient kan du redigere et objekt ved at dobbeltklikke på det. Du bruger <placeholder-1/> fra højreklikmenuen til at indsætte et nyt OLE objekt i etiketten. Den samme dialogboks kan også bruges til at oprette et objekt fra en fil. Du kan f.eks. indsætte et billede på den måde. For at redigere et OLE objekt skal serveren til objektet være installeret på systemet, ellers vil du kun være i stand til at se objektet, men ikke kunne redigere i det."
 
@@ -952,6 +961,10 @@ msgstr "genveje"
 #. MenuItems.xml:15(guimenuitem)
 msgid "New"
 msgstr "Ny"
+
+#. MenuItems.xml:16(keycap) MenuItems.xml:30(keycap) MenuItems.xml:44(keycap) MenuItems.xml:68(keycap) MenuItems.xml:113(keycap) MenuItems.xml:143(keycap) MenuItems.xml:157(keycap) MenuItems.xml:171(keycap) MenuItems.xml:185(keycap) MenuItems.xml:199(keycap) MenuItems.xml:213(keycap) MenuItems.xml:228(keycap) MenuItems.xml:347(keycap) MenuItems.xml:426(keycap) MenuItems.xml:442(keycap) MenuItems.xml:456(keycap) MenuItems.xml:470(keycap) MenuItems.xml:485(keycap) MenuItems.xml:501(keycap) MenuItems.xml:515(keycap) MenuItems.xml:590(keycap) MenuItems.xml:655(keycap)
+msgid "Ctrl"
+msgstr ""
 
 #. MenuItems.xml:20(para)
 msgid "Use this to create a new coordinate system for drawing graphs in."
@@ -1002,7 +1015,8 @@ msgid "Point series..."
 msgstr "Punktserier..."
 
 #. MenuItems.xml:99(para)
-msgid "Imports one or several point series from a tab, comma or semicolon separated data file. The first column shall contain the x-coordinates. The following columns shall contain the y-coordinates. Graph will create as many point series as there are columns with y-coordinates in the file. There is no limit the number of point series possible in the data file as long as they share the same x-coordinates."
+#, fuzzy
+msgid "Imports one or several point series from a tab, comma or semicolon separated data file. The first column shall contain the x-coordinates. The following columns shall contain the y-coordinates. Graph will create as many point series as there are columns with y-coordinates in the file. There is no limit to the number of point series possible in the data file as long as they share the same x-coordinates."
 msgstr "Importerer punktserier fra en tabulator- eller kommasepareret datafil. Den første kolonne skal indeholde x-koordinaterne, mens de efterfølgende kolonner skal indeholde y-koordinaterne. Graph opretter lige så mange punktserier, som der er kolonner med y-koordinater i filen. Man kan have lige så mange punktserier i filen, som man ønsker, så længe de deler de samme x-koordinater."
 
 #. MenuItems.xml:112(guimenuitem)
@@ -1016,6 +1030,10 @@ msgstr "Her udskrives det viste koordinatsystem med grafer på en printer."
 #. MenuItems.xml:126(guimenuitem)
 msgid "Exit"
 msgstr "Afslut"
+
+#. MenuItems.xml:127(keycap) MenuItems.xml:748(keycap)
+msgid "Alt"
+msgstr ""
 
 #. MenuItems.xml:131(para)
 msgid "Quits the program. You may be asked to save the file."
@@ -1081,6 +1099,11 @@ msgstr "Funktion"
 msgid "Insert function..."
 msgstr "Indsæt funktion..."
 
+#. MenuItems.xml:261(keycap)
+#, fuzzy
+msgid "Ins"
+msgstr "Indsæt"
+
 #. MenuItems.xml:266(para)
 msgid "Inserts a function into the coordinate system. Functions may be added with different width and color, and you can choose to only show the graph in a specified interval, and specify other settings too."
 msgstr "Indsætter grafen en funktion i koordinatsystemet. Grafen kan have forskellig bredde og farve, og man kan vælge kun at vise grafen i et bestemt interval, ligesom man kan specificere andre indstillinger."
@@ -1109,7 +1132,7 @@ msgstr "Indsæt f'(x)..."
 msgid "This dialog is used to add the first derivative to the selected function."
 msgstr "I denne dialogboks kan du indsætte den første afledede af en allerede vist funktion."
 
-#. MenuItems.xml:328(guimenuitem) InsertTrendlineDialog.xml:23(guimenuitem) InsertPointSeriesDialog.xml:20(guimenuitem)
+#. MenuItems.xml:328(guimenuitem) InsertPointSeriesDialog.xml:20(guimenuitem)
 msgid "Insert point series..."
 msgstr "Indsæt punktserie..."
 
@@ -1117,12 +1140,13 @@ msgstr "Indsæt punktserie..."
 msgid "Inserts a new point series into the coordinate system. An infinite number of points defined by their x- and y-coordinates may be added. It is possible to choose color, size, and style of the point series."
 msgstr "Indsætter en ny serie af et vilkårligt antal punkter angivet ved deres x- og y-koordinater. Det er muligt at vælge farve, størrelse og forskellige punkttyper."
 
-#. MenuItems.xml:346(guimenuitem)
+#. MenuItems.xml:346(guimenuitem) InsertTrendlineDialog.xml:23(guimenuitem)
 msgid "Insert trendline..."
 msgstr "Indsæt tendenslinje..."
 
 #. MenuItems.xml:352(para)
-msgid "Inserts a trendline as the curve curve of best fit for the selected point series. You may choose between different kinds of functions for the trendline."
+#, fuzzy
+msgid "Inserts a trendline as the curve of best fit for the selected point series. You may choose between different kinds of functions for the trendline."
 msgstr "Indsætter en tendenslinje ud fra den markerede punktserie. Der kan vælges mellem flere forskellige former for tendens."
 
 #. MenuItems.xml:363(guimenuitem) InsertRelationDialog.xml:17(guimenuitem)
@@ -1145,12 +1169,22 @@ msgstr "Dette vil vise en dialogboks, som kanbruges til at oprette en formateret
 msgid "Edit..."
 msgstr "Rediger..."
 
+#. MenuItems.xml:398(keycap)
+#, fuzzy
+msgid "Enter"
+msgstr "heltal"
+
 #. MenuItems.xml:402(para)
 msgid "This will show a dialog where you can change the selected <placeholder-1/> in the <placeholder-2/>."
 msgstr "Dette vil vise en dialogboks, hvor den valgte <placeholder-1/> kan ændres i <placeholder-2/>."
 
 #. MenuItems.xml:411(guimenuitem)
 msgid "Delete"
+msgstr "Slet"
+
+#. MenuItems.xml:412(keycap)
+#, fuzzy
+msgid "Del"
 msgstr "Slet"
 
 #. MenuItems.xml:416(para)
@@ -1165,7 +1199,7 @@ msgstr "Brugerdefinerede funktioner..."
 msgid "This shows a dialog used to create custom functions and constants in addition to the built-in ones."
 msgstr "Dette viser en dialogboks til oprettelse af brugerdefinerede funktioner og konstanter som supplement til de indbyggede."
 
-#. MenuItems.xml:441(guimenu) MenuItems.xml:455(guimenu) MenuItems.xml:469(guimenu) MenuItems.xml:484(guimenu) MenuItems.xml:500(guimenu) MenuItems.xml:514(guimenu) MenuItems.xml:530(guimenu) MenuItems.xml:543(guimenu) FAQ.xml:77(guimenu) FAQ.xml:192(guimenu)
+#. MenuItems.xml:441(guimenu) MenuItems.xml:455(guimenu) MenuItems.xml:469(guimenu) MenuItems.xml:484(guimenu) MenuItems.xml:500(guimenu) MenuItems.xml:514(guimenu) MenuItems.xml:530(guimenu) MenuItems.xml:543(guimenu) FAQ.xml:78(guimenu) FAQ.xml:193(guimenu)
 msgid "Zoom"
 msgstr "Zoom"
 
@@ -1193,7 +1227,7 @@ msgstr "Vindue"
 msgid "Hold down the <action>left mouse button</action> while you select the area you want to fill the whole graphing area. <action>Right click</action> or press <keycap>Esc</keycap> to cancel the command."
 msgstr "Hold <action>venstre musetast</action> nede og markér det område, der skal fylde hele vinduet. <action>Højreklik</action> eller tryk <keycap>Esc</keycap> for at annullere kommandoen."
 
-#. MenuItems.xml:484(guimenuitem) FAQ.xml:193(guimenuitem)
+#. MenuItems.xml:484(guimenuitem) FAQ.xml:194(guimenuitem)
 msgid "Square"
 msgstr "Kvadratisk"
 
@@ -1209,7 +1243,7 @@ msgstr "Standard"
 msgid "Returns the axes settings to the same default settings used when creating a new coordinate system."
 msgstr "Sætter det viste område af koordinatsystemet til de standardindstillinger, som også bruges ved oprettelse af et nyt koordinatsystem."
 
-#. MenuItems.xml:514(guimenuitem) FAQ.xml:78(guimenuitem)
+#. MenuItems.xml:514(guimenuitem) FAQ.xml:79(guimenuitem)
 msgid "Move system"
 msgstr "Flyt system"
 
@@ -1241,7 +1275,7 @@ msgstr "Buelængde..."
 msgid "Calculates the distance along the path between two points on the selected graph."
 msgstr "Beregner afstanden mellem to punkter langs grafen for den markerede funktion."
 
-#. MenuItems.xml:574(guimenuitem) FAQ.xml:217(guimenuitem) EvaluateDialog.xml:97(title) EvaluateDialog.xml:102(guimenuitem)
+#. MenuItems.xml:574(guimenuitem) FAQ.xml:218(guimenuitem) EvaluateDialog.xml:97(title) EvaluateDialog.xml:102(guimenuitem)
 msgid "Area"
 msgstr "Areal"
 
@@ -1254,7 +1288,8 @@ msgid "Evaluate"
 msgstr "Evaluer"
 
 #. MenuItems.xml:595(para)
-msgid "This will evaluate the selected function function for a given value. For standard functions f(x), f'(x) and f''(x) are evaluated. For parametric functions x(t), y(t), dx/dt, dy/dt and dy/dx are evaluated. For polar functions r(t), x(t), y(t), dr/dt and dy/dt are evaluated."
+#, fuzzy
+msgid "This will evaluate the selected function for a given value. For standard functions f(x), f'(x) and f''(x) are evaluated. For parametric functions x(t), y(t), dx/dt, dy/dt and dy/dx are evaluated. For polar functions r(t), x(t), y(t), dr/dt and dy/dt are evaluated."
 msgstr "Dette vil evaluere funktionen til den markerede graf for en given værdi. For standardfunktioner evalueres f(x), f'(x) og f''(x). For parameterfunktioner evalueres x(t), y(t), dx/dt, dy/dt og dy/dx. For polærfunktioner evalueres r(t), x(t), y(t), dr/dt og dy/dt."
 
 #. MenuItems.xml:608(guimenuitem)
@@ -1333,7 +1368,7 @@ msgstr "Viser hjemmesiden, der giver mulighed for at give donationer til Graph-p
 msgid "This will check if a new version of Graph is available. If there is a new version, you will be asked if you want to visit the web site of Graph to download the new version."
 msgstr "Dette vil undersøge, om der er en nyere version af programmet tilgængelig. Hvis en ny version er tilgængelig, vil du blive spurgt, om du vil besøge Graphs hjemmeside for at downloade den nye version."
 
-#. MenuItems.xml:747(guimenuitem) Introduction.xml:39(guimenuitem)
+#. MenuItems.xml:747(guimenuitem) Introduction.xml:41(guimenuitem)
 msgid "About Graph..."
 msgstr "Om Graph..."
 
@@ -1383,24 +1418,26 @@ msgstr "Dette program er fri software, og du må distribuere det og/eller ændre
 
 #. Introduction.xml:29(para)
 #, fuzzy
-msgid "The program has been tested under Microsoft Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista, but there may still be bugs left. Please report bugs and suggestions for improvements to the <placeholder-1/>."
+msgid "The program has been tested under Microsoft Windows 2000, Windows XP and Windows Vista, but there may still be bugs left. Please report bugs and suggestions for improvements to <placeholder-1/>."
 msgstr "Programmet er testet under Microsoft Windows 95, Windows 98, Windows Me, Windows 2000 og Windows XP, men der kan stadig være nogle fejl tilbage. Fejl og forslag til forbedringer bedes sendt til følgende e-mail: <placeholder-1/>"
 
-#. Introduction.xml:37(para)
-msgid "Which version are you using? This is shown in the <placeholder-1/> dialog box. You should check that you are using the newest version, else the bug may have been fixed already."
+#. Introduction.xml:33(para)
+#, fuzzy
+msgid "When you send a bug report, please write the following:"
+msgstr "Skriv venligst følgende, når du sender en fejlrapport: <placeholder-1/>"
+
+#. Introduction.xml:39(para)
+#, fuzzy
+msgid "Which version are you using? This is shown in the <placeholder-1/> dialog box. You should check that you are using the newest version as the bug may have been fixed already."
 msgstr "Hvilken version bruger du? Dette er vist i dialogboksen <placeholder-1/>. Du bør undersøge, om du bruger den nyeste version, da fejlen ellers måske allerede kan være rettet."
 
-#. Introduction.xml:44(para)
+#. Introduction.xml:46(para)
 msgid "Explain what happens and what you expected to happen."
 msgstr "Forklar hvad der sker, og hvad du havde forventet."
 
-#. Introduction.xml:49(para)
+#. Introduction.xml:51(para)
 msgid "Explain carefully how I can reproduce the bug. If I can't see what you see, it is very difficult for me to solve the problem."
 msgstr "Forklar udførligt, hvordan jeg kan genskabe fejlen. Hvis jeg ikke kan se det, du kan se, er det meget svært for mig at løse problemet."
-
-#. Introduction.xml:33(para)
-msgid "When you send a bug report, please write the following: <placeholder-1/>"
-msgstr "Skriv venligst følgende, når du sender en fejlrapport: <placeholder-1/>"
 
 #. Installation.xml:4(title)
 msgid "Installation and startup"
@@ -1414,7 +1451,7 @@ msgstr "installation"
 msgid "uninstall"
 msgstr "afinstaller"
 
-#. Installation.xml:8(primary) Installation.xml:110(emphasis)
+#. Installation.xml:8(primary) Installation.xml:111(emphasis)
 msgid "language"
 msgstr "sprog"
 
@@ -1434,116 +1471,120 @@ msgstr "fjern"
 msgid "Installation"
 msgstr "Installation"
 
-#. Installation.xml:25(entry)
+#. Installation.xml:15(para)
+#, fuzzy
+msgid "The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version number. To install, just execute the installation and follow the instructions. The installation will install the following files in the selected directory and subdirectories:"
+msgstr "Programmet distribueres som et selvudpakkende installationsprogram, der som regel hedder SetupGraph-x.y.exe, hvor x.y er versionsnummeret. Eksekver filen og følg instruktionerne for at installere. Følgende filer vil blive installeret i den mappe og de undermapper, som du vælger under installationen: <placeholder-1/>"
+
+#. Installation.xml:27(entry)
 msgid "File(s)"
 msgstr "Fil(er)"
 
-#. Installation.xml:32(entry)
+#. Installation.xml:34(entry)
 msgid "The program file."
 msgstr "Programfilen"
 
-#. Installation.xml:36(entry)
+#. Installation.xml:38(entry)
 msgid "Shell extension for showing thumbnails of grf-files in Explorer."
 msgstr "Shell extension til visning af miniaturebilleder af grf-filer i Stifinder."
 
-#. Installation.xml:40(entry)
+#. Installation.xml:42(entry)
 msgid "Translations of the program."
 msgstr "Oversættelser af programmet."
 
-#. Installation.xml:44(entry)
+#. Installation.xml:46(entry)
 msgid "Help files in different languages."
 msgstr "Hjælp på forskellige sprog."
 
-#. Installation.xml:48(entry)
+#. Installation.xml:50(entry)
 msgid "Some examples of plugins. Custom plugins can be placed here too."
 msgstr "Nogle eksempler på plugins. Brugerdefinerede plugins kan også placeres her."
 
-#. Installation.xml:52(entry)
+#. Installation.xml:54(entry)
 msgid "Some examples that can be opened in Graph."
 msgstr "Nogle eksempler, der kan åbnes i Graph."
 
-#. Installation.xml:15(para)
-msgid "The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version name. To install, just execute the installation and follow the instructions. The installation will install the following files in the selected directory and subdirectories: <placeholder-1/>"
-msgstr "Programmet distribueres som et selvudpakkende installationsprogram, der som regel hedder SetupGraph-x.y.exe, hvor x.y er versionsnummeret. Eksekver filen og følg instruktionerne for at installere. Følgende filer vil blive installeret i den mappe og de undermapper, som du vælger under installationen: <placeholder-1/>"
-
-#. Installation.xml:59(para)
-msgid "The installation will create a shortcut in the Start menu, which may be used to start the program. Under the installation you select the preferred language. This can later be changed from the <placeholder-1/> dialog."
+#. Installation.xml:60(para)
+#, fuzzy
+msgid "The installation will create a shortcut in the Start menu, which may be used to start the program. During the installation you select the preferred language. This can later be changed from the <placeholder-1/> dialog."
 msgstr "Installationen opretter en genvej i startmenuen, som kan bruges til at starte programmet. Under installationen vælges det foretrukne sprog. Dette kan senere ændres i dialogboksen <placeholder-1/>."
 
-#. Installation.xml:64(para)
+#. Installation.xml:65(para)
 msgid "If an older version of the program is already installed, the installation suggests you install in the same directory. You can just install over the old version. There is no need to uninstall the old version first, but make sure the old version is not running while installing."
 msgstr "Hvis en ældre version af programmet er installeret i forvejen, vil du blive foreslået at installere i det samme katalog. Du kan roligt installere oven i den gamle version. Det er ikke nødvendigt at fjerne den gamle installation først, men sørg for at den gamle version af programmet ikke kører, mens der installeres."
 
-#. Installation.xml:69(para)
+#. Installation.xml:70(para)
 msgid "The Graph Setup can take the parameters specified in the table below. These are especially useful when you want to automate the installation."
 msgstr "Graph kan installeres med parametrene i tabellen nedenfor. Dette er især anvendeligt, hvis du vil automatisere installationen."
 
-#. Installation.xml:80(entry) Installation.xml:151(entry)
+#. Installation.xml:81(entry) Installation.xml:152(entry)
 msgid "Parameter"
 msgstr "Parameter"
 
-#. Installation.xml:90(guilabel)
+#. Installation.xml:91(guilabel)
 msgid "Reboot now?"
 msgstr "Genstart nu?"
 
-#. Installation.xml:87(entry)
+#. Installation.xml:88(entry)
 msgid "Instructs the Setup to be silent, which means that the wizard and the background window are not displayed but the installation progress window is. Everything else is normal so for example error messages during installation are displayed. If a restart is necessary, a <placeholder-1/> message box is displayed."
 msgstr "Instruerer installationen til at være stille, dvs. installationsguiden og baggrundsvinduet vises ikke. Det gør vinduet for installationens fremskridt derimod. Alt andet er normalt, så evt. fejlmeddelelser under installationen vises. Hvis det er nødvendigt at genstarte, vises en <placeholder-1/>-meddelelse."
 
-#. Installation.xml:95(entry)
+#. Installation.xml:96(entry)
 msgid "Instructs the Setup to be very silent. This is the same as silent with the addition that the installation progress window is not displayed either. If a restart is necessary, the Setup will reboot without asking."
 msgstr "Instruerer installationen til at være meget stille. Dette er det samme som stille bortset fra, at vinduet for installationens fremskridt heller ikke vises. Hvis det er nødvendigt at genstarte, sker dette automatisk, uden at brugeren bliver spurgt."
 
-#. Installation.xml:102(entry)
+#. Installation.xml:103(entry)
 msgid "Instructs Setup not to reboot even if it's necessary."
 msgstr "Instruerer installationen til ikke at genstarte, selv om det måtte være nødvendigt."
 
-#. Installation.xml:111(guilabel)
+#. Installation.xml:112(guilabel)
 msgid "Select language"
 msgstr "Vælg sprog"
 
-#. Installation.xml:108(entry)
+#. Installation.xml:109(entry)
 msgid "Specifies the language to use. <placeholder-1/> specifies the English name of the language. When a valid /LANG parameter is used, the <placeholder-2/> dialog will be suppressed."
 msgstr "Angiver hvilket sprog, der skal anvendes. <placeholder-1/> angiver sprogets navn på engelsk. Når en gyldig /LANG-parameter er anvendt, vil <placeholder-2/>-dialogboksen blive tilsidesat."
 
-#. Installation.xml:117(guilabel)
+#. Installation.xml:118(guilabel)
 msgid "Select destination location"
 msgstr "Vælg destinationsmappen."
 
-#. Installation.xml:116(entry)
+#. Installation.xml:117(entry)
 msgid "Overrides the default directory name displayed on the <placeholder-1/> wizard page. A fully qualified pathname must be specified."
 msgstr "Overskriver det standardmappenavn, der vises i guiden <placeholder-1/>. Et fuldgyldigt stinavn skal angives."
 
-#. Installation.xml:128(title)
+#. Installation.xml:129(title)
 msgid "Uninstallation"
 msgstr "Afinstallation"
 
-#. Installation.xml:129(para)
+#. Installation.xml:130(para)
 msgid "Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>. Just select Graph and click on the <emphasis>Change/Remove button</emphasis>. This will remove all traces of the program. If files were added to the installation directory after the installation, you will be asked if you want to delete them. Make sure Graph is not running while uninstalling."
 msgstr "Afinstallation foretages fra <emphasis>Tilføj/Fjern Programmer</emphasis> i <emphasis>Kontrolpanelet</emphasis>. Marker Graph og klik på knappen <emphasis>Tilføj/Fjern</emphasis>. Dette vil fjerne alle spor af programmet. Hvis der er blevet tilføjet filer til installationskataloget efter installationen, vil du blive spurgt, om de skal fjernes. Vær sikker på at programmet ikke kører, mens det afinstalleres."
 
-#. Installation.xml:138(title)
+#. Installation.xml:139(title)
 msgid "Startup"
 msgstr "Start"
 
-#. Installation.xml:139(para)
+#. Installation.xml:140(para)
 msgid "Usually Graph is started from the link in the <guibutton>Start</guibutton> menu. A .grf file can be passed as parameter, in which case Graph will open the specified file. In addition to this the parameters in the table below can be passed to Graph on the command line."
 msgstr "Graph startes som regel fra genvejen i Menuen <guibutton>Start</guibutton>. En grf-fil kan angives som parameter. Graph vil i så fald åbne den angivne fil. Desuden kan parametrene i tabellen nedenfor bruges med Graph fra kommandoprompten."
 
-#. Installation.xml:160(link)
+#. Installation.xml:161(link)
 msgid "image formats"
 msgstr "billedformater"
 
-#. Installation.xml:158(entry)
+#. Installation.xml:159(entry)
 msgid "Used to save an opened .grf file as an image file. The file type can be any of the <placeholder-1/> supported by Graph."
 msgstr "Bruges til at gemme en åben grf-fil som et billede. Filtypen kan være en hvilken som helst <placeholder-1/> understøttet af Graph."
 
-#. Installation.xml:165(entry)
-msgid "Used in combination with /SI to specify the width in pixels of the saved image."
+#. Installation.xml:166(entry)
+#, fuzzy
+msgid "Used in combination with /SI to specify the width in pixels of the image to be saved."
 msgstr "Bruges sammen med /SI til at angive det gemte billedes bredde i pixels."
 
-#. Installation.xml:171(entry)
-msgid "Used in combination with /SI to specify the height in pixels of the saved image."
+#. Installation.xml:172(entry)
+#, fuzzy
+msgid "Used in combination with /SI to specify the height in pixels of the image to be saved."
 msgstr "Bruges sammen med /SI til at angive det gemte billedes højde i pixels."
 
 #. InsertTrendlineDialog.xml:8(title)
@@ -1590,115 +1631,120 @@ msgstr "regression"
 msgid "Use the dialog shown below to insert a trendline that is the function that fits a <link linkend=\"InsertPointSeriesDialog\">point series</link> best. A trendline is a function that shows a trend in a series of points, i.e. a trendline is the curve of bets fit of a specific type for a series of points. The trendline is added as an ordinary function. To create a trendline, you select the point series you want to base the trendline on and use <placeholder-1/>."
 msgstr "Brug nedenstående dialogboks til at indsætte en tendenslinje til en eksisterende <link linkend=\"InsertPointSeriesDialog\">punktserie</link>. En tendenslinje er grafen for en funktion af en given type, som bedst approksimerer punkterne. Tendenslinjen oprettes som graf for en standardfunktion. Vælg den punktserie, som tendenslinjen skal baseres på, og brug <placeholder-1/> for at oprette tendenslinjen."
 
-#. InsertTrendlineDialog.xml:27(title)
+#. InsertTrendlineDialog.xml:26(para)
+msgid "If the point series has custom Y-errors defined, these values are used to weight the points. The weight for each point is <placeholder-1/> where &sigma; is the Y-error for the point. X-errors are not used."
+msgstr ""
+
+#. InsertTrendlineDialog.xml:33(title)
 msgid "Built-in"
 msgstr "Indbygget"
 
-#. InsertTrendlineDialog.xml:34(guilabel) InsertTrendlineDialog.xml:40(term) InsertPointSeriesDialog.xml:82(guilabel)
+#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:46(term) InsertPointSeriesDialog.xml:82(guilabel)
 msgid "Linear"
 msgstr "Lineær"
 
-#. InsertTrendlineDialog.xml:34(guilabel) InsertTrendlineDialog.xml:70(term)
+#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:76(term)
 msgid "Polynomial"
 msgstr "Polynomisk"
 
-#. InsertTrendlineDialog.xml:34(guilabel) InsertTrendlineDialog.xml:99(term)
+#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:105(term)
 msgid "Exponential"
 msgstr "Eksponentiel"
 
-#. InsertTrendlineDialog.xml:35(guilabel)
+#. InsertTrendlineDialog.xml:41(guilabel)
 msgid "Intercept"
 msgstr "Skær"
 
-#. InsertTrendlineDialog.xml:31(para)
+#. InsertTrendlineDialog.xml:37(para)
 msgid "You may choose between the following built-in functions. These functions will give an accurate result. For <placeholder-1/>, <placeholder-2/> and <placeholder-3/> trendlines, you may select the <placeholder-4/> field and specify the point where you want the trendline to meet the y-axis."
 msgstr "Der er mulighed for at vælge mellem følgende indbyggede funktioner. Disse funktioner vil give et præcist resultat. For <placeholder-1/>, <placeholder-2/> og <placeholder-3/> tendenslinjer kan man markere feltet <placeholder-4/> og vælge det punkt, hvori tendenslinjen skal skære y-aksen."
 
-#. InsertTrendlineDialog.xml:42(para)
+#. InsertTrendlineDialog.xml:48(para)
 msgid "This is a straight line with the function f(x) = a*x+b, where a and b are constants calculated so the line is the best fit to the point series."
 msgstr "Dette er en funktion med forskriften f(x) = a*x+b, hvor a og b er konstanter, beregnet så den rette linje kommer så tæt på punkterne som muligt."
 
-#. InsertTrendlineDialog.xml:45(para)
+#. InsertTrendlineDialog.xml:51(para)
 msgid "The trendline is calculated so the sum of squares (SSQ) <placeholder-1/> will be as small as possible. If possible the function will cross the points in the series; else the function will be so close to the series that the summation cannot get any smaller."
 msgstr "Konstanterne a og b beregnes, så de lodrette kvadraters sum (Sum of Squares / SSQ) <placeholder-1/> bliver så lille som muligt. Hvis der er perfekt overensstemmelse, vil regressionslinjen  blive placeret oven i punkterne, og ellers vil linjen  komme til at ligge så tæt på punkterne som muligt."
 
-#. InsertTrendlineDialog.xml:55(term)
+#. InsertTrendlineDialog.xml:61(term)
 msgid "Logarithmic"
 msgstr "Logaritmisk"
 
-#. InsertTrendlineDialog.xml:57(para)
+#. InsertTrendlineDialog.xml:63(para)
 msgid "A logarithmic line of best fit is given as <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants, and <placeholder-4/> is the natural logarithm function. To add a logarithmic function, no point in the series may have an x-coordinate that is negative or zero."
 msgstr "En logaritmisk tendenslinje er graf for funktionen <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, og <placeholder-4/> er den naturlige logaritmefunktion. For at anvende en logaritmisk funktion, må intet punkt i serien have en x-koordinat, der er negativ eller nul."
 
-#. InsertTrendlineDialog.xml:62(para)
+#. InsertTrendlineDialog.xml:68(para)
 msgid "A logarithmic function is a straight line in a semilogarithmic coordinate system. The point series is therefore converted to a semilogarithmic coordinate system and the logarithmic function with the smallest sum of squares (SSQ) is found."
 msgstr "Grafen for en logaritmisk funktion er en ret linje i et enkeltlogaritmisk koordinatsystem. Punktserien konverteres derfor til et enkeltlogaritmisk koordinatsystem, hvor logaritmefunktionen med den mindste sum af kvadrater (SSQ) bestemmes."
 
-#. InsertTrendlineDialog.xml:72(para)
+#. InsertTrendlineDialog.xml:78(para)
 msgid "A polynomial is a function given by <placeholder-1/>, where <placeholder-2/>...<placeholder-3/> are constants. <placeholder-4/> is the order of the polynomial. You need at least one more point than the order."
 msgstr "Et polynomium er en funktion på formen <placeholder-1/>, hvor <placeholder-2/>…<placeholder-3/> er konstanter, og <placeholder-4/> er heltallig og ikke-negativ. <placeholder-4/> angiver polynomiets orden. For <placeholder-4/>=1 er en polynomiumsregression det samme som en lineær regression. Antallet af punkter i punktserien skal mindst være en større end <placeholder-4/>."
 
-#. InsertTrendlineDialog.xml:84(term)
+#. InsertTrendlineDialog.xml:90(term)
 msgid "Power"
 msgstr "Potens"
 
-#. InsertTrendlineDialog.xml:86(para)
+#. InsertTrendlineDialog.xml:92(para)
 msgid "A power function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add a power function, no point in the series may have an x- or y-coordinate that is negative or zero."
 msgstr "En potensfunktion er givet ved forskriften <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, beregnet så grafen for funktionen kommer så tæt på punkterne som muligt. For at tilføje en potensfunktion, må ingen af punkterne i serien have en x- eller y-koordinat, der er negativ eller nul."
 
-#. InsertTrendlineDialog.xml:91(para)
+#. InsertTrendlineDialog.xml:97(para)
 msgid "A power function is a straight line in a double logarithmic coordinate system. The point series is therefore converted to a double logarithmic coordinate system and the power function with the smallest sum of squares (SSQ) is found."
 msgstr "En potensfunktion er en ret linje i et dobbeltlogaritmisk koordinatsystem. Punktserierne konverteres derfor til et dobbeltlogaritmisk koordinatsystem, hvor potensfunktionen med den mindste sum af kvadrater (SSQ) bestemmes."
 
-#. InsertTrendlineDialog.xml:101(para)
+#. InsertTrendlineDialog.xml:107(para)
 msgid "An exponential function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add an exponential function, no point in the series may have a y-coordinate that is negative or zero."
 msgstr "En eksponentiel funktion er givet ved <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, beregnet så grafen for funktionen ligger så tæt på punkterne som muligt. For at kunne tilføje en eksponentiel funktion, må ingen af punkterne i serien have en y-koordinat, der er negativ eller nul."
 
-#. InsertTrendlineDialog.xml:106(para)
+#. InsertTrendlineDialog.xml:112(para)
 msgid "An Exponential function is a straight line in a semilogarithmic coordinate system with the y-axis as the logarithmic axis. The point series is therefore converted to a semilogarithmic coordinate system and the exponential function with the smallest sum of squares (SSQ) is found."
 msgstr "Grafen for en eksponentialfunktion er en ret linje i et enkeltlogaritmisk koordinatsystem, hvor y-aksen er den logaritmiske akse. Punktserien konverteres derfor til et enkeltlogaritmisk koordinatsystem, hvor eksponentialfunktionen med den mindste sum af kvadrater (SSQ) bestemmes."
 
-#. InsertTrendlineDialog.xml:114(term)
+#. InsertTrendlineDialog.xml:120(term)
 msgid "Moving average"
 msgstr "Bevægeligt gennemsnit"
 
-#. InsertTrendlineDialog.xml:118(guilabel) InsertTrendlineDialog.xml:119(guilabel) InsertTrendlineDialog.xml:121(guilabel)
+#. InsertTrendlineDialog.xml:124(guilabel) InsertTrendlineDialog.xml:125(guilabel) InsertTrendlineDialog.xml:127(guilabel)
 msgid "Period"
 msgstr "Periode"
 
-#. InsertTrendlineDialog.xml:116(para)
+#. InsertTrendlineDialog.xml:122(para)
 msgid "Moving average is a series of straight lines based on the average of the previous points. The <placeholder-1/> determines how many points are used for the average. If <placeholder-2/> is 1 only one point is used, which actually isn't an average. This will draw a line directly between the points. When <placeholder-3/> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point. Instead it will be an average of the previous points."
 msgstr "Bevægeligt gennemsnit består af en række rette linjer baseret på et gennemsnit af de foregående punkter. <placeholder-1/> angiver, hvor mange punkter der bruges til gennemsnittet. Hvis <placeholder-2/> er 1, vil der kun blive brugt ét punkt, hvilket egentlig ikke giver et gennemsnit. Dette vil tegne en linje direkte gennem alle punkterne. Når <placeholder-3/> er større end 1, vil y-koordinaten for linjen ved hvert punkt ikke være det samme som y-koordinaten for punktet. I stedet vil den være et gennemsnit af de foregående punkter."
 
-#. InsertTrendlineDialog.xml:130(title)
+#. InsertTrendlineDialog.xml:136(title)
 msgid "User defined"
 msgstr "Brugerdefineret"
 
-#. InsertTrendlineDialog.xml:134(para)
+#. InsertTrendlineDialog.xml:140(para)
 msgid "In this tab you can enter your own trendline models. The model is entered as a standard function, where all the constants that you want Graph to find are named with a $ followed by any combination of characters (a-z) and digits (0-9). Examples of valid constants are: $a, $y0, $const."
 msgstr "I denne fane kan du indtaste dine egne modeller. Modellen indtastes som en standardfunktion, hvor alle konstanter, som du ønsker, at Graph skal bestemme, navngives med et $ efterfulgt af en kombination af bogstaver (a-z) og tal (0-9). Eksempler på gyldige konstanter er: $a, $y0, $const."
 
-#. InsertTrendlineDialog.xml:141(para)
+#. InsertTrendlineDialog.xml:147(para)
 msgid "An example of a model could be <placeholder-1/>. The program tries to calculate the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/> so that f(x) will be as close to the point series as possible. You can use the <guibutton>Add model</guibutton> button to add the model to the saved list with a name."
 msgstr "Et eksempel på en model kunne være <placeholder-1/>. Programmet vil forsøge at beregne konstanterne <placeholder-2/>, <placeholder-3/> og <placeholder-4/>, så grafen for f kommer til at ligge så tæt på punktserien som muligt. Du kan bruge <guibutton>Tilføj model</guibutton> til at tilføje modellen med et navn til den gemte liste."
 
-#. InsertTrendlineDialog.xml:148(para)
+#. InsertTrendlineDialog.xml:154(para)
 msgid "The program needs a guess for where to start the search for the optimum. As default the guess for all constants is 1, but this can be changed for models added to the list. A better guess will increase the possibility that an optimum can be found."
 msgstr "Programmet har brug for et gæt for  at starte søgningen efter de optimale værdier. Som standardgæt sættes alle konstanter til 1, men dette kan ændres, når en model tilføjes listen. Et bedre gæt øger sandsynligheden for, at en optimal værdi for konstanterne findes."
 
-#. InsertTrendlineDialog.xml:154(para)
+#. InsertTrendlineDialog.xml:160(para)
 msgid "Graph will try to find the constants for the model f(x) so the sum of squares <placeholder-1/> will be the smallest possible. The program will start with the guess and move towards the minimum of the sum of squares. If a solution is not found after 100 iterations or the given guess is not valid, the program gives up."
 msgstr "Graph vil forsøge at finde manglende konstanter for modellen f(x), så SSQ <placeholder-1/> bliver så lille som muligt. Programmet vil starte med gættet og bevæge sig mod minimumspunktet for SSQ. Hvis en løsning ikke kan findes inden 100 iterationer, eller såfremt det givne gæt ikke er gyldigt, giver programmet op."
 
-#. InsertTrendlineDialog.xml:162(para)
+#. InsertTrendlineDialog.xml:168(para)
 msgid "It is possible, even though it rarely happens, that more than one minimum exists. In this case the minimum nearest to the guess will be found, even though this may not be the best."
 msgstr "Det er muligt, selv om det meget sjældent sker, at mere end et minimum for SSQ eksisterer. I dette tilfælde vil det minimum, som ligger tættest på gættet, blive fundet, selv om det ikke nødvendigvis er det bedste."
 
-#. InsertTrendlineDialog.xml:167(para)
-msgid "Notice that you should avoid redundant constants as they might confuse the program. For example this model has a redundant constant: <placeholder-1/>. Notice the relation between the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. If you multiply <placeholder-5/>, <placeholder-6/> and <placeholder-7/> with the same value the resulting function will not be changed. This means that there are an infinite number of best solutions, because you can always multiply by a value. This may confuse the program when it tries to find the best one. Therefore either <placeholder-8/>, <placeholder-9/> or <placeholder-10/> should be removed."
+#. InsertTrendlineDialog.xml:173(para)
+#, fuzzy
+msgid "Notice that you should avoid redundant constants as they might confuse the program. For example this model has a redundant constant: <placeholder-1/>. Notice the relation between the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. If you multiply <placeholder-5/>, <placeholder-6/> and <placeholder-7/> with the same value the resulting function will not be changed. This means that there are an infinite number of combinations of constants with the same resulting function and hence an infinite number of best solutions. This may confuse the program when it tries to find the best one. Therefore either <placeholder-8/>, <placeholder-9/> or <placeholder-10/> should be removed."
 msgstr "Bemærk, at man bør undgå overflødige konstanter, idet de kan forvirre programmet. For eksempel har denne model en overflødig konstant: <placeholder-1/>. Bemærk sammenhængen mellem konstanterne <placeholder-2/>, <placeholder-3/> og <placeholder-4/>. Den samlede funktion vil ikke blive ændret, selv om <placeholder-5/>, <placeholder-6/> og <placeholder-7/> hver især multipliceres med samme størrelse. Det betyder, at der er et uendeligt stort antal bedste løsninger, hvilket kan forvirre programmet, når det prøver at finde den bedste løsning. Derfor bør enten <placeholder-8/>, <placeholder-9/> eller <placeholder-10/> fjernes."
 
-#. InsertTrendlineDialog.xml:177(para)
+#. InsertTrendlineDialog.xml:183(para)
 msgid "When the trendline is added, the correlation coefficient <placeholder-1/> is shown in the comment. The closer <placeholder-2/> is to 1 the closer the trendline is to the points."
 msgstr "Når tendenslinjen er tilføjet, vises korrelationskoefficienten <placeholder-1/> i kommentarfeltet. Jo tættere <placeholder-2/> er på 1, desto tættere er tendenslinjen på punkterne."
 
@@ -1806,7 +1852,7 @@ msgstr "imellem"
 msgid "The dialog below is used to add a shading to the selected function. To insert a new shading, you use <placeholder-1/>. To change an existing shading, you first select it in the <placeholder-2/> and use <placeholder-3/>. The shading is used to mark an area between the function graph and something else."
 msgstr "Dialogboksen nedenfor bruges til at tilføje skravering til en markeret funktionsgraf. Brug <placeholder-1/> for at indsætte en ny skravering. Markér en eksisterende skravering i <placeholder-2/> og brug <placeholder-3/> for at ændre den. Skraveringen bruges til at markere et område mellem funktionsgrafen og noget andet."
 
-#. InsertShadingDialog.xml:24(title) InsertShadingDialog.xml:29(guilabel) InsertShadingDialog.xml:189(guilabel) InsertShadingDialog.xml:190(guilabel)
+#. InsertShadingDialog.xml:24(title) InsertShadingDialog.xml:29(guilabel)
 msgid "Shading"
 msgstr "Skravering"
 
@@ -1862,11 +1908,11 @@ msgstr "Inde i funktionen"
 msgid "This will shade the area inside the graph of the function in the selected interval. If you check <placeholder-1/> or <placeholder-2/>, the interval will decrease or increase until the graph is crossing itself. This is especially useful to shade a closed part of a parametric or polar function, but it can also be used to shade standard functions."
 msgstr "Denne type vil skravere området inde i grafen for funktionen i det valgte interval. Hvis <placeholder-1/> eller <placeholder-2/> afkrydses, vil intervallet blive formindsket eller forøget, indtil grafen  krydser sig selv. Dette er specielt brugbart til at skravere en lukket del af en parameterkurve, men kan også bruges til almindelige funktioner."
 
-#. InsertShadingDialog.xml:93(term) InsertShadingDialog.xml:190(guilabel)
+#. InsertShadingDialog.xml:93(term) InsertShadingDialog.xml:188(guilabel)
 msgid "Between functions"
 msgstr "Mellem funktioner"
 
-#. InsertShadingDialog.xml:98(guilabel) InsertShadingDialog.xml:186(title) InsertShadingDialog.xml:188(guilabel) InsertShadingDialog.xml:191(guilabel)
+#. InsertShadingDialog.xml:98(guilabel) InsertShadingDialog.xml:186(title) InsertShadingDialog.xml:189(guilabel) InsertShadingDialog.xml:190(guilabel)
 msgid "2nd function"
 msgstr "2. funktion"
 
@@ -1918,19 +1964,25 @@ msgstr "Marker slutning"
 msgid "Check this to draw a line at the end of the range. Uncheck it if you want two shadings to look as one."
 msgstr "Afkryds dette felt for at vise en linje ved skraveringens slutning. Fjern markeringen for at få to skraveringer til at se ud som en."
 
+#. InsertShadingDialog.xml:188(guilabel)
+#, fuzzy
+msgid "Shadings"
+msgstr "Skravering"
+
 #. InsertShadingDialog.xml:187(para)
-msgid "At the <placeholder-1/> tab, you may select the second function when you have chosen to create a shading between two functions in the <placeholder-2/> tab. This is only available when you have chosen <placeholder-3/> in the <placeholder-4/> tab. The dialog with the <placeholder-5/> tab is shown below."
+#, fuzzy
+msgid "When you have chosen <placeholder-1/> in the <placeholder-2/> tab, you may select the second function in the <placeholder-3/> tab. The dialog with the <placeholder-4/> tab is shown below."
 msgstr "Under fanebladet <placeholder-1/> vælges den anden funktion, når der er valgt skravering mellem graferne for to funktioner i fanebladet <placeholder-2/>. Dette er kun tilgængeligt, når <placeholder-3/> er valgt i fanebladet <placeholder-4/>. Dialogboksen med fanebladet <placeholder-5/> kan ses nedenfor."
 
-#. InsertShadingDialog.xml:198(term)
+#. InsertShadingDialog.xml:197(term)
 msgid "Shading range for 2nd function"
 msgstr "Skraveringsområde for 2. funktion"
 
-#. InsertShadingDialog.xml:200(para)
+#. InsertShadingDialog.xml:199(para)
 msgid "This is used to select the interval for the second function, just like you selected the interval for the first function in the <placeholder-1/> tab. This is only available for parametric functions and not for standard functions. For standard functions the interval for the second function is always the same as the interval for the first function. If you enter neither a start nor an end of interval for a parametric function, the values for the first function will be used for the second function as well."
 msgstr "Her vælges intervallet for skraveringen langs grafen for den anden funktion på samme måde som intervallet for grafen for den første funktion under <placeholder-1/>. Dette er kun tilgængeligt for parameterfunktioner og ikke for almindelige funktioner. For almindelige funktioner, vil intervallet for den anden funktion altid være det samme som for den første funktion. Hvis der hverken indtastes en værdi i start eller slut for en parameterfunktion eller polærfunktion, vil værdierne for den første funktion blive brugt."
 
-#. InsertShadingDialog.xml:212(para)
+#. InsertShadingDialog.xml:211(para)
 msgid "Shadings are a great way to mark an area, but if you get weird results, check that you selected the right function and the right interval. If you try to shade an interval crossing an asymptote or your shading is associated with a weird parametric function, you might get weird results. But really, what did you expect?"
 msgstr "En skravering er en hensigtsmæssig måde at markere et område på. Hvis der forekommer et underligt resultat, kontroller at det er den rigtige funktion og det rigtige interval, som skraveringen er tilføjet. Hvis en skravering krydser en asymptote eller skraveringen er tilføjet en underlig funktion, kan der forekomme et mærkeligt resultat. Men helt ærligt, hvad havde du egentlig forventet?"
 
@@ -1975,7 +2027,8 @@ msgid "An inequality is a statement that one quantity is greater or less than an
 msgstr "En ulighed er et udsagn om, at et udtryk er større eller mindre end et andet, og størrelserne skal adskilles af en af følgende operatorer: &lt;, &gt;, &lt;=, &gt;=. En ulighed kan f.eks. være <literal>abs(x) + abs(y) &lt; 1</literal>. To operatorer kan bruges til at angive et interval, f.eks. <literal>y &lt; sin(x) &lt; 0.5</literal>."
 
 #. InsertRelationDialog.xml:39(para)
-msgid "You can use the same operators and <link linkend=\"FunctionList\">built-in functions</link> as for plotting graphs of functions. In addition you can also create <link linkend=\"CustomFunctionsDialog\">custom functions</link>."
+#, fuzzy
+msgid "You can use the same operators and <link linkend=\"ListOfFunctions\">built-in functions</link> as for plotting graphs of functions. In addition you can also create <link linkend=\"CustomFunctionsDialog\">custom functions</link>."
 msgstr "Man kan bruge de samme operatorer og <link linkend=\"FunctionList\">indbyggede funktioner</link>, som man kan bruge til at plotte grafer for funktioner. Derudover kan man også oprette <link linkend=\"CustomFunctionsDialog\">brugerdefinerede funktioner</link>."
 
 #. InsertRelationDialog.xml:47(term)
@@ -2035,7 +2088,8 @@ msgid "error bars"
 msgstr "usikkerhedssøjler"
 
 #. InsertPointSeriesDialog.xml:17(para)
-msgid "You can use the dialog below to add a series of points to the coordinate system. The points will be shown in the coordinate system in the graphing area as a series of markers at the positions entered in this dialog. To insert a new point series, you use <placeholder-1/>. To change an existing point series, you first select it in the <placeholder-2/> and use <placeholder-3/>."
+#, fuzzy
+msgid "You can use the dialog below to add a series of points to the coordinate system. The points will be shown in the coordinate system in the graphing area as a series of markers. To insert a new point series, you use <placeholder-1/>. To change an existing point series, you first select it in the <placeholder-2/> and use <placeholder-3/>."
 msgstr "Nedenstående dialogboks bruges til at føje en serie af punkter til koordinatsystemet. Punkterne vil blive vist i hovedvinduets koordinatsystem som en række markeringer ved de positioner, som blev indtastet i dialogboksen. Brug <placeholder-1/> for at indsætte en ny punktserie. Markér en eksisterende punktserie i <placeholder-2/> og brug <placeholder-3/> for at ændre den."
 
 #. InsertPointSeriesDialog.xml:26(para)
@@ -2104,7 +2158,7 @@ msgstr "Vis koordinater"
 
 #. InsertPointSeriesDialog.xml:93(para)
 #, fuzzy
-msgid "Put a check in <placeholder-1/> to show the x- and y-coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.bmp\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
+msgid "Put a check in <placeholder-1/> to show the x- and y-coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
 msgstr "Marker <placeholder-1/> for at vise koordinatsæt ved hvert punkt i serien. Knappen <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> kan bruges til at ændre skrifttype, og rullemenuen kan bruges til at vælge, om teksterne skal vises over, under, til venstre eller til højre for punkterne."
 
 #. InsertPointSeriesDialog.xml:102(term)
@@ -2124,7 +2178,8 @@ msgid "Custom"
 msgstr "Brugervalgt"
 
 #. InsertPointSeriesDialog.xml:104(para)
-msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are +/-values."
+#, fuzzy
+msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are +/-values. Custom Y-errors are also used to weight the points when creating trendlines."
 msgstr "Her kan du vælge, om der skal vises vandrette og/eller lodrette usikkerhedssøjler. De er vist som tynde streger ved alle punkter i punktserien, og de viser, hvor stor usikkerheden er på det enkelte punkt. Der er tre måder, hvorpå man kan  vælge usikkerhedssøjlernes størrelse: <placeholder-1/> giver alle punkterne den samme absolutte usikkerhed. <placeholder-2/> gør en vis procentdel af alle punkterne usikre, dvs. alle punkterne har den samme relative usikkerhed. <placeholder-3/> opretter en ny kolonne i punktserien, hvor du selv kan indtaste usikkerheden for hvert punkt. Alle usikkerheder er +/– værdier."
 
 #. InsertLabelDialog.xml:8(title)
@@ -2189,7 +2244,7 @@ msgstr "Denne dialogboks bruges til at indsætte og redigere etiketter. For at i
 
 #. InsertLabelDialog.xml:32(para)
 #, fuzzy
-msgid "The text is entered in the editing area. You can change text styles for different parts of the text. The background color, which may be any solid color or transparent, can be set for the whole label only. The <guibutton><inlinegraphic fileref=\"Font_Symbol.bmp\" scale=\"60\"/></guibutton> button can be used to insert special characters like mathematical symbols and Greek characters."
+msgid "The text is entered in the editing area. You can change text styles for different parts of the text. The background color, which may be any solid color or transparent, can be set for the whole label only. The <guibutton><inlinegraphic fileref=\"Font_Symbol.png\" scale=\"60\"/></guibutton> button can be used to insert special characters like mathematical symbols and Greek characters."
 msgstr "Teksten indtastes i redigeringsområdet. Du kan ændre formatering på individuelle dele af teksten. Baggrundsfarve, som kan være fast eller gennemsigtig, men skal være ens i hele etiketten. Knappen <guibutton><inlinegraphic fileref=\"Font_Symbol.png\" scale=\"60\"/></guibutton> kan bruges til at indsætte symboler som e.fkes. matematiske symboler eller græske bogstaver."
 
 #. InsertLabelDialog.xml:42(guimenuitem)
@@ -2232,7 +2287,7 @@ msgstr "plot"
 msgid "When you want to insert a function, you use the menu item <placeholder-1/> to show the dialog below. To edit an existing function, you select it in the <placeholder-2/> and use the <placeholder-3/> menu item."
 msgstr "Når du ønsker at indsætte en funktion, kan menupunktet <placeholder-1/> bruges til at fremkalde nedenstående dialogboks. Vælg <placeholder-2/> og brug menupunktet <placeholder-3/> for at redigere en eksisterende funktion."
 
-#. InsertFunctionDialog.xml:26(term) FAQ.xml:156(guilabel) FAQ.xml:172(guilabel) FAQ.xml:188(guilabel)
+#. InsertFunctionDialog.xml:26(term) FAQ.xml:157(guilabel) FAQ.xml:173(guilabel) FAQ.xml:189(guilabel)
 msgid "Function type"
 msgstr "Funktionstype"
 
@@ -2241,7 +2296,8 @@ msgid "Standard function"
 msgstr "Normal funktion"
 
 #. InsertFunctionDialog.xml:28(para)
-msgid "You can choose between three different types of functions: <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, thought it may be undefined for some x-coordinates."
+#, fuzzy
+msgid "You can choose between three different types of functions: <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, though it may be undefined for some x-coordinates."
 msgstr "Du kan vælge mellem 3 forskellige typer af funktioner: <placeholder-1/>, <placeholder-2/> og <placeholder-3/>. En standardfunktion er givet ved y=f(x). Til ethvert x, for hvilket funktionen er defineret, tilordnes netop én funktionsværdi. Funktionen er imidlertid ikke nødvendigvis defineret for alle x-koordinater."
 
 #. InsertFunctionDialog.xml:32(para)
@@ -2260,7 +2316,7 @@ msgstr "Funktionsforskrift"
 msgid "Here you enter the equation for the function. This can be f(x), x(t),y(t) or r(t) depending on the function type. Under <placeholder-1/> you can see all the available variables, constants and functions, which may be used to draw the graphs."
 msgstr "Her indtastes forskriften for funktionen. Dette kan være f(x), x(t), y(t) eller r(t) afhængig af den valgte funktionstype. Du kan under <placeholder-1/> se alle variable, konstanter og funktioner, der kan bruges til at tegne grafer."
 
-#. InsertFunctionDialog.xml:64(guilabel) InsertFunctionDialog.xml:66(guilabel) FAQ.xml:286(guilabel)
+#. InsertFunctionDialog.xml:64(guilabel) InsertFunctionDialog.xml:66(guilabel) FAQ.xml:287(guilabel)
 msgid "Steps"
 msgstr "Trin"
 
@@ -2285,8 +2341,9 @@ msgid "Enter a description to be shown in the <placeholder-1/>. If the text is e
 msgstr "Indtast den beskrivelse, der skal vises i <placeholder-1/>. Hvis feltet er tomt, vises forskriften for funktionen i signaturforklaringen i stedet."
 
 #. InsertFunctionDialog.xml:99(guilabel)
-msgid "Line styles"
-msgstr "Linjetyper"
+#, fuzzy
+msgid "Line style"
+msgstr "Linjetype"
 
 #. InsertFunctionDialog.xml:99(guilabel) InsertFunctionDialog.xml:101(guilabel)
 msgid "Lines"
@@ -2297,16 +2354,13 @@ msgid "Dots"
 msgstr "Prikker"
 
 #. InsertFunctionDialog.xml:96(para)
-msgid "You can choose between different line styles for which you want the graph to be drawn. You can choose between solid, dashed, dotted or a combination of these. <placeholder-1/> are only available when <placeholder-2/> is set to <placeholder-3/> or <placeholder-4/>. When <placeholder-5/> is <placeholder-6/>, only a dot is shown at each calculated point. Likewise the <placeholder-7/> <placeholder-8/> will connect the calculated points with lines. <placeholder-9/> will also draw lines, but Graph will do more calculations at critical points if it thinks it will improve the graph. It will also break the line if it thinks there is an asymptote. You can also choose the width of the graph. The width is notified in screen pixels. There are also a lot of different colors you can choose between. The program will remember and suggest the same properties last used."
+#, fuzzy
+msgid "You can choose between different line styles for which you want the graph to be drawn. You can choose between solid, dashed, dotted or a combination of these. <placeholder-1/> is only available when <placeholder-2/> is set to <placeholder-3/> or <placeholder-4/>. When <placeholder-5/> is <placeholder-6/>, only a dot is shown at each calculated point. Likewise the <placeholder-7/> <placeholder-8/> will connect the calculated points with lines. <placeholder-9/> will also draw lines, but Graph will do more calculations at critical points if it thinks it will improve the graph. It will also break the line if it thinks there is an asymptote. You can also choose the width of the graph. The width is notified in screen pixels. There are also a lot of different colors you can choose between. The program will remember and suggest the same properties last used."
 msgstr "Det er muligt at vælge mellem forskellige linjetyper, som grafen skal tegnes med. Der kan vælges mellem udfyldte, stiplede, prikkede og kombinationer af disse. <placeholder-1/> kan kun vælges, når <placeholder-2/> er sat til <placeholder-3/> eller <placeholder-4/>. Når <placeholder-5/> er <placeholder-6/>, vises der kun en prik ved hvert beregnet punkt. Ligeledes vil <placeholder-7/> <placeholder-8/> forbinde de beregnede punkter med linjestykker. <placeholder-9/> vil også tegne linjestykker; men Graph vil foretage flere beregninger ved kritiske punkter, hvis dette formodes at forbedre grafens udseende. Der vil også være et ophold i linjestykket, hvis der formodes at være en asymptote. Grafens tykkelse kan også indstilles. Denne angives i pixels. Desuden er der en lang række forskellige farver til grafen, som du kan vælge imellem. Programmet husker og foreslår de samme egenskaber, som blev brugt sidst."
 
 #. InsertDerivativeDialog.xml:8(title)
 msgid "Insert f'(x)"
 msgstr "Indsæt f'(x)"
-
-#. InsertDerivativeDialog.xml:10(primary)
-msgid "f'(x)"
-msgstr "f'(x)"
 
 #. InsertDerivativeDialog.xml:11(primary)
 msgid "differentiate"
@@ -2420,7 +2474,7 @@ msgstr "Returnerer invers hyperbolsk tangens til argumentet."
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "Funktionen <placeholder-1/> beregner invers hyperbolsk tangens til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. <placeholder-7/> er den omvendte funktion til <placeholder-8/>, dvs. <placeholder-9/>."
 
-#. Hyperbolic.xml:154(primary)
+#. Hyperbolic.xml:154(primary) Hyperbolic.xml:227(primary)
 msgid "hyperbolic cosecant"
 msgstr "hyperbolsk cosekans"
 
@@ -2436,7 +2490,7 @@ msgstr "Funktionen <placeholder-1/> beregner hyperbolsk cosekans til <placeholde
 msgid "Hyperbolic cosecant is defined as: <placeholder-1/>"
 msgstr "Hyperbolsk cosekans er givet ved: <placeholder-1/>"
 
-#. Hyperbolic.xml:178(primary)
+#. Hyperbolic.xml:178(primary) Hyperbolic.xml:250(primary)
 msgid "hyperbolic secant"
 msgstr "hyperbolsk sekans"
 
@@ -2452,7 +2506,7 @@ msgstr "Funktionen <placeholder-1/> beregner hyperbolsk sekans til <placeholder-
 msgid "Hyperbolic secant is defined as: <placeholder-1/>"
 msgstr "Hyperbolsk sekans er givet ved: <placeholder-1/>"
 
-#. Hyperbolic.xml:202(primary) Hyperbolic.xml:272(primary)
+#. Hyperbolic.xml:202(primary) Hyperbolic.xml:273(primary)
 msgid "hyperbolic cotangent"
 msgstr "hyperbolsk cotangens"
 
@@ -2468,47 +2522,39 @@ msgstr "Funktionen <placeholder-1/> beregner hyperbolsk cotangens til <placehold
 msgid "Hyperbolic cotangent is defined as: <placeholder-1/>"
 msgstr "Hyperbolsk cotangens er givet ved: <placeholder-1/>"
 
-#. Hyperbolic.xml:226(primary)
-msgid "hyperbolic cosecanr"
-msgstr "hyperbolsk cosekans"
-
-#. Hyperbolic.xml:227(primary)
+#. Hyperbolic.xml:228(primary)
 msgid "inverse hyperbolic cosecant"
 msgstr "invers hyperbolsk cosekans"
 
-#. Hyperbolic.xml:228(para) FunctionList.xml:271(entry)
+#. Hyperbolic.xml:229(para) FunctionList.xml:271(entry)
 msgid "Returns the inverse hyperbolic cosecant of the argument."
 msgstr "Returnerer invers hyperbolsk cosekans til argumentet."
 
-#. Hyperbolic.xml:237(para)
+#. Hyperbolic.xml:238(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "Funktionen <placeholder-1/> beregner invers hyperbolsk cosekans til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. <placeholder-7/> er den omvendte funktion til <placeholder-8/>, dvs. <placeholder-9/>."
 
-#. Hyperbolic.xml:249(primary)
-msgid "hyperbolic secanr"
-msgstr "hyperbolsk sekans"
-
-#. Hyperbolic.xml:250(primary)
+#. Hyperbolic.xml:251(primary)
 msgid "inverse hyperbolic secant"
 msgstr "invers hyperbolsk sekans"
 
-#. Hyperbolic.xml:251(para) FunctionList.xml:275(entry)
+#. Hyperbolic.xml:252(para) FunctionList.xml:275(entry)
 msgid "Returns the inverse hyperbolic secant of the argument."
 msgstr "Returnerer invers hyperbolsk sekans til argumentet."
 
-#. Hyperbolic.xml:260(para)
+#. Hyperbolic.xml:261(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "Funktionen <placeholder-1/> beregner invers hyperbolsk sekans til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. <placeholder-7/> er den omvendte funktion til <placeholder-8/>, dvs. <placeholder-9/>."
 
-#. Hyperbolic.xml:273(primary)
+#. Hyperbolic.xml:274(primary)
 msgid "inverse hyperbolic cotangent"
 msgstr "invers hyperbolsk cotangens"
 
-#. Hyperbolic.xml:274(para) FunctionList.xml:279(entry)
+#. Hyperbolic.xml:275(para) FunctionList.xml:279(entry)
 msgid "Returns the inverse hyperbolic cotangent of the argument."
 msgstr "Returnerer invers hyperbolsk cotangens til argumentet."
 
-#. Hyperbolic.xml:283(para)
+#. Hyperbolic.xml:284(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>. For real numbers <placeholder-10/> is undefined in the interval [-1;1]."
 msgstr "Funktionen <placeholder-1/> beregner invers hyperbolsk cotangens til <placeholder-2/>. <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. <placeholder-7/> er den omvendte funktion til <placeholder-8/>, dvs. <placeholder-9/>. For reelle tal er <placeholder-10/> ikke defineret på intervallet [-1;1]."
 
@@ -2572,7 +2618,7 @@ msgstr "Ordbog"
 msgid "Complex numbers are a superset of real numbers. Complex numbers are two dimensional and is most often written on rectangular form as a+b<emphasis role=\"bold\">i</emphasis> where <emphasis>a</emphasis> is the real part and <emphasis>b</emphasis> is the imaginary part. The imaginary unit &imag; is defined as &imag;^2=-1. Complex numbers can also be shown on polar form as a&ang;&theta; where <emphasis>a</emphasis> is the absolute value of the number and &theta; is the angle of the number in radians or degrees."
 msgstr "Komplekse tal er en udvidelse af de reelle tal. Komplekse tal kan anskues som punkter (a,b) i den komplekse talplan, hvor x-aksen er den reelle akse, og y-aksen er den imaginære akse. Et komplekst tal angives oftest på rektangulær form som a+b<emphasis role=\"bold\">i</emphasis>, dvs. betragtet som en stedvektor med komposanter a og b. <emphasis>a</emphasis> er realdelen og <emphasis>b</emphasis> imaginærdelen af det komplekse tal a+b<emphasis role=\"bold\">i</emphasis>. Den imaginære enhed &imag; er defineret ved  &imag;^2=-1. Komplekse tal kan også angives på polær form a&ang;&theta;, hvor <emphasis>a</emphasis> er tallets absolutte værdi, og &theta; er tallets vinkel i radianer eller grader."
 
-#. Glossary.xml:26(guilabel) FAQ.xml:269(guilabel) AxesDialog.xml:202(term)
+#. Glossary.xml:26(guilabel) FAQ.xml:270(guilabel) AxesDialog.xml:202(term)
 msgid "Calculate with complex numbers"
 msgstr "Beregn med komplekse tal"
 
@@ -2797,7 +2843,8 @@ msgid "Indicates if an expression is greater than another expression."
 msgstr "Indikerer om et udtryk er større end et andet udtryk."
 
 #. FunctionList.xml:128(entry)
-msgid "Greater or equal (&gt;=)"
+#, fuzzy
+msgid "Greater than or equal to (&gt;=)"
 msgstr "Større end eller lig med (&gt;=)"
 
 #. FunctionList.xml:129(entry)
@@ -2813,7 +2860,8 @@ msgid "Indicates if an expression is less than another expression."
 msgstr "Indikerer om et udtryk er mindre end et andet udtryk."
 
 #. FunctionList.xml:136(entry)
-msgid "Less or equal (&lt;=)"
+#, fuzzy
+msgid "Less than or equal to (&lt;=)"
 msgstr "Mindre end eller lig med (&lt;=)"
 
 #. FunctionList.xml:137(entry)
@@ -3010,12 +3058,12 @@ msgstr "Returnerer det numeriske integral af det første argument i intervallet 
 
 #. FunctionList.xml:398(entry)
 #, fuzzy
-msgid "Returns the sum of the first argument evaluated for each integer in the range from the second to third argument."
+msgid "Returns the sum of the first argument evaluated for each integer in the range from the second to the third argument."
 msgstr "Returnerer summen af det første argument evalueret for alle heltal fra det andet til det tredje argument."
 
 #. FunctionList.xml:402(entry)
 #, fuzzy
-msgid "Returns the product of the first argument evaluated for each integer in the range from the second to third argument."
+msgid "Returns the product of the first argument evaluated for each integer in the range from the second to the third argument."
 msgstr "Returnerer produktet af det første argument evalueret for hvert heltal i intervallet fra det anden til det tredje argument."
 
 #. FunctionList.xml:410(entry)
@@ -3034,45 +3082,9 @@ msgstr "Returnerer Lamberts W-funktion evalueret for argumentet."
 msgid "Returns the Riemann Zeta function evaluated for the argument."
 msgstr "Returnerer Riemann Zetafunktionen evalueret for argumentet."
 
-#. FunctionList.xml:430(entry)
-msgid "The probability function of the normal distribution in a variate with mean and standard"
-msgstr "Sandsynlighedsfunktionen for en stokastisk variabels normalfordeling med middelværdi og spredning."
-
 #. FunctionList.xml:438(title)
 msgid "Notice the following relations:"
 msgstr "Bemærk følgende sammenhænge:"
-
-#. FunctionList.xml:440(member)
-msgid "sin(x)^2= (sin(x))^2"
-msgstr "sin(x)^2 = (sin(x))^2"
-
-#. FunctionList.xml:441(member)
-msgid "sin 2x = sin(2x)"
-msgstr "sin 2x = sin(2x)"
-
-#. FunctionList.xml:442(member)
-msgid "sin 2+x = sin(2)+x"
-msgstr "sin 2+x = sin(2)+x"
-
-#. FunctionList.xml:443(member)
-msgid "sin x^2 = sin(x^2)"
-msgstr "sin x^2 = sin(x^2)"
-
-#. FunctionList.xml:444(member)
-msgid "2(x+3)x = 2*(x+3)*x"
-msgstr "2(x+3)x = 2*(x+3)*x"
-
-#. FunctionList.xml:445(member)
-msgid "-x^2 = -(x^2)"
-msgstr "-x^2 = -(x^2)"
-
-#. FunctionList.xml:446(member)
-msgid "2x = 2*x"
-msgstr "2x = 2*x"
-
-#. FunctionList.xml:447(member)
-msgid "e^2x = e^(2*x)"
-msgstr "e^2x = e^(2*x)"
 
 #. FAQ.xml:6(primary)
 msgid "FAQ"
@@ -3090,163 +3102,163 @@ msgstr "tips"
 msgid "tricks"
 msgstr "tricks"
 
-#. FAQ.xml:14(para)
+#. FAQ.xml:15(para)
 msgid "What are the system requirements of Graph?"
 msgstr "Hvad er kravene for at køre Graph?"
 
-#. FAQ.xml:19(para)
+#. FAQ.xml:20(para)
 msgid "Graph requires 32 bit Windows. It has been tested under Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is able to run Windows, it should be able to run the program, though Windows 95 is no longer supported."
 msgstr "Graph kræver 32 bit Windows. Programmet er testet under Windows 95, Windows 98, Windows ME, Windows 2000 og Windows XP. Hvis systemet kan køre Windows, burde det også kunne køre programmet."
 
-#. FAQ.xml:29(para)
+#. FAQ.xml:30(para)
 msgid "Will Graph run under Linux?"
 msgstr "Kan Graph køre under Linux?"
 
-#. FAQ.xml:34(para)
+#. FAQ.xml:35(para)
 msgid "Graph is a native Windows application and not tested under Linux, but several users have informed me that Graph runs without problems under Linux with Wine."
 msgstr "Graph er oprindeligt et Windows-program og er ikke testet under Linux, men adskillige brugere har gjort opmærksom på, at Graph kører uden problemer under Linux med Wine."
 
-#. FAQ.xml:42(para)
+#. FAQ.xml:43(para)
 msgid "Will Graph run on a Macintosh?"
 msgstr "Kan Graph køre på en Macintosh?"
 
-#. FAQ.xml:47(para)
+#. FAQ.xml:48(para)
 msgid "As with the above, you cannot run Graph directly on a Mac. But it should be possible with some kind of Windows emulator."
 msgstr "Som ovenfor: Graph kan ikke køre direkte på en Mac. Men det burde være muligt med en form for Windows-emulator."
 
-#. FAQ.xml:55(para)
+#. FAQ.xml:56(para)
 msgid "When will the next version be released?"
 msgstr "Hvornår bliver den næste version frigivet?"
 
-#. FAQ.xml:60(para)
+#. FAQ.xml:61(para)
 msgid "When it is ready."
 msgstr "Når den er klar."
 
-#. FAQ.xml:68(para)
+#. FAQ.xml:69(para)
 msgid "How can I move the coordinate system?"
 msgstr "Hvordan kan jeg flytte på koordinatsystemet?"
 
-#. FAQ.xml:73(para)
+#. FAQ.xml:74(para)
 msgid "When you hold down the <keycap>Ctrl</keycap> key you can use the arrow keys to move the coordinate system. You can also use <placeholder-1/> and drag the coordinate system around with the mouse."
 msgstr "Når du holder <keycap>Ctrl</keycap> nede, kan du bruge piletasterne til at flytte koordinatsystemet. Du kan også bruge <placeholder-1/> til at hive koordinatsystemet rundt med musen."
 
-#. FAQ.xml:87(para)
+#. FAQ.xml:88(para)
 msgid "How can I easily zoom in and out?"
 msgstr "Hvordan kan jeg nemt zoome ind og ud?"
 
-#. FAQ.xml:92(para)
+#. FAQ.xml:93(para)
 msgid "When you hold down the <keycap>Ctrl</keycap> key you can use the <keycap>+</keycap> and <keycap>-</keycap> keys to zoom in and out. The scroll wheel on the mouse can be used for zooming at the position of the mouse pointer. When you move the scroll wheel up the program will zoom into the coordinate system and center the graphing area at the position of the mouse pointer. When you move the scroll wheel down the program zooms out."
 msgstr "Når du holder <keycap>Ctrl</keycap> nede, kan du bruge <keycap>+</keycap> og <keycap>–</keycap> tasterne til at zoome ind og ud. Hvis din mus har et hjul, kan dette bruges til at zoome ind eller ud på cursorens position. Når hjulet drejes op, zoomes ind på det sted, hvor musecursoren er, mens der zoomes ud, når hjulet drejes nedad."
 
-#. FAQ.xml:103(para)
+#. FAQ.xml:104(para)
 msgid "How do I save default settings?"
 msgstr "Hvordan kan jeg gemme standardindstillinger?"
 
-#. FAQ.xml:110(guilabel) AxesDialog.xml:268(term)
+#. FAQ.xml:111(guilabel) AxesDialog.xml:268(term)
 msgid "Save as default"
 msgstr "Gem som standard"
 
-#. FAQ.xml:108(para)
+#. FAQ.xml:109(para)
 msgid "Set the desired default settings in the <placeholder-1/> dialog, and put a mark in <placeholder-2/> before pressing the <guibutton>OK</guibutton> button. Next time you create a new coordinate system, the saved default settings will be used."
 msgstr "Hvis du har indstillinger, som du ønsker, at programmet skal starte op med, kan du vælge disse indstillinger under <placeholder-1/> og sætte en markering i <placeholder-2/>, inden du klikker på <guibutton>OK</guibutton>. Næste gang du opretter et nyt koordinatsystem, vil de gemte indstillinger blive brugt."
 
-#. FAQ.xml:118(para)
+#. FAQ.xml:119(para)
 msgid "Can I make the program remember the size and position of the window?"
 msgstr "Er det muligt at få programmet til at huske vinduets størrelse og placering?"
 
-#. FAQ.xml:123(para)
+#. FAQ.xml:124(para)
 msgid "When you select <placeholder-1/> in the <placeholder-2/> dialog. Graph will save the position and size of the main window when the program quits. The next time the program starts the same size and position is used."
 msgstr "Hvis du vælger <placeholder-1/> i dialogboksen <placeholder-2/>, vil hovedvinduets position og størrelse blive gemt, når programmet afsluttes. Derved får programmet samme størrelse og position næste gang, det startes."
 
-#. FAQ.xml:133(para)
+#. FAQ.xml:134(para)
 msgid "Why does the program not accept a comma as decimals separator?"
 msgstr "Hvorfor accepterer programmet ikke tal med komma i?"
 
-#. FAQ.xml:138(para)
+#. FAQ.xml:139(para)
 msgid "I know a lot of countries use comma to separate the decimal part from the integer part, but Graph uses comma for separating function arguments. The program always uses a period to separate decimals from the integer value, no matter your local settings."
 msgstr "Jeg ved, at mange lande bruger komma til at adskille decimaldelen fra heltalsdelen, men Graph bruger komma til at adskille argumenter i et funktionskald.  Programmet bruger altid punktum til at adskille decimaler fra heltal, uanset de lokale indstillinger."
 
-#. FAQ.xml:147(para)
+#. FAQ.xml:148(para)
 msgid "How do I plot a vertical line?"
 msgstr "Hvordan tegner jeg en lodret linje?"
 
-#. FAQ.xml:156(guilabel) FAQ.xml:172(guilabel) FAQ.xml:188(guilabel)
+#. FAQ.xml:157(guilabel) FAQ.xml:173(guilabel) FAQ.xml:189(guilabel)
 msgid "Parametric function"
 msgstr "Parameterfunktion"
 
-#. FAQ.xml:152(para)
+#. FAQ.xml:153(para)
 msgid "A standard function cannot be vertical, but it can have a slope so large that it looks vertical. The function <userinput>f(x)=1000(x-5)</userinput> looks like a vertical line at x=5. A real vertical line can be drawn as a parametric function. Select <placeholder-1/> as <placeholder-2/> when adding the function. You can then add the vertical line at x=5 as <userinput>x(t)=5, y(t)=t</userinput>. Alternatively you can add x=5 as a relation."
 msgstr "Grafen for en standardfunktion kan ikke være lodret, men den kan have en hældning, der er så stor, at den ser ud til at være lodret. Grafen for funktionen <userinput>f(x)=1000(x-5)</userinput> ser ud til at være lodret ved x=5. En lodret linje kan tegnes som graf for en parameterfunktion. Vælg <placeholder-1/> som <placeholder-2/>, når funktionen indsættes. Grafen for parameterfunktionen <userinput>x(t)=5, y(t)=t</userinput> er lodret. Alternativt kan du indsætte relationen x=5."
 
-#. FAQ.xml:165(para)
+#. FAQ.xml:166(para)
 msgid "How do I plot a function x=f(y)?"
 msgstr "Hvordan tegner jeg grafen for en funktion f(y)?"
 
-#. FAQ.xml:170(para)
+#. FAQ.xml:171(para)
 msgid "To draw a function with y as the independent variable, you need to use a parametric function. Select <placeholder-1/> as <placeholder-2/> when adding the function. If you want to draw the function x=sin(y), you can now enter the function as <userinput>x(t)=sin(t), y(t)=t</userinput>. Alternatively you can draw it as a relation where you can enter <userinput>x=sin(y)</userinput> directly."
 msgstr "For at tegne en funktion hvor y er den uafhængige variabel, skal du bruge en parameterfunktion. Vælg <placeholder-1/> som <placeholder-2/>, når funktionen indsættes. Hvis du vil tegne grafen for funktionen x=sin(y), indtaster du funktionen som <userinput>x(t)=sin(t), y(t)=t</userinput>. Alternativt kan du tegne den som en relation, hvor du direkte indtaster <userinput>x=sin(y)</userinput>."
 
-#. FAQ.xml:181(para)
+#. FAQ.xml:182(para)
 msgid "How do I plot a circle?"
 msgstr "Hvordan tegner jeg en cirkel?"
 
-#. FAQ.xml:186(para)
+#. FAQ.xml:187(para)
 msgid "You need to use a parametric function to draw a circle. When inserting the function, select <placeholder-1/> as <placeholder-2/>. You can now add a circle with radius 5 and center in (2,3) as <userinput>x(t)=5cos(t)+2, y(t)=5sin(t)+3</userinput>. You may need to use <placeholder-3/> to make the axes equally scaled. Else the circle may look like an ellipse. A circle can also be added as a polar function, but only with center in (0,0). A circle with radius 5 may be added as the polar function <userinput>r(t)=5</userinput>. Alternatively you can use a relation and add the circle as <userinput>(x-2)^2+(y-3)^2=5^2</userinput>."
 msgstr "For at tegne en cirkel skal du bruge en parameterfunktion. Vælg <placeholder-1/> som <placeholder-2/>, når du indsætter funktionen. Du kan nu indsætte en cirkel med radius 5 og centrum i (2,3) som graf for parameterfunktionen <userinput>x(t)=5cos(t)+2, y(t)=5sin(t)+3</userinput>. Det kan være nødvendigt at vælge <placeholder-3/> for at skalere akserne ens, ellers kan cirklen ligne en ellipse. En cirkel kan også blive vist som en polærfunktion, men kun med centrum i (0,0). En cirkel med radius 5 kan tilføjes som graf for polærfunktionen <userinput>r(t)=5</userinput>. Alternativt kan du bruge cirklens ligning som relation: <userinput>(x-2)^2+(y-3)^2=5^2</userinput>."
 
-#. FAQ.xml:206(para)
+#. FAQ.xml:207(para)
 msgid "How do I calculate the area between two functions?"
 msgstr "Hvordan beregner jeg arealet af en punktmængde mellem graferne for to funktioner?"
 
-#. FAQ.xml:211(para)
+#. FAQ.xml:212(para)
 msgid "If you want to find the area between two functions f1(x)=3x and f2(x)=x^2, the easiest way is to create a new function that is the difference between the two functions: f(x)=f1(x)-f2(x)=3x-x^2. You can then use <placeholder-1/> to calculate the area for a given interval."
 msgstr "Hvis du vil bestemme arealet mellem graferne for to funktioner, f1(x)=3x og f2(x)=x^2, er den letteste metode at definere en ny funktion, som er differensen mellem de to funktioner: f(x)=f1(x)-f2(x)=3x-x^2. Du kan så bruge <placeholder-1/> til at beregne arealet for et givet interval."
 
-#. FAQ.xml:226(para)
+#. FAQ.xml:227(para)
 msgid "Can I copy a function or point series from one instance of the program to another?"
 msgstr "Kan jeg kopiere en funktion eller punktserie fra en instans af programmet til en anden?"
 
-#. FAQ.xml:231(para)
+#. FAQ.xml:232(para)
 msgid "Yes, you can select a function or point series and use the <placeholder-1/> menu item to place a copy of the selected item in the clipboard. You can then paste the item into another coordinate system."
 msgstr "Ja, du kan bruge menupunktet <placeholder-1/> til at kopiere den markerede funktion eller punktserie til udklipsholderen. Den kan herefter indsættes i et andet koordinatsystem."
 
-#. FAQ.xml:245(para)
+#. FAQ.xml:246(para)
 msgid "How can I draw the negative part of f(x)=sqrt(x+2) ?"
 msgstr "Hvordan kan jeg tegne den negative del af f(x)=sqrt(x+2)?"
 
-#. FAQ.xml:250(para)
+#. FAQ.xml:251(para)
 msgid "For each value x, f(x) will evaluate to at most one value. f(x)=sqrt(x+2) will therefore only have positive values of f(x). To plot it for negative f(x) too, you will have to create two separate functions: f(x)=sqrt(x+2) and f(x)=-sqrt(x+2). Alternatively you can plot it as the relation: y^2=x+2."
 msgstr "For hver x-værdi vil f(x) højst evaluere én værdi. Derfor vil f(x)=sqrt(x+2) kun have positive værdier af f(x). For også at plotte den negative værdier af f(x), er det nødvendigt at oprette to separate funktioner: f(x)=sqrt(x+2) og f(x)=-sqrt(x+2). Som alternativ hertil kan man plotte funktionen ved at indsætte relationen: y^2=x+2."
 
-#. FAQ.xml:261(para)
+#. FAQ.xml:262(para)
 msgid "How do I plot a complex function like f(t)=e^(i*t)?"
 msgstr "Hvordan plotter jeg en kompleks funktion, f.eks. f(t)=e^(i*t)?"
 
-#. FAQ.xml:266(para)
+#. FAQ.xml:267(para)
 msgid "You probably want to show the real part on the x-axis and the imaginary part on the y-axis. In that case you can draw the function as the parametric function x(t)=re(e^(i*t)), y(t)=im(e^(i*t)). Notice that <placeholder-1/> must be enabled in the <placeholder-2/> dialog."
 msgstr "Du ønsker antageligvis at få den reelle del vist på x-aksen og den imaginære del på y-aksen. Hvis dette er tilfældet, kan funktionen tegnes som en parameterfunktion x(t)=re(e^(i*t)), y(t)=im(e^(i*t)). Bemærk at <placeholder-1/> skal være slået til i dialogboksen <placeholder-2/>."
 
-#. FAQ.xml:276(para)
+#. FAQ.xml:277(para)
 msgid "How can I make Graph plot functions with vertical asymptotes correctly?"
 msgstr "Hvordan plotter jeg funktioner med lodrette asymptoter korrekt?"
 
-#. FAQ.xml:281(para)
+#. FAQ.xml:282(para)
 msgid "Functions like f(x)=tan(x) with vertical asymptotes may not always be shown correctly. As default Graph will evaluate the function for each pixel on the x-axis. But if the graph has a steep slope that goes against infinite and back between two pixels, Graph will not notice it. To plot the function correctly you can tell Graph how many evaluations to perform. This may be entered in the <placeholder-1/> field in the <placeholder-2/> dialog. A number around 100000 will usually show the function correctly."
 msgstr "Funktioner som f(x)=tan(x) med lodrette asymptoter vises måske ikke altid korrekt. Som standard evaluerer Graph funktionen for hver pixel på x-aksen. Hvis grafen har en stejl hældning, der går mod uendelig og tilbage igen mellem to pixels, vil Graph imidlertid ikke bemærke det. For at plotte funktionen korrekt, kan man instruere Graph i, hvor mange evalueringer der skal foretages. Dette kan indtastes i feltet <placeholder-1/> i dialogboksen <placeholder-2/>. En tal i omegnen af 100000 vil som regel få funktionen til at blive vist korrekt."
 
-#. FAQ.xml:294(para)
+#. FAQ.xml:295(para)
 msgid "How to create a PDF file from Graph?"
 msgstr "Hvordan opretter man en PDF-fil fra Graph?"
 
-#. FAQ.xml:299(para)
+#. FAQ.xml:300(para)
 msgid "You can choose to save as PDF in the <placeholder-1/> dialog."
 msgstr "Du kan vælge at gemme som PDF i dialogboksen <placeholder-1/>."
 
-#. FAQ.xml:307(para)
+#. FAQ.xml:308(para)
 msgid "Why will the program not start under Windows 95?"
 msgstr "Programmet vil ikke starte under Windows 95?"
 
-#. FAQ.xml:312(para)
+#. FAQ.xml:313(para)
 msgid "Graph no longer supports Windows 95. The last version to run under Windows 95 was Graph 4.2."
 msgstr "Graph understøtter ikke længere Windows 95. Den seneste version, der kan køre under Windows 95, er Graph 4.2."
 
@@ -3423,7 +3435,8 @@ msgid "Error 10: atanh evaluated at undefined value."
 msgstr "Fejl 10: atanh evalueret for en udefineret værdi."
 
 #. Errors.xml:95(para)
-msgid "Inverse hyperbolic tangent atanh(x) is undefined at x=1, and only defined when using complex numbers outside the interval x=]-1;1[."
+#, fuzzy
+msgid "Inverse hyperbolic tangent atanh(x) is undefined at x=1 and x=-1, and not defined outside the interval x=]-1;1[ when calculating with real numbers only."
 msgstr "Invers hyperbolsk tangens atanh(x) er ikke defineret for x=1 og er kun defineret for komplekse tal uden for intervallet ]-1;1[."
 
 #. Errors.xml:99(term)
@@ -3432,7 +3445,7 @@ msgstr "Fejl 11: acosh evalueret for en udefineret værdi."
 
 #. Errors.xml:101(para)
 #, fuzzy
-msgid "Inverse hyperbolic cosine acosh(x) is only defined for x 1 when using real numbers. acosh(x) is defined for all numbers when calculating with complex numbers."
+msgid "Inverse hyperbolic cosine acosh(x) is only defined for x&ge;1 when using <placeholder-1/>. acosh(x) is defined for all numbers when calculating with <placeholder-2/>."
 msgstr "Invers hyperbolsk cosinus acosh(x) er kun defineret for x&ge;1 når <placeholder-1/>, mens acosh(x) er defineret for alle tal, når der regnes med <placeholder-2/>."
 
 #. Errors.xml:109(term)
@@ -3708,7 +3721,8 @@ msgid "Function arguments are entered after the name in brackets separated by co
 msgstr "Funktionsargumenter indtastes efter navnet i parentes og adskilt af komma, f.eks. <literal>f(x,y,z)</literal> hvis funktionen hedder f og tager tre argumenter med navnene x, y og z. Ligesom funktionsnavnet skal også navnene på argumenterne begynde med et bogstav og må kun indeholde bogstaver og tal."
 
 #. CustomFunctionsDialog.xml:34(para)
-msgid "The expressions you want to define are entered in the second column. The expressions can use the arguments specified in the first column and all built-in functions, other custom functions and constants, and even call itself recursively. A comment can be written after a # symbol at the end of an expression."
+#, fuzzy
+msgid "The expressions you want to define are entered in the second column. The expressions can use the arguments specified in the first column and all built-in functions, other custom functions and constants, and even call themselves recursively. A comment can be written after a # symbol at the end of an expression."
 msgstr "De udtryk, der skal defineres, indtastes i den anden kolonne. Udtrykkene kan gøre brug af argumenter, som er definerede i den første kolonne, og alle indbyggede funktioner, andre brugerdefinerede funktioner og konstanter, og kan endda kalde sig selv rekursivt."
 
 #. CustomFunctionsDialog.xml:43(term)
@@ -3872,7 +3886,8 @@ msgid "background color"
 msgstr "baggrundsfarve"
 
 #. AxesDialog.xml:32(para)
-msgid "When you choose the menu item <placeholder-1/> , the dialog shown below will appear. In this dialog you can configure all options which are related to the axes. The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis. The tab with options for the y-axis is completely analog to this."
+#, fuzzy
+msgid "When you choose the menu item <placeholder-1/>, the dialog shown below will appear. In this dialog you can configure all options which are related to the axes. The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis. The tab with options for the y-axis is completely analog to this."
 msgstr "Når menupunktet <placeholder-1/> vælges, fremkommer nedenstående dialogboks, hvor indstillinger vedrørende koordinatsystemets akser vælges. Dialogboksen indeholder 4 faner. Den første fane, som er vist nedenfor, bruges til at vælge indstillinger for x-aksen. Fanen, der bruges til at vælge indstillinger for y-aksen, er helt analog hertil."
 
 #. AxesDialog.xml:43(title)
@@ -4079,10 +4094,6 @@ msgstr "animer"
 msgid "constant"
 msgstr "konstant"
 
-#. AnimateDialog.xml:11(primary)
-msgid "avi"
-msgstr "avi"
-
 #. AnimateDialog.xml:12(primary)
 msgid "repeat"
 msgstr "gentag"
@@ -4137,7 +4148,7 @@ msgstr "Når du trykker på knappen <guibutton>Animer</guibutton>, vil en animat
 
 #. AnimateDialog.xml:66(para)
 #, fuzzy
-msgid "When the animation is finished, a very simple player is shown. You can use this to play the animation. The <guibutton><inlinegraphic fileref=\"AnimationMenu.bmp\" scale=\"60\"/></guibutton> button will give you some additional options."
+msgid "When the animation is finished, a very simple player is shown. You can use this to play the animation. The <guibutton><inlinegraphic fileref=\"AnimationMenu.png\" scale=\"60\"/></guibutton> button will give you some additional options."
 msgstr "Når animationen er færdig, vises en meget simpel afspiller, som kan bruges til at afspille animationen. Knappen <guibutton><inlinegraphic fileref=\"AnimationMenu.png\" scale=\"60\"/></guibutton> giver mulighed for yderligere indstillinger."
 
 #. AnimateDialog.xml:73(term)
@@ -4185,7 +4196,8 @@ msgid "This will save all frames as single bitmap files. This is the same as rep
 msgstr "Dette vil gemme alle billederne som enkelte bitmap-filer. Det svarer til at gentage <placeholder-1/> for hvert enkelt billede i animationen."
 
 #. Acknowledgements.xml:7(title)
-msgid "Acknowledgements"
+#, fuzzy
+msgid "Acknowledgments"
 msgstr "Anerkendelse"
 
 #. Acknowledgements.xml:8(primary)
@@ -4209,170 +4221,177 @@ msgid "Libraries"
 msgstr "Biblioteker"
 
 #. Acknowledgements.xml:15(member)
-msgid "Parts of Graph are using the Spirit parser library:"
-msgstr "Dele af Graph benytter Spirit parser library:"
-
-#. Acknowledgements.xml:21(member)
-msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
-msgstr "Graph benytter BMGLib til at gemme billeder som Portable Network Graphics:"
-
-#. Acknowledgements.xml:28(member)
 msgid "Graph uses dxgettext as translation library:"
 msgstr "Graph benytter dxgettext som oversættelsesbibliotek:"
 
-#. Acknowledgements.xml:34(member)
+#. Acknowledgements.xml:21(member)
 msgid "For shell extensions the EasyNSE library is used:"
 msgstr "Til shell extensions benyttes biblioteket EasyNSE:"
 
-#. Acknowledgements.xml:40(member)
+#. Acknowledgements.xml:27(member)
 msgid "The PDFlib-Lite library is used to create PDF files:"
 msgstr "The PDFlib-Lite library bruges til at fremstille PDF-filer:"
 
-#. Acknowledgements.xml:46(member)
-msgid "Tnt Delphi Unicode Controls"
-msgstr "Tnt Delphi Unicode Controls"
-
-#. Acknowledgements.xml:52(member)
+#. Acknowledgements.xml:33(member)
 msgid "Python is used for plugin support:"
 msgstr "Python bruges til understøttelse af plugins:"
 
-#. Acknowledgements.xml:60(title)
+#. Acknowledgements.xml:41(title)
 msgid "Translations"
 msgstr "Oversættelser"
 
-#. Acknowledgements.xml:71(entry)
+#. Acknowledgements.xml:52(entry)
 msgid "Program"
 msgstr "Program"
 
-#. Acknowledgements.xml:72(entry)
+#. Acknowledgements.xml:53(entry)
 msgid "Help file"
 msgstr "Hjælpefil"
 
-#. Acknowledgements.xml:73(entry)
+#. Acknowledgements.xml:54(entry)
 msgid "Translator(s)"
 msgstr "Oversætter(e)"
 
-#. Acknowledgements.xml:78(entry)
+#. Acknowledgements.xml:59(entry)
 msgid "Arabic"
 msgstr "Arabisk"
 
-#. Acknowledgements.xml:79(entry) Acknowledgements.xml:86(entry) Acknowledgements.xml:93(entry) Acknowledgements.xml:100(entry) Acknowledgements.xml:107(entry) Acknowledgements.xml:114(entry) Acknowledgements.xml:121(entry) Acknowledgements.xml:122(entry) Acknowledgements.xml:128(entry) Acknowledgements.xml:135(entry) Acknowledgements.xml:136(entry) Acknowledgements.xml:142(entry) Acknowledgements.xml:149(entry) Acknowledgements.xml:150(entry) Acknowledgements.xml:156(entry) Acknowledgements.xml:157(entry) Acknowledgements.xml:163(entry) Acknowledgements.xml:170(entry) Acknowledgements.xml:177(entry) Acknowledgements.xml:178(entry) Acknowledgements.xml:184(entry) Acknowledgements.xml:191(entry) Acknowledgements.xml:198(entry) Acknowledgements.xml:205(entry) Acknowledgements.xml:212(entry) Acknowledgements.xml:219(entry) Acknowledgements.xml:226(entry) Acknowledgements.xml:233(entry) Acknowledgements.xml:234(entry) Acknowledgements.xml:240(entry) Acknowledgements.xml:241(entry) Acknowledgements.xml:247(entry) Acknowledgements.xml:254(entry) Acknowledgements.xml:261(entry)
+#. Acknowledgements.xml:60(entry) Acknowledgements.xml:67(entry) Acknowledgements.xml:74(entry) Acknowledgements.xml:81(entry) Acknowledgements.xml:88(entry) Acknowledgements.xml:95(entry) Acknowledgements.xml:102(entry) Acknowledgements.xml:103(entry) Acknowledgements.xml:109(entry) Acknowledgements.xml:116(entry) Acknowledgements.xml:117(entry) Acknowledgements.xml:123(entry) Acknowledgements.xml:130(entry) Acknowledgements.xml:131(entry) Acknowledgements.xml:137(entry) Acknowledgements.xml:138(entry) Acknowledgements.xml:144(entry) Acknowledgements.xml:151(entry) Acknowledgements.xml:158(entry) Acknowledgements.xml:164(entry) Acknowledgements.xml:165(entry) Acknowledgements.xml:171(entry) Acknowledgements.xml:178(entry) Acknowledgements.xml:185(entry) Acknowledgements.xml:192(entry) Acknowledgements.xml:199(entry) Acknowledgements.xml:206(entry) Acknowledgements.xml:213(entry) Acknowledgements.xml:220(entry) Acknowledgements.xml:227(entry) Acknowledgements.xml:234(entry) Acknowledgements.xml:235(entry) Acknowledgements.xml:241(entry) Acknowledgements.xml:242(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:255(entry) Acknowledgements.xml:262(entry)
 msgid "Yes"
 msgstr "Ja"
 
-#. Acknowledgements.xml:80(entry) Acknowledgements.xml:87(entry) Acknowledgements.xml:94(entry) Acknowledgements.xml:101(entry) Acknowledgements.xml:108(entry) Acknowledgements.xml:115(entry) Acknowledgements.xml:129(entry) Acknowledgements.xml:143(entry) Acknowledgements.xml:164(entry) Acknowledgements.xml:171(entry) Acknowledgements.xml:185(entry) Acknowledgements.xml:192(entry) Acknowledgements.xml:199(entry) Acknowledgements.xml:206(entry) Acknowledgements.xml:213(entry) Acknowledgements.xml:220(entry) Acknowledgements.xml:227(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:255(entry) Acknowledgements.xml:262(entry)
+#. Acknowledgements.xml:61(entry) Acknowledgements.xml:68(entry) Acknowledgements.xml:75(entry) Acknowledgements.xml:82(entry) Acknowledgements.xml:89(entry) Acknowledgements.xml:96(entry) Acknowledgements.xml:110(entry) Acknowledgements.xml:124(entry) Acknowledgements.xml:145(entry) Acknowledgements.xml:152(entry) Acknowledgements.xml:159(entry) Acknowledgements.xml:172(entry) Acknowledgements.xml:179(entry) Acknowledgements.xml:186(entry) Acknowledgements.xml:193(entry) Acknowledgements.xml:200(entry) Acknowledgements.xml:207(entry) Acknowledgements.xml:214(entry) Acknowledgements.xml:221(entry) Acknowledgements.xml:228(entry) Acknowledgements.xml:249(entry) Acknowledgements.xml:256(entry) Acknowledgements.xml:263(entry)
 msgid "No"
 msgstr "Nej"
 
-#. Acknowledgements.xml:85(entry)
+#. Acknowledgements.xml:66(entry)
 msgid "Basque"
 msgstr "Baskisk"
 
-#. Acknowledgements.xml:92(entry)
+#. Acknowledgements.xml:73(entry)
 msgid "Chinese (Traditional)"
 msgstr "Kinesisk (traditionelt)"
 
-#. Acknowledgements.xml:99(entry)
+#. Acknowledgements.xml:80(entry)
 msgid "Chinese (Simplified)"
 msgstr "Kinesisk (standard)"
 
-#. Acknowledgements.xml:106(entry)
+#. Acknowledgements.xml:87(entry)
 msgid "Croatian"
 msgstr "Kroatisk"
 
-#. Acknowledgements.xml:113(entry)
+#. Acknowledgements.xml:94(entry)
 msgid "Czech"
 msgstr "Tjekkisk"
 
-#. Acknowledgements.xml:120(entry)
+#. Acknowledgements.xml:101(entry)
 msgid "Danish"
 msgstr "Dansk"
 
-#. Acknowledgements.xml:127(entry)
+#. Acknowledgements.xml:108(entry)
 msgid "Dutch"
 msgstr "Hollandsk"
 
-#. Acknowledgements.xml:134(entry)
+#. Acknowledgements.xml:115(entry)
 msgid "English"
 msgstr "Engelsk"
 
-#. Acknowledgements.xml:141(entry)
+#. Acknowledgements.xml:122(entry)
 msgid "Finnish"
 msgstr "Finsk"
 
-#. Acknowledgements.xml:148(entry)
+#. Acknowledgements.xml:129(entry)
 msgid "French"
 msgstr "Fransk"
 
-#. Acknowledgements.xml:155(entry)
+#. Acknowledgements.xml:136(entry)
 msgid "German"
 msgstr "Tysk"
 
-#. Acknowledgements.xml:162(entry)
+#. Acknowledgements.xml:143(entry)
 msgid "Greek"
 msgstr "Græsk"
 
-#. Acknowledgements.xml:169(entry)
+#. Acknowledgements.xml:150(entry)
 msgid "Hungarian"
 msgstr "Ungarsk"
 
-#. Acknowledgements.xml:176(entry)
+#. Acknowledgements.xml:157(entry)
+msgid "Hebrew"
+msgstr ""
+
+#. Acknowledgements.xml:163(entry)
 msgid "Italian"
 msgstr "Italiensk"
 
-#. Acknowledgements.xml:183(entry)
+#. Acknowledgements.xml:170(entry)
 msgid "Korean"
 msgstr "Koreansk"
 
-#. Acknowledgements.xml:190(entry)
+#. Acknowledgements.xml:177(entry)
 msgid "Mongolian"
 msgstr "Mongolsk"
 
-#. Acknowledgements.xml:197(entry)
+#. Acknowledgements.xml:184(entry)
 msgid "Norwegian"
 msgstr "Norsk"
 
-#. Acknowledgements.xml:204(entry)
+#. Acknowledgements.xml:191(entry)
+#, fuzzy
+msgid "Persian"
+msgstr "Serbisk"
+
+#. Acknowledgements.xml:194(entry)
+msgid "Shayan Abyari &amp; Yashar PourMohammad"
+msgstr ""
+
+#. Acknowledgements.xml:198(entry)
 msgid "Polish"
 msgstr "Polsk"
 
-#. Acknowledgements.xml:211(entry)
-msgid "Portuguese"
+#. Acknowledgements.xml:205(entry)
+#, fuzzy
+msgid "Portuguese (Brazil)"
 msgstr "Portugisisk"
 
-#. Acknowledgements.xml:218(entry)
+#. Acknowledgements.xml:212(entry)
+#, fuzzy
+msgid "Portuguese (Portugal)"
+msgstr "Portugisisk"
+
+#. Acknowledgements.xml:219(entry)
 msgid "Russian"
 msgstr "Russisk"
 
-#. Acknowledgements.xml:225(entry)
+#. Acknowledgements.xml:226(entry)
 msgid "Serbian"
 msgstr "Serbisk"
 
-#. Acknowledgements.xml:232(entry)
+#. Acknowledgements.xml:233(entry)
 msgid "Slovenian"
 msgstr "Slovensk"
 
-#. Acknowledgements.xml:239(entry)
+#. Acknowledgements.xml:240(entry)
 msgid "Spanish"
 msgstr "Spansk"
 
-#. Acknowledgements.xml:246(entry)
+#. Acknowledgements.xml:247(entry)
 msgid "Swedish"
 msgstr "Svensk"
 
-#. Acknowledgements.xml:253(entry)
+#. Acknowledgements.xml:254(entry)
 msgid "Turkish"
 msgstr "Tyrkisk"
 
-#. Acknowledgements.xml:260(entry)
+#. Acknowledgements.xml:261(entry)
 msgid "Vietnamese"
 msgstr "Vietnamesisk"
 
-#. Acknowledgements.xml:272(title)
+#. Acknowledgements.xml:273(title)
 msgid "Miscellaneous"
 msgstr "Øvrigt"
 
-#. Acknowledgements.xml:273(para)
+#. Acknowledgements.xml:274(para)
 msgid "The icon was designed by <placeholder-1/>."
 msgstr "Ikonet er designet af <placeholder-1/>."
 
@@ -4380,4 +4399,54 @@ msgstr "Ikonet er designet af <placeholder-1/>."
 #. Acknowledgements.xml:0(None)
 msgid "translator-credits"
 msgstr "Michael Bach Ipsen <rosenthall@hotmail.com>, 2003, 2009"
+
+#~ msgid ""
+#~ "The <placeholder-1/> function calculates the inverse tangent of "
+#~ "<placeholder-2/>. The result may be in <placeholder-3/> or degrees "
+#~ "depending on the current settings. <placeholder-4/> may be any "
+#~ "<placeholder-5/> that evaluates to a real number. This is the reverse of "
+#~ "the <placeholder-6/> function."
+#~ msgstr ""
+#~ "Funktionen <placeholder-1/> beregner invers tangens til vinklen "
+#~ "<placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader "
+#~ "afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et "
+#~ "hvilket som helst <placeholder-5/>, der evalueres til et reelt tal. Dette "
+#~ "er den omvendte af funktionen <placeholder-6/>."
+#~ msgid "f'(x)"
+#~ msgstr "f'(x)"
+#~ msgid "hyperbolic cosecanr"
+#~ msgstr "hyperbolsk cosekans"
+#~ msgid "hyperbolic secanr"
+#~ msgstr "hyperbolsk sekans"
+#~ msgid ""
+#~ "The probability function of the normal distribution in a variate with "
+#~ "mean and standard"
+#~ msgstr ""
+#~ "Sandsynlighedsfunktionen for en stokastisk variabels normalfordeling med "
+#~ "middelværdi og spredning."
+#~ msgid "sin(x)^2= (sin(x))^2"
+#~ msgstr "sin(x)^2 = (sin(x))^2"
+#~ msgid "sin 2x = sin(2x)"
+#~ msgstr "sin 2x = sin(2x)"
+#~ msgid "sin 2+x = sin(2)+x"
+#~ msgstr "sin 2+x = sin(2)+x"
+#~ msgid "sin x^2 = sin(x^2)"
+#~ msgstr "sin x^2 = sin(x^2)"
+#~ msgid "2(x+3)x = 2*(x+3)*x"
+#~ msgstr "2(x+3)x = 2*(x+3)*x"
+#~ msgid "-x^2 = -(x^2)"
+#~ msgstr "-x^2 = -(x^2)"
+#~ msgid "2x = 2*x"
+#~ msgstr "2x = 2*x"
+#~ msgid "e^2x = e^(2*x)"
+#~ msgstr "e^2x = e^(2*x)"
+#~ msgid "avi"
+#~ msgstr "avi"
+#~ msgid "Parts of Graph are using the Spirit parser library:"
+#~ msgstr "Dele af Graph benytter Spirit parser library:"
+#~ msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
+#~ msgstr ""
+#~ "Graph benytter BMGLib til at gemme billeder som Portable Network Graphics:"
+#~ msgid "Tnt Delphi Unicode Controls"
+#~ msgstr "Tnt Delphi Unicode Controls"
 

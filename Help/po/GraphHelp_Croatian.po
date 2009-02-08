@@ -1,19 +1,24 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2008-12-18 22:10Romance Standard Time\n"
-"PO-Revision-Date: 2008-12-18 22:11+0100\n"
+"POT-Creation-Date: 2009-02-08 17:49Romance Standard Time\n"
+"PO-Revision-Date: 2009-02-08 20:35+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Version.xml:2(subtitle)
+#, fuzzy
+msgid "Version <placeholder-1/>"
+msgstr "<placeholder-1/> funkcija"
+
 #. Trigonometric.xml:7(title) FunctionList.xml:180(emphasis)
 msgid "Trigonometric"
 msgstr "Trigonometrija"
 
-#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:40(title) Trigonometric.xml:41(primary) Trigonometric.xml:71(title) Trigonometric.xml:72(primary) Trigonometric.xml:104(title) Trigonometric.xml:105(primary) Trigonometric.xml:129(title) Trigonometric.xml:130(primary) Trigonometric.xml:154(title) Trigonometric.xml:155(primary) Trigonometric.xml:179(title) Trigonometric.xml:180(primary) Trigonometric.xml:209(title) Trigonometric.xml:210(primary) Trigonometric.xml:239(title) Trigonometric.xml:240(primary) Trigonometric.xml:269(title) Trigonometric.xml:270(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:321(title) Trigonometric.xml:322(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:41(title) Special.xml:42(primary) Special.xml:68(title) Special.xml:69(primary) Special.xml:94(title) Special.xml:95(primary) Special.xml:117(title) Special.xml:118(primary) Special.xml:147(title) Special.xml:148(primary) Special.xml:170(title) Special.xml:171(primary) Special.xml:199(title) Special.xml:200(primary) Special.xml:226(title) Special.xml:227(primary) Special.xml:251(title) Special.xml:252(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:33(title) Rounding.xml:34(primary) Rounding.xml:58(title) Rounding.xml:59(primary) Rounding.xml:81(title) Rounding.xml:82(primary) Rounding.xml:105(title) Rounding.xml:106(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:52(title) PowerAndLog.xml:53(primary) PowerAndLog.xml:74(title) PowerAndLog.xml:75(primary) PowerAndLog.xml:110(title) PowerAndLog.xml:111(primary) PowerAndLog.xml:135(title) PowerAndLog.xml:136(primary) PowerAndLog.xml:158(title) PowerAndLog.xml:159(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:33(title) Piecewise.xml:34(primary) Piecewise.xml:55(title) Piecewise.xml:56(primary) Piecewise.xml:79(title) Piecewise.xml:80(primary) Piecewise.xml:103(title) Piecewise.xml:104(primary) Piecewise.xml:128(title) Piecewise.xml:129(primary) Piecewise.xml:150(title) Piecewise.xml:151(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:33(title) Hyperbolic.xml:34(primary) Hyperbolic.xml:57(title) Hyperbolic.xml:58(primary) Hyperbolic.xml:81(title) Hyperbolic.xml:82(primary) Hyperbolic.xml:104(title) Hyperbolic.xml:105(primary) Hyperbolic.xml:128(primary) Hyperbolic.xml:132(title) Hyperbolic.xml:152(title) Hyperbolic.xml:153(primary) Hyperbolic.xml:176(title) Hyperbolic.xml:177(primary) Hyperbolic.xml:200(title) Hyperbolic.xml:201(primary) Hyperbolic.xml:224(title) Hyperbolic.xml:225(primary) Hyperbolic.xml:247(title) Hyperbolic.xml:248(primary) Hyperbolic.xml:270(title) Hyperbolic.xml:271(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:32(title) Complex.xml:33(primary) Complex.xml:59(title) Complex.xml:60(primary) Complex.xml:81(title) Complex.xml:82(primary) Complex.xml:102(title) Complex.xml:103(primary)
+#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:40(title) Trigonometric.xml:41(primary) Trigonometric.xml:71(title) Trigonometric.xml:72(primary) Trigonometric.xml:104(title) Trigonometric.xml:105(primary) Trigonometric.xml:129(title) Trigonometric.xml:130(primary) Trigonometric.xml:154(title) Trigonometric.xml:155(primary) Trigonometric.xml:179(title) Trigonometric.xml:180(primary) Trigonometric.xml:209(title) Trigonometric.xml:210(primary) Trigonometric.xml:239(title) Trigonometric.xml:240(primary) Trigonometric.xml:269(title) Trigonometric.xml:270(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:321(title) Trigonometric.xml:322(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:41(title) Special.xml:42(primary) Special.xml:68(title) Special.xml:69(primary) Special.xml:94(title) Special.xml:95(primary) Special.xml:117(title) Special.xml:118(primary) Special.xml:147(title) Special.xml:148(primary) Special.xml:170(title) Special.xml:171(primary) Special.xml:199(title) Special.xml:200(primary) Special.xml:226(title) Special.xml:227(primary) Special.xml:251(title) Special.xml:252(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:33(title) Rounding.xml:34(primary) Rounding.xml:58(title) Rounding.xml:59(primary) Rounding.xml:81(title) Rounding.xml:82(primary) Rounding.xml:105(title) Rounding.xml:106(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:52(title) PowerAndLog.xml:53(primary) PowerAndLog.xml:74(title) PowerAndLog.xml:75(primary) PowerAndLog.xml:110(title) PowerAndLog.xml:111(primary) PowerAndLog.xml:135(title) PowerAndLog.xml:136(primary) PowerAndLog.xml:158(title) PowerAndLog.xml:159(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:33(title) Piecewise.xml:34(primary) Piecewise.xml:55(title) Piecewise.xml:56(primary) Piecewise.xml:79(title) Piecewise.xml:80(primary) Piecewise.xml:103(title) Piecewise.xml:104(primary) Piecewise.xml:128(title) Piecewise.xml:129(primary) Piecewise.xml:150(title) Piecewise.xml:151(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:33(title) Hyperbolic.xml:34(primary) Hyperbolic.xml:57(title) Hyperbolic.xml:58(primary) Hyperbolic.xml:81(title) Hyperbolic.xml:82(primary) Hyperbolic.xml:104(title) Hyperbolic.xml:105(primary) Hyperbolic.xml:128(primary) Hyperbolic.xml:132(title) Hyperbolic.xml:152(title) Hyperbolic.xml:153(primary) Hyperbolic.xml:176(title) Hyperbolic.xml:177(primary) Hyperbolic.xml:200(title) Hyperbolic.xml:201(primary) Hyperbolic.xml:225(title) Hyperbolic.xml:226(primary) Hyperbolic.xml:248(title) Hyperbolic.xml:249(primary) Hyperbolic.xml:271(title) Hyperbolic.xml:272(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:32(title) Complex.xml:33(primary) Complex.xml:59(title) Complex.xml:60(primary) Complex.xml:81(title) Complex.xml:82(primary) Complex.xml:102(title) Complex.xml:103(primary)
 msgid "<placeholder-1/> function"
 msgstr "<placeholder-1/> funkcija"
 
@@ -29,11 +34,11 @@ msgstr "sinus"
 msgid "Returns the sine of the argument."
 msgstr "daje sinus argumenta."
 
-#. Trigonometric.xml:17(title) Trigonometric.xml:48(title) Trigonometric.xml:79(title) Trigonometric.xml:113(title) Trigonometric.xml:138(title) Trigonometric.xml:163(title) Trigonometric.xml:187(title) Trigonometric.xml:217(title) Trigonometric.xml:247(title) Trigonometric.xml:278(title) Trigonometric.xml:304(title) Trigonometric.xml:330(title) Special.xml:17(title) Special.xml:48(title) Special.xml:74(title) Special.xml:101(title) Special.xml:124(title) Special.xml:153(title) Special.xml:178(title) Special.xml:206(title) Special.xml:234(title) Special.xml:257(title) Rounding.xml:17(title) Rounding.xml:42(title) Rounding.xml:66(title) Rounding.xml:90(title) Rounding.xml:111(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:59(title) PowerAndLog.xml:80(title) PowerAndLog.xml:118(title) PowerAndLog.xml:142(title) PowerAndLog.xml:165(title) Piecewise.xml:16(title) Piecewise.xml:39(title) Piecewise.xml:62(title) Piecewise.xml:86(title) Piecewise.xml:109(title) Piecewise.xml:134(title) Piecewise.xml:156(title) Hyperbolic.xml:16(title) Hyperbolic.xml:40(title) Hyperbolic.xml:64(title) Hyperbolic.xml:89(title) Hyperbolic.xml:112(title) Hyperbolic.xml:137(title) Hyperbolic.xml:159(title) Hyperbolic.xml:183(title) Hyperbolic.xml:207(title) Hyperbolic.xml:232(title) Hyperbolic.xml:255(title) Hyperbolic.xml:278(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:40(title) Complex.xml:66(title) Complex.xml:88(title) Complex.xml:109(title)
+#. Trigonometric.xml:17(title) Trigonometric.xml:48(title) Trigonometric.xml:79(title) Trigonometric.xml:113(title) Trigonometric.xml:138(title) Trigonometric.xml:163(title) Trigonometric.xml:187(title) Trigonometric.xml:217(title) Trigonometric.xml:247(title) Trigonometric.xml:278(title) Trigonometric.xml:304(title) Trigonometric.xml:330(title) Special.xml:17(title) Special.xml:48(title) Special.xml:74(title) Special.xml:101(title) Special.xml:124(title) Special.xml:153(title) Special.xml:178(title) Special.xml:206(title) Special.xml:234(title) Special.xml:257(title) Rounding.xml:17(title) Rounding.xml:42(title) Rounding.xml:66(title) Rounding.xml:90(title) Rounding.xml:111(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:59(title) PowerAndLog.xml:80(title) PowerAndLog.xml:118(title) PowerAndLog.xml:142(title) PowerAndLog.xml:165(title) Piecewise.xml:16(title) Piecewise.xml:39(title) Piecewise.xml:62(title) Piecewise.xml:86(title) Piecewise.xml:109(title) Piecewise.xml:134(title) Piecewise.xml:156(title) Hyperbolic.xml:16(title) Hyperbolic.xml:40(title) Hyperbolic.xml:64(title) Hyperbolic.xml:89(title) Hyperbolic.xml:112(title) Hyperbolic.xml:137(title) Hyperbolic.xml:159(title) Hyperbolic.xml:183(title) Hyperbolic.xml:207(title) Hyperbolic.xml:233(title) Hyperbolic.xml:256(title) Hyperbolic.xml:279(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:40(title) Complex.xml:66(title) Complex.xml:88(title) Complex.xml:109(title)
 msgid "Syntax"
 msgstr "Sintaksa"
 
-#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:78(title) Special.xml:105(title) Special.xml:128(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:28(entry) Installation.xml:82(entry) Installation.xml:153(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:141(title) Hyperbolic.xml:163(title) Hyperbolic.xml:187(title) Hyperbolic.xml:211(title) Hyperbolic.xml:236(title) Hyperbolic.xml:259(title) Hyperbolic.xml:282(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title)
+#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:78(title) Special.xml:105(title) Special.xml:128(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:28(entry) Installation.xml:82(entry) Installation.xml:153(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:141(title) Hyperbolic.xml:163(title) Hyperbolic.xml:187(title) Hyperbolic.xml:211(title) Hyperbolic.xml:237(title) Hyperbolic.xml:260(title) Hyperbolic.xml:283(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title)
 msgid "Description"
 msgstr "Opis"
 
@@ -41,15 +46,15 @@ msgstr "Opis"
 msgid "radians"
 msgstr "radijani"
 
-#. Trigonometric.xml:25(glossterm) Trigonometric.xml:56(glossterm) Trigonometric.xml:87(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:108(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:262(glossterm) Hyperbolic.xml:285(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
+#. Trigonometric.xml:25(glossterm) Trigonometric.xml:56(glossterm) Trigonometric.xml:87(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:108(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
 msgid "numeric expression"
 msgstr "numerički izraz"
 
-#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:121(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:262(glossterm) Hyperbolic.xml:285(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
+#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:121(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
 msgid "real number"
 msgstr "realni broj"
 
-#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:262(glossterm) Hyperbolic.xml:285(glossterm) Glossary.xml:13(glossterm) Glossary.xml:14(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
+#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:13(glossterm) Glossary.xml:14(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
 msgid "complex number"
 msgstr "kompleksni broj"
 
@@ -405,7 +410,7 @@ msgstr "daje ostatak prvog argumenta podijeljenog s drugim argumentom."
 msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>, <placeholder-8/> returns 0. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr "Izračunava <placeholder-1/> modul <placeholder-2/> i ostatak od <placeholder-3/>. <placeholder-4/> izračunava ostatak f, pri čemu je <placeholder-5/> za cijeli broj a. sign f je isto što i sign od <placeholder-6/>. Kad je <placeholder-7/>, <placeholder-8/> daje 0. <placeholder-9/> i <placeholder-10/> mogu biti bilo koji <placeholder-11/> koji su <placeholder-12/>."
 
-#. Special.xml:253(para)
+#. Special.xml:253(para) FunctionList.xml:430(entry)
 msgid "Returns the normal distribution of the first argument with optional mean value and standard deviation."
 msgstr "daje normalnu razdiobu prvog argumenta s neobveznom srednjom vrijednosti standardne devijacije."
 
@@ -454,7 +459,8 @@ msgid "Use the menu item <placeholder-1/> to save the shown coordinate system as
 msgstr "Izborom stavke izbornika <placeholder-1/> pohranjujete sliku grafa kao datoteku. Graph podržava pet oblika: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) i Portable Document Format (pdf). U oknu dijaloga <placeholder-2/> odabirete tip i mjesto pohrane."
 
 #. SaveImageDialog.xml:25(para)
-msgid "bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen. emf files are used for vector graphics. The Options button in the save dialog can be used to change to image size. You may also be able to change other settings depending on the chosen image format."
+#, fuzzy
+msgid "bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen. emf files are used for vector graphics. The Options button in the save dialog can be used to change the image size. You may also be able to change other settings depending on the chosen image format."
 msgstr "Slika će biti pohranjena onako kako ju vidite. bmp i png oblici su bitmape, a emf je vektorski oblik pohrane slika. Tipkom Mogućnosti mijenjate veličinu slike i druge postavke ovisno o odabranom obliku pohrane."
 
 #. SaveImageDialog.xml:31(para)
@@ -713,7 +719,7 @@ msgstr "daje sekvencu if funkcije i vraća prvi resultat koji je različit od nu
 msgid "The <placeholder-1/> function evaluates <placeholder-2/> and if it is different from 0 then <placeholder-3/> is evaluated and returned. Else <placeholder-4/> is evaluated and if it is different from 0 then <placeholder-5/> is returned and so forth. If none of the conditions are true <placeholder-6/> is returned. <placeholder-7/> is optional and if not specified <placeholder-8/> returns an error if none of the conditions are true. If <placeholder-9/> has 3 arguments it will be the same as the <placeholder-10/> function. The arguments may be any <placeholder-11/> that evaluate to <placeholder-12/> or <placeholder-13/>."
 msgstr "Funkcija <placeholder-1/> traži <placeholder-2/>, ako je različito od 0 tada daje <placeholder-3/>, ili traži <placeholder-4/>, ako je iznos različit od 0 tada daje <placeholder-5/> i tako redom. Ako ni jedan uvjet nije točan, rezultat je: <placeholder-6/>. <placeholder-7/> je neobvezan i ako nije naveden <placeholder-8/> daje grešku kad ni jedan uvjet nije ispunjen. Ako <placeholder-9/> ima 3 argumenta, to je isto što i <placeholder-10/> funkcija. Argumenti mogu biti bilo koji <placeholder-11/> koji su <placeholder-12/> ili <placeholder-13/>."
 
-#. OptionsDialog.xml:8(title) InsertShadingDialog.xml:109(title) InsertShadingDialog.xml:111(guilabel) InsertShadingDialog.xml:202(guilabel)
+#. OptionsDialog.xml:8(title) InsertShadingDialog.xml:109(title) InsertShadingDialog.xml:111(guilabel) InsertShadingDialog.xml:201(guilabel)
 msgid "Options"
 msgstr "Mogućnosti"
 
@@ -1002,7 +1008,8 @@ msgid "Point series..."
 msgstr "Serija točaka..."
 
 #. MenuItems.xml:99(para)
-msgid "Imports one or several point series from a tab, comma or semicolon separated data file. The first column shall contain the x-coordinates. The following columns shall contain the y-coordinates. Graph will create as many point series as there are columns with y-coordinates in the file. There is no limit the number of point series possible in the data file as long as they share the same x-coordinates."
+#, fuzzy
+msgid "Imports one or several point series from a tab, comma or semicolon separated data file. The first column shall contain the x-coordinates. The following columns shall contain the y-coordinates. Graph will create as many point series as there are columns with y-coordinates in the file. There is no limit to the number of point series possible in the data file as long as they share the same x-coordinates."
 msgstr "Iz datoteke uvozi jednu ili seriju točaka koje su organizirane u kolone i međusobno odvojene zarezom ili dvotočkom. Prva kolona treba sadržavati x-koordinate, a slijedeća y-koordinate. Graph će stvoriti isti broj točaka koliko u uvezenoj datoteci ima y-koordinata. Broj točaka i višestruko istih x-koordinata nije ograničen."
 
 #. MenuItems.xml:112(guimenuitem)
@@ -1131,7 +1138,8 @@ msgid "Insert trendline..."
 msgstr "Unos linije trenda..."
 
 #. MenuItems.xml:352(para)
-msgid "Inserts a trendline as the curve curve of best fit for the selected point series. You may choose between different kinds of functions for the trendline."
+#, fuzzy
+msgid "Inserts a trendline as the curve of best fit for the selected point series. You may choose between different kinds of functions for the trendline."
 msgstr "Dijalog okno kojim umećete liniju trenda koja matematički najbolje interpretira seriju točaka. Birate vrstu, stil, boju i dr."
 
 #. MenuItems.xml:363(guimenuitem) InsertRelationDialog.xml:17(guimenuitem)
@@ -1273,7 +1281,8 @@ msgid "Evaluate"
 msgstr "Izračun"
 
 #. MenuItems.xml:595(para)
-msgid "This will evaluate the selected function function for a given value. For standard functions f(x), f'(x) and f''(x) are evaluated. For parametric functions x(t), y(t), dx/dt, dy/dt and dy/dx are evaluated. For polar functions r(t), x(t), y(t), dr/dt and dy/dt are evaluated."
+#, fuzzy
+msgid "This will evaluate the selected function for a given value. For standard functions f(x), f'(x) and f''(x) are evaluated. For parametric functions x(t), y(t), dx/dt, dy/dt and dy/dx are evaluated. For polar functions r(t), x(t), y(t), dr/dt and dy/dt are evaluated."
 msgstr "Izračun vrijednosti odabrane funkcije za danu vrijednost. To vrijedi za standardne funkcije f(x), f'(x) i f''(x), parametarske funkcije x(t), y(t), dx/dt, dy/dt i dy/dx i polarne funkcije r(t), x(t), y(t), dr/dt i dy/dt."
 
 #. MenuItems.xml:608(guimenuitem)
@@ -1411,7 +1420,8 @@ msgid "When you send a bug report, please write the following:"
 msgstr "Pri slanju izvještaja o bagu, molimo upišite slijedeće: <placeholder-1/>"
 
 #. Introduction.xml:39(para)
-msgid "Which version are you using? This is shown in the <placeholder-1/> dialog box. You should check that you are using the newest version, else the bug may have been fixed already."
+#, fuzzy
+msgid "Which version are you using? This is shown in the <placeholder-1/> dialog box. You should check that you are using the newest version as the bug may have been fixed already."
 msgstr "Koju verziju programa koristite? To ćete naći u dijalog oknu u izborniku, <placeholder-1/>. Provjerite koristite li najnoviju verziju, jer možda je bag već ispravljen."
 
 #. Introduction.xml:46(para)
@@ -1456,7 +1466,7 @@ msgstr "Instalacija"
 
 #. Installation.xml:15(para)
 #, fuzzy
-msgid "The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version name. To install, just execute the installation and follow the instructions. The installation will install the following files in the selected directory and subdirectories:"
+msgid "The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version number. To install, just execute the installation and follow the instructions. The installation will install the following files in the selected directory and subdirectories:"
 msgstr "Program se isporučuje kao samoraspakirajuća instalacijska datoteka SetupGraph-x.y.exe, gdje x.y označava inačicu. Pokrenite instalaciju i slijedite upute. U odabranu mapu, instalacija će kopirati slijedeće datoteke i mape: <placeholder-1/>"
 
 #. Installation.xml:27(entry)
@@ -1560,11 +1570,13 @@ msgid "Used to save an opened .grf file as an image file. The file type can be a
 msgstr "Otvorenu datoteku pohranjuje kao sliku. Graph podržava tipove datoteka opisane u <placeholder-1/>."
 
 #. Installation.xml:166(entry)
-msgid "Used in combination with /SI to specify the width in pixels of the saved image."
+#, fuzzy
+msgid "Used in combination with /SI to specify the width in pixels of the image to be saved."
 msgstr "U kombinaciji s parametrom /SI, određuje širinu pohranjene slike u pikselima."
 
 #. Installation.xml:172(entry)
-msgid "Used in combination with /SI to specify the height in pixels of the saved image."
+#, fuzzy
+msgid "Used in combination with /SI to specify the height in pixels of the image to be saved."
 msgstr "U kombinaciji s parametrom /SI, određuje visinu pohranjene slike u pikselima."
 
 #. InsertTrendlineDialog.xml:8(title)
@@ -1611,115 +1623,120 @@ msgstr "regresija"
 msgid "Use the dialog shown below to insert a trendline that is the function that fits a <link linkend=\"InsertPointSeriesDialog\">point series</link> best. A trendline is a function that shows a trend in a series of points, i.e. a trendline is the curve of bets fit of a specific type for a series of points. The trendline is added as an ordinary function. To create a trendline, you select the point series you want to base the trendline on and use <placeholder-1/>."
 msgstr "Preko ovakvog okna možete unijeti liniju trenda odnosno funkciju kojom će se vaša <link linkend=\"InsertPointSeriesDialog\">serija točaka</link> najbolje opisati. Linija trenda se dodaje kao i svaka funkcija. Označite seriju točaka za koju želite trend liniju i s izbornika odaberite <action>Funkcija --> Unos linije trenda</action>."
 
-#. InsertTrendlineDialog.xml:27(title)
+#. InsertTrendlineDialog.xml:26(para)
+msgid "If the point series has custom Y-errors defined, these values are used to weight the points. The weight for each point is <placeholder-1/> where &sigma; is the Y-error for the point. X-errors are not used."
+msgstr ""
+
+#. InsertTrendlineDialog.xml:33(title)
 msgid "Built-in"
 msgstr "Ugrađene"
 
-#. InsertTrendlineDialog.xml:34(guilabel) InsertTrendlineDialog.xml:40(term) InsertPointSeriesDialog.xml:82(guilabel)
+#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:46(term) InsertPointSeriesDialog.xml:82(guilabel)
 msgid "Linear"
 msgstr "Linearna"
 
-#. InsertTrendlineDialog.xml:34(guilabel) InsertTrendlineDialog.xml:70(term)
+#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:76(term)
 msgid "Polynomial"
 msgstr "Polinomna"
 
-#. InsertTrendlineDialog.xml:34(guilabel) InsertTrendlineDialog.xml:99(term)
+#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:105(term)
 msgid "Exponential"
 msgstr "Eksponencijalna"
 
-#. InsertTrendlineDialog.xml:35(guilabel)
+#. InsertTrendlineDialog.xml:41(guilabel)
 msgid "Intercept"
 msgstr "Odsječak"
 
-#. InsertTrendlineDialog.xml:31(para)
+#. InsertTrendlineDialog.xml:37(para)
 msgid "You may choose between the following built-in functions. These functions will give an accurate result. For <placeholder-1/>, <placeholder-2/> and <placeholder-3/> trendlines, you may select the <placeholder-4/> field and specify the point where you want the trendline to meet the y-axis."
 msgstr "Raspoloživo je nekoliko funkcija koje će zadovoljiti rezultatom. Ako kvačicom označite  <placeholder-4/> i unesete vrijednost, <placeholder-1/>, <placeholder-2/> i <placeholder-3/> linija trenda će u toj točci doseći y-os."
 
-#. InsertTrendlineDialog.xml:42(para)
+#. InsertTrendlineDialog.xml:48(para)
 msgid "This is a straight line with the function f(x) = a*x+b, where a and b are constants calculated so the line is the best fit to the point series."
 msgstr "To je ravna linija definirana kao f(x) = a*x+b, gdje su a i b konstante izračunate tako da linija najbolje odgovara vašoj seriji točaka."
 
-#. InsertTrendlineDialog.xml:45(para)
+#. InsertTrendlineDialog.xml:51(para)
 msgid "The trendline is calculated so the sum of squares (SSQ) <placeholder-1/> will be as small as possible. If possible the function will cross the points in the series; else the function will be so close to the series that the summation cannot get any smaller."
 msgstr "Ova trend linija se izračunava tako da suma kvadrata (SSQ) <placeholder-1/> bude što je moguće manja. Ako je moguće, funkcija će prolaziti točkama serije ili će biti tako blizu da spomenuta suma ne može biti manja."
 
-#. InsertTrendlineDialog.xml:55(term)
+#. InsertTrendlineDialog.xml:61(term)
 msgid "Logarithmic"
 msgstr "Logaritamska"
 
-#. InsertTrendlineDialog.xml:57(para)
+#. InsertTrendlineDialog.xml:63(para)
 msgid "A logarithmic line of best fit is given as <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants, and <placeholder-4/> is the natural logarithm function. To add a logarithmic function, no point in the series may have an x-coordinate that is negative or zero."
 msgstr "Logaritamska zakonitost definirana je kao <placeholder-1/>, gdje su <placeholder-2/> i <placeholder-3/> konstante, a <placeholder-4/> prirodni logaritam. Da ova trend linija može zadovoljiti, ni jedna x-koordinata točaka serije ne smije biti negativna ili jednaka nuli."
 
-#. InsertTrendlineDialog.xml:62(para)
+#. InsertTrendlineDialog.xml:68(para)
 msgid "A logarithmic function is a straight line in a semilogarithmic coordinate system. The point series is therefore converted to a semilogarithmic coordinate system and the logarithmic function with the smallest sum of squares (SSQ) is found."
 msgstr "Logaritamska funkcija je ravna linija na polulogaritamskom grafu. Serija točaka se pretvara u polulogaritamski graf, a logaritamska funkcija zadovoljava najmanju sumu kvadrata (SSQ)."
 
-#. InsertTrendlineDialog.xml:72(para)
+#. InsertTrendlineDialog.xml:78(para)
 msgid "A polynomial is a function given by <placeholder-1/>, where <placeholder-2/>...<placeholder-3/> are constants. <placeholder-4/> is the order of the polynomial. You need at least one more point than the order."
 msgstr "Polinomna funkcija definirana kao <placeholder-1/>, gdje su <placeholder-2/>...<placeholder-3/> konstante, a <placeholder-4/> je stupanj polinoma.  Nužno mora biti barem jedna točka u seriji više od izabranog stupnja polinoma."
 
-#. InsertTrendlineDialog.xml:84(term)
+#. InsertTrendlineDialog.xml:90(term)
 msgid "Power"
 msgstr "Potencijalna"
 
-#. InsertTrendlineDialog.xml:86(para)
+#. InsertTrendlineDialog.xml:92(para)
 msgid "A power function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add a power function, no point in the series may have an x- or y-coordinate that is negative or zero."
 msgstr "Funkcija je definirana kao <placeholder-1/> , gdje su <placeholder-2/> i <placeholder-3/> konstante izračunate tako da funkcija najbolje odgovara vašoj seriji točaka. Da ova trend linija može zadovoljiti, ni jedna x- ili y-koordinata točaka serije ne smije biti negativna ili jednaka nuli"
 
-#. InsertTrendlineDialog.xml:91(para)
+#. InsertTrendlineDialog.xml:97(para)
 msgid "A power function is a straight line in a double logarithmic coordinate system. The point series is therefore converted to a double logarithmic coordinate system and the power function with the smallest sum of squares (SSQ) is found."
 msgstr "Potencijalna funkcija je ravna linija na logaritamskom grafu. Serija točaka se pretvara u logaritamski graf, a logaritamska funkcija zadovoljava najmanju sumu kvadrata (SSQ)."
 
-#. InsertTrendlineDialog.xml:101(para)
+#. InsertTrendlineDialog.xml:107(para)
 msgid "An exponential function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add an exponential function, no point in the series may have a y-coordinate that is negative or zero."
 msgstr "Eksponencijalna funkcija definirana je kao <placeholder-1/>, gdje su <placeholder-2/> i <placeholder-3/> konstante koje se izračunavaju da najbolje pristaju vašoj seriji točaka. Da ova trend linija može zadovoljiti, ni jedna y-koordinata točaka serije ne smije biti negativna ili jednaka nuli."
 
-#. InsertTrendlineDialog.xml:106(para)
+#. InsertTrendlineDialog.xml:112(para)
 msgid "An Exponential function is a straight line in a semilogarithmic coordinate system with the y-axis as the logarithmic axis. The point series is therefore converted to a semilogarithmic coordinate system and the exponential function with the smallest sum of squares (SSQ) is found."
 msgstr "Eksponencijalna funkcija je ravna linija na polulogaritamskom grafu kada je y-os logaritamska. Serija točaka se pretvara u polulogaritamski graf, a logaritamska funkcija zadovoljava najmanju sumu kvadrata (SSQ)."
 
-#. InsertTrendlineDialog.xml:114(term)
+#. InsertTrendlineDialog.xml:120(term)
 msgid "Moving average"
 msgstr "Pokretni prosjek"
 
-#. InsertTrendlineDialog.xml:118(guilabel) InsertTrendlineDialog.xml:119(guilabel) InsertTrendlineDialog.xml:121(guilabel)
+#. InsertTrendlineDialog.xml:124(guilabel) InsertTrendlineDialog.xml:125(guilabel) InsertTrendlineDialog.xml:127(guilabel)
 msgid "Period"
 msgstr "Period"
 
-#. InsertTrendlineDialog.xml:116(para)
+#. InsertTrendlineDialog.xml:122(para)
 msgid "Moving average is a series of straight lines based on the average of the previous points. The <placeholder-1/> determines how many points are used for the average. If <placeholder-2/> is 1 only one point is used, which actually isn't an average. This will draw a line directly between the points. When <placeholder-3/> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point. Instead it will be an average of the previous points."
 msgstr "Pokretni prosjek je serija ravnih linija temeljenih na prosjeku prethodne vrijednosti. <placeholder-1/> određuje koliko se točaka uzima za prosjek. Ako je <placeholder-2/> 1, koristi se samo jedna točka što u stvarnosti nije prosjek već direktna linija spoja dviju točaka. Ako je <placeholder-3/> veći od 1, y-koordinata linije neće biti u svakoj točci ista kao y-koordinata točke. Tada će to biti prosjek prethodne točke."
 
-#. InsertTrendlineDialog.xml:130(title)
+#. InsertTrendlineDialog.xml:136(title)
 msgid "User defined"
 msgstr "Korisnik određuje"
 
-#. InsertTrendlineDialog.xml:134(para)
+#. InsertTrendlineDialog.xml:140(para)
 msgid "In this tab you can enter your own trendline models. The model is entered as a standard function, where all the constants that you want Graph to find are named with a $ followed by any combination of characters (a-z) and digits (0-9). Examples of valid constants are: $a, $y0, $const."
 msgstr "U oknu ove kartice unosite svoj vlastiti model trend linije. Model se unosi kao standardna funkcija u kojoj se konstante, koje Graf treba naći označuju s $, a u nastavku bilo koja kombinacija slova (a-z) i brojeva (0-9). Npr., ispravan unos je: $a, $y0, $const."
 
-#. InsertTrendlineDialog.xml:141(para)
+#. InsertTrendlineDialog.xml:147(para)
 msgid "An example of a model could be <placeholder-1/>. The program tries to calculate the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/> so that f(x) will be as close to the point series as possible. You can use the <guibutton>Add model</guibutton> button to add the model to the saved list with a name."
 msgstr "Jedan primjer bi mogao biti <placeholder-1/>. Graph će nastojati izračunati konstante <placeholder-2/>, <placeholder-3/> i <placeholder-4/> tako da f(x) bude što bliže vašoj seriji točaka. Tipkom <guibutton>Dodaj model</guibutton> pohranjujete model pod željenim nazivom.."
 
-#. InsertTrendlineDialog.xml:148(para)
+#. InsertTrendlineDialog.xml:154(para)
 msgid "The program needs a guess for where to start the search for the optimum. As default the guess for all constants is 1, but this can be changed for models added to the list. A better guess will increase the possibility that an optimum can be found."
 msgstr "Program mora imati početnu točku od koje kerće tražiti optimum. Standardno to je konstanta 1, što možete promjeniti za model i dodati u popis. Bolji start daje veću vjerojatnost iznalaženja boljeg optimuma."
 
-#. InsertTrendlineDialog.xml:154(para)
+#. InsertTrendlineDialog.xml:160(para)
 msgid "Graph will try to find the constants for the model f(x) so the sum of squares <placeholder-1/> will be the smallest possible. The program will start with the guess and move towards the minimum of the sum of squares. If a solution is not found after 100 iterations or the given guess is not valid, the program gives up."
 msgstr "Graph će tražiti takve konstante modela f(x) da suma kvadrata <placeholder-1/> bude što manja. Potraga kreće od početne točke i ide ka minimumu. Ako rješenje nije nađeno ni nakon 100 iteracija ili je početna vrijednost kriva ili rješenja nema."
 
-#. InsertTrendlineDialog.xml:162(para)
+#. InsertTrendlineDialog.xml:168(para)
 msgid "It is possible, even though it rarely happens, that more than one minimum exists. In this case the minimum nearest to the guess will be found, even though this may not be the best."
 msgstr "Ako je moguće i ako se to stvarno dogodi da postoji više minimuma, bit će uvažen minimum najbliži početnoj točci iako možda nije najbolji."
 
-#. InsertTrendlineDialog.xml:167(para)
-msgid "Notice that you should avoid redundant constants as they might confuse the program. For example this model has a redundant constant: <placeholder-1/>. Notice the relation between the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. If you multiply <placeholder-5/>, <placeholder-6/> and <placeholder-7/> with the same value the resulting function will not be changed. This means that there are an infinite number of best solutions, because you can always multiply by a value. This may confuse the program when it tries to find the best one. Therefore either <placeholder-8/>, <placeholder-9/> or <placeholder-10/> should be removed."
+#. InsertTrendlineDialog.xml:173(para)
+#, fuzzy
+msgid "Notice that you should avoid redundant constants as they might confuse the program. For example this model has a redundant constant: <placeholder-1/>. Notice the relation between the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. If you multiply <placeholder-5/>, <placeholder-6/> and <placeholder-7/> with the same value the resulting function will not be changed. This means that there are an infinite number of combinations of constants with the same resulting function and hence an infinite number of best solutions. This may confuse the program when it tries to find the best one. Therefore either <placeholder-8/>, <placeholder-9/> or <placeholder-10/> should be removed."
 msgstr "Uočite da bi trebali izbjeći redundantne constante koje mogu zbuniti program. Npr., ovaj model sadrži redundantnu konstantu: <placeholder-1/>. Uočite relacije između konstanti <placeholder-2/>, <placeholder-3/> i <placeholder-4/>. Ako pomnožite <placeholder-5/>, <placeholder-6/> i <placeholder-7/> istim faktorom, one ne mijenjaju rezultat funkcije. To znači da najbolje rješenje postoji u beskonačnosti, koju možete množiti s bilo kojom vrijednosti. To zbunjuje program kad traga za najboljim rezultatom. Stoga konstante <placeholder-8/>, <placeholder-9/> ili <placeholder-10/> bi trebali ukloniti. "
 
-#. InsertTrendlineDialog.xml:177(para)
+#. InsertTrendlineDialog.xml:183(para)
 msgid "When the trendline is added, the correlation coefficient <placeholder-1/> is shown in the comment. The closer <placeholder-2/> is to 1 the closer the trendline is to the points."
 msgstr "Dodavanjem linije trenda, koeficijent korelacije <placeholder-1/> je prikazan kao komentar. Što je <placeholder-2/> bliži 1 to je linija trenda bliža vašoj seriji točaka.."
 
@@ -1827,7 +1844,7 @@ msgstr "između"
 msgid "The dialog below is used to add a shading to the selected function. To insert a new shading, you use <placeholder-1/>. To change an existing shading, you first select it in the <placeholder-2/> and use <placeholder-3/>. The shading is used to mark an area between the function graph and something else."
 msgstr "Označavanjem funkcije i izborom stavke izbornika <placeholder-1/>, otvorit će se ovakvo okno kroz koje dodajete šrafuru. Izmjenu postojeće šrafure vršite njenim označavanjem u <placeholder-2/> i korištenjem <placeholder-3/>. Šrafurom ističete željene plohe grafa."
 
-#. InsertShadingDialog.xml:24(title) InsertShadingDialog.xml:29(guilabel) InsertShadingDialog.xml:189(guilabel) InsertShadingDialog.xml:190(guilabel)
+#. InsertShadingDialog.xml:24(title) InsertShadingDialog.xml:29(guilabel)
 msgid "Shading"
 msgstr "Šrafura"
 
@@ -1883,11 +1900,11 @@ msgstr "Unutar funkcije"
 msgid "This will shade the area inside the graph of the function in the selected interval. If you check <placeholder-1/> or <placeholder-2/>, the interval will decrease or increase until the graph is crossing itself. This is especially useful to shade a closed part of a parametric or polar function, but it can also be used to shade standard functions."
 msgstr "Šrafirat će se ploha između dviju funkcija. U slučaju korištenja <placeholder-1/> ili <placeholder-2/>, mijenjat će se i veličina i položaj šrafure. Ovo je vrlo korisno za isticanje zatvorenih dijelova parametarskih i polarnih funkcija, ali i pri standardnim."
 
-#. InsertShadingDialog.xml:93(term) InsertShadingDialog.xml:190(guilabel)
+#. InsertShadingDialog.xml:93(term) InsertShadingDialog.xml:188(guilabel)
 msgid "Between functions"
 msgstr "Između funkcija"
 
-#. InsertShadingDialog.xml:98(guilabel) InsertShadingDialog.xml:186(title) InsertShadingDialog.xml:188(guilabel) InsertShadingDialog.xml:191(guilabel)
+#. InsertShadingDialog.xml:98(guilabel) InsertShadingDialog.xml:186(title) InsertShadingDialog.xml:189(guilabel) InsertShadingDialog.xml:190(guilabel)
 msgid "2nd function"
 msgstr "2. funkcija"
 
@@ -1939,19 +1956,25 @@ msgstr "Oznaka kraja raspona."
 msgid "Check this to draw a line at the end of the range. Uncheck it if you want two shadings to look as one."
 msgstr "Označite kvačicom ako želite iscrtavanje od početka. Uklonite kvačicu ako želite da dvije šrafure izgledaju kao jedna."
 
+#. InsertShadingDialog.xml:188(guilabel)
+#, fuzzy
+msgid "Shadings"
+msgstr "Šrafura"
+
 #. InsertShadingDialog.xml:187(para)
-msgid "At the <placeholder-1/> tab, you may select the second function when you have chosen to create a shading between two functions in the <placeholder-2/> tab. This is only available when you have chosen <placeholder-3/> in the <placeholder-4/> tab. The dialog with the <placeholder-5/> tab is shown below."
+#, fuzzy
+msgid "When you have chosen <placeholder-1/> in the <placeholder-2/> tab, you may select the second function in the <placeholder-3/> tab. The dialog with the <placeholder-4/> tab is shown below."
 msgstr "Kroz okno kartice <placeholder-1/> odabirete drugu funkciju za šrafiranje između funkcija što ste odredili na <placeholder-2/> kartici. Ovo je dostupno samo onda ako ste odabrali  <placeholder-3/> na kartici <placeholder-4/>. Tu je prikazano okno kartice <placeholder-5/>."
 
-#. InsertShadingDialog.xml:198(term)
+#. InsertShadingDialog.xml:197(term)
 msgid "Shading range for 2nd function"
 msgstr "Raspon šrafure za 2, funkciju"
 
-#. InsertShadingDialog.xml:200(para)
+#. InsertShadingDialog.xml:199(para)
 msgid "This is used to select the interval for the second function, just like you selected the interval for the first function in the <placeholder-1/> tab. This is only available for parametric functions and not for standard functions. For standard functions the interval for the second function is always the same as the interval for the first function. If you enter neither a start nor an end of interval for a parametric function, the values for the first function will be used for the second function as well."
 msgstr "Ovdje određujete interval šrafiranja za drugu funkciju isto kao što ste to odredili za prvu na kartici <placeholder-1/>. Ovo nije dostupno za standardne već samo za parametarske funkcije. Ukoliko niste odredili početak ili kraj druge parametarske funkcije, koristit će se iste vrijednosti kao za prvu. Kod standardnih funkcija, interval šrafure je uvijek isti."
 
-#. InsertShadingDialog.xml:212(para)
+#. InsertShadingDialog.xml:211(para)
 msgid "Shadings are a great way to mark an area, but if you get weird results, check that you selected the right function and the right interval. If you try to shade an interval crossing an asymptote or your shading is associated with a weird parametric function, you might get weird results. But really, what did you expect?"
 msgstr "Šrafura je izvrstan način isticanje plohe, ali ako dođe do neočekivanih rezultata, provjerite jeste li označili pravu funkciju i interval. Pokušaj šrafure između asimptote ili čudne parametarske funkcije može rezultirati neočekivanim. Stvarno, što želite?"
 
@@ -2056,7 +2079,8 @@ msgid "error bars"
 msgstr "traka grešaka"
 
 #. InsertPointSeriesDialog.xml:17(para)
-msgid "You can use the dialog below to add a series of points to the coordinate system. The points will be shown in the coordinate system in the graphing area as a series of markers at the positions entered in this dialog. To insert a new point series, you use <placeholder-1/>. To change an existing point series, you first select it in the <placeholder-2/> and use <placeholder-3/>."
+#, fuzzy
+msgid "You can use the dialog below to add a series of points to the coordinate system. The points will be shown in the coordinate system in the graphing area as a series of markers. To insert a new point series, you use <placeholder-1/>. To change an existing point series, you first select it in the <placeholder-2/> and use <placeholder-3/>."
 msgstr "Preko ovakvog okna možete unijeti seriju točaka u vaš graf. One će biti u grafu prikazane oznakama na unesenim pozicijama. Izborom stavke izbornika <placeholder-1/> unosite novu seriju. Izmjenu unesene serije vršite njenim označavanjem u <placeholder-2/> odabirom <placeholder-3/>."
 
 #. InsertPointSeriesDialog.xml:26(para)
@@ -2144,7 +2168,8 @@ msgid "Custom"
 msgstr "Prema želji"
 
 #. InsertPointSeriesDialog.xml:104(para)
-msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are +/-values."
+#, fuzzy
+msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are +/-values. Custom Y-errors are also used to weight the points when creating trendlines."
 msgstr "Ovdje odabirete vodoravnu ili vertikalnu traku grešaka poznatu i kao traka neodređenosti. Ona se prikazuje za svaku točku serije označujući njenu neodređenost. Veličinu trake grešaka određujete na tri načina. <placeholder-2/> upotrijebite kada želite da sve točke imaju istu neodređenost. <placeholder-2/> određuje prikaz neodređenosti u postotku x- ili y-koordinate za svaku točku. Odabir <placeholder-3/>, dodaje kolonu u tablicu u kojoj možete za svaku točku navesti njenu neodređenost. Sve neodređenosti imaju +/- vrijednost."
 
 #. InsertLabelDialog.xml:8(title)
@@ -2260,7 +2285,8 @@ msgid "Standard function"
 msgstr "Standardne funnkcije"
 
 #. InsertFunctionDialog.xml:28(para)
-msgid "You can choose between three different types of functions: <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, thought it may be undefined for some x-coordinates."
+#, fuzzy
+msgid "You can choose between three different types of functions: <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, though it may be undefined for some x-coordinates."
 msgstr "Na raspolaganju su tri oblika funkcija: standardna, parametarska i polarna. Standardna funkcija je definirana kao y=f(x), tj. svakoj x-koordinati odgovara točno određena y-koordinata osim u slučaju neodređenosti."
 
 #. InsertFunctionDialog.xml:32(para)
@@ -2435,7 +2461,7 @@ msgstr "daje hiperbolni arkus tangens argumenta."
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "Funkcija <placeholder-1/> daje inverzni hiperbolni tangens od <placeholder-2/>. <placeholder-3/> može biti bilo koji <placeholder-4/> koji daje <placeholder-5/> ili <placeholder-6/>. <placeholder-7/> je suprotno od <placeholder-8/>, tj. <placeholder-9/>."
 
-#. Hyperbolic.xml:154(primary) Hyperbolic.xml:226(primary)
+#. Hyperbolic.xml:154(primary) Hyperbolic.xml:227(primary)
 msgid "hyperbolic cosecant"
 msgstr "hiperbolni kosekans"
 
@@ -2451,7 +2477,7 @@ msgstr "Funkcija <placeholder-1/> daje hiperbolni kosekans od <placeholder-2/>. 
 msgid "Hyperbolic cosecant is defined as: <placeholder-1/>"
 msgstr "Hiperbolni kosekans je definiran kao: <placeholder-1/>"
 
-#. Hyperbolic.xml:178(primary) Hyperbolic.xml:249(primary)
+#. Hyperbolic.xml:178(primary) Hyperbolic.xml:250(primary)
 msgid "hyperbolic secant"
 msgstr "hiperbolni sekans"
 
@@ -2467,7 +2493,7 @@ msgstr "Funkcija <placeholder-1/> daje hiperbolni sekans od <placeholder-2/>. <p
 msgid "Hyperbolic secant is defined as: <placeholder-1/>"
 msgstr "Hiperbolni sekans je definiran kao: <placeholder-1/>"
 
-#. Hyperbolic.xml:202(primary) Hyperbolic.xml:272(primary)
+#. Hyperbolic.xml:202(primary) Hyperbolic.xml:273(primary)
 msgid "hyperbolic cotangent"
 msgstr "hiperbolni kotangens"
 
@@ -2483,39 +2509,39 @@ msgstr "Funkcija <placeholder-1/> daje hiperbolni kotangens od <placeholder-2/>.
 msgid "Hyperbolic cotangent is defined as: <placeholder-1/>"
 msgstr "Hiperbolni kotangens je definiran kao: <placeholder-1/>"
 
-#. Hyperbolic.xml:227(primary)
+#. Hyperbolic.xml:228(primary)
 msgid "inverse hyperbolic cosecant"
 msgstr "inverzni hiperbolni kosekans"
 
-#. Hyperbolic.xml:228(para) FunctionList.xml:271(entry)
+#. Hyperbolic.xml:229(para) FunctionList.xml:271(entry)
 msgid "Returns the inverse hyperbolic cosecant of the argument."
 msgstr "daje inverzni hiperbolni kosekans argumenta."
 
-#. Hyperbolic.xml:237(para)
+#. Hyperbolic.xml:238(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "Funkcija <placeholder-1/> daje inverzni hiperbolni kosekans od <placeholder-2/>. <placeholder-3/> može biti bilo koji <placeholder-4/> koji daje <placeholder-5/> ili <placeholder-6/>. <placeholder-7/> je suprotno od <placeholder-8/>, tj. <placeholder-9/>."
 
-#. Hyperbolic.xml:250(primary)
+#. Hyperbolic.xml:251(primary)
 msgid "inverse hyperbolic secant"
 msgstr "inverzni hiperbolni sekans"
 
-#. Hyperbolic.xml:251(para) FunctionList.xml:275(entry)
+#. Hyperbolic.xml:252(para) FunctionList.xml:275(entry)
 msgid "Returns the inverse hyperbolic secant of the argument."
 msgstr "daje inverzni hiperbolni sekans argumenta."
 
-#. Hyperbolic.xml:260(para)
+#. Hyperbolic.xml:261(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "Funkcija <placeholder-1/> daje inversni hiperbolni sekans od <placeholder-2/>. <placeholder-3/> može biti bilo koji <placeholder-4/> koji daje <placeholder-5/> ili <placeholder-6/>. <placeholder-7/> je suprotno od <placeholder-8/>, tj. <placeholder-9/>."
 
-#. Hyperbolic.xml:273(primary)
+#. Hyperbolic.xml:274(primary)
 msgid "inverse hyperbolic cotangent"
 msgstr "inverzni hiperbolni kotangens"
 
-#. Hyperbolic.xml:274(para) FunctionList.xml:279(entry)
+#. Hyperbolic.xml:275(para) FunctionList.xml:279(entry)
 msgid "Returns the inverse hyperbolic cotangent of the argument."
 msgstr "daje inverzni hiperbolni kotangens argumenta."
 
-#. Hyperbolic.xml:283(para)
+#. Hyperbolic.xml:284(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>. For real numbers <placeholder-10/> is undefined in the interval [-1;1]."
 msgstr "Funkcija <placeholder-1/> daje inverzni hiperbolni kotangens od <placeholder-2/>. <placeholder-3/> može biti bilo koji <placeholder-4/> koji daje <placeholder-5/> ili <placeholder-6/>. <placeholder-7/> je suprotno od <placeholder-8/>, tj. <placeholder-9/>. Za realne brojeve <placeholder-10/> je neodređen u rasponu [-1;1]."
 
@@ -2804,7 +2830,8 @@ msgid "Indicates if an expression is greater than another expression."
 msgstr "Utvrđivanje da li je prvi izraz veći od drugog."
 
 #. FunctionList.xml:128(entry)
-msgid "Greater or equal (&gt;=)"
+#, fuzzy
+msgid "Greater than or equal to (&gt;=)"
 msgstr "Veće od (&gt;=)"
 
 #. FunctionList.xml:129(entry)
@@ -2820,7 +2847,8 @@ msgid "Indicates if an expression is less than another expression."
 msgstr "Utvrđivanje da li je prvi izraz manji od drugog."
 
 #. FunctionList.xml:136(entry)
-msgid "Less or equal (&lt;=)"
+#, fuzzy
+msgid "Less than or equal to (&lt;=)"
 msgstr "Manje ili jednako (&lt;=)"
 
 #. FunctionList.xml:137(entry)
@@ -3038,10 +3066,6 @@ msgstr "daje Lambert W-funkciju argumenta."
 #. FunctionList.xml:422(entry)
 msgid "Returns the Riemann Zeta function evaluated for the argument."
 msgstr "daje Riemann Zeta-funkciju argumenta."
-
-#. FunctionList.xml:430(entry)
-msgid "The probability function of the normal distribution in a variate with mean and standard"
-msgstr "Funkcija vjerojatnosti normalne (Gaus) raspodjele."
 
 #. FunctionList.xml:438(title)
 msgid "Notice the following relations:"
@@ -3396,7 +3420,8 @@ msgid "Error 10: atanh evaluated at undefined value."
 msgstr "Greška 10: coth za neodređenu vrijednost."
 
 #. Errors.xml:95(para)
-msgid "Inverse hyperbolic tangent atanh(x) is undefined at x=1, and only defined when using complex numbers outside the interval x=]-1;1[."
+#, fuzzy
+msgid "Inverse hyperbolic tangent atanh(x) is undefined at x=1 and x=-1, and not defined outside the interval x=]-1;1[ when calculating with real numbers only."
 msgstr "Inverzni hiperbolni tangens atanh(x) je neodređen u x=1, osim u sustavu kompleksnih brojeva izvan područja x=[-1;1]."
 
 #. Errors.xml:99(term)
@@ -3680,7 +3705,8 @@ msgid "Function arguments are entered after the name in brackets separated by co
 msgstr "Argumenti funkcije se unose u zagradama, odvojeni zarezom. Npr. <literal>f(x,y,z)</literal> označava funkciju naziva f s tri argumenta x, y, i z. Isto kao naziv funkcije i argument mora počinjati slovom te može sadržavati samo slova i brojeve."
 
 #. CustomFunctionsDialog.xml:34(para)
-msgid "The expressions you want to define are entered in the second column. The expressions can use the arguments specified in the first column and all built-in functions, other custom functions and constants, and even call itself recursively. A comment can be written after a # symbol at the end of an expression."
+#, fuzzy
+msgid "The expressions you want to define are entered in the second column. The expressions can use the arguments specified in the first column and all built-in functions, other custom functions and constants, and even call themselves recursively. A comment can be written after a # symbol at the end of an expression."
 msgstr "U kolonu Definicija, unosite jednadžbu. Ona može koristiti argumente određene u prvoj koloni ili bilo koju raspoloživu funkciju uključivo i korisničke pa čak pozvati samu sebe, rekurzivno. Komentare unosite poslije znaka # na kraju izraza."
 
 #. CustomFunctionsDialog.xml:43(term)
@@ -3844,7 +3870,8 @@ msgid "background color"
 msgstr "boja pozadine"
 
 #. AxesDialog.xml:32(para)
-msgid "When you choose the menu item <placeholder-1/> , the dialog shown below will appear. In this dialog you can configure all options which are related to the axes. The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis. The tab with options for the y-axis is completely analog to this."
+#, fuzzy
+msgid "When you choose the menu item <placeholder-1/>, the dialog shown below will appear. In this dialog you can configure all options which are related to the axes. The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis. The tab with options for the y-axis is completely analog to this."
 msgstr "Izborom stavke izbornika <placeholder-1/>, pojavit će se ovakvo okno. Tu možete odrediti sva svojstva koja se odnose na osi. Okno sadrži četiri kartice. Prva, koja je ovdje prikazana, sadrži mogućnosti uređenja x-osi. Slijedi ista takva za y-os."
 
 #. AxesDialog.xml:43(title)
@@ -4211,11 +4238,11 @@ msgstr "Prevoditelj(i)"
 msgid "Arabic"
 msgstr "Arapski"
 
-#. Acknowledgements.xml:60(entry) Acknowledgements.xml:67(entry) Acknowledgements.xml:74(entry) Acknowledgements.xml:81(entry) Acknowledgements.xml:88(entry) Acknowledgements.xml:95(entry) Acknowledgements.xml:102(entry) Acknowledgements.xml:103(entry) Acknowledgements.xml:109(entry) Acknowledgements.xml:116(entry) Acknowledgements.xml:117(entry) Acknowledgements.xml:123(entry) Acknowledgements.xml:130(entry) Acknowledgements.xml:131(entry) Acknowledgements.xml:137(entry) Acknowledgements.xml:138(entry) Acknowledgements.xml:144(entry) Acknowledgements.xml:151(entry) Acknowledgements.xml:158(entry) Acknowledgements.xml:159(entry) Acknowledgements.xml:165(entry) Acknowledgements.xml:172(entry) Acknowledgements.xml:179(entry) Acknowledgements.xml:186(entry) Acknowledgements.xml:193(entry) Acknowledgements.xml:200(entry) Acknowledgements.xml:207(entry) Acknowledgements.xml:214(entry) Acknowledgements.xml:215(entry) Acknowledgements.xml:221(entry) Acknowledgements.xml:222(entry) Acknowledgements.xml:228(entry) Acknowledgements.xml:235(entry) Acknowledgements.xml:242(entry)
+#. Acknowledgements.xml:60(entry) Acknowledgements.xml:67(entry) Acknowledgements.xml:74(entry) Acknowledgements.xml:81(entry) Acknowledgements.xml:88(entry) Acknowledgements.xml:95(entry) Acknowledgements.xml:102(entry) Acknowledgements.xml:103(entry) Acknowledgements.xml:109(entry) Acknowledgements.xml:116(entry) Acknowledgements.xml:117(entry) Acknowledgements.xml:123(entry) Acknowledgements.xml:130(entry) Acknowledgements.xml:131(entry) Acknowledgements.xml:137(entry) Acknowledgements.xml:138(entry) Acknowledgements.xml:144(entry) Acknowledgements.xml:151(entry) Acknowledgements.xml:158(entry) Acknowledgements.xml:164(entry) Acknowledgements.xml:165(entry) Acknowledgements.xml:171(entry) Acknowledgements.xml:178(entry) Acknowledgements.xml:185(entry) Acknowledgements.xml:192(entry) Acknowledgements.xml:199(entry) Acknowledgements.xml:206(entry) Acknowledgements.xml:213(entry) Acknowledgements.xml:220(entry) Acknowledgements.xml:227(entry) Acknowledgements.xml:234(entry) Acknowledgements.xml:235(entry) Acknowledgements.xml:241(entry) Acknowledgements.xml:242(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:255(entry) Acknowledgements.xml:262(entry)
 msgid "Yes"
 msgstr "Da"
 
-#. Acknowledgements.xml:61(entry) Acknowledgements.xml:68(entry) Acknowledgements.xml:75(entry) Acknowledgements.xml:82(entry) Acknowledgements.xml:89(entry) Acknowledgements.xml:96(entry) Acknowledgements.xml:110(entry) Acknowledgements.xml:124(entry) Acknowledgements.xml:145(entry) Acknowledgements.xml:152(entry) Acknowledgements.xml:166(entry) Acknowledgements.xml:173(entry) Acknowledgements.xml:180(entry) Acknowledgements.xml:187(entry) Acknowledgements.xml:194(entry) Acknowledgements.xml:201(entry) Acknowledgements.xml:208(entry) Acknowledgements.xml:229(entry) Acknowledgements.xml:236(entry) Acknowledgements.xml:243(entry)
+#. Acknowledgements.xml:61(entry) Acknowledgements.xml:68(entry) Acknowledgements.xml:75(entry) Acknowledgements.xml:82(entry) Acknowledgements.xml:89(entry) Acknowledgements.xml:96(entry) Acknowledgements.xml:110(entry) Acknowledgements.xml:124(entry) Acknowledgements.xml:145(entry) Acknowledgements.xml:152(entry) Acknowledgements.xml:159(entry) Acknowledgements.xml:172(entry) Acknowledgements.xml:179(entry) Acknowledgements.xml:186(entry) Acknowledgements.xml:193(entry) Acknowledgements.xml:200(entry) Acknowledgements.xml:207(entry) Acknowledgements.xml:214(entry) Acknowledgements.xml:221(entry) Acknowledgements.xml:228(entry) Acknowledgements.xml:249(entry) Acknowledgements.xml:256(entry) Acknowledgements.xml:263(entry)
 msgid "No"
 msgstr "Ne"
 
@@ -4272,62 +4299,81 @@ msgid "Hungarian"
 msgstr ""
 
 #. Acknowledgements.xml:157(entry)
+msgid "Hebrew"
+msgstr ""
+
+#. Acknowledgements.xml:163(entry)
 msgid "Italian"
 msgstr "Talijanski"
 
-#. Acknowledgements.xml:164(entry)
+#. Acknowledgements.xml:170(entry)
 msgid "Korean"
 msgstr "Korean"
 
-#. Acknowledgements.xml:171(entry)
+#. Acknowledgements.xml:177(entry)
 msgid "Mongolian"
 msgstr ""
 
-#. Acknowledgements.xml:178(entry)
+#. Acknowledgements.xml:184(entry)
 msgid "Norwegian"
 msgstr ""
 
-#. Acknowledgements.xml:185(entry)
+#. Acknowledgements.xml:191(entry)
+#, fuzzy
+msgid "Persian"
+msgstr "Srpski"
+
+#. Acknowledgements.xml:194(entry)
+msgid "Shayan Abyari &amp; Yashar PourMohammad"
+msgstr ""
+
+#. Acknowledgements.xml:198(entry)
 msgid "Polish"
 msgstr ""
 
-#. Acknowledgements.xml:192(entry)
-msgid "Portuguese"
+#. Acknowledgements.xml:205(entry)
+#, fuzzy
+msgid "Portuguese (Brazil)"
 msgstr "Portuguese"
 
-#. Acknowledgements.xml:199(entry)
+#. Acknowledgements.xml:212(entry)
+#, fuzzy
+msgid "Portuguese (Portugal)"
+msgstr "Portuguese"
+
+#. Acknowledgements.xml:219(entry)
 msgid "Russian"
 msgstr "Ruski"
 
-#. Acknowledgements.xml:206(entry)
+#. Acknowledgements.xml:226(entry)
 msgid "Serbian"
 msgstr "Srpski"
 
-#. Acknowledgements.xml:213(entry)
+#. Acknowledgements.xml:233(entry)
 msgid "Slovenian"
 msgstr "Slovski"
 
-#. Acknowledgements.xml:220(entry)
+#. Acknowledgements.xml:240(entry)
 msgid "Spanish"
 msgstr ""
 
-#. Acknowledgements.xml:227(entry)
+#. Acknowledgements.xml:247(entry)
 msgid "Swedish"
 msgstr ""
 
-#. Acknowledgements.xml:234(entry)
+#. Acknowledgements.xml:254(entry)
 msgid "Turkish"
 msgstr "Turski"
 
-#. Acknowledgements.xml:241(entry)
+#. Acknowledgements.xml:261(entry)
 msgid "Vietnamese"
 msgstr ""
 
-#. Acknowledgements.xml:253(title)
+#. Acknowledgements.xml:273(title)
 msgid "Miscellaneous"
 msgstr "Ostalo"
 
-#. Acknowledgements.xml:254(para)
+#. Acknowledgements.xml:274(para)
 msgid "The icon was designed by <placeholder-1/>."
 msgstr "Ikone je stvorio <placeholder-1/>."
 
@@ -4336,6 +4382,10 @@ msgstr "Ikone je stvorio <placeholder-1/>."
 msgid "translator-credits"
 msgstr "vjerodostojni prevoditelj"
 
+#~ msgid ""
+#~ "The probability function of the normal distribution in a variate with "
+#~ "mean and standard"
+#~ msgstr "Funkcija vjerojatnosti normalne (Gaus) raspodjele."
 #~ msgid "Parts of Graph are using the Spirit parser library:"
 #~ msgstr "Dijelovi Grapha koriste Spirit biblioteku sinteze:"
 #~ msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
