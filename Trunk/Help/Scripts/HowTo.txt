@@ -7,7 +7,7 @@ This describes how to create the help files for Graph:
 
 4. Download and unpack the additional tools and source from http://padowan.dk/bin/Graph_Help.zip
 
-The po files with translations are placed under Help\po
+The po files with translations are placed under Help\po. To edit the po files you need Poedit from http://poedit.sf.net
 
 To compile all languages you just run the Build_All.bat file in the Help\Scripts folder.
 There are also bat files for compiling the help file for a single language. For example you can use Build_Spanish.bat to compile the Spanish help.
@@ -15,4 +15,7 @@ There are also bat files for compiling the help file for a single language. For 
 You can update a translation to the latest version by opening the po file in poEdit, selecting
 "Catalog|Update from POT file" in the menu, and selecting the file GraphHelp.pot.
 
-The text contains some placeholders named like <placeholder-1/>. This is used to make the translations easier. The placeholders are used instead of a longer text that should not be translated or is translated elsewhere. The placeholder should wherefore be kept in the translation.
+The text contains some placeholders named like <placeholder-1/>.
+This is used to make the translations easier.
+The placeholders are used instead of a longer text that should not be translated or is translated elsewhere.
+The placeholders should therefore be kept in the translation.
