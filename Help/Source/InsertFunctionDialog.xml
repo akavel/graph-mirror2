@@ -27,7 +27,7 @@
 			<listitem>
 				<para>
 					You can choose between three different types of functions: <guilabel>Standard function</guilabel>, <guilabel>parametric function</guilabel> and <guilabel>polar function</guilabel>.
-					A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, thought it may be undefined for some x-coordinates.
+					A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, though it may be undefined for some x-coordinates.
 				</para>
 				<para>
 					For a parametric function the x- and y-coordinates are calculated from an independent variable <parameter>t</parameter>, called the parameter,

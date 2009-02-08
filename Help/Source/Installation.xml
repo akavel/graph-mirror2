@@ -164,13 +164,13 @@
       		<row>
         		<entry condition="pot"><parameter>/WIDTH=width</parameter></entry>
         		<entry>
-							Used in combination with /SI to specify the width in pixels of the saved image.
+							Used in combination with /SI to specify the width in pixels of the image to be saved.
 						</entry>
       		</row>
       		<row>
         		<entry condition="pot"><parameter>/HEIGHT=height</parameter></entry>
         		<entry>
-							Used in combination with /SI to specify the height in pixels of the saved image.
+							Used in combination with /SI to specify the height in pixels of the image to be saved.
 						</entry>
       		</row>
 				</tbody>

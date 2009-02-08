@@ -175,7 +175,7 @@
 			For example this model has a redundant constant: <mathphrase>f(x)=$c+$d/($a*x+$b)</mathphrase>.
 			Notice the relation between the constants <constant>$a</constant>, <constant>$b</constant> and <constant>$d</constant>.
 			If you multiply <constant>$a</constant>, <constant>$b</constant> and <constant>$d</constant> with the same value the resulting function will not be changed.
-			This means that there are an infinite number of best solutions, because you can always multiply by a value.
+			This means that there are an infinite number of combinations of constants with the same resulting function and hence an infinite number of best solutions.
 			This may confuse the program when it tries to find the best one.
 			Therefore either <constant>$a</constant>, <constant>$b</constant> or <constant>$d</constant> should be removed.
 		</para>
