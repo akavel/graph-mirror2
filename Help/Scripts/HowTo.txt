@@ -15,3 +15,4 @@ There are also bat files for compiling the help file for a single language. For 
 You can update a translation to the latest version by opening the po file in poEdit, selecting
 "Catalog|Update from POT file" in the menu, and selecting the file GraphHelp.pot.
 
+The text contains some placeholders named like <placeholder-1/>. This is used to make the translations easier. The placeholders are used instead of a longer text that should not be translated or is translated elsewhere. The placeholder should wherefore be kept in the translation.
