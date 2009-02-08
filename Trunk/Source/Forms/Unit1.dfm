@@ -243,7 +243,8 @@ object Form1: TForm1
       OnMouseDown = Image1MouseDown
       OnMouseMove = Image1MouseMove
       OnMouseUp = Image1MouseUp
-      ExplicitHeight = 298
+      ExplicitLeft = 3
+      ExplicitTop = -3
     end
     object Image2: TImage
       Left = 344
@@ -506,22 +507,26 @@ object Form1: TForm1
       Caption = 'Rotation'
       SubMenuImages = ImageList1
       object Tree_Rotation_0: TMenuItem
-        Caption = '0'
+        Caption = '0'#176
+        Hint = 'Show the label with no rotation.'
         RadioItem = True
         OnClick = RotationClick
       end
       object Tree_Rotation_90: TMenuItem
-        Caption = '90'
+        Caption = '90'#176
+        Hint = 'Show the label rotated 90'#176' counter clockwise.'
         RadioItem = True
         OnClick = RotationClick
       end
       object Tree_Rotation_180: TMenuItem
-        Caption = '180'
+        Caption = '180'#176
+        Hint = 'Show the label rotated 180'#176'.'
         RadioItem = True
         OnClick = RotationClick
       end
       object Tree_Rotation_270: TMenuItem
-        Caption = '270'
+        Caption = '270'#176
+        Hint = 'Show the label rotated 270'#176' counter clockwise.'
         RadioItem = True
         OnClick = RotationClick
       end
@@ -4353,7 +4358,6 @@ object Form1: TForm1
       Caption = 'Placement'
       object Label_Above: TMenuItem
         Caption = 'Above x-axis'
-        Checked = True
         Hint = 
           'Place the label directly above the x-axis on the right side of t' +
           'he image.'
@@ -4394,23 +4398,26 @@ object Form1: TForm1
     object Label_Rotation: TMenuItem
       Caption = 'Rotation'
       object Rotation_0: TMenuItem
-        Caption = '0'
-        Checked = True
+        Caption = '0'#176
+        Hint = 'Show the label with no rotation.'
         RadioItem = True
         OnClick = RotationClick
       end
       object Rotation_90: TMenuItem
-        Caption = '90'
+        Caption = '90'#176
+        Hint = 'Show the label rotated 90'#176' counter clockwise.'
         RadioItem = True
         OnClick = RotationClick
       end
       object Rotation_180: TMenuItem
-        Caption = '180'
+        Caption = '180'#176
+        Hint = 'Show the label rotated 180'#176'.'
         RadioItem = True
         OnClick = RotationClick
       end
       object Rotation_270: TMenuItem
-        Caption = '270'
+        Caption = '270'#176
+        Hint = 'Show the label rotated 270'#176' counter clockwise.'
         RadioItem = True
         OnClick = RotationClick
       end
@@ -4472,10 +4479,12 @@ object Form1: TForm1
       AutoCheck = True
       Caption = 'Show legend'
       Checked = True
+      Hint = 'Select to show a legend in the coordinate system.'
       OnClick = Legend_ShowClick
     end
     object Legend_Font: TMenuItem
       Caption = 'Font...'
+      Hint = 'Change the font of the legend.'
       OnClick = Legend_FontClick
     end
     object Legend_Placement: TMenuItem
