@@ -12,6 +12,7 @@
 #include "CompilerWorkaround.h"
 #include <fstream>
 #include <stdio.h>
+#include <ActnMan.hpp>
 //---------------------------------------------------------------------------
 /* Workaround for problem with support for Unicode filenames in std::fstream in CB2009.
  * It looks like the file fiopen.cpp is not compiled for Unicode support.
@@ -90,7 +91,34 @@ _CRTIMP2 FILE *_Fiopen(const _CSTD _Sysch_t *filename,
 
 	fclose(fp);	// can't position at end
 	return (0);
-		}
+	}
+}
+//---------------------------------------------------------------------------
+//Workaround for bug in TCustomActionPopupMenuEx.LoadMenu() in ActnPopup.pas
+//Hint is not assigned in the loop.
+//This function is a copy of TCustomActionControl.SetSelected() in ActnMan.pas but
+//compensates for the bug in TCustomActionPopupMenuEx.LoadMenu().
+void __fastcall Actnman::TCustomActionControl::SetSelected(bool Value)
+{
+  if(Value != FSelected)
+  {
+    FSelected = Value;
+    if(Value)
+      UpdateSelection();
+    Invalidate();
+    if(Value)
+      if(ActionClient->Action != NULL)
+      {
+        TCustomAction *Action = static_cast<TCustomAction*>(ActionClient->Action);
+        if(Action->Hint == "")
+          Action->Hint = reinterpret_cast<TMenuItem*>(ActionClient->Tag)->Hint;
+        Application->Hint = GetLongHint(Action->Hint);
+      }
+      else
+        Application->CancelHint();
+    if(Value)
+      NotifyWinEvent(EVENT_OBJECT_FOCUS, Parent->Handle, OBJID_CLIENT, ActionClient->Index + 1);
+  }
 }
 //---------------------------------------------------------------------------
 
