@@ -34,8 +34,8 @@
 		<menuchoice>
 			<guimenu>Edit</guimenu>
 			<guimenuitem>Axes...</guimenuitem>
-		</menuchoice>
-		, the dialog shown below will appear. In this dialog you can configure all options which are related to the axes.
+		</menuchoice>,
+		the dialog shown below will appear. In this dialog you can configure all options which are related to the axes.
 		The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis.
 		The tab with options for the y-axis is completely analog to this.
 	</para>

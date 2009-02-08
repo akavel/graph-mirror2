@@ -92,7 +92,7 @@
 
 			<varlistentry id="Error10">
 				<term>Error 10: atanh evaluated at undefined value.</term>
-				<listitem><para>Inverse hyperbolic tangent atanh(x) is undefined at x=1, and only defined when using complex numbers outside the interval x=]-1;1[.</para></listitem>
+				<listitem><para>Inverse hyperbolic tangent atanh(x) is undefined at x=1 and x=-1, and not defined outside the interval x=]-1;1[ when calculating with real numbers only.</para></listitem>
 			</varlistentry>
 
 			<varlistentry id="Error11">

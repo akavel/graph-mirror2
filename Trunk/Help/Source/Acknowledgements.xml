@@ -13,7 +13,7 @@
 		<title>Libraries</title>
 		<simplelist>
 			<member>Graph uses dxgettext as translation library:</member>
-			<member><orgname>dxgettext is Copyright by Lars B. Dybdahl <email>Lars@dybdahl.dk</email> and others</orgname></member>
+			<member><orgname>Copyright &copy; Lars B. Dybdahl <email>Lars@dybdahl.dk</email> et al.</orgname></member>
 			<member><ulink url="http://dybdahl.dk/dxgettext/"/></member>
 		</simplelist>
 
@@ -25,13 +25,13 @@
 
 		<simplelist>
 			<member>The PDFlib-Lite library is used to create PDF files:</member>
-			<member><orgname>Copyright &copy; 1997-2005 Thomas Merz and PDFlib GmbH.</orgname></member>
+			<member><orgname>Copyright &copy; 1997-2005 Thomas Merz &amp; PDFlib GmbH</orgname></member>
 			<member><ulink url="http://www.pdflib.com"/></member>
 		</simplelist>
 
 		<simplelist>
 			<member>Python is used for plugin support:</member>
-			<member><orgname>Copyright &copy; 2001-2006 Python Software Foundation; All Rights Reserved</orgname></member>
+			<member><orgname>Copyright &copy; 2001-2006 Python Software Foundation</orgname></member>
 			<member><ulink url="http://www.python.org"/></member>
 		</simplelist>
 	</simplesect>
@@ -185,6 +185,13 @@
 							<entry>Yes</entry>
 							<entry>No</entry>
 							<entry><personname>Tore Ottinsen</personname></entry>
+						</row>
+
+						<row>
+							<entry>Persian</entry>
+							<entry>Yes</entry>
+							<entry>No</entry>
+							<entry>Shayan Abyari &amp; Yashar PourMohammad</entry>
 						</row>
 
 						<row>

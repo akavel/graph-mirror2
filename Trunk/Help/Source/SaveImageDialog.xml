@@ -25,7 +25,7 @@
 	<para>
 		bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen.
 		emf files are used for vector graphics.
-		The Options button in the save dialog can be used to change to image size.
+		The Options button in the save dialog can be used to change the image size.
 		You may also be able to change other settings depending on the chosen image format.
 	</para>
 	<para>
