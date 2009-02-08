@@ -253,13 +253,6 @@ void TForm1::Initialize()
 
   Recent1->RegistryKey = REGISTRY_KEY; //Set key for data in registry
 
-  //Add degree symbols (°) so we get 270° in the rotation menus, but ignore the last "Custom..."
-  for(int I = 0; I < Label_Placement->Count - 1; I++)
-  {
-    Label_Rotation->Items[I]->Caption = Label_Rotation->Items[I]->Caption + L'\xB0';
-    Tree_Rotation->Items[I]->Caption = Tree_Rotation->Items[I]->Caption + L'\xB0';
-  }
-
   //Be careful about using TreeView->Items before OnShow. It has probably not been streamed yet
 }
 //---------------------------------------------------------------------------
@@ -346,7 +339,7 @@ void TForm1::Translate()
 
   UpdateTreeView(); //Translate "Axes"
 
-  Recent1->Hint = LoadRes(RES_OPEN_FILE);
+  Recent1->Hint = LoadStr(RES_OPEN_FILE); //Do not use LoadRes. We want to keep %s in the string.
   SaveDialogEx1->HelpCaption = LoadRes(RES_SAVE_OPTIONS); //Translate the Options dialog button
   if(Form9)
     Form9->Translate();
@@ -2417,6 +2410,7 @@ void __fastcall TForm1::ToolBar_CustomizeClick(TObject *Sender)
   CustomizeDlg->Show();
   TCustomizeFrm *Form = CustomizeDlg->CustomizeForm;
   TranslateProperties(Form);
+  Form->Icon->Assign(Icon);
   Form->Tabs->Pages[1]->Caption = LoadRes(552);
   Form->ActionsActionsLbl->Caption = LoadRes(552) + L':';
   Form->CatList->Items->Strings[Form->CatList->Items->Count-1] = LoadRes(553);
@@ -3130,7 +3124,6 @@ void __fastcall TForm1::PlacementClick(TObject *Sender)
 {
   if(TMenuItem *MenuItem = dynamic_cast<TMenuItem*>(Sender))
   {
-    MenuItem->Checked = true;
     Draw.AbortUpdate();
     boost::shared_ptr<TTextLabel> TextLabel;
     if(MenuItem->Parent == Tree_Placement)
@@ -3171,15 +3164,13 @@ void __fastcall TForm1::PopupMenu3Popup(TObject *Sender)
   TPoint Pos = Image1->ScreenToClient(PopupMenu3->PopupPoint);
   if(boost::shared_ptr<TTextLabel> TextLabel = Data.FindLabel(Pos.x, Pos.y))
   {
-    if(TextLabel->GetPlacement() > lpUserTopLeft && TextLabel->GetPlacement() < lpUserTopRight)
-      Label_Placement->Items[TextLabel->GetPlacement() - 1]->Checked = true;
-    else
-      Label_Placement->Items[4]->Checked = true;
+    int Index = (TextLabel->GetPlacement() == lpUserTopLeft || TextLabel->GetPlacement() >= lpUserTopRight) ? 4 : TextLabel->GetPlacement() - 1;
+    for(int I = 0; I < Label_Placement->Count; I++)
+      Label_Placement->Items[I]->ImageIndex = (I == Index) ? 60/*iiBullet*/ : -1;
 
-    if(TextLabel->GetRotation() % 90 == 0)
-      Label_Rotation->Items[TextLabel->GetRotation() / 90]->Checked = true;
-    else
-      Label_Rotation->Items[4]->Checked = true;
+    Index = TextLabel->GetRotation() % 90 == 0 ? TextLabel->GetRotation() / 90 : 4;
+    for(int I = 0; I < Label_Rotation->Count; I++)
+      Label_Rotation->Items[I]->ImageIndex = (I == Index) ? 60/*iiBullet*/ : -1;
   }
 }
 //---------------------------------------------------------------------------
@@ -3352,7 +3343,6 @@ void __fastcall TForm1::RotationClick(TObject *Sender)
 {
   if(TMenuItem *MenuItem = dynamic_cast<TMenuItem*>(Sender))
   {
-    MenuItem->Checked = true;
     Draw.AbortUpdate();
     boost::shared_ptr<TTextLabel> TextLabel;
     if(MenuItem->Parent == Label_Rotation)
@@ -3602,5 +3592,4 @@ void __fastcall TForm1::TreeViewMouseLeave(TObject *Sender)
     ShowStatusMessage(L"", true);
 }
 //---------------------------------------------------------------------------
-
 
