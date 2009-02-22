@@ -106,16 +106,15 @@ void __fastcall Actnman::TCustomActionControl::SetSelected(bool Value)
     if(Value)
       UpdateSelection();
     Invalidate();
-    if(Value)
-      if(ActionClient->Action != NULL)
-      {
-        TCustomAction *Action = static_cast<TCustomAction*>(ActionClient->Action);
-        if(Action->Hint == "")
-          Action->Hint = reinterpret_cast<TMenuItem*>(ActionClient->Tag)->Hint;
-        Application->Hint = GetLongHint(Action->Hint);
-      }
-      else
-        Application->CancelHint();
+    if(Value && ActionClient->Action != NULL)
+    {
+      TCustomAction *Action = static_cast<TCustomAction*>(ActionClient->Action);
+      if(Action->Hint == "")
+        Action->Hint = reinterpret_cast<TMenuItem*>(ActionClient->Tag)->Hint;
+      Application->Hint = GetLongHint(Action->Hint);
+    }
+    else
+      Application->Hint = ""; //CancelHint();
     if(Value)
       NotifyWinEvent(EVENT_OBJECT_FOCUS, Parent->Handle, OBJID_CLIENT, ActionClient->Index + 1);
   }
