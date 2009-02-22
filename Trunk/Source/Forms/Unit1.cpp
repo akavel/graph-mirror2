@@ -89,8 +89,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   {
     out << std::endl << std::endl;
     out << "PID: 0x" << std::hex << std::uppercase << std::setw(8) << std::setfill('0') << GetCurrentProcessId() << std::endl;
-    out << "Date: " << DateTimeToStr(Now()).c_str() << std::endl;
-    out << "CmdLine: " << CmdLine << std::endl;
+    out << "Date: " << ::ToString(DateTimeToStr(Now())) << std::endl;
+    out << "CmdLine: " << ::ToString(CmdLine) << std::endl;
   }
 
   SetCompTranslateFunc(gettext);
