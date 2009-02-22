@@ -380,6 +380,11 @@ std::string ToString(const String &Str)
   return AnsiString(Str).c_str();
 }
 //---------------------------------------------------------------------------
+std::string ToString(const wchar_t *Str)
+{
+  return AnsiString(String(Str)).c_str();
+}
+//---------------------------------------------------------------------------
 std::wstring ToWString(int Value)
 {
   return String(Value).c_str();

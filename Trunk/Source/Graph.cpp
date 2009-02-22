@@ -78,11 +78,13 @@ WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
     else
       LoadLanguage(Language.c_str());
 
-     Application->Initialize();
-     Application->MainFormOnTaskBar = true;
-     Application->Title = "Graph";
-     Application->CreateForm(__classid(TForm1), &Form1);
-     Application->Run();
+    //Only show main form if we are not running as OLE server
+    Application->ShowMainForm = !FindCmdLineSwitch(L"EMBEDDING");
+    Application->Initialize();
+    Application->MainFormOnTaskBar = true;
+    Application->Title = "Graph";
+    Application->CreateForm(__classid(TForm1), &Form1);
+    Application->Run();
   }
   catch (Exception &E)
   {
