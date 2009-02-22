@@ -79,9 +79,9 @@
 					You can also choose to draw no line at all.
 				</para>
 				<para>
-					You can choose between three types of interpolation: <guilabel>Linear</guilabel> will draw a straight line between the markers.
+					You can choose between three types of interpolation: <guilabel>Linear</guilabel> will draw straight lines between the markers.
 					<guilabel>Cubic splines</guilabel> will draw a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials.
-					<guilabel>Half cosine</guilabel> will draw a half cosine curve between the points,
+					<guilabel>Half cosine</guilabel> will draw half cosine curves between the points,
 					which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do.
 				</para>
 			</listitem>
@@ -108,7 +108,7 @@
 					<guilabel>Fixed</guilabel> is used to specify that all points have the same uncertainty.
 					<guilabel>Relative</guilabel> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty.
 					<guilabel>Custom</guilabel> will add an extra column to the table where you may specify a different uncertainty value for each point.
-					All uncertainties are +/-values. Custom Y-errors are also used to weight the points when creating trendlines.
+					All uncertainties are &plusmn;values. Custom Y-errors are also used to weight the points when creating trendlines.
 				</para>
 			</listitem>
 		</varlistentry>

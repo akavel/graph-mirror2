@@ -50,7 +50,7 @@
 					</listitem>
 				</varlistentry>
 				<varlistentry>
-					<item>Intersection</item>
+					<term>Intersection</term>
 					<listitem>
 						<para>
 							The cursor will snap to the nearest intersection between the selected function and every function displayed (including the function itself).
@@ -58,7 +58,7 @@
 					</listitem>
 				</varlistentry>
 				<varlistentry>
-					<item>x-axis</item>
+					<term>x-axis</term>
 					<listitem>
 						<para>
 							The cursor will snap to the nearest intersection between the selected function and the x-axis.
@@ -66,7 +66,7 @@
 					</listitem>
 				</varlistentry>
 				<varlistentry>
-					<item>y-axis</item>
+					<term>y-axis</term>
 					<listitem>
 						<para>
 							The cursor will snap to the nearest intersection between the selected function and the y-axis. Not available for standard functions.

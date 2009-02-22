@@ -47,10 +47,15 @@
 			<term>Constraints</term>
 			<listitem>
 				<para>
-					Here you enter the constraints for the relation.
-					The constraints can be any <glossterm>numeric expression</glossterm> that evaluates to non-zero for the relation to be drawn and zero for the relation not to be drawn.
-					The constraints usually consist of a series of inequalities separated with the logical operators (and, or, xor).
-					As for the relation <parameter>x</parameter> and <parameter>y</parameter> are used as the independent variables.
+					Here you can enter optional constraints, which can be any <glossterm>numeric expression</glossterm>.
+					The relation will only be valid and plotted where the constraints are fulfilled, i.e. evaluates to a non-zero value.
+					The constraints usually consist of a series of inequalities separated with the logical operators
+					(<simplelist type="inline">
+					  <member><function>and</function></member>
+						<member><function>or</function></member>
+						<member><function>xor</function></member>
+					</simplelist>).
+					As for the relation, <parameter>x</parameter> and <parameter>y</parameter> are used as the independent variables.
 				</para>
 				<para>
 					For example if you have the relation <literal>x^2 + y^2 &lt; 25</literal>, which is a shaded circle,

@@ -16,6 +16,8 @@
 	<indexterm><primary>polyline</primary></indexterm>
 	<indexterm><primary>function</primary></indexterm>
 	<indexterm><primary>regression</primary></indexterm>
+	<indexterm><primary><markup>SSQ</markup></primary></indexterm>
+	<indexterm><primary>sum of squares</primary></indexterm>
 	<para>
 		Use the dialog shown below to insert a trendline that is the function that fits a <link linkend="InsertPointSeriesDialog">point series</link> best.
 		A trendline is a function that shows a trend in a series of points, i.e. a trendline is the curve of bets fit of a specific type for a series of points.
