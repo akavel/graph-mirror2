@@ -21,6 +21,7 @@
 #include <Dialogs.hpp>
 #include <ActnPopup.hpp>
 #include <PlatformDefaultStyleActnCtrls.hpp>
+#include "SaveDialogEx.h"
 //---------------------------------------------------------------------------
 class TForm17 : public TForm
 {
@@ -43,7 +44,7 @@ __published:	// IDE-managed Components
   TMenuItem *Popup_Export;
   TMenuItem *Popup_Select;
   TOpenDialog *OpenDialog1;
-  TSaveDialog *SaveDialog1;
+  TSaveDialogEx *SaveDialog1;
   void __fastcall Button4Click(TObject *Sender);
   void __fastcall Button1Click(TObject *Sender);
   void __fastcall Button3Click(TObject *Sender);

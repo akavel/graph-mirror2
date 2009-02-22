@@ -13,6 +13,7 @@
 #include "Unit17.h"
 //---------------------------------------------------------------------------
 #pragma link "Grid"
+#pragma link "SaveDialogEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm17::TForm17(TComponent* Owner, TData &AData)
