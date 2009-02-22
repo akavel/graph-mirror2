@@ -87,7 +87,7 @@ TOleServerImpl::TOleServerImpl()
     out << std::endl << std::endl;
     out << "PID: 0x" << std::hex << std::uppercase << std::setw(8) << std::setfill('0') << GetCurrentProcessId() << std::endl;
     out << "Date: " << DateTimeToStr(Now()) << std::endl;
-    out << __FUNC__ << "(CmdLine=" << CmdLine << ")";
+    out << __FUNC__ << "(CmdLine=" << ::ToString(CmdLine) << ")";
   }
 #endif
   OleServerImpl = this;

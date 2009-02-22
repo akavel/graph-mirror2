@@ -40,6 +40,7 @@ std::string ToString(unsigned Value);
 std::string ToString(long double Value);
 std::string ToString(const std::wstring &Str);
 std::string ToString(const String &Str);
+std::string ToString(const wchar_t *Str);
 
 std::wstring ToWString(int Value);
 std::wstring ToWString(unsigned Value);
