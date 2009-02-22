@@ -172,7 +172,7 @@ class docbookXmlMode:
             lines = translators.split("\n")
             for line in lines:
                 line = line.strip()
-                match = re.match(r"^([^<,]+)\s*(?:<([^>,]+)>)?,\s*(.*)$", line)
+                match = re.match(r"^([^<,]+)\s*(?:<([^>,]+)>)?,?\s*(.*)$", line)
                 if match:
                     last = self._find_lastcopyright(ai)
                     copy = libxml2.newNode("othercredit")
