@@ -1032,7 +1032,7 @@ bool TGrid::ExportToFile(const String &FileName, char Delimiter, bool Utf8)
     Stream << UTF8Encode(ExportText(Delimiter)).c_str();
   }
   else
-    Stream << ExportText(Delimiter).c_str();
+    Stream << AnsiString(ExportText(Delimiter)).c_str();
   return true;
 }
 //---------------------------------------------------------------------------
