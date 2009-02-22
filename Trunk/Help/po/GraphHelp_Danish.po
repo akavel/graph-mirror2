@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2009-02-08 17:49Romance Standard Time\n"
-"PO-Revision-Date: 2009-02-14 10:55+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2009-02-22 14:20Romance Standard Time\n"
+"PO-Revision-Date: 2009-02-22 14:36+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,7 +37,7 @@ msgstr "Returnerer sinus til argumentet."
 msgid "Syntax"
 msgstr "Syntaks"
 
-#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:78(title) Special.xml:105(title) Special.xml:128(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:28(entry) Installation.xml:82(entry) Installation.xml:153(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:141(title) Hyperbolic.xml:163(title) Hyperbolic.xml:187(title) Hyperbolic.xml:211(title) Hyperbolic.xml:237(title) Hyperbolic.xml:260(title) Hyperbolic.xml:283(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title)
+#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:78(title) Special.xml:105(title) Special.xml:128(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:28(entry) Installation.xml:82(entry) Installation.xml:153(entry) InsertRelationDialog.xml:68(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:141(title) Hyperbolic.xml:163(title) Hyperbolic.xml:187(title) Hyperbolic.xml:211(title) Hyperbolic.xml:237(title) Hyperbolic.xml:260(title) Hyperbolic.xml:283(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title)
 msgid "Description"
 msgstr "Beskrivelse"
 
@@ -45,7 +45,7 @@ msgstr "Beskrivelse"
 msgid "radians"
 msgstr "radianer"
 
-#. Trigonometric.xml:25(glossterm) Trigonometric.xml:56(glossterm) Trigonometric.xml:87(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:108(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
+#. Trigonometric.xml:25(glossterm) Trigonometric.xml:56(glossterm) Trigonometric.xml:87(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:108(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) InsertRelationDialog.xml:50(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm)
 msgid "numeric expression"
 msgstr "numerisk udtryk"
 
@@ -1081,7 +1081,7 @@ msgstr "Rediger indstillinger for akserne, f.eks. skalering, farver, placering a
 msgid "This will change global settings for Graph, e.g. association of .grf files, showing of tooltips, maximum number of undo stored undo steps, etc."
 msgstr "Dette vil ændre Graphs globale indstillinger, f.eks. association af grf-filer, visning af værktøjstip, det maksimale gemte antal handlinger, der kan fortrydes, osv."
 
-#. MenuItems.xml:260(guimenu) MenuItems.xml:277(guimenu) MenuItems.xml:294(guimenu) MenuItems.xml:312(guimenu) MenuItems.xml:328(guimenu) MenuItems.xml:346(guimenu) MenuItems.xml:363(guimenu) MenuItems.xml:381(guimenu) MenuItems.xml:397(guimenu) MenuItems.xml:411(guimenu) MenuItems.xml:425(guimenu) InsertTrendlineDialog.xml:23(guimenu) InsertTangentDialog.xml:16(guimenu) InsertTangentDialog.xml:17(guimenu) InsertShadingDialog.xml:18(guimenu) InsertShadingDialog.xml:19(guimenu) InsertRelationDialog.xml:17(guimenu) InsertRelationDialog.xml:18(guimenu) InsertPointSeriesDialog.xml:20(guimenu) InsertPointSeriesDialog.xml:21(guimenu) InsertLabelDialog.xml:25(guimenu) InsertLabelDialog.xml:27(guimenu) InsertFunctionDialog.xml:16(guimenu) InsertFunctionDialog.xml:19(guimenu) InsertDerivativeDialog.xml:17(guimenu) HowToUse.xml:35(guimenu) HowToUse.xml:43(guimenu) Glossary.xml:38(guimenu) Glossary.xml:52(guimenu) FunctionList.xml:174(entry) EvaluateDialog.xml:45(term) CustomFunctionsDialog.xml:16(guimenu)
+#. MenuItems.xml:260(guimenu) MenuItems.xml:277(guimenu) MenuItems.xml:294(guimenu) MenuItems.xml:312(guimenu) MenuItems.xml:328(guimenu) MenuItems.xml:346(guimenu) MenuItems.xml:363(guimenu) MenuItems.xml:381(guimenu) MenuItems.xml:397(guimenu) MenuItems.xml:411(guimenu) MenuItems.xml:425(guimenu) InsertTrendlineDialog.xml:25(guimenu) InsertTangentDialog.xml:16(guimenu) InsertTangentDialog.xml:17(guimenu) InsertShadingDialog.xml:18(guimenu) InsertShadingDialog.xml:19(guimenu) InsertRelationDialog.xml:17(guimenu) InsertRelationDialog.xml:18(guimenu) InsertPointSeriesDialog.xml:20(guimenu) InsertPointSeriesDialog.xml:21(guimenu) InsertLabelDialog.xml:25(guimenu) InsertLabelDialog.xml:27(guimenu) InsertFunctionDialog.xml:16(guimenu) InsertFunctionDialog.xml:19(guimenu) InsertDerivativeDialog.xml:17(guimenu) HowToUse.xml:35(guimenu) HowToUse.xml:43(guimenu) Glossary.xml:38(guimenu) Glossary.xml:52(guimenu) FunctionList.xml:174(entry) EvaluateDialog.xml:45(term) CustomFunctionsDialog.xml:16(guimenu)
 msgid "Function"
 msgstr "Funktion"
 
@@ -1091,7 +1091,7 @@ msgstr "Indsæt funktion..."
 
 #. MenuItems.xml:261(keycap)
 msgid "Ins"
-msgstr "Ins"
+msgstr "Indsæt"
 
 #. MenuItems.xml:266(para)
 msgid "Inserts a function into the coordinate system. Functions may be added with different width and color, and you can choose to only show the graph in a specified interval, and specify other settings too."
@@ -1129,7 +1129,7 @@ msgstr "Indsæt punktserie..."
 msgid "Inserts a new point series into the coordinate system. An infinite number of points defined by their x- and y-coordinates may be added. It is possible to choose color, size, and style of the point series."
 msgstr "Indsætter en ny serie af et vilkårligt antal punkter angivet ved deres x- og y-koordinater. Det er muligt at vælge farve, størrelse og forskellige punkttyper."
 
-#. MenuItems.xml:346(guimenuitem) InsertTrendlineDialog.xml:23(guimenuitem)
+#. MenuItems.xml:346(guimenuitem) InsertTrendlineDialog.xml:25(guimenuitem)
 msgid "Insert trendline..."
 msgstr "Indsæt tendenslinje..."
 
@@ -1171,7 +1171,7 @@ msgstr "Slet"
 
 #. MenuItems.xml:412(keycap)
 msgid "Del"
-msgstr "Del"
+msgstr "Slet"
 
 #. MenuItems.xml:416(para)
 msgid "This will delete the selected <placeholder-1/> in the <placeholder-2/>."
@@ -1605,123 +1605,127 @@ msgstr "funktion"
 msgid "regression"
 msgstr "regression"
 
-#. InsertTrendlineDialog.xml:19(para)
+#. InsertTrendlineDialog.xml:20(primary)
+msgid "sum of squares"
+msgstr "kvadraternes sum"
+
+#. InsertTrendlineDialog.xml:21(para)
 msgid "Use the dialog shown below to insert a trendline that is the function that fits a <link linkend=\"InsertPointSeriesDialog\">point series</link> best. A trendline is a function that shows a trend in a series of points, i.e. a trendline is the curve of bets fit of a specific type for a series of points. The trendline is added as an ordinary function. To create a trendline, you select the point series you want to base the trendline on and use <placeholder-1/>."
 msgstr "Brug nedenstående dialogboks til at indsætte en tendenslinje til en eksisterende <link linkend=\"InsertPointSeriesDialog\">punktserie</link>. En tendenslinje er grafen for en funktion af en given type, som bedst approksimerer punkterne. Tendenslinjen oprettes som graf for en standardfunktion. Vælg den punktserie, som tendenslinjen skal baseres på, og brug <placeholder-1/> for at oprette tendenslinjen."
 
-#. InsertTrendlineDialog.xml:26(para)
+#. InsertTrendlineDialog.xml:28(para)
 msgid "If the point series has custom Y-errors defined, these values are used to weight the points. The weight for each point is <placeholder-1/> where &sigma; is the Y-error for the point. X-errors are not used."
 msgstr "Hvis punktserien har brugerdefinerede Y-afvigelser, bruges disse værdier til at vægte punkterne. Vægten af hvert punkt er <placeholder-1/>, hvor &sigma; er punktets Y-afvigelse. X-afvigelser bruges ikke."
 
-#. InsertTrendlineDialog.xml:33(title)
+#. InsertTrendlineDialog.xml:35(title)
 msgid "Built-in"
 msgstr "Indbygget"
 
-#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:46(term) InsertPointSeriesDialog.xml:82(guilabel)
+#. InsertTrendlineDialog.xml:42(guilabel) InsertTrendlineDialog.xml:48(term) InsertPointSeriesDialog.xml:82(guilabel)
 msgid "Linear"
 msgstr "Lineær"
 
-#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:76(term)
+#. InsertTrendlineDialog.xml:42(guilabel) InsertTrendlineDialog.xml:78(term)
 msgid "Polynomial"
 msgstr "Polynomisk"
 
-#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:105(term)
+#. InsertTrendlineDialog.xml:42(guilabel) InsertTrendlineDialog.xml:107(term)
 msgid "Exponential"
 msgstr "Eksponentiel"
 
-#. InsertTrendlineDialog.xml:41(guilabel)
+#. InsertTrendlineDialog.xml:43(guilabel)
 msgid "Intercept"
 msgstr "Skær"
 
-#. InsertTrendlineDialog.xml:37(para)
+#. InsertTrendlineDialog.xml:39(para)
 msgid "You may choose between the following built-in functions. These functions will give an accurate result. For <placeholder-1/>, <placeholder-2/> and <placeholder-3/> trendlines, you may select the <placeholder-4/> field and specify the point where you want the trendline to meet the y-axis."
 msgstr "Der er mulighed for at vælge mellem følgende indbyggede funktioner. Disse funktioner vil give et præcist resultat. For <placeholder-1/>, <placeholder-2/> og <placeholder-3/> tendenslinjer kan man markere feltet <placeholder-4/> og vælge det punkt, hvori tendenslinjen skal skære y-aksen."
 
-#. InsertTrendlineDialog.xml:48(para)
+#. InsertTrendlineDialog.xml:50(para)
 msgid "This is a straight line with the function f(x) = a*x+b, where a and b are constants calculated so the line is the best fit to the point series."
 msgstr "Dette er en funktion med forskriften f(x) = a*x+b, hvor a og b er konstanter, beregnet så den rette linje kommer så tæt på punkterne som muligt."
 
-#. InsertTrendlineDialog.xml:51(para)
+#. InsertTrendlineDialog.xml:53(para)
 msgid "The trendline is calculated so the sum of squares (SSQ) <placeholder-1/> will be as small as possible. If possible the function will cross the points in the series; else the function will be so close to the series that the summation cannot get any smaller."
 msgstr "Konstanterne a og b beregnes, så de lodrette kvadraters sum (Sum of Squares / SSQ) <placeholder-1/> bliver så lille som muligt. Hvis der er perfekt overensstemmelse, vil regressionslinjen  blive placeret oven i punkterne, og ellers vil linjen  komme til at ligge så tæt på punkterne som muligt."
 
-#. InsertTrendlineDialog.xml:61(term)
+#. InsertTrendlineDialog.xml:63(term)
 msgid "Logarithmic"
 msgstr "Logaritmisk"
 
-#. InsertTrendlineDialog.xml:63(para)
+#. InsertTrendlineDialog.xml:65(para)
 msgid "A logarithmic line of best fit is given as <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants, and <placeholder-4/> is the natural logarithm function. To add a logarithmic function, no point in the series may have an x-coordinate that is negative or zero."
 msgstr "En logaritmisk tendenslinje er graf for funktionen <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, og <placeholder-4/> er den naturlige logaritmefunktion. For at anvende en logaritmisk funktion, må intet punkt i serien have en x-koordinat, der er negativ eller nul."
 
-#. InsertTrendlineDialog.xml:68(para)
+#. InsertTrendlineDialog.xml:70(para)
 msgid "A logarithmic function is a straight line in a semilogarithmic coordinate system. The point series is therefore converted to a semilogarithmic coordinate system and the logarithmic function with the smallest sum of squares (SSQ) is found."
 msgstr "Grafen for en logaritmisk funktion er en ret linje i et enkeltlogaritmisk koordinatsystem. Punktserien konverteres derfor til et enkeltlogaritmisk koordinatsystem, hvor logaritmefunktionen med den mindste sum af kvadrater (SSQ) bestemmes."
 
-#. InsertTrendlineDialog.xml:78(para)
+#. InsertTrendlineDialog.xml:80(para)
 msgid "A polynomial is a function given by <placeholder-1/>, where <placeholder-2/>...<placeholder-3/> are constants. <placeholder-4/> is the order of the polynomial. You need at least one more point than the order."
 msgstr "Et polynomium er en funktion på formen <placeholder-1/>, hvor <placeholder-2/>…<placeholder-3/> er konstanter, og <placeholder-4/> er heltallig og ikke-negativ. <placeholder-4/> angiver polynomiets orden. For <placeholder-4/>=1 er en polynomiumsregression det samme som en lineær regression. Antallet af punkter i punktserien skal mindst være en større end <placeholder-4/>."
 
-#. InsertTrendlineDialog.xml:90(term)
+#. InsertTrendlineDialog.xml:92(term)
 msgid "Power"
 msgstr "Potens"
 
-#. InsertTrendlineDialog.xml:92(para)
+#. InsertTrendlineDialog.xml:94(para)
 msgid "A power function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add a power function, no point in the series may have an x- or y-coordinate that is negative or zero."
 msgstr "En potensfunktion er givet ved forskriften <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, beregnet så grafen for funktionen kommer så tæt på punkterne som muligt. For at tilføje en potensfunktion, må ingen af punkterne i serien have en x- eller y-koordinat, der er negativ eller nul."
 
-#. InsertTrendlineDialog.xml:97(para)
+#. InsertTrendlineDialog.xml:99(para)
 msgid "A power function is a straight line in a double logarithmic coordinate system. The point series is therefore converted to a double logarithmic coordinate system and the power function with the smallest sum of squares (SSQ) is found."
 msgstr "En potensfunktion er en ret linje i et dobbeltlogaritmisk koordinatsystem. Punktserierne konverteres derfor til et dobbeltlogaritmisk koordinatsystem, hvor potensfunktionen med den mindste sum af kvadrater (SSQ) bestemmes."
 
-#. InsertTrendlineDialog.xml:107(para)
+#. InsertTrendlineDialog.xml:109(para)
 msgid "An exponential function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add an exponential function, no point in the series may have a y-coordinate that is negative or zero."
 msgstr "En eksponentiel funktion er givet ved <placeholder-1/>, hvor <placeholder-2/> og <placeholder-3/> er konstanter, beregnet så grafen for funktionen ligger så tæt på punkterne som muligt. For at kunne tilføje en eksponentiel funktion, må ingen af punkterne i serien have en y-koordinat, der er negativ eller nul."
 
-#. InsertTrendlineDialog.xml:112(para)
+#. InsertTrendlineDialog.xml:114(para)
 msgid "An Exponential function is a straight line in a semilogarithmic coordinate system with the y-axis as the logarithmic axis. The point series is therefore converted to a semilogarithmic coordinate system and the exponential function with the smallest sum of squares (SSQ) is found."
 msgstr "Grafen for en eksponentialfunktion er en ret linje i et enkeltlogaritmisk koordinatsystem, hvor y-aksen er den logaritmiske akse. Punktserien konverteres derfor til et enkeltlogaritmisk koordinatsystem, hvor eksponentialfunktionen med den mindste sum af kvadrater (SSQ) bestemmes."
 
-#. InsertTrendlineDialog.xml:120(term)
+#. InsertTrendlineDialog.xml:122(term)
 msgid "Moving average"
 msgstr "Bevægeligt gennemsnit"
 
-#. InsertTrendlineDialog.xml:124(guilabel) InsertTrendlineDialog.xml:125(guilabel) InsertTrendlineDialog.xml:127(guilabel)
+#. InsertTrendlineDialog.xml:126(guilabel) InsertTrendlineDialog.xml:127(guilabel) InsertTrendlineDialog.xml:129(guilabel)
 msgid "Period"
 msgstr "Periode"
 
-#. InsertTrendlineDialog.xml:122(para)
+#. InsertTrendlineDialog.xml:124(para)
 msgid "Moving average is a series of straight lines based on the average of the previous points. The <placeholder-1/> determines how many points are used for the average. If <placeholder-2/> is 1 only one point is used, which actually isn't an average. This will draw a line directly between the points. When <placeholder-3/> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point. Instead it will be an average of the previous points."
 msgstr "Bevægeligt gennemsnit består af en række rette linjer baseret på et gennemsnit af de foregående punkter. <placeholder-1/> angiver, hvor mange punkter der bruges til gennemsnittet. Hvis <placeholder-2/> er 1, vil der kun blive brugt ét punkt, hvilket egentlig ikke giver et gennemsnit. Dette vil tegne en linje direkte gennem alle punkterne. Når <placeholder-3/> er større end 1, vil y-koordinaten for linjen ved hvert punkt ikke være det samme som y-koordinaten for punktet. I stedet vil den være et gennemsnit af de foregående punkter."
 
-#. InsertTrendlineDialog.xml:136(title)
+#. InsertTrendlineDialog.xml:138(title)
 msgid "User defined"
 msgstr "Brugerdefineret"
 
-#. InsertTrendlineDialog.xml:140(para)
+#. InsertTrendlineDialog.xml:142(para)
 msgid "In this tab you can enter your own trendline models. The model is entered as a standard function, where all the constants that you want Graph to find are named with a $ followed by any combination of characters (a-z) and digits (0-9). Examples of valid constants are: $a, $y0, $const."
 msgstr "I dette faneblad kan du indtaste dine egne modeller. Modellen indtastes som en standardfunktion, hvor alle konstanter, som du ønsker, at Graph skal bestemme, navngives med et $ efterfulgt af en kombination af bogstaver (a-z) og tal (0-9). Eksempler på gyldige konstanter er: $a, $y0, $const."
 
-#. InsertTrendlineDialog.xml:147(para)
+#. InsertTrendlineDialog.xml:149(para)
 msgid "An example of a model could be <placeholder-1/>. The program tries to calculate the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/> so that f(x) will be as close to the point series as possible. You can use the <guibutton>Add model</guibutton> button to add the model to the saved list with a name."
 msgstr "Et eksempel på en model kunne være <placeholder-1/>. Programmet vil forsøge at beregne konstanterne <placeholder-2/>, <placeholder-3/> og <placeholder-4/>, så grafen for f kommer til at ligge så tæt på punktserien som muligt. Du kan bruge <guibutton>Tilføj model</guibutton> til at tilføje modellen med et navn til den gemte liste."
 
-#. InsertTrendlineDialog.xml:154(para)
+#. InsertTrendlineDialog.xml:156(para)
 msgid "The program needs a guess for where to start the search for the optimum. As default the guess for all constants is 1, but this can be changed for models added to the list. A better guess will increase the possibility that an optimum can be found."
 msgstr "Programmet har brug for et gæt for  at starte søgningen efter de optimale værdier. Som standardgæt sættes alle konstanter til 1, men dette kan ændres, når en model tilføjes listen. Et bedre gæt øger sandsynligheden for, at en optimal værdi for konstanterne findes."
 
-#. InsertTrendlineDialog.xml:160(para)
+#. InsertTrendlineDialog.xml:162(para)
 msgid "Graph will try to find the constants for the model f(x) so the sum of squares <placeholder-1/> will be the smallest possible. The program will start with the guess and move towards the minimum of the sum of squares. If a solution is not found after 100 iterations or the given guess is not valid, the program gives up."
 msgstr "Graph vil forsøge at finde manglende konstanter for modellen f(x), så SSQ <placeholder-1/> bliver så lille som muligt. Programmet vil starte med gættet og bevæge sig mod minimumspunktet for SSQ. Hvis en løsning ikke kan findes inden 100 iterationer, eller såfremt det givne gæt ikke er gyldigt, giver programmet op."
 
-#. InsertTrendlineDialog.xml:168(para)
+#. InsertTrendlineDialog.xml:170(para)
 msgid "It is possible, even though it rarely happens, that more than one minimum exists. In this case the minimum nearest to the guess will be found, even though this may not be the best."
 msgstr "Det er muligt, selv om det meget sjældent sker, at mere end et minimum for SSQ eksisterer. I dette tilfælde vil det minimum, som ligger tættest på gættet, blive fundet, selv om det ikke nødvendigvis er det bedste."
 
-#. InsertTrendlineDialog.xml:173(para)
+#. InsertTrendlineDialog.xml:175(para)
 msgid "Notice that you should avoid redundant constants as they might confuse the program. For example this model has a redundant constant: <placeholder-1/>. Notice the relation between the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. If you multiply <placeholder-5/>, <placeholder-6/> and <placeholder-7/> with the same value the resulting function will not be changed. This means that there are an infinite number of combinations of constants with the same resulting function and hence an infinite number of best solutions. This may confuse the program when it tries to find the best one. Therefore either <placeholder-8/>, <placeholder-9/> or <placeholder-10/> should be removed."
 msgstr "Bemærk, at man bør undgå overflødige konstanter, idet de kan forvirre programmet. For eksempel har denne model en overflødig konstant: <placeholder-1/>. Bemærk sammenhængen mellem konstanterne <placeholder-2/>, <placeholder-3/> og <placeholder-4/>. Den samlede funktion vil ikke blive ændret, selv om <placeholder-5/>, <placeholder-6/> og <placeholder-7/> hver især multipliceres med samme størrelse. Det betyder, at der er et uendeligt stort antal bedste løsninger, hvilket kan forvirre programmet, når det prøver at finde den bedste løsning. Derfor bør enten <placeholder-8/>, <placeholder-9/> eller <placeholder-10/> fjernes."
 
-#. InsertTrendlineDialog.xml:183(para)
+#. InsertTrendlineDialog.xml:185(para)
 msgid "When the trendline is added, the correlation coefficient <placeholder-1/> is shown in the comment. The closer <placeholder-2/> is to 1 the closer the trendline is to the points."
 msgstr "Når tendenslinjen er tilføjet, vises korrelationskoefficienten <placeholder-1/> i kommentarfeltet. Jo tættere <placeholder-2/> er på 1, desto tættere er tendenslinjen på punkterne."
 
@@ -1781,7 +1785,7 @@ msgstr "Her kan man vælge at vise markører ved intervallets begyndelse og/elle
 msgid "Legend text"
 msgstr "Signaturtekst"
 
-#. InsertTangentDialog.xml:56(glossterm) InsertRelationDialog.xml:66(glossterm) InsertPointSeriesDialog.xml:50(glossterm) InsertFunctionDialog.xml:87(glossterm) Glossary.xml:69(glossterm) Glossary.xml:70(primary) AxesDialog.xml:24(primary) AxesDialog.xml:187(glossterm) AxesDialog.xml:196(glossterm) AxesDialog.xml:255(glossterm)
+#. InsertTangentDialog.xml:56(glossterm) InsertRelationDialog.xml:71(glossterm) InsertPointSeriesDialog.xml:50(glossterm) InsertFunctionDialog.xml:87(glossterm) Glossary.xml:69(glossterm) Glossary.xml:70(primary) AxesDialog.xml:24(primary) AxesDialog.xml:187(glossterm) AxesDialog.xml:196(glossterm) AxesDialog.xml:255(glossterm)
 msgid "legend"
 msgstr "signaturforklaring"
 
@@ -1909,7 +1913,7 @@ msgstr "Her indtastes den x-koordinat, eller t-værdi hvis du bruger parameterfu
 msgid "Here you may enter a value, for which you want the shading to stop. You specify the x-coordinate if you are using a standard function or the t-parameter if you are using a parametric or polar function. If you don't enter a value, the shading will continue until positive infinity. If you place a check mark in <placeholder-1/>, the end coordinate of the shading will be increased from the entered value to the coordinate where the graph is crossing the axis, the edge of the graphing area, itself or another graph depending of the type of shading selected."
 msgstr "Her indtastes den x-koordinat, eller t-værdi hvis du bruger parameterfunktioner, hvor skraveringen skal slutte. Hvis der ikke indtastes nogen værdi, vil skraveringen slutte i uendelig. Hvis <placeholder-1/> afkrydses, vil slutværdien blive forøget til det punkt, hvori grafen for funktionen krydser en akse, kanten, sig selv eller grafen for en anden funktion, afhængig af hvilken type skravering, der er valgt."
 
-#. InsertShadingDialog.xml:146(term) InsertRelationDialog.xml:77(guilabel)
+#. InsertShadingDialog.xml:146(term) InsertRelationDialog.xml:82(guilabel)
 msgid "Style"
 msgstr "Type"
 
@@ -2010,26 +2014,26 @@ msgid "Constraints"
 msgstr "Begrænsninger"
 
 #. InsertRelationDialog.xml:49(para)
-msgid "Here you enter the constraints for the relation. The constraints can be any <placeholder-1/> that evaluates to non-zero for the relation to be drawn and zero for the relation not to be drawn. The constraints usually consist of a series of inequalities separated with the logical operators (and, or, xor). As for the relation <placeholder-2/> and <placeholder-3/> are used as the independent variables."
-msgstr "Her kan eventuelle begrænsninger for relationen indtastes. Begrænsningerne kan være ethvert <placeholder-1/>. Evalueres udtrykket til noget forskelligt fra nul, tegnes relationen. Evalueres udtrykket til nul, tegnes relationen ikke. Begrænsningerne af en serie af uligheder, adskilt af de logiske operatorer (and, or, xor). I relationen bruges <placeholder-2/> og <placeholder-3/> som de uafhængige variable."
+msgid "Here you can enter optional constraints, which can be any <placeholder-1/>. The relation will only be valid and plotted where the constraints are fulfilled, i.e. evaluates to a non-zero value. The constraints usually consist of a series of inequalities separated with the logical operators (<placeholder-2/>). As for the relation, <placeholder-3/> and <placeholder-4/> are used as the independent variables."
+msgstr "Her kan eventuelle begrænsninger for relationen indtastes. Det kan være ethvert <placeholder-1/>. Relationen er kun gyldig og tegnes kun der, hvor begrænsningerne er opfyldt, dvs. hvis udtrykket evalueres til noget forskelligt fra nul. Begrænsningerne består typisk af en serie af uligheder adskilt af de logiske operatorer (<placeholder-2/>). I relationen bruges <placeholder-3/> og <placeholder-4/> som de uafhængige variable."
 
-#. InsertRelationDialog.xml:55(para)
+#. InsertRelationDialog.xml:60(para)
 msgid "For example if you have the relation <literal>x^2 + y^2 &lt; 25</literal>, which is a shaded circle, the constraints <literal>x &gt; 0 and y &lt; 0</literal> will only show the part of the circle in the 4<superscript>th</superscript> quadrant."
 msgstr "Har du f.eks. relationen <literal>x^2 + y^2 &lt; 25</literal>, som er en udfyldt cirkel, vil begrænsningerne <literal>x &gt; 0 and y &lt; 0</literal> bevirke, at kun den del af den udfyldte cirkel, som ligger i 4. kvadrant, vises."
 
-#. InsertRelationDialog.xml:65(para)
+#. InsertRelationDialog.xml:70(para)
 msgid "Here you may enter a descriptive text to show in the <placeholder-1/>. If this field is left empty, the relation and constraints will be shown in the legend."
 msgstr "Her kan du angive en beskrivelse, som skal vises i <placeholder-1/>. Ellers vil uligheden blive vist."
 
-#. InsertRelationDialog.xml:73(term)
+#. InsertRelationDialog.xml:78(term)
 msgid "Properties"
 msgstr "Egenskaber"
 
-#. InsertRelationDialog.xml:79(guilabel)
+#. InsertRelationDialog.xml:84(guilabel)
 msgid "Width"
 msgstr "Tykkelse"
 
-#. InsertRelationDialog.xml:75(para)
+#. InsertRelationDialog.xml:80(para)
 msgid "Here you may select a shading style for inequalities, color and width for equations. The shading <placeholder-1/> is only used for inequalities and is ignored for equations. To see overlapping inequalities they must use different styles. The <placeholder-2/> indicates the size of the line drawn for equations and the width of the border line for inequalities. For inequalities the width can be set to 0 to avoid drawing the border line."
 msgstr "Her kan man vælge en skravering eller farve til uligheder samt farve og bredde for ligninger. Skraveringen <placeholder-1/> bruges kun ved uligheder og ignoreres derfor ved ligninger. For at kunne se uligheder, som overlapper hinanden, skal de have forskellig stil. <placeholder-2/> angiver tykkelsen på linjen, som tegnes ved ligninger, og tykkelsen på kantlinjen, som tegnes ved uligheder. For uligheder kan bredden sættes til 0, hvis man vil undgå, at kantlinjen tegnes."
 
@@ -2118,8 +2122,8 @@ msgid "Half cosine"
 msgstr "Halve cosinuskurver"
 
 #. InsertPointSeriesDialog.xml:81(para)
-msgid "You can choose between three types of interpolation: <placeholder-1/> will draw a straight line between the markers. <placeholder-2/> will draw a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a half cosine curve between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
-msgstr "Man kan vælge mellem tre typer af interpolationer: <placeholder-1/> tegner et linjestykke mellem markørerne. <placeholder-2/> tegner en glat, blød kurve, som består af tredjegradspolynomier, mellem markørerne. <placeholder-3/> tegner halve cosinuskurver mellem punkterne, hvilket kan få kurven til at se mindre blød ud end med <placeholder-2/>; men det vil til gengæld aldrig skyde for lavt eller for højt."
+msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+msgstr "Man kan vælge mellem tre typer af interpolation: <placeholder-1/> tegner et linjestykke mellem markørerne. <placeholder-2/> tegner en glat, blød kurve, som består af tredjegradspolynomier, mellem markørerne. <placeholder-3/> tegner halve cosinuskurver mellem punkterne, hvilket kan få kurven til at se mindre blød ud end med cubic splines; men det vil til gengæld aldrig skyde for lavt eller for højt."
 
 #. InsertPointSeriesDialog.xml:91(term)
 msgid "Labels"
@@ -2150,8 +2154,8 @@ msgid "Custom"
 msgstr "Brugervalgt"
 
 #. InsertPointSeriesDialog.xml:104(para)
-msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are +/-values. Custom Y-errors are also used to weight the points when creating trendlines."
-msgstr "Her kan du vælge, om der skal vises vandrette og/eller lodrette usikkerhedssøjler. De er vist som tynde streger ved alle punkter i punktserien, og de viser, hvor stor usikkerheden er på det enkelte punkt. Der er tre måder, hvorpå man kan vælge usikkerhedssøjlernes størrelse: <placeholder-1/> giver alle punkterne den samme absolutte usikkerhed. <placeholder-2/> gør en vis procentdel af alle punkterne usikre, dvs. alle punkterne har den samme relative usikkerhed. <placeholder-3/> opretter en ny kolonne i punktserien, hvor du selv kan indtaste usikkerheden for hvert punkt. Alle usikkerheder er +/– værdier. Brugerdefinerede Y-usikkerheder bruges også til at vægte punkterne, når der oprettes tendenslinjer."
+msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are &plusmn;values. Custom Y-errors are also used to weight the points when creating trendlines."
+msgstr "Her kan du vælge, om der skal vises vandrette og/eller lodrette usikkerhedssøjler. De vises som tynde streger ved alle punkter i punktserien, og de viser, hvor stor usikkerheden er på det enkelte punkt. Der er tre måder, hvorpå man kan vælge usikkerhedssøjlernes størrelse: <placeholder-1/> giver alle punkterne den samme absolutte usikkerhed. <placeholder-2/> gør en vis procentdel af alle punkterne usikre. <placeholder-3/> opretter en ny kolonne i punktserien, hvor du selv kan indtaste usikkerheden for hvert punkt. Alle usikkerheder er &plusmn;-værdier. Brugerdefinerede Y-usikkerheder bruges også til at vægte punkterne, når der oprettes tendenslinjer."
 
 #. InsertLabelDialog.xml:8(title)
 msgid "Insert label"
@@ -3249,7 +3253,7 @@ msgstr "Det kan forekomme, at den evaluerede funktion resulterer i et komplekst 
 msgid "The cursor will snap to the nearest point on the selected function."
 msgstr "Markøren vil følge den valgte funktion."
 
-#. EvaluateDialog.xml:53(item)
+#. EvaluateDialog.xml:53(term)
 msgid "Intersection"
 msgstr "Skæring"
 
@@ -3257,7 +3261,7 @@ msgstr "Skæring"
 msgid "The cursor will snap to the nearest intersection between the selected function and every function displayed (including the function itself)."
 msgstr "Markøren vil låses fast på den nærmeste skæring mellem den valgte funktions graf og de øvrige funktioners grafer eller grafen selv."
 
-#. EvaluateDialog.xml:61(item) AxesDialog.xml:10(primary)
+#. EvaluateDialog.xml:61(term) AxesDialog.xml:10(primary)
 msgid "x-axis"
 msgstr "x-akse"
 
@@ -3265,7 +3269,7 @@ msgstr "x-akse"
 msgid "The cursor will snap to the nearest intersection between the selected function and the x-axis."
 msgstr "Markøren vil låse til den nærmeste skæring mellem den valgte funktions graf og x-aksen."
 
-#. EvaluateDialog.xml:69(item) AxesDialog.xml:11(primary)
+#. EvaluateDialog.xml:69(term) AxesDialog.xml:11(primary)
 msgid "y-axis"
 msgstr "y-akse"
 
@@ -4154,8 +4158,8 @@ msgid "This will save all frames as single bitmap files. This is the same as rep
 msgstr "Dette vil gemme alle billederne som enkelte bitmap-filer. Det svarer til at gentage <placeholder-1/> for hvert enkelt billede i animationen."
 
 #. Acknowledgements.xml:7(title)
-msgid "Acknowledgments"
-msgstr "Anerkendelse"
+msgid "Acknowledgements"
+msgstr "Acknowledgements"
 
 #. Acknowledgements.xml:8(primary)
 msgid "acknowledgements"

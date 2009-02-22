@@ -3,8 +3,8 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<chapter id="Acknowledgments">
-	<title>Acknowledgments</title>
+<chapter id="Acknowledgements">
+	<title>Acknowledgements</title>
 	<indexterm><primary>acknowledgements</primary></indexterm>
 	<indexterm><primary>libraries</primary></indexterm>
 	<indexterm><primary>translators</primary></indexterm>
