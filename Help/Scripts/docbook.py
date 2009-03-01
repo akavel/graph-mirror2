@@ -147,7 +147,7 @@ class docbookXmlMode:
         root = doc.getRootElement()
 #        self._output_images(root,msg)
 
-    def postProcessXmlTranslation(self, doc, language, translators):
+    def postProcessXmlTranslation(self, doc, language, translators, translation):
         """Sets a language and translators in "doc" tree.
 
         "translators" is a string consisted of "Name <email>, years" pairs
@@ -176,6 +176,7 @@ class docbookXmlMode:
                 if match:
                     last = self._find_lastcopyright(ai)
                     copy = libxml2.newNode("othercredit")
+#                    copy.setProp("class", "translator")
                     if last:
                         copy = last.addNextSibling(copy)
                     else:
@@ -190,6 +191,7 @@ class docbookXmlMode:
                         holder = match.group(2)
                     else:
                         holder = "???"
+                    copy.newChild(None, "contrib", translation.encode('utf-8'))
                     copy.newChild(None, "othername", holder.encode('utf-8'))
 
 # Perform some tests when ran standalone

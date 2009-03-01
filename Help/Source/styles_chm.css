@@ -273,8 +273,12 @@ h3.othercredit {
   margin-top: -1em;
 }
 
+span.contrib {
+  font-weight: bold;
+}
+
 p.copyright {
-  margin-top: -1em;
+  margin-top: 1em;
 }
 
 div.authorgroup {

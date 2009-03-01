@@ -76,7 +76,7 @@ class MessageOutput:
     def setFilename(self, filename):
         self.filename = filename
 
-    def outputMessage(self, text, lineno = 0, comment = None, spacepreserve = 0, tag = None):
+    def outputMessage(self, text, lineno = None, comment = None, spacepreserve = 0, tag = None):
         """Adds a string to the list of messages."""
         if (text.strip() != ''):
             t = escapePoString(normalizeString(text, not spacepreserve))
@@ -88,17 +88,19 @@ class MessageOutput:
                 self.messages.append(t)
                 if spacepreserve:
                     self.nowrap[t] = 1
-                if t in self.linenos.keys():
-                    self.linenos[t].append((self.filename, tag, lineno))
-                else:
-                    self.linenos[t] = [ (self.filename, tag, lineno) ]
+                if lineno != None:
+                    if t in self.linenos.keys():
+                        self.linenos[t].append((self.filename, tag, lineno))
+                    else:
+                        self.linenos[t] = [ (self.filename, tag, lineno) ]
                 if (not self.do_translations) and comment and not t in self.comments:
                     self.comments[t] = comment
             else:
-                if t in self.linenos.keys():
-                    self.linenos[t].append((self.filename, tag, lineno))
-                else:
-                    self.linenos[t] = [ (self.filename, tag, lineno) ]
+                if lineno != None:
+                    if t in self.linenos.keys():
+                        self.linenos[t].append((self.filename, tag, lineno))
+                    else:
+                        self.linenos[t] = [ (self.filename, tag, lineno) ]
                 if comment and not t in self.comments:
                     self.comments[t] = comment
 
@@ -123,10 +125,13 @@ msgstr ""
         for k in self.messages:
             if k in self.comments:
                 out.write("#. %s\n" % (self.comments[k].replace("\n","\n#. ")))
-            references = ""
-            for reference in self.linenos[k]:
-                references += "%s:%d(%s) " % (reference[0], reference[2], reference[1])
-            out.write("#. %s\n" % (references))
+
+            if k in self.linenos:
+                references = ""
+                for reference in self.linenos[k]:
+                    references += "%s:%d(%s) " % (reference[0], reference[2], reference[1])
+                out.write("#. %s\n" % (references))
+
             if k in self.nowrap and self.nowrap[k]:
                 out.write("#, no-wrap\n")
             out.write("msgid \"%s\"\n" % (k))
@@ -872,7 +877,9 @@ if mode != 'merge':
         tcmsg = CurrentXmlMode.getStringForTranslators()
         tccom = CurrentXmlMode.getCommentForTranslators()
         if tcmsg:
-            msg.outputMessage(tcmsg, 0, tccom)
+            msg.outputMessage(tcmsg, None, tccom)
+
+        msg.outputMessage("Translator:")
 
     msg.outputAll(out)
 else:
@@ -882,6 +889,6 @@ else:
             outtxt = getTranslation(tcmsg)
         else:
             outtxt = ''
-        CurrentXmlMode.postProcessXmlTranslation(doc, translationlanguage, outtxt)
+        CurrentXmlMode.postProcessXmlTranslation(doc, translationlanguage, outtxt, getTranslation("Translator:"))
     out.write(doc.serialize('utf-8', 1))
 

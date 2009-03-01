@@ -168,5 +168,16 @@
        because the <indexterm> will be between <title> and <para> in the output. -->
   <xsl:template match="indexterm" />
 
+  <!-- Show "Translator:" followed by the list of translators, one on each line -->
+  <xsl:template match="othercredit" mode="titlepage.mode">
+    <xsl:variable name="contrib" select="string(contrib)"/>
+    <xsl:if test="not(preceding-sibling::othercredit[string(contrib)=$contrib])">
+      <fo:block>
+      <xsl:apply-templates mode="titlepage.mode" select="contrib"/>
+      </fo:block>
+    </xsl:if>
+    <xsl:call-template name="person.name"/>
+  </xsl:template>
+
 </xsl:stylesheet>
 
