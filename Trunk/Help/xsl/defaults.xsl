@@ -15,7 +15,7 @@
   </xsl:attribute-set>
 
 
-  <xsl:param name="admon.graphics" select="1"></xsl:param>
+  <xsl:param name="admon.graphics" select="1"/>
 
   <xsl:attribute-set name="admonition.title.properties">
     <xsl:attribute name="font-size">14pt</xsl:attribute>

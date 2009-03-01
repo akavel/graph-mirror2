@@ -47,7 +47,8 @@
 			<authorgroup
 			 space-before="20pt"/>
       <othercredit/>
-      <copyright/>
+      <copyright
+			 space-before="&hsize4space;"/>
     </t:titlepage-content>
 
   <t:titlepage-content t:side="verso" />
