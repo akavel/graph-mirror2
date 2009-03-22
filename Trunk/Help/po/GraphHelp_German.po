@@ -2,17 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2009-02-08 17:49Romance Standard Time\n"
-"PO-Revision-Date: 2009-02-08 20:35+0100\n"
-"Last-Translator: Ivan Johansen\n"
+"PO-Revision-Date: 2009-03-22 19:31+0100\n"
+"Last-Translator: Frank Hüttemeister <frank.huettemeister@padowan.dk>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Version.xml:2(subtitle)
-#, fuzzy
 msgid "Version <placeholder-1/>"
-msgstr "<placeholder-1/>-Funktion"
+msgstr "Version <placeholder-1/>"
 
 #. Trigonometric.xml:7(title) FunctionList.xml:180(emphasis)
 msgid "Trigonometric"
@@ -59,9 +58,8 @@ msgid "complex number"
 msgstr "komplexe Zahl"
 
 #. Trigonometric.xml:22(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the sine of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a real number, the result will be in the range -1 to 1."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Sinus eines Winkels <placeholder-2/> mit der Einheit <glossterm>rad</glossterm> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Ist <placeholder-4/> eine reelle Zahl, so liegt das Ergebnis zwischen -1 und +1."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Sinus eines Winkels <placeholder-2/> mit der Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein, der eine <placeholder-6/> oder eine <placeholder-7/> darstellt. Ist <placeholder-8/> eine reelle Zahl, so liegt das Ergebnis zwischen -1 und +1."
 
 #. Trigonometric.xml:31(title) Trigonometric.xml:62(title) Trigonometric.xml:92(title) Trigonometric.xml:200(title) Trigonometric.xml:230(title) Trigonometric.xml:260(title) Trigonometric.xml:344(title) Special.xml:190(title) Special.xml:217(title) PowerAndLog.xml:92(title) Constants.xml:25(title)
 msgid "Remarks"
@@ -80,9 +78,8 @@ msgid "Returns the cosine of the argument."
 msgstr "Liefert den Cosinus des Arguments."
 
 #. Trigonometric.xml:53(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the cosine of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a real number, the result will be in the range -1 to 1."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Cosinus eines Winkels <placeholder-2/> mit der Einheit <glossterm>rad</glossterm> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Ist <placeholder-4/> eine reelle Zahl, so liegt das Ergebnis zwischen -1 und +1."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Cosinus eines Winkels <placeholder-2/> mit der Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein, der eine <placeholder-6/> oder eine <placeholder-7/> darstellt. Ist <placeholder-8/> eine reelle Zahl, so liegt das Ergebnis zwischen -1 und +1."
 
 #. Trigonometric.xml:74(primary) Trigonometric.xml:157(primary) InsertTangentDialog.xml:10(primary)
 msgid "tangent"
@@ -93,18 +90,16 @@ msgid "Returns the tangent of the argument."
 msgstr "Liefert den Tangens des Arguments."
 
 #. Trigonometric.xml:84(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the tangent of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Tangens eines Winkels <placeholder-2/> mit der Einheit <glossterm>rad</glossterm> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Tangens eines Winkels <placeholder-2/> mit der Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein, der eine <placeholder-6/> oder eine <placeholder-7/> darstellt."
 
 #. Trigonometric.xml:96(glossterm) Special.xml:108(glossterm) Rounding.xml:23(glossterm) Rounding.xml:49(glossterm) Rounding.xml:72(glossterm) Rounding.xml:96(glossterm) Rounding.xml:120(glossterm) PowerAndLog.xml:94(glossterm) Glossary.xml:58(glossterm) Glossary.xml:59(primary)
 msgid "integer"
 msgstr "Ganzzahl"
 
 #. Trigonometric.xml:93(para)
-#, fuzzy
 msgid "For arguments with a large magnitude, the function will begin to lose precision. <placeholder-1/> is undefined at <placeholder-2/>, where p is an <placeholder-3/>, but the function returns a very large number if <placeholder-4/> is near the undefined value."
-msgstr "Bei sehr großen Argumenten wird die Funktion zunehmend ungenauer. <placeholder-1/> ist bei <placeholder-2/> undefiniert, wobei p eine <glossterm>Integerzahl</glossterm> ist, jedoch liefert die Function eine sehr große Zahl zurück, wenn <placeholder-3/> in der Näghe des undefinierten Wertes ist."
+msgstr "Bei sehr großen Argumenten wird die Funktion zunehmend ungenauer. <placeholder-1/> ist bei <placeholder-2/> undefiniert, wobei p eine <placeholder-3/> ist, jedoch liefert die Function eine sehr große Zahl zurück, wenn <placeholder-4/> in der Nähe des undefinierten Wertes ist."
 
 #. Trigonometric.xml:108(primary)
 msgid "inverse sine"
@@ -115,9 +110,8 @@ msgid "Returns the inverse sine of the argument."
 msgstr "Liefert den Arcussinus des Arguments."
 
 #. Trigonometric.xml:118(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse sine of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any numeric expression that evaluates to a <placeholder-5/>. This is the reverse of the <placeholder-6/> function."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arcussinus von <placeholder-2/>. Das Ergebnis hat die Einheit <glossterm>rad</glossterm> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> darstellt. Dies ist die Umkehrung der <placeholder-4/>-Funktion."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arcussinus von <placeholder-2/>. Das Ergebnis hat die Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> kann ein beliebiger numerischer Ausdruck sein, der eine <placeholder-5/> darstellt. Dies ist die Umkehrung der <placeholder-6/>-Funktion."
 
 #. Trigonometric.xml:133(primary)
 msgid "inverse cosine"
@@ -128,9 +122,8 @@ msgid "Returns the inverse cosine of the argument."
 msgstr "Liefert den Arcuscosinus des Arguments."
 
 #. Trigonometric.xml:143(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse cosine of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/>. This is the reverse of the <placeholder-7/> function."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arcussinus von <placeholder-2/>. Das Ergebnis hat die Einheit <glossterm>rad</glossterm> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> darstellt. Dies ist die Umkehrung der <placeholder-4/>-Funktion."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arcuscosinus von <placeholder-2/>. Das Ergebnis hat die Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein, der eine <placeholder-6/> darstellt. Dies ist die Umkehrung der <placeholder-7/>-Funktion."
 
 #. Trigonometric.xml:158(primary)
 msgid "inverse tangent"
@@ -141,9 +134,8 @@ msgid "Returns the inverse tangent of the argument."
 msgstr "Liefert den Arcustangens des Arguments zurück."
 
 #. Trigonometric.xml:168(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse tangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/>. This is the reverse of the <placeholder-7/> function."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arcustangens von <placeholder-2/>. Das Ergebnis kann die Einheit <glossterm>rad</glossterm> oder Grad haben, abhängig von der aktuellen Einstellung. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> darstellt. Dies ist die Umkehrung der <placeholder-4/>-Funktion."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arcustangens von <placeholder-2/>. Das Ergebnis hat die Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein, der eine <placeholder-6/> darstellt. Dies ist die Umkehrung der <placeholder-7/>-Funktion."
 
 #. Trigonometric.xml:182(primary) Trigonometric.xml:272(primary)
 msgid "secant"
@@ -154,9 +146,8 @@ msgid "Returns the secant of the argument."
 msgstr "Liefert den Sekans des Arguments zurück."
 
 #. Trigonometric.xml:192(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the secant of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Sekans eines Winkels <placeholder-2/> mit der Einheit <glossterm>rad</glossterm> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-3/> ist dasselbe wie <placeholder-4/>. <placeholder-5/> kann ein beliebiger numerischer Ausdruck sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Secans von <placeholder-2/>. Das Ergebnis hat die Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> ist dasselbe wie <placeholder-5/>. <placeholder-6/> kann ein beliebiger <placeholder-7/> sein, der eine <placeholder-8/> oder eine <placeholder-9/> darstellt."
 
 #. Trigonometric.xml:212(primary) Trigonometric.xml:298(primary)
 msgid "cosecant"
@@ -167,9 +158,8 @@ msgid "Returns the cosecant of the argument."
 msgstr "Liefert den Cosekans des Arguments zurück."
 
 #. Trigonometric.xml:222(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the cosecant of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Sekans eines Winkels <placeholder-2/> mit der Einheit <glossterm>rad</glossterm> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-3/> ist dasselbe wie <placeholder-4/>. <placeholder-5/> kann ein beliebiger numerischer Ausdruck sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Cosecans von <placeholder-2/>. Das Ergebnis hat die Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> ist dasselbe wie <placeholder-5/>. <placeholder-6/> kann ein beliebiger <placeholder-7/> sein, der eine <placeholder-8/> oder eine <placeholder-9/> darstellt."
 
 #. Trigonometric.xml:242(primary) Trigonometric.xml:324(primary)
 msgid "cotangent"
@@ -180,9 +170,8 @@ msgid "Returns the cotangent of the argument."
 msgstr "Liefert den Cotangens des Arguments zurück."
 
 #. Trigonometric.xml:252(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the cotangent of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any numeric expression that evaluates to a <placeholder-7/> or a <placeholder-8/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Sekans eines Winkels <placeholder-2/> mit der Einheit <glossterm>rad</glossterm> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-3/> ist dasselbe wie <placeholder-4/>. <placeholder-5/> kann ein beliebiger numerischer Ausdruck sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Cotangens von <placeholder-2/>. Das Ergebnis hat die Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> ist dasselbe wie <placeholder-5/>. <placeholder-6/> kann ein beliebiger numerischer Ausdruck sein, der eine <placeholder-7/> oder eine <placeholder-8/> darstellt."
 
 #. Trigonometric.xml:273(primary)
 msgid "inverse secant"
@@ -193,9 +182,8 @@ msgid "Returns the inverse secant of the argument."
 msgstr "Liefert den Arcusekans des Arguments zurück."
 
 #. Trigonometric.xml:283(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse secant of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arcussekans von <placeholder-2/>. Das Ergebnis kann die Einheit <glossterm>rad</glossterm> oder Grad haben, abhängig von der aktuellen Einstellung. <placeholder-3/> ist dasselbe wie <placeholder-4/>. <placeholder-5/> kann ein beliebiger numerischer Ausdruck sein, der eine <glossterm>reelle Zahl</glossterm> darstellt. Dies ist die Umkehrung der <placeholder-6/>-Funktion."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arcussekans von <placeholder-2/>. Das Ergebnis hat die Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> ist dasselbe wie <placeholder-5/>. <placeholder-6/> kann ein beliebiger <placeholder-7/> sein, der eine <placeholder-8/> darstellt. Dies ist die Umkehrung der <placeholder-9/>-Funktion."
 
 #. Trigonometric.xml:299(primary)
 msgid "inverse cosecant"
@@ -206,9 +194,8 @@ msgid "Returns the inverse cosecant of the argument."
 msgstr "Liefert den Arcuscosekans des Arguments zurück."
 
 #. Trigonometric.xml:309(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse cosecant of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arcuscosekans von <placeholder-2/>. Das Ergebnis kann die Einheit <glossterm>rad</glossterm> oder Grad haben, abhängig von der aktuellen Einstellung. <placeholder-3/> ist dasselbe wie <placeholder-4/>. <placeholder-5/> kann ein beliebiger numerischer Ausdruck sein, der eine <glossterm>reelle Zahl</glossterm> darstellt. Dies ist die Umkehrung der <placeholder-6/>-Funktion."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arcuscosekans von <placeholder-2/>. Das Ergebnis hat die Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> ist dasselbe wie <placeholder-5/>. <placeholder-6/> kann ein beliebiger <placeholder-7/> sein, der eine <placeholder-8/> darstellt. Dies ist die Umkehrung der <placeholder-9/>-Funktion."
 
 #. Trigonometric.xml:325(primary)
 msgid "inverse cotangent"
@@ -219,9 +206,8 @@ msgid "Returns the inverse cotangent of the argument."
 msgstr "Liefert den Arcuscotangens des Arguments zurück."
 
 #. Trigonometric.xml:335(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse cotangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arcuscotangens von <placeholder-2/>. Das Ergebnis kann die Einheit <glossterm>rad</glossterm> oder Grad haben, abhängig von der aktuellen Einstellung. <placeholder-3/> ist dasselbe wie <placeholder-4/>. <placeholder-5/> kann ein beliebiger numerischer Ausdruck sein, der eine <glossterm>reelle Zahl</glossterm> darstellt. Dies ist die Umkehrung der <placeholder-6/>-Funktion."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arcuscotangens von <placeholder-2/>. Das Ergebnis hat die Einheit <placeholder-3/> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-4/> ist dasselbe wie <placeholder-5/>. <placeholder-6/> kann ein beliebiger <placeholder-7/> sein, der eine <placeholder-8/> darstellt. Dies ist die Umkehrung der <placeholder-9/>-Funktion."
 
 #. Trigonometric.xml:345(para)
 msgid "The <placeholder-1/> function returns a value in the range ]-&pi;/2;&pi;/2] (]-90;90] when calculating in degrees), which is the most common definition, though some may define it to be in the range ]0;&pi;[."
@@ -252,9 +238,8 @@ msgid "Calc"
 msgstr "Berechnen"
 
 #. TableDialog.xml:12(para)
-#, fuzzy
 msgid "The dialog shown below is used to evaluate the selected function for a range. First select a function in the <placeholder-1/> and use the menu item <placeholder-2/> to show the dialog. You specify the first and last value of the independent variable and set the increment of the independent variable at each evaluation."
-msgstr "Der untenstehende Dialog wird benutzt, um die gewählte Funktion für einen Bereich zu berechnen. Wählen Sie eine Funktion aus der <glossterm>Funktionsliste</glossterm> und lassen Sie sich den Dialog mit dem Menüpunkt <placeholder-1/> anzeigen. Legen Sie für die unabhängige Variable den ersten Wert, den letzen Wert und die Schrittweite für jede neue Berechnung fest."
+msgstr "Der untenstehende Dialog wird benutzt, um die gewählte Funktion für einen Bereich zu berechnen. Wählen Sie eine Funktion aus der <placeholder-1/> und lassen Sie sich den Dialog mit dem Menüpunkt <placeholder-2/> anzeigen. Legen Sie für die unabhängige Variable den ersten Wert, den letzen Wert und die Schrittweite für jede neue Berechnung fest."
 
 #. TableDialog.xml:19(para)
 msgid "When you press the <guibutton>Calc</guibutton> button, the table will be filled with the independent variable in the first column. The rest of the columns dependes on the type of function. For a standard function, the table will show f(x), f'(x) and f''(x). For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx. For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx. Unneeded columns can be hidden from the context menu. If the calculations takes a long time, a progress indicator will be shown."
@@ -273,7 +258,6 @@ msgid "Select all"
 msgstr "Alle wählen"
 
 #. TableDialog.xml:38(para)
-#, fuzzy
 msgid "When you move the mouse to the left side of the table the mouse pointer changes to a right pointing arrow. Now you can select whole rows with the mouse. When you move the mouse to the top of the table, the pointer changes to a down pointing arrow. Now you can select whole columns with the mouse. The whole table may be selected by <action>right clicking</action> and selecting <placeholder-1/>. It is also possible to select cells by holding down the shift key and using the arrow keys on the keyboard."
 msgstr "Auf der linken Seite der Tabellen verwandelt sich der Mauszeiger in einen Rechts-Pfeil. Jetzt lassen sich mit der Maus ganze Reihen auswählen. Im oberen Tabellenbereich verwandelt sich der Mauszeiger in einen Nach-Unten-Pfeil. Jetzt lassen sich mit der Maus ganze Spalten auswählen. Die komplette Tabelle läßt sich mit <action>Rechts-Klick</action> und <placeholder-1/> auswählen. Einzelne Zellen lassen sich ebenfalls auswählen, indem bei gedrückter Shift-Taste die Pfeiltasten benutzt werden."
 
@@ -281,9 +265,7 @@ msgstr "Auf der linken Seite der Tabellen verwandelt sich der Mauszeiger in eine
 msgid "From the context menu it is also possible to export the selected data to a file as comma or tab delimited text."
 msgstr "Im Kontextmenü lassen sich die ausgewählten Daten auch als komma- oder tabulator-separierter Text in eine Datei exportieren."
 
-# Note that IF you choose ...
 #. TableDialog.xml:51(para)
-#, fuzzy
 msgid "Note that if you choose to create a lot of values in the table, it may take some time to calculate them. Many values may also take up a lot of memory from the system."
 msgstr "Beachten Sie, daß bei vielen Daten in der Tabelle die Berechnung einige Zeit dauern kann. Viele Werte können auch viel Systemspeicher in Anspruch nehmen."
 
@@ -304,51 +286,44 @@ msgid "Returns the numeric integral of the first argument from the second to the
 msgstr "Liefert das numerische Integral des ersten Arguments vom zweiten bis zum dritten Argument."
 
 #. Special.xml:32(glossterm) Special.xml:61(glossterm) Special.xml:87(glossterm) Special.xml:160(glossterm) Special.xml:244(glossterm) Special.xml:267(glossterm) Piecewise.xml:70(glossterm) Piecewise.xml:94(glossterm) Piecewise.xml:119(glossterm) Piecewise.xml:142(glossterm) Piecewise.xml:167(glossterm)
-#, fuzzy
 msgid "numeric expressions"
-msgstr "numerischer Ausdruck"
+msgstr "numerische Ausdrücke"
 
 #. Special.xml:32(glossterm) Special.xml:61(glossterm) Special.xml:87(glossterm) Special.xml:161(glossterm) Special.xml:244(glossterm) Special.xml:268(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:115(glossterm) Errors.xml:16(glossterm) Errors.xml:102(glossterm)
 msgid "real numbers"
 msgstr "reelle Zahlen"
 
 #. Special.xml:22(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the numeric integral of <placeholder-2/> from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/> This integral is the same as the area between the function <placeholder-6/> and the x-axis from <placeholder-7/> to <placeholder-8/> where the area under the axis is counted negative. <placeholder-9/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric function. <placeholder-10/> and <placeholder-11/> may be any <placeholder-12/> that evaluate to <placeholder-13/>. <placeholder-14/> does not calculate the integral exactly. Instead the calculation is done using Simpson's formula through 100 iterations."
-msgstr "Die <placeholder-1/>-Funktion liefert das numerische Integral von für den Bereich <placeholder-3/> bis <placeholder-4/>, mathematisch beschrieben als: <placeholder-5/> Dieses Integral entspricht der Fläche zwischen der Funktion <placeholder-6/> und der X-Achsethe von <placeholder-7/> bis <placeholder-8/>, wobei hier die Fläche unterhalb der Achse negativ gezählt wird. <placeholder-9/> kann jede Funktion sein: mit x als Variable, wenn die Funktion in einer normalen Funktion benutzt wird, und mit t als Variable, wenn es eine Parameterfunktion ist. <placeholder-10/> und <placeholder-11/> können <glossterm baseform=\"numeric expression\">Numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">Reelle Zahlen</glossterm> darstellen. <placeholder-12/> berechnet das Integral nicht genau. Stattdessen wird mit der Simpson'schen Regel (Keplersche Fassregel) mit 100 Schritten gerechnet."
+msgstr "Die <placeholder-1/>-Funktion liefert das numerische Integral von <placeholder-2/> von <placeholder-3/> bis <placeholder-4/>, mathematisch beschrieben mit: <placeholder-5/> Dieses Integral entspricht der Fläche zwischen der Funktion <placeholder-6/> und der X-Achsethe von <placeholder-7/> bis <placeholder-8/>, wobei hier die Fläche unterhalb der Achse negativ gezählt wird. <placeholder-9/> kann jede Funktion sein: mit x als Variable, wenn die Funktion in einer normalen Funktion benutzt wird, und mit t als Variable, wenn es eine Parameterfunktion ist. <placeholder-10/> und <placeholder-11/> können beliebige <placeholder-12/> sein, die <placeholder-13/> darstellen. <placeholder-14/> berechnet das Integral nicht genau. Stattdessen wird mit der Simpson'schen Regel (Keplersche Fassregel) mit 100 Iterationen gerechnet."
 
 #. Special.xml:43(primary)
 msgid "summation"
 msgstr "Summierung"
 
-# Besser wäre hier IMO, entweder nur das Wort "argument" oder nur das Wort "parameter" zu benutzen.
 #. Special.xml:44(para)
-#, fuzzy
 msgid "Returns the summation of the first argument evaluated for all integers from the second to the third argument."
-msgstr "Liefert die Summierung des ersten Parameter für alle Integer-Zahlen im Bereich vom zweiten zum dritten Parameter."
+msgstr "Liefert die Summierung des ersten Argument für alle Integer-Zahlen im Bereich vom zweiten zum dritten Argument."
 
 #. Special.xml:53(para)
-#, fuzzy
 msgid ""
 "The <placeholder-1/> function returns the summation of <placeholder-2/> evaluated for all integers from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/>\n"
 "\t\t\t\t<placeholder-6/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function. <placeholder-7/> and <placeholder-8/> may be any <placeholder-9/> that evaluate to <placeholder-10/>."
 msgstr ""
-"Die <placeholder-1/>-Funktion liefert die Summierung von <placeholder-2/> für alle Integer-Zahlen von <placeholder-3/> bis <placeholder-4/>, mathematisch beschrieben als: <placeholder-5/>\n"
-"\t\t\t\t <placeholder-6/> kann jede Funktion sein: mit x als Variable, wenn die Funktion in einer normalen Funktion benutzt wird, und mit t als Variable, wenn es eine Parameter- oder Polar-Funktion ist. <placeholder-7/> und <placeholder-8/> können <glossterm baseform=\"numeric expression\">Numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">Reelle Zahlen</glossterm> darstellen. <placeholder-9/> berechnet das Integral nicht genau."
+"Die <placeholder-1/>-Funktion liefert die Summierung von <placeholder-2/> für alle Integer-Zahlen von <placeholder-3/> bis <placeholder-4/>, mathematisch beschrieben mit: <placeholder-5/>\n"
+"\t\t\t\t <placeholder-6/> kann jede Funktion sein: mit x als Variable, wenn die Funktion in einer Standardfunktion benutzt wird, und mit t als Variable, wenn es eine Parameter- oder Polar-Funktion ist. <placeholder-7/> und <placeholder-8/> können <placeholder-9/> sein, die <placeholder-10/> darstellen."
 
 #. Special.xml:70(para)
-#, fuzzy
 msgid "Returns the product of the first argument evaluated for all integers from the second to the third argument."
-msgstr "Liefert das Produkt des ersten Parameters für alle Integer-Zahlen im Bereich vom zweiten zum dritten Parameter."
+msgstr "Liefert das Produkt des ersten Arguments für alle Integer-Zahlen im Bereich vom zweiten zum dritten Argument."
 
 #. Special.xml:79(para)
-#, fuzzy
 msgid ""
 "The <placeholder-1/> function returns the product of <placeholder-2/> evaluated for all integers from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/>\n"
 "\t\t\t\t<placeholder-6/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function. <placeholder-7/> and <placeholder-8/> may be any <placeholder-9/> that evaluate to <placeholder-10/>."
 msgstr ""
-"Die <placeholder-1/>-Funktion liefert das Produkt von <placeholder-2/> für alle Integer-Zahlen von <placeholder-3/> bis <placeholder-4/>, mathematisch beschrieben als: <placeholder-5/>.\n"
-"\t\t\t\t<placeholder-6/> kann jede Funktion sein: mit x als Variable, wenn die Funktion in einer normalen Funktion benutzt wird, und mit t als Variable, wenn es eine Parameter- oder Polar-Funktion ist. <placeholder-7/> und <placeholder-8/> können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> darstellen. <placeholder-9/> berechnet das Integral nicht genau."
+"Die <placeholder-1/>-Funktion liefert das Produkt von <placeholder-2/> für alle Integer-Zahlen von <placeholder-3/> bis <placeholder-4/>, mathematisch beschrieben mit: <placeholder-5/>.\n"
+"\t\t\t\t<placeholder-6/> kann jede Funktion sein: mit x als Variable, wenn die Funktion in einer Standardfunktion benutzt wird, und mit t als Variable, wenn es eine Parameter- oder Polar-Funktion ist. <placeholder-7/> und <placeholder-8/> können beliebige <placeholder-9/>sein, die <placeholder-10/> darstellen."
 
 #. Special.xml:96(primary) Special.xml:119(primary)
 msgid "factorial"
@@ -359,18 +334,16 @@ msgid "Returns the factorial of the argument."
 msgstr "Liefert die Fakultät des Arguments zurück."
 
 #. Special.xml:106(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the factorial of <placeholder-2/>, commonly written as n!. <placeholder-3/> may be any <placeholder-4/> that evaluates to a positive <placeholder-5/>. The function is defined as <placeholder-6/>, and relates to the <placeholder-7/> function as <placeholder-8/>."
-msgstr "Die <placeholder-1/>-Funktion liefert die Fakultät von <placeholder-2/> zurück, allgemein beschrieben mit n!. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine positive <glossterm>Integerzahl</glossterm> darstellt. Die Funktion ist als <placeholder-4/> definiert, und die Beziehung zur <placeholder-5/>-Funktion ist <placeholder-6/>."
+msgstr "Die <placeholder-1/>-Funktion liefert die Fakultät von <placeholder-2/> zurück, allgemein beschrieben mit n!. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine positive <placeholder-5/> darstellt. Die Funktion ist als <placeholder-6/> definiert, und die Beziehung zur <placeholder-7/>-Funktion ist <placeholder-8/>."
 
 #. Special.xml:120(para)
 msgid "Returns the value of the Euler gamma function of the argument."
 msgstr "Liefert den Wert der Euler'schen Gammafunktion des Arguments."
 
 #. Special.xml:129(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the result of the Euler gamma function of <placeholder-2/>, commonly written as &Gamma;(z). <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The gamma function relates to the factorial function as <placeholder-7/>. The mathematical definition of the gamma function is: <placeholder-8/> This cannot be calculated precisely, so Graph is using the so-called Lanczos approximation to calculate the <placeholder-9/> function."
-msgstr "Die <placeholder-1/>-Funktion liefert das Ergebnis der Euler'schen Gammafunktion von <placeholder-2/>, allgemein beschrieben mit &Gamma;(z). <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Die Beziehung zwischen Gammafunktion und Fakultäts-Funktion ist <placeholder-4/>. Die mathematische Definition der Gammafunktion ist: <placeholder-5/> Dies läßt sich nicht präzise berechnen, daher benutzt Graph für die Annäherung das sogenannte Lanczos-Verfahren, um die <placeholder-6/>-Funktion zu berechnen."
+msgstr "Die <placeholder-1/>-Funktion liefert das Ergebnis der Euler'schen Gammafunktion von <placeholder-2/>, allgemein beschrieben mit &Gamma;(z). <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt. Die Beziehung zwischen Gammafunktion und Fakultäts-Funktion ist <placeholder-7/>. Die mathematische Definition der Gammafunktion ist: <placeholder-8/> Dies läßt sich nicht präzise berechnen, daher benutzt Graph für die Annäherung das sogenannte Lanczos-Verfahren, um die <placeholder-9/>-Funktion zu berechnen."
 
 #. Special.xml:149(para)
 msgid "Returns the value of the Euler beta function evaluated for the arguments."
@@ -381,9 +354,8 @@ msgid "complex numbers"
 msgstr "Komplexe Zahlen"
 
 #. Special.xml:158(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the result of the Euler beta function evaluated for <placeholder-2/> and <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluate to <placeholder-7/> or <placeholder-8/>. The <placeholder-9/> function relates to the <placeholder-10/> function as <placeholder-11/>."
-msgstr "Die <placeholder-1/>-Funktion liefert das Ergebnis der Euler'schen Betafunktion von <placeholder-2/> und <placeholder-3/>. <placeholder-7/> und <placeholder-8/> können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> oder <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> darstellen. Die Beziehung zwischen der <placeholder-6/>-Funktion und der <placeholder-7/>-Funktion ist <placeholder-8/>."
+msgstr "Die <placeholder-1/>-Funktion liefert das Ergebnis der Euler'schen Betafunktion von <placeholder-2/> und <placeholder-3/>. <placeholder-4/> und <placeholder-5/> können beliebige <placeholder-6/> sein, die <placeholder-7/> oder <placeholder-8/> darstellen. Die Beziehung zwischen der <placeholder-9/>-Funktion und der <placeholder-10/>-Funktion ist <placeholder-11/>."
 
 #. Special.xml:172(primary)
 msgid "Lambert W-function"
@@ -398,13 +370,12 @@ msgid "Returns the value of the Lambert W-function evaluated for the argument."
 msgstr "Liefert den Wert der Euler'schen Beta Funktion zum Argument."
 
 #. Special.xml:183(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the result of the Lambert W-function, also known as the omega function, evaluated for <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The inverse of the <placeholder-7/> function is given by <placeholder-8/>."
-msgstr "Die <placeholder-1/>-Funktion liefert das Ergebnis der Lambert W-function (auch: Omega-Funktion) für <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Die Umkehrfunktion zu <placeholder-4/> ist <placeholder-5/>."
+msgstr "Die <placeholder-1/>-Funktion liefert das Ergebnis der Lambert W-function (auch: Omega-Funktion) für <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt. Die Umkehrfunktion zu <placeholder-7/> ist <placeholder-8/>."
 
 #. Special.xml:191(para)
 msgid "For real values of <placeholder-1/> when <placeholder-2/>, the <placeholder-3/> function will evaluate to values with an imaginary part."
-msgstr ""
+msgstr "Für reelle Werte von <placeholder-1/> - bei <placeholder-2/> - liefert die <placeholder-3/>-Function Werte mit einem Imaginärteil."
 
 #. Special.xml:201(primary)
 msgid "Riemann Zeta function"
@@ -415,9 +386,8 @@ msgid "Returns the value of the Riemann Zeta function evaluated for the argument
 msgstr "Liefert den Wert der Riemannschen Zetafunktion zum Argument."
 
 #. Special.xml:211(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the result of the Riemann Zeta function, commonly written as &zeta;(s). <placeholder-2/> may be any <placeholder-3/> that evaluates to a <placeholder-4/> or a <placeholder-5/>."
-msgstr "Die <placeholder-1/>-Funktion liefert das Ergebnis der Riemannschen Zetafunktion zurück, allgemein beschrieben mit &zeta;(s). <placeholder-2/> kann jeder beliebige <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion liefert das Ergebnis der Riemannschen Zetafunktion zurück, allgemein beschrieben mit &zeta;(s). <placeholder-2/> kann jeder beliebige <placeholder-3/> sein, der eine <placeholder-4/> oder eine <placeholder-5/> darstellt."
 
 #. Special.xml:218(para)
 msgid "The <placeholder-1/> function is defined for the whole complex plane except for the pole at <placeholder-2/>=1."
@@ -436,18 +406,16 @@ msgid "Returns the remainder of the first argument divided by the second argumen
 msgstr "Liefert den Rest der Division des ersten Arguments durch das zweite Argument."
 
 #. Special.xml:239(para)
-#, fuzzy
 msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>, <placeholder-8/> returns 0. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
-msgstr "Berechnet <placeholder-1/> Modulo <placeholder-2/>, den Teilungsrest von <placeholder-3/>. <placeholder-4/> berechnet den Teilungsrest f, wobei <placeholder-5/> für eine Ganzzahl a ist. Das Vorzeichen von f entspricht immer dem Vorzeichen von <placeholder-6/>. Wenn <placeholder-7/>=0 ist, liefert mod 0 zurück. <placeholder-8/> und <placeholder-9/> können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke </glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> darstellen."
+msgstr "Berechnet <placeholder-1/> Modulo <placeholder-2/>, den Teilungsrest von <placeholder-3/>. <placeholder-4/> berechnet den Teilungsrest f, wobei <placeholder-5/> für eine Ganzzahl a ist. Das Vorzeichen von f entspricht immer dem Vorzeichen von <placeholder-6/>. Wenn <placeholder-7/>=0 ist, liefert <placeholder-8/> 0 zurück. <placeholder-9/> und <placeholder-10/> können beliebige <placeholder-11/> sein, die <placeholder-12/> darstellen."
 
 #. Special.xml:253(para) FunctionList.xml:430(entry)
 msgid "Returns the normal distribution of the first argument with optional mean value and standard deviation."
 msgstr "Liefert die Normalverteilung des ersten Arguments, optional mit Erwartungswert und Standardabweichung."
 
 #. Special.xml:262(para)
-#, fuzzy
 msgid "The <placeholder-1/> function is the probability density of the normal distribution, also called Gaussian distribution. <placeholder-2/> is the variate, also known as the random variable, <placeholder-3/> is the mean value and &sigma; is the standard deviation. <placeholder-4/> and &sigma; are optional and if left out the standard normal distribution is used where <placeholder-5/> and &sigma;=1. <placeholder-6/>, <placeholder-7/> and &sigma; may be any <placeholder-8/> that evaluate to <placeholder-9/> where &sigma; &gt; 0. The normal distribution is defined as: <placeholder-10/>"
-msgstr "Die <placeholder-1/>-Funktion ist die Wahrscheinlichkeitsdichte der Normalverteilung, auch: Gauß-Verteilung. <placeholder-2/> ist die Zufallsvariable, <placeholder-3/> ist der Erwartungswert und &sigma; ist die Standardabweichung. <placeholder-4/> und &sigma; sind optional. Fehlen sie, so wird die Standard-Normalverteilungbenutzt, wobei <placeholder-5/>=0 und &sigma;=1 sind. <placeholder-6/>, <placeholder-7/> und &sigma; können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> darstellen, wobei &sigma; &gt; 0 ist. Die Normalverteilung ist folgendermaßen definiert: <placeholder-8/>"
+msgstr "Die <placeholder-1/>-Funktion ist die Wahrscheinlichkeitsdichte der Normalverteilung, auch: Gauß-Verteilung. <placeholder-2/> ist die Zufallsvariable, <placeholder-3/> ist der Erwartungswert und &sigma; ist die Standardabweichung. <placeholder-4/> und &sigma; sind optional. Fehlen sie, so wird die Standard-Normalverteilung benutzt, wobei <placeholder-5/>=0 und &sigma;=1 sind. <placeholder-6/>, <placeholder-7/> und &sigma; können beliebige <placeholder-8/> sein, die <placeholder-9/> darstellen, wobei &sigma; &gt; 0 ist. Die Normalverteilung ist folgendermaßen definiert: <placeholder-10/>"
 
 #. SaveImageDialog.xml:8(title)
 msgid "Save as image"
@@ -489,13 +457,9 @@ msgstr "Speichern als"
 msgid "Use the menu item <placeholder-1/> to save the shown coordinate system as an image file. Graph supports five formats: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) and Portable Document Format (pdf). When the menu item has been chosen, a standard <placeholder-2/> dialog will appear. In this dialog you write a filename, choose a directory and select one of the image types."
 msgstr "Mit dem Menüpunkt <placeholder-1/> können Sie das dargestellte Koordinatensystem als Bild-Datei speichern. Graph unterstützt fünf Formate: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) und Portable Document Format (pdf). Nachdem ein Menüpunkt gewählt wurde, erscheint ein Standard- <placeholder-2/> Dialog, in dem Sie einen Dateinamen mit Ordner auswählen und einen Bildtyp festlegen."
 
-# change to image size
-# -->>
-# change the image size
 #. SaveImageDialog.xml:25(para)
-#, fuzzy
 msgid "bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen. emf files are used for vector graphics. The Options button in the save dialog can be used to change the image size. You may also be able to change other settings depending on the chosen image format."
-msgstr "bmp und png sind beides Bitmaps, und das Bild wird genauso gespeichert, wie Sie es auf dem Bildschirm sehen. emf-Dateien werden für Vector-Grafiken verwendet. Mit dem Knopf \"Einstellungen\" läßt sich per \"Speichern\"-Dialog die Bildgröße ändern. Sie können - abhängig vom Bildformat - auch andere Einstellungen ändern."
+msgstr "bmp und png sind beides Bitmaps, und das Bild wird genauso gespeichert, wie Sie es auf dem Bildschirm sehen. emf-Dateien werden für Vector-Grafiken verwendet. Mit der Schaltfläche Einstellungen im Speichern-Dialog läßt sich die Bildgröße ändern. Sie können auch andere Einstellungen ändern, - abhängig vom Bildformat."
 
 #. SaveImageDialog.xml:31(para)
 msgid "Metafiles (emf) should be the preferred format, because it is small and looks nice even then it is scaled. Windows Bitmap (bmp) is a standard format supported by almost all Windows programs that can read graphics files. Portable Network Graphics (png) is a format that is better compressed than bmp files. This is the most sustainable format for web pages, because it is small and can be understood by all browsers."
@@ -530,9 +494,8 @@ msgid "Removes the fractional part of the argument."
 msgstr "Entfernt den gebrochenen Anteil des Arguments."
 
 #. Rounding.xml:22(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the <placeholder-2/> part of <placeholder-3/>. The function removes the decimal part of <placeholder-4/>, i.e. rounds against zero. <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If <placeholder-9/> is a complex number, the function returns <placeholder-10/>."
-msgstr "Die <placeholder-1/>-Funktion liefert den <glossterm>ganzzahligen</glossterm> Anteil von <placeholder-2/> zurück. Die Funktion entfernt den dezimalen Anteil von <placeholder-3/>, d.h. rundet in Richtung Null. <placeholder-4/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Ist <placeholder-5/> eine komplexe Zahl, liefert die Funktion <placeholder-6/> zurück."
+msgstr "Die <placeholder-1/>-Funktion liefert den <placeholder-2/> Anteil von <placeholder-3/> zurück. Die Funktion entfernt den dezimalen Anteil von <placeholder-4/>, d.h. rundet in Richtung Null. <placeholder-5/> kann ein beliebiger <placeholder-6/> sein, der eine <placeholder-7/> oder eine <placeholder-8/> darstellt. Ist <placeholder-9/> eine komplexe Zahl, liefert die Funktion <placeholder-10/> zurück."
 
 #. Rounding.xml:36(primary)
 msgid "fractional part"
@@ -547,9 +510,8 @@ msgid "Returns the fractional part of the argument."
 msgstr "Liefert den gebrochenen Anteil des Argumentes."
 
 #. Rounding.xml:47(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the fractional part of <placeholder-2/>. The function removes the <placeholder-3/> part of <placeholder-4/>, i.e. <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>. If <placeholder-10/> is a complex number, the function returns <placeholder-11/>."
-msgstr "Die <placeholder-1/>-Funktion liefert den gebrochenen Anteil von <placeholder-2/> zurück. Die Funktion entfernt den <glossterm>ganzzahlogen</glossterm> Anteil von <placeholder-3/>, also <placeholder-4/>. <placeholder-5/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein , der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Wenn <placeholder-6/> eine komplexe Zahl ist, liefert die Funktion <placeholder-7/>."
+msgstr "Die <placeholder-1/>-Funktion liefert den gebrochenen Anteil von <placeholder-2/> zurück. Die Funktion entfernt den <placeholder-3/> Anteil von <placeholder-4/>, also <placeholder-5/>. <placeholder-6/> kann ein beliebiger <placeholder-7/> sein , der eine <placeholder-8/> oder eine <placeholder-9/> darstellt. Wenn <placeholder-10/> eine komplexe Zahl ist, liefert die Funktion <placeholder-11/>."
 
 #. Rounding.xml:61(primary)
 msgid "round up"
@@ -560,17 +522,14 @@ msgid "Rounds the argument up."
 msgstr "Rundet das Argument auf."
 
 #. Rounding.xml:71(para)
-#, fuzzy
 msgid "The <placeholder-1/> function finds the smallest <placeholder-2/> not less than <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>."
-msgstr "Die <placeholder-1/>-Funktion findet die kleinste <glossterm>Ganzzahl</glossterm>, die nicht kleiner als <placeholder-2/> ist. <placeholder-3/> kann ein beliebiger <glossterm>numerische Ausdruck</glossterm> sein , der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Wenn <placeholder-4/> eine komplexe Zahl ist, liefert die Funktion <placeholder-5/>."
+msgstr "Die <placeholder-1/>-Funktion findet die kleinste <placeholder-2/>, die nicht kleiner als <placeholder-3/> ist. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein, der eine <placeholder-6/> oder eine <placeholder-7/> darstellt. Wenn <placeholder-8/> eine komplexe Zahl ist, liefert die Funktion <placeholder-9/> zurück."
 
 #. Rounding.xml:84(primary)
 msgid "round down"
 msgstr "abrunden"
 
-# "greatest integer"
 #. Rounding.xml:85(primary)
-#, fuzzy
 msgid "greatest integer"
 msgstr "größte Ganzzahl"
 
@@ -579,18 +538,16 @@ msgid "Rounds the argument down."
 msgstr "Rundet das Argument ab."
 
 #. Rounding.xml:95(para)
-#, fuzzy
 msgid "The <placeholder-1/> function, which is also called the greatest integer function, gives the largest <placeholder-2/> not greater than <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>."
-msgstr "Die <placeholder-1/>-Funktion, auch Abrundungsfunktion genannt, liefert die größte <glossterm>Ganzzahl</glossterm>, die nicht größer als <placeholder-2/> ist. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein , der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Wenn <placeholder-4/> eine komplexe Zahl ist, liefert die Funktion <placeholder-5/>."
+msgstr "Die <placeholder-1/>-Funktion, auch Abrundungsfunktion genannt, liefert die größte <placeholder-2/>, die nicht größer als <placeholder-3/> ist. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein , der eine <placeholder-6/> oder eine <placeholder-7/> darstellt. Wenn <placeholder-8/> eine komplexe Zahl ist, liefert die Funktion <placeholder-9/> zurück."
 
 #. Rounding.xml:107(para)
 msgid "Rounds a number to the specified number of decimals."
 msgstr "Rundet eine Zahl auf die angegebene Anzahle Dezimalstellen."
 
 #. Rounding.xml:116(para)
-#, fuzzy
 msgid "The <placeholder-1/> function rounds <placeholder-2/> to the number of decimals given by <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>. <placeholder-10/> may be any numeric expression that evaluates to an <placeholder-11/>. If <placeholder-12/>&lt;0, <placeholder-13/> is rounded to <placeholder-14/> places to the left of the decimal point."
-msgstr "Die <placeholder-1/>-Funktion rundet <placeholder-2/> auf die Anzahl Dezimalstellen in <placeholder-3/>. <placeholder-4/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Wenn <placeholder-5/> eine komplexe Zahl ist, liefert die Funktion <placeholder-6/>. <placeholder-7/> kann ein beliebiger numerischer Ausdruck sein, der eine <glossterm>Ganzzahl</glossterm> darstellt. Wenn <placeholder-8/>&lt;0 ist, wird <placeholder-9/> auf <placeholder-10/> Vorkommastellen gerundet."
+msgstr "Die <placeholder-1/>-Funktion rundet <placeholder-2/> auf die Anzahl Dezimalstellen in <placeholder-3/>. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein, der eine <placeholder-6/> oder eine <placeholder-7/> darstellt. Wenn <placeholder-8/> eine komplexe Zahl ist, liefert die Funktion <placeholder-9/>. <placeholder-10/> kann ein beliebiger numerischer Ausdruck sein, der eine <placeholder-11/> darstellt. Wenn <placeholder-12/>&lt;0 ist, wird <placeholder-13/> auf <placeholder-14/> Vorkommastellen gerundet."
 
 #. Rounding.xml:125(title)
 msgid "Examples"
@@ -609,9 +566,8 @@ msgid "Returns the square of the argument."
 msgstr "Liefert das Quadrat des Arguments."
 
 #. PowerAndLog.xml:21(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the square of <placeholder-2/>, i.e. <placeholder-3/> raised to the power of 2. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet das Quadrat von <placeholder-2/>, also <placeholder-3/> hoch 2. <placeholder-4/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein , der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion berechnet das Quadrat von <placeholder-2/>, also <placeholder-3/> hoch 2. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein , der eine <placeholder-6/> oder eine <placeholder-7/> darstellt."
 
 #. PowerAndLog.xml:32(primary) InsertTrendlineDialog.xml:15(primary)
 msgid "exponential"
@@ -622,9 +578,8 @@ msgid "Returns <emphasis>e</emphasis> raised to the power of the argument."
 msgstr "Liefert <emphasis>e</emphasis> potenziert mit dem Argument."
 
 #. PowerAndLog.xml:42(para)
-#, fuzzy
 msgid "The <placeholder-1/> function is used to raise <emphasis>e</emphasis>, Euler's constant, to the power of <placeholder-2/>. This is the same as <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>."
-msgstr "Die <placeholder-1/>-Funktion wird <emphasis>e</emphasis>, die Eulersche Zahl, mit <placeholder-2/> potenziert. Dies ist dasselbe wie <placeholder-3/>. <placeholder-4/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein , der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion wird <emphasis>e</emphasis>, die Eulersche Zahl, mit <placeholder-2/> potenziert. Dies ist dasselbe wie <placeholder-3/>. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein , der eine <placeholder-6/> oder eine <placeholder-7/> darstellt."
 
 #. PowerAndLog.xml:54(primary)
 msgid "square root"
@@ -635,23 +590,20 @@ msgid "Returns the square root of the argument."
 msgstr "Liefert die Quadratwurzel des Arguments."
 
 #. PowerAndLog.xml:64(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the square root of <placeholder-2/>, i.e. <placeholder-3/> raised to the power of &frac12;. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/> &ge; 0."
-msgstr "Die <placeholder-1/>-Funktion berechnet die Quadratwurzel von <placeholder-2/>, also <placeholder-3/> hoch &frac12;. <placeholder-4/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein , der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Wird die Berechnung mit reellen Zahlen durchgeführt, so ist das Argument nur für <placeholder-5/> &ge; 0 definiert."
+msgstr "Die <placeholder-1/>-Funktion berechnet die Quadratwurzel von <placeholder-2/>, also <placeholder-3/> hoch &frac12;. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein , der eine <placeholder-6/> oder eine <placeholder-7/> darstellt. Wird die Berechnung mit reellen Zahlen durchgeführt, so ist das Argument nur für <placeholder-8/> &ge; 0 definiert."
 
 #. PowerAndLog.xml:76(para)
 msgid "Returns the <placeholder-1/> root of the argument."
 msgstr "Liefert die <placeholder-1/> Wurzel des Arguments."
 
 #. PowerAndLog.xml:85(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the <placeholder-2/><superscript>th</superscript> root of <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-9/> &ge; 0."
-msgstr "Die <placeholder-1/>-Funktion berechnet die <placeholder-2/>. Wurzel von <placeholder-3/>. <placeholder-4/> und <placeholder-5/> können beliebige <glossterm>numerische Ausdrücke</glossterm> sein, die <glossterm>reelle Zahlen</glossterm> oder <glossterm>komplexe Zahlen</glossterm> darstellen. Wird die Berechnung mit reellen Zahlen durchgeführt, so ist das Argument nur für <placeholder-6/> &ge; 0 definiert."
+msgstr "Die <placeholder-1/>-Funktion berechnet die <placeholder-2/>. Wurzel von <placeholder-3/>. <placeholder-4/> und <placeholder-5/> können beliebige <placeholder-6/> sein, die <placeholder-7/> oder <placeholder-8/> darstellen. Wird die Berechnung mit reellen Zahlen durchgeführt, so ist das Argument nur für <placeholder-9/> &ge; 0 definiert."
 
 #. PowerAndLog.xml:93(para)
-#, fuzzy
 msgid "When the calculation is done with real numbers, the function is only defined for <placeholder-1/>&lt;0 if <placeholder-2/> is an odd <placeholder-3/>. For calculations with complex numbers, <placeholder-4/> is defined for the whole complex plane except at the pole <placeholder-5/>=0. Notice that for calculations with complex numbers the result will always have an imaginary part when <placeholder-6/>&lt;0 even though the result is real when calculations are done with real numbers and <placeholder-7/> is an odd integer."
-msgstr "Wird die Berechnung mit reellen Zahlen durchgeführt, so ist die Funktion nur für <placeholder-1/> &lt; 0 definiert, wenn <placeholder-2/> eine ungerade <glossterm>Ganzzahl</glossterm> ist. Bei Berechnungen mit komplexen Zahlen ist <placeholder-3/> für die ganze komplexe Ebene definiert (ohne den Pol <placeholder-4/>=0). Beachten Sie, daß bei Berechnungen mit komplexen Zahlen das Ergebnis immer einen imaginären Anteil hat, wenn <placeholder-5/>&lt;0 ist; obgleich das Ergebnis real ist, wenn mit reellen Zahlen und <placeholder-6/> als ungerader Ganzzahl gerechnet wird. "
+msgstr "Wird die Berechnung mit reellen Zahlen durchgeführt, so ist die Funktion nur für <placeholder-1/> &lt; 0 definiert, wenn <placeholder-2/> eine ungerade <placeholder-3/> ist. Bei Berechnungen mit komplexen Zahlen ist <placeholder-4/> für die ganze komplexe Ebene definiert (ohne den Pol <placeholder-5/>=0). Beachten Sie, daß bei Berechnungen mit komplexen Zahlen das Ergebnis immer einen imaginären Anteil hat, wenn <placeholder-6/>&lt;0 ist; obgleich das Ergebnis real ist, wenn mit reellen Zahlen und <placeholder-7/> als ungerader Ganzzahl gerechnet wird."
 
 #. PowerAndLog.xml:101(title)
 msgid "Example"
@@ -674,27 +626,24 @@ msgid "Returns the natural logarithm of the argument."
 msgstr "Liefert den natürlichen Logarithmus des Arguments."
 
 #. PowerAndLog.xml:123(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <emphasis>e</emphasis>, which is Euler's constant. <placeholder-3/> is commonly known as the natural logarithm. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/>&gt;0. When calculating with complex numbers, <placeholder-9/> is defined for all numbers except <placeholder-10/>=0."
-msgstr "Die <placeholder-1/>-Funktion berechnet die Logarithmus von <placeholder-2/> mit der Basis <emphasis>e</emphasis>, der Eulerschen Zahl. <placeholder-3/> ist allgemein als der natürlichen Logarithmus bekannt. <placeholder-4/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein , der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Wird die Berechnung mit reellen Zahlen durchgeführt, so ist das Argument nur für <placeholder-5/> &gt; 0 definiert. Bei Berechnungen mit komplexen Zahlen ist <placeholder-6/> für alle Zahlen außer <placeholder-7/>=0 definiert."
+msgstr "Die <placeholder-1/>-Funktion berechnet die Logarithmus von <placeholder-2/> mit der Basis <emphasis>e</emphasis>, der Eulerschen Zahl. <placeholder-3/> ist allgemein als der natürlichen Logarithmus bekannt. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein , der eine <placeholder-6/> oder eine <placeholder-7/> darstellt. Wird die Berechnung mit reellen Zahlen durchgeführt, so ist das Argument nur für <placeholder-8/> &gt; 0 definiert. Bei Berechnungen mit komplexen Zahlen ist <placeholder-9/> für alle Zahlen außer <placeholder-10/>=0 definiert."
 
 #. PowerAndLog.xml:138(para)
 msgid "Returns the base 10 logarithm of the argument."
 msgstr "Liefert den 10er- Logarithmus des Arguments."
 
 #. PowerAndLog.xml:147(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base 10. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-7/>&gt;0. When calculating with complex numbers, <placeholder-8/> is defined for all numbers except <placeholder-9/>=0."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Logarithmus von <placeholder-2/> mit der Basis 10. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Wird die Berechnung mit reellen Zahlen durchgeführt, so ist das Argument nur für <placeholder-4/> &gt; 0 definiert. Bei Berechnungen mit komplexen Zahlen ist <placeholder-5/> für alle Zahlen außer <placeholder-6/>=0 definiert."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Logarithmus von <placeholder-2/> mit der Basis 10. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt. Wird die Berechnung mit reellen Zahlen durchgeführt, so ist das Argument nur für <placeholder-7/> &gt; 0 definiert. Bei Berechnungen mit komplexen Zahlen ist <placeholder-8/> für alle Zahlen außer <placeholder-9/>=0 definiert."
 
 #. PowerAndLog.xml:161(para)
 msgid "Returns the base <placeholder-1/> logarithm of the argument."
 msgstr "Liefert den Logarithmus mit der Basis <placeholder-1/> des Arguments."
 
 #. PowerAndLog.xml:170(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/>&gt;0. When calculating with complex numbers, <placeholder-9/> is defined for all numbers except <placeholder-10/>=0. <placeholder-11/> must evaluate to a positive real number."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Logarithmus von <placeholder-2/> mit der Basis <placeholder-3/>. <placeholder-4/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Wird die Berechnung mit reellen Zahlen durchgeführt, so ist das Argument nur für <placeholder-5/> &gt; 0 definiert. Bei Berechnungen mit komplexen Zahlen ist <placeholder-6/> für alle Zahlen außer <placeholder-7/>=0 definiert. <placeholder-8/> muß eine positive reelle Zahl sein."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Logarithmus von <placeholder-2/> mit der Basis <placeholder-3/>. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein, der eine <placeholder-6/> oder eine <placeholder-7/> darstellt. Wird die Berechnung mit reellen Zahlen durchgeführt, so ist das Argument nur für <placeholder-8/> &gt; 0 definiert. Bei Berechnungen mit komplexen Zahlen ist <placeholder-9/> für alle Zahlen außer <placeholder-10/>=0 definiert. <placeholder-11/> muß eine positive reelle Zahl sein."
 
 #. Piecewise.xml:7(title) FunctionList.xml:359(emphasis)
 msgid "Piecewise"
@@ -709,18 +658,16 @@ msgid "Returns the sign of the argument."
 msgstr "Liefert das Vorzeichen des Arguments."
 
 #. Piecewise.xml:21(para)
-#, fuzzy
 msgid "The <placeholder-1/> function, which is also called signum, returns the sign of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. When <placeholder-7/> is a real number, <placeholder-8/> returns 1 for <placeholder-9/>&gt;0 and -1 for <placeholder-10/>&lt;0. <placeholder-11/> returns 0 for <placeholder-12/>=0. When <placeholder-13/> evaluates to a complex number, <placeholder-14/> returns <placeholder-15/>."
-msgstr "Die <placeholder-1/>-Funktion, auch Signum genannt, liefert das Vorzeichen von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Ist <placeholder-4/> eine reelle Zahl, liefert <placeholder-5/> liefert 1 bei <placeholder-6/>&gt;0 und -1 bei <placeholder-7/>&lt;0. <placeholder-8/> liefert 0 bei <placeholder-9/>=0. <placeholder-11/> liefert <placeholder-12/>, wenn <placeholder-10/> eine komplexe Zahl ergibt."
+msgstr "Die <placeholder-1/>-Funktion, auch Signum genannt, liefert das Vorzeichen von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt. Ist <placeholder-7/> eine reelle Zahl, liefert <placeholder-8/> liefert 1 bei <placeholder-9/>&gt;0 und -1 bei <placeholder-10/>&lt;0. <placeholder-11/> liefert 0 bei <placeholder-12/>=0. <placeholder-14/> liefert <placeholder-15/>, wenn <placeholder-13/> eine komplexe Zahl ergibt."
 
 #. Piecewise.xml:35(para)
 msgid "The unit step function."
 msgstr "Die Einheits-Sprungfunktion."
 
 #. Piecewise.xml:44(para)
-#, fuzzy
 msgid "<placeholder-1/> is commonly known as the unit step function. <placeholder-2/> may be any <placeholder-3/> that evaluates to a <placeholder-4/>. The function is undefined when <placeholder-5/> has an imaginary part. <placeholder-6/> returns 1 for <placeholder-7/>&ge;0 and 0 for <placeholder-8/>&lt;0."
-msgstr "<placeholder-1/> ist allgemein unter dem Namen \"Einheits-Sprungfunktion\" bekannt. <placeholder-2/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> darstellt. Die Funktion ist nicht definiert, wenn <placeholder-3/> einen imaginaren Anteil hat. <placeholder-4/> liefert 1 für <placeholder-5/>&ge;0 und 0 für <placeholder-6/>&lt;0."
+msgstr "<placeholder-1/> ist allgemein unter dem Namen Einheits-Sprungfunktion bekannt. <placeholder-2/> kann ein beliebiger <placeholder-3/> sein, der eine <placeholder-4/> darstellt. Die Funktion ist nicht definiert, wenn <placeholder-5/> einen imaginaren Anteil hat. <placeholder-6/> liefert 1 für <placeholder-7/>&ge;0 und 0 für <placeholder-8/>&lt;0."
 
 #. Piecewise.xml:57(primary) AxesDialog.xml:12(primary)
 msgid "minimum"
@@ -731,9 +678,8 @@ msgid "Finds and returns the minimum of the values passed as arguments."
 msgstr "Findet und liefert den Minimalwert der Argumente."
 
 #. Piecewise.xml:67(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the minimum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <placeholder-3/> that evaluate to <placeholder-4/> or <placeholder-5/>. If the arguments are complex numbers, the function returns <placeholder-6/>."
-msgstr "Die <placeholder-1/>-Funktion liefert den kleinsten Wert ihrer Argumente. <placeholder-2/> muß mindestens 2 Argumente haben. Die Argumente können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> oder <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> ergeben. Wenn die Argumente komplexe Zahlen sind, liefert die Funktion <placeholder-3/>."
+msgstr "Die <placeholder-1/>-Funktion liefert den kleinsten Wert ihrer Argumente. <placeholder-2/> muß mindestens 2 Argumente haben. Die Argumente können beliebige <placeholder-3/> sein, die <placeholder-4/> oder <placeholder-5/> ergeben. Wenn die Argumente komplexe Zahlen sind, liefert die Funktion <placeholder-6/> zurück."
 
 #. Piecewise.xml:81(primary) AxesDialog.xml:13(primary)
 msgid "maximum"
@@ -744,36 +690,32 @@ msgid "Finds and returns the maximum of the values passed as arguments."
 msgstr "Findet und liefert den Maximalwert der Argumente."
 
 #. Piecewise.xml:91(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the maximum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <placeholder-3/> that evaluate to <placeholder-4/> or <placeholder-5/>. If the arguments are complex numbers, the function returns <placeholder-6/>."
-msgstr "Die <placeholder-1/>-Funktion liefert den größten Wert ihrer Argumente. <placeholder-2/> muß mindestens 2 Argumente haben. Die Argumente können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> oder <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> ergeben. Wenn die Argumente komplexe Zahlen sind, liefert die Funktion <placeholder-3/>."
+msgstr "Die <placeholder-1/>-Funktion liefert den größten Wert ihrer Argumente. <placeholder-2/> muß mindestens 2 Argumente haben. Die Argumente können beliebige <placeholder-3/> sein, die <placeholder-4/> oder <placeholder-5/> ergeben. Wenn die Argumente komplexe Zahlen sind, liefert die Funktion <placeholder-6/> zurück."
 
 #. Piecewise.xml:105(para)
 msgid "Returns the second argument if it is in the range between the first argument and the third argument."
 msgstr "Liefert das zweite Argument, wenn es im Bereich zwischen dem ersten und dem dritten Argument ist."
 
 #. Piecewise.xml:114(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns <placeholder-2/>, if <placeholder-3/> is greater than <placeholder-4/> and less than <placeholder-5/>. If <placeholder-6/> &lt; <placeholder-7/> then <placeholder-8/> is returned. If <placeholder-9/> &gt; <placeholder-10/> then <placeholder-11/> is returned. The arguments may be any <placeholder-12/> that evaluate to <placeholder-13/> or <placeholder-14/>. The function has the same effect as <placeholder-15/>."
-msgstr "Die <placeholder-1/>-Funktion liefert <placeholder-2/>, if <placeholder-3/> is größer als <placeholder-4/> und kleiner als <placeholder-5/>. Ist <placeholder-6/> &lt; <placeholder-7/> , wird <placeholder-8/> zurückgeliefert. Ist <placeholder-9/> &gt; <placeholder-10/> , wird <placeholder-11/> zurückgeliefert. Die Argumente können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> oder <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> ergeben. Die Funktion hat dieselbe Wirkung wie <placeholder-12/>."
+msgstr "Die <placeholder-1/>-Funktion liefert <placeholder-2/> zurück, wenn <placeholder-3/> größer als <placeholder-4/> und kleiner als <placeholder-5/> ist. Ist <placeholder-6/> &lt; <placeholder-7/>, wird <placeholder-8/> zurückgeliefert. Ist <placeholder-9/> &gt; <placeholder-10/>, wird <placeholder-11/> zurückgeliefert. Die Argumente können beliebige <placeholder-12/> sein, die <placeholder-13/> oder <placeholder-14/> ergeben. Die Funktion hat dieselbe Wirkung wie <placeholder-15/>."
 
 #. Piecewise.xml:130(para)
 msgid "Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned."
 msgstr "Liefert das zweite Argument, wenn das erste Argument einen von Null unterschiedlichen Wert ergibt, sonst wird das dritte Argument zurückgeliefert."
 
 #. Piecewise.xml:139(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns <placeholder-2/> if <placeholder-3/> evaluates to a value different from 0. If <placeholder-4/> evaluates to 0, <placeholder-5/> is returned. The arguments may be any <placeholder-6/> that evaluate to <placeholder-7/> or <placeholder-8/>."
-msgstr "Die <placeholder-1/>-Funktion liefert <placeholder-2/> , wenn <placeholder-3/> einen von Null unterschiedlichen Wert ergibt. Ergibt <placeholder-4/> 0, wird <placeholder-5/> zurückgegeben. Die Argumente können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> oder <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> ergeben."
+msgstr "Die <placeholder-1/>-Funktion liefert <placeholder-2/>, wenn <placeholder-3/> einen von Null unterschiedlichen Wert ergibt. Ergibt <placeholder-4/> 0, wird <placeholder-5/> zurückgegeben. Die Argumente können beliebige <placeholder-6/> sein, die <placeholder-7/> oder <placeholder-8/> ergeben."
 
 #. Piecewise.xml:152(para)
 msgid "Evaluates a sequence of if functions and returns the first result found with a condition different from zero."
 msgstr "Wertet eine Reihe von if-Abfragen aus und liefert das erste Ergebnis, dessen Bedingung ungleich 0 ist."
 
 #. Piecewise.xml:161(para)
-#, fuzzy
 msgid "The <placeholder-1/> function evaluates <placeholder-2/> and if it is different from 0 then <placeholder-3/> is evaluated and returned. Else <placeholder-4/> is evaluated and if it is different from 0 then <placeholder-5/> is returned and so forth. If none of the conditions are true <placeholder-6/> is returned. <placeholder-7/> is optional and if not specified <placeholder-8/> returns an error if none of the conditions are true. If <placeholder-9/> has 3 arguments it will be the same as the <placeholder-10/> function. The arguments may be any <placeholder-11/> that evaluate to <placeholder-12/> or <placeholder-13/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet <placeholder-2/> , und wenn das Ergebnis von Null unterschiedlich ist, wird <placeholder-3/> berechnet und zurückgegeben. Andernfalls wird <placeholder-4/> berechnet, und wenn das Ergebnis von Null unterschiedlich ist, wird <placeholder-5/> zurückgeliefert usw. Wenn keine der Bedingungen wahr ist, wird <placeholder-6/> zurückgeliefert. <placeholder-7/> ist optional; wenn nicht angegeben, liefert <placeholder-8/> einen Fehler, wenn keine Bedingung zutrifft. Hat <placeholder-9/> 3 Argumente, verhält sie sich so wie die <placeholder-10/>-Funktion. Die Argumente können beliebige <glossterm baseform=\"numeric expression\">numerische Ausdrücke</glossterm> sein, die <glossterm baseform=\"real number\">reelle Zahlen</glossterm> oder <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> ergeben."
+msgstr "Die <placeholder-1/>-Funktion berechnet <placeholder-2/>, und wenn das Ergebnis von Null unterschiedlich ist, wird <placeholder-3/> berechnet und zurückgegeben. Andernfalls wird <placeholder-4/> berechnet, und wenn das Ergebnis von Null unterschiedlich ist, wird <placeholder-5/> zurückgeliefert usw. Wenn keine der Bedingungen wahr ist, wird <placeholder-6/> zurückgeliefert. <placeholder-7/> ist optional; wenn nicht angegeben, liefert <placeholder-8/> einen Fehler, wenn keine Bedingung zutrifft. Hat <placeholder-9/> 3 Argumente, verhält sie sich so wie die <placeholder-10/>-Funktion. Die Argumente können beliebige <placeholder-11/> sein, die <placeholder-12/> oder <placeholder-13/> ergeben."
 
 #. OptionsDialog.xml:8(title) InsertShadingDialog.xml:109(title) InsertShadingDialog.xml:111(guilabel) InsertShadingDialog.xml:201(guilabel)
 msgid "Options"
@@ -840,9 +782,8 @@ msgid "Associate .grf files"
 msgstr ".grf-Dateien verknüpfen"
 
 #. OptionsDialog.xml:80(para)
-#, fuzzy
 msgid "A check mark in this field indicates that the file type .grf is associated with this program. The program will automatically start and load the file when you <action>double-click</action> on it in Explorer."
-msgstr "Ein Häkchen in diesem Feld zeigt an, daß der Dateityp .grf mit diesem Programm verknüpft ist. Das Programm startet automatisch und lädt die Datei, wenn Sie darauf im Explorer <placeholder-1/>."
+msgstr "Ein Häkchen in diesem Feld zeigt an, daß der Dateityp .grf mit diesem Programm verknüpft ist. Das Programm startet automatisch und lädt die Datei, wenn Sie darauf im Explorer <action>doppelklicken</action>."
 
 #. OptionsDialog.xml:88(term)
 msgid "Show tooltip"
@@ -888,11 +829,9 @@ msgstr "Grad"
 msgid "Trigonometry"
 msgstr "Trigonometrie"
 
-# 081220
 #. OptionsDialog.xml:113(para)
-#, fuzzy
 msgid "Choose how you want a complex number to be shown in the <placeholder-1/> frame. <placeholder-2/> means that only <placeholder-3/> are shown. If a number has an imaginary part then the number won't be shown and instead you get an error. <placeholder-4/> means that <placeholder-5/> are shown as a+b&imag;, where a is the real part and b is the imaginary part. <placeholder-6/> means that numbers are shown as a&ang;&theta;, where a is the absolute value of the number and &theta; is the angle of the number. &theta; is dependent of the choice between <placeholder-7/> and <placeholder-8/> under <placeholder-9/> in the <placeholder-10/> dialog."
-msgstr "Wählen Sie hier, wie komplexe Zahlen im <placeholder-1/>-Fenster dargestellt werden sollen. <placeholder-2/> bedeutet, daß nur <glossterm baseform=\"real number\">reelle Zahlen</glossterm> angezeigt werden. Hat eine Zahl einen imaginären Anteil, erhalten Sie statt derZahl einen Fehler. <placeholder-3/> bedeutet, daß <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> als a+b&imag; dargestellt werden, mit a als Realteil und b als Imaginärteil. <placeholder-4/> bedeutet, daß Zahlen als a&ang;&theta; dargestellt werden, mit a als Absolutwert und &theta; als Winkel. &theta; ist abhängig von der Einstellung <placeholder-5/> oder <placeholder-6/> unter <placeholder-7/> im <placeholder-8/>-Dialog."
+msgstr "Wählen Sie hier, wie komplexe Zahlen im <placeholder-1/>-Fenster dargestellt werden sollen. <placeholder-2/> bedeutet, daß nur <placeholder-3/> angezeigt werden. Hat eine Zahl einen imaginären Anteil, erhalten Sie statt derZahl einen Fehler. <placeholder-4/> bedeutet, daß <placeholder-5/> als a+b&imag; dargestellt werden, mit a als Realteil und b als Imaginärteil. <placeholder-6/> bedeutet, daß Zahlen als a&ang;&theta; dargestellt werden, mit a als Absolutwert und &theta; als Winkel. &theta; ist abhängig von der Einstellung <placeholder-7/> oder <placeholder-8/> unter <placeholder-9/> im <placeholder-10/>-Dialog."
 
 #. OptionsDialog.xml:122(para)
 msgid "Notice that in some cases you may get a different result in the <placeholder-1/> frame depending on the <placeholder-2/> setting: When <placeholder-3/> is chosen, Graph will try to find a real result if possible, while <placeholder-4/> and <placeholder-5/> may give a non-real result for the same evaluation."
@@ -914,7 +853,6 @@ msgstr "Internet"
 msgid "Check for update"
 msgstr "Nach Aktualisierung suchen"
 
-# 081220
 #. OptionsDialog.xml:133(para)
 msgid "When checked each time the program starts it will check if a newer version of Graph is available on the Internet. If a new version is found you will be asked if you want to visit the web site for Graph to upgrade. If no new version is available you will not see any messages. If disabled, you can still use <placeholder-1/> to see if a new version is available."
 msgstr "Wenn aktiviert, wird bei jedem Programmstart im Internet nach einer neuen Version von Graph gesucht. Wenn eine neue Version gefunden wurde, werden Sie gefragt, ob Sie die Webseite für ein Update besuchen wollen; ansonsten erscheint keine Meldung. Wenn nicht aktiviert, können Sie mit <placeholder-1/> nach einer neuen Version sehen."
@@ -1017,7 +955,7 @@ msgstr "Neu"
 
 #. MenuItems.xml:16(keycap) MenuItems.xml:30(keycap) MenuItems.xml:44(keycap) MenuItems.xml:68(keycap) MenuItems.xml:113(keycap) MenuItems.xml:143(keycap) MenuItems.xml:157(keycap) MenuItems.xml:171(keycap) MenuItems.xml:185(keycap) MenuItems.xml:199(keycap) MenuItems.xml:213(keycap) MenuItems.xml:228(keycap) MenuItems.xml:347(keycap) MenuItems.xml:426(keycap) MenuItems.xml:442(keycap) MenuItems.xml:456(keycap) MenuItems.xml:470(keycap) MenuItems.xml:485(keycap) MenuItems.xml:501(keycap) MenuItems.xml:515(keycap) MenuItems.xml:590(keycap) MenuItems.xml:655(keycap)
 msgid "Ctrl"
-msgstr ""
+msgstr "Strg"
 
 #. MenuItems.xml:20(para)
 msgid "Use this to create a new coordinate system for drawing graphs in."
@@ -1068,9 +1006,8 @@ msgid "Point series..."
 msgstr "Punktserie(n)..."
 
 #. MenuItems.xml:99(para)
-#, fuzzy
 msgid "Imports one or several point series from a tab, comma or semicolon separated data file. The first column shall contain the x-coordinates. The following columns shall contain the y-coordinates. Graph will create as many point series as there are columns with y-coordinates in the file. There is no limit to the number of point series possible in the data file as long as they share the same x-coordinates."
-msgstr "Importiert eine oder mehrere Punktserien aus einer Tabulator-, Komma- oder Semikolon-separierten Datei. Die erste Spalte muß die X-Koordinaten und die folgenden Spalten die Y-Koordinaten enthalten. Graph erzeugt soviele Punktserien, wie die Datei Spalten mit Y-Koordinaten enthält. Die Anzahl der Punktserien in der Datei ist nicht begrenzt, solange sie dieselben X-Koordinaten gemeinsam haben."
+msgstr "Importiert eine oder mehrere Punktserien aus einer Textdatei, wobei die Daten durch Tabs, Kommata oder Semikola getrennt werden. Die erste Spalte muss die X-Koordinaten, die folgenden Spalten Y-Koordinaten enthalten. Graph erzeugt soviele Punktserien, wie die Datei Spalten mit Y-Koordinaten enthält. Die Anzahl der Punktserien in der Datei ist nicht begrenzt, solange sie dieselben X-Koordinaten gemeinsam haben."
 
 #. MenuItems.xml:112(guimenuitem)
 msgid "Print..."
@@ -1086,7 +1023,7 @@ msgstr "Beenden"
 
 #. MenuItems.xml:127(keycap) MenuItems.xml:748(keycap)
 msgid "Alt"
-msgstr ""
+msgstr "Alt"
 
 #. MenuItems.xml:131(para)
 msgid "Quits the program. You may be asked to save the file."
@@ -1153,7 +1090,6 @@ msgid "Insert function..."
 msgstr "Funktion einfügen..."
 
 #. MenuItems.xml:261(keycap)
-#, fuzzy
 msgid "Ins"
 msgstr "Einfg"
 
@@ -1222,9 +1158,8 @@ msgid "Edit..."
 msgstr "Bearbeiten..."
 
 #. MenuItems.xml:398(keycap)
-#, fuzzy
 msgid "Enter"
-msgstr "Eingabe"
+msgstr "Enter"
 
 #. MenuItems.xml:402(para)
 msgid "This will show a dialog where you can change the selected <placeholder-1/> in the <placeholder-2/>."
@@ -1235,7 +1170,6 @@ msgid "Delete"
 msgstr "Löschen"
 
 #. MenuItems.xml:412(keycap)
-#, fuzzy
 msgid "Del"
 msgstr "Entf"
 
@@ -1276,9 +1210,8 @@ msgid "Window"
 msgstr "Fenster"
 
 #. MenuItems.xml:474(para)
-#, fuzzy
 msgid "Hold down the <action>left mouse button</action> while you select the area you want to fill the whole graphing area. <action>Right click</action> or press <keycap>Esc</keycap> to cancel the command."
-msgstr "Halten Sie die <placeholder-1/> gedrückt, während Sie den Bereich wählen, der die ganze Zeichenfläche ausfüllen soll. Mit <placeholder-2/> oder <keycap>Esc</keycap> wird der Befehl abgebrochen."
+msgstr "Halten Sie die <action>linke Maustaste</action> gedrückt, während Sie den Bereich wählen, der die ganze Zeichenfläche ausfüllen soll. Mit einem  <action>Rechtsklick</action> oder <keycap>Esc</keycap> wird der Befehl abgebrochen."
 
 #. MenuItems.xml:484(guimenuitem) FAQ.xml:194(guimenuitem)
 msgid "Square"
@@ -1301,9 +1234,8 @@ msgid "Move system"
 msgstr "Koordinatensystem verschieben"
 
 #. MenuItems.xml:519(para)
-#, fuzzy
 msgid "When selected the mouse pointer changes to a hand. You may now use the mouse to drag the coordinate system around. Select the menu item again, <action>right click</action> or press <keycap>Esc</keycap> to return to normal mode. As an alternative to this menu item, you may hold down the <keycap>Shift</keycap> key and drag the coordinate system around."
-msgstr "Wenn ausgewählt, wird der Cursor zur Hand. Sie können mit der Maus das Koordinatensystem umherschieben. Mit <placeholder-1/>, <keycap>Esc</keycap> oder erneutes Anwählen des Menüpunkts kehren sie in den Normalmodus  zurück. Alternativ zu diesem Menüpunkt läßt sich das Koordinatensystem auch bei gedrückter <keycap>Shift</keycap>-Taste umherschieben."
+msgstr "Wenn ausgewählt, wird der Cursor zur Hand. Sie können mit der Maus das Koordinatensystem umherschieben. Mit einem <action>Rechtsklick</action>, <keycap>Esc</keycap> oder erneutes Anwählen des Menüpunkts kehren sie in den Normalmodus  zurück. Alternativ zu diesem Menüpunkt lässt sich das Koordinatensystem auch bei gedrückter <keycap>Shift</keycap>-Taste umherschieben."
 
 #. MenuItems.xml:530(guimenuitem)
 msgid "Fit"
@@ -1341,10 +1273,7 @@ msgstr "Berechnet die vorzeichenbehaftete Fläche zwischen dem Graph und der X-A
 msgid "Evaluate"
 msgstr "Evaluieren"
 
-# "This will evaluate the selected function function for a given value"
-# 2 mal function ?
 #. MenuItems.xml:595(para)
-#, fuzzy
 msgid "This will evaluate the selected function for a given value. For standard functions f(x), f'(x) and f''(x) are evaluated. For parametric functions x(t), y(t), dx/dt, dy/dt and dy/dx are evaluated. For polar functions r(t), x(t), y(t), dr/dt and dy/dt are evaluated."
 msgstr "Die ausgewählte Funktion wird an einem gegebenen Punkt untersucht. Bei Standard-Funktionen werden f(x), f'(x) und f''(x) ausgwertet.  Bei Parameterfunktionen werden x(t), y(t), dx/dt, dy/dt und dy/dx ausgewertet. Bei Polar-Funktionen werden r(t), x(t), y(t), dr/dt und dy/dt ausgewertet."
 
@@ -1465,30 +1394,24 @@ msgid "bug report"
 msgstr "Fehlerbericht"
 
 #. Introduction.xml:17(para)
-#, fuzzy
 msgid "Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things. The program is a standard Windows program with menus and dialogs. The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations. It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more. For more information on using the program see <placeholder-1/>."
-msgstr "Das Programm Graph wurde entworfen, um Graphen von mathematischen Funktionen in ein Koordinatensystem zu zeichnen und ähnliche Dinge. Graph ist ein normales Windows-Programm mit Menüs und Dialogen. Graph unterstützt das Zeichnen von Standardfunktionen, Parameterfunktionen, Polarfunktionen, Tangenten, Punktserien, Schraffuren und Relationen. Es ist auch möglich, eine Funktion für einen vorgegebenen Punkt zu berechnen, einen Graph mit der Maus zu verfolgen und noch viel mehr. Weiteres siehe unter <placeholder-1/>."
+msgstr "Das Programm Graph wurde ursprünglich entworfen, um Graphen von mathematischen Funktionen in ein Koordinatensystem zu zeichnen. Graph ist ein normales Windows-Programm mit Menüs und Dialogen und unterstützt das Zeichnen von Standardfunktionen, Parameterfunktionen, Polarfunktionen, Tangenten, Punktserien, Schraffuren und Relationen. Es ist auch möglich, eine Funktion für einen vorgegebenen Punkt zu berechnen, einen Graphen mit der Maus zu verfolgen und noch viel mehr. Weitere Informationen unter <placeholder-1/>."
 
 #. Introduction.xml:24(para)
 msgid "This program is free software; you can redistribute it and/or modify it under the terms of the <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink>. Newest version of the program as well as the source code may be downloaded from <ulink url=\"http://www.padowan.dk\"/>."
 msgstr "Dieses Programm ist freie Software; Sie können es gemäß der <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink> weiter verteilen und/oder verändern. Sowohl die neueste Version wie auch der Quelltext des Programms können von <ulink url=\"http://www.padowan.dk\"/> heruntergeladen werden."
 
 #. Introduction.xml:29(para)
-#, fuzzy
 msgid "The program has been tested under Microsoft Windows 2000, Windows XP and Windows Vista, but there may still be bugs left. Please report bugs and suggestions for improvements to <placeholder-1/>."
 msgstr "Das Programm ist unter Microsoft Windows 98, Windows ME, Windows 2000, Windows XP und Windows Vista getestet worden, kann aber trotzdem noch einige Programmfehler enthalten. Bitte wenden Sie sich bei Fehlermeldungen und Verbesserungsvorschlägen an <placeholder-1/>."
 
 #. Introduction.xml:33(para)
-#, fuzzy
 msgid "When you send a bug report, please write the following:"
-msgstr "When Sie eine Fehlermeldung senden, schreiben Sie bitte Folgendes: <placeholder-1/>"
+msgstr "When Sie eine Fehlermeldung senden, beachten Sie bitte die folgenden Aspekte:"
 
-# "You should check if this is the newest version, else the bug may have been fixed already."
-# Anstatt "else" würde ich "because" schreiben.
 #. Introduction.xml:39(para)
-#, fuzzy
 msgid "Which version are you using? This is shown in the <placeholder-1/> dialog box. You should check that you are using the newest version as the bug may have been fixed already."
-msgstr "Welche Version verwenden Sie? Dies zeigt die die <placeholder-1/>-Dialog-Box an. Bitte prüfen Sie, ob dies die neueste Version ist; der Fehler könnte schon behoben sein."
+msgstr "Welche Version verwenden Sie? Dies können Sie im Dialog <placeholder-1/> nachsehen. Bitte überprüfen Sie, ob die von Ihnen verwendete Version von Graph auf dem aktuellsten Stand ist, denn der aufgetretene Fehler könnte in der neuesten Version bereits behoben sein."
 
 #. Introduction.xml:46(para)
 msgid "Explain what happens and what you expected to happen."
@@ -1531,9 +1454,8 @@ msgid "Installation"
 msgstr "Installation"
 
 #. Installation.xml:15(para)
-#, fuzzy
 msgid "The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version number. To install, just execute the installation and follow the instructions. The installation will install the following files in the selected directory and subdirectories:"
-msgstr "Das Programm wird in einem selbstextrahierendem Installations-Programm ausgegeben, üblicherweise unter dem Namen SetupGraph-x.y.exe, wobei x.y der Versionsname ist. Um es zu installieren, führen Sie einfach die Installation aus und folgen Sie den Anweisungen. Dabei werden die folgenden Dateien im ausgewählten Verzeichnis und Unterverzeichnissen installiert: <placeholder-1/>"
+msgstr "Das Programm wird in einem selbstextrahierendem Installations-Programm ausgegeben, üblicherweise unter dem Namen SetupGraph-x.y.exe, wobei x.y der Versionsname ist. Um Graph zu installieren, führen Sie einfach die Installation aus und folgen Sie den Anweisungen. Dabei werden die folgenden Dateien im ausgewählten Verzeichnis und Unterverzeichnissen installiert: "
 
 #. Installation.xml:27(entry)
 msgid "File(s)"
@@ -1563,12 +1485,9 @@ msgstr "Einige Beispiele für Plug-ins. Benutzerdefinierte Plug-ins können eben
 msgid "Some examples that can be opened in Graph."
 msgstr "Ein paar Beispiele, die mit Graph geöffnet werden können."
 
-# "Under the installation you select the preferred language."
-# Vielleicht besser: "during the installation"?
 #. Installation.xml:60(para)
-#, fuzzy
 msgid "The installation will create a shortcut in the Start menu, which may be used to start the program. During the installation you select the preferred language. This can later be changed from the <placeholder-1/> dialog."
-msgstr "Die Installation erzeugt im Start-Menu eine Verknüpfung, mit der man das Programm starten kann. Bei der Installation wählen Sie die bevorzugte Sprache. Diese läßt sich später im <placeholder-1/>-Dialog ändern."
+msgstr "Die Installation erzeugt im Start-Menu eine Verknüpfung, mit der man das Programm starten kann. Während der Installation wählen Sie Ihre bevorzugte Sprache. Diese lässt sich später im <placeholder-1/>-Dialog ändern."
 
 #. Installation.xml:65(para)
 msgid "If an older version of the program is already installed, the installation suggests you install in the same directory. You can just install over the old version. There is no need to uninstall the old version first, but make sure the old version is not running while installing."
@@ -1638,19 +1557,13 @@ msgstr "Bildformate"
 msgid "Used to save an opened .grf file as an image file. The file type can be any of the <placeholder-1/> supported by Graph."
 msgstr "Wird benutzt, um eine göffnete .grf-Datei als Bild zu speichern. Der Dateityp kann eines der von Graph unterstützten <placeholder-1/> sein."
 
-# "Used in combination with /SI to specify the width in pixels of the saved image. "
-# Besser "of the image to be saved" ?
 #. Installation.xml:166(entry)
-#, fuzzy
 msgid "Used in combination with /SI to specify the width in pixels of the image to be saved."
-msgstr "Wird verwendet in Kombination mit /SI, um die Breite des zu speichernden Bildes in Pixel anzugeben."
+msgstr "Wird in Kombination mit /SI benutzt, um die Breite des zu speichernden Bildes in Pixeln anzugeben."
 
-# "Used in combination with /SI to specify the width in pixels of the saved image. "
-# Besser "of the image to be saved" ?
 #. Installation.xml:172(entry)
-#, fuzzy
 msgid "Used in combination with /SI to specify the height in pixels of the image to be saved."
-msgstr "Wird verwendet in Kombination mit /SI, um die Höhe des zu speichernden Bildes in Pixel anzugeben."
+msgstr "Wird in Kombination mit /SI verwendet, um die Höhe des zu speichernden Bildes in Pixeln anzugeben."
 
 #. InsertTrendlineDialog.xml:8(title)
 msgid "Insert trendline"
@@ -1698,7 +1611,7 @@ msgstr "Verwenden Sie den unten gezeigten Dialog, um eine Trendlinie einzufügen
 
 #. InsertTrendlineDialog.xml:26(para)
 msgid "If the point series has custom Y-errors defined, these values are used to weight the points. The weight for each point is <placeholder-1/> where &sigma; is the Y-error for the point. X-errors are not used."
-msgstr ""
+msgstr "Enthält die Punktserie benutzerdefinierte Y-Fehler, so werden diese zur Wichtung der Punkte verwendet. Die Wichtung für jeden Punkt ist <placeholder-1/> mit &sigma; als seinem Y-Fehler. X-Fehler werden nicht benutzt."
 
 #. InsertTrendlineDialog.xml:33(title)
 msgid "Built-in"
@@ -1804,12 +1717,9 @@ msgstr "Graph versucht, die Konstanten des Modells f(x) so zu bestimmen, daß di
 msgid "It is possible, even though it rarely happens, that more than one minimum exists. In this case the minimum nearest to the guess will be found, even though this may not be the best."
 msgstr "In seltenen Fällen existiert mehr als ein Minimum. In diesem Fall wird das Minimum gefunden, das am nächsten an der Schätzung liegt, obwohl es vielleicht nicht das beste ist."
 
-# "This means that there are an infinite number of best solutions, because you can always multiply by a value."
-# Ich finde die zweite Satz-Hälfte ungenau. Vorschlag: "This means that there are an infinite number of combinations of constants with the same resulting function and hence an infinite number of best solutions."
 #. InsertTrendlineDialog.xml:173(para)
-#, fuzzy
 msgid "Notice that you should avoid redundant constants as they might confuse the program. For example this model has a redundant constant: <placeholder-1/>. Notice the relation between the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. If you multiply <placeholder-5/>, <placeholder-6/> and <placeholder-7/> with the same value the resulting function will not be changed. This means that there are an infinite number of combinations of constants with the same resulting function and hence an infinite number of best solutions. This may confuse the program when it tries to find the best one. Therefore either <placeholder-8/>, <placeholder-9/> or <placeholder-10/> should be removed."
-msgstr "Beachten Sie, daß Sie redundante Konstanten vermeiden sollten, weil sie das Programm \"verwirren\" könnten. Dieses Model hat z. B. eine redundante Konstante: <placeholder-1/>. Beachten Sie die Beziehung zwischen den Konstanten <placeholder-2/>, <placeholder-3/> und <placeholder-4/>. Multipliziert man <placeholder-5/>, <placeholder-6/> und <placeholder-7/> mit demselben Wert, ändert sich die resultierende Funktion nicht. Damit gibt es unendlich viele Konstanten-Kombinationen mit derselben resultierenden Funktion und folglich unendlich viele beste Lösungen. Daher sollte entweder <placeholder-8/>, <placeholder-9/> oder <placeholder-10/> entfernt werden."
+msgstr "Beachten Sie, dass Sie redundante Konstanten vermeiden sollten, weil sie das Programm \"verwirren\" könnten. Im folgenden Modell ist beispielsweise eine redundante Konstante enthalten: <placeholder-1/>. Beachten Sie die Beziehung zwischen den Konstanten <placeholder-2/>, <placeholder-3/> und <placeholder-4/>. Multipliziert man <placeholder-5/>, <placeholder-6/> und <placeholder-7/> mit demselben Wert, ändert sich die resultierende Funktion nicht. Damit gibt es unendlich viele Konstanten-Kombinationen mit derselben resultierenden Funktion und folglich unendlich viele beste Lösungen. Daher sollte entweder <placeholder-8/>, <placeholder-9/> oder <placeholder-10/> entfernt werden."
 
 #. InsertTrendlineDialog.xml:183(para)
 msgid "When the trendline is added, the correlation coefficient <placeholder-1/> is shown in the comment. The closer <placeholder-2/> is to 1 the closer the trendline is to the points."
@@ -1836,9 +1746,8 @@ msgid "Insert tangent/normal..."
 msgstr "Tangente/Normale einfügen..."
 
 #. InsertTangentDialog.xml:14(para)
-#, fuzzy
 msgid "You can use the dialog below to insert or edit a tangent or normal to a function. To insert a new tangent or normal, you use <placeholder-1/>. To change an existing tangent or normal, you first select it in the <placeholder-2/> and use <placeholder-3/>."
-msgstr "Mit dem unten stehenden Dialog können Sie eine Tangente oder Normale zu einer Funktion hinzufügen oder bearbeiten. Mit <placeholder-1/> fügen Sie eine neue Tangente oder Normale hinzu. Um eine Tangente zu ändern, wählen Sie sie zuerst in der <glossterm>Funktionsliste</glossterm> aus und verwenden dann <placeholder-2/>."
+msgstr "Mit dem unten stehenden Dialog können Sie eine Tangente oder Normale zu einer Funktion hinzufügen oder bearbeiten. Mit <placeholder-1/> fügen Sie eine neue Tangente oder Normale hinzu. Um eine Tangente zu ändern, wählen Sie sie zuerst in der <placeholder-2/> aus und verwenden dann <placeholder-3/>."
 
 #. InsertTangentDialog.xml:19(para)
 msgid "A tangent is a straight line that touches the graph of the function at a given point without crossing it. The tangent may however cross the graph elsewhere. A normal is a straight line perpendicular to the graph of the function at a given point. If the item is a standard function the point is identified by the x-coordinate, while the point is identified from the independent t-parameter for parametric and polar functions."
@@ -1917,9 +1826,8 @@ msgid "between"
 msgstr "zwischen"
 
 #. InsertShadingDialog.xml:16(para)
-#, fuzzy
 msgid "The dialog below is used to add a shading to the selected function. To insert a new shading, you use <placeholder-1/>. To change an existing shading, you first select it in the <placeholder-2/> and use <placeholder-3/>. The shading is used to mark an area between the function graph and something else."
-msgstr "Mit dem untenstehenden Dialog können Sie einer Funktion eine Schraffur hinzufügen. Mit <placeholder-1/> fügen Sie eine neue Schraffur hinzu. Um eine Schraffur zu ändern, wählen Sie sie zuerst in der <glossterm>Funktionsliste</glossterm> aus und verwenden dann <placeholder-2/>. Die Schraffur markiert die Fläche zwischen dem Funktionsgraphen und einem anderen Element."
+msgstr "Mit dem untenstehenden Dialog können Sie einer Funktion eine Schraffur hinzufügen. Mit <placeholder-1/> fügen Sie eine neue Schraffur hinzu. Um eine Schraffur zu ändern, wählen Sie sie zuerst in der <placeholder-2/> aus und verwenden dann <placeholder-3/>. Die Schraffur füllt die Fläche zwischen dem Funktionsgraphen und einem anderen Element."
 
 #. InsertShadingDialog.xml:24(title) InsertShadingDialog.xml:29(guilabel)
 msgid "Shading"
@@ -2034,18 +1942,12 @@ msgid "Check this to draw a line at the end of the range. Uncheck it if you want
 msgstr "Aktivieren, wenn eine Linie ans Ende des Bereichs gezeichnet werden soll. Deaktivieren, wenn zwei Schraffuren wie eine einzige zusammenhängende Schraffur aussehen sollen."
 
 #. InsertShadingDialog.xml:188(guilabel)
-#, fuzzy
 msgid "Shadings"
-msgstr "Schraffur"
+msgstr "Schraffuren"
 
-# Der 2. Satz ist teilweise überflüssig, weil dessen Inhalt schon im ersten Satz vorkommt.
-# Vorschlag:
-# "When you have chosen <placeholder-3/> in the <placeholder-2/> tab, you may select the second function in the <placeholder-3/> tab."
-# und den 2. Satz weglassen.
 #. InsertShadingDialog.xml:187(para)
-#, fuzzy
 msgid "When you have chosen <placeholder-1/> in the <placeholder-2/> tab, you may select the second function in the <placeholder-3/> tab. The dialog with the <placeholder-4/> tab is shown below."
-msgstr "Wenn Sie im Reiter <placeholder-2/> die <placeholder-3/> gewählt haben, können Sie im Reiter <placeholder-1/> die zweite Funktion aussuchen. Der Dialog des Reiters <placeholder-5/> wird unten gezeigt."
+msgstr "Wenn Sie im Reiter <placeholder-2/> die <placeholder-1/> gewählt haben, können Sie im Reiter <placeholder-3/> die zweite Funktion aussuchen. Der Dialog des Reiters <placeholder-4/> wird unten gezeigt."
 
 #. InsertShadingDialog.xml:197(term)
 msgid "Shading range for 2nd function"
@@ -2084,9 +1986,8 @@ msgid "constraints"
 msgstr "Nebenbedingungen"
 
 #. InsertRelationDialog.xml:14(para)
-#, fuzzy
 msgid "This dialog is used to insert a relation in the coordinate system. <literal>Relation</literal> is a common name for inequalities and equations. To insert a relation you use the menu item <placeholder-1/>. To change an existing relation, you first select it in the <placeholder-2/> and use <placeholder-3/>."
-msgstr "In diesem Dialog läßt sich eine Relation ins Koordinatensystem einfügen. <literal>Relation</literal> ist ein allgemeiner Name für Ungleichungen und Gleichungen. Mit <placeholder-1/> fügen Sie eine Relation ein. Mit <placeholder-2/> ändern Sie eine Relation, nachdem Sie sie vorher in der <glossterm>Funktionsliste</glossterm> ausgewählt haben."
+msgstr "In diesem Dialog läßt sich eine Relation ins Koordinatensystem einfügen. <literal>Relation</literal> ist ein allgemeiner Name für Ungleichungen und Gleichungen. Mit <placeholder-1/> fügen Sie eine Relation ein. Mit <placeholder-3/> ändern Sie eine Relation, nachdem Sie sie in der <placeholder-2/> ausgewählt haben."
 
 #. InsertRelationDialog.xml:25(term)
 msgid "Relation"
@@ -2101,18 +2002,16 @@ msgid "An inequality is a statement that one quantity is greater or less than an
 msgstr "Eine Gleichung ist eine Aussage, daß zwei Werte ungleich gleich sind; die Werte müssen durch einen der vier folgenden Operatoren getrennt sein: &lt;, &gt;, &lt;=, &gt;=. Eine Ungleichung ist beispielsweise <literal>abs(x) + abs(y) &lt; 1</literal>. Zwei Operatoren können einen Bereich festlegen, z. B. <literal>y &lt; sin(x) &lt; 0.5</literal>."
 
 #. InsertRelationDialog.xml:39(para)
-#, fuzzy
 msgid "You can use the same operators and <link linkend=\"ListOfFunctions\">built-in functions</link> as for plotting graphs of functions. In addition you can also create <link linkend=\"CustomFunctionsDialog\">custom functions</link>."
-msgstr "Sie können dieselben Operatoren und <link linkend=\"FunctionList\">eingebauten Funktionen</link> benutzen wie für Funktionsgraphen. Außerdem können Sie auch <link linkend=\"CustomFunctionsDialog\">benutzerdefinierte Funktionen</link> erstellen."
+msgstr "Sie können dieselben Operatoren und <link linkend=\"ListOfFunctions\">eingebauten Funktionen</link> benutzen wie für Funktionsgraphen. Außerdem können Sie auch <link linkend=\"CustomFunctionsDialog\">benutzerdefinierte Funktionen</link> erstellen."
 
 #. InsertRelationDialog.xml:47(term)
 msgid "Constraints"
 msgstr "Restriktionen"
 
 #. InsertRelationDialog.xml:49(para)
-#, fuzzy
 msgid "Here you enter the constraints for the relation. The constraints can be any <placeholder-1/> that evaluates to non-zero for the relation to be drawn and zero for the relation not to be drawn. The constraints usually consist of a series of inequalities separated with the logical operators (and, or, xor). As for the relation <placeholder-2/> and <placeholder-3/> are used as the independent variables."
-msgstr "Hier geben Sie die Nebenbedingungen für die Relation ein. Eine Nebenbedingung ist ein beliebiger <glossterm>numerischer Ausdruck</glossterm>, der für die abzubildende Relation einen Wert ungleich 0 ergibt und für die nicht abzubildende Relation 0. Üblicherweise bestehen die Nebenbedingungen aus mehreren Ungleichungen, die durch logische Operatoren (and, or, xor) getrennt sind. <placeholder-1/> und <placeholder-2/> sind die unabhängigen Variablen."
+msgstr "Hier geben Sie die Nebenbedingungen für die Relation ein. Eine Nebenbedingung ist ein beliebiger <placeholder-1/>, der für die abzubildende Relation einen Wert ungleich 0 ergibt und für die nicht abzubildende Relation 0. Üblicherweise bestehen die Nebenbedingungen aus mehreren Ungleichungen, die durch logische Operatoren (and, or, xor) getrennt sind. <placeholder-2/> und <placeholder-3/> sind die unabhängigen Variablen."
 
 #. InsertRelationDialog.xml:55(para)
 msgid "For example if you have the relation <literal>x^2 + y^2 &lt; 25</literal>, which is a shaded circle, the constraints <literal>x &gt; 0 and y &lt; 0</literal> will only show the part of the circle in the 4<superscript>th</superscript> quadrant."
@@ -2162,11 +2061,9 @@ msgstr "Textfelder"
 msgid "error bars"
 msgstr "Fehlerbalken"
 
-# " at the positions entered in this dialog" ist IMO selbstverständlich/überflüssig.
 #. InsertPointSeriesDialog.xml:17(para)
-#, fuzzy
 msgid "You can use the dialog below to add a series of points to the coordinate system. The points will be shown in the coordinate system in the graphing area as a series of markers. To insert a new point series, you use <placeholder-1/>. To change an existing point series, you first select it in the <placeholder-2/> and use <placeholder-3/>."
-msgstr "Mit dem untenstehenden Dialog können Sie dem Koordinatensystem eine Serie von Punkten hinzufügen. Die Punkte werden im Koordinatensystem in der Zeichenfläche als eine Serie von Markierungen dargestellt. Mit <placeholder-1/> fügen Sie eine neue Punktserie ein. Um eine Punktserie zu ändern, wählen Sie sie zuerst in der <glossterm>Funktionsliste</glossterm> aus und verwenden dann <placeholder-2/>."
+msgstr "Mit dem untenstehenden Dialog können Sie dem Koordinatensystem eine Serie von Punkten hinzufügen. Die Punkte werden im Koordinatensystem in der Zeichenfläche als eine Serie von Markierungen dargestellt. Mit <placeholder-1/> fügen Sie eine neue Punktserie ein. Um eine Punktserie zu ändern, wählen Sie sie zuerst in der <placeholder-2/> aus und verwenden dann <placeholder-3/>."
 
 #. InsertPointSeriesDialog.xml:26(para)
 msgid "After adding a point series, you may add a <link linkend=\"InsertTrendlineDialog\">trendline</link> which is the curve of best fit for the points."
@@ -2233,9 +2130,8 @@ msgid "Show coordinates"
 msgstr "Koordinaten anzeigen"
 
 #. InsertPointSeriesDialog.xml:93(para)
-#, fuzzy
 msgid "Put a check in <placeholder-1/> to show the x- and y-coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
-msgstr "Mit der Option <placeholder-1/> werden die X- und Y-Koordinaten an jedem Punkt angezeigt. Mit <guibutton><inlinegraphisch fileref=\"Font.bmp\"/></guibutton> läßt sich die Schriftart ändern, ebenso die Auswahl, ob die Textfelder oberhalb, unterhalb, links oder rechts der Punkte angezeigt werden."
+msgstr "Mit der Option <placeholder-1/> werden die X- und Y-Koordinaten an jedem Punkt angezeigt. Mit <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> läßt sich die Schriftart ändern, ebenso die Auswahl, ob die Textfelder oberhalb, unterhalb, links oder rechts der Punkte angezeigt werden."
 
 #. InsertPointSeriesDialog.xml:102(term)
 msgid "Error bars"
@@ -2254,9 +2150,8 @@ msgid "Custom"
 msgstr "Benutzerdefiniert"
 
 #. InsertPointSeriesDialog.xml:104(para)
-#, fuzzy
 msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are +/-values. Custom Y-errors are also used to weight the points when creating trendlines."
-msgstr "Hier können Sie sich waagerechte oder senkrechte Fehlerbalken - auch bekannt als Toleranzbalken - anzeigen lassen. Als dünne Balken an jedem Punkt der Punktserie zeigen Sie die Unsicherheit dieses Punkts an. Es gibt drei Arten, die Größe der Fehlerbalken darzustellen: Mit <placeholder-1/> gibt man an, daß alle Punkte dieselbe Unsicherheit haben. Mit <placeholder-2/> gibt man für jeden Punkt einen Prozentsatzt der X- oder Y-Koordinate als Unsicherheit an. <placeholder-3/> erweitert die Tabelle um eine extra Spalte, in der man für jeden Punkt eine andere Unsicherheit festlegen kann. Alle Unsicherheiten sind vorzeichenbehaftet."
+msgstr "Hier können Sie sich waagerechte oder senkrechte Fehlerbalken - auch bekannt als Toleranzbalken - anzeigen lassen. Als dünne Balken an jedem Punkt der Punktserie zeigen Sie die Unsicherheit dieses Punkts an. Es gibt drei Arten, die Größe der Fehlerbalken darzustellen: Mit <placeholder-1/> gibt man an, daß alle Punkte dieselbe Unsicherheit haben. Mit <placeholder-2/> gibt man für jeden Punkt einen Prozentsatzt der X- oder Y-Koordinate als Unsicherheit an. <placeholder-3/> erweitert die Tabelle um eine extra Spalte, in der man für jeden Punkt eine andere Unsicherheit festlegen kann. Alle Unsicherheiten sind vorzeichenbehaftet. Benutzerdefinierte Y-Fehler werden auch bei der Erzeugung einer Trendlinie zur Gewichtung der Punkte verwendet."
 
 #. InsertLabelDialog.xml:8(title)
 msgid "Insert label"
@@ -2315,14 +2210,12 @@ msgid "underline"
 msgstr "unterstrichen"
 
 #. InsertLabelDialog.xml:23(para)
-#, fuzzy
 msgid "This dialog is used to insert or edit text labels. To insert a label you use the menu item <placeholder-1/>. The label is inserted at the center of the graphing area, but can be dragged to another placement. To change an existing label, you either <action>double click</action> on it in the graphing area or you select it in the <placeholder-2/> and use <placeholder-3/>."
-msgstr "Mit diesem Dialog können Sie Textfelder hinzufügen oder bearbeiten. Mit <placeholder-1/> fügen Sie ein Textfeld hinzu. Das Textfeld wird in der Mitte der Zeichenfläche eingefügt, kann aber an eine andere Position verschoben werden. Ein Textfeld ändern Sie entweder mit einem <action>double click</action> darauf, oder Sie wählen es in der <glossterm>Funktionsliste</glossterm> aus und verwenden dann <placeholder-2/>."
+msgstr "Mit diesem Dialog können Sie Textfelder hinzufügen oder bearbeiten. Mit <placeholder-1/> fügen Sie ein Textfeld hinzu. Das Textfeld wird in der Mitte der Zeichenfläche eingefügt, kann aber an eine andere Position verschoben werden. Ein Textfeld ändern Sie entweder mit einem <action>double click</action> darauf, oder Sie wählen es in der <placeholder-2/> aus und verwenden dann <placeholder-3/>."
 
 #. InsertLabelDialog.xml:32(para)
-#, fuzzy
 msgid "The text is entered in the editing area. You can change text styles for different parts of the text. The background color, which may be any solid color or transparent, can be set for the whole label only. The <guibutton><inlinegraphic fileref=\"Font_Symbol.png\" scale=\"60\"/></guibutton> button can be used to insert special characters like mathematical symbols and Greek characters."
-msgstr "Der Text wird ins Editierfeld eingegeben. Sie können den Textstil für verschiedene Textteile ändern. Die Hintergrundfarbe, die undurchsichtig oder transparent sein kann, gilt grundsätzlich für das ganze Textfeld. Mit der Schaltfläche <guibutton><inlinegraphic fileref=\"Font_Symbol.bmp\"/></guibutton> lassen sich Sonderzeichen wie mathematische Symbole oder griechische Buchstaben einfügen."
+msgstr "Der Text wird ins Editierfeld eingegeben. Sie können den Textstil für verschiedene Textteile ändern. Die Hintergrundfarbe, die undurchsichtig oder transparent sein kann, gilt grundsätzlich für das ganze Textfeld. Mit der Schaltfläche <guibutton><inlinegraphic fileref=\"Font_Symbol.png\" scale=\"60\"/></guibutton> lassen sich Sonderzeichen wie mathematische Symbole oder griechische Buchstaben einfügen."
 
 #. InsertLabelDialog.xml:42(guimenuitem)
 msgid "Insert object"
@@ -2341,9 +2234,8 @@ msgid "When the <guibutton>OK</guibutton> button is pressed, the label will be s
 msgstr "Mit der Schaltfläche <guibutton>OK</guibutton> wird das Textfeld in der Zeichenfläche angezeigt. Das Textfeld läßt sich mit der Maus verschieben. Durch <action>Rechtsklick</action> auf das Textfeld und nachfolgende Platzierung im Kontext-Menü kann es an einer der Achsen einrasten. Aus dem Kontext-Menü heraus läßt sich das Textfeld auch rotieren, z. B. um den Text senkrecht anzuzeigen."
 
 #. InsertLabelDialog.xml:53(para)
-#, fuzzy
 msgid "A label can contain and evaluate a <placeholder-1/>. This is very useful when you want to show the value of <link linkend=\"CustomFunctionsDialog\">custom constants</link> in a label. Graph will try to evaluate any expression in a label if placed in brackets after a percent sign (%). If you have 3 custom constants a=2.5, b=-3, and c=8.75, you can create a label with the text <literal>f(x)=%(a)x<superscript>2</superscript>+%(b)x+%(c)</literal>. This label will be shown as <literal>f(x)=2.5x<superscript>2</superscript>-3x+8.75</literal> in the graphing area. When you change the constants, the label will be updated to reflect the new values. In the above case, the + preceding %(b) is removed because b evaluates to a negative number."
-msgstr "Ein Textfeld kann einen <glossterm>numerischen Ausdruck</glossterm> enthalten un berechnen. Dies eignet sich sehr gut für die Anzeige von <link linkend=\"CustomFunctionsDialog\">benutzerdefinierten Konstanten</link> in einem Textfeld. Graph versuchen, alle Ausdrücke in einem Textfeld zu berechnen, die in Klammern hinter einem Prozentzeichen stehen (%). Wenn Sie 3 benutzerdefinierte Konstanten a=2.5, b=-3, und c=8.75 haben, können Sie ein Textfeld mit dem Text <literal>f(x)=%(a)x<superscript>2</superscript>+%(b)x+%(c)</literal> erstellen. Dieses Textfeld wird auf der Zeichenfläche als <literal>f(x)=2.5x<superscript>2</superscript>-3x+8.75</literal> dargestellt. Sobald Sie die Konstanten ändern, aktualisiert sich das Textfeld, um die neuen Werte anzuzeigen. Im obigen Fall wird das + vor dem %(b) entfernt, weil b ein negatives Vorzeichen hat."
+msgstr "Ein Textfeld kann einen <placeholder-1/> enthalten un berechnen. Dies eignet sich sehr gut für die Anzeige von <link linkend=\"CustomFunctionsDialog\">benutzerdefinierten Konstanten</link> in einem Textfeld. Graph versuchen, alle Ausdrücke in einem Textfeld zu berechnen, die in Klammern hinter einem Prozentzeichen stehen (%). Wenn Sie 3 benutzerdefinierte Konstanten a=2.5, b=-3, und c=8.75 haben, können Sie ein Textfeld mit dem Text <literal>f(x)=%(a)x<superscript>2</superscript>+%(b)x+%(c)</literal> erstellen. Dieses Textfeld wird auf der Zeichenfläche als <literal>f(x)=2.5x<superscript>2</superscript>-3x+8.75</literal> dargestellt. Sobald Sie die Konstanten ändern, aktualisiert sich das Textfeld, um die neuen Werte anzuzeigen. Im obigen Fall wird das + vor dem %(b) entfernt, weil b ein negatives Vorzeichen hat."
 
 #. InsertFunctionDialog.xml:8(title)
 msgid "Insert function"
@@ -2362,9 +2254,8 @@ msgid "plot"
 msgstr "zeichnen"
 
 #. InsertFunctionDialog.xml:15(para)
-#, fuzzy
 msgid "When you want to insert a function, you use the menu item <placeholder-1/> to show the dialog below. To edit an existing function, you select it in the <placeholder-2/> and use the <placeholder-3/> menu item."
-msgstr "Mit <placeholder-1/> fügen Sie eine neue Funktion ein; es erscheint der untenstehende Dialog. Um eine Funktion zu ändern, wählen Sie sie in der <glossterm>Funktionsliste</glossterm> aus und verwenden dann <placeholder-2/>."
+msgstr "Mit <placeholder-1/> fügen Sie eine neue Funktion ein; es erscheint der untenstehende Dialog. Um eine Funktion zu ändern, wählen Sie sie in der <placeholder-2/> aus und verwenden dann <placeholder-3/>."
 
 #. InsertFunctionDialog.xml:26(term) FAQ.xml:157(guilabel) FAQ.xml:173(guilabel) FAQ.xml:189(guilabel)
 msgid "Function type"
@@ -2374,9 +2265,7 @@ msgstr "Funktionstyp"
 msgid "Standard function"
 msgstr "Standardfunktion"
 
-# though statt thought
 #. InsertFunctionDialog.xml:28(para)
-#, fuzzy
 msgid "You can choose between three different types of functions: <placeholder-1/>, <placeholder-2/> and <placeholder-3/>. A standard function is defined as y=f(x), i.e. for each x-coordinate there is exactly one y-coordinate, though it may be undefined for some x-coordinates."
 msgstr "Sie können zwischen drei verschiedenen Funktionstypen wählen: <placeholder-1/>, <placeholder-2/> und <placeholder-3/>. Eine Standardfunktion wird mit y=f(x) definiert; d.h. zu jeder X-Koordinate gibt es genau eine Y-Koordinate, obwohl sie für einige X-Werte undefiniert sein kann."
 
@@ -2421,7 +2310,6 @@ msgid "Enter a description to be shown in the <placeholder-1/>. If the text is e
 msgstr "Geben Sie eine Beschreibung für die <placeholder-1/> ein. Wenn leer, wird in der Legende die Funktionsgleichung angezeigt. "
 
 #. InsertFunctionDialog.xml:99(guilabel)
-#, fuzzy
 msgid "Line style"
 msgstr "Linientyp"
 
@@ -2434,9 +2322,8 @@ msgid "Dots"
 msgstr "Punkte"
 
 #. InsertFunctionDialog.xml:96(para)
-#, fuzzy
 msgid "You can choose between different line styles for which you want the graph to be drawn. You can choose between solid, dashed, dotted or a combination of these. <placeholder-1/> is only available when <placeholder-2/> is set to <placeholder-3/> or <placeholder-4/>. When <placeholder-5/> is <placeholder-6/>, only a dot is shown at each calculated point. Likewise the <placeholder-7/> <placeholder-8/> will connect the calculated points with lines. <placeholder-9/> will also draw lines, but Graph will do more calculations at critical points if it thinks it will improve the graph. It will also break the line if it thinks there is an asymptote. You can also choose the width of the graph. The width is notified in screen pixels. There are also a lot of different colors you can choose between. The program will remember and suggest the same properties last used."
-msgstr "Zur Zeichnung der Funktionsgraphen können Sie zwischen verschiedenen Linienarten wählen. Zur Wahl stehen durchgezogene, gestrichelte, gepunktete oder gestrichelt und gepunktete Linien. <placeholder-1/> stehen nur dann zur Verfügung, wenn unter <placeholder-2/> <placeholder-3/> oder <placeholder-4/> eingestellt wird.. Wird unter <placeholder-5/> <placeholder-6/> gewählt, wird anstelle einer Kurve nur ein Punkt für jeden berechneten Datenpunkt dargestellt.Ebenso führ die Einstellung von <placeholder-7/> unter <placeholder-8/> dazu, dass die berechneten Punkte durch Linien verbinden werden. Die Option <placeholder-9/> führt ebenfalls dazu, dass Linien gezeichnet werden, jedoch zeichnet Graph mit einer höheren Präzision. Sollte Graph einen asymptotischen Verlauf feststellen, wird die Verbindungslinie unterbrochen. Sie können auch die Breite des Graphen (in Bildpunkten / Pixeln)  festlegen und aus mehreren Farben wählen. Graph speichert die Einstellungen und startet beim nächsten Mal mit diesen Einstellungen."
+msgstr "Zur Zeichnung der Funktionsgraphen können Sie zwischen verschiedenen Linienarten wählen. Zur Wahl stehen durchgezogene, gestrichelte, gepunktete oder abwechselnd gestrichelte und gepunktete Linien. <placeholder-1/> stehen nur dann zur Verfügung, wenn unter <placeholder-2/> <placeholder-3/> oder <placeholder-4/> eingestellt wird. Wird unter <placeholder-5/> <placeholder-6/> gewählt, wird anstelle einer Kurve nur ein Punkt für jeden berechneten Datenpunkt dargestellt. Ebenso führt die Einstellung von <placeholder-7/> unter <placeholder-8/> dazu, dass die berechneten Punkte durch Linien verbunden werden. Die Option <placeholder-9/> führt ebenfalls dazu, dass Linien gezeichnet werden, jedoch zeichnet Graph mit einer höheren Präzision. Sollte Graph einen asymptotischen Verlauf feststellen, wird die Verbindungslinie unterbrochen. Sie können auch die Breite des Graphen (in Bildpunkten / Pixeln)  festlegen und aus mehreren Farben wählen. Graph speichert die Einstellungen und startet beim nächsten Mal mit diesen Einstellungen."
 
 #. InsertDerivativeDialog.xml:8(title)
 msgid "Insert f'(x)"
@@ -2479,9 +2366,8 @@ msgid "Returns the hyperbolic sine of the argument."
 msgstr "Liefert den Sinus Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:21(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the hyperbolic sine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Sinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Sinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt."
 
 #. Hyperbolic.xml:25(para)
 msgid "Hyperbolic sine is defined as: <placeholder-1/>"
@@ -2496,9 +2382,8 @@ msgid "Returns the hyperbolic cosine of the argument."
 msgstr "Liefert den Cosinus Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:45(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the hyperbolic cosine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Cosinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Cosinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt."
 
 #. Hyperbolic.xml:49(para)
 msgid "Hyperbolic cosine is defined as: <placeholder-1/>"
@@ -2513,9 +2398,8 @@ msgid "Returns the hyperbolic tangent of the argument."
 msgstr "Liefert den Tangens Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:69(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Tangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Tangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt."
 
 #. Hyperbolic.xml:73(para)
 msgid "Hyperbolic tangent is defined as: <placeholder-1/>"
@@ -2530,9 +2414,8 @@ msgid "Returns the inverse hyperbolic sine of the argument."
 msgstr "Liefert den Arkussinus Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:94(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic sine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arcussinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist das reverse von <placeholder-5/>, also <placeholder-6/>."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arcussinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt. <placeholder-7/> stellt die Umkehrfunktion von <placeholder-8/> dar, also <placeholder-9/>."
 
 #. Hyperbolic.xml:107(primary)
 msgid "inverse hyperbolic cosine"
@@ -2543,9 +2426,8 @@ msgid "Returns the inverse hyperbolic cosine of the argument."
 msgstr "Liefert den Arkuscosinus Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:117(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arkuscosinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist das reverse von <placeholder-5/>, also <placeholder-6/>."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Arkuscosinus Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt. <placeholder-7/> stellt die Umkehrfunktion von  <placeholder-8/> dar, also <placeholder-9/>."
 
 #. Hyperbolic.xml:130(primary)
 msgid "inverse hyperbolic tangent"
@@ -2556,9 +2438,8 @@ msgid "Returns the inverse hyperbolic tangent of the argument."
 msgstr "Liefert den Arkustangens Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:142(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arkustangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist das reverse von <placeholder-5/>, also <placeholder-6/>."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Areatangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt. <placeholder-7/> stellt die Umkehrfunktion zu <placeholder-8/> dar, also <placeholder-9/>."
 
 #. Hyperbolic.xml:154(primary) Hyperbolic.xml:227(primary)
 msgid "hyperbolic cosecant"
@@ -2569,9 +2450,8 @@ msgid "Returns the hyperbolic cosecant of the argument."
 msgstr "Liefert den Cosecans Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:164(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Cosecans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Cosecans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt."
 
 #. Hyperbolic.xml:168(para)
 msgid "Hyperbolic cosecant is defined as: <placeholder-1/>"
@@ -2586,9 +2466,8 @@ msgid "Returns the hyperbolic secant of the argument."
 msgstr "Liefert den Secanshyperbolicus des Arguments."
 
 #. Hyperbolic.xml:188(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Secans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Secans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt."
 
 #. Hyperbolic.xml:192(para)
 msgid "Hyperbolic secant is defined as: <placeholder-1/>"
@@ -2603,9 +2482,8 @@ msgid "Returns the hyperbolic cotangent of the argument."
 msgstr "Liefert den Cotangens Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:212(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Cotangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Cotangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt."
 
 #. Hyperbolic.xml:216(para)
 msgid "Hyperbolic cotangent is defined as: <placeholder-1/>"
@@ -2620,9 +2498,8 @@ msgid "Returns the inverse hyperbolic cosecant of the argument."
 msgstr "Liefert den Arkuscosecans Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:238(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arkuscosecans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist das reverse von <placeholder-5/>, also <placeholder-6/>."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Areacosecans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt. <placeholder-7/> stellt die Umkehrfunktion zu <placeholder-8/> dar, also <placeholder-9/>."
 
 #. Hyperbolic.xml:251(primary)
 msgid "inverse hyperbolic secant"
@@ -2633,9 +2510,8 @@ msgid "Returns the inverse hyperbolic secant of the argument."
 msgstr "Liefert den Arkussecans Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:261(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arkussecans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist das reverse von <placeholder-5/>, also <placeholder-6/>."
+msgstr "Die <placeholder-1/>-Funktion berechnet den Areasecans Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt. <placeholder-7/> stellt die Umkehrfunktion zu <placeholder-8/> dar, also <placeholder-9/>."
 
 #. Hyperbolic.xml:274(primary)
 msgid "inverse hyperbolic cotangent"
@@ -2646,9 +2522,8 @@ msgid "Returns the inverse hyperbolic cotangent of the argument."
 msgstr "Liefert den Arkuscotangens Hyperbolicus des Arguments."
 
 #. Hyperbolic.xml:284(para)
-#, fuzzy
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>. For real numbers <placeholder-10/> is undefined in the interval [-1;1]."
-msgstr "Die <placeholder-1/>-Funktion berechnet den Arkus Cotangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> ist die Invertierung von <placeholder-5/>, also <placeholder-6/>. Für reelle Zahlen ist <placeholder-7/> im Interval [-1;1] nicht definiert"
+msgstr "Die <placeholder-1/>-Funktion berechnet den Area Cotangens Hyperbolicus von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt. <placeholder-7/> stellt die Umkehrfunktion von <placeholder-8/> dar, also <placeholder-9/>. Für reelle Zahlen ist <placeholder-10/> im Interval [-1;1] nicht definiert."
 
 #. HowToUse.xml:4(title)
 msgid "How to use Graph"
@@ -2687,22 +2562,18 @@ msgid "Customize toolbar..."
 msgstr "Symbolleiste anpassen..."
 
 #. HowToUse.xml:22(para)
-#, fuzzy
 msgid "The toolbar may be customized by right clicking on the bar and selecting <placeholder-1/> from the popup menu. You can then customize the toolbar by dragging commands to and from the bar. The status bar at the bottom of the window shows tooltips or other information to the left and the coordinates located at the mouse pointer to the right."
-msgstr "Die Werkzeugleiste kann angepasst werden, indem man mit der rechten Maustaste auf die Leiste klickt und <placeholder-1/> aus dem Kontextmenü wählt. Verschiedene Befehle können der Drag and Drop auf der Werkzeugleiste platziert und wieder von ihr entfernt werden. Die Statusleiste am unteren Rand des Fensters enthält auf der linken Seite hilfreiche Hinweise und Informationen und zeigt auf der rechten Seite die Koordinatenposition des Mauszeigers."
+msgstr "Die Werkzeugleiste kann angepasst werden, indem man mit der rechten Maustaste auf die Leiste klickt und <placeholder-1/> aus dem Kontextmenü wählt. Verschiedene Befehle können per Drag and Drop auf der Werkzeugleiste platziert und wieder von ihr entfernt werden. Die Statusleiste am unteren Rand des Fensters enthält auf der linken Seite hilfreiche Hinweise und Informationen und zeigt auf der rechten Seite die Koordinatenposition des Mauszeigers."
 
 #. HowToUse.xml:30(para)
-#, fuzzy
 msgid "You can add new elements to the coordinate system from the Function menu. For example if you want to add a new function you use the menu item <placeholder-1/>"
-msgstr "Mit Hilfe des Funktion Menüs können Sie dem Koordinatensystem neue Elemente hinzufügen. Möchen Sie bespielsweise eine neue Funktion hinzufügen, deren Graph gezeichnet werden soll, wählen Sie den Menüpunkt <placeholder-1/> ."
+msgstr "Mit Hilfe des Funktion Menüs können Sie dem Koordinatensystem neue Elemente hinzufügen. Möchten Sie bespielsweise eine neue Funktion hinzufügen, deren Graph gezeichnet werden soll, wählen Sie den Menüpunkt <placeholder-1/> ."
 
 #. HowToUse.xml:41(para)
-#, fuzzy
 msgid "The <placeholder-1/> to the left shows a list of functions, tangents, point series, shadings and relations you have added. If you want to manipulate anything in the list, just select it and use the <placeholder-2/> menu. You can also right click on an item in the list to get the context menu with available commands. An item may be edited by double clicking on it."
-msgstr "Die links angebrachte<glossterm>Funktionsliste</glossterm> zeigt alle von Ihnen angelegten Funktionen, Tangenten, Punktserien, Schraffuren und Relationen. Möchten Sie ein Element aus der Funktionsliste bearbeiten, klicken Sie es einfach an und verwenden Sie dann das Menü <placeholder-1/> oder klicken Sie mit der rechten Maustaste und wählen Sie den entsprechenden Punkt aus dem Kontextmenü aus. Wollen Sie ein Element bearbeiten, können Sie auch einfach darauf einen Doppelklick ausführen."
+msgstr "Die links angebrachte <placeholder-1/> zeigt alle von Ihnen angelegten Funktionen, Tangenten, Punktserien, Schraffuren und Relationen. Möchten Sie ein Element aus der Funktionsliste bearbeiten, klicken Sie es einfach an und verwenden Sie dann das Menü <placeholder-2/> oder klicken Sie mit der rechten Maustaste und wählen Sie den entsprechenden Punkt aus dem Kontextmenü aus. Wollen Sie ein Element bearbeiten, können Sie auch einfach darauf einen Doppelklick ausführen."
 
 #. HowToUse.xml:47(para)
-#, fuzzy
 msgid "The <placeholder-1/> menu contains commands to make calculations on functions, for example evaluations at specific coordinates or given intervals."
 msgstr "Das Menü <placeholder-1/> beinhaltet verschiedene Möglichkeiten, Berechnungen für eine bestimmte Funktion ausführen zu lassen, beispielsweise die Berechnung des Funktionswerts für einen bestimmten Wert für x oder die Aufstellung einer Wertetabelle."
 
@@ -2831,14 +2702,12 @@ msgid "not operator"
 msgstr "NOT-Operator"
 
 #. FunctionList.xml:33(glossterm)
-#, fuzzy
 msgid "number"
 msgstr "reelle Zahl"
 
 #. FunctionList.xml:27(para)
-#, fuzzy
 msgid "The following is a list of all variables, constants, operators and functions supported by the program. The list of operators shows the operators with the highest precedence first. The precedence of operators can be changed through the use of brackets. (), {} and [] may all be used alike. Notice that expressions in Graph are case insensitive, i.e. there are no difference between upper and lower case characters. The only exception is <placeholder-1/> as Euler's constant and E as the exponent in a <placeholder-2/> in scientific notation."
-msgstr "Im Folgenden ist eine Liste aller Variablen, Konstanten, Operatoren und Funktionen zusammengesellt, die von Graph unterstützt werden. Die aufgeführten Operatoren sind gemäß ihrer Präzedenz absteigend geordnet, d.h. diejenigen Operatoren werden zuerst genannt, die bei der Berechnung Vorrang vor anderen Operatoren haben, die weiter unten stehen (Stichwort: \"Punktrechnung vor Strichrechnung\"). Durch das Setzen von Klammern ( (), {} und [] sind zulässig) kann auf die Reihenfolge der Berechnung zusätzlich Einfluss genommen werden. Beachten Sie, dass Graph bei den  verwendeten Ausdrücke nicht nach Groß- und Kleinschreibung unterscheidet. Die einzige Ausnahme von dieser Regel stellt das <placeholder-1/> (Euler'sche Zahl) dar. Bei der Gleitkommadarstellung einer <glossterm baseform=\"real number\">reellen Zahl</glossterm> ist es zwingend erforderlich, Mantisse und Exponenten durch ein großes 'E' zu trennen.and E as the exponent in a  in scientific notation."
+msgstr "Im Folgenden ist eine Liste aller Variablen, Konstanten, Operatoren und Funktionen zusammengesellt, die von Graph unterstützt werden. Die aufgeführten Operatoren sind gemäß ihrer Präzedenz absteigend geordnet, d.h. diejenigen Operatoren werden zuerst genannt, die bei der Berechnung Vorrang vor anderen Operatoren haben, die weiter unten stehen (Stichwort: \"Punktrechnung vor Strichrechnung\"). Durch das Setzen von Klammern ( (), {} und [] sind zulässig) kann auf die Reihenfolge der Berechnung zusätzlich Einfluss genommen werden. Beachten Sie, dass Graph bei den  verwendeten Ausdrücke nicht nach Groß- und Kleinschreibung unterscheidet. Die einzige Ausnahme von dieser Regel stellt das <placeholder-1/> (Euler'sche Zahl) dar. Bei der Gleitkommadarstellung einer <placeholder-2/> ist es zwingend erforderlich, Mantisse und Exponenten durch ein großes 'E' zu trennen."
 
 #. FunctionList.xml:43(entry) AnimateDialog.xml:27(term)
 msgid "Constant"
@@ -2873,9 +2742,8 @@ msgid "Evaluates to a random number between 0 and 1."
 msgstr "Erzeugt eine Zufallszahl zwischen 0 und 1."
 
 #. FunctionList.xml:90(entry)
-#, fuzzy
 msgid "Operator"
-msgstr "Operatoren"
+msgstr "Operator"
 
 #. FunctionList.xml:96(entry)
 msgid "Exponentation (^)"
@@ -2942,7 +2810,6 @@ msgid "Indicates if an expression is greater than another expression."
 msgstr "Zeigt an, ob ein Ausdruck größer als ein anderer Ausdruck ist."
 
 #. FunctionList.xml:128(entry)
-#, fuzzy
 msgid "Greater than or equal to (&gt;=)"
 msgstr "Größer gleich (&gt;=)"
 
@@ -2959,7 +2826,6 @@ msgid "Indicates if an expression is less than another expression."
 msgstr "Zeigt an, ob ein Ausdruck kleiner als ein anderer Ausdruck ist."
 
 #. FunctionList.xml:136(entry)
-#, fuzzy
 msgid "Less than or equal to (&lt;=)"
 msgstr "Kleiner gleich (&lt;=)"
 
@@ -3123,7 +2989,7 @@ msgstr "Rundet das Argument zur nächsten Ganzzahl ab."
 msgid "Rounds the first argument to the number of decimals given by the second argument."
 msgstr "Rundet das erste Argument auf die Anzahl der Dezimalstellen aus dem zweiten Argument."
 
-# Was wird bei 0 zurückgeliefert?
+# What is returned with argument 0?
 #. FunctionList.xml:363(entry)
 msgid "Returns the sign of the argument: 1 if the argument is greater than 0, and -1 if the argument if less than 0."
 msgstr "Liefert das Vorzeichen des Arguments zurück: 1, wenn das Argument gößer als 0 ist und -1, wenn es kleiner als 0 ist."
@@ -3140,7 +3006,7 @@ msgstr "Liefert das kleinste Argument zurück."
 msgid "Returns the greatest of the arguments."
 msgstr "Liefert das grösste Argument zurück."
 
-# Was wird zurückgeliefert, wenn das zweite Argument _nicht_ in diesem Bereich liegt?
+# What is returned, if the 2nd argument is outside the range?
 #. FunctionList.xml:379(entry)
 msgid "Returns the second argument if it is in the range of the first and third argument."
 msgstr "Liefert das zweite Argument zurück, wenn es im Bereich zwischen dem ersten und dritten Argument ist."
@@ -3157,17 +3023,13 @@ msgstr "Dasselbe wie mehrere if-Funktionen hintereinander."
 msgid "Returns the numeric integral of the first argument from the second argument to the third argument."
 msgstr "Liefert das numerische Integral des ersten Argumentes vom zweiten Argument bis zum dritten Argument zurück."
 
-# to _the_ third argument
 #. FunctionList.xml:398(entry)
-#, fuzzy
 msgid "Returns the sum of the first argument evaluated for each integer in the range from the second to the third argument."
-msgstr "Liefert die Summe des ersten Argumentes berechnet für jede Ganzzahl im Bereich vom zweiten bis zum dritten Argument zurück."
+msgstr "Ergibt die Summe des ersten Arguments, berechnet für jede Ganzzahl im Bereich vom zweiten bis zum dritten Argument."
 
-# to _the_ third argument
 #. FunctionList.xml:402(entry)
-#, fuzzy
 msgid "Returns the product of the first argument evaluated for each integer in the range from the second to the third argument."
-msgstr "Liefert das Produkt des ersten Argumentes berechnet für jede Ganzzahl im Bereich vom zweiten bis zum dritten Argument zurück."
+msgstr "Ergibt das Produkt des ersten Argumentes, berechnet für jede Ganzzahl im Bereich vom zweiten bis zum dritten Argument."
 
 #. FunctionList.xml:410(entry)
 msgid "Returns the Euler gamma function of the argument."
@@ -3250,7 +3112,6 @@ msgid "How can I easily zoom in and out?"
 msgstr "Wie kann man einfach zoomen?"
 
 #. FAQ.xml:93(para)
-#, fuzzy
 msgid "When you hold down the <keycap>Ctrl</keycap> key you can use the <keycap>+</keycap> and <keycap>-</keycap> keys to zoom in and out. The scroll wheel on the mouse can be used for zooming at the position of the mouse pointer. When you move the scroll wheel up the program will zoom into the coordinate system and center the graphing area at the position of the mouse pointer. When you move the scroll wheel down the program zooms out."
 msgstr "Wenn Sie <keycap>Ctrl</keycap> gedrückt halten, können Sie die Ansicht vergrößern und verkleinern (Zoom), indem Sie die Tasten <keycap>+</keycap> bzw. <keycap>-</keycap> drücken. Denselben Effekt erreichen Sie, wenn Sie stattdessen das Mausrad einsetzen. Graph vergrößert (Mausrad auf) bzw. verkleinert (Mausrad ab) dann das Koordinatensystem und zentriert es auf die Position des Mauszeigers."
 
@@ -3379,9 +3240,8 @@ msgid "Below you can see the dialog, that appears when a standard function is se
 msgstr "Unten ist der Dialog abgebildet, der im Fall einer Standardfunktion zu sehen ist. Wenn es sich um eine Parameterfunktion, eine Polarfunktion oder eine Tangente handelt, sieht dieses Fenster nur leicht anders aus."
 
 #. EvaluateDialog.xml:30(para)
-#, fuzzy
 msgid "You can enter a value for which you want to evaluate the function. The value will be evaluated for the function selected in the <placeholder-1/>. If the result is on the graph within the shown coordinate system, it will be marked with a dashed cross. You can also trace the drawn graph with the mouse. Just click on the graph with the mouse and the function will be evaluated at the nearest point."
-msgstr "Sie können einen Wert eingeben, für den der Funktionswert berechnet werden soll. Graph berechnet dann für den eingegebenen Wert den Funktionswert des in der <glossterm>Funktionsliste</glossterm> gerade markierten Elements. Wenn der Eingabewert und der berechnete Wert zu einem Punkt führen, der innerhalb des sichtbaren Koordinatensystems liegt, markiert Graph diesen Punkt durch ein gestricheltes Fadenkreuz. Mit der Maus kann man dieses Fadenkreuz über die dargestellte Kurve bewegen und die zugehörigen Punktwerte ablesen."
+msgstr "Sie können einen Wert eingeben, für den der Funktionswert berechnet werden soll. Graph berechnet dann für den eingegebenen Wert den Funktionswert des in der <placeholder-1/> gerade markierten Elements. Wenn der Eingabewert und der berechnete Wert zu einem Punkt führen, der innerhalb des sichtbaren Koordinatensystems liegt, markiert Graph diesen Punkt durch ein gestricheltes Fadenkreuz. Mit der Maus kann man dieses Fadenkreuz über die dargestellte Kurve bewegen und die zugehörigen Punktwerte ablesen."
 
 #. EvaluateDialog.xml:37(para)
 msgid "It may happen that the result of an evaluation is a complex number with an imaginary part. This number will either be written as a+b&imag;, a&ang;&theta; or not written at all depending of the choice under <placeholder-1/>."
@@ -3492,7 +3352,6 @@ msgid "Error 04: Cannot take logarithm to number equal or less than zero."
 msgstr "Fehler 04: Logarithmus ist für Zahlen kleiner gleich 0 nicht definiert."
 
 #. Errors.xml:34(para)
-#, fuzzy
 msgid "The logarithmic functions ln(x) and log(x) are undefined for x&le;0, when the calculation is done for real numbers. When the calculations are done with complex numbers, x is only undefined at 0."
 msgstr "Die Logarithmusfunktionen ln(x) und log(x) sind für x&lE;0 nicht definiert, wenn reelle Zahlen die Rechengrundlage bilden. Werden komplexe Zahlen verwendet, sind die Funktionen lediglich für x=0 nicht definiert."
 
@@ -3541,7 +3400,6 @@ msgid "Error 10: atanh evaluated at undefined value."
 msgstr "Fehler 10: atanh wurde für einen undefinierten Wert berechnet."
 
 #. Errors.xml:95(para)
-#, fuzzy
 msgid "Inverse hyperbolic tangent atanh(x) is undefined at x=1 and x=-1, and not defined outside the interval x=]-1;1[ when calculating with real numbers only."
 msgstr "Die hyperbolische Umkehrfunktion Areatangens Hyperbolicus atanh(x) ist für x=1 nicht und nur dann definiert, wenn komplexe Zahlen außerhalb des Intervalls ]-1;1[ verwendet werden."
 
@@ -3550,9 +3408,8 @@ msgid "Error 11: acosh evaluated at undefined value."
 msgstr "Fehler 11: acosh wurde für einen undefinierten Wert berechnet."
 
 #. Errors.xml:101(para)
-#, fuzzy
 msgid "Inverse hyperbolic cosine acosh(x) is only defined for x&ge;1 when using <placeholder-1/>. acosh(x) is defined for all numbers when calculating with <placeholder-2/>."
-msgstr "Die hyperbolische Umkehrfunktion Areacosinus Hyperbolicus acosh(x) ist nur für reelle Zahlen größer oder gleich 1 definiert. Werden komplexe Zahlen zur Berechnung benutzt, besteht diese Beschränkung nicht."
+msgstr "Die hyperbolische Umkehrfunktion Areacosinus Hyperbolicus acosh(x) ist für <placeholder-1/> nur für x&ge;1 definiert. acosh(x) ist für alle Zahlen definiert, wenn mit <placeholder-2/> gerechnet wird."
 
 #. Errors.xml:109(term)
 msgid "Error 12: arg(0) is undefined."
@@ -3590,7 +3447,6 @@ msgstr "Eine benutzerdefinierte Funktion oder Konstante ist nicht mehr verfügba
 msgid "Error 16: Too many recursive calls"
 msgstr "Fehler 16: Zuviele rekursive Aufrufe"
 
-# Das sind eigentlich 3 Sätze, die im Wesentlichen dasselbe aussagen. d. h. 2 Sätze sind überflüssig.
 #. Errors.xml:149(para)
 msgid "Too many recursive calls have been executed. This is most likely caused by a function that calls itself recursively an infinite number of times, for example foo(x)=2*foo(x). The error may also occur if you just call too many functions recursively."
 msgstr "Es wurden zuviele rekursive Aufrufe ausgeführt. Der Fehler wird meist von einer Funktion erzeugt, die sich selbst rekursiv unendlich oft aufruft; z. B. (x)=2*foo(x). Wenn Sie zu viele Funktionen rekursiv aufrufen, kann der Fehler ebenfalls auftreten."
@@ -3632,9 +3488,8 @@ msgid "Error 57: Comparison operator misplaced."
 msgstr "Fehler 57: Vergleichsoperator falsch gesetzt."
 
 #. Errors.xml:200(para)
-#, fuzzy
 msgid "Only two comparison operators in sequence are allowed. For example \"sin(x) &lt; y &lt; cos(x)\" is okay while \"sin(x) &lt; x &lt; y &lt; cos(x)\" is invalid because there are three &lt;-operators in sequence."
-msgstr "Es sind nur zwei Vergleichsoperatoren in Folge erlaubt. Beispiel:  \"sin(x) &lt; y %lt; cos(x)\" ist akzeptabel, während \"sin(x) &lt; x &lt; y &lt; cos(x)\" unzuässig ist, da hier drei &lt;-Operatoren in Folge gesetzt wurden."
+msgstr "Es sind nur zwei Vergleichsoperatoren in Folge erlaubt. Beispiel:  \"sin(x) &lt; y %lt; cos(x)\" ist akzeptabel, während \"sin(x) &lt; x &lt; y &lt; cos(x)\" unzulässig ist, da hier drei &lt;-Operatoren in Folge gesetzt wurden."
 
 #. Errors.xml:208(term)
 msgid "Error 58: Invalid number found. Use the format: -5.475E-8"
@@ -3829,7 +3684,6 @@ msgid "Function arguments are entered after the name in brackets separated by co
 msgstr "Die Argumente einer Funktion werden nach der Funktionsbezeichnung in Klammern angegeben und durch Kommata getrannt, beispielsweise bezeichnet <literal>f(x,y,z)</literal> eine Funktion f, die drei Argumente namens x, y und z erwartet. Die Bezeichnungen für die Argumente müssen wie der Funktionsname mit einem Buchstaben beginnen und dürfen nur aus Buchstaben und Ziffern bestehen."
 
 #. CustomFunctionsDialog.xml:34(para)
-#, fuzzy
 msgid "The expressions you want to define are entered in the second column. The expressions can use the arguments specified in the first column and all built-in functions, other custom functions and constants, and even call themselves recursively. A comment can be written after a # symbol at the end of an expression."
 msgstr "Den Ausdruck, den Sie definieren wollen, geben Sie in der zweiten Spalte ein. Der Ausdruck kann die Argumente, die in der ersten Spalte definiert wurden, sowie alle eingebauten Funktionen und übrigen benutzerdefinierten Funktionen und Konstanten beinhalten und sich sogar selbst rekursiv aufrufen. Durch das Symbol # kann am Ende eines Ausdrucks auch ein Kommentar hinzugefügt werden."
 
@@ -3890,9 +3744,8 @@ msgid "numeric value"
 msgstr "Numerischer Wert"
 
 #. Complex.xml:22(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the absolute or numeric value of <placeholder-2/>, commonly written as |z|. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> always returns a postive real value."
-msgstr "Die Funktion <placeholder-1/> ergibt den absoluten Wert, auch Betrag genannt, einer Zahl <placeholder-2/>. Üblicherwerweise schreibt man dies  als |z|. Bei <placeholder-3/> kann es sich um einen <glossterm>numerischen Term</glossterm> handeln, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> ergibt. Das Ergebnis von <placeholder-4/> ist in jedem Fall ein reeller Wert."
+msgstr "Die Funktion <placeholder-1/> ergibt den absoluten Wert, auch Betrag genannt, einer Zahl <placeholder-2/>. Üblicherwerweise schreibt man dies  als |z|. Bei <placeholder-3/> kann es sich um einen <placeholder-4/> handeln, der eine <placeholder-5/> oder eine <placeholder-6/> ergibt. Das Ergebnis von <placeholder-7/> ist in jedem Fall ein reeller Wert."
 
 #. Complex.xml:34(primary)
 msgid "argument"
@@ -3907,36 +3760,32 @@ msgid "Returns the argument of the parameter."
 msgstr "Ergibt das Argument des Parameters."
 
 #. Complex.xml:45(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the argument or angle of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> always returns a real number. The result may be in <placeholder-8/> or degrees depending on the current settings. The angle is always between -&pi; and &pi;. If <placeholder-9/> is a real number, <placeholder-10/> is 0 for positive numbers and &pi; for negative numbers. <placeholder-11/> is undefined."
-msgstr "Die <placeholder-1/>-Funktion liefert das Argument oder den Winkel von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. <placeholder-4/> immer liefert eine reelle Zahl. Das Ergebnis kann in <glossterm>Rad</glossterm> oder Grad sein, abhängig von den aktuellen Einstellungen. Das Winkel ist immer zwischen -&pi; und &pi;. Wenn <placeholder-5/> eine reelle Zahl ist, ist <placeholder-6/> 0 für positive Zahlen und &pi; für negative Zahlen. <placeholder-7/> ist nicht definiert."
+msgstr "Die <placeholder-1/>-Funktion liefert das Argument oder den Winkel von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <glossterm<placeholder-5/> oder eine <placeholder-6/> darstellt. <placeholder-7/> immer liefert eine reelle Zahl. Das Ergebnis kann in <placeholder-8/> oder Grad sein, abhängig von den aktuellen Einstellungen. Das Winkel ist immer zwischen -&pi; und &pi;. Wenn <placeholder-9/> eine reelle Zahl ist, ist <placeholder-10/> 0 für positive Zahlen und &pi; für negative Zahlen. <placeholder-11/> ist nicht definiert."
 
 #. Complex.xml:61(primary)
 msgid "conjugate"
 msgstr "konjugiert komplex"
 
 #. Complex.xml:71(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the conjugate of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The function is defined as: <placeholder-7/>."
-msgstr "Die <placeholder-1/>-Funktion liefert die konjugierte Zahl von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt. Die Funktion ist folgendermaßen definiert: <placeholder-4/>"
+msgstr "Die <placeholder-1/>-Funktion liefert die konjugierte Zahl von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt. Die Funktion ist folgendermaßen definiert: <placeholder-7/>."
 
 #. Complex.xml:83(primary)
 msgid "real value"
 msgstr "Realteil"
 
 #. Complex.xml:93(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the real part of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr "Die <placeholder-1/>-Funktion liefert den Realteil von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion liefert den Realteil von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt."
 
 #. Complex.xml:104(primary)
 msgid "imaginary value"
 msgstr "Imaginärteil"
 
 #. Complex.xml:114(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the imaginary part of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
-msgstr "Die <placeholder-1/>-Funktion liefert den Imaginärteill von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
+msgstr "Die <placeholder-1/>-Funktion liefert den Imaginärteill von <placeholder-2/>. <placeholder-3/> kann ein beliebiger <placeholder-4/> sein, der eine <placeholder-5/> oder eine <placeholder-6/> darstellt."
 
 #. AxesDialog.xml:9(primary)
 msgid "Axes dialog"
@@ -3999,7 +3848,6 @@ msgid "background color"
 msgstr "Hintergrundfarben"
 
 #. AxesDialog.xml:32(para)
-#, fuzzy
 msgid "When you choose the menu item <placeholder-1/>, the dialog shown below will appear. In this dialog you can configure all options which are related to the axes. The dialog contains 4 tab sheets. The first sheet, shown below, contains options for the x-axis. The tab with options for the y-axis is completely analog to this."
 msgstr "Wenn Sie den Menüpunkt <placeholder-1/> aufrufen, öffnet sich der unten abgebildete Dialog. Darin können Sie alle Einstellungen tätigen, die sich auf das Aussehen der Achsen des Koordinatensystems beziehen. Der Dialog besteht aus vier Registern. Im ersten Register (siehe unten) sind die Einstellungsmöglichkeiten für die X-Achse dargestellt, denen analog die Einstellungsmöglichkeiten der Y-Achse (zweites Register) entsprechen."
 
@@ -4136,23 +3984,20 @@ msgid "Here you can enter a title that is shown above the coordinate system. Use
 msgstr "Hier können Sie eine Überschrift für Ihr Koordinatensystem festlegen. Die zu verwendende Schriftart können Sie über die rechts daneben stehende Schaltfläche einstellen."
 
 #. AxesDialog.xml:186(para)
-#, fuzzy
 msgid "Check this to show the <placeholder-1/> with a list of functions and point series in the upper right corner of the coordinate system. You may change the font under <placeholder-2/>."
-msgstr "Wird diese Option aktiviert, zeigt Graph in der oberen rechten Ecke des Koordinatensystems die <glossterm>Legende</glossterm> an, die eine Liste aller Funktionen und Punktserien enthält. Die zu verwendende Schriftart können Sie unter <placeholder-1/> festlegen."
+msgstr "Wird diese Option aktiviert, zeigt Graph in der oberen rechten Ecke des Koordinatensystems die <placeholder-1/> an, die eine Liste aller Funktionen und Punktserien enthält. Die zu verwendende Schriftart können Sie unter <placeholder-2/> festlegen."
 
 #. AxesDialog.xml:193(term)
 msgid "Legend placement"
 msgstr "Platzierung der Legende"
 
 #. AxesDialog.xml:195(para)
-#, fuzzy
 msgid "Here you may choose in which of the four corners you want the <placeholder-1/> to be placed. You can also change this by right clicking on the legend in the graphing area."
-msgstr "Hier können Sie festlegen, in welcher der vier Ecken des Koordinatensystems Graph die <glossterm>Legende</glossterm> platzieren soll. Die Position der Legende können Sie auch durch einen Rechtsklick im Koordinatensystem verändern."
+msgstr "Hier können Sie festlegen, in welcher der vier Ecken des Koordinatensystems Graph die <placeholder-1/> platzieren soll. Die Position der Legende können Sie auch durch einen Rechtsklick im Koordinatensystem verändern."
 
 #. AxesDialog.xml:204(para)
-#, fuzzy
 msgid "Check this field to use <placeholder-1/> for calculations while drawing graphs. This will increase the time for drawing graphs but may be necessary in rare situations where the intermediate result are complex. The final result must be real for the graph to be drawn. This will not interfere with evaluations."
-msgstr "Wird diese Option aktiviert, verwendet Graph <glossterm baseform=\"complex number\">komplexe Zahlen</glossterm> zur Berechnung von Funktionsgraphen. Diese Option ist zu aktivieren, wenn bei der Berechnung der reellen Funktionswerte komplexe Zahlen als Zwischenergebnisse auftreten. Beachten Sie, dass sich dadurch die erforderliche Zeit erhöht, die Graph benötigt, um die Funktionsgraphen zu zeichnen, so dass diese Option meist nicht benötigt wird. "
+msgstr "Wird diese Option aktiviert, verwendet Graph <placeholder-1/> zur Berechnung von Funktionsgraphen. Diese Option ist zu aktivieren, wenn bei der Berechnung der reellen Funktionswerte komplexe Zahlen als Zwischenergebnisse auftreten. Beachten Sie, dass sich dadurch die erforderliche Zeit erhöht, die Graph benötigt, um die Funktionsgraphen zu zeichnen, so dass diese Option meist nicht benötigt wird. "
 
 #. AxesDialog.xml:216(guilabel)
 msgid "None"
@@ -4175,9 +4020,8 @@ msgid "Select <placeholder-1/> if you don't want the axes to be shown. Select <p
 msgstr "Wenn die Option <placeholder-1/> gewählt wird, blendet Graph die Achsen des Koordinatensystems aus. Entscheiden Sie sich für <placeholder-2/>, wenn Sie ein normales Koordinatensystem wünschen. Die Anordnung der Achsen kann mit Hilfe von <placeholder-3/>  und <placeholder-4/> beeinflusst werden. Wenn Sie <placeholder-5/> auswählen, wird die X-Achse am unteren, die Y-Achse am linken Fensterrand platziert und die Einstellungen für <placeholder-6/> und <placeholder-7/> überschrieben."
 
 #. AxesDialog.xml:227(para)
-#, fuzzy
 msgid "Choose whether trigonometric functions should calculate in <placeholder-1/> or <placeholder-2/>. This is also used for showing <placeholder-3/> in the polar format."
-msgstr "Legen Sie fest, ob die trigonometrischen Funktionen die Berechnungen in <placeholder-1/> oder in <placeholder-2/> ausführen sollen. Hiermit legen Sie auch fest, dass <glossterm baseform=\"complex number\">complex numbers</glossterm> im Polarformat anzugeben sind."
+msgstr "Legen Sie fest, ob die trigonometrischen Funktionen die Berechnungen in <placeholder-1/> oder in <placeholder-2/> ausführen sollen. Hiermit legen Sie auch fest, dass <placeholder-3/> in polarer Form anzugeben sind."
 
 #. AxesDialog.xml:244(term)
 msgid "Colors"
@@ -4192,9 +4036,8 @@ msgid "Fonts"
 msgstr "Schriftarten"
 
 #. AxesDialog.xml:254(para)
-#, fuzzy
 msgid "You may change the fonts used to show axes labels, the font to draw numbers at the axes, and the font used for the <placeholder-1/>."
-msgstr "Sie können die Schriftarten ändern, die für Achsenbeschriftungen, Skalenteilung und <glossterm>Legende</glossterm> verwendet werden."
+msgstr "Sie können die Schriftarten ändern, die für Achsenbeschriftungen, Skalenteilung und <placeholder-1/> verwendet werden."
 
 #. AxesDialog.xml:270(para)
 msgid "Check this to save all the current settings in the dialog to be used as default in the future. These settings are used the next time you choose to create a new coordinate system. The default settings are stored in your Windows user profile, i.e. each Windows user will have his/her own default settings in Graph."
@@ -4254,7 +4097,7 @@ msgstr "Bildinformationen"
 
 #. AnimateDialog.xml:55(guilabel)
 msgid "Frames/second"
-msgstr "Frames/Sekunde"
+msgstr "Bilder/Sekunde"
 
 #. AnimateDialog.xml:52(para)
 msgid "You can specify the image size of the animation. This will affect the file size and the time it takes to create the animation. The <placeholder-1/> indicates the default speed of the animation. Most players will be able to adjust the speed when the animation is played."
@@ -4266,7 +4109,7 @@ msgstr "Durch Anklicken der Schaltfläche <guibutton>Animieren</guibutton> wird 
 
 #. AnimateDialog.xml:66(para)
 msgid "When the animation is finished, a very simple player is shown. You can use this to play the animation. The <guibutton><inlinegraphic fileref=\"AnimationMenu.png\" scale=\"60\"/></guibutton> button will give you some additional options."
-msgstr ""
+msgstr "Nach der Animation wird ein einfacher Player geöffnet, mit dem Sie die Animation abspielen können. Die Schaltfläche <guibutton><inlinegraphic fileref=\"AnimationMenu.png\" scale=\"60\"/></guibutton> bietet Ihnen einige zusätzliche Optionen."
 
 #. AnimateDialog.xml:73(term)
 msgid "Speed"
@@ -4274,15 +4117,16 @@ msgstr "Geschwindigkeit"
 
 #. AnimateDialog.xml:75(para)
 msgid "Here you can change the playback speed. This will only affect the playback and not the file saved."
-msgstr ""
+msgstr "Hier läßt sich die Wiedergabegeschwindigkeit einstellen. Die gespeicherte Datei wird dabei nicht verändert."
 
 #. AnimateDialog.xml:83(term) AnimateDialog.xml:96(guimenuitem)
 msgid "Repeat"
 msgstr "Wiederholen"
 
+# finsihed --> finished
 #. AnimateDialog.xml:85(para)
 msgid "When checked the animation will continue playing. When finsihed it will start over again."
-msgstr ""
+msgstr "Wenn aktiviert, wird die Animation in einer Endlosschleife abgespielt."
 
 #. AnimateDialog.xml:92(term)
 msgid "Auto reverse"
@@ -4290,32 +4134,35 @@ msgstr "Auto-Reverse"
 
 #. AnimateDialog.xml:94(para)
 msgid "This will make the animation run backwards when it reaches the end. This is most useful in combination with the <placeholder-1/> option, which will make the animation oscillate between the two ends."
-msgstr ""
+msgstr "Hiermit läuft die Animation rückwärts, wenn zu Ende ist. Dies ist sehr nützlich in Kombination mit der Option <placeholder-1/>, mit der man die Animation zwischen beiden Enden oszillieren lassen kann."
 
 #. AnimateDialog.xml:104(para)
 msgid "This will save the animation as an Audio Video Interleave (avi) file, which can be played by any media player."
-msgstr ""
+msgstr "Die Animation wird als AVI-Datei (Audio Video Interleave) gespeichert, die jeder Media-Player abspielen kann."
 
 #. AnimateDialog.xml:111(term) AnimateDialog.xml:125(guimenuitem)
-#, fuzzy
 msgid "Save frame..."
-msgstr "Speichern unter..."
+msgstr "Aktuelles Bild speichern..."
 
+# "as a bitmap file"
+# better: "as an image file", because the type of the image file is specified in the second sentence.
+# (Please forget my comment if "bitmap file" is so common, that is doesn't necessarily state the file format.)
 #. AnimateDialog.xml:113(para)
 msgid "This will save the currently shown frame as a bitmap file. This can be either Windows Bitmap (bmp), Portable Network Graphics (png) or Joint Photographic Experts Group (jpeg)."
-msgstr ""
+msgstr "Dies speichert das aktuelle Einzelbild in eine Datei, entweder als Windows Bitmap (bmp), Portable Network Graphics (png) oder Joint Photographic Experts Group (jpeg)."
 
 #. AnimateDialog.xml:121(term)
-#, fuzzy
 msgid "Save all frames..."
-msgstr "Speichern unter..."
+msgstr "Alle Bilder speichern..."
 
+# "as single bitmap files"
+# better: "as single image files" or "as single graphic files", because "bitmap" states the image file format.
+# Please forget my comment if "bitmap file" is a common expression and has nothing to do with the file format in normal speech.
 #. AnimateDialog.xml:123(para)
 msgid "This will save all frames as single bitmap files. This is the same as repeating <placeholder-1/> for each frame in the animation."
-msgstr ""
+msgstr "Dies speichert alle Einzelbilder als separate Bilddateien. Dasselbe wird erreicht durch wiederholtes <placeholder-1/> für jedes Einzelbild der Animation."
 
 #. Acknowledgements.xml:7(title)
-#, fuzzy
 msgid "Acknowledgments"
 msgstr "Danksagungen"
 
@@ -4437,7 +4284,7 @@ msgstr "Ungarisch"
 
 #. Acknowledgements.xml:157(entry)
 msgid "Hebrew"
-msgstr ""
+msgstr "Hebräisch"
 
 #. Acknowledgements.xml:163(entry)
 msgid "Italian"
@@ -4456,27 +4303,24 @@ msgid "Norwegian"
 msgstr "Norwegisch"
 
 #. Acknowledgements.xml:191(entry)
-#, fuzzy
 msgid "Persian"
-msgstr "Serbisch"
+msgstr "Persisch"
 
 #. Acknowledgements.xml:194(entry)
 msgid "Shayan Abyari &amp; Yashar PourMohammad"
-msgstr ""
+msgstr "Shayan Abyari &amp; Yashar PourMohammad"
 
 #. Acknowledgements.xml:198(entry)
 msgid "Polish"
 msgstr "Polnisch"
 
 #. Acknowledgements.xml:205(entry)
-#, fuzzy
 msgid "Portuguese (Brazil)"
-msgstr "Portugiesisch"
+msgstr "Portugiesisch (Brasilien)"
 
 #. Acknowledgements.xml:212(entry)
-#, fuzzy
 msgid "Portuguese (Portugal)"
-msgstr "Portugiesisch"
+msgstr "Portugiesisch (Portugal)"
 
 #. Acknowledgements.xml:219(entry)
 msgid "Russian"
