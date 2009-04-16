@@ -82,7 +82,7 @@ object StdFuncFrame: TStdFuncFrame
       'Function'
       'Intersection'
       'x-axis'
-      'Extremum')
+      'Extreme y-value')
   end
   object Edit2: TEdit
     Left = 40

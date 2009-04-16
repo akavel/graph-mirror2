@@ -6,8 +6,8 @@ object Form1: TForm1
   ActiveControl = Panel2
   AlphaBlendValue = 100
   Caption = 'Graph'
-  ClientHeight = 450
-  ClientWidth = 630
+  ClientHeight = 448
+  ClientWidth = 628
   Color = clBtnFace
   Constraints.MinHeight = 300
   Constraints.MinWidth = 300
@@ -151,7 +151,7 @@ object Form1: TForm1
   object Splitter1: TMySplitter
     Left = 161
     Top = 53
-    Height = 294
+    Height = 292
     AutoSnap = False
     Beveled = True
     MinSize = 120
@@ -161,19 +161,20 @@ object Form1: TForm1
   end
   object Splitter2: TSplitter
     Left = 0
-    Top = 347
-    Width = 630
+    Top = 345
+    Width = 628
     Height = 3
     Cursor = crVSplit
     Align = alBottom
     MinSize = 1
     ExplicitTop = 328
+    ExplicitWidth = 630
   end
   object Panel2: TFocusPanel
     Left = 164
     Top = 53
-    Width = 466
-    Height = 294
+    Width = 464
+    Height = 292
     Align = alClient
     BevelOuter = bvNone
     FullRepaint = False
@@ -185,8 +186,8 @@ object Form1: TForm1
     object Image1: TImage
       Left = 0
       Top = 0
-      Width = 466
-      Height = 294
+      Width = 464
+      Height = 292
       Align = alClient
       ParentShowHint = False
       ShowHint = False
@@ -195,13 +196,14 @@ object Form1: TForm1
       OnMouseDown = Image1MouseDown
       OnMouseMove = Image1MouseMove
       OnMouseUp = Image1MouseUp
+      ExplicitWidth = 466
       ExplicitHeight = 298
     end
     object Cross: TCross
       Left = 0
       Top = 0
-      Width = 466
-      Height = 294
+      Width = 464
+      Height = 292
       Style = psDot
       Mode = pmNot
       X = 30
@@ -212,6 +214,7 @@ object Form1: TForm1
       OnMouseUp = Image1MouseUp
       OnMouseMove = Image1MouseMove
       OnDblClick = Image1DblClick
+      ExplicitWidth = 466
       ExplicitHeight = 298
     end
     object Shape1: TShape
@@ -226,8 +229,8 @@ object Form1: TForm1
     object IPolygon1: TIPolygon
       Left = 0
       Top = 0
-      Width = 466
-      Height = 294
+      Width = 464
+      Height = 292
       Brush.Color = 13395660
       Brush.Style = bsBDiagonal
       Points.Strings = (
@@ -245,6 +248,8 @@ object Form1: TForm1
       OnMouseUp = Image1MouseUp
       ExplicitLeft = 3
       ExplicitTop = -3
+      ExplicitWidth = 466
+      ExplicitHeight = 294
     end
     object Image2: TImage
       Left = 344
@@ -259,7 +264,7 @@ object Form1: TForm1
   object ActionToolBar1: TActionToolBar
     Left = 0
     Top = 23
-    Width = 630
+    Width = 628
     Height = 30
     ActionManager = ActionManager
     ColorMap.HighlightColor = 14410210
@@ -274,7 +279,7 @@ object Form1: TForm1
     Left = 0
     Top = 53
     Width = 161
-    Height = 294
+    Height = 292
     Align = alLeft
     BevelOuter = bvNone
     DragKind = dkDock
@@ -283,7 +288,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 161
-      Height = 294
+      Height = 292
       Align = alClient
       BevelInner = bvNone
       BevelOuter = bvNone
@@ -314,7 +319,7 @@ object Form1: TForm1
     end
     object Panel1: TPanel
       Left = 0
-      Top = 294
+      Top = 292
       Width = 161
       Height = 0
       Align = alBottom
@@ -338,8 +343,8 @@ object Form1: TForm1
   end
   object Panel5: TPanel
     Left = 0
-    Top = 350
-    Width = 630
+    Top = 348
+    Width = 628
     Height = 100
     Align = alBottom
     BevelOuter = bvNone
@@ -347,7 +352,7 @@ object Form1: TForm1
     object StatusBar1: TStatusBar
       Left = 0
       Top = 81
-      Width = 630
+      Width = 628
       Height = 19
       AutoHint = True
       Panels = <
@@ -375,7 +380,7 @@ object Form1: TForm1
     object Panel6: TPanel
       Left = 0
       Top = 0
-      Width = 630
+      Width = 628
       Height = 81
       Align = alClient
       BevelOuter = bvNone
@@ -390,7 +395,7 @@ object Form1: TForm1
   object ActionMainMenuBar1: TActionMainMenuBar
     Left = 0
     Top = 0
-    Width = 630
+    Width = 628
     Height = 23
     UseSystemFont = False
     ActionManager = ActionManager
@@ -558,7 +563,6 @@ object Form1: TForm1
   object ApplicationEvents: TApplicationEvents
     OnActivate = ApplicationEventsActivate
     OnException = ApplicationEventsException
-    OnHelp = ApplicationEventsHelp
     OnShowHint = ApplicationEventsShowHint
     OnSettingChange = ApplicationEventsSettingChange
     Left = 288

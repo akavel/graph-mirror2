@@ -48,6 +48,8 @@ __published:	// IDE-managed Components
   TCheckBoxEx *CheckBox2;
   TCheckBoxEx *CheckBox3;
   TCheckBoxEx *CheckBox4;
+  TCheckBoxEx *CheckBox5;
+  TEdit *Edit4;
 	void __fastcall Button1Click(TObject *Sender);
   void __fastcall Button3Click(TObject *Sender);
   void __fastcall ComboBox1KeyPress(TObject *Sender, char &Key);

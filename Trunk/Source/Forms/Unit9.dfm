@@ -15,9 +15,10 @@ object Form9: TForm9
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  FormStyle = fsStayOnTop
   OldCreateOrder = False
   ParentBiDiMode = False
+  PopupMode = pmExplicit
+  PopupParent = Form1.Owner
   Position = poMainFormCenter
   ShowHint = True
   OnEndDock = FormEndDock
@@ -53,6 +54,7 @@ object Form9: TForm9
     Height = 230
     HelpContext = 101
     Anchors = [akLeft, akTop, akRight]
+    ParentBackground = False
     TabOrder = 2
     Visible = False
     inherited Label7: TLabel
@@ -79,6 +81,7 @@ object Form9: TForm9
     Width = 184
     Height = 102
     Anchors = [akLeft, akTop, akRight]
+    ParentBackground = False
     TabOrder = 4
     Visible = False
     ExplicitWidth = 184
@@ -124,15 +127,11 @@ object Form9: TForm9
         ExplicitWidth = 26
       end
       inherited Edit1: TMyEdit
-        Left = 34
-        Width = 146
         OnChange = Edit1Change
         ExplicitLeft = 34
         ExplicitWidth = 146
       end
       inherited Edit2: TMyEdit
-        Left = 34
-        Width = 146
         OnChange = Edit1Change
         ExplicitLeft = 34
         ExplicitWidth = 146
@@ -142,8 +141,6 @@ object Form9: TForm9
         ExplicitWidth = 22
       end
       inherited Edit3: TEdit
-        Left = 34
-        Width = 146
         ExplicitLeft = 34
         ExplicitWidth = 146
       end
@@ -158,6 +155,7 @@ object Form9: TForm9
       'Select where the cursor will be placed when you click on the ima' +
       'ge.'
     Anchors = [akLeft, akTop, akRight]
+    ParentBackground = False
     TabOrder = 3
     Visible = False
     inherited Label7: TLabel
@@ -185,6 +183,7 @@ object Form9: TForm9
     Height = 69
     HelpContext = 100
     Anchors = [akLeft, akTop, akRight]
+    ParentBackground = False
     TabOrder = 1
     Visible = False
     inherited Edit1: TMyEdit
@@ -198,6 +197,7 @@ object Form9: TForm9
     Height = 167
     HelpContext = 100
     Anchors = [akLeft, akTop, akRight]
+    ParentBackground = False
     TabOrder = 0
     Visible = False
     inherited Label4: TLabel

@@ -34,7 +34,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
     FileVersion.Build = 0;
     Version->Caption = ToUString(LoadRes(RES_VERSION, FileVersion.Text()));
     if(Info.FileFlags() & ffDebug)
-      Version->Caption = Version->Caption + " beta";
+      Version->Caption = Version->Caption + " Beta";
     Copyright->Caption = Info.StringValue(L"LegalCopyright").c_str();
   }
   Label2->Caption = EMAIL;

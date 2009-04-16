@@ -58,8 +58,8 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData, int AWidth, int AHe
       ComboBox1->Items->Add(Iter->Name.c_str());
     }
 
-  unsigned ImageWidth = AnimationInfo.Width == 0 ? AWidth : AnimationInfo.Width;
-  unsigned ImageHeight = AnimationInfo.Height == 0 ? AHeight : AnimationInfo.Height;
+  unsigned ImageWidth = AnimationInfo.Width == 0 ? std::min(AWidth, Screen->Width - 50) : AnimationInfo.Width;
+  unsigned ImageHeight = AnimationInfo.Height == 0 ? std::min(AHeight, Screen->Height - 180) : AnimationInfo.Height;
 
   int Index = ComboBox1->Items->IndexOf(ToUString(AnimationInfo.Constant));
   ComboBox1->ItemIndex = Index == -1 ? 0 : Index;

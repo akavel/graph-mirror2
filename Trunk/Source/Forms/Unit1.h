@@ -258,8 +258,6 @@ __published:	// IDE-managed Components
   void __fastcall FormResize(TObject *Sender);
   void __fastcall ApplicationEventsActivate(TObject *Sender);
   void __fastcall Panel2MouseLeave(TObject *Sender);
-  bool __fastcall ApplicationEventsHelp(WORD Command, int Data,
-    bool &CallHelp);
   bool __fastcall Recent1LoadFile(TRecent *Sender,
     String FileName);
   void __fastcall xPageSetupDialogPaintText(TIPageSetupDialog *Sender,
@@ -414,7 +412,6 @@ private:	// User declarations
   const int FixedImages; //Number of fixed images in ImageList1 (The rest are dynamically added and deleted)
   boost::scoped_ptr<struct TImageOptions> ActionImageOptions; //Used when saving as image from menu
 
-  int HelpError; //Errorcode used for showing help file
   int StatusIcon;
   int xZoom, yZoom;
   bool AbortPrinting; //Set in OnClose to signal that we should abort printing
@@ -481,7 +478,6 @@ public:		// User declarations
   void ShowStatusError(const String &Str, TColor = clRed, unsigned Timeout = 5000);
   void CancelStatusError();
   void ShowStatusMessage(const String &Str, bool AutoHint=false);
-  void SetHelpError(int AHelpError) {HelpError = AHelpError;}
   void SetStatusIcon(int AStatusIcon);
 
   void UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected = boost::shared_ptr<TGraphElem>());
