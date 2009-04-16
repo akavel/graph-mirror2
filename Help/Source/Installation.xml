@@ -108,7 +108,7 @@
         		<entry condition="pot"><parameter>/LANG=language</parameter></entry>
         		<entry>
 							Specifies the language to use.
-							<emphasis>language</emphasis> specifies the English name of the language.
+							<markup><emphasis>language</emphasis></markup> specifies the English name of the language.
 							When a valid /LANG parameter is used, the <guilabel>Select language</guilabel> dialog will be suppressed.
 						</entry>
       		</row>

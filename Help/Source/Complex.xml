@@ -25,6 +25,13 @@
 				<mathphrase>abs(z)</mathphrase> always returns a postive real value.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Absolute_value">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/AbsoluteValue.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -52,6 +59,13 @@
 				<mathphrase>arg(0)</mathphrase> is undefined.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Arg_(mathematics)">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/ComplexArgument.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -74,6 +88,13 @@
 				The function is defined as: <mathphrase>conj(z) = re(z) - &imag;*im(z)</mathphrase>.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Complex_conjugation">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/ComplexConjugate.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -95,6 +116,13 @@
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Real_part">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/RealPart.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -115,6 +143,13 @@
 			  The <function>im</function> function returns the imaginary part of <parameter>z</parameter>.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 			</para>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Imaginary_part">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/ImaginaryPart.html">MathWorld</ulink></member>
+			</simplelist>
 		</simplesect>
 	</section>
 </section>

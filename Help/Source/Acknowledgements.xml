@@ -13,7 +13,7 @@
 		<title>Libraries</title>
 		<simplelist>
 			<member>Graph uses dxgettext as translation library:</member>
-			<member><orgname>Copyright &copy; Lars B. Dybdahl <email>Lars@dybdahl.dk</email> et al.</orgname></member>
+			<member><orgname>Copyright &copy; Lars B. Dybdahl (<email>Lars@dybdahl.dk</email>) et al.</orgname></member>
 			<member><ulink url="http://dybdahl.dk/dxgettext/"/></member>
 		</simplelist>
 

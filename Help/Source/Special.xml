@@ -34,6 +34,13 @@
 				Instead the calculation is done using Simpson's formula through 100 iterations.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Integral">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/Integral.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -61,6 +68,13 @@
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Summation">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/Sum.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -87,6 +101,13 @@
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Multiplication#Capital_pi_notation">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/Product.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -109,6 +130,13 @@
 				The function is defined as <mathphrase>fact(n)=n(n-1)(n-2)...1</mathphrase>,
 				and relates to the <function linkend="gamma">gamma</function> function as <mathphrase>fact(n)=gamma(n+1)</mathphrase>.
 			</para>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Factorial">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/Factorial.html">MathWorld</ulink></member>
+			</simplelist>
 		</simplesect>
 	</section>
 
@@ -140,6 +168,13 @@
 				This cannot be calculated precisely, so Graph is using the so-called Lanczos approximation to calculate the <function>gamma</function> function.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Gamma_function">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/GammaFunction.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -162,6 +197,13 @@
 				The <function>beta</function> function relates to the <function linkend="gamma">gamma</function> function as
 				<mathphrase>beta(m, n) = gamma(m) * gamma(n) / gamma(m+n)</mathphrase>.
 			</para>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Beta_function">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/BetaFunction.html">MathWorld</ulink></member>
+			</simplelist>
 		</simplesect>
 	</section>
 
@@ -192,6 +234,13 @@
 				For real values of <parameter>z</parameter> when <mathphrase><parameter>z</parameter> &lt; -1/e</mathphrase>, the <function>W</function> function will evaluate to values with an imaginary part.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Lambert_w_function">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/LambertW-Function.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -219,6 +268,13 @@
 				The <function>zeta</function> function is defined for the whole complex plane except for the pole at <parameter>z</parameter>=1.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Riemann_zeta_function">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/RiemannZetaFunction.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -243,6 +299,13 @@
 				When <mathphrase><parameter>n</parameter>=0</mathphrase>, <function>mod</function> returns 0.
 				<parameter>m</parameter> and <parameter>n</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
 			</para>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Modular_arithmetic">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/Congruence.html">MathWorld</ulink></member>
+			</simplelist>
 		</simplesect>
 	</section>
 
@@ -272,6 +335,13 @@
   				<imageobject role="html"><imagedata  format="EMF"  fileref="Dnorm.emf"/></imageobject>
 				</mediaobject>
 			</para>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Normal_distribution">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/NormalDistribution.html">MathWorld</ulink></member>
+			</simplelist>
 		</simplesect>
 	</section>
 </section>

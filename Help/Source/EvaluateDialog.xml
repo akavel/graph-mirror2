@@ -6,6 +6,9 @@
 <section id="EvaluateDialog">
 	<?dbhh topicname="IDH_DIALOG_EVALUATE" topicid="100"?>
 	<title>Evaluate</title>
+	<indexterm><primary>evaluate</primary></indexterm>
+	<indexterm><primary>area</primary></indexterm>
+	<indexterm><primary>length of path</primary></indexterm>
 	<para>
 		This dialog is used for interactive calculations on functions.
 		The dialog may be docked below the function list, which is default, or undocked as a floating dialog.
@@ -45,7 +48,7 @@
 					<term>Function</term>
 					<listitem>
 						<para>
-							The cursor will snap to the nearest point on the selected function.
+							The cursor will snap to the nearest point of the selected function.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -82,7 +85,7 @@
 					</listitem>
 				</varlistentry>
 				<varlistentry>
-					<term>Extreme y-value (Extremum)</term>
+					<term>Extreme y-value</term>
 					<listitem>
 						<para>
 							The cursor will snap to the nearest local extreme value for the y-coordinate.
@@ -102,7 +105,6 @@
 				<guimenuitem>Area</guimenuitem>
 			</menuchoice>
 			is selected the dialog is used to calculate signed areas.
-			This can only be done on standard functions, polar functions and tangents, but not on parametric functions.
 			For standard functions, parametric functions and tangents the result is the signed area between the graph and the x-axis
 			(the real x-axis and not necessarily the visible one) for the given range.
 		</para>

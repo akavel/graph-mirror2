@@ -16,6 +16,7 @@
 
 
   <xsl:param name="admon.graphics" select="1"/>
+  <xsl:param name="email.delimiters.enabled" select="0"/> <!-- Don't show angle brackets around email addresses -->
 
   <xsl:attribute-set name="admonition.title.properties">
     <xsl:attribute name="font-size">14pt</xsl:attribute>

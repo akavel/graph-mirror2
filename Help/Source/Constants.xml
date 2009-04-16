@@ -34,5 +34,12 @@
 				<function>rand</function> uses a multiplicative congruential random number generator with period 2 to the 32<superscript>nd</superscript> power to return successive pseudo-random numbers in the range from 0 to 1.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Random_number_generator#Computational_methods">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/RandomNumber.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 </section>

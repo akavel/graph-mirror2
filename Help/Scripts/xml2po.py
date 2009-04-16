@@ -889,6 +889,7 @@ else:
             outtxt = getTranslation(tcmsg)
         else:
             outtxt = ''
-        CurrentXmlMode.postProcessXmlTranslation(doc, translationlanguage, outtxt, getTranslation("Translator:"))
+
+        CurrentXmlMode.postProcessXmlTranslation(doc, translationlanguage, outtxt, getTranslation("Translator:") if getTranslation("Translator:") else "Translator:")
     out.write(doc.serialize('utf-8', 1))
 
