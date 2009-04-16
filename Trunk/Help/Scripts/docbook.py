@@ -53,7 +53,7 @@ class docbookXmlMode:
     def getIgnoredTags(self):
         "Returns array of tags to be ignored."
         return  self.objects + self.lists + ['firstname', 'surname', 'personname', 'year', 'holder', 'orgname', 'ulink',
-          'superscript', 'subscript', 'application', 'acronym']
+          'superscript', 'subscript', 'application', 'acronym', 'emphasis']
 
     def getFinalTags(self):
         "Returns array of tags to be considered 'final'."
@@ -183,16 +183,17 @@ class docbookXmlMode:
                         ai.addChild(copy)
                     if match.group(3):
                         copy.newChild(None, "year", match.group(3).encode('utf-8'))
+                    holder = libxml2.newNode("othername")
                     if match.group(1) and match.group(2):
-                        holder = match.group(1)+"(%s)" % match.group(2)
+                        holder.setContent((match.group(1)+"(").encode('utf-8'))
+                        holder.newChild(None, "email", match.group(2).encode('utf-8'))
+                        holder.addContent(")")
                     elif match.group(1):
-                        holder = match.group(1)
+                        holder.setContent(match.group(1).encode('utf-8'))
                     elif match.group(2):
-                        holder = match.group(2)
-                    else:
-                        holder = "???"
+                        holder.setContent(match.group(2).encode('utf-8'))
                     copy.newChild(None, "contrib", translation.encode('utf-8'))
-                    copy.newChild(None, "othername", holder.encode('utf-8'))
+                    copy.addChild(holder)
 
 # Perform some tests when ran standalone
 if __name__ == '__main__':

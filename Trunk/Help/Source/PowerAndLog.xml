@@ -45,6 +45,13 @@
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Exponential_function">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/ExponentialFunction.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -66,6 +73,13 @@
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 				If the calculation is done with real numbers, the argument is only defined for <parameter>z</parameter> &ge; 0.
 			</para>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Square_root">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/SquareRoot.html">MathWorld</ulink></member>
+			</simplelist>
 		</simplesect>
 	</section>
 
@@ -103,6 +117,13 @@
 				Instead of <mathphrase>x^(1/3)</mathphrase>, you can use <mathphrase>root(3, x)</mathphrase>.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Nth_root">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/RadicalRoot.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -128,6 +149,13 @@
 				When calculating with complex numbers, <parameter>z</parameter> is defined for all numbers except <parameter>z</parameter>=0.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Natural_logarithm">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/NaturalLogarithm.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -150,6 +178,13 @@
 				If the calculation is done with real numbers, the argument is only defined for <parameter>z</parameter>>0.
 				When calculating with complex numbers, <parameter>z</parameter> is defined for all numbers except <parameter>z</parameter>=0.
 			</para>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Common_logarithm">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/CommonLogarithm.html">MathWorld</ulink></member>
+			</simplelist>
 		</simplesect>
 	</section>
 
@@ -174,6 +209,13 @@
 				When calculating with complex numbers, <parameter>z</parameter> is defined for all numbers except <parameter>z</parameter>=0.
 				<parameter>n</parameter> must evaluate to a positive real number.
 			</para>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Logarithm">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/Logarithm.html">MathWorld</ulink></member>
+			</simplelist>
 		</simplesect>
 	</section>
 </section>

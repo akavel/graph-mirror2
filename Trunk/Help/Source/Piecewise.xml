@@ -26,6 +26,13 @@
 				When <parameter>z</parameter> evaluates to a complex number, <mathphrase>sign(z)</mathphrase> returns <mathphrase>z/abs(z)</mathphrase>.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Sign_function">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/Sign.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -47,6 +54,13 @@
 				The function is undefined when <parameter>z</parameter> has an imaginary part.
 				<mathphrase>u(z)</mathphrase> returns 1 for <parameter>z</parameter>&ge;0 and 0 for <parameter>z</parameter>&lt;0.
 			</para>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Unit_step#Discrete_form">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/HeavisideStepFunction.html">MathWorld</ulink></member>
+			</simplelist>
 		</simplesect>
 	</section>
 

@@ -26,6 +26,13 @@
 				If <parameter>z</parameter> is a complex number, the function returns <mathphrase>trunc(re(z))+trunc(im(z))&imag;</mathphrase>.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Truncate">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/Truncate.html">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -51,6 +58,13 @@
 				If <parameter>z</parameter> is a complex number, the function returns <mathphrase>fract(re(z))+fract(im(z))&imag;</mathphrase>.
 			</para>
 		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Truncate">Wikipedia</ulink></member>
+				<member><ulink url="http://en.wikipedia.org/wiki/Floor_and_ceiling_functions#Fractional_part">MathWorld</ulink></member>
+			</simplelist>
+		</simplesect>
 	</section>
 
 
@@ -73,6 +87,13 @@
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 				If <parameter>z</parameter> is a complex number, the function returns <mathphrase>ceil(re(z))+ceil(im(z))&imag;</mathphrase>.
 			</para>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Floor_and_ceiling_functions">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/CeilingFunction.html">MathWorld</ulink></member>
+			</simplelist>
 		</simplesect>
 	</section>
 
@@ -97,6 +118,13 @@
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
 				If <parameter>z</parameter> is a complex number, the function returns <mathphrase>floor(re(z))+floor(im(z))&imag;</mathphrase>.
 			</para>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Floor_and_ceiling_functions">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/FloorFunction.html">MathWorld</ulink></member>
+			</simplelist>
 		</simplesect>
 	</section>
 
@@ -129,6 +157,13 @@
 				<member><mathphrase>round(412.4572,1) = 412.5</mathphrase></member>
 				<member><mathphrase>round(412.4572,0) = 412</mathphrase></member>
 				<member><mathphrase>round(412.4572,-2) = 400</mathphrase></member>
+			</simplelist>
+		</simplesect>
+		<simplesect>
+			<title>See also</title>
+			<simplelist>
+				<member><ulink url="http://en.wikipedia.org/wiki/Rounding">Wikipedia</ulink></member>
+				<member><ulink url="http://mathworld.wolfram.com/NearestIntegerFunction.html">MathWorld</ulink></member>
 			</simplelist>
 		</simplesect>
 	</section>
