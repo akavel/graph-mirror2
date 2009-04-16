@@ -153,7 +153,7 @@ void __fastcall TGridPanelEx::UpdateControlOriginalParentSize(TControl *AControl
     TRect Rect = GetClientRect();
     AdjustClientRect(Rect);
     RecalcCellDimensions(Rect);
-    Realign();
+//    Realign();
   }
   int Index = FControlCollection->IndexOf(AControl);
   if(Index > -1)
