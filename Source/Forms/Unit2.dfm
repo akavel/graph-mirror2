@@ -75,14 +75,20 @@ object Form2: TForm2
     object ProductName: TLabel
       Left = 144
       Top = 8
-      Width = 29
-      Height = 13
+      Width = 77
+      Height = 31
       Caption = 'Graph'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
       IsControl = True
     end
     object Version: TLabel
       Left = 144
-      Top = 32
+      Top = 48
       Width = 51
       Height = 13
       Caption = 'Version %s'
@@ -90,7 +96,7 @@ object Form2: TForm2
     end
     object Copyright: TLabel
       Left = 144
-      Top = 72
+      Top = 88
       Width = 68
       Height = 13
       Caption = 'Copyright note'
@@ -120,7 +126,7 @@ object Form2: TForm2
     end
     object Label3: TLabel
       Left = 144
-      Top = 48
+      Top = 64
       Width = 39
       Height = 13
       Caption = 'Build %s'

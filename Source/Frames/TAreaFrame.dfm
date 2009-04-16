@@ -81,15 +81,17 @@ object AreaFrame: TAreaFrame
       ExplicitHeight = 13
     end
     object Edit1: TMyEdit
-      Left = 36
+      Left = 34
       Top = 8
-      Width = 142
+      Width = 146
       Height = 21
       Hint = 
         'Enter the start coordinate or mark the range on the graph itself' +
         ' with the mouse.'
       Align = alClient
       TabOrder = 0
+      ExplicitLeft = 36
+      ExplicitWidth = 142
     end
     object Label2: TLabel
       Left = 4
@@ -102,15 +104,17 @@ object AreaFrame: TAreaFrame
       ExplicitHeight = 13
     end
     object Edit2: TMyEdit
-      Left = 36
+      Left = 34
       Top = 38
-      Width = 142
+      Width = 146
       Height = 21
       Hint = 
         'Enter the end coordinate or mark the range on the graph itself w' +
         'ith the mouse.'
       Align = alClient
       TabOrder = 1
+      ExplicitLeft = 36
+      ExplicitWidth = 142
     end
     object Label3: TLabel
       Left = 4
@@ -123,9 +127,9 @@ object AreaFrame: TAreaFrame
       ExplicitHeight = 13
     end
     object Edit3: TEdit
-      Left = 36
+      Left = 34
       Top = 68
-      Width = 142
+      Width = 146
       Height = 21
       Hint = 
         'Area or length of path calculated for the given range using Simp' +
@@ -134,6 +138,8 @@ object AreaFrame: TAreaFrame
       Color = clBtnFace
       ReadOnly = True
       TabOrder = 2
+      ExplicitLeft = 36
+      ExplicitWidth = 142
     end
   end
 end

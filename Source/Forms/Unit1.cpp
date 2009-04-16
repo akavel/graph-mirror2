@@ -136,7 +136,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   ActionToolBar1->ActionClient->Items->SmallIcons = Property.FontScale < 150;
 
   //Don't create Form9 before settings are loaded. Scaling and other settings are needed in the constructor.
-  Form9.reset(new TForm9(NULL));
+  Form9.reset(new TForm9(this));
 
   //Center main window on the working area
   CenterForm(this);
@@ -1602,16 +1602,6 @@ int TForm1::AddImage(TColor Color, TBrushStyle Style)
   Bitmap->Canvas->Pen->Style = psClear;
   Bitmap->Canvas->Rectangle(0, 0, Bitmap->Width, Bitmap->Height);
   return ImageList1->Add(Bitmap.get(), NULL);
-}
-//---------------------------------------------------------------------------
-bool __fastcall TForm1::ApplicationEventsHelp(WORD Command, int Data,
-      bool &CallHelp)
-{
-  //This function is called from the error dialog shown at EFuncError exceptions
-  //and when Help|Contents is selected
-  if(Command != HELP_FINDER && HelpError)
-    Application->HelpJump(String().sprintf(L"Errors.html#Error%02d", HelpError));
-  return false;
 }
 //---------------------------------------------------------------------------
 bool __fastcall TForm1::Recent1LoadFile(TRecent *Sender, String FileName)

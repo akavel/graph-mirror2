@@ -6,7 +6,7 @@ object Form4: TForm4
   BorderIcons = [biMinimize]
   BorderStyle = bsDialog
   Caption = 'Options'
-  ClientHeight = 329
+  ClientHeight = 357
   ClientWidth = 281
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -25,12 +25,12 @@ object Form4: TForm4
   ShowHint = True
   DesignSize = (
     281
-    329)
+    357)
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
     Left = 10
-    Top = 294
+    Top = 324
     Width = 75
     Height = 25
     Anchors = [akTop, akRight]
@@ -41,7 +41,7 @@ object Form4: TForm4
   end
   object Button2: TButton
     Left = 102
-    Top = 294
+    Top = 324
     Width = 75
     Height = 25
     Anchors = [akTop, akRight]
@@ -52,7 +52,7 @@ object Form4: TForm4
   end
   object Button3: TButton
     Left = 196
-    Top = 294
+    Top = 324
     Width = 75
     Height = 25
     Anchors = [akTop, akRight]
@@ -64,7 +64,7 @@ object Form4: TForm4
     Left = 10
     Top = 10
     Width = 261
-    Height = 276
+    Height = 308
     BevelInner = bvRaised
     BevelOuter = bvLowered
     ColumnCollection = <
@@ -143,29 +143,44 @@ object Form4: TForm4
         Column = 0
         ColumnSpan = 3
         Control = CheckBox1
-        Row = 5
-      end
-      item
-        Column = 0
-        ColumnSpan = 3
-        Control = CheckBox2
         Row = 6
       end
       item
         Column = 0
         ColumnSpan = 3
-        Control = CheckBox3
+        Control = CheckBox2
         Row = 7
       end
       item
         Column = 0
         ColumnSpan = 3
-        Control = CheckBox4
+        Control = CheckBox3
         Row = 8
+      end
+      item
+        Column = 0
+        ColumnSpan = 3
+        Control = CheckBox4
+        Row = 9
+      end
+      item
+        Column = 0
+        ColumnSpan = 2
+        Control = CheckBox5
+        Row = 5
+      end
+      item
+        Column = 2
+        Control = Edit4
+        Row = 5
       end>
     Padding.Left = 3
     Padding.Right = 2
     RowCollection = <
+      item
+        SizeStyle = ssAbsolute
+        Value = 32.000000000000000000
+      end
       item
         SizeStyle = ssAbsolute
         Value = 32.000000000000000000
@@ -206,7 +221,7 @@ object Form4: TForm4
     AutoSize = True
     DesignSize = (
       261
-      276)
+      308)
     object Label1: TLabel
       Left = 8
       Top = 11
@@ -274,7 +289,7 @@ object Form4: TForm4
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 9
+      TabOrder = 11
     end
     object Label2: TLabel
       Left = 8
@@ -404,13 +419,13 @@ object Form4: TForm4
       Hint = 'Select the language to use for the user interface.'
       Style = csDropDownList
       Anchors = [akLeft]
-      ItemHeight = 13
+      ItemHeight = 0
       Sorted = True
       TabOrder = 4
     end
     object CheckBox1: TCheckBoxEx
       Left = 8
-      Top = 167
+      Top = 199
       Width = 104
       Height = 17
       Hint = 'Associate *.grf files with Graph.'
@@ -418,11 +433,11 @@ object Form4: TForm4
       Caption = 'Associate .grf files'
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 5
+      TabOrder = 7
     end
     object CheckBox2: TCheckBoxEx
       Left = 8
-      Top = 195
+      Top = 227
       Width = 77
       Height = 17
       Hint = 'Show the tooltip when the cursor is over an item.'
@@ -430,11 +445,11 @@ object Form4: TForm4
       Caption = 'Show tooltip'
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 6
+      TabOrder = 8
     end
     object CheckBox3: TCheckBoxEx
       Left = 8
-      Top = 223
+      Top = 255
       Width = 133
       Height = 17
       Hint = 
@@ -444,11 +459,11 @@ object Form4: TForm4
       Caption = 'Save workspace on exit'
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 7
+      TabOrder = 9
     end
     object CheckBox4: TCheckBoxEx
       Left = 8
-      Top = 251
+      Top = 283
       Width = 216
       Height = 17
       Hint = 
@@ -456,7 +471,29 @@ object Form4: TForm4
         'm is started to see if a newer version is available.'
       Anchors = [akLeft]
       Caption = 'Check for new version of Graph at startup'
-      TabOrder = 8
+      TabOrder = 10
+    end
+    object CheckBox5: TCheckBoxEx
+      Left = 8
+      Top = 169
+      Width = 143
+      Height = 17
+      Hint = 'Decimal separator used when exporting to other programs.'
+      Anchors = [akLeft]
+      Caption = 'Custom decimal separator:'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 5
+    end
+    object Edit4: TEdit
+      Left = 157
+      Top = 167
+      Width = 20
+      Height = 21
+      Anchors = [akLeft]
+      MaxLength = 1
+      TabOrder = 6
+      Text = '.'
     end
   end
 end

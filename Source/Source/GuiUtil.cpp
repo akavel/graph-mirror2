@@ -295,15 +295,41 @@ int MessageBox(const std::wstring &Text, const std::wstring &Caption, int Flags)
   return MessageBox(Text.c_str(), Caption.c_str(), Flags);
 }
 //---------------------------------------------------------------------------
+class THelpButtonHelper
+{
+  TWndMethod OldWindowProc;
+  int ErrorCode;
+public:
+  THelpButtonHelper(int AErrorCode) : OldWindowProc(NULL), ErrorCode(AErrorCode)
+  {
+    if(Screen->ActiveForm)
+    {
+      OldWindowProc = Screen->ActiveForm->WindowProc;
+      Screen->ActiveForm->WindowProc = &WindowProc;
+    }
+  }
+  ~THelpButtonHelper()
+  {
+    if(Screen->ActiveForm)
+      Screen->ActiveForm->WindowProc = OldWindowProc;
+  }
+  void __fastcall WindowProc(TMessage &Message)
+  {
+    if(Message.Msg == WM_HELP && ErrorCode)
+      Application->HelpJump(String().sprintf(L"Errors.html#Error%02d", ErrorCode));
+    OldWindowProc(Message);
+  }
+};
+//---------------------------------------------------------------------------
 //Shows error message corresponding to ErrorCode in Func
 //If Edit parameter is suported the Edit box gets focus and
 //the cursor position is set to where the error ocoured
 void ShowErrorMsg(const Func32::EFuncError &Error, TCustomEdit *Edit)
 {
   String Str = LoadRes(RES_ERROR) + L" " + Error.ErrorCode;
-  Form1->SetHelpError(Error.ErrorCode);
+  THelpButtonHelper HelpButtonHelper(Error.ErrorCode);
   MessageBox(GetErrorMsg(Error), Str, MB_ICONWARNING | MB_HELP);
-  Form1->SetHelpError(0);
+
   if(Edit)
   {
     SetGlobalFocus(Edit);

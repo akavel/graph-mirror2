@@ -64,12 +64,12 @@ void TAreaFrame::EvalArea(const TBaseFuncType *Func, long double From, long doub
   if(const TPolFunc *PolFunc = dynamic_cast<const TPolFunc*>(Func))
   {
     if(N1 != N2)
-      Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xyPoint(Form1->Data.Axes.yAxis.AxisCross, Form1->Data.Axes.xAxis.AxisCross)));
+      Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xyPoint(0, 0)));
   }
   else
   {
-    Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Max.x, Form1->Data.Axes.xAxis.AxisCross));
-    Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Min.x, Form1->Data.Axes.xAxis.AxisCross));
+    Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Max.x, 0));
+    Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Min.x, 0));
   }
 
   Form1->IPolygon1->Pen->Width = Func->Size;

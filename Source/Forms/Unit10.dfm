@@ -71,6 +71,7 @@ object Form10: TForm10
     BevelInner = bvLowered
     BevelOuter = bvNone
     Color = clWhite
+    ParentBackground = False
     TabOrder = 4
     DesignSize = (
       315
