@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2007-07-30 19:49\n"
-"PO-Revision-Date: 2007-08-19 15:05+0100\n"
+"PO-Revision-Date: 2009-04-17 09:58+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
@@ -1967,7 +1967,7 @@ msgstr "Underversion %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
 msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
-msgstr "Dette er frit software og du er velkommen til at videredistribuere det under de rettigheder og betingelser som findes i GNU General Public License. Fejl og mangler bedes rapporteret til programmøren."
+msgstr "Dette er frit software, og du er velkommen til at videredistribuere det under de rettigheder og betingelser, som findes i GNU General Public License. Fejl og mangler bedes rapporteret til programmøren."
 
 #. Form2("About Graph")..Panel1..Label4("The newest version as well as the source code are available ")..Caption
 msgid "The newest version as well as the source code are available at:"
