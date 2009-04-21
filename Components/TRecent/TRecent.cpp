@@ -76,10 +76,13 @@ void __fastcall TRecent::SetMaxFiles(unsigned Value)
 //---------------------------------------------------------------------------
 void __fastcall TRecent::SetRegistryKey(const String &Value)
 {
-  RemoveMenuItems();//Remove shown menu items
-  FRegistryKey = Value;//Change used registry key
-  ReadFromRegistry();//Read data from new key in registry
-  ShowMenuItems();//Show menu items
+  if(Value != FRegistryKey)
+  {
+    RemoveMenuItems();//Remove shown menu items
+    FRegistryKey = Value;//Change used registry key
+    ReadFromRegistry();//Read data from new key in registry
+    ShowMenuItems();//Show menu items
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TRecent::SetFileMenu(TActionClients *Value)

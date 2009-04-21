@@ -35,7 +35,6 @@ class TGrid : public TDrawGrid
   TEditorKeyPressEvent FOnEditorKeyPress;
   TGetTextEvent FOnGetText;
   TSetTextEvent FOnSetText;
-  bool FReplaceDecimalSeparator;
   TPopupMenu *FEditorPopupMenu;
   int EditUpdate; //>0 indicates update triggered from change in Inplace Editor
 
@@ -71,8 +70,8 @@ class TGrid : public TDrawGrid
 
   TGridOptions __fastcall GetOptions(){return TDrawGrid::Options;};
   void AjustRows();
-  void ImportText(String Str);
-  String ExportText(char Delimiter);
+  void ImportText(String Str, wchar_t DecimalSeparator);
+  String ExportText(wchar_t Delimiter, wchar_t DecimalSeparator);
   void __fastcall SetEditorPopupMenu(TPopupMenu *Menu);
   TGridRect GetCompleteGridRect();
   String DoGetText(unsigned ACol, unsigned ARow);
@@ -85,8 +84,8 @@ class TGrid : public TDrawGrid
   //Declare function to handle WM_SetCursor
   void __fastcall WMSetCursor(TMessage &Message);
   void __fastcall WMTimer(TMessage &Message);
-  void CopyTextToClipboard();
-  void CopyRtfToClipboard();
+  void CopyTextToClipboard(wchar_t DecimalSeparator);
+  void CopyRtfToClipboard(wchar_t DecimalSeparator);
   void SetClipboardData(unsigned int Format, void *Data, unsigned int DataSize);
 BEGIN_MESSAGE_MAP
   VCL_MESSAGE_HANDLER(WM_SETCURSOR, TMessage, WMSetCursor)
@@ -98,12 +97,12 @@ public:
   void SelectAll();
   void ClearAll();
   void ClearSelection();
-  void CopyToClipboard();
-  void CutToClipboard();
-  void PasteFromClipboard();
+  void CopyToClipboard(wchar_t DecimalSeparator);
+  void CutToClipboard(wchar_t DecimalSeparator);
+  void PasteFromClipboard(wchar_t DecimalSeparator);
   bool CanCopy();
-  bool ImportFromFile(const String &FileName);
-  bool ExportToFile(const String &FileName, char Delimiter, bool Utf8=false);
+  bool ImportFromFile(const String &FileName, wchar_t DecimalSeparator);
+  bool ExportToFile(const String &FileName, wchar_t Delimiter, bool Utf8=false);
   void AutoSizeCol(int ColIndex);
   void LastCell();
   void NextCell();
@@ -122,7 +121,6 @@ __published:
   __property int MinRowHeight = {read=FMinRowHeight, write=SetMinRowHeight};
   __property bool AutoAddRows = {read=FAutoAddRows, write=FAutoAddRows, default=false};
   __property bool ExportFixedRows = {read=FExportFixedRows, write=FExportFixedRows, default=true};
-  __property bool ReplaceDecimalSeparator = {read=FReplaceDecimalSeparator, write=FReplaceDecimalSeparator, default=true};
   __property TPopupMenu* EditorPopupMenu = {read=FEditorPopupMenu, write=SetEditorPopupMenu, default=NULL};
   __property TStrings* TitleCaptions = {read=GetTitleCaptions, write=SetTitleCaptions};
 
