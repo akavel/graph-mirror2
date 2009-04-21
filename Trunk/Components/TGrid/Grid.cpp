@@ -36,7 +36,7 @@ namespace Grid
 __fastcall TGrid::TGrid(TComponent* Owner)
  : TDrawGrid(Owner), FSelectCols(true), FSelectRows(true), FPopupMenu(NULL),
    LeftButtonPressed(false), FAutoAddRows(false), FOnEditorKeyPress(NULL),
-   FReplaceDecimalSeparator(true), FEditorPopupMenu(NULL), FOnGetText(NULL), FOnSetText(NULL),
+   FEditorPopupMenu(NULL), FOnGetText(NULL), FOnSetText(NULL),
    FExportFixedRows(true)
 {
   //Initialize to invalid value
@@ -456,12 +456,12 @@ void TGrid::ClearSelection()
   AjustRows();
 }
 //---------------------------------------------------------------------------
-void TGrid::CopyTextToClipboard()
+void TGrid::CopyTextToClipboard(wchar_t DecimalSeparator)
 {
-  Clipboard()->AsText = ExportText('\t');
+  Clipboard()->AsText = ExportText('\t', DecimalSeparator);
 }
 //---------------------------------------------------------------------------
-String TGrid::ExportText(char Delimiter)
+String TGrid::ExportText(wchar_t Delimiter, wchar_t DecimalSeparator)
 {
   String Str;
   TGridRect GridRect = Selection;
@@ -481,7 +481,7 @@ String TGrid::ExportText(char Delimiter)
 
   if(Empty)
     GridRect.Bottom--;
-                                 
+
   for(int ARow = GridRect.Top; ARow <= GridRect.Bottom; ARow++)
   {
     for(int ACol = GridRect.Left; ACol <= GridRect.Right; ACol++)
@@ -495,17 +495,15 @@ String TGrid::ExportText(char Delimiter)
   }
 
   //Replace decimal separator if it is different than '.'
-  wchar_t DecimalBuffer[2];
-  if(ReplaceDecimalSeparator && GetLocaleInfo(LOCALE_USER_DEFAULT,LOCALE_SDECIMAL, DecimalBuffer, sizeof(DecimalBuffer)))
-    if(DecimalBuffer[0] != '.')
-      for(int I = 1; I <= Str.Length(); I++)
-        if(Str[I] == '.')
-          Str[I] = DecimalBuffer[0];
+  if(DecimalSeparator != 0 && DecimalSeparator != '.')
+    for(int I = 1; I <= Str.Length(); I++)
+      if(Str[I] == '.')
+        Str[I] = DecimalSeparator;
   return Str;
 }
 //---------------------------------------------------------------------------
 //This function copies all selected cells to the clipboard
-void TGrid::CopyToClipboard()
+void TGrid::CopyToClipboard(wchar_t DecimalSeparator)
 {
   if(EditorMode)
   {
@@ -513,26 +511,26 @@ void TGrid::CopyToClipboard()
     return;
   }
   Clipboard()->Open();
-  CopyTextToClipboard();
-  CopyRtfToClipboard();
+  CopyTextToClipboard(DecimalSeparator);
+  CopyRtfToClipboard(DecimalSeparator);
   Clipboard()->Close();
 }
 //---------------------------------------------------------------------------
 //This function cuts all selected cells to the clipboard
-void TGrid::CutToClipboard()
+void TGrid::CutToClipboard(wchar_t DecimalSeparator)
 {
-  CopyToClipboard();
+  CopyToClipboard(DecimalSeparator);
   ClearSelection();
 }
 //---------------------------------------------------------------------------
 //This function pastes text from the clipboard and places it in the cells
 //begining with the top left cell of the selection
-void TGrid::PasteFromClipboard()
+void TGrid::PasteFromClipboard(wchar_t DecimalSeparator)
 {
-  ImportText(Clipboard()->AsText);
+  ImportText(Clipboard()->AsText, DecimalSeparator);
 }
 //---------------------------------------------------------------------------
-void TGrid::ImportText(String Str)
+void TGrid::ImportText(String Str, wchar_t DecimalSeparator)
 {
   //If there is only one cell to insert: Paste at cursor position
   if(Str.Pos('\n') == 0 && EditorMode)
@@ -542,12 +540,10 @@ void TGrid::ImportText(String Str)
   }
 
   //Replace decimal separator if it is different than '.'
-  wchar_t DecimalBuffer[2];
-  if(ReplaceDecimalSeparator && GetLocaleInfo(LOCALE_USER_DEFAULT, LOCALE_SDECIMAL, DecimalBuffer, sizeof(DecimalBuffer)))
-    if(DecimalBuffer[0] != '.')
-      for(int I = 1; I <= Str.Length(); I++)
-        if(Str[I] == DecimalBuffer[0])
-          Str[I] = '.';
+  if(DecimalSeparator != 0 && DecimalSeparator != '.')
+    for(int I = 1; I <= Str.Length(); I++)
+      if(Str[I] == DecimalSeparator)
+        Str[I] = '.';
 
   int ACol = Selection.Left;
   int ARow = Selection.Top;
@@ -765,7 +761,7 @@ void __fastcall TGrid::SetMinColWidth(int Value)
   }
 }
 //---------------------------------------------------------------------------
-void TGrid::CopyRtfToClipboard()
+void TGrid::CopyRtfToClipboard(wchar_t DecimalSeparator)
 {
   TGridRect GridRect = Selection;
   //If complete coloumns are selected, also copy the fixed row
@@ -836,12 +832,10 @@ void TGrid::CopyRtfToClipboard()
   Str += "}";
 
   //Replace decimal separator if it is different than '.'
-  wchar_t DecimalBuffer[2];
-  if(ReplaceDecimalSeparator && GetLocaleInfo(LOCALE_USER_DEFAULT,LOCALE_SDECIMAL, DecimalBuffer, sizeof(DecimalBuffer)))
-    if(DecimalBuffer[0] != '.')
-      for(int I = 1; I <= Str.Length(); I++)
-        if(Str[I] == '.')
-          Str[I] = DecimalBuffer[0];
+  if(DecimalSeparator != 0 && DecimalSeparator != '.')
+    for(int I = 1; I <= Str.Length(); I++)
+      if(Str[I] == '.')
+        Str[I] = DecimalSeparator;
 
   //Copy rtf text to clipboard
   unsigned int RtfFormat = RegisterClipboardFormat(L"Rich Text Format");
@@ -948,7 +942,7 @@ void TGrid::AjustRows()
 void __fastcall TMyInplaceEdit::WMPaste(TMessage &Message)
 {
   if(TGrid *MyGrid = dynamic_cast<TGrid*>(Grid))
-    MyGrid->PasteFromClipboard();
+    MyGrid->PasteFromClipboard(0);
 }
 //---------------------------------------------------------------------------
 void TGrid::InsertRows(int Index, int Count)
@@ -1006,7 +1000,7 @@ bool TGrid::CanCopy()
   return true;
 }
 //---------------------------------------------------------------------------
-bool TGrid::ImportFromFile(const String &FileName)
+bool TGrid::ImportFromFile(const String &FileName, wchar_t DecimalSeparator)
 {
   std::ifstream Stream(FileName.c_str());
   if(!Stream)
@@ -1016,11 +1010,11 @@ bool TGrid::ImportFromFile(const String &FileName)
   std::string Str;
   std::getline(Stream, Str, '§'); //Read whole file (up to non existing delimiter)
 
-  ImportText(Str.c_str());
+  ImportText(Str.c_str(), DecimalSeparator);
   return true;
 }
 //---------------------------------------------------------------------------
-bool TGrid::ExportToFile(const String &FileName, char Delimiter, bool Utf8)
+bool TGrid::ExportToFile(const String &FileName, wchar_t Delimiter, bool Utf8)
 {
   //Save binary; \r\n is already used as line feed
   std::ofstream Stream(FileName.c_str(), std::ios::binary);
@@ -1029,10 +1023,10 @@ bool TGrid::ExportToFile(const String &FileName, char Delimiter, bool Utf8)
   if(Utf8)
   {
     Stream << "\xEF\xBB\xBF"; //Start with Byte Order Marker
-    Stream << UTF8Encode(ExportText(Delimiter)).c_str();
+    Stream << UTF8Encode(ExportText(Delimiter, DecimalSeparator)).c_str();
   }
   else
-    Stream << AnsiString(ExportText(Delimiter)).c_str();
+    Stream << AnsiString(ExportText(Delimiter, DecimalSeparator)).c_str();
   return true;
 }
 //---------------------------------------------------------------------------
