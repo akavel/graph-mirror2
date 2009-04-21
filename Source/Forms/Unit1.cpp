@@ -1463,8 +1463,8 @@ void __fastcall TForm1::UpdateEval()
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormResize(TObject *Sender)
 {
-  if(Panel2->Width < Splitter1->MinSize)
-    TreeView->Width = TreeView->Width - (Splitter1->MinSize - Panel2->Width);
+  if(Panel3->Width > ClientWidth - Splitter1->MinSize)
+    Panel3->Width = ClientWidth - Splitter1->MinSize;
   ActionToolBar1->Align = alTop;
 }
 //---------------------------------------------------------------------------

@@ -68,17 +68,17 @@ void __fastcall TForm14::FormShow(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Popup_CutClick(TObject *Sender)
 {
-  Grid->CutToClipboard();
+  Grid->CutToClipboard(Property.DecimalSeparator);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Popup_CopyClick(TObject *Sender)
 {
-  Grid->CopyToClipboard();
+  Grid->CopyToClipboard(Property.DecimalSeparator);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Popup_PasteClick(TObject *Sender)
 {
-  Grid->PasteFromClipboard();
+  Grid->PasteFromClipboard(Property.DecimalSeparator);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Popup_DeleteClick(TObject *Sender)
@@ -361,7 +361,7 @@ void __fastcall TForm14::Popup_ImportClick(TObject *Sender)
   OpenDialog1->Filter = LoadRes(RES_DATA_FILTER);
   if(OpenDialog1->Execute())
   {
-    Grid->ImportFromFile(OpenDialog1->FileName);
+    Grid->ImportFromFile(OpenDialog1->FileName, Property.DecimalSeparator);
     int Row = Grid->Selection.Top;
     if(Grid->Cells[0][Row] == L"X" && Grid->Cells[1][Row] == L"Y")
       Grid->RemoveRows(Row, 1);

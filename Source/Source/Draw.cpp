@@ -341,6 +341,8 @@ void TDraw::PreCalcXAxis()
   {
     int TextDist = Size(40);
     int Ticks = AxesRect.Width() / TextDist;
+    if(Ticks == 0)
+      Ticks = 1;
     double Dist = (Axes.xAxis.LogScl ? std::log10(Axes.xAxis.Max / Axes.xAxis.Min) : Axes.xAxis.Max - Axes.xAxis.Min) / Ticks;
     if(Axes.xAxis.LogScl)
       Axes.xAxis.TickUnit = std::pow10(std::ceil(Dist));
@@ -406,6 +408,7 @@ void TDraw::PreCalcYAxis()
 void TDraw::RedrawAxes()
 {
   AxesRect = TRect(0, 0, Width, Height);
+
   Context.SetFont(Axes.NumberFont);
   NumberHeight = Context.GetTextHeight("1");
 

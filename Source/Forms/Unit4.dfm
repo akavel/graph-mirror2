@@ -229,6 +229,7 @@ object Form4: TForm4
       Height = 13
       Anchors = [akLeft]
       Caption = 'Decimals:'
+      FocusControl = Edit1
       ExplicitTop = 10
     end
     object Panel1: TPanel
@@ -298,6 +299,7 @@ object Form4: TForm4
       Height = 13
       Anchors = [akLeft]
       Caption = 'Recent files:'
+      FocusControl = Edit2
       ExplicitTop = 95
     end
     object Panel2: TPanel
@@ -305,16 +307,20 @@ object Form4: TForm4
       Top = 39
       Width = 61
       Height = 21
-      Anchors = []
+      Anchors = [akLeft]
       AutoSize = True
       BevelOuter = bvNone
       TabOrder = 1
+      DesignSize = (
+        61
+        21)
       object Edit2: TEdit
         Left = 0
         Top = 0
         Width = 46
         Height = 21
         Hint = 'The number of most recent used files shown in the File menu.'
+        Anchors = [akLeft]
         ParentShowHint = False
         ShowHint = True
         TabOrder = 0
@@ -338,16 +344,20 @@ object Form4: TForm4
       Height = 13
       Anchors = [akLeft]
       Caption = 'Max undo steps:'
+      FocusControl = Edit3
     end
     object Panel3: TPanel
       Left = 91
       Top = 71
       Width = 61
       Height = 21
-      Anchors = []
+      Anchors = [akLeft]
       AutoSize = True
       BevelOuter = bvNone
       TabOrder = 2
+      DesignSize = (
+        61
+        21)
       object Edit3: TEdit
         Left = 0
         Top = 0
@@ -356,6 +366,7 @@ object Form4: TForm4
         Hint = 
           'Maximum number of undo steps saved. Set this to 0 to prevent und' +
           'o.'
+        Anchors = [akLeft]
         TabOrder = 0
         Text = '50'
       end
@@ -378,6 +389,7 @@ object Form4: TForm4
       Height = 13
       Anchors = [akLeft]
       Caption = 'Font scale:'
+      FocusControl = ComboBox1
       ExplicitTop = 122
     end
     object ComboBox1: TComboBox
@@ -409,6 +421,7 @@ object Form4: TForm4
       Height = 13
       Anchors = [akLeft]
       Caption = 'Language:'
+      FocusControl = ComboBox2
       ExplicitTop = 121
     end
     object ComboBox2: TComboBox
@@ -419,7 +432,7 @@ object Form4: TForm4
       Hint = 'Select the language to use for the user interface.'
       Style = csDropDownList
       Anchors = [akLeft]
-      ItemHeight = 0
+      ItemHeight = 13
       Sorted = True
       TabOrder = 4
     end
@@ -478,18 +491,22 @@ object Form4: TForm4
       Top = 169
       Width = 143
       Height = 17
-      Hint = 'Decimal separator used when exporting to other programs.'
+      Hint = 
+        'Use a custom decimal separator instead of the default from the W' +
+        'indows Regional settings.'
       Anchors = [akLeft]
       Caption = 'Custom decimal separator:'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 5
+      OnClick = CheckBox5Click
     end
     object Edit4: TEdit
       Left = 157
       Top = 167
       Width = 20
       Height = 21
+      Hint = 'Decimal separator used when exporting to other programs.'
       Anchors = [akLeft]
       MaxLength = 1
       TabOrder = 6

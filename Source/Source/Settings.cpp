@@ -186,6 +186,11 @@ void TProperty::Read(const TConfigRegistry &Registry)
   ShowTipsAtStartup = Registry.Read(L"ShowTipsAtStartup", ShowTipsAtStartup);
   NextTip = Registry.Read(L"NextTip", NextTip) + RES_FIRST_TIP; //Tips in registry count from 0
   FontScale = Registry.Read(L"FontScale", FontScale);
+
+  DecimalSeparator = Registry.Read(L"DecimalSeparator", L'\0');
+  CustomDecimalSeparator = DecimalSeparator != 0;
+  if(!CustomDecimalSeparator)
+    DecimalSeparator = GetLocaleChar(GetThreadLocale(), LOCALE_SDECIMAL, '.');
 }
 //---------------------------------------------------------------------------
 void TProperty::Write(TConfigRegistry &Registry)
@@ -210,6 +215,7 @@ void TProperty::Write(TConfigRegistry &Registry)
   Registry.Write("NextTip", NextTip - RES_FIRST_TIP); //Tips in registry count from 0
 
   Registry.Write("FontScale", FontScale);
+  Registry.Write("DecimalSeparator", CustomDecimalSeparator ? DecimalSeparator : 0);
 }
 //---------------------------------------------------------------------------
 /////////////////////

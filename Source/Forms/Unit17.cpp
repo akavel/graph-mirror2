@@ -114,17 +114,17 @@ void __fastcall TForm17::Grid1EditorKeyPress(TInplaceEdit *InplaceEdit, char &Ke
 //---------------------------------------------------------------------------
 void __fastcall TForm17::Popup_CutClick(TObject *Sender)
 {
-  Grid1->CutToClipboard();
+  Grid1->CutToClipboard(0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm17::Popup_CopyClick(TObject *Sender)
 {
-  Grid1->CopyToClipboard();
+  Grid1->CopyToClipboard(0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm17::Popup_PasteClick(TObject *Sender)
 {
-  Grid1->PasteFromClipboard();
+  Grid1->PasteFromClipboard(0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm17::Popup_DeleteClick(TObject *Sender)
@@ -141,7 +141,7 @@ void __fastcall TForm17::Popup_ImportClick(TObject *Sender)
 {
   OpenDialog1->Filter = LoadRes(RES_DATA_FILTER);
   if(OpenDialog1->Execute())
-    Grid1->ImportFromFile(OpenDialog1->FileName);
+    Grid1->ImportFromFile(OpenDialog1->FileName, 0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm17::Popup_ExportClick(TObject *Sender)

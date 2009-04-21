@@ -44,6 +44,10 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
   ScaleForm(this);
   ClientWidth = GridPanelEx1->Width + GridPanelEx1->Left * 2;
   ComboBox1->SelLength = 0; //Don't know why this is necesarry
+
+  CheckBox5->Checked = Property.CustomDecimalSeparator;
+  Edit4->Text = Property.DecimalSeparator;
+  Edit4->Enabled = CheckBox5->Checked;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Button1Click(TObject *Sender)
@@ -81,6 +85,12 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
   Property.SavePos = CheckBox3->Checked;
   Property.CheckForUpdate = CheckBox4->Checked;
 
+  Property.CustomDecimalSeparator = CheckBox5->Checked;
+  if(Property.CustomDecimalSeparator && Edit4->Text.Length() > 0)
+    Property.DecimalSeparator = Edit4->Text[1];
+  else
+    Property.DecimalSeparator = GetLocaleChar(GetThreadLocale(), LOCALE_SDECIMAL, '.');
+
   //Load new resource dll if the setting was changed
   if(OldLanguageIndex != ComboBox2->ItemIndex && ComboBox2->ItemIndex != -1)
   {
@@ -107,6 +117,11 @@ void __fastcall TForm4::ComboBox1KeyPress(TObject *Sender, char &Key)
 {
   if(!std::isdigit(Key) && Key != VK_BACK && Key != '%')
     Key = 0;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm4::CheckBox5Click(TObject *Sender)
+{
+  Edit4->Enabled = CheckBox5->Checked;
 }
 //---------------------------------------------------------------------------
 

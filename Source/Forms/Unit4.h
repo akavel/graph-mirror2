@@ -53,6 +53,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button1Click(TObject *Sender);
   void __fastcall Button3Click(TObject *Sender);
   void __fastcall ComboBox1KeyPress(TObject *Sender, char &Key);
+  void __fastcall CheckBox5Click(TObject *Sender);
 private:	// User declarations
   int OldLanguageIndex; //Saved language index in ComboBox
   TData &Data;
