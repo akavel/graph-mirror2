@@ -245,7 +245,7 @@ void TForm15::ShowTable(const TBaseFuncType *F)
 //---------------------------------------------------------------------------
 void __fastcall TForm15::Popup1_CopyClick(TObject *Sender)
 {
-  Grid1->CopyToClipboard();
+  Grid1->CopyToClipboard(Property.DecimalSeparator);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm15::Popup1_SelectClick(TObject *Sender)

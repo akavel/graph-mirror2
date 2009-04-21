@@ -79,7 +79,6 @@ object Form17: TForm17
     TabOrder = 0
     AutoAddRows = True
     ExportFixedRows = False
-    ReplaceDecimalSeparator = False
     EditorPopupMenu = PopupMenu1
     TitleCaptions.Strings = (
       'Names'

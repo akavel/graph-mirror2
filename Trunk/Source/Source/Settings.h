@@ -109,6 +109,8 @@ struct TProperty
   unsigned NextTip;
   std::wstring Language;
   int FontScale; //Window scale in percent
+  bool CustomDecimalSeparator; //Default system decimal separator is used when false
+  wchar_t DecimalSeparator;    //Decimal separator used when exporting files
 
   TProperty();
   void Read(const class TConfigRegistry &Registry);

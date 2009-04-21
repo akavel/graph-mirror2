@@ -24,6 +24,7 @@
 __fastcall TForm9::TForm9(TComponent* Owner)
     : TForm(Owner), VisibleFrame(NULL), SizeDif(Height - ClientHeight), EvalType(etEval)
 {
+  TP_GlobalIgnoreClassProperty(__classid(TForm), "PopupParent");
   BiDiMode = bdLeftToRight;
   StdFuncStrings->Assign(StdFuncFrame1->ComboBox1->Items);
   ParFuncStrings->Assign(ParFuncFrame1->ComboBox1->Items);
