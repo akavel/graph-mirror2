@@ -66,19 +66,30 @@ const TNameValue HResultList[] =
   NAME_VALUE_ENTRY(E_INVALIDARG),
   NAME_VALUE_ENTRY(E_NOINTERFACE),
   NAME_VALUE_ENTRY(RPC_E_SERVERFAULT),
+  NAME_VALUE_ENTRY(OLE_E_STATIC),
+  NAME_VALUE_ENTRY(ERROR_MOD_NOT_FOUND),
   NAME_VALUE_END
 };
 //---------------------------------------------------------------------------
-HRESULT DebugLogFunctionCall(const char *Name, const TNameValue List[], HRESULT Result)
+void AddToDebugLog(const char *Str)
 {
-#ifndef _DEBUG
-  if(FAILED(Result))
-#endif
-  {
-    std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
-    if(out)
-      out << "\n  {" << Name << " : " << AnsiString(ValueToStr(List, Result)).c_str() << "} " << std::flush;
-  }
+  std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
+  if(out)
+    out << Str;
+}
+//---------------------------------------------------------------------------
+void AddToDebugLog(const AnsiString &Str)
+{
+  std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
+  if(out)
+    out << Str.c_str();
+}
+//---------------------------------------------------------------------------
+HRESULT DebugLogReturn(const TNameValue List[], HRESULT Result, const char *Str)
+{
+  std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
+  if(out)
+    out << " : " << ValueToStr(List, Result).c_str() << Str;
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -114,7 +125,7 @@ void InitDebug()
   std::wclog.rdbuf(&DebugWideStreamBuf);
 }
 //---------------------------------------------------------------------------
-String ValueToStr(const TNameValue List[], unsigned Value)
+AnsiString ValueToStr(const TNameValue List[], unsigned Value)
 {
   for(unsigned I = 0; List[I].Name != NULL; I++)
     if(Value == List[I].Value)
@@ -122,7 +133,7 @@ String ValueToStr(const TNameValue List[], unsigned Value)
   return "0x" + IntToHex(static_cast<int>(Value), 8);
 }
 //---------------------------------------------------------------------------
-String FlagsToStr(const TNameValue List[], unsigned Value)
+AnsiString FlagsToStr(const TNameValue List[], unsigned Value)
 {
   String Str;
   for(unsigned I = 0; List[I].Name != NULL; I++)

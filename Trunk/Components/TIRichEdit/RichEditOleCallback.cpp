@@ -7,6 +7,7 @@
 #include <vcl.h>
 #pragma hdrstop
 #include "RichEditOleCallback.h"
+#include "Debug.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
 TRichEditOleCallback::TRichEditOleCallback(TCustomRichEdit* ARichEdit)
@@ -14,31 +15,36 @@ TRichEditOleCallback::TRichEditOleCallback(TCustomRichEdit* ARichEdit)
 {
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP TRichEditOleCallback::QueryInterface(THIS_ REFIID riid,
-	LPVOID FAR * lplpObj)
+HRESULT STDMETHODCALLTYPE TRichEditOleCallback::QueryInterface(
+    /* [in] */ REFIID riid,
+    /* [out] */ void** lplpObj)
 {
+  DEBUG_CALL();
 	// return S_OK if the interface is supported, E_NOINTERFACE if not.
+  if(lplpObj == NULL)
+    return LOG_RESULT(E_POINTER);
 	if (riid == IID_IUnknown)
-		*lplpObj = (LPUNKNOWN) this;
+		*lplpObj = static_cast<IUnknown*>(this);
 	else if (riid == IID_IRichEditOleCallback)
-		*lplpObj = (LPRICHEDITOLECALLBACK) this;
-	else {
-		*lplpObj = 0;
-		return E_NOINTERFACE;
-		}
+		*lplpObj = static_cast<IRichEditOleCallback*>(this);
+	else
+  {
+		*lplpObj = NULL;
+		return LOG_RESULT(E_NOINTERFACE);
+	}
 
-	((LPUNKNOWN) *lplpObj)->AddRef();
-	return S_OK;
+	AddRef();
+	return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP_(ULONG) TRichEditOleCallback::AddRef(THIS)
+ULONG STDMETHODCALLTYPE TRichEditOleCallback::AddRef()
 {
 	// need to add real reference counting if any caller really holds
 	// on to interface pointers
 	return ++FRefCnt;
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP_(ULONG) TRichEditOleCallback::Release(THIS)
+ULONG STDMETHODCALLTYPE TRichEditOleCallback::Release()
 {
 	// need to add real reference counting if any caller really holds
 	// on to interface pointers
@@ -47,9 +53,12 @@ STDMETHODIMP_(ULONG) TRichEditOleCallback::Release(THIS)
 }
 //---------------------------------------------------------------------------
 // *** IRichEditOleCallback methods ***
-STDMETHODIMP TRichEditOleCallback::GetNewStorage(THIS_ LPSTORAGE FAR * lplpstg)
+HRESULT STDMETHODCALLTYPE TRichEditOleCallback::GetNewStorage(
+    /* [out] */ IStorage** lplpstg)
 {
-	if (!lplpstg) return E_INVALIDARG;
+  DEBUG_CALL();
+	if(lplpstg == NULL)
+    return LOG_RESULT(E_INVALIDARG);
 	*lplpstg = NULL;
 
 	//
@@ -59,70 +68,106 @@ STDMETHODIMP TRichEditOleCallback::GetNewStorage(THIS_ LPSTORAGE FAR * lplpstg)
 	// the RichEdit control do the work.  Keep in mind this is not efficient.
 	//
 	LPLOCKBYTES pLockBytes;
-	HRESULT hr = ::CreateILockBytesOnHGlobal(NULL, TRUE, &pLockBytes);
-	if (FAILED(hr)) return hr;
+	HRESULT hr = LOG_FUNCTION_CALL(::CreateILockBytesOnHGlobal(NULL, TRUE, &pLockBytes));
+	if(FAILED(hr))
+    return LOG_RESULT(hr);
 
-	hr = ::StgCreateDocfileOnILockBytes(pLockBytes,
-		STGM_SHARE_EXCLUSIVE | STGM_CREATE | STGM_READWRITE, 0, lplpstg);
+	hr = LOG_FUNCTION_CALL(::StgCreateDocfileOnILockBytes(pLockBytes,
+		STGM_SHARE_EXCLUSIVE | STGM_CREATE | STGM_READWRITE, 0, lplpstg));
 	pLockBytes->Release();
-	return hr;
+	return LOG_RESULT(hr);
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP TRichEditOleCallback::GetInPlaceContext(THIS_ LPOLEINPLACEFRAME FAR * lplpFrame,
-	LPOLEINPLACEUIWINDOW FAR * lplpDoc, LPOLEINPLACEFRAMEINFO lpFrameInfo)
+HRESULT STDMETHODCALLTYPE TRichEditOleCallback::GetInPlaceContext(
+    /* [out] */ IOleInPlaceFrame **lplpFrame,
+	  /* [out] */ IOleInPlaceUIWindow** lplpDoc,
+    /* [out] */ OLEINPLACEFRAMEINFO* lpFrameInfo)
 {
-	return E_NOTIMPL;	// what to return???
+  DEBUG_CALL();
+	return LOG_RESULT(E_NOTIMPL);	// what to return???
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP TRichEditOleCallback::ShowContainerUI(THIS_ BOOL fShow)
+HRESULT STDMETHODCALLTYPE TRichEditOleCallback::ShowContainerUI(
+    /* [in] */ BOOL fShow)
 {
-	return E_NOTIMPL;	// what to return???
+  DEBUG_CALL();
+  LOG_ARG("fShow=" + fShow);
+	return LOG_RESULT(E_NOTIMPL);	// what to return???
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP TRichEditOleCallback::QueryInsertObject(THIS_ LPCLSID lpclsid,
-	LPSTORAGE lpstg, LONG cp)
+HRESULT STDMETHODCALLTYPE TRichEditOleCallback::QueryInsertObject(
+    /* [in] */ CLSID *lpclsid,
+	  /* [in] */ IStorage *lpstg,
+    /* [in] */ LONG cp)
 {
+  DEBUG_CALL();
+  LOG_ARG("cp=" + cp);
 	// let richedit insert any and all objects
-	return S_OK;
+	return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP TRichEditOleCallback::DeleteObject(THIS_ LPOLEOBJECT lpoleobj)
+HRESULT STDMETHODCALLTYPE TRichEditOleCallback::DeleteObject(
+    /* [in] */ IOleObject *lpoleobj)
 {
+  DEBUG_CALL();
 	// per doc, no return value, i.e., this is simply a notification
-	return S_OK;
+	return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP TRichEditOleCallback::QueryAcceptData(THIS_ LPDATAOBJECT lpdataobj,
-	CLIPFORMAT FAR * lpcfFormat, DWORD reco, BOOL fReally, HGLOBAL hMetaPict)
+HRESULT STDMETHODCALLTYPE TRichEditOleCallback::QueryAcceptData(
+    /* [in] */ IDataObject *lpdataobj,
+	  /* [in/out] */ CLIPFORMAT *lpcfFormat,
+    /* [in] */ DWORD reco,
+    /* [in] */ BOOL fReally,
+    /* [in] */ HGLOBAL hMetaPict)
 {
+  DEBUG_CALL();
+  LOG_ARG("*lpcfFormat=" + *lpcfFormat + ", reco=" + reco + ",fReally=" + fReally);
 	// allow insertion on dropped file?
-	if (reco == RECO_DROP && !FAcceptDrop) return E_NOTIMPL;
-	return S_OK;
+	if (reco == RECO_DROP && !FAcceptDrop)
+    return LOG_RESULT(E_NOTIMPL);
+	return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP TRichEditOleCallback::ContextSensitiveHelp(THIS_ BOOL fEnterMode)
+HRESULT STDMETHODCALLTYPE TRichEditOleCallback::ContextSensitiveHelp(
+    /* [in] */ BOOL fEnterMode)
 {
-	return E_NOTIMPL;	// what to return???
+  DEBUG_CALL();
+  LOG_ARG("fEnterMode=" + fEnterMode);
+	return LOG_RESULT(E_NOTIMPL);	// what to return???
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP TRichEditOleCallback::GetClipboardData(THIS_ CHARRANGE FAR * lpchrg,
-	DWORD reco, LPDATAOBJECT FAR * lplpdataobj)
+HRESULT STDMETHODCALLTYPE TRichEditOleCallback::GetClipboardData(
+    /* [in] */ CHARRANGE* lpchrg,
+	  /* [in] */ DWORD reco,
+    /* [out] */ IDataObject **lplpdataobj)
 {
-	return E_NOTIMPL;	// what to return???
+  DEBUG_CALL();
+  LOG_ARG("lpchrg->cpMin=" + lpchrg->cpMin + ", lpchrg->cpMax=" + lpchrg->cpMax + ", reco=" + reco);
+	return LOG_RESULT(E_NOTIMPL);	// what to return???
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP TRichEditOleCallback::GetDragDropEffect(THIS_ BOOL fDrag,
-	DWORD grfKeyState, LPDWORD pdwEffect)
+HRESULT STDMETHODCALLTYPE TRichEditOleCallback::GetDragDropEffect(
+    /* [in] */ BOOL fDrag,
+  	/* [in] */ DWORD grfKeyState,
+    /* [out] */ DWORD *pdwEffect)
 {
+  DEBUG_CALL();
+  LOG_ARG("fDrag=" + fDrag + ", grfKeyState=" + grfKeyState);
 	// per doc, no return value, i.e., for notification only
 	*pdwEffect = DROPEFFECT_NONE;
-	return S_OK;
+	return LOG_RESULT(S_OK);
 }
 //---------------------------------------------------------------------------
-STDMETHODIMP TRichEditOleCallback::GetContextMenu(THIS_ WORD seltype,
-	LPOLEOBJECT lpoleobj, CHARRANGE FAR * lpchrg, HMENU FAR * lphmenu)
+HRESULT STDMETHODCALLTYPE TRichEditOleCallback::GetContextMenu(
+    /* [in] */ WORD seltype,
+	  /* [in] */ IOleObject *lpoleobj,
+    /* [in] */ CHARRANGE *lpchrg,
+    /* [out] */ HMENU *lphmenu)
 {
-	return E_NOTIMPL;	// what to return???
+  DEBUG_CALL();
+  LOG_ARG("seltype=" + seltype + "lpchrg->cpMin=" + lpchrg->cpMin + ", lpchrg->cpMax=" + lpchrg->cpMax);
+	return LOG_RESULT(E_NOTIMPL);	// what to return???
 }
 //---------------------------------------------------------------------------
 

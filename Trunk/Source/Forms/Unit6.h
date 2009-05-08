@@ -21,7 +21,6 @@
 #include "IFontBox.h"
 #include <Graphics.hpp>
 #include "IRichEdit.h"
-#include "RichEditOle.h"
 #include <Menus.hpp>
 #include "ExtColorBox.h"
 #include "SymbolDialog.h"
@@ -113,8 +112,8 @@ __published:	// IDE-managed Components
   void __fastcall SymbolDialog1InsertAnsiChar(TSymbolDialog *Sender,
           char Symbol, const String &FontName);
   void __fastcall SymbolDialog1Show(TObject *Sender);
+  bool __fastcall IRichEdit1ActivateObject(TIRichEdit *Sender);
 private:	// User declarations
-  TRichEditOle RichEditOle;
   TWndMethod OrgComboBox1WindowProc;
   TWndMethod OrgIFontBox1WindowProc;
   TWndMethod OrgColorBox1WindowProc;
