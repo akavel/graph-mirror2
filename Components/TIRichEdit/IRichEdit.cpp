@@ -25,7 +25,8 @@ namespace Irichedit
 __fastcall TIRichEdit::TIRichEdit(TComponent* Owner)
   : TCustomRichEdit(Owner), FTransparent(false), TextFormat(this, false),
     GlobalTextFormat(this, true), FOnOleError(NULL), FBackgroundColor(clDefault),
-    FParagraph(new ::TParaFormat(this)), FOnLink(NULL), FProtectedChange(false)
+    FParagraph(new ::TParaFormat(this)), FOnLink(NULL), FProtectedChange(false),
+    FOnActivateObject(NULL), RichEditOle(NULL), FEnableOLE(false)
 {
   ControlStyle = ControlStyle >> csSetCaption;
 }
@@ -43,8 +44,6 @@ void __fastcall TIRichEdit::CreateParams(Controls::TCreateParams &Params)
 {
 	// modified from TCustomRichEdit
 	FLibHandle = LoadLibrary(L"RICHED20.DLL");
-	if(!FLibHandle)
-    FLibHandle = 0;
 
 	TCustomMemo::CreateParams(Params); //Don't call TCustomRichEdit::CreateParams
 
@@ -57,14 +56,27 @@ void __fastcall TIRichEdit::CreateParams(Controls::TCreateParams &Params)
   Params.ExStyle |= (FTransparent ? WS_EX_TRANSPARENT : 0);
 }
 //---------------------------------------------------------------------------
+void __fastcall TIRichEdit::CreateWnd()
+{
+  TCustomRichEdit::CreateWnd();
+  if(EnableOLE && RichEditOle == NULL)
+    RichEditOle = new TRichEditOle(this);
+
+  if(OnActivateObject)
+    SetEventMask(ENM_MOUSEEVENTS, ENM_MOUSEEVENTS);
+}
+//---------------------------------------------------------------------------
 //Free the library on destroy (actually, it will not unload until last
 // TRIichEdit instance is destroyed)
 void __fastcall TIRichEdit::DestroyWnd(void)
 {
+  if(RichEditOle)
+    delete RichEditOle;
+  RichEditOle = NULL;
 	TCustomRichEdit::DestroyWnd();
-
 	if(FLibHandle)
     FreeLibrary(FLibHandle);
+  FLibHandle = NULL;
 }
 //---------------------------------------------------------------------------
 void __fastcall TIRichEdit::SetTransparent(bool Value)
@@ -408,6 +420,16 @@ void __fastcall TIRichEdit::WMNotify(TMessage &Message)
       break;
     }
 
+    case EN_MSGFILTER:
+    {
+      MSGFILTER *Filter = reinterpret_cast<MSGFILTER*>(Message.LParam);
+      //If the event is a double click on an OLE object, call OnActivateObject.
+      //If the event returns false, don't process the message further.
+      if(Filter->msg == WM_LBUTTONDBLCLK && ObjectSelected() && FOnActivateObject && !FOnActivateObject(this))
+        Message.Result = true;
+      break;
+    }
+
     default:
       TCustomRichEdit::Dispatch(&Message);
   }
@@ -553,4 +575,37 @@ int TIRichEdit::TextSize()
   return GetWindowTextLengthW(Handle);
 }
 //---------------------------------------------------------------------------
+void __fastcall TIRichEdit::SetOnActivateObject(TActivateObjectEvent Value)
+{
+  FOnActivateObject = Value;
+  SetEventMask(ENM_MOUSEEVENTS, Value ? ENM_MOUSEEVENTS : 0);
+}
+//---------------------------------------------------------------------------
+void TIRichEdit::SetHostNames(const AnsiString &HostApp, const AnsiString &HostDoc)
+{
+  if(RichEditOle)
+    RichEditOle->SetHostNames(HostApp, HostDoc);
+}
+//---------------------------------------------------------------------------
+bool TIRichEdit::ObjectSelected()
+{
+  return RichEditOle ? RichEditOle->ObjectSelected() : false;
+}
+//---------------------------------------------------------------------------
+bool TIRichEdit::OpenObject()
+{
+  return RichEditOle ? RichEditOle->OpenObject() : false;
+}
+//---------------------------------------------------------------------------
+bool TIRichEdit::PasteSpecial()
+{
+  return RichEditOle ? RichEditOle->PasteSpecial() : false;
+}
+//---------------------------------------------------------------------------
+bool TIRichEdit::InsertObject()
+{
+  return RichEditOle ? RichEditOle->InsertObject() : false;
+}
+//---------------------------------------------------------------------------
+
 

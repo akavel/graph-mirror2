@@ -23,19 +23,6 @@
 
 TOleServerImpl *OleServerImpl;
 
-#ifdef _DEBUG
-  #define DEBUG_CALL() DebugFunctionCall(__FUNC__)
-  #define LOG_RESULT(x) DebugLogReturn(x)
-  #define LOG_ARG(x) DebugLogArg(x)
-  #define LOG_DATA(x) DebugLogData(x)
-#else
-  #define DEBUG_CALL()
-  #define LOG_RESULT(x) (x)
-  #define LOG_ARG(x)
-  #define LOG_DATA(x)
-#endif
-
-
 const CLIPFORMAT TOleServerImpl::cfObjectDescriptor = RegisterClipboardFormat(L"Object Descriptor");
 const CLIPFORMAT TOleServerImpl::cfEmbedSource = RegisterClipboardFormat(L"Embed Source");
 const CLIPFORMAT TOleServerImpl::cfEmbeddedObject = RegisterClipboardFormat(L"Embedded Object");
@@ -108,35 +95,6 @@ template<typename T> void TOleServerImpl::ReleaseCom(T *&Unknown)
   if(Unknown)
     Unknown->Release();
   Unknown = NULL;
-}
-//---------------------------------------------------------------------------
-void TOleServerImpl::DebugFunctionCall(const String &Str)
-{
-  std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
-  if(out)
-    out << std::endl << Str;
-}
-//---------------------------------------------------------------------------
-HRESULT TOleServerImpl::DebugLogReturn(HRESULT Result)
-{
-  std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
-  if(out)
-    out << " : " << ValueToStr(HResultList, Result);
-  return Result;
-}
-//---------------------------------------------------------------------------
-void TOleServerImpl::DebugLogArg(const String &Str)
-{
-  std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
-  if(out)
-    out << "(" << Str << ")" << std::flush;
-}
-//---------------------------------------------------------------------------
-void TOleServerImpl::DebugLogData(const String &Str)
-{
-  std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);
-  if(out)
-    out << ", [" << Str << "]" << std::flush;
 }
 //---------------------------------------------------------------------------
 String TOleServerImpl::ClipboardFormatToStr(CLIPFORMAT Format)
@@ -434,7 +392,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetHostNames(
     /* [unique][in] */ LPCOLESTR szContainerObj)
 {
   DEBUG_CALL();
-  LOG_ARG(String("App=") + szContainerApp + ", Obj=" + szContainerObj);
+  LOG_ARG("App=" + szContainerApp + ", Obj=" + szContainerObj);
   Application->MainForm->Caption = "Graph - " + String(szContainerApp) + " (" + szContainerObj + ")";
   return LOG_RESULT(S_OK);
 }
@@ -443,7 +401,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Close(
     /* [in] */ DWORD dwSaveOption)
 {
   DEBUG_CALL();
-  LOG_ARG(String("dwSaveOption=") + dwSaveOption);
+  LOG_ARG("dwSaveOption=" + dwSaveOption);
 
   if(OleClientSite)
   {
@@ -487,7 +445,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetMoniker(
     /* [unique][in] */ IMoniker *pmk)
 {
   DEBUG_CALL();
-  LOG_ARG(String("dwWhichMoniker=") + dwWhichMoniker);
+  LOG_ARG("dwWhichMoniker=" + dwWhichMoniker);
 
   return LOG_RESULT(E_NOTIMPL);
 }
@@ -527,7 +485,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::DoVerb(
     /* [unique][in] */ LPCRECT lprcPosRect)
 {
   DEBUG_CALL();
-  LOG_ARG(String("iVerb=") + iVerb);
+  LOG_ARG("iVerb=" + iVerb);
 
   try
   {
@@ -651,8 +609,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::GetExtent(
     return LOG_RESULT(DV_E_DVASPECT);
 
   SIZEL Size = {GetWidth(), GetHeight()};
-  LOG_DATA(String("cx=") + Size.cx);
-  LOG_DATA(String("cy=") + Size.cy);
+  LOG_DATA("cx=" + Size.cx);
+  LOG_DATA("cy=" + Size.cy);
   AtlPixelToHiMetric(&Size, pSizel);
 
   return LOG_RESULT(S_OK);
@@ -723,7 +681,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
   {
     if(pFormatetcIn->cfFormat == CF_ENHMETAFILE && (pFormatetcIn->tymed & TYMED_ENHMF))
     {
-      LOG_DATA(String("Width=") + ImageWidth + ", Height=" + ImageHeight);
+      LOG_DATA("Width=" + ImageWidth + ", Height=" + ImageHeight);
       std::auto_ptr<TMetafile> Metafile(new TMetafile);
       DrawMetafile(Metafile.get());
 
@@ -732,7 +690,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     }
     else if(pFormatetcIn->cfFormat == CF_METAFILEPICT && (pFormatetcIn->tymed & TYMED_MFPICT))
     {
-      LOG_DATA(String("Width=") + ImageWidth + ", Height=" + ImageHeight);
+      LOG_DATA("Width=" + ImageWidth + ", Height=" + ImageHeight);
       std::auto_ptr<TMetafile> Metafile(new TMetafile);
       DrawMetafile(Metafile.get());
 
@@ -756,7 +714,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     }
     else if(pFormatetcIn->cfFormat == CF_BITMAP && (pFormatetcIn->tymed & TYMED_GDI))
     {
-      LOG_DATA(String("Width=") + ImageWidth + ", Height=" + ImageHeight);
+      LOG_DATA("Width=" + ImageWidth + ", Height=" + ImageHeight);
       Form1->Draw.Wait();
       std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
       Bitmap->Width = ImageWidth;
@@ -838,7 +796,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     return LOG_RESULT(OleSave(this, pmedium->pstg, FALSE));
   else if(pformatetc->cfFormat == cfPng && (pformatetc->tymed & TYMED_ISTREAM))
   {
-    LOG_DATA(String("Width=") + ImageWidth + ", Height=" + ImageHeight);
+    LOG_DATA("Width=" + ImageWidth + ", Height=" + ImageHeight);
     Form1->Draw.Wait();
     std::auto_ptr<TPngImage> Image(new TPngImage(COLOR_RGB, 8, ImageWidth, ImageHeight));
     Image->Canvas->CopyRect(TRect(0, 0, ImageWidth, ImageHeight), Form1->Image1->Canvas, Form1->Image1->ClientRect);
@@ -984,8 +942,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Load(
   if(Section.KeyExists(L"Width"))
   {
     SetSize(Section.Read(L"Width", 500), Section.Read(L"Height", 500));
-    LOG_DATA(String("Width=") + GetWidth());
-    LOG_DATA(String("Height=") + GetHeight());
+    LOG_DATA("Width=" + GetWidth());
+    LOG_DATA("Height=" + GetHeight());
   }
 
   UndoList.Clear();
@@ -1002,15 +960,15 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Save(
   /* [in] */ BOOL fSameAsLoad)
 {
   DEBUG_CALL();
-  LOG_ARG(String("fSameAsLoad=") + fSameAsLoad);
+  LOG_ARG("fSameAsLoad=" + fSameAsLoad);
   IStream *Stream = NULL;
   DWORD GrfMode = STGM_WRITE | STGM_SHARE_EXCLUSIVE | STGM_CREATE;
   if(FAILED(LOG_FUNCTION_CALL(pStgSave->CreateStream(L"Graph", GrfMode, 0, 0, &Stream))))
     return LOG_RESULT(E_FAIL);
 
   std::wstring Str = Form1->Data.SaveToString(fSameAsLoad);
-  LOG_DATA(String("Width=") + GetWidth());
-  LOG_DATA(String("Height=") + GetHeight());
+  LOG_DATA("Width=" + GetWidth());
+  LOG_DATA("Height=" + GetHeight());
   TConfigFile ConfigFile;
   ConfigFile.LoadFromString(Str);
   ConfigFile.Section(L"Image").Write(L"Width", GetWidth());
@@ -1066,7 +1024,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Save(
   /* [in] */ BOOL fRemember)
 {
   DEBUG_CALL();
-  LOG_ARG(String("FileName=") + pszFileName + ", fRemember=" + fRemember);
+  LOG_ARG("FileName=" + pszFileName + ", fRemember=" + fRemember);
   return LOG_RESULT(Form1->Data.Save(pszFileName ? std::wstring(pszFileName) : Form1->Data.GetFileName(), fRemember));
 }
 //---------------------------------------------------------------------------

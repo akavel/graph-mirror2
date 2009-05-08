@@ -12,6 +12,44 @@
 #include <Atl/atlbase.h>
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+TRichEditOle::TRichEditOle(TCustomRichEdit* ARichEdit)
+  : RichEditOle(NULL), RichEdit(ARichEdit), RichEditCallback(ARichEdit)
+{
+	//Do we need to call OleInitialize(NULL)? seems to work without it...
+	OleInitialize(NULL);
+
+	SendMessage(RichEdit->Handle, EM_SETOLECALLBACK, 0, reinterpret_cast<LPARAM>(&RichEditCallback));
+	if(!SendMessage(RichEdit->Handle, EM_GETOLEINTERFACE, 0, reinterpret_cast<LPARAM>(&RichEditOle)))
+		RichEditOle = NULL;
+
+	//Register clipboard formats used in ole (so we'll have the clipboard
+	//format IDs for ole clipboard operations (like OleUIPasteSpecial)
+	CFObjectDescriptor = RegisterClipboardFormat(L"Object Descriptor");
+	CFEmbeddedObject = RegisterClipboardFormat(L"Embedded Object");
+	CFEmbedSource = RegisterClipboardFormat(L"Embed Source");
+	CFLinkSource = RegisterClipboardFormat(L"Link Source");
+	CFRtf = RegisterClipboardFormat(CF_RTF);
+	CFRtfNoObjs = RegisterClipboardFormat(CF_RTFNOOBJS);
+	CFReTextObjs = RegisterClipboardFormat(CF_RETEXTOBJ);
+}
+//---------------------------------------------------------------------------
+TRichEditOle::~TRichEditOle()
+{
+	//Close any active objects unconditionally
+	if(RichEditOle)
+    CloseActiveObjects(false);
+
+	//Set the callback to null
+	SendMessage(RichEdit->Handle, EM_SETOLECALLBACK, 0, 0);
+
+	// release the interface
+	if(RichEditOle)
+		RichEditOle = NULL;
+
+	// balance calls to OleInitialize()
+	OleUninitialize();
+}
+//---------------------------------------------------------------------------
 void TRichEditOle::OleUIMetafilePictIconFree(HGLOBAL MetaPict)
 {
 	if(!MetaPict)
@@ -155,60 +193,17 @@ bool TRichEditOle::OleStdSwitchDisplayAspect(LPOLEOBJECT OleObj,
 	return true;
 }
 //---------------------------------------------------------------------------
-TRichEditOle::TRichEditOle(TCustomRichEdit* ARichEdit)
-  : RichEditOle(NULL), RichEdit(ARichEdit)
-{
-	//Do we need to call OleInitialize(NULL)? seems to work without it...
-	OleInitialize(NULL);
-
-	RichEditCallback = new TRichEditOleCallback(RichEdit);
-
-	SendMessage(RichEdit->Handle, EM_SETOLECALLBACK, 0, reinterpret_cast<LPARAM>(RichEditCallback));
-	if(!SendMessage(RichEdit->Handle, EM_GETOLEINTERFACE, 0, reinterpret_cast<LPARAM>(&RichEditOle)))
-		RichEditOle = NULL;
-
-	//Register clipboard formats used in ole (so we'll have the clipboard
-	//format IDs for ole clipboard operations (like OleUIPasteSpecial)
-	CFObjectDescriptor = RegisterClipboardFormat(L"Object Descriptor");
-	CFEmbeddedObject = RegisterClipboardFormat(L"Embedded Object");
-	CFEmbedSource = RegisterClipboardFormat(L"Embed Source");
-	CFLinkSource = RegisterClipboardFormat(L"Link Source");
-	CFRtf = RegisterClipboardFormat(CF_RTF);
-	CFRtfNoObjs = RegisterClipboardFormat(CF_RTFNOOBJS);
-	CFReTextObjs = RegisterClipboardFormat(CF_RETEXTOBJ);
-}
-//---------------------------------------------------------------------------
-TRichEditOle::~TRichEditOle()
-{
-	//Close any active objects unconditionally
-	if(RichEditOle)
-    CloseActiveObjects(false);
-
-	//Set the callback to null
-	SendMessage(RichEdit->Handle, EM_SETOLECALLBACK, 0, 0);
-
-	// release the interface
-	if(RichEditOle)
-		RichEditOle = NULL;
-
-	if(RichEditCallback)
-		delete RichEditCallback;
-
-	// balance calls to OleInitialize()
-	OleUninitialize();
-}
-//---------------------------------------------------------------------------
 void TRichEditOle::SetHostNames(const AnsiString &HostApp, const AnsiString &HostDoc)
 {
 	if(RichEditOle)
   	LOG_FUNCTION_CALL(RichEditOle->SetHostNames(HostApp.c_str(), HostDoc.c_str()));
 }
 //---------------------------------------------------------------------------
-LPOLECLIENTSITE TRichEditOle::GetClientSite()
+IOleClientSite* TRichEditOle::GetClientSite()
 {
-	LPOLECLIENTSITE ClientSite;
+	IOleClientSite *ClientSite;
 	if(LOG_FUNCTION_CALL(RichEditOle->GetClientSite(&ClientSite)) != S_OK)
-    ClientSite = 0;
+    ClientSite = NULL;
 	return ClientSite;
 }
 //---------------------------------------------------------------------------
@@ -241,8 +236,8 @@ bool TRichEditOle::InsertObject()
     throw EOleError("IOleClientSite interface is not valid.");
 
 	//Get substorage
-	LPSTORAGE Stg;
-	OleCheck(LOG_FUNCTION_CALL(RichEditCallback->GetNewStorage(&Stg)));
+	IStorage *Stg;
+	OleCheck(LOG_FUNCTION_CALL(RichEditCallback.GetNewStorage(&Stg)));
 
 	//Display the InsertObject dialog
 	TCHAR Buf[MAX_PATH] = {0};
@@ -263,7 +258,7 @@ bool TRichEditOle::InsertObject()
 	io.clsid = CLSID_NULL;
 
 	DWORD RetVal = LOG_OLEUI_CALL(OleUIInsertObject(&io));
-  LOG_FUNCTION_CALL(io.sc);
+  LOG_DATA("io.sc=" + ValueToStr(HResultList, io.sc));
 	if(RetVal != OLEUI_SUCCESS)
   {
 		Stg->Release();
@@ -333,7 +328,8 @@ bool TRichEditOle::InsertObject()
 		SendMessage(RichEdit->Handle, EM_POSFROMCHAR, reinterpret_cast<WPARAM>(&Pos), REO_IOB_SELECTION);
 		RECT Rect = { 0, 0, 100, 100 };
 		OffsetRect(&Rect, Pos.x, Pos.y);
-		LOG_FUNCTION_CALL(OleObject->DoVerb(OLEIVERB_SHOW, 0, ClientSite, 0, RichEdit->Handle, &Rect));
+    //OLEIVERB_SHOW should be used in DoVerb() here, but that doesn't work with Open Office objects
+		LOG_FUNCTION_CALL(OleObject->DoVerb(OLEIVERB_OPEN, NULL, ClientSite, 0, RichEdit->Handle, &Rect));
 	}
 
 	Stg->Release();
@@ -455,7 +451,6 @@ bool TRichEditOle::PasteSpecial()
 //---------------------------------------------------------------------------
 // close any active ole objects (else servers left hanging); return false on
 // cancel unconditionally if savePrompt != true (changes are lost)
-//
 bool TRichEditOle::CloseActiveObjects(bool savePrompt)
 {
 	//If no interface, yell

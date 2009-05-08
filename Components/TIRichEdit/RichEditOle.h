@@ -37,7 +37,7 @@ class TRichEditOle
 protected:
 	TCustomRichEdit* RichEdit;
 	IRichEditOle* RichEditOle;
-	TRichEditOleCallback *RichEditCallback;
+	TRichEditOleCallback RichEditCallback;
 
 	UINT CFObjectDescriptor;
 	UINT CFEmbeddedObject;
@@ -49,7 +49,7 @@ protected:
 
 	LONG GetObjectCount();
 	LONG GetLinkCount();
-	LPOLECLIENTSITE GetClientSite();
+	IOleClientSite* GetClientSite();
   
 public:
 	TRichEditOle(TCustomRichEdit* ARichEdit);

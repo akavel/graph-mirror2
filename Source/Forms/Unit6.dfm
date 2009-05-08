@@ -239,6 +239,8 @@ object Form6: TForm6
       Width = 525
       Height = 143
       OnOleError = IRichEdit1OleError
+      OnActivateObject = IRichEdit1ActivateObject
+      EnableOLE = True
       WordWrap = False
       HideSelection = False
       ScrollBars = ssBoth

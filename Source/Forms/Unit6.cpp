@@ -15,25 +15,25 @@
 #pragma link "IFontBox"
 #pragma link "IRichEdit"
 #pragma link "ExtColorBox"
-#pragma link "SymbolDialog"                                                    
+#pragma link "SymbolDialog"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, const String &HostApp, const String &HostDoc)
-  : TForm(Owner), RichEditOle(IRichEdit1)
+  : TForm(Owner)
 {
   ScaleForm(this);
-  TranslateProperties(this);           
+  TranslateProperties(this);
   SetAccelerators(this);
-  TranslateStrings(ColorBox1->Items); 
+  TranslateStrings(ColorBox1->Items);
 
   OrgComboBox1WindowProc = ComboBox1->WindowProc;
   ComboBox1->WindowProc = ComboBox1Proc;
-  OrgIFontBox1WindowProc = IFontBox1->WindowProc;                  
+  OrgIFontBox1WindowProc = IFontBox1->WindowProc;
   IFontBox1->WindowProc = IFontBox1Proc;
   OrgColorBox1WindowProc = ColorBox1->WindowProc;
   ColorBox1->WindowProc = ColorBox1Proc;
 
-  RichEditOle.SetHostNames(HostApp, HostDoc.IsEmpty() ? HostApp : HostDoc);
+  IRichEdit1->SetHostNames(HostApp, HostDoc.IsEmpty() ? HostApp : HostDoc);
   IRichEdit1->SelectAll();
   IRichEdit1->SelAttributes->Assign(DefaultFont);
   IRichEdit1->SelLength = 0;
@@ -274,7 +274,7 @@ void __fastcall TForm6::PopupMenu1Popup(TObject *Sender)
   Popup_Copy->Enabled = IRichEdit1->SelLength;
   Popup_Paste->Enabled = IRichEdit1->CanPaste();
   Popup_PasteSpecial->Enabled = IRichEdit1->CanPaste();
-  Popup_EditObject->Enabled = RichEditOle.ObjectSelected();
+  Popup_EditObject->Enabled = IRichEdit1->ObjectSelected();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::IRichEdit1MouseDown(TObject *Sender,
@@ -289,17 +289,17 @@ void __fastcall TForm6::IRichEdit1MouseDown(TObject *Sender,
 //---------------------------------------------------------------------------
 void __fastcall TForm6::Popup_PasteSpecialClick(TObject *Sender)
 {
-  RichEditOle.PasteSpecial();
+  IRichEdit1->PasteSpecial();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::Popup_InsertObjectClick(TObject *Sender)
 {
-  RichEditOle.InsertObject();
+  IRichEdit1->InsertObject();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::Popup_EditObjectClick(TObject *Sender)
 {
-  if(!RichEditOle.OpenObject())
+  if(!IRichEdit1->OpenObject())
     MessageBox(LoadRes(502), LoadRes(RES_OLE_ERROR), MB_ICONSTOP);
 }
 //---------------------------------------------------------------------------
@@ -356,7 +356,7 @@ void __fastcall TForm6::ToolButton11Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm6::ToolButton13Click(TObject *Sender)
 {
-  RichEditOle.InsertObject();
+  IRichEdit1->InsertObject();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::SymbolDialog1InsertWideChar(TSymbolDialog *Sender,
@@ -378,6 +378,15 @@ void __fastcall TForm6::SymbolDialog1InsertAnsiChar(TSymbolDialog *Sender,
 void __fastcall TForm6::SymbolDialog1Show(TObject *Sender)
 {
   ScaleForm(SymbolDialog1->SymbolForm);
+}
+//---------------------------------------------------------------------------
+bool __fastcall TForm6::IRichEdit1ActivateObject(TIRichEdit *Sender)
+{
+  //Implemented workaround to support Open Office objects.
+  //Else they fail if the client tries to default instantiate them (e.g. by double
+  //clicking on them). Instead we have to force them to run out of process.
+  IRichEdit1->OpenObject();
+  return false;
 }
 //---------------------------------------------------------------------------
 

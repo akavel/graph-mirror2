@@ -7,10 +7,12 @@
 #include <ComCtrls.hpp>
 #include <Controls.hpp>
 #include <StdCtrls.hpp>
+#include "RichEditOle.h"
 //---------------------------------------------------------------------------
 class TIRichEdit;
 typedef void __fastcall (__closure *TOleErrorEvent)(TIRichEdit* Sender, int Oper, int ErrorCode);
 typedef void __fastcall (__closure *TLinkEvent)(TIRichEdit* Sender, unsigned Min, unsigned Max);
+typedef bool __fastcall (__closure *TActivateObjectEvent)(TIRichEdit* Sender);
 
 class TTextFormat
 {
@@ -76,12 +78,15 @@ public:
 class TIRichEdit : public TCustomRichEdit
 {
 private:
+  TRichEditOle *RichEditOle;
   bool FTransparent;
+  bool FEnableOLE;
   HINSTANCE FLibHandle;
   TOleErrorEvent FOnOleError;
   TColor FBackgroundColor;
   ::TParaFormat *FParagraph;
   TLinkEvent FOnLink;
+  TActivateObjectEvent FOnActivateObject;
   bool FProtectedChange;
 
   void __fastcall SetTransparent(bool Value);
@@ -98,8 +103,10 @@ END_MESSAGE_MAP(TCustomRichEdit)
 
 protected:
   void __fastcall CreateParams(Controls::TCreateParams &Params);
+  void __fastcall CreateWnd();
   void __fastcall DestroyWnd();
   bool DoLink(UINT Msg, unsigned Min, unsigned Max);
+  void __fastcall SetOnActivateObject(TActivateObjectEvent Value);
 
 public:
   ::TTextFormat TextFormat;
@@ -131,6 +138,12 @@ public:
 //  __property Lines; //Don't use this
   String GetText(int Min, int Max);
 
+  void SetHostNames(const AnsiString &HostApp, const AnsiString &HostDoc);
+  bool ObjectSelected();
+  bool OpenObject();
+	bool PasteSpecial();
+	bool InsertObject();
+
 __published:
   __property bool Transparent = {read=FTransparent, write=SetTransparent, default=false};
   __property TColor BackgroundColor = {read=FBackgroundColor, write=SetBackgroundColor, default=Graphics::clDefault};
@@ -138,6 +151,8 @@ __published:
   __property TOleErrorEvent OnOleError = {read=FOnOleError, write=FOnOleError, default=NULL};
   __property TLinkEvent OnLink = {read=FOnLink, write=SetOnLink, default=NULL};
   __property bool ProtectedChange = {read=FProtectedChange, write=FProtectedChange, default=false};
+  __property TActivateObjectEvent OnActivateObject = {read=FOnActivateObject, write=SetOnActivateObject, default=NULL};
+  __property bool EnableOLE = {read=FEnableOLE, write=FEnableOLE, default=false};
 
   __property BorderStyle;
   __property WordWrap;
