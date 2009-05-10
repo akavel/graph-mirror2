@@ -1,7 +1,7 @@
 object AreaFrame: TAreaFrame
   Left = 0
   Top = 0
-  Width = 182
+  Width = 177
   Height = 101
   Anchors = [akLeft, akTop, akRight]
   ParentBackground = False
@@ -9,7 +9,7 @@ object AreaFrame: TAreaFrame
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 182
+    Width = 177
     Height = 101
     Align = alClient
     BevelOuter = bvNone
@@ -28,18 +28,8 @@ object AreaFrame: TAreaFrame
         Row = 0
       end
       item
-        Column = 1
-        Control = Edit1
-        Row = 0
-      end
-      item
         Column = 0
         Control = Label2
-        Row = 1
-      end
-      item
-        Column = 1
-        Control = Edit2
         Row = 1
       end
       item
@@ -51,6 +41,16 @@ object AreaFrame: TAreaFrame
         Column = 1
         Control = Edit3
         Row = 2
+      end
+      item
+        Column = 1
+        Control = Panel1
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = Panel2
+        Row = 1
       end>
     Padding.Left = 2
     Padding.Top = 4
@@ -68,8 +68,14 @@ object AreaFrame: TAreaFrame
       item
         SizeStyle = ssAbsolute
         Value = 30.000000000000000000
+      end
+      item
+        SizeStyle = ssAuto
       end>
     TabOrder = 0
+    ExplicitTop = -247
+    ExplicitWidth = 145
+    ExplicitHeight = 348
     object Label1: TLabel
       Left = 4
       Top = 8
@@ -80,19 +86,6 @@ object AreaFrame: TAreaFrame
       Layout = tlCenter
       ExplicitHeight = 13
     end
-    object Edit1: TMyEdit
-      Left = 34
-      Top = 8
-      Width = 146
-      Height = 21
-      Hint = 
-        'Enter the start coordinate or mark the range on the graph itself' +
-        ' with the mouse.'
-      Align = alClient
-      TabOrder = 0
-      ExplicitLeft = 36
-      ExplicitWidth = 142
-    end
     object Label2: TLabel
       Left = 4
       Top = 38
@@ -102,19 +95,6 @@ object AreaFrame: TAreaFrame
       Caption = 'To:'
       Layout = tlCenter
       ExplicitHeight = 13
-    end
-    object Edit2: TMyEdit
-      Left = 34
-      Top = 38
-      Width = 146
-      Height = 21
-      Hint = 
-        'Enter the end coordinate or mark the range on the graph itself w' +
-        'ith the mouse.'
-      Align = alClient
-      TabOrder = 1
-      ExplicitLeft = 36
-      ExplicitWidth = 142
     end
     object Label3: TLabel
       Left = 4
@@ -127,9 +107,9 @@ object AreaFrame: TAreaFrame
       ExplicitHeight = 13
     end
     object Edit3: TEdit
-      Left = 34
+      Left = 36
       Top = 68
-      Width = 146
+      Width = 137
       Height = 21
       Hint = 
         'Area or length of path calculated for the given range using Simp' +
@@ -138,8 +118,81 @@ object AreaFrame: TAreaFrame
       Color = clBtnFace
       ReadOnly = True
       TabOrder = 2
-      ExplicitLeft = 36
-      ExplicitWidth = 142
+      ExplicitWidth = 105
+    end
+    object Panel1: TPanel
+      Left = 36
+      Top = 8
+      Width = 137
+      Height = 21
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 0
+      DesignSize = (
+        137
+        21)
+      object Edit1: TMyEdit
+        Left = 0
+        Top = 0
+        Width = 119
+        Height = 21
+        Hint = 
+          'Enter the start coordinate or mark the range on the graph itself' +
+          ' with the mouse.'
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 0
+        Text = '0'
+        ExplicitWidth = 89
+      end
+      object UpDown1: TUpDown
+        Left = 119
+        Top = 0
+        Width = 15
+        Height = 21
+        Anchors = [akRight]
+        Associate = Edit1
+        Min = -32768
+        Max = 32767
+        TabOrder = 1
+        ExplicitLeft = 89
+      end
+    end
+    object Panel2: TPanel
+      Left = 36
+      Top = 38
+      Width = 137
+      Height = 21
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 1
+      DesignSize = (
+        137
+        21)
+      object Edit2: TMyEdit
+        Left = 0
+        Top = 0
+        Width = 119
+        Height = 21
+        Hint = 
+          'Enter the end coordinate or mark the range on the graph itself w' +
+          'ith the mouse.'
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 0
+        Text = '0'
+        ExplicitWidth = 89
+      end
+      object UpDown2: TUpDown
+        Left = 119
+        Top = 0
+        Width = 15
+        Height = 21
+        Anchors = [akTop, akRight]
+        Associate = Edit2
+        Min = -32768
+        Max = 32767
+        TabOrder = 1
+        ExplicitLeft = 89
+      end
     end
   end
 end

@@ -198,7 +198,3 @@ void TAreaFrame::SetEndPoint(const TGraphElem *Elem, int X, int Y)
 }
 //---------------------------------------------------------------------------
 
-
-
-
-

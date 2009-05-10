@@ -54,8 +54,8 @@ object StdFuncFrame: TStdFuncFrame
   end
   object Edit1: TMyEdit
     Left = 40
-    Top = 8
-    Width = 137
+    Top = 7
+    Width = 122
     Height = 21
     Hint = 
       'Enter a value for which you want to evaluate the function, or cl' +
@@ -138,5 +138,16 @@ object StdFuncFrame: TStdFuncFrame
     ParentFont = False
     ReadOnly = True
     TabOrder = 3
+  end
+  object UpDown1: TUpDown
+    Left = 162
+    Top = 7
+    Width = 16
+    Height = 21
+    Associate = Edit1
+    Min = -32768
+    Max = 32767
+    TabOrder = 5
+    Thousands = False
   end
 end
