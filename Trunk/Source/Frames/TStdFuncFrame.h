@@ -40,6 +40,7 @@ __published:	// IDE-managed Components
   TEdit *Edit2;
   TEdit *Edit3;
   TEdit *Edit4;
+  TUpDown *UpDown1;
   void __fastcall ComboBox1Change(TObject *Sender);
 private:	// User declarations
   std::string ErrorPrefix;

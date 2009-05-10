@@ -17,17 +17,22 @@
 #include "MyEdit.h"
 #include "TStdFuncFrame.h"
 #include <ExtCtrls.hpp>
+#include <ComCtrls.hpp>
 //---------------------------------------------------------------------------
 class TAreaFrame : public TFrame, public TEvalFrame
 {
 __published:	// IDE-managed Components
   TGridPanel *GridPanel1;
   TLabel *Label1;
-  TMyEdit *Edit1;
   TLabel *Label2;
-  TMyEdit *Edit2;
   TLabel *Label3;
   TEdit *Edit3;
+  TPanel *Panel1;
+  TMyEdit *Edit1;
+  TUpDown *UpDown1;
+  TPanel *Panel2;
+  TMyEdit *Edit2;
+  TUpDown *UpDown2;
 private:	// User declarations
   void EvalArea(const TBaseFuncType *Func, long double From, long double To);
   void EvalArea(const TPointSeries *PointSeries, long double From, long double To);

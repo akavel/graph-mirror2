@@ -39,6 +39,8 @@ __published:	// IDE-managed Components
   TDragDockObject *&DragObject);
   void __fastcall FormEndDock(TObject *Sender, TObject *Target, int X, int Y);
   void __fastcall FormResize(TObject *Sender);
+  void __fastcall UpDownChangingEx(TObject *Sender, bool &AllowChange,
+          short NewValue, TUpDownDirection Direction);
 
 private:	// User declarations
     boost::shared_ptr<TGraphElem> Elem;
