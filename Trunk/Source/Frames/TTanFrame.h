@@ -16,6 +16,8 @@
 #include <Forms.hpp>
 #include "MyEdit.h"
 #include "TStdFuncFrame.h"
+#include "UpDownEx.h"
+#include <ComCtrls.hpp>
 //---------------------------------------------------------------------------
 class TTanFrame : public TFrame, public TEvalFrame
 {
@@ -24,6 +26,7 @@ __published:	// IDE-managed Components
   TLabel *Label1;
   TLabel *Label2;
   TMyEdit *Edit1;
+  TUpDownEx *UpDownEx1;
 private:	// User declarations
   void EvalTan(const TTan *Tan);
   void EvalSeries(const TPointSeries *Series);

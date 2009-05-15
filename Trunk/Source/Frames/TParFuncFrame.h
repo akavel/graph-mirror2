@@ -16,6 +16,8 @@
 #include <Forms.hpp>
 #include "MyEdit.h"
 #include "TStdFuncFrame.h"
+#include "UpDownEx.h"
+#include <ComCtrls.hpp>
 //---------------------------------------------------------------------------
 class TParFuncFrame : public TFrame, public TEvalFrame
 {
@@ -34,6 +36,7 @@ __published:	// IDE-managed Components
   TMyEdit *Edit1;
   TComboBox *ComboBox1;
   TLabel *Label7;
+  TUpDownEx *UpDownEx1;
   void __fastcall ComboBox1Change(TObject *Sender);
 private:	// User declarations
   void Clear();

@@ -14,6 +14,7 @@
 #include "TPolFuncFrame.h"
 //---------------------------------------------------------------------------
 #pragma link "MyEdit"
+#pragma link "UpDownEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TPolFuncFrame::TPolFuncFrame(TComponent* Owner)

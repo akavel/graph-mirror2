@@ -14,6 +14,7 @@
 #include "TParFuncFrame.h"
 //---------------------------------------------------------------------------
 #pragma link "MyEdit"
+#pragma link "UpDownEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TParFuncFrame::TParFuncFrame(TComponent* Owner)

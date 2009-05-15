@@ -44,10 +44,18 @@ object TanFrame: TTanFrame
   object Edit1: TMyEdit
     Left = 40
     Top = 8
-    Width = 135
+    Width = 120
     Height = 21
     Hint = 'Enter an x-coordinate or click in the graphing area.'
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
+  end
+  object UpDownEx1: TUpDownEx
+    Left = 160
+    Top = 8
+    Width = 15
+    Height = 21
+    Associate = Edit1
+    Anchors = [akTop, akRight]
   end
 end

@@ -73,9 +73,6 @@ object AreaFrame: TAreaFrame
         SizeStyle = ssAuto
       end>
     TabOrder = 0
-    ExplicitTop = -247
-    ExplicitWidth = 145
-    ExplicitHeight = 348
     object Label1: TLabel
       Left = 4
       Top = 8
@@ -118,7 +115,6 @@ object AreaFrame: TAreaFrame
       Color = clBtnFace
       ReadOnly = True
       TabOrder = 2
-      ExplicitWidth = 105
     end
     object Panel1: TPanel
       Left = 36
@@ -134,27 +130,21 @@ object AreaFrame: TAreaFrame
       object Edit1: TMyEdit
         Left = 0
         Top = 0
-        Width = 119
+        Width = 120
         Height = 21
         Hint = 
           'Enter the start coordinate or mark the range on the graph itself' +
           ' with the mouse.'
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 0
-        Text = '0'
-        ExplicitWidth = 89
       end
-      object UpDown1: TUpDown
-        Left = 119
+      object UpDown1: TUpDownEx
+        Left = 120
         Top = 0
         Width = 15
         Height = 21
-        Anchors = [akRight]
         Associate = Edit1
-        Min = -32768
-        Max = 32767
-        TabOrder = 1
-        ExplicitLeft = 89
+        Anchors = [akRight]
       end
     end
     object Panel2: TPanel
@@ -171,27 +161,21 @@ object AreaFrame: TAreaFrame
       object Edit2: TMyEdit
         Left = 0
         Top = 0
-        Width = 119
+        Width = 120
         Height = 21
         Hint = 
           'Enter the end coordinate or mark the range on the graph itself w' +
           'ith the mouse.'
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 0
-        Text = '0'
-        ExplicitWidth = 89
       end
-      object UpDown2: TUpDown
-        Left = 119
+      object UpDown2: TUpDownEx
+        Left = 120
         Top = 0
         Width = 15
         Height = 21
-        Anchors = [akTop, akRight]
         Associate = Edit2
-        Min = -32768
-        Max = 32767
-        TabOrder = 1
-        ExplicitLeft = 89
+        Anchors = [akTop, akRight]
       end
     end
   end

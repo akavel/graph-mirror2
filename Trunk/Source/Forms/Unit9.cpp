@@ -279,23 +279,20 @@ void __fastcall TForm9::FormResize(TObject *Sender)
     GetFrame()->Width = ClientWidth;
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm9::UpDownChangingEx(TObject *Sender, bool &AllowChange,
-          short NewValue, TUpDownDirection Direction)
+void __fastcall TForm9::UpDownExUpDown(TObject *Sender, TUDBtnType Button)
 {
   try
   {
-    if(TUpDown *UpDown = dynamic_cast<TUpDown*>(Sender))
-      if(TEdit *Edit = dynamic_cast<TEdit*>(UpDown->Associate))
-        if(Direction != updNone)
-        {
-          Func32::TComplex x = Form1->Data.CalcComplex(ToWString(Edit->Text));
-          Edit->Text = ComplexToString(x + (Direction == updDown ? -0.1L : 0.1L));
-        }
+    if(TUpDownEx *UpDown = dynamic_cast<TUpDownEx*>(Sender))
+      if(TCustomEdit *Edit = dynamic_cast<TCustomEdit*>(UpDown->Associate))
+      {
+        Func32::TComplex x = Form1->Data.CalcComplex(ToWString(Edit->Text));
+        Edit->Text = ComplexToString(x + (Button == btPrev ? -0.1L : 0.1L));
+      }
   }
   catch(Func32::EFuncError &E)
   { //Ignore errors
   }
-  AllowChange = false;
 }
 //---------------------------------------------------------------------------
 

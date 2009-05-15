@@ -130,7 +130,7 @@ object ParFuncFrame: TParFuncFrame
   object Edit1: TMyEdit
     Left = 48
     Top = 8
-    Width = 127
+    Width = 112
     Height = 21
     Hint = 
       'Enter the value for the parameter t for which you want to evalua' +
@@ -160,5 +160,13 @@ object ParFuncFrame: TParFuncFrame
       'y-axis'
       'Extreme x-value'
       'Extreme y-value')
+  end
+  object UpDownEx1: TUpDownEx
+    Left = 160
+    Top = 8
+    Width = 15
+    Height = 21
+    Associate = Edit1
+    Anchors = [akTop, akRight]
   end
 end
