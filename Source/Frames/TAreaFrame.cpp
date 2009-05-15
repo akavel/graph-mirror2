@@ -15,6 +15,7 @@
 #include "TAreaFrame.h"
 //---------------------------------------------------------------------------
 #pragma link "MyEdit"
+#pragma link "UpDownEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TAreaFrame::TAreaFrame(TComponent* Owner)

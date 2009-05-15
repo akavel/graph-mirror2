@@ -14,6 +14,7 @@
 #include <float.h>
 //---------------------------------------------------------------------------
 #pragma link "MyEdit"
+#pragma link "UpDownEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TTanFrame::TTanFrame(TComponent* Owner)

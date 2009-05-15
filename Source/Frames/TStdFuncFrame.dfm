@@ -139,15 +139,11 @@ object StdFuncFrame: TStdFuncFrame
     ReadOnly = True
     TabOrder = 3
   end
-  object UpDown1: TUpDown
+  object UpDown1: TUpDownEx
     Left = 162
     Top = 7
     Width = 16
     Height = 21
     Associate = Edit1
-    Min = -32768
-    Max = 32767
-    TabOrder = 5
-    Thousands = False
   end
 end
