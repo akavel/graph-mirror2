@@ -75,6 +75,17 @@
 		</varlistentry>
 
 		<varlistentry>
+			<term>Custom decimal separator</term>
+			<listitem>
+				<para>
+					Decimal separator used when data are exported to files and the clipboard.
+					When disabled the decimal separator from the Windows Regional settings is used.
+					This is not used for expressions entered into Graph, which always use a dot as decimal separator.
+				</para>
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
 			<term>Associate .grf files</term>
 			<listitem>
 				<para>
