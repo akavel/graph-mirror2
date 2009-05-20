@@ -119,7 +119,7 @@
   </xsl:attribute-set>
 
   <xsl:template match="markup[@role = 'symbolfont']">
-    <fo:inline font-family="Symbol">
+    <fo:inline font-family="Symbol" font-style="normal">
       <xsl:call-template name="inline.charseq"/>
     </fo:inline>
   </xsl:template>

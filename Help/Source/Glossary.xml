@@ -15,10 +15,10 @@
 		<glossdef>
 			<para>
 				Complex numbers are a superset of real numbers. Complex numbers are two dimensional and is most often written
-				on rectangular form as a+b&imag; where <emphasis>a</emphasis> is the real part and
-				<emphasis>b</emphasis> is the imaginary part.
+				on rectangular form as a+b&imag; where <parameter>a</parameter> is the real part and
+				<parameter>b</parameter> is the imaginary part.
 				The imaginary unit &imag; is defined as &imag;^2=-1.
-				Complex numbers can also be shown on polar form as a&ang;&theta; where <emphasis>a</emphasis> is the absolute value of
+				Complex numbers can also be shown on polar form as a&ang;&theta; where <parameter>a</parameter> is the absolute value of
 				the number and &theta; is the angle of the number in radians or degrees.
 			</para>
 			<para>
