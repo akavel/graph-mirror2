@@ -421,10 +421,12 @@
 
 				<varlistentry>
 					<term>
-						<menuchoice>
-							<guimenu>Function</guimenu><guimenuitem>Custom functions...</guimenuitem>
-							<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>F</markup></keycap></keycombo></shortcut>
-						</menuchoice>
+						<link linkend="CustomFunctionsDialog">
+							<menuchoice>
+								<guimenu>Function</guimenu><guimenuitem>Custom functions...</guimenuitem>
+								<shortcut><keycombo><keycap>Ctrl</keycap><keycap><markup>F</markup></keycap></keycombo></shortcut>
+							</menuchoice>
+						</link>
 					</term>
 					<listitem>
 						<para>

@@ -37,7 +37,7 @@
 				<term>Scalable Vector Graphics (svg)</term>
 				<listitem>
 					<para>
-						This is a format for portable metafiles and should therefore be prefered for files placed on the Internet.
+						This is a format for portable metafiles and should therefore be preferred for files placed on the Internet.
 						However the format is still not supported by all browsers.
 					</para>
 				</listitem>

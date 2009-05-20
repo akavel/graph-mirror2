@@ -14,6 +14,7 @@
 	<indexterm><primary>interpolation</primary></indexterm>
 	<indexterm><primary>labels</primary></indexterm>
 	<indexterm><primary>error bars</primary></indexterm>
+	<indexterm><primary>arrow</primary></indexterm>
 	<para>
 		You can use the dialog below to add a series of points to the coordinate system.
 		The points will be shown in the coordinate system in the graphing area as a series of markers.
