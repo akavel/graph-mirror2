@@ -653,7 +653,7 @@ enum TTrendType
 TFunc TrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &Points, const std::vector<double> &Weights, unsigned N);
 TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, const std::vector<double> &Weights, unsigned N, double Intercept);
 TParamFunc MovingAverage(const std::vector<TDblPoint> &Points, unsigned N);
-void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, std::vector<long double> &Values, const std::vector<double> &Weights=std::vector<double>(), unsigned MaxIter = 100, double Tol = 1E-6);
+double Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, std::vector<long double> &Values, const std::vector<double> &Weights=std::vector<double>(), unsigned MaxIter = 100, double Tol = 1E-6);
 double CalcSSQ(const std::vector<TDblPoint> &Points, const TFunc &Func);
 double LinearCorrelation(const std::vector<TDblPoint> &Points);
 double Correlation(const std::vector<TDblPoint> &Points, const TFunc &Func);

@@ -493,15 +493,17 @@ double Correlation(const std::vector<TDblPoint> &Points, const TFunc &Func)
   return 1 - Sy/St;
 }
 //---------------------------------------------------------------------------
-/** Find the missing constants in a function model to make the function a best fit of the points
+/** Find the missing constants in a function model to make the function a best fit of the points.
+ *  The search will stop when the requested tolerence or maximum number of iterations are reached.
  *  \param Points:  Points to find best fit for
  *  \param Func:    Function model. The first argument is the variable and the rest are the constants to find.
  *  \param Values:  Initial guess for the constants. On return Values contains the found constants.
  *                  Values.size() must be one less than the number of arguments for Func.
  *  \param MaxIter: Maximum number of iterations before giving up.
- *  \param Tol:     Max tolerance allowed for found constants
+ *  \param Tol:     Max tolerance allowed for found constants.
+ *  \return The actual tolerencen
  */
-void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, std::vector<long double> &Values, const std::vector<double> &Weights, unsigned MaxIter, double Tol)
+double Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, std::vector<long double> &Values, const std::vector<double> &Weights, unsigned MaxIter, double Tol)
 {
   if(Values.size() != Func.GetArguments().size() - 1)
     throw EFuncError(ecInvalidArgCount);
@@ -543,6 +545,8 @@ void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, s
 
     std::vector<long double> LastArgs = Args;
 
+    double Sum;
+    double LastTol;
     for(unsigned Step = 1; Step <= MaxIter; Step++)
     {
       std::vector<double> g(n);
@@ -579,7 +583,7 @@ void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, s
           C(i, j) = (G(i, j)/d[i])/d[j];
 
       TMatrix<double> s = ((-D.Inverse() * (C + I * My).Inverse()) * D.Inverse()) * g;
-      Args.swap(LastArgs);
+      Args.swap(LastArgs); //LastArgs = Args
 
       DEBUG_LOG(std::wclog << "It " << Step << "   ");
       for(unsigned J = 1; J < Args.size(); J++)
@@ -589,31 +593,44 @@ void Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func, s
       }
       DEBUG_LOG(std::wclog << std::endl);
 
-      double Sum = CalcSSQ(Points, Func, Args, Weights);
-
-      DEBUG_LOG(std::wclog << L"SquareError = " << Sum << L"   LastError = " << LastSum << L"   My = " << My << std::endl);
-
-      if(std::abs(Sum - LastSum) < Tol)
+      try
       {
-        //Overwrite Values with the result
-        std::copy(Args.begin() + 1, Args.end(), Values.begin());
-        return;
+        Sum = CalcSSQ(Points, Func, Args, Weights);
+        DEBUG_LOG(std::wclog << L"SquareError = " << Sum << L"   LastError = " << LastSum << L"   My = " << My << std::endl);
+
+        double NewTol = std::abs(Sum - LastSum);
+        if(NewTol <= Tol)
+        {
+          //Overwrite Values with the result
+          std::copy(Args.begin() + 1, Args.end(), Values.begin());
+          return NewTol;
+        }
+
+        if(Sum < LastSum)
+        {
+          My /= 10;
+          LastSum = Sum;
+          LastTol = Tol;
+        }
+        else
+        {
+          My *= 10;
+          Args.swap(LastArgs); //Args = LastArgs
+          if(My >= 1000000)
+            throw EFuncError(ecBadGuess);
+        }
       }
-
-      if(Sum < LastSum)
+      catch(EFuncError &E)
       {
+        DEBUG_LOG(std::wclog << L"SquareError = Error " << E.ErrorCode << L"   My = " << My << std::endl);
         My /= 10;
-        LastSum = Sum;
-      }
-      else
-      {
-        My *= 10;
-        Args.swap(LastArgs);
-        if(My >= 1000000)
-          throw EFuncError(ecBadGuess);
+        Args.swap(LastArgs); //Args = LastArgs
       }
     }
-    throw EFuncError(ecBadGuess);
+
+    std::copy(Args.begin() + 1, Args.end(), Values.begin());
+    DEBUG_LOG(std::wclog << L"Tolerance = " << LastTol << std::endl);
+    return LastTol;
   }
   catch(EMatrix& E)
   {
