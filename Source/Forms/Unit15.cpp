@@ -80,7 +80,12 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
       const Func32::TFunc &StdFunc = F->GetFunc();
       try
       {
-        y = ComplexToString(UseReal ? Func32::TComplex(StdFunc.CalcY(x)) : StdFunc.CalcY(Func32::TComplex(x)));
+        //Don't place the following 3 lines into one. It causes an error in CB2009
+        //for the function f(x)=log(x)
+        if(UseReal)
+          y = ComplexToString(Func32::TComplex(StdFunc.CalcY(x)));
+        else
+          y = ComplexToString(StdFunc.CalcY(Func32::TComplex(x)));
         dy = ComplexToString(UseReal ? Func32::TComplex(Dif1.CalcY(x)) : Dif1.CalcY(Func32::TComplex(x)));
         ddy = ComplexToString(UseReal ? Func32::TComplex(Dif2.CalcY(x)) : Dif2.CalcY(Func32::TComplex(x)));
       }
@@ -176,7 +181,10 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
       String r, x, y, dr, dydx;
       try
       {
-        r = ComplexToString(Func32::TComplex(F.CalcR(t)));
+        //Don't place the following two lines into one. It causes an error in CB2009
+        //for the function r(t)=log(t)
+        long double R = F.CalcR(t);
+        r = ComplexToString(R);
         x = ComplexToString(UseReal ? Func32::TComplex(F.CalcX(t)) : F.CalcX(Func32::TComplex(t)));
         y = ComplexToString(UseReal ? Func32::TComplex(F.CalcY(t)) : F.CalcY(Func32::TComplex(t)));
         dr = ComplexToString(Dif.CalcR(t));
