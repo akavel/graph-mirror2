@@ -125,7 +125,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
 
       Arguments.insert(Arguments.begin(), L"x");
       Func32::TCustomFunc TempFunc(ToWString(Edit3->Text), Arguments, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
-      Regression(Points, TempFunc, Values, Weights);
+      Regression(Points, TempFunc, Values, Weights, 300);
 
       boost::shared_ptr<TStdFunc> Func(new TStdFunc(TempFunc.ConvToFunc(Values, 0)));
       Func->SetLegendText(Func->MakeText() + L"; R²=" + RoundToString(Correlation(Points, Func->GetFunc()), Data));
@@ -219,9 +219,12 @@ void TForm13::ShowUserModels(const std::wstring &Selected)
 //---------------------------------------------------------------------------
 void __fastcall TForm13::ListBox1Click(TObject *Sender)
 {
-  Edit3->Text = Data.UserModels[ToWString(ListBox1->Items->Strings[ListBox1->ItemIndex])].Model.c_str();
-  Button5->Enabled = true;
-  Button6->Enabled = true;
+  if(ListBox1->ItemIndex != -1)
+  {
+    Edit3->Text = Data.UserModels[ToWString(ListBox1->Items->Strings[ListBox1->ItemIndex])].Model.c_str();
+    Button5->Enabled = true;
+    Button6->Enabled = true;
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm13::Button4Click(TObject *Sender)
