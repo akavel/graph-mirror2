@@ -60,7 +60,7 @@ void TForm20::ShowAnimation(const String &FileName)
 
 //  ScaleForm(this);
   if(BiDiMode != bdLeftToRight)
-    LabeledEdit1->LabelPosition = lpRight;
+    LabeledEdit1->LabelPosition = Extctrls::lpRight;
   if(!Visible)
     ShowModal();
 }

@@ -148,7 +148,7 @@ void __fastcall TForm17::Popup_ExportClick(TObject *Sender)
 {
   SaveDialog1->Filter = LoadRes(RES_EXPORT_DATA_FILTER);
   if(SaveDialog1->Execute())
-    if(!Grid1->ExportToFile(SaveDialog1->FileName, SaveDialog1->FilterIndex == 1 ? ';' : '\t'))
+    if(!Grid1->ExportToFile(SaveDialog1->FileName, SaveDialog1->FilterIndex == 1 ? ';' : '\t', Property.DecimalSeparator))
       MessageBox(LoadRes(RES_FILE_ACCESS, SaveDialog1->FileName), LoadStr(RES_WRITE_FAILED), MB_ICONSTOP);
 }
 //---------------------------------------------------------------------------

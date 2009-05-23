@@ -25,6 +25,8 @@
 #include "OleObjectElem.h"
 #include <iterator>
 
+namespace Graph
+{
 TUndoList UndoList(50);
 //---------------------------------------------------------------------------
 TData::TData(const TData &OldData) : Axes(OldData.Axes), CustomFunctions(OldData.CustomFunctions),
@@ -601,5 +603,5 @@ void TData::Update()
     ElemList[I]->Update();
 }
 //---------------------------------------------------------------------------
-
+} //namespace Graph
 

@@ -19,6 +19,8 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/mem_fn.hpp>
 //---------------------------------------------------------------------------
+namespace Graph
+{
 ////////////////
 // TTextValue //
 ////////////////
@@ -1059,4 +1061,4 @@ void TAxesView::ChangeVisible()
   }
 }
 //---------------------------------------------------------------------------
-
+} //namespace Graph

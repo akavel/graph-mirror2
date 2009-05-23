@@ -49,7 +49,7 @@ __published:	// IDE-managed Components
   void __fastcall ComboBox1Change(TObject *Sender);
 private:	// User declarations
   TData Data;
-  ::TAnimationInfo &AnimationInfo;
+  Graph::TAnimationInfo &AnimationInfo;
 
 public:		// User declarations
   __fastcall TForm19(TComponent* Owner, TData &AData, int AWidth, int AHeight);

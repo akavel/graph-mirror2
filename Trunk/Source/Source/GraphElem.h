@@ -13,6 +13,9 @@
 #include <boost/weak_ptr.hpp>
 #include <deque>
 
+class TConfigFileSection;
+namespace Graph
+{
 enum TGraphError
 {
   geInvalidRelation
@@ -80,7 +83,7 @@ public:
   virtual void SetParentFunc(const boost::shared_ptr<TBaseFuncType> &AFunc) {}
   virtual boost::shared_ptr<TBaseFuncType> ParentFunc() const {return boost::shared_ptr<TBaseFuncType>();}
   virtual std::wstring MakeText() const = 0;
-  virtual void WriteToIni(class TConfigFileSection &Section) const=0;
+  virtual void WriteToIni(TConfigFileSection &Section) const=0;
   virtual void ReadFromIni(const TConfigFileSection &Section) =0;
   virtual void Accept(TGraphElemVisitor&) =0;
   virtual boost::shared_ptr<TGraphElem> Clone() const = 0;
@@ -293,6 +296,8 @@ struct TPointSeriesPoint
 };
 
 enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
+enum TLabelPosition {lpAbove, lpBelow, lpLeft, lpRight};
+
 struct TPointSeries : public TGraphElem
 {
   typedef std::vector<TPointSeriesPoint> TPointList;
@@ -412,6 +417,7 @@ public:
   int GetVisible() const;
   void ChangeVisible();
 };
-
+} //namespace Graph
+using namespace Graph;
 //---------------------------------------------------------------------------
 #endif

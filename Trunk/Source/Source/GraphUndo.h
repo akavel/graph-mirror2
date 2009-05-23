@@ -11,6 +11,8 @@
 #define GraphUndoH
 #include "Undo.h"
 
+namespace Graph
+{
 struct TUndoAdd
 {
   TData &Data;
@@ -143,4 +145,5 @@ TUndoObject<T> MakeUndoObject(T &OrgObject)
 
 extern TUndoList UndoList;
 //---------------------------------------------------------------------------
+} //namespace Graph
 #endif

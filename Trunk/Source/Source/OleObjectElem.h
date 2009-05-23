@@ -12,6 +12,8 @@
 #include "GraphElem.h"
 #include <OleCtnrs.hpp>
 //---------------------------------------------------------------------------
+namespace Graph
+{
 class TOleObjectElem : public TGraphElem
 {
   boost::shared_ptr<TOleContainer> OleContainer;
@@ -21,7 +23,7 @@ public:
   TOleObjectElem();
   TOleObjectElem(const Func32::TDblPoint &APos);
   std::wstring MakeText() const;
-  void WriteToIni(class TConfigFileSection &IniFile) const;
+  void WriteToIni(TConfigFileSection &IniFile) const;
   void ReadFromIni(const TConfigFileSection &IniFile);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TOleObjectElem(*this));}
@@ -29,4 +31,5 @@ public:
   bool Edit();
   void Copy();
 };
+} //namespace Graph
 #endif
