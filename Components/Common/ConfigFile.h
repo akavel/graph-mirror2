@@ -30,6 +30,7 @@ namespace ConfigFileImpl
   }
 }
 
+class TConfigFile;
 class TConfigFileSection
 {
 private:
@@ -41,7 +42,7 @@ private:
     bool operator()(const TConfigFileSection &Section) const {return Str == Section.Name;}
   };
 
-  friend class TConfigFile;
+  friend TConfigFile;
   friend TCmpString;
   typedef std::deque<std::pair<std::wstring, std::wstring> > TSection;
   std::wstring Name;

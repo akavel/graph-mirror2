@@ -1014,7 +1014,7 @@ bool TGrid::ImportFromFile(const String &FileName, wchar_t DecimalSeparator)
   return true;
 }
 //---------------------------------------------------------------------------
-bool TGrid::ExportToFile(const String &FileName, wchar_t Delimiter, bool Utf8)
+bool TGrid::ExportToFile(const String &FileName, wchar_t Delimiter, wchar_t DecimalSeparator, bool Utf8)
 {
   //Save binary; \r\n is already used as line feed
   std::ofstream Stream(FileName.c_str(), std::ios::binary);
