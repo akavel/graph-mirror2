@@ -10,12 +10,10 @@
 #ifndef SettingsH
 #define SettingsH
 //---------------------------------------------------------------------------
-//Forward declare
-namespace Registry
-{
-  class TRegistry;
-}
+class TConfigRegistry;
 
+namespace Graph
+{
 enum TAxesStyle {asNone, asCrossed, asBoxed};
 enum TLegendPlacement {lpCustom, lpTopRight, lpBottomRight, lpTopLeft, lpBottomLeft};
 
@@ -113,7 +111,7 @@ struct TProperty
   wchar_t DecimalSeparator;    //Decimal separator used when exporting files
 
   TProperty();
-  void Read(const class TConfigRegistry &Registry);
+  void Read(const TConfigRegistry &Registry);
   void Write(class TConfigRegistry &Registry);
 };
 
@@ -206,5 +204,6 @@ struct TAnimationInfo
 };
 
 extern TProperty Property;
-
+} //namespace Graph;
+using namespace Graph;
 #endif

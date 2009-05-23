@@ -14,6 +14,9 @@
 #include "Settings.h"
 #include "Convert.h"
 
+class TConfigFile;
+namespace Graph
+{
 struct TUserModel
 {
   std::wstring Model;
@@ -24,7 +27,6 @@ typedef std::map<std::wstring, TUserModel> TUserModels;
 
 typedef bool (__closure *TAbortUpdateEvent)();
 
-class TConfigFile;
 
 class TData
 {
@@ -41,7 +43,7 @@ public:
   TAxes Axes;
   TUserModels UserModels;
   TCustomFunctions CustomFunctions;
-  ::TAnimationInfo AnimationInfo;
+  TAnimationInfo AnimationInfo;
 
   TData() : CustomFunctions(*this) {}
   TData(const TData &OldData);
@@ -102,6 +104,7 @@ enum TTraceType {ttTrace, ttIntersection, ttXAxis, ttYAxis, ttExtremeX, ttExtrem
 double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int Y, const TData &Data, const class TDraw &Draw);
 bool ExportPointSeries(const TPointSeries *Series, const wchar_t *FileName, char Delimiter);
 double FindNearestPoint(const TBaseFuncType *Func, int X, int Y);
-
+} //namespace Graph
+using namespace Graph;
 //---------------------------------------------------------------------------
 #endif

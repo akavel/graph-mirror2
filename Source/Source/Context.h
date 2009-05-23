@@ -12,7 +12,8 @@
 #include <vector>
 #include <string>
 #include <boost/shared_ptr.hpp>
-
+namespace Graph
+{
 typedef void (__closure *TClipCallback)(const TPoint *Points, unsigned Size);
 
 class TContext
@@ -102,17 +103,17 @@ public:
 
 class TContextLock
 {
-  ::TContext &Context;
+  TContext &Context;
   TContextLock(const TContextLock&); //Not implemented
   TContextLock& operator=(const TContextLock&); //NotImplemented
 public:
-  TContextLock(::TContext &AContext) : Context(AContext) {Context.Lock();}
+  TContextLock(TContext &AContext) : Context(AContext) {Context.Lock();}
   ~TContextLock() {Context.Unlock();}
 };
 
 class TRegion
 {
-  friend ::TContext;
+  friend TContext;
   HRGN Handle;
 
   TRegion(const TRegion&); //Not defined
@@ -138,6 +139,6 @@ public:
 };
 
 boost::shared_ptr<TRegion> CreateRegionFromLine(const std::vector<TPoint> &Data);
-
+} //namespace Graph
 //---------------------------------------------------------------------------
 #endif

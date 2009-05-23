@@ -13,7 +13,8 @@
 #include "Data.h"
 #include "Context.h"
 #include <boost/function.hpp>
-
+namespace Graph
+{
 class TDrawThread;
 typedef std::vector<TPoint>::iterator TPointIter;
 typedef std::vector<TPoint>::const_iterator TConstPointIter;
@@ -31,7 +32,7 @@ class TDraw
 {
   friend TDrawThread;
   friend class TDrawLegend;
-  ::TContext Context;
+  TContext Context;
   double xScale, yScale;  //The scale of x-axis and y-axis
   int Width, Height;      //Width and height of image
   TRect AxesRect;         //Rectangle where the coordinate system is shown
@@ -95,5 +96,5 @@ public:
   void SetCanvas(TCanvas *Canvas) {Context.SetCanvas(Canvas);}
   const TRect& GetAxesRect() const {return AxesRect;}
 };
-
+} //namespace Graph
 #endif

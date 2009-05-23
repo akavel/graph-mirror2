@@ -15,6 +15,8 @@
 #include "VclObject.h"
 #include <SyncObjs.hpp>
 //---------------------------------------------------------------------------
+namespace Graph
+{
 enum TDrawMessage {dmTerminate=WM_USER, dmDrawAll, dmDrawFunc};
 
 class TDrawThread : public TIThread, public TGraphElemVisitor
@@ -24,7 +26,7 @@ private:
   TDraw *Draw;
   TAxes &Axes;
   TRect AxesRect;
-  ::TContext &Context;
+  TContext &Context;
   bool ForceBlack;
   double SizeMul;
   volatile bool Aborted;
@@ -82,4 +84,5 @@ public:
   bool IsAborted() const {return Aborted;}
 };
 //---------------------------------------------------------------------------
+} //namespace Graph
 #endif

@@ -21,6 +21,8 @@
 #include "IGraphic.h"
 #include "StackTrace.h"
 
+namespace Graph
+{
 const unsigned MaxPixelDist = 10;
 const unsigned MaxExtraPoints = 100;
 //---------------------------------------------------------------------------
@@ -1365,5 +1367,5 @@ void TDrawThread::DrawRelation(const TRelation &Relation)
   }
 }
 //---------------------------------------------------------------------------
-
+} //namespace Graph
 

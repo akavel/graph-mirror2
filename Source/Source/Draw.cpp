@@ -14,6 +14,8 @@
 #include <cmath>
 #include "DrawThread.h"
 #include "PointSelect.h"
+namespace Graph
+{
 //Windows 2000/XP uses signed 32 bit numbers (Says Windows SDK). It looks like only only 21 bits are used (signed).
 //Windows 9x only uses signed 16 bit numbers for pixel positions
 //Wierd lines might be shown under Windows 9x if lines are longer than a specific limit (2^14 I think) (Why do I hate Windows?)
@@ -308,7 +310,7 @@ unsigned TDraw::FindLabels()
           TLabelInfo LabelInfo;
           LabelInfo.Label = MakeNumber(y, Axes.yAxis.MultiplyOfPi);
           LabelInfo.Width = Context.GetTextWidth(LabelInfo.Label);
-          LabelInfo.Pos = yPixel;;
+          LabelInfo.Pos = yPixel;
           if(Axes.NumberPlacement == npCenter)
             LabelInfo.Pos -= NumberHeight / 2;
           yLabelInfo.push_back(LabelInfo);
@@ -443,6 +445,7 @@ void TDraw::DrawAxes()
   Context.SetFont(Axes.NumberFont);
 
   std::vector<int> xGridMajor, xGridMinor, yGridMajor, yGridMinor;
+  double ArrowScale = Axes.LabelFont->Size / 12.0; //12 is the default size
 
   if(Axes.xAxis.ShowGrid || Axes.GridStyle == gsDots)
   {
@@ -621,7 +624,12 @@ void TDraw::DrawAxes()
   }
 
   if(Axes.yAxis.ShowLabel)
-    Context.DrawText(Axes.yAxis.Label, xPixelCross + Size(12), AxesRect.Top);
+  {
+    //Compensate for line gap, especially with large fonts.
+    OUTLINETEXTMETRIC TextMetric;
+    GetOutlineTextMetrics(Context.GetCanvas()->Handle, sizeof(TextMetric), &TextMetric);
+    Context.DrawText(Axes.yAxis.Label, xPixelCross + Size(12), AxesRect.Top - TextMetric.otmLineGap);
+  }
 
   //If x-axis is inside the view
   if(yPixelCross >= AxesRect.Top && yPixelCross <= AxesRect.Bottom)
@@ -635,8 +643,8 @@ void TDraw::DrawAxes()
 
     Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.AxesColor);
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, 1);
-    const TPoint LeftArrow[] = {TPoint(X1+Size(5), Y-Size(5)-1), TPoint(X1, Y-1), TPoint(X1, Y), TPoint(X1+Size(5), Y+Size(5))};
-    const TPoint RightArrow[] = {TPoint(X2-Size(5), Y-Size(5)-1), TPoint(X2, Y-1), TPoint(X2, Y), TPoint(X2-Size(5), Y+Size(5))};
+    const TPoint LeftArrow[] = {TPoint(X1+Size(5*ArrowScale), Y-Size(5*ArrowScale)-1), TPoint(X1, Y-1), TPoint(X1, Y), TPoint(X1+Size(5*ArrowScale), Y+Size(5*ArrowScale))};
+    const TPoint RightArrow[] = {TPoint(X2-Size(5*ArrowScale), Y-Size(5*ArrowScale)-1), TPoint(X2, Y-1), TPoint(X2, Y), TPoint(X2-Size(5*ArrowScale), Y+Size(5*ArrowScale))};
     //Show filled arrow on x-axis
     if(Axes.AxesArrows == aaBothEnds)
       Context.DrawPolygon(LeftArrow, 4);
@@ -664,8 +672,8 @@ void TDraw::DrawAxes()
 
     Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.AxesColor);
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, 1);
-    TPoint TopArrow[] = {TPoint(X-Size(5)-1, Y1+Size(5)), TPoint(X-1, Y1), TPoint(X, Y1), TPoint(X+Size(5), Y1+Size(5))};
-    TPoint BottomArrow[] = {TPoint(X-Size(5)-1, Y2-Size(6)), TPoint(X-1, Y2-1), TPoint(X, Y2-1), TPoint(X+Size(5), Y2-Size(6))};
+    TPoint TopArrow[] = {TPoint(X-Size(5*ArrowScale)-1, Y1+Size(5*ArrowScale)), TPoint(X-1, Y1), TPoint(X, Y1), TPoint(X+Size(5*ArrowScale), Y1+Size(5*ArrowScale))};
+    TPoint BottomArrow[] = {TPoint(X-Size(5*ArrowScale)-1, Y2-Size(6*ArrowScale)), TPoint(X-1, Y2-1), TPoint(X, Y2-1), TPoint(X+Size(5*ArrowScale), Y2-Size(6*ArrowScale))};
 
     //Show arrow on y-axis
     if(Axes.AxesArrows == aaBothEnds)
@@ -929,4 +937,4 @@ void TDraw::DrawPointLabel(TCanvas *Canvas, TPoint Pos, int PointSize, const std
   Canvas->TextOut(Pos.x, Pos.y, Label.c_str());
 }
 //---------------------------------------------------------------------------
-
+} //namespace Graph

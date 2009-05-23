@@ -119,7 +119,7 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
   PointSeries->Interpolation = static_cast<TInterpolationAlgorithm>(ComboBox2->ItemIndex);
   PointSeries->ShowLabels = CheckBox2->Checked;
   PointSeries->Font->Assign(FontDialog1->Font);
-  PointSeries->LabelPosition = static_cast<TLabelPosition>(ComboBox1->ItemIndex);
+  PointSeries->LabelPosition = static_cast<Graph::TLabelPosition>(ComboBox1->ItemIndex);
 
   if(!CheckBox3->Checked)
     PointSeries->xErrorBarType = ebtNone;
@@ -311,7 +311,7 @@ void __fastcall TForm14::PaintBox1Paint(TObject *Sender)
     {
       std::wstring Str = L"(2.37,9.53)";
       PaintBox1->Canvas->Font->Assign(FontDialog1->Font);
-      TDraw::DrawPointLabel(PaintBox1->Canvas, TPoint(X, Y), PointSize, Str, static_cast<TLabelPosition>(ComboBox1->ItemIndex));
+      TDraw::DrawPointLabel(PaintBox1->Canvas, TPoint(X, Y), PointSize, Str, static_cast<Graph::TLabelPosition>(ComboBox1->ItemIndex));
     }
   }
   catch(...)
@@ -378,7 +378,7 @@ void __fastcall TForm14::Popup_ExportClick(TObject *Sender)
 {
   SaveDialog1->Filter = LoadRes(RES_EXPORT_DATA_FILTER);
   if(SaveDialog1->Execute())
-    if(!Grid->ExportToFile(SaveDialog1->FileName, SaveDialog1->FilterIndex == 1 ? ';' : '\t'))
+    if(!Grid->ExportToFile(SaveDialog1->FileName, SaveDialog1->FilterIndex == 1 ? ';' : '\t', Property.DecimalSeparator))
       MessageBox(LoadRes(RES_FILE_ACCESS, SaveDialog1->FileName), LoadRes(RES_WRITE_FAILED), MB_ICONSTOP);
 }
 //---------------------------------------------------------------------------

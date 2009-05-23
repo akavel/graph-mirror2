@@ -13,6 +13,8 @@
 #include "ConfigFile.h"
 #include "Encode.h"
 //---------------------------------------------------------------------------
+namespace Graph
+{
 ////////////////////
 // TOleObjectElem //
 ////////////////////
@@ -84,5 +86,5 @@ void TOleObjectElem::Copy()
   OleContainer->Copy();
 }
 //---------------------------------------------------------------------------
-
+} //namespace Graph
 
