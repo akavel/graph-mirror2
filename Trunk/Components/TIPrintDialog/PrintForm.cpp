@@ -224,6 +224,7 @@ void TPrintFrm::PrinterChanged()
   Label12->Caption = (PrinterInfo2->pLocation && *PrinterInfo2->pLocation) ? PrinterInfo2->pLocation : PrinterInfo2->pPortName;
   Label13->Caption = PrinterInfo2->pComment;
 
+  Printer()->Orientation = RadioGroup1->ItemIndex ? poLandscape : poPortrait;
   ResizePaper();
 }
 //---------------------------------------------------------------------------
