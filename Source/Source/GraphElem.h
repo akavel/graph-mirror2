@@ -296,7 +296,7 @@ struct TPointSeriesPoint
 };
 
 enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
-enum TLabelPosition {lpAbove, lpBelow, lpLeft, lpRight};
+enum TLabelPosition {lpAbove, lpBelow, lpLeft, lpRight, lpAboveLeft, lpAboveRight, lpBelowLeft, lpBelowRight};
 
 struct TPointSeries : public TGraphElem
 {

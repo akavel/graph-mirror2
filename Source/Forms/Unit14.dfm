@@ -124,15 +124,11 @@ object Form14: TForm14
     Top = 24
     Width = 194
     Height = 352
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Anchors = [akTop, akRight, akBottom]
     TabOrder = 2
     object TabSheet1: TTabSheet
       Caption = 'Markers'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         186
         324)
@@ -394,25 +390,23 @@ object Form14: TForm14
           Anchors = [akTop, akRight]
           Enabled = False
           ItemHeight = 13
-          ItemIndex = 1
           TabOrder = 2
-          Text = 'Below'
           OnChange = Change
           Items.Strings = (
             'Above'
             'Below'
             'Left'
-            'Right')
+            'Right'
+            'Above Left'
+            'Above Right'
+            'Below Left'
+            'Below Right')
         end
       end
     end
     object TabSheet2: TTabSheet
       Caption = 'Error bars'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         186
         324)
