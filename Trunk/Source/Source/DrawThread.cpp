@@ -1177,7 +1177,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
       if(Result != LastResult)
       {
         double x2 =  xLogScl ? x / dx * dx2 : x - dx + dx2;
-        for(int X2 = X - dX + 1; X2 <= X; X2++, xLogScl ? x2 *= dx2 : x2 += dx2)
+        for(int X2 = X - dX + 1; X2 <= X; X2++)
         {
           Args[0] = x2;
           Temp = Relation.Eval(Args, CalcError);
@@ -1190,6 +1190,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
               Points.push_back(TRect(XStart + 1, Y, X2, Y + 1));
             break;
           }
+          xLogScl ? x2 *= dx2 : x2 += dx2; //Don't place inside for() because of bug in CB2009
         }
       }
       LastResult = Result;

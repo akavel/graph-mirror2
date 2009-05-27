@@ -915,25 +915,49 @@ void TDraw::DrawPointLabel(TCanvas *Canvas, TPoint Pos, int PointSize, const std
   switch(LabelPosition)
   {
     case lpAbove:
-      Pos.x -= TextSize.cx / 2;
+    case lpAboveLeft:
+    case lpAboveRight:
       Pos.y -= PointSize + TextSize.cy;
       break;
 
     case lpBelow:
-      Pos.x -= TextSize.cx / 2;
+    case lpBelowLeft:
+    case lpBelowRight:
       Pos.y += PointSize;
       break;
 
     case lpLeft:
-      Pos.x -= TextSize.cx + PointSize;
       Pos.y -= TextSize.cy / 2;
       break;
 
     case lpRight:
-      Pos.x += 2*PointSize;
       Pos.y -= TextSize.cy / 2;
       break;
   }
+
+  switch(LabelPosition)
+  {
+    case lpAbove:
+      Pos.x -= TextSize.cx / 2;
+      break;
+
+    case lpBelow:
+      Pos.x -= TextSize.cx / 2;
+      break;
+
+    case lpLeft:
+    case lpAboveLeft:
+    case lpBelowLeft:
+      Pos.x -= TextSize.cx + PointSize;
+      break;
+
+    case lpRight:
+    case lpAboveRight:
+    case lpBelowRight:
+      Pos.x += 2*PointSize;
+      break;
+  }
+
   Canvas->TextOut(Pos.x, Pos.y, Label.c_str());
 }
 //---------------------------------------------------------------------------

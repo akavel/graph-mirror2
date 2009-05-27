@@ -72,8 +72,8 @@ TOleServerImpl::TOleServerImpl()
   if(out)
   {
     out << std::endl << std::endl;
-    out << "PID: 0x" << std::hex << std::uppercase << std::setw(8) << std::setfill('0') << GetCurrentProcessId() << std::endl;
-    out << "Date: " << DateTimeToStr(Now()) << std::endl;
+//    out << "PID: 0x" << std::hex << std::uppercase << std::setw(8) << std::setfill('0') << GetCurrentProcessId() << std::endl;
+//    out << "Date: " << DateTimeToStr(Now()) << std::endl;
     out << __FUNC__ << "(CmdLine=" << ::ToString(CmdLine) << ")";
   }
 #endif
@@ -833,12 +833,14 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::GetCanonicalFormatEtc(
   LOG_ARG("cfFormat=" + ClipboardFormatToStr(pformatectIn->cfFormat) + ", dwAspect=" + ValueToStr(AspectList, pformatectIn->dwAspect)
     + ", ptdIn=" + DeviceToStr(pformatectIn->ptd) + ", ptdOut=" + DeviceToStr(pformatetcOut->ptd));
 
-  //If ptd is NULL indicating generic format, return DATA_S_SAMEFORMATETC to indicate that the format is supported
-  //If ptd is not NULL, usually indicating a printer driver, return S_OK to indicate the format is replaced by the generic format
-  HRESULT Result = pformatectIn->ptd == NULL ? DATA_S_SAMEFORMATETC : S_OK;
+  //From the API documentation:
+  //For data objects that never provide device-specific renderings,
+  //the simplest implementation of this method is to copy the input FORMATETC to the
+  //output FORMATETC, store a NULL in the ptd member of the output FORMATETC,
+  //and return DATA_S_SAMEFORMATETC.
   *pformatetcOut = *pformatectIn;
   pformatetcOut->ptd = NULL;
-  return LOG_RESULT(Result);
+  return LOG_RESULT(DATA_S_SAMEFORMATETC);
 }
 //---------------------------------------------------------------------------
 /* [local] */ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetData(
@@ -857,7 +859,6 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::EnumFormatEtc(
   DEBUG_CALL();
   HRESULT Result = OleRegEnumFormatEtc(CLSID_OleServer, dwDirection, ppenumFormatEtc);
   return LOG_RESULT(Result);
-//  return LOG_RESULT(OLE_S_USEREG);
 }
 //---------------------------------------------------------------------------
 HRESULT STDMETHODCALLTYPE TOleServerImpl::DAdvise(
@@ -868,6 +869,14 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::DAdvise(
 {
   DEBUG_CALL();
   LOG_ARG("cfFormat=" + ClipboardFormatToStr(pFormatetc->cfFormat) + ", tymed=" + FlagsToStr(TymedList, pFormatetc->tymed) + ", advf=" + FlagsToStr(AdvfList, advf));
+
+  if(pFormatetc->cfFormat != CF_METAFILEPICT &&
+     pFormatetc->cfFormat != CF_ENHMETAFILE &&
+     pFormatetc->cfFormat != CF_BITMAP &&
+     pFormatetc->cfFormat != cfObjectDescriptor &&
+     pFormatetc->cfFormat != cfEmbedSource &&
+     pFormatetc->cfFormat != cfPng)
+      return LOG_RESULT(DV_E_FORMATETC);
 
   if(!DataAdviseHolder)
     if(FAILED(LOG_FUNCTION_CALL(CreateDataAdviseHolder(&DataAdviseHolder))))
