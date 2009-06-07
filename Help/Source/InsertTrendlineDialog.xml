@@ -16,7 +16,7 @@
 	<indexterm><primary>polyline</primary></indexterm>
 	<indexterm><primary>function</primary></indexterm>
 	<indexterm><primary>regression</primary></indexterm>
-	<indexterm><primary><markup>SSQ</markup></primary></indexterm>
+	<indexterm><primary>SSQ</primary></indexterm>
 	<indexterm><primary>sum of squares</primary></indexterm>
 	<para>
 		Use the dialog shown below to insert a trendline that is the function that fits a <link linkend="InsertPointSeriesDialog">point series</link> best.
