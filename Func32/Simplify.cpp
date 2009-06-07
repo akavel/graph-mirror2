@@ -18,48 +18,48 @@ struct TSimplify
   TElem Par1;
   TElem Par2;
   TElem Result[4];
-  TSimplify(const TElem &AFunction, const TElem &APar1, const TElem &APar2, const TElem &AResult1, const TElem &AResult2 = CodeNull, const TElem &AResult3 = CodeNull, const TElem &AResult4 = CodeNull)
-    : Function(AFunction), Par1(APar1), Par2(APar2) {Result[0] = AResult1; Result[1] = AResult2; Result[2] = AResult3; Result[3] = AResult4;}
-  TSimplify() {}
 };
 
-const unsigned TableSize = 27;
+const unsigned TableSize = 29;
 const TSimplify& SimplifyTable(unsigned Index)
 {
 
-static const TSimplify Table[TableSize] = {
-TSimplify(CodeAdd, CodeIgnore, 0, CodePar1),
-TSimplify(CodeAdd, 0, CodeIgnore, CodePar2),
-TSimplify(CodeAdd, CodeIgnore, CodeNeg, CodeSub, CodePar1, CodePar2Par),
-TSimplify(CodeAdd, CodeIgnore, CodePar1, CodeMul, 2, CodePar1),
+static const TSimplify Table[TableSize] =
+{
+  {CodeAdd, CodeIgnore, 0, CodePar1},
+  {CodeAdd, 0, CodeIgnore, CodePar2},
+  {CodeAdd, CodeIgnore, CodeNeg, CodeSub, CodePar1, CodePar2Par},
+  {CodeAdd, CodeIgnore, CodePar1, CodeMul, 2, CodePar1},
 
-TSimplify(CodeSub, CodeIgnore, 0, CodePar1),
-TSimplify(CodeSub, 0, CodeNeg, CodePar2Par),
-TSimplify(CodeSub, 0, CodeIgnore, CodeNeg, CodePar2),
-TSimplify(CodeSub, CodeIgnore, CodePar1, 0),
+  {CodeSub, CodeIgnore, 0, CodePar1},
+  {CodeSub, CodeIgnore, CodeNeg, CodeAdd, CodePar1, CodePar2Par},
+  {CodeSub, 0, CodeNeg, CodePar2Par},
+  {CodeSub, 0, CodeIgnore, CodeNeg, CodePar2},
+  {CodeSub, CodeIgnore, CodePar1, 0},
 
-TSimplify(CodeMul, CodeIgnore, 0, 0),
-TSimplify(CodeMul, 0, CodeIgnore, 0),
-TSimplify(CodeMul, CodeIgnore, 1, CodePar1),
-TSimplify(CodeMul, 1, CodeIgnore, CodePar2),
-TSimplify(CodeNeg, 0, CodeIgnore, 0),
-TSimplify(CodeMul, CodeNeg, -1, CodePar1Par),
-TSimplify(CodeMul, -1, CodeNeg, CodePar2Par),
-TSimplify(CodeMul, CodeIgnore, -1, CodeNeg, CodePar1),
-TSimplify(CodeMul, -1, CodeIgnore, CodeNeg, CodePar2),
-TSimplify(CodeMul, CodeIgnore, CodeNeg, CodeNeg, CodeMul, CodePar1, CodePar2Par),
-TSimplify(CodeMul, CodeNeg, CodeIgnore, CodeNeg, CodeMul, CodePar1Par, CodePar2),
+  {CodeMul, CodeIgnore, 0, 0},
+  {CodeMul, 0, CodeIgnore, 0},
+  {CodeMul, CodeIgnore, 1, CodePar1},
+  {CodeMul, 1, CodeIgnore, CodePar2},
+  {CodeNeg, 0, CodeIgnore, 0},
+  {CodeNeg, CodeNeg, CodeIgnore, CodePar1Par},
+  {CodeMul, CodeNeg, -1, CodePar1Par},
+  {CodeMul, -1, CodeNeg, CodePar2Par},
+  {CodeMul, CodeIgnore, -1, CodeNeg, CodePar1},
+  {CodeMul, -1, CodeIgnore, CodeNeg, CodePar2},
+  {CodeMul, CodeIgnore, CodeNeg, CodeNeg, CodeMul, CodePar1, CodePar2Par},
+  {CodeMul, CodeNeg, CodeIgnore, CodeNeg, CodeMul, CodePar1Par, CodePar2},
 
-TSimplify(CodeDiv, 0, CodeIgnore, 0),
-TSimplify(CodeDiv, CodeIgnore, 1, CodePar1),
+  {CodeDiv, 0, CodeIgnore, 0},
+  {CodeDiv, CodeIgnore, 1, CodePar1},
 
-TSimplify(CodePow, 1, CodeIgnore, 1),
-TSimplify(CodePow, CodeIgnore, 0, 1),
-TSimplify(CodePow, CodeIgnore, 1, CodePar1),
+  {CodePow, 1, CodeIgnore, 1},
+  {CodePow, CodeIgnore, 0, 1},
+  {CodePow, CodeIgnore, 1, CodePar1},
 
-TSimplify(CodeLn, Codee, CodeIgnore, 1),
-TSimplify(CodeLog, 10, CodeIgnore, 1),
-TSimplify(CodeSqr, CodeSqrt, CodeIgnore, CodePar1Par)
+  {CodeLn, Codee, CodeIgnore, 1},
+  {CodeLog, 10, CodeIgnore, 1},
+  {CodeSqr, CodeSqrt, CodeIgnore, CodePar1Par},
 };
 
   BOOST_ASSERT(Index < sizeof(Table)/sizeof(Table[0]));
