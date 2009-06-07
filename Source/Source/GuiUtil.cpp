@@ -275,6 +275,13 @@ std::wstring LoadRes(short Ident, std::wstring Par1, std::wstring Par2, const st
   return (fmter % Par1 % Par2 % Par3).str();
 }
 //---------------------------------------------------------------------------
+String FormatStr(const String &Format, const String &Str)
+{
+  boost::wformat fmter(ToWString(Format));
+  fmter.exceptions(boost::io::all_error_bits ^ boost::io::too_many_args_bit);
+  return ToUString((fmter % Str.c_str()).str());
+}
+//---------------------------------------------------------------------------
 std::wstring LoadString(unsigned Ident)
 {
   return LoadStr(Ident).c_str();

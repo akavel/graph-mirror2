@@ -76,22 +76,6 @@ object Form10: TForm10
     DesignSize = (
       315
       171)
-    object Label2: TLabel
-      Left = 16
-      Top = 56
-      Width = 283
-      Height = 107
-      Anchors = [akLeft, akTop, akRight, akBottom]
-      AutoSize = False
-      Caption = 'Tip of the day'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Microsoft Sans Serif'
-      Font.Style = []
-      ParentFont = False
-      WordWrap = True
-    end
     object Label1: TLabel
       Left = 64
       Top = 24
@@ -135,6 +119,23 @@ object Form10: TForm10
         0000555255555055202550555555255500005555255555555355555555525555
         0000555555555555232555555555555500005555555555555555555555555555
         000055555555555525255555555555550000}
+    end
+    object LinkLabel1: TLinkLabel
+      Left = 16
+      Top = 56
+      Width = 283
+      Height = 107
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      AutoSize = False
+      Caption = 'Tip of the day'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnLinkClick = LinkLabel1LinkClick
     end
   end
 end
