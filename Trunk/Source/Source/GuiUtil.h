@@ -40,6 +40,7 @@ void TranslateStrings(TStrings *Strings);
 String LoadRes(short Ident, String Par1 = String(), String Par2 = String(), String Par3 = String());
 std::wstring LoadRes(short Ident, std::wstring Par1, std::wstring Par2 = std::wstring(), const std::wstring &Par3 = std::wstring());
 std::wstring LoadString(unsigned Ident);
+String FormatStr(const String &Format, const String &Str);
 
 int MessageBox(const wchar_t *Text, const wchar_t *Caption, int Flags = MB_OK | MB_ICONWARNING);
 int MessageBox(const std::wstring &Text, const std::wstring &Caption, int Flags = MB_OK | MB_ICONWARNING);

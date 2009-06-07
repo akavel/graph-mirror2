@@ -24,7 +24,7 @@ __fastcall TForm10::TForm10(TComponent* Owner)
     Property.NextTip = RES_FIRST_TIP;
 
   CheckBox1->Checked = Property.ShowTipsAtStartup;
-  Label2->Caption = LoadRes(Property.NextTip);
+  LinkLabel1->Caption = LoadRes(Property.NextTip);
 
   Width = Width - Button3->Width + Canvas->TextWidth(Button3->Caption) + 20;
   ScaleForm(this);
@@ -34,14 +34,14 @@ void __fastcall TForm10::Button2Click(TObject *Sender)
 {
   if(++Property.NextTip > RES_LAST_TIP)
     Property.NextTip = RES_FIRST_TIP;
-  Label2->Caption = LoadRes(Property.NextTip);
+  LinkLabel1->Caption = LoadRes(Property.NextTip);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm10::Button3Click(TObject *Sender)
 {
   if(--Property.NextTip < RES_FIRST_TIP)
     Property.NextTip = RES_LAST_TIP;
-  Label2->Caption = LoadRes(Property.NextTip);
+  LinkLabel1->Caption = LoadRes(Property.NextTip);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm10::FormClose(TObject *Sender, TCloseAction &Action)
@@ -49,6 +49,13 @@ void __fastcall TForm10::FormClose(TObject *Sender, TCloseAction &Action)
   Property.ShowTipsAtStartup = CheckBox1->Checked;
   if(++Property.NextTip > RES_LAST_TIP)
     Property.NextTip = RES_FIRST_TIP;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm10::LinkLabel1LinkClick(TObject *Sender, const UnicodeString Link,
+          TSysLinkType LinkType)
+{
+  if(LinkType == sltURL)
+    ShellExecute(Handle, NULL, Link.c_str(), NULL, NULL, SW_SHOWMAXIMIZED);
 }
 //---------------------------------------------------------------------------
 

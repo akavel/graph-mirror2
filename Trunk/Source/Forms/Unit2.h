@@ -29,17 +29,17 @@ __published:	// IDE-managed Components
   TLabel *Version;
   TLabel *Copyright;
   TLabel *Comments;
-  TLabel *Label1;
-  TLabel *Label2;
   TLabel *Label3;
-  TLabel *Label4;
-  TLabel *Label5;
-  TLabel *Label6;
   TAnimate *Animate1;
   TImage *ProgramIcon;
-  void __fastcall Label2Click(TObject *Sender);
-  void __fastcall Label5Click(TObject *Sender);
+  TLinkLabel *LinkLabel1;
+  TLinkLabel *LinkLabel2;
+  TLinkLabel *LinkLabel3;
   void __fastcall ProgramIconDblClick(TObject *Sender);
+  void __fastcall LinkLabel1LinkClick(TObject *Sender, const UnicodeString Link,
+          TSysLinkType LinkType);
+  void __fastcall LinkLabel2LinkClick(TObject *Sender, const UnicodeString Link,
+          TSysLinkType LinkType);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);

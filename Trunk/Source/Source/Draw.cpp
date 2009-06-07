@@ -931,6 +931,7 @@ void TDraw::DrawPointLabel(TCanvas *Canvas, TPoint Pos, int PointSize, const std
       break;
 
     case lpRight:
+    default:
       Pos.y -= TextSize.cy / 2;
       break;
   }
@@ -942,6 +943,7 @@ void TDraw::DrawPointLabel(TCanvas *Canvas, TPoint Pos, int PointSize, const std
       break;
 
     case lpBelow:
+    default:
       Pos.x -= TextSize.cx / 2;
       break;
 

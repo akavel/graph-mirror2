@@ -5,7 +5,7 @@ object Form2: TForm2
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'About Graph'
-  ClientHeight = 333
+  ClientHeight = 307
   ClientWidth = 313
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,12 +20,12 @@ object Form2: TForm2
   ShowHint = True
   DesignSize = (
     313
-    333)
+    307)
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
     Left = 111
-    Top = 299
+    Top = 273
     Width = 75
     Height = 25
     Anchors = [akLeft, akBottom]
@@ -34,44 +34,22 @@ object Form2: TForm2
     Default = True
     ModalResult = 1
     TabOrder = 0
+    ExplicitTop = 299
   end
   object Panel1: TPanel
     Left = 9
     Top = 8
     Width = 296
-    Height = 280
+    Height = 254
     Anchors = [akLeft, akTop, akRight, akBottom]
     BevelInner = bvRaised
     BevelOuter = bvLowered
     ParentColor = True
     TabOrder = 1
+    ExplicitHeight = 280
     DesignSize = (
       296
-      280)
-    object Label6: TLabel
-      Left = 8
-      Top = 248
-      Width = 187
-      Height = 13
-      Caption = '<Language> translation by <Translator>'
-      Visible = False
-      WordWrap = True
-    end
-    object Label5: TLabel
-      Left = 8
-      Top = 252
-      Width = 65
-      Height = 13
-      Cursor = crHandPoint
-      Caption = 'Home page'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlue
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold, fsUnderline]
-      ParentFont = False
-      OnClick = Label5Click
-    end
+      254)
     object ProductName: TLabel
       Left = 144
       Top = 8
@@ -102,28 +80,6 @@ object Form2: TForm2
       Caption = 'Copyright note'
       IsControl = True
     end
-    object Label1: TLabel
-      Left = 8
-      Top = 200
-      Width = 28
-      Height = 13
-      Caption = 'Email:'
-    end
-    object Label2: TLabel
-      Left = 48
-      Top = 200
-      Width = 83
-      Height = 13
-      Cursor = crHandPoint
-      Caption = 'E-mail address'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlue
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold, fsUnderline]
-      ParentFont = False
-      OnClick = Label2Click
-    end
     object Label3: TLabel
       Left = 144
       Top = 64
@@ -144,15 +100,6 @@ object Form2: TForm2
         ' reports and suggestions to the programmer.'
       WordWrap = True
       IsControl = True
-    end
-    object Label4: TLabel
-      Left = 8
-      Top = 224
-      Width = 270
-      Height = 26
-      AutoSize = False
-      Caption = 'The newest version as well as the source code are available at:'
-      WordWrap = True
     end
     object ProgramIcon: TImage
       Left = 8
@@ -584,12 +531,46 @@ object Form2: TForm2
       OnDblClick = ProgramIconDblClick
       IsControl = True
     end
+    object LinkLabel3: TLinkLabel
+      Left = 8
+      Top = 202
+      Width = 280
+      Height = 41
+      Anchors = [akLeft, akBottom]
+      AutoSize = False
+      Caption = '<Language> translation by <Translator>'
+      TabOrder = 3
+      Visible = False
+      OnLinkClick = LinkLabel1LinkClick
+      ExplicitTop = 272
+    end
     object Animate1: TAnimate
       Left = 8
       Top = 8
       Width = 0
       Height = 0
       Visible = False
+    end
+    object LinkLabel1: TLinkLabel
+      Left = 8
+      Top = 219
+      Width = 280
+      Height = 27
+      AutoSize = False
+      Caption = 
+        'The newest version as well as the source code are available at: ' +
+        '%s'
+      TabOrder = 1
+      OnLinkClick = LinkLabel1LinkClick
+    end
+    object LinkLabel2: TLinkLabel
+      Left = 8
+      Top = 196
+      Width = 48
+      Height = 17
+      Caption = 'Email: %s'
+      TabOrder = 2
+      OnLinkClick = LinkLabel2LinkClick
     end
   end
 end
