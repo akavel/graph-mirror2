@@ -11,6 +11,7 @@
 #include "Debug.h"
 #include <Atl/atlbase.h>
 #pragma package(smart_init)
+#pragma link "Debug"
 //---------------------------------------------------------------------------
 TRichEditOle::TRichEditOle(TCustomRichEdit* ARichEdit)
   : RichEditOle(NULL), RichEdit(ARichEdit), RichEditCallback(ARichEdit)
