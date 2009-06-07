@@ -499,6 +499,8 @@ double Correlation(const std::vector<TDblPoint> &Points, const TFunc &Func)
  *  \param Func:    Function model. The first argument is the variable and the rest are the constants to find.
  *  \param Values:  Initial guess for the constants. On return Values contains the found constants.
  *                  Values.size() must be one less than the number of arguments for Func.
+ *  \param Weights: The weight for each point. The size of Weights must be the same as the size of Points or 0.
+ *         The wight is usually 1/(sigma*sigma) where sigma is the uncertainty.
  *  \param MaxIter: Maximum number of iterations before giving up.
  *  \param Tol:     Max tolerance allowed for found constants.
  *  \return The actual tolerencen

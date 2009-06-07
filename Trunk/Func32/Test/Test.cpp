@@ -716,6 +716,7 @@ void Test()
   TestDif("5/x", "-5/x^2");
   TestDif("sin(x)/x", "(cos(x)*x-sin(x))/x^2");
   TestDif("2*sin 30*x", "1", Degree);
+  TestDif("x-cos x", "1+sin x");
 
   //Test differentiation of special functions
   TestDif("dnorm(x)", "-exp(-x^2/2)*x*sqrt(2pi)/2pi");
@@ -732,6 +733,8 @@ void Test()
   //Test the simplify code
   TestSimplify("ln(e)", "1");
   TestSimplify("log(10)", "1");
+  TestSimplify("1--sin x", "1+sin x");
+  TestSimplify("--sin x", "sin x");
 
   //Test custom functions
   TArgType Args;
