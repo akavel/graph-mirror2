@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "Unit10.h"
 //---------------------------------------------------------------------------
+#pragma link "LinkLabelEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm10::TForm10(TComponent* Owner)

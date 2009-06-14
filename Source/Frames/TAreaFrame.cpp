@@ -45,7 +45,7 @@ void TAreaFrame::EvalArea(const TGraphElem *GraphElem)
 //---------------------------------------------------------------------------
 void TAreaFrame::EvalArea(const TBaseFuncType *Func, long double From, long double To)
 {
-  Edit3->Text = RoundToStr(Func->CalcArea(From, To), Form1->Data);
+  Edit3->Text = RoundToStr(Func->CalcArea(From, To));
 
   if(From > To)
     std::swap(From, To);
@@ -133,7 +133,7 @@ void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
 
   if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(GraphElem))
   {
-    Edit3->Text = RoundToStr(Func->GetFunc().CalcArc(Min, Max, 1000), Form1->Data);
+    Edit3->Text = RoundToStr(Func->GetFunc().CalcArc(Min, Max, 1000));
 
     unsigned N1 = std::lower_bound(Func->sList.begin(), Func->sList.end(), Min, TCompCoordSet()) - Func->sList.begin();
     unsigned N2 = std::upper_bound(Func->sList.begin() + N1, Func->sList.end(), Max, TCompCoordSet()) - Func->sList.begin();
@@ -151,7 +151,7 @@ void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
       double dy = yMax - yMin;
 
       //Length = sqrt(dx^2+dy^2) = sqrt(dx^2+^(a*dx)^2)
-      Edit3->Text = RoundToStr(std::sqrt(dx*dx + dy*dy), Form1->Data);
+      Edit3->Text = RoundToStr(std::sqrt(dx*dx + dy*dy));
 
       Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xPoint(Min), Form1->Draw.yPoint(yMin)));
       Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xPoint(Max), Form1->Draw.yPoint(yMax)));
@@ -179,12 +179,12 @@ void TAreaFrame::SetPoint(const TGraphElem *Elem, int X, int Y)
     }
     else
     {
-      Edit1->Text = RoundToStr(t, Form1->Data);
+      Edit1->Text = RoundToStr(t);
       Edit2->Text = Edit1->Text;
     }
   }
   else if(const TPointSeries *PointSeries = dynamic_cast<const TPointSeries*>(Elem))
-    Edit1->Text = RoundToStr(Form1->Draw.xCoord(X), Form1->Data);
+    Edit1->Text = RoundToStr(Form1->Draw.xCoord(X));
 }
 //---------------------------------------------------------------------------
 void TAreaFrame::SetEndPoint(const TGraphElem *Elem, int X, int Y)
@@ -192,10 +192,10 @@ void TAreaFrame::SetEndPoint(const TGraphElem *Elem, int X, int Y)
   if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(Elem))
   {
     double t = FindNearestPoint(Func, X, Y);
-    Edit2->Text = _isnan(t) ? String("") : RoundToStr(t, Form1->Data);
+    Edit2->Text = _isnan(t) ? String("") : RoundToStr(t);
   }
   else if(const TPointSeries *PointSeries = dynamic_cast<const TPointSeries*>(Elem))
-    Edit2->Text = RoundToStr(Form1->Draw.xCoord(X), Form1->Data);
+    Edit2->Text = RoundToStr(Form1->Draw.xCoord(X));
 }
 //---------------------------------------------------------------------------
 

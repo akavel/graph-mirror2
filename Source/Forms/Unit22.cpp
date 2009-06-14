@@ -25,7 +25,7 @@ __fastcall TForm22::TForm22(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm22::FormHide(TObject *Sender)
 {
-  Form1->Panel5->Height = Form1->StatusBar1->Height;
+  Form1->Panel6->Height = 0;
   Form1->Splitter2->Visible = false;
 }
 //---------------------------------------------------------------------------

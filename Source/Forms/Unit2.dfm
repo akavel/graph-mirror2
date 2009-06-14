@@ -18,6 +18,7 @@ object Form2: TForm2
   ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
+  OnShow = FormShow
   DesignSize = (
     313
     307)
@@ -34,10 +35,9 @@ object Form2: TForm2
     Default = True
     ModalResult = 1
     TabOrder = 0
-    ExplicitTop = 299
   end
   object Panel1: TPanel
-    Left = 9
+    Left = 8
     Top = 8
     Width = 296
     Height = 254
@@ -46,7 +46,6 @@ object Form2: TForm2
     BevelOuter = bvLowered
     ParentColor = True
     TabOrder = 1
-    ExplicitHeight = 280
     DesignSize = (
       296
       254)
@@ -90,10 +89,9 @@ object Form2: TForm2
     object Comments: TLabel
       Left = 8
       Top = 144
-      Width = 280
-      Height = 52
+      Width = 279
+      Height = 39
       Anchors = [akLeft, akTop, akRight]
-      AutoSize = False
       Caption = 
         'This is free software, and you are welcome to redistribute it un' +
         'der the terms in the GNU General Public License. Please send bug' +
@@ -527,22 +525,10 @@ object Form2: TForm2
         7816A46D5D8CC467EC3E0580587C835D5291CF287C01687EF107AF8B4DE7FBCB
         7D0F80FBBDBC0180FBBCBC0180FBBCBC0180FBBCBC0180FBBCFC7F0BE99006B3
         DDC8540000000049454E44AE426082}
+      Stretch = True
       Transparent = True
       OnDblClick = ProgramIconDblClick
       IsControl = True
-    end
-    object LinkLabel3: TLinkLabel
-      Left = 8
-      Top = 202
-      Width = 280
-      Height = 41
-      Anchors = [akLeft, akBottom]
-      AutoSize = False
-      Caption = '<Language> translation by <Translator>'
-      TabOrder = 3
-      Visible = False
-      OnLinkClick = LinkLabel1LinkClick
-      ExplicitTop = 272
     end
     object Animate1: TAnimate
       Left = 8
@@ -551,26 +537,40 @@ object Form2: TForm2
       Height = 0
       Visible = False
     end
-    object LinkLabel1: TLinkLabel
+    object LinkLabel1: TLinkLabelEx
       Left = 8
       Top = 219
       Width = 280
-      Height = 27
-      AutoSize = False
+      Height = 26
+      WordWrap = True
+      OnLinkClick = LinkLabel1LinkClick
       Caption = 
         'The newest version as well as the source code are available at: ' +
         '%s'
-      TabOrder = 1
-      OnLinkClick = LinkLabel1LinkClick
     end
-    object LinkLabel2: TLinkLabel
+    object LinkLabel2: TLinkLabelEx
       Left = 8
       Top = 196
-      Width = 48
-      Height = 17
-      Caption = 'Email: %s'
-      TabOrder = 2
+      Width = 44
+      Height = 13
       OnLinkClick = LinkLabel2LinkClick
+      Caption = 'Email: %s'
+    end
+    object LinkLabel3: TLinkLabelEx
+      AlignWithMargins = True
+      Left = 10
+      Top = 233
+      Width = 276
+      Height = 13
+      Margins.Left = 8
+      Margins.Right = 8
+      Margins.Bottom = 6
+      WordWrap = True
+      OnLinkClick = LinkLabel1LinkClick
+      Align = alBottom
+      Caption = '<Language> translation by <Translator>'
+      Visible = False
+      ExplicitTop = 231
     end
   end
 end

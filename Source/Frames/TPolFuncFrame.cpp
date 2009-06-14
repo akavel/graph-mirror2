@@ -33,16 +33,16 @@ void TPolFuncFrame::Eval(const TGraphElem *Elem)
     long double x = Func->GetFunc().CalcX(t);
     long double y = Func->GetFunc().CalcY(t);
 
-    Edit2->Text = RoundToStr(r, Form1->Data);
-    Edit3->Text = RoundToStr(x, Form1->Data);
-    Edit4->Text = RoundToStr(y, Form1->Data);
+    Edit2->Text = RoundToStr(r);
+    Edit3->Text = RoundToStr(x);
+    Edit4->Text = RoundToStr(y);
 
     Form1->SetCrossPos(x, y);
 
-    Edit5->Text = RoundToStr(Func->GetFunc().MakeDif().CalcR(t), Form1->Data);
+    Edit5->Text = RoundToStr(Func->GetFunc().MakeDif().CalcR(t));
     long double dydx = Func->GetFunc().CalcSlope(t);
     if(_finite(dydx))
-      Edit6->Text = RoundToStr(dydx, Form1->Data);
+      Edit6->Text = RoundToStr(dydx);
   }
 }
 //---------------------------------------------------------------------------

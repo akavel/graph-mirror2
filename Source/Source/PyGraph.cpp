@@ -390,7 +390,7 @@ void ShowPythonConsole(bool Visible)
   if(Form22)
   {
     Form22->Visible = Visible;
-    Form1->Panel5->Height = Form1->Panel6->VisibleDockClientCount ? 150 : Form1->StatusBar1->Height;
+    Form1->Panel6->Height = Form1->Panel6->VisibleDockClientCount ? 150 : 0;
     Form1->Splitter2->Visible = Visible;
   }
 }
@@ -455,7 +455,7 @@ void InitPlugins()
   }
   else
   {
-    Form1->Panel5->Height = Form1->StatusBar1->Height;
+    Form1->Panel6->Height = 0;
     Form1->Splitter2->Visible = false;
   }
 }

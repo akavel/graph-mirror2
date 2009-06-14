@@ -28,7 +28,7 @@ void TTanFrame::EvalTan(const TTan *Tan)
 
   double x = Form1->Data.Calc(ToWString(Edit1->Text));
   double y = Tan->GetFunc().CalcY(x);
-  Edit2->Text = RoundToStr(y, Form1->Data);
+  Edit2->Text = RoundToStr(y);
 
   Form1->SetCrossPos(x, y);
 }
@@ -39,19 +39,19 @@ void TTanFrame::EvalSeries(const TPointSeries *Series)
   long double x = Form1->Data.Calc(ToWString(Edit1->Text));
   TPointSeries::TPointList::const_iterator Iter = Series->FindPoint(x);
   Func32::TDblPoint Coord = Series->FindCoord(Iter, x);
-  Edit2->Text = RoundToStr(Coord.y, Form1->Data);
+  Edit2->Text = RoundToStr(Coord.y);
 
   Form1->SetCrossPos(Coord.x, Coord.y);
 }
 //---------------------------------------------------------------------------
 void TTanFrame::SetPoint(const TTan *Tan, int X)
 {
-  Edit1->Text = RoundToStr(Range(Tan->From.Value, Form1->Draw.xCoord(X), Tan->To.Value), Form1->Data);
+  Edit1->Text = RoundToStr(Range(Tan->From.Value, Form1->Draw.xCoord(X), Tan->To.Value));
 }
 //---------------------------------------------------------------------------
 void TTanFrame::SetPoint(const TPointSeries *Series, int X)
 {
-  Edit1->Text = RoundToStr(Form1->Draw.xCoord(X), Form1->Data);
+  Edit1->Text = RoundToStr(Form1->Draw.xCoord(X));
 }
 //---------------------------------------------------------------------------
 void TTanFrame::Eval(const TGraphElem *Elem)

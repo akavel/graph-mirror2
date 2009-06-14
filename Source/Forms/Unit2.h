@@ -19,6 +19,7 @@
 #include <ComCtrls.hpp>
 #include "SymbolDialog.h"
 #include <pngimage.hpp>
+#include "LinkLabelEx.h"
 //---------------------------------------------------------------------------
 class TForm2 : public TForm
 {
@@ -32,14 +33,15 @@ __published:	// IDE-managed Components
   TLabel *Label3;
   TAnimate *Animate1;
   TImage *ProgramIcon;
-  TLinkLabel *LinkLabel1;
-  TLinkLabel *LinkLabel2;
-  TLinkLabel *LinkLabel3;
+  TLinkLabelEx *LinkLabel1;
+  TLinkLabelEx *LinkLabel2;
+  TLinkLabelEx *LinkLabel3;
   void __fastcall ProgramIconDblClick(TObject *Sender);
   void __fastcall LinkLabel1LinkClick(TObject *Sender, const UnicodeString Link,
           TSysLinkType LinkType);
   void __fastcall LinkLabel2LinkClick(TObject *Sender, const UnicodeString Link,
           TSysLinkType LinkType);
+  void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
