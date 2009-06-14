@@ -34,6 +34,7 @@ private:
   void PopulateList();
 
 protected:
+  DYNAMIC void __fastcall ChangeScale(int M, int D);
   void __fastcall DrawItem(int Index, const Types::TRect &Rect, TOwnerDrawState State);
   DYNAMIC void __fastcall KeyPress(Char &Key);
   DYNAMIC void __fastcall Select();
