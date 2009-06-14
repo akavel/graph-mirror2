@@ -3,7 +3,6 @@ object Form1: TForm1
   Top = 150
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
-  ActiveControl = Panel2
   AlphaBlendValue = 100
   Caption = 'Graph'
   ClientHeight = 448
@@ -148,119 +147,6 @@ object Form1: TForm1
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Splitter1: TMySplitter
-    Left = 161
-    Top = 53
-    Height = 292
-    AutoSnap = False
-    Beveled = True
-    MinSize = 120
-    OnDblClick = Splitter1DblClick
-    ExplicitTop = 30
-    ExplicitHeight = 298
-  end
-  object Splitter2: TSplitter
-    Left = 0
-    Top = 345
-    Width = 628
-    Height = 3
-    Cursor = crVSplit
-    Align = alBottom
-    MinSize = 1
-    ExplicitTop = 328
-    ExplicitWidth = 630
-  end
-  object Panel2: TFocusPanel
-    Left = 164
-    Top = 53
-    Width = 464
-    Height = 292
-    Align = alClient
-    BevelOuter = bvNone
-    FullRepaint = False
-    ParentShowHint = False
-    ShowHint = False
-    TabOrder = 1
-    OnMouseLeave = Panel2MouseLeave
-    OnResize = Panel2Resize
-    object Image1: TImage
-      Left = 0
-      Top = 0
-      Width = 464
-      Height = 292
-      Align = alClient
-      ParentShowHint = False
-      ShowHint = False
-      OnClick = Image1Click
-      OnDblClick = Image1DblClick
-      OnMouseDown = Image1MouseDown
-      OnMouseMove = Image1MouseMove
-      OnMouseUp = Image1MouseUp
-      ExplicitWidth = 466
-      ExplicitHeight = 298
-    end
-    object Cross: TCross
-      Left = 0
-      Top = 0
-      Width = 464
-      Height = 292
-      Style = psDot
-      Mode = pmNot
-      X = 30
-      Y = 30
-      Align = alClient
-      Visible = False
-      OnMouseDown = Image1MouseDown
-      OnMouseUp = Image1MouseUp
-      OnMouseMove = Image1MouseMove
-      OnDblClick = Image1DblClick
-      ExplicitWidth = 466
-      ExplicitHeight = 298
-    end
-    object Shape1: TShape
-      Left = 96
-      Top = 56
-      Width = 65
-      Height = 65
-      Brush.Style = bsClear
-      Pen.Style = psDot
-      Visible = False
-    end
-    object IPolygon1: TIPolygon
-      Left = 0
-      Top = 0
-      Width = 464
-      Height = 292
-      Brush.Color = 13395660
-      Brush.Style = bsBDiagonal
-      Points.Strings = (
-        '0,0'
-        '50,0'
-        '50,50'
-        '0,50')
-      PolyFillMode = pfmWinding
-      Visible = False
-      Align = alClient
-      OnClick = Image1Click
-      OnDblClick = Image1DblClick
-      OnMouseDown = Image1MouseDown
-      OnMouseMove = Image1MouseMove
-      OnMouseUp = Image1MouseUp
-      ExplicitLeft = 3
-      ExplicitTop = -3
-      ExplicitWidth = 466
-      ExplicitHeight = 294
-    end
-    object Image2: TImage
-      Left = 344
-      Top = 80
-      Width = 105
-      Height = 105
-      AutoSize = True
-      Transparent = True
-      Visible = False
-    end
-  end
   object ActionToolBar1: TActionToolBar
     Left = 0
     Top = 23
@@ -274,123 +160,6 @@ object Form1: TForm1
     EdgeOuter = esLowered
     PopupMenu = PopupMenu2
     Spacing = 0
-  end
-  object Panel3: TPanel
-    Left = 0
-    Top = 53
-    Width = 161
-    Height = 292
-    Align = alLeft
-    BevelOuter = bvNone
-    DragKind = dkDock
-    TabOrder = 0
-    object TreeView: TTreeView
-      Left = 0
-      Top = 0
-      Width = 161
-      Height = 292
-      Align = alClient
-      BevelInner = bvNone
-      BevelOuter = bvNone
-      Ctl3D = True
-      DragMode = dmAutomatic
-      HideSelection = False
-      Images = ImageList1
-      Indent = 19
-      ParentCtl3D = False
-      PopupMenu = PopupMenu1
-      ReadOnly = True
-      ShowButtons = False
-      ShowLines = False
-      StateImages = ImageList1
-      TabOrder = 0
-      OnChange = TreeViewChange
-      OnCollapsing = TreeViewCollapsing
-      OnContextPopup = TreeViewContextPopup
-      OnDblClick = TreeViewDblClick
-      OnDragDrop = TreeViewDragDrop
-      OnDragOver = TreeViewDragOver
-      OnEndDrag = TreeViewEndDrag
-      OnKeyDown = TreeViewKeyDown
-      OnKeyPress = TreeViewKeyPress
-      OnMouseDown = TreeViewMouseDown
-      OnMouseLeave = TreeViewMouseLeave
-      OnMouseMove = TreeViewMouseMove
-    end
-    object Panel1: TPanel
-      Left = 0
-      Top = 292
-      Width = 161
-      Height = 0
-      Align = alBottom
-      BevelOuter = bvNone
-      TabOrder = 1
-      object Panel4: TPanel
-        Left = 0
-        Top = 0
-        Width = 161
-        Height = 0
-        Align = alClient
-        BevelOuter = bvNone
-        DockSite = True
-        TabOrder = 0
-        OnDockDrop = Panel4DockDrop
-        OnDockOver = Panel4DockOver
-        OnGetSiteInfo = Panel4GetSiteInfo
-        OnUnDock = Panel4UnDock
-      end
-    end
-  end
-  object Panel5: TPanel
-    Left = 0
-    Top = 348
-    Width = 628
-    Height = 100
-    Align = alBottom
-    BevelOuter = bvNone
-    TabOrder = 2
-    object StatusBar1: TStatusBar
-      Left = 0
-      Top = 81
-      Width = 628
-      Height = 19
-      AutoHint = True
-      Panels = <
-        item
-          Width = 412
-        end
-        item
-          Alignment = taCenter
-          Width = 150
-        end
-        item
-          BiDiMode = bdRightToLeft
-          ParentBiDiMode = False
-          Style = psOwnerDraw
-          Width = 50
-        end>
-      ParentFont = True
-      ParentShowHint = False
-      ShowHint = False
-      UseSystemFont = False
-      OnHint = StatusBar1Hint
-      OnDrawPanel = StatusBar1DrawPanel
-      OnResize = StatusBar1Resize
-    end
-    object Panel6: TPanel
-      Left = 0
-      Top = 0
-      Width = 628
-      Height = 81
-      Align = alClient
-      BevelOuter = bvNone
-      DockSite = True
-      TabOrder = 1
-      OnDockDrop = Panel6DockDrop
-      OnDockOver = Panel6DockOver
-      OnGetSiteInfo = Panel6GetSiteInfo
-      OnUnDock = Panel6UnDock
-    end
   end
   object ActionMainMenuBar1: TActionMainMenuBar
     Left = 0
@@ -408,6 +177,245 @@ object Form1: TForm1
     Font.Name = 'Tahoma'
     Font.Style = []
     Spacing = 0
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 429
+    Width = 628
+    Height = 19
+    AutoHint = True
+    Panels = <
+      item
+        Width = 412
+      end
+      item
+        Alignment = taCenter
+        Width = 150
+      end
+      item
+        BiDiMode = bdRightToLeft
+        ParentBiDiMode = False
+        Style = psOwnerDraw
+        Width = 50
+      end>
+    ParentFont = True
+    ParentShowHint = False
+    ShowHint = False
+    UseSystemFont = False
+    OnHint = StatusBar1Hint
+    OnDrawPanel = StatusBar1DrawPanel
+    OnResize = StatusBar1Resize
+    ExplicitTop = 81
+  end
+  object Panel5: TPanel
+    Left = 0
+    Top = 53
+    Width = 628
+    Height = 376
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 3
+    ExplicitTop = 8
+    ExplicitHeight = 100
+    object Splitter1: TMySplitter
+      Left = 161
+      Top = 0
+      Height = 273
+      AutoSnap = False
+      Beveled = True
+      MinSize = 120
+      OnDblClick = Splitter1DblClick
+      ExplicitTop = 30
+      ExplicitHeight = 298
+    end
+    object Splitter2: TSplitter
+      Left = 0
+      Top = 273
+      Width = 628
+      Height = 3
+      Cursor = crVSplit
+      Align = alBottom
+      MinSize = 1
+      ExplicitTop = 264
+    end
+    object Panel2: TFocusPanel
+      Left = 164
+      Top = 0
+      Width = 464
+      Height = 273
+      Align = alClient
+      BevelOuter = bvNone
+      FullRepaint = False
+      ParentShowHint = False
+      ShowHint = False
+      TabOrder = 0
+      OnMouseLeave = Panel2MouseLeave
+      OnResize = Panel2Resize
+      ExplicitTop = 53
+      ExplicitHeight = 292
+      object Image1: TImage
+        Left = 0
+        Top = 0
+        Width = 464
+        Height = 273
+        Align = alClient
+        ParentShowHint = False
+        ShowHint = False
+        OnClick = Image1Click
+        OnDblClick = Image1DblClick
+        OnMouseDown = Image1MouseDown
+        OnMouseMove = Image1MouseMove
+        OnMouseUp = Image1MouseUp
+        ExplicitWidth = 466
+        ExplicitHeight = 298
+      end
+      object Cross: TCross
+        Left = 0
+        Top = 0
+        Width = 464
+        Height = 273
+        Style = psDot
+        Mode = pmNot
+        X = 30
+        Y = 30
+        Align = alClient
+        Visible = False
+        OnMouseDown = Image1MouseDown
+        OnMouseUp = Image1MouseUp
+        OnMouseMove = Image1MouseMove
+        OnDblClick = Image1DblClick
+        ExplicitWidth = 466
+        ExplicitHeight = 298
+      end
+      object Shape1: TShape
+        Left = 96
+        Top = 56
+        Width = 65
+        Height = 65
+        Brush.Style = bsClear
+        Pen.Style = psDot
+        Visible = False
+      end
+      object IPolygon1: TIPolygon
+        Left = 0
+        Top = 0
+        Width = 464
+        Height = 273
+        Brush.Color = 13395660
+        Brush.Style = bsBDiagonal
+        Points.Strings = (
+          '0,0'
+          '50,0'
+          '50,50'
+          '0,50')
+        PolyFillMode = pfmWinding
+        Visible = False
+        Align = alClient
+        OnClick = Image1Click
+        OnDblClick = Image1DblClick
+        OnMouseDown = Image1MouseDown
+        OnMouseMove = Image1MouseMove
+        OnMouseUp = Image1MouseUp
+        ExplicitLeft = 3
+        ExplicitTop = -3
+        ExplicitWidth = 466
+        ExplicitHeight = 294
+      end
+      object Image2: TImage
+        Left = 344
+        Top = 80
+        Width = 105
+        Height = 105
+        AutoSize = True
+        Transparent = True
+        Visible = False
+      end
+    end
+    object Panel3: TPanel
+      Left = 0
+      Top = 0
+      Width = 161
+      Height = 273
+      Align = alLeft
+      BevelOuter = bvNone
+      DragKind = dkDock
+      TabOrder = 1
+      ExplicitTop = 53
+      ExplicitHeight = 292
+      object TreeView: TTreeView
+        Left = 0
+        Top = 0
+        Width = 161
+        Height = 273
+        Align = alClient
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        Ctl3D = True
+        DragMode = dmAutomatic
+        HideSelection = False
+        Images = ImageList1
+        Indent = 19
+        ParentCtl3D = False
+        PopupMenu = PopupMenu1
+        ReadOnly = True
+        ShowButtons = False
+        ShowLines = False
+        StateImages = ImageList1
+        TabOrder = 0
+        OnChange = TreeViewChange
+        OnCollapsing = TreeViewCollapsing
+        OnContextPopup = TreeViewContextPopup
+        OnDblClick = TreeViewDblClick
+        OnDragDrop = TreeViewDragDrop
+        OnDragOver = TreeViewDragOver
+        OnEndDrag = TreeViewEndDrag
+        OnKeyDown = TreeViewKeyDown
+        OnKeyPress = TreeViewKeyPress
+        OnMouseDown = TreeViewMouseDown
+        OnMouseLeave = TreeViewMouseLeave
+        OnMouseMove = TreeViewMouseMove
+        ExplicitHeight = 292
+      end
+      object Panel1: TPanel
+        Left = 0
+        Top = 273
+        Width = 161
+        Height = 0
+        Align = alBottom
+        BevelOuter = bvNone
+        TabOrder = 1
+        ExplicitTop = 376
+        object Panel4: TPanel
+          Left = 0
+          Top = 0
+          Width = 161
+          Height = 0
+          Align = alClient
+          BevelOuter = bvNone
+          DockSite = True
+          TabOrder = 0
+          OnDockDrop = Panel4DockDrop
+          OnDockOver = Panel4DockOver
+          OnGetSiteInfo = Panel4GetSiteInfo
+          OnUnDock = Panel4UnDock
+        end
+      end
+    end
+    object Panel6: TPanel
+      Left = 0
+      Top = 276
+      Width = 628
+      Height = 100
+      Align = alBottom
+      BevelOuter = bvNone
+      DockSite = True
+      TabOrder = 2
+      OnDockDrop = Panel6DockDrop
+      OnDockOver = Panel6DockOver
+      OnGetSiteInfo = Panel6GetSiteInfo
+      OnUnDock = Panel6UnDock
+      ExplicitTop = 348
+    end
   end
   object OpenDialog: TOpenDialog
     DefaultExt = 'grf'

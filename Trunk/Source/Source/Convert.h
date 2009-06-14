@@ -16,10 +16,11 @@ double MakeFloat(TCustomEdit *Edit, const String &ErrorStr=String(), double Min=
 double MakeFloat(TCustomEdit *Edit, const String &ErrorStr, const boost::function1<bool, double> &Interval);
 int MakeInt(TCustomEdit *Edit, const String &Caption);
 String ComplexToString(const Func32::TComplex &C);
+String ComplexToString(const Func32::TComplex &C, unsigned Decimals);
 String RoundToStr(long double Number, unsigned Decimals);
-String RoundToStr(long double Number, const TData &Data);
+String RoundToStr(long double Number);
 String DoubleToStr(long double Number);
-String DoubleToStr(long double Number,int Decimals);
+String DoubleToStr(long double Number, int Decimals);
 double CellToDouble(class TGrid *Grid, int Col, int Row);
 int GetDecimals(double Number);
 std::wstring FontToStr(TFont *Font);

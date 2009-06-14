@@ -85,9 +85,8 @@ int MakeInt(TCustomEdit *Edit, const String &Caption)
   }
 }
 //---------------------------------------------------------------------------
-String ComplexToString(const Func32::TComplex &C)
+String ComplexToString(const Func32::TComplex &C, unsigned Decimals)
 {
-  const TData &Data = Form1->Data;
   String Str;
 
   switch(Property.ComplexFormat)
@@ -95,14 +94,14 @@ String ComplexToString(const Func32::TComplex &C)
     case cfReal:
       //Check for an imaginary part
       if(std::abs(C.imag()) < MIN_ZERO)
-        Str += RoundToStr(C.real(), Data);
+        Str += RoundToStr(C.real(), Decimals);
       break;
 
     case cfRectangular:
     {
       //Round numbers to chosen number of decimals
-      String Real = RoundToStr(C.real(), Data);
-      String Imag = RoundToStr(std::abs(C.imag()), Data);
+      String Real = RoundToStr(C.real(), Decimals);
+      String Imag = RoundToStr(std::abs(C.imag()), Decimals);
 
       if(Imag == "0" || std::abs(C.imag()) < MIN_ZERO)  //(-1.50)^2 = 2.25+2.4395E-19i
         Str += Real;
@@ -125,17 +124,23 @@ String ComplexToString(const Func32::TComplex &C)
         break;
       }
 
-      Str += RoundToStr(abs(C), Data); //Get numeric value as a string
+      Str += RoundToStr(abs(C), Decimals); //Get numeric value as a string
       //Add angle symbol to text in Symbol font
       Str += L'\x2220';
-      if(Data.Axes.Trigonometry == Func32::Degree)
+      const TAxes Axes = Form1->Data.Axes;
+      if(Axes.Trigonometry == Func32::Degree)
         //Add degree symbol, if angle is in degree
-        Str += RoundToStr(std::arg(C) * 180 / M_PI, Data) + L'\xB0';
+        Str += RoundToStr(std::arg(C) * 180 / M_PI, Decimals) + L'\xB0';
       else
-        Str += RoundToStr(arg(C), Data);
+        Str += RoundToStr(arg(C), Decimals);
   }
 
   return Str;
+}
+//---------------------------------------------------------------------------
+String ComplexToString(const Func32::TComplex &C)
+{
+  return ComplexToString(C, Property.RoundTo);
 }
 //---------------------------------------------------------------------------
 //This function converts a floating point number to a string
@@ -295,7 +300,7 @@ String RoundToStr(long double Number, unsigned Decimals)
   return Str;
 }
 //---------------------------------------------------------------------------
-String RoundToStr(long double Number, const TData &Data)
+String RoundToStr(long double Number)
 {
   return RoundToStr(Number, Property.RoundTo);
 }

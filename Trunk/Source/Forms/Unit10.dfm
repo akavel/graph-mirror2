@@ -120,13 +120,13 @@ object Form10: TForm10
         0000555555555555232555555555555500005555555555555555555555555555
         000055555555555525255555555555550000}
     end
-    object LinkLabel1: TLinkLabel
+    object LinkLabel1: TLinkLabelEx
       Left = 16
       Top = 56
       Width = 283
       Height = 107
+      OnLinkClick = LinkLabel1LinkClick
       Anchors = [akLeft, akTop, akRight, akBottom]
-      AutoSize = False
       Caption = 'Tip of the day'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -134,8 +134,6 @@ object Form10: TForm10
       Font.Name = 'Microsoft Sans Serif'
       Font.Style = []
       ParentFont = False
-      TabOrder = 0
-      OnLinkClick = LinkLabel1LinkClick
     end
   end
 end

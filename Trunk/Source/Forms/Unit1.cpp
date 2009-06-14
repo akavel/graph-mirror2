@@ -532,13 +532,13 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift,
           Shape1->Top = Y;
         else
           Shape1->Top = yZoom;
-          ShowStatusMessage("(" + RoundToStr(Draw.xCoord(xZoom), Data) + " ; " +
-            RoundToStr(Draw.yCoord(yZoom), Data) + ")->(" + RoundToStr(Draw.xCoord(X), Data) + " ; " +
-            RoundToStr(Draw.yCoord(Y), Data) + ")", true);
+          ShowStatusMessage("(" + RoundToStr(Draw.xCoord(xZoom)) + " ; " +
+            RoundToStr(Draw.yCoord(yZoom)) + ")->(" + RoundToStr(Draw.xCoord(X)) + " ; " +
+            RoundToStr(Draw.yCoord(Y)) + ")", true);
       }
       else if(X >= 0 && X < Image1->Width && Y >= 0 && Y < Image1->Height)
-        ShowStatusMessage("(" + RoundToStr(Draw.xCoord(X), Data) + " ; " +
-          RoundToStr(Draw.yCoord(Y), Data) + ")", true);
+        ShowStatusMessage("(" + RoundToStr(Draw.xCoord(X)) + " ; " +
+          RoundToStr(Draw.yCoord(Y)) + ")", true);
       break;
 
     case csMoving:
@@ -3446,7 +3446,7 @@ void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
 void __fastcall TForm1::Panel6UnDock(TObject *Sender, TControl *Client,
       TWinControl *NewTarget, bool &Allow)
 {
-  Panel5->Height = StatusBar1->Height;
+  Panel6->Height = 0;
   Splitter2->Visible = false;
 }
 //---------------------------------------------------------------------------
@@ -3455,7 +3455,7 @@ void __fastcall TForm1::Panel6DockDrop(TObject *Sender,
 {
   if(Form22->Visible)
   {
-    Panel5->Height = 150;
+    Panel6->Height = 150;
     Splitter2->Visible = true;
   }
 }

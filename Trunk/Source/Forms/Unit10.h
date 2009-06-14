@@ -16,6 +16,7 @@
 #include <Forms.hpp>
 #include <ExtCtrls.hpp>
 #include <Graphics.hpp>
+#include "LinkLabelEx.h"
 //---------------------------------------------------------------------------
 class TForm10 : public TForm
 {
@@ -27,7 +28,7 @@ __published:	// IDE-managed Components
   TPanel *Panel1;
   TLabel *Label1;
   TImage *Image1;
-  TLinkLabel *LinkLabel1;
+  TLinkLabelEx *LinkLabel1;
   void __fastcall Button2Click(TObject *Sender);
   void __fastcall Button3Click(TObject *Sender);
   void __fastcall FormClose(TObject *Sender, TCloseAction &Action);

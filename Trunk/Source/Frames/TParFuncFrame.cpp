@@ -37,7 +37,7 @@ void TParFuncFrame::Eval(const TGraphElem *Elem)
       Func32::TComplex xTemp = Func->GetFunc().CalcX(Func32::TComplex(t));
       x = real(xTemp);
       if(!imag(xTemp))
-        Edit2->Text = RoundToStr(x, Form1->Data);
+        Edit2->Text = RoundToStr(x);
     }
     catch(Func32::ECalcError&)
     {
@@ -48,7 +48,7 @@ void TParFuncFrame::Eval(const TGraphElem *Elem)
       Func32::TComplex yTemp = Func->GetFunc().CalcY(Func32::TComplex(t));
       y = real(yTemp);
       if(!imag(yTemp))
-        Edit3->Text = RoundToStr(y, Form1->Data);
+        Edit3->Text = RoundToStr(y);
     }
     catch(Func32::ECalcError&)
     {
@@ -65,7 +65,7 @@ void TParFuncFrame::Eval(const TGraphElem *Elem)
     {
       xDif = Dif.CalcX(t);
       if(!Edit2->Text.IsEmpty())
-        Edit4->Text = RoundToStr(xDif, Form1->Data);
+        Edit4->Text = RoundToStr(xDif);
     }
     catch(Func32::ECalcError&)
     {
@@ -75,7 +75,7 @@ void TParFuncFrame::Eval(const TGraphElem *Elem)
     {
       yDif = Dif.CalcY(t);
       if(!Edit3->Text.IsEmpty())
-        Edit5->Text = RoundToStr(yDif, Form1->Data);
+        Edit5->Text = RoundToStr(yDif);
     }
     catch(Func32::ECalcError&)
     {
@@ -83,7 +83,7 @@ void TParFuncFrame::Eval(const TGraphElem *Elem)
 
     if(!Edit4->Text.IsEmpty() && !Edit5->Text.IsEmpty())
       if(xDif)
-        Edit6->Text = RoundToStr(yDif/xDif, Form1->Data);
+        Edit6->Text = RoundToStr(yDif/xDif);
   }
 }
 //---------------------------------------------------------------------------

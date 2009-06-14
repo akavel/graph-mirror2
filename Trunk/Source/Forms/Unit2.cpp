@@ -12,14 +12,14 @@
 #include "Unit2.h"
 #include "VersionInfo.h"
 //---------------------------------------------------------------------------
-#pragma link "SymbolDialog"              
+#pragma link "SymbolDialog"
+#pragma link "LinkLabelEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm2::TForm2(TComponent* Owner)
 	: TForm(Owner)
 {
   String TranslatorString = LinkLabel3->Caption;
-  LinkLabel3->Width = Comments->Width;
   TranslateProperties(this);
   Animate1->ResName = "FLAG";
   reinterpret_cast<TEdit*>(Animate1)->OnDblClick = ProgramIconDblClick; //Nasty hack. Don't do this at home kids
@@ -41,17 +41,9 @@ __fastcall TForm2::TForm2(TComponent* Owner)
   LinkLabel2->Caption = FormatStr(LinkLabel2->Caption, EmailStr);
   const wchar_t *LinkStr = L"<a href=\"" HOMEPAGE L"\">" HOMEPAGE L"</a>";
   LinkLabel1->Caption = FormatStr(LinkLabel1->Caption, LinkStr);
-
   if(LinkLabel3->Caption != TranslatorString)
-  {
     LinkLabel3->Visible = true;
-    Height = Height + LinkLabel3->Height + 10;
-  }
 
-  //Don't scale until we have made all adjustments.
-  //Disable AutoSize before we scale as it sometimes create problems.
-  LinkLabel3->AutoSize = false;
-  LinkLabel3->Width = Panel1->ClientWidth - 5 - LinkLabel3->Left;
   ScaleForm(this);
 }
 //---------------------------------------------------------------------------
@@ -75,6 +67,13 @@ void __fastcall TForm2::LinkLabel2LinkClick(TObject *Sender, const UnicodeString
   Str += EMAIL;
   Str += L"?Subject=Bug report/suggestions for Graph " + TVersionInfo().StringValue(L"ProductVersion");
   ShellExecute(Handle, NULL, Str.c_str(), NULL, NULL, SW_SHOWDEFAULT);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm2::FormShow(TObject *Sender)
+{
+  //Must be done in FormShow() under Windows Vista because a handle is needed to auto size a TLinkLabelEx
+  if(LinkLabel3->Visible)
+    ClientHeight = ClientHeight + LinkLabel3->Height + 10;
 }
 //---------------------------------------------------------------------------
 
