@@ -9,6 +9,7 @@
 #include <vector>
 #include "Tokenizer.h"
 #pragma package(smart_init)
+#pragma link "Tokenizer"
 //---------------------------------------------------------------------------
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.

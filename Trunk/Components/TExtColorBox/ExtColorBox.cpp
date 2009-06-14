@@ -233,5 +233,11 @@ void __fastcall TExtColorBox::DropDown()
   inherited::DropDown();
 }
 //---------------------------------------------------------------------------
+void __fastcall TExtColorBox::ChangeScale(int M, int D)
+{
+  TCustomComboBox::ChangeScale(M, D); // Call inherited
+  ItemHeight = (ItemHeight * M) / D;
+}
+//---------------------------------------------------------------------------
 
 
