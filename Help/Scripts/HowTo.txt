@@ -1,4 +1,6 @@
-This describes how to create the help files for Graph:
+This describes how to create the help files for Graph.
+Newest file is available at http://graph.svn.sourceforge.net/viewvc/graph/Trunk/Help/Scripts/HowTo.txt
+
 1. Download and install Java from http://java.com/en/download/. Most will already have Java installed.
 
 2. Download and install Python 2.5 from http://python.org/ftp/python/2.5.2/python-2.5.2.msi

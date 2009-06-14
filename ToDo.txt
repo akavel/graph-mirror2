@@ -28,6 +28,7 @@ ASAP
 - Numbers next to tick marks (currently F9)
 - Show end points (arrows) at each line segment.
 + Use error bars when calculating trendlines (http://www-users.york.ac.uk/~mdc1/num_meth_files/weightedlsqsol.html)
+- Show translator email address as link in About dialog.
 
 Graph 4.3
 - Animation Player: Add buttons to move to first and last frame for easy compare.
@@ -155,6 +156,7 @@ Plugins:
 - Store window size in grf-file and restore it when the file is opened.
 - Insert different kinds of functions, see email from Francisco Oliver 8/1-09.
 - Customize the numbers on the axes, i.e. add/remove numbers.
+- Export of more than one item.
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>
