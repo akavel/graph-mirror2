@@ -252,3 +252,6 @@ msgstr ""
 msgid "270°"
 msgstr ""
 
+msgid "."
+msgstr ""
+
