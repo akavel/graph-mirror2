@@ -52,6 +52,12 @@
   <xsl:template match="menuchoice">
     <fo:inline font-family="Helvetica">
       <xsl:call-template name="process.menuchoice"/>
+      <xsl:variable name="shortcut" select="./shortcut"/>
+      <xsl:if test="$shortcut">
+        <xsl:text> (</xsl:text>
+        <xsl:apply-templates select="$shortcut"/>
+        <xsl:text>)</xsl:text>
+      </xsl:if>
     </fo:inline>
   </xsl:template>
 
