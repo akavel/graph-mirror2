@@ -37,7 +37,7 @@ bool IsPythonInstalled()
   static int Result = -1;
   if(Result == -1)
   {
-    PythonInstance = LoadLibrary(GetRegValue(L"Software\\Ivan\\Graph", L"PythonDll", HKEY_CURRENT_USER, L"Python25.dll").c_str());
+    PythonInstance = LoadLibrary(L"Python25.dll");
     Result = PythonInstance != NULL;
   }
   return Result;

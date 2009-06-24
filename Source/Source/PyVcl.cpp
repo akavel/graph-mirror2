@@ -15,10 +15,6 @@
 #include <python.h>
 #include "PythonBind.h"
 
-//Workaround for name mangling bug in GetPropList()
-#pragma alias "@Typinfo@GetPropList$qqrp14System@TObjectrpp17Typinfo@TPropInfo"\
-="@Typinfo@GetPropList$qqrp14System@TObjectrpa16380$p17Typinfo@TPropInfo"
-
 #define NAME_VALUE_ENTRY(x) {#x, (TFastcallFunction)x}
 
 namespace Python
