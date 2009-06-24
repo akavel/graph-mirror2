@@ -157,6 +157,7 @@ Plugins:
 - Insert different kinds of functions, see email from Francisco Oliver 8/1-09.
 - Customize the numbers on the axes, i.e. add/remove numbers.
 - Export of more than one item.
+- Evaluate a function for a series of x-values.
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>
