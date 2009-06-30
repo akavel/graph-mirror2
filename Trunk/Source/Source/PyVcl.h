@@ -10,8 +10,9 @@
 #ifndef PyVclH
 #define PyVclH
 //---------------------------------------------------------------------------
+struct _object;
 namespace Python
 {
-void InitPyVcl();
+  _object* InitPyVcl();
 }
 #endif

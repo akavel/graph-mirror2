@@ -7,22 +7,22 @@
 extern "C" {
 #endif
 
-#define PyCF_MASK (CO_FUTURE_DIVISION | CO_FUTURE_ABSOLUTE_IMPORT | \
-                   CO_FUTURE_WITH_STATEMENT)
-#define PyCF_MASK_OBSOLETE (CO_NESTED)
+#define PyCF_MASK CO_FUTURE_BARRY_AS_BDFL
+#define PyCF_MASK_OBSOLETE 0
 #define PyCF_SOURCE_IS_UTF8  0x0100
 #define PyCF_DONT_IMPLY_DEDENT 0x0200
 #define PyCF_ONLY_AST 0x0400
+#define PyCF_IGNORE_COOKIE 0x0800
 
 typedef struct {
 	int cf_flags;  /* bitmask of CO_xxx flags relevant to future */
 } PyCompilerFlags;
 
-PyAPI_FUNC(void) Py_SetProgramName(char *);
-PyAPI_FUNC(char *) Py_GetProgramName(void);
+PyAPI_FUNC(void) Py_SetProgramName(wchar_t *);
+PyAPI_FUNC(wchar_t *) Py_GetProgramName(void);
 
-PyAPI_FUNC(void) Py_SetPythonHome(char *);
-PyAPI_FUNC(char *) Py_GetPythonHome(void);
+PyAPI_FUNC(void) Py_SetPythonHome(wchar_t *);
+PyAPI_FUNC(wchar_t *) Py_GetPythonHome(void);
 
 PyAPI_FUNC(void) Py_Initialize(void);
 PyAPI_FUNC(void) Py_InitializeEx(int);
@@ -41,7 +41,8 @@ PyAPI_FUNC(int) PyRun_InteractiveLoopFlags(FILE *, const char *, PyCompilerFlags
 PyAPI_FUNC(struct _mod *) PyParser_ASTFromString(const char *, const char *, 
 						 int, PyCompilerFlags *flags,
                                                  PyArena *);
-PyAPI_FUNC(struct _mod *) PyParser_ASTFromFile(FILE *, const char *, int, 
+PyAPI_FUNC(struct _mod *) PyParser_ASTFromFile(FILE *, const char *, 
+					       const char*, int, 
 					       char *, char *,
                                                PyCompilerFlags *, int *,
                                                PyArena *);
@@ -70,6 +71,10 @@ PyAPI_FUNC(void) PyErr_Print(void);
 PyAPI_FUNC(void) PyErr_PrintEx(int);
 PyAPI_FUNC(void) PyErr_Display(PyObject *, PyObject *, PyObject *);
 
+/* Py_PyAtExit is for the atexit module, Py_AtExit is for low-level
+ * exit functions.
+ */
+PyAPI_FUNC(void) _Py_PyAtExit(void (*func)(void));
 PyAPI_FUNC(int) Py_AtExit(void (*func)(void));
 
 PyAPI_FUNC(void) Py_Exit(int);
@@ -77,7 +82,7 @@ PyAPI_FUNC(void) Py_Exit(int);
 PyAPI_FUNC(int) Py_FdIsInteractive(FILE *, const char *);
 
 /* Bootstrap */
-PyAPI_FUNC(int) Py_Main(int argc, char **argv);
+PyAPI_FUNC(int) Py_Main(int argc, wchar_t **argv);
 
 /* Use macros for a bunch of old variants */
 #define PyRun_String(str, s, g, l) PyRun_StringFlags(str, s, g, l, NULL)
@@ -99,10 +104,10 @@ PyAPI_FUNC(int) Py_Main(int argc, char **argv);
         PyRun_FileExFlags(fp, p, s, g, l, 0, flags)
 
 /* In getpath.c */
-PyAPI_FUNC(char *) Py_GetProgramFullPath(void);
-PyAPI_FUNC(char *) Py_GetPrefix(void);
-PyAPI_FUNC(char *) Py_GetExecPrefix(void);
-PyAPI_FUNC(char *) Py_GetPath(void);
+PyAPI_FUNC(wchar_t *) Py_GetProgramFullPath(void);
+PyAPI_FUNC(wchar_t *) Py_GetPrefix(void);
+PyAPI_FUNC(wchar_t *) Py_GetExecPrefix(void);
+PyAPI_FUNC(wchar_t *) Py_GetPath(void);
 
 /* In their own files */
 PyAPI_FUNC(const char *) Py_GetVersion(void);
@@ -121,8 +126,8 @@ PyAPI_FUNC(void) _PyImport_Init(void);
 PyAPI_FUNC(void) _PyExc_Init(void);
 PyAPI_FUNC(void) _PyImportHooks_Init(void);
 PyAPI_FUNC(int) _PyFrame_Init(void);
-PyAPI_FUNC(int) _PyInt_Init(void);
 PyAPI_FUNC(void) _PyFloat_Init(void);
+PyAPI_FUNC(int) PyByteArray_Init(void);
 
 /* Various internal finalizers */
 PyAPI_FUNC(void) _PyExc_Fini(void);
@@ -130,11 +135,12 @@ PyAPI_FUNC(void) _PyImport_Fini(void);
 PyAPI_FUNC(void) PyMethod_Fini(void);
 PyAPI_FUNC(void) PyFrame_Fini(void);
 PyAPI_FUNC(void) PyCFunction_Fini(void);
+PyAPI_FUNC(void) PyDict_Fini(void);
 PyAPI_FUNC(void) PyTuple_Fini(void);
 PyAPI_FUNC(void) PyList_Fini(void);
 PyAPI_FUNC(void) PySet_Fini(void);
-PyAPI_FUNC(void) PyString_Fini(void);
-PyAPI_FUNC(void) PyInt_Fini(void);
+PyAPI_FUNC(void) PyBytes_Fini(void);
+PyAPI_FUNC(void) PyByteArray_Fini(void);
 PyAPI_FUNC(void) PyFloat_Fini(void);
 PyAPI_FUNC(void) PyOS_FiniInterrupts(void);
 
@@ -149,7 +155,7 @@ PyAPI_DATA(PyThreadState*) _PyOS_ReadlineTState;
    to a 8k margin. */
 #define PYOS_STACK_MARGIN 2048
 
-#if defined(WIN32) && !defined(MS_WIN64) && defined(_MSC_VER)
+#if defined(WIN32) && !defined(MS_WIN64) && defined(_MSC_VER) && _MSC_VER >= 1300
 /* Enable stack checking under Microsoft C */
 #define USE_STACKCHECK
 #endif

@@ -21,7 +21,7 @@
 		<PropertyGroup Condition="'$(Base)'!=''">
 			<ILINK_MapFileType>None</ILINK_MapFileType>
 			<ILINK_OSVersion>5.0</ILINK_OSVersion>
-			<ILINK_DelayLoadDll>Python25.dll;PDFlib.dll;$(ILINK_DelayLoadDll)</ILINK_DelayLoadDll>
+			<ILINK_DelayLoadDll>Python31.dll;PDFlib.dll;$(ILINK_DelayLoadDll)</ILINK_DelayLoadDll>
 			<BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
 			<ShowGeneralMessages>true</ShowGeneralMessages>
 			<BCC_StopBatchAfterErrors>10</BCC_StopBatchAfterErrors>

@@ -19,6 +19,7 @@ typedef struct _is {
     struct _ts *tstate_head;
 
     PyObject *modules;
+    PyObject *modules_by_index;
     PyObject *sysdict;
     PyObject *builtins;
     PyObject *modules_reloading;
@@ -26,6 +27,7 @@ typedef struct _is {
     PyObject *codec_search_path;
     PyObject *codec_search_cache;
     PyObject *codec_error_registry;
+    int codecs_initialized;
 
 #ifdef HAVE_DLOPEN
     int dlopenflags;
@@ -61,6 +63,10 @@ typedef struct _ts {
 
     struct _frame *frame;
     int recursion_depth;
+    char overflowed; /* The stack has overflowed. Allow 50 more calls
+		        to handle the runtime error. */
+    char recursion_critical; /* The current calls must not cause 
+				a stack overflow. */
     /* 'tracing' keeps track of the execution depth when tracing/profiling.
        This is to prevent the actual trace/profile code from being recorded in
        the trace/profile. */
@@ -103,6 +109,8 @@ typedef struct _ts {
 PyAPI_FUNC(PyInterpreterState *) PyInterpreterState_New(void);
 PyAPI_FUNC(void) PyInterpreterState_Clear(PyInterpreterState *);
 PyAPI_FUNC(void) PyInterpreterState_Delete(PyInterpreterState *);
+PyAPI_FUNC(int) _PyState_AddModule(PyObject*, struct PyModuleDef*);
+PyAPI_FUNC(PyObject*) PyState_FindModule(struct PyModuleDef*);
 
 PyAPI_FUNC(PyThreadState *) PyThreadState_New(PyInterpreterState *);
 PyAPI_FUNC(void) PyThreadState_Clear(PyThreadState *);

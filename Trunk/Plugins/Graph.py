@@ -6,7 +6,7 @@ import traceback
 import GraphImpl
 
 def InitPlugins():
-    print "Loading plugins..."
+    print("Loading plugins...")
 
     PluginsDir = os.path.dirname(sys.argv[0]) + '\\Plugins'
     sys.path.append(PluginsDir)
@@ -23,12 +23,12 @@ def InitPlugins():
                 Modules.append(ModuleName)
                 __import__(ModuleName)
 
-            except Exception, e:
+            except Exception:
                 traceback.print_exc()
 
 
-import UserDict
-class ConstantsType(UserDict.DictMixin):
+import collections
+class ConstantsType(collections.MutableMapping):
     def keys(self):
         return GraphImpl.GetConstantNames()
     def __getitem__(self, name):
@@ -40,6 +40,9 @@ class ConstantsType(UserDict.DictMixin):
             GraphImpl.SetConstant(name, None, str(value))
     def __delitem__(self, name):
         GraphImpl.DelConstant(name)
+    def __iter__(self):
+        for k in self.keys(): yield k
+    def __len__(self): return len(keys)
 
 def ExecuteEvent(eventlist):
     for action in eventlist:
@@ -47,7 +50,7 @@ def ExecuteEvent(eventlist):
             action()
         except:
             traceback.print_exc()
-        
+
 def FindAction(name):
     for o in Form1.Components:
         if o.Name == "ActionManager":
