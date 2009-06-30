@@ -15,13 +15,13 @@
 #include "PythonBind.h"
 #include "VersionInfo.h"
 #include "Unit18.h"
-#undef _DEBUG
-#include <python.h>
-#include "PyVcl.h"
 #include <fstream>
 #include "IThread.h"
 #include "Images.h"
-
+#include <cfloat>
+#undef _DEBUG
+#include <python.h>
+#include "PyVcl.h"
 //---------------------------------------------------------------------------
 namespace Python
 {
@@ -83,9 +83,9 @@ static int WriteToConsole(int Arg)
 //---------------------------------------------------------------------------
 static PyObject* PluginWriteToConsole(PyObject *Self, PyObject *Args)
 {
-  const char *Str;
+  const wchar_t *Str;
   TColor Color = clBlack;
-  if(!PyArg_ParseTuple(Args, "s|i", &Str, &Color))
+  if(!PyArg_ParseTuple(Args, "u|i", &Str, &Color))
     return NULL;
 
   Py_BEGIN_ALLOW_THREADS
@@ -110,9 +110,9 @@ static PyObject* PluginWriteToConsole(PyObject *Self, PyObject *Args)
 //---------------------------------------------------------------------------
 static PyObject* PluginInputQuery(PyObject *Self, PyObject *Args)
 {
-  const char *Caption = "Python input";
-  const char *Prompt = "";
-  if(!PyArg_ParseTuple(Args, "|ss", &Caption, &Prompt))
+  const wchar_t *Caption = L"Python input";
+  const wchar_t *Prompt = L"";
+  if(!PyArg_ParseTuple(Args, "|uu", &Caption, &Prompt))
     return NULL;
   String Value;
   if(InputQuery(Caption, Prompt, Value))
@@ -134,18 +134,18 @@ static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args)
     Item = PluginsItem->Items->Add();
   Item->Action = Action;
   PluginsItem->Visible = true;
-  return PyInt_FromLong(reinterpret_cast<long>(Action));
+  return PyLong_FromLong(reinterpret_cast<long>(Action));
 }
 //---------------------------------------------------------------------------
 static PyObject* PluginCreateParametricFunction(PyObject *Self, PyObject *Args)
 {
-  const char *xName;
-  const char *yName;
-  if(!PyArg_ParseTuple(Args, "ss", &xName, &yName))
+  const wchar_t *xName;
+  const wchar_t *yName;
+  if(!PyArg_ParseTuple(Args, "uu", &xName, &yName))
     return NULL;
 
   TData &Data = Form1->Data;
-  boost::shared_ptr<TBaseFuncType> Func(new TParFunc(ToWString(xName), ToWString(yName), Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry));
+  boost::shared_ptr<TBaseFuncType> Func(new TParFunc(xName, yName, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry));
   Func->From.Value = -10;
   Func->To.Value = 10;
   Func->From.Text = L"-10";
@@ -199,14 +199,18 @@ static PyObject* PluginCreateCustomFunction(PyObject *Self, PyObject *Args)
   if(!PyArg_ParseTuple(Args, "uO", &Name, &Function))
     return NULL;
 
-  PyObject *FuncCode = PyObject_GetAttrString(Function, "func_code");
-  PyObject *ArgCount = PyObject_GetAttrString(FuncCode, "co_argcount");
-  long Arguments = PyInt_AsLong(ArgCount);
-
-  Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, Func32::TCustomFunc(CallCustomFunction, CallCustomFunction, Arguments, Function));
-
-  Py_XDECREF(FuncCode);
-  Py_XDECREF(ArgCount);
+  PyObject *FuncCode = PyObject_GetAttrString(Function, "__code__");
+  if(FuncCode)
+  {
+    PyObject *ArgCount = PyObject_GetAttrString(FuncCode, "co_argcount");
+    if(ArgCount)
+    {
+      long Arguments = PyLong_AsLong(ArgCount);
+      Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, Func32::TCustomFunc(CallCustomFunction, CallCustomFunction, Arguments, Function));
+      Py_XDECREF(ArgCount);
+    }
+    Py_XDECREF(FuncCode);
+  }
   Py_RETURN_NONE;
 }
 //---------------------------------------------------------------------------
@@ -249,7 +253,7 @@ static PyObject* PluginEvalComplex(PyObject *Self, PyObject *Args)
 //---------------------------------------------------------------------------
 static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args)
 {
-  const char *FileName = PyString_AsString(Args);
+  const wchar_t *FileName = PyUnicode_AsUnicode(Args);
   TImageOptions ImageOptions(Form1->Image1->Width, Form1->Image1->Height);
   try
   {
@@ -289,13 +293,13 @@ static PyObject* PluginGetConstantNames(PyObject *Self, PyObject *Args)
 //---------------------------------------------------------------------------
 static PyObject* PluginGetConstant(PyObject *Self, PyObject *Args)
 {
-  const char *Name = PyString_AsString(Args);
+  const wchar_t *Name = PyUnicode_AsUnicode(Args);
   if(Name == NULL)
     return NULL;
-    
+
   try
   {
-    const TCustomFunction &Function = Form1->Data.CustomFunctions.GetValue(ToWString(Name));
+    const TCustomFunction &Function = Form1->Data.CustomFunctions.GetValue(Name);
     PyObject *Args = PyTuple_New(Function.Arguments.size() + 1);
     PyTuple_SetItem(Args, 0, PyUnicode_FromWideChar(Function.Text.c_str(), Function.Text.size()));
     for(unsigned I = 0; I < Function.Arguments.size(); I++)
@@ -304,7 +308,7 @@ static PyObject* PluginGetConstant(PyObject *Self, PyObject *Args)
   }
   catch(ECustomFunctionError &E)
   {
-    PyErr_SetString(PyExc_KeyError, Name);
+    PyErr_SetString(PyExc_KeyError, AnsiString(Name).c_str());
     return NULL;
   }
 }
@@ -313,10 +317,9 @@ static PyObject* PluginSetConstant(PyObject *Self, PyObject *Args)
 {
   try
   {
-    const char *Name;
     PyObject *Arguments;
-    const char *Text;
-    if(!PyArg_ParseTuple(Args, "sOs", &Name, &Arguments, &Text))
+    const wchar_t *Text, *Name;
+    if(!PyArg_ParseTuple(Args, "uOu", &Name, &Arguments, &Text))
       return NULL;
     TCustomFunctions &Functions = Form1->Data.CustomFunctions;
     std::vector<std::wstring> ArgList;
@@ -333,13 +336,13 @@ static PyObject* PluginSetConstant(PyObject *Self, PyObject *Args)
         return NULL;
       for(int I = 0; I < Size; I++)
       {
-        const char *Str = PyString_AsString(PyTuple_GetItem(Arguments, I));
+        const wchar_t *Str = PyUnicode_AsUnicode(PyTuple_GetItem(Arguments, I));
         if(Str == NULL)
           return NULL;
-        ArgList.push_back(ToWString(Str));
+        ArgList.push_back(Str);
       }
     }
-    Functions.Add(ToWString(Name), ArgList, ToWString(Text));
+    Functions.Add(Name, ArgList, Text);
     Py_RETURN_NONE;
   }
   catch(Func32::EFuncError &E)
@@ -351,19 +354,19 @@ static PyObject* PluginSetConstant(PyObject *Self, PyObject *Args)
 //---------------------------------------------------------------------------
 static PyObject* PluginDelConstant(PyObject *Self, PyObject *Args)
 {
-  const char *Name = PyString_AsString(Args);
+  const wchar_t *Name = PyUnicode_AsUnicode(Args);
   if(Name == NULL)
     return NULL;
 
   try
   {
     TCustomFunctions &Functions = Form1->Data.CustomFunctions;
-    Functions.Delete(ToWString(Name));
+    Functions.Delete(Name);
     Py_RETURN_NONE;
   }
   catch(ECustomFunctionError &E)
   {
-    PyErr_SetString(PyExc_KeyError, Name);
+    PyErr_SetString(PyExc_KeyError, AnsiString(Name).c_str());
     return NULL;
   }
 }
@@ -385,6 +388,19 @@ static PyMethodDef GraphMethods[] = {
   {NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
+static PyModuleDef GraphModuleDef =
+{
+  PyModuleDef_HEAD_INIT,
+  "GraphImpl",
+  NULL,
+  -1,
+  GraphMethods,
+  NULL,
+  NULL,
+  NULL,
+  NULL,
+};
+//---------------------------------------------------------------------------
 void ShowPythonConsole(bool Visible)
 {
   if(Form22)
@@ -395,18 +411,29 @@ void ShowPythonConsole(bool Visible)
   }
 }
 //---------------------------------------------------------------------------
+PyObject* InitGraphImpl()
+{
+  return PyModule_Create(&GraphModuleDef);
+}
+//---------------------------------------------------------------------------
+_inittab Modules[] =
+{
+  {"GraphImpl", InitGraphImpl},
+  {"PyVcl", InitPyVcl},
+  {NULL, NULL}
+};
+//---------------------------------------------------------------------------
 void InitPlugins()
 {
   if(IsPythonInstalled())
   {
     Form22 = new TForm22(Application);
+    PyImport_ExtendInittab(Modules);
     Py_Initialize();
-    AnsiString ExeName = Application->ExeName;
-    char *argv[] = {ExeName.c_str(), NULL};
+    FreeGIL();
+    AllocGIL();  //Used to set FPU Control Word
+    wchar_t *argv[] = {Application->ExeName.c_str(), NULL};
     PySys_SetArgv(1, argv);
-
-    Py_InitModule("GraphImpl", GraphMethods);
-    InitPyVcl();
 
     PyEFuncError = PyErr_NewException("GraphImpl.EFuncError", NULL, NULL);
     PyEGraphError = PyErr_NewException("GraphImpl.EGraphError", NULL, NULL);
@@ -414,7 +441,7 @@ void InitPlugins()
     TVersionInfo Info;
     TVersion Version = Info.FileVersion();
     const char *BetaFinal = Info.FileFlags() & ffDebug ? "beta" : "final";
-    PyRun_SimpleString(AnsiString().sprintf(
+    AnsiString PythonCommands = AnsiString().sprintf(
       "import sys\n"
       "class ConsoleWriter:\n"
       "  def __init__(self, color):\n"
@@ -423,7 +450,7 @@ void InitPlugins()
       "    GraphImpl.WriteToConsole(str, self._color)\n"
       "  def readline(self):\n"
       "    value = GraphImpl.InputQuery()\n"
-      "    if value == None: raise KeyboardInterrupt, 'operation cancelled'\n"
+      "    if value == None: raise KeyboardInterrupt('operation cancelled')\n"
       "    return value + '\\n'\n"
 
       "sys.stdout = ConsoleWriter(0)\n"
@@ -449,8 +476,9 @@ void InitPlugins()
       , Application->Handle
       , Form1
       , AnsiString(ExtractFileDir(Application->ExeName)).c_str()
-    ).c_str());
+    );
 
+    int Result = PyRun_SimpleString(PythonCommands.c_str());
     FreeGIL();
   }
   else

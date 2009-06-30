@@ -6,7 +6,7 @@ class TObject(object):
         object.__setattr__(self, "_owned", owned)
         object.__setattr__(self, "Components", VclListWrapperType(handle, "Components", "ComponentCount"))
         object.__setattr__(self, "Actions", VclListWrapperType(handle, "Actions", "ActionCount"))
-        for name, value in keywords.iteritems():
+        for name, value in keywords.items():
             self.__setattr__(name, value)
 
     @property
@@ -93,8 +93,8 @@ class TAction(TObject):
     def ShortCut(self):
         return PyVcl.CallFunction("ShortCutToText", str, TObject.__getattr__(self, "ShortCut"))
 
-import UserList
-class VclListWrapperType(UserList.UserList):
+import collections
+class VclListWrapperType(collections.UserList):
     def __init__(self, handle, listname, countname):
         self._handle = handle
         self._listname = listname

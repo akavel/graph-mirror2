@@ -19,12 +19,31 @@ typedef struct {
 PyAPI_DATA(PyTypeObject) PyFloat_Type;
 
 #define PyFloat_Check(op) PyObject_TypeCheck(op, &PyFloat_Type)
-#define PyFloat_CheckExact(op) ((op)->ob_type == &PyFloat_Type)
+#define PyFloat_CheckExact(op) (Py_TYPE(op) == &PyFloat_Type)
 
-/* Return Python float from string PyObject.  Second argument ignored on
-   input, and, if non-NULL, NULL is stored into *junk (this tried to serve a
-   purpose once but can't be made to work as intended). */
-PyAPI_FUNC(PyObject *) PyFloat_FromString(PyObject*, char** junk);
+/* The str() precision PyFloat_STR_PRECISION is chosen so that in most cases,
+   the rounding noise created by various operations is suppressed, while
+   giving plenty of precision for practical use. */
+
+#define PyFloat_STR_PRECISION 12
+
+#ifdef Py_NAN
+#define Py_RETURN_NAN return PyFloat_FromDouble(Py_NAN)
+#endif
+
+#define Py_RETURN_INF(sign) do					\
+	if (copysign(1., sign) == 1.) {				\
+		return PyFloat_FromDouble(Py_HUGE_VAL);	\
+	} else {						\
+		return PyFloat_FromDouble(-Py_HUGE_VAL);	\
+	} while(0)
+
+PyAPI_FUNC(double) PyFloat_GetMax(void);
+PyAPI_FUNC(double) PyFloat_GetMin(void);
+PyAPI_FUNC(PyObject *) PyFloat_GetInfo(void);
+
+/* Return Python float from string PyObject. */
+PyAPI_FUNC(PyObject *) PyFloat_FromString(PyObject*);
 
 /* Return Python float from C double. */
 PyAPI_FUNC(PyObject *) PyFloat_FromDouble(double);
@@ -33,19 +52,6 @@ PyAPI_FUNC(PyObject *) PyFloat_FromDouble(double);
    speed. */
 PyAPI_FUNC(double) PyFloat_AsDouble(PyObject *);
 #define PyFloat_AS_DOUBLE(op) (((PyFloatObject *)(op))->ob_fval)
-
-/* Write repr(v) into the char buffer argument, followed by null byte.  The
-   buffer must be "big enough"; >= 100 is very safe.
-   PyFloat_AsReprString(buf, x) strives to print enough digits so that
-   PyFloat_FromString(buf) then reproduces x exactly. */
-PyAPI_FUNC(void) PyFloat_AsReprString(char*, PyFloatObject *v);
-
-/* Write str(v) into the char buffer argument, followed by null byte.  The
-   buffer must be "big enough"; >= 100 is very safe.  Note that it's
-   unusual to be able to get back the float you started with from
-   PyFloat_AsString's result -- use PyFloat_AsReprString() if you want to
-   preserve precision across conversions. */
-PyAPI_FUNC(void) PyFloat_AsString(char*, PyFloatObject *v);
 
 /* _PyFloat_{Pack,Unpack}{4,8}
  *
@@ -82,6 +88,15 @@ PyAPI_FUNC(void) PyFloat_AsString(char*, PyFloatObject *v);
 PyAPI_FUNC(int) _PyFloat_Pack4(double x, unsigned char *p, int le);
 PyAPI_FUNC(int) _PyFloat_Pack8(double x, unsigned char *p, int le);
 
+/* Needed for the old way for marshal to store a floating point number.
+   Returns the string length copied into p, -1 on error.
+ */
+PyAPI_FUNC(int) _PyFloat_Repr(double x, char *p, size_t len);
+
+/* Used to get the important decimal digits of a double */
+PyAPI_FUNC(int) _PyFloat_Digits(char *buf, double v, int *signum);
+PyAPI_FUNC(void) _PyFloat_DigitsInit(void);
+
 /* The unpack routines read 4 or 8 bytes, starting at p.  le is a bool
  * argument, true if the string is in little-endian format (exponent
  * last, at p+3 or p+7), false if big-endian (exponent first, at p).
@@ -93,6 +108,14 @@ PyAPI_FUNC(int) _PyFloat_Pack8(double x, unsigned char *p, int le);
 PyAPI_FUNC(double) _PyFloat_Unpack4(const unsigned char *p, int le);
 PyAPI_FUNC(double) _PyFloat_Unpack8(const unsigned char *p, int le);
 
+/* free list api */
+PyAPI_FUNC(int) PyFloat_ClearFreeList(void);
+
+/* Format the object based on the format_spec, as defined in PEP 3101
+   (Advanced String Formatting). */
+PyAPI_FUNC(PyObject *) _PyFloat_FormatAdvanced(PyObject *obj,
+					       Py_UNICODE *format_spec,
+					       Py_ssize_t format_spec_len);
 
 #ifdef __cplusplus
 }

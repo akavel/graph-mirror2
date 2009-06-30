@@ -1,10 +1,8 @@
 
-/* C objects to be exported from one extension module to another.
+/* 
  
-   C objects are used for communication between extension modules.
-   They provide a way for an extension module to export a C interface
-   to other extension modules, so that extension modules can use the
-   Python import mechanism to link to one another.
+The CObject module is now *deprecated* as of Python 3.1.
+Please use the Capsule API instead; see "pycapsule.h".
 
 */
 
@@ -16,7 +14,7 @@ extern "C" {
 
 PyAPI_DATA(PyTypeObject) PyCObject_Type;
 
-#define PyCObject_Check(op) ((op)->ob_type == &PyCObject_Type)
+#define PyCObject_Check(op) (Py_TYPE(op) == &PyCObject_Type)
 
 /* Create a PyCObject from a pointer to a C object and an optional
    destructor function.  If the second argument is non-null, then it
@@ -47,6 +45,15 @@ PyAPI_FUNC(void *) PyCObject_Import(char *module_name, char *cobject_name);
 
 /* Modify a C object. Fails (==0) if object has a destructor. */
 PyAPI_FUNC(int) PyCObject_SetVoidPtr(PyObject *self, void *cobj);
+
+
+typedef struct {
+    PyObject_HEAD
+    void *cobject;
+    void *desc;
+    void (*destructor)(void *);
+} PyCObject;
+
 
 #ifdef __cplusplus
 }

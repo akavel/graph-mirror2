@@ -158,27 +158,26 @@ typedef struct {
 
 } PyDateTime_CAPI;
 
+#define PyDateTime_CAPSULE_NAME "datetime.datetime_CAPI"
 
-/* "magic" constant used to partially protect against developer mistakes. */
-#define DATETIME_API_MAGIC 0x414548d5
 
 #ifdef Py_BUILD_CORE
 
 /* Macros for type checking when building the Python core. */
 #define PyDate_Check(op) PyObject_TypeCheck(op, &PyDateTime_DateType)
-#define PyDate_CheckExact(op) ((op)->ob_type == &PyDateTime_DateType)
+#define PyDate_CheckExact(op) (Py_TYPE(op) == &PyDateTime_DateType)
 
 #define PyDateTime_Check(op) PyObject_TypeCheck(op, &PyDateTime_DateTimeType)
-#define PyDateTime_CheckExact(op) ((op)->ob_type == &PyDateTime_DateTimeType)
+#define PyDateTime_CheckExact(op) (Py_TYPE(op) == &PyDateTime_DateTimeType)
 
 #define PyTime_Check(op) PyObject_TypeCheck(op, &PyDateTime_TimeType)
-#define PyTime_CheckExact(op) ((op)->ob_type == &PyDateTime_TimeType)
+#define PyTime_CheckExact(op) (Py_TYPE(op) == &PyDateTime_TimeType)
 
 #define PyDelta_Check(op) PyObject_TypeCheck(op, &PyDateTime_DeltaType)
-#define PyDelta_CheckExact(op) ((op)->ob_type == &PyDateTime_DeltaType)
+#define PyDelta_CheckExact(op) (Py_TYPE(op) == &PyDateTime_DeltaType)
 
 #define PyTZInfo_Check(op) PyObject_TypeCheck(op, &PyDateTime_TZInfoType)
-#define PyTZInfo_CheckExact(op) ((op)->ob_type == &PyDateTime_TZInfoType)
+#define PyTZInfo_CheckExact(op) (Py_TYPE(op) == &PyDateTime_TZInfoType)
 
 #else
 
@@ -186,31 +185,23 @@ typedef struct {
 static PyDateTime_CAPI *PyDateTimeAPI;
 
 #define PyDateTime_IMPORT \
-        PyDateTimeAPI = (PyDateTime_CAPI*) PyCObject_Import("datetime", \
-                                                            "datetime_CAPI")
-
-/* This macro would be used if PyCObject_ImportEx() was created.
-#define PyDateTime_IMPORT \
-        PyDateTimeAPI = (PyDateTime_CAPI*) PyCObject_ImportEx("datetime", \
-                                                            "datetime_CAPI", \
-                                                            DATETIME_API_MAGIC)
-*/
+        PyDateTimeAPI = (PyDateTime_CAPI *)PyCapsule_Import(PyDateTime_CAPSULE_NAME, 0)
 
 /* Macros for type checking when not building the Python core. */
 #define PyDate_Check(op) PyObject_TypeCheck(op, PyDateTimeAPI->DateType)
-#define PyDate_CheckExact(op) ((op)->ob_type == PyDateTimeAPI->DateType)
+#define PyDate_CheckExact(op) (Py_TYPE(op) == PyDateTimeAPI->DateType)
 
 #define PyDateTime_Check(op) PyObject_TypeCheck(op, PyDateTimeAPI->DateTimeType)
-#define PyDateTime_CheckExact(op) ((op)->ob_type == PyDateTimeAPI->DateTimeType)
+#define PyDateTime_CheckExact(op) (Py_TYPE(op) == PyDateTimeAPI->DateTimeType)
 
 #define PyTime_Check(op) PyObject_TypeCheck(op, PyDateTimeAPI->TimeType)
-#define PyTime_CheckExact(op) ((op)->ob_type == PyDateTimeAPI->TimeType)
+#define PyTime_CheckExact(op) (Py_TYPE(op) == PyDateTimeAPI->TimeType)
 
 #define PyDelta_Check(op) PyObject_TypeCheck(op, PyDateTimeAPI->DeltaType)
-#define PyDelta_CheckExact(op) ((op)->ob_type == PyDateTimeAPI->DeltaType)
+#define PyDelta_CheckExact(op) (Py_TYPE(op) == PyDateTimeAPI->DeltaType)
 
 #define PyTZInfo_Check(op) PyObject_TypeCheck(op, PyDateTimeAPI->TZInfoType)
-#define PyTZInfo_CheckExact(op) ((op)->ob_type == PyDateTimeAPI->TZInfoType)
+#define PyTZInfo_CheckExact(op) (Py_TYPE(op) == PyDateTimeAPI->TZInfoType)
 
 /* Macros for accessing constructors in a simplified fashion. */
 #define PyDate_FromDate(year, month, day) \

@@ -32,7 +32,7 @@ extern "C" {
 #define EQUAL		22
 #define DOT		23
 #define PERCENT		24
-#define BACKQUOTE	25
+/* #define BACKQUOTE	25 */
 #define LBRACE		26
 #define RBRACE		27
 #define EQEQUAL		28
@@ -58,10 +58,12 @@ extern "C" {
 #define DOUBLESLASH	48
 #define DOUBLESLASHEQUAL 49
 #define AT              50	
+#define RARROW          51
+#define ELLIPSIS        52
 /* Don't forget to update the table _PyParser_TokenNames in tokenizer.c! */
-#define OP		51
-#define ERRORTOKEN	52
-#define N_TOKENS	53
+#define OP		53
+#define ERRORTOKEN	54
+#define N_TOKENS	55
 
 /* Special definitions for cooperation with parser */
 

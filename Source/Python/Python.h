@@ -6,14 +6,7 @@
 
 #include "patchlevel.h"
 #include "pyconfig.h"
-
-/* Cyclic gc is always enabled, starting with release 2.3a1.  Supply the
- * old symbol for the benefit of extension modules written before then
- * that may be conditionalizing on it.  The core doesn't use it anymore.
- */
-#ifndef WITH_CYCLE_GC
-#define WITH_CYCLE_GC 1
-#endif
+#include "pymacconfig.h"
 
 #include <limits.h>
 
@@ -43,7 +36,7 @@
 #include <unistd.h>
 #endif
 
-/* For uintptr_t, intptr_t */
+/* For size_t? */
 #ifdef HAVE_STDDEF_H
 #include <stddef.h>
 #endif
@@ -56,14 +49,6 @@
 
 #include "pyport.h"
 
-/* pyconfig.h or pyport.h may or may not define DL_IMPORT */
-#ifndef DL_IMPORT	/* declarations for DLL import/export */
-#define DL_IMPORT(RTYPE) RTYPE
-#endif
-#ifndef DL_EXPORT	/* declarations for DLL import/export */
-#define DL_EXPORT(RTYPE) RTYPE
-#endif
-
 /* Debug-mode build with pymalloc implies PYMALLOC_DEBUG.
  *  PYMALLOC_DEBUG is in error if pymalloc is not in use.
  */
@@ -73,6 +58,7 @@
 #if defined(PYMALLOC_DEBUG) && !defined(WITH_PYMALLOC)
 #error "PYMALLOC_DEBUG requires WITH_PYMALLOC"
 #endif
+#include "pymath.h"
 #include "pymem.h"
 
 #include "object.h"
@@ -80,17 +66,18 @@
 
 #include "pydebug.h"
 
+#include "bytearrayobject.h"
+#include "bytesobject.h"
 #include "unicodeobject.h"
-#include "intobject.h"
-#include "boolobject.h"
 #include "longobject.h"
+#include "longintrepr.h"
+#include "boolobject.h"
 #include "floatobject.h"
 #ifndef WITHOUT_COMPLEX
 #include "complexobject.h"
 #endif
 #include "rangeobject.h"
-#include "stringobject.h"
-#include "bufferobject.h"
+#include "memoryobject.h"
 #include "tupleobject.h"
 #include "listobject.h"
 #include "dictobject.h"
@@ -102,12 +89,14 @@
 #include "classobject.h"
 #include "fileobject.h"
 #include "cobject.h"
+#include "pycapsule.h"
 #include "traceback.h"
 #include "sliceobject.h"
 #include "cellobject.h"
 #include "iterobject.h"
 #include "genobject.h"
 #include "descrobject.h"
+#include "warnings.h"
 #include "weakrefobject.h"
 
 #include "codecs.h"
@@ -124,28 +113,25 @@
 #include "import.h"
 
 #include "abstract.h"
+#include "bltinmodule.h"
 
 #include "compile.h"
 #include "eval.h"
 
+#include "pyctype.h"
 #include "pystrtod.h"
+#include "pystrcmp.h"
+#include "dtoa.h"
 
 /* _Py_Mangle is defined in compile.c */
 PyAPI_FUNC(PyObject*) _Py_Mangle(PyObject *p, PyObject *name);
-
-/* PyArg_GetInt is deprecated and should not be used, use PyArg_Parse(). */
-#define PyArg_GetInt(v, a)	PyArg_Parse((v), "i", (a))
-
-/* PyArg_NoArgs should not be necessary.
-   Set ml_flags in the PyMethodDef to METH_NOARGS. */
-#define PyArg_NoArgs(v)		PyArg_Parse(v, "")
 
 /* Convert a possibly signed character to a nonnegative int */
 /* XXX This assumes characters are 8 bits wide */
 #ifdef __CHAR_UNSIGNED__
 #define Py_CHARMASK(c)		(c)
 #else
-#define Py_CHARMASK(c)		((c) & 0xff)
+#define Py_CHARMASK(c)		((unsigned char)((c) & 0xff))
 #endif
 
 #include "pyfpe.h"

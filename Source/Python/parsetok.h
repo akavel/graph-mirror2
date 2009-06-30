@@ -23,7 +23,14 @@ typedef struct {
 
 #define PyPARSE_DONT_IMPLY_DEDENT	0x0002
 
+#if 0
 #define PyPARSE_WITH_IS_KEYWORD		0x0003
+#define PyPARSE_PRINT_IS_FUNCTION       0x0004
+#define PyPARSE_UNICODE_LITERALS        0x0008
+#endif
+
+#define PyPARSE_IGNORE_COOKIE 0x0010
+#define PyPARSE_BARRY_AS_BDFL 0x0020
 
 PyAPI_FUNC(node *) PyParser_ParseString(const char *, grammar *, int,
                                               perrdetail *);
@@ -32,14 +39,23 @@ PyAPI_FUNC(node *) PyParser_ParseFile (FILE *, const char *, grammar *, int,
 
 PyAPI_FUNC(node *) PyParser_ParseStringFlags(const char *, grammar *, int,
                                               perrdetail *, int);
-PyAPI_FUNC(node *) PyParser_ParseFileFlags(FILE *, const char *, grammar *,
+PyAPI_FUNC(node *) PyParser_ParseFileFlags(FILE *, const char *, 
+					   const char*, grammar *,
 						 int, char *, char *,
 						 perrdetail *, int);
+PyAPI_FUNC(node *) PyParser_ParseFileFlagsEx(FILE *, const char *,
+					   const char*, grammar *,
+						 int, char *, char *,
+						 perrdetail *, int *);
 
 PyAPI_FUNC(node *) PyParser_ParseStringFlagsFilename(const char *,
 					      const char *,
 					      grammar *, int,
                                               perrdetail *, int);
+PyAPI_FUNC(node *) PyParser_ParseStringFlagsFilenameEx(const char *,
+					      const char *,
+					      grammar *, int,
+                                              perrdetail *, int *);
 
 /* Note that he following function is defined in pythonrun.c not parsetok.c. */
 PyAPI_FUNC(void) PyParser_SetError(perrdetail *);

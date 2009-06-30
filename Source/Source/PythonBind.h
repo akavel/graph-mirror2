@@ -16,7 +16,7 @@ struct _typeobject;
 namespace Python
 {
 extern _typeobject &PyTuple_Type;
-extern _typeobject &PyInt_Type;
+extern _typeobject &PyLong_Type;
 extern _typeobject &PyString_Type;
 extern _typeobject &PyUnicode_Type;
 extern _object *PyExc_TypeError;

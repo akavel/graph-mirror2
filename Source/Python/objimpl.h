@@ -131,9 +131,6 @@ PyAPI_FUNC(void) _PyObject_DebugMallocStats(void);
 #define PyObject_Del		PyObject_Free
 #define PyObject_DEL		PyObject_FREE
 
-/* for source compatibility with 2.2 */
-#define _PyObject_Del		PyObject_Free
-
 /*
  * Generic object allocator interface
  * ==================================
@@ -154,9 +151,9 @@ PyAPI_FUNC(PyVarObject *) _PyObject_NewVar(PyTypeObject *, Py_ssize_t);
 /* Macros trading binary compatibility for speed. See also pymem.h.
    Note that these macros expect non-NULL object pointers.*/
 #define PyObject_INIT(op, typeobj) \
-	( (op)->ob_type = (typeobj), _Py_NewReference((PyObject *)(op)), (op) )
+	( Py_TYPE(op) = (typeobj), _Py_NewReference((PyObject *)(op)), (op) )
 #define PyObject_INIT_VAR(op, typeobj, size) \
-	( (op)->ob_size = (size), PyObject_INIT((op), (typeobj)) )
+	( Py_SIZE(op) = (size), PyObject_INIT((op), (typeobj)) )
 
 #define _PyObject_SIZE(typeobj) ( (typeobj)->tp_basicsize )
 
@@ -231,8 +228,8 @@ PyAPI_FUNC(Py_ssize_t) PyGC_Collect(void);
 #define PyType_IS_GC(t) PyType_HasFeature((t), Py_TPFLAGS_HAVE_GC)
 
 /* Test if an object has a GC head */
-#define PyObject_IS_GC(o) (PyType_IS_GC((o)->ob_type) && \
-	((o)->ob_type->tp_is_gc == NULL || (o)->ob_type->tp_is_gc(o)))
+#define PyObject_IS_GC(o) (PyType_IS_GC(Py_TYPE(o)) && \
+	(Py_TYPE(o)->tp_is_gc == NULL || Py_TYPE(o)->tp_is_gc(o)))
 
 PyAPI_FUNC(PyVarObject *) _PyObject_GC_Resize(PyVarObject *, Py_ssize_t);
 #define PyObject_GC_Resize(type, op, n) \
@@ -285,6 +282,17 @@ extern PyGC_Head *_PyGC_generation0;
 	g->gc.gc_next = NULL; \
     } while (0);
 
+/* True if the object is currently tracked by the GC. */
+#define _PyObject_GC_IS_TRACKED(o) \
+	((_Py_AS_GC(o))->gc.gc_refs != _PyGC_REFS_UNTRACKED)
+ 
+/* True if the object may be tracked by the GC in the future, or already is.
+   This can be useful to implement some optimizations. */
+#define _PyObject_GC_MAY_BE_TRACKED(obj) \
+	(PyObject_IS_GC(obj) && \
+		(!PyTuple_CheckExact(obj) || _PyObject_GC_IS_TRACKED(obj)))
+
+
 PyAPI_FUNC(PyObject *) _PyObject_GC_Malloc(size_t);
 PyAPI_FUNC(PyObject *) _PyObject_GC_New(PyTypeObject *);
 PyAPI_FUNC(PyVarObject *) _PyObject_GC_NewVar(PyTypeObject *, Py_ssize_t);
@@ -323,12 +331,10 @@ PyAPI_FUNC(void) PyObject_GC_Del(void *);
 
 
 /* Test if a type supports weak references */
-#define PyType_SUPPORTS_WEAKREFS(t) \
-        (PyType_HasFeature((t), Py_TPFLAGS_HAVE_WEAKREFS) \
-         && ((t)->tp_weaklistoffset > 0))
+#define PyType_SUPPORTS_WEAKREFS(t) ((t)->tp_weaklistoffset > 0)
 
 #define PyObject_GET_WEAKREFS_LISTPTR(o) \
-	((PyObject **) (((char *) (o)) + (o)->ob_type->tp_weaklistoffset))
+	((PyObject **) (((char *) (o)) + Py_TYPE(o)->tp_weaklistoffset))
 
 #ifdef __cplusplus
 }

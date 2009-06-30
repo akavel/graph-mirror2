@@ -23,14 +23,21 @@ compiler specific".  Therefore, these should be very rare.
 
 
 NOTE: The following symbols are deprecated:
-NT, WIN32, USE_DL_EXPORT, USE_DL_IMPORT, DL_EXPORT, DL_IMPORT
+NT, USE_DL_EXPORT, USE_DL_IMPORT, DL_EXPORT, DL_IMPORT
 MS_CORE_DLL.
+
+WIN32 is still required for the locale module.
 
 */
 
 #ifdef _WIN32_WCE
 #define MS_WINCE
 #endif
+
+/* Deprecated USE_DL_EXPORT macro - please use Py_BUILD_CORE */
+#ifdef USE_DL_EXPORT
+#	define Py_BUILD_CORE
+#endif /* USE_DL_EXPORT */
 
 /* Visual Studio 2005 introduces deprecation warnings for
    "insecure" and POSIX functions. The insecure functions should
@@ -73,12 +80,18 @@ MS_CORE_DLL.
 #define MS_WIN32 /* only support win32 and greater. */
 #define MS_WINDOWS
 #ifndef PYTHONPATH
-#	define PYTHONPATH ".\\DLLs;.\\lib;.\\lib\\plat-win;.\\lib\\lib-tk"
+#	define PYTHONPATH L".\\DLLs;.\\lib;.\\lib\\plat-win"
 #endif
 #define NT_THREADS
 #define WITH_THREAD
 #ifndef NETSCAPE_PI
 #define USE_SOCKET
+#endif
+
+/* CE6 doesn't have strdup() but _strdup(). Assume the same for earlier versions. */
+#if defined(MS_WINCE)
+#  include <stdlib.h>
+#  define strdup _strdup
 #endif
 
 #ifdef MS_WINCE
@@ -128,6 +141,8 @@ MS_CORE_DLL.
    defined on Win32 *and* Win64. Win32 only code must therefore be
    guarded as follows:
    	#if defined(MS_WIN32) && !defined(MS_WIN64)
+   Some modules are disabled on Itanium processors, therefore we
+   have MS_WINI64 set for those targets, otherwise MS_WINX64
 */
 #ifdef _WIN64
 #define MS_WIN64
@@ -135,16 +150,46 @@ MS_CORE_DLL.
 
 /* set the COMPILER */
 #ifdef MS_WIN64
-#ifdef _M_IX86
-#define COMPILER _Py_PASTE_VERSION("64 bit (Intel)")
-#elif defined(_M_IA64)
+#if defined(_M_IA64)
 #define COMPILER _Py_PASTE_VERSION("64 bit (Itanium)")
-#elif defined(_M_AMD64)
+#define MS_WINI64
+#elif defined(_M_X64) || defined(_M_AMD64)
 #define COMPILER _Py_PASTE_VERSION("64 bit (AMD64)")
+#define MS_WINX64
 #else
 #define COMPILER _Py_PASTE_VERSION("64 bit (Unknown)")
 #endif
 #endif /* MS_WIN64 */
+
+/* set the version macros for the windows headers */
+#ifdef MS_WINX64
+/* 64 bit only runs on XP or greater */
+#define Py_WINVER 0x0501 /* _WIN32_WINNT_WINXP */
+#define Py_NTDDI NTDDI_WINXP
+#else
+/* Python 2.6+ requires Windows 2000 or greater */
+#define Py_WINVER 0x0500 /* _WIN32_WINNT_WIN2K */
+#define Py_NTDDI NTDDI_WIN2KSP4
+#endif
+
+/* We only set these values when building Python - we don't want to force
+   these values on extensions, as that will affect the prototypes and
+   structures exposed in the Windows headers. Even when building Python, we
+   allow a single source file to override this - they may need access to
+   structures etc so it can optionally use new Windows features if it
+   determines at runtime they are available.
+*/
+#if defined(Py_BUILD_CORE) || defined(Py_BUILD_CORE_MODULE)
+#ifndef NTDDI_VERSION
+#define NTDDI_VERSION Py_NTDDI
+#endif
+#ifndef WINVER
+#define WINVER Py_WINVER
+#endif
+#ifndef _WIN32_WINNT
+#define _WIN32_WINNT Py_WINVER
+#endif
+#endif
 
 /* _W64 is not defined for VC6 or eVC4 */
 #ifndef _W64
@@ -168,18 +213,13 @@ typedef _W64 int ssize_t;
 #endif /* MS_WIN32 && !MS_WIN64 */
 
 typedef int pid_t;
-#define hypot _hypot
 
 #include <float.h>
 #define Py_IS_NAN _isnan
 #define Py_IS_INFINITY(X) (!_finite(X) && !_isnan(X))
 #define Py_IS_FINITE(X) _finite(X)
-
-/* Turn off warnings about deprecated C runtime functions in 
-   VisualStudio .NET 2005 */
-#if _MSC_VER >= 1400 && !defined _CRT_SECURE_NO_DEPRECATE
-#define _CRT_SECURE_NO_DEPRECATE
-#endif
+#define copysign _copysign
+#define hypot _hypot
 
 #endif /* _MSC_VER */
 
@@ -234,6 +274,9 @@ typedef int pid_t;
 #define COMPILER "[gcc]"
 #define hypot _hypot
 #define PY_LONG_LONG long long
+#define PY_LLONG_MIN LLONG_MIN
+#define PY_LLONG_MAX LLONG_MAX
+#define PY_ULLONG_MAX ULLONG_MAX
 #endif /* GNUC */
 
 /* ------------------------------------------------------------------------*/
@@ -259,6 +302,9 @@ typedef int pid_t;
 #define HAVE_LONG_LONG 1
 #ifndef PY_LONG_LONG
 #	define PY_LONG_LONG __int64
+#	define PY_LLONG_MAX _I64_MAX
+#	define PY_LLONG_MIN _I64_MIN
+#	define PY_ULLONG_MAX _UI64_MAX
 #endif
 
 /* For Windows the Python core is in a DLL by default.  Test
@@ -267,11 +313,6 @@ Py_NO_ENABLE_SHARED to find out.  Also support MS_NO_COREDLL for b/w compat */
 #	define Py_ENABLE_SHARED 1 /* standard symbol for shared library */
 #	define MS_COREDLL	/* deprecated old symbol */
 #endif /* !MS_NO_COREDLL && ... */
-
-/* Deprecated USE_DL_EXPORT macro - please use Py_BUILD_CORE */
-#ifdef USE_DL_EXPORT
-#	define Py_BUILD_CORE
-#endif /* USE_DL_EXPORT */
 
 /*  All windows compilers that use this header support __declspec */
 #define HAVE_DECLSPEC_DLL
@@ -284,9 +325,9 @@ Py_NO_ENABLE_SHARED to find out.  Also support MS_NO_COREDLL for b/w compat */
 			their Makefile (other compilers are generally
 			taken care of by distutils.) */
 #			ifdef _DEBUG
-#				pragma comment(lib,"python25_d.lib")
+#				pragma comment(lib,"python31_d.lib")
 #			else
-#				pragma comment(lib,"python25.lib")
+#				pragma comment(lib,"python31.lib")
 #			endif /* _DEBUG */
 #		endif /* _MSC_VER */
 #	endif /* Py_BUILD_CORE */
@@ -344,18 +385,63 @@ Py_NO_ENABLE_SHARED to find out.  Also support MS_NO_COREDLL for b/w compat */
    define these.
    If some compiler does not provide them, modify the #if appropriately. */
 #if defined(_MSC_VER)
-#if _MSC_VER > 1201
+#if _MSC_VER > 1300
 #define HAVE_UINTPTR_T 1
 #define HAVE_INTPTR_T 1
 #else
-/* VC6 & eVC4 don't support the C99 LL suffix for 64-bit integer literals */
+/* VC6, VS 2002 and eVC4 don't support the C99 LL suffix for 64-bit integer literals */
 #define Py_LL(x) x##I64
 #endif  /* _MSC_VER > 1200  */
 #endif  /* _MSC_VER */
 
 #endif
 
+/* define signed and unsigned exact-width 32-bit and 64-bit types, used in the
+   implementation of Python long integers. */
+#ifndef PY_UINT32_T
+#if SIZEOF_INT == 4
+#define HAVE_UINT32_T 1
+#define PY_UINT32_T unsigned int
+#elif SIZEOF_LONG == 4
+#define HAVE_UINT32_T 1
+#define PY_UINT32_T unsigned long
+#endif
+#endif
+
+#ifndef PY_UINT64_T
+#if SIZEOF_LONG_LONG == 8
+#define HAVE_UINT64_T 1
+#define PY_UINT64_T unsigned PY_LONG_LONG
+#endif
+#endif
+
+#ifndef PY_INT32_T
+#if SIZEOF_INT == 4
+#define HAVE_INT32_T 1
+#define PY_INT32_T int
+#elif SIZEOF_LONG == 4
+#define HAVE_INT32_T 1
+#define PY_INT32_T long
+#endif
+#endif
+
+#ifndef PY_INT64_T
+#if SIZEOF_LONG_LONG == 8
+#define HAVE_INT64_T 1
+#define PY_INT64_T PY_LONG_LONG
+#endif
+#endif
+
 /* Fairly standard from here! */
+
+/* Define to 1 if you have the `copysign' function. */
+#define HAVE_COPYSIGN 1
+
+/* Define to 1 if you have the `isinf' macro. */
+#define HAVE_DECL_ISINF 1
+
+/* Define to 1 if you have the `isnan' function. */
+#define HAVE_DECL_ISNAN 1
 
 /* Define if on AIX 3.
    System headers sometimes define this.
@@ -419,13 +505,6 @@ Py_NO_ENABLE_SHARED to find out.  Also support MS_NO_COREDLL for b/w compat */
 /* Define to `unsigned' if <sys/types.h> doesn't define.  */
 /* #undef size_t */
 
-/* Define to `int' if <sys/types.h> doesn't define.  */
-#if _MSC_VER + 0 >= 1300
-/* VC.NET typedefs socklen_t in ws2tcpip.h. */
-#else
-#define socklen_t int
-#endif
-
 /* Define if you have the ANSI C header files.  */
 #define STDC_HEADERS 1
 
@@ -475,25 +554,9 @@ Py_NO_ENABLE_SHARED to find out.  Also support MS_NO_COREDLL for b/w compat */
 /* Define if you want to use the GNU readline library */
 /* #define WITH_READLINE 1 */
 
-/* Define if you want to have a Unicode type. */
-#define Py_USING_UNICODE
-
-/* Define as the integral type used for Unicode representation. */
-#define PY_UNICODE_TYPE unsigned short
-
 /* Define as the size of the unicode type. */
-#define Py_UNICODE_SIZE SIZEOF_SHORT
-
-/* Define if you have a useable wchar_t type defined in wchar.h; useable
-   means wchar_t must be 16-bit unsigned type. (see
-   Include/unicodeobject.h). */
-#if Py_UNICODE_SIZE == 2
-#define HAVE_USABLE_WCHAR_T
-
-/* Define to indicate that the Python Unicode representation can be passed
-   as-is to Win32 Wide API.  */
-#define Py_WIN_WIDE_FILENAMES
-#endif
+/* This is enough for unicodeobject.h to do the "right thing" on Windows. */
+#define Py_UNICODE_SIZE 2
 
 /* Use Python's own small-block memory-allocator. */
 #define WITH_PYMALLOC 1
@@ -573,6 +636,11 @@ Py_NO_ENABLE_SHARED to find out.  Also support MS_NO_COREDLL for b/w compat */
 
 /* Define if you have waitpid.  */
 /* #undef HAVE_WAITPID */
+
+/* Define to 1 if you have the `wcsftime' function. */
+#if defined(_MSC_VER) && _MSC_VER >= 1310
+#define HAVE_WCSFTIME 1
+#endif
 
 /* Define to 1 if you have the `wcscoll' function. */
 #ifndef MS_WINCE
@@ -684,5 +752,9 @@ Py_NO_ENABLE_SHARED to find out.  Also support MS_NO_COREDLL for b/w compat */
 /* WinSock does not use a bitmask in select, and uses
    socket handles greater than FD_SETSIZE */
 #define Py_SOCKET_FD_CAN_BE_GE_FD_SETSIZE
+
+/* Define if C doubles are 64-bit IEEE 754 binary format, stored with the
+   least significant byte first */
+#define DOUBLE_IS_LITTLE_ENDIAN_IEEE754 1
 
 #endif /* !Py_CONFIG_H */

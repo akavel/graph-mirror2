@@ -33,34 +33,77 @@ PyAPI_FUNC(PyObject *) PyEval_GetBuiltins(void);
 PyAPI_FUNC(PyObject *) PyEval_GetGlobals(void);
 PyAPI_FUNC(PyObject *) PyEval_GetLocals(void);
 PyAPI_FUNC(struct _frame *) PyEval_GetFrame(void);
-PyAPI_FUNC(int) PyEval_GetRestricted(void);
 
 /* Look at the current frame's (if any) code's co_flags, and turn on
    the corresponding compiler flags in cf->cf_flags.  Return 1 if any
    flag was set, else return 0. */
 PyAPI_FUNC(int) PyEval_MergeCompilerFlags(PyCompilerFlags *cf);
 
-PyAPI_FUNC(int) Py_FlushLine(void);
-
 PyAPI_FUNC(int) Py_AddPendingCall(int (*func)(void *), void *arg);
 PyAPI_FUNC(int) Py_MakePendingCalls(void);
 
-/* Protection against deeply nested recursive calls */
+/* Protection against deeply nested recursive calls
+
+   In Python 3.0, this protection has two levels:
+   * normal anti-recursion protection is triggered when the recursion level
+     exceeds the current recursion limit. It raises a RuntimeError, and sets
+     the "overflowed" flag in the thread state structure. This flag
+     temporarily *disables* the normal protection; this allows cleanup code
+     to potentially outgrow the recursion limit while processing the 
+     RuntimeError.
+   * "last chance" anti-recursion protection is triggered when the recursion
+     level exceeds "current recursion limit + 50". By construction, this
+     protection can only be triggered when the "overflowed" flag is set. It
+     means the cleanup code has itself gone into an infinite loop, or the
+     RuntimeError has been mistakingly ignored. When this protection is
+     triggered, the interpreter aborts with a Fatal Error.
+
+   In addition, the "overflowed" flag is automatically reset when the
+   recursion level drops below "current recursion limit - 50". This heuristic
+   is meant to ensure that the normal anti-recursion protection doesn't get
+   disabled too long.
+
+   Please note: this scheme has its own limitations. See:
+   http://mail.python.org/pipermail/python-dev/2008-August/082106.html
+   for some observations.
+*/
 PyAPI_FUNC(void) Py_SetRecursionLimit(int);
 PyAPI_FUNC(int) Py_GetRecursionLimit(void);
 
-#define Py_EnterRecursiveCall(where)                                    \
+#define Py_EnterRecursiveCall(where)  \
 	    (_Py_MakeRecCheck(PyThreadState_GET()->recursion_depth) &&  \
 	     _Py_CheckRecursiveCall(where))
 #define Py_LeaveRecursiveCall()				\
-	    (--PyThreadState_GET()->recursion_depth)
+    do{ if(_Py_MakeEndRecCheck(PyThreadState_GET()->recursion_depth))  \
+	  PyThreadState_GET()->overflowed = 0;  \
+	} while(0)
 PyAPI_FUNC(int) _Py_CheckRecursiveCall(char *where);
 PyAPI_DATA(int) _Py_CheckRecursionLimit;
+
 #ifdef USE_STACKCHECK
-#  define _Py_MakeRecCheck(x)  (++(x) > --_Py_CheckRecursionLimit)
+/* With USE_STACKCHECK, we artificially decrement the recursion limit in order
+   to trigger regular stack checks in _Py_CheckRecursiveCall(), except if
+   the "overflowed" flag is set, in which case we need the true value
+   of _Py_CheckRecursionLimit for _Py_MakeEndRecCheck() to function properly.
+*/
+#  define _Py_MakeRecCheck(x)  \
+	(++(x) > (_Py_CheckRecursionLimit += PyThreadState_GET()->overflowed - 1))
 #else
 #  define _Py_MakeRecCheck(x)  (++(x) > _Py_CheckRecursionLimit)
 #endif
+
+#define _Py_MakeEndRecCheck(x) \
+	(--(x) < ((_Py_CheckRecursionLimit > 100) \
+		? (_Py_CheckRecursionLimit - 50) \
+		: (3 * (_Py_CheckRecursionLimit >> 2))))
+
+#define Py_ALLOW_RECURSION \
+  do { unsigned char _old = PyThreadState_GET()->recursion_critical;\
+    PyThreadState_GET()->recursion_critical = 1;
+
+#define Py_END_ALLOW_RECURSION \
+    PyThreadState_GET()->recursion_critical = _old; \
+  } while(0);
 
 PyAPI_FUNC(const char *) PyEval_GetFuncName(PyObject *);
 PyAPI_FUNC(const char *) PyEval_GetFuncDesc(PyObject *);
@@ -112,7 +155,7 @@ PyAPI_DATA(int) _Py_CheckInterval;
    Py_END_ALLOW_THREADS!!!
 
    The function PyEval_InitThreads() should be called only from
-   initthread() in "threadmodule.c".
+   init_thread() in "_threadmodule.c".
 
    Note that not yet all candidates have been converted to use this
    mechanism!
