@@ -18,7 +18,7 @@
 namespace Python
 {
 const WORD PythonFpuControl = MCW_EM | IC_PROJECTIVE | RC_NEAR;
-const WORD DefaultFpuControl = EM_DENORMAL | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR;
+const WORD DefaultFpuControl = EM_DENORMAL | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64;
 const WORD FpuMask = MCW_EM | MCW_IC | MCW_RC;
 
 PyTypeObject& GetPythonType(const char *Name);
@@ -71,6 +71,7 @@ PyObject* PyReturnNone()
   return Py_None;
 }
 //---------------------------------------------------------------------------
+unsigned OldValue;
 void AllocGIL()
 {
   if(GILUseCount++ == 0)
