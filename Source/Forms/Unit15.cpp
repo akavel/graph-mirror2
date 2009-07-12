@@ -14,6 +14,7 @@
 //---------------------------------------------------------------------------
 #pragma link "Grid"
 #pragma link "ProgressForm"
+#pragma link "SaveDialogEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm15::TForm15(TComponent* Owner)
@@ -275,7 +276,8 @@ void __fastcall TForm15::FormResize(TObject *Sender)
 void __fastcall TForm15::Popup1_ExportClick(TObject *Sender)
 {
   if(SaveDialog1->Execute())
-    if(!Grid1->ExportToFile(SaveDialog1->FileName, SaveDialog1->FilterIndex == 1 ? ';' : '\t', true))
+    //We need UTF8 to show the angle symbol
+    if(!Grid1->ExportToFile(SaveDialog1->FileName, SaveDialog1->FilterIndex == 1 ? ';' : '\t', Property.DecimalSeparator, Property.ComplexFormat == cfPolar))
       MessageBox(LoadRes(RES_FILE_ACCESS, SaveDialog1->FileName), LoadRes(RES_WRITE_FAILED), MB_ICONSTOP);
 }
 //---------------------------------------------------------------------------

@@ -124,7 +124,8 @@ object Form10: TForm10
       Left = 16
       Top = 56
       Width = 283
-      Height = 107
+      Height = 105
+      WordWrap = True
       OnLinkClick = LinkLabel1LinkClick
       Anchors = [akLeft, akTop, akRight, akBottom]
       Caption = 'Tip of the day'

@@ -78,7 +78,7 @@ class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
   TOpenDialog *OpenDialog;
-  TSaveDialog *SaveDialog;
+  TSaveDialogEx *SaveDialog;
   TRecent *Recent1;
   TPopupActionBar *PopupMenu1;
   TMenuItem *Tree_Delete;

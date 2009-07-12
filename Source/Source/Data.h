@@ -102,7 +102,7 @@ public:
 
 enum TTraceType {ttTrace, ttIntersection, ttXAxis, ttYAxis, ttExtremeX, ttExtremeY};
 double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int Y, const TData &Data, const class TDraw &Draw);
-bool ExportPointSeries(const TPointSeries *Series, const wchar_t *FileName, char Delimiter);
+bool ExportPointSeries(const TPointSeries *Series, const wchar_t *FileName, char Delimiter, char DecimalSeparator);
 double FindNearestPoint(const TBaseFuncType *Func, int X, int Y);
 } //namespace Graph
 using namespace Graph;

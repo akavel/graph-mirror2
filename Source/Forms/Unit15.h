@@ -21,6 +21,7 @@
 #include "ProgressForm.h"
 #include <ActnPopup.hpp>
 #include <PlatformDefaultStyleActnCtrls.hpp>
+#include "SaveDialogEx.h"
 //---------------------------------------------------------------------------
 class TForm15 : public TForm
 {
@@ -40,7 +41,7 @@ __published:	// IDE-managed Components
   TProgressForm *ProgressForm1;
   TGrid *Grid1;
   TMenuItem *Popup1_Export;
-  TSaveDialog *SaveDialog1;
+  TSaveDialogEx *SaveDialog1;
   TMenuItem *N1;
   TMenuItem *Popup1_Show1;
   TMenuItem *Popup1_Show5;
