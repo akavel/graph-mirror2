@@ -205,7 +205,7 @@ object Form15: TForm15
     Left = 248
     Top = 432
   end
-  object SaveDialog1: TSaveDialog
+  object SaveDialog1: TSaveDialogEx
     DefaultExt = 'csv'
     Filter = 'CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt'
     Options = [ofOverwritePrompt, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing]

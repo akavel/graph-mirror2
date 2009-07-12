@@ -2630,7 +2630,9 @@ void __fastcall TForm1::Image1DblClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Label_EditClick(TObject *Sender)
 {
-  EditLabel(Data.FindLabel(LastMousePos.x, LastMousePos.y));
+  //Don't use LastMousePos as OnMouseMove is called just before this event
+  TPoint P = Image1->ScreenToClient(PopupMenu3->PopupPoint);
+  EditLabel(Data.FindLabel(P.x, P.y));
 }
 //---------------------------------------------------------------------------
 void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
@@ -2674,7 +2676,9 @@ void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Label_DeleteClick(TObject *Sender)
 {
-  boost::shared_ptr<TTextLabel> Label = Data.FindLabel(LastMousePos.x, LastMousePos.y);
+  //Don't use LastMousePos as OnMouseMove is called just before this event
+  TPoint P = Image1->ScreenToClient(PopupMenu3->PopupPoint);
+  boost::shared_ptr<TTextLabel> Label = Data.FindLabel(P.x, P.y);
   if(Label)
   {
     UndoList.Push(TUndoDel(Data, Label, Data.GetIndex(Label)));
@@ -2904,7 +2908,7 @@ void __fastcall TForm1::Tree_ExportClick(TObject *Sender)
   {
     SaveDialog->Filter = LoadRes(RES_EXPORT_DATA_FILTER);
     if(SaveDialog->Execute())
-      if(!ExportPointSeries(Series, SaveDialog->FileName.c_str(), SaveDialog->FilterIndex == 1 ? ';' : '\t'))
+      if(!ExportPointSeries(Series, SaveDialog->FileName.c_str(), SaveDialog->FilterIndex == 1 ? ';' : '\t', Property.DecimalSeparator))
         MessageBox(LoadRes(RES_FILE_ACCESS, SaveDialog->FileName), LoadRes(RES_WRITE_FAILED), MB_ICONSTOP);
   }
 }
@@ -3119,7 +3123,11 @@ void __fastcall TForm1::PlacementClick(TObject *Sender)
     if(MenuItem->Parent == Tree_Placement)
       TextLabel = boost::dynamic_pointer_cast<TTextLabel>(GetGraphElem(TreeView->Selected));
     else
-      TextLabel = Data.FindLabel(LastMousePos.x, LastMousePos.y);
+    {
+      //Don't use LastMousePos as OnMouseMove is called just before this event
+      TPoint P = Image1->ScreenToClient(PopupMenu3->PopupPoint);
+      TextLabel = Data.FindLabel(P.x, P.y);
+    }
     if(!TextLabel)
       return;
 
@@ -3336,7 +3344,11 @@ void __fastcall TForm1::RotationClick(TObject *Sender)
     Draw.AbortUpdate();
     boost::shared_ptr<TTextLabel> TextLabel;
     if(MenuItem->Parent == Label_Rotation)
-      TextLabel = Data.FindLabel(LastMousePos.x, LastMousePos.y);  //Right click on label menu
+    {
+      //Don't use LastMousePos as OnMouseMove is called just before this event
+      TPoint P = Image1->ScreenToClient(PopupMenu3->PopupPoint);
+      TextLabel = Data.FindLabel(P.x, P.y);  //Right click on label menu
+    }
     else
       TextLabel = boost::dynamic_pointer_cast<TTextLabel>(GetGraphElem(TreeView->Selected)); //Context menu in function list
 

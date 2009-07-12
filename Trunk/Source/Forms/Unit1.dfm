@@ -205,7 +205,6 @@ object Form1: TForm1
     OnHint = StatusBar1Hint
     OnDrawPanel = StatusBar1DrawPanel
     OnResize = StatusBar1Resize
-    ExplicitTop = 81
   end
   object Panel5: TPanel
     Left = 0
@@ -215,8 +214,6 @@ object Form1: TForm1
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitTop = 8
-    ExplicitHeight = 100
     object Splitter1: TMySplitter
       Left = 161
       Top = 0
@@ -251,8 +248,6 @@ object Form1: TForm1
       TabOrder = 0
       OnMouseLeave = Panel2MouseLeave
       OnResize = Panel2Resize
-      ExplicitTop = 53
-      ExplicitHeight = 292
       object Image1: TImage
         Left = 0
         Top = 0
@@ -340,8 +335,6 @@ object Form1: TForm1
       BevelOuter = bvNone
       DragKind = dkDock
       TabOrder = 1
-      ExplicitTop = 53
-      ExplicitHeight = 292
       object TreeView: TTreeView
         Left = 0
         Top = 0
@@ -374,7 +367,6 @@ object Form1: TForm1
         OnMouseDown = TreeViewMouseDown
         OnMouseLeave = TreeViewMouseLeave
         OnMouseMove = TreeViewMouseMove
-        ExplicitHeight = 292
       end
       object Panel1: TPanel
         Left = 0
@@ -384,7 +376,6 @@ object Form1: TForm1
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 1
-        ExplicitTop = 376
         object Panel4: TPanel
           Left = 0
           Top = 0
@@ -414,7 +405,6 @@ object Form1: TForm1
       OnDockOver = Panel6DockOver
       OnGetSiteInfo = Panel6GetSiteInfo
       OnUnDock = Panel6UnDock
-      ExplicitTop = 348
     end
   end
   object OpenDialog: TOpenDialog
@@ -423,7 +413,7 @@ object Form1: TForm1
     Left = 248
     Top = 176
   end
-  object SaveDialog: TSaveDialog
+  object SaveDialog: TSaveDialogEx
     DefaultExt = 'grf'
     Options = [ofOverwritePrompt, ofHideReadOnly, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing]
     Left = 288

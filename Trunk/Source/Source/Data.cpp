@@ -361,9 +361,11 @@ std::wstring TData::CreatePointSeriesDescription()
 boost::shared_ptr<TTextLabel> TData::FindLabel(int X, int Y)
 {
   for(unsigned I = 0; I < ElemList.size(); I++)
+  {
     if(boost::shared_ptr<TTextLabel> Label = boost::dynamic_pointer_cast<TTextLabel>(ElemList[I]))
       if(Label->GetVisible() && Label->IsInsideRect(X, Y))
         return Label;
+  }
   return boost::shared_ptr<TTextLabel>();
 }
 //---------------------------------------------------------------------------
@@ -477,15 +479,23 @@ double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int
   }
 }
 //---------------------------------------------------------------------------
-bool ExportPointSeries(const TPointSeries *Series, const wchar_t *FileName, char Delimiter)
+bool ExportPointSeries(const TPointSeries *Series, const wchar_t *FileName, char Delimiter, char DecimalSeparator)
 {
   std::wofstream File(FileName);
   if(!File)
     return false;
 
-  File << "X" << Delimiter << "Y" << std::endl;
   for(unsigned I = 0; I < Series->PointList.size(); I++)
-    File << Series->PointList[I].x.Text << Delimiter << Series->PointList[I].y.Text << std::endl;
+  {
+    std::wstring xText = Series->PointList[I].x.Text;
+    std::wstring yText = Series->PointList[I].y.Text;
+    if(DecimalSeparator != '.')
+    {
+      std::replace(xText.begin(), xText.end(), '.', DecimalSeparator);
+      std::replace(yText.begin(), yText.end(), '.', DecimalSeparator);
+    }
+    File << xText << Delimiter << yText << std::endl;
+  }
   return true;
 }
 //---------------------------------------------------------------------------
