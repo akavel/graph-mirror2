@@ -85,11 +85,11 @@ int MakeInt(TCustomEdit *Edit, const String &Caption)
   }
 }
 //---------------------------------------------------------------------------
-String ComplexToString(const Func32::TComplex &C, unsigned Decimals)
+String ComplexToString(const Func32::TComplex &C, unsigned Decimals, TComplexFormat ComplexFormat)
 {
   String Str;
 
-  switch(Property.ComplexFormat)
+  switch(ComplexFormat)
   {
     case cfReal:
       //Check for an imaginary part
@@ -140,7 +140,7 @@ String ComplexToString(const Func32::TComplex &C, unsigned Decimals)
 //---------------------------------------------------------------------------
 String ComplexToString(const Func32::TComplex &C)
 {
-  return ComplexToString(C, Property.RoundTo);
+  return ComplexToString(C, Property.RoundTo, Property.ComplexFormat);
 }
 //---------------------------------------------------------------------------
 //This function converts a floating point number to a string
