@@ -57,6 +57,7 @@
 #include "Encode.h"
 #include "ICompCommon.h"
 #include "Images.h"
+#include <HtmlHelpViewer.hpp>
 //---------------------------------------------------------------------------
 #pragma link "TRecent"
 #pragma link "Cross"
@@ -72,7 +73,6 @@
 
 #pragma link "Wininet.lib" //Used for InternetGetConnectedState()
 #pragma link "PDFlib.lib"
-#pragma link "htmlhelp.lib"
 #pragma resource "*.dfm"
 TForm1 *Form1;
 const TCursor crMoveHand1 = 1;
@@ -153,6 +153,9 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   Screen->Cursors[crMoveHand1] = LoadCursor(HInstance, L"MOVECURSOR2");
 
   Recent1->FileMenu = ActionMainMenuBar1->ActionClient->Items->ActionClients[0]->Items;
+
+  //We need to use something in HTMLHelpViewer.pas to make sure it is linked in
+  ViewerName = "HTML Help Viewer";
 
   BOOST_ASSERT(Screen->Cursors[crMoveHand1]);
   BOOST_ASSERT(Screen->Cursors[crMoveHand2]);
@@ -2170,14 +2173,30 @@ void __fastcall TForm1::TableActionExecute(TObject *Sender)
     CreateForm<TForm15>()->ShowTable(Func);
 }
 //---------------------------------------------------------------------------
+namespace Windows
+{
+  //Missing declaration in Windows.hpp
+  const unsigned HH_DISPLAY_TOPIC      = 0;
+  extern PACKAGE HWND __fastcall HtmlHelp(HWND hWndCaller, System::WideChar * pszFile, unsigned uCommand, unsigned dwData);
+}
 void __fastcall TForm1::ContentsActionExecute(TObject *Sender)
 {
-  Application->HelpJump("");
+  //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
+  Windows::HtmlHelp(NULL, Application->HelpFile.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ListActionExecute(TObject *Sender)
 {
-  Application->HelpJump("ListOfFunctions.html");
+  //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
+  String Str = Application->HelpFile + "::/ListOfFunctions.html";
+  Windows::HtmlHelp(NULL, Str.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FaqActionExecute(TObject *Sender)
+{
+  //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
+  String Str = Application->HelpFile + "::/FAQ.html";
+  Windows::HtmlHelp(NULL, Str.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::HomePageActionExecute(TObject *Sender)
@@ -2453,11 +2472,6 @@ void __fastcall TForm1::ZoomFitAllActionExecute(TObject *Sender)
   double yMax2 = Data.Axes.yAxis.LogScl ? yMax * std::pow(yMax / yMin, 0.1) : yMax + (yMax - yMin) / 10;
 
   ZoomWindow(xMin2, xMax2, yMin2, yMax2);
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::FaqActionExecute(TObject *Sender)
-{
-  Application->HelpJump("FAQ.html");
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Panel4DockDrop(TObject *Sender,
