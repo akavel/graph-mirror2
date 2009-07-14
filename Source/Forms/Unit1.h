@@ -440,6 +440,7 @@ private:	// User declarations
   void __fastcall DebugLine(System::TObject* Sender, const String Line, bool &Discard); //Write debug text from dxGetText
   void ChangeVisible(boost::shared_ptr<TGraphElem> GraphElem);
   void HandleCommandLine();
+  void SetPanelCoordText();
 
   int AddImage(int Index, TColor Color);
   int AddImage(TColor Color, TBrushStyle Style);

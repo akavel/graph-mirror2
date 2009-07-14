@@ -607,6 +607,11 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift,
   LastMousePos.x = X;
   LastMousePos.y = Y;
 
+  SetPanelCoordText();
+}
+//---------------------------------------------------------------------------
+void TForm1::SetPanelCoordText()
+{
   int xDigits = 4 - std::log10(std::abs(Data.Axes.xAxis.Max - Data.Axes.xAxis.Min));
   int xPrecision = xDigits > 0 ? 100 : 4;
   if(xDigits < 0)
@@ -616,11 +621,29 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift,
   if(yDigits < 0)
     yDigits = 0;
 
-  String Str = L"x = " + FloatToStrF(Draw.xCoord(X), ffFixed, xPrecision, xDigits) + L"    y = " +
-    FloatToStrF(Draw.yCoord(Y), ffFixed, yPrecision, yDigits);
-  for(int I = 1; I <= Str.Length(); I++)
-    if(Str[I] == '-')
-      Str[I] = 0x2212; //Replace Hyphen-Minus with Minus Sign
+  Func32::TDblPoint Coord = Draw.xyCoord(LastMousePos.x, LastMousePos.y);
+
+  boost::shared_ptr<TGraphElem> Item = GetGraphElem(TreeView->Selected);
+  String Str;
+  if(dynamic_cast<TPolFunc*>(Item.get()))
+  {
+    long double r = std::sqrt(Coord.x*Coord.x + Coord.y*Coord.y);
+    long double a = std::atan2(Coord.y, Coord.x);
+    if(a < 0)
+      a += 2*M_PI;
+    if(Data.Axes.Trigonometry == Func32::Degree)
+      a *= 180 / M_PI;
+
+    Str = FloatToStrF(r, ffFixed, xDigits < yDigits ? xPrecision : yPrecision, xDigits < yDigits ? xDigits : yDigits) +
+      L'\x2220' + FloatToStrF(a, ffFixed, 5, 2);
+    if(Data.Axes.Trigonometry == Func32::Degree)
+      Str += L'\xB0';
+  }
+  else
+    Str = L"x = " + FloatToStrF(Coord.x, ffFixed, xPrecision, xDigits) + L"    y = " +
+      FloatToStrF(Coord.y, ffFixed, yPrecision, yDigits);
+
+  Str = ReplaceStr(Str, L'-', L'\x2212');
   StatusBar1->Panels->Items[1]->Text = Str;
 }
 //---------------------------------------------------------------------------
