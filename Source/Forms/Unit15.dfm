@@ -51,7 +51,7 @@ object Form15: TForm15
     Caption = 'To:'
     FocusControl = Edit2
   end
-  object Edit3: TEdit
+  object Edit3: TMyEdit
     Left = 48
     Top = 48
     Width = 57
@@ -83,7 +83,7 @@ object Form15: TForm15
     TabOrder = 3
     OnClick = Button2Click
   end
-  object Edit1: TEdit
+  object Edit1: TMyEdit
     Left = 48
     Top = 16
     Width = 57
@@ -92,7 +92,7 @@ object Form15: TForm15
     TabOrder = 0
     Text = '-10'
   end
-  object Edit2: TEdit
+  object Edit2: TMyEdit
     Left = 160
     Top = 16
     Width = 57

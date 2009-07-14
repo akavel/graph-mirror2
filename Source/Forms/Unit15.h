@@ -22,18 +22,19 @@
 #include <ActnPopup.hpp>
 #include <PlatformDefaultStyleActnCtrls.hpp>
 #include "SaveDialogEx.h"
+#include "MyEdit.h"
 //---------------------------------------------------------------------------
 class TForm15 : public TForm
 {
 __published:	// IDE-managed Components
   TLabel *Label4;
-  TEdit *Edit3;
+  TMyEdit *Edit3;
   TButton *Button1;
   TButton *Button2;
   TLabel *Label1;
-  TEdit *Edit1;
+  TMyEdit *Edit1;
   TLabel *Label2;
-  TEdit *Edit2;
+  TMyEdit *Edit2;
   TPopupActionBar *PopupMenu1;
   TMenuItem *Popup1_Copy;
   TMenuItem *Popup1_Select;
