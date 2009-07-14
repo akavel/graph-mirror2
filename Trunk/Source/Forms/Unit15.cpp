@@ -15,6 +15,7 @@
 #pragma link "Grid"
 #pragma link "ProgressForm"
 #pragma link "SaveDialogEx"
+#pragma link "MyEdit"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm15::TForm15(TComponent* Owner)
@@ -247,6 +248,8 @@ void TForm15::ShowTable(const TBaseFuncType *F)
     Grid1->Cells[0][0] = "t";
     Label4->Caption = L"\x394t=";
     SetCaptions(Captions);
+    Edit1->Text = "0";
+    Edit2->Text = "2pi";
   }
 
   ShowModal();
