@@ -485,10 +485,11 @@ bool ExportPointSeries(const TPointSeries *Series, const wchar_t *FileName, char
   if(!File)
     return false;
 
-  for(unsigned I = 0; I < Series->PointList.size(); I++)
+  const std::vector<TPointSeriesPoint> &Points = Series->GetPointData();
+  for(unsigned I = 0; I < Points.size(); I++)
   {
-    std::wstring xText = Series->PointList[I].x.Text;
-    std::wstring yText = Series->PointList[I].y.Text;
+    std::wstring xText = Points[I].First;
+    std::wstring yText = Points[I].Second;
     if(DecimalSeparator != '.')
     {
       std::replace(xText.begin(), xText.end(), '.', DecimalSeparator);

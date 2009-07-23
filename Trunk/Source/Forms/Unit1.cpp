@@ -479,7 +479,10 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
             if(EvalAction->Checked)
               SetCross(X, Y);
             else if(AreaAction->Checked || PathAction->Checked)
+            {
               Form9->StartValueChanged(X, Y);
+              Form9->EndValueChanged(X, Y);
+            }
           }
           break;
       }
@@ -627,15 +630,10 @@ void TForm1::SetPanelCoordText()
   String Str;
   if(dynamic_cast<TPolFunc*>(Item.get()))
   {
-    long double r = std::sqrt(Coord.x*Coord.x + Coord.y*Coord.y);
-    long double a = std::atan2(Coord.y, Coord.x);
-    if(a < 0)
-      a += 2*M_PI;
-    if(Data.Axes.Trigonometry == Func32::Degree)
-      a *= 180 / M_PI;
+    std::pair<long double,long double> Polar = GetPolarCoord(Coord, Data.Axes.Trigonometry);
 
-    Str = FloatToStrF(r, ffFixed, xDigits < yDigits ? xPrecision : yPrecision, xDigits < yDigits ? xDigits : yDigits) +
-      L'\x2220' + FloatToStrF(a, ffFixed, 5, 2);
+    Str = FloatToStrF(Polar.first, ffFixed, xDigits < yDigits ? xPrecision : yPrecision, xDigits < yDigits ? xDigits : yDigits) +
+      L'\x2220' + FloatToStrF(Polar.second, ffFixed, 5, 2);
     if(Data.Axes.Trigonometry == Func32::Degree)
       Str += L'\xB0';
   }

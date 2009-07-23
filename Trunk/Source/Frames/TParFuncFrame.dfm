@@ -117,8 +117,8 @@ object ParFuncFrame: TParFuncFrame
     TabOrder = 4
   end
   object Edit6: TEdit
-    Left = 48
-    Top = 168
+    Left = 47
+    Top = 173
     Width = 127
     Height = 21
     Hint = 'The slope of the function evaluated for the entered t-parameter.'

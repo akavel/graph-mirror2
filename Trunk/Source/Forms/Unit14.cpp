@@ -107,83 +107,82 @@ void __fastcall TForm14::GridEditorKeyPress(TInplaceEdit *InplaceEdit,
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Button1Click(TObject *Sender)
 {
-  boost::shared_ptr<TPointSeries> PointSeries(new TPointSeries);
-  PointSeries->SetLegendText(ToWString(Edit1->Text));
-  PointSeries->FrameColor = clBlack;
-  PointSeries->FillColor = ExtColorBox1->Selected;
-  PointSeries->LineColor = ExtColorBox2->Selected;
-  PointSeries->Size = Edit2->Text.ToInt();
-  PointSeries->LineSize = Edit3->Text.ToInt();
-  PointSeries->Style = PointSelect1->ItemIndex;
-  PointSeries->LineStyle = LineSelect1->LineStyle;
-  PointSeries->Interpolation = static_cast<TInterpolationAlgorithm>(ComboBox2->ItemIndex);
-  PointSeries->ShowLabels = CheckBox2->Checked;
-  PointSeries->Font->Assign(FontDialog1->Font);
-  PointSeries->LabelPosition = static_cast<Graph::TLabelPosition>(ComboBox1->ItemIndex);
-
+  TErrorBarType xErrorBarType, yErrorBarType;
+  double xErrorValue = 0, yErrorValue = 0;
   if(!CheckBox3->Checked)
-    PointSeries->xErrorBarType = ebtNone;
+    xErrorBarType = ebtNone;
   else if(RadioButton1->Checked)
   {
-    PointSeries->xErrorValue = MakeFloat(Edit4, LoadRes(RES_POSITIVE, RadioButton1->Caption), 0);
-    PointSeries->xErrorBarType = ebtFixed;
+    xErrorValue = MakeFloat(Edit4, LoadRes(RES_POSITIVE, RadioButton1->Caption), 0);
+    xErrorBarType = ebtFixed;
   }
   else if(RadioButton2->Checked)
   {
-    PointSeries->xErrorValue = MakeFloat(Edit5, LoadRes(RES_POSITIVE, RadioButton2->Caption), 0);
-    PointSeries->xErrorBarType = ebtRelative;
+    xErrorValue = MakeFloat(Edit5, LoadRes(RES_POSITIVE, RadioButton2->Caption), 0);
+    xErrorBarType = ebtRelative;
   }
   else
-    PointSeries->xErrorBarType = ebtCustom;
+    xErrorBarType = ebtCustom;
 
   if(!CheckBox4->Checked)
-    PointSeries->yErrorBarType = ebtNone;
+    yErrorBarType = ebtNone;
   else if(RadioButton4->Checked)
   {
-    PointSeries->yErrorValue = MakeFloat(Edit6, LoadRes(RES_POSITIVE, RadioButton4->Caption), 0);
-    PointSeries->yErrorBarType = ebtFixed;
+    yErrorValue = MakeFloat(Edit6, LoadRes(RES_POSITIVE, RadioButton4->Caption), 0);
+    yErrorBarType = ebtFixed;
   }
   else if(RadioButton5->Checked)
   {
-    PointSeries->yErrorValue = MakeFloat(Edit7, LoadRes(RES_POSITIVE, RadioButton5->Caption), 0);
-    PointSeries->yErrorBarType = ebtRelative;
+    yErrorValue = MakeFloat(Edit7, LoadRes(RES_POSITIVE, RadioButton5->Caption), 0);
+    yErrorBarType = ebtRelative;
   }
   else
-    PointSeries->yErrorBarType = ebtCustom;
+    yErrorBarType = ebtCustom;
+
+  boost::shared_ptr<TPointSeries> PointSeries(new TPointSeries(
+    clBlack,
+    ExtColorBox1->Selected,
+    ExtColorBox2->Selected,
+    Edit2->Text.ToInt(),
+    Edit3->Text.ToInt(),
+    PointSelect1->ItemIndex,
+    LineSelect1->LineStyle,
+    static_cast<TInterpolationAlgorithm>(ComboBox2->ItemIndex),
+    CheckBox2->Checked,
+    FontDialog1->Font,
+    static_cast<Graph::TLabelPosition>(ComboBox1->ItemIndex),
+    RadioGroup1->ItemIndex ? ptPolar : ptCartesian,
+    xErrorBarType,
+    xErrorValue,
+    yErrorBarType,
+    yErrorValue
+  ));
+  PointSeries->SetLegendText(ToWString(Edit1->Text));
 
   for(int Row = 1; Row < Grid->RowCount; Row++)
   {
-    Trim(DataPoints[Row-1].x.Text);
-    Trim(DataPoints[Row-1].y.Text);
-    if(DataPoints[Row-1].x.Text.empty() && DataPoints[Row-1].y.Text.empty())
+    Trim(DataPoints[Row-1].First);
+    Trim(DataPoints[Row-1].Second);
+    if(DataPoints[Row-1].First.empty() && DataPoints[Row-1].Second.empty())
       continue;
 
-    if(DataPoints[Row-1].x.Text.empty() || DataPoints[Row-1].y.Text.empty())
+    if(DataPoints[Row-1].First.empty() || DataPoints[Row-1].Second.empty())
     {
-      Grid->Col = DataPoints[Row-1].y.Text.empty();
+      Grid->Col = DataPoints[Row-1].Second.empty();
       Grid->Row = Row;
       Grid->SetFocus();
       MessageBox(LoadRes(534), LoadRes(533));
       return;
     }
 
-    DataPoints[Row-1].x.Value = CellToDouble(Grid, 0, Row);
-    DataPoints[Row-1].y.Value = CellToDouble(Grid, 1, Row);
+    //Just for validation
+    CellToDouble(Grid, 0, Row);
+    CellToDouble(Grid, 1, Row);
 
-    if(PointSeries->xErrorBarType == ebtCustom && !Grid->Cells[2][Row].IsEmpty())
-      DataPoints[Row-1].xError.Value = CellToDouble(Grid, 2, Row);
-
-    if(PointSeries->yErrorBarType == ebtCustom)
-    {
-      int Col = PointSeries->xErrorBarType == ebtCustom ? 3 : 2;
-      if(!Grid->Cells[Col][Row].IsEmpty())
-        DataPoints[Row-1].yError.Value = CellToDouble(Grid, Col, Row);
-    }
-
-    PointSeries->PointList.push_back(DataPoints[Row-1]);
+    PointSeries->AddPoint(DataPoints[Row-1]);
   }
 
-  if(PointSeries->PointList.empty())
+  if(PointSeries->PointCount() == 0)
   {
     MessageBox(LoadRes(536), LoadRes(533), MB_ICONWARNING);
     return;
@@ -203,6 +202,7 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
     Data.Add(PointSeries);
   }
 
+  PointSeries->Update();
   Property.DefaultPoint.Set(PointSelect1->ItemIndex, ExtColorBox1->Selected, Edit2->Text.ToInt());
   Property.DefaultPointLine.Set(LineSelect1->LineStyle, ExtColorBox2->Selected, Edit3->Text.ToInt());
   Property.DefaultPointLabelFont->Assign(FontDialog1->Font);
@@ -217,32 +217,33 @@ int TForm14::EditPointSeries(const boost::shared_ptr<TPointSeries> &P)
   {
     Caption = LoadRes(537);
     Edit1->Text = ToUString(P->GetLegendText());
-    ExtColorBox1->Selected = P->FillColor;
-    UpDown1->Position = P->Size;
-    PointSelect1->ItemIndex = P->Style;
-    ExtColorBox2->Selected = P->LineColor;
-    UpDown2->Position = P->LineSize;
-    LineSelect1->LineStyle = P->LineStyle;
-    ComboBox2->ItemIndex = P->Interpolation;
-    Grid->RowCount = P->PointList.size() + 2;
-    CheckBox2->Checked = P->ShowLabels;
+    ExtColorBox1->Selected = P->GetFillColor();
+    UpDown1->Position = P->GetSize();
+    PointSelect1->ItemIndex = P->GetStyle();
+    ExtColorBox2->Selected = P->GetLineColor();
+    UpDown2->Position = P->GetLineSize();
+    LineSelect1->LineStyle = P->GetLineStyle();
+    ComboBox2->ItemIndex = P->GetInterpolation();
+    Grid->RowCount = P->PointCount() + 2;
+    CheckBox2->Checked = P->GetShowLabels();
     ComboBox1->Enabled = CheckBox2->Checked;
-    FontDialog1->Font->Assign(P->Font);
-    ComboBox1->ItemIndex = P->LabelPosition;
+    FontDialog1->Font->Assign(P->GetFont());
+    ComboBox1->ItemIndex = P->GetLabelPosition();
+    RadioGroup1->ItemIndex = P->GetPointType();
 
-    DataPoints = P->PointList; //Create a working copy of all data
+    DataPoints = P->GetPointData(); //Create a working copy of all data
 
-    CheckBox3->Checked = P->xErrorBarType != ebtNone;
-    switch(P->xErrorBarType)
+    CheckBox3->Checked = P->GetxErrorBarType() != ebtNone;
+    switch(P->GetxErrorBarType())
     {
       case ebtFixed:
         RadioButton1->Checked = true;
-        Edit4->Text = P->xErrorValue;
+        Edit4->Text = P->GetxErrorValue();
         break;
 
       case ebtRelative:
         RadioButton2->Checked = true;
-        Edit5->Text = P->xErrorValue;
+        Edit5->Text = P->GetxErrorValue();
         break;
 
       case ebtCustom:
@@ -250,17 +251,17 @@ int TForm14::EditPointSeries(const boost::shared_ptr<TPointSeries> &P)
         break;
     }
 
-    CheckBox4->Checked = P->yErrorBarType != ebtNone;
-    switch(P->yErrorBarType)
+    CheckBox4->Checked = P->GetyErrorBarType() != ebtNone;
+    switch(P->GetyErrorBarType())
     {
       case ebtFixed:
         RadioButton4->Checked = true;
-        Edit6->Text = P->yErrorValue;
+        Edit6->Text = P->GetyErrorValue();
         break;
 
       case ebtRelative:
         RadioButton5->Checked = true;
-        Edit7->Text = P->yErrorValue;
+        Edit7->Text = P->GetyErrorValue();
         break;
 
       case ebtCustom:
@@ -309,7 +310,7 @@ void __fastcall TForm14::PaintBox1Paint(TObject *Sender)
 
     if(CheckBox2->Checked)
     {
-      std::wstring Str = L"(2.37,9.53)";
+      std::wstring Str = RadioGroup1->ItemIndex ? (Data.Axes.Trigonometry == Func32::Radian ? L"12.5\x2220""1.18" : L"12.5\x2220""87.3\xB0") : L"(2.37,9.53)";
       PaintBox1->Canvas->Font->Assign(FontDialog1->Font);
       TDraw::DrawPointLabel(PaintBox1->Canvas, TPoint(X, Y), PointSize, Str, static_cast<Graph::TLabelPosition>(ComboBox1->ItemIndex));
     }
@@ -421,8 +422,8 @@ std::wstring& TForm14::GetText(int ACol, int ARow)
   DataPoints.resize(std::max(Grid->RowCount - 1, ARow));
   switch(ACol)
   {
-    case 0: return DataPoints[ARow-1].x.Text;
-    case 1: return DataPoints[ARow-1].y.Text;
+    case 0: return DataPoints[ARow-1].First;
+    case 1: return DataPoints[ARow-1].Second;
     case 2: return CheckBox3->Enabled && RadioButton3->Checked ? DataPoints[ARow-1].xError.Text : DataPoints[ARow-1].yError.Text;
     case 3: return DataPoints[ARow-1].yError.Text;
   }
@@ -447,8 +448,8 @@ void __fastcall TForm14::GridGetText(TObject *Sender, long ACol, long ARow,
   if(ARow == 0)
     switch(ACol)
     {
-      case 0: Value = "X"; break;
-      case 1: Value = "Y"; break;
+      case 0: Value = RadioGroup1->ItemIndex ? L"\x3B8" : L"X"; break;
+      case 1: Value = RadioGroup1->ItemIndex ? L"r" : L"Y"; break;
       case 2: Value = LoadRes(RES_UNCERTAINTY, (CheckBox3->Checked && RadioButton3->Checked) ? "X" : "Y"); break;
       case 3: Value = LoadRes(RES_UNCERTAINTY, "Y"); break;
     }
@@ -461,6 +462,12 @@ void __fastcall TForm14::GridSetText(TObject *Sender, long ACol, long ARow,
 {
   if(ARow > 0)
     GetText(ACol, ARow) = ToWString(Value);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm14::RadioGroup1Click(TObject *Sender)
+{
+  Grid->Invalidate();
+  PaintBox1->Invalidate();
 }
 //---------------------------------------------------------------------------
 

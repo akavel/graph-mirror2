@@ -56,4 +56,6 @@ String ToUString(long double Value);
 
 std::wstring ToLower(const std::wstring &Str);
 
+std::pair<long double,long double> GetPolarCoord(const Func32::TDblPoint &P, Func32::TTrigonometry Trig);
+
 #endif

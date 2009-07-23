@@ -849,21 +849,21 @@ void TDrawLegend::Visit(TBaseFuncType &Func)
 //---------------------------------------------------------------------------
 void TDrawLegend::Visit(TPointSeries &Series)
 {
-  if(Series.LineStyle != psClear)
+  if(Series.GetLineStyle() != psClear)
   {
     std::vector<TPoint> LinePoints;
     LinePoints.push_back(TPoint(x,y));
     LinePoints.push_back(TPoint(x + TextWidth, y));
-    Draw->DrawPolyline(LinePoints.begin(), LinePoints.end(), Series.LineStyle, Series.LineSize, Series.LineColor);
+    Draw->DrawPolyline(LinePoints.begin(), LinePoints.end(), Series.GetLineStyle(), Series.GetLineSize(), Series.GetLineColor());
   }
 
   //Adjust point size in legend to max 6 (4 for arrow)
-  unsigned PointSize = std::min(Series.Size, Series.Style == 7 ? 4U : 6U);
-  TColor FrameColor = Draw->ForceBlack ? clBlack : Series.FrameColor;
-  TColor FillColor = Draw->ForceBlack ? clWhite : Series.FillColor;
+  unsigned PointSize = std::min(Series.GetSize(), Series.GetStyle() == 7 ? 4U : 6U);
+  TColor FrameColor = Draw->ForceBlack ? clBlack : Series.GetFrameColor();
+  TColor FillColor = Draw->ForceBlack ? clWhite : Series.GetFillColor();
   if(PointSize > 0)
     for(int X = x + Size(20); X < x + TextWidth - Size(10); X += Size(50))
-     TPointSelect::DrawPoint(Draw->Context.GetCanvas(), TPoint(X, y), Series.Style, Series.Size > 2 ? FrameColor : FillColor, FillColor, Size(PointSize));
+     TPointSelect::DrawPoint(Draw->Context.GetCanvas(), TPoint(X, y), Series.GetStyle(), Series.GetSize() > 2 ? FrameColor : FillColor, FillColor, Size(PointSize));
 
   Draw->Context.SetBrush(bsClear);
   Draw->Context.DrawText(Series.MakeLegendText(), x, y - TextHeight - Size(1));

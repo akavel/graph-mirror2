@@ -146,6 +146,10 @@ object Form13: TForm13
     object TabSheet1: TTabSheet
       Caption = 'Built-in'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel1: TPanel
         Left = 8
         Top = 8

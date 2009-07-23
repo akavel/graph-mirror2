@@ -64,7 +64,7 @@
 #define DEFAULT_TEXT_LABEL_FONT L"Times New Roman,12,clBlack"   //Used for text labels
 #define DEFAULT_LEGEND_FONT     L"Times New Roman,8,clBlack"
 #define DEFAULT_TITLE_FONT      L"Times New Roman,20,clBlack,B"
-#define DEFAULT_POINT_FONT      L"Times New Roman,8,clBlack"
+#define DEFAULT_POINT_FONT      L"Tahoma,8,clBlack" //Tahoma has the angle symbol
 
 #define CLIPBOARD_FORMAT L"Ivan's Graph"
 

@@ -33,6 +33,7 @@ private:
 
   int xPoint(long double x) const {return Draw->xPoint(x);}
   int yPoint(long double y) const {return Draw->yPoint(y);}
+  TPoint xyPoint(const Func32::TDblPoint &P) const {return Draw->xyPoint(P);}
 
   template<typename T>
   void CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds, bool LogScl);

@@ -93,15 +93,13 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
   {
     boost::shared_ptr<TBaseFuncType> BaseFunc;
 
-    //We need to create a copy to be compatible with the Regression(), MovingAverage() and TrendLine() functions
-    std::vector<Func32::TDblPoint> Points;
+    const std::vector<Func32::TDblPoint> &Points = Series->GetPointList();
     std::vector<double> Weights;
-    unsigned Count = Series->PointCount();
-    Points.reserve(Count);
-    for(unsigned I = 0; I < Count; I++)
+    if(Series->GetyErrorBarType() == ebtCustom)
     {
-      Points.push_back(Series->GetPoint(I));
-      if(Series->yErrorBarType == ebtCustom)
+      Weights.reserve(Points.size());
+      unsigned Count = Series->PointCount();
+      for(unsigned I = 0; I < Count; I++)
       {
         double yError = Series->GetYError(I);
         if(yError == 0)
@@ -281,17 +279,20 @@ int TForm13::InsertTrendline(const boost::shared_ptr<TPointSeries> &ASeries)
 
   bool NegXFound = false, NegYFound = false, ZeroXFound = false, ZeroYFound = false;
 
-  for(std::vector<TPointSeriesPoint>::const_iterator i = Series->PointList.begin(); i != Series->PointList.end(); ++i)
+  unsigned Count = Series->PointCount();
+  const TPointSeries::TPointList &Points = Series->GetPointList();
+  for(unsigned I = 0; I < Count; I++)
   {
-    if(i->x < 0)
+    const Func32::TDblPoint &P = Points[I];
+    if(P.x < 0)
       NegXFound = true;
-    else if(i->x == 0)
+    else if(P.x == 0)
       ZeroXFound = true;
 
-    if(i->y < 0)
+    if(P.y < 0)
       NegYFound = true;
-    else if(i->y == 0)
-      ZeroYFound = true;  
+    else if(P.y == 0)
+      ZeroYFound = true;
   }
 
   if(NegXFound || ZeroXFound)
@@ -307,8 +308,8 @@ int TForm13::InsertTrendline(const boost::shared_ptr<TPointSeries> &ASeries)
   ExtColorBox1->Selected = Property.DefaultTrendline.Color;
   UpDown1->Position = Property.DefaultTrendline.Size;
 
-  UpDown2->Max = Series->PointList.size() - 1;
-  UpDown3->Max = Series->PointList.size() - 1;
+  UpDown2->Max = Count - 1;
+  UpDown3->Max = Count - 1;
 
   ShowUserModels(L"");
   return ShowModal();
@@ -347,9 +348,9 @@ void __fastcall TForm13::CheckBox1Click(TObject *Sender)
   if(Series)
   {
     if(CheckBox1->Checked)
-      UpDown2->Max = Series->PointList.size();
+      UpDown2->Max = Series->PointCount();
     else
-      UpDown2->Max = Series->PointList.size() - 1;
+      UpDown2->Max = Series->PointCount() - 1;
   }
 }
 //---------------------------------------------------------------------------

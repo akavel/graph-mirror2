@@ -325,7 +325,7 @@ bool TData::ImportData(const std::wstring &FileName)
 
         //Check if there are too many numbers on the line
         if(Col < Points.size())
-          Points[Col].push_back(TPointSeriesPoint(*this, ToWString(xText), ToWString(yText)));
+          Points[Col].push_back(TPointSeriesPoint(ToWString(xText), ToWString(yText)));
         else
         {
           MessageBox(LoadRes(526, FileName.c_str(), Line), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
@@ -359,23 +359,29 @@ bool TData::ImportData(const std::wstring &FileName)
   UndoList.BeginMultiUndo();
   for(unsigned I = 0; I < Points.size(); I++)
   {
-    boost::shared_ptr<TPointSeries> Series(new TPointSeries);
-    Series->FrameColor = clBlack;
-    Series->FillColor = Colors[ColorIndex];
-    Series->LineColor = Colors[ColorIndex];
-    ColorIndex = ++ColorIndex % (sizeof(Colors)/sizeof(TColor));
-    Series->Size = Property.DefaultPoint.Size;
-    Series->Style = (Style = ++Style % 7);
-    Series->LineSize = Property.DefaultPointLine.Size;
-    Series->LineStyle = static_cast<TPenStyle>(++LineStyle % 5);
-    Series->Interpolation = iaLinear;
-    Series->ShowLabels = false;
-    Series->LabelPosition = lpBelow;
-    Series->Font->Assign(Property.DefaultPointLabelFont);
-    Series->PointList.swap(Points[I]);
+    boost::shared_ptr<TPointSeries> Series(new TPointSeries(
+      clBlack,            //FrameColor
+      Colors[ColorIndex], //FillColor
+      Colors[ColorIndex], //LineColor
+      Property.DefaultPoint.Size, //Size
+      Property.DefaultPointLine.Size, //LineSize
+      Style = ++Style % 7, //Style
+      static_cast<TPenStyle>(++LineStyle % 5), //LineStyle
+      iaLinear, //Onterpolation
+      false, //ShowLabels
+      Property.DefaultPointLabelFont, //Font
+      lpBelow, //LabelPosition
+      ptCartesian, //PointType
+      ebtNone,  //xErrorBarType
+      0, //xErrorValues
+      ebtNone, //yErrorBarType
+      0 //yErrorValue
+    ));
+    Series->Assign(Points[I]);
     Series->SetLegendText(CreatePointSeriesDescription());
     Add(Series);
     UndoList.Push(TUndoAdd(*this, Series));
+    ColorIndex = ++ColorIndex % (sizeof(Colors)/sizeof(TColor));
   }
 
   UndoList.EndMultiUndo();

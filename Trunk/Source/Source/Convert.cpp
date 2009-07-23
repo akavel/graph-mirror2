@@ -451,6 +451,17 @@ std::wstring ToLower(const std::wstring &Str)
   return Result;
 }
 //---------------------------------------------------------------------------
+std::pair<long double,long double> GetPolarCoord(const Func32::TDblPoint &P, Func32::TTrigonometry Trig)
+{
+  long double r = std::sqrt(P.x*P.x + P.y*P.y);
+  long double a = std::atan2(P.y, P.x);
+  if(a < 0)
+    a += 2*M_PI;
+  if(Trig == Func32::Degree)
+    a *= 180 / M_PI;
+  return std::make_pair(r, a);
+}
+//---------------------------------------------------------------------------
 
 
 
