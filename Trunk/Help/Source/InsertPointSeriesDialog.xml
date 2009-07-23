@@ -54,6 +54,19 @@
 		</varlistentry>
 
 		<varlistentry>
+			<term>Coordinate type</term>
+			<listitem>
+				<para>
+					You need to choose between the type of coordinates used for the points.
+					<guilabel>Cartesian</guilabel> is used when you want to specify (x,y)-coordinates.
+					<guilabel>Polar</guilabel> is used when you want to specify (&theta;,r)-coordinates,
+					where <emphasis>&theta;</emphasis> is the angle and <emphasis>r</emphasis> is the distance from origo.
+					The angle <emphasis>&theta;</emphasis> is in <glossterm>radians</glossterm> or degrees depending on the current setting.
+				</para>
+			</listitem>
+		</varlistentry>
+
+		<varlistentry>
 			<term>Marker</term>
 			<listitem>
 				<para>
