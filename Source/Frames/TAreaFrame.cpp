@@ -80,15 +80,16 @@ void TAreaFrame::EvalArea(const TPointSeries *PointSeries, long double From, lon
 {
   TPointSeries::TPointList::const_iterator FromIter = PointSeries->FindPoint(From);
   TPointSeries::TPointList::const_iterator ToIter = PointSeries->FindPoint(To);
-  Func32::TDblPoint FromCoord = PointSeries->FindCoord(FromIter, From);
-  Func32::TDblPoint ToCoord = PointSeries->FindCoord(ToIter, To);
+  Func32::TDblPoint FromCoord = FindCoord(FromIter, From);
+  Func32::TDblPoint ToCoord = FindCoord(ToIter, To);
 
   Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Func32::TDblPoint(FromCoord.x, 0)));
   Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(FromCoord));
-  if(To > From)
+  if(ToIter > FromIter)
     ++FromIter, ++ToIter;
-  for(TPointSeries::TPointList::const_iterator Iter = FromIter; Iter != ToIter; To > From ? ++Iter : --Iter)
-    Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Iter->x.Value, Iter->y.Value));
+
+  for(TPointSeries::TPointList::const_iterator Iter = FromIter; Iter != ToIter; ToIter > FromIter ? ++Iter : --Iter)
+    Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(*Iter));
   Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(ToCoord));
   Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Func32::TDblPoint(ToCoord.x, 0)));
 
@@ -98,20 +99,20 @@ void TAreaFrame::EvalArea(const TPointSeries *PointSeries, long double From, lon
     Area = (ToCoord.x - FromCoord.x) * (ToCoord.y + FromCoord.y) / 2;
   else
   {
-    Area = (FromIter->x.Value - FromCoord.x) * (FromIter->y.Value + FromCoord.y) / 2;
-    if(To > From)
+    Area = (FromIter->x - FromCoord.x) * (FromIter->y + FromCoord.y) / 2;
+    if(ToIter > FromIter)
     {
       --ToIter;
       for(TPointSeries::TPointList::const_iterator Iter = FromIter; Iter != ToIter; ++Iter)
-        Area += ((Iter+1)->x.Value - Iter->x.Value) * ((Iter+1)->y.Value + Iter->y.Value) / 2;
+        Area += ((Iter+1)->x - Iter->x) * ((Iter+1)->y + Iter->y) / 2;
     }
     else
     {
       ++ToIter;
       for(TPointSeries::TPointList::const_iterator Iter = FromIter; Iter != ToIter; --Iter)
-        Area += ((Iter-1)->x.Value - Iter->x.Value) * ((Iter-1)->y.Value + Iter->y.Value) / 2;
+        Area += ((Iter-1)->x - Iter->x) * ((Iter-1)->y + Iter->y) / 2;
     }
-    Area += (ToCoord.x - ToIter->x.Value) * (ToCoord.y + ToIter->y.Value) / 2;
+    Area += (ToCoord.x - ToIter->x) * (ToCoord.y + ToIter->y) / 2;
   }
   Edit3->Text = ToUString(Area);
 }

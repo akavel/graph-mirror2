@@ -259,13 +259,8 @@ std::wstring LoadRes(short Ident, std::wstring Par1, std::wstring Par2, const st
     return L"";
   }
 
-  for(unsigned I = 0; I < Par1.size(); I++)
-    if(Par1[I] == L'&')
-      Par1.erase(I, 1);
-
-  for(unsigned I = 0; I <= Par2.size(); I++)
-    if(Par2[I] == L'&')
-      Par2.erase(I, 1);
+  Par1.erase(remove(Par1.begin(), Par1.end(), L'&'));
+  Par2.erase(remove(Par2.begin(), Par2.end(), L'&'));
 
   if(!Par1.empty() && Par1[Par1.size()-1] == L':')
     Par1.erase(Par1.end());

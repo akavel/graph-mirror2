@@ -6,7 +6,7 @@ object Form14: TForm14
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Insert point series'
-  ClientHeight = 501
+  ClientHeight = 556
   ClientWidth = 473
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -21,7 +21,7 @@ object Form14: TForm14
   OnShow = FormShow
   DesignSize = (
     473
-    501)
+    556)
   PixelsPerInch = 96
   TextHeight = 13
   object Label3: TLabel
@@ -34,7 +34,7 @@ object Form14: TForm14
   end
   object Button1: TButton
     Left = 208
-    Top = 466
+    Top = 521
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]
@@ -47,7 +47,7 @@ object Form14: TForm14
     Left = 16
     Top = 56
     Width = 236
-    Height = 400
+    Height = 455
     Anchors = [akLeft, akTop, akRight, akBottom]
     BiDiMode = bdLeftToRight
     ColCount = 2
@@ -69,7 +69,7 @@ object Form14: TForm14
   end
   object Button2: TButton
     Left = 296
-    Top = 466
+    Top = 521
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]
@@ -86,12 +86,13 @@ object Form14: TForm14
     Hint = 
       'The name of the point series, which is shown in the list to the ' +
       'left of the coordinate system.'
+    Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
     Text = 'Series'
   end
   object GroupBox4: TGroupBox
     Left = 264
-    Top = 387
+    Top = 442
     Width = 194
     Height = 68
     Hint = 
@@ -111,7 +112,7 @@ object Form14: TForm14
   end
   object Button3: TButton
     Left = 384
-    Top = 466
+    Top = 521
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]
@@ -123,7 +124,7 @@ object Form14: TForm14
     Left = 264
     Top = 24
     Width = 194
-    Height = 352
+    Height = 407
     ActivePage = TabSheet1
     Anchors = [akTop, akRight, akBottom]
     TabOrder = 2
@@ -131,15 +132,15 @@ object Form14: TForm14
       Caption = 'Markers'
       DesignSize = (
         186
-        324)
+        379)
       object GroupBox1: TGroupBox
         Left = 9
-        Top = 2
+        Top = 57
         Width = 169
         Height = 103
-        Anchors = [akLeft, akTop, akRight]
+        Anchors = [akLeft, akRight, akBottom]
         Caption = 'Marker'
-        TabOrder = 0
+        TabOrder = 1
         DesignSize = (
           169
           103)
@@ -218,12 +219,12 @@ object Form14: TForm14
       end
       object GroupBox2: TGroupBox
         Left = 9
-        Top = 110
+        Top = 165
         Width = 169
         Height = 131
-        Anchors = [akLeft, akTop, akRight]
+        Anchors = [akLeft, akRight, akBottom]
         Caption = 'Line'
-        TabOrder = 1
+        TabOrder = 2
         DesignSize = (
           169
           131)
@@ -332,12 +333,12 @@ object Form14: TForm14
       end
       object GroupBox3: TGroupBox
         Left = 9
-        Top = 246
+        Top = 301
         Width = 169
         Height = 72
-        Anchors = [akLeft, akTop, akRight]
+        Anchors = [akLeft, akRight, akBottom]
         Caption = 'Labels'
-        TabOrder = 2
+        TabOrder = 3
         DesignSize = (
           169
           72)
@@ -403,13 +404,26 @@ object Form14: TForm14
             'Below Right')
         end
       end
+      object RadioGroup1: TRadioGroup
+        Left = 9
+        Top = -2
+        Width = 169
+        Height = 53
+        Caption = 'Coordinate type'
+        ItemIndex = 0
+        Items.Strings = (
+          'Cartesian'
+          'Polar')
+        TabOrder = 0
+        OnClick = RadioGroup1Click
+      end
     end
     object TabSheet2: TTabSheet
       Caption = 'Error bars'
       ImageIndex = 1
       DesignSize = (
         186
-        324)
+        379)
       object GroupBox5: TGroupBox
         Left = 8
         Top = 10

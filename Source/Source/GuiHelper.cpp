@@ -63,7 +63,13 @@ void TAddView::Visit(TPointSeries &Series)
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
   Bitmap->Width = 16;
   Bitmap->Height = 16;
-  TPointSelect::DrawPoint(Bitmap->Canvas, TPoint(8,8), Series.Style, Series.FrameColor, Series.FillColor, Series.Style == 7 ? 3 : 5);
+  TPointSelect::DrawPoint(
+    Bitmap->Canvas,
+    TPoint(8,8),
+    Series.GetStyle(),
+    Series.GetFrameColor(),
+    Series.GetFillColor(),
+    Series.GetStyle() == 7 ? 3 : 5);
   AddNode(Series, Form1->ImageList1->Add(Bitmap.get(), NULL));
 }
 //---------------------------------------------------------------------------
@@ -138,18 +144,19 @@ void TZoomFit::Visit(TBaseFuncType &Func)
 //---------------------------------------------------------------------------
 void TZoomFit::Visit(TPointSeries &Series)
 {
-  for(std::vector<TPointSeriesPoint>::const_iterator Point = Series.PointList.begin(); Point != Series.PointList.end(); ++Point)
+  const TPointSeries::TPointList &PointList = Series.GetPointList();
+  for(TPointSeries::TPointList::const_iterator Point = PointList.begin(); Point != PointList.end(); ++Point)
     //Check if point is valid
     if((!Data.Axes.xAxis.LogScl || Point->x > 0) && (!Data.Axes.yAxis.LogScl || Point->y > 0))
     {
       if(Point->x < xMin)
-        xMin = Point->x.Value;
+        xMin = Point->x;
       if(Point->x > xMax)
-        xMax = Point->x.Value;
+        xMax = Point->x;
       if(Point->y < yMin)
-        yMin = Point->y.Value;
+        yMin = Point->y;
       if(Point->y > yMax)
-        yMax = Point->y.Value;
+        yMax = Point->y;
     }
 }
 //---------------------------------------------------------------------------

@@ -30,19 +30,18 @@ TTextValue::TTextValue(double AValue) : Value(AValue)
     Text = ToWString(AValue);
 }
 //---------------------------------------------------------------------------
-void TTextValue::Update(const TData &Data)
+double FastCalc(const std::wstring &Text, const TData &Data)
 {
   //Optimize for numbers
   try
   {
     if(Text.empty())
-      return; //Nothing to update. It is already +/-INF
+      return NAN;
 
     //Make sure there is no 'e' (Euler's constant) as it will be interpretted as 'E'
     if(Text.find(L"e") == std::wstring::npos)
     {
-      Value = boost::lexical_cast<double>(Text);
-      return;
+      return boost::lexical_cast<double>(Text);
     }
   }
   catch(boost::bad_lexical_cast &E)
@@ -51,12 +50,19 @@ void TTextValue::Update(const TData &Data)
 
   try
   {
-    Value = Data.Calc(Text);
+    return Data.Calc(Text);
   }
   catch(Func32::EFuncError &E)
   {
-    Value = NAN;
+    return NAN;
   }
+}
+//---------------------------------------------------------------------------
+void TTextValue::Update(const TData &Data)
+{
+  //Nothing to update. Values is already +/-INF
+  if(!Text.empty())
+    Value = FastCalc(Text, Data);
 }
 //---------------------------------------------------------------------------
 void TTextValue::Set(const std::wstring AText, const TData &Data, bool IgnoreErrors)
@@ -633,16 +639,38 @@ void TShade::Update()
 //////////////////
 // TPointSeries //
 //////////////////
-TPointSeriesPoint::TPointSeriesPoint(const TData &Data, const std::wstring &X, const std::wstring &Y, const std::wstring &XError, const std::wstring &YError, bool IgnoreErrors)
-  : xError(XError.empty() ? 0 : Data.Calc(XError), XError), yError(YError.empty() ? 0 : Data.Calc(YError), YError)
+TPointSeries::TPointSeries(TColor AFrameColor, TColor AFillColor, TColor ALineColor, unsigned ASize, unsigned ALineSize,
+  unsigned AStyle, TPenStyle ALineStyle, TInterpolationAlgorithm AInterpolation, bool AShowLabels,
+  TFont *AFont, TLabelPosition ALabelPosition, TPointType APointType,
+  TErrorBarType XErrorBarType, double XErrorValue, TErrorBarType YErrorBarType, double YErrorValue)
+  : FrameColor(AFrameColor), FillColor(AFillColor), LineColor(ALineColor), Size(ASize), LineSize(ALineSize),
+    Style(AStyle), LineStyle(ALineStyle), Interpolation(AInterpolation), ShowLabels(AShowLabels),
+    Font(AFont), LabelPosition(ALabelPosition), PointType(APointType),
+    xErrorBarType(XErrorBarType), xErrorValue(XErrorValue), yErrorBarType(YErrorBarType), yErrorValue(YErrorValue)
 {
-  x.Set(X, Data, IgnoreErrors);
-  y.Set(Y, Data, IgnoreErrors);
 }
 //---------------------------------------------------------------------------
-TPointSeries::TPointSeries()
-  : xErrorValue(0), yErrorValue(0), xErrorBarType(ebtNone), yErrorBarType(ebtNone)
+void TPointSeries::AddPoint(const Func32::TDblPoint &Point)
 {
+  TPointSeriesPoint P;
+  if(PointType == ptPolar)
+  {
+    std::pair<long double,long double> Polar = GetPolarCoord(Point, GetData().Axes.Trigonometry);
+    P.First = RoundToString(Polar.second, 2);
+    P.Second = RoundToString(Polar.first, 2);
+  }
+  else
+  {
+    P.First = RoundToString(Point.x, 3);
+    P.Second = RoundToString(Point.y, 3);
+  }
+  PointData.push_back(P);
+  PointList.push_back(Point);
+}
+//---------------------------------------------------------------------------
+void TPointSeries::AddPoint(const TPointSeriesPoint &Point)
+{
+  PointData.push_back(Point);
 }
 //---------------------------------------------------------------------------
 void TPointSeries::WriteToIni(TConfigFileSection &Section) const
@@ -658,19 +686,20 @@ void TPointSeries::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"ShowLabels", ShowLabels, false);
   Section.Write(L"Font", FontToStr(Font), DEFAULT_POINT_FONT);
   Section.Write(L"LabelPosition", LabelPosition);
+  Section.Write(L"PointType", PointType, ptCartesian);
 
   std::wostringstream Str;
   for(unsigned N = 0; N < PointList.size(); N++)
   {
-    if(PointList[N].x.Text.find(',') == std::string::npos)
-      Str << PointList[N].x.Text << ',';
+    if(PointData[N].First.find(',') == std::string::npos)
+      Str << PointData[N].First << ',';
     else
-      Str << '"' << PointList[N].x.Text << "\",";
+      Str << '"' << PointData[N].First << "\",";
 
-    if(PointList[N].y.Text.find(',') == std::string::npos)
-      Str << PointList[N].y.Text << ';';
+    if(PointData[N].Second.find(',') == std::string::npos)
+      Str << PointData[N].Second << ';';
     else
-      Str << '"' << PointList[N].y.Text << "\";";
+      Str << '"' << PointData[N].Second << "\";";
   }
   Section.Write(L"Points", Str.str());
 
@@ -680,7 +709,7 @@ void TPointSeries::WriteToIni(TConfigFileSection &Section) const
   {
     Str.str(L"");
     for(unsigned N = 0; N < PointList.size(); N++)
-      Str << PointList[N].xError << ';';
+      Str << PointData[N].xError << ';';
     Section.Write(L"xErrorBarData", Str.str(), std::wstring());
   }
 
@@ -690,7 +719,7 @@ void TPointSeries::WriteToIni(TConfigFileSection &Section) const
   {
     Str.str(L"");
     for(unsigned N = 0; N < PointList.size(); N++)
-        Str << PointList[N].yError << ';';
+        Str << PointData[N].yError << ';';
     Section.Write(L"yErrorBarData", Str.str(), std::wstring());
   }
 
@@ -718,6 +747,7 @@ void TPointSeries::ReadFromIni(const TConfigFileSection &Section)
   ShowLabels = Section.Read(L"ShowLabels", false);
   StrToFont(Section.Read(L"Font", DEFAULT_POINT_FONT), Font);
   LabelPosition = Section.Read(L"LabelPosition", lpBelow);
+  PointType = Section.Read(L"PointType", ptCartesian);
 
   TTokenizer Tokens(Section.Read(L"Points", L""), L';');
   std::wistringstream xStream(Section.Read(L"xErrorBarData", L""));
@@ -734,6 +764,7 @@ void TPointSeries::ReadFromIni(const TConfigFileSection &Section)
 
     getline(xStream, xError, L';');
     getline(yStream, yError, L';');
+    TTextValue XError, YError;
 
     try
     {
@@ -741,13 +772,18 @@ void TPointSeries::ReadFromIni(const TConfigFileSection &Section)
       if(BackwardCompatibility)
         PointList.push_back(TPointSeriesPoint(lexical_cast<double>(x), lexical_cast<double>(y), xError.empty() ? 0.0 : lexical_cast<double>(yError), xError.empty() ? 0.0 : lexical_cast<double>(yError)));
       else*/
-        PointList.push_back(TPointSeriesPoint(GetData(), x, y, xError, yError));
+      if(!xError.empty())
+        XError.Set(xError, GetData());
+      if(!yError.empty())
+        YError.Set(yError, GetData());
     }
     catch(Func32::EParseError &E)
     {
       ShowStatusError(GetErrorMsg(E));
-      PointList.push_back(TPointSeriesPoint(GetData(), x, y, xError, yError, true));
+      XError.Set(xError, GetData(), true);
+      YError.Set(yError, GetData(), true);
     }
+    PointData.push_back(TPointSeriesPoint(x, y, XError, YError));
   }
 
   xErrorBarType = Section.Read(L"xErrorBarType", ebtNone);
@@ -765,10 +801,10 @@ double TPointSeries::GetXError(unsigned Index) const
       return xErrorValue;
 
     case ebtRelative:
-      return xErrorValue * PointList[Index].x.Value / 100;
+      return xErrorValue * PointList[Index].x / 100;
 
     case ebtCustom:
-      return PointList[Index].xError.Value;
+      return PointData[Index].xError.Value;
   }
   return 0;
 }
@@ -781,20 +817,20 @@ double TPointSeries::GetYError(unsigned Index) const
       return yErrorValue;
 
     case ebtRelative:
-      return yErrorValue * PointList[Index].y.Value / 100;
+      return yErrorValue * PointList[Index].y / 100;
 
     case ebtCustom:
-      return PointList[Index].yError.Value;
+      return PointData[Index].yError.Value;
   }
   return 0;
 }
 //---------------------------------------------------------------------------
-Func32::TDblPoint TPointSeries::FindCoord(TPointList::const_iterator Iter, double x) const
+Func32::TDblPoint FindCoord(TPointSeries::TPointList::const_iterator Iter, double x)
 {
-  if(Interpolation == iaLinear)
+//  if(Interpolation == iaLinear)
   {
-    double a = ((Iter+1)->y.Value - Iter->y.Value) / ((Iter+1)->x.Value - Iter->x.Value);
-    double b = Iter->y.Value - a * Iter->x.Value;
+    double a = ((Iter+1)->y - Iter->y) / ((Iter+1)->x - Iter->x);
+    double b = Iter->y - a * Iter->x;
     return Func32::TDblPoint(x, a*x+b);
   }
 
@@ -804,8 +840,8 @@ Func32::TDblPoint TPointSeries::FindCoord(TPointList::const_iterator Iter, doubl
 TPointSeries::TPointList::const_iterator TPointSeries::FindPoint(double x) const
 {
   for(unsigned I = 0; I < PointList.size() - 1; I++)
-    if((PointList[I].x.Value <= x && PointList[I+1].x.Value >= x) ||
-       (PointList[I].x.Value >= x && PointList[I+1].x.Value <= x))
+    if((PointList[I].x <= x && PointList[I+1].x >= x) ||
+       (PointList[I].x >= x && PointList[I+1].x <= x))
       return PointList.begin() + I;
 
   throw EAbort("");
@@ -813,12 +849,21 @@ TPointSeries::TPointList::const_iterator TPointSeries::FindPoint(double x) const
 //---------------------------------------------------------------------------
 void TPointSeries::Update()
 {
+  PointList.resize(PointData.size());
+  Func32::TTrigonometry Trig = GetData().Axes.Trigonometry;
   for(unsigned I = 0; I < PointList.size(); I++)
   {
-    PointList[I].x.Update(GetData());
-    PointList[I].y.Update(GetData());
-    PointList[I].xError.Update(GetData());
-    PointList[I].yError.Update(GetData());
+    long double a = FastCalc(PointData[I].First, GetData()); //x or theta
+    long double b = FastCalc(PointData[I].Second, GetData()); //y or r
+    if(PointType == ptPolar)
+    {
+      PointList[I].x = b * std::cos(Trig == Func32::Degree ? a*M_PI/180 : a);
+      PointList[I].y = b * std::sin(Trig == Func32::Degree ? a*M_PI/180 : a);
+    }
+    else
+      PointList[I].x = a, PointList[I].y = b;
+    PointData[I].xError.Update(GetData());
+    PointData[I].yError.Update(GetData());
   }
 }
 //---------------------------------------------------------------------------

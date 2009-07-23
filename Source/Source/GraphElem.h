@@ -286,22 +286,27 @@ public:
 enum TErrorBarType {ebtNone, ebtFixed, ebtRelative, ebtCustom};
 struct TPointSeriesPoint
 {
-  TTextValue x, y;
+  std::wstring First; //X or angle
+  std::wstring Second; //Y or r
   TTextValue xError, yError; //Data for error bars; only used if Uncertainty=utCustom
 
   TPointSeriesPoint() {}
-  TPointSeriesPoint(double X, double Y, double XError = 0, double YError = 0)
-    : x(X), y(Y), xError(XError), yError(YError) {}
-  TPointSeriesPoint(const TData &Data, const std::wstring &X, const std::wstring &Y, const std::wstring &XError = L"", const std::wstring &YError = L"", bool IgnoreErrors=false);
+  TPointSeriesPoint(const std::wstring &AFirst, const std::wstring &ASecond, const TTextValue &XError, const TTextValue &YError)
+    : First(AFirst), Second(ASecond), xError(XError), yError(YError) {}
+  TPointSeriesPoint(const std::wstring &AFirst, const std::wstring &ASecond)
+    : First(AFirst), Second(ASecond) {}
 };
 
 enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
 enum TLabelPosition {lpAbove, lpBelow, lpLeft, lpRight, lpAboveLeft, lpAboveRight, lpBelowLeft, lpBelowRight};
+enum TPointType {ptCartesian, ptPolar};
 
-struct TPointSeries : public TGraphElem
+class TPointSeries : public TGraphElem
 {
-  typedef std::vector<TPointSeriesPoint> TPointList;
-
+public:
+  typedef std::vector<TPointSeriesPoint> TPointData;
+  typedef std::vector<Func32::TDblPoint> TPointList;
+private:
   TColor FrameColor;
   TColor FillColor;
   TColor LineColor;
@@ -313,25 +318,52 @@ struct TPointSeries : public TGraphElem
   bool ShowLabels;
   TLabelPosition LabelPosition;
   TVclObject<TFont> Font;
+  TPointData PointData;
   TPointList PointList;
   TErrorBarType xErrorBarType, yErrorBarType;
   double xErrorValue, yErrorValue; //Data for error bars; only used if Uncertainty!=utCustom
-  void Update();
+  TPointType PointType;
 
-  TPointSeries();
+public:
+  TPointSeries(TColor AFrameColor=clBlack, TColor AFillColor=clRed, TColor ALineColor=clRed,
+    unsigned ASize=1, unsigned ALineSize=1, unsigned AStyle=0, TPenStyle ALineStyle=psSolid,
+    TInterpolationAlgorithm AInterpolation=iaLinear, bool AShowLabels=false, TFont *AFont=NULL,
+    TLabelPosition ALabelPosition=lpBelow, TPointType APointType=ptCartesian,
+    TErrorBarType XErrorBarType=ebtNone, double XErrorValue=0, TErrorBarType YErrorBarType=ebtNone, double YErrorValue=0);
   std::wstring MakeText() const {return L"";}
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
-  Func32::TDblPoint FindCoord(TPointList::const_iterator Iter, double x) const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
+  boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TPointSeries(*this));}
+  TPointList::const_iterator FindPoint(double x) const;
+  void AddPoint(const Func32::TDblPoint &Point);
+  void AddPoint(const TPointSeriesPoint &Point);
   double GetXError(unsigned Index) const;
   double GetYError(unsigned Index) const;
-  boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TPointSeries(*this));}
-  Func32::TDblPoint GetPoint(unsigned Index) const {return Func32::TDblPoint(PointList[Index].x.Value, PointList[Index].y.Value);}
-  unsigned PointCount() const {return PointList.size();}
-  TPointList::const_iterator FindPoint(double x) const;
-  void AddPoint(const Func32::TDblPoint &Point) {PointList.push_back(TPointSeriesPoint(Point.x, Point.y));}
+  void Assign(const TPointData &APointData) {PointData = APointData;}
+  void Update();
+
+  unsigned PointCount() const {return PointData.size();}
+  const TPointList& GetPointList() const {return PointList;}
+  const std::vector<TPointSeriesPoint>& GetPointData() const {return PointData;}
+  TErrorBarType GetxErrorBarType() const {return xErrorBarType;}
+  TErrorBarType GetyErrorBarType() const {return yErrorBarType;}
+  double GetxErrorValue() const {return xErrorValue;}
+  double GetyErrorValue() const {return yErrorValue;}
+  TColor GetFillColor() const {return FillColor;}
+  unsigned GetSize() const {return Size;}
+  unsigned GetStyle() const {return Style;}
+  TColor GetLineColor() const {return LineColor;}
+  TColor GetFrameColor() const {return FrameColor;}
+  unsigned GetLineSize() const {return LineSize;}
+  TPenStyle GetLineStyle() const {return LineStyle;}
+  TInterpolationAlgorithm GetInterpolation() const {return Interpolation;}
+  bool GetShowLabels() const {return ShowLabels;}
+  TFont* GetFont() const {return Font;}
+  TLabelPosition GetLabelPosition() const {return LabelPosition;}
+  TPointType GetPointType() const {return PointType;}
 };
+Func32::TDblPoint FindCoord(TPointSeries::TPointList::const_iterator Iter, double x);
 
 enum TShadeStyle {ssAbove, ssBelow, ssXAxis, ssYAxis, ssBetween, ssInside};
 

@@ -100,6 +100,7 @@ __published:	// IDE-managed Components
   TLabel *Label11;
   TExtColorBox *ExtColorBox1;
   TExtColorBox *ExtColorBox2;
+  TRadioGroup *RadioGroup1;
   void __fastcall FormShow(TObject *Sender);
   void __fastcall Popup_CutClick(TObject *Sender);
   void __fastcall Popup_CopyClick(TObject *Sender);
@@ -125,6 +126,7 @@ __published:	// IDE-managed Components
           String &Value);
   void __fastcall GridSetText(TObject *Sender, long ACol, long ARow,
           const String &Value);
+  void __fastcall RadioGroup1Click(TObject *Sender);
 
 private:	// User declarations
   boost::shared_ptr<TPointSeries> Series;
