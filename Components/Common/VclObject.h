@@ -10,11 +10,13 @@ template<typename T> class TVclObject
   T *const Object;
 public:
   TVclObject() : Object(new T) {}
+  TVclObject(T *O) : Object(new T) {if(O != NULL) Object->Assign(O);}
   TVclObject(const TVclObject &V) : Object(new T) {Object->Assign(V.Object);}
   ~TVclObject()   {delete Object;}
   const TVclObject& operator=(const TVclObject<T> &V) {Object->Assign(V.Object); return *this;}
   operator T*() const {return Object;}
   T* operator->() {return Object;}
+  T* Get() const {return Object;}
 };
 
 template<typename T> class TVclControl
