@@ -7,7 +7,7 @@ Languages = ["Danish", "Croatian", "Spanish", "German", "Swedish", "French", "Po
 LocalePath = "d:\\Projects\\Graph\\Locale\\"
 
 def Encode(Str):
-    return Str.replace('"', '\\"')
+    return Str.replace('"', '\\"').replace('\n', ' ')
 
 os.chdir("../Source")
 Files = glob.glob("*.xml")
