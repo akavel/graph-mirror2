@@ -46,9 +46,6 @@ object Form2: TForm2
     BevelOuter = bvLowered
     ParentColor = True
     TabOrder = 1
-    DesignSize = (
-      296
-      254)
     object ProductName: TLabel
       Left = 144
       Top = 8
@@ -87,17 +84,24 @@ object Form2: TForm2
       Caption = 'Build %s'
     end
     object Comments: TLabel
-      Left = 8
-      Top = 144
-      Width = 279
+      AlignWithMargins = True
+      Left = 10
+      Top = 128
+      Width = 276
       Height = 39
-      Anchors = [akLeft, akTop, akRight]
+      Margins.Left = 8
+      Margins.Right = 8
+      Margins.Bottom = 6
+      Align = alBottom
       Caption = 
         'This is free software, and you are welcome to redistribute it un' +
         'der the terms in the GNU General Public License. Please send bug' +
         ' reports and suggestions to the programmer.'
       WordWrap = True
       IsControl = True
+      ExplicitLeft = 8
+      ExplicitTop = 144
+      ExplicitWidth = 279
     end
     object ProgramIcon: TImage
       Left = 8
@@ -538,23 +542,39 @@ object Form2: TForm2
       Visible = False
     end
     object LinkLabel1: TLinkLabelEx
-      Left = 8
-      Top = 219
-      Width = 280
+      AlignWithMargins = True
+      Left = 10
+      Top = 198
+      Width = 276
       Height = 26
+      Margins.Left = 8
+      Margins.Right = 8
+      Margins.Bottom = 6
       WordWrap = True
       OnLinkClick = LinkLabel1LinkClick
+      Align = alBottom
       Caption = 
         'The newest version as well as the source code are available at: ' +
         '%s'
+      ExplicitLeft = 8
+      ExplicitTop = 219
+      ExplicitWidth = 280
     end
     object LinkLabel2: TLinkLabelEx
-      Left = 8
-      Top = 196
-      Width = 44
+      AlignWithMargins = True
+      Left = 10
+      Top = 176
+      Width = 276
       Height = 13
+      Margins.Left = 8
+      Margins.Right = 8
+      Margins.Bottom = 6
       OnLinkClick = LinkLabel2LinkClick
+      Align = alBottom
       Caption = 'Email: %s'
+      ExplicitLeft = 8
+      ExplicitTop = 196
+      ExplicitWidth = 44
     end
     object LinkLabel3: TLinkLabelEx
       AlignWithMargins = True
@@ -570,7 +590,6 @@ object Form2: TForm2
       Align = alBottom
       Caption = '<Language> translation by <Translator>'
       Visible = False
-      ExplicitTop = 231
     end
   end
 end
