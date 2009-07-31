@@ -23,9 +23,13 @@ __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)
   LineSelect1->Height = (LineSelect1->Height * Property.FontScale) / 100;
   Translate();
 
-  TempData[1].From = TempData[2].From = "-10";
-  TempData[1].To = TempData[2].To = "10";
-  TempData[1].Steps = TempData[2].Steps = "1000";
+  TempData[1].From = "-10";
+  TempData[1].To = "10";
+  TempData[1].Steps = "1000";
+
+  TempData[2].From = "0";
+  TempData[2].To = "2pi";
+  TempData[2].Steps = "1000";
 
   LineSelect1->LineStyle = static_cast<TPenStyle>(Property.DefaultFunction.Style);
   ExtColorBox1->Selected = Property.DefaultFunction.Color;
