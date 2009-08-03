@@ -1,5 +1,5 @@
 <div id="menu">
-<img src="Graph.png" width="64" height="64" alt="Logo">
+<img src="Graph.png" width="128" height="128" alt="Logo">
 <p><font size="+1">
 <a href=".">Main</a><br>
 <a href="History.php">History</a><br>
