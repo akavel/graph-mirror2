@@ -3,7 +3,7 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<section>
+<section id="PowerAndLog">
 	<title>Power and logarithm</title>
 	<section id="sqr" xreflabel="sqr">
 		<title><markup>sqr</markup> function</title>

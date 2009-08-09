@@ -3,7 +3,7 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<section>
+<section id="Trigonmetric">
 	<title>Trigonometric</title>
 	<section id="sin" xreflabel="sin">
 		<title><markup>sin</markup> function</title>

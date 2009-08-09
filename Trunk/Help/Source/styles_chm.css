@@ -273,6 +273,10 @@ h3.othercredit {
   margin-top: -1em;
 }
 
+h3.title {
+  margin-bottom: -0.5em;
+}
+
 span.contrib {
   font-weight: bold;
 }

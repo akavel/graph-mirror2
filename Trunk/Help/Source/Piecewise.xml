@@ -3,7 +3,7 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<section>
+<section id="Piecewise">
 	<title>Piecewise</title>
 	<section id="sign" xreflabel="sign">
 		<title><markup>sign</markup> function</title>
