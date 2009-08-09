@@ -3,7 +3,7 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<section>
+<section id="Complex">
 	<title>Complex</title>
 	<section id="abs" xreflabel="abs">
 		<title><markup>abs</markup> function</title>

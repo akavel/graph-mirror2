@@ -3,9 +3,9 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<section>
+<section id="Special">
 	<title>Special</title>
-<section id="integrate" xreflabel="integrate">
+	<section id="integrate" xreflabel="integrate">
 		<title><markup>integrate</markup> function</title>
 		<indexterm><primary><function>integrate</function> function</primary></indexterm>
 		<indexterm><primary>numeric integral</primary></indexterm>
@@ -23,8 +23,9 @@
 				The <function>integrate</function> function returns the numeric integral of <parameter>f</parameter> from <parameter>a</parameter> to <parameter>b</parameter>.
 				This is mathematically written as:
 				<mediaobject>
-	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Integrate.svg"/></imageobject>
-  				<imageobject role="html"><imagedata  format="EMF"  fileref="Integrate.emf"/></imageobject>
+	  			<imageobject role="fo"><imagedata fileref="Integrate.svg"/></imageobject>
+  				<imageobject role="htmlhelp"><imagedata fileref="Integrate.emf"/></imageobject>
+  				<imageobject role="html"><imagedata fileref="Integrate.png"/></imageobject>
 				</mediaobject>
 				This integral is the same as the area between the function <parameter>f</parameter> and the x-axis from <parameter>a</parameter> to <parameter>b</parameter>
 				where the area under the axis is counted negative.
@@ -61,8 +62,9 @@
 				The <function>sum</function> function returns the summation of <parameter>f</parameter> evaluated for all integers from <parameter>a</parameter> to <parameter>b</parameter>.
 				This is mathematically written as:
 				<mediaobject>
-	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Sum.svg"/></imageobject>
-  				<imageobject role="html"><imagedata  format="EMF"  fileref="Sum.emf"/></imageobject>
+	  			<imageobject role="fo"><imagedata fileref="Sum.svg"/></imageobject>
+  				<imageobject role="htmlhelp"><imagedata fileref="Sum.emf"/></imageobject>
+  				<imageobject role="html"><imagedata fileref="Sum.png"/></imageobject>
 				</mediaobject>
 				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function.
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
@@ -94,8 +96,9 @@
 				The <function>product</function> function returns the product of <parameter>f</parameter> evaluated for all integers from <parameter>a</parameter> to <parameter>b</parameter>.
 				This is mathematically written as:
 				<mediaobject>
-	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Product.svg"/></imageobject>
-  				<imageobject role="html"><imagedata  format="EMF"  fileref="Product.emf"/></imageobject>
+	  			<imageobject role="fo"><imagedata fileref="Product.svg"/></imageobject>
+  				<imageobject role="htmlhelp"><imagedata fileref="Product.emf"/></imageobject>
+  				<imageobject role="html"><imagedata fileref="Product.png"/></imageobject>
 				</mediaobject>
 				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function.
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
@@ -161,8 +164,9 @@
 				The mathematical definition of the gamma function is:
 				<informalfigure>
 				<mediaobject>
-	  			<imageobject  role="fo"><imagedata  format="SVG"  fileref="Gamma.svg"/></imageobject>
-  				<imageobject  role="html"><imagedata  format="EMF"  fileref="Gamma.emf"/></imageobject>
+	  			<imageobject role="fo"><imagedata fileref="Gamma.svg"/></imageobject>
+  				<imageobject role="htmlhelp"><imagedata fileref="Gamma.emf"/></imageobject>
+  				<imageobject role="html"><imagedata fileref="Gamma.png"/></imageobject>
 				</mediaobject>
 				</informalfigure>
 				This cannot be calculated precisely, so Graph is using the so-called Lanczos approximation to calculate the <function>gamma</function> function.
@@ -331,8 +335,9 @@
 				that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm> where &sigma; > 0.
 				The normal distribution is defined as:
 				<mediaobject>
-	  			<imageobject role="fo"><imagedata  format="SVG"  fileref="Dnorm.svg"/></imageobject>
-  				<imageobject role="html"><imagedata  format="EMF"  fileref="Dnorm.emf"/></imageobject>
+	  			<imageobject role="fo"><imagedata fileref="Dnorm.svg"/></imageobject>
+  				<imageobject role="htmlhelp"><imagedata fileref="Dnorm.emf"/></imageobject>
+  				<imageobject role="html"><imagedata fileref="Dnorm.png"/></imageobject>
 				</mediaobject>
 			</para>
 		</simplesect>

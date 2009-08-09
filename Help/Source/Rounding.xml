@@ -3,7 +3,7 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ]>
-<section>
+<section id="Rounding">
 	<title>Rounding</title>
 	<section id="trunc" xreflabel="trunc">
 		<title><markup>trunc</markup> function</title>

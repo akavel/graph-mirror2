@@ -35,8 +35,9 @@ def HandleLanguage(Language, Lang, Dict):
         os.system("..\\Scripts\\xml2po.py -k -p ..\\po\\GraphHelp_%s.po -l %s -o ../Temp/Graph2.tmp ../Temp/Graph.tmp" % (Language, Lang))
         os.system("XCopy ..\\Images\\%s\\*.* ..\\Temp\\Images /I /Q /Y > NUL" % (Language,))
 
-    print "Creating %s PDF file..." % (Language,)
     InFile = "..\\Temp\\Graph2.tmp" if Language != "English" else "..\\Temp\\Graph.tmp"
+
+    print "Creating %s PDF file..." % (Language,)
     ReplaceStrings(InFile, Dict)
 
     StyleSheet = "..\\xsl\\pdfdoc.xsl" if not os.path.exists("..\\xsl\\%s\\pdfdoc.xsl" % (Language,)) else "..\\xsl\\%s\\pdfdoc.xsl" % (Language,)
@@ -49,14 +50,19 @@ def HandleLanguage(Language, Lang, Dict):
     StyleSheet = "..\\xsl\\htmlhelp.xsl" if not os.path.exists("..\\xsl\\%s\\htmlhelp.xsl" % (Language,)) else "..\\xsl\\%s\\htmlhelp.xsl" % (Language,)
     os.system("xsltproc.exe --nonet --xinclude --stringparam htmlhelp.chm ..\\Graph-%s.chm --output ..\\Temp\\Graph %s %s"  % (Language, StyleSheet, InFile))
     os.system("hhc.exe ..\\Temp\\htmlhelp.hhp > NUL")
-
+    print "Creating %s HTML chunks..." % (Language,)
+    StyleSheet = "..\\xsl\\htmlchunk.xsl" if not os.path.exists("..\\xsl\\%s\\htmlchunk.xsl" % (Language,)) else "..\\xsl\\%s\\htmlchunk.xsl" % (Language,)
+    os.system("XCopy ..\\Source\\*.css ..\\html\\%s /Q /Y /I > NUL" % (Language.lower(),))
+    os.system("xsltproc.exe --nonet --xinclude --noout --output ..\\html\\%s\\Graph %s %s > NUL"  % (Language, StyleSheet, InFile))
+    os.system("XCopy ..\\Images\\Common\\*.png ..\\html\\%s\\images /I /Q /Y > NUL" % (Language,))
+    os.system("XCopy ..\\Images\\%s\\*.* ..\\html\\%s\\images /I /Q /Y > NUL" % (Language,Language))
 
 print "Copying image files..."
 os.system("XCopy ..\\Images\\Common\\*.* ..\\Temp\\Images /I /Q /Y > NUL")
 os.system("XCopy ..\\Images\\English\\*.* ..\\Temp\\Images /I /Q /Y > NUL")
 os.system("XCopy ..\\Images\\dtd ..\\Temp\\Images\\dtd /I /Q /Y > NUL")
 os.system("XCopy ..\\Source\\dtd ..\\Temp\\dtd /S /I /Q /Y > NUL")
-os.system("XCopy ..\\Source\\*.css ..\\Temp /Q /Y > NUL")
+os.system("XCopy ..\\Source\\styles_chm.css ..\\Temp /Q /Y > NUL")
 
 os.chdir("..\\Source")
 os.environ["path"] += ";" + ToolsDir

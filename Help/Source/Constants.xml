@@ -2,7 +2,7 @@
 <!ENTITY % Symbols SYSTEM "Symbols.ent">
 %Symbols;
 ] >
-<section>
+<section id="Constants">
 	<title>Constants</title>
 	<section id="rand" xreflabel="rand">
 		<title>rand constant</title>
