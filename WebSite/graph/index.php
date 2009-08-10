@@ -13,7 +13,7 @@
 <div id="main">
   <h1  align="center"><b><font size="+7" color="#0000ff">
     Graph 4.3</font></b></h1>
-  <p><img height="424" alt="Main window" src="DialogMain.png" width="595" ></p>
+  <p><img height="424" alt="Main window" src="images/DialogMain.png" width="595" ></p>
   <table border="0" align="center" cellspacing="10">
     <tr>
       <td width="550">
@@ -45,7 +45,7 @@
                   </font></p>
                 <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" align="center"
            > <font face="Arial, Arial, Helvetica">
-                  <input type="image" alt="Click here to join the Graph update mailing list" src="subscribe.png" >
+                  <input type="image" alt="Click here to join the Graph update mailing list" src="images/subscribe.png" >
                   </font>
               </form>
             </td>
@@ -56,7 +56,7 @@
   </table>
   <p align="center"><b><font size="+1">Copyright © 2009 by Ivan Johansen<br>
   Last updated:
-    August 2, 2009
+    August 10, 2009
     </font></b></p>
 </div>
 

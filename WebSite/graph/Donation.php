@@ -22,7 +22,7 @@ Thank you in advance!
 </p>
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-  <div align="center"> 
+  <div align="center">
   Currency: <select name="currency_code" size="1">
 	  <option value="AUD">AUD&nbsp;&ndash;&nbsp;$&nbsp;</option>
 	  <option value="CAD">CAD&nbsp;&ndash;&nbsp;$</option>
@@ -42,10 +42,10 @@ Thank you in advance!
 	  <option value="USD" selected="selected">USD&nbsp;&ndash;&nbsp;$</option>
   </select>
 	<br>
-	<input name="cmd" value="_xclick" type="hidden"> 
+	<input name="cmd" value="_xclick" type="hidden">
 	<input name="business" value="graph@padowan.dk" type="hidden">
 	<input name="item_name" value="Graph donation" type="hidden">
-  <input name="image_url" value="http://padowan.dk/graph/Icon.gif" type="hidden">
+  <input name="image_url" value="http://padowan.dk/graph/images/Icon.gif" type="hidden">
   <input name="no_shipping" value="1" type="hidden"><input name="return" value="http://www.padowan.dk" type="hidden">
   <input name="cancel_return" value="http://www.padowan.dk" type="hidden">
   <input name="tax" value="0" type="hidden"><input name="cn" value="Comments" type="hidden">

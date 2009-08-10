@@ -1,6 +1,7 @@
 [Graph]
 Major = 4
-Minor = 2
+Minor = 4
 Release = 0
-Build = 381
-DownloadFile = http://www.padowan.dk/bin/SetupGraphBeta-4.2.0.381.exe
+Build = 443
+Date = 31-07-2009
+DownloadFile = http://www.padowan.dk/bin/SetupGraphBeta-4.4.0.443.exe
