@@ -1,7 +1,8 @@
-Redirect /graph/SetupGraphBeta.exe http://padowan.dk/graph/DownloadBeta.php
-Redirect /graph/SetupGraph.exe http://padowan.dk/graph/DownloadGraph.php
-Redirect /graph/SetupGraph-4.2.exe http://padowan.dk/graph/DownloadGraph.php
+Redirect 301 /graph/SetupGraphBeta.exe http://www.padowan.dk/graph/DownloadBeta.php
+Redirect 301 /graph/SetupGraph.exe http://www.padowan.dk/graph/DownloadGraph.php
+Redirect 301 /graph/SetupGraph-4.2.exe http://www.padowan.dk/graph/DownloadGraph.php
 
-Redirect /graph/donate.html http://padowan.dk/graph/Donation.php
-Redirect /graph/support.html http://padowan.dk/forum
-Redirect /graph/download.php http://padowan.dk/graph/DownloadGraph.php
+Redirect 301 /graph/donate.html http://www.padowan.dk/graph/Donation.php
+Redirect 301 /graph/support.html http://www.padowan.dk/forum
+Redirect 301 /graph/download.php http://www.padowan.dk/graph/DownloadGraph.php
+Redirect 301 /index.html http://www.padowan.dk/graph
