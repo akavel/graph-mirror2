@@ -5,7 +5,7 @@
 	<indexterm><primary>installation</primary></indexterm>
 	<indexterm><primary>uninstall</primary></indexterm>
 	<indexterm><primary><filename>Graph.exe</filename></primary></indexterm>
-	<indexterm><primary>language</primary></indexterm>
+	<!--indexterm><primary>language</primary></indexterm-->
 	<indexterm><primary><filename>.mo</filename></primary></indexterm>
 	<indexterm><primary>Control panel</primary></indexterm>
 	<indexterm><primary>Add/Remove Programs</primary></indexterm>
@@ -13,8 +13,8 @@
 	<simplesect renderas="sect2">
 		<title>Installation</title>
 		<para>
-			The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version number.
-			To install, just execute the installation and follow the instructions.
+			Graph is usually distributed as an installation program named SetupGraph-x.y.exe, where x.y is the version number.
+			To install, just execute the file and follow the instructions.
 			The installation will install the following	files in the selected directory and subdirectories:
 		</para>
 
@@ -108,7 +108,7 @@
         		<entry condition="pot"><parameter>/LANG=language</parameter></entry>
         		<entry>
 							Specifies the language to use.
-							<markup><emphasis>language</emphasis></markup> specifies the English name of the language.
+							<emphasis><markup>language</markup></emphasis> specifies the English name of the language.
 							When a valid /LANG parameter is used, the <guilabel>Select language</guilabel> dialog will be suppressed.
 						</entry>
       		</row>
