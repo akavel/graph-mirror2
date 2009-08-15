@@ -892,9 +892,8 @@ translation, and your effort will be approved of!</font></p>
 
 
 
-<p><font size="+1">If you wish to help
-voluntarily, please contact me, and I will supply you with the
-necessary files. No particular programming skills are required, however
+<p><font size="+1">Please ask in the forum for the needed files and the required instructions.
+No particular programming skills are required, however
 knowledge about mathematical terms in your own language is required.</font></p>
 
 
