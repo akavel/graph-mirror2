@@ -509,7 +509,9 @@ def processElementTag(node, replacements, restart = 0):
 
             child = child.next
 
-        if mode == 'merge':
+        if node.name in ignored_tags: #Added by ijo: don't try to translate anything marked by tags that should be ignored, e.g. <markup>
+            translation = outtxt.decode("utf-8")
+        elif mode == 'merge':
             translation = getTranslation(outtxt, isSpacePreserveNode(node))
         else:
             translation = outtxt
