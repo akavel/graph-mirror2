@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2009-02-08 18:04Romance Standard Time\n"
+"POT-Creation-Date: 2009-08-25 23:32Romance Standard Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 msgid "Trigonometric"
 msgstr ""
 
-#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:40(title) Trigonometric.xml:41(primary) Trigonometric.xml:71(title) Trigonometric.xml:72(primary) Trigonometric.xml:104(title) Trigonometric.xml:105(primary) Trigonometric.xml:129(title) Trigonometric.xml:130(primary) Trigonometric.xml:154(title) Trigonometric.xml:155(primary) Trigonometric.xml:179(title) Trigonometric.xml:180(primary) Trigonometric.xml:209(title) Trigonometric.xml:210(primary) Trigonometric.xml:239(title) Trigonometric.xml:240(primary) Trigonometric.xml:269(title) Trigonometric.xml:270(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:321(title) Trigonometric.xml:322(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:41(title) Special.xml:42(primary) Special.xml:68(title) Special.xml:69(primary) Special.xml:94(title) Special.xml:95(primary) Special.xml:117(title) Special.xml:118(primary) Special.xml:147(title) Special.xml:148(primary) Special.xml:170(title) Special.xml:171(primary) Special.xml:199(title) Special.xml:200(primary) Special.xml:226(title) Special.xml:227(primary) Special.xml:251(title) Special.xml:252(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:33(title) Rounding.xml:34(primary) Rounding.xml:58(title) Rounding.xml:59(primary) Rounding.xml:81(title) Rounding.xml:82(primary) Rounding.xml:105(title) Rounding.xml:106(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:52(title) PowerAndLog.xml:53(primary) PowerAndLog.xml:74(title) PowerAndLog.xml:75(primary) PowerAndLog.xml:110(title) PowerAndLog.xml:111(primary) PowerAndLog.xml:135(title) PowerAndLog.xml:136(primary) PowerAndLog.xml:158(title) PowerAndLog.xml:159(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:33(title) Piecewise.xml:34(primary) Piecewise.xml:55(title) Piecewise.xml:56(primary) Piecewise.xml:79(title) Piecewise.xml:80(primary) Piecewise.xml:103(title) Piecewise.xml:104(primary) Piecewise.xml:128(title) Piecewise.xml:129(primary) Piecewise.xml:150(title) Piecewise.xml:151(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:33(title) Hyperbolic.xml:34(primary) Hyperbolic.xml:57(title) Hyperbolic.xml:58(primary) Hyperbolic.xml:81(title) Hyperbolic.xml:82(primary) Hyperbolic.xml:104(title) Hyperbolic.xml:105(primary) Hyperbolic.xml:128(primary) Hyperbolic.xml:132(title) Hyperbolic.xml:152(title) Hyperbolic.xml:153(primary) Hyperbolic.xml:176(title) Hyperbolic.xml:177(primary) Hyperbolic.xml:200(title) Hyperbolic.xml:201(primary) Hyperbolic.xml:225(title) Hyperbolic.xml:226(primary) Hyperbolic.xml:248(title) Hyperbolic.xml:249(primary) Hyperbolic.xml:271(title) Hyperbolic.xml:272(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:32(title) Complex.xml:33(primary) Complex.xml:59(title) Complex.xml:60(primary) Complex.xml:81(title) Complex.xml:82(primary) Complex.xml:102(title) Complex.xml:103(primary) 
+#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:47(title) Trigonometric.xml:48(primary) Trigonometric.xml:85(title) Trigonometric.xml:86(primary) Trigonometric.xml:125(title) Trigonometric.xml:126(primary) Trigonometric.xml:157(title) Trigonometric.xml:158(primary) Trigonometric.xml:189(title) Trigonometric.xml:190(primary) Trigonometric.xml:221(title) Trigonometric.xml:222(primary) Trigonometric.xml:258(title) Trigonometric.xml:259(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:332(title) Trigonometric.xml:333(primary) Trigonometric.xml:365(title) Trigonometric.xml:366(primary) Trigonometric.xml:398(title) Trigonometric.xml:399(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:49(title) Special.xml:50(primary) Special.xml:84(title) Special.xml:85(primary) Special.xml:118(title) Special.xml:119(primary) Special.xml:148(title) Special.xml:149(primary) Special.xml:186(title) Special.xml:187(primary) Special.xml:216(title) Special.xml:217(primary) Special.xml:252(title) Special.xml:253(primary) Special.xml:286(title) Special.xml:287(primary) Special.xml:318(title) Special.xml:319(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:40(title) Rounding.xml:41(primary) Rounding.xml:72(title) Rounding.xml:73(primary) Rounding.xml:102(title) Rounding.xml:103(primary) Rounding.xml:133(title) Rounding.xml:134(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:59(title) PowerAndLog.xml:60(primary) PowerAndLog.xml:88(title) PowerAndLog.xml:89(primary) PowerAndLog.xml:131(title) PowerAndLog.xml:132(primary) PowerAndLog.xml:163(title) PowerAndLog.xml:164(primary) PowerAndLog.xml:193(title) PowerAndLog.xml:194(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:40(title) Piecewise.xml:41(primary) Piecewise.xml:69(title) Piecewise.xml:70(primary) Piecewise.xml:93(title) Piecewise.xml:94(primary) Piecewise.xml:117(title) Piecewise.xml:118(primary) Piecewise.xml:142(title) Piecewise.xml:143(primary) Piecewise.xml:164(title) Piecewise.xml:165(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:40(title) Hyperbolic.xml:41(primary) Hyperbolic.xml:71(title) Hyperbolic.xml:72(primary) Hyperbolic.xml:102(title) Hyperbolic.xml:103(primary) Hyperbolic.xml:132(title) Hyperbolic.xml:133(primary) Hyperbolic.xml:163(primary) Hyperbolic.xml:167(title) Hyperbolic.xml:194(title) Hyperbolic.xml:195(primary) Hyperbolic.xml:225(title) Hyperbolic.xml:226(primary) Hyperbolic.xml:256(title) Hyperbolic.xml:257(primary) Hyperbolic.xml:288(title) Hyperbolic.xml:289(primary) Hyperbolic.xml:318(title) Hyperbolic.xml:319(primary) Hyperbolic.xml:348(title) Hyperbolic.xml:349(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:39(title) Complex.xml:40(primary) Complex.xml:73(title) Complex.xml:74(primary) Complex.xml:102(title) Complex.xml:103(primary) Complex.xml:130(title) Complex.xml:131(primary) 
 msgid "<placeholder-1/> function"
 msgstr ""
 
-#. Trigonometric.xml:11(primary) Trigonometric.xml:42(primary) Trigonometric.xml:73(primary) Trigonometric.xml:106(primary) Trigonometric.xml:131(primary) Trigonometric.xml:156(primary) Trigonometric.xml:181(primary) Trigonometric.xml:211(primary) Trigonometric.xml:241(primary) Trigonometric.xml:271(primary) Trigonometric.xml:297(primary) Trigonometric.xml:323(primary) AxesDialog.xml:27(primary) 
+#. Trigonometric.xml:11(primary) Trigonometric.xml:49(primary) Trigonometric.xml:87(primary) Trigonometric.xml:127(primary) Trigonometric.xml:159(primary) Trigonometric.xml:191(primary) Trigonometric.xml:223(primary) Trigonometric.xml:260(primary) Trigonometric.xml:297(primary) Trigonometric.xml:334(primary) Trigonometric.xml:367(primary) Trigonometric.xml:400(primary) AxesDialog.xml:27(primary) 
 msgid "trigonometry"
 msgstr ""
 
-#. Trigonometric.xml:12(primary) Trigonometric.xml:107(primary) 
+#. Trigonometric.xml:12(primary) Trigonometric.xml:128(primary) 
 msgid "sine"
 msgstr ""
 
@@ -33,27 +33,27 @@ msgstr ""
 msgid "Returns the sine of the argument."
 msgstr ""
 
-#. Trigonometric.xml:17(title) Trigonometric.xml:48(title) Trigonometric.xml:79(title) Trigonometric.xml:113(title) Trigonometric.xml:138(title) Trigonometric.xml:163(title) Trigonometric.xml:187(title) Trigonometric.xml:217(title) Trigonometric.xml:247(title) Trigonometric.xml:278(title) Trigonometric.xml:304(title) Trigonometric.xml:330(title) Special.xml:17(title) Special.xml:48(title) Special.xml:74(title) Special.xml:101(title) Special.xml:124(title) Special.xml:153(title) Special.xml:178(title) Special.xml:206(title) Special.xml:234(title) Special.xml:257(title) Rounding.xml:17(title) Rounding.xml:42(title) Rounding.xml:66(title) Rounding.xml:90(title) Rounding.xml:111(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:59(title) PowerAndLog.xml:80(title) PowerAndLog.xml:118(title) PowerAndLog.xml:142(title) PowerAndLog.xml:165(title) Piecewise.xml:16(title) Piecewise.xml:39(title) Piecewise.xml:62(title) Piecewise.xml:86(title) Piecewise.xml:109(title) Piecewise.xml:134(title) Piecewise.xml:156(title) Hyperbolic.xml:16(title) Hyperbolic.xml:40(title) Hyperbolic.xml:64(title) Hyperbolic.xml:89(title) Hyperbolic.xml:112(title) Hyperbolic.xml:137(title) Hyperbolic.xml:159(title) Hyperbolic.xml:183(title) Hyperbolic.xml:207(title) Hyperbolic.xml:233(title) Hyperbolic.xml:256(title) Hyperbolic.xml:279(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:40(title) Complex.xml:66(title) Complex.xml:88(title) Complex.xml:109(title) 
+#. Trigonometric.xml:17(title) Trigonometric.xml:55(title) Trigonometric.xml:93(title) Trigonometric.xml:134(title) Trigonometric.xml:166(title) Trigonometric.xml:198(title) Trigonometric.xml:229(title) Trigonometric.xml:266(title) Trigonometric.xml:303(title) Trigonometric.xml:341(title) Trigonometric.xml:374(title) Trigonometric.xml:407(title) Special.xml:17(title) Special.xml:56(title) Special.xml:90(title) Special.xml:125(title) Special.xml:155(title) Special.xml:192(title) Special.xml:224(title) Special.xml:259(title) Special.xml:294(title) Special.xml:324(title) Rounding.xml:17(title) Rounding.xml:49(title) Rounding.xml:80(title) Rounding.xml:111(title) Rounding.xml:139(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:66(title) PowerAndLog.xml:94(title) PowerAndLog.xml:139(title) PowerAndLog.xml:170(title) PowerAndLog.xml:200(title) Piecewise.xml:16(title) Piecewise.xml:46(title) Piecewise.xml:76(title) Piecewise.xml:100(title) Piecewise.xml:123(title) Piecewise.xml:148(title) Piecewise.xml:170(title) Hyperbolic.xml:16(title) Hyperbolic.xml:47(title) Hyperbolic.xml:78(title) Hyperbolic.xml:110(title) Hyperbolic.xml:140(title) Hyperbolic.xml:172(title) Hyperbolic.xml:201(title) Hyperbolic.xml:232(title) Hyperbolic.xml:263(title) Hyperbolic.xml:296(title) Hyperbolic.xml:326(title) Hyperbolic.xml:356(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:47(title) Complex.xml:80(title) Complex.xml:109(title) Complex.xml:137(title) 
 msgid "Syntax"
 msgstr ""
 
-#. Trigonometric.xml:21(title) Trigonometric.xml:52(title) Trigonometric.xml:83(title) Trigonometric.xml:117(title) Trigonometric.xml:142(title) Trigonometric.xml:167(title) Trigonometric.xml:191(title) Trigonometric.xml:221(title) Trigonometric.xml:251(title) Trigonometric.xml:282(title) Trigonometric.xml:308(title) Trigonometric.xml:334(title) Special.xml:21(title) Special.xml:52(title) Special.xml:78(title) Special.xml:105(title) Special.xml:128(title) Special.xml:157(title) Special.xml:182(title) Special.xml:210(title) Special.xml:238(title) Special.xml:261(title) Rounding.xml:21(title) Rounding.xml:46(title) Rounding.xml:70(title) Rounding.xml:94(title) Rounding.xml:115(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:63(title) PowerAndLog.xml:84(title) PowerAndLog.xml:122(title) PowerAndLog.xml:146(title) PowerAndLog.xml:169(title) Piecewise.xml:20(title) Piecewise.xml:43(title) Piecewise.xml:66(title) Piecewise.xml:90(title) Piecewise.xml:113(title) Piecewise.xml:138(title) Piecewise.xml:160(title) Installation.xml:28(entry) Installation.xml:82(entry) Installation.xml:153(entry) InsertRelationDialog.xml:63(term) InsertPointSeriesDialog.xml:47(term) Hyperbolic.xml:20(title) Hyperbolic.xml:44(title) Hyperbolic.xml:68(title) Hyperbolic.xml:93(title) Hyperbolic.xml:116(title) Hyperbolic.xml:141(title) Hyperbolic.xml:163(title) Hyperbolic.xml:187(title) Hyperbolic.xml:211(title) Hyperbolic.xml:237(title) Hyperbolic.xml:260(title) Hyperbolic.xml:283(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:44(title) Complex.xml:70(title) Complex.xml:92(title) Complex.xml:113(title) 
+#. Trigonometric.xml:21(title) Trigonometric.xml:59(title) Trigonometric.xml:97(title) Trigonometric.xml:138(title) Trigonometric.xml:170(title) Trigonometric.xml:202(title) Trigonometric.xml:233(title) Trigonometric.xml:270(title) Trigonometric.xml:307(title) Trigonometric.xml:345(title) Trigonometric.xml:378(title) Trigonometric.xml:411(title) Special.xml:21(title) Special.xml:60(title) Special.xml:94(title) Special.xml:129(title) Special.xml:159(title) Special.xml:196(title) Special.xml:228(title) Special.xml:263(title) Special.xml:298(title) Special.xml:328(title) Rounding.xml:21(title) Rounding.xml:53(title) Rounding.xml:84(title) Rounding.xml:115(title) Rounding.xml:143(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:70(title) PowerAndLog.xml:98(title) PowerAndLog.xml:143(title) PowerAndLog.xml:174(title) PowerAndLog.xml:204(title) Piecewise.xml:20(title) Piecewise.xml:50(title) Piecewise.xml:80(title) Piecewise.xml:104(title) Piecewise.xml:127(title) Piecewise.xml:152(title) Piecewise.xml:174(title) Installation.xml:28(entry) Installation.xml:82(entry) Installation.xml:153(entry) InsertRelationDialog.xml:69(term) InsertPointSeriesDialog.xml:48(term) Hyperbolic.xml:20(title) Hyperbolic.xml:51(title) Hyperbolic.xml:82(title) Hyperbolic.xml:114(title) Hyperbolic.xml:144(title) Hyperbolic.xml:176(title) Hyperbolic.xml:205(title) Hyperbolic.xml:236(title) Hyperbolic.xml:267(title) Hyperbolic.xml:300(title) Hyperbolic.xml:330(title) Hyperbolic.xml:360(title) FunctionList.xml:44(entry) FunctionList.xml:91(entry) FunctionList.xml:175(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:51(title) Complex.xml:84(title) Complex.xml:113(title) Complex.xml:141(title) 
 msgid "Description"
 msgstr ""
 
-#. Trigonometric.xml:24(glossterm) Trigonometric.xml:55(glossterm) Trigonometric.xml:86(glossterm) Trigonometric.xml:120(glossterm) Trigonometric.xml:145(glossterm) Trigonometric.xml:170(glossterm) Trigonometric.xml:194(glossterm) Trigonometric.xml:224(glossterm) Trigonometric.xml:254(glossterm) Trigonometric.xml:285(glossterm) Trigonometric.xml:311(glossterm) Trigonometric.xml:337(glossterm) Glossary.xml:95(glossterm) Glossary.xml:96(primary) Complex.xml:49(glossterm) 
+#. Trigonometric.xml:24(glossterm) Trigonometric.xml:62(glossterm) Trigonometric.xml:100(glossterm) Trigonometric.xml:141(glossterm) Trigonometric.xml:173(glossterm) Trigonometric.xml:205(glossterm) Trigonometric.xml:236(glossterm) Trigonometric.xml:273(glossterm) Trigonometric.xml:310(glossterm) Trigonometric.xml:348(glossterm) Trigonometric.xml:381(glossterm) Trigonometric.xml:414(glossterm) InsertPointSeriesDialog.xml:64(glossterm) Glossary.xml:95(glossterm) Glossary.xml:96(primary) Complex.xml:56(glossterm) 
 msgid "radians"
 msgstr ""
 
-#. Trigonometric.xml:25(glossterm) Trigonometric.xml:56(glossterm) Trigonometric.xml:87(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:108(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm) 
+#. Trigonometric.xml:25(glossterm) Trigonometric.xml:63(glossterm) Trigonometric.xml:101(glossterm) Trigonometric.xml:174(glossterm) Trigonometric.xml:206(glossterm) Trigonometric.xml:238(glossterm) Trigonometric.xml:275(glossterm) Trigonometric.xml:350(glossterm) Trigonometric.xml:383(glossterm) Trigonometric.xml:416(glossterm) Special.xml:132(glossterm) Special.xml:162(glossterm) Special.xml:231(glossterm) Special.xml:266(glossterm) Rounding.xml:25(glossterm) Rounding.xml:57(glossterm) Rounding.xml:87(glossterm) Rounding.xml:118(glossterm) Rounding.xml:146(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:73(glossterm) PowerAndLog.xml:101(glossterm) PowerAndLog.xml:147(glossterm) PowerAndLog.xml:177(glossterm) PowerAndLog.xml:207(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:53(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:54(glossterm) Hyperbolic.xml:85(glossterm) Hyperbolic.xml:117(glossterm) Hyperbolic.xml:147(glossterm) Hyperbolic.xml:179(glossterm) Hyperbolic.xml:208(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:270(glossterm) Hyperbolic.xml:303(glossterm) Hyperbolic.xml:333(glossterm) Hyperbolic.xml:363(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:54(glossterm) Complex.xml:87(glossterm) Complex.xml:116(glossterm) Complex.xml:144(glossterm) 
 msgid "numeric expression"
 msgstr ""
 
-#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:121(glossterm) Trigonometric.xml:146(glossterm) Trigonometric.xml:171(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:313(glossterm) Trigonometric.xml:339(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:46(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm) 
+#. Trigonometric.xml:26(glossterm) Trigonometric.xml:64(glossterm) Trigonometric.xml:102(glossterm) Trigonometric.xml:142(glossterm) Trigonometric.xml:174(glossterm) Trigonometric.xml:206(glossterm) Trigonometric.xml:238(glossterm) Trigonometric.xml:275(glossterm) Trigonometric.xml:312(glossterm) Trigonometric.xml:350(glossterm) Trigonometric.xml:383(glossterm) Trigonometric.xml:416(glossterm) Special.xml:162(glossterm) Special.xml:231(glossterm) Special.xml:266(glossterm) Rounding.xml:25(glossterm) Rounding.xml:57(glossterm) Rounding.xml:87(glossterm) Rounding.xml:118(glossterm) Rounding.xml:146(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:73(glossterm) PowerAndLog.xml:101(glossterm) PowerAndLog.xml:147(glossterm) PowerAndLog.xml:177(glossterm) PowerAndLog.xml:207(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:53(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:54(glossterm) Hyperbolic.xml:85(glossterm) Hyperbolic.xml:117(glossterm) Hyperbolic.xml:147(glossterm) Hyperbolic.xml:179(glossterm) Hyperbolic.xml:208(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:270(glossterm) Hyperbolic.xml:303(glossterm) Hyperbolic.xml:333(glossterm) Hyperbolic.xml:363(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:54(glossterm) Complex.xml:87(glossterm) Complex.xml:116(glossterm) Complex.xml:144(glossterm) 
 msgid "real number"
 msgstr ""
 
-#. Trigonometric.xml:26(glossterm) Trigonometric.xml:57(glossterm) Trigonometric.xml:88(glossterm) Trigonometric.xml:196(glossterm) Trigonometric.xml:226(glossterm) Trigonometric.xml:256(glossterm) Special.xml:131(glossterm) Special.xml:185(glossterm) Special.xml:213(glossterm) Rounding.xml:25(glossterm) Rounding.xml:50(glossterm) Rounding.xml:73(glossterm) Rounding.xml:97(glossterm) Rounding.xml:118(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:66(glossterm) PowerAndLog.xml:87(glossterm) PowerAndLog.xml:126(glossterm) PowerAndLog.xml:149(glossterm) PowerAndLog.xml:172(glossterm) Piecewise.xml:23(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:47(glossterm) Hyperbolic.xml:71(glossterm) Hyperbolic.xml:96(glossterm) Hyperbolic.xml:119(glossterm) Hyperbolic.xml:144(glossterm) Hyperbolic.xml:166(glossterm) Hyperbolic.xml:190(glossterm) Hyperbolic.xml:214(glossterm) Hyperbolic.xml:240(glossterm) Hyperbolic.xml:263(glossterm) Hyperbolic.xml:286(glossterm) Glossary.xml:13(glossterm) Glossary.xml:14(primary) Complex.xml:24(glossterm) Complex.xml:47(glossterm) Complex.xml:73(glossterm) Complex.xml:95(glossterm) Complex.xml:116(glossterm) 
+#. Trigonometric.xml:26(glossterm) Trigonometric.xml:64(glossterm) Trigonometric.xml:102(glossterm) Trigonometric.xml:238(glossterm) Trigonometric.xml:275(glossterm) Trigonometric.xml:312(glossterm) Special.xml:162(glossterm) Special.xml:231(glossterm) Special.xml:266(glossterm) Rounding.xml:25(glossterm) Rounding.xml:57(glossterm) Rounding.xml:87(glossterm) Rounding.xml:118(glossterm) Rounding.xml:146(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:73(glossterm) PowerAndLog.xml:101(glossterm) PowerAndLog.xml:147(glossterm) PowerAndLog.xml:177(glossterm) PowerAndLog.xml:207(glossterm) Piecewise.xml:23(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:54(glossterm) Hyperbolic.xml:85(glossterm) Hyperbolic.xml:117(glossterm) Hyperbolic.xml:147(glossterm) Hyperbolic.xml:179(glossterm) Hyperbolic.xml:208(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:270(glossterm) Hyperbolic.xml:303(glossterm) Hyperbolic.xml:333(glossterm) Hyperbolic.xml:363(glossterm) Glossary.xml:13(glossterm) Glossary.xml:14(primary) Complex.xml:24(glossterm) Complex.xml:54(glossterm) Complex.xml:87(glossterm) Complex.xml:116(glossterm) Complex.xml:144(glossterm) 
 msgid "complex number"
 msgstr ""
 
@@ -61,155 +61,159 @@ msgstr ""
 msgid "The <placeholder-1/> function calculates the sine of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a real number, the result will be in the range -1 to 1."
 msgstr ""
 
-#. Trigonometric.xml:31(title) Trigonometric.xml:62(title) Trigonometric.xml:92(title) Trigonometric.xml:200(title) Trigonometric.xml:230(title) Trigonometric.xml:260(title) Trigonometric.xml:344(title) Special.xml:190(title) Special.xml:217(title) PowerAndLog.xml:92(title) Constants.xml:25(title) 
+#. Trigonometric.xml:31(title) Trigonometric.xml:69(title) Trigonometric.xml:106(title) Trigonometric.xml:242(title) Trigonometric.xml:279(title) Trigonometric.xml:316(title) Trigonometric.xml:421(title) Special.xml:236(title) Special.xml:270(title) PowerAndLog.xml:106(title) Constants.xml:25(title) 
 msgid "Remarks"
 msgstr ""
 
-#. Trigonometric.xml:32(para) Trigonometric.xml:63(para) Trigonometric.xml:201(para) Trigonometric.xml:231(para) Trigonometric.xml:261(para) 
+#. Trigonometric.xml:32(para) Trigonometric.xml:70(para) Trigonometric.xml:243(para) Trigonometric.xml:280(para) Trigonometric.xml:317(para) 
 msgid "For arguments with a large magnitude, the function will begin to lose precision."
 msgstr ""
 
-#. Trigonometric.xml:43(primary) Trigonometric.xml:132(primary) 
+#. Trigonometric.xml:37(title) Trigonometric.xml:75(title) Trigonometric.xml:115(title) Trigonometric.xml:147(title) Trigonometric.xml:179(title) Trigonometric.xml:211(title) Trigonometric.xml:248(title) Trigonometric.xml:285(title) Trigonometric.xml:322(title) Trigonometric.xml:355(title) Trigonometric.xml:388(title) Trigonometric.xml:428(title) Special.xml:39(title) Special.xml:74(title) Special.xml:108(title) Special.xml:138(title) Special.xml:176(title) Special.xml:206(title) Special.xml:242(title) Special.xml:276(title) Special.xml:308(title) Special.xml:345(title) Rounding.xml:30(title) Rounding.xml:62(title) Rounding.xml:92(title) Rounding.xml:123(title) Rounding.xml:163(title) PowerAndLog.xml:49(title) PowerAndLog.xml:78(title) PowerAndLog.xml:121(title) PowerAndLog.xml:153(title) PowerAndLog.xml:183(title) PowerAndLog.xml:214(title) Piecewise.xml:30(title) Piecewise.xml:59(title) Hyperbolic.xml:30(title) Hyperbolic.xml:61(title) Hyperbolic.xml:92(title) Hyperbolic.xml:122(title) Hyperbolic.xml:152(title) Hyperbolic.xml:184(title) Hyperbolic.xml:215(title) Hyperbolic.xml:246(title) Hyperbolic.xml:278(title) Hyperbolic.xml:308(title) Hyperbolic.xml:338(title) Hyperbolic.xml:369(title) Constants.xml:38(title) Complex.xml:29(title) Complex.xml:63(title) Complex.xml:92(title) Complex.xml:120(title) Complex.xml:148(title) 
+msgid "See also"
+msgstr ""
+
+#. Trigonometric.xml:50(primary) Trigonometric.xml:160(primary) 
 msgid "cosine"
 msgstr ""
 
-#. Trigonometric.xml:44(para) 
+#. Trigonometric.xml:51(para) 
 msgid "Returns the cosine of the argument."
 msgstr ""
 
-#. Trigonometric.xml:53(para) 
+#. Trigonometric.xml:60(para) 
 msgid "The <placeholder-1/> function calculates the cosine of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a real number, the result will be in the range -1 to 1."
 msgstr ""
 
-#. Trigonometric.xml:74(primary) Trigonometric.xml:157(primary) InsertTangentDialog.xml:10(primary) 
+#. Trigonometric.xml:88(primary) Trigonometric.xml:192(primary) InsertTangentDialog.xml:10(primary) 
 msgid "tangent"
 msgstr ""
 
-#. Trigonometric.xml:75(para) 
+#. Trigonometric.xml:89(para) 
 msgid "Returns the tangent of the argument."
 msgstr ""
 
-#. Trigonometric.xml:84(para) 
+#. Trigonometric.xml:98(para) 
 msgid "The <placeholder-1/> function calculates the tangent of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>."
 msgstr ""
 
-#. Trigonometric.xml:96(glossterm) Special.xml:108(glossterm) Rounding.xml:23(glossterm) Rounding.xml:49(glossterm) Rounding.xml:72(glossterm) Rounding.xml:96(glossterm) Rounding.xml:120(glossterm) PowerAndLog.xml:94(glossterm) Glossary.xml:58(glossterm) Glossary.xml:59(primary) 
+#. Trigonometric.xml:110(glossterm) Special.xml:132(glossterm) Rounding.xml:23(glossterm) Rounding.xml:56(glossterm) Rounding.xml:86(glossterm) Rounding.xml:117(glossterm) Rounding.xml:148(glossterm) PowerAndLog.xml:108(glossterm) Glossary.xml:58(glossterm) Glossary.xml:59(primary) 
 msgid "integer"
 msgstr ""
 
-#. Trigonometric.xml:93(para) 
+#. Trigonometric.xml:107(para) 
 msgid "For arguments with a large magnitude, the function will begin to lose precision. <placeholder-1/> is undefined at <placeholder-2/>, where p is an <placeholder-3/>, but the function returns a very large number if <placeholder-4/> is near the undefined value."
 msgstr ""
 
-#. Trigonometric.xml:108(primary) 
+#. Trigonometric.xml:129(primary) 
 msgid "inverse sine"
 msgstr ""
 
-#. Trigonometric.xml:109(para) 
+#. Trigonometric.xml:130(para) 
 msgid "Returns the inverse sine of the argument."
 msgstr ""
 
-#. Trigonometric.xml:118(para) 
+#. Trigonometric.xml:139(para) 
 msgid "The <placeholder-1/> function calculates the inverse sine of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any numeric expression that evaluates to a <placeholder-5/>. This is the reverse of the <placeholder-6/> function."
 msgstr ""
 
-#. Trigonometric.xml:133(primary) 
+#. Trigonometric.xml:161(primary) 
 msgid "inverse cosine"
 msgstr ""
 
-#. Trigonometric.xml:134(para) 
+#. Trigonometric.xml:162(para) 
 msgid "Returns the inverse cosine of the argument."
 msgstr ""
 
-#. Trigonometric.xml:143(para) 
+#. Trigonometric.xml:171(para) 
 msgid "The <placeholder-1/> function calculates the inverse cosine of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/>. This is the reverse of the <placeholder-7/> function."
 msgstr ""
 
-#. Trigonometric.xml:158(primary) 
+#. Trigonometric.xml:193(primary) 
 msgid "inverse tangent"
 msgstr ""
 
-#. Trigonometric.xml:159(para) 
+#. Trigonometric.xml:194(para) 
 msgid "Returns the inverse tangent of the argument."
 msgstr ""
 
-#. Trigonometric.xml:168(para) 
+#. Trigonometric.xml:203(para) 
 msgid "The <placeholder-1/> function calculates the inverse tangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/>. This is the reverse of the <placeholder-7/> function."
 msgstr ""
 
-#. Trigonometric.xml:182(primary) Trigonometric.xml:272(primary) 
+#. Trigonometric.xml:224(primary) Trigonometric.xml:335(primary) 
 msgid "secant"
 msgstr ""
 
-#. Trigonometric.xml:183(para) 
+#. Trigonometric.xml:225(para) 
 msgid "Returns the secant of the argument."
 msgstr ""
 
-#. Trigonometric.xml:192(para) 
+#. Trigonometric.xml:234(para) 
 msgid "The <placeholder-1/> function calculates the secant of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>."
 msgstr ""
 
-#. Trigonometric.xml:212(primary) Trigonometric.xml:298(primary) 
+#. Trigonometric.xml:261(primary) Trigonometric.xml:368(primary) 
 msgid "cosecant"
 msgstr ""
 
-#. Trigonometric.xml:213(para) 
+#. Trigonometric.xml:262(para) 
 msgid "Returns the cosecant of the argument."
 msgstr ""
 
-#. Trigonometric.xml:222(para) 
+#. Trigonometric.xml:271(para) 
 msgid "The <placeholder-1/> function calculates the cosecant of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>."
 msgstr ""
 
-#. Trigonometric.xml:242(primary) Trigonometric.xml:324(primary) 
+#. Trigonometric.xml:298(primary) Trigonometric.xml:401(primary) 
 msgid "cotangent"
 msgstr ""
 
-#. Trigonometric.xml:243(para) 
+#. Trigonometric.xml:299(para) 
 msgid "Returns the cotangent of the argument."
 msgstr ""
 
-#. Trigonometric.xml:252(para) 
+#. Trigonometric.xml:308(para) 
 msgid "The <placeholder-1/> function calculates the cotangent of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any numeric expression that evaluates to a <placeholder-7/> or a <placeholder-8/>."
 msgstr ""
 
-#. Trigonometric.xml:273(primary) 
+#. Trigonometric.xml:336(primary) 
 msgid "inverse secant"
 msgstr ""
 
-#. Trigonometric.xml:274(para) 
+#. Trigonometric.xml:337(para) 
 msgid "Returns the inverse secant of the argument."
 msgstr ""
 
-#. Trigonometric.xml:283(para) 
+#. Trigonometric.xml:346(para) 
 msgid "The <placeholder-1/> function calculates the inverse secant of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
 msgstr ""
 
-#. Trigonometric.xml:299(primary) 
+#. Trigonometric.xml:369(primary) 
 msgid "inverse cosecant"
 msgstr ""
 
-#. Trigonometric.xml:300(para) 
+#. Trigonometric.xml:370(para) 
 msgid "Returns the inverse cosecant of the argument."
 msgstr ""
 
-#. Trigonometric.xml:309(para) 
+#. Trigonometric.xml:379(para) 
 msgid "The <placeholder-1/> function calculates the inverse cosecant of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
 msgstr ""
 
-#. Trigonometric.xml:325(primary) 
+#. Trigonometric.xml:402(primary) 
 msgid "inverse cotangent"
 msgstr ""
 
-#. Trigonometric.xml:326(para) 
+#. Trigonometric.xml:403(para) 
 msgid "Returns the inverse cotangent of the argument."
 msgstr ""
 
-#. Trigonometric.xml:335(para) 
+#. Trigonometric.xml:412(para) 
 msgid "The <placeholder-1/> function calculates the inverse cotangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
 msgstr ""
 
-#. Trigonometric.xml:345(para) 
+#. Trigonometric.xml:422(para) 
 msgid "The <placeholder-1/> function returns a value in the range ]-&pi;/2;&pi;/2] (]-90;90] when calculating in degrees), which is the most common definition, though some may define it to be in the range ]0;&pi;[."
 msgstr ""
 
@@ -225,47 +229,63 @@ msgstr ""
 msgid "table"
 msgstr ""
 
-#. TableDialog.xml:11(primary) 
+#. TableDialog.xml:11(primary) EvaluateDialog.xml:9(primary) 
 msgid "evaluate"
 msgstr ""
 
-#. TableDialog.xml:14(glossterm) OptionsDialog.xml:104(glossterm) MenuItems.xml:285(glossterm) MenuItems.xml:403(glossterm) MenuItems.xml:417(glossterm) MenuItems.xml:548(glossterm) InsertTangentDialog.xml:17(glossterm) InsertShadingDialog.xml:19(glossterm) InsertShadingDialog.xml:97(glossterm) InsertRelationDialog.xml:18(glossterm) InsertPointSeriesDialog.xml:21(glossterm) InsertLabelDialog.xml:27(glossterm) InsertFunctionDialog.xml:18(glossterm) HowToUse.xml:8(primary) HowToUse.xml:42(glossterm) Glossary.xml:44(glossterm) Glossary.xml:45(primary) EvaluateDialog.xml:32(glossterm) 
+#. TableDialog.xml:14(glossterm) OptionsDialog.xml:115(glossterm) MenuItems.xml:285(glossterm) MenuItems.xml:403(glossterm) MenuItems.xml:417(glossterm) MenuItems.xml:550(glossterm) InsertTangentDialog.xml:17(glossterm) InsertShadingDialog.xml:19(glossterm) InsertShadingDialog.xml:97(glossterm) InsertRelationDialog.xml:19(glossterm) InsertPointSeriesDialog.xml:22(glossterm) InsertLabelDialog.xml:27(glossterm) InsertFunctionDialog.xml:18(glossterm) HowToUse.xml:8(primary) HowToUse.xml:42(glossterm) Glossary.xml:44(glossterm) Glossary.xml:45(primary) EvaluateDialog.xml:35(glossterm) 
 msgid "function list"
 msgstr ""
 
-#. TableDialog.xml:15(guimenu) MenuItems.xml:559(guimenu) MenuItems.xml:574(guimenu) MenuItems.xml:589(guimenu) MenuItems.xml:608(guimenu) MenuItems.xml:623(guimenu) HowToUse.xml:48(guimenu) FAQ.xml:217(guimenu) EvaluateDialog.xml:18(guimenu) EvaluateDialog.xml:101(guimenu) EvaluateDialog.xml:128(guimenu) 
+#. TableDialog.xml:15(guimenu) MenuItems.xml:561(guimenu) MenuItems.xml:576(guimenu) MenuItems.xml:591(guimenu) MenuItems.xml:610(guimenu) MenuItems.xml:625(guimenu) HowToUse.xml:48(guimenu) FAQ.xml:217(guimenu) EvaluateDialog.xml:21(guimenu) EvaluateDialog.xml:104(guimenu) EvaluateDialog.xml:130(guimenu) 
 msgid "Calc"
 msgstr ""
 
-#. TableDialog.xml:12(para) 
-msgid "The dialog shown below is used to evaluate the selected function for a range. First select a function in the <placeholder-1/> and use the menu item <placeholder-2/> to show the dialog. You specify the first and last value of the independent variable and set the increment of the independent variable at each evaluation."
+#. TableDialog.xml:16(guilabel) InsertTangentDialog.xml:35(guilabel) InsertShadingDialog.xml:118(term) InsertFunctionDialog.xml:59(guilabel) AnimateDialog.xml:41(guilabel) AnimateDialog.xml:43(guilabel) 
+msgid "From"
 msgstr ""
 
-#. TableDialog.xml:19(para) 
+#. TableDialog.xml:16(guilabel) InsertTangentDialog.xml:35(guilabel) InsertShadingDialog.xml:132(term) InsertFunctionDialog.xml:59(guilabel) AnimateDialog.xml:41(guilabel) AnimateDialog.xml:43(guilabel) 
+msgid "To"
+msgstr ""
+
+#. TableDialog.xml:17(guilabel) 
+msgid "&Delta;x"
+msgstr ""
+
+#. TableDialog.xml:17(guilabel) 
+msgid "&Delta;t"
+msgstr ""
+
+#. TableDialog.xml:12(para) 
+msgid "The dialog shown below is used to evaluate the selected function for a range. First select a function in the <placeholder-1/> and use the menu item <placeholder-2/> to show the dialog. You specify the first and last value of the independent variable in the <placeholder-3/> and <placeholder-4/> fields. In the <placeholder-5/> or <placeholder-6/> field you specify the increment of the independent variable at each evaluation."
+msgstr ""
+
+#. TableDialog.xml:20(para) 
 msgid "When you press the <guibutton>Calc</guibutton> button, the table will be filled with the independent variable in the first column. The rest of the columns dependes on the type of function. For a standard function, the table will show f(x), f'(x) and f''(x). For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx. For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx. Unneeded columns can be hidden from the context menu. If the calculations takes a long time, a progress indicator will be shown."
 msgstr ""
 
-#. TableDialog.xml:34(guimenuitem) MenuItems.xml:184(guimenuitem) FAQ.xml:236(guimenuitem) 
+#. TableDialog.xml:35(guimenuitem) MenuItems.xml:184(guimenuitem) FAQ.xml:236(guimenuitem) 
 msgid "Copy"
 msgstr ""
 
-#. TableDialog.xml:32(para) 
+#. TableDialog.xml:33(para) 
 msgid "You can select some cells with the mouse and <action>right click</action> with the mouse and use <placeholder-1/> from the context menu to copy the cells to the clipboard. From the clipboard the data may be pasted into another program, e.g. Microsoft Excel."
 msgstr ""
 
-#. TableDialog.xml:43(guimenuitem) 
+#. TableDialog.xml:44(guimenuitem) 
 msgid "Select all"
 msgstr ""
 
-#. TableDialog.xml:38(para) 
+#. TableDialog.xml:39(para) 
 msgid "When you move the mouse to the left side of the table the mouse pointer changes to a right pointing arrow. Now you can select whole rows with the mouse. When you move the mouse to the top of the table, the pointer changes to a down pointing arrow. Now you can select whole columns with the mouse. The whole table may be selected by <action>right clicking</action> and selecting <placeholder-1/>. It is also possible to select cells by holding down the shift key and using the arrow keys on the keyboard."
 msgstr ""
 
-#. TableDialog.xml:47(para) 
+#. TableDialog.xml:48(para) 
 msgid "From the context menu it is also possible to export the selected data to a file as comma or tab delimited text."
 msgstr ""
 
-#. TableDialog.xml:51(para) 
+#. TableDialog.xml:52(para) 
 msgid "Note that if you choose to create a lot of values in the table, it may take some time to calculate them. Many values may also take up a lot of memory from the system."
 msgstr ""
 
@@ -277,7 +297,7 @@ msgstr ""
 msgid "numeric integral"
 msgstr ""
 
-#. Special.xml:12(primary) 
+#. Special.xml:12(primary) EvaluateDialog.xml:10(primary) 
 msgid "area"
 msgstr ""
 
@@ -285,11 +305,11 @@ msgstr ""
 msgid "Returns the numeric integral of the first argument from the second to the third argument."
 msgstr ""
 
-#. Special.xml:32(glossterm) Special.xml:61(glossterm) Special.xml:87(glossterm) Special.xml:160(glossterm) Special.xml:244(glossterm) Special.xml:267(glossterm) Piecewise.xml:70(glossterm) Piecewise.xml:94(glossterm) Piecewise.xml:119(glossterm) Piecewise.xml:142(glossterm) Piecewise.xml:167(glossterm) 
+#. Special.xml:33(glossterm) Special.xml:70(glossterm) Special.xml:104(glossterm) Special.xml:199(glossterm) Special.xml:304(glossterm) Special.xml:334(glossterm) Piecewise.xml:84(glossterm) Piecewise.xml:108(glossterm) Piecewise.xml:133(glossterm) Piecewise.xml:156(glossterm) Piecewise.xml:181(glossterm) 
 msgid "numeric expressions"
 msgstr ""
 
-#. Special.xml:32(glossterm) Special.xml:61(glossterm) Special.xml:87(glossterm) Special.xml:161(glossterm) Special.xml:244(glossterm) Special.xml:268(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:115(glossterm) Errors.xml:16(glossterm) Errors.xml:102(glossterm) 
+#. Special.xml:33(glossterm) Special.xml:70(glossterm) Special.xml:104(glossterm) Special.xml:200(glossterm) Special.xml:304(glossterm) Special.xml:335(glossterm) Piecewise.xml:85(glossterm) Piecewise.xml:109(glossterm) Piecewise.xml:134(glossterm) Piecewise.xml:157(glossterm) Piecewise.xml:182(glossterm) OptionsDialog.xml:126(glossterm) Errors.xml:16(glossterm) Errors.xml:102(glossterm) 
 msgid "real numbers"
 msgstr ""
 
@@ -297,115 +317,115 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the numeric integral of <placeholder-2/> from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/> This integral is the same as the area between the function <placeholder-6/> and the x-axis from <placeholder-7/> to <placeholder-8/> where the area under the axis is counted negative. <placeholder-9/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric function. <placeholder-10/> and <placeholder-11/> may be any <placeholder-12/> that evaluate to <placeholder-13/>. <placeholder-14/> does not calculate the integral exactly. Instead the calculation is done using Simpson's formula through 100 iterations."
 msgstr ""
 
-#. Special.xml:43(primary) 
+#. Special.xml:51(primary) 
 msgid "summation"
 msgstr ""
 
-#. Special.xml:44(para) 
+#. Special.xml:52(para) 
 msgid "Returns the summation of the first argument evaluated for all integers from the second to the third argument."
 msgstr ""
 
-#. Special.xml:53(para) 
+#. Special.xml:61(para) 
 msgid "The <placeholder-1/> function returns the summation of <placeholder-2/> evaluated for all integers from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/>\n\t\t\t\t<placeholder-6/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function. <placeholder-7/> and <placeholder-8/> may be any <placeholder-9/> that evaluate to <placeholder-10/>."
 msgstr ""
 
-#. Special.xml:70(para) 
+#. Special.xml:86(para) 
 msgid "Returns the product of the first argument evaluated for all integers from the second to the third argument."
 msgstr ""
 
-#. Special.xml:79(para) 
+#. Special.xml:95(para) 
 msgid "The <placeholder-1/> function returns the product of <placeholder-2/> evaluated for all integers from <placeholder-3/> to <placeholder-4/>. This is mathematically written as: <placeholder-5/>\n\t\t\t\t<placeholder-6/> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function. <placeholder-7/> and <placeholder-8/> may be any <placeholder-9/> that evaluate to <placeholder-10/>."
 msgstr ""
 
-#. Special.xml:96(primary) Special.xml:119(primary) 
+#. Special.xml:120(primary) Special.xml:150(primary) 
 msgid "factorial"
 msgstr ""
 
-#. Special.xml:97(para) FunctionList.xml:406(entry) 
+#. Special.xml:121(para) FunctionList.xml:406(entry) 
 msgid "Returns the factorial of the argument."
 msgstr ""
 
-#. Special.xml:106(para) 
+#. Special.xml:130(para) 
 msgid "The <placeholder-1/> function returns the factorial of <placeholder-2/>, commonly written as n!. <placeholder-3/> may be any <placeholder-4/> that evaluates to a positive <placeholder-5/>. The function is defined as <placeholder-6/>, and relates to the <placeholder-7/> function as <placeholder-8/>."
 msgstr ""
 
-#. Special.xml:120(para) 
+#. Special.xml:151(para) 
 msgid "Returns the value of the Euler gamma function of the argument."
 msgstr ""
 
-#. Special.xml:129(para) 
+#. Special.xml:160(para) 
 msgid "The <placeholder-1/> function returns the result of the Euler gamma function of <placeholder-2/>, commonly written as &Gamma;(z). <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The gamma function relates to the factorial function as <placeholder-7/>. The mathematical definition of the gamma function is: <placeholder-8/> This cannot be calculated precisely, so Graph is using the so-called Lanczos approximation to calculate the <placeholder-9/> function."
 msgstr ""
 
-#. Special.xml:149(para) 
+#. Special.xml:188(para) 
 msgid "Returns the value of the Euler beta function evaluated for the arguments."
 msgstr ""
 
-#. Special.xml:161(glossterm) Piecewise.xml:71(glossterm) Piecewise.xml:95(glossterm) Piecewise.xml:120(glossterm) Piecewise.xml:143(glossterm) Piecewise.xml:168(glossterm) OptionsDialog.xml:117(glossterm) Errors.xml:103(glossterm) AxesDialog.xml:25(primary) AxesDialog.xml:205(glossterm) AxesDialog.xml:229(glossterm) 
+#. Special.xml:200(glossterm) Piecewise.xml:85(glossterm) Piecewise.xml:109(glossterm) Piecewise.xml:134(glossterm) Piecewise.xml:157(glossterm) Piecewise.xml:182(glossterm) OptionsDialog.xml:128(glossterm) Errors.xml:103(glossterm) AxesDialog.xml:25(primary) AxesDialog.xml:205(glossterm) AxesDialog.xml:229(glossterm) 
 msgid "complex numbers"
 msgstr ""
 
-#. Special.xml:158(para) 
+#. Special.xml:197(para) 
 msgid "The <placeholder-1/> function returns the result of the Euler beta function evaluated for <placeholder-2/> and <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluate to <placeholder-7/> or <placeholder-8/>. The <placeholder-9/> function relates to the <placeholder-10/> function as <placeholder-11/>."
 msgstr ""
 
-#. Special.xml:172(primary) 
+#. Special.xml:218(primary) 
 msgid "Lambert W-function"
 msgstr ""
 
-#. Special.xml:173(primary) 
+#. Special.xml:219(primary) 
 msgid "omega function"
 msgstr ""
 
-#. Special.xml:174(para) 
+#. Special.xml:220(para) 
 msgid "Returns the value of the Lambert W-function evaluated for the argument."
 msgstr ""
 
-#. Special.xml:183(para) 
+#. Special.xml:229(para) 
 msgid "The <placeholder-1/> function returns the result of the Lambert W-function, also known as the omega function, evaluated for <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The inverse of the <placeholder-7/> function is given by <placeholder-8/>."
 msgstr ""
 
-#. Special.xml:191(para) 
+#. Special.xml:237(para) 
 msgid "For real values of <placeholder-1/> when <placeholder-2/>, the <placeholder-3/> function will evaluate to values with an imaginary part."
 msgstr ""
 
-#. Special.xml:201(primary) 
+#. Special.xml:254(primary) 
 msgid "Riemann Zeta function"
 msgstr ""
 
-#. Special.xml:202(para) 
+#. Special.xml:255(para) 
 msgid "Returns the value of the Riemann Zeta function evaluated for the argument."
 msgstr ""
 
-#. Special.xml:211(para) 
+#. Special.xml:264(para) 
 msgid "The <placeholder-1/> function returns the result of the Riemann Zeta function, commonly written as &zeta;(s). <placeholder-2/> may be any <placeholder-3/> that evaluates to a <placeholder-4/> or a <placeholder-5/>."
 msgstr ""
 
-#. Special.xml:218(para) 
+#. Special.xml:271(para) 
 msgid "The <placeholder-1/> function is defined for the whole complex plane except for the pole at <placeholder-2/>=1."
 msgstr ""
 
-#. Special.xml:228(primary) 
+#. Special.xml:288(primary) 
 msgid "modulus"
 msgstr ""
 
-#. Special.xml:229(primary) 
+#. Special.xml:289(primary) 
 msgid "remainder"
 msgstr ""
 
-#. Special.xml:230(para) FunctionList.xml:426(entry) 
+#. Special.xml:290(para) FunctionList.xml:426(entry) 
 msgid "Returns the remainder of the first argument divided by the second argument."
 msgstr ""
 
-#. Special.xml:239(para) 
+#. Special.xml:299(para) 
 msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>, <placeholder-8/> returns 0. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr ""
 
-#. Special.xml:253(para) FunctionList.xml:430(entry) 
+#. Special.xml:320(para) FunctionList.xml:430(entry) 
 msgid "Returns the normal distribution of the first argument with optional mean value and standard deviation."
 msgstr ""
 
-#. Special.xml:262(para) 
+#. Special.xml:329(para) 
 msgid "The <placeholder-1/> function is the probability density of the normal distribution, also called Gaussian distribution. <placeholder-2/> is the variate, also known as the random variable, <placeholder-3/> is the mean value and &sigma; is the standard deviation. <placeholder-4/> and &sigma; are optional and if left out the standard normal distribution is used where <placeholder-5/> and &sigma;=1. <placeholder-6/>, <placeholder-7/> and &sigma; may be any <placeholder-8/> that evaluate to <placeholder-9/> where &sigma; &gt; 0. The normal distribution is defined as: <placeholder-10/>"
 msgstr ""
 
@@ -433,11 +453,11 @@ msgstr ""
 msgid "bitmap"
 msgstr ""
 
-#. SaveImageDialog.xml:20(guimenu) OptionsDialog.xml:37(guimenu) MenuItems.xml:15(guimenu) MenuItems.xml:29(guimenu) MenuItems.xml:43(guimenu) MenuItems.xml:55(guimenu) MenuItems.xml:67(guimenu) MenuItems.xml:82(guimenu) MenuItems.xml:95(guimenu) MenuItems.xml:112(guimenu) MenuItems.xml:126(guimenu) 
+#. SaveImageDialog.xml:21(guimenu) OptionsDialog.xml:37(guimenu) MenuItems.xml:15(guimenu) MenuItems.xml:29(guimenu) MenuItems.xml:43(guimenu) MenuItems.xml:55(guimenu) MenuItems.xml:67(guimenu) MenuItems.xml:82(guimenu) MenuItems.xml:95(guimenu) MenuItems.xml:112(guimenu) MenuItems.xml:126(guimenu) 
 msgid "File"
 msgstr ""
 
-#. SaveImageDialog.xml:20(guimenuitem) MenuItems.xml:67(guimenuitem) 
+#. SaveImageDialog.xml:21(guimenuitem) MenuItems.xml:67(guimenuitem) 
 msgid "Save as image..."
 msgstr ""
 
@@ -445,35 +465,67 @@ msgstr ""
 msgid "Save As"
 msgstr ""
 
-#. SaveImageDialog.xml:19(para) 
-msgid "Use the menu item <placeholder-1/> to save the shown coordinate system as an image file. Graph supports five formats: Windows Enhanced Metafile (emf), Windows Bitmap (bmp), Portable Network Graphics (png), Joint Photographic Experts Group (jpeg) and Portable Document Format (pdf). When the menu item has been chosen, a standard <placeholder-2/> dialog will appear. In this dialog you write a filename, choose a directory and select one of the image types."
+#. SaveImageDialog.xml:20(para) 
+msgid "Use the menu item <placeholder-1/> to save the shown coordinate system as an image file. When the menu item has been chosen, a standard <placeholder-2/> dialog will appear. In this dialog you write a filename, choose a directory and select one of the following image types:"
 msgstr ""
 
-#. SaveImageDialog.xml:25(para) 
-msgid "bmp and png are both bitmaps, and the picture will be saved exactly like you see it on the screen. emf files are used for vector graphics. The Options button in the save dialog can be used to change the image size. You may also be able to change other settings depending on the chosen image format."
+#. SaveImageDialog.xml:28(term) 
+msgid "Windows Enhanced Metafile (emf)"
 msgstr ""
 
-#. SaveImageDialog.xml:31(para) 
-msgid "Metafiles (emf) should be the preferred format, because it is small and looks nice even then it is scaled. Windows Bitmap (bmp) is a standard format supported by almost all Windows programs that can read graphics files. Portable Network Graphics (png) is a format that is better compressed than bmp files. This is the most sustainable format for web pages, because it is small and can be understood by all browsers."
+#. SaveImageDialog.xml:30(para) 
+msgid "Metafiles are usually preferred because they are small and look nice even when scaled. Though emf files are widely supported under MS Windows, they are not very portable."
 msgstr ""
 
-#. SaveImageDialog.xml:37(para) 
+#. SaveImageDialog.xml:38(term) 
+msgid "Scalable Vector Graphics (svg)"
+msgstr ""
+
+#. SaveImageDialog.xml:40(para) 
+msgid "This is a format for portable metafiles and should therefore be preferred for files placed on the Internet. However the format is still not supported by all browsers."
+msgstr ""
+
+#. SaveImageDialog.xml:48(term) 
+msgid "Portable Network Graphics (png)"
+msgstr ""
+
+#. SaveImageDialog.xml:50(para) 
+msgid "Portable Network Graphics (png) is a format that is better compressed than bmp files. This is the most sustainable format for web pages, because it is small and can be understood by all browsers."
+msgstr ""
+
+#. SaveImageDialog.xml:58(term) 
+msgid "Windows Bitmap (bmp)"
+msgstr ""
+
+#. SaveImageDialog.xml:60(para) 
+msgid "Windows Bitmap (bmp) is a standard format supported by almost all Windows programs that can read graphics files."
+msgstr ""
+
+#. SaveImageDialog.xml:67(term) 
+msgid "Joint Photographic Experts Group (jpeg)"
+msgstr ""
+
+#. SaveImageDialog.xml:69(para) 
 msgid "Joint Photographic Experts Group (jpeg) is a bitmap format with loss. It is supported but not recommended because graphs will usually become blurred."
 msgstr ""
 
-#. SaveImageDialog.xml:41(para) 
+#. SaveImageDialog.xml:77(term) 
+msgid "Portable Document Format (pdf)"
+msgstr ""
+
+#. SaveImageDialog.xml:79(para) 
 msgid "Portable Document Format (pdf) is actually not an image format. It is a way to store documents as postscript in a portable way. Graph will store the image as Portable Network Graphics inside the pdf file."
 msgstr ""
 
-#. SaveImageDialog.xml:46(para) 
-msgid "CompuServe Graphics Interchange (gif) is not supported because it uses the LZW compression, which is patented by Unisys."
+#. SaveImageDialog.xml:88(para) 
+msgid "The <guibutton>Options...</guibutton> button in the save dialog can be used to change the image size. You may also be able to change other settings depending on the chosen image format."
 msgstr ""
 
 #. Rounding.xml:7(title) FunctionList.xml:336(emphasis) 
 msgid "Rounding"
 msgstr ""
 
-#. Rounding.xml:11(primary) Rounding.xml:35(primary) Rounding.xml:60(primary) Rounding.xml:83(primary) 
+#. Rounding.xml:11(primary) Rounding.xml:42(primary) Rounding.xml:74(primary) Rounding.xml:104(primary) 
 msgid "rounding"
 msgstr ""
 
@@ -489,59 +541,59 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the <placeholder-2/> part of <placeholder-3/>. The function removes the decimal part of <placeholder-4/>, i.e. rounds against zero. <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If <placeholder-9/> is a complex number, the function returns <placeholder-10/>."
 msgstr ""
 
-#. Rounding.xml:36(primary) 
+#. Rounding.xml:43(primary) 
 msgid "fractional part"
 msgstr ""
 
-#. Rounding.xml:37(primary) 
+#. Rounding.xml:44(primary) 
 msgid "decimal part"
 msgstr ""
 
-#. Rounding.xml:38(para) FunctionList.xml:344(entry) 
+#. Rounding.xml:45(para) FunctionList.xml:344(entry) 
 msgid "Returns the fractional part of the argument."
 msgstr ""
 
-#. Rounding.xml:47(para) 
+#. Rounding.xml:54(para) 
 msgid "The <placeholder-1/> function returns the fractional part of <placeholder-2/>. The function removes the <placeholder-3/> part of <placeholder-4/>, i.e. <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>. If <placeholder-10/> is a complex number, the function returns <placeholder-11/>."
 msgstr ""
 
-#. Rounding.xml:61(primary) 
+#. Rounding.xml:75(primary) 
 msgid "round up"
 msgstr ""
 
-#. Rounding.xml:62(para) 
+#. Rounding.xml:76(para) 
 msgid "Rounds the argument up."
 msgstr ""
 
-#. Rounding.xml:71(para) 
+#. Rounding.xml:85(para) 
 msgid "The <placeholder-1/> function finds the smallest <placeholder-2/> not less than <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>."
 msgstr ""
 
-#. Rounding.xml:84(primary) 
+#. Rounding.xml:105(primary) 
 msgid "round down"
 msgstr ""
 
-#. Rounding.xml:85(primary) 
+#. Rounding.xml:106(primary) 
 msgid "greatest integer"
 msgstr ""
 
-#. Rounding.xml:86(para) 
+#. Rounding.xml:107(para) 
 msgid "Rounds the argument down."
 msgstr ""
 
-#. Rounding.xml:95(para) 
+#. Rounding.xml:116(para) 
 msgid "The <placeholder-1/> function, which is also called the greatest integer function, gives the largest <placeholder-2/> not greater than <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>."
 msgstr ""
 
-#. Rounding.xml:107(para) 
+#. Rounding.xml:135(para) 
 msgid "Rounds a number to the specified number of decimals."
 msgstr ""
 
-#. Rounding.xml:116(para) 
+#. Rounding.xml:144(para) 
 msgid "The <placeholder-1/> function rounds <placeholder-2/> to the number of decimals given by <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>. <placeholder-10/> may be any numeric expression that evaluates to an <placeholder-11/>. If <placeholder-12/>&lt;0, <placeholder-13/> is rounded to <placeholder-14/> places to the left of the decimal point."
 msgstr ""
 
-#. Rounding.xml:125(title) 
+#. Rounding.xml:153(title) 
 msgid "Examples"
 msgstr ""
 
@@ -573,67 +625,67 @@ msgstr ""
 msgid "The <placeholder-1/> function is used to raise <emphasis>e</emphasis>, Euler's constant, to the power of <placeholder-2/>. This is the same as <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>."
 msgstr ""
 
-#. PowerAndLog.xml:54(primary) 
+#. PowerAndLog.xml:61(primary) 
 msgid "square root"
 msgstr ""
 
-#. PowerAndLog.xml:55(para) FunctionList.xml:294(entry) 
+#. PowerAndLog.xml:62(para) FunctionList.xml:294(entry) 
 msgid "Returns the square root of the argument."
 msgstr ""
 
-#. PowerAndLog.xml:64(para) 
+#. PowerAndLog.xml:71(para) 
 msgid "The <placeholder-1/> function calculates the square root of <placeholder-2/>, i.e. <placeholder-3/> raised to the power of &frac12;. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/> &ge; 0."
 msgstr ""
 
-#. PowerAndLog.xml:76(para) 
+#. PowerAndLog.xml:90(para) 
 msgid "Returns the <placeholder-1/> root of the argument."
 msgstr ""
 
-#. PowerAndLog.xml:85(para) 
+#. PowerAndLog.xml:99(para) 
 msgid "The <placeholder-1/> function calculates the <placeholder-2/><superscript>th</superscript> root of <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-9/> &ge; 0."
 msgstr ""
 
-#. PowerAndLog.xml:93(para) 
+#. PowerAndLog.xml:107(para) 
 msgid "When the calculation is done with real numbers, the function is only defined for <placeholder-1/>&lt;0 if <placeholder-2/> is an odd <placeholder-3/>. For calculations with complex numbers, <placeholder-4/> is defined for the whole complex plane except at the pole <placeholder-5/>=0. Notice that for calculations with complex numbers the result will always have an imaginary part when <placeholder-6/>&lt;0 even though the result is real when calculations are done with real numbers and <placeholder-7/> is an odd integer."
 msgstr ""
 
-#. PowerAndLog.xml:101(title) 
+#. PowerAndLog.xml:115(title) 
 msgid "Example"
 msgstr ""
 
-#. PowerAndLog.xml:102(para) 
+#. PowerAndLog.xml:116(para) 
 msgid "Instead of <placeholder-1/>, you can use <placeholder-2/>."
 msgstr ""
 
-#. PowerAndLog.xml:112(primary) PowerAndLog.xml:137(primary) PowerAndLog.xml:160(primary) 
+#. PowerAndLog.xml:133(primary) PowerAndLog.xml:165(primary) PowerAndLog.xml:195(primary) 
 msgid "logarithm"
 msgstr ""
 
-#. PowerAndLog.xml:113(primary) 
+#. PowerAndLog.xml:134(primary) 
 msgid "natural logarithm"
 msgstr ""
 
-#. PowerAndLog.xml:114(para) 
+#. PowerAndLog.xml:135(para) 
 msgid "Returns the natural logarithm of the argument."
 msgstr ""
 
-#. PowerAndLog.xml:123(para) 
+#. PowerAndLog.xml:144(para) 
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <emphasis>e</emphasis>, which is Euler's constant. <placeholder-3/> is commonly known as the natural logarithm. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/>&gt;0. When calculating with complex numbers, <placeholder-9/> is defined for all numbers except <placeholder-10/>=0."
 msgstr ""
 
-#. PowerAndLog.xml:138(para) 
+#. PowerAndLog.xml:166(para) 
 msgid "Returns the base 10 logarithm of the argument."
 msgstr ""
 
-#. PowerAndLog.xml:147(para) 
+#. PowerAndLog.xml:175(para) 
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base 10. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-7/>&gt;0. When calculating with complex numbers, <placeholder-8/> is defined for all numbers except <placeholder-9/>=0."
 msgstr ""
 
-#. PowerAndLog.xml:161(para) 
+#. PowerAndLog.xml:196(para) 
 msgid "Returns the base <placeholder-1/> logarithm of the argument."
 msgstr ""
 
-#. PowerAndLog.xml:170(para) 
+#. PowerAndLog.xml:205(para) 
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/>&gt;0. When calculating with complex numbers, <placeholder-9/> is defined for all numbers except <placeholder-10/>=0. <placeholder-11/> must evaluate to a positive real number."
 msgstr ""
 
@@ -653,59 +705,59 @@ msgstr ""
 msgid "The <placeholder-1/> function, which is also called signum, returns the sign of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. When <placeholder-7/> is a real number, <placeholder-8/> returns 1 for <placeholder-9/>&gt;0 and -1 for <placeholder-10/>&lt;0. <placeholder-11/> returns 0 for <placeholder-12/>=0. When <placeholder-13/> evaluates to a complex number, <placeholder-14/> returns <placeholder-15/>."
 msgstr ""
 
-#. Piecewise.xml:35(para) 
+#. Piecewise.xml:42(para) 
 msgid "The unit step function."
 msgstr ""
 
-#. Piecewise.xml:44(para) 
+#. Piecewise.xml:51(para) 
 msgid "<placeholder-1/> is commonly known as the unit step function. <placeholder-2/> may be any <placeholder-3/> that evaluates to a <placeholder-4/>. The function is undefined when <placeholder-5/> has an imaginary part. <placeholder-6/> returns 1 for <placeholder-7/>&ge;0 and 0 for <placeholder-8/>&lt;0."
 msgstr ""
 
-#. Piecewise.xml:57(primary) AxesDialog.xml:12(primary) 
+#. Piecewise.xml:71(primary) AxesDialog.xml:12(primary) 
 msgid "minimum"
 msgstr ""
 
-#. Piecewise.xml:58(para) 
+#. Piecewise.xml:72(para) 
 msgid "Finds and returns the minimum of the values passed as arguments."
 msgstr ""
 
-#. Piecewise.xml:67(para) 
+#. Piecewise.xml:81(para) 
 msgid "The <placeholder-1/> function returns the minimum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <placeholder-3/> that evaluate to <placeholder-4/> or <placeholder-5/>. If the arguments are complex numbers, the function returns <placeholder-6/>."
 msgstr ""
 
-#. Piecewise.xml:81(primary) AxesDialog.xml:13(primary) 
+#. Piecewise.xml:95(primary) AxesDialog.xml:13(primary) 
 msgid "maximum"
 msgstr ""
 
-#. Piecewise.xml:82(para) 
+#. Piecewise.xml:96(para) 
 msgid "Finds and returns the maximum of the values passed as arguments."
 msgstr ""
 
-#. Piecewise.xml:91(para) 
+#. Piecewise.xml:105(para) 
 msgid "The <placeholder-1/> function returns the maximum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <placeholder-3/> that evaluate to <placeholder-4/> or <placeholder-5/>. If the arguments are complex numbers, the function returns <placeholder-6/>."
 msgstr ""
 
-#. Piecewise.xml:105(para) 
+#. Piecewise.xml:119(para) 
 msgid "Returns the second argument if it is in the range between the first argument and the third argument."
 msgstr ""
 
-#. Piecewise.xml:114(para) 
+#. Piecewise.xml:128(para) 
 msgid "The <placeholder-1/> function returns <placeholder-2/>, if <placeholder-3/> is greater than <placeholder-4/> and less than <placeholder-5/>. If <placeholder-6/> &lt; <placeholder-7/> then <placeholder-8/> is returned. If <placeholder-9/> &gt; <placeholder-10/> then <placeholder-11/> is returned. The arguments may be any <placeholder-12/> that evaluate to <placeholder-13/> or <placeholder-14/>. The function has the same effect as <placeholder-15/>."
 msgstr ""
 
-#. Piecewise.xml:130(para) 
+#. Piecewise.xml:144(para) 
 msgid "Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned."
 msgstr ""
 
-#. Piecewise.xml:139(para) 
+#. Piecewise.xml:153(para) 
 msgid "The <placeholder-1/> function returns <placeholder-2/> if <placeholder-3/> evaluates to a value different from 0. If <placeholder-4/> evaluates to 0, <placeholder-5/> is returned. The arguments may be any <placeholder-6/> that evaluate to <placeholder-7/> or <placeholder-8/>."
 msgstr ""
 
-#. Piecewise.xml:152(para) 
+#. Piecewise.xml:166(para) 
 msgid "Evaluates a sequence of if functions and returns the first result found with a condition different from zero."
 msgstr ""
 
-#. Piecewise.xml:161(para) 
+#. Piecewise.xml:175(para) 
 msgid "The <placeholder-1/> function evaluates <placeholder-2/> and if it is different from 0 then <placeholder-3/> is evaluated and returned. Else <placeholder-4/> is evaluated and if it is different from 0 then <placeholder-5/> is returned and so forth. If none of the conditions are true <placeholder-6/> is returned. <placeholder-7/> is optional and if not specified <placeholder-8/> returns an error if none of the conditions are true. If <placeholder-9/> has 3 arguments it will be the same as the <placeholder-10/> function. The arguments may be any <placeholder-11/> that evaluate to <placeholder-12/> or <placeholder-13/>."
 msgstr ""
 
@@ -770,82 +822,90 @@ msgid "This shows a list of available languages for the program. The selected la
 msgstr ""
 
 #. OptionsDialog.xml:78(term) 
-msgid "Associate .grf files"
+msgid "Custom decimal separator"
 msgstr ""
 
 #. OptionsDialog.xml:80(para) 
+msgid "Decimal separator used when data are exported to files and the clipboard. When disabled the decimal separator from the Windows Regional settings is used. This is not used for expressions entered into Graph, which always use a dot as decimal separator."
+msgstr ""
+
+#. OptionsDialog.xml:89(term) 
+msgid "Associate .grf files"
+msgstr ""
+
+#. OptionsDialog.xml:91(para) 
 msgid "A check mark in this field indicates that the file type .grf is associated with this program. The program will automatically start and load the file when you <action>double-click</action> on it in Explorer."
 msgstr ""
 
-#. OptionsDialog.xml:88(term) 
+#. OptionsDialog.xml:99(term) 
 msgid "Show tooltip"
 msgstr ""
 
-#. OptionsDialog.xml:90(para) 
+#. OptionsDialog.xml:101(para) 
 msgid "When there is a mark in this field, you will see a small box with an explanation when you are holding the mouse pointer over an object, like an edit field, selection box, etc., for a few seconds. The description is also shown in the status bar at the bottom of the main window."
 msgstr ""
 
-#. OptionsDialog.xml:99(term) FAQ.xml:125(guilabel) 
+#. OptionsDialog.xml:110(term) FAQ.xml:125(guilabel) 
 msgid "Save workspace on exit"
 msgstr ""
 
-#. OptionsDialog.xml:101(para) 
+#. OptionsDialog.xml:112(para) 
 msgid "When there is a mark in this field, Graph will save the size of the main window before it quits. The next time you start the program the saved size will be used. In addition the width of the <placeholder-1/> is also stored. When the field doesn't have a mark the options that were last saved will be used."
 msgstr ""
 
-#. OptionsDialog.xml:111(term) OptionsDialog.xml:123(guilabel) 
+#. OptionsDialog.xml:122(term) OptionsDialog.xml:134(guilabel) 
 msgid "Complex form"
 msgstr ""
 
-#. OptionsDialog.xml:115(guilabel) OptionsDialog.xml:124(guilabel) 
+#. OptionsDialog.xml:126(guilabel) OptionsDialog.xml:135(guilabel) 
 msgid "Real"
 msgstr ""
 
-#. OptionsDialog.xml:117(guilabel) OptionsDialog.xml:125(guilabel) 
+#. OptionsDialog.xml:128(guilabel) OptionsDialog.xml:136(guilabel) 
 msgid "Rectangular"
 msgstr ""
 
-#. OptionsDialog.xml:118(guilabel) OptionsDialog.xml:125(guilabel) 
+#. OptionsDialog.xml:129(guilabel) OptionsDialog.xml:136(guilabel) InsertPointSeriesDialog.xml:62(guilabel) 
 msgid "Polar"
 msgstr ""
 
-#. OptionsDialog.xml:119(guilabel) AxesDialog.xml:228(guilabel) 
+#. OptionsDialog.xml:130(guilabel) AxesDialog.xml:228(guilabel) 
 msgid "Radian"
 msgstr ""
 
-#. OptionsDialog.xml:119(guilabel) AxesDialog.xml:228(guilabel) 
+#. OptionsDialog.xml:130(guilabel) AxesDialog.xml:228(guilabel) 
 msgid "Degree"
 msgstr ""
 
-#. OptionsDialog.xml:119(guilabel) AxesDialog.xml:225(term) 
+#. OptionsDialog.xml:130(guilabel) AxesDialog.xml:225(term) 
 msgid "Trigonometry"
 msgstr ""
 
-#. OptionsDialog.xml:113(para) 
+#. OptionsDialog.xml:124(para) 
 msgid "Choose how you want a complex number to be shown in the <placeholder-1/> frame. <placeholder-2/> means that only <placeholder-3/> are shown. If a number has an imaginary part then the number won't be shown and instead you get an error. <placeholder-4/> means that <placeholder-5/> are shown as a+b&imag;, where a is the real part and b is the imaginary part. <placeholder-6/> means that numbers are shown as a&ang;&theta;, where a is the absolute value of the number and &theta; is the angle of the number. &theta; is dependent of the choice between <placeholder-7/> and <placeholder-8/> under <placeholder-9/> in the <placeholder-10/> dialog."
 msgstr ""
 
-#. OptionsDialog.xml:122(para) 
+#. OptionsDialog.xml:133(para) 
 msgid "Notice that in some cases you may get a different result in the <placeholder-1/> frame depending on the <placeholder-2/> setting: When <placeholder-3/> is chosen, Graph will try to find a real result if possible, while <placeholder-4/> and <placeholder-5/> may give a non-real result for the same evaluation."
 msgstr ""
 
-#. OptionsDialog.xml:131(term) 
+#. OptionsDialog.xml:142(term) 
 msgid "Check for new version of Graph at startup"
 msgstr ""
 
-#. OptionsDialog.xml:139(guimenu) MenuItems.xml:640(guimenu) MenuItems.xml:654(guimenu) MenuItems.xml:668(guimenu) MenuItems.xml:681(guimenu) MenuItems.xml:694(guimenu) MenuItems.xml:707(guimenu) MenuItems.xml:720(guimenu) MenuItems.xml:733(guimenu) MenuItems.xml:747(guimenu) Introduction.xml:41(guimenu) 
+#. OptionsDialog.xml:150(guimenu) MenuItems.xml:642(guimenu) MenuItems.xml:656(guimenu) MenuItems.xml:670(guimenu) MenuItems.xml:683(guimenu) MenuItems.xml:696(guimenu) MenuItems.xml:709(guimenu) MenuItems.xml:722(guimenu) MenuItems.xml:735(guimenu) MenuItems.xml:749(guimenu) Introduction.xml:41(guimenu) 
 msgid "Help"
 msgstr ""
 
-#. OptionsDialog.xml:140(guisubmenu) MenuItems.xml:694(guisubmenu) MenuItems.xml:707(guisubmenu) MenuItems.xml:720(guisubmenu) MenuItems.xml:733(guisubmenu) 
+#. OptionsDialog.xml:151(guisubmenu) MenuItems.xml:696(guisubmenu) MenuItems.xml:709(guisubmenu) MenuItems.xml:722(guisubmenu) MenuItems.xml:735(guisubmenu) 
 msgid "Internet"
 msgstr ""
 
-#. OptionsDialog.xml:141(guimenuitem) MenuItems.xml:733(guimenuitem) 
+#. OptionsDialog.xml:152(guimenuitem) MenuItems.xml:735(guimenuitem) 
 msgid "Check for update"
 msgstr ""
 
-#. OptionsDialog.xml:133(para) 
+#. OptionsDialog.xml:144(para) 
 msgid "When checked each time the program starts it will check if a newer version of Graph is available on the Internet. If a new version is found you will be asked if you want to visit the web site for Graph to upgrade. If no new version is available you will not see any messages. If disabled, you can still use <placeholder-1/> to see if a new version is available."
 msgstr ""
 
@@ -945,7 +1005,7 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#. MenuItems.xml:16(keycap) MenuItems.xml:30(keycap) MenuItems.xml:44(keycap) MenuItems.xml:68(keycap) MenuItems.xml:113(keycap) MenuItems.xml:143(keycap) MenuItems.xml:157(keycap) MenuItems.xml:171(keycap) MenuItems.xml:185(keycap) MenuItems.xml:199(keycap) MenuItems.xml:213(keycap) MenuItems.xml:228(keycap) MenuItems.xml:347(keycap) MenuItems.xml:426(keycap) MenuItems.xml:442(keycap) MenuItems.xml:456(keycap) MenuItems.xml:470(keycap) MenuItems.xml:485(keycap) MenuItems.xml:501(keycap) MenuItems.xml:515(keycap) MenuItems.xml:590(keycap) MenuItems.xml:655(keycap) 
+#. MenuItems.xml:16(keycap) MenuItems.xml:30(keycap) MenuItems.xml:44(keycap) MenuItems.xml:68(keycap) MenuItems.xml:113(keycap) MenuItems.xml:143(keycap) MenuItems.xml:157(keycap) MenuItems.xml:171(keycap) MenuItems.xml:185(keycap) MenuItems.xml:199(keycap) MenuItems.xml:213(keycap) MenuItems.xml:228(keycap) MenuItems.xml:347(keycap) MenuItems.xml:427(keycap) MenuItems.xml:444(keycap) MenuItems.xml:458(keycap) MenuItems.xml:472(keycap) MenuItems.xml:487(keycap) MenuItems.xml:503(keycap) MenuItems.xml:517(keycap) MenuItems.xml:592(keycap) MenuItems.xml:657(keycap) 
 msgid "Ctrl"
 msgstr ""
 
@@ -1013,7 +1073,7 @@ msgstr ""
 msgid "Exit"
 msgstr ""
 
-#. MenuItems.xml:127(keycap) MenuItems.xml:748(keycap) 
+#. MenuItems.xml:127(keycap) MenuItems.xml:750(keycap) 
 msgid "Alt"
 msgstr ""
 
@@ -1041,7 +1101,7 @@ msgstr ""
 msgid "Cut"
 msgstr ""
 
-#. MenuItems.xml:176(glossterm) MenuItems.xml:190(glossterm) MenuItems.xml:204(glossterm) MenuItems.xml:403(glossterm) MenuItems.xml:417(glossterm) MenuItems.xml:535(glossterm) Glossary.xml:33(glossterm) Glossary.xml:34(primary) 
+#. MenuItems.xml:176(glossterm) MenuItems.xml:190(glossterm) MenuItems.xml:204(glossterm) MenuItems.xml:403(glossterm) MenuItems.xml:417(glossterm) MenuItems.xml:537(glossterm) Glossary.xml:33(glossterm) Glossary.xml:34(primary) 
 msgid "graph element"
 msgstr ""
 
@@ -1073,7 +1133,7 @@ msgstr ""
 msgid "This will change global settings for Graph, e.g. association of .grf files, showing of tooltips, maximum number of undo stored undo steps, etc."
 msgstr ""
 
-#. MenuItems.xml:260(guimenu) MenuItems.xml:277(guimenu) MenuItems.xml:294(guimenu) MenuItems.xml:312(guimenu) MenuItems.xml:328(guimenu) MenuItems.xml:346(guimenu) MenuItems.xml:363(guimenu) MenuItems.xml:381(guimenu) MenuItems.xml:397(guimenu) MenuItems.xml:411(guimenu) MenuItems.xml:425(guimenu) InsertTrendlineDialog.xml:23(guimenu) InsertTangentDialog.xml:16(guimenu) InsertTangentDialog.xml:17(guimenu) InsertShadingDialog.xml:18(guimenu) InsertShadingDialog.xml:19(guimenu) InsertRelationDialog.xml:17(guimenu) InsertRelationDialog.xml:18(guimenu) InsertPointSeriesDialog.xml:20(guimenu) InsertPointSeriesDialog.xml:21(guimenu) InsertLabelDialog.xml:25(guimenu) InsertLabelDialog.xml:27(guimenu) InsertFunctionDialog.xml:16(guimenu) InsertFunctionDialog.xml:19(guimenu) InsertDerivativeDialog.xml:17(guimenu) HowToUse.xml:35(guimenu) HowToUse.xml:43(guimenu) Glossary.xml:38(guimenu) Glossary.xml:52(guimenu) FunctionList.xml:174(entry) EvaluateDialog.xml:45(term) CustomFunctionsDialog.xml:16(guimenu) 
+#. MenuItems.xml:260(guimenu) MenuItems.xml:277(guimenu) MenuItems.xml:294(guimenu) MenuItems.xml:312(guimenu) MenuItems.xml:328(guimenu) MenuItems.xml:346(guimenu) MenuItems.xml:363(guimenu) MenuItems.xml:381(guimenu) MenuItems.xml:397(guimenu) MenuItems.xml:411(guimenu) MenuItems.xml:426(guimenu) InsertTrendlineDialog.xml:25(guimenu) InsertTangentDialog.xml:16(guimenu) InsertTangentDialog.xml:17(guimenu) InsertShadingDialog.xml:18(guimenu) InsertShadingDialog.xml:19(guimenu) InsertRelationDialog.xml:18(guimenu) InsertRelationDialog.xml:19(guimenu) InsertPointSeriesDialog.xml:21(guimenu) InsertPointSeriesDialog.xml:22(guimenu) InsertLabelDialog.xml:25(guimenu) InsertLabelDialog.xml:27(guimenu) InsertFunctionDialog.xml:16(guimenu) InsertFunctionDialog.xml:19(guimenu) InsertDerivativeDialog.xml:17(guimenu) HowToUse.xml:35(guimenu) HowToUse.xml:43(guimenu) Glossary.xml:38(guimenu) Glossary.xml:52(guimenu) FunctionList.xml:174(entry) EvaluateDialog.xml:48(term) CustomFunctionsDialog.xml:16(guimenu) 
 msgid "Function"
 msgstr ""
 
@@ -1113,7 +1173,7 @@ msgstr ""
 msgid "This dialog is used to add the first derivative to the selected function."
 msgstr ""
 
-#. MenuItems.xml:328(guimenuitem) InsertPointSeriesDialog.xml:20(guimenuitem) 
+#. MenuItems.xml:328(guimenuitem) InsertPointSeriesDialog.xml:21(guimenuitem) 
 msgid "Insert point series..."
 msgstr ""
 
@@ -1121,7 +1181,7 @@ msgstr ""
 msgid "Inserts a new point series into the coordinate system. An infinite number of points defined by their x- and y-coordinates may be added. It is possible to choose color, size, and style of the point series."
 msgstr ""
 
-#. MenuItems.xml:346(guimenuitem) InsertTrendlineDialog.xml:23(guimenuitem) 
+#. MenuItems.xml:346(guimenuitem) InsertTrendlineDialog.xml:25(guimenuitem) 
 msgid "Insert trendline..."
 msgstr ""
 
@@ -1129,7 +1189,7 @@ msgstr ""
 msgid "Inserts a trendline as the curve of best fit for the selected point series. You may choose between different kinds of functions for the trendline."
 msgstr ""
 
-#. MenuItems.xml:363(guimenuitem) InsertRelationDialog.xml:17(guimenuitem) 
+#. MenuItems.xml:363(guimenuitem) InsertRelationDialog.xml:18(guimenuitem) 
 msgid "Insert relation..."
 msgstr ""
 
@@ -1145,7 +1205,7 @@ msgstr ""
 msgid "This will show a dialog, which may be used to create a formatted text label. The label will always be created at the center of the graphing area but can afterwards be dragged to another place with the mouse."
 msgstr ""
 
-#. MenuItems.xml:397(guimenuitem) InsertTangentDialog.xml:17(guimenuitem) InsertShadingDialog.xml:19(guimenuitem) InsertRelationDialog.xml:18(guimenuitem) InsertPointSeriesDialog.xml:21(guimenuitem) InsertLabelDialog.xml:27(guimenuitem) InsertFunctionDialog.xml:19(guimenuitem) 
+#. MenuItems.xml:397(guimenuitem) InsertTangentDialog.xml:17(guimenuitem) InsertShadingDialog.xml:19(guimenuitem) InsertRelationDialog.xml:19(guimenuitem) InsertPointSeriesDialog.xml:22(guimenuitem) InsertLabelDialog.xml:27(guimenuitem) InsertFunctionDialog.xml:19(guimenuitem) 
 msgid "Edit..."
 msgstr ""
 
@@ -1169,187 +1229,187 @@ msgstr ""
 msgid "This will delete the selected <placeholder-1/> in the <placeholder-2/>."
 msgstr ""
 
-#. MenuItems.xml:425(guimenuitem) CustomFunctionsDialog.xml:16(guimenuitem) 
+#. MenuItems.xml:426(guimenuitem) CustomFunctionsDialog.xml:16(guimenuitem) 
 msgid "Custom functions..."
 msgstr ""
 
-#. MenuItems.xml:430(para) 
+#. MenuItems.xml:432(para) 
 msgid "This shows a dialog used to create custom functions and constants in addition to the built-in ones."
 msgstr ""
 
-#. MenuItems.xml:441(guimenu) MenuItems.xml:455(guimenu) MenuItems.xml:469(guimenu) MenuItems.xml:484(guimenu) MenuItems.xml:500(guimenu) MenuItems.xml:514(guimenu) MenuItems.xml:530(guimenu) MenuItems.xml:543(guimenu) FAQ.xml:78(guimenu) FAQ.xml:193(guimenu) 
+#. MenuItems.xml:443(guimenu) MenuItems.xml:457(guimenu) MenuItems.xml:471(guimenu) MenuItems.xml:486(guimenu) MenuItems.xml:502(guimenu) MenuItems.xml:516(guimenu) MenuItems.xml:532(guimenu) MenuItems.xml:545(guimenu) FAQ.xml:78(guimenu) FAQ.xml:193(guimenu) 
 msgid "Zoom"
 msgstr ""
 
-#. MenuItems.xml:441(guimenuitem) 
+#. MenuItems.xml:443(guimenuitem) 
 msgid "In"
 msgstr ""
 
-#. MenuItems.xml:446(para) 
+#. MenuItems.xml:448(para) 
 msgid "This will zoom in at the center of the graphing area, so you will see a &frac14; of the previous graphing area."
 msgstr ""
 
-#. MenuItems.xml:455(guimenuitem) 
+#. MenuItems.xml:457(guimenuitem) 
 msgid "Out"
 msgstr ""
 
-#. MenuItems.xml:460(para) 
+#. MenuItems.xml:462(para) 
 msgid "This will zoom out so you see 4 times as much as on the previous graphing area."
 msgstr ""
 
-#. MenuItems.xml:469(guimenuitem) 
+#. MenuItems.xml:471(guimenuitem) 
 msgid "Window"
 msgstr ""
 
-#. MenuItems.xml:474(para) 
+#. MenuItems.xml:476(para) 
 msgid "Hold down the <action>left mouse button</action> while you select the area you want to fill the whole graphing area. <action>Right click</action> or press <keycap>Esc</keycap> to cancel the command."
 msgstr ""
 
-#. MenuItems.xml:484(guimenuitem) FAQ.xml:194(guimenuitem) 
+#. MenuItems.xml:486(guimenuitem) FAQ.xml:194(guimenuitem) 
 msgid "Square"
 msgstr ""
 
-#. MenuItems.xml:489(para) 
+#. MenuItems.xml:491(para) 
 msgid "This changes the y-axis to the same scale as the x-axis. It will make a circle look correctly instead of showing as an ellipse. The axes will stay equally scaled until disabled again."
 msgstr ""
 
-#. MenuItems.xml:500(guimenuitem) 
+#. MenuItems.xml:502(guimenuitem) 
 msgid "Standard"
 msgstr ""
 
-#. MenuItems.xml:505(para) 
+#. MenuItems.xml:507(para) 
 msgid "Returns the axes settings to the same default settings used when creating a new coordinate system."
 msgstr ""
 
-#. MenuItems.xml:514(guimenuitem) FAQ.xml:79(guimenuitem) 
+#. MenuItems.xml:516(guimenuitem) FAQ.xml:79(guimenuitem) 
 msgid "Move system"
 msgstr ""
 
-#. MenuItems.xml:519(para) 
+#. MenuItems.xml:521(para) 
 msgid "When selected the mouse pointer changes to a hand. You may now use the mouse to drag the coordinate system around. Select the menu item again, <action>right click</action> or press <keycap>Esc</keycap> to return to normal mode. As an alternative to this menu item, you may hold down the <keycap>Shift</keycap> key and drag the coordinate system around."
 msgstr ""
 
-#. MenuItems.xml:530(guimenuitem) 
+#. MenuItems.xml:532(guimenuitem) 
 msgid "Fit"
 msgstr ""
 
-#. MenuItems.xml:534(para) 
+#. MenuItems.xml:536(para) 
 msgid "This will change the axes settings to show all parts of the selected <placeholder-1/>."
 msgstr ""
 
-#. MenuItems.xml:543(guimenuitem) 
+#. MenuItems.xml:545(guimenuitem) 
 msgid "Fit all"
 msgstr ""
 
-#. MenuItems.xml:547(para) 
+#. MenuItems.xml:549(para) 
 msgid "This will change the axes settings to show all parts of all the elements in the <placeholder-1/>."
 msgstr ""
 
-#. MenuItems.xml:559(guimenuitem) EvaluateDialog.xml:124(title) EvaluateDialog.xml:129(guimenuitem) 
+#. MenuItems.xml:561(guimenuitem) EvaluateDialog.xml:126(title) EvaluateDialog.xml:131(guimenuitem) 
 msgid "Length of path"
 msgstr ""
 
-#. MenuItems.xml:564(para) 
+#. MenuItems.xml:566(para) 
 msgid "Calculates the distance along the path between two points on the selected graph."
 msgstr ""
 
-#. MenuItems.xml:574(guimenuitem) FAQ.xml:218(guimenuitem) EvaluateDialog.xml:97(title) EvaluateDialog.xml:102(guimenuitem) 
+#. MenuItems.xml:576(guimenuitem) FAQ.xml:218(guimenuitem) EvaluateDialog.xml:100(title) EvaluateDialog.xml:105(guimenuitem) 
 msgid "Area"
 msgstr ""
 
-#. MenuItems.xml:579(para) 
+#. MenuItems.xml:581(para) 
 msgid "Calculates the signed area between the graph and the x-axis. This is the same as the numerical integral."
 msgstr ""
 
-#. MenuItems.xml:589(guimenuitem) Glossary.xml:25(guilabel) EvaluateDialog.xml:8(title) EvaluateDialog.xml:14(title) EvaluateDialog.xml:19(guimenuitem) 
+#. MenuItems.xml:591(guimenuitem) Glossary.xml:25(guilabel) EvaluateDialog.xml:8(title) EvaluateDialog.xml:17(title) EvaluateDialog.xml:22(guimenuitem) 
 msgid "Evaluate"
 msgstr ""
 
-#. MenuItems.xml:595(para) 
+#. MenuItems.xml:597(para) 
 msgid "This will evaluate the selected function for a given value. For standard functions f(x), f'(x) and f''(x) are evaluated. For parametric functions x(t), y(t), dx/dt, dy/dt and dy/dx are evaluated. For polar functions r(t), x(t), y(t), dr/dt and dy/dt are evaluated."
 msgstr ""
 
-#. MenuItems.xml:608(guimenuitem) 
+#. MenuItems.xml:610(guimenuitem) 
 msgid "Table..."
 msgstr ""
 
-#. MenuItems.xml:613(para) 
+#. MenuItems.xml:615(para) 
 msgid "This dialog fills a table with a user specified range of values and the result of evaluating the selected function for the values."
 msgstr ""
 
-#. MenuItems.xml:623(guimenuitem) 
+#. MenuItems.xml:625(guimenuitem) 
 msgid "Animate..."
 msgstr ""
 
-#. MenuItems.xml:628(para) 
+#. MenuItems.xml:630(para) 
 msgid "This dialog allows you to create an animation from the data in the coordinate system by changing an existing custom constant. This makes it easy to see what happens when the constant changes. The animation may be saved to a disk file."
 msgstr ""
 
-#. MenuItems.xml:640(guimenuitem) 
+#. MenuItems.xml:642(guimenuitem) 
 msgid "Contents and index"
 msgstr ""
 
-#. MenuItems.xml:645(para) 
+#. MenuItems.xml:647(para) 
 msgid "Shows the contents and index of the help file."
 msgstr ""
 
-#. MenuItems.xml:654(guimenuitem) FunctionList.xml:7(title) 
+#. MenuItems.xml:656(guimenuitem) FunctionList.xml:7(title) 
 msgid "List of functions"
 msgstr ""
 
-#. MenuItems.xml:659(para) 
+#. MenuItems.xml:661(para) 
 msgid "Shows a list of functions and constants that may be used for plotting graphs."
 msgstr ""
 
-#. MenuItems.xml:668(guimenuitem) FAQ.xml:5(title) 
+#. MenuItems.xml:670(guimenuitem) FAQ.xml:5(title) 
 msgid "Frequently Asked Questions"
 msgstr ""
 
-#. MenuItems.xml:672(para) 
+#. MenuItems.xml:674(para) 
 msgid "This will show a list of frequently asked questions and their answers."
 msgstr ""
 
-#. MenuItems.xml:681(guimenuitem) 
+#. MenuItems.xml:683(guimenuitem) 
 msgid "Tip of the day"
 msgstr ""
 
-#. MenuItems.xml:685(para) 
+#. MenuItems.xml:687(para) 
 msgid "This will show some tips about using Graph in a more optimal way, and certain features of Graph you may not know about."
 msgstr ""
 
-#. MenuItems.xml:694(guimenuitem) 
+#. MenuItems.xml:696(guimenuitem) 
 msgid "Graph web site"
 msgstr ""
 
-#. MenuItems.xml:698(para) 
+#. MenuItems.xml:700(para) 
 msgid "Shows the web site for Graph in your default web browser."
 msgstr ""
 
-#. MenuItems.xml:707(guimenuitem) 
+#. MenuItems.xml:709(guimenuitem) 
 msgid "Support"
 msgstr ""
 
-#. MenuItems.xml:711(para) 
+#. MenuItems.xml:713(para) 
 msgid "Shows the support forum for Graph in your default web browser."
 msgstr ""
 
-#. MenuItems.xml:720(guimenuitem) 
+#. MenuItems.xml:722(guimenuitem) 
 msgid "Donate"
 msgstr ""
 
-#. MenuItems.xml:724(para) 
+#. MenuItems.xml:726(para) 
 msgid "Shows the web page that allows you to donate to the Graph project to support its development."
 msgstr ""
 
-#. MenuItems.xml:737(para) 
+#. MenuItems.xml:739(para) 
 msgid "This will check if a new version of Graph is available. If there is a new version, you will be asked if you want to visit the web site of Graph to download the new version."
 msgstr ""
 
-#. MenuItems.xml:747(guimenuitem) Introduction.xml:41(guimenuitem) 
+#. MenuItems.xml:749(guimenuitem) Introduction.xml:41(guimenuitem) 
 msgid "About Graph..."
 msgstr ""
 
-#. MenuItems.xml:752(para) 
+#. MenuItems.xml:754(para) 
 msgid "Shows version number, copyright and license information for Graph."
 msgstr ""
 
@@ -1394,7 +1454,7 @@ msgid "This program is free software; you can redistribute it and/or modify it u
 msgstr ""
 
 #. Introduction.xml:29(para) 
-msgid "The program has been tested under Microsoft Windows 2000, Windows XP and Windows Vista, but there may still be bugs left. Please report bugs and suggestions for improvements to <placeholder-1/>."
+msgid "The program has been tested under Microsoft Windows 2000, Windows XP and Windows Vista, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <ulink url=\"http://www.padowan.dk/forum\">Graph support forum</ulink>."
 msgstr ""
 
 #. Introduction.xml:33(para) 
@@ -1425,7 +1485,7 @@ msgstr ""
 msgid "uninstall"
 msgstr ""
 
-#. Installation.xml:8(primary) Installation.xml:111(emphasis) 
+#. Installation.xml:8(primary) 
 msgid "language"
 msgstr ""
 
@@ -1446,7 +1506,7 @@ msgid "Installation"
 msgstr ""
 
 #. Installation.xml:15(para) 
-msgid "The program is distributed as a self-extracting installation program usually named SetupGraph-x.y.exe, where x.y is the version number. To install, just execute the installation and follow the instructions. The installation will install the following files in the selected directory and subdirectories:"
+msgid "Graph is usually distributed as an installation program named SetupGraph-x.y.exe, where x.y is the version number. To install, just execute the file and follow the instructions. The installation will install the following files in the selected directory and subdirectories:"
 msgstr ""
 
 #. Installation.xml:27(entry) 
@@ -1597,123 +1657,131 @@ msgstr ""
 msgid "regression"
 msgstr ""
 
-#. InsertTrendlineDialog.xml:19(para) 
+#. InsertTrendlineDialog.xml:19(primary) 
+msgid "SSQ"
+msgstr ""
+
+#. InsertTrendlineDialog.xml:20(primary) 
+msgid "sum of squares"
+msgstr ""
+
+#. InsertTrendlineDialog.xml:21(para) 
 msgid "Use the dialog shown below to insert a trendline that is the function that fits a <link linkend=\"InsertPointSeriesDialog\">point series</link> best. A trendline is a function that shows a trend in a series of points, i.e. a trendline is the curve of bets fit of a specific type for a series of points. The trendline is added as an ordinary function. To create a trendline, you select the point series you want to base the trendline on and use <placeholder-1/>."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:26(para) 
+#. InsertTrendlineDialog.xml:28(para) 
 msgid "If the point series has custom Y-errors defined, these values are used to weight the points. The weight for each point is <placeholder-1/> where &sigma; is the Y-error for the point. X-errors are not used."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:33(title) 
+#. InsertTrendlineDialog.xml:35(title) 
 msgid "Built-in"
 msgstr ""
 
-#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:46(term) InsertPointSeriesDialog.xml:82(guilabel) 
+#. InsertTrendlineDialog.xml:42(guilabel) InsertTrendlineDialog.xml:48(term) InsertPointSeriesDialog.xml:96(guilabel) 
 msgid "Linear"
 msgstr ""
 
-#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:76(term) 
+#. InsertTrendlineDialog.xml:42(guilabel) InsertTrendlineDialog.xml:78(term) 
 msgid "Polynomial"
 msgstr ""
 
-#. InsertTrendlineDialog.xml:40(guilabel) InsertTrendlineDialog.xml:105(term) 
+#. InsertTrendlineDialog.xml:42(guilabel) InsertTrendlineDialog.xml:107(term) 
 msgid "Exponential"
 msgstr ""
 
-#. InsertTrendlineDialog.xml:41(guilabel) 
+#. InsertTrendlineDialog.xml:43(guilabel) 
 msgid "Intercept"
 msgstr ""
 
-#. InsertTrendlineDialog.xml:37(para) 
+#. InsertTrendlineDialog.xml:39(para) 
 msgid "You may choose between the following built-in functions. These functions will give an accurate result. For <placeholder-1/>, <placeholder-2/> and <placeholder-3/> trendlines, you may select the <placeholder-4/> field and specify the point where you want the trendline to meet the y-axis."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:48(para) 
+#. InsertTrendlineDialog.xml:50(para) 
 msgid "This is a straight line with the function f(x) = a*x+b, where a and b are constants calculated so the line is the best fit to the point series."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:51(para) 
+#. InsertTrendlineDialog.xml:53(para) 
 msgid "The trendline is calculated so the sum of squares (SSQ) <placeholder-1/> will be as small as possible. If possible the function will cross the points in the series; else the function will be so close to the series that the summation cannot get any smaller."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:61(term) 
+#. InsertTrendlineDialog.xml:63(term) 
 msgid "Logarithmic"
 msgstr ""
 
-#. InsertTrendlineDialog.xml:63(para) 
+#. InsertTrendlineDialog.xml:65(para) 
 msgid "A logarithmic line of best fit is given as <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants, and <placeholder-4/> is the natural logarithm function. To add a logarithmic function, no point in the series may have an x-coordinate that is negative or zero."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:68(para) 
+#. InsertTrendlineDialog.xml:70(para) 
 msgid "A logarithmic function is a straight line in a semilogarithmic coordinate system. The point series is therefore converted to a semilogarithmic coordinate system and the logarithmic function with the smallest sum of squares (SSQ) is found."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:78(para) 
+#. InsertTrendlineDialog.xml:80(para) 
 msgid "A polynomial is a function given by <placeholder-1/>, where <placeholder-2/>...<placeholder-3/> are constants. <placeholder-4/> is the order of the polynomial. You need at least one more point than the order."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:90(term) 
+#. InsertTrendlineDialog.xml:92(term) 
 msgid "Power"
 msgstr ""
 
-#. InsertTrendlineDialog.xml:92(para) 
+#. InsertTrendlineDialog.xml:94(para) 
 msgid "A power function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add a power function, no point in the series may have an x- or y-coordinate that is negative or zero."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:97(para) 
+#. InsertTrendlineDialog.xml:99(para) 
 msgid "A power function is a straight line in a double logarithmic coordinate system. The point series is therefore converted to a double logarithmic coordinate system and the power function with the smallest sum of squares (SSQ) is found."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:107(para) 
+#. InsertTrendlineDialog.xml:109(para) 
 msgid "An exponential function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add an exponential function, no point in the series may have a y-coordinate that is negative or zero."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:112(para) 
+#. InsertTrendlineDialog.xml:114(para) 
 msgid "An Exponential function is a straight line in a semilogarithmic coordinate system with the y-axis as the logarithmic axis. The point series is therefore converted to a semilogarithmic coordinate system and the exponential function with the smallest sum of squares (SSQ) is found."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:120(term) 
+#. InsertTrendlineDialog.xml:122(term) 
 msgid "Moving average"
 msgstr ""
 
-#. InsertTrendlineDialog.xml:124(guilabel) InsertTrendlineDialog.xml:125(guilabel) InsertTrendlineDialog.xml:127(guilabel) 
+#. InsertTrendlineDialog.xml:126(guilabel) InsertTrendlineDialog.xml:127(guilabel) InsertTrendlineDialog.xml:129(guilabel) 
 msgid "Period"
 msgstr ""
 
-#. InsertTrendlineDialog.xml:122(para) 
+#. InsertTrendlineDialog.xml:124(para) 
 msgid "Moving average is a series of straight lines based on the average of the previous points. The <placeholder-1/> determines how many points are used for the average. If <placeholder-2/> is 1 only one point is used, which actually isn't an average. This will draw a line directly between the points. When <placeholder-3/> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point. Instead it will be an average of the previous points."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:136(title) 
+#. InsertTrendlineDialog.xml:138(title) 
 msgid "User defined"
 msgstr ""
 
-#. InsertTrendlineDialog.xml:140(para) 
+#. InsertTrendlineDialog.xml:142(para) 
 msgid "In this tab you can enter your own trendline models. The model is entered as a standard function, where all the constants that you want Graph to find are named with a $ followed by any combination of characters (a-z) and digits (0-9). Examples of valid constants are: $a, $y0, $const."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:147(para) 
+#. InsertTrendlineDialog.xml:149(para) 
 msgid "An example of a model could be <placeholder-1/>. The program tries to calculate the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/> so that f(x) will be as close to the point series as possible. You can use the <guibutton>Add model</guibutton> button to add the model to the saved list with a name."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:154(para) 
+#. InsertTrendlineDialog.xml:156(para) 
 msgid "The program needs a guess for where to start the search for the optimum. As default the guess for all constants is 1, but this can be changed for models added to the list. A better guess will increase the possibility that an optimum can be found."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:160(para) 
+#. InsertTrendlineDialog.xml:162(para) 
 msgid "Graph will try to find the constants for the model f(x) so the sum of squares <placeholder-1/> will be the smallest possible. The program will start with the guess and move towards the minimum of the sum of squares. If a solution is not found after 100 iterations or the given guess is not valid, the program gives up."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:168(para) 
+#. InsertTrendlineDialog.xml:170(para) 
 msgid "It is possible, even though it rarely happens, that more than one minimum exists. In this case the minimum nearest to the guess will be found, even though this may not be the best."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:173(para) 
+#. InsertTrendlineDialog.xml:175(para) 
 msgid "Notice that you should avoid redundant constants as they might confuse the program. For example this model has a redundant constant: <placeholder-1/>. Notice the relation between the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/>. If you multiply <placeholder-5/>, <placeholder-6/> and <placeholder-7/> with the same value the resulting function will not be changed. This means that there are an infinite number of combinations of constants with the same resulting function and hence an infinite number of best solutions. This may confuse the program when it tries to find the best one. Therefore either <placeholder-8/>, <placeholder-9/> or <placeholder-10/> should be removed."
 msgstr ""
 
-#. InsertTrendlineDialog.xml:183(para) 
+#. InsertTrendlineDialog.xml:185(para) 
 msgid "When the trendline is added, the correlation coefficient <placeholder-1/> is shown in the comment. The closer <placeholder-2/> is to 1 the closer the trendline is to the points."
 msgstr ""
 
@@ -1749,14 +1817,6 @@ msgstr ""
 msgid "Argument range"
 msgstr ""
 
-#. InsertTangentDialog.xml:35(guilabel) InsertShadingDialog.xml:118(term) InsertFunctionDialog.xml:59(guilabel) AnimateDialog.xml:41(guilabel) AnimateDialog.xml:43(guilabel) 
-msgid "From"
-msgstr ""
-
-#. InsertTangentDialog.xml:35(guilabel) InsertShadingDialog.xml:132(term) InsertFunctionDialog.xml:59(guilabel) AnimateDialog.xml:41(guilabel) AnimateDialog.xml:43(guilabel) 
-msgid "To"
-msgstr ""
-
 #. InsertTangentDialog.xml:33(para) 
 msgid "You can choose an interval for the tangent/normal. <placeholder-1/> and <placeholder-2/> indicates the start and end of the interval. You can leave one or both of them blank to draw the graph from minus infinity to plus infinity."
 msgstr ""
@@ -1773,7 +1833,7 @@ msgstr ""
 msgid "Legend text"
 msgstr ""
 
-#. InsertTangentDialog.xml:56(glossterm) InsertRelationDialog.xml:66(glossterm) InsertPointSeriesDialog.xml:50(glossterm) InsertFunctionDialog.xml:87(glossterm) Glossary.xml:69(glossterm) Glossary.xml:70(primary) AxesDialog.xml:24(primary) AxesDialog.xml:187(glossterm) AxesDialog.xml:196(glossterm) AxesDialog.xml:255(glossterm) 
+#. InsertTangentDialog.xml:56(glossterm) InsertRelationDialog.xml:72(glossterm) InsertPointSeriesDialog.xml:51(glossterm) InsertFunctionDialog.xml:87(glossterm) Glossary.xml:69(glossterm) Glossary.xml:70(primary) AxesDialog.xml:24(primary) AxesDialog.xml:187(glossterm) AxesDialog.xml:196(glossterm) AxesDialog.xml:255(glossterm) 
 msgid "legend"
 msgstr ""
 
@@ -1821,7 +1881,7 @@ msgstr ""
 msgid "The dialog below is used to add a shading to the selected function. To insert a new shading, you use <placeholder-1/>. To change an existing shading, you first select it in the <placeholder-2/> and use <placeholder-3/>. The shading is used to mark an area between the function graph and something else."
 msgstr ""
 
-#. InsertShadingDialog.xml:24(title) InsertShadingDialog.xml:29(guilabel) 
+#. InsertShadingDialog.xml:24(title) InsertShadingDialog.xml:29(guilabel) InsertShadingDialog.xml:188(guilabel) 
 msgid "Shading"
 msgstr ""
 
@@ -1901,7 +1961,7 @@ msgstr ""
 msgid "Here you may enter a value, for which you want the shading to stop. You specify the x-coordinate if you are using a standard function or the t-parameter if you are using a parametric or polar function. If you don't enter a value, the shading will continue until positive infinity. If you place a check mark in <placeholder-1/>, the end coordinate of the shading will be increased from the entered value to the coordinate where the graph is crossing the axis, the edge of the graphing area, itself or another graph depending of the type of shading selected."
 msgstr ""
 
-#. InsertShadingDialog.xml:146(term) InsertRelationDialog.xml:77(guilabel) 
+#. InsertShadingDialog.xml:146(term) InsertRelationDialog.xml:83(guilabel) 
 msgid "Style"
 msgstr ""
 
@@ -1931,10 +1991,6 @@ msgstr ""
 
 #. InsertShadingDialog.xml:176(para) 
 msgid "Check this to draw a line at the end of the range. Uncheck it if you want two shadings to look as one."
-msgstr ""
-
-#. InsertShadingDialog.xml:188(guilabel) 
-msgid "Shadings"
 msgstr ""
 
 #. InsertShadingDialog.xml:187(para) 
@@ -1977,51 +2033,55 @@ msgstr ""
 msgid "constraints"
 msgstr ""
 
-#. InsertRelationDialog.xml:14(para) 
-msgid "This dialog is used to insert a relation in the coordinate system. <literal>Relation</literal> is a common name for inequalities and equations. To insert a relation you use the menu item <placeholder-1/>. To change an existing relation, you first select it in the <placeholder-2/> and use <placeholder-3/>."
+#. InsertRelationDialog.xml:14(primary) 
+msgid "implicit function"
 msgstr ""
 
-#. InsertRelationDialog.xml:25(term) 
+#. InsertRelationDialog.xml:15(para) 
+msgid "This dialog is used to insert a relation in the coordinate system. <literal>Relation</literal> is a common name for inequalities and equations, also known as implicit functions. To insert a relation you use the menu item <placeholder-1/>. To change an existing relation, you first select it in the <placeholder-2/> and use <placeholder-3/>."
+msgstr ""
+
+#. InsertRelationDialog.xml:26(term) 
 msgid "Relation"
 msgstr ""
 
-#. InsertRelationDialog.xml:27(para) 
+#. InsertRelationDialog.xml:28(para) 
 msgid "Here you enter the relation you want to graph. This must either be an equation or an inequality. <placeholder-1/> and <placeholder-2/> are used as the independent variables. An equation is a statement that one quantity equals another and the quantities must be separated by the = operator. For example the equation <literal>x^2 + y^2 = 25</literal> will plot a circle of radius 5."
 msgstr ""
 
-#. InsertRelationDialog.xml:34(para) 
+#. InsertRelationDialog.xml:35(para) 
 msgid "An inequality is a statement that one quantity is greater or less than another, and the quantities must be separated by one of the four operators: &lt;, &gt;, &lt;=, &gt;=. An inequality can for example be <literal>abs(x) + abs(y) &lt; 1</literal>. Two operators can be used to specify a range, for example <literal>y &lt; sin(x) &lt; 0.5</literal>."
 msgstr ""
 
-#. InsertRelationDialog.xml:39(para) 
+#. InsertRelationDialog.xml:40(para) 
 msgid "You can use the same operators and <link linkend=\"ListOfFunctions\">built-in functions</link> as for plotting graphs of functions. In addition you can also create <link linkend=\"CustomFunctionsDialog\">custom functions</link>."
 msgstr ""
 
-#. InsertRelationDialog.xml:47(term) 
+#. InsertRelationDialog.xml:48(term) 
 msgid "Constraints"
 msgstr ""
 
-#. InsertRelationDialog.xml:49(para) 
-msgid "Here you enter the constraints for the relation. The constraints can be any <placeholder-1/> that evaluates to non-zero for the relation to be drawn and zero for the relation not to be drawn. The constraints usually consist of a series of inequalities separated with the logical operators (and, or, xor). As for the relation <placeholder-2/> and <placeholder-3/> are used as the independent variables."
+#. InsertRelationDialog.xml:50(para) 
+msgid "Here you can enter optional constraints, which can be any <placeholder-1/>. The relation will only be valid and plotted where the constraints are fulfilled, i.e. evaluates to a non-zero value. The constraints usually consist of a series of inequalities separated with the logical operators (<placeholder-2/>). As for the relation, <placeholder-3/> and <placeholder-4/> are used as the independent variables."
 msgstr ""
 
-#. InsertRelationDialog.xml:55(para) 
+#. InsertRelationDialog.xml:61(para) 
 msgid "For example if you have the relation <literal>x^2 + y^2 &lt; 25</literal>, which is a shaded circle, the constraints <literal>x &gt; 0 and y &lt; 0</literal> will only show the part of the circle in the 4<superscript>th</superscript> quadrant."
 msgstr ""
 
-#. InsertRelationDialog.xml:65(para) 
+#. InsertRelationDialog.xml:71(para) 
 msgid "Here you may enter a descriptive text to show in the <placeholder-1/>. If this field is left empty, the relation and constraints will be shown in the legend."
 msgstr ""
 
-#. InsertRelationDialog.xml:73(term) 
+#. InsertRelationDialog.xml:79(term) 
 msgid "Properties"
 msgstr ""
 
-#. InsertRelationDialog.xml:79(guilabel) 
+#. InsertRelationDialog.xml:85(guilabel) 
 msgid "Width"
 msgstr ""
 
-#. InsertRelationDialog.xml:75(para) 
+#. InsertRelationDialog.xml:81(para) 
 msgid "Here you may select a shading style for inequalities, color and width for equations. The shading <placeholder-1/> is only used for inequalities and is ignored for equations. To see overlapping inequalities they must use different styles. The <placeholder-2/> indicates the size of the line drawn for equations and the width of the border line for inequalities. For inequalities the width can be set to 0 to avoid drawing the border line."
 msgstr ""
 
@@ -2053,96 +2113,112 @@ msgstr ""
 msgid "error bars"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:17(para) 
+#. InsertPointSeriesDialog.xml:17(primary) AxesDialog.xml:19(primary) 
+msgid "arrow"
+msgstr ""
+
+#. InsertPointSeriesDialog.xml:18(para) 
 msgid "You can use the dialog below to add a series of points to the coordinate system. The points will be shown in the coordinate system in the graphing area as a series of markers. To insert a new point series, you use <placeholder-1/>. To change an existing point series, you first select it in the <placeholder-2/> and use <placeholder-3/>."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:26(para) 
+#. InsertPointSeriesDialog.xml:27(para) 
 msgid "After adding a point series, you may add a <link linkend=\"InsertTrendlineDialog\">trendline</link> which is the curve of best fit for the points."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:29(para) 
+#. InsertPointSeriesDialog.xml:30(para) 
 msgid "In the grid you can enter the x- and y-coordinates of the points. You may enter any number of points you want, but all points need both an x-coordinate and a y-coordinate."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:33(para) 
+#. InsertPointSeriesDialog.xml:34(para) 
 msgid "You can select some points and use the right click menu to copy them to another program. Likewise you may copy data from other programs like MS Word or MS Excel and paste them into this the grid in dialog."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:37(para) 
+#. InsertPointSeriesDialog.xml:38(para) 
 msgid "From the context menu, you can also choose to import data from a file. Graph can import text files with data separated by either tabs, commas or semicolons. The data will be placed at the position of the caret. This makes it possible to load data from more than one file, or to have x-coordinates in one file and y-coordinates in another file. In the usual case where you have all data in one file, you should make sure that the caret is located at the upper left cell before you import."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:49(para) 
+#. InsertPointSeriesDialog.xml:50(para) 
 msgid "In the edit box at the top of the dialog, you can enter a name for the series, which will be shown in the <placeholder-1/>."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:56(term) 
+#. InsertPointSeriesDialog.xml:57(term) 
+msgid "Coordinate type"
+msgstr ""
+
+#. InsertPointSeriesDialog.xml:61(guilabel) 
+msgid "Cartesian"
+msgstr ""
+
+#. InsertPointSeriesDialog.xml:59(para) 
+msgid "You need to choose between the type of coordinates used for the points. <placeholder-1/> is used when you want to specify (x,y)-coordinates. <placeholder-2/> is used when you want to specify (&theta;,r)-coordinates, where <emphasis>&theta;</emphasis> is the angle and <emphasis>r</emphasis> is the distance from the origin. The angle <emphasis>&theta;</emphasis> is in <placeholder-3/> or degrees depending on the current setting."
+msgstr ""
+
+#. InsertPointSeriesDialog.xml:70(term) 
 msgid "Marker"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:58(para) 
+#. InsertPointSeriesDialog.xml:72(para) 
 msgid "To the right you can choose between different types of markers. The style may be a circle, a square, a triangle, etc. You may also change the color and size of the markers. If the size is set to 0, neither markers nor error bars will be shown."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:66(guilabel) 
+#. InsertPointSeriesDialog.xml:80(guilabel) 
 msgid "Interpolation"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:64(para) 
+#. InsertPointSeriesDialog.xml:78(para) 
 msgid "Notice that if you select an arrow as marker, the arrow will be shown pointing tangential to the line at the point. The actual direction therefore depends on the <placeholder-1/> setting. The first point is never shown when the marker is an arrow."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:73(term) 
+#. InsertPointSeriesDialog.xml:87(term) 
 msgid "Line"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:75(para) 
+#. InsertPointSeriesDialog.xml:89(para) 
 msgid "It is possible to draw lines between the markers. The line will always be drawn between points in the same order they appear in the grid. You can choose between different styles, colors and widths for the lines. You can also choose to draw no line at all."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:83(guilabel) 
+#. InsertPointSeriesDialog.xml:97(guilabel) 
 msgid "Cubic splines"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:84(guilabel) 
+#. InsertPointSeriesDialog.xml:98(guilabel) 
 msgid "Half cosine"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:81(para) 
-msgid "You can choose between three types of interpolation: <placeholder-1/> will draw a straight line between the markers. <placeholder-2/> will draw a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a half cosine curve between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+#. InsertPointSeriesDialog.xml:95(para) 
+msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:91(term) 
+#. InsertPointSeriesDialog.xml:105(term) 
 msgid "Labels"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:94(guilabel) 
+#. InsertPointSeriesDialog.xml:108(guilabel) 
 msgid "Show coordinates"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:93(para) 
+#. InsertPointSeriesDialog.xml:107(para) 
 msgid "Put a check in <placeholder-1/> to show the x- and y-coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:102(term) 
+#. InsertPointSeriesDialog.xml:116(term) 
 msgid "Error bars"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:108(guilabel) 
+#. InsertPointSeriesDialog.xml:122(guilabel) 
 msgid "Fixed"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:109(guilabel) 
+#. InsertPointSeriesDialog.xml:123(guilabel) 
 msgid "Relative"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:110(guilabel) 
+#. InsertPointSeriesDialog.xml:124(guilabel) 
 msgid "Custom"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:104(para) 
-msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are +/-values. Custom Y-errors are also used to weight the points when creating trendlines."
+#. InsertPointSeriesDialog.xml:118(para) 
+msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are &plusmn;values. Custom Y-errors are also used to weight the points when creating trendlines."
 msgstr ""
 
 #. InsertLabelDialog.xml:8(title) 
@@ -2349,7 +2425,7 @@ msgstr ""
 msgid "Hyperbolic"
 msgstr ""
 
-#. Hyperbolic.xml:11(primary) Hyperbolic.xml:83(primary) 
+#. Hyperbolic.xml:11(primary) Hyperbolic.xml:104(primary) 
 msgid "hyperbolic sine"
 msgstr ""
 
@@ -2365,155 +2441,155 @@ msgstr ""
 msgid "Hyperbolic sine is defined as: <placeholder-1/>"
 msgstr ""
 
-#. Hyperbolic.xml:35(primary) Hyperbolic.xml:106(primary) 
+#. Hyperbolic.xml:42(primary) Hyperbolic.xml:134(primary) 
 msgid "hyperbolic cosine"
 msgstr ""
 
-#. Hyperbolic.xml:36(para) FunctionList.xml:239(entry) 
+#. Hyperbolic.xml:43(para) FunctionList.xml:239(entry) 
 msgid "Returns the hyperbolic cosine of the argument."
 msgstr ""
 
-#. Hyperbolic.xml:45(para) 
+#. Hyperbolic.xml:52(para) 
 msgid "The <placeholder-1/> function calculates the hyperbolic cosine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr ""
 
-#. Hyperbolic.xml:49(para) 
+#. Hyperbolic.xml:56(para) 
 msgid "Hyperbolic cosine is defined as: <placeholder-1/>"
 msgstr ""
 
-#. Hyperbolic.xml:59(primary) Hyperbolic.xml:129(primary) 
+#. Hyperbolic.xml:73(primary) Hyperbolic.xml:164(primary) 
 msgid "hyperbolic tangent"
 msgstr ""
 
-#. Hyperbolic.xml:60(para) FunctionList.xml:243(entry) 
+#. Hyperbolic.xml:74(para) FunctionList.xml:243(entry) 
 msgid "Returns the hyperbolic tangent of the argument."
 msgstr ""
 
-#. Hyperbolic.xml:69(para) 
+#. Hyperbolic.xml:83(para) 
 msgid "The <placeholder-1/> function calculates the hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr ""
 
-#. Hyperbolic.xml:73(para) 
+#. Hyperbolic.xml:87(para) 
 msgid "Hyperbolic tangent is defined as: <placeholder-1/>"
 msgstr ""
 
-#. Hyperbolic.xml:84(primary) 
+#. Hyperbolic.xml:105(primary) 
 msgid "inverse hyperbolic sine"
 msgstr ""
 
-#. Hyperbolic.xml:85(para) FunctionList.xml:247(entry) 
+#. Hyperbolic.xml:106(para) FunctionList.xml:247(entry) 
 msgid "Returns the inverse hyperbolic sine of the argument."
 msgstr ""
 
-#. Hyperbolic.xml:94(para) 
+#. Hyperbolic.xml:115(para) 
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic sine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr ""
 
-#. Hyperbolic.xml:107(primary) 
+#. Hyperbolic.xml:135(primary) 
 msgid "inverse hyperbolic cosine"
 msgstr ""
 
-#. Hyperbolic.xml:108(para) FunctionList.xml:251(entry) 
+#. Hyperbolic.xml:136(para) FunctionList.xml:251(entry) 
 msgid "Returns the inverse hyperbolic cosine of the argument."
 msgstr ""
 
-#. Hyperbolic.xml:117(para) 
+#. Hyperbolic.xml:145(para) 
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr ""
 
-#. Hyperbolic.xml:130(primary) 
+#. Hyperbolic.xml:165(primary) 
 msgid "inverse hyperbolic tangent"
 msgstr ""
 
-#. Hyperbolic.xml:133(para) FunctionList.xml:255(entry) 
+#. Hyperbolic.xml:168(para) FunctionList.xml:255(entry) 
 msgid "Returns the inverse hyperbolic tangent of the argument."
 msgstr ""
 
-#. Hyperbolic.xml:142(para) 
+#. Hyperbolic.xml:177(para) 
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr ""
 
-#. Hyperbolic.xml:154(primary) Hyperbolic.xml:227(primary) 
+#. Hyperbolic.xml:196(primary) Hyperbolic.xml:290(primary) 
 msgid "hyperbolic cosecant"
 msgstr ""
 
-#. Hyperbolic.xml:155(para) FunctionList.xml:259(entry) 
+#. Hyperbolic.xml:197(para) FunctionList.xml:259(entry) 
 msgid "Returns the hyperbolic cosecant of the argument."
 msgstr ""
 
-#. Hyperbolic.xml:164(para) 
+#. Hyperbolic.xml:206(para) 
 msgid "The <placeholder-1/> function calculates the hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr ""
 
-#. Hyperbolic.xml:168(para) 
+#. Hyperbolic.xml:210(para) 
 msgid "Hyperbolic cosecant is defined as: <placeholder-1/>"
 msgstr ""
 
-#. Hyperbolic.xml:178(primary) Hyperbolic.xml:250(primary) 
+#. Hyperbolic.xml:227(primary) Hyperbolic.xml:320(primary) 
 msgid "hyperbolic secant"
 msgstr ""
 
-#. Hyperbolic.xml:179(para) FunctionList.xml:263(entry) 
+#. Hyperbolic.xml:228(para) FunctionList.xml:263(entry) 
 msgid "Returns the hyperbolic secant of the argument."
 msgstr ""
 
-#. Hyperbolic.xml:188(para) 
+#. Hyperbolic.xml:237(para) 
 msgid "The <placeholder-1/> function calculates the hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr ""
 
-#. Hyperbolic.xml:192(para) 
+#. Hyperbolic.xml:241(para) 
 msgid "Hyperbolic secant is defined as: <placeholder-1/>"
 msgstr ""
 
-#. Hyperbolic.xml:202(primary) Hyperbolic.xml:273(primary) 
+#. Hyperbolic.xml:258(primary) Hyperbolic.xml:350(primary) 
 msgid "hyperbolic cotangent"
 msgstr ""
 
-#. Hyperbolic.xml:203(para) FunctionList.xml:267(entry) 
+#. Hyperbolic.xml:259(para) FunctionList.xml:267(entry) 
 msgid "Returns the hyperbolic cotangent of the argument."
 msgstr ""
 
-#. Hyperbolic.xml:212(para) 
+#. Hyperbolic.xml:268(para) 
 msgid "The <placeholder-1/> function calculates the hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr ""
 
-#. Hyperbolic.xml:216(para) 
+#. Hyperbolic.xml:272(para) 
 msgid "Hyperbolic cotangent is defined as: <placeholder-1/>"
 msgstr ""
 
-#. Hyperbolic.xml:228(primary) 
+#. Hyperbolic.xml:291(primary) 
 msgid "inverse hyperbolic cosecant"
 msgstr ""
 
-#. Hyperbolic.xml:229(para) FunctionList.xml:271(entry) 
+#. Hyperbolic.xml:292(para) FunctionList.xml:271(entry) 
 msgid "Returns the inverse hyperbolic cosecant of the argument."
 msgstr ""
 
-#. Hyperbolic.xml:238(para) 
+#. Hyperbolic.xml:301(para) 
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr ""
 
-#. Hyperbolic.xml:251(primary) 
+#. Hyperbolic.xml:321(primary) 
 msgid "inverse hyperbolic secant"
 msgstr ""
 
-#. Hyperbolic.xml:252(para) FunctionList.xml:275(entry) 
+#. Hyperbolic.xml:322(para) FunctionList.xml:275(entry) 
 msgid "Returns the inverse hyperbolic secant of the argument."
 msgstr ""
 
-#. Hyperbolic.xml:261(para) 
+#. Hyperbolic.xml:331(para) 
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr ""
 
-#. Hyperbolic.xml:274(primary) 
+#. Hyperbolic.xml:351(primary) 
 msgid "inverse hyperbolic cotangent"
 msgstr ""
 
-#. Hyperbolic.xml:275(para) FunctionList.xml:279(entry) 
+#. Hyperbolic.xml:352(para) FunctionList.xml:279(entry) 
 msgid "Returns the inverse hyperbolic cotangent of the argument."
 msgstr ""
 
-#. Hyperbolic.xml:284(para) 
+#. Hyperbolic.xml:361(para) 
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>. For real numbers <placeholder-10/> is undefined in the interval [-1;1]."
 msgstr ""
 
@@ -2574,7 +2650,7 @@ msgid "Glossary"
 msgstr ""
 
 #. Glossary.xml:16(para) 
-msgid "Complex numbers are a superset of real numbers. Complex numbers are two dimensional and is most often written on rectangular form as a+b<emphasis role=\"bold\">i</emphasis> where <emphasis>a</emphasis> is the real part and <emphasis>b</emphasis> is the imaginary part. The imaginary unit &imag; is defined as &imag;^2=-1. Complex numbers can also be shown on polar form as a&ang;&theta; where <emphasis>a</emphasis> is the absolute value of the number and &theta; is the angle of the number in radians or degrees."
+msgid "Complex numbers are a superset of real numbers. Complex numbers are two dimensional and is most often written on rectangular form as a+b&imag; where <placeholder-1/> is the real part and <placeholder-2/> is the imaginary part. The imaginary unit &imag; is defined as &imag;^2=-1. Complex numbers can also be shown on polar form as a&ang;&theta; where <placeholder-3/> is the absolute value of the number and &theta; is the angle of the number in radians or degrees."
 msgstr ""
 
 #. Glossary.xml:26(guilabel) FAQ.xml:270(guilabel) AxesDialog.xml:202(term) 
@@ -2953,15 +3029,15 @@ msgstr ""
 msgid "Returns the angle of the argument in radians or degrees."
 msgstr ""
 
-#. FunctionList.xml:325(entry) Complex.xml:62(para) 
+#. FunctionList.xml:325(entry) Complex.xml:76(para) 
 msgid "Returns the conjugate of the argument."
 msgstr ""
 
-#. FunctionList.xml:329(entry) Complex.xml:84(para) 
+#. FunctionList.xml:329(entry) Complex.xml:105(para) 
 msgid "Returns the real part of the argument."
 msgstr ""
 
-#. FunctionList.xml:333(entry) Complex.xml:105(para) 
+#. FunctionList.xml:333(entry) Complex.xml:133(para) 
 msgid "Returns the imaginary part of the argument."
 msgstr ""
 
@@ -3217,91 +3293,95 @@ msgstr ""
 msgid "Graph no longer supports Windows 95. The last version to run under Windows 95 was Graph 4.2."
 msgstr ""
 
-#. EvaluateDialog.xml:9(para) 
+#. EvaluateDialog.xml:11(primary) 
+msgid "length of path"
+msgstr ""
+
+#. EvaluateDialog.xml:12(para) 
 msgid "This dialog is used for interactive calculations on functions. The dialog may be docked below the function list, which is default, or undocked as a floating dialog."
 msgstr ""
 
-#. EvaluateDialog.xml:15(para) 
+#. EvaluateDialog.xml:18(para) 
 msgid "When <placeholder-1/> is selected the dialog is used to evaluate the selected function at a given value either entered in the dialog or traced with the mouse."
 msgstr ""
 
-#. EvaluateDialog.xml:23(para) 
+#. EvaluateDialog.xml:26(para) 
 msgid "Below you can see the dialog, that appears when a standard function is selected. The dialog will look a little different when a parametric function, polar function or tangent is selected."
 msgstr ""
 
-#. EvaluateDialog.xml:30(para) 
+#. EvaluateDialog.xml:33(para) 
 msgid "You can enter a value for which you want to evaluate the function. The value will be evaluated for the function selected in the <placeholder-1/>. If the result is on the graph within the shown coordinate system, it will be marked with a dashed cross. You can also trace the drawn graph with the mouse. Just click on the graph with the mouse and the function will be evaluated at the nearest point."
 msgstr ""
 
-#. EvaluateDialog.xml:37(para) 
+#. EvaluateDialog.xml:40(para) 
 msgid "It may happen that the result of an evaluation is a complex number with an imaginary part. This number will either be written as a+b&imag;, a&ang;&theta; or not written at all depending of the choice under <placeholder-1/>."
 msgstr ""
 
-#. EvaluateDialog.xml:47(para) 
-msgid "The cursor will snap to the nearest point on the selected function."
+#. EvaluateDialog.xml:50(para) 
+msgid "The cursor will snap to the nearest point of the selected function."
 msgstr ""
 
-#. EvaluateDialog.xml:53(item) 
+#. EvaluateDialog.xml:56(term) 
 msgid "Intersection"
 msgstr ""
 
-#. EvaluateDialog.xml:55(para) 
+#. EvaluateDialog.xml:58(para) 
 msgid "The cursor will snap to the nearest intersection between the selected function and every function displayed (including the function itself)."
 msgstr ""
 
-#. EvaluateDialog.xml:61(item) AxesDialog.xml:10(primary) 
+#. EvaluateDialog.xml:64(term) AxesDialog.xml:10(primary) 
 msgid "x-axis"
 msgstr ""
 
-#. EvaluateDialog.xml:63(para) 
+#. EvaluateDialog.xml:66(para) 
 msgid "The cursor will snap to the nearest intersection between the selected function and the x-axis."
 msgstr ""
 
-#. EvaluateDialog.xml:69(item) AxesDialog.xml:11(primary) 
+#. EvaluateDialog.xml:72(term) AxesDialog.xml:11(primary) 
 msgid "y-axis"
 msgstr ""
 
-#. EvaluateDialog.xml:71(para) 
+#. EvaluateDialog.xml:74(para) 
 msgid "The cursor will snap to the nearest intersection between the selected function and the y-axis. Not available for standard functions."
 msgstr ""
 
-#. EvaluateDialog.xml:77(term) 
+#. EvaluateDialog.xml:80(term) 
 msgid "Extreme x-value"
 msgstr ""
 
-#. EvaluateDialog.xml:79(para) 
+#. EvaluateDialog.xml:82(para) 
 msgid "The cursor will snap to the nearest local extreme value for the x-coordinate. Not available for standard functions."
 msgstr ""
 
-#. EvaluateDialog.xml:85(term) 
-msgid "Extreme y-value (Extremum)"
+#. EvaluateDialog.xml:88(term) 
+msgid "Extreme y-value"
 msgstr ""
 
-#. EvaluateDialog.xml:87(para) 
+#. EvaluateDialog.xml:90(para) 
 msgid "The cursor will snap to the nearest local extreme value for the y-coordinate."
 msgstr ""
 
-#. EvaluateDialog.xml:41(para) 
+#. EvaluateDialog.xml:44(para) 
 msgid "When you click with the mouse on the graphing area you may choose what the cursor will snap to: <placeholder-1/>"
 msgstr ""
 
-#. EvaluateDialog.xml:98(para) 
-msgid "When <placeholder-1/> is selected the dialog is used to calculate signed areas. This can only be done on standard functions, polar functions and tangents, but not on parametric functions. For standard functions, parametric functions and tangents the result is the signed area between the graph and the x-axis (the real x-axis and not necessarily the visible one) for the given range."
+#. EvaluateDialog.xml:101(para) 
+msgid "When <placeholder-1/> is selected the dialog is used to calculate signed areas. For standard functions, parametric functions and tangents the result is the signed area between the graph and the x-axis (the real x-axis and not necessarily the visible one) for the given range."
 msgstr ""
 
-#. EvaluateDialog.xml:109(para) 
+#. EvaluateDialog.xml:111(para) 
 msgid "For polar functions, the signed area is the one between the graph in the given range and origin. The area is considered negative when the angle goes from a higher to a lower value (clockwise)."
 msgstr ""
 
-#. EvaluateDialog.xml:113(para) 
+#. EvaluateDialog.xml:115(para) 
 msgid "For the other functions the area is considered negative when the graph is below the x-axis or when the function goes from a higher to a lower x-value."
 msgstr ""
 
-#. EvaluateDialog.xml:116(para) 
+#. EvaluateDialog.xml:118(para) 
 msgid "You can either enter the range in the edit boxes or select the range with the mouse. The calculated area will be shown below the range, and the area will be marked with a shading in the coordinate system. The calculation is done using Simpson's formula through 1000 iterations."
 msgstr ""
 
-#. EvaluateDialog.xml:125(para) 
+#. EvaluateDialog.xml:127(para) 
 msgid "When <placeholder-1/> is selected the dialog is used to calculate the distance between two points on the function along the curve. You may either enter the range in the dialog or use the mouse to mark it. The range will be marked in the coordinate system. The calculation is done by converting it to an integration and using Simpson's formula through 1000 iterations."
 msgstr ""
 
@@ -3737,43 +3817,43 @@ msgstr ""
 msgid "The <placeholder-1/> function returns the absolute or numeric value of <placeholder-2/>, commonly written as |z|. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> always returns a postive real value."
 msgstr ""
 
-#. Complex.xml:34(primary) 
+#. Complex.xml:41(primary) 
 msgid "argument"
 msgstr ""
 
-#. Complex.xml:35(primary) 
+#. Complex.xml:42(primary) 
 msgid "angle"
 msgstr ""
 
-#. Complex.xml:36(para) 
+#. Complex.xml:43(para) 
 msgid "Returns the argument of the parameter."
 msgstr ""
 
-#. Complex.xml:45(para) 
+#. Complex.xml:52(para) 
 msgid "The <placeholder-1/> function returns the argument or angle of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> always returns a real number. The result may be in <placeholder-8/> or degrees depending on the current settings. The angle is always between -&pi; and &pi;. If <placeholder-9/> is a real number, <placeholder-10/> is 0 for positive numbers and &pi; for negative numbers. <placeholder-11/> is undefined."
 msgstr ""
 
-#. Complex.xml:61(primary) 
+#. Complex.xml:75(primary) 
 msgid "conjugate"
 msgstr ""
 
-#. Complex.xml:71(para) 
+#. Complex.xml:85(para) 
 msgid "The <placeholder-1/> function returns the conjugate of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The function is defined as: <placeholder-7/>."
 msgstr ""
 
-#. Complex.xml:83(primary) 
+#. Complex.xml:104(primary) 
 msgid "real value"
 msgstr ""
 
-#. Complex.xml:93(para) 
+#. Complex.xml:114(para) 
 msgid "The <placeholder-1/> function returns the real part of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr ""
 
-#. Complex.xml:104(primary) 
+#. Complex.xml:132(primary) 
 msgid "imaginary value"
 msgstr ""
 
-#. Complex.xml:114(para) 
+#. Complex.xml:142(para) 
 msgid "The <placeholder-1/> function returns the imaginary part of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr ""
 
@@ -3795,10 +3875,6 @@ msgstr ""
 
 #. AxesDialog.xml:17(primary) 
 msgid "grid"
-msgstr ""
-
-#. AxesDialog.xml:19(primary) 
-msgid "arrow"
 msgstr ""
 
 #. AxesDialog.xml:20(primary) 
@@ -4082,7 +4158,7 @@ msgid "In the <placeholder-1/> and <placeholder-2/> fields you need to specify t
 msgstr ""
 
 #. AnimateDialog.xml:50(term) 
-msgid "Image information"
+msgid "Frame information"
 msgstr ""
 
 #. AnimateDialog.xml:55(guilabel) 
@@ -4146,7 +4222,7 @@ msgid "This will save all frames as single bitmap files. This is the same as rep
 msgstr ""
 
 #. Acknowledgements.xml:7(title) 
-msgid "Acknowledgments"
+msgid "Acknowledgements"
 msgstr ""
 
 #. Acknowledgements.xml:8(primary) 
@@ -4338,11 +4414,13 @@ msgid "Miscellaneous"
 msgstr ""
 
 #. Acknowledgements.xml:274(para) 
-msgid "The icon was designed by <placeholder-1/>."
+msgid "The icon for Graph was designed by <placeholder-1/>."
 msgstr ""
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
-#. Acknowledgements.xml:0(None) 
 msgid "translator-credits"
+msgstr ""
+
+msgid "Translator:"
 msgstr ""
 

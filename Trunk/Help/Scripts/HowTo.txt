@@ -21,3 +21,5 @@ The text contains some placeholders named like <placeholder-1/>.
 This is used to make the translations easier.
 The placeholders are used instead of a longer text that should not be translated or is translated elsewhere.
 The placeholders should therefore be kept in the translation.
+
+When the translation is finished, please send the po-file to Michael Bach Ipsen (rosenthall@hotmail.com) or Ivan Johansen (graph@padowan.dk).
