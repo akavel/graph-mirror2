@@ -416,10 +416,12 @@ PyObject* InitGraphImpl()
   return PyModule_Create(&GraphModuleDef);
 }
 //---------------------------------------------------------------------------
+extern "C" PyObject* PyInit__Swig();
 _inittab Modules[] =
 {
   {"GraphImpl", InitGraphImpl},
   {"PyVcl", InitPyVcl},
+  {"_Swig", PyInit__Swig},
   {NULL, NULL}
 };
 //---------------------------------------------------------------------------
@@ -462,16 +464,14 @@ void InitPlugins()
       "GraphImpl.handle = %d\n"
       "GraphImpl.form1 = %d\n"
 
-      "import imp\n"
-			"File, PathName, Desc = imp.find_module('Graph', ['%s\\Plugins'])\n"
-      "Module = imp.load_module('Graph', File, PathName, Desc)\n"
-      "File.close()\n"
-      "Module.InitPlugins()\n"
-
+      "sys.path.append('%s/Lib')\n"
       "import Graph\n"
+      "Graph.InitPlugins()\n"
+
       "import vcl\n"
       "import PyVcl\n"
       "sys.stdin = sys.stdout\n"
+      "import Swig\n"
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
       , Application->Handle
       , Form1

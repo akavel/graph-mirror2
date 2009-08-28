@@ -53,6 +53,7 @@
 #include <PlatformDefaultStyleActnCtrls.hpp>
 #include <ActnMenus.hpp>
 #include <ActnPopup.hpp>
+#include <XPMan.hpp>
 #include <stack>
 #include <boost/scoped_ptr.hpp>
 //---------------------------------------------------------------------------

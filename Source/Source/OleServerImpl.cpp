@@ -224,6 +224,14 @@ bool TOleServerImpl::Register(bool AllUsers)
   }
 }
 //---------------------------------------------------------------------------
+void UpgradeSettings()
+{
+  //Old default font (Times New Roman) is changed to Tahoma to support angle symbol
+  std::wstring VersionStr = GetRegValue(REGISTRY_KEY, L"Version", HKEY_CURRENT_USER, L"");
+  if(TVersion(VersionStr) < TVersion(4,4,0,444))
+    CreateRegKey(REGISTRY_KEY "\\Property", L"DefaultPointLabelFont", DEFAULT_POINT_FONT, HKEY_CURRENT_USER);
+}
+//---------------------------------------------------------------------------
 HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
 {
   try
@@ -238,6 +246,7 @@ HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
 
     if(bRegister)
     {
+      UpgradeSettings();
       //Update version info to last registered version for current user
       CreateRegKey(REGISTRY_KEY, L"Version", TVersionInfo().ProductVersion().Text().c_str(), (unsigned)HKEY_CURRENT_USER);
 

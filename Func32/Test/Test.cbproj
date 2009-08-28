@@ -34,7 +34,7 @@
 			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
 			<DCC_Optimize>false</DCC_Optimize>
 			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
-			<Defines>_DEBUG;$(Defines)</Defines>
+			<Defines>_DEBUG;_HAS_ITERATOR_DEBUGGING=1;$(Defines)</Defines>
 			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
 			<IntermediateOutputDir>Debug</IntermediateOutputDir>
 			<ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
@@ -55,13 +55,13 @@
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>
-			<CppCompile Include="Test.cpp">
-				<BuildOrder>0</BuildOrder>
-			</CppCompile>
 			<LibFiles Include="..\Func32.lib">
 				<IgnorePath>true</IgnorePath>
 				<BuildOrder>1</BuildOrder>
 			</LibFiles>
+			<CppCompile Include="Test.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

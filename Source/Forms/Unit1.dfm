@@ -5,8 +5,8 @@ object Form1: TForm1
   VertScrollBar.Visible = False
   AlphaBlendValue = 100
   Caption = 'Graph'
-  ClientHeight = 448
-  ClientWidth = 628
+  ClientHeight = 444
+  ClientWidth = 624
   Color = clBtnFace
   Constraints.MinHeight = 300
   Constraints.MinWidth = 300
@@ -150,7 +150,7 @@ object Form1: TForm1
   object ActionToolBar1: TActionToolBar
     Left = 0
     Top = 23
-    Width = 628
+    Width = 624
     Height = 30
     ActionManager = ActionManager
     ColorMap.HighlightColor = 14410210
@@ -164,7 +164,7 @@ object Form1: TForm1
   object ActionMainMenuBar1: TActionMainMenuBar
     Left = 0
     Top = 0
-    Width = 628
+    Width = 624
     Height = 23
     UseSystemFont = False
     ActionManager = ActionManager
@@ -180,8 +180,8 @@ object Form1: TForm1
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 429
-    Width = 628
+    Top = 425
+    Width = 624
     Height = 19
     AutoHint = True
     Panels = <
@@ -209,15 +209,15 @@ object Form1: TForm1
   object Panel5: TPanel
     Left = 0
     Top = 53
-    Width = 628
-    Height = 376
+    Width = 624
+    Height = 372
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
     object Splitter1: TMySplitter
       Left = 161
       Top = 0
-      Height = 273
+      Height = 269
       AutoSnap = False
       Beveled = True
       MinSize = 120
@@ -227,19 +227,20 @@ object Form1: TForm1
     end
     object Splitter2: TSplitter
       Left = 0
-      Top = 273
-      Width = 628
+      Top = 269
+      Width = 624
       Height = 3
       Cursor = crVSplit
       Align = alBottom
       MinSize = 1
       ExplicitTop = 264
+      ExplicitWidth = 628
     end
     object Panel2: TFocusPanel
       Left = 164
       Top = 0
-      Width = 464
-      Height = 273
+      Width = 460
+      Height = 269
       Align = alClient
       BevelOuter = bvNone
       FullRepaint = False
@@ -251,8 +252,8 @@ object Form1: TForm1
       object Image1: TImage
         Left = 0
         Top = 0
-        Width = 464
-        Height = 273
+        Width = 460
+        Height = 269
         Align = alClient
         ParentShowHint = False
         ShowHint = False
@@ -267,8 +268,8 @@ object Form1: TForm1
       object Cross: TCross
         Left = 0
         Top = 0
-        Width = 464
-        Height = 273
+        Width = 460
+        Height = 269
         Style = psDot
         Mode = pmNot
         X = 30
@@ -294,8 +295,8 @@ object Form1: TForm1
       object IPolygon1: TIPolygon
         Left = 0
         Top = 0
-        Width = 464
-        Height = 273
+        Width = 460
+        Height = 269
         Brush.Color = 13395660
         Brush.Style = bsBDiagonal
         Points.Strings = (
@@ -330,7 +331,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 161
-      Height = 273
+      Height = 269
       Align = alLeft
       BevelOuter = bvNone
       DragKind = dkDock
@@ -339,7 +340,7 @@ object Form1: TForm1
         Left = 0
         Top = 0
         Width = 161
-        Height = 273
+        Height = 269
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -370,7 +371,7 @@ object Form1: TForm1
       end
       object Panel1: TPanel
         Left = 0
-        Top = 273
+        Top = 269
         Width = 161
         Height = 0
         Align = alBottom
@@ -394,8 +395,8 @@ object Form1: TForm1
     end
     object Panel6: TPanel
       Left = 0
-      Top = 276
-      Width = 628
+      Top = 272
+      Width = 624
       Height = 100
       Align = alBottom
       BevelOuter = bvNone

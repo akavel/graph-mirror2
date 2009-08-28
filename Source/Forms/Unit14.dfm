@@ -409,6 +409,9 @@ object Form14: TForm14
         Top = -2
         Width = 169
         Height = 53
+        Hint = 
+          'Choose between cartesian (x,y) coordinates and polar ('#952',r) coord' +
+          'inates.'
         Caption = 'Coordinate type'
         ItemIndex = 0
         Items.Strings = (

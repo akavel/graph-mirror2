@@ -6,10 +6,10 @@ class EventLogger:
     def __call__(self):
         print(self.s)
 
-Graph.OnNew.append(EventLogger("OnNew"))
-Graph.OnLoad.append(EventLogger("OnLoad"))
-Graph.OnSelect.append(EventLogger("OnSelect"))
-Graph.OnClose.append(EventLogger("OnClose"))
+#Graph.OnNew.append(EventLogger("OnNew"))
+#Graph.OnLoad.append(EventLogger("OnLoad"))
+#Graph.OnSelect.append(EventLogger("OnSelect"))
+#Graph.OnClose.append(EventLogger("OnClose"))
 
 def test():
     import time
