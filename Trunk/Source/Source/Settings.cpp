@@ -12,6 +12,7 @@
 #include "Settings.h"
 #include "ConfigFile.h"
 #include "ConfigRegistry.h"
+#include "VersionInfo.h"
 //---------------------------------------------------------------------------
 namespace Graph
 {

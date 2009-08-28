@@ -4,6 +4,10 @@ import sys
 import imp
 import traceback
 import GraphImpl
+import Swig
+
+Axes = Swig.GetAxes()
+Redraw = Swig.Redraw
 
 def InitPlugins():
     print("Loading plugins...")

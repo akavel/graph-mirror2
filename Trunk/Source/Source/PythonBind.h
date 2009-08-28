@@ -15,13 +15,36 @@ struct _typeobject;
 
 namespace Python
 {
-extern _typeobject &PyTuple_Type;
-extern _typeobject &PyLong_Type;
-extern _typeobject &PyString_Type;
-extern _typeobject &PyUnicode_Type;
-extern _object *PyExc_TypeError;
-extern _object *PyExc_KeyError;
-extern _object &_Py_NoneStruct;
+template<typename T> T& GetPythonAddress(const char *Name);
+
+#ifndef PYTHON_WRAP
+#define PYTHON_WRAP(type,name) extern type& name;
+#endif
+PYTHON_WRAP(_typeobject, PyTuple_Type)
+PYTHON_WRAP(_typeobject, PyLong_Type)
+PYTHON_WRAP(_typeobject, PyString_Type)
+PYTHON_WRAP(_typeobject, PyUnicode_Type)
+PYTHON_WRAP(_typeobject, PyBaseObject_Type)
+PYTHON_WRAP(_typeobject, PyCFunction_Type)
+PYTHON_WRAP(_typeobject, PyFloat_Type)
+PYTHON_WRAP(_typeobject, PyType_Type)
+PYTHON_WRAP(_object*, PyExc_TypeError)
+PYTHON_WRAP(_object*, PyExc_KeyError)
+PYTHON_WRAP(_object*, PyExc_AttributeError)
+PYTHON_WRAP(_object*, PyExc_IOError)
+PYTHON_WRAP(_object*, PyExc_IndexError)
+PYTHON_WRAP(_object*, PyExc_MemoryError)
+PYTHON_WRAP(_object*, PyExc_NameError)
+PYTHON_WRAP(_object*, PyExc_OverflowError)
+PYTHON_WRAP(_object*, PyExc_RuntimeError)
+PYTHON_WRAP(_object*, PyExc_SyntaxError)
+PYTHON_WRAP(_object*, PyExc_SystemError)
+PYTHON_WRAP(_object*, PyExc_ValueError)
+PYTHON_WRAP(_object*, PyExc_ZeroDivisionError)
+PYTHON_WRAP(_object, _Py_NoneStruct)
+PYTHON_WRAP(_object, _Py_TrueStruct)
+PYTHON_WRAP(_object, _Py_FalseStruct)
+PYTHON_WRAP(_object, _Py_NotImplementedStruct)
 
 bool IsPythonInstalled();
 void AllocGIL();

@@ -158,6 +158,7 @@ Plugins:
 - Customize the numbers on the axes, i.e. add/remove numbers.
 - Export of more than one item.
 - Evaluate a function for a series of x-values.
+- Statistics on point series: aritmetic average, sum, median, standard deviation, 1st and 3rd quartil, min/max value. (see mail from Kristoffer (Ås vgs)
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>

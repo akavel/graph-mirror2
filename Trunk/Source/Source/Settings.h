@@ -71,7 +71,6 @@ struct TAxes
   Func32::TDblPoint LegendPos; //Only valid when LegendPlacement is lpCustom
   unsigned GridSize;
   bool CalcComplex;//When true: Complex numbers are used for graphing
-//  bool ZoomSquare;
   TAxesArrows AxesArrows;
   TNumberPlacement NumberPlacement;
   TGridStyle GridStyle;

@@ -9,7 +9,7 @@
 <a href="Features.php">Features</a><br>
 <a href="shots/Shot1.php">Screenshots</a><br>
 <a href="Faq.php">FAQ</a><br>
-<a href="/forum">Forum</a><br>
+<a href="http://www.padowan.dk/forum">Forum</a><br>
 <a href="Language.php">Translations</a><br>
 <a href="Donation.php">Donate</a><br>
 <a href="Links.php">Links</a><br>

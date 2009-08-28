@@ -9,6 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#define PYTHON_WRAP(type,name) type& name = GetPythonAddress<type>(#name);
 #include "PythonBind.h"
 #undef _DEBUG
 #include <python.h>
@@ -21,19 +22,38 @@ const WORD PythonFpuControl = MCW_EM | IC_PROJECTIVE | RC_NEAR;
 const WORD DefaultFpuControl = EM_DENORMAL | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64;
 const WORD FpuMask = MCW_EM | MCW_IC | MCW_RC;
 
-PyTypeObject& GetPythonType(const char *Name);
-PyObject* GetPythonAddress(const char *Name);
+//PyTypeObject& GetPythonType(const char *Name);
+//PyObject* GetPythonAddress(const char *Name);
 PyThreadState *ThreadState = NULL;
 int GILUseCount = 1;
 
 HINSTANCE PythonInstance = NULL;
 
-PyTypeObject &PyTuple_Type = GetPythonType("PyTuple_Type");
-PyTypeObject &PyLong_Type = GetPythonType("PyLong_Type");
-PyTypeObject &PyUnicode_Type = GetPythonType("PyUnicode_Type");
-PyObject &_Py_NoneStruct = (PyObject&)GetPythonType("_Py_NoneStruct");
-PyObject *PyExc_TypeError = GetPythonAddress("PyExc_TypeError");
-PyObject *PyExc_KeyError = GetPythonAddress("PyExc_KeyError");
+template<typename T>
+T& GetPythonAddress(const char *Name)
+{
+  static T Dummy;
+  if(IsPythonInstalled())
+    return *reinterpret_cast<T*>(GetProcAddress(PythonInstance, Name));
+  return Dummy;
+}
+//---------------------------------------------------------------------------
+/*
+PyTypeObject &PyTuple_Type = GetPythonAddress<PyTypeObject>("PyTuple_Type");
+PyTypeObject &PyLong_Type = GetPythonAddress<PyTypeObject>("PyLong_Type");
+PyTypeObject &PyUnicode_Type = GetPythonAddress<PyTypeObject>("PyUnicode_Type");
+PyTypeObject &PyBaseObject_Type = GetPythonAddress<PyTypeObject>("PyBaseObjecy_Type");
+PyTypeObject &PyCFunction_Type = GetPythonAddress<PyTypeObject>("PyCFunction_Type");
+PyTypeObject &PyFloat_Type = GetPythonAddress<PyTypeObject>("PyUnicode_Type");
+PyTypeObject &PyType_Type = GetPythonAddress<PyTypeObject>("PyUnicode_Type");
+PyObject *PyExc_TypeError = GetPythonAddress<PyObject*>("PyExc_TypeError");
+PyObject *PyExc_KeyError = GetPythonAddress<PyObject*>("PyExc_KeyError");
+PyObject *PyExc_KeyError = GetPythonAddress<PyObject*>("PyExc_KeyError");
+PyObject &_Py_NoneStruct = GetPythonAddress<PyObject>("_Py_NoneStruct");
+PyObject &_Py_TrueStruct = GetPythonAddress<PyObject>("_Py_TrueStruct");
+PyObject &_Py_FalseStruct = GetPythonAddress<PyObject>("_Py_FalseStruct");
+PyObject &_Py_NotImplementedStruct = GetPythonAddress<PyObject>("_Py_NotImplementedStruct");
+*/
 //---------------------------------------------------------------------------
 bool IsPythonInstalled()
 {
@@ -46,7 +66,7 @@ bool IsPythonInstalled()
   return Result;
 }
 //---------------------------------------------------------------------------
-PyTypeObject& GetPythonType(const char *Name)
+/*PyTypeObject& GetPythonType(const char *Name)
 {
   static PyTypeObject Dummy;
   if(IsPythonInstalled())
@@ -55,15 +75,7 @@ PyTypeObject& GetPythonType(const char *Name)
     return *reinterpret_cast<PyTypeObject*>(Address);
   }
   return Dummy;
-}
-//---------------------------------------------------------------------------
-PyObject* GetPythonAddress(const char *Name)
-{
-  static PyObject *Dummy = NULL;
-  if(IsPythonInstalled())
-    return *(PyObject**)GetProcAddress(PythonInstance, Name);
-  return Dummy;
-}
+}*/
 //---------------------------------------------------------------------------
 PyObject* PyReturnNone()
 {
