@@ -534,6 +534,12 @@ def processElementTag(node, replacements, restart = 0):
                    print >> sys.stderr, "WARNING: Missing <placeholder-%d/> in translation.\nOriginal string:\n%s\nTranslation:\n%s\n" % (i, normalizeString(outtxt), original_translation.encode("UTF-8"))
                 translation = translation.replace('<placeholder-%d/>' % (i), replacement)
 
+            if '<placeholder-' in translation and original_translation.encode("UTF-8") != outtxt:
+                i = translation.find("<placeholder-")
+                placeholder = translation[i: translation.find(">", i)+1]
+                print >> sys.stderr, "WARNING: %s found in translation, but does not exist in the original.\nOriginal string:\n%s\nTranslation:\n%s\n" % (placeholder, normalizeString(outtxt), original_translation)
+                translation = translation.replace(placeholder, "")
+
             if worth:
                 if mode == 'merge':
                     replaceNodeContentsWithText(node, translation)
