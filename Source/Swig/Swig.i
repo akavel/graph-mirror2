@@ -1,7 +1,17 @@
 %module Swig
 %import "std_wstring.i"
 
+%typemap(in) Func32::TDblPoint  {
+  if(!PyArg_ParseTuple($input, "dd", &($1.x), &($1.y)))
+    SWIG_fail;
+}
+
+%typemap(out) Func32::TDblPoint {
+  $result = Py_BuildValue("dd", $1.x, $1.y);
+}
+
 %begin %{
+//Begin
 #include "Graph.h"
 #include "Unit1.h"
 #include "PythonBind.h"
@@ -16,12 +26,15 @@ namespace Python
 %runtime %{
   //Runtime
 %}
+
 %header %{
   //Header
 %}
+
 %wrapper %{
   //Wrapper
 %}
+
 %init %{
   //Init
   SWIG_init2(d, m);
@@ -33,10 +46,18 @@ using namespace Python;
 static PyObject* SWIG_init2(PyObject *d, PyObject *m)
 {
 %}
+
 %inline %{
 static Graph::TAxes* GetAxes() {return &Form1->Data.Axes;}
 static void Redraw() {Form1->Redraw();}
 %}
+
+typedef unsigned TColor;
+
+namespace Func32
+{
+enum TTrigonometry {Radian, Degree};
+}
 
 namespace Graph
 {
@@ -98,3 +119,4 @@ struct TAxes
   TGridStyle GridStyle;
 };
 }
+
