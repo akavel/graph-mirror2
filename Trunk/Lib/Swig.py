@@ -67,13 +67,15 @@ except AttributeError:
 
 
 
-def GetAxes():
+def GetAxes() -> "Graph::TAxes *" :
   return _Swig.GetAxes()
 GetAxes = _Swig.GetAxes
 
-def Redraw():
+def Redraw() -> "void" :
   return _Swig.Redraw()
 Redraw = _Swig.Redraw
+Radian = _Swig.Radian
+Degree = _Swig.Degree
 asNone = _Swig.asNone
 asCrossed = _Swig.asCrossed
 asBoxed = _Swig.asBoxed

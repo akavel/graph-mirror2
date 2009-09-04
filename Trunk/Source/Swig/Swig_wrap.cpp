@@ -8,6 +8,7 @@
  * interface file instead. 
  * ----------------------------------------------------------------------------- */
 
+//Begin
 #include "Graph.h"
 #include "Unit1.h"
 #include "PythonBind.h"
@@ -2697,15 +2698,14 @@ SWIG_Python_MustGetPtr(PyObject *obj, swig_type_info *ty, int argnum, int flags)
 /* -------- TYPES TABLE (BEGIN) -------- */
 
 #define SWIGTYPE_p_Func32__TDblPoint swig_types[0]
-#define SWIGTYPE_p_Func32__TTrigonometry swig_types[1]
-#define SWIGTYPE_p_Graph__TAxes swig_types[2]
-#define SWIGTYPE_p_Graph__TAxis swig_types[3]
-#define SWIGTYPE_p_TColor swig_types[4]
-#define SWIGTYPE_p_TVclObjectT_TFont_t swig_types[5]
-#define SWIGTYPE_p_char swig_types[6]
-#define SWIGTYPE_p_wchar_t swig_types[7]
-static swig_type_info *swig_types[9];
-static swig_module_info swig_module = {swig_types, 8, 0, 0, 0, 0};
+#define SWIGTYPE_p_Graph__TAxes swig_types[1]
+#define SWIGTYPE_p_Graph__TAxis swig_types[2]
+#define SWIGTYPE_p_TVclObjectT_TFont_t swig_types[3]
+#define SWIGTYPE_p_char swig_types[4]
+#define SWIGTYPE_p_unsigned_int swig_types[5]
+#define SWIGTYPE_p_wchar_t swig_types[6]
+static swig_type_info *swig_types[8];
+static swig_module_info swig_module = {swig_types, 7, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3091,22 +3091,6 @@ SWIG_From_std_wstring  (const std::wstring& s)
 
 
 SWIGINTERN int
-SWIG_AsVal_int (PyObject * obj, int *val)
-{
-  long v;
-  int res = SWIG_AsVal_long (obj, &v);
-  if (SWIG_IsOK(res)) {
-    if ((v < INT_MIN || v > INT_MAX)) {
-      return SWIG_OverflowError;
-    } else {
-      if (val) *val = static_cast< int >(v);
-    }
-  }  
-  return res;
-}
-
-
-SWIGINTERN int
 SWIG_AsVal_unsigned_SS_long (PyObject *obj, unsigned long *val) 
 {
   if (PyInt_Check(obj)) {
@@ -3178,6 +3162,22 @@ SWIGINTERNINLINE PyObject *
 SWIG_From_unsigned_SS_int  (unsigned int value)
 {    
   return SWIG_From_unsigned_SS_long  (value);
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_int (PyObject * obj, int *val)
+{
+  long v;
+  int res = SWIG_AsVal_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v < INT_MIN || v > INT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< int >(v);
+    }
+  }  
+  return res;
 }
 
 #ifdef __cplusplus
@@ -4097,8 +4097,8 @@ SWIGINTERN PyObject *_wrap_TAxes_AxesColor_set(PyObject *SWIGUNUSEDPARM(self), P
   TColor arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -4108,19 +4108,11 @@ SWIGINTERN PyObject *_wrap_TAxes_AxesColor_set(PyObject *SWIGUNUSEDPARM(self), P
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_AxesColor_set" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_TColor,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TAxes_AxesColor_set" "', argument " "2"" of type '" "TColor""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TAxes_AxesColor_set" "', argument " "2"" of type '" "TColor""'");
-    } else {
-      TColor * temp = reinterpret_cast< TColor * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxes_AxesColor_set" "', argument " "2"" of type '" "TColor""'");
+  } 
+  arg2 = static_cast< TColor >(val2);
   if (arg1) (arg1)->AxesColor = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -4143,8 +4135,8 @@ SWIGINTERN PyObject *_wrap_TAxes_AxesColor_get(PyObject *SWIGUNUSEDPARM(self), P
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_AxesColor_get" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  result =  ((arg1)->AxesColor);
-  resultobj = SWIG_NewPointerObj((new TColor(static_cast< const TColor& >(result))), SWIGTYPE_p_TColor, SWIG_POINTER_OWN |  0 );
+  result = (TColor) ((arg1)->AxesColor);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -4157,8 +4149,8 @@ SWIGINTERN PyObject *_wrap_TAxes_GridColor_set(PyObject *SWIGUNUSEDPARM(self), P
   TColor arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -4168,19 +4160,11 @@ SWIGINTERN PyObject *_wrap_TAxes_GridColor_set(PyObject *SWIGUNUSEDPARM(self), P
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_GridColor_set" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_TColor,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TAxes_GridColor_set" "', argument " "2"" of type '" "TColor""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TAxes_GridColor_set" "', argument " "2"" of type '" "TColor""'");
-    } else {
-      TColor * temp = reinterpret_cast< TColor * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxes_GridColor_set" "', argument " "2"" of type '" "TColor""'");
+  } 
+  arg2 = static_cast< TColor >(val2);
   if (arg1) (arg1)->GridColor = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -4203,8 +4187,8 @@ SWIGINTERN PyObject *_wrap_TAxes_GridColor_get(PyObject *SWIGUNUSEDPARM(self), P
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_GridColor_get" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  result =  ((arg1)->GridColor);
-  resultobj = SWIG_NewPointerObj((new TColor(static_cast< const TColor& >(result))), SWIGTYPE_p_TColor, SWIG_POINTER_OWN |  0 );
+  result = (TColor) ((arg1)->GridColor);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -4217,8 +4201,8 @@ SWIGINTERN PyObject *_wrap_TAxes_BackgroundColor_set(PyObject *SWIGUNUSEDPARM(se
   TColor arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -4228,19 +4212,11 @@ SWIGINTERN PyObject *_wrap_TAxes_BackgroundColor_set(PyObject *SWIGUNUSEDPARM(se
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_BackgroundColor_set" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_TColor,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TAxes_BackgroundColor_set" "', argument " "2"" of type '" "TColor""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TAxes_BackgroundColor_set" "', argument " "2"" of type '" "TColor""'");
-    } else {
-      TColor * temp = reinterpret_cast< TColor * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxes_BackgroundColor_set" "', argument " "2"" of type '" "TColor""'");
+  } 
+  arg2 = static_cast< TColor >(val2);
   if (arg1) (arg1)->BackgroundColor = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -4263,8 +4239,8 @@ SWIGINTERN PyObject *_wrap_TAxes_BackgroundColor_get(PyObject *SWIGUNUSEDPARM(se
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_BackgroundColor_get" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  result =  ((arg1)->BackgroundColor);
-  resultobj = SWIG_NewPointerObj((new TColor(static_cast< const TColor& >(result))), SWIGTYPE_p_TColor, SWIG_POINTER_OWN |  0 );
+  result = (TColor) ((arg1)->BackgroundColor);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -4628,8 +4604,8 @@ SWIGINTERN PyObject *_wrap_TAxes_Trigonometry_set(PyObject *SWIGUNUSEDPARM(self)
   Func32::TTrigonometry arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -4639,19 +4615,11 @@ SWIGINTERN PyObject *_wrap_TAxes_Trigonometry_set(PyObject *SWIGUNUSEDPARM(self)
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_Trigonometry_set" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_Func32__TTrigonometry,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TAxes_Trigonometry_set" "', argument " "2"" of type '" "Func32::TTrigonometry""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TAxes_Trigonometry_set" "', argument " "2"" of type '" "Func32::TTrigonometry""'");
-    } else {
-      Func32::TTrigonometry * temp = reinterpret_cast< Func32::TTrigonometry * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxes_Trigonometry_set" "', argument " "2"" of type '" "Func32::TTrigonometry""'");
+  } 
+  arg2 = static_cast< Func32::TTrigonometry >(val2);
   if (arg1) (arg1)->Trigonometry = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -4674,8 +4642,8 @@ SWIGINTERN PyObject *_wrap_TAxes_Trigonometry_get(PyObject *SWIGUNUSEDPARM(self)
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_Trigonometry_get" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  result =  ((arg1)->Trigonometry);
-  resultobj = SWIG_NewPointerObj((new Func32::TTrigonometry(static_cast< const Func32::TTrigonometry& >(result))), SWIGTYPE_p_Func32__TTrigonometry, SWIG_POINTER_OWN |  0 );
+  result = (Func32::TTrigonometry) ((arg1)->Trigonometry);
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -4792,8 +4760,6 @@ SWIGINTERN PyObject *_wrap_TAxes_LegendPos_set(PyObject *SWIGUNUSEDPARM(self), P
   Func32::TDblPoint arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -4804,17 +4770,8 @@ SWIGINTERN PyObject *_wrap_TAxes_LegendPos_set(PyObject *SWIGUNUSEDPARM(self), P
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
   {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_Func32__TDblPoint,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TAxes_LegendPos_set" "', argument " "2"" of type '" "Func32::TDblPoint""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TAxes_LegendPos_set" "', argument " "2"" of type '" "Func32::TDblPoint""'");
-    } else {
-      Func32::TDblPoint * temp = reinterpret_cast< Func32::TDblPoint * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
+    if(!PyArg_ParseTuple(obj1, "dd", &((&arg2)->x), &((&arg2)->y)))
+    SWIG_fail;
   }
   if (arg1) (arg1)->LegendPos = arg2;
   resultobj = SWIG_Py_Void();
@@ -4839,7 +4796,9 @@ SWIGINTERN PyObject *_wrap_TAxes_LegendPos_get(PyObject *SWIGUNUSEDPARM(self), P
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
   result =  ((arg1)->LegendPos);
-  resultobj = SWIG_NewPointerObj((new Func32::TDblPoint(static_cast< const Func32::TDblPoint& >(result))), SWIGTYPE_p_Func32__TDblPoint, SWIG_POINTER_OWN |  0 );
+  {
+    resultobj = Py_BuildValue("dd", (&result)->x, (&result)->y);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5232,42 +5191,38 @@ static PyMethodDef SwigMethods[] = {
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
 static swig_type_info _swigt__p_Func32__TDblPoint = {"_p_Func32__TDblPoint", "Func32::TDblPoint *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_Func32__TTrigonometry = {"_p_Func32__TTrigonometry", "Func32::TTrigonometry *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TAxes = {"_p_Graph__TAxes", "Graph::TAxes *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TAxis = {"_p_Graph__TAxis", "Graph::TAxis *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_TColor = {"_p_TColor", "TColor *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TVclObjectT_TFont_t = {"_p_TVclObjectT_TFont_t", "TVclObject< TFont > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "unsigned int *|TColor *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_wchar_t = {"_p_wchar_t", "wchar_t *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Func32__TDblPoint,
-  &_swigt__p_Func32__TTrigonometry,
   &_swigt__p_Graph__TAxes,
   &_swigt__p_Graph__TAxis,
-  &_swigt__p_TColor,
   &_swigt__p_TVclObjectT_TFont_t,
   &_swigt__p_char,
+  &_swigt__p_unsigned_int,
   &_swigt__p_wchar_t,
 };
 
 static swig_cast_info _swigc__p_Func32__TDblPoint[] = {  {&_swigt__p_Func32__TDblPoint, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_Func32__TTrigonometry[] = {  {&_swigt__p_Func32__TTrigonometry, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TAxes[] = {  {&_swigt__p_Graph__TAxes, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TAxis[] = {  {&_swigt__p_Graph__TAxis, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_TColor[] = {  {&_swigt__p_TColor, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TVclObjectT_TFont_t[] = {  {&_swigt__p_TVclObjectT_TFont_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_unsigned_int[] = {  {&_swigt__p_unsigned_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_wchar_t[] = {  {&_swigt__p_wchar_t, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Func32__TDblPoint,
-  _swigc__p_Func32__TTrigonometry,
   _swigc__p_Graph__TAxes,
   _swigc__p_Graph__TAxis,
-  _swigc__p_TColor,
   _swigc__p_TVclObjectT_TFont_t,
   _swigc__p_char,
+  _swigc__p_unsigned_int,
   _swigc__p_wchar_t,
 };
 
@@ -5872,6 +5827,8 @@ using namespace Python;
 
 static PyObject* SWIG_init2(PyObject *d, PyObject *m)
 {
+SWIG_Python_SetConstant(d, "Radian",SWIG_From_int(static_cast< int >(Func32::Radian)));
+SWIG_Python_SetConstant(d, "Degree",SWIG_From_int(static_cast< int >(Func32::Degree)));
 SWIG_Python_SetConstant(d, "asNone",SWIG_From_int(static_cast< int >(Graph::asNone)));
 SWIG_Python_SetConstant(d, "asCrossed",SWIG_From_int(static_cast< int >(Graph::asCrossed)));
 SWIG_Python_SetConstant(d, "asBoxed",SWIG_From_int(static_cast< int >(Graph::asBoxed)));
