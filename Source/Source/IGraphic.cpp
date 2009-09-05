@@ -86,7 +86,7 @@ void RenderRichText(const String &Str, TCanvas *Canvas, const TPoint &Pos, int W
   RichEdit->Visible = false;
   RichEdit->Transparent = BackgroundColor == clNone;
   RichEdit->Parent = Application->MainForm;
-  RichEdit->WordWrap = false;
+  RichEdit->WrapType = wtNone;
   RichEdit->BackgroundColor = BackgroundColor;
   TRichEditOle RichEditOle(RichEdit.get());
 
@@ -102,7 +102,7 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
   std::auto_ptr<TIRichEdit> RichEdit(new TIRichEdit(Application->MainForm));
   RichEdit->Visible = false;
   RichEdit->Transparent = true;
-  RichEdit->WordWrap = false; //Must be false for LineIndex() to find the correct line
+  RichEdit->WrapType = wtNone; //Must be false for LineIndex() to find the correct line
   RichEdit->ProtectedChange = true;
 
   RichEdit->Parent = Application->MainForm;

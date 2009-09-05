@@ -89,6 +89,7 @@ class TAxis(_object):
     __setattr__ = lambda self, name, value: _swig_setattr(self, TAxis, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, TAxis, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
     __swig_setmethods__["Min"] = _Swig.TAxis_Min_set
     __swig_getmethods__["Min"] = _Swig.TAxis_Min_get
@@ -132,12 +133,6 @@ class TAxis(_object):
     __swig_setmethods__["GridUnit"] = _Swig.TAxis_GridUnit_set
     __swig_getmethods__["GridUnit"] = _Swig.TAxis_GridUnit_get
     if _newclass:GridUnit = _swig_property(_Swig.TAxis_GridUnit_get, _Swig.TAxis_GridUnit_set)
-    def __init__(self): 
-        this = _Swig.new_TAxis()
-        try: self.this.append(this)
-        except: self.this = this
-    __swig_destroy__ = _Swig.delete_TAxis
-    __del__ = lambda self : None;
 TAxis_swigregister = _Swig.TAxis_swigregister
 TAxis_swigregister(TAxis)
 
@@ -153,6 +148,7 @@ class TAxes(_object):
     __setattr__ = lambda self, name, value: _swig_setattr(self, TAxes, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, TAxes, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
     __swig_setmethods__["xAxis"] = _Swig.TAxes_xAxis_set
     __swig_getmethods__["xAxis"] = _Swig.TAxes_xAxis_get
@@ -169,21 +165,17 @@ class TAxes(_object):
     __swig_setmethods__["BackgroundColor"] = _Swig.TAxes_BackgroundColor_set
     __swig_getmethods__["BackgroundColor"] = _Swig.TAxes_BackgroundColor_get
     if _newclass:BackgroundColor = _swig_property(_Swig.TAxes_BackgroundColor_get, _Swig.TAxes_BackgroundColor_set)
-    __swig_setmethods__["NumberFont"] = _Swig.TAxes_NumberFont_set
     __swig_getmethods__["NumberFont"] = _Swig.TAxes_NumberFont_get
-    if _newclass:NumberFont = _swig_property(_Swig.TAxes_NumberFont_get, _Swig.TAxes_NumberFont_set)
-    __swig_setmethods__["LabelFont"] = _Swig.TAxes_LabelFont_set
+    if _newclass:NumberFont = _swig_property(_Swig.TAxes_NumberFont_get)
     __swig_getmethods__["LabelFont"] = _Swig.TAxes_LabelFont_get
-    if _newclass:LabelFont = _swig_property(_Swig.TAxes_LabelFont_get, _Swig.TAxes_LabelFont_set)
-    __swig_setmethods__["LegendFont"] = _Swig.TAxes_LegendFont_set
+    if _newclass:LabelFont = _swig_property(_Swig.TAxes_LabelFont_get)
     __swig_getmethods__["LegendFont"] = _Swig.TAxes_LegendFont_get
-    if _newclass:LegendFont = _swig_property(_Swig.TAxes_LegendFont_get, _Swig.TAxes_LegendFont_set)
+    if _newclass:LegendFont = _swig_property(_Swig.TAxes_LegendFont_get)
     __swig_setmethods__["Title"] = _Swig.TAxes_Title_set
     __swig_getmethods__["Title"] = _Swig.TAxes_Title_get
     if _newclass:Title = _swig_property(_Swig.TAxes_Title_get, _Swig.TAxes_Title_set)
-    __swig_setmethods__["TitleFont"] = _Swig.TAxes_TitleFont_set
     __swig_getmethods__["TitleFont"] = _Swig.TAxes_TitleFont_get
-    if _newclass:TitleFont = _swig_property(_Swig.TAxes_TitleFont_get, _Swig.TAxes_TitleFont_set)
+    if _newclass:TitleFont = _swig_property(_Swig.TAxes_TitleFont_get)
     __swig_setmethods__["ShowLegend"] = _Swig.TAxes_ShowLegend_set
     __swig_getmethods__["ShowLegend"] = _Swig.TAxes_ShowLegend_get
     if _newclass:ShowLegend = _swig_property(_Swig.TAxes_ShowLegend_get, _Swig.TAxes_ShowLegend_set)
@@ -214,12 +206,6 @@ class TAxes(_object):
     __swig_setmethods__["GridStyle"] = _Swig.TAxes_GridStyle_set
     __swig_getmethods__["GridStyle"] = _Swig.TAxes_GridStyle_get
     if _newclass:GridStyle = _swig_property(_Swig.TAxes_GridStyle_get, _Swig.TAxes_GridStyle_set)
-    def __init__(self): 
-        this = _Swig.new_TAxes()
-        try: self.this.append(this)
-        except: self.this = this
-    __swig_destroy__ = _Swig.delete_TAxes
-    __del__ = lambda self : None;
 TAxes_swigregister = _Swig.TAxes_swigregister
 TAxes_swigregister(TAxes)
 

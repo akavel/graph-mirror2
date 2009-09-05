@@ -26,6 +26,7 @@ object Form22: TForm22
     Top = 0
     Width = 498
     Height = 206
+    WrapType = wtChar
     HideScrollBars = False
     ScrollBars = ssVertical
     Align = alClient

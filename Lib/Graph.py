@@ -5,9 +5,14 @@ import imp
 import traceback
 import GraphImpl
 import Swig
-
+import vcl
 Axes = Swig.GetAxes()
 Redraw = Swig.Redraw
+
+Swig.TAxes.NumberFont = property(lambda self: vcl.TObject(handle=Swig._Swig.TAxes_NumberFont_get(self), owned=False))
+Swig.TAxes.LabelFont = property(lambda self: vcl.TObject(handle=Swig._Swig.TAxes_LabelFont_get(self), owned=False))
+Swig.TAxes.LegendFont = property(lambda self: vcl.TObject(handle=Swig._Swig.TAxes_LegenFont_get(self), owned=False))
+Swig.TAxes.TitleFont = property(lambda self: vcl.TObject(handle=Swig._Swig.TAxes_TitleFont_get(self), owned=False))
 
 def InitPlugins():
     print("Loading plugins...")
@@ -15,7 +20,6 @@ def InitPlugins():
     PluginsDir = os.path.dirname(sys.argv[0]) + '\\Plugins'
     sys.path.append(PluginsDir)
 
-    import vcl
     global Form1
     Form1 = vcl.TForm(GraphImpl.form1, owned=False)
 
