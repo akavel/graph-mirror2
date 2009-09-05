@@ -263,7 +263,7 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
         }
 
         //If no error occured: Check if Pos and LastPos are not outside the image on the same side
-        if(!Err && F.DrawType == dtAuto && !Finished)
+        if(!Err && F.DrawType == dtAuto)
           if(!((Pos.x < 0 && LastPos.x < 0) || (Pos.x > AxesRect.Right && LastPos.x > AxesRect.Right) || (Pos.y < 0 && LastPos.y < 0) || (Pos.y > AxesRect.Bottom && LastPos.y > AxesRect.Bottom)))
           {
             unsigned Count = MaxExtraPoints; //Use a max loop count to prevent the algorithm from running wild
