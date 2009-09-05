@@ -2700,11 +2700,14 @@ SWIG_Python_MustGetPtr(PyObject *obj, swig_type_info *ty, int argnum, int flags)
 #define SWIGTYPE_p_Func32__TDblPoint swig_types[0]
 #define SWIGTYPE_p_Graph__TAxes swig_types[1]
 #define SWIGTYPE_p_Graph__TAxis swig_types[2]
-#define SWIGTYPE_p_char swig_types[3]
-#define SWIGTYPE_p_unsigned_int swig_types[4]
-#define SWIGTYPE_p_wchar_t swig_types[5]
-static swig_type_info *swig_types[7];
-static swig_module_info swig_module = {swig_types, 6, 0, 0, 0, 0};
+#define SWIGTYPE_p_Graph__TDefaultData swig_types[3]
+#define SWIGTYPE_p_Graph__TProperty swig_types[4]
+#define SWIGTYPE_p_TFont swig_types[5]
+#define SWIGTYPE_p_char swig_types[6]
+#define SWIGTYPE_p_unsigned_int swig_types[7]
+#define SWIGTYPE_p_wchar_t swig_types[8]
+static swig_type_info *swig_types[10];
+static swig_module_info swig_module = {swig_types, 9, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3177,6 +3180,56 @@ SWIG_AsVal_int (PyObject * obj, int *val)
     }
   }  
   return res;
+}
+
+
+SWIGINTERN int
+SWIG_AsWCharArray(PyObject * obj, wchar_t *val, size_t size)
+{ 
+  wchar_t* cptr = 0; size_t csize = 0; int alloc = SWIG_OLDOBJ;
+  int res = SWIG_AsWCharPtrAndSize(obj, &cptr, &csize, &alloc);
+  if (SWIG_IsOK(res)) {
+    if ((csize == size + 1) && cptr && !(cptr[csize-1])) --csize;
+    if (csize <= size) {
+      if (val) {
+	if (csize) memcpy(val, cptr, csize*sizeof(wchar_t));
+	if (csize < size) memset(val + csize, 0, (size - csize)*sizeof(wchar_t));
+      }
+      if (alloc == SWIG_NEWOBJ) {
+	delete[] cptr;
+	res = SWIG_DelNewMask(res);
+      }      
+      return res;
+    }
+    if (alloc == SWIG_NEWOBJ) delete[] cptr;
+  }
+  return SWIG_TypeError;
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_wchar_t (PyObject * obj, wchar_t *val)
+{    
+  int res = SWIG_AsWCharArray(obj, val, 1);
+  if (!SWIG_IsOK(res)) {
+    long v;
+    res = SWIG_AddCast(SWIG_AsVal_long (obj, &v));
+    if (SWIG_IsOK(res)) {
+      if ((WCHAR_MIN <= v) && (v <= WCHAR_MAX)) {
+	if (val) *val = static_cast< wchar_t >(v);
+      } else {
+	res = SWIG_OverflowError;
+      }
+    }
+  }
+  return res;
+}
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_wchar_t  (wchar_t c) 
+{ 
+  return SWIG_FromWCharPtrAndSize(&c,1);
 }
 
 #ifdef __cplusplus
@@ -4893,6 +4946,1241 @@ SWIGINTERN PyObject *TAxes_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_TDefaultData_Style_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
+  unsigned int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TDefaultData_Style_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Style_set" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TDefaultData_Style_set" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  if (arg1) (arg1)->Style = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TDefaultData_Style_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TDefaultData_Style_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Style_get" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
+  result = (unsigned int) ((arg1)->Style);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TDefaultData_Color_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
+  TColor arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TDefaultData_Color_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Color_set" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TDefaultData_Color_set" "', argument " "2"" of type '" "TColor""'");
+  } 
+  arg2 = static_cast< TColor >(val2);
+  if (arg1) (arg1)->Color = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TDefaultData_Color_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TColor result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TDefaultData_Color_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Color_get" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
+  result = (TColor) ((arg1)->Color);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TDefaultData_Size_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
+  unsigned int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TDefaultData_Size_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Size_set" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TDefaultData_Size_set" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  if (arg1) (arg1)->Size = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TDefaultData_Size_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TDefaultData_Size_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Size_get" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
+  result = (unsigned int) ((arg1)->Size);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *TDefaultData_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_Graph__TDefaultData, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_TProperty_RoundTo_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_RoundTo_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_RoundTo_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TProperty_RoundTo_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->RoundTo = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_RoundTo_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_RoundTo_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_RoundTo_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (int) ((arg1)->RoundTo);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_SavePos_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_SavePos_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_SavePos_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TProperty_SavePos_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->SavePos = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_SavePos_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_SavePos_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_SavePos_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (bool) ((arg1)->SavePos);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_ComplexFormat_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  Graph::TComplexFormat arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_ComplexFormat_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_ComplexFormat_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TProperty_ComplexFormat_set" "', argument " "2"" of type '" "Graph::TComplexFormat""'");
+  } 
+  arg2 = static_cast< Graph::TComplexFormat >(val2);
+  if (arg1) (arg1)->ComplexFormat = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_ComplexFormat_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Graph::TComplexFormat result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_ComplexFormat_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_ComplexFormat_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (Graph::TComplexFormat) ((arg1)->ComplexFormat);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_CheckForUpdate_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_CheckForUpdate_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_CheckForUpdate_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TProperty_CheckForUpdate_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->CheckForUpdate = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_CheckForUpdate_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_CheckForUpdate_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_CheckForUpdate_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (bool) ((arg1)->CheckForUpdate);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultFunction_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_DefaultFunction_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultFunction_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultFunction_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
+  if (arg1) (arg1)->DefaultFunction = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultFunction_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Graph::TDefaultData *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultFunction_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultFunction_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (Graph::TDefaultData *)& ((arg1)->DefaultFunction);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultPoint_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_DefaultPoint_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultPoint_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultPoint_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
+  if (arg1) (arg1)->DefaultPoint = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultPoint_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Graph::TDefaultData *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultPoint_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultPoint_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (Graph::TDefaultData *)& ((arg1)->DefaultPoint);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultPointLine_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_DefaultPointLine_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultPointLine_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultPointLine_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
+  if (arg1) (arg1)->DefaultPointLine = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultPointLine_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Graph::TDefaultData *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultPointLine_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultPointLine_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (Graph::TDefaultData *)& ((arg1)->DefaultPointLine);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultShade_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_DefaultShade_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultShade_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultShade_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
+  if (arg1) (arg1)->DefaultShade = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultShade_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Graph::TDefaultData *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultShade_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultShade_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (Graph::TDefaultData *)& ((arg1)->DefaultShade);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultTrendline_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_DefaultTrendline_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultTrendline_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultTrendline_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
+  if (arg1) (arg1)->DefaultTrendline = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultTrendline_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Graph::TDefaultData *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultTrendline_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultTrendline_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (Graph::TDefaultData *)& ((arg1)->DefaultTrendline);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultRelation_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_DefaultRelation_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultRelation_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultRelation_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
+  if (arg1) (arg1)->DefaultRelation = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultRelation_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Graph::TDefaultData *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultRelation_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultRelation_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (Graph::TDefaultData *)& ((arg1)->DefaultRelation);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultTangent_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_DefaultTangent_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultTangent_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultTangent_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
+  if (arg1) (arg1)->DefaultTangent = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultTangent_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Graph::TDefaultData *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultTangent_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultTangent_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (Graph::TDefaultData *)& ((arg1)->DefaultTangent);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultDif_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_DefaultDif_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultDif_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultDif_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  }
+  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
+  if (arg1) (arg1)->DefaultDif = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultDif_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Graph::TDefaultData *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultDif_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultDif_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (Graph::TDefaultData *)& ((arg1)->DefaultDif);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultPointLabelFont_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  TFont *arg2 = (TFont *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_DefaultPointLabelFont_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultPointLabelFont_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_TFont, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultPointLabelFont_set" "', argument " "2"" of type '" "TFont *""'"); 
+  }
+  arg2 = reinterpret_cast< TFont * >(argp2);
+  if (arg1) (arg1)->DefaultPointLabelFont = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultPointLabelFont_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TFont *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultPointLabelFont_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultPointLabelFont_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (TFont *) ((arg1)->DefaultPointLabelFont);
+  {
+    resultobj = PyInt_FromLong((long)result);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultLabelFont_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  TFont *arg2 = (TFont *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_DefaultLabelFont_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultLabelFont_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_TFont, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultLabelFont_set" "', argument " "2"" of type '" "TFont *""'"); 
+  }
+  arg2 = reinterpret_cast< TFont * >(argp2);
+  if (arg1) (arg1)->DefaultLabelFont = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DefaultLabelFont_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TFont *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultLabelFont_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultLabelFont_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (TFont *) ((arg1)->DefaultLabelFont);
+  {
+    resultobj = PyInt_FromLong((long)result);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_ShowTipsAtStartup_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_ShowTipsAtStartup_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_ShowTipsAtStartup_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TProperty_ShowTipsAtStartup_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->ShowTipsAtStartup = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_ShowTipsAtStartup_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_ShowTipsAtStartup_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_ShowTipsAtStartup_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (bool) ((arg1)->ShowTipsAtStartup);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_NextTip_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  unsigned int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_NextTip_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_NextTip_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TProperty_NextTip_set" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  if (arg1) (arg1)->NextTip = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_NextTip_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_NextTip_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_NextTip_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (unsigned int) ((arg1)->NextTip);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_Language_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  std::wstring *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_Language_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_Language_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res2 = SWIG_AsPtr_std_wstring(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_Language_set" "', argument " "2"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TProperty_Language_set" "', argument " "2"" of type '" "std::wstring const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->Language = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_Language_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::wstring *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_Language_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_Language_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (std::wstring *) & ((arg1)->Language);
+  resultobj = SWIG_From_std_wstring(static_cast< std::wstring >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_FontScale_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_FontScale_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_FontScale_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TProperty_FontScale_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->FontScale = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_FontScale_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_FontScale_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_FontScale_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (int) ((arg1)->FontScale);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_CustomDecimalSeparator_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_CustomDecimalSeparator_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_CustomDecimalSeparator_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TProperty_CustomDecimalSeparator_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->CustomDecimalSeparator = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_CustomDecimalSeparator_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_CustomDecimalSeparator_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_CustomDecimalSeparator_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result = (bool) ((arg1)->CustomDecimalSeparator);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DecimalSeparator_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  wchar_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  wchar_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_DecimalSeparator_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DecimalSeparator_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  ecode2 = SWIG_AsVal_wchar_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TProperty_DecimalSeparator_set" "', argument " "2"" of type '" "wchar_t""'");
+  } 
+  arg2 = static_cast< wchar_t >(val2);
+  if (arg1) (arg1)->DecimalSeparator = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TProperty_DecimalSeparator_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  wchar_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DecimalSeparator_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DecimalSeparator_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
+  result =  ((arg1)->DecimalSeparator);
+  resultobj = SWIG_From_wchar_t(static_cast< wchar_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *TProperty_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_Graph__TProperty, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN int Swig_var_Property_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable Property is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_Property_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&Graph::Property), SWIGTYPE_p_Graph__TProperty,  0 );
+  return pyobj;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"GetAxes", _wrap_GetAxes, METH_VARARGS, NULL},
@@ -4963,6 +6251,54 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TAxes_GridStyle_set", _wrap_TAxes_GridStyle_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_GridStyle_get", _wrap_TAxes_GridStyle_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_swigregister", TAxes_swigregister, METH_VARARGS, NULL},
+	 { (char *)"TDefaultData_Style_set", _wrap_TDefaultData_Style_set, METH_VARARGS, NULL},
+	 { (char *)"TDefaultData_Style_get", _wrap_TDefaultData_Style_get, METH_VARARGS, NULL},
+	 { (char *)"TDefaultData_Color_set", _wrap_TDefaultData_Color_set, METH_VARARGS, NULL},
+	 { (char *)"TDefaultData_Color_get", _wrap_TDefaultData_Color_get, METH_VARARGS, NULL},
+	 { (char *)"TDefaultData_Size_set", _wrap_TDefaultData_Size_set, METH_VARARGS, NULL},
+	 { (char *)"TDefaultData_Size_get", _wrap_TDefaultData_Size_get, METH_VARARGS, NULL},
+	 { (char *)"TDefaultData_swigregister", TDefaultData_swigregister, METH_VARARGS, NULL},
+	 { (char *)"TProperty_RoundTo_set", _wrap_TProperty_RoundTo_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_RoundTo_get", _wrap_TProperty_RoundTo_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_SavePos_set", _wrap_TProperty_SavePos_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_SavePos_get", _wrap_TProperty_SavePos_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_ComplexFormat_set", _wrap_TProperty_ComplexFormat_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_ComplexFormat_get", _wrap_TProperty_ComplexFormat_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_CheckForUpdate_set", _wrap_TProperty_CheckForUpdate_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_CheckForUpdate_get", _wrap_TProperty_CheckForUpdate_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultFunction_set", _wrap_TProperty_DefaultFunction_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultFunction_get", _wrap_TProperty_DefaultFunction_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultPoint_set", _wrap_TProperty_DefaultPoint_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultPoint_get", _wrap_TProperty_DefaultPoint_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultPointLine_set", _wrap_TProperty_DefaultPointLine_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultPointLine_get", _wrap_TProperty_DefaultPointLine_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultShade_set", _wrap_TProperty_DefaultShade_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultShade_get", _wrap_TProperty_DefaultShade_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultTrendline_set", _wrap_TProperty_DefaultTrendline_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultTrendline_get", _wrap_TProperty_DefaultTrendline_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultRelation_set", _wrap_TProperty_DefaultRelation_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultRelation_get", _wrap_TProperty_DefaultRelation_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultTangent_set", _wrap_TProperty_DefaultTangent_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultTangent_get", _wrap_TProperty_DefaultTangent_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultDif_set", _wrap_TProperty_DefaultDif_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultDif_get", _wrap_TProperty_DefaultDif_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultPointLabelFont_set", _wrap_TProperty_DefaultPointLabelFont_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultPointLabelFont_get", _wrap_TProperty_DefaultPointLabelFont_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultLabelFont_set", _wrap_TProperty_DefaultLabelFont_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DefaultLabelFont_get", _wrap_TProperty_DefaultLabelFont_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_ShowTipsAtStartup_set", _wrap_TProperty_ShowTipsAtStartup_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_ShowTipsAtStartup_get", _wrap_TProperty_ShowTipsAtStartup_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_NextTip_set", _wrap_TProperty_NextTip_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_NextTip_get", _wrap_TProperty_NextTip_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_Language_set", _wrap_TProperty_Language_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_Language_get", _wrap_TProperty_Language_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_FontScale_set", _wrap_TProperty_FontScale_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_FontScale_get", _wrap_TProperty_FontScale_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_CustomDecimalSeparator_set", _wrap_TProperty_CustomDecimalSeparator_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_CustomDecimalSeparator_get", _wrap_TProperty_CustomDecimalSeparator_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DecimalSeparator_set", _wrap_TProperty_DecimalSeparator_set, METH_VARARGS, NULL},
+	 { (char *)"TProperty_DecimalSeparator_get", _wrap_TProperty_DecimalSeparator_get, METH_VARARGS, NULL},
+	 { (char *)"TProperty_swigregister", TProperty_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
@@ -4972,6 +6308,9 @@ static PyMethodDef SwigMethods[] = {
 static swig_type_info _swigt__p_Func32__TDblPoint = {"_p_Func32__TDblPoint", "Func32::TDblPoint *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TAxes = {"_p_Graph__TAxes", "Graph::TAxes *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TAxis = {"_p_Graph__TAxis", "Graph::TAxis *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Graph__TDefaultData = {"_p_Graph__TDefaultData", "Graph::TDefaultData *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Graph__TProperty = {"_p_Graph__TProperty", "Graph::TProperty *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_TFont = {"_p_TFont", "TFont *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "unsigned int *|TColor *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_wchar_t = {"_p_wchar_t", "wchar_t *", 0, 0, (void*)0, 0};
@@ -4980,6 +6319,9 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Func32__TDblPoint,
   &_swigt__p_Graph__TAxes,
   &_swigt__p_Graph__TAxis,
+  &_swigt__p_Graph__TDefaultData,
+  &_swigt__p_Graph__TProperty,
+  &_swigt__p_TFont,
   &_swigt__p_char,
   &_swigt__p_unsigned_int,
   &_swigt__p_wchar_t,
@@ -4988,6 +6330,9 @@ static swig_type_info *swig_type_initial[] = {
 static swig_cast_info _swigc__p_Func32__TDblPoint[] = {  {&_swigt__p_Func32__TDblPoint, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TAxes[] = {  {&_swigt__p_Graph__TAxes, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TAxis[] = {  {&_swigt__p_Graph__TAxis, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Graph__TDefaultData[] = {  {&_swigt__p_Graph__TDefaultData, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Graph__TProperty[] = {  {&_swigt__p_Graph__TProperty, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_TFont[] = {  {&_swigt__p_TFont, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_int[] = {  {&_swigt__p_unsigned_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_wchar_t[] = {  {&_swigt__p_wchar_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -4996,6 +6341,9 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Func32__TDblPoint,
   _swigc__p_Graph__TAxes,
   _swigc__p_Graph__TAxis,
+  _swigc__p_Graph__TDefaultData,
+  _swigc__p_Graph__TProperty,
+  _swigc__p_TFont,
   _swigc__p_char,
   _swigc__p_unsigned_int,
   _swigc__p_wchar_t,
@@ -5619,6 +6967,11 @@ SWIG_Python_SetConstant(d, "npCenter",SWIG_From_int(static_cast< int >(Graph::np
 SWIG_Python_SetConstant(d, "npBefore",SWIG_From_int(static_cast< int >(Graph::npBefore)));
 SWIG_Python_SetConstant(d, "gsLines",SWIG_From_int(static_cast< int >(Graph::gsLines)));
 SWIG_Python_SetConstant(d, "gsDots",SWIG_From_int(static_cast< int >(Graph::gsDots)));
+SWIG_Python_SetConstant(d, "cfReal",SWIG_From_int(static_cast< int >(Graph::cfReal)));
+SWIG_Python_SetConstant(d, "cfRectangular",SWIG_From_int(static_cast< int >(Graph::cfRectangular)));
+SWIG_Python_SetConstant(d, "cfPolar",SWIG_From_int(static_cast< int >(Graph::cfPolar)));
+PyDict_SetItemString(d,(char*)"cvar", SWIG_globals());
+SWIG_addvarlink(SWIG_globals(),(char*)"Property",Swig_var_Property_get, Swig_var_Property_set);
 #if PY_VERSION_HEX >= 0x03000000
 return m;
 #else
