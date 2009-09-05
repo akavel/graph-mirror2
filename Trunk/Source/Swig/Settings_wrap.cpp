@@ -2720,16 +2720,16 @@ static swig_module_info swig_module = {swig_types, 9, 0, 0, 0, 0};
 #endif
 
 /*-----------------------------------------------
-              @(target):= _Swig.so
+              @(target):= _Settings.so
   ------------------------------------------------*/
 #if PY_VERSION_HEX >= 0x03000000
-#  define SWIG_init    PyInit__Swig
+#  define SWIG_init    PyInit__Settings
 
 #else
-#  define SWIG_init    init_Swig
+#  define SWIG_init    init_Settings
 
 #endif
-#define SWIG_name    "_Swig"
+#define SWIG_name    "_Settings"
 
 #define SWIGVERSION 0x010340 
 #define SWIG_VERSION SWIGVERSION

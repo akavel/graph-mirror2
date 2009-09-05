@@ -1,4 +1,4 @@
-%module Swig
+%module Settings
 %import "std_wstring.i"
 
 %typemap(in) Func32::TDblPoint  {
