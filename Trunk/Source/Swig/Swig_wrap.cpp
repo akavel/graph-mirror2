@@ -2700,12 +2700,11 @@ SWIG_Python_MustGetPtr(PyObject *obj, swig_type_info *ty, int argnum, int flags)
 #define SWIGTYPE_p_Func32__TDblPoint swig_types[0]
 #define SWIGTYPE_p_Graph__TAxes swig_types[1]
 #define SWIGTYPE_p_Graph__TAxis swig_types[2]
-#define SWIGTYPE_p_TVclObjectT_TFont_t swig_types[3]
-#define SWIGTYPE_p_char swig_types[4]
-#define SWIGTYPE_p_unsigned_int swig_types[5]
-#define SWIGTYPE_p_wchar_t swig_types[6]
-static swig_type_info *swig_types[8];
-static swig_module_info swig_module = {swig_types, 7, 0, 0, 0, 0};
+#define SWIGTYPE_p_char swig_types[3]
+#define SWIGTYPE_p_unsigned_int swig_types[4]
+#define SWIGTYPE_p_wchar_t swig_types[5]
+static swig_type_info *swig_types[7];
+static swig_module_info swig_module = {swig_types, 6, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3946,40 +3945,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_new_TAxis(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxis *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)":new_TAxis")) SWIG_fail;
-  result = (Graph::TAxis *)new Graph::TAxis();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TAxis, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_TAxis(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxis *arg1 = (Graph::TAxis *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_TAxis",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxis, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_TAxis" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxis * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *TAxis_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -4247,51 +4212,13 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_TAxes_NumberFont_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
-  TVclObject< TFont > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TAxes_NumberFont_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_NumberFont_set" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_TVclObjectT_TFont_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TAxes_NumberFont_set" "', argument " "2"" of type '" "TVclObject< TFont >""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TAxes_NumberFont_set" "', argument " "2"" of type '" "TVclObject< TFont >""'");
-    } else {
-      TVclObject< TFont > * temp = reinterpret_cast< TVclObject< TFont > * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
-  if (arg1) (arg1)->NumberFont = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_TAxes_NumberFont_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  TVclObject< TFont > result;
+  TFont *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TAxes_NumberFont_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
@@ -4299,46 +4226,10 @@ SWIGINTERN PyObject *_wrap_TAxes_NumberFont_get(PyObject *SWIGUNUSEDPARM(self), 
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_NumberFont_get" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  result =  ((arg1)->NumberFont);
-  resultobj = SWIG_NewPointerObj((new TVclObject< TFont >(static_cast< const TVclObject< TFont >& >(result))), SWIGTYPE_p_TVclObjectT_TFont_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TAxes_LabelFont_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
-  TVclObject< TFont > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TAxes_LabelFont_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_LabelFont_set" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
+  result = (TFont *)(TFont *) ((arg1)->NumberFont);
   {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_TVclObjectT_TFont_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TAxes_LabelFont_set" "', argument " "2"" of type '" "TVclObject< TFont >""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TAxes_LabelFont_set" "', argument " "2"" of type '" "TVclObject< TFont >""'");
-    } else {
-      TVclObject< TFont > * temp = reinterpret_cast< TVclObject< TFont > * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
+    resultobj = PyInt_FromLong((long)result);
   }
-  if (arg1) (arg1)->LabelFont = arg2;
-  resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
   return NULL;
@@ -4351,7 +4242,7 @@ SWIGINTERN PyObject *_wrap_TAxes_LabelFont_get(PyObject *SWIGUNUSEDPARM(self), P
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  TVclObject< TFont > result;
+  TFont *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TAxes_LabelFont_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
@@ -4359,46 +4250,10 @@ SWIGINTERN PyObject *_wrap_TAxes_LabelFont_get(PyObject *SWIGUNUSEDPARM(self), P
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_LabelFont_get" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  result =  ((arg1)->LabelFont);
-  resultobj = SWIG_NewPointerObj((new TVclObject< TFont >(static_cast< const TVclObject< TFont >& >(result))), SWIGTYPE_p_TVclObjectT_TFont_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TAxes_LegendFont_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
-  TVclObject< TFont > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TAxes_LegendFont_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_LegendFont_set" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
+  result = (TFont *)(TFont *) ((arg1)->LabelFont);
   {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_TVclObjectT_TFont_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TAxes_LegendFont_set" "', argument " "2"" of type '" "TVclObject< TFont >""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TAxes_LegendFont_set" "', argument " "2"" of type '" "TVclObject< TFont >""'");
-    } else {
-      TVclObject< TFont > * temp = reinterpret_cast< TVclObject< TFont > * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
+    resultobj = PyInt_FromLong((long)result);
   }
-  if (arg1) (arg1)->LegendFont = arg2;
-  resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
   return NULL;
@@ -4411,7 +4266,7 @@ SWIGINTERN PyObject *_wrap_TAxes_LegendFont_get(PyObject *SWIGUNUSEDPARM(self), 
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  TVclObject< TFont > result;
+  TFont *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TAxes_LegendFont_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
@@ -4419,8 +4274,10 @@ SWIGINTERN PyObject *_wrap_TAxes_LegendFont_get(PyObject *SWIGUNUSEDPARM(self), 
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_LegendFont_get" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  result =  ((arg1)->LegendFont);
-  resultobj = SWIG_NewPointerObj((new TVclObject< TFont >(static_cast< const TVclObject< TFont >& >(result))), SWIGTYPE_p_TVclObjectT_TFont_t, SWIG_POINTER_OWN |  0 );
+  result = (TFont *)(TFont *) ((arg1)->LegendFont);
+  {
+    resultobj = PyInt_FromLong((long)result);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -4486,51 +4343,13 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_TAxes_TitleFont_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
-  TVclObject< TFont > arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TAxes_TitleFont_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_TitleFont_set" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_TVclObjectT_TFont_t,  0  | 0);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TAxes_TitleFont_set" "', argument " "2"" of type '" "TVclObject< TFont >""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TAxes_TitleFont_set" "', argument " "2"" of type '" "TVclObject< TFont >""'");
-    } else {
-      TVclObject< TFont > * temp = reinterpret_cast< TVclObject< TFont > * >(argp2);
-      arg2 = *temp;
-      if (SWIG_IsNewObj(res2)) delete temp;
-    }
-  }
-  if (arg1) (arg1)->TitleFont = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_TAxes_TitleFont_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  TVclObject< TFont > result;
+  TFont *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TAxes_TitleFont_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
@@ -4538,8 +4357,10 @@ SWIGINTERN PyObject *_wrap_TAxes_TitleFont_get(PyObject *SWIGUNUSEDPARM(self), P
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_TitleFont_get" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  result =  ((arg1)->TitleFont);
-  resultobj = SWIG_NewPointerObj((new TVclObject< TFont >(static_cast< const TVclObject< TFont >& >(result))), SWIGTYPE_p_TVclObjectT_TFont_t, SWIG_POINTER_OWN |  0 );
+  result = (TFont *)(TFont *) ((arg1)->TitleFont);
+  {
+    resultobj = PyInt_FromLong((long)result);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5065,40 +4886,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_new_TAxes(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)":new_TAxes")) SWIG_fail;
-  result = (Graph::TAxes *)new Graph::TAxes();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TAxes, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_TAxes(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_TAxes",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_TAxes" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *TAxes_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -5138,8 +4925,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TAxis_TickUnit_get", _wrap_TAxis_TickUnit_get, METH_VARARGS, NULL},
 	 { (char *)"TAxis_GridUnit_set", _wrap_TAxis_GridUnit_set, METH_VARARGS, NULL},
 	 { (char *)"TAxis_GridUnit_get", _wrap_TAxis_GridUnit_get, METH_VARARGS, NULL},
-	 { (char *)"new_TAxis", _wrap_new_TAxis, METH_VARARGS, NULL},
-	 { (char *)"delete_TAxis", _wrap_delete_TAxis, METH_VARARGS, NULL},
 	 { (char *)"TAxis_swigregister", TAxis_swigregister, METH_VARARGS, NULL},
 	 { (char *)"TAxes_xAxis_set", _wrap_TAxes_xAxis_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_xAxis_get", _wrap_TAxes_xAxis_get, METH_VARARGS, NULL},
@@ -5151,15 +4936,11 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TAxes_GridColor_get", _wrap_TAxes_GridColor_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_BackgroundColor_set", _wrap_TAxes_BackgroundColor_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_BackgroundColor_get", _wrap_TAxes_BackgroundColor_get, METH_VARARGS, NULL},
-	 { (char *)"TAxes_NumberFont_set", _wrap_TAxes_NumberFont_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_NumberFont_get", _wrap_TAxes_NumberFont_get, METH_VARARGS, NULL},
-	 { (char *)"TAxes_LabelFont_set", _wrap_TAxes_LabelFont_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_LabelFont_get", _wrap_TAxes_LabelFont_get, METH_VARARGS, NULL},
-	 { (char *)"TAxes_LegendFont_set", _wrap_TAxes_LegendFont_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_LegendFont_get", _wrap_TAxes_LegendFont_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_Title_set", _wrap_TAxes_Title_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_Title_get", _wrap_TAxes_Title_get, METH_VARARGS, NULL},
-	 { (char *)"TAxes_TitleFont_set", _wrap_TAxes_TitleFont_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_TitleFont_get", _wrap_TAxes_TitleFont_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_ShowLegend_set", _wrap_TAxes_ShowLegend_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_ShowLegend_get", _wrap_TAxes_ShowLegend_get, METH_VARARGS, NULL},
@@ -5181,8 +4962,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TAxes_NumberPlacement_get", _wrap_TAxes_NumberPlacement_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_GridStyle_set", _wrap_TAxes_GridStyle_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_GridStyle_get", _wrap_TAxes_GridStyle_get, METH_VARARGS, NULL},
-	 { (char *)"new_TAxes", _wrap_new_TAxes, METH_VARARGS, NULL},
-	 { (char *)"delete_TAxes", _wrap_delete_TAxes, METH_VARARGS, NULL},
 	 { (char *)"TAxes_swigregister", TAxes_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
@@ -5193,7 +4972,6 @@ static PyMethodDef SwigMethods[] = {
 static swig_type_info _swigt__p_Func32__TDblPoint = {"_p_Func32__TDblPoint", "Func32::TDblPoint *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TAxes = {"_p_Graph__TAxes", "Graph::TAxes *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TAxis = {"_p_Graph__TAxis", "Graph::TAxis *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_TVclObjectT_TFont_t = {"_p_TVclObjectT_TFont_t", "TVclObject< TFont > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "unsigned int *|TColor *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_wchar_t = {"_p_wchar_t", "wchar_t *", 0, 0, (void*)0, 0};
@@ -5202,7 +4980,6 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Func32__TDblPoint,
   &_swigt__p_Graph__TAxes,
   &_swigt__p_Graph__TAxis,
-  &_swigt__p_TVclObjectT_TFont_t,
   &_swigt__p_char,
   &_swigt__p_unsigned_int,
   &_swigt__p_wchar_t,
@@ -5211,7 +4988,6 @@ static swig_type_info *swig_type_initial[] = {
 static swig_cast_info _swigc__p_Func32__TDblPoint[] = {  {&_swigt__p_Func32__TDblPoint, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TAxes[] = {  {&_swigt__p_Graph__TAxes, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TAxis[] = {  {&_swigt__p_Graph__TAxis, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_TVclObjectT_TFont_t[] = {  {&_swigt__p_TVclObjectT_TFont_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_int[] = {  {&_swigt__p_unsigned_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_wchar_t[] = {  {&_swigt__p_wchar_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -5220,7 +4996,6 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Func32__TDblPoint,
   _swigc__p_Graph__TAxes,
   _swigc__p_Graph__TAxis,
-  _swigc__p_TVclObjectT_TFont_t,
   _swigc__p_char,
   _swigc__p_unsigned_int,
   _swigc__p_wchar_t,

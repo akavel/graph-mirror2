@@ -175,26 +175,13 @@ static PyObject* VclSetProperty(PyObject *Self, PyObject *Args)
 
       case tkLString:
       case tkString:
+      case tkWString:
+      case tkUString:
       {
         const wchar_t *Str = PyUnicode_AsUnicode(Value);
         if(Str == NULL)
           return NULL;
         SetStrProp(Control, PropInfo, Str);
-        break;
-      }
-
-      case tkWString:
-      case tkUString:
-      {
-        PyObject *Object = PyUnicode_FromObject(Value);
-        if(Object == NULL)
-          return NULL;
-
-        const wchar_t *Str = reinterpret_cast<wchar_t*>(PyUnicode_AsUnicode(Object));
-        if(Str == NULL)
-          return NULL;
-        SetUnicodeStrProp(Control, PropInfo, Str);
-        Py_DECREF(Object);
         break;
       }
 
@@ -270,24 +257,19 @@ static PyObject* VclGetProperty(PyObject *Self, PyObject *Args)
         return Py_BuildValue("ii", GetOrdProp(Control, PropInfo), Kind);
 
       case tkEnumeration:
-        return Py_BuildValue("si", GetEnumProp(Control, PropInfo).c_str(), Kind);
+        return Py_BuildValue("ui", GetEnumProp(Control, PropInfo).c_str(), Kind);
 
       case tkFloat:
         return Py_BuildValue("di", GetFloatProp(Control, PropInfo), Kind);
 
       case tkLString:
       case tkString:
-        return Py_BuildValue("si", GetStrProp(Control, PropInfo).c_str(), Kind);
-
       case tkWString:
       case tkUString:
-      {
-        String Str = GetUnicodeStrProp(Control, PropInfo);
-        return Py_BuildValue("ui", !Str.IsEmpty() ? Str.c_str() : L"", Kind);
-      }
+        return Py_BuildValue("ui", GetStrProp(Control, PropInfo).c_str(), Kind);
 
       case tkSet:
-        return Py_BuildValue("si", GetSetProp(Control, PropInfo).c_str(), Kind);
+        return Py_BuildValue("ui", GetSetProp(Control, PropInfo).c_str(), Kind);
 
       case tkMethod:
       {

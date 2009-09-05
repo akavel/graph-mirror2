@@ -348,7 +348,7 @@ std::string RtfToPlainText(const std::string &Str)
   std::auto_ptr<TIRichEdit> RichEdit(new TIRichEdit(Application->MainForm));
   RichEdit->Visible = false;
   RichEdit->Parent = Application->MainForm;
-  RichEdit->WordWrap = false;
+  RichEdit->WrapType = wtNone;
   RichEdit->SetRichText(Str.c_str());
   String Text = RichEdit->GetPlainText();
   String Result;

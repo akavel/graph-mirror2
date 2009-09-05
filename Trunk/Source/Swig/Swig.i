@@ -10,6 +10,10 @@
   $result = Py_BuildValue("dd", $1.x, $1.y);
 }
 
+%typemap(out) TFont* {
+  $result = PyInt_FromLong((long)$1);
+}
+
 %begin %{
 //Begin
 #include "Graph.h"
@@ -64,6 +68,8 @@ namespace Graph
 enum TAxesStyle {asNone, asCrossed, asBoxed};
 enum TLegendPlacement {lpCustom, lpTopRight, lpBottomRight, lpTopLeft, lpBottomLeft};
 
+%nodefault TAxis;
+%nodefault TAxes;
 struct TAxis
 {
   double Min;
@@ -102,11 +108,11 @@ struct TAxes
   TColor AxesColor;
   TColor GridColor;
   TColor BackgroundColor;
-  TVclObject<TFont> NumberFont;
-  TVclObject<TFont> LabelFont;
-  TVclObject<TFont> LegendFont;
+  TFont*const NumberFont;
+  TFont*const LabelFont;
+  TFont*const LegendFont;
   std::wstring Title;
-  TVclObject<TFont> TitleFont;
+  TFont*const TitleFont;
   bool ShowLegend;
   Func32::TTrigonometry Trigonometry;
   TAxesStyle AxesStyle;
