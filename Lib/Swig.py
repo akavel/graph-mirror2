@@ -209,5 +209,99 @@ class TAxes(_object):
 TAxes_swigregister = _Swig.TAxes_swigregister
 TAxes_swigregister(TAxes)
 
+class TDefaultData(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TDefaultData, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, TDefaultData, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+    __swig_setmethods__["Style"] = _Swig.TDefaultData_Style_set
+    __swig_getmethods__["Style"] = _Swig.TDefaultData_Style_get
+    if _newclass:Style = _swig_property(_Swig.TDefaultData_Style_get, _Swig.TDefaultData_Style_set)
+    __swig_setmethods__["Color"] = _Swig.TDefaultData_Color_set
+    __swig_getmethods__["Color"] = _Swig.TDefaultData_Color_get
+    if _newclass:Color = _swig_property(_Swig.TDefaultData_Color_get, _Swig.TDefaultData_Color_set)
+    __swig_setmethods__["Size"] = _Swig.TDefaultData_Size_set
+    __swig_getmethods__["Size"] = _Swig.TDefaultData_Size_get
+    if _newclass:Size = _swig_property(_Swig.TDefaultData_Size_get, _Swig.TDefaultData_Size_set)
+TDefaultData_swigregister = _Swig.TDefaultData_swigregister
+TDefaultData_swigregister(TDefaultData)
 
+cfReal = _Swig.cfReal
+cfRectangular = _Swig.cfRectangular
+cfPolar = _Swig.cfPolar
+class TProperty(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TProperty, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, TProperty, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+    __swig_setmethods__["RoundTo"] = _Swig.TProperty_RoundTo_set
+    __swig_getmethods__["RoundTo"] = _Swig.TProperty_RoundTo_get
+    if _newclass:RoundTo = _swig_property(_Swig.TProperty_RoundTo_get, _Swig.TProperty_RoundTo_set)
+    __swig_setmethods__["SavePos"] = _Swig.TProperty_SavePos_set
+    __swig_getmethods__["SavePos"] = _Swig.TProperty_SavePos_get
+    if _newclass:SavePos = _swig_property(_Swig.TProperty_SavePos_get, _Swig.TProperty_SavePos_set)
+    __swig_setmethods__["ComplexFormat"] = _Swig.TProperty_ComplexFormat_set
+    __swig_getmethods__["ComplexFormat"] = _Swig.TProperty_ComplexFormat_get
+    if _newclass:ComplexFormat = _swig_property(_Swig.TProperty_ComplexFormat_get, _Swig.TProperty_ComplexFormat_set)
+    __swig_setmethods__["CheckForUpdate"] = _Swig.TProperty_CheckForUpdate_set
+    __swig_getmethods__["CheckForUpdate"] = _Swig.TProperty_CheckForUpdate_get
+    if _newclass:CheckForUpdate = _swig_property(_Swig.TProperty_CheckForUpdate_get, _Swig.TProperty_CheckForUpdate_set)
+    __swig_setmethods__["DefaultFunction"] = _Swig.TProperty_DefaultFunction_set
+    __swig_getmethods__["DefaultFunction"] = _Swig.TProperty_DefaultFunction_get
+    if _newclass:DefaultFunction = _swig_property(_Swig.TProperty_DefaultFunction_get, _Swig.TProperty_DefaultFunction_set)
+    __swig_setmethods__["DefaultPoint"] = _Swig.TProperty_DefaultPoint_set
+    __swig_getmethods__["DefaultPoint"] = _Swig.TProperty_DefaultPoint_get
+    if _newclass:DefaultPoint = _swig_property(_Swig.TProperty_DefaultPoint_get, _Swig.TProperty_DefaultPoint_set)
+    __swig_setmethods__["DefaultPointLine"] = _Swig.TProperty_DefaultPointLine_set
+    __swig_getmethods__["DefaultPointLine"] = _Swig.TProperty_DefaultPointLine_get
+    if _newclass:DefaultPointLine = _swig_property(_Swig.TProperty_DefaultPointLine_get, _Swig.TProperty_DefaultPointLine_set)
+    __swig_setmethods__["DefaultShade"] = _Swig.TProperty_DefaultShade_set
+    __swig_getmethods__["DefaultShade"] = _Swig.TProperty_DefaultShade_get
+    if _newclass:DefaultShade = _swig_property(_Swig.TProperty_DefaultShade_get, _Swig.TProperty_DefaultShade_set)
+    __swig_setmethods__["DefaultTrendline"] = _Swig.TProperty_DefaultTrendline_set
+    __swig_getmethods__["DefaultTrendline"] = _Swig.TProperty_DefaultTrendline_get
+    if _newclass:DefaultTrendline = _swig_property(_Swig.TProperty_DefaultTrendline_get, _Swig.TProperty_DefaultTrendline_set)
+    __swig_setmethods__["DefaultRelation"] = _Swig.TProperty_DefaultRelation_set
+    __swig_getmethods__["DefaultRelation"] = _Swig.TProperty_DefaultRelation_get
+    if _newclass:DefaultRelation = _swig_property(_Swig.TProperty_DefaultRelation_get, _Swig.TProperty_DefaultRelation_set)
+    __swig_setmethods__["DefaultTangent"] = _Swig.TProperty_DefaultTangent_set
+    __swig_getmethods__["DefaultTangent"] = _Swig.TProperty_DefaultTangent_get
+    if _newclass:DefaultTangent = _swig_property(_Swig.TProperty_DefaultTangent_get, _Swig.TProperty_DefaultTangent_set)
+    __swig_setmethods__["DefaultDif"] = _Swig.TProperty_DefaultDif_set
+    __swig_getmethods__["DefaultDif"] = _Swig.TProperty_DefaultDif_get
+    if _newclass:DefaultDif = _swig_property(_Swig.TProperty_DefaultDif_get, _Swig.TProperty_DefaultDif_set)
+    __swig_setmethods__["DefaultPointLabelFont"] = _Swig.TProperty_DefaultPointLabelFont_set
+    __swig_getmethods__["DefaultPointLabelFont"] = _Swig.TProperty_DefaultPointLabelFont_get
+    if _newclass:DefaultPointLabelFont = _swig_property(_Swig.TProperty_DefaultPointLabelFont_get, _Swig.TProperty_DefaultPointLabelFont_set)
+    __swig_setmethods__["DefaultLabelFont"] = _Swig.TProperty_DefaultLabelFont_set
+    __swig_getmethods__["DefaultLabelFont"] = _Swig.TProperty_DefaultLabelFont_get
+    if _newclass:DefaultLabelFont = _swig_property(_Swig.TProperty_DefaultLabelFont_get, _Swig.TProperty_DefaultLabelFont_set)
+    __swig_setmethods__["ShowTipsAtStartup"] = _Swig.TProperty_ShowTipsAtStartup_set
+    __swig_getmethods__["ShowTipsAtStartup"] = _Swig.TProperty_ShowTipsAtStartup_get
+    if _newclass:ShowTipsAtStartup = _swig_property(_Swig.TProperty_ShowTipsAtStartup_get, _Swig.TProperty_ShowTipsAtStartup_set)
+    __swig_setmethods__["NextTip"] = _Swig.TProperty_NextTip_set
+    __swig_getmethods__["NextTip"] = _Swig.TProperty_NextTip_get
+    if _newclass:NextTip = _swig_property(_Swig.TProperty_NextTip_get, _Swig.TProperty_NextTip_set)
+    __swig_setmethods__["Language"] = _Swig.TProperty_Language_set
+    __swig_getmethods__["Language"] = _Swig.TProperty_Language_get
+    if _newclass:Language = _swig_property(_Swig.TProperty_Language_get, _Swig.TProperty_Language_set)
+    __swig_setmethods__["FontScale"] = _Swig.TProperty_FontScale_set
+    __swig_getmethods__["FontScale"] = _Swig.TProperty_FontScale_get
+    if _newclass:FontScale = _swig_property(_Swig.TProperty_FontScale_get, _Swig.TProperty_FontScale_set)
+    __swig_setmethods__["CustomDecimalSeparator"] = _Swig.TProperty_CustomDecimalSeparator_set
+    __swig_getmethods__["CustomDecimalSeparator"] = _Swig.TProperty_CustomDecimalSeparator_get
+    if _newclass:CustomDecimalSeparator = _swig_property(_Swig.TProperty_CustomDecimalSeparator_get, _Swig.TProperty_CustomDecimalSeparator_set)
+    __swig_setmethods__["DecimalSeparator"] = _Swig.TProperty_DecimalSeparator_set
+    __swig_getmethods__["DecimalSeparator"] = _Swig.TProperty_DecimalSeparator_get
+    if _newclass:DecimalSeparator = _swig_property(_Swig.TProperty_DecimalSeparator_get, _Swig.TProperty_DecimalSeparator_set)
+TProperty_swigregister = _Swig.TProperty_swigregister
+TProperty_swigregister(TProperty)
+
+
+cvar = _Swig.cvar
+Property = cvar.Property
 

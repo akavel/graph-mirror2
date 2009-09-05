@@ -124,5 +124,32 @@ struct TAxes
   TNumberPlacement NumberPlacement;
   TGridStyle GridStyle;
 };
-}
 
+%nodefault TDefaultData;
+struct TDefaultData
+{
+  unsigned Style;
+  TColor Color;
+  unsigned Size;
+};
+
+enum TComplexFormat {cfReal,cfRectangular,cfPolar};
+
+%nodefault TProperty;
+struct TProperty
+{
+  int RoundTo; //decimals to round to
+  bool SavePos;//True is the windows should have the same size at start as at last exit
+  TComplexFormat ComplexFormat;//Format then complex numbers are shown
+  bool CheckForUpdate;
+  TDefaultData DefaultFunction, DefaultPoint, DefaultPointLine, DefaultShade, DefaultTrendline, DefaultRelation, DefaultTangent, DefaultDif;
+  TFont* DefaultPointLabelFont, *DefaultLabelFont;
+  bool ShowTipsAtStartup;
+  unsigned NextTip;
+  std::wstring Language;
+  int FontScale; //Window scale in percent
+  bool CustomDecimalSeparator; //Default system decimal separator is used when false
+  wchar_t DecimalSeparator;    //Decimal separator used when exporting files
+};
+const TProperty Property;
+}
