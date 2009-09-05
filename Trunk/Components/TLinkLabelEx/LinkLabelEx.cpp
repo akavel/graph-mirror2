@@ -62,7 +62,7 @@ void TLinkLabelEx::AdjustBounds()
       HDC DC = GetDC(0);
       try
       {
-        HFONT SaveFont = SelectObject(DC, Font->Handle);
+        HFONT SaveFont = reinterpret_cast<HFONT>(SelectObject(DC, Font->Handle));
         try
         {
           String Parsed = ParseLinks();

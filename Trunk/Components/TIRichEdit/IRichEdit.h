@@ -75,6 +75,8 @@ public:
   __property TParaFormatAlignment Alignment = {read=GetAlignment, write=SetAlignment};
 };
 
+enum TWrapType {wtNone, wtWord, wtChar};
+
 class TIRichEdit : public TCustomRichEdit
 {
 private:
@@ -88,12 +90,17 @@ private:
   TLinkEvent FOnLink;
   TActivateObjectEvent FOnActivateObject;
   bool FProtectedChange;
+  TWrapType FWrapType;
+  EDITWORDBREAKPROCW OldEditWordBreakProc;
 
   void __fastcall SetTransparent(bool Value);
   void __fastcall SetBackgroundColor(TColor Color);
   void __fastcall SetAutoUrlDetect(bool Value);
   bool __fastcall GetAutoUrlDetect();
   void __fastcall SetOnLink(TLinkEvent Value);
+  void __fastcall SetWrapType(TWrapType Value);
+
+  static int CALLBACK EditWordBreakProc(LPTSTR lpch, int ichCurrent, int cch, int code);
 
   void __fastcall WMNotify(TMessage &Message);
 
@@ -153,9 +160,9 @@ __published:
   __property bool ProtectedChange = {read=FProtectedChange, write=FProtectedChange, default=false};
   __property TActivateObjectEvent OnActivateObject = {read=FOnActivateObject, write=SetOnActivateObject, default=NULL};
   __property bool EnableOLE = {read=FEnableOLE, write=FEnableOLE, default=false};
+  __property TWrapType WrapType = {read=FWrapType, write=SetWrapType, default=wtWord};
 
   __property BorderStyle;
-  __property WordWrap;
   __property HideScrollBars;
   __property HideSelection;
   __property ScrollBars;

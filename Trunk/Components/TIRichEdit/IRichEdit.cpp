@@ -26,7 +26,8 @@ __fastcall TIRichEdit::TIRichEdit(TComponent* Owner)
   : TCustomRichEdit(Owner), FTransparent(false), TextFormat(this, false),
     GlobalTextFormat(this, true), FOnOleError(NULL), FBackgroundColor(clDefault),
     FParagraph(new ::TParaFormat(this)), FOnLink(NULL), FProtectedChange(false),
-    FOnActivateObject(NULL), RichEditOle(NULL), FEnableOLE(false)
+    FOnActivateObject(NULL), RichEditOle(NULL), FEnableOLE(false), FWrapType(wtWord),
+    OldEditWordBreakProc(NULL)
 {
   ControlStyle = ControlStyle >> csSetCaption;
 }
@@ -64,6 +65,10 @@ void __fastcall TIRichEdit::CreateWnd()
 
   if(OnActivateObject)
     SetEventMask(ENM_MOUSEEVENTS, ENM_MOUSEEVENTS);
+
+  OldEditWordBreakProc = (EDITWORDBREAKPROC)SendMessage(Handle, EM_GETWORDBREAKPROC, 0, 0);
+  if(FWrapType == wtChar)
+    SendMessage(Handle, EM_SETWORDBREAKPROC, 0, (LONG)&EditWordBreakProc);
 }
 //---------------------------------------------------------------------------
 //Free the library on destroy (actually, it will not unload until last
@@ -77,6 +82,7 @@ void __fastcall TIRichEdit::DestroyWnd(void)
 	if(FLibHandle)
     FreeLibrary(FLibHandle);
   FLibHandle = NULL;
+  OldEditWordBreakProc = NULL;
 }
 //---------------------------------------------------------------------------
 void __fastcall TIRichEdit::SetTransparent(bool Value)
@@ -605,6 +611,26 @@ bool TIRichEdit::PasteSpecial()
 bool TIRichEdit::InsertObject()
 {
   return RichEditOle ? RichEditOle->InsertObject() : false;
+}
+//---------------------------------------------------------------------------
+int CALLBACK TIRichEdit::EditWordBreakProc(LPTSTR lpch, int ichCurrent, int cch, int code)
+{
+  //Always wrap
+  return 0;
+}
+//---------------------------------------------------------------------------
+void __fastcall TIRichEdit::SetWrapType(TWrapType Value)
+{
+  if(Value != FWrapType)
+  {
+    FWrapType = Value;
+    if(!ComponentState.Contains(csDesigning))
+    {
+      TCustomRichEdit::WordWrap = Value != wtNone;
+      if(HandleAllocated())
+        SendMessage(Handle, EM_SETWORDBREAKPROC, 0, Value == wtChar ? (LONG)&EditWordBreakProc : (LONG)OldEditWordBreakProc);
+    }
+  }
 }
 //---------------------------------------------------------------------------
 
