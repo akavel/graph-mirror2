@@ -167,9 +167,6 @@
 				<DependentOn>..\Components\Common\Debug.h</DependentOn>
 				<BuildOrder>64</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Swig\Swig_wrap.cpp">
-				<BuildOrder>64</BuildOrder>
-			</CppCompile>
 			<CppCompile Include="Forms\Unit16.cpp">
 				<Form>Form16</Form>
 				<DependentOn>Forms\Unit16.h</DependentOn>
@@ -353,6 +350,12 @@
 				<Form>Form5</Form>
 				<DependentOn>Forms\Unit5.h</DependentOn>
 				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Swig\Settings_wrap.cpp">
+				<BuildOrder>64</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Swig\Data_wrap.cpp">
+				<BuildOrder>65</BuildOrder>
 			</CppCompile>
 			<FormResources Include="Forms\Unit21.dfm"/>
 			<FormResources Include="Forms\Unit1.dfm"/>

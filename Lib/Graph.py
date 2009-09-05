@@ -4,19 +4,20 @@ import sys
 import imp
 import traceback
 import GraphImpl
-import Swig
+import Settings
+import Data
 import vcl
-Axes = Swig.GetAxes()
-Property = Swig.Property
-Redraw = Swig.Redraw
+Axes = Settings.GetAxes()
+Property = Settings.Property
+Redraw = Settings.Redraw
 
-Swig.TAxes.NumberFont = property(lambda self: vcl.TObject(handle=Swig._Swig.TAxes_NumberFont_get(self), owned=False))
-Swig.TAxes.LabelFont = property(lambda self: vcl.TObject(handle=Swig._Swig.TAxes_LabelFont_get(self), owned=False))
-Swig.TAxes.LegendFont = property(lambda self: vcl.TObject(handle=Swig._Swig.TAxes_LegenFont_get(self), owned=False))
-Swig.TAxes.TitleFont = property(lambda self: vcl.TObject(handle=Swig._Swig.TAxes_TitleFont_get(self), owned=False))
+Settings.TAxes.NumberFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TAxes_NumberFont_get(self), owned=False))
+Settings.TAxes.LabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TAxes_LabelFont_get(self), owned=False))
+Settings.TAxes.LegendFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TAxes_LegenFont_get(self), owned=False))
+Settings.TAxes.TitleFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TAxes_TitleFont_get(self), owned=False))
 
-Swig.TProperty.DefaultLabelFont = property(lambda self: vcl.TObject(handle=Swig._Swig.TProperty_DefaultLabelFont_get(self), owned=False))
-Swig.TProperty.DefaultPointLabelFont = property(lambda self: vcl.TObject(handle=Swig._Swig.TProperty_DefaultPointLabelFont_get(self), owned=False))
+Settings.TProperty.DefaultLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultLabelFont_get(self), owned=False))
+Settings.TProperty.DefaultPointLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultPointLabelFont_get(self), owned=False))
 
 def InitPlugins():
     print("Loading plugins...")
