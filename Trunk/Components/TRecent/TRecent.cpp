@@ -60,16 +60,9 @@ __fastcall TRecent::~TRecent()
 void __fastcall TRecent::SetMaxFiles(unsigned Value)
 {
   RemoveMenuItems();//Remove shown menu items
-  if(Value > MaxRecentFiles)
-    FMaxFiles = MaxRecentFiles;
-  else
-    FMaxFiles = Value;
-  while(FileList.size() > FMaxFiles)
-  {
-    //This will also remove the TActionClientItem
-    delete FileList.back().second->Action;
-    FileList.pop_back(); //Make sure there are only MaxFiles file names in list
-  }
+  FMaxFiles = Value > MaxRecentFiles ? MaxRecentFiles : Value;
+  if(FileList.size() > FMaxFiles)
+    FileList.resize(FMaxFiles); //RemoveMenuItems() has already removed the actions
   SaveToRegistry();
   ShowMenuItems();//Show menu items again
 }
@@ -160,17 +153,6 @@ void __fastcall TRecent::ShowMenuItems(void)
   Seperator1 = FFileMenu->Add();
   Seperator1->Caption = '-';//Make seperator
 
-  //If FFileMenu is not the last menu item
-/*  if(FFileMenu->MenuIndex+1 + (Seperator1 != NULL) < FFileMenu->Parent->Count)
-    //If the next item is not a seperator
-    if(FFileMenu->Parent->Items[FFileMenu->MenuIndex+1+ (Seperator1!=NULL)]->Caption != '-')
-    {
-      //Add seperator after recent file list
-      Seperator2 = new TMenuItem(NULL);
-      Seperator2->Caption = '-';//Add seperator after the other one
-      FFileMenu->Parent->Insert(FFileMenu->MenuIndex+1, Seperator2);
-    }
-*/
   for(unsigned I = 0; I < FileList.size(); I++)
   {
     //Loop through all file names
