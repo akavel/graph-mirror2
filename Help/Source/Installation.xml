@@ -33,6 +33,10 @@
         		<entry condition="pot"><filename>Graph.exe</filename></entry>
         		<entry>The program file.</entry>
       		</row>
+					<row>
+						<entry condition="pot"><filename>PDFlib.dll</filename></entry>
+						<entry>Library used to create PDF files.</entry>
+					</row>
      	 		<row>
         		<entry condition="pot"><filename>Thumbnails.dll</filename></entry>
         		<entry>Shell extension for showing thumbnails of grf-files in Explorer.</entry>
@@ -49,6 +53,10 @@
      	   		<entry condition="pot"><filename>Plugins\*.py</filename></entry>
         		<entry>Some examples of plugins. Custom plugins can be placed here too.</entry>
       		</row>
+					<row>
+						<entry condition="pot"><filename>Lib\*.py</filename></entry>
+						<entry>Library files used by plugins.</entry>
+					</row>
       		<row>
         		<entry condition="pot"><filename>Examples\*.grf</filename></entry>
         		<entry>Some examples that can be opened in Graph.</entry>
