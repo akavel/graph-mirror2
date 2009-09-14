@@ -66,5 +66,401 @@ except AttributeError:
     _newclass = 0
 
 
+class SwigPyIterator(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, SwigPyIterator, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, SwigPyIterator, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_destroy__ = _Data.delete_SwigPyIterator
+    __del__ = lambda self : None;
+    def value(self) -> "PyObject *" : return _Data.SwigPyIterator_value(self)
+    def incr(self, n : 'size_t' = 1) -> "swig::SwigPyIterator *" : return _Data.SwigPyIterator_incr(self, n)
+    def decr(self, n : 'size_t' = 1) -> "swig::SwigPyIterator *" : return _Data.SwigPyIterator_decr(self, n)
+    def distance(self, *args) -> "ptrdiff_t" : return _Data.SwigPyIterator_distance(self, *args)
+    def equal(self, *args) -> "bool" : return _Data.SwigPyIterator_equal(self, *args)
+    def copy(self) -> "swig::SwigPyIterator *" : return _Data.SwigPyIterator_copy(self)
+    def next(self) -> "PyObject *" : return _Data.SwigPyIterator_next(self)
+    def __next__(self) -> "PyObject *" : return _Data.SwigPyIterator___next__(self)
+    def previous(self) -> "PyObject *" : return _Data.SwigPyIterator_previous(self)
+    def advance(self, *args) -> "swig::SwigPyIterator *" : return _Data.SwigPyIterator_advance(self, *args)
+    def __eq__(self, *args) -> "bool" : return _Data.SwigPyIterator___eq__(self, *args)
+    def __ne__(self, *args) -> "bool" : return _Data.SwigPyIterator___ne__(self, *args)
+    def __iadd__(self, *args) -> "swig::SwigPyIterator &" : return _Data.SwigPyIterator___iadd__(self, *args)
+    def __isub__(self, *args) -> "swig::SwigPyIterator &" : return _Data.SwigPyIterator___isub__(self, *args)
+    def __add__(self, *args) -> "swig::SwigPyIterator *" : return _Data.SwigPyIterator___add__(self, *args)
+    def __sub__(self, *args) -> "ptrdiff_t" : return _Data.SwigPyIterator___sub__(self, *args)
+    def __iter__(self): return self
+SwigPyIterator_swigregister = _Data.SwigPyIterator_swigregister
+SwigPyIterator_swigregister(SwigPyIterator)
+
+SHARED_PTR_DISOWN = _Data.SHARED_PTR_DISOWN
+class PointVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, PointVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, PointVector, name)
+    __repr__ = _swig_repr
+    def iterator(self) -> "swig::SwigPyIterator *" : return _Data.PointVector_iterator(self)
+    def __iter__(self): return self.iterator()
+    def __nonzero__(self) -> "bool" : return _Data.PointVector___nonzero__(self)
+    def __bool__(self) -> "bool" : return _Data.PointVector___bool__(self)
+    def __len__(self) -> "std::vector< TPoint >::size_type" : return _Data.PointVector___len__(self)
+    def pop(self) -> "std::vector< TPoint >::value_type" : return _Data.PointVector_pop(self)
+    def __getslice__(self, *args) -> "std::vector< TPoint,std::allocator< TPoint > > *" : return _Data.PointVector___getslice__(self, *args)
+    def __setslice__(self, *args) -> "void" : return _Data.PointVector___setslice__(self, *args)
+    def __delslice__(self, *args) -> "void" : return _Data.PointVector___delslice__(self, *args)
+    def __delitem__(self, *args) -> "void" : return _Data.PointVector___delitem__(self, *args)
+    def __getitem__(self, *args) -> "std::vector< TPoint >::value_type const &" : return _Data.PointVector___getitem__(self, *args)
+    def __setitem__(self, *args) -> "void" : return _Data.PointVector___setitem__(self, *args)
+    def append(self, *args) -> "void" : return _Data.PointVector_append(self, *args)
+    def empty(self) -> "bool" : return _Data.PointVector_empty(self)
+    def size(self) -> "std::vector< TPoint >::size_type" : return _Data.PointVector_size(self)
+    def clear(self) -> "void" : return _Data.PointVector_clear(self)
+    def swap(self, *args) -> "void" : return _Data.PointVector_swap(self, *args)
+    def get_allocator(self) -> "std::vector< TPoint >::allocator_type" : return _Data.PointVector_get_allocator(self)
+    def begin(self) -> "std::vector< TPoint >::const_iterator" : return _Data.PointVector_begin(self)
+    def end(self) -> "std::vector< TPoint >::const_iterator" : return _Data.PointVector_end(self)
+    def rbegin(self) -> "std::vector< TPoint >::const_reverse_iterator" : return _Data.PointVector_rbegin(self)
+    def rend(self) -> "std::vector< TPoint >::const_reverse_iterator" : return _Data.PointVector_rend(self)
+    def pop_back(self) -> "void" : return _Data.PointVector_pop_back(self)
+    def erase(self, *args) -> "std::vector< TPoint >::iterator" : return _Data.PointVector_erase(self, *args)
+    def __init__(self, *args): 
+        this = _Data.new_PointVector(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def push_back(self, *args) -> "void" : return _Data.PointVector_push_back(self, *args)
+    def front(self) -> "std::vector< TPoint >::value_type const &" : return _Data.PointVector_front(self)
+    def back(self) -> "std::vector< TPoint >::value_type const &" : return _Data.PointVector_back(self)
+    def assign(self, *args) -> "void" : return _Data.PointVector_assign(self, *args)
+    def resize(self, *args) -> "void" : return _Data.PointVector_resize(self, *args)
+    def insert(self, *args) -> "void" : return _Data.PointVector_insert(self, *args)
+    def reserve(self, *args) -> "void" : return _Data.PointVector_reserve(self, *args)
+    def capacity(self) -> "std::vector< TPoint >::size_type" : return _Data.PointVector_capacity(self)
+    __swig_destroy__ = _Data.delete_PointVector
+    __del__ = lambda self : None;
+PointVector_swigregister = _Data.PointVector_swigregister
+PointVector_swigregister(PointVector)
+
+class IntVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, IntVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, IntVector, name)
+    __repr__ = _swig_repr
+    def iterator(self) -> "swig::SwigPyIterator *" : return _Data.IntVector_iterator(self)
+    def __iter__(self): return self.iterator()
+    def __nonzero__(self) -> "bool" : return _Data.IntVector___nonzero__(self)
+    def __bool__(self) -> "bool" : return _Data.IntVector___bool__(self)
+    def __len__(self) -> "std::vector< int >::size_type" : return _Data.IntVector___len__(self)
+    def pop(self) -> "std::vector< int >::value_type" : return _Data.IntVector_pop(self)
+    def __getslice__(self, *args) -> "std::vector< int,std::allocator< int > > *" : return _Data.IntVector___getslice__(self, *args)
+    def __setslice__(self, *args) -> "void" : return _Data.IntVector___setslice__(self, *args)
+    def __delslice__(self, *args) -> "void" : return _Data.IntVector___delslice__(self, *args)
+    def __delitem__(self, *args) -> "void" : return _Data.IntVector___delitem__(self, *args)
+    def __getitem__(self, *args) -> "std::vector< int >::value_type const &" : return _Data.IntVector___getitem__(self, *args)
+    def __setitem__(self, *args) -> "void" : return _Data.IntVector___setitem__(self, *args)
+    def append(self, *args) -> "void" : return _Data.IntVector_append(self, *args)
+    def empty(self) -> "bool" : return _Data.IntVector_empty(self)
+    def size(self) -> "std::vector< int >::size_type" : return _Data.IntVector_size(self)
+    def clear(self) -> "void" : return _Data.IntVector_clear(self)
+    def swap(self, *args) -> "void" : return _Data.IntVector_swap(self, *args)
+    def get_allocator(self) -> "std::vector< int >::allocator_type" : return _Data.IntVector_get_allocator(self)
+    def begin(self) -> "std::vector< int >::const_iterator" : return _Data.IntVector_begin(self)
+    def end(self) -> "std::vector< int >::const_iterator" : return _Data.IntVector_end(self)
+    def rbegin(self) -> "std::vector< int >::const_reverse_iterator" : return _Data.IntVector_rbegin(self)
+    def rend(self) -> "std::vector< int >::const_reverse_iterator" : return _Data.IntVector_rend(self)
+    def pop_back(self) -> "void" : return _Data.IntVector_pop_back(self)
+    def erase(self, *args) -> "std::vector< int >::iterator" : return _Data.IntVector_erase(self, *args)
+    def __init__(self, *args): 
+        this = _Data.new_IntVector(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def push_back(self, *args) -> "void" : return _Data.IntVector_push_back(self, *args)
+    def front(self) -> "std::vector< int >::value_type const &" : return _Data.IntVector_front(self)
+    def back(self) -> "std::vector< int >::value_type const &" : return _Data.IntVector_back(self)
+    def assign(self, *args) -> "void" : return _Data.IntVector_assign(self, *args)
+    def resize(self, *args) -> "void" : return _Data.IntVector_resize(self, *args)
+    def insert(self, *args) -> "void" : return _Data.IntVector_insert(self, *args)
+    def reserve(self, *args) -> "void" : return _Data.IntVector_reserve(self, *args)
+    def capacity(self) -> "std::vector< int >::size_type" : return _Data.IntVector_capacity(self)
+    __swig_destroy__ = _Data.delete_IntVector
+    __del__ = lambda self : None;
+IntVector_swigregister = _Data.IntVector_swigregister
+IntVector_swigregister(IntVector)
+
+
+def Selected() -> "boost::shared_ptr< TGraphElem > const &" :
+  return _Data.Selected()
+Selected = _Data.Selected
+
+def Redraw() -> "void" :
+  return _Data.Redraw()
+Redraw = _Data.Redraw
+class TGraphElem(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TGraphElem, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, TGraphElem, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    def MakeLegendText(self) -> "std::wstring" : return _Data.TGraphElem_MakeLegendText(self)
+    def MakeText(self) -> "std::wstring" : return _Data.TGraphElem_MakeText(self)
+    __swig_setmethods__["Visible"] = _Data.TGraphElem_Visible_set
+    __swig_getmethods__["Visible"] = _Data.TGraphElem_Visible_get
+    if _newclass:Visible = _swig_property(_Data.TGraphElem_Visible_get, _Data.TGraphElem_Visible_set)
+    __swig_setmethods__["ShowInLegend"] = _Data.TGraphElem_ShowInLegend_set
+    __swig_getmethods__["ShowInLegend"] = _Data.TGraphElem_ShowInLegend_get
+    if _newclass:ShowInLegend = _swig_property(_Data.TGraphElem_ShowInLegend_get, _Data.TGraphElem_ShowInLegend_set)
+    __swig_setmethods__["LegendText"] = _Data.TGraphElem_LegendText_set
+    __swig_getmethods__["LegendText"] = _Data.TGraphElem_LegendText_get
+    if _newclass:LegendText = _swig_property(_Data.TGraphElem_LegendText_get, _Data.TGraphElem_LegendText_set)
+TGraphElem_swigregister = _Data.TGraphElem_swigregister
+TGraphElem_swigregister(TGraphElem)
+
+dtAuto = _Data.dtAuto
+dtDots = _Data.dtDots
+dtLines = _Data.dtLines
+class TBaseFuncType(TGraphElem):
+    __swig_setmethods__ = {}
+    for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TBaseFuncType, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, TBaseFuncType, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_setmethods__["sList"] = _Data.TBaseFuncType_sList_set
+    __swig_getmethods__["sList"] = _Data.TBaseFuncType_sList_get
+    if _newclass:sList = _swig_property(_Data.TBaseFuncType_sList_get, _Data.TBaseFuncType_sList_set)
+    __swig_setmethods__["Points"] = _Data.TBaseFuncType_Points_set
+    __swig_getmethods__["Points"] = _Data.TBaseFuncType_Points_get
+    if _newclass:Points = _swig_property(_Data.TBaseFuncType_Points_get, _Data.TBaseFuncType_Points_set)
+    __swig_setmethods__["PointNum"] = _Data.TBaseFuncType_PointNum_set
+    __swig_getmethods__["PointNum"] = _Data.TBaseFuncType_PointNum_get
+    if _newclass:PointNum = _swig_property(_Data.TBaseFuncType_PointNum_get, _Data.TBaseFuncType_PointNum_set)
+    __swig_setmethods__["Color"] = _Data.TBaseFuncType_Color_set
+    __swig_getmethods__["Color"] = _Data.TBaseFuncType_Color_get
+    if _newclass:Color = _swig_property(_Data.TBaseFuncType_Color_get, _Data.TBaseFuncType_Color_set)
+    __swig_setmethods__["Size"] = _Data.TBaseFuncType_Size_set
+    __swig_getmethods__["Size"] = _Data.TBaseFuncType_Size_get
+    if _newclass:Size = _swig_property(_Data.TBaseFuncType_Size_get, _Data.TBaseFuncType_Size_set)
+    __swig_setmethods__["Style"] = _Data.TBaseFuncType_Style_set
+    __swig_getmethods__["Style"] = _Data.TBaseFuncType_Style_get
+    if _newclass:Style = _swig_property(_Data.TBaseFuncType_Style_get, _Data.TBaseFuncType_Style_set)
+    __swig_setmethods__["From"] = _Data.TBaseFuncType_From_set
+    __swig_getmethods__["From"] = _Data.TBaseFuncType_From_get
+    if _newclass:From = _swig_property(_Data.TBaseFuncType_From_get, _Data.TBaseFuncType_From_set)
+    __swig_setmethods__["To"] = _Data.TBaseFuncType_To_set
+    __swig_getmethods__["To"] = _Data.TBaseFuncType_To_get
+    if _newclass:To = _swig_property(_Data.TBaseFuncType_To_get, _Data.TBaseFuncType_To_set)
+    __swig_setmethods__["StartPointStyle"] = _Data.TBaseFuncType_StartPointStyle_set
+    __swig_getmethods__["StartPointStyle"] = _Data.TBaseFuncType_StartPointStyle_get
+    if _newclass:StartPointStyle = _swig_property(_Data.TBaseFuncType_StartPointStyle_get, _Data.TBaseFuncType_StartPointStyle_set)
+    __swig_setmethods__["EndPointStyle"] = _Data.TBaseFuncType_EndPointStyle_set
+    __swig_getmethods__["EndPointStyle"] = _Data.TBaseFuncType_EndPointStyle_get
+    if _newclass:EndPointStyle = _swig_property(_Data.TBaseFuncType_EndPointStyle_get, _Data.TBaseFuncType_EndPointStyle_set)
+    __swig_setmethods__["DrawType"] = _Data.TBaseFuncType_DrawType_set
+    __swig_getmethods__["DrawType"] = _Data.TBaseFuncType_DrawType_get
+    if _newclass:DrawType = _swig_property(_Data.TBaseFuncType_DrawType_get, _Data.TBaseFuncType_DrawType_set)
+    def MakeDifFunc(self) -> "boost::shared_ptr< TBaseFuncType >" : return _Data.TBaseFuncType_MakeDifFunc(self)
+    def GetSteps(self) -> "TTextValue const &" : return _Data.TBaseFuncType_GetSteps(self)
+    def SetSteps(self, *args) -> "void" : return _Data.TBaseFuncType_SetSteps(self, *args)
+    def GetVariable(self) -> "std::string" : return _Data.TBaseFuncType_GetVariable(self)
+    def GetFunc(self) -> "Func32::TBaseFunc &" : return _Data.TBaseFuncType_GetFunc(self)
+    def Eval(self, *args) -> "Func32::TCoord< long double >" : return _Data.TBaseFuncType_Eval(self, *args)
+    def CalcArea(self, *args) -> "long double" : return _Data.TBaseFuncType_CalcArea(self, *args)
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TBaseFuncType_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TBaseFuncType_SWIGSharedPtrUpcast)
+    __swig_getmethods__["CurrentRange"] = _Data.TBaseFuncType_CurrentRange_get
+    if _newclass:CurrentRange = _swig_property(_Data.TBaseFuncType_CurrentRange_get)
+TBaseFuncType_swigregister = _Data.TBaseFuncType_swigregister
+TBaseFuncType_swigregister(TBaseFuncType)
+
+def TBaseFuncType_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
+  return _Data.TBaseFuncType_SWIGSharedPtrUpcast(*args)
+TBaseFuncType_SWIGSharedPtrUpcast = _Data.TBaseFuncType_SWIGSharedPtrUpcast
+
+class TStdFunc(TBaseFuncType):
+    __swig_setmethods__ = {}
+    for _s in [TBaseFuncType]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TStdFunc, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TBaseFuncType]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, TStdFunc, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TStdFunc_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TStdFunc_SWIGSharedPtrUpcast)
+    __swig_destroy__ = _Data.delete_TStdFunc
+    __del__ = lambda self : None;
+TStdFunc_swigregister = _Data.TStdFunc_swigregister
+TStdFunc_swigregister(TStdFunc)
+
+def TStdFunc_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TBaseFuncType >" :
+  return _Data.TStdFunc_SWIGSharedPtrUpcast(*args)
+TStdFunc_SWIGSharedPtrUpcast = _Data.TStdFunc_SWIGSharedPtrUpcast
+
+class TParFunc(TBaseFuncType):
+    __swig_setmethods__ = {}
+    for _s in [TBaseFuncType]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TParFunc, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TBaseFuncType]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, TParFunc, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TParFunc_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TParFunc_SWIGSharedPtrUpcast)
+    __swig_destroy__ = _Data.delete_TParFunc
+    __del__ = lambda self : None;
+TParFunc_swigregister = _Data.TParFunc_swigregister
+TParFunc_swigregister(TParFunc)
+
+def TParFunc_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TBaseFuncType >" :
+  return _Data.TParFunc_SWIGSharedPtrUpcast(*args)
+TParFunc_SWIGSharedPtrUpcast = _Data.TParFunc_SWIGSharedPtrUpcast
+
+class TPolFunc(TBaseFuncType):
+    __swig_setmethods__ = {}
+    for _s in [TBaseFuncType]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TPolFunc, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TBaseFuncType]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, TPolFunc, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TPolFunc_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TPolFunc_SWIGSharedPtrUpcast)
+    __swig_destroy__ = _Data.delete_TPolFunc
+    __del__ = lambda self : None;
+TPolFunc_swigregister = _Data.TPolFunc_swigregister
+TPolFunc_swigregister(TPolFunc)
+
+def TPolFunc_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TBaseFuncType >" :
+  return _Data.TPolFunc_SWIGSharedPtrUpcast(*args)
+TPolFunc_SWIGSharedPtrUpcast = _Data.TPolFunc_SWIGSharedPtrUpcast
+
+class TTan(TBaseFuncType):
+    __swig_setmethods__ = {}
+    for _s in [TBaseFuncType]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TTan, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TBaseFuncType]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, TTan, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TTan_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TTan_SWIGSharedPtrUpcast)
+    __swig_destroy__ = _Data.delete_TTan
+    __del__ = lambda self : None;
+TTan_swigregister = _Data.TTan_swigregister
+TTan_swigregister(TTan)
+
+def TTan_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TBaseFuncType >" :
+  return _Data.TTan_SWIGSharedPtrUpcast(*args)
+TTan_SWIGSharedPtrUpcast = _Data.TTan_SWIGSharedPtrUpcast
+
+class TPointSeries(TGraphElem):
+    __swig_setmethods__ = {}
+    for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TPointSeries, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, TPointSeries, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TPointSeries_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TPointSeries_SWIGSharedPtrUpcast)
+    __swig_destroy__ = _Data.delete_TPointSeries
+    __del__ = lambda self : None;
+TPointSeries_swigregister = _Data.TPointSeries_swigregister
+TPointSeries_swigregister(TPointSeries)
+
+def TPointSeries_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
+  return _Data.TPointSeries_SWIGSharedPtrUpcast(*args)
+TPointSeries_SWIGSharedPtrUpcast = _Data.TPointSeries_SWIGSharedPtrUpcast
+
+class TTextLabel(TGraphElem):
+    __swig_setmethods__ = {}
+    for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TTextLabel, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, TTextLabel, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TTextLabel_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TTextLabel_SWIGSharedPtrUpcast)
+    __swig_destroy__ = _Data.delete_TTextLabel
+    __del__ = lambda self : None;
+TTextLabel_swigregister = _Data.TTextLabel_swigregister
+TTextLabel_swigregister(TTextLabel)
+
+def TTextLabel_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
+  return _Data.TTextLabel_SWIGSharedPtrUpcast(*args)
+TTextLabel_SWIGSharedPtrUpcast = _Data.TTextLabel_SWIGSharedPtrUpcast
+
+class TShade(TGraphElem):
+    __swig_setmethods__ = {}
+    for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TShade, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, TShade, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TShade_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TShade_SWIGSharedPtrUpcast)
+    __swig_destroy__ = _Data.delete_TShade
+    __del__ = lambda self : None;
+TShade_swigregister = _Data.TShade_swigregister
+TShade_swigregister(TShade)
+
+def TShade_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
+  return _Data.TShade_SWIGSharedPtrUpcast(*args)
+TShade_SWIGSharedPtrUpcast = _Data.TShade_SWIGSharedPtrUpcast
+
+class TRelation(TGraphElem):
+    __swig_setmethods__ = {}
+    for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TRelation, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, TRelation, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TRelation_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TRelation_SWIGSharedPtrUpcast)
+    __swig_destroy__ = _Data.delete_TRelation
+    __del__ = lambda self : None;
+TRelation_swigregister = _Data.TRelation_swigregister
+TRelation_swigregister(TRelation)
+
+def TRelation_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
+  return _Data.TRelation_SWIGSharedPtrUpcast(*args)
+TRelation_SWIGSharedPtrUpcast = _Data.TRelation_SWIGSharedPtrUpcast
+
+class TAxesView(TGraphElem):
+    __swig_setmethods__ = {}
+    for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TAxesView, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, TAxesView, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TAxesView_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TAxesView_SWIGSharedPtrUpcast)
+    __swig_destroy__ = _Data.delete_TAxesView
+    __del__ = lambda self : None;
+TAxesView_swigregister = _Data.TAxesView_swigregister
+TAxesView_swigregister(TAxesView)
+
+def TAxesView_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
+  return _Data.TAxesView_SWIGSharedPtrUpcast(*args)
+TAxesView_SWIGSharedPtrUpcast = _Data.TAxesView_SWIGSharedPtrUpcast
+
 
 

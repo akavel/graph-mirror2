@@ -8,16 +8,13 @@
  * interface file instead. 
  * ----------------------------------------------------------------------------- */
 
-//Begin
 #include "Graph.h"
 #include "Unit1.h"
-#include "PythonBind.h"
 #undef _DEBUG
-#include "Python.h"
+#include <Python.h>
+#define WRAP_PYOBJECTS
+#include "PythonBind.h"
 #pragma warn -8060
-PyObject* SWIG_init2(PyObject*, PyObject*);
-namespace Python
-{
 
 
 #define SWIGPYTHON
@@ -2692,9 +2689,6 @@ SWIG_Python_MustGetPtr(PyObject *obj, swig_type_info *ty, int argnum, int flags)
 
 
 
-  //Runtime
-
-
 /* -------- TYPES TABLE (BEGIN) -------- */
 
 #define SWIGTYPE_p_Func32__TDblPoint swig_types[0]
@@ -2804,11 +2798,7 @@ namespace swig {
 }
 
 
-  //Header
-
-
 static Graph::TAxes* GetAxes() {return &Form1->Data.Axes;}
-static void Redraw() {Form1->Redraw();}
 
 
   #define SWIG_From_long   PyInt_FromLong 
@@ -3235,9 +3225,6 @@ SWIG_From_wchar_t  (wchar_t c)
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-  //Wrapper
-
 SWIGINTERN PyObject *_wrap_GetAxes(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TAxes *result = 0 ;
@@ -3245,18 +3232,6 @@ SWIGINTERN PyObject *_wrap_GetAxes(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
   if (!PyArg_ParseTuple(args,(char *)":GetAxes")) SWIG_fail;
   result = (Graph::TAxes *)GetAxes();
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TAxes, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Redraw(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  
-  if (!PyArg_ParseTuple(args,(char *)":Redraw")) SWIG_fail;
-  Redraw();
-  resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
   return NULL;
@@ -6184,7 +6159,6 @@ SWIGINTERN PyObject *Swig_var_Property_get(void) {
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"GetAxes", _wrap_GetAxes, METH_VARARGS, NULL},
-	 { (char *)"Redraw", _wrap_Redraw, METH_VARARGS, NULL},
 	 { (char *)"TAxis_Min_set", _wrap_TAxis_Min_set, METH_VARARGS, NULL},
 	 { (char *)"TAxis_Min_get", _wrap_TAxis_Min_get, METH_VARARGS, NULL},
 	 { (char *)"TAxis_Max_set", _wrap_TAxis_Max_set, METH_VARARGS, NULL},
@@ -6940,42 +6914,32 @@ SWIG_init(void) {
   SWIG_InstallConstants(d,swig_const_table);
   
   
-  
-  //Init
-  SWIG_init2(d, m);
-  return m;
-}
-} //namespace Python
-using namespace Python;
-
-static PyObject* SWIG_init2(PyObject *d, PyObject *m)
-{
-SWIG_Python_SetConstant(d, "Radian",SWIG_From_int(static_cast< int >(Func32::Radian)));
-SWIG_Python_SetConstant(d, "Degree",SWIG_From_int(static_cast< int >(Func32::Degree)));
-SWIG_Python_SetConstant(d, "asNone",SWIG_From_int(static_cast< int >(Graph::asNone)));
-SWIG_Python_SetConstant(d, "asCrossed",SWIG_From_int(static_cast< int >(Graph::asCrossed)));
-SWIG_Python_SetConstant(d, "asBoxed",SWIG_From_int(static_cast< int >(Graph::asBoxed)));
-SWIG_Python_SetConstant(d, "lpCustom",SWIG_From_int(static_cast< int >(Graph::lpCustom)));
-SWIG_Python_SetConstant(d, "lpTopRight",SWIG_From_int(static_cast< int >(Graph::lpTopRight)));
-SWIG_Python_SetConstant(d, "lpBottomRight",SWIG_From_int(static_cast< int >(Graph::lpBottomRight)));
-SWIG_Python_SetConstant(d, "lpTopLeft",SWIG_From_int(static_cast< int >(Graph::lpTopLeft)));
-SWIG_Python_SetConstant(d, "lpBottomLeft",SWIG_From_int(static_cast< int >(Graph::lpBottomLeft)));
-SWIG_Python_SetConstant(d, "aaNone",SWIG_From_int(static_cast< int >(Graph::aaNone)));
-SWIG_Python_SetConstant(d, "aaPositiveEnd",SWIG_From_int(static_cast< int >(Graph::aaPositiveEnd)));
-SWIG_Python_SetConstant(d, "aaBothEnds",SWIG_From_int(static_cast< int >(Graph::aaBothEnds)));
-SWIG_Python_SetConstant(d, "npCenter",SWIG_From_int(static_cast< int >(Graph::npCenter)));
-SWIG_Python_SetConstant(d, "npBefore",SWIG_From_int(static_cast< int >(Graph::npBefore)));
-SWIG_Python_SetConstant(d, "gsLines",SWIG_From_int(static_cast< int >(Graph::gsLines)));
-SWIG_Python_SetConstant(d, "gsDots",SWIG_From_int(static_cast< int >(Graph::gsDots)));
-SWIG_Python_SetConstant(d, "cfReal",SWIG_From_int(static_cast< int >(Graph::cfReal)));
-SWIG_Python_SetConstant(d, "cfRectangular",SWIG_From_int(static_cast< int >(Graph::cfRectangular)));
-SWIG_Python_SetConstant(d, "cfPolar",SWIG_From_int(static_cast< int >(Graph::cfPolar)));
-PyDict_SetItemString(d,(char*)"cvar", SWIG_globals());
-SWIG_addvarlink(SWIG_globals(),(char*)"Property",Swig_var_Property_get, Swig_var_Property_set);
+  SWIG_Python_SetConstant(d, "Radian",SWIG_From_int(static_cast< int >(Func32::Radian)));
+  SWIG_Python_SetConstant(d, "Degree",SWIG_From_int(static_cast< int >(Func32::Degree)));
+  SWIG_Python_SetConstant(d, "asNone",SWIG_From_int(static_cast< int >(Graph::asNone)));
+  SWIG_Python_SetConstant(d, "asCrossed",SWIG_From_int(static_cast< int >(Graph::asCrossed)));
+  SWIG_Python_SetConstant(d, "asBoxed",SWIG_From_int(static_cast< int >(Graph::asBoxed)));
+  SWIG_Python_SetConstant(d, "lpCustom",SWIG_From_int(static_cast< int >(Graph::lpCustom)));
+  SWIG_Python_SetConstant(d, "lpTopRight",SWIG_From_int(static_cast< int >(Graph::lpTopRight)));
+  SWIG_Python_SetConstant(d, "lpBottomRight",SWIG_From_int(static_cast< int >(Graph::lpBottomRight)));
+  SWIG_Python_SetConstant(d, "lpTopLeft",SWIG_From_int(static_cast< int >(Graph::lpTopLeft)));
+  SWIG_Python_SetConstant(d, "lpBottomLeft",SWIG_From_int(static_cast< int >(Graph::lpBottomLeft)));
+  SWIG_Python_SetConstant(d, "aaNone",SWIG_From_int(static_cast< int >(Graph::aaNone)));
+  SWIG_Python_SetConstant(d, "aaPositiveEnd",SWIG_From_int(static_cast< int >(Graph::aaPositiveEnd)));
+  SWIG_Python_SetConstant(d, "aaBothEnds",SWIG_From_int(static_cast< int >(Graph::aaBothEnds)));
+  SWIG_Python_SetConstant(d, "npCenter",SWIG_From_int(static_cast< int >(Graph::npCenter)));
+  SWIG_Python_SetConstant(d, "npBefore",SWIG_From_int(static_cast< int >(Graph::npBefore)));
+  SWIG_Python_SetConstant(d, "gsLines",SWIG_From_int(static_cast< int >(Graph::gsLines)));
+  SWIG_Python_SetConstant(d, "gsDots",SWIG_From_int(static_cast< int >(Graph::gsDots)));
+  SWIG_Python_SetConstant(d, "cfReal",SWIG_From_int(static_cast< int >(Graph::cfReal)));
+  SWIG_Python_SetConstant(d, "cfRectangular",SWIG_From_int(static_cast< int >(Graph::cfRectangular)));
+  SWIG_Python_SetConstant(d, "cfPolar",SWIG_From_int(static_cast< int >(Graph::cfPolar)));
+  PyDict_SetItemString(d,(char*)"cvar", SWIG_globals());
+  SWIG_addvarlink(SWIG_globals(),(char*)"Property",Swig_var_Property_get, Swig_var_Property_set);
 #if PY_VERSION_HEX >= 0x03000000
-return m;
+  return m;
 #else
-return;
+  return;
 #endif
 }
 

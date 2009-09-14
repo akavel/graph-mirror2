@@ -9,7 +9,7 @@ import Data
 import vcl
 Axes = Settings.GetAxes()
 Property = Settings.Property
-Redraw = Settings.Redraw
+Redraw = Data.Redraw
 
 Settings.TAxes.NumberFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TAxes_NumberFont_get(self), owned=False))
 Settings.TAxes.LabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TAxes_LabelFont_get(self), owned=False))
@@ -18,6 +18,10 @@ Settings.TAxes.TitleFont = property(lambda self: vcl.TObject(handle=Settings._Se
 
 Settings.TProperty.DefaultLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultLabelFont_get(self), owned=False))
 Settings.TProperty.DefaultPointLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultPointLabelFont_get(self), owned=False))
+
+Selected = Data.Selected
+TGraphElem = Data.TGraphElem
+TStdFunc = Data.TStdFunc
 
 def InitPlugins():
     print("Loading plugins...")

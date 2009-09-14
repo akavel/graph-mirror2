@@ -241,7 +241,6 @@ object Form6: TForm6
       OnOleError = IRichEdit1OleError
       OnActivateObject = IRichEdit1ActivateObject
       EnableOLE = True
-      WordWrap = False
       HideSelection = False
       ScrollBars = ssBoth
       Align = alClient

@@ -38,23 +38,6 @@ T& GetPythonAddress(const char *Name)
   return Dummy;
 }
 //---------------------------------------------------------------------------
-/*
-PyTypeObject &PyTuple_Type = GetPythonAddress<PyTypeObject>("PyTuple_Type");
-PyTypeObject &PyLong_Type = GetPythonAddress<PyTypeObject>("PyLong_Type");
-PyTypeObject &PyUnicode_Type = GetPythonAddress<PyTypeObject>("PyUnicode_Type");
-PyTypeObject &PyBaseObject_Type = GetPythonAddress<PyTypeObject>("PyBaseObjecy_Type");
-PyTypeObject &PyCFunction_Type = GetPythonAddress<PyTypeObject>("PyCFunction_Type");
-PyTypeObject &PyFloat_Type = GetPythonAddress<PyTypeObject>("PyUnicode_Type");
-PyTypeObject &PyType_Type = GetPythonAddress<PyTypeObject>("PyUnicode_Type");
-PyObject *PyExc_TypeError = GetPythonAddress<PyObject*>("PyExc_TypeError");
-PyObject *PyExc_KeyError = GetPythonAddress<PyObject*>("PyExc_KeyError");
-PyObject *PyExc_KeyError = GetPythonAddress<PyObject*>("PyExc_KeyError");
-PyObject &_Py_NoneStruct = GetPythonAddress<PyObject>("_Py_NoneStruct");
-PyObject &_Py_TrueStruct = GetPythonAddress<PyObject>("_Py_TrueStruct");
-PyObject &_Py_FalseStruct = GetPythonAddress<PyObject>("_Py_FalseStruct");
-PyObject &_Py_NotImplementedStruct = GetPythonAddress<PyObject>("_Py_NotImplementedStruct");
-*/
-//---------------------------------------------------------------------------
 bool IsPythonInstalled()
 {
   static int Result = -1;
@@ -65,17 +48,6 @@ bool IsPythonInstalled()
   }
   return Result;
 }
-//---------------------------------------------------------------------------
-/*PyTypeObject& GetPythonType(const char *Name)
-{
-  static PyTypeObject Dummy;
-  if(IsPythonInstalled())
-  {
-    void *Address = GetProcAddress(PythonInstance, Name);
-    return *reinterpret_cast<PyTypeObject*>(Address);
-  }
-  return Dummy;
-}*/
 //---------------------------------------------------------------------------
 PyObject* PyReturnNone()
 {

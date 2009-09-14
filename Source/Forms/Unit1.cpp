@@ -2979,10 +2979,11 @@ void __fastcall TForm1::IPrintDialog1Show(TObject *Sender)
   }                                  
 }
 //---------------------------------------------------------------------------
-boost::shared_ptr<TGraphElem> TForm1::GetGraphElem(TTreeNode *Node)
+const boost::shared_ptr<TGraphElem>& TForm1::GetGraphElem(TTreeNode *Node)
 {
+  static boost::shared_ptr<TGraphElem> Empty;
   if(Node == NULL)
-    return boost::shared_ptr<TGraphElem>();
+    return Empty;
 
   if(Node->Level == 1) //Tangent or shade
     return Data.GetElem(Node->Parent->Index)->ChildList[Node->Index];
