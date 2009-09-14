@@ -1,62 +1,20 @@
 %module Settings
 %import "std_wstring.i"
-
-%typemap(in) Func32::TDblPoint  {
-  if(!PyArg_ParseTuple($input, "dd", &($1.x), &($1.y)))
-    SWIG_fail;
-}
-
-%typemap(out) Func32::TDblPoint {
-  $result = Py_BuildValue("dd", $1.x, $1.y);
-}
-
-%typemap(out) TFont* {
-  $result = PyInt_FromLong((long)$1);
-}
+%import "Types.i"
 
 %begin %{
-//Begin
 #include "Graph.h"
 #include "Unit1.h"
-#include "PythonBind.h"
 #undef _DEBUG
-#include "Python.h"
+#include <Python.h>
+#define WRAP_PYOBJECTS
+#include "PythonBind.h"
 #pragma warn -8060
-PyObject* SWIG_init2(PyObject*, PyObject*);
-namespace Python
-{
-%}
-
-%runtime %{
-  //Runtime
-%}
-
-%header %{
-  //Header
-%}
-
-%wrapper %{
-  //Wrapper
-%}
-
-%init %{
-  //Init
-  SWIG_init2(d, m);
-  return m;
-}
-} //namespace Python
-using namespace Python;
-
-static PyObject* SWIG_init2(PyObject *d, PyObject *m)
-{
 %}
 
 %inline %{
 static Graph::TAxes* GetAxes() {return &Form1->Data.Axes;}
-static void Redraw() {Form1->Redraw();}
 %}
-
-typedef unsigned TColor;
 
 namespace Func32
 {
@@ -152,4 +110,4 @@ struct TProperty
   wchar_t DecimalSeparator;    //Decimal separator used when exporting files
 };
 const TProperty Property;
-}
+} //namespace Graph

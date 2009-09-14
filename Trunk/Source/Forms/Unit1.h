@@ -430,7 +430,6 @@ private:	// User declarations
   void CheckForUpdate(bool StartupCheck);
   void Translate();
   void DeleteGraphElem(const boost::shared_ptr<TGraphElem> &GraphElem);
-  boost::shared_ptr<TGraphElem> GetGraphElem(TTreeNode *Node);
   TTreeNode* GetNode(const boost::shared_ptr<const TGraphElem> &Elem);
   void CopyAsImageToClipboard();
   TTreeNode* GetRootNode(unsigned Index);
@@ -488,6 +487,8 @@ public:		// User declarations
   void SetCrossPos(long double x, long double y);
   void ChangeLanguage(const String &Ext);
   void ActivateOleUserInterface();
+
+  const boost::shared_ptr<TGraphElem>& GetGraphElem(TTreeNode *Node);
 
   void __fastcall UpdateEval();
   void __fastcall BeginUpdate();

@@ -70,10 +70,6 @@ except AttributeError:
 def GetAxes() -> "Graph::TAxes *" :
   return _Settings.GetAxes()
 GetAxes = _Settings.GetAxes
-
-def Redraw() -> "void" :
-  return _Settings.Redraw()
-Redraw = _Settings.Redraw
 Radian = _Settings.Radian
 Degree = _Settings.Degree
 asNone = _Settings.asNone
