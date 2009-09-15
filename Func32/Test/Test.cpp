@@ -458,8 +458,10 @@ void Test()
   Test("x^2^3", 10, 1E8);
   Test("(x^2)^3", 10, 1E6);
   Test("3^x^2", 4, 43046721);
+  TestErrorEval<TComplex>(L"0^x", TComplex(-2.8, 1), ecPowCalcError);
+  TestError("x^-2.8", 0, ecPowCalcError);
 
-  //Test special power function handling
+  //Test power with fraction handling
   TestEval<long double>(L"x^(1/3)", -8, -2);
   TestEval<TComplex>(L"x^(1/3)", -8, TComplex(1,1.732050807568877));
   TestEval<long double>(L"x^(2/6)", -8, -2);
