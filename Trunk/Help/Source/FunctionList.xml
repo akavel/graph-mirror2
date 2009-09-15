@@ -102,23 +102,23 @@
 					</row>
 					<row>
 						<entry>Logical NOT (not)</entry>
-						<entry>Indicates if a term evaluates to 0.</entry>
+						<entry>Evaluates to 1 if an expression evaluates to 0, and evaluates to 0 otherwise.</entry>
 					</row>
 					<row>
 						<entry>Multiplication (*)</entry>
-		     			<entry>Multiplies the two factors. Example: f(x)=2*x</entry>
+		     			<entry>Multiplies two factors. Example: f(x)=2*x</entry>
 		     		</row>
 			 		<row>
 		     			<entry>Division (/)</entry>
-		     			<entry>Divide the two factors. Example: f(x)=2/x</entry>
+		     			<entry>Divides two factors. Example: f(x)=2/x</entry>
 		     		</row>
 		     		<row>
 		     			<entry>Addition (+)</entry>
-		     			<entry>Add the two terms. Example: f(x)=2+x</entry>
+		     			<entry>Adds two terms. Example: f(x)=2+x</entry>
 			 		</row>
 		     		<row>
 		     			<entry>Subtraction (-)</entry>
-		     			<entry>Subtract two terms. Example f(x)=2-x</entry>
+		     			<entry>Subtracts two terms. Example f(x)=2-x</entry>
 		      		</row>
 		     		<row>
 		     			<entry>Greater than (>)</entry>
@@ -146,15 +146,15 @@
 		      		</row>
 		     		<row>
 		     			<entry>Logical AND (and)</entry>
-		     			<entry>Indicates if two expressions both evaluate to a value different from 0.</entry>
+		     			<entry>Evaluates to 1 if two expressions both evaluate to a value different from 0, and evaluates to 0 otherwise.</entry>
 		      		</row>
 		     		<row>
 		     			<entry>Logical OR (or)</entry>
-		     			<entry>Indicates if at least one of two expressions evaluates to a value different from 0.</entry>
+		     			<entry>Evaluates to 1 if at least one of two expressions evaluates to a value different from 0, and evaluates to 0 otherwise.</entry>
 		      		</row>
 		     		<row>
 		     			<entry>Logical XOR (xor)</entry>
-		     			<entry>Indicates if exactly one of two expressions evaluates to a value different from 0.</entry>
+		     			<entry>Evaluates to 1 if exactly one of two expressions evaluates to a value different from 0, and evaluates to 0 otherwise.</entry>
 		      		</row>
 		    			</tbody>
 		  		</tgroup>
