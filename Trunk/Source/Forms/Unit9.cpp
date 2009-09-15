@@ -166,7 +166,7 @@ void __fastcall TForm9::Edit1Change(TObject *Sender)
   catch(Func32::EFuncError &Error)
   {
     if(Error.ErrorCode != Func32::ecEmptyString)
-      Form1->ShowStatusError(ToUString(VisibleFrame->GetErrorPrefix()) + GetErrorMsg(Error));
+      Form1->ShowStatusError(ToUString(VisibleFrame->GetErrorPrefix()) + GetErrorMsg(Error) + " (Error: " + Error.ErrorCode + ")");
   }
   catch(EOverflow&)
   {
