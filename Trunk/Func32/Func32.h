@@ -676,6 +676,7 @@ struct TCoordSet
   long double t;
   long double x;
   long double y;
+  TCoordSet() : t(0), x(0), y(0) {}
   TCoordSet(long double at, long double ax, long double ay) : t(at), x(ax), y(ay) {}
   TCoordSet(long double at, const TCoord<long double> &Coord) : t(at), x(Coord.x), y(Coord.y) {}
 };

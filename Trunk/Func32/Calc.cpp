@@ -437,6 +437,12 @@ std::complex<T> Pow(const std::complex<T> &a, const std::complex<T> &b)
   if(!a && !imag(b) && real(b) > 0)
     return 0; //pow(0,b) seems to give problems with complex numbers
 
+  if(!a && real(b) < 0) //pow(complex(0), complex(-2.8,0)) crashed with bcc 6.13 (C++ Builder 2009)
+  {
+    errno = 1;
+    return 0;
+  }
+
   //Calculations with complex numbers may return a complex number if Temp<0,
   //e.g. (-2)^2 = 4+i4.3368E-19; Because of this
   //evaluating f(x)=x/(x^2-4) results in f(-2)=4.6117E+18i
