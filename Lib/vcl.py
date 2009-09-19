@@ -35,7 +35,10 @@ class TForm(TObject):
         TObject.__init__(self, PyVcl.CreateObject("TForm") if handle == 0 else handle, **keywords)
     def __setattr__(self, name, value):
         try:
-            PyVcl.SetProperty(self._handle, name, value, self)
+            if  "_handle" in self.__dict__:
+                PyVcl.SetProperty(self._handle, name, value, self)
+            else:
+                object.__setattr__(self, name, value)
         except PropertyError:
             object.__setattr__(self, name, value)
     def ShowModal(self):

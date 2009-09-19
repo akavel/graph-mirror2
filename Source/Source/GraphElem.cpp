@@ -107,6 +107,12 @@ void TTextValue::Set(const std::wstring AText, const TData &Data, bool IgnoreErr
   }
 }
 //---------------------------------------------------------------------------
+void TTextValue::Set(double AValue)
+{
+  Value = AValue;
+  Text = _finite(Value) ? ToWString(AValue) : std::wstring();
+}
+//---------------------------------------------------------------------------
 std::wostream& operator<<(std::wostream &Stream, const TTextValue &TextValue)
 {
   if(TextValue.Value == INF)
@@ -130,6 +136,9 @@ void TGraphElem::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"Visible", Visible, true);
   Section.Write(L"ShowInLegend", ShowInLegend, true);
   Section.Write(L"LegendText", LegendText, std::wstring());
+  std::map<std::wstring,std::wstring>::const_iterator End = PluginData.end();
+  for(std::map<std::wstring,std::wstring>::const_iterator Iter = PluginData.begin(); Iter != End; ++Iter)
+    Section.Write(L"$" + Iter->first, Iter->second);
 }
 //---------------------------------------------------------------------------
 void TGraphElem::ReadFromIni(const TConfigFileSection &Section)
@@ -137,6 +146,10 @@ void TGraphElem::ReadFromIni(const TConfigFileSection &Section)
   Visible = Section.Read(L"Visible", true);
   ShowInLegend = Section.Read(L"ShowInLegend", true);
   LegendText = Section.Read(L"LegendText", L"");
+  TConfigFileSection::TIterator End = Section.End();
+  for(TConfigFileSection::TIterator Iter = Section.Begin(); Iter != End; ++Iter)
+    if(Iter->first[0] == L'$')
+      PluginData[Iter->first.substr(1)] = Iter->second;
 }
 //---------------------------------------------------------------------------
 void TGraphElem::AddChild(const TGraphElemPtr &Elem)
@@ -321,6 +334,9 @@ std::pair<double,double> TStdFunc::GetCurrentRange() const
 TParFunc::TParFunc(const std::wstring &AxText, const std::wstring &AyText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
   : xText(AxText), yText(AyText), Func(AxText, AyText, L"t", SymbolList, Trig)
 {
+  SetSteps(TTextValue(1000));
+  From.Set(-10);
+  To.Set(10);
 }
 //---------------------------------------------------------------------------
 TParFunc::TParFunc(const Func32::TParamFunc &AFunc)
@@ -443,7 +459,7 @@ void TTan::ReadFromIni(const TConfigFileSection &Section)
 //---------------------------------------------------------------------------
 std::wstring TTan::MakeText() const
 {
-  return ToWString(Func.lock()->GetVariable()) + L"=" + t.Text;
+  return Func.lock()->GetVariable() + L"=" + t.Text;
 }
 //---------------------------------------------------------------------------
 std::wstring TTan::MakeLegendText() const

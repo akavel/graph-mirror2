@@ -48,8 +48,12 @@
   $result = Py_BuildValue("dd", (double)$1.x, (double)$1.y);
 }
 
-%typemap(out) std::pair<double,double> {
-  $result = Py_BuildValue("dd", $1.first, $1.second);
+%typemap(out) const Func32::TCoordSet& {
+  $result = Py_BuildValue("ddd", (double)$1->t, (double)$1->x, (double)$1->y);
+}
+
+%typemap(out) std::pair<double,double>* {
+  $result = Py_BuildValue("dd", $1->first, $1->second);
 }
 
 %apply double {long double};

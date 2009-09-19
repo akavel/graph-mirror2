@@ -11,7 +11,7 @@ BEGIN
   RES_ROTATION    "Rotation"    //Shown in rotation dialog
   RES_VERSION     "Version %s"  //%s is replaced with version number
   RES_BUILD       "Build %s"    //%s is replaced with build number
-
+  RES_ERROR_NUMBER "Error %s"   //Indicates an error code, e.g. "Error 5"
   RES_AREA        "Area"        //Shown as title in the Calc|Area dialog when it is undocked
   RES_LENGTH      "Length"      //Shown as title in the Calc|Length of path dialog when it is undocked
   RES_SERIES      "Series"      //Default description in the Insert point series dialog

@@ -1,13 +1,15 @@
 %module Data
 
+%include "stl.i"
 %include "std_wstring.i"
-%include "std_vector.i"
 %include "boost_shared_ptr.i"
 %include "attribute.i"
 %include "Types.i"
 
 %template(PointVector) std::vector<TPoint>;
-%template(IntVector) std::vector<int>;
+%template(CoordSetVector) std::vector<Func32::TCoordSet>;
+%template(UnsignedVector) std::vector<unsigned>;
+%template(StringMap) std::map<std::wstring,std::wstring>;
 
 %begin %{
 #include "Graph.h"
@@ -46,9 +48,22 @@ PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem)
 }
 %}
 
+typedef boost::shared_ptr<class TGraphElem> TGraphElemPtr;
+
 %inline %{
-static const boost::shared_ptr<TGraphElem>& Selected() {return Form1->GetGraphElem(Form1->TreeView->Selected);}
+static const TGraphElemPtr& Selected() {return Form1->GetGraphElem(Form1->TreeView->Selected);}
+static void AbortUpdate() {Form1->Data.AbortUpdate();}
 static void Redraw() {Form1->Redraw();}
+static boost::shared_ptr<TStdFunc> CreateStdFunc(const std::wstring &Text) {return boost::shared_ptr<TStdFunc>(new TStdFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
+static boost::shared_ptr<TParFunc> CreateParFunc(const std::wstring &xText, const std::wstring &yText) {return boost::shared_ptr<TParFunc>(new TParFunc(xText, yText, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
+static boost::shared_ptr<TPolFunc> CreatePolFunc(const std::wstring &Text) {return boost::shared_ptr<TPolFunc>(new TPolFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
+
+static unsigned GetFunctionListSize() {return Form1->Data.ElemCount();}
+static const TGraphElemPtr& GetFunctionListItem(unsigned Index) {return Form1->Data.GetElem(Index);}
+static void DeleteFunctionListItem(unsigned Index) {Form1->Data.Delete(Form1->Data.GetElem(Index)); Form1->UpdateTreeView();}
+static void InsertFunctionListItem(unsigned Index, const TGraphElemPtr &Elem) {Form1->Data.Insert(Elem, Index); Form1->UpdateTreeView();}
+static void ReplaceFunctionListItem(unsigned Index, const TGraphElemPtr &Elem) {Form1->Data.Replace(Index, Elem); Form1->UpdateTreeView();}
+static bool CompareElem(const TGraphElemPtr &E1, const TGraphElemPtr &E2) {return E1.get() == E2.get();}
 %}
 
 SWIG_SHARED_PTR(TGraphElem, TGraphElem)
@@ -63,21 +78,37 @@ SWIG_SHARED_PTR_DERIVED(TShade, TGraphElem, TShade)
 SWIG_SHARED_PTR_DERIVED(TRelation, TGraphElem, TRelation)
 SWIG_SHARED_PTR_DERIVED(TAxesView, TGraphElem, TAxesView)
 
-%nodefault TGraphElem;
+%nodefaultctor TGraphElem;
 %attribute(TGraphElem, int, Visible, GetVisible, SetVisible);
 %attribute(TGraphElem, bool, ShowInLegend, GetShowInLegend, SetShowInLegend);
 %attributestring(TGraphElem, std::wstring, LegendText, GetLegendText, SetLegendText);
+%rename(_PluginData) PluginData;
 class TGraphElem
 {
 public:
-  virtual std::wstring MakeLegendText() const;
-  virtual std::wstring MakeText() const = 0;
+  std::map<std::wstring,std::wstring> PluginData;
+  std::wstring MakeLegendText() const;
+  std::wstring MakeText() const;
 };
 
-enum TDrawType {dtAuto, dtDots, dtLines};
+%extend TGraphElem
+{
+  bool Compare(const TGraphElemPtr &Elem) const {return Elem.get() == self;}
+  %pythoncode %{
+    def __eq__(self, rhs):
+      if not isinstance(rhs, TGraphElem): return False
+      return self.Compare(rhs)
+  %}
+}
 
-%nodefault TBaseFuncType;
-%attributestring(TBaseFuncType, %arg(std::pair<double,double>), CurrentRange, GetCurrentRange);
+
+enum TDrawType {dtAuto, dtDots, dtLines};
+typedef unsigned TPenStyle;
+
+%nodefaultctor TBaseFuncType;
+%attributeval(TBaseFuncType, %arg(std::pair<double,double>), CurrentRange, GetCurrentRange);
+%attributestring(TBaseFuncType, TTextValue, Steps, GetSteps, SetSteps);
+%attributestring(TBaseFuncType, std::wstring, Variable, GetVariable);
 class TBaseFuncType : public TGraphElem
 {
 public:
@@ -91,48 +122,56 @@ public:
   unsigned StartPointStyle, EndPointStyle;
   TDrawType DrawType;
 
-  virtual boost::shared_ptr<TBaseFuncType> MakeDifFunc() =0;
-  virtual std::pair<double,double> GetCurrentRange() const;
-  virtual const TTextValue& GetSteps() const;
-  void SetSteps(const TTextValue &Value) {Steps = Value;}
-  virtual std::string GetVariable() const;
-  Func32::TBaseFunc& GetFunc();
+  boost::shared_ptr<TBaseFuncType> MakeDifFunc();
   Func32::TCoord<long double> Eval(long double t);
-  virtual long double CalcArea(long double From, long double To) const;
+  long double CalcArea(long double From, long double To) const;
 };
 
+%nodefaultctor TStdhElem;
+%attributestring(TStdFunc, std::wstring, Text, GetText);
 class TStdFunc : public TBaseFuncType
 {
 };
 
+%nodefaultctor TParFunc;
+%attributestring(TParFunc, std::wstring, xText, GetxText);
+%attributestring(TParFunc, std::wstring, yText, GetyText);
 class TParFunc : public TBaseFuncType
 {
 };
 
+%nodefaultctor TPolFunc;
+%attributestring(TPolFunc, std::wstring, Text, GetText);
 class TPolFunc : public TBaseFuncType
 {
 };
 
+%nodefaultctor TTan;
 class TTan : public TBaseFuncType
 {
 };
 
+%nodefaultctor TPointSeries;
 class TPointSeries : public TGraphElem
 {
 };
 
+%nodefaultctor TTextLabel;
 class TTextLabel : public TGraphElem
 {
 };
 
+%nodefaultctor TShade;
 class TShade : public TGraphElem
 {
 };
 
+%nodefaultctor TRelation;
 class TRelation : public TGraphElem
 {
 };
 
+%nodefaultctor TAxesView;
 class TAxesView : public TGraphElem
 {
 };
@@ -144,3 +183,15 @@ class TAxesView : public TGraphElem
     }
   };
 %}
+
+%pythoncode
+{
+  TStdFunc.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
+  TParFunc.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
+  TPolFunc.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
+  TTan.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
+  TPointSeries.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
+  TRelation.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
+  TTextLabel.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
+  TAxesView.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
+}

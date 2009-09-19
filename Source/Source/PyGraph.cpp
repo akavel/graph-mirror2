@@ -23,6 +23,7 @@
 #include <python.h>
 #include "PyVcl.h"
 //---------------------------------------------------------------------------
+PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem);
 namespace Python
 {
 PyObject *PyEFuncError = NULL;
@@ -135,31 +136,6 @@ static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args)
   Item->Action = Action;
   PluginsItem->Visible = true;
   return PyLong_FromLong(reinterpret_cast<long>(Action));
-}
-//---------------------------------------------------------------------------
-static PyObject* PluginCreateParametricFunction(PyObject *Self, PyObject *Args)
-{
-  const wchar_t *xName;
-  const wchar_t *yName;
-  if(!PyArg_ParseTuple(Args, "uu", &xName, &yName))
-    return NULL;
-
-  TData &Data = Form1->Data;
-  boost::shared_ptr<TBaseFuncType> Func(new TParFunc(xName, yName, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry));
-  Func->From.Value = -10;
-  Func->To.Value = 10;
-  Func->From.Text = L"-10";
-  Func->To.Text = L"10";
-  Func->SetSteps(TTextValue(1000));
-
-  Data.AbortUpdate();
-  UndoList.Push(TUndoAdd(Data, Func));
-  Data.Add(Func);
-  Form1->UpdateTreeView();
-  Data.SetModified();
-  Form1->Redraw();
-
-  Py_RETURN_NONE;
 }
 //---------------------------------------------------------------------------
 static long double CallCustomFunction(void *Custom, const long double *Args, unsigned ArgsCount, Func32::TTrigonometry Trigonemtry)
@@ -373,7 +349,6 @@ static PyObject* PluginDelConstant(PyObject *Self, PyObject *Args)
 //---------------------------------------------------------------------------
 static PyMethodDef GraphMethods[] = {
   {"CreateAction",              PluginCreateAction, METH_NOARGS, ""},
-  {"CreateParametricFunction",  PluginCreateParametricFunction, METH_VARARGS, ""},
   {"CreateCustomFunction",      PluginCreateCustomFunction, METH_VARARGS, ""},
   {"WriteToConsole",            PluginWriteToConsole, METH_VARARGS, ""},
   {"InputQuery",                PluginInputQuery, METH_VARARGS, ""},
@@ -490,22 +465,27 @@ void InitPlugins()
   }
 }
 //---------------------------------------------------------------------------
-void ExecutePluginEvent(TPluginEvent PluginEvent)
+bool PluginHandleEdit(const boost::shared_ptr<TGraphElem> &Elem)
 {
-  static const char*const EventList[] =
-  {
-    "OnNew",
-    "OnLoad",
-    "OnSelect",
-    "OnClose",
-  };
+  TLockGIL Dummy;
+  return ExecutePluginEvent(peEdit, DownCastSharedPtr(Elem));
+}
+//---------------------------------------------------------------------------
+bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param)
+{
   if(IsPythonInstalled())
   {
-    std::string Command = "Graph.ExecuteEvent(Graph. " + std::string(EventList[PluginEvent]) + ")";
     AllocGIL();
-    PyRun_SimpleString(Command.c_str());
+    PyObject *Module = PyImport_AddModule("Graph");
+    char *MethodName = "ExecuteEvent";
+    char *Format = Param ? (char*)"(iN)" : (char*)"(i)";
+    PyObject *ResultObj = PyObject_CallMethod(Module, MethodName, Format, PluginEvent, Param, NULL);
+    bool Result = ResultObj && PyObject_IsTrue(ResultObj);
+    Py_XDECREF(ResultObj);
     FreeGIL();
+    return Result;
   }
+  return false;
 }
 //---------------------------------------------------------------------------
 } //namespace Python

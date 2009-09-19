@@ -10,6 +10,7 @@
 #ifndef PyGraphH
 #define PyGraphH
 //---------------------------------------------------------------------------
+struct _object;
 namespace Python
 {
   enum TPluginEvent
@@ -17,12 +18,14 @@ namespace Python
     peNew,
     peLoad,
     peSelect,
-    peClose
+    peClose,
+    peEdit
   };
 
   void InitPlugins();
   bool ExecutePythonCommand(const String &Command);
   void ShowPythonConsole(bool Visible);
-  void ExecutePluginEvent(TPluginEvent PluginEvent);
+  bool ExecutePluginEvent(TPluginEvent PluginEvent, _object *Param=NULL);
+  bool PluginHandleEdit(const boost::shared_ptr<TGraphElem> &Elem);
 }
 #endif

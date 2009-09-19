@@ -15,7 +15,7 @@
 #define RES_ROTATION     3
 #define RES_VERSION      4
 #define RES_BUILD        5
-
+#define RES_ERROR_NUMBER 6
 #define RES_AREA         7
 #define RES_LENGTH       8
 #define RES_SERIES       9

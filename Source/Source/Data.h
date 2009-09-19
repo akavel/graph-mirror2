@@ -36,7 +36,7 @@ class TData
   const TData& operator=(const TData&);             //Not implemented
   std::wstring GrfName;
   TAbortUpdateEvent OnAbortUpdate;
-  std::vector<boost::shared_ptr<TGraphElem> > ElemList;
+  std::vector<TGraphElemPtr> ElemList;
   void SaveImage(TConfigFile &IniFile, TCanvas *Canvas, int Width, int Height);
 
 public:
@@ -69,12 +69,12 @@ public:
   void SetModified();
   bool IsModified() const {return Modified;}
   double FindInterception(const TBaseFuncType *Func, int X, int Y) const;
-  void Delete(const boost::shared_ptr<TGraphElem> &Elem);
-  void Insert(const boost::shared_ptr<TGraphElem> &Elem, unsigned Index);
-  void Add(const boost::shared_ptr<TGraphElem> &Elem);
+  void Delete(const TGraphElemPtr &Elem);
+  void Insert(const TGraphElemPtr &Elem, unsigned Index);
+  void Add(const TGraphElemPtr &Elem);
   int GetIndex(const boost::shared_ptr<const TGraphElem> &Elem);
-  boost::shared_ptr<TGraphElem> Replace(unsigned Index, const boost::shared_ptr<TGraphElem> &Elem);
-  void Replace(const boost::shared_ptr<TGraphElem> &OldElem, const boost::shared_ptr<TGraphElem> &NewElem);
+  TGraphElemPtr Replace(unsigned Index, const TGraphElemPtr &Elem);
+  void Replace(const TGraphElemPtr &OldElem, const TGraphElemPtr &NewElem);
   const std::wstring& GetFileName() const {return GrfName;}
   boost::shared_ptr<TBaseFuncType> GetFuncFromIndex(unsigned Index) const;
   TGraphElemPtr Back() const;
