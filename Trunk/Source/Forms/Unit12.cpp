@@ -86,7 +86,7 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
 
   if(!Tan->CalcTan())
   {
-    MessageBox(LoadRes(518, ToWString(Tan->ParentFunc()->GetVariable()), Tan->t.Text), LoadString(519));
+    MessageBox(LoadRes(518, Tan->ParentFunc()->GetVariable(), Tan->t.Text), LoadString(519));
     return;
   }
 
@@ -124,7 +124,7 @@ int TForm12::EditTan(const boost::shared_ptr<TBaseFuncType> &F, int AIndex)
   UpDown1->Position = Tan->Size;
   LineSelect1->LineStyle = Tan->Style;
   ExtColorBox1->Selected = Tan->Color;
-  Label1->Caption = (Tan->ParentFunc()->GetVariable() + "=").c_str();
+  Label1->Caption = ToUString(Tan->ParentFunc()->GetVariable() + L"=");
   Edit2->Text = ToUString(Tan->GetLegendText());
   RadioGroup1->ItemIndex = Tan->TangentType;
   Edit4->Text = Tan->From.Text.c_str();

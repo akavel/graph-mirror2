@@ -346,6 +346,8 @@ void TForm1::Translate()
   SaveDialogEx1->HelpCaption = LoadRes(RES_SAVE_OPTIONS); //Translate the Options dialog button
   if(Form9)
     Form9->Translate();
+  if(Form22)
+    Form22->Translate();
 }
 //---------------------------------------------------------------------------
 __fastcall TForm1::~TForm1()
@@ -1968,8 +1970,7 @@ void __fastcall TForm1::InsertFunctionActionExecute(TObject *Sender)
 {
   if(CreateForm<TForm5>(Data)->ShowModal() == mrOk)
   {
-    UpdateTreeView();
-    TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
+    UpdateTreeView(Data.Back());
     TreeView->SetFocus();
     Data.SetModified();
     Redraw();
@@ -2032,6 +2033,9 @@ void __fastcall TForm1::InsertTrendlineActionExecute(TObject *Sender)
 void __fastcall TForm1::EditActionExecute(TObject *Sender)
 {
   boost::shared_ptr<TGraphElem> Item = GetGraphElem(TreeView->Selected);
+
+  if(Python::PluginHandleEdit(Item))
+    return;
 
   TModalResult Result = mrNone;
   if(boost::shared_ptr<TTan> Tan = boost::dynamic_pointer_cast<TTan>(Item))
