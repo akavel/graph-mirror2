@@ -21,6 +21,13 @@ __fastcall TForm22::TForm22(TComponent* Owner)
   int x = CharWidth * 4;
   for(int I = 0; I < IRichEdit1->Paragraph->TabCount; I++, x+=CharWidth*2)
     IRichEdit1->Paragraph->Tab[I] = x;
+  TranslateComponent(this);
+
+}
+//---------------------------------------------------------------------------
+void TForm22::Translate()
+{
+  RetranslateComponent(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm22::FormHide(TObject *Sender)
