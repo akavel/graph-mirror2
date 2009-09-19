@@ -3,13 +3,14 @@ import Graph
 class EventLogger:
     def __init__(self, s):
         self.s = s
-    def __call__(self):
-        print(self.s)
+    def __call__(self, *args):
+        print(self.s, args, sep='')
 
-#Graph.OnNew.append(EventLogger("OnNew"))
-#Graph.OnLoad.append(EventLogger("OnLoad"))
-#Graph.OnSelect.append(EventLogger("OnSelect"))
-#Graph.OnClose.append(EventLogger("OnClose"))
+Graph.OnNew.append(EventLogger("OnNew"))
+Graph.OnLoad.append(EventLogger("OnLoad"))
+Graph.OnSelect.append(EventLogger("OnSelect"))
+Graph.OnClose.append(EventLogger("OnClose"))
+Graph.OnEdit.append(EventLogger("OnEdit"))
 
 def test():
     import time

@@ -15,6 +15,7 @@ struct _typeobject;
 
 namespace Python
 {
+//typedef _object PyObject;
 template<typename T> T& GetPythonAddress(const char *Name);
 
 #ifndef PYTHON_WRAP
@@ -52,8 +53,14 @@ PYTHON_WRAP(_object, _Py_NotImplementedStruct)
 bool IsPythonInstalled();
 void AllocGIL();
 void FreeGIL();
-}
 
+class TLockGIL
+{
+public:
+  TLockGIL(){AllocGIL();}
+  ~TLockGIL(){FreeGIL();}
+};
+}
 #ifdef WRAP_PYOBJECTS
 #define PyTuple_Type Python::PyTuple_Type
 #define PyLong_Type Python::PyLong_Type

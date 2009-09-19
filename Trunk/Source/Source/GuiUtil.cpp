@@ -328,7 +328,7 @@ public:
 //the cursor position is set to where the error ocoured
 void ShowErrorMsg(const Func32::EFuncError &Error, TCustomEdit *Edit)
 {
-  String Str = LoadRes(RES_ERROR) + L" " + Error.ErrorCode;
+  String Str = LoadRes(RES_ERROR_NUMBER, Error.ErrorCode);
   THelpButtonHelper HelpButtonHelper(Error.ErrorCode);
   MessageBox(GetErrorMsg(Error), Str, MB_ICONWARNING | MB_HELP);
 

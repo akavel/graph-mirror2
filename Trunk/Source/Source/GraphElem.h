@@ -57,6 +57,7 @@ struct TTextValue
   bool operator>=(double a) const {return Value >= a;}
   void Update(const class TData &Data);
   void Set(const std::wstring AText, const TData &Data, bool IgnoreErrors = false);
+  void Set(double AValue);
   bool IsFinite() const {return std::_finite(Value);}
 };
 
@@ -75,6 +76,7 @@ class TGraphElem
 
 public:
   std::vector<boost::shared_ptr<TGraphElem> > ChildList;
+  std::map<std::wstring,std::wstring> PluginData;
 
   TGraphElem() : Visible(true), ShowInLegend(true), Data(NULL) {}
   TGraphElem(const TGraphElem &Elem);
@@ -178,7 +180,7 @@ public:
   virtual std::pair<double,double> GetCurrentRange() const {return std::make_pair(From.Value, To.Value);}
   virtual const TTextValue& GetSteps() const {return Steps;}
   void SetSteps(const TTextValue &Value) {Steps = Value;}
-  virtual std::string GetVariable() const {return "";}
+  virtual std::wstring GetVariable() const {return L"";}
   virtual const Func32::TBaseFunc& GetFunc() const =0;
   Func32::TBaseFunc& GetFunc() {return const_cast<Func32::TBaseFunc&>(const_cast<const TBaseFuncType*>(this)->GetFunc());}
   void ClearCache();
@@ -220,12 +222,11 @@ public:
 
 class TStdFunc : public TBaseFuncType
 {
-  friend class TStdFuncImpl;
   std::wstring Text;
   Func32::TFunc Func;
 
 public:
-  TStdFunc() {}
+  TStdFunc() {} //Used with ReadFromIni();
   TStdFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
   TStdFunc(const Func32::TFunc &AFunc);
 
@@ -236,7 +237,7 @@ public:
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
   std::pair<double,double> GetCurrentRange() const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
-  std::string GetVariable() const {return "x";}
+  std::wstring GetVariable() const {return L"x";}
   const Func32::TFunc& GetFunc() const {return Func;}
   const std::wstring& GetText() const {return Text;}
 };
@@ -257,7 +258,7 @@ public:
   void ReadFromIni(const TConfigFileSection &Section);
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
-  std::string GetVariable() const {return "t";}
+  std::wstring GetVariable() const {return L"t";}
   const Func32::TParamFunc& GetFunc() const {return Func;}
   const std::wstring& GetxText() const {return xText;}
   const std::wstring& GetyText() const {return yText;}
@@ -278,7 +279,7 @@ public:
   void ReadFromIni(const TConfigFileSection &Section);
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
-  std::string GetVariable() const {return "t";}
+  std::wstring GetVariable() const {return L"t";}
   const Func32::TPolarFunc& GetFunc() const {return Func;}
   const std::wstring& GetText() const {return Text;}
 };
@@ -441,7 +442,7 @@ class TAxesView : public TGraphElem
 {
 public:
   TAxesView() {SetShowInLegend(false);}
-  std::wstring MakeText() const {return L"";}
+  std::wstring MakeText() const {return L"Axes";}
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
