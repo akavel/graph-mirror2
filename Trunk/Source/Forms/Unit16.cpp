@@ -38,8 +38,8 @@ __fastcall TForm16::TForm16(TComponent* Owner, TData &AData)
     CmpStr = LoadRes(RES_SHADE) + L" " + I++;
     Found = false;
     for(unsigned N = 0; N < Data.ElemCount(); N++)
-      for(unsigned J = 0; J < Data.GetElem(N)->ChildList.size(); J++)
-        if(boost::shared_ptr<TShade> Shade = boost::dynamic_pointer_cast<TShade>(Data.GetElem(N)->ChildList[J]))
+      for(unsigned J = 0; J < Data.GetElem(N)->ChildCount(); J++)
+        if(boost::shared_ptr<TShade> Shade = boost::dynamic_pointer_cast<TShade>(Data.GetElem(N)->GetChild(J)))
           if(CmpStr == ToUString(Shade->GetLegendText()))
             Found = true;
   }
@@ -107,7 +107,6 @@ void __fastcall TForm16::Button1Click(TObject *Sender)
 
   Shade->BrushStyle = ShadeSelect1->ShadeStyle;
   Shade->Color = ExtColorBox1->Selected;
-  Shade->Func = Func;
 
   Shade->SetLegendText(ToWString(Edit5->Text));
   Shade->sMin.Text = ToWString(Edit1->Text);
@@ -168,14 +167,14 @@ void __fastcall TForm16::Button1Click(TObject *Sender)
   {
     Shade->SetVisible(OldShade->GetVisible());
     Shade->SetShowInLegend(OldShade->GetShowInLegend());
-    int Index = IndexOf(OldShade->ParentFunc()->ChildList, OldShade);
-    UndoList.Push(TUndoChange(Data, OldShade, Index));
-    OldShade->ParentFunc()->ReplaceChild(Index, Shade);
+    int Index = OldShade->GetParent()->GetChildIndex(OldShade);
+    UndoList.Push(TUndoChange(Data, OldShade, Shade));
+    OldShade->GetParent()->ReplaceChild(Index, Shade);
   }
   else
   {
     UndoList.Push(TUndoAdd(Data, Shade));
-    Func->AddChild(Shade);
+    Func->InsertChild(Shade);
   }
 
   Property.DefaultShade.Set(ShadeSelect1->ShadeStyle, ExtColorBox1->Selected, 0);
@@ -207,7 +206,7 @@ int TForm16::EditShade(const boost::shared_ptr<TShade> &AShade)
     Caption = LoadRes(538);
     Edit1->Text = OldShade->sMin.Text.c_str();
     Edit2->Text = OldShade->sMax.Text.c_str();
-    Func = OldShade->Func.lock();
+    Func = boost::dynamic_pointer_cast<TBaseFuncType>(OldShade->GetParent());
     ShadeSelect1->ShadeStyle = OldShade->BrushStyle;
     ExtColorBox1->Selected = OldShade->Color;
     CheckBox1->Checked = OldShade->ExtendMinToIntercept;

@@ -25,7 +25,7 @@ object Form12: TForm12
   TextHeight = 13
   object Label1: TLabel
     Left = 8
-    Top = 16
+    Top = 20
     Width = 11
     Height = 13
     Caption = 'x='

@@ -713,12 +713,16 @@ void TDraw::DrawLegend()
       TextWidth = std::max(TextWidth, Context.GetTextWidth(Elem->MakeLegendText()));
     }
 
-    for(unsigned N = 0; N < Elem->ChildList.size(); N++)
-      if(Elem->ChildList[N]->GetVisible() && Elem->ChildList[N]->GetShowInLegend())
+    unsigned Count = Elem->ChildCount();
+    for(unsigned N = 0; N < Count; N++)
+    {
+      const TGraphElemPtr &Child = Elem->GetChild(N);
+      if(Child->GetVisible() && Child->GetShowInLegend())
       {
         LegendCount++;
-        TextWidth = std::max(TextWidth, Context.GetTextWidth(Elem->ChildList[N]->MakeLegendText()));
+        TextWidth = std::max(TextWidth, Context.GetTextWidth(Child->MakeLegendText()));
       }
+  }
   }
 
   if(!LegendCount || !Axes.ShowLegend)
@@ -769,9 +773,12 @@ void TDraw::DrawLegend()
     if(Elem->GetVisible() && Elem->GetShowInLegend())
       Elem->Accept(DrawLegendItems);
 
-    for(unsigned N = 0; N < Elem->ChildList.size(); N++)
-      if(Elem->ChildList[N]->GetVisible() && Elem->ChildList[N]->GetShowInLegend())
-        Elem->ChildList[N]->Accept(DrawLegendItems);
+    for(unsigned N = 0; N < Elem->ChildCount(); N++)
+    {
+      const TGraphElemPtr &Child = Elem->GetChild(N);
+      if(Child->GetVisible() && Child->GetShowInLegend())
+        Child->Accept(DrawLegendItems);
+    }
   }
 
   //Draw rectangle around legend

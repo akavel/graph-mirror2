@@ -34,13 +34,13 @@ TData::TData(const TData &OldData) : Axes(OldData.Axes), CustomFunctions(OldData
 {
   for(unsigned int I = 0; I < OldData.ElemList.size(); I++)
   {
-    ElemList.push_back(boost::static_pointer_cast<TBaseFuncType>(OldData.ElemList[I]->Clone()));
+    ElemList.push_back(OldData.ElemList[I]->Clone());
     ElemList.back()->SetData(this);
   }
 
   for(unsigned int I = 0; I < ElemList.size(); I++)
-    for(unsigned J = 0; J < ElemList[I]->ChildList.size(); J++)
-      if(TShade *Shade = dynamic_cast<TShade*>(ElemList[I]->ChildList[J].get()))
+    for(unsigned J = 0; J < ElemList[I]->ChildCount(); J++)
+      if(TShade *Shade = dynamic_cast<TShade*>(ElemList[I]->GetChild(J).get()))
         if(Shade->Func2)
         {
           //Update pointer cross references
@@ -85,6 +85,7 @@ void TData::Clear()
   ElemList.clear();
   CustomFunctions.Clear();
   AnimationInfo.Clear();
+  PluginData.clear();
 }
 //---------------------------------------------------------------------------
 void TData::ClearCache()
@@ -111,9 +112,9 @@ void TData::SaveData(TConfigFile &IniFile)
 
       //Write tangents
       unsigned TanCount = 0;
-      for(unsigned N = 0; N < Func->ChildList.size(); N++)
-        if(dynamic_cast<TTan*>(Func->ChildList[N].get()))
-          Func->ChildList[N]->WriteToIni(IniFile.Section(SectionName + L"Tan" + ToWString(++TanCount)));
+      for(unsigned N = 0; N < Func->ChildCount(); N++)
+        if(dynamic_cast<TTan*>(Func->GetChild(N).get()))
+          Func->GetChild(N)->WriteToIni(IniFile.Section(SectionName + L"Tan" + ToWString(++TanCount)));
       IniFile.Section(SectionName).Write(L"TanCount", TanCount, 0U);
     }
     else if(TPointSeries *Series = dynamic_cast<TPointSeries*>(ElemList[I].get()))
@@ -127,9 +128,9 @@ void TData::SaveData(TConfigFile &IniFile)
     else if(TOleObjectElem *OleObjectElem = dynamic_cast<TOleObjectElem*>(ElemList[I].get()))
       OleObjectElem->WriteToIni(IniFile.Section(L"OleObject" + ToWString(++OleObjectCount)));
 
-    for(unsigned J = 0; J < ElemList[I]->ChildList.size(); J++)
-      if(dynamic_cast<TShade*>(ElemList[I]->ChildList[J].get()))
-        ElemList[I]->ChildList[J]->WriteToIni(IniFile.Section(L"Shade" + ToWString(++ShadeCount)));
+    for(unsigned J = 0; J < ElemList[I]->ChildCount(); J++)
+      if(dynamic_cast<TShade*>(ElemList[I]->GetChild(J).get()))
+        ElemList[I]->GetChild(J)->WriteToIni(IniFile.Section(L"Shade" + ToWString(++ShadeCount)));
   }
 
   TConfigFileSection &DataSection = IniFile.Section(L"Data");
@@ -181,8 +182,7 @@ void TData::LoadData(const TConfigFile &IniFile)
       boost::shared_ptr<TTan> Tan(new TTan);
       Tan->SetData(this);
       Tan->ReadFromIni(IniFile.Section(L"Tan" + ToWString(I+1)));
-      Elem->ChildList.push_back(Tan);
-      Tan->SetParentFunc(boost::dynamic_pointer_cast<TBaseFuncType>(Elem));
+      Elem->InsertChild(Tan);
     }
 
     ElemList.push_back(Elem);
@@ -195,9 +195,11 @@ void TData::LoadData(const TConfigFile &IniFile)
   {
     boost::shared_ptr<TGraphElem> Shade(new TShade);
     Shade->SetData(this);
-    Shade->ReadFromIni(IniFile.Section(L"Shade" + ToWString(I+1)));
-    if(Shade->ParentFunc())
-      Shade->ParentFunc()->ChildList.push_back(Shade);
+    const TConfigFileSection &Section = IniFile.Section(L"Shade" + ToWString(I+1));
+    Shade->ReadFromIni(Section);
+    int FuncNo = Section.Read(L"FuncNo", 0) - 1;
+    if(FuncNo != -1)
+      ElemList[FuncNo]->InsertChild(Shade);
   }
 }
 //---------------------------------------------------------------------------
@@ -500,87 +502,62 @@ bool ExportPointSeries(const TPointSeries *Series, const wchar_t *FileName, char
   return true;
 }
 //---------------------------------------------------------------------------
-void TData::Delete(const boost::shared_ptr<TGraphElem> &Elem)
+void TData::Delete(const TGraphElemPtr &Elem)
 {
-  boost::shared_ptr<TBaseFuncType> Parent = Elem->ParentFunc();
+  const TGraphElemPtr &Parent = Elem->GetParent();
   if(Parent)
-    Parent->ChildList.erase(Parent->ChildList.begin() + IndexOf(Parent->ChildList, Elem));
+    Parent->RemoveChild(Parent->GetChildIndex(Elem));
   else
     ElemList.erase(ElemList.begin() + IndexOf(ElemList, Elem));
   Elem->SetData(NULL);
 }
 //---------------------------------------------------------------------------
-void TData::Insert(const boost::shared_ptr<TGraphElem> &Elem, unsigned Index)
+int TData::GetIndex(const TGraphElemPtr &Elem)
 {
-  boost::shared_ptr<TBaseFuncType> Parent = Elem->ParentFunc();
-  if(Parent)
-    Parent->ChildList.insert(Parent->ChildList.begin() + Index, Elem);
-  else
-  { //{} Needed as workaround to code generation bug i bcc 5.6.4
-    ElemList.insert(ElemList.begin() + Index, Elem);
-  }
-  Elem->SetData(this);
-}
-//---------------------------------------------------------------------------
-int TData::GetIndex(const boost::shared_ptr<const TGraphElem> &Elem)
-{
-  boost::shared_ptr<TBaseFuncType> Parent = Elem->ParentFunc();
-  if(Parent)
-    return IndexOf(Parent->ChildList, Elem);
+  if(const TGraphElemPtr &Parent = Elem->GetParent())
+    return Parent->GetChildIndex(Elem);
   return IndexOf(ElemList, Elem);
 }
 //---------------------------------------------------------------------------
-boost::shared_ptr<TGraphElem> TData::Replace(unsigned Index, const boost::shared_ptr<TGraphElem> &Elem)
+void TData::Replace(unsigned Index, const TGraphElemPtr &Elem)
 {
-  //Warning: Bcc 5.6.4 bug; Do not put Result outside brackets
-  boost::shared_ptr<TBaseFuncType> Parent = Elem->ParentFunc();
-  if(Parent)
-  {
-    boost::shared_ptr<TGraphElem> Result = Parent->ChildList[Index];
-    Result->SetData(NULL);
-    Parent->ChildList[Index] = Elem;
-    Elem->SetData(this);
-    return Result;
-  }
+  ElemList.at(Index)->SetData(NULL);
+  Elem->SetData(this);
+  ElemList.at(Index) = Elem;
+}
+//---------------------------------------------------------------------------
+void TData::Replace(const TGraphElemPtr &OldElem, const TGraphElemPtr &Elem)
+{
+  if(const TGraphElemPtr &Parent = OldElem->GetParent())
+    Parent->ReplaceChild(Parent->GetChildIndex(OldElem), Elem);
   else
   {
-    boost::shared_ptr<TGraphElem> Result = ElemList[Index];
-
-    boost::shared_ptr<TBaseFuncType> OldFunc = boost::dynamic_pointer_cast<TBaseFuncType>(ElemList[Index]);
-    boost::shared_ptr<TBaseFuncType> NewFunc = boost::dynamic_pointer_cast<TBaseFuncType>(Elem);
-    if(!!OldFunc && !!NewFunc)
+    while(OldElem->ChildCount() > 0)
     {
-      OldFunc->ChildList.swap(NewFunc->ChildList);
-      for(unsigned I = 0; I < NewFunc->ChildList.size(); I++)
-        NewFunc->ChildList[I]->SetParentFunc(NewFunc);
-
-      for(unsigned I = 0; I < ElemList.size(); I++)
-        for(unsigned J = 0; J < ElemList[I]->ChildList.size(); J++)
-          if(TShade *Shade = dynamic_cast<TShade*>(ElemList[I]->ChildList[J].get()))
-            if(Shade->Func2 == OldFunc)
-              Shade->Func2 = NewFunc;
+      const TGraphElemPtr &Child = OldElem->GetChild(0);
+      OldElem->RemoveChild(0);
+      Elem->InsertChild(Child);
     }
 
-    ElemList[Index] = Elem;
+    for(unsigned I = 0; I < ElemList.size(); I++)
+      for(unsigned J = 0; J < ElemList[I]->ChildCount(); J++)
+        if(const boost::shared_ptr<TShade> &Shade = boost::dynamic_pointer_cast<TShade>(ElemList[I]->GetChild(J)))
+          if(Shade->Func2 == OldElem)
+            Shade->Func2 = boost::dynamic_pointer_cast<TBaseFuncType>(Elem);
+
+    ElemList[IndexOf(ElemList, OldElem)] = Elem;
     Elem->SetData(this);
     Elem->Update(); //Update tangents
-    Result->SetData(NULL);
-    return Result;
+    OldElem->SetData(NULL);
   }
 }
 //---------------------------------------------------------------------------
-void TData::Replace(const boost::shared_ptr<TGraphElem> &OldElem, const boost::shared_ptr<TGraphElem> &NewElem)
+void TData::Insert(const boost::shared_ptr<TGraphElem> &Elem, int Index)
 {
-  Replace(GetIndex(OldElem), NewElem);
-}
-//---------------------------------------------------------------------------
-void TData::Add(const boost::shared_ptr<TGraphElem> &Elem)
-{
-  boost::shared_ptr<TBaseFuncType> Parent = Elem->ParentFunc();
-  if(Parent)
-    Parent->ChildList.push_back(Elem);
-  else
+  if(Index == -1)
     ElemList.push_back(Elem);
+  else
+    ElemList.insert(ElemList.begin() + Index, Elem);
   Elem->SetData(this);
 }
 //---------------------------------------------------------------------------
@@ -612,6 +589,12 @@ void TData::Update()
   CustomFunctions.Update();
   for(unsigned I = 0; I < ElemList.size(); ++I)
     ElemList[I]->Update();
+}
+//---------------------------------------------------------------------------
+void TData::LoadPluginData(const TConfigFileSection &Section)
+{
+  for(TConfigFileSection::TIterator Iter = Section.Begin(); Iter != Section.End(); ++Iter)
+    PluginData[Iter->first] = Iter->second;
 }
 //---------------------------------------------------------------------------
 } //namespace Graph

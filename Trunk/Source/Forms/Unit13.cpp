@@ -186,7 +186,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
     BaseFunc->Color = ExtColorBox1->Selected;
     BaseFunc->Size = Edit2->Text.ToInt();
     BaseFunc->Style = LineSelect1->LineStyle;
-    Data.Add(BaseFunc);
+    Data.Insert(BaseFunc);
     UndoList.Push(TUndoAdd(Data, BaseFunc));
   }
   catch(Func32::EFuncError &Error)

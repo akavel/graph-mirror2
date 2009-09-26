@@ -109,10 +109,13 @@ void TDrawThread::DrawAll()
   for(unsigned I = 0; I < Data->ElemCount() && !Aborted; I++)
   {
     const boost::shared_ptr<TGraphElem> &Elem = Data->GetElem(I);
-    for(unsigned N = 0; N < Elem->ChildList.size() && !Aborted; N++)
-      if(Elem->ChildList[N]->GetVisible())
-        Elem->ChildList[N]->Accept(*this);
-
+    unsigned Count = Elem->ChildCount();
+    for(unsigned N = 0; N < Count && !Aborted; N++)
+    {
+      const TGraphElemPtr &Child = Elem->GetChild(N);
+      if(Child->GetVisible())
+        Child->Accept(*this);
+    }
     if(Elem->GetVisible() && !Aborted)
       Elem->Accept(*this);
   }
@@ -433,7 +436,7 @@ struct TDrawShadeData
 };
 void TDrawThread::Visit(TShade &Shade)
 {
-  TBaseFuncType *F = Shade.ParentFunc().get();
+  TBaseFuncType *F = dynamic_cast<TBaseFuncType*>(Shade.GetParent().get());
 
   PrepareFunction(F);
   if(Shade.Func2)

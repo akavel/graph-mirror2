@@ -1,6 +1,7 @@
 %module Data
 
 %include "stl.i"
+%include "std_string.i"
 %include "std_wstring.i"
 %include "boost_shared_ptr.i"
 %include "attribute.i"
@@ -64,6 +65,7 @@ static void DeleteFunctionListItem(unsigned Index) {Form1->Data.Delete(Form1->Da
 static void InsertFunctionListItem(unsigned Index, const TGraphElemPtr &Elem) {Form1->Data.Insert(Elem, Index); Form1->UpdateTreeView();}
 static void ReplaceFunctionListItem(unsigned Index, const TGraphElemPtr &Elem) {Form1->Data.Replace(Index, Elem); Form1->UpdateTreeView();}
 static bool CompareElem(const TGraphElemPtr &E1, const TGraphElemPtr &E2) {return E1.get() == E2.get();}
+static std::map<std::wstring,std::wstring>& GetPluginData() {return Form1->Data.PluginData;}
 %}
 
 SWIG_SHARED_PTR(TGraphElem, TGraphElem)
@@ -82,6 +84,7 @@ SWIG_SHARED_PTR_DERIVED(TAxesView, TGraphElem, TAxesView)
 %attribute(TGraphElem, int, Visible, GetVisible, SetVisible);
 %attribute(TGraphElem, bool, ShowInLegend, GetShowInLegend, SetShowInLegend);
 %attributestring(TGraphElem, std::wstring, LegendText, GetLegendText, SetLegendText);
+%attributestring(TGraphElem, TGraphElemPtr, Parent, GetParent);
 %rename(_PluginData) PluginData;
 class TGraphElem
 {
@@ -93,11 +96,11 @@ public:
 
 %extend TGraphElem
 {
-  bool Compare(const TGraphElemPtr &Elem) const {return Elem.get() == self;}
+  int ThisPtr() const {return reinterpret_cast<int>(self);}
   %pythoncode %{
     def __eq__(self, rhs):
       if not isinstance(rhs, TGraphElem): return False
-      return self.Compare(rhs)
+      return self.ThisPtr() == rhs.ThisPtr()
   %}
 }
 
@@ -146,9 +149,13 @@ class TPolFunc : public TBaseFuncType
 {
 };
 
-%nodefaultctor TTan;
+enum TTangentType {ttTangent, ttNormal};
+%attribute(TTan, bool, Valid, IsValid);
 class TTan : public TBaseFuncType
 {
+public:
+  TTextValue t;
+  TTangentType TangentType;
 };
 
 %nodefaultctor TPointSeries;
@@ -157,8 +164,19 @@ class TPointSeries : public TGraphElem
 };
 
 %nodefaultctor TTextLabel;
+%attribute(TTextLabel, TRect, Rect, GetRect);
+%attribute(TTextLabel, TTextValue, xPos, GetXPos);
+%attribute(TTextLabel, TTextValue, yPos, GetYPos);
+%attributestring(TTextLabel, std::string, Text, GetText);
+%attribute(TTextLabel, TColor, BackgroundColor, GetBackgroundColor);
+%attribute(TTextLabel, TLabelPlacement, Placement, GetPlacement);
+%attribute(TTextLabel, unsigned, Rotation, GetRotation);
 class TTextLabel : public TGraphElem
 {
+public:
+  TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation);
+  void Scale(double xSizeMul, double ySizeMul);
+  TMetafile* GetImage() const {return Metafile;}
 };
 
 %nodefaultctor TShade;
@@ -166,9 +184,22 @@ class TShade : public TGraphElem
 {
 };
 
+enum TRelationType {rtEquation, rtInequality};
+
 %nodefaultctor TRelation;
+%attribute(TRelation, TColor, Color, GetColor);
+%attribute(TRelation, TBrushStyle, BrushStyle, GetBrushStyle);
+%attribute(TRelation, TRelationType, RelationType, GetRelationType);
+%attributestring(TRelation, std::wstring, Text, GetText);
+%attributestring(TRelation, std::wstring, Constraints, GetConstraints);
+%attribute(TRelation, unsigned, Size, GetSize);
 class TRelation : public TGraphElem
 {
+public:
+  TRelation(const std::wstring &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig);
+  void SetConstraints(const std::wstring &AConstraintsText, const Func32::TSymbolList &SymbolList);
+
+  long double Eval(const std::vector<long double> &Args, Func32::ECalcError &E);
 };
 
 %nodefaultctor TAxesView;

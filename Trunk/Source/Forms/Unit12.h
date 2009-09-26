@@ -59,13 +59,13 @@ __published:	// IDE-managed Components
 
 private:	// User declarations
     TData &Data;
-    boost::shared_ptr<TBaseFuncType> Func;
-    int Index;
+    TGraphElemPtr Parent;
+    boost::shared_ptr<TTan> OldTan;
 
 public:		// User declarations
     __fastcall TForm12(TComponent* Owner, TData &AData);
-    int EditTan(const boost::shared_ptr<TBaseFuncType> &F, int AIndex);
-    int InsertTan(const boost::shared_ptr<TBaseFuncType> &F);
+    int EditTan(const boost::shared_ptr<TTan> &Tan);
+    int InsertTan(const TGraphElemPtr &AParent);
 };
 //---------------------------------------------------------------------------
 #endif

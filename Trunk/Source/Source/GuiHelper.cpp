@@ -24,8 +24,8 @@ TTreeNode* TAddView::AddNode(TGraphElem &Elem, int ImageIndex)
   std::wstring Str = Elem.MakeLegendText();
   std::replace(Str.begin(), Str.end(), L'-', L'\x2212');
 
-  TTreeNode *Node = Elem.ParentFunc() ?
-    Form1->TreeView->Items->AddChild(Form1->GetNode(Elem.ParentFunc()), Str.c_str()) :
+  TTreeNode *Node = Elem.GetParent() ?
+    Form1->TreeView->Items->AddChild(Form1->GetNode(Elem.GetParent()), Str.c_str()) :
     Form1->TreeView->Items->Add(NULL, Str.c_str());
 
   Node->ImageIndex = ImageIndex;
@@ -43,8 +43,8 @@ void TAddView::Visit(TBaseFuncType &Func)
 {
   AddNode(Func, Form1->AddImage(iiFuncNode, Func.Color));
 
-  for(unsigned I = 0; I < Func.ChildList.size(); I++)
-    Func.ChildList[I]->Accept(*this);
+  for(unsigned I = 0; I < Func.ChildCount(); I++)
+    Func.GetChild(I)->Accept(*this);
 }
 //---------------------------------------------------------------------------
 void TAddView::Visit(TTan &Tan)

@@ -16,6 +16,10 @@
   $result = Py_BuildValue("ii", $1->x, $1->y);
 }
 
+%typemap(out) const TRect& {
+  $result = Py_BuildValue("iiii", $1->Left, $1->Top, $1->Right, $1->Bottom);
+}
+
 %typemap(in) Func32::TDblPoint  {
   if(!PyArg_ParseTuple($input, "dd", &($1.x), &($1.y)))
     SWIG_fail;
@@ -43,6 +47,7 @@
 {
   $result = DownCastSharedPtr(*$1);
 }
+%typemap(out) const boost::shared_ptr<TBaseFuncType>& = const boost::shared_ptr<TGraphElem>&;
 
 %typemap(out) Func32::TCoord<long double> {
   $result = Py_BuildValue("dd", (double)$1.x, (double)$1.y);
@@ -58,4 +63,5 @@
 
 %apply double {long double};
 typedef unsigned TColor;
+typedef unsigned TBrushStyle;
 

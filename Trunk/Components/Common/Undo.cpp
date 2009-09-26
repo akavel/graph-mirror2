@@ -101,6 +101,11 @@ void TUndoList::Clear()
   RedoStack.clear();
 }
 //---------------------------------------------------------------------------
+void TUndoList::ClearRedo()
+{
+  RedoStack.clear();
+}
+//---------------------------------------------------------------------------
 void TUndoList::BeginMultiUndo()
 {
   if(MultiUndo++ == 0)

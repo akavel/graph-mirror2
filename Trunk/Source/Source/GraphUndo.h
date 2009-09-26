@@ -26,34 +26,19 @@ struct TUndoAdd
 struct TUndoChange
 {
   TData &Data;
-  boost::shared_ptr<TGraphElem> Elem;
-  unsigned Index;
+  TGraphElemPtr OldElem;
+  TGraphElemPtr NewElem;
 
-  TUndoChange(TData &AData, const boost::shared_ptr<TGraphElem> &AElem, unsigned AIndex)
-    : Data(AData), Elem(AElem), Index(AIndex) {Elem->ClearCache();}
-  void operator()(TUndoList &UndoList) const
+  TUndoChange(TData &AData, const TGraphElemPtr &AOldElem, const TGraphElemPtr &ANewElem)
+    : Data(AData), OldElem(AOldElem), NewElem(ANewElem)
   {
-    UndoList.Push(TUndoChange(Data, Data.Replace(Index, Elem), Index));
-  }
-};
-
-//Special class for use with TBaseFuncBase changes; Use this instead of TUndoChange
-struct TUndoChangeFunc
-{
-  TData &Data;
-  boost::shared_ptr<TBaseFuncType> OldFunc;
-  boost::shared_ptr<TBaseFuncType> NewFunc;
-
-  TUndoChangeFunc(TData &AData, const boost::shared_ptr<TBaseFuncType> &AOldFunc, const boost::shared_ptr<TBaseFuncType> &ANewFunc)
-    : Data(AData), OldFunc(AOldFunc), NewFunc(ANewFunc)
-  {
-    OldFunc->ClearCache();
+    OldElem->ClearCache();
   }
 
   void operator()(TUndoList &UndoList) const
   {
-    UndoList.Push(TUndoChangeFunc(Data, NewFunc, OldFunc));
-    Data.Replace(Data.GetIndex(NewFunc), OldFunc);
+    UndoList.Push(TUndoChange(Data, NewElem, OldElem));
+    Data.Replace(OldElem, NewElem);
   }
 };
 
@@ -61,20 +46,24 @@ struct TUndoDel
 {
   TData &Data;
   int Index;
-  boost::shared_ptr<TGraphElem> GraphElem;
+  TGraphElemPtr Elem;
+  TGraphElemPtr Parent;
 
-  TUndoDel(TData &AData, const boost::shared_ptr<TGraphElem> &AGraphElem, int AIndex)
-    : Data(AData), Index(AIndex), GraphElem(AGraphElem)  { }
+  TUndoDel(TData &AData, const TGraphElemPtr &AElem, const TGraphElemPtr &AParent, int AIndex)
+    : Data(AData), Index(AIndex), Elem(AElem), Parent(AParent)  { }
   void operator()(TUndoList &UndoList) const
   {
-    UndoList.Push(TUndoAdd(Data, GraphElem));
-    Data.Insert(GraphElem, Index);
+    UndoList.Push(TUndoAdd(Data, Elem));
+    if(Parent)
+      Parent->InsertChild(Elem, Index);
+    else
+      Data.Insert(Elem, Index);
   }
 };
 
 inline void TUndoAdd::operator()(TUndoList &UndoList) const
 {
-  UndoList.Push(TUndoDel(Data, GraphElem, Data.GetIndex(GraphElem)));
+  UndoList.Push(TUndoDel(Data, GraphElem, GraphElem->GetParent(), Data.GetIndex(GraphElem)));
   Data.Delete(GraphElem);
 }
 

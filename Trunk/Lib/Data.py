@@ -333,6 +333,10 @@ ReplaceFunctionListItem = _Data.ReplaceFunctionListItem
 def CompareElem(*args) -> "bool" :
   return _Data.CompareElem(*args)
 CompareElem = _Data.CompareElem
+
+def GetPluginData() -> "std::map< std::wstring,std::wstring,std::less< std::wstring >,std::allocator< std::pair< std::wstring const,std::wstring > > > &" :
+  return _Data.GetPluginData()
+GetPluginData = _Data.GetPluginData
 class TGraphElem(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, TGraphElem, name, value)
@@ -354,10 +358,12 @@ class TGraphElem(_object):
     __swig_setmethods__["LegendText"] = _Data.TGraphElem_LegendText_set
     __swig_getmethods__["LegendText"] = _Data.TGraphElem_LegendText_get
     if _newclass:LegendText = _swig_property(_Data.TGraphElem_LegendText_get, _Data.TGraphElem_LegendText_set)
-    def Compare(self, *args) -> "bool" : return _Data.TGraphElem_Compare(self, *args)
+    __swig_getmethods__["Parent"] = _Data.TGraphElem_Parent_get
+    if _newclass:Parent = _swig_property(_Data.TGraphElem_Parent_get)
+    def ThisPtr(self) -> "int" : return _Data.TGraphElem_ThisPtr(self)
     def __eq__(self, rhs):
       if not isinstance(rhs, TGraphElem): return False
-      return self.Compare(rhs)
+      return self.ThisPtr() == rhs.ThisPtr()
 
     __swig_destroy__ = _Data.delete_TGraphElem
     __del__ = lambda self : None;
@@ -501,6 +507,8 @@ def TPolFunc_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TBaseFuncType >" 
   return _Data.TPolFunc_SWIGSharedPtrUpcast(*args)
 TPolFunc_SWIGSharedPtrUpcast = _Data.TPolFunc_SWIGSharedPtrUpcast
 
+ttTangent = _Data.ttTangent
+ttNormal = _Data.ttNormal
 class TTan(TBaseFuncType):
     __swig_setmethods__ = {}
     for _s in [TBaseFuncType]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
@@ -508,10 +516,21 @@ class TTan(TBaseFuncType):
     __swig_getmethods__ = {}
     for _s in [TBaseFuncType]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TTan, name)
-    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
+    __swig_setmethods__["t"] = _Data.TTan_t_set
+    __swig_getmethods__["t"] = _Data.TTan_t_get
+    if _newclass:t = _swig_property(_Data.TTan_t_get, _Data.TTan_t_set)
+    __swig_setmethods__["TangentType"] = _Data.TTan_TangentType_set
+    __swig_getmethods__["TangentType"] = _Data.TTan_TangentType_get
+    if _newclass:TangentType = _swig_property(_Data.TTan_TangentType_get, _Data.TTan_TangentType_set)
     __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TTan_SWIGSharedPtrUpcast
     if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TTan_SWIGSharedPtrUpcast)
+    __swig_getmethods__["Valid"] = _Data.TTan_Valid_get
+    if _newclass:Valid = _swig_property(_Data.TTan_Valid_get)
+    def __init__(self): 
+        this = _Data.new_TTan()
+        try: self.this.append(this)
+        except: self.this = this
     __swig_destroy__ = _Data.delete_TTan
     __del__ = lambda self : None;
 TTan_swigregister = _Data.TTan_swigregister
@@ -548,10 +567,29 @@ class TTextLabel(TGraphElem):
     __swig_getmethods__ = {}
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TTextLabel, name)
-    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
+    def __init__(self, *args): 
+        this = _Data.new_TTextLabel(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def Scale(self, *args) -> "void" : return _Data.TTextLabel_Scale(self, *args)
+    def GetImage(self) -> "TMetafile *" : return _Data.TTextLabel_GetImage(self)
     __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TTextLabel_SWIGSharedPtrUpcast
     if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TTextLabel_SWIGSharedPtrUpcast)
+    __swig_getmethods__["Rect"] = _Data.TTextLabel_Rect_get
+    if _newclass:Rect = _swig_property(_Data.TTextLabel_Rect_get)
+    __swig_getmethods__["xPos"] = _Data.TTextLabel_xPos_get
+    if _newclass:xPos = _swig_property(_Data.TTextLabel_xPos_get)
+    __swig_getmethods__["yPos"] = _Data.TTextLabel_yPos_get
+    if _newclass:yPos = _swig_property(_Data.TTextLabel_yPos_get)
+    __swig_getmethods__["Text"] = _Data.TTextLabel_Text_get
+    if _newclass:Text = _swig_property(_Data.TTextLabel_Text_get)
+    __swig_getmethods__["BackgroundColor"] = _Data.TTextLabel_BackgroundColor_get
+    if _newclass:BackgroundColor = _swig_property(_Data.TTextLabel_BackgroundColor_get)
+    __swig_getmethods__["Placement"] = _Data.TTextLabel_Placement_get
+    if _newclass:Placement = _swig_property(_Data.TTextLabel_Placement_get)
+    __swig_getmethods__["Rotation"] = _Data.TTextLabel_Rotation_get
+    if _newclass:Rotation = _swig_property(_Data.TTextLabel_Rotation_get)
     __swig_destroy__ = _Data.delete_TTextLabel
     __del__ = lambda self : None;
 TTextLabel_swigregister = _Data.TTextLabel_swigregister
@@ -581,6 +619,8 @@ def TShade_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
   return _Data.TShade_SWIGSharedPtrUpcast(*args)
 TShade_SWIGSharedPtrUpcast = _Data.TShade_SWIGSharedPtrUpcast
 
+rtEquation = _Data.rtEquation
+rtInequality = _Data.rtInequality
 class TRelation(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
@@ -588,10 +628,27 @@ class TRelation(TGraphElem):
     __swig_getmethods__ = {}
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TRelation, name)
-    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
+    def __init__(self, *args): 
+        this = _Data.new_TRelation(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def SetConstraints(self, *args) -> "void" : return _Data.TRelation_SetConstraints(self, *args)
+    def Eval(self, *args) -> "long double" : return _Data.TRelation_Eval(self, *args)
     __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TRelation_SWIGSharedPtrUpcast
     if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TRelation_SWIGSharedPtrUpcast)
+    __swig_getmethods__["Color"] = _Data.TRelation_Color_get
+    if _newclass:Color = _swig_property(_Data.TRelation_Color_get)
+    __swig_getmethods__["BrushStyle"] = _Data.TRelation_BrushStyle_get
+    if _newclass:BrushStyle = _swig_property(_Data.TRelation_BrushStyle_get)
+    __swig_getmethods__["RelationType"] = _Data.TRelation_RelationType_get
+    if _newclass:RelationType = _swig_property(_Data.TRelation_RelationType_get)
+    __swig_getmethods__["Text"] = _Data.TRelation_Text_get
+    if _newclass:Text = _swig_property(_Data.TRelation_Text_get)
+    __swig_getmethods__["Constraints"] = _Data.TRelation_Constraints_get
+    if _newclass:Constraints = _swig_property(_Data.TRelation_Constraints_get)
+    __swig_getmethods__["Size"] = _Data.TRelation_Size_get
+    if _newclass:Size = _swig_property(_Data.TRelation_Size_get)
     __swig_destroy__ = _Data.delete_TRelation
     __del__ = lambda self : None;
 TRelation_swigregister = _Data.TRelation_swigregister

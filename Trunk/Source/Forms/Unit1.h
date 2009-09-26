@@ -430,7 +430,7 @@ private:	// User declarations
   void CheckForUpdate(bool StartupCheck);
   void Translate();
   void DeleteGraphElem(const boost::shared_ptr<TGraphElem> &GraphElem);
-  TTreeNode* GetNode(const boost::shared_ptr<const TGraphElem> &Elem);
+  TTreeNode* GetNode(const TGraphElemPtr &Elem);
   void CopyAsImageToClipboard();
   TTreeNode* GetRootNode(unsigned Index);
   bool DoSave(const String &FileName, bool Remember);

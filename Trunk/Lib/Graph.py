@@ -105,7 +105,7 @@ class PluginDataType(collections.MutableMapping):
     def __repr__(self): return repr(dict(self))
 
 TGraphElem.PluginData = property(lambda self: PluginDataType(self._PluginData))
-
+PluginData = PluginDataType(Data.GetPluginData())
 
 Constants = ConstantsType()
 FunctionList = FunctionListType()

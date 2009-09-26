@@ -31,7 +31,6 @@ __fastcall TForm21::TForm21(TComponent* Owner, TData &AData, const TDraw &ADraw,
 //---------------------------------------------------------------------------
 void __fastcall TForm21::TntButton1Click(TObject *Sender)
 {
-  UndoList.Push(TUndoChange(Data, Label, Data.GetIndex(Label)));
   TTextValue xPos;
   TTextValue yPos;
   xPos.Value = MakeFloat(Edit1);
@@ -51,7 +50,8 @@ void __fastcall TForm21::TntButton1Click(TObject *Sender)
     Label->GetBackgroundColor(),
     Label->GetRotation()
   ));
-  Data.Replace(Data.GetIndex(Label), NewLabel);
+  UndoList.Push(TUndoChange(Data, Label, NewLabel));
+  Data.Replace(Label, NewLabel);
   NewLabel->Update();
   ModalResult = mrOk;
 }

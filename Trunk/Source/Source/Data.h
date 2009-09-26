@@ -37,6 +37,8 @@ class TData
   std::wstring GrfName;
   TAbortUpdateEvent OnAbortUpdate;
   std::vector<TGraphElemPtr> ElemList;
+//  TTopGraphElem TopElem;
+
   void SaveImage(TConfigFile &IniFile, TCanvas *Canvas, int Width, int Height);
 
 public:
@@ -44,6 +46,7 @@ public:
   TUserModels UserModels;
   TCustomFunctions CustomFunctions;
   TAnimationInfo AnimationInfo;
+  std::map<std::wstring,std::wstring> PluginData;
 
   TData() : CustomFunctions(*this) {}
   TData(const TData &OldData);
@@ -52,6 +55,7 @@ public:
   void LoadDefault();
   bool LoadFromFile(const std::wstring &FileName, bool ShowErrorMessages = true);
   bool Load(TConfigFile &IniFile);
+  void LoadPluginData(const TConfigFileSection &Section);
   bool Save(const std::wstring &FileName, bool Remember);
   std::wstring SaveToString(bool ResetModified);
   void SaveDefault();
@@ -69,23 +73,24 @@ public:
   void SetModified();
   bool IsModified() const {return Modified;}
   double FindInterception(const TBaseFuncType *Func, int X, int Y) const;
+
   void Delete(const TGraphElemPtr &Elem);
-  void Insert(const TGraphElemPtr &Elem, unsigned Index);
-  void Add(const TGraphElemPtr &Elem);
-  int GetIndex(const boost::shared_ptr<const TGraphElem> &Elem);
-  TGraphElemPtr Replace(unsigned Index, const TGraphElemPtr &Elem);
+  void Insert(const TGraphElemPtr &Elem, int Index=-1);
+  int GetIndex(const TGraphElemPtr &Elem);
+  void Replace(unsigned Index, const TGraphElemPtr &Elem);
   void Replace(const TGraphElemPtr &OldElem, const TGraphElemPtr &NewElem);
+  std::vector<TGraphElemPtr>::const_iterator Begin() const {return ElemList.begin();}
+  TGraphElemPtr Back() const;
+  unsigned ElemCount() const {return ElemList.size();}
+  const TGraphElemPtr& GetElem(unsigned Index) const;
+  void Swap(unsigned Index1, unsigned Index2) {boost::swap(ElemList[Index1], ElemList[Index2]);}
+
   const std::wstring& GetFileName() const {return GrfName;}
   boost::shared_ptr<TBaseFuncType> GetFuncFromIndex(unsigned Index) const;
-  TGraphElemPtr Back() const;
-  const TGraphElemPtr& GetElem(unsigned Index) const;
-  unsigned ElemCount() const {return ElemList.size();}
-  std::vector<TGraphElemPtr>::const_iterator Begin() const {return ElemList.begin();}
   std::vector<TGraphElemPtr>::const_iterator End() const {return ElemList.end();}
   void Update();
   void SetAbortUpdateEvent(TAbortUpdateEvent AOnAbortUpdate) {OnAbortUpdate = AOnAbortUpdate;}
   void AbortUpdate() const {if(OnAbortUpdate) OnAbortUpdate();}
-  void Swap(unsigned Index1, unsigned Index2) {boost::swap(ElemList[Index1], ElemList[Index2]);}
 
   long double Calc(const std::wstring &Str) const
   {
