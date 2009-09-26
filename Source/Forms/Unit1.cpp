@@ -402,7 +402,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
               Form6->GetBackgroundColor(),
               0
             ));
-            Data.Add(Label);
+            Data.Insert(Label);
             Label->Update();
             Redraw();
             UndoList.Push(TUndoAdd(Data, Data.Back()));
@@ -675,7 +675,6 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
           if(MovingLabelPlacement == lpUserBottomLeft || MovingLabelPlacement == lpUserBottomRight)
             Y += Image2->Height;
 
-          UndoList.Push(TUndoChange(Data, MovingLabel, Data.GetIndex(MovingLabel)));
           boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
             MovingLabel->GetText(),
             MovingLabelPlacement,
@@ -684,7 +683,8 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
             MovingLabel->GetBackgroundColor(),
             MovingLabel->GetRotation()
           ));
-          Data.Replace(Data.GetIndex(MovingLabel), NewLabel);
+          UndoList.Push(TUndoChange(Data, MovingLabel, NewLabel));
+          Data.Replace(MovingLabel, NewLabel);
           NewLabel->Update();
           NewLabel->UpdateRect(Image2->Left, Image2->Top); //Needed so we don't have to wait for label to be redrawn
           MovingLabel.reset();
@@ -2039,7 +2039,7 @@ void __fastcall TForm1::EditActionExecute(TObject *Sender)
 
   TModalResult Result = mrNone;
   if(boost::shared_ptr<TTan> Tan = boost::dynamic_pointer_cast<TTan>(Item))
-    Result = CreateForm<TForm12>(Data)->EditTan(Tan->ParentFunc(), TreeView->Selected->Index);
+    Result = CreateForm<TForm12>(Data)->EditTan(Tan);
   else if(boost::shared_ptr<TBaseFuncType> Func = boost::dynamic_pointer_cast<TBaseFuncType>(Item))
     Result = CreateForm<TForm5>(Data)->EditFunc(Func);
   else if(boost::shared_ptr<TPointSeries> PointSeries = boost::dynamic_pointer_cast<TPointSeries>(Item))
@@ -2067,18 +2067,24 @@ void TForm1::DeleteGraphElem(const boost::shared_ptr<TGraphElem> &GraphElem)
 {
   UndoList.BeginMultiUndo();
   if(dynamic_cast<const TBaseFuncType*>(GraphElem.get()))
+  {
     //Delete all shades bound to the function
     for(unsigned I = 0; I < Data.ElemCount(); I++)
-      for(unsigned J = 0; J < Data.GetElem(I)->ChildList.size(); J++)
-        if(boost::shared_ptr<TShade> Shade = boost::dynamic_pointer_cast<TShade>(Data.GetElem(I)->ChildList[J]))
+    {
+      const TGraphElemPtr &Elem = Data.GetElem(I);
+      unsigned ChildCount = Elem->ChildCount();
+      for(unsigned J = 0; J < ChildCount; J++)
+        if(boost::shared_ptr<TShade> Shade = boost::dynamic_pointer_cast<TShade>(Elem->GetChild(J)))
           if(Shade->Func2 == GraphElem)
           {
-            UndoList.Push(TUndoDel(Data, Shade, I));
+            UndoList.Push(TUndoDel(Data, Shade, Shade->GetParent(), I));
             Data.Delete(Shade);
           }
+    }
+  }
 
   GraphElem->ClearCache();
-  UndoList.Push(TUndoDel(Data, GraphElem, Data.GetIndex(GraphElem)));
+  UndoList.Push(TUndoDel(Data, GraphElem, GraphElem->GetParent(), Data.GetIndex(GraphElem)));
   UndoList.EndMultiUndo();
 
   Data.Delete(GraphElem);
@@ -2599,7 +2605,7 @@ void __fastcall TForm1::InsertLabelActionExecute(TObject *Sender)
       Form6->GetBackgroundColor(),
       0
     ));
-    Data.Add(Label);
+    Data.Insert(Label);
     Label->Update();
     Redraw();
     UndoList.Push(TUndoAdd(Data, Data.Back()));
@@ -2687,13 +2693,12 @@ void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
       //If text is empty, remove label
       if(Form6->IsEmpty())
       {
-        UndoList.Push(TUndoDel(Data, Label, Data.GetIndex(Label)));
+        UndoList.Push(TUndoDel(Data, Label, Label->GetParent(), Data.GetIndex(Label)));
         Data.Delete(Label);
       }
       else
       {
         Property.DefaultLabelFont = Form6->GetFont();
-        UndoList.Push(TUndoChange(Data, Label, Data.GetIndex(Label)));
         boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
           Form6->GetText().c_str(),
           Label->GetPlacement(),
@@ -2702,7 +2707,8 @@ void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
           Form6->GetBackgroundColor(),
           Label->GetRotation()
         ));
-        Data.Replace(Data.GetIndex(Label), NewLabel);
+        UndoList.Push(TUndoChange(Data, Label, NewLabel));
+        Data.Replace(Label, NewLabel);
         NewLabel->Update();
       }
       UpdateTreeView();
@@ -2720,7 +2726,7 @@ void __fastcall TForm1::Label_DeleteClick(TObject *Sender)
   boost::shared_ptr<TTextLabel> Label = Data.FindLabel(P.x, P.y);
   if(Label)
   {
-    UndoList.Push(TUndoDel(Data, Label, Data.GetIndex(Label)));
+    UndoList.Push(TUndoDel(Data, Label, Label->GetParent(), Data.GetIndex(Label)));
     Data.Delete(Label);
     Data.SetModified();
     UpdateTreeView();
@@ -2990,7 +2996,7 @@ const boost::shared_ptr<TGraphElem>& TForm1::GetGraphElem(TTreeNode *Node)
     return Empty;
 
   if(Node->Level == 1) //Tangent or shade
-    return Data.GetElem(Node->Parent->Index)->ChildList[Node->Index];
+    return Data.GetElem(Node->Parent->Index)->GetChild(Node->Index);
   return Data.GetElem(Node->Index);
 }
 //---------------------------------------------------------------------------
@@ -3002,12 +3008,12 @@ TTreeNode* TForm1::GetRootNode(unsigned Index)
   return Node;
 }                                       
 //---------------------------------------------------------------------------
-TTreeNode* TForm1::GetNode(const boost::shared_ptr<const TGraphElem> &Elem)
+TTreeNode* TForm1::GetNode(const TGraphElemPtr &Elem)
 {
   //WARNING: TreeView->Items->Item conatins *ALL* nodes, not just the root nodes
   if(!Elem)
     throw Exception("No element given");
-  boost::shared_ptr<TBaseFuncType> Parent = Elem->ParentFunc();
+  const TGraphElemPtr &Parent = Elem->GetParent();
   if(Parent)
     return GetRootNode(Data.GetIndex(Parent))->Item[Data.GetIndex(Elem)];
   return GetRootNode(Data.GetIndex(Elem));
@@ -3178,7 +3184,6 @@ void __fastcall TForm1::PlacementClick(TObject *Sender)
     }
     else
     {
-      UndoList.Push(TUndoChange(Data, TextLabel, Data.GetIndex(TextLabel)));
       boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
         TextLabel->GetText(),
         static_cast<TLabelPlacement>(MenuItem->MenuIndex + 1),
@@ -3187,7 +3192,8 @@ void __fastcall TForm1::PlacementClick(TObject *Sender)
         TextLabel->GetBackgroundColor(),
         TextLabel->GetRotation()
       ));
-      Data.Replace(Data.GetIndex(TextLabel), NewLabel);
+      UndoList.Push(TUndoChange(Data, TextLabel, NewLabel));
+      Data.Replace(TextLabel, NewLabel);
       NewLabel->Update();
     }
 
@@ -3404,7 +3410,6 @@ void __fastcall TForm1::RotationClick(TObject *Sender)
     else
       Rotation = MenuItem->MenuIndex * 90;
 
-    UndoList.Push(TUndoChange(Data, TextLabel, Data.GetIndex(TextLabel)));
     boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
       TextLabel->GetText(),
       TextLabel->GetPlacement(),
@@ -3413,7 +3418,8 @@ void __fastcall TForm1::RotationClick(TObject *Sender)
       TextLabel->GetBackgroundColor(),
       Rotation
     ));
-    Data.Replace(Data.GetIndex(TextLabel), NewLabel);
+    UndoList.Push(TUndoChange(Data, TextLabel, NewLabel));
+    Data.Replace(TextLabel, NewLabel);
     NewLabel->Update();
 
     Data.SetModified();
@@ -3488,7 +3494,7 @@ void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
     return;
 
   UndoList.Push(TUndoAdd(Data, OleObject));
-  Data.Add(OleObject);
+  Data.Insert(OleObject);
   UpdateTreeView();
   TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
   Data.SetModified();

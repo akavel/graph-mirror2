@@ -147,13 +147,13 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
   {
     Func->SetVisible(F->GetVisible());
     Func->SetShowInLegend(F->GetShowInLegend());
-    UndoList.Push(TUndoChangeFunc(Data, F, Func));
+    UndoList.Push(TUndoChange(Data, F, Func));
     Data.Replace(F, Func);
   }
   else
   {
     UndoList.Push(TUndoAdd(Data, Func));
-    Data.Add(Func);
+    Data.Insert(Func);
   }
 
   Func->Update(); //Make sure tangents are updated

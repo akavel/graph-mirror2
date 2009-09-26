@@ -74,6 +74,7 @@ bool TData::LoadFromFile(const std::wstring &FileName, bool ShowErrorMessages)
     CustomFunctions.ReadFromIni(IniFile.Section(L"CustomFunctions"));
     LoadData(IniFile);
     AnimationInfo.ReadFromIni(IniFile.Section(L"Animate"));
+    LoadPluginData(IniFile.Section(L"PluginData"));
   }
   catch(Func32::EFuncError &Error)
   {
@@ -116,6 +117,7 @@ bool TData::Load(TConfigFile &IniFile)
     CustomFunctions.ReadFromIni(IniFile.Section(L"CustomFunctions"));
     LoadData(IniFile);
     AnimationInfo.ReadFromIni(IniFile.Section(L"Animate"));
+    LoadPluginData(IniFile.Section(L"PluginData"));
   }
   catch(Func32::EFuncError &Error)
   {
@@ -169,6 +171,7 @@ bool TData::Import(const std::wstring &FileName)
     CustomFunctions.ReadFromIni(IniFile.Section(L"CustomFunctions"));
     LoadData(IniFile);
     AnimationInfo.ReadFromIni(IniFile.Section(L"Animate"));
+    LoadPluginData(IniFile.Section(L"PluginData"));
     for(unsigned I = 0; I < ElemList.size(); I++)
       if(!dynamic_cast<TAxesView*>(ElemList[I].get())) //We only want 1 TAxesView
         Temp.push_back(ElemList[I]);
@@ -216,6 +219,9 @@ bool TData::Save(const std::wstring &FileName, bool Remember)
     SaveData(IniFile);
     CustomFunctions.WriteToIni(IniFile.Section(L"CustomFunctions"));
     AnimationInfo.WriteToIni(IniFile.Section(L"Animate"));
+    TConfigFileSection &Section = IniFile.Section(L"PluginData");
+    for(std::map<std::wstring,std::wstring>::const_iterator Iter = PluginData.begin(); Iter != PluginData.end(); ++Iter)
+      Section.Write(Iter->first, Iter->second);
 //    SaveImage(IniFile);
 
     if(!IniFile.SaveToUtf8File(FileName))
@@ -379,7 +385,7 @@ bool TData::ImportData(const std::wstring &FileName)
     ));
     Series->Assign(Points[I]);
     Series->SetLegendText(CreatePointSeriesDescription());
-    Add(Series);
+    Insert(Series);
     UndoList.Push(TUndoAdd(*this, Series));
     ColorIndex = ++ColorIndex % (sizeof(Colors)/sizeof(TColor));
   }
@@ -397,7 +403,7 @@ void TData::LoadDefault()
   //Free mem in function lists
   Clear();
 
-  Add(boost::shared_ptr<TAxesView>(new TAxesView));
+  Insert(boost::shared_ptr<TAxesView>(new TAxesView));
 
   Axes.ReadFromIni(IniFile.Section(L"Axes"));
   Modified = false;

@@ -6286,7 +6286,7 @@ static swig_type_info _swigt__p_Graph__TDefaultData = {"_p_Graph__TDefaultData",
 static swig_type_info _swigt__p_Graph__TProperty = {"_p_Graph__TProperty", "Graph::TProperty *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TFont = {"_p_TFont", "TFont *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "unsigned int *|TColor *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "unsigned int *|TBrushStyle *|TColor *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_wchar_t = {"_p_wchar_t", "wchar_t *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {

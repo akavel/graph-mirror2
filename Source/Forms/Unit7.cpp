@@ -64,7 +64,7 @@ void __fastcall TForm7::Button1Click(TObject *Sender)
     Dif->SetLegendText(ToWString(Edit3->Text));
     Dif->SetSteps(TTextValue(0, L""));
 
-    Data.Add(Dif);
+    Data.Insert(Dif);
     UndoList.Push(TUndoAdd(Data, Dif));
     Property.DefaultDif.Set(LineSelect1->ItemIndex, ExtColorBox1->Selected, ToIntDef(Edit4->Text, 1));
     ModalResult = mrOk;

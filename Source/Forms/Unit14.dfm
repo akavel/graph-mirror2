@@ -130,6 +130,10 @@ object Form14: TForm14
     TabOrder = 2
     object TabSheet1: TTabSheet
       Caption = 'Markers'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         186
         379)
@@ -424,6 +428,10 @@ object Form14: TForm14
     object TabSheet2: TTabSheet
       Caption = 'Error bars'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         186
         379)

@@ -18,7 +18,7 @@
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm12::TForm12(TComponent* Owner, TData &AData)
-    : TForm(Owner), Index(-1), Data(AData)
+    : TForm(Owner), Data(AData)
 {
   TranslateProperties(this);
   TranslateStrings(ExtColorBox1->Items);
@@ -58,7 +58,6 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
 
   Data.AbortUpdate();
 
-  Tan->SetParentFunc(Func);
   Tan->Size = Size;
   Tan->Style = LineSelect1->LineStyle;
   Tan->Color = ExtColorBox1->Selected;
@@ -84,23 +83,29 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
     return;
   }
 
-  if(!Tan->CalcTan())
+  if(!OldTan)
   {
-    MessageBox(LoadRes(518, Tan->ParentFunc()->GetVariable(), Tan->t.Text), LoadString(519));
-    return;
-  }
-
-  if(Index == -1)
-  {
-    Func->AddChild(Tan);
-    UndoList.Push(TUndoAdd(Data, Func->ChildList.back()));
+    Parent->InsertChild(Tan);
+    UndoList.Push(TUndoAdd(Data, Tan));
   }
   else
   {
-    Tan->SetVisible(Func->ChildList[Index]->GetVisible());
-    Tan->SetShowInLegend(Func->ChildList[Index]->GetShowInLegend());
-    UndoList.Push(TUndoChange(Data, Func->ChildList[Index], Index));
-    Func->ReplaceChild(Index, Tan);
+    Tan->SetVisible(OldTan->GetVisible());
+    Tan->SetShowInLegend(OldTan->GetShowInLegend());
+    unsigned Index = Parent->GetChildIndex(Tan);
+    UndoList.Push(TUndoChange(Data, OldTan, Tan));
+    Parent->ReplaceChild(Index, Tan);
+  }
+
+  if(!Tan->CalcTan())
+  {
+    std::wstring Variable = L"t";
+    if(boost::shared_ptr<TBaseFuncType> Func = boost::dynamic_pointer_cast<TBaseFuncType>(Parent))
+      Variable = Func->GetVariable();
+    MessageBox(LoadRes(518, Variable, Tan->t.Text), LoadString(519));
+    UndoList.Undo();
+    UndoList.ClearRedo();
+    return;
   }
 
   Property.DefaultTangent.Set(LineSelect1->ItemIndex, ExtColorBox1->Selected, Edit3->Text.ToInt());
@@ -114,17 +119,17 @@ void __fastcall TForm12::Edit3KeyPress(TObject *Sender, char &Key)
     Key=0;//Allown only digits and backspace. 0 may not be placed first.
 }
 //---------------------------------------------------------------------------
-int TForm12::EditTan(const boost::shared_ptr<TBaseFuncType> &F, int AIndex)
+int TForm12::EditTan(const boost::shared_ptr<TTan> &Tan)
 {
-  Index = AIndex;
+  OldTan = Tan;
   Caption = LoadRes(525);
-  Func = F;
-  boost::shared_ptr<TTan> Tan = boost::static_pointer_cast<TTan>(Func->ChildList[Index]);
+  Parent = Tan->GetParent();
   Edit1->Text = Tan->t.Text.c_str();
   UpDown1->Position = Tan->Size;
   LineSelect1->LineStyle = Tan->Style;
   ExtColorBox1->Selected = Tan->Color;
-  Label1->Caption = ToUString(Tan->ParentFunc()->GetVariable() + L"=");
+  if(boost::shared_ptr<TBaseFuncType> Func = boost::dynamic_pointer_cast<TBaseFuncType>(Parent))
+    Label1->Caption = ToUString(Func->GetVariable() + L"=");
   Edit2->Text = ToUString(Tan->GetLegendText());
   RadioGroup1->ItemIndex = Tan->TangentType;
   Edit4->Text = Tan->From.Text.c_str();
@@ -135,10 +140,11 @@ int TForm12::EditTan(const boost::shared_ptr<TBaseFuncType> &F, int AIndex)
   return ShowModal();
 }
 //---------------------------------------------------------------------------
-int TForm12::InsertTan(const boost::shared_ptr<TBaseFuncType> &F)
+int TForm12::InsertTan(const TGraphElemPtr &AParent)
 {
-  Func = F;
-  Label1->Caption = F->GetVariable().c_str() + String('=');
+  Parent = AParent;
+  if(boost::shared_ptr<TBaseFuncType> Func = boost::dynamic_pointer_cast<TBaseFuncType>(Parent))
+    Label1->Caption = Func->GetVariable().c_str() + String('=');
   return ShowModal();
 }
 //---------------------------------------------------------------------------

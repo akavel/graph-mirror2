@@ -12,13 +12,15 @@
 #include "../Func32/Func32.h"
 #include <boost/weak_ptr.hpp>
 #include <deque>
+#include <boost/enable_shared_from_this.hpp>
 
 class TConfigFileSection;
 namespace Graph
 {
 enum TGraphError
 {
-  geInvalidRelation
+  geInvalidRelation,
+  geNotImplemented
 };
 
 struct EGraphError
@@ -66,36 +68,42 @@ std::wostream& operator<<(std::wostream &Stream, const TTextValue &TextValue);
 class TData;
 class TBaseFuncType;
 
-class TGraphElem
+class TGraphElem : public boost::enable_shared_from_this<TGraphElem>
 {
   const TGraphElem& operator=(const TGraphElem&); //Not implemented
   const TData *Data;
   bool Visible;
   bool ShowInLegend;
   std::wstring LegendText;
+  std::vector<TGraphElemPtr> ChildList;
+  boost::weak_ptr<TGraphElem> Parent;
+
+  void SetParent(const TGraphElemPtr &AParent) {Parent = AParent;}
 
 public:
-  std::vector<boost::shared_ptr<TGraphElem> > ChildList;
   std::map<std::wstring,std::wstring> PluginData;
 
   TGraphElem() : Visible(true), ShowInLegend(true), Data(NULL) {}
   TGraphElem(const TGraphElem &Elem);
   virtual ~TGraphElem() {}
   virtual std::wstring MakeLegendText() const {return LegendText.empty() ? MakeText() : LegendText;}
-  virtual void SetParentFunc(const boost::shared_ptr<TBaseFuncType> &AFunc) {}
-  virtual boost::shared_ptr<TBaseFuncType> ParentFunc() const {return boost::shared_ptr<TBaseFuncType>();}
   virtual std::wstring MakeText() const = 0;
   virtual void WriteToIni(TConfigFileSection &Section) const=0;
   virtual void ReadFromIni(const TConfigFileSection &Section) =0;
   virtual void Accept(TGraphElemVisitor&) =0;
-  virtual boost::shared_ptr<TGraphElem> Clone() const = 0;
+  virtual TGraphElemPtr Clone() const = 0;
   virtual void ClearCache() {};
-  virtual void Update() {};
+  virtual void Update();
   void SetData(const TData *AData); //For internal use
   const TData& GetData() const {BOOST_ASSERT(Data); return *Data;}
-  void AddChild(const TGraphElemPtr &Elem);
+
+  void InsertChild(const TGraphElemPtr &Elem, int Index = -1);
   void ReplaceChild(unsigned Index, const TGraphElemPtr &Elem);
   unsigned GetChildIndex(const TGraphElemPtr &Elem) const;
+  void RemoveChild(unsigned Index);
+  const TGraphElemPtr& GetChild(unsigned Index) const {return ChildList.at(Index);}
+  unsigned ChildCount() const {return ChildList.size();}
+  TGraphElemPtr GetParent() const {return Parent.lock();}
 
   virtual int GetVisible() const {return Visible;}
   virtual void ChangeVisible() {Visible = !Visible;}
@@ -104,6 +112,15 @@ public:
   void SetShowInLegend(bool Value) {ShowInLegend = Value;}
   std::wstring GetLegendText() const {return LegendText;}
   void SetLegendText(const std::wstring &Str) {LegendText = Str;}
+};
+
+class TTopGraphElem : public TGraphElem
+{
+  std::wstring MakeText() const {return L"";}
+  void WriteToIni(TConfigFileSection &Section) const {};
+  void ReadFromIni(const TConfigFileSection &Section) {};
+  void Accept(TGraphElemVisitor&) {};
+  TGraphElemPtr Clone() const {throw EGraphError(geNotImplemented);}
 };
 
 enum TLabelPlacement
@@ -192,7 +209,6 @@ public:
 enum TTangentType {ttTangent, ttNormal};
 class TTan : public TBaseFuncType
 {
-  boost::weak_ptr<TBaseFuncType> Func;
   mutable double a, q;  //Calculated at last redraw; a!=INF: y=ax+q, a==INF: x=q
   mutable Func32::TParamFunc TanFunc;
   void UpdateTan(double a1, double q1);
@@ -213,8 +229,6 @@ public:
   const TTextValue& GetSteps() const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   const Func32::TParamFunc& GetFunc() const {return TanFunc;}
-  boost::shared_ptr<TBaseFuncType> ParentFunc() const {return Func.lock();}
-  void SetParentFunc(const boost::shared_ptr<TBaseFuncType> &AFunc) {Func = AFunc;}
   void Update();
   long double CalcArea(long double From, long double To) const;
   bool CalcTan();
@@ -373,7 +387,6 @@ struct TShade : public TGraphElem
   TShadeStyle ShadeStyle;
   TBrushStyle BrushStyle;
   TColor Color;
-  boost::weak_ptr<TBaseFuncType> Func;
   boost::shared_ptr<TBaseFuncType> Func2;
   TTextValue sMin;
   TTextValue sMax;
@@ -388,7 +401,7 @@ struct TShade : public TGraphElem
 
   TShade(){}
   TShade(TShadeStyle AShadeStyle, TBrushStyle ABrushStyle, TColor AColor,
-    const boost::shared_ptr<TBaseFuncType> &AFunc, const boost::shared_ptr<TBaseFuncType> &AFunc2,
+    const boost::shared_ptr<TBaseFuncType> &AFunc2,
     double AsMin, double AsMax, double AsMin2, double AsMax2, bool AExtendMinToIntercept, bool AExtendMaxToIntercept,
     bool AExtendMin2ToIntercept, bool AExtendMax2ToIntercept);
   std::wstring MakeText() const;
@@ -396,8 +409,6 @@ struct TShade : public TGraphElem
   void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TShade(*this));}
-  boost::shared_ptr<TBaseFuncType> ParentFunc() const {return Func.lock();}
-  void SetParentFunc(const boost::shared_ptr<TBaseFuncType> &AFunc) {Func = AFunc;}
   void Update();
 };
 

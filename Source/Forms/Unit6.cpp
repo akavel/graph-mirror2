@@ -390,3 +390,4 @@ bool __fastcall TForm6::IRichEdit1ActivateObject(TIRichEdit *Sender)
 }
 //---------------------------------------------------------------------------
 
+

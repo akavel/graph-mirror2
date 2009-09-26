@@ -53,6 +53,7 @@ public:
   bool CanUndo() const;
   bool CanRedo() const;
   void Clear();
+  void ClearRedo();
   void SetMaxUndo(unsigned Size);
   unsigned GetMaxUndo() const {return MaxUndo;}
   void BeginMultiUndo();

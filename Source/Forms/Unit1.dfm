@@ -4298,7 +4298,7 @@ object Form1: TForm1
     end
     object CustomFunctionsAction: TAction
       Category = 'Function'
-      Caption = 'Custom functions...'
+      Caption = 'Custom functions/constants...'
       Hint = 'Create custom functions and constants for use in graphs.'
       ImageIndex = 55
       ShortCut = 16454

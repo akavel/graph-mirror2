@@ -152,16 +152,22 @@ void TGraphElem::ReadFromIni(const TConfigFileSection &Section)
       PluginData[Iter->first.substr(1)] = Iter->second;
 }
 //---------------------------------------------------------------------------
-void TGraphElem::AddChild(const TGraphElemPtr &Elem)
+void TGraphElem::InsertChild(const TGraphElemPtr &Elem, int Index)
 {
-  ChildList.push_back(Elem);
+  if(Index == -1)
+    ChildList.push_back(Elem);
+  else
+    ChildList.insert(ChildList.begin() + Index, Elem);
+  Elem->SetParent(shared_from_this());
   Elem->SetData(&GetData());
 }
 //---------------------------------------------------------------------------
 void TGraphElem::ReplaceChild(unsigned Index, const TGraphElemPtr &Elem)
 {
   BOOST_ASSERT(Index < ChildList.size());
+  ChildList[Index]->SetParent(boost::shared_ptr<TBaseFuncType>());
   ChildList[Index] = Elem;
+  Elem->SetParent(shared_from_this());
   Elem->SetData(&GetData());
 }
 //---------------------------------------------------------------------------
@@ -170,11 +176,24 @@ unsigned TGraphElem::GetChildIndex(const TGraphElemPtr &Elem) const
   return IndexOf(ChildList, Elem);
 }
 //---------------------------------------------------------------------------
+void TGraphElem::RemoveChild(unsigned Index)
+{
+  BOOST_ASSERT(Index < ChildList.size());
+  ChildList[Index]->SetData(NULL);
+  ChildList[Index]->SetParent(TGraphElemPtr());
+  ChildList.erase(ChildList.begin() + Index);
+}
+//---------------------------------------------------------------------------
 void TGraphElem::SetData(const TData *AData)
 {
   Data = AData;
   for(unsigned I = 0; I < ChildList.size(); I++)
     ChildList[I]->SetData(AData);
+}
+//---------------------------------------------------------------------------
+void TGraphElem::Update()
+{
+  std::for_each(ChildList.begin(), ChildList.end(), boost::mem_fn(&TGraphElem::Update));
 }
 //---------------------------------------------------------------------------
 ///////////////////
@@ -230,11 +249,8 @@ void TBaseFuncType::ReadFromIni(const TConfigFileSection &Section)
 const boost::shared_ptr<TBaseFuncType> TBaseFuncType::CloneWithTangents(TBaseFuncType *Dest, const TBaseFuncType *Src)
 {
   boost::shared_ptr<TBaseFuncType> Func(Dest);
-  for(unsigned I = 0; I < Src->ChildList.size(); I++)
-  {
-    Func->ChildList.push_back(Src->ChildList[I]->Clone());
-    Func->ChildList.back()->SetParentFunc(Func);
-  }
+  for(unsigned I = 0; I < Src->ChildCount(); I++)
+    Func->InsertChild(Src->GetChild(I)->Clone());
   return Func;
 }
 //---------------------------------------------------------------------------
@@ -244,8 +260,8 @@ void TBaseFuncType::ClearCache()
   PointNum.clear();
   sList.clear();
 
-  for(unsigned N = 0; N < ChildList.size(); N++)
-    ChildList[N]->ClearCache();
+  for(unsigned N = 0; N < ChildCount(); N++)
+    GetChild(N)->ClearCache();
 }
 //---------------------------------------------------------------------------
 void TBaseFuncType::Update()
@@ -255,7 +271,7 @@ void TBaseFuncType::Update()
   From.Update(GetData());
   To.Update(GetData());
   Steps.Update(GetData());
-  std::for_each(ChildList.begin(), ChildList.end(), boost::mem_fn(&TGraphElem::Update));
+  TGraphElem::Update();
 }
 //---------------------------------------------------------------------------
 Func32::TCoord<long double> TBaseFuncType::Eval(long double t) const
@@ -459,7 +475,9 @@ void TTan::ReadFromIni(const TConfigFileSection &Section)
 //---------------------------------------------------------------------------
 std::wstring TTan::MakeText() const
 {
-  return Func.lock()->GetVariable() + L"=" + t.Text;
+  if(boost::shared_ptr<TBaseFuncType> Func = boost::dynamic_pointer_cast<TBaseFuncType>(GetParent()))
+    return Func->GetVariable() + L"=" + t.Text;
+  return L"";
 }
 //---------------------------------------------------------------------------
 std::wstring TTan::MakeLegendText() const
@@ -523,9 +541,13 @@ long double TTan::CalcArea(long double From, long double To) const
 //(x,y) is the point there the tangent crosses the function and a is the slope
 bool TTan::CalcTan()
 {
+  boost::shared_ptr<TBaseFuncType> F = boost::dynamic_pointer_cast<TBaseFuncType>(GetParent());
+  if(!F)
+    return false;
+
   try
   {
-    const Func32::TBaseFunc &Func = ParentFunc()->GetFunc();
+    const Func32::TBaseFunc &Func = F->GetFunc();
 
     double x = Func.CalcX(t.Value); //Find x(t)
     double y = Func.CalcY(t.Value); //Find y(t)
@@ -553,10 +575,10 @@ bool TTan::CalcTan()
 // TShade //
 ////////////
 TShade::TShade(TShadeStyle AShadeStyle, TBrushStyle ABrushStyle, TColor AColor,
-  const boost::shared_ptr<TBaseFuncType> &AFunc, const boost::shared_ptr<TBaseFuncType> &AFunc2,
+  const boost::shared_ptr<TBaseFuncType> &AFunc2,
   double AsMin, double AsMax, double AsMin2, double AsMax2, bool AExtendMinToIntercept, bool AExtendMaxToIntercept,
   bool AExtendMin2ToIntercept, bool AExtendMax2ToIntercept) : ShadeStyle(AShadeStyle), BrushStyle(ABrushStyle), Color(AColor),
-  Func(AFunc), Func2(AFunc2), ExtendMinToIntercept(AExtendMinToIntercept), ExtendMaxToIntercept(AExtendMaxToIntercept),
+  Func2(AFunc2), ExtendMinToIntercept(AExtendMinToIntercept), ExtendMaxToIntercept(AExtendMaxToIntercept),
     ExtendMin2ToIntercept(ExtendMin2ToIntercept), ExtendMax2ToIntercept(ExtendMax2ToIntercept)
 {
   sMin.Value = AsMin;
@@ -580,7 +602,7 @@ void TShade::WriteToIni(TConfigFileSection &Section) const
   {
     if(dynamic_cast<TBaseFuncType*>(GetData().GetElem(I).get()))
       FuncCount++;
-    if(GetData().GetElem(I) == Func.lock())
+    if(GetData().GetElem(I) == GetParent())
       FuncNo = FuncCount;
     if(GetData().GetElem(I) == Func2)
       Func2No = FuncCount;
@@ -613,8 +635,6 @@ void TShade::ReadFromIni(const TConfigFileSection &Section)
   ShadeStyle = Section.Read(L"ShadeStyle", ssXAxis);
   BrushStyle = Section.Read(L"BrushStyle", bsBDiagonal);
   Color = Section.Read(L"Color", clGreen);
-
-  Func = GetData().GetFuncFromIndex(Section.Read(L"FuncNo", 0) - 1);
 
   int Func2No = Section.Read(L"Func2No", 0) - 1;
   Func2.reset();

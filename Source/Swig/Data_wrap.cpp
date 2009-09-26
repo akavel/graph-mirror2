@@ -2694,54 +2694,61 @@ SWIG_Python_MustGetPtr(PyObject *obj, swig_type_info *ty, int argnum, int flags)
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_TAxesView swig_types[0]
-#define SWIGTYPE_p_TBaseFuncType swig_types[1]
-#define SWIGTYPE_p_TGraphElem swig_types[2]
-#define SWIGTYPE_p_TParFunc swig_types[3]
-#define SWIGTYPE_p_TPointSeries swig_types[4]
-#define SWIGTYPE_p_TPolFunc swig_types[5]
-#define SWIGTYPE_p_TRelation swig_types[6]
-#define SWIGTYPE_p_TShade swig_types[7]
-#define SWIGTYPE_p_TStdFunc swig_types[8]
-#define SWIGTYPE_p_TTan swig_types[9]
-#define SWIGTYPE_p_TTextLabel swig_types[10]
-#define SWIGTYPE_p_TTextValue swig_types[11]
-#define SWIGTYPE_p_allocator_type swig_types[12]
-#define SWIGTYPE_p_boost__shared_ptrT_TAxesView_t swig_types[13]
-#define SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t swig_types[14]
-#define SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t swig_types[15]
-#define SWIGTYPE_p_boost__shared_ptrT_TParFunc_t swig_types[16]
-#define SWIGTYPE_p_boost__shared_ptrT_TPointSeries_t swig_types[17]
-#define SWIGTYPE_p_boost__shared_ptrT_TPolFunc_t swig_types[18]
-#define SWIGTYPE_p_boost__shared_ptrT_TRelation_t swig_types[19]
-#define SWIGTYPE_p_boost__shared_ptrT_TShade_t swig_types[20]
-#define SWIGTYPE_p_boost__shared_ptrT_TStdFunc_t swig_types[21]
-#define SWIGTYPE_p_boost__shared_ptrT_TTan_t swig_types[22]
-#define SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t swig_types[23]
-#define SWIGTYPE_p_char swig_types[24]
-#define SWIGTYPE_p_difference_type swig_types[25]
-#define SWIGTYPE_p_key_type swig_types[26]
-#define SWIGTYPE_p_mapped_type swig_types[27]
-#define SWIGTYPE_p_p_PyObject swig_types[28]
-#define SWIGTYPE_p_size_type swig_types[29]
-#define SWIGTYPE_p_std__invalid_argument swig_types[30]
-#define SWIGTYPE_p_std__lessT_std__wstring_t swig_types[31]
-#define SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t swig_types[32]
-#define SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t__allocator_type swig_types[33]
-#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t swig_types[34]
-#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type swig_types[35]
-#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type swig_types[36]
-#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t swig_types[37]
-#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type swig_types[38]
-#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type swig_types[39]
-#define SWIGTYPE_p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t swig_types[40]
-#define SWIGTYPE_p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t__allocator_type swig_types[41]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[42]
-#define SWIGTYPE_p_unsigned_int swig_types[43]
-#define SWIGTYPE_p_value_type swig_types[44]
-#define SWIGTYPE_p_wchar_t swig_types[45]
-static swig_type_info *swig_types[47];
-static swig_module_info swig_module = {swig_types, 46, 0, 0, 0, 0};
+#define SWIGTYPE_p_Func32__ECalcError swig_types[0]
+#define SWIGTYPE_p_Func32__TSymbolList swig_types[1]
+#define SWIGTYPE_p_Func32__TTrigonometry swig_types[2]
+#define SWIGTYPE_p_TAxesView swig_types[3]
+#define SWIGTYPE_p_TBaseFuncType swig_types[4]
+#define SWIGTYPE_p_TGraphElem swig_types[5]
+#define SWIGTYPE_p_TLabelPlacement swig_types[6]
+#define SWIGTYPE_p_TMetafile swig_types[7]
+#define SWIGTYPE_p_TParFunc swig_types[8]
+#define SWIGTYPE_p_TPointSeries swig_types[9]
+#define SWIGTYPE_p_TPolFunc swig_types[10]
+#define SWIGTYPE_p_TRect swig_types[11]
+#define SWIGTYPE_p_TRelation swig_types[12]
+#define SWIGTYPE_p_TShade swig_types[13]
+#define SWIGTYPE_p_TStdFunc swig_types[14]
+#define SWIGTYPE_p_TTan swig_types[15]
+#define SWIGTYPE_p_TTextLabel swig_types[16]
+#define SWIGTYPE_p_TTextValue swig_types[17]
+#define SWIGTYPE_p_allocator_type swig_types[18]
+#define SWIGTYPE_p_boost__shared_ptrT_TAxesView_t swig_types[19]
+#define SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t swig_types[20]
+#define SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t swig_types[21]
+#define SWIGTYPE_p_boost__shared_ptrT_TParFunc_t swig_types[22]
+#define SWIGTYPE_p_boost__shared_ptrT_TPointSeries_t swig_types[23]
+#define SWIGTYPE_p_boost__shared_ptrT_TPolFunc_t swig_types[24]
+#define SWIGTYPE_p_boost__shared_ptrT_TRelation_t swig_types[25]
+#define SWIGTYPE_p_boost__shared_ptrT_TShade_t swig_types[26]
+#define SWIGTYPE_p_boost__shared_ptrT_TStdFunc_t swig_types[27]
+#define SWIGTYPE_p_boost__shared_ptrT_TTan_t swig_types[28]
+#define SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t swig_types[29]
+#define SWIGTYPE_p_char swig_types[30]
+#define SWIGTYPE_p_difference_type swig_types[31]
+#define SWIGTYPE_p_key_type swig_types[32]
+#define SWIGTYPE_p_mapped_type swig_types[33]
+#define SWIGTYPE_p_p_PyObject swig_types[34]
+#define SWIGTYPE_p_size_type swig_types[35]
+#define SWIGTYPE_p_std__invalid_argument swig_types[36]
+#define SWIGTYPE_p_std__lessT_std__wstring_t swig_types[37]
+#define SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t swig_types[38]
+#define SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t__allocator_type swig_types[39]
+#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t swig_types[40]
+#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type swig_types[41]
+#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type swig_types[42]
+#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t swig_types[43]
+#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type swig_types[44]
+#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type swig_types[45]
+#define SWIGTYPE_p_std__vectorT_long_double_std__allocatorT_long_double_t_t swig_types[46]
+#define SWIGTYPE_p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t swig_types[47]
+#define SWIGTYPE_p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t__allocator_type swig_types[48]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[49]
+#define SWIGTYPE_p_unsigned_int swig_types[50]
+#define SWIGTYPE_p_value_type swig_types[51]
+#define SWIGTYPE_p_wchar_t swig_types[52]
+static swig_type_info *swig_types[54];
+static swig_module_info swig_module = {swig_types, 53, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -5070,6 +5077,7 @@ static void DeleteFunctionListItem(unsigned Index) {Form1->Data.Delete(Form1->Da
 static void InsertFunctionListItem(unsigned Index, const TGraphElemPtr &Elem) {Form1->Data.Insert(Elem, Index); Form1->UpdateTreeView();}
 static void ReplaceFunctionListItem(unsigned Index, const TGraphElemPtr &Elem) {Form1->Data.Replace(Index, Elem); Form1->UpdateTreeView();}
 static bool CompareElem(const TGraphElemPtr &E1, const TGraphElemPtr &E2) {return E1.get() == E2.get();}
+static std::map<std::wstring,std::wstring>& GetPluginData() {return Form1->Data.PluginData;}
 
 
 #define TGraphElem_Visible_get(self_) self_->GetVisible()
@@ -5085,6 +5093,9 @@ static bool CompareElem(const TGraphElemPtr &E1, const TGraphElemPtr &E2) {retur
 
 #define TGraphElem_LegendText_set(self_, val_) self_->SetLegendText(val_)
     
+
+#define TGraphElem_Parent_get(self_) *new TGraphElemPtr(self_->GetParent())
+  
 
 SWIGINTERN int
 SWIG_AsVal_int (PyObject * obj, int *val)
@@ -5112,7 +5123,7 @@ SWIG_AsVal_bool (PyObject *obj, bool *val)
   return SWIG_OK;
 }
 
-SWIGINTERN bool TGraphElem_Compare(TGraphElem const *self,TGraphElemPtr const &Elem){return Elem.get() == self;}
+SWIGINTERN int TGraphElem_ThisPtr(TGraphElem const *self){return reinterpret_cast<int>(self);}
 
 #define TBaseFuncType_CurrentRange_get(self_) new std::pair<double,double>(self_->GetCurrentRange())
   
@@ -5162,18 +5173,212 @@ SWIGINTERN boost::shared_ptr< TBaseFuncType > TParFunc_SWIGSharedPtrUpcast(boost
 SWIGINTERN boost::shared_ptr< TBaseFuncType > TPolFunc_SWIGSharedPtrUpcast(boost::shared_ptr< TPolFunc > swigSharedPtrUpcast){
     return swigSharedPtrUpcast;
   }
+
+#define TTan_Valid_get(self_) self_->IsValid()
+  
 SWIGINTERN boost::shared_ptr< TBaseFuncType > TTan_SWIGSharedPtrUpcast(boost::shared_ptr< TTan > swigSharedPtrUpcast){
     return swigSharedPtrUpcast;
   }
 SWIGINTERN boost::shared_ptr< TGraphElem > TPointSeries_SWIGSharedPtrUpcast(boost::shared_ptr< TPointSeries > swigSharedPtrUpcast){
     return swigSharedPtrUpcast;
   }
+
+#define TTextLabel_Rect_get(self_) self_->GetRect()
+  
+
+#define TTextLabel_xPos_get(self_) self_->GetXPos()
+  
+
+#define TTextLabel_yPos_get(self_) self_->GetYPos()
+  
+
+#define TTextLabel_Text_get(self_) *new std::string(self_->GetText())
+  
+
+#define TTextLabel_BackgroundColor_get(self_) self_->GetBackgroundColor()
+  
+
+#define TTextLabel_Placement_get(self_) self_->GetPlacement()
+  
+
+#define TTextLabel_Rotation_get(self_) self_->GetRotation()
+  
+
+SWIGINTERN swig_type_info*
+SWIG_pchar_descriptor(void)
+{
+  static int init = 0;
+  static swig_type_info* info = 0;
+  if (!init) {
+    info = SWIG_TypeQuery("_p_char");
+    init = 1;
+  }
+  return info;
+}
+
+
+SWIGINTERN int
+SWIG_AsCharPtrAndSize(PyObject *obj, char** cptr, size_t* psize, int *alloc)
+{
+#if PY_VERSION_HEX>=0x03000000
+  if (PyUnicode_Check(obj))
+#else  
+  if (PyString_Check(obj))
+#endif
+  {
+    char *cstr; Py_ssize_t len;
+#if PY_VERSION_HEX>=0x03000000
+    if (!alloc && cptr) {
+        /* We can't allow converting without allocation, since the internal
+           representation of string in Python 3 is UCS-2/UCS-4 but we require
+           a UTF-8 representation.
+           TODO(bhy) More detailed explanation */
+        return SWIG_RuntimeError;
+    }
+    obj = PyUnicode_AsUTF8String(obj);
+    PyBytes_AsStringAndSize(obj, &cstr, &len);
+    if(alloc) *alloc = SWIG_NEWOBJ;
+#else
+    PyString_AsStringAndSize(obj, &cstr, &len);
+#endif
+    if (cptr) {
+      if (alloc) {
+	/* 
+	   In python the user should not be able to modify the inner
+	   string representation. To warranty that, if you define
+	   SWIG_PYTHON_SAFE_CSTRINGS, a new/copy of the python string
+	   buffer is always returned.
+
+	   The default behavior is just to return the pointer value,
+	   so, be careful.
+	*/ 
+#if defined(SWIG_PYTHON_SAFE_CSTRINGS)
+	if (*alloc != SWIG_OLDOBJ) 
+#else
+	if (*alloc == SWIG_NEWOBJ) 
+#endif
+	  {
+	    *cptr = reinterpret_cast< char* >(memcpy((new char[len + 1]), cstr, sizeof(char)*(len + 1)));
+	    *alloc = SWIG_NEWOBJ;
+	  }
+	else {
+	  *cptr = cstr;
+	  *alloc = SWIG_OLDOBJ;
+	}
+      } else {
+        #if PY_VERSION_HEX>=0x03000000
+        assert(0); /* Should never reach here in Python 3 */
+        #endif
+	*cptr = SWIG_Python_str_AsChar(obj);
+      }
+    }
+    if (psize) *psize = len + 1;
+#if PY_VERSION_HEX>=0x03000000
+    Py_XDECREF(obj);
+#endif
+    return SWIG_OK;
+  } else {
+    swig_type_info* pchar_descriptor = SWIG_pchar_descriptor();
+    if (pchar_descriptor) {
+      void* vptr = 0;
+      if (SWIG_ConvertPtr(obj, &vptr, pchar_descriptor, 0) == SWIG_OK) {
+	if (cptr) *cptr = (char *) vptr;
+	if (psize) *psize = vptr ? (strlen((char *)vptr) + 1) : 0;
+	if (alloc) *alloc = SWIG_OLDOBJ;
+	return SWIG_OK;
+      }
+    }
+  }
+  return SWIG_TypeError;
+}
+
+
+SWIGINTERN int
+SWIG_AsPtr_std_string (PyObject * obj, std::string **val) 
+{
+  char* buf = 0 ; size_t size = 0; int alloc = SWIG_OLDOBJ;
+  if (SWIG_IsOK((SWIG_AsCharPtrAndSize(obj, &buf, &size, &alloc)))) {
+    if (buf) {
+      if (val) *val = new std::string(buf, size - 1);
+      if (alloc == SWIG_NEWOBJ) delete[] buf;
+      return SWIG_NEWOBJ;
+    } else {
+      if (val) *val = 0;
+      return SWIG_OLDOBJ;
+    }
+  } else {
+    static int init = 0;
+    static swig_type_info* descriptor = 0;
+    if (!init) {
+      descriptor = SWIG_TypeQuery("std::string" " *");
+      init = 1;
+    }
+    if (descriptor) {
+      std::string *vptr;
+      int res = SWIG_ConvertPtr(obj, (void**)&vptr, descriptor, 0);
+      if (SWIG_IsOK(res) && val) *val = vptr;
+      return res;
+    }
+  }
+  return SWIG_ERROR;
+}
+
 SWIGINTERN boost::shared_ptr< TGraphElem > TTextLabel_SWIGSharedPtrUpcast(boost::shared_ptr< TTextLabel > swigSharedPtrUpcast){
     return swigSharedPtrUpcast;
   }
+
+SWIGINTERNINLINE PyObject *
+SWIG_FromCharPtrAndSize(const char* carray, size_t size)
+{
+  if (carray) {
+    if (size > INT_MAX) {
+      swig_type_info* pchar_descriptor = SWIG_pchar_descriptor();
+      return pchar_descriptor ? 
+	SWIG_NewPointerObj(const_cast< char * >(carray), pchar_descriptor, 0) : SWIG_Py_Void();
+    } else {
+#if PY_VERSION_HEX >= 0x03000000
+      return PyUnicode_FromStringAndSize(carray, static_cast< int >(size));
+#else
+      return PyString_FromStringAndSize(carray, static_cast< int >(size));
+#endif
+    }
+  } else {
+    return SWIG_Py_Void();
+  }
+}
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_std_string  (const std::string& s)
+{
+  if (s.size()) {
+    return SWIG_FromCharPtrAndSize(s.data(), s.size());
+  } else {
+    return SWIG_FromCharPtrAndSize(s.c_str(), 0);
+  }
+}
+
 SWIGINTERN boost::shared_ptr< TGraphElem > TShade_SWIGSharedPtrUpcast(boost::shared_ptr< TShade > swigSharedPtrUpcast){
     return swigSharedPtrUpcast;
   }
+
+#define TRelation_Color_get(self_) self_->GetColor()
+  
+
+#define TRelation_BrushStyle_get(self_) self_->GetBrushStyle()
+  
+
+#define TRelation_RelationType_get(self_) self_->GetRelationType()
+  
+
+#define TRelation_Text_get(self_) *new std::wstring(self_->GetText())
+  
+
+#define TRelation_Constraints_get(self_) *new std::wstring(self_->GetConstraints())
+  
+
+#define TRelation_Size_get(self_) self_->GetSize()
+  
 SWIGINTERN boost::shared_ptr< TGraphElem > TRelation_SWIGSharedPtrUpcast(boost::shared_ptr< TRelation > swigSharedPtrUpcast){
     return swigSharedPtrUpcast;
   }
@@ -12558,6 +12763,19 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_GetPluginData(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::map< std::wstring,std::wstring,std::less< std::wstring >,std::allocator< std::pair< std::wstring const,std::wstring > > > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":GetPluginData")) SWIG_fail;
+  result = (std::map< std::wstring,std::wstring,std::less< std::wstring >,std::allocator< std::pair< std::wstring const,std::wstring > > > *) &GetPluginData();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_TGraphElem__PluginData_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TGraphElem *arg1 = (TGraphElem *) 0 ;
@@ -12938,27 +13156,59 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_TGraphElem_Compare(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_TGraphElem_Parent_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TGraphElem *arg1 = (TGraphElem *) 0 ;
-  TGraphElemPtr *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  boost::shared_ptr< TGraphElem const > tempshared1 ;
-  boost::shared_ptr< TGraphElem const > *smartarg1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
-  TGraphElemPtr tempshared2 ;
+  boost::shared_ptr< TGraphElem > tempshared1 ;
+  boost::shared_ptr< TGraphElem > *smartarg1 = 0 ;
   PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
+  TGraphElemPtr *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:TGraphElem_Compare",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:TGraphElem_Parent_get",&obj0)) SWIG_fail;
   {
     int newmem = 0;
     res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t, 0 |  0 , &newmem);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TGraphElem_Compare" "', argument " "1"" of type '" "TGraphElem const *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TGraphElem_Parent_get" "', argument " "1"" of type '" "TGraphElem *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TGraphElem > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TGraphElem > * >(argp1);
+      arg1 = const_cast< TGraphElem * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TGraphElem > * >(argp1);
+      arg1 = const_cast< TGraphElem * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (TGraphElemPtr *) &TGraphElem_Parent_get(arg1);
+  {
+    resultobj = DownCastSharedPtr(*result);
+  }
+  delete result;// my newfree override
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TGraphElem_ThisPtr(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TGraphElem *arg1 = (TGraphElem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TGraphElem const > tempshared1 ;
+  boost::shared_ptr< TGraphElem const > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TGraphElem_ThisPtr",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TGraphElem_ThisPtr" "', argument " "1"" of type '" "TGraphElem const *""'");
     }
     if (newmem & SWIG_CAST_NEW_MEMORY) {
       tempshared1 = *reinterpret_cast< boost::shared_ptr< const TGraphElem > * >(argp1);
@@ -12969,22 +13219,8 @@ SWIGINTERN PyObject *_wrap_TGraphElem_Compare(PyObject *SWIGUNUSEDPARM(self), Py
       arg1 = const_cast< TGraphElem * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
-  {
-    int newmem = 0;
-    res2 = SWIG_ConvertPtrAndOwn(obj1, &argp2, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t,  0 , &newmem);
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TGraphElem_Compare" "', argument " "2"" of type '" "TGraphElemPtr const &""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      if (argp2) tempshared2 = *reinterpret_cast< TGraphElemPtr * >(argp2);
-      delete reinterpret_cast< TGraphElemPtr * >(argp2);
-      arg2 = &tempshared2;
-    } else {
-      arg2 = (argp2) ? reinterpret_cast< TGraphElemPtr * >(argp2) : &tempshared2;
-    }
-  }
-  result = (bool)TGraphElem_Compare((TGraphElem const *)arg1,(boost::shared_ptr< TGraphElem > const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  result = (int)TGraphElem_ThisPtr((TGraphElem const *)arg1);
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -14580,6 +14816,158 @@ SWIGINTERN PyObject *TPolFunc_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObj
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_TTan_t_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTan *arg1 = (TTan *) 0 ;
+  TTextValue arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTan > tempshared1 ;
+  boost::shared_ptr< TTan > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TTan_t_set",&obj0,&obj1)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTan_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTan_t_set" "', argument " "1"" of type '" "TTan *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      arg1 = const_cast< TTan * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      arg1 = const_cast< TTan * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  {
+    arg2 = TTextValue(PyFloat_AsDouble(obj1));
+    if(PyErr_Occurred() != NULL)
+    SWIG_fail;
+  }
+  if (arg1) (arg1)->t = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTan_t_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTan *arg1 = (TTan *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTan > tempshared1 ;
+  boost::shared_ptr< TTan > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TTextValue result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TTan_t_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTan_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTan_t_get" "', argument " "1"" of type '" "TTan *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      arg1 = const_cast< TTan * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      arg1 = const_cast< TTan * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result =  ((arg1)->t);
+  {
+    resultobj = PyFloat_FromDouble((&result)->Value);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTan_TangentType_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTan *arg1 = (TTan *) 0 ;
+  TTangentType arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTan > tempshared1 ;
+  boost::shared_ptr< TTan > *smartarg1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TTan_TangentType_set",&obj0,&obj1)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTan_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTan_TangentType_set" "', argument " "1"" of type '" "TTan *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      arg1 = const_cast< TTan * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      arg1 = const_cast< TTan * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TTan_TangentType_set" "', argument " "2"" of type '" "TTangentType""'");
+  } 
+  arg2 = static_cast< TTangentType >(val2);
+  if (arg1) (arg1)->TangentType = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTan_TangentType_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTan *arg1 = (TTan *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTan > tempshared1 ;
+  boost::shared_ptr< TTan > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TTangentType result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TTan_TangentType_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTan_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTan_TangentType_get" "', argument " "1"" of type '" "TTan *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      arg1 = const_cast< TTan * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      arg1 = const_cast< TTan * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (TTangentType) ((arg1)->TangentType);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_TTan_SWIGSharedPtrUpcast(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   boost::shared_ptr< TTan > arg1 ;
@@ -14602,6 +14990,56 @@ SWIGINTERN PyObject *_wrap_TTan_SWIGSharedPtrUpcast(PyObject *SWIGUNUSEDPARM(sel
   {
     boost::shared_ptr<  TBaseFuncType > *smartresult = result ? new boost::shared_ptr<  TBaseFuncType >(result) : 0;
     resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t, SWIG_POINTER_OWN);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTan_Valid_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTan *arg1 = (TTan *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTan > tempshared1 ;
+  boost::shared_ptr< TTan > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TTan_Valid_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTan_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTan_Valid_get" "', argument " "1"" of type '" "TTan *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      arg1 = const_cast< TTan * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTan > * >(argp1);
+      arg1 = const_cast< TTan * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (bool)TTan_Valid_get(arg1);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_TTan(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTan *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_TTan")) SWIG_fail;
+  result = (TTan *)new TTan();
+  {
+    boost::shared_ptr<  TTan > *smartresult = result ? new boost::shared_ptr<  TTan >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_TTan_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
   }
   return resultobj;
 fail:
@@ -14718,6 +15156,182 @@ SWIGINTERN PyObject *TPointSeries_swigregister(PyObject *SWIGUNUSEDPARM(self), P
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_new_TTextLabel(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::string *arg1 = 0 ;
+  TLabelPlacement arg2 ;
+  TTextValue *arg3 = 0 ;
+  TTextValue *arg4 = 0 ;
+  TColor arg5 ;
+  unsigned int arg6 ;
+  int res1 = SWIG_OLDOBJ ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  unsigned int val5 ;
+  int ecode5 = 0 ;
+  unsigned int val6 ;
+  int ecode6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  TTextLabel *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:new_TTextLabel",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    res1 = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_TTextLabel" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_TTextLabel" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_TLabelPlacement,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_TTextLabel" "', argument " "2"" of type '" "TLabelPlacement""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_TTextLabel" "', argument " "2"" of type '" "TLabelPlacement""'");
+    } else {
+      TLabelPlacement * temp = reinterpret_cast< TLabelPlacement * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_TTextValue,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_TTextLabel" "', argument " "3"" of type '" "TTextValue const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_TTextLabel" "', argument " "3"" of type '" "TTextValue const &""'"); 
+  }
+  arg3 = reinterpret_cast< TTextValue * >(argp3);
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_TTextValue,  0  | 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_TTextLabel" "', argument " "4"" of type '" "TTextValue const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_TTextLabel" "', argument " "4"" of type '" "TTextValue const &""'"); 
+  }
+  arg4 = reinterpret_cast< TTextValue * >(argp4);
+  ecode5 = SWIG_AsVal_unsigned_SS_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "new_TTextLabel" "', argument " "5"" of type '" "TColor""'");
+  } 
+  arg5 = static_cast< TColor >(val5);
+  ecode6 = SWIG_AsVal_unsigned_SS_int(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "new_TTextLabel" "', argument " "6"" of type '" "unsigned int""'");
+  } 
+  arg6 = static_cast< unsigned int >(val6);
+  result = (TTextLabel *)new TTextLabel((std::string const &)*arg1,arg2,(TTextValue const &)*arg3,(TTextValue const &)*arg4,arg5,arg6);
+  {
+    boost::shared_ptr<  TTextLabel > *smartresult = result ? new boost::shared_ptr<  TTextLabel >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
+  }
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTextLabel_Scale(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTextLabel *arg1 = (TTextLabel *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTextLabel > tempshared1 ;
+  boost::shared_ptr< TTextLabel > *smartarg1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:TTextLabel_Scale",&obj0,&obj1,&obj2)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTextLabel_Scale" "', argument " "1"" of type '" "TTextLabel *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TTextLabel_Scale" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "TTextLabel_Scale" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  (arg1)->Scale(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTextLabel_GetImage(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTextLabel *arg1 = (TTextLabel *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTextLabel const > tempshared1 ;
+  boost::shared_ptr< TTextLabel const > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TMetafile *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TTextLabel_GetImage",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTextLabel_GetImage" "', argument " "1"" of type '" "TTextLabel const *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr< const TTextLabel > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr< const TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr< const TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (TMetafile *)((TTextLabel const *)arg1)->GetImage();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_TMetafile, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_TTextLabel_SWIGSharedPtrUpcast(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   boost::shared_ptr< TTextLabel > arg1 ;
@@ -14741,6 +15355,249 @@ SWIGINTERN PyObject *_wrap_TTextLabel_SWIGSharedPtrUpcast(PyObject *SWIGUNUSEDPA
     boost::shared_ptr<  TGraphElem > *smartresult = result ? new boost::shared_ptr<  TGraphElem >(result) : 0;
     resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t, SWIG_POINTER_OWN);
   }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTextLabel_Rect_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTextLabel *arg1 = (TTextLabel *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTextLabel > tempshared1 ;
+  boost::shared_ptr< TTextLabel > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TRect result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TTextLabel_Rect_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTextLabel_Rect_get" "', argument " "1"" of type '" "TTextLabel *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = TTextLabel_Rect_get(arg1);
+  resultobj = SWIG_NewPointerObj((new TRect(static_cast< const TRect& >(result))), SWIGTYPE_p_TRect, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTextLabel_xPos_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTextLabel *arg1 = (TTextLabel *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTextLabel > tempshared1 ;
+  boost::shared_ptr< TTextLabel > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TTextValue result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TTextLabel_xPos_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTextLabel_xPos_get" "', argument " "1"" of type '" "TTextLabel *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = TTextLabel_xPos_get(arg1);
+  {
+    resultobj = PyFloat_FromDouble((&result)->Value);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTextLabel_yPos_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTextLabel *arg1 = (TTextLabel *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTextLabel > tempshared1 ;
+  boost::shared_ptr< TTextLabel > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TTextValue result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TTextLabel_yPos_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTextLabel_yPos_get" "', argument " "1"" of type '" "TTextLabel *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = TTextLabel_yPos_get(arg1);
+  {
+    resultobj = PyFloat_FromDouble((&result)->Value);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTextLabel_Text_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTextLabel *arg1 = (TTextLabel *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTextLabel > tempshared1 ;
+  boost::shared_ptr< TTextLabel > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TTextLabel_Text_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTextLabel_Text_get" "', argument " "1"" of type '" "TTextLabel *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (std::string *) &TTextLabel_Text_get(arg1);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  delete result;// my newfree override
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTextLabel_BackgroundColor_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTextLabel *arg1 = (TTextLabel *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTextLabel > tempshared1 ;
+  boost::shared_ptr< TTextLabel > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TColor result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TTextLabel_BackgroundColor_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTextLabel_BackgroundColor_get" "', argument " "1"" of type '" "TTextLabel *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (TColor)TTextLabel_BackgroundColor_get(arg1);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTextLabel_Placement_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTextLabel *arg1 = (TTextLabel *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTextLabel > tempshared1 ;
+  boost::shared_ptr< TTextLabel > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TLabelPlacement result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TTextLabel_Placement_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTextLabel_Placement_get" "', argument " "1"" of type '" "TTextLabel *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = TTextLabel_Placement_get(arg1);
+  resultobj = SWIG_NewPointerObj((new TLabelPlacement(static_cast< const TLabelPlacement& >(result))), SWIGTYPE_p_TLabelPlacement, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TTextLabel_Rotation_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TTextLabel *arg1 = (TTextLabel *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TTextLabel > tempshared1 ;
+  boost::shared_ptr< TTextLabel > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TTextLabel_Rotation_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TTextLabel_Rotation_get" "', argument " "1"" of type '" "TTextLabel *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TTextLabel > * >(argp1);
+      arg1 = const_cast< TTextLabel * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (unsigned int)TTextLabel_Rotation_get(arg1);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -14856,6 +15713,213 @@ SWIGINTERN PyObject *TShade_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObjec
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_new_TRelation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::wstring *arg1 = 0 ;
+  Func32::TSymbolList *arg2 = 0 ;
+  TColor arg3 ;
+  TBrushStyle arg4 ;
+  unsigned int arg5 ;
+  Func32::TTrigonometry arg6 ;
+  int res1 = SWIG_OLDOBJ ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  unsigned int val3 ;
+  int ecode3 = 0 ;
+  unsigned int val4 ;
+  int ecode4 = 0 ;
+  unsigned int val5 ;
+  int ecode5 = 0 ;
+  void *argp6 ;
+  int res6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  TRelation *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:new_TRelation",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res1 = SWIG_AsPtr_std_wstring(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_TRelation" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_TRelation" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_Func32__TSymbolList,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_TRelation" "', argument " "2"" of type '" "Func32::TSymbolList const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_TRelation" "', argument " "2"" of type '" "Func32::TSymbolList const &""'"); 
+  }
+  arg2 = reinterpret_cast< Func32::TSymbolList * >(argp2);
+  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_TRelation" "', argument " "3"" of type '" "TColor""'");
+  } 
+  arg3 = static_cast< TColor >(val3);
+  ecode4 = SWIG_AsVal_unsigned_SS_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_TRelation" "', argument " "4"" of type '" "TBrushStyle""'");
+  } 
+  arg4 = static_cast< TBrushStyle >(val4);
+  ecode5 = SWIG_AsVal_unsigned_SS_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "new_TRelation" "', argument " "5"" of type '" "unsigned int""'");
+  } 
+  arg5 = static_cast< unsigned int >(val5);
+  {
+    res6 = SWIG_ConvertPtr(obj5, &argp6, SWIGTYPE_p_Func32__TTrigonometry,  0  | 0);
+    if (!SWIG_IsOK(res6)) {
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "new_TRelation" "', argument " "6"" of type '" "Func32::TTrigonometry""'"); 
+    }  
+    if (!argp6) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_TRelation" "', argument " "6"" of type '" "Func32::TTrigonometry""'");
+    } else {
+      Func32::TTrigonometry * temp = reinterpret_cast< Func32::TTrigonometry * >(argp6);
+      arg6 = *temp;
+      if (SWIG_IsNewObj(res6)) delete temp;
+    }
+  }
+  result = (TRelation *)new TRelation((std::wstring const &)*arg1,(Func32::TSymbolList const &)*arg2,arg3,arg4,arg5,arg6);
+  {
+    boost::shared_ptr<  TRelation > *smartresult = result ? new boost::shared_ptr<  TRelation >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_TRelation_t, SWIG_POINTER_NEW | SWIG_POINTER_OWN);
+  }
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TRelation_SetConstraints(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TRelation *arg1 = (TRelation *) 0 ;
+  std::wstring *arg2 = 0 ;
+  Func32::TSymbolList *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TRelation > tempshared1 ;
+  boost::shared_ptr< TRelation > *smartarg1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:TRelation_SetConstraints",&obj0,&obj1,&obj2)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TRelation_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TRelation_SetConstraints" "', argument " "1"" of type '" "TRelation *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res2 = SWIG_AsPtr_std_wstring(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TRelation_SetConstraints" "', argument " "2"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TRelation_SetConstraints" "', argument " "2"" of type '" "std::wstring const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_Func32__TSymbolList,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "TRelation_SetConstraints" "', argument " "3"" of type '" "Func32::TSymbolList const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TRelation_SetConstraints" "', argument " "3"" of type '" "Func32::TSymbolList const &""'"); 
+  }
+  arg3 = reinterpret_cast< Func32::TSymbolList * >(argp3);
+  (arg1)->SetConstraints((std::wstring const &)*arg2,(Func32::TSymbolList const &)*arg3);
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TRelation_Eval(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TRelation *arg1 = (TRelation *) 0 ;
+  std::vector< long double,std::allocator< long double > > *arg2 = 0 ;
+  Func32::ECalcError *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TRelation > tempshared1 ;
+  boost::shared_ptr< TRelation > *smartarg1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  long double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:TRelation_Eval",&obj0,&obj1,&obj2)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TRelation_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TRelation_Eval" "', argument " "1"" of type '" "TRelation *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_long_double_std__allocatorT_long_double_t_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TRelation_Eval" "', argument " "2"" of type '" "std::vector< long double,std::allocator< long double > > const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TRelation_Eval" "', argument " "2"" of type '" "std::vector< long double,std::allocator< long double > > const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< long double,std::allocator< long double > > * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_Func32__ECalcError,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "TRelation_Eval" "', argument " "3"" of type '" "Func32::ECalcError &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TRelation_Eval" "', argument " "3"" of type '" "Func32::ECalcError &""'"); 
+  }
+  arg3 = reinterpret_cast< Func32::ECalcError * >(argp3);
+  result = (long double)(arg1)->Eval((std::vector< long double,std::allocator< long double > > const &)*arg2,*arg3);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_TRelation_SWIGSharedPtrUpcast(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   boost::shared_ptr< TRelation > arg1 ;
@@ -14879,6 +15943,212 @@ SWIGINTERN PyObject *_wrap_TRelation_SWIGSharedPtrUpcast(PyObject *SWIGUNUSEDPAR
     boost::shared_ptr<  TGraphElem > *smartresult = result ? new boost::shared_ptr<  TGraphElem >(result) : 0;
     resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t, SWIG_POINTER_OWN);
   }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TRelation_Color_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TRelation *arg1 = (TRelation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TRelation > tempshared1 ;
+  boost::shared_ptr< TRelation > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TColor result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TRelation_Color_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TRelation_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TRelation_Color_get" "', argument " "1"" of type '" "TRelation *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (TColor)TRelation_Color_get(arg1);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TRelation_BrushStyle_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TRelation *arg1 = (TRelation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TRelation > tempshared1 ;
+  boost::shared_ptr< TRelation > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TBrushStyle result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TRelation_BrushStyle_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TRelation_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TRelation_BrushStyle_get" "', argument " "1"" of type '" "TRelation *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (TBrushStyle)TRelation_BrushStyle_get(arg1);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TRelation_RelationType_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TRelation *arg1 = (TRelation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TRelation > tempshared1 ;
+  boost::shared_ptr< TRelation > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TRelationType result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TRelation_RelationType_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TRelation_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TRelation_RelationType_get" "', argument " "1"" of type '" "TRelation *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (TRelationType)TRelation_RelationType_get(arg1);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TRelation_Text_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TRelation *arg1 = (TRelation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TRelation > tempshared1 ;
+  boost::shared_ptr< TRelation > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::wstring *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TRelation_Text_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TRelation_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TRelation_Text_get" "', argument " "1"" of type '" "TRelation *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (std::wstring *) &TRelation_Text_get(arg1);
+  resultobj = SWIG_From_std_wstring(static_cast< std::wstring >(*result));
+  delete result;// my newfree override
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TRelation_Constraints_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TRelation *arg1 = (TRelation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TRelation > tempshared1 ;
+  boost::shared_ptr< TRelation > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::wstring *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TRelation_Constraints_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TRelation_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TRelation_Constraints_get" "', argument " "1"" of type '" "TRelation *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (std::wstring *) &TRelation_Constraints_get(arg1);
+  resultobj = SWIG_From_std_wstring(static_cast< std::wstring >(*result));
+  delete result;// my newfree override
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TRelation_Size_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TRelation *arg1 = (TRelation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TRelation > tempshared1 ;
+  boost::shared_ptr< TRelation > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TRelation_Size_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TRelation_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TRelation_Size_get" "', argument " "1"" of type '" "TRelation *""'");
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (unsigned int)TRelation_Size_get(arg1);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -15159,6 +16429,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"InsertFunctionListItem", _wrap_InsertFunctionListItem, METH_VARARGS, NULL},
 	 { (char *)"ReplaceFunctionListItem", _wrap_ReplaceFunctionListItem, METH_VARARGS, NULL},
 	 { (char *)"CompareElem", _wrap_CompareElem, METH_VARARGS, NULL},
+	 { (char *)"GetPluginData", _wrap_GetPluginData, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem__PluginData_set", _wrap_TGraphElem__PluginData_set, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem__PluginData_get", _wrap_TGraphElem__PluginData_get, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem_MakeLegendText", _wrap_TGraphElem_MakeLegendText, METH_VARARGS, NULL},
@@ -15169,7 +16440,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TGraphElem_ShowInLegend_get", _wrap_TGraphElem_ShowInLegend_get, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem_LegendText_set", _wrap_TGraphElem_LegendText_set, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem_LegendText_get", _wrap_TGraphElem_LegendText_get, METH_VARARGS, NULL},
-	 { (char *)"TGraphElem_Compare", _wrap_TGraphElem_Compare, METH_VARARGS, NULL},
+	 { (char *)"TGraphElem_Parent_get", _wrap_TGraphElem_Parent_get, METH_VARARGS, NULL},
+	 { (char *)"TGraphElem_ThisPtr", _wrap_TGraphElem_ThisPtr, METH_VARARGS, NULL},
 	 { (char *)"delete_TGraphElem", _wrap_delete_TGraphElem, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem_swigregister", TGraphElem_swigregister, METH_VARARGS, NULL},
 	 { (char *)"TBaseFuncType_sList_set", _wrap_TBaseFuncType_sList_set, METH_VARARGS, NULL},
@@ -15218,19 +16490,44 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TPolFunc_Text_get", _wrap_TPolFunc_Text_get, METH_VARARGS, NULL},
 	 { (char *)"delete_TPolFunc", _wrap_delete_TPolFunc, METH_VARARGS, NULL},
 	 { (char *)"TPolFunc_swigregister", TPolFunc_swigregister, METH_VARARGS, NULL},
+	 { (char *)"TTan_t_set", _wrap_TTan_t_set, METH_VARARGS, NULL},
+	 { (char *)"TTan_t_get", _wrap_TTan_t_get, METH_VARARGS, NULL},
+	 { (char *)"TTan_TangentType_set", _wrap_TTan_TangentType_set, METH_VARARGS, NULL},
+	 { (char *)"TTan_TangentType_get", _wrap_TTan_TangentType_get, METH_VARARGS, NULL},
 	 { (char *)"TTan_SWIGSharedPtrUpcast", _wrap_TTan_SWIGSharedPtrUpcast, METH_VARARGS, NULL},
+	 { (char *)"TTan_Valid_get", _wrap_TTan_Valid_get, METH_VARARGS, NULL},
+	 { (char *)"new_TTan", _wrap_new_TTan, METH_VARARGS, NULL},
 	 { (char *)"delete_TTan", _wrap_delete_TTan, METH_VARARGS, NULL},
 	 { (char *)"TTan_swigregister", TTan_swigregister, METH_VARARGS, NULL},
 	 { (char *)"TPointSeries_SWIGSharedPtrUpcast", _wrap_TPointSeries_SWIGSharedPtrUpcast, METH_VARARGS, NULL},
 	 { (char *)"delete_TPointSeries", _wrap_delete_TPointSeries, METH_VARARGS, NULL},
 	 { (char *)"TPointSeries_swigregister", TPointSeries_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_TTextLabel", _wrap_new_TTextLabel, METH_VARARGS, NULL},
+	 { (char *)"TTextLabel_Scale", _wrap_TTextLabel_Scale, METH_VARARGS, NULL},
+	 { (char *)"TTextLabel_GetImage", _wrap_TTextLabel_GetImage, METH_VARARGS, NULL},
 	 { (char *)"TTextLabel_SWIGSharedPtrUpcast", _wrap_TTextLabel_SWIGSharedPtrUpcast, METH_VARARGS, NULL},
+	 { (char *)"TTextLabel_Rect_get", _wrap_TTextLabel_Rect_get, METH_VARARGS, NULL},
+	 { (char *)"TTextLabel_xPos_get", _wrap_TTextLabel_xPos_get, METH_VARARGS, NULL},
+	 { (char *)"TTextLabel_yPos_get", _wrap_TTextLabel_yPos_get, METH_VARARGS, NULL},
+	 { (char *)"TTextLabel_Text_get", _wrap_TTextLabel_Text_get, METH_VARARGS, NULL},
+	 { (char *)"TTextLabel_BackgroundColor_get", _wrap_TTextLabel_BackgroundColor_get, METH_VARARGS, NULL},
+	 { (char *)"TTextLabel_Placement_get", _wrap_TTextLabel_Placement_get, METH_VARARGS, NULL},
+	 { (char *)"TTextLabel_Rotation_get", _wrap_TTextLabel_Rotation_get, METH_VARARGS, NULL},
 	 { (char *)"delete_TTextLabel", _wrap_delete_TTextLabel, METH_VARARGS, NULL},
 	 { (char *)"TTextLabel_swigregister", TTextLabel_swigregister, METH_VARARGS, NULL},
 	 { (char *)"TShade_SWIGSharedPtrUpcast", _wrap_TShade_SWIGSharedPtrUpcast, METH_VARARGS, NULL},
 	 { (char *)"delete_TShade", _wrap_delete_TShade, METH_VARARGS, NULL},
 	 { (char *)"TShade_swigregister", TShade_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_TRelation", _wrap_new_TRelation, METH_VARARGS, NULL},
+	 { (char *)"TRelation_SetConstraints", _wrap_TRelation_SetConstraints, METH_VARARGS, NULL},
+	 { (char *)"TRelation_Eval", _wrap_TRelation_Eval, METH_VARARGS, NULL},
 	 { (char *)"TRelation_SWIGSharedPtrUpcast", _wrap_TRelation_SWIGSharedPtrUpcast, METH_VARARGS, NULL},
+	 { (char *)"TRelation_Color_get", _wrap_TRelation_Color_get, METH_VARARGS, NULL},
+	 { (char *)"TRelation_BrushStyle_get", _wrap_TRelation_BrushStyle_get, METH_VARARGS, NULL},
+	 { (char *)"TRelation_RelationType_get", _wrap_TRelation_RelationType_get, METH_VARARGS, NULL},
+	 { (char *)"TRelation_Text_get", _wrap_TRelation_Text_get, METH_VARARGS, NULL},
+	 { (char *)"TRelation_Constraints_get", _wrap_TRelation_Constraints_get, METH_VARARGS, NULL},
+	 { (char *)"TRelation_Size_get", _wrap_TRelation_Size_get, METH_VARARGS, NULL},
 	 { (char *)"delete_TRelation", _wrap_delete_TRelation, METH_VARARGS, NULL},
 	 { (char *)"TRelation_swigregister", TRelation_swigregister, METH_VARARGS, NULL},
 	 { (char *)"TAxesView_SWIGSharedPtrUpcast", _wrap_TAxesView_SWIGSharedPtrUpcast, METH_VARARGS, NULL},
@@ -15324,12 +16621,18 @@ static void *_p_boost__shared_ptrT_TPointSeries_tTo_p_boost__shared_ptrT_TGraphE
   *newmemory = SWIG_CAST_NEW_MEMORY;
   return (void *) new boost::shared_ptr< TGraphElem >(*(boost::shared_ptr< TPointSeries > *)x);
 }
+static swig_type_info _swigt__p_Func32__ECalcError = {"_p_Func32__ECalcError", "Func32::ECalcError *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Func32__TSymbolList = {"_p_Func32__TSymbolList", "Func32::TSymbolList *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Func32__TTrigonometry = {"_p_Func32__TTrigonometry", "Func32::TTrigonometry *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TAxesView = {"_p_TAxesView", "TAxesView *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TBaseFuncType = {"_p_TBaseFuncType", "TBaseFuncType *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TGraphElem = {"_p_TGraphElem", "TGraphElem *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_TLabelPlacement = {"_p_TLabelPlacement", "TLabelPlacement *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_TMetafile = {"_p_TMetafile", "TMetafile *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TParFunc = {"_p_TParFunc", "TParFunc *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TPointSeries = {"_p_TPointSeries", "TPointSeries *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TPolFunc = {"_p_TPolFunc", "TPolFunc *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_TRect = {"_p_TRect", "TRect *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TRelation = {"_p_TRelation", "TRelation *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TShade = {"_p_TShade", "TShade *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TStdFunc = {"_p_TStdFunc", "TStdFunc *", 0, 0, (void*)0, 0};
@@ -15364,20 +16667,27 @@ static swig_type_info _swigt__p_std__vectorT_Func32__TCoordSet_std__allocatorT_F
 static swig_type_info _swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t = {"_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t", "std::vector< TPoint,std::allocator< TPoint > > *|std::vector< TPoint > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type = {"_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type", "std::vector< TPoint >::allocator_type *|std::allocator< TPoint > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type = {"_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type", "std::vector< TPoint >::value_type *|TPoint *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_long_double_std__allocatorT_long_double_t_t = {"_p_std__vectorT_long_double_std__allocatorT_long_double_t_t", "std::vector< long double,std::allocator< long double > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t = {"_p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t", "std::vector< unsigned int,std::allocator< unsigned int > > *|std::vector< unsigned int > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t__allocator_type = {"_p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t__allocator_type", "std::vector< unsigned int >::allocator_type *|std::allocator< unsigned int > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_swig__SwigPyIterator = {"_p_swig__SwigPyIterator", "swig::SwigPyIterator *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "unsigned int *|TPenStyle *|TColor *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "unsigned int *|TBrushStyle *|TPenStyle *|TColor *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_value_type = {"_p_value_type", "value_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_wchar_t = {"_p_wchar_t", "wchar_t *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_Func32__ECalcError,
+  &_swigt__p_Func32__TSymbolList,
+  &_swigt__p_Func32__TTrigonometry,
   &_swigt__p_TAxesView,
   &_swigt__p_TBaseFuncType,
   &_swigt__p_TGraphElem,
+  &_swigt__p_TLabelPlacement,
+  &_swigt__p_TMetafile,
   &_swigt__p_TParFunc,
   &_swigt__p_TPointSeries,
   &_swigt__p_TPolFunc,
+  &_swigt__p_TRect,
   &_swigt__p_TRelation,
   &_swigt__p_TShade,
   &_swigt__p_TStdFunc,
@@ -15412,6 +16722,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t,
   &_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type,
   &_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type,
+  &_swigt__p_std__vectorT_long_double_std__allocatorT_long_double_t_t,
   &_swigt__p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t,
   &_swigt__p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t__allocator_type,
   &_swigt__p_swig__SwigPyIterator,
@@ -15420,12 +16731,18 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_wchar_t,
 };
 
+static swig_cast_info _swigc__p_Func32__ECalcError[] = {  {&_swigt__p_Func32__ECalcError, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Func32__TSymbolList[] = {  {&_swigt__p_Func32__TSymbolList, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Func32__TTrigonometry[] = {  {&_swigt__p_Func32__TTrigonometry, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TAxesView[] = {  {&_swigt__p_TAxesView, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TBaseFuncType[] = {  {&_swigt__p_TParFunc, _p_TParFuncTo_p_TBaseFuncType, 0, 0},  {&_swigt__p_TTan, _p_TTanTo_p_TBaseFuncType, 0, 0},  {&_swigt__p_TStdFunc, _p_TStdFuncTo_p_TBaseFuncType, 0, 0},  {&_swigt__p_TBaseFuncType, 0, 0, 0},  {&_swigt__p_TPolFunc, _p_TPolFuncTo_p_TBaseFuncType, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TGraphElem[] = {  {&_swigt__p_TGraphElem, 0, 0, 0},  {&_swigt__p_TParFunc, _p_TParFuncTo_p_TGraphElem, 0, 0},  {&_swigt__p_TTan, _p_TTanTo_p_TGraphElem, 0, 0},  {&_swigt__p_TStdFunc, _p_TStdFuncTo_p_TGraphElem, 0, 0},  {&_swigt__p_TTextLabel, _p_TTextLabelTo_p_TGraphElem, 0, 0},  {&_swigt__p_TAxesView, _p_TAxesViewTo_p_TGraphElem, 0, 0},  {&_swigt__p_TShade, _p_TShadeTo_p_TGraphElem, 0, 0},  {&_swigt__p_TBaseFuncType, _p_TBaseFuncTypeTo_p_TGraphElem, 0, 0},  {&_swigt__p_TPolFunc, _p_TPolFuncTo_p_TGraphElem, 0, 0},  {&_swigt__p_TPointSeries, _p_TPointSeriesTo_p_TGraphElem, 0, 0},  {&_swigt__p_TRelation, _p_TRelationTo_p_TGraphElem, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_TLabelPlacement[] = {  {&_swigt__p_TLabelPlacement, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_TMetafile[] = {  {&_swigt__p_TMetafile, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TParFunc[] = {  {&_swigt__p_TParFunc, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TPointSeries[] = {  {&_swigt__p_TPointSeries, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TPolFunc[] = {  {&_swigt__p_TPolFunc, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_TRect[] = {  {&_swigt__p_TRect, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TRelation[] = {  {&_swigt__p_TRelation, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TShade[] = {  {&_swigt__p_TShade, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TStdFunc[] = {  {&_swigt__p_TStdFunc, 0, 0, 0},{0, 0, 0, 0}};
@@ -15460,6 +16777,7 @@ static swig_cast_info _swigc__p_std__vectorT_Func32__TCoordSet_std__allocatorT_F
 static swig_cast_info _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t[] = {  {&_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type[] = {  {&_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type[] = {  {&_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_long_double_std__allocatorT_long_double_t_t[] = {  {&_swigt__p_std__vectorT_long_double_std__allocatorT_long_double_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t[] = {  {&_swigt__p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t__allocator_type[] = {  {&_swigt__p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t__allocator_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_swig__SwigPyIterator[] = {  {&_swigt__p_swig__SwigPyIterator, 0, 0, 0},{0, 0, 0, 0}};
@@ -15468,12 +16786,18 @@ static swig_cast_info _swigc__p_value_type[] = {  {&_swigt__p_value_type, 0, 0, 
 static swig_cast_info _swigc__p_wchar_t[] = {  {&_swigt__p_wchar_t, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_Func32__ECalcError,
+  _swigc__p_Func32__TSymbolList,
+  _swigc__p_Func32__TTrigonometry,
   _swigc__p_TAxesView,
   _swigc__p_TBaseFuncType,
   _swigc__p_TGraphElem,
+  _swigc__p_TLabelPlacement,
+  _swigc__p_TMetafile,
   _swigc__p_TParFunc,
   _swigc__p_TPointSeries,
   _swigc__p_TPolFunc,
+  _swigc__p_TRect,
   _swigc__p_TRelation,
   _swigc__p_TShade,
   _swigc__p_TStdFunc,
@@ -15508,6 +16832,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t,
   _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type,
   _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type,
+  _swigc__p_std__vectorT_long_double_std__allocatorT_long_double_t_t,
   _swigc__p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t,
   _swigc__p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t__allocator_type,
   _swigc__p_swig__SwigPyIterator,
@@ -16111,6 +17436,10 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "dtAuto",SWIG_From_int(static_cast< int >(dtAuto)));
   SWIG_Python_SetConstant(d, "dtDots",SWIG_From_int(static_cast< int >(dtDots)));
   SWIG_Python_SetConstant(d, "dtLines",SWIG_From_int(static_cast< int >(dtLines)));
+  SWIG_Python_SetConstant(d, "ttTangent",SWIG_From_int(static_cast< int >(ttTangent)));
+  SWIG_Python_SetConstant(d, "ttNormal",SWIG_From_int(static_cast< int >(ttNormal)));
+  SWIG_Python_SetConstant(d, "rtEquation",SWIG_From_int(static_cast< int >(rtEquation)));
+  SWIG_Python_SetConstant(d, "rtInequality",SWIG_From_int(static_cast< int >(rtInequality)));
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else
