@@ -52,20 +52,21 @@ PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem)
 typedef boost::shared_ptr<class TGraphElem> TGraphElemPtr;
 
 %inline %{
-static const TGraphElemPtr& Selected() {return Form1->GetGraphElem(Form1->TreeView->Selected);}
+static TGraphElemPtr Selected() {return Form1->GetGraphElem(Form1->TreeView->Selected);}
 static void AbortUpdate() {Form1->Data.AbortUpdate();}
 static void Redraw() {Form1->Redraw();}
 static boost::shared_ptr<TStdFunc> CreateStdFunc(const std::wstring &Text) {return boost::shared_ptr<TStdFunc>(new TStdFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 static boost::shared_ptr<TParFunc> CreateParFunc(const std::wstring &xText, const std::wstring &yText) {return boost::shared_ptr<TParFunc>(new TParFunc(xText, yText, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 static boost::shared_ptr<TPolFunc> CreatePolFunc(const std::wstring &Text) {return boost::shared_ptr<TPolFunc>(new TPolFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 
-static unsigned GetFunctionListSize() {return Form1->Data.ElemCount();}
-static const TGraphElemPtr& GetFunctionListItem(unsigned Index) {return Form1->Data.GetElem(Index);}
-static void DeleteFunctionListItem(unsigned Index) {Form1->Data.Delete(Form1->Data.GetElem(Index)); Form1->UpdateTreeView();}
-static void InsertFunctionListItem(unsigned Index, const TGraphElemPtr &Elem) {Form1->Data.Insert(Elem, Index); Form1->UpdateTreeView();}
-static void ReplaceFunctionListItem(unsigned Index, const TGraphElemPtr &Elem) {Form1->Data.Replace(Index, Elem); Form1->UpdateTreeView();}
+static unsigned ChildCount(const TGraphElemPtr &Elem) {return Elem->ChildCount();}
+static TGraphElemPtr GetChild(const TGraphElemPtr &Elem, unsigned Index) {return Elem->GetChild(Index);}
+static void RemoveChild(const TGraphElemPtr &Elem, unsigned Index) {Elem->RemoveChild(Index); Form1->UpdateTreeView();}
+static void InsertChild(const TGraphElemPtr &Elem, const TGraphElemPtr &Child, int Index) {Elem->InsertChild(Child, Index); Form1->UpdateTreeView();}
+static void ReplaceChild(const TGraphElemPtr &Elem, unsigned Index, const TGraphElemPtr &Child) {Elem->ReplaceChild(Index, Child); Form1->UpdateTreeView();}
 static bool CompareElem(const TGraphElemPtr &E1, const TGraphElemPtr &E2) {return E1.get() == E2.get();}
 static std::map<std::wstring,std::wstring>& GetPluginData() {return Form1->Data.PluginData;}
+static const TGraphElemPtr& GetTopElem() {return Form1->Data.GetTopElem();}
 %}
 
 SWIG_SHARED_PTR(TGraphElem, TGraphElem)

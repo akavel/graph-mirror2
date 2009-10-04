@@ -49,6 +49,7 @@ int MessageBox(const String &Text, const String &Caption, int Flags = MB_OK | MB
 void ShowErrorMsg(const Func32::EFuncError &Error, TCustomEdit *Edit=NULL);//Shows error message corresponding to ErrorCode in Error
 void ShowErrorMsg(const class ECustomFunctionError &Error, TCustomEdit *Edit=NULL);
 void ShowErrorMsg(const class EGraphError &Error, TCustomEdit *Edit=NULL);
+void ShowErrorMsg(const std::exception &Error, TCustomEdit *Edit=NULL);
 void ShowStatusError(const String &Str);
 
 bool InputQuery(const String &Caption, const String &Prompt, int &Value);

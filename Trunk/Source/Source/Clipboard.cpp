@@ -28,46 +28,10 @@ bool TGraphClipboard::HasData()
   return Clipboard()->HasFormat(ClipboardFormat);
 }
 //---------------------------------------------------------------------------
-void TGraphClipboard::Copy(const TConfigFile &ConfigFile)
+void TGraphClipboard::Copy(const TData &Data, const TGraphElemPtr &Elem)
 {
-  std::wstring Str = ConfigFile.GetAsString();
+  std::wstring Str = Data.SaveToString(Elem);
   SetClipboardData(ClipboardFormat, Str.c_str(), Str.size()*sizeof(wchar_t));
-}
-//---------------------------------------------------------------------------
-  void TGraphClipboard::Copy(const TBaseFuncType *Func)
-{
-  TConfigFile IniFile;
-  TData::WriteInfoToIni(IniFile);
-  IniFile.Section(L"Data").Write(L"FuncCount", 1);
-  Func->WriteToIni(IniFile.Section(L"Func1"));
-  Copy(IniFile);
-}
-//---------------------------------------------------------------------------
-void TGraphClipboard::Copy(const TPointSeries *PointSeries)
-{
-  TConfigFile IniFile;
-  TData::WriteInfoToIni(IniFile);
-  IniFile.Section(L"Data").Write(L"PointSeriesCount", 1);
-  PointSeries->WriteToIni(IniFile.Section(L"PointSeries1"));
-  Copy(IniFile);
-}
-//---------------------------------------------------------------------------
-void TGraphClipboard::Copy(const TTextLabel *Label)
-{
-  TConfigFile IniFile;
-  TData::WriteInfoToIni(IniFile);
-  IniFile.Section(L"Data").Write(L"LabelCount", 1);
-  Label->WriteToIni(IniFile.Section(L"Label1"));
-  Copy(IniFile);
-}
-//---------------------------------------------------------------------------
-void TGraphClipboard::Copy(const TRelation *Relation)
-{
-  TConfigFile IniFile;
-  TData::WriteInfoToIni(IniFile);
-  IniFile.Section(L"Data").Write(L"RelationCount", 1);
-  Relation->WriteToIni(IniFile.Section(L"Relation1"));
-  Copy(IniFile);
 }
 //---------------------------------------------------------------------------
 void TGraphClipboard::Paste(TData &Data)
@@ -84,9 +48,15 @@ void TGraphClipboard::Paste(TData &Data)
     IniFile.LoadFromString(Str);
 
     unsigned ElemNo = Data.ElemCount();
-
-    if(Data.CheckIniInfo(IniFile))
-      Data.LoadData(IniFile);
+    try
+    {
+      Data.Import(IniFile);
+    }
+    catch(std::exception &E)
+    {
+      ShowErrorMsg(E);
+      return;
+    }
 
     UndoList.BeginMultiUndo();
     for(unsigned I = ElemNo; I < Data.ElemCount(); I++)

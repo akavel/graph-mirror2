@@ -97,7 +97,7 @@
 #define RES_CharAfterEndPar     205
 #define RES_DoubleDefinedSymbol 206
 
-#define RES_InvalidRelation     210
+#define RES_INVALID_RELATION    210
 
 #define RES_UPDATE              300
 #define RES_SAVE_CHANGES        301

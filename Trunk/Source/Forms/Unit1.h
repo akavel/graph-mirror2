@@ -488,7 +488,7 @@ public:		// User declarations
   void ChangeLanguage(const String &Ext);
   void ActivateOleUserInterface();
 
-  const boost::shared_ptr<TGraphElem>& GetGraphElem(TTreeNode *Node);
+  boost::shared_ptr<TGraphElem> GetGraphElem(TTreeNode *Node);
 
   void __fastcall UpdateEval();
   void __fastcall BeginUpdate();

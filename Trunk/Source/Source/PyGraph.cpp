@@ -468,7 +468,9 @@ void InitPlugins()
 bool PluginHandleEdit(const boost::shared_ptr<TGraphElem> &Elem)
 {
   TLockGIL Dummy;
-  return ExecutePluginEvent(peEdit, DownCastSharedPtr(Elem));
+  if(IsPythonInstalled())
+    return ExecutePluginEvent(peEdit, DownCastSharedPtr(Elem));
+  return false;
 }
 //---------------------------------------------------------------------------
 bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param)

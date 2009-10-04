@@ -38,7 +38,7 @@ struct TUndoChange
   void operator()(TUndoList &UndoList) const
   {
     UndoList.Push(TUndoChange(Data, NewElem, OldElem));
-    Data.Replace(OldElem, NewElem);
+    Data.Replace(NewElem, OldElem);
   }
 };
 
@@ -120,9 +120,11 @@ struct TUndoMove
     : Data(AData), Elem(AElem), Index(AIndex) {}
   void operator()(TUndoList &UndoList)
   {
-    UndoList.Push(TUndoMove(Data, Elem, Data.GetIndex(Elem)));
-    Data.Delete(Elem);
-    Data.Insert(Elem, Index);
+    const TGraphElemPtr &Parent = Elem->GetParent();
+    int OldIndex = Parent->GetChildIndex(Elem);
+    UndoList.Push(TUndoMove(Data, Elem, OldIndex));
+    Parent->RemoveChild(OldIndex);
+    Parent->InsertChild(Elem, Index);
   }
 };
 

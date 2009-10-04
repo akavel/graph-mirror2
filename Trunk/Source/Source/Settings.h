@@ -127,7 +127,7 @@ enum TCustomFunctionErrorCode
   cfeSymbolUndefined      //!< The requested symbol was not found
 };
 
-struct ECustomFunctionError
+struct ECustomFunctionError : public std::exception
 {
   TCustomFunctionErrorCode ErrorCode;
   int ErrorPos;

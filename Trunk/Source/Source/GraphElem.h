@@ -17,16 +17,10 @@
 class TConfigFileSection;
 namespace Graph
 {
-enum TGraphError
+struct EGraphError : public std::exception
 {
-  geInvalidRelation,
-  geNotImplemented
-};
-
-struct EGraphError
-{
-  TGraphError ErrorCode;
-  EGraphError(TGraphError AErrorCode) : ErrorCode(AErrorCode) {}
+  std::wstring Message;
+  EGraphError(const std::wstring &Str) : Message(Str) {}
 };
 
 typedef boost::shared_ptr<class TGraphElem> TGraphElemPtr;
@@ -71,7 +65,6 @@ class TBaseFuncType;
 class TGraphElem : public boost::enable_shared_from_this<TGraphElem>
 {
   const TGraphElem& operator=(const TGraphElem&); //Not implemented
-  const TData *Data;
   bool Visible;
   bool ShowInLegend;
   std::wstring LegendText;
@@ -80,10 +73,13 @@ class TGraphElem : public boost::enable_shared_from_this<TGraphElem>
 
   void SetParent(const TGraphElemPtr &AParent) {Parent = AParent;}
 
+protected:
+  TGraphElemPtr CloneHelper(TGraphElem *NewElem) const;
+
 public:
   std::map<std::wstring,std::wstring> PluginData;
 
-  TGraphElem() : Visible(true), ShowInLegend(true), Data(NULL) {}
+  TGraphElem() : Visible(true), ShowInLegend(true) {}
   TGraphElem(const TGraphElem &Elem);
   virtual ~TGraphElem() {}
   virtual std::wstring MakeLegendText() const {return LegendText.empty() ? MakeText() : LegendText;}
@@ -92,16 +88,15 @@ public:
   virtual void ReadFromIni(const TConfigFileSection &Section) =0;
   virtual void Accept(TGraphElemVisitor&) =0;
   virtual TGraphElemPtr Clone() const = 0;
-  virtual void ClearCache() {};
+  virtual void ClearCache();
   virtual void Update();
-  void SetData(const TData *AData); //For internal use
-  const TData& GetData() const {BOOST_ASSERT(Data); return *Data;}
+  virtual const TData& GetData() const {BOOST_ASSERT(!Parent.expired()); return Parent.lock()->GetData();}
 
   void InsertChild(const TGraphElemPtr &Elem, int Index = -1);
   void ReplaceChild(unsigned Index, const TGraphElemPtr &Elem);
   unsigned GetChildIndex(const TGraphElemPtr &Elem) const;
   void RemoveChild(unsigned Index);
-  const TGraphElemPtr& GetChild(unsigned Index) const {return ChildList.at(Index);}
+  TGraphElemPtr GetChild(unsigned Index) const {return ChildList.at(Index);} //Don't return a reference as it might be invalid while in use
   unsigned ChildCount() const {return ChildList.size();}
   TGraphElemPtr GetParent() const {return Parent.lock();}
 
@@ -116,11 +111,17 @@ public:
 
 class TTopGraphElem : public TGraphElem
 {
+  const TData *Data;
+
+public:
+  TTopGraphElem(const TData *AData) : Data(AData) {}
   std::wstring MakeText() const {return L"";}
   void WriteToIni(TConfigFileSection &Section) const {};
   void ReadFromIni(const TConfigFileSection &Section) {};
   void Accept(TGraphElemVisitor&) {};
-  TGraphElemPtr Clone() const {throw EGraphError(geNotImplemented);}
+  TGraphElemPtr Clone() const {throw "Not implemented!";;}
+  boost::shared_ptr<TTopGraphElem> Clone(const TData *AData) const;
+  const TData& GetData() const {return *Data;}
 };
 
 enum TLabelPlacement
@@ -161,7 +162,7 @@ public:
   const std::string& GetText() const {return Text;}
   void Scale(double xSizeMul, double ySizeMul);
   const TRect& GetRect() const {return Rect;}
-  boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TTextLabel(*this));}
+  TGraphElemPtr Clone() const {return CloneHelper(new TTextLabel(*this));}
   TColor GetBackgroundColor() const {return BackgroundColor;}
   TLabelPlacement GetPlacement() const {return LabelPlacement;}
   unsigned GetRotation() const {return Rotation;}
@@ -175,7 +176,6 @@ enum TDrawType {dtAuto, dtDots, dtLines};
 class TBaseFuncType : public TGraphElem
 {
 protected:
-  static const boost::shared_ptr<TBaseFuncType> CloneWithTangents(TBaseFuncType *Dest, const TBaseFuncType *Src);
   TBaseFuncType(const TBaseFuncType &F);
   TTextValue Steps; //Number of steps/evaluations. Rounded to an integer
 
@@ -212,7 +212,6 @@ class TTan : public TBaseFuncType
   mutable double a, q;  //Calculated at last redraw; a!=INF: y=ax+q, a==INF: x=q
   mutable Func32::TParamFunc TanFunc;
   void UpdateTan(double a1, double q1);
-
 public:
   TTextValue t;
   TTangentType TangentType;
@@ -222,7 +221,7 @@ public:
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   std::wstring MakeLegendText() const;
-  boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TBaseFuncType>(new TTan(*this));}
+  boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TTan(*this));}
   boost::shared_ptr<TBaseFuncType> MakeDifFunc() {throw Exception("Tangent cannot be differentiated");}
   bool IsValid() const; //Indicates the parent function is valid at t
   std::pair<double,double> GetCurrentRange() const;
@@ -244,7 +243,7 @@ public:
   TStdFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
   TStdFunc(const Func32::TFunc &AFunc);
 
-  boost::shared_ptr<TGraphElem> Clone() const {return CloneWithTangents(new TStdFunc(*this), this);}
+  boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TStdFunc(*this));}
   std::wstring MakeText() const;
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
@@ -266,7 +265,7 @@ public:
   TParFunc(const std::wstring &AxText, const std::wstring &AyText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
   TParFunc(const Func32::TParamFunc &AFunc);
 
-  boost::shared_ptr<TGraphElem> Clone() const {return CloneWithTangents(new TParFunc(*this), this);}
+  boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TParFunc(*this));}
   std::wstring MakeText() const;
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
@@ -287,7 +286,7 @@ public:
   TPolFunc() {}
   TPolFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
 
-  boost::shared_ptr<TGraphElem> Clone() const {return CloneWithTangents(new TPolFunc(*this), this);}
+  boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TPolFunc(*this));}
   std::wstring MakeText() const;
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
@@ -349,7 +348,7 @@ public:
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
-  boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TPointSeries(*this));}
+  boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TPointSeries(*this));}
   TPointList::const_iterator FindPoint(double x) const;
   void AddPoint(const Func32::TDblPoint &Point);
   void AddPoint(const TPointSeriesPoint &Point);
@@ -408,7 +407,7 @@ struct TShade : public TGraphElem
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
-  boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TShade(*this));}
+  TGraphElemPtr Clone() const {return CloneHelper(new TShade(*this));}
   void Update();
 };
 
@@ -435,7 +434,7 @@ public:
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
-  boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TRelation(*this));}
+  boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TRelation(*this));}
   void SetConstraints(const std::wstring &AConstraintsText, const Func32::TSymbolList &SymbolList);
   void Update();
 
@@ -453,11 +452,11 @@ class TAxesView : public TGraphElem
 {
 public:
   TAxesView() {SetShowInLegend(false);}
-  std::wstring MakeText() const {return L"Axes";}
+  std::wstring MakeText() const;
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
-  boost::shared_ptr<TGraphElem> Clone() const {return boost::shared_ptr<TGraphElem>(new TAxesView(*this));}
+  boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TAxesView(*this));}
   int GetVisible() const;
   void ChangeVisible();
 };

@@ -4165,7 +4165,7 @@ object Form1: TForm1
     object HomePageAction: TAction
       Category = 'Help'
       Caption = 'Graph web site'
-      Hint = 'Open the default browser and shows the home page of the program.'
+      Hint = 'Open the default browser and show the home page of Graph.'
       ImageIndex = 40
       OnExecute = HomePageActionExecute
     end

@@ -401,7 +401,6 @@ void TForm14::UpdateErrorBars()
   Cols += CheckBox3->Checked && RadioButton3->Checked;
   Cols += CheckBox4->Checked && RadioButton6->Checked;
   Width = Width + (Cols - Grid->ColCount) * Grid->DefaultColWidth;
-  Edit1->Width = Edit1->Width + (Cols - Grid->ColCount) * Grid->DefaultColWidth;
   Grid->ColCount = Cols;
 
   RadioButton1->Enabled = CheckBox3->Checked;

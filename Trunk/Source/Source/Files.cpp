@@ -17,25 +17,19 @@
 #include "Encode.h"
 #include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
-bool TData::LoadFromFile(const std::wstring &FileName, bool ShowErrorMessages)
+void TData::LoadFromFile(const std::wstring &FileName)
 {
   TConfigFile IniFile;
   IniFile.LoadFromUtf8File(FileName);
 
-  if(!CheckIniInfo(IniFile, ShowErrorMessages))
-    return false;
+  CheckIniInfo(IniFile);
 
   std::wstring SavedByVersion = IniFile.Section(L"Graph").Read(L"Version", L"NA");
   if(SavedByVersion == L"NA")
   {
-    if(ShowErrorMessages)
-    {
-      if(std::_waccess(FileName.c_str(), 0))
-        MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), LoadString(RES_FILE_DOESNT_EXIST), MB_ICONSTOP);
-      else
-        MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadString(RES_FILE_READ_ERROR), MB_ICONSTOP);
-    }
-    return false;
+    if(std::_waccess(FileName.c_str(), 0))
+      throw EGraphError(LoadRes(RES_FILE_NOT_FOUND, FileName));
+    throw EGraphError(LoadRes(RES_NOT_GRAPH_FILE, FileName));
   }
 
   try
@@ -78,32 +72,23 @@ bool TData::LoadFromFile(const std::wstring &FileName, bool ShowErrorMessages)
   }
   catch(Func32::EFuncError &Error)
   {
-    if(ShowErrorMessages)
-      ShowErrorMsg(Error);
-    return false;
+    throw;
   }
   catch(...)
   {
-    if(ShowErrorMessages)
-      MessageBox(LoadRes(RES_ERROR_READING_FILE, FileName), L"File read error", MB_ICONSTOP);
-    return false;
+    throw EGraphError(LoadRes(RES_ERROR_READING_FILE, FileName));
   }
 
   Modified = false;
-  return true;
 }
 //---------------------------------------------------------------------------
-bool TData::Load(TConfigFile &IniFile)
+void TData::Load(TConfigFile &IniFile)
 {
-  if(!CheckIniInfo(IniFile))
-    return false;
+  CheckIniInfo(IniFile);
 
   std::wstring SavedByVersion = IniFile.Section(L"Graph").Read(L"Version", L"NA");
   if(SavedByVersion == L"NA")
-  {
-    MessageBox(LoadString(RES_INVALID_OBJECT), LoadString(RES_OBJECT_ERROR), MB_ICONSTOP);
-    return false;
-  }
+    throw EGraphError(LoadString(RES_INVALID_OBJECT));
 
   try
   {
@@ -121,77 +106,71 @@ bool TData::Load(TConfigFile &IniFile)
   }
   catch(Func32::EFuncError &Error)
   {
-    ShowErrorMsg(Error);
+    throw;
   }
   catch(...)
   {
-    MessageBox(LoadRes(RES_READING_OBJECT), LoadRes(RES_OBJECT_ERROR), MB_ICONSTOP);
+    throw EGraphError(LoadString(RES_READING_OBJECT));
   }
 
   Modified = false;
-  return true;
 }
 //---------------------------------------------------------------------------
-bool TData::Import(const std::wstring &FileName)
+void TData::Import(const std::wstring &FileName)
 {
-  TConfigFile IniFile(FileName);
-
-  if(!CheckIniInfo(IniFile))
-    return false;
-
-  std::wstring SavedByVersion = IniFile.Section(L"Graph").Read(L"Version", L"NA");
+  if(std::_waccess(FileName.c_str(), 0))
+    throw EGraphError(LoadRes(RES_FILE_NOT_FOUND, FileName));
+  TConfigFile ConfigFile(FileName);
+  std::wstring SavedByVersion = ConfigFile.Section(L"Graph").Read(L"Version", L"NA");
   if(SavedByVersion == L"NA")
+    throw EGraphError(LoadRes(RES_NOT_GRAPH_FILE, FileName));
+  if(TVersion(SavedByVersion) <= L"2.4")
+    throw EGraphError(LoadRes(RES_INVALID_VERSION, SavedByVersion, L"2.5"));
+
+  try
   {
-    if(std::_waccess(FileName.c_str(), 0))
-      MessageBox(LoadRes(RES_FILE_NOT_FOUND, FileName), LoadString(RES_FILE_DOESNT_EXIST), MB_ICONSTOP);
-    else
-      MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadString(RES_FILE_READ_ERROR), MB_ICONSTOP);
-    return false;
+    Import(ConfigFile);
   }
+  catch(Func32::EFuncError &Error)
+  {
+    throw;
+  }
+  catch(...)
+  {
+    throw EGraphError(LoadRes(RES_ERROR_READING_FILE, FileName));
+  }
+}
+//---------------------------------------------------------------------------
+void TData::Import(TConfigFile &IniFile)
+{
+  CheckIniInfo(IniFile);
 
   //Save decimal separator
   char OldDecimalSeparator = DecimalSeparator;
 
-  try
-  {
-    //Set decimal separator to '.' to make sure that file conversion are the
-    //same over the whole world
-    DecimalSeparator = '.';
+  //Set decimal separator to '.' to make sure that file conversion are the
+  //same over the whole world
+  DecimalSeparator = '.';
 
-    if(SavedByVersion != L"NA" && TVersion(SavedByVersion) <= L"2.4")
-    {
-      MessageBox(LoadRes(RES_INVALID_VERSION, SavedByVersion, L"2.5"), L"Invalid version");
-      return false;
-    }
+  //ElemList must be empty when reading shades and tangents from file
+  boost::shared_ptr<TTopGraphElem> Temp(new TTopGraphElem(this));
+  Temp.swap(TopElem);
+  PreprocessGrfFile(IniFile);
+  CustomFunctions.ReadFromIni(IniFile.Section(L"CustomFunctions"));
+  LoadData(IniFile);
+  AnimationInfo.ReadFromIni(IniFile.Section(L"Animate"));
+  LoadPluginData(IniFile.Section(L"PluginData"));
+  Temp.swap(TopElem);
+  while(Temp->ChildCount() > 0)
+    if(!dynamic_cast<TAxesView*>(Temp->GetChild(0).get())) //We only want 1 TAxesView
+      TopElem->InsertChild(Temp->GetChild(0));
 
-    //ElemList must be empty when reading shades and tangents from file
-    std::vector<boost::shared_ptr<TGraphElem> > Temp;
-    Temp.swap(ElemList);
-    PreprocessGrfFile(IniFile);
-    CustomFunctions.ReadFromIni(IniFile.Section(L"CustomFunctions"));
-    LoadData(IniFile);
-    AnimationInfo.ReadFromIni(IniFile.Section(L"Animate"));
-    LoadPluginData(IniFile.Section(L"PluginData"));
-    for(unsigned I = 0; I < ElemList.size(); I++)
-      if(!dynamic_cast<TAxesView*>(ElemList[I].get())) //We only want 1 TAxesView
-        Temp.push_back(ElemList[I]);
-    Temp.swap(ElemList);
-  }
-  catch(Func32::EFuncError &Error)
-  {
-    ShowErrorMsg(Error);
-  }
-  catch(...)
-  {
-    MessageBox(LoadRes(RES_ERROR_READING_FILE, FileName), L"File read error", MB_ICONSTOP);
-  }
   //Set decimal separator back
   DecimalSeparator = OldDecimalSeparator;
   Modified = true;
-  return true;
 }
 //---------------------------------------------------------------------------
-void TData::SaveImage(TConfigFile &IniFile, TCanvas *Canvas, int Width, int Height)
+void TData::SaveImage(TConfigFile &IniFile, TCanvas *Canvas, int Width, int Height) const
 {
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
   Bitmap->Width = Width;
@@ -207,7 +186,7 @@ void TData::SaveImage(TConfigFile &IniFile, TCanvas *Canvas, int Width, int Heig
 //---------------------------------------------------------------------------
 //Saves data to file given in FileName; if empty the user is requested a file name
 //If Remember is true this will be the new current file name
-bool TData::Save(const std::wstring &FileName, bool Remember)
+bool TData::Save(const std::wstring &FileName, bool Remember) const
 {
   try
   {
@@ -246,7 +225,7 @@ bool TData::Save(const std::wstring &FileName, bool Remember)
 }
 //---------------------------------------------------------------------------
 //Returns the saved data as a string
-std::wstring TData::SaveToString(bool ResetModified)
+std::wstring TData::SaveToString(bool ResetModified) const
 {
   TConfigFile IniFile;
   WriteInfoToIni(IniFile);
@@ -260,7 +239,7 @@ std::wstring TData::SaveToString(bool ResetModified)
   return IniFile.GetAsString();
 }
 //---------------------------------------------------------------------------
-void TData::SaveDefault()
+void TData::SaveDefault() const
 {
   TConfigRegistry Registry;
   if(Registry.CreateKey(REGISTRY_KEY))
@@ -282,7 +261,7 @@ char GetSeparator(const std::string &Str)
   return 0;
 }
 //---------------------------------------------------------------------------
-bool TData::ImportData(const std::wstring &FileName)
+bool TData::ImportPointSeries(const std::wstring &FileName)
 {
   const TColor Colors[] = {clRed, clGreen, clBlue, clYellow, clPurple, clAqua, clBlack, clGray, clSkyBlue	, clMoneyGreen, clDkGray};
 
