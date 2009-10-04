@@ -352,9 +352,21 @@ void ShowErrorMsg(const ECustomFunctionError &Error, TCustomEdit *Edit)
 //---------------------------------------------------------------------------
 void ShowErrorMsg(const EGraphError &Error, TCustomEdit *Edit)
 {
-  MessageBox(LoadRes(Error.ErrorCode + 210), LoadRes(RES_ERROR), MB_ICONWARNING);
+  MessageBox(Error.Message, LoadString(RES_ERROR), MB_ICONWARNING);
   if(Edit)
     SetGlobalFocus(Edit);
+}
+//---------------------------------------------------------------------------
+void ShowErrorMsg(const std::exception &Error, TCustomEdit *Edit)
+{
+  if(const EGraphError *E = dynamic_cast<const EGraphError*>(&Error))
+    ShowErrorMsg(*E);
+  else if(const Func32::EFuncError *E = dynamic_cast<const Func32::EFuncError*>(&Error))
+    ShowErrorMsg(*E);
+  else if(const ECustomFunctionError *E = dynamic_cast<const ECustomFunctionError*>(&Error))
+    ShowErrorMsg(*E);
+  else
+    MessageBox(Error.what(), LoadRes(RES_ERROR), MB_ICONWARNING);
 }
 //---------------------------------------------------------------------------
 void ShowStatusError(const String &Str)

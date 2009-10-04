@@ -405,7 +405,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
             Data.Insert(Label);
             Label->Update();
             Redraw();
-            UndoList.Push(TUndoAdd(Data, Data.Back()));
+            UndoList.Push(TUndoAdd(Data, Label));
             UpdateTreeView();
             UpdateMenu();
             Data.SetModified();
@@ -911,7 +911,7 @@ void TForm1::UpdateMenu()
     Tree_Export->Visible = false;
   }
 
-  if(dynamic_cast<TBaseFuncType*>(Elem.get()) || dynamic_cast<TPointSeries*>(Elem.get()) || dynamic_cast<TTextLabel*>(Elem.get()) || dynamic_cast<TRelation*>(Elem.get()))
+  if(TreeView->Selected->Level == 0 && dynamic_cast<TAxesView*>(Elem.get()) == NULL)
   {
     CutAction->Enabled = true;
     CopyAction->Enabled = true;
@@ -1354,6 +1354,22 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       ChangeLanguage(Languages[Key - '0']);
     }
   }
+/*
+  if(Shift == TShiftState() << ssCtrl << ssAlt)
+    try
+    {
+      switch(Key)
+      {
+        case '1':
+          String(L"Hello").ToInt(); //Generate Exception in Delphi
+          break;
+      }
+    }
+    catch(Exception &E)
+    {
+      ShowMessage(E.StackTrace);
+    }
+*/
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyPress(TObject *Sender, char &Key)
@@ -1410,7 +1426,6 @@ void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
   int Pos = GetScrollPos(TreeView->Handle, SB_VERT);
 
   int Index = TreeView->Selected ? TreeView->Selected->AbsoluteIndex : -1;
-//  TreeView->Selected = NULL;
   TreeView->Items->Clear();
 
   while(ImageList1->Count > FixedImages)
@@ -1872,17 +1887,9 @@ void __fastcall TForm1::CutActionExecute(TObject *Sender)
   if(!TreeView->Selected)
     return;
 
-  boost::shared_ptr<TGraphElem> GraphElem = GetGraphElem(TreeView->Selected);
-  if(TBaseFuncType *Func = dynamic_cast<TBaseFuncType*>(GraphElem.get()))
-    GraphClipboard.Copy(Func);
-  else if(TPointSeries *Series = dynamic_cast<TPointSeries*>(GraphElem.get()))
-    GraphClipboard.Copy(Series);
-  else if(TTextLabel *Label = dynamic_cast<TTextLabel*>(GraphElem.get()))
-    GraphClipboard.Copy(Label);
-  else if(TRelation *Relation = dynamic_cast<TRelation*>(GraphElem.get()))
-    GraphClipboard.Copy(Relation);
-
-  DeleteGraphElem(GraphElem);
+  boost::shared_ptr<TGraphElem> Elem = GetGraphElem(TreeView->Selected);
+  GraphClipboard.Copy(Data, Elem);
+  DeleteGraphElem(Elem);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::CopyActionExecute(TObject *Sender)
@@ -1895,16 +1902,7 @@ void __fastcall TForm1::CopyActionExecute(TObject *Sender)
   }
 
   boost::shared_ptr<TGraphElem> Elem = GetGraphElem(TreeView->Selected);
-  if(TBaseFuncType *Func = dynamic_cast<TBaseFuncType*>(Elem.get()))
-    GraphClipboard.Copy(Func);
-  else if(TPointSeries *Series = dynamic_cast<TPointSeries*>(Elem.get()))
-    GraphClipboard.Copy(Series);
-  else if(TTextLabel *Label = dynamic_cast<TTextLabel*>(Elem.get()))
-    GraphClipboard.Copy(Label);
-  else if(TRelation *Relation = dynamic_cast<TRelation*>(Elem.get()))
-    GraphClipboard.Copy(Relation);
-  else if(TOleObjectElem *OleObjectElem = dynamic_cast<TOleObjectElem*>(Elem.get()))
-    OleObjectElem->Copy();
+  GraphClipboard.Copy(Data, Elem);
   UpdateMenu();
 }
 //---------------------------------------------------------------------------
@@ -1913,8 +1911,7 @@ void __fastcall TForm1::PasteActionExecute(TObject *Sender)
   Draw.AbortUpdate();
   GraphClipboard.Paste(Data);
   Data.SetModified();
-  UpdateTreeView();
-  TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
+  UpdateTreeView(Data.Back());
   UpdateMenu();
   UpdateEval();
   Redraw();
@@ -1970,7 +1967,7 @@ void __fastcall TForm1::InsertFunctionActionExecute(TObject *Sender)
 {
   if(CreateForm<TForm5>(Data)->ShowModal() == mrOk)
   {
-    UpdateTreeView(Data.Back());
+    UpdateTreeView(Data.GetElem(Data.ElemCount()-1));
     TreeView->SetFocus();
     Data.SetModified();
     Redraw();
@@ -1983,8 +1980,7 @@ void __fastcall TForm1::InsertTangentActionExecute(TObject *Sender)
   if(Func)
     if(CreateForm<TForm12>(Data)->InsertTan(Func) == mrOk)
     {
-      UpdateTreeView();
-      TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
+      UpdateTreeView(Func->GetChild(Func->ChildCount()-1));
       Data.SetModified();
       Redraw();
       UpdateMenu();
@@ -1997,8 +1993,7 @@ void __fastcall TForm1::InsertShadeActionExecute(TObject *Sender)
   if(Func)
     if(CreateForm<TForm16>(Data)->InsertShade(Func) == mrOk)
     {
-      UpdateTreeView();
-      TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
+      UpdateTreeView(Func->GetChild(Func->ChildCount()-1));
       Data.SetModified();
       Redraw();
     }
@@ -2484,10 +2479,9 @@ void __fastcall TForm1::ZoomFitAllActionExecute(TObject *Sender)
 {
   TZoomFit ZoomFit(Data, Draw);
 
-  for(std::vector<boost::shared_ptr<TGraphElem> >::const_iterator Iter = Data.Begin();
-    Iter != Data.End(); ++Iter)
-    if((*Iter)->GetVisible())
-      (*Iter)->Accept(ZoomFit);
+  for(unsigned I = 0; I < Data.ElemCount(); I++)
+    if(Data.GetElem(I)->GetVisible())
+      Data.GetElem(I)->Accept(ZoomFit);
 
   if(!ZoomFit.IsChanged())
     return;
@@ -2608,7 +2602,7 @@ void __fastcall TForm1::InsertLabelActionExecute(TObject *Sender)
     Data.Insert(Label);
     Label->Update();
     Redraw();
-    UndoList.Push(TUndoAdd(Data, Data.Back()));
+    UndoList.Push(TUndoAdd(Data, Label));
     UpdateTreeView();
     UpdateMenu();
     Data.SetModified();
@@ -2804,11 +2798,12 @@ void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,
           return; //Node already at top
 
         TGraphElemPtr Elem = GetGraphElem(Node);
+        TGraphElemPtr Parent = Elem->GetParent();
         UndoList.Push(TUndoMove(Data, Elem, Node->Index));
-        Data.Delete(Elem);
-        Data.Insert(Elem, PrevNode->Index);
+        Parent->RemoveChild(Node->Index);
+        Parent->InsertChild(Elem, PrevNode->Index);
         Data.SetModified();
-        UpdateTreeView(GetGraphElem(PrevNode));
+        UpdateTreeView(Elem);
         Redraw();
         break;
       }
@@ -2822,11 +2817,12 @@ void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,
           return; //Node already at bottom
 
         TGraphElemPtr Elem = GetGraphElem(Node);
+        TGraphElemPtr Parent = Elem->GetParent();
         UndoList.Push(TUndoMove(Data, Elem, Node->Index));
-        Data.Delete(Elem);
-        Data.Insert(Elem, NextNode->Index);
+        Parent->RemoveChild(Node->Index);
+        Parent->InsertChild(Elem, NextNode->Index);
         Data.SetModified();
-        UpdateTreeView(GetGraphElem(NextNode));
+        UpdateTreeView(Elem);
         Redraw();
         break;
       }
@@ -2851,8 +2847,14 @@ void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,
 bool TForm1::LoadFromFile(const String &FileName, bool AddToRecent, bool ShowErrorMessages)
 {
   Draw.AbortUpdate();
-  if(!Data.LoadFromFile(FileName.c_str(), ShowErrorMessages))
+  try
   {
+    Data.LoadFromFile(FileName.c_str());
+  }
+  catch(std::exception &E)
+  {
+    if(ShowErrorMessages)
+      ShowErrorMsg(E);
     //Parts of Data might have changed. Better change this to Strong guarantee!!
     UpdateTreeView();
     return false;
@@ -2901,37 +2903,56 @@ bool __fastcall TForm1::OpenPreviewDialog1PreviewFile(
   //Clear area
   Canvas->FillRect(Rect);
 
-  if(PreviewData.LoadFromFile(FileName.c_str(), false) && !!PreviewDraw)
+  if(!PreviewDraw)
+    return true;
+
+  try
   {
-    PreviewData.Axes.ShowLegend = false; //Always disable legend for preview
-
-    //Make sure background is drawn
-    Canvas->Brush->Style = bsSolid;
-    //Set background color
-    Canvas->Brush->Color = PreviewData.Axes.BackgroundColor;
-    //Clear area
-    Canvas->FillRect(Rect);
-
-    PreviewDraw->SetCanvas(Canvas);
-    PreviewDraw->SetSize(Rect.Width(), Rect.Height());
-    PreviewDraw->DrawAll();
+    PreviewData.LoadFromFile(FileName.c_str());
   }
+  catch(std::exception &E)
+  { //Ignore errors
+  }
+
+  PreviewData.Axes.ShowLegend = false; //Always disable legend for preview
+
+  //Make sure background is drawn
+  Canvas->Brush->Style = bsSolid;
+  //Set background color
+  Canvas->Brush->Color = PreviewData.Axes.BackgroundColor;
+  //Clear area
+  Canvas->FillRect(Rect);
+
+  PreviewDraw->SetCanvas(Canvas);
+  PreviewDraw->SetSize(Rect.Width(), Rect.Height());
+  PreviewDraw->DrawAll();
   return true;
 }
 //---------------------------------------------------------------------------
 void TForm1::LoadDefault()
 {
   std::wstring Str = GetRegValue(REGISTRY_KEY, L"DefaultAxes", HKEY_CURRENT_USER, L"");
+  TConfigFile ConfigFile(Str);
 
-  if(Str.empty() || !Data.Load(TConfigFile(Str)))
+  if(Str.empty())
     Data.LoadDefault();
+  else
+    try
+    {
+      Data.Load(ConfigFile);
+    }
+    catch(std::exception &E)
+    {
+      ShowErrorMsg(E);
+      Data.LoadDefault();
+    }
 
   UndoList.Clear();
-  UpdateTreeView();
+  Python::ExecutePluginEvent(Python::peNew);
+  UpdateTreeView(Data.GetElem(0));
   Caption = NAME;
   Application->Title = NAME;
   UpdateMenu();
-  Python::ExecutePluginEvent(Python::peNew);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::OpenPreviewDialog1Show(TObject *Sender)
@@ -2989,7 +3010,7 @@ void __fastcall TForm1::IPrintDialog1Show(TObject *Sender)
   }                                  
 }
 //---------------------------------------------------------------------------
-const boost::shared_ptr<TGraphElem>& TForm1::GetGraphElem(TTreeNode *Node)
+boost::shared_ptr<TGraphElem> TForm1::GetGraphElem(TTreeNode *Node)
 {
   static boost::shared_ptr<TGraphElem> Empty;
   if(Node == NULL)
@@ -3014,9 +3035,12 @@ TTreeNode* TForm1::GetNode(const TGraphElemPtr &Elem)
   if(!Elem)
     throw Exception("No element given");
   const TGraphElemPtr &Parent = Elem->GetParent();
-  if(Parent)
-    return GetRootNode(Data.GetIndex(Parent))->Item[Data.GetIndex(Elem)];
-  return GetRootNode(Data.GetIndex(Elem));
+  if(!Parent)
+    return NULL;
+  TTreeNode *ParentNode = GetNode(Parent);
+  if(ParentNode == NULL)
+    return GetRootNode(Parent->GetChildIndex(Elem));
+  return ParentNode->Item[Parent->GetChildIndex(Elem)];
 }
 //---------------------------------------------------------------------------
 //Copy metafile and bitmap to clipboard; Only used when not possible to register
@@ -3143,7 +3167,7 @@ void __fastcall TForm1::InsertRelationActionExecute(TObject *Sender)
   if(CreateForm<TForm11>(Data)->ShowModal() == mrOk)
   {
     TreeView->SetFocus();
-    UpdateTreeView(Data.Back());
+    UpdateTreeView(Data.GetElem(Data.ElemCount()-1));
     UpdateMenu();
     Redraw();
   }
@@ -3444,9 +3468,9 @@ void __fastcall TForm1::ImportGraphFileActionExecute(TObject *Sender)
   if(OpenPreviewDialog1->Execute())
   {
     unsigned Count = Data.ElemCount();
-
-    if(Data.Import(OpenPreviewDialog1->FileName.c_str()))
+    try
     {
+      Data.Import(OpenPreviewDialog1->FileName.c_str());
       UndoList.BeginMultiUndo();
       for(unsigned I = Count; I < Data.ElemCount(); I++)
         UndoList.Push(TUndoAdd(Data, Data.GetElem(I)));
@@ -3454,6 +3478,10 @@ void __fastcall TForm1::ImportGraphFileActionExecute(TObject *Sender)
       UpdateTreeView();
       UpdateMenu();
       Redraw();
+    }
+    catch(std::exception &Error)
+    {
+      ShowErrorMsg(Error);
     }
   }
 }
@@ -3464,7 +3492,7 @@ void __fastcall TForm1::ImportPointSeriesActionExecute(TObject *Sender)
   if(OpenDialog->Execute())
   {
     for(int I = 0; I < OpenDialog->Files->Count; I++)
-      if(!Data.ImportData(OpenDialog->Files->Strings[I].c_str()))
+      if(!Data.ImportPointSeries(OpenDialog->Files->Strings[I].c_str()))
         return;
 
     UpdateTreeView();

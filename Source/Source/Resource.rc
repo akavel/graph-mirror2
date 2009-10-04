@@ -94,7 +94,7 @@ BEGIN
   RES_CharAfterEndPar     "Character found after brackets."
   RES_DoubleDefinedSymbol "Symbol \"%s\" defined more than once."
 
-  RES_InvalidRelation     "Invalid equation or inequality."
+  RES_INVALID_RELATION    "Invalid equation or inequality."
 
   RES_UPDATE              "Updating..."         //Shown in status bar
   RES_SAVE_CHANGES        "Save changes?"       //Asked when trying to exit

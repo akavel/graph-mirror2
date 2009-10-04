@@ -286,7 +286,7 @@ StringMap_swigregister = _Data.StringMap_swigregister
 StringMap_swigregister(StringMap)
 
 
-def Selected() -> "TGraphElemPtr const &" :
+def Selected() -> "TGraphElemPtr" :
   return _Data.Selected()
 Selected = _Data.Selected
 
@@ -310,25 +310,25 @@ def CreatePolFunc(*args) -> "boost::shared_ptr< TPolFunc >" :
   return _Data.CreatePolFunc(*args)
 CreatePolFunc = _Data.CreatePolFunc
 
-def GetFunctionListSize() -> "unsigned int" :
-  return _Data.GetFunctionListSize()
-GetFunctionListSize = _Data.GetFunctionListSize
+def ChildCount(*args) -> "unsigned int" :
+  return _Data.ChildCount(*args)
+ChildCount = _Data.ChildCount
 
-def GetFunctionListItem(*args) -> "TGraphElemPtr const &" :
-  return _Data.GetFunctionListItem(*args)
-GetFunctionListItem = _Data.GetFunctionListItem
+def GetChild(*args) -> "TGraphElemPtr" :
+  return _Data.GetChild(*args)
+GetChild = _Data.GetChild
 
-def DeleteFunctionListItem(*args) -> "void" :
-  return _Data.DeleteFunctionListItem(*args)
-DeleteFunctionListItem = _Data.DeleteFunctionListItem
+def RemoveChild(*args) -> "void" :
+  return _Data.RemoveChild(*args)
+RemoveChild = _Data.RemoveChild
 
-def InsertFunctionListItem(*args) -> "void" :
-  return _Data.InsertFunctionListItem(*args)
-InsertFunctionListItem = _Data.InsertFunctionListItem
+def InsertChild(*args) -> "void" :
+  return _Data.InsertChild(*args)
+InsertChild = _Data.InsertChild
 
-def ReplaceFunctionListItem(*args) -> "void" :
-  return _Data.ReplaceFunctionListItem(*args)
-ReplaceFunctionListItem = _Data.ReplaceFunctionListItem
+def ReplaceChild(*args) -> "void" :
+  return _Data.ReplaceChild(*args)
+ReplaceChild = _Data.ReplaceChild
 
 def CompareElem(*args) -> "bool" :
   return _Data.CompareElem(*args)
@@ -337,6 +337,10 @@ CompareElem = _Data.CompareElem
 def GetPluginData() -> "std::map< std::wstring,std::wstring,std::less< std::wstring >,std::allocator< std::pair< std::wstring const,std::wstring > > > &" :
   return _Data.GetPluginData()
 GetPluginData = _Data.GetPluginData
+
+def GetTopElem() -> "TGraphElemPtr const &" :
+  return _Data.GetTopElem()
+GetTopElem = _Data.GetTopElem
 class TGraphElem(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, TGraphElem, name, value)

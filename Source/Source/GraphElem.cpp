@@ -126,7 +126,7 @@ std::wostream& operator<<(std::wostream &Stream, const TTextValue &TextValue)
 // TGraphElem //
 ////////////////
 TGraphElem::TGraphElem(const TGraphElem &Elem)
-  : Visible(Elem.Visible), ShowInLegend(Elem.ShowInLegend), Data(NULL), LegendText(Elem.LegendText)
+  : Visible(Elem.Visible), ShowInLegend(Elem.ShowInLegend), LegendText(Elem.LegendText)
 {
   //Do not copy ChildList; It must be copyed from the derived class to be able to call SetParentFunc()
 }
@@ -152,23 +152,40 @@ void TGraphElem::ReadFromIni(const TConfigFileSection &Section)
       PluginData[Iter->first.substr(1)] = Iter->second;
 }
 //---------------------------------------------------------------------------
+TGraphElemPtr TGraphElem::CloneHelper(TGraphElem *NewElem) const
+{
+  TGraphElemPtr Elem(NewElem);
+  for(unsigned I = 0; I < ChildList.size(); I++)
+    Elem->InsertChild(ChildList[I]->Clone());
+  return Elem;
+}
+//---------------------------------------------------------------------------
 void TGraphElem::InsertChild(const TGraphElemPtr &Elem, int Index)
 {
+  TGraphElemPtr Parent = Elem->GetParent();
+  if(Parent)
+  {
+    int ParentIndex = Parent->GetChildIndex(Elem);
+    Elem->MakeText();
+    Parent->RemoveChild(ParentIndex);
+    Elem->MakeText();
+  }
+
   if(Index == -1)
     ChildList.push_back(Elem);
   else
     ChildList.insert(ChildList.begin() + Index, Elem);
   Elem->SetParent(shared_from_this());
-  Elem->SetData(&GetData());
 }
 //---------------------------------------------------------------------------
 void TGraphElem::ReplaceChild(unsigned Index, const TGraphElemPtr &Elem)
 {
   BOOST_ASSERT(Index < ChildList.size());
+  if(Elem->GetParent())
+    Elem->GetParent()->RemoveChild(Elem->GetParent()->GetChildIndex(Elem));
   ChildList[Index]->SetParent(boost::shared_ptr<TBaseFuncType>());
   ChildList[Index] = Elem;
   Elem->SetParent(shared_from_this());
-  Elem->SetData(&GetData());
 }
 //---------------------------------------------------------------------------
 unsigned TGraphElem::GetChildIndex(const TGraphElemPtr &Elem) const
@@ -179,21 +196,30 @@ unsigned TGraphElem::GetChildIndex(const TGraphElemPtr &Elem) const
 void TGraphElem::RemoveChild(unsigned Index)
 {
   BOOST_ASSERT(Index < ChildList.size());
-  ChildList[Index]->SetData(NULL);
   ChildList[Index]->SetParent(TGraphElemPtr());
   ChildList.erase(ChildList.begin() + Index);
 }
 //---------------------------------------------------------------------------
-void TGraphElem::SetData(const TData *AData)
+void TGraphElem::ClearCache()
 {
-  Data = AData;
   for(unsigned I = 0; I < ChildList.size(); I++)
-    ChildList[I]->SetData(AData);
+    ChildList[I]->ClearCache();
 }
 //---------------------------------------------------------------------------
 void TGraphElem::Update()
 {
   std::for_each(ChildList.begin(), ChildList.end(), boost::mem_fn(&TGraphElem::Update));
+}
+//---------------------------------------------------------------------------
+///////////////////
+// TTopGraphElem //
+///////////////////
+boost::shared_ptr<TTopGraphElem> TTopGraphElem::Clone(const TData *AData) const
+{
+  boost::shared_ptr<TTopGraphElem> Result =
+    boost::static_pointer_cast<TTopGraphElem>(CloneHelper(new TTopGraphElem(*this)));
+  Result->Data = AData;
+  return Result;
 }
 //---------------------------------------------------------------------------
 ///////////////////
@@ -246,22 +272,12 @@ void TBaseFuncType::ReadFromIni(const TConfigFileSection &Section)
   TGraphElem::ReadFromIni(Section);
 }
 //---------------------------------------------------------------------------
-const boost::shared_ptr<TBaseFuncType> TBaseFuncType::CloneWithTangents(TBaseFuncType *Dest, const TBaseFuncType *Src)
-{
-  boost::shared_ptr<TBaseFuncType> Func(Dest);
-  for(unsigned I = 0; I < Src->ChildCount(); I++)
-    Func->InsertChild(Src->GetChild(I)->Clone());
-  return Func;
-}
-//---------------------------------------------------------------------------
 void TBaseFuncType::ClearCache()
 {
   Points.clear();
   PointNum.clear();
   sList.clear();
-
-  for(unsigned N = 0; N < ChildCount(); N++)
-    GetChild(N)->ClearCache();
+  TGraphElem::ClearCache();
 }
 //---------------------------------------------------------------------------
 void TBaseFuncType::Update()
@@ -1002,7 +1018,7 @@ TRelation::TRelation(const std::wstring &AText, const Func32::TSymbolList &Symbo
   Constraints.SetTrigonometry(Trig);
   Func.SetFunc(Text, Args, SymbolList);
   if(Func.GetFunctionType() != Func32::ftInequality && Func.GetFunctionType() != Func32::ftEquation)
-    throw EGraphError(geInvalidRelation);
+    throw EGraphError(LoadString(RES_INVALID_RELATION));
 
   RelationType = Func.GetFunctionType() == Func32::ftInequality ? rtInequality : rtEquation;
   if(RelationType == rtEquation && Size == 0)
@@ -1106,6 +1122,11 @@ void TAxesView::ReadFromIni(const TConfigFileSection &Section)
 void TAxesView::WriteToIni(TConfigFileSection &Section) const
 {
   GetData().Axes.WriteToIni(Section);
+}
+//---------------------------------------------------------------------------
+std::wstring TAxesView::MakeText() const
+{
+  return LoadString(RES_AXES);
 }
 //---------------------------------------------------------------------------
 int TAxesView::GetVisible() const

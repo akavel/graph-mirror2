@@ -954,7 +954,16 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Load(
   std::wstring SavedVersion = ConfigFile.Section(L"Graph").Read(L"Version", L"NA");
   if(SavedVersion < TVersion(L"4.4.0.414"))
     ConfigFile.LoadFromString(String(Str.c_str()).c_str());
-  HRESULT Result = Form1->Data.Load(ConfigFile) ? S_OK : E_FAIL;
+
+  HRESULT Result = S_OK;
+  try
+  {
+    Form1->Data.Load(ConfigFile);
+  }
+  catch(...)
+  {
+    Result = E_FAIL;
+  }
 
   const TConfigFileSection &Section = ConfigFile.Section(L"Image");
   if(Section.KeyExists(L"Width"))

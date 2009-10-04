@@ -76,21 +76,23 @@ def FindAction(name):
                 if a.Name == name:
                     return a
 
-class FunctionListType(collections.MutableSequence):
+class ChildListType(collections.MutableSequence):
+    def __init__(self, node):
+        self.node = node
     def __getitem__(self, key):
-        if key < Data.GetFunctionListSize():
-            return Data.GetFunctionListItem(key)
+        if key < Data.ChildCount(self.node):
+            return Data.GetChild(self.node, key)
         raise IndexError
     def __len__(self):
-        return Data.GetFunctionListSize()
+        return Data.ChildCount(self.node)
     def insert(self, key, value):
-        Data.InsertFunctionListItem(key, value)
+        Data.InsertChild(self.node, value, key)
     def __setitem__(self, key, value):
-        Data.ReplaceFunctionListItem(key, value)
+        Data.ReplaceChild(self.node, key, value)
     def append(self, value):
-        Data.InsertFunctionListItem(Data.GetFunctionListSize(), value)
+        Data.InsertChild(self.node, value, -1)
     def __delitem__(self, key):
-        Data.DeleteFunctionListItem(key)
+        Data.RemoveChild(self.node, key)
     def __repr__(self):
         return repr(list(self))
 
@@ -105,10 +107,11 @@ class PluginDataType(collections.MutableMapping):
     def __repr__(self): return repr(dict(self))
 
 TGraphElem.PluginData = property(lambda self: PluginDataType(self._PluginData))
+TGraphElem.ChildList = property(lambda self: ChildListType(self))
 PluginData = PluginDataType(Data.GetPluginData())
 
 Constants = ConstantsType()
-FunctionList = FunctionListType()
+FunctionList = ChildListType(Data.GetTopElem())
 
 Eval = GraphImpl.Eval
 EvalComplex = GraphImpl.EvalComplex

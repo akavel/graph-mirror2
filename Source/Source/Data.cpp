@@ -29,26 +29,23 @@ namespace Graph
 {
 TUndoList UndoList(50);
 //---------------------------------------------------------------------------
-TData::TData(const TData &OldData) : Axes(OldData.Axes), CustomFunctions(OldData.CustomFunctions),
-  Modified(false), OnAbortUpdate(NULL)
+TData::TData()
+  : CustomFunctions(*this), TopElem(new TTopGraphElem(this))
 {
-  for(unsigned int I = 0; I < OldData.ElemList.size(); I++)
-  {
-    ElemList.push_back(OldData.ElemList[I]->Clone());
-    ElemList.back()->SetData(this);
-  }
-
-  for(unsigned int I = 0; I < ElemList.size(); I++)
-    for(unsigned J = 0; J < ElemList[I]->ChildCount(); J++)
-      if(TShade *Shade = dynamic_cast<TShade*>(ElemList[I]->GetChild(J).get()))
+}
+//---------------------------------------------------------------------------
+ TData::TData(const TData &OldData) : Axes(OldData.Axes), CustomFunctions(OldData.CustomFunctions),
+  Modified(false), OnAbortUpdate(NULL), TopElem(OldData.TopElem->Clone(this))
+{
+  for(unsigned int I = 0; I < TopElem->ChildCount(); I++)
+    for(unsigned J = 0; J < TopElem->GetChild(I)->ChildCount(); J++)
+      if(TShade *Shade = dynamic_cast<TShade*>(TopElem->GetChild(I)->GetChild(J).get()))
         if(Shade->Func2)
         {
           //Update pointer cross references
-          int Index = IndexOf(OldData.ElemList, Shade->Func2);
-          Shade->Func2 = boost::dynamic_pointer_cast<TBaseFuncType>(ElemList[Index]);
+          int Index = OldData.TopElem->GetChildIndex(Shade->Func2);
+          Shade->Func2 = boost::dynamic_pointer_cast<TBaseFuncType>(TopElem->GetChild(Index));
         }
-
-//  Resize(1);
 }
 //---------------------------------------------------------------------------
 void TData::WriteInfoToIni(TConfigFile &IniFile)
@@ -60,29 +57,21 @@ void TData::WriteInfoToIni(TConfigFile &IniFile)
   Section.Write(L"OS", GetWindowsVersion());
 }
 //---------------------------------------------------------------------------
-bool TData::CheckIniInfo(const TConfigFile &IniFile, bool ShowErrorMessages)
+void TData::CheckIniInfo(const TConfigFile &IniFile)
 {
   std::wstring MinVersion = IniFile.Section(L"Graph").Read(L"MinVersion", L"1.0");
   if(TVersion(MinVersion) > TVersionInfo().ProductVersion())
-  {
-    if(ShowErrorMessages)
-      MessageBox(LoadRes(548, MinVersion), LoadString(RES_FILE_ERROR), MB_ICONSTOP);
-    return false;
-  }
+    throw EGraphError(LoadRes(548, MinVersion));
 
   TVersion SavedByVersion = IniFile.Section(L"Graph").Read(L"Version", TVersion(100));
   if(SavedByVersion < MIN_SAVED_VERSION)
-  {
-    if(ShowErrorMessages)
-      MessageBox(LoadRes(549), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
-    return false;
-  }
-  return true;
+    throw EGraphError(LoadString(549));
 }
 //---------------------------------------------------------------------------
 void TData::Clear()
 {
-  ElemList.clear();
+  while(TopElem->ChildCount())
+    TopElem->RemoveChild(0);
   CustomFunctions.Clear();
   AnimationInfo.Clear();
   PluginData.clear();
@@ -90,57 +79,84 @@ void TData::Clear()
 //---------------------------------------------------------------------------
 void TData::ClearCache()
 {
-  for(unsigned I = 0; I < ElemList.size(); I++)
-    ElemList[I]->ClearCache();
+  TopElem->ClearCache();
 }
 //---------------------------------------------------------------------------
-void TData::SaveData(TConfigFile &IniFile)
+struct TElemCount
 {
-  unsigned FuncCount = 0;
-  unsigned PointSeriesCount = 0;
-  unsigned ShadeCount = 0;
-  unsigned LabelCount = 0;
-  unsigned RelationCount = 0;
-  unsigned OleObjectCount = 0;
-
-  for(unsigned I = 0; I < ElemList.size(); I++)
+  unsigned Func;
+  unsigned PointSeries;
+  unsigned Shade;
+  unsigned Label;
+  unsigned Relation;
+  unsigned OleObject;
+  TElemCount::TElemCount() : Func(0), PointSeries(0), Shade(0), Label(0),
+    Relation(0), OleObject(0) {}
+};
+//---------------------------------------------------------------------------
+void TData::WriteElem(TConfigFile &IniFile, const TGraphElemPtr &Elem, struct TElemCount &Count)
+{
+  if(TBaseFuncType *Func = dynamic_cast<TBaseFuncType*>(Elem.get()))
   {
-    if(TBaseFuncType *Func = dynamic_cast<TBaseFuncType*>(ElemList[I].get()))
-    {
-      std::wstring SectionName = L"Func" + ToWString(++FuncCount);
-      Func->WriteToIni(IniFile.Section(SectionName));
+    std::wstring SectionName = L"Func" + ToWString(++Count.Func);
+    Func->WriteToIni(IniFile.Section(SectionName));
 
-      //Write tangents
-      unsigned TanCount = 0;
-      for(unsigned N = 0; N < Func->ChildCount(); N++)
-        if(dynamic_cast<TTan*>(Func->GetChild(N).get()))
-          Func->GetChild(N)->WriteToIni(IniFile.Section(SectionName + L"Tan" + ToWString(++TanCount)));
-      IniFile.Section(SectionName).Write(L"TanCount", TanCount, 0U);
-    }
-    else if(TPointSeries *Series = dynamic_cast<TPointSeries*>(ElemList[I].get()))
-      Series->WriteToIni(IniFile.Section(L"PointSeries" + ToWString(++PointSeriesCount)));
-    else if(TTextLabel *Label = dynamic_cast<TTextLabel*>(ElemList[I].get()))
-      Label->WriteToIni(IniFile.Section(L"Label" + ToWString(++LabelCount)));
-    else if(TRelation *Relation = dynamic_cast<TRelation*>(ElemList[I].get()))
-      Relation->WriteToIni(IniFile.Section(L"Relation" + ToWString(++RelationCount)));
-    else if(TAxesView *AxesView = dynamic_cast<TAxesView*>(ElemList[I].get()))
-      AxesView->WriteToIni(IniFile.Section(L"Axes"));
-    else if(TOleObjectElem *OleObjectElem = dynamic_cast<TOleObjectElem*>(ElemList[I].get()))
-      OleObjectElem->WriteToIni(IniFile.Section(L"OleObject" + ToWString(++OleObjectCount)));
-
-    for(unsigned J = 0; J < ElemList[I]->ChildCount(); J++)
-      if(dynamic_cast<TShade*>(ElemList[I]->GetChild(J).get()))
-        ElemList[I]->GetChild(J)->WriteToIni(IniFile.Section(L"Shade" + ToWString(++ShadeCount)));
+    //Write tangents
+    unsigned TanCount = 0;
+    for(unsigned N = 0; N < Func->ChildCount(); N++)
+      if(dynamic_cast<TTan*>(Func->GetChild(N).get()))
+        Func->GetChild(N)->WriteToIni(IniFile.Section(SectionName + L"Tan" + ToWString(++TanCount)));
+    IniFile.Section(SectionName).Write(L"TanCount", TanCount, 0U);
   }
+  else if(TPointSeries *Series = dynamic_cast<TPointSeries*>(Elem.get()))
+    Series->WriteToIni(IniFile.Section(L"PointSeries" + ToWString(++Count.PointSeries)));
+  else if(TTextLabel *Label = dynamic_cast<TTextLabel*>(Elem.get()))
+    Label->WriteToIni(IniFile.Section(L"Label" + ToWString(++Count.Label)));
+  else if(TRelation *Relation = dynamic_cast<TRelation*>(Elem.get()))
+    Relation->WriteToIni(IniFile.Section(L"Relation" + ToWString(++Count.Relation)));
+  else if(TAxesView *AxesView = dynamic_cast<TAxesView*>(Elem.get()))
+    AxesView->WriteToIni(IniFile.Section(L"Axes"));
+  else if(TOleObjectElem *OleObjectElem = dynamic_cast<TOleObjectElem*>(Elem.get()))
+    OleObjectElem->WriteToIni(IniFile.Section(L"OleObject" + ToWString(++Count.OleObject)));
 
-  TConfigFileSection &DataSection = IniFile.Section(L"Data");
+  for(unsigned J = 0; J < Elem->ChildCount(); J++)
+    if(dynamic_cast<TShade*>(Elem->GetChild(J).get()))
+      Elem->GetChild(J)->WriteToIni(IniFile.Section(L"Shade" + ToWString(++Count.Shade)));
+}
+//---------------------------------------------------------------------------
+void TData::WriteCount(TConfigFile &ConfigFile, const TElemCount &Count)
+{
+  TConfigFileSection &DataSection = ConfigFile.Section(L"Data");
   //Don't use "LabelCount" because it gives problems in version 2.7.1
-  DataSection.Write(L"TextLabelCount", LabelCount);
-  DataSection.Write(L"FuncCount", FuncCount);
-  DataSection.Write(L"PointSeriesCount", PointSeriesCount);
-  DataSection.Write(L"ShadeCount", ShadeCount);
-  DataSection.Write(L"RelationCount", RelationCount);
-  DataSection.Write(L"OleObjectCount", OleObjectCount);
+  DataSection.Write(L"TextLabelCount", Count.Label);
+  DataSection.Write(L"FuncCount", Count.Func);
+  DataSection.Write(L"PointSeriesCount", Count.PointSeries);
+  DataSection.Write(L"ShadeCount", Count.Shade);
+  DataSection.Write(L"RelationCount", Count.Relation);
+  DataSection.Write(L"OleObjectCount", Count.OleObject);
+}
+//---------------------------------------------------------------------------
+std::wstring TData::SaveToString(const TGraphElemPtr &Elem) const
+{
+  TConfigFile ConfigFile;
+  TElemCount Count;
+  WriteInfoToIni(ConfigFile);
+  //Use Temp data with only the element we want to copy.
+  //This is done to make sure TShade references to functions are correct
+  TData Temp;
+  TGraphElemPtr TempElem = Elem->Clone();
+  Temp.Insert(TempElem);
+  Temp.WriteElem(ConfigFile, TempElem, Count);
+  WriteCount(ConfigFile, Count);
+  return ConfigFile.GetAsString();
+}
+//---------------------------------------------------------------------------
+void TData::SaveData(TConfigFile &ConfigFile) const
+{
+  TElemCount Count;
+  for(unsigned I = 0; I < ElemCount(); I++)
+    WriteElem(ConfigFile, GetElem(I), Count);
+  WriteCount(ConfigFile, Count);
 }
 //---------------------------------------------------------------------------
 void TData::LoadData(const TConfigFile &IniFile)
@@ -172,7 +188,7 @@ void TData::LoadData(const TConfigFile &IniFile)
       continue; //No known elem type
 
     //Stream data from inifile
-    Elem->SetData(this);
+    TopElem->InsertChild(Elem);
     Elem->ReadFromIni(Section);
 
     //Create list of tangents
@@ -180,12 +196,10 @@ void TData::LoadData(const TConfigFile &IniFile)
     for(int I = 0; I < TanCount; I++)
     {
       boost::shared_ptr<TTan> Tan(new TTan);
-      Tan->SetData(this);
-      Tan->ReadFromIni(IniFile.Section(L"Tan" + ToWString(I+1)));
       Elem->InsertChild(Tan);
+      Tan->ReadFromIni(IniFile.Section(SectionName + L"Tan" + ToWString(I+1)));
     }
 
-    ElemList.push_back(Elem);
     Elem->Update(); //Needed to update a and q for tangents. Must be called after ParentFunc is set
   }
 
@@ -194,12 +208,11 @@ void TData::LoadData(const TConfigFile &IniFile)
   for(unsigned I = 0; I < ShadeCount; I++)
   {
     boost::shared_ptr<TGraphElem> Shade(new TShade);
-    Shade->SetData(this);
     const TConfigFileSection &Section = IniFile.Section(L"Shade" + ToWString(I+1));
-    Shade->ReadFromIni(Section);
     int FuncNo = Section.Read(L"FuncNo", 0) - 1;
     if(FuncNo != -1)
-      ElemList[FuncNo]->InsertChild(Shade);
+      GetFuncFromIndex(FuncNo)->InsertChild(Shade);
+    Shade->ReadFromIni(Section);
   }
 }
 //---------------------------------------------------------------------------
@@ -260,8 +273,8 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y) const
 
   while(p1 != Begin || p4 != End)
   {
-    for(unsigned I = 0; I < ElemList.size(); I++)
-      if(const TBaseFuncType *Func2 = dynamic_cast<TBaseFuncType*>(ElemList[I].get()))
+    for(unsigned I = 0; I < TopElem->ChildCount(); I++)
+      if(const TBaseFuncType *Func2 = dynamic_cast<TBaseFuncType*>(TopElem->GetChild(I).get()))
         if(Func2->GetVisible())
         {
           const Func32::TFunc *StdFunc2 = dynamic_cast<const Func32::TFunc*>(&Func2->GetFunc());
@@ -344,7 +357,7 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y) const
   return NAN; //Signal no crossing found
 }
 //---------------------------------------------------------------------------
-std::wstring TData::CreatePointSeriesDescription()
+std::wstring TData::CreatePointSeriesDescription() const
 {
   std::wstring Str = LoadString(RES_SERIES) + L" ";
   int I = 1;
@@ -352,19 +365,18 @@ std::wstring TData::CreatePointSeriesDescription()
   {
     std::wstring CmpStr = Str + ToWString(I++);
     unsigned N;
-    for(N = 0; N < ElemList.size(); N++)
-      if(ElemList[N]->GetLegendText() == CmpStr)
-        break;
-    if(N == ElemList.size())
-      return CmpStr;
+    for(N = 0; N < TopElem->ChildCount(); N++)
+      if(TopElem->GetChild(N)->GetLegendText() == CmpStr)
+        continue;
+    return CmpStr;
   }
 }
 //---------------------------------------------------------------------------
-boost::shared_ptr<TTextLabel> TData::FindLabel(int X, int Y)
+boost::shared_ptr<TTextLabel> TData::FindLabel(int X, int Y) const
 {
-  for(unsigned I = 0; I < ElemList.size(); I++)
+  for(unsigned I = 0; I < TopElem->ChildCount(); I++)
   {
-    if(boost::shared_ptr<TTextLabel> Label = boost::dynamic_pointer_cast<TTextLabel>(ElemList[I]))
+    if(boost::shared_ptr<TTextLabel> Label = boost::dynamic_pointer_cast<TTextLabel>(TopElem->GetChild(I)))
       if(Label->GetVisible() && Label->IsInsideRect(X, Y))
         return Label;
   }
@@ -417,7 +429,7 @@ void TData::SetModified()
 double FindNearestValue(const std::vector<Func32::TCoordSet> &Values, int X, int Y, const TDraw &Draw)
 {
   if(Values.empty())
-    throw Exception("No data in vector");
+    throw EGraphError(L"No data in vector");
 
   double MinDist = INF;
   double Result;
@@ -507,88 +519,65 @@ void TData::Delete(const TGraphElemPtr &Elem)
   const TGraphElemPtr &Parent = Elem->GetParent();
   if(Parent)
     Parent->RemoveChild(Parent->GetChildIndex(Elem));
-  else
-    ElemList.erase(ElemList.begin() + IndexOf(ElemList, Elem));
-  Elem->SetData(NULL);
 }
 //---------------------------------------------------------------------------
-int TData::GetIndex(const TGraphElemPtr &Elem)
+int TData::GetIndex(const TGraphElemPtr &Elem) const
 {
-  if(const TGraphElemPtr &Parent = Elem->GetParent())
-    return Parent->GetChildIndex(Elem);
-  return IndexOf(ElemList, Elem);
+  const TGraphElemPtr &Parent = Elem->GetParent();
+  return Parent->GetChildIndex(Elem);
 }
 //---------------------------------------------------------------------------
 void TData::Replace(unsigned Index, const TGraphElemPtr &Elem)
 {
-  ElemList.at(Index)->SetData(NULL);
-  Elem->SetData(this);
-  ElemList.at(Index) = Elem;
+  TopElem->ReplaceChild(Index, Elem);
 }
 //---------------------------------------------------------------------------
 void TData::Replace(const TGraphElemPtr &OldElem, const TGraphElemPtr &Elem)
 {
-  if(const TGraphElemPtr &Parent = OldElem->GetParent())
-    Parent->ReplaceChild(Parent->GetChildIndex(OldElem), Elem);
-  else
+  int Index = OldElem->GetParent()->GetChildIndex(OldElem);
+  OldElem->GetParent()->ReplaceChild(Index, Elem);
+
+  while(OldElem->ChildCount() > 0)
   {
-    while(OldElem->ChildCount() > 0)
-    {
-      const TGraphElemPtr &Child = OldElem->GetChild(0);
-      OldElem->RemoveChild(0);
-      Elem->InsertChild(Child);
-    }
-
-    for(unsigned I = 0; I < ElemList.size(); I++)
-      for(unsigned J = 0; J < ElemList[I]->ChildCount(); J++)
-        if(const boost::shared_ptr<TShade> &Shade = boost::dynamic_pointer_cast<TShade>(ElemList[I]->GetChild(J)))
-          if(Shade->Func2 == OldElem)
-            Shade->Func2 = boost::dynamic_pointer_cast<TBaseFuncType>(Elem);
-
-    ElemList[IndexOf(ElemList, OldElem)] = Elem;
-    Elem->SetData(this);
-    Elem->Update(); //Update tangents
-    OldElem->SetData(NULL);
+    const TGraphElemPtr &Child = OldElem->GetChild(0);
+    OldElem->RemoveChild(0);
+    Elem->InsertChild(Child);
   }
+
+  for(unsigned I = 0; I < TopElem->ChildCount(); I++)
+    for(unsigned J = 0; J < TopElem->GetChild(I)->ChildCount(); J++)
+      if(const boost::shared_ptr<TShade> &Shade = boost::dynamic_pointer_cast<TShade>(TopElem->GetChild(I)->GetChild(J)))
+        if(Shade->Func2 == OldElem)
+          Shade->Func2 = boost::dynamic_pointer_cast<TBaseFuncType>(Elem);
+
+  Elem->Update(); //Update tangents
 }
 //---------------------------------------------------------------------------
 void TData::Insert(const boost::shared_ptr<TGraphElem> &Elem, int Index)
 {
-  if(Index == -1)
-    ElemList.push_back(Elem);
-  else
-    ElemList.insert(ElemList.begin() + Index, Elem);
-  Elem->SetData(this);
+  TopElem->InsertChild(Elem, Index);
 }
 //---------------------------------------------------------------------------
 boost::shared_ptr<TBaseFuncType> TData::GetFuncFromIndex(unsigned Index) const
 {
   unsigned Count = 0;
-  for(unsigned I = 0; I < ElemList.size(); I++)
-    if(boost::shared_ptr<TBaseFuncType> Func = boost::dynamic_pointer_cast<TBaseFuncType>(ElemList[I]))
+  for(unsigned I = 0; I < TopElem->ChildCount(); I++)
+    if(boost::shared_ptr<TBaseFuncType> Func = boost::dynamic_pointer_cast<TBaseFuncType>(TopElem->GetChild(I)))
       if(Count++ == Index)
         return Func;
   return boost::shared_ptr<TBaseFuncType>();
 }
 //---------------------------------------------------------------------------
-boost::shared_ptr<TGraphElem> TData::Back() const
+boost::shared_ptr<TGraphElem> TData::GetElem(unsigned Index) const
 {
-  if(ElemList.empty())
-    return boost::shared_ptr<TGraphElem>();
-  return ElemList.back();
-}
-//---------------------------------------------------------------------------
-const boost::shared_ptr<TGraphElem>& TData::GetElem(unsigned Index) const
-{
-  BOOST_ASSERT(Index < ElemList.size());
-  return ElemList[Index];
+  BOOST_ASSERT(Index < TopElem->ChildCount());
+  return TopElem->GetChild(Index);
 }
 //---------------------------------------------------------------------------
 void TData::Update()
 {
   CustomFunctions.Update();
-  for(unsigned I = 0; I < ElemList.size(); ++I)
-    ElemList[I]->Update();
+  TopElem->Update();
 }
 //---------------------------------------------------------------------------
 void TData::LoadPluginData(const TConfigFileSection &Section)

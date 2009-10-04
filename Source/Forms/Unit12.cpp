@@ -92,7 +92,7 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
   {
     Tan->SetVisible(OldTan->GetVisible());
     Tan->SetShowInLegend(OldTan->GetShowInLegend());
-    unsigned Index = Parent->GetChildIndex(Tan);
+    unsigned Index = Parent->GetChildIndex(OldTan);
     UndoList.Push(TUndoChange(Data, OldTan, Tan));
     Parent->ReplaceChild(Index, Tan);
   }

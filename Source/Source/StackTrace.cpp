@@ -46,6 +46,8 @@ static TGetExceptionObject OldExceptObjProc = NULL;
 //Called when delay loading a DLL failes
 FARPROC WINAPI DllLoadFailure(dliNotification dliNotify, DelayLoadInfo *pdli)
 {
+  if(dliNotify == dliFailGetProcAddress)
+    throw EDllLoadError("Failed to get address of: " + pdli->dlp.fImportByName ? String(pdli->dlp.szProcName) : IntToStr((int)pdli->dlp.dwOrdinal));
   throw EDllLoadError("Failed to load " + String(pdli->szDll));
 }
 //---------------------------------------------------------------------------

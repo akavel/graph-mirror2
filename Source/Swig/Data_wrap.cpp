@@ -5064,20 +5064,37 @@ PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem)
 }
 
 
-static const TGraphElemPtr& Selected() {return Form1->GetGraphElem(Form1->TreeView->Selected);}
+static TGraphElemPtr Selected() {return Form1->GetGraphElem(Form1->TreeView->Selected);}
 static void AbortUpdate() {Form1->Data.AbortUpdate();}
 static void Redraw() {Form1->Redraw();}
 static boost::shared_ptr<TStdFunc> CreateStdFunc(const std::wstring &Text) {return boost::shared_ptr<TStdFunc>(new TStdFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 static boost::shared_ptr<TParFunc> CreateParFunc(const std::wstring &xText, const std::wstring &yText) {return boost::shared_ptr<TParFunc>(new TParFunc(xText, yText, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 static boost::shared_ptr<TPolFunc> CreatePolFunc(const std::wstring &Text) {return boost::shared_ptr<TPolFunc>(new TPolFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 
-static unsigned GetFunctionListSize() {return Form1->Data.ElemCount();}
-static const TGraphElemPtr& GetFunctionListItem(unsigned Index) {return Form1->Data.GetElem(Index);}
-static void DeleteFunctionListItem(unsigned Index) {Form1->Data.Delete(Form1->Data.GetElem(Index)); Form1->UpdateTreeView();}
-static void InsertFunctionListItem(unsigned Index, const TGraphElemPtr &Elem) {Form1->Data.Insert(Elem, Index); Form1->UpdateTreeView();}
-static void ReplaceFunctionListItem(unsigned Index, const TGraphElemPtr &Elem) {Form1->Data.Replace(Index, Elem); Form1->UpdateTreeView();}
+static unsigned ChildCount(const TGraphElemPtr &Elem) {return Elem->ChildCount();}
+static TGraphElemPtr GetChild(const TGraphElemPtr &Elem, unsigned Index) {return Elem->GetChild(Index);}
+static void RemoveChild(const TGraphElemPtr &Elem, unsigned Index) {Elem->RemoveChild(Index); Form1->UpdateTreeView();}
+static void InsertChild(const TGraphElemPtr &Elem, const TGraphElemPtr &Child, int Index) {Elem->InsertChild(Child, Index); Form1->UpdateTreeView();}
+static void ReplaceChild(const TGraphElemPtr &Elem, unsigned Index, const TGraphElemPtr &Child) {Elem->ReplaceChild(Index, Child); Form1->UpdateTreeView();}
 static bool CompareElem(const TGraphElemPtr &E1, const TGraphElemPtr &E2) {return E1.get() == E2.get();}
 static std::map<std::wstring,std::wstring>& GetPluginData() {return Form1->Data.PluginData;}
+static const TGraphElemPtr& GetTopElem() {return Form1->Data.GetTopElem();}
+
+
+SWIGINTERN int
+SWIG_AsVal_int (PyObject * obj, int *val)
+{
+  long v;
+  int res = SWIG_AsVal_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v < INT_MIN || v > INT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< int >(v);
+    }
+  }  
+  return res;
+}
 
 
 #define TGraphElem_Visible_get(self_) self_->GetVisible()
@@ -5096,22 +5113,6 @@ static std::map<std::wstring,std::wstring>& GetPluginData() {return Form1->Data.
 
 #define TGraphElem_Parent_get(self_) *new TGraphElemPtr(self_->GetParent())
   
-
-SWIGINTERN int
-SWIG_AsVal_int (PyObject * obj, int *val)
-{
-  long v;
-  int res = SWIG_AsVal_long (obj, &v);
-  if (SWIG_IsOK(res)) {
-    if ((v < INT_MIN || v > INT_MAX)) {
-      return SWIG_OverflowError;
-    } else {
-      if (val) *val = static_cast< int >(v);
-    }
-  }  
-  return res;
-}
-
 
 SWIGINTERN int
 SWIG_AsVal_bool (PyObject *obj, bool *val)
@@ -12462,13 +12463,11 @@ SWIGINTERN PyObject *StringMap_swigregister(PyObject *SWIGUNUSEDPARM(self), PyOb
 
 SWIGINTERN PyObject *_wrap_Selected(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  TGraphElemPtr *result = 0 ;
+  TGraphElemPtr result;
   
   if (!PyArg_ParseTuple(args,(char *)":Selected")) SWIG_fail;
-  result = (TGraphElemPtr *) &Selected();
-  {
-    resultobj = DownCastSharedPtr(*result);
-  }
+  result = Selected();
+  resultobj = SWIG_NewPointerObj((new TGraphElemPtr(static_cast< const TGraphElemPtr& >(result))), SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -12602,12 +12601,24 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GetFunctionListSize(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ChildCount(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
+  TGraphElemPtr *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
   unsigned int result;
   
-  if (!PyArg_ParseTuple(args,(char *)":GetFunctionListSize")) SWIG_fail;
-  result = (unsigned int)GetFunctionListSize();
+  if (!PyArg_ParseTuple(args,(char *)"O:ChildCount",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ChildCount" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ChildCount" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
+  }
+  arg1 = reinterpret_cast< TGraphElemPtr * >(argp1);
+  result = (unsigned int)ChildCount((boost::shared_ptr< TGraphElem > const &)*arg1);
   resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
   return resultobj;
 fail:
@@ -12615,44 +12626,66 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GetFunctionListItem(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GetChild(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  unsigned int arg1 ;
-  unsigned int val1 ;
-  int ecode1 = 0 ;
+  TGraphElemPtr *arg1 = 0 ;
+  unsigned int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
-  TGraphElemPtr *result = 0 ;
+  PyObject * obj1 = 0 ;
+  TGraphElemPtr result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:GetFunctionListItem",&obj0)) SWIG_fail;
-  ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "GetFunctionListItem" "', argument " "1"" of type '" "unsigned int""'");
-  } 
-  arg1 = static_cast< unsigned int >(val1);
-  result = (TGraphElemPtr *) &GetFunctionListItem(arg1);
-  {
-    resultobj = DownCastSharedPtr(*result);
+  if (!PyArg_ParseTuple(args,(char *)"OO:GetChild",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GetChild" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
   }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GetChild" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
+  }
+  arg1 = reinterpret_cast< TGraphElemPtr * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "GetChild" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  result = GetChild((boost::shared_ptr< TGraphElem > const &)*arg1,arg2);
+  resultobj = SWIG_NewPointerObj((new TGraphElemPtr(static_cast< const TGraphElemPtr& >(result))), SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_DeleteFunctionListItem(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_RemoveChild(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  unsigned int arg1 ;
-  unsigned int val1 ;
-  int ecode1 = 0 ;
+  TGraphElemPtr *arg1 = 0 ;
+  unsigned int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:DeleteFunctionListItem",&obj0)) SWIG_fail;
-  ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "DeleteFunctionListItem" "', argument " "1"" of type '" "unsigned int""'");
+  if (!PyArg_ParseTuple(args,(char *)"OO:RemoveChild",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "RemoveChild" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "RemoveChild" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
+  }
+  arg1 = reinterpret_cast< TGraphElemPtr * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "RemoveChild" "', argument " "2"" of type '" "unsigned int""'");
   } 
-  arg1 = static_cast< unsigned int >(val1);
-  DeleteFunctionListItem(arg1);
+  arg2 = static_cast< unsigned int >(val2);
+  RemoveChild((boost::shared_ptr< TGraphElem > const &)*arg1,arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -12660,32 +12693,44 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_InsertFunctionListItem(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_InsertChild(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  unsigned int arg1 ;
+  TGraphElemPtr *arg1 = 0 ;
   TGraphElemPtr *arg2 = 0 ;
-  unsigned int val1 ;
-  int ecode1 = 0 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:InsertFunctionListItem",&obj0,&obj1)) SWIG_fail;
-  ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "InsertFunctionListItem" "', argument " "1"" of type '" "unsigned int""'");
-  } 
-  arg1 = static_cast< unsigned int >(val1);
+  if (!PyArg_ParseTuple(args,(char *)"OOO:InsertChild",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "InsertChild" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "InsertChild" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
+  }
+  arg1 = reinterpret_cast< TGraphElemPtr * >(argp1);
   res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t,  0  | 0);
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "InsertFunctionListItem" "', argument " "2"" of type '" "TGraphElemPtr const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "InsertChild" "', argument " "2"" of type '" "TGraphElemPtr const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "InsertFunctionListItem" "', argument " "2"" of type '" "TGraphElemPtr const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "InsertChild" "', argument " "2"" of type '" "TGraphElemPtr const &""'"); 
   }
   arg2 = reinterpret_cast< TGraphElemPtr * >(argp2);
-  InsertFunctionListItem(arg1,(boost::shared_ptr< TGraphElem > const &)*arg2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "InsertChild" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  InsertChild((boost::shared_ptr< TGraphElem > const &)*arg1,(boost::shared_ptr< TGraphElem > const &)*arg2,arg3);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -12693,32 +12738,44 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ReplaceFunctionListItem(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ReplaceChild(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  unsigned int arg1 ;
-  TGraphElemPtr *arg2 = 0 ;
-  unsigned int val1 ;
-  int ecode1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
+  TGraphElemPtr *arg1 = 0 ;
+  unsigned int arg2 ;
+  TGraphElemPtr *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:ReplaceFunctionListItem",&obj0,&obj1)) SWIG_fail;
-  ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "ReplaceFunctionListItem" "', argument " "1"" of type '" "unsigned int""'");
+  if (!PyArg_ParseTuple(args,(char *)"OOO:ReplaceChild",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ReplaceChild" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ReplaceChild" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
+  }
+  arg1 = reinterpret_cast< TGraphElemPtr * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ReplaceChild" "', argument " "2"" of type '" "unsigned int""'");
   } 
-  arg1 = static_cast< unsigned int >(val1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ReplaceFunctionListItem" "', argument " "2"" of type '" "TGraphElemPtr const &""'"); 
+  arg2 = static_cast< unsigned int >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "ReplaceChild" "', argument " "3"" of type '" "TGraphElemPtr const &""'"); 
   }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ReplaceFunctionListItem" "', argument " "2"" of type '" "TGraphElemPtr const &""'"); 
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ReplaceChild" "', argument " "3"" of type '" "TGraphElemPtr const &""'"); 
   }
-  arg2 = reinterpret_cast< TGraphElemPtr * >(argp2);
-  ReplaceFunctionListItem(arg1,(boost::shared_ptr< TGraphElem > const &)*arg2);
+  arg3 = reinterpret_cast< TGraphElemPtr * >(argp3);
+  ReplaceChild((boost::shared_ptr< TGraphElem > const &)*arg1,arg2,(boost::shared_ptr< TGraphElem > const &)*arg3);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -12770,6 +12827,21 @@ SWIGINTERN PyObject *_wrap_GetPluginData(PyObject *SWIGUNUSEDPARM(self), PyObjec
   if (!PyArg_ParseTuple(args,(char *)":GetPluginData")) SWIG_fail;
   result = (std::map< std::wstring,std::wstring,std::less< std::wstring >,std::allocator< std::pair< std::wstring const,std::wstring > > > *) &GetPluginData();
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GetTopElem(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TGraphElemPtr *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":GetTopElem")) SWIG_fail;
+  result = (TGraphElemPtr *) &GetTopElem();
+  {
+    resultobj = DownCastSharedPtr(*result);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -16423,13 +16495,14 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"CreateStdFunc", _wrap_CreateStdFunc, METH_VARARGS, NULL},
 	 { (char *)"CreateParFunc", _wrap_CreateParFunc, METH_VARARGS, NULL},
 	 { (char *)"CreatePolFunc", _wrap_CreatePolFunc, METH_VARARGS, NULL},
-	 { (char *)"GetFunctionListSize", _wrap_GetFunctionListSize, METH_VARARGS, NULL},
-	 { (char *)"GetFunctionListItem", _wrap_GetFunctionListItem, METH_VARARGS, NULL},
-	 { (char *)"DeleteFunctionListItem", _wrap_DeleteFunctionListItem, METH_VARARGS, NULL},
-	 { (char *)"InsertFunctionListItem", _wrap_InsertFunctionListItem, METH_VARARGS, NULL},
-	 { (char *)"ReplaceFunctionListItem", _wrap_ReplaceFunctionListItem, METH_VARARGS, NULL},
+	 { (char *)"ChildCount", _wrap_ChildCount, METH_VARARGS, NULL},
+	 { (char *)"GetChild", _wrap_GetChild, METH_VARARGS, NULL},
+	 { (char *)"RemoveChild", _wrap_RemoveChild, METH_VARARGS, NULL},
+	 { (char *)"InsertChild", _wrap_InsertChild, METH_VARARGS, NULL},
+	 { (char *)"ReplaceChild", _wrap_ReplaceChild, METH_VARARGS, NULL},
 	 { (char *)"CompareElem", _wrap_CompareElem, METH_VARARGS, NULL},
 	 { (char *)"GetPluginData", _wrap_GetPluginData, METH_VARARGS, NULL},
+	 { (char *)"GetTopElem", _wrap_GetTopElem, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem__PluginData_set", _wrap_TGraphElem__PluginData_set, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem__PluginData_get", _wrap_TGraphElem__PluginData_get, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem_MakeLegendText", _wrap_TGraphElem_MakeLegendText, METH_VARARGS, NULL},

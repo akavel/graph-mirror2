@@ -18,14 +18,10 @@ class TGraphClipboard
   void SetClipboardData(unsigned Format, const void *Data, unsigned DataSize);
   bool GetClipboardData(unsigned Format, void *Data, unsigned DataSize);
   int GetClipboardDataSize(unsigned Format);
-  void Copy(const TConfigFile &ConfigFile);
 
-  public:
+public:
   TGraphClipboard();
-  void Copy(const TBaseFuncType *Func);
-  void Copy(const TPointSeries *Func);
-  void Copy(const TTextLabel *Label);
-  void Copy(const TRelation *Relation);
+  void Copy(const TData &Data, const TGraphElemPtr &Elem);
   void Paste(TData &Data);
   bool HasData();
   void CopyPngData(Graphics::TBitmap *Bitmap);
