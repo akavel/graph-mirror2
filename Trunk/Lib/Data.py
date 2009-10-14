@@ -338,7 +338,7 @@ def GetPluginData() -> "std::map< std::wstring,std::wstring,std::less< std::wstr
   return _Data.GetPluginData()
 GetPluginData = _Data.GetPluginData
 
-def GetTopElem() -> "TGraphElemPtr const &" :
+def GetTopElem() -> "boost::shared_ptr< TTopGraphElem > const &" :
   return _Data.GetTopElem()
 GetTopElem = _Data.GetTopElem
 class TGraphElem(_object):
@@ -439,6 +439,26 @@ TBaseFuncType_swigregister(TBaseFuncType)
 def TBaseFuncType_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
   return _Data.TBaseFuncType_SWIGSharedPtrUpcast(*args)
 TBaseFuncType_SWIGSharedPtrUpcast = _Data.TBaseFuncType_SWIGSharedPtrUpcast
+
+class TTopGraphElem(TGraphElem):
+    __swig_setmethods__ = {}
+    for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TTopGraphElem, name, value)
+    __swig_getmethods__ = {}
+    for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, TTopGraphElem, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TTopGraphElem_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TTopGraphElem_SWIGSharedPtrUpcast)
+    __swig_destroy__ = _Data.delete_TTopGraphElem
+    __del__ = lambda self : None;
+TTopGraphElem_swigregister = _Data.TTopGraphElem_swigregister
+TTopGraphElem_swigregister(TTopGraphElem)
+
+def TTopGraphElem_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
+  return _Data.TTopGraphElem_SWIGSharedPtrUpcast(*args)
+TTopGraphElem_SWIGSharedPtrUpcast = _Data.TTopGraphElem_SWIGSharedPtrUpcast
 
 class TStdFunc(TBaseFuncType):
     __swig_setmethods__ = {}
@@ -682,14 +702,18 @@ def TAxesView_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
   return _Data.TAxesView_SWIGSharedPtrUpcast(*args)
 TAxesView_SWIGSharedPtrUpcast = _Data.TAxesView_SWIGSharedPtrUpcast
 
-TStdFunc.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-TParFunc.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-TPolFunc.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-TTan.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-TPointSeries.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-TRelation.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-TTextLabel.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-TAxesView.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
+def GraphElemRepr(self):
+  return '%s("%s")' % (self.__class__.__name__, self.MakeText())
+TStdFunc.__repr__ = GraphElemRepr
+TParFunc.__repr__ = GraphElemRepr
+TPolFunc.__repr__ = GraphElemRepr
+TTan.__repr__ = GraphElemRepr
+TPointSeries.__repr__ = GraphElemRepr
+TRelation.__repr__ = GraphElemRepr
+TTextLabel.__repr__ = GraphElemRepr
+TShade.__repr__ = GraphElemRepr
+TAxesView.__repr__ = GraphElemRepr
+TTopGraphElem.__repr__ = GraphElemRepr
 
 
 

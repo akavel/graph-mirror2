@@ -367,8 +367,9 @@ std::wstring TData::CreatePointSeriesDescription() const
     unsigned N;
     for(N = 0; N < TopElem->ChildCount(); N++)
       if(TopElem->GetChild(N)->GetLegendText() == CmpStr)
-        continue;
-    return CmpStr;
+        break;
+    if(N == TopElem->ChildCount())
+      return CmpStr;
   }
 }
 //---------------------------------------------------------------------------

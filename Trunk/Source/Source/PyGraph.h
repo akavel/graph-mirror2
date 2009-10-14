@@ -22,10 +22,13 @@ namespace Python
     peEdit
   };
 
+  extern _object *PyEFuncError;
+  extern _object *PyEGraphError;
+
   void InitPlugins();
   bool ExecutePythonCommand(const String &Command);
   void ShowPythonConsole(bool Visible);
   bool ExecutePluginEvent(TPluginEvent PluginEvent, _object *Param=NULL);
-  bool PluginHandleEdit(const boost::shared_ptr<TGraphElem> &Elem);
+  bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem);
 }
 #endif

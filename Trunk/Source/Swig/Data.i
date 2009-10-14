@@ -19,45 +19,50 @@
 #include <Python.h>
 #define WRAP_PYOBJECTS
 #include "PythonBind.h"
+#include "PyGraph.h"
 #pragma warn -8060
 %}
 
-%{
+%define CHECK_GRAPH_ELEM(TType)
+  if(dynamic_cast<TType*>(Ptr))
+    return SWIG_NewPointerObj(new boost::shared_ptr<TType>(boost::static_pointer_cast<TType>(Elem)), SWIGTYPE_p_boost__shared_ptrT_##TType##_t, SWIG_POINTER_OWN |  0 );
+%enddef
+
+%header {
 PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem)
 {
-  if(!Elem)
+  TGraphElem *Ptr = Elem.get();
+  if(Ptr == NULL)
     return SWIG_Py_Void();
-  if(boost::shared_ptr<TStdFunc> StdFunc = boost::dynamic_pointer_cast<TStdFunc>(Elem))
-    return SWIG_NewPointerObj(new boost::shared_ptr<TStdFunc>(StdFunc), SWIGTYPE_p_boost__shared_ptrT_TStdFunc_t, SWIG_POINTER_OWN |  0 );
-  if(boost::shared_ptr<TParFunc> ParFunc = boost::dynamic_pointer_cast<TParFunc>(Elem))
-    return SWIG_NewPointerObj(new boost::shared_ptr<TParFunc>(ParFunc), SWIGTYPE_p_boost__shared_ptrT_TParFunc_t, SWIG_POINTER_OWN |  0 );
-  if(boost::shared_ptr<TPolFunc> PolFunc = boost::dynamic_pointer_cast<TPolFunc>(Elem))
-    return SWIG_NewPointerObj(new boost::shared_ptr<TPolFunc>(PolFunc), SWIGTYPE_p_boost__shared_ptrT_TPolFunc_t, SWIG_POINTER_OWN |  0 );
-  if(boost::shared_ptr<TTan> Tan = boost::dynamic_pointer_cast<TTan>(Elem))
-    return SWIG_NewPointerObj(new boost::shared_ptr<TTan>(Tan), SWIGTYPE_p_boost__shared_ptrT_TTan_t, SWIG_POINTER_OWN |  0 );
-  if(boost::shared_ptr<TPointSeries> PointSeries = boost::dynamic_pointer_cast<TPointSeries>(Elem))
-    return SWIG_NewPointerObj(new boost::shared_ptr<TPointSeries>(PointSeries), SWIGTYPE_p_boost__shared_ptrT_TPointSeries_t, SWIG_POINTER_OWN |  0 );
-  if(boost::shared_ptr<TTextLabel> Label = boost::dynamic_pointer_cast<TTextLabel>(Elem))
-    return SWIG_NewPointerObj(new boost::shared_ptr<TTextLabel>(Label), SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, SWIG_POINTER_OWN |  0 );
-  if(boost::shared_ptr<TShade> Shade = boost::dynamic_pointer_cast<TShade>(Elem))
-    return SWIG_NewPointerObj(new boost::shared_ptr<TShade>(Shade), SWIGTYPE_p_boost__shared_ptrT_TShade_t, SWIG_POINTER_OWN |  0 );
-  if(boost::shared_ptr<TRelation> Relation = boost::dynamic_pointer_cast<TRelation>(Elem))
-    return SWIG_NewPointerObj(new boost::shared_ptr<TRelation>(Relation), SWIGTYPE_p_boost__shared_ptrT_TRelation_t, SWIG_POINTER_OWN |  0 );
-  if(boost::shared_ptr<TAxesView> AxesView = boost::dynamic_pointer_cast<TAxesView>(Elem))
-    return SWIG_NewPointerObj(new boost::shared_ptr<TAxesView>(AxesView), SWIGTYPE_p_boost__shared_ptrT_TAxesView_t, SWIG_POINTER_OWN |  0 );
+  CHECK_GRAPH_ELEM(TStdFunc)
+  CHECK_GRAPH_ELEM(TParFunc)
+  CHECK_GRAPH_ELEM(TPolFunc)
+  CHECK_GRAPH_ELEM(TTan)
+  CHECK_GRAPH_ELEM(TPointSeries)
+  CHECK_GRAPH_ELEM(TTextLabel)
+  CHECK_GRAPH_ELEM(TShade)
+  CHECK_GRAPH_ELEM(TRelation)
+  CHECK_GRAPH_ELEM(TAxesView)
+  CHECK_GRAPH_ELEM(TTopGraphElem)
   return SWIG_NewPointerObj(new boost::shared_ptr< TGraphElem >(Elem), SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t, SWIG_POINTER_OWN |  0 );
 }
-%}
+}
+
 
 typedef boost::shared_ptr<class TGraphElem> TGraphElemPtr;
+
+%typemap(throws) Func32::EFuncError %{
+  PyErr_SetString(Python::PyEFuncError, ToString(GetErrorMsg($1)).c_str());
+  SWIG_fail;
+%}
 
 %inline %{
 static TGraphElemPtr Selected() {return Form1->GetGraphElem(Form1->TreeView->Selected);}
 static void AbortUpdate() {Form1->Data.AbortUpdate();}
 static void Redraw() {Form1->Redraw();}
-static boost::shared_ptr<TStdFunc> CreateStdFunc(const std::wstring &Text) {return boost::shared_ptr<TStdFunc>(new TStdFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
-static boost::shared_ptr<TParFunc> CreateParFunc(const std::wstring &xText, const std::wstring &yText) {return boost::shared_ptr<TParFunc>(new TParFunc(xText, yText, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
-static boost::shared_ptr<TPolFunc> CreatePolFunc(const std::wstring &Text) {return boost::shared_ptr<TPolFunc>(new TPolFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
+static boost::shared_ptr<TStdFunc> CreateStdFunc(const std::wstring &Text) throw(Func32::EFuncError) {return boost::shared_ptr<TStdFunc>(new TStdFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
+static boost::shared_ptr<TParFunc> CreateParFunc(const std::wstring &xText, const std::wstring &yText) throw(Func32::EFuncError) {return boost::shared_ptr<TParFunc>(new TParFunc(xText, yText, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
+static boost::shared_ptr<TPolFunc> CreatePolFunc(const std::wstring &Text) throw(Func32::EFuncError) {return boost::shared_ptr<TPolFunc>(new TPolFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 
 static unsigned ChildCount(const TGraphElemPtr &Elem) {return Elem->ChildCount();}
 static TGraphElemPtr GetChild(const TGraphElemPtr &Elem, unsigned Index) {return Elem->GetChild(Index);}
@@ -66,10 +71,11 @@ static void InsertChild(const TGraphElemPtr &Elem, const TGraphElemPtr &Child, i
 static void ReplaceChild(const TGraphElemPtr &Elem, unsigned Index, const TGraphElemPtr &Child) {Elem->ReplaceChild(Index, Child); Form1->UpdateTreeView();}
 static bool CompareElem(const TGraphElemPtr &E1, const TGraphElemPtr &E2) {return E1.get() == E2.get();}
 static std::map<std::wstring,std::wstring>& GetPluginData() {return Form1->Data.PluginData;}
-static const TGraphElemPtr& GetTopElem() {return Form1->Data.GetTopElem();}
+static const boost::shared_ptr<TTopGraphElem>& GetTopElem() {return Form1->Data.GetTopElem();}
 %}
 
 SWIG_SHARED_PTR(TGraphElem, TGraphElem)
+SWIG_SHARED_PTR_DERIVED(TTopGraphElem, TGraphElem, TTopGraphElem)
 SWIG_SHARED_PTR_DERIVED(TBaseFuncType, TGraphElem, TBaseFuncType)
 SWIG_SHARED_PTR_DERIVED(TStdFunc, TBaseFuncType, TStdFunc)
 SWIG_SHARED_PTR_DERIVED(TParFunc, TBaseFuncType, TParFunc)
@@ -129,6 +135,11 @@ public:
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
   Func32::TCoord<long double> Eval(long double t);
   long double CalcArea(long double From, long double To) const;
+};
+
+%nodefaultctor TTopGraphElem;
+class TTopGraphElem : public TGraphElem
+{
 };
 
 %nodefaultctor TStdhElem;
@@ -218,12 +229,17 @@ class TAxesView : public TGraphElem
 
 %pythoncode
 {
-  TStdFunc.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-  TParFunc.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-  TPolFunc.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-  TTan.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-  TPointSeries.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-  TRelation.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-  TTextLabel.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
-  TAxesView.__repr__ = lambda self: '%s("%s")' % (self.__class__.__name__, self.MakeText())
+  def GraphElemRepr(self):
+    return '%s("%s")' % (self.__class__.__name__, self.MakeText())
+  TStdFunc.__repr__ = GraphElemRepr
+  TParFunc.__repr__ = GraphElemRepr
+  TPolFunc.__repr__ = GraphElemRepr
+  TTan.__repr__ = GraphElemRepr
+  TPointSeries.__repr__ = GraphElemRepr
+  TRelation.__repr__ = GraphElemRepr
+  TTextLabel.__repr__ = GraphElemRepr
+  TShade.__repr__ = GraphElemRepr
+  TAxesView.__repr__ = GraphElemRepr
+  TTopGraphElem.__repr__ = GraphElemRepr
 }
+
