@@ -43,11 +43,16 @@
   $result = PyInt_FromLong((long)$1);
 }
 
+%typemap(out) boost::shared_ptr<TGraphElem>
+{
+  $result = DownCastSharedPtr($1);
+}
+
 %typemap(out) const boost::shared_ptr<TGraphElem>&
 {
   $result = DownCastSharedPtr(*$1);
 }
-%typemap(out) const boost::shared_ptr<TBaseFuncType>& = const boost::shared_ptr<TGraphElem>&;
+%typemap(out) boost::shared_ptr<TBaseFuncType> = boost::shared_ptr<TGraphElem>;
 
 %typemap(out) Func32::TCoord<long double> {
   $result = Py_BuildValue("dd", (double)$1.x, (double)$1.y);
@@ -64,4 +69,5 @@
 %apply double {long double};
 typedef unsigned TColor;
 typedef unsigned TBrushStyle;
+
 

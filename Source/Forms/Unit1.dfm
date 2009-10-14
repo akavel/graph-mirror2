@@ -4141,7 +4141,7 @@ object Form1: TForm1
     end
     object TableAction: TAction
       Category = 'Calc'
-      Caption = 'Table...'
+      Caption = 'Table'
       Hint = 'Show an evaluation table.'
       ImageIndex = 34
       OnExecute = TableActionExecute
@@ -4165,7 +4165,7 @@ object Form1: TForm1
     object HomePageAction: TAction
       Category = 'Help'
       Caption = 'Graph web site'
-      Hint = 'Open the default browser and show the home page of Graph.'
+      Hint = 'Open the default browser and show the Graph web site.'
       ImageIndex = 40
       OnExecute = HomePageActionExecute
     end
@@ -4178,7 +4178,7 @@ object Form1: TForm1
     end
     object AboutAction: TAction
       Category = 'Help'
-      Caption = 'About Graph...'
+      Caption = 'About Graph'
       Hint = 'Show copyright information.'
       ImageIndex = 37
       ShortCut = 32880

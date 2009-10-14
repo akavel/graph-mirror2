@@ -54,5 +54,6 @@ void ShowStatusError(const String &Str);
 
 bool InputQuery(const String &Caption, const String &Prompt, int &Value);
 bool GetKeyState(Classes__1 Key);
+void ShowHelp(const String &File);
 
 #endif

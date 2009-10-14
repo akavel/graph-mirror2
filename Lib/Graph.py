@@ -8,6 +8,7 @@ import Settings
 import Data
 import vcl
 import xmlrpc.client
+import getopt
 
 Axes = Settings.GetAxes()
 Property = Settings.Property
@@ -76,9 +77,12 @@ def FindAction(name):
                 if a.Name == name:
                     return a
 
+def GetBaseObject(o):
+    return GetBaseObject(o.SWIGSharedPtrUpcast(o)) if "SWIGSharedPtrUpcast" in o.__swig_getmethods__ else o
+
 class ChildListType(collections.MutableSequence):
     def __init__(self, node):
-        self.node = node
+        self.node = GetBaseObject(node)
     def __getitem__(self, key):
         if key < Data.ChildCount(self.node):
             return Data.GetChild(self.node, key)

@@ -911,7 +911,7 @@ void TForm1::UpdateMenu()
     Tree_Export->Visible = false;
   }
 
-  if(TreeView->Selected->Level == 0 && dynamic_cast<TAxesView*>(Elem.get()) == NULL)
+  if(TreeView->Selected && TreeView->Selected->Level == 0 && dynamic_cast<TAxesView*>(Elem.get()) == NULL)
   {
     CutAction->Enabled = true;
     CopyAction->Enabled = true;
@@ -1269,11 +1269,11 @@ void __fastcall TForm1::Splitter1DblClick(TObject *Sender)
 void __fastcall TForm1::TreeViewChange(TObject *Sender, TTreeNode *Node)
 {
   UpdateMenu();
-
+  TGraphElemPtr Elem = GetGraphElem(Node);
   //Necessary because Form9 may not have been loaded yet
   if(Form9)
-    Form9->FuncChanged(GetGraphElem(Node));
-  Python::ExecutePluginEvent(Python::peSelect);
+    Form9->FuncChanged(Elem);
+  Python::ExecutePluginEvent(Python::peSelect, Elem);
 }
 //---------------------------------------------------------------------------
 void TForm1::ChangeLanguage(const String &Lang)
@@ -1420,6 +1420,7 @@ void __fastcall TForm1::TreeViewMouseMove(TObject *Sender,
 //---------------------------------------------------------------------------
 void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
 {
+  TreeView->OnChange = NULL; //Prevent a lot of change notifications
   TreeView->Repaint();
   //Prevent the scrollbar from jumping
   SendMessage(TreeView->Parent->Handle, WM_SETREDRAW, false, 0);
@@ -1433,7 +1434,7 @@ void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
 
   for(unsigned I = 0; I < Data.ElemCount(); I++)
     Data.GetElem(I)->Accept(TAddView());
-
+  TreeView->OnChange = TreeViewChange; //Enable change notification again
   if(Selected)
     TreeView->Selected = GetNode(Selected);
   else if(Index != -1 && TreeView->Items->Count)
@@ -2027,9 +2028,9 @@ void __fastcall TForm1::InsertTrendlineActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::EditActionExecute(TObject *Sender)
 {
-  boost::shared_ptr<TGraphElem> Item = GetGraphElem(TreeView->Selected);
+  TGraphElemPtr Item = GetGraphElem(TreeView->Selected);
 
-  if(Python::PluginHandleEdit(Item))
+  if(Python::ExecutePluginEvent(Python::peEdit, Item))
     return;
 
   TModalResult Result = mrNone;
@@ -2199,30 +2200,19 @@ void __fastcall TForm1::TableActionExecute(TObject *Sender)
     CreateForm<TForm15>()->ShowTable(Func);
 }
 //---------------------------------------------------------------------------
-namespace Windows
-{
-  //Missing declaration in Windows.hpp
-  const unsigned HH_DISPLAY_TOPIC      = 0;
-  extern PACKAGE HWND __fastcall HtmlHelp(HWND hWndCaller, System::WideChar * pszFile, unsigned uCommand, unsigned dwData);
-}
 void __fastcall TForm1::ContentsActionExecute(TObject *Sender)
 {
-  //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
-  Windows::HtmlHelp(NULL, Application->HelpFile.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
+  ShowHelp("");
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ListActionExecute(TObject *Sender)
 {
-  //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
-  String Str = Application->HelpFile + "::/ListOfFunctions.html";
-  Windows::HtmlHelp(NULL, Str.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
+  ShowHelp("ListOfFunctions.html");
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FaqActionExecute(TObject *Sender)
 {
-  //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
-  String Str = Application->HelpFile + "::/FAQ.html";
-  Windows::HtmlHelp(NULL, Str.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
+  ShowHelp("FAQ.html");
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::HomePageActionExecute(TObject *Sender)

@@ -35,6 +35,8 @@ private:	// User declarations
   int IndentLevel;
 
   void WritePrompt(const String &Str = ">>> ");
+  void KeyboardInterrupt();
+  void SetUserString(const String &Str);
 
 public:		// User declarations
   __fastcall TForm22(TComponent* Owner);

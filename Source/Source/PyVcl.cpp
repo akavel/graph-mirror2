@@ -318,7 +318,12 @@ static PyObject* VclCallMethod(PyObject *Self, PyObject *Args)
     {
       AnsiString Method = Name;
       if(Method == "ShowModal")
-        return PyLong_FromLong(Form->ShowModal());
+      {
+        FreeGIL();
+        TModalResult Result = Form->ShowModal();
+        AllocGIL();
+        return PyLong_FromLong(Result);
+      }
       else if(Method == "Close")
         Form->Close();
     }

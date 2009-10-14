@@ -70,6 +70,10 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
     return;
   }
 
+  if((Shift == (TShiftState() << ssCtrl) && Key == 'C'))
+    if(IRichEdit1->SelLength == 0)
+      KeyboardInterrupt();
+
   if(!Shift.Empty())
     return;
     
@@ -95,8 +99,8 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
           IRichEdit1->SelStart = LastIndex;
           IRichEdit1->SelLength = MAXINT;
           if(CacheIndex == (int)TextCache.size() -1)
-            TextCache.back() = IRichEdit1->SelText;
-          IRichEdit1->SelText = TextCache[--CacheIndex];
+            TextCache.back() = IRichEdit1->GetText(LastIndex, MAXINT);
+          SetUserString(TextCache[--CacheIndex]);
         }
         Key = 0;
       }
@@ -106,11 +110,7 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
       if(IRichEdit1->GetLine(-1) == IRichEdit1->LineCount() - 1)
       {
         if(CacheIndex < (int)TextCache.size() - 1)
-        {
-          IRichEdit1->SelStart = LastIndex;
-          IRichEdit1->SelLength = MAXINT;
-          IRichEdit1->SelText = TextCache[++CacheIndex];
-        }
+          SetUserString(TextCache[++CacheIndex]);
         Key = 0;
       }
       break;
@@ -150,9 +150,7 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
     }
 
     case VK_ESCAPE:
-      IRichEdit1->SelStart = LastIndex;
-      IRichEdit1->SelLength = MaxInt;
-      IRichEdit1->SelText = L"";
+      SetUserString("");
       break;
   }
 }
@@ -186,6 +184,25 @@ void __fastcall TForm22::Clear1Click(TObject *Sender)
   LastIndex = 0;
   PromptIndex = 0;
   WritePrompt();
+}
+//---------------------------------------------------------------------------
+void TForm22::KeyboardInterrupt()
+{
+  IRichEdit1->SelStart = MAXINT;
+  IRichEdit1->SelText = "\r";
+  PromptIndex = IRichEdit1->SelStart;
+  WriteText("KeyboardInterrupt\r\n", clRed);
+  WritePrompt();
+  Command = "";
+  IndentLevel = 0;
+  CacheIndex = TextCache.size() - 1;
+}
+//---------------------------------------------------------------------------
+void TForm22::SetUserString(const String &Str)
+{
+  IRichEdit1->SelStart = LastIndex;
+  IRichEdit1->SelLength = MAXINT;
+  IRichEdit1->SelText = Str;
 }
 //---------------------------------------------------------------------------
 

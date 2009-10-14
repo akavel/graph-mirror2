@@ -318,7 +318,7 @@ public:
   void __fastcall WindowProc(TMessage &Message)
   {
     if(Message.Msg == WM_HELP && ErrorCode)
-      Application->HelpJump(String().sprintf(L"Errors.html#Error%02d", ErrorCode));
+      ShowHelp(String().sprintf(L"Errors.html#Error%02d", ErrorCode));
     OldWindowProc(Message);
   }
 };
@@ -497,6 +497,19 @@ namespace Menus
     }
     return Str;
   }
+}
+//---------------------------------------------------------------------------
+namespace Windows
+{
+  //Missing declaration in Windows.hpp
+  const unsigned HH_DISPLAY_TOPIC      = 0;
+  extern PACKAGE HWND __fastcall HtmlHelp(HWND hWndCaller, System::WideChar * pszFile, unsigned uCommand, unsigned dwData);
+}
+void ShowHelp(const String &File)
+{
+  //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
+  String Str = Application->HelpFile + "::/" + File;
+  Windows::HtmlHelp(NULL, Str.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
 }
 //---------------------------------------------------------------------------
 

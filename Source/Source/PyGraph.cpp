@@ -78,7 +78,7 @@ static int WriteToConsole(int Arg)
   std::pair<String, TColor> *Pair = (std::pair<String, TColor>*)Arg;
   if(Form22)
     Form22->WriteText(Pair->first, Pair->second);
-  delete Pair;  
+  delete Pair;
   return 0;
 }
 //---------------------------------------------------------------------------
@@ -203,7 +203,7 @@ static PyObject* PluginEval(PyObject *Self, PyObject *Args)
   }
   catch(Func32::EFuncError &E)
   {
-    PyErr_SetString(PyEFuncError, AnsiString(GetErrorMsg(E)).c_str());
+    PyErr_SetString(PyEFuncError, ToString(GetErrorMsg(E)).c_str());
     return NULL;
   }
 }
@@ -264,7 +264,7 @@ static PyObject* PluginGetConstantNames(PyObject *Self, PyObject *Args)
   int Index = 0;
   for(TCustomFunctions::TConstIterator Iter = Begin; Iter != End; ++Iter, ++Index)
     PyList_SetItem(ConstantNames, Index, PyUnicode_FromWideChar(Iter->Name.c_str(), Iter->Name.size()));
-  return ConstantNames;  
+  return ConstantNames;
 }
 //---------------------------------------------------------------------------
 static PyObject* PluginGetConstant(PyObject *Self, PyObject *Args)
@@ -411,11 +411,17 @@ void InitPlugins()
     Py_Initialize();
     FreeGIL();
     AllocGIL();  //Used to set FPU Control Word
-    wchar_t *argv[] = {Application->ExeName.c_str(), NULL};
-    PySys_SetArgv(1, argv);
+//    wchar_t *argv[] = {Application->ExeName.c_str(), NULL};
+//    std::vector<wchar_t*> argv(ParamCount() + 2);
+//    for(int I = 0; I < ParamCount(); I++)
+//      argv[I] = ParamStr(I).c_str();
+    int argc;
+    wchar_t **argv = CommandLineToArgvW(GetCommandLine(), &argc);
+    PySys_SetArgv(argc, argv);
+    LocalFree(argv);
 
-    PyEFuncError = PyErr_NewException("GraphImpl.EFuncError", NULL, NULL);
-    PyEGraphError = PyErr_NewException("GraphImpl.EGraphError", NULL, NULL);
+    PyEFuncError = PyErr_NewException("Graph.EFuncError", NULL, NULL);
+    PyEGraphError = PyErr_NewException("Graph.EGraphError", NULL, NULL);
 
     TVersionInfo Info;
     TVersion Version = Info.FileVersion();
@@ -465,11 +471,11 @@ void InitPlugins()
   }
 }
 //---------------------------------------------------------------------------
-bool PluginHandleEdit(const boost::shared_ptr<TGraphElem> &Elem)
+bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem)
 {
   TLockGIL Dummy;
   if(IsPythonInstalled())
-    return ExecutePluginEvent(peEdit, DownCastSharedPtr(Elem));
+    return ExecutePluginEvent(PluginEvent, DownCastSharedPtr(Elem));
   return false;
 }
 //---------------------------------------------------------------------------
