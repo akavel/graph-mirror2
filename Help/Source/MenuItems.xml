@@ -746,7 +746,7 @@
 				<varlistentry>
 					<term>
 						<menuchoice>
-							<guimenu>Help</guimenu><guimenuitem>About Graph...</guimenuitem>
+							<guimenu>Help</guimenu><guimenuitem>About Graph</guimenuitem>
 							<shortcut><keycombo><keycap>Alt</keycap><keycap><markup>F1</markup></keycap></keycombo></shortcut>
 						</menuchoice>
 					</term>
