@@ -14,6 +14,8 @@
 #include <sstream>
 #include <iomanip>
 
+namespace Matrix
+{
   //Exception classes
   //EMatrix: Abstarct class used for derivation
   //EIncompatible: Thrown when two matrix' doesn't match the requirements
@@ -623,6 +625,7 @@ TMatrix<T> TMatrix<T>::Inverse() const
   return Matrix.SubMatrixCols(ColCount, ColCount);
 }
 //---------------------------------------------------------------------------
+} //namespace Matrix
 #endif
 
 

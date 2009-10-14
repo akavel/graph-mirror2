@@ -139,6 +139,7 @@ To be considered
 - Show uncertainty for each calculated constand when creating a trendline. (See email from Mike Cohler)
 - Create point series with polar data points.
 - Create polar trendline from polar data points.
+- Function Width can be a constant.
 
 Plugins:
 - Cirlce item
@@ -159,6 +160,8 @@ Plugins:
 - Export of more than one item.
 - Evaluate a function for a series of x-values.
 - Statistics on point series: aritmetic average, sum, median, standard deviation, 1st and 3rd quartil, min/max value. (see mail from Kristoffer (Ås vgs)
+- Control Graph from command line (import csv, zoom, print)
+- Run scripts from command line
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>

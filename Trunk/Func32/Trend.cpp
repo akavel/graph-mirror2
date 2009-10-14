@@ -56,7 +56,7 @@ TFunc CreateLinearTrendLine(const std::vector<TDblPoint> &Points, const std::vec
 
     //Take care of division by zero
     if(IsZero(d))
-      throw EFuncError(ecOverflow);
+      throw EFuncError(ecNoResult);
     a = (SumWeight*SumXY - SumX*SumY) / d;
     b = (SumY - a*SumX) / SumWeight;
   }
@@ -81,7 +81,7 @@ TFunc CreatePolynomialTrendLine(const std::vector<TDblPoint> &Points, const std:
     throw EFuncError(ecTooFewPoints);
 
   unsigned N2 = UseIntercept ? N : N+1;
-  TMatrix<long double> M(N2, N2+1);
+  Matrix::TMatrix<long double> M(N2, N2+1);
   std::vector<long double> SumX(2*N2, 0);
   for(unsigned I = 0; I < Points.size(); I++)
   {
@@ -101,6 +101,7 @@ TFunc CreatePolynomialTrendLine(const std::vector<TDblPoint> &Points, const std:
       M[j][k] = SumX[j+k+(UseIntercept ? 1 : 0)];
 
   std::vector<long double> a = M.Gauss();
+
   TFunc Func;
   TFunc xFunc(L"x");
   unsigned End = UseIntercept ? 0 : 1;
@@ -152,7 +153,7 @@ TFunc CreatePowerTrendLine(const std::vector<TDblPoint> &Points, const std::vect
 
   //Take care of division by zero
   if(IsZero(d))
-    throw EFuncError(ecOverflow);
+    throw EFuncError(ecNoResult);
 
   long double b = (SumWeight*SumXY - SumX*SumY) / d;
   long double a = std::exp((SumY - b*SumX) / SumWeight);
@@ -195,7 +196,7 @@ TFunc CreateLogarithmicTrendLine(const std::vector<TDblPoint> &Points, const std
 
   //Take care of division by zero
   if(IsZero(d))
-    throw EFuncError(ecOverflow);
+    throw EFuncError(ecNoResult);
 
   double a = ((SumWeight*SumXY-SumX*SumY) / d);
   double b = (SumY - a*SumX) / SumWeight;
@@ -240,7 +241,7 @@ TFunc CreateExponentialTrendLine(const std::vector<TDblPoint> &Points, const std
 
   //Take care of division by zero
   if(IsZero(d))
-    throw EFuncError(ecOverflow);
+    throw EFuncError(ecNoResult);
 
   long double a = Intercept;
   long double b;
@@ -315,9 +316,9 @@ TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, const std
         throw EFuncError(ecInternalError);
     }
   }
-  catch(EMatrix& M)
+  catch(Matrix::EMatrix& M)
   {
-    throw EFuncError(ecCalcError);
+    throw EFuncError(ecNoResult);
   }
 }
 //---------------------------------------------------------------------------
@@ -536,7 +537,7 @@ double Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func,
     DEBUG_LOG(for(unsigned J = 1; J < Args.size(); J++) std::wclog << Func.GetArguments()[J] << " = " << Args[J] << "  ");
     DEBUG_LOG(std::wclog << std::endl);
 
-    const TMatrix<double> I = IdentityMatrix<double>(n);
+    const Matrix::TMatrix<double> I = Matrix::IdentityMatrix<double>(n);
     double LastSum = CalcSSQ(Points, Func, Args, Weights);
 
     //We cannot continue with a guess that gives a huge SSQ
@@ -560,7 +561,7 @@ double Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func,
           g[i] += PartialDif[i](Args) * (Func(Args) - Points[k].y) * Weight;
         }
 
-      TMatrix<double> G(n, n);
+      Matrix::TMatrix<double> G(n, n);
       for(unsigned i = 0; i < n; i++)
         for(unsigned j = 0; j < n; j++)
           for(unsigned k = 0; k < m; k++)
@@ -574,17 +575,17 @@ double Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func,
       for(unsigned i = 0; i < n; i++)
         d[i] = std::sqrt(G(i, i));
 
-      TMatrix<double> D(n, n);
+      Matrix::TMatrix<double> D(n, n);
       for(unsigned i = 0; i < n; i++)
         D(i, i) = d[i];
 
-      TMatrix<double> C2 = D.Inverse() * G * D.Inverse();
-      TMatrix<double> C(n, n);
+      Matrix::TMatrix<double> C2 = D.Inverse() * G * D.Inverse();
+      Matrix::TMatrix<double> C(n, n);
       for(unsigned i = 0; i < n; i++)
         for(unsigned j = 0; j < n; j++)
           C(i, j) = (G(i, j)/d[i])/d[j];
 
-      TMatrix<double> s = ((-D.Inverse() * (C + I * My).Inverse()) * D.Inverse()) * g;
+      Matrix::TMatrix<double> s = ((-D.Inverse() * (C + I * My).Inverse()) * D.Inverse()) * g;
       Args.swap(LastArgs); //LastArgs = Args
 
       DEBUG_LOG(std::wclog << "It " << Step << "   ");
@@ -634,7 +635,7 @@ double Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func,
     DEBUG_LOG(std::wclog << L"Tolerance = " << LastTol << std::endl);
     return LastTol;
   }
-  catch(EMatrix& E)
+  catch(Matrix::EMatrix& E)
   {
     throw EFuncError(ecBadGuess);
   }

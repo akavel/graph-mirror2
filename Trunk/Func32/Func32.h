@@ -124,6 +124,7 @@ enum TErrorCode
   ecErrorType       = 85, //!< The function passed as parameter is not correct type
   ecCalcError       = 86, //!< Not specified error under calculation; Overflow, division by zero, etc.
   ecBadGuess        = 87, //!< Too many iterations before solution found; bad guess
+  ecNoResult        = 88, //!< There was no valid result, eg. from a trend line
   ecInternalError   = 99  //!< Unknown error
 };
 
