@@ -392,6 +392,17 @@
 				</listitem>
 			</varlistentry>
 
+			<varlistentry id="Error88">
+				<term>Error 88: No result found.</term>
+				<listitem>
+					<para>
+						No valid result exist.
+						This may for example happen when trying to create a trendline from a point series where it is not possible to calculate a trendline.
+						One reason can be that one of the calculated constants needs to be infinite.
+					</para>
+				</listitem>
+			</varlistentry>
+
 			<varlistentry id="Error99">
 				<term>Error 99: Internal error. Please notify the programmer with as much information as possible.</term>
 				<listitem>
