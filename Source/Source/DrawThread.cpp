@@ -303,6 +303,7 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
                 }
                 s = sMiddle;
                 Pos = P;
+                Finished = false;
               }
 
               //If both points are outside the image, simulate an error at LastPos to break the line between LastPos and Pos
