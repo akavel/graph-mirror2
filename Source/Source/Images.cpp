@@ -93,8 +93,8 @@ void SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions 
     if(ImageFileType == ifMetafile || ImageFileType == ifSvg)
     {
       std::auto_ptr<TMetafile> Metafile(new TMetafile);
-      Metafile->Width = ImageOptions.CustomWidth;
-      Metafile->Height = ImageOptions.CustomHeight;
+      Metafile->Width = ImageOptions.CustomWidth-1;
+      Metafile->Height = ImageOptions.CustomHeight-1;
 
       std::auto_ptr<TMetafileCanvas> Meta(new TMetafileCanvas(Metafile.get(), 0));
       TData MetaData(Form1->Data);
