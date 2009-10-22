@@ -59,10 +59,11 @@ void TAddView::Visit(TShade &Shade)
 //---------------------------------------------------------------------------
 void TAddView::Visit(TPointSeries &Series)
 {
-
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
   Bitmap->Width = 16;
   Bitmap->Height = 16;
+  Bitmap->Canvas->Brush->Color = clWhite;
+  Bitmap->Canvas->FillRect(TRect(0, 0, Bitmap->Width, Bitmap->Height));
   TPointSelect::DrawPoint(
     Bitmap->Canvas,
     TPoint(8,8),
@@ -70,7 +71,7 @@ void TAddView::Visit(TPointSeries &Series)
     Series.GetFrameColor(),
     Series.GetFillColor(),
     Series.GetStyle() == 7 ? 3 : 5);
-  AddNode(Series, Form1->ImageList1->Add(Bitmap.get(), NULL));
+  AddNode(Series, Form1->ImageList1->AddMasked(Bitmap.get(), clWhite));
 }
 //---------------------------------------------------------------------------
 void TAddView::Visit(TTextLabel &Label)
