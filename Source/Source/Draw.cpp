@@ -513,7 +513,7 @@ void TDraw::DrawAxes()
     //to have one pixel in difference while they actually should be on top of each other.
     for(double y2 = MinTickPixel; y >= MaxPixel; y2 -= TickPixelScl)
     {
-      for(; y > y2 + 1; y -= GridPixelScl)
+      for(; y > y2 + 1 && y >= MaxPixel; y -= GridPixelScl)
         //Don't show at or beside axis (when scaled it might be moved a pixel or two)
         if(std::abs(y - yPixelCross) > 1)
           if(Axes.yAxis.LogScl)
