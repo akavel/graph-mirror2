@@ -1620,18 +1620,26 @@ void __fastcall TForm1::Panel2MouseLeave(TObject *Sender)
     StatusBar1->Panels->Items[1]->Text = "";
 }
 //---------------------------------------------------------------------------
+class TImageListEx : public TImageList
+{
+public:
+  using TImageList::GetImages;
+};
+
 //Makes a copy of the image with index Index in ImageList1 and replaces clRed with Color
 int TForm1::AddImage(int Index, TColor Color)
 {
   std::auto_ptr<Graphics::TBitmap> Bitmap1(new Graphics::TBitmap);
   std::auto_ptr<Graphics::TBitmap> Bitmap2(new Graphics::TBitmap);
+  ImageList1->BkColor = clWhite;
   ImageList1->GetBitmap(Index, Bitmap1.get());
+  ImageList1->BkColor = Graphics::clNone;
   Bitmap2->Canvas->Brush->Color = Color;
   Bitmap2->Width = Bitmap1->Width;
   Bitmap2->Height = Bitmap1->Height;
   TRect Rect(0, 0, Bitmap1->Width, Bitmap1->Height);
   Bitmap2->Canvas->BrushCopy(Rect, Bitmap1.get(), Rect, clRed);
-  return ImageList1->Add(Bitmap2.get(), NULL);
+  return ImageList1->AddMasked(Bitmap2.get(), clWhite);
 }
 //---------------------------------------------------------------------------
 int TForm1::AddImage(TColor Color, TBrushStyle Style)
@@ -1641,9 +1649,10 @@ int TForm1::AddImage(TColor Color, TBrushStyle Style)
   Bitmap->Height = 16;
   Bitmap->Canvas->Brush->Color = Color;
   Bitmap->Canvas->Brush->Style = Style;
-  Bitmap->Canvas->Pen->Style = psClear;
-  Bitmap->Canvas->Rectangle(0, 0, Bitmap->Width, Bitmap->Height);
-  return ImageList1->Add(Bitmap.get(), NULL);
+  SetBkColor(Bitmap->Canvas->Handle, clWhite);
+  SetBkMode(Bitmap->Canvas->Handle, OPAQUE);
+  Bitmap->Canvas->FillRect(TRect(0, 0, Bitmap->Width, Bitmap->Height));
+  return ImageList1->AddMasked(Bitmap.get(), clWhite);
 }
 //---------------------------------------------------------------------------
 bool __fastcall TForm1::Recent1LoadFile(TRecent *Sender, String FileName)
