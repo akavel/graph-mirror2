@@ -14,7 +14,7 @@
 		First select a function in the <glossterm>function list</glossterm> and use the menu item
 		<menuchoice><guimenu>Calc</guimenu><guimenuitem>Table</guimenuitem></menuchoice> to show the dialog.
 		You specify the first and last value of the independent variable in the <guilabel>From</guilabel> and <guilabel>To</guilabel> fields.
-		In the <guilabel>&Delta;x</guilabel> or <guilabel>&Delta;t</guilabel> field you specify the increment of the independent variable at each evaluation.
+		In the <guilabel><markup>&Delta;x</markup></guilabel> or <guilabel><markup>&Delta;t</markup></guilabel> field you specify the increment of the independent variable at each evaluation.
 	</para>
 
 	<para>

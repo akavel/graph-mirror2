@@ -18,9 +18,15 @@
 				</question>
 				<answer>
 					<para>
-						Graph requires 32 bit Windows.
-						It has been tested under Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista.
-						If the system is able to run Windows, it should be able to run the program, though Windows 95 is no longer supported.
+						Graph requires Microsoft Windows 2000 or newer.
+						It has been tested under
+						<markup><simplelist type="inline">
+						  <?dbchoice choice="and"?>
+							<member>Windows 2000</member>
+							<member>Windows XP</member>
+							<member>Windows Vista</member>
+							<member>Windows 7</member>
+						</simplelist></markup>.
 					</para>
 				</answer>
 			</qandaentry>
