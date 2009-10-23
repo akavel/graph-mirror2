@@ -1773,6 +1773,7 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
     "Portable Network Graphics [*.png]|*.png|"
     "Joint Photographic Experts Group [*.jpg,*.jpeg]|*.jpg;*.jpeg|"
     "Portable Document Format [*.pdf]|*.pdf";
+  SaveDialogEx1->FilterIndex = GetRegValue(REGISTRY_KEY "\\SaveAsImage", L"FilterIndex", HKEY_CURRENT_USER, 1);
 
   ActionImageOptions.reset(new TImageOptions(Image1->Width, Image1->Height));
   ActionImageOptions->LoadSettings();
@@ -1781,6 +1782,7 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
     {
       String FileName = SaveDialogEx1->FileName; //SaveAsImage() calls ProcessMessages() and may change SaveDialogEx1
       SaveAsImage(FileName, SaveDialogEx1->FilterIndex, *ActionImageOptions);
+      SetRegValue(REGISTRY_KEY "\\SaveAsImage", L"FilterIndex", HKEY_CURRENT_USER, SaveDialogEx1->FilterIndex);
     }
     catch(Exception &E)
     {
