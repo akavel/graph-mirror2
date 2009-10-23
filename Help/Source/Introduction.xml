@@ -13,6 +13,7 @@
 	<indexterm><primary>web site</primary></indexterm>
 	<indexterm><primary>email</primary></indexterm>
 	<indexterm><primary>bug report</primary></indexterm>
+	<indexterm><primary><markup>Windows</markup></primary></indexterm>
 	<simplesect>
 		<para>
 			Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things.
@@ -22,12 +23,20 @@
 			For more information on using the program see <xref linkend="HowToUse"/>.
 		</para>
 		<para>
-			This program is free software; you can redistribute it and/or modify it under the terms of the
+			Graph is free software; you can redistribute it and/or modify it under the terms of the
 			<ulink url="http://www.gnu.org/licenses/gpl.html"><citetitle>GNU General Public License</citetitle></ulink>.
 			Newest version of the program as well as the source code may be downloaded from <ulink url="http://www.padowan.dk"/>.
 		</para>
 		<para>
-			The program has been tested under Microsoft Windows 2000, Windows XP and Windows Vista, but there may still be bugs left.
+			Graph has been tested under
+			<markup><simplelist type="inline">
+			  <?dbchoice choice="and"?>
+				<member>Microsoft Windows 2000</member>
+				<member>Windows XP</member>
+				<member>Windows Vista</member>
+				<member>Windows 7</member>
+			</simplelist></markup>,
+			but there may still be bugs left.
 			If you need help using Graph or have suggestions for future improvements, please use the <ulink url="http://www.padowan.dk/forum">Graph support forum</ulink>.
 		</para>
 		<para>
