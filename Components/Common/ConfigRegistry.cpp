@@ -239,7 +239,13 @@ bool RegKeyExists(const std::wstring &Key, HKEY RootKey)
   return TConfigRegistry().OpenKey(Key, RootKey);
 }
 //---------------------------------------------------------------------------
-void CreateRegKey(const std::wstring &Key, const std::wstring &ValueName, const std::wstring &Value, HKEY RootKey)
+void SetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, const std::wstring &Value)
+{
+  TConfigRegistry Registry(Key, RootKey, true);
+  Registry.Write(ValueName, Value);
+}
+//---------------------------------------------------------------------------
+void SetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, unsigned Value)
 {
   TConfigRegistry Registry(Key, RootKey, true);
   Registry.Write(ValueName, Value);

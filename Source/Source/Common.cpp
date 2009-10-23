@@ -61,10 +61,10 @@ void AssociateExt(std::wstring Ext, std::wstring ProgramName, std::wstring Ident
 
     HKEY RootKey = AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER;
 
-    CreateRegKey(L"Software\\Classes\\" + Ext, L"", Ident, RootKey);
-    CreateRegKey(L"Software\\Classes\\" + Ident, L"", Description, RootKey);
-    CreateRegKey(L"Software\\Classes\\" + Ident + L"\\DefaultIcon", L"", Icon, RootKey);
-    CreateRegKey(L"Software\\Classes\\" + Ident + L"\\shell\\open\\command", L"", ProgramName, RootKey);
+    SetRegValue(L"Software\\Classes\\" + Ext, L"", RootKey, Ident);
+    SetRegValue(L"Software\\Classes\\" + Ident, L"", RootKey, Description);
+    SetRegValue(L"Software\\Classes\\" + Ident + L"\\DefaultIcon", L"", RootKey, Icon);
+    SetRegValue(L"Software\\Classes\\" + Ident + L"\\shell\\open\\command", L"", RootKey, ProgramName);
 
     //Tell the shell that a file association has been changed
     SHChangeNotify(SHCNE_ASSOCCHANGED, 0, NULL, NULL);

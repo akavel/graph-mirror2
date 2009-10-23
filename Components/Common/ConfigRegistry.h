@@ -71,5 +71,6 @@ void RemoveRegistryKey(const std::wstring &Key, HKEY RootKey);
 std::wstring GetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, const std::wstring &Default);
 unsigned GetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, unsigned Default);
 bool RegKeyExists(const std::wstring &Key, HKEY RootKey);
-void CreateRegKey(const std::wstring &Key, const std::wstring &ValueName, const std::wstring &Value, HKEY RootKey);
+void SetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, const std::wstring &Value);
+void SetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, unsigned Value);
 #endif

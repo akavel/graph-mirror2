@@ -229,7 +229,7 @@ void UpgradeSettings()
   //Old default font (Times New Roman) is changed to Tahoma to support angle symbol
   std::wstring VersionStr = GetRegValue(REGISTRY_KEY, L"Version", HKEY_CURRENT_USER, L"");
   if(TVersion(VersionStr) < TVersion(4,4,0,444))
-    CreateRegKey(REGISTRY_KEY "\\Property", L"DefaultPointLabelFont", DEFAULT_POINT_FONT, HKEY_CURRENT_USER);
+    SetRegValue(REGISTRY_KEY "\\Property", L"DefaultPointLabelFont", HKEY_CURRENT_USER, DEFAULT_POINT_FONT);
 }
 //---------------------------------------------------------------------------
 HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
