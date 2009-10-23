@@ -100,11 +100,8 @@ local settings.</font></p>
 <p><font size="+1"><strong>Q:</strong>
 <strong>How do I plot a vertical line?</strong><br>
 
-<strong>A:</strong> &nbsp;A standard function
-cannot be
-vertical, but it can have a slope so large that it looks vertical. The
-function f(x)=1000(x-5) looks like a vertical line at x=5. A real
-vertical line can be drawn as a parametric function. Select <em>Parametric
+<strong>A:</strong>
+A vertical line can be drawn as a parametric function. Select <em>Parametric
 function</em> as <em>function type</em>
 when adding the function. You can when add the vertical line x=5 as
 x(t)=5, y(t)=t. Alternatively you can add x=5 as a relation.</font></p>
