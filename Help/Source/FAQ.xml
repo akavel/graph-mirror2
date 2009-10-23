@@ -157,12 +157,10 @@
 				</question>
 				<answer>
 					<para>
-						A standard function cannot be vertical, but it can have a slope so large that it looks vertical.
-						The function <userinput>f(x)=1000(x-5)</userinput> looks like a vertical line at x=5.
-						A real vertical line can be drawn as a parametric function.
+						A vertical line can be drawn as a parametric function.
 						Select <guilabel>Parametric function</guilabel> as <guilabel>Function type</guilabel> when adding the function.
 						You can then add the vertical line at x=5 as <userinput>x(t)=5, y(t)=t</userinput>.
-						Alternatively you can add x=5 as a relation.
+						Alternatively you can add <userinput>x=5</userinput> as a relation.
 					</para>
 				</answer>
 			</qandaentry>
