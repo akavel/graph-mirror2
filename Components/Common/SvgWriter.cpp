@@ -44,8 +44,8 @@ void TSvgWriter::BeginFile(const RECTL &Rect, unsigned Width, unsigned Height)
   Stream <<
     "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
     "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n"
-    "<svg " /*<< "width=\"" << Width/1000.0 << "cm\" height=\"" << Height/1000.0 << "cm\" " */ << "viewBox=\""
-      << Rect.left << " " << Rect.top << " " << (Rect.right - Rect.left) << " " << (Rect.bottom - Rect.top)
+    "<svg " << "width=\"" << Width/1000.0 << "cm\" height=\"" << Height/1000.0 << "cm\" "  << "viewBox=\""
+      << Rect.left << " " << Rect.top << " " << (Rect.right - Rect.left + 1) << " " << (Rect.bottom - Rect.top + 1)
       << "\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n";
   Stream << "  <g>\n";
 }
@@ -58,14 +58,14 @@ void TSvgWriter::EndOfFile()
 //---------------------------------------------------------------------------
 void TSvgWriter::Line(int X1, int Y1, int X2, int Y2)
 {
-  Stream << "  <line";
+  Stream << "    <line";
   WritePen();
   Stream << "x1=\"" << X1 << "\" y1=\"" << Y1 << "\" x2=\"" << X2 << "\" y2=\"" << Y2 << "\" />\n";
 }
 //---------------------------------------------------------------------------
 void TSvgWriter::Polyline(const POINTS *Points, int Count)
 {
-  Stream << "  <polyline";
+  Stream << "    <polyline";
   WritePen();
   WriteBrush(false);
   Stream << "points=\"";
@@ -76,7 +76,7 @@ void TSvgWriter::Polyline(const POINTS *Points, int Count)
 //---------------------------------------------------------------------------
 void TSvgWriter::Polygon(const POINTS *Points, int Count)
 {
-  Stream << "  <polygon";
+  Stream << "    <polygon";
   WritePen();
   WriteBrush();
   Stream << "points=\"";
@@ -87,7 +87,7 @@ void TSvgWriter::Polygon(const POINTS *Points, int Count)
 //---------------------------------------------------------------------------
 void TSvgWriter::Rectangle(const RECTL &Rect)
 {
-  Stream << "  <rect";
+  Stream << "    <rect";
   WritePen();
   WriteBrush();
   Stream << "x=\"" << Rect.left << "\" y=\"" << Rect.top << "\" width=\"" <<
@@ -97,7 +97,7 @@ void TSvgWriter::Rectangle(const RECTL &Rect)
 void TSvgWriter::Ellipse(const RECTL &Rect)
 {
   bool Circle = Rect.right - Rect.left == Rect.bottom - Rect.top;
-  Stream << (Circle ? "  <circle" : "  <ellipse");
+  Stream << (Circle ? "    <circle" : "    <ellipse");
   WritePen();
   WriteBrush();
   Stream << "cx=\"" << (Rect.right + Rect.left)/2 << "\" cy=\"" << (Rect.bottom + Rect.top)/2 << "\" ";
@@ -110,7 +110,7 @@ void TSvgWriter::Ellipse(const RECTL &Rect)
 //---------------------------------------------------------------------------
 void TSvgWriter::Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font)
 {
-  Stream << "  <text x=\"" << X << "\" y=\"" << Y << "\" font-family=\"" <<
+  Stream << "    <text x=\"" << X << "\" y=\"" << Y << "\" font-family=\"" <<
     Font.Name << "\" font-size=\"" << Font.Size << "\">" << Utf8Encode(Str) << "</text>\n";
 }
 //---------------------------------------------------------------------------
