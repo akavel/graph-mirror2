@@ -247,8 +247,14 @@ void TEmfParser::Parse(HENHMETAFILE Handle, TGraphicWriter &AWriter)
   assert(GetEnhMetaFileHeader(Handle, sizeof(Header), &Header));
 
   Writer = &AWriter;
-  Header.rclBounds.bottom++;
-  Writer->BeginFile(Header.rclBounds, Header.rclFrame.right - Header.rclFrame.left, Header.rclFrame.bottom - Header.rclFrame.top);
+  RECTL Rect;
+  double xScale = (double)Header.szlDevice.cx / Header.szlMillimeters.cx / 100;
+  double yScale = (double)Header.szlDevice.cy / Header.szlMillimeters.cy / 100;
+  Rect.left = Header.rclFrame.left * xScale + 0.5;
+  Rect.top = Header.rclFrame.top * yScale + 0.5;
+  Rect.right = Header.rclFrame.right * xScale + 0.5;
+  Rect.bottom = Header.rclFrame.bottom * yScale + 0.5;
+  Writer->BeginFile(Rect, Header.rclFrame.right - Header.rclFrame.left, Header.rclFrame.bottom - Header.rclFrame.top);
 
   EnumEnhMetaFile(NULL, Handle, &EnhMetaFileProc, this, NULL);
   Writer->EndOfFile();
