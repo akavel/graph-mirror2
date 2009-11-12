@@ -464,9 +464,11 @@ long double TParamFunc::CalcAngleSlope(long double t) const
  *  The area will be negative when the function travels from right to left.
  *  \param xMin: Start of range
  *  \param xMax: End of range
- *  \param n: The number of steps; n must be even
+ *  \param RelError: Max estimated error that will throw an exception.
+ *  \return The calculated area.
+ *  \throw EFuncError if the max estimated relative error could not be reached.
  */
-long double TParamFunc::CalcArea(long double tMin, long double tMax, unsigned n) const
+double TParamFunc::CalcArea(double tMin, double tMax, double RelError) const
 {
   if(!xDifData)
     xDifData = xFuncData->MakeDif(CodeVariable, Trigonometry);
@@ -475,20 +477,21 @@ long double TParamFunc::CalcArea(long double tMin, long double tMax, unsigned n)
   Temp.Add(CodeMul);
   Temp.Add(*yFuncData);
   Temp.Add(*xDifData);
-  return Temp.Integrate(tMin, tMax, n, Trigonometry);
+  return Temp.Integrate(tMin, tMax, RelError, Trigonometry);
 }
 //---------------------------------------------------------------------------
 /** Returns the length of the curve between t=tMin and t=tMax made by the function.
  *  \param tMin: Start parameter
  *  \param tMax: End parameter
  *  \param n: The number of steps; n must be even.
- *  \return Length of curve.
+ *  \param RelError: Max estimated error that will throw an exception.
+ *  \return The calculated length.
  *  \throw EFuncError: If the function cannot be differentiated.
  *  \throw ECalcError: If Calculation fails.
  */
-long double TParamFunc::CalcArc(long double tMin, long double tMax, unsigned n) const
+double TParamFunc::CalcArc(double tMin, double tMax, double RelError) const
 {
-  return sqrt(pow(ConvXToFunc().MakeDif(), 2) + pow(ConvYToFunc().MakeDif(), 2)).CalcArea(tMin, tMax, n);
+  return sqrt(pow(ConvXToFunc().MakeDif(), 2) + pow(ConvYToFunc().MakeDif(), 2)).CalcArea(tMin, tMax, RelError);
 }
 //---------------------------------------------------------------------------
 /** Calculate the slope at the given t-parameter.

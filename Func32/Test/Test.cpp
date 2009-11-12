@@ -664,7 +664,7 @@ void Test()
 
   //Test vertical trend lines
   TDblPoint Vertical[] = {TDblPoint(5,1), TDblPoint(5,7)};
-  TestTrendLineError(ttPower, Vertical, 2, 0, ecOverflow);
+  TestTrendLineError(ttPower, Vertical, 2, 0, ecNoResult);
 
   //Test difficult trend line
   TDblPoint Points1[] = {TDblPoint(1950,1571), TDblPoint(1970,524), TDblPoint(1980, 208), TDblPoint(2003, 29)};

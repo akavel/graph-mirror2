@@ -304,25 +304,27 @@ long double TPolarFunc::CalcAngleSlope(long double t) const
 /** Returns the length of a part of the curve.
  *  \param tMin: Start angle.
  *  \param tMax: End angle.
- *  \param n: The number of steps; n must be even.
+ *  \param RelError: Max estimated error that will throw an exception.
  *  \return Length of curve from tMin to tMax.
  *  \throw EFuncError: Thrown when differentiation fails.
  *  \throw ECalcError: Throw if evaluation fails.
  */
-long double TPolarFunc::CalcArc(long double tMin, long double tMax, unsigned n) const
+double TPolarFunc::CalcArc(double tMin, double tMax, double RelError) const
 {
   TFunc r(ConvToFunc());
-  return sqrt(pow(r, 2) + pow(r.MakeDif(), 2)).CalcArea(tMin, tMax, n);
+  return sqrt(pow(r, 2) + pow(r.MakeDif(), 2)).CalcArea(tMin, tMax, RelError);
 }
 //---------------------------------------------------------------------------
 /** Calculate the area between origo and the function from tMin to tMax
  *  \param tMin: Angle indicating start of range
  *  \param tMax: Angle indicating end of range
- *  \param n: The number of steps; n must be even
+ *  \param RelError: Max estimated error that will throw an exception.
+ *  \return The calculated area from tMin to tMax.
+ *  \throw EFuncError if the max estimated relative error could not be reached.
  */
-long double TPolarFunc::CalcArea(long double tMin, long double tMax, unsigned n) const
+double TPolarFunc::CalcArea(double tMin, double tMax, double RelError) const
 {
-  return pow(ConvToFunc(), 2).CalcArea(tMin, tMax, n) / 2;
+  return pow(ConvToFunc(), 2).CalcArea(tMin, tMax, RelError) / 2;
 }
 //---------------------------------------------------------------------------
 /** Calculate the slope at the given angle.

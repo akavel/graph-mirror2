@@ -399,22 +399,28 @@ long double TFunc::CalcAngleSlope(long double x) const
   return std::atan(MakeDif().CalcY(x));
 }
 //---------------------------------------------------------------------------
-/** Calculates the area under curve using Simpson's rule between xMin and xMax
+/** Calculates the area under curve between xMin and xMax
  *  \param xMin: Start of range
  *  \param xMax: End of range
- *  \param n: The number of steps; n must be even
+ *  \param RelError: Max estimated error that will throw an exception.
+ *  \return The calculated area.
+ *  \throw EFuncError if the max estimated relative error could not be reached.
  */
-long double TFunc::CalcArea(long double xMin, long double xMax, unsigned n) const
+double TFunc::CalcArea(double xMin, double xMax, double RelError) const
 {
-  return FuncData->Integrate(xMin, xMax, n, Trigonometry);
+  return FuncData->Integrate(xMin, xMax, RelError, Trigonometry);
 }
 //---------------------------------------------------------------------------
-//Returns the length of the curve between
-//x=xMin and x=xMax made by the function
-//n is the number of steps; n must be even
-long double TFunc::CalcArc(long double xMin, long double xMax, unsigned n) const
+/** Returns the length of the curve between x=xMin and x=xMax made by the function.
+ *  \param xMin: Start of range
+ *  \param xMax: End of range
+ *  \param RelError: Max estimated error that will throw an exception.
+ *  \return The calculated path.
+ *  \throw EFuncError if the max estimated relative error could not be reached.
+ */
+double TFunc::CalcArc(double xMin, double xMax, double RelError) const
 {
-  return sqrt(1 + pow(MakeDif(), 2)).CalcArea(xMin, xMax, n);
+  return sqrt(1 + pow(MakeDif(), 2)).CalcArea(xMin, xMax, RelError);
 }
 //---------------------------------------------------------------------------
 /** Calculate slope at given x-ccordinate.
