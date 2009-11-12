@@ -166,9 +166,7 @@ void TGraphElem::InsertChild(const TGraphElemPtr &Elem, int Index)
   if(Parent)
   {
     int ParentIndex = Parent->GetChildIndex(Elem);
-    Elem->MakeText();
     Parent->RemoveChild(ParentIndex);
-    Elem->MakeText();
   }
 
   if(Index == -1)
@@ -303,7 +301,7 @@ Func32::TCoord<long double> TBaseFuncType::Eval(long double t) const
 //---------------------------------------------------------------------------
 long double TBaseFuncType::CalcArea(long double From, long double To) const
 {
-  return GetFunc().CalcArea(From, To, 1000);
+  return GetFunc().CalcArea(From, To, 1E-3);
 }
 //---------------------------------------------------------------------------
 //////////////

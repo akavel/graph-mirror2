@@ -344,7 +344,7 @@ public:
     TInterpolationAlgorithm AInterpolation=iaLinear, bool AShowLabels=false, TFont *AFont=NULL,
     TLabelPosition ALabelPosition=lpBelow, TPointType APointType=ptCartesian,
     TErrorBarType XErrorBarType=ebtNone, double XErrorValue=0, TErrorBarType YErrorBarType=ebtNone, double YErrorValue=0);
-  std::wstring MakeText() const {return L"";}
+  std::wstring MakeText() const {return GetLegendText();}
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}

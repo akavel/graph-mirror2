@@ -164,59 +164,6 @@ void SetGlobalFocus(TWinControl *Control)
     Control->SetFocus();
 }
 //---------------------------------------------------------------------------
-//Math error handler
-//Called on any math errors;
-int _matherr(_exception *a)
-{
-  //Bug in RTL (cosl.asm) cosl() will call _matherr() instead of _matherrl() on error
-  //Because of this a->arg1 is also wrong
-  if(std::string(a->name) == "cosl")
-  {
-    using namespace std;
-    a->retval = 0;//NAN gives problems with log(-0)
-    errno = a->type;
-    return 1;
-  }
-
-  //We are only allowed to show VCL dialogs from main thread
-  //We should probably handle this differently
-  if(GetCurrentThreadId() != MainThreadID)
-    return 1;
-
-  try
-  {
-    static bool IgnoreAll = false;
-    if(IgnoreAll)
-      return 1;
-
-    String Error;
-    switch(a->type)
-    {
-      case DOMAIN:    Error = "DOMAIN"; break;
-      case SING:      Error = "SING"; break;
-      case OVERFLOW:  Error = "OVERFLOW"; break;
-      case UNDERFLOW: Error = "UNDERFLOW"; break;
-      case TLOSS:     Error = "TLOSS"; break;
-      default:        Error = "Unknown"; break;
-    }
-
-    String Str = LoadStr(RES_InternalError) + "\n" + String(a->name) + '(' + a->arg1 + ',' + a->arg2 + "): " + Error + " error\nContinue?";
-
-    int Result = MessageDlg(Str, mtError, TMsgDlgButtons() << mbYes << mbYesToAll << mbAbort, 0);
-    if(Result == mrYesToAll)
-      IgnoreAll = true;
-    else if(Result == mrAbort)
-      abort();
-
-    a->retval = NAN;
-  }
-  catch(Exception &E)
-  {
-    Application->ShowException(&E);
-  }
-  return 1;
-}
-//---------------------------------------------------------------------------
 template<typename T1, typename T2>
 LessFirstPair(const std::pair<T1, T2> &Pair1, const std::pair<T1, T2> &Pair2)
 {

@@ -28,9 +28,6 @@ void TAreaFrame::EvalArea(const TGraphElem *GraphElem)
   Edit3->Text = "";
   Form1->IPolygon1->Clear();
 
-  if(!GraphElem->GetVisible())
-    return;
-
   long double From = Form1->Data.Calc(ToWString(Edit1->Text));
   long double To = Form1->Data.Calc(ToWString(Edit2->Text));
 
@@ -46,6 +43,9 @@ void TAreaFrame::EvalArea(const TGraphElem *GraphElem)
 void TAreaFrame::EvalArea(const TBaseFuncType *Func, long double From, long double To)
 {
   Edit3->Text = RoundToStr(Func->CalcArea(From, To));
+
+  if(!Func->GetVisible())
+  return;
 
   if(From > To)
     std::swap(From, To);
@@ -119,12 +119,8 @@ void TAreaFrame::EvalArea(const TPointSeries *PointSeries, long double From, lon
 //---------------------------------------------------------------------------
 void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
 {
-
   Edit3->Text = "";
   Form1->IPolygon1->Clear();
-
-  if(!GraphElem->GetVisible())
-    return;
 
   double Min = Form1->Data.Calc(ToWString(Edit1->Text));
   double Max = Form1->Data.Calc(ToWString(Edit2->Text));
@@ -134,7 +130,10 @@ void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
 
   if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(GraphElem))
   {
-    Edit3->Text = RoundToStr(Func->GetFunc().CalcArc(Min, Max, 1000));
+    Edit3->Text = RoundToStr(Func->GetFunc().CalcArc(Min, Max, 1E-3));
+
+    if(!GraphElem->GetVisible())
+      return;
 
     unsigned N1 = std::lower_bound(Func->sList.begin(), Func->sList.end(), Min, TCompCoordSet()) - Func->sList.begin();
     unsigned N2 = std::upper_bound(Func->sList.begin() + N1, Func->sList.end(), Max, TCompCoordSet()) - Func->sList.begin();
@@ -154,6 +153,8 @@ void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
       //Length = sqrt(dx^2+dy^2) = sqrt(dx^2+^(a*dx)^2)
       Edit3->Text = RoundToStr(std::sqrt(dx*dx + dy*dy));
 
+      if(!GraphElem->GetVisible())
+        return
       Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xPoint(Min), Form1->Draw.yPoint(yMin)));
       Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xPoint(Max), Form1->Draw.yPoint(yMax)));
       Form1->IPolygon1->Pen->Width = Tan->Size;
