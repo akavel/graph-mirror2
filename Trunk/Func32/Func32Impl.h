@@ -203,6 +203,15 @@ struct TMakeTextData
   std::wostream &Stream;                   //!< Stream to write result to.
 };
 
+struct TGSLFunction
+{
+  TDynData<long double> DynData;
+  long double Value;
+  TConstIterator Func;
+  TGSLFunction(TConstIterator AFunc, TTrigonometry Trig)
+    : Func(AFunc), DynData(&Value, Trig) {}
+};
+
 class TFuncData
 {
   std::vector<TElem> Data;
@@ -213,9 +222,9 @@ class TFuncData
   static T CalcFunc(TConstIterator Iter, TDynData<T> &DynData);
   template<typename T>
   T CalcF(TDynData<T> &DynData) const;
+  static double CalcGSLFunc(double x, void *Params);
 
-  template<typename T>
-  static long double IntegrateT(TConstIterator Iter, long double Min, long double Max, unsigned n, TTrigonometry Trigonometry, TErrorCode &ErrorCode);
+  static double Integrate(TConstIterator Iter, double Min, double Max, TTrigonometry Trigonometry, TErrorCode &ErrorCode);
   void AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trigonometry, unsigned Level);
   static std::wstring MakeText(TConstIterator Iter);
   static void CreateText(TMakeTextData &TextData, bool AddPar=false);
@@ -271,7 +280,7 @@ public:
   void Add(const TFuncData &FuncData);
   void AddFront(const TElem &Elem) {Data.insert(Data.begin(), Elem);}
   bool operator==(const TFuncData &FuncData) const {return Data == FuncData.Data;}
-  long double Integrate(long double Min, long double Max, unsigned n, TTrigonometry Trigonometry) const;
+  double Integrate(double Min, double Max, double RelError, TTrigonometry Trigonometry) const;
   TElem& Front() {BOOST_ASSERT(!Data.empty()); return Data.front();}
 };
 //---------------------------------------------------------------------------

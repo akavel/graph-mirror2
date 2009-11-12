@@ -125,6 +125,7 @@ enum TErrorCode
   ecCalcError       = 86, //!< Not specified error under calculation; Overflow, division by zero, etc.
   ecBadGuess        = 87, //!< Too many iterations before solution found; bad guess
   ecNoResult        = 88, //!< There was no valid result, eg. from a trend line
+  ecNoAccurateResult= 89, //!< A result with the required accuracy could not be found
   ecInternalError   = 99  //!< Unknown error
 };
 
@@ -286,11 +287,11 @@ public:
   virtual bool IsEmpty() const =0; //throw()
 
   //!Calculates the area of the function from sMin to sMax. The exact area depends on the type of function
-  virtual long double CalcArea(long double sMin, long double sMax, unsigned n) const =0;
+  virtual double CalcArea(double sMin, double sMax, double RelError=1E-4) const =0;
 
   //!Calculates the length of the function from sMin to sMax along the curve
   //!using Simpson's formula. n is the number of steps, and n must be even.
-  virtual long double CalcArc(long double sMin, long double sMax, unsigned n) const =0;
+  virtual double CalcArc(double sMin, double sMax, double RelError=1E-4) const =0;
 
   //!Returns a standard function that define the x-part of the function.
   virtual TFunc ConvXToFunc() const =0;
@@ -359,8 +360,8 @@ public:
   TCoord<TComplex> Calc(TComplex, ECalcError &E) const; //throw()
 
   long double CalcSlope(long double x) const;
-  long double CalcArea(long double xMin, long double xMax, unsigned n) const;
-  long double CalcArc(long double xMin, long double xMax, unsigned n) const;
+  double CalcArea(double xMin, double xMax, double RelError) const;
+  double CalcArc(double xMin, double xMax, double RelError) const;
   long double CalcAngleSlope(long double s) const;
 
   TFunc* MakeDifPtr() const;
@@ -438,8 +439,8 @@ public:
   TCoord<TComplex> Calc(TComplex, ECalcError &E) const; //throw()
 
   long double CalcSlope(long double t) const;
-  long double CalcArea(long double sMin, long double sMax, unsigned n) const;
-  long double CalcArc(long double tMin, long double tMax, unsigned n) const;
+  double CalcArea(double sMin, double sMax, double RelError) const;
+  double CalcArc(double tMin, double tMax, double RelError) const;
   long double CalcAngleSlope(long double s) const;
 
   TParamFunc* MakeDifPtr() const;
@@ -511,8 +512,8 @@ public:
 
   long double CalcSlope(long double t) const;
   long double CalcR(long double t) const;
-  long double CalcArc(long double tMin, long double tMax, unsigned n) const;
-  long double CalcArea(long double tMin, long double tMax, unsigned n) const;
+  double CalcArc(double tMin, double tMax, double RelError) const;
+  double CalcArea(double tMin, double tMax, double RelError) const;
   long double CalcAngleSlope(long double s) const;
 
   TPolarFunc* MakeDifPtr() const;
@@ -692,9 +693,6 @@ public:
 
 enum TAnalyseType {atXAxisCross, atYAxisCross};
 std::vector<TCoordSet> AnalyseFunction(const TBaseFunc &Func, long double Min, long double Max, unsigned Steps, long double Tol, TAnalyseType AnalyseType);
-
-//Global variables (rarely changed)
-extern unsigned IntegrateSteps; //!<Number of steps used by the integrate function
 } //namespace Func32
 //---------------------------------------------------------------------------
 

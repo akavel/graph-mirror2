@@ -12,6 +12,7 @@
 #include <cmath>
 #include <cerrno>
 #include <limits>
+#include <gsl/gsl_integration.h>
 
 //Disable Warnings: "Condition is always true/false", "Unreachable code"
 #pragma warn -8008
@@ -36,7 +37,6 @@ using std::log;
 using std::sqrt;
 
 const unsigned MaxRecursion = 100; //Maximum number of recursive calls allowed
-unsigned IntegrateSteps = 100; //Number of steps used by the integrate function
 
 /** Delay creation of table until first use. The rest of the library must be initialized first
  *  \param Ident: Id to get data for.
@@ -61,28 +61,6 @@ inline bool operator!(const std::complex<T> &C)
 {
   return !real(C) && !imag(C);
 }
-//---------------------------------------------------------------------------
-// Returns the number itself; Exists for generic use with real(std::complex<T>)
-/*
-inline long double real(long double x)
-{
-  return x;
-}
-//---------------------------------------------------------------------------
-// Returns 0. Exists for generic use with imag(std::complex<T>)
-inline long double imag(long double x)
-{
-  return 0;
-}
-*/
-//---------------------------------------------------------------------------
-//Returns the number itself; Exists for generic use with arg(std::complex<T>)
-/*
-inline long double arg(long double x)
-{
-  return x >= 0 ? 0 : PI;
-}
-*/
 //---------------------------------------------------------------------------
 //Returns the number itself; Exists for generic use with conj(std::complex<T>)
 inline long double Conj(long double x)
@@ -573,7 +551,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       long double Max = real(CalcF(Iter, DynData));
       if(ErrorCode)
         return 0;
-      return IntegrateT<T>(F, Min, Max, IntegrateSteps, DynData.Trigonometry, ErrorCode);
+      return Integrate(F, Min, Max, DynData.Trigonometry, ErrorCode);
     }
 
     case CodeSum:
@@ -1035,52 +1013,69 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
   }
 }
 //---------------------------------------------------------------------------
-/** Returns the numeric integrale of the functions pointed to by Func from Min to Max using the Simpson's Rule.
+double TFuncData::CalcGSLFunc(double x, void *Params)
+{
+  TGSLFunction *Function = reinterpret_cast<TGSLFunction*>(Params);
+  Function->Value = x;
+  Function->DynData.ErrorCode = ecNoError;
+  double Result = GetReal(CalcFunc(Function->Func, Function->DynData), Function->DynData);
+  if(Function->DynData.ErrorCode != ecNoError)
+    return std::numeric_limits<double>::quiet_NaN();
+  return Result;
+}
+//---------------------------------------------------------------------------
+/** Returns the numeric integrale of the functions pointed to by Func from Min to Max.
+ *  The integral is calculated by the GNU Scientific Library (GSL)
+ *  It applies the Gauss-Kronrod 21-point integration rule adaptively until the estimated
+ *  relative error is less than give in RelError.
  *  \param Func: Iterator pointing to the place to start the evaluation.
  *  \param Min:  Start value
  *  \param Max:  End value
- *  \param n:    Number of steps; must be even.
+ *  \param RelError: Estimated relative error to stop integration at.
  *  \param Trigonometry: Used to tell if we should use radians or degrees for trigonometric functions.
  *  \param ErrorCode: Filled with error information on return.
  */
-template<typename T>
-long double TFuncData::IntegrateT(TConstIterator Func, long double Min, long double Max, unsigned n, TTrigonometry Trigonometry, TErrorCode &ErrorCode)
+double TFuncData::Integrate(TConstIterator Func, double Min, double Max, TTrigonometry Trigonometry, TErrorCode &ErrorCode)
 {
-  const long double h = (Max - Min) / n;  //Step size
-  T Value = Max;
-  TDynData<T> DynData(&Value, Trigonometry);
-  long double Sum = GetReal(CalcFunc(Func, DynData), DynData);
-  Value = Min;
-  Sum += GetReal(CalcFunc(Func, DynData), DynData);
-  for(unsigned i = 1; i < n; i += 2)
-  {
-    Value = Min + i * h;
-    Sum += 4 * GetReal(CalcFunc(Func, DynData), DynData);
-  }
+  const int MaxSubIntervals = 1000;
+  const double MaxRelError = 1E-3;
+  TGSLFunction Function(Func, Trigonometry);
+  gsl_integration_workspace *w = gsl_integration_workspace_alloc(MaxSubIntervals);
+  gsl_function F = {CalcGSLFunc, &Function};
 
-  for(unsigned i = 2; i < n; i += 2)
-  {
-    Value = Min + i * h;
-    Sum += 2 * GetReal(CalcFunc(Func, DynData), DynData);
-  }
-
-  ErrorCode = DynData.ErrorCode;
-  return Sum * h / 3;
+  ErrorCode = ecNoError;
+  double Result, Error;
+  if(gsl_integration_qags(&F, Min, Max, 0, MaxRelError, MaxSubIntervals, w, &Result, &Error) != 0/*GSL_SUCCESS*/)
+    ErrorCode = ecNoResult; //No result with specified accuracy was found
+  gsl_integration_workspace_free(w);
+  return Result;
 }
 //---------------------------------------------------------------------------
-/** Returns the numeric integrale of the function from Min to Max using the Simpson's Rule.
+/** Returns the numeric integrale of the functions pointed to by Func from Min to Max.
+ *  The integral is calculated by the GNU Scientific Library (GSL)
+ *  It applies the Gauss-Kronrod 21-point integration rule adaptively until it cannot
+ *  get a better result.
+ *  \param Func: Iterator pointing to the place to start the evaluation.
  *  \param Min:  Start value
  *  \param Max:  End value
- *  \param n:    Number of steps; must be even.
+ *  \param RelError: Estimated relative error to stop integration at.
  *  \param Trigonometry: Used to tell if we should use radians or degrees for trigonometric functions.
- *  \throw ECalcError: If evaluation fails.
+ *  \throw ECalcError: If the maximum relative error specified in RelError is not reached.
  */
-long double TFuncData::Integrate(long double Min, long double Max, unsigned n, TTrigonometry Trigonometry) const
+double TFuncData::Integrate(double Min, double Max, double RelError, TTrigonometry Trigonometry) const
 {
-  TErrorCode ErrorCode;
-  long double Result = IntegrateT<TComplex>(Data.begin(), Min, Max, n, Trigonometry, ErrorCode);
-  if(ErrorCode)
-    throw ECalcError(ErrorCode);
+  const int MaxSubIntervals = 1000;
+  TGSLFunction Function(Data.begin(), Trigonometry);
+  gsl_integration_workspace *w = gsl_integration_workspace_alloc(MaxSubIntervals);
+  gsl_function F = {CalcGSLFunc, &Function};
+
+  double Result, Error;
+  gsl_integration_qags(&F, Min, Max, 0, RelError, MaxSubIntervals, w, &Result, &Error);
+  gsl_integration_workspace_free(w);
+  if(!boost::math::isfinite(Result))
+    throw ECalcError(ecNoResult);
+  if(Error > RelError)
+    throw ECalcError(ecNoAccurateResult);
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -1105,5 +1100,6 @@ int _RTLENTRY _matherrl(_exceptionl *a)
 //Ignore by Doxygen
 #ifndef DOXYGEN
 template long double Func32::TFuncData::CalcF<long double>(TDynData<long double>&) const;
+template Func32::TComplex Func32::TFuncData::CalcF<Func32::TComplex>(TDynData<Func32::TComplex>&) const;
 #endif
 
