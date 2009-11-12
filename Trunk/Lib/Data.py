@@ -286,10 +286,6 @@ StringMap_swigregister = _Data.StringMap_swigregister
 StringMap_swigregister(StringMap)
 
 
-def Selected() -> "TGraphElemPtr" :
-  return _Data.Selected()
-Selected = _Data.Selected
-
 def AbortUpdate() -> "void" :
   return _Data.AbortUpdate()
 AbortUpdate = _Data.AbortUpdate
@@ -564,6 +560,15 @@ def TTan_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TBaseFuncType >" :
   return _Data.TTan_SWIGSharedPtrUpcast(*args)
 TTan_SWIGSharedPtrUpcast = _Data.TTan_SWIGSharedPtrUpcast
 
+ebtNone = _Data.ebtNone
+ebtFixed = _Data.ebtFixed
+ebtRelative = _Data.ebtRelative
+ebtCustom = _Data.ebtCustom
+iaLinear = _Data.iaLinear
+iaCubicSpline = _Data.iaCubicSpline
+iaHalfCosine = _Data.iaHalfCosine
+ptCartesian = _Data.ptCartesian
+ptPolar = _Data.ptPolar
 class TPointSeries(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
@@ -575,6 +580,38 @@ class TPointSeries(TGraphElem):
     __repr__ = _swig_repr
     __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TPointSeries_SWIGSharedPtrUpcast
     if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TPointSeries_SWIGSharedPtrUpcast)
+    __swig_getmethods__["xErrorBarType"] = _Data.TPointSeries_xErrorBarType_get
+    if _newclass:xErrorBarType = _swig_property(_Data.TPointSeries_xErrorBarType_get)
+    __swig_getmethods__["yErrorBarType"] = _Data.TPointSeries_yErrorBarType_get
+    if _newclass:yErrorBarType = _swig_property(_Data.TPointSeries_yErrorBarType_get)
+    __swig_getmethods__["xErrorValue"] = _Data.TPointSeries_xErrorValue_get
+    if _newclass:xErrorValue = _swig_property(_Data.TPointSeries_xErrorValue_get)
+    __swig_getmethods__["yErrorValue"] = _Data.TPointSeries_yErrorValue_get
+    if _newclass:yErrorValue = _swig_property(_Data.TPointSeries_yErrorValue_get)
+    __swig_getmethods__["FillColor"] = _Data.TPointSeries_FillColor_get
+    if _newclass:FillColor = _swig_property(_Data.TPointSeries_FillColor_get)
+    __swig_getmethods__["LineColor"] = _Data.TPointSeries_LineColor_get
+    if _newclass:LineColor = _swig_property(_Data.TPointSeries_LineColor_get)
+    __swig_getmethods__["FrameColor"] = _Data.TPointSeries_FrameColor_get
+    if _newclass:FrameColor = _swig_property(_Data.TPointSeries_FrameColor_get)
+    __swig_getmethods__["Size"] = _Data.TPointSeries_Size_get
+    if _newclass:Size = _swig_property(_Data.TPointSeries_Size_get)
+    __swig_getmethods__["Style"] = _Data.TPointSeries_Style_get
+    if _newclass:Style = _swig_property(_Data.TPointSeries_Style_get)
+    __swig_getmethods__["LineSize"] = _Data.TPointSeries_LineSize_get
+    if _newclass:LineSize = _swig_property(_Data.TPointSeries_LineSize_get)
+    __swig_getmethods__["LineStyle"] = _Data.TPointSeries_LineStyle_get
+    if _newclass:LineStyle = _swig_property(_Data.TPointSeries_LineStyle_get)
+    __swig_getmethods__["Interpolation"] = _Data.TPointSeries_Interpolation_get
+    if _newclass:Interpolation = _swig_property(_Data.TPointSeries_Interpolation_get)
+    __swig_getmethods__["ShowLabels"] = _Data.TPointSeries_ShowLabels_get
+    if _newclass:ShowLabels = _swig_property(_Data.TPointSeries_ShowLabels_get)
+    __swig_getmethods__["Font"] = _Data.TPointSeries_Font_get
+    if _newclass:Font = _swig_property(_Data.TPointSeries_Font_get)
+    __swig_getmethods__["LabelPosition"] = _Data.TPointSeries_LabelPosition_get
+    if _newclass:LabelPosition = _swig_property(_Data.TPointSeries_LabelPosition_get)
+    __swig_getmethods__["PointType"] = _Data.TPointSeries_PointType_get
+    if _newclass:PointType = _swig_property(_Data.TPointSeries_PointType_get)
     __swig_destroy__ = _Data.delete_TPointSeries
     __del__ = lambda self : None;
 TPointSeries_swigregister = _Data.TPointSeries_swigregister
@@ -702,6 +739,7 @@ def TAxesView_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
   return _Data.TAxesView_SWIGSharedPtrUpcast(*args)
 TAxesView_SWIGSharedPtrUpcast = _Data.TAxesView_SWIGSharedPtrUpcast
 
+import vcl
 def GraphElemRepr(self):
   return '%s("%s")' % (self.__class__.__name__, self.MakeText())
 TStdFunc.__repr__ = GraphElemRepr
@@ -714,6 +752,7 @@ TTextLabel.__repr__ = GraphElemRepr
 TShade.__repr__ = GraphElemRepr
 TAxesView.__repr__ = GraphElemRepr
 TTopGraphElem.__repr__ = GraphElemRepr
+TPointSeries.Font = property(lambda self: vcl.TObject(handle=_Data.TPointSeries_Font_get(self), owned=False))
 
 
 

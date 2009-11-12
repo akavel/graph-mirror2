@@ -17,7 +17,7 @@ Redraw = Data.Redraw
 Settings.TProperty.DefaultLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultLabelFont_get(self), owned=False))
 Settings.TProperty.DefaultPointLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultPointLabelFont_get(self), owned=False))
 
-Selected = Data.Selected
+Selected = None
 TGraphElem = Data.TGraphElem
 TStdFunc = Data.TStdFunc
 CreateStdFunc = Data.CreateStdFunc
@@ -122,9 +122,13 @@ EvalComplex = GraphImpl.EvalComplex
 SaveAsImage = GraphImpl.SaveAsImage
 Update = GraphImpl.Update
 
+def HandleOnSelect(Elem):
+    global Selected
+    Selected = Elem
+
 OnNew = []
 OnLoad = []
-OnSelect = []
+OnSelect = [HandleOnSelect]
 OnClose = []
 OnEdit = []
 EventList = [OnNew, OnLoad, OnSelect, OnClose, OnEdit]
