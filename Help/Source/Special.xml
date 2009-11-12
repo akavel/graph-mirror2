@@ -32,7 +32,7 @@
 				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric function.
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
 				<function>integrate</function> does not calculate the integral exactly.
-				Instead the calculation is done using Simpson's formula through 100 iterations.
+				Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to a estimated relative error less than <mathphrase>10<superscript>-3</superscript></mathphrase>.
 			</para>
 		</simplesect>
 		<simplesect>

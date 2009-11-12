@@ -12,27 +12,44 @@
 	<simplesect renderas="sect2">
 		<title>Libraries</title>
 		<simplelist>
-			<member>Graph uses dxgettext as translation library:</member>
+			<member><emphasis role="bold"><application>dxgettext</application></emphasis></member>
+			<member>Translation library.</member>
 			<member><orgname>Copyright &copy; Lars B. Dybdahl (<email>Lars@dybdahl.dk</email>) et al.</orgname></member>
 			<member><ulink url="http://dybdahl.dk/dxgettext/"/></member>
 		</simplelist>
 
 		<simplelist>
-			<member>For shell extensions the EasyNSE library is used:</member>
+			<member><emphasis role="bold"><application>EasyNSE</application></emphasis></member>
+			<member>Library for creating shell extensions.</member>
 			<member><orgname>Copyright &copy; 2005 Cool Breeze Software</orgname></member>
 			<member><ulink url="http://www.mustangpeak.net"/></member>
 		</simplelist>
 
 		<simplelist>
-			<member>The PDFlib-Lite library is used to create PDF files:</member>
+			<member><emphasis role="bold"><application>PDFlib-Lite</application></emphasis></member>
+			<member>Used to create PDF files.</member>
 			<member><orgname>Copyright &copy; 1997-2005 Thomas Merz &amp; PDFlib GmbH</orgname></member>
 			<member><ulink url="http://www.pdflib.com"/></member>
 		</simplelist>
 
 		<simplelist>
-			<member>Python is used for plugin support:</member>
+			<member><emphasis role="bold"><application>Python</application></emphasis></member>
+			<member>Used for plugin support and advanced interaction.</member>
 			<member><orgname>Copyright &copy; 2001-2006 Python Software Foundation</orgname></member>
 			<member><ulink url="http://www.python.org"/></member>
+		</simplelist>
+
+		<simplelist>
+			<member><emphasis role="bold"><application>GNU Scientific Library</application></emphasis></member>
+			<member>Numeric library.</member>
+			<member><orgname>Copyright &copy; 2009 Free Software Foundation, Inc.</orgname></member>
+			<member><ulink url="http://www.gnu.org/software/gsl/"/></member>
+		</simplelist>
+
+		<simplelist>
+			<member><emphasis role="bold"><application>Boost</application></emphasis></member>
+			<member>Peer-reviewed C++ library.</member>
+			<member><ulink url="http://www.boost.org"/></member>
 		</simplelist>
 	</simplesect>
 

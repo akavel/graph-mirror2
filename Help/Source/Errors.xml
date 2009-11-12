@@ -403,6 +403,16 @@
 				</listitem>
 			</varlistentry>
 
+			<varlistentry id="Error89">
+				<term>Error 89: An accurate result cannot be found.</term>
+				<listitem>
+					<para>
+						Graph could not calculate an accurate result.
+						This may happen when calculating the numeric integral produced a result with a too high estimated error.
+					</para>
+				</listitem>
+			</varlistentry>
+
 			<varlistentry id="Error99">
 				<term>Error 99: Internal error. Please notify the programmer with as much information as possible.</term>
 				<listitem>
