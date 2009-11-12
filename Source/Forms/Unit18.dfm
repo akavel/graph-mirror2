@@ -27,7 +27,7 @@ object Form18: TForm18
     Top = 8
     Width = 306
     Height = 193
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Anchors = [akLeft, akTop, akRight]
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -38,10 +38,6 @@ object Form18: TForm18
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Size'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 8
         Top = 92
@@ -62,7 +58,7 @@ object Form18: TForm18
         Width = 121
         Height = 21
         Hint = 'Set a custom image width in pixels.'
-        TabOrder = 0
+        TabOrder = 1
         OnKeyPress = EditKeyPress
       end
       object Edit2: TEdit
@@ -71,7 +67,7 @@ object Form18: TForm18
         Width = 121
         Height = 21
         Hint = 'Set a custom image height in pixels.'
-        TabOrder = 1
+        TabOrder = 2
         OnKeyPress = EditKeyPress
       end
       object RadioGroup3: TRadioGroup
@@ -87,7 +83,7 @@ object Form18: TForm18
         Items.Strings = (
           'Screen size'
           'Custom size')
-        TabOrder = 2
+        TabOrder = 0
         OnClick = RadioGroup3Click
       end
     end
@@ -100,10 +96,6 @@ object Form18: TForm18
       Font.Style = []
       ImageIndex = 1
       ParentFont = False
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         298
         165)
@@ -165,10 +157,6 @@ object Form18: TForm18
     object TabSheet3: TTabSheet
       Caption = 'PDF'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label3: TLabel
         Left = 8
         Top = 8

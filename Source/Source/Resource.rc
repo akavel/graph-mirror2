@@ -85,6 +85,7 @@ BEGIN
   RES_CalcError           "Not further specified error occurred under calculation."
   RES_BadGuess            "No solution found. Try another guess or another model."
   RES_NoResult            "No result found."
+  RES_NoAccurateResult    "An accurate result cannot be found."
   RES_InternalError       "Internal error. Please notify the programmer with as much information as possible."
 
   RES_EmptyName           "You need to enter a name for the function/constant."

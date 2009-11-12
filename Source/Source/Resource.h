@@ -88,6 +88,7 @@
 #define RES_CalcError           186 //Not specified error under calculation; Overflow, division by zero, etc.
 #define RES_BadGuess            187 //Bad guess for finding trend line
 #define RES_NoResult            188 //There was no valid result, eg. from a trend line
+#define RES_NoAccurateResult    189 //A result with the required accuracy could not be found
 #define RES_InternalError       199 //Unknown error
 
 #define RES_EmptyName           200

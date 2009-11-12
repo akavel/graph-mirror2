@@ -96,6 +96,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   SetCompTranslateFunc(gettext);
   SetApplicationExceptionHandler(true);
   InitDebug();
+#else
+  SetApplicationExceptionHandler(false);
 #endif
 
   Font->Name = "MS Shell Dlg";
@@ -796,8 +798,6 @@ void TForm1::LoadSettings(void)
     ChangeLanguage(Registry.Read(L"Language", L"English").c_str());
   else
     ChangeLanguage(GetRegValue(REGISTRY_KEY, L"Language", HKEY_LOCAL_MACHINE, L"English").c_str());
-
-  Func32::IntegrateSteps = Registry.Read("IntegrateSteps", Func32::IntegrateSteps);
 
   if(Registry.KeyExists(REGISTRY_KEY L"\\Property"))
     Registry.OpenKey(REGISTRY_KEY L"\\Property");
