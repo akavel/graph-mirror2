@@ -57,7 +57,6 @@ typedef boost::shared_ptr<class TGraphElem> TGraphElemPtr;
 %}
 
 %inline %{
-static TGraphElemPtr Selected() {return Form1->GetGraphElem(Form1->TreeView->Selected);}
 static void AbortUpdate() {Form1->Data.AbortUpdate();}
 static void Redraw() {Form1->Redraw();}
 static boost::shared_ptr<TStdFunc> CreateStdFunc(const std::wstring &Text) throw(Func32::EFuncError) {return boost::shared_ptr<TStdFunc>(new TStdFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
@@ -170,7 +169,28 @@ public:
   TTangentType TangentType;
 };
 
+enum TErrorBarType {ebtNone, ebtFixed, ebtRelative, ebtCustom};
+enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
+//enum TLabelPosition {lpAbove, lpBelow, lpLeft, lpRight, lpAboveLeft, lpAboveRight, lpBelowLeft, lpBelowRight};
+enum TPointType {ptCartesian, ptPolar};
+
 %nodefaultctor TPointSeries;
+%attribute(TPointSeries, TErrorBarType, xErrorBarType, GetxErrorBarType);
+%attribute(TPointSeries, TErrorBarType, yErrorBarType, GetyErrorBarType);
+%attribute(TPointSeries, double, xErrorValue, GetxErrorValue);
+%attribute(TPointSeries, double, yErrorValue, GetyErrorValue);
+%attribute(TPointSeries, TColor, FillColor, GetFillColor);
+%attribute(TPointSeries, TColor, LineColor, GetLineColor);
+%attribute(TPointSeries, TColor, FrameColor, GetFrameColor);
+%attribute(TPointSeries, unsigned, Size, GetSize);
+%attribute(TPointSeries, unsigned, Style, GetStyle);
+%attribute(TPointSeries, unsigned, LineSize, GetLineSize);
+%attribute(TPointSeries, unsigned, LineStyle, GetLineStyle);
+%attribute(TPointSeries, TInterpolationAlgorithm, Interpolation, GetInterpolation);
+%attribute(TPointSeries, bool, ShowLabels, GetShowLabels);
+%attribute(TPointSeries, TFont*, Font, GetFont);
+%attribute(TPointSeries, unsigned, LabelPosition, GetLabelPosition);
+%attribute(TPointSeries, TPointType, PointType, GetPointType);
 class TPointSeries : public TGraphElem
 {
 };
@@ -229,6 +249,7 @@ class TAxesView : public TGraphElem
 
 %pythoncode
 {
+  import vcl
   def GraphElemRepr(self):
     return '%s("%s")' % (self.__class__.__name__, self.MakeText())
   TStdFunc.__repr__ = GraphElemRepr
@@ -241,5 +262,6 @@ class TAxesView : public TGraphElem
   TShade.__repr__ = GraphElemRepr
   TAxesView.__repr__ = GraphElemRepr
   TTopGraphElem.__repr__ = GraphElemRepr
+  TPointSeries.Font = property(lambda self: vcl.TObject(handle=_Data.TPointSeries_Font_get(self), owned=False))
 }
 
