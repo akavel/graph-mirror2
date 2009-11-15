@@ -119,6 +119,7 @@ protected:
 //---------------------------------------------------------------------------
 void InitDebug()
 {
+#pragma warn -8104
   static TDebugStreamBuf DebugStreamBuf;
   static TDebugWideStreamBuf DebugWideStreamBuf;
   std::clog.rdbuf(&DebugStreamBuf);

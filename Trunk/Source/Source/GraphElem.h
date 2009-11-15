@@ -13,6 +13,7 @@
 #include <boost/weak_ptr.hpp>
 #include <deque>
 #include <boost/enable_shared_from_this.hpp>
+#include <boost\math\special_functions\fpclassify.hpp>
 
 class TConfigFileSection;
 namespace Graph
@@ -54,7 +55,7 @@ struct TTextValue
   void Update(const class TData &Data);
   void Set(const std::wstring AText, const TData &Data, bool IgnoreErrors = false);
   void Set(double AValue);
-  bool IsFinite() const {return std::_finite(Value);}
+  bool IsFinite() const {return boost::math::isfinite(Value);}
 };
 
 std::wostream& operator<<(std::wostream &Stream, const TTextValue &TextValue);

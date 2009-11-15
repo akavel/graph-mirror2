@@ -639,7 +639,6 @@ inline long double GetReal(long double Number)
   return Number;
 }
 //---------------------------------------------------------------------------
-
 typedef TCoord<double> TDblPoint;
 
 //! Type use with the TrendLine() function to find a trend in a point series.

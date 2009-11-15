@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include <memory>
 #include <limits>
+#include <iomanip>
 #define PI    3.141592653589793238462643L
 
 namespace Func32

@@ -12,7 +12,9 @@
 #include <cmath>
 #include <cerrno>
 #include <limits>
+#include <boost\math\special_functions\fpclassify.hpp>
 #include <gsl/gsl_integration.h>
+#include <boost/tr1/complex.hpp>
 
 //Disable Warnings: "Condition is always true/false", "Unreachable code"
 #pragma warn -8008
@@ -1018,7 +1020,7 @@ double TFuncData::CalcGSLFunc(double x, void *Params)
   TGSLFunction *Function = reinterpret_cast<TGSLFunction*>(Params);
   Function->Value = x;
   Function->DynData.ErrorCode = ecNoError;
-  double Result = GetReal(CalcFunc(Function->Func, Function->DynData), Function->DynData);
+  double Result = CalcFunc(Function->Func, Function->DynData);
   if(Function->DynData.ErrorCode != ecNoError)
     return std::numeric_limits<double>::quiet_NaN();
   return Result;

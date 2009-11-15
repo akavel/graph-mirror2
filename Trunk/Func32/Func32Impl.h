@@ -341,14 +341,6 @@ inline unsigned FunctionArguments(const TElem &Elem)
   return Elem.Arguments;
 }
 //---------------------------------------------------------------------------
-template<typename T2, typename T>
-inline long double GetReal(T Number, TDynData<T2> &DynData)
-{
-  if(imag(Number))
-    DynData.ErrorCode = ecComplexError;
-  return real(Number);
-}
-//---------------------------------------------------------------------------
 //Check if a is very close to zero
 //From an article "The G3D Graphics Engine" by Morgan McGuire in CUJ Dec. 2004
 inline bool IsZero(long double a)

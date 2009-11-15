@@ -71,8 +71,9 @@ public:
   int xPoint(long double x) const; //Return pixel coresponding to x value
   int yPoint(long double y) const; //Return pixel coresponding to y value
   TPoint xyPoint(long double x, long double y) const {return TPoint(xPoint(x), yPoint(y));}
-  template<typename T>
-  TPoint xyPoint(const Func32::TCoord<T> &Coord) const {return TPoint(xPoint(std::real(Coord.x)), yPoint(std::real(Coord.y)));}
+  TPoint xyPoint(const Func32::TCoord<double> &Coord) const {return TPoint(xPoint(Coord.x), yPoint(Coord.y));}
+  TPoint xyPoint(const Func32::TCoord<long double> &Coord) const {return TPoint(xPoint(Coord.x), yPoint(Coord.y));}
+  TPoint xyPoint(const Func32::TCoord<Func32::TComplex> &Coord) const {return TPoint(xPoint(Coord.x.real()), yPoint(Coord.y.real()));}
   double xPointExact(long double x) const; //Same as xPoint(), but returns double and don't check for error
   double yPointExact(long double y) const;
   double xCoord(int x) const;

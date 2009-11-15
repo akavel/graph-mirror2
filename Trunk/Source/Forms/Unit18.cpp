@@ -131,8 +131,8 @@ void TImageOptions::LoadSettings()
     UseCustomSize = Registry.Read("UseCustomSize", false);
     Jpeg.Quality = Registry.Read("JpegQuality", 90);
     Jpeg.ProgressiveEncoding = Registry.Read("ProgressiveEncoding", false);
-    Pdf.Orientation = Registry.ReadEnum("Orientation", poPortrait);
-    Pdf.PaperSize = Registry.ReadEnum("PaperSize", psA4);
+    Pdf.Orientation = Registry.Read("Orientation", poPortrait);
+    Pdf.PaperSize = Registry.Read("PaperSize", psA4);
   }
 }
 //---------------------------------------------------------------------------

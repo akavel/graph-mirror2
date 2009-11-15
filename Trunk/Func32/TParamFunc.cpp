@@ -9,6 +9,7 @@
 #include "Func32.h"
 #include "Func32Impl.h"
 #pragma hdrstop
+#include <iomanip>
 #include <limits>
 namespace Func32
 {

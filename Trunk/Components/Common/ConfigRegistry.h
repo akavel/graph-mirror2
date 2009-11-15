@@ -57,8 +57,8 @@ public:
   bool Read(const std::string &Name, bool Default) const {return Read(Name, static_cast<int>(Default));}
   unsigned Read(const std::string &Name, unsigned Default) const {return Read(Name, static_cast<int>(Default));}
 
-  template<typename T>
-  T ReadEnum(const std::string &Name, const T &Default) const {return Read(Name, static_cast<int>(Default));}
+  template<typename T> //T must be an enum
+  T Read(const std::string &Name, const T &Default) const {return static_cast<T>(Read(Name, static_cast<int>(Default)));}
   bool ValueExists(const std::wstring &Name) const {return GetValueSize(Name) != 0;}
 
   static bool KeyExists(const std::wstring &Key, HKEY RootKey = HKEY_CURRENT_USER);
