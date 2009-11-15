@@ -61,225 +61,225 @@
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>
-			<CppCompile Include="TIColorSelect\IColorSelect.cpp">
-				<BuildOrder>9</BuildOrder>
+			<CppCompile Include="TProgress\Progress.cpp">
+				<DependentOn>TProgress\Progress.h</DependentOn>
+				<BuildOrder>38</BuildOrder>
 			</CppCompile>
-			<ResFiles Include="IComp.res">
-				<BuildOrder>2</BuildOrder>
+			<ResFiles Include="TPointSelect\PointSelect.dcr">
+				<BuildOrder>37</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="TPointSelect\PointSelect.cpp">
+				<DependentOn>TPointSelect\PointSelect.h</DependentOn>
+				<BuildOrder>36</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="TProgress\Progress.dcr">
+				<BuildOrder>39</BuildOrder>
+			</ResFiles>
+			<ResFiles Include="TRecent\TRecent.dcr">
+				<BuildOrder>43</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="TSerialHandler\SerialHandler.cpp">
+				<DependentOn>TSerialHandler\SerialHandler.h</DependentOn>
+				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TSymbolDialog\SymbolForm.cpp">
+				<Form>SymbolFrm</Form>
+				<DependentOn>TSymbolDialog\SymbolForm.h</DependentOn>
+				<BuildOrder>49</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TOpenPreviewDialog\OpenPreviewDialog.cpp">
+				<DependentOn>TOpenPreviewDialog\OpenPreviewDialog.h</DependentOn>
+				<BuildOrder>35</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TIRichEdit\IRichEdit.cpp">
+				<DependentOn>TIRichEdit\IRichEdit.h</DependentOn>
+				<BuildOrder>30</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TMyRadioButton\MyRadioButton.cpp">
+				<DependentOn>TMyRadioButton\MyRadioButton.h</DependentOn>
+				<BuildOrder>29</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TMyEdit\MyEdit.cpp">
+				<DependentOn>TMyEdit\MyEdit.h</DependentOn>
+				<BuildOrder>28</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="TIRichEdit\IRichEdit.dcr">
+				<BuildOrder>31</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="TMySplitter\MySplitter.cpp">
+				<DependentOn>TMySplitter\MySplitter.h</DependentOn>
+				<BuildOrder>34</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TIRichEdit\RichEditOleCallback.cpp">
+				<DependentOn>TIRichEdit\RichEditOleCallback.h</DependentOn>
+				<BuildOrder>33</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TIRichEdit\RichEditOle.cpp">
+				<DependentOn>TIRichEdit\RichEditOle.h</DependentOn>
+				<BuildOrder>32</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TMediaPlayerEx\MediaPlayerEx.cpp">
+				<DependentOn>TMediaPlayerEx\MediaPlayerEx.h</DependentOn>
+				<BuildOrder>26</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TSymbolDialog\SymbolDialog.cpp">
+				<DependentOn>TSymbolDialog\SymbolDialog.h</DependentOn>
+				<BuildOrder>50</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TSerialHandler\SerialThread.cpp">
+				<DependentOn>TSerialHandler\SerialThread.h</DependentOn>
+				<BuildOrder>46</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="TSymbolDialog\SymbolDialog.dcr">
+				<BuildOrder>51</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="TLinkLabelEx\LinkLabelEx.cpp">
+				<DependentOn>TLinkLabelEx\LinkLabelEx.h</DependentOn>
+				<BuildOrder>59</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Common\Debug.cpp">
+				<DependentOn>Common\Debug.h</DependentOn>
+				<BuildOrder>57</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TCheckBoxEx\CheckBoxEx.cpp">
+				<DependentOn>TCheckBoxEx\CheckBoxEx.h</DependentOn>
+				<BuildOrder>54</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="TShadeSelect\ShadeSelect.dcr">
+				<BuildOrder>48</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="Common\Tokenizer.cpp">
+				<DependentOn>Common\Tokenizer.h</DependentOn>
+				<BuildOrder>52</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="TProgressForm\ProgressForm.dcr">
+				<BuildOrder>41</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="TProgressForm\ProgressForm.cpp">
+				<DependentOn>TProgressForm\ProgressForm.h</DependentOn>
+				<BuildOrder>40</BuildOrder>
+			</CppCompile>
+			<PackageImport Include="vcl.bpi">
+				<BuildOrder>5</BuildOrder>
+			</PackageImport>
+			<CppCompile Include="TShadeSelect\ShadeSelect.cpp">
+				<DependentOn>TShadeSelect\ShadeSelect.h</DependentOn>
+				<BuildOrder>47</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TRecent\TRecent.cpp">
+				<DependentOn>TRecent\TRecent.h</DependentOn>
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TSaveDialogEx\SaveDialogEx.cpp">
+				<DependentOn>TSaveDialogEx\SaveDialogEx.h</DependentOn>
+				<BuildOrder>44</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TCross\Cross.cpp">
+				<DependentOn>TCross\Cross.h</DependentOn>
+				<BuildOrder>3</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="TCross\Cross.dcr">
+				<BuildOrder>4</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="TIPrintDialog\IPrintDialog.cpp">
+				<DependentOn>TIPrintDialog\IPrintDialog.h</DependentOn>
+				<BuildOrder>22</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TGrid\Grid.cpp">
+				<DependentOn>TGrid\Grid.h</DependentOn>
+				<BuildOrder>8</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TLineSelect\LineSelect.cpp">
+				<DependentOn>TLineSelect\LineSelect.h</DependentOn>
+				<BuildOrder>24</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TExtColorBox\ExtColorBox.cpp">
+				<DependentOn>TExtColorBox\ExtColorBox.h</DependentOn>
+				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TFocusPanel\FocusPanel.cpp">
+				<DependentOn>TFocusPanel\FocusPanel.h</DependentOn>
+				<BuildOrder>7</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="TGrid\Cursors.res">
+				<BuildOrder>12</BuildOrder>
 			</ResFiles>
 			<CppCompile Include="Common\ICompCommon.cpp">
 				<DependentOn>Common\ICompCommon.h</DependentOn>
 				<BuildOrder>11</BuildOrder>
 			</CppCompile>
+			<ResFiles Include="IComp.res">
+				<BuildOrder>2</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="TIColorSelect\IColorSelect.cpp">
+				<BuildOrder>9</BuildOrder>
+			</CppCompile>
 			<ResFiles Include="TIColorSelect\IColorSelect.dcr">
 				<BuildOrder>10</BuildOrder>
-			</ResFiles>
-			<CppCompile Include="TIFontBox\IFontBox.cpp">
-				<DependentOn>TIFontBox\IFontBox.h</DependentOn>
-				<BuildOrder>15</BuildOrder>
-			</CppCompile>
-			<ResFiles Include="TIPolygon\IPolygon.dcr">
-				<BuildOrder>20</BuildOrder>
 			</ResFiles>
 			<CppCompile Include="TIPrintDialog\PrintForm.cpp">
 				<Form>PrintFrm</Form>
 				<DependentOn>TIPrintDialog\PrintForm.h</DependentOn>
 				<BuildOrder>21</BuildOrder>
 			</CppCompile>
-			<ResFiles Include="TGrid\Cursors.res">
-				<BuildOrder>12</BuildOrder>
+			<ResFiles Include="TIPolygon\IPolygon.dcr">
+				<BuildOrder>20</BuildOrder>
 			</ResFiles>
-			<CppCompile Include="TIPrintDialog\IPrintDialog.cpp">
-				<DependentOn>TIPrintDialog\IPrintDialog.h</DependentOn>
-				<BuildOrder>22</BuildOrder>
+			<CppCompile Include="TIFontBox\IFontBox.cpp">
+				<DependentOn>TIFontBox\IFontBox.h</DependentOn>
+				<BuildOrder>15</BuildOrder>
 			</CppCompile>
-			<ResFiles Include="TCross\Cross.dcr">
-				<BuildOrder>4</BuildOrder>
-			</ResFiles>
-			<CppCompile Include="TCross\Cross.cpp">
-				<DependentOn>TCross\Cross.h</DependentOn>
-				<BuildOrder>3</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TGrid\Grid.cpp">
-				<DependentOn>TGrid\Grid.h</DependentOn>
-				<BuildOrder>8</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TFocusPanel\FocusPanel.cpp">
-				<DependentOn>TFocusPanel\FocusPanel.h</DependentOn>
-				<BuildOrder>7</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TExtColorBox\ExtColorBox.cpp">
-				<DependentOn>TExtColorBox\ExtColorBox.h</DependentOn>
-				<BuildOrder>6</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TLineSelect\LineSelect.cpp">
-				<DependentOn>TLineSelect\LineSelect.h</DependentOn>
-				<BuildOrder>24</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TRadioGroupEx\RadioGroupEx.cpp">
-				<DependentOn>TRadioGroupEx\RadioGroupEx.h</DependentOn>
-				<BuildOrder>56</BuildOrder>
-			</CppCompile>
-			<PackageImport Include="vclactnband.bpi">
-				<BuildOrder>53</BuildOrder>
-			</PackageImport>
-			<ResFiles Include="TIPageSetup\IPageSetup.dcr">
-				<BuildOrder>18</BuildOrder>
-			</ResFiles>
-			<PackageImport Include="vclx.bpi">
-				<BuildOrder>27</BuildOrder>
-			</PackageImport>
-			<CppCompile Include="TUpDownEx\UpDownEx.cpp">
-				<DependentOn>TUpDownEx\UpDownEx.h</DependentOn>
-				<BuildOrder>58</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TGridPanelEx\GridPanelEx.cpp">
-				<DependentOn>TGridPanelEx\GridPanelEx.h</DependentOn>
-				<BuildOrder>55</BuildOrder>
-			</CppCompile>
-			<ResFiles Include="TIFontBox\IFontBox.dcr">
-				<BuildOrder>16</BuildOrder>
-			</ResFiles>
-			<CppCompile Include="TIColorBox\IColorBox.cpp">
-				<BuildOrder>13</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TIPolygon\IPolygon.cpp">
-				<DependentOn>TIPolygon\IPolygon.h</DependentOn>
-				<BuildOrder>19</BuildOrder>
+			<CppCompile Include="IComp.cpp">
+				<BuildOrder>0</BuildOrder>
 			</CppCompile>
 			<ResFiles Include="TLineSelect\LineSelect.dcr">
 				<BuildOrder>25</BuildOrder>
 			</ResFiles>
-			<CppCompile Include="IComp.cpp">
-				<BuildOrder>0</BuildOrder>
+			<CppCompile Include="TIPolygon\IPolygon.cpp">
+				<DependentOn>TIPolygon\IPolygon.h</DependentOn>
+				<BuildOrder>19</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="TIPageSetup\IPageSetup.cpp">
 				<BuildOrder>17</BuildOrder>
 			</CppCompile>
-			<ResFiles Include="TIColorBox\IColorBox.dcr">
-				<BuildOrder>14</BuildOrder>
-			</ResFiles>
-			<ResFiles Include="TIPrintDialog\IPrintDialog.dcr">
-				<BuildOrder>23</BuildOrder>
-			</ResFiles>
 			<PackageImport Include="rtl.bpi">
 				<BuildOrder>1</BuildOrder>
 			</PackageImport>
-			<CppCompile Include="TMyEdit\MyEdit.cpp">
-				<DependentOn>TMyEdit\MyEdit.h</DependentOn>
-				<BuildOrder>28</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TMyRadioButton\MyRadioButton.cpp">
-				<DependentOn>TMyRadioButton\MyRadioButton.h</DependentOn>
-				<BuildOrder>29</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TIRichEdit\IRichEdit.cpp">
-				<DependentOn>TIRichEdit\IRichEdit.h</DependentOn>
-				<BuildOrder>30</BuildOrder>
-			</CppCompile>
-			<ResFiles Include="TIRichEdit\IRichEdit.dcr">
-				<BuildOrder>31</BuildOrder>
+			<ResFiles Include="TIPrintDialog\IPrintDialog.dcr">
+				<BuildOrder>23</BuildOrder>
 			</ResFiles>
-			<CppCompile Include="TIRichEdit\RichEditOle.cpp">
-				<DependentOn>TIRichEdit\RichEditOle.h</DependentOn>
-				<BuildOrder>32</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TIRichEdit\RichEditOleCallback.cpp">
-				<DependentOn>TIRichEdit\RichEditOleCallback.h</DependentOn>
-				<BuildOrder>33</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TMySplitter\MySplitter.cpp">
-				<DependentOn>TMySplitter\MySplitter.h</DependentOn>
-				<BuildOrder>34</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TOpenPreviewDialog\OpenPreviewDialog.cpp">
-				<DependentOn>TOpenPreviewDialog\OpenPreviewDialog.h</DependentOn>
-				<BuildOrder>35</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TPointSelect\PointSelect.cpp">
-				<DependentOn>TPointSelect\PointSelect.h</DependentOn>
-				<BuildOrder>36</BuildOrder>
-			</CppCompile>
-			<ResFiles Include="TPointSelect\PointSelect.dcr">
-				<BuildOrder>37</BuildOrder>
+			<ResFiles Include="TIColorBox\IColorBox.dcr">
+				<BuildOrder>14</BuildOrder>
 			</ResFiles>
-			<CppCompile Include="TProgress\Progress.cpp">
-				<DependentOn>TProgress\Progress.h</DependentOn>
-				<BuildOrder>38</BuildOrder>
+			<CppCompile Include="TIColorBox\IColorBox.cpp">
+				<BuildOrder>13</BuildOrder>
 			</CppCompile>
-			<ResFiles Include="TProgress\Progress.dcr">
-				<BuildOrder>39</BuildOrder>
+			<ResFiles Include="TIPageSetup\IPageSetup.dcr">
+				<BuildOrder>18</BuildOrder>
 			</ResFiles>
-			<CppCompile Include="TSymbolDialog\SymbolForm.cpp">
-				<Form>SymbolFrm</Form>
-				<DependentOn>TSymbolDialog\SymbolForm.h</DependentOn>
-				<BuildOrder>49</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TSerialHandler\SerialHandler.cpp">
-				<DependentOn>TSerialHandler\SerialHandler.h</DependentOn>
-				<BuildOrder>45</BuildOrder>
-			</CppCompile>
-			<ResFiles Include="TRecent\TRecent.dcr">
-				<BuildOrder>43</BuildOrder>
-			</ResFiles>
-			<CppCompile Include="TProgressForm\ProgressForm.cpp">
-				<DependentOn>TProgressForm\ProgressForm.h</DependentOn>
-				<BuildOrder>40</BuildOrder>
-			</CppCompile>
-			<ResFiles Include="TProgressForm\ProgressForm.dcr">
-				<BuildOrder>41</BuildOrder>
-			</ResFiles>
-			<CppCompile Include="Common\Tokenizer.cpp">
-				<DependentOn>Common\Tokenizer.h</DependentOn>
-				<BuildOrder>52</BuildOrder>
-			</CppCompile>
-			<PackageImport Include="vcl.bpi">
-				<BuildOrder>5</BuildOrder>
+			<PackageImport Include="vclactnband.bpi">
+				<BuildOrder>53</BuildOrder>
 			</PackageImport>
-			<CppCompile Include="TSaveDialogEx\SaveDialogEx.cpp">
-				<DependentOn>TSaveDialogEx\SaveDialogEx.h</DependentOn>
-				<BuildOrder>44</BuildOrder>
+			<CppCompile Include="TRadioGroupEx\RadioGroupEx.cpp">
+				<DependentOn>TRadioGroupEx\RadioGroupEx.h</DependentOn>
+				<BuildOrder>56</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="TRecent\TRecent.cpp">
-				<DependentOn>TRecent\TRecent.h</DependentOn>
-				<BuildOrder>42</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TShadeSelect\ShadeSelect.cpp">
-				<DependentOn>TShadeSelect\ShadeSelect.h</DependentOn>
-				<BuildOrder>47</BuildOrder>
-			</CppCompile>
-			<ResFiles Include="TShadeSelect\ShadeSelect.dcr">
-				<BuildOrder>48</BuildOrder>
+			<PackageImport Include="vclx.bpi">
+				<BuildOrder>27</BuildOrder>
+			</PackageImport>
+			<ResFiles Include="TIFontBox\IFontBox.dcr">
+				<BuildOrder>16</BuildOrder>
 			</ResFiles>
-			<CppCompile Include="TSerialHandler\SerialThread.cpp">
-				<DependentOn>TSerialHandler\SerialThread.h</DependentOn>
-				<BuildOrder>46</BuildOrder>
+			<CppCompile Include="TGridPanelEx\GridPanelEx.cpp">
+				<DependentOn>TGridPanelEx\GridPanelEx.h</DependentOn>
+				<BuildOrder>55</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="TSymbolDialog\SymbolDialog.cpp">
-				<DependentOn>TSymbolDialog\SymbolDialog.h</DependentOn>
-				<BuildOrder>50</BuildOrder>
+			<CppCompile Include="TUpDownEx\UpDownEx.cpp">
+				<DependentOn>TUpDownEx\UpDownEx.h</DependentOn>
+				<BuildOrder>58</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="TMediaPlayerEx\MediaPlayerEx.cpp">
-				<DependentOn>TMediaPlayerEx\MediaPlayerEx.h</DependentOn>
-				<BuildOrder>26</BuildOrder>
-			</CppCompile>
-			<ResFiles Include="TSymbolDialog\SymbolDialog.dcr">
-				<BuildOrder>51</BuildOrder>
-			</ResFiles>
-			<CppCompile Include="TCheckBoxEx\CheckBoxEx.cpp">
-				<DependentOn>TCheckBoxEx\CheckBoxEx.h</DependentOn>
-				<BuildOrder>54</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Common\Debug.cpp">
-				<DependentOn>Common\Debug.h</DependentOn>
-				<BuildOrder>57</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TLinkLabelEx\LinkLabelEx.cpp">
-				<DependentOn>TLinkLabelEx\LinkLabelEx.h</DependentOn>
-				<BuildOrder>59</BuildOrder>
-			</CppCompile>
-			<FormResources Include="TIPrintDialog\PrintForm.dfm"/>
 			<FormResources Include="TSymbolDialog\SymbolForm.dfm"/>
+			<FormResources Include="TIPrintDialog\PrintForm.dfm"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

@@ -35,7 +35,6 @@
 #include "GnuGetText.hpp"
 #include "Common.h"
 #include "Draw.h"
-//#include "Unit1.h"
 #include "Convert.h"
 #include "Resource.h"
 #include "GraphUndo.h"

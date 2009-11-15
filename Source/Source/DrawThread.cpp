@@ -20,6 +20,7 @@
 #include "PointSelect.h"
 #include "IGraphic.h"
 #include "StackTrace.h"
+#include <boost/tr1/complex.hpp>
 
 namespace Graph
 {

@@ -786,7 +786,7 @@ void TForm1::LoadSettings(void)
   IPrintDialog1->PrintOutput = Registry.Read("ForceBlackOnPrint", false) ? poBlackWhite : poColor;
   IPrintDialog1->CenterOnPage = Registry.Read("CenterOnPage", true);
   IPrintDialog1->Scale = Registry.Read("PrinterScale", 100);
-  IPrintDialog1->Orientation = Registry.ReadEnum("Orientation", poPortrait);
+  IPrintDialog1->Orientation = Registry.Read("Orientation", poPortrait);
   UndoList.SetMaxUndo(Registry.Read("MaxUndo", 50));
 
   Python::InitPlugins();

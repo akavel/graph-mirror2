@@ -15,14 +15,12 @@
 #include <iosfwd>
 #include <iomanip>
 #include <algorithm>
-#include <boost/type_traits/integral_promotion.hpp>
 
 namespace ConfigFileImpl
 {
   template<typename T>
   std::wistream& operator>>(std::wistream &Stream, T &Value)
   {
-//    boost::integral_promotion<T>::type TempValue;
     int TempValue;
     if(Stream >> TempValue)
       Value = static_cast<T>(TempValue);

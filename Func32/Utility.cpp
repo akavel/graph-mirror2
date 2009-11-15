@@ -6,9 +6,14 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
+#include <vector>
+#include <complex>
+#include <string>
+#include <map>
+#include <boost/shared_ptr.hpp>
+#pragma hdrstop
 #include "Func32.h"
 #include "Func32Impl.h"
-#pragma hdrstop
 namespace Func32
 {
 //---------------------------------------------------------------------------

@@ -1,50 +1,68 @@
-Graph is an appliation used for drawing functions in a coordinate system. The program is licensed under the GNU Gneral Public License. This pacakge contains the following parts necesarry to rebuild the application:
+Graph is an appliation used for drawing functions in a coordinate system. The
+program is licensed under the GNU Gneral Public License. This pacakge contains
+the following parts necesarry to rebuild the application:
 =============
-Graph
-The program itself written by Ivan Johansen in Borland C++ Builder. The GPL license (see COPYING) covers all files found in the Graph catalog and subcatalogs. 
+Source
+The program itself written by Ivan Johansen in Borland C++ Builder. The GPL
+license (see COPYING) covers all files found in the Graph catalog and
+subcatalogs.
 
-Graph\Help
+Help
 The help files in English and translations of the English version.
 
-Graph\Locale
-Language translations in po format.
+Locale
+Language translations in po format of the program.
 
 Components
-C++ Builder components written by Ivan Johansen specific for use in Graph but can be used in any application. See COPYING for license.
+C++ Builder components written by Ivan Johansen specific for use in Graph but
+can be used in any application. See COPYING for license.
 
 Func32
-Library for handling mathematical functions written by Ivan Johansen specific for use in Graph, though the library should be portable to any C++ compiler. Distributed under GNU GPL (See COPYING).
+Library for handling mathematical functions written by Ivan Johansen specific
+for use in Graph, though the library should be portable to any C++ compiler.
+Distributed under GNU GPL (See COPYING).
 
 Thumbnail Handler
-Shell extension for showing thumbnails of grf files. This is written in Delphi and uses the EasyNSE library. It is basically just an example that follows EasyNSE modified to show grf files.
+Shell extension for showing thumbnails of grf files. This is written in Delphi
+and uses the EasyNSE library. It is basically just an example that follows
+EasyNSE modified to show grf files.
 
+Lib
+Files used to support Python plugins.
 
+Install
+Files used to create the installation program.
+
+Libraries\dxgettext
+The file gnugettext.pas from dxgettext (http://dybdahl.dk/dxgettext), which is
+an improved version of GNU gettext for Delphi/BCB, is used as translation
+library.
+
+Libraries\pdflib
+C++ bindings for the PDFlib-Lite library.
+
+Libraries\gsl
+A part of the GNU Scientific Library (GSL) used by Graph. Only the part needed
+by Graph is found here. Distributed under the GNU GPL (See COPYING).
+
+Libraries\Python
+Header files needed to use the Python DLL.
 
 The following third party libraries are needed to build Graph:
 =============
-BMGLib
-This is a stripped down version of BMGLib (http://members.cox.net/scottheiman/bmglib.htm) used for writing PNG files. 
-
 Boost
 Boost (http://boost.org) is used as a general purpose library collection.
 
-Spirit
-Spirit (http://spirit.sf.net) is a paraser library that is part of Boost (http://boost.org). It is necesarry to compiler Func32. Notice that Spirit 1.6.3 is used because newer versions doesn't work with bcc.
-
-dxgettext
-The file gnugettext.pas from dxgettext (http://dybdahl.dk/dxgettext), which is an improved version of GNU gettext for Delphi/BCB, is used as translation library.
+PDFlib-Lite
+PDFlib-Lite (http://www.pdflib.com) is used to create the PDFlib.dll, which is
+used for generating PDF documents.
 
 EasyNSE
-EasyNSE (http://www.mustangpeak.net/) is used for shell extensions. 
-
-PDFlib-Lite
-PDFlib-Lite (http://www.pdflib.com) is used to create the PDFlib.dll, which is used for generating PDF documents.
-
-TNT Unicode Controls
-The Tnt Delphi Unicode Controls (http://www.tntware.com/delphicontrols/unicode/) are used for unicode support in the user interface.
+EasyNSE (http://www.mustangpeak.net/) is used for shell extensions.
 
 
-The program can be compiled with Borland C++ Builder 6 Pro/Enterprise. To compile with other versions some changes to the code is probably requeried.
+The program can be compiled with Borland C++ Builder 2009 Pro/Enterprise. To
+compile with other versions some changes to the code is probably requeried.
 
 
 The following is required to compile the help file in the Help directory:
@@ -57,4 +75,4 @@ Programs from the Tools package:
   - xsltproc
   - The FOP processor
   - The DocBook stylesheet files
-   
+
