@@ -84,6 +84,8 @@ void SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions 
   try
   {
     bool SameSize = !ImageOptions.UseCustomSize;
+    int Width = SameSize ? Form1->Image1->Width : ImageOptions.CustomWidth;
+    int Height = SameSize ? Form1->Image1->Height : ImageOptions.CustomHeight;
 
     //Show save icon in status bar
     Form1->SetStatusIcon(iiSave);
@@ -93,13 +95,13 @@ void SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions 
     if(ImageFileType == ifMetafile || ImageFileType == ifSvg)
     {
       std::auto_ptr<TMetafile> Metafile(new TMetafile);
-      Metafile->Width = ImageOptions.CustomWidth-1;
-      Metafile->Height = ImageOptions.CustomHeight-1;
+      Metafile->Width = Width-1;
+      Metafile->Height = Height-1;
 
       std::auto_ptr<TMetafileCanvas> Meta(new TMetafileCanvas(Metafile.get(), 0));
       TData MetaData(Form1->Data);
       TDraw FileDraw(Meta.get(), SameSize ? &Form1->Data : &MetaData, false, "Metafile DrawThread");
-      FileDraw.SetArea(TRect(0, 0, ImageOptions.CustomWidth, ImageOptions.CustomHeight));  //Set drawing area
+      FileDraw.SetArea(TRect(0, 0, Width, Height));  //Set drawing area
 
       FileDraw.DrawAll();
       if(SameSize)
@@ -124,9 +126,9 @@ void SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions 
     else
     {
       std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-      Bitmap->Width = ImageOptions.CustomWidth;
-      Bitmap->Height = ImageOptions.CustomHeight;
-      TRect Rect(0, 0, ImageOptions.CustomWidth, ImageOptions.CustomHeight);
+      Bitmap->Width = Width;
+      Bitmap->Height = Height;
+      TRect Rect(0, 0, Width, Height);
       if(SameSize)
         Bitmap->Canvas->CopyRect(Rect, Form1->Image1->Picture->Bitmap->Canvas, Rect);
       else

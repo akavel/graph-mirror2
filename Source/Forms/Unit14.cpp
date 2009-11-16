@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include <Clipbrd.hpp>
 #include "Unit14.h"
+#include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
 #pragma link "Grid"
 #pragma link "PointSelect"
@@ -39,6 +40,7 @@ __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
   ComboBox1->ItemIndex = 1;
   UpdateErrorBars();
   PageControl1->ActivePage = TabSheet1;
+  ComboBox2->ItemIndex = GetRegValue(REGISTRY_KEY "\\Property", L"Interpolation", HKEY_CURRENT_USER, iaLinear);
 
   ScaleForm(this);
 }              
@@ -206,6 +208,7 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
   Property.DefaultPoint.Set(PointSelect1->ItemIndex, ExtColorBox1->Selected, Edit2->Text.ToInt());
   Property.DefaultPointLine.Set(LineSelect1->LineStyle, ExtColorBox2->Selected, Edit3->Text.ToInt());
   Property.DefaultPointLabelFont->Assign(FontDialog1->Font);
+  SetRegValue(REGISTRY_KEY "\\Property", L"Interpolation", HKEY_CURRENT_USER, ComboBox2->ItemIndex);
 
   ModalResult = mrOk;
 }

@@ -38,10 +38,6 @@ object Form18: TForm18
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Size'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 8
         Top = 92
@@ -196,7 +192,7 @@ object Form18: TForm18
         Height = 21
         Hint = 'Choose paper size to use.'
         Style = csDropDownList
-        ItemHeight = 13
+        ItemHeight = 0
         TabOrder = 1
         Items.Strings = (
           'A2'
