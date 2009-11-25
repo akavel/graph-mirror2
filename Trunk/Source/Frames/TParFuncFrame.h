@@ -39,14 +39,15 @@ __published:	// IDE-managed Components
   TUpDownEx *UpDownEx1;
   void __fastcall ComboBox1Change(TObject *Sender);
 private:	// User declarations
+  std::string ErrorPrefix;
   void Clear();
 
 public:		// User declarations
   __fastcall TParFuncFrame(TComponent* Owner);
   void Eval(const TGraphElem *Elem);
   void SetPoint(const TGraphElem *Elem, int X, int Y);
-  std::string GetErrorPrefix() {return std::string();}
   TFrame* GetFrame() {return this;} //Workaround for nasty compiler bug
+  std::string GetErrorPrefix() {return ErrorPrefix;}
 };
 //---------------------------------------------------------------------------
 #endif
