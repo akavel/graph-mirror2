@@ -28,6 +28,7 @@ void TParFuncFrame::Eval(const TGraphElem *Elem)
   {
     Clear();
 
+    ErrorPrefix = "t: ";
     long double t = Form1->Data.Calc(ToWString(Edit1->Text));
     long double x = 0;
     long double y = 0;

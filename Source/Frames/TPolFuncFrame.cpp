@@ -28,9 +28,13 @@ void TPolFuncFrame::Eval(const TGraphElem *Elem)
   {
     Clear();
 
+    ErrorPrefix = "t: ";
     long double t = Form1->Data.Calc(ToWString(Edit1->Text));
+    ErrorPrefix = "r(t): ";
     long double r = Func->GetFunc().CalcR(t);
+    ErrorPrefix = "x(t): ";
     long double x = Func->GetFunc().CalcX(t);
+    ErrorPrefix = "y(t): ";
     long double y = Func->GetFunc().CalcY(t);
 
     Edit2->Text = RoundToStr(r);
@@ -39,7 +43,9 @@ void TPolFuncFrame::Eval(const TGraphElem *Elem)
 
     Form1->SetCrossPos(x, y);
 
+    ErrorPrefix = "dr/dt: ";
     Edit5->Text = RoundToStr(Func->GetFunc().MakeDif().CalcR(t));
+    ErrorPrefix = "dy/dx: ";
     long double dydx = Func->GetFunc().CalcSlope(t);
     if(_finite(dydx))
       Edit6->Text = RoundToStr(dydx);
