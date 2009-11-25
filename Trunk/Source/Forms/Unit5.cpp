@@ -28,7 +28,7 @@ __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)
   TempData[1].Steps = "1000";
 
   TempData[2].From = "0";
-  TempData[2].To = "2pi";
+  TempData[2].To = Data.Axes.Trigonometry == Func32::Degree ? "360" : "2pi";
   TempData[2].Steps = "1000";
 
   LineSelect1->LineStyle = static_cast<TPenStyle>(Property.DefaultFunction.Style);
