@@ -19,6 +19,7 @@
 #include "IThread.h"
 #include "Images.h"
 #include <cfloat>
+#include <boost/variant/get.hpp>
 #undef _DEBUG
 #include <python.h>
 #include "PyVcl.h"
@@ -471,11 +472,39 @@ void InitPlugins()
   }
 }
 //---------------------------------------------------------------------------
+_object* ToPyObject(int Value)
+{
+  return PyLong_FromLong(Value);
+}
+//---------------------------------------------------------------------------
+_object* ToPyObject(double Value)
+{
+  return PyFloat_FromDouble(Value);
+}
+//---------------------------------------------------------------------------
+_object* ToPyObject(const std::wstring &Str)
+{
+  return PyUnicode_FromUnicode(Str.c_str(), Str.size());
+}
+//---------------------------------------------------------------------------
+_object* ToPyObject(const TVariant &Variant)
+{
+  if(const int *Value = boost::get<int>(&Variant))
+    return ToPyObject(*Value);
+  if(const double *Value = boost::get<double>(&Variant))
+    return ToPyObject(*Value);
+  if(const std::wstring *Value = boost::get<std::wstring>(&Variant))
+    return ToPyObject(*Value);
+  if(PyObject *const*Value = boost::get<PyObject*>(&Variant))
+    return *Value;
+  return NULL;
+}
+//---------------------------------------------------------------------------
 bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem)
 {
   TLockGIL Dummy;
   if(IsPythonInstalled())
-    return ExecutePluginEvent(PluginEvent, DownCastSharedPtr(Elem));
+    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(N)", DownCastSharedPtr(Elem)));
   return false;
 }
 //---------------------------------------------------------------------------
@@ -486,12 +515,42 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param)
     AllocGIL();
     PyObject *Module = PyImport_AddModule("Graph");
     char *MethodName = "ExecuteEvent";
-    char *Format = Param ? (char*)"(iN)" : (char*)"(i)";
+    char *Format = Param ? (char*)"(iN)" : (char*)"(i())";
     PyObject *ResultObj = PyObject_CallMethod(Module, MethodName, Format, PluginEvent, Param, NULL);
     bool Result = ResultObj && PyObject_IsTrue(ResultObj);
     Py_XDECREF(ResultObj);
     FreeGIL();
     return Result;
+  }
+  return false;
+}
+//---------------------------------------------------------------------------
+bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1)
+{
+  if(IsPythonInstalled())
+  {
+    TLockGIL Dummy;
+    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(N)", ToPyObject(V1)));
+  }
+  return false;
+}
+//---------------------------------------------------------------------------
+bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1, TVariant V2)
+{
+  if(IsPythonInstalled())
+  {
+    TLockGIL Dummy;
+    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NN)", ToPyObject(V1), ToPyObject(V2)));
+  }
+  return false;
+}
+//---------------------------------------------------------------------------
+bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1, TVariant V2, TVariant V3)
+{
+  if(IsPythonInstalled())
+  {
+    TLockGIL Dummy;
+    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NNN)", ToPyObject(V1), ToPyObject(V2), ToPyObject(V2)));
   }
   return false;
 }

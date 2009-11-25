@@ -20,6 +20,7 @@
 #define WRAP_PYOBJECTS
 #include "PythonBind.h"
 #include "PyGraph.h"
+#include "PythonBind.h"
 #pragma warn -8060
 %}
 
@@ -239,12 +240,25 @@ class TAxesView : public TGraphElem
 {
 };
 
+%nodefaultctor TData;
+%nodefaultdtor TData;
+struct TData
+{
+  const TAxes Axes;
+};
+
 %{
-  template <>  struct swig::traits_from<TPoint > {
+/*  template <>  struct swig::traits_from<TPoint > {
     static PyObject *from(const TPoint& val) {
       return Py_BuildValue("ii", val.x, val.y);
     }
-  };
+  };*/
+
+  PyObject* ToPyObject(TData &Data)
+  {
+    Python::TLockGIL Dummy;
+    return Python::IsPythonInstalled() ? SWIG_NewPointerObj(SWIG_as_voidptr(&Data), SWIGTYPE_p_TData, 0) : NULL;
+  }
 %}
 
 %pythoncode

@@ -15,6 +15,7 @@
 #define WRAP_PYOBJECTS
 #include "PythonBind.h"
 #include "PyGraph.h"
+#include "PythonBind.h"
 #pragma warn -8060
 
 
@@ -2698,60 +2699,62 @@ SWIG_Python_MustGetPtr(PyObject *obj, swig_type_info *ty, int argnum, int flags)
 #define SWIGTYPE_p_Func32__ECalcError swig_types[0]
 #define SWIGTYPE_p_Func32__TSymbolList swig_types[1]
 #define SWIGTYPE_p_Func32__TTrigonometry swig_types[2]
-#define SWIGTYPE_p_TAxesView swig_types[3]
-#define SWIGTYPE_p_TBaseFuncType swig_types[4]
-#define SWIGTYPE_p_TGraphElem swig_types[5]
-#define SWIGTYPE_p_TLabelPlacement swig_types[6]
-#define SWIGTYPE_p_TMetafile swig_types[7]
-#define SWIGTYPE_p_TParFunc swig_types[8]
-#define SWIGTYPE_p_TPointSeries swig_types[9]
-#define SWIGTYPE_p_TPolFunc swig_types[10]
-#define SWIGTYPE_p_TRect swig_types[11]
-#define SWIGTYPE_p_TRelation swig_types[12]
-#define SWIGTYPE_p_TShade swig_types[13]
-#define SWIGTYPE_p_TStdFunc swig_types[14]
-#define SWIGTYPE_p_TTan swig_types[15]
-#define SWIGTYPE_p_TTextLabel swig_types[16]
-#define SWIGTYPE_p_TTextValue swig_types[17]
-#define SWIGTYPE_p_TTopGraphElem swig_types[18]
-#define SWIGTYPE_p_allocator_type swig_types[19]
-#define SWIGTYPE_p_boost__shared_ptrT_TAxesView_t swig_types[20]
-#define SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t swig_types[21]
-#define SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t swig_types[22]
-#define SWIGTYPE_p_boost__shared_ptrT_TParFunc_t swig_types[23]
-#define SWIGTYPE_p_boost__shared_ptrT_TPointSeries_t swig_types[24]
-#define SWIGTYPE_p_boost__shared_ptrT_TPolFunc_t swig_types[25]
-#define SWIGTYPE_p_boost__shared_ptrT_TRelation_t swig_types[26]
-#define SWIGTYPE_p_boost__shared_ptrT_TShade_t swig_types[27]
-#define SWIGTYPE_p_boost__shared_ptrT_TStdFunc_t swig_types[28]
-#define SWIGTYPE_p_boost__shared_ptrT_TTan_t swig_types[29]
-#define SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t swig_types[30]
-#define SWIGTYPE_p_boost__shared_ptrT_TTopGraphElem_t swig_types[31]
-#define SWIGTYPE_p_char swig_types[32]
-#define SWIGTYPE_p_difference_type swig_types[33]
-#define SWIGTYPE_p_key_type swig_types[34]
-#define SWIGTYPE_p_mapped_type swig_types[35]
-#define SWIGTYPE_p_p_PyObject swig_types[36]
-#define SWIGTYPE_p_size_type swig_types[37]
-#define SWIGTYPE_p_std__invalid_argument swig_types[38]
-#define SWIGTYPE_p_std__lessT_std__wstring_t swig_types[39]
-#define SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t swig_types[40]
-#define SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t__allocator_type swig_types[41]
-#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t swig_types[42]
-#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type swig_types[43]
-#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type swig_types[44]
-#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t swig_types[45]
-#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type swig_types[46]
-#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type swig_types[47]
-#define SWIGTYPE_p_std__vectorT_long_double_std__allocatorT_long_double_t_t swig_types[48]
-#define SWIGTYPE_p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t swig_types[49]
-#define SWIGTYPE_p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t__allocator_type swig_types[50]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[51]
-#define SWIGTYPE_p_unsigned_int swig_types[52]
-#define SWIGTYPE_p_value_type swig_types[53]
-#define SWIGTYPE_p_wchar_t swig_types[54]
-static swig_type_info *swig_types[56];
-static swig_module_info swig_module = {swig_types, 55, 0, 0, 0, 0};
+#define SWIGTYPE_p_TAxes swig_types[3]
+#define SWIGTYPE_p_TAxesView swig_types[4]
+#define SWIGTYPE_p_TBaseFuncType swig_types[5]
+#define SWIGTYPE_p_TData swig_types[6]
+#define SWIGTYPE_p_TGraphElem swig_types[7]
+#define SWIGTYPE_p_TLabelPlacement swig_types[8]
+#define SWIGTYPE_p_TMetafile swig_types[9]
+#define SWIGTYPE_p_TParFunc swig_types[10]
+#define SWIGTYPE_p_TPointSeries swig_types[11]
+#define SWIGTYPE_p_TPolFunc swig_types[12]
+#define SWIGTYPE_p_TRect swig_types[13]
+#define SWIGTYPE_p_TRelation swig_types[14]
+#define SWIGTYPE_p_TShade swig_types[15]
+#define SWIGTYPE_p_TStdFunc swig_types[16]
+#define SWIGTYPE_p_TTan swig_types[17]
+#define SWIGTYPE_p_TTextLabel swig_types[18]
+#define SWIGTYPE_p_TTextValue swig_types[19]
+#define SWIGTYPE_p_TTopGraphElem swig_types[20]
+#define SWIGTYPE_p_allocator_type swig_types[21]
+#define SWIGTYPE_p_boost__shared_ptrT_TAxesView_t swig_types[22]
+#define SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t swig_types[23]
+#define SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t swig_types[24]
+#define SWIGTYPE_p_boost__shared_ptrT_TParFunc_t swig_types[25]
+#define SWIGTYPE_p_boost__shared_ptrT_TPointSeries_t swig_types[26]
+#define SWIGTYPE_p_boost__shared_ptrT_TPolFunc_t swig_types[27]
+#define SWIGTYPE_p_boost__shared_ptrT_TRelation_t swig_types[28]
+#define SWIGTYPE_p_boost__shared_ptrT_TShade_t swig_types[29]
+#define SWIGTYPE_p_boost__shared_ptrT_TStdFunc_t swig_types[30]
+#define SWIGTYPE_p_boost__shared_ptrT_TTan_t swig_types[31]
+#define SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t swig_types[32]
+#define SWIGTYPE_p_boost__shared_ptrT_TTopGraphElem_t swig_types[33]
+#define SWIGTYPE_p_char swig_types[34]
+#define SWIGTYPE_p_difference_type swig_types[35]
+#define SWIGTYPE_p_key_type swig_types[36]
+#define SWIGTYPE_p_mapped_type swig_types[37]
+#define SWIGTYPE_p_p_PyObject swig_types[38]
+#define SWIGTYPE_p_size_type swig_types[39]
+#define SWIGTYPE_p_std__invalid_argument swig_types[40]
+#define SWIGTYPE_p_std__lessT_std__wstring_t swig_types[41]
+#define SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t swig_types[42]
+#define SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t__allocator_type swig_types[43]
+#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t swig_types[44]
+#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type swig_types[45]
+#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type swig_types[46]
+#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t swig_types[47]
+#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type swig_types[48]
+#define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type swig_types[49]
+#define SWIGTYPE_p_std__vectorT_long_double_std__allocatorT_long_double_t_t swig_types[50]
+#define SWIGTYPE_p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t swig_types[51]
+#define SWIGTYPE_p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t__allocator_type swig_types[52]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[53]
+#define SWIGTYPE_p_unsigned_int swig_types[54]
+#define SWIGTYPE_p_value_type swig_types[55]
+#define SWIGTYPE_p_wchar_t swig_types[56]
+static swig_type_info *swig_types[58];
+static swig_module_info swig_module = {swig_types, 57, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -5046,43 +5049,43 @@ PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem)
   TGraphElem *Ptr = Elem.get();
   if(Ptr == NULL)
     return SWIG_Py_Void();
-  /*@SWIG:Data.i,26,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,27,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TStdFunc*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TStdFunc>(boost::static_pointer_cast<TStdFunc>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TStdFunc_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,26,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,27,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TParFunc*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TParFunc>(boost::static_pointer_cast<TParFunc>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TParFunc_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,26,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,27,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TPolFunc*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TPolFunc>(boost::static_pointer_cast<TPolFunc>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TPolFunc_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,26,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,27,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TTan*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TTan>(boost::static_pointer_cast<TTan>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TTan_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,26,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,27,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TPointSeries*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TPointSeries>(boost::static_pointer_cast<TPointSeries>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TPointSeries_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,26,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,27,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TTextLabel*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TTextLabel>(boost::static_pointer_cast<TTextLabel>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,26,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,27,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TShade*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TShade>(boost::static_pointer_cast<TShade>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TShade_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,26,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,27,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TRelation*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TRelation>(boost::static_pointer_cast<TRelation>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TRelation_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,26,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,27,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TAxesView*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TAxesView>(boost::static_pointer_cast<TAxesView>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TAxesView_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,26,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,27,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TTopGraphElem*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TTopGraphElem>(boost::static_pointer_cast<TTopGraphElem>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TTopGraphElem_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
@@ -5463,11 +5466,17 @@ SWIGINTERN boost::shared_ptr< TGraphElem > TAxesView_SWIGSharedPtrUpcast(boost::
     return swigSharedPtrUpcast;
   }
 
-  template <>  struct swig::traits_from<TPoint > {
+/*  template <>  struct swig::traits_from<TPoint > {
     static PyObject *from(const TPoint& val) {
       return Py_BuildValue("ii", val.x, val.y);
     }
-  };
+  };*/
+
+  PyObject* ToPyObject(TData &Data)
+  {
+    Python::TLockGIL Dummy;
+    return Python::IsPythonInstalled() ? SWIG_NewPointerObj(SWIG_as_voidptr(&Data), SWIGTYPE_p_TData, 0) : NULL;
+  }
 
 #ifdef __cplusplus
 extern "C" {
@@ -17038,6 +17047,35 @@ SWIGINTERN PyObject *TAxesView_swigregister(PyObject *SWIGUNUSEDPARM(self), PyOb
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_TData_Axes_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TData *arg1 = (TData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TAxes result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TData_Axes_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_TData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TData_Axes_get" "', argument " "1"" of type '" "TData *""'"); 
+  }
+  arg1 = reinterpret_cast< TData * >(argp1);
+  result = (TAxes) ((arg1)->Axes);
+  resultobj = SWIG_NewPointerObj((new TAxes(static_cast< const TAxes& >(result))), SWIGTYPE_p_TAxes, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *TData_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_TData, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"delete_SwigPyIterator", _wrap_delete_SwigPyIterator, METH_VARARGS, NULL},
@@ -17326,6 +17364,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TAxesView_SWIGSharedPtrUpcast", _wrap_TAxesView_SWIGSharedPtrUpcast, METH_VARARGS, NULL},
 	 { (char *)"delete_TAxesView", _wrap_delete_TAxesView, METH_VARARGS, NULL},
 	 { (char *)"TAxesView_swigregister", TAxesView_swigregister, METH_VARARGS, NULL},
+	 { (char *)"TData_Axes_get", _wrap_TData_Axes_get, METH_VARARGS, NULL},
+	 { (char *)"TData_swigregister", TData_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
@@ -17424,8 +17464,10 @@ static void *_p_boost__shared_ptrT_TPointSeries_tTo_p_boost__shared_ptrT_TGraphE
 static swig_type_info _swigt__p_Func32__ECalcError = {"_p_Func32__ECalcError", "Func32::ECalcError *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Func32__TSymbolList = {"_p_Func32__TSymbolList", "Func32::TSymbolList *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Func32__TTrigonometry = {"_p_Func32__TTrigonometry", "Func32::TTrigonometry *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_TAxes = {"_p_TAxes", "TAxes *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TAxesView = {"_p_TAxesView", "TAxesView *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TBaseFuncType = {"_p_TBaseFuncType", "TBaseFuncType *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_TData = {"_p_TData", "TData *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TGraphElem = {"_p_TGraphElem", "TGraphElem *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TLabelPlacement = {"_p_TLabelPlacement", "TLabelPlacement *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TMetafile = {"_p_TMetafile", "TMetafile *", 0, 0, (void*)0, 0};
@@ -17481,8 +17523,10 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Func32__ECalcError,
   &_swigt__p_Func32__TSymbolList,
   &_swigt__p_Func32__TTrigonometry,
+  &_swigt__p_TAxes,
   &_swigt__p_TAxesView,
   &_swigt__p_TBaseFuncType,
+  &_swigt__p_TData,
   &_swigt__p_TGraphElem,
   &_swigt__p_TLabelPlacement,
   &_swigt__p_TMetafile,
@@ -17538,8 +17582,10 @@ static swig_type_info *swig_type_initial[] = {
 static swig_cast_info _swigc__p_Func32__ECalcError[] = {  {&_swigt__p_Func32__ECalcError, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Func32__TSymbolList[] = {  {&_swigt__p_Func32__TSymbolList, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Func32__TTrigonometry[] = {  {&_swigt__p_Func32__TTrigonometry, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_TAxes[] = {  {&_swigt__p_TAxes, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TAxesView[] = {  {&_swigt__p_TAxesView, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TBaseFuncType[] = {  {&_swigt__p_TParFunc, _p_TParFuncTo_p_TBaseFuncType, 0, 0},  {&_swigt__p_TTan, _p_TTanTo_p_TBaseFuncType, 0, 0},  {&_swigt__p_TStdFunc, _p_TStdFuncTo_p_TBaseFuncType, 0, 0},  {&_swigt__p_TBaseFuncType, 0, 0, 0},  {&_swigt__p_TPolFunc, _p_TPolFuncTo_p_TBaseFuncType, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_TData[] = {  {&_swigt__p_TData, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TGraphElem[] = {  {&_swigt__p_TGraphElem, 0, 0, 0},  {&_swigt__p_TTopGraphElem, _p_TTopGraphElemTo_p_TGraphElem, 0, 0},  {&_swigt__p_TParFunc, _p_TParFuncTo_p_TGraphElem, 0, 0},  {&_swigt__p_TTan, _p_TTanTo_p_TGraphElem, 0, 0},  {&_swigt__p_TStdFunc, _p_TStdFuncTo_p_TGraphElem, 0, 0},  {&_swigt__p_TTextLabel, _p_TTextLabelTo_p_TGraphElem, 0, 0},  {&_swigt__p_TAxesView, _p_TAxesViewTo_p_TGraphElem, 0, 0},  {&_swigt__p_TShade, _p_TShadeTo_p_TGraphElem, 0, 0},  {&_swigt__p_TBaseFuncType, _p_TBaseFuncTypeTo_p_TGraphElem, 0, 0},  {&_swigt__p_TPolFunc, _p_TPolFuncTo_p_TGraphElem, 0, 0},  {&_swigt__p_TPointSeries, _p_TPointSeriesTo_p_TGraphElem, 0, 0},  {&_swigt__p_TRelation, _p_TRelationTo_p_TGraphElem, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TLabelPlacement[] = {  {&_swigt__p_TLabelPlacement, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TMetafile[] = {  {&_swigt__p_TMetafile, 0, 0, 0},{0, 0, 0, 0}};
@@ -17595,8 +17641,10 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Func32__ECalcError,
   _swigc__p_Func32__TSymbolList,
   _swigc__p_Func32__TTrigonometry,
+  _swigc__p_TAxes,
   _swigc__p_TAxesView,
   _swigc__p_TBaseFuncType,
+  _swigc__p_TData,
   _swigc__p_TGraphElem,
   _swigc__p_TLabelPlacement,
   _swigc__p_TMetafile,

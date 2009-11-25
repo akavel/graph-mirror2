@@ -62,7 +62,7 @@ class ConstantsType(collections.MutableMapping):
         for k in self.keys(): yield k
     def __len__(self): return len(keys)
 
-def ExecuteEvent(event, *args):
+def ExecuteEvent(event, args):
     for action in EventList[event]:
         try:
             if action(*args):
@@ -131,4 +131,5 @@ OnLoad = []
 OnSelect = [HandleOnSelect]
 OnClose = []
 OnEdit = []
-EventList = [OnNew, OnLoad, OnSelect, OnClose, OnEdit]
+OnAnimate = []
+EventList = [OnNew, OnLoad, OnSelect, OnClose, OnEdit, OnAnimate]

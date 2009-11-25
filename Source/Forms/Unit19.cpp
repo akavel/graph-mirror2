@@ -15,9 +15,11 @@
 #include <iterator>
 #include "vfw.h"
 #include "Images.h"
+#include "PyGraph.h"
 #include <cmath>
 #include <boost/spirit/phoenix/operators.hpp>
 #include <boost/spirit/phoenix/primitives.hpp>
+#include "Swig.h"
 using phoenix::arg1;
 //---------------------------------------------------------------------------
 #pragma link "ProgressForm"
@@ -166,12 +168,14 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 
     unsigned I = 0;
     std::vector<RGBQUAD> Colors;
+    PyObject *DataObject = ToPyObject(Data);
     for(double Value = Min; I < StepCount; Value += Step, I++)
     {
       Bitmap->Canvas->Brush->Style = bsSolid;
       Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
       Bitmap->Canvas->FillRect(TRect(0, 0, ImageWidth, ImageHeight));
       Data.CustomFunctions.Replace(AnimationInfo.Constant, Value);
+      ExecutePluginEvent(Python::peAnimate, DataObject, AnimationInfo.Constant, Value);
       Data.CustomFunctions.Update();
       Data.Update();
       Data.ClearCache();

@@ -739,6 +739,18 @@ def TAxesView_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
   return _Data.TAxesView_SWIGSharedPtrUpcast(*args)
 TAxesView_SWIGSharedPtrUpcast = _Data.TAxesView_SWIGSharedPtrUpcast
 
+class TData(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TData, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, TData, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+    __swig_getmethods__["Axes"] = _Data.TData_Axes_get
+    if _newclass:Axes = _swig_property(_Data.TData_Axes_get)
+TData_swigregister = _Data.TData_swigregister
+TData_swigregister(TData)
+
 import vcl
 def GraphElemRepr(self):
   return '%s("%s")' % (self.__class__.__name__, self.MakeText())

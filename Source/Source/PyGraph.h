@@ -9,8 +9,10 @@
 //---------------------------------------------------------------------------
 #ifndef PyGraphH
 #define PyGraphH
+#include "boost/variant/variant.hpp"
 //---------------------------------------------------------------------------
 struct _object;
+typedef _object PyObject;
 namespace Python
 {
   enum TPluginEvent
@@ -19,16 +21,26 @@ namespace Python
     peLoad,
     peSelect,
     peClose,
-    peEdit
+    peEdit,
+    peAnimate
   };
 
-  extern _object *PyEFuncError;
-  extern _object *PyEGraphError;
+  extern PyObject *PyEFuncError;
+  extern PyObject *PyEGraphError;
+  typedef boost::variant<int, double, std::wstring, PyObject*> TVariant;
 
   void InitPlugins();
   bool ExecutePythonCommand(const String &Command);
   void ShowPythonConsole(bool Visible);
-  bool ExecutePluginEvent(TPluginEvent PluginEvent, _object *Param=NULL);
+  bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param=NULL);
   bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem);
+  bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1);
+  bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1, TVariant V2);
+  bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1, TVariant V2, TVariant V3);
+
+  PyObject* ToPyObject(int Value);
+  PyObject* ToPyObject(double Value);
+  PyObject* ToPyObject(const std::wstring &Str);
+  PyObject* ToPyObject(const TVariant &Variant);
 }
 #endif
