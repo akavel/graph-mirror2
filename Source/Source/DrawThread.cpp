@@ -254,9 +254,8 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
             while((Err || (LastPos != Pos && InsideImage(Pos))) && std::abs(s-s2) > 1E-12);
 
             //If we have a new position, add it. We do not check for error here.
-            //Even if the last calculation was an error, we may have a better position
-            //than LastPos
-            if(Pos != LastPos)
+            //Even if the last calculation was an error, we may have a better position.
+            if(Pos != F.Points.back())
             {
               F.Points.push_back(Pos);
               F.sList.push_back(Func32::TCoordSet(s2, real(Coord.x), real(Coord.y)));
