@@ -62,7 +62,6 @@ public:
   //
   DECLARE_THREADING_MODEL(otApartment);
   DECLARE_PROGID(L"GraphFile");
-  DECLARE_DESCRIPTION(L"Graph System");
 
   // Function invoked to (un)register object
   //

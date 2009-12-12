@@ -184,7 +184,7 @@ bool TOleServerImpl::Register(bool AllUsers)
     String ProgID = "Software\\Classes\\" + String(GetProgID());
     DWORD RootKey = reinterpret_cast<DWORD>(AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER);
 
-    CreateRegKey(ClassKey, "", GetDescription(), RootKey);
+    CreateRegKey(ClassKey, "", LoadRes(RES_OLE_GRAPH_SYSTEM), RootKey);
     CreateRegKey(ClassKey + "\\InprocHandler32", "", "OLE32.DLL", RootKey);
     CreateRegKey(ClassKey + "\\Insertable", "", "", RootKey);
 
@@ -228,7 +228,7 @@ void UpgradeSettings()
 {
   //Old default font (Times New Roman) is changed to Tahoma to support angle symbol
   std::wstring VersionStr = GetRegValue(REGISTRY_KEY, L"Version", HKEY_CURRENT_USER, L"");
-  if(TVersion(VersionStr) < TVersion(4,4,0,444))
+  if(TVersion(VersionStr) < TVersion(4,4,0,456))
     SetRegValue(REGISTRY_KEY "\\Property", L"DefaultPointLabelFont", HKEY_CURRENT_USER, DEFAULT_POINT_FONT);
 }
 //---------------------------------------------------------------------------
@@ -734,7 +734,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     }
     else if(pFormatetcIn->cfFormat == cfObjectDescriptor && (pFormatetcIn->tymed & TYMED_HGLOBAL))
     {
-      String UserTypeName = GetDescription();
+      String UserTypeName = LoadRes(RES_OLE_GRAPH_SYSTEM);
       String SrcOfCopy = Form1->Data.GetFileName().c_str();
 
       //Get memory handle; Remember memory for text and zero terminations (zero termination is 2*2 bytes)
