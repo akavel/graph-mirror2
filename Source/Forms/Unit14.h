@@ -132,6 +132,7 @@ private:	// User declarations
   boost::shared_ptr<TPointSeries> Series;
   std::vector<TPointSeriesPoint> DataPoints;
   TData &Data;
+  bool FontChanged;
 
   static HPEN SetPen(TColor Color, TPenStyle Style, int Width);
   void UpdateErrorBars();
