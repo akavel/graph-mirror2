@@ -1056,9 +1056,16 @@ void TRelation::ReadFromIni(const TConfigFileSection &Section)
   std::vector<std::wstring> Args;
   Args.push_back(L"x");
   Args.push_back(L"y");
-  Func.SetFunc(Text, Args, GetData().CustomFunctions.SymbolList );
-  if(!ConstraintsText.empty())
-    Constraints.SetFunc(ConstraintsText, Args, GetData().CustomFunctions.SymbolList);
+  try
+  {
+    Func.SetFunc(Text, Args, GetData().CustomFunctions.SymbolList );
+    if(!ConstraintsText.empty())
+      Constraints.SetFunc(ConstraintsText, Args, GetData().CustomFunctions.SymbolList);
+  }
+  catch(Func32::EParseError &E)
+  {
+    ShowStatusError(GetErrorMsg(E));
+  }
   RelationType = Func.GetFunctionType() == Func32::ftInequality ? rtInequality : rtEquation;
   if(Func.GetFunctionType() == Func32::ftEquation)
     Func.RemoveRelation();

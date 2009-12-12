@@ -145,7 +145,8 @@ void __fastcall TForm9::Edit1Change(TObject *Sender)
   {
     Form1->Cross->Hide();
     Form1->IPolygon1->Hide();
-    Form1->CancelStatusError();
+    if(Sender != NULL)
+      Form1->CancelStatusError();
 
     if(Visible && VisibleFrame)
       switch(EvalType)

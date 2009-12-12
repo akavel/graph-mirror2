@@ -120,7 +120,8 @@ void TData::Import(const std::wstring &FileName)
 {
   if(std::_waccess(FileName.c_str(), 0))
     throw EGraphError(LoadRes(RES_FILE_NOT_FOUND, FileName));
-  TConfigFile ConfigFile(FileName);
+  TConfigFile ConfigFile;
+  ConfigFile.LoadFromUtf8File(FileName);
   std::wstring SavedByVersion = ConfigFile.Section(L"Graph").Read(L"Version", L"NA");
   if(SavedByVersion == L"NA")
     throw EGraphError(LoadRes(RES_NOT_GRAPH_FILE, FileName));
@@ -129,6 +130,8 @@ void TData::Import(const std::wstring &FileName)
 
   try
   {
+    if(SavedByVersion < TVersion(L"4.4.0.414"))
+      ConfigFile.LoadFromAnsiFile(FileName);
     Import(ConfigFile);
   }
   catch(Func32::EFuncError &Error)
@@ -155,15 +158,25 @@ void TData::Import(TConfigFile &IniFile)
   //ElemList must be empty when reading shades and tangents from file
   boost::shared_ptr<TTopGraphElem> Temp(new TTopGraphElem(this));
   Temp.swap(TopElem);
-  PreprocessGrfFile(IniFile);
-  CustomFunctions.ReadFromIni(IniFile.Section(L"CustomFunctions"));
-  LoadData(IniFile);
-  AnimationInfo.ReadFromIni(IniFile.Section(L"Animate"));
-  LoadPluginData(IniFile.Section(L"PluginData"));
+  try
+  {
+    PreprocessGrfFile(IniFile);
+    CustomFunctions.ReadFromIni(IniFile.Section(L"CustomFunctions"));
+    LoadData(IniFile);
+    AnimationInfo.ReadFromIni(IniFile.Section(L"Animate"));
+    LoadPluginData(IniFile.Section(L"PluginData"));
+  }
+  catch(...)
+  {
+    Temp.swap(TopElem); //Swap back on exception
+    throw;
+  }
   Temp.swap(TopElem);
   while(Temp->ChildCount() > 0)
     if(!dynamic_cast<TAxesView*>(Temp->GetChild(0).get())) //We only want 1 TAxesView
       TopElem->InsertChild(Temp->GetChild(0));
+    else
+      Temp->RemoveChild(0);
 
   //Set decimal separator back
   DecimalSeparator = OldDecimalSeparator;
@@ -366,6 +379,7 @@ bool TData::ImportPointSeries(const std::wstring &FileName)
     Series->SetLegendText(CreatePointSeriesDescription());
     Insert(Series);
     UndoList.Push(TUndoAdd(*this, Series));
+    Series->Update();
     ColorIndex = ++ColorIndex % (sizeof(Colors)/sizeof(TColor));
   }
 

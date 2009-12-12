@@ -176,10 +176,15 @@ object Form9: TForm9
       ExplicitHeight = 102
       inherited Label1: TLabel
         Width = 26
+        Height = 13
         ExplicitWidth = 26
+      end
+      inherited Label2: TLabel
+        Height = 13
       end
       inherited Label3: TLabel
         Width = 22
+        Height = 13
         ExplicitWidth = 22
       end
       inherited Edit3: TEdit
