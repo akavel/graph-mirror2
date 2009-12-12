@@ -1085,13 +1085,15 @@ void __fastcall TForm1::StatusBar1DrawPanel(TStatusBar *StatusBar,
 void TForm1::ShowStatusMessage(const String &Str, bool AutoHint)
 {
   //Do not disable timer; Warnings may not be overwritten
-
-  //Don't show hints if Str not empty
-  StatusBar1->AutoHint = Str.IsEmpty() || AutoHint;
-  //Show message
-  StatusBar1->Panels->Items[SysLocale.MiddleEast ? 2 : 0]->Text = Str;
-  StatusBar1->Panels->Items[SysLocale.MiddleEast ? 2 : 0]->Style = psText;
-  StatusBar1->Update();
+  if(StatusError.IsEmpty())
+  {
+    //Don't show hints if Str not empty
+    StatusBar1->AutoHint = Str.IsEmpty() || AutoHint;
+    //Show message
+    StatusBar1->Panels->Items[SysLocale.MiddleEast ? 2 : 0]->Text = Str;
+    StatusBar1->Panels->Items[SysLocale.MiddleEast ? 2 : 0]->Style = psText;
+    StatusBar1->Update();
+  }
 }
 //---------------------------------------------------------------------------
 //Show error message in status bar. This overwrite a normal message.
@@ -1113,8 +1115,12 @@ void TForm1::ShowStatusError(const String &Str, TColor Color, unsigned Timeout)
 //---------------------------------------------------------------------------
 void TForm1::CancelStatusError()
 {
-  ShowStatusMessage("", true);
+  StatusError = "";
   Timer1->Enabled = false;
+  StatusBar1->AutoHint = true;
+  StatusBar1->Panels->Items[SysLocale.MiddleEast ? 2 : 0]->Text = "";
+  StatusBar1->Panels->Items[SysLocale.MiddleEast ? 2 : 0]->Style = psText;
+  StatusBar1->Update();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Timer1Timer(TObject *Sender)
