@@ -22,7 +22,7 @@
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
-    : TForm(Owner), Data(AData)
+    : TForm(Owner), Data(AData), FontChanged(false)
 {
   Translate();
 
@@ -207,7 +207,8 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
   PointSeries->Update();
   Property.DefaultPoint.Set(PointSelect1->ItemIndex, ExtColorBox1->Selected, Edit2->Text.ToInt());
   Property.DefaultPointLine.Set(LineSelect1->LineStyle, ExtColorBox2->Selected, Edit3->Text.ToInt());
-  Property.DefaultPointLabelFont->Assign(FontDialog1->Font);
+  if(FontChanged)
+    Property.DefaultPointLabelFont->Assign(FontDialog1->Font);
   SetRegValue(REGISTRY_KEY "\\Property", L"Interpolation", HKEY_CURRENT_USER, ComboBox2->ItemIndex);
 
   ModalResult = mrOk;
@@ -375,7 +376,10 @@ void __fastcall TForm14::Popup_ImportClick(TObject *Sender)
 void __fastcall TForm14::BitBtn1Click(TObject *Sender)
 {
   if(FontDialog1->Execute())
+  {
     PaintBox1->Invalidate();
+    FontChanged = true;
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Popup_ExportClick(TObject *Sender)
