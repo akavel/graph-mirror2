@@ -6,300 +6,16 @@
 #, fuzzy
 msgid ""
 msgstr "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2007-07-30 19:49\n"
-"PO-Revision-Date: 2007-07-30 19:49\n"
+"POT-Creation-Date: 2009-12-13 19:23\n"
+"PO-Revision-Date: 2009-12-13 19:23\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: dxgettext 1.2.1\n"
-
-#. AreaFrame..Label1("From:")..Caption
-#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label4("From:")..Caption
-#. Form15("Calculate table")..Label1("From:")..Caption
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
-#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
-#. Form19("Animate")..TntGroupBox1("Range")..Label2("From:")..Caption
-#. Form5("Insert function")..GroupBox2("Argument range")..Label4("From:")..Caption
-#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label4("From:")..Caption
-msgid "From:"
-msgstr ""
-
-#. AreaFrame..Label2("To:")..Caption
-#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label5("To:")..Caption
-#. Form15("Calculate table")..Label2("To:")..Caption
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
-#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
-#. Form19("Animate")..TntGroupBox1("Range")..Label3("To:")..Caption
-#. Form5("Insert function")..GroupBox2("Argument range")..Label5("To:")..Caption
-#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label5("To:")..Caption
-msgid "To:"
-msgstr ""
-
-#. AreaFrame..Label3("Area")..Caption
-#. Form1..ActionManager..AreaAction("Area")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Area"
-msgstr ""
-
-#. AreaFrame..Edit1....Hint
-msgid "Enter the start coordinate or mark the range on the graph itself with "
-"the mouse."
-msgstr ""
-
-#. AreaFrame..Edit2....Hint
-msgid "Enter the end coordinate or mark the range on the graph itself with "
-"the mouse."
-msgstr ""
-
-#. AreaFrame..Edit3....Hint
-msgid "Area or length of path calculated for the given range using Simpson's "
-"formula."
-msgstr ""
-
-#. ParFuncFrame..Label7("Snap to:")..Caption
-#. PolFuncFrame..Label7("Snap to:")..Caption
-#. StdFuncFrame..Label5("Snap to:")..Caption
-msgid "Snap to:"
-msgstr ""
-
-#. ParFuncFrame..Edit2..Hint
-msgid "The x-coordinate evaluated for the t-parameter."
-msgstr ""
-
-#. ParFuncFrame..Edit3..Hint
-msgid "The y-coordinate evaluated for the t-parameter."
-msgstr ""
-
-#. ParFuncFrame..Edit4..Hint
-msgid "The derivative of x(t) evaluated for the entered "
-"t-parameter."
-msgstr ""
-
-#. ParFuncFrame..Edit5..Hint
-msgid "The derivative of y(t) evaluated for the entered "
-"t-parameter."
-msgstr ""
-
-#. ParFuncFrame..Edit6..Hint
-msgid "The slope of the function evaluated for the entered "
-"t-parameter."
-msgstr ""
-
-#. ParFuncFrame..Edit1....Hint
-#. PolFuncFrame..Edit1....Hint
-msgid "Enter the independent variable for which you want to evaluate the "
-"function, or click on the function in the main "
-"window."
-msgstr ""
-
-#. ParFuncFrame..ComboBox1....Hint
-#. StdFuncFrame..ComboBox1....Hint
-#. Form9("Evaluate")..PolFuncFrame1....Hint
-msgid "Select where the cursor will be placed when you click on the "
-"image."
-msgstr ""
-
-#. ParFuncFrame..ComboBox1..Text
-#. ParFuncFrame..ComboBox1....Items.Strings
-#. PolFuncFrame..ComboBox1..Text
-#. PolFuncFrame..ComboBox1....Items.Strings
-#. StdFuncFrame..ComboBox1..Text
-#. StdFuncFrame..ComboBox1....Items.Strings
-#. Form1..MainMenu..Function_("Function")..Caption
-#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
-#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
-#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
-#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
-#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
-#. Form1..ActionManager..EditAction("Edit...")..Category
-#. Form1..ActionManager..DeleteAction("Delete")..Category
-#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Category
-#. Form1..ActionManager..InsertLabelAction("Insert label...")..Category
-#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Category
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Category
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Category
-msgid "Function"
-msgstr ""
-
-#. ParFuncFrame..ComboBox1....Items.Strings
-#. PolFuncFrame..ComboBox1....Items.Strings
-#. StdFuncFrame..ComboBox1....Items.Strings
-msgid "Intersection"
-msgstr ""
-
-#. ParFuncFrame..ComboBox1....Items.Strings
-#. PolFuncFrame..ComboBox1....Items.Strings
-#. StdFuncFrame..ComboBox1....Items.Strings
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Caption
-msgid "x-axis"
-msgstr ""
-
-#. ParFuncFrame..ComboBox1....Items.Strings
-#. PolFuncFrame..ComboBox1....Items.Strings
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
-msgid "y-axis"
-msgstr ""
-
-#. ParFuncFrame..ComboBox1....Items.Strings
-#. PolFuncFrame..ComboBox1....Items.Strings
-msgid "Extreme x-value"
-msgstr ""
-
-#. ParFuncFrame..ComboBox1....Items.Strings
-#. PolFuncFrame..ComboBox1....Items.Strings
-msgid "Extreme y-value"
-msgstr ""
-
-#. PolFuncFrame..Edit2..Hint
-msgid "The distance to the function evaluated for the given "
-"angle."
-msgstr ""
-
-#. PolFuncFrame..Edit3..Hint
-msgid "The x-coordinate evaluated for the given "
-"angle."
-msgstr ""
-
-#. PolFuncFrame..Edit4..Hint
-msgid "The y-coordinate evaluated for the given "
-"angle."
-msgstr ""
-
-#. PolFuncFrame..Edit5..Hint
-msgid "The derivative of the function evaluated for the given "
-"angle."
-msgstr ""
-
-#. PolFuncFrame..Edit6..Hint
-msgid "The slope of the function evaluated for the given "
-"angle."
-msgstr ""
-
-#. StdFuncFrame..Edit1....Hint
-msgid "Enter a number for which you want to evaluate the function, or click "
-"on the function in the main window."
-msgstr ""
-
-#. StdFuncFrame..ComboBox1....Items.Strings
-msgid "Extremum"
-msgstr ""
-
-#. StdFuncFrame..Edit2..Hint
-msgid "This is the function evaluated for the entered "
-"x-value."
-msgstr ""
-
-#. StdFuncFrame..Edit3....Hint
-msgid "This is the first derivative of the function evaluated for the "
-"entered value."
-msgstr ""
-
-#. StdFuncFrame..Edit4....Hint
-msgid "This is the functions second derivative evaluated for the entered "
-"value."
-msgstr ""
-
-#. TanFrame..Edit2....Hint
-msgid "This is the y-coordinate corresponding to the entered "
-"x-coordinate."
-msgstr ""
-
-#. TanFrame..Edit1..Hint
-msgid "Enter an x-coordinate or click in the main "
-"window."
-msgstr ""
-
-#. Form1..MainMenu..File_("File")..Caption
-#. Form1..ActionManager..NewAction("New")..Category
-#. Form1..ActionManager..OpenAction("Open...")..Category
-#. Form1..ActionManager..SaveAction("Save")..Category
-#. Form1..ActionManager..SaveAsAction("Save as...")..Category
-#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Category
-#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Category
-#. Form1..ActionManager..PrintAction("Print...")..Category
-#. Form1..ActionManager..ExitAction("Exit")..Category
-#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Category
-#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Category
-msgid "File"
-msgstr ""
-
-#. Form1..MainMenu..File_("File")..File_Import("Import")..Caption
-msgid "Import"
-msgstr ""
-
-#. Form1..MainMenu..Edit_("Edit")..Caption
-#. Form1..ActionManager..UndoAction("Undo")..Category
-#. Form1..ActionManager..RedoAction("Redo")..Category
-#. Form1..ActionManager..CutAction("Cut")..Category
-#. Form1..ActionManager..CopyAction("Copy")..Category
-#. Form1..ActionManager..PasteAction("Paste")..Category
-#. Form1..ActionManager..CopyImageAction("Copy image")..Category
-#. Form1..ActionManager..AxesAction("Axes...")..Category
-#. Form1..ActionManager..OptionsAction("Options...")..Category
-msgid "Edit"
-msgstr ""
-
-#. Form1..MainMenu..Zoom_("Zoom")..Caption
-#. Form1..ActionManager..ZoomInAction("In")..Category
-#. Form1..ActionManager..ZoomOutAction("Out")..Category
-#. Form1..ActionManager..ZoomWindowAction("Window")..Category
-#. Form1..ActionManager..ZoomSquareAction("Square")..Category
-#. Form1..ActionManager..ZoomStandardAction("Standard")..Category
-#. Form1..ActionManager..ZoomFitAction("Fit")..Category
-#. Form1..ActionManager..ZoomAllPointsAction("All points")..Category
-#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Category
-#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Category
-#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Category
-#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Category
-msgid "Zoom"
-msgstr ""
-
-#. Form1..MainMenu..Math_("Calc")..Caption
-#. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Area")..Category
-#. Form1..ActionManager..EvalAction("Evaluate")..Category
-#. Form1..ActionManager..TableAction("Table...")..Category
-#. Form1..ActionManager..AnimateAction("Animate...")..Category
-#. Form15("Calculate table")..Button2("Calc")..Caption
-msgid "Calc"
-msgstr ""
-
-#. Form1..MainMenu..Plugins_("Plugins")..Caption
-msgid "Plugins"
-msgstr ""
-
-#. Form1..MainMenu..Help_("Help")..Caption
-#. Form1..ActionManager..ContentsAction("Contents and index")..Category
-#. Form1..ActionManager..ListAction("List of functions")..Category
-#. Form1..ActionManager..HomePageAction("Go to home page")..Category
-#. Form1..ActionManager..UpdateAction("Check for update")..Category
-#. Form1..ActionManager..AboutAction("About Graph...")..Category
-#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Category
-#. Form1..ActionManager..DonateAction("Donate")..Category
-#. Form1..ActionManager..TipAction("Tip of the day")..Category
-#. Form1..ActionManager..SupportAction("Support")..Category
-#. Form11("Insert relation")..Button3("Help")..Caption
-#. Form12("Insert tangent/normal")..Button3("Help")..Caption
-#. Form13("Insert trendline")..Button3("Help")..Caption
-#. Form14("Insert point series")..Button3("Help")..Caption
-#. Form15("Calculate table")..Button3("Help")..Caption
-#. Form16("Insert shading")..Button3("Help")..Caption
-#. Form17("Custom functions/constants")..Button4("Help")..Caption
-#. Form19("Animate")..Button3("Help")..Caption
-#. Form3("Edit axes")..Button3("Help")..Caption
-#. Form4("Options")..Button3("Help")..Caption
-#. Form5("Insert function")..Button3("Help")..Caption
-#. Form6("Text label")..Button3("Help")..Caption
-#. Form7("Insert f'(x)")..Button3("Help")..Caption
-msgid "Help"
-msgstr ""
-
-#. Form1..MainMenu..Help_("Help")..Help_Internet("Internet")..Caption
-msgid "Internet"
-msgstr ""
+"X-Generator: dxgettext 1.2.2\n"
 
 #. Form1..Recent1..Hint
+#. Hint for recent file menu items
 msgid "Open file: %s"
 msgstr ""
 
@@ -316,7 +32,6 @@ msgstr ""
 #. Form1..PopupMenu3..Label_Placement("Placement")..Caption
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Caption
 #. Form21("Placement")..Caption
-#. Form21("Placement")..Label1("Placement")..Caption
 msgid "Placement"
 msgstr ""
 
@@ -378,16 +93,48 @@ msgstr ""
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
 #. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
-#. Form6("Text label")..ColorBox1..CustomName
-#. Form6("Text label")..ColorBox2..CustomName
+#. Form6("Insert text label")..ColorBox1..CustomName
+#. Form6("Insert text label")..ColorBox2..CustomName
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
+msgstr ""
+
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Hint
+msgid "Place the label at a custom position."
 msgstr ""
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Caption
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
 #. Shown in rotation dialog
 msgid "Rotation"
+msgstr ""
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_0..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_0..Hint
+msgid "Show the label with no rotation."
+msgstr ""
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_90..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_90..Hint
+msgid "Show the label rotated 90° counter clockwise."
+msgstr ""
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_180..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_180..Hint
+msgid "Show the label rotated 180°."
+msgstr ""
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_270..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_270..Hint
+msgid "Show the label rotated 270° counter "
+"clockwise."
+msgstr ""
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
+msgid "Specify the angle of rotation for the "
+"label."
 msgstr ""
 
 #. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
@@ -402,12 +149,123 @@ msgid "Export the selected point series to a "
 "file."
 msgstr ""
 
+#. Form1..ActionManager........("File")....("Import")..Caption
+msgid "Import"
+msgstr ""
+
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..NewAction("New")..Category
+#. Form1..ActionManager..OpenAction("Open...")..Category
+#. Form1..ActionManager..SaveAction("Save")..Category
+#. Form1..ActionManager..SaveAsAction("Save as...")..Category
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Category
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Category
+#. Form1..ActionManager..PrintAction("Print...")..Category
+#. Form1..ActionManager..ExitAction("Exit")..Category
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Category
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Category
+msgid "File"
+msgstr ""
+
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..UndoAction("Undo")..Category
+#. Form1..ActionManager..RedoAction("Redo")..Category
+#. Form1..ActionManager..CutAction("Cut")..Category
+#. Form1..ActionManager..CopyAction("Copy")..Category
+#. Form1..ActionManager..PasteAction("Paste")..Category
+#. Form1..ActionManager..CopyImageAction("Copy image")..Category
+#. Form1..ActionManager..AxesAction("Axes...")..Category
+#. Form1..ActionManager..OptionsAction("Options...")..Category
+msgid "Edit"
+msgstr ""
+
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
+#. Form1..ActionManager..EditAction("Edit...")..Category
+#. Form1..ActionManager..DeleteAction("Delete")..Category
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Category
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Category
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Category
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Category
+#. Form1..ActionManager..InsertObjectAction("Insert object...")..Category
+#. ParFuncFrame..ComboBox1..Text
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1..Text
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1..Text
+#. StdFuncFrame..ComboBox1....Items.Strings
+msgid "Function"
+msgstr ""
+
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..ZoomInAction("In")..Category
+#. Form1..ActionManager..ZoomOutAction("Out")..Category
+#. Form1..ActionManager..ZoomWindowAction("Window")..Category
+#. Form1..ActionManager..ZoomSquareAction("Square")..Category
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Category
+#. Form1..ActionManager..ZoomFitAction("Fit")..Category
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Category
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Category
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Category
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Category
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Category
+msgid "Zoom"
+msgstr ""
+
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..PathAction("Length of path")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
+#. Form1..ActionManager..EvalAction("Evaluate")..Category
+#. Form1..ActionManager..TableAction("Table")..Category
+#. Form1..ActionManager..AnimateAction("Animate...")..Category
+#. Form15("Calculate table")..Button2("Calc")..Caption
+msgid "Calc"
+msgstr ""
+
+#. Form1..ActionManager........("File")..Caption
+msgid "Plugins"
+msgstr ""
+
+#. Form1..ActionManager........("File")....("Import")..Caption
+msgid "Internet"
+msgstr ""
+
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..ContentsAction("Contents and index")..Category
+#. Form1..ActionManager..ListAction("List of functions")..Category
+#. Form1..ActionManager..HomePageAction("Graph web site")..Category
+#. Form1..ActionManager..UpdateAction("Check for update")..Category
+#. Form1..ActionManager..AboutAction("About Graph")..Category
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Category
+#. Form1..ActionManager..DonateAction("Donate")..Category
+#. Form1..ActionManager..TipAction("Tip of the day")..Category
+#. Form1..ActionManager..SupportAction("Support")..Category
+#. Form11("Insert relation")..Button3("Help")..Caption
+#. Form12("Insert tangent/normal")..Button3("Help")..Caption
+#. Form13("Insert trendline")..Button3("Help")..Caption
+#. Form14("Insert point series")..Button3("Help")..Caption
+#. Form15("Calculate table")..Button3("Help")..Caption
+#. Form16("Insert shading")..Button3("Help")..Caption
+#. Form17("Custom functions/constants")..Button4("Help")..Caption
+#. Form19("Animate")..Button3("Help")..Caption
+#. Form3("Edit axes")..Button3("Help")..Caption
+#. Form4("Options")..Button3("Help")..Caption
+#. Form5("Insert function")..Button3("Help")..Caption
+#. Form6("Insert text label")..Button3("Help")..Caption
+#. Form7("Insert f'(x)")..Button3("Help")..Caption
+msgid "Help"
+msgstr ""
+
 #. Form1..ActionManager..NewAction("New")..Caption
 msgid "New"
 msgstr ""
 
 #. Form1..ActionManager..NewAction("New")..Hint
-msgid "Creates a new coordinate system."
+msgid "Create a new coordinate system."
 msgstr ""
 
 #. Form1..ActionManager..OpenAction("Open...")..Caption
@@ -415,8 +273,7 @@ msgid "Open..."
 msgstr ""
 
 #. Form1..ActionManager..OpenAction("Open...")..Hint
-msgid "Read coordinate system and functions from a "
-"file."
+msgid "Read a coordinate system from a file."
 msgstr ""
 
 #. Form1..ActionManager..SaveAction("Save")..Caption
@@ -424,7 +281,7 @@ msgid "Save"
 msgstr ""
 
 #. Form1..ActionManager..SaveAction("Save")..Hint
-msgid "Write coordinate system and functions to a "
+msgid "Write the current coordinate system to a "
 "file."
 msgstr ""
 
@@ -434,7 +291,7 @@ msgid "Save as..."
 msgstr ""
 
 #. Form1..ActionManager..SaveAsAction("Save as...")..Hint
-msgid "Saves the coordinate system as a new "
+msgid "Write the current coordinate system to a file with a new "
 "name."
 msgstr ""
 
@@ -443,8 +300,8 @@ msgid "Save copy as..."
 msgstr ""
 
 #. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Hint
-msgid "Saves a copy of the current coordinate "
-"system."
+msgid "Save a copy of the current coordinate system to a "
+"file."
 msgstr ""
 
 #. Form1..ActionManager..SaveAsImageAction("Save as image...")..Caption
@@ -452,7 +309,7 @@ msgid "Save as image..."
 msgstr ""
 
 #. Form1..ActionManager..SaveAsImageAction("Save as image...")..Hint
-msgid "Saves the shown coordinate system as an "
+msgid "Save the shown coordinate system as an "
 "image."
 msgstr ""
 
@@ -473,7 +330,7 @@ msgid "Quit the program."
 msgstr ""
 
 #. Form1..ActionManager..UndoAction("Undo")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Undo("Undo")..Caption
 msgid "Undo"
 msgstr ""
 
@@ -482,7 +339,7 @@ msgid "Undo the last action."
 msgstr ""
 
 #. Form1..ActionManager..RedoAction("Redo")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Redo("Redo")..Caption
 msgid "Redo"
 msgstr ""
 
@@ -493,12 +350,12 @@ msgstr ""
 #. Form1..ActionManager..CutAction("Cut")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Caption
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Cut("Cut")..Caption
 msgid "Cut"
 msgstr ""
 
 #. Form1..ActionManager..CutAction("Cut")..Hint
-msgid "Cuts the selected function or point series to the "
+msgid "Cut the selected function or point series to the "
 "clipboard."
 msgstr ""
 
@@ -506,24 +363,24 @@ msgstr ""
 #. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Caption
 #. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Caption
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Copy("Copy")..Caption
 msgid "Copy"
 msgstr ""
 
 #. Form1..ActionManager..CopyAction("Copy")..Hint
-msgid "Copies the selected function or point series to the "
+msgid "Copy the selected function or point series to the "
 "clipboard."
 msgstr ""
 
 #. Form1..ActionManager..PasteAction("Paste")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")..Caption
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Paste("Paste")..Caption
 msgid "Paste"
 msgstr ""
 
 #. Form1..ActionManager..PasteAction("Paste")....Hint
-msgid "Pastes a function or point series from the clipboard into the "
+msgid "Paste a function or point series from the clipboard into the "
 "coordinate system."
 msgstr ""
 
@@ -532,7 +389,7 @@ msgid "Copy image"
 msgstr ""
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Hint
-msgid "Copies the shown coordinate system to the "
+msgid "Copy the shown coordinate system to the "
 "clipboard."
 msgstr ""
 
@@ -632,7 +489,8 @@ msgid "In"
 msgstr ""
 
 #. Form1..ActionManager..ZoomInAction("In")..Hint
-msgid "Zoom in."
+msgid "Zoom in. Hold down Shift to zoom with larger "
+"steps."
 msgstr ""
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Caption
@@ -640,7 +498,8 @@ msgid "Out"
 msgstr ""
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Hint
-msgid "Zoom out."
+msgid "Zoom out. Hold down Shift to zoom with larger "
+"steps."
 msgstr ""
 
 #. Form1..ActionManager..ZoomWindowAction("Window")..Caption
@@ -665,7 +524,7 @@ msgid "Standard"
 msgstr ""
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Hint
-msgid "Zoom to standard coordinates."
+msgid "Reset the axes to their default settings."
 msgstr ""
 
 #. Form1..ActionManager..MoveUpAction("Move up")..Category
@@ -680,36 +539,36 @@ msgstr ""
 msgid "Move up"
 msgstr ""
 
-#. Form1..ActionManager..MoveUpAction("Move up")..Hint
-msgid "Move the window up along the coordinate "
-"system."
+#. Form1..ActionManager..MoveUpAction("Move up")....Hint
+msgid "Move the graphing area up along the coordinate system. Hold down "
+"Shift to move in larger steps."
 msgstr ""
 
 #. Form1..ActionManager..MoveDownAction("Move down")..Caption
 msgid "Move down"
 msgstr ""
 
-#. Form1..ActionManager..MoveDownAction("Move down")..Hint
-msgid "Move the window down along the coordinate "
-"system."
+#. Form1..ActionManager..MoveDownAction("Move down")....Hint
+msgid "Move the graphing area down along the coordinate system. Hold down "
+"Shift to move in larger steps."
 msgstr ""
 
 #. Form1..ActionManager..MoveLeftAction("Move left")..Caption
 msgid "Move left"
 msgstr ""
 
-#. Form1..ActionManager..MoveLeftAction("Move left")..Hint
-msgid "Move the window to the left along the coordinate "
-"system."
+#. Form1..ActionManager..MoveLeftAction("Move left")....Hint
+msgid "Move the graphing area to the left along the coordinate system. Hold "
+"down Shift to move in larger steps."
 msgstr ""
 
 #. Form1..ActionManager..MoveRightAction("Move right")..Caption
 msgid "Move right"
 msgstr ""
 
-#. Form1..ActionManager..MoveRightAction("Move right")..Hint
-msgid "Move the window to the right along the coordinate "
-"system."
+#. Form1..ActionManager..MoveRightAction("Move right")....Hint
+msgid "Move the graphing area to the right along the coordinate system. Hold "
+"down Shift to move in larger steps."
 msgstr ""
 
 #. Form1..ActionManager..MoveAction("Move system")..Caption
@@ -726,12 +585,18 @@ msgid "Length of path"
 msgstr ""
 
 #. Form1..ActionManager..PathAction("Length of path")....Hint
-msgid "Calculates the length of path between two given points on the "
+msgid "Calculate the length of path between two given points on the "
 "curve."
 msgstr ""
 
+#. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
+msgid "Area"
+msgstr ""
+
 #. Form1..ActionManager..AreaAction("Area")..Hint
-msgid "Calculates the area under the path of the selected "
+msgid "Calculate the area under the path of the selected "
 "function."
 msgstr ""
 
@@ -744,12 +609,12 @@ msgstr ""
 msgid "Evaluate or trace the selected function."
 msgstr ""
 
-#. Form1..ActionManager..TableAction("Table...")..Caption
-msgid "Table..."
+#. Form1..ActionManager..TableAction("Table")..Caption
+msgid "Table"
 msgstr ""
 
-#. Form1..ActionManager..TableAction("Table...")..Hint
-msgid "Shows an evaluation table."
+#. Form1..ActionManager..TableAction("Table")..Hint
+msgid "Show an evaluation table."
 msgstr ""
 
 #. Form1..ActionManager..ContentsAction("Contents and index")..Caption
@@ -764,18 +629,18 @@ msgstr ""
 msgid "List of functions"
 msgstr ""
 
-#. Form1..ActionManager..ListAction("List of functions")....Hint
-msgid "Shows a list of built-in functions that can be used for "
+#. Form1..ActionManager..ListAction("List of functions")..Hint
+msgid "Show a list of built-in functions that can be used for "
 "graphing."
 msgstr ""
 
-#. Form1..ActionManager..HomePageAction("Go to home page")..Caption
-msgid "Go to home page"
+#. Form1..ActionManager..HomePageAction("Graph web site")..Caption
+msgid "Graph web site"
 msgstr ""
 
-#. Form1..ActionManager..HomePageAction("Go to home page")....Hint
-msgid "Opens the default browser and shows the home page of the "
-"program."
+#. Form1..ActionManager..HomePageAction("Graph web site")..Hint
+msgid "Open the default browser and show the Graph web "
+"site."
 msgstr ""
 
 #. Form1..ActionManager..UpdateAction("Check for update")..Caption
@@ -787,11 +652,12 @@ msgid "Contact the home page to see if a newer version is "
 "available."
 msgstr ""
 
-#. Form1..ActionManager..AboutAction("About Graph...")..Caption
-msgid "About Graph..."
+#. Form1..ActionManager..AboutAction("About Graph")..Caption
+#. Form2("About Graph")..Caption
+msgid "About Graph"
 msgstr ""
 
-#. Form1..ActionManager..AboutAction("About Graph...")..Hint
+#. Form1..ActionManager..AboutAction("About Graph")..Hint
 msgid "Show copyright information."
 msgstr ""
 
@@ -805,15 +671,15 @@ msgid "Fit"
 msgstr ""
 
 #. Form1..ActionManager..ZoomFitAction("Fit")..Hint
-msgid "Zoom to show the selected function."
+msgid "Zoom to show the selected element."
 msgstr ""
 
-#. Form1..ActionManager..ZoomAllPointsAction("All points")..Caption
-msgid "All points"
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Caption
+msgid "Fit all"
 msgstr ""
 
-#. Form1..ActionManager..ZoomAllPointsAction("All points")..Hint
-msgid "Zoom as much as all points are visible."
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Hint
+msgid "Zoom to show all elements."
 msgstr ""
 
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Caption
@@ -821,7 +687,7 @@ msgid "Frequently Asked Questions"
 msgstr ""
 
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Hint
-msgid "Shows a list of frequently asked questions and their "
+msgid "Show a list of frequently asked questions and their "
 "answers."
 msgstr ""
 
@@ -830,7 +696,7 @@ msgid "Insert label..."
 msgstr ""
 
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
-msgid "Insert a text label"
+msgid "Insert a text label."
 msgstr ""
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
@@ -843,7 +709,7 @@ msgstr ""
 
 #. Form1..ActionManager..TipAction("Tip of the day")..Caption
 #. Form10("Tip of the day")..Caption
-#. Form10("Tip of the day")..Panel1..Label2("Tip of the day")..Caption
+#. Form10("Tip of the day")..Panel1..LinkLabel1("Tip of the day")..Caption
 msgid "Tip of the day"
 msgstr ""
 
@@ -864,32 +730,36 @@ msgstr ""
 msgid "Zoom x-axis in"
 msgstr ""
 
-#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Hint
-msgid "Zoom in on the x-axis only."
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")....Hint
+msgid "Zoom in on the x-axis only. Hold down Shift to zoom with larger "
+"steps."
 msgstr ""
 
 #. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Caption
 msgid "Zoom x-axis out"
 msgstr ""
 
-#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Hint
-msgid "Zoom out on the x-axis only."
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")....Hint
+msgid "Zoom out on the x-axis only. Hold down Shift to zoom with larger "
+"steps."
 msgstr ""
 
 #. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Caption
 msgid "Zoom y-axis in"
 msgstr ""
 
-#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Hint
-msgid "Zoom in on the y-axis only."
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")....Hint
+msgid "Zoom in on the y-axis only. Hold down Shift to zoom with larger "
+"steps."
 msgstr ""
 
 #. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Caption
 msgid "Zoom y-axis out"
 msgstr ""
 
-#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Hint
-msgid "Zoom out on the y-axis only."
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")....Hint
+msgid "Zoom out on the y-axis only. Hold down Shift to zoom with larger "
+"steps."
 msgstr ""
 
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Caption
@@ -900,11 +770,11 @@ msgstr ""
 msgid "Insert a new equation or inequality."
 msgstr ""
 
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Caption
-msgid "Custom functions..."
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Caption
+msgid "Custom functions/constants..."
 msgstr ""
 
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Hint
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Hint
 msgid "Create custom functions and constants for use in "
 "graphs."
 msgstr ""
@@ -935,12 +805,13 @@ msgid "Import point series from a data file."
 msgstr ""
 
 #. Form1..ActionManager..InsertObjectAction("Insert object...")..Caption
-#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
 msgid "Insert object..."
 msgstr ""
 
-#. Form1..ColorSelect("Select color")..Caption
-msgid "Select color"
+#. Form1..ActionManager..InsertObjectAction("Insert object...")..Hint
+msgid "Insert an OLE object such as a drawing or an "
+"equation."
 msgstr ""
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
@@ -996,7 +867,6 @@ msgid "Change the font of the legend."
 msgstr ""
 
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Caption
-#. Form21("Placement")..ComboBox1....Items.Strings
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Top Right"
 msgstr ""
@@ -1006,7 +876,6 @@ msgid "Show the legend in the upper right corner."
 msgstr ""
 
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomRight("Bottom Right")..Caption
-#. Form21("Placement")..ComboBox1....Items.Strings
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Bottom Right"
 msgstr ""
@@ -1017,8 +886,6 @@ msgid "Show the legend in the bottom right "
 msgstr ""
 
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopLeft("Top Left")..Caption
-#. Form21("Placement")..ComboBox1..Text
-#. Form21("Placement")..ComboBox1....Items.Strings
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Top Left"
 msgstr ""
@@ -1028,7 +895,6 @@ msgid "Show the legend in the upper left corner."
 msgstr ""
 
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomLeft("Bottom Left")..Caption
-#. Form21("Placement")..ComboBox1....Items.Strings
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Bottom Left"
 msgstr ""
@@ -1083,7 +949,7 @@ msgstr ""
 #. Form3("Edit axes")..Button1("OK")..Caption
 #. Form4("Options")..Button1("OK")..Caption
 #. Form5("Insert function")..Button1("OK")..Caption
-#. Form6("Text label")..Button1("OK")..Caption
+#. Form6("Insert text label")..Button1("OK")..Caption
 #. Form7("Insert f'(x)")..Button1("OK")..Caption
 #. Form8("Add model")..Button1("OK")..Caption
 #. PrintFrm("Print")..Button1("OK")..Caption
@@ -1103,7 +969,7 @@ msgstr ""
 #. Form3("Edit axes")..Button2("Cancel")..Caption
 #. Form4("Options")..Button2("Cancel")..Caption
 #. Form5("Insert function")..Button2("Cancel")..Caption
-#. Form6("Text label")..Button2("Cancel")..Caption
+#. Form6("Insert text label")..Button2("Cancel")..Caption
 #. Form7("Insert f'(x)")..Button2("Cancel")..Caption
 #. Form8("Add model")..Button2("Cancel")..Caption
 #. PrintFrm("Print")..Button2("Cancel")..Caption
@@ -1127,11 +993,9 @@ msgid "Description:"
 msgstr ""
 
 #. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
-#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
 #. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
-#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
-msgid "Write a descriptive text to show in the legend. If empty the equation "
-"will be used."
+msgid "Write a descriptive text to show in the legend and function list. If "
+"empty the formula will be used."
 msgstr ""
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Caption
@@ -1197,7 +1061,7 @@ msgid "Insert tangent/normal"
 msgstr ""
 
 #. Form12("Insert tangent/normal")..Edit1..Hint
-msgid "Coordinate where the tangent/normal will cross the "
+msgid "Value where the tangent/normal will interact with the "
 "function."
 msgstr ""
 
@@ -1215,6 +1079,12 @@ msgstr ""
 
 #. Form12("Insert tangent/normal")..RadioGroup1("Type")....Items.Strings
 msgid "Normal"
+msgstr ""
+
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
+msgid "Write a descriptive text to show in the legend. If empty the equation "
+"will be used."
 msgstr ""
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Caption
@@ -1255,6 +1125,28 @@ msgstr ""
 #. Form5("Insert function")..GroupBox2("Argument range")..Caption
 #. Form7("Insert f'(x)")..GroupBox2("Argument range")..Caption
 msgid "Argument range"
+msgstr ""
+
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label4("From:")..Caption
+#. Form15("Calculate table")..Label1("From:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Label2("From:")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Label4("From:")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label4("From:")..Caption
+#. AreaFrame..GridPanel1..Label1("From:")..Caption
+msgid "From:"
+msgstr ""
+
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label5("To:")..Caption
+#. Form15("Calculate table")..Label2("To:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Label3("To:")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Label5("To:")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label5("To:")..Caption
+#. AreaFrame..GridPanel1..Label2("To:")..Caption
+msgid "To:"
 msgstr ""
 
 #. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Edit4..Hint
@@ -1330,11 +1222,6 @@ msgstr ""
 msgid "Create a exponential function: f(x)=a*b^x"
 msgstr ""
 
-#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit1..Hint
-msgid "The order of the polynomium. For example 2 means a "
-"parable."
-msgstr ""
-
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText1("Order:")..Caption
 msgid "Order:"
 msgstr ""
@@ -1378,6 +1265,11 @@ msgid "Determines how many points are used for the "
 "average."
 msgstr ""
 
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit1..Hint
+msgid "The order of the polynomium. For example 2 means a "
+"parable."
+msgstr ""
+
 #. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Caption
 msgid "User defined"
 msgstr ""
@@ -1414,6 +1306,29 @@ msgstr ""
 
 #. Form13("Insert trendline")..CheckBox1("Intercept =")..Caption
 msgid "Intercept ="
+msgstr ""
+
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Import("Import from file...")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Caption
+msgid "Import from file..."
+msgstr ""
+
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Import("Import from file...")..Hint
+msgid "Import user models from a file."
+msgstr ""
+
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Caption
+msgid "Export all to file..."
+msgstr ""
+
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Hint
+msgid "Export user models to a file."
+msgstr ""
+
+#. Form13("Insert trendline")..SaveDialog1..Filter
+#. Form13("Insert trendline")..OpenDialog1..Filter
+msgid "User models [*.ini]|*.ini"
 msgstr ""
 
 #. Form14("Insert point series")..Caption
@@ -1521,13 +1436,12 @@ msgid "Select where the coordinates should be "
 "shown."
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1..Text
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-msgid "Below"
+msgid "Above"
 msgstr ""
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-msgid "Above"
+msgid "Below"
 msgstr ""
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
@@ -1540,88 +1454,122 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+msgid "Above Left"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+msgid "Above Right"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+msgid "Below Left"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+msgid "Below Right"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Hint
+msgid "Choose between cartesian (x,y) coordinates and polar (θ,r) "
+"coordinates."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")..Caption
+msgid "Coordinate type"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
+msgid "Cartesian"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
+msgid "Polar"
+msgstr ""
+
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..Caption
 msgid "Error bars"
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Caption
-msgid "X error bars"
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..Caption
+msgid "X error amount"
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..CheckBox3("Show x-bars")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..CheckBox3("Show x-bars")..Hint
 msgid "Show horizontal error bars."
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..CheckBox3("Show x-bars")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..CheckBox3("Show x-bars")..Caption
 msgid "Show x-bars"
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton1("Fixed:")..Hint
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton4("Fixed:")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton1("Fixed:")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton4("Fixed:")..Hint
 msgid "All error bars are the same size."
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton1("Fixed:")..Caption
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton4("Fixed:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton1("Fixed:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton4("Fixed:")..Caption
 msgid "Fixed:"
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Edit4..Hint
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Edit6..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..Edit4..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..Edit6..Hint
 msgid "Enter fixed value."
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton2("Relative:")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton2("Relative:")..Hint
 msgid "All error bars are the same percentage of the "
 "x-coordinate."
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton2("Relative:")..Caption
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton5("Relative:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton2("Relative:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton5("Relative:")..Caption
 msgid "Relative:"
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton3("Custom")..Hint
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton6("Custom")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton3("Custom")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton6("Custom")..Hint
 msgid "Each error bar is given a custom value."
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..RadioButton3("Custom")..Caption
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton6("Custom")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton3("Custom")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton6("Custom")..Caption
 msgid "Custom"
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error bars")..Edit5..Hint
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Edit7..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..Edit5..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..Edit7..Hint
 msgid "Enter relative value in percent."
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..Caption
-msgid "Y error bars"
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..Caption
+msgid "Y error amount"
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..CheckBox4("Show y-bars")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..CheckBox4("Show y-bars")..Hint
 msgid "Show vertical error bars."
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..CheckBox4("Show y-bars")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..CheckBox4("Show y-bars")..Caption
 msgid "Show y-bars"
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error bars")..RadioButton5("Relative:")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton5("Relative:")..Hint
 msgid "All error bars are the same percentage of the "
 "y-coordinate."
 msgstr ""
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
-#. Form6("Text label")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Cut("Cut")..Hint
 msgid "Cut the selected text to the clipboard."
 msgstr ""
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Hint
-#. Form6("Text label")..PopupMenu1..Popup_Copy("Copy")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Copy("Copy")..Hint
 msgid "Copy the selected text to the clipboard."
 msgstr ""
 
@@ -1642,6 +1590,7 @@ msgid "Insert row"
 msgstr ""
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Insert("Insert row")..Hint
 msgid "Inserts a row in the grid moving rows below one "
 "down."
 msgstr ""
@@ -1652,6 +1601,7 @@ msgid "Remove row"
 msgstr ""
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Remove("Remove row")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Remove("Remove row")..Hint
 msgid "Removes the selected rows."
 msgstr ""
 
@@ -1665,11 +1615,6 @@ msgstr ""
 #. Form15("Calculate table")..PopupMenu1..Popup1_Select("Select all")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Select("Select all")..Hint
 msgid "Select all cells."
-msgstr ""
-
-#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Caption
-#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Caption
-msgid "Import from file..."
 msgstr ""
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Hint
@@ -1688,8 +1633,8 @@ msgid "Calculate table"
 msgstr ""
 
 #. Form15("Calculate table")..Edit3....Hint
-msgid "The step value. This is the distance between the x-values in the "
-"interval."
+msgid "The step value. This is the difference between two adjoining values "
+"in the defined interval."
 msgstr ""
 
 #. Form15("Calculate table")..Edit1..Hint
@@ -1700,10 +1645,21 @@ msgstr ""
 msgid "The last x-value in the interval."
 msgstr ""
 
-#. Form15("Calculate table")..PopupMenu1..Popup1_Show_df("Show %s")..Caption
-#. Form15("Calculate table")..PopupMenu1..Popup1_Show_ddf("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show1("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show2("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show3("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show4("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show5("Show %s")..Caption
 #. Context menu in Calc|Table dialog
 msgid "Show %s"
+msgstr ""
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show1("Show %s")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show2("Show %s")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show3("Show %s")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show4("Show %s")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show5("Show %s")..Hint
+msgid "Show the %s column in the table."
 msgstr ""
 
 #. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Hint
@@ -1904,21 +1860,19 @@ msgid "Size"
 msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Label1("Image width:")..Caption
-#. Form19("Animate")..TntGroupBox2("Image information")..Label5("Image width:")..Caption
 msgid "Image width:"
 msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Label2("Image height:")..Caption
-#. Form19("Animate")..TntGroupBox2("Image information")..Label6("Image height:")..Caption
 msgid "Image height:"
 msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit1..Hint
-msgid "Set a custom image width."
+msgid "Set a custom image width in pixels."
 msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit2..Hint
-msgid "Set a custom image height."
+msgid "Set a custom image height in pixels."
 msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
@@ -1991,6 +1945,18 @@ msgstr ""
 msgid "Choose paper size to use."
 msgstr ""
 
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
+msgid "Letter"
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
+msgid "Ledger"
+msgstr ""
+
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
+msgid "Legal"
+msgstr ""
+
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
 msgid "Select this to use these settings as defaults in the "
@@ -2033,15 +1999,31 @@ msgid "The chosen constant is changed by this value between each "
 "frame."
 msgstr ""
 
-#. Form19("Animate")..TntGroupBox2("Image information")..Caption
-msgid "Image information"
+#. Form19("Animate")..TntGroupBox2("Frame options")..Caption
+msgid "Frame options"
 msgstr ""
 
-#. Form19("Animate")..TntGroupBox2("Image information")..Label7("Frames/second:")..Caption
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label5("Frame width:")..Caption
+msgid "Frame width:"
+msgstr ""
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label6("Frame height:")..Caption
+msgid "Frame height:"
+msgstr ""
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label7("Frames/second:")..Caption
 msgid "Frames/second:"
 msgstr ""
 
-#. Form19("Animate")..TntGroupBox2("Image information")..Edit6..Hint
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit4..Hint
+msgid "Width of each frame, in pixels."
+msgstr ""
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit5..Hint
+msgid "Height of each frame, in pixels."
+msgstr ""
+
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit6..Hint
 msgid "Number of frames per second used when the animation is "
 "played."
 msgstr ""
@@ -2050,21 +2032,9 @@ msgstr ""
 msgid "Working"
 msgstr ""
 
-#. Form2("About Graph")..Caption
-msgid "About Graph"
-msgstr ""
-
-#. Form2("About Graph")..Panel1..Label6("<Language> translation by <Translator>")..Caption
-msgid "<Language> translation by <Translator>"
-msgstr ""
-
 #. Form2("About Graph")..Panel1..Version("Version %s")..Caption
 #. %s is replaced with version number
 msgid "Version %s"
-msgstr ""
-
-#. Form2("About Graph")..Panel1..Label1("Email:")..Caption
-msgid "Email:"
 msgstr ""
 
 #. Form2("About Graph")..Panel1..Label3("Build %s")..Caption
@@ -2078,9 +2048,18 @@ msgid "This is free software, and you are welcome to redistribute it under "
 "and suggestions to the programmer."
 msgstr ""
 
-#. Form2("About Graph")..Panel1..Label4("The newest version as well as the source code are available ")..Caption
-msgid "The newest version as well as the source code are available "
-"at:"
+#. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
+msgid "The newest version as well as the source code are available at: "
+"%s"
+msgstr ""
+
+#. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
+msgid "Email: %s"
+msgstr ""
+
+#. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
+#. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
+msgid "<Language> translation by <Translator>"
 msgstr ""
 
 #. Form20("Animation")..Caption
@@ -2105,6 +2084,10 @@ msgstr ""
 
 #. Form20("Animation")..Panel2..ToolBar1..ToolButton5..Hint
 msgid "Step"
+msgstr ""
+
+#. Form20("Animation")..SaveDialog1..Filter
+msgid "Audio Video Interleave [*.avi]|*.avi"
 msgstr ""
 
 #. Form20("Animation")..PopupMenu1..Speed1("Speed")..Caption
@@ -2143,184 +2126,253 @@ msgstr ""
 msgid "Save the animation to a file."
 msgstr ""
 
+#. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Caption
+msgid "Save frame..."
+msgstr ""
+
+#. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Hint
+msgid "Save the shown frame to an image file."
+msgstr ""
+
+#. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")..Caption
+msgid "Save all frames..."
+msgstr ""
+
+#. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")....Hint
+msgid "Save all frames in the animation to image files. This will create as "
+"many files as there are frames in the "
+"animation."
+msgstr ""
+
+#. Form21("Placement")..Label1("Corner:")..Caption
+msgid "Corner:"
+msgstr ""
+
+#. Form21("Placement")..ComboBox1..Hint
+msgid "Choose which corner of the label should be "
+"locked."
+msgstr ""
+
+#. Form21("Placement")..ComboBox1....Items.Strings
+msgid "Upper Left"
+msgstr ""
+
+#. Form21("Placement")..ComboBox1....Items.Strings
+msgid "Upper Right"
+msgstr ""
+
+#. Form21("Placement")..ComboBox1....Items.Strings
+msgid "Lower Left"
+msgstr ""
+
+#. Form21("Placement")..ComboBox1....Items.Strings
+msgid "Lower Right"
+msgstr ""
+
+#. Form21("Placement")..Edit1..Hint
+#. Form21("Placement")..Edit2..Hint
+msgid "Enter a coordinate to lock label at."
+msgstr ""
+
+#. Form22("Python interpreter")..Caption
+msgid "Python interpreter"
+msgstr ""
+
+#. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
+msgid "Clear"
+msgstr ""
+
 #. Form3("Edit axes")..Caption
 msgid "Edit axes"
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label1("Minimum:")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label5("Minimum:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Caption
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1....Items.Strings
+msgid "x-axis"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label1("Minimum:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label5("Minimum:")..Caption
 msgid "Minimum:"
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label2("Maximum:")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label6("Maximum:")..Caption
-msgid "Maximum:"
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label3("Tick unit:")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label7("Tick unit:")..Caption
-msgid "Tick unit:"
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label4("The x-axis cross at y=")..Caption
-msgid "The x-axis cross at y="
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Label14("Grid unit:")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label9("Grid unit:")..Caption
-msgid "Grid unit:"
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit1..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit1..Hint
 msgid "Minimum x-value."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit2..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label2("Maximum:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label6("Maximum:")..Caption
+msgid "Maximum:"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit2..Hint
 msgid "Maximum x-value."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit3..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label3("Tick unit:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label7("Tick unit:")..Caption
+msgid "Tick unit:"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit3..Hint
 msgid "Units between ticks on the x-axis."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox1("Logarithmic scale")..Hint
-msgid "Use logarithmic scale on the x-axis."
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label14("Grid unit:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label9("Grid unit:")..Caption
+msgid "Grid unit:"
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox1("Logarithmic scale")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox8("Logarithmic scale")..Caption
-msgid "Logarithmic scale"
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")....Hint
-msgid "Show the label at the right side of the main window, above the "
-"x-axis."
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox3("Label:")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")..Caption
-msgid "Label:"
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit5..Hint
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit11..Hint
-msgid "Edit the label for the axis here."
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox2("Show numbers")..Hint
-msgid "Show units on the x-axis."
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox2("Show numbers")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox9("Show numbers")..Caption
-msgid "Show numbers"
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit6..Hint
-msgid "The x-axis will intersect with the y-axis at this "
-"value."
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Edit4..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit4..Hint
 msgid "Units between the grid lines perpendicular to the "
 "x-axis."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox4("Auto tick")..Hint
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox11("Auto tick")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox4("Auto tick")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox11("Auto tick")..Hint
 msgid "Determine the tick unit automatically."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox4("Auto tick")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox11("Auto tick")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox4("Auto tick")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox11("Auto tick")..Caption
 msgid "Auto tick"
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox5("Auto grid")..Hint
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox12("Auto grid")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Hint
 msgid "Set the grid unit to the same as the tick "
 "unit."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox5("Auto grid")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox12("Auto grid")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Caption
 msgid "Auto grid"
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox6("Show ticks")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
 msgid "Show tick marks on the x-axis."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox6("Show ticks")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox13("Show ticks")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
 msgid "Show ticks"
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox17("Show as a multiple of pi")..Hint
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox18("Show as a multiple of pi")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Hint
+msgid "Show vertical grid lines."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Caption
+msgid "Show grid"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
+msgid "The x-axis cross at y="
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
+msgid "The x-axis will intersect with the y-axis at this "
+"value."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
+msgid "Show the label at the right side of the graphing area, above the "
+"x-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")..Caption
+msgid "Label:"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..Edit5..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..Edit11..Hint
+msgid "Edit the label for the axis here."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox1("Logarithmic scale")..Hint
+msgid "Use logarithmic scale on the x-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox1("Logarithmic scale")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox8("Logarithmic scale")..Caption
+msgid "Logarithmic scale"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox2("Show numbers")..Hint
+msgid "Show units on the x-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox2("Show numbers")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox9("Show numbers")..Caption
+msgid "Show numbers"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Hint
 msgid "Show units on the selected axis as a fraction multiplied by "
 "pi."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox17("Show as a multiple of pi")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox18("Show as a multiple of pi")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Caption
 msgid "Show as a multiple of pi"
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox7("Show grid")..Hint
-msgid "Show vertical grid lines."
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+msgid "y-axis"
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..CheckBox7("Show grid")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox14("Show grid")..Caption
-msgid "Show grid"
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Label8("The y-axis cross at x=")..Caption
-msgid "The y-axis cross at x="
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit7..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Edit7..Hint
 msgid "Minimum y-value."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit8..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Edit8..Hint
 msgid "Maximum y-value."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox8("Logarithmic scale")..Hint
-msgid "Use logarithmic scale for the y-axis."
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit9..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Edit9..Hint
 msgid "Units between ticks on the y-axis."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox9("Show numbers")..Hint
-msgid "Show units on the y-axis."
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox10("Label:")....Hint
-msgid "Show the label at the top of the main window, to the right of the "
-"y-axis."
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit12..Hint
-msgid "The y-axis will intersect with the x-axis at this "
-"value."
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Edit10..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Edit10..Hint
 msgid "Units between the grid lines perpendicular to the "
 "y-axis."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox13("Show ticks")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")....Hint
+msgid "Show the label at the top of the graphing area, to the right of the "
+"y-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel4..Label8("The y-axis cross at x=")..Caption
+msgid "The y-axis cross at x="
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel4..Edit12..Hint
+msgid "The y-axis will intersect with the x-axis at this "
+"value."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
 msgid "Show tick marks on the y-axis."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..CheckBox14("Show grid")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
 msgid "Show horizontal grid lines."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox8("Logarithmic scale")..Hint
+msgid "Use logarithmic scale for the y-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox9("Show numbers")..Hint
+msgid "Show units on the y-axis."
 msgstr ""
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Caption
@@ -2413,7 +2465,7 @@ msgid "Axes color:"
 msgstr ""
 
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label19("Background color:")..Caption
-#. Form6("Text label")..Label4("Background color:")..Caption
+#. Form6("Insert text label")..Label4("Background color:")..Caption
 msgid "Background color:"
 msgstr ""
 
@@ -2460,107 +2512,116 @@ msgid "Select the font used to show the legend "
 "text."
 msgstr ""
 
-#. Form4("Options")..Label1("Decimals:")..Caption
+#. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
 msgstr ""
 
-#. Form4("Options")..Label2("Recent files:")..Caption
-msgid "Recent files:"
-msgstr ""
-
-#. Form4("Options")..Label3("Max undo steps:")..Caption
-msgid "Max undo steps:"
-msgstr ""
-
-#. Form4("Options")..Label4("Language:")..Caption
-msgid "Language:"
-msgstr ""
-
-#. Form4("Options")..Label5("Font scale:")..Caption
-msgid "Font scale:"
-msgstr ""
-
-#. Form4("Options")..Edit1..Hint
+#. Form4("Options")..GridPanelEx1..Panel1..Edit1..Hint
 msgid "Number of decimals used when results are "
 "shown."
 msgstr ""
 
-#. Form4("Options")..CheckBox1("Associate .grf files")..Hint
-msgid "Associate *.grf files with Graph."
-msgstr ""
-
-#. Form4("Options")..CheckBox1("Associate .grf files")..Caption
-msgid "Associate .grf files"
-msgstr ""
-
-#. Form4("Options")..Edit2..Hint
-msgid "The number of most recent used files shown in the File "
-"menu."
-msgstr ""
-
-#. Form4("Options")..CheckBox4("Save workspace on exit")....Hint
-msgid "Save window position when the program quits. This setting is used the "
-"next time the program is used.|Save window state on "
-"exit."
-msgstr ""
-
-#. Form4("Options")..CheckBox4("Save workspace on exit")..Caption
-msgid "Save workspace on exit"
-msgstr ""
-
-#. Form4("Options")..RadioGroup1("Complex form")..Hint
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are "
 "shown."
 msgstr ""
 
-#. Form4("Options")..RadioGroup1("Complex form")..Caption
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")..Caption
 msgid "Complex form"
 msgstr ""
 
-#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr ""
 
-#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr ""
 
-#. Form4("Options")..RadioGroup1("Complex form")....Items.Strings
-msgid "Polar"
+#. Form4("Options")..GridPanelEx1..Label2("Recent files:")..Caption
+msgid "Recent files:"
 msgstr ""
 
-#. Form4("Options")..CheckBox2("Show tooltip")..Hint
-msgid "Show the tooltip when the cursor is over an "
-"item."
+#. Form4("Options")..GridPanelEx1..Panel2..Edit2..Hint
+msgid "The number of most recent used files shown in the File "
+"menu."
 msgstr ""
 
-#. Form4("Options")..CheckBox2("Show tooltip")..Caption
-msgid "Show tooltip"
+#. Form4("Options")..GridPanelEx1..Label3("Max undo steps:")..Caption
+msgid "Max undo steps:"
 msgstr ""
 
-#. Form4("Options")..Edit3....Hint
+#. Form4("Options")..GridPanelEx1..Panel3..Edit3....Hint
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent "
 "undo."
 msgstr ""
 
-#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")....Hint
+#. Form4("Options")..GridPanelEx1..Label5("Font scale:")..Caption
+msgid "Font scale:"
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..ComboBox1....Hint
+msgid "This is used to scale the user interface if you are having problems "
+"reading the text."
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..Label4("Language:")..Caption
+msgid "Language:"
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..ComboBox2..Hint
+msgid "Select the language to use for the user "
+"interface."
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..CheckBox1("Associate .grf files")..Hint
+msgid "Associate *.grf files with Graph."
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..CheckBox1("Associate .grf files")..Caption
+msgid "Associate .grf files"
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..CheckBox2("Show tooltip")..Hint
+msgid "Show the tooltip when the cursor is over an "
+"item."
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..CheckBox2("Show tooltip")..Caption
+msgid "Show tooltip"
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")....Hint
+msgid "Save the size of the main window when the program exits. This is used "
+"the next time Graph is run."
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")..Caption
+msgid "Save workspace on exit"
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..CheckBox4("Check for new version of Graph at startup")....Hint
 msgid "If checked the program will contact a web server when the program is "
 "started to see if a newer version is "
 "available."
 msgstr ""
 
-#. Form4("Options")..CheckBox7("Check for new version of Graph at startup")..Caption
+#. Form4("Options")..GridPanelEx1..CheckBox4("Check for new version of Graph at startup")..Caption
 msgid "Check for new version of Graph at startup"
 msgstr ""
 
-#. Form4("Options")..ComboBox1..Hint
-msgid "Select the language to use for the user "
-"interface."
+#. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")....Hint
+msgid "Use a custom decimal separator instead of the default from the "
+"Windows Regional settings."
 msgstr ""
 
-#. Form4("Options")..ComboBox2....Hint
-msgid "This is used to scale the user interface if you are having problems "
-"reading the text."
+#. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")..Caption
+msgid "Custom decimal separator:"
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..Edit4..Hint
+msgid "Decimal separator used when exporting to other "
+"programs."
 msgstr ""
 
 #. Form5("Insert function")..Caption
@@ -2623,122 +2684,122 @@ msgstr ""
 msgid "Lines"
 msgstr ""
 
-#. Form6("Text label")..Caption
-msgid "Text label"
+#. Form6("Insert text label")..Caption
+msgid "Insert text label"
 msgstr ""
 
-#. Form6("Text label")..Label1("Font name:")..Caption
+#. Form6("Insert text label")..Label1("Font name:")..Caption
 msgid "Font name:"
 msgstr ""
 
-#. Form6("Text label")..Label2("Font size:")..Caption
+#. Form6("Insert text label")..Label2("Font size:")..Caption
 msgid "Font size:"
 msgstr ""
 
-#. Form6("Text label")..Label3("Font color:")..Caption
+#. Form6("Insert text label")..Label3("Font color:")..Caption
 msgid "Font color:"
 msgstr ""
 
-#. Form6("Text label")..ComboBox1..Hint
+#. Form6("Insert text label")..ComboBox1..Hint
 msgid "Text size."
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..Caption
+#. Form6("Insert text label")..GroupBox1("Text string")..Caption
 msgid "Text string"
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton11..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton11..Hint
 msgid "Insert symbol (Ctrl+G)"
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
-msgid "Insert object"
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
+msgid "Insert object."
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton2..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton2..Hint
 msgid "Italic (Ctrl+I)"
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton3..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton3..Hint
 msgid "Underline (Ctrl+U)"
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton4..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton4..Hint
 msgid "Strikethrough (Ctrl+S)"
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton9..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton9..Hint
 msgid "Superscript (Ctrl++)"
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton10..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton10..Hint
 msgid "Subscript (Ctrl+=)"
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton5..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton5..Hint
 msgid "Align left (Ctrl+L)"
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton6..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton6..Hint
 msgid "Center (Ctrl+E)"
 msgstr ""
 
-#. Form6("Text label")..GroupBox1("Text string")..ToolBar1..ToolButton7..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton7..Hint
 msgid "Align right (Ctrl+R)"
 msgstr ""
 
-#. Form6("Text label")..IFontBox1..Hint
+#. Form6("Insert text label")..IFontBox1..Hint
 msgid "Text font."
 msgstr ""
 
-#. Form6("Text label")..ColorBox1..Hint
+#. Form6("Insert text label")..ColorBox1..Hint
 msgid "Text color."
 msgstr ""
 
-#. Form6("Text label")..ColorBox2..Hint
+#. Form6("Insert text label")..ColorBox2..Hint
 msgid "Select background color of the text "
 "label."
 msgstr ""
 
-#. Form6("Text label")..ColorBox2..DefaultName
+#. Form6("Insert text label")..ColorBox2..DefaultName
 #. May be selected as background color in Insert label dialog
 msgid "Transparent"
 msgstr ""
 
-#. Form6("Text label")..PopupMenu1..Popup_Undo("Undo")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr ""
 
-#. Form6("Text label")..PopupMenu1..Popup_Redo("Redo")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Redo("Redo")..Hint
 msgid "Redo last undone action."
 msgstr ""
 
-#. Form6("Text label")..PopupMenu1..Popup_Paste("Paste")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Paste("Paste")..Hint
 msgid "Paste the contents of the clipboard."
 msgstr ""
 
-#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Caption
 msgid "Paste special..."
 msgstr ""
 
-#. Form6("Text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Hint
 msgid "Select which clipboard representation you want to "
 "paste."
 msgstr ""
 
-#. Form6("Text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
 msgid "Create a new OLE object."
 msgstr ""
 
-#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_EditObject("Edit object")..Caption
 msgid "Edit object"
 msgstr ""
 
-#. Form6("Text label")..PopupMenu1..Popup_EditObject("Edit object")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_EditObject("Edit object")..Hint
 msgid "Edit selected OLE object."
 msgstr ""
 
@@ -2763,10 +2824,150 @@ msgstr ""
 msgid "Select a function or tangent to evaluate."
 msgstr ""
 
+#. Form9("Evaluate")..PolFuncFrame1....Hint
+#. ParFuncFrame..ComboBox1....Hint
+#. StdFuncFrame..ComboBox1....Hint
+msgid "Select where the cursor will be placed when you click on the "
+"image."
+msgstr ""
+
+#. AreaFrame..GridPanel1..Edit3....Hint
+msgid "Area or length of path calculated for the given range using Simpson's "
+"formula."
+msgstr ""
+
+#. AreaFrame..GridPanel1..Panel1..Edit1....Hint
+msgid "Enter the start coordinate or mark the range on the graph itself with "
+"the mouse."
+msgstr ""
+
+#. AreaFrame..GridPanel1..Panel2..Edit2....Hint
+msgid "Enter the end coordinate or mark the range on the graph itself with "
+"the mouse."
+msgstr ""
+
+#. ParFuncFrame..Label7("Snap to:")..Caption
+#. PolFuncFrame..Label7("Snap to:")..Caption
+#. StdFuncFrame..Label5("Snap to:")..Caption
+msgid "Snap to:"
+msgstr ""
+
+#. ParFuncFrame..Edit2..Hint
+msgid "The x-coordinate evaluated for the t-parameter."
+msgstr ""
+
+#. ParFuncFrame..Edit3..Hint
+msgid "The y-coordinate evaluated for the t-parameter."
+msgstr ""
+
+#. ParFuncFrame..Edit4..Hint
+msgid "The derivative of x(t) evaluated for the entered "
+"t-parameter."
+msgstr ""
+
+#. ParFuncFrame..Edit5..Hint
+msgid "The derivative of y(t) evaluated for the entered "
+"t-parameter."
+msgstr ""
+
+#. ParFuncFrame..Edit6..Hint
+msgid "The slope of the function evaluated for the entered "
+"t-parameter."
+msgstr ""
+
+#. ParFuncFrame..Edit1....Hint
+msgid "Enter the value for the parameter t for which you want to evaluate "
+"the function, or click on the graph in the graphing "
+"area."
+msgstr ""
+
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1....Items.Strings
+msgid "Intersection"
+msgstr ""
+
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+msgid "Extreme x-value"
+msgstr ""
+
+#. ParFuncFrame..ComboBox1....Items.Strings
+#. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1....Items.Strings
+msgid "Extreme y-value"
+msgstr ""
+
+#. PolFuncFrame..Edit2..Hint
+msgid "The distance to the function evaluated for the given "
+"angle."
+msgstr ""
+
+#. PolFuncFrame..Edit3..Hint
+msgid "The x-coordinate evaluated for the given "
+"angle."
+msgstr ""
+
+#. PolFuncFrame..Edit4..Hint
+msgid "The y-coordinate evaluated for the given "
+"angle."
+msgstr ""
+
+#. PolFuncFrame..Edit5..Hint
+msgid "The derivative of the function evaluated for the given "
+"angle."
+msgstr ""
+
+#. PolFuncFrame..Edit6..Hint
+msgid "The slope of the function evaluated for the given "
+"angle."
+msgstr ""
+
+#. PolFuncFrame..Edit1....Hint
+msgid "Enter the value of the polar angle for which you want to evaluate the "
+"function, or click on the graph in the graphing "
+"area."
+msgstr ""
+
+#. StdFuncFrame..Edit1....Hint
+msgid "Enter a value for which you want to evaluate the function, or click "
+"on the graph in the graphing area."
+msgstr ""
+
+#. StdFuncFrame..Edit2..Hint
+msgid "This is the function evaluated for the entered "
+"x-value."
+msgstr ""
+
+#. StdFuncFrame..Edit3....Hint
+msgid "This is the first derivative of the function evaluated for the "
+"entered value."
+msgstr ""
+
+#. StdFuncFrame..Edit4....Hint
+msgid "This is the second derivative of the function evaluated for the "
+"entered value."
+msgstr ""
+
+#. TanFrame..Edit2....Hint
+msgid "This is the y-coordinate corresponding to the entered "
+"x-coordinate."
+msgstr ""
+
+#. TanFrame..Edit1..Hint
+msgid "Enter an x-coordinate or click in the graphing "
+"area."
+msgstr ""
+
 #. Used in titles of error message boxes
+#. Indicates an error code, e.g. "Error 5"
 #. Error message when an invalid value is entered.
 #. Error message in Axes dialog when zoom in/out too much
 msgid "Error"
+msgstr ""
+
+#. Indicates an error code, e.g. "Error 5"
+msgid "Error %s"
 msgstr ""
 
 #. Shown as title in the Calc|Length of path dialog when it is undocked
@@ -2786,15 +2987,15 @@ msgid "Axes"
 msgstr ""
 
 #. Shortcut key
-msgid "Ctrl+"
+msgid "Ctrl"
 msgstr ""
 
 #. Shortcut key
-msgid "Alt+"
+msgid "Alt"
 msgstr ""
 
 #. Shortcut key
-msgid "Shift+"
+msgid "Shift"
 msgstr ""
 
 #. Shortcut key
@@ -2853,7 +3054,8 @@ msgid "An error occurred while evaluating power "
 "function."
 msgstr ""
 
-msgid "Tangent to 90+p180 is undefined."
+msgid "Tangent to pi/2+n*pi (90+n180 in degrees) is "
+"undefined."
 msgstr ""
 
 msgid "Fact can only be calculated for positive "
@@ -2916,7 +3118,7 @@ msgstr ""
 msgid "The right bracket is missing."
 msgstr ""
 
-msgid "Invalid number of arguments supplied for function "
+msgid "Invalid number of arguments supplied for the function "
 "'%s'"
 msgstr ""
 
@@ -2928,7 +3130,7 @@ msgid "Invalid number found. Use the format: "
 msgstr ""
 
 msgid "String is empty. You need to enter a "
-"function."
+"formula."
 msgstr ""
 
 msgid "Comma is not allowed here. Use dot as decimal "
@@ -2958,7 +3160,7 @@ msgstr ""
 msgid "The end of the expression was unexpected."
 msgstr ""
 
-msgid "Error parsing function text."
+msgid "Error parsing expression."
 msgstr ""
 
 msgid "A calculation resulted in an overflow."
@@ -2989,6 +3191,12 @@ msgstr ""
 
 msgid "No solution found. Try another guess or another "
 "model."
+msgstr ""
+
+msgid "No result found."
+msgstr ""
+
+msgid "An accurate result cannot be found."
 msgstr ""
 
 msgid "Internal error. Please notify the programmer with as much information "
@@ -3047,6 +3255,9 @@ msgid "You have reached the minimum range of "
 "zoom."
 msgstr ""
 
+msgid "'%s' must not be zero."
+msgstr ""
+
 #. Error message when an invalid value is entered.
 msgid "Error in value"
 msgstr ""
@@ -3084,10 +3295,6 @@ msgstr ""
 msgid "'%s' is not a valid number."
 msgstr ""
 
-#. Hint for recent file menu items
-msgid "Open the file %s."
-msgstr ""
-
 msgid "'%s' must be a positive number."
 msgstr ""
 
@@ -3112,6 +3319,14 @@ msgstr ""
 
 msgid "The font \"%s\" doesn't exist. Standard font is used "
 "instead."
+msgstr ""
+
+#. Description of grf file
+msgid "Graph system"
+msgstr ""
+
+#. Menu item shown in OLE client to open a Graph system object in Graph
+msgid "Open"
 msgstr ""
 
 #. Error in Insert shading dialog when you need to select a function
@@ -3150,6 +3365,9 @@ msgid "File not found"
 msgstr ""
 
 msgid "Error reading file"
+msgstr ""
+
+msgid "Printer error"
 msgstr ""
 
 msgid "Confirm delete"
@@ -3240,7 +3458,8 @@ msgid "The derivative of the function is not defined at "
 "%s=%s"
 msgstr ""
 
-msgid "Coordinate not defined."
+#. Caption of message box when trying to insert tangent at undefined coordinate
+msgid "Coordinate not defined"
 msgstr ""
 
 msgid "Checking for newer version..."
@@ -3262,6 +3481,13 @@ msgid "Edit tangent/normal"
 msgstr ""
 
 msgid "Error processing file '%s' at line %s."
+msgstr ""
+
+msgid "Edit text label"
+msgstr ""
+
+msgid "The model needs some constants (starting with a $) for Graph to "
+"find."
 msgstr ""
 
 msgid "'%s' has to be an integer value between 0 and "
@@ -3322,15 +3548,6 @@ msgstr ""
 msgid "Socket error %s"
 msgstr ""
 
-#. Communication error when checking for newer version
-msgid "The server responded with the message "
-"'%s'"
-msgstr ""
-
-#. Communication error when checking for newer version
-msgid "Protocol reply error %s"
-msgstr ""
-
 msgid "The file cannot be opened by this version of the program.\n"
 "You need at least Graph %s to open this "
 "file."
@@ -3357,8 +3574,8 @@ msgstr ""
 msgid "(All Commands)"
 msgstr ""
 
-msgid "To add a command to a toolbar simply select a category and drag the "
-"command out of this dialog box to a "
+msgid "To add a command to the toolbar simply select a category and drag the "
+"command out of this dialog box to the "
 "toolbar."
 msgstr ""
 
@@ -3372,14 +3589,25 @@ msgstr ""
 msgid "Categories:"
 msgstr ""
 
+#. An error message that hopefully is never seen by the user
+msgid "The program seems to be stuck in an infinite loop.\n"
+"If you cancel the operation the program will become unstable.\n"
+"You should therefore save your data under a new name and restart the "
+"application."
+msgstr ""
+
+msgid "Thread is not responding"
+msgstr ""
+
 #. Tip of the Day
 msgid "This Tip of the day can give you a lot of information about the "
 "program that most users don't know."
 msgstr ""
 
-#. Tip of the Day
-msgid "You can send suggestions for future versions, bug reports and "
-"comments to graph@padowan.dk"
+#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future "
+"improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">h"
+"ttp://www.padowan.dk/forum</a>"
 msgstr ""
 
 #. Tip of the Day
@@ -3388,9 +3616,9 @@ msgid "You can customize the toolbar by right clicking on it and select "
 msgstr ""
 
 #. Tip of the Day
-msgid "Instead of deleting a function you can make it invisible by right "
-"clicking on it in the function list and removing the check at the "
-"'Visible' menu item."
+msgid "Instead of deleting a function, you can make it invisible by removing "
+"the check mark for the item in the function "
+"list."
 msgstr ""
 
 #. Tip of the Day
@@ -3440,8 +3668,8 @@ msgstr ""
 
 #. Tip of the Day
 msgid "If you check 'Save as default' in the Axes dialog the current "
-"settings will be used as default when creating new "
-"files."
+"settings will be used as default when creating new coordinate "
+"systems."
 msgstr ""
 
 #. Tip of the Day
@@ -3477,8 +3705,9 @@ msgid "Graph can save the shown coordinate system in five different image "
 msgstr ""
 
 #. Tip of the Day
-msgid "You can use 'Edit|Copy image' to copy the coordinate system to the "
-"clipboard and paste it into another "
+msgid "You can use 'Edit|Copy image' to copy the coordinate system and paste "
+"it into another program, for example, Microsoft Word. Later you can "
+"usually edit the image in Graph by double clicking on it in the other "
 "program."
 msgstr ""
 
@@ -3493,8 +3722,8 @@ msgid "You can drag a grf-file from explorer into an open instance of Graph "
 msgstr ""
 
 #. Tip of the Day
-msgid "Graph will remember the size and placement of the main window between "
-"executions. This can be disabled from the Options "
+msgid "Graph will remember the size of the main window between executions. "
+"This can be disabled from the Options "
 "dialog."
 msgstr ""
 
@@ -3512,18 +3741,18 @@ msgstr ""
 
 #. Tip of the Day
 msgid "Data from the evaluation table can be copied to another program like "
-"Microsoft Excel using the clipboard."
+"Microsoft Excel."
 msgstr ""
 
 #. Tip of the Day
 msgid "The data points in a point series can be copied to and from other "
-"programs like Microsoft Excel through the "
-"clipboard."
+"programs like Microsoft Excel."
 msgstr ""
 
 #. Tip of the Day
-msgid "Functions can be copied from one instance of the program to another "
-"through the clipboard using Edit|Copy."
+msgid "Elements as functions, point series, etc. can be copied from one "
+"instance of the program to another using "
+"Edit|Copy."
 msgstr ""
 
 #. Tip of the Day
@@ -3547,19 +3776,20 @@ msgid "You can import point series from files saved by other programs, like "
 msgstr ""
 
 #. Tip of the Day
-msgid "When inserting a point series you can copy data from programs like "
+msgid "When inserting a point series, you can copy data from programs like "
 "Microsoft Excel, and paste the data into the grid in "
 "Graph."
 msgstr ""
 
 #. Tip of the Day
-msgid "You can use 'Zoom|All points' to change the coordinate system so all "
-"point series are visible."
+msgid "You can use 'Zoom|Fit all' to change the coordinate system so all "
+"functions and point series are visible."
 msgstr ""
 
 #. Tip of the Day
-msgid "You can use Zoom|Fit to change the coordinate system to show the "
-"selected function or point series."
+msgid "You can use Zoom|Fit to change the coordinate system to show all "
+"parts of the selected function or point "
+"series."
 msgstr ""
 
 #. Tip of the Day
@@ -3665,13 +3895,23 @@ msgstr ""
 msgid "Insert"
 msgstr ""
 
+msgid "Select color"
+msgstr ""
+
 msgid "Customize"
 msgstr ""
 
 msgid "Description"
 msgstr ""
 
-msgid "Cannot open clipboard"
+msgid "Cannot open clipboard: %s"
+msgstr ""
+
+msgid "There is no default printer currently "
+"selected."
+msgstr ""
+
+msgid "Install for all users"
 msgstr ""
 
 msgid "Local"
@@ -3740,17 +3980,17 @@ msgid "Top margin:"
 msgstr ""
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
-msgid "Select to place the image on the middle of the "
-"page."
+msgid "Center the printing area on the page."
 msgstr ""
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
 msgstr ""
 
-#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1..Hint
-#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2..Hint
-msgid "Enter the image position on the page."
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1....Hint
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2....Hint
+msgid "Specify the printing area of the page. The printer will print only "
+"within these margins."
 msgstr ""
 
 #. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
