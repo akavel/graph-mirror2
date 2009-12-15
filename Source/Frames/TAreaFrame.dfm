@@ -77,31 +77,28 @@ object AreaFrame: TAreaFrame
       Left = 4
       Top = 8
       Width = 28
-      Height = 21
+      Height = 13
       Align = alLeft
       Caption = 'From:'
       Layout = tlCenter
-      ExplicitHeight = 13
     end
     object Label2: TLabel
       Left = 4
       Top = 38
       Width = 16
-      Height = 21
+      Height = 13
       Align = alLeft
       Caption = 'To:'
       Layout = tlCenter
-      ExplicitHeight = 13
     end
     object Label3: TLabel
       Left = 4
       Top = 68
       Width = 23
-      Height = 21
+      Height = 13
       Align = alLeft
       Caption = 'Area'
       Layout = tlCenter
-      ExplicitHeight = 13
     end
     object Edit3: TEdit
       Left = 36
