@@ -515,7 +515,7 @@ void TDraw::DrawAxes()
     {
       for(; y > y2 + 1 && y >= MaxPixel; y -= GridPixelScl)
         //Don't show at or beside axis (when scaled it might be moved a pixel or two)
-        if(std::abs(y - yPixelCross) > 1)
+        if(std::abs(y - yPixelCross) > 1 && y < AxesRect.Bottom)
           if(Axes.yAxis.LogScl)
             yGridMajor.push_back(y + 0.5);
           else
