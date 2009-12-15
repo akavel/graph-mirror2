@@ -45,16 +45,35 @@ void TAreaFrame::EvalArea(const TBaseFuncType *Func, long double From, long doub
   Edit3->Text = RoundToStr(Func->CalcArea(From, To));
 
   if(!Func->GetVisible())
-  return;
+    return;
 
   if(From > To)
     std::swap(From, To);
 
-  Func32::TCoord<long double> Min = Func->Eval(From);
-  Func32::TCoord<long double> Max = Func->Eval(To);
-
   unsigned N1 = std::lower_bound(Func->sList.begin(), Func->sList.end(), From, TCompCoordSet()) - Func->sList.begin();
   unsigned N2 = std::lower_bound(Func->sList.begin() + N1, Func->sList.end(), To, TCompCoordSet()) - Func->sList.begin();
+
+  Func32::TCoord<long double> Min, Max;
+  try
+  {
+    Min = Func->Eval(From);
+  }
+  catch(Func32::ECalcError &E)
+  {
+    Min.x = Func->sList[N1].x;
+    Min.y = Func->sList[N1].y;
+  }
+
+  try
+  {
+    Max = Func->Eval(To);
+  }
+  catch(Func32::ECalcError &E)
+  {
+    Max.x = Func->sList[N2-1].x;
+    Max.y = Func->sList[N2-1].y;
+  }
+
   if(N1 != N2)
   {
     Form1->IPolygon1->AddPoint(Form1->Draw.xyPoint(Min.x, Min.y));
