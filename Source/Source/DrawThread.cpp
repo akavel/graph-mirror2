@@ -1095,7 +1095,7 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
 
       int PointSize = Size(PointSeries.GetSize());
       TColor FillColor = ForceBlack ? clWhite : PointSeries.GetFillColor();
-      TColor FrameColor = ForceBlack ? clBlack : (PointSeries.GetSize() > 2 ? PointSeries.GetFrameColor() : FillColor);
+      TColor FrameColor = ForceBlack ? clBlack : PointSeries.GetFrameColor();
 
       if(PointSeries.GetStyle() != 7)
         TPointSelect::DrawPoint(Context.GetCanvas(), Pos, PointSeries.GetStyle(), FrameColor, FillColor, PointSize); //Draw normalt markers
@@ -1250,10 +1250,13 @@ void TDrawThread::CreateInequality(TRelation &Relation)
 //It may not be certain
 bool TDrawThread::CheckResult1(const long double Result[3])
 {
-  //If the sign has changes, at least one of the current and last result is valid, or
+  //If the sign has changed, at least one of the current and last result is valid, or
   //the increase/decrease state has changed, which might indicate an asymptote.
-  return (Result[1] < 0) == (Result[2] > 0) && !(_isnan(Result[1]) && _isnan(Result[2])) ||
+  return (Result[1] < 0) == (Result[2] > 0) && !(_isnanl(Result[1]) && _isnanl(Result[2])) ||
     (Result[0] < Result[1]) != (Result[1] < Result[2]);
+  if((Result[0] < Result[1]) != (Result[1] < Result[2]))
+    return true;
+  return false;
 }
 //---------------------------------------------------------------------------
 //Check if there actually is a zero point in f(x,y) for certain.
@@ -1261,7 +1264,7 @@ bool TDrawThread::CheckResult2(const long double Result[3])
 {
   //If the sign has changed, both last and current result is valid, and both last and current
   //value is increasing/decreasing (to avoid false vertical line at y=1/x)
-  return (Result[1] < 0) == (Result[2] > 0) && !_isnan(Result[1]) && !_isnan(Result[2]) &&
+  return (Result[1] < 0) == (Result[2] > 0) && !_isnanl(Result[1]) && !_isnanl(Result[2]) &&
     (Result[0] < Result[1]) == (Result[1] < Result[2]);
 }
 //---------------------------------------------------------------------------
