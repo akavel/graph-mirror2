@@ -73,8 +73,9 @@ void __fastcall TPointSelect::DrawItem(int Index, const TRect &Rect, TOwnerDrawS
 //---------------------------------------------------------------------------
 void TPointSelect::DrawPoint(TCanvas *Canvas, TPoint Pos, int Style, TColor FrameColor, TColor FillColor, unsigned Size)
 {
-  Canvas->Pen->Color = FrameColor;
+  Canvas->Pen->Color = Size > 2 ? FrameColor : FillColor;
   Canvas->Pen->Width = Size/10 + 1;
+  Canvas->Pen->Style = psSolid;
   Canvas->Brush->Color = FillColor;
   Canvas->Brush->Style = bsSolid;
 
