@@ -164,6 +164,16 @@
 				</listitem>
 			</varlistentry>
 
+			<varlistentry id="Error18">
+				<term>Error 18: A plugin function failed.</term>
+				<listitem>
+					<para>
+						A custom function in a Python plugin did not return a result.
+						The plugin console may show more detailed information.
+					</para>
+				</listitem>
+			</varlistentry>
+
 			<varlistentry id="Error50">
 				<term>Error 50: Unexpected operator. Operator %s cannot be placed here</term>
 				<listitem>

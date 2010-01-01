@@ -30,6 +30,7 @@ PYTHON_WRAP(_typeobject, PyCFunction_Type)
 PYTHON_WRAP(_typeobject, PyFloat_Type)
 PYTHON_WRAP(_typeobject, PyType_Type)
 PYTHON_WRAP(_typeobject, PySlice_Type)
+PYTHON_WRAP(_typeobject, PyComplex_Type)
 PYTHON_WRAP(_object*, PyExc_TypeError)
 PYTHON_WRAP(_object*, PyExc_KeyError)
 PYTHON_WRAP(_object*, PyExc_AttributeError)
@@ -71,6 +72,7 @@ public:
 #define PyFloat_Type Python::PyFloat_Type
 #define PyType_Type Python::PyType_Type
 #define PySlice_Type Python::PySlice_Type
+#define PyComplex_Type Python::PyComplex_Type
 #define PyExc_TypeError Python::PyExc_TypeError
 #define PyExc_KeyError Python::PyExc_KeyError
 #define PyExc_AttributeError Python::PyExc_AttributeError
