@@ -610,7 +610,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       }
 
       ErrorCode = ecSymbolNotFound;
-      DynData.ErrorStr = Elem.Text.c_str();
+      DynData.ErrorStr = Elem.Text;
       return 0;
     }
 
@@ -619,10 +619,15 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       //Weird construct: This is just forwarding to another function
       TComplexTrait<T>::TExtFuncCall FuncCall = TComplexTrait<T>::GetFunction(Elem.ExtFunc, Elem.ExtFuncComplex);
       if(FuncCall)
-        return FuncCall(Elem.Custom, DynData.Args, Elem.Arguments, DynData.Trigonometry);
+      {
+        T Result = FuncCall(Elem.Custom, DynData.Args, Elem.Arguments, DynData.Trigonometry, DynData.ErrorStr);
+        if(!DynData.ErrorStr.empty())
+          ErrorCode = ecExtFuncError;
+        return Result;
+      }
 
       ErrorCode = ecSymbolNotFound;
-//      DynData.ErrorStr = Elem.Text;
+      DynData.ErrorStr = Elem.Text;
       return 0;
     }
 

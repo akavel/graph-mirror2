@@ -91,7 +91,8 @@ enum TErrorCode
   ecTotalLoss       = 14, //!< Argument would produce function result with total loss of significant digits, such as sin(10e70)
   ecSymbolNotFound  = 15, //!< Symbol does not exist or has wrong number of arguemnts; A custom function/constant is not updated
   ecRecusionLimit   = 16, //!< Recursive function has been called too many times
-  ecHugeValReturned = 17, //!< Overflowe: A function result was too large, e.g. sinh(20000)
+  ecHugeValReturned = 17, //!< Overflow: A function result was too large, e.g. sinh(20000)
+  ecExtFuncError    = 18, //!< A call to an external custom function failed.
 
   //Parse errors
   ecOperatorError   = 50, //!< Operator cannot be placed here. Example "*5"
@@ -168,7 +169,7 @@ struct EParseError : public EFuncError
 struct ECalcError : public EFuncError
 {
   ECalcError(TErrorCode AErrorCode = ecNoError) : EFuncError(AErrorCode) {}
-  ECalcError(TErrorCode AErrorCode, const wchar_t *Str) : EFuncError(AErrorCode, Str) {}
+  ECalcError(TErrorCode AErrorCode, const std::wstring &Str) : EFuncError(AErrorCode, Str) {}
   const char* what() const throw() {return "Func32::ECalcError";}
 };
 
@@ -543,8 +544,8 @@ public:
 //---------------------------------------------------------------------------
 typedef std::vector<std::wstring> TArgType;
 enum TFunctionType {ftEmpty, ftFunction, ftEquation, ftInequality};
-typedef long double (*TExtFunc)(void *Custom, const long double Args[], unsigned ArgsCount, TTrigonometry Trigonometry);
-typedef TComplex (*TExtFuncComplex)(void *Custom, const TComplex Args[], unsigned ArgsCount, TTrigonometry Trigonometry);
+typedef long double (*TExtFunc)(void *Custom, const long double Args[], unsigned ArgsCount, TTrigonometry Trigonometry, std::wstring &ErrorStr);
+typedef TComplex (*TExtFuncComplex)(void *Custom, const TComplex Args[], unsigned ArgsCount, TTrigonometry Trigonometry, std::wstring &ErrorStr);
 
 class TCustomFunc
 {

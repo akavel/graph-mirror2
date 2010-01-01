@@ -189,11 +189,11 @@ struct TDynData
   const T *Args;
   TTrigonometry Trigonometry;
   TErrorCode ErrorCode;
-  const wchar_t *ErrorStr;
+  std::wstring ErrorStr;
   unsigned Recursion;
 
   TDynData(const T *AArgs, TTrigonometry ATrigonometry)
-    : Args(AArgs), Trigonometry(ATrigonometry), ErrorCode(ecNoError), ErrorStr(NULL), Recursion(0) {}
+    : Args(AArgs), Trigonometry(ATrigonometry), ErrorCode(ecNoError), Recursion(0) {}
 };
 
 struct TMakeTextData
@@ -252,7 +252,7 @@ public:
     TDynData<T> DynData(Args, Trigonometry);
     T Result = CalcF(DynData);
     CalcError.ErrorCode = DynData.ErrorCode;
-    if(DynData.ErrorStr)
+    if(!DynData.ErrorStr.empty())
       CalcError.Str = DynData.ErrorStr;
     return Result;
   }
@@ -263,7 +263,7 @@ public:
     TDynData<T> DynData(Args, Trigonometry);
     T Result = CalcF(DynData);
     if(DynData.ErrorCode)
-      throw ECalcError(DynData.ErrorCode, DynData.ErrorStr ? DynData.ErrorStr : L"");
+      throw ECalcError(DynData.ErrorCode, DynData.ErrorStr);
     return Result;
   }
 

@@ -46,7 +46,7 @@ bool ExecutePythonCommand(const String &Command)
       {
         PyObject *Type, *Value, *Traceback;
 	      PyErr_Fetch(&Type, &Value, &Traceback);
-         PyErr_Restore(Type, Value, NULL);
+        PyErr_Restore(Type, Value, NULL);
         Py_XDECREF(Traceback);
         PyErr_Print();
       }
@@ -139,36 +139,43 @@ static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args)
   return PyLong_FromLong(reinterpret_cast<long>(Action));
 }
 //---------------------------------------------------------------------------
-static long double CallCustomFunction(void *Custom, const long double *Args, unsigned ArgsCount, Func32::TTrigonometry Trigonemtry)
+template<typename T>
+static T CallCustomFunction(void *Custom, const T *Args, unsigned ArgsCount, Func32::TTrigonometry Trigonemtry, std::wstring &ErrorStr)
 {
-  PyRun_SimpleString("math.sqrt(-10.0)\n");
+  TLockGIL Dummy;
   PyObject *Tuple = PyTuple_New(ArgsCount);
   for(unsigned I = 0; I < ArgsCount; I++)
-    PyTuple_SET_ITEM(Tuple, I, PyFloat_FromDouble(Args[I]));
+    PyTuple_SET_ITEM(Tuple, I, ToPyObject(Args[I]));
   PyObject *CallResult = PyObject_CallObject(reinterpret_cast<PyObject*>(Custom), Tuple);
-  if(CallResult == NULL)
-    PyErr_Print();
-  double Result = PyFloat_AsDouble(CallResult);
+  T Result = T();
+  if(CallResult == Py_None)
+    ErrorStr = L" ";
+  else
+  {
+    if(CallResult != NULL)
+      Result = FromPyObject<T>(CallResult);
+    if(PyErr_Occurred())
+    {
+      PyObject *Type, *Value, *Traceback;
+      PyErr_Fetch(&Type, &Value, &Traceback);
+      if(PyUnicode_Check(Value))
+        ErrorStr = PyUnicode_AsUnicode(Value);
+      else
+        ErrorStr = L" ";
+
+      Py_XDECREF(Type);
+      Py_XDECREF(Value);
+      Py_XDECREF(Traceback);
+ //     PyErr_Print();
+ //     PyErr_Clear();
+    }
+  }
   Py_XDECREF(CallResult);
   Py_XDECREF(Tuple);
   return Result;
 }
 //---------------------------------------------------------------------------
-static Func32::TComplex CallCustomFunction(void *Custom, const Func32::TComplex *Args, unsigned ArgsCount, Func32::TTrigonometry Trigonemtry)
-{
-  PyObject *Tuple = PyTuple_New(ArgsCount);
-  for(unsigned I = 0; I < ArgsCount; I++)
-    PyTuple_SET_ITEM(Tuple, I, PyComplex_FromDoubles(Args[I].real(), Args[I].imag()));
-  PyObject *CallResult = PyObject_CallObject(reinterpret_cast<PyObject*>(Custom), Tuple);
-  if(CallResult == NULL)
-    PyErr_Print();
-  Py_complex Result = PyComplex_AsCComplex(CallResult);
-  Py_XDECREF(CallResult);
-  Py_XDECREF(Tuple);
-  return Func32::TComplex(Result.real, Result.imag);
-}
-//---------------------------------------------------------------------------
-static PyObject* PluginCreateCustomFunction(PyObject *Self, PyObject *Args)
+static PyObject* PluginSetCustomFunction(PyObject *Self, PyObject *Args)
 {
   //The number of arguments are in func_code.co_argcount
   const wchar_t *Name;
@@ -189,6 +196,45 @@ static PyObject* PluginCreateCustomFunction(PyObject *Self, PyObject *Args)
     Py_XDECREF(FuncCode);
   }
   Py_RETURN_NONE;
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginGetCustomFunction(PyObject *Self, PyObject *Args)
+{
+  const wchar_t *Name = PyUnicode_AsUnicode(Args);
+  if(Name == NULL)
+    return NULL;
+
+  if(!Form1->Data.CustomFunctions.GlobalSymbolList.Exists(Name))
+  {
+    PyErr_SetString(PyExc_KeyError, AnsiString(Name).c_str());
+    return NULL;
+  }
+
+  const Func32::TCustomFunc &CustomFunc = Form1->Data.CustomFunctions.GlobalSymbolList.Get(Name);
+  Py_RETURN_NONE;
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginDelCustomFunction(PyObject *Self, PyObject *Args)
+{
+  const wchar_t *Name = PyUnicode_AsUnicode(Args);
+  if(Name == NULL)
+    return NULL;
+
+  Form1->Data.CustomFunctions.GlobalSymbolList.Erase(Name);
+  Py_RETURN_NONE;
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginGetCustomFunctionNames(PyObject *Self, PyObject *Args)
+{
+  const Func32::TSymbolList &SymbolList = Form1->Data.CustomFunctions.GlobalSymbolList;
+  Func32::TSymbolList::TConstIterator Begin = SymbolList.Begin();
+  Func32::TSymbolList::TConstIterator End = SymbolList.End();
+  PyObject *Names = PyList_New(SymbolList.Size());
+
+  int Index = 0;
+  for(Func32::TSymbolList::TConstIterator Iter = Begin; Iter != End; ++Iter, ++Index)
+    PyList_SetItem(Names, Index, PyUnicode_FromWideChar(Iter->first.c_str(), Iter->first.size()));
+  return Names;
 }
 //---------------------------------------------------------------------------
 static PyObject* PluginEval(PyObject *Self, PyObject *Args)
@@ -350,17 +396,20 @@ static PyObject* PluginDelConstant(PyObject *Self, PyObject *Args)
 //---------------------------------------------------------------------------
 static PyMethodDef GraphMethods[] = {
   {"CreateAction",              PluginCreateAction, METH_NOARGS, ""},
-  {"CreateCustomFunction",      PluginCreateCustomFunction, METH_VARARGS, ""},
+  {"SetCustomFunction",         PluginSetCustomFunction, METH_VARARGS, ""},
+  {"GetCustomFunction",         PluginGetCustomFunction, METH_O, ""},
+  {"DelCustomFunction",         PluginDelCustomFunction, METH_O, ""},
+  {"GetCustomFunctionNames",    PluginGetCustomFunctionNames, METH_NOARGS, ""},
   {"WriteToConsole",            PluginWriteToConsole, METH_VARARGS, ""},
   {"InputQuery",                PluginInputQuery, METH_VARARGS, ""},
   {"Eval",                      PluginEval, METH_VARARGS, ""},
   {"EvalComplex",               PluginEvalComplex, METH_VARARGS, ""},
   {"SaveAsImage",               PluginSaveAsImage, METH_O, ""},
   {"Update",                    PluginUpdate, METH_NOARGS, ""},
-  {"GetConstantNames",          PluginGetConstantNames, METH_NOARGS, ""},
-  {"GetConstant",               PluginGetConstant, METH_O, ""},
   {"SetConstant",               PluginSetConstant, METH_VARARGS, ""},
+  {"GetConstant",               PluginGetConstant, METH_O, ""},
   {"DelConstant",               PluginDelConstant, METH_O, ""},
+  {"GetConstantNames",          PluginGetConstantNames, METH_NOARGS, ""},
   {NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
@@ -487,6 +536,11 @@ _object* ToPyObject(const std::wstring &Str)
   return PyUnicode_FromUnicode(Str.c_str(), Str.size());
 }
 //---------------------------------------------------------------------------
+PyObject* ToPyObject(const Func32::TComplex &Value)
+{
+  return Value.imag() ? PyComplex_FromDoubles(Value.real(), Value.imag()) : PyFloat_FromDouble(Value.real());
+}
+//---------------------------------------------------------------------------
 _object* ToPyObject(const TVariant &Variant)
 {
   if(const int *Value = boost::get<int>(&Variant))
@@ -498,6 +552,22 @@ _object* ToPyObject(const TVariant &Variant)
   if(PyObject *const*Value = boost::get<PyObject*>(&Variant))
     return *Value;
   return NULL;
+}
+//---------------------------------------------------------------------------
+template<> double FromPyObject<double>(PyObject *O)
+{
+  if(PyComplex_Check(O))
+    if(PyComplex_ImagAsDouble(O) != 0)
+      PyErr_SetString(PyExc_TypeError, "complex number has an imaginary part");
+    else
+      return PyComplex_RealAsDouble(O);
+  return PyFloat_AsDouble(O);
+}
+//---------------------------------------------------------------------------
+template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O)
+{
+  Py_complex V = PyComplex_AsCComplex(O);
+  return Func32::TComplex(V.real, V.imag);
 }
 //---------------------------------------------------------------------------
 bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem)

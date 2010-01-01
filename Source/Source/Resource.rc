@@ -57,6 +57,7 @@ BEGIN
   RES_SymbolNotFound      "The custom function/constant '%s' was not found or has the wrong number of arguments."
   RES_RecusionLimit       "Too many recursive calls."
   RES_HugeValReturned     "Overflow: A function returned a value too large to handle."
+  RES_ExtFuncError        "A plugin function failed: %s"
 
   RES_OperatorError       "Unexpected operator. Operator '%s' cannot be placed here."
   RES_NoEndPar            "The right bracket is missing."

@@ -60,6 +60,7 @@
 #define RES_SymbolNotFound      115 //Symbol does not exist; A custom function/constant is not updated
 #define RES_RecusionLimit       116 //Recursive function has been called too many times
 #define RES_HugeValReturned     117 //Overflowe: A function result was too large, e.g. sinh(20000)
+#define RES_ExtFuncError        118 //A call to an external custom function failed.
 
 #define RES_OperatorError       150 //Operator cannot be placed here. Two operators may not follow each other
 #define RES_NoEndPar            155 //End of parenthese missing

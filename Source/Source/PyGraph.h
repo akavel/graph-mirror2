@@ -40,7 +40,14 @@ namespace Python
 
   PyObject* ToPyObject(int Value);
   PyObject* ToPyObject(double Value);
+  PyObject* ToPyObject(long double Value) {return ToPyObject(static_cast<double>(Value));}
   PyObject* ToPyObject(const std::wstring &Str);
+  PyObject* ToPyObject(const Func32::TComplex &Value);
   PyObject* ToPyObject(const TVariant &Variant);
+
+  template<typename T> T FromPyObject(PyObject *O);
+  template<> double FromPyObject<double>(PyObject *O);
+  template<> long double FromPyObject<long double>(PyObject *O) {return FromPyObject<double>(O);}
+  template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O);
 }
 #endif

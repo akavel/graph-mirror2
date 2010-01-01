@@ -62,6 +62,19 @@ class ConstantsType(collections.MutableMapping):
         for k in self.keys(): yield k
     def __len__(self): return len(keys)
 
+class CustomFunctionsType(collections.MutableMapping):
+    def keys(self):
+        return GraphImpl.GetCustomFunctionNames()
+    def __getitem__(self, name):
+        return GraphImpl.GetCustomFunction(name)
+    def __setitem__(self, name, value):
+        GraphImpl.SetCustomFunction(name, value)
+    def __delitem__(self, name):
+        GraphImpl.DelCustomFunction(name)
+    def __iter__(self):
+        for k in self.keys(): yield k
+    def __len__(self): return len(keys)
+
 def ExecuteEvent(event, args):
     for action in EventList[event]:
         try:
@@ -115,6 +128,7 @@ TGraphElem.ChildList = property(lambda self: ChildListType(self))
 PluginData = PluginDataType(Data.GetPluginData())
 
 Constants = ConstantsType()
+CustomFunctions = CustomFunctionsType()
 FunctionList = ChildListType(Data.GetTopElem())
 
 Eval = GraphImpl.Eval
