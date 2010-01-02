@@ -124,7 +124,6 @@ enum TIdent
   CodeMax,        //!< Return the greatest of the parameters
   CodeIfSeq,      //!< ifseq(a,f1,b,f2,f3) returns if(a) f1 else if(b) f2 else f3
   CodeCustom,     //!< Indicates a custom function
-  CodeExtFunc,    //!< Indicates a custom plugin function to call
   CodeDNorm,      //!< The normal distribution normaldist(x, mean, deviation)
   LastFunction = CodeDNorm, //!< Indicates last function
 
@@ -152,18 +151,12 @@ struct TElem
 {
   TIdent Ident;
   unsigned Arguments;
-  boost::shared_ptr<TFuncData> FuncData;
+  boost::shared_ptr<TBaseCustomFunc> Func;
   std::wstring Text;
   union
   {
     long double Number; //A value if Ident is CodeNumber
     TCompareMethod Compare[2];
-    struct
-    {
-      TExtFunc ExtFunc;
-      TExtFuncComplex ExtFuncComplex;
-      void *Custom;
-    };
   };
 
   TElem() : Ident(CodeNull), Arguments(0) {};
@@ -171,8 +164,8 @@ struct TElem
   TElem(TIdent AIdent, long double AVal) : Ident(AIdent), Number(AVal) {}
   TElem(TIdent AIdent, unsigned AArguments, int) : Ident(AIdent), Arguments(AArguments) {}
   TElem(long double AVal) : Ident(CodeNumber), Number(AVal) {}
-  TElem(TIdent AIdent, const std::wstring &Str, unsigned Args=0, const boost::shared_ptr<TFuncData> &AFuncData = boost::shared_ptr<TFuncData>())
-    : Ident(AIdent), Arguments(Args), FuncData(AFuncData), Text(Str) {}
+  TElem(TIdent AIdent, const std::wstring &Str, unsigned Args=0, const boost::shared_ptr<TBaseCustomFunc> &AFunc = boost::shared_ptr<TBaseCustomFunc>())
+    : Ident(AIdent), Arguments(Args), Func(AFunc), Text(Str) {}
   TElem(TCompareMethod Compare1) : Ident(CodeCompare1), Arguments(0) {Compare[0] = Compare1;}
   TElem(TCompareMethod Compare1, TCompareMethod Compare2) : Ident(CodeCompare2), Arguments(0) {Compare[0] = Compare1; Compare[1] = Compare2;}
   bool operator ==(const TElem &E) const {return Ident==E.Ident && (Ident==CodeNumber ? Number==E.Number : (Ident==CodeCustom ? Text == E.Text : Arguments==E.Arguments));}
@@ -199,7 +192,7 @@ struct TDynData
 struct TMakeTextData
 {
   TConstIterator Iter;                     //!< Iterator pointing to next element to convert.
-  const std::vector<std::wstring> &Args;   //!< Vector of argument names.
+  const TArgType &Args;   //!< Vector of argument names.
   std::wostream &Stream;                   //!< Stream to write result to.
 };
 
@@ -220,8 +213,6 @@ class TFuncData
   static T CalcF(TConstIterator &Iter, TDynData<T> &DynData);
   template<typename T>
   static T CalcFunc(TConstIterator Iter, TDynData<T> &DynData);
-  template<typename T>
-  T CalcF(TDynData<T> &DynData) const;
   static double CalcGSLFunc(double x, void *Params);
 
   static double Integrate(TConstIterator Iter, double Min, double Max, TTrigonometry Trigonometry, TErrorCode &ErrorCode);
@@ -236,15 +227,18 @@ class TFuncData
 public:
   TFuncData() {}
   TFuncData(const TFuncData &FuncData) : Data(FuncData.Data) {}
-  TFuncData(const std::wstring &Str){Parse(Str, std::vector<std::wstring>(1, L"x"));}
-  TFuncData(const std::wstring &Str, const std::wstring &Variable) {Parse(Str, std::vector<std::wstring>(1, Variable));}
-  TFuncData(const std::wstring &Str, const std::vector<std::wstring> &Args, const TSymbolList &SymbolList)
+  TFuncData(const std::wstring &Str){Parse(Str, TArgType(1, L"x"));}
+  TFuncData(const std::wstring &Str, const std::wstring &Variable) {Parse(Str, TArgType(1, Variable));}
+  TFuncData(const std::wstring &Str, const TArgType &Args, const TSymbolList &SymbolList)
   {Parse(Str, Args, &SymbolList);}
   TFuncData(const std::wstring &Str, const std::wstring &Variable, const TSymbolList &SymbolList)
-  {Parse(Str, std::vector<std::wstring>(1, Variable), &SymbolList);}
-  TFuncData(const std::wstring &Str, const std::vector<std::wstring> &Args) {Parse(Str, Args);}
+  {Parse(Str, TArgType(1, Variable), &SymbolList);}
+  TFuncData(const std::wstring &Str, const TArgType &Args) {Parse(Str, Args);}
 
-  void Parse(const std::wstring &Str, const std::vector<std::wstring> &Args, const TSymbolList *SymbolList = NULL);
+  void Parse(const std::wstring &Str, const TArgType &Args, const TSymbolList *SymbolList = NULL);
+
+  template<typename T>
+  T CalcF(TDynData<T> &DynData) const;
 
   template<typename T>
   T Calc(const T *Args, TTrigonometry Trigonometry, ECalcError &CalcError) const
@@ -271,7 +265,7 @@ public:
   void Simplify();
   void ReplaceConst();
   void Replace(const TElem &OldElem, const TElem &NewElem);
-  void MakeText(const std::vector<std::wstring> &Args, std::wostream &Stream) const;
+  void MakeText(const TArgType &Args, std::wostream &Stream) const;
   bool Update(const TSymbolList &SymbolList);
 
   bool IsEmpty() const {return Data.empty();}

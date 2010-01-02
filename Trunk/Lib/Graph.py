@@ -61,6 +61,7 @@ class ConstantsType(collections.MutableMapping):
     def __iter__(self):
         for k in self.keys(): yield k
     def __len__(self): return len(keys)
+    def __repr__(self): return repr(dict(self))
 
 class CustomFunctionsType(collections.MutableMapping):
     def keys(self):
@@ -74,6 +75,7 @@ class CustomFunctionsType(collections.MutableMapping):
     def __iter__(self):
         for k in self.keys(): yield k
     def __len__(self): return len(keys)
+    def __repr__(self): return repr(dict(self))
 
 def ExecuteEvent(event, args):
     for action in EventList[event]:

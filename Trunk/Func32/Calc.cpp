@@ -451,17 +451,13 @@ inline std::complex<T> PowDiv(const std::complex<T> &a, const std::complex<T> &b
 
 template<typename T> struct TComplexTrait
 {
-  typedef TExtFunc TExtFuncCall;
   static const bool HasImagUnit = false;
   static const T ImagUnit() {return 0;}
-  static TExtFuncCall GetFunction(TExtFunc f1, TExtFuncComplex f2) {return f1;}
 };
 template<typename T> struct TComplexTrait<std::complex<T> >
 {
-  typedef TExtFuncComplex TExtFuncCall;
   static const bool HasImagUnit = true;
   static const std::complex<T> ImagUnit() {return std::complex<T>(0, 1);}
-  static TExtFuncCall GetFunction(TExtFunc f1, TExtFuncComplex f2) {return f2;}
 };
 //---------------------------------------------------------------------------
 template<typename T>
@@ -599,30 +595,13 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
           return 0;
       }
 
-      if(Elem.FuncData)
+      if(Elem.Func)
       {
         const T *OldArgs = DynData.Args;
         DynData.Args = Values.empty() ? NULL : &Values[0];
-        T Result = Elem.FuncData->CalcF(DynData);
+        T Result = Elem.Func->DynCall(DynData);
         DynData.Args = OldArgs;
         DynData.Recursion--;
-        return Result;
-      }
-
-      ErrorCode = ecSymbolNotFound;
-      DynData.ErrorStr = Elem.Text;
-      return 0;
-    }
-
-    case CodeExtFunc:
-    {
-      //Weird construct: This is just forwarding to another function
-      TComplexTrait<T>::TExtFuncCall FuncCall = TComplexTrait<T>::GetFunction(Elem.ExtFunc, Elem.ExtFuncComplex);
-      if(FuncCall)
-      {
-        T Result = FuncCall(Elem.Custom, DynData.Args, Elem.Arguments, DynData.Trigonometry, DynData.ErrorStr);
-        if(!DynData.ErrorStr.empty())
-          ErrorCode = ecExtFuncError;
         return Result;
       }
 

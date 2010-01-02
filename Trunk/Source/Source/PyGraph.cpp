@@ -139,17 +139,38 @@ static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args)
   return PyLong_FromLong(reinterpret_cast<long>(Action));
 }
 //---------------------------------------------------------------------------
+class TPluginFunc : public Func32::TBaseCustomFunc
+{
+  PyObject *Func;
+  unsigned Arguments;
+public:
+  TPluginFunc(PyObject *AFunc, unsigned AArguments) : Func(AFunc), Arguments(AArguments) {}
+  ~TPluginFunc() {Py_XDECREF(Func);}
+  unsigned ArgumentCount() const {return Arguments;}
+  long double Call(const long double *Args, Func32::TTrigonometry Trig, Func32::TErrorCode &ErrorCode, std::wstring &ErrorStr) const
+  {
+    return CallCustomFunction(Args, Trig, ErrorCode, ErrorStr);
+  }
+  Func32::TComplex Call(const Func32::TComplex *Args, Func32::TTrigonometry Trig, Func32::TErrorCode &ErrorCode, std::wstring &ErrorStr) const
+  {
+    return CallCustomFunction(Args, Trig, ErrorCode, ErrorStr);
+  }
+  template<typename T>
+  T TPluginFunc::CallCustomFunction(const T *Args, Func32::TTrigonometry Trig, Func32::TErrorCode &ErrorCode, std::wstring &ErrorStr) const;
+  PyObject* GetFunc() {Py_INCREF(Func); return Func;}
+};
+//---------------------------------------------------------------------------
 template<typename T>
-static T CallCustomFunction(void *Custom, const T *Args, unsigned ArgsCount, Func32::TTrigonometry Trigonemtry, std::wstring &ErrorStr)
+T TPluginFunc::CallCustomFunction(const T *Args, Func32::TTrigonometry Trig, Func32::TErrorCode &ErrorCode, std::wstring &ErrorStr) const
 {
   TLockGIL Dummy;
-  PyObject *Tuple = PyTuple_New(ArgsCount);
-  for(unsigned I = 0; I < ArgsCount; I++)
+  PyObject *Tuple = PyTuple_New(Arguments);
+  for(unsigned I = 0; I < Arguments; I++)
     PyTuple_SET_ITEM(Tuple, I, ToPyObject(Args[I]));
-  PyObject *CallResult = PyObject_CallObject(reinterpret_cast<PyObject*>(Custom), Tuple);
+  PyObject *CallResult = PyObject_CallObject(Func, Tuple);
   T Result = T();
   if(CallResult == Py_None)
-    ErrorStr = L" ";
+    ErrorCode = Func32::ecExtFuncError;
   else
   {
     if(CallResult != NULL)
@@ -160,8 +181,7 @@ static T CallCustomFunction(void *Custom, const T *Args, unsigned ArgsCount, Fun
       PyErr_Fetch(&Type, &Value, &Traceback);
       if(PyUnicode_Check(Value))
         ErrorStr = PyUnicode_AsUnicode(Value);
-      else
-        ErrorStr = L" ";
+      ErrorCode = Func32::ecExtFuncError;
 
       Py_XDECREF(Type);
       Py_XDECREF(Value);
@@ -190,7 +210,7 @@ static PyObject* PluginSetCustomFunction(PyObject *Self, PyObject *Args)
     if(ArgCount)
     {
       long Arguments = PyLong_AsLong(ArgCount);
-      Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, Func32::TCustomFunc(CallCustomFunction, CallCustomFunction, Arguments, Function));
+      Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, boost::shared_ptr<TPluginFunc>(new TPluginFunc(Function, Arguments)));
       Py_XDECREF(ArgCount);
     }
     Py_XDECREF(FuncCode);
@@ -210,7 +230,9 @@ static PyObject* PluginGetCustomFunction(PyObject *Self, PyObject *Args)
     return NULL;
   }
 
-  const Func32::TCustomFunc &CustomFunc = Form1->Data.CustomFunctions.GlobalSymbolList.Get(Name);
+  boost::shared_ptr<TPluginFunc> Func = boost::dynamic_pointer_cast<TPluginFunc>(Form1->Data.CustomFunctions.GlobalSymbolList.Get(Name));
+  if(Func)
+    return Func->GetFunc();
   Py_RETURN_NONE;
 }
 //---------------------------------------------------------------------------

@@ -306,14 +306,14 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
   if(SymbolList)
   { //WARNING: Do not remove {} (bcc 5.6.4 bug)
     for(TSymbolList::TConstIterator Iter = SymbolList->Begin(); Iter != SymbolList->End(); ++Iter)
-      if(Iter->second.GetArguments().empty())
+      if(!Iter->second || Iter->second->ArgumentCount() == 0)
       {
         //Don't add a function/constant with same name as an argument
         if(find(NoCaseSymbols, Iter->first.c_str()) == NULL)
-          NoCaseSymbols.add(Iter->first.c_str(), TElem(CodeCustom, Iter->first, 0, Iter->second.FuncData));
+          NoCaseSymbols.add(Iter->first.c_str(), TElem(CodeCustom, Iter->first, 0, Iter->second));
       }
       else
-        FuncSymbols.add(Iter->first.c_str(), TElem(CodeCustom, Iter->first, Iter->second.Args.size(), Iter->second.FuncData));
+        FuncSymbols.add(Iter->first.c_str(), TElem(CodeCustom, Iter->first, Iter->second->ArgumentCount(), Iter->second));
   }
 
   rule<wide_phrase_scanner_t, TContext::context_t> Term, Expression, Factor, Constant, Function, Parentheses, Power, FactorSeq, Sum, Neg, Relation;

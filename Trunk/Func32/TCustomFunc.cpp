@@ -14,6 +14,16 @@
 namespace Func32
 {
 //---------------------------------------------------------------------------
+TComplex TBaseCustomFunc::DynCall(TDynData<TComplex> &DynData) const
+{
+  return Call(DynData.Args, DynData.Trigonometry, DynData.ErrorCode, DynData.ErrorStr);
+}
+//---------------------------------------------------------------------------
+long double TBaseCustomFunc::DynCall(TDynData<long double> &DynData) const
+{
+  return Call(DynData.Args, DynData.Trigonometry, DynData.ErrorCode, DynData.ErrorStr);
+}
+//---------------------------------------------------------------------------
 /** Default constructor to create an empty custom function
  */
 TCustomFunc::TCustomFunc() : FuncData(new TFuncData)
@@ -63,25 +73,6 @@ TCustomFunc::TCustomFunc(const TComplex &Complex)
     FuncData->Add(Codei);
   }
   FuncData->Add(real(Complex));
-}
-//---------------------------------------------------------------------------
-/** Constructor creating a custom function from a pointer to an external function.
- *  The external function is called when the custom function is evaluated
- *  \param ExtFunc: Pointer to an external function.
- *  \param Args: Number of arguments for the function.
- *  \param Custom: A custom value parsed to the external function.
- */
-TCustomFunc::TCustomFunc(TExtFunc ExtFunc, TExtFuncComplex ExtFuncComplex, unsigned AArgs, void *Custom)
-  : FuncData(new TFuncData), Args(AArgs), Trigonometry(Radian)
-{
-  TElem Elem(CodeExtFunc);
-  Elem.ExtFunc = ExtFunc;
-  Elem.ExtFuncComplex = ExtFuncComplex;
-  Elem.Custom = Custom;
-  Elem.Arguments = AArgs;
-  FuncData->Add(Elem);
-  for(unsigned I = 0; I < AArgs; I++)
-    FuncData->Add(TElem(CodeVariable, I, 0));
 }
 //---------------------------------------------------------------------------
 /** Assigns new data to the function.
@@ -258,6 +249,16 @@ void TCustomFunc::RemoveRelation()
 bool TCustomFunc::IsEmpty() const
 {
   return FuncData->IsEmpty();
+}
+//---------------------------------------------------------------------------
+long double TCustomFunc::DynCall(class TDynData<long double> &DynData) const
+{
+  return FuncData->CalcF(DynData);
+}
+//---------------------------------------------------------------------------
+TComplex TCustomFunc::DynCall(TDynData<TComplex> &DynData) const
+{
+  return FuncData->CalcF(DynData);
 }
 //---------------------------------------------------------------------------
 } //namespace Func32

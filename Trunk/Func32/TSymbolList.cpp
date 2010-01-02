@@ -25,11 +25,10 @@ void TSymbolList::Add(const std::wstring &Key, const std::wstring &Str, const st
   std::wstring Name = ToLower(Key);
   if(!IsValidName(Name))
     throw EFuncError(ecIllegalName, Name);
-  List[Name].FuncData.reset(new TFuncData(Str, Args));
-  List[Name].Args = Args;
+  List[Name].reset(new TCustomFunc(Str, Args));
 }
 //---------------------------------------------------------------------------
-void TSymbolList::Add(const std::wstring &Key, const TCustomFunc &CustomFunc)
+void TSymbolList::Add(const std::wstring &Key, const boost::shared_ptr<TBaseCustomFunc> &CustomFunc)
 {
   std::wstring Name = ToLower(Key);
   if(!IsValidName(Name))
@@ -37,14 +36,11 @@ void TSymbolList::Add(const std::wstring &Key, const TCustomFunc &CustomFunc)
   List[Name] = CustomFunc;
 }
 //---------------------------------------------------------------------------
-const TCustomFunc& TSymbolList::Get(const std::wstring &Key) const
+boost::shared_ptr<TBaseCustomFunc> TSymbolList::Get(const std::wstring &Key) const
 {
   TConstIterator Iter = List.find(ToLower(Key));
   if(Iter == List.end())
-  {
-    static TCustomFunc Empty;
-    return Empty;
-  }
+    return boost::shared_ptr<TCustomFunc>();
   return Iter->second;
 }
 //---------------------------------------------------------------------------

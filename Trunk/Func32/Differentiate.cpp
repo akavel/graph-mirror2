@@ -128,8 +128,8 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
     case CodeCustom:
       if(Level > MaxDifLevel)
         throw EFuncError(ecRecursiveDif);
-      if(Iter->FuncData)
-        AddDif(Iter->FuncData->Data.begin(), Var, Trigonometry, Level + 1);
+      if(Iter->Func)
+        AddDif(Iter->Func->GetFuncData()->Data.begin(), Var, Trigonometry, Level + 1);
       else
         throw EFuncError(ecSymbolNotFound, Iter->Text);
       break;
