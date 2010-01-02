@@ -81,11 +81,11 @@ bool CompareFunc(const TFunc &f1, const TFunc &f2)
   return true;
 }
 
-void TestText(const std::wstring &Str)
+void TestText(const std::wstring &Str, const TSymbolList &SymbolList = TSymbolList())
 {
-  TFunc Func(Str);
+  TFunc Func(Str, L"x", SymbolList);
   std::wstring Str2 = Func.MakeText();
-  TFunc Func2(Str2);
+  TFunc Func2(Str2, L"x", SymbolList);
   if(Func != Func2)
   {
     std::wcerr << "Failed to convert function back to text!" << std::endl;
@@ -95,11 +95,11 @@ void TestText(const std::wstring &Str)
 }
 
 template<typename T>
-void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian)
+void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian, const TSymbolList &SymbolList=TSymbolList())
 {
   try
   {
-    TFunc Func(Str);
+    TFunc Func(Str, L"x", SymbolList);
     Func.SetTrigonometry(Trig);
     T f = Func.CalcY(x);
     if(!IsEqual(f, y))
@@ -119,16 +119,16 @@ void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian)
   }
 }
 
-void Test(const std::wstring &Str, long double x, long double y, TTrigonometry Trig = Radian, const std::wstring &ConvToText = L"")
+void Test(const std::wstring &Str, long double x, long double y, TTrigonometry Trig = Radian, const std::wstring &ConvToText = L"", const TSymbolList &SymbolList=TSymbolList())
 {
-  TestEval<long double>(Str, x, y, Trig);
-  TestEval<TComplex>(Str, x, y, Trig);
-  TestText(ConvToText.empty() ? Str : ConvToText);
+  TestEval<long double>(Str, x, y, Trig, SymbolList);
+  TestEval<TComplex>(Str, x, y, Trig, SymbolList);
+  TestText(ConvToText.empty() ? Str : ConvToText, SymbolList);
 }
 
-void Test(const std::string &Str, long double x, long double y, TTrigonometry Trig = Radian, const std::string &ConvToText = "")
+void Test(const std::string &Str, long double x, long double y, TTrigonometry Trig = Radian, const std::string &ConvToText = "", const TSymbolList &SymbolList=TSymbolList())
 {
-  Test(ToWString(Str), x, y, Trig, ToWString(ConvToText));
+  Test(ToWString(Str), x, y, Trig, ToWString(ConvToText), SymbolList);
 }
 
 template<typename T>
@@ -372,6 +372,34 @@ void __stl_debug_terminate(void)
 }
 
 double ErrorToWeight(double x) {return 1/(x*x);}
+
+class TTestSqr : public TBaseCustomFunc
+{
+public:
+  unsigned ArgumentCount() const {return 1;}
+  long double Call(const long double *Args, TTrigonometry Trig, TErrorCode &ErrorCode, std::wstring &ErrorStr) const
+  {
+    return Args[0] * Args[0];
+  }
+  TComplex Call(const TComplex *Args, TTrigonometry Trig, TErrorCode &ErrorCode, std::wstring &ErrorStr) const
+  {
+    return Args[0] * Args[0];
+  }
+};
+
+class TTestCube : public TBaseCustomFunc
+{
+public:
+  unsigned ArgumentCount() const {return 3;}
+  long double Call(const long double *Args, TTrigonometry Trig, TErrorCode &ErrorCode, std::wstring &ErrorStr) const
+  {
+    return Args[0] * Args[0] * Args[0] + Args[1] * Args[1] + Args[2];
+  }
+  TComplex Call(const TComplex *Args, TTrigonometry Trig, TErrorCode &ErrorCode, std::wstring &ErrorStr) const
+  {
+    return Args[0] * Args[0] * Args[0] + Args[1] * Args[1] + Args[2];
+  }
+};
 
 void Test()
 {
@@ -743,17 +771,27 @@ void Test()
   Args.push_back(L"x");
   Args.push_back(L"y");
   TestCustom(L"x*y+1=0", Args, std::vector<TComplex>(2, 0), 0);
+
+  //Test symbol lists
+  TSymbolList SymbolList;
+  SymbolList.Add(L"TestSqr", boost::shared_ptr<TBaseCustomFunc>(new TTestSqr));
+  SymbolList.Add(L"TestCube", boost::shared_ptr<TBaseCustomFunc>(new TTestCube));
+  SymbolList.Add(L"k", L"42");
+  Args.clear();
+  Args.push_back(L"a");
+  Args.push_back(L"b");
+  Args.push_back(L"c");
+  SymbolList.Add(L"foo", L"a^3+b^2+c", Args);
+  Test("k*x", 2, 84, Radian, "", SymbolList);
+  Test("TestSqr(x)", 10, 100, Radian, "", SymbolList);
+  Test("TestCube(5, 2, x)", 1, 130, Radian, "", SymbolList);
+  Test("foo(5, 2, x)", 1, 130, Radian, "", SymbolList);
 }
 
 std::wstringstream DebugStreamBuf;
 int main()
 {
   std::wclog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
-/*
-  TFunc Func("ln(e)");
-  Func.Simplify();
-  std::cout << Func << std::endl;
-*/
   try
   {
     Test();

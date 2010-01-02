@@ -314,7 +314,7 @@ void TCustomFunctions::Replace(const std::wstring &Name, const std::wstring &Val
     if(Iter->Name == Name)
     {
       Iter->Text = Value;
-      SymbolList.Add(Name, Func32::TCustomFunc(Value, Iter->Arguments, SymbolList));
+      SymbolList.Add(Name, boost::shared_ptr<Func32::TCustomFunc>(new Func32::TCustomFunc(Value, Iter->Arguments, SymbolList)));
       return;
     }
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
@@ -326,7 +326,7 @@ void TCustomFunctions::Replace(const std::wstring &Name, long double Value)
     if(Iter->Name == Name)
     {
       Iter->Text = ToWString(Value);
-      SymbolList.Add(Name, Func32::TCustomFunc(Value));
+      SymbolList.Add(Name, boost::shared_ptr<Func32::TCustomFunc>(new Func32::TCustomFunc(Value)));
       return;
     }
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
@@ -360,19 +360,21 @@ void TCustomFunctions::Update()
     for(I = 0; I < Functions.size(); I++)
     {
       std::wstring Expression = Functions[I].Text.substr(0, Functions[I].Text.find(L"#"));
-      SymbolList.Add(Functions[I].Name, Func32::TCustomFunc(Expression, Functions[I].Arguments, SymbolList));
+      SymbolList.Add(Functions[I].Name, boost::shared_ptr<Func32::TCustomFunc>(new Func32::TCustomFunc(Expression, Functions[I].Arguments, SymbolList)));
     }
     SymbolList.Update();
 
     //Replace all constant expressions with their value
     std::vector<Func32::TComplex> DummyArgs;
     for(Func32::TSymbolList::TIterator Iter = SymbolList.Begin(); Iter != SymbolList.End(); ++Iter)
-      if(Iter->second.GetArguments().size() == 0)
+      if(Iter->second->ArgumentCount() == 0)
       {
-        Iter->second.SetTrigonometry(Data.Axes.Trigonometry);
-        Func32::TComplex Value = Iter->second.Calc(DummyArgs);
-        Iter->second = Func32::TCustomFunc(Value);
-      }
+        if(Func32::TCustomFunc *Func = dynamic_cast<Func32::TCustomFunc*>(Iter->second.get()))
+        {
+          Func->SetTrigonometry(Data.Axes.Trigonometry);
+          Func32::TComplex Value = Func->Calc(DummyArgs);
+          Iter->second.reset(new Func32::TCustomFunc(Value));
+      } }
     SymbolList.Update();  
   }
   catch(const Func32::EParseError &E)

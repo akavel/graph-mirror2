@@ -108,7 +108,6 @@ static const TFuncTable Table[] = {
 /*CodeMax*/         TFuncTable(L"max",   arg1 >= 2),
 /*CodeIfSeq*/       TFuncTable(L"ifseq", arg1 >= 2),
 /*CodeCustom*/      TFuncTable(L"",      Dummy),
-/*CodeExtFunc*/     TFuncTable(L"",      Dummy),
 /*CodeDNorm*/       TFuncTable(L"dnorm", arg1 == 1 || arg1 == 3, L"exp(-sqr(x-x2)/(2sqr(x3))) / (x3*sqrt(2pi))"),
 };
 
@@ -209,7 +208,7 @@ void TFuncData::CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const
         CopyReplace(NewArgs[I], Iter2, Args);
         Iter2 = FindEnd(Iter2);
       }
-      CopyReplace(List, Iter->FuncData->Data.begin(), NewArgs);
+      CopyReplace(List, Iter->Func->GetFuncData()->Data.begin(), NewArgs);
       Iter = Iter2 - 1;
     }
     else if(Iter->Ident == CodeVariable && !Args.empty())
@@ -237,14 +236,14 @@ bool TFuncData::Update(const TSymbolList &SymbolList)
   for(std::vector<TElem>::iterator Iter = Data.begin(); Iter != Data.end(); ++Iter)
     if(Iter->Ident == CodeCustom)
     {
-      const TCustomFunc &Func = SymbolList.Get(Iter->Text);
-      if(Func.IsEmpty() || Iter->Arguments != Func.GetArguments().size()) //The number of arguments must match
+      boost::shared_ptr<TBaseCustomFunc> Func = SymbolList.Get(Iter->Text);
+      if(!Func || Iter->Arguments != Func->ArgumentCount()) //The number of arguments must match
       {
         Result = false;
-        Iter->FuncData.reset();
+        Iter->Func.reset();
       }
       else
-        Iter->FuncData = Func.FuncData;
+        Iter->Func = Func;
     }
   return Result;
 }
@@ -272,11 +271,11 @@ bool TFuncData::CheckRecursive(std::vector<const TFuncData*> &FuncStack) const
   for(std::vector<TElem>::const_iterator Iter = Data.begin(); Iter != Data.end(); ++Iter)
     if(Iter->Ident == CodeCustom)
     {
-      if(std::find(FuncStack.begin(), FuncStack.end(), Iter->FuncData.get()) != FuncStack.end())
+      if(std::find(FuncStack.begin(), FuncStack.end(), Iter->Func->GetFuncData().get()) != FuncStack.end())
         return true;
 
-      FuncStack.push_back(Iter->FuncData.get());
-      if(Iter->FuncData->CheckRecursive(FuncStack))
+      FuncStack.push_back(Iter->Func->GetFuncData().get());
+      if(Iter->Func->GetFuncData()->CheckRecursive(FuncStack))
         return true;
       FuncStack.pop_back();
     }

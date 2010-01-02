@@ -544,14 +544,22 @@ public:
 //---------------------------------------------------------------------------
 typedef std::vector<std::wstring> TArgType;
 enum TFunctionType {ftEmpty, ftFunction, ftEquation, ftInequality};
-typedef long double (*TExtFunc)(void *Custom, const long double Args[], unsigned ArgsCount, TTrigonometry Trigonometry, std::wstring &ErrorStr);
-typedef TComplex (*TExtFuncComplex)(void *Custom, const TComplex Args[], unsigned ArgsCount, TTrigonometry Trigonometry, std::wstring &ErrorStr);
 
-class TCustomFunc
+template<typename T> class TDynData;
+class TBaseCustomFunc
 {
-  friend class TFuncData;
-  friend class TSymbolList;
+public:
+  virtual long double DynCall(class TDynData<long double> &DynData) const;
+  virtual TComplex DynCall(TDynData<TComplex> &DynData) const;
+  virtual const boost::shared_ptr<TFuncData>& GetFuncData() const {throw EFuncError(ecNotDifAble);}
+  virtual bool Update(const TSymbolList &SymbolList) {return true;}
+  virtual unsigned ArgumentCount() const =0;
+  virtual long double Call(const long double *Args, TTrigonometry Trig, TErrorCode &ErrorCode, std::wstring &ErrorStr) const {return 0;}
+  virtual TComplex Call(const TComplex *Args, TTrigonometry Trig, TErrorCode &ErrorCode, std::wstring &ErrorStr) const {return 0;}
+};
 
+class TCustomFunc : public TBaseCustomFunc
+{
   boost::shared_ptr<TFuncData> FuncData;
   TArgType Args;
   TTrigonometry Trigonometry;
@@ -566,7 +574,6 @@ public:
   TCustomFunc(const std::wstring &Text, const TArgType &AArgs, const TSymbolList &SymbolList, TTrigonometry Trig = Radian);
   TCustomFunc(long double Value);
   TCustomFunc(const TComplex &Complex);
-  TCustomFunc(TExtFunc ExtFunc, TExtFuncComplex, unsigned AArgs, void *Custom = NULL);
 
   void SetFunc(const std::wstring &Text, const TArgType &AArgs);
   void SetFunc(const std::wstring &Text, const TArgType &AArgs, const TSymbolList &SymbolList);
@@ -584,33 +591,37 @@ public:
   TFunctionType GetFunctionType() const;
   void RemoveRelation();
   bool IsEmpty() const;
+  unsigned ArgumentCount() const {return Args.size();}
 
   long double operator()(const std::vector<long double> &Values) const {return Calc(Values);}
+  long double DynCall(class TDynData<long double> &DynData) const;
+  TComplex DynCall(TDynData<TComplex> &DynData) const;
+  const boost::shared_ptr<TFuncData>& GetFuncData() const {return FuncData;}
 };
 
 class TSymbolList
 {
-  std::map<std::wstring, TCustomFunc> List;
+  std::map<std::wstring, boost::shared_ptr<TBaseCustomFunc> > List;
 
 public:
-  typedef std::map<std::wstring, TCustomFunc>::iterator TIterator;
-  typedef std::map<std::wstring, TCustomFunc>::const_iterator TConstIterator;
+  typedef std::map<std::wstring, boost::shared_ptr<TBaseCustomFunc> >::iterator TIterator;
+  typedef std::map<std::wstring, boost::shared_ptr<TBaseCustomFunc> >::const_iterator TConstIterator;
 
   void Add(const std::wstring &Key);
-  void Add(const std::wstring &Key, const std::wstring &Value, const std::vector<std::wstring> &Args = std::vector<std::wstring>());
-  void Add(const std::wstring &Key, const TCustomFunc &CustomFunc);
+  void Add(const std::wstring &Key, const std::wstring &Value, const TArgType &Args = TArgType());
+  void Add(const std::wstring &Key, const boost::shared_ptr<TBaseCustomFunc> &CustomFunc);
   TConstIterator Begin() const {return List.begin();}
   TIterator Begin() {return List.begin();}
   TConstIterator End() const {return List.end();}
   TIterator End() {return List.end();}
-  const TCustomFunc& Get(const std::wstring &Key) const;
+  boost::shared_ptr<TBaseCustomFunc> Get(const std::wstring &Key) const;
   void Clear();
   bool Empty() const {return List.empty();}
   bool Exists(const std::wstring &Key) const;
   void Erase(const std::wstring &Key);
   unsigned Size() const {return List.size();}
   void Swap(TSymbolList &SymbolList) {List.swap(SymbolList.List);}
-  void Update() {for(TIterator Iter = List.begin(); Iter != List.end(); ++Iter) Iter->second.Update(*this);}
+  void Update() {for(TIterator Iter = List.begin(); Iter != List.end(); ++Iter) Iter->second->Update(*this);}
   TSymbolList& operator+=(const TSymbolList &SymbolList) {List.insert(SymbolList.List.begin(), SymbolList.List.end()); return *this;}
   TSymbolList operator+(const TSymbolList &SymbolList) const {return TSymbolList(*this) += SymbolList;}
   TSymbolList& operator-=(const TSymbolList &SymbolList)
@@ -670,7 +681,7 @@ TComplex EvalComplex(const std::wstring &Expr, const TSymbolList &SymbolList, TT
 TComplex EvalComplex(const std::wstring &Expr, TComplex x, const std::wstring &Var = L"x", TTrigonometry Trig = Radian);
 
 long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double Max1, const TBaseFunc &Func2, long double Min2, long double Max2);
-std::vector<std::wstring> FindUnknowns(const std::wstring &Str);
+TArgType FindUnknowns(const std::wstring &Str);
 bool IsValidName(const std::wstring &Name);
 
 struct TCoordSet
