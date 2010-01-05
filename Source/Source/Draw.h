@@ -79,6 +79,7 @@ public:
   double xCoord(int x) const;
   double yCoord(int y) const;
   Func32::TDblPoint xyCoord(int x, int y) const {return Func32::TDblPoint(xCoord(x), yCoord(y));}
+  Func32::TDblPoint xyCoord(const TPoint &P) const {return xyCoord(P.x, P.y);}
   bool AbortUpdate();
   bool Wait();
   bool Updating();

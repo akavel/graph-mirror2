@@ -1234,12 +1234,19 @@ void __fastcall TForm1::FormMouseWheelUp(TObject *Sender,
      MousePos.y < Image1->ClientOrigin.y || MousePos.y > Image1->ClientOrigin.y + Image1->Height)
        return;
 
-  //Change screen cooridnates to coordinates on Image1
-  TPoint ClientPos = Image1->ScreenToClient(MousePos);
+  //Zoom in at the point where the cursor is.
+  //If you zoom again within 400 ms, the first point is used again.
+  static unsigned LastZoomTime = 0;
+  static Func32::TDblPoint LastZoomCoord;
+  unsigned NewZoomTime = GetTickCount();
+  if(NewZoomTime - LastZoomTime > 400)
+    //Change screen cooridnates to coordinates on Image1
+    LastZoomCoord = Draw.xyCoord(Image1->ScreenToClient(MousePos));
+  LastZoomTime = NewZoomTime;
 
   //New window is 0.75 times the current
-  Zoom(ClientPos, 0.4330127, false);
-
+//  Zoom(ClientPos, 0.4330127, false);
+  Zoom(LastZoomCoord.x, LastZoomCoord.y, 0.4330127, 0.4330127, false);
   Handled = true;
 }
 //---------------------------------------------------------------------------
