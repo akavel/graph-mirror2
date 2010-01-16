@@ -1425,9 +1425,19 @@ void __fastcall TForm1::TreeViewMouseMove(TObject *Sender,
       if(!LegendText.empty() && Str != LegendText)
         Str += L"    \"" + LegendText + L'\"';
       ShowStatusMessage(Str.c_str(), true);
+      if(TreeView->Hint != Str.c_str())
+        Application->CancelHint();
+      if(TreeView->Canvas->TextWidth(Node->Text) > Node->DisplayRect(true).Width())
+        TreeView->Hint = Str.c_str();
+      else
+        TreeView->Hint = "";
     }
     else
+    {
       ShowStatusMessage(L"", true);
+      TreeView->Hint = "";
+      Application->CancelHint();
+    }
   }
 }
 //---------------------------------------------------------------------------
