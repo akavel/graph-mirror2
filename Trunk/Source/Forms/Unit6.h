@@ -113,6 +113,8 @@ __published:	// IDE-managed Components
           char Symbol, const String &FontName);
   void __fastcall SymbolDialog1Show(TObject *Sender);
   bool __fastcall IRichEdit1ActivateObject(TIRichEdit *Sender);
+  void __fastcall FormCanResize(TObject *Sender, int &NewWidth, int &NewHeight, bool &Resize);
+
 private:	// User declarations
   TWndMethod OrgComboBox1WindowProc;
   TWndMethod OrgIFontBox1WindowProc;

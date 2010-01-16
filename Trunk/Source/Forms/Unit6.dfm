@@ -2,12 +2,13 @@ object Form6: TForm6
   Left = 390
   Top = 223
   HelpContext = 10
-  BorderIcons = [biSystemMenu]
-  BorderStyle = bsDialog
+  BorderIcons = []
   Caption = 'Insert text label'
   ClientHeight = 289
-  ClientWidth = 545
+  ClientWidth = 543
   Color = clBtnFace
+  Constraints.MinHeight = 250
+  Constraints.MinWidth = 551
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -16,9 +17,10 @@ object Form6: TForm6
   OldCreateOrder = False
   Position = poMainFormCenter
   ShowHint = True
+  OnCanResize = FormCanResize
   OnShow = FormShow
   DesignSize = (
-    545
+    543
     289)
   PixelsPerInch = 96
   TextHeight = 13
@@ -55,7 +57,7 @@ object Form6: TForm6
     FocusControl = ColorBox2
   end
   object Button1: TButton
-    Left = 288
+    Left = 286
     Top = 256
     Width = 75
     Height = 25
@@ -64,9 +66,10 @@ object Form6: TForm6
     Default = True
     ModalResult = 1
     TabOrder = 1
+    ExplicitLeft = 288
   end
   object Button2: TButton
-    Left = 376
+    Left = 374
     Top = 256
     Width = 75
     Height = 25
@@ -75,6 +78,7 @@ object Form6: TForm6
     Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 2
+    ExplicitLeft = 376
   end
   object ComboBox1: TComboBox
     Left = 248
@@ -113,21 +117,28 @@ object Form6: TForm6
   object GroupBox1: TGroupBox
     Left = 8
     Top = 56
-    Width = 529
-    Height = 185
-    Anchors = [akLeft, akTop, akRight]
+    Width = 527
+    Height = 187
+    Anchors = [akLeft, akTop, akRight, akBottom]
     Caption = 'Text string'
+    DoubleBuffered = False
+    ParentDoubleBuffered = False
     TabOrder = 0
+    ExplicitWidth = 529
+    ExplicitHeight = 185
     object ToolBar1: TToolBar
       Left = 2
       Top = 15
-      Width = 525
+      Width = 523
       Height = 25
+      DoubleBuffered = False
       Images = ImageList1
       Indent = 215
+      ParentDoubleBuffered = False
       TabOrder = 0
       Transparent = True
       Wrapable = False
+      ExplicitWidth = 525
       object ToolButton11: TToolButton
         Left = 215
         Top = 0
@@ -236,8 +247,8 @@ object Form6: TForm6
     object IRichEdit1: TIRichEdit
       Left = 2
       Top = 40
-      Width = 525
-      Height = 143
+      Width = 523
+      Height = 145
       OnOleError = IRichEdit1OleError
       OnActivateObject = IRichEdit1ActivateObject
       EnableOLE = True
@@ -256,6 +267,8 @@ object Form6: TForm6
       OnKeyDown = IRichEdit1KeyDown
       OnKeyPress = IRichEdit1KeyPress
       OnMouseDown = IRichEdit1MouseDown
+      ExplicitWidth = 525
+      ExplicitHeight = 143
     end
   end
   object IFontBox1: TIFontBox
@@ -274,7 +287,7 @@ object Form6: TForm6
     OnKeyPress = IFontBox1KeyPress
   end
   object Button3: TButton
-    Left = 464
+    Left = 462
     Top = 256
     Width = 75
     Height = 25
@@ -282,6 +295,7 @@ object Form6: TForm6
     Caption = 'Help'
     TabOrder = 3
     OnClick = Button3Click
+    ExplicitLeft = 464
   end
   object ColorBox1: TExtColorBox
     Left = 312
