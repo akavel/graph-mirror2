@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "Context.h"
+#include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
 void TContext::DrawPolyline(const std::vector<TPoint> &Points)
 {
@@ -292,11 +293,17 @@ void TContext::SetPen(TPenStyle Style, TColor Color, int Width)
     Canvas->Pen->Handle = CreatePen(Style, Style == psSolid ? Width : 1, Color);
 }
 //---------------------------------------------------------------------------
+static bool UseThinGridLines = GetRegValue(REGISTRY_KEY, L"UseThinGridLines", HKEY_CURRENT_USER, false);
 void TContext::SetGridPen(TColor Color, unsigned Width)
 {
   //PS_ALTERNATE is not supported on Win9x and apparently most printers.
   //It may also cause problems if PS_ALTERNATE is used in a metafile and printed afterwards,
-  if(Width > 1 || Canvas == Printer()->Canvas || dynamic_cast<TMetafileCanvas*>(Canvas))
+  if(Canvas == Printer()->Canvas)
+  {
+    SetPen(psDot, Color, UseThinGridLines ? 1 : Width);
+    return;
+  }
+  if(Width > 1 || dynamic_cast<TMetafileCanvas*>(Canvas))
   {
     SetPen(psDot, Color, Width);
     return;
