@@ -389,5 +389,10 @@ bool __fastcall TForm6::IRichEdit1ActivateObject(TIRichEdit *Sender)
   return false;
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TForm6::FormCanResize(TObject *Sender, int &NewWidth, int &NewHeight,
+          bool &Resize)
+{
+  ToolBar1->Indent = ToolBar1->Indent + std::max(NewWidth, Constraints->MinWidth) - Width;
+}
+//---------------------------------------------------------------------------
 
