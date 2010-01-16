@@ -77,13 +77,14 @@ void AssociateExt(std::wstring Ext, std::wstring ProgramName, std::wstring Ident
 //This function removes an association between a file type and a program
 //Ext is the file type. Ex. ".doc"
 //Ident is the identifier used when the association was made. Ex. "docfile"
-void RemoveAsociation(const std::wstring &Ext, const std::wstring &Ident)
+void RemoveAsociation(const std::wstring &Ext, const std::wstring &Ident, bool RemoveIdent)
 {
   //Make sure there is a dot before the extention
   if(GetRegValue(Ext[0] != L'.' ? L'.' + Ext : Ext, L"", HKEY_CLASSES_ROOT, L"") == Ident)
     RemoveRegistryKey(Ext[0] != L'.' ? L'.' + Ext : Ext, HKEY_CLASSES_ROOT);
 
-  RemoveRegistryKey(Ident, HKEY_CLASSES_ROOT);
+  if(RemoveIdent)
+    RemoveRegistryKey(Ident, HKEY_CLASSES_ROOT);
 
   //Tell the shell that a file association has been changed
   SHChangeNotify(SHCNE_ASSOCCHANGED, 0, NULL, NULL);

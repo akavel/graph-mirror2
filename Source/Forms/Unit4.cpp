@@ -77,10 +77,10 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
   if(CheckBox1->Checked)
   {
     bool AllUsers = GetRegValue(REGISTRY_KEY, L"InstallAllUsers", HKEY_CURRENT_USER, false);
-    AssociateExt(L".grf", L"", L"GraphFile", L"Graph system", ToWString(Application->ExeName) + L",1", AllUsers);
+    AssociateExt(L".grf", L"", L"GraphFile", LoadString(RES_OLE_GRAPH_SYSTEM), ToWString(Application->ExeName) + L",1", AllUsers);
   }
   else
-    RemoveAsociation(L".grf", L"GraphFile");
+    RemoveAsociation(L".grf", L"GraphFile", false);
   Application->ShowHint = CheckBox2->Checked;
   Property.SavePos = CheckBox3->Checked;
   Property.CheckForUpdate = CheckBox4->Checked;

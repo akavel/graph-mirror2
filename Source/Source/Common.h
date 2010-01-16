@@ -17,7 +17,7 @@
 void CenterForm(TForm *Form);
 
 void AssociateExt(std::wstring Ext, std::wstring ProgramName, std::wstring Ident, std::wstring Description, std::wstring Icon, bool AllUsers);
-void RemoveAsociation(const std::wstring &Ext, const std::wstring &Ident);
+void RemoveAsociation(const std::wstring &Ext, const std::wstring &Ident, bool RemoveIdent=true);
 bool CheckAssocation(const std::wstring &Ext, const std::wstring &Ident);
 
 String GetErrorMsg(const Func32::EFuncError &Error);
