@@ -86,6 +86,7 @@ void TStdFuncFrame::SetPoint(const TGraphElem *Elem, int X, int Y)
 void __fastcall TStdFuncFrame::ComboBox1Change(TObject *Sender)
 {
   Edit1->ReadOnly = ComboBox1->ItemIndex;
+  UpDown1->Enabled = ComboBox1->ItemIndex == 0;
   Edit1->Color = ComboBox1->ItemIndex ? clBtnFace : clWindow;
 }
 //---------------------------------------------------------------------------

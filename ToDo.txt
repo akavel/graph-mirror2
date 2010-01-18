@@ -140,6 +140,7 @@ To be considered
 - Create point series with polar data points.
 - Create polar trendline from polar data points.
 - Function Width can be a constant.
+- Improve the Zoom|Fit functionality.
 
 Plugins:
 - Cirlce item
@@ -162,6 +163,7 @@ Plugins:
 - Statistics on point series: aritmetic average, sum, median, standard deviation, 1st and 3rd quartil, min/max value. (see mail from Kristoffer (Ås vgs)
 - Control Graph from command line (import csv, zoom, print)
 - Run scripts from command line
+- Make it possible to store/restore several zoom points. (Forum message from zubaroo at 18/1-10).
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>
