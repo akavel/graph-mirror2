@@ -88,6 +88,7 @@ void TPolFuncFrame::Clear()
 void __fastcall TPolFuncFrame::ComboBox1Change(TObject *Sender)
 {
   Edit1->ReadOnly = ComboBox1->ItemIndex;
+  UpDownEx1->Enabled = ComboBox1->ItemIndex == 0;
   Edit1->Color = ComboBox1->ItemIndex ? clBtnFace : clWindow;
 }
 //---------------------------------------------------------------------------
