@@ -180,7 +180,7 @@ TFunc TFunc::MakeDif(const std::wstring &Var) const
 std::wstring TFunc::MakeText(const std::wstring &Variable, unsigned Decimals) const
 {
   std::wostringstream Stream;
-  Stream << std::setprecision(Decimals);
+  Stream << std::fixed << std::setprecision(Decimals);
   FuncData->MakeText(std::vector<std::wstring>(1, Variable), Stream);
   return Stream.str();
 }
