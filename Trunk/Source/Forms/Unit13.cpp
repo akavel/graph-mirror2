@@ -176,7 +176,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
         Func.reset(new TStdFunc(TrendLine(Type, Points, Weights, N, MakeFloat(Edit5))));
       else
         Func.reset(new TStdFunc(TrendLine(Type, Points, Weights, N)));
-      Func->SetLegendText(Func->MakeText() + L"; R²=" + RoundToString(Correlation(Points, Func->GetFunc()), Data));
+      Func->SetLegendText(Func->GetFunc().MakeText(L"x", Property.RoundTo) + L"; R²=" + RoundToString(Correlation(Points, Func->GetFunc()), Data));
       Func->From.Value = -INF;
       Func->To.Value = +INF;
       Func->SetSteps(TTextValue(0, L""));
