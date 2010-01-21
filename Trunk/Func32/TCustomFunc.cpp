@@ -203,7 +203,7 @@ TFunc TCustomFunc::ConvToFunc(const std::vector<long double> &Values, unsigned V
 std::wstring TCustomFunc::MakeText(unsigned Decimals) const
 {
   std::wostringstream Stream;
-  Stream << std::setprecision(Decimals);
+  Stream << std::fixed << std::setprecision(Decimals);
   FuncData->MakeText(Args, Stream);
   return Stream.str();
 }
