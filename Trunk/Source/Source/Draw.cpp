@@ -80,7 +80,7 @@ int TDraw::xPoint(long double x) const
   try
   {
     long double Result;
-    if(std::_isnan(x))
+    if(std::_isnanl(x))
       return -1;   //x=NAN may else throw an exception
     if(Axes.xAxis.LogScl)
       if(x <= 0) //Check for negative value
@@ -110,7 +110,7 @@ int TDraw::yPoint(long double y) const
   try
   {
     long double Result;
-    if(std::_isnan(y))
+    if(std::_isnanl(y))
       return -1;  //y=NAN may else throw an exception
     if(Axes.yAxis.LogScl)
       if(y <= 0) //Check for negative value

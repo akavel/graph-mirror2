@@ -141,6 +141,7 @@ To be considered
 - Create polar trendline from polar data points.
 - Function Width can be a constant.
 - Improve the Zoom|Fit functionality.
+- Highlight matching brackets in edit controls.
 
 Plugins:
 - Cirlce item
