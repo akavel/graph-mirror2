@@ -106,6 +106,16 @@ bool TConfigFile::LoadFromAnsiFile(const std::wstring &FileName)
   return false;
 }
 //---------------------------------------------------------------------------
+void TConfigFile::LoadFromAnsiString(const std::string &Str)
+{
+  std::wstring Str2(Str.size(), 0);
+  const std::ctype<wchar_t> &ct = std::use_facet<std::ctype<wchar_t> >( std::locale());
+  for(unsigned I = 0; I < Str.size(); I++)
+    Str2[I] = ct.widen(Str[I]);
+  std::wistringstream Stream(Str2);
+  LoadFromStream(Stream);
+}
+//---------------------------------------------------------------------------
 bool TConfigFile::LoadFromUtf8File(const std::wstring &FileName)
 {
   std::locale utf8_locale(std::locale(), new boost::filesystem::detail::utf8_codecvt_facet());
