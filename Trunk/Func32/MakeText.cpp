@@ -98,6 +98,10 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
   {
     case CodeNumber:
       //std::uppercase is used to show E in 5E3 in uppercase
+      if(std::abs(Elem.Number) >= 10000 || std::abs(Elem.Number) < 0.0001)
+        Stream << std::scientific;
+      else
+        Stream << std::fixed;
       Stream << std::uppercase << Elem.Number;
       break;
 
@@ -124,6 +128,10 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
 
     case CodeRand:
       Stream << L"rand";
+      break;
+
+    case CodeInf:
+      Stream << "INF";
       break;
 
     case CodeAdd:

@@ -40,6 +40,7 @@ enum TIdent
   CodePi,         //!< Element indicating number PI
   CodeUndef,      //!< Element indicates undefined value
   CodeRand,       //!< Evaluates to a random number between 0 and 1
+  CodeInf,        //!< Element is infinity
 //  CodeConst,      //!< Element indicate a user defined constant
 //  CodeConst2,
 
@@ -215,7 +216,7 @@ class TFuncData
   static T CalcFunc(TConstIterator Iter, TDynData<T> &DynData);
   static double CalcGSLFunc(double x, void *Params);
 
-  static double Integrate(TConstIterator Iter, double Min, double Max, TTrigonometry Trigonometry, TErrorCode &ErrorCode);
+  static double Integrate(TConstIterator Iter, double Min, double Max, double ReslError, TTrigonometry Trigonometry, TErrorCode &ErrorCode);
   void AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trigonometry, unsigned Level);
   static std::wstring MakeText(TConstIterator Iter);
   static void CreateText(TMakeTextData &TextData, bool AddPar=false);

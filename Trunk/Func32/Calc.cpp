@@ -531,6 +531,9 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       //unless randomize() is called each time a new thread starts
       return rand()/ static_cast<long double>(RAND_MAX);
 
+    case CodeInf:
+      return std::numeric_limits<long double>::infinity();
+
 /*      case CodeConst:
       if(DynData.SymbolList)
         if(boost::shared_ptr<const TFuncData> FuncData = DynData.SymbolList->Get(Elem.Text))
@@ -545,11 +548,13 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     {
       TConstIterator F = Iter;
       Iter = FindEnd(Iter);
-      long double Min = real(CalcF(Iter, DynData));
-      long double Max = real(CalcF(Iter, DynData));
+      T Min = real(CalcF(Iter, DynData));
+      T Max = real(CalcF(Iter, DynData));
+      if(imag(Min) != 0 || imag(Max) != 0)
+        ErrorCode = ecComplexError;
       if(ErrorCode)
         return 0;
-      return Integrate(F, Min, Max, DynData.Trigonometry, ErrorCode);
+      return Integrate(F, real(Min), real(Max), 1E-3, DynData.Trigonometry, ErrorCode);
     }
 
     case CodeSum:
@@ -1021,19 +1026,33 @@ double TFuncData::CalcGSLFunc(double x, void *Params)
  *  \param Trigonometry: Used to tell if we should use radians or degrees for trigonometric functions.
  *  \param ErrorCode: Filled with error information on return.
  */
-double TFuncData::Integrate(TConstIterator Func, double Min, double Max, TTrigonometry Trigonometry, TErrorCode &ErrorCode)
+double TFuncData::Integrate(TConstIterator Func, double Min, double Max, double RelError, TTrigonometry Trigonometry, TErrorCode &ErrorCode)
 {
   const int MaxSubIntervals = 1000;
-  const double MaxRelError = 1E-3;
+  if(Max < Min)
+    return -Integrate(Func, Max, Min, RelError, Trigonometry, ErrorCode);
   TGSLFunction Function(Func, Trigonometry);
   gsl_integration_workspace *w = gsl_integration_workspace_alloc(MaxSubIntervals);
   gsl_function F = {CalcGSLFunc, &Function};
 
-  ErrorCode = ecNoError;
   double Result, Error;
-  if(gsl_integration_qags(&F, Min, Max, 0, MaxRelError, MaxSubIntervals, w, &Result, &Error) != 0/*GSL_SUCCESS*/)
-    ErrorCode = ecNoResult; //No result with specified accuracy was found
+  unsigned ErrorResult;
+  ErrorCode = ecNoError;
+  if(boost::math::isfinite(Min) && boost::math::isfinite(Max))
+    ErrorResult = gsl_integration_qags(&F, Min, Max, 0, RelError, MaxSubIntervals, w, &Result, &Error);
+  else if(!boost::math::isfinite(Min) && !boost::math::isfinite(Max))
+    ErrorResult = gsl_integration_qagi(&F, 0, RelError, MaxSubIntervals, w, &Result, &Error);
+  else if(!boost::math::isfinite(Min))
+    ErrorResult = gsl_integration_qagil(&F, Max, 0, RelError, MaxSubIntervals, w, &Result, &Error);
+  else
+    ErrorResult = gsl_integration_qagiu(&F, Min, 0, RelError, MaxSubIntervals, w, &Result, &Error);
   gsl_integration_workspace_free(w);
+  if(ErrorResult != 0)
+    ErrorCode = ecNoResult;
+  else if(!boost::math::isfinite(Result))
+    ErrorCode = ecNoResult;
+  else if(Result != 0 && Error / Result > RelError)
+    ErrorCode = ecNoAccurateResult;
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -1042,26 +1061,18 @@ double TFuncData::Integrate(TConstIterator Func, double Min, double Max, TTrigon
  *  It applies the Gauss-Kronrod 21-point integration rule adaptively until it cannot
  *  get a better result.
  *  \param Func: Iterator pointing to the place to start the evaluation.
- *  \param Min:  Start value
- *  \param Max:  End value
+ *  \param Min:  Start value. May be -INF
+ *  \param Max:  End value. May be INF
  *  \param RelError: Estimated relative error to stop integration at.
  *  \param Trigonometry: Used to tell if we should use radians or degrees for trigonometric functions.
  *  \throw ECalcError: If the maximum relative error specified in RelError is not reached.
  */
 double TFuncData::Integrate(double Min, double Max, double RelError, TTrigonometry Trigonometry) const
 {
-  const int MaxSubIntervals = 1000;
-  TGSLFunction Function(Data.begin(), Trigonometry);
-  gsl_integration_workspace *w = gsl_integration_workspace_alloc(MaxSubIntervals);
-  gsl_function F = {CalcGSLFunc, &Function};
-
-  double Result, Error;
-  gsl_integration_qags(&F, Min, Max, 0, RelError, MaxSubIntervals, w, &Result, &Error);
-  gsl_integration_workspace_free(w);
-  if(!boost::math::isfinite(Result))
-    throw ECalcError(ecNoResult);
-  if(Error > RelError)
-    throw ECalcError(ecNoAccurateResult);
+  TErrorCode ErrorCode;
+  double Result = Integrate(Data.begin(), Min, Max, RelError, Trigonometry, ErrorCode);
+  if(ErrorCode != ecNoError)
+    throw ECalcError(ErrorCode);
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -1073,10 +1084,11 @@ double TFuncData::Integrate(double Min, double Max, double RelError, TTrigonomet
 int _RTLENTRY _matherrl(_exceptionl *a)
 {
   using namespace std;
-  DEBUG_LOG(std::wclog << "Math error: " << a->name << "(" << a->arg1 << ", " << a->arg2 << ")" << std::endl);
+//  DEBUG_LOG(std::wclog << "Math error: " << a->name << "(" << a->arg1 << ", " << a->arg2 << ")" << std::endl);
   a->retval = 0;//NAN gives problems with log(-0)
 //  a->retval = std::numeric_limits<long double>::quiet_NaN();
-  errno = a->type;
+  if(a->type != UNDERFLOW) //Convert underflow errors to 0
+    errno = a->type;
   return 1;
 }
 #endif

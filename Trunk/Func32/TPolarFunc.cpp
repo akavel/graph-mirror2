@@ -166,7 +166,7 @@ bool TPolarFunc::IsEmpty() const
 std::wstring TPolarFunc::MakeText(const std::wstring &Variable, unsigned Decimals) const
 {
   std::wostringstream Stream;
-  Stream << std::fixed << std::setprecision(Decimals);
+  Stream << std::setprecision(Decimals);
   FuncData->MakeText(std::vector<std::wstring>(1, Variable), Stream);
   return Stream.str();
 }
