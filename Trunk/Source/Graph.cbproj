@@ -413,7 +413,7 @@
 						<VersionInfo Name="MajorVer">4</VersionInfo>
 						<VersionInfo Name="MinorVer">4</VersionInfo>
 						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">463</VersionInfo>
+						<VersionInfo Name="Build">464</VersionInfo>
 						<VersionInfo Name="Debug">True</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -425,7 +425,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.4.0.463</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">4.4.0.464</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>
@@ -435,7 +435,7 @@
 						<VersionInfoKeys Name="Comments"/>
 					</VersionInfoKeys>
 					<Debugging>
-						<Debugging Name="DebugSourceDirs">D:\Projects\Graph\Func32\;D:\Projects\Graph\gsl\integration\;D:\Projects\Graph\Source\gsl\integration\</Debugging>
+						<Debugging Name="DebugSourceDirs">D:\Projects\Graph\Func32\;D:\Projects\Graph\gsl\integration\;D:\Projects\Graph\Source\gsl\integration\;D:\Projects\Graph\Libraries\gsl\integration\;D:\Projects\Graph\Libraries\gsl\err\</Debugging>
 					</Debugging>
 					<Parameters>
 						<Parameters Name="RunParams"/>

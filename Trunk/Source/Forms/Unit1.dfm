@@ -368,8 +368,6 @@ object Form1: TForm1
         OnMouseDown = TreeViewMouseDown
         OnMouseLeave = TreeViewMouseLeave
         OnMouseMove = TreeViewMouseMove
-        ExplicitLeft = -3
-        ExplicitTop = -3
       end
       object Panel1: TPanel
         Left = 0

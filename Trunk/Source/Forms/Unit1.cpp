@@ -1132,7 +1132,8 @@ void __fastcall TForm1::ApplicationEventsShowHint(String &HintStr,
       bool &CanShow, THintInfo &HintInfo)
 {
   //Maximum length in pixels of hint text before line wrap
-  HintInfo.HintMaxWidth = 200;
+  if(HintInfo.HintControl != TreeView)
+    HintInfo.HintMaxWidth = 200;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::WMEnterSizeMove(TMessage &Message)
@@ -1420,15 +1421,15 @@ void __fastcall TForm1::TreeViewMouseMove(TObject *Sender,
     boost::shared_ptr<TGraphElem> GraphElem = GetGraphElem(Node);
     if(GraphElem)
     {
-      std::wstring Str = GraphElem->MakeText();
-      std::wstring LegendText = GraphElem->MakeLegendText();
-      if(!LegendText.empty() && Str != LegendText)
+      String Str = ToUString(GraphElem->MakeText());
+      String LegendText = ToUString(GraphElem->MakeLegendText());
+      if(!LegendText.IsEmpty() && Str != LegendText)
         Str += L"    \"" + LegendText + L'\"';
-      ShowStatusMessage(Str.c_str(), true);
-      if(TreeView->Hint != Str.c_str())
+      ShowStatusMessage(Str, true);
+      if(TreeView->Hint != LegendText)
         Application->CancelHint();
-      if(TreeView->Canvas->TextWidth(Node->Text) > Node->DisplayRect(true).Width())
-        TreeView->Hint = Str.c_str();
+      if(Node->DisplayRect(true).Right > TreeView->ClientRect.Right)
+        TreeView->Hint = LegendText;
       else
         TreeView->Hint = "";
     }

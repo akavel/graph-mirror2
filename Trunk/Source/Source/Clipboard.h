@@ -13,6 +13,7 @@
 class TGraphClipboard
 {
   unsigned ClipboardFormat;
+  unsigned OldClipboardFormat;
   unsigned PngFormat;
 
   void SetClipboardData(unsigned Format, const void *Data, unsigned DataSize);
