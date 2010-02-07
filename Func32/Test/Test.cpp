@@ -488,6 +488,7 @@ void Test()
   Test("3^x^2", 4, 43046721);
   TestErrorEval<TComplex>(L"0^x", TComplex(-2.8, 1), ecPowCalcError);
   TestError("x^-2.8", 0, ecPowCalcError);
+  Test("e^x", -10000, 0);
 
   //Test power with fraction handling
   TestEval<long double>(L"x^(1/3)", -8, -2);
@@ -651,12 +652,23 @@ void Test()
   Test("mod(x,-5)", -12, -2);
   Test("mod(x, 1.2)", 5.6, 0.8);
   Test("mod(x, 1.2)", -5.6, 0.4);
-  Test("integrate(x^2,2,5)", NaN, 39);
   Test("sum(x, 3, 7)", NaN, 3+4+5+6+7);
   Test("product(x, 3, 7)", NaN, 3*4*5*6*7);
   Test("dnorm(x, 5, 7)", 3, 0.054712394277745);
   Test("dnorm(x)", 3, 0.00443184841193801);
   Test("dnorm(x, 0, 1)", 3, 0.00443184841193801);
+
+  Test("integrate(x^2,2,5)", NaN, 39);
+  Test("integrate(dnorm(x,100,60),-inf,100)", 0, 0.5);
+  Test("integrate(dnorm(x,100,20),-inf,100)", 0, 0.5);
+  Test("integrate(dnorm(x,100,60),100,inf)", 0, 0.5);
+  Test("integrate(dnorm(x,100,20),100,inf)", 0, 0.5);
+  Test("integrate(e^x,-inf,0)", 0, 1);
+  Test("integrate(e^x,0,-inf)", 0, -1);
+  Test("integrate(e^-x,inf,0)", 0, -1);
+  Test("integrate(e^-x,0,inf)", 0, 1);
+  Test("integrate(e^-abs(x),-inf,inf)", 0, 2);
+  Test("integrate(e^-abs(x),inf,-inf)", 0, -2);
 
   //Combined test cases
   Test("(1.01^x-1)/0.01", 1, 1);
@@ -725,15 +737,15 @@ void Test()
   TestTrendLine(ttExponential, P, W, 0, NaN, L"0.14747627125184*2.92012743745353^x");
   TestTrendLine(ttExponential, P, W, 0, 1, L"1.36647807441143^x");
 
-  TestCustomTrendLine(L"$a*x+$b", P, Empty, L"1.1*x-0.14");
-  TestCustomTrendLine(L"$a*x+1", P, Empty, L"0.72*x+1");
-  TestCustomTrendLine(L"$a*x+$b", P, W, L"1.0108*x+0.0036756");
-  TestCustomTrendLine(L"$a*x+1", P, W, L"0.61557*x+1");
+  TestCustomTrendLine(L"$a*x+$b", P, Empty, L"1.10000*x-0.14000");
+  TestCustomTrendLine(L"$a*x+1", P, Empty, L"0.72000*x+1.00000");
+  TestCustomTrendLine(L"$a*x+$b", P, W, L"1.01085*x+0.00368");
+  TestCustomTrendLine(L"$a*x+1", P, W, L"0.61557*x+1.00000");
 
   TestCustomTrendLine(L"$a*x^2+$b*x+$c", P, Empty, L"0.15714*x^2+0.47143*x+0.17429");
-  TestCustomTrendLine(L"$a*x^2+$b*x+1", P, Empty, L"0.29032*x^2-0.24774*x+1");
-  TestCustomTrendLine(L"$a*x^2+$b*x+$c", P, W, L"0.12343*x^2+0.5966*x+0.1228");
-  TestCustomTrendLine(L"$a*x^2+$b*x+1", P, W, L"0.29265*x^2-0.25457*x+1");
+  TestCustomTrendLine(L"$a*x^2+$b*x+1", P, Empty, L"0.29032*x^2-0.24774*x+1.00000");
+  TestCustomTrendLine(L"$a*x^2+$b*x+$c", P, W, L"0.12343*x^2+0.59660*x+0.12280");
+  TestCustomTrendLine(L"$a*x^2+$b*x+1", P, W, L"0.29265*x^2-0.25457*x+1.00000");
 
   //Test differentiation of common operators
   TestDif("-0.5796", "0");

@@ -71,7 +71,8 @@ struct TNoCaseSymbols : symbols<TElem, wchar_t>
   {
      add(L"pi",    CodePi)
         (L"rand",  CodeRand)
-        (L"undef", CodeUndef);
+        (L"undef", CodeUndef)
+        (L"inf",   CodeInf);
   }
 };
 //---------------------------------------------------------------------------
