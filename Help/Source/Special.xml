@@ -30,7 +30,8 @@
 				This integral is the same as the area between the function <parameter>f</parameter> and the x-axis from <parameter>a</parameter> to <parameter>b</parameter>
 				where the area under the axis is counted negative.
 				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric function.
-				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
+				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to
+				<glossterm linkend="RealNumber">real numbers</glossterm> or they can be <constant>-INF</constant> or <constant>INF</constant>.
 				<function>integrate</function> does not calculate the integral exactly.
 				Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to a estimated relative error less than <mathphrase>10<superscript>-3</superscript></mathphrase>.
 			</para>
@@ -317,6 +318,7 @@
 	<section id="dnorm" xreflabel="dnorm">
 		<title><markup>dnorm</markup> function</title>
 		<indexterm><primary><function>dnorm</function> function</primary></indexterm>
+		<indexterm><primary>normal distribution</primary></indexterm>
 		<para>
 			Returns the normal distribution of the first argument with optional mean value and standard deviation.
 		</para>

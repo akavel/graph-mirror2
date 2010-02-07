@@ -94,7 +94,8 @@
 				</para>
 				<para>
 					You can choose between three types of interpolation: <guilabel>Linear</guilabel> will draw straight lines between the markers.
-					<guilabel>Cubic splines</guilabel> will draw a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials.
+					<guilabel>Cubic splines</guilabel> will draw a <ulink url="http://en.wikipedia.org/wiki/Cubic_splines">natural cubic spline</ulink>
+					which is a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials.
 					<guilabel>Half cosine</guilabel> will draw half cosine curves between the points,
 					which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do.
 				</para>

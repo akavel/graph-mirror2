@@ -23,6 +23,7 @@
 	<indexterm><primary>or operator</primary></indexterm>
 	<indexterm><primary>xor operator</primary></indexterm>
 	<indexterm><primary>not operator</primary></indexterm>
+	<indexterm><primary>infinity</primary></indexterm>
 
 	<para>
 		The following is a list of all variables, constants, operators and functions supported by the program.
@@ -69,6 +70,10 @@
  	   				<entry><constant>&imag;</constant></entry>
  	   				<entry>The imaginary unit. Defined as <mathphrase>&imag;<superscript>2</superscript> = -1</mathphrase>. Only useful when working with complex numbers.</entry>
 		 			</row>
+					<row>
+						<entry><constant>inf</constant></entry>
+						<entry>The constant for infinity. Only useful as arguments to the <function>integrate</function> function.</entry>
+					</row>
  	   			<row>
  	   				<entry><xref linkend="rand"/></entry>
  	   				<entry>Evaluates to a random number between 0 and 1.</entry>
