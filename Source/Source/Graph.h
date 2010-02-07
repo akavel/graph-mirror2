@@ -50,7 +50,7 @@
 #define DONATE_PAGE L"http:\/\/www.padowan.dk/graph/donate.html"
 #define SUPPORT_PAGE L"http:\/\/www.padowan.dk/graph/support.html"
 #define INF_FILE L"http:\/\/www.padowan.dk/graph/GraphVersion.php"
-#define CLIPBOARDFORMAT L"Graph Data"
+#define CLIPBOARDFORMAT L"Graph Unicode Data"
 
 #define REGISTRY_KEY L"Software\\Ivan\\Graph"//Registry key to use
 

@@ -20,12 +20,13 @@ TGraphClipboard GraphClipboard;
 TGraphClipboard::TGraphClipboard()
 {
   ClipboardFormat = RegisterClipboardFormat(CLIPBOARDFORMAT);
+  OldClipboardFormat = RegisterClipboardFormat(L"Graph Data");
   PngFormat = RegisterClipboardFormat(L"PNG");
 }
 //---------------------------------------------------------------------------
 bool TGraphClipboard::HasData()
 {
-  return Clipboard()->HasFormat(ClipboardFormat);
+  return Clipboard()->HasFormat(ClipboardFormat) || Clipboard()->HasFormat(OldClipboardFormat);
 }
 //---------------------------------------------------------------------------
 void TGraphClipboard::Copy(const TData &Data, const TGraphElemPtr &Elem)
@@ -36,16 +37,25 @@ void TGraphClipboard::Copy(const TData &Data, const TGraphElemPtr &Elem)
 //---------------------------------------------------------------------------
 void TGraphClipboard::Paste(TData &Data)
 {
+  if(!HasData())
+    return;
   try
   {
-    if(!HasData())
-      return;
-
-    int DataSize = GetClipboardDataSize(ClipboardFormat);
-    std::wstring Str(DataSize/sizeof(wchar_t), 0);
-    GetClipboardData(ClipboardFormat, &Str[0], DataSize);
     TConfigFile IniFile;
-    IniFile.LoadFromString(Str);
+    if(Clipboard()->HasFormat(ClipboardFormat))
+    {
+      int DataSize = GetClipboardDataSize(ClipboardFormat);
+      std::wstring Str(DataSize/sizeof(wchar_t), 0);
+      GetClipboardData(ClipboardFormat, &Str[0], DataSize);
+      IniFile.LoadFromString(Str);
+    }
+    else
+    {
+      int DataSize = GetClipboardDataSize(OldClipboardFormat);
+      std::string Str(DataSize, 0);
+      GetClipboardData(OldClipboardFormat, &Str[0], DataSize);
+      IniFile.LoadFromAnsiString(Str);
+    }
 
     unsigned ElemNo = Data.ElemCount();
     try

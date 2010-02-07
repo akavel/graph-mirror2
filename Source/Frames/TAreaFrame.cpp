@@ -44,7 +44,7 @@ void TAreaFrame::EvalArea(const TBaseFuncType *Func, long double From, long doub
 {
   Edit3->Text = RoundToStr(Func->CalcArea(From, To));
 
-  if(!Func->GetVisible())
+  if(!Func->GetVisible() || Func->sList.empty())
     return;
 
   if(From > To)
