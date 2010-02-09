@@ -504,7 +504,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
   switch(Elem.Ident)
   {
     case CodeNumber:
-      return Elem.Number;
+      return boost::any_cast<long double>(Elem.Value);
 
     case CodeVariable:
       BOOST_ASSERT(DynData.Args);
@@ -534,18 +534,12 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodeInf:
       return std::numeric_limits<long double>::infinity();
 
-/*      case CodeConst:
-      if(DynData.SymbolList)
-        if(boost::shared_ptr<const TFuncData> FuncData = DynData.SymbolList->Get(Elem.Text))
-          return FuncData->CalcF(DynData);
-      ErrorCode = ecSymbolNotFound;
-      return 0;
-*/
-//      case CodeConst2:
-//        return *((long double*)Elem.Arguments);
+    case CodeConst:
+      return *boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
 
     case CodeIntegrate:
     {
+      boost::shared_ptr<long double> Constant = boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
       TConstIterator F = Iter;
       Iter = FindEnd(Iter);
       T Min = real(CalcF(Iter, DynData));
@@ -600,11 +594,12 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
           return 0;
       }
 
-      if(Elem.Func)
+      boost::shared_ptr<TBaseCustomFunc> Func = boost::any_cast<boost::shared_ptr<TBaseCustomFunc> >(Elem.Value);
+      if(Func)
       {
         const T *OldArgs = DynData.Args;
         DynData.Args = Values.empty() ? NULL : &Values[0];
-        T Result = Elem.Func->DynCall(DynData);
+        T Result = Func->DynCall(DynData);
         DynData.Args = OldArgs;
         DynData.Recursion--;
         return Result;
@@ -898,14 +893,15 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodeCompare1:
     {
       T Temp2 = CalcF(Iter, DynData);
-      return Compare(Temp, Temp2, Elem.Compare[0], ErrorCode);
+      return Compare(Temp, Temp2, boost::any_cast<TCompareMethod>(Elem.Value), ErrorCode);
     }
 
     case CodeCompare2:
     {
       T Temp2 = CalcF(Iter, DynData);
       T Temp3 = CalcF(Iter, DynData);
-      return Compare(Temp, Temp2, Elem.Compare[0], ErrorCode) && Compare(Temp2, Temp3, Elem.Compare[1], ErrorCode);
+      std::pair<TCompareMethod,TCompareMethod> Comp = boost::any_cast<std::pair<TCompareMethod,TCompareMethod> >(Elem.Value);
+      return Compare(Temp, Temp2, Comp.first, ErrorCode) && Compare(Temp2, Temp3, Comp.second, ErrorCode);
     }
 
     case CodeNot:
