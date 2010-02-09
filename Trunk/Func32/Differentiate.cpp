@@ -126,14 +126,16 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
     }
 
     case CodeCustom:
+    {
       if(Level > MaxDifLevel)
         throw EFuncError(ecRecursiveDif);
-      if(Iter->Func)
-        AddDif(Iter->Func->GetFuncData()->Data.begin(), Var, Trigonometry, Level + 1);
+      boost::shared_ptr<TBaseCustomFunc> Func = boost::any_cast<boost::shared_ptr<TBaseCustomFunc> >(Iter->Value);
+      if(Func)
+        AddDif(Func->GetFuncData()->Data.begin(), Var, Trigonometry, Level + 1);
       else
         throw EFuncError(ecSymbolNotFound, Iter->Text);
       break;
-
+    }
     case CodeDNorm:
     {
       std::vector<std::wstring> ArgNames;

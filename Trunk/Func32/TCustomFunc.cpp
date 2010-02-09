@@ -225,7 +225,7 @@ TFunctionType TCustomFunc::GetFunctionType() const
     return ftEmpty;
   TIdent Ident = FuncData->Front().Ident;
   if(Ident == CodeCompare1)
-    return FuncData->Front().Compare[0] == cmEqual ? ftEquation : ftInequality;
+    return boost::any_cast<TCompareMethod>(FuncData->Front().Value) == cmEqual ? ftEquation : ftInequality;
   if(Ident == CodeCompare2 || Ident == CodeAnd || Ident == CodeOr || Ident == CodeXor)
     return ftInequality;
   return ftFunction;

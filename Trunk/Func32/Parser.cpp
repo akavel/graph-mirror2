@@ -76,6 +76,17 @@ struct TNoCaseSymbols : symbols<TElem, wchar_t>
   }
 };
 //---------------------------------------------------------------------------
+//Special functions that take an expression as first argument and a variable name as the second
+struct TSpecialFunctions : symbols<TElem, wchar_t>
+{
+  TSpecialFunctions()
+  {
+     add(L"integrate", CodeIntegrate)
+        (L"sum",       CodeSum)
+        (L"product",   CodeProduct);
+  }
+};
+//---------------------------------------------------------------------------
 struct TCompareSymbols : symbols<TElem>
 {
   TCompareSymbols()
@@ -161,7 +172,7 @@ struct TDoNegate
   void operator()(const std::deque<TElem> &List) const
   {
     if(List.front().Ident == CodeNumber)
-      Elements().push_back(-List.front().Number);
+      Elements().push_back(-boost::any_cast<long double>(List.front().Value));
     else
     {
       Elements().push_front(CodeNeg);
@@ -284,7 +295,9 @@ TConvertRelation(TContext::member1 &AContainer) : Container(AContainer) {}
   void operator()(const TElem &Elem) const
   {
     Container().front().Ident = CodeCompare2;
-    Container().front().Compare[1] = Elem.Compare[0];
+    Container().front().Value =
+      std::make_pair(boost::any_cast<TCompareMethod>(Container().front().Value),
+      boost::any_cast<TCompareMethod>(Elem.Value));
   }
 };
 

@@ -23,7 +23,7 @@ bool IsNextNeg(TConstIterator Iter)
     return IsNextNeg(++Iter);
   if(Iter->Ident == CodeNeg)
     return true;
-  if(Iter->Ident == CodeNumber && Iter->Number < 0)
+  if(Iter->Ident == CodeNumber && boost::any_cast<long double>(Iter->Value) < 0)
     return true;
   return false;
 }
@@ -97,14 +97,16 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
   switch(Elem.Ident)
   {
     case CodeNumber:
+    {
+      long double Number = boost::any_cast<long double>(Elem.Value);
       //std::uppercase is used to show E in 5E3 in uppercase
-      if(std::abs(Elem.Number) >= 10000 || std::abs(Elem.Number) < 0.0001)
+      if(std::abs(Number) >= 10000 || std::abs(Number) < 0.0001)
         Stream << std::scientific;
       else
         Stream << std::fixed;
-      Stream << std::uppercase << Elem.Number;
+      Stream << std::uppercase << Number;
       break;
-
+    }
     case CodeVariable:
       BOOST_ASSERT(Elem.Arguments < TextData.Args.size());
       Stream << TextData.Args[Elem.Arguments];
@@ -187,18 +189,20 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
 
     case CodeCompare1:
       CreateText(TextData);
-      Stream << GetCompareString(Elem.Compare[0]);
+      Stream << GetCompareString(boost::any_cast<TCompareMethod>(Elem.Value));
       CreateText(TextData);
       break;
 
     case CodeCompare2:
+    {
+      std::pair<TCompareMethod,TCompareMethod> Comp = boost::any_cast<std::pair<TCompareMethod,TCompareMethod> >(Elem.Value);
       CreateText(TextData);
-      Stream << GetCompareString(Elem.Compare[0]);
+      Stream << GetCompareString(Comp.first);
       CreateText(TextData);
-      Stream << GetCompareString(Elem.Compare[1]);
+      Stream << GetCompareString(Comp.second);
       CreateText(TextData);
       break;
-
+    }
     case CodeAnd:
     case CodeOr:
     case CodeXor:

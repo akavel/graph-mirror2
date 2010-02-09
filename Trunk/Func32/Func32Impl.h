@@ -10,6 +10,7 @@
 #define Func32ImplH
 //---------------------------------------------------------------------------
 #include <list>
+#include <boost/any.hpp>
 
 #ifdef _DEBUG
   #include <iostream>
@@ -41,8 +42,7 @@ enum TIdent
   CodeUndef,      //!< Element indicates undefined value
   CodeRand,       //!< Evaluates to a random number between 0 and 1
   CodeInf,        //!< Element is infinity
-//  CodeConst,      //!< Element indicate a user defined constant
-//  CodeConst2,
+  CodeConst,      //!< Element indicate a constant somewhere
 
   FirstFunction1P,//!<Indicate first function with one parameter
   CodeSin = FirstFunction1P,//!<Element indicating sinus
@@ -152,24 +152,25 @@ struct TElem
 {
   TIdent Ident;
   unsigned Arguments;
-  boost::shared_ptr<TBaseCustomFunc> Func;
+//  boost::shared_ptr<TBaseCustomFunc> Func;
   std::wstring Text;
-  union
-  {
-    long double Number; //A value if Ident is CodeNumber
-    TCompareMethod Compare[2];
-  };
+  boost::any Value;
+//  union
+//  {
+//    long double Number; //A value if Ident is CodeNumber
+//    TCompareMethod Compare[2];
+//  };
 
   TElem() : Ident(CodeNull), Arguments(0) {};
   TElem(TIdent AIdent) : Ident(AIdent), Arguments(FunctionArguments(AIdent)) {}
-  TElem(TIdent AIdent, long double AVal) : Ident(AIdent), Number(AVal) {}
+  TElem(TIdent AIdent, long double AVal) : Ident(AIdent), Value(AVal) {}
   TElem(TIdent AIdent, unsigned AArguments, int) : Ident(AIdent), Arguments(AArguments) {}
-  TElem(long double AVal) : Ident(CodeNumber), Number(AVal) {}
+  TElem(long double AVal) : Ident(CodeNumber), Value(AVal) {}
   TElem(TIdent AIdent, const std::wstring &Str, unsigned Args=0, const boost::shared_ptr<TBaseCustomFunc> &AFunc = boost::shared_ptr<TBaseCustomFunc>())
-    : Ident(AIdent), Arguments(Args), Func(AFunc), Text(Str) {}
-  TElem(TCompareMethod Compare1) : Ident(CodeCompare1), Arguments(0) {Compare[0] = Compare1;}
-  TElem(TCompareMethod Compare1, TCompareMethod Compare2) : Ident(CodeCompare2), Arguments(0) {Compare[0] = Compare1; Compare[1] = Compare2;}
-  bool operator ==(const TElem &E) const {return Ident==E.Ident && (Ident==CodeNumber ? Number==E.Number : (Ident==CodeCustom ? Text == E.Text : Arguments==E.Arguments));}
+    : Ident(AIdent), Arguments(Args), Value(AFunc), Text(Str) {}
+  TElem(TCompareMethod Compare1) : Ident(CodeCompare1), Arguments(0), Value(Compare1) {}
+  TElem(TCompareMethod Compare1, TCompareMethod Compare2) : Ident(CodeCompare2), Arguments(0), Value(std::make_pair(Compare1, Compare2)) {}
+  bool operator ==(const TElem &E) const {return Ident==E.Ident && (Ident==CodeNumber ? boost::any_cast<long double>(Value)==boost::any_cast<long double>(E.Value) : (Ident==CodeCustom ? Text == E.Text : Arguments==E.Arguments));}
   bool operator ==(TIdent AIdent) const {return Ident == AIdent;}
   bool operator !=(const TElem &E) const {return !(*this == E);}
 };

@@ -188,12 +188,12 @@ std::list<TElem>::iterator SimplifyData(std::list<TElem> &List, std::list<TElem>
 
   if(Iter->Ident == CodeSub && Begin1->Ident == CodeNumber && Begin2->Ident == CodeNumber)
   {
-    *Iter = TElem(CodeNumber, Begin1->Number - Begin2->Number);
+    *Iter = TElem(CodeNumber, boost::any_cast<long double>(Begin1->Value) - boost::any_cast<long double>(Begin2->Value));
     List.erase(Begin1, End);
   }
   else if(Iter->Ident == CodeAdd && Begin1->Ident == CodeNumber && Begin2->Ident == CodeNumber)
   {
-    *Iter = TElem(CodeNumber, Begin1->Number + Begin2->Number);
+    *Iter = TElem(CodeNumber, boost::any_cast<long double>(Begin1->Value) + boost::any_cast<long double>(Begin2->Value));
     List.erase(Begin1, End);
   }
   else if(Iter->Ident == CodeMul)
@@ -201,7 +201,7 @@ std::list<TElem>::iterator SimplifyData(std::list<TElem> &List, std::list<TElem>
     //5*2 = 10
     if(Begin1->Ident == CodeNumber && Begin2->Ident == CodeNumber)
     {
-      Begin1->Number *= Begin2->Number;
+      Begin1->Value = boost::any_cast<long double>(Begin1->Value) * boost::any_cast<long double>(Begin2->Value);
       List.erase(Iter);
       List.erase(Begin2);
       Iter = Begin1;
@@ -216,7 +216,7 @@ std::list<TElem>::iterator SimplifyData(std::list<TElem> &List, std::list<TElem>
       // (5*A)*(2*B) = 10*(A*B)
       if(Begin1->Ident == CodeMul && Par1->Ident == CodeNumber && Begin2->Ident == CodeMul && Par2->Ident == CodeNumber)
       {
-        List.insert(Begin1, TElem(CodeNumber, Par1->Number * Par2->Number));
+        List.insert(Begin1, TElem(CodeNumber, boost::any_cast<long double>(Par1->Value) * boost::any_cast<long double>(Par2->Value)));
         List.erase(Par1);
         List.erase(Begin2);
         List.erase(Par2);
@@ -224,14 +224,14 @@ std::list<TElem>::iterator SimplifyData(std::list<TElem> &List, std::list<TElem>
       // 5*(2*A) = 10*A
       else if(Begin1->Ident == CodeNumber && Begin2->Ident == CodeMul && Par2->Ident == CodeNumber)
       {
-        Begin1->Number *= Par2->Number;
+        Begin1->Value = boost::any_cast<long double>(Begin1->Value) * boost::any_cast<long double>(Par2->Value);
         List.erase(Begin2);
         List.erase(Par2);
       }
       //(5*A)*2 = 10*A
       else if(Begin1->Ident == CodeMul && Par1->Ident == CodeNumber && Begin2->Ident == CodeNumber)
       {
-        Par1->Number *= Begin2->Number;
+        Par1->Value = boost::any_cast<long double>(Par1->Value) * boost::any_cast<long double>(Begin2->Value);
         List.erase(Begin1);
         List.erase(Begin2);
       }

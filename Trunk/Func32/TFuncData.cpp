@@ -208,7 +208,8 @@ void TFuncData::CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const
         CopyReplace(NewArgs[I], Iter2, Args);
         Iter2 = FindEnd(Iter2);
       }
-      CopyReplace(List, Iter->Func->GetFuncData()->Data.begin(), NewArgs);
+      boost::shared_ptr<TBaseCustomFunc> Func = boost::any_cast<boost::shared_ptr<TBaseCustomFunc> >(Iter->Value);
+      CopyReplace(List, Func->GetFuncData()->Data.begin(), NewArgs);
       Iter = Iter2 - 1;
     }
     else if(Iter->Ident == CodeVariable && !Args.empty())
@@ -237,13 +238,14 @@ bool TFuncData::Update(const TSymbolList &SymbolList)
     if(Iter->Ident == CodeCustom)
     {
       boost::shared_ptr<TBaseCustomFunc> Func = SymbolList.Get(Iter->Text);
+      boost::shared_ptr<TBaseCustomFunc> Func2 = boost::any_cast<boost::shared_ptr<TBaseCustomFunc> >(Iter->Value);
       if(!Func || Iter->Arguments != Func->ArgumentCount()) //The number of arguments must match
       {
         Result = false;
-        Iter->Func.reset();
+        Func2.reset();
       }
       else
-        Iter->Func = Func;
+        Func2 = Func;
     }
   return Result;
 }
@@ -271,11 +273,12 @@ bool TFuncData::CheckRecursive(std::vector<const TFuncData*> &FuncStack) const
   for(std::vector<TElem>::const_iterator Iter = Data.begin(); Iter != Data.end(); ++Iter)
     if(Iter->Ident == CodeCustom)
     {
-      if(std::find(FuncStack.begin(), FuncStack.end(), Iter->Func->GetFuncData().get()) != FuncStack.end())
+      boost::shared_ptr<TBaseCustomFunc> Func = boost::any_cast<boost::shared_ptr<TBaseCustomFunc> >(Iter->Value);
+      if(std::find(FuncStack.begin(), FuncStack.end(), Func->GetFuncData().get()) != FuncStack.end())
         return true;
 
-      FuncStack.push_back(Iter->Func->GetFuncData().get());
-      if(Iter->Func->GetFuncData()->CheckRecursive(FuncStack))
+      FuncStack.push_back(Func->GetFuncData().get());
+      if(Func->GetFuncData()->CheckRecursive(FuncStack))
         return true;
       FuncStack.pop_back();
     }
