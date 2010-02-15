@@ -99,8 +99,8 @@ static const TFuncTable Table[] = {
 /*CodeIf*/          TFuncTable(L"if",    arg1 == 3),
 /*CodeRange*/       TFuncTable(L"range", arg1 == 3),
 /*CodeIntegrate*/   TFuncTable(L"integrate", arg1 == 3),
-/*CodeSum*/         TFuncTable(L"sum",   arg1 == 3),
-/*CodeProduct*/     TFuncTable(L"product", arg1 == 3),
+/*CodeSum*/         TFuncTable(L"sum",   arg1 == 4),
+/*CodeProduct*/     TFuncTable(L"product", arg1 == 4),
 /*CodeCompare2*/    TFuncTable(L"",      arg1 == 3),
 /*CodePowDiv*/      TFuncTable(L"",      Dummy, NULL, L"x2/x3*x^((x2-x3)/x3)*dx + x^(x2/x3)*ln(x)*(dx2*x3-x2*dx3)/x3^2"),
 
@@ -212,7 +212,7 @@ void TFuncData::CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const
       CopyReplace(List, Func->GetFuncData()->Data.begin(), NewArgs);
       Iter = Iter2 - 1;
     }
-    else if(Iter->Ident == CodeVariable && !Args.empty())
+    else if(Iter->Ident == CodeArgument && !Args.empty())
       CopyReplace(List, Args[Iter->Arguments].begin(), Dummy);
     else
       List.push_back(*Iter);
@@ -238,14 +238,13 @@ bool TFuncData::Update(const TSymbolList &SymbolList)
     if(Iter->Ident == CodeCustom)
     {
       boost::shared_ptr<TBaseCustomFunc> Func = SymbolList.Get(Iter->Text);
-      boost::shared_ptr<TBaseCustomFunc> Func2 = boost::any_cast<boost::shared_ptr<TBaseCustomFunc> >(Iter->Value);
       if(!Func || Iter->Arguments != Func->ArgumentCount()) //The number of arguments must match
       {
         Result = false;
-        Func2.reset();
+        Iter->Value = boost::shared_ptr<TBaseCustomFunc>();
       }
       else
-        Func2 = Func;
+        Iter->Value = Func;
     }
   return Result;
 }

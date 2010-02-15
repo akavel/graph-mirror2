@@ -34,7 +34,7 @@ enum TCompareMethod
 enum TIdent
 {
   CodeNull,       //!< Nothing
-  CodeVariable,   //!< Element is an argument to the function
+  CodeArgument,   //!< Element is an argument to the function
   CodeNumber,     //!< Element is a number
   Codee,          //!< Element is Eulers constant
   Codei,          //!< Element is the imaginary unit
@@ -163,7 +163,8 @@ struct TElem
 
   TElem() : Ident(CodeNull), Arguments(0) {};
   TElem(TIdent AIdent) : Ident(AIdent), Arguments(FunctionArguments(AIdent)) {}
-  TElem(TIdent AIdent, long double AVal) : Ident(AIdent), Value(AVal) {}
+  TElem(TIdent AIdent, long double AValue) : Ident(AIdent), Value(AValue) {}
+  TElem(TIdent AIdent, const boost::shared_ptr<long double> &AValue) : Ident(AIdent), Value(AValue) {}
   TElem(TIdent AIdent, unsigned AArguments, int) : Ident(AIdent), Arguments(AArguments) {}
   TElem(long double AVal) : Ident(CodeNumber), Value(AVal) {}
   TElem(TIdent AIdent, const std::wstring &Str, unsigned Args=0, const boost::shared_ptr<TBaseCustomFunc> &AFunc = boost::shared_ptr<TBaseCustomFunc>())
@@ -193,18 +194,19 @@ struct TDynData
 
 struct TMakeTextData
 {
-  TConstIterator Iter;                     //!< Iterator pointing to next element to convert.
+  TConstIterator Iter;    //!< Iterator pointing to next element to convert.
   const TArgType &Args;   //!< Vector of argument names.
-  std::wostream &Stream;                   //!< Stream to write result to.
+  std::wostream &Stream;  //!< Stream to write result to.
 };
 
+template<typename T>
 struct TGSLFunction
 {
-  TDynData<long double> DynData;
-  long double Value;
   TConstIterator Func;
-  TGSLFunction(TConstIterator AFunc, TTrigonometry Trig)
-    : Func(AFunc), DynData(&Value, Trig) {}
+  TDynData<T> &DynData;
+  long double *Value;
+  TGSLFunction(TConstIterator AFunc, TDynData<T> &ADynData, long double *AValue)
+    : Func(AFunc), DynData(ADynData), Value(AValue) {}
 };
 
 class TFuncData
@@ -215,9 +217,10 @@ class TFuncData
   static T CalcF(TConstIterator &Iter, TDynData<T> &DynData);
   template<typename T>
   static T CalcFunc(TConstIterator Iter, TDynData<T> &DynData);
+  template<typename T>
   static double CalcGSLFunc(double x, void *Params);
-
-  static double Integrate(TConstIterator Iter, double Min, double Max, double ReslError, TTrigonometry Trigonometry, TErrorCode &ErrorCode);
+  template<typename T>
+  static double Integrate(TConstIterator Func, double Min, double Max, double RelError, TDynData<T> &DynData, long double *Value);
   void AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trigonometry, unsigned Level);
   static std::wstring MakeText(TConstIterator Iter);
   static void CreateText(TMakeTextData &TextData, bool AddPar=false);

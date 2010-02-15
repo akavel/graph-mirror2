@@ -506,7 +506,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodeNumber:
       return boost::any_cast<long double>(Elem.Value);
 
-    case CodeVariable:
+    case CodeArgument:
       BOOST_ASSERT(DynData.Args);
       return DynData.Args[Elem.Arguments];
 
@@ -539,7 +539,9 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
 
     case CodeIntegrate:
     {
-      boost::shared_ptr<long double> Constant = boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
+      //Check for backward compatibility
+      long double *Constant = Elem.Value.empty() ? NULL :
+        &*boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
       TConstIterator F = Iter;
       Iter = FindEnd(Iter);
       T Min = real(CalcF(Iter, DynData));
@@ -548,12 +550,13 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         ErrorCode = ecComplexError;
       if(ErrorCode)
         return 0;
-      return Integrate(F, real(Min), real(Max), 1E-3, DynData.Trigonometry, ErrorCode);
+      return Integrate(F, real(Min), real(Max), 1E-3, DynData, Constant);
     }
 
     case CodeSum:
     case CodeProduct:
     {
+      boost::shared_ptr<long double> Variable = boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
       TConstIterator F = Iter;
       Iter = FindEnd(Iter);
       T Min = CalcF(Iter, DynData);
@@ -564,16 +567,13 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         return 0;
       }
       T Sum = Elem.Ident == CodeSum ? 0 : 1;
-      TDynData<T> TempDynData(DynData);
-      T Value;
-      TempDynData.Args = &Value;
       for(long double i = real(Min); i <= real(Max); i++)
       {
-        Value = i;
+        *Variable = i;
         if(Elem.Ident == CodeSum)
-          Sum += CalcFunc(F, TempDynData);
+          Sum += CalcFunc(F, DynData);
         else
-          Sum *= CalcFunc(F, TempDynData);
+          Sum *= CalcFunc(F, DynData);
       }
       return Sum;
     }
@@ -1000,15 +1000,22 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
   }
 }
 //---------------------------------------------------------------------------
+template<typename T>
 double TFuncData::CalcGSLFunc(double x, void *Params)
 {
-  TGSLFunction *Function = reinterpret_cast<TGSLFunction*>(Params);
-  Function->Value = x;
+  TGSLFunction<T> *Function = reinterpret_cast<TGSLFunction<T>*>(Params);
+  T X = x;
+  const T *OldArgs = Function->DynData.Args; //Workaround for backward compatibility
+  if(Function->Value) //Check for backward compatibility
+    *Function->Value = x;
+  else
+    Function->DynData.Args = &X;
   Function->DynData.ErrorCode = ecNoError;
-  double Result = CalcFunc(Function->Func, Function->DynData);
-  if(Function->DynData.ErrorCode != ecNoError)
+  T Result = CalcFunc(Function->Func, Function->DynData);
+  Function->DynData.Args = OldArgs;
+  if(Function->DynData.ErrorCode != ecNoError || imag(Result) != 0)
     return std::numeric_limits<double>::quiet_NaN();
-  return Result;
+  return real(Result);
 }
 //---------------------------------------------------------------------------
 /** Returns the numeric integrale of the functions pointed to by Func from Min to Max.
@@ -1022,18 +1029,18 @@ double TFuncData::CalcGSLFunc(double x, void *Params)
  *  \param Trigonometry: Used to tell if we should use radians or degrees for trigonometric functions.
  *  \param ErrorCode: Filled with error information on return.
  */
-double TFuncData::Integrate(TConstIterator Func, double Min, double Max, double RelError, TTrigonometry Trigonometry, TErrorCode &ErrorCode)
+ template<typename T>
+ double TFuncData::Integrate(TConstIterator Func, double Min, double Max, double RelError, TDynData<T> &DynData, long double *Value)
 {
   const int MaxSubIntervals = 1000;
   if(Max < Min)
-    return -Integrate(Func, Max, Min, RelError, Trigonometry, ErrorCode);
-  TGSLFunction Function(Func, Trigonometry);
+    return -Integrate(Func, Max, Min, RelError, DynData, Value);
+  TGSLFunction<T> Function(Func, DynData, Value);
   gsl_integration_workspace *w = gsl_integration_workspace_alloc(MaxSubIntervals);
-  gsl_function F = {CalcGSLFunc, &Function};
+  gsl_function F = {CalcGSLFunc<T>, &Function};
 
   double Result, Error;
   unsigned ErrorResult;
-  ErrorCode = ecNoError;
   if(boost::math::isfinite(Min) && boost::math::isfinite(Max))
     ErrorResult = gsl_integration_qags(&F, Min, Max, 0, RelError, MaxSubIntervals, w, &Result, &Error);
   else if(!boost::math::isfinite(Min) && !boost::math::isfinite(Max))
@@ -1044,11 +1051,13 @@ double TFuncData::Integrate(TConstIterator Func, double Min, double Max, double 
     ErrorResult = gsl_integration_qagiu(&F, Min, 0, RelError, MaxSubIntervals, w, &Result, &Error);
   gsl_integration_workspace_free(w);
   if(ErrorResult != 0)
-    ErrorCode = ecNoResult;
+    DynData.ErrorCode = ecNoResult;
   else if(!boost::math::isfinite(Result))
-    ErrorCode = ecNoResult;
+    DynData.ErrorCode = ecNoResult;
   else if(Result != 0 && Error / Result > RelError)
-    ErrorCode = ecNoAccurateResult;
+    DynData.ErrorCode = ecNoAccurateResult;
+  else
+    DynData.ErrorCode = ecNoError;
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -1065,10 +1074,11 @@ double TFuncData::Integrate(TConstIterator Func, double Min, double Max, double 
  */
 double TFuncData::Integrate(double Min, double Max, double RelError, TTrigonometry Trigonometry) const
 {
-  TErrorCode ErrorCode;
-  double Result = Integrate(Data.begin(), Min, Max, RelError, Trigonometry, ErrorCode);
-  if(ErrorCode != ecNoError)
-    throw ECalcError(ErrorCode);
+  long double Value;
+  TDynData<long double> DynData(&Value, Trigonometry);
+  double Result = Integrate(Data.begin(), Min, Max, RelError, DynData, &Value);
+  if(DynData.ErrorCode != ecNoError)
+    throw ECalcError(DynData.ErrorCode);
   return Result;
 }
 //---------------------------------------------------------------------------
