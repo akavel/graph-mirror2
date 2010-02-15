@@ -112,7 +112,7 @@ long double TPolarFunc::CalcR(long double t) const
 TPolarFunc* TPolarFunc::MakeDifPtr() const
 {
   if(!DifData.get())
-    DifData = FuncData->MakeDif(CodeVariable, Trigonometry);
+    DifData = FuncData->MakeDif(CodeArgument, Trigonometry);
   return new TPolarFunc(DifData, Trigonometry);
 }
 //---------------------------------------------------------------------------
@@ -131,7 +131,7 @@ TPolarFunc* TPolarFunc::MakeDifPtr(const std::wstring &Var) const
 TPolarFunc TPolarFunc::MakeDif() const
 {
   if(!DifData.get())
-    DifData = FuncData->MakeDif(CodeVariable, Trigonometry);
+    DifData = FuncData->MakeDif(CodeArgument, Trigonometry);
   return TPolarFunc(DifData, Trigonometry);
 }
 //---------------------------------------------------------------------------

@@ -85,12 +85,22 @@ void TestText(const std::wstring &Str, const TSymbolList &SymbolList = TSymbolLi
 {
   TFunc Func(Str, L"x", SymbolList);
   std::wstring Str2 = Func.MakeText();
-  TFunc Func2(Str2, L"x", SymbolList);
-  if(Func != Func2)
+  try
   {
-    std::wcerr << "Failed to convert function back to text!" << std::endl;
-    std::wcerr << "Function: " << Str << std::endl;
-    std::wcerr << "Result:   " << Str2 << std::endl << std::endl;
+    TFunc Func2(Str2, L"x", SymbolList);
+    if(Func != Func2)
+    {
+      std::wcerr << "Failed to convert function back to text!" << std::endl;
+      std::wcerr << "Function: " << Str << std::endl;
+      std::wcerr << "Result:   " << Str2 << std::endl << std::endl << std::endl;
+    }
+  }
+  catch(EFuncError &E)
+  {
+    std::wcerr << "Failed to convert function back to test!" << std::endl;
+    std::wcerr << "Function:  " << Str << std::endl;
+    std::wcerr << "Result:    " << Str2 << std::endl;
+    std::wcerr << "ErrorCode: " << E.ErrorCode << std::endl << std::endl;
   }
 }
 
@@ -403,6 +413,13 @@ public:
 
 void Test()
 {
+  //Test parsing errors
+  TestError("sinx", 0, ecUnknownVar);
+  TestError("x2", 0, ecUnknownVar);
+  TestError("sin2 x", 0, ecUnknownVar);
+  TestError("integrate(x, 5)", 0, ecArgCountError);
+  TestError("integrate(x, x, 5, 7, 8)", 0, ecArgCountError);
+
   //Test redundant space
   Test("x*sin x", PI/2, PI/2);
   Test("  x*sin x", PI/2, PI/2);
@@ -652,23 +669,32 @@ void Test()
   Test("mod(x,-5)", -12, -2);
   Test("mod(x, 1.2)", 5.6, 0.8);
   Test("mod(x, 1.2)", -5.6, 0.4);
-  Test("sum(x, 3, 7)", NaN, 3+4+5+6+7);
-  Test("product(x, 3, 7)", NaN, 3*4*5*6*7);
   Test("dnorm(x, 5, 7)", 3, 0.054712394277745);
   Test("dnorm(x)", 3, 0.00443184841193801);
   Test("dnorm(x, 0, 1)", 3, 0.00443184841193801);
 
+  //Test backward compatibility
   Test("integrate(x^2,2,5)", NaN, 39);
-  Test("integrate(dnorm(x,100,60),-inf,100)", 0, 0.5);
-  Test("integrate(dnorm(x,100,20),-inf,100)", 0, 0.5);
-  Test("integrate(dnorm(x,100,60),100,inf)", 0, 0.5);
-  Test("integrate(dnorm(x,100,20),100,inf)", 0, 0.5);
-  Test("integrate(e^x,-inf,0)", 0, 1);
-  Test("integrate(e^x,0,-inf)", 0, -1);
-  Test("integrate(e^-x,inf,0)", 0, -1);
-  Test("integrate(e^-x,0,inf)", 0, 1);
-  Test("integrate(e^-abs(x),-inf,inf)", 0, 2);
-  Test("integrate(e^-abs(x),inf,-inf)", 0, -2);
+//  Test("sum(x, 3, 7)", NaN, 3+4+5+6+7);
+//  Test("product(x, 3, 7)", NaN, 3*4*5*6*7);
+
+  //Test improved integrate
+  Test("integrate(x^2,x,2,5)", NaN, 39);
+  Test("integrate(dnorm(x,100,60),x,-inf,100)", 0, 0.5);
+  Test("integrate(dnorm(x,100,20),x,-inf,100)", 0, 0.5);
+  Test("integrate(dnorm(x,100,60),x,100,inf)", 0, 0.5);
+  Test("integrate(dnorm(x,100,20),x,100,inf)", 0, 0.5);
+  Test("integrate(e^x,x,-inf,0)", 0, 1);
+  Test("integrate(e^x,x,0,-inf)", 0, -1);
+  Test("integrate(e^-x,x,inf,0)", 0, -1);
+  Test("integrate(e^-x,x,0,inf)", 0, 1);
+  Test("integrate(e^-abs(x),x,-inf,inf)", 0, 2);
+  Test("integrate(e^-abs(x),x,inf,-inf)", 0, -2);
+  Test("integrate(x*t^2, t, 0, 3)", 2, 18);
+  Test("sum(x, x, 3, 7)", NaN, 3+4+5+6+7);
+  Test("product(x, x, 3, 7)", NaN, 3*4*5*6*7);
+  Test("sum(x*t, t, 3, 7)", 2, 2*3+2*4+2*5+2*6+2*7);
+  Test("product(x*t, t, 3, 7)", 2, 2*3*2*4*2*5*2*6*2*7);
 
   //Combined test cases
   Test("(1.01^x-1)/0.01", 1, 1);

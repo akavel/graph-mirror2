@@ -140,7 +140,7 @@ TComplex TFunc::CalcY(TComplex x, ECalcError &E) const
 TFunc* TFunc::MakeDifPtr() const
 {
   if(!DifData)
-    DifData = FuncData->MakeDif(CodeVariable, Trigonometry);
+    DifData = FuncData->MakeDif(CodeArgument, Trigonometry);
   return new TFunc(DifData, Trigonometry);
 }
 //---------------------------------------------------------------------------
@@ -159,7 +159,7 @@ TFunc* TFunc::MakeDifPtr(const std::wstring &Var) const
 TFunc TFunc::MakeDif() const
 {
   if(!DifData)
-    DifData = FuncData->MakeDif(CodeVariable, Trigonometry);
+    DifData = FuncData->MakeDif(CodeArgument, Trigonometry);
   return TFunc(DifData, Trigonometry);
 }
 //---------------------------------------------------------------------------
@@ -433,7 +433,7 @@ double TFunc::CalcArc(double xMin, double xMax, double RelError) const
 long double TFunc::CalcSlope(long double x) const
 {
   if(!DifData)
-    DifData = FuncData->MakeDif(CodeVariable, Trigonometry);
+    DifData = FuncData->MakeDif(CodeArgument, Trigonometry);
   return DifData->Calc(&x, Trigonometry);
 }
 //---------------------------------------------------------------------------

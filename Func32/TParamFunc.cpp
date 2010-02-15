@@ -82,7 +82,7 @@ TParamFunc::TParamFunc(long double xValue, long double yValue)
 TParamFunc::TParamFunc(const TFunc &Func)
   : TBaseFunc(Func.Trigonometry), xFuncData(new TFuncData), yFuncData(Func.FuncData)
 {
-  xFuncData->Add(CodeVariable);
+  xFuncData->Add(CodeArgument);
 }
 //---------------------------------------------------------------------------
 /** Ensures that xFuncData and YFuncData has a reference count of 1. Differentiation data are cleared.
@@ -186,9 +186,9 @@ long double TParamFunc::CalcY(long double t, ECalcError &E) const
 inline void TParamFunc::EnsureDif() const
 {
   if(!xDifData)
-    xDifData = xFuncData->MakeDif(CodeVariable, Trigonometry);
+    xDifData = xFuncData->MakeDif(CodeArgument, Trigonometry);
   if(!yDifData)
-    yDifData = yFuncData->MakeDif(CodeVariable, Trigonometry);
+    yDifData = yFuncData->MakeDif(CodeArgument, Trigonometry);
 }
 //---------------------------------------------------------------------------
 /** Finds and returns a pointer to a new object with the first derivative of the function.
@@ -472,7 +472,7 @@ long double TParamFunc::CalcAngleSlope(long double t) const
 double TParamFunc::CalcArea(double tMin, double tMax, double RelError) const
 {
   if(!xDifData)
-    xDifData = xFuncData->MakeDif(CodeVariable, Trigonometry);
+    xDifData = xFuncData->MakeDif(CodeArgument, Trigonometry);
 
   TFuncData Temp;
   Temp.Add(CodeMul);

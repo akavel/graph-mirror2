@@ -10,6 +10,7 @@
 #include "Func32Impl.h"
 #pragma hdrstop
 #include <cstdio>
+#include <iomanip>
 //---------------------------------------------------------------------------
 namespace Func32
 {
@@ -45,6 +46,7 @@ std::wstring TFuncData::MakeText(TConstIterator Iter)
   Args.push_back(L"Arg7");
   Args.push_back(L"Arg8");
   std::wstringstream Stream;
+  Stream << std::setprecision(4);
   TMakeTextData TextData = {Iter, Args, Stream};
   CreateText(TextData);
   return Stream.str();
@@ -100,14 +102,14 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
     {
       long double Number = boost::any_cast<long double>(Elem.Value);
       //std::uppercase is used to show E in 5E3 in uppercase
-      if(std::abs(Number) >= 10000 || std::abs(Number) < 0.0001)
+      if(Number != 0 && (std::abs(Number) >= 10000 || std::abs(Number) < 0.0001))
         Stream << std::scientific;
       else
         Stream << std::fixed;
       Stream << std::uppercase << Number;
       break;
     }
-    case CodeVariable:
+    case CodeArgument:
       BOOST_ASSERT(Elem.Arguments < TextData.Args.size());
       Stream << TextData.Args[Elem.Arguments];
       break;
@@ -134,6 +136,10 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
 
     case CodeInf:
       Stream << "INF";
+      break;
+
+    case CodeConst:
+      Stream << "Var";
       break;
 
     case CodeAdd:
@@ -209,6 +215,18 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
       CreateText(TextData);
       Stream << (Elem == CodeAnd ? L" and " : Elem == CodeOr ? L" or " : L" xor ");
       CreateText(TextData, *Iter == CodeAnd || *Iter == CodeOr || *Iter == CodeXor);
+      break;
+
+    case CodeIntegrate:
+    case CodeSum:
+    case CodeProduct:
+      Stream << (Elem.Ident == CodeIntegrate ? "integrate(" : (Elem.Ident == CodeSum ? "sum(" : "product("));
+      CreateText(TextData);
+      Stream << ",Var,";
+      CreateText(TextData);
+      Stream << ",";
+      CreateText(TextData);
+      Stream << ")";
       break;
 
     default:

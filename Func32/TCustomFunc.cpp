@@ -164,7 +164,7 @@ TComplex TCustomFunc::Calc(const std::vector<TComplex> &Values, ECalcError &E) c
  */
 TCustomFunc TCustomFunc::MakeDif(unsigned Arg) const
 {
-  return TCustomFunc(FuncData->MakeDif(TElem(CodeVariable, Arg, 0), Trigonometry), Args, Trigonometry);
+  return TCustomFunc(FuncData->MakeDif(TElem(CodeArgument, Arg, 0), Trigonometry), Args, Trigonometry);
 }
 //---------------------------------------------------------------------------
 /** Makes the objects data unique. The reference count of FuncData will be 1.
@@ -192,7 +192,7 @@ TFunc TCustomFunc::ConvToFunc(const std::vector<long double> &Values, unsigned V
   std::vector<long double>::const_iterator Iter = Values.begin();
   for(unsigned I = 0; I < Args.size(); I++)
     if(I != Variable)
-      TempData->Replace(TElem(CodeVariable, I, 0), TElem(CodeNumber, *Iter++));
+      TempData->Replace(TElem(CodeArgument, I, 0), TElem(CodeNumber, *Iter++));
   return TFunc(TempData, Trigonometry);
 }
 //---------------------------------------------------------------------------

@@ -196,7 +196,7 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
       ThirdPar = FindEnd(SecondPar); //Start of third parenthesis
 
     for(TConstIterator Elem = DifData.Data.begin(); Elem != End; ++Elem)
-      if(Elem->Ident == CodeVariable)
+      if(Elem->Ident == CodeArgument)
         Data.insert(Data.end(), FirstPar, SecondPar);
       else if(*Elem == TElem(CodeCustom, L"dx"))
         AddDif(FirstPar, Var, Trigonometry, Level);
