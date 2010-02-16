@@ -173,6 +173,7 @@ struct ECalcError : public EFuncError
   const char* what() const throw() {return "Func32::ECalcError";}
 };
 
+template<typename T> class TCoordSet;
 //!Struct with an (x,y) coordinate
 template<typename T>
 struct TCoord
@@ -181,6 +182,7 @@ struct TCoord
   T y;
   TCoord() : x(0), y(0) {}
   TCoord(const T &X, const T &Y) : x(X), y(Y) {}
+  TCoord(const TCoordSet<T> &Set);
 };
 
 //!Function used to create an (x,y) coordinate
@@ -684,26 +686,30 @@ long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double M
 TArgType FindUnknowns(const std::wstring &Str);
 bool IsValidName(const std::wstring &Name);
 
+template<typename T=long double>
 struct TCoordSet
 {
-  long double t;
-  long double x;
-  long double y;
+  T t;
+  T x;
+  T y;
   TCoordSet() : t(0), x(0), y(0) {}
-  TCoordSet(long double at, long double ax, long double ay) : t(at), x(ax), y(ay) {}
-  TCoordSet(long double at, const TCoord<long double> &Coord) : t(at), x(Coord.x), y(Coord.y) {}
+  TCoordSet(T at, T ax, T ay) : t(at), x(ax), y(ay) {}
+  TCoordSet(T at, const TCoord<T> &Coord) : t(at), x(Coord.x), y(Coord.y) {}
 };
+template<typename T>
+inline TCoord<T>::TCoord(const TCoordSet<T> &Set) : x(Set.x), y(Set.y) {}
 
+template<typename T=long double>
 class TEvalCoordSet
 {
   const TBaseFunc &Func;
 public:
   TEvalCoordSet(const TBaseFunc &AFunc) : Func(AFunc) {}
-  TCoordSet operator()(const TCoordSet &CoordSet) {return TCoordSet(CoordSet.t, Func.Calc(CoordSet.t));}
+  TCoordSet<T> operator()(const TCoordSet<T> &CoordSet) {return TCoordSet<T>(CoordSet.t, Func.Calc(CoordSet.t));}
 };
 
 enum TAnalyseType {atXAxisCross, atYAxisCross};
-std::vector<TCoordSet> AnalyseFunction(const TBaseFunc &Func, long double Min, long double Max, unsigned Steps, long double Tol, TAnalyseType AnalyseType);
+std::vector<TCoordSet<> > AnalyseFunction(const TBaseFunc &Func, long double Min, long double Max, unsigned Steps, long double Tol, TAnalyseType AnalyseType);
 } //namespace Func32
 //---------------------------------------------------------------------------
 
