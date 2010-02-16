@@ -407,7 +407,10 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 
   FactorSeq = AssertFactor_p(Neg[FactorSeq.List = arg1] >> *Factor[TDoOperator(FactorSeq.List, CodeMul)]);
 
-  Neg = ('-' >> AssertFactor_p(Neg[TDoNegate(Neg.List)])) | Factor[Neg.List = arg1];
+  Neg =   *ch_p('+') >>
+          ( ('-' >> AssertFactor_p(Neg[TDoNegate(Neg.List)]))
+            | Factor[Neg.List = arg1]
+          );
 
   Term =
       Neg[Term.List = arg1] >>

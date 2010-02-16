@@ -83,10 +83,11 @@ bool CompareFunc(const TFunc &f1, const TFunc &f2)
 
 void TestText(const std::wstring &Str, const TSymbolList &SymbolList = TSymbolList())
 {
-  TFunc Func(Str, L"x", SymbolList);
-  std::wstring Str2 = Func.MakeText();
+  std::wstring Str2;
   try
   {
+    TFunc Func(Str, L"x", SymbolList);
+    Str2 = Func.MakeText();
     TFunc Func2(Str2, L"x", SymbolList);
     if(Func != Func2)
     {
@@ -481,6 +482,14 @@ void Test()
   TestError("x(5.4)", 0, ecParAfterConst);
   TestError("rand(2)", 0, ecParAfterConst);
   Test("x 5.4", 3, 16.2);     //Should this be allowed?
+  Test("--x", 5, 5);
+  Test("-x", 5, -5);
+  Test("-5", NaN, -5);
+  Test("++x", 5, 5);
+  Test("+x", 5, 5);
+  Test("+5", NaN, 5);
+  Test("+-x", 5, -5);
+  Test("-+x", 5, -5);
 
   //Test power function
   Test("x^2", -2, 4);
@@ -675,15 +684,15 @@ void Test()
 
   //Test backward compatibility
   Test("integrate(x^2,2,5)", NaN, 39);
-//  Test("sum(x, 3, 7)", NaN, 3+4+5+6+7);
-//  Test("product(x, 3, 7)", NaN, 3*4*5*6*7);
+  TestError("sum(x, 3, 7)", NaN, ecArgCountError);
+  TestError("product(x, 3, 7)", NaN, ecArgCountError);
 
   //Test improved integrate
   Test("integrate(x^2,x,2,5)", NaN, 39);
   Test("integrate(dnorm(x,100,60),x,-inf,100)", 0, 0.5);
   Test("integrate(dnorm(x,100,20),x,-inf,100)", 0, 0.5);
   Test("integrate(dnorm(x,100,60),x,100,inf)", 0, 0.5);
-  Test("integrate(dnorm(x,100,20),x,100,inf)", 0, 0.5);
+  Test("integrate(dnorm(x,100,20),x,100,+inf)", 0, 0.5);
   Test("integrate(e^x,x,-inf,0)", 0, 1);
   Test("integrate(e^x,x,0,-inf)", 0, -1);
   Test("integrate(e^-x,x,inf,0)", 0, -1);

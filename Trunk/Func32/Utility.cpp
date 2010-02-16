@@ -206,7 +206,7 @@ public:
  *  \param AnalyseType: Indicates for which axis crossings are analyzed for
  *  \return A vector with the coordinates where the function are crossing the axis.
  */
-std::vector<TCoordSet> AnalyseFunction(const TBaseFunc &Func, long double Min, long double Max, unsigned Steps, long double Tol, TAnalyseType AnalyseType)
+std::vector<TCoordSet<> > AnalyseFunction(const TBaseFunc &Func, long double Min, long double Max, unsigned Steps, long double Tol, TAnalyseType AnalyseType)
 {
   const unsigned MaxCount = 100; //Max number of iteration to avoid infinite loop
   const long double dt = (Max - Min) / Steps;
@@ -224,7 +224,7 @@ std::vector<TCoordSet> AnalyseFunction(const TBaseFunc &Func, long double Min, l
   }
 
   bool LastResult = true;
-  std::vector<TCoordSet> Data;
+  std::vector<TCoordSet<> > Data;
   ECalcError E;
   TErrorCode LastError = ecInternalError; //Initialize to error to prevent detecting first point as a crossing
   for(long double t = Min; t <= Max; t += dt)
@@ -251,7 +251,7 @@ std::vector<TCoordSet> AnalyseFunction(const TBaseFunc &Func, long double Min, l
       } while(std::abs(sMax-sMin) > Tol && --Count > 0);
 
       if(!E.ErrorCode)
-        Data.push_back(TCoordSet(s, Func.CalcX(s), Func.CalcY(s)));
+        Data.push_back(TCoordSet<>(s, Func.CalcX(s), Func.CalcY(s)));
     }
     LastResult = Result;
     LastError = E.ErrorCode;
