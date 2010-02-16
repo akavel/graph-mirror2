@@ -11,16 +11,17 @@
 		<indexterm><primary>numeric integral</primary></indexterm>
 		<indexterm><primary>area</primary></indexterm>
 		<para>
-			Returns the numeric integral of the first argument from the second to the third argument.
+			Returns the numeric integral of the given expression over the given range.
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para><mathphrase>integrate(f,a,b)</mathphrase></para>
+			<para><mathphrase>integrate(f,var,a,b)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
 			<para>
-				The <function>integrate</function> function returns the numeric integral of <parameter>f</parameter> from <parameter>a</parameter> to <parameter>b</parameter>.
+				The <function>integrate</function> function returns the numeric integral of <parameter>f</parameter> with the variable
+				<parameter>var</parameter> from <parameter>a</parameter> to <parameter>b</parameter>.
 				This is mathematically written as:
 				<mediaobject>
 	  			<imageobject role="fo"><imagedata fileref="Integrate.svg"/></imageobject>
@@ -29,11 +30,19 @@
 				</mediaobject>
 				This integral is the same as the area between the function <parameter>f</parameter> and the x-axis from <parameter>a</parameter> to <parameter>b</parameter>
 				where the area under the axis is counted negative.
-				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric function.
+				<parameter>f</parameter> may be any function with the variable indicated as the second argument <parameter>var</parameter>.
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to
-				<glossterm linkend="RealNumber">real numbers</glossterm> or they can be <constant>-INF</constant> or <constant>INF</constant>.
+				<glossterm linkend="RealNumber">real numbers</glossterm> or they can be <constant>-INF</constant> or <constant>INF</constant> to indicate negative or positive infinity.
 				<function>integrate</function> does not calculate the integral exactly.
 				Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to a estimated relative error less than <mathphrase>10<superscript>-3</superscript></mathphrase>.
+			</para>
+		</simplesect>
+		<simplesect>
+			<title>Examples</title>
+			<para>
+			<mathphrase>f(x)=integrate(t^2-7t+1, t, -3, 15)</mathphrase> will integrate f(t)=5t^3+t^2-7t+1 from -3 to 15 and evaluate to 396.
+			More useful is <mathphrase>f(x)=integrate(s*sin(s), s, 0, x)</mathphrase>.
+			This will plot the integral of f(s)=s*sin(s) from 0 to x, which is the same as the definite integral of f(x)=x*sin(x).
 			</para>
 		</simplesect>
 		<simplesect>
@@ -51,24 +60,24 @@
 		<indexterm><primary><function>sum</function> function</primary></indexterm>
 		<indexterm><primary>summation</primary></indexterm>
 		<para>
-			Returns the summation of the first argument evaluated for all integers from the second to the third argument.
+			Returns the summation of an expression evaluated over a range of integers.
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para><mathphrase>sum(f,a,b)</mathphrase></para>
+			<para><mathphrase>sum(f,var,a,b)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
 			<para>
-				The <function>sum</function> function returns the summation of <parameter>f</parameter> evaluated for all integers from <parameter>a</parameter> to <parameter>b</parameter>.
+				The <function>sum</function> function returns the summation of <parameter>f</parameter> where <parameter>var</parameter> is evaluated for all integers from <parameter>a</parameter> to <parameter>b</parameter>.
 				This is mathematically written as:
 				<mediaobject>
 	  			<imageobject role="fo"><imagedata fileref="Sum.svg"/></imageobject>
   				<imageobject role="htmlhelp"><imagedata fileref="Sum.emf"/></imageobject>
   				<imageobject role="html"><imagedata fileref="Sum.png"/></imageobject>
 				</mediaobject>
-				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function.
-				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
+				<parameter>f</parameter> may be any function with the variable indicated as the second argument <parameter>var</parameter>.
+				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="Integer">integers</glossterm>.
 			</para>
 		</simplesect>
 		<simplesect>
@@ -85,24 +94,24 @@
 		<title><markup>product</markup> function</title>
 		<indexterm><primary><function>product</function> function</primary></indexterm>
 		<para>
-			Returns the product of the first argument evaluated for all integers from the second to the third argument.
+			Returns the product of an expression evaluated over a range of integers.
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para><mathphrase>product(f,a,b)</mathphrase></para>
+			<para><mathphrase>product(f,var,a,b)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
 			<para>
-				The <function>product</function> function returns the product of <parameter>f</parameter> evaluated for all integers from <parameter>a</parameter> to <parameter>b</parameter>.
+				The <function>product</function> function returns the product of <parameter>f</parameter> where <parameter>var</parameter> is evaluated for all integers from <parameter>a</parameter> to <parameter>b</parameter>.
 				This is mathematically written as:
 				<mediaobject>
 	  			<imageobject role="fo"><imagedata fileref="Product.svg"/></imageobject>
   				<imageobject role="htmlhelp"><imagedata fileref="Product.emf"/></imageobject>
   				<imageobject role="html"><imagedata fileref="Product.png"/></imageobject>
 				</mediaobject>
-				<parameter>f</parameter> may be any function with x as variable if the function is used in a standard function and t as variable if it is a parametric or polar function.
-				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm>.
+				<parameter>f</parameter> may be any function with the variable indicated as the second argument <parameter>var</parameter>.
+				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="Integer">integers</glossterm>.
 			</para>
 		</simplesect>
 		<simplesect>
