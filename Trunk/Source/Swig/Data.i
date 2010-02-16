@@ -8,7 +8,7 @@
 %include "Types.i"
 
 %template(PointVector) std::vector<TPoint>;
-%template(CoordSetVector) std::vector<Func32::TCoordSet>;
+%template(CoordSetVector) std::vector<Func32::TCoordSet<> >;
 %template(UnsignedVector) std::vector<unsigned>;
 %template(StringMap) std::map<std::wstring,std::wstring>;
 
@@ -122,7 +122,7 @@ typedef unsigned TPenStyle;
 class TBaseFuncType : public TGraphElem
 {
 public:
-  std::vector<Func32::TCoordSet> sList;
+  std::vector<Func32::TCoordSet<> > sList;
   std::vector<TPoint> Points;
   std::vector<unsigned> PointNum;
   TColor Color;

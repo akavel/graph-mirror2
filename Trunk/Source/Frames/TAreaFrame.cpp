@@ -56,22 +56,26 @@ void TAreaFrame::EvalArea(const TBaseFuncType *Func, long double From, long doub
   Func32::TCoord<long double> Min, Max;
   try
   {
-    Min = Func->Eval(From);
+    if(_finitel(From))
+      Min = Func->Eval(From);
+    else
+      Min = Func->sList[N1];
   }
   catch(Func32::ECalcError &E)
   {
-    Min.x = Func->sList[N1].x;
-    Min.y = Func->sList[N1].y;
+    Min = Func->sList[N1];
   }
 
   try
   {
-    Max = Func->Eval(To);
+    if(_finitel(To))
+      Max = Func->Eval(To);
+    else
+      Max = Func->sList[N2-1];
   }
   catch(Func32::ECalcError &E)
   {
-    Max.x = Func->sList[N2-1].x;
-    Max.y = Func->sList[N2-1].y;
+    Max = Func->sList[N2-1];
   }
 
   if(N1 != N2)

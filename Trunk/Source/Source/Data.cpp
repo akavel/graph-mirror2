@@ -261,7 +261,7 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y) const
   else if(N == Func->Points.size() - 1)
     N--;
 
-  typedef std::vector<Func32::TCoordSet>::const_iterator TCoordSetIter;
+  typedef std::vector<Func32::TCoordSet<> >::const_iterator TCoordSetIter;
   TCoordSetIter Begin = Func->sList.begin();
   TCoordSetIter End = Func->sList.end();
   TCoordSetIter p1 = Begin + N; //p1 used to search backwards
@@ -427,7 +427,7 @@ void TData::SetModified()
   SendOleAdvise(acDataChanged);
 }
 //---------------------------------------------------------------------------
-double FindNearestValue(const std::vector<Func32::TCoordSet> &Values, int X, int Y, const TDraw &Draw)
+double FindNearestValue(const std::vector<Func32::TCoordSet<> > &Values, int X, int Y, const TDraw &Draw)
 {
   if(Values.empty())
     throw EGraphError(L"No data in vector");
@@ -435,7 +435,7 @@ double FindNearestValue(const std::vector<Func32::TCoordSet> &Values, int X, int
   double MinDist = INF;
   double Result;
 
-  for(std::vector<Func32::TCoordSet>::const_iterator Iter = Values.begin(); Iter != Values.end(); ++Iter)
+  for(std::vector<Func32::TCoordSet<> >::const_iterator Iter = Values.begin(); Iter != Values.end(); ++Iter)
   {
     double dx = X - Draw.xPoint(Iter->x);
     double dy = Y - Draw.yPoint(Iter->y);
@@ -461,7 +461,7 @@ double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int
     case ttYAxis:
     {
       std::pair<double,double> Range = Func->GetCurrentRange();
-      std::vector<Func32::TCoordSet> List = AnalyseFunction(Func->GetFunc(), Range.first, Range.second,
+      std::vector<Func32::TCoordSet<> > List = AnalyseFunction(Func->GetFunc(), Range.first, Range.second,
         Draw.GetAxesRect().Width(), 1E-16, TraceType == ttXAxis ? Func32::atXAxisCross : Func32::atYAxisCross);
       if(!List.empty())
         return FindNearestValue(List, X, Y, Draw);
@@ -478,12 +478,12 @@ double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int
         F = Func->GetFunc().ConvYToFunc().MakeDif();
       else
         F = Func->GetFunc().ConvXToFunc().MakeDif();
-      std::vector<Func32::TCoordSet> List = AnalyseFunction(F, Range.first, Range.second, Draw.GetAxesRect().Width(), 1E-16, Func32::atXAxisCross);
+      std::vector<Func32::TCoordSet<> > List = AnalyseFunction(F, Range.first, Range.second, Draw.GetAxesRect().Width(), 1E-16, Func32::atXAxisCross);
 
       //Convert the list of f'(x) coordinates to f(x) coordinates. Notice that List2 may have less
       //elements than List, because we may have found some extremums that don't have valid coordinates.
-      std::vector<Func32::TCoordSet> List2;
-      Transform(List.begin(), List.end(), std::back_inserter(List2), Func32::TEvalCoordSet(Func->GetFunc())); //Fill list with coordinates for f(x) instead of f'(x)
+      std::vector<Func32::TCoordSet<> > List2;
+      Transform(List.begin(), List.end(), std::back_inserter(List2), Func32::TEvalCoordSet<>(Func->GetFunc())); //Fill list with coordinates for f(x) instead of f'(x)
       if(!List2.empty())
         return FindNearestValue(List2, X, Y, Draw);
       return NAN;

@@ -181,7 +181,7 @@ protected:
   TTextValue Steps; //Number of steps/evaluations. Rounded to an integer
 
 public:
-  std::vector<Func32::TCoordSet> sList;
+  std::vector<Func32::TCoordSet<> > sList;
   std::vector<TPoint> Points;
   std::vector<unsigned> PointNum;
   TColor Color;
