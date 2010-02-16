@@ -2740,9 +2740,9 @@ SWIG_Python_MustGetPtr(PyObject *obj, swig_type_info *ty, int argnum, int flags)
 #define SWIGTYPE_p_std__lessT_std__wstring_t swig_types[41]
 #define SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t swig_types[42]
 #define SWIGTYPE_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t__allocator_type swig_types[43]
-#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t swig_types[44]
-#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type swig_types[45]
-#define SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type swig_types[46]
+#define SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t swig_types[44]
+#define SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__allocator_type swig_types[45]
+#define SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type swig_types[46]
 #define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t swig_types[47]
 #define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type swig_types[48]
 #define SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type swig_types[49]
@@ -4308,54 +4308,54 @@ SWIGINTERN void std_vector_Sl_TPoint_Sg__append(std::vector< TPoint > *self,std:
     }
 
   namespace swig {
-    template <>  struct traits<Func32::TCoordSet > {
+    template <>  struct traits<Func32::TCoordSet< > > {
       typedef pointer_category category;
-      static const char* type_name() { return"Func32::TCoordSet"; }
+      static const char* type_name() { return"Func32::TCoordSet< >"; }
     };
   }
 
 
       namespace swig {
-	template <>  struct traits<std::vector<Func32::TCoordSet, std::allocator< Func32::TCoordSet > > > {
+	template <>  struct traits<std::vector<Func32::TCoordSet< >, std::allocator< Func32::TCoordSet< > > > > {
 	  typedef pointer_category category;
 	  static const char* type_name() {
-	    return "std::vector<" "Func32::TCoordSet" "," "std::allocator< Func32::TCoordSet >" " >";
+	    return "std::vector<" "Func32::TCoordSet< >" "," "std::allocator< Func32::TCoordSet< > >" " >";
 	  }
 	};
       }
     
-SWIGINTERN swig::SwigPyIterator *std_vector_Sl_Func32_TCoordSet_Sg__iterator(std::vector< Func32::TCoordSet > *self,PyObject **PYTHON_SELF){
+SWIGINTERN swig::SwigPyIterator *std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg__iterator(std::vector< Func32::TCoordSet< > > *self,PyObject **PYTHON_SELF){
       return swig::make_output_iterator(self->begin(), self->begin(), self->end(), *PYTHON_SELF);
     }
-SWIGINTERN bool std_vector_Sl_Func32_TCoordSet_Sg____nonzero__(std::vector< Func32::TCoordSet > const *self){
+SWIGINTERN bool std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____nonzero__(std::vector< Func32::TCoordSet< > > const *self){
       return !(self->empty());
     }
-SWIGINTERN bool std_vector_Sl_Func32_TCoordSet_Sg____bool__(std::vector< Func32::TCoordSet > const *self){
+SWIGINTERN bool std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____bool__(std::vector< Func32::TCoordSet< > > const *self){
       return !(self->empty());
     }
-SWIGINTERN std::vector< Func32::TCoordSet >::size_type std_vector_Sl_Func32_TCoordSet_Sg____len__(std::vector< Func32::TCoordSet > const *self){
+SWIGINTERN std::vector< Func32::TCoordSet< > >::size_type std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____len__(std::vector< Func32::TCoordSet< > > const *self){
       return self->size();
     }
-SWIGINTERN std::vector< Func32::TCoordSet >::value_type std_vector_Sl_Func32_TCoordSet_Sg__pop(std::vector< Func32::TCoordSet > *self){
+SWIGINTERN std::vector< Func32::TCoordSet< > >::value_type std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg__pop(std::vector< Func32::TCoordSet< > > *self){
       if (self->size() == 0)
 	throw std::out_of_range("pop from empty container");
-      std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >::value_type x = self->back();
+      std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >::value_type x = self->back();
       self->pop_back();
       return x;
     }
-SWIGINTERN std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *std_vector_Sl_Func32_TCoordSet_Sg____getslice__(std::vector< Func32::TCoordSet > *self,std::vector< Func32::TCoordSet >::difference_type i,std::vector< Func32::TCoordSet >::difference_type j){
+SWIGINTERN std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____getslice__(std::vector< Func32::TCoordSet< > > *self,std::vector< Func32::TCoordSet< > >::difference_type i,std::vector< Func32::TCoordSet< > >::difference_type j){
       return swig::getslice(self, i, j);
     }
-SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sg____setslice__(std::vector< Func32::TCoordSet > *self,std::vector< Func32::TCoordSet >::difference_type i,std::vector< Func32::TCoordSet >::difference_type j,std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > const &v){
+SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____setslice__(std::vector< Func32::TCoordSet< > > *self,std::vector< Func32::TCoordSet< > >::difference_type i,std::vector< Func32::TCoordSet< > >::difference_type j,std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > const &v){
       swig::setslice(self, i, j, v);
     }
-SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sg____delslice__(std::vector< Func32::TCoordSet > *self,std::vector< Func32::TCoordSet >::difference_type i,std::vector< Func32::TCoordSet >::difference_type j){
+SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____delslice__(std::vector< Func32::TCoordSet< > > *self,std::vector< Func32::TCoordSet< > >::difference_type i,std::vector< Func32::TCoordSet< > >::difference_type j){
       swig::delslice(self, i, j);
     }
-SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sg____delitem____SWIG_0(std::vector< Func32::TCoordSet > *self,std::vector< Func32::TCoordSet >::difference_type i){
+SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____delitem____SWIG_0(std::vector< Func32::TCoordSet< > > *self,std::vector< Func32::TCoordSet< > >::difference_type i){
       self->erase(swig::getpos(self,i));
     }
-SWIGINTERN std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *std_vector_Sl_Func32_TCoordSet_Sg____getitem____SWIG_0(std::vector< Func32::TCoordSet > *self,PySliceObject *slice){
+SWIGINTERN std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____getitem____SWIG_0(std::vector< Func32::TCoordSet< > > *self,PySliceObject *slice){
       Py_ssize_t i, j, step;
       if( !PySlice_Check(slice) ) {
         SWIG_Error(SWIG_TypeError, "Slice object expected.");
@@ -4364,7 +4364,7 @@ SWIGINTERN std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > 
       PySlice_GetIndices(slice, self->size(), &i, &j, &step);
       return swig::getslice(self, i, j);
     }
-SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sg____setitem____SWIG_0(std::vector< Func32::TCoordSet > *self,PySliceObject *slice,std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > const &v){
+SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____setitem____SWIG_0(std::vector< Func32::TCoordSet< > > *self,PySliceObject *slice,std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > const &v){
       Py_ssize_t i, j, step;
       if( !PySlice_Check(slice) ) {
         SWIG_Error(SWIG_TypeError, "Slice object expected.");
@@ -4373,7 +4373,7 @@ SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sg____setitem____SWIG_0(std::vect
       PySlice_GetIndices(slice, self->size(), &i, &j, &step);
       swig::setslice(self, i, j, v);
     }
-SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sg____delitem____SWIG_1(std::vector< Func32::TCoordSet > *self,PySliceObject *slice){
+SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____delitem____SWIG_1(std::vector< Func32::TCoordSet< > > *self,PySliceObject *slice){
       Py_ssize_t i, j, step;
       if( !PySlice_Check(slice) ) {
         SWIG_Error(SWIG_TypeError, "Slice object expected.");
@@ -4382,13 +4382,13 @@ SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sg____delitem____SWIG_1(std::vect
       PySlice_GetIndices(slice, self->size(), &i, &j, &step);
       swig::delslice(self, i,j);
     }
-SWIGINTERN std::vector< Func32::TCoordSet >::value_type const &std_vector_Sl_Func32_TCoordSet_Sg____getitem____SWIG_1(std::vector< Func32::TCoordSet > const *self,std::vector< Func32::TCoordSet >::difference_type i){
+SWIGINTERN std::vector< Func32::TCoordSet< > >::value_type const &std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____getitem____SWIG_1(std::vector< Func32::TCoordSet< > > const *self,std::vector< Func32::TCoordSet< > >::difference_type i){
       return *(swig::cgetpos(self, i));
     }
-SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sg____setitem____SWIG_1(std::vector< Func32::TCoordSet > *self,std::vector< Func32::TCoordSet >::difference_type i,std::vector< Func32::TCoordSet >::value_type const &x){
+SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____setitem____SWIG_1(std::vector< Func32::TCoordSet< > > *self,std::vector< Func32::TCoordSet< > >::difference_type i,std::vector< Func32::TCoordSet< > >::value_type const &x){
       *(swig::getpos(self,i)) = x;
     }
-SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sg__append(std::vector< Func32::TCoordSet > *self,std::vector< Func32::TCoordSet >::value_type const &x){
+SWIGINTERN void std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg__append(std::vector< Func32::TCoordSet< > > *self,std::vector< Func32::TCoordSet< > >::value_type const &x){
       self->push_back(x);
     }
 
@@ -7999,7 +7999,7 @@ SWIGINTERN PyObject *PointVector_swigregister(PyObject *SWIGUNUSEDPARM(self), Py
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_iterator(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   PyObject **arg2 = (PyObject **) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -8008,12 +8008,12 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_iterator(PyObject *SWIGUNUSEDPARM(self
   
   arg2 = &obj0;
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_iterator",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_iterator" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_iterator" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = (swig::SwigPyIterator *)std_vector_Sl_Func32_TCoordSet_Sg__iterator(arg1,arg2);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = (swig::SwigPyIterator *)std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg__iterator(arg1,arg2);
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
@@ -8023,19 +8023,19 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___nonzero__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   bool result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector___nonzero__",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___nonzero__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___nonzero__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = (bool)std_vector_Sl_Func32_TCoordSet_Sg____nonzero__((std::vector< Func32::TCoordSet > const *)arg1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = (bool)std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____nonzero__((std::vector< Func32::TCoordSet< > > const *)arg1);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
   return resultobj;
 fail:
@@ -8045,19 +8045,19 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___bool__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   bool result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector___bool__",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___bool__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___bool__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = (bool)std_vector_Sl_Func32_TCoordSet_Sg____bool__((std::vector< Func32::TCoordSet > const *)arg1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = (bool)std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____bool__((std::vector< Func32::TCoordSet< > > const *)arg1);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
   return resultobj;
 fail:
@@ -8067,19 +8067,19 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___len__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet >::size_type result;
+  std::vector< Func32::TCoordSet< > >::size_type result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector___len__",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___len__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___len__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = std_vector_Sl_Func32_TCoordSet_Sg____len__((std::vector< Func32::TCoordSet > const *)arg1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____len__((std::vector< Func32::TCoordSet< > > const *)arg1);
   resultobj = SWIG_From_size_t(static_cast< size_t >(result));
   return resultobj;
 fail:
@@ -8089,26 +8089,26 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_pop(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet >::value_type result;
+  std::vector< Func32::TCoordSet< > >::value_type result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_pop",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_pop" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_pop" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   try {
-    result = std_vector_Sl_Func32_TCoordSet_Sg__pop(arg1);
+    result = std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg__pop(arg1);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
   }
   
-  resultobj = SWIG_NewPointerObj((new std::vector< Func32::TCoordSet >::value_type(static_cast< const std::vector< Func32::TCoordSet >::value_type& >(result))), SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type, SWIG_POINTER_OWN |  0 );
+  resultobj = SWIG_NewPointerObj((new std::vector< Func32::TCoordSet< > >::value_type(static_cast< const std::vector< Func32::TCoordSet< > >::value_type& >(result))), SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -8117,9 +8117,9 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___getslice__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::difference_type arg2 ;
-  std::vector< Func32::TCoordSet >::difference_type arg3 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::difference_type arg2 ;
+  std::vector< Func32::TCoordSet< > >::difference_type arg3 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   ptrdiff_t val2 ;
@@ -8129,32 +8129,32 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___getslice__(PyObject *SWIGUNUSEDPARM(
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
-  std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *result = 0 ;
+  std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:CoordSetVector___getslice__",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___getslice__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___getslice__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___getslice__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::difference_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___getslice__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::difference_type""'");
   } 
-  arg2 = static_cast< std::vector< Func32::TCoordSet >::difference_type >(val2);
+  arg2 = static_cast< std::vector< Func32::TCoordSet< > >::difference_type >(val2);
   ecode3 = SWIG_AsVal_ptrdiff_t(obj2, &val3);
   if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "CoordSetVector___getslice__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::difference_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "CoordSetVector___getslice__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::difference_type""'");
   } 
-  arg3 = static_cast< std::vector< Func32::TCoordSet >::difference_type >(val3);
+  arg3 = static_cast< std::vector< Func32::TCoordSet< > >::difference_type >(val3);
   try {
-    result = (std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *)std_vector_Sl_Func32_TCoordSet_Sg____getslice__(arg1,arg2,arg3);
+    result = (std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *)std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____getslice__(arg1,arg2,arg3);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
   }
   
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, SWIG_POINTER_OWN |  0 );
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -8163,10 +8163,10 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___setslice__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::difference_type arg2 ;
-  std::vector< Func32::TCoordSet >::difference_type arg3 ;
-  std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *arg4 = 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::difference_type arg2 ;
+  std::vector< Func32::TCoordSet< > >::difference_type arg3 ;
+  std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *arg4 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   ptrdiff_t val2 ;
@@ -8180,34 +8180,34 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___setslice__(PyObject *SWIGUNUSEDPARM(
   PyObject * obj3 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OOOO:CoordSetVector___setslice__",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___setslice__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___setslice__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___setslice__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::difference_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___setslice__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::difference_type""'");
   } 
-  arg2 = static_cast< std::vector< Func32::TCoordSet >::difference_type >(val2);
+  arg2 = static_cast< std::vector< Func32::TCoordSet< > >::difference_type >(val2);
   ecode3 = SWIG_AsVal_ptrdiff_t(obj2, &val3);
   if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "CoordSetVector___setslice__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::difference_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "CoordSetVector___setslice__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::difference_type""'");
   } 
-  arg3 = static_cast< std::vector< Func32::TCoordSet >::difference_type >(val3);
+  arg3 = static_cast< std::vector< Func32::TCoordSet< > >::difference_type >(val3);
   {
-    std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *ptr = (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *)0;
+    std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *ptr = (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *)0;
     res4 = swig::asptr(obj3, &ptr);
     if (!SWIG_IsOK(res4)) {
-      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "CoordSetVector___setslice__" "', argument " "4"" of type '" "std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > const &""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "CoordSetVector___setslice__" "', argument " "4"" of type '" "std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector___setslice__" "', argument " "4"" of type '" "std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > const &""'"); 
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector___setslice__" "', argument " "4"" of type '" "std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > const &""'"); 
     }
     arg4 = ptr;
   }
   try {
-    std_vector_Sl_Func32_TCoordSet_Sg____setslice__(arg1,arg2,arg3,(std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > const &)*arg4);
+    std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____setslice__(arg1,arg2,arg3,(std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > const &)*arg4);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
@@ -8227,9 +8227,9 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___delslice__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::difference_type arg2 ;
-  std::vector< Func32::TCoordSet >::difference_type arg3 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::difference_type arg2 ;
+  std::vector< Func32::TCoordSet< > >::difference_type arg3 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   ptrdiff_t val2 ;
@@ -8241,23 +8241,23 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___delslice__(PyObject *SWIGUNUSEDPARM(
   PyObject * obj2 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:CoordSetVector___delslice__",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___delslice__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___delslice__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___delslice__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::difference_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___delslice__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::difference_type""'");
   } 
-  arg2 = static_cast< std::vector< Func32::TCoordSet >::difference_type >(val2);
+  arg2 = static_cast< std::vector< Func32::TCoordSet< > >::difference_type >(val2);
   ecode3 = SWIG_AsVal_ptrdiff_t(obj2, &val3);
   if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "CoordSetVector___delslice__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::difference_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "CoordSetVector___delslice__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::difference_type""'");
   } 
-  arg3 = static_cast< std::vector< Func32::TCoordSet >::difference_type >(val3);
+  arg3 = static_cast< std::vector< Func32::TCoordSet< > >::difference_type >(val3);
   try {
-    std_vector_Sl_Func32_TCoordSet_Sg____delslice__(arg1,arg2,arg3);
+    std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____delslice__(arg1,arg2,arg3);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
@@ -8272,8 +8272,8 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___delitem____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::difference_type arg2 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::difference_type arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   ptrdiff_t val2 ;
@@ -8282,18 +8282,18 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___delitem____SWIG_0(PyObject *SWIGUNUS
   PyObject * obj1 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:CoordSetVector___delitem__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___delitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___delitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___delitem__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::difference_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___delitem__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::difference_type""'");
   } 
-  arg2 = static_cast< std::vector< Func32::TCoordSet >::difference_type >(val2);
+  arg2 = static_cast< std::vector< Func32::TCoordSet< > >::difference_type >(val2);
   try {
-    std_vector_Sl_Func32_TCoordSet_Sg____delitem____SWIG_0(arg1,arg2);
+    std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____delitem____SWIG_0(arg1,arg2);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
@@ -8308,31 +8308,31 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___getitem____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   PySliceObject *arg2 = (PySliceObject *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *result = 0 ;
+  std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:CoordSetVector___getitem__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___getitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___getitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   {
     arg2 = (PySliceObject *) obj1;
   }
   try {
-    result = (std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *)std_vector_Sl_Func32_TCoordSet_Sg____getitem____SWIG_0(arg1,arg2);
+    result = (std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *)std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____getitem____SWIG_0(arg1,arg2);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
   }
   
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -8341,9 +8341,9 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___setitem____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   PySliceObject *arg2 = (PySliceObject *) 0 ;
-  std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *arg3 = 0 ;
+  std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *arg3 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res3 = SWIG_OLDOBJ ;
@@ -8352,27 +8352,27 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___setitem____SWIG_0(PyObject *SWIGUNUS
   PyObject * obj2 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:CoordSetVector___setitem__",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___setitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___setitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   {
     arg2 = (PySliceObject *) obj1;
   }
   {
-    std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *ptr = (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *)0;
+    std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *ptr = (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *)0;
     res3 = swig::asptr(obj2, &ptr);
     if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CoordSetVector___setitem__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > const &""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CoordSetVector___setitem__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector___setitem__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > const &""'"); 
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector___setitem__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > const &""'"); 
     }
     arg3 = ptr;
   }
   try {
-    std_vector_Sl_Func32_TCoordSet_Sg____setitem____SWIG_0(arg1,arg2,(std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > const &)*arg3);
+    std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____setitem____SWIG_0(arg1,arg2,(std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > const &)*arg3);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
@@ -8392,7 +8392,7 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___delitem____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   PySliceObject *arg2 = (PySliceObject *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -8400,16 +8400,16 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___delitem____SWIG_1(PyObject *SWIGUNUS
   PyObject * obj1 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:CoordSetVector___delitem__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___delitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___delitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   {
     arg2 = (PySliceObject *) obj1;
   }
   try {
-    std_vector_Sl_Func32_TCoordSet_Sg____delitem____SWIG_1(arg1,arg2);
+    std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____delitem____SWIG_1(arg1,arg2);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
@@ -8434,7 +8434,7 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___delitem__(PyObject *self, PyObject *
   }
   if (argc == 2) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       {
@@ -8447,7 +8447,7 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___delitem__(PyObject *self, PyObject *
   }
   if (argc == 2) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       {
@@ -8463,37 +8463,37 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___delitem__(PyObject *self, PyObject *
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number of arguments for overloaded function 'CoordSetVector___delitem__'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    __delitem__(std::vector< Func32::TCoordSet > *,std::vector< Func32::TCoordSet >::difference_type)\n"
-    "    __delitem__(std::vector< Func32::TCoordSet > *,PySliceObject *)\n");
+    "    __delitem__(std::vector< Func32::TCoordSet< > > *,std::vector< Func32::TCoordSet< > >::difference_type)\n"
+    "    __delitem__(std::vector< Func32::TCoordSet< > > *,PySliceObject *)\n");
   return NULL;
 }
 
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___getitem____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::difference_type arg2 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::difference_type arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   ptrdiff_t val2 ;
   int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  std::vector< Func32::TCoordSet >::value_type *result = 0 ;
+  std::vector< Func32::TCoordSet< > >::value_type *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:CoordSetVector___getitem__",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___getitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___getitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___getitem__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::difference_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___getitem__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::difference_type""'");
   } 
-  arg2 = static_cast< std::vector< Func32::TCoordSet >::difference_type >(val2);
+  arg2 = static_cast< std::vector< Func32::TCoordSet< > >::difference_type >(val2);
   try {
-    result = (std::vector< Func32::TCoordSet >::value_type *) &std_vector_Sl_Func32_TCoordSet_Sg____getitem____SWIG_1((std::vector< Func32::TCoordSet > const *)arg1,arg2);
+    result = (std::vector< Func32::TCoordSet< > >::value_type *) &std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____getitem____SWIG_1((std::vector< Func32::TCoordSet< > > const *)arg1,arg2);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
@@ -8520,7 +8520,7 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___getitem__(PyObject *self, PyObject *
   }
   if (argc == 2) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       {
@@ -8533,7 +8533,7 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___getitem__(PyObject *self, PyObject *
   }
   if (argc == 2) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       {
@@ -8549,17 +8549,17 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___getitem__(PyObject *self, PyObject *
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number of arguments for overloaded function 'CoordSetVector___getitem__'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    __getitem__(std::vector< Func32::TCoordSet > *,PySliceObject *)\n"
-    "    __getitem__(std::vector< Func32::TCoordSet > const *,std::vector< Func32::TCoordSet >::difference_type)\n");
+    "    __getitem__(std::vector< Func32::TCoordSet< > > *,PySliceObject *)\n"
+    "    __getitem__(std::vector< Func32::TCoordSet< > > const *,std::vector< Func32::TCoordSet< > >::difference_type)\n");
   return NULL;
 }
 
 
 SWIGINTERN PyObject *_wrap_CoordSetVector___setitem____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::difference_type arg2 ;
-  std::vector< Func32::TCoordSet >::value_type *arg3 = 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::difference_type arg2 ;
+  std::vector< Func32::TCoordSet< > >::value_type *arg3 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   ptrdiff_t val2 ;
@@ -8571,26 +8571,26 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___setitem____SWIG_1(PyObject *SWIGUNUS
   PyObject * obj2 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:CoordSetVector___setitem__",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___setitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector___setitem__" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___setitem__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::difference_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector___setitem__" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::difference_type""'");
   } 
-  arg2 = static_cast< std::vector< Func32::TCoordSet >::difference_type >(val2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type,  0  | 0);
+  arg2 = static_cast< std::vector< Func32::TCoordSet< > >::difference_type >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type,  0  | 0);
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CoordSetVector___setitem__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CoordSetVector___setitem__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
   if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector___setitem__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector___setitem__" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
-  arg3 = reinterpret_cast< std::vector< Func32::TCoordSet >::value_type * >(argp3);
+  arg3 = reinterpret_cast< std::vector< Func32::TCoordSet< > >::value_type * >(argp3);
   try {
-    std_vector_Sl_Func32_TCoordSet_Sg____setitem____SWIG_1(arg1,arg2,(Func32::TCoordSet const &)*arg3);
+    std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg____setitem____SWIG_1(arg1,arg2,(Func32::TCoordSet< > const &)*arg3);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
@@ -8615,14 +8615,14 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___setitem__(PyObject *self, PyObject *
   }
   if (argc == 3) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       {
         _v = PySlice_Check(argv[1]);
       }
       if (_v) {
-        int res = swig::asptr(argv[2], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+        int res = swig::asptr(argv[2], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
         _v = SWIG_CheckState(res);
         if (_v) {
           return _wrap_CoordSetVector___setitem____SWIG_0(self, args);
@@ -8632,7 +8632,7 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___setitem__(PyObject *self, PyObject *
   }
   if (argc == 3) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       {
@@ -8640,7 +8640,7 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___setitem__(PyObject *self, PyObject *
         _v = SWIG_CheckState(res);
       }
       if (_v) {
-        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type, 0);
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type, 0);
         _v = SWIG_CheckState(res);
         if (_v) {
           return _wrap_CoordSetVector___setitem____SWIG_1(self, args);
@@ -8652,16 +8652,16 @@ SWIGINTERN PyObject *_wrap_CoordSetVector___setitem__(PyObject *self, PyObject *
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number of arguments for overloaded function 'CoordSetVector___setitem__'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    __setitem__(std::vector< Func32::TCoordSet > *,PySliceObject *,std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > const &)\n"
-    "    __setitem__(std::vector< Func32::TCoordSet > *,std::vector< Func32::TCoordSet >::difference_type,std::vector< Func32::TCoordSet >::value_type const &)\n");
+    "    __setitem__(std::vector< Func32::TCoordSet< > > *,PySliceObject *,std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > const &)\n"
+    "    __setitem__(std::vector< Func32::TCoordSet< > > *,std::vector< Func32::TCoordSet< > >::difference_type,std::vector< Func32::TCoordSet< > >::value_type const &)\n");
   return NULL;
 }
 
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_append(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::value_type *arg2 = 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::value_type *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
@@ -8670,20 +8670,20 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_append(PyObject *SWIGUNUSEDPARM(self),
   PyObject * obj1 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:CoordSetVector_append",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_append" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_append" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type,  0  | 0);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type,  0  | 0);
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "CoordSetVector_append" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "CoordSetVector_append" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_append" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_append" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
-  arg2 = reinterpret_cast< std::vector< Func32::TCoordSet >::value_type * >(argp2);
-  std_vector_Sl_Func32_TCoordSet_Sg__append(arg1,(Func32::TCoordSet const &)*arg2);
+  arg2 = reinterpret_cast< std::vector< Func32::TCoordSet< > >::value_type * >(argp2);
+  std_vector_Sl_Func32_TCoordSet_Sl__Sg__Sg__append(arg1,(Func32::TCoordSet< > const &)*arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -8693,11 +8693,11 @@ fail:
 
 SWIGINTERN PyObject *_wrap_new_CoordSetVector__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *result = 0 ;
+  std::vector< Func32::TCoordSet< > > *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)":new_CoordSetVector")) SWIG_fail;
-  result = (std::vector< Func32::TCoordSet > *)new std::vector< Func32::TCoordSet >();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, SWIG_POINTER_NEW |  0 );
+  result = (std::vector< Func32::TCoordSet< > > *)new std::vector< Func32::TCoordSet< > >();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, SWIG_POINTER_NEW |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -8706,25 +8706,25 @@ fail:
 
 SWIGINTERN PyObject *_wrap_new_CoordSetVector__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet > *result = 0 ;
+  std::vector< Func32::TCoordSet< > > *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:new_CoordSetVector",&obj0)) SWIG_fail;
   {
-    std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *ptr = (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *)0;
+    std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *ptr = (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *)0;
     res1 = swig::asptr(obj0, &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_CoordSetVector" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const &""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_CoordSetVector" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_CoordSetVector" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const &""'"); 
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_CoordSetVector" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const &""'"); 
     }
     arg1 = ptr;
   }
-  result = (std::vector< Func32::TCoordSet > *)new std::vector< Func32::TCoordSet >((std::vector< Func32::TCoordSet > const &)*arg1);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, SWIG_POINTER_NEW |  0 );
+  result = (std::vector< Func32::TCoordSet< > > *)new std::vector< Func32::TCoordSet< > >((std::vector< Func32::TCoordSet< > > const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, SWIG_POINTER_NEW |  0 );
   if (SWIG_IsNewObj(res1)) delete arg1;
   return resultobj;
 fail:
@@ -8735,19 +8735,19 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_empty(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   bool result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_empty",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_empty" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_empty" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = (bool)((std::vector< Func32::TCoordSet > const *)arg1)->empty();
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = (bool)((std::vector< Func32::TCoordSet< > > const *)arg1)->empty();
   resultobj = SWIG_From_bool(static_cast< bool >(result));
   return resultobj;
 fail:
@@ -8757,19 +8757,19 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_size(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet >::size_type result;
+  std::vector< Func32::TCoordSet< > >::size_type result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_size",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_size" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_size" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = ((std::vector< Func32::TCoordSet > const *)arg1)->size();
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = ((std::vector< Func32::TCoordSet< > > const *)arg1)->size();
   resultobj = SWIG_From_size_t(static_cast< size_t >(result));
   return resultobj;
 fail:
@@ -8779,17 +8779,17 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_clear(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_clear",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_clear" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_clear" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   (arg1)->clear();
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -8800,8 +8800,8 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_swap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet > *arg2 = 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
@@ -8810,19 +8810,19 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_swap(PyObject *SWIGUNUSEDPARM(self), P
   PyObject * obj1 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:CoordSetVector_swap",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_swap" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_swap" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t,  0 );
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t,  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "CoordSetVector_swap" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet > &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "CoordSetVector_swap" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > > &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_swap" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet > &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_swap" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > > &""'"); 
   }
-  arg2 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp2);
+  arg2 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp2);
   (arg1)->swap(*arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -8833,20 +8833,20 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_get_allocator(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  SwigValueWrapper< std::allocator< Func32::TCoordSet > > result;
+  SwigValueWrapper< std::allocator< Func32::TCoordSet< > > > result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_get_allocator",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_get_allocator" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_get_allocator" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = ((std::vector< Func32::TCoordSet > const *)arg1)->get_allocator();
-  resultobj = SWIG_NewPointerObj((new std::vector< Func32::TCoordSet >::allocator_type(static_cast< const std::vector< Func32::TCoordSet >::allocator_type& >(result))), SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type, SWIG_POINTER_OWN |  0 );
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = ((std::vector< Func32::TCoordSet< > > const *)arg1)->get_allocator();
+  resultobj = SWIG_NewPointerObj((new std::vector< Func32::TCoordSet< > >::allocator_type(static_cast< const std::vector< Func32::TCoordSet< > >::allocator_type& >(result))), SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__allocator_type, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -8855,20 +8855,20 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_begin(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet >::const_iterator result;
+  std::vector< Func32::TCoordSet< > >::const_iterator result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_begin",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_begin" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_begin" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = ((std::vector< Func32::TCoordSet > const *)arg1)->begin();
-  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet >::const_iterator & >(result)),
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = ((std::vector< Func32::TCoordSet< > > const *)arg1)->begin();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet< > >::const_iterator & >(result)),
     swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
   return resultobj;
 fail:
@@ -8878,20 +8878,20 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_end(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet >::const_iterator result;
+  std::vector< Func32::TCoordSet< > >::const_iterator result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_end",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_end" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_end" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = ((std::vector< Func32::TCoordSet > const *)arg1)->end();
-  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet >::const_iterator & >(result)),
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = ((std::vector< Func32::TCoordSet< > > const *)arg1)->end();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet< > >::const_iterator & >(result)),
     swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
   return resultobj;
 fail:
@@ -8901,20 +8901,20 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_rbegin(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet >::const_reverse_iterator result;
+  std::vector< Func32::TCoordSet< > >::const_reverse_iterator result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_rbegin",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_rbegin" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_rbegin" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = ((std::vector< Func32::TCoordSet > const *)arg1)->rbegin();
-  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet >::const_reverse_iterator & >(result)),
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = ((std::vector< Func32::TCoordSet< > > const *)arg1)->rbegin();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet< > >::const_reverse_iterator & >(result)),
     swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
   return resultobj;
 fail:
@@ -8924,20 +8924,20 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_rend(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet >::const_reverse_iterator result;
+  std::vector< Func32::TCoordSet< > >::const_reverse_iterator result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_rend",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_rend" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_rend" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = ((std::vector< Func32::TCoordSet > const *)arg1)->rend();
-  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet >::const_reverse_iterator & >(result)),
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = ((std::vector< Func32::TCoordSet< > > const *)arg1)->rend();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet< > >::const_reverse_iterator & >(result)),
     swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
   return resultobj;
 fail:
@@ -8947,20 +8947,20 @@ fail:
 
 SWIGINTERN PyObject *_wrap_new_CoordSetVector__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet >::size_type arg1 ;
+  std::vector< Func32::TCoordSet< > >::size_type arg1 ;
   size_t val1 ;
   int ecode1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet > *result = 0 ;
+  std::vector< Func32::TCoordSet< > > *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:new_CoordSetVector",&obj0)) SWIG_fail;
   ecode1 = SWIG_AsVal_size_t(obj0, &val1);
   if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_CoordSetVector" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet >::size_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_CoordSetVector" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > >::size_type""'");
   } 
-  arg1 = static_cast< std::vector< Func32::TCoordSet >::size_type >(val1);
-  result = (std::vector< Func32::TCoordSet > *)new std::vector< Func32::TCoordSet >(arg1);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, SWIG_POINTER_NEW |  0 );
+  arg1 = static_cast< std::vector< Func32::TCoordSet< > >::size_type >(val1);
+  result = (std::vector< Func32::TCoordSet< > > *)new std::vector< Func32::TCoordSet< > >(arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, SWIG_POINTER_NEW |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -8969,17 +8969,17 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_pop_back(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_pop_back",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_pop_back" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_pop_back" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   (arg1)->pop_back();
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -8990,8 +8990,8 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_resize__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::size_type arg2 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::size_type arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   size_t val2 ;
@@ -9000,16 +9000,16 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_resize__SWIG_0(PyObject *SWIGUNUSEDPAR
   PyObject * obj1 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:CoordSetVector_resize",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_resize" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_resize" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   ecode2 = SWIG_AsVal_size_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector_resize" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::size_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector_resize" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::size_type""'");
   } 
-  arg2 = static_cast< std::vector< Func32::TCoordSet >::size_type >(val2);
+  arg2 = static_cast< std::vector< Func32::TCoordSet< > >::size_type >(val2);
   (arg1)->resize(arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -9020,35 +9020,35 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_erase__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::iterator arg2 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::iterator arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   swig::SwigPyIterator *iter2 = 0 ;
   int res2 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  std::vector< Func32::TCoordSet >::iterator result;
+  std::vector< Func32::TCoordSet< > >::iterator result;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:CoordSetVector_erase",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_erase" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_erase" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   res2 = SWIG_ConvertPtr(obj1, SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
   if (!SWIG_IsOK(res2) || !iter2) {
-    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::iterator""'");
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::iterator""'");
   } else {
-    swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *>(iter2);
+    swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *>(iter2);
     if (iter_t) {
       arg2 = iter_t->get_current();
     } else {
-      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::iterator""'");
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::iterator""'");
     }
   }
   result = (arg1)->erase(arg2);
-  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet >::iterator & >(result)),
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet< > >::iterator & >(result)),
     swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
   return resultobj;
 fail:
@@ -9058,9 +9058,9 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_erase__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::iterator arg2 ;
-  std::vector< Func32::TCoordSet >::iterator arg3 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::iterator arg2 ;
+  std::vector< Func32::TCoordSet< > >::iterator arg3 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   swig::SwigPyIterator *iter2 = 0 ;
@@ -9070,38 +9070,38 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_erase__SWIG_1(PyObject *SWIGUNUSEDPARM
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
-  std::vector< Func32::TCoordSet >::iterator result;
+  std::vector< Func32::TCoordSet< > >::iterator result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:CoordSetVector_erase",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_erase" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_erase" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   res2 = SWIG_ConvertPtr(obj1, SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
   if (!SWIG_IsOK(res2) || !iter2) {
-    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::iterator""'");
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::iterator""'");
   } else {
-    swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *>(iter2);
+    swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *>(iter2);
     if (iter_t) {
       arg2 = iter_t->get_current();
     } else {
-      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::iterator""'");
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::iterator""'");
     }
   }
   res3 = SWIG_ConvertPtr(obj2, SWIG_as_voidptrptr(&iter3), swig::SwigPyIterator::descriptor(), 0);
   if (!SWIG_IsOK(res3) || !iter3) {
-    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::iterator""'");
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::iterator""'");
   } else {
-    swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *>(iter3);
+    swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *>(iter3);
     if (iter_t) {
       arg3 = iter_t->get_current();
     } else {
-      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::iterator""'");
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_erase" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::iterator""'");
     }
   }
   result = (arg1)->erase(arg2,arg3);
-  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet >::iterator & >(result)),
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet< > >::iterator & >(result)),
     swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
   return resultobj;
 fail:
@@ -9121,12 +9121,12 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_erase(PyObject *self, PyObject *args) 
   }
   if (argc == 2) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       swig::SwigPyIterator *iter = 0;
       int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
-      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *>(iter) != 0));
+      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *>(iter) != 0));
       if (_v) {
         return _wrap_CoordSetVector_erase__SWIG_0(self, args);
       }
@@ -9134,16 +9134,16 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_erase(PyObject *self, PyObject *args) 
   }
   if (argc == 3) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       swig::SwigPyIterator *iter = 0;
       int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
-      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *>(iter) != 0));
+      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *>(iter) != 0));
       if (_v) {
         swig::SwigPyIterator *iter = 0;
         int res = SWIG_ConvertPtr(argv[2], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
-        _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *>(iter) != 0));
+        _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *>(iter) != 0));
         if (_v) {
           return _wrap_CoordSetVector_erase__SWIG_1(self, args);
         }
@@ -9154,40 +9154,40 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_erase(PyObject *self, PyObject *args) 
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number of arguments for overloaded function 'CoordSetVector_erase'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    erase(std::vector< Func32::TCoordSet > *,std::vector< Func32::TCoordSet >::iterator)\n"
-    "    erase(std::vector< Func32::TCoordSet > *,std::vector< Func32::TCoordSet >::iterator,std::vector< Func32::TCoordSet >::iterator)\n");
+    "    erase(std::vector< Func32::TCoordSet< > > *,std::vector< Func32::TCoordSet< > >::iterator)\n"
+    "    erase(std::vector< Func32::TCoordSet< > > *,std::vector< Func32::TCoordSet< > >::iterator,std::vector< Func32::TCoordSet< > >::iterator)\n");
   return NULL;
 }
 
 
 SWIGINTERN PyObject *_wrap_new_CoordSetVector__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet >::size_type arg1 ;
-  std::vector< Func32::TCoordSet >::value_type *arg2 = 0 ;
+  std::vector< Func32::TCoordSet< > >::size_type arg1 ;
+  std::vector< Func32::TCoordSet< > >::value_type *arg2 = 0 ;
   size_t val1 ;
   int ecode1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  std::vector< Func32::TCoordSet > *result = 0 ;
+  std::vector< Func32::TCoordSet< > > *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:new_CoordSetVector",&obj0,&obj1)) SWIG_fail;
   ecode1 = SWIG_AsVal_size_t(obj0, &val1);
   if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_CoordSetVector" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet >::size_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_CoordSetVector" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > >::size_type""'");
   } 
-  arg1 = static_cast< std::vector< Func32::TCoordSet >::size_type >(val1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type,  0  | 0);
+  arg1 = static_cast< std::vector< Func32::TCoordSet< > >::size_type >(val1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type,  0  | 0);
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_CoordSetVector" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_CoordSetVector" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_CoordSetVector" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_CoordSetVector" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
-  arg2 = reinterpret_cast< std::vector< Func32::TCoordSet >::value_type * >(argp2);
-  result = (std::vector< Func32::TCoordSet > *)new std::vector< Func32::TCoordSet >(arg1,(std::vector< Func32::TCoordSet >::value_type const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, SWIG_POINTER_NEW |  0 );
+  arg2 = reinterpret_cast< std::vector< Func32::TCoordSet< > >::value_type * >(argp2);
+  result = (std::vector< Func32::TCoordSet< > > *)new std::vector< Func32::TCoordSet< > >(arg1,(std::vector< Func32::TCoordSet< > >::value_type const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, SWIG_POINTER_NEW |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -9219,7 +9219,7 @@ SWIGINTERN PyObject *_wrap_new_CoordSetVector(PyObject *self, PyObject *args) {
   }
   if (argc == 1) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       return _wrap_new_CoordSetVector__SWIG_1(self, args);
@@ -9232,7 +9232,7 @@ SWIGINTERN PyObject *_wrap_new_CoordSetVector(PyObject *self, PyObject *args) {
       _v = SWIG_CheckState(res);
     }
     if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type, 0);
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
         return _wrap_new_CoordSetVector__SWIG_3(self, args);
@@ -9243,18 +9243,18 @@ SWIGINTERN PyObject *_wrap_new_CoordSetVector(PyObject *self, PyObject *args) {
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number of arguments for overloaded function 'new_CoordSetVector'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    std::vector< Func32::TCoordSet >()\n"
-    "    std::vector< Func32::TCoordSet >(std::vector< Func32::TCoordSet > const &)\n"
-    "    std::vector< Func32::TCoordSet >(std::vector< Func32::TCoordSet >::size_type)\n"
-    "    std::vector< Func32::TCoordSet >(std::vector< Func32::TCoordSet >::size_type,std::vector< Func32::TCoordSet >::value_type const &)\n");
+    "    std::vector< Func32::TCoordSet< > >()\n"
+    "    std::vector< Func32::TCoordSet< > >(std::vector< Func32::TCoordSet< > > const &)\n"
+    "    std::vector< Func32::TCoordSet< > >(std::vector< Func32::TCoordSet< > >::size_type)\n"
+    "    std::vector< Func32::TCoordSet< > >(std::vector< Func32::TCoordSet< > >::size_type,std::vector< Func32::TCoordSet< > >::value_type const &)\n");
   return NULL;
 }
 
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_push_back(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::value_type *arg2 = 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::value_type *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
@@ -9263,20 +9263,20 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_push_back(PyObject *SWIGUNUSEDPARM(sel
   PyObject * obj1 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:CoordSetVector_push_back",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_push_back" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_push_back" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type,  0  | 0);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type,  0  | 0);
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "CoordSetVector_push_back" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "CoordSetVector_push_back" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_push_back" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_push_back" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
-  arg2 = reinterpret_cast< std::vector< Func32::TCoordSet >::value_type * >(argp2);
-  (arg1)->push_back((std::vector< Func32::TCoordSet >::value_type const &)*arg2);
+  arg2 = reinterpret_cast< std::vector< Func32::TCoordSet< > >::value_type * >(argp2);
+  (arg1)->push_back((std::vector< Func32::TCoordSet< > >::value_type const &)*arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -9286,19 +9286,19 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_front(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet >::value_type *result = 0 ;
+  std::vector< Func32::TCoordSet< > >::value_type *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_front",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_front" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_front" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = (std::vector< Func32::TCoordSet >::value_type *) &((std::vector< Func32::TCoordSet > const *)arg1)->front();
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = (std::vector< Func32::TCoordSet< > >::value_type *) &((std::vector< Func32::TCoordSet< > > const *)arg1)->front();
   {
     resultobj = Py_BuildValue("ddd", (double)result->t, (double)result->x, (double)result->y);
   }
@@ -9310,19 +9310,19 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_back(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet >::value_type *result = 0 ;
+  std::vector< Func32::TCoordSet< > >::value_type *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_back",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_back" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_back" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = (std::vector< Func32::TCoordSet >::value_type *) &((std::vector< Func32::TCoordSet > const *)arg1)->back();
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = (std::vector< Func32::TCoordSet< > >::value_type *) &((std::vector< Func32::TCoordSet< > > const *)arg1)->back();
   {
     resultobj = Py_BuildValue("ddd", (double)result->t, (double)result->x, (double)result->y);
   }
@@ -9334,9 +9334,9 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_assign(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::size_type arg2 ;
-  std::vector< Func32::TCoordSet >::value_type *arg3 = 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::size_type arg2 ;
+  std::vector< Func32::TCoordSet< > >::value_type *arg3 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   size_t val2 ;
@@ -9348,25 +9348,25 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_assign(PyObject *SWIGUNUSEDPARM(self),
   PyObject * obj2 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:CoordSetVector_assign",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_assign" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_assign" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   ecode2 = SWIG_AsVal_size_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector_assign" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::size_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector_assign" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::size_type""'");
   } 
-  arg2 = static_cast< std::vector< Func32::TCoordSet >::size_type >(val2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type,  0  | 0);
+  arg2 = static_cast< std::vector< Func32::TCoordSet< > >::size_type >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type,  0  | 0);
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CoordSetVector_assign" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CoordSetVector_assign" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
   if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_assign" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_assign" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
-  arg3 = reinterpret_cast< std::vector< Func32::TCoordSet >::value_type * >(argp3);
-  (arg1)->assign(arg2,(std::vector< Func32::TCoordSet >::value_type const &)*arg3);
+  arg3 = reinterpret_cast< std::vector< Func32::TCoordSet< > >::value_type * >(argp3);
+  (arg1)->assign(arg2,(std::vector< Func32::TCoordSet< > >::value_type const &)*arg3);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -9376,9 +9376,9 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_resize__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::size_type arg2 ;
-  std::vector< Func32::TCoordSet >::value_type *arg3 = 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::size_type arg2 ;
+  std::vector< Func32::TCoordSet< > >::value_type *arg3 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   size_t val2 ;
@@ -9390,25 +9390,25 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_resize__SWIG_1(PyObject *SWIGUNUSEDPAR
   PyObject * obj2 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:CoordSetVector_resize",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_resize" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_resize" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   ecode2 = SWIG_AsVal_size_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector_resize" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::size_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector_resize" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::size_type""'");
   } 
-  arg2 = static_cast< std::vector< Func32::TCoordSet >::size_type >(val2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type,  0  | 0);
+  arg2 = static_cast< std::vector< Func32::TCoordSet< > >::size_type >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type,  0  | 0);
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CoordSetVector_resize" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CoordSetVector_resize" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
   if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_resize" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_resize" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
-  arg3 = reinterpret_cast< std::vector< Func32::TCoordSet >::value_type * >(argp3);
-  (arg1)->resize(arg2,(std::vector< Func32::TCoordSet >::value_type const &)*arg3);
+  arg3 = reinterpret_cast< std::vector< Func32::TCoordSet< > >::value_type * >(argp3);
+  (arg1)->resize(arg2,(std::vector< Func32::TCoordSet< > >::value_type const &)*arg3);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -9428,7 +9428,7 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_resize(PyObject *self, PyObject *args)
   }
   if (argc == 2) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       {
@@ -9442,7 +9442,7 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_resize(PyObject *self, PyObject *args)
   }
   if (argc == 3) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       {
@@ -9450,7 +9450,7 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_resize(PyObject *self, PyObject *args)
         _v = SWIG_CheckState(res);
       }
       if (_v) {
-        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type, 0);
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type, 0);
         _v = SWIG_CheckState(res);
         if (_v) {
           return _wrap_CoordSetVector_resize__SWIG_1(self, args);
@@ -9462,17 +9462,17 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_resize(PyObject *self, PyObject *args)
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number of arguments for overloaded function 'CoordSetVector_resize'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    resize(std::vector< Func32::TCoordSet > *,std::vector< Func32::TCoordSet >::size_type)\n"
-    "    resize(std::vector< Func32::TCoordSet > *,std::vector< Func32::TCoordSet >::size_type,std::vector< Func32::TCoordSet >::value_type const &)\n");
+    "    resize(std::vector< Func32::TCoordSet< > > *,std::vector< Func32::TCoordSet< > >::size_type)\n"
+    "    resize(std::vector< Func32::TCoordSet< > > *,std::vector< Func32::TCoordSet< > >::size_type,std::vector< Func32::TCoordSet< > >::value_type const &)\n");
   return NULL;
 }
 
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_insert__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::iterator arg2 ;
-  std::vector< Func32::TCoordSet >::value_type *arg3 = 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::iterator arg2 ;
+  std::vector< Func32::TCoordSet< > >::value_type *arg3 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   swig::SwigPyIterator *iter2 = 0 ;
@@ -9482,35 +9482,35 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_insert__SWIG_0(PyObject *SWIGUNUSEDPAR
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
-  std::vector< Func32::TCoordSet >::iterator result;
+  std::vector< Func32::TCoordSet< > >::iterator result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:CoordSetVector_insert",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_insert" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_insert" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   res2 = SWIG_ConvertPtr(obj1, SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
   if (!SWIG_IsOK(res2) || !iter2) {
-    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_insert" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::iterator""'");
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_insert" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::iterator""'");
   } else {
-    swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *>(iter2);
+    swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *>(iter2);
     if (iter_t) {
       arg2 = iter_t->get_current();
     } else {
-      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_insert" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::iterator""'");
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_insert" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::iterator""'");
     }
   }
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type,  0  | 0);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type,  0  | 0);
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CoordSetVector_insert" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CoordSetVector_insert" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
   if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_insert" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_insert" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
-  arg3 = reinterpret_cast< std::vector< Func32::TCoordSet >::value_type * >(argp3);
-  result = (arg1)->insert(arg2,(std::vector< Func32::TCoordSet >::value_type const &)*arg3);
-  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet >::iterator & >(result)),
+  arg3 = reinterpret_cast< std::vector< Func32::TCoordSet< > >::value_type * >(argp3);
+  result = (arg1)->insert(arg2,(std::vector< Func32::TCoordSet< > >::value_type const &)*arg3);
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< Func32::TCoordSet< > >::iterator & >(result)),
     swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
   return resultobj;
 fail:
@@ -9520,10 +9520,10 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_insert__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::iterator arg2 ;
-  std::vector< Func32::TCoordSet >::size_type arg3 ;
-  std::vector< Func32::TCoordSet >::value_type *arg4 = 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::iterator arg2 ;
+  std::vector< Func32::TCoordSet< > >::size_type arg3 ;
+  std::vector< Func32::TCoordSet< > >::value_type *arg4 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   swig::SwigPyIterator *iter2 = 0 ;
@@ -9538,36 +9538,36 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_insert__SWIG_1(PyObject *SWIGUNUSEDPAR
   PyObject * obj3 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OOOO:CoordSetVector_insert",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_insert" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_insert" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   res2 = SWIG_ConvertPtr(obj1, SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
   if (!SWIG_IsOK(res2) || !iter2) {
-    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_insert" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::iterator""'");
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_insert" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::iterator""'");
   } else {
-    swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *>(iter2);
+    swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *>(iter2);
     if (iter_t) {
       arg2 = iter_t->get_current();
     } else {
-      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_insert" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::iterator""'");
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "CoordSetVector_insert" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::iterator""'");
     }
   }
   ecode3 = SWIG_AsVal_size_t(obj2, &val3);
   if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "CoordSetVector_insert" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet >::size_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "CoordSetVector_insert" "', argument " "3"" of type '" "std::vector< Func32::TCoordSet< > >::size_type""'");
   } 
-  arg3 = static_cast< std::vector< Func32::TCoordSet >::size_type >(val3);
-  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type,  0  | 0);
+  arg3 = static_cast< std::vector< Func32::TCoordSet< > >::size_type >(val3);
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type,  0  | 0);
   if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "CoordSetVector_insert" "', argument " "4"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "CoordSetVector_insert" "', argument " "4"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
   if (!argp4) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_insert" "', argument " "4"" of type '" "std::vector< Func32::TCoordSet >::value_type const &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CoordSetVector_insert" "', argument " "4"" of type '" "std::vector< Func32::TCoordSet< > >::value_type const &""'"); 
   }
-  arg4 = reinterpret_cast< std::vector< Func32::TCoordSet >::value_type * >(argp4);
-  (arg1)->insert(arg2,arg3,(std::vector< Func32::TCoordSet >::value_type const &)*arg4);
+  arg4 = reinterpret_cast< std::vector< Func32::TCoordSet< > >::value_type * >(argp4);
+  (arg1)->insert(arg2,arg3,(std::vector< Func32::TCoordSet< > >::value_type const &)*arg4);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -9587,14 +9587,14 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_insert(PyObject *self, PyObject *args)
   }
   if (argc == 3) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       swig::SwigPyIterator *iter = 0;
       int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
-      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *>(iter) != 0));
+      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *>(iter) != 0));
       if (_v) {
-        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type, 0);
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type, 0);
         _v = SWIG_CheckState(res);
         if (_v) {
           return _wrap_CoordSetVector_insert__SWIG_0(self, args);
@@ -9604,19 +9604,19 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_insert(PyObject *self, PyObject *args)
   }
   if (argc == 4) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet,std::allocator< Func32::TCoordSet > >**)(0));
+    int res = swig::asptr(argv[0], (std::vector<Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > >**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       swig::SwigPyIterator *iter = 0;
       int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
-      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet >::iterator > *>(iter) != 0));
+      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< Func32::TCoordSet< > >::iterator > *>(iter) != 0));
       if (_v) {
         {
           int res = SWIG_AsVal_size_t(argv[2], NULL);
           _v = SWIG_CheckState(res);
         }
         if (_v) {
-          int res = SWIG_ConvertPtr(argv[3], 0, SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type, 0);
+          int res = SWIG_ConvertPtr(argv[3], 0, SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type, 0);
           _v = SWIG_CheckState(res);
           if (_v) {
             return _wrap_CoordSetVector_insert__SWIG_1(self, args);
@@ -9629,16 +9629,16 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_insert(PyObject *self, PyObject *args)
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number of arguments for overloaded function 'CoordSetVector_insert'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    insert(std::vector< Func32::TCoordSet > *,std::vector< Func32::TCoordSet >::iterator,std::vector< Func32::TCoordSet >::value_type const &)\n"
-    "    insert(std::vector< Func32::TCoordSet > *,std::vector< Func32::TCoordSet >::iterator,std::vector< Func32::TCoordSet >::size_type,std::vector< Func32::TCoordSet >::value_type const &)\n");
+    "    insert(std::vector< Func32::TCoordSet< > > *,std::vector< Func32::TCoordSet< > >::iterator,std::vector< Func32::TCoordSet< > >::value_type const &)\n"
+    "    insert(std::vector< Func32::TCoordSet< > > *,std::vector< Func32::TCoordSet< > >::iterator,std::vector< Func32::TCoordSet< > >::size_type,std::vector< Func32::TCoordSet< > >::value_type const &)\n");
   return NULL;
 }
 
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_reserve(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
-  std::vector< Func32::TCoordSet >::size_type arg2 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
+  std::vector< Func32::TCoordSet< > >::size_type arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   size_t val2 ;
@@ -9647,16 +9647,16 @@ SWIGINTERN PyObject *_wrap_CoordSetVector_reserve(PyObject *SWIGUNUSEDPARM(self)
   PyObject * obj1 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:CoordSetVector_reserve",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_reserve" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_reserve" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   ecode2 = SWIG_AsVal_size_t(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector_reserve" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet >::size_type""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CoordSetVector_reserve" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< > >::size_type""'");
   } 
-  arg2 = static_cast< std::vector< Func32::TCoordSet >::size_type >(val2);
+  arg2 = static_cast< std::vector< Func32::TCoordSet< > >::size_type >(val2);
   (arg1)->reserve(arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -9667,19 +9667,19 @@ fail:
 
 SWIGINTERN PyObject *_wrap_CoordSetVector_capacity(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet >::size_type result;
+  std::vector< Func32::TCoordSet< > >::size_type result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:CoordSetVector_capacity",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_capacity" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CoordSetVector_capacity" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > const *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
-  result = ((std::vector< Func32::TCoordSet > const *)arg1)->capacity();
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
+  result = ((std::vector< Func32::TCoordSet< > > const *)arg1)->capacity();
   resultobj = SWIG_From_size_t(static_cast< size_t >(result));
   return resultobj;
 fail:
@@ -9689,17 +9689,17 @@ fail:
 
 SWIGINTERN PyObject *_wrap_delete_CoordSetVector(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  std::vector< Func32::TCoordSet > *arg1 = (std::vector< Func32::TCoordSet > *) 0 ;
+  std::vector< Func32::TCoordSet< > > *arg1 = (std::vector< Func32::TCoordSet< > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:delete_CoordSetVector",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, SWIG_POINTER_DISOWN |  0 );
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, SWIG_POINTER_DISOWN |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_CoordSetVector" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_CoordSetVector" "', argument " "1"" of type '" "std::vector< Func32::TCoordSet< > > *""'"); 
   }
-  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet > * >(argp1);
+  arg1 = reinterpret_cast< std::vector< Func32::TCoordSet< > > * >(argp1);
   delete arg1;
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -9711,7 +9711,7 @@ fail:
 SWIGINTERN PyObject *CoordSetVector_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, SWIG_NewClientData(obj));
+  SWIG_TypeNewClientData(SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
@@ -13438,7 +13438,7 @@ SWIGINTERN PyObject *TGraphElem_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
 SWIGINTERN PyObject *_wrap_TBaseFuncType_sList_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TBaseFuncType *arg1 = (TBaseFuncType *) 0 ;
-  std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *arg2 = (std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *) 0 ;
+  std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *arg2 = (std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   boost::shared_ptr< TBaseFuncType > tempshared1 ;
@@ -13464,11 +13464,11 @@ SWIGINTERN PyObject *_wrap_TBaseFuncType_sList_set(PyObject *SWIGUNUSEDPARM(self
       arg1 = const_cast< TBaseFuncType * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TBaseFuncType_sList_set" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TBaseFuncType_sList_set" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *""'"); 
   }
-  arg2 = reinterpret_cast< std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > * >(argp2);
+  arg2 = reinterpret_cast< std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > * >(argp2);
   if (arg1) (arg1)->sList = *arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -13485,7 +13485,7 @@ SWIGINTERN PyObject *_wrap_TBaseFuncType_sList_get(PyObject *SWIGUNUSEDPARM(self
   boost::shared_ptr< TBaseFuncType > tempshared1 ;
   boost::shared_ptr< TBaseFuncType > *smartarg1 = 0 ;
   PyObject * obj0 = 0 ;
-  std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *result = 0 ;
+  std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TBaseFuncType_sList_get",&obj0)) SWIG_fail;
   {
@@ -13503,8 +13503,8 @@ SWIGINTERN PyObject *_wrap_TBaseFuncType_sList_get(PyObject *SWIGUNUSEDPARM(self
       arg1 = const_cast< TBaseFuncType * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
-  result = (std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *)& ((arg1)->sList);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0 |  0 );
+  result = (std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *)& ((arg1)->sList);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -17505,9 +17505,9 @@ static swig_type_info _swigt__p_std__invalid_argument = {"_p_std__invalid_argume
 static swig_type_info _swigt__p_std__lessT_std__wstring_t = {"_p_std__lessT_std__wstring_t", "std::less< std::wstring > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t = {"_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t", "std::map< std::wstring,std::wstring > *|std::map< std::wstring,std::wstring,std::less< std::wstring >,std::allocator< std::pair< std::wstring const,std::wstring > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t__allocator_type = {"_p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t__allocator_type", "std::allocator< std::pair< std::wstring const,std::wstring > > *|std::map< std::wstring,std::wstring >::allocator_type *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t = {"_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t", "std::vector< Func32::TCoordSet > *|std::vector< Func32::TCoordSet,std::allocator< Func32::TCoordSet > > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type = {"_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type", "std::vector< Func32::TCoordSet >::allocator_type *|std::allocator< Func32::TCoordSet > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type = {"_p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type", "std::vector< Func32::TCoordSet >::value_type *|Func32::TCoordSet *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t = {"_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t", "std::vector< Func32::TCoordSet< > > *|std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__allocator_type = {"_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__allocator_type", "std::allocator< Func32::TCoordSet< > > *|std::vector< Func32::TCoordSet< > >::allocator_type *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type = {"_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type", "std::vector< Func32::TCoordSet< > >::value_type *|Func32::TCoordSet< > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t = {"_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t", "std::vector< TPoint,std::allocator< TPoint > > *|std::vector< TPoint > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type = {"_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type", "std::vector< TPoint >::allocator_type *|std::allocator< TPoint > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type = {"_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type", "std::vector< TPoint >::value_type *|TPoint *", 0, 0, (void*)0, 0};
@@ -17564,9 +17564,9 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__lessT_std__wstring_t,
   &_swigt__p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t,
   &_swigt__p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t__allocator_type,
-  &_swigt__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t,
-  &_swigt__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type,
-  &_swigt__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type,
+  &_swigt__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t,
+  &_swigt__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__allocator_type,
+  &_swigt__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type,
   &_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t,
   &_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type,
   &_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type,
@@ -17623,9 +17623,9 @@ static swig_cast_info _swigc__p_std__invalid_argument[] = {  {&_swigt__p_std__in
 static swig_cast_info _swigc__p_std__lessT_std__wstring_t[] = {  {&_swigt__p_std__lessT_std__wstring_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t[] = {  {&_swigt__p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t__allocator_type[] = {  {&_swigt__p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t__allocator_type, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t[] = {  {&_swigt__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type[] = {  {&_swigt__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type[] = {  {&_swigt__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t[] = {  {&_swigt__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__allocator_type[] = {  {&_swigt__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__allocator_type, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type[] = {  {&_swigt__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t[] = {  {&_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type[] = {  {&_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type[] = {  {&_swigt__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type, 0, 0, 0},{0, 0, 0, 0}};
@@ -17682,9 +17682,9 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__lessT_std__wstring_t,
   _swigc__p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t,
   _swigc__p_std__mapT_std__wstring_std__wstring_std__lessT_std__wstring_t_std__allocatorT_std__pairT_std__wstring_const_std__wstring_t_t_t__allocator_type,
-  _swigc__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t,
-  _swigc__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__allocator_type,
-  _swigc__p_std__vectorT_Func32__TCoordSet_std__allocatorT_Func32__TCoordSet_t_t__value_type,
+  _swigc__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t,
+  _swigc__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__allocator_type,
+  _swigc__p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t__value_type,
   _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t,
   _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__allocator_type,
   _swigc__p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t__value_type,

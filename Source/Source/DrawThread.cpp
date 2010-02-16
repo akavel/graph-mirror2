@@ -258,7 +258,7 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
             if(Pos != F.Points.back())
             {
               F.Points.push_back(Pos);
-              F.sList.push_back(Func32::TCoordSet(s2, real(Coord.x), real(Coord.y)));
+              F.sList.push_back(Func32::TCoordSet<>(s2, real(Coord.x), real(Coord.y)));
             }
           }
           Err = true;
@@ -292,7 +292,7 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
                 sLast = sMiddle;
                 LastPos = P;
                 F.Points.push_back(LastPos);
-                F.sList.push_back(Func32::TCoordSet(sLast, real(Coord.x), real(Coord.y)));
+                F.sList.push_back(Func32::TCoordSet<>(sLast, real(Coord.x), real(Coord.y)));
               }
               else
               {
@@ -330,7 +330,7 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
              //Add last point
              F.Points.push_back(LastPos);
              Func32::TCoord<T> Coord = Func.Calc(T(s-ds), CalcError);
-             F.sList.push_back(Func32::TCoordSet(s - ds, real(Coord.x), real(Coord.y)));
+             F.sList.push_back(Func32::TCoordSet<>(s - ds, real(Coord.x), real(Coord.y)));
           }
           else if(Err == 1 && F.DrawType == dtAuto)   //If calculation error
           {
@@ -366,13 +366,13 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
             if(Pos2 != Pos)
             {
               F.Points.push_back(Pos2);
-              F.sList.push_back(Func32::TCoordSet(s2, real(Coord2.x), real(Coord2.y)));
+              F.sList.push_back(Func32::TCoordSet<>(s2, real(Coord2.x), real(Coord2.y)));
             }
           }
 
           //Add point to vector
           F.Points.push_back(Pos);
-          F.sList.push_back(Func32::TCoordSet(s, real(Coord.x), real(Coord.y)));
+          F.sList.push_back(Func32::TCoordSet<>(s, real(Coord.x), real(Coord.y)));
           Err = false;            //Indicate no error
         }
         else //No errors
@@ -381,7 +381,7 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
           if(Pos != LastPos)
           {
             F.Points.push_back(Pos);
-            F.sList.push_back(Func32::TCoordSet(s, real(Coord.x), real(Coord.y)));
+            F.sList.push_back(Func32::TCoordSet<>(s, real(Coord.x), real(Coord.y)));
           }
         }
         LastPos = Pos; //Save point

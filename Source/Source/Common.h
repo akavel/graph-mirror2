@@ -143,11 +143,11 @@ inline bool CompCoordSet2(long double Value, const Func32::TCoordSet &Set)
 class TCompCoordSet
 {
 public:
-  bool operator()(const Func32::TCoordSet &Set, long double Value)
+  bool operator()(const Func32::TCoordSet<> &Set, long double Value)
   {
     return Set.t < Value;
   }
-  bool operator()(long double Value, const Func32::TCoordSet &Set)
+  bool operator()(long double Value, const Func32::TCoordSet<> &Set)
   {
     return Value < Set.t;
   }

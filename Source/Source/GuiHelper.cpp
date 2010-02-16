@@ -130,7 +130,7 @@ void TZoomFit::Visit(TBaseFuncType &Func)
         xMax = StdFunc->To.Value;
   }
 
-  for(std::vector<Func32::TCoordSet>::const_iterator Iter = Func.sList.begin(); Iter != Func.sList.end(); ++Iter)
+  for(std::vector<Func32::TCoordSet<> >::const_iterator Iter = Func.sList.begin(); Iter != Func.sList.end(); ++Iter)
   {
     if(Iter->x < xMin)
       xMin = Iter->x;

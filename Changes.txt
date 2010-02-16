@@ -13,6 +13,9 @@ Version 4.4
 - The y-errors for point series are now taken into account then calculating trendlines.
 - You can now change the decimal separator used when values are import and exported.
 - It is now easier to trace functions with increment/decrement buttons in the Evaluate frame.
+- Integrate, Sum and Product functions have been redefined to the format: integrate(expr, var, min, max)
+- -INF and +INF can now be used for the range of the integrate function and when calculating area.
+- Accuracy of integrate function and are calculation is improved.
 - Several minor improvements.
 - Chinese (Simplified) translation added.
 - Basque translation added.
