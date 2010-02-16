@@ -95,33 +95,39 @@ HRESULT DebugLogReturn(const TNameValue List[], HRESULT Result, const char *Str)
 //---------------------------------------------------------------------------
 extern void __stdcall OutputDebugStringA(const char* lpOutputString);
 extern void __stdcall OutputDebugStringW(const wchar_t* lpOutputString);
-class TDebugStreamBuf : public std::stringbuf
+void OutputDebugStr(const std::string &Str) {OutputDebugStringA(Str.c_str());}
+void OutputDebugStr(const std::wstring &Str) {OutputDebugStringW(Str.c_str());}
+
+template<typename T>
+class TDebugStreamBuf : public std::basic_stringbuf<T>
 {
-protected:
-  int sync()
+  void Update()
   {
-    OutputDebugStringA(str().c_str());
-    str("");
-    return std::stringbuf::sync();
+    std::basic_string<T> Str = str();
+    unsigned LastIndex = 0;
+    unsigned Index;
+    while((Index = Str.find('\n', LastIndex)) != std::string::npos)
+    {
+      std::basic_string<T> SubStr = Str.substr(LastIndex, Index-LastIndex);
+      if(!SubStr.empty() && SubStr[0] != '\n')
+        OutputDebugStr(SubStr);
+      LastIndex = Index+1;
+    }
+    str(Str.substr(LastIndex));
   }
-};
-//---------------------------------------------------------------------------
-class TDebugWideStreamBuf : public std::wstringbuf
-{
-protected:
+
   int sync()
   {
-    OutputDebugStringW(str().c_str());
-    str(L"");
-    return std::wstringbuf::sync();
+    Update();
+    return std::basic_stringbuf<T>::sync();
   }
 };
 //---------------------------------------------------------------------------
 void InitDebug()
 {
 #pragma warn -8104
-  static TDebugStreamBuf DebugStreamBuf;
-  static TDebugWideStreamBuf DebugWideStreamBuf;
+  static TDebugStreamBuf<char> DebugStreamBuf;
+  static TDebugStreamBuf<wchar_t> DebugWideStreamBuf;
   std::clog.rdbuf(&DebugStreamBuf);
   std::wclog.rdbuf(&DebugWideStreamBuf);
 }
