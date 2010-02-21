@@ -1,4 +1,5 @@
 %module Data
+#define SWIG_NO_EXPORT_ITERATOR_METHODS
 
 %include "stl.i"
 %include "std_string.i"
@@ -175,6 +176,7 @@ enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
 //enum TLabelPosition {lpAbove, lpBelow, lpLeft, lpRight, lpAboveLeft, lpAboveRight, lpBelowLeft, lpBelowRight};
 enum TPointType {ptCartesian, ptPolar};
 
+
 %nodefaultctor TPointSeries;
 %attribute(TPointSeries, TErrorBarType, xErrorBarType, GetxErrorBarType);
 %attribute(TPointSeries, TErrorBarType, yErrorBarType, GetyErrorBarType);
@@ -194,6 +196,12 @@ enum TPointType {ptCartesian, ptPolar};
 %attribute(TPointSeries, TPointType, PointType, GetPointType);
 class TPointSeries : public TGraphElem
 {
+public:
+  void InsertPoint(TPointSeriesPoint Point, int Index) throw(std::out_of_range);
+  void ReplacePoint(TPointSeriesPoint Point, unsigned Index) throw(std::out_of_range);
+  void DeletePoint(unsigned Index) throw(std::out_of_range);
+  const TPointSeriesPoint& GetPoint(unsigned Index) const throw(std::out_of_range);
+  unsigned PointCount() const;
 };
 
 %nodefaultctor TTextLabel;
@@ -277,5 +285,25 @@ struct TData
   TAxesView.__repr__ = GraphElemRepr
   TTopGraphElem.__repr__ = GraphElemRepr
   TPointSeries.Font = property(lambda self: vcl.TObject(handle=_Data.TPointSeries_Font_get(self), owned=False))
+  TPointSeries.Points = property(lambda self: TPointList(self))
+
+  import collections
+  class TPointList(collections.MutableSequence):
+      def __init__(self, PointSeries):
+          self.PointSeries = PointSeries
+      def __getitem__(self, key):
+          return self.PointSeries.GetPoint(key)
+      def __len__(self):
+          return self.PointSeries.PointCount()
+      def insert(self, key, value):
+          self.PointSeries.InsertPoint(value, key)
+      def __setitem__(self, key, value):
+          self.PointSeries.ReplacePoint(value, key)
+      def append(self, value):
+          self.PointSeries.InsertPoint(value, -1)
+      def __delitem__(self, key):
+          self.PointSeries.DeletePoint(key)
+      def __repr__(self):
+          return repr(list(self))
 }
 

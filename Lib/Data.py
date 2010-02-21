@@ -102,8 +102,6 @@ class PointVector(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, PointVector, name)
     __repr__ = _swig_repr
-    def iterator(self) -> "swig::SwigPyIterator *" : return _Data.PointVector_iterator(self)
-    def __iter__(self): return self.iterator()
     def __nonzero__(self) -> "bool" : return _Data.PointVector___nonzero__(self)
     def __bool__(self) -> "bool" : return _Data.PointVector___bool__(self)
     def __len__(self) -> "std::vector< TPoint >::size_type" : return _Data.PointVector___len__(self)
@@ -120,12 +118,7 @@ class PointVector(_object):
     def clear(self) -> "void" : return _Data.PointVector_clear(self)
     def swap(self, *args) -> "void" : return _Data.PointVector_swap(self, *args)
     def get_allocator(self) -> "std::vector< TPoint >::allocator_type" : return _Data.PointVector_get_allocator(self)
-    def begin(self) -> "std::vector< TPoint >::const_iterator" : return _Data.PointVector_begin(self)
-    def end(self) -> "std::vector< TPoint >::const_iterator" : return _Data.PointVector_end(self)
-    def rbegin(self) -> "std::vector< TPoint >::const_reverse_iterator" : return _Data.PointVector_rbegin(self)
-    def rend(self) -> "std::vector< TPoint >::const_reverse_iterator" : return _Data.PointVector_rend(self)
     def pop_back(self) -> "void" : return _Data.PointVector_pop_back(self)
-    def erase(self, *args) -> "std::vector< TPoint >::iterator" : return _Data.PointVector_erase(self, *args)
     def __init__(self, *args): 
         this = _Data.new_PointVector(*args)
         try: self.this.append(this)
@@ -135,7 +128,6 @@ class PointVector(_object):
     def back(self) -> "std::vector< TPoint >::value_type const &" : return _Data.PointVector_back(self)
     def assign(self, *args) -> "void" : return _Data.PointVector_assign(self, *args)
     def resize(self, *args) -> "void" : return _Data.PointVector_resize(self, *args)
-    def insert(self, *args) -> "void" : return _Data.PointVector_insert(self, *args)
     def reserve(self, *args) -> "void" : return _Data.PointVector_reserve(self, *args)
     def capacity(self) -> "std::vector< TPoint >::size_type" : return _Data.PointVector_capacity(self)
     __swig_destroy__ = _Data.delete_PointVector
@@ -149,8 +141,6 @@ class CoordSetVector(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, CoordSetVector, name)
     __repr__ = _swig_repr
-    def iterator(self) -> "swig::SwigPyIterator *" : return _Data.CoordSetVector_iterator(self)
-    def __iter__(self): return self.iterator()
     def __nonzero__(self) -> "bool" : return _Data.CoordSetVector___nonzero__(self)
     def __bool__(self) -> "bool" : return _Data.CoordSetVector___bool__(self)
     def __len__(self) -> "std::vector< Func32::TCoordSet< > >::size_type" : return _Data.CoordSetVector___len__(self)
@@ -167,12 +157,7 @@ class CoordSetVector(_object):
     def clear(self) -> "void" : return _Data.CoordSetVector_clear(self)
     def swap(self, *args) -> "void" : return _Data.CoordSetVector_swap(self, *args)
     def get_allocator(self) -> "std::vector< Func32::TCoordSet< > >::allocator_type" : return _Data.CoordSetVector_get_allocator(self)
-    def begin(self) -> "std::vector< Func32::TCoordSet< > >::const_iterator" : return _Data.CoordSetVector_begin(self)
-    def end(self) -> "std::vector< Func32::TCoordSet< > >::const_iterator" : return _Data.CoordSetVector_end(self)
-    def rbegin(self) -> "std::vector< Func32::TCoordSet< > >::const_reverse_iterator" : return _Data.CoordSetVector_rbegin(self)
-    def rend(self) -> "std::vector< Func32::TCoordSet< > >::const_reverse_iterator" : return _Data.CoordSetVector_rend(self)
     def pop_back(self) -> "void" : return _Data.CoordSetVector_pop_back(self)
-    def erase(self, *args) -> "std::vector< Func32::TCoordSet< > >::iterator" : return _Data.CoordSetVector_erase(self, *args)
     def __init__(self, *args): 
         this = _Data.new_CoordSetVector(*args)
         try: self.this.append(this)
@@ -182,7 +167,6 @@ class CoordSetVector(_object):
     def back(self) -> "std::vector< Func32::TCoordSet< > >::value_type const &" : return _Data.CoordSetVector_back(self)
     def assign(self, *args) -> "void" : return _Data.CoordSetVector_assign(self, *args)
     def resize(self, *args) -> "void" : return _Data.CoordSetVector_resize(self, *args)
-    def insert(self, *args) -> "void" : return _Data.CoordSetVector_insert(self, *args)
     def reserve(self, *args) -> "void" : return _Data.CoordSetVector_reserve(self, *args)
     def capacity(self) -> "std::vector< Func32::TCoordSet< > >::size_type" : return _Data.CoordSetVector_capacity(self)
     __swig_destroy__ = _Data.delete_CoordSetVector
@@ -196,8 +180,6 @@ class UnsignedVector(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, UnsignedVector, name)
     __repr__ = _swig_repr
-    def iterator(self) -> "swig::SwigPyIterator *" : return _Data.UnsignedVector_iterator(self)
-    def __iter__(self): return self.iterator()
     def __nonzero__(self) -> "bool" : return _Data.UnsignedVector___nonzero__(self)
     def __bool__(self) -> "bool" : return _Data.UnsignedVector___bool__(self)
     def __len__(self) -> "std::vector< unsigned int >::size_type" : return _Data.UnsignedVector___len__(self)
@@ -214,12 +196,7 @@ class UnsignedVector(_object):
     def clear(self) -> "void" : return _Data.UnsignedVector_clear(self)
     def swap(self, *args) -> "void" : return _Data.UnsignedVector_swap(self, *args)
     def get_allocator(self) -> "std::vector< unsigned int >::allocator_type" : return _Data.UnsignedVector_get_allocator(self)
-    def begin(self) -> "std::vector< unsigned int >::const_iterator" : return _Data.UnsignedVector_begin(self)
-    def end(self) -> "std::vector< unsigned int >::const_iterator" : return _Data.UnsignedVector_end(self)
-    def rbegin(self) -> "std::vector< unsigned int >::const_reverse_iterator" : return _Data.UnsignedVector_rbegin(self)
-    def rend(self) -> "std::vector< unsigned int >::const_reverse_iterator" : return _Data.UnsignedVector_rend(self)
     def pop_back(self) -> "void" : return _Data.UnsignedVector_pop_back(self)
-    def erase(self, *args) -> "std::vector< unsigned int >::iterator" : return _Data.UnsignedVector_erase(self, *args)
     def __init__(self, *args): 
         this = _Data.new_UnsignedVector(*args)
         try: self.this.append(this)
@@ -229,7 +206,6 @@ class UnsignedVector(_object):
     def back(self) -> "std::vector< unsigned int >::value_type const &" : return _Data.UnsignedVector_back(self)
     def assign(self, *args) -> "void" : return _Data.UnsignedVector_assign(self, *args)
     def resize(self, *args) -> "void" : return _Data.UnsignedVector_resize(self, *args)
-    def insert(self, *args) -> "void" : return _Data.UnsignedVector_insert(self, *args)
     def reserve(self, *args) -> "void" : return _Data.UnsignedVector_reserve(self, *args)
     def capacity(self) -> "std::vector< unsigned int >::size_type" : return _Data.UnsignedVector_capacity(self)
     __swig_destroy__ = _Data.delete_UnsignedVector
@@ -243,8 +219,6 @@ class StringMap(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, StringMap, name)
     __repr__ = _swig_repr
-    def iterator(self) -> "swig::SwigPyIterator *" : return _Data.StringMap_iterator(self)
-    def __iter__(self): return self.iterator()
     def __nonzero__(self) -> "bool" : return _Data.StringMap___nonzero__(self)
     def __bool__(self) -> "bool" : return _Data.StringMap___bool__(self)
     def __len__(self) -> "std::map< std::wstring,std::wstring >::size_type" : return _Data.StringMap___len__(self)
@@ -271,15 +245,8 @@ class StringMap(_object):
     def clear(self) -> "void" : return _Data.StringMap_clear(self)
     def swap(self, *args) -> "void" : return _Data.StringMap_swap(self, *args)
     def get_allocator(self) -> "std::map< std::wstring,std::wstring >::allocator_type" : return _Data.StringMap_get_allocator(self)
-    def begin(self) -> "std::map< std::wstring,std::wstring >::const_iterator" : return _Data.StringMap_begin(self)
-    def end(self) -> "std::map< std::wstring,std::wstring >::const_iterator" : return _Data.StringMap_end(self)
-    def rbegin(self) -> "std::map< std::wstring,std::wstring >::const_reverse_iterator" : return _Data.StringMap_rbegin(self)
-    def rend(self) -> "std::map< std::wstring,std::wstring >::const_reverse_iterator" : return _Data.StringMap_rend(self)
+    def erase(self, *args) -> "std::map< std::wstring,std::wstring >::size_type" : return _Data.StringMap_erase(self, *args)
     def count(self, *args) -> "std::map< std::wstring,std::wstring >::size_type" : return _Data.StringMap_count(self, *args)
-    def erase(self, *args) -> "void" : return _Data.StringMap_erase(self, *args)
-    def find(self, *args) -> "std::map< std::wstring,std::wstring >::iterator" : return _Data.StringMap_find(self, *args)
-    def lower_bound(self, *args) -> "std::map< std::wstring,std::wstring >::iterator" : return _Data.StringMap_lower_bound(self, *args)
-    def upper_bound(self, *args) -> "std::map< std::wstring,std::wstring >::iterator" : return _Data.StringMap_upper_bound(self, *args)
     __swig_destroy__ = _Data.delete_StringMap
     __del__ = lambda self : None;
 StringMap_swigregister = _Data.StringMap_swigregister
@@ -578,6 +545,11 @@ class TPointSeries(TGraphElem):
     __getattr__ = lambda self, name: _swig_getattr(self, TPointSeries, name)
     def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
+    def InsertPoint(self, *args) -> "void" : return _Data.TPointSeries_InsertPoint(self, *args)
+    def ReplacePoint(self, *args) -> "void" : return _Data.TPointSeries_ReplacePoint(self, *args)
+    def DeletePoint(self, *args) -> "void" : return _Data.TPointSeries_DeletePoint(self, *args)
+    def GetPoint(self, *args) -> "TPointSeriesPoint const &" : return _Data.TPointSeries_GetPoint(self, *args)
+    def PointCount(self) -> "unsigned int" : return _Data.TPointSeries_PointCount(self)
     __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TPointSeries_SWIGSharedPtrUpcast
     if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TPointSeries_SWIGSharedPtrUpcast)
     __swig_getmethods__["xErrorBarType"] = _Data.TPointSeries_xErrorBarType_get
@@ -765,6 +737,26 @@ TShade.__repr__ = GraphElemRepr
 TAxesView.__repr__ = GraphElemRepr
 TTopGraphElem.__repr__ = GraphElemRepr
 TPointSeries.Font = property(lambda self: vcl.TObject(handle=_Data.TPointSeries_Font_get(self), owned=False))
+TPointSeries.Points = property(lambda self: TPointList(self))
+
+import collections
+class TPointList(collections.MutableSequence):
+    def __init__(self, PointSeries):
+        self.PointSeries = PointSeries
+    def __getitem__(self, key):
+        return self.PointSeries.GetPoint(key)
+    def __len__(self):
+        return self.PointSeries.PointCount()
+    def insert(self, key, value):
+        self.PointSeries.InsertPoint(value, key)
+    def __setitem__(self, key, value):
+        self.PointSeries.ReplacePoint(value, key)
+    def append(self, value):
+        self.PointSeries.InsertPoint(value, -1)
+    def __delitem__(self, key):
+        self.PointSeries.DeletePoint(key)
+    def __repr__(self):
+        return repr(list(self))
 
 
 

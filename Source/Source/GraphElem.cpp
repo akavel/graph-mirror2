@@ -718,9 +718,36 @@ void TPointSeries::AddPoint(const Func32::TDblPoint &Point)
   PointList.push_back(Point);
 }
 //---------------------------------------------------------------------------
-void TPointSeries::AddPoint(const TPointSeriesPoint &Point)
+void TPointSeries::InsertPoint(const TPointSeriesPoint &Point, int Index, bool AutoUpdate)
 {
-  PointData.push_back(Point);
+  if(Index >= static_cast<int>(PointData.size()) || Index < -1)
+    throw std::out_of_range("Index out of range.");
+  PointData.insert(Index == -1 ? PointData.end() : PointData.begin() + Index, Point);
+  if(AutoUpdate)
+    PointList.insert(Index == -1 ? PointList.end() : PointList.begin() + Index, ConvertPoint(Point));
+}
+//---------------------------------------------------------------------------
+void TPointSeries::ReplacePoint(const TPointSeriesPoint &Point, unsigned Index)
+{
+  if(Index >= PointData.size())
+    throw std::out_of_range("Index out of range.");
+  PointData[Index] = Point;
+  PointList[Index] = ConvertPoint(Point);
+}
+//---------------------------------------------------------------------------
+void TPointSeries::DeletePoint(unsigned Index)
+{
+  if(Index >= PointData.size())
+    throw std::out_of_range("Index out of range.");
+  PointData.erase(PointData.begin() + Index);
+  PointList.erase(PointList.begin() + Index);
+}
+//---------------------------------------------------------------------------
+const TPointSeriesPoint& TPointSeries::GetPoint(unsigned Index) const
+{
+  if(Index >= PointData.size())
+    throw std::out_of_range("Index out of range.");
+  return PointData[Index];
 }
 //---------------------------------------------------------------------------
 void TPointSeries::WriteToIni(TConfigFileSection &Section) const
@@ -897,21 +924,28 @@ TPointSeries::TPointList::const_iterator TPointSeries::FindPoint(double x) const
   throw EAbort("");
 }
 //---------------------------------------------------------------------------
+Func32::TDblPoint TPointSeries::ConvertPoint(const TPointSeriesPoint &P) const
+{
+  Func32::TDblPoint Point;
+  long double a = FastCalc(P.First, GetData()); //x or theta
+  long double b = FastCalc(P.Second, GetData()); //y or r
+  if(PointType == ptPolar)
+  {
+    Func32::TTrigonometry Trig = GetData().Axes.Trigonometry;
+    Point.x = b * std::cos(Trig == Func32::Degree ? a*M_PI/180 : a);
+    Point.y = b * std::sin(Trig == Func32::Degree ? a*M_PI/180 : a);
+  }
+  else
+    Point.x = a, Point.y = b;
+  return Point;
+}
+//---------------------------------------------------------------------------
 void TPointSeries::Update()
 {
   PointList.resize(PointData.size());
-  Func32::TTrigonometry Trig = GetData().Axes.Trigonometry;
   for(unsigned I = 0; I < PointList.size(); I++)
   {
-    long double a = FastCalc(PointData[I].First, GetData()); //x or theta
-    long double b = FastCalc(PointData[I].Second, GetData()); //y or r
-    if(PointType == ptPolar)
-    {
-      PointList[I].x = b * std::cos(Trig == Func32::Degree ? a*M_PI/180 : a);
-      PointList[I].y = b * std::sin(Trig == Func32::Degree ? a*M_PI/180 : a);
-    }
-    else
-      PointList[I].x = a, PointList[I].y = b;
+    PointList[I] = ConvertPoint(PointData[I]);
     PointData[I].xError.Update(GetData());
     PointData[I].yError.Update(GetData());
   }

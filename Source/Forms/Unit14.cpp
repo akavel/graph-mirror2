@@ -181,7 +181,7 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
     CellToDouble(Grid, 0, Row);
     CellToDouble(Grid, 1, Row);
 
-    PointSeries->AddPoint(DataPoints[Row-1]);
+    PointSeries->InsertPoint(DataPoints[Row-1], -1, false);
   }
 
   if(PointSeries->PointCount() == 0)

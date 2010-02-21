@@ -49,5 +49,7 @@ namespace Python
   template<> double FromPyObject<double>(PyObject *O);
   template<> long double FromPyObject<long double>(PyObject *O) {return FromPyObject<double>(O);}
   template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O);
+  template<> std::wstring FromPyObject<std::wstring>(PyObject *O);
+  template<typename T> bool FromPyObject(PyObject *O, T &Value) {Value = FromPyObject<T>(O); return !PyErr_Occurred();}
 }
 #endif
