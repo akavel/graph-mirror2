@@ -65,7 +65,16 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
   if((Shift == (TShiftState() << ssCtrl) && Key == 'V') ||
      (Shift == (TShiftState() << ssShift) && Key == VK_INSERT))
   {
-    IRichEdit1->SelText = Clipboard()->AsText;
+    String Str = Clipboard()->AsText;
+    while(!Str.IsEmpty())
+    {
+      int I = Str.Pos("\r\n");
+      if(I == 0)
+        I = Str.Length()+1;
+      IRichEdit1->SelText = Str.SubString(1, I-1);
+      Str.Delete(1, I+1);
+      HandleNewLine();
+    }
     Key = 0;
     return;
   }
@@ -116,43 +125,46 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
       break;
 
     case VK_RETURN:
-    {
-      String Str = IRichEdit1->GetText(LastIndex, MAXINT);
-      Str = Str.TrimRight();
-      IRichEdit1->SelStart = MAXINT;
-      IRichEdit1->SelText = "\r";
-      PromptIndex = IRichEdit1->SelStart;
-      Command += Str;
-
-      if(Python::ExecutePythonCommand(Command))
-      {
-        WritePrompt();
-        Command = "";
-        IndentLevel = 0;
-      }
-      else
-      {
-        WritePrompt("... ");
-        Command += "\n";
-        if(!Str.IsEmpty() && Str[Str.Length()] == ':')
-          IndentLevel++;
-      }
-
-      if(!Str.IsEmpty())
-      {
-        TextCache.back() = Str;
-        TextCache.push_back(String());
-      }
-      CacheIndex = TextCache.size() - 1;
-      IRichEdit1->SelText = String::StringOfChar('\t', IndentLevel);
+      HandleNewLine();
       Key = 0;
       break;
-    }
 
     case VK_ESCAPE:
       SetUserString("");
       break;
   }
+}
+//---------------------------------------------------------------------------
+void TForm22::HandleNewLine()
+{
+  String Str = IRichEdit1->GetText(LastIndex, MAXINT);
+  Str = Str.TrimRight();
+  IRichEdit1->SelStart = MAXINT;
+  IRichEdit1->SelText = "\r";
+  PromptIndex = IRichEdit1->SelStart;
+  Command += Str;
+
+  if(Python::ExecutePythonCommand(Command))
+  {
+    WritePrompt();
+    Command = "";
+    IndentLevel = 0;
+  }
+  else
+  {
+    WritePrompt("... ");
+    Command += "\n";
+    if(!Str.IsEmpty() && Str[Str.Length()] == ':')
+      IndentLevel++;
+  }
+
+  if(!Str.IsEmpty())
+  {
+    TextCache.back() = Str;
+    TextCache.push_back(String());
+  }
+  CacheIndex = TextCache.size() - 1;
+  IRichEdit1->SelText = String::StringOfChar('\t', IndentLevel);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm22::FormShow(TObject *Sender)

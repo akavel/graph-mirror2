@@ -339,6 +339,7 @@ private:
   double xErrorValue, yErrorValue; //Data for error bars; only used if Uncertainty!=utCustom
   TPointType PointType;
 
+  Func32::TDblPoint ConvertPoint(const TPointSeriesPoint &P) const;
 public:
   TPointSeries(TColor AFrameColor=clBlack, TColor AFillColor=clRed, TColor ALineColor=clRed,
     unsigned ASize=1, unsigned ALineSize=1, unsigned AStyle=0, TPenStyle ALineStyle=psSolid,
@@ -351,16 +352,21 @@ public:
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TPointSeries(*this));}
   TPointList::const_iterator FindPoint(double x) const;
+
   void AddPoint(const Func32::TDblPoint &Point);
-  void AddPoint(const TPointSeriesPoint &Point);
+  void InsertPoint(const TPointSeriesPoint &Point, int Index=-1, bool AutoUpdate=true);
+  void ReplacePoint(const TPointSeriesPoint &Point, unsigned Index);
+  void DeletePoint(unsigned Index);
+  const TPointSeriesPoint& GetPoint(unsigned Index) const;
+  unsigned PointCount() const {return PointData.size();}
+  const std::vector<TPointSeriesPoint>& GetPointData() const {return PointData;}
+  const TPointList& GetPointList() const {return PointList;}
+
   double GetXError(unsigned Index) const;
   double GetYError(unsigned Index) const;
   void Assign(const TPointData &APointData) {PointData = APointData;}
   void Update();
 
-  unsigned PointCount() const {return PointData.size();}
-  const TPointList& GetPointList() const {return PointList;}
-  const std::vector<TPointSeriesPoint>& GetPointData() const {return PointData;}
   TErrorBarType GetxErrorBarType() const {return xErrorBarType;}
   TErrorBarType GetyErrorBarType() const {return yErrorBarType;}
   double GetxErrorValue() const {return xErrorValue;}

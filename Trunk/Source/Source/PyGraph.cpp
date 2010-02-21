@@ -144,7 +144,7 @@ class TPluginFunc : public Func32::TBaseCustomFunc
   PyObject *Func;
   unsigned Arguments;
 public:
-  TPluginFunc(PyObject *AFunc, unsigned AArguments) : Func(AFunc), Arguments(AArguments) {}
+  TPluginFunc(PyObject *AFunc, unsigned AArguments) : Func(AFunc), Arguments(AArguments) {Py_INCREF(Func);}
   ~TPluginFunc() {Py_XDECREF(Func);}
   unsigned ArgumentCount() const {return Arguments;}
   long double Call(const long double *Args, Func32::TTrigonometry Trig, Func32::TErrorCode &ErrorCode, std::wstring &ErrorStr) const
@@ -210,7 +210,9 @@ static PyObject* PluginSetCustomFunction(PyObject *Self, PyObject *Args)
     if(ArgCount)
     {
       long Arguments = PyLong_AsLong(ArgCount);
-      Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, boost::shared_ptr<TPluginFunc>(new TPluginFunc(Function, Arguments)));
+      boost::shared_ptr<TPluginFunc> Func(new TPluginFunc(Function, Arguments));
+      Form1->Data.CustomFunctions.SymbolList.Add(Name, Func);
+      Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, Func);
       Py_XDECREF(ArgCount);
     }
     Py_XDECREF(FuncCode);
@@ -232,7 +234,10 @@ static PyObject* PluginGetCustomFunction(PyObject *Self, PyObject *Args)
 
   boost::shared_ptr<TPluginFunc> Func = boost::dynamic_pointer_cast<TPluginFunc>(Form1->Data.CustomFunctions.GlobalSymbolList.Get(Name));
   if(Func)
-    return Func->GetFunc();
+  {
+    PyObject *Obj = Func->GetFunc();
+    return Obj;
+  }
   Py_RETURN_NONE;
 }
 //---------------------------------------------------------------------------
@@ -242,6 +247,7 @@ static PyObject* PluginDelCustomFunction(PyObject *Self, PyObject *Args)
   if(Name == NULL)
     return NULL;
 
+  Form1->Data.CustomFunctions.SymbolList.Erase(Name);
   Form1->Data.CustomFunctions.GlobalSymbolList.Erase(Name);
   Py_RETURN_NONE;
 }
@@ -590,6 +596,11 @@ template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O)
 {
   Py_complex V = PyComplex_AsCComplex(O);
   return Func32::TComplex(V.real, V.imag);
+}
+//---------------------------------------------------------------------------
+template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
+{
+  return PyUnicode_AsUnicode(O);
 }
 //---------------------------------------------------------------------------
 bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem)

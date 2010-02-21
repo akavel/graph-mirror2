@@ -37,6 +37,7 @@ private:	// User declarations
   void WritePrompt(const String &Str = ">>> ");
   void KeyboardInterrupt();
   void SetUserString(const String &Str);
+  void HandleNewLine();
 
 public:		// User declarations
   __fastcall TForm22(TComponent* Owner);
