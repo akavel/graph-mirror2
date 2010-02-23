@@ -180,8 +180,7 @@ TFunc TFunc::MakeDif(const std::wstring &Var) const
 std::wstring TFunc::MakeText(const std::wstring &Variable, unsigned Decimals) const
 {
   std::wostringstream Stream;
-  Stream << std::setprecision(Decimals);
-  FuncData->MakeText(std::vector<std::wstring>(1, Variable), Stream);
+  FuncData->MakeText(std::vector<std::wstring>(1, Variable), Stream, Decimals);
   return Stream.str();
 }
 //---------------------------------------------------------------------------
@@ -374,7 +373,7 @@ TFunc sqrt(const TFunc &Func1)
  */
 std::wostream& operator<<(std::wostream &os, const TFunc &Func)
 {
-  Func.FuncData->MakeText(std::vector<std::wstring>(1, L"x"), os);
+  Func.FuncData->MakeText(std::vector<std::wstring>(1, L"x"), os, 4);
   return os;
 }
 //---------------------------------------------------------------------------
