@@ -197,6 +197,7 @@ struct TMakeTextData
   TConstIterator Iter;    //!< Iterator pointing to next element to convert.
   const TArgType &Args;   //!< Vector of argument names.
   std::wostream &Stream;  //!< Stream to write result to.
+  unsigned Decimals;
 };
 
 template<typename T>
@@ -270,7 +271,7 @@ public:
   void Simplify();
   void ReplaceConst();
   void Replace(const TElem &OldElem, const TElem &NewElem);
-  void MakeText(const TArgType &Args, std::wostream &Stream) const;
+  void MakeText(const TArgType &Args, std::wostream &Stream, unsigned Decimals) const;
   bool Update(const TSymbolList &SymbolList);
 
   bool IsEmpty() const {return Data.empty();}
@@ -295,7 +296,14 @@ bool ArgCountValid(TIdent Ident, unsigned Args);
 const TFuncData& GetDif(TIdent Ident);
 std::vector<TElem>::const_iterator FindEnd(std::vector<TElem>::const_iterator Iter);
 std::wstring ToLower(const std::wstring &Str);
-
+//---------------------------------------------------------------------------
+class TCompareStringNoCase
+{
+  std::wstring Str;
+public:
+  TCompareStringNoCase(const std::wstring &AStr) : Str(ToLower(AStr)) {}
+  bool operator()(const std::wstring &S) const {return ToLower(S) == Str;}
+};
 //---------------------------------------------------------------------------
 inline bool IsConstant(const TElem &Elem)
 {

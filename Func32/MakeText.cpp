@@ -9,8 +9,9 @@
 #include "Func32.h"
 #include "Func32Impl.h"
 #pragma hdrstop
-#include <cstdio>
+//#include <cstdio>
 #include <iomanip>
+#include <boost\math\special_functions\fpclassify.hpp>
 //---------------------------------------------------------------------------
 namespace Func32
 {
@@ -46,8 +47,7 @@ std::wstring TFuncData::MakeText(TConstIterator Iter)
   Args.push_back(L"Arg7");
   Args.push_back(L"Arg8");
   std::wstringstream Stream;
-  Stream << std::setprecision(4);
-  TMakeTextData TextData = {Iter, Args, Stream};
+  TMakeTextData TextData = {Iter, Args, Stream, 4};
   CreateText(TextData);
   return Stream.str();
 }
@@ -57,11 +57,11 @@ std::wstring TFuncData::MakeText(TConstIterator Iter)
  *  \param Stream: Stream to write converted function text to.
  *  \throw EFuncError: Thrown if the object is empty.
  */
-void TFuncData::MakeText(const std::vector<std::wstring> &Args, std::wostream &Stream) const
+void TFuncData::MakeText(const std::vector<std::wstring> &Args, std::wostream &Stream, unsigned Decimals) const
 {
   if(Data.empty())
     throw EFuncError(ecNoFunc);
-  TMakeTextData TextData = {Data.begin(), Args, Stream};
+  TMakeTextData TextData = {Data.begin(), Args, Stream, Decimals};
   CreateText(TextData);
   if(TextData.Iter != Data.end())
     throw EFuncError(ecInternalError);
@@ -85,6 +85,41 @@ std::wstring GetCompareString(TCompareMethod CompareMethod)
   return L"";
 }
 //---------------------------------------------------------------------------
+std::wstring ConvertToStr(long double Number, unsigned Decimals)
+{
+/*  if(boost::math::isnan(Number))
+    return L"NAN";
+  if(boost::math::isinf(Number))
+    return Number < 0 ? L"-INF" : L"INF";
+  if(IsZero(Number))
+    return L"0";*/
+
+  std::wstringstream Stream;
+  if(std::abs(Number) >= 10000 || std::abs(Number) <= 1E-4)
+  {
+    Stream << std::uppercase << std::scientific << std::setprecision(Decimals) << Number;
+    std::wstring Str = Stream.str();
+    unsigned N = Str.find(L'E');
+    while(Str[N-1] == L'0' && Str[N-2] != L'.')
+      Str.erase(--N, 1);
+    return Str;
+  }
+
+  Stream << std::fixed << std::setprecision(Decimals) << Number;
+  std::wstring Str = Stream.str();
+
+  //Returns if no decimal separator found
+  if(Str.find(L'.') == std::wstring::npos)
+    return Str;
+
+  //Remove trailing zeros
+  while(*Str.rbegin() == L'0')
+    Str.erase(Str.end()-1);
+  if(*Str.rbegin() == L'.')
+    Str.erase(Str.end()-1);
+  return Str;
+}
+//---------------------------------------------------------------------------
 /** Converts data at Iter to text saved at the end of Str. Recursive call.
  *  \param TextData: Data used for generating text
  *  \param AddPar: Indicates if parentheses should be added around the text.
@@ -101,12 +136,7 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
     case CodeNumber:
     {
       long double Number = boost::any_cast<long double>(Elem.Value);
-      //std::uppercase is used to show E in 5E3 in uppercase
-      if(Number != 0 && (std::abs(Number) >= 10000 || std::abs(Number) < 0.0001))
-        Stream << std::scientific;
-      else
-        Stream << std::fixed;
-      Stream << std::uppercase << Number;
+      Stream << ConvertToStr(Number, TextData.Decimals);
       break;
     }
     case CodeArgument:

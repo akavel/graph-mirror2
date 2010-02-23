@@ -251,8 +251,7 @@ bool TParamFunc::IsEmpty() const
 std::wstring TParamFunc::MakeXText(const std::wstring &Variable, unsigned Decimals) const
 {
   std::wostringstream Stream;
-  Stream << std::setprecision(Decimals);
-  xFuncData->MakeText(std::vector<std::wstring>(1, Variable), Stream);
+  xFuncData->MakeText(std::vector<std::wstring>(1, Variable), Stream, Decimals);
   return Stream.str();
 }
 //---------------------------------------------------------------------------
@@ -264,8 +263,7 @@ std::wstring TParamFunc::MakeXText(const std::wstring &Variable, unsigned Decima
 std::wstring TParamFunc::MakeYText(const std::wstring &Variable, unsigned Decimals) const
 {
   std::wostringstream Stream;
-  Stream << std::setprecision(Decimals);
-  yFuncData->MakeText(std::vector<std::wstring>(1, Variable), Stream);
+  yFuncData->MakeText(std::vector<std::wstring>(1, Variable), Stream, Decimals);
   return Stream.str();
 }
 //---------------------------------------------------------------------------
