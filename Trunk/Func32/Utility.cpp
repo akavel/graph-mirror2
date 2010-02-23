@@ -271,8 +271,11 @@ std::vector<std::wstring> FindUnknowns(const std::wstring &Str)
         break;
 
     if(Pos2 != Pos + 1)
-      Vector.push_back(Str.substr(Pos, Pos2 - Pos));
-
+    {
+      std::wstring Name = Str.substr(Pos, Pos2 - Pos);
+      if(std::find_if(Vector.begin(), Vector.end(), TCompareStringNoCase(Name)) == Vector.end())
+        Vector.push_back(Name);
+    }
     Pos = Str.find('$', Pos + 1);
   }
 
