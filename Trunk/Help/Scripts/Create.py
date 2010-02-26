@@ -3,7 +3,7 @@ import os
 import gettext
 import codecs
 
-Languages = ["Danish", "Croatian", "Spanish", "German", "Swedish", "French", "Polish", "Czech", "Dutch"]
+Languages = ["Danish", "Croatian", "Spanish", "German", "Swedish", "French", "Polish", "Czech", "Dutch", "Turkish"]
 LocalePath = "d:\\Projects\\Graph\\Locale\\"
 
 def Encode(Str):

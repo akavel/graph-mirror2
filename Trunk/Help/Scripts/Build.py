@@ -15,6 +15,7 @@ Languages = [
     ("Polish",      "pl",   {"$LabelWidth": "3em"}),
     ("Czech",       "cs",   {"$LabelWidth": "5em"}),
     ("Dutch",       "nl",   {"$LabelWidth": "5em"}),
+    ("Turkish",     "tr",   {"$LabelWidth": "4em"}),
 ]
 
 def ReplaceStrings(FileName, Dict):
