@@ -388,8 +388,11 @@ Func32::TDblPoint FindCoord(TPointSeries::TPointList::const_iterator Iter, doubl
 
 enum TShadeStyle {ssAbove, ssBelow, ssXAxis, ssYAxis, ssBetween, ssInside};
 
-struct TShade : public TGraphElem
+class TShade : public TGraphElem
 {
+//  TRegion Region;
+
+public:
   TShadeStyle ShadeStyle;
   TBrushStyle BrushStyle;
   TColor Color;
@@ -432,7 +435,6 @@ class TRelation : public TGraphElem
 
 public:
   boost::shared_ptr<class TRegion> Region;
-  boost::shared_ptr<class TRegion> BoundingRegion; //Used to draw the frame around Region for inequalities
 
   TRelation();
   TRelation(const std::wstring &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig);

@@ -1139,7 +1139,6 @@ long double TRelation::Eval(const std::vector<long double> &Args, Func32::ECalcE
 void TRelation::ClearCache()
 {
   Region.reset();
-  BoundingRegion.reset();
 }
 //---------------------------------------------------------------------------
 void TRelation::Update()

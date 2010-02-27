@@ -1224,26 +1224,6 @@ void TDrawThread::CreateInequality(TRelation &Relation)
   }
 
   Relation.Region.reset(new TRegion(Points));
-
-  if(Relation.GetBrushStyle() != bsSolid && Relation.GetSize() > 0)
-  {
-    //Create bounding region as a region Delta pixels large than the real region, and subtract the real region
-    //to get the bounding region
-    const std::vector<TRect>::iterator End = Points.end();
-    for(std::vector<TRect>::iterator Iter = Points.begin(); Iter != End; ++Iter)
-    {
-      unsigned Delta = Size(Relation.GetSize());
-      Iter->Left -= Delta;
-      Iter->Right += Delta;
-      Iter->Top -= Delta;
-      Iter->Bottom += Delta;
-    }
-
-    Relation.BoundingRegion.reset(new TRegion(Points));
-    *Relation.BoundingRegion -= *Relation.Region;
-  }
-  else
-    Relation.BoundingRegion.reset(); //Don't draw frame when brush style is bsSolid
 }
 //---------------------------------------------------------------------------
 //Check if there is a possibility for a zero point in f(x,y).
@@ -1376,17 +1356,16 @@ void TDrawThread::Visit(TRelation &Relation)
 //---------------------------------------------------------------------------
 void TDrawThread::DrawRelation(const TRelation &Relation)
 {
-//  TContextLock ContextLock(Context);
   Draw->SetClippingRegion();
 
-  Context.SetBrush(Relation.GetRelationType() == rtInequality ? Relation.GetBrushStyle() : bsSolid, Relation.GetColor());
+  Context.SetBrush(Relation.GetRelationType() == rtInequality ? Relation.GetBrushStyle() : bsSolid, ForceBlack ? clBlack : Relation.GetColor());
   Context.DrawRegion(*Relation.Region);
 
-  //Draw a frame around inequalities using BoundingRegion
-  if(Relation.BoundingRegion)
+  //Draw a frame around inequalities
+  if(Relation.GetRelationType() == rtInequality && Relation.GetSize() > 0)
   {
-    Context.SetBrush(bsSolid, Relation.GetColor());
-    Context.DrawRegion(*Relation.BoundingRegion);
+    Context.SetBrush(bsSolid, ForceBlack ? clBlack : Relation.GetColor());
+    Context.DrawFrameRegion(*Relation.Region, Size(Relation.GetSize()));
   }
 }
 //---------------------------------------------------------------------------
