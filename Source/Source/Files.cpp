@@ -306,11 +306,10 @@ bool TData::ImportPointSeries(const std::wstring &FileName)
     unsigned Col = 0;
 
     for(unsigned LastPos = Str.find_first_not_of(Separator, Pos);
-        Pos != std::string::npos; LastPos = Pos + 1,
-        Col++)
+        Pos != std::string::npos; LastPos = Pos + 1)
     {
       try
-      {  
+      {
         Pos = Str.find(Separator, LastPos);
 
         //Ignore empty entries
@@ -334,11 +333,12 @@ bool TData::ImportPointSeries(const std::wstring &FileName)
       {
         //Ignore errors in first line; This could be a text
         if(Line != 1)
-        { 
+        {
           MessageBox(LoadRes(526, FileName.c_str(), Line), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
           return false;
         }
       }
+      Col++;
     }
 
     //Check if there are too few numbers in the line
