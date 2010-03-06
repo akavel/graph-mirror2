@@ -467,7 +467,8 @@ double LinearCorrelation(const std::vector<TDblPoint> &Points)
 //---------------------------------------------------------------------------
 /** Finds the correlation coefficient (R^2) as defined by CurveExpert
  *  For more information, see http://curvefit.com/goodness_of_fit.htm
- *  The closer the correlation is to 1 the nearer the points are to the line given by Func
+ *  The closer the correlation is to 1 the nearer the points are to the line given by Func.
+ *  See also http://en.wikipedia.org/wiki/Coefficient_of_determination
  *  \param Points: Series of data points
  *  \param Func: Function to compare the points to
  */
