@@ -30,10 +30,6 @@ object Form16: TForm16
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Shading'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel1: TPanel
         Left = 24
         Top = 14
@@ -633,10 +629,6 @@ object Form16: TForm16
     object TabSheet2: TTabSheet
       Caption = 'Options'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label12: TLabel
         Left = 8
         Top = 12
@@ -735,17 +727,6 @@ object Form16: TForm16
           Hint = 'Select the style used for the shading.'
           TabOrder = 0
         end
-        object CheckBox6: TCheckBox
-          Left = 134
-          Top = 56
-          Width = 161
-          Height = 17
-          Hint = 'Mark the end of the shading with a line.'
-          Caption = 'Mark end of range'
-          Checked = True
-          State = cbChecked
-          TabOrder = 3
-        end
         object ExtColorBox1: TExtColorBox
           Left = 48
           Top = 54
@@ -765,8 +746,8 @@ object Form16: TForm16
           Top = 24
           Width = 161
           Height = 17
-          Hint = 'Mark the start of the shading with a line.'
-          Caption = 'Mark start of range'
+          Hint = 'Mark the border around the shading.'
+          Caption = 'Mark border'
           Checked = True
           State = cbChecked
           TabOrder = 1
@@ -784,10 +765,6 @@ object Form16: TForm16
     object TabSheet3: TTabSheet
       Caption = '2nd function'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label11: TLabel
         Left = 8
         Top = 8

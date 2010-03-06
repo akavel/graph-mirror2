@@ -57,7 +57,7 @@ private:
 
   void DrawPointSeries(const TPointSeries &PointSeries);
   void DrawFunction(const TBaseFuncType &Func);
-  void DrawShade(const struct TDrawShadeData &ShadeData);
+  void DrawShade(const TShade &Shade);
   void DrawLabel(TTextLabel &Label);
   void DrawRelation(const TRelation &Relation);
   void EquationLoop(TRelation &Relation, std::vector<TRect> &Points, bool Loop);
@@ -74,6 +74,7 @@ private:
   void Visit(TAxesView &AxesView);
   void Visit(TOleObjectElem &OleObjectElem) {}
 
+  void CreateShade(TShade &Shade);
   void CreateEquation(TRelation &Relation);
   void CreateInequality(TRelation &Relation);
 

@@ -634,8 +634,7 @@ void TShade::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"ExtendMaxToIntercept", ExtendMaxToIntercept, false);
   Section.Write(L"ExtendMin2ToIntercept", ExtendMin2ToIntercept, false);
   Section.Write(L"ExtendMax2ToIntercept", ExtendMax2ToIntercept, false);
-  Section.Write(L"MarkStart", MarkStart, true);
-  Section.Write(L"MarkEnd", MarkEnd, true);
+  Section.Write(L"MarkBorder", MarkBorder, true);
 }
 //---------------------------------------------------------------------------
 void TShade::ReadFromIni(const TConfigFileSection &Section)
@@ -663,8 +662,7 @@ void TShade::ReadFromIni(const TConfigFileSection &Section)
   ExtendMaxToIntercept = Section.Read(L"ExtendMaxToIntercept", false);
   ExtendMin2ToIntercept = Section.Read(L"ExtendMin2ToIntercept", false);
   ExtendMax2ToIntercept = Section.Read(L"ExtendMax2ToIntercept", false);
-  MarkStart = Section.Read(L"MarkStart", true);
-  MarkEnd = Section.Read(L"MarkEnd", true);
+  MarkBorder = Section.Read(L"MarkBorder", true);
 
   //For backweards compatibility
   if(_isnan(sMin.Value)) sMin.Set(L"-INF", GetData());
@@ -686,6 +684,12 @@ void TShade::Update()
   sMin2.Update(GetData());
   sMax2.Update(GetData());
 }
+//---------------------------------------------------------------------------
+void TShade::ClearCache()
+{
+  Region.reset();
+}
+//---------------------------------------------------------------------------
 //////////////////
 // TPointSeries //
 //////////////////
@@ -700,7 +704,43 @@ TPointSeries::TPointSeries(TColor AFrameColor, TColor AFillColor, TColor ALineCo
 {
 }
 //---------------------------------------------------------------------------
-void TPointSeries::AddPoint(const Func32::TDblPoint &Point)
+void TPointSeries::InsertDblPoint(const Func32::TDblPoint &Point, int Index)
+{
+  TPointSeriesPoint P;
+  if(PointType == ptPolar)
+  {
+    std::pair<long double,long double> Polar = GetPolarCoord(Point, GetData().Axes.Trigonometry);
+    P.First = RoundToString(Polar.second, 6);
+    P.Second = RoundToString(Polar.first, 6);
+  }
+  else
+  {
+    P.First = RoundToString(Point.x, 6);
+    P.Second = RoundToString(Point.y, 6);
+  }
+
+  if(Index == -1)
+  {
+    PointData.push_back(P);
+    PointList.push_back(Point);
+  }
+  else
+  {
+    PointData.insert(PointData.begin() + Index, P);
+    PointList.insert(PointList.begin() + Index, Point);
+  }
+}
+//---------------------------------------------------------------------------
+void TPointSeries::InsertPoint(const TPointSeriesPoint &Point, int Index, bool AutoUpdate)
+{
+  if(Index >= static_cast<int>(PointData.size()) || Index < -1)
+    throw std::out_of_range("Index out of range.");
+  PointData.insert(Index == -1 ? PointData.end() : PointData.begin() + Index, Point);
+  if(AutoUpdate)
+    PointList.insert(Index == -1 ? PointList.end() : PointList.begin() + Index, ConvertPoint(Point));
+}
+//---------------------------------------------------------------------------
+void TPointSeries::ReplaceDblPoint(const Func32::TDblPoint &Point, unsigned Index)
 {
   TPointSeriesPoint P;
   if(PointType == ptPolar)
@@ -714,25 +754,14 @@ void TPointSeries::AddPoint(const Func32::TDblPoint &Point)
     P.First = RoundToString(Point.x, 3);
     P.Second = RoundToString(Point.y, 3);
   }
-  PointData.push_back(P);
-  PointList.push_back(Point);
-}
-//---------------------------------------------------------------------------
-void TPointSeries::InsertPoint(const TPointSeriesPoint &Point, int Index, bool AutoUpdate)
-{
-  if(Index >= static_cast<int>(PointData.size()) || Index < -1)
-    throw std::out_of_range("Index out of range.");
-  PointData.insert(Index == -1 ? PointData.end() : PointData.begin() + Index, Point);
-  if(AutoUpdate)
-    PointList.insert(Index == -1 ? PointList.end() : PointList.begin() + Index, ConvertPoint(Point));
+  PointData.at(Index) = P;
+  PointList.at(Index) = Point;
 }
 //---------------------------------------------------------------------------
 void TPointSeries::ReplacePoint(const TPointSeriesPoint &Point, unsigned Index)
 {
-  if(Index >= PointData.size())
-    throw std::out_of_range("Index out of range.");
-  PointData[Index] = Point;
-  PointList[Index] = ConvertPoint(Point);
+  PointData.at(Index) = Point;
+  PointList.at(Index) = ConvertPoint(Point);
 }
 //---------------------------------------------------------------------------
 void TPointSeries::DeletePoint(unsigned Index)
@@ -741,13 +770,6 @@ void TPointSeries::DeletePoint(unsigned Index)
     throw std::out_of_range("Index out of range.");
   PointData.erase(PointData.begin() + Index);
   PointList.erase(PointList.begin() + Index);
-}
-//---------------------------------------------------------------------------
-const TPointSeriesPoint& TPointSeries::GetPoint(unsigned Index) const
-{
-  if(Index >= PointData.size())
-    throw std::out_of_range("Index out of range.");
-  return PointData[Index];
 }
 //---------------------------------------------------------------------------
 void TPointSeries::WriteToIni(TConfigFileSection &Section) const

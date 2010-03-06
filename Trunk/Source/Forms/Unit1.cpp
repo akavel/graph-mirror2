@@ -434,7 +434,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
             boost::shared_ptr<TGraphElem> Elem = GetGraphElem(TreeView->Selected);
             if(TPointSeries *Series = dynamic_cast<TPointSeries*>(Elem.get()))
             {
-              Series->AddPoint(Draw.xyCoord(X, Y));
+              Series->InsertDblPoint(Draw.xyCoord(X, Y));
               Data.SetModified();
               Redraw(); //We need to redraw everything; Smooth lines may have changed
             }
@@ -1368,22 +1368,6 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       ChangeLanguage(Languages[Key - '0']);
     }
   }
-/*
-  if(Shift == TShiftState() << ssCtrl << ssAlt)
-    try
-    {
-      switch(Key)
-      {
-        case '1':
-          String(L"Hello").ToInt(); //Generate Exception in Delphi
-          break;
-      }
-    }
-    catch(Exception &E)
-    {
-      ShowMessage(E.StackTrace);
-    }
-*/
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyPress(TObject *Sender, char &Key)
@@ -2347,6 +2331,11 @@ void __fastcall TForm1::AboutActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::MoveRightActionExecute(TObject *Sender)
 {
+  if(Form22->IRichEdit1->Focused())
+  {
+    Form22->IRichEdit1->SelStart = Form22->IRichEdit1->FindWordBreak(wbMoveWordRight, Form22->IRichEdit1->SelStart);
+    return;
+  }
   const TAxes &Axes = Data.Axes;
   double StepSize = GetKeyState(ssShift) ? 0.1 : 0.01;
   double MoveWidth=(Axes.xAxis.Max-Axes.xAxis.Min) * StepSize;
@@ -2361,6 +2350,11 @@ void __fastcall TForm1::MoveRightActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::MoveLeftActionExecute(TObject *Sender)
 {
+  if(Form22->IRichEdit1->Focused())
+  {
+    Form22->IRichEdit1->SelStart = Form22->IRichEdit1->FindWordBreak(wbMoveWordLeft, Form22->IRichEdit1->SelStart);
+    return;
+  }
   const TAxes &Axes = Data.Axes;
   double StepSize = GetKeyState(ssShift) ? 0.1 : 0.01;
   double MoveWidth=(Axes.xAxis.Max - Axes.xAxis.Min) * StepSize;

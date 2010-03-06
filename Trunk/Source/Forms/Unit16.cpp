@@ -129,8 +129,7 @@ void __fastcall TForm16::Button1Click(TObject *Sender)
   Shade->sMax2 = Shade->sMax;
   Shade->ExtendMin2ToIntercept = Shade->ExtendMinToIntercept;
   Shade->ExtendMax2ToIntercept = Shade->ExtendMaxToIntercept;
-  Shade->MarkStart = CheckBox5->Checked;
-  Shade->MarkEnd = CheckBox6->Checked;
+  Shade->MarkBorder = CheckBox5->Checked;
 
   if(Shade->ShadeStyle == ssBetween)
   {
@@ -211,8 +210,7 @@ int TForm16::EditShade(const boost::shared_ptr<TShade> &AShade)
     ExtColorBox1->Selected = OldShade->Color;
     CheckBox1->Checked = OldShade->ExtendMinToIntercept;
     CheckBox2->Checked = OldShade->ExtendMaxToIntercept;
-    CheckBox5->Checked = OldShade->MarkStart;
-    CheckBox6->Checked = OldShade->MarkEnd;
+    CheckBox5->Checked = OldShade->MarkBorder;
     Edit5->Text = ToUString(OldShade->GetLegendText());
 
     GroupBox2->Enabled = false;
