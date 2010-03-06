@@ -161,21 +161,11 @@
 			</varlistentry>
 
 			<varlistentry>
-				<term>Mark start of range</term>
+				<term>Mark border</term>
 				<listitem>
 					<para>
-						Check this to draw a line at the start of the range.
-						Uncheck it if you want two shadings to look as one.
-					</para>
-				</listitem>
-			</varlistentry>
-
-			<varlistentry>
-				<term>Mark end of range</term>
-				<listitem>
-					<para>
-						Check this to draw a line at the end of the range.
-						Uncheck it if you want two shadings to look as one.
+						Check this to draw a line around the border of the shading.
+						Uncheck it to leave the shading without a border, which is useful if you want two shadings to look as one.
 					</para>
 				</listitem>
 			</varlistentry>
