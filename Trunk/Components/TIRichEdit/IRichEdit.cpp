@@ -635,5 +635,14 @@ void __fastcall TIRichEdit::SetWrapType(TWrapType Value)
   }
 }
 //---------------------------------------------------------------------------
+unsigned TIRichEdit::FindWordBreak(TWordBreak WordBreak, unsigned Pos)
+{
+  TWrapType OldWrap = WrapType;
+  WrapType = wtWord;
+  unsigned Result = SendMessage(Handle, EM_FINDWORDBREAK, WordBreak, Pos);
+  WrapType = OldWrap;
+  return Result;
+}
+//---------------------------------------------------------------------------
 
 

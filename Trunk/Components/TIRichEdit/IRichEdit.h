@@ -76,6 +76,17 @@ public:
 };
 
 enum TWrapType {wtNone, wtWord, wtChar};
+enum TWordBreak
+{
+  wbClassify = WB_CLASSIFY,
+  wbIsDelimiter = WB_ISDELIMITER,
+  wbLeft = WB_LEFT,
+  wbLeftBreak = WB_LEFTBREAK,
+  wbMoveWordLeft = WB_MOVEWORDLEFT,
+  wbMoveWordRight = WB_MOVEWORDRIGHT,
+  wbRight = WB_RIGHT,
+  wbRightBreak = WB_RIGHTBREAK
+};
 
 class TIRichEdit : public TCustomRichEdit
 {
@@ -140,6 +151,7 @@ public:
   void SetSelText(char Ch, const String &FontName, unsigned Size);
   void SetEventMask(DWORD Mask, DWORD Value);
   int TextSize();
+  unsigned FindWordBreak(TWordBreak WordBreak, unsigned Pos);
 
   __property ::TParaFormat *Paragraph = {read=FParagraph};
 //  __property Lines; //Don't use this
