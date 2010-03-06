@@ -426,16 +426,15 @@ HPEN TDrawThread::SetPen(TColor Color, TPenStyle Style, int Width)
   return CreatePen(Style, Width, ForceBlack ? clBlack : Color);
 }
 //---------------------------------------------------------------------------
-struct TDrawShadeData
-{
-  const TShade &Shade;
-  std::vector<TPoint> &Points;
-  unsigned Pos;
-  TPoint P1, P2;
-  TDrawShadeData(const TShade &AShade, std::vector<TPoint> &APoints, unsigned APos, const TPoint &AP1, const TPoint &AP2)
-    : Shade(AShade), Points(APoints), Pos(APos), P1(AP1), P2(AP2) {}
-};
 void TDrawThread::Visit(TShade &Shade)
+{
+  if(Shade.Region.get() == NULL)
+    CreateShade(Shade);
+  if(!Aborted)
+    Synchronize(&DrawShade, Shade);
+}
+//---------------------------------------------------------------------------
+void TDrawThread::CreateShade(TShade &Shade)
 {
   TBaseFuncType *F = dynamic_cast<TBaseFuncType*>(Shade.GetParent().get());
 
@@ -466,8 +465,6 @@ void TDrawThread::Visit(TShade &Shade)
     Min = std::_finite(sMin) ? sMin : F->From.Value;
     Max = std::_finite(sMax) ? sMax : F->To.Value;
   }
-
-  std::vector<TPoint> Points;
 
   //Find starting and ending points in point vector
   unsigned N1 = std::lower_bound(F->sList.begin(), F->sList.end() - 1, Min, TCompCoordSet()) - F->sList.begin();
@@ -595,6 +592,14 @@ void TDrawThread::Visit(TShade &Shade)
   if(y2 == AxesRect.Top)
     y2--;
 
+  std::vector<TPoint> Points;
+  std::vector<int> Counts;
+  int CountIndex = 0;
+  unsigned Sum = 0;
+  while(Sum <= N1)
+    Sum += F->PointNum[CountIndex++];
+  CountIndex--;
+
   switch(Shade.ShadeStyle)
   {
     case ssAbove:
@@ -610,20 +615,46 @@ void TDrawThread::Visit(TShade &Shade)
       Points.push_back(TPoint(x1, yAxisPixel));
       break;
     case ssYAxis:
+    {
       //Set start point on y-axis
       Points.push_back(TPoint(xAxisPixel, y1));
+      Points.push_back(TPoint(x1, y1));
+      int y = F->Points[N1].y;
+      unsigned I = N1;
+      unsigned OldSize = 0;
+      bool Pos = F->Points[I].y >= y;
+      while(I < N2+1)
+      {
+        while(I < N2+1 && (Pos ? F->Points[I].y >= y : F->Points[I].y <= y))
+          I++;
+        Pos = !Pos;
+        Points.insert(Points.end(), F->Points.begin()+N1, F->Points.begin()+I);
+        if(I < N2+1)
+        {
+          Points.push_back(TPoint(xAxisPixel, Points.back().y));
+          Counts.push_back(Points.size() - OldSize);
+          OldSize = Points.size();
+          N1 = I;
+          Points.push_back(TPoint(xAxisPixel, F->Points[I].y));
+        }
+      }
+      Points.push_back(TPoint(x2, y2));
+      Points.push_back(TPoint(xAxisPixel, y2));
+      Counts.push_back(Points.size() - OldSize);
+      OldSize = Points.size();
       break;
+    }
     case ssBetween:
     case ssInside:
       break;
   }
 
   //Copy points used for drawing marked area
-  Points.push_back(TPoint(x1, y1));
+//  Points.push_back(TPoint(x1, y1));
 
-  Points.insert(Points.end(), F->Points.begin()+N1, F->Points.begin()+N2+1);
+//  Points.insert(Points.end(), F->Points.begin()+N1, F->Points.begin()+N2+1);
 
-  Points.push_back(TPoint(x2, y2));
+//  Points.push_back(TPoint(x2, y2));
 
   switch(Shade.ShadeStyle)
   {
@@ -641,7 +672,7 @@ void TDrawThread::Visit(TShade &Shade)
       break;
     case ssYAxis:
       //Set end point on y-axis
-      Points.push_back(TPoint(xAxisPixel, y2));
+//      Points.push_back(TPoint(xAxisPixel, y2));
       break;
     case ssBetween:
     {
@@ -732,59 +763,22 @@ void TDrawThread::Visit(TShade &Shade)
       break;
   }
 
-//  TContextLock ContextLock(Context);
-  if(!Aborted)
-    Synchronize(&DrawShade, TDrawShadeData(Shade, Points, N2 - N1 + 2, TPoint(x1, y1), TPoint(x2, y2)));
+//  Counts.push_back(Points.size());
+  Shade.Region.reset(new TRegion(Points, Counts));
 }
 //---------------------------------------------------------------------------
-void TDrawThread::DrawShade(const TDrawShadeData &ShadeData)
+void TDrawThread::DrawShade(const TShade &Shade)
 {
-  const TShade &Shade = ShadeData.Shade;
-  std::vector<TPoint> &Points = ShadeData.Points;
-  unsigned Pos = ShadeData.Pos;
-
   Draw->SetClippingRegion();
 
-  //Set pen and brush; No pen is used, to prevent line around shade
-  Context.SetPen(psClear, clWhite, 1);
   Context.SetBrush(Shade.BrushStyle, ForceBlack ? clBlack : Shade.Color);
 
   //Draw marked area, and clip at AxesRect
-  Context.DrawPolygon(Points, AxesRect);
+  Context.DrawRegion(*Shade.Region);
 
-  //Draw start and end of shading
-  Context.SetPen(psSolid, ForceBlack ? clBlack : Shade.Color, 1);
-
-  if(Shade.ShadeStyle == ssBetween)
-  {
-    if(MaxDist(Points.front(), Points[Pos]) > 1 || MaxDist(Points.back(), Points[Pos + 1]) > 1)
-    {
-      if((Points.front().x > 0 || Points.back().x > 0) && Shade.MarkStart)
-        Context.DrawLine(Points.front(), Points.back());
-
-      if(Shade.MarkEnd)
-        Context.DrawLine(Points[Pos], Points[Pos + 1]);
-    }
-    else if(Shade.MarkStart || Shade.MarkEnd)
-    {
-      //If the points are only 1 pixel in distance, move them together
-      //This takes care of some smalle rounding problems
-      Points.front() = Points[Pos];
-      Points.back() = Points[Pos+1];
-    }
-  }
-  else if(Shade.ShadeStyle == ssInside)
-  {
-    if(Shade.MarkStart || Shade.MarkEnd)
-      Context.DrawLine(Points.front(), Points.back());
-  }
-  else
-  {
-    if(Shade.MarkStart)
-      Context.DrawLine(Points[0], ShadeData.P1);
-    if(Shade.MarkEnd)
-      Context.DrawLine(ShadeData.P2, Points.back());
-  }
+  Context.SetBrush(bsSolid, ForceBlack ? clBlack : Shade.Color);
+  if(Shade.MarkBorder)
+    Context.DrawFrameRegion(*Shade.Region, 1);
 }
 //---------------------------------------------------------------------------
 void __fastcall TDrawThread::BeginUpdate()

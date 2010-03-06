@@ -119,8 +119,8 @@ class TRegion
   TRegion(const TRegion&); //Not defined
 
 public:
-  TRegion(const std::vector<TPoint> &Points, int Mode);
-  TRegion(const std::vector<TPoint> &Points, const std::vector<int> &Counts, int Mode);
+  TRegion(const std::vector<TPoint> &Points, int Mode=WINDING);
+  TRegion(const std::vector<TPoint> &Points, const std::vector<int> &Counts, int Mode=WINDING);
   TRegion(const TRect &Rect);
   TRegion(const std::vector<TRect> &Data);
   ~TRegion() {DeleteObject(Handle);}

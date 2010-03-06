@@ -105,11 +105,11 @@ class ChildListType(collections.MutableSequence):
     def __len__(self):
         return Data.ChildCount(self.node)
     def insert(self, key, value):
-        Data.InsertChild(self.node, value, key)
+        Data.InsertChild(self.node, GetBaseObject(value), key)
     def __setitem__(self, key, value):
         Data.ReplaceChild(self.node, key, value)
     def append(self, value):
-        Data.InsertChild(self.node, value, -1)
+        Data.InsertChild(self.node, GetBaseObject(value), -1)
     def __delitem__(self, key):
         Data.RemoveChild(self.node, key)
     def __repr__(self):
@@ -137,6 +137,7 @@ Eval = GraphImpl.Eval
 EvalComplex = GraphImpl.EvalComplex
 SaveAsImage = GraphImpl.SaveAsImage
 Update = GraphImpl.Update
+TPointSeries = Data.TPointSeries
 
 def HandleOnSelect(Elem):
     global Selected

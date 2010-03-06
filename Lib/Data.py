@@ -543,11 +543,13 @@ class TPointSeries(TGraphElem):
     __swig_getmethods__ = {}
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TPointSeries, name)
-    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
+    def InsertDblPoint(self, *args) -> "void" : return _Data.TPointSeries_InsertDblPoint(self, *args)
     def InsertPoint(self, *args) -> "void" : return _Data.TPointSeries_InsertPoint(self, *args)
+    def ReplaceDblPoint(self, *args) -> "void" : return _Data.TPointSeries_ReplaceDblPoint(self, *args)
     def ReplacePoint(self, *args) -> "void" : return _Data.TPointSeries_ReplacePoint(self, *args)
     def DeletePoint(self, *args) -> "void" : return _Data.TPointSeries_DeletePoint(self, *args)
+    def GetDblPoint(self, *args) -> "Func32::TDblPoint const &" : return _Data.TPointSeries_GetDblPoint(self, *args)
     def GetPoint(self, *args) -> "TPointSeriesPoint const &" : return _Data.TPointSeries_GetPoint(self, *args)
     def PointCount(self) -> "unsigned int" : return _Data.TPointSeries_PointCount(self)
     __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TPointSeries_SWIGSharedPtrUpcast
@@ -584,6 +586,10 @@ class TPointSeries(TGraphElem):
     if _newclass:LabelPosition = _swig_property(_Data.TPointSeries_LabelPosition_get)
     __swig_getmethods__["PointType"] = _Data.TPointSeries_PointType_get
     if _newclass:PointType = _swig_property(_Data.TPointSeries_PointType_get)
+    def __init__(self): 
+        this = _Data.new_TPointSeries()
+        try: self.this.append(this)
+        except: self.this = this
     __swig_destroy__ = _Data.delete_TPointSeries
     __del__ = lambda self : None;
 TPointSeries_swigregister = _Data.TPointSeries_swigregister
@@ -737,7 +743,13 @@ TShade.__repr__ = GraphElemRepr
 TAxesView.__repr__ = GraphElemRepr
 TTopGraphElem.__repr__ = GraphElemRepr
 TPointSeries.Font = property(lambda self: vcl.TObject(handle=_Data.TPointSeries_Font_get(self), owned=False))
-TPointSeries.Points = property(lambda self: TPointList(self))
+def SetPoints(self, L):
+  print("Hello")
+  while len(self.Points) > 0: del self.Points[0]
+  for n in L: self.Points.append(n)
+TPointSeries.__swig_setmethods__["Points"] = SetPoints
+TPointSeries.__swig_getmethods__["Points"] = lambda self: TPointDataList(self)
+TPointSeries.__swig_getmethods__["PointData"] = lambda self: TPointList(self)
 
 import collections
 class TPointList(collections.MutableSequence):
@@ -753,6 +765,24 @@ class TPointList(collections.MutableSequence):
         self.PointSeries.ReplacePoint(value, key)
     def append(self, value):
         self.PointSeries.InsertPoint(value, -1)
+    def __delitem__(self, key):
+        self.PointSeries.DeletePoint(key)
+    def __repr__(self):
+        return repr(list(self))
+
+class TPointDataList(collections.MutableSequence):
+    def __init__(self, PointSeries):
+        self.PointSeries = PointSeries
+    def __getitem__(self, key):
+        return self.PointSeries.GetDblPoint(key)
+    def __len__(self):
+        return self.PointSeries.PointCount()
+    def insert(self, key, value):
+        self.PointSeries.InsertDblPoint(value, key)
+    def __setitem__(self, key, value):
+        self.PointSeries.ReplaceDblPoint(value, key)
+    def append(self, value):
+        self.PointSeries.InsertDblPoint(value, -1)
     def __delitem__(self, key):
         self.PointSeries.DeletePoint(key)
     def __repr__(self):

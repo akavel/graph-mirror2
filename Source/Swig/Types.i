@@ -20,15 +20,6 @@
   $result = Py_BuildValue("iiii", $1->Left, $1->Top, $1->Right, $1->Bottom);
 }
 
-%typemap(in) Func32::TDblPoint  {
-  if(!PyArg_ParseTuple($input, "dd", &($1.x), &($1.y)))
-    SWIG_fail;
-}
-
-%typemap(out) Func32::TDblPoint {
-  $result = Py_BuildValue("dd", $1.x, $1.y);
-}
-
 %typemap(in) TTextValue  {
   $1 = TTextValue(PyFloat_AsDouble($input));
   if(PyErr_Occurred() != NULL)
@@ -69,6 +60,11 @@
 %define TUPLE(StructName, First, Second)
 %typemap(out) StructName
 {
+  $result = Py_BuildValue("NN", Python::ToPyObject($1.First), Python::ToPyObject($1.Second));
+}
+
+%typemap(out) const StructName&
+{
   $result = Py_BuildValue("NN", Python::ToPyObject($1->First), Python::ToPyObject($1->Second));
 }
 
@@ -78,13 +74,23 @@
   if(!PyArg_ParseTuple($input, "OO", &O1, &O2))
     SWIG_fail;
   if(!Python::FromPyObject(O1, $1.First) || !Python::FromPyObject(O2, $1.Second))
-    SWIG_fail;
+      SWIG_fail;
 }
-%apply StructName {const StructName&};
+%typemap(in) const StructName&
+{
+  PyObject *O1=NULL, *O2=NULL;
+  if(!PyArg_ParseTuple($input, "OO", &O1, &O2))
+    SWIG_fail;
+  $*1_ltype Temp;
+  if(!Python::FromPyObject(O1, Temp.First) || !Python::FromPyObject(O2, Temp.Second))
+      SWIG_fail;
+  $1 = &Temp;
+}
 %enddef
 
 
 TUPLE(TPointSeriesPoint, First, Second)
+TUPLE(Func32::TDblPoint, x, y)
 
 %apply double {long double};
 typedef unsigned TColor;

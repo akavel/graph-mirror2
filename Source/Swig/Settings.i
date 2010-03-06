@@ -9,6 +9,7 @@
 #include <Python.h>
 #define WRAP_PYOBJECTS
 #include "PythonBind.h"
+#include "PyGraph.h"
 #pragma warn -8060
 %}
 

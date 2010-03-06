@@ -73,7 +73,6 @@ __published:	// IDE-managed Components
   TLabel *Label12;
   TEdit *Edit5;
   TCheckBox *CheckBox5;
-  TCheckBox *CheckBox6;
   TExtColorBox *ExtColorBox1;
   void __fastcall ImageClick(TObject *Sender);
   void __fastcall Button1Click(TObject *Sender);

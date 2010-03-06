@@ -353,11 +353,13 @@ public:
   boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TPointSeries(*this));}
   TPointList::const_iterator FindPoint(double x) const;
 
-  void AddPoint(const Func32::TDblPoint &Point);
+  void InsertDblPoint(const Func32::TDblPoint &Point, int Index=-1);
   void InsertPoint(const TPointSeriesPoint &Point, int Index=-1, bool AutoUpdate=true);
+  void ReplaceDblPoint(const Func32::TDblPoint &Point, unsigned Index);
   void ReplacePoint(const TPointSeriesPoint &Point, unsigned Index);
   void DeletePoint(unsigned Index);
-  const TPointSeriesPoint& GetPoint(unsigned Index) const;
+  const Func32::TDblPoint& GetDblPoint(unsigned Index) const {return PointList.at(Index);}
+  const TPointSeriesPoint& GetPoint(unsigned Index) const {return PointData.at(Index);}
   unsigned PointCount() const {return PointData.size();}
   const std::vector<TPointSeriesPoint>& GetPointData() const {return PointData;}
   const TPointList& GetPointList() const {return PointList;}
@@ -390,9 +392,8 @@ enum TShadeStyle {ssAbove, ssBelow, ssXAxis, ssYAxis, ssBetween, ssInside};
 
 class TShade : public TGraphElem
 {
-//  TRegion Region;
-
 public:
+  boost::shared_ptr<class TRegion> Region;
   TShadeStyle ShadeStyle;
   TBrushStyle BrushStyle;
   TColor Color;
@@ -405,8 +406,7 @@ public:
   bool ExtendMaxToIntercept;
   bool ExtendMin2ToIntercept;
   bool ExtendMax2ToIntercept;
-  bool MarkStart;
-  bool MarkEnd;
+  bool MarkBorder;
 
   TShade(){}
   TShade(TShadeStyle AShadeStyle, TBrushStyle ABrushStyle, TColor AColor,
@@ -419,6 +419,7 @@ public:
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   TGraphElemPtr Clone() const {return CloneHelper(new TShade(*this));}
   void Update();
+  void ClearCache();
 };
 
 enum TRelationType {rtEquation, rtInequality};

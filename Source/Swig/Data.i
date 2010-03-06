@@ -68,7 +68,7 @@ static boost::shared_ptr<TPolFunc> CreatePolFunc(const std::wstring &Text) throw
 static unsigned ChildCount(const TGraphElemPtr &Elem) {return Elem->ChildCount();}
 static TGraphElemPtr GetChild(const TGraphElemPtr &Elem, unsigned Index) {return Elem->GetChild(Index);}
 static void RemoveChild(const TGraphElemPtr &Elem, unsigned Index) {Elem->RemoveChild(Index); Form1->UpdateTreeView();}
-static void InsertChild(const TGraphElemPtr &Elem, const TGraphElemPtr &Child, int Index) {Elem->InsertChild(Child, Index); Form1->UpdateTreeView();}
+static void InsertChild(TGraphElemPtr Elem, TGraphElemPtr Child, int Index) {Elem->InsertChild(Child, Index); Form1->UpdateTreeView();}
 static void ReplaceChild(const TGraphElemPtr &Elem, unsigned Index, const TGraphElemPtr &Child) {Elem->ReplaceChild(Index, Child); Form1->UpdateTreeView();}
 static bool CompareElem(const TGraphElemPtr &E1, const TGraphElemPtr &E2) {return E1.get() == E2.get();}
 static std::map<std::wstring,std::wstring>& GetPluginData() {return Form1->Data.PluginData;}
@@ -176,8 +176,6 @@ enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
 //enum TLabelPosition {lpAbove, lpBelow, lpLeft, lpRight, lpAboveLeft, lpAboveRight, lpBelowLeft, lpBelowRight};
 enum TPointType {ptCartesian, ptPolar};
 
-
-%nodefaultctor TPointSeries;
 %attribute(TPointSeries, TErrorBarType, xErrorBarType, GetxErrorBarType);
 %attribute(TPointSeries, TErrorBarType, yErrorBarType, GetyErrorBarType);
 %attribute(TPointSeries, double, xErrorValue, GetxErrorValue);
@@ -197,9 +195,12 @@ enum TPointType {ptCartesian, ptPolar};
 class TPointSeries : public TGraphElem
 {
 public:
+  void InsertDblPoint(const Func32::TDblPoint &Point, int Index) throw(std::out_of_range);
   void InsertPoint(TPointSeriesPoint Point, int Index) throw(std::out_of_range);
+  void ReplaceDblPoint(const Func32::TDblPoint &Point, unsigned Index) throw(std::out_of_range);
   void ReplacePoint(TPointSeriesPoint Point, unsigned Index) throw(std::out_of_range);
   void DeletePoint(unsigned Index) throw(std::out_of_range);
+  const Func32::TDblPoint& GetDblPoint(unsigned Index) const throw(std::out_of_range);
   const TPointSeriesPoint& GetPoint(unsigned Index) const throw(std::out_of_range);
   unsigned PointCount() const;
 };
@@ -285,7 +286,12 @@ struct TData
   TAxesView.__repr__ = GraphElemRepr
   TTopGraphElem.__repr__ = GraphElemRepr
   TPointSeries.Font = property(lambda self: vcl.TObject(handle=_Data.TPointSeries_Font_get(self), owned=False))
-  TPointSeries.Points = property(lambda self: TPointList(self))
+  def SetPoints(self, L):
+    while len(self.Points) > 0: del self.Points[0]
+    for n in L: self.Points.append(n)
+  TPointSeries.__swig_setmethods__["Points"] = SetPoints
+  TPointSeries.__swig_getmethods__["Points"] = lambda self: TPointDataList(self)
+  TPointSeries.__swig_getmethods__["PointData"] = lambda self: TPointList(self)
 
   import collections
   class TPointList(collections.MutableSequence):
@@ -301,6 +307,24 @@ struct TData
           self.PointSeries.ReplacePoint(value, key)
       def append(self, value):
           self.PointSeries.InsertPoint(value, -1)
+      def __delitem__(self, key):
+          self.PointSeries.DeletePoint(key)
+      def __repr__(self):
+          return repr(list(self))
+
+  class TPointDataList(collections.MutableSequence):
+      def __init__(self, PointSeries):
+          self.PointSeries = PointSeries
+      def __getitem__(self, key):
+          return self.PointSeries.GetDblPoint(key)
+      def __len__(self):
+          return self.PointSeries.PointCount()
+      def insert(self, key, value):
+          self.PointSeries.InsertDblPoint(value, key)
+      def __setitem__(self, key, value):
+          self.PointSeries.ReplaceDblPoint(value, key)
+      def append(self, value):
+          self.PointSeries.InsertDblPoint(value, -1)
       def __delitem__(self, key):
           self.PointSeries.DeletePoint(key)
       def __repr__(self):

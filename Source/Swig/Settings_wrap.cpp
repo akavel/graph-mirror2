@@ -14,6 +14,7 @@
 #include <Python.h>
 #define WRAP_PYOBJECTS
 #include "PythonBind.h"
+#include "PyGraph.h"
 #pragma warn -8060
 
 
@@ -4619,7 +4620,10 @@ SWIGINTERN PyObject *_wrap_TAxes_LegendPos_set(PyObject *SWIGUNUSEDPARM(self), P
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
   {
-    if(!PyArg_ParseTuple(obj1, "dd", &((&arg2)->x), &((&arg2)->y)))
+    PyObject *O1=NULL, *O2=NULL;
+    if(!PyArg_ParseTuple(obj1, "OO", &O1, &O2))
+    SWIG_fail;
+    if(!Python::FromPyObject(O1, (&arg2)->x) || !Python::FromPyObject(O2, (&arg2)->y))
     SWIG_fail;
   }
   if (arg1) (arg1)->LegendPos = arg2;
@@ -4646,7 +4650,7 @@ SWIGINTERN PyObject *_wrap_TAxes_LegendPos_get(PyObject *SWIGUNUSEDPARM(self), P
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
   result =  ((arg1)->LegendPos);
   {
-    resultobj = Py_BuildValue("dd", (&result)->x, (&result)->y);
+    resultobj = Py_BuildValue("NN", Python::ToPyObject((&result)->x), Python::ToPyObject((&result)->y));
   }
   return resultobj;
 fail:
