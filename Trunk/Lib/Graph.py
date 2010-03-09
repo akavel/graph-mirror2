@@ -114,6 +114,7 @@ class ChildListType(collections.MutableSequence):
         Data.RemoveChild(self.node, key)
     def __repr__(self):
         return repr(list(self))
+    Selected = property(lambda self:Data.GetSelected(), lambda self,x:Data.SetSelected(GetBaseObject(x)))
 
 class PluginDataType(collections.MutableMapping):
     def __init__(self, dict): self.data = dict
