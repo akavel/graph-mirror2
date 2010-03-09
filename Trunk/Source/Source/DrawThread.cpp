@@ -434,6 +434,40 @@ void TDrawThread::Visit(TShade &Shade)
     Synchronize(&DrawShade, Shade);
 }
 //---------------------------------------------------------------------------
+bool ComparePoint(const TPoint &P1, const TPoint &P2, TShadeStyle Style, bool Pos)
+{
+  switch(Style)
+  {
+    case ssAbove:
+    case ssBelow:
+    case ssXAxis:
+      return Pos ? P2.x >= P1.x : P2.x <= P1.x;
+
+    case ssYAxis:
+      return Pos ? P2.y >= P1.y : P2.y <= P1.y;
+
+    default:
+      return true;
+  }
+}
+//---------------------------------------------------------------------------
+TPoint TDrawThread::GetFixedPoint(const TShade &Shade, const TPoint &P)
+{
+  switch(Shade.ShadeStyle)
+  {
+    case ssAbove:
+      return TPoint(P.x, AxesRect.Top - 1);
+    case ssBelow:
+      return TPoint(P.x, AxesRect.Bottom + 1);
+    case ssXAxis:
+      return TPoint(P.x, Draw->yPixelCross);
+    case ssYAxis:
+      return TPoint(Draw->xPixelCross, P.y);
+    default:
+      return P;
+  }
+}
+//---------------------------------------------------------------------------
 void TDrawThread::CreateShade(TShade &Shade)
 {
   TBaseFuncType *F = dynamic_cast<TBaseFuncType*>(Shade.GetParent().get());
@@ -592,88 +626,54 @@ void TDrawThread::CreateShade(TShade &Shade)
   if(y2 == AxesRect.Top)
     y2--;
 
+  boost::shared_ptr<TRegion> Region(new TRegion(TRect(0,0,0,0)));
   std::vector<TPoint> Points;
-  std::vector<int> Counts;
-  int CountIndex = 0;
+  unsigned CountIndex = 0;
   unsigned Sum = 0;
   while(Sum <= N1)
     Sum += F->PointNum[CountIndex++];
-  CountIndex--;
 
   switch(Shade.ShadeStyle)
   {
     case ssAbove:
-      //Set start point on top of image
-      Points.push_back(TPoint(x1, -1));
-      break;
     case ssBelow:
-      //Set start point on bottom of image
-      Points.push_back(TPoint(x1, AxesRect.Bottom + 1));
-      break;
     case ssXAxis:
-      //Set start point on x-axis
-      Points.push_back(TPoint(x1, yAxisPixel));
-      break;
     case ssYAxis:
     {
-      //Set start point on y-axis
-      Points.push_back(TPoint(xAxisPixel, y1));
+      //Set start point
+      Points.push_back(GetFixedPoint(Shade, TPoint(x1, y1)));
       Points.push_back(TPoint(x1, y1));
       int y = F->Points[N1].y;
-      unsigned I = N1;
-      unsigned OldSize = 0;
+      unsigned I = N1+1;
       bool Pos = F->Points[I].y >= y;
       while(I < N2+1)
       {
-        while(I < N2+1 && (Pos ? F->Points[I].y >= y : F->Points[I].y <= y))
+        while(I < N2+1 && ComparePoint(F->Points[I], F->Points[I-1], Shade.ShadeStyle, Pos) && I < Sum)
           I++;
-        Pos = !Pos;
+        if(I == Sum)
+        {
+          if(CountIndex < F->PointNum.size())
+            Sum += F->PointNum[CountIndex++];
+        }
+        else
+          Pos = !Pos;
         Points.insert(Points.end(), F->Points.begin()+N1, F->Points.begin()+I);
         if(I < N2+1)
         {
-          Points.push_back(TPoint(xAxisPixel, Points.back().y));
-          Counts.push_back(Points.size() - OldSize);
-          OldSize = Points.size();
+          Points.push_back(GetFixedPoint(Shade, Points.back()));
+          *Region |= TRegion(Points);
+          Points.clear();
           N1 = I;
-          Points.push_back(TPoint(xAxisPixel, F->Points[I].y));
+          Points.push_back(GetFixedPoint(Shade, F->Points[I]));
         }
       }
       Points.push_back(TPoint(x2, y2));
-      Points.push_back(TPoint(xAxisPixel, y2));
-      Counts.push_back(Points.size() - OldSize);
-      OldSize = Points.size();
+      Points.push_back(GetFixedPoint(Shade, TPoint(x2, y2)));
+      *Region |= TRegion(Points);
+      Points.clear();
       break;
     }
-    case ssBetween:
-    case ssInside:
-      break;
-  }
 
-  //Copy points used for drawing marked area
-//  Points.push_back(TPoint(x1, y1));
-
-//  Points.insert(Points.end(), F->Points.begin()+N1, F->Points.begin()+N2+1);
-
-//  Points.push_back(TPoint(x2, y2));
-
-  switch(Shade.ShadeStyle)
-  {
-    case ssAbove:
-      //Set end point on top of image
-      Points.push_back(TPoint(x2,  -1));
-      break;
-    case ssBelow:
-      //Set end point on bottom of image
-      Points.push_back(TPoint(x2, AxesRect.Bottom + 1));
-      break;
-    case ssXAxis:
-      //Set end point on x-axis
-      Points.push_back(TPoint(x2, yAxisPixel));
-      break;
-    case ssYAxis:
-      //Set end point on y-axis
-//      Points.push_back(TPoint(xAxisPixel, y2));
-      break;
     case ssBetween:
     {
       //The intervals can go both ways. Make sure sMin is always less than sMax
@@ -759,12 +759,9 @@ void TDrawThread::CreateShade(TShade &Shade)
         Points.push_back(SwapMinMax ? TPoint(X2, Y2) : TPoint(X1, Y1));
       break;
     }
-    case ssInside:
-      break;
   }
 
-//  Counts.push_back(Points.size());
-  Shade.Region.reset(new TRegion(Points, Counts));
+  Shade.Region = Region;
 }
 //---------------------------------------------------------------------------
 void TDrawThread::DrawShade(const TShade &Shade)

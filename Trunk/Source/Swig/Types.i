@@ -88,6 +88,20 @@
 }
 %enddef
 
+%typemap(throws) Func32::EFuncError %{
+  PyErr_SetString(Python::PyEFuncError, ToString(GetErrorMsg($1)).c_str());
+  SWIG_fail;
+%}
+
+%define HANDLE_FPU(function)
+%exception function
+%{
+  _clear87(); //Clear FPU status flags
+  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
+  $action
+  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+%}
+%enddef
 
 TUPLE(TPointSeriesPoint, First, Second)
 TUPLE(Func32::TDblPoint, x, y)

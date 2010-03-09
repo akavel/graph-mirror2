@@ -8,6 +8,8 @@
 %include "attribute.i"
 %include "Types.i"
 
+%pythonnondynamic;
+
 %template(PointVector) std::vector<TPoint>;
 %template(CoordSetVector) std::vector<Func32::TCoordSet<> >;
 %template(UnsignedVector) std::vector<unsigned>;
@@ -50,17 +52,17 @@ PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem)
 }
 }
 
+HANDLE_FPU(Redraw)
+HANDLE_FPU(InsertDblPoint)
+HANDLE_FPU(ReplaceDblPoint)
 
 typedef boost::shared_ptr<class TGraphElem> TGraphElemPtr;
-
-%typemap(throws) Func32::EFuncError %{
-  PyErr_SetString(Python::PyEFuncError, ToString(GetErrorMsg($1)).c_str());
-  SWIG_fail;
-%}
 
 %inline %{
 static void AbortUpdate() {Form1->Data.AbortUpdate();}
 static void Redraw() {Form1->Redraw();}
+static TGraphElemPtr GetSelected() {return Form1->GetSelected();}
+static void SetSelected(const TGraphElemPtr &Elem) {Form1->SetSelected(Elem);}
 static boost::shared_ptr<TStdFunc> CreateStdFunc(const std::wstring &Text) throw(Func32::EFuncError) {return boost::shared_ptr<TStdFunc>(new TStdFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 static boost::shared_ptr<TParFunc> CreateParFunc(const std::wstring &xText, const std::wstring &yText) throw(Func32::EFuncError) {return boost::shared_ptr<TParFunc>(new TParFunc(xText, yText, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 static boost::shared_ptr<TPolFunc> CreatePolFunc(const std::wstring &Text) throw(Func32::EFuncError) {return boost::shared_ptr<TPolFunc>(new TPolFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
@@ -257,12 +259,6 @@ struct TData
 };
 
 %{
-/*  template <>  struct swig::traits_from<TPoint > {
-    static PyObject *from(const TPoint& val) {
-      return Py_BuildValue("ii", val.x, val.y);
-    }
-  };*/
-
   PyObject* ToPyObject(TData &Data)
   {
     Python::TLockGIL Dummy;
