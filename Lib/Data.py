@@ -98,7 +98,7 @@ SwigPyIterator_swigregister(SwigPyIterator)
 SHARED_PTR_DISOWN = _Data.SHARED_PTR_DISOWN
 class PointVector(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, PointVector, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, PointVector, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, PointVector, name)
     __repr__ = _swig_repr
@@ -137,7 +137,7 @@ PointVector_swigregister(PointVector)
 
 class CoordSetVector(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, CoordSetVector, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, CoordSetVector, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, CoordSetVector, name)
     __repr__ = _swig_repr
@@ -176,7 +176,7 @@ CoordSetVector_swigregister(CoordSetVector)
 
 class UnsignedVector(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, UnsignedVector, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, UnsignedVector, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, UnsignedVector, name)
     __repr__ = _swig_repr
@@ -215,7 +215,7 @@ UnsignedVector_swigregister(UnsignedVector)
 
 class StringMap(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, StringMap, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, StringMap, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, StringMap, name)
     __repr__ = _swig_repr
@@ -260,6 +260,14 @@ AbortUpdate = _Data.AbortUpdate
 def Redraw() -> "void" :
   return _Data.Redraw()
 Redraw = _Data.Redraw
+
+def GetSelected() -> "TGraphElemPtr" :
+  return _Data.GetSelected()
+GetSelected = _Data.GetSelected
+
+def SetSelected(*args) -> "void" :
+  return _Data.SetSelected(*args)
+SetSelected = _Data.SetSelected
 
 def CreateStdFunc(*args) -> "boost::shared_ptr< TStdFunc >" :
   return _Data.CreateStdFunc(*args)
@@ -306,7 +314,7 @@ def GetTopElem() -> "boost::shared_ptr< TTopGraphElem > const &" :
 GetTopElem = _Data.GetTopElem
 class TGraphElem(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TGraphElem, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TGraphElem, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, TGraphElem, name)
     def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
@@ -343,7 +351,7 @@ dtLines = _Data.dtLines
 class TBaseFuncType(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TBaseFuncType, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TBaseFuncType, name, value)
     __swig_getmethods__ = {}
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TBaseFuncType, name)
@@ -406,7 +414,7 @@ TBaseFuncType_SWIGSharedPtrUpcast = _Data.TBaseFuncType_SWIGSharedPtrUpcast
 class TTopGraphElem(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TTopGraphElem, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TTopGraphElem, name, value)
     __swig_getmethods__ = {}
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TTopGraphElem, name)
@@ -426,7 +434,7 @@ TTopGraphElem_SWIGSharedPtrUpcast = _Data.TTopGraphElem_SWIGSharedPtrUpcast
 class TStdFunc(TBaseFuncType):
     __swig_setmethods__ = {}
     for _s in [TBaseFuncType]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TStdFunc, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TStdFunc, name, value)
     __swig_getmethods__ = {}
     for _s in [TBaseFuncType]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TStdFunc, name)
@@ -451,7 +459,7 @@ TStdFunc_SWIGSharedPtrUpcast = _Data.TStdFunc_SWIGSharedPtrUpcast
 class TParFunc(TBaseFuncType):
     __swig_setmethods__ = {}
     for _s in [TBaseFuncType]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TParFunc, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TParFunc, name, value)
     __swig_getmethods__ = {}
     for _s in [TBaseFuncType]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TParFunc, name)
@@ -475,7 +483,7 @@ TParFunc_SWIGSharedPtrUpcast = _Data.TParFunc_SWIGSharedPtrUpcast
 class TPolFunc(TBaseFuncType):
     __swig_setmethods__ = {}
     for _s in [TBaseFuncType]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TPolFunc, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TPolFunc, name, value)
     __swig_getmethods__ = {}
     for _s in [TBaseFuncType]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TPolFunc, name)
@@ -499,7 +507,7 @@ ttNormal = _Data.ttNormal
 class TTan(TBaseFuncType):
     __swig_setmethods__ = {}
     for _s in [TBaseFuncType]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TTan, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TTan, name, value)
     __swig_getmethods__ = {}
     for _s in [TBaseFuncType]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TTan, name)
@@ -539,7 +547,7 @@ ptPolar = _Data.ptPolar
 class TPointSeries(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TPointSeries, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TPointSeries, name, value)
     __swig_getmethods__ = {}
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TPointSeries, name)
@@ -602,7 +610,7 @@ TPointSeries_SWIGSharedPtrUpcast = _Data.TPointSeries_SWIGSharedPtrUpcast
 class TTextLabel(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TTextLabel, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TTextLabel, name, value)
     __swig_getmethods__ = {}
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TTextLabel, name)
@@ -641,7 +649,7 @@ TTextLabel_SWIGSharedPtrUpcast = _Data.TTextLabel_SWIGSharedPtrUpcast
 class TShade(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TShade, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TShade, name, value)
     __swig_getmethods__ = {}
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TShade, name)
@@ -663,7 +671,7 @@ rtInequality = _Data.rtInequality
 class TRelation(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TRelation, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TRelation, name, value)
     __swig_getmethods__ = {}
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TRelation, name)
@@ -700,7 +708,7 @@ TRelation_SWIGSharedPtrUpcast = _Data.TRelation_SWIGSharedPtrUpcast
 class TAxesView(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TAxesView, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TAxesView, name, value)
     __swig_getmethods__ = {}
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TAxesView, name)
@@ -719,7 +727,7 @@ TAxesView_SWIGSharedPtrUpcast = _Data.TAxesView_SWIGSharedPtrUpcast
 
 class TData(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TData, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TData, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, TData, name)
     def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
@@ -744,7 +752,6 @@ TAxesView.__repr__ = GraphElemRepr
 TTopGraphElem.__repr__ = GraphElemRepr
 TPointSeries.Font = property(lambda self: vcl.TObject(handle=_Data.TPointSeries_Font_get(self), owned=False))
 def SetPoints(self, L):
-  print("Hello")
   while len(self.Points) > 0: del self.Points[0]
   for n in L: self.Points.append(n)
 TPointSeries.__swig_setmethods__["Points"] = SetPoints
