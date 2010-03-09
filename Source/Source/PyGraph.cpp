@@ -320,12 +320,14 @@ static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args)
 //---------------------------------------------------------------------------
 static PyObject* PluginUpdate(PyObject *Self, PyObject *Args)
 {
+  FreeGIL();
   Form1->Draw.AbortUpdate();
   Form1->Data.ClearCache();
   Form1->Data.Update();
   Form1->UpdateTreeView();
   Form1->Data.SetModified();
   Form1->Redraw(); //Activates thread; must be done after OLE update
+  AllocGIL();
   Py_RETURN_NONE;
 }
 //---------------------------------------------------------------------------

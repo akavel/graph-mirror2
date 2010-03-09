@@ -5039,43 +5039,43 @@ PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem)
   TGraphElem *Ptr = Elem.get();
   if(Ptr == NULL)
     return SWIG_Py_Void();
-  /*@SWIG:Data.i,28,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,30,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TStdFunc*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TStdFunc>(boost::static_pointer_cast<TStdFunc>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TStdFunc_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,28,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,30,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TParFunc*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TParFunc>(boost::static_pointer_cast<TParFunc>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TParFunc_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,28,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,30,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TPolFunc*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TPolFunc>(boost::static_pointer_cast<TPolFunc>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TPolFunc_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,28,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,30,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TTan*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TTan>(boost::static_pointer_cast<TTan>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TTan_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,28,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,30,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TPointSeries*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TPointSeries>(boost::static_pointer_cast<TPointSeries>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TPointSeries_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,28,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,30,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TTextLabel*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TTextLabel>(boost::static_pointer_cast<TTextLabel>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,28,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,30,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TShade*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TShade>(boost::static_pointer_cast<TShade>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TShade_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,28,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,30,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TRelation*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TRelation>(boost::static_pointer_cast<TRelation>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TRelation_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,28,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,30,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TAxesView*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TAxesView>(boost::static_pointer_cast<TAxesView>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TAxesView_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,28,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,30,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TTopGraphElem*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TTopGraphElem>(boost::static_pointer_cast<TTopGraphElem>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TTopGraphElem_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
@@ -5085,6 +5085,8 @@ PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem)
 
 static void AbortUpdate() {Form1->Data.AbortUpdate();}
 static void Redraw() {Form1->Redraw();}
+static TGraphElemPtr GetSelected() {return Form1->GetSelected();}
+static void SetSelected(const TGraphElemPtr &Elem) {Form1->SetSelected(Elem);}
 static boost::shared_ptr<TStdFunc> CreateStdFunc(const std::wstring &Text) throw(Func32::EFuncError) {return boost::shared_ptr<TStdFunc>(new TStdFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 static boost::shared_ptr<TParFunc> CreateParFunc(const std::wstring &xText, const std::wstring &yText) throw(Func32::EFuncError) {return boost::shared_ptr<TParFunc>(new TParFunc(xText, yText, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 static boost::shared_ptr<TPolFunc> CreatePolFunc(const std::wstring &Text) throw(Func32::EFuncError) {return boost::shared_ptr<TPolFunc>(new TPolFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
@@ -5455,12 +5457,6 @@ SWIGINTERN boost::shared_ptr< TGraphElem > TRelation_SWIGSharedPtrUpcast(boost::
 SWIGINTERN boost::shared_ptr< TGraphElem > TAxesView_SWIGSharedPtrUpcast(boost::shared_ptr< TAxesView > swigSharedPtrUpcast){
     return swigSharedPtrUpcast;
   }
-
-/*  template <>  struct swig::traits_from<TPoint > {
-    static PyObject *from(const TPoint& val) {
-      return Py_BuildValue("ii", val.x, val.y);
-    }
-  };*/
 
   PyObject* ToPyObject(TData &Data)
   {
@@ -10903,7 +10899,51 @@ SWIGINTERN PyObject *_wrap_Redraw(PyObject *SWIGUNUSEDPARM(self), PyObject *args
   PyObject *resultobj = 0;
   
   if (!PyArg_ParseTuple(args,(char *)":Redraw")) SWIG_fail;
+  
+  _clear87(); //Clear FPU status flags
+  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
   Redraw();
+  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GetSelected(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TGraphElemPtr result;
+  
+  if (!PyArg_ParseTuple(args,(char *)":GetSelected")) SWIG_fail;
+  result = GetSelected();
+  {
+    resultobj = DownCastSharedPtr(result);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SetSelected(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TGraphElemPtr *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SetSelected",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SetSelected" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SetSelected" "', argument " "1"" of type '" "TGraphElemPtr const &""'"); 
+  }
+  arg1 = reinterpret_cast< TGraphElemPtr * >(argp1);
+  SetSelected((boost::shared_ptr< TGraphElem > const &)*arg1);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -13720,12 +13760,17 @@ SWIGINTERN PyObject *_wrap_TPointSeries_InsertDblPoint(PyObject *SWIGUNUSEDPARM(
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "TPointSeries_InsertDblPoint" "', argument " "3"" of type '" "int""'");
   } 
   arg3 = static_cast< int >(val3);
+  
+  _clear87(); //Clear FPU status flags
+  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
   try {
     (arg1)->InsertDblPoint((Func32::TDblPoint const &)*arg2,arg3);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
   }
+  
+  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
   
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -13836,12 +13881,17 @@ SWIGINTERN PyObject *_wrap_TPointSeries_ReplaceDblPoint(PyObject *SWIGUNUSEDPARM
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "TPointSeries_ReplaceDblPoint" "', argument " "3"" of type '" "unsigned int""'");
   } 
   arg3 = static_cast< unsigned int >(val3);
+  
+  _clear87(); //Clear FPU status flags
+  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
   try {
     (arg1)->ReplaceDblPoint((Func32::TDblPoint const &)*arg2,arg3);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
   }
+  
+  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
   
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -15985,6 +16035,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"StringMap_swigregister", StringMap_swigregister, METH_VARARGS, NULL},
 	 { (char *)"AbortUpdate", _wrap_AbortUpdate, METH_VARARGS, NULL},
 	 { (char *)"Redraw", _wrap_Redraw, METH_VARARGS, NULL},
+	 { (char *)"GetSelected", _wrap_GetSelected, METH_VARARGS, NULL},
+	 { (char *)"SetSelected", _wrap_SetSelected, METH_VARARGS, NULL},
 	 { (char *)"CreateStdFunc", _wrap_CreateStdFunc, METH_VARARGS, NULL},
 	 { (char *)"CreateParFunc", _wrap_CreateParFunc, METH_VARARGS, NULL},
 	 { (char *)"CreatePolFunc", _wrap_CreatePolFunc, METH_VARARGS, NULL},

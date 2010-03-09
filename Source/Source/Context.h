@@ -120,6 +120,7 @@ class TRegion
 
 public:
   TRegion(const std::vector<TPoint> &Points, int Mode=WINDING);
+  TRegion(const TPoint *Points, unsigned Count, int Mode=WINDING);
   TRegion(const std::vector<TPoint> &Points, const std::vector<int> &Counts, int Mode=WINDING);
   TRegion(const TRect &Rect);
   TRegion(const std::vector<TRect> &Data);
@@ -137,8 +138,6 @@ public:
   TRegion& operator|=(const TRegion&);
   TRegion& operator^=(const TRegion&);
 };
-
-boost::shared_ptr<TRegion> CreateRegionFromLine(const std::vector<TPoint> &Data);
 } //namespace Graph
 //---------------------------------------------------------------------------
 #endif

@@ -431,6 +431,14 @@ TRegion::TRegion(const std::vector<TPoint> &Points, int Mode)
     RaiseLastOSError();
 }
 //---------------------------------------------------------------------------
+TRegion::TRegion(const TPoint *Points, unsigned Count, int Mode)
+ : Handle(NULL)
+{
+  Handle = CreatePolygonRgn(Points, Count, Mode);
+  if(Handle == 0)
+    RaiseLastOSError();
+}
+//---------------------------------------------------------------------------
 TRegion::TRegion(const std::vector<TPoint> &Points, const std::vector<int> &Counts, int Mode)
  : Handle(NULL)
 {
@@ -525,16 +533,6 @@ void TRegion::GetData(std::vector<TRect> &Data)
     RaiseLastOSError();
 
   Data.assign(reinterpret_cast<TRect*>(RgnData->Buffer), reinterpret_cast<TRect*>(RgnData->Buffer) + RgnData->rdh.nCount);
-}
-//---------------------------------------------------------------------------
-boost::shared_ptr<TRegion> CreateRegionFromLine(const std::vector<TPoint> &Data)
-{
-  std::vector<TPoint> Temp;
-  Temp.reserve(Data.size() * 2);
-  Temp.insert(Temp.begin(), Data.begin(), Data.end());
-  for(std::vector<TPoint>::const_reverse_iterator Iter = Data.rbegin(); Iter != Data.rend(); ++Iter)
-    Temp.push_back(TPoint(Iter->x+1, Iter->y+1));
-  return boost::shared_ptr<TRegion>(new TRegion(Temp, WINDING));
 }
 //---------------------------------------------------------------------------
 void TContext::ClipLine(TPoint &P1, TPoint &P2, const TRect &Rect)

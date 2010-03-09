@@ -13,6 +13,10 @@
 struct _object;
 struct _typeobject;
 
+#define PYTHON_FPU_CONTROL MCW_EM | IC_PROJECTIVE | RC_NEAR
+#define DEFAULT_FPU_CONTROL EM_DENORMAL | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64
+#define FPU_MASK MCW_EM | MCW_IC | MCW_RC | MCW_PC
+
 namespace Python
 {
 //typedef _object PyObject;

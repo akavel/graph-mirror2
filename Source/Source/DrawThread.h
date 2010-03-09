@@ -54,6 +54,7 @@ private:
   void DrawHalfCircle(const TPoint &Point, long double Angle, TColor Color, unsigned Size);
   void LineToAngle(int X, int Y, double Angle, double Length);
   void ThreadTerminated(TObject*);
+  TPoint GetFixedPoint(const TShade &Shade, const TPoint &P);
 
   void DrawPointSeries(const TPointSeries &PointSeries);
   void DrawFunction(const TBaseFuncType &Func);

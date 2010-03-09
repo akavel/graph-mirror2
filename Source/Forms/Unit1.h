@@ -496,6 +496,9 @@ public:		// User declarations
 
   bool LoadFromFile(const String &FileName, bool AddToRecent = true, bool ShowErrorMessages = true);
   void LoadDefault();
+
+  void SetSelected(const TGraphElemPtr &Elem) {TreeView->Selected = GetNode(Elem);}
+  TGraphElemPtr GetSelected() {return GetGraphElem(TreeView->Selected);}
 };
 
 //---------------------------------------------------------------------------
