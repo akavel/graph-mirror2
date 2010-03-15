@@ -273,6 +273,7 @@ object Form12: TForm12
         ' an argument range is specified.'
       Style = csOwnerDrawFixed
       ItemHeight = 16
+      ItemIndex = 0
       TabOrder = 0
       OnDrawItem = ComboBoxDrawItem
       Items.Strings = (
@@ -293,6 +294,7 @@ object Form12: TForm12
         'n argument range is specified.'
       Style = csOwnerDrawFixed
       ItemHeight = 16
+      ItemIndex = 0
       TabOrder = 1
       OnDrawItem = ComboBoxDrawItem
       Items.Strings = (

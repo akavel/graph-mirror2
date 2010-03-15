@@ -34,6 +34,8 @@ __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)
   LineSelect1->LineStyle = static_cast<TPenStyle>(Property.DefaultFunction.Style);
   ExtColorBox1->Selected = Property.DefaultFunction.Color;
   UpDown1->Position = Property.DefaultFunction.Size;
+  ComboBox2->ItemIndex = 0;
+  ComboBox3->ItemIndex = 0;
 
   //Now this is silly: We don't want to flip the group box, so we flip it twice
   if(SysLocale.MiddleEast)
