@@ -37,6 +37,8 @@ __fastcall TForm12::TForm12(TComponent* Owner, TData &AData)
   LineSelect1->ItemIndex = Property.DefaultTangent.Style;
   ExtColorBox1->Selected = Property.DefaultTangent.Color;
   UpDown1->Position = Property.DefaultTangent.Size;
+  ComboBox1->ItemIndex = 0;
+  ComboBox2->ItemIndex = 0;
 
   ScaleForm(this);
 }

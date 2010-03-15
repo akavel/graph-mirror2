@@ -434,20 +434,20 @@ void TDrawThread::Visit(TShade &Shade)
     Synchronize(&DrawShade, Shade);
 }
 //---------------------------------------------------------------------------
-bool ComparePoint(const TPoint &P1, const TPoint &P2, TShadeStyle Style, bool Pos)
+int ComparePoint(const TPoint &P1, const TPoint &P2, TShadeStyle Style)
 {
   switch(Style)
   {
     case ssAbove:
     case ssBelow:
     case ssXAxis:
-      return Pos ? P2.x >= P1.x : P2.x <= P1.x;
+      return P2.x == P1.x ? 0 : (P2.x > P1.x ? 1 : -1);
 
     case ssYAxis:
-      return Pos ? P2.y >= P1.y : P2.y <= P1.y;
+      return P2.y == P1.y ? 0 : (P2.y > P1.y ? 1 : -1);
 
     default:
-      return true;
+      return 0;
   }
 }
 //---------------------------------------------------------------------------
@@ -645,11 +645,16 @@ void TDrawThread::CreateShade(TShade &Shade)
       Points.push_back(TPoint(x1, y1));
       int y = F->Points[N1].y;
       unsigned I = N1+1;
-      bool Pos = F->Points[I].y >= y;
+      bool Pos = ComparePoint(F->Points[N1], F->Points[I], Shade.ShadeStyle) >= 0;
       while(I < N2+1)
       {
-        while(I < N2+1 && ComparePoint(F->Points[I], F->Points[I-1], Shade.ShadeStyle, Pos) && I < Sum)
+        while(I < N2+1 && I < Sum)
+        {
+          int Pos2 = ComparePoint(F->Points[I-1], F->Points[I], Shade.ShadeStyle);
+          if(Pos ? Pos2 < 0 : Pos2 > 0)
+            break;
           I++;
+        }
         if(I == Sum)
         {
           if(CountIndex < F->PointNum.size())
@@ -835,7 +840,7 @@ void TDrawThread::DrawEndPoints(const TBaseFuncType &Func)
     long double t = Func.To.Value;
     if(_finitel(t))
       DrawEndPoint(Func, t, Func.EndPointStyle, false);
-    else
+    else if(!Func.sList.empty())
     {
       //If a start value has not been specified, search for the first point inside the visible area
       //that is close to the border, and show the end point here.

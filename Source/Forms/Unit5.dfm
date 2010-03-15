@@ -374,6 +374,7 @@ object Form5: TForm5
         ' an argument range is specified.'
       Style = csOwnerDrawFixed
       ItemHeight = 16
+      ItemIndex = 0
       TabOrder = 0
       OnDrawItem = ComboBoxDrawItem
       Items.Strings = (
@@ -395,6 +396,7 @@ object Form5: TForm5
       Style = csOwnerDrawFixed
       Anchors = [akTop, akRight]
       ItemHeight = 16
+      ItemIndex = 0
       TabOrder = 1
       OnDrawItem = ComboBoxDrawItem
       Items.Strings = (
