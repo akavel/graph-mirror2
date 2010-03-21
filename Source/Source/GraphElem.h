@@ -31,7 +31,7 @@ struct TGraphElemVisitor
   virtual void Visit(class TBaseFuncType &Func) =0;
   virtual void Visit(class TTan &Tan) = 0;
   virtual void Visit(class TPointSeries &Series) =0;
-  virtual void Visit(class TShade &Shade) =0;
+  virtual void Visit(class TShading &Shade) =0;
   virtual void Visit(class TTextLabel &Label) =0;
   virtual void Visit(class TRelation &Relation) =0;
   virtual void Visit(class TAxesView &AxesView) =0;
@@ -150,7 +150,7 @@ class TTextLabel : public TGraphElem
   std::wstring StatusText; //The text shown in the TreeView
 
 public:
-  TTextLabel() : LabelPlacement(lpUserTopLeft), Rect(0,0,0,0), Rotation(0) {}
+  TTextLabel();
   TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation);
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
@@ -159,14 +159,20 @@ public:
   int UpdateRect(int X, int Y) {int Width = Rect.Width(); int Height = Rect.Height(); Rect = TRect(X, Y, X + Width, Y + Height); return Width;}
   bool IsInsideRect(int X, int Y) const {return InsideRect(Rect, TPoint(X, Y));}
   const TTextValue& GetXPos() const {return xPos;}
+  void SetXPos(const TTextValue &Value) {xPos = Value;}
   const TTextValue& GetYPos() const {return yPos;}
+  void SetYPos(const TTextValue &Value) {yPos = Value;}
   const std::string& GetText() const {return Text;}
+  void SetText(const std::string &Str) {Text = Str;}
   void Scale(double xSizeMul, double ySizeMul);
   const TRect& GetRect() const {return Rect;}
   TGraphElemPtr Clone() const {return CloneHelper(new TTextLabel(*this));}
   TColor GetBackgroundColor() const {return BackgroundColor;}
+  void SetBackgroundColor(TColor Color) {BackgroundColor = Color;}
   TLabelPlacement GetPlacement() const {return LabelPlacement;}
+  void SetPlacement(TLabelPlacement Value) {LabelPlacement = Value;}
   unsigned GetRotation() const {return Rotation;}
+  void SetRotation(unsigned Value) {Rotation = Value;}
   TMetafile* GetImage() const {return Metafile;}
   void Update();
 };
@@ -242,7 +248,7 @@ class TStdFunc : public TBaseFuncType
 public:
   TStdFunc() {} //Used with ReadFromIni();
   TStdFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
-  TStdFunc(const Func32::TFunc &AFunc);
+  explicit TStdFunc(const Func32::TFunc &AFunc);
 
   boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TStdFunc(*this));}
   std::wstring MakeText() const;
@@ -390,7 +396,7 @@ Func32::TDblPoint FindCoord(TPointSeries::TPointList::const_iterator Iter, doubl
 
 enum TShadeStyle {ssAbove, ssBelow, ssXAxis, ssYAxis, ssBetween, ssInside};
 
-class TShade : public TGraphElem
+class TShading : public TGraphElem
 {
 public:
   boost::shared_ptr<class TRegion> Region;
@@ -408,16 +414,12 @@ public:
   bool ExtendMax2ToIntercept;
   bool MarkBorder;
 
-  TShade(){}
-  TShade(TShadeStyle AShadeStyle, TBrushStyle ABrushStyle, TColor AColor,
-    const boost::shared_ptr<TBaseFuncType> &AFunc2,
-    double AsMin, double AsMax, double AsMin2, double AsMax2, bool AExtendMinToIntercept, bool AExtendMaxToIntercept,
-    bool AExtendMin2ToIntercept, bool AExtendMax2ToIntercept);
+  TShading();
   std::wstring MakeText() const;
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
-  TGraphElemPtr Clone() const {return CloneHelper(new TShade(*this));}
+  TGraphElemPtr Clone() const {return CloneHelper(new TShading(*this));}
   void Update();
   void ClearCache();
 };
@@ -438,7 +440,7 @@ public:
   boost::shared_ptr<class TRegion> Region;
 
   TRelation();
-  TRelation(const std::wstring &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig);
+  TRelation(const std::wstring &AText, const std::wstring &AConstraints, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);
   TRelation(const TRelation &Relation);
   std::wstring MakeText() const;
   void WriteToIni(TConfigFileSection &Section) const;
@@ -449,13 +451,17 @@ public:
   void Update();
 
   TColor GetColor() const {return Color;}
+  void SetColor(TColor Value) {Color = Value;}
   TBrushStyle GetBrushStyle() const {return BrushStyle;}
+  void SetBrushStyle(TBrushStyle Value) {BrushStyle = Value;}
   const std::wstring& GetText() const {return Text;}
   const std::wstring& GetConstraints() const {return ConstraintsText;}
   long double Eval(const std::vector<long double> &Args, Func32::ECalcError &E);
+  long double Eval(long double x, long double y);
   void ClearCache();
   TRelationType GetRelationType() const {return RelationType;}
   unsigned GetSize() const {return Size;}
+  void SetSize(unsigned Value) {Size = Value;}
 };
 
 class TAxesView : public TGraphElem

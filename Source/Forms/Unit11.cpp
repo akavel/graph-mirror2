@@ -71,10 +71,8 @@ void __fastcall TForm11::Button1Click(TObject *Sender)
   {
     NewRelation.reset(new TRelation(
       ToWString(Edit1->Text),
+      L"",
       Data.CustomFunctions.SymbolList,
-      ExtColorBox1->Selected,
-      ShadeSelect1->ShadeStyle,
-      Edit4->Text.ToInt(),
       Data.Axes.Trigonometry
     ));
     try
@@ -91,6 +89,9 @@ void __fastcall TForm11::Button1Click(TObject *Sender)
     }
 
     NewRelation->SetLegendText(ToWString(Edit3->Text));
+    NewRelation->SetSize(Edit4->Text.ToInt());
+    NewRelation->SetColor(ExtColorBox1->Selected);
+    NewRelation->SetBrushStyle(ShadeSelect1->ShadeStyle);
 
     Data.AbortUpdate();
     if(Relation)

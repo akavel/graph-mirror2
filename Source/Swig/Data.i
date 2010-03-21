@@ -44,7 +44,7 @@ PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem)
   CHECK_GRAPH_ELEM(TTan)
   CHECK_GRAPH_ELEM(TPointSeries)
   CHECK_GRAPH_ELEM(TTextLabel)
-  CHECK_GRAPH_ELEM(TShade)
+  CHECK_GRAPH_ELEM(TShading)
   CHECK_GRAPH_ELEM(TRelation)
   CHECK_GRAPH_ELEM(TAxesView)
   CHECK_GRAPH_ELEM(TTopGraphElem)
@@ -55,6 +55,9 @@ PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem)
 HANDLE_FPU(Redraw)
 HANDLE_FPU(InsertDblPoint)
 HANDLE_FPU(ReplaceDblPoint)
+HANDLE_FPU(TStdFunc::TStdFunc)
+HANDLE_FPU(TParFunc::TParFunc)
+HANDLE_FPU(TPolFunc::TPolFunc)
 
 typedef boost::shared_ptr<class TGraphElem> TGraphElemPtr;
 
@@ -63,9 +66,6 @@ static void AbortUpdate() {Form1->Data.AbortUpdate();}
 static void Redraw() {Form1->Redraw();}
 static TGraphElemPtr GetSelected() {return Form1->GetSelected();}
 static void SetSelected(const TGraphElemPtr &Elem) {Form1->SetSelected(Elem);}
-static boost::shared_ptr<TStdFunc> CreateStdFunc(const std::wstring &Text) throw(Func32::EFuncError) {return boost::shared_ptr<TStdFunc>(new TStdFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
-static boost::shared_ptr<TParFunc> CreateParFunc(const std::wstring &xText, const std::wstring &yText) throw(Func32::EFuncError) {return boost::shared_ptr<TParFunc>(new TParFunc(xText, yText, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
-static boost::shared_ptr<TPolFunc> CreatePolFunc(const std::wstring &Text) throw(Func32::EFuncError) {return boost::shared_ptr<TPolFunc>(new TPolFunc(Text, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry));}
 
 static unsigned ChildCount(const TGraphElemPtr &Elem) {return Elem->ChildCount();}
 static TGraphElemPtr GetChild(const TGraphElemPtr &Elem, unsigned Index) {return Elem->GetChild(Index);}
@@ -86,7 +86,7 @@ SWIG_SHARED_PTR_DERIVED(TPolFunc, TBaseFuncType, TPolFunc)
 SWIG_SHARED_PTR_DERIVED(TTan, TBaseFuncType, TTan)
 SWIG_SHARED_PTR_DERIVED(TPointSeries, TGraphElem, TPointSeries)
 SWIG_SHARED_PTR_DERIVED(TTextLabel, TGraphElem, TTextLabel)
-SWIG_SHARED_PTR_DERIVED(TShade, TGraphElem, TShade)
+SWIG_SHARED_PTR_DERIVED(TShading, TGraphElem, TShading)
 SWIG_SHARED_PTR_DERIVED(TRelation, TGraphElem, TRelation)
 SWIG_SHARED_PTR_DERIVED(TAxesView, TGraphElem, TAxesView)
 
@@ -145,11 +145,17 @@ class TTopGraphElem : public TGraphElem
 {
 };
 
-%nodefaultctor TStdhElem;
 %attributestring(TStdFunc, std::wstring, Text, GetText);
 class TStdFunc : public TBaseFuncType
 {
 };
+
+%extend TStdFunc {
+  TStdFunc(const std::wstring &Str) throw(Func32::EFuncError)
+  {
+    return new TStdFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+  }
+}
 
 %nodefaultctor TParFunc;
 %attributestring(TParFunc, std::wstring, xText, GetxText);
@@ -158,11 +164,25 @@ class TParFunc : public TBaseFuncType
 {
 };
 
+%extend TParFunc {
+  TParFunc(const std::wstring &xStr, const std::wstring &yStr) throw(Func32::EFuncError)
+  {
+    return new TParFunc(xStr, yStr, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+  }
+}
+
 %nodefaultctor TPolFunc;
 %attributestring(TPolFunc, std::wstring, Text, GetText);
 class TPolFunc : public TBaseFuncType
 {
 };
+
+%extend TPolFunc {
+  TPolFunc(const std::wstring &Str) throw(Func32::EFuncError)
+  {
+    return new TPolFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+  }
+}
 
 enum TTangentType {ttTangent, ttNormal};
 %attribute(TTan, bool, Valid, IsValid);
@@ -177,6 +197,8 @@ enum TErrorBarType {ebtNone, ebtFixed, ebtRelative, ebtCustom};
 enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
 //enum TLabelPosition {lpAbove, lpBelow, lpLeft, lpRight, lpAboveLeft, lpAboveRight, lpBelowLeft, lpBelowRight};
 enum TPointType {ptCartesian, ptPolar};
+
+HANDLE_FPU(TPointSeries::GetDblPoint)
 
 %attribute(TPointSeries, TErrorBarType, xErrorBarType, GetxErrorBarType);
 %attribute(TPointSeries, TErrorBarType, yErrorBarType, GetyErrorBarType);
@@ -207,44 +229,65 @@ public:
   unsigned PointCount() const;
 };
 
-%nodefaultctor TTextLabel;
+enum TLabelPlacement {lpUserTopLeft, lpAboveX, lpBelowX, lpLeftOfY, lpRightOfY, lpUserTopRight, lpUserBottomLeft, lpUserBottomRight};
+
 %attribute(TTextLabel, TRect, Rect, GetRect);
-%attribute(TTextLabel, TTextValue, xPos, GetXPos);
-%attribute(TTextLabel, TTextValue, yPos, GetYPos);
-%attributestring(TTextLabel, std::string, Text, GetText);
-%attribute(TTextLabel, TColor, BackgroundColor, GetBackgroundColor);
-%attribute(TTextLabel, TLabelPlacement, Placement, GetPlacement);
-%attribute(TTextLabel, unsigned, Rotation, GetRotation);
+%attribute(TTextLabel, TTextValue, xPos, GetXPos, SetXPos);
+%attribute(TTextLabel, TTextValue, yPos, GetYPos, SetYPos);
+%attributestring(TTextLabel, std::string, Text, GetText, SetText);
+%attribute(TTextLabel, TColor, BackgroundColor, GetBackgroundColor, SetBackgroundColor);
+%attribute(TTextLabel, TLabelPlacement, Placement, GetPlacement, SetPlacement);
+%attribute(TTextLabel, unsigned, Rotation, GetRotation, SetRotation);
 class TTextLabel : public TGraphElem
 {
 public:
-  TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation);
   void Scale(double xSizeMul, double ySizeMul);
   TMetafile* GetImage() const {return Metafile;}
 };
 
-%nodefaultctor TShade;
-class TShade : public TGraphElem
+enum TShadeStyle {ssAbove, ssBelow, ssXAxis, ssYAxis, ssBetween, ssInside};
+class TShading : public TGraphElem
 {
+public:
+  TShadeStyle ShadeStyle;
+  TBrushStyle BrushStyle;
+  TColor Color;
+  boost::shared_ptr<TBaseFuncType> Func2;
+  TTextValue sMin;
+  TTextValue sMax;
+  TTextValue sMin2;
+  TTextValue sMax2;
+  bool ExtendMinToIntercept;
+  bool ExtendMaxToIntercept;
+  bool ExtendMin2ToIntercept;
+  bool ExtendMax2ToIntercept;
+  bool MarkBorder;
 };
 
 enum TRelationType {rtEquation, rtInequality};
 
-%nodefaultctor TRelation;
-%attribute(TRelation, TColor, Color, GetColor);
-%attribute(TRelation, TBrushStyle, BrushStyle, GetBrushStyle);
+%attribute(TRelation, TColor, Color, GetColor, SetColor);
+%attribute(TRelation, TBrushStyle, BrushStyle, GetBrushStyle, SetBrushStyle);
 %attribute(TRelation, TRelationType, RelationType, GetRelationType);
 %attributestring(TRelation, std::wstring, Text, GetText);
 %attributestring(TRelation, std::wstring, Constraints, GetConstraints);
-%attribute(TRelation, unsigned, Size, GetSize);
+%attribute(TRelation, unsigned, Size, GetSize, SetSize);
 class TRelation : public TGraphElem
 {
 public:
-  TRelation(const std::wstring &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig);
-  void SetConstraints(const std::wstring &AConstraintsText, const Func32::TSymbolList &SymbolList);
-
-  long double Eval(const std::vector<long double> &Args, Func32::ECalcError &E);
+  long double Eval(long double x, long double y) throw(Func32::EFuncError);
 };
+
+%extend TRelation {
+  TRelation(const std::wstring &Str, const std::wstring &ConstraintsStr) throw(Func32::EFuncError)
+  {
+    return new TRelation(Str, ConstraintsStr, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+  }
+  TRelation(const std::wstring &Str) throw(Func32::EFuncError)
+  {
+    return new TRelation(Str, L"", Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+  }
+}
 
 %nodefaultctor TAxesView;
 class TAxesView : public TGraphElem
@@ -278,7 +321,7 @@ struct TData
   TPointSeries.__repr__ = GraphElemRepr
   TRelation.__repr__ = GraphElemRepr
   TTextLabel.__repr__ = GraphElemRepr
-  TShade.__repr__ = GraphElemRepr
+  TShading.__repr__ = GraphElemRepr
   TAxesView.__repr__ = GraphElemRepr
   TTopGraphElem.__repr__ = GraphElemRepr
   TPointSeries.Font = property(lambda self: vcl.TObject(handle=_Data.TPointSeries_Font_get(self), owned=False))

@@ -39,7 +39,7 @@ __fastcall TForm16::TForm16(TComponent* Owner, TData &AData)
     Found = false;
     for(unsigned N = 0; N < Data.ElemCount(); N++)
       for(unsigned J = 0; J < Data.GetElem(N)->ChildCount(); J++)
-        if(boost::shared_ptr<TShade> Shade = boost::dynamic_pointer_cast<TShade>(Data.GetElem(N)->GetChild(J)))
+        if(boost::shared_ptr<TShading> Shade = boost::dynamic_pointer_cast<TShading>(Data.GetElem(N)->GetChild(J)))
           if(CmpStr == ToUString(Shade->GetLegendText()))
             Found = true;
   }
@@ -86,7 +86,7 @@ void __fastcall TForm16::ImageClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm16::Button1Click(TObject *Sender)
 {
-  boost::shared_ptr<TShade> Shade(new TShade);
+  boost::shared_ptr<TShading> Shade(new TShading);
   if(RadioButton1->Checked)
     Shade->ShadeStyle = ssXAxis;
   else if(RadioButton2->Checked)
@@ -197,7 +197,7 @@ TModalResult TForm16::InsertShade(const boost::shared_ptr<TBaseFuncType> &AFunc)
   return ShowModal();
 }
 //---------------------------------------------------------------------------
-int TForm16::EditShade(const boost::shared_ptr<TShade> &AShade)
+int TForm16::EditShade(const boost::shared_ptr<TShading> &AShade)
 {
   OldShade = AShade;
   if(OldShade)

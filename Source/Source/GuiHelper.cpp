@@ -52,7 +52,7 @@ void TAddView::Visit(TTan &Tan)
   AddNode(Tan, Tan.TangentType == ttTangent ? iiTanNode : iiNormalNode);
 }
 //---------------------------------------------------------------------------
-void TAddView::Visit(TShade &Shade)
+void TAddView::Visit(TShading &Shade)
 {
   AddNode(Shade, Form1->AddImage(Shade.Color, Shade.BrushStyle));
 }

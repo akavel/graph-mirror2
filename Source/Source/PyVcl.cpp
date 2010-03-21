@@ -438,6 +438,7 @@ PyObject* InitPyVcl()
   RegisterClass(__classid(TForm));
   RegisterClass(__classid(TEdit));
   RegisterClass(__classid(TLabel));
+  RegisterClass(__classid(TMemo));
   RegisterClass(__classid(TButton));
   RegisterClass(__classid(TAction));
   RegisterClass(__classid(TMenuItem));

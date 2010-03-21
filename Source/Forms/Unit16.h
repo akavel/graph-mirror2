@@ -84,7 +84,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
   boost::shared_ptr<TBaseFuncType> Func;
   std::vector<boost::shared_ptr<TBaseFuncType> > FuncList;
-  boost::shared_ptr<TShade> OldShade;
+  boost::shared_ptr<TShading> OldShade;
   TData &Data;
 
   void ShowFuncList();
@@ -92,7 +92,7 @@ private:	// User declarations
 
 public:		// User declarations
   __fastcall TForm16(TComponent* Owner, TData &AData);
-  int EditShade(const boost::shared_ptr<TShade> &AShade);
+  int EditShade(const boost::shared_ptr<TShading> &AShade);
   TModalResult InsertShade(const boost::shared_ptr<TBaseFuncType> &AFunc);
 };
 //---------------------------------------------------------------------------

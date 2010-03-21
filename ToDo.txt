@@ -161,7 +161,7 @@ Plugins:
 - Customize the numbers on the axes, i.e. add/remove numbers.
 - Export of more than one item.
 - Evaluate a function for a series of x-values.
-- Statistics on point series: aritmetic average, sum, median, standard deviation, 1st and 3rd quartil, min/max value. (see mail from Kristoffer (Ås vgs)
+- Statistics on point series: arithmetic average, sum, median, standard deviation, 1st and 3rd quartil, min/max value. (see mail from Kristoffer (Ås vgs)
 - Control Graph from command line (import csv, zoom, print)
 - Run scripts from command line
 - Make it possible to store/restore several zoom points. (Forum message from zubaroo at 18/1-10).
