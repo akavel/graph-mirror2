@@ -310,7 +310,7 @@ bool IsValidName(const std::wstring &Name)
       return false;
   }
 
-  if(Name == L"i" || Name == L"e" || Name == L"pi" || Name == L"rand" || Name == L"undef")
+  if(Name == L"i" || Name == L"e" || Name == L"pi" || Name == L"rand" || Name == L"undef" || Name == L"inf")
     return false;
 
   return true;
