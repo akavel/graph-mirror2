@@ -426,7 +426,7 @@ HPEN TDrawThread::SetPen(TColor Color, TPenStyle Style, int Width)
   return CreatePen(Style, Width, ForceBlack ? clBlack : Color);
 }
 //---------------------------------------------------------------------------
-void TDrawThread::Visit(TShade &Shade)
+void TDrawThread::Visit(TShading &Shade)
 {
   if(Shade.Region.get() == NULL)
     CreateShade(Shade);
@@ -451,7 +451,7 @@ int ComparePoint(const TPoint &P1, const TPoint &P2, TShadeStyle Style)
   }
 }
 //---------------------------------------------------------------------------
-TPoint TDrawThread::GetFixedPoint(const TShade &Shade, const TPoint &P)
+TPoint TDrawThread::GetFixedPoint(const TShading &Shade, const TPoint &P)
 {
   switch(Shade.ShadeStyle)
   {
@@ -468,7 +468,7 @@ TPoint TDrawThread::GetFixedPoint(const TShade &Shade, const TPoint &P)
   }
 }
 //---------------------------------------------------------------------------
-void TDrawThread::CreateShade(TShade &Shade)
+void TDrawThread::CreateShade(TShading &Shade)
 {
   TBaseFuncType *F = dynamic_cast<TBaseFuncType*>(Shade.GetParent().get());
 
@@ -575,6 +575,7 @@ void TDrawThread::CreateShade(TShade &Shade)
         while(N2 < F->Points.size() && (Above ? F->Points[N2].y < CrossLine : F->Points[N2].y > CrossLine))
           ++N2;
         break;
+
       case ssYAxis:
         //Increase N2 until F->Points[N2] intercepts with the y-axis
         bool Left;
@@ -582,9 +583,11 @@ void TDrawThread::CreateShade(TShade &Shade)
         while(N2 < F->Points.size() && (Left ? F->Points[N2].x < xAxisPixel : F->Points[N2].x > xAxisPixel))
           ++N2;
         break;
+
       case ssBetween:
         N2 = FindCrossing(F->Points.begin() + N2, F->Points.end(), Shade.Func2->Points.begin(), Shade.Func2->Points.end()) - F->Points.begin();
         break;
+
       case ssInside:
         N2 = FindCrossing(F->Points.begin() + N2, F->Points.end(), F->Points.rend() - N1, F->Points.rend()) - F->Points.begin();
     }
@@ -627,7 +630,6 @@ void TDrawThread::CreateShade(TShade &Shade)
     y2--;
 
   boost::shared_ptr<TRegion> Region(new TRegion(TRect(0,0,0,0)));
-  std::vector<TPoint> Points;
   unsigned CountIndex = 0;
   unsigned Sum = 0;
   while(Sum <= N1)
@@ -640,6 +642,7 @@ void TDrawThread::CreateShade(TShade &Shade)
     case ssXAxis:
     case ssYAxis:
     {
+      std::vector<TPoint> Points;
       //Set start point
       Points.push_back(GetFixedPoint(Shade, TPoint(x1, y1)));
       Points.push_back(TPoint(x1, y1));
@@ -679,8 +682,18 @@ void TDrawThread::CreateShade(TShade &Shade)
       break;
     }
 
+    case ssInside:
+      if(N1 != N2)
+        *Region |= TRegion(&F->Points[N1], N2-N1);
+      break;
+
     case ssBetween:
     {
+      std::vector<TPoint> Points;
+      Points.push_back(TPoint(x1, y1));
+      Points.insert(Points.end(), F->Points.begin()+N1, F->Points.begin()+N2+1);
+      Points.push_back(TPoint(x2, y2));
+
       //The intervals can go both ways. Make sure sMin is always less than sMax
       double sMin2 = std::min(Shade.sMin2.Value, Shade.sMax2.Value);
       double sMax2 = std::max(Shade.sMin2.Value, Shade.sMax2.Value);
@@ -762,6 +775,7 @@ void TDrawThread::CreateShade(TShade &Shade)
       //Add start point to the polygon points list
       if(!Shade.ExtendMin2ToIntercept)
         Points.push_back(SwapMinMax ? TPoint(X2, Y2) : TPoint(X1, Y1));
+      *Region |= TRegion(Points);
       break;
     }
   }
@@ -769,7 +783,7 @@ void TDrawThread::CreateShade(TShade &Shade)
   Shade.Region = Region;
 }
 //---------------------------------------------------------------------------
-void TDrawThread::DrawShade(const TShade &Shade)
+void TDrawThread::DrawShade(const TShading &Shade)
 {
   Draw->SetClippingRegion();
 

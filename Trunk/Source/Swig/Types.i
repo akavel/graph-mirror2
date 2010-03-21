@@ -20,6 +20,10 @@
   $result = Py_BuildValue("iiii", $1->Left, $1->Top, $1->Right, $1->Bottom);
 }
 
+%typemap(out) TRect {
+  $result = Py_BuildValue("iiii", $1.Left, $1.Top, $1.Right, $1.Bottom);
+}
+
 %typemap(in) TTextValue  {
   $1 = TTextValue(PyFloat_AsDouble($input));
   if(PyErr_Occurred() != NULL)
@@ -44,6 +48,7 @@
   $result = DownCastSharedPtr(*$1);
 }
 %typemap(out) boost::shared_ptr<TBaseFuncType> = boost::shared_ptr<TGraphElem>;
+%typemap(out) const boost::shared_ptr<TBaseFuncType>& = const boost::shared_ptr<TGraphElem>&;
 
 %typemap(out) Func32::TCoord<long double> {
   $result = Py_BuildValue("dd", (double)$1.x, (double)$1.y);

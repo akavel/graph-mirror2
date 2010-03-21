@@ -45,7 +45,7 @@ struct TDrawLegend : public TGraphElemVisitor
 
   void Visit(TBaseFuncType &Func);
   void Visit(TTan &Tan) {Visit(static_cast<TBaseFuncType&>(Tan));}
-  void Visit(TShade &Shade);
+  void Visit(TShading &Shade);
   void Visit(TPointSeries &Series);
   void Visit(TTextLabel &Label) {};
   void Visit(TRelation &Relation);
@@ -877,7 +877,7 @@ void TDrawLegend::Visit(TPointSeries &Series)
   y += TextHeight + Size(6);
 }
 //---------------------------------------------------------------------------
-void TDrawLegend::Visit(TShade &Shade)
+void TDrawLegend::Visit(TShading &Shade)
 {
   //Don't Use FillRect() as it will not shade transparent
   Draw->Context.SetPen(psClear, clWhite, 1);

@@ -269,18 +269,6 @@ def SetSelected(*args) -> "void" :
   return _Data.SetSelected(*args)
 SetSelected = _Data.SetSelected
 
-def CreateStdFunc(*args) -> "boost::shared_ptr< TStdFunc >" :
-  return _Data.CreateStdFunc(*args)
-CreateStdFunc = _Data.CreateStdFunc
-
-def CreateParFunc(*args) -> "boost::shared_ptr< TParFunc >" :
-  return _Data.CreateParFunc(*args)
-CreateParFunc = _Data.CreateParFunc
-
-def CreatePolFunc(*args) -> "boost::shared_ptr< TPolFunc >" :
-  return _Data.CreatePolFunc(*args)
-CreatePolFunc = _Data.CreatePolFunc
-
 def ChildCount(*args) -> "unsigned int" :
   return _Data.ChildCount(*args)
 ChildCount = _Data.ChildCount
@@ -443,8 +431,8 @@ class TStdFunc(TBaseFuncType):
     if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TStdFunc_SWIGSharedPtrUpcast)
     __swig_getmethods__["Text"] = _Data.TStdFunc_Text_get
     if _newclass:Text = _swig_property(_Data.TStdFunc_Text_get)
-    def __init__(self): 
-        this = _Data.new_TStdFunc()
+    def __init__(self, *args): 
+        this = _Data.new_TStdFunc(*args)
         try: self.this.append(this)
         except: self.this = this
     __swig_destroy__ = _Data.delete_TStdFunc
@@ -463,7 +451,6 @@ class TParFunc(TBaseFuncType):
     __swig_getmethods__ = {}
     for _s in [TBaseFuncType]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TParFunc, name)
-    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
     __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TParFunc_SWIGSharedPtrUpcast
     if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TParFunc_SWIGSharedPtrUpcast)
@@ -471,6 +458,10 @@ class TParFunc(TBaseFuncType):
     if _newclass:xText = _swig_property(_Data.TParFunc_xText_get)
     __swig_getmethods__["yText"] = _Data.TParFunc_yText_get
     if _newclass:yText = _swig_property(_Data.TParFunc_yText_get)
+    def __init__(self, *args): 
+        this = _Data.new_TParFunc(*args)
+        try: self.this.append(this)
+        except: self.this = this
     __swig_destroy__ = _Data.delete_TParFunc
     __del__ = lambda self : None;
 TParFunc_swigregister = _Data.TParFunc_swigregister
@@ -487,12 +478,15 @@ class TPolFunc(TBaseFuncType):
     __swig_getmethods__ = {}
     for _s in [TBaseFuncType]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TPolFunc, name)
-    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
     __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TPolFunc_SWIGSharedPtrUpcast
     if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TPolFunc_SWIGSharedPtrUpcast)
     __swig_getmethods__["Text"] = _Data.TPolFunc_Text_get
     if _newclass:Text = _swig_property(_Data.TPolFunc_Text_get)
+    def __init__(self, *args): 
+        this = _Data.new_TPolFunc(*args)
+        try: self.this.append(this)
+        except: self.this = this
     __swig_destroy__ = _Data.delete_TPolFunc
     __del__ = lambda self : None;
 TPolFunc_swigregister = _Data.TPolFunc_swigregister
@@ -607,6 +601,14 @@ def TPointSeries_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >"
   return _Data.TPointSeries_SWIGSharedPtrUpcast(*args)
 TPointSeries_SWIGSharedPtrUpcast = _Data.TPointSeries_SWIGSharedPtrUpcast
 
+lpUserTopLeft = _Data.lpUserTopLeft
+lpAboveX = _Data.lpAboveX
+lpBelowX = _Data.lpBelowX
+lpLeftOfY = _Data.lpLeftOfY
+lpRightOfY = _Data.lpRightOfY
+lpUserTopRight = _Data.lpUserTopRight
+lpUserBottomLeft = _Data.lpUserBottomLeft
+lpUserBottomRight = _Data.lpUserBottomRight
 class TTextLabel(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
@@ -615,28 +617,34 @@ class TTextLabel(TGraphElem):
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TTextLabel, name)
     __repr__ = _swig_repr
-    def __init__(self, *args): 
-        this = _Data.new_TTextLabel(*args)
-        try: self.this.append(this)
-        except: self.this = this
     def Scale(self, *args) -> "void" : return _Data.TTextLabel_Scale(self, *args)
     def GetImage(self) -> "TMetafile *" : return _Data.TTextLabel_GetImage(self)
     __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TTextLabel_SWIGSharedPtrUpcast
     if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TTextLabel_SWIGSharedPtrUpcast)
     __swig_getmethods__["Rect"] = _Data.TTextLabel_Rect_get
     if _newclass:Rect = _swig_property(_Data.TTextLabel_Rect_get)
+    __swig_setmethods__["xPos"] = _Data.TTextLabel_xPos_set
     __swig_getmethods__["xPos"] = _Data.TTextLabel_xPos_get
-    if _newclass:xPos = _swig_property(_Data.TTextLabel_xPos_get)
+    if _newclass:xPos = _swig_property(_Data.TTextLabel_xPos_get, _Data.TTextLabel_xPos_set)
+    __swig_setmethods__["yPos"] = _Data.TTextLabel_yPos_set
     __swig_getmethods__["yPos"] = _Data.TTextLabel_yPos_get
-    if _newclass:yPos = _swig_property(_Data.TTextLabel_yPos_get)
+    if _newclass:yPos = _swig_property(_Data.TTextLabel_yPos_get, _Data.TTextLabel_yPos_set)
+    __swig_setmethods__["Text"] = _Data.TTextLabel_Text_set
     __swig_getmethods__["Text"] = _Data.TTextLabel_Text_get
-    if _newclass:Text = _swig_property(_Data.TTextLabel_Text_get)
+    if _newclass:Text = _swig_property(_Data.TTextLabel_Text_get, _Data.TTextLabel_Text_set)
+    __swig_setmethods__["BackgroundColor"] = _Data.TTextLabel_BackgroundColor_set
     __swig_getmethods__["BackgroundColor"] = _Data.TTextLabel_BackgroundColor_get
-    if _newclass:BackgroundColor = _swig_property(_Data.TTextLabel_BackgroundColor_get)
+    if _newclass:BackgroundColor = _swig_property(_Data.TTextLabel_BackgroundColor_get, _Data.TTextLabel_BackgroundColor_set)
+    __swig_setmethods__["Placement"] = _Data.TTextLabel_Placement_set
     __swig_getmethods__["Placement"] = _Data.TTextLabel_Placement_get
-    if _newclass:Placement = _swig_property(_Data.TTextLabel_Placement_get)
+    if _newclass:Placement = _swig_property(_Data.TTextLabel_Placement_get, _Data.TTextLabel_Placement_set)
+    __swig_setmethods__["Rotation"] = _Data.TTextLabel_Rotation_set
     __swig_getmethods__["Rotation"] = _Data.TTextLabel_Rotation_get
-    if _newclass:Rotation = _swig_property(_Data.TTextLabel_Rotation_get)
+    if _newclass:Rotation = _swig_property(_Data.TTextLabel_Rotation_get, _Data.TTextLabel_Rotation_set)
+    def __init__(self): 
+        this = _Data.new_TTextLabel()
+        try: self.this.append(this)
+        except: self.this = this
     __swig_destroy__ = _Data.delete_TTextLabel
     __del__ = lambda self : None;
 TTextLabel_swigregister = _Data.TTextLabel_swigregister
@@ -646,25 +654,73 @@ def TTextLabel_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
   return _Data.TTextLabel_SWIGSharedPtrUpcast(*args)
 TTextLabel_SWIGSharedPtrUpcast = _Data.TTextLabel_SWIGSharedPtrUpcast
 
-class TShade(TGraphElem):
+ssAbove = _Data.ssAbove
+ssBelow = _Data.ssBelow
+ssXAxis = _Data.ssXAxis
+ssYAxis = _Data.ssYAxis
+ssBetween = _Data.ssBetween
+ssInside = _Data.ssInside
+class TShading(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TShade, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr_nondynamic(self, TShading, name, value)
     __swig_getmethods__ = {}
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
-    __getattr__ = lambda self, name: _swig_getattr(self, TShade, name)
-    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
+    __getattr__ = lambda self, name: _swig_getattr(self, TShading, name)
     __repr__ = _swig_repr
-    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TShade_SWIGSharedPtrUpcast
-    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TShade_SWIGSharedPtrUpcast)
-    __swig_destroy__ = _Data.delete_TShade
+    __swig_setmethods__["ShadeStyle"] = _Data.TShading_ShadeStyle_set
+    __swig_getmethods__["ShadeStyle"] = _Data.TShading_ShadeStyle_get
+    if _newclass:ShadeStyle = _swig_property(_Data.TShading_ShadeStyle_get, _Data.TShading_ShadeStyle_set)
+    __swig_setmethods__["BrushStyle"] = _Data.TShading_BrushStyle_set
+    __swig_getmethods__["BrushStyle"] = _Data.TShading_BrushStyle_get
+    if _newclass:BrushStyle = _swig_property(_Data.TShading_BrushStyle_get, _Data.TShading_BrushStyle_set)
+    __swig_setmethods__["Color"] = _Data.TShading_Color_set
+    __swig_getmethods__["Color"] = _Data.TShading_Color_get
+    if _newclass:Color = _swig_property(_Data.TShading_Color_get, _Data.TShading_Color_set)
+    __swig_setmethods__["Func2"] = _Data.TShading_Func2_set
+    __swig_getmethods__["Func2"] = _Data.TShading_Func2_get
+    if _newclass:Func2 = _swig_property(_Data.TShading_Func2_get, _Data.TShading_Func2_set)
+    __swig_setmethods__["sMin"] = _Data.TShading_sMin_set
+    __swig_getmethods__["sMin"] = _Data.TShading_sMin_get
+    if _newclass:sMin = _swig_property(_Data.TShading_sMin_get, _Data.TShading_sMin_set)
+    __swig_setmethods__["sMax"] = _Data.TShading_sMax_set
+    __swig_getmethods__["sMax"] = _Data.TShading_sMax_get
+    if _newclass:sMax = _swig_property(_Data.TShading_sMax_get, _Data.TShading_sMax_set)
+    __swig_setmethods__["sMin2"] = _Data.TShading_sMin2_set
+    __swig_getmethods__["sMin2"] = _Data.TShading_sMin2_get
+    if _newclass:sMin2 = _swig_property(_Data.TShading_sMin2_get, _Data.TShading_sMin2_set)
+    __swig_setmethods__["sMax2"] = _Data.TShading_sMax2_set
+    __swig_getmethods__["sMax2"] = _Data.TShading_sMax2_get
+    if _newclass:sMax2 = _swig_property(_Data.TShading_sMax2_get, _Data.TShading_sMax2_set)
+    __swig_setmethods__["ExtendMinToIntercept"] = _Data.TShading_ExtendMinToIntercept_set
+    __swig_getmethods__["ExtendMinToIntercept"] = _Data.TShading_ExtendMinToIntercept_get
+    if _newclass:ExtendMinToIntercept = _swig_property(_Data.TShading_ExtendMinToIntercept_get, _Data.TShading_ExtendMinToIntercept_set)
+    __swig_setmethods__["ExtendMaxToIntercept"] = _Data.TShading_ExtendMaxToIntercept_set
+    __swig_getmethods__["ExtendMaxToIntercept"] = _Data.TShading_ExtendMaxToIntercept_get
+    if _newclass:ExtendMaxToIntercept = _swig_property(_Data.TShading_ExtendMaxToIntercept_get, _Data.TShading_ExtendMaxToIntercept_set)
+    __swig_setmethods__["ExtendMin2ToIntercept"] = _Data.TShading_ExtendMin2ToIntercept_set
+    __swig_getmethods__["ExtendMin2ToIntercept"] = _Data.TShading_ExtendMin2ToIntercept_get
+    if _newclass:ExtendMin2ToIntercept = _swig_property(_Data.TShading_ExtendMin2ToIntercept_get, _Data.TShading_ExtendMin2ToIntercept_set)
+    __swig_setmethods__["ExtendMax2ToIntercept"] = _Data.TShading_ExtendMax2ToIntercept_set
+    __swig_getmethods__["ExtendMax2ToIntercept"] = _Data.TShading_ExtendMax2ToIntercept_get
+    if _newclass:ExtendMax2ToIntercept = _swig_property(_Data.TShading_ExtendMax2ToIntercept_get, _Data.TShading_ExtendMax2ToIntercept_set)
+    __swig_setmethods__["MarkBorder"] = _Data.TShading_MarkBorder_set
+    __swig_getmethods__["MarkBorder"] = _Data.TShading_MarkBorder_get
+    if _newclass:MarkBorder = _swig_property(_Data.TShading_MarkBorder_get, _Data.TShading_MarkBorder_set)
+    __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TShading_SWIGSharedPtrUpcast
+    if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TShading_SWIGSharedPtrUpcast)
+    def __init__(self): 
+        this = _Data.new_TShading()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _Data.delete_TShading
     __del__ = lambda self : None;
-TShade_swigregister = _Data.TShade_swigregister
-TShade_swigregister(TShade)
+TShading_swigregister = _Data.TShading_swigregister
+TShading_swigregister(TShading)
 
-def TShade_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
-  return _Data.TShade_SWIGSharedPtrUpcast(*args)
-TShade_SWIGSharedPtrUpcast = _Data.TShade_SWIGSharedPtrUpcast
+def TShading_SWIGSharedPtrUpcast(*args) -> "boost::shared_ptr< TGraphElem >" :
+  return _Data.TShading_SWIGSharedPtrUpcast(*args)
+TShading_SWIGSharedPtrUpcast = _Data.TShading_SWIGSharedPtrUpcast
 
 rtEquation = _Data.rtEquation
 rtInequality = _Data.rtInequality
@@ -676,26 +732,28 @@ class TRelation(TGraphElem):
     for _s in [TGraphElem]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
     __getattr__ = lambda self, name: _swig_getattr(self, TRelation, name)
     __repr__ = _swig_repr
-    def __init__(self, *args): 
-        this = _Data.new_TRelation(*args)
-        try: self.this.append(this)
-        except: self.this = this
-    def SetConstraints(self, *args) -> "void" : return _Data.TRelation_SetConstraints(self, *args)
     def Eval(self, *args) -> "long double" : return _Data.TRelation_Eval(self, *args)
     __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TRelation_SWIGSharedPtrUpcast
     if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TRelation_SWIGSharedPtrUpcast)
+    __swig_setmethods__["Color"] = _Data.TRelation_Color_set
     __swig_getmethods__["Color"] = _Data.TRelation_Color_get
-    if _newclass:Color = _swig_property(_Data.TRelation_Color_get)
+    if _newclass:Color = _swig_property(_Data.TRelation_Color_get, _Data.TRelation_Color_set)
+    __swig_setmethods__["BrushStyle"] = _Data.TRelation_BrushStyle_set
     __swig_getmethods__["BrushStyle"] = _Data.TRelation_BrushStyle_get
-    if _newclass:BrushStyle = _swig_property(_Data.TRelation_BrushStyle_get)
+    if _newclass:BrushStyle = _swig_property(_Data.TRelation_BrushStyle_get, _Data.TRelation_BrushStyle_set)
     __swig_getmethods__["RelationType"] = _Data.TRelation_RelationType_get
     if _newclass:RelationType = _swig_property(_Data.TRelation_RelationType_get)
     __swig_getmethods__["Text"] = _Data.TRelation_Text_get
     if _newclass:Text = _swig_property(_Data.TRelation_Text_get)
     __swig_getmethods__["Constraints"] = _Data.TRelation_Constraints_get
     if _newclass:Constraints = _swig_property(_Data.TRelation_Constraints_get)
+    __swig_setmethods__["Size"] = _Data.TRelation_Size_set
     __swig_getmethods__["Size"] = _Data.TRelation_Size_get
-    if _newclass:Size = _swig_property(_Data.TRelation_Size_get)
+    if _newclass:Size = _swig_property(_Data.TRelation_Size_get, _Data.TRelation_Size_set)
+    def __init__(self, *args): 
+        this = _Data.new_TRelation(*args)
+        try: self.this.append(this)
+        except: self.this = this
     __swig_destroy__ = _Data.delete_TRelation
     __del__ = lambda self : None;
 TRelation_swigregister = _Data.TRelation_swigregister
@@ -747,7 +805,7 @@ TTan.__repr__ = GraphElemRepr
 TPointSeries.__repr__ = GraphElemRepr
 TRelation.__repr__ = GraphElemRepr
 TTextLabel.__repr__ = GraphElemRepr
-TShade.__repr__ = GraphElemRepr
+TShading.__repr__ = GraphElemRepr
 TAxesView.__repr__ = GraphElemRepr
 TTopGraphElem.__repr__ = GraphElemRepr
 TPointSeries.Font = property(lambda self: vcl.TObject(handle=_Data.TPointSeries_Font_get(self), owned=False))

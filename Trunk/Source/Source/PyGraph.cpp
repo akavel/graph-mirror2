@@ -482,6 +482,7 @@ _inittab Modules[] =
   {NULL, NULL}
 };
 //---------------------------------------------------------------------------
+static bool PythonInitialized = false;
 void InitPlugins()
 {
   if(IsPythonInstalled())
@@ -549,6 +550,7 @@ void InitPlugins()
     Form1->Panel6->Height = 0;
     Form1->Splitter2->Visible = false;
   }
+  PythonInitialized = true;
 }
 //---------------------------------------------------------------------------
 _object* ToPyObject(int Value)
@@ -607,6 +609,8 @@ template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
 //---------------------------------------------------------------------------
 bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem)
 {
+  if(!PythonInitialized)
+    return false;
   TLockGIL Dummy;
   if(IsPythonInstalled())
     return ExecutePluginEvent(PluginEvent, Py_BuildValue("(N)", DownCastSharedPtr(Elem)));
@@ -615,7 +619,7 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem)
 //---------------------------------------------------------------------------
 bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param)
 {
-  if(IsPythonInstalled())
+  if(IsPythonInstalled() && PythonInitialized)
   {
     AllocGIL();
     PyObject *Module = PyImport_AddModule("Graph");

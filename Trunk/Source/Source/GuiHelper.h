@@ -16,7 +16,7 @@ struct TAddView : public TGraphElemVisitor
 
   void Visit(TBaseFuncType &Func);
   void Visit(TTan &Tan);
-  void Visit(TShade &Shade);
+  void Visit(TShading &Shade);
   void Visit(TPointSeries &Series);
   void Visit(TTextLabel &Label);
   void Visit(TRelation &Relation);
@@ -34,7 +34,7 @@ struct TZoomFit : public TGraphElemVisitor
   TZoomFit(const TData &AData, const TDraw &ADraw);
   void Visit(TBaseFuncType &Func);
   void Visit(TTan &Tan) {Visit(static_cast<TBaseFuncType&>(Tan));} //Forward
-  void Visit(TShade &Shade) {} //Not used
+  void Visit(TShading &Shade) {} //Not used
   void Visit(TPointSeries &Series);
   void Visit(TTextLabel &Label) {}  //Not used
   void Visit(TRelation &Relation);

@@ -54,11 +54,11 @@ private:
   void DrawHalfCircle(const TPoint &Point, long double Angle, TColor Color, unsigned Size);
   void LineToAngle(int X, int Y, double Angle, double Length);
   void ThreadTerminated(TObject*);
-  TPoint GetFixedPoint(const TShade &Shade, const TPoint &P);
+  TPoint GetFixedPoint(const TShading &Shade, const TPoint &P);
 
   void DrawPointSeries(const TPointSeries &PointSeries);
   void DrawFunction(const TBaseFuncType &Func);
-  void DrawShade(const TShade &Shade);
+  void DrawShade(const TShading &Shade);
   void DrawLabel(TTextLabel &Label);
   void DrawRelation(const TRelation &Relation);
   void EquationLoop(TRelation &Relation, std::vector<TRect> &Points, bool Loop);
@@ -68,14 +68,14 @@ private:
   //Draw elements
   void Visit(TBaseFuncType &Func);
   void Visit(TTan &Tan) {Visit(static_cast<TBaseFuncType&>(Tan));}
-  void Visit(TShade &Shade);
+  void Visit(TShading &Shade);
   void Visit(TPointSeries &Series);
   void Visit(TTextLabel &Label);
   void Visit(TRelation &Relation);
   void Visit(TAxesView &AxesView);
   void Visit(TOleObjectElem &OleObjectElem) {}
 
-  void CreateShade(TShade &Shade);
+  void CreateShade(TShading &Shade);
   void CreateEquation(TRelation &Relation);
   void CreateInequality(TRelation &Relation);
 

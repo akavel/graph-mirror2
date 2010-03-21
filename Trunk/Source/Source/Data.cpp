@@ -39,7 +39,7 @@ TData::TData()
 {
   for(unsigned int I = 0; I < TopElem->ChildCount(); I++)
     for(unsigned J = 0; J < TopElem->GetChild(I)->ChildCount(); J++)
-      if(TShade *Shade = dynamic_cast<TShade*>(TopElem->GetChild(I)->GetChild(J).get()))
+      if(TShading *Shade = dynamic_cast<TShading*>(TopElem->GetChild(I)->GetChild(J).get()))
         if(Shade->Func2)
         {
           //Update pointer cross references
@@ -120,7 +120,7 @@ void TData::WriteElem(TConfigFile &IniFile, const TGraphElemPtr &Elem, struct TE
     OleObjectElem->WriteToIni(IniFile.Section(L"OleObject" + ToWString(++Count.OleObject)));
 
   for(unsigned J = 0; J < Elem->ChildCount(); J++)
-    if(dynamic_cast<TShade*>(Elem->GetChild(J).get()))
+    if(dynamic_cast<TShading*>(Elem->GetChild(J).get()))
       Elem->GetChild(J)->WriteToIni(IniFile.Section(L"Shade" + ToWString(++Count.Shade)));
 }
 //---------------------------------------------------------------------------
@@ -207,7 +207,7 @@ void TData::LoadData(const TConfigFile &IniFile)
   unsigned ShadeCount = IniFile.Section(L"Data").Read(L"ShadeCount", 0U);
   for(unsigned I = 0; I < ShadeCount; I++)
   {
-    boost::shared_ptr<TGraphElem> Shade(new TShade);
+    boost::shared_ptr<TGraphElem> Shade(new TShading);
     const TConfigFileSection &Section = IniFile.Section(L"Shade" + ToWString(I+1));
     int FuncNo = Section.Read(L"FuncNo", 0) - 1;
     if(FuncNo != -1)
@@ -547,7 +547,7 @@ void TData::Replace(const TGraphElemPtr &OldElem, const TGraphElemPtr &Elem)
 
   for(unsigned I = 0; I < TopElem->ChildCount(); I++)
     for(unsigned J = 0; J < TopElem->GetChild(I)->ChildCount(); J++)
-      if(const boost::shared_ptr<TShade> &Shade = boost::dynamic_pointer_cast<TShade>(TopElem->GetChild(I)->GetChild(J)))
+      if(const boost::shared_ptr<TShading> &Shade = boost::dynamic_pointer_cast<TShading>(TopElem->GetChild(I)->GetChild(J)))
         if(Shade->Func2 == OldElem)
           Shade->Func2 = boost::dynamic_pointer_cast<TBaseFuncType>(Elem);
 

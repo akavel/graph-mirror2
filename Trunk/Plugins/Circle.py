@@ -18,7 +18,7 @@ class CircleDialog(vcl.SimpleDialog):
         self.edit3 = vcl.TEdit(self, Top = 40, Left = 200, Width = 100, Text = CircleData[2])
 
     def OnOk(self, sender):
-        Func = Graph.CreateParFunc(self.edit2.Text + "+" + self.edit1.Text + "*cos t", self.edit3.Text + "+" + self.edit1.Text + "*sin t")
+        Func = Graph.TParFunc(self.edit2.Text + "+" + self.edit1.Text + "*cos t", self.edit3.Text + "+" + self.edit1.Text + "*sin t")
         Func.PluginData["CircleExample"] = (self.edit1.Text, self.edit2.Text, self.edit3.Text)
         if self.CircleItem:
             Graph.FunctionList[Graph.FunctionList.index(self.CircleItem)] = Func
@@ -37,5 +37,5 @@ def OnEdit(Item):
         d.ShowModal()
         return True
 
-action = vcl.TAction(Name="CircleAction", Caption="Insert circle...", OnExecute=execute_action, Hint="Create circle from center and radius", ShortCut="Ctrl+Shift+C")
+vcl.TAction(Name="CircleAction", Caption="Insert circle...", OnExecute=execute_action, Hint="Create circle from center and radius", ShortCut="Ctrl+Shift+C")
 Graph.OnEdit.append(OnEdit)

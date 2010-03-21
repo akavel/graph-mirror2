@@ -133,6 +133,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   //Maximum time in milliseconds hint is shown
   Application->HintHidePause = 10000;
 
+  BOOST_ASSERT(TreeView->Items->Count == 0);
   LoadSettings();
   ScaleForm(this, false);
   ActionToolBar1->ActionClient->Items->SmallIcons = Property.FontScale < 150;
@@ -161,7 +162,6 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
   BOOST_ASSERT(Screen->Cursors[crMoveHand1]);
   BOOST_ASSERT(Screen->Cursors[crMoveHand2]);
-  BOOST_ASSERT(TreeView->Items->Count == 0);
 }
 //---------------------------------------------------------------------------
 void TForm1::HandleCommandLine()
@@ -2059,7 +2059,7 @@ void __fastcall TForm1::EditActionExecute(TObject *Sender)
     Result = CreateForm<TForm5>(Data)->EditFunc(Func);
   else if(boost::shared_ptr<TPointSeries> PointSeries = boost::dynamic_pointer_cast<TPointSeries>(Item))
     Result = CreateForm<TForm14>(Data)->EditPointSeries(PointSeries);
-  else if(boost::shared_ptr<TShade> Shade = boost::dynamic_pointer_cast<TShade>(Item))
+  else if(boost::shared_ptr<TShading> Shade = boost::dynamic_pointer_cast<TShading>(Item))
     Result = CreateForm<TForm16>(Data)->EditShade(Shade);
   else if(boost::shared_ptr<TTextLabel> Label = boost::dynamic_pointer_cast<TTextLabel>(Item))
     EditLabel(Label);
@@ -2089,7 +2089,7 @@ void TForm1::DeleteGraphElem(const boost::shared_ptr<TGraphElem> &GraphElem)
       const TGraphElemPtr &Elem = Data.GetElem(I);
       unsigned ChildCount = Elem->ChildCount();
       for(unsigned J = 0; J < ChildCount; J++)
-        if(boost::shared_ptr<TShade> Shade = boost::dynamic_pointer_cast<TShade>(Elem->GetChild(J)))
+        if(boost::shared_ptr<TShading> Shade = boost::dynamic_pointer_cast<TShading>(Elem->GetChild(J)))
           if(Shade->Func2 == GraphElem)
           {
             UndoList.Push(TUndoDel(Data, Shade, Shade->GetParent(), I));

@@ -50,6 +50,10 @@ class TLabel(TObject):
     def __init__(self, Parent, **keywords):
         TObject.__init__(self, PyVcl.CreateObject("TLabel"), Parent = Parent._handle, **keywords)
 
+class TMemo(TObject):
+    def __init__(self, Parent, **keywords):
+        TObject.__init__(self, PyVcl.CreateObject("TMemo"), Parent = Parent._handle, **keywords)
+
 class TEdit(TObject):
     def __init__(self, Parent, **keywords):
         TObject.__init__(self, PyVcl.CreateObject("TEdit"), Parent = Parent._handle if Parent else 0, **keywords)

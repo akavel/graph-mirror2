@@ -30,7 +30,7 @@ TTextValue::TTextValue(double AValue) : Value(AValue)
     Text = ToWString(AValue);
 }
 //---------------------------------------------------------------------------
-double FastCalc(const std::wstring &Text, const TData &Data)
+long double FastCalc(const std::wstring &Text, const TData &Data)
 {
   //Optimize for numbers
   try
@@ -41,7 +41,7 @@ double FastCalc(const std::wstring &Text, const TData &Data)
     //Make sure there is no 'e' (Euler's constant) as it will be interpretted as 'E'
     if(Text.find(L"e") == std::wstring::npos)
     {
-      return boost::lexical_cast<double>(Text);
+      return boost::lexical_cast<long double>(Text);
     }
   }
   catch(boost::bad_lexical_cast &E)
@@ -418,6 +418,9 @@ boost::shared_ptr<TBaseFuncType> TParFunc::MakeDifFunc()
 TPolFunc::TPolFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
   : Text(AText), Func(AText, L"t", SymbolList, Trig)
 {
+  SetSteps(TTextValue(1000));
+  From.Set(0);
+  To = TTextValue(2*M_PI, L"2pi");
 }
 //---------------------------------------------------------------------------
 void TPolFunc::WriteToIni(TConfigFileSection &Section) const
@@ -588,20 +591,16 @@ bool TTan::CalcTan()
 ////////////
 // TShade //
 ////////////
-TShade::TShade(TShadeStyle AShadeStyle, TBrushStyle ABrushStyle, TColor AColor,
-  const boost::shared_ptr<TBaseFuncType> &AFunc2,
-  double AsMin, double AsMax, double AsMin2, double AsMax2, bool AExtendMinToIntercept, bool AExtendMaxToIntercept,
-  bool AExtendMin2ToIntercept, bool AExtendMax2ToIntercept) : ShadeStyle(AShadeStyle), BrushStyle(ABrushStyle), Color(AColor),
-  Func2(AFunc2), ExtendMinToIntercept(AExtendMinToIntercept), ExtendMaxToIntercept(AExtendMaxToIntercept),
-    ExtendMin2ToIntercept(ExtendMin2ToIntercept), ExtendMax2ToIntercept(ExtendMax2ToIntercept)
+TShading::TShading()
+  : ShadeStyle(ssXAxis), BrushStyle(bsFDiagonal), Color(clGreen),
+  ExtendMinToIntercept(false), ExtendMaxToIntercept(false), ExtendMin2ToIntercept(false),
+  ExtendMax2ToIntercept(false), MarkBorder(true),
+  sMin(-INF), sMax(INF), sMin2(-INF), sMax2(INF)
 {
-  sMin.Value = AsMin;
-  sMax.Value = AsMax;
-  sMin2.Value = AsMin2;
-  sMax2.Value = AsMax2;
+  SetLegendText(L"Shading");
 }
 //---------------------------------------------------------------------------
-void TShade::WriteToIni(TConfigFileSection &Section) const
+void TShading::WriteToIni(TConfigFileSection &Section) const
 {
   TGraphElem::WriteToIni(Section);
 
@@ -637,7 +636,7 @@ void TShade::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"MarkBorder", MarkBorder, true);
 }
 //---------------------------------------------------------------------------
-void TShade::ReadFromIni(const TConfigFileSection &Section)
+void TShading::ReadFromIni(const TConfigFileSection &Section)
 {
   TGraphElem::ReadFromIni(Section);
 
@@ -672,12 +671,12 @@ void TShade::ReadFromIni(const TConfigFileSection &Section)
 
 }
 //---------------------------------------------------------------------------
-std::wstring TShade::MakeText() const
+std::wstring TShading::MakeText() const
 {
   return GetLegendText();
 }
 //---------------------------------------------------------------------------
-void TShade::Update()
+void TShading::Update()
 {
   sMin.Update(GetData());
   sMax.Update(GetData());
@@ -685,7 +684,7 @@ void TShade::Update()
   sMax2.Update(GetData());
 }
 //---------------------------------------------------------------------------
-void TShade::ClearCache()
+void TShading::ClearCache()
 {
   Region.reset();
 }
@@ -976,6 +975,12 @@ void TPointSeries::Update()
 ////////////////
 // TTextLabel //
 ////////////////
+TTextLabel::TTextLabel()
+  : LabelPlacement(lpUserTopLeft), Rect(0,0,0,0), Rotation(0), xPos(0), yPos(0),
+    BackgroundColor(clDefault)
+{
+}
+//---------------------------------------------------------------------------
 TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation)
   : Text(Str), LabelPlacement(Placement), xPos(AxPos), yPos(AyPos),
     BackgroundColor(Color), Rotation(ARotation)
@@ -1062,8 +1067,8 @@ TRelation::TRelation()
 {
 }
 //---------------------------------------------------------------------------
-TRelation::TRelation(const std::wstring &AText, const Func32::TSymbolList &SymbolList, TColor AColor, TBrushStyle Style, unsigned ASize, Func32::TTrigonometry Trig)
-  : Text(AText), Color(AColor), BrushStyle(Style), Size(ASize)
+TRelation::TRelation(const std::wstring &AText, const std::wstring &AConstraints, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
+  : Text(AText), Color(clGreen), BrushStyle(bsFDiagonal), Size(1)
 {
   std::vector<std::wstring> Args;
   Args.push_back(L"x");
@@ -1080,6 +1085,12 @@ TRelation::TRelation(const std::wstring &AText, const Func32::TSymbolList &Symbo
 
   if(Func.GetFunctionType() == Func32::ftEquation)
     Func.RemoveRelation();
+
+  if(!AConstraints.empty())
+  {
+    Constraints.SetFunc(AConstraints, Args, SymbolList);
+    ConstraintsText = AConstraints;
+  }
 }
 //---------------------------------------------------------------------------
 TRelation::TRelation(const TRelation &Relation)
@@ -1156,6 +1167,21 @@ long double TRelation::Eval(const std::vector<long double> &Args, Func32::ECalcE
   if(E.ErrorCode != Func32::ecNoError)
     return NAN;
   return Result;
+}
+//---------------------------------------------------------------------------
+long double TRelation::Eval(long double x, long double y)
+{
+  std::vector<long double> Args;
+  Args.push_back(x);
+  Args.push_back(y);
+  if(!Constraints.IsEmpty())
+  {
+    long double Valid = Constraints.Calc(Args);
+    if(!Valid)
+      return NAN;
+  }
+
+  return Func.Calc(Args);
 }
 //---------------------------------------------------------------------------
 void TRelation::ClearCache()

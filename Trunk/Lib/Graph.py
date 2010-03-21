@@ -20,9 +20,13 @@ Settings.TProperty.DefaultPointLabelFont = property(lambda self: vcl.TObject(han
 Selected = None
 TGraphElem = Data.TGraphElem
 TStdFunc = Data.TStdFunc
-CreateStdFunc = Data.CreateStdFunc
-CreateParFunc = Data.CreateParFunc
-CreatePolFunc = Data.CreatePolFunc
+TParFunc = Data.TParFunc
+TPolFunc = Data.TPolFunc
+TTan = Data.TTan
+TTextLabel = Data.TTextLabel
+TShading = Data.TShading
+TRelation = Data.TRelation
+TPointSeries = Data.TPointSeries
 
 def InitPlugins():
     print("Loading plugins...")
@@ -138,7 +142,6 @@ Eval = GraphImpl.Eval
 EvalComplex = GraphImpl.EvalComplex
 SaveAsImage = GraphImpl.SaveAsImage
 Update = GraphImpl.Update
-TPointSeries = Data.TPointSeries
 
 def HandleOnSelect(Elem):
     global Selected
