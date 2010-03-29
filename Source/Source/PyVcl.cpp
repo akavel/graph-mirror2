@@ -141,9 +141,15 @@ static PyObject* VclSetProperty(PyObject *Self, PyObject *Args)
 
     switch((*PropInfo->PropType)->Kind)
     {
+      case tkClass:
+        if(AnsiString((*PropInfo->PropType)->Name) == "TStrings")
+        {
+          ((TStrings*)GetOrdProp(Control, PropInfo))->Text = PyUnicode_AsUnicode(Value);
+          break;
+        }
+        //Fall through
       case tkInteger:
       case tkChar:
-      case tkClass:
       {
         int Long = PyLong_AsLong(Value);
         if(!PyErr_Occurred())
@@ -253,10 +259,16 @@ static PyObject* VclGetProperty(PyObject *Self, PyObject *Args)
     {
       case tkInteger:
       case tkChar:
+        return Py_BuildValue("ii", GetOrdProp(Control, PropInfo), Kind);
+
       case tkClass:
+        if(AnsiString((*PropInfo->PropType)->Name) == "TStrings")
+          return Py_BuildValue("ui", ((TStrings*)GetOrdProp(Control, PropInfo))->Text.c_str(), -1);
         return Py_BuildValue("ii", GetOrdProp(Control, PropInfo), Kind);
 
       case tkEnumeration:
+        if(AnsiString((*PropInfo->PropType)->Name) == "Boolean")
+          return Py_BuildValue("Ni", PyBool_FromLong(GetOrdProp(Control, PropInfo)), Kind);
         return Py_BuildValue("ui", GetEnumProp(Control, PropInfo).c_str(), Kind);
 
       case tkFloat:
@@ -442,6 +454,7 @@ PyObject* InitPyVcl()
   RegisterClass(__classid(TButton));
   RegisterClass(__classid(TAction));
   RegisterClass(__classid(TMenuItem));
+  RegisterClass(__classid(TPanel));
 
   PyObject *PyVclModule = PyModule_Create(&PyVclModuleDef);
 

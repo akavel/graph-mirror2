@@ -235,7 +235,8 @@ void __fastcall TForm1::FormShow(TObject *Sender)
   TreeView->SetFocus();
   if(Form22)
     Form22->ManualDock(Panel6);
-  Python::ShowPythonConsole(false);
+  Panel6->Height = Panel6->VisibleDockClientCount ? 150 : 0;
+  Splitter2->Visible = false;
 
   //Stupid workaround for bug that hides size grip
   StatusBar1->Visible = false;

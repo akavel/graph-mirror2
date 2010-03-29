@@ -200,22 +200,22 @@ enum TPointType {ptCartesian, ptPolar};
 
 HANDLE_FPU(TPointSeries::GetDblPoint)
 
-%attribute(TPointSeries, TErrorBarType, xErrorBarType, GetxErrorBarType);
-%attribute(TPointSeries, TErrorBarType, yErrorBarType, GetyErrorBarType);
-%attribute(TPointSeries, double, xErrorValue, GetxErrorValue);
-%attribute(TPointSeries, double, yErrorValue, GetyErrorValue);
-%attribute(TPointSeries, TColor, FillColor, GetFillColor);
-%attribute(TPointSeries, TColor, LineColor, GetLineColor);
-%attribute(TPointSeries, TColor, FrameColor, GetFrameColor);
-%attribute(TPointSeries, unsigned, Size, GetSize);
-%attribute(TPointSeries, unsigned, Style, GetStyle);
-%attribute(TPointSeries, unsigned, LineSize, GetLineSize);
-%attribute(TPointSeries, unsigned, LineStyle, GetLineStyle);
-%attribute(TPointSeries, TInterpolationAlgorithm, Interpolation, GetInterpolation);
-%attribute(TPointSeries, bool, ShowLabels, GetShowLabels);
+%attribute(TPointSeries, TErrorBarType, xErrorBarType, GetxErrorBarType, SetxErrorBarType);
+%attribute(TPointSeries, TErrorBarType, yErrorBarType, GetyErrorBarType, SetyErrorBarType);
+%attribute(TPointSeries, double, xErrorValue, GetxErrorValue, SetxErrorValue);
+%attribute(TPointSeries, double, yErrorValue, GetyErrorValue, SetyErrorBarType);
+%attribute(TPointSeries, TColor, FillColor, GetFillColor, SetFillColor);
+%attribute(TPointSeries, TColor, LineColor, GetLineColor, SetLineColor);
+%attribute(TPointSeries, TColor, FrameColor, GetFrameColor, SetFrameColor);
+%attribute(TPointSeries, unsigned, Size, GetSize, SetSize);
+%attribute(TPointSeries, unsigned, Style, GetStyle, SetStyle);
+%attribute(TPointSeries, unsigned, LineSize, GetLineSize, SetLineSize);
+%attribute(TPointSeries, unsigned, LineStyle, GetLineStyle, SetLineStyle);
+%attribute(TPointSeries, TInterpolationAlgorithm, Interpolation, GetInterpolation, SetInterpolation);
+%attribute(TPointSeries, bool, ShowLabels, GetShowLabels, SetShowLabels);
 %attribute(TPointSeries, TFont*, Font, GetFont);
-%attribute(TPointSeries, unsigned, LabelPosition, GetLabelPosition);
-%attribute(TPointSeries, TPointType, PointType, GetPointType);
+%attribute(TPointSeries, unsigned, LabelPosition, GetLabelPosition, SetLabelPosition);
+%attribute(TPointSeries, TPointType, PointType, GetPointType, SetPointType);
 class TPointSeries : public TGraphElem
 {
 public:
@@ -369,4 +369,5 @@ struct TData
       def __repr__(self):
           return repr(list(self))
 }
+
 

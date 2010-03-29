@@ -35,7 +35,7 @@ String GetTempPath();
 inline bool InsideRect(const TRect &Rect, const TPoint &P) {return P.x >= Rect.Left && P.x <= Rect.Right && P.y >= Rect.Top && P.y <= Rect.Bottom;}
 std::wstring ReduceString(const std::wstring &Str, unsigned MaxLength);
 void LoadLanguage(const String &Lang);
-
+void StartTimer(unsigned Time, TNotifyEvent CallBack);
 
 //Allow comparasion between shared_ptr<> and pointer
 template<class T1, class T2>

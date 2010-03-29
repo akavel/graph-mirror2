@@ -6,6 +6,7 @@ import traceback
 import GraphImpl
 import Settings
 import Data
+import Utility
 import vcl
 import xmlrpc.client
 import getopt
@@ -35,7 +36,9 @@ def InitPlugins():
     sys.path.append(PluginsDir)
 
     global Form1
+    global Form22
     Form1 = vcl.TForm(GraphImpl.form1, owned=False)
+    Form22 = vcl.TForm(GraphImpl.form22, owned=False)
 
     Modules = []
     AllowedExt = [ i[0] for i in imp.get_suffixes() ]
