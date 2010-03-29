@@ -12,6 +12,7 @@
 #include <Clipbrd.hpp>
 #include "Unit14.h"
 #include "ConfigRegistry.h"
+#include "ICompCommon.h"
 //---------------------------------------------------------------------------
 #pragma link "Grid"
 #pragma link "PointSelect"
@@ -163,8 +164,8 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
 
   for(int Row = 1; Row < Grid->RowCount; Row++)
   {
-    Trim(DataPoints[Row-1].First);
-    Trim(DataPoints[Row-1].Second);
+    DataPoints[Row-1].First = Trim(DataPoints[Row-1].First);
+    DataPoints[Row-1].Second = Trim(DataPoints[Row-1].Second);
     if(DataPoints[Row-1].First.empty() && DataPoints[Row-1].Second.empty())
       continue;
 

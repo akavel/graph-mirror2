@@ -102,6 +102,7 @@ public:
   void PasteFromClipboard(wchar_t DecimalSeparator);
   bool CanCopy();
   bool ImportFromFile(const String &FileName, wchar_t DecimalSeparator);
+  void Import(std::istream &Stream, wchar_t DecimalSeparator);
   bool ExportToFile(const String &FileName, wchar_t Delimiter, wchar_t DecimalSeparator, bool Utf8=false);
   void AutoSizeCol(int ColIndex);
   void LastCell();

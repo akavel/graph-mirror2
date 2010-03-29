@@ -223,6 +223,7 @@ __published:	// IDE-managed Components
   TPanel *Panel6;
   TMySplitter *Splitter1;
   TSplitter *Splitter2;
+  TMenuItem *N1;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);

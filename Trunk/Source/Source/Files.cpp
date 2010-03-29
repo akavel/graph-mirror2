@@ -16,6 +16,8 @@
 #include "OleServer.h"
 #include "Encode.h"
 #include "ConfigRegistry.h"
+#include "ICompCommon.h"
+#include "HandleCsv.h"
 //---------------------------------------------------------------------------
 void TData::LoadFromFile(const std::wstring &FileName)
 {
@@ -264,16 +266,6 @@ void TData::SaveDefault() const
   }
 }
 //---------------------------------------------------------------------------
-//Returns separator used for line ('\t', ' ', ';', ',')
-char GetSeparator(const std::string &Str)
-{
-  const char *Separators = "\t; ,";
-  for(const char* Ch = Separators; *Ch; Ch++)
-    if(Str.find(*Ch) != std::string::npos)
-      return *Ch;
-  return 0;
-}
-//---------------------------------------------------------------------------
 bool TData::ImportPointSeries(const std::wstring &FileName)
 {
   const TColor Colors[] = {clRed, clGreen, clBlue, clYellow, clPurple, clAqua, clBlack, clGray, clSkyBlue	, clMoneyGreen, clDkGray};
@@ -285,69 +277,35 @@ bool TData::ImportPointSeries(const std::wstring &FileName)
     return false;
   }
 
+  TCsvGrid CsvGrid;
+  ImportCsv(Stream, CsvGrid);
   std::vector<std::vector<TPointSeriesPoint> > Points;
-  std::string Str;
-  unsigned Line = 1;
-
-  while(std::getline(Stream, Str))
+  unsigned Col;
+  unsigned ColCount = CsvGrid[0].size();
+  try
   {
-    //Ignore empty lines
-    if(Str.empty())
-      continue;
-
-    char Separator = GetSeparator(Str);
-    if(Separator != ',')
-      std::replace(Str.begin(), Str.end(), ',', '.');
-
-    //Several separators after each other (eg. spaces) are ignored
-    unsigned FirstPos = Str.find_first_not_of(Separator);
-    unsigned Pos = Str.find(Separator, FirstPos);
-    std::string xText = Str.substr(FirstPos, Pos - FirstPos);
-    unsigned Col = 0;
-
-    for(unsigned LastPos = Str.find_first_not_of(Separator, Pos);
-        Pos != std::string::npos; LastPos = Pos + 1)
+    for(Col = 1; Col < ColCount; Col++)
     {
-      try
+      Points.push_back(std::vector<TPointSeriesPoint>());
+      for(unsigned Row = 0; Row < CsvGrid.size(); Row++)
       {
-        Pos = Str.find(Separator, LastPos);
-
-        //Ignore empty entries
-        if(Pos == LastPos || LastPos == Str.size())
-          continue;
-
-        if(Line == 1)
-          Points.push_back(std::vector<TPointSeriesPoint>());
-        std::string yText = Str.substr(LastPos, Pos - LastPos);
-
-        //Check if there are too many numbers on the line
-        if(Col < Points.size())
-          Points[Col].push_back(TPointSeriesPoint(ToWString(xText), ToWString(yText)));
-        else
+        if(Property.DecimalSeparator != '.')
         {
-          MessageBox(LoadRes(526, FileName.c_str(), Line), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
-          return false;
+          std::replace(CsvGrid[Row][0].begin(), CsvGrid[Row][0].end(), (char)Property.DecimalSeparator, '.');
+          std::replace(CsvGrid[Row][Col].begin(), CsvGrid[Row][Col].end(), (char)Property.DecimalSeparator, '.');
         }
+        Points.back().push_back(TPointSeriesPoint(ToWString(CsvGrid[Row][0]), ToWString(CsvGrid[Row][Col])));
       }
-      catch(Func32::EParseError &E)
-      {
-        //Ignore errors in first line; This could be a text
-        if(Line != 1)
-        {
-          MessageBox(LoadRes(526, FileName.c_str(), Line), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
-          return false;
-        }
-      }
-      Col++;
     }
-
-    //Check if there are too few numbers in the line
-    if(Col < Points.size())
+  }
+  catch(Func32::EParseError &E)
+  {
+    //Ignore errors in first line; This could be a text
+    if(Col != 1)
     {
-      MessageBox(LoadRes(526, FileName.c_str(), Line), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
+      MessageBox(LoadRes(526, FileName.c_str(), Col), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
       return false;
     }
-    Line++;
   }
 
   unsigned ColorIndex = 0;
