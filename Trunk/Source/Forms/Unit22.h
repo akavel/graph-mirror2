@@ -38,6 +38,7 @@ private:	// User declarations
   void KeyboardInterrupt();
   void SetUserString(const String &Str);
   void HandleNewLine();
+  void __fastcall AfterFormShown(TObject*);
 
 public:		// User declarations
   __fastcall TForm22(TComponent* Owner);

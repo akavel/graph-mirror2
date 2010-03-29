@@ -376,21 +376,36 @@ public:
   void Update();
 
   TErrorBarType GetxErrorBarType() const {return xErrorBarType;}
+  void SetxErrorBarType(TErrorBarType Value) {xErrorBarType = Value;}
   TErrorBarType GetyErrorBarType() const {return yErrorBarType;}
+  void SetyErrorBarType(TErrorBarType Value) {yErrorBarType = Value;}
   double GetxErrorValue() const {return xErrorValue;}
+  void SetxErrorValue(double Value) {xErrorValue = Value;}
   double GetyErrorValue() const {return yErrorValue;}
+  void SetyErrorValue(double Value) {yErrorValue = Value;}
   TColor GetFillColor() const {return FillColor;}
+  void SetFillColor(TColor Value) {FillColor = Value;}
   unsigned GetSize() const {return Size;}
+  void SetSize(unsigned Value) {Size = Value;}
   unsigned GetStyle() const {return Style;}
+  void SetStyle(unsigned Value) {Style = Value;}
   TColor GetLineColor() const {return LineColor;}
+  void SetLineColor(TColor Value) {LineColor = Value;}
   TColor GetFrameColor() const {return FrameColor;}
+  void SetFrameColor(TColor Value) {FrameColor = Value;}
   unsigned GetLineSize() const {return LineSize;}
+  void SetLineSize(unsigned Value) {LineSize = Value;}
   TPenStyle GetLineStyle() const {return LineStyle;}
+  void SetLineStyle(TPenStyle Value) {LineStyle = Value;}
   TInterpolationAlgorithm GetInterpolation() const {return Interpolation;}
+  void SetInterpolation(TInterpolationAlgorithm Value) {Interpolation = Value;}
   bool GetShowLabels() const {return ShowLabels;}
+  void SetShowLabels(bool Value) {ShowLabels = Value;}
   TFont* GetFont() const {return Font;}
   TLabelPosition GetLabelPosition() const {return LabelPosition;}
+  void SetLabelPosition(TLabelPosition Value) {LabelPosition = Value;}
   TPointType GetPointType() const {return PointType;}
+  void SetPointType(TPointType Value) {PointType = Value;}
 };
 Func32::TDblPoint FindCoord(TPointSeries::TPointList::const_iterator Iter, double x);
 

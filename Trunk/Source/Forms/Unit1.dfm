@@ -444,6 +444,9 @@ object Form1: TForm1
     object Tree_InsTrend: TMenuItem
       Action = InsertTrendlineAction
     end
+    object N1: TMenuItem
+      Caption = '-'
+    end
     object N10: TMenuItem
       Caption = '-'
     end

@@ -170,6 +170,7 @@ void TForm22::HandleNewLine()
 void __fastcall TForm22::FormShow(TObject *Sender)
 {
   IRichEdit1->SelStart = MAXINT;
+  StartTimer(1, AfterFormShown);
 }
 //---------------------------------------------------------------------------
 void TForm22::WritePrompt(const String &Str)
@@ -216,6 +217,11 @@ void TForm22::SetUserString(const String &Str)
   IRichEdit1->SelLength = MAXINT;
   IRichEdit1->SelText = Str;
 }
+//---------------------------------------------------------------------------
+void __fastcall TForm22::AfterFormShown(TObject*)
+{
+  Form1->Splitter2->Visible = true;
+  Form1->Panel6->Height = Form1->Panel6->VisibleDockClientCount ? 150 : 0;}
 //---------------------------------------------------------------------------
 
 

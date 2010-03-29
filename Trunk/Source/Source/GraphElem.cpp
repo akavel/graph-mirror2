@@ -701,6 +701,7 @@ TPointSeries::TPointSeries(TColor AFrameColor, TColor AFillColor, TColor ALineCo
     Font(AFont), LabelPosition(ALabelPosition), PointType(APointType),
     xErrorBarType(XErrorBarType), xErrorValue(XErrorValue), yErrorBarType(YErrorBarType), yErrorValue(YErrorValue)
 {
+  SetLegendText(L"Point series");
 }
 //---------------------------------------------------------------------------
 void TPointSeries::InsertDblPoint(const Func32::TDblPoint &Point, int Index)

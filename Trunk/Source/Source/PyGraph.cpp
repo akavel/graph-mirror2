@@ -459,11 +459,7 @@ static PyModuleDef GraphModuleDef =
 void ShowPythonConsole(bool Visible)
 {
   if(Form22)
-  {
     Form22->Visible = Visible;
-    Form1->Panel6->Height = Form1->Panel6->VisibleDockClientCount ? 150 : 0;
-    Form1->Splitter2->Visible = Visible;
-  }
 }
 //---------------------------------------------------------------------------
 PyObject* InitGraphImpl()
@@ -473,12 +469,14 @@ PyObject* InitGraphImpl()
 //---------------------------------------------------------------------------
 extern "C" PyObject* PyInit__Settings();
 extern "C" PyObject* PyInit__Data();
+extern "C" PyObject* PyInit__Utility();
 _inittab Modules[] =
 {
   {"GraphImpl", InitGraphImpl},
   {"PyVcl", InitPyVcl},
   {"_Settings", PyInit__Settings},
   {"_Data", PyInit__Data},
+  {"_Utility", PyInit__Utility},
   {NULL, NULL}
 };
 //---------------------------------------------------------------------------
@@ -527,6 +525,7 @@ void InitPlugins()
       "GraphImpl.version_info = (%d,%d,%d,'%s',%d)\n"
       "GraphImpl.handle = %d\n"
       "GraphImpl.form1 = %d\n"
+      "GraphImpl.form22 = %d\n"
 
       "sys.path.append('%s/Lib')\n"
       "import Graph\n"
@@ -539,6 +538,7 @@ void InitPlugins()
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
       , Application->Handle
       , Form1
+      , Form22
       , AnsiString(ExtractFileDir(Application->ExeName)).c_str()
     );
 

@@ -9,13 +9,13 @@ class CircleDialog(vcl.SimpleDialog):
         self.Height = 130
         CircleData = CircleItem.PluginData["CircleExample"] if CircleItem else ("","","")
 
-        self.label1 = vcl.TLabel(self, Caption = "Radius:", Top = 12, Left = 8)
-        self.label2 = vcl.TLabel(self, Caption = "Center:", Top = 44, Left = 8)
-        self.label3 = vcl.TLabel(self, Caption = "X:", Top = 44, Left = 50)
-        self.label4 = vcl.TLabel(self, Caption = "Y:", Top = 44, Left = 180)
-        self.edit1 = vcl.TEdit(self, Top = 8, Left = 70, Width = 100, Text = CircleData[0])
-        self.edit2 = vcl.TEdit(self, Top = 40, Left = 70, Width = 100, Text = CircleData[1])
-        self.edit3 = vcl.TEdit(self, Top = 40, Left = 200, Width = 100, Text = CircleData[2])
+        self.label1 = vcl.TLabel(self.panel, Caption = "Radius:", Top = 12, Left = 8)
+        self.label2 = vcl.TLabel(self.panel, Caption = "Center:", Top = 44, Left = 8)
+        self.label3 = vcl.TLabel(self.panel, Caption = "X:", Top = 44, Left = 50)
+        self.label4 = vcl.TLabel(self.panel, Caption = "Y:", Top = 44, Left = 180)
+        self.edit1 = vcl.TEdit(self.panel, Top = 8, Left = 70, Width = 100, Text = CircleData[0])
+        self.edit2 = vcl.TEdit(self.panel, Top = 40, Left = 70, Width = 100, Text = CircleData[1])
+        self.edit3 = vcl.TEdit(self.panel, Top = 40, Left = 200, Width = 100, Text = CircleData[2])
 
     def OnOk(self, sender):
         Func = Graph.TParFunc(self.edit2.Text + "+" + self.edit1.Text + "*cos t", self.edit3.Text + "+" + self.edit1.Text + "*sin t")

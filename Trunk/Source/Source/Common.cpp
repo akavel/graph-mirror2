@@ -250,6 +250,26 @@ void LoadLanguage(const String &Lang)
     Application->HelpFile = Path + "Help\\Graph-English.chm";
 }
 //---------------------------------------------------------------------------
+struct TTimerClass
+{
+  TNotifyEvent CallBack;
+  void __fastcall OnTimer(TObject *Sender)
+  {
+    CallBack(Sender);
+    delete Sender;
+    delete this;
+  }
+};
+void StartTimer(unsigned Time, TNotifyEvent CallBack)
+{
+  TTimer *Timer = new TTimer(NULL);
+  Timer->Interval = Time;
+  Timer->Enabled = true;
+  TTimerClass *TimerClass = new TTimerClass;
+  TimerClass->CallBack = CallBack;
+  Timer->OnTimer = TimerClass->OnTimer;
+}
+//---------------------------------------------------------------------------
 
 
 
