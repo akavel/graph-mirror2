@@ -360,6 +360,9 @@
 			<CppCompile Include="Swig\Data_wrap.cpp">
 				<BuildOrder>65</BuildOrder>
 			</CppCompile>
+			<CppCompile Include="Swig\Utility_wrap.cpp">
+				<BuildOrder>67</BuildOrder>
+			</CppCompile>
 			<FormResources Include="Forms\Unit2.dfm"/>
 			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
 			<FormResources Include="Forms\Unit19.dfm"/>

@@ -435,14 +435,6 @@ String ToUString(long double Value)
   return FloatToStr(Value);
 }
 //---------------------------------------------------------------------------
-void Trim(std::wstring &Str)
-{
-  unsigned Pos1 = Str.find_first_not_of(L" ");
-  unsigned Pos2 = Str.find_last_not_of(L" ");
-  if(!Str.empty() && (Pos1 != 0 || Pos2 != Str.size()-1))
-    Str.replace(0, std::wstring::npos, Str, Pos1, Pos2 - Pos1 + 1);
-}
-//--------------------------------------------------------------------------
 std::wstring ToLower(const std::wstring &Str)
 {
   std::wstring Result;

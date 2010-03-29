@@ -10,6 +10,9 @@
 #include "Grid.h"
 #include <fstream>
 #include <string>
+#include <sstream>
+#include "HandleCsv.h"
+#include <algorithm>
 #pragma package(smart_init)
 #pragma resource "cursors.res"
 
@@ -21,16 +24,16 @@ const TCursor crRowCursor = static_cast<TCursor>(257); //Cursor used to select r
 //
 static inline void ValidCtrCheck(TGrid *)
 {
-        new TGrid(NULL);
+  new TGrid(NULL);
 }
 //---------------------------------------------------------------------------
 namespace Grid
 {
-        void __fastcall PACKAGE Register()
-        {
-                 TComponentClass classes[1] = {__classid(TGrid)};
-                 RegisterComponents("IComp", classes, 0);
-        }
+  void __fastcall PACKAGE Register()
+  {
+    TComponentClass classes[1] = {__classid(TGrid)};
+    RegisterComponents("IComp", classes, 0);
+  }
 }
 //---------------------------------------------------------------------------
 __fastcall TGrid::TGrid(TComponent* Owner)
@@ -538,40 +541,8 @@ void TGrid::ImportText(String Str, wchar_t DecimalSeparator)
     InplaceEditor->SelText = Str;
     return;
   }
-
-  //Replace decimal separator if it is different than '.'
-  if(DecimalSeparator != 0 && DecimalSeparator != '.')
-    for(int I = 1; I <= Str.Length(); I++)
-      if(Str[I] == DecimalSeparator)
-        Str[I] = '.';
-
-  int ACol = Selection.Left;
-  int ARow = Selection.Top;
-  int OldPos = 1;
-  for(int Pos = 1; Pos <= Str.Length(); Pos++)
-    switch(Str[Pos])
-    {
-      case '\t':
-      case ';':
-      case ' ':
-        if(Pos != OldPos)
-          DoSetText(ACol++, ARow, Str.SubString(OldPos, Pos-OldPos));
-        OldPos = Pos+1;
-        break;
-
-      case '\n':
-        DoSetText(ACol ,ARow++, Str.SubString(OldPos, Pos-OldPos-(Str[Pos-1]=='\r')));
-        ACol = Selection.Left;
-        OldPos = Pos+1;
-        if(AutoAddRows && RowCount <= ARow)
-          RowCount = ARow + 1;
-    }
-
-  //If the string doesn't end with a \n, interpret as it did
-  if(OldPos-1 != Str.Length())
-    DoSetText(ACol, ARow, Str.SubString(OldPos, Str.Length()-OldPos+1));
-
-  AjustRows();
+  std::istringstream Stream(AnsiString(Str).c_str());
+  Import(Stream, DecimalSeparator);
 }
 //---------------------------------------------------------------------------
 void TGrid::EmptySelection()
@@ -1006,12 +977,32 @@ bool TGrid::ImportFromFile(const String &FileName, wchar_t DecimalSeparator)
   if(!Stream)
     return false;
 
-  //Bug in operator>>(istream&, AnsiString&); AnsiString cannot load more than 4096 bytes from a stream
-  std::string Str;
-  std::getline(Stream, Str, '§'); //Read whole file (up to non existing delimiter)
-
-  ImportText(Str.c_str(), DecimalSeparator);
+  Import(Stream, DecimalSeparator);
   return true;
+ }
+//---------------------------------------------------------------------------
+void TGrid::Import(std::istream &Stream, wchar_t DecimalSeparator)
+{
+  TCsvGrid CsvGrid;
+  ImportCsv(Stream, CsvGrid);
+  unsigned ACol = Selection.Left;
+  unsigned ARow = Selection.Top;
+  if(AutoAddRows && static_cast<unsigned>(RowCount) <= ARow + CsvGrid.size())
+    RowCount = ARow + CsvGrid.size();
+  bool OldAutoAddRows = AutoAddRows;
+  AutoAddRows = false;
+
+  for(unsigned Row = 0; Row < CsvGrid.size(); Row++)
+    for(unsigned Col = 0; Col < CsvGrid[Row].size(); Col++)
+    {
+      if(DecimalSeparator != L'.')
+        std::replace(CsvGrid[Row][Col].begin(), CsvGrid[Row][Col].end(), (char)DecimalSeparator, '.');
+      if((int)Row < RowCount && (int)Col < ColCount)
+        DoSetText(Col+ACol, Row+ARow, CsvGrid[Row][Col].c_str());
+    }
+
+  AutoAddRows = OldAutoAddRows;
+  AjustRows();
 }
 //---------------------------------------------------------------------------
 bool TGrid::ExportToFile(const String &FileName, wchar_t Delimiter, wchar_t DecimalSeparator, bool Utf8)
