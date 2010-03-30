@@ -15,6 +15,9 @@
 			<Projects Include="Func32\Test\Test.cbproj">
 				<Dependencies/>
 			</Projects>
+			<Projects Include="Libraries\gsl\gsl.cbproj">
+				<Dependencies/>
+			</Projects>
 		</ItemGroup>
 		<ProjectExtensions>
 			<Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -59,14 +62,23 @@
 		<Target Name="Test:Make">
 			<MSBuild Targets="Make" Projects="Func32\Test\Test.cbproj"/>
 		</Target>
+		<Target Name="gsl">
+			<MSBuild Projects="Libraries\gsl\gsl.cbproj"/>
+		</Target>
+		<Target Name="gsl:Clean">
+			<MSBuild Targets="Clean" Projects="Libraries\gsl\gsl.cbproj"/>
+		</Target>
+		<Target Name="gsl:Make">
+			<MSBuild Targets="Make" Projects="Libraries\gsl\gsl.cbproj"/>
+		</Target>
 		<Target Name="Build">
-			<CallTarget Targets="IComp;Graph;Func32;Test"/>
+			<CallTarget Targets="IComp;Graph;Func32;Test;gsl"/>
 		</Target>
 		<Target Name="Clean">
-			<CallTarget Targets="IComp:Clean;Graph:Clean;Func32:Clean;Test:Clean"/>
+			<CallTarget Targets="IComp:Clean;Graph:Clean;Func32:Clean;Test:Clean;gsl:Clean"/>
 		</Target>
 		<Target Name="Make">
-			<CallTarget Targets="IComp:Make;Graph:Make;Func32:Make;Test:Make"/>
+			<CallTarget Targets="IComp:Make;Graph:Make;Func32:Make;Test:Make;gsl:Make"/>
 		</Target>
 		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 	</Project>

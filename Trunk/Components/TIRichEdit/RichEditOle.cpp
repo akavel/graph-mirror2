@@ -4,11 +4,13 @@
 // A lot of information about RichEdit can be found at his web site:
 // http://home.att.net/~robertdunn/Yacs.html
 //---------------------------------------------------------------------------
-#include <Config.h>
+#include "Config.h"
 #pragma hdrstop
 #include "RichEditOle.h"
-#undef _ASSERTE //prevent double definition
 #include "Debug.h"
+#ifdef _DEBUG
+#undef _ASSERTE
+#endif
 #include <Atl/atlbase.h>
 #pragma package(smart_init)
 #pragma link "Debug"

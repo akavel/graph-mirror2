@@ -29,10 +29,8 @@ TShading = Data.TShading
 TRelation = Data.TRelation
 TPointSeries = Data.TPointSeries
 
-def InitPlugins():
-    print("Loading plugins...")
-
-    PluginsDir = os.path.dirname(sys.argv[0]) + '\\Plugins'
+def InitPlugins(BaseDir):
+    PluginsDir = BaseDir + '\\Plugins'
     sys.path.append(PluginsDir)
 
     global Form1
@@ -97,7 +95,7 @@ def FindAction(name):
         if o.Name == "ActionManager":
             for a in o.Actions:
                 if a.Name == name:
-                    return a
+                    return vcl.TAction(handle=a._handle)
 
 def GetBaseObject(o):
     return GetBaseObject(o.SWIGSharedPtrUpcast(o)) if "SWIGSharedPtrUpcast" in o.__swig_getmethods__ else o

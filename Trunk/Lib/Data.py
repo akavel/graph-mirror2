@@ -538,6 +538,14 @@ iaCubicSpline = _Data.iaCubicSpline
 iaHalfCosine = _Data.iaHalfCosine
 ptCartesian = _Data.ptCartesian
 ptPolar = _Data.ptPolar
+lpAbove = _Data.lpAbove
+lpBelow = _Data.lpBelow
+lpLeft = _Data.lpLeft
+lpRight = _Data.lpRight
+lpAboveLeft = _Data.lpAboveLeft
+lpAboveRight = _Data.lpAboveRight
+lpBelowLeft = _Data.lpBelowLeft
+lpBelowRight = _Data.lpBelowRight
 class TPointSeries(TGraphElem):
     __swig_setmethods__ = {}
     for _s in [TGraphElem]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))

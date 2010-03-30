@@ -56,29 +56,29 @@
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>
-			<CppCompile Include="integration\err.c">
-				<BuildOrder>31</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="integration\qk.c">
-				<BuildOrder>18</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="integration\workspace.c">
-				<BuildOrder>29</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="integration\qk15.c">
-				<BuildOrder>12</BuildOrder>
+			<CppCompile Include="err\error.c">
+				<BuildOrder>21</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="integration\qk21.c">
 				<BuildOrder>13</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="err\error.c">
-				<BuildOrder>21</BuildOrder>
+			<CppCompile Include="err\stream.c">
+				<BuildOrder>22</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="integration\qags.c">
 				<BuildOrder>2</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="err\stream.c">
-				<BuildOrder>22</BuildOrder>
+			<CppCompile Include="integration\qk.c">
+				<BuildOrder>18</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="integration\err.c">
+				<BuildOrder>31</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="integration\qk15.c">
+				<BuildOrder>12</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="integration\workspace.c">
+				<BuildOrder>29</BuildOrder>
 			</CppCompile>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>

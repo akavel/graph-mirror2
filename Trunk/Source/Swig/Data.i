@@ -195,26 +195,29 @@ public:
 
 enum TErrorBarType {ebtNone, ebtFixed, ebtRelative, ebtCustom};
 enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
-//enum TLabelPosition {lpAbove, lpBelow, lpLeft, lpRight, lpAboveLeft, lpAboveRight, lpBelowLeft, lpBelowRight};
 enum TPointType {ptCartesian, ptPolar};
+namespace Graph
+{
+enum TLabelPosition {lpAbove, lpBelow, lpLeft, lpRight, lpAboveLeft, lpAboveRight, lpBelowLeft, lpBelowRight};
+}
 
 HANDLE_FPU(TPointSeries::GetDblPoint)
 
 %attribute(TPointSeries, TErrorBarType, xErrorBarType, GetxErrorBarType, SetxErrorBarType);
 %attribute(TPointSeries, TErrorBarType, yErrorBarType, GetyErrorBarType, SetyErrorBarType);
 %attribute(TPointSeries, double, xErrorValue, GetxErrorValue, SetxErrorValue);
-%attribute(TPointSeries, double, yErrorValue, GetyErrorValue, SetyErrorBarType);
+%attribute(TPointSeries, double, yErrorValue, GetyErrorValue, SetyErrorValue);
 %attribute(TPointSeries, TColor, FillColor, GetFillColor, SetFillColor);
 %attribute(TPointSeries, TColor, LineColor, GetLineColor, SetLineColor);
 %attribute(TPointSeries, TColor, FrameColor, GetFrameColor, SetFrameColor);
 %attribute(TPointSeries, unsigned, Size, GetSize, SetSize);
 %attribute(TPointSeries, unsigned, Style, GetStyle, SetStyle);
 %attribute(TPointSeries, unsigned, LineSize, GetLineSize, SetLineSize);
-%attribute(TPointSeries, unsigned, LineStyle, GetLineStyle, SetLineStyle);
+%attribute(TPointSeries, TPenStyle, LineStyle, GetLineStyle, SetLineStyle);
 %attribute(TPointSeries, TInterpolationAlgorithm, Interpolation, GetInterpolation, SetInterpolation);
 %attribute(TPointSeries, bool, ShowLabels, GetShowLabels, SetShowLabels);
 %attribute(TPointSeries, TFont*, Font, GetFont);
-%attribute(TPointSeries, unsigned, LabelPosition, GetLabelPosition, SetLabelPosition);
+%attribute(TPointSeries, Graph::TLabelPosition, LabelPosition, GetLabelPosition, SetLabelPosition);
 %attribute(TPointSeries, TPointType, PointType, GetPointType, SetPointType);
 class TPointSeries : public TGraphElem
 {

@@ -5217,7 +5217,7 @@ SWIGINTERN boost::shared_ptr< TBaseFuncType > TTan_SWIGSharedPtrUpcast(boost::sh
   
 
 #define TPointSeries_yErrorValue_get(self_) self_->GetyErrorValue()
-#define TPointSeries_yErrorValue_set(self_, val_) self_->SetyErrorBarType(val_)
+#define TPointSeries_yErrorValue_set(self_, val_) self_->SetyErrorValue(val_)
   
 
 #define TPointSeries_FillColor_get(self_) self_->GetFillColor()
@@ -14978,7 +14978,7 @@ fail:
 SWIGINTERN PyObject *_wrap_TPointSeries_LineStyle_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TPointSeries *arg1 = (TPointSeries *) 0 ;
-  unsigned int arg2 ;
+  TPenStyle arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   boost::shared_ptr< TPointSeries > tempshared1 ;
@@ -15006,9 +15006,9 @@ SWIGINTERN PyObject *_wrap_TPointSeries_LineStyle_set(PyObject *SWIGUNUSEDPARM(s
   }
   ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPointSeries_LineStyle_set" "', argument " "2"" of type '" "unsigned int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPointSeries_LineStyle_set" "', argument " "2"" of type '" "TPenStyle""'");
   } 
-  arg2 = static_cast< unsigned int >(val2);
+  arg2 = static_cast< TPenStyle >(val2);
   TPointSeries_LineStyle_set(arg1,arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -15025,7 +15025,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_LineStyle_get(PyObject *SWIGUNUSEDPARM(s
   boost::shared_ptr< TPointSeries > tempshared1 ;
   boost::shared_ptr< TPointSeries > *smartarg1 = 0 ;
   PyObject * obj0 = 0 ;
-  unsigned int result;
+  TPenStyle result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TPointSeries_LineStyle_get",&obj0)) SWIG_fail;
   {
@@ -15043,7 +15043,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_LineStyle_get(PyObject *SWIGUNUSEDPARM(s
       arg1 = const_cast< TPointSeries * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
-  result = (unsigned int)TPointSeries_LineStyle_get(arg1);
+  result = (TPenStyle)TPointSeries_LineStyle_get(arg1);
   resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
   return resultobj;
 fail:
@@ -15242,12 +15242,12 @@ fail:
 SWIGINTERN PyObject *_wrap_TPointSeries_LabelPosition_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TPointSeries *arg1 = (TPointSeries *) 0 ;
-  unsigned int arg2 ;
+  Graph::TLabelPosition arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   boost::shared_ptr< TPointSeries > tempshared1 ;
   boost::shared_ptr< TPointSeries > *smartarg1 = 0 ;
-  unsigned int val2 ;
+  int val2 ;
   int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
@@ -15268,11 +15268,11 @@ SWIGINTERN PyObject *_wrap_TPointSeries_LabelPosition_set(PyObject *SWIGUNUSEDPA
       arg1 = const_cast< TPointSeries * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPointSeries_LabelPosition_set" "', argument " "2"" of type '" "unsigned int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPointSeries_LabelPosition_set" "', argument " "2"" of type '" "Graph::TLabelPosition""'");
   } 
-  arg2 = static_cast< unsigned int >(val2);
+  arg2 = static_cast< Graph::TLabelPosition >(val2);
   TPointSeries_LabelPosition_set(arg1,arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -15289,7 +15289,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_LabelPosition_get(PyObject *SWIGUNUSEDPA
   boost::shared_ptr< TPointSeries > tempshared1 ;
   boost::shared_ptr< TPointSeries > *smartarg1 = 0 ;
   PyObject * obj0 = 0 ;
-  unsigned int result;
+  Graph::TLabelPosition result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TPointSeries_LabelPosition_get",&obj0)) SWIG_fail;
   {
@@ -15307,8 +15307,8 @@ SWIGINTERN PyObject *_wrap_TPointSeries_LabelPosition_get(PyObject *SWIGUNUSEDPA
       arg1 = const_cast< TPointSeries * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
-  result = (unsigned int)TPointSeries_LabelPosition_get(arg1);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  result = (Graph::TLabelPosition)TPointSeries_LabelPosition_get(arg1);
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -19139,6 +19139,14 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "iaHalfCosine",SWIG_From_int(static_cast< int >(iaHalfCosine)));
   SWIG_Python_SetConstant(d, "ptCartesian",SWIG_From_int(static_cast< int >(ptCartesian)));
   SWIG_Python_SetConstant(d, "ptPolar",SWIG_From_int(static_cast< int >(ptPolar)));
+  SWIG_Python_SetConstant(d, "lpAbove",SWIG_From_int(static_cast< int >(Graph::lpAbove)));
+  SWIG_Python_SetConstant(d, "lpBelow",SWIG_From_int(static_cast< int >(Graph::lpBelow)));
+  SWIG_Python_SetConstant(d, "lpLeft",SWIG_From_int(static_cast< int >(Graph::lpLeft)));
+  SWIG_Python_SetConstant(d, "lpRight",SWIG_From_int(static_cast< int >(Graph::lpRight)));
+  SWIG_Python_SetConstant(d, "lpAboveLeft",SWIG_From_int(static_cast< int >(Graph::lpAboveLeft)));
+  SWIG_Python_SetConstant(d, "lpAboveRight",SWIG_From_int(static_cast< int >(Graph::lpAboveRight)));
+  SWIG_Python_SetConstant(d, "lpBelowLeft",SWIG_From_int(static_cast< int >(Graph::lpBelowLeft)));
+  SWIG_Python_SetConstant(d, "lpBelowRight",SWIG_From_int(static_cast< int >(Graph::lpBelowRight)));
   SWIG_Python_SetConstant(d, "lpUserTopLeft",SWIG_From_int(static_cast< int >(lpUserTopLeft)));
   SWIG_Python_SetConstant(d, "lpAboveX",SWIG_From_int(static_cast< int >(lpAboveX)));
   SWIG_Python_SetConstant(d, "lpBelowX",SWIG_From_int(static_cast< int >(lpBelowX)));
