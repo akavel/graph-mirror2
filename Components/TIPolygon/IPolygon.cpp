@@ -2,6 +2,7 @@
 // Copyright © 2003 Ivan Johansen
 // IPolygon.cpp
 //===========================================================================
+#include "Config.h"
 #include <vcl.h>
 #pragma hdrstop
 #include "IPolygon.h"

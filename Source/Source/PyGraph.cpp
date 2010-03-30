@@ -23,6 +23,7 @@
 #undef _DEBUG
 #include <python.h>
 #include "PyVcl.h"
+#include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
 PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem);
 namespace Python
@@ -490,10 +491,6 @@ void InitPlugins()
     Py_Initialize();
     FreeGIL();
     AllocGIL();  //Used to set FPU Control Word
-//    wchar_t *argv[] = {Application->ExeName.c_str(), NULL};
-//    std::vector<wchar_t*> argv(ParamCount() + 2);
-//    for(int I = 0; I < ParamCount(); I++)
-//      argv[I] = ParamStr(I).c_str();
     int argc;
     wchar_t **argv = CommandLineToArgvW(GetCommandLine(), &argc);
     PySys_SetArgv(argc, argv);
@@ -505,6 +502,7 @@ void InitPlugins()
     TVersionInfo Info;
     TVersion Version = Info.FileVersion();
     const char *BetaFinal = Info.FileFlags() & ffDebug ? "beta" : "final";
+    AnsiString BaseDir = GetRegValue(REGISTRY_KEY, L"BaseDir", HKEY_CURRENT_USER, ExtractFileDir(Application->ExeName).c_str()).c_str();
     AnsiString PythonCommands = AnsiString().sprintf(
       "import sys\n"
       "class ConsoleWriter:\n"
@@ -529,17 +527,17 @@ void InitPlugins()
 
       "sys.path.append('%s/Lib')\n"
       "import Graph\n"
-      "Graph.InitPlugins()\n"
+      "Graph.InitPlugins('%s')\n"
 
       "import vcl\n"
       "import PyVcl\n"
       "sys.stdin = sys.stdout\n"
-//      "import Swig\n"
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
       , Application->Handle
       , Form1
       , Form22
-      , AnsiString(ExtractFileDir(Application->ExeName)).c_str()
+      , BaseDir.c_str()
+      , BaseDir.c_str()
     );
 
     int Result = PyRun_SimpleString(PythonCommands.c_str());

@@ -96,9 +96,9 @@ class SimpleDialog(TForm):
         self.Close()
 
 class TAction(TObject):
-    def __init__(self, **keywords):
+    def __init__(self, handle=0, **keywords):
         import GraphImpl
-        TObject.__init__(self, GraphImpl.CreateAction(), owned=False, **keywords)
+        TObject.__init__(self, GraphImpl.CreateAction() if handle==0 else handle, owned=False, **keywords)
     def __setattr__(self, name, value):
         if name == "ShortCut":
             TObject.__setattr__(self, "ShortCut", PyVcl.CallFunction("TextToShortCut", int, value) & 0xFFFF)
@@ -107,6 +107,8 @@ class TAction(TObject):
     @property
     def ShortCut(self):
         return PyVcl.CallFunction("ShortCutToText", str, TObject.__getattr__(self, "ShortCut"))
+    def Execute(self):
+        PyVcl.CallMethod(self._handle, "Execute")
 
 import collections
 class VclListWrapperType(collections.UserList):

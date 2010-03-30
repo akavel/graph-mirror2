@@ -1,4 +1,5 @@
 //---------------------------------------------------------------------------
+#include "Config.h"
 #include <vcl.h>
 #pragma hdrstop
 #include "IRichEdit.h"

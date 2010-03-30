@@ -28,4 +28,3 @@ def OnSelect(Item):
 
 Action = vcl.TAction(Name="Statistics", Caption="Statistics", OnExecute=Execute, Hint="Statistics on a point series")
 Graph.OnSelect.append(OnSelect)
-
