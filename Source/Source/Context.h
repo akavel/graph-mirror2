@@ -15,11 +15,10 @@
 namespace Graph
 {
 typedef void (__closure *TClipCallback)(const TPoint *Points, unsigned Size);
+enum TOutCode {ocInside=0, ocTop=1, ocBottom=2, ocLeft=4, ocRight=8};
 
 class TContext
 {
-  enum TOutCode {ocInside=0, ocTop=1, ocBottom=2, ocLeft=4, ocRight=8};
-
   Graphics::TCanvas *Canvas;
   TPenStyle PenStyle;
   TColor PenColor;
@@ -28,10 +27,6 @@ class TContext
   TContext(const TContext&); //Not implemented
   TContext& operator=(const TContext&); //Not implemented
   void DrawPolyline(const std::vector<TPoint> &Points);
-  static void Clip(TPoint &P1, const TPoint &P2, TOutCode OutCode, const TRect &Rect);
-  static TPoint Crop(TOutCode OutCode, const TRect &Rect);
-  static TOutCode CompOutCode(const TPoint &P, const TRect &Rect);
-  static void ClipToRect(TClipCallback ClipCallback, const TPoint *Points, unsigned Size, const TRect &Rect, bool DoCrop);
 
 public:
   TContext(Graphics::TCanvas *ACanvas) : Canvas(ACanvas) {}

@@ -12,6 +12,16 @@
 #include "Context.h"
 #include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
+struct TPointHandler
+{
+  std::vector<TPoint> PointList;
+  void Append(const TPoint *Points, unsigned Size) {PointList.insert(PointList.end(), Points, Points + Size);}
+};
+static void Clip(TPoint &P1, const TPoint &P2, TOutCode OutCode, const TRect &Rect);
+static TPoint Crop(TOutCode OutCode, const TRect &Rect);
+static TOutCode CompOutCode(const TPoint &P, const TRect &Rect);
+static void ClipToRect(TClipCallback ClipCallback, const TPoint *Points, unsigned Size, const TRect &Rect, bool DoCrop);
+//---------------------------------------------------------------------------
 void TContext::DrawPolyline(const std::vector<TPoint> &Points)
 {
   if(!Points.empty())
@@ -31,7 +41,7 @@ void TContext::DrawPolyline(const TPoint *Points, unsigned Size)
 }
 //---------------------------------------------------------------------------
 //Return value indicating position of P related to Rect
-inline TContext::TOutCode TContext::CompOutCode(const TPoint &P, const TRect &Rect)
+inline TOutCode CompOutCode(const TPoint &P, const TRect &Rect)
 {
   int OutCode = ocInside;
   if(P.y < Rect.Top) OutCode = ocTop;
@@ -43,7 +53,7 @@ inline TContext::TOutCode TContext::CompOutCode(const TPoint &P, const TRect &Re
 //---------------------------------------------------------------------------
 //Move the point P1 inside Rect so the line P1-P2 is the same
 //Only clips at one side. Recalculate OutCode an call again to make sure P1 is completely inside
-inline void TContext::Clip(TPoint &P1, const TPoint &P2, TOutCode OutCode, const TRect &Rect)
+inline void Clip(TPoint &P1, const TPoint &P2, TOutCode OutCode, const TRect &Rect)
 {
   //No clipping needed if it is the same point; Prevent division by zero
   if(P1 == P2)
@@ -91,7 +101,7 @@ void TContext::DrawPolyline(const TPoint *Points, unsigned Size, const TRect &Re
 //http://www.cc.gatech.edu/grads/h/Hao-wei.Hsieh/Haowei.Hsieh/mm.html
 //NOTICE: data pointed to by Points may be changed temorarely but is always restored before exiting the function.
 //NOTICE: Only 31 bit signed integer may be used as points. The calculation may overflow if the points exceeds MAXINT/2
-void TContext::ClipToRect(TClipCallback ClipCallback, const TPoint *Points, unsigned Size, const TRect &Rect, bool DoCrop)
+void ClipToRect(TClipCallback ClipCallback, const TPoint *Points, unsigned Size, const TRect &Rect, bool DoCrop)
 {
   if(Size < 2)
     return;
@@ -166,7 +176,7 @@ void TContext::ClipToRect(TClipCallback ClipCallback, const TPoint *Points, unsi
 }
 //---------------------------------------------------------------------------
 //Move a point with OutCode, which is outside, inside Rect
-TPoint TContext::Crop(TOutCode OutCode, const TRect &Rect)
+TPoint Crop(TOutCode OutCode, const TRect &Rect)
 {
   return Point(
     OutCode & ocLeft ? Rect.Left : Rect.Right,
@@ -330,11 +340,7 @@ void TContext::DrawPolygon(const TPoint *Points, unsigned Size)
 //---------------------------------------------------------------------------
 void TContext::DrawPolygon(const TPoint *Points, unsigned Size, const TRect &Rect)
 {
-  struct
-  {
-    std::vector<TPoint> PointList;
-    void Append(const TPoint *Points, unsigned Size) {PointList.insert(PointList.end(), Points, Points + Size);}
-  } PointHandler;
+  TPointHandler PointHandler;
   ClipToRect(&PointHandler.Append, Points, Size, Rect, true);
   DrawPolygon(PointHandler.PointList);
 }
@@ -426,7 +432,11 @@ void TContext::DrawFrameRegion(const TRegion &Region, unsigned Width)
 TRegion::TRegion(const std::vector<TPoint> &Points, int Mode)
  : Handle(NULL)
 {
-  Handle = CreatePolygonRgn(&Points.at(0), Points.size(), Mode);
+  TPointHandler PointHandler;
+  //Clip to prevent an OS error
+  TRect Rect(-MAXSHORT/2, -MAXSHORT/2, MAXSHORT/2, MAXSHORT/2);
+  ClipToRect(&PointHandler.Append, &Points.at(0), Points.size(), Rect, true);
+  Handle = CreatePolygonRgn(&PointHandler.PointList[0], PointHandler.PointList.size(), Mode);
   if(Handle == 0)
     RaiseLastOSError();
 }
