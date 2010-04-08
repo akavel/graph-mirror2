@@ -2332,7 +2332,7 @@ void __fastcall TForm1::AboutActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::MoveRightActionExecute(TObject *Sender)
 {
-  if(Form22->IRichEdit1->Focused())
+  if(Form22 && Form22->IRichEdit1->Focused())
   {
     Form22->IRichEdit1->SelStart = Form22->IRichEdit1->FindWordBreak(wbMoveWordRight, Form22->IRichEdit1->SelStart);
     return;
@@ -2351,7 +2351,7 @@ void __fastcall TForm1::MoveRightActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::MoveLeftActionExecute(TObject *Sender)
 {
-  if(Form22->IRichEdit1->Focused())
+  if(Form22 && Form22->IRichEdit1->Focused())
   {
     Form22->IRichEdit1->SelStart = Form22->IRichEdit1->FindWordBreak(wbMoveWordLeft, Form22->IRichEdit1->SelStart);
     return;
