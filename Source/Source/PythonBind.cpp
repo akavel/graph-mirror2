@@ -18,11 +18,6 @@
 //---------------------------------------------------------------------------
 namespace Python
 {
-//PyTypeObject& GetPythonType(const char *Name);
-//PyObject* GetPythonAddress(const char *Name);
-PyThreadState *ThreadState = NULL;
-int GILUseCount = 1;
-
 HINSTANCE PythonInstance = NULL;
 
 template<typename T>
@@ -51,28 +46,33 @@ PyObject* PyReturnNone()
   return Py_None;
 }
 //---------------------------------------------------------------------------
-void AllocGIL()
+TLockGIL::TLockGIL()
 {
-  if(GILUseCount++ == 0)
-  {
-    _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
-    PyEval_RestoreThread(ThreadState);
-  }
-  ThreadState = NULL;
+  _control87(PYTHON_FPU_CONTROL, FPU_MASK);
+  State = PyGILState_Ensure();
 }
 //---------------------------------------------------------------------------
-void FreeGIL()
+TLockGIL::~TLockGIL()
 {
-  if(--GILUseCount == 0)
-  {
-    ThreadState = PyEval_SaveThread();
-    _clear87(); //Clear FPU status flags
-    _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
-  }
+  PyGILState_Release(static_cast<PyGILState_STATE>(State));
+  _clear87();
+  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
 }
 //---------------------------------------------------------------------------
+TUnlockGIL::TUnlockGIL()
+{
+  State = PyEval_SaveThread();
+  _clear87();
+  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
 }
-
+//---------------------------------------------------------------------------
+TUnlockGIL::~TUnlockGIL()
+{
+  _control87(PYTHON_FPU_CONTROL, FPU_MASK);
+  PyEval_RestoreThread(State);
+}
+//---------------------------------------------------------------------------
+} //namespace Python
 
 
 

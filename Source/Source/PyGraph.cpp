@@ -33,7 +33,7 @@ PyObject *PyEGraphError = NULL;
 //---------------------------------------------------------------------------
 bool ExecutePythonCommand(const String &Command)
 {
-  AllocGIL();
+  TLockGIL Dummy;
 
   PyObject *Module = PyImport_ImportModule("code");
   bool Result = true;
@@ -71,7 +71,6 @@ bool ExecutePythonCommand(const String &Command)
     Py_DECREF(Module);
   }
 
-  FreeGIL();
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -321,14 +320,13 @@ static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args)
 //---------------------------------------------------------------------------
 static PyObject* PluginUpdate(PyObject *Self, PyObject *Args)
 {
-  FreeGIL();
+  TUnlockGIL Dummy;
   Form1->Draw.AbortUpdate();
   Form1->Data.ClearCache();
   Form1->Data.Update();
   Form1->UpdateTreeView();
   Form1->Data.SetModified();
   Form1->Redraw(); //Activates thread; must be done after OLE update
-  AllocGIL();
   Py_RETURN_NONE;
 }
 //---------------------------------------------------------------------------
@@ -487,10 +485,12 @@ void InitPlugins()
   if(IsPythonInstalled())
   {
     Form22 = new TForm22(Application);
+    _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
     PyImport_ExtendInittab(Modules);
+    static String ExeName = Application->ExeName; //Py_SetProgramName() requires variable to be static
+    Py_SetProgramName(ExeName.c_str());
+    PyEval_InitThreads();
     Py_Initialize();
-    FreeGIL();
-    AllocGIL();  //Used to set FPU Control Word
     int argc;
     wchar_t **argv = CommandLineToArgvW(GetCommandLine(), &argc);
     PySys_SetArgv(argc, argv);
@@ -541,7 +541,9 @@ void InitPlugins()
     );
 
     int Result = PyRun_SimpleString(PythonCommands.c_str());
-    FreeGIL();
+    PyEval_SaveThread();
+    _clear87();
+    _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
   }
   else
   {
@@ -619,14 +621,13 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param)
 {
   if(IsPythonInstalled() && PythonInitialized)
   {
-    AllocGIL();
+    TLockGIL Dummy;
     PyObject *Module = PyImport_AddModule("Graph");
     char *MethodName = "ExecuteEvent";
     char *Format = Param ? (char*)"(iN)" : (char*)"(i())";
     PyObject *ResultObj = PyObject_CallMethod(Module, MethodName, Format, PluginEvent, Param, NULL);
     bool Result = ResultObj && PyObject_IsTrue(ResultObj);
     Py_XDECREF(ResultObj);
-    FreeGIL();
     return Result;
   }
   return false;
