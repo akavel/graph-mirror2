@@ -48,6 +48,8 @@ bool ImportCsv(std::istream &Stream, TCsvGrid &CsvGrid)
 
   do
   {
+    if(!Line.empty() && Line[Line.size()-1] == '\r')
+      Line.erase(Line.size()-1);
     //Ignore empty lines
     if(Line.empty())
       continue;

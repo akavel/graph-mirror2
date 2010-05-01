@@ -125,6 +125,8 @@ public:
   bool RectInRegion(const TRect &Rect) const;
   TRect GetBoundingRect() const;
   void GetData(std::vector<TRect> &Data);
+  void Widen(int X1, int Y1, int X2, int Y2);
+  void SetRegion(const std::vector<TRect> &Data);
 
   bool operator==(const TRegion &Region) const {return EqualRgn(Handle, Region.Handle);}
   TRegion& operator=(const TRegion&);

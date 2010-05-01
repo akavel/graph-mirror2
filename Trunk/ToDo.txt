@@ -93,6 +93,7 @@ Graph 4.5
 - Major/minor ticks
 - Fix overlapping numbers on the axes. (Scientific notation, what do other programs do?)
 - Real boxed axes
+- Show labels under/left of axes in boxed mode. See forum message "Axis labels" from Dilek.
 
 Later
 - Select elements by clicking on them in the graph area.

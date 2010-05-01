@@ -12,6 +12,7 @@
 //---------------------------------------------------------------------------
 struct _object;
 struct _typeobject;
+struct _ts;
 
 #define PYTHON_FPU_CONTROL MCW_EM | IC_PROJECTIVE | RC_NEAR | PC_53
 #define DEFAULT_FPU_CONTROL EM_DENORMAL | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64
@@ -56,15 +57,23 @@ PYTHON_WRAP(_object, _Py_FalseStruct)
 PYTHON_WRAP(_object, _Py_NotImplementedStruct)
 
 bool IsPythonInstalled();
-void AllocGIL();
-void FreeGIL();
 
 class TLockGIL
 {
+  /*PyGILState_STATE*/int State;
 public:
-  TLockGIL(){AllocGIL();}
-  ~TLockGIL(){FreeGIL();}
+  TLockGIL();
+  ~TLockGIL();
 };
+
+class TUnlockGIL
+{
+  _ts *State;
+public:
+  TUnlockGIL();
+  ~TUnlockGIL();
+};
+
 }
 #ifdef WRAP_PYOBJECTS
 #define PyTuple_Type Python::PyTuple_Type

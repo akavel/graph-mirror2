@@ -466,7 +466,13 @@ TRegion::TRegion(const TRect &Rect)
 //---------------------------------------------------------------------------
 TRegion::TRegion(const std::vector<TRect> &Data)
 {
-  //Notice: Windows 9x has a limit on 64 kB for the whole structure (about 4000 rects)
+  SetRegion(Data);
+}
+//---------------------------------------------------------------------------
+void TRegion::SetRegion(const std::vector<TRect> &Data)
+{
+  if(Handle != 0)
+    DeleteObject(Handle);
   unsigned Count = Data.size();
   std::vector<char> Buffer(Count * sizeof(TRect) + sizeof(RGNDATAHEADER));
   RGNDATAHEADER *Header = reinterpret_cast<RGNDATAHEADER*>(&Buffer[0]);
@@ -560,6 +566,21 @@ TPoint TContext::ClipLine(const TPoint &P1, const TPoint &P2, const TRect &Rect)
   Clip(P, P2, CompOutCode(P1, Rect), Rect);
   Clip(P, P2, CompOutCode(P1, Rect), Rect);
   return P;
+}
+//---------------------------------------------------------------------------
+void TRegion::Widen(int X1, int Y1, int X2, int Y2)
+{
+  std::vector<TRect> Data;
+  GetData(Data);
+  std::vector<TRect>::iterator End = Data.end();
+  for(std::vector<TRect>::iterator Iter = Data.begin(); Iter != End; ++Iter)
+  {
+    Iter->Left += X1;
+    Iter->Top += Y1;
+    Iter->Right += X2;
+    Iter->Bottom += Y2;
+  }
+  SetRegion(Data);
 }
 //---------------------------------------------------------------------------
 

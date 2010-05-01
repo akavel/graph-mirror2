@@ -678,6 +678,7 @@ void TDrawThread::CreateShade(TShading &Shade)
       Points.push_back(TPoint(x2, y2));
       Points.push_back(GetFixedPoint(Shade, TPoint(x2, y2)));
       *Region |= TRegion(Points);
+      Region->Widen(0, 0, 1, 1);
       Points.clear();
       break;
     }

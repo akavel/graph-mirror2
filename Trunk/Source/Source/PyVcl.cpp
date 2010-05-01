@@ -44,7 +44,7 @@ struct TPythonCallback : public TObject
   void __fastcall Method(TObject *Sender)
   {
     int Arg3 = _ECX;
-    AllocGIL();
+    TLockGIL Dummy;
     PyObject *Args = PyTuple_New(TypeData->ParamCount);
     PyTuple_SetItem(Args, 0, PySender);
     char *Ptr = TypeData->ParamList;
@@ -69,7 +69,6 @@ struct TPythonCallback : public TObject
     if(Result == NULL)
       PyErr_Print();
     Py_XDECREF(Result);
-    FreeGIL();
   }
 };
 //---------------------------------------------------------------------------
@@ -331,9 +330,11 @@ static PyObject* VclCallMethod(PyObject *Self, PyObject *Args)
       AnsiString Method = Name;
       if(Method == "ShowModal")
       {
-        FreeGIL();
-        TModalResult Result = Form->ShowModal();
-        AllocGIL();
+        TModalResult Result;
+        {
+          TUnlockGIL Dummy;
+          Result = Form->ShowModal();
+        }
         return PyLong_FromLong(Result);
       }
       else if(Method == "Close")
