@@ -39,10 +39,17 @@ TTreeNode* TAddView::AddNode(TGraphElem &Elem, int ImageIndex)
   return Node;
 }
 //---------------------------------------------------------------------------
+int TAddView::AddFuncImage(TColor Color)
+{
+  std::map<TColor,int>::iterator Iter = FuncIconMap.find(Color);
+  if(Iter == FuncIconMap.end())
+    return FuncIconMap[Color] = Form1->AddImage(iiFuncNode, Color);
+  return Iter->second;
+}
+//---------------------------------------------------------------------------
 void TAddView::Visit(TBaseFuncType &Func)
 {
-  AddNode(Func, Form1->AddImage(iiFuncNode, Func.Color));
-
+  AddNode(Func, AddFuncImage(Func.Color));
   for(unsigned I = 0; I < Func.ChildCount(); I++)
     Func.GetChild(I)->Accept(*this);
 }
@@ -85,7 +92,7 @@ void TAddView::Visit(TRelation &Relation)
   if(Relation.GetRelationType() == rtInequality)
     ImageIndex = Form1->AddImage(Relation.GetColor(), Relation.GetBrushStyle());
   else
-    ImageIndex = Form1->AddImage(iiFuncNode, Relation.GetColor());
+    ImageIndex = AddFuncImage(Relation.GetColor());
   AddNode(Relation, ImageIndex);
 }
 //---------------------------------------------------------------------------
