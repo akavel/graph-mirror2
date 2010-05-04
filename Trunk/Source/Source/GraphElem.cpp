@@ -78,6 +78,12 @@ void TTextValue::Set(const std::wstring AText, const TData &Data, bool IgnoreErr
     Text = L"";
     Value = -INF;
   }
+  else if(Text.empty())
+  {
+    if(!IgnoreErrors)
+      throw Func32::EFuncError(Func32::ecEmptyString);
+    Value = NAN;
+  }
   else
   {
     //Optimize for numbers

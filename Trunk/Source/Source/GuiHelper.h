@@ -10,10 +10,12 @@
 #ifndef GuiHelperH
 #define GuiHelperH
 //---------------------------------------------------------------------------
-struct TAddView : public TGraphElemVisitor
+class TAddView : public TGraphElemVisitor
 {
+  std::map<TColor, int> FuncIconMap;
   TTreeNode* AddNode(TGraphElem &Elem, int ImageIndex);
-
+  int AddFuncImage(TColor Color);
+public:
   void Visit(TBaseFuncType &Func);
   void Visit(TTan &Tan);
   void Visit(TShading &Shade);

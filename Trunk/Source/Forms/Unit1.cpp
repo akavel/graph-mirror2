@@ -1441,8 +1441,9 @@ void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
   while(ImageList1->Count > FixedImages)
     ImageList1->Delete(ImageList1->Count-1);
 
+  TAddView AddView;
   for(unsigned I = 0; I < Data.ElemCount(); I++)
-    Data.GetElem(I)->Accept(TAddView());
+    Data.GetElem(I)->Accept(AddView);
   TreeView->OnChange = TreeViewChange; //Enable change notification again
   if(Selected)
     TreeView->Selected = GetNode(Selected);

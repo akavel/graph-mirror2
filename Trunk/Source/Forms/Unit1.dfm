@@ -578,6 +578,7 @@ object Form1: TForm1
     Top = 216
   end
   object ImageList1: TImageList
+    AllocBy = 8
     Left = 208
     Top = 216
     Bitmap = {
