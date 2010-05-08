@@ -54,7 +54,7 @@ void TLinkLabelEx::AdjustBounds()
       {
         TSize TextSize;
         SendMessage(Handle, LM_GETIDEALSIZE, WordWrap ? Width : MaxInt, reinterpret_cast<LONG>(&TextSize));
-        SetBounds(Left, Top, TextSize.cx, TextSize.cy);
+        SetBounds(Left, Top, WordWrap ? Width : TextSize.cx, WordWrap ? TextSize.cy : Height);
       }
     }
     else

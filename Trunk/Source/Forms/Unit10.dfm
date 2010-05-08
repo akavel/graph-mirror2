@@ -123,8 +123,9 @@ object Form10: TForm10
     object LinkLabel1: TLinkLabelEx
       Left = 16
       Top = 56
-      Width = 283
-      Height = 105
+      Width = 289
+      Height = 116
+      AutoSize = False
       WordWrap = True
       OnLinkClick = LinkLabel1LinkClick
       Anchors = [akLeft, akTop, akRight, akBottom]
