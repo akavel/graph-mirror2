@@ -16,12 +16,12 @@ Compression=lzma
 DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
-LicenseFile=License.txt
-OutputBaseFilename=SetupGraphBeta-4.4.0.450
+InfoBeforeFile=License.txt
+OutputBaseFilename=SetupGraphBeta-4.4.0.475
 OutputDir=.
 SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.4.0.450
+VersionInfoVersion=4.4.0.475
 PrivilegesRequired=None
 
 [Languages]
@@ -63,7 +63,7 @@ Name: "InstallAllUsers"; Description: "{cm:InstallAllUsers}"; Check: HasAdminRig
 [Files]
 Source: "Graph.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "PDFlib.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "Thumbnails.dll"; DestDir: "{app}"; Flags: regserver noregerror ignoreversion restartreplace uninsrestartdelete; Check: not FilesEqual('Thumbnails.dll')
+Source: "Thumbnails.dll"; DestDir: "{app}"; Flags: regserver noregerror restartreplace uninsrestartdelete;
 Source: "License.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
 Source: "Help\*.chm"; DestDir: "{app}\Help"; Flags: ignoreversion
@@ -185,5 +185,7 @@ begin
   if I <> 0 then
     Result := Copy(Result, 1, I-1) + ' (' + Copy(Result, I+1, MaxInt) + ')';
 end;
+
+
 
 
