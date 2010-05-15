@@ -7,7 +7,6 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit1.h"
@@ -15,6 +14,7 @@
 #include "PointSelect.h"
 #include <ValueEdit.hpp>
 #include <set>
+#pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
 #include <boost/format.hpp>
 #include <MultiMon.hpp>
 //---------------------------------------------------------------------------

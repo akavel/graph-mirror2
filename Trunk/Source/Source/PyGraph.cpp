@@ -544,13 +544,13 @@ void InitPlugins()
     PyEval_SaveThread();
     _clear87();
     _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
+    PythonInitialized = true;
   }
   else
   {
     Form1->Panel6->Height = 0;
     Form1->Splitter2->Visible = false;
   }
-  PythonInitialized = true;
 }
 //---------------------------------------------------------------------------
 _object* ToPyObject(int Value)
@@ -611,9 +611,11 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem)
 {
   if(!PythonInitialized)
     return false;
-  TLockGIL Dummy;
   if(IsPythonInstalled())
+  {
+    TLockGIL Dummy;
     return ExecutePluginEvent(PluginEvent, Py_BuildValue("(N)", DownCastSharedPtr(Elem)));
+  }
   return false;
 }
 //---------------------------------------------------------------------------

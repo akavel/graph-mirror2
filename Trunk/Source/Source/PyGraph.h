@@ -22,7 +22,15 @@ namespace Python
     peSelect,
     peClose,
     peEdit,
-    peAnimate
+    peAnimate,
+    peDelete,
+    peAxesChanged,
+    peZoom,
+    peOptionsChanged,
+    peCustomFunctionsChanged,
+    peNewElem,
+    peChanged,
+    peMoved
   };
 
   extern PyObject *PyEFuncError;

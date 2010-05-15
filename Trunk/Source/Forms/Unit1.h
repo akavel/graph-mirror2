@@ -413,6 +413,7 @@ private:	// User declarations
   boost::scoped_ptr<TDraw> PreviewDraw; //Only availble while open dialog is shown
   const int FixedImages; //Number of fixed images in ImageList1 (The rest are dynamically added and deleted)
   boost::scoped_ptr<struct TImageOptions> ActionImageOptions; //Used when saving as image from menu
+  TGraphElemPtr Selected;
 
   int StatusIcon;
   int xZoom, yZoom;

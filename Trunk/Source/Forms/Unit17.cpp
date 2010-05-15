@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "Unit1.h"
 #include "Unit17.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "Grid"
 #pragma link "SaveDialogEx"
@@ -93,6 +94,7 @@ void __fastcall TForm17::Button3Click(TObject *Sender)
 
   Data.SetModified();
   Data.ClearCache();
+  Python::ExecutePluginEvent(Python::peCustomFunctionsChanged);
   Form1->Redraw();
 }
 //---------------------------------------------------------------------------

@@ -14,6 +14,7 @@ import getopt
 Axes = Settings.GetAxes()
 Property = Settings.Property
 Redraw = Data.Redraw
+FormatSettings = Settings.FormatSettings;
 
 Settings.TProperty.DefaultLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultLabelFont_get(self), owned=False))
 Settings.TProperty.DefaultPointLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultPointLabelFont_get(self), owned=False))
@@ -154,4 +155,12 @@ OnSelect = [HandleOnSelect]
 OnClose = []
 OnEdit = []
 OnAnimate = []
-EventList = [OnNew, OnLoad, OnSelect, OnClose, OnEdit, OnAnimate]
+OnDelete = []
+OnAxesChanged = []
+OnZoom = []
+OnOptionsChanged = []
+OnCustomFunctionsChanged = []
+OnNewElem = []
+OnChanged = []
+OnMoved = []
+EventList = [OnNew, OnLoad, OnSelect, OnClose, OnEdit, OnAnimate, OnDelete, OnAxesChanged, OnZoom, OnOptionsChanged, OnCustomFunctionsChanged, OnNewElem, OnChanged, OnMoved]
