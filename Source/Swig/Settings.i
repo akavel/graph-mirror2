@@ -110,7 +110,18 @@ struct TProperty
   bool CustomDecimalSeparator; //Default system decimal separator is used when false
   wchar_t DecimalSeparator;    //Decimal separator used when exporting files
 };
+
+%nodefault TFormatSettings;
+struct TFormatSettings
+{
+  std::wstring CartesianPointFormat;
+  std::wstring DegreePointFormat;
+  std::wstring RadianPointFormat;
+  TFormatSettings();
+};
+
 const TProperty Property;
+const TFormatSettings FormatSettings;
 } //namespace Graph
 
 %pythoncode

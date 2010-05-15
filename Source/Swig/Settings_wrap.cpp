@@ -2696,13 +2696,14 @@ SWIG_Python_MustGetPtr(PyObject *obj, swig_type_info *ty, int argnum, int flags)
 #define SWIGTYPE_p_Graph__TAxes swig_types[1]
 #define SWIGTYPE_p_Graph__TAxis swig_types[2]
 #define SWIGTYPE_p_Graph__TDefaultData swig_types[3]
-#define SWIGTYPE_p_Graph__TProperty swig_types[4]
-#define SWIGTYPE_p_TFont swig_types[5]
-#define SWIGTYPE_p_char swig_types[6]
-#define SWIGTYPE_p_unsigned_int swig_types[7]
-#define SWIGTYPE_p_wchar_t swig_types[8]
-static swig_type_info *swig_types[10];
-static swig_module_info swig_module = {swig_types, 9, 0, 0, 0, 0};
+#define SWIGTYPE_p_Graph__TFormatSettings swig_types[4]
+#define SWIGTYPE_p_Graph__TProperty swig_types[5]
+#define SWIGTYPE_p_TFont swig_types[6]
+#define SWIGTYPE_p_char swig_types[7]
+#define SWIGTYPE_p_unsigned_int swig_types[8]
+#define SWIGTYPE_p_wchar_t swig_types[9]
+static swig_type_info *swig_types[11];
+static swig_module_info swig_module = {swig_types, 10, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -6146,6 +6147,203 @@ SWIGINTERN PyObject *TProperty_swigregister(PyObject *SWIGUNUSEDPARM(self), PyOb
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_TFormatSettings_CartesianPointFormat_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TFormatSettings *arg1 = (Graph::TFormatSettings *) 0 ;
+  std::wstring *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TFormatSettings_CartesianPointFormat_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TFormatSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TFormatSettings_CartesianPointFormat_set" "', argument " "1"" of type '" "Graph::TFormatSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TFormatSettings * >(argp1);
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res2 = SWIG_AsPtr_std_wstring(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TFormatSettings_CartesianPointFormat_set" "', argument " "2"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TFormatSettings_CartesianPointFormat_set" "', argument " "2"" of type '" "std::wstring const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->CartesianPointFormat = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TFormatSettings_CartesianPointFormat_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TFormatSettings *arg1 = (Graph::TFormatSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::wstring *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TFormatSettings_CartesianPointFormat_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TFormatSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TFormatSettings_CartesianPointFormat_get" "', argument " "1"" of type '" "Graph::TFormatSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TFormatSettings * >(argp1);
+  result = (std::wstring *) & ((arg1)->CartesianPointFormat);
+  resultobj = SWIG_From_std_wstring(static_cast< std::wstring >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TFormatSettings_DegreePointFormat_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TFormatSettings *arg1 = (Graph::TFormatSettings *) 0 ;
+  std::wstring *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TFormatSettings_DegreePointFormat_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TFormatSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TFormatSettings_DegreePointFormat_set" "', argument " "1"" of type '" "Graph::TFormatSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TFormatSettings * >(argp1);
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res2 = SWIG_AsPtr_std_wstring(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TFormatSettings_DegreePointFormat_set" "', argument " "2"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TFormatSettings_DegreePointFormat_set" "', argument " "2"" of type '" "std::wstring const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->DegreePointFormat = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TFormatSettings_DegreePointFormat_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TFormatSettings *arg1 = (Graph::TFormatSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::wstring *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TFormatSettings_DegreePointFormat_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TFormatSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TFormatSettings_DegreePointFormat_get" "', argument " "1"" of type '" "Graph::TFormatSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TFormatSettings * >(argp1);
+  result = (std::wstring *) & ((arg1)->DegreePointFormat);
+  resultobj = SWIG_From_std_wstring(static_cast< std::wstring >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TFormatSettings_RadianPointFormat_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TFormatSettings *arg1 = (Graph::TFormatSettings *) 0 ;
+  std::wstring *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TFormatSettings_RadianPointFormat_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TFormatSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TFormatSettings_RadianPointFormat_set" "', argument " "1"" of type '" "Graph::TFormatSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TFormatSettings * >(argp1);
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res2 = SWIG_AsPtr_std_wstring(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TFormatSettings_RadianPointFormat_set" "', argument " "2"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "TFormatSettings_RadianPointFormat_set" "', argument " "2"" of type '" "std::wstring const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->RadianPointFormat = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TFormatSettings_RadianPointFormat_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TFormatSettings *arg1 = (Graph::TFormatSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::wstring *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TFormatSettings_RadianPointFormat_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TFormatSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TFormatSettings_RadianPointFormat_get" "', argument " "1"" of type '" "Graph::TFormatSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TFormatSettings * >(argp1);
+  result = (std::wstring *) & ((arg1)->RadianPointFormat);
+  resultobj = SWIG_From_std_wstring(static_cast< std::wstring >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_TFormatSettings(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TFormatSettings *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_TFormatSettings")) SWIG_fail;
+  result = (Graph::TFormatSettings *)new Graph::TFormatSettings();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TFormatSettings, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *TFormatSettings_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_Graph__TFormatSettings, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN int Swig_var_Property_set(PyObject *) {
   SWIG_Error(SWIG_AttributeError,"Variable Property is read-only.");
   return 1;
@@ -6156,6 +6354,20 @@ SWIGINTERN PyObject *Swig_var_Property_get(void) {
   PyObject *pyobj = 0;
   
   pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&Graph::Property), SWIGTYPE_p_Graph__TProperty,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_FormatSettings_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable FormatSettings is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_FormatSettings_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&Graph::FormatSettings), SWIGTYPE_p_Graph__TFormatSettings,  0 );
   return pyobj;
 }
 
@@ -6277,6 +6489,14 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TProperty_DecimalSeparator_set", _wrap_TProperty_DecimalSeparator_set, METH_VARARGS, NULL},
 	 { (char *)"TProperty_DecimalSeparator_get", _wrap_TProperty_DecimalSeparator_get, METH_VARARGS, NULL},
 	 { (char *)"TProperty_swigregister", TProperty_swigregister, METH_VARARGS, NULL},
+	 { (char *)"TFormatSettings_CartesianPointFormat_set", _wrap_TFormatSettings_CartesianPointFormat_set, METH_VARARGS, NULL},
+	 { (char *)"TFormatSettings_CartesianPointFormat_get", _wrap_TFormatSettings_CartesianPointFormat_get, METH_VARARGS, NULL},
+	 { (char *)"TFormatSettings_DegreePointFormat_set", _wrap_TFormatSettings_DegreePointFormat_set, METH_VARARGS, NULL},
+	 { (char *)"TFormatSettings_DegreePointFormat_get", _wrap_TFormatSettings_DegreePointFormat_get, METH_VARARGS, NULL},
+	 { (char *)"TFormatSettings_RadianPointFormat_set", _wrap_TFormatSettings_RadianPointFormat_set, METH_VARARGS, NULL},
+	 { (char *)"TFormatSettings_RadianPointFormat_get", _wrap_TFormatSettings_RadianPointFormat_get, METH_VARARGS, NULL},
+	 { (char *)"new_TFormatSettings", _wrap_new_TFormatSettings, METH_VARARGS, NULL},
+	 { (char *)"TFormatSettings_swigregister", TFormatSettings_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
@@ -6287,6 +6507,7 @@ static swig_type_info _swigt__p_Func32__TDblPoint = {"_p_Func32__TDblPoint", "Fu
 static swig_type_info _swigt__p_Graph__TAxes = {"_p_Graph__TAxes", "Graph::TAxes *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TAxis = {"_p_Graph__TAxis", "Graph::TAxis *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TDefaultData = {"_p_Graph__TDefaultData", "Graph::TDefaultData *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Graph__TFormatSettings = {"_p_Graph__TFormatSettings", "Graph::TFormatSettings *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TProperty = {"_p_Graph__TProperty", "Graph::TProperty *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TFont = {"_p_TFont", "TFont *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
@@ -6298,6 +6519,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Graph__TAxes,
   &_swigt__p_Graph__TAxis,
   &_swigt__p_Graph__TDefaultData,
+  &_swigt__p_Graph__TFormatSettings,
   &_swigt__p_Graph__TProperty,
   &_swigt__p_TFont,
   &_swigt__p_char,
@@ -6309,6 +6531,7 @@ static swig_cast_info _swigc__p_Func32__TDblPoint[] = {  {&_swigt__p_Func32__TDb
 static swig_cast_info _swigc__p_Graph__TAxes[] = {  {&_swigt__p_Graph__TAxes, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TAxis[] = {  {&_swigt__p_Graph__TAxis, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TDefaultData[] = {  {&_swigt__p_Graph__TDefaultData, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Graph__TFormatSettings[] = {  {&_swigt__p_Graph__TFormatSettings, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TProperty[] = {  {&_swigt__p_Graph__TProperty, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TFont[] = {  {&_swigt__p_TFont, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
@@ -6320,6 +6543,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Graph__TAxes,
   _swigc__p_Graph__TAxis,
   _swigc__p_Graph__TDefaultData,
+  _swigc__p_Graph__TFormatSettings,
   _swigc__p_Graph__TProperty,
   _swigc__p_TFont,
   _swigc__p_char,
@@ -6940,6 +7164,7 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "cfPolar",SWIG_From_int(static_cast< int >(Graph::cfPolar)));
   PyDict_SetItemString(d,(char*)"cvar", SWIG_globals());
   SWIG_addvarlink(SWIG_globals(),(char*)"Property",Swig_var_Property_get, Swig_var_Property_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"FormatSettings",Swig_var_FormatSettings_get, Swig_var_FormatSettings_set);
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else
