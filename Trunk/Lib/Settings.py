@@ -297,6 +297,28 @@ class TProperty(_object):
 TProperty_swigregister = _Settings.TProperty_swigregister
 TProperty_swigregister(TProperty)
 
+class TFormatSettings(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TFormatSettings, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, TFormatSettings, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["CartesianPointFormat"] = _Settings.TFormatSettings_CartesianPointFormat_set
+    __swig_getmethods__["CartesianPointFormat"] = _Settings.TFormatSettings_CartesianPointFormat_get
+    if _newclass:CartesianPointFormat = _swig_property(_Settings.TFormatSettings_CartesianPointFormat_get, _Settings.TFormatSettings_CartesianPointFormat_set)
+    __swig_setmethods__["DegreePointFormat"] = _Settings.TFormatSettings_DegreePointFormat_set
+    __swig_getmethods__["DegreePointFormat"] = _Settings.TFormatSettings_DegreePointFormat_get
+    if _newclass:DegreePointFormat = _swig_property(_Settings.TFormatSettings_DegreePointFormat_get, _Settings.TFormatSettings_DegreePointFormat_set)
+    __swig_setmethods__["RadianPointFormat"] = _Settings.TFormatSettings_RadianPointFormat_set
+    __swig_getmethods__["RadianPointFormat"] = _Settings.TFormatSettings_RadianPointFormat_get
+    if _newclass:RadianPointFormat = _swig_property(_Settings.TFormatSettings_RadianPointFormat_get, _Settings.TFormatSettings_RadianPointFormat_set)
+    def __init__(self): 
+        this = _Settings.new_TFormatSettings()
+        try: self.this.append(this)
+        except: self.this = this
+TFormatSettings_swigregister = _Settings.TFormatSettings_swigregister
+TFormatSettings_swigregister(TFormatSettings)
+
 import vcl
 TAxes.NumberFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_NumberFont_get(self), owned=False))
 TAxes.LabelFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LabelFont_get(self), owned=False))
@@ -306,4 +328,5 @@ TAxes.TitleFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_Title
 
 cvar = _Settings.cvar
 Property = cvar.Property
+FormatSettings = cvar.FormatSettings
 

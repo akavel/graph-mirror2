@@ -17,6 +17,7 @@
 namespace Graph
 {
 TProperty Property;
+TFormatSettings FormatSettings;
 //---------------------------------------------------------------------------
 ///////////
 // TAxes //
@@ -484,6 +485,16 @@ void TAnimationInfo::Clear()
 {
   Constant.clear();
   ConstantList.clear();
+}
+//---------------------------------------------------------------------------
+/////////////////////
+// TFormatSettings //
+/////////////////////
+TFormatSettings::TFormatSettings()
+  : CartesianPointFormat(L"(%1%,%2%)"),
+    DegreePointFormat(L"(%2%,%1%\xB0)"),
+    RadianPointFormat(L"(%2%,%1%)")
+{
 }
 //---------------------------------------------------------------------------
 } //namespace Graph

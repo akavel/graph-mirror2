@@ -13,6 +13,8 @@
 #include "Unit14.h"
 #include "ConfigRegistry.h"
 #include "ICompCommon.h"
+#pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
+#include <boost/format.hpp>
 //---------------------------------------------------------------------------
 #pragma link "Grid"
 #pragma link "PointSelect"
@@ -315,7 +317,14 @@ void __fastcall TForm14::PaintBox1Paint(TObject *Sender)
 
     if(CheckBox2->Checked)
     {
-      std::wstring Str = RadioGroup1->ItemIndex ? (Data.Axes.Trigonometry == Func32::Radian ? L"12.5\x2220""1.18" : L"12.5\x2220""87.3\xB0") : L"(2.37,9.53)";
+      using boost::wformat;
+      std::wstring Str;
+      if(RadioGroup1->ItemIndex == 0)
+        Str = str(wformat(FormatSettings.CartesianPointFormat) % L"2.37" % L"9.53");
+      else if(Data.Axes.Trigonometry == Func32::Radian)
+        Str = str(wformat(FormatSettings.RadianPointFormat) % L"1.18" % L"12.5");
+      else
+        Str = str(wformat(FormatSettings.DegreePointFormat) % L"87.3" % L"12.5");
       PaintBox1->Canvas->Font->Assign(FontDialog1->Font);
       TDraw::DrawPointLabel(PaintBox1->Canvas, TPoint(X, Y), PointSize, Str, static_cast<Graph::TLabelPosition>(ComboBox1->ItemIndex));
     }

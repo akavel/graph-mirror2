@@ -130,10 +130,6 @@ object Form14: TForm14
     TabOrder = 2
     object TabSheet1: TTabSheet
       Caption = 'Markers'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         186
         379)

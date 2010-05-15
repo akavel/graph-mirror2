@@ -20,6 +20,7 @@
 #include "PointSelect.h"
 #include "IGraphic.h"
 #include "StackTrace.h"
+#pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
 #include <boost/tr1/complex.hpp>
 
 namespace Graph
@@ -1031,6 +1032,13 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
   if(PointSeries.GetSize() == 0)
     return;
 
+  std::wstring FormatStr;
+  if(PointSeries.GetPointType() == ptPolar)
+    FormatStr = Axes.Trigonometry == Func32::Degree ? FormatSettings.DegreePointFormat : FormatSettings.RadianPointFormat;
+  else
+    FormatStr = FormatSettings.CartesianPointFormat;
+  boost::wformat Format(FormatStr);
+
   //First draw all error bars and labels
   if(PointSeries.GetxErrorBarType() != ebtNone || PointSeries.GetyErrorBarType() != ebtNone ||  PointSeries.GetShowLabels())
     for(TPointSeries::TPointList::const_iterator Iter = PointList.begin(); Iter != End; ++Iter)
@@ -1073,15 +1081,7 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
 
         if(PointSeries.GetShowLabels())
         {
-          std::wstring Str;
-          if(PointSeries.GetPointType() == ptPolar)
-          {
-            Str = PointData[I].Second + L'\x2220' + PointData[I].First;
-            if(Axes.Trigonometry == Func32::Degree)
-              Str += L'\xB0';
-          }
-          else
-            Str = L"(" + PointData[I].First + L"," + PointData[I].Second + L")";
+          std::wstring Str = str(Format % PointData[I].First % PointData[I].Second);
           int PointSize = Size(PointSeries.GetSize());
           TDraw::DrawPointLabel(Context.GetCanvas(), Pos, PointSize, Str, PointSeries.GetLabelPosition());
         }
