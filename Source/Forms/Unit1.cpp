@@ -1025,6 +1025,7 @@ bool TForm1::ZoomWindow(double xMin, double xMax, double yMin, double yMax, bool
 //  Data.Axes.HandleZoomSquare(Draw.GetScaledYAxis());
   
   Data.ClearCache();
+  Python::ExecutePluginEvent(Python::peZoom);
   if(Update)
   {
     Data.SetModified();
@@ -1288,7 +1289,9 @@ void __fastcall TForm1::TreeViewChange(TObject *Sender, TTreeNode *Node)
   //Necessary because Form9 may not have been loaded yet
   if(Form9)
     Form9->FuncChanged(Elem);
-  Python::ExecutePluginEvent(Python::peSelect, Elem);
+  if(Elem != Selected)
+    Python::ExecutePluginEvent(Python::peSelect, Elem);
+  Selected = Elem;
 }
 //---------------------------------------------------------------------------
 void TForm1::ChangeLanguage(const String &Lang)
@@ -1966,10 +1969,9 @@ void __fastcall TForm1::AxesActionExecute(TObject *Sender)
     Data.ClearCache();
     Data.SetModified();
     UpdateTreeView(); //Update the check box for AxesView
+    Python::ExecutePluginEvent(Python::peAxesChanged);
     Redraw();
     UpdateEval();
-    //Zoom|Square needs to be updated
-    UpdateMenu();
   }
 }
 //---------------------------------------------------------------------------
@@ -1980,6 +1982,7 @@ void __fastcall TForm1::OptionsActionExecute(TObject *Sender)
     Draw.AbortUpdate();
     Data.ClearCache();
     Data.Update();
+    Python::ExecutePluginEvent(Python::peOptionsChanged);
     Redraw();
     UpdateMenu();
   }
@@ -1989,7 +1992,8 @@ void __fastcall TForm1::InsertFunctionActionExecute(TObject *Sender)
 {
   if(CreateForm<TForm5>(Data)->ShowModal() == mrOk)
   {
-    UpdateTreeView(Data.GetElem(Data.ElemCount()-1));
+    Python::ExecutePluginEvent(Python::peNewElem, Data.Back());
+    UpdateTreeView(Data.Back());
     TreeView->SetFocus();
     Data.SetModified();
     Redraw();
@@ -2002,6 +2006,7 @@ void __fastcall TForm1::InsertTangentActionExecute(TObject *Sender)
   if(Func)
     if(CreateForm<TForm12>(Data)->InsertTan(Func) == mrOk)
     {
+      Python::ExecutePluginEvent(Python::peNewElem, Func->GetChild(Func->ChildCount()-1));
       UpdateTreeView(Func->GetChild(Func->ChildCount()-1));
       Data.SetModified();
       Redraw();
@@ -2015,6 +2020,7 @@ void __fastcall TForm1::InsertShadeActionExecute(TObject *Sender)
   if(Func)
     if(CreateForm<TForm16>(Data)->InsertShade(Func) == mrOk)
     {
+      Python::ExecutePluginEvent(Python::peNewElem, Func->GetChild(Func->ChildCount()-1));
       UpdateTreeView(Func->GetChild(Func->ChildCount()-1));
       Data.SetModified();
       Redraw();
@@ -2025,8 +2031,8 @@ void __fastcall TForm1::InsertPointsActionExecute(TObject *Sender)
 {
   if(CreateForm<TForm14>(Data)->ShowModal() == mrOk)
   {
-    UpdateTreeView();
-    TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
+    Python::ExecutePluginEvent(Python::peNewElem, Data.Back());
+    UpdateTreeView(Data.Back());
     Data.SetModified();
     Redraw();
     UpdateMenu();
@@ -2039,8 +2045,8 @@ void __fastcall TForm1::InsertTrendlineActionExecute(TObject *Sender)
   if(Series)
     if(CreateForm<TForm13>(Data)->InsertTrendline(Series) == mrOk)
     {
-      UpdateTreeView();
-      TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
+      Python::ExecutePluginEvent(Python::peNewElem, Data.Back());
+      UpdateTreeView(Data.Back());
       Data.SetModified();
       Redraw();
       UpdateMenu();
@@ -2075,6 +2081,7 @@ void __fastcall TForm1::EditActionExecute(TObject *Sender)
   if(Result == mrOk)
   {
     Data.SetModified();
+    Python::ExecutePluginEvent(Python::peChanged, Item);
     UpdateTreeView();
     Redraw();
   }
@@ -2082,6 +2089,8 @@ void __fastcall TForm1::EditActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void TForm1::DeleteGraphElem(const boost::shared_ptr<TGraphElem> &GraphElem)
 {
+  Python::ExecutePluginEvent(Python::peDelete, GraphElem);
+
   UndoList.BeginMultiUndo();
   if(dynamic_cast<const TBaseFuncType*>(GraphElem.get()))
   {
@@ -2123,8 +2132,8 @@ void __fastcall TForm1::InsertDifActionExecute(TObject *Sender)
   if(boost::shared_ptr<TBaseFuncType> Func = boost::dynamic_pointer_cast<TBaseFuncType>(GetGraphElem(TreeView->Selected)))
     if(CreateForm<TForm7>(Data)->InsertDif(Func) == mrOk)
     {
-      UpdateTreeView();
-      TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
+      Python::ExecutePluginEvent(Python::peNewElem, Data.Back());
+      UpdateTreeView(Data.Back());
       Data.SetModified();
       Redraw();
     }
@@ -2164,12 +2173,9 @@ void __fastcall TForm1::ZoomStandardActionExecute(TObject *Sender)
   Data.Axes.xAxis = xAxis;
   Data.Axes.yAxis = yAxis;
 
-//  Data.Axes.ZoomSquare = ConfigFile.Section(L"Axes").Read(L"ZoomSquare", false);
-//  if(Data.Axes.ZoomSquare)
-//    ZoomWindow(Data.Axes.xAxis.Min, Data.Axes.xAxis.Max, Data.Axes.yAxis.Min, Data.Axes.yAxis.Max, false, false);
-
   Data.ClearCache();
   Data.SetModified();
+  Python::ExecutePluginEvent(Python::peZoom);
   Redraw();
   if(!MoveAction->Checked)
     UpdateEval();
@@ -2624,7 +2630,8 @@ void __fastcall TForm1::InsertLabelActionExecute(TObject *Sender)
     Label->Update();
     Redraw();
     UndoList.Push(TUndoAdd(Data, Label));
-    UpdateTreeView();
+    Python::ExecutePluginEvent(Python::peNewElem, Data.Back());
+    UpdateTreeView(Data.Back());
     UpdateMenu();
     Data.SetModified();
   }
@@ -2824,6 +2831,7 @@ void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,
         Parent->RemoveChild(Node->Index);
         Parent->InsertChild(Elem, PrevNode->Index);
         Data.SetModified();
+        Python::ExecutePluginEvent(Python::peMoved, Elem);
         UpdateTreeView(Elem);
         Redraw();
         break;
@@ -2843,6 +2851,7 @@ void __fastcall TForm1::TreeViewKeyDown(TObject *Sender, WORD &Key,
         Parent->RemoveChild(Node->Index);
         Parent->InsertChild(Elem, NextNode->Index);
         Data.SetModified();
+        Python::ExecutePluginEvent(Python::peMoved, Elem);
         UpdateTreeView(Elem);
         Redraw();
         break;
@@ -3120,6 +3129,7 @@ void __fastcall TForm1::TreeViewDragDrop(TObject *Sender, TObject *Source,
     Data.Insert(Elem, Node->Index);
     Data.SetModified();
     UpdateTreeView(Elem);
+    Python::ExecutePluginEvent(Python::peMoved, Elem);
     Redraw();
   }
 }
@@ -3188,7 +3198,8 @@ void __fastcall TForm1::InsertRelationActionExecute(TObject *Sender)
   if(CreateForm<TForm11>(Data)->ShowModal() == mrOk)
   {
     TreeView->SetFocus();
-    UpdateTreeView(Data.GetElem(Data.ElemCount()-1));
+    Python::ExecutePluginEvent(Python::peNewElem, Data.Back());
+    UpdateTreeView(Data.Back());
     UpdateMenu();
     Redraw();
   }
@@ -3544,8 +3555,8 @@ void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
 
   UndoList.Push(TUndoAdd(Data, OleObject));
   Data.Insert(OleObject);
-  UpdateTreeView();
-  TreeView->Items->Item[TreeView->Items->Count-1]->Selected = true;
+  Python::ExecutePluginEvent(Python::peNewElem, Data.Back());
+  UpdateTreeView(Data.Back());
   Data.SetModified();
   Redraw();
 }
