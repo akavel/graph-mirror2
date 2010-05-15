@@ -21,8 +21,6 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 {
   String TranslatorString = LinkLabel3->Caption;
   TranslateProperties(this);
-  Animate1->ResName = "FLAG";
-  reinterpret_cast<TEdit*>(Animate1)->OnDblClick = ProgramIconDblClick; //Nasty hack. Don't do this at home kids
 
   TVersionInfo Info;
   //Make string with file version information
@@ -49,9 +47,14 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm2::ProgramIconDblClick(TObject *Sender)
 {
-  Animate1->Visible = !Animate1->Visible;
+  Image1->Visible = !Image1->Visible;
   ProgramIcon->Visible = !ProgramIcon->Visible;
-  Animate1->Active = !Animate1->Active;
+  if(TGIFImage *Gif = dynamic_cast<TGIFImage*>(Image1->Picture->Graphic))
+  {
+    Gif->AnimateLoop = glContinously;
+    Gif->Animate = true;
+    Gif->AnimationSpeed = 400;
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm2::LinkLabel1LinkClick(TObject *Sender, const UnicodeString Link,
