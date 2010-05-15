@@ -20,6 +20,7 @@
 #include "SymbolDialog.h"
 #include <pngimage.hpp>
 #include "LinkLabelEx.h"
+#include <GIFImg.hpp>
 //---------------------------------------------------------------------------
 class TForm2 : public TForm
 {
@@ -31,11 +32,11 @@ __published:	// IDE-managed Components
   TLabel *Copyright;
   TLabel *Comments;
   TLabel *Label3;
-  TAnimate *Animate1;
   TImage *ProgramIcon;
   TLinkLabelEx *LinkLabel1;
   TLinkLabelEx *LinkLabel2;
   TLinkLabelEx *LinkLabel3;
+  TImage *Image1;
   void __fastcall ProgramIconDblClick(TObject *Sender);
   void __fastcall LinkLabel1LinkClick(TObject *Sender, const UnicodeString Link,
           TSysLinkType LinkType);
