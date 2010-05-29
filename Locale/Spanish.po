@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2009-06-23 00:14\n"
-"PO-Revision-Date: 2009-07-18 13:56+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2009-08-20 19:51\n"
+"PO-Revision-Date: 2010-05-18 16:40+0100\n"
+"Last-Translator: Francisco Oliver <graph.esp@gmail.com>\n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -282,7 +282,7 @@ msgstr "Guardar como..."
 
 #. Form1..ActionManager..SaveAsAction("Save as...")..Hint
 msgid "Write the current coordinate system to a file with a new name."
-msgstr "Guarda el sistema de coordenadas activo con un nombre nuevo, o una ubicación diferente."
+msgstr "Guarda el sistema de coordenadas activo en un archivo."
 
 #. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Caption
 msgid "Save copy as..."
@@ -467,7 +467,7 @@ msgstr "Acercar"
 
 #. Form1..ActionManager..ZoomInAction("In")..Hint
 msgid "Zoom in. Hold down Shift to zoom with larger steps."
-msgstr "Acerca la presentación del sistema de coordenadas. Presiona Mayús para aumentar el factor de zoom."
+msgstr "Acerca la presentación del sistema de coordenadas."
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Caption
 msgid "Out"
@@ -475,7 +475,7 @@ msgstr "Alejar"
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Hint
 msgid "Zoom out. Hold down Shift to zoom with larger steps."
-msgstr "Aleja la presentación del sistema de coordenadas. Presiona Mayús para aumentar el factor de zoom."
+msgstr "Aleja la presentación del sistema de coordenadas."
 
 #. Form1..ActionManager..ZoomWindowAction("Window")..Caption
 msgid "Window"
@@ -547,7 +547,7 @@ msgstr "Mover área gráfica"
 
 #. Form1..ActionManager..MoveAction("Move system")..Hint
 msgid "Move the coordinate system with the mouse."
-msgstr "Permite arrastrar el área gráfica con el ratón."
+msgstr "Permite arrastrar el sistema de coordenadas con el ratón."
 
 #. Form1..ActionManager..PathAction("Length of path")..Caption
 msgid "Length of path"
@@ -725,11 +725,11 @@ msgstr "Insertar ecuación/inecuación..."
 
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Hint
 msgid "Insert a new equation or inequality."
-msgstr "Introduce una ecuación o inecuación."
+msgstr "Introduce una ecuación o una inecuación."
 
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Caption
 msgid "Custom functions..."
-msgstr "Personalizar funciones..."
+msgstr "Personalizar funciones/constantes..."
 
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Hint
 msgid "Create custom functions and constants for use in graphs."
@@ -766,7 +766,7 @@ msgstr "Insertar objeto..."
 
 #. Form1..ActionManager..InsertObjectAction("Insert object...")..Hint
 msgid "Insert an OLE object such as a drawing or an equation."
-msgstr ""
+msgstr "Inserta un objeto OLE, por ejemplo, una imagen, un gráfico o un elemento del Editor de Ecuaciones de Microsoft."
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -1396,6 +1396,23 @@ msgstr "Abajo a la izquierda"
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 msgid "Below Right"
 msgstr "Abajo a la derecha"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Hint
+msgid "Choose between cartesian (x,y) coordinates and polar (θ,r) coordinates."
+msgstr "Elige entre coordenadas cartesianas (x,y) o polares (θ,r)."
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")..Caption
+msgid "Coordinate type"
+msgstr "Tipo de coordenadas"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
+msgid "Cartesian"
+msgstr "Cartesiano"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
+msgid "Polar"
+msgstr "Polar"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..Caption
 msgid "Error bars"
@@ -2075,7 +2092,7 @@ msgstr "Intérprete Python"
 
 #. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
 msgid "Clear"
-msgstr ""
+msgstr "Borrar"
 
 #. Form3("Edit axes")..Caption
 msgid "Edit axes"
@@ -2415,10 +2432,6 @@ msgstr "Real"
 msgid "Rectangular"
 msgstr "Binómica"
 
-#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
-msgid "Polar"
-msgstr "Polar"
-
 #. Form4("Options")..GridPanelEx1..Label2("Recent files:")..Caption
 msgid "Recent files:"
 msgstr "Archivos recientes:"
@@ -2481,7 +2494,7 @@ msgstr "Activa esta casilla si deseas que Graph compruebe vía Internet con cada
 
 #. Form4("Options")..GridPanelEx1..CheckBox4("Check for new version of Graph at startup")..Caption
 msgid "Check for new version of Graph at startup"
-msgstr "Comprobar al inicio si hay una nueva versión de Graph "
+msgstr "Comprobar nueva versión al inicio"
 
 #. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")....Hint
 msgid "Use a custom decimal separator instead of the default from the Windows Regional settings."
@@ -2995,7 +3008,7 @@ msgid "Not enough points for calculation."
 msgstr "No hay suficientes puntos para el cálculo de la línea de tendencia."
 
 msgid "Illegal name \"%s\" for user defined function or constant."
-msgstr "Nombre inaceptable para la constante/función definida por el usuario: \"%s\""
+msgstr "Nombre inaceptable para la función/constante personalizada: \"%s\""
 
 msgid "Cannot differentiate recursive function."
 msgstr "La función recursiva no puede ser derivada."
@@ -3232,7 +3245,7 @@ msgid "The cross point of the x-axis must be greater than 0, when the y-axis is 
 msgstr "El eje X debe cortar al eje Y en una ordenada mayor que 0 cuando el eje Y está definido en una escala logarítmica."
 
 msgid "'Recent files' must be between 0 and 9."
-msgstr "El número de archivos recientes debe fijarse entre 1 y 9."
+msgstr "El número de archivos recientes debe fijarse entre 0 y 9."
 
 msgid "The end of interval must be greater than the start of interval."
 msgstr "El valor final del intervalo debe ser mayor que el valor inicial del mismo."
@@ -3321,7 +3334,7 @@ msgid "You need to select a function."
 msgstr "Debes seleccionar una función."
 
 msgid "New version of Graph available"
-msgstr "Nueva versión de Graph disponible"
+msgstr "Nueva versión de Graph"
 
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
@@ -3348,7 +3361,7 @@ msgid ""
 "Cannot connect to server www.padowan.dk.\n"
 "Either the server is down or you do not have a connection to the Internet."
 msgstr ""
-"No se puede conectar con el servidor www.padowan.dk\n"
+"No es posible conectarse al servidor de Graph: www.padowan.dk.\n"
 "O el servidor está fuera de servicio o no puede establecerse una conexión a Internet."
 
 #. Communication error when checking for newer version
@@ -3376,7 +3389,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Si no deseas que se te pregunte de nuevo, puedes desactivar esta opción desde Editar|Opciones."
+"Si no deseas que se te pregunte de nuevo, puedes desactivar esta opción desde Editar> Opciones."
 
 msgid "Edit relation"
 msgstr "Editar ecuación/inecuación"
@@ -3419,9 +3432,9 @@ msgstr "Graph no responde"
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "La opción 'Sugerencia del día' puede darte una gran cantidad de información acerca del programa, detalles que muchos usuarios desconocen."
 
-#. Tip of the Day
-msgid "You can send suggestions for future versions, bug reports and comments to <a href=\"mailto:graph@padowan.dk\">graph@padowan.dk</a>"
-msgstr "Puedes enviar comentarios, sugerencias para futuras versiones e informes de errores a la siguiente dirección electrónica: <a href=\"mailto:graph@padowan.dk\">graph@padowan.dk</a>"
+#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
+msgstr "Para obtener ayuda sobre el uso del programa y enviar informes de errores o sugerencias para futuras versiones, visita el foro de Graph: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
@@ -3429,7 +3442,7 @@ msgstr "Puedes personalizar las barras de herramientas haciendo clic derecho sob
 
 #. Tip of the Day
 msgid "Instead of deleting a function, you can make it invisible by removing the check mark for the item in the function list."
-msgstr "En lugar de eliminar una función, puedes hacerla invisible deseleccionando su casilla en el panel de contenido."
+msgstr "En lugar de eliminar un elemento (función, relleno, cuadro de texto, etc.), puedes hacerlo invisible quitando la marca de su casilla de verificación."
 
 #. Tip of the Day
 msgid "You can paste images into a text label."
@@ -3441,7 +3454,7 @@ msgstr "Un cuadro de texto puede contener cualquier clase de objeto OLE, por eje
 
 #. Tip of the Day
 msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
-msgstr "Puedes exportar una serie de puntos a un archivo que puede ser leído por otros programas, por ejemplo, Microsoft Excel. Cuando edites la serie de puntos, selecciona los puntos que desees, haz clic derecho sobre la selección y elige 'Exportar'."
+msgstr "Puedes exportar una serie de puntos a un archivo que puede ser leído por otros programas, por ejemplo, MS Excel. Cuando edites la serie de puntos, selecciona los puntos que desees, haz clic derecho sobre la selección y elige 'Exportar'."
 
 #. Tip of the Day
 msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
@@ -3449,11 +3462,11 @@ msgstr "Una línea perpendicular al eje de abscisas en x=5 puede ser dibujada co
 
 #. Tip of the Day
 msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
-msgstr "Puedes usar 'Zoom|Escalar uniformemente' para aplicar el mismo factor de escala a los dos ejes. Evitarás así introducir cierta deformación en la gráfica dibujada. Esto es especialmente útil cuando se dibujan círculos y funciones similares."
+msgstr "Puedes usar 'Zoom> Escalar uniformemente' para aplicar el mismo factor de escala a los dos ejes. Evitarás así introducir cierta deformación en la gráfica dibujada. Esto es especialmente útil cuando se dibujan círculos y funciones similares."
 
 #. Tip of the Day
 msgid "You can find a list of all available functions in the help."
-msgstr "Puedes encontrar una relación de las constantes, operadores y funciones predefinidos en Graph en Ayuda|Lista de funciones."
+msgstr "Puedes encontrar una relación de las constantes, operadores y funciones predefinidos en Graph en Ayuda> Lista de funciones."
 
 #. Tip of the Day
 msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
@@ -3461,7 +3474,7 @@ msgstr "Puedes combinar dos funciones en una usando la función 'if'. Por ejempl
 
 #. Tip of the Day
 msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
-msgstr "Puedes importar el contenido de un archivo de Graph al sistema de coordenadas activo a través de Archivo|Importar|Archivo de Graph."
+msgstr "Puedes importar el contenido de un archivo de Graph al sistema de coordenadas activo a través de Archivo> Importar> Archivo de Graph."
 
 #. Tip of the Day
 msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new coordinate systems."
@@ -3485,7 +3498,7 @@ msgstr "Si no deseas que la leyenda muestre cierto elemento, haz clic derecho so
 
 #. Tip of the Day
 msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
-msgstr "Si deseas que los ejes se muestren a la izquierda y abajo de la ventana gráfica, en 'Editar|Ejes|Configuración|Estilo de los ejes', selecciona la opción 'A escuadra'."
+msgstr "Si deseas que los ejes se muestren a la izquierda y abajo de la ventana gráfica, en 'Editar> Ejes> Configuración> Estilo de los ejes', selecciona la opción 'A escuadra'."
 
 #. Tip of the Day
 msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
@@ -3493,7 +3506,7 @@ msgstr "Graph puede guardar el sistema de coordenadas mostrado en seis formatos 
 
 #. Tip of the Day
 msgid "You can use 'Edit|Copy image' to copy the coordinate system and paste it into another program, for example, Microsoft Word. Later you can usually edit the image in Graph by double clicking on it in the other program."
-msgstr "Puedes usar 'Editar|Copiar imagen' para copiar el sistema de coordenadas en el Portapapeles y pegarlo en otro programa, por ejemplo, Microsoft Word. Si posteriormente deseas editar la imagen copiada, haz doble clic sobre ella y se abrirá una ejecución de Graph."
+msgstr "Puedes usar 'Editar> Copiar imagen' para copiar el sistema de coordenadas en el Portapapeles y pegarlo en otro programa, por ejemplo, MS Word. Si posteriormente deseas editar la imagen copiada, haz doble clic sobre ella y se abrirá una ejecución de Graph."
 
 #. Tip of the Day
 msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
@@ -3509,51 +3522,51 @@ msgstr "Graph recordará el tamaño de la ventana del programa en el próximo in
 
 #. Tip of the Day
 msgid "Calc|Table can be used to create a table with evaluation values for a function."
-msgstr "'Calcular|Tabla de valores' puede ser empleado para evaluar la función seleccionada en un intervalo dado."
+msgstr "'Calcular> Tabla de valores' puede ser empleado para evaluar la función seleccionada en un intervalo dado."
 
 #. Tip of the Day
 msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
-msgstr "Una parte o toda una tabla de valores puede ser exportada a un archivo haciendo clic derecho sobre ella y seleccionando 'Exportar'. Dicho archivo puede ser después abierto por otros programas, por ejemplo, Microsoft Excel."
+msgstr "Una parte o toda una tabla de valores puede ser exportada a un archivo haciendo clic derecho sobre ella y seleccionando 'Exportar'. Dicho archivo puede ser después abierto por otros programas, por ejemplo, MS Excel."
 
 #. Tip of the Day
 msgid "Data from the evaluation table can be copied to another program like Microsoft Excel."
-msgstr "Los datos de una tabla de valores pueden ser copiados en otros programas, por ejemplo, Microsoft Excel."
+msgstr "Los datos de una tabla de valores pueden ser copiados en otros programas, por ejemplo, MS Excel."
 
 #. Tip of the Day
 msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel."
-msgstr "Los datos de una serie de puntos pueden ser copiados a/desde otros programas, por ejemplo, Microsoft Excel."
+msgstr "Los datos de una serie de puntos pueden ser copiados a/desde otros programas, por ejemplo, MS Excel."
 
 #. Tip of the Day
 msgid "Elements as functions, point series, etc. can be copied from one instance of the program to another using Edit|Copy."
-msgstr "Funciones, series de puntos, cuadros de texto, etc., pueden ser copiados desde una ejecución del programa a otra por medio del Portapapeles usando 'Editar|Copiar', o simplemente desde el menú contextual."
+msgstr "Funciones, series de puntos, cuadros de texto, etc., pueden ser copiados desde una ejecución del programa a otra por medio del Portapapeles usando 'Editar> Copiar', o simplemente desde el menú contextual."
 
 #. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
-msgstr "Siempre puedes eliminar la última acción realizada usando Editar|Deshacer."
+msgstr "Siempre puedes eliminar la última acción realizada usando Editar> Deshacer."
 
 #. Tip of the Day
 msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
-msgstr "Si empleaste por error 'Editar|Deshacer', puedes utilizar 'Editar|Rehacer' para recuperar lo que habías deshecho."
+msgstr "Si empleaste por error 'Editar> Deshacer', puedes utilizar 'Editar> Rehacer' para recuperar lo que habías deshecho."
 
 #. Tip of the Day
 msgid "In the Axes dialog you can add a title to the coordinate system."
-msgstr "En 'Editar|Ejes|Configuración', la caja de texto 'Título' te permite agregar una descripción del sistema de coordenadas."
+msgstr "En 'Editar> Ejes> Configuración', la caja de texto 'Título' te permite agregar una descripción del sistema de coordenadas."
 
 #. Tip of the Day
 msgid "You can import point series from files saved by other programs, like Microsoft Excel."
-msgstr "Puedes importar series de puntos desde archivos guardados por otros programas, por ejemplo, Microsoft Excel."
+msgstr "Puedes importar series de puntos desde archivos guardados por otros programas, por ejemplo, MS Excel."
 
 #. Tip of the Day
 msgid "When inserting a point series, you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
-msgstr "Cuando estés introduciendo una serie de puntos, puedes copiar datos desde otros programas –por ejemplo, Microsoft Excel– y pegarlos en la cuadrícula de Graph."
+msgstr "Cuando estés introduciendo una serie de puntos, puedes copiar datos desde otros programas –por ejemplo, MS Excel– y pegarlos en la cuadrícula de Graph."
 
 #. Tip of the Day
 msgid "You can use 'Zoom|Fit all' to change the coordinate system so all functions and point series are visible."
-msgstr "Puedes usar 'Zoom|Ajustar todo' para redimensionar el sistema de coordenadas y mostrar todos los elementos insertados en el sistema de coordenadas."
+msgstr "Puedes usar 'Zoom> Ajustar todo' para redimensionar el sistema de coordenadas y mostrar todos los elementos insertados en el sistema de coordenadas."
 
 #. Tip of the Day
 msgid "You can use Zoom|Fit to change the coordinate system to show all parts of the selected function or point series."
-msgstr "Puedes usar 'Zoom|Ajustar' para redimensionar el sistema de coordenadas y mostrar el elemento seleccionado de un modo óptimo."
+msgstr "Puedes usar 'Zoom> Ajustar' para redimensionar el sistema de coordenadas y mostrar el elemento seleccionado de un modo óptimo."
 
 #. Tip of the Day
 msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
@@ -3561,7 +3574,7 @@ msgstr "Cuando mantienes presionada la tecla Mayúsculas, puedes arrastrar el si
 
 #. Tip of the Day
 msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
-msgstr "Puedes usar 'Calcular|Evaluar' para hallar intersecciones entre funciones, puntos de corte con los ejes y puntos extremos (mínimos y máximos)."
+msgstr "Puedes usar 'Calcular> Evaluar' para hallar intersecciones entre funciones, puntos de corte con los ejes y puntos extremos (mínimos y máximos)."
 
 #. Tip of the Day
 msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
@@ -3569,11 +3582,11 @@ msgstr "Si una serie de puntos está seleccionada, puedes añadirle más puntos 
 
 #. Tip of the Day
 msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
-msgstr "Puedes emplear 'Función|Insertar ecuación/inecuación' para representar gráficamente la inecuación que desees. Ejemplo: sin(x^2)<cos(y^2)"
+msgstr "Puedes emplear 'Función> Insertar ecuación/inecuación' para representar gráficamente la inecuación que desees. Ejemplo: sin(x^2)<cos(y^2)"
 
 #. Tip of the Day
 msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
-msgstr "Puedes emplear 'Función|Insertar ecuación/inecuación' para representar gráficamente la ecuación que desees. Ejemplo: x*sin(x)=y*cos(y)"
+msgstr "Puedes emplear 'Función> Insertar ecuación/inecuación' para representar gráficamente la ecuación que desees. Ejemplo: x*sin(x)=y*cos(y)"
 
 #. Tip of the Day
 msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
@@ -3605,11 +3618,11 @@ msgstr "En las configuraciones de los ejes, intervalos de una función, series d
 
 #. Tip of the Day
 msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
-msgstr "Puedes crear tus propias constantes en 'Función|Personalizar funciones' para utilizarlas en funciones, series de puntos, etc. Ejemplos: g=9.80665, R=8.31"
+msgstr "Puedes crear tus propias constantes en 'Función> Personalizar funciones' para utilizarlas en funciones, series de puntos, etc. Ejemplos: g=9.80665, R=8.31"
 
 #. Tip of the Day
 msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
-msgstr "Puedes crear tus propias funciones en 'Función|Personalizar funciones', y utilizarlas para representar gráficamente funciones, ecuaciones, etc. Por ejemplo, la función personalizada sinc(x) definida como if(x=0, 0, sin(x)/x)."
+msgstr "Puedes crear tus propias funciones en 'Función> Personalizar funciones', y utilizarlas para representar gráficamente funciones, ecuaciones, etc. Por ejemplo, la función personalizada sinc(x) definida como if(x=0, 0, sin(x)/x)."
 
 #. Tip of the Day
 msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
@@ -3733,6 +3746,13 @@ msgstr "Indica el número de copias que deseas imprimir."
 msgid "Enter percent of original size."
 msgstr "Indica un porcentaje del tamaño original del área gráfica."
 
+#~ msgid ""
+#~ "You can send suggestions for future versions, bug reports and comments to "
+#~ "<a href=\"mailto:graph@padowan.dk\">graph@padowan.dk</a>"
+#~ msgstr ""
+#~ "Puedes enviar comentarios, sugerencias para futuras versiones e informes "
+#~ "de errores a la siguiente dirección electrónica: <a href=\"mailto:"
+#~ "graph@padowan.dk\">graph@padowan.dk</a>"
 #~ msgid "Extremum"
 #~ msgstr "Mínimo / Máximo"
 #~ msgid "Zoom in."
