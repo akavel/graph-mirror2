@@ -21,7 +21,7 @@ for Language in Languages:
 
     if os.path.exists(FileName):
         # Merge with old translation
-        os.system("..\\..\\Tools\\msgmerge -U -v -q --backup=off %s GraphHelp.pot" % (FileName,))
+        os.system("..\\..\\Tools\\msgmerge -U -v -q --backup=off %s GraphHelp.pot  --no-wrap" % (FileName,))
         InFile = FileName
     else:
         InFile = "GraphHelp.pot"
