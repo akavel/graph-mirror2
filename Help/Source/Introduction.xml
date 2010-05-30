@@ -31,10 +31,10 @@
 			Graph has been tested under
 			<markup><simplelist type="inline">
 			  <?dbchoice choice="and"?>
-				<member>Microsoft Windows 2000</member>
-				<member>Windows XP</member>
-				<member>Windows Vista</member>
-				<member>Windows 7</member>
+				<member><application>Windows 2000</application></member>
+				<member><application>Windows XP</application></member>
+				<member><application>Windows Vista</application></member>
+				<member><application>Windows 7</application></member>
 			</simplelist></markup>,
 			but there may still be bugs left.
 			If you need help using Graph or have suggestions for future improvements, please use the <ulink url="http://www.padowan.dk/forum">Graph support forum</ulink>.

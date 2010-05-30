@@ -22,10 +22,10 @@
 						It has been tested under
 						<markup><simplelist type="inline">
 						  <?dbchoice choice="and"?>
-							<member>Windows 2000</member>
-							<member>Windows XP</member>
-							<member>Windows Vista</member>
-							<member>Windows 7</member>
+							<member><application>Windows 2000</application></member>
+							<member><application>Windows XP</application></member>
+							<member><application>Windows Vista</application></member>
+							<member><application>Windows 7</application></member>
 						</simplelist></markup>.
 					</para>
 				</answer>
