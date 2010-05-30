@@ -2697,13 +2697,14 @@ SWIG_Python_MustGetPtr(PyObject *obj, swig_type_info *ty, int argnum, int flags)
 #define SWIGTYPE_p_Graph__TAxis swig_types[2]
 #define SWIGTYPE_p_Graph__TDefaultData swig_types[3]
 #define SWIGTYPE_p_Graph__TFormatSettings swig_types[4]
-#define SWIGTYPE_p_Graph__TProperty swig_types[5]
-#define SWIGTYPE_p_TFont swig_types[6]
-#define SWIGTYPE_p_char swig_types[7]
-#define SWIGTYPE_p_unsigned_int swig_types[8]
-#define SWIGTYPE_p_wchar_t swig_types[9]
-static swig_type_info *swig_types[11];
-static swig_module_info swig_module = {swig_types, 10, 0, 0, 0, 0};
+#define SWIGTYPE_p_Graph__TPlotSettings swig_types[5]
+#define SWIGTYPE_p_Graph__TProperty swig_types[6]
+#define SWIGTYPE_p_TFont swig_types[7]
+#define SWIGTYPE_p_char swig_types[8]
+#define SWIGTYPE_p_unsigned_int swig_types[9]
+#define SWIGTYPE_p_wchar_t swig_types[10]
+static swig_type_info *swig_types[12];
+static swig_module_info swig_module = {swig_types, 11, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -6324,23 +6325,277 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_new_TFormatSettings(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *TFormatSettings_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_Graph__TFormatSettings, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_AxisWidth_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  Graph::TFormatSettings *result = 0 ;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)":new_TFormatSettings")) SWIG_fail;
-  result = (Graph::TFormatSettings *)new Graph::TFormatSettings();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TFormatSettings, SWIG_POINTER_NEW |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:TPlotSettings_AxisWidth_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_AxisWidth_set" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPlotSettings_AxisWidth_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->AxisWidth = arg2;
+  resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *TFormatSettings_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_TPlotSettings_AxisWidth_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TPlotSettings_AxisWidth_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_AxisWidth_get" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  result = (int) ((arg1)->AxisWidth);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_xNumberDist_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TPlotSettings_xNumberDist_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_xNumberDist_set" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPlotSettings_xNumberDist_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->xNumberDist = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_xNumberDist_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TPlotSettings_xNumberDist_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_xNumberDist_get" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  result = (int) ((arg1)->xNumberDist);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_yNumberDist_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TPlotSettings_yNumberDist_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_yNumberDist_set" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPlotSettings_yNumberDist_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->yNumberDist = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_yNumberDist_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TPlotSettings_yNumberDist_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_yNumberDist_get" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  result = (int) ((arg1)->yNumberDist);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_TickWidth_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TPlotSettings_TickWidth_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_TickWidth_set" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPlotSettings_TickWidth_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->TickWidth = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_TickWidth_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TPlotSettings_TickWidth_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_TickWidth_get" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  result = (int) ((arg1)->TickWidth);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_TickLength_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TPlotSettings_TickLength_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_TickLength_set" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPlotSettings_TickLength_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->TickLength = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_TickLength_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TPlotSettings_TickLength_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_TickLength_get" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  result = (int) ((arg1)->TickLength);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *TPlotSettings_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_Graph__TFormatSettings, SWIG_NewClientData(obj));
+  SWIG_TypeNewClientData(SWIGTYPE_p_Graph__TPlotSettings, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
@@ -6368,6 +6623,20 @@ SWIGINTERN PyObject *Swig_var_FormatSettings_get(void) {
   PyObject *pyobj = 0;
   
   pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&Graph::FormatSettings), SWIGTYPE_p_Graph__TFormatSettings,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_PlotSettings_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable PlotSettings is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_PlotSettings_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&Graph::PlotSettings), SWIGTYPE_p_Graph__TPlotSettings,  0 );
   return pyobj;
 }
 
@@ -6495,8 +6764,18 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TFormatSettings_DegreePointFormat_get", _wrap_TFormatSettings_DegreePointFormat_get, METH_VARARGS, NULL},
 	 { (char *)"TFormatSettings_RadianPointFormat_set", _wrap_TFormatSettings_RadianPointFormat_set, METH_VARARGS, NULL},
 	 { (char *)"TFormatSettings_RadianPointFormat_get", _wrap_TFormatSettings_RadianPointFormat_get, METH_VARARGS, NULL},
-	 { (char *)"new_TFormatSettings", _wrap_new_TFormatSettings, METH_VARARGS, NULL},
 	 { (char *)"TFormatSettings_swigregister", TFormatSettings_swigregister, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_AxisWidth_set", _wrap_TPlotSettings_AxisWidth_set, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_AxisWidth_get", _wrap_TPlotSettings_AxisWidth_get, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_xNumberDist_set", _wrap_TPlotSettings_xNumberDist_set, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_xNumberDist_get", _wrap_TPlotSettings_xNumberDist_get, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_yNumberDist_set", _wrap_TPlotSettings_yNumberDist_set, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_yNumberDist_get", _wrap_TPlotSettings_yNumberDist_get, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_TickWidth_set", _wrap_TPlotSettings_TickWidth_set, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_TickWidth_get", _wrap_TPlotSettings_TickWidth_get, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_TickLength_set", _wrap_TPlotSettings_TickLength_set, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_TickLength_get", _wrap_TPlotSettings_TickLength_get, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_swigregister", TPlotSettings_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
@@ -6508,6 +6787,7 @@ static swig_type_info _swigt__p_Graph__TAxes = {"_p_Graph__TAxes", "Graph::TAxes
 static swig_type_info _swigt__p_Graph__TAxis = {"_p_Graph__TAxis", "Graph::TAxis *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TDefaultData = {"_p_Graph__TDefaultData", "Graph::TDefaultData *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TFormatSettings = {"_p_Graph__TFormatSettings", "Graph::TFormatSettings *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Graph__TPlotSettings = {"_p_Graph__TPlotSettings", "Graph::TPlotSettings *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TProperty = {"_p_Graph__TProperty", "Graph::TProperty *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TFont = {"_p_TFont", "TFont *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
@@ -6520,6 +6800,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Graph__TAxis,
   &_swigt__p_Graph__TDefaultData,
   &_swigt__p_Graph__TFormatSettings,
+  &_swigt__p_Graph__TPlotSettings,
   &_swigt__p_Graph__TProperty,
   &_swigt__p_TFont,
   &_swigt__p_char,
@@ -6532,6 +6813,7 @@ static swig_cast_info _swigc__p_Graph__TAxes[] = {  {&_swigt__p_Graph__TAxes, 0,
 static swig_cast_info _swigc__p_Graph__TAxis[] = {  {&_swigt__p_Graph__TAxis, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TDefaultData[] = {  {&_swigt__p_Graph__TDefaultData, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TFormatSettings[] = {  {&_swigt__p_Graph__TFormatSettings, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Graph__TPlotSettings[] = {  {&_swigt__p_Graph__TPlotSettings, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TProperty[] = {  {&_swigt__p_Graph__TProperty, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TFont[] = {  {&_swigt__p_TFont, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
@@ -6544,6 +6826,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Graph__TAxis,
   _swigc__p_Graph__TDefaultData,
   _swigc__p_Graph__TFormatSettings,
+  _swigc__p_Graph__TPlotSettings,
   _swigc__p_Graph__TProperty,
   _swigc__p_TFont,
   _swigc__p_char,
@@ -7165,6 +7448,7 @@ SWIG_init(void) {
   PyDict_SetItemString(d,(char*)"cvar", SWIG_globals());
   SWIG_addvarlink(SWIG_globals(),(char*)"Property",Swig_var_Property_get, Swig_var_Property_set);
   SWIG_addvarlink(SWIG_globals(),(char*)"FormatSettings",Swig_var_FormatSettings_get, Swig_var_FormatSettings_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"PlotSettings",Swig_var_PlotSettings_get, Swig_var_PlotSettings_set);
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else

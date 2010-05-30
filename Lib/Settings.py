@@ -302,6 +302,7 @@ class TFormatSettings(_object):
     __setattr__ = lambda self, name, value: _swig_setattr(self, TFormatSettings, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, TFormatSettings, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
     __swig_setmethods__["CartesianPointFormat"] = _Settings.TFormatSettings_CartesianPointFormat_set
     __swig_getmethods__["CartesianPointFormat"] = _Settings.TFormatSettings_CartesianPointFormat_get
@@ -312,12 +313,33 @@ class TFormatSettings(_object):
     __swig_setmethods__["RadianPointFormat"] = _Settings.TFormatSettings_RadianPointFormat_set
     __swig_getmethods__["RadianPointFormat"] = _Settings.TFormatSettings_RadianPointFormat_get
     if _newclass:RadianPointFormat = _swig_property(_Settings.TFormatSettings_RadianPointFormat_get, _Settings.TFormatSettings_RadianPointFormat_set)
-    def __init__(self): 
-        this = _Settings.new_TFormatSettings()
-        try: self.this.append(this)
-        except: self.this = this
 TFormatSettings_swigregister = _Settings.TFormatSettings_swigregister
 TFormatSettings_swigregister(TFormatSettings)
+
+class TPlotSettings(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TPlotSettings, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, TPlotSettings, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+    __swig_setmethods__["AxisWidth"] = _Settings.TPlotSettings_AxisWidth_set
+    __swig_getmethods__["AxisWidth"] = _Settings.TPlotSettings_AxisWidth_get
+    if _newclass:AxisWidth = _swig_property(_Settings.TPlotSettings_AxisWidth_get, _Settings.TPlotSettings_AxisWidth_set)
+    __swig_setmethods__["xNumberDist"] = _Settings.TPlotSettings_xNumberDist_set
+    __swig_getmethods__["xNumberDist"] = _Settings.TPlotSettings_xNumberDist_get
+    if _newclass:xNumberDist = _swig_property(_Settings.TPlotSettings_xNumberDist_get, _Settings.TPlotSettings_xNumberDist_set)
+    __swig_setmethods__["yNumberDist"] = _Settings.TPlotSettings_yNumberDist_set
+    __swig_getmethods__["yNumberDist"] = _Settings.TPlotSettings_yNumberDist_get
+    if _newclass:yNumberDist = _swig_property(_Settings.TPlotSettings_yNumberDist_get, _Settings.TPlotSettings_yNumberDist_set)
+    __swig_setmethods__["TickWidth"] = _Settings.TPlotSettings_TickWidth_set
+    __swig_getmethods__["TickWidth"] = _Settings.TPlotSettings_TickWidth_get
+    if _newclass:TickWidth = _swig_property(_Settings.TPlotSettings_TickWidth_get, _Settings.TPlotSettings_TickWidth_set)
+    __swig_setmethods__["TickLength"] = _Settings.TPlotSettings_TickLength_set
+    __swig_getmethods__["TickLength"] = _Settings.TPlotSettings_TickLength_get
+    if _newclass:TickLength = _swig_property(_Settings.TPlotSettings_TickLength_get, _Settings.TPlotSettings_TickLength_set)
+TPlotSettings_swigregister = _Settings.TPlotSettings_swigregister
+TPlotSettings_swigregister(TPlotSettings)
 
 import vcl
 TAxes.NumberFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_NumberFont_get(self), owned=False))
@@ -329,4 +351,5 @@ TAxes.TitleFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_Title
 cvar = _Settings.cvar
 Property = cvar.Property
 FormatSettings = cvar.FormatSettings
+PlotSettings = cvar.PlotSettings
 

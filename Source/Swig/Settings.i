@@ -117,11 +117,21 @@ struct TFormatSettings
   std::wstring CartesianPointFormat;
   std::wstring DegreePointFormat;
   std::wstring RadianPointFormat;
-  TFormatSettings();
+};
+
+%nodefault TPlotSettings;
+struct TPlotSettings
+{
+  int AxisWidth;
+  int xNumberDist;
+  int yNumberDist;
+  int TickWidth;
+  int TickLength;
 };
 
 const TProperty Property;
 const TFormatSettings FormatSettings;
+const TPlotSettings PlotSettings;
 } //namespace Graph
 
 %pythoncode

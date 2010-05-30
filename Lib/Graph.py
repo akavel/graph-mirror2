@@ -15,6 +15,7 @@ Axes = Settings.GetAxes()
 Property = Settings.Property
 Redraw = Data.Redraw
 FormatSettings = Settings.FormatSettings;
+PlotSettings = Settings.PlotSettings
 
 Settings.TProperty.DefaultLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultLabelFont_get(self), owned=False))
 Settings.TProperty.DefaultPointLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultPointLabelFont_get(self), owned=False))

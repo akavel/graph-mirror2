@@ -210,8 +210,19 @@ struct TFormatSettings
   TFormatSettings();
 };
 
+struct TPlotSettings
+{
+  int AxisWidth;
+  int xNumberDist;
+  int yNumberDist;
+  int TickWidth;
+  int TickLength;
+  TPlotSettings();
+};
+
 extern TProperty Property;
 extern TFormatSettings FormatSettings;
+extern TPlotSettings PlotSettings;
 } //namespace Graph;
 using namespace Graph;
 #endif

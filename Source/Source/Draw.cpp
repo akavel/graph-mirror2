@@ -445,7 +445,7 @@ void TDraw::DrawAxes()
   Context.SetFont(Axes.NumberFont);
 
   std::vector<int> xGridMajor, xGridMinor, yGridMajor, yGridMinor;
-  double ArrowScale = Axes.LabelFont->Size / 12.0; //12 is the default size
+  double ArrowScale = Axes.LabelFont->Size / 12.0 * std::max(PlotSettings.AxisWidth, 2) / 2.0; //12 is the default size
 
   if(Axes.xAxis.ShowGrid || Axes.GridStyle == gsDots)
   {
@@ -582,7 +582,7 @@ void TDraw::DrawAxes()
   if(Axes.xAxis.ShowNumbers)
   {
     double x = xTickMin; //Current x-position
-    int yPixel = yPixelCross + Size(4); //Pixel position to draw numbers
+    int yPixel = yPixelCross + Size(PlotSettings.xNumberDist); //Pixel position to draw numbers
     if(yPixel >= AxesRect.Top) //Check that numbers are inside allowed view
     {
       while(x < Axes.xAxis.Max)
@@ -613,7 +613,7 @@ void TDraw::DrawAxes()
 
   //Draw number labels on the y-axis
   for(std::vector<TLabelInfo>::const_iterator Iter = yLabelInfo.begin(); Iter != yLabelInfo.end(); ++Iter)
-    Context.DrawText(Iter->Label, xPixelCross - Iter->Width - Size(7), Iter->Pos);
+    Context.DrawText(Iter->Label, xPixelCross - Iter->Width - Size(PlotSettings.yNumberDist), Iter->Pos);
 
   //Set font for labels
   Context.SetFont(Axes.LabelFont);
@@ -638,13 +638,15 @@ void TDraw::DrawAxes()
     int X2 = AxesRect.Right - 1;
     int Y = yPixelCross;
     double xPixelScl = (Axes.xAxis.LogScl ? std::log(Axes.xAxis.TickUnit) : Axes.xAxis.TickUnit) * xScale;
-    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(2));
+    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(PlotSettings.AxisWidth));
     Context.DrawLine(X1, Y, X2 - Size(3), Y);
 
     Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.AxesColor);
-    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, 1);
-    const TPoint LeftArrow[] = {TPoint(X1+Size(5*ArrowScale), Y-Size(5*ArrowScale)-1), TPoint(X1, Y-1), TPoint(X1, Y), TPoint(X1+Size(5*ArrowScale), Y+Size(5*ArrowScale))};
-    const TPoint RightArrow[] = {TPoint(X2-Size(5*ArrowScale), Y-Size(5*ArrowScale)-1), TPoint(X2, Y-1), TPoint(X2, Y), TPoint(X2-Size(5*ArrowScale), Y+Size(5*ArrowScale))};
+    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(PlotSettings.TickWidth));
+    int a = Size(5*ArrowScale);
+    int b = PlotSettings.AxisWidth % 2 ? 0 : 1;
+    const TPoint LeftArrow[] = {TPoint(X1+a, Y-a-b), TPoint(X1, Y-b), TPoint(X1, Y), TPoint(X1+a, Y+a)};
+    const TPoint RightArrow[] = {TPoint(X2-a, Y-a-b), TPoint(X2, Y-b), TPoint(X2, Y), TPoint(X2-a, Y+a)};
     //Show filled arrow on x-axis
     if(Axes.AxesArrows == aaBothEnds)
       Context.DrawPolygon(LeftArrow, 4);
@@ -658,7 +660,7 @@ void TDraw::DrawAxes()
         //Don't show at or beside axis (when scaled it might be moved a pixel or two)
         //Don't show tick at left side
         if(x > AxesRect.Left && std::abs(x - xPixelCross) > 1)
-          Context.DrawLine(x + 0.5, Y + Size(5), x + 0.5, Y - Size(5)-2);
+          Context.DrawLine(x + 0.5, Y + Size(PlotSettings.TickLength + (PlotSettings.AxisWidth - 1)/ 2), x + 0.5, Y - Size(PlotSettings.TickLength + PlotSettings.AxisWidth / 2 + 1));
   }
 
   //If y-axis is inside the view
@@ -667,13 +669,15 @@ void TDraw::DrawAxes()
     int X = xPixelCross;
     int Y1 = AxesRect.Top;
     int Y2 = AxesRect.Bottom;
-    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(2));
+    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(PlotSettings.AxisWidth));
     Context.DrawLine(X, Y1 + Size(3), X, Y2);
 
     Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.AxesColor);
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, 1);
-    TPoint TopArrow[] = {TPoint(X-Size(5*ArrowScale)-1, Y1+Size(5*ArrowScale)), TPoint(X-1, Y1), TPoint(X, Y1), TPoint(X+Size(5*ArrowScale), Y1+Size(5*ArrowScale))};
-    TPoint BottomArrow[] = {TPoint(X-Size(5*ArrowScale)-1, Y2-Size(6*ArrowScale)), TPoint(X-1, Y2-1), TPoint(X, Y2-1), TPoint(X+Size(5*ArrowScale), Y2-Size(6*ArrowScale))};
+    int a = Size(5*ArrowScale);
+    int b = PlotSettings.AxisWidth % 2 ? 0 : 1;
+    TPoint TopArrow[] = {TPoint(X-a-b, Y1+a), TPoint(X-b, Y1), TPoint(X, Y1), TPoint(X+a, Y1+a)};
+    TPoint BottomArrow[] = {TPoint(X-a-b, Y2-a), TPoint(X-b, Y2-1), TPoint(X, Y2-b), TPoint(X+a, Y2-a)};
 
     //Show arrow on y-axis
     if(Axes.AxesArrows == aaBothEnds)
