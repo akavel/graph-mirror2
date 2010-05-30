@@ -415,6 +415,7 @@ object Form1: TForm1
     Top = 176
   end
   object SaveDialog: TSaveDialogEx
+    OnClose = SaveDialogEx1Close
     DefaultExt = 'grf'
     Options = [ofOverwritePrompt, ofHideReadOnly, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing]
     Left = 288
@@ -4465,6 +4466,7 @@ object Form1: TForm1
     Top = 216
   end
   object SaveDialogEx1: TSaveDialogEx
+    OnClose = SaveDialogEx1Close
     Options = [ofOverwritePrompt, ofHideReadOnly, ofShowHelp, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing]
     HelpCaption = 'Options...'
     OnHelp = SaveDialogEx1Help

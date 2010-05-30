@@ -3700,4 +3700,9 @@ void __fastcall TForm1::TreeViewMouseLeave(TObject *Sender)
     ShowStatusMessage(L"", true);
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::SaveDialogEx1Close(TObject *Sender)
+{
+; //Dummy to force old dialog
+}
+//---------------------------------------------------------------------------
 
