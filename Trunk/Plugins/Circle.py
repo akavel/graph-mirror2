@@ -18,8 +18,10 @@ class CircleDialog(vcl.SimpleDialog):
         self.edit3 = vcl.TEdit(self.panel, Top = 40, Left = 200, Width = 100, Text = CircleData[2])
 
     def OnOk(self, sender):
-        Func = Graph.TParFunc(self.edit2.Text + "+" + self.edit1.Text + "*cos t", self.edit3.Text + "+" + self.edit1.Text + "*sin t")
-        Func.PluginData["CircleExample"] = (self.edit1.Text, self.edit2.Text, self.edit3.Text)
+        CircleData = (self.edit1.Text, self.edit2.Text, self.edit3.Text)
+        Func = Graph.TParFunc("{1}+{0}*cos t".format(*CircleData), "{2}+{0}*sin t".format(*CircleData))
+        Func.PluginData["CircleExample"] = CircleData
+        Func.LegendText = "Circle: radius={0}, center=({1},{2})".format(*CircleData)
         if self.CircleItem:
             Graph.FunctionList[Graph.FunctionList.index(self.CircleItem)] = Func
         else:

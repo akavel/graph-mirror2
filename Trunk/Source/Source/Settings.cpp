@@ -18,6 +18,7 @@ namespace Graph
 {
 TProperty Property;
 TFormatSettings FormatSettings;
+TPlotSettings PlotSettings;
 //---------------------------------------------------------------------------
 ///////////
 // TAxes //
@@ -494,6 +495,14 @@ TFormatSettings::TFormatSettings()
   : CartesianPointFormat(L"(%1%,%2%)"),
     DegreePointFormat(L"(%2%,%1%\xB0)"),
     RadianPointFormat(L"(%2%,%1%)")
+{
+}
+//---------------------------------------------------------------------------
+/////////////////////
+// TFormatSettings //
+/////////////////////
+TPlotSettings::TPlotSettings()
+  : AxisWidth(2), xNumberDist(4), yNumberDist(7), TickWidth(1), TickLength(5)
 {
 }
 //---------------------------------------------------------------------------
