@@ -1269,7 +1269,7 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
   bool LogScl2 = Loop ? Axes.yAxis.LogScl : Axes.xAxis.LogScl;
 
   int M1 = Size(Relation.GetSize()) / 2;
-  int M2 = Size(Relation.GetSize() + 1) / 2;
+  int M2 = std::min(Size(Relation.GetSize() + 1) / 2, 1);
 
   double s1Min = Loop ? Axes.xAxis.Min : Axes.yAxis.Max;
   double s2Min = Loop ? Axes.yAxis.Max : Axes.xAxis.Min;
