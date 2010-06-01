@@ -182,7 +182,7 @@ void TProperty::Read(const TConfigRegistry &Registry)
   DefaultTrendline.FromString(Registry.Read(L"DefaultTrendline", L""), psSolid, clRed, 1);
   DefaultPointLine.FromString(Registry.Read(L"DefaultPointLine", L""), psClear, clBlue, 1);
   DefaultShade.FromString(Registry.Read(L"DefaultShade", L""), bsBDiagonal, clGreen, 0);
-  DefaultRelation.FromString(Registry.Read(L"DefaultRelation", L""), bsBDiagonal, clGreen, 0);
+  DefaultRelation.FromString(Registry.Read(L"DefaultRelation", L""), bsBDiagonal, clGreen, 1);
   DefaultTangent.FromString(Registry.Read(L"DefaultTangent", L""), psSolid, clRed, 1);
   DefaultDif.FromString(Registry.Read(L"DefaultDif", L""), psSolid, clRed, 1);
   StrToFont(Registry.Read(L"DefaultPointLabelFont", L""), DefaultPointLabelFont);

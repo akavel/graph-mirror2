@@ -90,6 +90,8 @@ void __fastcall TForm11::Button1Click(TObject *Sender)
 
     NewRelation->SetLegendText(ToWString(Edit3->Text));
     NewRelation->SetSize(Edit4->Text.ToInt());
+    if(NewRelation->GetRelationType() == rtEquation && NewRelation->GetSize() == 0)
+      NewRelation->SetSize(1);
     NewRelation->SetColor(ExtColorBox1->Selected);
     NewRelation->SetBrushStyle(ShadeSelect1->ShadeStyle);
 
