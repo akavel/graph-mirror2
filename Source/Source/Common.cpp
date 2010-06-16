@@ -61,6 +61,7 @@ void AssociateExt(std::wstring Ext, std::wstring ProgramName, std::wstring Ident
 
     HKEY RootKey = AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER;
 
+    RemoveRegistryKey(L"Software\\Classes\\" + Ext, HKEY_CURRENT_USER);
     SetRegValue(L"Software\\Classes\\" + Ext, L"", RootKey, Ident);
     SetRegValue(L"Software\\Classes\\" + Ident, L"", RootKey, Description);
     SetRegValue(L"Software\\Classes\\" + Ident + L"\\DefaultIcon", L"", RootKey, Icon);
