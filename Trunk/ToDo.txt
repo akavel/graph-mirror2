@@ -167,6 +167,7 @@ Plugins:
 - Run scripts from command line
 - Make it possible to store/restore several zoom points. (Forum message from zubaroo at 18/1-10).
 - Plot fractals. See email from Francisco Oliver 30/1-10.
+- Gnu Scientific Library (zeta, gamma, etc.)
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>

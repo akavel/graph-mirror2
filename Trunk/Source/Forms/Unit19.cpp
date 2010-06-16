@@ -20,6 +20,7 @@
 #include <boost/spirit/phoenix/operators.hpp>
 #include <boost/spirit/phoenix/primitives.hpp>
 #include "Swig.h"
+#include "PythonBind.h"
 using phoenix::arg1;
 //---------------------------------------------------------------------------
 #pragma link "ProgressForm"
@@ -168,7 +169,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 
     unsigned I = 0;
     std::vector<RGBQUAD> Colors;
-    PyObject *DataObject = ToPyObject(Data);
+    PyObject *DataObject = Python::IsPythonInstalled() ? ToPyObject(Data) : NULL;
     for(double Value = Min; I < StepCount; Value += Step, I++)
     {
       Bitmap->Canvas->Brush->Style = bsSolid;
