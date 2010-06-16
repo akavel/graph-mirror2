@@ -1195,10 +1195,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
     Args[1] = y;
     bool LastResult = false;
     double x;
-    if(xLogScl)
-      x = Axes.xAxis.Min / std::sqrt(dx2);
-    else
-      x = Axes.xAxis.Min - dx2/2;
+    x = xLogScl ? Axes.xAxis.Min / std::sqrt(dx2) : Axes.xAxis.Min - dx2/2;
     for(int X = AxesRect.Left - 1; X < AxesRect.Right + dX; X += dX)
     {
       Args[0] = x;
@@ -1206,7 +1203,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
       bool Result = !_isnanl(Temp) && Temp != 0;
       if(Result != LastResult)
       {
-        double x2 =  xLogScl ? x / dx * dx2 : x - dx + dx2;
+        double x2 = xLogScl ? x / dx * dx2 : x - dx + dx2;
         for(int X2 = X - dX + 1; X2 <= X; X2++)
         {
           Args[0] = x2;
@@ -1217,7 +1214,11 @@ void TDrawThread::CreateInequality(TRelation &Relation)
             if(Result)
               XStart = X2;
             else
-              Points.push_back(TRect(XStart + 1, Y, X2, Y + 1));
+              Points.push_back(TRect(
+                XStart <= AxesRect.Left ? -100 : XStart + 1,
+                Y <= AxesRect.Top ? -100 : Y,
+                X2,
+                Y >= AxesRect.Bottom ? AxesRect.Bottom + 100 : Y + 1));
             break;
           }
           xLogScl ? x2 *= dx2 : x2 += dx2; //Don't place inside for() because of bug in CB2009
@@ -1230,8 +1231,12 @@ void TDrawThread::CreateInequality(TRelation &Relation)
     if(Aborted)
       return;
     if(LastResult)
-      Points.push_back(TRect(XStart, Y, AxesRect.Right + 1, Y + 1));
-    yLogScl ? y *= dy : y += dy;  
+      Points.push_back(TRect(
+        XStart <= AxesRect.Left ? -100 : XStart + 1,
+        Y <= AxesRect.Top ? -100 : Y,
+        AxesRect.Right + 100,
+        Y >= AxesRect.Bottom ? AxesRect.Bottom + 100 : Y + 1));
+    yLogScl ? y *= dy : y += dy;
   }
 
   Relation.Region.reset(new TRegion(Points));
@@ -1269,7 +1274,7 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
   bool LogScl2 = Loop ? Axes.yAxis.LogScl : Axes.xAxis.LogScl;
 
   int M1 = Size(Relation.GetSize()) / 2;
-  int M2 = std::min(Size(Relation.GetSize() + 1) / 2, 1);
+  int M2 = std::max((Size(Relation.GetSize()) + 1) / 2, 1);
 
   double s1Min = Loop ? Axes.xAxis.Min : Axes.yAxis.Max;
   double s2Min = Loop ? Axes.yAxis.Max : Axes.xAxis.Min;
