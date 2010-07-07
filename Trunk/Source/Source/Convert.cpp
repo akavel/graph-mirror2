@@ -31,6 +31,13 @@ double MakeFloat(TCustomEdit *Edit, const String &ErrorStr, const boost::functio
   {
     double Number = Form1->Data.Calc(ToWString(Text));
 
+    if(!boost::isfinite(Number))
+    {
+      SetGlobalFocus(Edit);
+      MessageBox(LoadRes(RES_INVALID_USE_OF_INF), LoadRes(RES_ERROR_IN_VALUE));
+      throw EAbort("");
+    }
+
     if(!Interval(Number))
     {
       SetGlobalFocus(Edit);
@@ -270,9 +277,9 @@ bool CheckLimit(TWinControl *Control, String Str, int Min, int Max)
 //---------------------------------------------------------------------------
 String RoundToStr(long double Number, unsigned Decimals)
 {
-  if(std::_isnanl(Number))
+  if(boost::isnan(Number))
     return "NAN";
-  if(!std::_finitel(Number))
+  if(!boost::isfinite(Number))
     return "INF";
   if(std::abs(Number) < MIN_ZERO)
     return 0;
