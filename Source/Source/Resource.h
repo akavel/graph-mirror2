@@ -140,6 +140,7 @@
 #define RES_FILE_DOESNT_EXIST   336
 #define RES_FILE_READ_ERROR     337
 #define RES_PRINTER_ERROR       338
+#define RES_INVALID_USE_OF_INF  339
 
 #define RES_CAPTION_DELETE      400
 #define RES_SHOW                401
