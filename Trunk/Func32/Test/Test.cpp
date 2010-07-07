@@ -7,6 +7,7 @@
 #include <cstdarg>
 #include <limits>
 #include <cmath>
+#include <boost\math\special_functions\fpclassify.hpp>
 //---------------------------------------------------------------------------
 using namespace Func32;
 using namespace std;
@@ -15,8 +16,11 @@ using namespace std;
 #define PI    3.141592653589793238462643
 
 #define SQRT2 1.41421356237
+#define DEFAULT_FPU_CONTROL EM_INVALID | EM_DENORMAL | EM_OVERFLOW | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64
+#define FPU_MASK MCW_EM | MCW_IC | MCW_RC | MCW_PC
 
 const long double NaN = numeric_limits<long double>::quiet_NaN(); //0.0/0.0;
+const long double INF = numeric_limits<long double>::infinity();
 inline long double real(long double x) {return x;}
 inline long double imag(long double x) {return 0;}
 
@@ -42,6 +46,12 @@ inline bool IsZero(TComplex c)
 
 inline bool IsEqual(long double a, long double b)
 {
+  if(boost::math::isnan(a) && boost::math::isnan(b))
+    return true;
+
+  if(!boost::math::isfinite(a) || !boost::math::isfinite(b))
+    return a == b;
+
   int a_exp, b_exp, exp;
   frexp(a, &a_exp);
   frexp(b, &b_exp);
@@ -705,6 +715,17 @@ void Test()
   Test("sum(x*t, t, 3, 7)", 2, 2*3+2*4+2*5+2*6+2*7);
   Test("product(x*t, t, 3, 7)", 2, 2*3*2*4*2*5*2*6*2*7);
 
+  //Test infinity
+  Test("inf", 0, INF);
+  Test("-inf", 0, -INF);
+  TestEval<long double>(L"2*inf", 0, INF);
+  TestEval<TComplex>(L"2*inf", 0, TComplex(INF, NaN));
+  Test("2+inf", 0, INF);
+  TestEval<long double>(L"inf*x", 0, NaN);
+  TestEval<TComplex>(L"inf*x", 0, TComplex(NaN, NaN));
+  TestEval<long double>(L"inf/inf", 0, NaN);
+  TestEval<TComplex>(L"inf/inf", 0, TComplex(NaN, NaN));
+
   //Combined test cases
   Test("(1.01^x-1)/0.01", 1, 1);
 
@@ -838,6 +859,7 @@ void Test()
 std::wstringstream DebugStreamBuf;
 int main()
 {
+  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
   std::wclog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
   try
   {
