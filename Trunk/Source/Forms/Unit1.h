@@ -69,7 +69,6 @@ enum TIconIndex
   iiAxesNode,
   iiBullet,
   iiNormalNode,
-  iiOleNode,
   iiUnChecked,
   iiChecked,
   iiGrayed
@@ -188,7 +187,6 @@ __published:	// IDE-managed Components
   TAction *AnimateAction;
   TAction *ImportGraphFileAction;
   TAction *ImportPointSeriesAction;
-  TAction *InsertObjectAction;
   TMenuItem *Label_Rotation_Custom;
   TMenuItem *Tree_Rotation;
   TMenuItem *Tree_Rotation_0;
@@ -368,7 +366,6 @@ __published:	// IDE-managed Components
   void __fastcall ImportGraphFileActionExecute(TObject *Sender);
   void __fastcall ImportPointSeriesActionExecute(TObject *Sender);
   void __fastcall Legend_FontClick(TObject *Sender);
-  void __fastcall InsertObjectActionExecute(TObject *Sender);
   void __fastcall Panel6UnDock(TObject *Sender, TControl *Client,
           TWinControl *NewTarget, bool &Allow);
   void __fastcall Panel6DockDrop(TObject *Sender, TDragDockObject *Source,

@@ -22,7 +22,6 @@
 #include <functional>
 #include <boost/lexical_cast.hpp>
 #include "OleServer.h"
-#include "OleObjectElem.h"
 #include <iterator>
 
 namespace Graph
@@ -116,8 +115,6 @@ void TData::WriteElem(TConfigFile &IniFile, const TGraphElemPtr &Elem, struct TE
     Relation->WriteToIni(IniFile.Section(L"Relation" + ToWString(++Count.Relation)));
   else if(TAxesView *AxesView = dynamic_cast<TAxesView*>(Elem.get()))
     AxesView->WriteToIni(IniFile.Section(L"Axes"));
-  else if(TOleObjectElem *OleObjectElem = dynamic_cast<TOleObjectElem*>(Elem.get()))
-    OleObjectElem->WriteToIni(IniFile.Section(L"OleObject" + ToWString(++Count.OleObject)));
 
   for(unsigned J = 0; J < Elem->ChildCount(); J++)
     if(dynamic_cast<TShading*>(Elem->GetChild(J).get()))
@@ -182,8 +179,6 @@ void TData::LoadData(const TConfigFile &IniFile)
       Elem.reset(new TRelation);
     else if(SectionName.substr(0, 10) == L"Axes")
       Elem.reset(new TAxesView);
-    else if(SectionName.substr(0, 9) == L"OleObject")
-      Elem.reset(new TOleObjectElem);
     else
       continue; //No known elem type
 

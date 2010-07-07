@@ -50,7 +50,6 @@ struct TDrawLegend : public TGraphElemVisitor
   void Visit(TTextLabel &Label) {};
   void Visit(TRelation &Relation);
   void Visit(TAxesView &AxesView) {};
-  void Visit(TOleObjectElem &OleObjectElem) {};
 };
 //---------------------------------------------------------------------------
 TDraw::TDraw(TCanvas *Canvas, TData *pData, bool AForceBlack, const std::string &ThreadName) :

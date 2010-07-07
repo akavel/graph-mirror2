@@ -237,10 +237,6 @@
 				<DependentOn>Source\Convert.h</DependentOn>
 				<BuildOrder>37</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Source\OleObjectElem.cpp">
-				<DependentOn>Source\OleObjectElem.h</DependentOn>
-				<BuildOrder>46</BuildOrder>
-			</CppCompile>
 			<CppCompile Include="Source\Draw.cpp">
 				<DependentOn>Source\Draw.h</DependentOn>
 				<BuildOrder>39</BuildOrder>
@@ -418,7 +414,7 @@
 						<VersionInfo Name="MajorVer">4</VersionInfo>
 						<VersionInfo Name="MinorVer">4</VersionInfo>
 						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">480</VersionInfo>
+						<VersionInfo Name="Build">481</VersionInfo>
 						<VersionInfo Name="Debug">True</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -430,7 +426,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.4.0.480</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">4.4.0.481</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>
