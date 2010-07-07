@@ -482,6 +482,7 @@ _inittab Modules[] =
 static bool PythonInitialized = false;
 void InitPlugins()
 {
+  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
   if(IsPythonInstalled())
   {
     Form22 = new TForm22(Application);
