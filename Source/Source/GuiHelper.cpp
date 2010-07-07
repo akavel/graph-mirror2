@@ -11,7 +11,6 @@
 #pragma hdrstop
 #include "GuiHelper.h"
 #include "PointSelect.h"
-#include "OleObjectElem.h"
 #include "Unit1.h"
 #include <float.h>
 //---------------------------------------------------------------------------
@@ -99,11 +98,6 @@ void TAddView::Visit(TRelation &Relation)
 void TAddView::Visit(TAxesView &AxesView)
 {
   AddNode(AxesView, iiAxesNode)->Text = LoadRes(RES_AXES);
-}
-//---------------------------------------------------------------------------
-void TAddView::Visit(TOleObjectElem &OleObjectElem)
-{
-  AddNode(OleObjectElem, iiOleNode);
 }
 //---------------------------------------------------------------------------
 //////////////

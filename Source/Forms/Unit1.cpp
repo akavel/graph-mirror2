@@ -52,7 +52,6 @@
 #include "ConfigFile.h"
 #include "ConfigRegistry.h"
 #include <TypInfo.hpp>
-#include "OleObjectElem.h"
 #include "PyGraph.h"
 #include "Encode.h"
 #include "ICompCommon.h"
@@ -928,8 +927,7 @@ void TForm1::UpdateMenu()
     Tree_ShowInLegend->Checked = Elem->GetShowInLegend();
   }
 
-  if(dynamic_cast<TTextLabel*>(Elem.get()) || dynamic_cast<TAxesView*>(Elem.get()) ||
-     dynamic_cast<TOleObjectElem*>(Elem.get()))
+  if(dynamic_cast<TTextLabel*>(Elem.get()) || dynamic_cast<TAxesView*>(Elem.get()))
     Tree_ShowInLegend->Visible = false;
   else
     Tree_ShowInLegend->Visible = true;
@@ -2075,8 +2073,6 @@ void __fastcall TForm1::EditActionExecute(TObject *Sender)
     Result = CreateForm<TForm11>(Data)->EditRelation(Relation);
   else if(boost::shared_ptr<TAxesView> AxesView = boost::dynamic_pointer_cast<TAxesView>(Item))
     AxesAction->Execute();
-  else if(boost::shared_ptr<TOleObjectElem> OleObjectElem = boost::dynamic_pointer_cast<TOleObjectElem>(Item))
-    OleObjectElem->Edit();
 
   if(Result == mrOk)
   {
@@ -3544,21 +3540,6 @@ void __fastcall TForm1::Legend_FontClick(TObject *Sender)
     Data.SetModified();
     Redraw();
   }
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::InsertObjectActionExecute(TObject *Sender)
-{
-  Func32::TDblPoint Pos(Image1->Width/2, Image1->Height/2);
-  boost::shared_ptr<TOleObjectElem> OleObject(new TOleObjectElem(Pos));
-  if(!OleObject->InsertObjectDialog())
-    return;
-
-  UndoList.Push(TUndoAdd(Data, OleObject));
-  Data.Insert(OleObject);
-  Python::ExecutePluginEvent(Python::peNewElem, Data.Back());
-  UpdateTreeView(Data.Back());
-  Data.SetModified();
-  Redraw();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Panel6UnDock(TObject *Sender, TControl *Client,

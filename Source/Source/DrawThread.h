@@ -73,7 +73,6 @@ private:
   void Visit(TTextLabel &Label);
   void Visit(TRelation &Relation);
   void Visit(TAxesView &AxesView);
-  void Visit(TOleObjectElem &OleObjectElem) {}
 
   void CreateShade(TShading &Shade);
   void CreateEquation(TRelation &Relation);
