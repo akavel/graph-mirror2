@@ -38,11 +38,12 @@ void TStdFuncFrame::Eval(const TGraphElem *Elem)
   {
     Clear();
     ErrorPrefix = "x: ";
-    Func32::TComplex x = Form1->Data.CalcComplex(ToWString(Edit1->Text));
+    bool UseReal = Property.ComplexFormat == cfReal;
+    std::wstring xStr = ToWString(Edit1->Text);
+    Func32::TComplex x = UseReal ? Func32::TComplex(Form1->Data.Calc(xStr)) : Form1->Data.CalcComplex(xStr);
 
     ErrorPrefix = "f(x): ";
     Func32::TComplex y;
-    bool UseReal = Property.ComplexFormat == cfReal;
     y = UseReal ? Func32::TComplex(Func->GetFunc().CalcY(real(x))): Func->GetFunc().CalcY(x);
 
     if(!x.imag() && std::abs(y.imag()) < MIN_ZERO)
