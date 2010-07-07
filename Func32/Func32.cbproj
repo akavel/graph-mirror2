@@ -60,47 +60,47 @@
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>
-			<CppCompile Include="MakeText.cpp">
-				<BuildOrder>3</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Utility.cpp">
-				<BuildOrder>0</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Calc.cpp">
-				<BuildOrder>1</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TBaseFunc.cpp">
-				<BuildOrder>6</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Parser.cpp">
-				<BuildOrder>4</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Simplify.cpp">
-				<BuildOrder>5</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Differentiate.cpp">
-				<BuildOrder>2</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="TCustomFunc.cpp">
-				<BuildOrder>7</BuildOrder>
+			<CppCompile Include="TFuncData.cpp">
+				<BuildOrder>9</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="TFunc.cpp">
 				<BuildOrder>8</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="TFuncData.cpp">
-				<BuildOrder>9</BuildOrder>
+			<CppCompile Include="TCustomFunc.cpp">
+				<BuildOrder>7</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="TParamFunc.cpp">
 				<BuildOrder>10</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="TPolarFunc.cpp">
-				<BuildOrder>11</BuildOrder>
+			<CppCompile Include="TSymbolList.cpp">
+				<BuildOrder>13</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Trend.cpp">
 				<BuildOrder>12</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="TSymbolList.cpp">
-				<BuildOrder>13</BuildOrder>
+			<CppCompile Include="TPolarFunc.cpp">
+				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Calc.cpp">
+				<BuildOrder>1</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Utility.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MakeText.cpp">
+				<BuildOrder>3</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TBaseFunc.cpp">
+				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Differentiate.cpp">
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Simplify.cpp">
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Parser.cpp">
+				<BuildOrder>4</BuildOrder>
 			</CppCompile>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
