@@ -84,6 +84,7 @@ Graph 4.4
 - Make it possible to add Python code to text labels.
 - Show element text (and legend) when cursor is over an element in the graphing area.
 - Some way to autoguess the intial guess for custom trendlines. For sinusoidal it could be a=Ymean, b=(Ymax-Ymin)
+- Anti aliasing on functions.
 
 Graph 4.5
 - Convert EMF to EPS
