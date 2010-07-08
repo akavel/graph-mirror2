@@ -118,7 +118,7 @@
 		<para>
 			You can either enter the range in the edit boxes or select the range with the mouse.
 			The calculated area will be shown below the range, and the area will be marked with a shading in the coordinate system.
-			The calculation is done using the Gauss-Kronrod 21-point integration rule adaptively with as much accuarcy as possible.
+			The calculation is done using the Gauss-Kronrod 21-point integration rule adaptively with as much accuracy as possible.
 			If an estimated relative error less than <mathphrase>10<superscript>-4</superscript></mathphrase> cannot be reached, no result will be shown.
 		</para>
 	</simplesect>

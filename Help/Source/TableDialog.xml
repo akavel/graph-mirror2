@@ -20,7 +20,7 @@
 	<para>
 		When you press the <guibutton>Calc</guibutton> button,
 		the table will be filled with the independent variable in the first column.
-		The rest of the columns dependes on the type of function.
+		The rest of the columns depend on the type of function.
 		For a standard function, the table will show f(x), f'(x) and f''(x).
 		For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx.
 		For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx.

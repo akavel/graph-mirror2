@@ -22,7 +22,7 @@
 			<para>
 				The <function>abs</function> function returns the absolute or numeric value of <parameter>z</parameter>, commonly written as |z|.
 				<parameter>z</parameter> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>.
-				<mathphrase>abs(z)</mathphrase> always returns a postive real value.
+				<mathphrase>abs(z)</mathphrase> always returns a positive real value.
 			</para>
 		</simplesect>
 		<simplesect>
