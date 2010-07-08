@@ -179,7 +179,7 @@
   				<imageobject role="html"><imagedata fileref="Gamma.png"/></imageobject>
 				</mediaobject>
 				</informalfigure>
-				This cannot be calculated precisely, so Graph is using the so-called Lanczos approximation to calculate the <function>gamma</function> function.
+				This cannot be calculated precisely, so Graph is using the Lanczos approximation to calculate the <function>gamma</function> function.
 			</para>
 		</simplesect>
 		<simplesect>

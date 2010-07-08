@@ -98,7 +98,7 @@
 				</thead>
 				<tbody>
 					<row>
-						<entry>Exponentation (^)</entry>
+						<entry>Exponentiation (^)</entry>
 						<entry>Raise to the power of an exponent. Example: f(x)=2^x</entry>
 					</row>
 					<row>
