@@ -142,42 +142,19 @@
 		<title><markup>if</markup> function</title>
 		<indexterm><primary><function>if</function> function</primary></indexterm>
 		<para>
-			Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned.
+			Evaluates one or more conditions and returns a different results based on them.
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para><mathphrase>if(cond,a,b)</mathphrase></para>
+			<para><mathphrase>if(cond1, f1, cond2, f2, ... , condn, fn [,fz])</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
 			<para>
-				The <function>if</function> function returns <parameter>a</parameter> if <parameter>cond</parameter> evaluates to a value different from 0.
-				If <parameter>cond</parameter> evaluates to 0, <parameter>b</parameter> is returned.
-				The arguments may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm>
-				that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm> or <glossterm linkend="ComplexNumber">complex numbers</glossterm>.
-			</para>
-		</simplesect>
-	</section>
-
-
-	<section id="ifseq" xreflabel="ifseq">
-		<title><markup>ifseq</markup> function</title>
-		<indexterm><primary><function>ifseq</function> function</primary></indexterm>
-		<para>
-			Evaluates a sequence of if functions and returns the first result found with a condition different from zero.
-		</para>
-		<simplesect>
-			<title>Syntax</title>
-			<para><mathphrase>ifseq(cond1, f1, cond2, f2, ... , condn, fn [,fz])</mathphrase></para>
-		</simplesect>
-		<simplesect>
-			<title>Description</title>
-			<para>
-				The <function>ifseq</function> function evaluates <parameter>cond1</parameter> and if it is different from 0 then <parameter>f1</parameter> is evaluated and returned.
+				The <function>if</function> function evaluates <parameter>cond1</parameter> and if it is different from 0 then <parameter>f1</parameter> is evaluated and returned.
 				Else <parameter>cond2</parameter> is evaluated and if it is different from 0 then <parameter>f2</parameter> is returned and so forth.
 				If none of the conditions are true <parameter>fz</parameter> is returned.
-				<parameter>fz</parameter> is optional and if not specified <function>ifseq</function> returns an error if none of the conditions are true.
-				If <parameter>ifseq</parameter> has 3 arguments it will be the same as the <function>if</function> function.
+				<parameter>fz</parameter> is optional and if not specified <function>if</function> returns an error if none of the conditions are true.
 				The arguments may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm>
 				that evaluate to <glossterm linkend="RealNumber">real numbers</glossterm> or <glossterm linkend="ComplexNumber">complex numbers</glossterm>.
 			</para>

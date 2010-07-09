@@ -388,10 +388,6 @@
 						<entry>Returns the second argument if the first argument does not evaluate to 0; Else the third argument is returned.</entry>
 					</row>
 					<row>
-						<entry><xref linkend="ifseq"/></entry>
-						<entry>The same as a sequence of if functions.</entry>
-					</row>
-					<row>
 						<entry namest="col1" nameend="col2" align="center"><emphasis>Special</emphasis></entry>
 					</row>
 					<row>
