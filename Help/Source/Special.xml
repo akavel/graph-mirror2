@@ -40,7 +40,7 @@
 		<simplesect>
 			<title>Examples</title>
 			<para>
-			<mathphrase>f(x)=integrate(t^2-7t+1, t, -3, 15)</mathphrase> will integrate f(t)=5t^3+t^2-7t+1 from -3 to 15 and evaluate to 396.
+			<mathphrase>f(x)=integrate(t^2-7t+1, t, -3, 15)</mathphrase> will integrate f(t)=t^2-7t+1 from -3 to 15 and evaluate to 396.
 			More useful is <mathphrase>f(x)=integrate(s*sin(s), s, 0, x)</mathphrase>.
 			This will plot the integral of f(s)=s*sin(s) from 0 to x, which is the same as the definite integral of f(x)=x*sin(x).
 			</para>
