@@ -96,7 +96,6 @@ static const TFuncTable Table[] = {
 /*CodeRoot*/        TFuncTable(L"root",  arg1 == 2, NULL, L"root(x, x2) * (dx2/(x2*x) - ln(x2)/x^2*dx)"),
 /*CodeBeta*/        TFuncTable(L"beta",  arg1 == 2),
 
-/*CodeIf*/          TFuncTable(L"if",    arg1 == 3),
 /*CodeRange*/       TFuncTable(L"range", arg1 == 3),
 /*CodeIntegrate*/   TFuncTable(L"integrate", arg1 == 3),
 /*CodeSum*/         TFuncTable(L"sum",   arg1 == 4),
@@ -106,6 +105,7 @@ static const TFuncTable Table[] = {
 
 /*CodeMin*/         TFuncTable(L"min",   arg1 >= 2),
 /*CodeMax*/         TFuncTable(L"max",   arg1 >= 2),
+/*CodeIf*/          TFuncTable(L"if",    arg1 >= 2),
 /*CodeIfSeq*/       TFuncTable(L"ifseq", arg1 >= 2),
 /*CodeCustom*/      TFuncTable(L"",      Dummy),
 /*CodeDNorm*/       TFuncTable(L"dnorm", arg1 == 1 || arg1 == 3, L"exp(-sqr(x-x2)/(2sqr(x3))) / (x3*sqrt(2pi))"),
