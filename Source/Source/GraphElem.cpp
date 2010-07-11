@@ -291,7 +291,17 @@ void TBaseFuncType::Update()
   From.Update(GetData());
   To.Update(GetData());
   Steps.Update(GetData());
+  Steps.Value = floor(Steps.Value); //Make sure Steps is an integer
+  if(Steps.Value < 0)
+    Steps.Value = 0;
   TGraphElem::Update();
+}
+//---------------------------------------------------------------------------
+void TBaseFuncType::GetCurrentRange(double &Min, double &Max, double &ds) const
+{
+  Min = From.Value;
+  Max = To.Value;
+  ds = Steps.Value == 1 ? 1 : (To.Value - From.Value) / (Steps.Value - 1); //If Steps, From and To are defined, ds must be exact
 }
 //---------------------------------------------------------------------------
 Func32::TCoord<long double> TBaseFuncType::Eval(long double t) const
@@ -359,9 +369,25 @@ boost::shared_ptr<TBaseFuncType> TStdFunc::MakeDifFunc()
   return DifFunc;
 }
 //---------------------------------------------------------------------------
-std::pair<double,double> TStdFunc::GetCurrentRange() const
+void TStdFunc::GetCurrentRange(double &Min, double &Max, double &ds) const
 {
-  return std::make_pair(std::max(GetData().Axes.xAxis.Min, From.Value), std::min(GetData().Axes.xAxis.Max, To.Value));
+  const TAxis &xAxis = GetData().Axes.xAxis;
+  Min = std::max(xAxis.Min, From.Value);
+  Max = std::min(xAxis.Max, To.Value);
+  if(Steps.Value == 1)
+    ds = 1;
+  else if(From.IsFinite() && To.IsFinite() && Steps.Value > 0)
+  {
+    ds = (To.Value - From.Value) / (Steps.Value - 1); //If Steps, From and To are defined, ds must be exact
+    if(DrawType != dtAuto && Min > From.Value)
+      Min = From.Value + floor((Min - From.Value) / ds) * ds;
+    if(DrawType != dtAuto && Max < To.Value)
+      Max = To.Value - floor((To.Value - Max) / ds) * ds;
+  }
+  else if(Steps.Value > 0)
+    ds = (Max - Min) / (Steps.Value - 1); //If Steps, From and To are defined, ds must be exact
+  else
+    ds = 0;
 }
 //---------------------------------------------------------------------------
 //////////////
@@ -517,7 +543,7 @@ std::wstring TTan::MakeLegendText() const
 //---------------------------------------------------------------------------
 const TTextValue& TTan::GetSteps() const
 {
-  return _finite(a) ? TTextValue(0, L"") : TTextValue(2, L"");
+  return boost::math::isfinite(a) ? TTextValue(0, L"") : TTextValue(2, L"");
 }
 //---------------------------------------------------------------------------
 void TTan::UpdateTan(double a1, double q1)
@@ -538,10 +564,11 @@ bool TTan::IsValid() const
   return !_isnan(a);
 }
 //---------------------------------------------------------------------------
-std::pair<double,double> TTan::GetCurrentRange() const
+void TTan::GetCurrentRange(double &Min, double &Max, double &ds) const
 {
-  return std::make_pair(_finite(a) ? std::max(GetData().Axes.xAxis.Min, From.Value) : GetData().Axes.yAxis.Min,
-    _finite(a) ? std::min(GetData().Axes.xAxis.Max, To.Value) : GetData().Axes.yAxis.Max);
+  Min = _finite(a) ? std::max(GetData().Axes.xAxis.Min, From.Value) : GetData().Axes.yAxis.Min;
+  Max = _finite(a) ? std::min(GetData().Axes.xAxis.Max, To.Value) : GetData().Axes.yAxis.Max;
+  ds = boost::math::isfinite(a) ? 0 : 2;
 }
 //---------------------------------------------------------------------------
 void TTan::Update()

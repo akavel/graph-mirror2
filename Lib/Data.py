@@ -383,8 +383,6 @@ class TBaseFuncType(TGraphElem):
     def CalcArea(self, *args) -> "long double" : return _Data.TBaseFuncType_CalcArea(self, *args)
     __swig_getmethods__["SWIGSharedPtrUpcast"] = lambda x: _Data.TBaseFuncType_SWIGSharedPtrUpcast
     if _newclass:SWIGSharedPtrUpcast = staticmethod(_Data.TBaseFuncType_SWIGSharedPtrUpcast)
-    __swig_getmethods__["CurrentRange"] = _Data.TBaseFuncType_CurrentRange_get
-    if _newclass:CurrentRange = _swig_property(_Data.TBaseFuncType_CurrentRange_get)
     __swig_setmethods__["Steps"] = _Data.TBaseFuncType_Steps_set
     __swig_getmethods__["Steps"] = _Data.TBaseFuncType_Steps_get
     if _newclass:Steps = _swig_property(_Data.TBaseFuncType_Steps_get, _Data.TBaseFuncType_Steps_set)

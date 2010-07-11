@@ -128,33 +128,25 @@ void TDrawThread::PrepareFunction(TBaseFuncType *F)
   if(F->Points.empty())
   {
     //Use axes range for standard functions if the axes range is smaller than the function range
-    //sMin = first; sMax = second
-    std::pair<double,double> MinMax = F->GetCurrentRange();
-    if(MinMax.first > MinMax.second)
+    double Min, Max, ds;
+    F->GetCurrentRange(Min, Max, ds);
+    if(Min > Max)
       return; //No range
 
-    int Steps = F->GetSteps().Value;
-    bool LogScl = Axes.xAxis.LogScl && !Steps;
-    double ds;
-    if(Steps <= 0)
+    bool LogScl = Axes.xAxis.LogScl && ds == 0;
+    if(ds == 0)
       ds = LogScl ? std::exp(1/Draw->xScale) : 1/Draw->xScale;
-    else if(Steps == 1)
-      MinMax.second = MinMax.first, ds = 1;
-    else if(F->From.IsFinite() && F->To.IsFinite())
-      ds = (F->To.Value - F->From.Value) / (Steps - 1); //If Steps, From and To are defined, ds must be exact
-    else
-      ds = (MinMax.second - MinMax.first) / (Steps - 1); //Remove 1 so two steps only plots at Min and Max
 
     if(ds <= 0)
       ds = 1; //ds must always be a positive number
 
     //Avoid calculations on an empty range  
-    if(!IsZero(MinMax.second - MinMax.first))
+    if(!IsZero(Max - Min))
     {
       if(Data->Axes.CalcComplex)
-        CalcFunc<std::complex<long double> >(*F, MinMax.first, MinMax.second, ds, LogScl);
+        CalcFunc<Func32::TComplex>(*F, Min, Max, ds, LogScl);
       else
-        CalcFunc<long double>(*F, MinMax.first, MinMax.second, ds, LogScl);
+        CalcFunc<long double>(*F, Min, Max, ds, LogScl);
     }
   }
 }
