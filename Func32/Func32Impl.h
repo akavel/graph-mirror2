@@ -112,8 +112,7 @@ enum TIdent
   CodeBeta,       //!< The beta function (B(m, n) = gamma(m) * gamma(n) / gamma(m+n))
 
   FirstFunction3P,//!< Indicate first function with three parameters
-  CodeIf = FirstFunction3P, //!< if(x,y,z): Returns y when x!=0; Returns z when x==0
-  CodeRange,      //!< Range(x,y,z): returns max(x,min(y,z))
+  CodeRange = FirstFunction3P,      //!< Range(x,y,z): returns max(x,min(y,z))
   CodeIntegrate,  //!< Integrate(f,min,max) returns the numeric integrale of f from min to max
   CodeSum,        //!< Sum(f,min,max) returns the sum of f(i) where i are integers in the range [min;max]
   CodeProduct,    //!< Prod(f,min,max) returns the product of f(i) where i are integers in the range [min;max]
@@ -123,7 +122,8 @@ enum TIdent
   FirstFunctionVariableP, //!< Indicates first function with variable number or parameters
   CodeMin = FirstFunctionVariableP, //!< Return the lowest of the parameters
   CodeMax,        //!< Return the greatest of the parameters
-  CodeIfSeq,      //!< ifseq(a,f1,b,f2,f3) returns if(a) f1 else if(b) f2 else f3
+  CodeIf,         //!< ifseq(a,f1,b,f2,f3) returns if(a) f1 else if(b) f2 else f3
+  CodeIfSeq,      //!< For backward compatibility only
   CodeCustom,     //!< Indicates a custom function
   CodeDNorm,      //!< The normal distribution normaldist(x, mean, deviation)
   LastFunction = CodeDNorm, //!< Indicates last function

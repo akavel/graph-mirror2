@@ -323,8 +323,8 @@ TFunc TrendLine(TTrendType Type, const std::vector<TDblPoint> &Points, const std
 }
 //---------------------------------------------------------------------------
 /** Create a function with a moving average of the data points
- *  x(t)=ifseq(t<1, x1 + a1*t, t<2, x2 + a2*t, ...)
- *  y(t)=ifseq(t<1, y1 + b1*t, t<2, y2 + b2*t, ...)
+ *  x(t)=if(t<1, x1 + a1*t, t<2, x2 + a2*t, ...)
+ *  y(t)=if(t<1, y1 + b1*t, t<2, y2 + b2*t, ...)
  *  \param Points: Data points to create moving average from
  *  \param N:      The average period; Number of coordiantes used for average.
  *  \return A parameter function with the moving average
@@ -340,8 +340,8 @@ TParamFunc MovingAverage(const std::vector<TDblPoint> &Points, unsigned N)
   Average /= N;
 
   std::wostringstream xStr, yStr;
-  xStr << "ifseq(";
-  yStr << "ifseq(";
+  xStr << "if(";
+  yStr << "if(";
 
   for(unsigned I = N; I < Points.size(); I++)
   {

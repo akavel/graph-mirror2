@@ -875,18 +875,6 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         Temp = max(Temp, CalcF(Iter, DynData));
       return Temp;
 
-    case CodeIf:
-      if(!!Temp)
-      {
-        Temp = CalcF(Iter, DynData);
-        Iter = FindEnd(Iter);
-        return Temp;
-      }
-      else
-      {
-        Iter = FindEnd(Iter);
-        return CalcF(Iter, DynData);
-      }
     case CodeRange:
       return max(Temp, min(CalcF(Iter, DynData), CalcF(Iter, DynData)));
 
@@ -953,6 +941,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodeZeta:
       return Zeta(Temp, ErrorCode);
 
+    case CodeIf:
     case CodeIfSeq:
       for(unsigned I = 1; I < Elem.Arguments; I += 2)
       {

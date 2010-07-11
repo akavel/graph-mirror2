@@ -735,13 +735,13 @@ void Test()
   TestError("if(x<5, x, undef)", 6, ecNotDefError);
 
   //Test block function
-  Test("ifseq(x<-2, x, 2x)", -3, -3);
-  Test("ifseq(x<-2, x, 2x)", 1, 2);
-  Test("ifseq(x<-2, x, x<3, 2x, 3x)", 1, 2);
-  Test("ifseq(x<-2, x, x<3, 2x, 3x)", 4, 12);
-  Test("2+ifseq(x<-2, x, x<3, 2x, 3x)", 4, 14);
-  Test("ifseq(x<-2, x, x<3, 2x)", 1, 2);
-  TestError("ifseq(x<-2, x, x<3, 2x)", 4, ecNotDefError);
+  Test("if(x<-2, x, 2x)", -3, -3);
+  Test("if(x<-2, x, 2x)", 1, 2);
+  Test("if(x<-2, x, x<3, 2x, 3x)", 1, 2);
+  Test("if(x<-2, x, x<3, 2x, 3x)", 4, 12);
+  Test("2+if(x<-2, x, x<3, 2x, 3x)", 4, 14);
+  Test("if(x<-2, x, x<3, 2x)", 1, 2);
+  TestError("if(x<-2, x, x<3, 2x)", 4, ecNotDefError);
 
   //Test Zeta function
   Test("zeta(x)", 0, -0.5);
