@@ -200,7 +200,7 @@ public:
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   virtual boost::shared_ptr<TBaseFuncType> MakeDifFunc() =0;
-  virtual std::pair<double,double> GetCurrentRange() const {return std::make_pair(From.Value, To.Value);}
+  virtual void GetCurrentRange(double &Min, double &Max, double &ds) const;
   virtual const TTextValue& GetSteps() const {return Steps;}
   void SetSteps(const TTextValue &Value) {Steps = Value;}
   virtual std::wstring GetVariable() const {return L"";}
@@ -230,7 +230,7 @@ public:
   boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TTan(*this));}
   boost::shared_ptr<TBaseFuncType> MakeDifFunc() {throw Exception("Tangent cannot be differentiated");}
   bool IsValid() const; //Indicates the parent function is valid at t
-  std::pair<double,double> GetCurrentRange() const;
+  void GetCurrentRange(double &Min, double &Max, double &ds) const;
   const TTextValue& GetSteps() const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   const Func32::TParamFunc& GetFunc() const {return TanFunc;}
@@ -254,7 +254,7 @@ public:
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
-  std::pair<double,double> GetCurrentRange() const;
+  void GetCurrentRange(double &Min, double &Max, double &ds) const;
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   std::wstring GetVariable() const {return L"x";}
   const Func32::TFunc& GetFunc() const {return Func;}

@@ -5137,9 +5137,6 @@ SWIG_AsVal_bool (PyObject *obj, bool *val)
 
 SWIGINTERN int TGraphElem_ThisPtr(TGraphElem const *self){return reinterpret_cast<int>(self);}
 
-#define TBaseFuncType_CurrentRange_get(self_) new std::pair<double,double>(self_->GetCurrentRange())
-  
-
 #define TBaseFuncType_Steps_get(self_) *new TTextValue(self_->GetSteps())
   
 
@@ -12730,42 +12727,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_TBaseFuncType_CurrentRange_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  TBaseFuncType *arg1 = (TBaseFuncType *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  boost::shared_ptr< TBaseFuncType > tempshared1 ;
-  boost::shared_ptr< TBaseFuncType > *smartarg1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::pair< double,double > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:TBaseFuncType_CurrentRange_get",&obj0)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TBaseFuncType_CurrentRange_get" "', argument " "1"" of type '" "TBaseFuncType *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      delete reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      arg1 = const_cast< TBaseFuncType * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      arg1 = const_cast< TBaseFuncType * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  result = (std::pair< double,double > *)TBaseFuncType_CurrentRange_get(arg1);
-  {
-    resultobj = Py_BuildValue("dd", result->first, result->second);
-  }
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_TBaseFuncType_Steps_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TBaseFuncType *arg1 = (TBaseFuncType *) 0 ;
@@ -18073,7 +18034,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TBaseFuncType_Eval", _wrap_TBaseFuncType_Eval, METH_VARARGS, NULL},
 	 { (char *)"TBaseFuncType_CalcArea", _wrap_TBaseFuncType_CalcArea, METH_VARARGS, NULL},
 	 { (char *)"TBaseFuncType_SWIGSharedPtrUpcast", _wrap_TBaseFuncType_SWIGSharedPtrUpcast, METH_VARARGS, NULL},
-	 { (char *)"TBaseFuncType_CurrentRange_get", _wrap_TBaseFuncType_CurrentRange_get, METH_VARARGS, NULL},
 	 { (char *)"TBaseFuncType_Steps_set", _wrap_TBaseFuncType_Steps_set, METH_VARARGS, NULL},
 	 { (char *)"TBaseFuncType_Steps_get", _wrap_TBaseFuncType_Steps_get, METH_VARARGS, NULL},
 	 { (char *)"TBaseFuncType_Variable_get", _wrap_TBaseFuncType_Variable_get, METH_VARARGS, NULL},

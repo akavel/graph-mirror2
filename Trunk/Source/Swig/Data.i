@@ -119,7 +119,7 @@ enum TDrawType {dtAuto, dtDots, dtLines};
 typedef unsigned TPenStyle;
 
 %nodefaultctor TBaseFuncType;
-%attributeval(TBaseFuncType, %arg(std::pair<double,double>), CurrentRange, GetCurrentRange);
+//%attributeval(TBaseFuncType, %arg(std::pair<double,double>), CurrentRange, GetCurrentRange);
 %attributestring(TBaseFuncType, TTextValue, Steps, GetSteps, SetSteps);
 %attributestring(TBaseFuncType, std::wstring, Variable, GetVariable);
 class TBaseFuncType : public TGraphElem

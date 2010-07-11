@@ -163,13 +163,6 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
   ModalResult = mrOk;
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm5::EditKeyPress(TObject *Sender, char &Key)
-{
-  if(TEdit *Edit = dynamic_cast<TEdit*>(Sender))
-    if(!isdigit(Key) && Key!='\b' || (Key=='0' && Edit->Text.IsEmpty()))
-      Key=0;//Allow only digits and backspace. May not start with zero
-}
-//---------------------------------------------------------------------------
 int TForm5::EditFunc(boost::shared_ptr<TBaseFuncType> Func)
 {
   F = Func;

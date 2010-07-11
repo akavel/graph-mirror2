@@ -455,8 +455,9 @@ double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int
     case ttXAxis:
     case ttYAxis:
     {
-      std::pair<double,double> Range = Func->GetCurrentRange();
-      std::vector<Func32::TCoordSet<> > List = AnalyseFunction(Func->GetFunc(), Range.first, Range.second,
+      double Min, Max, ds;
+      Func->GetCurrentRange(Min, Max, ds);
+      std::vector<Func32::TCoordSet<> > List = AnalyseFunction(Func->GetFunc(), Min, Max,
         Draw.GetAxesRect().Width(), 1E-16, TraceType == ttXAxis ? Func32::atXAxisCross : Func32::atYAxisCross);
       if(!List.empty())
         return FindNearestValue(List, X, Y, Draw);
@@ -466,14 +467,15 @@ double TraceFunction(const TBaseFuncType *Func, TTraceType TraceType, int X, int
     case ttExtremeY:
     case ttExtremeX:
     {
-      std::pair<double,double> Range = Func->GetCurrentRange();
+      double Min, Max, ds;
+      Func->GetCurrentRange(Min, Max, ds);
       //WARNING: bcc codegen bug when operator ?: is used and AnalyseFunction() throws an exception
       Func32::TFunc F;
       if(TraceType == ttExtremeY)
         F = Func->GetFunc().ConvYToFunc().MakeDif();
       else
         F = Func->GetFunc().ConvXToFunc().MakeDif();
-      std::vector<Func32::TCoordSet<> > List = AnalyseFunction(F, Range.first, Range.second, Draw.GetAxesRect().Width(), 1E-16, Func32::atXAxisCross);
+      std::vector<Func32::TCoordSet<> > List = AnalyseFunction(F, Min, Max, Draw.GetAxesRect().Width(), 1E-16, Func32::atXAxisCross);
 
       //Convert the list of f'(x) coordinates to f(x) coordinates. Notice that List2 may have less
       //elements than List, because we may have found some extremums that don't have valid coordinates.

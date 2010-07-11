@@ -180,7 +180,6 @@ object Form5: TForm5
       Hint = 'Number of calculation steps used to draw the graph.'
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 2
-      OnKeyPress = EditKeyPress
     end
   end
   object GroupBox4: TGroupBox
@@ -237,7 +236,6 @@ object Form5: TForm5
       Anchors = [akTop, akRight]
       TabOrder = 3
       Text = '1'
-      OnKeyPress = EditKeyPress
     end
     object UpDown1: TUpDown
       Left = 273

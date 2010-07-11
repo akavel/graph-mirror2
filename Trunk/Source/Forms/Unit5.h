@@ -60,7 +60,6 @@ __published:	// IDE-managed Components
   TLabel *Label13;
   TExtColorBox *ExtColorBox1;
 	void __fastcall Button1Click(TObject *Sender);
-  void __fastcall EditKeyPress(TObject *Sender, char &Key);
   void __fastcall ComboBox1Change(TObject *Sender);
   void __fastcall Button3Click(TObject *Sender);
   void __fastcall ComboBox1KeyPress(TObject *Sender, char &Key);
