@@ -41,7 +41,7 @@
 
 		<simplelist>
 			<member><emphasis role="bold"><application>GNU Scientific Library</application></emphasis></member>
-			<member>Numeric library.</member>
+			<member>Numerical library.</member>
 			<member><orgname>Copyright &copy; 2009 Free Software Foundation, Inc.</orgname></member>
 			<member><ulink url="http://www.gnu.org/software/gsl/"/></member>
 		</simplelist>

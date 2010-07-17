@@ -8,10 +8,10 @@
 	<section id="integrate" xreflabel="integrate">
 		<title><markup>integrate</markup> function</title>
 		<indexterm><primary><function>integrate</function> function</primary></indexterm>
-		<indexterm><primary>numeric integral</primary></indexterm>
+		<indexterm><primary>numerical integral</primary></indexterm>
 		<indexterm><primary>area</primary></indexterm>
 		<para>
-			Returns the numeric integral of the given expression over the given range.
+			Returns an aproximation for the numerical integral of the given expression over the given range.
 		</para>
 		<simplesect>
 			<title>Syntax</title>
@@ -20,7 +20,7 @@
 		<simplesect>
 			<title>Description</title>
 			<para>
-				The <function>integrate</function> function returns the numeric integral of <parameter>f</parameter> with the variable
+				The <function>integrate</function> function returns an aproximation for the numerical integral of <parameter>f</parameter> with the variable
 				<parameter>var</parameter> from <parameter>a</parameter> to <parameter>b</parameter>.
 				This is mathematically written as:
 				<mediaobject>
