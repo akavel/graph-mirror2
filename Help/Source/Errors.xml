@@ -169,7 +169,7 @@
 				<listitem>
 					<para>
 						A custom function in a Python plugin did not return a result.
-						The plugin console may show more detailed information.
+						The Python interpreter window may show more detailed information.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -418,7 +418,7 @@
 				<listitem>
 					<para>
 						Graph could not calculate an accurate result.
-						This may happen when calculating the numeric integral produced a result with a too high estimated error.
+						This may happen when calculating the numerical integral produced a result with a too high estimated error.
 					</para>
 				</listitem>
 			</varlistentry>
