@@ -1133,7 +1133,7 @@ void __fastcall TForm1::ApplicationEventsShowHint(String &HintStr,
 {
   //Maximum length in pixels of hint text before line wrap
   if(HintInfo.HintControl != TreeView)
-    HintInfo.HintMaxWidth = 200;
+    HintInfo.HintMaxWidth = 300;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::WMEnterSizeMove(TMessage &Message)
