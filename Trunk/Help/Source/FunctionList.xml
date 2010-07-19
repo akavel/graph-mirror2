@@ -108,63 +108,72 @@
 					</row>
 					<row>
 						<entry>Logical NOT (not)</entry>
-						<entry>Evaluates to 1 if an expression evaluates to 0, and evaluates to 0 otherwise.</entry>
+						<entry><function>not</function> <parameter>a</parameter> evaluates to 1 if <parameter>a</parameter> is zero, and evaluates to 0 otherwise.</entry>
 					</row>
 					<row>
 						<entry>Multiplication (*)</entry>
-		     			<entry>Multiplies two factors. Example: f(x)=2*x</entry>
-		     		</row>
+		     		<entry>Multiplies two factors. Example: f(x)=2*x</entry>
+		     	</row>
 			 		<row>
-		     			<entry>Division (/)</entry>
-		     			<entry>Divides two factors. Example: f(x)=2/x</entry>
-		     		</row>
-		     		<row>
-		     			<entry>Addition (+)</entry>
-		     			<entry>Adds two terms. Example: f(x)=2+x</entry>
+		     		<entry>Division (/)</entry>
+		     		<entry>Divides two factors. Example: f(x)=2/x</entry>
+		     	</row>
+		     	<row>
+		     		<entry>Addition (+)</entry>
+		     		<entry>Adds two terms. Example: f(x)=2+x</entry>
 			 		</row>
-		     		<row>
-		     			<entry>Subtraction (-)</entry>
-		     			<entry>Subtracts two terms. Example f(x)=2-x</entry>
-		      		</row>
-		     		<row>
-		     			<entry>Greater than (>)</entry>
-		     			<entry>Indicates if an expression is greater than another expression.</entry>
-		      		</row>
-		     		<row>
-		     			<entry>Greater than or equal to (>=)</entry>
-		     			<entry>Indicates if an expression is greater or equal to another expression.</entry>
-		      		</row>
-		     		<row>
-		     			<entry>Less than (&lt;)</entry>
-		     			<entry>Indicates if an expression is less than another expression.</entry>
-		      		</row>
-		     		<row>
-		     			<entry>Less than or equal to (&lt;=)</entry>
-		     			<entry>Indicates if an expression is less or equal to another expression.</entry>
-		      		</row>
-		     		<row>
-		     			<entry>Equal (=)</entry>
-		     			<entry>Indicates if two expressions evaluate to the exact same value.</entry>
-		      		</row>
-		     		<row>
-		     			<entry>Not equal (&lt;>)</entry>
-		     			<entry>Indicates if two expressions does not evaluate to the exact same value.</entry>
-		      		</row>
-		     		<row>
-		     			<entry>Logical AND (and)</entry>
-		     			<entry>Evaluates to 1 if two expressions both evaluate to a value different from 0, and evaluates to 0 otherwise.</entry>
-		      		</row>
-		     		<row>
-		     			<entry>Logical OR (or)</entry>
-		     			<entry>Evaluates to 1 if at least one of two expressions evaluates to a value different from 0, and evaluates to 0 otherwise.</entry>
-		      		</row>
-		     		<row>
-		     			<entry>Logical XOR (xor)</entry>
-		     			<entry>Evaluates to 1 if exactly one of two expressions evaluates to a value different from 0, and evaluates to 0 otherwise.</entry>
-		      		</row>
-		    			</tbody>
-		  		</tgroup>
-			</informaltable>
+		     	<row>
+		     		<entry>Subtraction (-)</entry>
+		     		<entry>Subtracts two terms. Example f(x)=2-x</entry>
+		      </row>
+		     	<row>
+		     		<entry>Greater than (>)</entry>
+		     		<entry>Indicates if an expression is greater than another expression.</entry>
+		      </row>
+		     	<row>
+		     		<entry>Greater than or equal to (>=)</entry>
+		     		<entry>Indicates if an expression is greater or equal to another expression.</entry>
+		      </row>
+		     	<row>
+		     		<entry>Less than (&lt;)</entry>
+		     		<entry>Indicates if an expression is less than another expression.</entry>
+		      </row>
+		     	<row>
+		     		<entry>Less than or equal to (&lt;=)</entry>
+		     		<entry>Indicates if an expression is less or equal to another expression.</entry>
+		      </row>
+		     	<row>
+		     		<entry>Equal (=)</entry>
+		     		<entry>Indicates if two expressions evaluate to the exact same value.</entry>
+		      </row>
+		     	<row>
+		     		<entry>Not equal (&lt;>)</entry>
+		     		<entry>Indicates if two expressions does not evaluate to the exact same value.</entry>
+		      </row>
+		     	<row>
+		     		<entry>Logical AND (and)</entry>
+		     		<entry>
+							<parameter>a</parameter> <function>and</function> <parameter>b</parameter> evaluates to 1 if both <parameter>a</parameter> and <parameter>b</parameter>
+							are non-zero, and evaluates to 0 otherwise.
+						</entry>
+		      </row>
+		     	<row>
+		     		<entry>Logical OR (or)</entry>
+		     		<entry>
+							<parameter>a</parameter> <function>or</function> <parameter>b</parameter> evaluates to 1 if either <parameter>a</parameter> or <parameter>b</parameter>
+							are non-zero, and evaluates to 0 otherwise.
+						</entry>
+					</row>
+		     	<row>
+		     		<entry>Logical XOR (xor)</entry>
+		     		<entry>
+							<parameter>a</parameter> <function>xor</function> <parameter>b</parameter> evaluates to 1 if either <parameter>a</parameter> or <parameter>b</parameter>,
+							but not both, are non-zero, and evaluates to 0 otherwise.
+						</entry>
+		      </row>
+		    </tbody>
+		 	</tgroup>
+		</informaltable>
 	</para>
 
 

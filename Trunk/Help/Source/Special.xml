@@ -133,7 +133,7 @@
 		</para>
 		<simplesect>
 			<title>Syntax</title>
-			<para><mathphrase>fact(z)</mathphrase></para>
+			<para><mathphrase>fact(n)</mathphrase></para>
 		</simplesect>
 		<simplesect>
 			<title>Description</title>
