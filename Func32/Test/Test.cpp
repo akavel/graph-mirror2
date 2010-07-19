@@ -356,6 +356,24 @@ void TestCustom(const std::wstring &Str, const TArgType &Args, const std::vector
   }
 }
 
+void TestMakeText(const TFunc &Func, const std::wstring &Result)
+{
+  try
+  {
+    std::wstring TextResult = Func.MakeText();
+    if(TextResult != Result)
+    {
+      wcerr << "Function:     " << TextResult << std::endl;
+      wcerr << "Expected:     " << Result << std::endl << std::endl;
+    }
+  }
+  catch(EFuncError &E)
+  {
+    wcerr << "Error code   : " << E.ErrorCode << std::endl;
+    wcerr << "Expected:     " << Result << std::endl << std::endl;
+  }
+}
+
 /** Called when BOOST_ASSERT fails.
  */
 namespace boost
@@ -678,6 +696,7 @@ void Test()
   Test("range(2,x,5)", 3, 3);
   Test("range(2,x,5)", 6, 5);
   Test("min(8, 2, 5)", 0, 2);
+  Test("min(x,2)", 1, 1);
   Test("max(8, 2, 5)", 0, 8);
 
   Test("gamma(x)", 6, 120);
@@ -828,6 +847,9 @@ void Test()
   TestDif("2^(x/3)", "1/3*ln(2)*2^(x/3)");
   TestDif("2^(1/x)", "-ln(2)*2^(1/x)/x^2");
 
+  //Differentiation of piecewise functions
+  TestDif("min(x,2)", "if(x<2,1,0)");
+
   //Test the simplify code
   TestSimplify("ln(e)", "1");
   TestSimplify("log(10)", "1");
@@ -854,6 +876,9 @@ void Test()
   Test("TestSqr(x)", 10, 100, Radian, "", SymbolList);
   Test("TestCube(5, 2, x)", 1, 130, Radian, "", SymbolList);
   Test("foo(5, 2, x)", 1, 130, Radian, "", SymbolList);
+
+  //Test conversion to text
+  TestMakeText(TFunc(L"0"), L"0");
 }
 
 std::wstringstream DebugStreamBuf;

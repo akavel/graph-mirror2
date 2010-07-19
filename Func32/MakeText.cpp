@@ -87,15 +87,8 @@ std::wstring GetCompareString(TCompareMethod CompareMethod)
 //---------------------------------------------------------------------------
 std::wstring ConvertToStr(long double Number, unsigned Decimals)
 {
-/*  if(boost::math::isnan(Number))
-    return L"NAN";
-  if(boost::math::isinf(Number))
-    return Number < 0 ? L"-INF" : L"INF";
-  if(IsZero(Number))
-    return L"0";*/
-
   std::wstringstream Stream;
-  if(std::abs(Number) >= 10000 || std::abs(Number) <= 1E-4)
+  if(std::abs(Number) >= 10000 || (std::abs(Number) <= 1E-4 && Number != 0))
   {
     Stream << std::uppercase << std::scientific << std::setprecision(Decimals) << Number;
     std::wstring Str = Stream.str();

@@ -27,19 +27,26 @@ boost::shared_ptr<TFuncData> TFuncData::MakeDif(const TElem &Var, TTrigonometry 
   if(CheckRecursive())
     throw EFuncError(ecRecursiveDif);
 
-  boost::shared_ptr<TFuncData> Temp(new TFuncData);
-  CopyReplace(Temp->Data, Data.begin(), std::vector<std::vector<TElem> >());
-  DEBUG_LOG(std::wclog << L"f(x)=" << MakeText(Temp->Data.begin()) << std::endl);
-  boost::shared_ptr<TFuncData> Dest(new TFuncData);
-  Dest->AddDif(Temp->Data.begin(), Var, Trigonometry, 0);
+  try
+  {
+    boost::shared_ptr<TFuncData> Temp(new TFuncData);
+    CopyReplace(Temp->Data, Data.begin(), std::vector<std::vector<TElem> >());
+    DEBUG_LOG(std::wclog << L"f(x)=" << MakeText(Temp->Data.begin()) << std::endl);
+    boost::shared_ptr<TFuncData> Dest(new TFuncData);
+    Dest->AddDif(Temp->Data.begin(), Var, Trigonometry, 0);
 
-  //It is sometimes necesarry to optimize. For example d(x^2) needs an ln(x) optimized away
-  DEBUG_LOG(std::wclog << L"Before simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
-  Dest->Simplify();
-  DEBUG_LOG(std::wclog << L"After simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
-  Dest->Simplify();
-  DEBUG_LOG(std::wclog << L"After simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
-  return Dest;
+    //It is sometimes necesarry to optimize. For example d(x^2) needs an ln(x) optimized away
+    DEBUG_LOG(std::wclog << L"Before simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
+    Dest->Simplify();
+    DEBUG_LOG(std::wclog << L"After simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
+    Dest->Simplify();
+    DEBUG_LOG(std::wclog << L"After simplify: f'(x)=" << MakeText(Dest->Data.begin()) << std::endl);
+    return Dest;
+  }
+  catch(boost::bad_any_cast &E)
+  {
+    throw EFuncError(ecInternalError);
+  }
 }
 //---------------------------------------------------------------------------
 /** Returns an iterator to the element following Iter. Jumps over parameters.
@@ -75,9 +82,9 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
     case CodeIf:
     case CodeIfSeq:
     {
-      //f(x)=ifseq(a1,b1,a2,b2, ... , an,bn [,c])
-      //f'(x)=ifseq(a1,b1',a2,b2', ... , an, bn' [,c'])
-      Data.push_back(*Iter); //IfSeq if same number of arguments
+      //f(x)=if(a1,b1,a2,b2, ... , an,bn [,c])
+      //f'(x)=if(a1,b1',a2,b2', ... , an, bn' [,c'])
+      Data.push_back(*Iter); //CodeIf with same number of arguments
       unsigned Arguments = FunctionArguments(*Iter);
       ++Iter;
       for(unsigned I = 0; I < Arguments-1; I++)
@@ -96,9 +103,9 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
     case CodeMin:
     case CodeMax:
     {
-      //f(x)=min(a1,a2,a3, ... , an) f'(x)=ifseq(a1<a2 and a1<a3 ...,a1', a2<a1 and a2<a3 ...,a2',
+      //f(x)=min(a1,a2,a3, ... , an) f'(x)=if(a1<a2 and a1<a3 ...,a1', a2<a1 and a2<a3 ...,a2',
       unsigned Arguments = Iter->Arguments;
-      Data.push_back(TElem(CodeIfSeq, 2*Arguments-1, 0));
+      Data.push_back(TElem(CodeIf, 2*Arguments-1, 0));
       TConstIterator Param = Iter + 1;
       for(unsigned I = 0; I < Arguments-1; I++)
       {
@@ -111,7 +118,7 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
         {
           if(J != I)
           {
-            Data.push_back(TElem(CodeCompare1, Iter->Ident == CodeMin ? cmLess : cmGreater));
+            Data.push_back(TElem(Iter->Ident == CodeMin ? cmLess : cmGreater));
             Data.insert(Data.end(), Param, End);
             Data.insert(Data.end(), Param2, FindEnd(Param2));
           }
