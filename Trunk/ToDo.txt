@@ -29,6 +29,7 @@ ASAP
 - Show end points (arrows) at each line segment.
 + Use error bars when calculating trendlines (http://www-users.york.ac.uk/~mdc1/num_meth_files/weightedlsqsol.html)
 - Show translator email address as link in About dialog.
+- Improve showing of numers. (Disable scientific notation)
 
 Graph 4.3
 - Animation Player: Add buttons to move to first and last frame for easy compare.
@@ -95,6 +96,7 @@ Graph 4.5
 - Fix overlapping numbers on the axes. (Scientific notation, what do other programs do?)
 - Real boxed axes
 - Show labels under/left of axes in boxed mode. See forum message "Axis labels" from Dilek.
+- Multiprocessor support (multithreadded)
 
 Later
 - Select elements by clicking on them in the graph area.
@@ -146,7 +148,7 @@ To be considered
 - Highlight matching brackets in edit controls.
 
 Plugins:
-- Cirlce item
+- Circle item
 - Convert points, i.e. pass through a function.
 - Add custom names to axes, e.g. sqrt(2) or hh:mm.
 - Implement the erf(x) and erfc(x) functions. (See email from profesor de ciencias at 29/12-07)
@@ -169,6 +171,8 @@ Plugins:
 - Make it possible to store/restore several zoom points. (Forum message from zubaroo at 18/1-10).
 - Plot fractals. See email from Francisco Oliver 30/1-10.
 - Gnu Scientific Library (zeta, gamma, etc.)
+- Add comments to functions (all elements)
+- Show end points where the graph leaves the graphing area.
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>

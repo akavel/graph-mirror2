@@ -129,9 +129,21 @@ struct TPlotSettings
   int TickLength;
 };
 
+%nodefault TGuiSettings;
+struct TGuiSettings
+{
+  double MajorZoomIn;
+  double MinorZoomIn;
+  double MajorZoomOut;
+  double MinorZoomOut;
+  double MajorStepSize;
+  double MinorStepSize;
+};
+
 const TProperty Property;
 const TFormatSettings FormatSettings;
 const TPlotSettings PlotSettings;
+const TGuiSettings GuiSettings;
 } //namespace Graph
 
 %pythoncode

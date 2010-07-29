@@ -19,6 +19,7 @@ namespace Graph
 TProperty Property;
 TFormatSettings FormatSettings;
 TPlotSettings PlotSettings;
+TGuiSettings GuiSettings;
 //---------------------------------------------------------------------------
 ///////////
 // TAxes //
@@ -503,6 +504,15 @@ TFormatSettings::TFormatSettings()
 /////////////////////
 TPlotSettings::TPlotSettings()
   : AxisWidth(2), xNumberDist(4), yNumberDist(7), TickWidth(1), TickLength(5)
+{
+}
+//---------------------------------------------------------------------------
+//////////////////
+// TGuiSettings //
+//////////////////
+TGuiSettings::TGuiSettings()
+  : MajorZoomIn(0.25), MinorZoomIn(0.45), MajorZoomOut(1), MinorZoomOut(10.0/18.0),
+    MajorStepSize(0.1), MinorStepSize(0.01)
 {
 }
 //---------------------------------------------------------------------------

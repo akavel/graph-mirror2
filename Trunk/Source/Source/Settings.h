@@ -220,9 +220,21 @@ struct TPlotSettings
   TPlotSettings();
 };
 
+struct TGuiSettings
+{
+  double MajorZoomIn;
+  double MinorZoomIn;
+  double MajorZoomOut;
+  double MinorZoomOut;
+  double MajorStepSize;
+  double MinorStepSize;
+  TGuiSettings();
+};
+
 extern TProperty Property;
 extern TFormatSettings FormatSettings;
 extern TPlotSettings PlotSettings;
+extern TGuiSettings GuiSettings;
 } //namespace Graph;
 using namespace Graph;
 #endif

@@ -341,6 +341,34 @@ class TPlotSettings(_object):
 TPlotSettings_swigregister = _Settings.TPlotSettings_swigregister
 TPlotSettings_swigregister(TPlotSettings)
 
+class TGuiSettings(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TGuiSettings, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, TGuiSettings, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+    __swig_setmethods__["MajorZoomIn"] = _Settings.TGuiSettings_MajorZoomIn_set
+    __swig_getmethods__["MajorZoomIn"] = _Settings.TGuiSettings_MajorZoomIn_get
+    if _newclass:MajorZoomIn = _swig_property(_Settings.TGuiSettings_MajorZoomIn_get, _Settings.TGuiSettings_MajorZoomIn_set)
+    __swig_setmethods__["MinorZoomIn"] = _Settings.TGuiSettings_MinorZoomIn_set
+    __swig_getmethods__["MinorZoomIn"] = _Settings.TGuiSettings_MinorZoomIn_get
+    if _newclass:MinorZoomIn = _swig_property(_Settings.TGuiSettings_MinorZoomIn_get, _Settings.TGuiSettings_MinorZoomIn_set)
+    __swig_setmethods__["MajorZoomOut"] = _Settings.TGuiSettings_MajorZoomOut_set
+    __swig_getmethods__["MajorZoomOut"] = _Settings.TGuiSettings_MajorZoomOut_get
+    if _newclass:MajorZoomOut = _swig_property(_Settings.TGuiSettings_MajorZoomOut_get, _Settings.TGuiSettings_MajorZoomOut_set)
+    __swig_setmethods__["MinorZoomOut"] = _Settings.TGuiSettings_MinorZoomOut_set
+    __swig_getmethods__["MinorZoomOut"] = _Settings.TGuiSettings_MinorZoomOut_get
+    if _newclass:MinorZoomOut = _swig_property(_Settings.TGuiSettings_MinorZoomOut_get, _Settings.TGuiSettings_MinorZoomOut_set)
+    __swig_setmethods__["MajorStepSize"] = _Settings.TGuiSettings_MajorStepSize_set
+    __swig_getmethods__["MajorStepSize"] = _Settings.TGuiSettings_MajorStepSize_get
+    if _newclass:MajorStepSize = _swig_property(_Settings.TGuiSettings_MajorStepSize_get, _Settings.TGuiSettings_MajorStepSize_set)
+    __swig_setmethods__["MinorStepSize"] = _Settings.TGuiSettings_MinorStepSize_set
+    __swig_getmethods__["MinorStepSize"] = _Settings.TGuiSettings_MinorStepSize_get
+    if _newclass:MinorStepSize = _swig_property(_Settings.TGuiSettings_MinorStepSize_get, _Settings.TGuiSettings_MinorStepSize_set)
+TGuiSettings_swigregister = _Settings.TGuiSettings_swigregister
+TGuiSettings_swigregister(TGuiSettings)
+
 import vcl
 TAxes.NumberFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_NumberFont_get(self), owned=False))
 TAxes.LabelFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LabelFont_get(self), owned=False))
@@ -352,4 +380,5 @@ cvar = _Settings.cvar
 Property = cvar.Property
 FormatSettings = cvar.FormatSettings
 PlotSettings = cvar.PlotSettings
+GuiSettings = cvar.GuiSettings
 
