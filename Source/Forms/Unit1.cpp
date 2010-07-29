@@ -2138,13 +2138,13 @@ void __fastcall TForm1::InsertDifActionExecute(TObject *Sender)
 void __fastcall TForm1::ZoomInActionExecute(TObject *Sender)
 {
   //Zoom in; New window is 1/4 of the original
-  Zoom(GetKeyState(ssShift) ? 0.25 : 0.45, false);
+  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomIn : GuiSettings.MinorZoomIn, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomOutActionExecute(TObject *Sender)
 {
   //Zoom out; New window is the double of the original
-  Zoom(GetKeyState(ssShift) ? 1 : 10.0/18.0, false);
+  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomOut : GuiSettings.MinorZoomOut, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomWindowActionExecute(TObject *Sender)
@@ -2341,7 +2341,7 @@ void __fastcall TForm1::MoveRightActionExecute(TObject *Sender)
     return;
   }
   const TAxes &Axes = Data.Axes;
-  double StepSize = GetKeyState(ssShift) ? 0.1 : 0.01;
+  double StepSize = GetKeyState(ssShift) ? GuiSettings.MajorStepSize : GuiSettings.MinorStepSize;
   double MoveWidth=(Axes.xAxis.Max-Axes.xAxis.Min) * StepSize;
   if(Axes.xAxis.LogScl)
   {
@@ -2360,7 +2360,7 @@ void __fastcall TForm1::MoveLeftActionExecute(TObject *Sender)
     return;
   }
   const TAxes &Axes = Data.Axes;
-  double StepSize = GetKeyState(ssShift) ? 0.1 : 0.01;
+  double StepSize = GetKeyState(ssShift) ? GuiSettings.MajorStepSize : GuiSettings.MinorStepSize;
   double MoveWidth=(Axes.xAxis.Max - Axes.xAxis.Min) * StepSize;
   if(Axes.xAxis.LogScl)
   {
@@ -2374,7 +2374,7 @@ void __fastcall TForm1::MoveLeftActionExecute(TObject *Sender)
 void __fastcall TForm1::MoveUpActionExecute(TObject *Sender)
 {
   const TAxes &Axes = Data.Axes;
-  double StepSize = GetKeyState(ssShift) ? 0.1 : 0.01;
+  double StepSize = GetKeyState(ssShift) ? GuiSettings.MajorStepSize : GuiSettings.MinorStepSize;
   double MoveHeight=(Axes.yAxis.Max-Axes.yAxis.Min) * StepSize;
   if(Axes.yAxis.LogScl)
   {
@@ -2388,7 +2388,7 @@ void __fastcall TForm1::MoveUpActionExecute(TObject *Sender)
 void __fastcall TForm1::MoveDownActionExecute(TObject *Sender)
 {
   const TAxes &Axes = Data.Axes;
-  double StepSize = GetKeyState(ssShift) ? 0.1 : 0.01;
+  double StepSize = GetKeyState(ssShift) ? GuiSettings.MajorStepSize : GuiSettings.MinorStepSize;
   double MoveHeight=(Axes.yAxis.Max - Axes.yAxis.Min) * StepSize;
   if(Axes.yAxis.LogScl)
   {
