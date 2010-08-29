@@ -109,7 +109,7 @@ void TIPolygon::Clear()
   Invalidate();
 }
 //---------------------------------------------------------------------------
-void __fastcall TIPolygon::SetPolyFillMode(TPolyFillMode APolyFillMode)
+void __fastcall TIPolygon::SetPolyFillMode(TPolygonFillMode APolyFillMode)
 {
   FPolyFillMode = APolyFillMode;
   Invalidate();
