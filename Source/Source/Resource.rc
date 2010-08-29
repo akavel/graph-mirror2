@@ -188,9 +188,9 @@ BEGIN
   538 "Edit shading"
   539 "You need to select a function."
   540 "New version of Graph available"
-  541 "Graph %s is now available for download from www.padowan.dk\nwith these new features since the previous version:\n\n%s\n\nWould you like to visit the web site?"
+  541 "Graph %s is now available for download from www.padowan.dk\n\nWould you like to visit the download page?"
   542 "No new version"
-  543 "You are already using the most recent version of the program."
+  543 "You are already using the most recent version of Graph."
   544 "Cannot connect to server www.padowan.dk.\nEither the server is down or you do not have a connection to the Internet."
   545 "Socket error %s"                            //Communication error when checking for newer version
 
