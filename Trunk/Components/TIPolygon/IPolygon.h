@@ -11,7 +11,7 @@
 #include <vector>
 #include "VclObject.h"
 //---------------------------------------------------------------------------
-enum TPolyFillMode {pfmAlternate, pfmWinding};
+enum TPolygonFillMode {pfmAlternate, pfmWinding};
 enum TPolygonType {ptPolygon, ptPolyline};
 
 class TIPolygon : public TGraphicControl
@@ -19,7 +19,7 @@ class TIPolygon : public TGraphicControl
 private:
   std::vector<TPoint> PointList;
   TVclObject<TStringList> FPoints;
-  TPolyFillMode FPolyFillMode;
+  TPolygonFillMode FPolyFillMode;
   TPolygonType FPolygonType;
 
   void __fastcall Change(TObject *Sender) {Invalidate();}
@@ -31,7 +31,7 @@ private:
   void __fastcall SetPen(TPen *APen) {Canvas->Pen = APen; Invalidate();}
   void __fastcall SetPoints(TStrings *APoints) {FPoints->Assign(APoints);}
   TStrings* __fastcall GetPoints();
-  void __fastcall SetPolyFillMode(TPolyFillMode APolyFillMode);
+  void __fastcall SetPolyFillMode(TPolygonFillMode APolyFillMode);
   void __fastcall SetPolygonType(TPolygonType APolygonType);
 
 public:
@@ -45,7 +45,7 @@ __published:
   __property TBrush* Brush = {read=GetBrush, write=SetBrush};
   __property TPen *Pen = {read=GetPen, write=SetPen};
   __property TStrings *Points = {read=GetPoints, write=SetPoints};
-  __property TPolyFillMode PolyFillMode = {read=FPolyFillMode, write=SetPolyFillMode};
+  __property TPolygonFillMode PolyFillMode = {read=FPolyFillMode, write=SetPolyFillMode};
   __property TPolygonType PolygonType = {read=FPolygonType, write=SetPolygonType};
   __property Visible;
   __property Align;
