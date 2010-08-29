@@ -3,6 +3,24 @@
   <xsl:import href="./db_htmlchunk.xsl"/>
   <xsl:import href="./defaults.xsl"/>
 
+  <xsl:param name="generate.toc">
+    appendix  toc,title
+    article/appendix  nop
+    article   toc,title
+    book      toc,title,figure,table,example,equation
+    chapter   toc,title
+    part      toc,title
+    preface   toc,title
+    reference toc,title
+    sect1     toc
+    sect2     toc
+    sect3     toc
+    sect4     toc
+    sect5     toc
+    section   toc
+    set       toc,title
+  </xsl:param>
+
   <xsl:param name="suppress.navigation" select="0"/>
   <xsl:param name="toc.section.depth" select="1"/>
   <xsl:param name="generate.section.toc.level" select="0"/>
