@@ -12,13 +12,14 @@
 #include "EmfParser.h"
 #include <cassert>
 #include <vector>
+#include <iostream>
 //---------------------------------------------------------------------------
-TEmfParser::TEmfParser()
+TEmfParser::TEmfParser() : PolyFillMode(pfmNonZero)
 {
 }
 //---------------------------------------------------------------------------
+#pragma argsused
 int CALLBACK TEmfParser::EnhMetaFileProc(
-
     HDC hDC,	// handle to device context
     HANDLETABLE FAR *lpHTable,	// pointer to metafile handle table
     const ENHMETARECORD FAR *lpEMFR,	// pointer to metafile record
@@ -48,7 +49,8 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
     case EMR_LINETO:
     {
       EMRLINETO* LineTo = (EMRLINETO*)lpEMFR;
-      Writer->Line(Pos.x, Pos.y, LineTo->ptl.x, LineTo->ptl.y);
+      POINT P = FindEndPoint(Pos.x, Pos.y, LineTo->ptl.x, LineTo->ptl.y);
+      Writer->Line(Pos.x, Pos.y, P.x, P.y);
       break;
     }
 
@@ -82,7 +84,7 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
     case EMR_POLYGON16:
     {
       EMRPOLYGON16 *Polygon = (EMRPOLYGON16*)lpEMFR;
-      Writer->Polygon(Polygon->apts, Polygon->cpts);
+      Writer->Polygon(Polygon->apts, Polygon->cpts, PolyFillMode);
       break;
     }
 
@@ -98,24 +100,36 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
       EMREXTCREATEFONTINDIRECTW *ExtFont = (EMREXTCREATEFONTINDIRECTW*)lpEMFR;
       std::wstring Temp = ExtFont->elfw.elfLogFont.lfFaceName;
       Font.Name = std::string(Temp.begin(), Temp.end());
-      int Scale = 25; //Magic number
-      Font.Size = -ExtFont->elfw.elfLogFont.lfHeight / Scale;
+      Font.Size = -ExtFont->elfw.elfLogFont.lfHeight;
+      Font.Weight = ExtFont->elfw.elfLogFont.lfWeight;
+      Font.Italic = ExtFont->elfw.elfLogFont.lfItalic;
+      Font.Underline = ExtFont->elfw.elfLogFont.lfUnderline;
+      Font.StrikeOut = ExtFont->elfw.elfLogFont.lfStrikeOut;
       FontList[ExtFont->ihFont] = Font;
       break;
     }
 
     case EMR_SETTEXTCOLOR:
-      Font.Color = reinterpret_cast<const EMRSETTEXTCOLOR*>(lpEMFR)->crColor;
-      SwapColor(Font.Color);
+      Font.Color = SwapColor(reinterpret_cast<const EMRSETTEXTCOLOR*>(lpEMFR)->crColor);
+      break;
+
+    case EMR_SETBKCOLOR:
+      Font.BkColor = SwapColor(reinterpret_cast<const EMRSETBKCOLOR*>(lpEMFR)->crColor);
+      break;
+
+    case EMR_SETBKMODE:
+      Font.TransparentBk = reinterpret_cast<const EMRSETBKMODE*>(lpEMFR)->iMode == TRANSPARENT;
       break;
 
     case EMR_EXTTEXTOUTW:
     {
       EMREXTTEXTOUTW *Text = (EMREXTTEXTOUTW*)lpEMFR;
+      int X = Text->rclBounds.left;
+      int Y = Text->rclBounds.top + Font.Size - ((Font.Size-11) / 3);
       wchar_t *Str = (wchar_t*)(((char*)Text)+Text->emrtext.offString);
       int Size = Text->emrtext.nChars;
-//      Font.Size = Text->rclBounds.bottom - Text->rclBounds.top;
-      Writer->Text(Text->rclBounds.left, Text->rclBounds.bottom, std::wstring(Str, Size), Font);
+      if(Size > 0)
+        Writer->Text(X, Y, std::wstring(Str, Size), Font);
       break;
     }
 
@@ -176,9 +190,18 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
       if(BrushList.count(Region->ihBrush))
       {
         Writer->SetBrush(BrushList[Region->ihBrush]);
-        for(unsigned I = 0; I < RegionData->rdh.nCount; I++)
-          Writer->Rectangle(reinterpret_cast<const RECTL&>(Data[I]));
+        Writer->PaintRegion(Data, RegionData->rdh.nCount);
       }
+      break;
+    }
+
+    case EMR_FRAMERGN:
+    {
+      const EMRFRAMERGN *Region = reinterpret_cast<const EMRFRAMERGN*>(lpEMFR);
+      const RGNDATA *RegionData = reinterpret_cast<const RGNDATA*>(Region->RgnData);
+      const RECT *Data = reinterpret_cast<const RECT*>(RegionData->Buffer);
+      if(BrushList.count(Region->ihBrush))
+        Writer->FrameRegion(Data, RegionData->rdh.nCount, BrushList[Region->ihBrush], Region->szlStroke.cx, Region->szlStroke.cy);
       break;
     }
 
@@ -187,20 +210,20 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
       const EMRPAINTRGN *Region = reinterpret_cast<const EMRPAINTRGN*>(lpEMFR);
       const RGNDATA *RegionData = reinterpret_cast<const RGNDATA*>(Region->RgnData);
       const RECT *Data = reinterpret_cast<const RECT*>(RegionData->Buffer);
-      for(unsigned I = 0; I < RegionData->rdh.nCount; I++)
-        Writer->Rectangle(reinterpret_cast<const RECTL&>(Data[I]));
+      Writer->PaintRegion(Data, RegionData->rdh.nCount);
       break;
     }
 
     case EMR_GDICOMMENT: //Application specific data
       break;
-
+/*
     case EMR_SETMAPMODE:
     {
       const EMRSETMAPMODE *MapMode = reinterpret_cast<const EMRSETMAPMODE*>(lpEMFR);
 //      assert(MapMode->iMode == MM_TEXT);
       break;
     }
+*/
     case EMR_SETVIEWPORTEXTEX:
     {
       const EMRSETVIEWPORTEXTEX *ViewPort = reinterpret_cast<const EMRSETVIEWPORTEXTEX*>(lpEMFR);
@@ -214,11 +237,13 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
       Writer->SetWindowMapping(WindowSize, ViewportSize, WindowOrg);
       break;
     }
+/*
     case EMR_SETTEXTALIGN:
     {
       const EMRSETTEXTALIGN *TextAlign = reinterpret_cast<const EMRSETTEXTALIGN*>(lpEMFR);
       break;
     }
+*/
     case EMR_SETWINDOWORGEX:
     {
       const EMRSETWINDOWORGEX *EmrWindowOrg = reinterpret_cast<const EMRSETWINDOWORGEX*>(lpEMFR);
@@ -226,18 +251,25 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
       break;
     }
 
-    case EMR_SETBKMODE:
-    case EMR_SETBKCOLOR:
+    case EMR_SETPOLYFILLMODE:
+      PolyFillMode = reinterpret_cast<const EMRSETPOLYFILLMODE*>(lpEMFR)->iMode == ALTERNATE ? pfmEvenOdd : pfmNonZero;
+      break;
+
+    case EMR_ARC:
+    {
+      const EMRARC *Arc = reinterpret_cast<const EMRARC*>(lpEMFR);
+      Writer->Arc(Arc->rclBox, Arc->ptlStart, Arc->ptlEnd);
+      break;
+    }
     case EMR_SELECTPALETTE:
     case EMR_EXTSELECTCLIPRGN:
     case EMR_EOF:
+    case EMR_SETROP2:
       break;
 
     default:
-    {
-      int Command = lpEMFR->iType;
+      std::clog << "Unknown EMF command: " << lpEMFR->iType << std::endl;
       break;
-    }
   }
 }
 //---------------------------------------------------------------------------
@@ -248,12 +280,12 @@ void TEmfParser::Parse(HENHMETAFILE Handle, TGraphicWriter &AWriter)
 
   Writer = &AWriter;
   RECTL Rect;
-  double xScale = (double)Header.szlDevice.cx / Header.szlMillimeters.cx / 100;
-  double yScale = (double)Header.szlDevice.cy / Header.szlMillimeters.cy / 100;
-  Rect.left = Header.rclFrame.left * xScale + 0.5;
-  Rect.top = Header.rclFrame.top * yScale + 0.5;
-  Rect.right = Header.rclFrame.right * xScale + 0.5;
-  Rect.bottom = Header.rclFrame.bottom * yScale + 0.5;
+  xScale = (double)Header.szlDevice.cx / Header.szlMillimeters.cx;
+  yScale = (double)Header.szlDevice.cy / Header.szlMillimeters.cy;
+  Rect.left = Header.rclFrame.left * xScale / 100 + 0.5;
+  Rect.top = Header.rclFrame.top * yScale / 100 + 0.5;
+  Rect.right = Header.rclFrame.right * xScale / 100 + 0.5;
+  Rect.bottom = Header.rclFrame.bottom * yScale / 100 + 0.5;
   Writer->BeginFile(Rect, Header.rclFrame.right - Header.rclFrame.left, Header.rclFrame.bottom - Header.rclFrame.top);
 
   EnumEnhMetaFile(NULL, Handle, &EnhMetaFileProc, this, NULL);
@@ -272,6 +304,20 @@ void TEmfParser::Parse(const char *FileName, TGraphicWriter &AWriter)
 unsigned TEmfParser::SwapColor(unsigned Color)
 {
   return ((Color & 0xFF) << 16) | (Color & 0xFF00) | ((Color & 0xFF0000) >> 16); // Swap Red and Blue
+}
+//---------------------------------------------------------------------------
+void CALLBACK TEmfParser::LineDDAProc(int X, int Y, LPARAM lpData)
+{
+  TEmfParser *EmfParser = reinterpret_cast<TEmfParser*>(lpData);
+  EmfParser->TempX = X;
+  EmfParser->TempY = Y;
+}
+//---------------------------------------------------------------------------
+POINT TEmfParser::FindEndPoint(int X1, int Y1, int X2, int Y2)
+{
+  LineDDA(X1, Y1, X2, Y2, LineDDAProc, reinterpret_cast<long>(this));
+  POINT P = {TempX, TempY};
+  return P;
 }
 //---------------------------------------------------------------------------
 

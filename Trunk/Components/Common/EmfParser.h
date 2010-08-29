@@ -39,7 +39,15 @@ struct TFontInfo
   std::string Name;
   unsigned Size;
   unsigned Color;
+  unsigned BkColor;
+  bool TransparentBk;
+  bool Italic;
+  bool Underline;
+  bool StrikeOut;
+  unsigned Weight;
 };
+
+enum TPolyFillMode {pfmNonZero, pfmEvenOdd};
 
 class TGraphicWriter
 {
@@ -48,15 +56,18 @@ public:
   virtual void BeginFile(const RECTL &Rect, unsigned Width, unsigned Height)=0; //Width/Height in 0.01 millimeters
   virtual void EndOfFile()=0;
   virtual void Line(int X1, int Y1, int X2, int Y2)=0;
-  virtual void Polygon(const POINTS *Points, int Count)=0;
+  virtual void Polygon(const POINTS *Points, int Count, TPolyFillMode PolyFillMode)=0;
   virtual void Polyline(const POINTS *Points, int Count)=0;
   virtual void Rectangle(const RECTL &Rect)=0;
   virtual void Ellipse(const RECTL &Rect)=0;
+  virtual void Arc(const RECTL &Box, const POINTL &Start, const POINTL &End)=0;
   virtual void Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font)=0;
   virtual void SetPen(const TPenInfo &APen)=0;
   virtual void SetBrush(const TBrushInfo &ABrush)=0;
   virtual void ExcludeClipRect(const RECTL &Rect)=0;
   virtual void SetWindowMapping(SIZEL WindowSize, SIZEL ViewportSize, POINTL WindowOrg)=0;
+  virtual void PaintRegion(const RECT *Rect, unsigned Count)=0;
+  virtual void FrameRegion(const RECT *Rect, unsigned Count, const TBrushInfo &Brush, unsigned xSize, unsigned ySize)=0;
 };
 
 class TEmfParser
@@ -69,10 +80,15 @@ class TEmfParser
   std::map<unsigned, TFontInfo> FontList;
   SIZEL WindowSize, ViewportSize;
   POINTL WindowOrg;
+  double xScale, yScale;
+  int TempX, TempY;
+  TPolyFillMode PolyFillMode;
 
   static int CALLBACK EnhMetaFileProc(HDC hDC, HANDLETABLE *lpHTable, const ENHMETARECORD *lpEMFR, int nObj, LPARAM lpData);
   void HandleRecord(const ENHMETARECORD *lpEMFR);
   static unsigned SwapColor(unsigned Color);
+  static void CALLBACK LineDDAProc(int X, int Y, LPARAM lpData);
+  POINT FindEndPoint(int X1, int Y1, int X2, int Y2);
 
 public:
   TEmfParser();

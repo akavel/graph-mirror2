@@ -22,7 +22,7 @@ class TSvgWriter : public TGraphicWriter
   std::vector<TBrushInfo> PatternList;
 
   void WritePen();
-  void WriteBrush(bool UseBrush=true);
+  void WriteBrush();
   unsigned CreatePattern();
 
 public:
@@ -30,14 +30,17 @@ public:
   void BeginFile(const RECTL &Rect, unsigned Width, unsigned Height);
   void EndOfFile();
   void Line(int X1, int Y1, int X2, int Y2);
-  void Polygon(const POINTS *Points, int Count);
+  void Polygon(const POINTS *Points, int Count, TPolyFillMode PolyFillMode);
   void Polyline(const POINTS *Points, int Count);
   void Rectangle(const RECTL &Rect);
+  void Arc(const RECTL &Box, const POINTL &Start, const POINTL &End);
   void Ellipse(const RECTL &Rect);
   void Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font);
   void SetPen(const TPenInfo &APen);
   void SetBrush(const TBrushInfo &ABrush);
   void ExcludeClipRect(const RECTL &Rect);
   void SetWindowMapping(SIZEL WindowSize, SIZEL ViewportSize, POINTL WindowOrg);
+  void PaintRegion(const RECT *Rect, unsigned Count);
+  void FrameRegion(const RECT *Rect, unsigned Count, const TBrushInfo &Brush, unsigned xSize, unsigned ySize);
 };
 #endif
