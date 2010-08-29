@@ -310,7 +310,7 @@ unsigned TDraw::FindLabels()
           LabelInfo.Label = MakeNumber(y, Axes.yAxis.MultiplyOfPi);
           LabelInfo.Width = Context.GetTextWidth(LabelInfo.Label);
           LabelInfo.Pos = yPixel;
-          if(Axes.NumberPlacement == npCenter)
+          if(Axes.yAxis.NumberPlacement == npCenter)
             LabelInfo.Pos -= NumberHeight / 2;
           yLabelInfo.push_back(LabelInfo);
           if(LabelInfo.Width > MaxWidth)
@@ -578,7 +578,7 @@ void TDraw::DrawAxes()
   //Set pen width and style; Used when drawing axes
   Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(2));
 
-  if(Axes.xAxis.ShowNumbers)
+  if(Axes.xAxis.ShowNumbers && Axes.xAxis.Visible)
   {
     double x = xTickMin; //Current x-position
     int yPixel = yPixelCross + Size(PlotSettings.xNumberDist); //Pixel position to draw numbers
@@ -597,7 +597,7 @@ void TDraw::DrawAxes()
           //Compare with 0 instead of AxesRect.Left because it is okay to write in the blank area
           if(xPixel - TextWidth / 2 >= 0 && xPixel + TextWidth / 2 <= AxesRect.Right)
           {                                                  
-            xPixel -= Axes.NumberPlacement == npCenter ? TextWidth / 2 : TextWidth;
+            xPixel -= Axes.xAxis.NumberPlacement == npCenter ? TextWidth / 2 : TextWidth;
             Context.DrawText(Str, xPixel, yPixel);
           }
         }
@@ -611,18 +611,19 @@ void TDraw::DrawAxes()
   }
 
   //Draw number labels on the y-axis
-  for(std::vector<TLabelInfo>::const_iterator Iter = yLabelInfo.begin(); Iter != yLabelInfo.end(); ++Iter)
-    Context.DrawText(Iter->Label, xPixelCross - Iter->Width - Size(PlotSettings.yNumberDist), Iter->Pos);
+  if(Axes.yAxis.Visible)
+    for(std::vector<TLabelInfo>::const_iterator Iter = yLabelInfo.begin(); Iter != yLabelInfo.end(); ++Iter)
+      Context.DrawText(Iter->Label, xPixelCross - Iter->Width - Size(PlotSettings.yNumberDist), Iter->Pos);
 
   //Set font for labels
   Context.SetFont(Axes.LabelFont);
-  if(Axes.xAxis.ShowLabel)
+  if(Axes.xAxis.ShowLabel && Axes.xAxis.Visible)
   {
     xLabelWidth = Context.GetTextWidth(Axes.xAxis.Label);
     Context.DrawText(Axes.xAxis.Label, AxesRect.Right-xLabelWidth-3, yPixelCross-Context.GetTextHeight(Axes.xAxis.Label)-Size(6));
   }
 
-  if(Axes.yAxis.ShowLabel)
+  if(Axes.yAxis.ShowLabel && Axes.yAxis.Visible)
   {
     //Compensate for line gap, especially with large fonts.
     OUTLINETEXTMETRIC TextMetric;
@@ -631,7 +632,7 @@ void TDraw::DrawAxes()
   }
 
   //If x-axis is inside the view
-  if(yPixelCross >= AxesRect.Top && yPixelCross <= AxesRect.Bottom)
+  if(yPixelCross >= AxesRect.Top && yPixelCross <= AxesRect.Bottom && Axes.xAxis.Visible)
   {
     int X1 = AxesRect.Left;
     int X2 = AxesRect.Right - 1;
@@ -647,9 +648,9 @@ void TDraw::DrawAxes()
     const TPoint LeftArrow[] = {TPoint(X1+a, Y-a-b), TPoint(X1, Y-b), TPoint(X1, Y), TPoint(X1+a, Y+a)};
     const TPoint RightArrow[] = {TPoint(X2-a, Y-a-b), TPoint(X2, Y-b), TPoint(X2, Y), TPoint(X2-a, Y+a)};
     //Show filled arrow on x-axis
-    if(Axes.AxesArrows == aaBothEnds)
+    if(Axes.xAxis.ShowNegativeArrow)
       Context.DrawPolygon(LeftArrow, 4);
-    if(Axes.AxesArrows != aaNone)
+    if(Axes.xAxis.ShowPositiveArrow)
       Context.DrawPolygon(RightArrow, 4);
 
     //Only show ticks if we have not already drawn a solid grid line instead
@@ -663,7 +664,7 @@ void TDraw::DrawAxes()
   }
 
   //If y-axis is inside the view
-  if(xPixelCross >= AxesRect.Left && xPixelCross <= AxesRect.Right)
+  if(xPixelCross >= AxesRect.Left && xPixelCross <= AxesRect.Right && Axes.yAxis.Visible)
   {
     int X = xPixelCross;
     int Y1 = AxesRect.Top;
@@ -679,9 +680,9 @@ void TDraw::DrawAxes()
     TPoint BottomArrow[] = {TPoint(X-a-b, Y2-a), TPoint(X-b, Y2-1), TPoint(X, Y2-b), TPoint(X+a, Y2-a)};
 
     //Show arrow on y-axis
-    if(Axes.AxesArrows == aaBothEnds)
+    if(Axes.yAxis.ShowNegativeArrow)
       Context.DrawPolygon(BottomArrow, 4);
-    if(Axes.AxesArrows != aaNone)
+    if(Axes.yAxis.ShowPositiveArrow)
       Context.DrawPolygon(TopArrow, 4);
 
     double yPixelScl = (Axes.yAxis.LogScl ? std::log(Axes.yAxis.TickUnit) : Axes.yAxis.TickUnit) * yScale;

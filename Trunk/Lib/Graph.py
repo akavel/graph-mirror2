@@ -115,7 +115,7 @@ class ChildListType(collections.MutableSequence):
     def insert(self, key, value):
         Data.InsertChild(self.node, GetBaseObject(value), key)
     def __setitem__(self, key, value):
-        Data.ReplaceChild(self.node, key, value)
+        Data.ReplaceChild(self.node, key, GetBaseObject(value))
     def append(self, value):
         Data.InsertChild(self.node, GetBaseObject(value), -1)
     def __delitem__(self, key):
@@ -166,3 +166,8 @@ OnNewElem = []
 OnChanged = []
 OnMoved = []
 EventList = [OnNew, OnLoad, OnSelect, OnClose, OnEdit, OnAnimate, OnDelete, OnAxesChanged, OnZoom, OnOptionsChanged, OnCustomFunctionsChanged, OnNewElem, OnChanged, OnMoved]
+
+# Imports from Utility
+BeginMultiUndo = Utility.BeginMultiUndo
+EndMultiUndo = Utility.EndMultiUndo
+LoadDefault = Utility.LoadDefault

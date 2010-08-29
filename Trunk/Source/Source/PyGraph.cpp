@@ -302,22 +302,6 @@ static PyObject* PluginEvalComplex(PyObject *Self, PyObject *Args)
   }
 }
 //---------------------------------------------------------------------------
-static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args)
-{
-  const wchar_t *FileName = PyUnicode_AsUnicode(Args);
-  TImageOptions ImageOptions(Form1->Image1->Width, Form1->Image1->Height);
-  try
-  {
-    SaveAsImage(FileName, ImageOptions);
-  }
-  catch(ESaveError &E)
-  {
-    PyErr_SetString(PyEGraphError, ToString(E.Message).c_str());
-    return NULL;
-  }
-  Py_RETURN_NONE;
-}
-//---------------------------------------------------------------------------
 static PyObject* PluginUpdate(PyObject *Self, PyObject *Args)
 {
   TUnlockGIL Dummy;
@@ -423,6 +407,41 @@ static PyObject* PluginDelConstant(PyObject *Self, PyObject *Args)
   }
 }
 //---------------------------------------------------------------------------
+static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args, PyObject *Kwds)
+{
+  try
+  {
+    TImageOptions Options(Form1->Image1->Width, Form1->Image1->Height);
+    Options.LoadSettings();
+    static char *kwlist[] = {"FileType", "Width", "Height", NULL};
+
+    const wchar_t *FileName = NULL;
+    int FileType = -1, Width = -1, Height = -1;
+    if(!PyArg_ParseTupleAndKeywords(Args, Kwds, "u|iii", kwlist, &FileType, &Width, &Height))
+      return NULL;
+
+    if(Width == 0 || Height == 0)
+      Options.UseCustomSize = false;
+    else if(Width != -1 || Height != -1)
+    {
+      Options.UseCustomSize = true;
+      Options.CustomWidth = Width;
+      Options.CustomHeight = Height;
+    }
+
+    if(FileType == -1)
+      SaveAsImage(FileName, FileType, Options);
+    else
+      SaveAsImage(FileName, Options);
+    Py_RETURN_NONE;
+  }
+  catch(...)
+  {
+    ConvertException();
+    return NULL;
+  }
+}
+//---------------------------------------------------------------------------
 static PyMethodDef GraphMethods[] = {
   {"CreateAction",              PluginCreateAction, METH_NOARGS, ""},
   {"SetCustomFunction",         PluginSetCustomFunction, METH_VARARGS, ""},
@@ -433,12 +452,12 @@ static PyMethodDef GraphMethods[] = {
   {"InputQuery",                PluginInputQuery, METH_VARARGS, ""},
   {"Eval",                      PluginEval, METH_VARARGS, ""},
   {"EvalComplex",               PluginEvalComplex, METH_VARARGS, ""},
-  {"SaveAsImage",               PluginSaveAsImage, METH_O, ""},
   {"Update",                    PluginUpdate, METH_NOARGS, ""},
   {"SetConstant",               PluginSetConstant, METH_VARARGS, ""},
   {"GetConstant",               PluginGetConstant, METH_O, ""},
   {"DelConstant",               PluginDelConstant, METH_O, ""},
   {"GetConstantNames",          PluginGetConstantNames, METH_NOARGS, ""},
+  {"SaveAsImage",               (PyCFunction)PluginSaveAsImage, METH_VARARGS | METH_KEYWORDS, ""},
   {NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
@@ -664,6 +683,26 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1, TVariant V2, TVar
     return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NNN)", ToPyObject(V1), ToPyObject(V2), ToPyObject(V2)));
   }
   return false;
+}
+//---------------------------------------------------------------------------
+void ConvertException()
+{
+  try
+  {
+    throw;
+  }
+  catch(Func32::EFuncError &E)
+  {
+    PyErr_SetString(PyEFuncError, AnsiString(GetErrorMsg(E)).c_str());
+  }
+  catch(Exception &E)
+  {
+    PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
+  }
+  catch(...)
+  {
+    PyErr_SetString(PyExc_RuntimeError, "Unknown exception");
+  }
 }
 //---------------------------------------------------------------------------
 } //namespace Python

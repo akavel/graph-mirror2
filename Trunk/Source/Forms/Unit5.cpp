@@ -149,12 +149,12 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
   {
     Func->SetVisible(F->GetVisible());
     Func->SetShowInLegend(F->GetShowInLegend());
-    UndoList.Push(TUndoChange(Data, F, Func));
+    UndoList.Push(TUndoChange(F, Func));
     Data.Replace(F, Func);
   }
   else
   {
-    UndoList.Push(TUndoAdd(Data, Func));
+    UndoList.Push(TUndoAdd(Func));
     Data.Insert(Func);
   }
 

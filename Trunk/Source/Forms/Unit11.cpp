@@ -100,12 +100,12 @@ void __fastcall TForm11::Button1Click(TObject *Sender)
     {
       NewRelation->SetVisible(Relation->GetVisible());
       NewRelation->SetShowInLegend(Relation->GetShowInLegend());
-      UndoList.Push(TUndoChange(Data, Relation, NewRelation));
+      UndoList.Push(TUndoChange(Relation, NewRelation));
       Data.Replace(Relation, NewRelation);
     }
     else
     {
-      UndoList.Push(TUndoAdd(Data, NewRelation));
+      UndoList.Push(TUndoAdd(NewRelation));
       Data.Insert(NewRelation);
     }
     Data.SetModified();

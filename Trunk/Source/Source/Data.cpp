@@ -519,7 +519,7 @@ void TData::Delete(const TGraphElemPtr &Elem)
     Parent->RemoveChild(Parent->GetChildIndex(Elem));
 }
 //---------------------------------------------------------------------------
-int TData::GetIndex(const TGraphElemPtr &Elem) const
+int TData::GetIndex(const TGraphElemPtr &Elem)
 {
   const TGraphElemPtr &Parent = Elem->GetParent();
   return Parent->GetChildIndex(Elem);
@@ -533,6 +533,7 @@ void TData::Replace(unsigned Index, const TGraphElemPtr &Elem)
 void TData::Replace(const TGraphElemPtr &OldElem, const TGraphElemPtr &Elem)
 {
   int Index = OldElem->GetParent()->GetChildIndex(OldElem);
+  const boost::shared_ptr<TTopGraphElem> &TopElem = OldElem->GetData().TopElem;
   OldElem->GetParent()->ReplaceChild(Index, Elem);
 
   while(OldElem->ChildCount() > 0)

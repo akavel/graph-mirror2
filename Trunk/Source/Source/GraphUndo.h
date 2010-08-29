@@ -15,56 +15,50 @@ namespace Graph
 {
 struct TUndoAdd
 {
-  TData &Data;
   boost::shared_ptr<TGraphElem> GraphElem;
 
-  TUndoAdd(TData &AData, const boost::shared_ptr<TGraphElem> &AGraphElem)
-    : Data(AData), GraphElem(AGraphElem) {}
+  TUndoAdd(const boost::shared_ptr<TGraphElem> &AGraphElem)
+    : GraphElem(AGraphElem) {}
   void operator()(TUndoList &UndoList) const;
 };
 
 struct TUndoChange
 {
-  TData &Data;
   TGraphElemPtr OldElem;
   TGraphElemPtr NewElem;
 
-  TUndoChange(TData &AData, const TGraphElemPtr &AOldElem, const TGraphElemPtr &ANewElem)
-    : Data(AData), OldElem(AOldElem), NewElem(ANewElem)
+  TUndoChange(const TGraphElemPtr &AOldElem, const TGraphElemPtr &ANewElem)
+    : OldElem(AOldElem), NewElem(ANewElem)
   {
     OldElem->ClearCache();
   }
 
   void operator()(TUndoList &UndoList) const
   {
-    UndoList.Push(TUndoChange(Data, NewElem, OldElem));
-    Data.Replace(NewElem, OldElem);
+    UndoList.Push(TUndoChange(NewElem, OldElem));
+    TData::Replace(NewElem, OldElem);
   }
 };
 
 struct TUndoDel
 {
-  TData &Data;
   int Index;
   TGraphElemPtr Elem;
   TGraphElemPtr Parent;
 
-  TUndoDel(TData &AData, const TGraphElemPtr &AElem, const TGraphElemPtr &AParent, int AIndex)
-    : Data(AData), Index(AIndex), Elem(AElem), Parent(AParent)  { }
+  TUndoDel(const TGraphElemPtr &AElem, const TGraphElemPtr &AParent, int AIndex)
+    : Index(AIndex), Elem(AElem), Parent(AParent)  { }
   void operator()(TUndoList &UndoList) const
   {
-    UndoList.Push(TUndoAdd(Data, Elem));
-    if(Parent)
-      Parent->InsertChild(Elem, Index);
-    else
-      Data.Insert(Elem, Index);
+    UndoList.Push(TUndoAdd(Elem));
+    Parent->InsertChild(Elem, Index);
   }
 };
 
 inline void TUndoAdd::operator()(TUndoList &UndoList) const
 {
-  UndoList.Push(TUndoDel(Data, GraphElem, GraphElem->GetParent(), Data.GetIndex(GraphElem)));
-  Data.Delete(GraphElem);
+  UndoList.Push(TUndoDel(GraphElem, GraphElem->GetParent(), TData::GetIndex(GraphElem)));
+  TData::Delete(GraphElem);
 }
 
 

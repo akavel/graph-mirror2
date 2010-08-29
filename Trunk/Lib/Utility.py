@@ -67,4 +67,24 @@ except AttributeError:
 
 
 
+def BeginMultiUndo() -> "void" :
+  return _Utility.BeginMultiUndo()
+BeginMultiUndo = _Utility.BeginMultiUndo
+
+def EndMultiUndo() -> "void" :
+  return _Utility.EndMultiUndo()
+EndMultiUndo = _Utility.EndMultiUndo
+
+def LoadDefault() -> "void" :
+  return _Utility.LoadDefault()
+LoadDefault = _Utility.LoadDefault
+
+
+def LoadFromFile(*args) -> "bool" :
+  return _Utility.LoadFromFile(*args)
+LoadFromFile = _Utility.LoadFromFile
+
+def SaveToFile(*args) -> "bool" :
+  return _Utility.SaveToFile(*args)
+SaveToFile = _Utility.SaveToFile
 

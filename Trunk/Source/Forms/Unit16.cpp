@@ -167,12 +167,12 @@ void __fastcall TForm16::Button1Click(TObject *Sender)
     Shade->SetVisible(OldShade->GetVisible());
     Shade->SetShowInLegend(OldShade->GetShowInLegend());
     int Index = OldShade->GetParent()->GetChildIndex(OldShade);
-    UndoList.Push(TUndoChange(Data, OldShade, Shade));
+    UndoList.Push(TUndoChange(OldShade, Shade));
     OldShade->GetParent()->ReplaceChild(Index, Shade);
   }
   else
   {
-    UndoList.Push(TUndoAdd(Data, Shade));
+    UndoList.Push(TUndoAdd(Shade));
     Func->InsertChild(Shade);
   }
 

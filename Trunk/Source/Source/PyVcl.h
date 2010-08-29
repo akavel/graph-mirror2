@@ -13,6 +13,8 @@
 struct _object;
 namespace Python
 {
+  extern _object *PyPropertyException;
+  extern _object *PyVclException;
   _object* InitPyVcl();
 }
 #endif

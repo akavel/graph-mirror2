@@ -26,14 +26,15 @@ TGuiSettings GuiSettings;
 ///////////
 TAxis::TAxis() : Min(-10), Max(10), LogScl(false), ShowGrid(false), MultiplyOfPi(false),
   ShowLabel(true), ShowNumbers(true), ShowTicks(true), AutoTick(true), AutoGrid(true),
-  AxisCross(0), TickUnit(1), GridUnit(1)
+  AxisCross(0), TickUnit(1), GridUnit(1), NumberPlacement(npCenter),
+  Visible(true), ShowPositiveArrow(true), ShowNegativeArrow(false)
 {
 }
 //---------------------------------------------------------------------------
 TAxes::TAxes() : ShowLegend(true), AxesColor(clBlue),
   GridColor(static_cast<TColor>(0x00FF9999)), BackgroundColor(clWhite), Trigonometry(Func32::Radian),
   AxesStyle(asCrossed), LegendPlacement(lpTopRight), GridSize(1), CalcComplex(false), //ZoomSquare(false),
-  LegendPos(0,0), AxesArrows(aaPositiveEnd), NumberPlacement(npCenter), GridStyle(gsLines)  
+  LegendPos(0,0), GridStyle(gsLines)
 {
 }
 //---------------------------------------------------------------------------
@@ -53,6 +54,10 @@ void TAxis::WriteToIni(TConfigFileSection &Section, const std::wstring &Prefix) 
   Section.Write(Prefix + L"ShowNumbers", ShowNumbers, true);
   Section.Write(Prefix + L"AxisCross", AxisCross, 0.0);
   Section.Write(Prefix + L"MultiplyOfPi", MultiplyOfPi, false);
+  Section.Write(Prefix + L"Visible", Visible, true);
+  Section.Write(Prefix + L"ShowPositiveArrow", ShowPositiveArrow, true);
+  Section.Write(Prefix + L"ShowNegativeArrow", ShowNegativeArrow, false);
+  Section.Write(Prefix + L"NumberPlacement", NumberPlacement, npCenter);
 }
 //---------------------------------------------------------------------------
 void TAxes::WriteToIni(TConfigFileSection &Section) const
@@ -76,9 +81,6 @@ void TAxes::WriteToIni(TConfigFileSection &Section) const
     Section.Write(L"LegendPos", LegendPos);
   Section.Write(L"GridSize", GridSize, 1U);
   Section.Write(L"CalcComplex", CalcComplex, false);
-//  Section.Write(L"ZoomSquare", ZoomSquare, false);
-  Section.Write(L"AxesArrows", AxesArrows, aaPositiveEnd);
-  Section.Write(L"NumberPlacement", NumberPlacement, npCenter);
   Section.Write(L"GridStyle", GridStyle, gsLines);
 }
 //---------------------------------------------------------------------------
@@ -99,6 +101,10 @@ void TAxis::ReadFromIni(const TConfigFileSection &Section, const std::wstring &P
   Label = Section.Read(Prefix + L"Label", Prefix);
   AxisCross = Section.Read(Prefix + L"AxisCross", 0.0);
   MultiplyOfPi = Section.Read(Prefix + L"MultiplyOfPi", false);
+  Visible = Section.Read(Prefix + L"Visible", true);
+  ShowPositiveArrow = Section.Read(Prefix + L"ShowPositiveArrow", true);
+  ShowNegativeArrow = Section.Read(Prefix + L"ShowNegativeArrow", false);
+  NumberPlacement = Section.Read(Prefix + L"NumberPlacement", npCenter);
 }
 //---------------------------------------------------------------------------
 void TAxes::ReadFromIni(const TConfigFileSection &Section)
@@ -121,9 +127,6 @@ void TAxes::ReadFromIni(const TConfigFileSection &Section)
   LegendPos = Section.Read(L"LegendPos", Func32::TDblPoint(0, 0));
   GridSize = Section.Read(L"GridSize", 1);
   CalcComplex = Section.Read(L"CalcComplex", false);
-//  ZoomSquare = Section.Read(L"ZoomSquare", false);
-  AxesArrows = Section.Read(L"AxesArrows", aaPositiveEnd);
-  NumberPlacement = Section.Read(L"NumberPlacement", npCenter);
   GridStyle = Section.Read(L"GridStyle", gsLines);
 }
 //---------------------------------------------------------------------------
@@ -512,7 +515,7 @@ TPlotSettings::TPlotSettings()
 //////////////////
 TGuiSettings::TGuiSettings()
   : MajorZoomIn(0.25), MinorZoomIn(0.45), MajorZoomOut(1), MinorZoomOut(10.0/18.0),
-    MajorStepSize(0.1), MinorStepSize(0.01)
+    MajorStepSize(0.1), MinorStepSize(0.01), MouseZoomIn(0.4330127), MouseZoomOut(0.7071067812)
 {
 }
 //---------------------------------------------------------------------------

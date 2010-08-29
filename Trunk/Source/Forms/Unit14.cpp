@@ -198,12 +198,12 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
     PointSeries->SetVisible(Series->GetVisible());
     PointSeries->SetShowInLegend(Series->GetShowInLegend());
     int Index = Data.GetIndex(Series);
-    UndoList.Push(TUndoChange(Data, Series, PointSeries));
+    UndoList.Push(TUndoChange(Series, PointSeries));
     Data.Replace(Series, PointSeries);
   }
   else
   {
-    UndoList.Push(TUndoAdd(Data, PointSeries));
+    UndoList.Push(TUndoAdd(PointSeries));
     Data.Insert(PointSeries);
   }
 

@@ -50,7 +50,7 @@ void __fastcall TForm21::TntButton1Click(TObject *Sender)
     Label->GetBackgroundColor(),
     Label->GetRotation()
   ));
-  UndoList.Push(TUndoChange(Data, Label, NewLabel));
+  UndoList.Push(TUndoChange(Label, NewLabel));
   Data.Replace(Label, NewLabel);
   NewLabel->Update();
   ModalResult = mrOk;

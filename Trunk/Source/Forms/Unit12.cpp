@@ -88,14 +88,14 @@ void __fastcall TForm12::Button1Click(TObject *Sender)
   if(!OldTan)
   {
     Parent->InsertChild(Tan);
-    UndoList.Push(TUndoAdd(Data, Tan));
+    UndoList.Push(TUndoAdd(Tan));
   }
   else
   {
     Tan->SetVisible(OldTan->GetVisible());
     Tan->SetShowInLegend(OldTan->GetShowInLegend());
     unsigned Index = Parent->GetChildIndex(OldTan);
-    UndoList.Push(TUndoChange(Data, OldTan, Tan));
+    UndoList.Push(TUndoChange(OldTan, Tan));
     Parent->ReplaceChild(Index, Tan);
   }
 
