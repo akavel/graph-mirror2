@@ -8,6 +8,7 @@
 @import url("styles_chm.css");
 
 /* Don't display indexterms */
+
 .indexterm {
   margin: 0;
   padding: 0;
@@ -29,4 +30,12 @@ div.navfooter {
 
 div.toc {
    margin-top: 1cm;
+}
+
+tr.question td {
+   vertical-align: bottom;
+}
+
+tr.answer td {
+   vertical-align: top;
 }
