@@ -148,7 +148,7 @@ To be considered
 - Highlight matching brackets in edit controls.
 
 Plugins:
-- Circle item
++ Circle item
 - Convert points, i.e. pass through a function.
 - Add custom names to axes, e.g. sqrt(2) or hh:mm.
 - Implement the erf(x) and erfc(x) functions. (See email from profesor de ciencias at 29/12-07)
@@ -159,7 +159,7 @@ Plugins:
 - Find distance from point to graph
 - Plot triangles created from side lengths and/or angles
 - Copy only part of the image.
-- Change how much Zoom|In and Zoom|Out should zoom, e.g. PI/180.
++ Change how much Zoom|In and Zoom|Out should zoom, e.g. PI/180.
 - Store window size in grf-file and restore it when the file is opened.
 - Insert different kinds of functions, see email from Francisco Oliver 8/1-09.
 - Customize the numbers on the axes, i.e. add/remove numbers.
