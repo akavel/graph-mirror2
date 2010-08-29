@@ -239,5 +239,11 @@ void __fastcall TExtColorBox::ChangeScale(int M, int D)
   ItemHeight = (ItemHeight * M) / D;
 }
 //---------------------------------------------------------------------------
+void __fastcall TExtColorBox::CreateWnd()
+{
+  TCustomComboBox::CreateWnd();
+  PopulateList();
+}
+//---------------------------------------------------------------------------
 
 
