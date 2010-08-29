@@ -38,6 +38,7 @@ protected:
   void __fastcall DrawItem(int Index, const Types::TRect &Rect, TOwnerDrawState State);
   DYNAMIC void __fastcall KeyPress(Char &Key);
   DYNAMIC void __fastcall Select();
+  void __fastcall CreateWnd();
   void __fastcall Loaded();
   DYNAMIC void __fastcall CloseUp();
   DYNAMIC void __fastcall KeyDown(unsigned short &Key, TShiftState Shift);
