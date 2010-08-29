@@ -67,6 +67,10 @@ class TButton(TObject):
     def __init__(self, Parent, **keywords):
         TObject.__init__(self, PyVcl.CreateObject("TButton"), Parent = Parent._handle, **keywords)
 
+class TExtColorBox(TObject):
+    def __init__(self, Parent, **keywords):
+        TObject.__init__(self, PyVcl.CreateObject("TExtColorBox"), Parent = Parent._handle, **keywords)
+
 def CreateObject(type, **keywords):
     return TObject(PyVcl.CreateObject(type), **keywords)
 

@@ -187,7 +187,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
     BaseFunc->Size = Edit2->Text.ToInt();
     BaseFunc->Style = LineSelect1->LineStyle;
     Data.Insert(BaseFunc);
-    UndoList.Push(TUndoAdd(Data, BaseFunc));
+    UndoList.Push(TUndoAdd(BaseFunc));
   }
   catch(Func32::EFuncError &Error)
   {

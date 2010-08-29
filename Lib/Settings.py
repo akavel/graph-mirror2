@@ -80,6 +80,8 @@ lpTopRight = _Settings.lpTopRight
 lpBottomRight = _Settings.lpBottomRight
 lpTopLeft = _Settings.lpTopLeft
 lpBottomLeft = _Settings.lpBottomLeft
+npCenter = _Settings.npCenter
+npBefore = _Settings.npBefore
 class TAxis(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, TAxis, name, value)
@@ -129,14 +131,21 @@ class TAxis(_object):
     __swig_setmethods__["GridUnit"] = _Settings.TAxis_GridUnit_set
     __swig_getmethods__["GridUnit"] = _Settings.TAxis_GridUnit_get
     if _newclass:GridUnit = _swig_property(_Settings.TAxis_GridUnit_get, _Settings.TAxis_GridUnit_set)
+    __swig_setmethods__["Visible"] = _Settings.TAxis_Visible_set
+    __swig_getmethods__["Visible"] = _Settings.TAxis_Visible_get
+    if _newclass:Visible = _swig_property(_Settings.TAxis_Visible_get, _Settings.TAxis_Visible_set)
+    __swig_setmethods__["ShowPositiveArrow"] = _Settings.TAxis_ShowPositiveArrow_set
+    __swig_getmethods__["ShowPositiveArrow"] = _Settings.TAxis_ShowPositiveArrow_get
+    if _newclass:ShowPositiveArrow = _swig_property(_Settings.TAxis_ShowPositiveArrow_get, _Settings.TAxis_ShowPositiveArrow_set)
+    __swig_setmethods__["ShowNegativeArrow"] = _Settings.TAxis_ShowNegativeArrow_set
+    __swig_getmethods__["ShowNegativeArrow"] = _Settings.TAxis_ShowNegativeArrow_get
+    if _newclass:ShowNegativeArrow = _swig_property(_Settings.TAxis_ShowNegativeArrow_get, _Settings.TAxis_ShowNegativeArrow_set)
+    __swig_setmethods__["NumberPlacement"] = _Settings.TAxis_NumberPlacement_set
+    __swig_getmethods__["NumberPlacement"] = _Settings.TAxis_NumberPlacement_get
+    if _newclass:NumberPlacement = _swig_property(_Settings.TAxis_NumberPlacement_get, _Settings.TAxis_NumberPlacement_set)
 TAxis_swigregister = _Settings.TAxis_swigregister
 TAxis_swigregister(TAxis)
 
-aaNone = _Settings.aaNone
-aaPositiveEnd = _Settings.aaPositiveEnd
-aaBothEnds = _Settings.aaBothEnds
-npCenter = _Settings.npCenter
-npBefore = _Settings.npBefore
 gsLines = _Settings.gsLines
 gsDots = _Settings.gsDots
 class TAxes(_object):
@@ -193,12 +202,6 @@ class TAxes(_object):
     __swig_setmethods__["CalcComplex"] = _Settings.TAxes_CalcComplex_set
     __swig_getmethods__["CalcComplex"] = _Settings.TAxes_CalcComplex_get
     if _newclass:CalcComplex = _swig_property(_Settings.TAxes_CalcComplex_get, _Settings.TAxes_CalcComplex_set)
-    __swig_setmethods__["AxesArrows"] = _Settings.TAxes_AxesArrows_set
-    __swig_getmethods__["AxesArrows"] = _Settings.TAxes_AxesArrows_get
-    if _newclass:AxesArrows = _swig_property(_Settings.TAxes_AxesArrows_get, _Settings.TAxes_AxesArrows_set)
-    __swig_setmethods__["NumberPlacement"] = _Settings.TAxes_NumberPlacement_set
-    __swig_getmethods__["NumberPlacement"] = _Settings.TAxes_NumberPlacement_get
-    if _newclass:NumberPlacement = _swig_property(_Settings.TAxes_NumberPlacement_get, _Settings.TAxes_NumberPlacement_set)
     __swig_setmethods__["GridStyle"] = _Settings.TAxes_GridStyle_set
     __swig_getmethods__["GridStyle"] = _Settings.TAxes_GridStyle_get
     if _newclass:GridStyle = _swig_property(_Settings.TAxes_GridStyle_get, _Settings.TAxes_GridStyle_set)
@@ -366,6 +369,12 @@ class TGuiSettings(_object):
     __swig_setmethods__["MinorStepSize"] = _Settings.TGuiSettings_MinorStepSize_set
     __swig_getmethods__["MinorStepSize"] = _Settings.TGuiSettings_MinorStepSize_get
     if _newclass:MinorStepSize = _swig_property(_Settings.TGuiSettings_MinorStepSize_get, _Settings.TGuiSettings_MinorStepSize_set)
+    __swig_setmethods__["MouseZoomIn"] = _Settings.TGuiSettings_MouseZoomIn_set
+    __swig_getmethods__["MouseZoomIn"] = _Settings.TGuiSettings_MouseZoomIn_get
+    if _newclass:MouseZoomIn = _swig_property(_Settings.TGuiSettings_MouseZoomIn_get, _Settings.TGuiSettings_MouseZoomIn_set)
+    __swig_setmethods__["MouseZoomOut"] = _Settings.TGuiSettings_MouseZoomOut_set
+    __swig_getmethods__["MouseZoomOut"] = _Settings.TGuiSettings_MouseZoomOut_get
+    if _newclass:MouseZoomOut = _swig_property(_Settings.TGuiSettings_MouseZoomOut_get, _Settings.TGuiSettings_MouseZoomOut_set)
 TGuiSettings_swigregister = _Settings.TGuiSettings_swigregister
 TGuiSettings_swigregister(TGuiSettings)
 

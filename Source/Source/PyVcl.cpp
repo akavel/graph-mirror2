@@ -14,14 +14,15 @@
 #undef _DEBUG
 #include <python.h>
 #include "PythonBind.h"
+#include "ExtColorBox.h"
 
 #define NAME_VALUE_ENTRY(x) {_TEXT(#x), (TFastcallFunction)x}
 
 namespace Python
 {
 //---------------------------------------------------------------------------
-static PyObject *PyPropertyException = NULL;
-static PyObject *PyVclException = NULL;
+PyObject *PyPropertyException = NULL;
+PyObject *PyVclException = NULL;
 //---------------------------------------------------------------------------
 template<class T> T VclCast(TObject *Object)
 {
@@ -456,6 +457,7 @@ PyObject* InitPyVcl()
   RegisterClass(__classid(TAction));
   RegisterClass(__classid(TMenuItem));
   RegisterClass(__classid(TPanel));
+  RegisterClass(__classid(TExtColorBox));
 
   PyObject *PyVclModule = PyModule_Create(&PyVclModuleDef);
 

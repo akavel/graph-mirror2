@@ -25,6 +25,7 @@ struct EGraphError : public std::exception
 };
 
 typedef boost::shared_ptr<class TGraphElem> TGraphElemPtr;
+typedef boost::weak_ptr<class TGraphElem> TWeakGraphElemPtr;
 
 struct TGraphElemVisitor
 {
@@ -69,7 +70,7 @@ class TGraphElem : public boost::enable_shared_from_this<TGraphElem>
   bool ShowInLegend;
   std::wstring LegendText;
   std::vector<TGraphElemPtr> ChildList;
-  boost::weak_ptr<TGraphElem> Parent;
+  TWeakGraphElemPtr Parent;
 
   void SetParent(const TGraphElemPtr &AParent) {Parent = AParent;}
 

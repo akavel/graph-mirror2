@@ -407,7 +407,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
             Data.Insert(Label);
             Label->Update();
             Redraw();
-            UndoList.Push(TUndoAdd(Data, Label));
+            UndoList.Push(TUndoAdd(Label));
             UpdateTreeView();
             UpdateMenu();
             Data.SetModified();
@@ -685,7 +685,7 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
             MovingLabel->GetBackgroundColor(),
             MovingLabel->GetRotation()
           ));
-          UndoList.Push(TUndoChange(Data, MovingLabel, NewLabel));
+          UndoList.Push(TUndoChange(MovingLabel, NewLabel));
           Data.Replace(MovingLabel, NewLabel);
           NewLabel->Update();
           NewLabel->UpdateRect(Image2->Left, Image2->Top); //Needed so we don't have to wait for label to be redrawn
@@ -1247,7 +1247,7 @@ void __fastcall TForm1::FormMouseWheelUp(TObject *Sender,
 
   //New window is 0.75 times the current
 //  Zoom(ClientPos, 0.4330127, false);
-  Zoom(LastZoomCoord.x, LastZoomCoord.y, 0.4330127, 0.4330127, false);
+  Zoom(LastZoomCoord.x, LastZoomCoord.y, GuiSettings.MouseZoomIn, GuiSettings.MouseZoomIn, false);
   Handled = true;
 }
 //---------------------------------------------------------------------------
@@ -1260,7 +1260,7 @@ void __fastcall TForm1::FormMouseWheelDown(TObject *Sender,
        return;
 
   //New window is 2 times the current
-  Zoom(0.7071067812, false);
+  Zoom(GuiSettings.MouseZoomOut, false);
   Handled = true;
 }
 //---------------------------------------------------------------------------
@@ -1336,9 +1336,11 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 
     case VK_F9:
       Draw.AbortUpdate();
-      Data.Axes.AxesArrows = Data.Axes.AxesArrows == aaPositiveEnd ? aaBothEnds : aaPositiveEnd;
-      Data.Axes.NumberPlacement = Data.Axes.NumberPlacement == npCenter ? npBefore : npCenter;
-      Redraw(); //Activates thread; must be done after OLE update    
+      Data.Axes.xAxis.ShowNegativeArrow = !Data.Axes.xAxis.ShowNegativeArrow;
+      Data.Axes.yAxis.ShowNegativeArrow = !Data.Axes.yAxis.ShowNegativeArrow;
+      Data.Axes.xAxis.NumberPlacement = Data.Axes.xAxis.NumberPlacement == npCenter ? npBefore : npCenter;
+      Data.Axes.yAxis.NumberPlacement = Data.Axes.yAxis.NumberPlacement == npCenter ? npBefore : npCenter;
+      Redraw(); //Activates thread; must be done after OLE update
       break;
 
     case VK_F11:
@@ -2099,14 +2101,14 @@ void TForm1::DeleteGraphElem(const boost::shared_ptr<TGraphElem> &GraphElem)
         if(boost::shared_ptr<TShading> Shade = boost::dynamic_pointer_cast<TShading>(Elem->GetChild(J)))
           if(Shade->Func2 == GraphElem)
           {
-            UndoList.Push(TUndoDel(Data, Shade, Shade->GetParent(), I));
+            UndoList.Push(TUndoDel(Shade, Shade->GetParent(), I));
             Data.Delete(Shade);
           }
     }
   }
 
   GraphElem->ClearCache();
-  UndoList.Push(TUndoDel(Data, GraphElem, GraphElem->GetParent(), Data.GetIndex(GraphElem)));
+  UndoList.Push(TUndoDel(GraphElem, GraphElem->GetParent(), Data.GetIndex(GraphElem)));
   UndoList.EndMultiUndo();
 
   Data.Delete(GraphElem);
@@ -2272,20 +2274,6 @@ void TForm1::CheckForUpdate(bool StartupCheck)
     int Minor = IniFile->ReadInteger("Graph", "Minor", 0);
     int Release = IniFile->ReadInteger("Graph", "Release", 0);
     String DownloadPage = IniFile->ReadString("Graph", "DownloadPage", "http:\/\/www.padowan.dk");
-    std::auto_ptr<TStringList> LanguageSection(new TStringList);
-
-    String Section = IniFile->SectionExists(GetCurrentLanguage()) ? GetCurrentLanguage() : String("English");
-    IniFile->ReadSectionValues(Section, LanguageSection.get());
-
-    String NewFeatures;
-    for(int I = 0; I < LanguageSection->Count; I++)
-      if(LanguageSection->Names[I] == "NewFeatures")
-      {
-        String Line = LanguageSection->Strings[I];
-        if(!NewFeatures.IsEmpty())
-          NewFeatures += '\n';
-        NewFeatures += StringReplace(Line.SubString(Line.Pos('=') + 1, 0x7FFFFFFF), "\\n", "\r\n", TReplaceFlags() << rfReplaceAll); //Replace all "\\n" with '\n'
-      }
 
     //Check if a newer version is available, or if this is a debug version one with the same version
     if(Info.InfoAvailable())
@@ -2298,7 +2286,7 @@ void TForm1::CheckForUpdate(bool StartupCheck)
         String VersionString = String(Major) + '.' + Minor;
         if(Release)
           VersionString += "." + String(Release);
-        String Str = LoadRes(541, VersionString, NewFeatures);
+        String Str = LoadRes(541, VersionString);
         if(StartupCheck)
           Str += LoadRes(550);
         if(MessageBox(Str, LoadRes(540), MB_YESNO) == ID_YES)
@@ -2318,7 +2306,7 @@ void TForm1::CheckForUpdate(bool StartupCheck)
     if(!StartupCheck)
       MessageBox(E.Message, LoadRes(RES_ERROR), MB_ICONSTOP);
   }
-}                                               
+}
 //---------------------------------------------------------------------------
 void __fastcall TForm1::UpdateActionExecute(TObject *Sender)
 {
@@ -2625,7 +2613,7 @@ void __fastcall TForm1::InsertLabelActionExecute(TObject *Sender)
     Data.Insert(Label);
     Label->Update();
     Redraw();
-    UndoList.Push(TUndoAdd(Data, Label));
+    UndoList.Push(TUndoAdd(Label));
     Python::ExecutePluginEvent(Python::peNewElem, Data.Back());
     UpdateTreeView(Data.Back());
     UpdateMenu();
@@ -2711,7 +2699,7 @@ void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
       //If text is empty, remove label
       if(Form6->IsEmpty())
       {
-        UndoList.Push(TUndoDel(Data, Label, Label->GetParent(), Data.GetIndex(Label)));
+        UndoList.Push(TUndoDel(Label, Label->GetParent(), Data.GetIndex(Label)));
         Data.Delete(Label);
       }
       else
@@ -2725,7 +2713,7 @@ void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
           Form6->GetBackgroundColor(),
           Label->GetRotation()
         ));
-        UndoList.Push(TUndoChange(Data, Label, NewLabel));
+        UndoList.Push(TUndoChange(Label, NewLabel));
         Data.Replace(Label, NewLabel);
         NewLabel->Update();
       }
@@ -2744,7 +2732,7 @@ void __fastcall TForm1::Label_DeleteClick(TObject *Sender)
   boost::shared_ptr<TTextLabel> Label = Data.FindLabel(P.x, P.y);
   if(Label)
   {
-    UndoList.Push(TUndoDel(Data, Label, Label->GetParent(), Data.GetIndex(Label)));
+    UndoList.Push(TUndoDel(Label, Label->GetParent(), Data.GetIndex(Label)));
     Data.Delete(Label);
     Data.SetModified();
     UpdateTreeView();
@@ -3168,25 +3156,25 @@ void __fastcall TForm1::SupportActionExecute(TObject *Sender)
 void __fastcall TForm1::ZoomXInActionExecute(TObject *Sender)
 {
   //Zoom in on x-axis only
-  Zoom(GetKeyState(ssShift) ? 0.25 : 0.45, 0.5);
+  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomIn : GuiSettings.MinorZoomIn, 0.5);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomXOutActionExecute(TObject *Sender)
 {
   //Zoom out on x-axis only
-  Zoom(GetKeyState(ssShift) ? 1 : 10.0/18.0, 0.5);
+  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomOut : GuiSettings.MinorZoomOut, 0.5);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomYInActionExecute(TObject *Sender)
 {
   //Zoom in on y-axis only
-  Zoom(0.5, GetKeyState(ssShift) ? 0.25 : 0.45);
+  Zoom(0.5, GetKeyState(ssShift) ? GuiSettings.MajorZoomIn : GuiSettings.MinorZoomIn);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomYOutActionExecute(TObject *Sender)
 {
   //Zoom out on y-axis only
-  Zoom(0.5, GetKeyState(ssShift) ? 1.0 : 10.0/18.0);
+  Zoom(0.5, GetKeyState(ssShift) ? GuiSettings.MajorZoomOut : GuiSettings.MinorZoomOut);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::InsertRelationActionExecute(TObject *Sender)
@@ -3244,7 +3232,7 @@ void __fastcall TForm1::PlacementClick(TObject *Sender)
         TextLabel->GetBackgroundColor(),
         TextLabel->GetRotation()
       ));
-      UndoList.Push(TUndoChange(Data, TextLabel, NewLabel));
+      UndoList.Push(TUndoChange(TextLabel, NewLabel));
       Data.Replace(TextLabel, NewLabel);
       NewLabel->Update();
     }
@@ -3470,7 +3458,7 @@ void __fastcall TForm1::RotationClick(TObject *Sender)
       TextLabel->GetBackgroundColor(),
       Rotation
     ));
-    UndoList.Push(TUndoChange(Data, TextLabel, NewLabel));
+    UndoList.Push(TUndoChange(TextLabel, NewLabel));
     Data.Replace(TextLabel, NewLabel);
     NewLabel->Update();
 
@@ -3501,7 +3489,7 @@ void __fastcall TForm1::ImportGraphFileActionExecute(TObject *Sender)
       Data.Import(OpenPreviewDialog1->FileName.c_str());
       UndoList.BeginMultiUndo();
       for(unsigned I = Count; I < Data.ElemCount(); I++)
-        UndoList.Push(TUndoAdd(Data, Data.GetElem(I)));
+        UndoList.Push(TUndoAdd(Data.GetElem(I)));
       UndoList.EndMultiUndo();
       UpdateTreeView();
       UpdateMenu();

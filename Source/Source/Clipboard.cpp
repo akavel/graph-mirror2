@@ -70,7 +70,7 @@ void TGraphClipboard::Paste(TData &Data)
 
     UndoList.BeginMultiUndo();
     for(unsigned I = ElemNo; I < Data.ElemCount(); I++)
-      UndoList.Push(TUndoAdd(Data, Data.GetElem(I)));
+      UndoList.Push(TUndoAdd(Data.GetElem(I)));
     UndoList.EndMultiUndo();
   }
   catch(Func32::EFuncError &Error)

@@ -59,5 +59,7 @@ namespace Python
   template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O);
   template<> std::wstring FromPyObject<std::wstring>(PyObject *O);
   template<typename T> bool FromPyObject(PyObject *O, T &Value) {Value = FromPyObject<T>(O); return !PyErr_Occurred();}
+
+  void ConvertException();
 }
 #endif

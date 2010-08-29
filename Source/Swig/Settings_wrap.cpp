@@ -3087,6 +3087,22 @@ SWIG_From_std_wstring  (const std::wstring& s)
 
 
 SWIGINTERN int
+SWIG_AsVal_int (PyObject * obj, int *val)
+{
+  long v;
+  int res = SWIG_AsVal_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v < INT_MIN || v > INT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< int >(v);
+    }
+  }  
+  return res;
+}
+
+
+SWIGINTERN int
 SWIG_AsVal_unsigned_SS_long (PyObject *obj, unsigned long *val) 
 {
   if (PyInt_Check(obj)) {
@@ -3158,22 +3174,6 @@ SWIGINTERNINLINE PyObject *
 SWIG_From_unsigned_SS_int  (unsigned int value)
 {    
   return SWIG_From_unsigned_SS_long  (value);
-}
-
-
-SWIGINTERN int
-SWIG_AsVal_int (PyObject * obj, int *val)
-{
-  long v;
-  int res = SWIG_AsVal_long (obj, &v);
-  if (SWIG_IsOK(res)) {
-    if ((v < INT_MIN || v > INT_MAX)) {
-      return SWIG_OverflowError;
-    } else {
-      if (val) *val = static_cast< int >(v);
-    }
-  }  
-  return res;
 }
 
 
@@ -3977,6 +3977,214 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_TAxis_Visible_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TAxis *arg1 = (Graph::TAxis *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TAxis_Visible_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxis, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_Visible_set" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TAxis * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxis_Visible_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->Visible = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TAxis_Visible_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TAxis *arg1 = (Graph::TAxis *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TAxis_Visible_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxis, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_Visible_get" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TAxis * >(argp1);
+  result = (bool) ((arg1)->Visible);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TAxis_ShowPositiveArrow_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TAxis *arg1 = (Graph::TAxis *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TAxis_ShowPositiveArrow_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxis, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_ShowPositiveArrow_set" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TAxis * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxis_ShowPositiveArrow_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->ShowPositiveArrow = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TAxis_ShowPositiveArrow_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TAxis *arg1 = (Graph::TAxis *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TAxis_ShowPositiveArrow_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxis, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_ShowPositiveArrow_get" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TAxis * >(argp1);
+  result = (bool) ((arg1)->ShowPositiveArrow);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TAxis_ShowNegativeArrow_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TAxis *arg1 = (Graph::TAxis *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TAxis_ShowNegativeArrow_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxis, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_ShowNegativeArrow_set" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TAxis * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxis_ShowNegativeArrow_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->ShowNegativeArrow = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TAxis_ShowNegativeArrow_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TAxis *arg1 = (Graph::TAxis *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TAxis_ShowNegativeArrow_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxis, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_ShowNegativeArrow_get" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TAxis * >(argp1);
+  result = (bool) ((arg1)->ShowNegativeArrow);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TAxis_NumberPlacement_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TAxis *arg1 = (Graph::TAxis *) 0 ;
+  Graph::TNumberPlacement arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TAxis_NumberPlacement_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxis, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_NumberPlacement_set" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TAxis * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxis_NumberPlacement_set" "', argument " "2"" of type '" "Graph::TNumberPlacement""'");
+  } 
+  arg2 = static_cast< Graph::TNumberPlacement >(val2);
+  if (arg1) (arg1)->NumberPlacement = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TAxis_NumberPlacement_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TAxis *arg1 = (Graph::TAxis *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Graph::TNumberPlacement result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TAxis_NumberPlacement_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxis, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_NumberPlacement_get" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TAxis * >(argp1);
+  result = (Graph::TNumberPlacement) ((arg1)->NumberPlacement);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *TAxis_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -4759,110 +4967,6 @@ SWIGINTERN PyObject *_wrap_TAxes_CalcComplex_get(PyObject *SWIGUNUSEDPARM(self),
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
   result = (bool) ((arg1)->CalcComplex);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TAxes_AxesArrows_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
-  Graph::TAxesArrows arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TAxes_AxesArrows_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_AxesArrows_set" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxes_AxesArrows_set" "', argument " "2"" of type '" "Graph::TAxesArrows""'");
-  } 
-  arg2 = static_cast< Graph::TAxesArrows >(val2);
-  if (arg1) (arg1)->AxesArrows = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TAxes_AxesArrows_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  Graph::TAxesArrows result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:TAxes_AxesArrows_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_AxesArrows_get" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  result = (Graph::TAxesArrows) ((arg1)->AxesArrows);
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TAxes_NumberPlacement_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
-  Graph::TNumberPlacement arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TAxes_NumberPlacement_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_NumberPlacement_set" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxes_NumberPlacement_set" "', argument " "2"" of type '" "Graph::TNumberPlacement""'");
-  } 
-  arg2 = static_cast< Graph::TNumberPlacement >(val2);
-  if (arg1) (arg1)->NumberPlacement = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TAxes_NumberPlacement_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  Graph::TNumberPlacement result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:TAxes_NumberPlacement_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_NumberPlacement_get" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  result = (Graph::TNumberPlacement) ((arg1)->NumberPlacement);
-  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -6912,6 +7016,110 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_TGuiSettings_MouseZoomIn_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TGuiSettings *arg1 = (Graph::TGuiSettings *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TGuiSettings_MouseZoomIn_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TGuiSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TGuiSettings_MouseZoomIn_set" "', argument " "1"" of type '" "Graph::TGuiSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TGuiSettings * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TGuiSettings_MouseZoomIn_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->MouseZoomIn = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TGuiSettings_MouseZoomIn_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TGuiSettings *arg1 = (Graph::TGuiSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TGuiSettings_MouseZoomIn_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TGuiSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TGuiSettings_MouseZoomIn_get" "', argument " "1"" of type '" "Graph::TGuiSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TGuiSettings * >(argp1);
+  result = (double) ((arg1)->MouseZoomIn);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TGuiSettings_MouseZoomOut_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TGuiSettings *arg1 = (Graph::TGuiSettings *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TGuiSettings_MouseZoomOut_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TGuiSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TGuiSettings_MouseZoomOut_set" "', argument " "1"" of type '" "Graph::TGuiSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TGuiSettings * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TGuiSettings_MouseZoomOut_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->MouseZoomOut = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TGuiSettings_MouseZoomOut_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TGuiSettings *arg1 = (Graph::TGuiSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TGuiSettings_MouseZoomOut_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TGuiSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TGuiSettings_MouseZoomOut_get" "', argument " "1"" of type '" "Graph::TGuiSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TGuiSettings * >(argp1);
+  result = (double) ((arg1)->MouseZoomOut);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *TGuiSettings_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -7006,6 +7214,14 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TAxis_TickUnit_get", _wrap_TAxis_TickUnit_get, METH_VARARGS, NULL},
 	 { (char *)"TAxis_GridUnit_set", _wrap_TAxis_GridUnit_set, METH_VARARGS, NULL},
 	 { (char *)"TAxis_GridUnit_get", _wrap_TAxis_GridUnit_get, METH_VARARGS, NULL},
+	 { (char *)"TAxis_Visible_set", _wrap_TAxis_Visible_set, METH_VARARGS, NULL},
+	 { (char *)"TAxis_Visible_get", _wrap_TAxis_Visible_get, METH_VARARGS, NULL},
+	 { (char *)"TAxis_ShowPositiveArrow_set", _wrap_TAxis_ShowPositiveArrow_set, METH_VARARGS, NULL},
+	 { (char *)"TAxis_ShowPositiveArrow_get", _wrap_TAxis_ShowPositiveArrow_get, METH_VARARGS, NULL},
+	 { (char *)"TAxis_ShowNegativeArrow_set", _wrap_TAxis_ShowNegativeArrow_set, METH_VARARGS, NULL},
+	 { (char *)"TAxis_ShowNegativeArrow_get", _wrap_TAxis_ShowNegativeArrow_get, METH_VARARGS, NULL},
+	 { (char *)"TAxis_NumberPlacement_set", _wrap_TAxis_NumberPlacement_set, METH_VARARGS, NULL},
+	 { (char *)"TAxis_NumberPlacement_get", _wrap_TAxis_NumberPlacement_get, METH_VARARGS, NULL},
 	 { (char *)"TAxis_swigregister", TAxis_swigregister, METH_VARARGS, NULL},
 	 { (char *)"TAxes_xAxis_set", _wrap_TAxes_xAxis_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_xAxis_get", _wrap_TAxes_xAxis_get, METH_VARARGS, NULL},
@@ -7037,10 +7253,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TAxes_GridSize_get", _wrap_TAxes_GridSize_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_CalcComplex_set", _wrap_TAxes_CalcComplex_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_CalcComplex_get", _wrap_TAxes_CalcComplex_get, METH_VARARGS, NULL},
-	 { (char *)"TAxes_AxesArrows_set", _wrap_TAxes_AxesArrows_set, METH_VARARGS, NULL},
-	 { (char *)"TAxes_AxesArrows_get", _wrap_TAxes_AxesArrows_get, METH_VARARGS, NULL},
-	 { (char *)"TAxes_NumberPlacement_set", _wrap_TAxes_NumberPlacement_set, METH_VARARGS, NULL},
-	 { (char *)"TAxes_NumberPlacement_get", _wrap_TAxes_NumberPlacement_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_GridStyle_set", _wrap_TAxes_GridStyle_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_GridStyle_get", _wrap_TAxes_GridStyle_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_swigregister", TAxes_swigregister, METH_VARARGS, NULL},
@@ -7122,6 +7334,10 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TGuiSettings_MajorStepSize_get", _wrap_TGuiSettings_MajorStepSize_get, METH_VARARGS, NULL},
 	 { (char *)"TGuiSettings_MinorStepSize_set", _wrap_TGuiSettings_MinorStepSize_set, METH_VARARGS, NULL},
 	 { (char *)"TGuiSettings_MinorStepSize_get", _wrap_TGuiSettings_MinorStepSize_get, METH_VARARGS, NULL},
+	 { (char *)"TGuiSettings_MouseZoomIn_set", _wrap_TGuiSettings_MouseZoomIn_set, METH_VARARGS, NULL},
+	 { (char *)"TGuiSettings_MouseZoomIn_get", _wrap_TGuiSettings_MouseZoomIn_get, METH_VARARGS, NULL},
+	 { (char *)"TGuiSettings_MouseZoomOut_set", _wrap_TGuiSettings_MouseZoomOut_set, METH_VARARGS, NULL},
+	 { (char *)"TGuiSettings_MouseZoomOut_get", _wrap_TGuiSettings_MouseZoomOut_get, METH_VARARGS, NULL},
 	 { (char *)"TGuiSettings_swigregister", TGuiSettings_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
@@ -7786,9 +8002,6 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "lpBottomRight",SWIG_From_int(static_cast< int >(Graph::lpBottomRight)));
   SWIG_Python_SetConstant(d, "lpTopLeft",SWIG_From_int(static_cast< int >(Graph::lpTopLeft)));
   SWIG_Python_SetConstant(d, "lpBottomLeft",SWIG_From_int(static_cast< int >(Graph::lpBottomLeft)));
-  SWIG_Python_SetConstant(d, "aaNone",SWIG_From_int(static_cast< int >(Graph::aaNone)));
-  SWIG_Python_SetConstant(d, "aaPositiveEnd",SWIG_From_int(static_cast< int >(Graph::aaPositiveEnd)));
-  SWIG_Python_SetConstant(d, "aaBothEnds",SWIG_From_int(static_cast< int >(Graph::aaBothEnds)));
   SWIG_Python_SetConstant(d, "npCenter",SWIG_From_int(static_cast< int >(Graph::npCenter)));
   SWIG_Python_SetConstant(d, "npBefore",SWIG_From_int(static_cast< int >(Graph::npBefore)));
   SWIG_Python_SetConstant(d, "gsLines",SWIG_From_int(static_cast< int >(Graph::gsLines)));

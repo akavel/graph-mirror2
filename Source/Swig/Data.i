@@ -69,9 +69,32 @@ static void SetSelected(const TGraphElemPtr &Elem) {Form1->SetSelected(Elem);}
 
 static unsigned ChildCount(const TGraphElemPtr &Elem) {return Elem->ChildCount();}
 static TGraphElemPtr GetChild(const TGraphElemPtr &Elem, unsigned Index) {return Elem->GetChild(Index);}
-static void RemoveChild(const TGraphElemPtr &Elem, unsigned Index) {Elem->RemoveChild(Index); Form1->UpdateTreeView();}
-static void InsertChild(TGraphElemPtr Elem, TGraphElemPtr Child, int Index) {Elem->InsertChild(Child, Index); Form1->UpdateTreeView();}
-static void ReplaceChild(const TGraphElemPtr &Elem, unsigned Index, const TGraphElemPtr &Child) {Elem->ReplaceChild(Index, Child); Form1->UpdateTreeView();}
+static void RemoveChild(const TGraphElemPtr &Elem, unsigned Index)
+{
+  UndoList.Push(TUndoDel(Elem->GetChild(Index), Elem, Index));
+  Elem->RemoveChild(Index);
+  Form1->UpdateTreeView();
+}
+
+static void InsertChild(TGraphElemPtr Elem, TGraphElemPtr Child, int Index)
+{
+  UndoList.BeginMultiUndo();
+  TGraphElemPtr Parent = Child->GetParent();
+  if(Parent)
+    UndoList.Push(TUndoDel(Child, Parent, Parent->GetChildIndex(Child)));
+  Elem->InsertChild(Child, Index);
+  UndoList.Push(TUndoAdd(Child));
+  UndoList.EndMultiUndo();
+  Form1->UpdateTreeView();
+}
+
+static void ReplaceChild(const TGraphElemPtr &Elem, unsigned Index, const TGraphElemPtr &Child)
+{
+  UndoList.Push(TUndoChange(Elem->GetChild(Index), Child));
+  Elem->ReplaceChild(Index, Child);
+  Form1->UpdateTreeView();
+}
+
 static bool CompareElem(const TGraphElemPtr &E1, const TGraphElemPtr &E2) {return E1.get() == E2.get();}
 static std::map<std::wstring,std::wstring>& GetPluginData() {return Form1->Data.PluginData;}
 static const boost::shared_ptr<TTopGraphElem>& GetTopElem() {return Form1->Data.GetTopElem();}

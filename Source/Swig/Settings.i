@@ -26,6 +26,7 @@ namespace Graph
 {
 enum TAxesStyle {asNone, asCrossed, asBoxed};
 enum TLegendPlacement {lpCustom, lpTopRight, lpBottomRight, lpTopLeft, lpBottomLeft};
+enum TNumberPlacement {npCenter, npBefore};
 
 %nodefault TAxis;
 %nodefault TAxes;
@@ -40,19 +41,10 @@ struct TAxis
   double AxisCross;
   double TickUnit;
   double GridUnit;
-};
-
-enum TAxesArrows
-{
-  aaNone,
-  aaPositiveEnd,
-  aaBothEnds
-};
-
-enum TNumberPlacement
-{
-  npCenter,
-  npBefore
+  bool Visible;
+  bool ShowPositiveArrow;
+  bool ShowNegativeArrow;
+  TNumberPlacement NumberPlacement;
 };
 
 enum TGridStyle
@@ -79,8 +71,6 @@ struct TAxes
   Func32::TDblPoint LegendPos; //Only valid when LegendPlacement is lpCustom
   unsigned GridSize;
   bool CalcComplex;//When true: Complex numbers are used for graphing
-  TAxesArrows AxesArrows;
-  TNumberPlacement NumberPlacement;
   TGridStyle GridStyle;
 };
 
@@ -138,6 +128,8 @@ struct TGuiSettings
   double MinorZoomOut;
   double MajorStepSize;
   double MinorStepSize;
+  double MouseZoomIn;
+  double MouseZoomOut;
 };
 
 const TProperty Property;

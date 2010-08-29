@@ -4,6 +4,7 @@
 
 %begin %{
 #include "Graph.h"
+#include "Unit1.h"
 #undef _DEBUG
 #include <Python.h>
 #define WRAP_PYOBJECTS
@@ -11,5 +12,17 @@
 #include "PyGraph.h"
 #include "PythonBind.h"
 #pragma warn -8060
+%}
+
+%inline %{
+  void BeginMultiUndo() {UndoList.BeginMultiUndo();}
+  void EndMultiUndo() {UndoList.EndMultiUndo();}
+  void LoadDefault() { Form1->LoadDefault();}
+  bool LoadFromFile(const std::wstring &FileName, bool AddToRecent = true, bool ShowErrorMessages = true)
+  {
+    return Form1->LoadFromFile(FileName.c_str(), AddToRecent, ShowErrorMessages);
+  }
+
+  bool SaveToFile(const std::wstring &FileName, bool Remember = true) {return Form1->Data.Save(FileName, Remember);}
 %}
 

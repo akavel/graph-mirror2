@@ -76,11 +76,11 @@ public:
   bool IsModified() const {return Modified;}
   double FindInterception(const TBaseFuncType *Func, int X, int Y) const;
 
-  void Delete(const TGraphElemPtr &Elem);
+  static void Delete(const TGraphElemPtr &Elem);
   void Insert(const TGraphElemPtr &Elem, int Index=-1);
-  int GetIndex(const TGraphElemPtr &Elem) const;
+  static int GetIndex(const TGraphElemPtr &Elem);
   void Replace(unsigned Index, const TGraphElemPtr &Elem);
-  void Replace(const TGraphElemPtr &OldElem, const TGraphElemPtr &NewElem);
+  static void Replace(const TGraphElemPtr &OldElem, const TGraphElemPtr &NewElem);
   unsigned ElemCount() const {return TopElem->ChildCount();}
   TGraphElemPtr GetElem(unsigned Index) const;
   boost::shared_ptr<TBaseFuncType> GetFuncFromIndex(unsigned Index) const;

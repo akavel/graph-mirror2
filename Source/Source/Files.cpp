@@ -336,7 +336,7 @@ bool TData::ImportPointSeries(const std::wstring &FileName)
     Series->Assign(Points[I]);
     Series->SetLegendText(CreatePointSeriesDescription());
     Insert(Series);
-    UndoList.Push(TUndoAdd(*this, Series));
+    UndoList.Push(TUndoAdd(Series));
     Series->Update();
     ColorIndex = ++ColorIndex % (sizeof(Colors)/sizeof(TColor));
   }
