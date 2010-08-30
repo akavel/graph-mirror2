@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2009-08-20 19:51\n"
-"PO-Revision-Date: 2010-05-18 16:40+0100\n"
-"Last-Translator: Francisco Oliver <graph.esp@gmail.com>\n"
+"PO-Revision-Date: 2010-08-30 00:50+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1978,7 +1978,7 @@ msgid "<Language> translation by <Translator>"
 msgstr ""
 "Traducido al español por:\n"
 "Francisco Oliver y Alejandro Arce\n"
-"Correo electrónico: graph.esp@gmail.com"
+"Correo electrónico: <a href=\"mailto:graph.esp@gmail.com\">graph.esp@gmail.com</a>"
 
 #. Form20("Animation")..Caption
 msgid "Animation"
@@ -3753,71 +3753,97 @@ msgstr "Indica un porcentaje del tamaño original del área gráfica."
 #~ "Puedes enviar comentarios, sugerencias para futuras versiones e informes "
 #~ "de errores a la siguiente dirección electrónica: <a href=\"mailto:"
 #~ "graph@padowan.dk\">graph@padowan.dk</a>"
+
 #~ msgid "Extremum"
 #~ msgstr "Mínimo / Máximo"
+
 #~ msgid "Zoom in."
 #~ msgstr "Acerca la presentación del sistema de coordenadas."
+
 #~ msgid "Zoom out."
 #~ msgstr "Aleja la presentación del sistema de coordenadas."
+
 #~ msgid "Ctrl+Shift+Up"
 #~ msgstr "Ctrl+Mayús+Arriba"
+
 #~ msgid "Ctrl+Shift+Down"
 #~ msgstr "Ctrl+Mayús+Abajo"
+
 #~ msgid "Ctrl+Shift+Left"
 #~ msgstr "Ctrl+Mayús+Izquierda"
+
 #~ msgid "Ctrl+Shift+Right"
 #~ msgstr "Ctrl+Mayús+Derecha"
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Sólo acercamiento al eje X."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Sólo alejamiento del eje X."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Sólo acercamiento al eje Y."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Sólo alejamiento del eje Y."
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "El servidor respondió con este mensaje: '%s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Error de respuesta del protocolo %s"
+
 #~ msgid "Enter the image position on the page."
 #~ msgstr ""
 #~ "Especifica la distancia entre los márgenes de la página y los márgenes "
 #~ "del área de impresión, en milímetros."
+
 #~ msgid ""
 #~ "Enter the independent variable for which you want to evaluate the "
 #~ "function, or click on the graph in the graphing area."
 #~ msgstr ""
 #~ "Introduce un valor para la variable independiente, o haz clic sobre un "
 #~ "punto de la gráfica."
+
 #~ msgid "Saves the coordinate system as a new name."
 #~ msgstr ""
 #~ "Guarda el sistema de coordenadas activo con un nombre nuevo, o una "
 #~ "ubicación diferente."
+
 #~ msgid "Saves a copy of the current coordinate system."
 #~ msgstr "Guarda una copia del sistema de coordenadas activo."
+
 #~ msgid "Show the f''(x) column in the table."
 #~ msgstr "Muestra la columna de f''(x) en la tabla."
+
 #~ msgid "Open the file %s."
 #~ msgstr "Abre el archivo %s"
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Centra el área de impresión en la página."
+
 #~ msgid ""
 #~ "This is the functions second derivative evaluated for the entered value."
 #~ msgstr ""
 #~ "Valor de la segunda derivada de la función, evaluada en la coordenada x "
 #~ "indicada."
+
 #~ msgid "Write coordinate system and functions to a file."
 #~ msgstr "Guarda el actual sistema de coordenadas en un archivo."
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Devuelve a los ejes su configuración por defecto."
+
 #~ msgid "Go to home page"
 #~ msgstr "Ir a la página principal de Graph"
+
 #~ msgid "All points"
 #~ msgstr "Ajustar todos los puntos"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr ""
 #~ "Redimensiona el área gráfica para que todos los puntos introducidos sean "
 #~ "visibles."
+
 #~ msgid "Image information"
 #~ msgstr "Opciones de imagen"
-

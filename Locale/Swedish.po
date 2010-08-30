@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.3 (384)\n"
 "POT-Creation-Date: 2007-07-30 19:49\n"
-"PO-Revision-Date: 2008-06-06 19:21+0100\n"
-"Last-Translator: Pär Smårs <par.smars@bredband.net>\n"
+"PO-Revision-Date: 2010-08-30 23:18+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: SWEDISH <par.smars@bredband.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -1952,7 +1952,7 @@ msgstr "Om Graph"
 
 #. Form2("About Graph")..Panel1..Label6("<Language> translation by <Translator>")..Caption
 msgid "<Language> translation by <Translator>"
-msgstr "Svensk översättning av Pär Smårs <par.smars@bredband.net>"
+msgstr "Svensk översättning av Pär Smårs <<a href=\"mailto:par.smars@bredband.net\">par.smars@bredband.net</a>>"
 
 #. Form2("About Graph")..Panel1..Version("Version %s")..Caption
 #. %s is replaced with version number
@@ -3578,42 +3578,58 @@ msgstr "Välj procent av originalstorlek."
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Version"
+
 #~ msgid "Visible"
 #~ msgstr "Synlig"
+
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr "Välj för att göra valt objekt synligt i koordinatsystemet."
+
 #~ msgid "Functions"
 #~ msgstr "Funktioner"
+
 #~ msgid "Tangents"
 #~ msgstr "Tangenter"
+
 #~ msgid "Point series"
 #~ msgstr "Punktserier"
+
 #~ msgid "Shades"
 #~ msgstr "Skuggningar"
+
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Inget fel uppstod. Du borde inte se detta meddelande."
+
 #~ msgid "Right bracket missing."
 #~ msgstr "Högerparentes saknas."
+
 #~ msgid "There is no printer installed on the system."
 #~ msgstr "Det finns ingen skrivare installerad."
+
 #~ msgid "Conversion error"
 #~ msgstr "Konverteringsfel"
+
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Okänd felkod.\n"
 #~ "Kan inte hitta felmeddelandet för detta fel."
+
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr ""
 #~ "Detta fel skall ej uppkomma. Var god rapportera händelsen till "
 #~ "programmeraren."
+
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "Maximal textlängd har uppnåtts."
+
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Dialogrutefel: %sh"
+
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "Okänt Graph-data hittades när inehållet i urklipp klistrades in."
+
 #~ msgid ""
 #~ "To add actions to your application simply drag and drop from either "
 #~ "Categories or Actions onto an existing ActionBar."
@@ -3621,4 +3637,3 @@ msgstr "Välj procent av originalstorlek."
 #~ "För att lägga till en åtgärd till din applikation, dra objekt från "
 #~ "antingen Kategorier eller Åtgärder och släpp dem på en befintlig "
 #~ "Åtgärdslist."
-
