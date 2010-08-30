@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2007-07-30 19:49\n"
-"PO-Revision-Date: 2007-12-05 23:11+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2010-08-30 23:02+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1956,8 +1956,8 @@ msgstr "O programu Graph"
 msgid "<Language> translation by <Translator>"
 msgstr ""
 "Český překlad: Martin Stružský, Pavlína Krausová\n"
-"Web: http://soustruh.atlasweb.cz\n"
-"E-mail: struzsky.m@gmail.com"
+"Web: <a href=\"http://soustruh.atlasweb.cz\">http://soustruh.atlasweb.cz</a>\n"
+"E-mail: <a href=\"mailto:struzsky.m@gmail.com\">struzsky.m@gmail.com</a>"
 
 #. Form2("About Graph")..Panel1..Version("Version %s")..Caption
 #. %s is replaced with version number
@@ -3538,97 +3538,136 @@ msgstr "Zadejte velikost v procentech původní velikosti."
 
 #~ msgid "Insert shade..."
 #~ msgstr "Vložit šrafování..."
+
 #~ msgid "Shade"
 #~ msgstr "Šrafování"
+
 #~ msgid "Black"
 #~ msgstr "Černá"
+
 #~ msgid "Maroon"
 #~ msgstr "Kaštanová"
+
 #~ msgid "Green"
 #~ msgstr "Tmavě zelená"
+
 #~ msgid "Olive"
 #~ msgstr "Olivová"
+
 #~ msgid "Navy"
 #~ msgstr "Tmavě modrá"
+
 #~ msgid "Purple"
 #~ msgstr "Nachová"
+
 #~ msgid "Teal"
 #~ msgstr "Šedozelená"
+
 #~ msgid "Gray"
 #~ msgstr "Tmavě šedá"
+
 #~ msgid "Silver"
 #~ msgstr "Stříbrná"
+
 #~ msgid "Red"
 #~ msgstr "Červená"
+
 #~ msgid "Lime"
 #~ msgstr "Zelená"
+
 #~ msgid "Yellow"
 #~ msgstr "Žlutá"
+
 #~ msgid "Blue"
 #~ msgstr "Modrá"
+
 #~ msgid "Fuchsia"
 #~ msgstr "Fuchsiová"
+
 #~ msgid "Aqua"
 #~ msgstr "Azurová"
+
 #~ msgid "White"
 #~ msgstr "Bílá"
+
 #~ msgid "Money Green"
 #~ msgstr "Světle zelená"
+
 #~ msgid "Sky Blue"
 #~ msgstr "Světle modrá"
+
 #~ msgid "Cream"
 #~ msgstr "Smetanová"
+
 #~ msgid "Med Gray"
 #~ msgstr "Šedá"
+
 #~ msgid ""
 #~ "Insert a text label (select and click in the main window where you want "
 #~ "the label)."
 #~ msgstr ""
 #~ "Vložit textový popis (vyberte a v hlavním okně klepněte na umístění, kam "
 #~ "chcete popis vložit)."
+
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Vyjmout vybraný text a vložit ho do schránky."
+
 #~ msgid "Open an animation file."
 #~ msgstr "Otevřít soubor s animací."
 
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Verze "
+
 #~ msgid "Visible"
 #~ msgstr "Viditelná"
+
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr "Zaškrtněte, chcete-li položku zobrazit v soustavě souřadnic."
+
 #~ msgid "Functions"
 #~ msgstr "Funkce"
+
 #~ msgid "Tangents"
 #~ msgstr "Tečny"
+
 #~ msgid "Point series"
 #~ msgstr "Posloupnost bodů"
+
 #~ msgid "Shades"
 #~ msgstr "Šrafování"
+
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Nedošlo k žádné chybě. Tato zpráva by neměla být zobrazena."
+
 #~ msgid "Symbol '%s' not found."
 #~ msgstr "Symbol '%s' nebyl nalezen."
+
 #~ msgid "Right bracket missing."
 #~ msgstr "Chybí uzavírací závorka."
+
 #~ msgid "There is no printer installed on the system."
 #~ msgstr "V systému není nainstalována žádná tiskárna."
+
 #~ msgid "Conversion error"
 #~ msgstr "Chyba konverze"
+
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Neznámý kód chyby.\n"
 #~ "Pro tuto chybu nelze nelézt chybovou zprávu."
+
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr ""
 #~ "Tato chyba by se neměla vyskytovat. Ohlašte ji prosím autorovi programu."
+
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "Byla dosažena největší délka textu."
+
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Chyba dialogu: %sh"
+
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "Program Graph nalezl při vkládání dat ze schránky neznámá data."
-
