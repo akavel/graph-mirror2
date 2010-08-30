@@ -196,9 +196,6 @@ class TAxes(_object):
     __swig_setmethods__["LegendPos"] = _Settings.TAxes_LegendPos_set
     __swig_getmethods__["LegendPos"] = _Settings.TAxes_LegendPos_get
     if _newclass:LegendPos = _swig_property(_Settings.TAxes_LegendPos_get, _Settings.TAxes_LegendPos_set)
-    __swig_setmethods__["GridSize"] = _Settings.TAxes_GridSize_set
-    __swig_getmethods__["GridSize"] = _Settings.TAxes_GridSize_get
-    if _newclass:GridSize = _swig_property(_Settings.TAxes_GridSize_get, _Settings.TAxes_GridSize_set)
     __swig_setmethods__["CalcComplex"] = _Settings.TAxes_CalcComplex_set
     __swig_getmethods__["CalcComplex"] = _Settings.TAxes_CalcComplex_get
     if _newclass:CalcComplex = _swig_property(_Settings.TAxes_CalcComplex_get, _Settings.TAxes_CalcComplex_set)
@@ -329,6 +326,9 @@ class TPlotSettings(_object):
     __swig_setmethods__["AxisWidth"] = _Settings.TPlotSettings_AxisWidth_set
     __swig_getmethods__["AxisWidth"] = _Settings.TPlotSettings_AxisWidth_get
     if _newclass:AxisWidth = _swig_property(_Settings.TPlotSettings_AxisWidth_get, _Settings.TPlotSettings_AxisWidth_set)
+    __swig_setmethods__["GridWidth"] = _Settings.TPlotSettings_GridWidth_set
+    __swig_getmethods__["GridWidth"] = _Settings.TPlotSettings_GridWidth_get
+    if _newclass:GridWidth = _swig_property(_Settings.TPlotSettings_GridWidth_get, _Settings.TPlotSettings_GridWidth_set)
     __swig_setmethods__["xNumberDist"] = _Settings.TPlotSettings_xNumberDist_set
     __swig_getmethods__["xNumberDist"] = _Settings.TPlotSettings_xNumberDist_get
     if _newclass:xNumberDist = _swig_property(_Settings.TPlotSettings_xNumberDist_get, _Settings.TPlotSettings_xNumberDist_set)

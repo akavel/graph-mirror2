@@ -33,7 +33,7 @@ TAxis::TAxis() : Min(-10), Max(10), LogScl(false), ShowGrid(false), MultiplyOfPi
 //---------------------------------------------------------------------------
 TAxes::TAxes() : ShowLegend(true), AxesColor(clBlue),
   GridColor(static_cast<TColor>(0x00FF9999)), BackgroundColor(clWhite), Trigonometry(Func32::Radian),
-  AxesStyle(asCrossed), LegendPlacement(lpTopRight), GridSize(1), CalcComplex(false), //ZoomSquare(false),
+  AxesStyle(asCrossed), LegendPlacement(lpTopRight), CalcComplex(false), //ZoomSquare(false),
   LegendPos(0,0), GridStyle(gsLines)
 {
 }
@@ -79,7 +79,6 @@ void TAxes::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"LegendPlacement", LegendPlacement, lpTopRight);
   if(LegendPlacement == lpCustom)
     Section.Write(L"LegendPos", LegendPos);
-  Section.Write(L"GridSize", GridSize, 1U);
   Section.Write(L"CalcComplex", CalcComplex, false);
   Section.Write(L"GridStyle", GridStyle, gsLines);
 }
@@ -125,7 +124,6 @@ void TAxes::ReadFromIni(const TConfigFileSection &Section)
   AxesStyle = Section.Read(L"AxesStyle", asCrossed);
   LegendPlacement = Section.Read(L"LegendPlacement", lpTopRight);
   LegendPos = Section.Read(L"LegendPos", Func32::TDblPoint(0, 0));
-  GridSize = Section.Read(L"GridSize", 1);
   CalcComplex = Section.Read(L"CalcComplex", false);
   GridStyle = Section.Read(L"GridStyle", gsLines);
 }
@@ -506,7 +504,8 @@ TFormatSettings::TFormatSettings()
 // TFormatSettings //
 /////////////////////
 TPlotSettings::TPlotSettings()
-  : AxisWidth(2), xNumberDist(4), yNumberDist(7), TickWidth(1), TickLength(5)
+  : AxisWidth(2), GridWidth(1), xNumberDist(4), yNumberDist(7), TickWidth(1),
+    TickLength(5)
 {
 }
 //---------------------------------------------------------------------------

@@ -544,14 +544,14 @@ void TDraw::DrawAxes()
   if(Axes.GridStyle == gsLines)
   {
     //Draw solid lines
-    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
+    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(PlotSettings.GridWidth));
     for(std::vector<int>::const_iterator Iter = xGridMajor.begin(); Iter != xGridMajor.end(); ++Iter)
       Context.DrawLine(*Iter, AxesRect.Top, *Iter, AxesRect.Bottom);
     for(std::vector<int>::const_iterator Iter = yGridMajor.begin(); Iter != yGridMajor.end(); ++Iter)
       Context.DrawLine(AxesRect.Left, *Iter, AxesRect.Right, *Iter);
 
     //Draw dotted lines
-    Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(Axes.GridSize));
+    Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(PlotSettings.GridWidth));
     for(std::vector<int>::const_iterator Iter = xGridMinor.begin(); Iter != xGridMinor.end(); ++Iter)
       Context.DrawLine(*Iter, AxesRect.Top, *Iter, AxesRect.Bottom);
     for(std::vector<int>::const_iterator Iter = yGridMinor.begin(); Iter != yGridMinor.end(); ++Iter)
@@ -559,7 +559,7 @@ void TDraw::DrawAxes()
   }
   else
   {
-    int Width = Size(Axes.GridSize);
+    int Width = Size(PlotSettings.GridWidth);
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, 1);
     Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.GridColor);
     for(std::vector<int>::const_iterator xIter = xGridMinor.begin(); xIter != xGridMinor.end(); ++xIter)
