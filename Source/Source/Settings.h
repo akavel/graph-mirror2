@@ -61,7 +61,6 @@ struct TAxes
   TAxesStyle AxesStyle;
   TLegendPlacement LegendPlacement;
   Func32::TDblPoint LegendPos; //Only valid when LegendPlacement is lpCustom
-  unsigned GridSize;
   bool CalcComplex;//When true: Complex numbers are used for graphing
   TGridStyle GridStyle;
 
@@ -203,6 +202,7 @@ struct TFormatSettings
 struct TPlotSettings
 {
   int AxisWidth;
+  int GridWidth;
   int xNumberDist;
   int yNumberDist;
   int TickWidth;

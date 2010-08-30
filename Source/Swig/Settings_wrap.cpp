@@ -4869,58 +4869,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_TAxes_GridSize_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TAxes_GridSize_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_GridSize_set" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxes_GridSize_set" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
-  if (arg1) (arg1)->GridSize = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TAxes_GridSize_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:TAxes_GridSize_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxes, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxes_GridSize_get" "', argument " "1"" of type '" "Graph::TAxes *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
-  result = (unsigned int) ((arg1)->GridSize);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_TAxes_CalcComplex_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TAxes *arg1 = (Graph::TAxes *) 0 ;
@@ -6489,6 +6437,58 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_TPlotSettings_GridWidth_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TPlotSettings_GridWidth_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_GridWidth_set" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPlotSettings_GridWidth_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->GridWidth = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_GridWidth_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TPlotSettings_GridWidth_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_GridWidth_get" "', argument " "1"" of type '" "Graph::TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< Graph::TPlotSettings * >(argp1);
+  result = (int) ((arg1)->GridWidth);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_TPlotSettings_xNumberDist_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TPlotSettings *arg1 = (Graph::TPlotSettings *) 0 ;
@@ -7249,8 +7249,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TAxes_LegendPlacement_get", _wrap_TAxes_LegendPlacement_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_LegendPos_set", _wrap_TAxes_LegendPos_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_LegendPos_get", _wrap_TAxes_LegendPos_get, METH_VARARGS, NULL},
-	 { (char *)"TAxes_GridSize_set", _wrap_TAxes_GridSize_set, METH_VARARGS, NULL},
-	 { (char *)"TAxes_GridSize_get", _wrap_TAxes_GridSize_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_CalcComplex_set", _wrap_TAxes_CalcComplex_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_CalcComplex_get", _wrap_TAxes_CalcComplex_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_GridStyle_set", _wrap_TAxes_GridStyle_set, METH_VARARGS, NULL},
@@ -7313,6 +7311,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TFormatSettings_swigregister", TFormatSettings_swigregister, METH_VARARGS, NULL},
 	 { (char *)"TPlotSettings_AxisWidth_set", _wrap_TPlotSettings_AxisWidth_set, METH_VARARGS, NULL},
 	 { (char *)"TPlotSettings_AxisWidth_get", _wrap_TPlotSettings_AxisWidth_get, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_GridWidth_set", _wrap_TPlotSettings_GridWidth_set, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_GridWidth_get", _wrap_TPlotSettings_GridWidth_get, METH_VARARGS, NULL},
 	 { (char *)"TPlotSettings_xNumberDist_set", _wrap_TPlotSettings_xNumberDist_set, METH_VARARGS, NULL},
 	 { (char *)"TPlotSettings_xNumberDist_get", _wrap_TPlotSettings_xNumberDist_get, METH_VARARGS, NULL},
 	 { (char *)"TPlotSettings_yNumberDist_set", _wrap_TPlotSettings_yNumberDist_set, METH_VARARGS, NULL},
