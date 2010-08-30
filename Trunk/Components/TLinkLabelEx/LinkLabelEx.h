@@ -52,6 +52,8 @@ __published:
   __property ParentColor;
   __property ParentFont;
   __property Visible;
+  __property ShowHint;
+  __property ParentShowHint;
   __property OnClick;
   __property OnDblClick;
   __property OnMouseActivate;

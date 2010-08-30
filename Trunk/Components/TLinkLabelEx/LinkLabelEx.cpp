@@ -69,7 +69,7 @@ void TLinkLabelEx::AdjustBounds()
           if(FWordWrap)
           {
             TRect Rect(0, 0, Width, Height);
-            DrawText(DC, Parsed.c_str(), Parsed.Length(), &Rect, DT_WORDBREAK | DT_NOCLIP | DT_CALCRECT);
+            DrawText(DC, Parsed.c_str(), Parsed.Length(), &Rect, DT_WORDBREAK | DT_NOCLIP | DT_CALCRECT | DT_NOPREFIX);
             Height = Rect.Height();
           }
           else
