@@ -30,7 +30,7 @@ __published:	// IDE-managed Components
   TLabel *ProductName;
   TLabel *Version;
   TLabel *Copyright;
-  TLabel *Comments;
+  TLinkLabelEx *Comments;
   TLabel *Label3;
   TImage *ProgramIcon;
   TLinkLabelEx *LinkLabel1;

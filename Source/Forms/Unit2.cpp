@@ -41,6 +41,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
   LinkLabel1->Caption = FormatStr(LinkLabel1->Caption, LinkStr);
   if(LinkLabel3->Caption != TranslatorString)
     LinkLabel3->Visible = true;
+  Comments->Caption = FormatStr(Comments->Caption, "http://www.gnu.org/licenses/old-licenses/gpl-2.0.html");
 
   ScaleForm(this);
 }
