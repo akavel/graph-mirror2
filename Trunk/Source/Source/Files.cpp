@@ -294,7 +294,11 @@ bool TData::ImportPointSeries(const std::wstring &FileName)
           std::replace(CsvGrid[Row][0].begin(), CsvGrid[Row][0].end(), (char)Property.DecimalSeparator, '.');
           std::replace(CsvGrid[Row][Col].begin(), CsvGrid[Row][Col].end(), (char)Property.DecimalSeparator, '.');
         }
-        Points.back().push_back(TPointSeriesPoint(ToWString(CsvGrid[Row][0]), ToWString(CsvGrid[Row][Col])));
+        std::wstring Str = ToWString(CsvGrid[Row][0]);
+        if(!Str.empty() && Str[0] == L'#')
+          Points.push_back(std::vector<TPointSeriesPoint>());
+        else
+          Points.back().push_back(TPointSeriesPoint(Str, ToWString(CsvGrid[Row][Col])));
       }
     }
   }
