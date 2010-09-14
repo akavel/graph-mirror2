@@ -1020,7 +1020,7 @@ TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const 
     BackgroundColor(Color), Rotation(ARotation)
 {
   SetShowInLegend(false);
-  StatusText = ToWString(RtfToPlainText(Str));
+  StatusText = RtfToPlainText(Str);
   //Update() must be called after Label is added to Data
 }
 //---------------------------------------------------------------------------
@@ -1059,7 +1059,7 @@ void TTextLabel::ReadFromIni(const TConfigFileSection &Section)
   BackgroundColor = Section.Read(L"BackgroundColor", clNone);
 
   Update();
-  StatusText = ToWString(RtfToPlainText(Text));
+  StatusText = RtfToPlainText(Text);
 
   TGraphElem::ReadFromIni(Section);
   SetShowInLegend(false); //Overwrite data; Label is never shown in legend
