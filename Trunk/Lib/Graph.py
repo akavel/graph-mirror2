@@ -146,6 +146,7 @@ Eval = GraphImpl.Eval
 EvalComplex = GraphImpl.EvalComplex
 SaveAsImage = GraphImpl.SaveAsImage
 Update = GraphImpl.Update
+InputQuery = GraphImpl.InputQuery
 
 def HandleOnSelect(Elem):
     global Selected

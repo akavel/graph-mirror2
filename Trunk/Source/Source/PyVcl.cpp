@@ -458,6 +458,8 @@ PyObject* InitPyVcl()
   RegisterClass(__classid(TMenuItem));
   RegisterClass(__classid(TPanel));
   RegisterClass(__classid(TExtColorBox));
+  RegisterClass(__classid(TOpenDialog));
+  RegisterClass(__classid(TSaveDialog));
 
   PyObject *PyVclModule = PyModule_Create(&PyVclModuleDef);
 
