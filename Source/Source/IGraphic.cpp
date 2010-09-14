@@ -321,14 +321,18 @@ double InterpolationAngle(Func32::TDblPoint p1, Func32::TDblPoint p2, Func32::TD
       double dy = 1.5 * (-p1.y + 3*p2.y -3*p3.y + p4.y) +
                         (2*p1.y -5*p2.y + 4*p3.y - p4.y) +
                   0.5 * (-p1.y+p3.y);
-      return std::atan2(dy, dx);
+      return dx == 0 && dy == 0 ? 0 : std::atan2(dy, dx);
     }
     case iaHalfCosine:
       return 0;
 
     case iaLinear:
     default:
-      return std::atan2(p3.y - p2.y, p3.x - p2.x);
+    {
+      double dy = p3.y - p2.y;
+      double dx = p3.x - p2.x;
+      return dx == 0 && dy == 0 ? 0 : std::atan2(dy, dx);
+    }
   }
 }
 //---------------------------------------------------------------------------
