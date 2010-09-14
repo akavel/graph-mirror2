@@ -12,9 +12,10 @@
 //Returns separator used for line ('\t', ';', ' ', ',')
 //Check for separator in priority order. A space cannot be a separator if comes
 //after a comma.
-char GetSeparator(const std::string &Str)
+char GetSeparator(const std::string &Str2)
 {
   const char *Separators = "\t; ,";
+  std::string Str = Trim(Str2);
   for(const char* Ch = Separators; *Ch; Ch++)
   {
     unsigned n = Str.find(*Ch);
@@ -41,7 +42,8 @@ unsigned CountCols(const std::string &Str, char Separator)
 bool ImportCsv(std::istream &Stream, TCsvGrid &CsvGrid)
 {
   std::string Line;
-  std::getline(Stream, Line);
+  while(Stream && Line.empty())
+    std::getline(Stream, Line);
   char Separator = GetSeparator(Line);
   unsigned ColCount = CountCols(Line, Separator);
   unsigned LineNo = 1;
