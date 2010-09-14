@@ -349,7 +349,7 @@ std::pair<int, int> FloatToFract(double f, double Epsilon)
   return std::pair<int, int>(n, d);
 }
 //---------------------------------------------------------------------------
-std::string RtfToPlainText(const std::string &Str)
+std::wstring RtfToPlainText(const std::string &Str)
 {
   //We need a parent window; just use main form
   std::auto_ptr<TIRichEdit> RichEdit(new TIRichEdit(Application->MainForm));
@@ -364,7 +364,7 @@ std::string RtfToPlainText(const std::string &Str)
       Result += ' ';
     else if(Text[I] != '\r' && Text[I] != '\v')
       Result += Text[I];
-  return ToString(Result.Trim());
+  return ToWString(Result.Trim());
 }
 //---------------------------------------------------------------------------
 std::string ToString(int Value)
@@ -452,6 +452,8 @@ std::wstring ToLower(const std::wstring &Str)
 //---------------------------------------------------------------------------
 std::pair<long double,long double> GetPolarCoord(const Func32::TDblPoint &P, Func32::TTrigonometry Trig)
 {
+  if(P.x == 0 && P.y == 0)
+    return std::make_pair(0.0L, 0.0L);
   long double r = std::sqrt(P.x*P.x + P.y*P.y);
   long double a = std::atan2(P.y, P.x);
   if(a < 0)

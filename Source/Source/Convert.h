@@ -30,7 +30,7 @@ bool CheckLimit(TWinControl *Control, String Str, int Min=-MaxInt, int Max=MaxIn
 std::pair<int, int> FloatToFract(double f, double Epsilon = 0.01);
 inline std::wstring RoundToString(long double Number, unsigned Decimals) {return RoundToStr(Number, Decimals).c_str();}
 inline std::wstring RoundToString(long double Number, const TData &Data) {return RoundToStr(Number, Property.RoundTo).c_str();}
-std::string RtfToPlainText(const std::string &Str);
+std::wstring RtfToPlainText(const std::string &Str);
 
 inline int ToIntDef(const std::wstring &Str, int Default) {return StrToIntDef(Str.c_str(), Default);}
 inline int ToIntDef(const String &Str, int Default) {return StrToIntDef(Str, Default);}
