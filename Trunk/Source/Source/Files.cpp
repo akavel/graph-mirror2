@@ -313,8 +313,8 @@ bool TData::ImportPointSeries(const std::wstring &FileName)
   }
 
   unsigned ColorIndex = 0;
-  unsigned Style = 6;
-  unsigned LineStyle = psDashDotDot;
+  unsigned Style = Property.DefaultPoint.Style;
+  unsigned LineStyle = Property.DefaultPointLine.Style;
 
   UndoList.BeginMultiUndo();
   for(unsigned I = 0; I < Points.size(); I++)
@@ -325,8 +325,8 @@ bool TData::ImportPointSeries(const std::wstring &FileName)
       Colors[ColorIndex], //LineColor
       Property.DefaultPoint.Size, //Size
       Property.DefaultPointLine.Size, //LineSize
-      Style = ++Style % 7, //Style
-      static_cast<TPenStyle>(++LineStyle % 5), //LineStyle
+      Style, //Style
+      static_cast<TPenStyle>(LineStyle), //LineStyle
       iaLinear, //Onterpolation
       false, //ShowLabels
       Property.DefaultPointLabelFont, //Font
@@ -343,6 +343,8 @@ bool TData::ImportPointSeries(const std::wstring &FileName)
     UndoList.Push(TUndoAdd(Series));
     Series->Update();
     ColorIndex = ++ColorIndex % (sizeof(Colors)/sizeof(TColor));
+    Style = (Style+1) % 7;
+    LineStyle = (LineStyle+1) % 5;
   }
 
   UndoList.EndMultiUndo();
