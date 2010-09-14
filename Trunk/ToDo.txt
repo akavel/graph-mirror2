@@ -1,8 +1,3 @@
-Known bug:
-1. Insert the relation "(x^2+y^2)^2 = (x^2-y^2)"
-2. Edit the relation and press OK.
-3. Now the Precision Control register is changed from 2 to 0 and all numbers are shown with a very low precision.
-
 ASAP
 + Comments in po-files
 + Replacement for rtf files to generate help.
@@ -12,27 +7,24 @@ ASAP
 - Update web site.
 + Animations don't work under Windows Vista.
 + Save From and To animation range to grf file.
-- Remove change list from Check for update.
-- Replace max limit for animation with resize of animation.
-- Save animation as a sequence of bitmap files.
-- Preview of arrows are inconsistent with the way it is actually drawn.
-- Saving animation frames doesn't work under Windows 98.
-- Import/export user defined trendline models.
-- Fix labels attached to axes when axes are boxed.
++ Remove change list from Check for update.
++ Save animation as a sequence of bitmap files.
++ Import/export user defined trendline models.
++ Fix labels attached to axes when axes are boxed.
 - Add a colored circle to the point series markers.
 - Add more point series markers, eg. vertical line.
-- Adjust size of grid lines (especially when printed to be read by blind users, but also when shown on a smartboard)
-- Adjust axes size (especially when printed to be read by blind users)
++ Adjust size of grid lines (especially when printed to be read by blind users, but also when shown on a smartboard)
++ Adjust axes size (especially when printed to be read by blind users)
 - Grid: Replace dotted lines with dots/crosses where the grids intersect
-- Create a real forum. Look at phpBB
-- Numbers next to tick marks (currently F9)
++ Create a real forum. Look at phpBB
++ Numbers next to tick marks (currently F9)
 - Show end points (arrows) at each line segment.
 + Use error bars when calculating trendlines (http://www-users.york.ac.uk/~mdc1/num_meth_files/weightedlsqsol.html)
-- Show translator email address as link in About dialog.
++ Show translator email address as link in About dialog.
 - Improve showing of numers. (Disable scientific notation)
 
 Graph 4.3
-- Animation Player: Add buttons to move to first and last frame for easy compare.
++ Animation Player: Add buttons to move to first and last frame for easy compare.
 - Link to GPL in About dialog.
 + Link to Graph Examples in Start menu.
 - Make the avi files work in other players than MS Media Player (VideoLAN for example). See mails from Pär Smårs.
@@ -97,6 +89,7 @@ Graph 4.5
 - Real boxed axes
 - Show labels under/left of axes in boxed mode. See forum message "Axis labels" from Dilek.
 - Multiprocessor support (multithreadded)
+- Inverted axes. An axis can go from 0 to -100.
 
 Later
 - Select elements by clicking on them in the graph area.
@@ -181,3 +174,4 @@ New Spanish help file: Francisco Oliver <fran_oliver@ono.com>
 
 Help file:
 Split Evaluate, Area and Length of Path into separate sections.
+Document import of csv
