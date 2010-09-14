@@ -109,7 +109,7 @@ void __fastcall Actnman::TCustomActionControl::SetSelected(bool Value)
     if(Value && ActionClient->Action != NULL)
     {
       TCustomAction *Action = static_cast<TCustomAction*>(ActionClient->Action);
-      if(Action->Hint == "")
+      if(Action->Hint == "" && ActionClient->Tag != 0)
         Action->Hint = reinterpret_cast<TMenuItem*>(ActionClient->Tag)->Hint;
       Application->Hint = GetLongHint(Action->Hint);
     }
