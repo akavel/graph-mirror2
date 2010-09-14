@@ -193,7 +193,8 @@ BEGIN
   543 "You are already using the most recent version of Graph."
   544 "Cannot connect to server www.padowan.dk.\nEither the server is down or you do not have a connection to the Internet."
   545 "Socket error %s"                            //Communication error when checking for newer version
-
+  546 "Signed area between curve and x-axis calculated for the given range."
+  547 "Length of path along the curve calculated for the given range."
   548 "The file cannot be opened by this version of the program.\nYou need at least Graph %s to open this file."
   549 "This file was saved by an outdated version of Graph,\nand it cannot be opened by the current version."
   550 "\n\nIf you don't want to be asked again, this feature may be disabled from the Edit|Options dialog."

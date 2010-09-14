@@ -77,37 +77,37 @@ object AreaFrame: TAreaFrame
       Left = 4
       Top = 8
       Width = 28
-      Height = 13
+      Height = 21
       Align = alLeft
       Caption = 'From:'
       Layout = tlCenter
+      ExplicitHeight = 13
     end
     object Label2: TLabel
       Left = 4
       Top = 38
       Width = 16
-      Height = 13
+      Height = 21
       Align = alLeft
       Caption = 'To:'
       Layout = tlCenter
+      ExplicitHeight = 13
     end
     object Label3: TLabel
       Left = 4
       Top = 68
       Width = 23
-      Height = 13
+      Height = 21
       Align = alLeft
       Caption = 'Area'
       Layout = tlCenter
+      ExplicitHeight = 13
     end
     object Edit3: TEdit
       Left = 36
       Top = 68
       Width = 137
       Height = 21
-      Hint = 
-        'Area or length of path calculated for the given range using Simp' +
-        'son'#39's formula.'
       Align = alClient
       Color = clBtnFace
       ReadOnly = True
@@ -127,21 +127,23 @@ object AreaFrame: TAreaFrame
       object Edit1: TMyEdit
         Left = 0
         Top = 0
-        Width = 120
+        Width = 129
         Height = 21
         Hint = 
           'Enter the start coordinate or mark the range on the graph itself' +
           ' with the mouse.'
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 0
+        ExplicitWidth = 120
       end
       object UpDown1: TUpDownEx
-        Left = 120
+        Left = 129
         Top = 0
         Width = 15
         Height = 21
         Associate = Edit1
         Anchors = [akRight]
+        ExplicitLeft = 120
       end
     end
     object Panel2: TPanel
@@ -158,21 +160,23 @@ object AreaFrame: TAreaFrame
       object Edit2: TMyEdit
         Left = 0
         Top = 0
-        Width = 120
+        Width = 129
         Height = 21
         Hint = 
           'Enter the end coordinate or mark the range on the graph itself w' +
           'ith the mouse.'
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 0
+        ExplicitWidth = 120
       end
       object UpDown2: TUpDownEx
-        Left = 120
+        Left = 129
         Top = 0
         Width = 15
         Height = 21
         Associate = Edit2
         Anchors = [akTop, akRight]
+        ExplicitLeft = 120
       end
     end
   end

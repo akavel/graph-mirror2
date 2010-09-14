@@ -267,8 +267,6 @@ object Form6: TForm6
       OnKeyDown = IRichEdit1KeyDown
       OnKeyPress = IRichEdit1KeyPress
       OnMouseDown = IRichEdit1MouseDown
-      ExplicitWidth = 525
-      ExplicitHeight = 143
     end
   end
   object IFontBox1: TIFontBox

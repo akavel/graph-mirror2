@@ -263,9 +263,18 @@ void TForm9::SetEvalType(TEvalType AEvalType)
       break;
 
     case etArea:
+      AreaFrame1->Label3->Caption = LoadRes(RES_AREA) + L':';
+      Caption = LoadRes(522);
+      AreaFrame1->Edit3->Hint = LoadRes(546);
+      //Update grid panel. Setting AutoSize=true might have worked if it was accesible
+      AreaFrame1->GridPanel1->Align = alNone;
+      AreaFrame1->GridPanel1->Align = alClient;
+      break;
+
     case etArc:
-      AreaFrame1->Label3->Caption = LoadRes(EvalType == etArea ? RES_AREA : RES_LENGTH) + L':';
-      Caption = LoadRes(EvalType == etArea ? 522 : 523);
+      AreaFrame1->Label3->Caption = LoadRes(RES_LENGTH) + L':';
+      Caption = LoadRes(523);
+      AreaFrame1->Edit3->Hint = LoadRes(547);
       //Update grid panel. Setting AutoSize=true might have worked if it was accesible
       AreaFrame1->GridPanel1->Align = alNone;
       AreaFrame1->GridPanel1->Align = alClient;
