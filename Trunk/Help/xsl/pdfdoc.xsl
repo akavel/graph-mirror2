@@ -37,6 +37,12 @@
     procedure after
   </xsl:param>
 
+  <xsl:template match="property">
+    <fo:inline font-style="bold">
+      <xsl:call-template name="inline.charseq"/>
+    </fo:inline>
+  </xsl:template>
+
   <xsl:template match="guilabel">
     <fo:inline font-family="Helvetica" font-style="italic">
       <xsl:call-template name="inline.charseq"/>

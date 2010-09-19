@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "dtd/dblite.dtd">
+<chapter id="Graph" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title><classname>Graph</classname> module</title>
+	<indexterm><primary><classname>Graph</classname> module</primary></indexterm>
+	<para>
+		<variablelist>
+			<varlistentry>
+				<term><link linkend="Graph.TAxes"><classname>Graph</classname>.<property>Axes</property></link></term>
+				<listitem>
+					<para>
+						Structure of class <classname><xref linkend="Graph.TAxes"/></classname> with axes settings.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</para>
+	<xi:include href="Settings.xml"/>
+</chapter>

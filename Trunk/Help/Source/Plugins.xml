@@ -13,7 +13,7 @@
 		<title>Plugins</title>
 		<para>
 			Plugins are Python scripts and are usually distributed in source form as .py files but the can also be distributed as compiled .pyc files.
-			The plugin files are placed in the <filename>Plugin</filename> directory where Graph is installed, and will automatically be found and loaded by Graph.
+			The plugin files are placed in the <filename>Plugins</filename> directory where Graph is installed, and will automatically be found and loaded by Graph.
 		</para>
 		<warning>
 			<para>
