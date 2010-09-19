@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "dtd/dblite.dtd">
+<section id="Settings">
+	<title>Settings</title>
+	<indexterm><primary><classname>TAxis</classname> class</primary></indexterm>
+	<indexterm><primary><classname>TAxes</classname> class</primary></indexterm>
+	<section id="Graph.TAxis" xreflabel="Graph.TAxis">
+		<title>class <classname>Graph.TAxis</classname></title>
+		<para>
+			The <classname>TAxis</classname> class represents settings for one of the axes.
+			You cannot create new instances of this class but should access it through <code>Graph.Axes.xAxis</code> or <code>Graph.Axes.yAxis</code>.
+			<variablelist>
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>Min</property></term>
+					<listitem>
+						<para>
+							Property for setting the minium value of the axis.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>Max</property></term>
+					<listitem>
+						<para>
+							Property for setting the maxium value of the axis.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>LogScl</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>MultiplyOfPi</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>ShowLabel</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>ShowNumbers</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>ShowTicks</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>ShowGrid</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>AutoTick</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>AutoGrid</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>Label</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>AxisCross</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>TickUnit</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>GridUnit</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>Visible</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>ShowPositiveArrow</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>ShowNegativeArrow</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</section>
+
+	<section id="Graph.TAxes" xreflabel="Graph.TAxes">
+		<title>class <classname>Graph.TAxes</classname></title>
+		<para>
+			<variablelist>
+				<varlistentry>
+					<term><link linkend="Graph.TAxis"><classname>TAxes</classname>.<property>xAxis</property></link></term>
+					<listitem>
+						<para>
+							Structure of class <classname><xref linkend="Graph.TAxis"/></classname> with settings for the x-axis.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><link linkend="Graph.TAxis"><classname>TAxes</classname>.<property>yAxis</property></link></term>
+					<listitem>
+						<para>
+							Structure of class <classname><xref linkend="Graph.TAxis"/></classname> with settings for the y-axis.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>AxesColor</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>GridColor</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>BackgroundColor</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>NumberFont</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>LabelFont</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>LegendFont</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>TitleFont</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>Title</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>ShowLegend</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>Trigonometry</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>AxesStyle</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>LegendPlacement</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>LegendPos</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>CalcComplex</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>GridStyle</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</section>
+</section>

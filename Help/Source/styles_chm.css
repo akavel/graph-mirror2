@@ -293,10 +293,6 @@ em.parameter {
   font-size: 130%;
 }
 
-code.function {
-  font-size: 130%;
-}
-
 .email {
   font-size: 100%;
 }
@@ -306,3 +302,15 @@ tr.answer td {
   border-bottom: solid 1em rgb(255,255,255);
 }
 
+code.function {
+  font-size: 130%;
+}
+
+code.code,
+code.classname {
+  font-size: 100%;
+}
+
+span.property {
+  font-weight: bold;
+}
