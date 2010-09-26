@@ -505,10 +505,10 @@ namespace Windows
   const unsigned HH_DISPLAY_TOPIC      = 0;
   extern PACKAGE HWND __fastcall HtmlHelp(HWND hWndCaller, System::WideChar * pszFile, unsigned uCommand, unsigned dwData);
 }
-void ShowHelp(const String &File)
+void ShowHelp(const String &File, const String &HelpFile)
 {
   //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
-  String Str = Application->HelpFile + "::/" + File;
+  String Str = HelpFile.IsEmpty() ? Application->HelpFile : HelpFile + "::/" + File;
   Windows::HtmlHelp(NULL, Str.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
 }
 //---------------------------------------------------------------------------

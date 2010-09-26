@@ -3638,6 +3638,11 @@ object Form1: TForm1
                 ImageIndex = 42
               end
               item
+                Visible = False
+                Action = ScriptDocAction
+                ImageIndex = 35
+              end
+              item
                 Items.HideUnused = False
                 Items = <>
                 Action = TipAction
@@ -4191,6 +4196,14 @@ object Form1: TForm1
       Hint = 'Import point series from a data file.'
       ImageIndex = 17
       OnExecute = ImportPointSeriesActionExecute
+    end
+    object ScriptDocAction: TAction
+      Category = 'Help'
+      Caption = 'Plugin system dokumentation'
+      Hint = 'Show dokumentation for plugin system.'
+      ImageIndex = 35
+      Visible = False
+      OnExecute = ScriptDocActionExecute
     end
   end
   object PopupMenu2: TPopupActionBar

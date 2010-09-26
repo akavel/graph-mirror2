@@ -3674,4 +3674,9 @@ void __fastcall TForm1::SaveDialogEx1Close(TObject *Sender)
 ; //Dummy to force old dialog
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::ScriptDocActionExecute(TObject *Sender)
+{
+  ShowHelp("", ExtractFilePath(Application->ExeName) + "Help\\PluginDoc.chm");
+}
+//---------------------------------------------------------------------------
 
