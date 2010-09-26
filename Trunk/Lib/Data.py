@@ -816,7 +816,7 @@ class TData(_object):
 TData_swigregister = _Data.TData_swigregister
 TData_swigregister(TData)
 
-import vcl
+from Vcl import vcl
 def GraphElemRepr(self):
   return '%s("%s")' % (self.__class__.__name__, self.MakeText())
 TStdFunc.__repr__ = GraphElemRepr

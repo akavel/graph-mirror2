@@ -1,5 +1,5 @@
 import Graph
-import vcl
+from Vcl import vcl
 
 def Execute(Sender):
     import math

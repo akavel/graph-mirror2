@@ -7,7 +7,7 @@ import GraphImpl
 import Settings
 import Data
 import Utility
-import vcl
+from Vcl import vcl
 import xmlrpc.client
 import getopt
 

@@ -505,6 +505,7 @@ void InitPlugins()
   if(IsPythonInstalled())
   {
     Form22 = new TForm22(Application);
+    Form1->ScriptDocAction->Visible = true;
     _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
     PyImport_ExtendInittab(Modules);
     static String ExeName = Application->ExeName; //Py_SetProgramName() requires variable to be static
@@ -525,6 +526,7 @@ void InitPlugins()
     AnsiString BaseDir = GetRegValue(REGISTRY_KEY, L"BaseDir", HKEY_CURRENT_USER, ExtractFileDir(Application->ExeName).c_str()).c_str();
     AnsiString PythonCommands = AnsiString().sprintf(
       "import sys\n"
+      "import GraphImpl\n"
       "class ConsoleWriter:\n"
       "  def __init__(self, color):\n"
       "    self._color = color\n"
@@ -539,7 +541,6 @@ void InitPlugins()
       "sys.stderr = ConsoleWriter(0xFF)\n"
       "sys.stdin = sys.stdout\n"
 
-      "import GraphImpl\n"
       "GraphImpl.version_info = (%d,%d,%d,'%s',%d)\n"
       "GraphImpl.handle = %d\n"
       "GraphImpl.form1 = %d\n"
@@ -549,8 +550,8 @@ void InitPlugins()
       "import Graph\n"
       "Graph.InitPlugins('%s')\n"
 
-      "import vcl\n"
       "import PyVcl\n"
+      "from Vcl import vcl\n"
       "sys.stdin = sys.stdout\n"
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
       , Application->Handle
