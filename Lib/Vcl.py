@@ -47,57 +47,8 @@ class TForm(TObject):
     def Close(self):
         PyVcl.CallMethod(self._handle, "Close")
 
-class TLabel(TObject):
-    def __init__(self, Parent, **keywords):
-        TObject.__init__(self, PyVcl.CreateObject("TLabel"), Parent = Parent._handle, **keywords)
-
-class TMemo(TObject):
-    def __init__(self, Parent, **keywords):
-        TObject.__init__(self, PyVcl.CreateObject("TMemo"), Parent = Parent._handle, **keywords)
-
-class TPanel(TObject):
-    def __init__(self, Parent, **keywords):
-        TObject.__init__(self, PyVcl.CreateObject("TPanel"), Parent = Parent._handle, **keywords)
-
-class TEdit(TObject):
-    def __init__(self, Parent, **keywords):
-        TObject.__init__(self, PyVcl.CreateObject("TEdit"), Parent = Parent._handle if Parent else 0, **keywords)
-
-class TButton(TObject):
-    def __init__(self, Parent, **keywords):
-        TObject.__init__(self, PyVcl.CreateObject("TButton"), Parent = Parent._handle, **keywords)
-
-class TExtColorBox(TObject):
-    def __init__(self, Parent, **keywords):
-        TObject.__init__(self, PyVcl.CreateObject("TExtColorBox"), Parent = Parent._handle, **keywords)
-
 def CreateObject(type, **keywords):
     return TObject(PyVcl.CreateObject(type), **keywords)
-
-class SimpleDialog(TForm):
-    def __init__(self, ShowCancel=True, **keywords):
-        TForm.__init__(self, **keywords)
-        self.Position = "poMainFormCenter"
-        self.BorderStyle = "bsDialog"
-        self.BorderIcons = "biSystemMenu"
-        self.panel = TPanel(self, BevelOuter="bvNone", Width=self.ClientWidth, Height=self.ClientHeight - 40, Caption="", Anchors="akLeft,akTop,akRight,akBottom")
-        self.button1 = TButton(self, Caption = "OK", Anchors = "akRight,akBottom", Default=True, OnClick=self.OnOk, Top=self.ClientHeight-32, Left=self.ClientWidth-176)
-        if ShowCancel:
-            self.button2 = TButton(self, Caption="Cancel", Anchors="akRight,akBottom", ModalResult=1, Cancel=True, Top=self.ClientHeight-32, Left=self.ClientWidth-88)
-        else:
-            self.button2 = None
-            self.button1.Cancel = True
-            self.button1.Anchors = "akLeft,akRight,akBottom"
-            self.button1.Left = (self.ClientWidth - self.button1.Width) / 2
-        self.OnShow = self.FormOnShow
-
-    def FormOnShow(self, sender):
-        self.button1.TabOrder = 100
-        if self.button2:
-            self.button2.TabOrder = 101
-        pass
-    def OnOk(self, sender):
-        self.Close()
 
 class TAction(TObject):
     def __init__(self, handle=0, **keywords):
@@ -135,5 +86,17 @@ def FindComponent(Parent, Name):
     if Component.Name == Name:
         return Component
 
+def ObjectInit(self, Parent=None, **keywords):
+    TObject.__init__(self, PyVcl.CreateObject(self.__class__.__name__), Parent = Parent._handle if Parent else 0, **keywords)
+
+class VclTypes:
+    def __getattr__(self, name):
+        return type(name, (TObject,), dict(__init__=ObjectInit))
+    TForm = TForm
+    TAction = TAction
+    PropertyError = PyVcl.PropertyError
+    VclError = PyVcl.VclError
+
 PropertyError = PyVcl.PropertyError
 VclError = PyVcl.VclError
+vcl = VclTypes()
