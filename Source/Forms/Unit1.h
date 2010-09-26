@@ -222,6 +222,7 @@ __published:	// IDE-managed Components
   TMySplitter *Splitter1;
   TSplitter *Splitter2;
   TMenuItem *N1;
+  TAction *ScriptDocAction;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);
@@ -386,6 +387,7 @@ __published:	// IDE-managed Components
   void __fastcall FormShortCut(TWMKey &Msg, bool &Handled);
   void __fastcall TreeViewMouseLeave(TObject *Sender);
   void __fastcall SaveDialogEx1Close(TObject *Sender);
+  void __fastcall ScriptDocActionExecute(TObject *Sender);
 
 
 private:	// User declarations
