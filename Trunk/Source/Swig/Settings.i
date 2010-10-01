@@ -73,14 +73,6 @@ struct TAxes
   TGridStyle GridStyle;
 };
 
-%nodefault TDefaultData;
-struct TDefaultData
-{
-  unsigned Style;
-  TColor Color;
-  unsigned Size;
-};
-
 enum TComplexFormat {cfReal,cfRectangular,cfPolar};
 
 %nodefault TProperty;
@@ -93,7 +85,6 @@ struct TProperty
   TDefaultData DefaultFunction, DefaultPoint, DefaultPointLine, DefaultShade, DefaultTrendline, DefaultRelation, DefaultTangent, DefaultDif;
   TFont* DefaultPointLabelFont, *DefaultLabelFont;
   bool ShowTipsAtStartup;
-  unsigned NextTip;
   std::wstring Language;
   int FontScale; //Window scale in percent
   bool CustomDecimalSeparator; //Default system decimal separator is used when false

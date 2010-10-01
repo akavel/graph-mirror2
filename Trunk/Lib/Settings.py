@@ -205,25 +205,6 @@ class TAxes(_object):
 TAxes_swigregister = _Settings.TAxes_swigregister
 TAxes_swigregister(TAxes)
 
-class TDefaultData(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TDefaultData, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, TDefaultData, name)
-    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
-    __repr__ = _swig_repr
-    __swig_setmethods__["Style"] = _Settings.TDefaultData_Style_set
-    __swig_getmethods__["Style"] = _Settings.TDefaultData_Style_get
-    if _newclass:Style = _swig_property(_Settings.TDefaultData_Style_get, _Settings.TDefaultData_Style_set)
-    __swig_setmethods__["Color"] = _Settings.TDefaultData_Color_set
-    __swig_getmethods__["Color"] = _Settings.TDefaultData_Color_get
-    if _newclass:Color = _swig_property(_Settings.TDefaultData_Color_get, _Settings.TDefaultData_Color_set)
-    __swig_setmethods__["Size"] = _Settings.TDefaultData_Size_set
-    __swig_getmethods__["Size"] = _Settings.TDefaultData_Size_get
-    if _newclass:Size = _swig_property(_Settings.TDefaultData_Size_get, _Settings.TDefaultData_Size_set)
-TDefaultData_swigregister = _Settings.TDefaultData_swigregister
-TDefaultData_swigregister(TDefaultData)
-
 cfReal = _Settings.cfReal
 cfRectangular = _Settings.cfRectangular
 cfPolar = _Settings.cfPolar
@@ -279,9 +260,6 @@ class TProperty(_object):
     __swig_setmethods__["ShowTipsAtStartup"] = _Settings.TProperty_ShowTipsAtStartup_set
     __swig_getmethods__["ShowTipsAtStartup"] = _Settings.TProperty_ShowTipsAtStartup_get
     if _newclass:ShowTipsAtStartup = _swig_property(_Settings.TProperty_ShowTipsAtStartup_get, _Settings.TProperty_ShowTipsAtStartup_set)
-    __swig_setmethods__["NextTip"] = _Settings.TProperty_NextTip_set
-    __swig_getmethods__["NextTip"] = _Settings.TProperty_NextTip_get
-    if _newclass:NextTip = _swig_property(_Settings.TProperty_NextTip_get, _Settings.TProperty_NextTip_set)
     __swig_setmethods__["Language"] = _Settings.TProperty_Language_set
     __swig_getmethods__["Language"] = _Settings.TProperty_Language_get
     if _newclass:Language = _swig_property(_Settings.TProperty_Language_get, _Settings.TProperty_Language_set)

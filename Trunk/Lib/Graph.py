@@ -148,6 +148,11 @@ SaveAsImage = GraphImpl.SaveAsImage
 Update = GraphImpl.Update
 InputQuery = GraphImpl.InputQuery
 
+# TProperty
+cfReal = Settings.cfReal
+cfRectangular = Settings.cfRectangular
+cfPolar = Settings.cfPolar
+
 def HandleOnSelect(Elem):
     global Selected
     Selected = Elem
