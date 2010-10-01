@@ -128,7 +128,7 @@ function output_rss($feed)
 		echo "\t\t\t".'<title><![CDATA['.escape_cdata($item['title']).']]></title>'."\n";
 		echo "\t\t\t".'<link>'.$item['link'].'</link>'."\n";
 		echo "\t\t\t".'<description><![CDATA['.escape_cdata($item['description']).']]></description>'."\n";
-		echo "\t\t\t".'<author><![CDATA['.(isset($item['author']['email']) ? escape_cdata($item['author']['email']) : 'dummy@example.com').' ('.escape_cdata($item['author']['name']).')]]></author>'."\n";
+      echo "\t\t\t".'<author><![CDATA['.(isset($item['author']['email']) ? escape_cdata($item['author']['email']) : '').' ('.escape_cdata($item['author']['name']).')]]></author>'."\n";
 		echo "\t\t\t".'<pubDate>'.gmdate('r', $item['pubdate']).'</pubDate>'."\n";
 		echo "\t\t\t".'<guid>'.$item['link'].'</guid>'."\n";
 
@@ -279,9 +279,9 @@ if ($action == 'feed')
 	// Determine what type of feed to output
 	$type = isset($_GET['type']) && in_array($_GET['type'], array('html', 'rss', 'atom', 'xml')) ? $_GET['type'] : 'html';
 
-	$show = isset($_GET['show']) ? intval($_GET['show']) : 15;
+   $show = isset($_GET['show']) ? intval($_GET['show']) : 15;
 	if ($show < 1 || $show > 50)
-		$show = 15;
+      $show = 15;
 
 	($hook = get_hook('ex_set_syndication_type')) ? eval($hook) : null;
 
@@ -441,12 +441,13 @@ if ($action == 'feed')
 
 		// Fetch $show topics
 		$query = array(
-			'SELECT'	=> 't.id, t.poster, t.subject, t.last_post, t.last_poster, p.message, p.hide_smilies, u.email_setting, u.email, p.poster_id, p.poster_email',
-			'FROM'		=> 'topics AS t',
+//         'SELECT' => 't.id, t.poster, t.subject, t.last_post, t.last_poster, p.message, p.hide_smilies, u.email_setting, u.email, p.poster_id, p.poster_email, p.posted, p.id',
+         'SELECT' => 't.id, p.poster, t.subject, t.last_post, t.last_poster, p.message, p.hide_smilies, u.email_setting, u.email, p.poster_id, p.poster_email, p.posted, p.id',
+         'FROM'      => 'posts AS p',
 			'JOINS'		=> array(
 				array(
-					'INNER JOIN'	=> 'posts AS p',
-					'ON'			=> 'p.id=t.first_post_id'
+               'INNER JOIN'   => 'topics AS t',
+               'ON'        => 't.id=p.topic_id'
 				),
 				array(
 					'INNER JOIN'		=> 'users AS u',
@@ -458,7 +459,8 @@ if ($action == 'feed')
 				)
 			),
 			'WHERE'		=> '(fp.read_forum IS NULL OR fp.read_forum=1) AND t.moved_to IS NULL',
-			'ORDER BY'	=> 't.last_post DESC',
+//         'ORDER BY'  => 't.last_post DESC',
+         'ORDER BY'  => 'p.posted DESC',
 			'LIMIT'		=> $show
 		);
 
@@ -478,14 +480,16 @@ if ($action == 'feed')
 			$cur_topic['message'] = parse_message($cur_topic['message'], $cur_topic['hide_smilies']);
 
 			$item = array(
-				'id'			=>	$cur_topic['id'],
+            'id'       => $cur_topic['id'],
 				'title'			=>	$cur_topic['subject'],
-				'link'			=>	forum_link($forum_url['topic_new_posts'], array($cur_topic['id'], sef_friendly($cur_topic['subject']))),
+//            'link'         => forum_link($forum_url['topic_new_posts'], array($cur_topic['id'], sef_friendly($cur_topic['subject']))),
+            'link'         => forum_link('viewtopic.php?pid=$1', array($cur_topic['id'])),
 				'description'	=>	$cur_topic['message'],
 				'author'		=>	array(
-					'name'	=> $cur_topic['last_poster']
+//               'name'   => $cur_topic['last_poster']
+               'name'   => $cur_topic['poster']
 				),
-				'pubdate'		=>	$cur_topic['last_post']
+            'pubdate'      => $cur_topic['posted']
 			);
 
 			if ($cur_topic['poster_id'] > 1)
