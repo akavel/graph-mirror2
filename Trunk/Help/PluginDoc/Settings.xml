@@ -4,6 +4,117 @@
 	<title>Settings</title>
 	<indexterm><primary><classname>TAxis</classname> class</primary></indexterm>
 	<indexterm><primary><classname>TAxes</classname> class</primary></indexterm>
+	<indexterm><primary><classname>TProperty</classname> class</primary></indexterm>
+
+	<section id="Graph.TProperty" xreflabel="Graph.TProperty">
+		<title>class <classname>Graph.TProperty</classname></title>
+		<para>
+			<variablelist>
+				<varlistentry>
+					<term><classname>TProperty</classname>.<property>RoundTo</property></term>
+					<listitem>
+						<para>
+							Indicates the number of decimals used when showing numbers.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TProperty</classname>.<property>SavePos</property></term>
+					<listitem>
+						<para>
+							If <constant>True</constant> the window size and position is saved at program termination.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TProperty</classname>.<property>ComplexFormat</property></term>
+					<listitem>
+						<para>
+							This indicates the format used when showing complex numbers.
+							It can be <classname>Graph.cfReal</classname>, <classname>Graph.cfRectangular</classname> or <classname>Graph.cfPolar</classname>.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TProperty</classname>.<property>CheckForUpdate</property></term>
+					<listitem>
+						<para>
+							When this is <constant>True</constant> Graph will check for updates when started.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TProperty</classname>.<property>DefaultFunction</property></term>
+					<term><classname>TProperty</classname>.<property>DefaultPoint</property></term>
+					<term><classname>TProperty</classname>.<property>DefaultPointLine</property></term>
+					<term><classname>TProperty</classname>.<property>DefaultShade</property></term>
+					<term><classname>TProperty</classname>.<property>DefaultTrendline</property></term>
+					<term><classname>TProperty</classname>.<property>DefaultRelation</property></term>
+					<term><classname>TProperty</classname>.<property>DefaultTangent</property></term>
+					<term><classname>TProperty</classname>.<property>DefaultDif</property></term>
+					<listitem>
+						<para>
+
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TProperty</classname>.<property>DefaultPointLabelFont</property></term>
+					<term><classname>TProperty</classname>.<property>DefaultLabelFont</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TProperty</classname>.<property>ShowTipsAtStartup</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TProperty</classname>.<property>Language</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TProperty</classname>.<property>FontScale</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TProperty</classname>.<property>CustomDecimalSeparator</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TProperty</classname>.<property>DecimalSeparator</property></term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</section>
+
 	<section id="Graph.TAxis" xreflabel="Graph.TAxis">
 		<title>class <classname>Graph.TAxis</classname></title>
 		<para>

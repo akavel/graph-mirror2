@@ -38,7 +38,7 @@
   </xsl:param>
 
   <xsl:template match="property">
-    <fo:inline font-style="bold">
+    <fo:inline font-weight="bold">
       <xsl:call-template name="inline.charseq"/>
     </fo:inline>
   </xsl:template>
