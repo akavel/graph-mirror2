@@ -2695,11 +2695,11 @@ SWIG_Python_MustGetPtr(PyObject *obj, swig_type_info *ty, int argnum, int flags)
 #define SWIGTYPE_p_Func32__TDblPoint swig_types[0]
 #define SWIGTYPE_p_Graph__TAxes swig_types[1]
 #define SWIGTYPE_p_Graph__TAxis swig_types[2]
-#define SWIGTYPE_p_Graph__TDefaultData swig_types[3]
-#define SWIGTYPE_p_Graph__TFormatSettings swig_types[4]
-#define SWIGTYPE_p_Graph__TGuiSettings swig_types[5]
-#define SWIGTYPE_p_Graph__TPlotSettings swig_types[6]
-#define SWIGTYPE_p_Graph__TProperty swig_types[7]
+#define SWIGTYPE_p_Graph__TFormatSettings swig_types[3]
+#define SWIGTYPE_p_Graph__TGuiSettings swig_types[4]
+#define SWIGTYPE_p_Graph__TPlotSettings swig_types[5]
+#define SWIGTYPE_p_Graph__TProperty swig_types[6]
+#define SWIGTYPE_p_TDefaultData swig_types[7]
 #define SWIGTYPE_p_TFont swig_types[8]
 #define SWIGTYPE_p_char swig_types[9]
 #define SWIGTYPE_p_unsigned_int swig_types[10]
@@ -4831,10 +4831,8 @@ SWIGINTERN PyObject *_wrap_TAxes_LegendPos_set(PyObject *SWIGUNUSEDPARM(self), P
   }
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
   {
-    PyObject *O1=NULL, *O2=NULL;
-    if(!PyArg_ParseTuple(obj1, "OO", &O1, &O2))
-    SWIG_fail;
-    if(!Python::FromPyObject(O1, (&arg2)->x) || !Python::FromPyObject(O2, (&arg2)->y))
+    Func32::TDblPoint *p = &arg2;
+    if(!Python::FromTuple(obj1, p->x,p->y))
     SWIG_fail;
   }
   if (arg1) (arg1)->LegendPos = arg2;
@@ -4861,7 +4859,8 @@ SWIGINTERN PyObject *_wrap_TAxes_LegendPos_get(PyObject *SWIGUNUSEDPARM(self), P
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
   result =  ((arg1)->LegendPos);
   {
-    resultobj = Py_BuildValue("NN", Python::ToPyObject((&result)->x), Python::ToPyObject((&result)->y));
+    Func32::TDblPoint *p = &result;
+    resultobj = Python::CreateTuple(p->x,p->y);
   }
   return resultobj;
 fail:
@@ -4977,169 +4976,6 @@ SWIGINTERN PyObject *TAxes_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
   SWIG_TypeNewClientData(SWIGTYPE_p_Graph__TAxes, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_TDefaultData_Style_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TDefaultData_Style_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Style_set" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TDefaultData_Style_set" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
-  if (arg1) (arg1)->Style = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TDefaultData_Style_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:TDefaultData_Style_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Style_get" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
-  result = (unsigned int) ((arg1)->Style);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TDefaultData_Color_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
-  TColor arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TDefaultData_Color_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Color_set" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TDefaultData_Color_set" "', argument " "2"" of type '" "TColor""'");
-  } 
-  arg2 = static_cast< TColor >(val2);
-  if (arg1) (arg1)->Color = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TDefaultData_Color_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  TColor result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:TDefaultData_Color_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Color_get" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
-  result = (TColor) ((arg1)->Color);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TDefaultData_Size_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TDefaultData_Size_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Size_set" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TDefaultData_Size_set" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
-  if (arg1) (arg1)->Size = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TDefaultData_Size_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TDefaultData *arg1 = (Graph::TDefaultData *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:TDefaultData_Size_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TDefaultData_Size_get" "', argument " "1"" of type '" "Graph::TDefaultData *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TDefaultData * >(argp1);
-  result = (unsigned int) ((arg1)->Size);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *TDefaultData_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_Graph__TDefaultData, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
@@ -5354,11 +5190,9 @@ fail:
 SWIGINTERN PyObject *_wrap_TProperty_DefaultFunction_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
-  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  TDefaultData arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -5368,12 +5202,12 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultFunction_set(PyObject *SWIGUNUSEDPAR
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultFunction_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultFunction_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  {
+    TDefaultData *p = &arg2;
+    if(!Python::FromTuple(obj1, p->Style,p->Color,p->Size))
+    SWIG_fail;
   }
-  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
-  if (arg1) (arg1)->DefaultFunction = *arg2;
+  if (arg1) (arg1)->DefaultFunction = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -5387,7 +5221,7 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultFunction_get(PyObject *SWIGUNUSEDPAR
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Graph::TDefaultData *result = 0 ;
+  TDefaultData result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultFunction_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
@@ -5395,8 +5229,11 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultFunction_get(PyObject *SWIGUNUSEDPAR
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultFunction_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  result = (Graph::TDefaultData *)& ((arg1)->DefaultFunction);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  result =  ((arg1)->DefaultFunction);
+  {
+    TDefaultData *p = &result;
+    resultobj = Python::CreateTuple(p->Style,p->Color,p->Size);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5406,11 +5243,9 @@ fail:
 SWIGINTERN PyObject *_wrap_TProperty_DefaultPoint_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
-  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  TDefaultData arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -5420,12 +5255,12 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultPoint_set(PyObject *SWIGUNUSEDPARM(s
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultPoint_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultPoint_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  {
+    TDefaultData *p = &arg2;
+    if(!Python::FromTuple(obj1, p->Style,p->Color,p->Size))
+    SWIG_fail;
   }
-  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
-  if (arg1) (arg1)->DefaultPoint = *arg2;
+  if (arg1) (arg1)->DefaultPoint = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -5439,7 +5274,7 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultPoint_get(PyObject *SWIGUNUSEDPARM(s
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Graph::TDefaultData *result = 0 ;
+  TDefaultData result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultPoint_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
@@ -5447,8 +5282,11 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultPoint_get(PyObject *SWIGUNUSEDPARM(s
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultPoint_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  result = (Graph::TDefaultData *)& ((arg1)->DefaultPoint);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  result =  ((arg1)->DefaultPoint);
+  {
+    TDefaultData *p = &result;
+    resultobj = Python::CreateTuple(p->Style,p->Color,p->Size);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5458,11 +5296,9 @@ fail:
 SWIGINTERN PyObject *_wrap_TProperty_DefaultPointLine_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
-  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  TDefaultData arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -5472,12 +5308,12 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultPointLine_set(PyObject *SWIGUNUSEDPA
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultPointLine_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultPointLine_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  {
+    TDefaultData *p = &arg2;
+    if(!Python::FromTuple(obj1, p->Style,p->Color,p->Size))
+    SWIG_fail;
   }
-  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
-  if (arg1) (arg1)->DefaultPointLine = *arg2;
+  if (arg1) (arg1)->DefaultPointLine = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -5491,7 +5327,7 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultPointLine_get(PyObject *SWIGUNUSEDPA
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Graph::TDefaultData *result = 0 ;
+  TDefaultData result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultPointLine_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
@@ -5499,8 +5335,11 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultPointLine_get(PyObject *SWIGUNUSEDPA
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultPointLine_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  result = (Graph::TDefaultData *)& ((arg1)->DefaultPointLine);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  result =  ((arg1)->DefaultPointLine);
+  {
+    TDefaultData *p = &result;
+    resultobj = Python::CreateTuple(p->Style,p->Color,p->Size);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5510,11 +5349,9 @@ fail:
 SWIGINTERN PyObject *_wrap_TProperty_DefaultShade_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
-  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  TDefaultData arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -5524,12 +5361,12 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultShade_set(PyObject *SWIGUNUSEDPARM(s
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultShade_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultShade_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  {
+    TDefaultData *p = &arg2;
+    if(!Python::FromTuple(obj1, p->Style,p->Color,p->Size))
+    SWIG_fail;
   }
-  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
-  if (arg1) (arg1)->DefaultShade = *arg2;
+  if (arg1) (arg1)->DefaultShade = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -5543,7 +5380,7 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultShade_get(PyObject *SWIGUNUSEDPARM(s
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Graph::TDefaultData *result = 0 ;
+  TDefaultData result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultShade_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
@@ -5551,8 +5388,11 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultShade_get(PyObject *SWIGUNUSEDPARM(s
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultShade_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  result = (Graph::TDefaultData *)& ((arg1)->DefaultShade);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  result =  ((arg1)->DefaultShade);
+  {
+    TDefaultData *p = &result;
+    resultobj = Python::CreateTuple(p->Style,p->Color,p->Size);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5562,11 +5402,9 @@ fail:
 SWIGINTERN PyObject *_wrap_TProperty_DefaultTrendline_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
-  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  TDefaultData arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -5576,12 +5414,12 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultTrendline_set(PyObject *SWIGUNUSEDPA
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultTrendline_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultTrendline_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  {
+    TDefaultData *p = &arg2;
+    if(!Python::FromTuple(obj1, p->Style,p->Color,p->Size))
+    SWIG_fail;
   }
-  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
-  if (arg1) (arg1)->DefaultTrendline = *arg2;
+  if (arg1) (arg1)->DefaultTrendline = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -5595,7 +5433,7 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultTrendline_get(PyObject *SWIGUNUSEDPA
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Graph::TDefaultData *result = 0 ;
+  TDefaultData result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultTrendline_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
@@ -5603,8 +5441,11 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultTrendline_get(PyObject *SWIGUNUSEDPA
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultTrendline_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  result = (Graph::TDefaultData *)& ((arg1)->DefaultTrendline);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  result =  ((arg1)->DefaultTrendline);
+  {
+    TDefaultData *p = &result;
+    resultobj = Python::CreateTuple(p->Style,p->Color,p->Size);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5614,11 +5455,9 @@ fail:
 SWIGINTERN PyObject *_wrap_TProperty_DefaultRelation_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
-  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  TDefaultData arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -5628,12 +5467,12 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultRelation_set(PyObject *SWIGUNUSEDPAR
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultRelation_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultRelation_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  {
+    TDefaultData *p = &arg2;
+    if(!Python::FromTuple(obj1, p->Style,p->Color,p->Size))
+    SWIG_fail;
   }
-  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
-  if (arg1) (arg1)->DefaultRelation = *arg2;
+  if (arg1) (arg1)->DefaultRelation = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -5647,7 +5486,7 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultRelation_get(PyObject *SWIGUNUSEDPAR
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Graph::TDefaultData *result = 0 ;
+  TDefaultData result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultRelation_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
@@ -5655,8 +5494,11 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultRelation_get(PyObject *SWIGUNUSEDPAR
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultRelation_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  result = (Graph::TDefaultData *)& ((arg1)->DefaultRelation);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  result =  ((arg1)->DefaultRelation);
+  {
+    TDefaultData *p = &result;
+    resultobj = Python::CreateTuple(p->Style,p->Color,p->Size);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5666,11 +5508,9 @@ fail:
 SWIGINTERN PyObject *_wrap_TProperty_DefaultTangent_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
-  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  TDefaultData arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -5680,12 +5520,12 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultTangent_set(PyObject *SWIGUNUSEDPARM
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultTangent_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultTangent_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  {
+    TDefaultData *p = &arg2;
+    if(!Python::FromTuple(obj1, p->Style,p->Color,p->Size))
+    SWIG_fail;
   }
-  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
-  if (arg1) (arg1)->DefaultTangent = *arg2;
+  if (arg1) (arg1)->DefaultTangent = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -5699,7 +5539,7 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultTangent_get(PyObject *SWIGUNUSEDPARM
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Graph::TDefaultData *result = 0 ;
+  TDefaultData result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultTangent_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
@@ -5707,8 +5547,11 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultTangent_get(PyObject *SWIGUNUSEDPARM
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultTangent_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  result = (Graph::TDefaultData *)& ((arg1)->DefaultTangent);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  result =  ((arg1)->DefaultTangent);
+  {
+    TDefaultData *p = &result;
+    resultobj = Python::CreateTuple(p->Style,p->Color,p->Size);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5718,11 +5561,9 @@ fail:
 SWIGINTERN PyObject *_wrap_TProperty_DefaultDif_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
-  Graph::TDefaultData *arg2 = (Graph::TDefaultData *) 0 ;
+  TDefaultData arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -5732,12 +5573,12 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultDif_set(PyObject *SWIGUNUSEDPARM(sel
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultDif_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TProperty_DefaultDif_set" "', argument " "2"" of type '" "Graph::TDefaultData *""'"); 
+  {
+    TDefaultData *p = &arg2;
+    if(!Python::FromTuple(obj1, p->Style,p->Color,p->Size))
+    SWIG_fail;
   }
-  arg2 = reinterpret_cast< Graph::TDefaultData * >(argp2);
-  if (arg1) (arg1)->DefaultDif = *arg2;
+  if (arg1) (arg1)->DefaultDif = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -5751,7 +5592,7 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultDif_get(PyObject *SWIGUNUSEDPARM(sel
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Graph::TDefaultData *result = 0 ;
+  TDefaultData result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:TProperty_DefaultDif_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
@@ -5759,8 +5600,11 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultDif_get(PyObject *SWIGUNUSEDPARM(sel
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_DefaultDif_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  result = (Graph::TDefaultData *)& ((arg1)->DefaultDif);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Graph__TDefaultData, 0 |  0 );
+  result =  ((arg1)->DefaultDif);
+  {
+    TDefaultData *p = &result;
+    resultobj = Python::CreateTuple(p->Style,p->Color,p->Size);
+  }
   return resultobj;
 fail:
   return NULL;
@@ -5921,58 +5765,6 @@ SWIGINTERN PyObject *_wrap_TProperty_ShowTipsAtStartup_get(PyObject *SWIGUNUSEDP
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
   result = (bool) ((arg1)->ShowTipsAtStartup);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TProperty_NextTip_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TProperty_NextTip_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_NextTip_set" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TProperty_NextTip_set" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
-  if (arg1) (arg1)->NextTip = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TProperty_NextTip_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Graph::TProperty *arg1 = (Graph::TProperty *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:TProperty_NextTip_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TProperty, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TProperty_NextTip_get" "', argument " "1"" of type '" "Graph::TProperty *""'"); 
-  }
-  arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
-  result = (unsigned int) ((arg1)->NextTip);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -7254,13 +7046,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TAxes_GridStyle_set", _wrap_TAxes_GridStyle_set, METH_VARARGS, NULL},
 	 { (char *)"TAxes_GridStyle_get", _wrap_TAxes_GridStyle_get, METH_VARARGS, NULL},
 	 { (char *)"TAxes_swigregister", TAxes_swigregister, METH_VARARGS, NULL},
-	 { (char *)"TDefaultData_Style_set", _wrap_TDefaultData_Style_set, METH_VARARGS, NULL},
-	 { (char *)"TDefaultData_Style_get", _wrap_TDefaultData_Style_get, METH_VARARGS, NULL},
-	 { (char *)"TDefaultData_Color_set", _wrap_TDefaultData_Color_set, METH_VARARGS, NULL},
-	 { (char *)"TDefaultData_Color_get", _wrap_TDefaultData_Color_get, METH_VARARGS, NULL},
-	 { (char *)"TDefaultData_Size_set", _wrap_TDefaultData_Size_set, METH_VARARGS, NULL},
-	 { (char *)"TDefaultData_Size_get", _wrap_TDefaultData_Size_get, METH_VARARGS, NULL},
-	 { (char *)"TDefaultData_swigregister", TDefaultData_swigregister, METH_VARARGS, NULL},
 	 { (char *)"TProperty_RoundTo_set", _wrap_TProperty_RoundTo_set, METH_VARARGS, NULL},
 	 { (char *)"TProperty_RoundTo_get", _wrap_TProperty_RoundTo_get, METH_VARARGS, NULL},
 	 { (char *)"TProperty_SavePos_set", _wrap_TProperty_SavePos_set, METH_VARARGS, NULL},
@@ -7291,8 +7076,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TProperty_DefaultLabelFont_get", _wrap_TProperty_DefaultLabelFont_get, METH_VARARGS, NULL},
 	 { (char *)"TProperty_ShowTipsAtStartup_set", _wrap_TProperty_ShowTipsAtStartup_set, METH_VARARGS, NULL},
 	 { (char *)"TProperty_ShowTipsAtStartup_get", _wrap_TProperty_ShowTipsAtStartup_get, METH_VARARGS, NULL},
-	 { (char *)"TProperty_NextTip_set", _wrap_TProperty_NextTip_set, METH_VARARGS, NULL},
-	 { (char *)"TProperty_NextTip_get", _wrap_TProperty_NextTip_get, METH_VARARGS, NULL},
 	 { (char *)"TProperty_Language_set", _wrap_TProperty_Language_set, METH_VARARGS, NULL},
 	 { (char *)"TProperty_Language_get", _wrap_TProperty_Language_get, METH_VARARGS, NULL},
 	 { (char *)"TProperty_FontScale_set", _wrap_TProperty_FontScale_set, METH_VARARGS, NULL},
@@ -7348,11 +7131,11 @@ static PyMethodDef SwigMethods[] = {
 static swig_type_info _swigt__p_Func32__TDblPoint = {"_p_Func32__TDblPoint", "Func32::TDblPoint *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TAxes = {"_p_Graph__TAxes", "Graph::TAxes *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TAxis = {"_p_Graph__TAxis", "Graph::TAxis *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_Graph__TDefaultData = {"_p_Graph__TDefaultData", "Graph::TDefaultData *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TFormatSettings = {"_p_Graph__TFormatSettings", "Graph::TFormatSettings *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TGuiSettings = {"_p_Graph__TGuiSettings", "Graph::TGuiSettings *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TPlotSettings = {"_p_Graph__TPlotSettings", "Graph::TPlotSettings *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Graph__TProperty = {"_p_Graph__TProperty", "Graph::TProperty *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_TDefaultData = {"_p_TDefaultData", "TDefaultData *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TFont = {"_p_TFont", "TFont *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "unsigned int *|TBrushStyle *|TColor *", 0, 0, (void*)0, 0};
@@ -7362,11 +7145,11 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Func32__TDblPoint,
   &_swigt__p_Graph__TAxes,
   &_swigt__p_Graph__TAxis,
-  &_swigt__p_Graph__TDefaultData,
   &_swigt__p_Graph__TFormatSettings,
   &_swigt__p_Graph__TGuiSettings,
   &_swigt__p_Graph__TPlotSettings,
   &_swigt__p_Graph__TProperty,
+  &_swigt__p_TDefaultData,
   &_swigt__p_TFont,
   &_swigt__p_char,
   &_swigt__p_unsigned_int,
@@ -7376,11 +7159,11 @@ static swig_type_info *swig_type_initial[] = {
 static swig_cast_info _swigc__p_Func32__TDblPoint[] = {  {&_swigt__p_Func32__TDblPoint, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TAxes[] = {  {&_swigt__p_Graph__TAxes, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TAxis[] = {  {&_swigt__p_Graph__TAxis, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_Graph__TDefaultData[] = {  {&_swigt__p_Graph__TDefaultData, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TFormatSettings[] = {  {&_swigt__p_Graph__TFormatSettings, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TGuiSettings[] = {  {&_swigt__p_Graph__TGuiSettings, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TPlotSettings[] = {  {&_swigt__p_Graph__TPlotSettings, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Graph__TProperty[] = {  {&_swigt__p_Graph__TProperty, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_TDefaultData[] = {  {&_swigt__p_TDefaultData, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TFont[] = {  {&_swigt__p_TFont, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_int[] = {  {&_swigt__p_unsigned_int, 0, 0, 0},{0, 0, 0, 0}};
@@ -7390,11 +7173,11 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Func32__TDblPoint,
   _swigc__p_Graph__TAxes,
   _swigc__p_Graph__TAxis,
-  _swigc__p_Graph__TDefaultData,
   _swigc__p_Graph__TFormatSettings,
   _swigc__p_Graph__TGuiSettings,
   _swigc__p_Graph__TPlotSettings,
   _swigc__p_Graph__TProperty,
+  _swigc__p_TDefaultData,
   _swigc__p_TFont,
   _swigc__p_char,
   _swigc__p_unsigned_int,

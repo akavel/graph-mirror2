@@ -13771,13 +13771,9 @@ SWIGINTERN PyObject *_wrap_TPointSeries_InsertDblPoint(PyObject *SWIGUNUSEDPARM(
     }
   }
   {
-    PyObject *O1=NULL, *O2=NULL;
-    if(!PyArg_ParseTuple(obj1, "OO", &O1, &O2))
+    Func32::TDblPoint *p = arg2;
+    if(!Python::FromTuple(obj1, p->x,p->y))
     SWIG_fail;
-    Func32::TDblPoint Temp;
-    if(!Python::FromPyObject(O1, Temp.x) || !Python::FromPyObject(O2, Temp.y))
-    SWIG_fail;
-    arg2 = &Temp;
   }
   ecode3 = SWIG_AsVal_int(obj2, &val3);
   if (!SWIG_IsOK(ecode3)) {
@@ -13835,10 +13831,8 @@ SWIGINTERN PyObject *_wrap_TPointSeries_InsertPoint(PyObject *SWIGUNUSEDPARM(sel
     }
   }
   {
-    PyObject *O1=NULL, *O2=NULL;
-    if(!PyArg_ParseTuple(obj1, "OO", &O1, &O2))
-    SWIG_fail;
-    if(!Python::FromPyObject(O1, (&arg2)->First) || !Python::FromPyObject(O2, (&arg2)->Second))
+    TPointSeriesPoint *p = &arg2;
+    if(!Python::FromTuple(obj1, p->First,p->Second))
     SWIG_fail;
   }
   ecode3 = SWIG_AsVal_int(obj2, &val3);
@@ -13892,13 +13886,9 @@ SWIGINTERN PyObject *_wrap_TPointSeries_ReplaceDblPoint(PyObject *SWIGUNUSEDPARM
     }
   }
   {
-    PyObject *O1=NULL, *O2=NULL;
-    if(!PyArg_ParseTuple(obj1, "OO", &O1, &O2))
+    Func32::TDblPoint *p = arg2;
+    if(!Python::FromTuple(obj1, p->x,p->y))
     SWIG_fail;
-    Func32::TDblPoint Temp;
-    if(!Python::FromPyObject(O1, Temp.x) || !Python::FromPyObject(O2, Temp.y))
-    SWIG_fail;
-    arg2 = &Temp;
   }
   ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
   if (!SWIG_IsOK(ecode3)) {
@@ -13956,10 +13946,8 @@ SWIGINTERN PyObject *_wrap_TPointSeries_ReplacePoint(PyObject *SWIGUNUSEDPARM(se
     }
   }
   {
-    PyObject *O1=NULL, *O2=NULL;
-    if(!PyArg_ParseTuple(obj1, "OO", &O1, &O2))
-    SWIG_fail;
-    if(!Python::FromPyObject(O1, (&arg2)->First) || !Python::FromPyObject(O2, (&arg2)->Second))
+    TPointSeriesPoint *p = &arg2;
+    if(!Python::FromTuple(obj1, p->First,p->Second))
     SWIG_fail;
   }
   ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
@@ -14077,7 +14065,8 @@ SWIGINTERN PyObject *_wrap_TPointSeries_GetDblPoint(PyObject *SWIGUNUSEDPARM(sel
   _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
   
   {
-    resultobj = Py_BuildValue("NN", Python::ToPyObject(result->x), Python::ToPyObject(result->y));
+    Func32::TDblPoint *p = result;
+    resultobj = Python::CreateTuple(p->x,p->y);
   }
   return resultobj;
 fail:
@@ -14128,7 +14117,8 @@ SWIGINTERN PyObject *_wrap_TPointSeries_GetPoint(PyObject *SWIGUNUSEDPARM(self),
   }
   
   {
-    resultobj = Py_BuildValue("NN", Python::ToPyObject(result->First), Python::ToPyObject(result->Second));
+    TPointSeriesPoint *p = result;
+    resultobj = Python::CreateTuple(p->First,p->Second);
   }
   return resultobj;
 fail:

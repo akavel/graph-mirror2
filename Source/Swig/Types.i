@@ -62,34 +62,31 @@
   $result = Py_BuildValue("dd", $1->first, $1->second);
 }
 
-%define TUPLE(StructName, First, Second)
+%define TUPLE(StructName, V...)
 %typemap(out) StructName
 {
-  $result = Py_BuildValue("NN", Python::ToPyObject($1.First), Python::ToPyObject($1.Second));
+  $1_type *p = &$1;
+  $result = Python::CreateTuple(V);
 }
 
 %typemap(out) const StructName&
 {
-  $result = Py_BuildValue("NN", Python::ToPyObject($1->First), Python::ToPyObject($1->Second));
+  $*1_ltype *p = $1;
+  $result = Python::CreateTuple(V);
 }
 
 %typemap(in) StructName
 {
-  PyObject *O1=NULL, *O2=NULL;
-  if(!PyArg_ParseTuple($input, "OO", &O1, &O2))
-    SWIG_fail;
-  if(!Python::FromPyObject(O1, $1.First) || !Python::FromPyObject(O2, $1.Second))
+  $1_type *p = &$1;
+  if(!Python::FromTuple($input, V))
       SWIG_fail;
 }
+
 %typemap(in) const StructName&
 {
-  PyObject *O1=NULL, *O2=NULL;
-  if(!PyArg_ParseTuple($input, "OO", &O1, &O2))
-    SWIG_fail;
-  $*1_ltype Temp;
-  if(!Python::FromPyObject(O1, Temp.First) || !Python::FromPyObject(O2, Temp.Second))
+  $*1_ltype *p = $1;
+  if(!Python::FromTuple($input, V))
       SWIG_fail;
-  $1 = &Temp;
 }
 %enddef
 
@@ -108,8 +105,9 @@
 %}
 %enddef
 
-TUPLE(TPointSeriesPoint, First, Second)
-TUPLE(Func32::TDblPoint, x, y)
+TUPLE(TPointSeriesPoint, p->First, p->Second)
+TUPLE(Func32::TDblPoint, p->x, p->y)
+TUPLE(TDefaultData, p->Style, p->Color, p->Size)
 
 %apply double {long double};
 typedef unsigned TColor;

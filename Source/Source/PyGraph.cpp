@@ -628,6 +628,11 @@ template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
   return PyUnicode_AsUnicode(O);
 }
 //---------------------------------------------------------------------------
+template<> int FromPyObject<int>(PyObject *O)
+{
+  return PyLong_AsLong(O);
+}
+//---------------------------------------------------------------------------
 bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem)
 {
   if(!PythonInitialized)
