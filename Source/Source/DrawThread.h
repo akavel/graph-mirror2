@@ -14,6 +14,7 @@
 #include "IThread.h"
 #include "VclObject.h"
 #include <SyncObjs.hpp>
+#pragma warn -8130
 //---------------------------------------------------------------------------
 namespace Graph
 {

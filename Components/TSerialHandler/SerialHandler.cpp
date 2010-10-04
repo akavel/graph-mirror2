@@ -53,7 +53,7 @@ void TSerialHandler::Connect()
   //If CreateFile fails, throw an exception. CreateFile will fail if the
   //port is already open, or if the com port does not exist.
   if(TempHandle.Get() == INVALID_HANDLE_VALUE)
-    RaiseLastWin32Error();
+    RaiseLastOSError();
 
   //Now get the DCB properties of the port we just opened
   DCB dcb;
@@ -102,6 +102,11 @@ void TSerialHandler::Disconnect()
     CloseHandle(Overlapped.hEvent);
   }
   Handle.Close();
+}
+//---------------------------------------------------------------------------
+bool TSerialHandler::GetConnected()
+{
+  return Handle.Get();
 }
 //---------------------------------------------------------------------------
 void TSerialHandler::SetBreak()

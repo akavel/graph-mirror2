@@ -296,13 +296,13 @@ String RoundToStr(long double Number, unsigned Decimals)
   Str = FloatToStrF(Number,ffFixed, 9999, Decimals);
 
   //Returns if no decimal separator found
-  if(!Str.Pos(DecimalSeparator))
+  if(!Str.Pos(FormatSettings.DecimalSeparator))
     return Str.c_str();
 
   //Remove trailing zeros
   while(Str[Str.Length()] == '0')
     Str.Delete(Str.Length(), 1);
-  if(Str[Str.Length()] == DecimalSeparator)
+  if(Str[Str.Length()] == FormatSettings.DecimalSeparator)
     Str.Delete(Str.Length(), 1);
   return Str;
 }

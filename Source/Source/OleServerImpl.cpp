@@ -11,7 +11,6 @@
 #include "Graph.h"
 #pragma hdrstop
 #include <PngImage.hpp>
-#include <atl\atlvcl.h> //Needed by OleServerImpl.h
 #include "OleServerImpl.h"
 #include "VersionInfo.h"
 #include <fstream>

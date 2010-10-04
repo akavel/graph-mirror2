@@ -18,9 +18,10 @@
 #include "MyEdit.h"
 #include "UpDownEx.h"
 //---------------------------------------------------------------------------
-class TEvalFrame
+class TEvalFrame : public TFrame
 {
 public:
+  __fastcall TEvalFrame(TComponent* Owner) : TFrame(Owner) {}
   virtual std::string GetErrorPrefix() =0;
   virtual void Eval(const TGraphElem *Elem) =0;
   virtual void SetPoint(const TGraphElem *Elem, int X, int Y) =0;
@@ -28,7 +29,7 @@ public:
   virtual TFrame* GetFrame() =0;
 };
 
-class TStdFuncFrame : public TFrame, public TEvalFrame
+class TStdFuncFrame : public TEvalFrame
 {
 __published:	// IDE-managed Components
   TLabel *Label2;

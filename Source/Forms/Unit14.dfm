@@ -212,7 +212,6 @@ object Form14: TForm14
           Height = 22
           Hint = 'Choose the color of the markers.'
           Anchors = [akTop, akRight]
-          ItemHeight = 16
           TabOrder = 1
           OnChange = Change
           AutoDroppedWidth = True
@@ -277,7 +276,6 @@ object Form14: TForm14
           OnChange = Change
           TabOrder = 0
           Anchors = [akTop, akRight]
-          ItemHeight = 16
         end
         object Edit3: TEdit
           Left = 76
@@ -310,7 +308,6 @@ object Form14: TForm14
           Hint = 'Select which kind of line to draw between the markers.'
           Style = csDropDownList
           Anchors = [akTop, akRight]
-          ItemHeight = 13
           ItemIndex = 1
           TabOrder = 4
           Text = 'Cubic splines'
@@ -326,7 +323,6 @@ object Form14: TForm14
           Height = 22
           Hint = 'Choose the color of the lines.'
           Anchors = [akTop, akRight]
-          ItemHeight = 16
           TabOrder = 1
           OnChange = Change
           AutoDroppedWidth = True
@@ -394,7 +390,6 @@ object Form14: TForm14
           Style = csDropDownList
           Anchors = [akTop, akRight]
           Enabled = False
-          ItemHeight = 13
           TabOrder = 2
           OnChange = Change
           Items.Strings = (

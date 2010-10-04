@@ -191,12 +191,12 @@ struct TAnimationInfo
   void Clear();
 };
 
-struct TFormatSettings
+struct TGuiFormatSettings
 {
   std::wstring CartesianPointFormat;
   std::wstring DegreePointFormat;
   std::wstring RadianPointFormat;
-  TFormatSettings();
+  TGuiFormatSettings();
 };
 
 struct TPlotSettings
@@ -224,7 +224,7 @@ struct TGuiSettings
 };
 
 extern TProperty Property;
-extern TFormatSettings FormatSettings;
+extern TGuiFormatSettings GuiFormatSettings;
 extern TPlotSettings PlotSettings;
 extern TGuiSettings GuiSettings;
 } //namespace Graph;

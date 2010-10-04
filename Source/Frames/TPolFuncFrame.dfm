@@ -144,7 +144,6 @@ object PolFuncFrame: TPolFuncFrame
     Height = 21
     Style = csDropDownList
     Anchors = [akLeft, akTop, akRight]
-    ItemHeight = 13
     ItemIndex = 0
     TabOrder = 6
     Text = 'Function'

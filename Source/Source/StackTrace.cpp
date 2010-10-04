@@ -278,7 +278,7 @@ void WriteStackFrameToStream(std::ostream &Stream, unsigned IgnoreFrames, unsign
  */
 void LogOsException(EExternal *E, unsigned IgnoreFrames)
 {
-  Sysutils::TExceptionRecord *Record = E->ExceptionRecord;
+  System::TExceptionRecord *Record = E->ExceptionRecord;
   std::ofstream File(LogFileName.c_str(), std::ios_base::app);
   File << "OS EXCEPTION" << std::endl;
   File << "Version: " << ToString(TVersionInfo().FileVersion().Text()) << std::endl;
@@ -294,7 +294,7 @@ void LogOsException(EExternal *E, unsigned IgnoreFrames)
 //---------------------------------------------------------------------------
 /** Called to raise a Delphi exception.
  */
-WINBASEAPI VOID WINAPI MyRaiseException(
+/*WINBASEAPI*/ VOID WINAPI MyRaiseException(
     DWORD dwExceptionCode,	// exception code
     DWORD dwExceptionFlags,	// continuable exception flag
     DWORD nNumberOfArguments,	// number of arguments in array
