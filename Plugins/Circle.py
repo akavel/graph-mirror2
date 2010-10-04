@@ -1,9 +1,10 @@
 import Graph
 from Vcl import vcl
-class CircleDialog(vcl.SimpleDialog):
+import Gui
+class CircleDialog(Gui.SimpleDialog):
     def __init__(self, CircleItem=None):
         self.CircleItem = CircleItem
-        vcl.SimpleDialog.__init__(self)
+        Gui.SimpleDialog.__init__(self)
         self.Caption = "Insert circle"
         self.Height = 170
         self.Width = 330

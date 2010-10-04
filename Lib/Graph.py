@@ -14,7 +14,7 @@ import getopt
 Axes = Settings.GetAxes()
 Property = Settings.Property
 Redraw = Data.Redraw
-FormatSettings = Settings.FormatSettings;
+GuiFormatSettings = Settings.GuiFormatSettings;
 PlotSettings = Settings.PlotSettings
 GuiSettings = Settings.GuiSettings
 
