@@ -91,8 +91,8 @@ struct TProperty
   wchar_t DecimalSeparator;    //Decimal separator used when exporting files
 };
 
-%nodefault TFormatSettings;
-struct TFormatSettings
+%nodefault TGuiFormatSettings;
+struct TGuiFormatSettings
 {
   std::wstring CartesianPointFormat;
   std::wstring DegreePointFormat;
@@ -124,7 +124,7 @@ struct TGuiSettings
 };
 
 const TProperty Property;
-const TFormatSettings FormatSettings;
+const TGuiFormatSettings GuiFormatSettings;
 const TPlotSettings PlotSettings;
 const TGuiSettings GuiSettings;
 } //namespace Graph

@@ -20,7 +20,7 @@
 #include <ComCtrls.hpp>
 #include "UpDownEx.h"
 //---------------------------------------------------------------------------
-class TAreaFrame : public TFrame, public TEvalFrame
+class TAreaFrame : public TEvalFrame
 {
 __published:	// IDE-managed Components
   TGridPanel *GridPanel1;

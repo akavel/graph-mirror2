@@ -275,24 +275,24 @@ class TProperty(_object):
 TProperty_swigregister = _Settings.TProperty_swigregister
 TProperty_swigregister(TProperty)
 
-class TFormatSettings(_object):
+class TGuiFormatSettings(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TFormatSettings, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr(self, TGuiFormatSettings, name, value)
     __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, TFormatSettings, name)
+    __getattr__ = lambda self, name: _swig_getattr(self, TGuiFormatSettings, name)
     def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
-    __swig_setmethods__["CartesianPointFormat"] = _Settings.TFormatSettings_CartesianPointFormat_set
-    __swig_getmethods__["CartesianPointFormat"] = _Settings.TFormatSettings_CartesianPointFormat_get
-    if _newclass:CartesianPointFormat = _swig_property(_Settings.TFormatSettings_CartesianPointFormat_get, _Settings.TFormatSettings_CartesianPointFormat_set)
-    __swig_setmethods__["DegreePointFormat"] = _Settings.TFormatSettings_DegreePointFormat_set
-    __swig_getmethods__["DegreePointFormat"] = _Settings.TFormatSettings_DegreePointFormat_get
-    if _newclass:DegreePointFormat = _swig_property(_Settings.TFormatSettings_DegreePointFormat_get, _Settings.TFormatSettings_DegreePointFormat_set)
-    __swig_setmethods__["RadianPointFormat"] = _Settings.TFormatSettings_RadianPointFormat_set
-    __swig_getmethods__["RadianPointFormat"] = _Settings.TFormatSettings_RadianPointFormat_get
-    if _newclass:RadianPointFormat = _swig_property(_Settings.TFormatSettings_RadianPointFormat_get, _Settings.TFormatSettings_RadianPointFormat_set)
-TFormatSettings_swigregister = _Settings.TFormatSettings_swigregister
-TFormatSettings_swigregister(TFormatSettings)
+    __swig_setmethods__["CartesianPointFormat"] = _Settings.TGuiFormatSettings_CartesianPointFormat_set
+    __swig_getmethods__["CartesianPointFormat"] = _Settings.TGuiFormatSettings_CartesianPointFormat_get
+    if _newclass:CartesianPointFormat = _swig_property(_Settings.TGuiFormatSettings_CartesianPointFormat_get, _Settings.TGuiFormatSettings_CartesianPointFormat_set)
+    __swig_setmethods__["DegreePointFormat"] = _Settings.TGuiFormatSettings_DegreePointFormat_set
+    __swig_getmethods__["DegreePointFormat"] = _Settings.TGuiFormatSettings_DegreePointFormat_get
+    if _newclass:DegreePointFormat = _swig_property(_Settings.TGuiFormatSettings_DegreePointFormat_get, _Settings.TGuiFormatSettings_DegreePointFormat_set)
+    __swig_setmethods__["RadianPointFormat"] = _Settings.TGuiFormatSettings_RadianPointFormat_set
+    __swig_getmethods__["RadianPointFormat"] = _Settings.TGuiFormatSettings_RadianPointFormat_get
+    if _newclass:RadianPointFormat = _swig_property(_Settings.TGuiFormatSettings_RadianPointFormat_get, _Settings.TGuiFormatSettings_RadianPointFormat_set)
+TGuiFormatSettings_swigregister = _Settings.TGuiFormatSettings_swigregister
+TGuiFormatSettings_swigregister(TGuiFormatSettings)
 
 class TPlotSettings(_object):
     __swig_setmethods__ = {}
@@ -365,7 +365,7 @@ TAxes.TitleFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_Title
 
 cvar = _Settings.cvar
 Property = cvar.Property
-FormatSettings = cvar.FormatSettings
+GuiFormatSettings = cvar.GuiFormatSettings
 PlotSettings = cvar.PlotSettings
 GuiSettings = cvar.GuiSettings
 

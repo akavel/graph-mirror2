@@ -19,6 +19,11 @@
 #pragma link "TParFuncFrame"
 #pragma link "TPolFuncFrame"
 #pragma link "TAreaFrame"
+#pragma link "TAreaFrame"
+#pragma link "TParFuncFrame"
+#pragma link "TPolFuncFrame"
+#pragma link "TStdFuncFrame"
+#pragma link "TTanFrame"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm9::TForm9(TComponent* Owner)

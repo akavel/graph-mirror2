@@ -19,7 +19,7 @@
 #include "UpDownEx.h"
 #include <ComCtrls.hpp>
 //---------------------------------------------------------------------------
-class TParFuncFrame : public TFrame, public TEvalFrame
+class TParFuncFrame : public TEvalFrame
 {
 __published:	// IDE-managed Components
   TLabel *Label2;

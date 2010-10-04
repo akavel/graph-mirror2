@@ -1026,9 +1026,9 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
 
   std::wstring FormatStr;
   if(PointSeries.GetPointType() == ptPolar)
-    FormatStr = Axes.Trigonometry == Func32::Degree ? FormatSettings.DegreePointFormat : FormatSettings.RadianPointFormat;
+    FormatStr = Axes.Trigonometry == Func32::Degree ? GuiFormatSettings.DegreePointFormat : GuiFormatSettings.RadianPointFormat;
   else
-    FormatStr = FormatSettings.CartesianPointFormat;
+    FormatStr = GuiFormatSettings.CartesianPointFormat;
   boost::wformat Format(FormatStr);
 
   //First draw all error bars and labels

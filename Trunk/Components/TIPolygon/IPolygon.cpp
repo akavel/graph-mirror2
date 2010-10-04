@@ -60,17 +60,17 @@ TStrings* __fastcall TIPolygon::GetPoints()
 {
   FPoints->OnChange = NULL;
   FPoints->Clear();
-  char OldDecimalSeparator = DecimalSeparator;
+  char OldDecimalSeparator = FormatSettings.DecimalSeparator;
   for(unsigned I = 0; I < PointList.size(); I++)
     FPoints->Add(String(PointList[I].x) + ',' + PointList[I].y);
-  DecimalSeparator = OldDecimalSeparator;
+  FormatSettings.DecimalSeparator = OldDecimalSeparator;
   FPoints->OnChange = PointsChange;
   return FPoints;
 }
 //---------------------------------------------------------------------------
 void __fastcall TIPolygon::PointsChange(TObject *Sender)
 {
-  char OldDecimalSeparator = DecimalSeparator;
+  char OldDecimalSeparator = FormatSettings.DecimalSeparator;
   std::vector<TPoint> Temp;
 
   for(int I = 0; I < FPoints->Count; I++)
@@ -87,7 +87,7 @@ void __fastcall TIPolygon::PointsChange(TObject *Sender)
   }
 
   PointList.swap(Temp);
-  DecimalSeparator = OldDecimalSeparator;
+  FormatSettings.DecimalSeparator = OldDecimalSeparator;
   Invalidate();
 }
 //---------------------------------------------------------------------------

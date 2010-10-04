@@ -19,7 +19,7 @@
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TAreaFrame::TAreaFrame(TComponent* Owner)
-        : TFrame(Owner)
+        : TEvalFrame(Owner)
 {
 }
 //---------------------------------------------------------------------------

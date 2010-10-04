@@ -9,15 +9,29 @@
 //---------------------------------------------------------------------------
 #ifndef Unit14H
 #define Unit14H
+#include "ExtColorBox.h"
+#include "Grid.h"
+#include "LineSelect.h"
+#include "MyEdit.h"
+#include "PointSelect.h"
+#include "SaveDialogEx.h"
+#include <ActnPopup.hpp>
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <PlatformDefaultStyleActnCtrls.hpp>
+#include <StdCtrls.hpp>
 //---------------------------------------------------------------------------
-#include <vcl\Classes.hpp>
+#include <rtl\Classes.hpp>
 #include <vcl\Controls.hpp>
 #include <vcl\StdCtrls.hpp>
 #include <vcl\Forms.hpp>
 #include <Grids.hpp>
-#include <vcl\DBGrids.hpp>
-#include <vcl\DB.hpp>
-#include <vcl\DBTables.hpp>
 #include <ComCtrls.hpp>
 #include <Menus.hpp>
 #include <ExtCtrls.hpp>

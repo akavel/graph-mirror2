@@ -18,7 +18,7 @@
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TTanFrame::TTanFrame(TComponent* Owner)
-  : TFrame(Owner)
+  : TEvalFrame(Owner)
 {
 }
 //---------------------------------------------------------------------------

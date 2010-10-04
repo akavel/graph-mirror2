@@ -19,7 +19,7 @@
 #include "UpDownEx.h"
 #include <ComCtrls.hpp>
 //---------------------------------------------------------------------------
-class TTanFrame : public TFrame, public TEvalFrame
+class TTanFrame : public TEvalFrame
 {
 __published:	// IDE-managed Components
   TEdit *Edit2;

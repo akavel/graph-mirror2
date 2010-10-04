@@ -151,11 +151,11 @@ void TData::Import(TConfigFile &IniFile)
   CheckIniInfo(IniFile);
 
   //Save decimal separator
-  char OldDecimalSeparator = DecimalSeparator;
+  char OldDecimalSeparator = FormatSettings.DecimalSeparator;
 
   //Set decimal separator to '.' to make sure that file conversion are the
   //same over the whole world
-  DecimalSeparator = '.';
+  FormatSettings.DecimalSeparator = '.';
 
   //ElemList must be empty when reading shades and tangents from file
   boost::shared_ptr<TTopGraphElem> Temp(new TTopGraphElem(this));
@@ -181,7 +181,7 @@ void TData::Import(TConfigFile &IniFile)
       Temp->RemoveChild(0);
 
   //Set decimal separator back
-  DecimalSeparator = OldDecimalSeparator;
+  FormatSettings.DecimalSeparator = OldDecimalSeparator;
   Modified = true;
 }
 //---------------------------------------------------------------------------

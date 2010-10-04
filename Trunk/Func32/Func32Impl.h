@@ -168,12 +168,13 @@ struct TElem
   TElem(TIdent AIdent, unsigned AArguments, int) : Ident(AIdent), Arguments(AArguments) {}
   TElem(long double AVal) : Ident(CodeNumber), Value(AVal) {}
   TElem(TIdent AIdent, const std::wstring &Str, unsigned Args=0, const boost::shared_ptr<TBaseCustomFunc> &AFunc = boost::shared_ptr<TBaseCustomFunc>())
-    : Ident(AIdent), Arguments(Args), Value(AFunc), Text(Str) {}
+	: Ident(AIdent), Arguments(Args), Value(AFunc), Text(Str) {}
   TElem(TCompareMethod Compare1) : Ident(CodeCompare1), Arguments(0), Value(Compare1) {}
   TElem(TCompareMethod Compare1, TCompareMethod Compare2) : Ident(CodeCompare2), Arguments(0), Value(std::make_pair(Compare1, Compare2)) {}
   bool operator ==(const TElem &E) const {return Ident==E.Ident && (Ident==CodeNumber ? boost::any_cast<long double>(Value)==boost::any_cast<long double>(E.Value) : (Ident==CodeCustom ? Text == E.Text : Arguments==E.Arguments));}
   bool operator ==(TIdent AIdent) const {return Ident == AIdent;}
   bool operator !=(const TElem &E) const {return !(*this == E);}
+  const TElem& operator=(const TElem &E) {Ident = E.Ident; Arguments = E.Arguments; Text = E.Text; Value = E.Value; return *this;}
 };
 //---------------------------------------------------------------------------
 typedef std::vector<TElem>::iterator TIterator;

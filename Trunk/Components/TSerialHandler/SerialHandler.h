@@ -50,7 +50,7 @@ private:
   TDataReceivedEvent FOnDataReceived;
   TNotifyEvent FOnTransmissionFinished;
 
-  bool GetConnected() {return Handle.Get();}
+  bool GetConnected();
   TStrings* GetSerialPorts();
 
 protected:

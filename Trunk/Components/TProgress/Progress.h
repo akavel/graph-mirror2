@@ -5,9 +5,9 @@
 #ifndef ProgressH
 #define ProgressH
 //---------------------------------------------------------------------------
-#include <vcl\SysUtils.hpp>
+#include <rtl\SysUtils.hpp>
 #include <vcl\Controls.hpp>
-#include <vcl\Classes.hpp>
+#include <rtl\Classes.hpp>
 #include <vcl\Forms.hpp>
 
 #define stWidth 100//Standard Width of control

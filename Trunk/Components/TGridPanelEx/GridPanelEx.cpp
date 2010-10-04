@@ -75,7 +75,7 @@ void TGridPanelEx::RecalcCellDimensions(const TRect &Rect)
     }
   }
 
-  MaxPos.swap(std::vector<int>(FRowCollection->Count + 1, 0));
+  std::vector<int>(FRowCollection->Count + 1, 0).swap(MaxPos);
   int PercentYCount = 0;
   for(int I = 0; I < FRowCollection->Count; I++)
   {

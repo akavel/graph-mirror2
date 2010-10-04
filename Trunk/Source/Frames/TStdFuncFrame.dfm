@@ -73,7 +73,6 @@ object StdFuncFrame: TStdFuncFrame
       'ge.'
     Style = csDropDownList
     Anchors = [akLeft, akTop, akRight]
-    ItemHeight = 13
     ItemIndex = 0
     TabOrder = 4
     Text = 'Function'

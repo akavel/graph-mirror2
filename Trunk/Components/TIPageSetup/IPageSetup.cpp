@@ -8,6 +8,7 @@
 #include <Dlgs.h> //Contains dialog header information
 #include <algorithm>
 #pragma package(smart_init)
+#pragma warn -8104
 
 #define INCH_TO_MM 25.4   //Constant to multiply a lenth in inches with to get millimetres
 #define MM_TO_INCH (1/25.4) //Constant to multiply a length in millimetres to get inches
@@ -254,7 +255,7 @@ UINT APIENTRY TIPageSetupDialog::DialogHook(
     HWND hdlg,	   // handle to the dialog box window
     UINT uiMsg,	   // message identifier
     WPARAM wParam, // message parameter
-    LPARAM lParam) // message parameter
+	LPARAM lParam) // message parameter
 {
   //Static variable containing pixel coordinates for the sample paper
   static TRect PaperSize;
@@ -262,13 +263,13 @@ UINT APIENTRY TIPageSetupDialog::DialogHook(
   Dialog->FHandle = hdlg; //Save window handle to dialog for use by events
   switch(uiMsg)
   {
-    case WM_PSD_PAGESETUPDLG: return false;
-    case WM_PSD_FULLPAGERECT:
-        PaperSize=*(TRect*) lParam; //Save paper size in static variable
-        return false;
-    case WM_PSD_MINMARGINRECT: return false;
-    case WM_PSD_MARGINRECT:
-        if(!Dialog->FOnPaintMargins)
+	case WM_PSD_PAGESETUPDLG: return false;
+	case WM_PSD_FULLPAGERECT:
+		PaperSize=*(TRect*) lParam; //Save paper size in static variable
+		return false;
+	case WM_PSD_MINMARGINRECT: return false;
+	case WM_PSD_MARGINRECT:
+		if(!Dialog->FOnPaintMargins)
           return false;
         Canvas=new TCanvas;
         Canvas->Handle=(HDC)wParam; //Set context handle and call event
@@ -293,7 +294,7 @@ UINT APIENTRY TIPageSetupDialog::DialogHook(
         if(!Dialog->FOnPaintAdress)
           return false;
         Canvas->Handle=(HDC)wParam; //Set context handle and call event
-        Dialog->FOnPaintAdress(Dialog,Canvas,*(TRect*)(LPARAM)(LPRECT)lParam,PaperSize);
+		Dialog->FOnPaintAdress(Dialog,Canvas,*(TRect*)(LPARAM)(LPRECT)lParam,PaperSize);
         return true;
     case WM_INITDIALOG:
       CenterWindow(hdlg);           //Center window on screen

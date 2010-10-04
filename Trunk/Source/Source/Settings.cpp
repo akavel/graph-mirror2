@@ -17,7 +17,7 @@
 namespace Graph
 {
 TProperty Property;
-TFormatSettings FormatSettings;
+TGuiFormatSettings GuiFormatSettings;
 TPlotSettings PlotSettings;
 TGuiSettings GuiSettings;
 //---------------------------------------------------------------------------
@@ -491,11 +491,11 @@ void TAnimationInfo::Clear()
 }
 //---------------------------------------------------------------------------
 /////////////////////
-// TFormatSettings //
+// TGuiFormatSettings //
 /////////////////////
-TFormatSettings::TFormatSettings()
+TGuiFormatSettings::TGuiFormatSettings()
   : CartesianPointFormat(L"(%1%,%2%)"),
-    DegreePointFormat(L"(%2%,%1%\xB0)"),
+	DegreePointFormat(L"(%2%,%1%\xB0)"),
     RadianPointFormat(L"(%2%,%1%)")
 {
 }

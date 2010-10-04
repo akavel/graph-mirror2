@@ -14,7 +14,7 @@
 #include "HandleCsv.h"
 #include <algorithm>
 #pragma package(smart_init)
-#pragma resource "cursors.res"
+//#pragma resource "cursors.res"
 
 const TCursor crColCursor = static_cast<TCursor>(256); //Cursor used to select colums
 const TCursor crRowCursor = static_cast<TCursor>(257); //Cursor used to select rows

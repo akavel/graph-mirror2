@@ -166,6 +166,7 @@ Plugins:
 - Gnu Scientific Library (zeta, gamma, etc.)
 - Add comments to functions (all elements)
 - Show end points where the graph leaves the graphing area.
+- Create several functions from a model, e.g. f(x)=acos((1+b^2- (x+sqrt(1+b^2))^2)/2*b) with several values of b.
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>

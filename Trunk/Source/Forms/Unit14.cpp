@@ -22,6 +22,12 @@
 #pragma link "ExtColorBox"
 #pragma link "MyEdit"
 #pragma link "SaveDialogEx"
+#pragma link "ExtColorBox"
+#pragma link "Grid"
+#pragma link "LineSelect"
+#pragma link "MyEdit"
+#pragma link "PointSelect"
+#pragma link "SaveDialogEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
@@ -318,13 +324,13 @@ void __fastcall TForm14::PaintBox1Paint(TObject *Sender)
     if(CheckBox2->Checked)
     {
       using boost::wformat;
-      std::wstring Str;
+	  std::wstring Str;
       if(RadioGroup1->ItemIndex == 0)
-        Str = str(wformat(FormatSettings.CartesianPointFormat) % L"2.37" % L"9.53");
-      else if(Data.Axes.Trigonometry == Func32::Radian)
-        Str = str(wformat(FormatSettings.RadianPointFormat) % L"1.18" % L"12.5");
-      else
-        Str = str(wformat(FormatSettings.DegreePointFormat) % L"87.3" % L"12.5");
+		Str = str(wformat(GuiFormatSettings.CartesianPointFormat) % L"2.37" % L"9.53");
+	  else if(Data.Axes.Trigonometry == Func32::Radian)
+		Str = str(wformat(GuiFormatSettings.RadianPointFormat) % L"1.18" % L"12.5");
+	  else
+		Str = str(wformat(GuiFormatSettings.DegreePointFormat) % L"87.3" % L"12.5");
       PaintBox1->Canvas->Font->Assign(FontDialog1->Font);
       TDraw::DrawPointLabel(PaintBox1->Canvas, TPoint(X, Y), PointSize, Str, static_cast<Graph::TLabelPosition>(ComboBox1->ItemIndex));
     }

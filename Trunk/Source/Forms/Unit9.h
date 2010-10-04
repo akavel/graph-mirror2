@@ -9,8 +9,17 @@
 //---------------------------------------------------------------------------
 #ifndef Unit9H
 #define Unit9H
+#include "TAreaFrame.h"
+#include "TParFuncFrame.h"
+#include "TPolFuncFrame.h"
+#include "TStdFuncFrame.h"
+#include "TTanFrame.h"
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <Forms.hpp>
+#include <StdCtrls.hpp>
 //---------------------------------------------------------------------------
-#include <vcl\Classes.hpp>
+#include <rtl\Classes.hpp>
 #include <vcl\Controls.hpp>
 #include <vcl\StdCtrls.hpp>
 #include <vcl\Forms.hpp>
