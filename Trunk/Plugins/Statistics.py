@@ -1,5 +1,6 @@
 import Graph
 from Vcl import vcl
+import Gui
 
 def Execute(Sender):
     import math
@@ -8,7 +9,7 @@ def Execute(Sender):
     Sum = math.fsum(yList)
     Mean = Sum / N
 
-    Form = vcl.SimpleDialog(Caption="Statistics", Height=220, ShowCancel=False)
+    Form = Gui.SimpleDialog(Caption="Statistics", Height=220, ShowCancel=False)
     Lines = "Statistics for " + Graph.Selected.LegendText + ":"
     Lines += "\n  Mean:\t\t" + str(Mean)
     Lines += "\n  Sum:\t\t" + str(Sum)

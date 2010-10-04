@@ -1,4 +1,4 @@
-import vcl from Vcl
+from Vcl import vcl
 
 class SimpleDialog(vcl.TForm):
     def __init__(self, ShowCancel=True, **keywords):
