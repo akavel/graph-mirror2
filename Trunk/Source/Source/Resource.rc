@@ -143,7 +143,7 @@ BEGIN
   RES_SAVE_OPTIONS        "Options..."  //Button in Save as image dialog
   RES_DELETE              "Are you sure you want to delete %s?"
   RES_GRAPH_FILTER        "Graph files [*.grf]|*.grf|All files [*.*]|*.*"           //Save as dialog
-  RES_DATA_FILTER         "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"     //Import from file dialog
+  RES_DATA_FILTER         "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"     //Import from file dialog
   RES_DELETE_MODEL        "Are you sure you want to delete the model: %s?"
   RES_EXPORT_DATA_FILTER  "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"  //Export to file dialog
 
