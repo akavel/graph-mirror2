@@ -30,46 +30,46 @@
 			<MSBuild Projects="Components\IComp.cbproj"/>
 		</Target>
 		<Target Name="IComp:Clean">
-			<MSBuild Targets="Clean" Projects="Components\IComp.cbproj"/>
+			<MSBuild Projects="Components\IComp.cbproj" Targets="Clean"/>
 		</Target>
 		<Target Name="IComp:Make">
-			<MSBuild Targets="Make" Projects="Components\IComp.cbproj"/>
+			<MSBuild Projects="Components\IComp.cbproj" Targets="Make"/>
 		</Target>
 		<Target Name="Graph">
 			<MSBuild Projects="Source\Graph.cbproj"/>
 		</Target>
 		<Target Name="Graph:Clean">
-			<MSBuild Targets="Clean" Projects="Source\Graph.cbproj"/>
+			<MSBuild Projects="Source\Graph.cbproj" Targets="Clean"/>
 		</Target>
 		<Target Name="Graph:Make">
-			<MSBuild Targets="Make" Projects="Source\Graph.cbproj"/>
+			<MSBuild Projects="Source\Graph.cbproj" Targets="Make"/>
 		</Target>
 		<Target Name="Func32">
 			<MSBuild Projects="Func32\Func32.cbproj"/>
 		</Target>
 		<Target Name="Func32:Clean">
-			<MSBuild Targets="Clean" Projects="Func32\Func32.cbproj"/>
+			<MSBuild Projects="Func32\Func32.cbproj" Targets="Clean"/>
 		</Target>
 		<Target Name="Func32:Make">
-			<MSBuild Targets="Make" Projects="Func32\Func32.cbproj"/>
+			<MSBuild Projects="Func32\Func32.cbproj" Targets="Make"/>
 		</Target>
 		<Target Name="Test">
 			<MSBuild Projects="Func32\Test\Test.cbproj"/>
 		</Target>
 		<Target Name="Test:Clean">
-			<MSBuild Targets="Clean" Projects="Func32\Test\Test.cbproj"/>
+			<MSBuild Projects="Func32\Test\Test.cbproj" Targets="Clean"/>
 		</Target>
 		<Target Name="Test:Make">
-			<MSBuild Targets="Make" Projects="Func32\Test\Test.cbproj"/>
+			<MSBuild Projects="Func32\Test\Test.cbproj" Targets="Make"/>
 		</Target>
 		<Target Name="gsl">
 			<MSBuild Projects="Libraries\gsl\gsl.cbproj"/>
 		</Target>
 		<Target Name="gsl:Clean">
-			<MSBuild Targets="Clean" Projects="Libraries\gsl\gsl.cbproj"/>
+			<MSBuild Projects="Libraries\gsl\gsl.cbproj" Targets="Clean"/>
 		</Target>
 		<Target Name="gsl:Make">
-			<MSBuild Targets="Make" Projects="Libraries\gsl\gsl.cbproj"/>
+			<MSBuild Projects="Libraries\gsl\gsl.cbproj" Targets="Make"/>
 		</Target>
 		<Target Name="Build">
 			<CallTarget Targets="IComp;Graph;Func32;Test;gsl"/>
@@ -80,5 +80,5 @@
 		<Target Name="Make">
 			<CallTarget Targets="IComp:Make;Graph:Make;Func32:Make;Test:Make;gsl:Make"/>
 		</Target>
-		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
 	</Project>

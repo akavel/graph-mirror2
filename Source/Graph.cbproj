@@ -32,16 +32,16 @@
 			<BCC_StopBatchAfterErrors>10</BCC_StopBatchAfterErrors>
 			<PackageImports>vcl.bpi;rtl.bpi;bcbie.bpi;vclx.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;dbrtl.bpi;vcldb.bpi;bdertl.bpi;vcldbx.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;Tee.bpi;TeeDB.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inet.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DataSnapServer.bpi;DbxClientDriver.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi;IComp.bpi</PackageImports>
 			<BCC_Defines>USTRING_CSTR_AS_WCHART;$(BCC_Defines)</BCC_Defines>
-			<LinkPackageStatics>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;IComp.lib;dbrtl.lib;vcldb.lib;bdertl.lib</LinkPackageStatics>
+			<LinkPackageStatics>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;IComp.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib</LinkPackageStatics>
 			<_TCHARMapping>wchar_t</_TCHARMapping>
 			<BCC_IncludePath>$(BDS)\include;$(BDS)\include\dinkumware;Source;Forms;Frames;..\Func32;..\Components\Common;..\Components\TRecent;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TIPolygon;..\Components\TIRichEdit;..\Components\TOpenPreviewDialog;..\Components\TIPrintDialog;..\Components\TSaveDialogEx;..\Components\TSymbolDialog;..\Components\TExtColorBox;..\Components\TMyEdit;..\Components\TLineSelect;..\Components\TIFontBox;..\Components\TShadeSelect;..\Components\TMyRadioButton;..\Components\TGrid;..\Components\TPointSelect;..\Components\TGridPanelEx;..\Components\TProgressForm;..\Components\TProgress;..\Components\TMediaPlayerEx;..\Components\TUpDownEx;..\Libraries\pdflib;..\Libraries\dxgettext;..\Libraries\gsl;..\Libraries\Python;..\Components\TCross;..\Components\TLinkLabelEx;..\Components\TCheckBoxEx;..\Components\TRadioGroupEx;$(BCC_IncludePath)</BCC_IncludePath>
 			<ProjectType>CppVCLApplication</ProjectType>
 			<OutputExt>exe</OutputExt>
 			<Multithreaded>true</Multithreaded>
-			<AllPackageLibs>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;IComp.lib;dbrtl.lib;vcldb.lib;bdertl.lib</AllPackageLibs>
+			<AllPackageLibs>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;IComp.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib</AllPackageLibs>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 			<Defines>STRICT</Defines>
-			<IncludePath>..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;$(IncludePath)</IncludePath>
+			<IncludePath>..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;PyGraph;$(IncludePath)</IncludePath>
 			<ILINK_LibraryPath>..\Components\TGrid\;..\Libraries\pdflib;..\Libraries\dxgettext;Swig;$(BDS)\source\Win32\vcl;..\Components\TUpDownEx;..\Components\TRadioGroupEx;..\Components\TGridPanelEx;..\Components\Common;Source;Frames;Forms;$(BDS)\lib\obj;$(BDS)\lib\psdk;..;..\Components\TGrid;..\Components\TIPrintDialog;..\Components\TSymbolDialog;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<BCC_wpar>false</BCC_wpar>
 			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
@@ -277,6 +277,22 @@
 			<ResFiles Include="Icons.res">
 				<BuildOrder>63</BuildOrder>
 			</ResFiles>
+			<CppCompile Include="PyGraph\ClassList.cpp">
+				<DependentOn>PyGraph\ClassList.h</DependentOn>
+				<BuildOrder>67</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PyGraph\PyGraph.cpp">
+				<DependentOn>PyGraph\PyGraph.h</DependentOn>
+				<BuildOrder>64</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PyGraph\PythonBind.cpp">
+				<DependentOn>PyGraph\PythonBind.h</DependentOn>
+				<BuildOrder>65</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PyGraph\PyVcl.cpp">
+				<DependentOn>PyGraph\PyVcl.h</DependentOn>
+				<BuildOrder>66</BuildOrder>
+			</CppCompile>
 			<CppCompile Include="Source\Clipboard.cpp">
 				<BuildOrder>34</BuildOrder>
 			</CppCompile>
@@ -332,18 +348,6 @@
 				<DependentOn>Source\OleServerImpl.h</DependentOn>
 				<BuildOrder>47</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Source\PyGraph.cpp">
-				<DependentOn>Source\PyGraph.h</DependentOn>
-				<BuildOrder>48</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\PythonBind.cpp">
-				<DependentOn>Source\PythonBind.h</DependentOn>
-				<BuildOrder>49</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\PyVcl.cpp">
-				<DependentOn>Source\PyVcl.h</DependentOn>
-				<BuildOrder>50</BuildOrder>
-			</CppCompile>
 			<ResourceCompile Include="Source\Resource.rc">
 				<Form>Resource.res</Form>
 				<BuildOrder>63</BuildOrder>
@@ -371,19 +375,19 @@
 			<FormResources Include="Frames\TAreaFrame.dfm"/>
 			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
 			<FormResources Include="Frames\TTanFrame.dfm"/>
-			<FormResources Include="Forms\Unit8.dfm"/>
-			<FormResources Include="Forms\Unit10.dfm"/>
 			<FormResources Include="Forms\Unit11.dfm"/>
-			<FormResources Include="Forms\Unit1.dfm"/>
 			<FormResources Include="Forms\Unit12.dfm"/>
-			<FormResources Include="Forms\Unit22.dfm"/>
+			<FormResources Include="Forms\Unit1.dfm"/>
+			<FormResources Include="Forms\Unit10.dfm"/>
 			<FormResources Include="Forms\Unit3.dfm"/>
-			<FormResources Include="Forms\Unit20.dfm"/>
-			<FormResources Include="Forms\Unit21.dfm"/>
-			<FormResources Include="Forms\Unit6.dfm"/>
-			<FormResources Include="Forms\Unit7.dfm"/>
 			<FormResources Include="Forms\Unit4.dfm"/>
+			<FormResources Include="Forms\Unit21.dfm"/>
+			<FormResources Include="Forms\Unit22.dfm"/>
+			<FormResources Include="Forms\Unit7.dfm"/>
+			<FormResources Include="Forms\Unit8.dfm"/>
 			<FormResources Include="Forms\Unit5.dfm"/>
+			<FormResources Include="Forms\Unit6.dfm"/>
+			<FormResources Include="Forms\Unit20.dfm"/>
 			<FormResources Include="Forms\Unit15.dfm"/>
 			<FormResources Include="Forms\Unit16.dfm"/>
 			<FormResources Include="Forms\Unit13.dfm"/>
