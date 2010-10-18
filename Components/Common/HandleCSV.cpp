@@ -27,7 +27,7 @@ char GetSeparator(const std::string &Str2)
 //---------------------------------------------------------------------------
 unsigned CountCols(const std::string &Str, char Separator)
 {
-  unsigned Count = 1;
+	unsigned Count = 1;
   unsigned Pos = 0;
   unsigned NextPos;
   while((NextPos = Str.find(Separator, Pos)) != std::string::npos)
@@ -36,68 +36,64 @@ unsigned CountCols(const std::string &Str, char Separator)
       Count++;
     Pos = NextPos + 1;
   }
-  return Count;
+	return Count;
 }
 //---------------------------------------------------------------------------
-bool ImportCsv(std::istream &Stream, TCsvGrid &CsvGrid)
+bool ImportCsv(std::istream &Stream, TCsvGrid &CsvGrid, char Separator)
 {
-  std::string Line;
-  while(Stream && Line.empty())
-    std::getline(Stream, Line);
-  char Separator = GetSeparator(Line);
-  unsigned ColCount = CountCols(Line, Separator);
-  unsigned LineNo = 1;
+	std::string Line;
+	while(Stream && Line.empty())
+		std::getline(Stream, Line);
+	if(Separator == 0)
+	  Separator = GetSeparator(Line);
+	unsigned LineNo = 1;
 
-  do
-  {
-    if(!Line.empty() && Line[Line.size()-1] == '\r')
-      Line.erase(Line.size()-1);
-    //Ignore empty lines
-    if(Line.empty())
-      continue;
+	do
+	{
+		if(!Line.empty() && Line[Line.size()-1] == '\r')
+			Line.erase(Line.size()-1);
+		//Ignore empty lines
+		if(Line.empty())
+			continue;
 
-    //Several separators after each other (eg. spaces) are ignored
-    unsigned FirstPos = Line.find_first_not_of(Separator);
-    unsigned Pos = Line.find(Separator, FirstPos);
-    std::string xText = Trim(Line.substr(FirstPos, Pos - FirstPos));
-    unsigned Col = 1;
-    TCsvRow CsvRow(ColCount);
-    CsvRow[0] = xText;
-    for(unsigned LastPos = Line.find_first_not_of(Separator, Pos);
-        Pos != std::string::npos; LastPos = Pos + 1)
-    {
-      Pos = Line.find(Separator, LastPos);
+		//Several separators after each other (eg. spaces) are ignored
+		unsigned FirstPos = Line.find_first_not_of(Separator);
+		unsigned Pos = Line.find(Separator, FirstPos);
+		std::string xText = Trim(Line.substr(FirstPos, Pos - FirstPos));
+		TCsvRow CsvRow;
+		CsvRow.push_back(xText);
+		for(unsigned LastPos = Line.find_first_not_of(Separator, Pos);
+				Pos != std::string::npos; LastPos = Pos + 1)
+		{
+			Pos = Line.find(Separator, LastPos);
 
-      //Ignore empty entries
-      if(Pos == LastPos || LastPos == Line.size())
-        continue;
+			//Ignore empty entries
+			if(Pos == LastPos || LastPos == Line.size())
+				continue;
 
-      std::string yText = Trim(Line.substr(LastPos, Pos - LastPos));
-      //Check if there are too many numbers on the line
-      if(Col < ColCount)
-        CsvRow[Col] = yText;
-      Col++;
-    }
+			std::string yText = Trim(Line.substr(LastPos, Pos - LastPos));
+			CsvRow.push_back(yText);
+		}
 
-    LineNo++;
+		LineNo++;
     CsvGrid.push_back(CsvRow);
   }
   while(std::getline(Stream, Line));
   return true;
 }
 //---------------------------------------------------------------------------
-bool ImportCsv(const std::string &Str, TCsvGrid &CsvGrid)
+bool ImportCsv(const std::string &Str, TCsvGrid &CsvGrid, char Separator)
 {
-  std::istringstream Stream(Str);
-  return ImportCsv(Stream, CsvGrid);
+	std::istringstream Stream(Str);
+	return ImportCsv(Stream, CsvGrid, Separator);
 }
 //---------------------------------------------------------------------------
-bool ImportCsvFromFile(const std::wstring &FileName, TCsvGrid &CsvGrid)
+bool ImportCsvFromFile(const std::wstring &FileName, TCsvGrid &CsvGrid, char Separator)
 {
-  std::ifstream Stream(FileName.c_str());
-  if(!Stream)
-    return false;
-  return ImportCsv(Stream, CsvGrid);
+	std::ifstream Stream(FileName.c_str());
+	if(!Stream)
+		return false;
+	return ImportCsv(Stream, CsvGrid, Separator);
 }
 //---------------------------------------------------------------------------
 
