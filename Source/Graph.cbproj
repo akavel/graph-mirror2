@@ -7,7 +7,7 @@
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Application</AppType>
-			<FrameworkType>None</FrameworkType>
+			<FrameworkType>VCL</FrameworkType>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
 			<Base>true</Base>
@@ -62,7 +62,7 @@
 			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
 			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
 			<BCC_StackFrames>true</BCC_StackFrames>
-			<ILINK_LibraryPath>$(BDS)\lib\debug;..\Libraries\gsl\Debug;..\Func32\Debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_LibraryPath>..\Libraries\gsl\Debug;..\Func32\Debug;$(BDSLIB)\$(PLATFORM)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
 			<TASM_Debugging>Full</TASM_Debugging>
 			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>

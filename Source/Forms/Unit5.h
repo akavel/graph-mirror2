@@ -10,11 +10,11 @@
 #ifndef Unit5H
 #define Unit5H
 //---------------------------------------------------------------------------
-#include <rtl\Classes.hpp>
-#include <vcl\Controls.hpp>
-#include <vcl\StdCtrls.hpp>
-#include <vcl\Forms.hpp>
-#include <vcl\ExtCtrls.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include <ExtCtrls.hpp>
 #include "LineSelect.h"
 #include "MyEdit.h"
 #include <ComCtrls.hpp>

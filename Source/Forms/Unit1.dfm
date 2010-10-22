@@ -410,6 +410,7 @@ object Form1: TForm1
   end
   object OpenDialog: TOpenDialog
     DefaultExt = 'grf'
+    FilterIndex = 5
     Options = [ofHideReadOnly, ofAllowMultiSelect, ofPathMustExist, ofFileMustExist, ofEnableSizing]
     Left = 248
     Top = 176

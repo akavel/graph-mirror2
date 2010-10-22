@@ -10,14 +10,14 @@
 #ifndef Unit3H
 #define Unit3H
 //---------------------------------------------------------------------------
-#include <rtl\Classes.hpp>
-#include <vcl\Controls.hpp>
-#include <vcl\StdCtrls.hpp>
-#include <vcl\Forms.hpp>
-#include <vcl\ComCtrls.hpp>
-#include <vcl\ExtCtrls.hpp>
-#include <vcl\Buttons.hpp>
-#include <vcl\Menus.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include <ComCtrls.hpp>
+#include <ExtCtrls.hpp>
+#include <Buttons.hpp>
+#include <Menus.hpp>
 #include <Dialogs.hpp>
 #include "VclObject.h"
 #include "ExtColorBox.h"
@@ -28,13 +28,13 @@
 class TForm3 : public TForm
 {
 __published:	// IDE-managed Components
-  TPageControl *PageControl1;
-  TTabSheet *TabSheet1;
-  TTabSheet *TabSheet2;
-  TButton *Button1;
-  TButton *Button2;
-  TButton *Button3;
-  TTabSheet *TabSheet3;
+	TPageControl *PageControl1;
+	TTabSheet *TabSheet1;
+	TTabSheet *TabSheet2;
+	TButton *Button1;
+	TButton *Button2;
+	TButton *Button3;
+	TTabSheet *TabSheet3;
   TFontDialog *FontDialog1;
   TCheckBoxEx *CheckBox15;
   TCheckBoxEx *CheckBox16;
