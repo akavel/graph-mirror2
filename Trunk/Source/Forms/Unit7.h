@@ -10,11 +10,11 @@
 #ifndef Unit7H
 #define Unit7H
 //---------------------------------------------------------------------------
-#include <rtl\Classes.hpp>
-#include <vcl\Controls.hpp>
-#include <vcl\StdCtrls.hpp>
-#include <vcl\Forms.hpp>
-#include <vcl\ExtCtrls.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include <ExtCtrls.hpp>
 #include "LineSelect.h"
 #include <ComCtrls.hpp>
 #include "ExtColorBox.h"

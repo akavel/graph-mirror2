@@ -19,10 +19,10 @@
 #include <Forms.hpp>
 #include <StdCtrls.hpp>
 //---------------------------------------------------------------------------
-#include <rtl\Classes.hpp>
-#include <vcl\Controls.hpp>
-#include <vcl\StdCtrls.hpp>
-#include <vcl\Forms.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
 #include <ComCtrls.hpp>
 #include <ExtCtrls.hpp>
 #include "TAreaFrame.h"

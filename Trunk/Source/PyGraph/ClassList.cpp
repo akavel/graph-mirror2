@@ -28,7 +28,7 @@ TClassList ClassList[] =
 TMetaClass* FindClass(const std::string &Name)
 {
 	unsigned Count = sizeof(ClassList)/sizeof(ClassList[0]);
-	for(int I = 0; I < Count; I++)
+	for(unsigned I = 0; I < Count; I++)
 		if(ClassList[I].ClassName == Name)
 			return ClassList[I].Class;
 	return NULL;

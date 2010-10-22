@@ -3506,11 +3506,12 @@ void __fastcall TForm1::ImportGraphFileActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ImportPointSeriesActionExecute(TObject *Sender)
 {
-  OpenDialog->Filter = LoadRes(RES_DATA_FILTER);
-  if(OpenDialog->Execute())
-  {
-    for(int I = 0; I < OpenDialog->Files->Count; I++)
-      if(!Data.ImportPointSeries(OpenDialog->Files->Strings[I].c_str()))
+	OpenDialog->Filter = LoadRes(RES_DATA_FILTER);
+	const char Separators[] = {';',',','\t',' ',0};
+	if(OpenDialog->Execute())
+	{
+		for(int I = 0; I < OpenDialog->Files->Count; I++)
+			if(!Data.ImportPointSeries(OpenDialog->Files->Strings[I].c_str(), Separators[OpenDialog->FilterIndex-1]))
         return;
 
     UpdateTreeView();
