@@ -13,6 +13,7 @@
 #include <fstream>
 #include <stdio.h>
 #include <ActnMan.hpp>
+#include <Themes.hpp>
 //---------------------------------------------------------------------------
 /* Workaround for problem with support for Unicode filenames in std::fstream in CB2009.
  * It looks like the file fiopen.cpp is not compiled for Unicode support.
@@ -112,12 +113,50 @@ void __fastcall Actnman::TCustomActionControl::SetSelected(bool Value)
       if(Action->Hint == "" && ActionClient->Tag != 0)
         Action->Hint = reinterpret_cast<TMenuItem*>(ActionClient->Tag)->Hint;
       Application->Hint = GetLongHint(Action->Hint);
-    }
-    else
-      Application->Hint = ""; //CancelHint();
-    if(Value)
-      NotifyWinEvent(EVENT_OBJECT_FOCUS, Parent->Handle, OBJID_CLIENT, ActionClient->Index + 1);
-  }
+		}
+		else
+			Application->Hint = ""; //CancelHint();
+		if(Value)
+			NotifyWinEvent(EVENT_OBJECT_FOCUS, Parent->Handle, OBJID_CLIENT, ActionClient->Index + 1);
+	}
 }
+//---------------------------------------------------------------------------
+//Fix for minor bug in DrawCloseButton() inside TDockTree::PaintDockFrame().
+//twCloseButtonNormal will draw a button where the cross is not scaled under Windows 7,
+//which makes it look ugly. Instead we use twSmallCloseButtonNormal, which shows
+//a small button correctly.
+class TFixedDockTree : public TDockTree
+{
+	void DrawThemedCloseButton(TCanvas *Canvas, int Left, int Top);
+protected:
+	void __fastcall PaintDockFrame(TCanvas *TCanvas, TControl *Control, const TRect &Rect);
+};
+
+void TFixedDockTree::DrawThemedCloseButton(TCanvas *Canvas, int Left, int Top)
+{
+	TRect DrawRect(Left, Top, Left+10, Top+10);
+	//Use twSmallCloseButtonNormal instead of twCloseButtonNormal
+	TThemedElementDetails Details = ThemeServices()->GetElementDetails(twSmallCloseButtonNormal);
+	ThemeServices()->DrawElement(Canvas->Handle, Details, DrawRect, NULL);
+}
+
+void __fastcall TFixedDockTree::PaintDockFrame(TCanvas *Canvas, TControl *Control, const TRect &Rect)
+{
+	TDockTree::PaintDockFrame(Canvas, Control, Rect);
+	if(ThemeServices()->ThemesEnabled)
+		if(DockSite->Align == alTop || DockSite->Align == alBottom)
+			DrawThemedCloseButton(Canvas, Rect.Left+1, Rect.Top+1);
+		else
+			DrawThemedCloseButton(Canvas, Rect.Right-11, Rect.Top+1);
+}
+//---------------------------------------------------------------------------
+class TInitWorkaround
+{
+public:
+	TInitWorkaround()
+	{
+		DefaultDockTreeClass = __classid(TFixedDockTree);
+	}
+} InitWorkaround;
 //---------------------------------------------------------------------------
 
