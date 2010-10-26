@@ -5,10 +5,10 @@
 #ifndef ProgressH
 #define ProgressH
 //---------------------------------------------------------------------------
-#include <rtl\SysUtils.hpp>
-#include <vcl\Controls.hpp>
-#include <rtl\Classes.hpp>
-#include <vcl\Forms.hpp>
+#include <SysUtils.hpp>
+#include <Controls.hpp>
+#include <Classes.hpp>
+#include <Forms.hpp>
 
 #define stWidth 100//Standard Width of control
 #define stHeight 25//Standard Height of control
