@@ -141,17 +141,17 @@ void __fastcall TForm17::Popup_SelectClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm17::Popup_ImportClick(TObject *Sender)
 {
-  OpenDialog1->Filter = LoadRes(RES_DATA_FILTER);
-  if(OpenDialog1->Execute())
-    Grid1->ImportFromFile(OpenDialog1->FileName, 0);
+	OpenDialog1->Filter = LoadRes(RES_EXPORT_DATA_FILTER);
+	if(OpenDialog1->Execute())
+		Grid1->ImportFromFile(OpenDialog1->FileName, 0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm17::Popup_ExportClick(TObject *Sender)
 {
-  SaveDialog1->Filter = LoadRes(RES_EXPORT_DATA_FILTER);
-  if(SaveDialog1->Execute())
-    if(!Grid1->ExportToFile(SaveDialog1->FileName, SaveDialog1->FilterIndex == 1 ? ';' : '\t', Property.DecimalSeparator))
-      MessageBox(LoadRes(RES_FILE_ACCESS, SaveDialog1->FileName), LoadStr(RES_WRITE_FAILED), MB_ICONSTOP);
+	SaveDialog1->Filter = LoadRes(RES_EXPORT_DATA_FILTER);
+	if(SaveDialog1->Execute())
+		if(!Grid1->ExportToFile(SaveDialog1->FileName, SaveDialog1->FilterIndex == 1 ? ';' : '\t', Property.DecimalSeparator))
+			MessageBox(LoadRes(RES_FILE_ACCESS, SaveDialog1->FileName), LoadStr(RES_WRITE_FAILED), MB_ICONSTOP);
 }
 //---------------------------------------------------------------------------
 

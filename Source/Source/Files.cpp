@@ -266,85 +266,90 @@ void TData::SaveDefault() const
   }
 }
 //---------------------------------------------------------------------------
-bool TData::ImportPointSeries(const std::wstring &FileName)
+bool TData::ImportPointSeries(const std::wstring &FileName, char Separator)
 {
   const TColor Colors[] = {clRed, clGreen, clBlue, clYellow, clPurple, clAqua, clBlack, clGray, clSkyBlue	, clMoneyGreen, clDkGray};
 
   std::ifstream Stream(FileName.c_str());
   if(!Stream)
   {
-    MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadString(RES_FILE_ERROR), MB_ICONSTOP);
+		MessageBox(LoadRes(RES_NOT_GRAPH_FILE, FileName), LoadString(RES_FILE_ERROR), MB_ICONSTOP);
     return false;
   }
 
-  TCsvGrid CsvGrid;
-  ImportCsv(Stream, CsvGrid);
-  std::vector<std::vector<TPointSeriesPoint> > Points;
-  unsigned Col;
-  unsigned ColCount = CsvGrid[0].size();
-  try
-  {
-    for(Col = 1; Col < ColCount; Col++)
-    {
-      Points.push_back(std::vector<TPointSeriesPoint>());
-      for(unsigned Row = 0; Row < CsvGrid.size(); Row++)
-      {
-        if(Property.DecimalSeparator != '.')
-        {
-          std::replace(CsvGrid[Row][0].begin(), CsvGrid[Row][0].end(), (char)Property.DecimalSeparator, '.');
-          std::replace(CsvGrid[Row][Col].begin(), CsvGrid[Row][Col].end(), (char)Property.DecimalSeparator, '.');
-        }
-        std::wstring Str = ToWString(CsvGrid[Row][0]);
-        if(!Str.empty() && Str[0] == L'#')
-          Points.push_back(std::vector<TPointSeriesPoint>());
-        else
-          Points.back().push_back(TPointSeriesPoint(Str, ToWString(CsvGrid[Row][Col])));
-      }
-    }
-  }
-  catch(Func32::EParseError &E)
-  {
-    //Ignore errors in first line; This could be a text
-    if(Col != 1)
-    {
-      MessageBox(LoadRes(526, FileName.c_str(), Col), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
-      return false;
-    }
+	TCsvGrid CsvGrid;
+	ImportCsv(Stream, CsvGrid, Separator);
+	std::vector<std::pair<std::wstring, std::vector<TPointSeriesPoint> > > Points;
+	unsigned Row;
+	try
+	{
+		Points.push_back(std::make_pair(L"", std::vector<TPointSeriesPoint>()));
+		unsigned RowCount = CsvGrid.size();
+		for(Row = 0; Row < RowCount; Row++)
+		{
+			std::wstring Str = ToWString(CsvGrid[Row][0]);
+			if(!Str.empty() && Str[0] == L'#')
+			{
+				if(Points.back().second.empty())
+					Points.back().first = Str.substr(1);
+				else
+					Points.push_back(std::make_pair(Str.substr(1), std::vector<TPointSeriesPoint>()));
+			}
+			else
+			{
+				if(Property.DecimalSeparator != '.')
+				{
+					std::replace(Str.begin(), Str.end(), Property.DecimalSeparator, L'.');
+					std::replace(CsvGrid[Row].at(1).begin(), CsvGrid[Row].at(1).end(), (char)Property.DecimalSeparator, '.');
+				}
+				Points.back().second.push_back(TPointSeriesPoint(Str, ToWString(CsvGrid[Row].at(1))));
+			}
+		}
+	}
+	catch(Func32::EParseError &E)
+	{
+		MessageBox(LoadRes(526, FileName.c_str(), Row+1), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
+		return false;
+	}
+	catch(std::out_of_range &E)
+	{
+		MessageBox(LoadRes(526, FileName.c_str(), Row+1), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
+		return false;
   }
 
-  unsigned ColorIndex = 0;
+	unsigned ColorIndex = 0;
   unsigned Style = Property.DefaultPoint.Style;
   unsigned LineStyle = Property.DefaultPointLine.Style;
 
-  UndoList.BeginMultiUndo();
-  for(unsigned I = 0; I < Points.size(); I++)
-  {
-    boost::shared_ptr<TPointSeries> Series(new TPointSeries(
-      clBlack,            //FrameColor
-      Colors[ColorIndex], //FillColor
-      Colors[ColorIndex], //LineColor
-      Property.DefaultPoint.Size, //Size
-      Property.DefaultPointLine.Size, //LineSize
-      Style, //Style
-      static_cast<TPenStyle>(LineStyle), //LineStyle
-      iaLinear, //Onterpolation
-      false, //ShowLabels
-      Property.DefaultPointLabelFont, //Font
-      lpBelow, //LabelPosition
-      ptCartesian, //PointType
-      ebtNone,  //xErrorBarType
-      0, //xErrorValues
-      ebtNone, //yErrorBarType
-      0 //yErrorValue
-    ));
-    Series->Assign(Points[I]);
-    Series->SetLegendText(CreatePointSeriesDescription());
-    Insert(Series);
-    UndoList.Push(TUndoAdd(Series));
-    Series->Update();
-    ColorIndex = ++ColorIndex % (sizeof(Colors)/sizeof(TColor));
-    Style = (Style+1) % 7;
-    LineStyle = (LineStyle+1) % 5;
+	UndoList.BeginMultiUndo();
+	for(unsigned I = 0; I < Points.size(); I++)
+	{
+		boost::shared_ptr<TPointSeries> Series(new TPointSeries(
+			clBlack,            //FrameColor
+			Colors[ColorIndex], //FillColor
+			Colors[ColorIndex], //LineColor
+			Property.DefaultPoint.Size, //Size
+			Property.DefaultPointLine.Size, //LineSize
+			Style, //Style
+			static_cast<TPenStyle>(LineStyle), //LineStyle
+			iaLinear, //Onterpolation
+			false, //ShowLabels
+			Property.DefaultPointLabelFont, //Font
+			lpBelow, //LabelPosition
+			ptCartesian, //PointType
+			ebtNone,  //xErrorBarType
+			0, //xErrorValues
+			ebtNone, //yErrorBarType
+			0 //yErrorValue
+		));
+		Series->Assign(Points[I].second);
+		Series->SetLegendText(Points[I].first.empty() ? CreatePointSeriesDescription() : Points[I].first);
+		Insert(Series);
+		UndoList.Push(TUndoAdd(Series));
+		Series->Update();
+		ColorIndex = ++ColorIndex % (sizeof(Colors)/sizeof(TColor));
+		Style = (Style+1) % 7;
+		LineStyle = (LineStyle+1) % 5;
   }
 
   UndoList.EndMultiUndo();
