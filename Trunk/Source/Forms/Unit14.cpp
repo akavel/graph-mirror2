@@ -379,10 +379,11 @@ void __fastcall TForm14::Popup_RemoveClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Popup_ImportClick(TObject *Sender)
 {
+	const char Separators[] = {';',',','\t',' ',0};
   OpenDialog1->Filter = LoadRes(RES_DATA_FILTER);
   if(OpenDialog1->Execute())
   {
-    Grid->ImportFromFile(OpenDialog1->FileName, Property.DecimalSeparator);
+    Grid->ImportFromFile(OpenDialog1->FileName, Property.DecimalSeparator, Separators[OpenDialog1->FilterIndex-1]);
     int Row = Grid->Selection.Top;
     if(Grid->Cells[0][Row] == L"X" && Grid->Cells[1][Row] == L"Y")
       Grid->RemoveRows(Row, 1);

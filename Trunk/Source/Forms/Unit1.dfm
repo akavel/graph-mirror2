@@ -314,8 +314,6 @@ object Form1: TForm1
         OnMouseUp = Image1MouseUp
         ExplicitLeft = 3
         ExplicitTop = -3
-        ExplicitWidth = 466
-        ExplicitHeight = 294
       end
       object Image2: TImage
         Left = 344
