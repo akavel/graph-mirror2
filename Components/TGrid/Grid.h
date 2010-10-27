@@ -52,36 +52,36 @@ class TGrid : public TDrawGrid
   DYNAMIC void __fastcall KeyDown(Word &Key, Classes::TShiftState Shift);
   DYNAMIC void __fastcall KeyPress(Char &Key);
   DYNAMIC void __fastcall MouseMove(TShiftState Shift,int X,int Y);
-  DYNAMIC void __fastcall MouseDown(TMouseButton Button,TShiftState Shift,int X,int Y);
-  DYNAMIC void __fastcall MouseUp(TMouseButton Button,TShiftState Shift,int X,int Y);
-  DYNAMIC void __fastcall DblClick();
-  DYNAMIC void __fastcall ColWidthsChanged();
-  DYNAMIC void __fastcall RowHeightsChanged();
-  DYNAMIC String __fastcall GetEditText(int ACol, int ARow);
-  DYNAMIC void __fastcall SetEditText(int ACol, int ARow, String Value);
+	DYNAMIC void __fastcall MouseDown(TMouseButton Button,TShiftState Shift,int X,int Y);
+	DYNAMIC void __fastcall MouseUp(TMouseButton Button,TShiftState Shift,int X,int Y);
+	DYNAMIC void __fastcall DblClick();
+	DYNAMIC void __fastcall ColWidthsChanged();
+	DYNAMIC void __fastcall RowHeightsChanged();
+	DYNAMIC String __fastcall GetEditText(int ACol, int ARow);
+	DYNAMIC void __fastcall SetEditText(int ACol, int ARow, String Value);
 
-  void __fastcall DrawCell(int ACol, int ARow, const TRect &ARect, TGridDrawState AState);
-  void __fastcall SetOptions(TGridOptions GridOptions);
-  void __fastcall SetPopupMenu(TPopupMenu *Menu);
-  void __fastcall SetMinRowHeight(int Value);
-  void __fastcall SetMinColWidth(int Value);
-  void __fastcall CalcSizingState(int X, int Y, TGridState &State, int &Index, int &SizingPos, int &SizingOfs, TGridDrawInfo &FixedInfo);
-  bool __fastcall SelectCell(int ACol, int ARow);
+	void __fastcall DrawCell(int ACol, int ARow, const TRect &ARect, TGridDrawState AState);
+	void __fastcall SetOptions(TGridOptions GridOptions);
+	void __fastcall SetPopupMenu(TPopupMenu *Menu);
+	void __fastcall SetMinRowHeight(int Value);
+	void __fastcall SetMinColWidth(int Value);
+	void __fastcall CalcSizingState(int X, int Y, TGridState &State, int &Index, int &SizingPos, int &SizingOfs, TGridDrawInfo &FixedInfo);
+	bool __fastcall SelectCell(int ACol, int ARow);
 
-  TGridOptions __fastcall GetOptions(){return TDrawGrid::Options;};
-  void AjustRows();
-  void ImportText(String Str, wchar_t DecimalSeparator);
+	TGridOptions __fastcall GetOptions(){return TDrawGrid::Options;};
+	void AjustRows();
+	void ImportText(String Str, wchar_t DecimalSeparator, wchar_t Separator);
   String ExportText(wchar_t Delimiter, wchar_t DecimalSeparator);
   void __fastcall SetEditorPopupMenu(TPopupMenu *Menu);
   TGridRect GetCompleteGridRect();
-  String DoGetText(unsigned ACol, unsigned ARow);
+	String DoGetText(unsigned ACol, unsigned ARow);
   void DoSetText(unsigned ACol, unsigned ARow, const String &Value);
   DYNAMIC void __fastcall ChangeScale(int M, int D);
   TStrings* __fastcall GetTitleCaptions() {return FTitleCaptions;}
   void __fastcall SetTitleCaptions(TStrings *Strings);
   void __fastcall TitleCaptionsChange(TObject *Sender);
 
-  //Declare function to handle WM_SetCursor
+	//Declare function to handle WM_SetCursor
   void __fastcall WMSetCursor(TMessage &Message);
   void __fastcall WMTimer(TMessage &Message);
   void CopyTextToClipboard(wchar_t DecimalSeparator);
@@ -99,10 +99,10 @@ public:
   void ClearSelection();
   void CopyToClipboard(wchar_t DecimalSeparator);
   void CutToClipboard(wchar_t DecimalSeparator);
-  void PasteFromClipboard(wchar_t DecimalSeparator);
+  void PasteFromClipboard(wchar_t DecimalSeparator, wchar_t Separator=0);
   bool CanCopy();
-  bool ImportFromFile(const String &FileName, wchar_t DecimalSeparator);
-  void Import(std::istream &Stream, wchar_t DecimalSeparator);
+	bool ImportFromFile(const String &FileName, wchar_t DecimalSeparator, wchar_t Separator=0);
+	void Import(std::istream &Stream, wchar_t DecimalSeparator, wchar_t Separator=0);
   bool ExportToFile(const String &FileName, wchar_t Delimiter, wchar_t DecimalSeparator, bool Utf8=false);
   void AutoSizeCol(int ColIndex);
   void LastCell();
