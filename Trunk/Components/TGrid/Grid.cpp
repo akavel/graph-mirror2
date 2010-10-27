@@ -528,12 +528,12 @@ void TGrid::CutToClipboard(wchar_t DecimalSeparator)
 //---------------------------------------------------------------------------
 //This function pastes text from the clipboard and places it in the cells
 //begining with the top left cell of the selection
-void TGrid::PasteFromClipboard(wchar_t DecimalSeparator)
+void TGrid::PasteFromClipboard(wchar_t DecimalSeparator, wchar_t Separator)
 {
-  ImportText(Clipboard()->AsText, DecimalSeparator);
+	ImportText(Clipboard()->AsText, DecimalSeparator, Separator);
 }
 //---------------------------------------------------------------------------
-void TGrid::ImportText(String Str, wchar_t DecimalSeparator)
+void TGrid::ImportText(String Str, wchar_t DecimalSeparator, wchar_t Separator)
 {
   //If there is only one cell to insert: Paste at cursor position
   if(Str.Pos('\n') == 0 && EditorMode)
@@ -542,7 +542,7 @@ void TGrid::ImportText(String Str, wchar_t DecimalSeparator)
     return;
   }
   std::istringstream Stream(AnsiString(Str).c_str());
-  Import(Stream, DecimalSeparator);
+  Import(Stream, DecimalSeparator, Separator);
 }
 //---------------------------------------------------------------------------
 void TGrid::EmptySelection()
@@ -971,20 +971,20 @@ bool TGrid::CanCopy()
   return true;
 }
 //---------------------------------------------------------------------------
-bool TGrid::ImportFromFile(const String &FileName, wchar_t DecimalSeparator)
+bool TGrid::ImportFromFile(const String &FileName, wchar_t DecimalSeparator, wchar_t Separator)
 {
-  std::ifstream Stream(FileName.c_str());
-  if(!Stream)
-    return false;
+	std::ifstream Stream(FileName.c_str());
+	if(!Stream)
+		return false;
 
-  Import(Stream, DecimalSeparator);
-  return true;
+	Import(Stream, DecimalSeparator, Separator);
+	return true;
  }
 //---------------------------------------------------------------------------
-void TGrid::Import(std::istream &Stream, wchar_t DecimalSeparator)
+void TGrid::Import(std::istream &Stream, wchar_t DecimalSeparator, wchar_t Separator)
 {
   TCsvGrid CsvGrid;
-  ImportCsv(Stream, CsvGrid);
+  ImportCsv(Stream, CsvGrid, Separator);
   unsigned ACol = Selection.Left;
   unsigned ARow = Selection.Top;
   if(AutoAddRows && static_cast<unsigned>(RowCount) <= ARow + CsvGrid.size())
