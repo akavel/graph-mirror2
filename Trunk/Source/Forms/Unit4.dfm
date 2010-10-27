@@ -80,6 +80,7 @@ object Form4: TForm4
         SizeStyle = ssAuto
         Value = 100.000000000000000000
       end>
+    Constraints.MinWidth = 261
     ControlCollection = <
       item
         Column = 0
@@ -402,7 +403,6 @@ object Form4: TForm4
         'ems reading the text.'
       AutoComplete = False
       Anchors = [akLeft]
-      ItemHeight = 13
       ItemIndex = 1
       TabOrder = 3
       Text = '100%'
@@ -432,7 +432,6 @@ object Form4: TForm4
       Hint = 'Select the language to use for the user interface.'
       Style = csDropDownList
       Anchors = [akLeft]
-      ItemHeight = 0
       Sorted = True
       TabOrder = 4
     end
