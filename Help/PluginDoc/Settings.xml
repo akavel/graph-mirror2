@@ -58,7 +58,8 @@
 					<term><classname>TProperty</classname>.<property>DefaultDif</property></term>
 					<listitem>
 						<para>
-
+							 A tuple with default settings for functions, point markers, point lines, shadings, trendlines, relations, tangents
+							and derivatives with style, color and size.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -125,7 +126,7 @@
 					<term><classname>TAxis</classname>.<property>Min</property></term>
 					<listitem>
 						<para>
-							Property for setting the minium value of the axis.
+							Property for setting the minimum value of the axis.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -134,7 +135,7 @@
 					<term><classname>TAxis</classname>.<property>Max</property></term>
 					<listitem>
 						<para>
-							Property for setting the maxium value of the axis.
+							Property for setting the maximum value of the axis.
 						</para>
 					</listitem>
 				</varlistentry>
