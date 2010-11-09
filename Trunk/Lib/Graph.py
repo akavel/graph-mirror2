@@ -7,7 +7,7 @@ import GraphImpl
 import Settings
 import Data
 import Utility
-from Vcl import vcl
+import vcl
 import xmlrpc.client
 import getopt
 
@@ -38,8 +38,8 @@ def InitPlugins(BaseDir):
 
     global Form1
     global Form22
-    Form1 = vcl.TForm(GraphImpl.form1, owned=False)
-    Form22 = vcl.TForm(GraphImpl.form22, owned=False)
+    Form1 = vcl.TObject(GraphImpl.form1, owned=False)
+    Form22 = vcl.TObject(GraphImpl.form22, owned=False)
 
     Modules = []
     AllowedExt = [ i[0] for i in imp.get_suffixes() ]

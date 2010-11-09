@@ -4,6 +4,6 @@
 //---------------------------------------------------------------------------
 namespace Python
 {
-  TMetaClass* FindClass(const std::string &Name);
+	TMetaClass* LookUpClass(const String &Name);
 } //namespace Python
 #endif

@@ -9,10 +9,12 @@
 //---------------------------------------------------------------------------
 #ifndef PythonBindH
 #define PythonBindH
+#include <Rtti.hpp>
 //---------------------------------------------------------------------------
 struct _object;
 struct _typeobject;
 struct _ts;
+typedef _object PyObject;
 
 #define PYTHON_FPU_CONTROL MCW_EM | IC_PROJECTIVE | RC_NEAR | PC_53
 #define DEFAULT_FPU_CONTROL EM_INVALID | EM_DENORMAL | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64
@@ -26,6 +28,7 @@ template<typename T> T& GetPythonAddress(const char *Name);
 #ifndef PYTHON_WRAP
 #define PYTHON_WRAP(type,name) extern type& name;
 #endif
+PYTHON_WRAP(_typeobject, PyBool_Type)
 PYTHON_WRAP(_typeobject, PyTuple_Type)
 PYTHON_WRAP(_typeobject, PyLong_Type)
 PYTHON_WRAP(_typeobject, PyString_Type)
@@ -36,46 +39,67 @@ PYTHON_WRAP(_typeobject, PyFloat_Type)
 PYTHON_WRAP(_typeobject, PyType_Type)
 PYTHON_WRAP(_typeobject, PySlice_Type)
 PYTHON_WRAP(_typeobject, PyComplex_Type)
-PYTHON_WRAP(_object*, PyExc_TypeError)
-PYTHON_WRAP(_object*, PyExc_KeyError)
-PYTHON_WRAP(_object*, PyExc_AttributeError)
-PYTHON_WRAP(_object*, PyExc_IOError)
-PYTHON_WRAP(_object*, PyExc_IndexError)
-PYTHON_WRAP(_object*, PyExc_MemoryError)
-PYTHON_WRAP(_object*, PyExc_NameError)
-PYTHON_WRAP(_object*, PyExc_OverflowError)
-PYTHON_WRAP(_object*, PyExc_RuntimeError)
-PYTHON_WRAP(_object*, PyExc_SyntaxError)
-PYTHON_WRAP(_object*, PyExc_SystemError)
-PYTHON_WRAP(_object*, PyExc_ValueError)
-PYTHON_WRAP(_object*, PyExc_ZeroDivisionError)
-PYTHON_WRAP(_object*, PyExc_NotImplementedError)
-PYTHON_WRAP(_object*, PyExc_StopIteration)
-PYTHON_WRAP(_object, _Py_NoneStruct)
-PYTHON_WRAP(_object, _Py_TrueStruct)
-PYTHON_WRAP(_object, _Py_FalseStruct)
-PYTHON_WRAP(_object, _Py_NotImplementedStruct)
+PYTHON_WRAP(_typeobject, PyFunction_Type)
+PYTHON_WRAP(PyObject*, PyExc_TypeError)
+PYTHON_WRAP(PyObject*, PyExc_KeyError)
+PYTHON_WRAP(PyObject*, PyExc_AttributeError)
+PYTHON_WRAP(PyObject*, PyExc_IOError)
+PYTHON_WRAP(PyObject*, PyExc_IndexError)
+PYTHON_WRAP(PyObject*, PyExc_MemoryError)
+PYTHON_WRAP(PyObject*, PyExc_NameError)
+PYTHON_WRAP(PyObject*, PyExc_OverflowError)
+PYTHON_WRAP(PyObject*, PyExc_RuntimeError)
+PYTHON_WRAP(PyObject*, PyExc_SyntaxError)
+PYTHON_WRAP(PyObject*, PyExc_SystemError)
+PYTHON_WRAP(PyObject*, PyExc_ValueError)
+PYTHON_WRAP(PyObject*, PyExc_ZeroDivisionError)
+PYTHON_WRAP(PyObject*, PyExc_NotImplementedError)
+PYTHON_WRAP(PyObject*, PyExc_StopIteration)
+PYTHON_WRAP(PyObject, _Py_NoneStruct)
+PYTHON_WRAP(PyObject, _Py_TrueStruct)
+PYTHON_WRAP(PyObject, _Py_FalseStruct)
+PYTHON_WRAP(PyObject, _Py_NotImplementedStruct)
 
 bool IsPythonInstalled();
 
 class TLockGIL
 {
-  /*PyGILState_STATE*/int State;
+	/*PyGILState_STATE*/int State;
 public:
-  TLockGIL();
-  ~TLockGIL();
+	TLockGIL();
+	~TLockGIL();
 };
 
 class TUnlockGIL
 {
-  _ts *State;
+	_ts *State;
 public:
-  TUnlockGIL();
-  ~TUnlockGIL();
+	TUnlockGIL();
+	~TUnlockGIL();
 };
 
+	PyObject* ToPyObject(bool Value);
+	PyObject* ToPyObject(int Value);
+	PyObject* ToPyObject(unsigned Value) {return ToPyObject(static_cast<int>(Value));}
+	PyObject* ToPyObject(double Value);
+	PyObject* ToPyObject(long double Value) {return ToPyObject(static_cast<double>(Value));}
+	PyObject* ToPyObject(const std::wstring &Str);
+	PyObject* ToPyObject(const String &Str);
+	PyObject* ToPyObject(const Func32::TComplex &Value);
+	PyObject* ToPyObject(TValue &Value);
+
+	template<typename T> T FromPyObject(PyObject *O);
+	template<> int FromPyObject<int>(PyObject *O);
+	template<> double FromPyObject<double>(PyObject *O);
+	template<> unsigned FromPyObject<unsigned>(PyObject *O) {return FromPyObject<int>(O);}
+	template<> TColor FromPyObject<TColor>(PyObject *O) {return static_cast<TColor>(FromPyObject<int>(O));}
+	template<> long double FromPyObject<long double>(PyObject *O) {return FromPyObject<double>(O);}
+	template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O);
+	template<> std::wstring FromPyObject<std::wstring>(PyObject *O);
+	template<typename T> bool FromPyObject(PyObject *O, T &Value) {Value = FromPyObject<T>(O); return !PyErr_Occurred();}
 }
 #ifdef WRAP_PYOBJECTS
+#define PyBool_Type Python::PyBool_Type
 #define PyTuple_Type Python::PyTuple_Type
 #define PyLong_Type Python::PyLong_Type
 #define PyString_Type Python::PyString_Type
@@ -102,8 +126,8 @@ public:
 #define PyExc_NotImplementedError Python::PyExc_NotImplementedError
 #define PyExc_StopIteration Python::PyExc_StopIteration
 #define _Py_NoneStruct Python::_Py_NoneStruct
-#define _Py_TrueStruct Python::_Py_TrueStruct
-#define _Py_FalseStruct Python::_Py_FalseStruct
+#define _Py_TrueStruct &Python::_Py_TrueStruct
+#define _Py_FalseStruct &Python::_Py_FalseStruct
 #define _Py_NotImplementedStruct Python::_Py_NotImplementedStruct
 #endif
 

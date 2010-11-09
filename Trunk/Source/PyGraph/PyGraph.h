@@ -35,35 +35,18 @@ namespace Python
 
   extern PyObject *PyEFuncError;
   extern PyObject *PyEGraphError;
-  typedef boost::variant<int, double, std::wstring, PyObject*> TVariant;
+	typedef boost::variant<int, double, std::wstring, PyObject*> TPyVariant;
 
   void InitPlugins();
   bool ExecutePythonCommand(const String &Command);
   void ShowPythonConsole(bool Visible);
-  bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param=NULL);
+	bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param=NULL);
   bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem);
-  bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1);
-  bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1, TVariant V2);
-  bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1, TVariant V2, TVariant V3);
+	bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1);
+	bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2);
+	bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2, TPyVariant V3);
 
-  PyObject* ToPyObject(int Value);
-  PyObject* ToPyObject(unsigned Value) {return ToPyObject(static_cast<int>(Value));}
-  PyObject* ToPyObject(double Value);
-  PyObject* ToPyObject(long double Value) {return ToPyObject(static_cast<double>(Value));}
-  PyObject* ToPyObject(const std::wstring &Str);
-  PyObject* ToPyObject(const Func32::TComplex &Value);
   PyObject* ToPyObject(const TVariant &Variant);
-
-  template<typename T> T FromPyObject(PyObject *O);
-  template<> int FromPyObject<int>(PyObject *O);
-  template<> double FromPyObject<double>(PyObject *O);
-  template<> unsigned FromPyObject<unsigned>(PyObject *O) {return FromPyObject<int>(O);}
-  template<> TColor FromPyObject<TColor>(PyObject *O) {return static_cast<TColor>(FromPyObject<int>(O));}
-  template<> long double FromPyObject<long double>(PyObject *O) {return FromPyObject<double>(O);}
-  template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O);
-  template<> std::wstring FromPyObject<std::wstring>(PyObject *O);
-  template<typename T> bool FromPyObject(PyObject *O, T &Value) {Value = FromPyObject<T>(O); return !PyErr_Occurred();}
-
   template<typename T1, typename T2>
   PyObject* CreateTuple(const T1 &V1, const T2 &V2)
   {

@@ -337,7 +337,7 @@ struct TData
 
 %pythoncode
 {
-  from Vcl import vcl
+  import vcl
   def GraphElemRepr(self):
     return '%s("%s")' % (self.__class__.__name__, self.MakeText())
   TStdFunc.__repr__ = GraphElemRepr

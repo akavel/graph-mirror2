@@ -1,4 +1,13 @@
 import PyVcl
+import sys
+
+class Method:
+    def __init__(self, handle, name):
+        self._handle = handle
+        self._name = name
+
+    def __call__(self, *args):
+        return PyVcl.CallMethod(self._handle, self._name)
 
 class TObject(object):
     def __init__(self, handle=0, owned=True, Parent=None, **keywords):
@@ -19,36 +28,19 @@ class TObject(object):
             PyVcl.DeleteObject(self._handle)
     def __getattr__(self, name):
         result = PyVcl.GetProperty(self._handle, name)
+        if result[1] == 10: #Method
+            return Method(self._handle, name)
         if result[1] == 7:  # An object
             return TObject(result[0], owned=False) if result[0] != 0 else None
         return result[0]
     def __setattr__(self, name, value):
-        PyVcl.SetProperty(self._handle, name, value._handle if isinstance(value, TObject) else value, self) # Handle objects as values
+        PyVcl.SetProperty(self._handle, name, value._handle if isinstance(value, TObject) else value) # Handle objects as values
 
     def __repr__(self):
         try:
-            return "<object '%s' of type '%s' instance of %s.%s>" % (self.Name, self.ClassName, self.__class__.__module__, self.__class__.__name__)
+            return "<object '%s' of type '%s' instance of %s.%s>" % (self.Name, self.ClassName(), self.__class__.__module__, self.__class__.__name__)
         except PyVcl.PropertyError:
             return "<object of type '%s' instance of %s.%s>" % (self.ClassName, self.__class__.__module__, self.__class__.__name__)
-
-class TForm(TObject):
-    def __init__(self, handle = 0, **keywords):
-        TObject.__init__(self, PyVcl.CreateObject("TForm") if handle == 0 else handle, **keywords)
-    def __setattr__(self, name, value):
-        try:
-            if  "_handle" in self.__dict__:
-                PyVcl.SetProperty(self._handle, name, value, self)
-            else:
-                object.__setattr__(self, name, value)
-        except PropertyError:
-            object.__setattr__(self, name, value)
-    def ShowModal(self):
-        PyVcl.CallMethod(self._handle, "ShowModal")
-    def Close(self):
-        PyVcl.CallMethod(self._handle, "Close")
-
-def CreateObject(type, **keywords):
-    return TObject(PyVcl.CreateObject(type), **keywords)
 
 class TAction(TObject):
     def __init__(self, handle=0, **keywords):
@@ -86,17 +78,19 @@ def FindComponent(Parent, Name):
     if Component.Name == Name:
         return Component
 
-def ObjectInit(self, Parent=None, **keywords):
-    TObject.__init__(self, PyVcl.CreateObject(self.__class__.__name__), Parent = Parent._handle if Parent else 0, **keywords)
+def ObjectInit(self, *args, **keywords):
+    TObject.__init__(self, PyVcl.CallMethod(self._type, "Create", *args), **keywords)
 
 class VclTypes:
     def __getattr__(self, name):
-        return type(name, (TObject,), dict(__init__=ObjectInit))
-    TForm = TForm
-    TAction = TAction
+        NewType = type(name, (TObject,), dict(__init__=ObjectInit, _type=PyVcl.FindClass(name)))
+        object.__setattr__(self, name, NewType)
+        return NewType
     PropertyError = PyVcl.PropertyError
     VclError = PyVcl.VclError
+    TObject = TObject
 
 PropertyError = PyVcl.PropertyError
 VclError = PyVcl.VclError
 vcl = VclTypes()
+sys.modules["vcl"] = vcl

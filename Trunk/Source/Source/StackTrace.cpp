@@ -341,8 +341,9 @@ void boost::assertion_failed(char const * expr, char const * function, char cons
   File << "ASSERTION FAILED" << std::endl;
   File << "Version: " << ToString(TVersionInfo().FileVersion().Text()) << std::endl;
   File << "Date: " << DateTimeToStr(Now()) << std::endl;
-  File << "Expression: " << expr << std::endl;
-  File << "Function: " << function << std::endl;
+	File << "Expression: " << expr << std::endl;
+	if(function)
+	  File << "Function: " << function << std::endl;
   File << "File: " << file << std::endl;
   File << "Line: " << line << std::endl;
   WriteStackFrameToStream(File, 0);
@@ -354,6 +355,11 @@ void boost::assertion_failed(char const * expr, char const * function, char cons
   abort();
 }
 #endif
+//---------------------------------------------------------------------------
+void _RTLENTRY _EXPFUNC std::_assert(char * cond, char * file, int line)
+{
+	boost::assertion_failed(cond, NULL, file, line);
+}
 //---------------------------------------------------------------------------
 Exception* __fastcall MyGetExceptionObject(Windows::PExceptionRecord P)
 {
@@ -393,41 +399,6 @@ void SetApplicationExceptionHandler(bool ALogAllExceptions)
   __pfnDliFailureHook = DllLoadFailure;
   gsl_set_error_handler(GSL_ErrorHandler);
 }
-//---------------------------------------------------------------------------
-#ifdef _STLP_DEBUG
-/** Called from STLport to log debug messages.
- */
-void __stl_debug_message(const char * format_str, ...)
-{
-	va_list Args;
-	va_start(Args, format_str);
-
-  char Buffer[4096];
-  std::vsnprintf(Buffer, sizeof(Buffer), format_str, Args);
-
-  std::ofstream File(LogFileName.c_str(), std::ios_base::app);
-  File << "DEBUG MESSAGE";
-  File << Buffer;
-  File << "-----------------------------------------" << std::endl << std::endl;
-  OutputDebugStringA(Buffer);
-  va_end(Args);
-}
-//---------------------------------------------------------------------------
-/** Called from STLport to terminate the program, for example when an assertion fails.
- */
-void __stl_debug_terminate(void)
-{
-  std::ofstream File(LogFileName.c_str(), std::ios_base::app);
-  File << "DEBUG TERMINATE" << std::endl;
-  WriteStackFrameToStream(File, 0);
-  File << "-----------------------------------------" << std::endl << std::endl;
-/*  asm
-  {
-    int 3
-  } */
-  throw std::__stl_debug_exception();
-}
-#endif //_STLP_DEBUG
 //---------------------------------------------------------------------------
 //Math error handler
 //Called on any math errors;

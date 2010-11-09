@@ -356,7 +356,7 @@ class TGuiSettings(_object):
 TGuiSettings_swigregister = _Settings.TGuiSettings_swigregister
 TGuiSettings_swigregister(TGuiSettings)
 
-from Vcl import vcl
+import vcl
 TAxes.NumberFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_NumberFont_get(self), owned=False))
 TAxes.LabelFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LabelFont_get(self), owned=False))
 TAxes.LegendFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LegenFont_get(self), owned=False))

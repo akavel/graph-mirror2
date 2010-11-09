@@ -1,5 +1,5 @@
 import Graph
-from Vcl import vcl
+import vcl
 
 def Update(action):
   Action.Caption = "Show Python interpreter" if not Graph.Form22.Visible else "Hide Python interpreter"
