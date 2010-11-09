@@ -490,10 +490,10 @@ extern "C" PyObject* PyInit__Data();
 extern "C" PyObject* PyInit__Utility();
 _inittab Modules[] =
 {
-  {"GraphImpl", InitGraphImpl},
-  {"PyVcl", InitPyVcl},
-  {"_Settings", PyInit__Settings},
-  {"_Data", PyInit__Data},
+	{"GraphImpl", InitGraphImpl},
+	{"PyVcl", InitPyVcl},
+	{"_Settings", PyInit__Settings},
+	{"_Data", PyInit__Data},
   {"_Utility", PyInit__Utility},
   {NULL, NULL}
 };
@@ -551,7 +551,7 @@ void InitPlugins()
       "Graph.InitPlugins('%s')\n"
 
       "import PyVcl\n"
-      "from Vcl import vcl\n"
+      "import vcl\n"
       "sys.stdin = sys.stdout\n"
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
       , Application->Handle
@@ -574,27 +574,7 @@ void InitPlugins()
   }
 }
 //---------------------------------------------------------------------------
-_object* ToPyObject(int Value)
-{
-  return PyLong_FromLong(Value);
-}
-//---------------------------------------------------------------------------
-_object* ToPyObject(double Value)
-{
-  return PyFloat_FromDouble(Value);
-}
-//---------------------------------------------------------------------------
-_object* ToPyObject(const std::wstring &Str)
-{
-  return PyUnicode_FromUnicode(Str.c_str(), Str.size());
-}
-//---------------------------------------------------------------------------
-PyObject* ToPyObject(const Func32::TComplex &Value)
-{
-  return Value.imag() ? PyComplex_FromDoubles(Value.real(), Value.imag()) : PyFloat_FromDouble(Value.real());
-}
-//---------------------------------------------------------------------------
-_object* ToPyObject(const TVariant &Variant)
+PyObject* ToPyObject(const TPyVariant &Variant)
 {
   if(const int *Value = boost::get<int>(&Variant))
     return ToPyObject(*Value);
@@ -605,32 +585,6 @@ _object* ToPyObject(const TVariant &Variant)
   if(PyObject *const*Value = boost::get<PyObject*>(&Variant))
     return *Value;
   return NULL;
-}
-//---------------------------------------------------------------------------
-template<> double FromPyObject<double>(PyObject *O)
-{
-  if(PyComplex_Check(O))
-    if(PyComplex_ImagAsDouble(O) != 0)
-      PyErr_SetString(PyExc_TypeError, "complex number has an imaginary part");
-    else
-      return PyComplex_RealAsDouble(O);
-  return PyFloat_AsDouble(O);
-}
-//---------------------------------------------------------------------------
-template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O)
-{
-  Py_complex V = PyComplex_AsCComplex(O);
-  return Func32::TComplex(V.real, V.imag);
-}
-//---------------------------------------------------------------------------
-template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
-{
-  return PyUnicode_AsUnicode(O);
-}
-//---------------------------------------------------------------------------
-template<> int FromPyObject<int>(PyObject *O)
-{
-  return PyLong_AsLong(O);
 }
 //---------------------------------------------------------------------------
 bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem)
@@ -655,13 +609,13 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param)
     char *Format = Param ? (char*)"(iN)" : (char*)"(i())";
     PyObject *ResultObj = PyObject_CallMethod(Module, MethodName, Format, PluginEvent, Param, NULL);
     bool Result = ResultObj && PyObject_IsTrue(ResultObj);
-    Py_XDECREF(ResultObj);
+		Py_XDECREF(ResultObj);
     return Result;
   }
   return false;
 }
 //---------------------------------------------------------------------------
-bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1)
+bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1)
 {
   if(IsPythonInstalled())
   {
@@ -671,7 +625,7 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1)
   return false;
 }
 //---------------------------------------------------------------------------
-bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1, TVariant V2)
+bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2)
 {
   if(IsPythonInstalled())
   {
@@ -681,10 +635,10 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1, TVariant V2)
   return false;
 }
 //---------------------------------------------------------------------------
-bool ExecutePluginEvent(TPluginEvent PluginEvent, TVariant V1, TVariant V2, TVariant V3)
+bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2, TPyVariant V3)
 {
   if(IsPythonInstalled())
-  {
+	{
     TLockGIL Dummy;
     return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NNN)", ToPyObject(V1), ToPyObject(V2), ToPyObject(V2)));
   }

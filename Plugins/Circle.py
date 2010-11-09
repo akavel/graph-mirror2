@@ -1,5 +1,5 @@
 import Graph
-from Vcl import vcl
+import vcl
 import Gui
 class CircleDialog(Gui.SimpleDialog):
     def __init__(self, CircleItem=None):

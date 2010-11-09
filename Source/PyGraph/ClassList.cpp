@@ -16,21 +16,25 @@ namespace Python
 {
 struct TClassList
 {
-	const char *ClassName;
+	const wchar_t *ClassName;
 	TMetaClass *Class;
 };
 
 TClassList ClassList[] =
 {
-	{"TForm", __classid(TForm)},
+	{L"TForm", __classid(TForm)},
+	{L"TLabel", __classid(TLabel)},
+	{L"TEdit", __classid(TEdit)},
+	{L"TButton", __classid(TButton)},
+	{L"TAction", __classid(TAction)},
 };
 
-TMetaClass* FindClass(const std::string &Name)
+TMetaClass* LookUpClass(const String &Name)
 {
 	unsigned Count = sizeof(ClassList)/sizeof(ClassList[0]);
 	for(unsigned I = 0; I < Count; I++)
-		if(ClassList[I].ClassName == Name)
+		if(Name == ClassList[I].ClassName)
 			return ClassList[I].Class;
-	return NULL;
+	throw Exception("Class " + Name + " not found.");
 }
 } //namespace Python

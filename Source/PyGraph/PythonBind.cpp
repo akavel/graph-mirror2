@@ -72,6 +72,102 @@ TUnlockGIL::~TUnlockGIL()
   PyEval_RestoreThread(State);
 }
 //---------------------------------------------------------------------------
+PyObject* ToPyObject(bool Value)
+{
+	return PyBool_FromLong(Value);
+}
+//---------------------------------------------------------------------------
+PyObject* ToPyObject(int Value)
+{
+	return PyLong_FromLong(Value);
+}
+//---------------------------------------------------------------------------
+PyObject* ToPyObject(double Value)
+{
+	return PyFloat_FromDouble(Value);
+}
+//---------------------------------------------------------------------------
+PyObject* ToPyObject(const std::wstring &Str)
+{
+  return PyUnicode_FromUnicode(Str.c_str(), Str.size());
+}
+//---------------------------------------------------------------------------
+PyObject* ToPyObject(const String &Str)
+{
+	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
+}
+//---------------------------------------------------------------------------
+PyObject* ToPyObject(const Func32::TComplex &Value)
+{
+  return Value.imag() ? PyComplex_FromDoubles(Value.real(), Value.imag()) : PyFloat_FromDouble(Value.real());
+}
+//---------------------------------------------------------------------------
+PyObject* ToPyObject(TValue &Value)
+{
+	if(Value.IsEmpty)
+	  Py_RETURN_NONE;
+	switch(Value.Kind)
+	{
+		case tkInteger:
+			return ToPyObject(Value.AsInteger());
+
+		case tkUString:
+			return ToPyObject(Value.AsString());
+
+		case tkEnumeration:
+//			if(Value.IsType(__classid(bool))
+				return ToPyObject(Value.AsBoolean());
+
+		case tkUnknown:
+		case tkChar:
+		case tkFloat:
+		case tkString:
+		case tkSet:
+		case tkClass:
+		case tkMethod:
+		case tkWChar:
+		case tkLString:
+		case tkWString:
+		case tkVariant:
+		case tkArray:
+		case tkRecord:
+		case tkInterface:
+		case tkInt64:
+		case tkDynArray:
+		case tkClassRef:
+		case tkPointer:
+		case tkProcedure:
+		default:
+			throw Exception("Unknown type");
+	}
+}
+//---------------------------------------------------------------------------
+template<> double FromPyObject<double>(PyObject *O)
+{
+  if(PyComplex_Check(O))
+    if(PyComplex_ImagAsDouble(O) != 0)
+      PyErr_SetString(PyExc_TypeError, "complex number has an imaginary part");
+    else
+      return PyComplex_RealAsDouble(O);
+  return PyFloat_AsDouble(O);
+}
+//---------------------------------------------------------------------------
+template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O)
+{
+  Py_complex V = PyComplex_AsCComplex(O);
+	return Func32::TComplex(V.real, V.imag);
+}
+//---------------------------------------------------------------------------
+template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
+{
+	return PyUnicode_AsUnicode(O);
+}
+//---------------------------------------------------------------------------
+template<> int FromPyObject<int>(PyObject *O)
+{
+	return PyLong_AsLong(O);
+}
+//---------------------------------------------------------------------------
 } //namespace Python
 
 

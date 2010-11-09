@@ -7,7 +7,7 @@
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Application</AppType>
-			<FrameworkType>VCL</FrameworkType>
+			<FrameworkType>None</FrameworkType>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
 			<Base>true</Base>

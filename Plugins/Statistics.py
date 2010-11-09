@@ -1,5 +1,5 @@
 import Graph
-from Vcl import vcl
+import vcl
 import Gui
 
 def Execute(Sender):
