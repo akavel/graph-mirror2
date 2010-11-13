@@ -4,6 +4,6 @@
 //---------------------------------------------------------------------------
 namespace Python
 {
-	TMetaClass* LookUpClass(const String &Name);
+	TTypeInfo* LookUpClass(const String &Name);
 } //namespace Python
 #endif
