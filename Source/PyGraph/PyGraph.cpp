@@ -95,7 +95,7 @@ static PyObject* PluginWriteToConsole(PyObject *Self, PyObject *Args)
   if(GetCurrentThreadId() != MainThreadID)
   {
     std::pair<String,TColor> *Pair = new std::pair<String, TColor>(Str, Color);
-    PostMessage(Form1->Handle, WM_USER+1, (DWORD)WriteToConsole, (DWORD)Pair);
+		PostMessage(Form1->Handle, WM_USER+1, (DWORD)WriteToConsole, (DWORD)Pair);
   }
   else if(Form22)
     Form22->WriteText(Str, Color);
@@ -121,22 +121,6 @@ static PyObject* PluginInputQuery(PyObject *Self, PyObject *Args)
     return PyUnicode_FromWideChar(Value.c_str(), Value.Length());
 
   Py_RETURN_NONE;
-}
-//---------------------------------------------------------------------------
-static PyObject* PluginCreateAction(PyObject *Self, PyObject *Args)
-{
-  TAction *Action = new TAction(Application);
-  Action->Category = _("Plugins");
-  Action->ActionList = Form1->ActionManager;
-
-  TActionClients *MenuItems = Form1->ActionMainMenuBar1->ActionClient->Items;
-  TActionClientItem *PluginsItem = MenuItems->ActionClients[5];
-  TActionClientItem *Item = PluginsItem->Items->ActionClients[0];
-  if(Item->Action != NULL) //Workaround for bug in CB2009: There must always be at least one item
-    Item = PluginsItem->Items->Add();
-  Item->Action = Action;
-  PluginsItem->Visible = true;
-  return PyLong_FromLong(reinterpret_cast<long>(Action));
 }
 //---------------------------------------------------------------------------
 class TPluginFunc : public Func32::TBaseCustomFunc
@@ -443,22 +427,21 @@ static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args, PyObject *Kwd
 }
 //---------------------------------------------------------------------------
 static PyMethodDef GraphMethods[] = {
-  {"CreateAction",              PluginCreateAction, METH_NOARGS, ""},
-  {"SetCustomFunction",         PluginSetCustomFunction, METH_VARARGS, ""},
-  {"GetCustomFunction",         PluginGetCustomFunction, METH_O, ""},
-  {"DelCustomFunction",         PluginDelCustomFunction, METH_O, ""},
-  {"GetCustomFunctionNames",    PluginGetCustomFunctionNames, METH_NOARGS, ""},
-  {"WriteToConsole",            PluginWriteToConsole, METH_VARARGS, ""},
-  {"InputQuery",                PluginInputQuery, METH_VARARGS, ""},
-  {"Eval",                      PluginEval, METH_VARARGS, ""},
-  {"EvalComplex",               PluginEvalComplex, METH_VARARGS, ""},
-  {"Update",                    PluginUpdate, METH_NOARGS, ""},
-  {"SetConstant",               PluginSetConstant, METH_VARARGS, ""},
-  {"GetConstant",               PluginGetConstant, METH_O, ""},
-  {"DelConstant",               PluginDelConstant, METH_O, ""},
-  {"GetConstantNames",          PluginGetConstantNames, METH_NOARGS, ""},
-  {"SaveAsImage",               (PyCFunction)PluginSaveAsImage, METH_VARARGS | METH_KEYWORDS, ""},
-  {NULL, NULL, 0, NULL}
+	{"SetCustomFunction",         PluginSetCustomFunction, METH_VARARGS, ""},
+	{"GetCustomFunction",         PluginGetCustomFunction, METH_O, ""},
+	{"DelCustomFunction",         PluginDelCustomFunction, METH_O, ""},
+	{"GetCustomFunctionNames",    PluginGetCustomFunctionNames, METH_NOARGS, ""},
+	{"WriteToConsole",            PluginWriteToConsole, METH_VARARGS, ""},
+	{"InputQuery",                PluginInputQuery, METH_VARARGS, ""},
+	{"Eval",                      PluginEval, METH_VARARGS, ""},
+	{"EvalComplex",               PluginEvalComplex, METH_VARARGS, ""},
+	{"Update",                    PluginUpdate, METH_NOARGS, ""},
+	{"SetConstant",               PluginSetConstant, METH_VARARGS, ""},
+	{"GetConstant",               PluginGetConstant, METH_O, ""},
+	{"DelConstant",               PluginDelConstant, METH_O, ""},
+	{"GetConstantNames",          PluginGetConstantNames, METH_NOARGS, ""},
+	{"SaveAsImage",               (PyCFunction)PluginSaveAsImage, METH_VARARGS | METH_KEYWORDS, ""},
+	{NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
 static PyModuleDef GraphModuleDef =
@@ -471,7 +454,7 @@ static PyModuleDef GraphModuleDef =
   NULL,
   NULL,
   NULL,
-  NULL,
+	NULL,
 };
 //---------------------------------------------------------------------------
 void ShowPythonConsole(bool Visible)
@@ -527,7 +510,7 @@ void InitPlugins()
     AnsiString PythonCommands = AnsiString().sprintf(
       "import sys\n"
       "import GraphImpl\n"
-      "class ConsoleWriter:\n"
+			"class ConsoleWriter:\n"
       "  def __init__(self, color):\n"
       "    self._color = color\n"
       "  def write(self, str):\n"
@@ -555,7 +538,7 @@ void InitPlugins()
       "sys.stdin = sys.stdout\n"
       , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
       , Application->Handle
-      , Form1
+			, Form1
       , Form22
       , BaseDir.c_str()
       , BaseDir.c_str()
@@ -583,7 +566,7 @@ PyObject* ToPyObject(const TPyVariant &Variant)
   if(const std::wstring *Value = boost::get<std::wstring>(&Variant))
     return ToPyObject(*Value);
   if(PyObject *const*Value = boost::get<PyObject*>(&Variant))
-    return *Value;
+		return *Value;
   return NULL;
 }
 //---------------------------------------------------------------------------
@@ -611,7 +594,7 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param)
     bool Result = ResultObj && PyObject_IsTrue(ResultObj);
 		Py_XDECREF(ResultObj);
     return Result;
-  }
+	}
   return false;
 }
 //---------------------------------------------------------------------------
@@ -639,7 +622,7 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2, 
 {
   if(IsPythonInstalled())
 	{
-    TLockGIL Dummy;
+		TLockGIL Dummy;
     return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NNN)", ToPyObject(V1), ToPyObject(V2), ToPyObject(V2)));
   }
   return false;

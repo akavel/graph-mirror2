@@ -14,6 +14,7 @@
 #undef _DEBUG
 #include <python.h>
 #include "ConfigRegistry.h"
+#include <Rtti.hpp>
 #pragma link "python31.lib"
 //---------------------------------------------------------------------------
 namespace Python
@@ -43,7 +44,7 @@ bool IsPythonInstalled()
 PyObject* PyReturnNone()
 {
   Py_INCREF(Py_None);
-  return Py_None;
+	return Py_None;
 }
 //---------------------------------------------------------------------------
 TLockGIL::TLockGIL()
@@ -99,13 +100,14 @@ PyObject* ToPyObject(const String &Str)
 //---------------------------------------------------------------------------
 PyObject* ToPyObject(const Func32::TComplex &Value)
 {
-  return Value.imag() ? PyComplex_FromDoubles(Value.real(), Value.imag()) : PyFloat_FromDouble(Value.real());
+	return Value.imag() ? PyComplex_FromDoubles(Value.real(), Value.imag()) : PyFloat_FromDouble(Value.real());
 }
 //---------------------------------------------------------------------------
-PyObject* ToPyObject(TValue &Value)
+PyObject* ToPyObject(const Rtti::TValue &V)
 {
+	Rtti::TValue &Value = const_cast<Rtti::TValue&>(V);
 	if(Value.IsEmpty)
-	  Py_RETURN_NONE;
+		Py_RETURN_NONE;
 	switch(Value.Kind)
 	{
 		case tkInteger:
@@ -115,15 +117,22 @@ PyObject* ToPyObject(TValue &Value)
 			return ToPyObject(Value.AsString());
 
 		case tkEnumeration:
-//			if(Value.IsType(__classid(bool))
-				return ToPyObject(Value.AsBoolean());
+		{
+			if(AnsiString(Value.TypeInfo->Name) == "Boolean")
+				return ToPyObject((bool)Value.AsOrdinal());
+			return ToPyObject(GetEnumName(Value.TypeInfo, Value.AsOrdinal()));
+		}
+
+		case tkClass:
+			return ToPyObject((int)Value.AsObject());
+
+		case tkSet:
+			return ToPyObject(SetToString(Value.TypeInfo, *static_cast<int*>(Value.GetReferenceToRawData()), false));
 
 		case tkUnknown:
 		case tkChar:
 		case tkFloat:
 		case tkString:
-		case tkSet:
-		case tkClass:
 		case tkMethod:
 		case tkWChar:
 		case tkLString:
@@ -147,7 +156,7 @@ template<> double FromPyObject<double>(PyObject *O)
   if(PyComplex_Check(O))
     if(PyComplex_ImagAsDouble(O) != 0)
       PyErr_SetString(PyExc_TypeError, "complex number has an imaginary part");
-    else
+		else
       return PyComplex_RealAsDouble(O);
   return PyFloat_AsDouble(O);
 }

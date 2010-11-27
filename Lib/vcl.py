@@ -7,7 +7,21 @@ class Method:
         self._name = name
 
     def __call__(self, *args):
-        return PyVcl.CallMethod(self._handle, self._name)
+        result = PyVcl.CallMethod(self._handle, self._name, args)
+        if result[1] == 7:  # An object
+            return TObject(result[0], owned=False) if result[0] != 0 else None
+        return result[0]
+
+class IndexedProperty:
+    def __init__(self, handle, name):
+        self._handle = handle
+        self._name = name
+
+    def __getitem__(self, index):
+        result = PyVcl.GetProperty(self._handle, self._name, index)
+        if result[1] == 7:
+            return TObject(result[0], owned=False)
+        return result[0]
 
 class TObject(object):
     def __init__(self, handle=0, owned=True, Parent=None, **keywords):
@@ -32,30 +46,19 @@ class TObject(object):
             return Method(self._handle, name)
         if result[1] == 7:  # An object
             return TObject(result[0], owned=False) if result[0] != 0 else None
+        if result[1] == 20: #indexed property
+            return IndexedProperty(self._handle, name)
         return result[0]
     def __setattr__(self, name, value):
         PyVcl.SetProperty(self._handle, name, value._handle if isinstance(value, TObject) else value) # Handle objects as values
-
     def __repr__(self):
         try:
             return "<object '%s' of type '%s' instance of %s.%s>" % (self.Name, self.ClassName(), self.__class__.__module__, self.__class__.__name__)
-        except PyVcl.PropertyError:
-            return "<object of type '%s' instance of %s.%s>" % (self.ClassName, self.__class__.__module__, self.__class__.__name__)
+        except:#PyVcl.PropertyError:
+            return "<object of type '%s' instance of %s.%s>" % (self.ClassName(), self.__class__.__module__, self.__class__.__name__)
 
-class TAction(TObject):
-    def __init__(self, handle=0, **keywords):
-        import GraphImpl
-        TObject.__init__(self, GraphImpl.CreateAction() if handle==0 else handle, owned=False, **keywords)
-    def __setattr__(self, name, value):
-        if name == "ShortCut":
-            TObject.__setattr__(self, "ShortCut", PyVcl.CallFunction("TextToShortCut", int, value) & 0xFFFF)
-        else:
-            TObject.__setattr__(self, name, value)
-    @property
-    def ShortCut(self):
-        return PyVcl.CallFunction("ShortCutToText", str, TObject.__getattr__(self, "ShortCut"))
-    def Execute(self):
-        PyVcl.CallMethod(self._handle, "Execute")
+    def __dir__(self):
+        return PyVcl.GetPropertyList(self._handle)
 
 import collections
 class VclListWrapperType(collections.UserList):
@@ -79,7 +82,7 @@ def FindComponent(Parent, Name):
         return Component
 
 def ObjectInit(self, *args, **keywords):
-    TObject.__init__(self, PyVcl.CallMethod(self._type, "Create", *args), **keywords)
+    TObject.__init__(self, PyVcl.CallMethod(self._type, "Create", args), **keywords)
 
 class VclTypes:
     def __getattr__(self, name):

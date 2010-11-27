@@ -22,6 +22,7 @@ ASAP
 + Use error bars when calculating trendlines (http://www-users.york.ac.uk/~mdc1/num_meth_files/weightedlsqsol.html)
 + Show translator email address as link in About dialog.
 - Improve showing of numers. (Disable scientific notation)
+- Fix cubic splines.
 
 Graph 4.3
 + Animation Player: Add buttons to move to first and last frame for easy compare.
@@ -139,6 +140,7 @@ To be considered
 - Function Width can be a constant.
 - Improve the Zoom|Fit functionality.
 - Highlight matching brackets in edit controls.
+- Change legend to show line and markers next to the text instead of below the text. See MS Excel.
 
 Plugins:
 + Circle item

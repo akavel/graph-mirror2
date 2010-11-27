@@ -8,4 +8,5 @@ def Update(action):
 def Execute(action):
   Graph.Form22.Visible = not Graph.Form22.Visible
 
-Action = vcl.TAction(Name="ShowConsoleAction", OnExecute=Execute, ShortCut="F11", OnUpdate=Update)
+Action = vcl.TAction(Name="ShowConsoleAction", OnExecute=Execute, OnUpdate=Update) #, ShortCut="F11"
+Graph.AddActionToMainMenu(Action)
