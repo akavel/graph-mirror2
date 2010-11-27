@@ -52,6 +52,17 @@ def InitPlugins(BaseDir):
             except Exception:
                 traceback.print_exc()
 
+def AddActionToMainMenu(Action):
+    Action.Category = "Plugins";
+    Action.ActionList = Form1.ActionManager;
+
+    MenuItems = Form1.ActionMainMenuBar1.ActionClient.Items;
+    PluginsItem = MenuItems.Items[5];
+    Item = PluginsItem.Items.Items[0];
+    if Item.Action != None: #Workaround for bug in CB2009: There must always be at least one item
+        Item = PluginsItem.Items.Add();
+    Item.Action = Action;
+    PluginsItem.Visible = True;
 
 import collections
 class ConstantsType(collections.MutableMapping):

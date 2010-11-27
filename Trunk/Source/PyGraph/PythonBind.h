@@ -9,7 +9,7 @@
 //---------------------------------------------------------------------------
 #ifndef PythonBindH
 #define PythonBindH
-#include <Rtti.hpp>
+//#include <Rtti.hpp>
 //---------------------------------------------------------------------------
 struct _object;
 struct _typeobject;
@@ -19,6 +19,11 @@ typedef _object PyObject;
 #define PYTHON_FPU_CONTROL MCW_EM | IC_PROJECTIVE | RC_NEAR | PC_53
 #define DEFAULT_FPU_CONTROL EM_INVALID | EM_DENORMAL | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64
 #define FPU_MASK MCW_EM | MCW_IC | MCW_RC | MCW_PC
+
+namespace Rtti
+{
+  struct TValue;
+}
 
 namespace Python
 {
@@ -86,7 +91,7 @@ public:
 	PyObject* ToPyObject(const std::wstring &Str);
 	PyObject* ToPyObject(const String &Str);
 	PyObject* ToPyObject(const Func32::TComplex &Value);
-	PyObject* ToPyObject(TValue &Value);
+	PyObject* ToPyObject(const Rtti::TValue &Value);
 
 	template<typename T> T FromPyObject(PyObject *O);
 	template<> int FromPyObject<int>(PyObject *O);
