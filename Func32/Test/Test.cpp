@@ -440,6 +440,25 @@ public:
   }
 };
 
+void TestParamFunc(const std::wstring &xText, const std::wstring &yText)
+{
+	try
+	{
+		TParamFunc Func(xText, yText); //Test for known problem with parameter functions
+	}
+	catch(EFuncError &E)
+	{
+	}
+	try
+	{
+		TParamFunc Func;
+		Func.SetFunc(xText, yText);
+	}
+	catch(EFuncError &E)
+	{
+	}
+}
+
 void Test()
 {
   //Test parsing errors
@@ -464,7 +483,7 @@ void Test()
   TestError("4.5I", 0, ecUnknownVar);
 
   //Test numbers
-  Test("45", 0, 45);
+	Test("45", 0, 45);
   Test("-0.5796", 0, -0.5796);
   Test("-.5796", 0, -0.5796);
   Test("-5.478E-23x", 10, -5.478E-22);
@@ -493,7 +512,7 @@ void Test()
 
   //Implied multiplication
   Test("10sin(pi/2)x", 10, 100);
-  Test("sin(pi*x)4x", 1.5, -6);
+	Test("sin(pi*x)4x", 1.5, -6);
   Test("-3x", 10, -30);
 
   //Test common operators
@@ -522,7 +541,7 @@ void Test()
   //Test power function
   Test("x^2", -2, 4);
   Test("x^2", 10, 100);
-  Test("-x^2", 10, -100);
+	Test("-x^2", 10, -100);
   Test("(-x)^2", 10, 100);
   Test("x^x", 0, 1);         //Important test
   Test("x^0", 458.789, 1);   //Important test
@@ -551,7 +570,7 @@ void Test()
   TestEval<TComplex>(L"x^(2/6)", -8, TComplex(1,1.732050807568877));
   TestEval<long double>(L"x^(2/3)", -8, 4);
   TestEval<TComplex>(L"x^(2/3)", -8, TComplex(-2, 3.464101615137755));
-  TestError("x^(2/0)", -8, ecDivByZero);
+	TestError("x^(2/0)", -8, ecDivByZero);
   Test("x^(2/3)", 0, 0);
   Test("x^(4/2)", -2, 4);
 
@@ -580,7 +599,7 @@ void Test()
   Test("asec(x)", -1, 180, Degree);
   Test("acsc(x)", 1, PI/2);
   Test("acsc(x)", 1, 90, Degree);
-  Test("acot(x)", 1, PI/4);
+	Test("acot(x)", 1, PI/4);
   Test("acot(x)", 1, 45, Degree);
   Test("acot(x)", 0, PI/2);
   Test("acot(x)", 0, 90, Degree);
@@ -609,7 +628,7 @@ void Test()
   Test("sign(x)", -7.98, -1);
   Test("sign(x)", 0, 0);
   TestEval<TComplex>(L"sign(x)", TComplex(5, 5), TComplex(M_SQRT_2, M_SQRT_2));
-  TestEval<TComplex>(L"sign(x)", TComplex(4, -3), TComplex(4.0/5, -3.0/5));
+	TestEval<TComplex>(L"sign(x)", TComplex(4, -3), TComplex(4.0/5, -3.0/5));
 
   Test("u(x)", 7.98, 1);
   Test("u(x)", -7.98, 0);
@@ -638,7 +657,7 @@ void Test()
   TestEval<TComplex>(L"re(x)", TComplex(3, 4), 3);
   TestEval<TComplex>(L"im(x)", TComplex(3, 4), 4);
   Test("re(x)", 3, 3);
-  Test("im(x)", 3, 0);
+	Test("im(x)", 3, 0);
 
   //Rounding
   Test("trunc(x)", -4.567, -4);
@@ -667,7 +686,7 @@ void Test()
   Test("x<=5", 5, 1);
   Test("x<=5", 6, 0);
   Test("x>=5", 4, 0);
-  Test("x>=5", 5, 1);
+	Test("x>=5", 5, 1);
   Test("x>=5", 6, 1);
   Test("3<x<6", 2, 0);
   Test("3<x<6", 3, 0);
@@ -696,7 +715,7 @@ void Test()
   Test("range(2,x,5)", 3, 3);
   Test("range(2,x,5)", 6, 5);
   Test("min(8, 2, 5)", 0, 2);
-  Test("min(x,2)", 1, 1);
+	Test("min(x,2)", 1, 1);
   Test("max(8, 2, 5)", 0, 8);
 
   Test("gamma(x)", 6, 120);
@@ -725,7 +744,7 @@ void Test()
   Test("integrate(e^x,x,-inf,0)", 0, 1);
   Test("integrate(e^x,x,0,-inf)", 0, -1);
   Test("integrate(e^-x,x,inf,0)", 0, -1);
-  Test("integrate(e^-x,x,0,inf)", 0, 1);
+	Test("integrate(e^-x,x,0,inf)", 0, 1);
   Test("integrate(e^-abs(x),x,-inf,inf)", 0, 2);
   Test("integrate(e^-abs(x),x,inf,-inf)", 0, -2);
   Test("integrate(x*t^2, t, 0, 3)", 2, 18);
@@ -754,7 +773,7 @@ void Test()
   TestError("if(x<5, x, undef)", 6, ecNotDefError);
 
   //Test block function
-  Test("if(x<-2, x, 2x)", -3, -3);
+	Test("if(x<-2, x, 2x)", -3, -3);
   Test("if(x<-2, x, 2x)", 1, 2);
   Test("if(x<-2, x, x<3, 2x, 3x)", 1, 2);
   Test("if(x<-2, x, x<3, 2x, 3x)", 4, 12);
@@ -783,7 +802,7 @@ void Test()
 
   //Test difficult trend line
   TDblPoint Points1[] = {TDblPoint(1950,1571), TDblPoint(1970,524), TDblPoint(1980, 208), TDblPoint(2003, 29)};
-  std::vector<double> Empty;
+	std::vector<double> Empty;
   std::vector<TDblPoint> Points(Points1, Points1 + 4);
   TestTrendLine(ttPower, Points, Empty, 0, NaN, L"7.23106321804096256E+498*x^(-150.630652337941856)");
 
@@ -812,7 +831,7 @@ void Test()
   TestTrendLine(ttExponential, P, W, 0, NaN, L"0.14747627125184*2.92012743745353^x");
   TestTrendLine(ttExponential, P, W, 0, 1, L"1.36647807441143^x");
 
-  TestCustomTrendLine(L"$a*x+$b", P, Empty, L"1.1*x-0.14");
+	TestCustomTrendLine(L"$a*x+$b", P, Empty, L"1.1*x-0.14");
   TestCustomTrendLine(L"$a*x+1", P, Empty, L"0.72*x+1");
   TestCustomTrendLine(L"$a*x+$b", P, W, L"1.01085*x+0.00368");
   TestCustomTrendLine(L"$a*x+1", P, W, L"0.61557*x+1");
@@ -870,22 +889,26 @@ void Test()
   Args.clear();
   Args.push_back(L"a");
   Args.push_back(L"b");
-  Args.push_back(L"c");
-  SymbolList.Add(L"foo", L"a^3+b^2+c", Args);
-  Test("k*x", 2, 84, Radian, "", SymbolList);
-  Test("TestSqr(x)", 10, 100, Radian, "", SymbolList);
-  Test("TestCube(5, 2, x)", 1, 130, Radian, "", SymbolList);
-  Test("foo(5, 2, x)", 1, 130, Radian, "", SymbolList);
+	Args.push_back(L"c");
+	SymbolList.Add(L"foo", L"a^3+b^2+c", Args);
+	Test("k*x", 2, 84, Radian, "", SymbolList);
+	Test("TestSqr(x)", 10, 100, Radian, "", SymbolList);
+	Test("TestCube(5, 2, x)", 1, 130, Radian, "", SymbolList);
+	Test("foo(5, 2, x)", 1, 130, Radian, "", SymbolList);
 
-  //Test conversion to text
-  TestMakeText(TFunc(L"0"), L"0");
+	//Test conversion to text
+	TestMakeText(TFunc(L"0"), L"0");
+
+	//Test several known problems
+	TestParamFunc(L"t", L"dsafd");
+	TestParamFunc(L"dsafd", L"t");
 }
 
 std::wstringstream DebugStreamBuf;
 int main()
 {
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
-  std::wclog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
+	_control87(DEFAULT_FPU_CONTROL, FPU_MASK);
+	std::wclog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
   try
   {
     Test();

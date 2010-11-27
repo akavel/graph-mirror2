@@ -6,6 +6,13 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
+/* Compiler bug:
+ * When compiling under C++ Builder XE, you will get this error:
+ * [BCC32 Error] closures.hpp(237): E2299 Cannot generate template specialization from 'impl::closure_frame_holder<FrameT>'
+ * To fix it, change line 237 in closures.hpp to:
+ * impl::closure_frame_holder<closure_frame<ClosureT> >& frame;
+ * See also QC report #79813
+ */
 #include "Func32.h"
 #include "Func32Impl.h"
 #pragma hdrstop
