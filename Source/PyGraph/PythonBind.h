@@ -85,6 +85,7 @@ public:
 
 	PyObject* ToPyObject(bool Value);
 	PyObject* ToPyObject(int Value);
+	PyObject* ToPyObject(wchar_t Value);
 	PyObject* ToPyObject(unsigned Value) {return ToPyObject(static_cast<int>(Value));}
 	PyObject* ToPyObject(double Value);
 	PyObject* ToPyObject(long double Value) {return ToPyObject(static_cast<double>(Value));}

@@ -7,7 +7,8 @@ class Method:
         self._name = name
 
     def __call__(self, *args):
-        result = PyVcl.CallMethod(self._handle, self._name, args)
+        Args = tuple([x._handle if "_handle" in dir(x) else x for x in args])
+        result = PyVcl.CallMethod(self._handle, self._name, Args)
         if result[1] == 7:  # An object
             return TObject(result[0], owned=False) if result[0] != 0 else None
         return result[0]
@@ -23,12 +24,22 @@ class IndexedProperty:
             return TObject(result[0], owned=False)
         return result[0]
 
+    def __iter__(self):
+        i = 0
+        try:
+            while True:
+                yield self[i]
+                i = i + 1
+        except IndexError:
+            pass
+
+    def __repr__(self):
+        return repr(list(self))
+
 class TObject(object):
-    def __init__(self, handle=0, owned=True, Parent=None, **keywords):
+    def __init__(self, handle, owned=True, Parent=None, **keywords):
         object.__setattr__(self, "_handle", handle)
         object.__setattr__(self, "_owned", owned)
-        object.__setattr__(self, "Components", VclListWrapperType(handle, "Components", "ComponentCount"))
-        object.__setattr__(self, "Actions", VclListWrapperType(handle, "Actions", "ActionCount"))
         if Parent != None:  self.__setattr__("Parent", Parent) #It is best to set Parent first
         for name, value in keywords.items():
             self.__setattr__(name, value)
@@ -58,42 +69,31 @@ class TObject(object):
             return "<object of type '%s' instance of %s.%s>" % (self.ClassName(), self.__class__.__module__, self.__class__.__name__)
 
     def __dir__(self):
-        return PyVcl.GetPropertyList(self._handle)
+        return list(self.__dict__.keys()) + PyVcl.GetPropertyList(self._handle)
 
-import collections
-class VclListWrapperType(collections.UserList):
-    def __init__(self, handle, listname, countname):
-        self._handle = handle
-        self._listname = listname
-        self._countname = countname
-    def __getitem__(self, key):
-        try:
-            return TObject(PyVcl.GetProperty(self._handle, self._listname, key)[0], owned=False)
-        except VclError:
-            raise IndexError
-    def __len__(self):
-        return PyVcl.GetProperty(self._handle, self._countname)[0]
-    def __repr__(self):
-        return repr(list(self))
-
-def FindComponent(Parent, Name):
-  for Component in Parent.Components:
-    if Component.Name == Name:
-        return Component
-
-def ObjectInit(self, *args, **keywords):
-    TObject.__init__(self, PyVcl.CallMethod(self._type, "Create", args), **keywords)
+def ObjectInit(self, *args, handle=0, **keywords):
+    Args = tuple([x._handle if "_handle" in dir(x) else x for x in args])
+    TObject.__init__(self, handle if handle != 0 else PyVcl.CallMethod(self._type, "Create", Args)[0], owned = (handle == 0), **keywords)
 
 class VclTypes:
+    VclError = PyVcl.VclError
+    TObject = TObject
+    Application = TObject(handle=PyVcl.Application, owned=False)
+    Clipboard = TObject(handle=PyVcl.Clipboard, owned=False)
+    Mouse = TObject(handle=PyVcl.Mouse, owned=False)
+    Screen = TObject(handle=PyVcl.Screen, owned=False)
+
     def __getattr__(self, name):
         NewType = type(name, (TObject,), dict(__init__=ObjectInit, _type=PyVcl.FindClass(name)))
         object.__setattr__(self, name, NewType)
         return NewType
-    PropertyError = PyVcl.PropertyError
-    VclError = PyVcl.VclError
-    TObject = TObject
 
-PropertyError = PyVcl.PropertyError
+    def TextToShortCut(self, S):
+        return PyVcl.CallFunction("TextToShortCut", (S,))
+
+    def ShortCutToText(self, ShortCut):
+        return PyVcl.CallFunction("ShortCutToText", (ShortCut,))
+
 VclError = PyVcl.VclError
 vcl = VclTypes()
 sys.modules["vcl"] = vcl

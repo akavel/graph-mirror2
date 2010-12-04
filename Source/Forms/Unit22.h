@@ -39,6 +39,11 @@ private:	// User declarations
   void SetUserString(const String &Str);
   void HandleNewLine();
   void __fastcall AfterFormShown(TObject*);
+	void __fastcall WMEnable(TMessage &Message);
+
+BEGIN_MESSAGE_MAP
+	VCL_MESSAGE_HANDLER(WM_ENABLE, TMessage, WMEnable)
+END_MESSAGE_MAP(TForm)
 
 public:		// User declarations
   __fastcall TForm22(TComponent* Owner);

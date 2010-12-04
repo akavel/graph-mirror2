@@ -62,7 +62,6 @@ object Form5: TForm5
     Hint = 'Select the function type to graph.'
     Style = csDropDownList
     Anchors = [akLeft, akTop, akRight]
-    ItemHeight = 13
     TabOrder = 0
     OnChange = ComboBox1Change
     OnKeyPress = ComboBox1KeyPress
@@ -269,7 +268,6 @@ object Form5: TForm5
         ' point.'
       Style = csDropDownList
       Anchors = [akTop, akRight]
-      ItemHeight = 13
       ItemIndex = 0
       TabOrder = 1
       Text = 'Automatic'
@@ -285,7 +283,6 @@ object Form5: TForm5
       Width = 81
       Height = 22
       Hint = 'Select the color of the graph.'
-      ItemHeight = 16
       TabOrder = 2
       AutoDroppedWidth = True
       Selected = clScrollBar
@@ -371,7 +368,6 @@ object Form5: TForm5
         'Select marker to show at the start of the interval. Only used if' +
         ' an argument range is specified.'
       Style = csOwnerDrawFixed
-      ItemHeight = 16
       ItemIndex = 0
       TabOrder = 0
       OnDrawItem = ComboBoxDrawItem
@@ -393,7 +389,6 @@ object Form5: TForm5
         'n argument range is specified.'
       Style = csOwnerDrawFixed
       Anchors = [akTop, akRight]
-      ItemHeight = 16
       ItemIndex = 0
       TabOrder = 1
       OnDrawItem = ComboBoxDrawItem

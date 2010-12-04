@@ -22,7 +22,6 @@ __fastcall TForm22::TForm22(TComponent* Owner)
   for(int I = 0; I < IRichEdit1->Paragraph->TabCount; I++, x+=CharWidth*2)
     IRichEdit1->Paragraph->Tab[I] = x;
   TranslateComponent(this);
-
 }
 //---------------------------------------------------------------------------
 void TForm22::Translate()
@@ -213,16 +212,21 @@ void TForm22::KeyboardInterrupt()
 //---------------------------------------------------------------------------
 void TForm22::SetUserString(const String &Str)
 {
-  IRichEdit1->SelStart = LastIndex;
-  IRichEdit1->SelLength = MAXINT;
-  IRichEdit1->SelText = Str;
+	IRichEdit1->SelStart = LastIndex;
+	IRichEdit1->SelLength = MAXINT;
+	IRichEdit1->SelText = Str;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm22::AfterFormShown(TObject*)
 {
-  Form1->Splitter2->Visible = true;
-  Form1->Panel6->Height = Form1->Panel6->VisibleDockClientCount ? 150 : 0;}
+	Form1->Splitter2->Visible = Form1->Panel6->VisibleDockClientCount > 0;
+	Form1->Panel6->Height = Form1->Panel6->VisibleDockClientCount ? 150 : 0;}
 //---------------------------------------------------------------------------
-
-
+void __fastcall TForm22::WMEnable(TMessage &Message)
+{
+  //Ensure that this form is always enabled, even when a modal dialog is shown
+	if(!Message.WParam)
+		EnableWindow(Handle, true);
+}
+//---------------------------------------------------------------------------
 

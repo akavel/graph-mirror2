@@ -645,7 +645,7 @@ void ConvertException()
   catch(...)
   {
     PyErr_SetString(PyExc_RuntimeError, "Unknown exception");
-  }
+	}
 }
 //---------------------------------------------------------------------------
 } //namespace Python

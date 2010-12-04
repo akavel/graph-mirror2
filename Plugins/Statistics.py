@@ -19,7 +19,7 @@ def Execute(Sender):
     Lines += "\n  3rd quartile:\t" + str(yList[math.ceil(N/2)+N//4] if (N//2) % 2 else (yList[math.ceil(N/2)+N//4-1] + yList[math.ceil(N/2)+N//4]) / 2)
     Lines += "\n  Min:\t\t" + str(min(yList))
     Lines += "\n  Max:\t\t" + str(max(yList))
-    Memo = vcl.TMemo(Parent = Form.panel, ReadOnly=True, Align="alClient", Color=-16777201, WantReturns=False)
+    Memo = vcl.TMemo(None, Parent = Form.panel, ReadOnly=True, Align="alClient", Color=-16777201, WantReturns=False)
     Memo.Font.Size = 10
     Memo.Lines.Text = Lines
     Form.ShowModal()
@@ -27,6 +27,6 @@ def Execute(Sender):
 def OnSelect(Item):
     Action.Enabled = Item.__class__ is Graph.TPointSeries
 
-Action = vcl.TAction(Name="Statistics", Caption="Statistics", OnExecute=Execute, Hint="Statistics on a point series")
+Action = Graph.CreateAction(Name="Statistics", Caption="Statistics", OnExecute=Execute, Hint="Statistics on a point series")
 Graph.AddActionToMainMenu(Action)
 Graph.OnSelect.append(OnSelect)

@@ -13,6 +13,12 @@
 struct _object;
 namespace Python
 {
+	class EPyVclError : public Exception
+	{
+	public:
+		EPyVclError(const String &Str) : Exception(Str) {}
+  };
+
   extern _object *PyPropertyException;
   extern _object *PyVclException;
   _object* InitPyVcl();

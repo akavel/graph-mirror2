@@ -18,8 +18,8 @@ GuiFormatSettings = Settings.GuiFormatSettings;
 PlotSettings = Settings.PlotSettings
 GuiSettings = Settings.GuiSettings
 
-Settings.TProperty.DefaultLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultLabelFont_get(self), owned=False))
-Settings.TProperty.DefaultPointLabelFont = property(lambda self: vcl.TObject(handle=Settings._Settings.TProperty_DefaultPointLabelFont_get(self), owned=False))
+Settings.TProperty.DefaultLabelFont = property(lambda self: vcl.TFont(handle=Settings._Settings.TProperty_DefaultLabelFont_get(self)))
+Settings.TProperty.DefaultPointLabelFont = property(lambda self: vcl.TFont(handle=Settings._Settings.TProperty_DefaultPointLabelFont_get(self)))
 
 Selected = None
 TGraphElem = Data.TGraphElem
@@ -52,10 +52,16 @@ def InitPlugins(BaseDir):
             except Exception:
                 traceback.print_exc()
 
-def AddActionToMainMenu(Action):
-    Action.Category = "Plugins";
-    Action.ActionList = Form1.ActionManager;
+def CreateAction(Caption, OnExecute, Hint="", ShortCut="", Name="", IconFile=None, OnUpdate=None):
+    Action = vcl.TAction(vcl.Application, Name=Name, Caption=Caption, OnExecute=OnExecute, Hint=Hint, ShortCut=vcl.TextToShortCut(ShortCut), Category="Plugins", OnUpdate=OnUpdate)
+    if Name:
+        Action.ActionList = Form1.ActionManager;
+    if IconFile:
+        Action.ImageIndex = LoadImage(IconFile)
+    return Action
 
+
+def AddActionToMainMenu(Action):
     MenuItems = Form1.ActionMainMenuBar1.ActionClient.Items;
     PluginsItem = MenuItems.Items[5];
     Item = PluginsItem.Items.Items[0];
@@ -63,6 +69,11 @@ def AddActionToMainMenu(Action):
         Item = PluginsItem.Items.Add();
     Item.Action = Action;
     PluginsItem.Visible = True;
+
+def LoadImage(FileName, BkColor=0xFFFFFF):
+    Bitmap = vcl.TBitmap()
+    Bitmap.LoadFromFile(FileName)
+    return Form1.ImageList2.AddMasked(Bitmap, BkColor)
 
 import collections
 class ConstantsType(collections.MutableMapping):
@@ -103,13 +114,6 @@ def ExecuteEvent(event, args):
                 return True
         except:
             traceback.print_exc()
-
-def FindAction(name):
-    for o in Form1.Components:
-        if o.Name == "ActionManager":
-            for a in o.Actions:
-                if a.Name == name:
-                    return vcl.TAction(handle=a._handle)
 
 def GetBaseObject(o):
     return GetBaseObject(o.SWIGSharedPtrUpcast(o)) if "SWIGSharedPtrUpcast" in o.__swig_getmethods__ else o
