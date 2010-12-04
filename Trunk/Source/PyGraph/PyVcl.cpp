@@ -17,17 +17,15 @@
 #include "ExtColorBox.h"
 #include "FindClass.hpp"
 #include <OleCtrls.hpp>
+#include <clipbrd.hpp>
 #define private public
 #include <Rtti.hpp>
 #undef private
-
-#define NAME_VALUE_ENTRY(x) {_TEXT(#x), (TFastcallFunction)x}
 
 namespace Python
 {
 static TRttiContext Context;
 //---------------------------------------------------------------------------
-PyObject *PyPropertyException = NULL;
 PyObject *PyVclException = NULL;
 TValue ToValue(PyObject *O, TTypeInfo *TypeInfo);
 //---------------------------------------------------------------------------
@@ -93,45 +91,75 @@ TMethodImplementation::TInvokeInfo* CreateInvokeInfo(TTypeInfo *TypeInfo)
 //---------------------------------------------------------------------------
 TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 {
-	TValue Value;
+	TValue Result;
 	switch(TypeInfo->Kind)
 	{
 		case tkClass:
 			if(O == Py_None || PyLong_Check(O))
-				return TValue::From((TObject*)(O == Py_None ? NULL : PyLong_AsLong(O)));
+				Result = TValue::From((TObject*)(O == Py_None ? NULL : PyLong_AsLong(O)));
+			else
+				throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
 			break;
 
 		case tkEnumeration:
 			if(PyUnicode_Check(O))
-			{
-				TValue::Make(GetEnumValue(TypeInfo, PyUnicode_AsUnicode(O)), TypeInfo, Value);
-				return Value;
-			}
+				TValue::Make(GetEnumValue(TypeInfo, PyUnicode_AsUnicode(O)), TypeInfo, Result);
 			if(PyLong_Check(O))
-			{
-				TValue::Make(PyLong_AsLong(O), TypeInfo, Value);
-				return Value;
-			}
+				TValue::Make(PyLong_AsLong(O), TypeInfo, Result);
 			break;
 
 		case tkSet:
-			TValue::Make(StringToSet(TypeInfo, PyUnicode_AsUnicode(O)), TypeInfo, Value);
-			return Value;
+			TValue::Make(StringToSet(TypeInfo, PyUnicode_AsUnicode(O)), TypeInfo, Result);
+			break;
 
 		case tkInteger:
-			return TValue::From(PyLong_AsLong(O));
+			Result = TValue::From(PyLong_AsLong(O));
+			break;
 
 		case tkUString:
-			return TValue::From(String(PyUnicode_AsUnicode(O)));
+		case tkString:
+		case tkLString:
+		case tkWString:
+			Result = TValue::From(String(PyUnicode_AsUnicode(O)));
+			break;
 
 		case tkMethod:
+		{
+			if(O == Py_None)
+				return TValue::From<TObject*>(NULL);
 			Py_INCREF(O);
 			TMethodImplementation *Implementation = new TMethodImplementation(O, CreateInvokeInfo(TypeInfo), PythonCallback);
 			TMethod Method = {Implementation->CodeAddress, NULL};
-			TValue::Make(&Method, TypeInfo, Value);
-			return Value;
+			TValue::Make(&Method, TypeInfo, Result);
+			break;
+		}
+		case tkChar:
+		case tkWChar:
+			if(PyUnicode_GetSize(O) != 1)
+				throw EPyVclError("Expected string with one character");
+			Result = TValue::From(PyUnicode_AsUnicode(O)[0]);
+			break;
+
+		case tkFloat:
+			Result = TValue::From(PyFloat_AsDouble(O));
+			break;
+
+		case tkVariant:
+		case tkArray:
+		case tkRecord:
+		case tkInterface:
+		case tkInt64:
+		case tkDynArray:
+		case tkClassRef:
+		case tkPointer:
+		case tkProcedure:
+		case tkUnknown:
+		default:
+			throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
 	}
-	throw Exception("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
+	if(PyErr_Occurred())
+		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
+	return Result;
 }
 //---------------------------------------------------------------------------
 void TupleToValues(PyObject *O, std::vector<TValue> &Values, const DynamicArray<TRttiParameter*> &Parameters)
@@ -192,7 +220,7 @@ static PyObject* VclSetProperty(PyObject *Self, PyObject *Args)
 		TRttiType *Type = Context.GetType(Object->ClassType());
 		TRttiProperty *Property = Type->GetProperty(Name);
 		if(Property == NULL)
-			throw Exception("Property " + String(Name) + " not found in " + Type->Name);
+			throw EPyVclError("Property " + String(Name) + " not found in " + Type->Name);
 		Property->SetValue(Object, ToValue(Value, Property->PropertyType->Handle));
 		Py_RETURN_NONE;
 	}
@@ -213,9 +241,10 @@ static PyObject* VclGetProperty(PyObject *Self, PyObject *Args)
 		if(!PyArg_ParseTuple(Args, "iu|i", &Object, &Name, &Index))
 			return NULL;
 
+		String PropertyName = Name;
 		TRttiType *Type = Context.GetType(Object->ClassType());
 		if(Type == NULL)
-			throw Exception("Type not found.");
+			throw EPyVclError("Type not found.");
 		TRttiProperty *Property = Type->GetProperty(Name);
 		if(Property == NULL)
 		{
@@ -225,10 +254,32 @@ static PyObject* VclGetProperty(PyObject *Self, PyObject *Args)
 				TRttiField *Field = Type->GetField(Name);
 				if(Field == NULL || Field->Visibility != mvPublic)
 				{
-					if(String(Name) == "Items")
+					if(PropertyName == "Items")
+					{
 						if(TCollection *Collection = dynamic_cast<TCollection*>(Object))
-							return Py_BuildValue("ii", Index == -1 ? 0 : Collection->Items[Index], Index == -1 ? 20 : 7);
-					throw Exception("Property " + String(Name) + " not found");
+							return Py_BuildValue("ii", Index == -1 ? 0 : Collection->Items[Index], Index == -1 ? 20 : tkClass);
+					}
+					else if(PropertyName == "Strings")
+					{
+						if(TStrings *Strings = dynamic_cast<TStrings*>(Object))
+							return Py_BuildValue("iu", Index == -1 ? NULL : Strings->Strings[Index].c_str(), Index == -1 ? 20 : tkString);
+					}
+					else if(PropertyName == "Forms")
+					{
+						if(TScreen *Screen = dynamic_cast<TScreen*>(Object))
+							return Py_BuildValue("ii", Index == -1 ? 0 : Screen->Forms[Index], Index == -1 ? 20 : tkClass);
+					}
+					else if(PropertyName == "Components")
+					{
+						if(TComponent *Component = dynamic_cast<TComponent*>(Object))
+							return Py_BuildValue("ii", Index == -1 ? 0 : Component->Components[Index], Index == -1 ? 20 : tkClass);
+					}
+					else if(PropertyName == "Controls")
+					{
+						if(TWinControl *Control = dynamic_cast<TWinControl*>(Object))
+							return Py_BuildValue("ii", Index == -1 ? 0 : Control->Controls[Index], Index == -1 ? 20 : tkClass);
+					}
+					throw EPyVclError("Property " + String(Name) + " not found");
 				}
 				TValue Result = Field->GetValue(Object);
 				return Py_BuildValue("Ni", ToPyObject(Result), Result.Kind);
@@ -238,11 +289,16 @@ static PyObject* VclGetProperty(PyObject *Self, PyObject *Args)
 		TValue Result = Property->GetValue(Object);
 		return Py_BuildValue("Ni", ToPyObject(Result), Result.Kind);
 	}
+	catch(EListError &E)
+	{
+		PyErr_SetString(PyExc_IndexError, AnsiString(E.Message).c_str());
+		return NULL;
+	}
 	catch(Exception &E)
 	{
 		PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
 		return NULL;
-  }
+	}
 }
 //---------------------------------------------------------------------------
 static PyObject* VclGetPropertyList(PyObject *Self, PyObject *Args)
@@ -274,18 +330,22 @@ static PyObject* VclCallMethod(PyObject *Self, PyObject *Args)
 		if(Type == NULL)
 			Type = Context.GetType(Object->ClassType());
 		TRttiMethod *Method = Type->GetMethod(Name);
+		if(Method == NULL)
+		  throw EPyVclError(String(Type->Name) + " has no method '" + Name + "'");
+		DynamicArray<TRttiParameter*> ParameterTypes = Method->GetParameters();
+		std::vector<TValue> Parameters;
+		int ParamCount = PyTuple_Size(Tuple);
+		if(ParamCount != ParameterTypes.get_length())
+		  throw EPyVclError(String(Name) + "() takes exactly " + ParameterTypes.get_length() + " arguments (" + ParamCount + " given)");
+		TupleToValues(Tuple, Parameters, ParameterTypes);
+		TValue Result;
 		if(Method->IsConstructor)
 		{
-			TValue Param[] = {TValue::From(Application)};
-			TValue Result = Method->Invoke(Type->AsInstance->MetaclassType, Param, 0);
-			return Py_BuildValue("i", Result.AsObject());
+			Result = Method->Invoke(Type->AsInstance->MetaclassType, Parameters.size() == 0 ? NULL : &Parameters[0], Parameters.size()-1);
+			return Py_BuildValue("ii", Result.AsObject(), Result.Kind);
 		}
 		else
 		{
-			DynamicArray<TRttiParameter*> ParameterTypes = Method->GetParameters();
-			std::vector<TValue> Parameters;
-			TupleToValues(Tuple, Parameters, ParameterTypes);
-			TValue Result;
 			if(Method->IsClassMethod)
 				Result = Method->Invoke(Object->ClassType(), Parameters.size() == 0 ? NULL : &Parameters[0], Parameters.size()-1);
 			else
@@ -303,68 +363,54 @@ static PyObject* VclCallMethod(PyObject *Self, PyObject *Args)
 }
 //---------------------------------------------------------------------------
 typedef int __fastcall (*TFastcallFunction)(int,int);
+const int MaxArgCount = 1;
 struct TFunctionEntry
 {
 	const wchar_t *Name;
-	TFastcallFunction Function;
+	void *Address;
+	TTypeInfo *Result;
+	TTypeInfo *Args[MaxArgCount];
 };
 
 TFunctionEntry FunctionList[] =
 {
-  NAME_VALUE_ENTRY(ShortCutToText),
-  NAME_VALUE_ENTRY(TextToShortCut),
+	{L"ShortCutToText", ShortCutToText, __delphirtti(String), __delphirtti(TShortCut)},
+	{L"TextToShortCut", TextToShortCut, __delphirtti(TShortCut), __delphirtti(String)},
 };
 //---------------------------------------------------------------------------
 static PyObject* VclCallFunction(PyObject *Self, PyObject *Args)
 {
-  try
-  {
-    const wchar_t *Name;
-    PyObject *Arg1;
-    PyObject *ResultType;
-    if(!PyArg_ParseTuple(Args, "uOO", &Name, &ResultType, &Arg1))
-      return NULL;
-    TFastcallFunction Function = NULL;
-    String FunctionName = Name;
+	try
+	{
+		const wchar_t *Name;
+		PyObject *FuncArgs;
+		if(!PyArg_ParseTuple(Args, "uO!", &Name, &PyTuple_Type, &FuncArgs))
+			return NULL;
+		String FunctionName = Name;
+		TFunctionEntry *Function = NULL;
 		for(unsigned I = 0; I < sizeof(FunctionList) / sizeof(FunctionList[0]); I++)
-      if(FunctionName == FunctionList[I].Name)
-      {
-        Function = FunctionList[I].Function;
-        break;
-      }
+			if(FunctionName == FunctionList[I].Name)
+			{
+				Function = &FunctionList[I];
+				break;
+			}
 
-    if(Function == NULL)
-      Py_RETURN_NONE;
+		if(Function == NULL)
+			throw EPyVclError("Function " + FunctionName + " not found!");
 
-    int pArg1 = 0, pArg2 = 0, pResult = 0;
-    String Str1, Str2;
-    if(PyUnicode_Check(Arg1))
-    {
-      Str1 = PyUnicode_AsUnicode(Arg1);
-      pArg1 = (int)Str1.data();
-    }
-    else if(PyLong_Check(Arg1))
-      pArg1 = PyLong_AsLong(Arg1);
-    else
-      Py_RETURN_NONE;
+		DynamicArray<TValue> Arguments;
 
-    if(ResultType == (PyObject*)&PyUnicode_Type)
-      pArg2 = (int)&Str2;
-    else if(ResultType == (PyObject*)&PyLong_Type)
-      ;//pResult = (int)&Int;
-    else
-      Py_RETURN_NONE;
+		int Count;
+		for(Count=0; Count < MaxArgCount && Function->Args[Count] != NULL; Count++);
+		Arguments.Length = Count;
+		if(Count != PyTuple_Size(FuncArgs))
+			throw EPyVclError("Function argument count mismatch!");
 
-//    Int = TextToShortCut(Str1);
-//    Str1 = ShortCutToText(Int);
-    pResult = Function(pArg1, pArg2);
+		for(int I = 0; I < Count; I++)
+			 Arguments[I] = ToValue(PyTuple_GET_ITEM(FuncArgs, I), Function->Args[I]);
 
-    if(ResultType == (PyObject*)&PyUnicode_Type)
-			return PyUnicode_FromWideChar(Str2.c_str(), Str2.Length());
-		else if(ResultType == (PyObject*)&PyLong_Type)
-			return PyLong_FromLong(pResult);
-		else
-			Py_RETURN_NONE;
+		TValue Result = Invoke(Function->Address, Arguments, ccReg, Function->Result);
+		return ToPyObject(Result);
 	}
 	catch(Exception &E)
 	{
@@ -393,70 +439,23 @@ static PyModuleDef PyVclModuleDef =
   PyVclMethods,
   NULL,
   NULL,
-  NULL,
-  NULL,
+	NULL,
+	NULL,
 };
 //---------------------------------------------------------------------------
 PyObject* InitPyVcl()
 {
 	PyObject *PyVclModule = PyModule_Create(&PyVclModuleDef);
 
-  PyPropertyException = PyErr_NewException("PyVcl.PropertyError", NULL, NULL);
-  Py_INCREF(PyPropertyException);
-  PyModule_AddObject(PyVclModule, "PropertyError", PyPropertyException);
-
-  PyVclException = PyErr_NewException("PyVcl.VclException", NULL, NULL);
-  Py_INCREF(PyVclException);
-  PyModule_AddObject(PyVclModule, "VclError", PyVclException);
-  return PyVclModule;
+	PyVclException = PyErr_NewException("PyVcl.VclException", NULL, NULL);
+	Py_INCREF(PyVclException);
+	PyModule_AddObject(PyVclModule, "VclError", PyVclException);
+	PyModule_AddIntConstant(PyVclModule, "Application", reinterpret_cast<int>(Application));
+	PyModule_AddIntConstant(PyVclModule, "Clipboard", reinterpret_cast<int>(Clipboard));
+	PyModule_AddIntConstant(PyVclModule, "Mouse", reinterpret_cast<int>(Mouse));
+	PyModule_AddIntConstant(PyVclModule, "Screen", reinterpret_cast<int>(Screen));
+	return PyVclModule;
 }
 //---------------------------------------------------------------------------
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

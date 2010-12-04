@@ -83,6 +83,11 @@ PyObject* ToPyObject(int Value)
 	return PyLong_FromLong(Value);
 }
 //---------------------------------------------------------------------------
+PyObject* ToPyObject(wchar_t Value)
+{
+  return PyUnicode_FromUnicode(&Value, 1);
+}
+//---------------------------------------------------------------------------
 PyObject* ToPyObject(double Value)
 {
 	return PyFloat_FromDouble(Value);
@@ -114,12 +119,15 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 			return ToPyObject(Value.AsInteger());
 
 		case tkUString:
+		case tkString:
+		case tkLString:
+		case tkWString:
 			return ToPyObject(Value.AsString());
 
 		case tkEnumeration:
 		{
 			if(AnsiString(Value.TypeInfo->Name) == "Boolean")
-				return ToPyObject((bool)Value.AsOrdinal());
+				return ToPyObject(static_cast<bool>(Value.AsOrdinal()));
 			return ToPyObject(GetEnumName(Value.TypeInfo, Value.AsOrdinal()));
 		}
 
@@ -129,14 +137,14 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 		case tkSet:
 			return ToPyObject(SetToString(Value.TypeInfo, *static_cast<int*>(Value.GetReferenceToRawData()), false));
 
-		case tkUnknown:
 		case tkChar:
-		case tkFloat:
-		case tkString:
-		case tkMethod:
 		case tkWChar:
-		case tkLString:
-		case tkWString:
+			return ToPyObject(static_cast<wchar_t>(Value.AsInteger()));
+
+		case tkFloat:
+			return ToPyObject(Value.AsExtended());
+
+		case tkMethod:
 		case tkVariant:
 		case tkArray:
 		case tkRecord:
@@ -146,8 +154,9 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 		case tkClassRef:
 		case tkPointer:
 		case tkProcedure:
+		case tkUnknown:
 		default:
-			throw Exception("Unknown type");
+			throw Exception("Unable to convert type '" + AnsiString(Value.TypeInfo->Name) + "'");
 	}
 }
 //---------------------------------------------------------------------------

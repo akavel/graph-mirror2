@@ -233,8 +233,7 @@ object Form1: TForm1
       Cursor = crVSplit
       Align = alBottom
       MinSize = 1
-      ExplicitTop = 264
-      ExplicitWidth = 628
+      ExplicitTop = 272
     end
     object Panel2: TFocusPanel
       Left = 164

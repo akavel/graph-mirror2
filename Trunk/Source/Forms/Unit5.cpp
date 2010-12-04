@@ -42,7 +42,7 @@ __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)
     GroupBox1->FlipChildren(false);
 
   ScaleForm(this);
-  ComboBox1Change(NULL);
+	ComboBox1Change(NULL);
 }
 //---------------------------------------------------------------------------
 void TForm5::Translate()
