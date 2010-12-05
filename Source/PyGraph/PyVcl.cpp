@@ -178,8 +178,12 @@ static PyObject* VclFindClass(PyObject *Self, PyObject *Args)
 		if(!PyArg_ParseTuple(Args, "u", &Name))
 			return NULL;
 
-		TTypeInfo *MetaClass = LookUpClass(Name);
-		TRttiType *Type = Context.GetType(MetaClass);
+		TMetaClass *Class = GetClass(Name);
+		TRttiType *Type;
+		if(Class != NULL)
+			Type = Context.GetType(Class);
+		else
+		  Type = Context.GetType(LookUpClass(Name)); //Throws exception on failure
 		return Py_BuildValue("i", Type); //Return pointer to meta class, NULL on failure
 	}
 	catch(Exception &E)

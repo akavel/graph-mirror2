@@ -33,6 +33,7 @@ TRelation = Data.TRelation
 TPointSeries = Data.TPointSeries
 
 def InitPlugins(BaseDir):
+    global PluginsDir
     PluginsDir = BaseDir + '\\Plugins'
     sys.path.append(PluginsDir)
 
@@ -72,7 +73,7 @@ def AddActionToMainMenu(Action):
 
 def LoadImage(FileName, BkColor=0xFFFFFF):
     Bitmap = vcl.TBitmap()
-    Bitmap.LoadFromFile(FileName)
+    Bitmap.LoadFromFile(os.path.join(PluginsDir, FileName))
     return Form1.ImageList2.AddMasked(Bitmap, BkColor)
 
 import collections
