@@ -24,6 +24,7 @@
 #include <python.h>
 #include "PyVcl.h"
 #include "ConfigRegistry.h"
+#include "ExtColorBox.h"
 //---------------------------------------------------------------------------
 PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem);
 namespace Python
@@ -486,7 +487,9 @@ void InitPlugins()
 {
   _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
   if(IsPythonInstalled())
-  {
+	{
+  	RegisterClass(__classid(TExtColorBox));
+
     Form22 = new TForm22(Application);
     Form1->ScriptDocAction->Visible = true;
     _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects

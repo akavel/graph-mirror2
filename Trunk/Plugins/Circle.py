@@ -21,7 +21,7 @@ class CircleDialog(Gui.SimpleDialog):
         self.edit2 = vcl.TEdit(None, Parent = self.panel, Top = 40, Left = 70, Width = 100, Text = CircleData[1])
         self.edit3 = vcl.TEdit(None, Parent = self.panel, Top = 40, Left = 210, Width = 100, Text = CircleData[2])
         self.edit4 = vcl.TEdit(None, Parent = self.panel, Top = 72, Left = 70, Width = 100, Text = str(CircleItem.Size) if CircleItem else "1")
-        self.colorbox = vcl.TColorBox(None, Parent = self.panel, Top = 72, Left = 210, Width = 100, Selected = CircleItem.Color if CircleItem else 0x0000FF)
+        self.colorbox = vcl.TExtColorBox(None, Parent = self.panel, Top = 72, Left = 210, Width = 100, Selected = CircleItem.Color if CircleItem else 0x0000FF)
 
     def OnOk(self, sender):
         CircleData = (self.edit1.Text, self.edit2.Text, self.edit3.Text)
@@ -48,6 +48,6 @@ def OnEdit(Item):
         d.ShowModal()
         return True
 
-Action = Graph.CreateAction(Name="Circle", Caption="Insert circle...", OnExecute=execute_action, Hint="Create circle from center and radius", ShortCut="Ctrl+Shift+C", IconFile="Plugins\\Circle.bmp")
+Action = Graph.CreateAction(Name="Circle", Caption="Insert circle...", OnExecute=execute_action, Hint="Create circle from center and radius", ShortCut="Ctrl+Shift+C", IconFile="Circle.bmp")
 Graph.AddActionToMainMenu(Action)
 Graph.OnEdit.append(OnEdit)

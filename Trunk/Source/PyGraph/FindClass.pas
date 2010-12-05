@@ -1,5 +1,8 @@
 unit FindClass;
 
+{$WARN SYMBOL_DEPRECATED OFF}
+{$WARN SYMBOL_PLATFORM OFF}
+
 interface
 uses TypInfo;
 
