@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2010-07-10 23:48\n"
-"PO-Revision-Date: 2010-07-10 23:48\n"
+"POT-Creation-Date: 2010-12-19 23:26\n"
+"PO-Revision-Date: 2010-12-19 23:26\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -243,6 +243,7 @@ msgstr ""
 #. Form1..ActionManager..DonateAction("Donate")..Category
 #. Form1..ActionManager..TipAction("Tip of the day")..Category
 #. Form1..ActionManager..SupportAction("Support")..Category
+#. Form1..ActionManager..ScriptDocAction("Plugin system dokumentation")..Category
 #. Form11("Insert relation")..Button3("Help")..Caption
 #. Form12("Insert tangent/normal")..Button3("Help")..Caption
 #. Form13("Insert trendline")..Button3("Help")..Caption
@@ -801,6 +802,14 @@ msgstr ""
 
 #. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Hint
 msgid "Import point series from a data file."
+msgstr ""
+
+#. Form1..ActionManager..ScriptDocAction("Plugin system dokumentation")..Caption
+msgid "Plugin system dokumentation"
+msgstr ""
+
+#. Form1..ActionManager..ScriptDocAction("Plugin system dokumentation")..Hint
+msgid "Show dokumentation for plugin system."
 msgstr ""
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
@@ -2024,8 +2033,9 @@ msgstr ""
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
 msgid "This is free software, and you are welcome to redistribute it under "
-"the terms in the GNU General Public License. Please send bug reports "
-"and suggestions to the programmer."
+"the terms in the <a href=\"%s\">GNU General Public License</a> version "
+"2. Please send bug reports and suggestions to the "
+"programmer."
 msgstr ""
 
 #. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
@@ -2815,11 +2825,6 @@ msgid "Select where the cursor will be placed when you click on the "
 "image."
 msgstr ""
 
-#. AreaFrame..GridPanel1..Edit3....Hint
-msgid "Area or length of path calculated for the given range using Simpson's "
-"formula."
-msgstr ""
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with "
 "the mouse."
@@ -3373,8 +3378,9 @@ msgid "Graph files [*.grf]|*.grf|All files "
 msgstr ""
 
 #. Import from file dialog
-msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files "
-"[*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) "
+"[*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space "
+"delimited)|*.txt|All files [*.*]|*.*"
 msgstr ""
 
 msgid "Are you sure you want to delete the model: "
@@ -3518,16 +3524,16 @@ msgid "New version of Graph available"
 msgstr ""
 
 msgid "Graph %s is now available for download from www.padowan.dk\n"
-"with these new features since the previous version:\n"
-"\n%s\n\n"
-"Would you like to visit the web site?"
+"\n"
+"Would you like to visit the download "
+"page?"
 msgstr ""
 
 msgid "No new version"
 msgstr ""
 
-msgid "You are already using the most recent version of the "
-"program."
+msgid "You are already using the most recent version of "
+"Graph."
 msgstr ""
 
 msgid "Cannot connect to server www.padowan.dk.\n"
@@ -3537,6 +3543,14 @@ msgstr ""
 
 #. Communication error when checking for newer version
 msgid "Socket error %s"
+msgstr ""
+
+msgid "Signed area between curve and x-axis calculated for the given "
+"range."
+msgstr ""
+
+msgid "Length of path along the curve calculated for the given "
+"range."
 msgstr ""
 
 msgid "The file cannot be opened by this version of the program.\n"
