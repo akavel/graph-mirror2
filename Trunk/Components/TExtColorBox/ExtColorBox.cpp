@@ -53,17 +53,16 @@ namespace Extcolorbox
 __fastcall TExtColorBox::TExtColorBox(TComponent* Owner)
   : TCustomComboBox(Owner), FOnPickColor(NULL), FColorDialogType(cdtColorSelect), FDroppedWidth(0),
     FAutoDroppedWidth(true), DroppedWidthFound(false), FShowDefault(false), FShowCustom(true),
-    FDefaultName("Default"), FCustomName("Custom...")
+		FDefaultName("Default"), FCustomName("Custom..."), FSelected(clBlack)
 {
-  Style = csOwnerDrawFixed;
-  Selected = clBlack;
+	Style = csOwnerDrawFixed;
 }
 //---------------------------------------------------------------------------
 void __fastcall TExtColorBox::Loaded()
 {
-  PopulateList();
-  Selected = FSelected;
-  TCustomComboBox::Loaded();
+	PopulateList();
+	Selected = FSelected;
+	TCustomComboBox::Loaded();
 }
 //---------------------------------------------------------------------------
 bool __fastcall TExtColorBox::PickCustomColor()
@@ -243,6 +242,7 @@ void __fastcall TExtColorBox::CreateWnd()
 {
   TCustomComboBox::CreateWnd();
   PopulateList();
+  Selected = FSelected;
 }
 //---------------------------------------------------------------------------
 
