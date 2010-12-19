@@ -5,7 +5,6 @@ class CircleDialog(Gui.SimpleDialog):
     def __init__(self, CircleItem=None):
         Gui.SimpleDialog.__init__(self)
         self.CircleItem = CircleItem
-        Gui.SimpleDialog.__init__(self)
         self.Caption = "Insert circle"
         self.Height = 170
         self.Width = 330

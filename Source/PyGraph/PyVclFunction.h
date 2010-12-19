@@ -7,24 +7,13 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#ifndef PyVclH
-#define PyVclH
-#include <Rtti.hpp>
+#ifndef PyVclFunctionH
+#define PyVclFunctionH
 //---------------------------------------------------------------------------
-struct _object;
 namespace Python
 {
-	class EPyVclError : public Exception
-	{
-	public:
-		EPyVclError(const String &Str) : Exception(Str) {}
-  };
-
-	extern TRttiContext Context;
-	extern _object *PyPropertyException;
-  extern _object *PyVclException;
-	_object* InitPyVcl();
-	TValue ToValue(_object *O, TTypeInfo *TypeInfo);
-	void TupleToValues(_object *O, std::vector<TValue> &Values, const DynamicArray<TRttiParameter*> &Parameters);
+	extern PyTypeObject VclFunctionType;
+	PyObject* VclFunction_Create(const String &Name);
 }
+//---------------------------------------------------------------------------
 #endif

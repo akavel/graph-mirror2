@@ -31,16 +31,13 @@ TTextLabel = Data.TTextLabel
 TShading = Data.TShading
 TRelation = Data.TRelation
 TPointSeries = Data.TPointSeries
+Form1 = GraphImpl.Form1
+Form22 = GraphImpl.Form22
 
 def InitPlugins(BaseDir):
     global PluginsDir
     PluginsDir = BaseDir + '\\Plugins'
     sys.path.append(PluginsDir)
-
-    global Form1
-    global Form22
-    Form1 = vcl.TObject(GraphImpl.form1, owned=False)
-    Form22 = vcl.TObject(GraphImpl.form22, owned=False)
 
     Modules = []
     AllowedExt = [ i[0] for i in imp.get_suffixes() ]

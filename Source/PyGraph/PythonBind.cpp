@@ -15,6 +15,7 @@
 #include <python.h>
 #include "ConfigRegistry.h"
 #include <Rtti.hpp>
+#include "PyVclObject.h"
 #pragma link "python31.lib"
 //---------------------------------------------------------------------------
 namespace Python
@@ -108,6 +109,11 @@ PyObject* ToPyObject(const Func32::TComplex &Value)
 	return Value.imag() ? PyComplex_FromDoubles(Value.real(), Value.imag()) : PyFloat_FromDouble(Value.real());
 }
 //---------------------------------------------------------------------------
+PyObject* ToPyObject(TObject *Object)
+{
+	return VclObject_Create(Object, false);
+}
+//---------------------------------------------------------------------------
 PyObject* ToPyObject(const Rtti::TValue &V)
 {
 	Rtti::TValue &Value = const_cast<Rtti::TValue&>(V);
@@ -132,7 +138,7 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 		}
 
 		case tkClass:
-			return ToPyObject((int)Value.AsObject());
+			return VclObject_Create(Value.AsObject(), false);
 
 		case tkSet:
 			return ToPyObject(SetToString(Value.TypeInfo, *static_cast<int*>(Value.GetReferenceToRawData()), false));
@@ -184,6 +190,12 @@ template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
 template<> int FromPyObject<int>(PyObject *O)
 {
 	return PyLong_AsLong(O);
+}
+//---------------------------------------------------------------------------
+PyObject* SetErrorString(PyObject *Type, const String &Str)
+{
+	PyErr_SetString(Type, AnsiString(Str).c_str());
+	return NULL;
 }
 //---------------------------------------------------------------------------
 } //namespace Python

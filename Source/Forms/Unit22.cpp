@@ -143,27 +143,37 @@ void TForm22::HandleNewLine()
   PromptIndex = IRichEdit1->SelStart;
   Command += Str;
 
-  if(Python::ExecutePythonCommand(Command))
-  {
-    WritePrompt();
-    Command = "";
-    IndentLevel = 0;
-  }
-  else
-  {
-    WritePrompt("... ");
-    Command += "\n";
-    if(!Str.IsEmpty() && Str[Str.Length()] == ':')
-      IndentLevel++;
-  }
-
   if(!Str.IsEmpty())
   {
     TextCache.back() = Str;
     TextCache.push_back(String());
   }
   CacheIndex = TextCache.size() - 1;
-  IRichEdit1->SelText = String::StringOfChar('\t', IndentLevel);
+
+	try
+	{
+		if(Python::ExecutePythonCommand(Command))
+		{
+			WritePrompt();
+			Command = "";
+			IndentLevel = 0;
+		}
+		else
+		{
+			WritePrompt("... ");
+			Command += "\n";
+			if(!Str.IsEmpty() && Str[Str.Length()] == ':')
+				IndentLevel++;
+		}
+	}
+	catch(...)
+	{
+		WritePrompt();
+		Command = "";
+		IndentLevel = 0;
+		throw;
+	}
+	IRichEdit1->SelText = String::StringOfChar('\t', IndentLevel);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm22::FormShow(TObject *Sender)
