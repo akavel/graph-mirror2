@@ -93,6 +93,7 @@ public:
 	PyObject* ToPyObject(const String &Str);
 	PyObject* ToPyObject(const Func32::TComplex &Value);
 	PyObject* ToPyObject(const Rtti::TValue &Value);
+	PyObject* ToPyObject(TObject *Object);
 
 	template<typename T> T FromPyObject(PyObject *O);
 	template<> int FromPyObject<int>(PyObject *O);
@@ -103,6 +104,8 @@ public:
 	template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O);
 	template<> std::wstring FromPyObject<std::wstring>(PyObject *O);
 	template<typename T> bool FromPyObject(PyObject *O, T &Value) {Value = FromPyObject<T>(O); return !PyErr_Occurred();}
+
+	PyObject* SetErrorString(PyObject *Type, const String &Str);
 }
 #ifdef WRAP_PYOBJECTS
 #define PyBool_Type Python::PyBool_Type

@@ -9,33 +9,31 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#define private public
+#include <Rtti.hpp>
+#undef private
 #include "PyVcl.h"
 #include <ActnMan.hpp>
 #undef _DEBUG
 #include <python.h>
+#include <structmember.h>
 #include "PythonBind.h"
 #include "ExtColorBox.h"
 #include "FindClass.hpp"
 #include <OleCtrls.hpp>
 #include <clipbrd.hpp>
-#define private public
-#include <Rtti.hpp>
-#undef private
+#include "PyVClMethod.h"
+#include "PyVclObject.h"
+#include "PyVClType.h"
+#include "PyVclFunction.h"
+#include "PyVclArrayProperty.h"
 
 namespace Python
 {
-static TRttiContext Context;
+TRttiContext Context;
 //---------------------------------------------------------------------------
 PyObject *PyVclException = NULL;
 TValue ToValue(PyObject *O, TTypeInfo *TypeInfo);
-//---------------------------------------------------------------------------
-template<class T> T VclCast(TObject *Object)
-{
-	if(T O = dynamic_cast<T>(Object))
-		return O;
-	throw EConvertError(AnsiString().sprintf("Cannot convert object of type '%s' to '%s'",
-		AnsiString(Object->ClassName()).c_str(), typeid(T).name()));
-}
 //---------------------------------------------------------------------------
 struct TPythonCallback : public TCppInterfacedObject<TMethodImplementationCallback>
 {
@@ -95,7 +93,9 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 	switch(TypeInfo->Kind)
 	{
 		case tkClass:
-			if(O == Py_None || PyLong_Check(O))
+			if(VclObject_Check(O))
+				Result = TValue::From(VclObject_AsObject(O));
+			else if(O == Py_None || PyLong_Check(O))
 				Result = TValue::From((TObject*)(O == Py_None ? NULL : PyLong_AsLong(O)));
 			else
 				throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
@@ -170,145 +170,10 @@ void TupleToValues(PyObject *O, std::vector<TValue> &Values, const DynamicArray<
 		Values.push_back(ToValue(PyTuple_GetItem(O, I), Parameters[I]->ParamType->Handle));
 }
 //---------------------------------------------------------------------------
-static PyObject* VclFindClass(PyObject *Self, PyObject *Args)
-{
-	try
-	{
-		const wchar_t *Name;
-		if(!PyArg_ParseTuple(Args, "u", &Name))
-			return NULL;
-
-		TMetaClass *Class = GetClass(Name);
-		TRttiType *Type;
-		if(Class != NULL)
-			Type = Context.GetType(Class);
-		else
-		  Type = Context.GetType(LookUpClass(Name)); //Throws exception on failure
-		return Py_BuildValue("i", Type); //Return pointer to meta class, NULL on failure
-	}
-	catch(Exception &E)
-	{
-		PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
-		return NULL;
-	}
-}
-//---------------------------------------------------------------------------
-static PyObject* VclDeleteObject(PyObject *Self, PyObject *Args)
-{
-	try
-	{
-		TObject *Object;
-    if(!PyArg_ParseTuple(Args, "i", &Object))
-      return NULL;
-
-		delete Object;
-		Py_RETURN_NONE;
-	}
-	catch(Exception &E)
-	{
-		PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
-		return NULL;
-	}
-
-}
-//---------------------------------------------------------------------------
-static PyObject* VclSetProperty(PyObject *Self, PyObject *Args)
-{
-	try
-	{
-		TObject *Object;
-		const wchar_t *Name;
-		PyObject *Value = NULL;
-		if(!PyArg_ParseTuple(Args, "iuO", &Object, &Name, &Value))
-			return NULL;
-		TRttiType *Type = Context.GetType(Object->ClassType());
-		TRttiProperty *Property = Type->GetProperty(Name);
-		if(Property == NULL)
-			throw EPyVclError("Property " + String(Name) + " not found in " + Type->Name);
-		Property->SetValue(Object, ToValue(Value, Property->PropertyType->Handle));
-		Py_RETURN_NONE;
-	}
-	catch(Exception &E)
-	{
-		PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
-		return NULL;
-	}
-}
-//---------------------------------------------------------------------------
-static PyObject* VclGetProperty(PyObject *Self, PyObject *Args)
-{
-	try
-	{
-		TObject *Object;
-		const wchar_t *Name;
-		int Index = -1;
-		if(!PyArg_ParseTuple(Args, "iu|i", &Object, &Name, &Index))
-			return NULL;
-
-		String PropertyName = Name;
-		TRttiType *Type = Context.GetType(Object->ClassType());
-		if(Type == NULL)
-			throw EPyVclError("Type not found.");
-		TRttiProperty *Property = Type->GetProperty(Name);
-		if(Property == NULL)
-		{
-			TRttiMethod *Method = Type->GetMethod(Name);
-			if(Method == NULL)
-			{
-				TRttiField *Field = Type->GetField(Name);
-				if(Field == NULL || Field->Visibility != mvPublic)
-				{
-					if(PropertyName == "Items")
-					{
-						if(TCollection *Collection = dynamic_cast<TCollection*>(Object))
-							return Py_BuildValue("ii", Index == -1 ? 0 : Collection->Items[Index], Index == -1 ? 20 : tkClass);
-					}
-					else if(PropertyName == "Strings")
-					{
-						if(TStrings *Strings = dynamic_cast<TStrings*>(Object))
-							return Py_BuildValue("iu", Index == -1 ? NULL : Strings->Strings[Index].c_str(), Index == -1 ? 20 : tkString);
-					}
-					else if(PropertyName == "Forms")
-					{
-						if(TScreen *Screen = dynamic_cast<TScreen*>(Object))
-							return Py_BuildValue("ii", Index == -1 ? 0 : Screen->Forms[Index], Index == -1 ? 20 : tkClass);
-					}
-					else if(PropertyName == "Components")
-					{
-						if(TComponent *Component = dynamic_cast<TComponent*>(Object))
-							return Py_BuildValue("ii", Index == -1 ? 0 : Component->Components[Index], Index == -1 ? 20 : tkClass);
-					}
-					else if(PropertyName == "Controls")
-					{
-						if(TWinControl *Control = dynamic_cast<TWinControl*>(Object))
-							return Py_BuildValue("ii", Index == -1 ? 0 : Control->Controls[Index], Index == -1 ? 20 : tkClass);
-					}
-					throw EPyVclError("Property " + String(Name) + " not found");
-				}
-				TValue Result = Field->GetValue(Object);
-				return Py_BuildValue("Ni", ToPyObject(Result), Result.Kind);
-			}
-			return Py_BuildValue("ii", Method, 10);
-		}
-		TValue Result = Property->GetValue(Object);
-		return Py_BuildValue("Ni", ToPyObject(Result), Result.Kind);
-	}
-	catch(EListError &E)
-	{
-		PyErr_SetString(PyExc_IndexError, AnsiString(E.Message).c_str());
-		return NULL;
-	}
-	catch(Exception &E)
-	{
-		PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
-		return NULL;
-	}
-}
-//---------------------------------------------------------------------------
 static PyObject* VclGetPropertyList(PyObject *Self, PyObject *Args)
 {
-  TObject *Object = reinterpret_cast<TObject*>(PyLong_AsLong(Args));
-  if(PyErr_Occurred())
+	TObject *Object = reinterpret_cast<TObject*>(PyLong_AsLong(Args));
+	if(PyErr_Occurred())
 		return NULL;
 
 	TRttiType *Type = Context.GetType(Object->ClassType());
@@ -320,144 +185,146 @@ static PyObject* VclGetPropertyList(PyObject *Self, PyObject *Args)
 	return List;
 }
 //---------------------------------------------------------------------------
-static PyObject* VclCallMethod(PyObject *Self, PyObject *Args)
+PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
 {
 	try
 	{
-		TObject *Object;
-		const wchar_t *Name;
-		PyObject *Tuple;
-		if(!PyArg_ParseTuple(Args, "iuO", &Object, &Name, &Tuple))
-			return NULL;
+		PyObject *Result = PyObject_GenericGetAttr(self, attr_name);
+		if(Result != NULL)
+			return Result;
 
-		TRttiType *Type = dynamic_cast<TRttiType*>(Object);
-		if(Type == NULL)
-			Type = Context.GetType(Object->ClassType());
-		TRttiMethod *Method = Type->GetMethod(Name);
-		if(Method == NULL)
-		  throw EPyVclError(String(Type->Name) + " has no method '" + Name + "'");
-		DynamicArray<TRttiParameter*> ParameterTypes = Method->GetParameters();
-		std::vector<TValue> Parameters;
-		int ParamCount = PyTuple_Size(Tuple);
-		if(ParamCount != ParameterTypes.get_length())
-		  throw EPyVclError(String(Name) + "() takes exactly " + ParameterTypes.get_length() + " arguments (" + ParamCount + " given)");
-		TupleToValues(Tuple, Parameters, ParameterTypes);
-		TValue Result;
-		if(Method->IsConstructor)
-		{
-			Result = Method->Invoke(Type->AsInstance->MetaclassType, Parameters.size() == 0 ? NULL : &Parameters[0], Parameters.size()-1);
-			return Py_BuildValue("ii", Result.AsObject(), Result.Kind);
-		}
+		PyErr_Clear();
+		String Name = PyUnicode_AsUnicode(attr_name);
+		TMetaClass *Class = GetClass(Name);
+		TRttiType *Type;
+		if(Class != NULL)
+			Type = Context.GetType(Class);
 		else
+			Type = Context.GetType(LookUpClass(Name));
+		if(Type != NULL)
 		{
-			if(Method->IsClassMethod)
-				Result = Method->Invoke(Object->ClassType(), Parameters.size() == 0 ? NULL : &Parameters[0], Parameters.size()-1);
-			else
-				Result = Method->Invoke(Object, Parameters.size() == 0 ? NULL : &Parameters[0], Parameters.size()-1);
-			return Py_BuildValue("Ni", ToPyObject(Result), Result.Kind);
+//		if(Class->InheritsFrom(__classid(Exception)))
+			PyObject *TypeObject = VclType_Create(Type);
+			PyObject_GenericSetAttr(self, attr_name, TypeObject);
+			return TypeObject;
 		}
-
-		Py_RETURN_NONE;
+		PyObject *VclFunction = VclFunction_Create(Name);
+		if(VclFunction != NULL)
+			return VclFunction;
+    throw EPyVclError("VCL has no global attribute '" + Name + "'");
 	}
 	catch(Exception &E)
 	{
-		PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
+		SetErrorString(PyVclException, E.Message);
 		return NULL;
 	}
 }
 //---------------------------------------------------------------------------
-typedef int __fastcall (*TFastcallFunction)(int,int);
-const int MaxArgCount = 1;
-struct TFunctionEntry
+struct TGlobalVcl
 {
-	const wchar_t *Name;
-	void *Address;
-	TTypeInfo *Result;
-	TTypeInfo *Args[MaxArgCount];
-};
-
-TFunctionEntry FunctionList[] =
-{
-	{L"ShortCutToText", ShortCutToText, __delphirtti(String), __delphirtti(TShortCut)},
-	{L"TextToShortCut", TextToShortCut, __delphirtti(TShortCut), __delphirtti(String)},
+	PyObject_HEAD
+	PyObject *Dict;
 };
 //---------------------------------------------------------------------------
-static PyObject* VclCallFunction(PyObject *Self, PyObject *Args)
+static PyMemberDef GlobalVcl_Members[] =
 {
-	try
-	{
-		const wchar_t *Name;
-		PyObject *FuncArgs;
-		if(!PyArg_ParseTuple(Args, "uO!", &Name, &PyTuple_Type, &FuncArgs))
-			return NULL;
-		String FunctionName = Name;
-		TFunctionEntry *Function = NULL;
-		for(unsigned I = 0; I < sizeof(FunctionList) / sizeof(FunctionList[0]); I++)
-			if(FunctionName == FunctionList[I].Name)
-			{
-				Function = &FunctionList[I];
-				break;
-			}
-
-		if(Function == NULL)
-			throw EPyVclError("Function " + FunctionName + " not found!");
-
-		DynamicArray<TValue> Arguments;
-
-		int Count;
-		for(Count=0; Count < MaxArgCount && Function->Args[Count] != NULL; Count++);
-		Arguments.Length = Count;
-		if(Count != PyTuple_Size(FuncArgs))
-			throw EPyVclError("Function argument count mismatch!");
-
-		for(int I = 0; I < Count; I++)
-			 Arguments[I] = ToValue(PyTuple_GET_ITEM(FuncArgs, I), Function->Args[I]);
-
-		TValue Result = Invoke(Function->Address, Arguments, ccReg, Function->Result);
-		return ToPyObject(Result);
-	}
-	catch(Exception &E)
-	{
-		PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
-		return NULL;
-	}
-}
+	{"__dict__", T_OBJECT, offsetof(TGlobalVcl, Dict), READONLY},
+	{NULL, 0, 0, 0}
+};
+//---------------------------------------------------------------------------
+static PyTypeObject GlobalVclType =
+{
+	PyObject_HEAD_INIT(NULL)
+	"vcl.Vcl",        	 			 /* tp_name */
+	sizeof(TGlobalVcl), 			 /* tp_basicsize */
+	0,                         /* tp_itemsize */
+	0, 												 /* tp_dealloc */
+	0,                         /* tp_print */
+	0,                         /* tp_getattr */
+	0,                         /* tp_setattr */
+	0,                         /* tp_compare */
+	0,  											 /* tp_repr */
+	0,                         /* tp_as_number */
+	0,                         /* tp_as_sequence */
+	0,                         /* tp_as_mapping */
+	0,                         /* tp_hash */
+	0, 												 /* tp_call */
+	0,                         /* tp_str */
+	GlobalVcl_GetAttro,   		 /* tp_getattro */
+	PyObject_GenericSetAttr,	 /* tp_setattro */
+	0,                         /* tp_as_buffer */
+	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
+	"Global VCL types and methods", /* tp_doc */
+	0,		                     /* tp_traverse */
+	0,		                     /* tp_clear */
+	0,		                     /* tp_richcompare */
+	0,		                     /* tp_weaklistoffset */
+	0,		                     /* tp_iter */
+	0,		                     /* tp_iternext */
+	0, 								         /* tp_methods */
+	GlobalVcl_Members,         /* tp_members */
+	0,       									 /* tp_getset */
+	0,                         /* tp_base */
+	0,                         /* tp_dict */
+	0,                         /* tp_descr_get */
+	0,                         /* tp_descr_set */
+	offsetof(TGlobalVcl, Dict),/* tp_dictoffset */
+	0,						             /* tp_init */
+	0,                         /* tp_alloc */
+	0,						             /* tp_new */
+};
 //---------------------------------------------------------------------------
 static PyMethodDef PyVclMethods[] = {
-	{"FindClass", VclFindClass, METH_VARARGS, ""},
-	{"DeleteObject", VclDeleteObject, METH_VARARGS, ""},
-	{"SetProperty", VclSetProperty, METH_VARARGS, ""},
-	{"GetProperty", VclGetProperty, METH_VARARGS, ""},
-	{"CallMethod", VclCallMethod, METH_VARARGS, ""},
 	{"GetPropertyList", VclGetPropertyList, METH_O, ""},
-	{"CallFunction", VclCallFunction, METH_VARARGS, ""},
 	{NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
 static PyModuleDef PyVclModuleDef =
 {
 	PyModuleDef_HEAD_INIT,
-	"PyVcl",
-	NULL,
-	-1,
-  PyVclMethods,
-  NULL,
-  NULL,
-	NULL,
-	NULL,
+	"PyVcl",           //m_name
+	"Module wrapping the Visual Component Library (VCL)", //m_doc
+	-1, //m_size
+	PyVclMethods, //m_methods
+	NULL, //m_reload
+	NULL, //m_traverse
+	NULL, //m_clear
+	NULL, //m_free
 };
+//---------------------------------------------------------------------------
+void AddObject(PyObject *o, const char *Name, TObject *Value)
+{
+	PyObject *NewObject = VclObject_Create(Value, false);
+	PyObject_SetAttrString(o, Name, NewObject);
+	Py_DECREF(NewObject);
+}
+//---------------------------------------------------------------------------
+PyObject* GlobalVcl_Create()
+{
+	TGlobalVcl *vcl = PyObject_New(TGlobalVcl, &GlobalVclType);
+	vcl->Dict = NULL;
+	PyObject *self = reinterpret_cast<PyObject*>(vcl);
+	AddObject(self, "Application", Application);
+	AddObject(self, "Clipboard", Application);
+	AddObject(self, "Mouse", Application);
+	AddObject(self, "Screen", Application);
+	return self;
+}
 //---------------------------------------------------------------------------
 PyObject* InitPyVcl()
 {
 	PyObject *PyVclModule = PyModule_Create(&PyVclModuleDef);
-
-	PyVclException = PyErr_NewException("PyVcl.VclException", NULL, NULL);
-	Py_INCREF(PyVclException);
+	if(PyType_Ready(&GlobalVclType) < 0 || PyType_Ready(&VclMethodType) < 0 ||
+		PyType_Ready(&VclObjectType) < 0 || PyType_Ready(&VclFunctionType) < 0 ||
+		PyType_Ready(&VclArrayPropertyType) < 0)
+		return NULL;
+	PyVclException = PyErr_NewException("vcl.VclError", NULL, NULL);
 	PyModule_AddObject(PyVclModule, "VclError", PyVclException);
-	PyModule_AddIntConstant(PyVclModule, "Application", reinterpret_cast<int>(Application));
-	PyModule_AddIntConstant(PyVclModule, "Clipboard", reinterpret_cast<int>(Clipboard));
-	PyModule_AddIntConstant(PyVclModule, "Mouse", reinterpret_cast<int>(Mouse));
-	PyModule_AddIntConstant(PyVclModule, "Screen", reinterpret_cast<int>(Screen));
+
+	PyObject *Modules = PyImport_GetModuleDict();
+	PyObject *vcl = GlobalVcl_Create();
+	PyDict_SetItemString(Modules, "vcl", vcl);
+	Py_DECREF(vcl);
 	return PyVclModule;
 }
 //---------------------------------------------------------------------------

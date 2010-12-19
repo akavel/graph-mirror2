@@ -25,6 +25,7 @@
 #include "PyVcl.h"
 #include "ConfigRegistry.h"
 #include "ExtColorBox.h"
+#include "PyVclObject.h"
 //---------------------------------------------------------------------------
 PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem);
 namespace Python
@@ -466,7 +467,10 @@ void ShowPythonConsole(bool Visible)
 //---------------------------------------------------------------------------
 PyObject* InitGraphImpl()
 {
-  return PyModule_Create(&GraphModuleDef);
+	PyObject *GraphImpl = PyModule_Create(&GraphModuleDef);
+	PyModule_AddObject(GraphImpl, "Form1", VclObject_Create(Form1, false));
+	PyModule_AddObject(GraphImpl, "Form22", VclObject_Create(Form22, false));
+	return GraphImpl;
 }
 //---------------------------------------------------------------------------
 extern "C" PyObject* PyInit__Settings();
@@ -495,7 +499,7 @@ void InitPlugins()
     _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
     PyImport_ExtendInittab(Modules);
     static String ExeName = Application->ExeName; //Py_SetProgramName() requires variable to be static
-    Py_SetProgramName(ExeName.c_str());
+		Py_SetProgramName(ExeName.c_str());
     PyEval_InitThreads();
     Py_Initialize();
     int argc;
@@ -509,55 +513,49 @@ void InitPlugins()
     TVersionInfo Info;
     TVersion Version = Info.FileVersion();
     const char *BetaFinal = Info.FileFlags() & ffDebug ? "beta" : "final";
-    AnsiString BaseDir = GetRegValue(REGISTRY_KEY, L"BaseDir", HKEY_CURRENT_USER, ExtractFileDir(Application->ExeName).c_str()).c_str();
-    AnsiString PythonCommands = AnsiString().sprintf(
-      "import sys\n"
-      "import GraphImpl\n"
+		AnsiString BaseDir = GetRegValue(REGISTRY_KEY, L"BaseDir", HKEY_CURRENT_USER, ExtractFileDir(Application->ExeName).c_str()).c_str();
+		AnsiString PythonCommands = AnsiString().sprintf(
+			"import sys\n"
+			"import GraphImpl\n"
 			"class ConsoleWriter:\n"
-      "  def __init__(self, color):\n"
-      "    self._color = color\n"
-      "  def write(self, str):\n"
-      "    GraphImpl.WriteToConsole(str, self._color)\n"
-      "  def readline(self):\n"
-      "    value = GraphImpl.InputQuery()\n"
-      "    if value == None: raise KeyboardInterrupt('operation cancelled')\n"
-      "    return value + '\\n'\n"
+			"  def __init__(self, color):\n"
+			"    self._color = color\n"
+			"  def write(self, str):\n"
+			"    GraphImpl.WriteToConsole(str, self._color)\n"
+			"  def readline(self):\n"
+			"    value = GraphImpl.InputQuery()\n"
+			"    if value == None: raise KeyboardInterrupt('operation cancelled')\n"
+			"    return value + '\\n'\n"
 
-      "sys.stdout = ConsoleWriter(0)\n"
-      "sys.stderr = ConsoleWriter(0xFF)\n"
-      "sys.stdin = sys.stdout\n"
+			"sys.stdout = ConsoleWriter(0)\n"
+			"sys.stderr = ConsoleWriter(0xFF)\n"
+			"sys.stdin = sys.stdout\n"
 
-      "GraphImpl.version_info = (%d,%d,%d,'%s',%d)\n"
-      "GraphImpl.handle = %d\n"
-      "GraphImpl.form1 = %d\n"
-      "GraphImpl.form22 = %d\n"
+			"GraphImpl.version_info = (%d,%d,%d,'%s',%d)\n"
 
-      "sys.path.append('%s/Lib')\n"
-      "import Graph\n"
-      "Graph.InitPlugins('%s')\n"
+			"sys.path.append('%s/Lib')\n"
+			"import PyVcl\n"
+			"import vcl\n"
+			"import Graph\n"
+			"Graph.InitPlugins('%s')\n"
 
-      "import PyVcl\n"
-      "import vcl\n"
-      "sys.stdin = sys.stdout\n"
-      , Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
-      , Application->Handle
-			, Form1
-      , Form22
-      , BaseDir.c_str()
-      , BaseDir.c_str()
-    );
+			"sys.stdin = sys.stdout\n"
+			, Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
+			, BaseDir.c_str()
+			, BaseDir.c_str()
+		);
 
-    int Result = PyRun_SimpleString(PythonCommands.c_str());
-    PyEval_SaveThread();
-    _clear87();
-    _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
-    PythonInitialized = true;
-  }
-  else
-  {
-    Form1->Panel6->Height = 0;
-    Form1->Splitter2->Visible = false;
-  }
+		int Result = PyRun_SimpleString(PythonCommands.c_str());
+		PyEval_SaveThread();
+		_clear87();
+		_control87(DEFAULT_FPU_CONTROL, FPU_MASK);
+		PythonInitialized = true;
+	}
+	else
+	{
+		Form1->Panel6->Height = 0;
+		Form1->Splitter2->Visible = false;
+	}
 }
 //---------------------------------------------------------------------------
 PyObject* ToPyObject(const TPyVariant &Variant)

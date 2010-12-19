@@ -32,13 +32,13 @@
 			<BCC_StopBatchAfterErrors>10</BCC_StopBatchAfterErrors>
 			<PackageImports>vcl.bpi;rtl.bpi;bcbie.bpi;vclx.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;dbrtl.bpi;vcldb.bpi;bdertl.bpi;vcldbx.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;Tee.bpi;TeeDB.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inet.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DataSnapServer.bpi;DbxClientDriver.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi;IComp.bpi</PackageImports>
 			<BCC_Defines>USTRING_CSTR_AS_WCHART;$(BCC_Defines)</BCC_Defines>
-			<LinkPackageStatics>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;IComp.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib</LinkPackageStatics>
+			<LinkPackageStatics>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;IComp.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib;DbxCommonDriver.lib</LinkPackageStatics>
 			<_TCHARMapping>wchar_t</_TCHARMapping>
 			<BCC_IncludePath>$(BDS)\include;$(BDS)\include\dinkumware;Source;Forms;Frames;..\Func32;..\Components\Common;..\Components\TRecent;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TIPolygon;..\Components\TIRichEdit;..\Components\TOpenPreviewDialog;..\Components\TIPrintDialog;..\Components\TSaveDialogEx;..\Components\TSymbolDialog;..\Components\TExtColorBox;..\Components\TMyEdit;..\Components\TLineSelect;..\Components\TIFontBox;..\Components\TShadeSelect;..\Components\TMyRadioButton;..\Components\TGrid;..\Components\TPointSelect;..\Components\TGridPanelEx;..\Components\TProgressForm;..\Components\TProgress;..\Components\TMediaPlayerEx;..\Components\TUpDownEx;..\Libraries\pdflib;..\Libraries\dxgettext;..\Libraries\gsl;..\Libraries\Python;..\Components\TCross;..\Components\TLinkLabelEx;..\Components\TCheckBoxEx;..\Components\TRadioGroupEx;$(BCC_IncludePath)</BCC_IncludePath>
 			<ProjectType>CppVCLApplication</ProjectType>
 			<OutputExt>exe</OutputExt>
 			<Multithreaded>true</Multithreaded>
-			<AllPackageLibs>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;IComp.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib</AllPackageLibs>
+			<AllPackageLibs>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;IComp.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib;DbxCommonDriver.lib</AllPackageLibs>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 			<Defines>STRICT</Defines>
 			<IncludePath>..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;PyGraph;$(IncludePath)</IncludePath>
@@ -292,6 +292,22 @@
 				<DependentOn>PyGraph\PyVcl.h</DependentOn>
 				<BuildOrder>66</BuildOrder>
 			</CppCompile>
+			<CppCompile Include="PyGraph\PyVclArrayProperty.cpp">
+				<BuildOrder>72</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PyGraph\PyVclFunction.cpp">
+				<BuildOrder>71</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PyGraph\PyVclMethod.cpp">
+				<DependentOn>PyGraph\PyVclMethod.h</DependentOn>
+				<BuildOrder>68</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PyGraph\PyVclObject.cpp">
+				<BuildOrder>69</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PyGraph\PyVclType.cpp">
+				<BuildOrder>70</BuildOrder>
+			</CppCompile>
 			<CppCompile Include="Source\Clipboard.cpp">
 				<BuildOrder>34</BuildOrder>
 			</CppCompile>
@@ -368,33 +384,33 @@
 			<CppCompile Include="Swig\Utility_wrap.cpp">
 				<BuildOrder>67</BuildOrder>
 			</CppCompile>
-			<FormResources Include="Frames\TParFuncFrame.dfm"/>
-			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
-			<FormResources Include="Forms\Unit9.dfm"/>
-			<FormResources Include="Frames\TAreaFrame.dfm"/>
 			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
 			<FormResources Include="Frames\TTanFrame.dfm"/>
+			<FormResources Include="Frames\TParFuncFrame.dfm"/>
+			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
+			<FormResources Include="Frames\TAreaFrame.dfm"/>
 			<FormResources Include="Forms\Unit11.dfm"/>
 			<FormResources Include="Forms\Unit12.dfm"/>
 			<FormResources Include="Forms\Unit1.dfm"/>
 			<FormResources Include="Forms\Unit10.dfm"/>
-			<FormResources Include="Forms\Unit3.dfm"/>
-			<FormResources Include="Forms\Unit4.dfm"/>
-			<FormResources Include="Forms\Unit21.dfm"/>
-			<FormResources Include="Forms\Unit22.dfm"/>
-			<FormResources Include="Forms\Unit7.dfm"/>
-			<FormResources Include="Forms\Unit8.dfm"/>
-			<FormResources Include="Forms\Unit5.dfm"/>
-			<FormResources Include="Forms\Unit6.dfm"/>
-			<FormResources Include="Forms\Unit20.dfm"/>
-			<FormResources Include="Forms\Unit15.dfm"/>
-			<FormResources Include="Forms\Unit16.dfm"/>
 			<FormResources Include="Forms\Unit13.dfm"/>
-			<FormResources Include="Forms\Unit14.dfm"/>
-			<FormResources Include="Forms\Unit19.dfm"/>
-			<FormResources Include="Forms\Unit2.dfm"/>
+			<FormResources Include="Forms\Unit4.dfm"/>
+			<FormResources Include="Forms\Unit5.dfm"/>
+			<FormResources Include="Forms\Unit22.dfm"/>
+			<FormResources Include="Forms\Unit3.dfm"/>
+			<FormResources Include="Forms\Unit8.dfm"/>
+			<FormResources Include="Forms\Unit9.dfm"/>
+			<FormResources Include="Forms\Unit6.dfm"/>
+			<FormResources Include="Forms\Unit7.dfm"/>
+			<FormResources Include="Forms\Unit21.dfm"/>
+			<FormResources Include="Forms\Unit16.dfm"/>
 			<FormResources Include="Forms\Unit17.dfm"/>
+			<FormResources Include="Forms\Unit14.dfm"/>
+			<FormResources Include="Forms\Unit15.dfm"/>
+			<FormResources Include="Forms\Unit2.dfm"/>
+			<FormResources Include="Forms\Unit20.dfm"/>
 			<FormResources Include="Forms\Unit18.dfm"/>
+			<FormResources Include="Forms\Unit19.dfm"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

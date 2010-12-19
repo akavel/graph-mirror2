@@ -82,7 +82,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	: IsResizing(0), TForm(Owner), Updating(0), StatusIcon(-1), CursorState(csIdle),
     FixedImages(ImageList1->Count), Draw(Image1->Canvas, &Data, false, "DrawThread"), AbortPrinting(false)
 {
-  if(0)
+	if(0)
   	(new std::ctype<char>)->is((short)0,' '); //Woraround for linker problem
 #ifdef _DEBUG
   std::ofstream out(ChangeFileExt(Application->ExeName, ".log").c_str(), std::ios_base::app);

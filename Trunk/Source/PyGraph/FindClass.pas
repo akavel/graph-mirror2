@@ -28,7 +28,7 @@ begin
   if TypeList.Find(Name, I) then
     Result := PTypeInfo(TypeList.Objects[I])
   else
-    raise Exception.Create('Class "' + Name + '" not found');
+    Result := nil;
 end;
 
 procedure InitClassList;
