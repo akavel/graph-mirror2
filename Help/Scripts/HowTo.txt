@@ -1,11 +1,11 @@
 This describes how to create the help files for Graph.
 Newest file is available at http://graph.svn.sourceforge.net/viewvc/graph/Trunk/Help/Scripts/HowTo.txt
 
-1. Download and install Java from http://java.com/en/download/. Most will already have Java installed.
+1. Download and install Java from http://java.com/en/download/.20:07 26-12-2010 Most will already have Java installed.
 
-2. Download and install Python 2.6 from http://python.org/ftp/python/2.6.5/python-2.6.5.msi
+2. Download and install Python 2.7 from http://python.org/ftp/python/2.7.1/python-2.7.1.msi
 
-3. Download and install libxml2 for Python from http://users.skynet.be/sbi/libxml-python/binaries/libxml2-python-2.7.4.win32-py2.6.exe
+3. Download and install libxml2 for Python from http://users.skynet.be/sbi/libxml-python/binaries/libxml2-python-2.7.7.win32-py2.7.exe
 
 4. Download and unpack the additional tools and source from http://padowan.dk/bin/Graph_Help.zip
 
