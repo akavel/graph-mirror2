@@ -69,6 +69,7 @@
 					<term><classname>TProperty</classname>.<property>DefaultLabelFont</property></term>
 					<listitem>
 						<para>
+							VCL object of type <classname>TFont</classname> with default font settings for point series labels and text labels.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -77,6 +78,7 @@
 					<term><classname>TProperty</classname>.<property>ShowTipsAtStartup</property></term>
 					<listitem>
 						<para>
+							Indicates if Tip of the Day should be shown at startup.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -85,6 +87,7 @@
 					<term><classname>TProperty</classname>.<property>Language</property></term>
 					<listitem>
 						<para>
+							This indicates the currently selected GUI language.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -93,6 +96,7 @@
 					<term><classname>TProperty</classname>.<property>FontScale</property></term>
 					<listitem>
 						<para>
+							This specifies the scaling in percent of the user interface, including forms and fonts. The default is 100.
 						</para>
 					</listitem>
 				</varlistentry>

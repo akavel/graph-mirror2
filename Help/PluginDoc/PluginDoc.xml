@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE book SYSTEM "dtd/dblite.dtd">
 <book id="Plugin" lang="en" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Plugin System Documentation for Graph</title>
+	<title>Script Engine Documentation for Graph</title>
 	<subtitle><inlinegraphic fileref="GraphIcon.png"/></subtitle>
 	<xi:include href="../Source/version.xml"/>
 	<bookinfo>
@@ -14,4 +14,5 @@
 	</bookinfo>
 	<!-- include external files -->
 	<xi:include href="GraphModule.xml"/>
+	<xi:include href="VclModule.xml"/>
 </book>
