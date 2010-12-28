@@ -105,6 +105,8 @@
 					<term><classname>TProperty</classname>.<property>CustomDecimalSeparator</property></term>
 					<listitem>
 						<para>
+							This specifies if another decimal separator than the one from the locale settings should be used when data
+							is imported and exported.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -113,6 +115,7 @@
 					<term><classname>TProperty</classname>.<property>DecimalSeparator</property></term>
 					<listitem>
 						<para>
+							This is the decimal separator used for importing and exporting of data when <property>CustomDecimalSeparator</property> is True.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -130,7 +133,7 @@
 					<term><classname>TAxis</classname>.<property>Min</property></term>
 					<listitem>
 						<para>
-							Property for setting the minimum value of the axis.
+							The minimum value of the axis.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -139,7 +142,7 @@
 					<term><classname>TAxis</classname>.<property>Max</property></term>
 					<listitem>
 						<para>
-							Property for setting the maximum value of the axis.
+							The maximum value of the axis.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -148,6 +151,7 @@
 					<term><classname>TAxis</classname>.<property>LogScl</property></term>
 					<listitem>
 						<para>
+							 Specifies if the axes is scaled logarithmic.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -156,6 +160,8 @@
 					<term><classname>TAxis</classname>.<property>MultiplyOfPi</property></term>
 					<listitem>
 						<para>
+							Specifies if numbers, tick marks and grid lines should be based on numbers that are a multiply of &pi; instead
+							of integers.
 						</para>
 					</listitem>
 				</varlistentry>
