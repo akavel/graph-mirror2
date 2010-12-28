@@ -17,7 +17,7 @@
   <xsl:param name="title.margin.left">-1em</xsl:param> <!-- Body text indention -->
   <xsl:param name="generate.index" select="0" /> <!-- Don't generate index for pdf file -->
   <xsl:param name="hyphenate">false</xsl:param>  <!-- Disable hyphernation. It doesn't seem to work anyway. -->
-
+	<xsl:param name="alignment">left</xsl:param>
 
   <xsl:param name="table.frame.border.thickness" select="'1pt'"/>
   <xsl:param name="table.frame.border.style" select="'solid'"/>
@@ -161,6 +161,12 @@
     </xsl:attribute>
     <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
   </xsl:attribute-set>
+
+	<xsl:attribute-set name="monospace.verbatim.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master * 0.80"/>
+    </xsl:attribute>
+	</xsl:attribute-set>
 
   <xsl:attribute-set name="normal.para.spacing">
     <xsl:attribute name="space-before.optimum">0em</xsl:attribute>
