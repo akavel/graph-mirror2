@@ -229,18 +229,14 @@
 			<qandaentry>
 				<question>
 					<para>
-						Can I copy a function or point series from one instance of the program to another?
+						How do I plot the inverse of any given function?
 					</para>
 				</question>
 				<answer>
 					<para>
-						Yes, you can select a function or point series and use the
-						<menuchoice>
-							<guimenu>Edit</guimenu>
-							<guimenuitem>Copy</guimenuitem>
-						</menuchoice>
-						menu item to place a copy of the selected item in the clipboard.
-						You can then paste the item into another coordinate system.
+						You can use a parametric function for this.
+						If you want to plot the inverse of <mathphrase>f(x)=x<superscript>2</superscript>-2x</mathphrase>,
+						you can insert it as the parametric function <userinput>x(t)=t^2-2t, y(t)=t</userinput>.
 					</para>
 				</answer>
 			</qandaentry>
@@ -254,9 +250,10 @@
 				<answer>
 					<para>
 						For each value x, f(x) will evaluate to at most one value.
-						f(x)=sqrt(x+2) will therefore only have positive values of f(x).
-						To plot it for negative f(x) too, you will have to create two separate functions: f(x)=sqrt(x+2) and f(x)=-sqrt(x+2).
-						Alternatively you can plot it as the relation: y^2=x+2.
+						<userinput>f(x)=sqrt(x+2)</userinput> will therefore only have positive values of f(x).
+						To plot it for negative f(x) too, you will have to create two separate functions:
+						<userinput>f(x)=sqrt(x+2)</userinput> and <userinput>f(x)=-sqrt(x+2)</userinput>.
+						Alternatively you can plot it as the relation: <userinput>y^2=x+2</userinput>.
 					</para>
 				</answer>
 			</qandaentry>
@@ -270,7 +267,7 @@
 				<answer>
 					<para>
 						You probably want to show the real part on the x-axis and the imaginary part on the y-axis.
-						In that case you can draw the function as the parametric function x(t)=re(e^(i*t)), y(t)=im(e^(i*t)).
+						In that case you can draw the function as the parametric function <userinput>x(t)=re(e^(i*t)), y(t)=im(e^(i*t))</userinput>.
 						Notice that <guilabel>Calculate with complex numbers</guilabel> must be enabled in the <xref linkend="AxesDialog"/> dialog.
 					</para>
 				</answer>
@@ -284,7 +281,7 @@
 				</question>
 				<answer>
 					<para>
-						Functions like f(x)=tan(x) with vertical asymptotes may not always be shown correctly.
+						Functions like <userinput>f(x)=tan(x)</userinput> with vertical asymptotes may not always be shown correctly.
 						As default Graph will evaluate the function for each pixel on the x-axis.
 						But if the graph has a steep slope that goes against infinite and back between two pixels, Graph will not notice it.
 						To plot the function correctly you can tell Graph how many evaluations to perform.
