@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "dtd/dblite.dtd">
+<chapter id="vcl" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title><classname>vcl</classname> module</title>
+	<indexterm><primary><classname>vcl</classname> module</primary></indexterm>
+	<para>
+		The <classname>vcl</classname> module is an interface to the Embarcadero Visual Component library (VCL) used by Delphi and C++ Builder.
+		Documentation for the VCL can be found online at
+		<ulink url="http://docwiki.embarcadero.com/VCL/en/Main_Page">http://docwiki.embarcadero.com/VCL/en/Main_Page</ulink>.
+	</para>
+
+	<para>
+		Python is case sensitive, but as the VCL is written in Delphi, which is not case sensitive, much of the <classname>vcl</classname>
+		module is not case sensitive. This means it doesn't care if you write <classname>TForm</classname> or <classname>tform</classname>.
+		However it is recommended to use the same case as shown in the documentation as the case sensitivity may change in the future.
+	</para>
+
+	<para>
+		The <classname>vcl</classname> module itself contains VCL types as <classname>TForm</classname> and <classname>TButton</classname>,
+		global functions as <function>TextToShortCut</function> and global objects as <varname>Application</varname>.
+		You can use <literal>dir(vcl)</literal> to get a list of everything supported by the <classname>vcl</classname> module.
+	</para>
+
+	<para>
+		You create a new VCL object by instantiating a VCL type in the same way you always create Python objects.
+		All positional arguments are passed on to the constructor for the VCL class.
+		VCL classes can have several constructors.
+		The first constructor that matches the passed arguments will be used,
+		e.g. <literal>vcl.TForm(None)</literal>  will use the constructor that takes an owner component as argument.
+		Keyword arguments will be assigned to the properties of the object after the object has been constructred,
+		e.g. <literal>Form = vcl.TForm(None, Caption="Test dialog")</literal> is the same as
+		<literal>Form = vcl.TForm(None); Form.Caption = "Test dialog"</literal>
+	</para>
+
+	<simplesect>
+		<title>VCL example</title>
+		<programlisting>
+# This script will show a dialog where you can enter a value.
+# The event will check that only digits are entered.
+# If the OK button is pressed, the entered value will be printed to the console.
+import vcl
+import string
+
+def HandleKeyPress(Sender, Key):
+	if not Key in string.digits:
+		Key = 0
+
+Form = vcl.TForm(None, Caption="Value dialog")
+Label = vcl.TLabel(None, Parent=Form, Caption="Value:")
+Edit = vcl.TEdit(None, Parent=Form, OnKeyPress=HandleKeyPress, Text="0")
+OkButton = vcl.TButton(None, Caption="OK", Default=True, ModalResult="mrOk")
+CancelButton = vcl.TButton(None, Caption="Cancel", Cancel=True, ModalResult="mrCancel")
+if Form.ShowModal():
+	print("Result:", Form.ModalResult)
+		</programlisting>
+	</simplesect>
+</chapter>
