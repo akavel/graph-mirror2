@@ -153,7 +153,7 @@
 					</listitem>
 				</varlistentry>
 				<varlistentry>
-					<term>Show as a multiple of pi</term>
+					<term>Show as a multiple of &pi;</term>
 					<listitem>
 						<para>
 							When this is enabled the numbers on the axis are shown as fractions multiplied by &pi;, for example 3&pi;/2.
