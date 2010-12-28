@@ -1,0 +1,2 @@
+@Build.py Turkish
+@pause
