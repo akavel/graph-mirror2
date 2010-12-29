@@ -34,6 +34,21 @@ static PyObject *VclObject_Repr(TVclObject* self)
 	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
 }
 //---------------------------------------------------------------------------
+static PyObject* VclObject_Dir(TVclObject *self, PyObject *arg)
+{
+	TRttiType *Type = Context.GetType(self->Instance->ClassType());
+	DynamicArray<TRttiProperty*> Properties = Type->GetProperties();
+	DynamicArray<TRttiMethod*> Methods = Type->GetMethods();
+	int PropertyCount = Properties.Length;
+	int MethodCount = Methods.Length;
+	PyObject *List = PyList_New(Properties.Length + Methods.Length);
+	for(int I = 0; I < PropertyCount; I++)
+		PyList_SET_ITEM(List, I, ToPyObject(Properties[I]->Name));
+	for(int I = 0; I < MethodCount; I++)
+		PyList_SET_ITEM(List, I + PropertyCount, ToPyObject(Methods[I]->Name));
+	return List;
+}
+//---------------------------------------------------------------------------
 static void VclObject_Dealloc(TVclObject* self)
 {
 	if(self->Owned)
@@ -62,7 +77,7 @@ PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
 			{
 				PyObject *ArrayProperty = VclArrayProperty_Create(Object, Name);
 				if(ArrayProperty != NULL)
-				  return ArrayProperty;
+					return ArrayProperty;
 				SetErrorString(PyExc_AttributeError, "'" + Type->Name + "' object has not attribute '" + Name + "'");
 				return NULL;
 			}
@@ -103,6 +118,12 @@ int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 	}
 }
 //---------------------------------------------------------------------------
+static PyMethodDef VclObject_Methods[] =
+{
+	{"__dir__", (PyCFunction)VclObject_Dir, METH_NOARGS, ""},
+	{NULL, NULL, 0, NULL}
+};
+//---------------------------------------------------------------------------
 PyTypeObject VclObjectType =
 {
 	PyObject_HEAD_INIT(NULL)
@@ -132,7 +153,7 @@ PyTypeObject VclObjectType =
 	0,		                     /* tp_weaklistoffset */
 	0,		                     /* tp_iter */
 	0,		                     /* tp_iternext */
-	0, 								         /* tp_methods */
+	VclObject_Methods,         /* tp_methods */
 	0,                         /* tp_members */
 	0,       									 /* tp_getset */
 	0,                         /* tp_base */

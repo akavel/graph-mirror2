@@ -26,6 +26,7 @@
 #include "ConfigRegistry.h"
 #include "ExtColorBox.h"
 #include "PyVclObject.h"
+#include "FindClass.hpp"
 //---------------------------------------------------------------------------
 PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem);
 namespace Python
@@ -492,7 +493,8 @@ void InitPlugins()
   _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
   if(IsPythonInstalled())
 	{
-  	RegisterClass(__classid(TExtColorBox));
+		RegisterType(__delphirtti(TExtColorBox));
+		RegisterClass(__classid(TButton));
 
     Form22 = new TForm22(Application);
     Form1->ScriptDocAction->Visible = true;

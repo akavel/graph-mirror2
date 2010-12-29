@@ -18,7 +18,7 @@
 namespace Python
 {
 //---------------------------------------------------------------------------
-const int MaxArgCount = 1;
+const int MaxArgCount = 2;
 struct TFunctionEntry
 {
 	const wchar_t *Name;
@@ -31,6 +31,7 @@ const TFunctionEntry FunctionList[] =
 {
 	{L"ShortCutToText", ShortCutToText, __delphirtti(String), __delphirtti(TShortCut)},
 	{L"TextToShortCut", TextToShortCut, __delphirtti(TShortCut), __delphirtti(String)},
+	{L"ReadComponentResFile", ReadComponentResFile, __delphirtti(TComponent), __delphirtti(String), __delphirtti(TComponent)},
 };
 //---------------------------------------------------------------------------
 struct TVclFunction
