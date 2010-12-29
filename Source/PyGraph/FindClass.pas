@@ -4,12 +4,14 @@ unit FindClass;
 {$WARN SYMBOL_PLATFORM OFF}
 
 interface
-uses TypInfo;
+uses TypInfo, Classes;
 
 function LookUpClass(Name : string) : PTypeInfo;
+function GetTypeList : TStringList;
+procedure RegisterType(TypeInfo : PTypeInfo);
 
 implementation
-uses Classes, Forms, StdCtrls, Types, Graphics, SysUtils, ActnList, ExtCtrls, Math,
+uses Forms, StdCtrls, Types, Graphics, SysUtils, ActnList, ExtCtrls, Math,
   WideStrUtils, ClipBrd, DBXJSONReflect, Mask, Controls, HelpIntfs, IniFiles, Grids,
   DateUtils, SyncObjs,Masks, Menus, Dialogs, Printers, Registry, VarUtils, DockTabSet,
   Variants, ZLib, AppEvnts, GraphUtil, CategoryButtons, Buttons, StdActns, ExtActns,
@@ -29,6 +31,16 @@ begin
     Result := PTypeInfo(TypeList.Objects[I])
   else
     Result := nil;
+end;
+
+function GetTypeList : TStringList;
+begin
+  Result := TypeList;
+end;
+
+procedure RegisterType(TypeInfo : PTypeInfo);
+begin
+  TypeList.AddObject(string(TypeInfo.Name), TObject(TypeInfo));
 end;
 
 procedure InitClassList;

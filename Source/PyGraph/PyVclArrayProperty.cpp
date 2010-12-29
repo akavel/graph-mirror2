@@ -25,19 +25,6 @@ struct TVclArrayProperty
 	int PropertyId;
 };
 //---------------------------------------------------------------------------
-static PyObject *VclArrayProperty_Repr(TVclArrayProperty* self)
-{
-	const wchar_t *Names[] = {L"Strings", L"Forms", L"Components", L"Controls"};
-	String Str = "<Array property '";
-	Str += Names[self->PropertyId];
-	TComponent *Component = dynamic_cast<TComponent*>(self->Instance);
-	if(Component != NULL)
-		Str += "' of <object '" + Component->Name + "' of type '" + Component->ClassName() + "'>>";
-	else
-		Str += "' of <object of type '" + self->Instance->ClassName() + "'>>";
-	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
-}
-//---------------------------------------------------------------------------
 Py_ssize_t VclArrayProperty_Length(TVclArrayProperty *self)
 {
 	switch(self->PropertyId)
@@ -58,20 +45,38 @@ Py_ssize_t VclArrayProperty_Length(TVclArrayProperty *self)
 //---------------------------------------------------------------------------
 PyObject* VclArrayProperty_Item(TVclArrayProperty *self, Py_ssize_t i)
 {
-	switch(self->PropertyId)
+	try
 	{
-		case 0:
-			return ToPyObject(static_cast<TCollection*>(self->Instance)->Items[i]);
-		case 1:
-			return ToPyObject(static_cast<TStrings*>(self->Instance)->Strings[i]);
-		case 2:
-			return ToPyObject(static_cast<TScreen*>(self->Instance)->Forms[i]);
-		case 3:
-			return ToPyObject(static_cast<TComponent*>(self->Instance)->Components[i]);
-		case 4:
-			return ToPyObject(static_cast<TWinControl*>(self->Instance)->Controls[i]);
+		switch(self->PropertyId)
+		{
+			case 0:
+				return ToPyObject(static_cast<TCollection*>(self->Instance)->Items[i]);
+			case 1:
+				return ToPyObject(static_cast<TStrings*>(self->Instance)->Strings[i]);
+			case 2:
+				return ToPyObject(static_cast<TScreen*>(self->Instance)->Forms[i]);
+			case 3:
+				return ToPyObject(static_cast<TComponent*>(self->Instance)->Components[i]);
+			case 4:
+				return ToPyObject(static_cast<TWinControl*>(self->Instance)->Controls[i]);
+		}
+	}
+	catch(Exception &E)
+	{
+		SetErrorString(PyVclException, E.Message);
 	}
 	return NULL;
+}
+//---------------------------------------------------------------------------
+static PyObject *VclArrayProperty_Repr(TVclArrayProperty* self)
+{
+  unsigned Count = VclArrayProperty_Length(self);
+	PyObject *List = PyList_New(Count);
+	for(unsigned I = 0; I < Count; I++)
+		PyList_SET_ITEM(List, I, VclArrayProperty_Item(self, I));
+	PyObject *Result = PyObject_Repr(List);
+	Py_DECREF(List);
+	return Result;
 }
 //---------------------------------------------------------------------------
 int VclArrayProperty_SetItem(TVclArrayProperty *self, Py_ssize_t i, PyObject *v)

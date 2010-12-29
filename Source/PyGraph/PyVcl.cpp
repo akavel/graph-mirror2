@@ -27,13 +27,27 @@
 #include "PyVClType.h"
 #include "PyVclFunction.h"
 #include "PyVclArrayProperty.h"
+#include <RTLConsts.hpp>
 
 namespace Python
 {
-TRttiContext Context;
 //---------------------------------------------------------------------------
+TRttiContext Context;
 PyObject *PyVclException = NULL;
 TValue ToValue(PyObject *O, TTypeInfo *TypeInfo);
+//---------------------------------------------------------------------------
+struct TGlobalObjectEntry
+{
+	const char *Name;
+	TObject *Object;
+};
+TGlobalObjectEntry GlobalObjectList[] =
+{
+	"Application", Application,
+	"Mouse", Mouse,
+	"Clipboard", Clipboard(),
+	"Screen", Screen,
+};
 //---------------------------------------------------------------------------
 struct TPythonCallback : public TCppInterfacedObject<TMethodImplementationCallback>
 {
@@ -170,22 +184,17 @@ void TupleToValues(PyObject *O, std::vector<TValue> &Values, const DynamicArray<
 		Values.push_back(ToValue(PyTuple_GetItem(O, I), Parameters[I]->ParamType->Handle));
 }
 //---------------------------------------------------------------------------
-static PyObject* VclGetPropertyList(PyObject *Self, PyObject *Args)
+static PyObject* GlobalVcl_Dir(TVclObject *self, PyObject *arg)
 {
-	TObject *Object = reinterpret_cast<TObject*>(PyLong_AsLong(Args));
-	if(PyErr_Occurred())
-		return NULL;
-
-	TRttiType *Type = Context.GetType(Object->ClassType());
-	DynamicArray<TRttiProperty*> Properties = Type->GetProperties();
-	int Count = Properties.Length;
-	PyObject *List = PyList_New(Count);
-	for(int I = 0; I < Count; I++)
-		PyList_SetItem(List, I, ToPyObject(Properties[I]->Name));
+	unsigned GlobalCount = sizeof(GlobalObjectList)/sizeof(GlobalObjectList[0]);
+	TStrings *TypeList = GetTypeList();
+	PyObject *List = PyList_New(TypeList->Count);
+	for(int I = 0; I < TypeList->Count; I++)
+		PyList_SET_ITEM(List, I, ToPyObject(TypeList->Strings[I]));
 	return List;
 }
 //---------------------------------------------------------------------------
-PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
+static PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
 {
 	try
 	{
@@ -195,23 +204,19 @@ PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
 
 		PyErr_Clear();
 		String Name = PyUnicode_AsUnicode(attr_name);
-		TMetaClass *Class = GetClass(Name);
-		TRttiType *Type;
-		if(Class != NULL)
-			Type = Context.GetType(Class);
-		else
-			Type = Context.GetType(LookUpClass(Name));
+		TRttiType *Type = Context.GetType(LookUpClass(Name));
 		if(Type != NULL)
 		{
 //		if(Class->InheritsFrom(__classid(Exception)))
-			PyObject *TypeObject = VclType_Create(Type);
-			PyObject_GenericSetAttr(self, attr_name, TypeObject);
-			return TypeObject;
+			Result = VclType_Create(Type);
 		}
-		PyObject *VclFunction = VclFunction_Create(Name);
-		if(VclFunction != NULL)
-			return VclFunction;
-    throw EPyVclError("VCL has no global attribute '" + Name + "'");
+		else
+			Result = VclFunction_Create(Name);
+		if(Result == NULL)
+			throw EPyVclError("VCL has no global attribute '" + Name + "'");
+
+		PyObject_GenericSetAttr(self, attr_name, Result);
+		return Result;
 	}
 	catch(Exception &E)
 	{
@@ -230,6 +235,12 @@ static PyMemberDef GlobalVcl_Members[] =
 {
 	{"__dict__", T_OBJECT, offsetof(TGlobalVcl, Dict), READONLY},
 	{NULL, 0, 0, 0}
+};
+//---------------------------------------------------------------------------
+static PyMethodDef GlobalVcl_Methods[] =
+{
+	{"__dir__", (PyCFunction)GlobalVcl_Dir, METH_NOARGS, ""},
+	{NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
 static PyTypeObject GlobalVclType =
@@ -261,7 +272,7 @@ static PyTypeObject GlobalVclType =
 	0,		                     /* tp_weaklistoffset */
 	0,		                     /* tp_iter */
 	0,		                     /* tp_iternext */
-	0, 								         /* tp_methods */
+	GlobalVcl_Methods,         /* tp_methods */
 	GlobalVcl_Members,         /* tp_members */
 	0,       									 /* tp_getset */
 	0,                         /* tp_base */
@@ -274,40 +285,30 @@ static PyTypeObject GlobalVclType =
 	0,						             /* tp_new */
 };
 //---------------------------------------------------------------------------
-static PyMethodDef PyVclMethods[] = {
-	{"GetPropertyList", VclGetPropertyList, METH_O, ""},
-	{NULL, NULL, 0, NULL}
-};
-//---------------------------------------------------------------------------
 static PyModuleDef PyVclModuleDef =
 {
 	PyModuleDef_HEAD_INIT,
 	"PyVcl",           //m_name
 	"Module wrapping the Visual Component Library (VCL)", //m_doc
 	-1, //m_size
-	PyVclMethods, //m_methods
+	NULL, //m_methods
 	NULL, //m_reload
 	NULL, //m_traverse
 	NULL, //m_clear
 	NULL, //m_free
 };
 //---------------------------------------------------------------------------
-void AddObject(PyObject *o, const char *Name, TObject *Value)
-{
-	PyObject *NewObject = VclObject_Create(Value, false);
-	PyObject_SetAttrString(o, Name, NewObject);
-	Py_DECREF(NewObject);
-}
-//---------------------------------------------------------------------------
 PyObject* GlobalVcl_Create()
 {
 	TGlobalVcl *vcl = PyObject_New(TGlobalVcl, &GlobalVclType);
 	vcl->Dict = NULL;
 	PyObject *self = reinterpret_cast<PyObject*>(vcl);
-	AddObject(self, "Application", Application);
-	AddObject(self, "Clipboard", Application);
-	AddObject(self, "Mouse", Application);
-	AddObject(self, "Screen", Application);
+	for(unsigned I = 0; I < sizeof(GlobalObjectList)/sizeof(GlobalObjectList[0]); I++)
+	{
+		PyObject *NewObject = VclObject_Create(GlobalObjectList[I].Object, false);
+		PyObject_SetAttrString(self, GlobalObjectList[I].Name, NewObject);
+		Py_DECREF(NewObject);
+	}
 	return self;
 }
 //---------------------------------------------------------------------------
@@ -328,5 +329,22 @@ PyObject* InitPyVcl()
 	return PyVclModule;
 }
 //---------------------------------------------------------------------------
+} //Namespace Python
+/*namespace Classes
+{
+//Instead of registering all classes with RegisterClass() we change GetClass()
+//to use our own LookUpClass() which is much faster
+PACKAGE TPersistentClass __fastcall FindClass(const System::UnicodeString ClassName)
+{
+	TTypeInfo *TypeInfo = LookUpClass(ClassName);
+	if(TypeInfo && TypeInfo->Kind == tkClass)
+	{
+		TMetaClass *MetaClass = GetTypeData(TypeInfo)->ClassType;
+		if(MetaClass->InheritsFrom(__classid(TPersistent)))
+			return MetaClass;
+	}
+	throw EClassNotFound(Rtlconsts_SClassNotFound, ARRAYOFCONST((ClassName)));
 }
+}*/ //namespace Classes
+//---------------------------------------------------------------------------
 
