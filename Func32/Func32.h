@@ -41,9 +41,9 @@
 #define Func32H
 //---------------------------------------------------------------------------
 #ifdef _DEBUG
-  #define BOOST_ENABLE_ASSERT_HANDLER //Assertion handler defined in application
+	#define BOOST_ENABLE_ASSERT_HANDLER //Assertion handler defined in application
 #else
-  #define BOOST_DISABLE_ASSERTS
+	#define BOOST_DISABLE_ASSERTS
 #endif
 #include <vector>
 #include <complex>
@@ -421,12 +421,12 @@ public:
   TParamFunc(const boost::shared_ptr<TFuncData> &AxFuncData, const boost::shared_ptr<TFuncData> &AyFuncData, TTrigonometry ATrigonometry)
     : TBaseFunc(ATrigonometry), xFuncData(AxFuncData), yFuncData(AyFuncData) {}
 
-  TParamFunc* Clone() const {return new TParamFunc(*this);}
-  void SetFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable = L"t");
-  void SetFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable, const TSymbolList &SymbolList);
+	TParamFunc* Clone() const {return new TParamFunc(*this);}
+	void SetFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable = L"t");
+	void SetFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable, const TSymbolList &SymbolList);
 
-  long double CalcX(long double t, ECalcError &E) const; //throw()
-  TComplex CalcX(TComplex, ECalcError &E) const; //throw()
+	long double CalcX(long double t, ECalcError &E) const; //throw()
+	TComplex CalcX(TComplex, ECalcError &E) const; //throw()
 
   long double CalcY(long double t, ECalcError &E) const; //throw()
   TComplex CalcY(TComplex, ECalcError &E) const; //throw()
@@ -705,8 +705,8 @@ enum TAnalyseType {atXAxisCross, atYAxisCross};
 std::vector<TCoordSet<> > AnalyseFunction(const TBaseFunc &Func, long double Min, long double Max, unsigned Steps, long double Tol, TAnalyseType AnalyseType);
 } //namespace Func32
 //---------------------------------------------------------------------------
-
 #pragma option pop
+#include "Func32Impl.h"  //Workaround for compiler bug described in QC #89260; Remove as soon as possible
 #endif
 
 

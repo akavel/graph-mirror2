@@ -36,12 +36,12 @@ long double StrToDouble(const char *Str)
 
 inline bool IsZero(long double a)
 {
-  return a == 0 || abs(a) <= 0.0000001L * (abs(a) + 1);
+	return a == 0 || abs(a) <= 0.0000001L * (abs(a) + 1);
 }
 
 inline bool IsZero(TComplex c)
 {
-  return IsZero(real(c)) && IsZero(imag(c));
+	return ::IsZero(real(c)) && ::IsZero(imag(c));
 }
 
 inline bool IsEqual(long double a, long double b)
@@ -56,7 +56,7 @@ inline bool IsEqual(long double a, long double b)
   frexp(a, &a_exp);
   frexp(b, &b_exp);
   frexp(a - b, &exp);
-  return IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 40);
+  return ::IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 40);
 }
 
 inline bool IsEqual(TComplex a, TComplex b)
@@ -94,7 +94,7 @@ bool CompareFunc(const TFunc &f1, const TFunc &f2)
 void TestText(const std::wstring &Str, const TSymbolList &SymbolList = TSymbolList())
 {
   std::wstring Str2;
-  try
+	try
   {
     TFunc Func(Str, L"x", SymbolList);
     Str2 = Func.MakeText();
@@ -123,7 +123,7 @@ void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian, co
     TFunc Func(Str, L"x", SymbolList);
     Func.SetTrigonometry(Trig);
     T f = Func.CalcY(x);
-    if(!IsEqual(f, y))
+		if(!IsEqual(f, y))
     {
       wcerr << "Function:     " << Str << std::endl;
       wcerr << "x:            " << setprecision(10) << x << std::endl;
@@ -155,33 +155,33 @@ void Test(const std::string &Str, long double x, long double y, TTrigonometry Tr
 template<typename T>
 void TestErrorEval(const std::wstring &Str, T x, Func32::TErrorCode Error, TTrigonometry Trig = Radian)
 {
-  try
-  {
-    TFunc Func(Str);
-    Func.SetTrigonometry(Trig);
-    T f = Func.CalcY(x);
+	try
+	{
+		TFunc Func(Str);
+		Func.SetTrigonometry(Trig);
+		T f = Func.CalcY(x);
 
-    wcerr << "Function:       " << Str << std::endl;
-    wcerr << "x:              " << setprecision(10) << x << std::endl;
-    wcerr << "Evaluated to:   " << setprecision(10) << f << std::endl;
-    wcerr << "Expected error: " << Error << std::endl << std::endl;
-  }
-  catch(EFuncError &E)
-  {
-    if(E.ErrorCode != Error)
-    {
-      wcerr << "Function:       " << Str << std::endl;
-      wcerr << "x:              " << setprecision(10) << x << std::endl;
-      wcerr << "Error code:     " << E.ErrorCode << std::endl;
-      wcerr << "Expected error: " << Error << std::endl << std::endl;
-    }
-  }
+		wcerr << "Function:       " << Str << std::endl;
+		wcerr << "x:              " << setprecision(10) << x << std::endl;
+		wcerr << "Evaluated to:   " << setprecision(10) << f << std::endl;
+		wcerr << "Expected error: " << Error << std::endl << std::endl;
+	}
+	catch(EFuncError &E)
+	{
+		if(E.ErrorCode != Error) 
+		{
+			wcerr << "Function:       " << Str << std::endl;
+			wcerr << "x:              " << setprecision(10) << x << std::endl;
+			wcerr << "Error code:     " << E.ErrorCode << std::endl;
+			wcerr << "Expected error: " << Error << std::endl << std::endl;
+		}
+	}
 }
 
 void TestError(const std::wstring &Str, long double x, TErrorCode Error, TTrigonometry Trig = Radian)
 {
   TestErrorEval<long double>(Str, x, Error, Trig);
-  TestErrorEval<TComplex>(Str, x, Error, Trig);
+	TestErrorEval<TComplex>(Str, x, Error, Trig);
 }
 
 void TestError(const std::string &Str, long double x, TErrorCode Error, TTrigonometry Trig = Radian)
@@ -239,7 +239,7 @@ void TestCustomTrendLine(const std::wstring &Model, const std::vector<TDblPoint>
 void TestTrendLineError(Func32::TTrendType Type, const TDblPoint *Points, unsigned Size, unsigned N, Func32::TErrorCode ErrorCode)
 {
   try
-  {
+	{
     std::vector<double> W;
     TrendLine(Type, std::vector<TDblPoint>(Points, Points + Size), W, N);
 
@@ -268,7 +268,7 @@ void TestDif(const std::wstring &f, const std::wstring &df, TTrigonometry Trig =
     if(!CompareFunc(Dif, Dif2))
     {
       wcerr << "f(x)=" << f << std::endl;
-      wcerr << "f'(x)=" << Dif.MakeText() << std::endl;
+			wcerr << "f'(x)=" << Dif.MakeText() << std::endl;
       wcerr << "Expected f'(x)=" << df << std::endl << std::endl;
     }
   }
@@ -297,7 +297,7 @@ void TestDif(const std::wstring &Str, long double x, long double y, TTrigonometr
     {
       wcerr << "f(x)=" << Str << std::endl;
       wcerr << "f'(x)=" << Dif.MakeText() << std::endl;
-      wcerr << "f'(" << x << ")=" << f << std::endl;
+			wcerr << "f'(" << x << ")=" << f << std::endl;
       wcerr << "Expected f'(" << x << ")=" << y << std::endl << std::endl;
     }
   }
@@ -385,31 +385,6 @@ namespace boost
   }
 }
 
-/** Called from STLport to log debug messages.
- */
-void __stl_debug_message(const char * format_str, ...)
-{
-	va_list Args;
-	va_start(Args, format_str);
-
-  char Buffer[4096];
-  vsnprintf(Buffer, sizeof(Buffer), format_str, Args);
-
-  std::cerr << "DEBUG MESSAGE\n";
-  std::cerr << Buffer << std::endl;
-
-  va_end(Args);
-}
-
-
-/** Called from STLport to terminate the program, for example when an assertion fails.
- */
-void __stl_debug_terminate(void)
-{
-  cerr << "DEBUG TERMINATE" << std::endl;
-  abort();
-}
-
 double ErrorToWeight(double x) {return 1/(x*x);}
 
 class TTestSqr : public TBaseCustomFunc
@@ -448,7 +423,7 @@ void TestParamFunc(const std::wstring &xText, const std::wstring &yText)
 	}
 	catch(EFuncError &E)
 	{
-	}
+	}             
 	try
 	{
 		TParamFunc Func;
@@ -458,14 +433,14 @@ void TestParamFunc(const std::wstring &xText, const std::wstring &yText)
 	{
 	}
 }
-
+  
 void Test()
 {
   //Test parsing errors
-  TestError("sinx", 0, ecUnknownVar);
+  TestError("sinx", 0, ecUnknownVar);                         
   TestError("x2", 0, ecUnknownVar);
   TestError("sin2 x", 0, ecUnknownVar);
-  TestError("integrate(x, 5)", 0, ecArgCountError);
+	TestError("integrate(x, 5)", 0, ecArgCountError);
   TestError("integrate(x, x, 5, 7, 8)", 0, ecArgCountError);
 
   //Test redundant space
@@ -493,7 +468,7 @@ void Test()
   TestEval<TComplex>(L"i*i", 0, -1);
   TestErrorEval<long double>(L"i*i", 0, ecComplexError);
   Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4
-  Test("1E4000", 1, StrToDouble("1E4000")); //2E400 doesn't work directly with BCC 5.6.4
+	Test("1E4000", 1, StrToDouble("1E4000")); //2E400 doesn't work directly with BCC 5.6.4
   TestError("1E5000", 1, ecParseError); //Number too large
   TestError("1.2.3", 0, ecInvalidNumber);
   TestError("5.", 0, ecInvalidNumber);
@@ -521,7 +496,7 @@ void Test()
   Test("4.5-x", 3.1, 1.4);
   Test("x-4.5", 3.1, -1.4);
   Test("4.5*x", 3.1, 13.95);
-  Test("x*4.5", 3.1, 13.95);
+	Test("x*4.5", 3.1, 13.95);
   Test("4.5/x", 3.1, 1.4516129);
   Test("x/4.5", 3.1, 0.688888889);
   Test("(x)-3", 1, -2);
@@ -532,57 +507,57 @@ void Test()
   Test("--x", 5, 5);
   Test("-x", 5, -5);
   Test("-5", NaN, -5);
-  Test("++x", 5, 5);
-  Test("+x", 5, 5);
-  Test("+5", NaN, 5);
-  Test("+-x", 5, -5);
-  Test("-+x", 5, -5);
+	Test("++x", 5, 5);
+	Test("+x", 5, 5);
+	Test("+5", NaN, 5);
+	Test("+-x", 5, -5);
+	Test("-+x", 5, -5);
 
-  //Test power function
-  Test("x^2", -2, 4);
-  Test("x^2", 10, 100);
+	//Test power function
+	Test("x^2", -2, 4);
+	Test("x^2", 10, 100);
 	Test("-x^2", 10, -100);
-  Test("(-x)^2", 10, 100);
-  Test("x^x", 0, 1);         //Important test
-  Test("x^0", 458.789, 1);   //Important test
-  Test("0^x", 456.789, 0);   //Important test
-  Test("log(x)^2", 100, 4);
-  TestError("x/(x^2-4)", -2, ecDivByZero);
-  TestErrorEval<long double>(L"(-2)^x", 2.2, ecPowCalcError);
-  TestEval<TComplex>(L"(-2)^x", 2.2, TComplex(3.717265962,2.70075181));
-  TestErrorEval<long double>(L"(-2)^x", 2.3, ecPowCalcError);
-  TestError("x^(-1)", 0, ecPowCalcError);
-  TestErrorEval<TComplex>(L"0^x", TComplex(3,1), ecPowCalcError);
-  TestEval<TComplex>(L"0^x", TComplex(3,0), 0);
-  Test("e^(2x)", 2, M_E*M_E*M_E*M_E);
-  Test("e^2x", 2, M_E*M_E*M_E*M_E); //Same as the above
-  Test("x^2^3", 10, 1E8);
-  Test("(x^2)^3", 10, 1E6);
-  Test("3^x^2", 4, 43046721);
-  TestErrorEval<TComplex>(L"0^x", TComplex(-2.8, 1), ecPowCalcError);
-  TestError("x^-2.8", 0, ecPowCalcError);
-  Test("e^x", -10000, 0);
+	Test("(-x)^2", 10, 100);
+	Test("x^x", 0, 1);         //Important test
+	Test("x^0", 458.789, 1);   //Important test
+	Test("0^x", 456.789, 0);   //Important test
+	Test("log(x)^2", 100, 4);
+	TestError("x/(x^2-4)", -2, ecDivByZero);
+	TestErrorEval<long double>(L"(-2)^x", 2.2, ecPowCalcError);
+	TestEval<TComplex>(L"(-2)^x", 2.2, TComplex(3.717265962,2.70075181));
+	TestErrorEval<long double>(L"(-2)^x", 2.3, ecPowCalcError);
+	TestError("x^(-1)", 0, ecPowCalcError);
+	TestErrorEval<TComplex>(L"0^x", TComplex(3,1), ecPowCalcError);
+	TestEval<TComplex>(L"0^x", TComplex(3,0), 0);
+	Test("e^(2x)", 2, M_E*M_E*M_E*M_E);
+	Test("e^2x", 2, M_E*M_E*M_E*M_E); //Same as the above
+	Test("x^2^3", 10, 1E8);
+	Test("(x^2)^3", 10, 1E6);
+	Test("3^x^2", 4, 43046721);
+	TestErrorEval<TComplex>(L"0^x", TComplex(-2.8, 1), ecPowCalcError);
+	TestError("x^-2.8", 0, ecPowCalcError);
+	Test("e^x", -10000, 0);
 
-  //Test power with fraction handling
-  TestEval<long double>(L"x^(1/3)", -8, -2);
-  TestEval<TComplex>(L"x^(1/3)", -8, TComplex(1,1.732050807568877));
-  TestEval<long double>(L"x^(2/6)", -8, -2);
-  TestEval<TComplex>(L"x^(2/6)", -8, TComplex(1,1.732050807568877));
-  TestEval<long double>(L"x^(2/3)", -8, 4);
-  TestEval<TComplex>(L"x^(2/3)", -8, TComplex(-2, 3.464101615137755));
+	//Test power with fraction handling
+	TestEval<long double>(L"x^(1/3)", -8, -2);
+	TestEval<TComplex>(L"x^(1/3)", -8, TComplex(1,1.732050807568877));
+	TestEval<long double>(L"x^(2/6)", -8, -2);
+	TestEval<TComplex>(L"x^(2/6)", -8, TComplex(1,1.732050807568877));
+	TestEval<long double>(L"x^(2/3)", -8, 4);
+	TestEval<TComplex>(L"x^(2/3)", -8, TComplex(-2, 3.464101615137755));
 	TestError("x^(2/0)", -8, ecDivByZero);
-  Test("x^(2/3)", 0, 0);
-  Test("x^(4/2)", -2, 4);
+	Test("x^(2/3)", 0, 0);
+	Test("x^(4/2)", -2, 4);
 
-  //Test trigonometry functions
-  Test("sin(x)", PI/2, 1);
-  Test("sin(x)", 90, 1, Degree);
-  Test("cos(x)", PI/2, 0);
-  Test("cos(x)", 90, 0, Degree);
-  Test("tan(x)", PI/4, 1);
-  Test("tan(x)", 45, 1, Degree);
-  Test("sec(x)", PI, -1);
-  Test("sec(x)", 180, -1, Degree);
+	//Test trigonometry functions
+	Test("sin(x)", PI/2, 1);
+	Test("sin(x)", 90, 1, Degree);
+	Test("cos(x)", PI/2, 0);
+	Test("cos(x)", 90, 0, Degree);
+	Test("tan(x)", PI/4, 1);
+	Test("tan(x)", 45, 1, Degree);
+	Test("sec(x)", PI, -1);
+	Test("sec(x)", 180, -1, Degree);
   Test("csc(x)", PI/2, 1);
   Test("csc(x)", 90, 1, Degree);
   Test("cot(x)", PI/4, 1);
@@ -600,15 +575,15 @@ void Test()
   Test("acsc(x)", 1, PI/2);
   Test("acsc(x)", 1, 90, Degree);
 	Test("acot(x)", 1, PI/4);
-  Test("acot(x)", 1, 45, Degree);
-  Test("acot(x)", 0, PI/2);
-  Test("acot(x)", 0, 90, Degree);
+	Test("acot(x)", 1, 45, Degree);
+	Test("acot(x)", 0, PI/2);
+	Test("acot(x)", 0, 90, Degree);
 
-  //Test logarihms
-  Test("log(x)", 10000, 4);
-  Test("logb(x,2)", 32, 5);
-  Test("ln(x)", EULER*EULER, 2);
-  Test("exp(x)", 2, EULER*EULER);
+	//Test logarihms
+	Test("log(x)", 10000, 4);
+	Test("logb(x,2)", 32, 5);
+	Test("ln(x)", EULER*EULER, 2);
+	Test("exp(x)", 2, EULER*EULER);
   TestError("log(-x)", 0, ecLogError);
 
   //Test square and roots
