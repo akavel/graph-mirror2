@@ -71,8 +71,9 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
       if(I == 0)
         I = Str.Length()+1;
       IRichEdit1->SelText = Str.SubString(1, I-1);
-      Str.Delete(1, I+1);
-      HandleNewLine();
+			Str.Delete(1, I+1);
+			if(!Str.IsEmpty())
+	      HandleNewLine();
     }
     Key = 0;
     return;
