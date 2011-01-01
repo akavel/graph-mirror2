@@ -9,7 +9,6 @@
 //---------------------------------------------------------------------------
 #ifndef PythonBindH
 #define PythonBindH
-//#include <Rtti.hpp>
 //---------------------------------------------------------------------------
 struct _object;
 struct _typeobject;
@@ -20,14 +19,8 @@ typedef _object PyObject;
 #define DEFAULT_FPU_CONTROL EM_INVALID | EM_DENORMAL | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64
 #define FPU_MASK MCW_EM | MCW_IC | MCW_RC | MCW_PC
 
-namespace Rtti
-{
-  struct TValue;
-}
-
 namespace Python
 {
-//typedef _object PyObject;
 template<typename T> T& GetPythonAddress(const char *Name);
 
 #ifndef PYTHON_WRAP
@@ -82,28 +75,6 @@ public:
 	TUnlockGIL();
 	~TUnlockGIL();
 };
-
-	PyObject* ToPyObject(bool Value);
-	PyObject* ToPyObject(int Value);
-	PyObject* ToPyObject(wchar_t Value);
-	PyObject* ToPyObject(unsigned Value) {return ToPyObject(static_cast<int>(Value));}
-	PyObject* ToPyObject(double Value);
-	PyObject* ToPyObject(long double Value) {return ToPyObject(static_cast<double>(Value));}
-	PyObject* ToPyObject(const std::wstring &Str);
-	PyObject* ToPyObject(const String &Str);
-	PyObject* ToPyObject(const Func32::TComplex &Value);
-	PyObject* ToPyObject(const Rtti::TValue &Value);
-	PyObject* ToPyObject(TObject *Object);
-
-	template<typename T> T FromPyObject(PyObject *O);
-	template<> int FromPyObject<int>(PyObject *O);
-	template<> double FromPyObject<double>(PyObject *O);
-	template<> unsigned FromPyObject<unsigned>(PyObject *O) {return FromPyObject<int>(O);}
-	template<> TColor FromPyObject<TColor>(PyObject *O) {return static_cast<TColor>(FromPyObject<int>(O));}
-	template<> long double FromPyObject<long double>(PyObject *O) {return FromPyObject<double>(O);}
-	template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O);
-	template<> std::wstring FromPyObject<std::wstring>(PyObject *O);
-	template<typename T> bool FromPyObject(PyObject *O, T &Value) {Value = FromPyObject<T>(O); return !PyErr_Occurred();}
 
 	PyObject* SetErrorString(PyObject *Type, const String &Str);
 }

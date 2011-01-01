@@ -17,7 +17,7 @@ namespace Python
 	{
 		PyObject_HEAD
 		TObject *Instance;
-		bool Owned;
+		char Owned; //bool
 	};
 
 	extern PyTypeObject VclObjectType;

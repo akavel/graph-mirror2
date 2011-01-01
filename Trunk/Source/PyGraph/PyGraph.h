@@ -10,6 +10,7 @@
 #ifndef PyGraphH
 #define PyGraphH
 #include "boost/variant/variant.hpp"
+#include "PyVclConvert.h"
 //---------------------------------------------------------------------------
 struct _object;
 typedef _object PyObject;

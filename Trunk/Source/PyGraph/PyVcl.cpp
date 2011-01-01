@@ -9,15 +9,13 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
-#define private public
 #include <Rtti.hpp>
-#undef private
 #include "PyVcl.h"
 #include <ActnMan.hpp>
 #undef _DEBUG
 #include <python.h>
 #include <structmember.h>
-#include "PythonBind.h"
+#include "PyVclConvert.h"
 #include "ExtColorBox.h"
 #include "FindClass.hpp"
 #include <OleCtrls.hpp>
@@ -32,10 +30,6 @@
 namespace Python
 {
 //---------------------------------------------------------------------------
-TRttiContext Context;
-PyObject *PyVclException = NULL;
-TValue ToValue(PyObject *O, TTypeInfo *TypeInfo);
-//---------------------------------------------------------------------------
 struct TGlobalObjectEntry
 {
 	const char *Name;
@@ -48,141 +42,6 @@ TGlobalObjectEntry GlobalObjectList[] =
 	"Clipboard", Clipboard(),
 	"Screen", Screen,
 };
-//---------------------------------------------------------------------------
-struct TPythonCallback : public TCppInterfacedObject<TMethodImplementationCallback>
-{
-	void __fastcall Invoke(void * UserData, const System::DynamicArray<TValue> Args, TValue &Result);
-};
-TPythonCallback *PythonCallback = new TPythonCallback;
-//---------------------------------------------------------------------------
-void __fastcall TPythonCallback::Invoke(void * UserData, const System::DynamicArray<TValue> Args, TValue &Result)
-{
-  TLockGIL Dummy;
-	PyObject *Object = static_cast<PyObject*>(UserData);
-	int Count = Args.get_length() - 1;
-	PyObject *PyArgs = Count != 0 ? PyTuple_New(Count) : NULL;
-	for(int I = 0; I < Count; I++)
-		PyTuple_SET_ITEM(PyArgs, I, ToPyObject(Args[I + 1]));
-	PyObject *PyResult = PyObject_CallObject(Object, PyArgs);
-	Py_XDECREF(PyArgs);
-	if(PyResult != NULL && PyResult != Py_None)
-		Result = ToValue(PyResult, NULL); //Bug: Type of result missing
-	Py_XDECREF(PyResult);
-	if(PyResult == NULL)
-	  PyErr_Print();
-}
-//---------------------------------------------------------------------------
-TMethodImplementation::TInvokeInfo* CreateInvokeInfo(TTypeInfo *TypeInfo)
-{
-	TTypeData *TypeData = reinterpret_cast<TTypeData*>(&TypeInfo->Name[TypeInfo->Name[0]+1]);
-	int Index = 0;
-	for(int I = 0; I < TypeData->ParamCount; I++)
-	{
-		Index++;
-		Index += TypeData->ParamList[Index] + 1;
-		Index += TypeData->ParamList[Index] + 1;
-	}
-	if(TypeData->MethodKind == mkFunction)
-	{
-		Index += TypeData->ParamList[Index] + 1;
-		Index += 4;
-	}
-	Typinfo::TCallConv CallConv = static_cast<Typinfo::TCallConv>(TypeData->ParamList[Index]);
-	Index++;
-	TMethodImplementation::TInvokeInfo *InvokeInfo = new TMethodImplementation::TInvokeInfo(CallConv, true);
-	InvokeInfo->AddParameter(__delphirtti(TObject), false);
-	for(int I = 0; I < TypeData->ParamCount; I++)
-	{
-		TTypeInfo *ParamType = **(TTypeInfo***)&TypeData->ParamList[Index];
-		InvokeInfo->AddParameter(ParamType, false);
-		Index += 4;
-	}
-	InvokeInfo->Seal();
-	return InvokeInfo;
-}
-//---------------------------------------------------------------------------
-TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
-{
-	TValue Result;
-	switch(TypeInfo->Kind)
-	{
-		case tkClass:
-			if(VclObject_Check(O))
-				Result = TValue::From(VclObject_AsObject(O));
-			else if(O == Py_None || PyLong_Check(O))
-				Result = TValue::From((TObject*)(O == Py_None ? NULL : PyLong_AsLong(O)));
-			else
-				throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
-			break;
-
-		case tkEnumeration:
-			if(PyUnicode_Check(O))
-				TValue::Make(GetEnumValue(TypeInfo, PyUnicode_AsUnicode(O)), TypeInfo, Result);
-			if(PyLong_Check(O))
-				TValue::Make(PyLong_AsLong(O), TypeInfo, Result);
-			break;
-
-		case tkSet:
-			TValue::Make(StringToSet(TypeInfo, PyUnicode_AsUnicode(O)), TypeInfo, Result);
-			break;
-
-		case tkInteger:
-			Result = TValue::From(PyLong_AsLong(O));
-			break;
-
-		case tkUString:
-		case tkString:
-		case tkLString:
-		case tkWString:
-			Result = TValue::From(String(PyUnicode_AsUnicode(O)));
-			break;
-
-		case tkMethod:
-		{
-			if(O == Py_None)
-				return TValue::From<TObject*>(NULL);
-			Py_INCREF(O);
-			TMethodImplementation *Implementation = new TMethodImplementation(O, CreateInvokeInfo(TypeInfo), PythonCallback);
-			TMethod Method = {Implementation->CodeAddress, NULL};
-			TValue::Make(&Method, TypeInfo, Result);
-			break;
-		}
-		case tkChar:
-		case tkWChar:
-			if(PyUnicode_GetSize(O) != 1)
-				throw EPyVclError("Expected string with one character");
-			Result = TValue::From(PyUnicode_AsUnicode(O)[0]);
-			break;
-
-		case tkFloat:
-			Result = TValue::From(PyFloat_AsDouble(O));
-			break;
-
-		case tkVariant:
-		case tkArray:
-		case tkRecord:
-		case tkInterface:
-		case tkInt64:
-		case tkDynArray:
-		case tkClassRef:
-		case tkPointer:
-		case tkProcedure:
-		case tkUnknown:
-		default:
-			throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
-	}
-	if(PyErr_Occurred())
-		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
-	return Result;
-}
-//---------------------------------------------------------------------------
-void TupleToValues(PyObject *O, std::vector<TValue> &Values, const DynamicArray<TRttiParameter*> &Parameters)
-{
-	Values.clear();
-	unsigned Size = PyTuple_Size(O);
-	for(unsigned I = 0; I < Size; I++)
-		Values.push_back(ToValue(PyTuple_GetItem(O, I), Parameters[I]->ParamType->Handle));
-}
 //---------------------------------------------------------------------------
 static PyObject* GlobalVcl_Dir(TVclObject *self, PyObject *arg)
 {

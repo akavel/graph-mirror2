@@ -64,16 +64,20 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
   if((Shift == (TShiftState() << ssCtrl) && Key == 'V') ||
      (Shift == (TShiftState() << ssShift) && Key == VK_INSERT))
   {
-    String Str = Clipboard()->AsText;
-    while(!Str.IsEmpty())
-    {
-      int I = Str.Pos("\r\n");
-      if(I == 0)
-        I = Str.Length()+1;
-      IRichEdit1->SelText = Str.SubString(1, I-1);
+		String Str = Clipboard()->AsText;
+		int Line = 1;
+		while(!Str.IsEmpty())
+		{
+			int I = Str.Pos("\r\n");
+			if(I == 0)
+				I = Str.Length()+1;
+			IRichEdit1->SelText = Str.SubString(1, I-1);
 			Str.Delete(1, I+1);
-			if(!Str.IsEmpty())
-	      HandleNewLine();
+			if(!Str.IsEmpty() || Line > 1)
+			{
+				HandleNewLine();
+				Line++;
+			}
     }
     Key = 0;
     return;

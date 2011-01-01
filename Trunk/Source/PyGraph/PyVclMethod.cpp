@@ -11,12 +11,10 @@
 #pragma hdrstop
 #undef _DEBUG
 #include "Python.h"
-#define private public
 #include <Rtti.hpp>
-#undef private
 #include "PyVclMethod.h"
 #include "PyVcl.h"
-#include "PythonBind.h"
+#include "PyVclConvert.h"
 namespace Python
 {
 //---------------------------------------------------------------------------
