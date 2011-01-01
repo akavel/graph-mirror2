@@ -14,17 +14,6 @@
 struct _object;
 namespace Python
 {
-	class EPyVclError : public Exception
-	{
-	public:
-		EPyVclError(const String &Str) : Exception(Str) {}
-  };
-
-	extern TRttiContext Context;
-	extern _object *PyPropertyException;
-  extern _object *PyVclException;
 	_object* InitPyVcl();
-	TValue ToValue(_object *O, TTypeInfo *TypeInfo);
-	void TupleToValues(_object *O, std::vector<TValue> &Values, const DynamicArray<TRttiParameter*> &Parameters);
 }
 #endif

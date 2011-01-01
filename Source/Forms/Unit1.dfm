@@ -4197,8 +4197,8 @@ object Form1: TForm1
     end
     object ScriptDocAction: TAction
       Category = 'Help'
-      Caption = 'Plugin system dokumentation'
-      Hint = 'Show dokumentation for plugin system.'
+      Caption = 'Scripting engine dokumentation'
+      Hint = 'Show dokumentation for scripting engine and plugin system.'
       ImageIndex = 35
       Visible = False
       OnExecute = ScriptDocActionExecute

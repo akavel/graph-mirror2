@@ -12,7 +12,7 @@
 #undef _DEBUG
 #include "Python.h"
 #include <Rtti.hpp>
-#include "PythonBind.h"
+#include "PyVclConvert.h"
 #include "PyVcl.h"
 
 namespace Python

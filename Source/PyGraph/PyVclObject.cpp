@@ -11,17 +11,85 @@
 #pragma hdrstop
 #undef _DEBUG
 #include "Python.h"
+#include <structmember.h>
 #define private public
 #include <Rtti.hpp>
 #undef private
 #include "PyVclObject.h"
 #include "PyVclMethod.h"
 #include "PyVcl.h"
-#include "PythonBind.h"
+#include "PyVclConvert.h"
 #include "PyVclArrayProperty.h"
 
 namespace Python
 {
+//---------------------------------------------------------------------------
+struct TPythonCallback : public TCppInterfacedObject<TMethodImplementationCallback>
+{
+	void __fastcall Invoke(void * UserData, const System::DynamicArray<TValue> Args, TValue &Result);
+};
+TPythonCallback *PythonCallback = new TPythonCallback;
+//---------------------------------------------------------------------------
+void __fastcall TPythonCallback::Invoke(void * UserData, const System::DynamicArray<TValue> Args, TValue &Result)
+{
+	TLockGIL Dummy;
+	PyObject *Object = static_cast<PyObject*>(UserData);
+	int Count = Args.get_length() - 1;
+	PyObject *PyArgs = Count != 0 ? PyTuple_New(Count) : NULL;
+	for(int I = 0; I < Count; I++)
+		PyTuple_SET_ITEM(PyArgs, I, ToPyObject(Args[I + 1]));
+	PyObject *PyResult = PyObject_CallObject(Object, PyArgs);
+	Py_XDECREF(PyArgs);
+	if(PyResult != NULL && PyResult != Py_None)
+		Result = ToValue(PyResult, NULL); //Bug: Type of result missing
+	Py_XDECREF(PyResult);
+	if(PyResult == NULL)
+	  PyErr_Print();
+}
+//---------------------------------------------------------------------------
+class TImplementationOwner : public TComponent
+{
+	TMethodImplementation *Impl;
+public:
+	TImplementationOwner(TComponent *AOwner, TMethodImplementation *AImpl)
+		: TComponent(AOwner), Impl(AImpl) {}
+	__fastcall ~TImplementationOwner()
+	{
+    Py_DECREF(static_cast<PyObject*>(Impl->FUserData));
+		delete Impl->FInvokeInfo;
+		delete Impl;
+	}
+};
+//---------------------------------------------------------------------------
+TMethodImplementation::TInvokeInfo* CreateInvokeInfo(TTypeInfo *TypeInfo)
+{
+	TTypeData *TypeData = reinterpret_cast<TTypeData*>(&TypeInfo->Name[TypeInfo->Name[0]+1]);
+	int Index = 0;
+	std::vector<Typinfo::TParamFlags> ParamFlags;
+	for(int I = 0; I < TypeData->ParamCount; I++)
+	{
+		ParamFlags.push_back(reinterpret_cast<Typinfo::TParamFlags&>(TypeData->ParamList[Index++]));
+		Index += TypeData->ParamList[Index] + 1;
+		Index += TypeData->ParamList[Index] + 1;
+	}
+	if(TypeData->MethodKind == mkFunction)
+	{
+		Index += TypeData->ParamList[Index] + 1;
+		Index += 4;
+	}
+	Typinfo::TCallConv CallConv = static_cast<Typinfo::TCallConv>(TypeData->ParamList[Index]);
+	Index++;
+	TMethodImplementation::TInvokeInfo *InvokeInfo = new TMethodImplementation::TInvokeInfo(CallConv, true);
+	InvokeInfo->AddParameter(__delphirtti(TObject), false);
+	for(int I = 0; I < TypeData->ParamCount; I++)
+	{
+		TTypeInfo *ParamType = **(TTypeInfo***)&TypeData->ParamList[Index];
+		InvokeInfo->AddParameter(ParamType, ParamFlags[I].Contains(Typinfo::pfVar));
+		Index += 4;
+	}
+	InvokeInfo->Seal();
+	return InvokeInfo;
+}
 //---------------------------------------------------------------------------
 static PyObject *VclObject_Repr(TVclObject* self)
 {
@@ -52,7 +120,12 @@ static PyObject* VclObject_Dir(TVclObject *self, PyObject *arg)
 static void VclObject_Dealloc(TVclObject* self)
 {
 	if(self->Owned)
+	{
+		if(TWinControl *Control = dynamic_cast<TWinControl*>(self->Instance))
+			while(Control->ControlCount)
+				Control->Controls[Control->ControlCount-1]->Parent = NULL;
 		delete self->Instance;
+	}
 	Py_TYPE(self)->tp_free(reinterpret_cast<PyObject*>(self));
 }
 //---------------------------------------------------------------------------
@@ -78,8 +151,10 @@ PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
 				PyObject *ArrayProperty = VclArrayProperty_Create(Object, Name);
 				if(ArrayProperty != NULL)
 					return ArrayProperty;
-				SetErrorString(PyExc_AttributeError, "'" + Type->Name + "' object has not attribute '" + Name + "'");
-				return NULL;
+				PyObject *Result = PyObject_GenericGetAttr(reinterpret_cast<PyObject*>(self), attr_name);
+				if(Result == NULL)
+					SetErrorString(PyExc_AttributeError, "'" + Type->Name + "' object has no attribute '" + Name + "'");
+				return Result;
 			}
 			TValue Result = Field->GetValue(Object);
 			return ToPyObject(Result);
@@ -106,9 +181,33 @@ int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 		String Name = PyUnicode_AsUnicode(attr_name);
 		TRttiType *Type = Context.GetType(self->Instance->ClassType());
 		TRttiProperty *Property = Type->GetProperty(Name);
+		TTypeInfo *TypeInfo = Property->PropertyType->Handle;
 		if(Property == NULL)
-			throw EPyVclError("Property " + Name + " not found in " + Type->Name);
-		Property->SetValue(self->Instance, ToValue(v, Property->PropertyType->Handle));
+		{
+			int Result = PyObject_GenericSetAttr(reinterpret_cast<PyObject*>(self), attr_name, v);
+			if(Result == -1)
+				SetErrorString(PyExc_AttributeError, "'" + Type->Name + "' object has no attribute '" + Name + "'");
+			return Result;
+		}
+
+		TValue Value;
+		if(TypeInfo->Kind == tkMethod)
+		{
+			if(v == Py_None)
+				Value = TValue::From<TObject*>(NULL);
+			else
+			{
+				Py_INCREF(v);
+				TMethodImplementation *Implementation = new TMethodImplementation(v, CreateInvokeInfo(TypeInfo), PythonCallback);
+				TMethod Method = {Implementation->CodeAddress, NULL};
+				TValue::Make(&Method, TypeInfo, Value);
+				if(TComponent *Component = dynamic_cast<TComponent*>(self->Instance))
+					new TImplementationOwner(Component, Implementation);
+			}
+		}
+		else
+			Value = ToValue(v, TypeInfo);
+		Property->SetValue(self->Instance, Value);
 		return 0;
 	}
 	catch(Exception &E)
@@ -117,6 +216,12 @@ int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 		return -1;
 	}
 }
+//---------------------------------------------------------------------------
+static PyMemberDef VclObject_Members[] =
+{
+	{"_owned", T_BOOL, offsetof(TVclObject, Owned), 0, "Indicates if the VCL object is freed when the proxy is destroyed"},
+	{NULL, 0, 0, 0, NULL}
+};
 //---------------------------------------------------------------------------
 static PyMethodDef VclObject_Methods[] =
 {
@@ -154,7 +259,7 @@ PyTypeObject VclObjectType =
 	0,		                     /* tp_iter */
 	0,		                     /* tp_iternext */
 	VclObject_Methods,         /* tp_methods */
-	0,                         /* tp_members */
+	VclObject_Members,         /* tp_members */
 	0,       									 /* tp_getset */
 	0,                         /* tp_base */
 	0,                         /* tp_dict */

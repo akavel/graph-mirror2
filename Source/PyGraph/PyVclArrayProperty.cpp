@@ -11,7 +11,7 @@
 #pragma hdrstop
 #undef _DEBUG
 #include "Python.h"
-#include "PythonBind.h"
+#include "PyVclConvert.h"
 #include "PyVclObject.h"
 #include "PyVcl.h"
 
