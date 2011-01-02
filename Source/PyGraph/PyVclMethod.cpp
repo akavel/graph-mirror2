@@ -45,9 +45,14 @@ static PyObject *VclMethod_Repr(TVclMethod* self)
 TValue CallMethod(TRttiType *Type, TObject *Instance, DynamicArray<TRttiMethod*> &Methods, PyObject *Args)
 {
 	unsigned MethodCount = Methods.get_length();
+	TRttiType *Parent = Methods[0]->Parent;
 	for(unsigned I = 0; I < MethodCount; I++)
 	{
 		TRttiMethod *Method = Methods[I];
+		if(Instance == NULL) //If looking for constructor
+			if(Method->Parent != Parent)
+			  break; //Only look for constructors defined in the last class with constructors
+
 		DynamicArray<TRttiParameter*> ParameterTypes = Method->GetParameters();
 		std::vector<TValue> Parameters;
 		int ParamCount = PyTuple_Size(Args);

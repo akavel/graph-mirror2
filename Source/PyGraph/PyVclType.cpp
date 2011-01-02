@@ -43,13 +43,8 @@ int VclType_Init(TVclObject *self, PyObject *args, PyObject *kwds)
 			PyObject *Key, *Value;
 			Py_ssize_t Pos = 0;
 			while(PyDict_Next(kwds, &Pos, &Key, &Value))
-			{
-				String Name = PyUnicode_AsUnicode(Key);
-				TRttiProperty *Property = Type->RttiType->GetProperty(Name);
-				if(Property == NULL)
-					throw EPyVclError("Property " + Name + " not found in " + Type->RttiType->Name);
-				Property->SetValue(self->Instance, ToValue(Value, Property->PropertyType->Handle));
-			}
+				if(self->ob_base.ob_type->tp_setattro(reinterpret_cast<PyObject*>(self), Key, Value) == -1)
+					return -1;
     }
 	}
 	catch(Exception &E)

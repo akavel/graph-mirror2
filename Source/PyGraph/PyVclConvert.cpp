@@ -67,9 +67,19 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 			Result = TValue::From(PyFloat_AsDouble(O));
 			break;
 
+		case tkRecord:
+		{
+			TRttiType *Type = Context.GetType(TypeInfo);
+			std::vector<BYTE> Data(Type->TypeSize);
+			DynamicArray<TRttiField*> Fields = Type->GetFields();
+			for(int I = 0; I < Fields.Length; I++)
+				Fields[I]->SetValue(&Data[0], ToValue(PyTuple_GetItem(O, I), Fields[I]->FieldType->Handle));
+			TValue::Make(&Data[0], TypeInfo, Result);
+			break;
+		}
+
 		case tkVariant:
 		case tkArray:
-		case tkRecord:
 		case tkInterface:
 		case tkInt64:
 		case tkDynArray:
@@ -172,10 +182,20 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 		case tkFloat:
 			return ToPyObject(Value.AsExtended());
 
+		case tkRecord:
+		{
+			void *Data = Value.GetReferenceToRawData();
+			TRttiType *Type = Context.GetType(Value.TypeInfo);
+			DynamicArray<TRttiField*> Fields = Type->GetFields();
+			PyObject *Tuple = PyTuple_New(Fields.Length);
+			for(int I = 0; I < Fields.Length; I++)
+				PyTuple_SET_ITEM(Tuple, I, ToPyObject(Fields[I]->GetValue(Data)));
+			return Tuple;
+		}
+
 		case tkMethod:
 		case tkVariant:
 		case tkArray:
-		case tkRecord:
 		case tkInterface:
 		case tkInt64:
 		case tkDynArray:
@@ -184,7 +204,7 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 		case tkProcedure:
 		case tkUnknown:
 		default:
-			throw Exception("Unable to convert type '" + AnsiString(Value.TypeInfo->Name) + "'");
+			throw EPyVclError("Unable to convert type '" + AnsiString(Value.TypeInfo->Name) + "'");
 	}
 }
 //---------------------------------------------------------------------------

@@ -20,24 +20,27 @@
 #include "PyVcl.h"
 #include "PyVclConvert.h"
 #include "PyVclArrayProperty.h"
+#include "PyVclRef.h"
 
 namespace Python
 {
 //---------------------------------------------------------------------------
 struct TPythonCallback : public TCppInterfacedObject<TMethodImplementationCallback>
 {
-	void __fastcall Invoke(void * UserData, const System::DynamicArray<TValue> Args, TValue &Result);
+	void __fastcall Invoke(void * UserData, System::DynamicArray<TValue> Args, TValue &Result);
 };
 TPythonCallback *PythonCallback = new TPythonCallback;
 //---------------------------------------------------------------------------
-void __fastcall TPythonCallback::Invoke(void * UserData, const System::DynamicArray<TValue> Args, TValue &Result)
+void __fastcall TPythonCallback::Invoke(void * UserData, System::DynamicArray<TValue> Args, TValue &Result)
 {
 	TLockGIL Dummy;
+	TMethodImplementation::TInvokeInfo *InvokeInfo =  static_cast<TMethodImplementation::TInvokeInfo*>(Args[0].AsObject());
+  DynamicArray<TMethodImplementation::TParamLoc> Params = InvokeInfo->GetParamLocs();
 	PyObject *Object = static_cast<PyObject*>(UserData);
 	int Count = Args.get_length() - 1;
 	PyObject *PyArgs = Count != 0 ? PyTuple_New(Count) : NULL;
 	for(int I = 0; I < Count; I++)
-		PyTuple_SET_ITEM(PyArgs, I, ToPyObject(Args[I + 1]));
+		PyTuple_SET_ITEM(PyArgs, I, Params[I+1].FByRefParam ? VclRef_Create(&Args[I+1]) : ToPyObject(Args[I+1]));
 	PyObject *PyResult = PyObject_CallObject(Object, PyArgs);
 	Py_XDECREF(PyArgs);
 	if(PyResult != NULL && PyResult != Py_None)
@@ -181,7 +184,6 @@ int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 		String Name = PyUnicode_AsUnicode(attr_name);
 		TRttiType *Type = Context.GetType(self->Instance->ClassType());
 		TRttiProperty *Property = Type->GetProperty(Name);
-		TTypeInfo *TypeInfo = Property->PropertyType->Handle;
 		if(Property == NULL)
 		{
 			int Result = PyObject_GenericSetAttr(reinterpret_cast<PyObject*>(self), attr_name, v);
@@ -190,6 +192,7 @@ int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 			return Result;
 		}
 
+		TTypeInfo *TypeInfo = Property->PropertyType->Handle;
 		TValue Value;
 		if(TypeInfo->Kind == tkMethod)
 		{
@@ -198,8 +201,9 @@ int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 			else
 			{
 				Py_INCREF(v);
-				TMethodImplementation *Implementation = new TMethodImplementation(v, CreateInvokeInfo(TypeInfo), PythonCallback);
-				TMethod Method = {Implementation->CodeAddress, NULL};
+				TMethodImplementation::TInvokeInfo *InvokeInfo = CreateInvokeInfo(TypeInfo);
+				TMethodImplementation *Implementation = new TMethodImplementation(v, InvokeInfo, PythonCallback);
+				TMethod Method = {Implementation->CodeAddress, InvokeInfo}; //Pass InvokeInfo in this, which can be used as another data pointer
 				TValue::Make(&Method, TypeInfo, Value);
 				if(TComponent *Component = dynamic_cast<TComponent*>(self->Instance))
 					new TImplementationOwner(Component, Implementation);
