@@ -34,8 +34,9 @@ TPythonCallback *PythonCallback = new TPythonCallback;
 void __fastcall TPythonCallback::Invoke(void * UserData, System::DynamicArray<TValue> Args, TValue &Result)
 {
 	TLockGIL Dummy;
-	TMethodImplementation::TInvokeInfo *InvokeInfo =  static_cast<TMethodImplementation::TInvokeInfo*>(Args[0].AsObject());
-  DynamicArray<TMethodImplementation::TParamLoc> Params = InvokeInfo->GetParamLocs();
+	TMethodImplementation *Impl = static_cast<TMethodImplementation*>(Args[0].AsObject());
+	TMethodImplementation::TInvokeInfo *InvokeInfo = Impl->FInvokeInfo;
+	DynamicArray<TMethodImplementation::TParamLoc> Params = InvokeInfo->GetParamLocs();
 	PyObject *Object = static_cast<PyObject*>(UserData);
 	int Count = Args.get_length() - 1;
 	PyObject *PyArgs = Count != 0 ? PyTuple_New(Count) : NULL;
@@ -203,7 +204,7 @@ int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 				Py_INCREF(v);
 				TMethodImplementation::TInvokeInfo *InvokeInfo = CreateInvokeInfo(TypeInfo);
 				TMethodImplementation *Implementation = new TMethodImplementation(v, InvokeInfo, PythonCallback);
-				TMethod Method = {Implementation->CodeAddress, InvokeInfo}; //Pass InvokeInfo in this, which can be used as another data pointer
+				TMethod Method = {Implementation->CodeAddress, Implementation}; //Pass InvokeInfo in this, which can be used as another data pointer
 				TValue::Make(&Method, TypeInfo, Value);
 				if(TComponent *Component = dynamic_cast<TComponent*>(self->Instance))
 					new TImplementationOwner(Component, Implementation);

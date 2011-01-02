@@ -12,8 +12,11 @@
 #undef _DEBUG
 #include <Python.h>
 #include "PyVclConvert.h"
+#define private public
 #include <Rtti.hpp>
+#undef private
 #include "PyVclObject.h"
+#include "PyVclMethod.h"
 //---------------------------------------------------------------------------
 namespace Python
 {
@@ -194,6 +197,23 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 		}
 
 		case tkMethod:
+		{
+			TMethod Method;
+			Value.ExtractRawDataNoCopy(&Method);
+			if(Method.Code == NULL)
+				Py_RETURN_NONE;
+			TObject *Object = static_cast<TObject*>(Method.Data);
+			if(TMethodImplementation *Impl = dynamic_cast<TMethodImplementation*>(Object))
+			{
+				PyObject *Result = static_cast<PyObject*>(Impl->FUserData);
+				Py_IncRef(Result);
+				return Result;
+			}
+			String Name = Object->MethodName(Method.Code);
+			TRttiType *Type = Context.GetType(Object->ClassType());
+			return VclMethod_Create(Object, Type->GetMethods(Name));
+		}
+
 		case tkVariant:
 		case tkArray:
 		case tkInterface:
