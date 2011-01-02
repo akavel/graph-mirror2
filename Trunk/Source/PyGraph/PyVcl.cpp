@@ -26,6 +26,7 @@
 #include "PyVclFunction.h"
 #include "PyVclArrayProperty.h"
 #include <RTLConsts.hpp>
+#include "PyVclRef.h"
 
 namespace Python
 {
@@ -176,7 +177,7 @@ PyObject* InitPyVcl()
 	PyObject *PyVclModule = PyModule_Create(&PyVclModuleDef);
 	if(PyType_Ready(&GlobalVclType) < 0 || PyType_Ready(&VclMethodType) < 0 ||
 		PyType_Ready(&VclObjectType) < 0 || PyType_Ready(&VclFunctionType) < 0 ||
-		PyType_Ready(&VclArrayPropertyType) < 0)
+		PyType_Ready(&VclArrayPropertyType) < 0 || PyType_Ready(&VclRefType) < 0)
 		return NULL;
 	PyVclException = PyErr_NewException("vcl.VclError", NULL, NULL);
 	PyModule_AddObject(PyVclModule, "VclError", PyVclException);

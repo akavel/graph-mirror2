@@ -309,6 +309,10 @@
 			<CppCompile Include="PyGraph\PyVclObject.cpp">
 				<BuildOrder>69</BuildOrder>
 			</CppCompile>
+			<CppCompile Include="PyGraph\PyVclRef.cpp">
+				<DependentOn>PyGraph\PyVclRef.h</DependentOn>
+				<BuildOrder>74</BuildOrder>
+			</CppCompile>
 			<CppCompile Include="PyGraph\PyVclType.cpp">
 				<BuildOrder>70</BuildOrder>
 			</CppCompile>
