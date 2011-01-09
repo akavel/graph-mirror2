@@ -36,6 +36,8 @@ int VclType_Init(TVclObject *self, PyObject *args, PyObject *kwds)
 	{
 		TVclType *Type = reinterpret_cast<TVclType*>(self->ob_base.ob_type);
 		DynamicArray<TRttiMethod*> Methods = Type->RttiType->GetMethods("Create");
+		if(Methods.Length == 0)
+		  throw EPyVclError("No constructor found");
 		self->Instance = CallMethod(Type->RttiType, NULL, Methods, args).AsObject();
 		self->Owned = true;
 		if(kwds)
@@ -47,9 +49,9 @@ int VclType_Init(TVclObject *self, PyObject *args, PyObject *kwds)
 					return -1;
     }
 	}
-	catch(Exception &E)
+	catch(...)
 	{
-		SetErrorString(PyVclException, E.Message);
+		PyVclHandleException();
 		return -1;
 	}
 	return 0;

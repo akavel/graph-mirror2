@@ -30,38 +30,37 @@ static PyObject *VclRef_Repr(TVclRef* self)
 	return ToPyObject(L"<Reference to '" + self->Value->ToString() + L"'>");
 }
 //---------------------------------------------------------------------------
-static PyObject* VclRef_GetAttro(TVclRef *self, PyObject *attr_name)
+static PyObject* VclRef_GetValue(TVclRef *self, void *closure)
 {
 	try
 	{
-		if(PyUnicode_AsUnicode(attr_name) == String("Value"))
-			return ToPyObject(*self->Value);
-		return PyObject_GenericGetAttr(reinterpret_cast<PyObject*>(self), attr_name);
+		return ToPyObject(*self->Value);
 	}
-	catch(Exception &E)
+	catch(...)
 	{
-		SetErrorString(PyVclException, E.Message);
-		return NULL;
+		return PyVclHandleException();
 	}
 }
 //---------------------------------------------------------------------------
-static int VclRef_SetAttro(TVclRef *self, PyObject *attr_name, PyObject *v)
+static int VclRef_SetValue(TVclRef *self, PyObject *value, void *closure)
 {
 	try
 	{
-		if(PyUnicode_AsUnicode(attr_name) == String("Value"))
-		{
-			*self->Value = ToValue(v, self->Value->TypeInfo);
-			return 0;
-		}
-		return PyObject_GenericSetAttr(reinterpret_cast<PyObject*>(self), attr_name, v);
+		*self->Value = ToValue(value, self->Value->TypeInfo);
+		return 0;
 	}
-	catch(Exception &E)
+	catch(...)
 	{
-		SetErrorString(PyVclException, E.Message);
+		PyVclHandleException();
 		return -1;
 	}
 }
+//---------------------------------------------------------------------------
+static PyGetSetDef VclRefr_GetSeters[] =
+{
+	{"Value", (getter)VclRef_GetValue, (setter)VclRef_SetValue, "Referenced value", NULL},
+	{NULL}  /* Sentinel */
+};
 //---------------------------------------------------------------------------
 PyTypeObject VclRefType =
 {
@@ -81,8 +80,8 @@ PyTypeObject VclRefType =
 	0,                         /* tp_hash */
 	0, 												 /* tp_call */
 	0,                         /* tp_str */
-	(getattrofunc)VclRef_GetAttro, /* tp_getattro */
-	(setattrofunc)VclRef_SetAttro, /* tp_setattro */
+	0, 												 /* tp_getattro */
+	0, 												 /* tp_setattro */
 	0,                         /* tp_as_buffer */
 	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
 	"Reference object",			 	 /* tp_doc */
@@ -94,7 +93,7 @@ PyTypeObject VclRefType =
 	0,		                     /* tp_iternext */
 	0,         								 /* tp_methods */
 	0,         								 /* tp_members */
-	0,       									 /* tp_getset */
+	VclRefr_GetSeters,				 /* tp_getset */
 	0,                         /* tp_base */
 	0,                         /* tp_dict */
 	0,                         /* tp_descr_get */

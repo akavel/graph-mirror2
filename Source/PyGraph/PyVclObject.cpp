@@ -111,13 +111,33 @@ static PyObject* VclObject_Dir(TVclObject *self, PyObject *arg)
 	TRttiType *Type = Context.GetType(self->Instance->ClassType());
 	DynamicArray<TRttiProperty*> Properties = Type->GetProperties();
 	DynamicArray<TRttiMethod*> Methods = Type->GetMethods();
+	DynamicArray<TRttiField*> Fields = Type->GetFields();
 	int PropertyCount = Properties.Length;
 	int MethodCount = Methods.Length;
-	PyObject *List = PyList_New(Properties.Length + Methods.Length);
+	int FieldCount = Fields.Length;
+	PyObject *List = PyList_New(0);
+	PyObject *Value;
 	for(int I = 0; I < PropertyCount; I++)
-		PyList_SET_ITEM(List, I, ToPyObject(Properties[I]->Name));
+	{
+		Value = ToPyObject(Properties[I]->Name);
+		if(!PySequence_Contains(List, Value))
+			PyList_Append(List, Value);
+		Py_DECREF(Value);
+	}
 	for(int I = 0; I < MethodCount; I++)
-		PyList_SET_ITEM(List, I + PropertyCount, ToPyObject(Methods[I]->Name));
+	{
+		Value = ToPyObject(Methods[I]->Name);
+		if(!PySequence_Contains(List, Value))
+			PyList_Append(List, Value);
+		Py_DECREF(Value);
+	}
+	for(int I = 0; I < FieldCount; I++)
+		if(Fields[I]->Visibility == mvPublic)
+		{
+			Value = ToPyObject(Fields[I]->Name);
+			PyList_Append(List, Value);
+			Py_DECREF(Value);
+		}
 	return List;
 }
 //---------------------------------------------------------------------------
@@ -146,7 +166,7 @@ PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
 		if(Property == NULL)
 		{
 			DynamicArray<TRttiMethod*> Methods = Type->GetMethods(Name);
-			if(Methods.get_length() != 0)
+			if(Methods.Length != 0 && !Methods[0]->IsDestructor)
 				return VclMethod_Create(Object, Methods);
 
 			TRttiField *Field = Type->GetField(Name);
@@ -166,15 +186,9 @@ PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
 		TValue Result = Property->GetValue(Object);
 		return ToPyObject(Result);
 	}
-	catch(EListError &E)
+	catch(...)
 	{
-		PyErr_SetString(PyExc_IndexError, AnsiString(E.Message).c_str());
-		return NULL;
-	}
-	catch(Exception &E)
-	{
-		SetErrorString(PyVclException, E.Message);
-		return NULL;
+		return PyVclHandleException();
 	}
 }
 //---------------------------------------------------------------------------
@@ -215,9 +229,9 @@ int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 		Property->SetValue(self->Instance, Value);
 		return 0;
 	}
-	catch(Exception &E)
+	catch(...)
 	{
-		SetErrorString(PyVclException, E.Message);
+		PyVclHandleException();
 		return -1;
 	}
 }
