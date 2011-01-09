@@ -81,10 +81,13 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 			break;
 		}
 
+		case tkInt64:
+			Result = TValue::From(PyLong_AsLongLong(O));
+			break;
+
 		case tkVariant:
 		case tkArray:
 		case tkInterface:
-		case tkInt64:
 		case tkDynArray:
 		case tkClassRef:
 		case tkPointer:
@@ -115,6 +118,11 @@ PyObject* ToPyObject(bool Value)
 PyObject* ToPyObject(int Value)
 {
 	return PyLong_FromLong(Value);
+}
+//---------------------------------------------------------------------------
+PyObject* ToPyObject(long long Value)
+{
+	return PyLong_FromLongLong(Value);
 }
 //---------------------------------------------------------------------------
 PyObject* ToPyObject(wchar_t Value)
@@ -224,10 +232,12 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 			return VclMethod_Create(Object, Type->GetMethods(Name));
 		}
 
+		case tkInt64:
+			return PyLong_FromLongLong(Value.AsInt64());
+
 		case tkVariant:
 		case tkArray:
 		case tkInterface:
-		case tkInt64:
 		case tkDynArray:
 		case tkClassRef:
 		case tkPointer:

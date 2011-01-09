@@ -14,6 +14,7 @@
 #include <Rtti.hpp>
 #include "PyVclConvert.h"
 #include "PyVcl.h"
+#include "FindClass.hpp"
 
 namespace Python
 {
@@ -27,13 +28,14 @@ struct TFunctionEntry
 	TTypeInfo *Args[MaxArgCount];
 };
 //---------------------------------------------------------------------------
-//void __fastcall (*p)(TStream*, TStream*) = ObjectTextToBinary;
+//Warning: Don't use __delphirtti() on classes. It may make it impossible to access
+//properties on that class through RTTI. See QC #90773
 const TFunctionEntry FunctionList[] =
 {
 	{L"ShortCutToText", ShortCutToText, __delphirtti(String), __delphirtti(TShortCut)},
 	{L"TextToShortCut", TextToShortCut, __delphirtti(TShortCut), __delphirtti(String)},
-	{L"ReadComponentResFile", ReadComponentResFile, __delphirtti(TComponent), __delphirtti(String), __delphirtti(TComponent)},
-	{L"ObjectTextToBinary", (void __fastcall (*)(TStream*, TStream*))ObjectTextToBinary, NULL, __delphirtti(TStream), __delphirtti(TStream)},
+	{L"ReadComponentResFile", ReadComponentResFile, LookUpClass("TComponent"), __delphirtti(String), LookUpClass("TComponent")},
+	{L"ObjectTextToBinary", (void __fastcall (*)(TStream*, TStream*))ObjectTextToBinary, NULL, LookUpClass("TStream"), LookUpClass("TStream")},
 };
 //---------------------------------------------------------------------------
 struct TVclFunction

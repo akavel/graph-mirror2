@@ -392,33 +392,33 @@
 			<CppCompile Include="Swig\Utility_wrap.cpp">
 				<BuildOrder>67</BuildOrder>
 			</CppCompile>
+			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
 			<FormResources Include="Frames\TTanFrame.dfm"/>
 			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
-			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
-			<FormResources Include="Frames\TParFuncFrame.dfm"/>
 			<FormResources Include="Forms\Unit1.dfm"/>
 			<FormResources Include="Forms\Unit12.dfm"/>
 			<FormResources Include="Forms\Unit13.dfm"/>
 			<FormResources Include="Forms\Unit10.dfm"/>
 			<FormResources Include="Forms\Unit11.dfm"/>
-			<FormResources Include="Forms\Unit4.dfm"/>
-			<FormResources Include="Forms\Unit5.dfm"/>
-			<FormResources Include="Forms\Unit22.dfm"/>
-			<FormResources Include="Forms\Unit3.dfm"/>
-			<FormResources Include="Forms\Unit6.dfm"/>
-			<FormResources Include="Forms\Unit9.dfm"/>
-			<FormResources Include="Frames\TAreaFrame.dfm"/>
-			<FormResources Include="Forms\Unit7.dfm"/>
-			<FormResources Include="Forms\Unit8.dfm"/>
-			<FormResources Include="Forms\Unit16.dfm"/>
-			<FormResources Include="Forms\Unit17.dfm"/>
 			<FormResources Include="Forms\Unit14.dfm"/>
-			<FormResources Include="Forms\Unit15.dfm"/>
+			<FormResources Include="Forms\Unit5.dfm"/>
+			<FormResources Include="Forms\Unit6.dfm"/>
+			<FormResources Include="Forms\Unit3.dfm"/>
+			<FormResources Include="Forms\Unit4.dfm"/>
+			<FormResources Include="Forms\Unit7.dfm"/>
+			<FormResources Include="Frames\TAreaFrame.dfm"/>
+			<FormResources Include="Frames\TParFuncFrame.dfm"/>
+			<FormResources Include="Forms\Unit8.dfm"/>
+			<FormResources Include="Forms\Unit9.dfm"/>
+			<FormResources Include="Forms\Unit17.dfm"/>
 			<FormResources Include="Forms\Unit18.dfm"/>
-			<FormResources Include="Forms\Unit20.dfm"/>
-			<FormResources Include="Forms\Unit21.dfm"/>
+			<FormResources Include="Forms\Unit15.dfm"/>
+			<FormResources Include="Forms\Unit16.dfm"/>
 			<FormResources Include="Forms\Unit19.dfm"/>
+			<FormResources Include="Forms\Unit21.dfm"/>
+			<FormResources Include="Forms\Unit22.dfm"/>
 			<FormResources Include="Forms\Unit2.dfm"/>
+			<FormResources Include="Forms\Unit20.dfm"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

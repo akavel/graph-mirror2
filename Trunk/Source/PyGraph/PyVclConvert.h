@@ -26,6 +26,7 @@ namespace Python
 
 	PyObject* ToPyObject(bool Value);
 	PyObject* ToPyObject(int Value);
+	PyObject* ToPyObject(long long Value);
 	PyObject* ToPyObject(wchar_t Value);
 	PyObject* ToPyObject(unsigned Value) {return ToPyObject(static_cast<int>(Value));}
 	PyObject* ToPyObject(double Value);
