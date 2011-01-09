@@ -166,7 +166,8 @@
     <xsl:attribute name="font-size">
       <xsl:value-of select="$body.font.master * 0.80"/>
     </xsl:attribute>
-	</xsl:attribute-set>
+    <xsl:attribute name="wrap-option">wrap</xsl:attribute>
+  </xsl:attribute-set>
 
   <xsl:attribute-set name="normal.para.spacing">
     <xsl:attribute name="space-before.optimum">0em</xsl:attribute>

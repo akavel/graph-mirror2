@@ -42,16 +42,16 @@ import vcl
 import string
 
 def HandleKeyPress(Sender, Key):
-	if not Key in string.digits:
-		Key = 0
+  if not Key.Value in string.digits:
+    Key.Value = '\0'
 
-Form = vcl.TForm(None, Caption="Value dialog")
-Label = vcl.TLabel(None, Parent=Form, Caption="Value:")
-Edit = vcl.TEdit(None, Parent=Form, OnKeyPress=HandleKeyPress, Text="0")
-OkButton = vcl.TButton(None, Caption="OK", Default=True, ModalResult="mrOk")
-CancelButton = vcl.TButton(None, Caption="Cancel", Cancel=True, ModalResult="mrCancel")
-if Form.ShowModal():
-	print("Result:", Form.ModalResult)
+Form = vcl.TForm(None, Caption="Value dialog", Width=190, Height=110)
+Label = vcl.TLabel(None, Parent=Form, Caption="Value:", Top=12, Left=8)
+Edit = vcl.TEdit(None, Parent=Form, OnKeyPress=HandleKeyPress, Text="0", Top=8, Left=50)
+OkButton = vcl.TButton(None, Parent=Form, Caption="OK", Default=True, ModalResult=1, Top=50, Left=8)
+CancelButton = vcl.TButton(None, Parent=Form, Caption="Cancel", Cancel=True, ModalResult=2, Top=50, Left=100)
+if Form.ShowModal() == 1:
+  print("Result:", Edit.Text)
 		</programlisting>
 	</simplesect>
 </chapter>
