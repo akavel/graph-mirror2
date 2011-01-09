@@ -79,64 +79,69 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
 				Line++;
 			}
     }
-    Key = 0;
-    return;
-  }
+		Key = 0;
+		return;
+	}
 
-  if((Shift == (TShiftState() << ssCtrl) && Key == 'C'))
-    if(IRichEdit1->SelLength == 0)
-      KeyboardInterrupt();
+	if((Shift == (TShiftState() << ssCtrl) && Key == 'C'))
+		if(IRichEdit1->SelLength == 0)
+			KeyboardInterrupt();
 
-  if(!Shift.Empty())
-    return;
-    
-  switch(Key)
-  {
-    case VK_HOME:
-    {
-      int Index = IRichEdit1->LineIndex(-1);
-      String Str = IRichEdit1->GetText(Index, Index + 4);
-      if(Str == ">>> ")
-      {
-        IRichEdit1->SelStart = Index + 4;
-        Key = 0;
-      }
-      break;
-    }
 
-    case VK_UP:
-      if(IRichEdit1->GetLine(-1) == IRichEdit1->LineCount() - 1)
-      {
-        if(CacheIndex > 0)
-        {
-          IRichEdit1->SelStart = LastIndex;
-          IRichEdit1->SelLength = MAXINT;
-          if(CacheIndex == (int)TextCache.size() -1)
-            TextCache.back() = IRichEdit1->GetText(LastIndex, MAXINT);
-          SetUserString(TextCache[--CacheIndex]);
-        }
-        Key = 0;
-      }
-      break;
+	switch(Key)
+	{
+		case VK_HOME:
+		{
+			int Index = IRichEdit1->LineIndex(-1);
+			String Str = IRichEdit1->GetText(Index, Index + 4);
+			if(Str == ">>> ")
+			{
+				int Pos = IRichEdit1->SelStart;
+				IRichEdit1->SelStart = Index + 4;
+				if(Shift.Contains(ssShift))
+				  IRichEdit1->SelLength = Pos - Index - 4;
+				Key = 0;
+			}
+			break;
+		}
 
-    case VK_DOWN:
-      if(IRichEdit1->GetLine(-1) == IRichEdit1->LineCount() - 1)
-      {
-        if(CacheIndex < (int)TextCache.size() - 1)
-          SetUserString(TextCache[++CacheIndex]);
-        Key = 0;
-      }
-      break;
+		case VK_UP:
+			if(Shift.Empty() && IRichEdit1->GetLine(-1) == IRichEdit1->LineCount() - 1)
+			{
+				if(CacheIndex > 0)
+				{
+					IRichEdit1->SelStart = LastIndex;
+					IRichEdit1->SelLength = MAXINT;
+					if(CacheIndex == (int)TextCache.size() -1)
+						TextCache.back() = IRichEdit1->GetText(LastIndex, MAXINT);
+					SetUserString(TextCache[--CacheIndex]);
+				}
+				Key = 0;
+			}
+			break;
 
-    case VK_RETURN:
-      HandleNewLine();
-      Key = 0;
-      break;
+		case VK_DOWN:
+			if(Shift.Empty() && IRichEdit1->GetLine(-1) == IRichEdit1->LineCount() - 1)
+			{
+				if(CacheIndex < (int)TextCache.size() - 1)
+					SetUserString(TextCache[++CacheIndex]);
+				Key = 0;
+			}
+			break;
 
-    case VK_ESCAPE:
-      SetUserString("");
-      break;
-  }
+		case VK_RETURN:
+			if(Shift.Empty())
+			{
+				HandleNewLine();
+				Key = 0;
+			}
+			break;
+
+		case VK_ESCAPE:
+			if(Shift.Empty())
+				SetUserString("");
+			break;
+	}
 }
 //---------------------------------------------------------------------------
 void TForm22::HandleNewLine()
