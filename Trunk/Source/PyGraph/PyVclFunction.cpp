@@ -27,11 +27,13 @@ struct TFunctionEntry
 	TTypeInfo *Args[MaxArgCount];
 };
 //---------------------------------------------------------------------------
+//void __fastcall (*p)(TStream*, TStream*) = ObjectTextToBinary;
 const TFunctionEntry FunctionList[] =
 {
 	{L"ShortCutToText", ShortCutToText, __delphirtti(String), __delphirtti(TShortCut)},
 	{L"TextToShortCut", TextToShortCut, __delphirtti(TShortCut), __delphirtti(String)},
 	{L"ReadComponentResFile", ReadComponentResFile, __delphirtti(TComponent), __delphirtti(String), __delphirtti(TComponent)},
+	{L"ObjectTextToBinary", (void __fastcall (*)(TStream*, TStream*))ObjectTextToBinary, NULL, __delphirtti(TStream), __delphirtti(TStream)},
 };
 //---------------------------------------------------------------------------
 struct TVclFunction
@@ -42,7 +44,13 @@ struct TVclFunction
 //---------------------------------------------------------------------------
 static PyObject *VclFunction_Repr(TVclFunction* self)
 {
-	String Str = String("<Function ") + self->Function->Name + ">";
+	String Str = (self->Function->Result ? "<Function " : "<procedure ") + String(self->Function->Name) + L"(";
+	for(int I = 0; I < MaxArgCount && self->Function->Args[I] != NULL; I++)
+		Str += AnsiString(self->Function->Args[I]->Name) + ";";
+	Str[Str.Length()] = ')';
+	if(self->Function->Result)
+		Str += ":" + AnsiString(self->Function->Result->Name);
+	Str += ">";
 	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
 }
 //---------------------------------------------------------------------------
@@ -51,7 +59,7 @@ static PyObject *VclFunction_Call(TVclFunction* self, PyObject *args, PyObject *
 	try
 	{
 		if(keywds != NULL)
-		  throw EPyVclError("Function does not accept keyword arguments");
+			throw EPyVclError("Function does not accept keyword arguments");
 		DynamicArray<TValue> Arguments;
 
 		int Count;
@@ -66,10 +74,9 @@ static PyObject *VclFunction_Call(TVclFunction* self, PyObject *args, PyObject *
 		TValue Result = Invoke(self->Function->Address, Arguments, ccReg, self->Function->Result);
 		return ToPyObject(Result);
 	}
-	catch(Exception &E)
+	catch(...)
 	{
-		SetErrorString(PyVclException, E.Message);
-		return NULL;
+		return PyVclHandleException();
 	}
 }
 //---------------------------------------------------------------------------
@@ -126,6 +133,18 @@ PyObject* VclFunction_Create(const String &Name)
 			return reinterpret_cast<PyObject*>(VclFunction);
 		}
 
+	return NULL;
+}
+//---------------------------------------------------------------------------
+unsigned GetVclFunctionCount()
+{
+	return sizeof(FunctionList)/sizeof(FunctionList[0]);
+}
+//---------------------------------------------------------------------------
+const wchar_t* GetVclFunctionName(unsigned Index)
+{
+	if(Index < sizeof(FunctionList)/sizeof(FunctionList[0]))
+		return FunctionList[Index].Name;
 	return NULL;
 }
 //---------------------------------------------------------------------------

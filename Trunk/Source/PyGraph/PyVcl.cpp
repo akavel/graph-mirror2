@@ -47,10 +47,16 @@ TGlobalObjectEntry GlobalObjectList[] =
 static PyObject* GlobalVcl_Dir(TVclObject *self, PyObject *arg)
 {
 	unsigned GlobalCount = sizeof(GlobalObjectList)/sizeof(GlobalObjectList[0]);
+	unsigned GlobalFunctionCount = GetVclFunctionCount();
 	TStrings *TypeList = GetTypeList();
-	PyObject *List = PyList_New(TypeList->Count);
-	for(int I = 0; I < TypeList->Count; I++)
-		PyList_SET_ITEM(List, I, ToPyObject(TypeList->Strings[I]));
+	PyObject *List = PyList_New(TypeList->Count + GlobalCount + GlobalFunctionCount);
+	int Index;
+	for(Index = 0; Index < TypeList->Count; Index++)
+		PyList_SET_ITEM(List, Index, ToPyObject(TypeList->Strings[Index]));
+	for(unsigned I = 0; I < GlobalCount; I++, Index++)
+		PyList_SET_ITEM(List, Index, ToPyObject(GlobalObjectList[I].Name));
+	for(unsigned I = 0; I < GlobalFunctionCount; I++, Index++)
+		PyList_SET_ITEM(List, Index, ToPyObject(GetVclFunctionName(I)));
 	return List;
 }
 //---------------------------------------------------------------------------
@@ -78,10 +84,9 @@ static PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
 		PyObject_GenericSetAttr(self, attr_name, Result);
 		return Result;
 	}
-	catch(Exception &E)
+	catch(...)
 	{
-		SetErrorString(PyVclException, E.Message);
-		return NULL;
+		return PyVclHandleException();
 	}
 }
 //---------------------------------------------------------------------------
@@ -206,5 +211,28 @@ PACKAGE TPersistentClass __fastcall FindClass(const System::UnicodeString ClassN
 	throw EClassNotFound(Rtlconsts_SClassNotFound, ARRAYOFCONST((ClassName)));
 }
 }*/ //namespace Classes
+/*class TComponentFinder
+{
+public:
+	void __fastcall FindComponentClass(TReader *Reader, String ClassName, TComponentClass &ComponentClass)
+	{
+		if(ComponentClass == NULL)
+		{
+			TTypeInfo *TypeInfo = LookUpClass(ClassName);
+			if(TypeInfo != NULL && TypeInfo->Kind == tkClass)
+				ComponentClass = GetTypeData(TypeInfo)->ClassType;
+		}
+	}
+};
+TComponentFinder *ComponentFinder = new TComponentFinder;
+namespace Classes
+{
+TComponent* __fastcall TStream::ReadComponent(TComponent *Instance)
+{
+	std::auto_ptr<TReader> Reader(new TReader(this, 4096));
+	Reader->OnFindComponentClass = ComponentFinder->FindComponentClass;
+	return Reader->ReadRootComponent(Instance);
+}
+}*/
 //---------------------------------------------------------------------------
 

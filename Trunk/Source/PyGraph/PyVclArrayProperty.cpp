@@ -45,6 +45,9 @@ Py_ssize_t VclArrayProperty_Length(TVclArrayProperty *self)
 //---------------------------------------------------------------------------
 PyObject* VclArrayProperty_Item(TVclArrayProperty *self, Py_ssize_t i)
 {
+	if(i >= VclArrayProperty_Length(self))
+		return SetErrorString(PyExc_IndexError, "List index out of range");
+
 	try
 	{
 		switch(self->PropertyId)
@@ -61,9 +64,9 @@ PyObject* VclArrayProperty_Item(TVclArrayProperty *self, Py_ssize_t i)
 				return ToPyObject(static_cast<TWinControl*>(self->Instance)->Controls[i]);
 		}
 	}
-	catch(Exception &E)
+	catch(...)
 	{
-		SetErrorString(PyVclException, E.Message);
+		return PyVclHandleException();
 	}
 	return NULL;
 }
@@ -106,9 +109,9 @@ int VclArrayProperty_SetItem(TVclArrayProperty *self, Py_ssize_t i, PyObject *v)
 		}
 		return  0;
 	}
-	catch(Exception &E)
+	catch(...)
 	{
-		SetErrorString(PyVclException, E.Message);
+		PyVclHandleException();
 		return -1;
 	}
 }

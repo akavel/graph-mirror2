@@ -147,6 +147,16 @@ PyObject* ToPyObject(TObject *Object)
 	return VclObject_Create(Object, false);
 }
 //---------------------------------------------------------------------------
+PyObject* ToPyObject(const char *Str)
+{
+	return PyUnicode_DecodeASCII(Str, strlen(Str), NULL);
+}
+//---------------------------------------------------------------------------
+PyObject* ToPyObject(const wchar_t *Str)
+{
+  return PyUnicode_FromWideChar(Str, -1);
+}
+//---------------------------------------------------------------------------
 PyObject* ToPyObject(const Rtti::TValue &V)
 {
 	Rtti::TValue &Value = const_cast<Rtti::TValue&>(V);
@@ -252,6 +262,31 @@ template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
 template<> int FromPyObject<int>(PyObject *O)
 {
 	return PyLong_AsLong(O);
+}
+//---------------------------------------------------------------------------
+PyObject* PyVclHandleException()
+{
+	try
+	{
+		throw;
+	}
+	catch(EListError &E)
+	{
+		PyErr_SetString(PyExc_IndexError, AnsiString(E.Message).c_str());
+	}
+	catch(Exception &E)
+	{
+		PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
+	}
+	catch(std::exception &E)
+	{
+		PyErr_SetString(PyVclException, E.what());
+	}
+	catch(...)
+	{
+		PyErr_SetString(PyVclException, "Unknown exception");
+	}
+	return NULL;
 }
 //---------------------------------------------------------------------------
 } //namespace Python

@@ -35,6 +35,8 @@ namespace Python
 	PyObject* ToPyObject(const Func32::TComplex &Value);
 	PyObject* ToPyObject(const Rtti::TValue &Value);
 	PyObject* ToPyObject(TObject *Object);
+	PyObject* ToPyObject(const char *Str);
+	PyObject* ToPyObject(const wchar_t *Str);
 
 	template<typename T> T FromPyObject(PyObject *O);
 	template<> int FromPyObject<int>(PyObject *O);
@@ -45,5 +47,7 @@ namespace Python
 	template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O);
 	template<> std::wstring FromPyObject<std::wstring>(PyObject *O);
 	template<typename T> bool FromPyObject(PyObject *O, T &Value) {Value = FromPyObject<T>(O); return !PyErr_Occurred();}
+
+	PyObject* PyVclHandleException();
 }
 #endif

@@ -28,12 +28,15 @@ struct TVclMethod
 static PyObject *VclMethod_Repr(TVclMethod* self)
 {
 	String Str = L'<';
+	String LastStr;
 	for(int I = 0; I < self->Methods.get_length(); I++)
 	{
-		Str += self->Methods[I]->ToString();
-		if(I < self->Methods.get_high())
-			Str += ", ";
+		String NewStr = self->Methods[I]->ToString();
+		if(NewStr != LastStr)
+			Str += NewStr + ", ";
+		LastStr = NewStr;
 	}
+	Str.Delete(Str.Length()-1, 2); //Remove last ", "
 	TComponent *Component = dynamic_cast<TComponent*>(self->Instance);
 	if(Component != NULL)
 		Str += " of <object '" + Component->Name + "' of type '" + Component->ClassName() + "'>>";
@@ -56,7 +59,7 @@ TValue CallMethod(TRttiType *Type, TObject *Instance, DynamicArray<TRttiMethod*>
 		DynamicArray<TRttiParameter*> ParameterTypes = Method->GetParameters();
 		std::vector<TValue> Parameters;
 		int ParamCount = PyTuple_Size(Args);
-		if(ParamCount != ParameterTypes.get_length())
+		if(ParamCount != ParameterTypes.Length)
 			if(MethodCount == 1)
 				throw EPyVclError(Method->Name + "() takes exactly " + ParameterTypes.get_length() + " arguments (" + ParamCount + " given)");
 			else
@@ -96,10 +99,9 @@ static PyObject *VclMethod_Call(TVclMethod* self, PyObject *args, PyObject *keyw
 			return SetErrorString(PyExc_TypeError, self->Methods[0]->Name + "() does not accept keyword arguments");
 		return ToPyObject(CallMethod(NULL, self->Instance, self->Methods, args));
 	}
-	catch(Exception &E)
+	catch(...)
 	{
-		PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
-		return NULL;
+		return PyVclHandleException();
 	}
 }
 //---------------------------------------------------------------------------

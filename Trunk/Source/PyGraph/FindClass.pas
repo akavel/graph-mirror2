@@ -48,23 +48,12 @@ begin
   TypeList := TStringList.Create();
   TypeList.Sorted := True;
 
-  TypeList.AddObject('TForm', TypeInfo(TForm));
-  TypeList.AddObject('AnsiChar', TypeInfo(AnsiChar));
-  TypeList.AddObject('AnsiString', TypeInfo(AnsiString));
-  TypeList.AddObject('Boolean', TypeInfo(Boolean));
-  TypeList.AddObject('Byte', TypeInfo(Byte));
-  TypeList.AddObject('ByteBool', TypeInfo(ByteBool));
-  TypeList.AddObject('Cardinal', TypeInfo(Cardinal));
-  TypeList.AddObject('Char', TypeInfo(Char));
   TypeList.AddObject('CharSet', TypeInfo(CharSet));
   TypeList.AddObject('Comp', TypeInfo(Comp));
-  TypeList.AddObject('CppLongInt', TypeInfo(CppLongInt));
-  TypeList.AddObject('CppULongInt', TypeInfo(CppULongInt));
   TypeList.AddObject('Currency', TypeInfo(Currency));
   TypeList.AddObject('DelayLoadInfo', TypeInfo(DelayLoadInfo));
   TypeList.AddObject('DelayLoadProc', TypeInfo(DelayLoadProc));
   TypeList.AddObject('DelayedLoadHook', TypeInfo(DelayedLoadHook));
-  TypeList.AddObject('Double', TypeInfo(Double));
   TypeList.AddObject('EAbort', TypeInfo(EAbort));
   TypeList.AddObject('EAbstractError', TypeInfo(EAbstractError));
   TypeList.AddObject('EAccessViolation', TypeInfo(EAccessViolation));
@@ -197,11 +186,6 @@ begin
   TypeList.AddObject('Pointer', TypeInfo(Pointer));
   TypeList.AddObject('PointerArray', TypeInfo(PointerArray));
   TypeList.AddObject('RawByteString', TypeInfo(RawByteString));
-  TypeList.AddObject('Real', TypeInfo(Real));
-  TypeList.AddObject('ShortInt', TypeInfo(ShortInt));
-  TypeList.AddObject('ShortString', TypeInfo(ShortString));
-  TypeList.AddObject('Single', TypeInfo(Single));
-  TypeList.AddObject('SmallInt', TypeInfo(SmallInt));
   TypeList.AddObject('TAction', TypeInfo(TAction));
   TypeList.AddObject('TActionEvent', TypeInfo(TActionEvent));
   TypeList.AddObject('TActionLink', TypeInfo(TActionLink));
@@ -1344,17 +1328,11 @@ begin
   TypeList.AddObject('TZStreamRec', TypeInfo(TZStreamRec));
   TypeList.AddObject('UCS4Char', TypeInfo(UCS4Char));
   TypeList.AddObject('UCS4String', TypeInfo(UCS4String));
-  TypeList.AddObject('UInt64', TypeInfo(UInt64));
   TypeList.AddObject('UTF8String', TypeInfo(UTF8String));
   TypeList.AddObject('UnitEntryTable', TypeInfo(UnitEntryTable));
   TypeList.AddObject('Variant', TypeInfo(Variant));
-  TypeList.AddObject('WideString', TypeInfo(WideString));
-  TypeList.AddObject('Word', TypeInfo(Word));
-  TypeList.AddObject('WordBool', TypeInfo(WordBool));
   TypeList.AddObject('WordRec', TypeInfo(WordRec));
   TypeList.AddObject('dliNotification', TypeInfo(dliNotification));
-  TypeList.AddObject('string', TypeInfo(string));
-  TypeList.AddObject('tagSIZE', TypeInfo(tagSIZE));
 end;
 
 begin
