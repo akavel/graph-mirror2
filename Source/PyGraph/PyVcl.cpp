@@ -195,23 +195,11 @@ PyObject* InitPyVcl()
 }
 //---------------------------------------------------------------------------
 } //Namespace Python
-/*namespace Classes
-{
-//Instead of registering all classes with RegisterClass() we change GetClass()
-//to use our own LookUpClass() which is much faster
-PACKAGE TPersistentClass __fastcall FindClass(const System::UnicodeString ClassName)
-{
-	TTypeInfo *TypeInfo = LookUpClass(ClassName);
-	if(TypeInfo && TypeInfo->Kind == tkClass)
-	{
-		TMetaClass *MetaClass = GetTypeData(TypeInfo)->ClassType;
-		if(MetaClass->InheritsFrom(__classid(TPersistent)))
-			return MetaClass;
-	}
-	throw EClassNotFound(Rtlconsts_SClassNotFound, ARRAYOFCONST((ClassName)));
-}
-}*/ //namespace Classes
-/*class TComponentFinder
+
+//Workaround: Instead of registering all classes with RegisterClass() we change
+//TStream::ReadComponent() to call TComponentFinder::FindComponentClass() to
+//retrieve the meta class.
+class TComponentFinder
 {
 public:
 	void __fastcall FindComponentClass(TReader *Reader, String ClassName, TComponentClass &ComponentClass)
@@ -233,6 +221,6 @@ TComponent* __fastcall TStream::ReadComponent(TComponent *Instance)
 	Reader->OnFindComponentClass = ComponentFinder->FindComponentClass;
 	return Reader->ReadRootComponent(Instance);
 }
-}*/
+}
 //---------------------------------------------------------------------------
 

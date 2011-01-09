@@ -116,6 +116,15 @@ def ExecuteEvent(event, args):
 def GetBaseObject(o):
     return GetBaseObject(o.SWIGSharedPtrUpcast(o)) if "SWIGSharedPtrUpcast" in o.__swig_getmethods__ else o
 
+def LoadDfmFile(FileName):
+    Stream = vcl.TFileStream(FileName, 0x20)
+    Stream2 = vcl.TMemoryStream()
+    vcl.ObjectTextToBinary(Stream, Stream2)
+    Stream2.Position = 0
+    Form = vcl.TForm(None)
+    Stream2.ReadComponent(Form)
+    return Form
+
 class ChildListType(collections.MutableSequence):
     def __init__(self, node):
         self.node = GetBaseObject(node)
