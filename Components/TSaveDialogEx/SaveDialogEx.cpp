@@ -8,9 +8,11 @@
 #include "Dlgs.h"
 #include <vector>
 #include "Tokenizer.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 #pragma link "Tokenizer"
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TSaveDialogEx));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //

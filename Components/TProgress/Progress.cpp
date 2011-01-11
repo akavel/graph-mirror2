@@ -7,8 +7,10 @@
 #include "Config.h"
 #include <math.h>
 #include "Progress.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TProgress));
 static inline void ValidCtrCheck(TProgress *)
 {
 	new TProgress(NULL);

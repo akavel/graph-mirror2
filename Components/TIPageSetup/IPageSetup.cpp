@@ -7,6 +7,7 @@
 #include "IPageSetup.h"
 #include <Dlgs.h> //Contains dialog header information
 #include <algorithm>
+#include "ICompCommon.h"
 #pragma package(smart_init)
 #pragma warn -8104
 
@@ -15,6 +16,7 @@
 
 //Static varibles containing pointer to activated dialog and its canvas
 TIPageSetupDialog *TIPageSetupDialog::Dialog=NULL;
+static TRegisterClass Dummy(__classid(TIPageSetupDialog));
 //---------------------------------------------------------------------------
 //Checks if there is no pure virtual functions; Never called
 static inline TIPageSetupDialog *ValidCtrCheck()
@@ -43,7 +45,7 @@ __fastcall TIPageSetupDialog::TIPageSetupDialog(TComponent* Owner)
   FOnPaintMargins=NULL;
   FOnPaintText=NULL;
   FOnPaintStamp=NULL;
-  FOnPaintAdress=NULL;
+	FOnPaintAdress=NULL;
   FPaperWidth =0;
   FPaperHeight = 0;
   FHandle = NULL;

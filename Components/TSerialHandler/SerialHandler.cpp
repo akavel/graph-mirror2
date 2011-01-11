@@ -4,9 +4,11 @@
 #include "Config.h"
 #include "SerialHandler.h"
 #include "SerialThread.h"
+#include "ICompCommon.h"
 #include <Registry.hpp>
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TSerialHandler));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //

@@ -6,8 +6,10 @@
 #pragma hdrstop
 #include "LinkLabelEx.h"
 #include <Themes.hpp>
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TLinkLabelEx));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 static inline void ValidCtrCheck(TLinkLabelEx *)

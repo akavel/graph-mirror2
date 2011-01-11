@@ -6,16 +6,17 @@
 #include <vcl.h>
 #pragma hdrstop
 #include "IColorBox.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
 #define stdWidth 81   //The default width of control
 #define stdHeight 27  //The default height of control
 #define BORDER 3     //The number of pixels between box and focus rectangle
 
+static TRegisterClass Dummy(__classid(TIColorBox));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //
-
 static inline void ValidCtrCheck(TIColorBox *)
 {
   new TIColorBox(NULL);

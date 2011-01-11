@@ -11,6 +11,7 @@
 #define BOX_WIDTH  14
 #define BOX_SPACE   4
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TIColorSelect));
 //Table with colors used to initialize ColorList
 const int ColorTable[256] =
 {
