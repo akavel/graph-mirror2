@@ -6,8 +6,8 @@ class CircleDialog(Gui.SimpleDialog):
         Gui.SimpleDialog.__init__(self)
         self.CircleItem = CircleItem
         self.Caption = "Insert circle"
-        self.Height = 170
-        self.Width = 330
+        self.Height = 180
+        self.Width = 346
         CircleData = CircleItem.PluginData["CircleExample"] if CircleItem else ("","","")
 
         self.label1 = vcl.TLabel(None, Parent = self.panel, Caption = "Radius:", Top = 12, Left = 8)
