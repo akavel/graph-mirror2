@@ -6,7 +6,7 @@ class SimpleDialog:
         self.Position = "poMainFormCenter"
         self.BorderStyle = "bsDialog"
         self.BorderIcons = "biSystemMenu"
-        self.panel = vcl.TPanel(None, Parent=self.form, BevelOuter="bvNone", Width=self.ClientWidth, Height=self.ClientHeight - 40, Caption="", Anchors="akLeft,akTop,akRight,akBottom")
+        self.panel = vcl.TPanel(None, Parent=self.form, BevelInner="bvRaised", BevelOuter="bvLowered", Left=8, Top=8, Width=self.ClientWidth - 16, Height=self.ClientHeight - 50, Caption="", Anchors="akLeft,akTop,akRight,akBottom")
         self.button1 = vcl.TButton(None, Parent=self.form, Caption = "OK", Anchors = "akRight,akBottom", Default=True, OnClick=self.OnOk, Top=self.ClientHeight-32, Left=self.ClientWidth-176)
         if ShowCancel:
             self.button2 = vcl.TButton(None, Parent=self.form, Caption="Cancel", Anchors="akRight,akBottom", ModalResult=1, Cancel=True, Top=self.ClientHeight-32, Left=self.ClientWidth-88)
