@@ -71,6 +71,12 @@ static PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
 		PyErr_Clear();
 		String Name = PyUnicode_AsUnicode(attr_name);
 		TRttiType *Type = Context.GetType(LookUpClass(Name));
+		if(Type == NULL)
+		{
+			TClass Class = GetClass(Name);
+			if(Class)
+				Type = Context.GetType(Class);
+    }
 		if(Type != NULL)
 		{
 //		if(Class->InheritsFrom(__classid(Exception)))

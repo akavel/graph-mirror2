@@ -28,14 +28,31 @@ struct TFunctionEntry
 	TTypeInfo *Args[MaxArgCount];
 };
 //---------------------------------------------------------------------------
+template <typename T, bool IsDelphiClass>
+struct TDelphiRttiHelper
+{
+	static PTypeInfo GetTypeInfo()	{return __delphirtti (T);}
+};
+
+template <typename T>
+struct TDelphiRttiHelper<T, true>
+{
+	static PTypeInfo GetTypeInfo() {return static_cast<PTypeInfo>(__classid(T)->ClassInfo());}
+};
+
+template <typename T> inline PTypeInfo Rtti()
+{
+	return TDelphiRttiHelper<T, __is_base_of(System::TObject, T)>::GetTypeInfo();
+}
+//---------------------------------------------------------------------------
 //Warning: Don't use __delphirtti() on classes. It may make it impossible to access
 //properties on that class through RTTI. See QC #90773
 const TFunctionEntry FunctionList[] =
 {
 	{L"ShortCutToText", ShortCutToText, __delphirtti(String), __delphirtti(TShortCut)},
 	{L"TextToShortCut", TextToShortCut, __delphirtti(TShortCut), __delphirtti(String)},
-	{L"ReadComponentResFile", ReadComponentResFile, LookUpClass("TComponent"), __delphirtti(String), LookUpClass("TComponent")},
-	{L"ObjectTextToBinary", (void __fastcall (*)(TStream*, TStream*))ObjectTextToBinary, NULL, LookUpClass("TStream"), LookUpClass("TStream")},
+	{L"ReadComponentResFile", ReadComponentResFile, Rtti<TComponent>(), __delphirtti(String), Rtti<TComponent>()},
+	{L"ObjectTextToBinary", (void __fastcall (*)(TStream*, TStream*))ObjectTextToBinary, NULL, Rtti<TStream>(), Rtti<TStream>()},
 };
 //---------------------------------------------------------------------------
 struct TVclFunction

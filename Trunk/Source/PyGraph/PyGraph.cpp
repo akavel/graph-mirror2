@@ -493,8 +493,7 @@ void InitPlugins()
   _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
   if(IsPythonInstalled())
 	{
-		RegisterType(__delphirtti(TExtColorBox));
-		RegisterClass(__classid(TButton));
+		RegisterClass(__classid(TForm));
 
     Form22 = new TForm22(Application);
     Form1->ScriptDocAction->Visible = true;
@@ -535,7 +534,7 @@ void InitPlugins()
 
 			"GraphImpl.version_info = (%d,%d,%d,'%s',%d)\n"
 
-			"sys.path.append('%s/Lib')\n"
+			"sys.path.append('%s\\Lib')\n"
 			"import PyVcl\n"
 			"import vcl\n"
 			"import Graph\n"
