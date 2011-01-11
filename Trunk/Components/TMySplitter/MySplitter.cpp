@@ -5,12 +5,13 @@
 #include <vcl.h>
 #pragma hdrstop
 #include "MySplitter.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TMySplitter));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //
-
 static inline void ValidCtrCheck(TMySplitter *)
 {
   new TMySplitter(NULL);

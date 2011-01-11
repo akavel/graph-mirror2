@@ -5,8 +5,10 @@
 #include <vcl.h>
 #pragma hdrstop
 #include "PointSelect.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TPointSelect));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //

@@ -13,11 +13,13 @@
 #include <sstream>
 #include "HandleCsv.h"
 #include <algorithm>
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //#pragma resource "cursors.res"
 
 const TCursor crColCursor = static_cast<TCursor>(256); //Cursor used to select colums
 const TCursor crRowCursor = static_cast<TCursor>(257); //Cursor used to select rows
+static TRegisterClass Dummy(__classid(TGrid));
 //---------------------------------------------------------------------------
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.

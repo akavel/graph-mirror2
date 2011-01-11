@@ -5,8 +5,10 @@
 #include <shlguid.h>
 #include <shobjidl.h>
 #include "OpenPreviewDialog.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TOpenPreviewDialog));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //

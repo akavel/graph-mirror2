@@ -6,8 +6,10 @@
 #pragma hdrstop
 #include "Config.h"
 #include "ProgressForm.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TProgressForm));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //

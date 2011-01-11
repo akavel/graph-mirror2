@@ -7,11 +7,13 @@
 #include "IPrintDialog.h"
 #include "PrintForm.h"
 #include <memory>
+#include "ICompCommon.h"
 
 #pragma package(smart_init)
 
 const double InchToMillimeter = 25.4;   //Constant to multiply a lenth in inches with to get millimetres
 const double MillimeterToInch = 1/25.4; //Constant to multiply a length in millimetres to get inches
+static TRegisterClass Dummy(__classid(TIPrintDialog));
 //---------------------------------------------------------------------------
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.

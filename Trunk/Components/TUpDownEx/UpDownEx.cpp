@@ -5,8 +5,10 @@
 #include <vcl.h>
 #pragma hdrstop
 #include "UpDownEx.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TUpDownEx));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //

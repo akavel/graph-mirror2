@@ -5,8 +5,10 @@
 #include <vcl.h>
 #pragma hdrstop
 #include "ShadeSelect.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TShadeSelect));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 static inline void ValidCtrCheck(TShadeSelect *)

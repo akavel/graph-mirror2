@@ -5,8 +5,10 @@
 #include <vcl.h>
 #pragma hdrstop
 #include "MyRadioButton.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TMyRadioButton));
 static inline void ValidCtrCheck(TMyRadioButton *)
 {
   new TMyRadioButton(NULL);

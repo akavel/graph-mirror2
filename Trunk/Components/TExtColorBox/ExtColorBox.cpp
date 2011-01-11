@@ -8,8 +8,10 @@
 #include <memory>
 #include "ExtColorBox.h"
 #include "IColorSelect.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TExtColorBox));
 static TColor ColorList[] =
 {
   clBlack,

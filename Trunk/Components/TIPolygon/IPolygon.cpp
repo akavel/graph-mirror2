@@ -6,8 +6,10 @@
 #include <vcl.h>
 #pragma hdrstop
 #include "IPolygon.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TIPolygon));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //

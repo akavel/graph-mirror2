@@ -12,8 +12,10 @@
 #include <Math.hpp>
 #include <vector>
 #include "GridPanelEx.h"
+#include "ICompCommon.h"
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
+static TRegisterClass Dummy(__classid(TGridPanelEx));
 static inline void ValidCtrCheck(TGridPanelEx *)
 {
   new TGridPanelEx(NULL);
