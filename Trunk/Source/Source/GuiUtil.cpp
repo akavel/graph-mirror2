@@ -263,7 +263,7 @@ std::wstring LoadRes(short Ident, std::wstring Par1, std::wstring Par2, const st
   Par2.erase(remove(Par2.begin(), Par2.end(), L'&'));
 
   if(!Par1.empty() && Par1[Par1.size()-1] == L':')
-    Par1.erase(Par1.end());
+    Par1.erase(Par1.end()-1);
 
   boost::wformat fmter(ResStr);
   fmter.exceptions(boost::io::all_error_bits ^ boost::io::too_many_args_bit);
