@@ -207,11 +207,15 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void TForm3::RangeCheck(bool Condition, TWinControl *WinControl, const String &Str)
 {
-  if(!Condition)
-  {
-    PageControl1->ActivePage = dynamic_cast<TTabSheet*>(WinControl->Parent);
-    WinControl->SetFocus();
-    MessageBox(Str, LoadRes(RES_ERROR_IN_VALUE));
+	if(!Condition)
+	{
+		for(TWinControl *Parent = WinControl->Parent; Parent != NULL; Parent = Parent->Parent)
+			if(TTabSheet *TabSheet = dynamic_cast<TTabSheet*>(Parent))
+			{
+				PageControl1->ActivePage = TabSheet;
+				WinControl->SetFocus();
+			}
+		MessageBox(Str, LoadRes(RES_ERROR_IN_VALUE));
     throw EAbort("");
   }
 }
