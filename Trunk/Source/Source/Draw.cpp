@@ -466,18 +466,18 @@ void TDraw::DrawAxes()
     //to have one pixel in difference while they actually should be on top of each other.
     for(double x2 = MinTickPixel; x <= MaxPixel; x2 += TickPixelScl)
     {
-      for(; x < x2 + 1; x += GridPixelScl)
-        //Don't show at or beside axis (when scaled it might be moved a pixel or two)
-        if(std::abs(x - xPixelCross) > 1)
-          if(Axes.xAxis.LogScl)
-            xGridMajor.push_back(x + 0.5);
-          else
-            xGridMinor.push_back(x + 0.5);
+			for(; x < x2 + 1; x += GridPixelScl)
+				//Don't show at or beside axis (when scaled it might be moved a pixel or two)
+				if(std::abs(x - xPixelCross) > 1)
+					if(Axes.xAxis.LogScl)
+						xGridMajor.push_back(x + 0.5);
+					else
+						xGridMinor.push_back(x + 0.5);
 
-      if(x < x2 + 1 && x> x2 - 1)
+			if(x < x2 + 1 && x > x2 - 1)
         x += GridPixelScl;
 
-      if(ShowGridTick && x2 < MaxPixel)
+      if(ShowGridTick && x2 > AxesRect.Left && x2 < MaxPixel)
         //Draw solid lines instead of ticks
         xGridMajor.push_back(x2 + 0.5);
     }
@@ -497,38 +497,38 @@ void TDraw::DrawAxes()
 
   if(Axes.yAxis.ShowGrid || Axes.GridStyle == gsDots)
   {
-    double GridMin = GetMinValue(Axes.yAxis.GridUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
-    double GridPixelScl = yScale * (Axes.yAxis.LogScl ? std::log(Axes.yAxis.GridUnit) : Axes.yAxis.GridUnit);
+		double GridMin = GetMinValue(Axes.yAxis.GridUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
+		double GridPixelScl = yScale * (Axes.yAxis.LogScl ? std::log(Axes.yAxis.GridUnit) : Axes.yAxis.GridUnit);
 
-    bool ShowGridTick = !Axes.yAxis.LogScl && Axes.yAxis.ShowTicks && Axes.yAxis.TickUnit > Axes.yAxis.GridUnit;
-    double MaxPixel = AxesRect.Top + Size(5);
-    double MinTickPixel = ShowGridTick ? yPointExact(yTickMin) : MaxPixel;
-    double TickPixelScl = Axes.yAxis.TickUnit * yScale;
-    double y = yPointExact(GridMin);
+		bool ShowGridTick = !Axes.yAxis.LogScl && Axes.yAxis.ShowTicks && Axes.yAxis.TickUnit > Axes.yAxis.GridUnit;
+		double MaxPixel = AxesRect.Top + Size(5);
+		double MinTickPixel = ShowGridTick ? yPointExact(yTickMin) : MaxPixel;
+		double TickPixelScl = Axes.yAxis.TickUnit * yScale;
+		double y = yPointExact(GridMin);
 
-    //Draw dotted grid lines. If Tick unit is greater than the Grid unit, the ticks are drawn as solid
-    //lines from one side to the other. A grid line is not drawn if it is within one pixel from a
-    //grid line. This is done to avoid rounding problems where tick lines and grid lines are calculated
-    //to have one pixel in difference while they actually should be on top of each other.
-    for(double y2 = MinTickPixel; y >= MaxPixel; y2 -= TickPixelScl)
-    {
-      for(; y > y2 + 1 && y >= MaxPixel; y -= GridPixelScl)
-        //Don't show at or beside axis (when scaled it might be moved a pixel or two)
-        if(std::abs(y - yPixelCross) > 1 && y < AxesRect.Bottom)
-          if(Axes.yAxis.LogScl)
-            yGridMajor.push_back(y + 0.5);
-          else
-            yGridMinor.push_back(y + 0.5);
+		//Draw dotted grid lines. If Tick unit is greater than the Grid unit, the ticks are drawn as solid
+		//lines from one side to the other. A grid line is not drawn if it is within one pixel from a
+		//grid line. This is done to avoid rounding problems where tick lines and grid lines are calculated
+		//to have one pixel in difference while they actually should be on top of each other.
+		for(double y2 = MinTickPixel; y >= MaxPixel; y2 -= TickPixelScl)
+		{
+			for(; y > y2 - 1 && y >= MaxPixel; y -= GridPixelScl)
+				//Don't show at or beside axis (when scaled it might be moved a pixel or two)
+				if(std::abs(y - yPixelCross) > 1 && y < AxesRect.Bottom)
+					if(Axes.yAxis.LogScl)
+						yGridMajor.push_back(y + 0.5);
+					else
+						yGridMinor.push_back(y + 0.5);
 
-      if(y < y2 + 1 && y > y2 - 1)
-        y -= GridPixelScl;
+			if(y < y2 + 1 && y > y2 - 1)
+				y -= GridPixelScl;
 
-      if(ShowGridTick && y2 > MaxPixel)
-        //Draw solid lines instead of ticks
-        yGridMajor.push_back(y2 + 0.5);
-    }
+			if(ShowGridTick && y2 > MaxPixel)
+				//Draw solid lines instead of ticks
+				yGridMajor.push_back(y2 + 0.5);
+		}
 
-    if(Axes.yAxis.LogScl)
+		if(Axes.yAxis.LogScl)
     {
       for(double y = GridMin / Axes.yAxis.GridUnit; y < Axes.yAxis.Max; y *= Axes.yAxis.GridUnit)
         for(unsigned n = 1; n < 9; n++)
@@ -654,7 +654,7 @@ void TDraw::DrawAxes()
       Context.DrawPolygon(RightArrow, 4);
 
     //Only show ticks if we have not already drawn a solid grid line instead
-    if(Axes.xAxis.ShowTicks && (!Axes.xAxis.ShowGrid || Axes.xAxis.TickUnit <= Axes.xAxis.GridUnit))
+    if(Axes.xAxis.ShowTicks && (!Axes.xAxis.ShowGrid || Axes.GridStyle != gsLines || Axes.xAxis.TickUnit <= Axes.xAxis.GridUnit))
       //Show coordinate points on x-axis
       for(double x = xPointExact(xTickMin); x < AxesRect.Right - Size(5); x += xPixelScl)
         //Don't show at or beside axis (when scaled it might be moved a pixel or two)
@@ -687,7 +687,7 @@ void TDraw::DrawAxes()
 
     double yPixelScl = (Axes.yAxis.LogScl ? std::log(Axes.yAxis.TickUnit) : Axes.yAxis.TickUnit) * yScale;
     //Only show ticks if we have not already drawn a solid grid line instead
-    if(Axes.yAxis.ShowTicks && (!Axes.yAxis.ShowGrid || Axes.yAxis.TickUnit <= Axes.yAxis.GridUnit))
+    if(Axes.yAxis.ShowTicks && (!Axes.yAxis.ShowGrid || Axes.GridStyle != gsLines || Axes.yAxis.TickUnit <= Axes.yAxis.GridUnit))
       //Show coordinate points on the y-axis
       for(double y = yPointExact(yTickMin); y > AxesRect.Top + Size(5); y -= yPixelScl)
         if(std::abs(y - yPixelCross) > 1 &&  //Don't show at or beside axis (when scaled it might be moved a pixel or two)
