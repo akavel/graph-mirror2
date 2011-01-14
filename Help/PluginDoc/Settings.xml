@@ -170,6 +170,7 @@
 					<term><classname>TAxis</classname>.<property>ShowLabel</property></term>
 					<listitem>
 						<para>
+							If True the text specified in <property>Label</property> will be shown next to the axis.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -178,6 +179,7 @@
 					<term><classname>TAxis</classname>.<property>ShowNumbers</property></term>
 					<listitem>
 						<para>
+							If True numbers will be shown along the axis at the position of the tick marks.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -186,6 +188,9 @@
 					<term><classname>TAxis</classname>.<property>ShowTicks</property></term>
 					<listitem>
 						<para>
+							Id True, tick marks are shown along the axis.
+							The distance between the tick marks are given in <property>TickUnit</property>.
+							If <property>LogScl</property> is True, the grid lines are shown at <property>TickUnit</property><superscript>N</superscript> where N is an integer.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -194,6 +199,10 @@
 					<term><classname>TAxis</classname>.<property>ShowGrid</property></term>
 					<listitem>
 						<para>
+							If True, grid lines are shown perpendicular to the axis.
+							The distance between the grid lines are given in <property>GridUnit</property>.
+							If <property>LogScl</property> is True, the grid lines are shown at <property>GridUnit</property><superscript>N</superscript> where N is an integer,
+							with minor grid lines between the major grid lines.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -202,6 +211,7 @@
 					<term><classname>TAxis</classname>.<property>AutoTick</property></term>
 					<listitem>
 						<para>
+							 If True the value in <property>TickUnit</property> will be automatically calculated every time there is a change.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -210,6 +220,7 @@
 					<term><classname>TAxis</classname>.<property>AutoGrid</property></term>
 					<listitem>
 						<para>
+							 If True the value in <property>GridUnit</property> will be automatically calculated every time there is a change.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -218,6 +229,7 @@
 					<term><classname>TAxis</classname>.<property>Label</property></term>
 					<listitem>
 						<para>
+							This specifies a text string that will be shown next to the axis when <property>ShowLabel</property> is True.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -226,6 +238,7 @@
 					<term><classname>TAxis</classname>.<property>AxisCross</property></term>
 					<listitem>
 						<para>
+							A floating point value indicating the axis crosses the other axis.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -234,6 +247,8 @@
 					<term><classname>TAxis</classname>.<property>TickUnit</property></term>
 					<listitem>
 						<para>
+							The distance between the tick marks on the axis.
+							If <property>AutoTick</property> is True, this value will be automatically calculated every time the image is updated.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -242,6 +257,8 @@
 					<term><classname>TAxis</classname>.<property>GridUnit</property></term>
 					<listitem>
 						<para>
+							The distance between grid lines on the axis.
+							If <property>AutoGrid</property> is True, this value will be automatically calculated every time the image is updated.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -250,6 +267,7 @@
 					<term><classname>TAxis</classname>.<property>Visible</property></term>
 					<listitem>
 						<para>
+							When True the axis is shown in the image.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -258,6 +276,7 @@
 					<term><classname>TAxis</classname>.<property>ShowPositiveArrow</property></term>
 					<listitem>
 						<para>
+							When True an arrow is shown in the positive end of the axis.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -266,6 +285,18 @@
 					<term><classname>TAxis</classname>.<property>ShowNegativeArrow</property></term>
 					<listitem>
 						<para>
+							When True an arrow is shown in the negative end of the axis.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TAxis</classname>.<property>NumberPlacement</property></term>
+					<listitem>
+						<para>
+							This specifies where the numbers along the axis is shown relative to the tick marks.
+							For the x-axis, the numbers can be centered below (<classname>Graph.npCenter</classname>) or shown below a little to the left of the tick marks (<classname>Graph.npBefore</classname>).
+							For the y-axis, the numbers can be centered to the left of the tick marks (<classname>Graph.npCenter</classname>) or shown below to the left (<classname>Graph.npBefore</classname>).
 						</para>
 					</listitem>
 				</varlistentry>
@@ -296,121 +327,140 @@
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>AxesColor</property></term>
+					<term><classname>TAxes</classname>.<property>AxesColor</property></term>
 					<listitem>
 						<para>
+							This specifies the color of the axes. See the <ulink url="http://docwiki.embarcadero.com/VCL/en/Graphics.TColor">VCL documentation</ulink>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>GridColor</property></term>
+					<term><classname>TAxes</classname>.<property>GridColor</property></term>
 					<listitem>
 						<para>
+							This specifies the color of the grid lines. See the <ulink url="http://docwiki.embarcadero.com/VCL/en/Graphics.TColor">VCL documentation</ulink>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>BackgroundColor</property></term>
+					<term><classname>TAxes</classname>.<property>BackgroundColor</property></term>
 					<listitem>
 						<para>
+							This specifies the background color of the image. See the <ulink url="http://docwiki.embarcadero.com/VCL/en/Graphics.TColor">VCL documentation</ulink>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>NumberFont</property></term>
+					<term><classname>TAxes</classname>.<property>NumberFont</property></term>
 					<listitem>
 						<para>
+							This specifies the font used to write the numbers along the axes. See the <ulink url="http://docwiki.embarcadero.com/VCL/en/Graphics.TFont">VCL documentation</ulink>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>LabelFont</property></term>
+					<term><classname>TAxes</classname>.<property>LabelFont</property></term>
 					<listitem>
 						<para>
+							This specifies the font used to write the labels shown at the end of the axes. See the <ulink url="http://docwiki.embarcadero.com/VCL/en/Graphics.TFont">VCL documentation</ulink>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>LegendFont</property></term>
+					<term><classname>TAxes</classname>.<property>LegendFont</property></term>
 					<listitem>
 						<para>
+							This specifies the font used to write the text in the legend. See the <ulink url="http://docwiki.embarcadero.com/VCL/en/Graphics.TFont">VCL documentation</ulink>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>TitleFont</property></term>
+					<term><classname>TAxes</classname>.<property>TitleFont</property></term>
 					<listitem>
 						<para>
+							This specifies the font used to write the title above the coordinate system. See the <ulink url="http://docwiki.embarcadero.com/VCL/en/Graphics.TFont">VCL documentation</ulink>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>Title</property></term>
+					<term><classname>TAxes</classname>.<property>Title</property></term>
 					<listitem>
 						<para>
+							This specifies the title shown above the coordinate system. Set this to an empty string to not show a title.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>ShowLegend</property></term>
+					<term><classname>TAxes</classname>.<property>ShowLegend</property></term>
 					<listitem>
 						<para>
+							When True the legend will be shown in the coordinate system.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>Trigonometry</property></term>
+					<term><classname>TAxes</classname>.<property>Trigonometry</property></term>
 					<listitem>
 						<para>
+							This specifies if trigonometric functions calculate in radians or degrees. Valid values are <classname>Graph.Radian</classname> and <classname>Graph.Degree</classname>
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>AxesStyle</property></term>
+					<term><classname>TAxes</classname>.<property>AxesStyle</property></term>
 					<listitem>
 						<para>
+							Indicates how the axes are show. Valid values are <classname>Graph.asNone</classname>, <classname>Graph.asCrossed</classname> and <classname>Graph.asBoxed</classname>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>LegendPlacement</property></term>
+					<term><classname>TAxes</classname>.<property>LegendPlacement</property></term>
 					<listitem>
 						<para>
+							This specifies where the legend is placed in the image.
+							Valid values are <classname>Graph.lpCustom</classname>, <classname>Graph.lpTopRight</classname>, <classname>Graph.lpBottomRight</classname>, <classname>Graph.lpTopLeft</classname> and	<classname>Graph.lpBottomLeft</classname>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>LegendPos</property></term>
+					<term><classname>TAxes</classname>.<property>LegendPos</property></term>
 					<listitem>
 						<para>
+							This is a tuple with the (x,y) coordinates of the top left coorner of the legend.
+							It is only used when <property>LegendPlacement</property> is <classname>Graph.lpCustom</classname>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>CalcComplex</property></term>
+					<term><classname>TAxes</classname>.<property>CalcComplex</property></term>
 					<listitem>
 						<para>
+							When True Graph will use complex numbers when plotting functions, which will slow down the plotting.
+							It does not affect other evaluations than the plotting of functions.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term><classname>TAxis</classname>.<property>GridStyle</property></term>
+					<term><classname>TAxes</classname>.<property>GridStyle</property></term>
 					<listitem>
 						<para>
+							Indicates how the grid is shown.
+							Valid values are <classname>Graph.gsLines</classname>, the default which is shown as lines, and <classname>Graph.gsDots</classname>, which shows a dot where the grid cross.
 						</para>
 					</listitem>
 				</varlistentry>
