@@ -11,6 +11,22 @@ import vcl
 import xmlrpc.client
 import getopt
 
+# enum values
+Radian = Settings.Radian
+Degree = Settings.Degree
+asNone = Settings.asNone
+asCrossed = Settings.asCrossed
+asBoxed = Settings.asBoxed
+lpCustom = Settings.lpCustom
+lpTopRight = Settings.lpTopRight
+lpBottomRight = Settings.lpBottomRight
+lpTopLeft = Settings.lpTopLeft
+lpBottomLeft = Settings.lpBottomLeft
+npCenter = Settings.npCenter
+npBefore = Settings.npBefore
+gsLines = Settings.gsLines
+gsDots = Settings.gsDots
+
 Axes = Settings.GetAxes()
 Property = Settings.Property
 Redraw = Data.Redraw
