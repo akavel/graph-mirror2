@@ -35,7 +35,7 @@
 }
 
 %typemap(out) TFont* {
-  $result = PyInt_FromLong((long)$1);
+  $result = Python::VclObject_Create($1, false);
 }
 
 %typemap(out) boost::shared_ptr<TGraphElem>

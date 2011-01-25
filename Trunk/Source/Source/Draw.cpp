@@ -307,7 +307,7 @@ unsigned TDraw::FindLabels()
         if(yPixel + NumberHeight / 2 < Height && yPixel - NumberHeight / 2 > AxesRect.Top)
         {
           TLabelInfo LabelInfo;
-          LabelInfo.Label = MakeNumber(y, Axes.yAxis.MultiplyOfPi);
+					LabelInfo.Label = MakeNumber(y, Axes.yAxis.MultipleOfPi);
           LabelInfo.Width = Context.GetTextWidth(LabelInfo.Label);
           LabelInfo.Pos = yPixel;
           if(Axes.yAxis.NumberPlacement == npCenter)
@@ -349,10 +349,10 @@ void TDraw::PreCalcXAxis()
       Axes.xAxis.TickUnit = std::pow10(std::ceil(Dist));
     else
     {
-      if(Axes.xAxis.MultiplyOfPi)
+			if(Axes.xAxis.MultipleOfPi)
         Dist /= M_PI;
       Axes.xAxis.TickUnit = AdjustUnit(Dist);
-      if(Axes.xAxis.MultiplyOfPi)
+			if(Axes.xAxis.MultipleOfPi)
         Axes.xAxis.TickUnit *= M_PI;
     }
   }
@@ -389,10 +389,10 @@ void TDraw::PreCalcYAxis()
       Axes.yAxis.TickUnit = std::pow10(std::ceil(Dist));
     else
     {
-      if(Axes.yAxis.MultiplyOfPi)
+			if(Axes.yAxis.MultipleOfPi)
         Dist /= M_PI;
       Axes.yAxis.TickUnit = AdjustUnit(Dist);
-      if(Axes.yAxis.MultiplyOfPi)
+			if(Axes.yAxis.MultipleOfPi)
         Axes.yAxis.TickUnit *= M_PI;
     }
   }
@@ -590,7 +590,7 @@ void TDraw::DrawAxes()
         //Check that we are not showing a number at the axis when they are crossed
         if(Axes.AxesStyle == asBoxed || std::abs(xPixel - xPixelCross) > 1)
         {
-          std::wstring Str = MakeNumber(x, Axes.xAxis.MultiplyOfPi);
+          std::wstring Str = MakeNumber(x, Axes.xAxis.MultipleOfPi);
           int TextWidth = Context.GetTextWidth(Str);
 
           //Check if we are not too close to the sides of the window

@@ -10,6 +10,7 @@
 #define WRAP_PYOBJECTS
 #include "PythonBind.h"
 #include "PyGraph.h"
+#include "PyVclObject.h"
 #pragma warn -8060
 %}
 
@@ -34,7 +35,7 @@ struct TAxis
 {
   double Min;
   double Max;
-  bool LogScl, MultiplyOfPi;
+  bool LogScl, MultipleOfPi;
   bool ShowLabel, ShowNumbers, ShowTicks, ShowGrid;
   bool AutoTick, AutoGrid;
   std::wstring Label;

@@ -15,6 +15,7 @@
 #define WRAP_PYOBJECTS
 #include "PythonBind.h"
 #include "PyGraph.h"
+#include "PyVclObject.h"
 #pragma warn -8060
 
 
@@ -3398,7 +3399,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_TAxis_MultiplyOfPi_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_TAxis_MultipleOfPi_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TAxis *arg1 = (Graph::TAxis *) 0 ;
   bool arg2 ;
@@ -3409,18 +3410,18 @@ SWIGINTERN PyObject *_wrap_TAxis_MultiplyOfPi_set(PyObject *SWIGUNUSEDPARM(self)
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:TAxis_MultiplyOfPi_set",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OO:TAxis_MultipleOfPi_set",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxis, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_MultiplyOfPi_set" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_MultipleOfPi_set" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxis * >(argp1);
   ecode2 = SWIG_AsVal_bool(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxis_MultiplyOfPi_set" "', argument " "2"" of type '" "bool""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TAxis_MultipleOfPi_set" "', argument " "2"" of type '" "bool""'");
   } 
   arg2 = static_cast< bool >(val2);
-  if (arg1) (arg1)->MultiplyOfPi = arg2;
+  if (arg1) (arg1)->MultipleOfPi = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -3428,7 +3429,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_TAxis_MultiplyOfPi_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_TAxis_MultipleOfPi_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Graph::TAxis *arg1 = (Graph::TAxis *) 0 ;
   void *argp1 = 0 ;
@@ -3436,13 +3437,13 @@ SWIGINTERN PyObject *_wrap_TAxis_MultiplyOfPi_get(PyObject *SWIGUNUSEDPARM(self)
   PyObject * obj0 = 0 ;
   bool result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:TAxis_MultiplyOfPi_get",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:TAxis_MultipleOfPi_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Graph__TAxis, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_MultiplyOfPi_get" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TAxis_MultipleOfPi_get" "', argument " "1"" of type '" "Graph::TAxis *""'"); 
   }
   arg1 = reinterpret_cast< Graph::TAxis * >(argp1);
-  result = (bool) ((arg1)->MultiplyOfPi);
+  result = (bool) ((arg1)->MultipleOfPi);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
   return resultobj;
 fail:
@@ -4468,7 +4469,7 @@ SWIGINTERN PyObject *_wrap_TAxes_NumberFont_get(PyObject *SWIGUNUSEDPARM(self), 
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
   result = (TFont *)(TFont *) ((arg1)->NumberFont);
   {
-    resultobj = PyInt_FromLong((long)result);
+    resultobj = Python::VclObject_Create(result, false);
   }
   return resultobj;
 fail:
@@ -4492,7 +4493,7 @@ SWIGINTERN PyObject *_wrap_TAxes_LabelFont_get(PyObject *SWIGUNUSEDPARM(self), P
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
   result = (TFont *)(TFont *) ((arg1)->LabelFont);
   {
-    resultobj = PyInt_FromLong((long)result);
+    resultobj = Python::VclObject_Create(result, false);
   }
   return resultobj;
 fail:
@@ -4516,7 +4517,7 @@ SWIGINTERN PyObject *_wrap_TAxes_LegendFont_get(PyObject *SWIGUNUSEDPARM(self), 
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
   result = (TFont *)(TFont *) ((arg1)->LegendFont);
   {
-    resultobj = PyInt_FromLong((long)result);
+    resultobj = Python::VclObject_Create(result, false);
   }
   return resultobj;
 fail:
@@ -4599,7 +4600,7 @@ SWIGINTERN PyObject *_wrap_TAxes_TitleFont_get(PyObject *SWIGUNUSEDPARM(self), P
   arg1 = reinterpret_cast< Graph::TAxes * >(argp1);
   result = (TFont *)(TFont *) ((arg1)->TitleFont);
   {
-    resultobj = PyInt_FromLong((long)result);
+    resultobj = Python::VclObject_Create(result, false);
   }
   return resultobj;
 fail:
@@ -5657,7 +5658,7 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultPointLabelFont_get(PyObject *SWIGUNU
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
   result = (TFont *) ((arg1)->DefaultPointLabelFont);
   {
-    resultobj = PyInt_FromLong((long)result);
+    resultobj = Python::VclObject_Create(result, false);
   }
   return resultobj;
 fail:
@@ -5711,7 +5712,7 @@ SWIGINTERN PyObject *_wrap_TProperty_DefaultLabelFont_get(PyObject *SWIGUNUSEDPA
   arg1 = reinterpret_cast< Graph::TProperty * >(argp1);
   result = (TFont *) ((arg1)->DefaultLabelFont);
   {
-    resultobj = PyInt_FromLong((long)result);
+    resultobj = Python::VclObject_Create(result, false);
   }
   return resultobj;
 fail:
@@ -6984,8 +6985,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TAxis_Max_get", _wrap_TAxis_Max_get, METH_VARARGS, NULL},
 	 { (char *)"TAxis_LogScl_set", _wrap_TAxis_LogScl_set, METH_VARARGS, NULL},
 	 { (char *)"TAxis_LogScl_get", _wrap_TAxis_LogScl_get, METH_VARARGS, NULL},
-	 { (char *)"TAxis_MultiplyOfPi_set", _wrap_TAxis_MultiplyOfPi_set, METH_VARARGS, NULL},
-	 { (char *)"TAxis_MultiplyOfPi_get", _wrap_TAxis_MultiplyOfPi_get, METH_VARARGS, NULL},
+	 { (char *)"TAxis_MultipleOfPi_set", _wrap_TAxis_MultipleOfPi_set, METH_VARARGS, NULL},
+	 { (char *)"TAxis_MultipleOfPi_get", _wrap_TAxis_MultipleOfPi_get, METH_VARARGS, NULL},
 	 { (char *)"TAxis_ShowLabel_set", _wrap_TAxis_ShowLabel_set, METH_VARARGS, NULL},
 	 { (char *)"TAxis_ShowLabel_get", _wrap_TAxis_ShowLabel_get, METH_VARARGS, NULL},
 	 { (char *)"TAxis_ShowNumbers_set", _wrap_TAxis_ShowNumbers_set, METH_VARARGS, NULL},
