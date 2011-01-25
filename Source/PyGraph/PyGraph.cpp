@@ -399,12 +399,12 @@ static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args, PyObject *Kwd
   try
   {
     TImageOptions Options(Form1->Image1->Width, Form1->Image1->Height);
-    Options.LoadSettings();
-    static char *kwlist[] = {"FileType", "Width", "Height", NULL};
+		Options.LoadSettings();
+		static char *kwlist[] = {"FileName", "FileType", "Width", "Height", NULL};
 
-    const wchar_t *FileName = NULL;
-    int FileType = -1, Width = -1, Height = -1;
-    if(!PyArg_ParseTupleAndKeywords(Args, Kwds, "u|iii", kwlist, &FileType, &Width, &Height))
+		const wchar_t *FileName = NULL;
+		int FileType = -1, Width = -1, Height = -1;
+		if(!PyArg_ParseTupleAndKeywords(Args, Kwds, "u|iii", kwlist, &FileName, &FileType, &Width, &Height))
       return NULL;
 
     if(Width == 0 || Height == 0)
@@ -416,7 +416,7 @@ static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args, PyObject *Kwd
       Options.CustomHeight = Height;
     }
 
-    if(FileType == -1)
+		if(FileType != -1)
       SaveAsImage(FileName, FileType, Options);
     else
       SaveAsImage(FileName, Options);
@@ -456,14 +456,14 @@ static PyModuleDef GraphModuleDef =
   GraphMethods,
   NULL,
   NULL,
-  NULL,
+	NULL,
 	NULL,
 };
 //---------------------------------------------------------------------------
 void ShowPythonConsole(bool Visible)
 {
-  if(Form22)
-    Form22->Visible = Visible;
+	if(Form22)
+		Form22->Visible = Visible;
 }
 //---------------------------------------------------------------------------
 PyObject* InitGraphImpl()
@@ -471,6 +471,10 @@ PyObject* InitGraphImpl()
 	PyObject *GraphImpl = PyModule_Create(&GraphModuleDef);
 	PyModule_AddObject(GraphImpl, "Form1", VclObject_Create(Form1, false));
 	PyModule_AddObject(GraphImpl, "Form22", VclObject_Create(Form22, false));
+	PyEFuncError = PyErr_NewException("Graph.EFuncError", NULL, NULL);
+	PyEGraphError = PyErr_NewException("Graph.EGraphError", NULL, NULL);
+	PyObject_SetAttrString(GraphImpl, "EFuncError", PyEFuncError);
+	PyObject_SetAttrString(GraphImpl, "EGraphError", PyEGraphError);
 	return GraphImpl;
 }
 //---------------------------------------------------------------------------
@@ -483,7 +487,7 @@ _inittab Modules[] =
 	{"PyVcl", InitPyVcl},
 	{"_Settings", PyInit__Settings},
 	{"_Data", PyInit__Data},
-  {"_Utility", PyInit__Utility},
+	{"_Utility", PyInit__Utility},
   {NULL, NULL}
 };
 //---------------------------------------------------------------------------
@@ -497,23 +501,20 @@ void InitPlugins()
 
     Form22 = new TForm22(Application);
     Form1->ScriptDocAction->Visible = true;
-    _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
-    PyImport_ExtendInittab(Modules);
-    static String ExeName = Application->ExeName; //Py_SetProgramName() requires variable to be static
+		_control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+		PyImport_ExtendInittab(Modules);
+		static String ExeName = Application->ExeName; //Py_SetProgramName() requires variable to be static
 		Py_SetProgramName(ExeName.c_str());
-    PyEval_InitThreads();
-    Py_Initialize();
-    int argc;
-    wchar_t **argv = CommandLineToArgvW(GetCommandLine(), &argc);
-    PySys_SetArgv(argc, argv);
-    LocalFree(argv);
+		PyEval_InitThreads();
+		Py_Initialize();
+		int argc;
+		wchar_t **argv = CommandLineToArgvW(GetCommandLine(), &argc);
+		PySys_SetArgv(argc, argv);
+		LocalFree(argv);
 
-    PyEFuncError = PyErr_NewException("Graph.EFuncError", NULL, NULL);
-    PyEGraphError = PyErr_NewException("Graph.EGraphError", NULL, NULL);
-
-    TVersionInfo Info;
-    TVersion Version = Info.FileVersion();
-    const char *BetaFinal = Info.FileFlags() & ffDebug ? "beta" : "final";
+		TVersionInfo Info;
+		TVersion Version = Info.FileVersion();
+		const char *BetaFinal = Info.FileFlags() & ffDebug ? "beta" : "final";
 		AnsiString BaseDir = GetRegValue(REGISTRY_KEY, L"BaseDir", HKEY_CURRENT_USER, ExtractFileDir(Application->ExeName).c_str()).c_str();
 		AnsiString PythonCommands = AnsiString().sprintf(
 			"import sys\n"

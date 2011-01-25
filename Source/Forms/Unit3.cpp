@@ -37,7 +37,7 @@ __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
   CheckBox5->Checked = Axes.xAxis.AutoGrid;
   CheckBox6->Checked = Axes.xAxis.ShowTicks;
   CheckBox7->Checked = Axes.xAxis.ShowGrid;
-  CheckBox17->Checked = Axes.xAxis.MultiplyOfPi;
+	CheckBox17->Checked = Axes.xAxis.MultipleOfPi;
 
   Edit7->Text = RoundToStr(Axes.yAxis.Min, 8);
   Edit8->Text = RoundToStr(Axes.yAxis.Max, 8);
@@ -52,7 +52,7 @@ __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
   CheckBox12->Checked = Axes.yAxis.AutoGrid;
   CheckBox13->Checked = Axes.yAxis.ShowTicks;
   CheckBox14->Checked = Axes.yAxis.ShowGrid;
-  CheckBox18->Checked = Axes.yAxis.MultiplyOfPi;
+	CheckBox18->Checked = Axes.yAxis.MultipleOfPi;
 
   Edit13->Text = Axes.Title.c_str();
   TitleFont->Assign(Axes.TitleFont);
@@ -160,7 +160,7 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
   xAxis.AutoGrid = CheckBox5->Checked;
   xAxis.ShowTicks = CheckBox6->Checked;
   xAxis.ShowGrid = CheckBox7->Checked;
-  xAxis.MultiplyOfPi = CheckBox17->Checked;
+	xAxis.MultipleOfPi = CheckBox17->Checked;
 
   yAxis.LogScl = CheckBox8->Checked;
   yAxis.ShowNumbers = CheckBox9->Checked;
@@ -170,7 +170,7 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
   yAxis.AutoGrid = CheckBox12->Checked;
   yAxis.ShowTicks = CheckBox13->Checked;
   yAxis.ShowGrid = CheckBox14->Checked;
-  yAxis.MultiplyOfPi = CheckBox18->Checked;
+	yAxis.MultipleOfPi = CheckBox18->Checked;
 
   TAxes &Axes = Data.Axes;
   Axes.xAxis = xAxis;

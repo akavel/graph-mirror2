@@ -22,7 +22,7 @@ struct TAxis
 {
   double Min;
   double Max;
-  bool LogScl, MultiplyOfPi;
+  bool LogScl, MultipleOfPi;
   bool ShowLabel, ShowNumbers, ShowTicks, ShowGrid;
   bool AutoTick, AutoGrid;
   std::wstring Label;

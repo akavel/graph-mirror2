@@ -39,6 +39,8 @@ Py_ssize_t VclArrayProperty_Length(TVclArrayProperty *self)
 			return static_cast<TComponent*>(self->Instance)->ComponentCount;
 		case 4:
 			return static_cast<TWinControl*>(self->Instance)->ControlCount;
+		case 5:
+			return static_cast<TMenuItem*>(self->Instance)->Count;
 	}
 	return 0;
 }
@@ -62,6 +64,8 @@ PyObject* VclArrayProperty_Item(TVclArrayProperty *self, Py_ssize_t i)
 				return ToPyObject(static_cast<TComponent*>(self->Instance)->Components[i]);
 			case 4:
 				return ToPyObject(static_cast<TWinControl*>(self->Instance)->Controls[i]);
+			case 5:
+				return ToPyObject(static_cast<TMenuItem*>(self->Instance)->Items[i]);
 		}
 	}
 	catch(...)
@@ -185,6 +189,8 @@ PyObject* VclArrayProperty_Create(TObject *Instance, const String &Name)
 		PropertyId = 3;
 	else if(Name == "Controls" && dynamic_cast<TWinControl*>(Instance))
 		PropertyId =4;
+	else if(Name == "Items" && dynamic_cast<TMenuItem*>(Instance))
+	  PropertyId = 5;
 	else
 		return NULL;
 	TVclArrayProperty *VclProperty = PyObject_New(TVclArrayProperty, &VclArrayPropertyType);

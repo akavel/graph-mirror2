@@ -17,7 +17,7 @@
 #include <ComCtrls.hpp>
 #include <ExtCtrls.hpp>
 //---------------------------------------------------------------------------
-enum TImageFormat {ifMetafile = 1, /*ifPostScript,*/ ifSvg, ifBitmap, ifPng, ifJpeg, ifPdf};
+enum TImageFormat {ifMetafile = 1, ifSvg, ifBitmap, ifPng, ifJpeg, ifPdf};
 
 class TForm18 : public TForm
 {

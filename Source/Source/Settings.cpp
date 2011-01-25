@@ -24,7 +24,7 @@ TGuiSettings GuiSettings;
 ///////////
 // TAxes //
 ///////////
-TAxis::TAxis() : Min(-10), Max(10), LogScl(false), ShowGrid(false), MultiplyOfPi(false),
+TAxis::TAxis() : Min(-10), Max(10), LogScl(false), ShowGrid(false), MultipleOfPi(false),
   ShowLabel(true), ShowNumbers(true), ShowTicks(true), AutoTick(true), AutoGrid(true),
   AxisCross(0), TickUnit(1), GridUnit(1), NumberPlacement(npCenter),
   Visible(true), ShowPositiveArrow(true), ShowNegativeArrow(false)
@@ -53,7 +53,7 @@ void TAxis::WriteToIni(TConfigFileSection &Section, const std::wstring &Prefix) 
   Section.Write(Prefix + L"Label", Label, Prefix);
   Section.Write(Prefix + L"ShowNumbers", ShowNumbers, true);
   Section.Write(Prefix + L"AxisCross", AxisCross, 0.0);
-  Section.Write(Prefix + L"MultiplyOfPi", MultiplyOfPi, false);
+	Section.Write(Prefix + L"MultiplyOfPi", MultipleOfPi, false);
   Section.Write(Prefix + L"Visible", Visible, true);
   Section.Write(Prefix + L"ShowPositiveArrow", ShowPositiveArrow, true);
   Section.Write(Prefix + L"ShowNegativeArrow", ShowNegativeArrow, false);
@@ -99,7 +99,7 @@ void TAxis::ReadFromIni(const TConfigFileSection &Section, const std::wstring &P
   ShowNumbers = Section.Read(Prefix + L"ShowNumbers", true);
   Label = Section.Read(Prefix + L"Label", Prefix);
   AxisCross = Section.Read(Prefix + L"AxisCross", 0.0);
-  MultiplyOfPi = Section.Read(Prefix + L"MultiplyOfPi", false);
+  MultipleOfPi = Section.Read(Prefix + L"MultiplyOfPi", false);
   Visible = Section.Read(Prefix + L"Visible", true);
   ShowPositiveArrow = Section.Read(Prefix + L"ShowPositiveArrow", true);
   ShowNegativeArrow = Section.Read(Prefix + L"ShowNegativeArrow", false);
