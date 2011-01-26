@@ -508,7 +508,7 @@ namespace Windows
 void ShowHelp(const String &File, const String &HelpFile)
 {
   //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
-  String Str = HelpFile.IsEmpty() ? Application->HelpFile : HelpFile + "::/" + File;
+  String Str = (HelpFile.IsEmpty() ? Application->HelpFile : HelpFile) + "::/" + File;
   Windows::HtmlHelp(NULL, Str.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
 }
 //---------------------------------------------------------------------------
