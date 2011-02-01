@@ -2,7 +2,7 @@
 <!DOCTYPE chapter SYSTEM "dtd/dblite.dtd">
 <chapter id="vcl" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title><classname>vcl</classname> module</title>
-	<indexterm><primary><classname>vcl</classname> module</primary></indexterm>
+	<indexterm><primary><classname>vcl</classname> (module)</primary></indexterm>
 	<para>
 		The <classname>vcl</classname> module is an interface to the Embarcadero Visual Component library (VCL) used by Delphi and C++ Builder.
 		Documentation for the VCL can be found online at

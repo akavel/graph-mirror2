@@ -81,11 +81,7 @@
 
   <xsl:template match="thead">
     <xsl:variable name="tgroup" select="parent::*"/>
-
-    <fo:table-header
-      font-weight="bold"
-      color="#ffffff"
-      background-color="#7099C5">
+    <fo:table-header font-weight="bold" color="#ffffff" background-color="#7099C5">
       <xsl:apply-templates select="row[1]">
         <xsl:with-param name="spans">
           <xsl:call-template name="blank.spans">
@@ -98,9 +94,7 @@
 
   <xsl:template match="tfoot">
     <xsl:variable name="tgroup" select="parent::*"/>
-
-    <fo:table-footer
-      background-color="#f0f0ff">
+    <fo:table-footer background-color="#f0f0ff">
       <xsl:apply-templates select="row[1]">
         <xsl:with-param name="spans">
           <xsl:call-template name="blank.spans">
@@ -113,14 +107,12 @@
 
   <xsl:template match="tbody">
     <xsl:variable name="tgroup" select="parent::*"/>
-
-    <fo:table-body
-      background-color="#f0f0ff">
+    <fo:table-body start-indent="0pt" end-indent="0pt" background-color="#f0f0ff">
     <xsl:apply-templates select="row[1]">
         <xsl:with-param name="spans">
           <xsl:call-template name="blank.spans">
             <xsl:with-param name="cols" select="../@cols"/>
-          </xsl:call-template>
+          </xsl:call-template>-
         </xsl:with-param>
       </xsl:apply-templates>
     </fo:table-body>

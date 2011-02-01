@@ -289,9 +289,10 @@ div.authorgroup {
   margin-top: 3em;
 }
 
-em.parameter {
+div.simplesect em.parameter {
   font-size: 130%;
 }
+
 
 .email {
   font-size: 100%;
@@ -313,4 +314,9 @@ code.classname {
 
 span.property {
   font-weight: bold;
+}
+
+dt em.parameter,
+dd em.parameter {
+  font-size: 110%;
 }
