@@ -27,7 +27,7 @@ os.system(ToolsDir + "fop\\fop.bat -q -c %s -fo ..\\Temp\\PluginDoc.fo -pdf ..\\
 
 print "Creating CHM file..."
 StyleSheet = "..\\xsl\\htmlhelp.xsl"
-os.system('xsltproc.exe --nonet --xinclude --stringparam htmlhelp.chm ..\\PluginDoc.chm --stringparam htmlhelp.title "Script Engine Documentation" --output ..\\Temp\\PluginDoc %s %s'  % (StyleSheet, InFile))
+os.system('xsltproc.exe --nonet --xinclude --stringparam htmlhelp.chm ..\\PluginDoc.chm --stringparam htmlhelp.title "Script Engine Documentation" --stringparam htmlhelp.use.hhk 1 --output ..\\Temp\\PluginDoc %s %s'  % (StyleSheet, InFile))
 os.system("hhc.exe ..\\Temp\\htmlhelp.hhp > NUL")
 
 print "Creating HTML chunks..."
