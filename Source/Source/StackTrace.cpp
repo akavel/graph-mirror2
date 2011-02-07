@@ -279,7 +279,7 @@ void WriteStackFrameToStream(std::ostream &Stream, unsigned IgnoreFrames, unsign
 void LogOsException(EExternal *E, unsigned IgnoreFrames)
 {
   System::TExceptionRecord *Record = E->ExceptionRecord;
-  std::ofstream File(LogFileName.c_str(), std::ios_base::app);
+	std::ofstream File(LogFileName.c_str(), std::ios_base::app);
   File << "OS EXCEPTION" << std::endl;
   File << "Version: " << ToString(TVersionInfo().FileVersion().Text()) << std::endl;
   File << "Date: " << DateTimeToStr(Now()) << std::endl;
@@ -307,7 +307,7 @@ void LogOsException(EExternal *E, unsigned IgnoreFrames)
       if(LogAllExceptions && dwExceptionFlags == EXCEPTION_NONCONTINUABLE && nNumberOfArguments == 7 &&
         (DWORD)lpArguments == (DWORD)&lpArguments + 4)
       {
-        if(GlobalStackInfo == NULL)
+				if(GlobalStackInfo == NULL)
           GlobalStackInfo = new std::vector<TStackInfo>;
         TraceStackFrames(*GlobalStackInfo, 0);
       }
@@ -358,7 +358,9 @@ void boost::assertion_failed(char const * expr, char const * function, char cons
 //---------------------------------------------------------------------------
 void _RTLENTRY _EXPFUNC std::_assert(char * cond, char * file, int line)
 {
+#ifdef BOOST_ENABLE_ASSERT_HANDLER
 	boost::assertion_failed(cond, NULL, file, line);
+#endif
 }
 //---------------------------------------------------------------------------
 Exception* __fastcall MyGetExceptionObject(Windows::PExceptionRecord P)
