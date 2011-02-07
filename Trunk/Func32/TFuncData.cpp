@@ -6,6 +6,11 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
+//WARNING: Compiler bug!
+//This file must have "Expand inline functions" disabled under Debugging in the
+//options, also for Release build. Else you get the linker error:
+//[ILINK32 Error] Fatal: Illegal SEGMENT fixup index in module 'TFuncData.cpp'
+//---------------------------------------------------------------------------
 #include "Func32.h"
 #include "Func32Impl.h"
 #pragma hdrstop
@@ -22,13 +27,14 @@ struct TFuncTable
   boost::function1<bool, unsigned> ArgCountValid;
   const wchar_t *Definition;
   const wchar_t *Dif;
-  TFuncTable(const wchar_t *AFuncName, const boost::function1<bool, unsigned> &AArgCountValid, const wchar_t *ADefinition = NULL, const wchar_t *ADif = NULL)
-    : FuncName(AFuncName), ArgCountValid(AArgCountValid), Definition(ADefinition), Dif(ADif) {}
+	TFuncTable(const wchar_t *AFuncName, const boost::function1<bool, unsigned> &AArgCountValid, const wchar_t *ADefinition = NULL, const wchar_t *ADif = NULL)
+		: FuncName(AFuncName), ArgCountValid(AArgCountValid), Definition(ADefinition), Dif(ADif) {}
 };
 
 using phoenix::arg1;
 const boost::function1<bool, unsigned> Dummy;
 
+//---------------------------------------------------------------------------
 inline const TFuncTable& FuncTable(TIdent Ident)
 {
 static const TFuncTable Table[] = {
@@ -111,51 +117,51 @@ static const TFuncTable Table[] = {
 /*CodeDNorm*/       TFuncTable(L"dnorm", arg1 == 1 || arg1 == 3, L"exp(-sqr(x-x2)/(2sqr(x3))) / (x3*sqrt(2pi))"),
 };
 
-  assert(Ident >= FirstFunction1P && Ident <= LastFunction);
-  return Table[Ident - FirstFunction1P];
+	assert(Ident >= FirstFunction1P && Ident <= LastFunction);
+	return Table[Ident - FirstFunction1P];
 }
-
+//---------------------------------------------------------------------------
 /** Return name of function corresponding to the given ident.
  *  Ident: Id to lookup.
  */
 const wchar_t* FunctionName(TIdent Ident)
 {
-  return FuncTable(Ident).FuncName;
+	return FuncTable(Ident).FuncName;
 }
-
+//---------------------------------------------------------------------------
 /** Return name of function/constant in the element.
  *  \param Elem: Element to find name for.
  */
 const wchar_t* FunctionName(const TElem &Elem)
 {
-  if(Elem.Ident == CodeCustom)
-    return Elem.Text.c_str();
-  return FunctionName(Elem.Ident);
+	if(Elem.Ident == CodeCustom)
+		return Elem.Text.c_str();
+	return FunctionName(Elem.Ident);
 }
-
+//---------------------------------------------------------------------------
 /** Return definition of function given by Ident. Might return NULL.
  *  \param Ident: Function to return definition for.
  */
 const wchar_t* FunctionDefinition(TIdent Ident)
 {
-  return FuncTable(Ident).Definition;
+	return FuncTable(Ident).Definition;
 }
-
+//---------------------------------------------------------------------------
 /** Return differentiation of function given by Ident. The differentiation is done at the first call.
  *  \param Ident: Identifies the function to return the first derivative for.
  */
 const TFuncData& GetDif(TIdent Ident)
 {
-  static std::vector<TFuncData> Table;
-  assert(Ident >= FirstFunction1P && Ident <= LastFunction);
-  if(Table.empty())
-  {
-    TSymbolList SymbolList;
-    SymbolList.Add(L"dx");
-    SymbolList.Add(L"x2");
-    SymbolList.Add(L"dx2");
-    SymbolList.Add(L"x3");
-    SymbolList.Add(L"dx3");
+	static std::vector<TFuncData> Table;
+	assert(Ident >= FirstFunction1P && Ident <= LastFunction);
+	if(Table.empty())
+	{
+		TSymbolList SymbolList;
+		SymbolList.Add(L"dx");
+		SymbolList.Add(L"x2");
+		SymbolList.Add(L"dx2");
+		SymbolList.Add(L"x3");
+		SymbolList.Add(L"dx3");
 
     Table.reserve(LastFunction-FirstFunction1P+1);
     std::vector<std::wstring> Variable(1, L"x");
@@ -183,6 +189,23 @@ bool ArgCountValid(TIdent Ident, unsigned Args)
   return FuncTable(Ident).ArgCountValid(Args);
 }
 //---------------------------------------------------------------------------
+bool TElem::operator ==(const TElem &E) const
+{
+	if(Ident != E.Ident)
+		return false;
+	switch(Ident)
+	{
+		case CodeNumber:
+			return IsEqual(boost::any_cast<long double>(Value), boost::any_cast<long double>(E.Value));
+
+		case CodeCustom:
+			return Text == E.Text;
+
+		default:
+			return Arguments == E.Arguments;
+  }
+}
+//---------------------------------------------------------------------------
 /** Copy another function into List and replaces all arguments with copies of custom functions.
  *  This is used as part of differentiation.
  *  \param List: Data vector to copy elemnets into.
@@ -192,16 +215,16 @@ bool ArgCountValid(TIdent Ident, unsigned Args)
  */
 void TFuncData::CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const std::vector<std::vector<TElem> > &Args)
 {
-  DEBUG_LOG(std::wclog << L"CopyReplace: " << MakeText(Iter));
-  DEBUG_LOG(for(unsigned I = 0; I < Args.size(); I++) std::wclog << L";   Arg" << I << L"=" << MakeText(Args[I].begin()));
-  DEBUG_LOG(std::wclog << std::endl);
+	DEBUG_LOG(std::wclog << L"CopyReplace: " << MakeText(Iter));
+	DEBUG_LOG(for(unsigned I = 0; I < Args.size(); I++) std::wclog << L";   Arg" << I << L"=" << MakeText(Args[I].begin()));
+	DEBUG_LOG(std::wclog << std::endl);
 
-  const static std::vector<std::vector<TElem> > Dummy;
-  TConstIterator End = FindEnd(Iter);
-  for(; Iter != End; ++Iter)
-    if(Iter->Ident == CodeCustom && Iter->Arguments > 0)
-    {
-      std::vector<std::vector<TElem> > NewArgs(Iter->Arguments);
+	const static std::vector<std::vector<TElem> > Dummy;
+	TConstIterator End = FindEnd(Iter);
+	for(; Iter != End; ++Iter)
+		if(Iter->Ident == CodeCustom && Iter->Arguments > 0)
+		{
+			std::vector<std::vector<TElem> > NewArgs(Iter->Arguments);
       TConstIterator Iter2 = Iter + 1;
       for(unsigned I = 0; I < NewArgs.size(); I++)
       {
