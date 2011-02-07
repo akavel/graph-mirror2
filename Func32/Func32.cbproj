@@ -65,6 +65,9 @@
 			<ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!='' And '$(FileToCompile)'=='TFuncData.cpp'">
+			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+		</PropertyGroup>
 		<ItemGroup>
 			<CppCompile Include="Calc.cpp">
 				<BuildOrder>1</BuildOrder>
@@ -91,7 +94,9 @@
 				<BuildOrder>8</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="TFuncData.cpp">
-				<BuildOrder>9</BuildOrder>
+				<HasBuildEvent>true</HasBuildEvent>
+				<BuildOrder>13</BuildOrder>
+				<OptionOverrides>true</OptionOverrides>
 			</CppCompile>
 			<CppCompile Include="TParamFunc.cpp">
 				<BuildOrder>10</BuildOrder>

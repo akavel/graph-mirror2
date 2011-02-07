@@ -145,36 +145,30 @@ inline unsigned FunctionArguments(TIdent Ident)
     return 2;
   else if(Ident < FirstFunctionVariableP)
     return 3;
-  return 0;
+	return 0;
 }
 //---------------------------------------------------------------------------
 struct TElem
 {
   TIdent Ident;
   unsigned Arguments;
-//  boost::shared_ptr<TBaseCustomFunc> Func;
-  std::wstring Text;
-  boost::any Value;
-//  union
-//  {
-//    long double Number; //A value if Ident is CodeNumber
-//    TCompareMethod Compare[2];
-//  };
+	std::wstring Text;
+	boost::any Value;
 
-  TElem() : Ident(CodeNull), Arguments(0) {};
-  TElem(TIdent AIdent) : Ident(AIdent), Arguments(FunctionArguments(AIdent)) {}
-  TElem(TIdent AIdent, long double AValue) : Ident(AIdent), Value(AValue) {}
-  TElem(TIdent AIdent, const boost::shared_ptr<long double> &AValue) : Ident(AIdent), Value(AValue) {}
-  TElem(TIdent AIdent, unsigned AArguments, int) : Ident(AIdent), Arguments(AArguments) {}
-  TElem(long double AVal) : Ident(CodeNumber), Value(AVal) {}
-  TElem(TIdent AIdent, const std::wstring &Str, unsigned Args=0, const boost::shared_ptr<TBaseCustomFunc> &AFunc = boost::shared_ptr<TBaseCustomFunc>())
+	TElem() : Ident(CodeNull), Arguments(0) {};
+	TElem(TIdent AIdent) : Ident(AIdent), Arguments(FunctionArguments(AIdent)) {}
+	TElem(TIdent AIdent, long double AValue) : Ident(AIdent), Value(AValue) {}
+	TElem(TIdent AIdent, const boost::shared_ptr<long double> &AValue) : Ident(AIdent), Value(AValue) {}
+	TElem(TIdent AIdent, unsigned AArguments, int) : Ident(AIdent), Arguments(AArguments) {}
+	TElem(long double AVal) : Ident(CodeNumber), Value(AVal) {}
+	TElem(TIdent AIdent, const std::wstring &Str, unsigned Args=0, const boost::shared_ptr<TBaseCustomFunc> &AFunc = boost::shared_ptr<TBaseCustomFunc>())
 	: Ident(AIdent), Arguments(Args), Value(AFunc), Text(Str) {}
-  TElem(TCompareMethod Compare1) : Ident(CodeCompare1), Arguments(0), Value(Compare1) {}
-  TElem(TCompareMethod Compare1, TCompareMethod Compare2) : Ident(CodeCompare2), Arguments(0), Value(std::make_pair(Compare1, Compare2)) {}
-  bool operator ==(const TElem &E) const {return Ident==E.Ident && (Ident==CodeNumber ? boost::any_cast<long double>(Value)==boost::any_cast<long double>(E.Value) : (Ident==CodeCustom ? Text == E.Text : Arguments==E.Arguments));}
-  bool operator ==(TIdent AIdent) const {return Ident == AIdent;}
-  bool operator !=(const TElem &E) const {return !(*this == E);}
-  const TElem& operator=(const TElem &E) {Ident = E.Ident; Arguments = E.Arguments; Text = E.Text; Value = E.Value; return *this;}
+	TElem(TCompareMethod Compare1) : Ident(CodeCompare1), Arguments(0), Value(Compare1) {}
+	TElem(TCompareMethod Compare1, TCompareMethod Compare2) : Ident(CodeCompare2), Arguments(0), Value(std::make_pair(Compare1, Compare2)) {}
+	bool operator ==(const TElem &E) const;
+	bool operator ==(TIdent AIdent) const {return Ident == AIdent;}
+	bool operator !=(const TElem &E) const {return !(*this == E);}
+	const TElem& operator=(const TElem &E) {Ident = E.Ident; Arguments = E.Arguments; Text = E.Text; Value = E.Value; return *this;}
 };
 //---------------------------------------------------------------------------
 typedef std::vector<TElem>::iterator TIterator;
@@ -238,7 +232,7 @@ public:
   TFuncData(const std::wstring &Str, const std::wstring &Variable) {Parse(Str, TArgType(1, Variable));}
   TFuncData(const std::wstring &Str, const TArgType &Args, const TSymbolList &SymbolList)
   {Parse(Str, Args, &SymbolList);}
-  TFuncData(const std::wstring &Str, const std::wstring &Variable, const TSymbolList &SymbolList)
+	TFuncData(const std::wstring &Str, const std::wstring &Variable, const TSymbolList &SymbolList)
   {Parse(Str, TArgType(1, Variable), &SymbolList);}
   TFuncData(const std::wstring &Str, const TArgType &Args) {Parse(Str, Args);}
 
@@ -285,7 +279,6 @@ public:
   TElem& Front() {BOOST_ASSERT(!Data.empty()); return Data.front();}
 };
 //---------------------------------------------------------------------------
-
 std::list<TElem>::iterator SimplifyData(std::list<TElem> &List, std::list<TElem>::iterator &Iter);
 std::list<TElem>::const_iterator ValidateData(std::list<TElem>::const_iterator Iter);
 void ValidateData(const std::list<TElem> &Data);
@@ -297,6 +290,7 @@ bool ArgCountValid(TIdent Ident, unsigned Args);
 const TFuncData& GetDif(TIdent Ident);
 std::vector<TElem>::const_iterator FindEnd(std::vector<TElem>::const_iterator Iter);
 std::wstring ToLower(const std::wstring &Str);
+bool IsEqual(long double a, long double b);
 //---------------------------------------------------------------------------
 class TCompareStringNoCase
 {

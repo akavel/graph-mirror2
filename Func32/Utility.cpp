@@ -14,6 +14,7 @@
 #pragma hdrstop
 #include "Func32.h"
 #include "Func32Impl.h"
+#include <boost\math\special_functions\fpclassify.hpp>
 namespace Func32
 {
 //---------------------------------------------------------------------------
@@ -314,6 +315,21 @@ bool IsValidName(const std::wstring &Name)
     return false;
 
   return true;
+}
+//---------------------------------------------------------------------------
+bool IsEqual(long double a, long double b)
+{
+	if(boost::math::isnan(a) && boost::math::isnan(b))
+		return true;
+
+	if(!boost::math::isfinite(a) || !boost::math::isfinite(b))
+		return a == b;
+
+	int a_exp, b_exp, exp;
+	frexp(a, &a_exp);
+	frexp(b, &b_exp);
+	frexp(a - b, &exp);
+	return IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 40);
 }
 //---------------------------------------------------------------------------
 } //namespace Func32
