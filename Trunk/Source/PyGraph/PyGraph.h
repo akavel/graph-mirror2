@@ -77,5 +77,6 @@ namespace Python
   }
 
   void ConvertException();
+	void UnloadPlugin();
 }
 #endif

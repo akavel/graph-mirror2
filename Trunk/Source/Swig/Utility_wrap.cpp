@@ -2694,8 +2694,8 @@ SWIG_Python_MustGetPtr(PyObject *obj, swig_type_info *ty, int argnum, int flags)
 /* -------- TYPES TABLE (BEGIN) -------- */
 
 #define SWIGTYPE_p_char swig_types[0]
-#define SWIGTYPE_p_std__wstring swig_types[1]
-#define SWIGTYPE_p_unsigned_int swig_types[2]
+#define SWIGTYPE_p_unsigned_int swig_types[1]
+#define SWIGTYPE_p_wchar_t swig_types[2]
 static swig_type_info *swig_types[4];
 static swig_module_info swig_module = {swig_types, 3, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
@@ -2803,6 +2803,99 @@ namespace swig {
   }
 
   bool SaveToFile(const std::wstring &FileName, bool Remember = true) {return Form1->Data.Save(FileName, Remember);}
+
+
+#include <wchar.h>
+#include <limits.h>
+#ifndef WCHAR_MIN
+#  define WCHAR_MIN 0
+#endif
+#ifndef WCHAR_MAX
+#  define WCHAR_MAX 65535
+#endif
+
+
+SWIGINTERN swig_type_info*
+SWIG_pwchar_descriptor()
+{
+  static int init = 0;
+  static swig_type_info* info = 0;
+  if (!init) {
+    info = SWIG_TypeQuery("_p_wchar_t");
+    init = 1;
+  }
+  return info;
+}
+
+
+SWIGINTERN int
+SWIG_AsWCharPtrAndSize(PyObject *obj, wchar_t **cptr, size_t *psize, int *alloc)
+{
+  PyObject *tmp = 0;
+  int isunicode = PyUnicode_Check(obj);
+#if PY_VERSION_HEX < 0x03000000
+  if (!isunicode && PyString_Check(obj)) {
+    if (cptr) {
+      obj = tmp = PyUnicode_FromObject(obj);
+    }
+    isunicode = 1;
+  }
+#endif
+  if (isunicode) {
+    Py_ssize_t len = PyUnicode_GetSize(obj);
+    if (cptr) {
+      *cptr = (new wchar_t[len + 1]);
+      PyUnicode_AsWideChar((PyUnicodeObject *)obj, *cptr, len);
+      (*cptr)[len] = 0;
+    }
+    if (psize) *psize = (size_t) len + 1;
+    if (alloc) *alloc = cptr ? SWIG_NEWOBJ : 0;
+    Py_XDECREF(tmp);
+    return SWIG_OK;
+  } else {
+    swig_type_info* pwchar_descriptor = SWIG_pwchar_descriptor();
+    if (pwchar_descriptor) {
+      void * vptr = 0;
+      if (SWIG_ConvertPtr(obj, &vptr, pwchar_descriptor, 0) == SWIG_OK) {
+	if (cptr) *cptr = (wchar_t *)vptr;
+	if (psize) *psize = vptr ? (wcslen((wchar_t *)vptr) + 1) : 0;
+	return SWIG_OK;
+      }
+    }
+  }
+  return SWIG_TypeError;
+}
+
+
+SWIGINTERN int
+SWIG_AsPtr_std_wstring (PyObject * obj, std::wstring **val) 
+{
+  wchar_t* buf = 0 ; size_t size = 0; int alloc = SWIG_OLDOBJ;
+  if (SWIG_IsOK((SWIG_AsWCharPtrAndSize(obj, &buf, &size, &alloc)))) {
+    if (buf) {
+      if (val) *val = new std::wstring(buf, size - 1);
+      if (alloc == SWIG_NEWOBJ) delete[] buf;
+      return SWIG_NEWOBJ;
+    } else {
+      if (val) *val = 0;
+      return SWIG_OLDOBJ;
+    }
+  } else {
+    static int init = 0;
+    static swig_type_info* descriptor = 0;
+    if (!init) {
+      descriptor = SWIG_TypeQuery("std::wstring" " *");
+      init = 1;
+    }
+    if (descriptor) {
+      std::wstring *vptr;
+      int res = SWIG_ConvertPtr(obj, (void**)&vptr, descriptor, 0);
+      if (SWIG_IsOK(res) && val) *val = vptr;
+      return res;
+    }
+  }
+  return SWIG_ERROR;
+}
 
 
 SWIGINTERN int
@@ -2985,8 +3078,7 @@ SWIGINTERN PyObject *_wrap_LoadFromFile__SWIG_0(PyObject *SWIGUNUSEDPARM(self), 
   std::wstring *arg1 = 0 ;
   bool arg2 ;
   bool arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
   bool val2 ;
   int ecode2 = 0 ;
   bool val3 ;
@@ -2997,14 +3089,17 @@ SWIGINTERN PyObject *_wrap_LoadFromFile__SWIG_0(PyObject *SWIGUNUSEDPARM(self), 
   bool result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:LoadFromFile",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__wstring,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res1 = SWIG_AsPtr_std_wstring(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    arg1 = ptr;
   }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::wstring * >(argp1);
   ecode2 = SWIG_AsVal_bool(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "LoadFromFile" "', argument " "2"" of type '" "bool""'");
@@ -3017,8 +3112,10 @@ SWIGINTERN PyObject *_wrap_LoadFromFile__SWIG_0(PyObject *SWIGUNUSEDPARM(self), 
   arg3 = static_cast< bool >(val3);
   result = (bool)LoadFromFile((std::wstring const &)*arg1,arg2,arg3);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
+  if (SWIG_IsNewObj(res1)) delete arg1;
   return resultobj;
 fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
   return NULL;
 }
 
@@ -3027,8 +3124,7 @@ SWIGINTERN PyObject *_wrap_LoadFromFile__SWIG_1(PyObject *SWIGUNUSEDPARM(self), 
   PyObject *resultobj = 0;
   std::wstring *arg1 = 0 ;
   bool arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
   bool val2 ;
   int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
@@ -3036,14 +3132,17 @@ SWIGINTERN PyObject *_wrap_LoadFromFile__SWIG_1(PyObject *SWIGUNUSEDPARM(self), 
   bool result;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:LoadFromFile",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__wstring,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res1 = SWIG_AsPtr_std_wstring(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    arg1 = ptr;
   }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::wstring * >(argp1);
   ecode2 = SWIG_AsVal_bool(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "LoadFromFile" "', argument " "2"" of type '" "bool""'");
@@ -3051,8 +3150,10 @@ SWIGINTERN PyObject *_wrap_LoadFromFile__SWIG_1(PyObject *SWIGUNUSEDPARM(self), 
   arg2 = static_cast< bool >(val2);
   result = (bool)LoadFromFile((std::wstring const &)*arg1,arg2);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
+  if (SWIG_IsNewObj(res1)) delete arg1;
   return resultobj;
 fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
   return NULL;
 }
 
@@ -3060,24 +3161,28 @@ fail:
 SWIGINTERN PyObject *_wrap_LoadFromFile__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   std::wstring *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
   PyObject * obj0 = 0 ;
   bool result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:LoadFromFile",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__wstring,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res1 = SWIG_AsPtr_std_wstring(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    arg1 = ptr;
   }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LoadFromFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::wstring * >(argp1);
   result = (bool)LoadFromFile((std::wstring const &)*arg1);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
+  if (SWIG_IsNewObj(res1)) delete arg1;
   return resultobj;
 fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
   return NULL;
 }
 
@@ -3094,7 +3199,7 @@ SWIGINTERN PyObject *_wrap_LoadFromFile(PyObject *self, PyObject *args) {
   }
   if (argc == 1) {
     int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__wstring, 0);
+    int res = SWIG_AsPtr_std_wstring(argv[0], (std::wstring**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       return _wrap_LoadFromFile__SWIG_2(self, args);
@@ -3102,7 +3207,7 @@ SWIGINTERN PyObject *_wrap_LoadFromFile(PyObject *self, PyObject *args) {
   }
   if (argc == 2) {
     int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__wstring, 0);
+    int res = SWIG_AsPtr_std_wstring(argv[0], (std::wstring**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       {
@@ -3116,7 +3221,7 @@ SWIGINTERN PyObject *_wrap_LoadFromFile(PyObject *self, PyObject *args) {
   }
   if (argc == 3) {
     int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__wstring, 0);
+    int res = SWIG_AsPtr_std_wstring(argv[0], (std::wstring**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       {
@@ -3149,8 +3254,7 @@ SWIGINTERN PyObject *_wrap_SaveToFile__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py
   PyObject *resultobj = 0;
   std::wstring *arg1 = 0 ;
   bool arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
   bool val2 ;
   int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
@@ -3158,14 +3262,17 @@ SWIGINTERN PyObject *_wrap_SaveToFile__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py
   bool result;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:SaveToFile",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__wstring,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SaveToFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res1 = SWIG_AsPtr_std_wstring(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SaveToFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SaveToFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    arg1 = ptr;
   }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SaveToFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::wstring * >(argp1);
   ecode2 = SWIG_AsVal_bool(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SaveToFile" "', argument " "2"" of type '" "bool""'");
@@ -3173,8 +3280,10 @@ SWIGINTERN PyObject *_wrap_SaveToFile__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py
   arg2 = static_cast< bool >(val2);
   result = (bool)SaveToFile((std::wstring const &)*arg1,arg2);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
+  if (SWIG_IsNewObj(res1)) delete arg1;
   return resultobj;
 fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
   return NULL;
 }
 
@@ -3182,24 +3291,28 @@ fail:
 SWIGINTERN PyObject *_wrap_SaveToFile__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   std::wstring *arg1 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
   PyObject * obj0 = 0 ;
   bool result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:SaveToFile",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__wstring,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SaveToFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res1 = SWIG_AsPtr_std_wstring(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SaveToFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SaveToFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    arg1 = ptr;
   }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SaveToFile" "', argument " "1"" of type '" "std::wstring const &""'"); 
-  }
-  arg1 = reinterpret_cast< std::wstring * >(argp1);
   result = (bool)SaveToFile((std::wstring const &)*arg1);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
+  if (SWIG_IsNewObj(res1)) delete arg1;
   return resultobj;
 fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
   return NULL;
 }
 
@@ -3216,7 +3329,7 @@ SWIGINTERN PyObject *_wrap_SaveToFile(PyObject *self, PyObject *args) {
   }
   if (argc == 1) {
     int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__wstring, 0);
+    int res = SWIG_AsPtr_std_wstring(argv[0], (std::wstring**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       return _wrap_SaveToFile__SWIG_1(self, args);
@@ -3224,7 +3337,7 @@ SWIGINTERN PyObject *_wrap_SaveToFile(PyObject *self, PyObject *args) {
   }
   if (argc == 2) {
     int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__wstring, 0);
+    int res = SWIG_AsPtr_std_wstring(argv[0], (std::wstring**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
       {
@@ -3260,23 +3373,23 @@ static PyMethodDef SwigMethods[] = {
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__wstring = {"_p_std__wstring", "std::wstring *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "unsigned int *|TBrushStyle *|TColor *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_wchar_t = {"_p_wchar_t", "wchar_t *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_char,
-  &_swigt__p_std__wstring,
   &_swigt__p_unsigned_int,
+  &_swigt__p_wchar_t,
 };
 
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__wstring[] = {  {&_swigt__p_std__wstring, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_int[] = {  {&_swigt__p_unsigned_int, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_wchar_t[] = {  {&_swigt__p_wchar_t, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_char,
-  _swigc__p_std__wstring,
   _swigc__p_unsigned_int,
+  _swigc__p_wchar_t,
 };
 
 

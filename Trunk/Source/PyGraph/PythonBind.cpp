@@ -82,6 +82,24 @@ PyObject* SetErrorString(PyObject *Type, const String &Str)
 //---------------------------------------------------------------------------
 } //namespace Python
 
+void boost::intrusive_ptr_add_ref(PyObject *O)
+{
+	if(O)
+	{
+		Python::TLockGIL Dummy;
+		Py_INCREF(O);
+	}
+}
+//---------------------------------------------------------------------------
+void boost::intrusive_ptr_release(PyObject *O)
+{
+	if(O)
+	{
+		Python::TLockGIL Dummy;
+		Py_DECREF(O);
+	}
+}
+//---------------------------------------------------------------------------
 
 
 

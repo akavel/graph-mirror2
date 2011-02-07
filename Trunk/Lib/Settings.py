@@ -98,9 +98,9 @@ class TAxis(_object):
     __swig_setmethods__["LogScl"] = _Settings.TAxis_LogScl_set
     __swig_getmethods__["LogScl"] = _Settings.TAxis_LogScl_get
     if _newclass:LogScl = _swig_property(_Settings.TAxis_LogScl_get, _Settings.TAxis_LogScl_set)
-    __swig_setmethods__["MultiplyOfPi"] = _Settings.TAxis_MultiplyOfPi_set
-    __swig_getmethods__["MultiplyOfPi"] = _Settings.TAxis_MultiplyOfPi_get
-    if _newclass:MultiplyOfPi = _swig_property(_Settings.TAxis_MultiplyOfPi_get, _Settings.TAxis_MultiplyOfPi_set)
+    __swig_setmethods__["MultipleOfPi"] = _Settings.TAxis_MultipleOfPi_set
+    __swig_getmethods__["MultipleOfPi"] = _Settings.TAxis_MultipleOfPi_get
+    if _newclass:MultipleOfPi = _swig_property(_Settings.TAxis_MultipleOfPi_get, _Settings.TAxis_MultipleOfPi_set)
     __swig_setmethods__["ShowLabel"] = _Settings.TAxis_ShowLabel_set
     __swig_getmethods__["ShowLabel"] = _Settings.TAxis_ShowLabel_get
     if _newclass:ShowLabel = _swig_property(_Settings.TAxis_ShowLabel_get, _Settings.TAxis_ShowLabel_set)

@@ -829,7 +829,6 @@ TTextLabel.__repr__ = GraphElemRepr
 TShading.__repr__ = GraphElemRepr
 TAxesView.__repr__ = GraphElemRepr
 TTopGraphElem.__repr__ = GraphElemRepr
-TPointSeries.Font = property(lambda self: vcl.TObject(handle=_Data.TPointSeries_Font_get(self), owned=False))
 def SetPoints(self, L):
   while len(self.Points) > 0: del self.Points[0]
   for n in L: self.Points.append(n)

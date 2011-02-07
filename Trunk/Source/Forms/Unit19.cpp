@@ -169,14 +169,14 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 
     unsigned I = 0;
     std::vector<RGBQUAD> Colors;
-    PyObject *DataObject = Python::IsPythonInstalled() ? ToPyObject(Data) : NULL;
+		Python::TPyObjectPtr DataObject(Python::IsPythonInstalled() ? ToPyObject(Data) : NULL, false);
     for(double Value = Min; I < StepCount; Value += Step, I++)
     {
       Bitmap->Canvas->Brush->Style = bsSolid;
       Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
       Bitmap->Canvas->FillRect(TRect(0, 0, ImageWidth, ImageHeight));
       Data.CustomFunctions.Replace(AnimationInfo.Constant, Value);
-      ExecutePluginEvent(Python::peAnimate, DataObject, AnimationInfo.Constant, Value);
+      ExecutePluginEvent(Python::peAnimate, DataObject.get(), AnimationInfo.Constant, Value);
       Data.CustomFunctions.Update();
       Data.Update();
       Data.ClearCache();
@@ -225,8 +225,8 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 
   //Restore constant in case we want to create a new animation with another constant
   Data.CustomFunctions.Replace(AnimationInfo.Constant, OriginalValue);
-  ProgressForm1->Close();
-  CreateForm<TForm20>(AnimationInfo.Constant, Min, Step)->ShowAnimation(TempFile);
+	ProgressForm1->Close();
+	CreateForm<TForm20>(AnimationInfo.Constant, Min, Step)->ShowAnimation(TempFile);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button3Click(TObject *Sender)
