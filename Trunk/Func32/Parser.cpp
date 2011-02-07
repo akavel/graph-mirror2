@@ -296,28 +296,30 @@ public:
   void operator()(const TElem &Elem) const
   {
     Container().front().Ident = CodeCompare2;
-    Container().front().Value =
-      std::make_pair(boost::any_cast<TCompareMethod>(Container().front().Value),
-      boost::any_cast<TCompareMethod>(Elem.Value));
-  }
+		Container().front().Value =
+			std::make_pair(boost::any_cast<TCompareMethod>(Container().front().Value),
+			boost::any_cast<TCompareMethod>(Elem.Value));
+	}
 };
 
 class TSpecialAddVar
 {
-  symbols<TElem, wchar_t> &Symbols;
-  TContext::member1 &Container;
+	symbols<TElem, wchar_t> &Symbols;
+	TContext::member1 &Container;
 public:
-  TSpecialAddVar(TContext::member1 &AContainer, symbols<TElem, wchar_t> &ASymbols)
-    : Container(AContainer), Symbols(ASymbols) {}
-  void operator()(const wchar_t *Begin, const wchar_t *End) const
-  {
-    boost::shared_ptr<long double> Ptr(new long double);
-    std::wstring Str = ToLower(std::wstring(Begin, End));
-    Symbols.add(Str.begin(), Str.end(), TElem(CodeConst, Ptr));
-    Container().front().Value = Ptr;
-  }
+	TSpecialAddVar(TContext::member1 &AContainer, symbols<TElem, wchar_t> &ASymbols)
+		: Container(AContainer), Symbols(ASymbols) {}
+	void operator()(const wchar_t *Begin, const wchar_t *End) const
+	{
+		boost::shared_ptr<long double> Ptr(new long double);
+		std::wstring Str = ToLower(std::wstring(Begin, End));
+		Symbols.add(Str.begin(), Str.end(), TElem(CodeConst, Ptr));
+		Container().front().Value = Ptr;
+	}
 };
 
+//Valid symbols in addition to 0..9, a..z and A..Z.
+static const std::wstring ValidChars = L"+-*/^=_.,() \x2212";
 //---------------------------------------------------------------------------
 /** Parse the string and store the result. The function is strong exception safe.
  *  \param Str: The string to parse
@@ -337,15 +339,15 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 
   if(SymbolList)
   { //WARNING: Do not remove {} (bcc 5.6.4 bug)
-    for(TSymbolList::TConstIterator Iter = SymbolList->Begin(); Iter != SymbolList->End(); ++Iter)
+		for(TSymbolList::TConstIterator Iter = SymbolList->Begin(); Iter != SymbolList->End(); ++Iter)
       if(!Iter->second || Iter->second->ArgumentCount() == 0)
       {
         //Don't add a function/constant with same name as an argument
         if(find(NoCaseSymbols, Iter->first.c_str()) == NULL)
           NoCaseSymbols.add(Iter->first.c_str(), TElem(CodeCustom, Iter->first, 0, Iter->second));
       }
-      else
-        FuncSymbols.add(Iter->first.c_str(), TElem(CodeCustom, Iter->first, Iter->second->ArgumentCount(), Iter->second));
+			else
+				FuncSymbols.add(Iter->first.c_str(), TElem(CodeCustom, Iter->first, Iter->second->ArgumentCount(), Iter->second));
   }
 
   distinct_directive<wchar_t> keyword_d(L"a-zA-Z0-9_");
@@ -365,22 +367,22 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 							| NoCaseSymbols[TAssign(Constant.List)]
 							]
               | Symbols[TAssign(Constant.List)]
-              ) >> (eps_p - alnum_p)] >> !(+ch_p('('))[TDoError(ecParAfterConst)];
+							) >> (eps_p - alnum_p)] >> !(+ch_p('('))[TDoError(ecParAfterConst)];
 
   //A function name may not be followd by character og digit, because they should be part of the name.
   //If an alphanumeric character is found afterwards, the pushed function is popped
   Function =
       lexeme_d[as_lower_d[FuncSymbols[PushFront(Function.List)][Function.Arg = 1] >> (eps_p - alnum_p)]] >>
           (   '(' >> Expression[TPushBack(Function.List)] >>
-              *(',' >> AssertExpression_p(Expression)[TPushBack(Function.List)])[++Function.Arg] >> AssertEndPar_p(ch_p(')'))
-          |   FactorSeq[TPushBack(Function.List)]
+							*(',' >> AssertExpression_p(Expression)[TPushBack(Function.List)])[++Function.Arg] >> AssertEndPar_p(ch_p(')'))
+					|   FactorSeq[TPushBack(Function.List)]
           )[TDoFuncSymbol(Function.List, Function.Arg)];
 
   SpecialFunc =
       SpecialFuncSymbols[PushFront(SpecialFunc.List)] >> '(' >>
           (
               ((*~ch_p(',') >> ',' >> (+Literal)[SpecialFunc.Symbols = TempVariables][TSpecialAddVar(SpecialFunc.List, TempVariables)]) >> nothing_p)
-          |   AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)][var(TempVariables) = SpecialFunc.Symbols] >>
+					|   AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)][var(TempVariables) = SpecialFunc.Symbols] >>
               ',' >> Literal >> ',' >>
               AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >> ',' >>
               AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >> ')'
@@ -393,22 +395,22 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 
   Relation =
       Sum[Relation.List = arg1] >>
-              !(CompareSymbols[PushFront(Relation.List)] >> AssertExpression_p(Sum)[TPushBack(Relation.List)] >>
+							!(CompareSymbols[PushFront(Relation.List)] >> AssertExpression_p(Sum)[TPushBack(Relation.List)] >>
               !(CompareSymbols[TConvertRelation(Relation.List)] >> AssertExpression_p(Sum)[TPushBack(Relation.List)]))
           ;
 
   Expression =
       Relation[Expression.List = arg1] >>
          *(   lexeme_d[as_lower_d["and"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeAnd)])
-          |   lexeme_d[as_lower_d["or"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeOr)])
-          |   lexeme_d[as_lower_d["xor"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeXor)])
+					|   lexeme_d[as_lower_d["or"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeOr)])
+					|   lexeme_d[as_lower_d["xor"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeXor)])
           );
 
   Sum =
       Term[Sum.List = arg1] >>
          *(   '+' >> AssertFactor_p(Term)[TDoOperator(Sum.List, CodeAdd)]
 					|   MinusSign >> AssertFactor_p(Term)[TDoOperator(Sum.List, CodeSub)]
-          );
+					);
 
   FactorSeq = AssertFactor_p(Neg[FactorSeq.List = arg1] >> *Factor[TDoOperator(FactorSeq.List, CodeMul)]);
 
@@ -421,22 +423,22 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
       Neg[Term.List = arg1] >>
          *Factor[TDoOperator(Term.List, CodeMul)] >>
          *(   ('*' >> FactorSeq[TDoOperator(Term.List, CodeMul)])
-          |   ('/' >> FactorSeq[TDoOperator(Term.List, CodeDiv)])
+					|   ('/' >> FactorSeq[TDoOperator(Term.List, CodeDiv)])
           );
 
   Factor =
       (   SpecialFunc[Factor.List = arg1]
       |   Function[Factor.List = arg1]
       |   Constant[Factor.List = arg1]
-      |   FuncUReal_p[PushFront(Factor.List)] >> !(+ch_p('.'))[TDoError(ecInvalidNumber)]
-      |   Parentheses[Factor.List = arg1]
+			|   FuncUReal_p[PushFront(Factor.List)] >> !(+ch_p('.'))[TDoError(ecInvalidNumber)]
+			|   Parentheses[Factor.List = arg1]
       )   >> !('^' >> FactorSeq[TDoOperator(Factor.List, CodePow)])
       ;
 
   BOOST_SPIRIT_DEBUG_RULE(Expression);
   BOOST_SPIRIT_DEBUG_RULE(Relation);
   BOOST_SPIRIT_DEBUG_RULE(Term);
-  BOOST_SPIRIT_DEBUG_RULE(Sum);
+	BOOST_SPIRIT_DEBUG_RULE(Sum);
   BOOST_SPIRIT_DEBUG_RULE(FactorSeq);
   BOOST_SPIRIT_DEBUG_RULE(Factor);
   BOOST_SPIRIT_DEBUG_RULE(Parentheses);
@@ -456,39 +458,39 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
   try
   {
     //Parse expression and ignore spaces
-    std::deque<TElem> Temp;
-    errno = 0;
+		std::deque<TElem> Temp;
+		errno = 0;
     parse_info<const wchar_t*> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
 		DEBUG_LOG(std::clog.flush());
-    if(errno)
-      //Throw error if a calculation error occured under parsing
-      throw EParseError(ecParseError, Info.stop - Begin);
-    std::vector<TElem> Temp2(Temp.begin(), Temp.end());
+		if(errno)
+			//Throw error if a calculation error occured under parsing
+			throw EParseError(ecParseError, Info.stop - Begin);
+		std::vector<TElem> Temp2(Temp.begin(), Temp.end());
 
-    if(!Info.full)
-    {
-      if(std::isalpha(*Info.stop))
-      {
-        const wchar_t *Ch;
-        for(Ch = Info.stop; std::isalnum(*Ch) || *Ch == L'_'; ++Ch);
-        throw EParseError(ecUnknownVar, Info.stop - Begin, std::wstring(Info.stop, Ch));
-      }
-      if(*Info.stop == ',')
-        throw EParseError(ecCommaError, Info.stop - Begin);
-      if(*Info.stop == 0)
-        throw EParseError(ecUnexpectedEnd, Info.stop - Begin);
-      if(std::string("+-/*^").find_first_of(*Info.stop) != std::string::npos)
-        throw EParseError(ecOperatorError, Info.stop - Begin, std::wstring(1, *Info.stop));
-      if(*Info.stop == ')')
-        throw EParseError(ecInvalidEndPar, Info.stop - Begin);
-      if(*Info.stop == '.' || std::isdigit(*Info.stop))
-        throw EParseError(ecInvalidNumber, Info.stop - Begin);
-      if(*Info.stop == '<' || *Info.stop == '>' || *Info.stop == '=')
-        throw EParseError(ecInvalidCompare, Info.stop - Begin);
-      if(!std::isdigit(*Info.stop) && std::string(".( ").find_first_of(*Info.stop) == std::string::npos)
-        throw EParseError(ecUnknownChar, Info.stop - Begin, std::wstring(1, *Info.stop));
-      throw EParseError(ecParseError, Info.stop - Begin);
-    }
+		if(!Info.full)
+		{
+			if(std::isalpha(*Info.stop))
+			{
+				const wchar_t *Ch;
+				for(Ch = Info.stop; std::isalnum(*Ch) || *Ch == L'_'; ++Ch);
+				throw EParseError(ecUnknownVar, Info.stop - Begin, std::wstring(Info.stop, Ch));
+			}
+			if(*Info.stop == ',')
+				throw EParseError(ecCommaError, Info.stop - Begin);
+			if(*Info.stop == 0)
+				throw EParseError(ecUnexpectedEnd, Info.stop - Begin);
+			if(!std::isalnum(*Info.stop) && ValidChars.find_first_of(*Info.stop) == std::wstring::npos)
+				throw EParseError(ecUnknownChar, Info.stop - Begin, std::wstring(1, *Info.stop));
+			if(std::wstring(L"+-/*^\x2212").find_first_of(*Info.stop) != std::string::npos)
+				throw EParseError(ecOperatorError, Info.stop - Begin, std::wstring(1, *Info.stop));
+			if(*Info.stop == ')')
+				throw EParseError(ecInvalidEndPar, Info.stop - Begin);
+			if(*Info.stop == '.' || std::isdigit(*Info.stop))
+				throw EParseError(ecInvalidNumber, Info.stop - Begin);
+			if(*Info.stop == '<' || *Info.stop == '>' || *Info.stop == '=')
+				throw EParseError(ecInvalidCompare, Info.stop - Begin);
+			throw EParseError(ecParseError, Info.stop - Begin);
+		}
 
   //      DEBUG_LOG(std::clog << MakeText(Temp2.begin()) << std::endl);
     Data.swap(Temp2);
@@ -514,16 +516,19 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 //---------------------------------------------------------------------------
 void TFuncData::HandleParseError(const EParseError &E, const wchar_t* Where, unsigned Pos)
 {
-  if(E.ErrorCode != ecArgCountError && std::isalpha(*Where))
-  {
-    const wchar_t *Ch;
-    for(Ch = Where; std::isalnum(*Ch); ++Ch);
-    throw EParseError(ecUnknownVar, Pos, std::wstring(Where, Ch));
-  }
+	if(E.ErrorCode != ecArgCountError && std::isalpha(*Where))
+	{
+		const wchar_t *Ch;
+		for(Ch = Where; std::isalnum(*Ch); ++Ch);
+		throw EParseError(ecUnknownVar, Pos, std::wstring(Where, Ch));
+	}
 
 //Convert to a comma error if the error was detected at a comma (eg. "(0,8)")
-  if(*Where == ',')
-    throw EParseError(ecCommaError, Pos);
+	if(*Where == ',')
+		throw EParseError(ecCommaError, Pos);
+
+	if(!std::isalnum(*Where) && ValidChars.find_first_of(*Where) == std::wstring::npos)
+		throw EParseError(ecUnknownChar, Pos, std::wstring(1, *Where));
 
   throw EParseError(E.ErrorCode, Pos, E.Str);
 }
