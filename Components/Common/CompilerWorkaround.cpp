@@ -159,4 +159,26 @@ public:
 	}
 } InitWorkaround;
 //---------------------------------------------------------------------------
+extern "C" int _RTLENTRY  _EXPFUNC __iswctype(int c, int type);
+static int IsType(wchar_t c, int Type)
+{
+	if(c >= 256)
+	{
+		WORD d;
+		GetStringTypeW(CT_CTYPE1, (LPCWSTR)&c, 1, &d);
+		return d & Type;
+	}
+	return __iswctype(c, Type);
+}
+
+int _RTLENTRY _EXPFUNC std::iswspace(wchar_t c)
+{
+	return IsType(c, _IS_SP);
+}
+
+int _RTLENTRY _EXPFUNC std::iswdigit(wchar_t c)
+{
+	return IsType(c, _IS_DIG);
+}
+//---------------------------------------------------------------------------
 
