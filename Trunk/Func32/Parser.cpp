@@ -17,13 +17,9 @@
 #include "Func32Impl.h"
 #pragma hdrstop
 #include <stack>
-#undef _DEBUG
-#ifdef _DEBUG
-#define BOOST_SPIRIT_DEBUG
+
+//#define BOOST_SPIRIT_DEBUG
 #define BOOST_SPIRIT_DEBUG_OUT std::clog
-#else
-#define NDEBUG
-#endif
 
 #pragma option -vi- //Disable inline expansion to fix several compiler bugs in BCC 5.6.4
 
@@ -355,17 +351,19 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
   distinct_directive<wchar_t> keyword_d(L"a-zA-Z0-9_");
 
   rule<wide_phrase_scanner_t, TContext::context_t> Term, Expression, Factor, Constant,
-    Function, Parentheses, Power, FactorSeq, Sum, Neg, Relation, SpecialFunc, Literal;
+		Function, Parentheses, Power, FactorSeq, Sum, Neg, Relation, SpecialFunc, Literal,
+		MinusSign;
 
-  Literal = alpha_p >> *alnum_p;
+	Literal = alpha_p >> *alnum_p;
+	MinusSign = '-' | ch_p(L'\x2212'); //0x2212 = Unicode symbol Minus
 
-  //A constant may not be followed by a alpha-numeric character
-  //A constant may not be followed a a parenthesis
-  Constant =
-      lexeme_d[(as_lower_d[
-                TempVariables[TAssign(Constant.List)]
-              | NoCaseSymbols[TAssign(Constant.List)]
-              ]
+	//A constant may not be followed by a alpha-numeric character
+	//A constant may not be followed a a parenthesis
+	Constant =
+			lexeme_d[(as_lower_d[
+								TempVariables[TAssign(Constant.List)]
+							| NoCaseSymbols[TAssign(Constant.List)]
+							]
               | Symbols[TAssign(Constant.List)]
               ) >> (eps_p - alnum_p)] >> !(+ch_p('('))[TDoError(ecParAfterConst)];
 
@@ -386,7 +384,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
               ',' >> Literal >> ',' >>
               AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >> ',' >>
               AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >> ')'
-          );
+					);
 
   Parentheses =
               '(' >> AssertExpression_p(Expression)[Parentheses.List = arg1] >> AssertEndPar_p(ch_p(')'))
@@ -409,13 +407,13 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
   Sum =
       Term[Sum.List = arg1] >>
          *(   '+' >> AssertFactor_p(Term)[TDoOperator(Sum.List, CodeAdd)]
-          |   '-' >> AssertFactor_p(Term)[TDoOperator(Sum.List, CodeSub)]
+					|   MinusSign >> AssertFactor_p(Term)[TDoOperator(Sum.List, CodeSub)]
           );
 
   FactorSeq = AssertFactor_p(Neg[FactorSeq.List = arg1] >> *Factor[TDoOperator(FactorSeq.List, CodeMul)]);
 
   Neg =   *ch_p('+') >>
-          ( ('-' >> AssertFactor_p(Neg[TDoNegate(Neg.List)]))
+          ( (MinusSign >> AssertFactor_p(Neg[TDoNegate(Neg.List)]))
             | Factor[Neg.List = arg1]
           );
 
@@ -449,9 +447,9 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
   BOOST_SPIRIT_DEBUG_RULE(Neg);
 
   //Set pointers to start and end of string.
-  //Ignore ending spaces as the parser doesn seem to handle this.
-  const wchar_t *Begin = &Str[0];
-  const wchar_t *End = &Str[0] + Str.find_last_not_of(L" ") + 1;
+	//Ignore ending spaces as the parser doesn't seem to handle this.
+	const wchar_t *Begin = &Str[0];
+	const wchar_t *End = &Str[0] + Str.find_last_not_of(L" ") + 1;
   if(Begin == End)
     throw EParseError(ecEmptyString);
 
@@ -461,7 +459,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
     std::deque<TElem> Temp;
     errno = 0;
     parse_info<const wchar_t*> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
-    DEBUG_LOG(std::clog.flush());
+		DEBUG_LOG(std::clog.flush());
     if(errno)
       //Throw error if a calculation error occured under parsing
       throw EParseError(ecParseError, Info.stop - Begin);
