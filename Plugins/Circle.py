@@ -47,6 +47,6 @@ def OnEdit(Item):
         d.ShowModal()
         return True
 
-Action = Graph.CreateAction(Name="Circle", Caption="Insert circle...", OnExecute=execute_action, Hint="Create circle from center and radius", ShortCut="Ctrl+Shift+C", IconFile="Circle.bmp")
+Action = Graph.CreateAction(Caption="Insert circle...", OnExecute=execute_action, Hint="Create circle from center and radius", ShortCut="Ctrl+Shift+C", IconFile="Circle.bmp")
 Graph.AddActionToMainMenu(Action)
 Graph.OnEdit.append(OnEdit)

@@ -34,9 +34,6 @@ GuiFormatSettings = Settings.GuiFormatSettings;
 PlotSettings = Settings.PlotSettings
 GuiSettings = Settings.GuiSettings
 
-Settings.TProperty.DefaultLabelFont = property(lambda self: vcl.TFont(handle=Settings._Settings.TProperty_DefaultLabelFont_get(self)))
-Settings.TProperty.DefaultPointLabelFont = property(lambda self: vcl.TFont(handle=Settings._Settings.TProperty_DefaultPointLabelFont_get(self)))
-
 Selected = None
 TGraphElem = Data.TGraphElem
 TStdFunc = Data.TStdFunc
@@ -49,6 +46,8 @@ TRelation = Data.TRelation
 TPointSeries = Data.TPointSeries
 Form1 = GraphImpl.Form1
 Form22 = GraphImpl.Form22
+EFuncError = GraphImpl.EFuncError
+EGraphError = GraphImpl.EGraphError
 
 def InitPlugins(BaseDir):
     global PluginsDir
@@ -66,9 +65,9 @@ def InitPlugins(BaseDir):
             except Exception:
                 traceback.print_exc()
 
-def CreateAction(Caption, OnExecute, Hint="", ShortCut="", Name="", IconFile=None, OnUpdate=None):
-    Action = vcl.TAction(vcl.Application, Name=Name, Caption=Caption, OnExecute=OnExecute, Hint=Hint, ShortCut=vcl.TextToShortCut(ShortCut), Category="Plugins", OnUpdate=OnUpdate)
-    if Name:
+def CreateAction(Caption, OnExecute, Hint="", ShortCut="", IconFile=None, OnUpdate=None, AddToToolBar=True):
+    Action = vcl.TAction(vcl.Application, Name=OnExecute.__module__+"_"+OnExecute.__name__, Caption=Caption, OnExecute=OnExecute, Hint=Hint, ShortCut=vcl.TextToShortCut(ShortCut), Category="Plugins", OnUpdate=OnUpdate)
+    if AddToToolBar:
         Action.ActionList = Form1.ActionManager;
     if IconFile:
         Action.ImageIndex = LoadImage(IconFile)
@@ -83,6 +82,12 @@ def AddActionToMainMenu(Action):
         Item = PluginsItem.Items.Add();
     Item.Action = Action;
     PluginsItem.Visible = True;
+
+def AddActionToContextMenu(Action):
+    Item = vcl.TMenuItem(Form1)
+    Item._owned = False
+    Item.Action = Action
+    Form1.PopupMenu1.Items.Insert(Form1.N10.MenuIndex, Item)
 
 def LoadImage(FileName, BkColor=0xFFFFFF):
     Bitmap = vcl.TBitmap()
@@ -205,13 +210,15 @@ OnDelete = []
 OnAxesChanged = []
 OnZoom = []
 OnOptionsChanged = []
-OnCustomFunctionsChanged = []
+OnCustomFunctions = []
 OnNewElem = []
 OnChanged = []
 OnMoved = []
-EventList = [OnNew, OnLoad, OnSelect, OnClose, OnEdit, OnAnimate, OnDelete, OnAxesChanged, OnZoom, OnOptionsChanged, OnCustomFunctionsChanged, OnNewElem, OnChanged, OnMoved]
+EventList = [OnNew, OnLoad, OnSelect, OnClose, OnEdit, OnAnimate, OnDelete, OnAxesChanged, OnZoom, OnOptionsChanged, OnCustomFunctions, OnNewElem, OnChanged, OnMoved]
 
 # Imports from Utility
 BeginMultiUndo = Utility.BeginMultiUndo
 EndMultiUndo = Utility.EndMultiUndo
 LoadDefault = Utility.LoadDefault
+LoadFromFile = Utility.LoadFromFile
+SaveToFile = Utility.SaveToFile

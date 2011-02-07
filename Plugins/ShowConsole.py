@@ -8,5 +8,5 @@ def Update(action):
 def Execute(action):
   Graph.Form22.Visible = not Graph.Form22.Visible
 
-Action = Graph.CreateAction(Name="ShowConsole", Caption="Show Python interpreter", OnExecute=Execute, OnUpdate=Update, ShortCut="F11")
+Action = Graph.CreateAction(Caption="Show Python interpreter", OnExecute=Execute, OnUpdate=Update, ShortCut="F11")
 Graph.AddActionToMainMenu(Action)

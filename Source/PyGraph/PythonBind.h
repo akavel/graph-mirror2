@@ -9,6 +9,7 @@
 //---------------------------------------------------------------------------
 #ifndef PythonBindH
 #define PythonBindH
+#include <boost/intrusive_ptr.hpp>
 //---------------------------------------------------------------------------
 struct _object;
 struct _typeobject;
@@ -76,8 +77,17 @@ public:
 	~TUnlockGIL();
 };
 
+	typedef boost::intrusive_ptr<PyObject> TPyObjectPtr;
+
 	PyObject* SetErrorString(PyObject *Type, const String &Str);
 }
+
+namespace boost
+{
+	void intrusive_ptr_add_ref(PyObject *O);
+	void intrusive_ptr_release(PyObject *O);
+}
+
 #ifdef WRAP_PYOBJECTS
 #define PyBool_Type Python::PyBool_Type
 #define PyTuple_Type Python::PyTuple_Type

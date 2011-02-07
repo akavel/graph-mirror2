@@ -36,7 +36,7 @@ PyObject *PyEGraphError = NULL;
 //---------------------------------------------------------------------------
 bool ExecutePythonCommand(const String &Command)
 {
-  TLockGIL Dummy;
+	TLockGIL Dummy;
 
   PyObject *Module = PyImport_ImportModule("code");
   bool Result = true;
@@ -64,7 +64,7 @@ bool ExecutePythonCommand(const String &Command)
       	  PyObject *Dict = PyModule_GetDict(MainModule);
           PyObject *Temp = PyEval_EvalCode((PyCodeObject*)Code, Dict, Dict);
           if(Temp == NULL)
-            PyErr_Print();
+						PyErr_Print();
           Py_XDECREF(Temp);
         }
       }
@@ -120,7 +120,7 @@ static PyObject* PluginInputQuery(PyObject *Self, PyObject *Args)
   if(!PyArg_ParseTuple(Args, "|uu", &Caption, &Prompt))
     return NULL;
   String Value;
-  if(InputQuery(Caption, Prompt, Value))
+	if(InputQuery(Caption, Prompt, Value))
     return PyUnicode_FromWideChar(Value.c_str(), Value.Length());
 
   Py_RETURN_NONE;
@@ -176,7 +176,7 @@ T TPluginFunc::CallCustomFunction(const T *Args, Func32::TTrigonometry Trig, Fun
  //     PyErr_Print();
  //     PyErr_Clear();
     }
-  }
+	}
   Py_XDECREF(CallResult);
   Py_XDECREF(Tuple);
   return Result;
@@ -204,7 +204,7 @@ static PyObject* PluginSetCustomFunction(PyObject *Self, PyObject *Args)
     }
     Py_XDECREF(FuncCode);
   }
-  Py_RETURN_NONE;
+	Py_RETURN_NONE;
 }
 //---------------------------------------------------------------------------
 static PyObject* PluginGetCustomFunction(PyObject *Self, PyObject *Args)
@@ -232,7 +232,7 @@ static PyObject* PluginDelCustomFunction(PyObject *Self, PyObject *Args)
 {
   const wchar_t *Name = PyUnicode_AsUnicode(Args);
   if(Name == NULL)
-    return NULL;
+		return NULL;
 
   Form1->Data.CustomFunctions.SymbolList.Erase(Name);
   Form1->Data.CustomFunctions.GlobalSymbolList.Erase(Name);
@@ -316,7 +316,7 @@ static PyObject* PluginGetConstantNames(PyObject *Self, PyObject *Args)
 //---------------------------------------------------------------------------
 static PyObject* PluginGetConstant(PyObject *Self, PyObject *Args)
 {
-  const wchar_t *Name = PyUnicode_AsUnicode(Args);
+	const wchar_t *Name = PyUnicode_AsUnicode(Args);
   if(Name == NULL)
     return NULL;
 
@@ -344,7 +344,7 @@ static PyObject* PluginSetConstant(PyObject *Self, PyObject *Args)
     const wchar_t *Text, *Name;
     if(!PyArg_ParseTuple(Args, "uOu", &Name, &Arguments, &Text))
       return NULL;
-    TCustomFunctions &Functions = Form1->Data.CustomFunctions;
+		TCustomFunctions &Functions = Form1->Data.CustomFunctions;
     std::vector<std::wstring> ArgList;
     if(Arguments != Py_None)
     {
@@ -372,7 +372,7 @@ static PyObject* PluginSetConstant(PyObject *Self, PyObject *Args)
   {
     PyErr_SetString(PyEFuncError, AnsiString(GetErrorMsg(E)).c_str());
     return NULL;
-  }
+	}
 }
 //---------------------------------------------------------------------------
 static PyObject* PluginDelConstant(PyObject *Self, PyObject *Args)
@@ -495,12 +495,12 @@ static bool PythonInitialized = false;
 void InitPlugins()
 {
   _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
-  if(IsPythonInstalled())
+	if(IsPythonInstalled())
 	{
 		RegisterClass(__classid(TForm));
 
-    Form22 = new TForm22(Application);
-    Form1->ScriptDocAction->Visible = true;
+		Form22 = new TForm22(Application);
+		Form1->ScriptDocAction->Visible = true;
 		_control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
 		PyImport_ExtendInittab(Modules);
 		static String ExeName = Application->ExeName; //Py_SetProgramName() requires variable to be static
@@ -560,6 +560,16 @@ void InitPlugins()
 	}
 }
 //---------------------------------------------------------------------------
+void UnloadPlugin()
+{
+	if(PythonInitialized)
+	{
+		_control87(PYTHON_FPU_CONTROL, FPU_MASK);
+		PyGILState_Ensure();
+		Py_Finalize();
+	}
+}
+//---------------------------------------------------------------------------
 PyObject* ToPyObject(const TPyVariant &Variant)
 {
   if(const int *Value = boost::get<int>(&Variant))
@@ -568,8 +578,11 @@ PyObject* ToPyObject(const TPyVariant &Variant)
     return ToPyObject(*Value);
   if(const std::wstring *Value = boost::get<std::wstring>(&Variant))
     return ToPyObject(*Value);
-  if(PyObject *const*Value = boost::get<PyObject*>(&Variant))
+	if(PyObject *const*Value = boost::get<PyObject*>(&Variant))
+	{
+	  Py_INCREF(*Value);
 		return *Value;
+	}
   return NULL;
 }
 //---------------------------------------------------------------------------
@@ -626,7 +639,7 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2, 
   if(IsPythonInstalled())
 	{
 		TLockGIL Dummy;
-    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NNN)", ToPyObject(V1), ToPyObject(V2), ToPyObject(V2)));
+    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NNN)", ToPyObject(V1), ToPyObject(V2), ToPyObject(V3)));
   }
   return false;
 }

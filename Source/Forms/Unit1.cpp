@@ -12,7 +12,7 @@
 #include "Unit1.h"
 #include "Unit2.h"
 #include "Unit3.h"
-#include "Unit4.h"       
+#include "Unit4.h"
 #include "Unit5.h"
 #include "Unit6.h"                 
 #include "Unit7.h"
@@ -89,89 +89,88 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   if(out)
   {
     out << std::endl << std::endl;
-    out << "PID: 0x" << std::hex << std::uppercase << std::setw(8) << std::setfill('0') << GetCurrentProcessId() << std::endl;
+		out << "PID: 0x" << std::hex << std::uppercase << std::setw(8) << std::setfill('0') << GetCurrentProcessId() << std::endl;
     out << "Date: " << ::ToString(DateTimeToStr(Now())) << std::endl;
     out << "CmdLine: " << ::ToString(CmdLine) << std::endl;
   }
 
   SetCompTranslateFunc(gettext);
-  SetApplicationExceptionHandler(true);
-  InitDebug();
+	SetApplicationExceptionHandler(true);
+	InitDebug();
 #else
-  SetApplicationExceptionHandler(false);
+	SetApplicationExceptionHandler(false);
 #endif
 
-  Font->Name = "MS Shell Dlg";
-  Data.SetAbortUpdateEvent(&Draw.AbortUpdate);
-  Icon->LoadFromResourceName((THandle)MainInstance, L"ICON1");
+	Font->Name = "MS Shell Dlg";
+	Data.SetAbortUpdateEvent(&Draw.AbortUpdate);
+	Icon->LoadFromResourceName((THandle)MainInstance, L"ICON1");
 
-  //Set "AllowOLE" to 1 in the Registry to use OLE with instances not started with "-Embedding"
-  if(!FindCmdLineSwitch(L"EMBEDDING") && !GetRegValue(REGISTRY_KEY, L"AllowOLE", HKEY_CURRENT_USER, 0))
-    //Prevent OLE instantiation if not started for use with OLE
-    _Module.RevokeClassObjects();
+	//Set "AllowOLE" to 1 in the Registry to use OLE with instances not started with "-Embedding"
+	if(!FindCmdLineSwitch(L"EMBEDDING") && !GetRegValue(REGISTRY_KEY, L"AllowOLE", HKEY_CURRENT_USER, 0))
+		//Prevent OLE instantiation if not started for use with OLE
+		_Module.RevokeClassObjects();
 
-  SetThreadName("Main");
-  DefaultInstance->OnDebugLine = DebugLine;
+	SetThreadName("Main");
+	DefaultInstance->OnDebugLine = DebugLine;
 
-  Initialize();
+	Initialize();
 
-  //Don't update when system settings are changed (especially DecimalSeparator)
-  Application->UpdateFormatSettings = false;
+	//Don't update when system settings are changed (especially DecimalSeparator)
+	Application->UpdateFormatSettings = false;
 
-  //Use dot as decimal separator
-  FormatSettings.DecimalSeparator = '.';
+	//Use dot as decimal separator
+	FormatSettings.DecimalSeparator = '.';
 
-  //Set bitmap to screen size; Maximum possible size
-  Image1->Picture->Bitmap->Height = Screen->Height;
-  Image1->Picture->Bitmap->Width = Screen->Width;
+	//Set bitmap to screen size; Maximum possible size
+	Image1->Picture->Bitmap->Height = Screen->Height;
+	Image1->Picture->Bitmap->Width = Screen->Width;
 
-  //Save list of buttons on toolbar before they are loaded from registry
-  DefaultToolBar = GetToolBar();
+	//Save list of buttons on toolbar before they are loaded from registry
+	DefaultToolBar = GetToolBar();
 
-  //Accept draged files from explorer
-  DragAcceptFiles(Handle, true);
+	//Accept draged files from explorer
+	DragAcceptFiles(Handle, true);
 
-  //Maximum time in milliseconds hint is shown
-  Application->HintHidePause = 10000;
+	//Maximum time in milliseconds hint is shown
+	Application->HintHidePause = 10000;
 
-  BOOST_ASSERT(TreeView->Items->Count == 0);
-  LoadSettings();
-  ScaleForm(this, false);
-  ActionToolBar1->ActionClient->Items->SmallIcons = Property.FontScale < 150;
+	BOOST_ASSERT(TreeView->Items->Count == 0);
+	LoadSettings();
+	ScaleForm(this, false);
+	ActionToolBar1->ActionClient->Items->SmallIcons = Property.FontScale < 150;
 
-  //Don't create Form9 before settings are loaded. Scaling and other settings are needed in the constructor.
-  Form9.reset(new TForm9(this));
+	//Don't create Form9 before settings are loaded. Scaling and other settings are needed in the constructor.
+	Form9.reset(new TForm9(this));
 
-  //Center main window on the working area
-  CenterForm(this);
+	//Center main window on the working area
+	CenterForm(this);
 
-  //Set shortcuts that depends on the locale settings
-//  ZoomInAction->ShortCut = ShortCut(VK_ADD, TShiftState() << ssCtrl);
-  ZoomInAction->ShortCut = ShortCut(VkKeyScan('+') & 0xFF, TShiftState() << ssCtrl);
-  ZoomInAction->SecondaryShortCuts->AddObject("Ctrl+Shift++", (TObject*)ShortCut(VkKeyScan('+') & 0xFF, TShiftState() << ssCtrl << ssShift));
+	//Set shortcuts that depends on the locale settings
+	ZoomInAction->ShortCut = ShortCut(VkKeyScan('+') & 0xFF, TShiftState() << ssCtrl);
+	ZoomInAction->SecondaryShortCuts->AddObject("Ctrl+Shift++", (TObject*)ShortCut(VkKeyScan('+') & 0xFF, TShiftState() << ssCtrl << ssShift));
 
-  ZoomOutAction->ShortCut = ShortCut(VkKeyScan('-') & 0xFF, TShiftState() << ssCtrl);
-  ZoomOutAction->SecondaryShortCuts->AddObject("Ctrl+Shift+-", (TObject*)ShortCut(VkKeyScan('-') & 0xFF, TShiftState() << ssCtrl << ssShift));
+	ZoomOutAction->ShortCut = ShortCut(VkKeyScan('-') & 0xFF, TShiftState() << ssCtrl);
+	ZoomOutAction->SecondaryShortCuts->AddObject("Ctrl+Shift+-", (TObject*)ShortCut(VkKeyScan('-') & 0xFF, TShiftState() << ssCtrl << ssShift));
 
-  Screen->Cursors[crMoveHand2] = LoadCursor(HInstance, L"MOVECURSOR1");
-  Screen->Cursors[crMoveHand1] = LoadCursor(HInstance, L"MOVECURSOR2");
+	Screen->Cursors[crMoveHand2] = LoadCursor(HInstance, L"MOVECURSOR1");
+	Screen->Cursors[crMoveHand1] = LoadCursor(HInstance, L"MOVECURSOR2");
 
-  Recent1->FileMenu = ActionMainMenuBar1->ActionClient->Items->ActionClients[0]->Items;
+	Recent1->FileMenu = ActionMainMenuBar1->ActionClient->Items->ActionClients[0]->Items;
 
-  //We need to use something in HTMLHelpViewer.pas to make sure it is linked in
-  ViewerName = "HTML Help Viewer";
+	//We need to use something in HTMLHelpViewer.pas to make sure it is linked in
+	ViewerName = "HTML Help Viewer";
 
-  BOOST_ASSERT(Screen->Cursors[crMoveHand1]);
-  BOOST_ASSERT(Screen->Cursors[crMoveHand2]);
+	BOOST_ASSERT(Screen->Cursors[crMoveHand1]);
+	BOOST_ASSERT(Screen->Cursors[crMoveHand2]);
 }
 //---------------------------------------------------------------------------
 void TForm1::HandleCommandLine()
 {
-  //Do not initialize data when OLE is used. This is done through InitNew() and Load() in IPersistStorage
-  if(!FindCmdLineSwitch("EMBEDDING"))
-  {
-    if(!ParamCount() || ParamStr(1)[1] == '/' || ParamStr(1)[1] == '-' || !LoadFromFile(ParamStr(1)))
-      LoadDefault();
+	//Do not initialize data when OLE is used. This is done through InitNew() and Load() in IPersistStorage
+	if(!FindCmdLineSwitch("EMBEDDING"))
+	{
+		if(!ParamCount() || ParamStr(1)[1] == '/' || ParamStr(1)[1] == '-' || !LoadFromFile(ParamStr(1)))
+			LoadDefault();
     Redraw();
 
     if(ParamCount() > 1)
@@ -183,7 +182,7 @@ void TForm1::HandleCommandLine()
         String Str = ParamStr(I);
         if(Str[1] == '-' || Str[1] == '/')
         {
-          int I = Str.Pos('=');
+					int I = Str.Pos('=');
           if(I == -1)
             CommandList[Str.SubString(2, MAXINT).LowerCase()]; //Just add empty command
           else
@@ -197,11 +196,11 @@ void TForm1::HandleCommandLine()
       {
         int ImageWidth = CommandList["width"].ToIntDef(Image1->Width);
         int ImageHeight = CommandList["height"].ToIntDef(Image1->Height);
-        TImageOptions ImageOptions(ImageWidth, ImageHeight);
+				TImageOptions ImageOptions(ImageWidth, ImageHeight);
         ImageOptions.UseCustomSize = true;
         String FileName = Iter->second;
         SaveAsImage(FileName, ImageOptions);
-        Close();
+				Close();
       }
     }
   }
@@ -209,11 +208,11 @@ void TForm1::HandleCommandLine()
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormShow(TObject *Sender)
 {
-  //Load file passed as the first argument to the program
-  //This cannot be done from the constructor, because the main form must be fully created.
-  //When loading labels TIRichEdit are using the mainform to find the size
-  //For this to work Form1->Visible must be set to False at design time
-  BOOST_ASSERT(Application->MainForm);
+	//Load file passed as the first argument to the program
+	//This cannot be done from the constructor, because the main form must be fully created.
+	//When loading labels TIRichEdit are using the mainform to find the size
+	//For this to work Form1->Visible must be set to False at design time
+	BOOST_ASSERT(Application->MainForm);
 
   //Form9 must be created before it can be docked
   //Wait with docking until the form is shown. Else the COM client will blink in the title when we are running as COM server
@@ -226,10 +225,10 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 
   HandleCommandLine();
 
-  if(Property.CheckForUpdate)
+	if(Property.CheckForUpdate)
   {
     ShowStatusError(LoadRes(520), clGreen, 0);
-    CallFromThread(&CheckForUpdate, true, &CancelStatusError);
+		CallFromThread(&CheckForUpdate, true, &CancelStatusError);
   }
   PostMessage(Handle, WM_USER, 0, 0);
 
@@ -255,7 +254,7 @@ void TForm1::Initialize()
   TreeView->ControlStyle = TreeView->ControlStyle << csOpaque;
   TreeView->DoubleBuffered = true;
 
-  //Prevent flicker in status bar
+	//Prevent flicker in status bar
   StatusBar1->DoubleBuffered = true;
 
   Recent1->RegistryKey = REGISTRY_KEY; //Set key for data in registry
@@ -285,7 +284,7 @@ void TForm1::Translate()
     for(int I = 0; I < MenuItems->Count; I++)
       TranslateList.push_back(MenuItems->ActionClients[I]);
 
-    //Translate File->Import
+		//Translate File->Import
     TranslateList.push_back(ActionMainMenuBar1->ActionClient->Items->ActionClients[0]->Items->ActionClients[7]);
     //Translate Help->Internet
     TranslateList.push_back(ActionMainMenuBar1->ActionClient->Items->ActionClients[6]->Items->ActionClients[5]);
@@ -313,7 +312,7 @@ void TForm1::Translate()
     TranslateList.push_back(Label_Rotation_Custom);
 
     TranslateList.push_back(ToolBar_Reset);
-    TranslateList.push_back(ToolBar_Customize);
+		TranslateList.push_back(ToolBar_Customize);
 
     TranslateList.push_back(Legend_Show);
     TranslateList.push_back(Legend_Font);
@@ -341,7 +340,7 @@ void TForm1::Translate()
     SetStrProp(Component, GetPropInfo(Component, "Caption"), gettext(StripHotkey(TranslateList[I].Caption)));
     if(!TranslateList[I].Hint.IsEmpty())
       SetStrProp(Component, GetPropInfo(Component, "Hint"), gettext(TranslateList[I].Hint));
-  }
+	}
 //  MainMenu->Images = ImageList2; //Remember to restore the images
 
   UpdateTreeView(); //Translate "Axes"
@@ -369,7 +368,7 @@ void TForm1::Redraw(void)
 
   Draw.AbortUpdate();
   //Set width and height
-  Draw.SetSize(Image1->Width, Image1->Height);
+	Draw.SetSize(Image1->Width, Image1->Height);
   //Make sure background is drawn
   Image1->Canvas->Brush->Style = bsSolid;
   //Set background color
@@ -397,7 +396,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
           std::auto_ptr<TForm6> Form6(new TForm6(Application, Property.DefaultLabelFont, NAME, Data.GetFileName().c_str()));
           if(Form6->ShowModal() == mrOk && !Form6->IsEmpty())
           {
-            Property.DefaultLabelFont = Form6->GetFont();
+						Property.DefaultLabelFont = Form6->GetFont();
             boost::shared_ptr<TTextLabel> Label(new TTextLabel(
               Form6->GetText().c_str(),
               lpUserTopLeft,
@@ -425,7 +424,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
           break;
 
         case csMove:
-          UndoList.Push(TUndoAxes(Data));
+					UndoList.Push(TUndoAxes(Data));
           MovePos = Func32::TDblPoint(Draw.xCoord(X), Draw.yCoord(Y));
           SetCursorState(csMoving);
           break;
@@ -453,7 +452,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
 
               Image2->Top = Label->GetRect().Top;
               Image2->Left = Label->GetRect().Left;
-              Image2->Picture->Assign(Label->GetImage());
+							Image2->Picture->Assign(Label->GetImage());
               Image2->Visible = true;
               ImagePos = TPoint(Image2->Left, Image2->Top);
 
@@ -509,7 +508,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
 
     case mbMiddle:
       //Move coordinate system to the center without changing the scale
-      Zoom(0, 0, 0.5, 0.5, false);
+			Zoom(0, 0, 0.5, 0.5, false);
       break;
   }
 }
@@ -537,7 +536,7 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift,
         Shape1->Width = abs(X-xZoom);
         Shape1->Height = abs(Y-yZoom);
         if(X < xZoom)
-          Shape1->Left = X;
+					Shape1->Left = X;
         else
           Shape1->Left = xZoom;
         if(Y < yZoom)
@@ -565,7 +564,7 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift,
         double xScale = MovePos.x / Draw.xCoord(X);
         xMin *= xScale;
         xMax *= xScale;
-      }
+			}
       else
       {
         double DeltaX = MovePos.x - Draw.xCoord(X);
@@ -593,7 +592,7 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift,
       if(Shift.Contains(ssLeft))
       {
         if(EvalAction->Checked)
-          SetCross(X,Y);
+					SetCross(X,Y);
         else if(AreaAction->Checked || PathAction->Checked)
           Form9->EndValueChanged(X, Y);
       }
@@ -621,7 +620,7 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift,
 //---------------------------------------------------------------------------
 void TForm1::SetPanelCoordText()
 {
-  int xDigits = 4 - std::log10(std::abs(Data.Axes.xAxis.Max - Data.Axes.xAxis.Min));
+	int xDigits = 4 - std::log10(std::abs(Data.Axes.xAxis.Max - Data.Axes.xAxis.Min));
   int xPrecision = xDigits > 0 ? 100 : 4;
   if(xDigits < 0)
     xDigits = 0;
@@ -677,7 +676,7 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
           if(MovingLabelPlacement == lpUserTopRight || MovingLabelPlacement == lpUserBottomRight)
             X += Image2->Width;
           if(MovingLabelPlacement == lpUserBottomLeft || MovingLabelPlacement == lpUserBottomRight)
-            Y += Image2->Height;
+						Y += Image2->Height;
 
           boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
             MovingLabel->GetText(),
@@ -705,7 +704,7 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
         Image2->Visible = false;
         Data.Axes.ShowLegend = true;
         UndoList.Push(TUndoAxes(Data));
-        Data.Axes.LegendPlacement = LegendPlacement;
+				Data.Axes.LegendPlacement = LegendPlacement;
         Data.Axes.LegendPos = Draw.xyCoord(Image2->Left, Image2->Top);
         Data.SetModified();
         Redraw();
@@ -733,7 +732,7 @@ bool TForm1::AskSave(void)
         Result = DoSave(Data.GetFileName().c_str(), true);
         break;
       case IDNO:
-        Result = true;
+				Result = true;
         break;
       case IDCANCEL:
         Result = false;
@@ -761,7 +760,7 @@ void __fastcall TForm1::FormCloseQuery(TObject *Sender, bool &CanClose)
   if(OleServerRunning() && CanClose)
   {
     OleServerImpl->AddRef();
-    OleServerImpl->Close(SaveOption);
+		OleServerImpl->Close(SaveOption);
     OleServerImpl->Release();
   }
 }
@@ -789,7 +788,7 @@ void TForm1::LoadSettings(void)
   IPrintDialog1->CenterOnPage = Registry.Read("CenterOnPage", true);
   IPrintDialog1->Scale = Registry.Read("PrinterScale", 100);
   IPrintDialog1->Orientation = Registry.Read("Orientation", poPortrait);
-  UndoList.SetMaxUndo(Registry.Read("MaxUndo", 50));
+	UndoList.SetMaxUndo(Registry.Read("MaxUndo", 50));
 
   Python::InitPlugins();
 
@@ -845,7 +844,7 @@ void TForm1::SaveSettings(void)
       Registry.Write("Width", StdWidth);
       Registry.Write("Height", StdHeight);
       Registry.Write("SplitterPos", TreeView->Width);
-    }
+		}
 
     Registry.Write("MaxUndo", UndoList.GetMaxUndo());
 
@@ -873,7 +872,7 @@ void TForm1::UpdateMenu()
     EditAction->Enabled = true;
     DeleteAction->Enabled = true;
   }
-  else
+	else
   {
     EditAction->Enabled = false;
     DeleteAction->Enabled = false;
@@ -901,7 +900,7 @@ void TForm1::UpdateMenu()
   }
 
   if(dynamic_cast<TPointSeries*>(Elem.get()))
-  {
+	{
     InsertTrendlineAction->Enabled = true;
     Tree_InsTrend->Visible = true;
     Tree_Export->Visible = true;
@@ -929,7 +928,7 @@ void TForm1::UpdateMenu()
     Tree_ShowInLegend->Checked = Elem->GetShowInLegend();
   }
 
-  if(dynamic_cast<TTextLabel*>(Elem.get()) || dynamic_cast<TAxesView*>(Elem.get()))
+	if(dynamic_cast<TTextLabel*>(Elem.get()) || dynamic_cast<TAxesView*>(Elem.get()))
     Tree_ShowInLegend->Visible = false;
   else
     Tree_ShowInLegend->Visible = true;
@@ -957,7 +956,7 @@ void TForm1::UpdateMenu()
 
   UndoAction->Enabled = UndoList.CanUndo();
   RedoAction->Enabled = UndoList.CanRedo();
-  PasteAction->Enabled = GraphClipboard.HasData();
+	PasteAction->Enabled = GraphClipboard.HasData();
   ZoomFitAction->Enabled = dynamic_cast<TBaseFuncType*>(Elem.get()) || dynamic_cast<TPointSeries*>(Elem.get()) || dynamic_cast<TRelation*>(Elem.get());
 //  ZoomFitAllAction->Enabled = ZoomFitAction->Enabled;
   ZoomSquareAction->Enabled = Data.Axes.xAxis.LogScl == Data.Axes.yAxis.LogScl;
@@ -978,13 +977,14 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
     else
       AbortPrinting = true;
   }
-  Python::ExecutePluginEvent(Python::peClose);
+	Python::ExecutePluginEvent(Python::peClose);
+	Python::UnloadPlugin();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormConstrainedResize(TObject *Sender,
       int &MinWidth, int &MinHeight, int &MaxWidth, int &MaxHeight)
 {
-  if(WindowState == wsNormal && Top > 0)
+	if(WindowState == wsNormal && Top > 0)
   {
     StdTop = Top;
     StdLeft = Left;
@@ -1012,7 +1012,7 @@ bool TForm1::ZoomWindow(double xMin, double xMax, double yMin, double yMax, bool
 
   Cross->Hide();
 
-  Draw.AbortUpdate();
+	Draw.AbortUpdate();
   if(SaveUndo)
     UndoList.Push(TUndoAxes(Data));
 
@@ -1040,7 +1040,7 @@ bool TForm1::ZoomWindow(double xMin, double xMax, double yMin, double yMax, bool
 //This function is called then a file is dragged from explorer
 void __fastcall TForm1::WMDropFiles(TMessage &Message)
 {
-  //Get needed size for filename
+	//Get needed size for filename
   int BufSize = DragQueryFile(HDROP(Message.WParam), 0, NULL, 0) + 1;
 
   //Allocate memory for filename
@@ -1152,7 +1152,7 @@ void __fastcall TForm1::WMExitSizeMove(TMessage &Message)
     Draw.AbortUpdate();
     Data.ClearCache();
     SendOleAdvise(acDataChanged);
-    Redraw(); //Activates thread; must be done after OLE update
+		Redraw(); //Activates thread; must be done after OLE update
     Reseized = false;
   }
   TForm::Dispatch(&Message);
@@ -1180,7 +1180,7 @@ void __fastcall TForm1::Panel2Resize(TObject *Sender)
       //Make sure background is drawn
       Image1->Canvas->Brush->Style = bsSolid;
       //Set background color
-      Image1->Canvas->Brush->Color = Data.Axes.BackgroundColor;
+			Image1->Canvas->Brush->Color = Data.Axes.BackgroundColor;
       //Clear area
       Image1->Canvas->FillRect(Rect(0,0,Image1->Width,Image1->Height));
       //Only draw the axes, not the functions.
@@ -1460,7 +1460,7 @@ void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
   //Enable and redraw the scrollbar again
   SetScrollPos(TreeView->Handle, SB_VERT, Pos, false);
   SendMessage(TreeView->Parent->Handle, WM_SETREDRAW, true, 0);
-  RedrawWindow(TreeView->Parent->Handle, NULL, 0, RDW_INVALIDATE | RDW_ALLCHILDREN);
+	RedrawWindow(TreeView->Parent->Handle, NULL, 0, RDW_INVALIDATE | RDW_ALLCHILDREN);
   if(TreeView->Selected)
     PostMessage(TreeView->Handle, TVM_ENSUREVISIBLE, 0, (LONG)TreeView->Selected->ItemId); //SendMessage doesn't work
   //If the item is wider than the tree view, TVM_ENSUREVISIBLE will center the tree view.
@@ -1488,7 +1488,7 @@ void __fastcall TForm1::TreeViewKeyPress(TObject *Sender, char &Key)
 {
   switch(Key)
   {
-    case 13:
+		case 13:
       Tree_Properties->OnClick(Sender);
       Key = 0;
       break;
@@ -1600,7 +1600,7 @@ bool TForm1::Zoom(double x, double y, double xZoomRate, double yZoomRate, bool C
   {
     yMin = y - (Axes.yAxis.Max - Axes.yAxis.Min) * yZoomRate;
     yMax = y + (Axes.yAxis.Max - Axes.yAxis.Min) * yZoomRate;
-  }
+	}
 
   if(ZoomWindow(xMin, xMax, yMin, yMax, false))
   {
@@ -1628,7 +1628,7 @@ void __fastcall TForm1::Panel2MouseLeave(TObject *Sender)
   //Clear mouse cursor coordinate in status bar if mouse is outside Panel2.
   //This event may also happen if we are over another control inside Panel2, eg. Image2
   //Don't use Mouse->CursorPos. A user (Veet) has reported it to fail sometimes)
-  DWORD P = GetMessagePos();
+	DWORD P = GetMessagePos();
   POINTS Points = MAKEPOINTS(P);
   TPoint Pos = Panel2->ScreenToClient(TPoint(Points.x, Points.y));
   if(!InsideRect(Panel2->ClientRect, Pos))
@@ -1684,7 +1684,7 @@ bool __fastcall TForm1::Recent1LoadFile(TRecent *Sender, String FileName)
       Form9->FuncChanged(Data.GetElem(0));
     }
     else
-      Form9->FuncChanged(boost::shared_ptr<TGraphElem>());
+			Form9->FuncChanged(boost::shared_ptr<TGraphElem>());
     Redraw();
     return true;
   }
@@ -1796,7 +1796,7 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
     try
     {
       String FileName = SaveDialogEx1->FileName; //SaveAsImage() calls ProcessMessages() and may change SaveDialogEx1
-      SaveAsImage(FileName, SaveDialogEx1->FilterIndex, *ActionImageOptions);
+			SaveAsImage(FileName, SaveDialogEx1->FilterIndex, *ActionImageOptions);
       SetRegValue(REGISTRY_KEY "\\SaveAsImage", L"FilterIndex", HKEY_CURRENT_USER, SaveDialogEx1->FilterIndex);
     }
     catch(Exception &E)
@@ -1824,7 +1824,7 @@ void __fastcall TForm1::PrintActionExecute(TObject *Sender)
       return; //User pressed Cancel
   }
   catch(EPrinter &E)
-  {
+	{
     MessageBox(E.Message, LoadRes(RES_PRINTER_ERROR), MB_ICONSTOP);
     return;
   }
@@ -1852,7 +1852,7 @@ void __fastcall TForm1::PrintActionExecute(TObject *Sender)
   Draw.AbortUpdate();
   TData PrintData(Data);
   TDraw PrintDraw(Printer()->Canvas, &PrintData, ForceBlack, "Printing DrawThread");
-  PrintDraw.SetArea(Area);  //Set drawing area
+	PrintDraw.SetArea(Area);  //Set drawing area
   PrintDraw.SetSizeMul(xSizeMul, ySizeMul);
 
   AbortPrinting = false;
@@ -1908,7 +1908,7 @@ void __fastcall TForm1::CutActionExecute(TObject *Sender)
   if(TEdit *Edit = dynamic_cast<TEdit*>(ActiveControl))
   {
     Edit->CutToClipboard();
-    return;
+		return;
   }
 
   if(!TreeView->Selected)
@@ -1936,7 +1936,7 @@ void __fastcall TForm1::CopyActionExecute(TObject *Sender)
 void __fastcall TForm1::PasteActionExecute(TObject *Sender)
 {
   Draw.AbortUpdate();
-  GraphClipboard.Paste(Data);
+	GraphClipboard.Paste(Data);
   Data.SetModified();
   UpdateTreeView(Data.Back());
   UpdateMenu();
@@ -1964,7 +1964,7 @@ void __fastcall TForm1::CopyImageActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::AxesActionExecute(TObject *Sender)
 {
-  if(CreateForm<TForm3>(Data)->ShowModal() == mrOk)
+	if(CreateForm<TForm3>(Data)->ShowModal() == mrOk)
   {
     Draw.AbortUpdate();
     Cross->Hide();
@@ -1992,7 +1992,7 @@ void __fastcall TForm1::OptionsActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::InsertFunctionActionExecute(TObject *Sender)
 {
-  if(CreateForm<TForm5>(Data)->ShowModal() == mrOk)
+	if(CreateForm<TForm5>(Data)->ShowModal() == mrOk)
   {
     Python::ExecutePluginEvent(Python::peNewElem, Data.Back());
     UpdateTreeView(Data.Back());
