@@ -258,8 +258,8 @@ std::wstring LoadRes(short Ident, std::wstring Par1, std::wstring Par2, const st
     MessageBox(L"Resource " + ToWString(Ident) + L" not found!", L"Error", MB_ICONSTOP);
     return L"";
   }
-
-  Par1.erase(remove(Par1.begin(), Par1.end(), L'&'));
+	if(Par1 != "&") //An & might be found in an expression
+		Par1.erase(remove(Par1.begin(), Par1.end(), L'&'));
   Par2.erase(remove(Par2.begin(), Par2.end(), L'&'));
 
   if(!Par1.empty() && Par1[Par1.size()-1] == L':')
