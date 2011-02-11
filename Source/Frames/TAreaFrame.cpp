@@ -16,6 +16,7 @@
 //---------------------------------------------------------------------------
 #pragma link "MyEdit"
 #pragma link "UpDownEx"
+#pragma link "TEvalFrame"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TAreaFrame::TAreaFrame(TComponent* Owner)
@@ -37,7 +38,7 @@ void TAreaFrame::EvalArea(const TGraphElem *GraphElem)
     EvalArea(PointSeries, From, To);
 
   Form1->IPolygon1->PolygonType = ptPolygon;
-  Form1->IPolygon1->Visible = true;
+	Form1->IPolygon1->Visible = true;
 }
 //---------------------------------------------------------------------------
 void TAreaFrame::EvalArea(const TBaseFuncType *Func, long double From, long double To)
@@ -66,7 +67,7 @@ void TAreaFrame::EvalArea(const TBaseFuncType *Func, long double From, long doub
     Min = Func->sList[N1];
   }
 
-  try
+	try
   {
     if(_finitel(To))
       Max = Func->Eval(To);
@@ -124,7 +125,7 @@ void TAreaFrame::EvalArea(const TPointSeries *PointSeries, long double From, lon
   {
     Area = (FromIter->x - FromCoord.x) * (FromIter->y + FromCoord.y) / 2;
     if(ToIter > FromIter)
-    {
+		{
       --ToIter;
       for(TPointSeries::TPointList::const_iterator Iter = FromIter; Iter != ToIter; ++Iter)
         Area += ((Iter+1)->x - Iter->x) * ((Iter+1)->y + Iter->y) / 2;
@@ -153,7 +154,7 @@ void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
 
   if(const TBaseFuncType *Func = dynamic_cast<const TBaseFuncType*>(GraphElem))
   {
-    Edit3->Text = RoundToStr(Func->GetFunc().CalcArc(Min, Max, 1E-3));
+		Edit3->Text = RoundToStr(Func->GetFunc().CalcArc(Min, Max, 1E-3));
 
     if(!GraphElem->GetVisible())
       return;
@@ -182,7 +183,7 @@ void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
       Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xPoint(Max), Form1->Draw.yPoint(yMax)));
       Form1->IPolygon1->Pen->Width = Tan->Size;
     }
-    catch(...)
+		catch(...)
     {
     }
   }

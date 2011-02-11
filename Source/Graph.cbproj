@@ -42,8 +42,8 @@
 			<AllPackageLibs>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;IComp.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib;DbxCommonDriver.lib</AllPackageLibs>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 			<Defines>STRICT</Defines>
-			<IncludePath>..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;PyGraph;$(IncludePath)</IncludePath>
-			<ILINK_LibraryPath>..\Components\TGrid\;..\Libraries\pdflib;..\Libraries\dxgettext;Swig;$(BDS)\source\Win32\vcl;..\Components\TUpDownEx;..\Components\TRadioGroupEx;..\Components\TGridPanelEx;..\Components\Common;Source;Frames;Forms;$(BDS)\lib\obj;$(BDS)\lib\psdk;..;..\Components\TGrid;..\Components\TIPrintDialog;..\Components\TSymbolDialog;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<IncludePath>Frames\;..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;PyGraph;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>Frames\;..\Components\TGrid\;..\Libraries\pdflib;..\Libraries\dxgettext;Swig;$(BDS)\source\Win32\vcl;..\Components\TUpDownEx;..\Components\TRadioGroupEx;..\Components\TGridPanelEx;..\Components\Common;Source;Frames;Forms;$(BDS)\lib\obj;$(BDS)\lib\psdk;..;..\Components\TGrid;..\Components\TIPrintDialog;..\Components\TSymbolDialog;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<BCC_wpar>false</BCC_wpar>
 			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
 		</PropertyGroup>
@@ -241,6 +241,10 @@
 				<DependentOn>Frames\TAreaFrame.h</DependentOn>
 				<BuildOrder>29</BuildOrder>
 			</CppCompile>
+			<CppCompile Include="Frames\TEvalFrame.cpp">
+				<Form>EvalFrame</Form>
+				<BuildOrder>75</BuildOrder>
+			</CppCompile>
 			<CppCompile Include="Frames\TParFuncFrame.cpp">
 				<Form>ParFuncFrame</Form>
 				<DesignClass>TFrame</DesignClass>
@@ -260,10 +264,8 @@
 				<BuildOrder>32</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Frames\TTanFrame.cpp">
-				<Form>TanFrame</Form>
-				<DesignClass>TFrame</DesignClass>
 				<DependentOn>Frames\TTanFrame.h</DependentOn>
-				<BuildOrder>28</BuildOrder>
+				<BuildOrder>76</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Graph.cpp">
 				<BuildOrder>0</BuildOrder>
@@ -393,24 +395,24 @@
 			<CppCompile Include="Swig\Utility_wrap.cpp">
 				<BuildOrder>67</BuildOrder>
 			</CppCompile>
-			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
-			<FormResources Include="Frames\TTanFrame.dfm"/>
 			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
+			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
 			<FormResources Include="Forms\Unit1.dfm"/>
-			<FormResources Include="Forms\Unit12.dfm"/>
-			<FormResources Include="Forms\Unit13.dfm"/>
 			<FormResources Include="Forms\Unit10.dfm"/>
-			<FormResources Include="Forms\Unit11.dfm"/>
+			<FormResources Include="Forms\Unit13.dfm"/>
 			<FormResources Include="Forms\Unit14.dfm"/>
-			<FormResources Include="Forms\Unit5.dfm"/>
+			<FormResources Include="Forms\Unit11.dfm"/>
+			<FormResources Include="Forms\Unit12.dfm"/>
 			<FormResources Include="Forms\Unit6.dfm"/>
-			<FormResources Include="Forms\Unit3.dfm"/>
-			<FormResources Include="Forms\Unit4.dfm"/>
 			<FormResources Include="Forms\Unit7.dfm"/>
-			<FormResources Include="Frames\TAreaFrame.dfm"/>
-			<FormResources Include="Frames\TParFuncFrame.dfm"/>
+			<FormResources Include="Forms\Unit4.dfm"/>
+			<FormResources Include="Forms\Unit5.dfm"/>
 			<FormResources Include="Forms\Unit8.dfm"/>
+			<FormResources Include="Frames\TEvalFrame.dfm"/>
+			<FormResources Include="Frames\TParFuncFrame.dfm"/>
 			<FormResources Include="Forms\Unit9.dfm"/>
+			<FormResources Include="Frames\TAreaFrame.dfm"/>
+			<FormResources Include="Forms\Unit3.dfm"/>
 			<FormResources Include="Forms\Unit17.dfm"/>
 			<FormResources Include="Forms\Unit18.dfm"/>
 			<FormResources Include="Forms\Unit15.dfm"/>
@@ -448,7 +450,7 @@
 						<VersionInfo Name="MajorVer">4</VersionInfo>
 						<VersionInfo Name="MinorVer">4</VersionInfo>
 						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">489</VersionInfo>
+						<VersionInfo Name="Build">490</VersionInfo>
 						<VersionInfo Name="Debug">True</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -460,7 +462,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.4.0.489</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">4.4.0.490</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>

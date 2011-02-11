@@ -19,6 +19,7 @@
 #include <ExtCtrls.hpp>
 #include <ComCtrls.hpp>
 #include "UpDownEx.h"
+#include "TEvalFrame.h"
 //---------------------------------------------------------------------------
 class TAreaFrame : public TEvalFrame
 {

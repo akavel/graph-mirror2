@@ -141,6 +141,7 @@ To be considered
 - Improve the Zoom|Fit functionality.
 - Highlight matching brackets in edit controls.
 - Change legend to show line and markers next to the text instead of below the text. See MS Excel.
+- Disable zoom with mouse wheel as it is sometimes invoked by mistake.
 
 Plugins:
 + Circle item

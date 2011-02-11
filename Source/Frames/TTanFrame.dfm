@@ -1,4 +1,4 @@
-object TanFrame: TTanFrame
+inherited TanFrame: TTanFrame
   Left = 0
   Top = 0
   Width = 184
@@ -33,7 +33,7 @@ object TanFrame: TTanFrame
     Top = 40
     Width = 135
     Height = 21
-    Hint = 
+    Hint =
       'This is the y-coordinate corresponding to the entered x-coordina' +
       'te.'
     Anchors = [akLeft, akTop, akRight]

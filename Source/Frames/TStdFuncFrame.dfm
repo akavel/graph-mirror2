@@ -1,4 +1,4 @@
-object StdFuncFrame: TStdFuncFrame
+inherited StdFuncFrame: TStdFuncFrame
   Left = 0
   Top = 0
   Width = 184
@@ -57,7 +57,7 @@ object StdFuncFrame: TStdFuncFrame
     Top = 7
     Width = 122
     Height = 21
-    Hint = 
+    Hint =
       'Enter a value for which you want to evaluate the function, or cl' +
       'ick on the graph in the graphing area.'
     Anchors = [akLeft, akTop, akRight]
@@ -68,7 +68,7 @@ object StdFuncFrame: TStdFuncFrame
     Top = 136
     Width = 111
     Height = 21
-    Hint = 
+    Hint =
       'Select where the cursor will be placed when you click on the ima' +
       'ge.'
     Style = csDropDownList
@@ -105,7 +105,7 @@ object StdFuncFrame: TStdFuncFrame
     Top = 72
     Width = 137
     Height = 23
-    Hint = 
+    Hint =
       'This is the first derivative of the function evaluated for the e' +
       'ntered value.'
     Anchors = [akLeft, akTop, akRight]
@@ -124,7 +124,7 @@ object StdFuncFrame: TStdFuncFrame
     Top = 104
     Width = 137
     Height = 23
-    Hint = 
+    Hint =
       'This is the second derivative of the function evaluated for the ' +
       'entered value.'
     Anchors = [akLeft, akTop, akRight]
