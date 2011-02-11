@@ -1,4 +1,4 @@
-object PolFuncFrame: TPolFuncFrame
+inherited PolFuncFrame: TPolFuncFrame
   Left = 0
   Top = 0
   Width = 184
@@ -131,7 +131,7 @@ object PolFuncFrame: TPolFuncFrame
     Top = 8
     Width = 112
     Height = 21
-    Hint = 
+    Hint =
       'Enter the value of the polar angle for which you want to evaluat' +
       'e the function, or click on the graph in the graphing area.'
     Anchors = [akLeft, akTop, akRight]

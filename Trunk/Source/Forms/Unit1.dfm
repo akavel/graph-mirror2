@@ -3995,8 +3995,8 @@ object Form1: TForm1
     end
     object AreaAction: TAction
       Category = 'Calc'
-      Caption = 'Area'
-      Hint = 'Calculate the area under the path of the selected function.'
+      Caption = 'Integrate'
+      Hint = 'Calculate the definite integral over a given domain.'
       ImageIndex = 32
       OnExecute = AreaActionExecute
     end

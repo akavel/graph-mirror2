@@ -30,6 +30,7 @@
 #include "TPolFuncFrame.h"
 #include "TStdFuncFrame.h"
 #include "TTanFrame.h"
+#include "TEvalFrame.h"
 //---------------------------------------------------------------------------
 enum TEvalType {etEval, etArea, etArc};
 class TForm9 : public TForm

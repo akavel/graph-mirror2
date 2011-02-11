@@ -9,6 +9,8 @@
 	<indexterm><primary>evaluate</primary></indexterm>
 	<indexterm><primary>area</primary></indexterm>
 	<indexterm><primary>length of path</primary></indexterm>
+	<indexterm><primary>integrate</primary></indexterm>
+	<indexterm><primary>definite integral</primary></indexterm>
 	<para>
 		This dialog is used for interactive calculations on functions.
 		The dialog may be docked below the function list, which is default, or undocked as a floating dialog.
@@ -96,20 +98,20 @@
 		</para>
 	</simplesect>
 
-	<simplesect id="AreaFrame">
-		<title>Area</title>
+	<simplesect id="IntegrateFrame">
+		<title>Integrate</title>
 		<para>
 			When
 			<menuchoice>
 				<guimenu>Calc</guimenu>
-				<guimenuitem>Area</guimenuitem>
+				<guimenuitem>Integrate</guimenuitem>
 			</menuchoice>
-			is selected the dialog is used to calculate signed areas.
-			For standard functions, parametric functions and tangents the result is the signed area between the graph and the x-axis
+			is selected the dialog is used to calculate the definite integral for the selected function over a specified domain range.
+			For standard functions, parametric functions and tangents the definite integral is the same as the signed area between the graph and the x-axis
 			(the real x-axis and not necessarily the visible one) for the given range.
 		</para>
 		<para>
-			For polar functions, the signed area is the one between the graph in the given range and origin.
+			For polar functions, the definite integral is the same as the signed area between the graph in the given range and the origin.
 			The area is considered negative when the angle goes from a higher to a lower value (clockwise).
 		</para>
 		<para>
@@ -117,7 +119,7 @@
 		</para>
 		<para>
 			You can either enter the range in the edit boxes or select the range with the mouse.
-			The calculated area will be shown below the range, and the area will be marked with a shading in the coordinate system.
+			The calculated integral will be shown below the range, and the matched area will be marked with a shading in the coordinate system.
 			The calculation is done using the Gauss-Kronrod 21-point integration rule adaptively with as much accuracy as possible.
 			If an estimated relative error less than <mathphrase>10<superscript>-4</superscript></mathphrase> cannot be reached, no result will be shown.
 		</para>

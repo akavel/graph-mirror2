@@ -572,15 +572,16 @@
 
 				<varlistentry>
 					<term>
-						<link linkend="AreaFrame">
+						<link linkend="IntegrateFrame">
 							<menuchoice>
-								<guimenu>Calc</guimenu><guimenuitem>Area</guimenuitem>
+								<guimenu>Calc</guimenu><guimenuitem>Integrate</guimenuitem>
 							</menuchoice>
 						</link>
 					</term>
 					<listitem>
 						<para>
-							Calculates the signed area between the graph and the x-axis. This is the same as the numerical integral.
+							Calculates the definite integral for a specified domain range.
+							This is the same as the signed area between the graph and the x-axis.
 						</para>
 					</listitem>
 				</varlistentry>

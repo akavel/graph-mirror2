@@ -24,6 +24,7 @@
 #pragma link "TPolFuncFrame"
 #pragma link "TStdFuncFrame"
 #pragma link "TTanFrame"
+#pragma link "TEvalFrame"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm9::TForm9(TComponent* Owner)
@@ -269,7 +270,7 @@ void TForm9::SetEvalType(TEvalType AEvalType)
 
     case etArea:
       AreaFrame1->Label3->Caption = LoadRes(RES_AREA) + L':';
-      Caption = LoadRes(522);
+			Caption = LoadRes(522);
       AreaFrame1->Edit3->Hint = LoadRes(546);
       //Update grid panel. Setting AutoSize=true might have worked if it was accesible
       AreaFrame1->GridPanel1->Align = alNone;
