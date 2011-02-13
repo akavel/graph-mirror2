@@ -169,7 +169,7 @@ BEGIN
   519 "Coordinate not defined"    //Caption of message box when trying to insert tangent at undefined coordinate
   520 "Checking for newer version..."
   521 "Abort printing?"
-  522 "Calculate area"
+  522 "Calculate definite integral"
   523 "Calculate length of path"
   524 "Edit function"
   525 "Edit tangent/normal"
