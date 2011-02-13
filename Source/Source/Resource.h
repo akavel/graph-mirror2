@@ -19,7 +19,7 @@
 #define RES_AREA         7
 #define RES_LENGTH       8
 #define RES_SERIES       9
-
+#define RES_DEGREES			10
 #define RES_LABEL       11
 #define RES_UNCERTAINTY 12
 #define RES_TRANSPARENT 13
