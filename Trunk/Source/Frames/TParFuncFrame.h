@@ -18,6 +18,7 @@
 #include "TStdFuncFrame.h"
 #include "UpDownEx.h"
 #include <ComCtrls.hpp>
+#include "TEvalFrame.h"
 //---------------------------------------------------------------------------
 class TParFuncFrame : public TEvalFrame
 {

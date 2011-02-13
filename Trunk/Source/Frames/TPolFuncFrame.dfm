@@ -1,11 +1,10 @@
 inherited PolFuncFrame: TPolFuncFrame
-  Left = 0
-  Top = 0
   Width = 184
   Height = 230
   Anchors = [akLeft, akTop, akRight]
   ParentBackground = False
-  TabOrder = 0
+  ExplicitWidth = 184
+  ExplicitHeight = 230
   DesignSize = (
     184
     230)
@@ -131,7 +130,7 @@ inherited PolFuncFrame: TPolFuncFrame
     Top = 8
     Width = 112
     Height = 21
-    Hint =
+    Hint = 
       'Enter the value of the polar angle for which you want to evaluat' +
       'e the function, or click on the graph in the graphing area.'
     Anchors = [akLeft, akTop, akRight]
