@@ -387,41 +387,15 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
 
   switch(Button)
   {
-    case mbLeft:
-      switch(CursorState)
-      {
-        case csAddLabel:
-        {
-          SetCursorState(csIdle);
-          std::auto_ptr<TForm6> Form6(new TForm6(Application, Property.DefaultLabelFont, NAME, Data.GetFileName().c_str()));
-          if(Form6->ShowModal() == mrOk && !Form6->IsEmpty())
-          {
-						Property.DefaultLabelFont = Form6->GetFont();
-            boost::shared_ptr<TTextLabel> Label(new TTextLabel(
-              Form6->GetText().c_str(),
-              lpUserTopLeft,
-              TTextValue(Draw.xCoord(X)),
-              TTextValue(Draw.yCoord(Y)),
-              Form6->GetBackgroundColor(),
-              0
-            ));
-            Data.Insert(Label);
-            Label->Update();
-            Redraw();
-            UndoList.Push(TUndoAdd(Label));
-            UpdateTreeView();
-            UpdateMenu();
-            Data.SetModified();
-          }
-          break;
-        }
-
-        case csZoomWindow:
-          Shape1->SetBounds(X, Y + ActionToolBar1->Height, 0, 0);
-          Shape1->Visible = true;
-          xZoom = X;
-          yZoom = Y;
-          break;
+		case mbLeft:
+			switch(CursorState)
+			{
+				case csZoomWindow:
+					Shape1->SetBounds(X, Y + ActionToolBar1->Height, 0, 0);
+					Shape1->Visible = true;
+					xZoom = X;
+					yZoom = Y;
+					break;
 
         case csMove:
 					UndoList.Push(TUndoAxes(Data));
@@ -2599,7 +2573,6 @@ void __fastcall TForm1::Tree_ShowInLegendClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::InsertLabelActionExecute(TObject *Sender)
 {
-//  SetCursorState(csAddLabel);
   std::auto_ptr<TForm6> Form6(new TForm6(Application, Property.DefaultLabelFont, NAME, Data.GetFileName().c_str()));
   if(Form6->ShowModal() == mrOk && !Form6->IsEmpty())
   {
@@ -2645,11 +2618,7 @@ void TForm1::SetCursorState(TCursorState State)
       break;
     }
 
-    case csAddLabel:
-      Panel2->Cursor = crIBeam;
-      break;
-
-    case csMoveLabel:
+		case csMoveLabel:
     case csMoveLegend:
       Panel2->Cursor = crSizeAll;
       break;
@@ -3446,7 +3415,7 @@ void __fastcall TForm1::RotationClick(TObject *Sender)
     int Rotation = TextLabel->GetRotation();
     if(MenuItem->MenuIndex == 4)
     {
-      if(!InputQuery(LoadStr(RES_ROTATION), LoadStr(RES_ROTATION) + ":", Rotation))
+      if(!InputQuery(LoadStr(RES_ROTATION), LoadStr(RES_DEGREES) + ":", Rotation))
         return;
     }
     else

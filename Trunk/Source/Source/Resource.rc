@@ -14,7 +14,7 @@ BEGIN
   RES_AREA        "Integral"        //Shown as title in the Calc|Area dialog when it is undocked
   RES_LENGTH      "Length"      //Shown as title in the Calc|Length of path dialog when it is undocked
   RES_SERIES      "Series"      //Default description in the Insert point series dialog
-
+  RES_DEGREES     "Degrees"     //Shown in rotation dialog
   RES_LABEL       "Label"       //Name for labels shown in the function list if there is no text in the label.
   RES_UNCERTAINTY "%s-error"    //Used for error bars in point series dialog as "x-error" or "y-error"
   RES_TRANSPARENT "Transparent" //May be selected as background color in Insert label dialog
