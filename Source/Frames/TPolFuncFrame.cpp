@@ -15,6 +15,7 @@
 //---------------------------------------------------------------------------
 #pragma link "MyEdit"
 #pragma link "UpDownEx"
+#pragma link "TEvalFrame"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TPolFuncFrame::TPolFuncFrame(TComponent* Owner)

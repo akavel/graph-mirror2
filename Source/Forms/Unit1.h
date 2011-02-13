@@ -57,7 +57,7 @@
 #include <stack>
 #include <boost/scoped_ptr.hpp>
 //---------------------------------------------------------------------------
-enum TCursorState {csIdle, csAddLabel, csMoveLabel, csMoveLegend, csZoomWindow, csMove, csMoving};
+enum TCursorState {csIdle, csMoveLabel, csMoveLegend, csZoomWindow, csMove, csMoving};
 
 enum TIconIndex
 {
