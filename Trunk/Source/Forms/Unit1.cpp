@@ -2968,20 +2968,22 @@ void __fastcall TForm1::IPrintDialog1PaintSample(TIPrintDialog *Sender,
       TCanvas *PageCanvas, const TRect &PaintRect, const TRect &PaperSize)
 {
   int x = (PaintRect.Right + PaintRect.Left) / 2;
-  int y = (PaintRect.Bottom + PaintRect.Top) / 2;
-  PageCanvas->Pen->Width = 2;
-  PageCanvas->Pen->Color = clBlue;
-  PageCanvas->MoveTo(x, PaintRect.Top);
-  PageCanvas->LineTo(x, PaintRect.Bottom);
-  PageCanvas->MoveTo(PaintRect.Left, y);
-  PageCanvas->LineTo(PaintRect.Right, y);
+	int y = (PaintRect.Bottom + PaintRect.Top) / 2;
+	int Right = PaintRect.Right;
+	int Top = PaintRect.Top;
+	PageCanvas->Pen->Width = 2;
+	PageCanvas->Pen->Color = clBlue;
+	PageCanvas->Brush->Color = clBlue;
+	PageCanvas->MoveTo(x, PaintRect.Top+1);
+	PageCanvas->LineTo(x, PaintRect.Bottom);
+	PageCanvas->MoveTo(PaintRect.Left, y);
+	PageCanvas->LineTo(PaintRect.Right, y);
 
-  PageCanvas->MoveTo(PaintRect.Right-7, y-7);
-  PageCanvas->LineTo(PaintRect.Right, y);
-  PageCanvas->LineTo(PaintRect.Right-7, y+7);
-  PageCanvas->MoveTo(x-7, PaintRect.Top+7);
-  PageCanvas->LineTo(x, PaintRect.Top);
-  PageCanvas->LineTo(x+7, PaintRect.Top+7);
+	PageCanvas->Pen->Width = 1;
+	TPoint Arrow1[] = {TPoint(Right-1, y-1), TPoint(Right-6, y-6), TPoint(Right-6, y+5), TPoint(Right-1, y)};
+	TPoint Arrow2[] = {TPoint(x-1, Top+1), TPoint(x-6, Top+6), TPoint(x+5, Top+6), TPoint(x, Top+1)};
+	PageCanvas->Polygon(Arrow1, 3);
+	PageCanvas->Polygon(Arrow2, 3);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::IPrintDialog1Show(TObject *Sender)
