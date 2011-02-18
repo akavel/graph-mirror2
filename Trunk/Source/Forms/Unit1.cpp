@@ -1547,33 +1547,35 @@ bool TForm1::Zoom(double xZoomRate, double yZoomRate, bool ChangeUnits)
 }
 //---------------------------------------------------------------------------
 //Use this function to zoom in at a given position
-//ZoomRate = sqrt(Z/4), where Z is the relative window size
-//If you want the new window to be 1/4 of the current:  Z=0.25 => ZoomRate=0.25
-//If you want the new window to be 4 times the current: Z=4    => ZoomRate=1
+//ZoomRate = sqrt(Z/2), where Z is the relative window size
+//If you want the new window to be 1/4 of the current:  Z=0.25 => ZoomRate=0.5
+//If you want the new window to be 4 times the current: Z=4    => ZoomRate=2
 bool TForm1::Zoom(double x, double y, double xZoomRate, double yZoomRate, bool ChangeUnits)
 {
-  TAxes &Axes = Data.Axes;
-  double xMin,xMax,yMin,yMax;
+	TAxes &Axes = Data.Axes;
+	double xMin,xMax,yMin,yMax;
 
-  if(Axes.xAxis.LogScl)
-  {
-    xMin = std::exp(std::log(x) - std::log(Axes.xAxis.Max / Axes.xAxis.Min) * xZoomRate);
-    xMax = std::exp(std::log(x) + std::log(Axes.xAxis.Max / Axes.xAxis.Min) * xZoomRate);
-  }
-  else
-  {
-    xMin = x - (Axes.xAxis.Max - Axes.xAxis.Min) * xZoomRate;
-    xMax = x + (Axes.xAxis.Max - Axes.xAxis.Min) * xZoomRate;
-  }
-  if(Axes.yAxis.LogScl)
-  {
-    yMin = std::exp(std::log(y) - std::log(Axes.yAxis.Max / Axes.yAxis.Min) * yZoomRate);
-    yMax = std::exp(std::log(y) + std::log(Axes.yAxis.Max / Axes.yAxis.Min) * yZoomRate);
-  }
-  else
-  {
-    yMin = y - (Axes.yAxis.Max - Axes.yAxis.Min) * yZoomRate;
-    yMax = y + (Axes.yAxis.Max - Axes.yAxis.Min) * yZoomRate;
+	xZoomRate /= 2;
+	yZoomRate /= 2;
+	if(Axes.xAxis.LogScl)
+	{
+		xMin = std::exp(std::log(x) - std::log(Axes.xAxis.Max / Axes.xAxis.Min) * xZoomRate);
+		xMax = std::exp(std::log(x) + std::log(Axes.xAxis.Max / Axes.xAxis.Min) * xZoomRate);
+	}
+	else
+	{
+		xMin = x - (Axes.xAxis.Max - Axes.xAxis.Min) * xZoomRate;
+		xMax = x + (Axes.xAxis.Max - Axes.xAxis.Min) * xZoomRate;
+	}
+	if(Axes.yAxis.LogScl)
+	{
+		yMin = std::exp(std::log(y) - std::log(Axes.yAxis.Max / Axes.yAxis.Min) * yZoomRate);
+		yMax = std::exp(std::log(y) + std::log(Axes.yAxis.Max / Axes.yAxis.Min) * yZoomRate);
+	}
+	else
+	{
+		yMin = y - (Axes.yAxis.Max - Axes.yAxis.Min) * yZoomRate;
+		yMax = y + (Axes.yAxis.Max - Axes.yAxis.Min) * yZoomRate;
 	}
 
   if(ZoomWindow(xMin, xMax, yMin, yMax, false))

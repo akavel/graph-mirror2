@@ -513,8 +513,8 @@ TPlotSettings::TPlotSettings()
 // TGuiSettings //
 //////////////////
 TGuiSettings::TGuiSettings()
-  : MajorZoomIn(0.25), MinorZoomIn(0.45), MajorZoomOut(1), MinorZoomOut(10.0/18.0),
-    MajorStepSize(0.1), MinorStepSize(0.01), MouseZoomIn(0.4330127), MouseZoomOut(0.7071067812)
+	: MajorZoomIn(0.5), MinorZoomIn(0.9), MajorZoomOut(2), MinorZoomOut(20.0/18.0),
+    MajorStepSize(0.1), MinorStepSize(0.01), MouseZoomIn(0.8660254), MouseZoomOut(1,4142135624)
 {
 }
 //---------------------------------------------------------------------------
