@@ -33,6 +33,45 @@
 
 			<varlistentry>
 				<term>
+					<indexterm><primary>GuiFormatSettings (in module Graph)</primary></indexterm>
+					<link linkend="Graph.TGuiFormatSettings"><classname>Graph</classname>.<property>GuiFormatSettings</property></link>
+				</term>
+				<listitem>
+					<para>
+						Structure of class <classname><xref linkend="Graph.TGuiFormatSettings"/></classname> with global formatting settings.
+						Changes to these settings are not stored.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>PlotSettings (in module Graph)</primary></indexterm>
+					<link linkend="Graph.TPlotSettings"><classname>Graph</classname>.<property>PlotSettings</property></link>
+				</term>
+				<listitem>
+					<para>
+						Structure of class <classname><xref linkend="Graph.TPlotSettings"/></classname> with global plot settings.
+						Changes to these settings are not stored.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>GuiSettings (in module Graph)</primary></indexterm>
+					<link linkend="Graph.TGuiSettings"><classname>Graph</classname>.<property>GuiSettings</property></link>
+				</term>
+				<listitem>
+					<para>
+						Structure of class <classname><xref linkend="Graph.TGuiSettings"/></classname> with global GUI settings.
+						Changes to these settings are not stored.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
 					<indexterm><primary>Redraw (in module Graph)</primary></indexterm>
 					<classname>Graph</classname>.<property>Redraw</property>
 				</term>
@@ -329,4 +368,7 @@
 	<xi:include href="Settings.xml" xpointer="Graph.TProperty" />
 	<xi:include href="Settings.xml" xpointer="Graph.TAxis" />
 	<xi:include href="Settings.xml" xpointer="Graph.TAxes" />
+	<xi:include href="GuiSettings.xml" xpointer="Graph.TGuiFormatSettings" />
+	<xi:include href="GuiSettings.xml" xpointer="Graph.TPlotSettings" />
+	<xi:include href="GuiSettings.xml" xpointer="Graph.TGuiSettings" />
 </chapter>

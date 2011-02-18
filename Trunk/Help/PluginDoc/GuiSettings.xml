@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "dtd/dblite.dtd">
+<section id="GuiSetting">
+	<section id="Graph.TGuiFormatSettings" xreflabel="Graph.TGuiFormatSettings">
+		<indexterm><primary>TGuiFormatSettings (class in Graph)</primary></indexterm>
+		<title>class <classname>Graph.TGuiFormatSettings</classname></title>
+		<para>
+			<variablelist>
+				<varlistentry>
+					<term>
+						<indexterm><primary>CartesianPointFormat (Graph.TGuiFormatSettings attribute)</primary></indexterm>
+						<classname>TGuiFormatSettings</classname>.<property>CartesianPointFormat</property>
+					</term>
+					<listitem>
+						<para>
+							This string specifies the format used to show cartesian coordinates for point series.
+							%1% in the string indicates the x-coordinate and %2% indicates the y-coordinate.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>DegreePointFormat (Graph.TGuiFormatSettings attribute)</primary></indexterm>
+						<classname>TGuiFormatSettings</classname>.<property>DegreePointFormat</property>
+					</term>
+					<listitem>
+						<para>
+							This string specifies the format used to show polar coordinates in degrees for point series.
+							%1% in the string indicates the angular coordinate and %2% indicates the radial coordinate.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>RadianPointFormat (Graph.TGuiFormatSettings attribute)</primary></indexterm>
+						<classname>TGuiFormatSettings</classname>.<property>RadianPointFormat</property>
+					</term>
+					<listitem>
+						<para>
+							This string specifies the format used to show polar coordinates in radians for point series.
+							%1% in the string indicates the angular coordinate and %2% indicates the radial coordinate.
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</section>
+
+	<section id="Graph.TPlotSettings" xreflabel="Graph.TPlotSettings">
+		<indexterm><primary>TPlotSettings (class in Graph)</primary></indexterm>
+		<title>class <classname>Graph.TPlotSettings</classname></title>
+		<para>
+			<variablelist>
+				<varlistentry>
+					<term>
+						<indexterm><primary>AxisWidth (Graph.TPlotSettings attribute)</primary></indexterm>
+						<classname>TPlotSettings</classname>.<property>AxisWidth</property>
+					</term>
+					<listitem>
+						<para>
+							Width of the axes on the screen in pixel.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>GridWidth (Graph.TPlotSettings attribute)</primary></indexterm>
+						<classname>TPlotSettings</classname>.<property>GridWidth</property>
+					</term>
+					<listitem>
+						<para>
+							Width of grid lines on the screen in pixels.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TPlotSettings</classname>.<property>xNumberDist</property></term>
+					<term><classname>TPlotSettings</classname>.<property>yNumberDist</property></term>
+					<listitem>
+						<indexterm><primary>xNumberDist (Graph.TPlotSettings attribute)</primary></indexterm>
+						<indexterm><primary>yNumberDist (Graph.TPlotSettings attribute)</primary></indexterm>
+						<para>
+							Specifies the distance in pixels of the numbers on the screen from the x- and y-axis.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TPlotSettings</classname>.<property>TickWidth</property></term>
+					<term><classname>TPlotSettings</classname>.<property>TickLength</property></term>
+					<listitem>
+						<indexterm><primary>TickWidth (Graph.TPlotSettings attribute)</primary></indexterm>
+						<indexterm><primary>TickLength (Graph.TPlotSettings attribute)</primary></indexterm>
+						<para>
+							Specifies the width and length of the tick marks in pixels on the screen.
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</section>
+
+	<section id="Graph.TGuiSettings" xreflabel="Graph.TGuiSettings">
+		<indexterm><primary>TGuiSettings (class in Graph)</primary></indexterm>
+		<title>class <classname>Graph.TGuiSettings</classname></title>
+		<para>
+			<variablelist>
+				<varlistentry>
+					<term>
+						<indexterm><primary>MajorZoomIn (Graph.TGuiSettings attribute)</primary></indexterm>
+						<classname>TGuiSettings</classname>.<property>MajorZoomIn</property>
+					</term>
+					<listitem>
+						<para>
+							When zooming the zoom rate specifies how large a unit will be after on both axes compared to before the zoom.
+							This means that a zoom rate of 1 will make no change.
+							A zoom rate of 2 will double the size on both axes while a zoom rate of 0.5 will half the size of both axes.
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</section>
+</section>
