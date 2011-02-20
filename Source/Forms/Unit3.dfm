@@ -30,11 +30,15 @@ object Form3: TForm3
     Top = 8
     Width = 404
     Height = 213
-    ActivePage = TabSheet3
+    ActivePage = TabSheet2
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'x-axis'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GridPanel1: TGridPanelEx
         Left = 0
         Top = 0
@@ -120,14 +124,14 @@ object Form3: TForm3
           item
             Column = 2
             ColumnSpan = 2
-            Control = Panel2
-            Row = 1
+            Control = Panel1
+            Row = 0
           end
           item
             Column = 2
             ColumnSpan = 2
-            Control = Panel1
-            Row = 0
+            Control = Panel2
+            Row = 1
           end
           item
             Column = 0
@@ -187,7 +191,6 @@ object Form3: TForm3
           Caption = 'Minimum:'
           FocusControl = Edit1
           Layout = tlCenter
-          ExplicitLeft = 7
           ExplicitHeight = 13
         end
         object Edit1: TMyEdit
@@ -210,7 +213,6 @@ object Form3: TForm3
           Caption = 'Maximum:'
           FocusControl = Edit2
           Layout = tlCenter
-          ExplicitLeft = 7
           ExplicitHeight = 13
         end
         object Edit2: TMyEdit
@@ -233,8 +235,6 @@ object Form3: TForm3
           Caption = 'Tick unit:'
           FocusControl = Edit3
           Layout = tlCenter
-          ExplicitLeft = 7
-          ExplicitTop = 63
           ExplicitHeight = 13
         end
         object Edit3: TMyEdit
@@ -257,8 +257,6 @@ object Form3: TForm3
           Caption = 'Grid unit:'
           FocusControl = Edit4
           Layout = tlCenter
-          ExplicitLeft = 7
-          ExplicitTop = 95
           ExplicitHeight = 13
         end
         object Edit4: TMyEdit
@@ -312,43 +310,6 @@ object Form3: TForm3
           Caption = 'Show grid'
           TabOrder = 11
         end
-        object Panel2: TPanel
-          Left = 173
-          Top = 32
-          Width = 219
-          Height = 32
-          Margins.Left = 0
-          Margins.Top = 5
-          Margins.Right = 0
-          Margins.Bottom = 0
-          Align = alClient
-          BevelOuter = bvNone
-          TabOrder = 7
-          object Label4: TLabel
-            Left = 0
-            Top = 0
-            Width = 102
-            Height = 32
-            Align = alLeft
-            Caption = 'The x-axis cross at y='
-            FocusControl = Edit6
-            Layout = tlCenter
-            ExplicitHeight = 13
-          end
-          object Edit6: TMyEdit
-            AlignWithMargins = True
-            Left = 105
-            Top = 5
-            Width = 114
-            Height = 21
-            Hint = 'The x-axis will intersect with the y-axis at this value.'
-            Margins.Top = 5
-            Margins.Right = 0
-            Margins.Bottom = 6
-            Align = alClient
-            TabOrder = 0
-          end
-        end
         object Panel1: TPanel
           Left = 173
           Top = 0
@@ -362,7 +323,7 @@ object Form3: TForm3
             Top = 0
             Width = 48
             Height = 32
-            Hint = 
+            Hint =
               'Show the label at the right side of the graphing area, above the' +
               ' x-axis.'
             Align = alLeft
@@ -387,6 +348,42 @@ object Form3: TForm3
             ParentShowHint = False
             ShowHint = True
             TabOrder = 1
+          end
+        end
+        object Panel2: TPanel
+          Left = 173
+          Top = 32
+          Width = 219
+          Height = 32
+          Margins.Left = 0
+          Margins.Top = 5
+          Margins.Right = 0
+          Margins.Bottom = 0
+          Align = alClient
+          BevelOuter = bvNone
+          TabOrder = 7
+          object Label4: TLabel
+            Left = 0
+            Top = 0
+            Width = 102
+            Height = 13
+            Align = alLeft
+            Caption = 'The x-axis cross at y='
+            FocusControl = Edit6
+            Layout = tlCenter
+          end
+          object Edit6: TMyEdit
+            AlignWithMargins = True
+            Left = 105
+            Top = 5
+            Width = 114
+            Height = 21
+            Hint = 'The x-axis will intersect with the y-axis at this value.'
+            Margins.Top = 5
+            Margins.Right = 0
+            Margins.Bottom = 6
+            Align = alClient
+            TabOrder = 0
           end
         end
         object CheckBox1: TCheckBoxEx
@@ -418,11 +415,17 @@ object Form3: TForm3
         object CheckBox17: TCheckBoxEx
           Left = 173
           Top = 156
-          Width = 125
+          Width = 135
           Height = 28
           Hint = 'Show units on the selected axis as a fraction multiplied by pi.'
           Align = alLeft
           Caption = 'Show as a multiple of '#960
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          ParentFont = False
           TabOrder = 12
         end
       end
@@ -494,18 +497,6 @@ object Form3: TForm3
           end
           item
             Column = 2
-            ColumnSpan = 2
-            Control = Panel3
-            Row = 0
-          end
-          item
-            Column = 2
-            ColumnSpan = 2
-            Control = Panel4
-            Row = 1
-          end
-          item
-            Column = 2
             Control = CheckBox11
             Row = 2
           end
@@ -523,6 +514,18 @@ object Form3: TForm3
             Column = 3
             Control = CheckBox14
             Row = 3
+          end
+          item
+            Column = 2
+            ColumnSpan = 2
+            Control = Panel3
+            Row = 0
+          end
+          item
+            Column = 2
+            ColumnSpan = 2
+            Control = Panel4
+            Row = 1
           end
           item
             Column = 0
@@ -582,7 +585,6 @@ object Form3: TForm3
           Caption = 'Minimum:'
           FocusControl = Edit7
           Layout = tlCenter
-          ExplicitLeft = 7
           ExplicitHeight = 13
         end
         object Edit7: TMyEdit
@@ -605,7 +607,6 @@ object Form3: TForm3
           Caption = 'Maximum:'
           FocusControl = Edit8
           Layout = tlCenter
-          ExplicitLeft = 7
           ExplicitHeight = 13
         end
         object Edit8: TMyEdit
@@ -628,8 +629,6 @@ object Form3: TForm3
           Caption = 'Tick unit:'
           FocusControl = Edit9
           Layout = tlCenter
-          ExplicitLeft = 7
-          ExplicitTop = 63
           ExplicitHeight = 13
         end
         object Edit9: TMyEdit
@@ -652,8 +651,6 @@ object Form3: TForm3
           Caption = 'Grid unit:'
           FocusControl = Edit10
           Layout = tlCenter
-          ExplicitLeft = 7
-          ExplicitTop = 95
           ExplicitHeight = 13
         end
         object Edit10: TMyEdit
@@ -664,6 +661,50 @@ object Form3: TForm3
           Hint = 'Units between the grid lines perpendicular to the y-axis.'
           Anchors = [akLeft, akTop, akRight, akBottom]
           TabOrder = 3
+        end
+        object CheckBox11: TCheckBoxEx
+          Left = 173
+          Top = 64
+          Width = 61
+          Height = 32
+          Hint = 'Determine the tick unit automatically.'
+          Align = alLeft
+          Caption = 'Auto tick'
+          TabOrder = 8
+          OnClick = CheckBoxClick
+        end
+        object CheckBox13: TCheckBoxEx
+          Left = 239
+          Top = 64
+          Width = 71
+          Height = 32
+          Hint = 'Show tick marks on the y-axis.'
+          Align = alLeft
+          Caption = 'Show ticks'
+          TabOrder = 10
+        end
+        object CheckBox12: TCheckBoxEx
+          Left = 173
+          Top = 96
+          Width = 61
+          Height = 32
+          Hint = 'Set the grid unit to the same as the tick unit.'
+          Align = alLeft
+          Caption = 'Auto grid'
+          TabOrder = 9
+          OnClick = CheckBoxClick
+        end
+        object CheckBox14: TCheckBoxEx
+          Left = 239
+          Top = 96
+          Width = 66
+          Height = 32
+          Hint = 'Show horizontal grid lines.'
+          Align = alLeft
+          Caption = 'Show grid'
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 11
         end
         object Panel3: TPanel
           Left = 173
@@ -678,7 +719,7 @@ object Form3: TForm3
             Top = 0
             Width = 48
             Height = 32
-            Hint = 
+            Hint =
               'Show the label at the top of the graphing area, to the right of ' +
               'the y-axis.'
             Align = alLeft
@@ -739,50 +780,6 @@ object Form3: TForm3
             ExplicitHeight = 21
           end
         end
-        object CheckBox11: TCheckBoxEx
-          Left = 173
-          Top = 64
-          Width = 61
-          Height = 32
-          Hint = 'Determine the tick unit automatically.'
-          Align = alLeft
-          Caption = 'Auto tick'
-          TabOrder = 8
-          OnClick = CheckBoxClick
-        end
-        object CheckBox13: TCheckBoxEx
-          Left = 239
-          Top = 64
-          Width = 71
-          Height = 32
-          Hint = 'Show tick marks on the y-axis.'
-          Align = alLeft
-          Caption = 'Show ticks'
-          TabOrder = 10
-        end
-        object CheckBox12: TCheckBoxEx
-          Left = 173
-          Top = 96
-          Width = 61
-          Height = 32
-          Hint = 'Set the grid unit to the same as the tick unit.'
-          Align = alLeft
-          Caption = 'Auto grid'
-          TabOrder = 9
-          OnClick = CheckBoxClick
-        end
-        object CheckBox14: TCheckBoxEx
-          Left = 239
-          Top = 96
-          Width = 66
-          Height = 32
-          Hint = 'Show horizontal grid lines.'
-          Align = alLeft
-          Caption = 'Show grid'
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 11
-        end
         object CheckBox8: TCheckBoxEx
           Left = 6
           Top = 128
@@ -812,11 +809,17 @@ object Form3: TForm3
         object CheckBox18: TCheckBoxEx
           Left = 173
           Top = 156
-          Width = 130
+          Width = 135
           Height = 28
           Hint = 'Show units on the selected axis as a fraction multiplied by pi.'
           Align = alLeft
-          Caption = 'Show as a multiple of pi'
+          Caption = 'Show as a multiple of '#960
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          ParentFont = False
           TabOrder = 12
         end
       end
@@ -824,6 +827,10 @@ object Form3: TForm3
     object TabSheet3: TTabSheet
       Caption = 'Settings'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         396
         185)
@@ -850,7 +857,7 @@ object Form3: TForm3
         Top = 64
         Width = 116
         Height = 73
-        Hint = 
+        Hint =
           'Choose if you want to show the axes, and if you want to show the' +
           'm crossed or at the left and bottom of the image.'
         Anchors = [akTop, akRight]
@@ -868,7 +875,7 @@ object Form3: TForm3
         Top = 64
         Width = 97
         Height = 57
-        Hint = 
+        Hint =
           'Choose if trigonometric functions should calculate in radians or' +
           ' degrees.'
         Anchors = [akTop, akRight]
@@ -930,7 +937,7 @@ object Form3: TForm3
         Top = 40
         Width = 170
         Height = 17
-        Hint = 
+        Hint =
           'Check this to use complex numbers for calculations. Notice that ' +
           'this will slow graphing down.'
         Anchors = [akLeft, akTop, akRight]
@@ -1159,7 +1166,7 @@ object Form3: TForm3
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Options = [fdEffects, fdForceFontExist]
-    Left = 336
+    Left = 368
     Top = 192
   end
 end
