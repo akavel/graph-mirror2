@@ -164,9 +164,6 @@ void AddAccelerator(TControl *Control, std::set<wchar_t> &Accelerators)
   if(TLabel *Label = dynamic_cast<TLabel*>(Control))
     if(Label->FocusControl == NULL)
       return;
-  if(TLabel *Label = dynamic_cast<TLabel*>(Control))
-    if(Label->FocusControl == NULL)
-      return;
   if(dynamic_cast<TCustomEdit*>(Control) != NULL || dynamic_cast<TCustomComboBox*>(Control) != NULL)
     return;
 
