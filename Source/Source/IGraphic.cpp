@@ -15,7 +15,6 @@
 #include "RichEditOle.h"
 #include <fstream>
 #include <algorithm>
-
 //---------------------------------------------------------------------------
 unsigned FindEndPar(const std::wstring &Str, unsigned Pos)
 {
@@ -45,7 +44,7 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
     unsigned Length = Pos2 - Pos + 1;
 
     try
-    {
+		{
       std::wstring Expression = Str.substr(Pos+2, Pos2-Pos-2);
       bool UseReal = Property.ComplexFormat == cfReal;
       String Value = ComplexToString(UseReal ? Func32::TComplex(Data.Calc(Expression)) : Data.CalcComplex(Expression));
@@ -74,7 +73,7 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
       RichEdit->TextFormat.SetColor(clRed);
     }
 
-    if(Pos == 0)
+		if(Pos == 0)
       break; //Special case
   }
 }
@@ -103,7 +102,7 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
   RichEdit->Visible = false;
   RichEdit->Transparent = true;
   RichEdit->WrapType = wtNone; //Must be false for LineIndex() to find the correct line
-  RichEdit->ProtectedChange = true;
+	RichEdit->ProtectedChange = true;
 
   RichEdit->Parent = Application->MainForm;
   TRichEditOle RichEditOle(RichEdit.get());
@@ -113,7 +112,7 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
 
   //We need to add a space to the end of each lines. Else the width will be too
   //small if the line ends with an italic character
-  int LineCount = RichEdit->LineCount();                              
+	int LineCount = RichEdit->LineCount();
   for(int I = 0; I < LineCount; I++)                              
   {
     int Start = RichEdit->LineIndex(I);                                         
@@ -123,111 +122,178 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
 
   //We need to add an empty line to the end, because GetTextSize doesn't count
   //the last line in the height
-  RichEdit->SelText = "\n";
+	RichEdit->SelText = "\n";
 
-  //We need to left align the text because there is no specific right side
-  RichEdit->SelectAll();                                                                
-  RichEdit->Paragraph->Alignment = pfaLeft;
+	//We need to left align the text because there is no specific right side
+	RichEdit->SelectAll();
+	RichEdit->Paragraph->Alignment = pfaLeft;
 
-  return RichEdit->GetTextSize();
+	return RichEdit->GetTextSize();
 }
 //---------------------------------------------------------------------------
 struct TSplineParam
 {
-  TPoint Param[4];
+	TPoint Param[4];
 };
 
 TSplineParam CalcSingleSpline(TPoint p1, TPoint p2, TPoint p3, TPoint p4)
 {
-  TSplineParam Spline;
-  Spline.Param[0].x = -p1.x + 3*p2.x -3*p3.x + p4.x;
-  Spline.Param[1].x = 2*p1.x -5*p2.x + 4*p3.x - p4.x;
-  Spline.Param[2].x = -p1.x+p3.x;
-  Spline.Param[3].x = 2*p2.x;
-  Spline.Param[0].y = -p1.y + 3*p2.y -3*p3.y + p4.y;
-  Spline.Param[1].y = 2*p1.y -5*p2.y + 4*p3.y - p4.y;
-  Spline.Param[2].y = -p1.y+p3.y;
-  Spline.Param[3].y = 2*p2.y;
-  return Spline;
+	TSplineParam Spline;
+	Spline.Param[0].x = -p1.x + 3*p2.x -3*p3.x + p4.x;
+	Spline.Param[1].x = 2*p1.x -5*p2.x + 4*p3.x - p4.x;
+	Spline.Param[2].x = -p1.x+p3.x;
+	Spline.Param[3].x = 2*p2.x;
+	Spline.Param[0].y = -p1.y + 3*p2.y -3*p3.y + p4.y;
+	Spline.Param[1].y = 2*p1.y -5*p2.y + 4*p3.y - p4.y;
+	Spline.Param[2].y = -p1.y+p3.y;
+	Spline.Param[3].y = 2*p2.y;
+	return Spline;
 }
 //---------------------------------------------------------------------------
 //Calculates points used to draw a cubic spline
 //The spline will go from p2 to p3; p1 and p4 are used as control points
 void CreateSingleSpline(std::vector<TPoint> &Points, TPoint p1, TPoint p2, TPoint p3, TPoint p4)
 {
-  //If the two points are identical there is nothing to draw, and we prevent
-  //a division by zero in calculation of dt.
-  if(p2.x == p3.x && p2.y == p3.y)
-    return;
+	//If the two points are identical there is nothing to draw, and we prevent
+	//a division by zero in calculation of dt.
+	if(p2.x == p3.x && p2.y == p3.y)
+		return;
 
-  TPoint q;
-  //Find step point from the horizontal or vertical differense in the points
-  double dt = 2.0/std::max(abs(p2.x-p3.x), abs(p2.y-p3.y));
+	TPoint q;
+	//Find step point from the horizontal or vertical differense in the points
+	double dt = 2.0/std::max(abs(p2.x-p3.x), abs(p2.y-p3.y));
 
-  TSplineParam Spline = CalcSingleSpline(p1, p2, p3, p4);
+	TSplineParam Spline = CalcSingleSpline(p1, p2, p3, p4);
 
   //Calculate points on spline
   for(double t = 0; t < 1; t += dt)
   {
-    //Add 0.5 to take care of rounding error. We assume the coordinates are always positive.
+		//Add 0.5 to take care of rounding error. We assume the coordinates are always positive.
     q.x = 0.5 * (Spline.Param[0].x * t*t*t
-               + Spline.Param[1].x * t*t
+							 + Spline.Param[1].x * t*t
                + Spline.Param[2].x * t
                + Spline.Param[3].x) + 0.5;
-    q.y = 0.5 * (Spline.Param[0].y * t*t*t
+		q.y = 0.5 * (Spline.Param[0].y * t*t*t
                + Spline.Param[1].y * t*t
                + Spline.Param[2].y * t
                + Spline.Param[3].y) + 0.5;
 
     //No need to add point if it is equal to the last one
     if(Points.empty() || q != Points.back())
-      Points.push_back(q);
-  }
+			Points.push_back(q);
+	}
 }
 //---------------------------------------------------------------------------
 //Calculate points used to draw a series of cubic splines between points in P
 void CreateCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint> &P)
 {
-  if(P.size() == 2)
-  {
-    //Draw a straight line if only two points exists
-    Points.push_back(P.front());
-    Points.push_back(P.back());
-  }
+	if(P.size() == 2)
+	{
+		//Draw a straight line if only two points exists
+		Points.push_back(P.front());
+		Points.push_back(P.back());
+	}
 
-  if(P.size() <= 2)
-    return;
+	if(P.size() <= 2)
+		return;
 
-  std::vector<TPoint>::const_iterator p1 = P.begin();
-  std::vector<TPoint>::const_iterator p2 = P.begin();
-  std::vector<TPoint>::const_iterator p3 = p2 + 1;
-  std::vector<TPoint>::const_iterator p4 = p3 + 1;
+	std::vector<TPoint>::const_iterator p1 = P.begin();
+	std::vector<TPoint>::const_iterator p2 = P.begin();
+	std::vector<TPoint>::const_iterator p3 = p2 + 1;
+	std::vector<TPoint>::const_iterator p4 = p3 + 1;
 
-  //Clear points, calculate the number of points needed to draw the splines and
-  //allocate memory
-  Points.clear();
-  int PointNum = 0;
-  for(unsigned I = 1; I < P.size(); I++)
-    PointNum += std::max(abs(P[I-1].x-P[I].x), abs(P[I-1].y-P[I].y));
-  Points.reserve(PointNum);
+	//Clear points, calculate the number of points needed to draw the splines and
+	//allocate memory
+	Points.clear();
+	int PointNum = 0;
+	for(unsigned I = 1; I < P.size(); I++)
+		PointNum += std::max(abs(P[I-1].x-P[I].x), abs(P[I-1].y-P[I].y));
+	Points.reserve(PointNum);
 
-  //Draw the first spline from p2 to p3. The first point is also used as the first control point
-  if(P.front() == P.back()) //WARNING: Don't use operator ?:  because of code generation bug in Bcc 5.6.4
-    p1 = P.end()-2;
-  CreateSingleSpline(Points, *p1, *p2++, *p3++, *p4++);
-  p1 = P.begin();
+	//Draw the first spline from p2 to p3. The first point is also used as the first control point
+	if(P.front() == P.back()) //WARNING: Don't use operator ?:  because of code generation bug in Bcc 5.6.4
+		p1 = P.end()-2;
+	CreateSingleSpline(Points, *p1, *p2++, *p3++, *p4++);
+	p1 = P.begin();
 
-  //Draw splines from p2 to p3. The point before and the point after are used as control points
-  for(unsigned n = 0; n < P.size() - 3; n++)
-    CreateSingleSpline(Points, *p1++, *p2++, *p3++, *p4++);
+	//Draw splines from p2 to p3. The point before and the point after are used as control points
+	for(unsigned n = 0; n < P.size() - 3; n++)
+		CreateSingleSpline(Points, *p1++, *p2++, *p3++, *p4++);
 
-  //Draw the last spline. The last point is also used as the last control point
-  if(P.front() == P.back()) //WARNING: Don't use operator ?: beacuse of code generation bug in Bcc 5.6.4
-    p4 = P.begin()+1;
-  else
-    p4 = p3;
-  CreateSingleSpline(Points, *p1, *p2, *p3, *p4);
+	//Draw the last spline. The last point is also used as the last control point
+	if(P.front() == P.back()) //WARNING: Don't use operator ?: beacuse of code generation bug in Bcc 5.6.4
+		p4 = P.begin()+1;
+	else
+		p4 = p3;
+	CreateSingleSpline(Points, *p1, *p2, *p3, *p4);
 }
+//---------------------------------------------------------------------------
+/*
+struct TCubic
+{
+	double a, b, c, d;
+};
+
+std::vector<TCubic> CalcNaturalCubic(const std::vector<int> &P)
+{
+	int n = P.size()-1;
+	std::vector<double> gamma(n+1);
+	std::vector<double>	delta(n+1);
+	std::vector<double>	D(n+1);
+	int i;
+
+	gamma[0] = 1.0f/2.0f;
+	for ( i = 1; i < n; i++) {
+		gamma[i] = 1/(4-gamma[i-1]);
+	}
+	gamma[n] = 1/(2-gamma[n-1]);
+
+	delta[0] = 3*(P[1]-P[0])*gamma[0];
+	for ( i = 1; i < n; i++) {
+		delta[i] = (3*(P[i+1]-P[i-1])-delta[i-1])*gamma[i];
+	}
+	delta[n] = (3*(P[n]-P[n-1])-delta[n-1])*gamma[n];
+
+	D[n] = delta[n];
+	for ( i = n-1; i >= 0; i--) {
+		D[i] = delta[i] - gamma[i]*D[i+1];
+	}
+
+	// now compute the coefficients of the cubics
+	std::vector<TCubic> C(n);
+	for ( i = 0; i < n; i++)
+	{
+		C[i].a = P[i];
+		C[i].b = D[i];
+		C[i].c = 3*(P[i+1] - P[i]) - 2*D[i] - D[i+1];
+		C[i].d = 2*(P[i] - P[i+1]) + D[i] + D[i+1];
+	}
+
+	return C;
+}
+
+void CreateCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint> &P)
+{
+	std::vector<int> x, y;
+	for(unsigned I = 0; I < P.size(); I++)
+	{
+		x.push_back(P[I].x);
+		y.push_back(P[I].y);
+	}
+	std::vector<TCubic> X = CalcNaturalCubic(x);
+	std::vector<TCubic> Y = CalcNaturalCubic(y);
+
+	const double Steps = 20;
+	for(unsigned I = 0; I < X.size(); I++)
+		for(int J = 1; J <= Steps; J++)
+		{
+			double u = J/Steps;
+			Points.push_back(TPoint(X[I].a + X[I].b * u + X[I].c * u*u + X[I].d * u*u*u,
+									Y[I].a + Y[I].b * u + Y[I].c * u*u + Y[I].d * u*u*u));
+//			Points.push_back(TPoint(x[I] + (x[I+1]-x[I])*u,
+//									Y[I].a + Y[I].b * u + Y[I].c * u*u + Y[I].d * u*u*u));
+		}
+}*/
 //---------------------------------------------------------------------------
 // vt = (v1 + v2)/2 + (v1 - v2)/2 * cos(pi * (t - t1)/(t2-t1))
 // where, vt is the value you're looking for (at time t), v1 and v2 are the start and end values,
@@ -236,21 +302,21 @@ void CreateCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint> &
 enum TCurveDirection {cdHorizontal, cdVertical};
 TCurveDirection CreateSingleHalfCosine(std::vector<TPoint> &Points, TCurveDirection Direction, TPoint p2, TPoint p3, TPoint p4)
 {
-  //Continue horizontal if the points don't start to move backwards
-  if((Direction == cdHorizontal && p2.x < p3.x && p3.x <= p4.x) || (Direction == cdHorizontal && p2.x > p3.x && p3.x >= p4.x))
-  {
-    bool Sign = p2.x < p3.x;
-    for(double t = p2.x; (t <= p3.x) == Sign; Sign ? t++ : t--)
-      Points.push_back(TPoint(t, (p2.y + p3.y)/2 + (p2.y - p3.y)/2 * std::cos(M_PI * (t - p2.x)/(p3.x - p2.x))));
-    return cdHorizontal;
-  }
-  //Continue vertical if the points don't change up/down direction
-  else if((Direction == cdVertical && p2.y < p3.y && p3.y <= p4.y) || (Direction == cdVertical && p2.y > p3.y && p3.y >= p4.y))
-  {
-    bool Sign = p2.y < p3.y;
-    for(double t = p2.y; (t <= p3.y) == Sign; Sign ? t++ : t--)
-      Points.push_back(TPoint((p2.x + p3.x)/2 + (p2.x - p3.x)/2 * std::cos(M_PI * (t - p2.y)/(p3.y - p2.y)), t));
-    return cdVertical;
+	//Continue horizontal if the points don't start to move backwards
+	if((Direction == cdHorizontal && p2.x < p3.x && p3.x <= p4.x) || (Direction == cdHorizontal && p2.x > p3.x && p3.x >= p4.x))
+	{
+		bool Sign = p2.x < p3.x;
+		for(double t = p2.x; (t <= p3.x) == Sign; Sign ? t++ : t--)
+			Points.push_back(TPoint(t, (p2.y + p3.y)/2 + (p2.y - p3.y)/2 * std::cos(M_PI * (t - p2.x)/(p3.x - p2.x))));
+		return cdHorizontal;
+	}
+	//Continue vertical if the points don't change up/down direction
+	else if((Direction == cdVertical && p2.y < p3.y && p3.y <= p4.y) || (Direction == cdVertical && p2.y > p3.y && p3.y >= p4.y))
+	{
+		bool Sign = p2.y < p3.y;
+		for(double t = p2.y; (t <= p3.y) == Sign; Sign ? t++ : t--)
+			Points.push_back(TPoint((p2.x + p3.x)/2 + (p2.x - p3.x)/2 * std::cos(M_PI * (t - p2.y)/(p3.y - p2.y)), t));
+		return cdVertical;
   }
   else
   {
@@ -266,7 +332,7 @@ TCurveDirection CreateSingleHalfCosine(std::vector<TPoint> &Points, TCurveDirect
       }
       else
       {
-        q.x = p3.x - (p3.x-p2.x) * std::cos(t);
+				q.x = p3.x - (p3.x-p2.x) * std::cos(t);
         q.y = p2.y + (p3.y-p2.y) * std::sin(t);
       }
       if(Points.empty() || Points.back() != q)
@@ -278,13 +344,15 @@ TCurveDirection CreateSingleHalfCosine(std::vector<TPoint> &Points, TCurveDirect
 //---------------------------------------------------------------------------
 void CreateHalfCosineInterpolation(std::vector<TPoint> &Points, const std::vector<TPoint> &P)
 {
-  //Start the curve horizontally; This might not always be the best but works in most cases
-  TCurveDirection Direction = cdHorizontal;
-  if(P.size()>2)
-    Direction = CreateSingleHalfCosine(Points, Direction, P[0], P[1], P[2]);
+	if(P.size() < 2)
+	  return;
+	//Start the curve horizontally; This might not always be the best but works in most cases
+	TCurveDirection Direction = cdHorizontal;
+	if(P.size()>2)
+		Direction = CreateSingleHalfCosine(Points, Direction, P[0], P[1], P[2]);
   for(unsigned n = 1; n < P.size() - 2; n++)
     Direction = CreateSingleHalfCosine(Points, Direction, P[n], P[n+1], P[n+2]);
-  if(P.size()>2)
+	if(P.size()>=2)
     Direction = CreateSingleHalfCosine(Points, Direction, *(P.end()-2), P.back(), P.back());
 }
 //---------------------------------------------------------------------------
