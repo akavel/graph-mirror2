@@ -407,11 +407,13 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
           if(Shift.Contains(ssCtrl))
           {
             boost::shared_ptr<TGraphElem> Elem = GetGraphElem(TreeView->Selected);
-            if(TPointSeries *Series = dynamic_cast<TPointSeries*>(Elem.get()))
+            if(TPointSeriesPtr Series = boost::dynamic_pointer_cast<TPointSeries>(Elem))
             {
-              Series->InsertDblPoint(Draw.xyCoord(X, Y));
+							Series->InsertDblPoint(Draw.xyCoord(X, Y));
+							UndoList.Push(TUndoAddPoint(Series));
               Data.SetModified();
-              Redraw(); //We need to redraw everything; Smooth lines may have changed
+							Redraw(); //We need to redraw everything; Smooth lines may have changed
+					    UpdateMenu();
             }
           }
           else

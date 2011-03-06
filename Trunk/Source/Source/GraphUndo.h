@@ -15,9 +15,9 @@ namespace Graph
 {
 struct TUndoAdd
 {
-  boost::shared_ptr<TGraphElem> GraphElem;
+	TGraphElemPtr GraphElem;
 
-  TUndoAdd(const boost::shared_ptr<TGraphElem> &AGraphElem)
+	TUndoAdd(const TGraphElemPtr &AGraphElem)
     : GraphElem(AGraphElem) {}
   void operator()(TUndoList &UndoList) const;
 };
@@ -25,34 +25,34 @@ struct TUndoAdd
 struct TUndoChange
 {
   TGraphElemPtr OldElem;
-  TGraphElemPtr NewElem;
+	TGraphElemPtr NewElem;
 
-  TUndoChange(const TGraphElemPtr &AOldElem, const TGraphElemPtr &ANewElem)
-    : OldElem(AOldElem), NewElem(ANewElem)
-  {
-    OldElem->ClearCache();
-  }
+	TUndoChange(const TGraphElemPtr &AOldElem, const TGraphElemPtr &ANewElem)
+		: OldElem(AOldElem), NewElem(ANewElem)
+	{
+		OldElem->ClearCache();
+	}
 
-  void operator()(TUndoList &UndoList) const
-  {
-    UndoList.Push(TUndoChange(NewElem, OldElem));
-    TData::Replace(NewElem, OldElem);
-  }
+	void operator()(TUndoList &UndoList) const
+	{
+		UndoList.Push(TUndoChange(NewElem, OldElem));
+		TData::Replace(NewElem, OldElem);
+	}
 };
 
 struct TUndoDel
 {
-  int Index;
-  TGraphElemPtr Elem;
-  TGraphElemPtr Parent;
+	int Index;
+	TGraphElemPtr Elem;
+	TGraphElemPtr Parent;
 
-  TUndoDel(const TGraphElemPtr &AElem, const TGraphElemPtr &AParent, int AIndex)
-    : Index(AIndex), Elem(AElem), Parent(AParent)  { }
-  void operator()(TUndoList &UndoList) const
-  {
-    UndoList.Push(TUndoAdd(Elem));
-    Parent->InsertChild(Elem, Index);
-  }
+	TUndoDel(const TGraphElemPtr &AElem, const TGraphElemPtr &AParent, int AIndex)
+		: Index(AIndex), Elem(AElem), Parent(AParent)  { }
+	void operator()(TUndoList &UndoList) const
+	{
+		UndoList.Push(TUndoAdd(Elem));
+		Parent->InsertChild(Elem, Index);
+	}
 };
 
 inline void TUndoAdd::operator()(TUndoList &UndoList) const
@@ -66,7 +66,7 @@ template<class T>
 struct TUndoObject
 {
   T &OrgObject;
-  T Object;
+	T Object;
   TUndoObject(T &AOrgObject, const T &AObject) : OrgObject(AOrgObject), Object(AObject) {}
   void operator()(TUndoList &UndoList)
   {
@@ -83,8 +83,8 @@ struct TUndoAxes
   void operator()(TUndoList &UndoList)
   {
     UndoList.Push(TUndoAxes(Data));
-    Data.Axes = Axes;
-    Data.ClearCache();
+		Data.Axes = Axes;
+		Data.ClearCache();
     Data.Update(); //In case trigonmetry has changed
   }
 };
@@ -95,7 +95,7 @@ struct TUndoCustomFunctions
   TData &Data;
   TUndoCustomFunctions(TData &AData)
     : Data(AData), CustomFunctions(AData.CustomFunctions) {}
-  void operator()(TUndoList &UndoList)
+	void operator()(TUndoList &UndoList)
   {
     Data.CustomFunctions.Swap(CustomFunctions);
     UndoList.Push(*this);
@@ -112,15 +112,41 @@ struct TUndoMove
 
   TUndoMove(TData &AData, const TGraphElemPtr &AElem, unsigned AIndex)
     : Data(AData), Elem(AElem), Index(AIndex) {}
-  void operator()(TUndoList &UndoList)
-  {
-    const TGraphElemPtr &Parent = Elem->GetParent();
-    int OldIndex = Parent->GetChildIndex(Elem);
-    UndoList.Push(TUndoMove(Data, Elem, OldIndex));
-    Parent->RemoveChild(OldIndex);
-    Parent->InsertChild(Elem, Index);
-  }
+	void operator()(TUndoList &UndoList)
+	{
+		const TGraphElemPtr &Parent = Elem->GetParent();
+		int OldIndex = Parent->GetChildIndex(Elem);
+		UndoList.Push(TUndoMove(Data, Elem, OldIndex));
+		Parent->RemoveChild(OldIndex);
+		Parent->InsertChild(Elem, Index);
+	}
 };
+
+struct TUndoAddPoint
+{
+	TPointSeriesPtr Series;
+	TUndoAddPoint(TPointSeriesPtr ASeries) : Series(ASeries) {}
+	void operator()(TUndoList &UndoList);
+};
+
+struct TUndoDelPoint
+{
+	TPointSeriesPtr Series;
+	TPointSeriesPoint Point;
+	TUndoDelPoint(TPointSeriesPtr ASeries, const TPointSeriesPoint &APoint)
+		: Series(ASeries), Point(APoint) {}
+	void operator()(TUndoList &UndoList)
+	{
+		Series->InsertPoint(Point);
+		UndoList.Push(TUndoAddPoint(Series));
+	}
+};
+
+inline void TUndoAddPoint::operator()(TUndoList &UndoList)
+{
+	UndoList.Push(TUndoDelPoint(Series, Series->GetPoint(Series->PointCount()-1)));
+	Series->DeletePoint(Series->PointCount()-1);
+}
 
 template<class T>
 TUndoObject<T> MakeUndoObject(T &OrgObject)

@@ -307,7 +307,7 @@ public:
 enum TErrorBarType {ebtNone, ebtFixed, ebtRelative, ebtCustom};
 struct TPointSeriesPoint
 {
-  std::wstring First; //X or angle
+	std::wstring First; //X or angle
   std::wstring Second; //Y or r
   TTextValue xError, yError; //Data for error bars; only used if Uncertainty=utCustom
 
@@ -350,7 +350,7 @@ public:
   TPointSeries(TColor AFrameColor=clBlack, TColor AFillColor=clRed, TColor ALineColor=clRed,
     unsigned ASize=1, unsigned ALineSize=1, unsigned AStyle=0, TPenStyle ALineStyle=psSolid,
     TInterpolationAlgorithm AInterpolation=iaLinear, bool AShowLabels=false, TFont *AFont=NULL,
-    TLabelPosition ALabelPosition=lpBelow, TPointType APointType=ptCartesian,
+		TLabelPosition ALabelPosition=lpBelow, TPointType APointType=ptCartesian,
     TErrorBarType XErrorBarType=ebtNone, double XErrorValue=0, TErrorBarType YErrorBarType=ebtNone, double YErrorValue=0);
   std::wstring MakeText() const {return GetLegendText();}
   void WriteToIni(TConfigFileSection &Section) const;
@@ -359,8 +359,8 @@ public:
   boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TPointSeries(*this));}
   TPointList::const_iterator FindPoint(double x) const;
 
-  void InsertDblPoint(const Func32::TDblPoint &Point, int Index=-1);
-  void InsertPoint(const TPointSeriesPoint &Point, int Index=-1, bool AutoUpdate=true);
+	void InsertDblPoint(const Func32::TDblPoint &Point, int Index=-1);
+	void InsertPoint(const TPointSeriesPoint &Point, int Index=-1, bool AutoUpdate=true);
   void ReplaceDblPoint(const Func32::TDblPoint &Point, unsigned Index);
   void ReplacePoint(const TPointSeriesPoint &Point, unsigned Index);
   void DeletePoint(unsigned Index);
@@ -379,7 +379,7 @@ public:
   void SetxErrorBarType(TErrorBarType Value) {xErrorBarType = Value;}
   TErrorBarType GetyErrorBarType() const {return yErrorBarType;}
   void SetyErrorBarType(TErrorBarType Value) {yErrorBarType = Value;}
-  double GetxErrorValue() const {return xErrorValue;}
+	double GetxErrorValue() const {return xErrorValue;}
   void SetxErrorValue(double Value) {xErrorValue = Value;}
   double GetyErrorValue() const {return yErrorValue;}
   void SetyErrorValue(double Value) {yErrorValue = Value;}
@@ -408,6 +408,7 @@ public:
   void SetPointType(TPointType Value) {PointType = Value;}
 };
 Func32::TDblPoint FindCoord(TPointSeries::TPointList::const_iterator Iter, double x);
+typedef boost::shared_ptr<TPointSeries> TPointSeriesPtr;
 
 enum TShadeStyle {ssAbove, ssBelow, ssXAxis, ssYAxis, ssBetween, ssInside};
 
