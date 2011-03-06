@@ -42,6 +42,9 @@
 //---------------------------------------------------------------------------
 #ifdef _DEBUG
 	#define BOOST_ENABLE_ASSERT_HANDLER //Assertion handler defined in application
+	namespace Func32 {void LogDebugString(const char *Str, const char *Str2);}
+	//_DEBUG_ERROR2 is used in Dinkumware STL
+	#define _DEBUG_ERROR2(mesg, where) Func32::LogDebugString("error " mesg " at ", where)
 #else
 	#define BOOST_DISABLE_ASSERTS
 #endif

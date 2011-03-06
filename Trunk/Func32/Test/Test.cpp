@@ -7,6 +7,7 @@
 #include <cstdarg>
 #include <limits>
 #include <cmath>
+#include <fstream>
 #include <boost\math\special_functions\fpclassify.hpp>
 //---------------------------------------------------------------------------
 using namespace Func32;
@@ -26,7 +27,7 @@ inline long double imag(long double x) {return 0;}
 
 long double StrToDouble(const char *Str)
 {
-  istringstream Stream(Str);
+	istringstream Stream(Str);
   long double Number;
 //  if(Stream >> Number)
 //    return Number;
@@ -55,7 +56,7 @@ inline bool IsEqual(long double a, long double b)
   int a_exp, b_exp, exp;
   frexp(a, &a_exp);
   frexp(b, &b_exp);
-  frexp(a - b, &exp);
+	frexp(a - b, &exp);
   return ::IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 40);
 }
 
@@ -84,7 +85,7 @@ bool CompareFunc(const TFunc &f1, const TFunc &f2, double x)
 
 bool CompareFunc(const TFunc &f1, const TFunc &f2)
 {
-  double x[] = {-1000, -100, -10, -1, 0, 1, 10, 100, 1000};
+	double x[] = {-1000, -100, -10, -1, 0, 1, 10, 100, 1000};
   for(unsigned I = 0; I < sizeof(x)/sizeof(x[0]); I++)
     if(!CompareFunc(f1, f2, x[I]))
       return false;
@@ -168,7 +169,7 @@ void TestErrorEval(const std::wstring &Str, T x, Func32::TErrorCode Error, TTrig
 	}
 	catch(EFuncError &E)
 	{
-		if(E.ErrorCode != Error) 
+		if(E.ErrorCode != Error)
 		{
 			wcerr << "Function:       " << Str << std::endl;
 			wcerr << "x:              " << setprecision(10) << x << std::endl;
@@ -198,14 +199,14 @@ void TestTrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &P, con
     if(!CompareFunc(Result, Func))
     {
       wcerr << "-- Trendline --" << endl;
-      wcerr << "Expected trendline: f(x)=" << Str << std::endl;
+			wcerr << "Expected trendline: f(x)=" << Str << std::endl;
       wcerr << "Evaluated to:       f(x)=" << std::setprecision(15) << Result << std::endl << std::endl;
 
     }
   }
   catch(EFuncError &E)
   {
-    cerr << "-- Trendline --" << endl;
+		cerr << "-- Trendline --" << endl;
     cerr << "Error code:     " << E.ErrorCode << std::endl << std::endl;
   }
 }
@@ -227,7 +228,7 @@ void TestCustomTrendLine(const std::wstring &Model, const std::vector<TDblPoint>
       wcerr << "Expected trendline: f(x)=" << Str << std::endl;
       wcerr << "Evaluated to:       f(x)=" << Str2 << std::endl << std::endl;
     }
-  }
+	}
   catch(EFuncError &E)
 	{
     wcerr << "-- Custom trendline --" << endl;
@@ -262,16 +263,16 @@ void TestDif(const std::wstring &f, const std::wstring &df, TTrigonometry Trig =
   try
   {
     TFunc Func(f, L"x", Trig);
-    TFunc Dif = Func.MakeDif();
-    TFunc Dif2(df, L"x", Trig);
+		TFunc Dif = Func.MakeDif();
+		TFunc Dif2(df, L"x", Trig);
 
-    if(!CompareFunc(Dif, Dif2))
-    {
-      wcerr << "f(x)=" << f << std::endl;
+		if(!CompareFunc(Dif, Dif2))
+		{
+			wcerr << "f(x)=" << f << std::endl;
 			wcerr << "f'(x)=" << Dif.MakeText() << std::endl;
-      wcerr << "Expected f'(x)=" << df << std::endl << std::endl;
-    }
-  }
+			wcerr << "Expected f'(x)=" << df << std::endl << std::endl;
+		}
+	}
   catch(EFuncError &E)
   {
     wcerr << "f(x)=" << f << std::endl;
@@ -290,8 +291,8 @@ void TestDif(const std::wstring &Str, long double x, long double y, TTrigonometr
 	try
   {
     TFunc Func(Str, L"x", Trig);
-    TFunc Dif = Func.MakeDif();
-    long double f = Dif(x);
+		TFunc Dif = Func.MakeDif();
+		long double f = Dif(x);
 
 		if(!::IsEqual(f, y))
     {
@@ -300,7 +301,7 @@ void TestDif(const std::wstring &Str, long double x, long double y, TTrigonometr
 			wcerr << "f'(" << x << ")=" << f << std::endl;
       wcerr << "Expected f'(" << x << ")=" << y << std::endl << std::endl;
     }
-  }
+	}
   catch(EFuncError &E)
   {
     wcerr << "f(x)=" << Str << std::endl;
@@ -311,17 +312,43 @@ void TestDif(const std::wstring &Str, long double x, long double y, TTrigonometr
 
 void TestDif(const std::string &Str, long double x, long double y, TTrigonometry Trig = Radian)
 {
-  TestDif(ToWString(Str), x, y, Trig);
+	TestDif(ToWString(Str), x, y, Trig);
+}
+
+void TestDif(const std::wstring &Str, TErrorCode ErrorCode)
+{
+	try
+	{
+		TFunc Func(Str);
+		TFunc Dif = Func.MakeDif();
+		wcerr << "f(x)=" << Str << std::endl;
+		wcerr << "f'(x)=" << Dif.MakeText() << std::endl;
+		wcerr << "Expected error: " << ErrorCode << std::endl << std::endl;
+	}
+	catch(EFuncError &E)
+	{
+		if(E.ErrorCode != ErrorCode)
+		{
+			wcerr << "Function:       " << Str << std::endl;
+			wcerr << "Error code:     " << E.ErrorCode << std::endl;
+			wcerr << "Expected error: " << ErrorCode << std::endl << std::endl;
+		}
+	}
+}
+
+void TestDif(const std::string &Str, TErrorCode ErrorCode)
+{
+	TestDif(ToWString(Str), ErrorCode);
 }
 
 void TestSimplify(const std::wstring &Str, const std::wstring &Str2)
 {
 	TFunc Func(Str);
-  Func.Simplify();
-  if(Func != TFunc(Str2))
-  {
-    wcerr << "f(x)=" << Str << std::endl;
-    wcerr << "Simplified to: f(x)=" << Func.MakeText() << std::endl;;
+	Func.Simplify();
+	if(Func != TFunc(Str2))
+	{
+		wcerr << "f(x)=" << Str << std::endl;
+		wcerr << "Simplified to: f(x)=" << Func.MakeText() << std::endl;;
     wcerr << "Expected: f(x)=" << Str2 << std::endl << std::endl;
   }
 }
@@ -333,7 +360,7 @@ void TestSimplify(const std::string &Str, const std::string &Str2)
 
 void TestCustom(const std::wstring &Str, const TArgType &Args, const std::vector<TComplex> &Values, const TComplex &Result)
 {
-  try
+	try
   {
     Func32::TCustomFunc Func(Str, Args);
     TComplex FuncResult = Func.Calc(Values);
@@ -378,10 +405,11 @@ void TestMakeText(const TFunc &Func, const std::wstring &Result)
  */
 namespace boost
 {
-  void assertion_failed(char const * expr, char const * function, char const * file, long line)
-  {
-    cerr << "Assertion failed: " << expr << ", File: " << file << ", Line " << line;
-    abort();
+	void assertion_failed(char const * expr, char const * function, char const * file, long line)
+	{
+		cerr << "Assertion failed: " << expr << ", File: " << file << ", Line " << line;
+		std::cin.ignore();
+		abort();
   }
 }
 
@@ -716,24 +744,28 @@ void Test()
   Test("integrate(dnorm(x,100,20),x,-inf,100)", 0, 0.5);
   Test("integrate(dnorm(x,100,60),x,100,inf)", 0, 0.5);
   Test("integrate(dnorm(x,100,20),x,100,+inf)", 0, 0.5);
-  Test("integrate(e^x,x,-inf,0)", 0, 1);
-  Test("integrate(e^x,x,0,-inf)", 0, -1);
-  Test("integrate(e^-x,x,inf,0)", 0, -1);
+	Test("integrate(e^x,x,-inf,0)", 0, 1);
+	Test("integrate(e^x,x,0,-inf)", 0, -1);
+	Test("integrate(e^-x,x,inf,0)", 0, -1);
 	Test("integrate(e^-x,x,0,inf)", 0, 1);
-  Test("integrate(e^-abs(x),x,-inf,inf)", 0, 2);
-  Test("integrate(e^-abs(x),x,inf,-inf)", 0, -2);
+	Test("integrate(e^-abs(x),x,-inf,inf)", 0, 2);
+	Test("integrate(e^-abs(x),x,inf,-inf)", 0, -2);
 	Test("integrate(x*t^2, t, 0, 3)", 2, 18);
-  Test("sum(x, x, 3, 7)", NaN, 3+4+5+6+7);
-  Test("product(x, x, 3, 7)", NaN, 3*4*5*6*7);
-  Test("sum(x*t, t, 3, 7)", 2, 2*3+2*4+2*5+2*6+2*7);
-  Test("product(x*t, t, 3, 7)", 2, 2*3*2*4*2*5*2*6*2*7);
+	Test("sum(x, x, 3, 7)", NaN, 3+4+5+6+7);
+	Test("product(x, x, 3, 7)", NaN, 3*4*5*6*7);
+	Test("sum(x*t, t, 3, 7)", 2, 2*3+2*4+2*5+2*6+2*7);
+	Test("product(x*t, t, 3, 7)", 2, 2*3*2*4*2*5*2*6*2*7);
+	Test("sum(min(k,8),k,0,x)", 10, 52);
+	Test("sum(min(k,8)*2,k,0,x)", 10, 104);
+	Test("sum(min((k),[6+2])*(2)/2,k,0,x)", 10, 52);
+	Test("sum(sum(k*l,k,1,10),l,1,x)", 2, 165);
 
   //Test infinity
   Test("inf", 0, INF);
   Test("-inf", 0, -INF);
   TestEval<long double>(L"2*inf", 0, INF);
   TestEval<TComplex>(L"2*inf", 0, TComplex(INF, NaN));
-  Test("2+inf", 0, INF);
+	Test("2+inf", 0, INF);
   TestEval<long double>(L"inf*x", 0, NaN);
   TestEval<TComplex>(L"inf*x", 0, TComplex(NaN, NaN));
   TestEval<long double>(L"inf/inf", 0, NaN);
@@ -752,7 +784,7 @@ void Test()
 
   //Test undef
   TestError("undef", 0, ecNotDefError);
-  Test("if(x<5, x, undef)", 0, 0);
+	Test("if(x<5, x, undef)", 0, 0);
   TestError("if(x<5, x, undef)", 6, ecNotDefError);
 
   //Test block function
@@ -771,7 +803,7 @@ void Test()
   Test("zeta(x)", -5, -1.0/252);
 
   //Test Omega function
-  TestErrorEval<long double>(L"W(x)", -M_PI/2, ecComplexError);
+	TestErrorEval<long double>(L"W(x)", -M_PI/2, ecComplexError);
   TestEval<TComplex>(L"W(x)", -M_PI/2, TComplex(0, M_PI/2));
   Test("W(-1/e)", 0, -1);
 	Test("W(x)", 0, 0);
@@ -800,7 +832,7 @@ void Test()
   TDblPoint P1[] = {TDblPoint(0,0.1), TDblPoint(1,0.9), TDblPoint(2,1.9), TDblPoint(3,2.7), TDblPoint(4,4.7)};
 	double W1[] = {0.1, 0.13, 0.16, 0.2, 0.25};
   std::vector<TDblPoint> P(P1, P1 + 5);
-  std::vector<double> W(5);
+	std::vector<double> W(5);
   std::transform(W1, W1+5, W.begin(), ErrorToWeight); //Perform x=1/(x*x)
 
   TestTrendLine(ttLinear, P, Empty, 0, NaN, L"1.1*x-0.14");
@@ -808,7 +840,7 @@ void Test()
   TestTrendLine(ttLinear, P, W, 0, NaN, L"1.01084802043554*x+0.00367555924507695");
   TestTrendLine(ttLinear, P, W, 0, 1, L"0.615568703919657*x+1"); //Force crossing with y-axis
 
-  TestTrendLine(ttPolynomial, P, Empty, 2, NaN, L"0.157142857142857*x^2+0.471428571428571*x+0.174285714285714");
+	TestTrendLine(ttPolynomial, P, Empty, 2, NaN, L"0.157142857142857*x^2+0.471428571428571*x+0.174285714285714");
   TestTrendLine(ttPolynomial, P, Empty, 2, 1, L"0.290322580645161*x^2-0.247741935483871*x+1"); //Force crossing
   TestTrendLine(ttPolynomial, P, W, 2, NaN, L"0.123428984493036*x^2+0.596597125830378*x+0.12279529365147");
   TestTrendLine(ttPolynomial, P, W, 2, 1, L"0.292651922716118*x^2-0.254573787956674*x+1");
@@ -829,7 +861,7 @@ void Test()
   TestCustomTrendLine(L"$a*x^2+$b*x+$c", P, Empty, L"0.15714*x^2+0.47143*x+0.17429");
 	TestCustomTrendLine(L"$a*x^2+$b*x+1", P, Empty, L"0.29032*x^2-0.24774*x+1");
   TestCustomTrendLine(L"$a*x^2+$b*x+$c", P, W, L"0.12343*x^2+0.5966*x+0.1228");
-  TestCustomTrendLine(L"$a*x^2+$b*x+1", P, W, L"0.29265*x^2-0.25457*x+1");
+	TestCustomTrendLine(L"$a*x^2+$b*x+1", P, W, L"0.29265*x^2-0.25457*x+1");
 
   //Test differentiation of common operators
   TestDif("-0.5796", "0");
@@ -856,8 +888,17 @@ void Test()
   TestDif("2^(x/3)", "1/3*ln(2)*2^(x/3)");
   TestDif("2^(1/x)", "-ln(2)*2^(1/x)/x^2");
 
+	//Differentiation of special functions
+	TestDif("sum(k*x, k, 1, 10)", "sum(k, k, 1, 10)");
+	TestDif("sum(sum(k*l,k,1,10),l,1,x)", "0");
+	TestDif("sum(sum(k*l*x,k,1,10),l,1,2)", "sum(sum(k*l,k,1,10),l,1,2)");
+	TestDif("product(k*x, k, 1, 10)", ecNotDifAble);
+	TestDif("integrate(k*x, k, 1, 10)", ecNotDifAble);
+	TestDif("fact(x)", ecNotDifAble);
+	TestDif("fact(5)", "0");
+
 	//Differentiation of piecewise functions
-  TestDif("min(x,2)", "if(x<2,1,0)");
+	TestDif("min(x,2)", "if(x<2,1,0)");
 
   //Test the simplify code
   TestSimplify("ln(e)", "1");
@@ -899,19 +940,21 @@ int main()
 {
 	_control87(DEFAULT_FPU_CONTROL, FPU_MASK);
 	std::wclog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
-  try
-  {
-    Test();
-  }
-  catch(...)
-  {
-    std::cerr << "Unexpected exception!" << std::endl;
-    std::cin.ignore();
-    return 1;
-  }
-  cout << "Test finished" << std::endl;
-  std::cin.ignore();
-  return 0;
+//	std::ofstream DebugLog("Test.log");
+	std::basic_streambuf<char> *OldBuf = std::clog.rdbuf();
+//	std::clog.rdbuf(DebugLog.rdbuf());
+	try
+	{
+		Test();
+		cout << "Test finished" << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "Unexpected exception!" << std::endl;
+	}
+	std::clog.rdbuf(OldBuf);
+	std::cin.ignore();
+	return 0;
 }
 //---------------------------------------------------------------------------
 

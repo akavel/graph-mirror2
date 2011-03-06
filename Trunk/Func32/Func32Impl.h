@@ -14,7 +14,7 @@
 
 #ifdef _DEBUG
   #include <iostream>
-  #define DEBUG_LOG(x) x
+	#define DEBUG_LOG(x) x
 #else
   #define DEBUG_LOG(x)
 #endif
@@ -158,7 +158,7 @@ struct TElem
 	TElem() : Ident(CodeNull), Arguments(0) {};
 	TElem(TIdent AIdent) : Ident(AIdent), Arguments(FunctionArguments(AIdent)) {}
 	TElem(TIdent AIdent, long double AValue) : Ident(AIdent), Value(AValue) {}
-	TElem(TIdent AIdent, const boost::shared_ptr<long double> &AValue) : Ident(AIdent), Value(AValue) {}
+	TElem(TIdent AIdent, const boost::shared_ptr<long double> &AValue, const std::wstring &Str) : Ident(AIdent), Value(AValue), Text(Str) {}
 	TElem(TIdent AIdent, unsigned AArguments, int) : Ident(AIdent), Arguments(AArguments) {}
 	TElem(long double AVal) : Ident(CodeNumber), Value(AVal) {}
 	TElem(TIdent AIdent, const std::wstring &Str, unsigned Args=0, const boost::shared_ptr<TBaseCustomFunc> &AFunc = boost::shared_ptr<TBaseCustomFunc>())
