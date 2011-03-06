@@ -45,15 +45,25 @@ void __fastcall TForm17::Button1Click(TObject *Sender)
   ModalResult = mrOk;
 }
 //---------------------------------------------------------------------------
+int TForm17::FindGridRow(int Index)
+{
+	int Index2 = -1;
+	for(int I = 1; I < Grid1->RowCount; I++)
+		if(!Grid1->Cells[0][I].IsEmpty() || !Grid1->Cells[1][I].IsEmpty())
+			if(++Index2 == Index)
+				return I;
+	return Grid1->RowCount-1;
+}
+//---------------------------------------------------------------------------
 void __fastcall TForm17::Button3Click(TObject *Sender)
 {
-  int Index = 1;
-  try
-  {
-    TCustomFunctions CustomFunctions(Data);
-    for(Index = 1; Index < Grid1->RowCount; Index++)
-      if(!Grid1->Cells[0][Index].IsEmpty() || !Grid1->Cells[1][Index].IsEmpty())
-        CustomFunctions.Add(ToWString(Grid1->Cells[0][Index]), ToWString(Grid1->Cells[1][Index]));
+	int Index = 1;
+	try
+	{
+		TCustomFunctions CustomFunctions(Data);
+		for(Index = 1; Index < Grid1->RowCount; Index++)
+			if(!Grid1->Cells[0][Index].IsEmpty() || !Grid1->Cells[1][Index].IsEmpty())
+				CustomFunctions.Add(ToWString(Grid1->Cells[0][Index]), ToWString(Grid1->Cells[1][Index]));
 
     CustomFunctions.Update();
     Data.AbortUpdate();
@@ -62,22 +72,22 @@ void __fastcall TForm17::Button3Click(TObject *Sender)
     Data.Update();
   }
   catch(Func32::EFuncError &E)
-  {
-    if(Index < Grid1->RowCount)
-    {
-      Grid1->Row = Index;
-      Grid1->Col = 1;
-      Grid1->SetFocus();
-    }
-    ShowErrorMsg(E);
-    throw EAbort("");
-  }
-  catch(ECustomFunctionError &E)
-  {
-    Grid1->SetFocus();
-    if(E.ErrorCode == cfeParseError)
-    {
-      Grid1->Row = E.ErrorPos + 1;
+	{
+		if(Index < Grid1->RowCount)
+		{
+			Grid1->Row = Index;
+			Grid1->Col = 1;
+			Grid1->SetFocus();
+		}
+		ShowErrorMsg(E);
+		throw EAbort("");
+	}
+	catch(ECustomFunctionError &E)
+	{
+		Grid1->SetFocus();
+		if(E.ErrorCode == cfeParseError)
+		{
+			Grid1->Row = FindGridRow(E.ErrorPos);
       Grid1->Col = 1;
       Grid1->SetCursorPos(E.ParseError.ErrorPos);
       ShowErrorMsg(E.ParseError);

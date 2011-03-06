@@ -62,6 +62,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
   TData &Data;
 
+	int FindGridRow(int Index);
 public:		// User declarations
   __fastcall TForm17(TComponent* Owner, TData &AData);
 };
