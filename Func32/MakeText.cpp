@@ -162,7 +162,7 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
       break;
 
     case CodeConst:
-      Stream << "Var";
+      Stream << Elem.Text;
       break;
 
     case CodeAdd:
@@ -245,7 +245,7 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
     case CodeProduct:
       Stream << (Elem.Ident == CodeIntegrate ? "integrate(" : (Elem.Ident == CodeSum ? "sum(" : "product("));
       CreateText(TextData);
-      Stream << ",Var,";
+      Stream << "," << (Elem.Text.empty() ? L"Var" : Elem.Text.c_str()) << ",";
       CreateText(TextData);
       Stream << ",";
       CreateText(TextData);

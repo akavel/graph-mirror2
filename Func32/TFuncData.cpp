@@ -104,7 +104,7 @@ static const TFuncTable Table[] = {
 
 /*CodeRange*/       TFuncTable(L"range", arg1 == 3),
 /*CodeIntegrate*/   TFuncTable(L"integrate", arg1 == 3),
-/*CodeSum*/         TFuncTable(L"sum",   arg1 == 4),
+/*CodeSum*/         TFuncTable(L"sum",   arg1 == 4, NULL, L"sum(dx,Dummy,x2,x3)"),
 /*CodeProduct*/     TFuncTable(L"product", arg1 == 4),
 /*CodeCompare2*/    TFuncTable(L"",      arg1 == 3),
 /*CodePowDiv*/      TFuncTable(L"",      Dummy, NULL, L"x2/x3*x^((x2-x3)/x3)*dx + x^(x2/x3)*ln(x)*(dx2*x3-x2*dx3)/x3^2"),
@@ -163,15 +163,13 @@ const TFuncData& GetDif(TIdent Ident)
 		SymbolList.Add(L"x3");
 		SymbolList.Add(L"dx3");
 
-    Table.reserve(LastFunction-FirstFunction1P+1);
-    std::vector<std::wstring> Variable(1, L"x");
+		Table.reserve(LastFunction-FirstFunction1P+1);
+		std::vector<std::wstring> Variable(1, L"x");
 
-    for(unsigned Ident = FirstFunction1P; Ident <= LastFunction; Ident++)
-      if(FuncTable(static_cast<TIdent>(Ident)).Dif)
-        Table.push_back(TFuncData(FuncTable(static_cast<TIdent>(Ident)).Dif, Variable, SymbolList));
-//      else if(FuncTable(static_cast<TIdent>(Ident)).Definition)
-//        Table.push_back(TFuncData(FuncTable(static_cast<TIdent>(Ident)).Dif, Variable, SymbolList)).MakeDif;
-      else
+		for(unsigned I = FirstFunction1P; I <= LastFunction; I++)
+			if(FuncTable(static_cast<TIdent>(I)).Dif)
+				Table.push_back(TFuncData(FuncTable(static_cast<TIdent>(I)).Dif, Variable, SymbolList));
+			else
         Table.push_back(TFuncData());
   }
   return Table[Ident - FirstFunction1P];

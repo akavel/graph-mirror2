@@ -6,14 +6,14 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
+#include "Func32.h"
+#include "Func32Impl.h"
+#pragma hdrstop
 #include <vector>
 #include <complex>
 #include <string>
 #include <map>
 #include <boost/shared_ptr.hpp>
-#pragma hdrstop
-#include "Func32.h"
-#include "Func32Impl.h"
 #include <boost\math\special_functions\fpclassify.hpp>
 namespace Func32
 {
@@ -330,6 +330,12 @@ bool IsEqual(long double a, long double b)
 	frexp(b, &b_exp);
 	frexp(a - b, &exp);
 	return IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 40);
+}
+//---------------------------------------------------------------------------
+void LogDebugString(const char *Str, const char *Str2)
+{
+	std::clog << Str << Str2 << std::endl;
+	BOOST_ASSERT(0);
 }
 //---------------------------------------------------------------------------
 } //namespace Func32

@@ -30,6 +30,7 @@
 #include <boost/spirit/attribute.hpp>
 #include <boost/bind.hpp>
 #include <boost/spirit/utility/distinct.hpp>
+#include <boost/spirit/utility/confix.hpp>
 //---------------------------------------------------------------------------
 #ifdef _DEBUG
 std::ostream& operator<<(std::ostream& Stream, const std::deque<Func32::TElem> &D)
@@ -48,7 +49,7 @@ using namespace boost::spirit;
 using namespace phoenix;
 
 typedef symbols<TElem, wchar_t> TSymbols;
-struct TFuncSymbols : TSymbols
+const struct TFuncSymbols : TSymbols
 {
   TFuncSymbols()
   {
@@ -63,7 +64,7 @@ struct TFuncSymbols : TSymbols
 } DefaultFuncSymbols;
 //---------------------------------------------------------------------------
 //Predefined constants. Variables are added later. Case sensitive
-struct TCaseSymbols : public TSymbols
+const struct TCaseSymbols : public TSymbols
 {
   TCaseSymbols()
   {
@@ -73,7 +74,7 @@ struct TCaseSymbols : public TSymbols
 } Symbols;
 //---------------------------------------------------------------------------
 //Case sensitive symbols
-struct TNoCaseSymbols : symbols<TElem, wchar_t>
+const struct TNoCaseSymbols : symbols<TElem, wchar_t>
 {
   TNoCaseSymbols()
   {
@@ -85,184 +86,184 @@ struct TNoCaseSymbols : symbols<TElem, wchar_t>
 } DefaultNoCaseSymbols;
 //---------------------------------------------------------------------------
 //Special functions that take an expression as first argument and a variable name as the second
-struct TSpecialFuncSymbols : symbols<TElem, wchar_t>
+const struct TSpecialFuncSymbols : symbols<TElem, wchar_t>
 {
-  TSpecialFuncSymbols()
-  {
-     add(L"integrate", CodeIntegrate)
-        (L"sum",       CodeSum)
-        (L"product",   CodeProduct);
-  }
+	TSpecialFuncSymbols()
+	{
+		 add(L"integrate", CodeIntegrate)
+				(L"sum",       CodeSum)
+				(L"product",   CodeProduct);
+	}
 } SpecialFuncSymbols;
 //---------------------------------------------------------------------------
-struct TCompareSymbols : symbols<TElem>
+const struct TCompareSymbols : symbols<TElem>
 {
-  TCompareSymbols()
-  { add("=",  cmEqual)
-       ("<>", cmNotEqual)
-       ("<",  cmLess)
-       (">",  cmGreater)
-       ("<=", cmLessEqual)
-       (">=", cmGreaterEqual);
-  }
+	TCompareSymbols()
+	{ add("=",  cmEqual)
+			 ("<>", cmNotEqual)
+			 ("<",  cmLess)
+			 (">",  cmGreater)
+			 ("<=", cmLessEqual)
+			 (">=", cmGreaterEqual);
+	}
 } CompareSymbols;
 //---------------------------------------------------------------------------
 //User defined symbols
 struct TUserSymbols : symbols<std::wstring>
 {
-  TUserSymbols(const TSymbolList *Symbols)
-  {
-    if(Symbols)
-    {
-      TSymbolList::TConstIterator Begin = Symbols->Begin();
-      TSymbolList::TConstIterator End = Symbols->End();
-      for(TSymbolList::TConstIterator Iter = Begin; Iter != End; ++Iter)
-        add(Iter->first.c_str(), Iter->first);
-    }
-  }
+	TUserSymbols(const TSymbolList *Symbols)
+	{
+		if(Symbols)
+		{
+			TSymbolList::TConstIterator Begin = Symbols->Begin();
+			TSymbolList::TConstIterator End = Symbols->End();
+			for(TSymbolList::TConstIterator Iter = Begin; Iter != End; ++Iter)
+				add(Iter->first.c_str(), Iter->first);
+		}
+	}
 };
 //---------------------------------------------------------------------------
 struct TContext : boost::spirit::closure<TContext, std::deque<TElem>, unsigned, symbols<TElem, wchar_t> >
 {
-  member1 List;
-  member2 Arg;
-  member3 Symbols;
+	member1 List;
+	member2 Arg;
+	member3 Symbols;
 };
 //---------------------------------------------------------------------------
 void ThrowParseError(const wchar_t *Begin, const EParseError &E)
 {
-  throw parser_error<EParseError, const wchar_t*>(Begin, E);
+	throw parser_error<EParseError, const wchar_t*>(Begin, E);
 }
 //---------------------------------------------------------------------------
 //Action: Throws an error from the place where the action is invoked
 class TDoError
 {
-  TErrorCode ErrorCode;
+	TErrorCode ErrorCode;
 public:
-  TDoError(TErrorCode AErrorCode): ErrorCode(AErrorCode) {}
-  void operator()(const wchar_t *Begin, const wchar_t*) const
-  {
-    if(ErrorCode == ecUnknownChar)
-      ThrowParseError(Begin, EParseError(ecUnknownChar, 0, std::wstring(1, *Begin)));
-    ThrowParseError(Begin, ErrorCode);
-  }
+	TDoError(TErrorCode AErrorCode): ErrorCode(AErrorCode) {}
+	void operator()(const wchar_t *Begin, const wchar_t*) const
+	{
+		if(ErrorCode == ecUnknownChar)
+			ThrowParseError(Begin, EParseError(ecUnknownChar, 0, std::wstring(1, *Begin)));
+		ThrowParseError(Begin, ErrorCode);
+	}
 };
 //---------------------------------------------------------------------------
 //Action: Called when an operator is found
 struct TDoOperator
 {
-  TIdent Ident;
-  TContext::member1 &Elements;
-  TDoOperator(TContext::member1 &AElements, TIdent Operator) : Ident(Operator), Elements(AElements) {}
-  void operator()(const std::deque<TElem> &List) const
-  {
-    //This should be handled in the simplify code.
-    //a^(b/c) will be converted to CodePowDiv(a,b,c) instead of CodePow(a, CodeDiv(b,c))
-    if(Ident == CodePow && List[0].Ident == CodeDiv)
-    {
-      Elements().push_front(CodePowDiv);
-      Elements().insert(Elements().end(), List.begin()+1, List.end());
-    }
-    //a^2 will be converted to CodeSqr(a) instead of CodePow(a,2)
-    else if(Ident == CodePow && List[0] == 2)
-      Elements().push_front(CodeSqr);
-    else
-    {
-      Elements().push_front(Ident);
-      Elements().insert(Elements().end(), List.begin(), List.end());
-    }
-  }
+	TIdent Ident;
+	TContext::member1 &Elements;
+	TDoOperator(TContext::member1 &AElements, TIdent Operator) : Ident(Operator), Elements(AElements) {}
+	void operator()(const std::deque<TElem> &List) const
+	{
+		//This should be handled in the simplify code.
+		//a^(b/c) will be converted to CodePowDiv(a,b,c) instead of CodePow(a, CodeDiv(b,c))
+		if(Ident == CodePow && List[0].Ident == CodeDiv)
+		{
+			Elements().push_front(CodePowDiv);
+			Elements().insert(Elements().end(), List.begin()+1, List.end());
+		}
+		//a^2 will be converted to CodeSqr(a) instead of CodePow(a,2)
+		else if(Ident == CodePow && List[0] == 2)
+			Elements().push_front(CodeSqr);
+		else
+		{
+			Elements().push_front(Ident);
+			Elements().insert(Elements().end(), List.begin(), List.end());
+		}
+	}
 };
 //---------------------------------------------------------------------------
 struct TDoNegate
 {
-  TContext::member1 &Elements;
-  TDoNegate(TContext::member1 &AElements) : Elements(AElements) {}
-  void operator()(const std::deque<TElem> &List) const
-  {
-    if(List.front().Ident == CodeNumber)
-      Elements().push_back(-boost::any_cast<long double>(List.front().Value));
-    else
-    {
-      Elements().push_front(CodeNeg);
-      Elements().insert(Elements().end(), List.begin(), List.end());
-    }
-  }
+	TContext::member1 &Elements;
+	TDoNegate(TContext::member1 &AElements) : Elements(AElements) {}
+	void operator()(const std::deque<TElem> &List) const
+	{
+		if(List.front().Ident == CodeNumber)
+			Elements().push_back(-boost::any_cast<long double>(List.front().Value));
+		else
+		{
+			Elements().push_front(CodeNeg);
+			Elements().insert(Elements().end(), List.begin(), List.end());
+		}
+	}
 };
 //---------------------------------------------------------------------------
 struct TDoFuncSymbol
 {
-  TContext::member1 &Container;
-  const TContext::member2 &Arg;
+	TContext::member1 &Container;
+	const TContext::member2 &Arg;
 
-  TDoFuncSymbol(TContext::member1 &AContainer, const TContext::member2 &AArg)
-    : Container(AContainer), Arg(AArg) {}
-  void operator()(const wchar_t *Begin, const wchar_t*) const
-  {
-    TElem &Elem = Container().front();
-    unsigned ActualArg = Arg();
+	TDoFuncSymbol(TContext::member1 &AContainer, const TContext::member2 &AArg)
+		: Container(AContainer), Arg(AArg) {}
+	void operator()(const wchar_t *Begin, const wchar_t*) const
+	{
+		TElem &Elem = Container().front();
+		unsigned ActualArg = Arg();
 
-    if(Elem.Ident == CodeCustom)
-    {
-      if(Elem.Arguments != ActualArg)
-       ThrowParseError(Begin, EParseError(ecArgCountError, -1, FunctionName(Elem)));
-    }
-    else
-    {
-      if(!ArgCountValid(Elem.Ident, ActualArg))
-        ThrowParseError(Begin, EParseError(ecArgCountError, -1, FunctionName(Elem.Ident)));
-      Elem.Arguments = ActualArg;
-    }
-  }
+		if(Elem.Ident == CodeCustom)
+		{
+			if(Elem.Arguments != ActualArg)
+			 ThrowParseError(Begin, EParseError(ecArgCountError, -1, FunctionName(Elem)));
+		}
+		else
+		{
+			if(!ArgCountValid(Elem.Ident, ActualArg))
+				ThrowParseError(Begin, EParseError(ecArgCountError, -1, FunctionName(Elem.Ident)));
+			Elem.Arguments = ActualArg;
+		}
+	}
 };
 //---------------------------------------------------------------------------
 //Policies for real parser. Exponential 'E' must be in upper case
 template <typename T>
 struct TFuncURealParserPolicies : public ureal_parser_policies<T>
 {
-  BOOST_STATIC_CONSTANT(bool, allow_trailing_dot = false);
-  template <typename ScannerT>
-  static typename parser_result<chlit<>, ScannerT>::type
-  parse_exp(ScannerT& scan)
-  {
-    return ch_p('E').parse(scan);
-  }
+	BOOST_STATIC_CONSTANT(bool, allow_trailing_dot = false);
+	template <typename ScannerT>
+	static typename parser_result<chlit<>, ScannerT>::type
+	parse_exp(ScannerT& scan)
+	{
+		return ch_p('E').parse(scan);
+	}
 };
 //---------------------------------------------------------------------------
 //Parser used for parsing unsigned real numbers. Example: 5.457E-87
-real_parser<long double, TFuncURealParserPolicies<long double> > const
-  FuncUReal_p = real_parser<long double, TFuncURealParserPolicies<long double> >();
+const real_parser<long double, TFuncURealParserPolicies<long double> >
+	FuncUReal_p = real_parser<long double, TFuncURealParserPolicies<long double> >();
 
 //Assertion: Throws an exception if the parser does not succed
-assertion<EParseError> AssertFactor_p(ecFactorExpected);
-assertion<EParseError> AssertExpression_p(ecExpressionExp);
-assertion<EParseError> AssertEndPar_p(ecNoEndPar);
+const assertion<EParseError> AssertFactor_p(ecFactorExpected);
+const assertion<EParseError> AssertExpression_p(ecExpressionExp);
+const assertion<EParseError> AssertEndPar_p(ecNoEndPar);
 
 template <typename T, typename T2>
 class TPushFront
 {
-  T &Container;
-  const T2 &Data;
+	T &Container;
+	const T2 &Data;
 public:
-  explicit TPushFront(T& AContainer, const T2 &AData) : Container(AContainer), Data(AData) {}
+	explicit TPushFront(T& AContainer, const T2 &AData) : Container(AContainer), Data(AData) {}
 
-  template <typename T3>
-  void operator()(const T3 &Val) const
-  {
-    Container().push_front(Data(Val));
-  }
+	template <typename T3>
+	void operator()(const T3 &Val) const
+	{
+		Container().push_front(Data(Val));
+	}
 };
 
 template <typename T, typename T2>
 inline TPushFront<T, T2> PushFront(T& t, const T2 &t2)
 {
-  return TPushFront<T, T2>(t, t2);
+	return TPushFront<T, T2>(t, t2);
 }
 
 template <typename T>
 inline TPushFront<T, actor<argument<0> > > PushFront(T& t)
 {
-  return TPushFront<T, actor<argument<0> > >(t, arg1);
+	return TPushFront<T, actor<argument<0> > >(t, arg1);
 }
 
 class TAssign
@@ -270,32 +271,32 @@ class TAssign
 TContext::member1 &Container;
 public:
 TAssign(TContext::member1 &AContainer) : Container(AContainer) {}
-  void operator()(const TElem &Elem) const
-  {
-    Container().clear();
-    Container().push_back(Elem);
-  }
+	void operator()(const TElem &Elem) const
+	{
+		Container().clear();
+		Container().push_back(Elem);
+	}
 };
 
 class TPushBack
 {
-  TContext::member1 &Container;
+	TContext::member1 &Container;
 public:
-  TPushBack(TContext::member1 &AContainer) : Container(AContainer) {}
-  void operator()(const std::deque<TElem> &List) const
-  {
-    Container().insert(Container().end(), List.begin(), List.end());
-  }
+	TPushBack(TContext::member1 &AContainer) : Container(AContainer) {}
+	void operator()(const std::deque<TElem> &List) const
+	{
+		Container().insert(Container().end(), List.begin(), List.end());
+	}
 };
 
 class TConvertRelation
 {
-  TContext::member1 &Container;
+	TContext::member1 &Container;
 public:
-  TConvertRelation(TContext::member1 &AContainer) : Container(AContainer) {}
-  void operator()(const TElem &Elem) const
-  {
-    Container().front().Ident = CodeCompare2;
+	TConvertRelation(TContext::member1 &AContainer) : Container(AContainer) {}
+	void operator()(const TElem &Elem) const
+	{
+		Container().front().Ident = CodeCompare2;
 		Container().front().Value =
 			std::make_pair(boost::any_cast<TCompareMethod>(Container().front().Value),
 			boost::any_cast<TCompareMethod>(Elem.Value));
@@ -313,8 +314,9 @@ public:
 	{
 		boost::shared_ptr<long double> Ptr(new long double);
 		std::wstring Str = ToLower(std::wstring(Begin, End));
-		Symbols.add(Str.begin(), Str.end(), TElem(CodeConst, Ptr));
+		Symbols.add(Str.begin(), Str.end(), TElem(CodeConst, Ptr, Str));
 		Container().front().Value = Ptr;
+		Container().front().Text = Str;
 	}
 };
 
@@ -329,32 +331,34 @@ static const std::wstring ValidChars = L"+-*/^=_.,() \x2212";
  */
 void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &Args, const TSymbolList *SymbolList)
 {
-  TSymbols FuncSymbols = DefaultFuncSymbols;
-  TSymbols NoCaseSymbols = DefaultNoCaseSymbols;
-  TSymbols TempVariables;
+	TSymbols FuncSymbols = DefaultFuncSymbols;
+	TSymbols NoCaseSymbols = DefaultNoCaseSymbols;
+	TSymbols TempVariables;
 
-  //Add arguments before symbol names, so they take precedens.
-  for(unsigned I = 0; I < Args.size(); ++I)
-    NoCaseSymbols.add(ToLower(Args[I]).c_str(), TElem(CodeArgument, I, 0));
+	//Add arguments before symbol names, so they take precedens.
+	for(unsigned I = 0; I < Args.size(); ++I)
+		NoCaseSymbols.add(ToLower(Args[I]).c_str(), TElem(CodeArgument, I, 0));
 
-  if(SymbolList)
-  { //WARNING: Do not remove {} (bcc 5.6.4 bug)
+	if(SymbolList)
+	{ //WARNING: Do not remove {} (bcc 5.6.4 bug)
 		for(TSymbolList::TConstIterator Iter = SymbolList->Begin(); Iter != SymbolList->End(); ++Iter)
-      if(!Iter->second || Iter->second->ArgumentCount() == 0)
-      {
-        //Don't add a function/constant with same name as an argument
-        if(find(NoCaseSymbols, Iter->first.c_str()) == NULL)
-          NoCaseSymbols.add(Iter->first.c_str(), TElem(CodeCustom, Iter->first, 0, Iter->second));
-      }
+			if(!Iter->second || Iter->second->ArgumentCount() == 0)
+			{
+				//Don't add a function/constant with same name as an argument
+				if(find(NoCaseSymbols, Iter->first.c_str()) == NULL)
+					NoCaseSymbols.add(Iter->first.c_str(), TElem(CodeCustom, Iter->first, 0, Iter->second));
+			}
 			else
 				FuncSymbols.add(Iter->first.c_str(), TElem(CodeCustom, Iter->first, Iter->second->ArgumentCount(), Iter->second));
-  }
+	}
 
-  distinct_directive<wchar_t> keyword_d(L"a-zA-Z0-9_");
-
-  rule<wide_phrase_scanner_t, TContext::context_t> Term, Expression, Factor, Constant,
+	rule<wide_phrase_scanner_t, TContext::context_t> Term, Expression, Factor, Constant,
 		Function, Parentheses, Power, FactorSeq, Sum, Neg, Relation, SpecialFunc, Literal,
-		MinusSign;
+		MinusSign, DummyExpression;
+
+	//DummyExpression accepts everything until it finds a comma. It is used to jump
+	//over the first expression in a special function like sum.
+	DummyExpression = *(comment_nest_p('(', ')') | comment_nest_p('[', ']') | ~ch_p(','));
 
 	Literal = alpha_p >> *alnum_p;
 	MinusSign = '-' | ch_p(L'\x2212'); //0x2212 = Unicode symbol Minus
@@ -366,22 +370,22 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 								TempVariables[TAssign(Constant.List)]
 							| NoCaseSymbols[TAssign(Constant.List)]
 							]
-              | Symbols[TAssign(Constant.List)]
+							| Symbols[TAssign(Constant.List)]
 							) >> (eps_p - alnum_p)] >> !(+ch_p('('))[TDoError(ecParAfterConst)];
 
-  //A function name may not be followd by character og digit, because they should be part of the name.
-  //If an alphanumeric character is found afterwards, the pushed function is popped
-  Function =
-      lexeme_d[as_lower_d[FuncSymbols[PushFront(Function.List)][Function.Arg = 1] >> (eps_p - alnum_p)]] >>
-          (   '(' >> Expression[TPushBack(Function.List)] >>
+	//A function name may not be followd by character og digit, because they should be part of the name.
+	//If an alphanumeric character is found afterwards, the pushed function is popped
+	Function =
+			lexeme_d[as_lower_d[FuncSymbols[PushFront(Function.List)][Function.Arg = 1] >> (eps_p - alnum_p)]] >>
+					(   '(' >> Expression[TPushBack(Function.List)] >>
 							*(',' >> AssertExpression_p(Expression)[TPushBack(Function.List)])[++Function.Arg] >> AssertEndPar_p(ch_p(')'))
 					|   FactorSeq[TPushBack(Function.List)]
-          )[TDoFuncSymbol(Function.List, Function.Arg)];
+					)[TDoFuncSymbol(Function.List, Function.Arg)];
 
   SpecialFunc =
       SpecialFuncSymbols[PushFront(SpecialFunc.List)] >> '(' >>
-          (
-              ((*~ch_p(',') >> ',' >> (+Literal)[SpecialFunc.Symbols = TempVariables][TSpecialAddVar(SpecialFunc.List, TempVariables)]) >> nothing_p)
+					(
+							((DummyExpression >> ',' >> (+Literal)[SpecialFunc.Symbols = TempVariables][TSpecialAddVar(SpecialFunc.List, TempVariables)]) >> nothing_p)
 					|   AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)][var(TempVariables) = SpecialFunc.Symbols] >>
               ',' >> Literal >> ',' >>
               AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >> ',' >>
@@ -390,8 +394,8 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 
   Parentheses =
               '(' >> AssertExpression_p(Expression)[Parentheses.List = arg1] >> AssertEndPar_p(ch_p(')'))
-          |   '[' >> AssertExpression_p(Expression)[Parentheses.List = arg1] >> AssertEndPar_p(ch_p(']'))
-          |   '{' >> AssertExpression_p(Expression)[Parentheses.List = arg1] >> AssertEndPar_p(ch_p('}'));
+					|   '[' >> AssertExpression_p(Expression)[Parentheses.List = arg1] >> AssertEndPar_p(ch_p(']'))
+					|   '{' >> AssertExpression_p(Expression)[Parentheses.List = arg1] >> AssertEndPar_p(ch_p('}'));
 
   Relation =
       Sum[Relation.List = arg1] >>
@@ -404,7 +408,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
          *(   lexeme_d[as_lower_d["and"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeAnd)])
 					|   lexeme_d[as_lower_d["or"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeOr)])
 					|   lexeme_d[as_lower_d["xor"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeXor)])
-          );
+					);
 
   Sum =
       Term[Sum.List = arg1] >>
@@ -419,8 +423,8 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
             | Factor[Neg.List = arg1]
           );
 
-  Term =
-      Neg[Term.List = arg1] >>
+	Term =
+			Neg[Term.List = arg1] >>
          *Factor[TDoOperator(Term.List, CodeMul)] >>
          *(   ('*' >> FactorSeq[TDoOperator(Term.List, CodeMul)])
 					|   ('/' >> FactorSeq[TDoOperator(Term.List, CodeDiv)])
@@ -432,21 +436,24 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
       |   Constant[Factor.List = arg1]
 			|   FuncUReal_p[PushFront(Factor.List)] >> !(+ch_p('.'))[TDoError(ecInvalidNumber)]
 			|   Parentheses[Factor.List = arg1]
-      )   >> !('^' >> FactorSeq[TDoOperator(Factor.List, CodePow)])
+			)   >> !('^' >> FactorSeq[TDoOperator(Factor.List, CodePow)])
       ;
 
   BOOST_SPIRIT_DEBUG_RULE(Expression);
   BOOST_SPIRIT_DEBUG_RULE(Relation);
-  BOOST_SPIRIT_DEBUG_RULE(Term);
+	BOOST_SPIRIT_DEBUG_RULE(Term);
 	BOOST_SPIRIT_DEBUG_RULE(Sum);
-  BOOST_SPIRIT_DEBUG_RULE(FactorSeq);
-  BOOST_SPIRIT_DEBUG_RULE(Factor);
-  BOOST_SPIRIT_DEBUG_RULE(Parentheses);
-  BOOST_SPIRIT_DEBUG_RULE(Power);
-  BOOST_SPIRIT_DEBUG_RULE(Function);
-  BOOST_SPIRIT_DEBUG_RULE(SpecialFunc);
-  BOOST_SPIRIT_DEBUG_RULE(Constant);
-  BOOST_SPIRIT_DEBUG_RULE(Neg);
+	BOOST_SPIRIT_DEBUG_RULE(FactorSeq);
+	BOOST_SPIRIT_DEBUG_RULE(Factor);
+	BOOST_SPIRIT_DEBUG_RULE(Parentheses);
+	BOOST_SPIRIT_DEBUG_RULE(Power);
+	BOOST_SPIRIT_DEBUG_RULE(Function);
+	BOOST_SPIRIT_DEBUG_RULE(SpecialFunc);
+	BOOST_SPIRIT_DEBUG_RULE(Constant);
+	BOOST_SPIRIT_DEBUG_RULE(Neg);
+	BOOST_SPIRIT_DEBUG_RULE(DummyExpression);
+	BOOST_SPIRIT_DEBUG_RULE(MinusSign);
+	BOOST_SPIRIT_DEBUG_RULE(Literal);
 
   //Set pointers to start and end of string.
 	//Ignore ending spaces as the parser doesn't seem to handle this.
@@ -460,7 +467,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
     //Parse expression and ignore spaces
 		std::deque<TElem> Temp;
 		errno = 0;
-    parse_info<const wchar_t*> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
+		parse_info<const wchar_t*> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
 		DEBUG_LOG(std::clog.flush());
 		if(errno)
 			//Throw error if a calculation error occured under parsing
