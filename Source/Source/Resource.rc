@@ -80,7 +80,7 @@ BEGIN
   RES_IllegalName         "Illegal name \"%s\" for user defined function or constant."
   RES_RecursiveDif        "Cannot differentiate recursive function."
   RES_NoFunc              "Internal error."
-  RES_NotDifAble          "Function cannot be differentiated."
+  RES_NotDifAble          "Function \"%s\" cannot be differentiated."
   RES_ErrorType           "Internal error."
   RES_CalcError           "Not further specified error occurred under calculation."
   RES_BadGuess            "No solution found. Try another guess or another model."
