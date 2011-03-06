@@ -370,7 +370,7 @@
 			</varlistentry>
 
 			<varlistentry id="Error79">
-				<term>Error 79: Function cannot be differentiated.</term>
+				<term>Error 79: Function %s cannot be differentiated.</term>
 				<listitem>
 					<para>
 						The function cannot be differentiated, because some part of the function does not have a first derivative.
