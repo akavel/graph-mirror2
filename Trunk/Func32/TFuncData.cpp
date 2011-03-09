@@ -23,10 +23,10 @@ namespace Func32
 {
 struct TFuncTable
 {
-  const wchar_t *FuncName;
-  boost::function1<bool, unsigned> ArgCountValid;
-  const wchar_t *Definition;
-  const wchar_t *Dif;
+	const wchar_t *FuncName;
+	boost::function1<bool, unsigned> ArgCountValid;
+	const wchar_t *Definition;
+	const wchar_t *Dif;
 	TFuncTable(const wchar_t *AFuncName, const boost::function1<bool, unsigned> &AArgCountValid, const wchar_t *ADefinition = NULL, const wchar_t *ADif = NULL)
 		: FuncName(AFuncName), ArgCountValid(AArgCountValid), Definition(ADefinition), Dif(ADif) {}
 };
@@ -104,8 +104,8 @@ static const TFuncTable Table[] = {
 
 /*CodeRange*/       TFuncTable(L"range", arg1 == 3),
 /*CodeIntegrate*/   TFuncTable(L"integrate", arg1 == 3),
-/*CodeSum*/         TFuncTable(L"sum",   arg1 == 4, NULL, L"sum(dx,Dummy,x2,x3)"),
-/*CodeProduct*/     TFuncTable(L"product", arg1 == 4),
+/*CodeSum*/         TFuncTable(L"sum",   phoenix::val(false), NULL, L"sum(dx,Dummy,x2,x3)"),
+/*CodeProduct*/     TFuncTable(L"product", phoenix::val(false)),
 /*CodeCompare2*/    TFuncTable(L"",      arg1 == 3),
 /*CodePowDiv*/      TFuncTable(L"",      Dummy, NULL, L"x2/x3*x^((x2-x3)/x3)*dx + x^(x2/x3)*ln(x)*(dx2*x3-x2*dx3)/x3^2"),
 

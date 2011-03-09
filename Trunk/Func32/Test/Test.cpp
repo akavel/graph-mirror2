@@ -239,7 +239,7 @@ void TestCustomTrendLine(const std::wstring &Model, const std::vector<TDblPoint>
 
 void TestTrendLineError(Func32::TTrendType Type, const TDblPoint *Points, unsigned Size, unsigned N, Func32::TErrorCode ErrorCode)
 {
-  try
+	try
 	{
     std::vector<double> W;
     TrendLine(Type, std::vector<TDblPoint>(Points, Points + Size), W, N);
@@ -369,7 +369,7 @@ void TestCustom(const std::wstring &Str, const TArgType &Args, const std::vector
       wcerr << "Function:     " << Str << std::endl;
       for(unsigned I = 0; I < Values.size(); I++)
         wcerr << Args[I] << ":            " << setprecision(10) << Values[I] << std::endl;
-      wcerr << "Evaluated to: " << setprecision(10) << FuncResult << std::endl;
+			wcerr << "Evaluated to: " << setprecision(10) << FuncResult << std::endl;
       wcerr << "Expected:     " << setprecision(10) << Result << std::endl << std::endl;
     }
 	}
@@ -395,7 +395,7 @@ void TestMakeText(const TFunc &Func, const std::wstring &Result)
     }
   }
   catch(EFuncError &E)
-  {
+	{
     wcerr << "Error code   : " << E.ErrorCode << std::endl;
     wcerr << "Expected:     " << Result << std::endl << std::endl;
   }
@@ -421,7 +421,7 @@ public:
   unsigned ArgumentCount() const {return 1;}
   long double Call(const long double *Args, TTrigonometry Trig, TErrorCode &ErrorCode, std::wstring &ErrorStr) const
   {
-    return Args[0] * Args[0];
+		return Args[0] * Args[0];
   }
   TComplex Call(const TComplex *Args, TTrigonometry Trig, TErrorCode &ErrorCode, std::wstring &ErrorStr) const
   {
@@ -473,7 +473,7 @@ void Test()
 
   //Test redundant space
   Test("x*sin x", PI/2, PI/2);
-  Test("  x*sin x", PI/2, PI/2);
+	Test("  x*sin x", PI/2, PI/2);
   Test("x * sin x", PI/2, PI/2);
   Test("x*sin x   ", PI/2, PI/2);
   Test("x*sin    x", PI/2, PI/2);
@@ -499,7 +499,7 @@ void Test()
 	Test("1E4000", 1, StrToDouble("1E4000")); //2E400 doesn't work directly with BCC 5.6.4
   TestError("1E5000", 1, ecParseError); //Number too large
   TestError("1.2.3", 0, ecInvalidNumber);
-  TestError("5.", 0, ecInvalidNumber);
+	TestError("5.", 0, ecInvalidNumber);
 
   //Test constants
   Test("e", 0, EULER);
@@ -525,7 +525,7 @@ void Test()
   Test("x-4.5", 3.1, -1.4);
   Test("4.5*x", 3.1, 13.95);
 	Test("x*4.5", 3.1, 13.95);
-  Test("4.5/x", 3.1, 1.4516129);
+	Test("4.5/x", 3.1, 1.4516129);
   Test("x/4.5", 3.1, 0.688888889);
   Test("(x)-3", 1, -2);
   Test("-3*x", 10, -30);
@@ -629,7 +629,7 @@ void Test()
 
   Test("sign(x)", 7.98, 1);
   Test("sign(x)", -7.98, -1);
-  Test("sign(x)", 0, 0);
+	Test("sign(x)", 0, 0);
   TestEval<TComplex>(L"sign(x)", TComplex(5, 5), TComplex(M_SQRT_2, M_SQRT_2));
 	TestEval<TComplex>(L"sign(x)", TComplex(4, -3), TComplex(4.0/5, -3.0/5));
 
@@ -655,7 +655,7 @@ void Test()
   Test("abs(x)", -4.67, 4.67);
   TestEval<TComplex>(L"abs(x)", TComplex(3, 4), 5);
   TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 0.927295218);
-  TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 53.13010235, Degree);
+	TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 53.13010235, Degree);
   TestEval<TComplex>(L"conj(x)", TComplex(3, 4), TComplex(3, -4));
   TestEval<TComplex>(L"re(x)", TComplex(3, 4), 3);
   TestEval<TComplex>(L"im(x)", TComplex(3, 4), 4);
@@ -681,7 +681,7 @@ void Test()
   Test("x=5", 3, 0);
   Test("x<5", 4, 1);
   Test("x<5", 5, 0);
-  Test("x<5", 6, 0);
+	Test("x<5", 6, 0);
   Test("x>5", 4, 0);
   Test("x>5", 5, 0);
   Test("x>5", 6, 1);
@@ -707,7 +707,7 @@ void Test()
   Test("0 or 0", 0, 0);
   Test("1 xor 1", 0, 0);
   Test("0 xor 1", 0, 1);
-  Test("1 xor 0", 0, 1);
+	Test("1 xor 0", 0, 1);
   Test("0 xor 0", 0, 0);
 
   //Test picewise functions
@@ -733,9 +733,9 @@ void Test()
   Test("dnorm(x)", 3, 0.00443184841193801);
   Test("dnorm(x, 0, 1)", 3, 0.00443184841193801);
 
-  //Test backward compatibility
+	//Test backward compatibility
   Test("integrate(x^2,2,5)", NaN, 39);
-  TestError("sum(x, 3, 7)", NaN, ecArgCountError);
+	TestError("sum(x, 3, 7)", NaN, ecArgCountError);
   TestError("product(x, 3, 7)", NaN, ecArgCountError);
 
   //Test improved integrate
@@ -759,6 +759,9 @@ void Test()
 	Test("sum(min(k,8)*2,k,0,x)", 10, 104);
 	Test("sum(min((k),[6+2])*(2)/2,k,0,x)", 10, 52);
 	Test("sum(sum(k*l,k,1,10),l,1,x)", 2, 165);
+//	TestError("sum(x,k+1,0,10)", 0, ecLiteralExpected); To be fixed in Graph 4.5
+//	TestError("sum(x,x+1,0,10)", 0, ecLiteralExpected);
+//	TestError("sum(x,1,0,10)", 0, ecLiteralExpected);
 
   //Test infinity
   Test("inf", 0, INF);
