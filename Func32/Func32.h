@@ -91,8 +91,9 @@ enum TErrorCode
   ecExtFuncError    = 18, //!< A call to an external custom function failed.
 
   //Parse errors
-  ecOperatorError   = 50, //!< Operator cannot be placed here. Example "*5"
-  ecNoEndPar        = 55, //!< End of parenthese missing
+	ecOperatorError   = 50, //!< Operator cannot be placed here. Example "*5"
+  ecLiteralExpected = 51, //!< A string literal was expected. Used for sum, product and integrate.
+	ecNoEndPar        = 55, //!< End of parenthese missing
   ecArgCountError   = 56, //!< Invalid number of arguments when parsing function call
   ecInvalidCompare  = 57, //!< Compare operator misplaced. Only two compare operators allowed. "5<x<y<10" will give the error.
   ecInvalidNumber   = 58, //!< Number expected

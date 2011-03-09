@@ -238,6 +238,7 @@ const real_parser<long double, TFuncURealParserPolicies<long double> >
 const assertion<EParseError> AssertFactor_p(ecFactorExpected);
 const assertion<EParseError> AssertExpression_p(ecExpressionExp);
 const assertion<EParseError> AssertEndPar_p(ecNoEndPar);
+const assertion<EParseError> AssertLiteral_p(ecLiteralExpected);
 
 template <typename T, typename T2>
 class TPushFront
@@ -353,8 +354,8 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 	}
 
 	rule<wide_phrase_scanner_t, TContext::context_t> Term, Expression, Factor, Constant,
-		Function, Parentheses, Power, FactorSeq, Sum, Neg, Relation, SpecialFunc, Literal,
-		MinusSign, DummyExpression;
+		Function, Parentheses, Power, FactorSeq, Sum, Neg, Relation, SpecialFunc;
+	rule<wide_phrase_scanner_t> Literal, MinusSign, DummyExpression;
 
 	//DummyExpression accepts everything until it finds a comma. It is used to jump
 	//over the first expression in a special function like sum.
@@ -382,10 +383,10 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 					|   FactorSeq[TPushBack(Function.List)]
 					)[TDoFuncSymbol(Function.List, Function.Arg)];
 
-  SpecialFunc =
+	SpecialFunc =
       SpecialFuncSymbols[PushFront(SpecialFunc.List)] >> '(' >>
 					(
-							((DummyExpression >> ',' >> (+Literal)[SpecialFunc.Symbols = TempVariables][TSpecialAddVar(SpecialFunc.List, TempVariables)]) >> nothing_p)
+							((DummyExpression >> ',' >> Literal[SpecialFunc.Symbols = TempVariables][TSpecialAddVar(SpecialFunc.List, TempVariables)]) >> nothing_p)
 					|   AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)][var(TempVariables) = SpecialFunc.Symbols] >>
               ',' >> Literal >> ',' >>
               AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >> ',' >>
