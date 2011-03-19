@@ -45,7 +45,7 @@ Thank you in advance!
 	<input name="cmd" value="_xclick" type="hidden">
 	<input name="business" value="graph@padowan.dk" type="hidden">
 	<input name="item_name" value="Graph donation" type="hidden">
-  <input name="image_url" value="http://padowan.dk/graph/images/Icon.gif" type="hidden">
+  <input name="image_url" value="http://padowan.dk/graph/images/Icon96.png" type="hidden">
   <input name="no_shipping" value="1" type="hidden"><input name="return" value="http://www.padowan.dk" type="hidden">
   <input name="cancel_return" value="http://www.padowan.dk" type="hidden">
   <input name="tax" value="0" type="hidden"><input name="cn" value="Comments" type="hidden">
