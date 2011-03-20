@@ -48,7 +48,7 @@ struct TDrawLegend : public TGraphElemVisitor
   void Visit(TShading &Shade);
   void Visit(TPointSeries &Series);
   void Visit(TTextLabel &Label) {};
-  void Visit(TRelation &Relation);
+	void Visit(TRelation &Relation);
   void Visit(TAxesView &AxesView) {};
 };
 //---------------------------------------------------------------------------
@@ -76,7 +76,7 @@ TDraw::~TDraw()
 //Returns MAXINT on error
 int TDraw::xPoint(long double x) const
 {
-  try
+	try
   {
     long double Result;
     if(std::_isnanl(x))
@@ -216,7 +216,7 @@ bool TDraw::Wait()
     else
       do
       {
-        Loop = false;
+				Loop = false;
         if(Thread->IdleEvent.WaitFor(1000) == wrTimeout)
           if(MessageBox(LoadRes(559), LoadRes(560), MB_RETRYCANCEL|MB_ICONSTOP) == IDCANCEL)
             AbortWait = true;
@@ -293,35 +293,38 @@ unsigned TDraw::FindLabels()
 
   if(Axes.yAxis.ShowNumbers)
   {
-    //Calculate font height for numbers
-    Context.SetFont(Axes.NumberFont);
-    double y = yTickMin;
+		double yMinTickUnit = Axes.yAxis.LogScl ? std::log(Axes.yAxis.Max)/std::log(Axes.yAxis.Min) : (Axes.yAxis.Max - Axes.yAxis.Min) / 100;
+		double yTickUnit = std::max(Axes.yAxis.TickUnit, yMinTickUnit);
 
-    //Loop through all coordinates on y-axis
-    while(y < Axes.yAxis.Max)
-    {
-      int yPixel = yPoint(y);//Get pixel position
-        //Check that we are not showing a number at the axis when they are crossed
-      if(Axes.AxesStyle == asBoxed || std::abs(yPixel - yPixelCross) > 1)
-        //Check if we are not too close to the boundery of the window
-        if(yPixel + NumberHeight / 2 < Height && yPixel - NumberHeight / 2 > AxesRect.Top)
-        {
-          TLabelInfo LabelInfo;
+		//Calculate font height for numbers
+		Context.SetFont(Axes.NumberFont);
+		double y = yTickMin;
+
+		//Loop through all coordinates on y-axis
+		while(y < Axes.yAxis.Max)
+		{
+			int yPixel = yPoint(y);//Get pixel position
+				//Check that we are not showing a number at the axis when they are crossed
+			if(Axes.AxesStyle == asBoxed || std::abs(yPixel - yPixelCross) > 1)
+				//Check if we are not too close to the boundery of the window
+				if(yPixel + NumberHeight / 2 < Height && yPixel - NumberHeight / 2 > AxesRect.Top)
+				{
+					TLabelInfo LabelInfo;
 					LabelInfo.Label = MakeNumber(y, Axes.yAxis.MultipleOfPi);
-          LabelInfo.Width = Context.GetTextWidth(LabelInfo.Label);
-          LabelInfo.Pos = yPixel;
-          if(Axes.yAxis.NumberPlacement == npCenter)
-            LabelInfo.Pos -= NumberHeight / 2;
-          yLabelInfo.push_back(LabelInfo);
-          if(LabelInfo.Width > MaxWidth)
-            MaxWidth = LabelInfo.Width;
-        }
+					LabelInfo.Width = Context.GetTextWidth(LabelInfo.Label);
+					LabelInfo.Pos = yPixel;
+					if(Axes.yAxis.NumberPlacement == npCenter)
+						LabelInfo.Pos -= NumberHeight / 2;
+					yLabelInfo.push_back(LabelInfo);
+					if(LabelInfo.Width > MaxWidth)
+						MaxWidth = LabelInfo.Width;
+				}
 
-      //Is axis shown in log scale
-      if(Axes.yAxis.LogScl)
-        y *= Axes.yAxis.TickUnit;
-      else
-        y += Axes.yAxis.TickUnit; //Add scale to position
+			//Is axis shown in log scale
+			if(Axes.yAxis.LogScl)
+				y *= yTickUnit;
+			else
+				y += yTickUnit; //Add scale to position
     }
   }
   return MaxWidth;
@@ -329,7 +332,7 @@ unsigned TDraw::FindLabels()
 //---------------------------------------------------------------------------
 void TDraw::PreCalcXAxis()
 {
-  unsigned MaxLabelWidth = FindLabels();
+	unsigned MaxLabelWidth = FindLabels();
   if(Axes.AxesStyle == asBoxed)
     AxesRect.Left = MaxLabelWidth + Size(7);
 
@@ -384,7 +387,7 @@ void TDraw::PreCalcYAxis()
     int Ticks = AxesRect.Height() / TextDist;
     if(Ticks == 0)
       Ticks = 1; //Avoid division by zero, just in case.
-    double Dist = (Axes.yAxis.LogScl ? std::log10(Axes.yAxis.Max / Axes.yAxis.Min) : Axes.yAxis.Max - Axes.yAxis.Min) / Ticks;
+		double Dist = (Axes.yAxis.LogScl ? std::log10(Axes.yAxis.Max / Axes.yAxis.Min) : Axes.yAxis.Max - Axes.yAxis.Min) / Ticks;
     if(Axes.yAxis.LogScl)
       Axes.yAxis.TickUnit = std::pow10(std::ceil(Dist));
     else
@@ -414,55 +417,62 @@ void TDraw::RedrawAxes()
   NumberHeight = Context.GetTextHeight("1");
 
   if(!Axes.Title.empty())
-  {
-    Context.SetFont(Axes.TitleFont);
-    Context.SetBrush(bsClear);
-    if(ForceBlack)
-      Context.SetFontColor(clBlack);
-    TSize TextSize = Context.GetTextExtent(Axes.Title);
-    Context.DrawText(Axes.Title, (AxesRect.Width() - TextSize.cx) / 2, 0);
-    AxesRect.Top = TextSize.cy;
-  }
+	{
+		Context.SetFont(Axes.TitleFont);
+		Context.SetBrush(bsClear);
+		if(ForceBlack)
+			Context.SetFontColor(clBlack);
+		TSize TextSize = Context.GetTextExtent(Axes.Title);
+		Context.DrawText(Axes.Title, (AxesRect.Width() - TextSize.cx) / 2, 0);
+		AxesRect.Top = TextSize.cy;
+	}
 
-  PreCalcYAxis();
-  PreCalcXAxis();
+	PreCalcYAxis();
+	PreCalcXAxis();
 
-  DrawLegend();
+	DrawLegend();
 }
 //---------------------------------------------------------------------------
 void TDraw::DrawAxes()
 {
-  Context.DestroyClipRect(); //Remove all clipping regions; Must be done to draw boxed axes
+	Context.DestroyClipRect(); //Remove all clipping regions; Must be done to draw boxed axes
 
-  //Exclude the legend from the drawing area
-  if(Axes.ShowLegend)
-    Context.ExcludeClipRect(LegendRect);
+	//Exclude the legend from the drawing area
+	if(Axes.ShowLegend)
+		Context.ExcludeClipRect(LegendRect);
 
-  int xLabelWidth;
- 
-  //Calculate font height for numbers
-  Context.SetFont(Axes.NumberFont);
+	//Sanity check tick unit to prevent infinite loop
+	double xMinUnit = Axes.xAxis.LogScl ? std::log(Axes.xAxis.Max)/std::log(Axes.xAxis.Min) : (Axes.xAxis.Max - Axes.xAxis.Min) / 1000;
+	double xTickUnit = std::max(Axes.xAxis.TickUnit, xMinUnit);
+	double yMinUnit = Axes.yAxis.LogScl ? std::log(Axes.yAxis.Max)/std::log(Axes.yAxis.Min) : (Axes.yAxis.Max - Axes.yAxis.Min) / 1000;
+	double yTickUnit = std::max(Axes.yAxis.TickUnit, yMinUnit);
 
-  std::vector<int> xGridMajor, xGridMinor, yGridMajor, yGridMinor;
-  double ArrowScale = Axes.LabelFont->Size / 12.0 * std::max(PlotSettings.AxisWidth, 2) / 2.0; //12 is the default size
+	double xGridUnit = std::max(Axes.xAxis.GridUnit, xMinUnit);
+	double yGridUnit = std::max(Axes.yAxis.GridUnit, yMinUnit);
 
-  if(Axes.xAxis.ShowGrid || Axes.GridStyle == gsDots)
-  {
-    //Show grid parallel with y-axis
-    double GridMin = GetMinValue(Axes.xAxis.GridUnit, Axes.xAxis.Min, Axes.xAxis.Max, yAxisCross, Axes.xAxis.LogScl);
-    double GridPixelScl = xScale * (Axes.xAxis.LogScl ? std::log(Axes.xAxis.GridUnit) : Axes.xAxis.GridUnit);
+	//Calculate font height for numbers
+	Context.SetFont(Axes.NumberFont);
 
-    bool ShowGridTick = !Axes.xAxis.LogScl && Axes.xAxis.ShowTicks && Axes.xAxis.TickUnit > Axes.xAxis.GridUnit;
-    double MaxPixel = AxesRect.Right - Size(5);
-    double MinTickPixel = ShowGridTick ? xPointExact(xTickMin) : MaxPixel;
-    double TickPixelScl = Axes.xAxis.TickUnit * xScale;
-    double x = xPointExact(GridMin);
-    if(x < Size(5))
-      x += GridPixelScl;
+	std::vector<int> xGridMajor, xGridMinor, yGridMajor, yGridMinor;
+	double ArrowScale = Axes.LabelFont->Size / 12.0 * std::max(PlotSettings.AxisWidth, 2) / 2.0; //12 is the default size
 
-    //Draw dotted grid lines. If Tick unit is greater than the Grid unit, the ticks are drawn as solid
+	if(Axes.xAxis.ShowGrid || Axes.GridStyle == gsDots)
+	{
+		//Show grid parallel with y-axis
+		double GridMin = GetMinValue(Axes.xAxis.GridUnit, Axes.xAxis.Min, Axes.xAxis.Max, yAxisCross, Axes.xAxis.LogScl);
+		double GridPixelScl = xScale * (Axes.xAxis.LogScl ? std::log(xGridUnit) : xGridUnit);
+
+		bool ShowGridTick = !Axes.xAxis.LogScl && Axes.xAxis.ShowTicks && xTickUnit > xGridUnit;
+		double MaxPixel = AxesRect.Right - Size(5);
+		double MinTickPixel = ShowGridTick ? xPointExact(xTickMin) : MaxPixel;
+		double TickPixelScl = xTickUnit * xScale;
+		double x = xPointExact(GridMin);
+		if(x < Size(5))
+			x += GridPixelScl;
+
+		//Draw dotted grid lines. If Tick unit is greater than the Grid unit, the ticks are drawn as solid
     //lines from one side to the other. A grid line is not drawn if it is within one pixel from a
-    //grid line. This is done to avoid rounding problems where tick lines and grid lines are calculated
+		//grid line. This is done to avoid rounding problems where tick lines and grid lines are calculated
     //to have one pixel in difference while they actually should be on top of each other.
     for(double x2 = MinTickPixel; x <= MaxPixel; x2 += TickPixelScl)
     {
@@ -475,7 +485,7 @@ void TDraw::DrawAxes()
 						xGridMinor.push_back(x + 0.5);
 
 			if(x < x2 + 1 && x > x2 - 1)
-        x += GridPixelScl;
+				x += GridPixelScl;
 
       if(ShowGridTick && x2 > AxesRect.Left && x2 < MaxPixel)
         //Draw solid lines instead of ticks
@@ -490,20 +500,20 @@ void TDraw::DrawAxes()
           int X = xPoint(x*(1+(Axes.xAxis.GridUnit-1)*n/9));
           //Don't draw outside area (if Axes Style is Boxed)
           if(X > AxesRect.Left)
-            xGridMinor.push_back(X);
+						xGridMinor.push_back(X);
         }
     }
-  }
+	}
 
-  if(Axes.yAxis.ShowGrid || Axes.GridStyle == gsDots)
-  {
-		double GridMin = GetMinValue(Axes.yAxis.GridUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
-		double GridPixelScl = yScale * (Axes.yAxis.LogScl ? std::log(Axes.yAxis.GridUnit) : Axes.yAxis.GridUnit);
+	if(Axes.yAxis.ShowGrid || Axes.GridStyle == gsDots)
+	{
+		double GridMin = GetMinValue(yGridUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
+		double GridPixelScl = yScale * (Axes.yAxis.LogScl ? std::log(yGridUnit) : yGridUnit);
 
-		bool ShowGridTick = !Axes.yAxis.LogScl && Axes.yAxis.ShowTicks && Axes.yAxis.TickUnit > Axes.yAxis.GridUnit;
+		bool ShowGridTick = !Axes.yAxis.LogScl && Axes.yAxis.ShowTicks && yTickUnit > yGridUnit;
 		double MaxPixel = AxesRect.Top + Size(5);
 		double MinTickPixel = ShowGridTick ? yPointExact(yTickMin) : MaxPixel;
-		double TickPixelScl = Axes.yAxis.TickUnit * yScale;
+		double TickPixelScl = yTickUnit * yScale;
 		double y = yPointExact(GridMin);
 
 		//Draw dotted grid lines. If Tick unit is greater than the Grid unit, the ticks are drawn as solid
@@ -529,83 +539,83 @@ void TDraw::DrawAxes()
 		}
 
 		if(Axes.yAxis.LogScl)
-    {
-      for(double y = GridMin / Axes.yAxis.GridUnit; y < Axes.yAxis.Max; y *= Axes.yAxis.GridUnit)
-        for(unsigned n = 1; n < 9; n++)
-        {
-          double Y = yPoint(y*(1+(Axes.yAxis.GridUnit-1)*n/9));
-          if(Y < AxesRect.Top || Y > AxesRect.Bottom)
-            break;
-          yGridMinor.push_back(Y);
-        }
-    }
-  }
+		{
+			for(double y = GridMin / Axes.yAxis.GridUnit; y < Axes.yAxis.Max; y *= Axes.yAxis.GridUnit)
+				for(unsigned n = 1; n < 9; n++)
+				{
+					double Y = yPoint(y*(1+(Axes.yAxis.GridUnit-1)*n/9));
+					if(Y < AxesRect.Top || Y > AxesRect.Bottom)
+						break;
+					yGridMinor.push_back(Y);
+				}
+		}
+	}
 
-  if(Axes.GridStyle == gsLines)
-  {
-    //Draw solid lines
-    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(PlotSettings.GridWidth));
-    for(std::vector<int>::const_iterator Iter = xGridMajor.begin(); Iter != xGridMajor.end(); ++Iter)
-      Context.DrawLine(*Iter, AxesRect.Top, *Iter, AxesRect.Bottom);
-    for(std::vector<int>::const_iterator Iter = yGridMajor.begin(); Iter != yGridMajor.end(); ++Iter)
-      Context.DrawLine(AxesRect.Left, *Iter, AxesRect.Right, *Iter);
+	if(Axes.GridStyle == gsLines)
+	{
+		//Draw solid lines
+		Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(PlotSettings.GridWidth));
+		for(std::vector<int>::const_iterator Iter = xGridMajor.begin(); Iter != xGridMajor.end(); ++Iter)
+			Context.DrawLine(*Iter, AxesRect.Top, *Iter, AxesRect.Bottom);
+		for(std::vector<int>::const_iterator Iter = yGridMajor.begin(); Iter != yGridMajor.end(); ++Iter)
+			Context.DrawLine(AxesRect.Left, *Iter, AxesRect.Right, *Iter);
 
-    //Draw dotted lines
-    Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(PlotSettings.GridWidth));
-    for(std::vector<int>::const_iterator Iter = xGridMinor.begin(); Iter != xGridMinor.end(); ++Iter)
-      Context.DrawLine(*Iter, AxesRect.Top, *Iter, AxesRect.Bottom);
-    for(std::vector<int>::const_iterator Iter = yGridMinor.begin(); Iter != yGridMinor.end(); ++Iter)
-      Context.DrawLine(AxesRect.Left, *Iter, AxesRect.Right, *Iter);
-  }
-  else
-  {
-    int Width = Size(PlotSettings.GridWidth);
-    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, 1);
-    Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.GridColor);
-    for(std::vector<int>::const_iterator xIter = xGridMinor.begin(); xIter != xGridMinor.end(); ++xIter)
-      for(std::vector<int>::const_iterator yIter = yGridMinor.begin(); yIter != yGridMinor.end(); ++yIter)
-        Context.DrawEllipse(*xIter - Width, *yIter - Width, *xIter + Width, *yIter + Width);
-    //Draw a dot where the grid lines would cross
-  }
+		//Draw dotted lines
+		Context.SetGridPen(ForceBlack ? clBlack : Axes.GridColor, Size(PlotSettings.GridWidth));
+		for(std::vector<int>::const_iterator Iter = xGridMinor.begin(); Iter != xGridMinor.end(); ++Iter)
+			Context.DrawLine(*Iter, AxesRect.Top, *Iter, AxesRect.Bottom);
+		for(std::vector<int>::const_iterator Iter = yGridMinor.begin(); Iter != yGridMinor.end(); ++Iter)
+			Context.DrawLine(AxesRect.Left, *Iter, AxesRect.Right, *Iter);
+	}
+	else
+	{
+		int Width = Size(PlotSettings.GridWidth);
+		Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, 1);
+		Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.GridColor);
+		for(std::vector<int>::const_iterator xIter = xGridMinor.begin(); xIter != xGridMinor.end(); ++xIter)
+			for(std::vector<int>::const_iterator yIter = yGridMinor.begin(); yIter != yGridMinor.end(); ++yIter)
+				Context.DrawEllipse(*xIter - Width, *yIter - Width, *xIter + Width, *yIter + Width);
+		//Draw a dot where the grid lines would cross
+	}
 
-  //If axes are diabled, don't draw axes, numbers and labels
-  if(Axes.AxesStyle == ::asNone)
-    return;
+	//If axes are diabled, don't draw axes, numbers and labels
+	if(Axes.AxesStyle == ::asNone)
+		return;
 
-  //Make sure texts are written on transperent background
-  Context.SetBrush(bsClear);
+	//Make sure texts are written on transperent background
+	Context.SetBrush(bsClear);
 
-  //Set pen width and style; Used when drawing axes
-  Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(2));
+	//Set pen width and style; Used when drawing axes
+	Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.GridColor, Size(2));
 
-  if(Axes.xAxis.ShowNumbers && Axes.xAxis.Visible)
-  {
-    double x = xTickMin; //Current x-position
-    int yPixel = yPixelCross + Size(PlotSettings.xNumberDist); //Pixel position to draw numbers
-    if(yPixel >= AxesRect.Top) //Check that numbers are inside allowed view
-    {
-      while(x < Axes.xAxis.Max)
-      {
-        int xPixel = xPoint(x); //Calc pixel position
-        //Check that we are not showing a number at the axis when they are crossed
-        if(Axes.AxesStyle == asBoxed || std::abs(xPixel - xPixelCross) > 1)
-        {
-          std::wstring Str = MakeNumber(x, Axes.xAxis.MultipleOfPi);
-          int TextWidth = Context.GetTextWidth(Str);
+	if(Axes.xAxis.ShowNumbers && Axes.xAxis.Visible)
+	{
+		double x = xTickMin; //Current x-position
+		int yPixel = yPixelCross + Size(PlotSettings.xNumberDist); //Pixel position to draw numbers
+		if(yPixel >= AxesRect.Top) //Check that numbers are inside allowed view
+		{
+			while(x < Axes.xAxis.Max)
+			{
+				int xPixel = xPoint(x); //Calc pixel position
+				//Check that we are not showing a number at the axis when they are crossed
+				if(Axes.AxesStyle == asBoxed || std::abs(xPixel - xPixelCross) > 1)
+				{
+					std::wstring Str = MakeNumber(x, Axes.xAxis.MultipleOfPi);
+					int TextWidth = Context.GetTextWidth(Str);
 
-          //Check if we are not too close to the sides of the window
-          //Compare with 0 instead of AxesRect.Left because it is okay to write in the blank area
-          if(xPixel - TextWidth / 2 >= 0 && xPixel + TextWidth / 2 <= AxesRect.Right)
-          {                                                  
-            xPixel -= Axes.xAxis.NumberPlacement == npCenter ? TextWidth / 2 : TextWidth;
-            Context.DrawText(Str, xPixel, yPixel);
-          }
-        }
+					//Check if we are not too close to the sides of the window
+					//Compare with 0 instead of AxesRect.Left because it is okay to write in the blank area
+					if(xPixel - TextWidth / 2 >= 0 && xPixel + TextWidth / 2 <= AxesRect.Right)
+					{
+						xPixel -= Axes.xAxis.NumberPlacement == npCenter ? TextWidth / 2 : TextWidth;
+						Context.DrawText(Str, xPixel, yPixel);
+					}
+				}
         //Is axis shown in log scale
-        if(Axes.xAxis.LogScl)
-          x *= Axes.xAxis.TickUnit;
-        else
-          x += Axes.xAxis.TickUnit; //Add scale to position
+				if(Axes.xAxis.LogScl)
+					x *= xTickUnit;
+				else
+					x += xTickUnit; //Add scale to position
       }
     }
   }
@@ -615,12 +625,12 @@ void TDraw::DrawAxes()
     for(std::vector<TLabelInfo>::const_iterator Iter = yLabelInfo.begin(); Iter != yLabelInfo.end(); ++Iter)
       Context.DrawText(Iter->Label, xPixelCross - Iter->Width - Size(PlotSettings.yNumberDist), Iter->Pos);
 
-  //Set font for labels
-  Context.SetFont(Axes.LabelFont);
-  if(Axes.xAxis.ShowLabel && Axes.xAxis.Visible)
-  {
-    xLabelWidth = Context.GetTextWidth(Axes.xAxis.Label);
-    Context.DrawText(Axes.xAxis.Label, AxesRect.Right-xLabelWidth-3, yPixelCross-Context.GetTextHeight(Axes.xAxis.Label)-Size(6));
+	//Set font for labels
+	Context.SetFont(Axes.LabelFont);
+	if(Axes.xAxis.ShowLabel && Axes.xAxis.Visible)
+	{
+		int xLabelWidth = Context.GetTextWidth(Axes.xAxis.Label);
+		Context.DrawText(Axes.xAxis.Label, AxesRect.Right-xLabelWidth-3, yPixelCross-Context.GetTextHeight(Axes.xAxis.Label)-Size(6));
   }
 
   if(Axes.yAxis.ShowLabel && Axes.yAxis.Visible)
@@ -631,13 +641,13 @@ void TDraw::DrawAxes()
     Context.DrawText(Axes.yAxis.Label, xPixelCross + Size(12), AxesRect.Top - TextMetric.otmLineGap);
   }
 
-  //If x-axis is inside the view
+	//If x-axis is inside the view
   if(yPixelCross >= AxesRect.Top && yPixelCross <= AxesRect.Bottom && Axes.xAxis.Visible)
   {
     int X1 = AxesRect.Left;
     int X2 = AxesRect.Right - 1;
     int Y = yPixelCross;
-    double xPixelScl = (Axes.xAxis.LogScl ? std::log(Axes.xAxis.TickUnit) : Axes.xAxis.TickUnit) * xScale;
+    double xPixelScl = (Axes.xAxis.LogScl ? std::log(xTickUnit) : xTickUnit) * xScale;
     Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(PlotSettings.AxisWidth));
     Context.DrawLine(X1, Y, X2 - Size(3), Y);
 
@@ -654,12 +664,12 @@ void TDraw::DrawAxes()
       Context.DrawPolygon(RightArrow, 4);
 
     //Only show ticks if we have not already drawn a solid grid line instead
-    if(Axes.xAxis.ShowTicks && (!Axes.xAxis.ShowGrid || Axes.GridStyle != gsLines || Axes.xAxis.TickUnit <= Axes.xAxis.GridUnit))
+		if(Axes.xAxis.ShowTicks && (!Axes.xAxis.ShowGrid || Axes.GridStyle != gsLines || Axes.xAxis.TickUnit <= Axes.xAxis.GridUnit))
       //Show coordinate points on x-axis
       for(double x = xPointExact(xTickMin); x < AxesRect.Right - Size(5); x += xPixelScl)
         //Don't show at or beside axis (when scaled it might be moved a pixel or two)
         //Don't show tick at left side
-        if(x > AxesRect.Left && std::abs(x - xPixelCross) > 1)
+				if(x > AxesRect.Left && std::abs(x - xPixelCross) > 1)
           Context.DrawLine(x + 0.5, Y + Size(PlotSettings.TickLength + (PlotSettings.AxisWidth - 1)/ 2), x + 0.5, Y - Size(PlotSettings.TickLength + PlotSettings.AxisWidth / 2 + 1));
   }
 
@@ -685,9 +695,9 @@ void TDraw::DrawAxes()
     if(Axes.yAxis.ShowPositiveArrow)
       Context.DrawPolygon(TopArrow, 4);
 
-    double yPixelScl = (Axes.yAxis.LogScl ? std::log(Axes.yAxis.TickUnit) : Axes.yAxis.TickUnit) * yScale;
+    double yPixelScl = (Axes.yAxis.LogScl ? std::log(yTickUnit) : yTickUnit) * yScale;
     //Only show ticks if we have not already drawn a solid grid line instead
-    if(Axes.yAxis.ShowTicks && (!Axes.yAxis.ShowGrid || Axes.GridStyle != gsLines || Axes.yAxis.TickUnit <= Axes.yAxis.GridUnit))
+		if(Axes.yAxis.ShowTicks && (!Axes.yAxis.ShowGrid || Axes.GridStyle != gsLines || yTickUnit <= yGridUnit))
       //Show coordinate points on the y-axis
       for(double y = yPointExact(yTickMin); y > AxesRect.Top + Size(5); y -= yPixelScl)
         if(std::abs(y - yPixelCross) > 1 &&  //Don't show at or beside axis (when scaled it might be moved a pixel or two)
