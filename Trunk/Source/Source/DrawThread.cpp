@@ -52,7 +52,8 @@ __fastcall TDrawThread::TDrawThread(TDraw *ADraw)
 //---------------------------------------------------------------------------
 void __fastcall TDrawThread::Execute()
 {
-  randomize();
+	randomize();
+	SetThreadName("DrawThread");
 
   while(!Terminated)
   {
