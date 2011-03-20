@@ -2145,13 +2145,23 @@ void __fastcall TForm1::ZoomStandardActionExecute(TObject *Sender)
   xAxis.ReadFromIni(ConfigFile.Section(L"Axes"), L"x");
   yAxis.ReadFromIni(ConfigFile.Section(L"Axes"), L"y");
 
-  xAxis.Label = Data.Axes.xAxis.Label;
-  yAxis.Label = Data.Axes.yAxis.Label;
+	Data.Axes.xAxis.Min = xAxis.Min;
+	Data.Axes.xAxis.Max = xAxis.Max;
+	Data.Axes.xAxis.TickUnit = xAxis.TickUnit;
+	Data.Axes.xAxis.GridUnit = xAxis.GridUnit;
+	Data.Axes.xAxis.AutoTick = xAxis.AutoTick;
+	Data.Axes.xAxis.AutoGrid = xAxis.AutoGrid;
+	Data.Axes.xAxis.LogScl = xAxis.LogScl;
 
-  Data.Axes.xAxis = xAxis;
-  Data.Axes.yAxis = yAxis;
+	Data.Axes.yAxis.Min = yAxis.Min;
+	Data.Axes.yAxis.Max = yAxis.Max;
+	Data.Axes.yAxis.TickUnit = yAxis.TickUnit;
+	Data.Axes.yAxis.GridUnit = yAxis.GridUnit;
+	Data.Axes.yAxis.AutoTick = yAxis.AutoTick;
+	Data.Axes.yAxis.AutoGrid = yAxis.AutoGrid;
+	Data.Axes.yAxis.LogScl = yAxis.LogScl;
 
-  Data.ClearCache();
+	Data.ClearCache();
   Data.SetModified();
   Python::ExecutePluginEvent(Python::peZoom);
   Redraw();
