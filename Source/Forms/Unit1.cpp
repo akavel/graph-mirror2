@@ -1906,7 +1906,7 @@ void __fastcall TForm1::CopyActionExecute(TObject *Sender)
     return;
   }
 
-  boost::shared_ptr<TGraphElem> Elem = GetGraphElem(TreeView->Selected);
+  TGraphElemPtr Elem = GetGraphElem(TreeView->Selected);
   GraphClipboard.Copy(Data, Elem);
   UpdateMenu();
 }
@@ -2081,7 +2081,7 @@ void TForm1::DeleteGraphElem(const boost::shared_ptr<TGraphElem> &GraphElem)
         if(boost::shared_ptr<TShading> Shade = boost::dynamic_pointer_cast<TShading>(Elem->GetChild(J)))
           if(Shade->Func2 == GraphElem)
           {
-            UndoList.Push(TUndoDel(Shade, Shade->GetParent(), I));
+            UndoList.Push(TUndoDel(Shade, Shade->GetParent(), J));
             Data.Delete(Shade);
           }
     }
