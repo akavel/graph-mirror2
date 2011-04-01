@@ -149,21 +149,21 @@ void TGraphElem::WriteToIni(TConfigFileSection &Section) const
 //---------------------------------------------------------------------------
 void TGraphElem::ReadFromIni(const TConfigFileSection &Section)
 {
-  Visible = Section.Read(L"Visible", true);
-  ShowInLegend = Section.Read(L"ShowInLegend", true);
-  LegendText = Section.Read(L"LegendText", L"");
-  TConfigFileSection::TIterator End = Section.End();
-  for(TConfigFileSection::TIterator Iter = Section.Begin(); Iter != End; ++Iter)
-    if(Iter->first[0] == L'$')
-      PluginData[Iter->first.substr(1)] = Iter->second;
+	Visible = Section.Read(L"Visible", true);
+	ShowInLegend = Section.Read(L"ShowInLegend", true);
+	LegendText = Section.Read(L"LegendText", L"");
+	TConfigFileSection::TIterator End = Section.End();
+	for(TConfigFileSection::TIterator Iter = Section.Begin(); Iter != End; ++Iter)
+		if(Iter->first[0] == L'$')
+			PluginData[Iter->first.substr(1)] = Iter->second;
 }
 //---------------------------------------------------------------------------
 TGraphElemPtr TGraphElem::CloneHelper(TGraphElem *NewElem) const
 {
-  TGraphElemPtr Elem(NewElem);
-  for(unsigned I = 0; I < ChildList.size(); I++)
-    Elem->InsertChild(ChildList[I]->Clone());
-  return Elem;
+	TGraphElemPtr Elem(NewElem);
+	for(unsigned I = 0; I < ChildList.size(); I++)
+		Elem->InsertChild(ChildList[I]->Clone());
+	return Elem;
 }
 //---------------------------------------------------------------------------
 void TGraphElem::InsertChild(const TGraphElemPtr &Elem, int Index)
@@ -221,7 +221,7 @@ void TGraphElem::Update()
 boost::shared_ptr<TTopGraphElem> TTopGraphElem::Clone(const TData *AData) const
 {
   boost::shared_ptr<TTopGraphElem> Result =
-    boost::static_pointer_cast<TTopGraphElem>(CloneHelper(new TTopGraphElem(*this)));
+		boost::static_pointer_cast<TTopGraphElem>(CloneHelper(new TTopGraphElem(*this)));
   Result->Data = AData;
   return Result;
 }
@@ -251,7 +251,7 @@ void TBaseFuncType::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"Steps", Steps.Text, std::wstring());
   Section.Write(L"Style", Style, psSolid);
   Section.Write(L"Color", Color);
-  Section.Write(L"Size", Size, 1U);
+	Section.Write(L"Size", Size, 1U);
   Section.Write(L"StartPoint", StartPointStyle, 0U);
   Section.Write(L"EndPoint", EndPointStyle, 0U);
   Section.Write(L"DrawType", DrawType, dtAuto);
@@ -280,7 +280,7 @@ void TBaseFuncType::ClearCache()
 {
   Points.clear();
   PointNum.clear();
-  sList.clear();
+	sList.clear();
   TGraphElem::ClearCache();
 }
 //---------------------------------------------------------------------------
@@ -309,7 +309,7 @@ Func32::TCoord<long double> TBaseFuncType::Eval(long double t) const
   if(!GetData().Axes.CalcComplex)
     return GetFunc().Calc(t);
 
-  Func32::TCoord<Func32::TComplex> Result = GetFunc().Calc(Func32::TComplex(t));
+	Func32::TCoord<Func32::TComplex> Result = GetFunc().Calc(Func32::TComplex(t));
   if(imag(Result.x) || imag(Result.y))
     throw Func32::ECalcError(Func32::ecComplexError);
   return Func32::TCoord<long double>(real(Result.x), real(Result.y));
@@ -338,7 +338,7 @@ void TStdFunc::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"FuncType", ftStdFunc);
   Section.Write(L"y", Text);
 
-  TBaseFuncType::WriteToIni(Section);
+	TBaseFuncType::WriteToIni(Section);
 }
 //---------------------------------------------------------------------------
 void TStdFunc::ReadFromIni(const TConfigFileSection &Section)
@@ -633,6 +633,14 @@ TShading::TShading()
   SetLegendText(L"Shading");
 }
 //---------------------------------------------------------------------------
+TGraphElemPtr TShading::Clone() const
+{
+	TShading *Shading = new TShading(*this);
+	if(Func2)
+		Shading->Func2 = boost::dynamic_pointer_cast<TBaseFuncType>(Func2->Clone());
+	return CloneHelper(Shading);
+}
+//---------------------------------------------------------------------------
 void TShading::WriteToIni(TConfigFileSection &Section) const
 {
   TGraphElem::WriteToIni(Section);
@@ -643,14 +651,16 @@ void TShading::WriteToIni(TConfigFileSection &Section) const
 
   unsigned FuncCount = 0;
   unsigned FuncNo = 0;
-  unsigned Func2No = 0;
-  for(unsigned I = 0; I < GetData().ElemCount(); I++)
-  {
-    if(dynamic_cast<TBaseFuncType*>(GetData().GetElem(I).get()))
-      FuncCount++;
-    if(GetData().GetElem(I) == GetParent())
-      FuncNo = FuncCount;
-    if(GetData().GetElem(I) == Func2)
+	unsigned Func2No = 0;
+	unsigned ElemCount = GetData().ElemCount();
+	for(unsigned I = 0; I < ElemCount; I++)
+	{
+		TGraphElemPtr Elem = GetData().GetElem(I);
+		if(dynamic_cast<TBaseFuncType*>(Elem.get()))
+			FuncCount++;
+		if(Elem == GetParent())
+			FuncNo = FuncCount;
+    if(Elem == Func2)
       Func2No = FuncCount;
   }
 

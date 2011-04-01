@@ -318,7 +318,7 @@ struct TPointSeriesPoint
     : First(AFirst), Second(ASecond) {}
 };
 
-enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
+enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine, iaCubicSpline2};
 enum TLabelPosition {lpAbove, lpBelow, lpLeft, lpRight, lpAboveLeft, lpAboveRight, lpBelowLeft, lpBelowRight};
 enum TPointType {ptCartesian, ptPolar};
 
@@ -435,10 +435,11 @@ public:
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
-  TGraphElemPtr Clone() const {return CloneHelper(new TShading(*this));}
+  TGraphElemPtr Clone() const;
   void Update();
   void ClearCache();
 };
+typedef boost::shared_ptr<TShading> TShadingPtr;
 
 enum TRelationType {rtEquation, rtInequality};
 class TRelation : public TGraphElem
