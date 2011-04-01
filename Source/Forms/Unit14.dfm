@@ -304,12 +304,11 @@ object Form14: TForm14
           Hint = 'Select which kind of line to draw between the markers.'
           Style = csDropDownList
           Anchors = [akTop, akRight]
-          ItemIndex = 1
           TabOrder = 4
-          Text = 'Cubic splines'
           Items.Strings = (
             'Linear'
-            'Cubic splines'
+            '1D cubic splines'
+            '2D cubic splines'
             'Half cosine')
         end
         object ExtColorBox2: TExtColorBox
