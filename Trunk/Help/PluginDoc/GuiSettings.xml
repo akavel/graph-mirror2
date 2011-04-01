@@ -110,13 +110,49 @@
 		<para>
 			<variablelist>
 				<varlistentry>
-					<term>
-						<indexterm><primary>MajorZoomIn (Graph.TGuiSettings attribute)</primary></indexterm>
-						<classname>TGuiSettings</classname>.<property>MajorZoomIn</property>
-					</term>
+					<term><classname>TGuiSettings</classname>.<property>MajorZoomIn</property></term>
+					<term><classname>TGuiSettings</classname>.<property>MinorZoomIn</property></term>
+					<term><classname>TGuiSettings</classname>.<property>MajorZoomOut</property></term>
+					<term><classname>TGuiSettings</classname>.<property>MinorZoomOut</property></term>
 					<listitem>
+						<indexterm><primary>MajorZoomIn (Graph.TGuiSettings attribute)</primary></indexterm>
+						<indexterm><primary>MinorZoomIn (Graph.TGuiSettings attribute)</primary></indexterm>
+						<indexterm><primary>MajorZoomOut (Graph.TGuiSettings attribute)</primary></indexterm>
+						<indexterm><primary>MinorZoomOut (Graph.TGuiSettings attribute)</primary></indexterm>
 						<para>
 							When zooming the zoom rate specifies how large a unit will be after on both axes compared to before the zoom.
+							This means that a zoom rate of 1 will make no change.
+							A zoom rate of 2 will double the size on both axes while a zoom rate of 0.5 will half the size of both axes.
+							<property>MajorZoomIn</property> and <property>MajorZoomOut</property> are used when zooming in and out normally, while
+							<property>MinorZoomIn</property> and <property>MinorZoomOut</property> are used when zooming in and out when Shift is held down.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TGuiSettings</classname>.<property>MajorStepSize</property></term>
+					<term><classname>TGuiSettings</classname>.<property>MinorStepSize</property></term>
+					<listitem>
+						<indexterm><primary>MajorStepSize (Graph.TGuiSettings attribute)</primary></indexterm>
+						<indexterm><primary>MinorStepSize (Graph.TGuiSettings attribute)</primary></indexterm>
+						<para>
+							When stepping up, down or sideways, the step size indicates how much is stepped as fraction of the image size,
+							i.e. 0.1 means that each step is 10% of the image size.
+							<property>MajorStepSize</property> is used when stepping normally, while
+							<property>MinorStepSize</property> is used when stepping with Shift held down.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TGuiSettings</classname>.<property>MouseZoomIn</property></term>
+					<term><classname>TGuiSettings</classname>.<property>MouseZoomOut</property></term>
+					<listitem>
+						<indexterm><primary>MouseZoomIn (Graph.TGuiSettings attribute)</primary></indexterm>
+						<indexterm><primary>MouseZoomOut (Graph.TGuiSettings attribute)</primary></indexterm>
+						<para>
+							When zooming in or out with the mouse scrolling wheel or similar,
+							the zoom rate specifies how large a unit will be after on both axes compared to before the zoom.
 							This means that a zoom rate of 1 will make no change.
 							A zoom rate of 2 will double the size on both axes while a zoom rate of 0.5 will half the size of both axes.
 						</para>

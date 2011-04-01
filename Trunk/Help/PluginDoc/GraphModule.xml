@@ -73,7 +73,7 @@
 			<varlistentry>
 				<term>
 					<indexterm><primary>Redraw (in module Graph)</primary></indexterm>
-					<classname>Graph</classname>.<property>Redraw</property>
+					<classname>Graph</classname>.<property>Redraw</property>()
 				</term>
 				<listitem>
 					<para>
@@ -85,7 +85,7 @@
 			<varlistentry>
 				<term>
 					<indexterm><primary>Update (in module Graph)</primary></indexterm>
-					<classname>Graph</classname>.<property>Update</property>
+					<classname>Graph</classname>.<property>Update</property>()
 				</term>
 				<listitem>
 					<para>
@@ -360,6 +360,100 @@
 						If <parameter>FileType</parameter> is not specified, the format will be guessed from the extension in the file name.
 						<parameter>Width</parameter> and <parameter>Height</parameter> specifies the resolution of the image file.
 						If they are left out, the same resolution as shown on the screen will be used.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>Selected (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>Selected</property>
+				</term>
+				<listitem>
+					<para>
+						This is the currently selected item in the function list.
+						Don't try to change this.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>Constants (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>Constants</property>
+				</term>
+				<listitem>
+					<para>
+						This is the interface to the <guilabel>Custom functions/constants</guilabel> dialog.
+						The index is the name of the constant or function.
+						The value is a tuple where the first element is either a numeric value or a text defining the function or constant.
+						The rest of the elements in the tuple are the parameters to the function.
+						A constant does not have any parameters.
+						For example a constant R=8.314472 can be created as <code>Graph.Constants["R"] = (8.314472,)</code>
+						A custom function as sinc(x)=sin(x)/x can be created as <code>Graph.Constants["sinc"] = ("sin(x)/x", "x")</code>
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>CustomFunctions (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>CustomFunctions</property>
+				</term>
+				<listitem>
+					<para>
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>FunctionList (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>FunctionList</property>
+				</term>
+				<listitem>
+					<para>
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>PluginData (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>PluginData</property>
+				</term>
+				<listitem>
+					<para>
+
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>LoadFromFile (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>LoadFromFile</property>(<parameter>FileName, AddToRecent=True, ShowErrorMessages=True</parameter>)
+				</term>
+				<listitem>
+					<para>
+						Loads a grf file from the file specified by FileName.
+						If <parameter>AddToRecent</parameter> is True, the file name is added to the list of recent files in the File menu.
+						If <parameter>ShowErrorMessages</parameter> is True, a dialog with error information is shown if a problem occur, else errors are ignored.
+						The function returns True if the file was loaded without errors, else False is returned.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>SaveToFile (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>SaveToFile</property>(<parameter>FileName, Remember=True</parameter>)
+				</term>
+				<listitem>
+					<para>
+						Saves the current data to a grf file specified by <parameter>FileName</parameter>.
+						If <parameter>Remember</parameter> is True, Graph will remember the file name and use it when saving with
+						<menuchoice><guimenu>File</guimenu><guimenuitem>Save</guimenuitem></menuchoice>.
 					</para>
 				</listitem>
 			</varlistentry>

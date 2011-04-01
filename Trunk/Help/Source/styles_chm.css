@@ -310,6 +310,7 @@ code.function {
 code.code,
 code.classname {
   font-size: 100%;
+  display:inline-block;
 }
 
 span.property {
