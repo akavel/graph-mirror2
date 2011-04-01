@@ -136,16 +136,23 @@ void TData::WriteCount(TConfigFile &ConfigFile, const TElemCount &Count)
 std::wstring TData::SaveToString(const TGraphElemPtr &Elem) const
 {
   TConfigFile ConfigFile;
-  TElemCount Count;
-  WriteInfoToIni(ConfigFile);
-  //Use Temp data with only the element we want to copy.
-  //This is done to make sure TShade references to functions are correct
-  TData Temp;
-  TGraphElemPtr TempElem = Elem->Clone();
-  Temp.Insert(TempElem);
-  Temp.WriteElem(ConfigFile, TempElem, Count);
-  WriteCount(ConfigFile, Count);
-  return ConfigFile.GetAsString();
+	TElemCount ElemCount;
+	WriteInfoToIni(ConfigFile);
+	//Use Temp data with only the element we want to copy.
+	//This is done to make sure TShade references to functions are correct
+	TData Temp;
+	TGraphElemPtr TempElem = Elem->Clone();
+	Temp.Insert(TempElem);
+	unsigned Count = TempElem->ChildCount();
+	for(int I = Count-1; I >= 0; I--)
+	{
+		TShadingPtr Shading = boost::dynamic_pointer_cast<TShading>(TempElem->GetChild(I));
+		if(Shading && Shading->Func2)
+			TempElem->RemoveChild(I);
+	}
+	Temp.WriteElem(ConfigFile, TempElem, ElemCount);
+	WriteCount(ConfigFile, ElemCount);
+	return ConfigFile.GetAsString();
 }
 //---------------------------------------------------------------------------
 void TData::SaveData(TConfigFile &ConfigFile) const
