@@ -111,7 +111,7 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
     ReplaceExpression(RichEdit.get(), *Data);
 
   //We need to add a space to the end of each lines. Else the width will be too
-  //small if the line ends with an italic character
+	//small if the line ends with an italic character
 	int LineCount = RichEdit->LineCount();
   for(int I = 0; I < LineCount; I++)                              
   {
@@ -120,7 +120,7 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
     RichEdit->SelText = L" "; 
   }
 
-  //We need to add an empty line to the end, because GetTextSize doesn't count
+	//We need to add an empty line to the end, because GetTextSize doesn't count
   //the last line in the height
 	RichEdit->SelText = "\n";
 
@@ -131,7 +131,7 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
 	return RichEdit->GetTextSize();
 }
 //---------------------------------------------------------------------------
-struct TSplineParam
+/*struct TSplineParam
 {
 	TPoint Param[4];
 };
@@ -165,27 +165,27 @@ void CreateSingleSpline(std::vector<TPoint> &Points, TPoint p1, TPoint p2, TPoin
 
 	TSplineParam Spline = CalcSingleSpline(p1, p2, p3, p4);
 
-  //Calculate points on spline
-  for(double t = 0; t < 1; t += dt)
-  {
+	//Calculate points on spline
+	for(double t = 0; t < 1; t += dt)
+	{
 		//Add 0.5 to take care of rounding error. We assume the coordinates are always positive.
-    q.x = 0.5 * (Spline.Param[0].x * t*t*t
+		q.x = 0.5 * (Spline.Param[0].x * t*t*t
 							 + Spline.Param[1].x * t*t
-               + Spline.Param[2].x * t
-               + Spline.Param[3].x) + 0.5;
+							 + Spline.Param[2].x * t
+							 + Spline.Param[3].x) + 0.5;
 		q.y = 0.5 * (Spline.Param[0].y * t*t*t
-               + Spline.Param[1].y * t*t
-               + Spline.Param[2].y * t
-               + Spline.Param[3].y) + 0.5;
+							 + Spline.Param[1].y * t*t
+							 + Spline.Param[2].y * t
+							 + Spline.Param[3].y) + 0.5;
 
-    //No need to add point if it is equal to the last one
-    if(Points.empty() || q != Points.back())
+		//No need to add point if it is equal to the last one
+		if(Points.empty() || q != Points.back())
 			Points.push_back(q);
 	}
 }
 //---------------------------------------------------------------------------
 //Calculate points used to draw a series of cubic splines between points in P
-void CreateCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint> &P)
+void Create2DCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint> &P)
 {
 	if(P.size() == 2)
 	{
@@ -226,74 +226,90 @@ void CreateCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint> &
 	else
 		p4 = p3;
 	CreateSingleSpline(Points, *p1, *p2, *p3, *p4);
+}*/
+//---------------------------------------------------------------------------
+std::vector<double> CalcSecondDerivatives(const std::vector<TPoint> &P)
+{
+	int n = P.size();
+	std::vector<double> y2(n), u(n-1);
+
+	for(int i = 1; i < n-1; i++)
+	{
+		double sig = static_cast<double>(P[i].x - P[i-1].x) / (P[i+1].x - P[i-1].x);
+		double p = sig * y2[i-1] + 2;
+		y2[i] = (sig - 1) / p;
+		u[i] = static_cast<double>(P[i+1].y - P[i].y) / (P[i+1].x - P[i].x) -
+					 static_cast<double>(P[i].y - P[i-1].y) / (P[i].x - P[i-1].x);
+		u[i] = (6.0 * u[i] / (P[i+1].x - P[i-1].x) - sig * u[i-1]) / p;
+	}
+
+	y2[n-1] = 0;
+	for(int k = n-2; k >= 0; k--)
+		y2[k] = y2[k] * y2[k+1] + u[k];
+	return y2;
 }
 //---------------------------------------------------------------------------
-/*
-struct TCubic
+double EvalCubicSpline(const std::vector<TPoint> &P, const std::vector<double> &y2, unsigned i, double x)
 {
-	double a, b, c, d;
-};
-
-std::vector<TCubic> CalcNaturalCubic(const std::vector<int> &P)
-{
-	int n = P.size()-1;
-	std::vector<double> gamma(n+1);
-	std::vector<double>	delta(n+1);
-	std::vector<double>	D(n+1);
-	int i;
-
-	gamma[0] = 1.0f/2.0f;
-	for ( i = 1; i < n; i++) {
-		gamma[i] = 1/(4-gamma[i-1]);
-	}
-	gamma[n] = 1/(2-gamma[n-1]);
-
-	delta[0] = 3*(P[1]-P[0])*gamma[0];
-	for ( i = 1; i < n; i++) {
-		delta[i] = (3*(P[i+1]-P[i-1])-delta[i-1])*gamma[i];
-	}
-	delta[n] = (3*(P[n]-P[n-1])-delta[n-1])*gamma[n];
-
-	D[n] = delta[n];
-	for ( i = n-1; i >= 0; i--) {
-		D[i] = delta[i] - gamma[i]*D[i+1];
-	}
-
-	// now compute the coefficients of the cubics
-	std::vector<TCubic> C(n);
-	for ( i = 0; i < n; i++)
-	{
-		C[i].a = P[i];
-		C[i].b = D[i];
-		C[i].c = 3*(P[i+1] - P[i]) - 2*D[i] - D[i+1];
-		C[i].d = 2*(P[i] - P[i+1]) + D[i] + D[i+1];
-	}
-
-	return C;
+	double h = P[i+1].x - P[i].x;
+	double a = (P[i+1].x - x) / h;
+	double b = (x - P[i].x) / h;
+	double y = a * P[i].y + b *P[i+1].y + ((a*a*a-a) * y2[i] + (b*b*b-b)*y2[i+1]) * h*h/6.0;
+	return y;
 }
+//---------------------------------------------------------------------------
+void Create2DCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint> &P)
+{
+	unsigned n = P.size();
+	std::vector<TPoint> Px, Py;
+	Px.reserve(n);
+	Py.reserve(n);
+	for(unsigned I = 0; I < n; I++)
+	{
+		Px.push_back(TPoint(I, P[I].x));
+		Py.push_back(TPoint(I, P[I].y));
+	}
 
+	std::vector<double> x2 = CalcSecondDerivatives(Px);
+	std::vector<double> y2 = CalcSecondDerivatives(Py);
+	for(unsigned I = 0; I < n-1; I++)
+	{
+		double dt = 1.0/std::max(abs(P[I].x-P[I+1].x), abs(P[I].y-P[I+1].y));
+		for(double t = I; t < I+1; t += dt)
+		{
+			double x = EvalCubicSpline(Px, x2, I, t);
+			double y = EvalCubicSpline(Py, y2, I, t);
+			Points.push_back(TPoint(x, y));
+		}
+	}
+	Points.push_back(P.back());
+}
+//---------------------------------------------------------------------------
+struct TCompPoint
+{
+	bool operator()(const TPoint &P1, const TPoint &P2) const {return P1.x < P2.X;}
+};
+//---------------------------------------------------------------------------
 void CreateCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint> &P)
 {
-	std::vector<int> x, y;
-	for(unsigned I = 0; I < P.size(); I++)
-	{
-		x.push_back(P[I].x);
-		y.push_back(P[I].y);
-	}
-	std::vector<TCubic> X = CalcNaturalCubic(x);
-	std::vector<TCubic> Y = CalcNaturalCubic(y);
+	std::vector<TPoint> P2 = P;
+	sort(P2.begin(), P2.end(), TCompPoint());
+	for(unsigned I = P2.size()-1; I > 1; I--)
+		if(P2[I-1].X == P2[I].X) //Two points with same x-coordinate is not allowed
+			P2.erase(P2.begin() + I);
 
-	const double Steps = 20;
-	for(unsigned I = 0; I < X.size(); I++)
-		for(int J = 1; J <= Steps; J++)
+	std::vector<double> y2 = CalcSecondDerivatives(P2);
+	unsigned n = P2.size();
+	for(unsigned i = 0; i < n-1; i++)
+	{
+		for(int x = P2[i].x; x < P2[i+1].x; x++)
 		{
-			double u = J/Steps;
-			Points.push_back(TPoint(X[I].a + X[I].b * u + X[I].c * u*u + X[I].d * u*u*u,
-									Y[I].a + Y[I].b * u + Y[I].c * u*u + Y[I].d * u*u*u));
-//			Points.push_back(TPoint(x[I] + (x[I+1]-x[I])*u,
-//									Y[I].a + Y[I].b * u + Y[I].c * u*u + Y[I].d * u*u*u));
+			double y = EvalCubicSpline(P2, y2, i, x);
+			Points.push_back(TPoint(x, y));
 		}
-}*/
+	}
+	Points.push_back(P2.back());
+}
 //---------------------------------------------------------------------------
 // vt = (v1 + v2)/2 + (v1 - v2)/2 * cos(pi * (t - t1)/(t2-t1))
 // where, vt is the value you're looking for (at time t), v1 and v2 are the start and end values,
@@ -321,7 +337,7 @@ TCurveDirection CreateSingleHalfCosine(std::vector<TPoint> &Points, TCurveDirect
   else
   {
     //Draw an quarter ellipsis if we need to change horizontal/vertical direction
-    double dt = M_PI/std::max(abs(p2.x-p3.x), abs(p2.y-p3.y));
+		double dt = M_PI/std::max(abs(p2.x-p3.x), abs(p2.y-p3.y));
     for(double t = 0; t <= M_PI/2; t += dt)
     {
       TPoint q;
@@ -329,7 +345,7 @@ TCurveDirection CreateSingleHalfCosine(std::vector<TPoint> &Points, TCurveDirect
       {
         q.x = p2.x + (p3.x-p2.x) * std::sin(t);
         q.y = p3.y - (p3.y-p2.y) * std::cos(t);
-      }
+			}
       else
       {
 				q.x = p3.x - (p3.x-p2.x) * std::cos(t);
@@ -361,11 +377,15 @@ void Interpolate(std::vector<TPoint> &Points, const std::vector<TPoint> &P, TInt
 {
   switch(Algorithm)
   {
-    case iaCubicSpline:
+		case iaCubicSpline:
+			Create2DCubicSplines(Points, P);
+			break;
+
+    case iaCubicSpline2:
       CreateCubicSplines(Points, P);
       break;
 
-    case iaHalfCosine:
+		case iaHalfCosine:
       CreateHalfCosineInterpolation(Points, P);
       break;
 

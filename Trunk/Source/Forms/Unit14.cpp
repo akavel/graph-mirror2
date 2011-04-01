@@ -30,6 +30,9 @@
 #pragma link "SaveDialogEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
+const int ToGuiAlgorithm[4] = {0, 2, 3, 1};
+const TInterpolationAlgorithm FromGuiAlgorithm[4] = {iaLinear, iaCubicSpline2, iaCubicSpline, iaHalfCosine};
+//---------------------------------------------------------------------------
 __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
     : TForm(Owner), Data(AData), FontChanged(false)
 {
@@ -49,7 +52,7 @@ __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
   ComboBox1->ItemIndex = 1;
   UpdateErrorBars();
   PageControl1->ActivePage = TabSheet1;
-  ComboBox2->ItemIndex = GetRegValue(REGISTRY_KEY "\\Property", L"Interpolation", HKEY_CURRENT_USER, iaLinear);
+  ComboBox2->ItemIndex = ToGuiAlgorithm[GetRegValue(REGISTRY_KEY "\\Property", L"Interpolation", HKEY_CURRENT_USER, iaLinear)];
 
   ScaleForm(this);
 }              
@@ -158,7 +161,7 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
     Edit3->Text.ToInt(),
     PointSelect1->ItemIndex,
     LineSelect1->LineStyle,
-    static_cast<TInterpolationAlgorithm>(ComboBox2->ItemIndex),
+    FromGuiAlgorithm[ComboBox2->ItemIndex],
     CheckBox2->Checked,
     FontDialog1->Font,
     static_cast<Graph::TLabelPosition>(ComboBox1->ItemIndex),
@@ -218,7 +221,7 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
   Property.DefaultPointLine.Set(LineSelect1->LineStyle, ExtColorBox2->Selected, Edit3->Text.ToInt());
   if(FontChanged)
     Property.DefaultPointLabelFont->Assign(FontDialog1->Font);
-  SetRegValue(REGISTRY_KEY "\\Property", L"Interpolation", HKEY_CURRENT_USER, ComboBox2->ItemIndex);
+  SetRegValue(REGISTRY_KEY "\\Property", L"Interpolation", HKEY_CURRENT_USER, FromGuiAlgorithm[ComboBox2->ItemIndex]);
 
   ModalResult = mrOk;
 }
@@ -236,7 +239,7 @@ int TForm14::EditPointSeries(const boost::shared_ptr<TPointSeries> &P)
     ExtColorBox2->Selected = P->GetLineColor();
     UpDown2->Position = P->GetLineSize();
     LineSelect1->LineStyle = P->GetLineStyle();
-    ComboBox2->ItemIndex = P->GetInterpolation();
+		ComboBox2->ItemIndex = ToGuiAlgorithm[P->GetInterpolation()];
     Grid->RowCount = P->PointCount() + 2;
     CheckBox2->Checked = P->GetShowLabels();
     ComboBox1->Enabled = CheckBox2->Checked;

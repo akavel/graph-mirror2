@@ -1002,10 +1002,14 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
   const std::vector<TPointSeriesPoint> &PointData = PointSeries.GetPointData();
   const TPointSeries::TPointList PointList = PointSeries.GetPointList();
   TPointSeries::TPointList::const_iterator End = PointList.end();
-  for(TPointSeries::TPointList::const_iterator Iter = PointList.begin(); Iter != End; ++Iter)
-    //Check that point is valid (NAN is used to indicate invalid value)
-    if((!Axes.xAxis.LogScl || Iter->x > 0) && (!Axes.yAxis.LogScl || Iter->y > 0) && _finite(Iter->x) && _finite(Iter->y))
-      PointArray.push_back(xyPoint(*Iter));
+	for(TPointSeries::TPointList::const_iterator Iter = PointList.begin(); Iter != End; ++Iter)
+		//Check that point is valid (NAN is used to indicate invalid value)
+		if((!Axes.xAxis.LogScl || Iter->x > 0) && (!Axes.yAxis.LogScl || Iter->y > 0) && _finite(Iter->x) && _finite(Iter->y))
+		{
+			TPoint P = xyPoint(*Iter);
+			if(PointArray.empty() || P != PointArray.back())
+				PointArray.push_back(P);
+		}
 
   if(PointSeries.GetLineStyle() != psClear && PointSeries.GetLineSize() > 0)
   {
