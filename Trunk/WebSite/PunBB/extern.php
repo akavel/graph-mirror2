@@ -128,8 +128,9 @@ function output_rss($feed)
 		echo "\t\t\t".'<title><![CDATA['.escape_cdata($item['title']).']]></title>'."\n";
 		echo "\t\t\t".'<link>'.$item['link'].'</link>'."\n";
 		echo "\t\t\t".'<description><![CDATA['.escape_cdata($item['description']).']]></description>'."\n";
+//     echo "\t\t\t".'<author><![CDATA['.(isset($item['author']['email']) ? escape_cdata($item['author']['email']) : 'null@example.com').' ('.escape_cdata($item['author']['name']).')]]></author>'."\n";
       echo "\t\t\t".'<author><![CDATA['.(isset($item['author']['email']) ? escape_cdata($item['author']['email']).' ('.escape_cdata($item['author']['name']).')' : escape_cdata($item['author']['name'])).']]></author>'."\n";
-		echo "\t\t\t".'<pubDate>'.gmdate('r', $item['pubdate']).'</pubDate>'."\n";
+      echo "\t\t\t".'<pubDate>'.gmdate('r', $item['pubdate']).'</pubDate>'."\n";
 		echo "\t\t\t".'<guid>'.$item['link'].'</guid>'."\n";
 
 		($hook = get_hook('ex_add_new_rss_item_info')) ? eval($hook) : null;
@@ -279,9 +280,9 @@ if ($action == 'feed')
 	// Determine what type of feed to output
 	$type = isset($_GET['type']) && in_array($_GET['type'], array('html', 'rss', 'atom', 'xml')) ? $_GET['type'] : 'html';
 
-   $show = isset($_GET['show']) ? intval($_GET['show']) : 15;
+	$show = isset($_GET['show']) ? intval($_GET['show']) : 15;
 	if ($show < 1 || $show > 50)
-      $show = 15;
+		$show = 15;
 
 	($hook = get_hook('ex_set_syndication_type')) ? eval($hook) : null;
 
@@ -335,16 +336,16 @@ if ($action == 'feed')
 			'JOINS'		=> array(
 				array(
 					'INNER JOIN'	=> 'users AS u',
-					'ON'		=> 'u.id = p.poster_id'
+					'ON'			=> 'u.id = p.poster_id'
 				)
 			),
 			'WHERE'		=> 'p.topic_id='.$tid,
 			'ORDER BY'	=> 'p.posted DESC',
 			'LIMIT'		=> $show
 		);
-
 		($hook = get_hook('ex_qr_get_posts')) ? eval($hook) : null;
 		$result = $forum_db->query_build($query) or error(__FILE__, __LINE__);
+
 		while ($cur_post = $forum_db->fetch_assoc($result))
 		{
 			if ($forum_config['o_censoring'] == '1')
@@ -401,22 +402,22 @@ if ($action == 'feed')
 
 			if (count($fids) == 1)
 			{
-			// Fetch forum name
-			$query = array(
-				'SELECT'	=> 'f.forum_name',
-				'FROM'		=> 'forums AS f',
-				'JOINS'		=> array(
-					array(
-						'LEFT JOIN'		=> 'forum_perms AS fp',
-						'ON'			=> '(fp.forum_id=f.id AND fp.group_id='.$forum_user['g_id'].')'
-					)
-				),
-				'WHERE'		=> '(fp.read_forum IS NULL OR fp.read_forum=1) AND f.id='.$fids[0]
-			);
+				// Fetch forum name
+				$query = array(
+					'SELECT'	=> 'f.forum_name',
+					'FROM'		=> 'forums AS f',
+					'JOINS'		=> array(
+						array(
+							'LEFT JOIN'		=> 'forum_perms AS fp',
+							'ON'			=> '(fp.forum_id=f.id AND fp.group_id='.$forum_user['g_id'].')'
+						)
+					),
+					'WHERE'		=> '(fp.read_forum IS NULL OR fp.read_forum=1) AND f.id='.$fids[0]
+				);
 
-			$result = $forum_db->query_build($query) or error(__FILE__, __LINE__);
-			if ($forum_db->num_rows($result))
-				$forum_name = $lang_common['Title separator'].$forum_db->result($result);
+				$result = $forum_db->query_build($query) or error(__FILE__, __LINE__);
+				if ($forum_db->num_rows($result))
+					$forum_name = $lang_common['Title separator'].$forum_db->result($result);
 			}
 		}
 
@@ -441,27 +442,30 @@ if ($action == 'feed')
 
 		// Fetch $show topics
 		$query = array(
-//         'SELECT' => 't.id, t.poster, t.subject, t.last_post, t.last_poster, p.message, p.hide_smilies, u.email_setting, u.email, p.poster_id, p.poster_email, p.posted, p.id',
+//        'SELECT' => 't.id, t.poster, t.posted, t.subject, p.message, p.hide_smilies, u.email_setting, u.email, p.poster_id, p.poster_email',
          'SELECT' => 't.id, p.poster, t.subject, t.last_post, t.last_poster, p.message, p.hide_smilies, u.email_setting, u.email, p.poster_id, p.poster_email, p.posted, p.id',
+//        'FROM'      => 'topics AS t',
          'FROM'      => 'posts AS p',
-			'JOINS'		=> array(
+         'JOINS'     => array(
 				array(
+//              'INNER JOIN'   => 'posts AS p',
+//              'ON'        => 'p.id = t.first_post_id'
                'INNER JOIN'   => 'topics AS t',
                'ON'        => 't.id=p.topic_id'
-				),
+            ),
 				array(
-					'INNER JOIN'		=> 'users AS u',
+					'INNER JOIN'	=> 'users AS u',
 					'ON'			=> 'u.id = p.poster_id'
 				),
 				array(
 					'LEFT JOIN'		=> 'forum_perms AS fp',
-					'ON'			=> '(fp.forum_id=t.forum_id AND fp.group_id='.$forum_user['g_id'].')'
+					'ON'			=> '(fp.forum_id = t.forum_id AND fp.group_id = '.$forum_user['g_id'].')'
 				)
 			),
-			'WHERE'		=> '(fp.read_forum IS NULL OR fp.read_forum=1) AND t.moved_to IS NULL',
-//         'ORDER BY'  => 't.last_post DESC',
+			'WHERE'		=> '(fp.read_forum IS NULL OR fp.read_forum = 1) AND t.moved_to IS NULL',
+//        'ORDER BY'  => 't.posted DESC',
          'ORDER BY'  => 'p.posted DESC',
-			'LIMIT'		=> $show
+         'LIMIT'     => $show
 		);
 
 		if (isset($forum_sql))
@@ -480,16 +484,15 @@ if ($action == 'feed')
 			$cur_topic['message'] = parse_message($cur_topic['message'], $cur_topic['hide_smilies']);
 
 			$item = array(
-            'id'       => $cur_topic['id'],
+				'id'			=>	$cur_topic['id'],
 				'title'			=>	$cur_topic['subject'],
-//            'link'         => forum_link($forum_url['topic_new_posts'], array($cur_topic['id'], sef_friendly($cur_topic['subject']))),
+//           'link'         => forum_link($forum_url['topic_new_posts'], array($cur_topic['id'], sef_friendly($cur_topic['subject']))),
             'link'         => forum_link('viewtopic.php?pid=$1', array($cur_topic['id'])),
-				'description'	=>	$cur_topic['message'],
+            'description'  => $cur_topic['message'],
 				'author'		=>	array(
-//               'name'   => $cur_topic['last_poster']
-               'name'   => $cur_topic['poster']
-				),
-            'pubdate'      => $cur_topic['posted']
+              'name'         => $cur_topic['poster']
+            ),
+				'pubdate'		=>	$cur_topic['posted']
 			);
 
 			if ($cur_topic['poster_id'] > 1)
