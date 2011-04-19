@@ -52,11 +52,14 @@ try:
   print("Uploading", FileName, "...")
   File = open(FileName, 'rb')
   ftp.storbinary('STOR ' + FileName, File)
+  if ftp.size(FileName) != os.stat(FileName).st_size:
+    raise Exception("Wrong file size on server")
 
   print("Uploading GraphBeta.inf ...")
   ftp.cwd('../graph')
   File = open("GraphBeta.inf", 'rb')
   ftp.storbinary('STOR GraphBeta.inf', File)
+
   ftp.quit()
   print("Upload complete!")
 except:
