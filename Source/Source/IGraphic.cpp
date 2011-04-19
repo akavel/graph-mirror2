@@ -279,7 +279,7 @@ void Create2DCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint>
 		{
 			double x = EvalCubicSpline(Px, x2, I, t);
 			double y = EvalCubicSpline(Py, y2, I, t);
-			Points.push_back(TPoint(x, y));
+			Points.push_back(TPoint(x + 0.5, y + 0.5));
 		}
 	}
 	Points.push_back(P.back());
@@ -305,7 +305,7 @@ void CreateCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint> &
 		for(int x = P2[i].x; x < P2[i+1].x; x++)
 		{
 			double y = EvalCubicSpline(P2, y2, i, x);
-			Points.push_back(TPoint(x, y));
+			Points.push_back(TPoint(x, y + 0.5));
 		}
 	}
 	Points.push_back(P2.back());
