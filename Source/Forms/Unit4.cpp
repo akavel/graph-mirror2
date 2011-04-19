@@ -47,7 +47,8 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
 
   CheckBox5->Checked = Property.CustomDecimalSeparator;
   Edit4->Text = Property.DecimalSeparator;
-  Edit4->Enabled = CheckBox5->Checked;
+	Edit4->Enabled = CheckBox5->Checked;
+	Edit4->Color = CheckBox5->Checked ? clWindow : clBtnFace;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Button1Click(TObject *Sender)
@@ -122,6 +123,7 @@ void __fastcall TForm4::ComboBox1KeyPress(TObject *Sender, char &Key)
 void __fastcall TForm4::CheckBox5Click(TObject *Sender)
 {
   Edit4->Enabled = CheckBox5->Checked;
+	Edit4->Color = CheckBox5->Checked ? clWindow : clBtnFace;
 }
 //---------------------------------------------------------------------------
 

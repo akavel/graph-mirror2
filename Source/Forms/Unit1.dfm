@@ -420,6 +420,7 @@ object Form1: TForm1
     Top = 176
   end
   object Recent1: TRecent
+    MaxFiles = 9
     OnLoadFile = Recent1LoadFile
     Hint = 'Open file: %s'
     MaxPathLen = 40
