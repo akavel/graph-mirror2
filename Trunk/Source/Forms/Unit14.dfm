@@ -307,8 +307,8 @@ object Form14: TForm14
           TabOrder = 4
           Items.Strings = (
             'Linear'
-            '1D cubic splines'
-            '2D cubic splines'
+            '1D cubic spline'
+            '2D cubic spline'
             'Half cosine')
         end
         object ExtColorBox2: TExtColorBox
