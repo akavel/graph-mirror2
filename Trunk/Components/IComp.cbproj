@@ -33,7 +33,6 @@
 			<ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 			<Defines>STRICT</Defines>
-			<DynamicRTL>true</DynamicRTL>
 			<IncludePath>TIFontBox\;TUpDownEx\;TIPolygon\;TProgress\;TIColorBox\;TIRichEdit\;TIColorSelect\;TIPrintDialog\;TRadioGroupEx\;TSymbolDialog\;TProgressForm\;TSaveDialogEx\;TFocusPanel\;TLineSelect\;TIPageSetup\;TMyRadioButton\;TMySplitter\;TSerialHandler\;TMediaPlayerEx\;TCheckBoxEx\;TMyEdit\;TRecent\;TGrid\;TOpenPreviewDialog\;TExtColorBox\;TGridPanelEx\;TPointSelect\;TShadeSelect\;TLinkLabelEx\;Common\;TCross\;TLinkLabelEx;TUpDownEx;TRadioGroupEx;TGridPanelEx;TCheckBoxEx;TSymbolDialog;TShadeSelect;TSerialHandler;TSaveDialogEx;TRecent;TProgressForm;TProgress;TPointSelect;TOpenPreviewDialog;TMySplitter;TIRichEdit;TMyRadioButton;TMyEdit;TMediaPlayerEx;TLineSelect;TIPrintDialog;TIPolygon;TIPageSetup;TIFontBox;TIColorBox;TIColorSelect;TGrid;TFocusPanel;TExtColorBox;TCross;..\Libraries\;$(BDS)\include\windows;$(BDS)\include\dinkumware;Common;$(IncludePath)</IncludePath>
 			<ILINK_LibraryPath>TIFontBox\;TUpDownEx\;TIPolygon\;TProgress\;TIColorBox\;TIRichEdit\;TIColorSelect\;TIPrintDialog\;TRadioGroupEx\;TSymbolDialog\;TProgressForm\;TSaveDialogEx\;TFocusPanel\;TLineSelect\;TIPageSetup\;TMyRadioButton\;TMySplitter\;TSerialHandler\;TMediaPlayerEx\;TCheckBoxEx\;TMyEdit\;TRecent\;TGrid\;TOpenPreviewDialog\;TExtColorBox\;TGridPanelEx\;TPointSelect\;TShadeSelect\;TLinkLabelEx\;Common\;TCross\;TLinkLabelEx;TUpDownEx;TRadioGroupEx;TGridPanelEx;TCheckBoxEx;TSymbolDialog;TShadeSelect;TSerialHandler;TSaveDialogEx;TRecent;TProgressForm;TProgress;TPointSelect;TOpenPreviewDialog;TMySplitter;TIRichEdit;TMyRadioButton;TMyEdit;TMediaPlayerEx;TLineSelect;TIPrintDialog;TIPolygon;TIPageSetup;TIFontBox;TIColorBox;Common;TIColorSelect;TGrid;TFocusPanel;TExtColorBox;TCross;..\Components;$(BDS)\lib\obj;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<BCC_wpar>false</BCC_wpar>
@@ -53,7 +52,7 @@
 			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
 			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
 			<BCC_StackFrames>true</BCC_StackFrames>
-			<ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
 			<TASM_Debugging>Full</TASM_Debugging>
 			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
@@ -61,7 +60,6 @@
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
 			<Defines>NDEBUG;$(Defines)</Defines>
 			<IntermediateOutputDir>Release</IntermediateOutputDir>
-			<ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>

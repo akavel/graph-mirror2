@@ -47,10 +47,10 @@ namespace Trecent
 //---------------------------------------------------------------------------
 //Constructor initialzes values and allocates memory
 __fastcall TRecent::TRecent(TComponent* Owner)
-	: TComponent(Owner), FEnabled(true), FMaxFiles(4), FOnLoadFile(NULL),
-    FFileMenu(NULL), FAddToRecentDocs(true), Seperator1(NULL), Seperator2(NULL), FMaxPathLen(50)
+	: TComponent(Owner), FEnabled(true), FMaxFiles(9), FOnLoadFile(NULL),
+		FFileMenu(NULL), FAddToRecentDocs(true), Seperator1(NULL), Seperator2(NULL), FMaxPathLen(50)
 {
-  ReadFromRegistry();//Read file names from registry
+	ReadFromRegistry();//Read file names from registry
 }
 //---------------------------------------------------------------------------
 //Destructor deallocates memory
