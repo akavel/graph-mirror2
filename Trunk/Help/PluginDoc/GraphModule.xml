@@ -465,4 +465,5 @@
 	<xi:include href="GuiSettings.xml" xpointer="Graph.TGuiFormatSettings" />
 	<xi:include href="GuiSettings.xml" xpointer="Graph.TPlotSettings" />
 	<xi:include href="GuiSettings.xml" xpointer="Graph.TGuiSettings" />
+	<xi:include href="GraphElem.xml" />
 </chapter>
