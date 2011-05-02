@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter SYSTEM "dtd/dblite.dtd">
+<section id="GraphElem">
+	<title>Graph elements</title>
+	<section id="Graph.TGraphElem" xreflabel="Graph.TGraphElem">
+		<indexterm><primary>TGraphElem (class in Graph)</primary></indexterm>
+		<title>class <classname>Graph.TGraphElem</classname></title>
+		<para>
+			<variablelist>
+				<varlistentry>
+					<term>
+						<indexterm><primary>Visible (Graph.TGraphElem attribute)</primary></indexterm>
+						<classname>TGraphElem</classname>.<property>Visible</property>
+					</term>
+					<listitem>
+						<para>
+							This specifies if the element is shown in the graphing area.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>ShowInLegend (Graph.TProperty attribute)</primary></indexterm>
+						<classname>TGraphElem</classname>.<property>ShowInLegend</property>
+					</term>
+					<listitem>
+						<para>
+							Indicates if the element is shown in the legend.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>LegendText (Graph.TGraphElem attribute)</primary></indexterm>
+						<classname>TGraphElem</classname>.<property>LegendText</property>
+					</term>
+					<listitem>
+						<para>
+							This is the text string shown in the legend.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>Parent (Graph.TGraphElem attribute)</primary></indexterm>
+						<classname>TGraphElem</classname>.<property>Parent</property>
+					</term>
+					<listitem>
+						<para>
+							 This is a read only attribute indicating the parent element when the object is in the function list.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>PluginData (Graph.TGraphElem attribute)</primary></indexterm>
+						<classname>TGraphElem</classname>.<property>PluginData</property>
+					</term>
+					<listitem>
+						<para>
+							<property>PluginData</property> is a dictionary like object where a plugin can store data local to an element.
+							The data is stored in the .grf file.	Graph itself does not use this, it is only for use by plugins
+							Every plugins should use a unique value as key in the <property>PluginData</property> dictionary.
+							The value assigned should be a tuple, which may contain anything that can be passed to xmlrpc, e.g. tuples, lists, strings, numbers
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>ChildList (Graph.TGraphElem attribute)</primary></indexterm>
+						<classname>TGraphElem</classname>.<property>ChildList</property>
+					</term>
+					<listitem>
+						<para>
+							This is a list of child elements as shown in the function list.
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</section>
+
+	<section id="Graph.TBaseFuncType" xreflabel="Graph.TBaseFuncType">
+		<indexterm><primary>TBaseFuncType (class in Graph)</primary></indexterm>
+		<title>class <classname>Graph.TBaseFuncType</classname></title>
+		<para>
+			<variablelist>
+				<varlistentry>
+					<term>
+						<indexterm><primary>sList (Graph.TBaseFuncType attribute)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>sList</property>
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>Points (Graph.TBaseFuncType attribute)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>Points</property>
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>PointNum (Graph.TBaseFuncType attribute)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>PointNumsList</property>
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>Color (Graph.TBaseFuncType attribute)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>Color</property>
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>Size (Graph.TBaseFuncType attribute)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>Size</property>
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>Style (Graph.TBaseFuncType attribute)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>Style</property>
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>From (Graph.TBaseFuncType attribute)</primary></indexterm>
+						<indexterm><primary>To (Graph.TBaseFuncType attribute)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>From</property>
+						<classname>TBaseFuncType</classname>.<property>To</property>
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>StartPointStyle (Graph.TBaseFuncType attribute)</primary></indexterm>
+						<indexterm><primary>EndPointStyle (Graph.TBaseFuncType attribute)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>StartPointStyle</property>
+						<classname>TBaseFuncType</classname>.<property>EndPointStyle</property>
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>DrawType (Graph.TBaseFuncType attribute)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>DrawType</property>
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>MakeDifFunc (in class TBaseFuncType)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>MakeDifFunc</property>()
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>Eval (in class TBaseFuncType)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>Eval</property>(<parameter>t</parameter>)
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>CalcArea (in class TBaseFuncType)</primary></indexterm>
+						<classname>TBaseFuncType</classname>.<property>CalcArea</property>(<parameter>From, To</parameter>)
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</section>
+
+	<section id="Graph.TStdFunc" xreflabel="Graph.TStdFunc">
+		<indexterm><primary>TStdFunc (class in Graph)</primary></indexterm>
+		<title>class <classname>Graph.TStdFunc</classname></title>
+		<para>
+			<variablelist>
+				<varlistentry>
+					<term>
+						class <classname>Graph</classname>.<property>TStdFunc</property>(<parameter>Str</parameter>)
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
+						<indexterm><primary>Text (Graph.TStdFunc attribute)</primary></indexterm>
+						<classname>TStdFunc</classname>.<property>Text</property>
+					</term>
+					<listitem>
+						<para>
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</section>
+</section>
