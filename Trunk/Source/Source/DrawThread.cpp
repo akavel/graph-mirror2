@@ -470,7 +470,7 @@ void TDrawThread::CreateShade(TShading &Shade)
   if(Shade.Func2)
     PrepareFunction(Shade.Func2.get());
 
-  if(F->sList.empty() || (Shade.Func2.get() && Shade.Func2->sList.empty()))
+	if(F->sList.empty() || (Shade.Func2.get() && Shade.Func2->sList.empty()))
     return;
 
   //The intervals can go both ways. Make sure sMin is always less than sMax
@@ -498,8 +498,8 @@ void TDrawThread::CreateShade(TShading &Shade)
   unsigned N1 = std::lower_bound(F->sList.begin(), F->sList.end() - 1, Min, TCompCoordSet()) - F->sList.begin();
   unsigned N2 = std::upper_bound(F->sList.begin() + N1, F->sList.end(), Max, TCompCoordSet()) - F->sList.begin() - 1;
 
-  if(N2 < N1)
-    N2 = N1; //This may happen because we subtracted 1 when we calculated N2
+	if(N2 <= N1)
+		return; //This may happen because we subtracted 1 when we calculated N2
 
   //Position of x-axis on the y-axis
   int yAxisPixel = Range<int>(AxesRect.Top, yPoint(Axes.xAxis.AxisCross), AxesRect.Bottom);
@@ -780,6 +780,8 @@ void TDrawThread::CreateShade(TShading &Shade)
 //---------------------------------------------------------------------------
 void TDrawThread::DrawShade(const TShading &Shade)
 {
+	if(!Shade.Region)
+	  return;
   Draw->SetClippingRegion();
 
   Context.SetBrush(Shade.BrushStyle, ForceBlack ? clBlack : Shade.Color);
