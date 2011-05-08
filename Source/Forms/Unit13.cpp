@@ -56,7 +56,7 @@ void __fastcall TForm13::ImageClick(TObject *Sender)
       RadioButton4->SetFocus();
   }
   else if(Sender == Image5)
-  {
+	{
     if(RadioButton5->CanFocus())
       RadioButton5->SetFocus();
   }
@@ -91,7 +91,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
 
   try
   {
-    boost::shared_ptr<TBaseFuncType> BaseFunc;
+		boost::shared_ptr<TBaseFuncType> BaseFunc;
 
     const std::vector<Func32::TDblPoint> &Points = Series->GetPointList();
     std::vector<double> Weights;
@@ -106,7 +106,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
           throw Exception(LoadRes(RES_NOT_EQUAL_ZERO, LoadRes(RES_UNCERTAINTY, "Y")));
         Weights.push_back(1/(yError*yError));
       }
-    }
+		}
 
     if(PageControl1->TabIndex == 1)
     {
@@ -126,7 +126,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       Regression(Points, TempFunc, Values, Weights, 300);
 
       boost::shared_ptr<TStdFunc> Func(new TStdFunc(TempFunc.ConvToFunc(Values, 0)));
-      Func->SetLegendText(Func->GetFunc().MakeText(L"x", Property.RoundTo) + L"; R²=" + RoundToString(Correlation(Points, Func->GetFunc()), Data));
+			Func->SetLegendText(L"f(x)=" + Func->GetFunc().MakeText(L"x", Property.RoundTo) + L"; R²=" + RoundToString(Correlation(Points, Func->GetFunc()), Data));
       Func->From.Value = -INF;
       Func->To.Value = +INF;
       Func->SetSteps(TTextValue(0, L""));
@@ -176,7 +176,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
         Func.reset(new TStdFunc(TrendLine(Type, Points, Weights, N, MakeFloat(Edit5))));
       else
         Func.reset(new TStdFunc(TrendLine(Type, Points, Weights, N)));
-      Func->SetLegendText(Func->GetFunc().MakeText(L"x", Property.RoundTo) + L"; R²=" + RoundToString(Correlation(Points, Func->GetFunc()), Data));
+			Func->SetLegendText(L"f(x)=" + Func->GetFunc().MakeText(L"x", Property.RoundTo) + L"; R²=" + RoundToString(Correlation(Points, Func->GetFunc()), Data));
       Func->From.Value = -INF;
       Func->To.Value = +INF;
       Func->SetSteps(TTextValue(0, L""));
