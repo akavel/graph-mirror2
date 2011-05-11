@@ -2,13 +2,19 @@
 <!DOCTYPE book SYSTEM "dtd/dblite.dtd">
 <book id="Plugin" lang="en" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Script Engine Documentation for Graph</title>
-	<subtitle><inlinegraphic fileref="Graph_Icon.svg" scale="200"/></subtitle>
+	<subtitle>
+		<mediaobject>
+	  	<imageobject role="fo"><imagedata fileref="Graph_Icon.svg" scale="200"/></imageobject>
+  		<imageobject role="htmlhelp"><imagedata fileref="GraphIcon.png"/></imageobject>
+  		<imageobject role="html"><imagedata fileref="GraphIcon.png"/></imageobject>
+		</mediaobject>
+	</subtitle>
 	<xi:include href="../Source/version.xml"/>
 	<bookinfo>
 		<authorgroup>
 		</authorgroup>
 		<copyright>
-			<year>2010</year>
+			<year>2011</year>
 			<holder>Ivan Johansen</holder>
 		</copyright>
 	</bookinfo>

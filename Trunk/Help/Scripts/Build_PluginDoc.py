@@ -6,6 +6,8 @@ ToolsDir = "..\\..\\Tools\\"
 
 print "Copying image files..."
 os.system("XCopy ..\\Images\\Common\\GraphIcon.png ..\\Temp\\Images\\ /I /Q /Y > NUL")
+os.system("XCopy ..\\Images\\Common\\Graph_Icon.svg ..\\Temp\\Images\\ /I /Q /Y > NUL")
+os.system("XCopy ..\\Images\\Common\\C4B94475.png ..\\Temp\\Images\\ /I /Q /Y > NUL")
 os.system("XCopy ..\\Source\\dtd ..\\Temp\\dtd /S /I /Q /Y > NUL")
 os.system("XCopy ..\\Source\\styles_chm.css ..\\Temp /Q /Y > NUL")
 
