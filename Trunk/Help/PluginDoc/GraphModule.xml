@@ -330,6 +330,8 @@
 					<para>
 						Evaluates <parameter>Expression</parameter>, which is a string with an expression like "sin(0.3)+3^2.5".
 						The expression is evaluated using real numbers only and the result is returned as a floating point number.
+						<parameter>Trigonometry</parameter> can be <classname>Graph.Radian</classname> or <classname>Graph.Degree</classname>.
+						If <parameter>Trigonometry</parameter> is not specified, the value in <classname>Graph.Axes.Trigonometry</classname> will be used.
 						The function will raise the exception <classname>Graph</classname>.<property>EFuncError</property> if an error occurs.
 					</para>
 				</listitem>
