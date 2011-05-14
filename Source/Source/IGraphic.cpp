@@ -108,17 +108,27 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
   TRichEditOle RichEditOle(RichEdit.get());
   RichEdit->SetRichText(Str.c_str());
   if(Data)
-    ReplaceExpression(RichEdit.get(), *Data);
+		ReplaceExpression(RichEdit.get(), *Data);
 
-  //We need to add a space to the end of each lines. Else the width will be too
+	//We have to disable Beep while setting SelText below;
+	//Else the system beeps if the Rich Edit cannot be changed , for example because
+	//the Rich Edit contains a table
+	BOOL BeepOn;
+	SystemParametersInfo(SPI_GETBEEP, 0, &BeepOn, 0);
+	SystemParametersInfo(SPI_SETBEEP, false, NULL, 0);
+
+	//We need to add a space to the end of each lines. Else the width will be too
 	//small if the line ends with an italic character
 	int LineCount = RichEdit->LineCount();
-  for(int I = 0; I < LineCount; I++)                              
-  {
-    int Start = RichEdit->LineIndex(I);                                         
-    RichEdit->SelStart = Start + RichEdit->LineLength(Start);
-    RichEdit->SelText = L" "; 
-  }
+	for(int I = 0; I < LineCount; I++)
+	{
+		int Start = RichEdit->LineIndex(I);
+		RichEdit->SelStart = Start + RichEdit->LineLength(Start);
+		RichEdit->SelText = L" ";
+	}
+
+  //Set Beep back to the previous value
+	SystemParametersInfo(SPI_SETBEEP, BeepOn, NULL, 0);
 
 	//We need to add an empty line to the end, because GetTextSize doesn't count
   //the last line in the height
