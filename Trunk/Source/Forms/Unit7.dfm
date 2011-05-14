@@ -139,7 +139,6 @@ object Form7: TForm7
       Height = 22
       Hint = 'Choose which line style to use for drawing the graph.'
       TabOrder = 0
-      ItemHeight = 16
     end
     object ExtColorBox1: TExtColorBox
       Left = 64
@@ -147,7 +146,6 @@ object Form7: TForm7
       Width = 81
       Height = 22
       Hint = 'Select the color of the graph.'
-      ItemHeight = 16
       TabOrder = 3
       AutoDroppedWidth = True
       Selected = clScrollBar
