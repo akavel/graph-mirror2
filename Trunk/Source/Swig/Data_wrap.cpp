@@ -12616,8 +12616,7 @@ SWIGINTERN PyObject *_wrap_TBaseFuncType_MakeDifFunc(PyObject *SWIGUNUSEDPARM(se
   }
   result = (arg1)->MakeDifFunc();
   {
-    boost::shared_ptr<  TBaseFuncType > *smartresult = result ? new boost::shared_ptr<  TBaseFuncType >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t, SWIG_POINTER_OWN);
+    resultobj = DownCastSharedPtr(result);
   }
   return resultobj;
 fail:
@@ -12714,7 +12713,15 @@ SWIGINTERN PyObject *_wrap_TBaseFuncType_CalcArea(PyObject *SWIGUNUSEDPARM(self)
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "TBaseFuncType_CalcArea" "', argument " "3"" of type '" "long double""'");
   } 
   arg3 = static_cast< long double >(val3);
-  result = (long double)((TBaseFuncType const *)arg1)->CalcArea(arg2,arg3);
+  try {
+    result = (long double)((TBaseFuncType const *)arg1)->CalcArea(arg2,arg3);
+  }
+  catch(Func32::EFuncError &_e) {
+    PyErr_SetString(Python::PyEFuncError, ToString(GetErrorMsg(_e)).c_str());
+    SWIG_fail;
+    
+  }
+  
   resultobj = SWIG_From_double(static_cast< double >(result));
   return resultobj;
 fail:
@@ -12991,8 +12998,7 @@ SWIGINTERN PyObject *_wrap_TStdFunc_SWIGSharedPtrUpcast(PyObject *SWIGUNUSEDPARM
   }
   result = TStdFunc_SWIGSharedPtrUpcast(arg1);
   {
-    boost::shared_ptr<  TBaseFuncType > *smartresult = result ? new boost::shared_ptr<  TBaseFuncType >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t, SWIG_POINTER_OWN);
+    resultobj = DownCastSharedPtr(result);
   }
   return resultobj;
 fail:
@@ -13140,8 +13146,7 @@ SWIGINTERN PyObject *_wrap_TParFunc_SWIGSharedPtrUpcast(PyObject *SWIGUNUSEDPARM
   }
   result = TParFunc_SWIGSharedPtrUpcast(arg1);
   {
-    boost::shared_ptr<  TBaseFuncType > *smartresult = result ? new boost::shared_ptr<  TBaseFuncType >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t, SWIG_POINTER_OWN);
+    resultobj = DownCastSharedPtr(result);
   }
   return resultobj;
 fail:
@@ -13340,8 +13345,7 @@ SWIGINTERN PyObject *_wrap_TPolFunc_SWIGSharedPtrUpcast(PyObject *SWIGUNUSEDPARM
   }
   result = TPolFunc_SWIGSharedPtrUpcast(arg1);
   {
-    boost::shared_ptr<  TBaseFuncType > *smartresult = result ? new boost::shared_ptr<  TBaseFuncType >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t, SWIG_POINTER_OWN);
+    resultobj = DownCastSharedPtr(result);
   }
   return resultobj;
 fail:
@@ -13641,8 +13645,7 @@ SWIGINTERN PyObject *_wrap_TTan_SWIGSharedPtrUpcast(PyObject *SWIGUNUSEDPARM(sel
   }
   result = TTan_SWIGSharedPtrUpcast(arg1);
   {
-    boost::shared_ptr<  TBaseFuncType > *smartresult = result ? new boost::shared_ptr<  TBaseFuncType >(result) : 0;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t, SWIG_POINTER_OWN);
+    resultobj = DownCastSharedPtr(result);
   }
   return resultobj;
 fail:

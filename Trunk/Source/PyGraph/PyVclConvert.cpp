@@ -49,7 +49,7 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 			break;
 
 		case tkInteger:
-			Result = TValue::From(PyLong_AsLong(O));
+			Result = TValue::From(PyLong_AsUnsignedLongMask(O));
 			break;
 
 		case tkUString:
