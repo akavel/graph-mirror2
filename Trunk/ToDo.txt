@@ -171,6 +171,8 @@ Plugins:
 - Show end points where the graph leaves the graphing area.
 - Create several functions from a model, e.g. f(x)=acos((1+b^2- (x+sqrt(1+b^2))^2)/2*b) with several values of b.
 - Create custom point series interpolations.
+- Create several evaluate windows (see http://padowan.dk/forum/viewtopic.php?pid=971)
+- Create tables in the image. E.g. a text label with a table can be used.
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>
