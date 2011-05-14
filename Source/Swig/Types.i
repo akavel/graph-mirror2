@@ -47,7 +47,7 @@
 {
   $result = DownCastSharedPtr(*$1);
 }
-%typemap(out) boost::shared_ptr<TBaseFuncType> = boost::shared_ptr<TGraphElem>;
+//%typemap(out) boost::shared_ptr<TBaseFuncType> = boost::shared_ptr<TGraphElem>;
 %typemap(out) const boost::shared_ptr<TBaseFuncType>& = const boost::shared_ptr<TGraphElem>&;
 
 %typemap(out) Func32::TCoord<long double> {

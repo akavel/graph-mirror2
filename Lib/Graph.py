@@ -36,6 +36,7 @@ GuiSettings = Settings.GuiSettings
 
 Selected = None
 TGraphElem = Data.TGraphElem
+TBaseFuncType = Data.TBaseFuncType
 TStdFunc = Data.TStdFunc
 TParFunc = Data.TParFunc
 TPolFunc = Data.TPolFunc

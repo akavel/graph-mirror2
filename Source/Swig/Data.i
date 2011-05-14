@@ -114,6 +114,12 @@ SWIG_SHARED_PTR_DERIVED(TShading, TGraphElem, TShading)
 SWIG_SHARED_PTR_DERIVED(TRelation, TGraphElem, TRelation)
 SWIG_SHARED_PTR_DERIVED(TAxesView, TGraphElem, TAxesView)
 
+//This must be placed after the SWIG_SHARED_PTR_DERIVED macro
+%typemap(out) boost::shared_ptr<TBaseFuncType>
+{
+  $result = DownCastSharedPtr($1);
+}
+
 %nodefaultctor TGraphElem;
 %attribute(TGraphElem, int, Visible, GetVisible, SetVisible);
 %attribute(TGraphElem, bool, ShowInLegend, GetShowInLegend, SetShowInLegend);
@@ -161,7 +167,7 @@ public:
 
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
   Func32::TCoord<long double> Eval(long double t);
-  long double CalcArea(long double From, long double To) const;
+  long double CalcArea(long double From, long double To) const throw(Func32::EFuncError);
 };
 
 %nodefaultctor TTopGraphElem;
