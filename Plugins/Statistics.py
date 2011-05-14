@@ -25,7 +25,7 @@ def Execute(Sender):
     Form.ShowModal()
 
 def OnSelect(Item):
-    Action.Enabled = Item.__class__ is Graph.TPointSeries
+    Action.Enabled = isinstance(Item, Graph.TPointSeries)
 
 Action = Graph.CreateAction(Caption="Statistics", OnExecute=Execute, Hint="Statistics on a point series")
 Graph.AddActionToMainMenu(Action)
