@@ -155,9 +155,9 @@ typedef unsigned TPenStyle;
 class TBaseFuncType : public TGraphElem
 {
 public:
-  std::vector<Func32::TCoordSet<> > sList;
-  std::vector<TPoint> Points;
-  std::vector<unsigned> PointNum;
+  const std::vector<Func32::TCoordSet<> > sList;
+  const std::vector<TPoint> Points;
+  const std::vector<unsigned> PointNum;
   TColor Color;
   unsigned Size;
   TPenStyle Style;
