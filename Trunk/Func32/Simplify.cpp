@@ -20,7 +20,7 @@ struct TSimplify
   TElem Result[4];
 };
 
-const unsigned TableSize = 29;
+const unsigned TableSize = 30;
 const TSimplify& SimplifyTable(unsigned Index)
 {
 
@@ -59,7 +59,8 @@ static const TSimplify Table[TableSize] =
 
   {CodeLn, Codee, CodeIgnore, 1},
   {CodeLog, 10, CodeIgnore, 1},
-  {CodeSqr, CodeSqrt, CodeIgnore, CodePar1Par},
+	{CodeSqr, CodeSqrt, CodeIgnore, CodePar1Par},
+	{CodeIntegrate, 0, CodeIgnore, 0},
 };
 
   BOOST_ASSERT(Index < sizeof(Table)/sizeof(Table[0]));

@@ -199,21 +199,25 @@ bool TElem::operator ==(const TElem &E) const
 		case CodeCustom:
 			return Text == E.Text;
 
+		case CodeConst:
+			return boost::any_cast<boost::shared_ptr<long double> >(Value) ==
+				boost::any_cast<boost::shared_ptr<long double> >(E.Value);
+
 		default:
 			return Arguments == E.Arguments;
-  }
+	}
 }
 //---------------------------------------------------------------------------
 /** Copy another function into List and replaces all arguments with copies of custom functions.
  *  This is used as part of differentiation.
- *  \param List: Data vector to copy elemnets into.
+ *  \param List: Data vector to copy elements into.
  *  \param Iter: Iterator pointing to first element in function to copy
  *  \param Args: Value of arguments. Arg0 is replaced by Args[0], etc.
  *  \todo Throw exception on recursive functions
  */
-void TFuncData::CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const std::vector<std::vector<TElem> > &Args)
+void TFuncData::CopyReplaceArgs(std::vector<TElem> &List, TConstIterator Iter, const std::vector<std::vector<TElem> > &Args)
 {
-	DEBUG_LOG(std::wclog << L"CopyReplace: " << MakeText(Iter));
+	DEBUG_LOG(std::wclog << L"CopyReplaceArgs: " << MakeText(Iter));
 	DEBUG_LOG(for(unsigned I = 0; I < Args.size(); I++) std::wclog << L";   Arg" << I << L"=" << MakeText(Args[I].begin()));
 	DEBUG_LOG(std::wclog << std::endl);
 
@@ -223,19 +227,44 @@ void TFuncData::CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const
 		if(Iter->Ident == CodeCustom && Iter->Arguments > 0)
 		{
 			std::vector<std::vector<TElem> > NewArgs(Iter->Arguments);
-      TConstIterator Iter2 = Iter + 1;
-      for(unsigned I = 0; I < NewArgs.size(); I++)
+			TConstIterator Iter2 = Iter + 1;
+			for(unsigned I = 0; I < NewArgs.size(); I++)
       {
-        CopyReplace(NewArgs[I], Iter2, Args);
+				CopyReplaceArgs(NewArgs[I], Iter2, Args);
         Iter2 = FindEnd(Iter2);
       }
       boost::shared_ptr<TBaseCustomFunc> Func = boost::any_cast<boost::shared_ptr<TBaseCustomFunc> >(Iter->Value);
-      CopyReplace(List, Func->GetFuncData()->Data.begin(), NewArgs);
+			CopyReplaceArgs(List, Func->GetFuncData()->Data.begin(), NewArgs);
       Iter = Iter2 - 1;
     }
-    else if(Iter->Ident == CodeArgument && !Args.empty())
-      CopyReplace(List, Args[Iter->Arguments].begin(), Dummy);
-    else
+		else if(Iter->Ident == CodeArgument && !Args.empty())
+      CopyReplaceArgs(List, Args[Iter->Arguments].begin(), Dummy);
+		else
+			List.push_back(*Iter);
+}
+//---------------------------------------------------------------------------
+/** Copy another function into List and replaces all arguments that matches Elem
+ *	with the elements in the range [First;Last[
+ *  This is used as part of differentiation.
+ *  \param List: Data vector to copy elements into.
+ *	\param Iter: Points to the first part of the function to copy.
+ *	\param Elem: The element to look for.
+ *  \param First: Start of the range to replace Elem with.
+ *  \param Last: One after the last element top replace Elem with.
+ */
+void TFuncData::CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const TElem &Elem, TConstIterator First, TConstIterator Last)
+{
+//	DEBUG_LOG(std::wclog << L"CopyReplace: " << MakeText(Iter));
+//	DEBUG_LOG(for(unsigned I = 0; I < Args.size(); I++) std::wclog << L";   Arg" << I << L"=" << MakeText(Args[I].begin()));
+//	DEBUG_LOG(std::wclog << std::endl);
+
+	TConstIterator End = FindEnd(Iter);
+	for(; Iter != End; ++Iter)
+		if(*Iter == Elem)
+		{
+			List.insert(List.end(), First, Last);
+		}
+		else
       List.push_back(*Iter);
 }
 //---------------------------------------------------------------------------
@@ -245,7 +274,7 @@ void TFuncData::CopyReplace(std::vector<TElem> &List, TConstIterator Iter, const
  */
 void TFuncData::Replace(const TElem &OldElem, const TElem &NewElem)
 {
-  std::replace(Data.begin(), Data.end(), OldElem, NewElem);
+	std::replace(Data.begin(), Data.end(), OldElem, NewElem);
 }
 //---------------------------------------------------------------------------
 /** Update data to use functions/constants in a new symbol list. This will loop through all the elements, and replace all
@@ -267,7 +296,7 @@ bool TFuncData::Update(const TSymbolList &SymbolList)
       else
         Iter->Value = Func;
     }
-  return Result;
+	return Result;
 }
 //---------------------------------------------------------------------------
 /** Add a copy of a TFuncData object to the end of this object.

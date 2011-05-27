@@ -30,7 +30,7 @@ boost::shared_ptr<TFuncData> TFuncData::MakeDif(const TElem &Var, TTrigonometry 
   try
   {
     boost::shared_ptr<TFuncData> Temp(new TFuncData);
-		CopyReplace(Temp->Data, Data.begin(), std::vector<std::vector<TElem> >());
+		CopyReplaceArgs(Temp->Data, Data.begin(), std::vector<std::vector<TElem> >());
     DEBUG_LOG(std::wclog << L"f(x)=" << MakeText(Temp->Data.begin()) << std::endl);
     boost::shared_ptr<TFuncData> Dest(new TFuncData);
     Dest->AddDif(Temp->Data.begin(), Var, Trigonometry, 0);
@@ -171,19 +171,19 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
 				TFuncData Temp(FunctionDefinition(CodeDNorm), ArgNames);
 				TFuncData Temp2;
 				std::vector<std::vector<TElem> > Args(3);
-				CopyReplace(Args.front(), Iter + 1, std::vector<std::vector<TElem> >());
+				CopyReplaceArgs(Args.front(), Iter + 1, std::vector<std::vector<TElem> >());
 				if(Iter->Arguments > 2)
 				{
 					TConstIterator Iter2 = FindEnd(Iter + 1);
-					CopyReplace(Args[1], Iter2, std::vector<std::vector<TElem> >());
-					CopyReplace(Args[2], FindEnd(Iter2), std::vector<std::vector<TElem> >());
+					CopyReplaceArgs(Args[1], Iter2, std::vector<std::vector<TElem> >());
+					CopyReplaceArgs(Args[2], FindEnd(Iter2), std::vector<std::vector<TElem> >());
 				}
 				else
 				{
 					Args[1].push_back(TElem(CodeNumber, 0.0));
 					Args[2].push_back(TElem(CodeNumber, 1.0));
 				}
-				CopyReplace(Temp2.Data, Temp.Data.begin(), Args);
+				CopyReplaceArgs(Temp2.Data, Temp.Data.begin(), Args);
 				AddDif(Temp2.Data.begin(), Var, Trigonometry, Level + 1);
 				break;
 			}
@@ -211,7 +211,30 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
 				}
 
 				const TFuncData &DifData = GetDif(Iter->Ident);
-				if(DifData.IsEmpty())
+				if(Iter->Ident == CodeIntegrate)
+				{
+					//f(x)=integrate(g(x,s), s, a(x), b(x))
+					//f'(x)=g(x,b(x))*db(x)/dx - g(x,a(x))*da(x)/dx + integrate(dg(x,s)/dx, s, a(x), b(x))
+					TConstIterator From = FindEnd(Iter + 1);
+					TConstIterator To = FindEnd(From);
+					TConstIterator End = FindEnd(To);
+					TElem Elem = *Iter;
+					Elem.Ident = CodeConst;
+					Data.push_back(CodeAdd);
+					Data.push_back(CodeSub);
+					Data.push_back(CodeMul);
+					CopyReplace(Data, Iter + 1, Elem, To, End);
+					AddDif(To, Var, Trigonometry, Level);
+
+					Data.push_back(CodeMul);
+					CopyReplace(Data, Iter + 1, Elem, From, To);
+					AddDif(From, Var, Trigonometry, Level);
+
+					Data.push_back(*Iter);
+					AddDif(Iter + 1, Var, Trigonometry, Level);
+					Data.insert(Data.end(), From, End);
+				}
+				else if(DifData.IsEmpty())
 					throw EFuncError(ecNotDifAble, FunctionName(Iter->Ident));
 
 				TConstIterator End = DifData.Data.end();
