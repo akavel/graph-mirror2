@@ -11752,48 +11752,6 @@ SWIGINTERN PyObject *TGraphElem_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap_TBaseFuncType_sList_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  TBaseFuncType *arg1 = (TBaseFuncType *) 0 ;
-  std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *arg2 = (std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  boost::shared_ptr< TBaseFuncType > tempshared1 ;
-  boost::shared_ptr< TBaseFuncType > *smartarg1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TBaseFuncType_sList_set",&obj0,&obj1)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TBaseFuncType_sList_set" "', argument " "1"" of type '" "TBaseFuncType *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      delete reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      arg1 = const_cast< TBaseFuncType * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      arg1 = const_cast< TBaseFuncType * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__vectorT_Func32__TCoordSetT_t_std__allocatorT_Func32__TCoordSetT_t_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TBaseFuncType_sList_set" "', argument " "2"" of type '" "std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > *""'"); 
-  }
-  arg2 = reinterpret_cast< std::vector< Func32::TCoordSet< >,std::allocator< Func32::TCoordSet< > > > * >(argp2);
-  if (arg1) (arg1)->sList = *arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_TBaseFuncType_sList_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TBaseFuncType *arg1 = (TBaseFuncType *) 0 ;
@@ -11828,48 +11786,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_TBaseFuncType_Points_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  TBaseFuncType *arg1 = (TBaseFuncType *) 0 ;
-  std::vector< TPoint,std::allocator< TPoint > > *arg2 = (std::vector< TPoint,std::allocator< TPoint > > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  boost::shared_ptr< TBaseFuncType > tempshared1 ;
-  boost::shared_ptr< TBaseFuncType > *smartarg1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TBaseFuncType_Points_set",&obj0,&obj1)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TBaseFuncType_Points_set" "', argument " "1"" of type '" "TBaseFuncType *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      delete reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      arg1 = const_cast< TBaseFuncType * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      arg1 = const_cast< TBaseFuncType * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TBaseFuncType_Points_set" "', argument " "2"" of type '" "std::vector< TPoint,std::allocator< TPoint > > *""'"); 
-  }
-  arg2 = reinterpret_cast< std::vector< TPoint,std::allocator< TPoint > > * >(argp2);
-  if (arg1) (arg1)->Points = *arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_TBaseFuncType_Points_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TBaseFuncType *arg1 = (TBaseFuncType *) 0 ;
@@ -11898,48 +11814,6 @@ SWIGINTERN PyObject *_wrap_TBaseFuncType_Points_get(PyObject *SWIGUNUSEDPARM(sel
   }
   result = (std::vector< TPoint,std::allocator< TPoint > > *)& ((arg1)->Points);
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_TPoint_std__allocatorT_TPoint_t_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TBaseFuncType_PointNum_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  TBaseFuncType *arg1 = (TBaseFuncType *) 0 ;
-  std::vector< unsigned int,std::allocator< unsigned int > > *arg2 = (std::vector< unsigned int,std::allocator< unsigned int > > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  boost::shared_ptr< TBaseFuncType > tempshared1 ;
-  boost::shared_ptr< TBaseFuncType > *smartarg1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:TBaseFuncType_PointNum_set",&obj0,&obj1)) SWIG_fail;
-  {
-    int newmem = 0;
-    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t, 0 |  0 , &newmem);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TBaseFuncType_PointNum_set" "', argument " "1"" of type '" "TBaseFuncType *""'");
-    }
-    if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      delete reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      arg1 = const_cast< TBaseFuncType * >(tempshared1.get());
-    } else {
-      smartarg1 = reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      arg1 = const_cast< TBaseFuncType * >((smartarg1 ? smartarg1->get() : 0));
-    }
-  }
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__vectorT_unsigned_int_std__allocatorT_unsigned_int_t_t, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "TBaseFuncType_PointNum_set" "', argument " "2"" of type '" "std::vector< unsigned int,std::allocator< unsigned int > > *""'"); 
-  }
-  arg2 = reinterpret_cast< std::vector< unsigned int,std::allocator< unsigned int > > * >(argp2);
-  if (arg1) (arg1)->PointNum = *arg2;
-  resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
   return NULL;
@@ -18025,11 +17899,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TGraphElem_ThisPtr", _wrap_TGraphElem_ThisPtr, METH_VARARGS, NULL},
 	 { (char *)"delete_TGraphElem", _wrap_delete_TGraphElem, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem_swigregister", TGraphElem_swigregister, METH_VARARGS, NULL},
-	 { (char *)"TBaseFuncType_sList_set", _wrap_TBaseFuncType_sList_set, METH_VARARGS, NULL},
 	 { (char *)"TBaseFuncType_sList_get", _wrap_TBaseFuncType_sList_get, METH_VARARGS, NULL},
-	 { (char *)"TBaseFuncType_Points_set", _wrap_TBaseFuncType_Points_set, METH_VARARGS, NULL},
 	 { (char *)"TBaseFuncType_Points_get", _wrap_TBaseFuncType_Points_get, METH_VARARGS, NULL},
-	 { (char *)"TBaseFuncType_PointNum_set", _wrap_TBaseFuncType_PointNum_set, METH_VARARGS, NULL},
 	 { (char *)"TBaseFuncType_PointNum_get", _wrap_TBaseFuncType_PointNum_get, METH_VARARGS, NULL},
 	 { (char *)"TBaseFuncType_Color_set", _wrap_TBaseFuncType_Color_set, METH_VARARGS, NULL},
 	 { (char *)"TBaseFuncType_Color_get", _wrap_TBaseFuncType_Color_get, METH_VARARGS, NULL},

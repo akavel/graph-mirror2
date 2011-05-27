@@ -345,15 +345,12 @@ class TBaseFuncType(TGraphElem):
     __getattr__ = lambda self, name: _swig_getattr(self, TBaseFuncType, name)
     def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
-    __swig_setmethods__["sList"] = _Data.TBaseFuncType_sList_set
     __swig_getmethods__["sList"] = _Data.TBaseFuncType_sList_get
-    if _newclass:sList = _swig_property(_Data.TBaseFuncType_sList_get, _Data.TBaseFuncType_sList_set)
-    __swig_setmethods__["Points"] = _Data.TBaseFuncType_Points_set
+    if _newclass:sList = _swig_property(_Data.TBaseFuncType_sList_get)
     __swig_getmethods__["Points"] = _Data.TBaseFuncType_Points_get
-    if _newclass:Points = _swig_property(_Data.TBaseFuncType_Points_get, _Data.TBaseFuncType_Points_set)
-    __swig_setmethods__["PointNum"] = _Data.TBaseFuncType_PointNum_set
+    if _newclass:Points = _swig_property(_Data.TBaseFuncType_Points_get)
     __swig_getmethods__["PointNum"] = _Data.TBaseFuncType_PointNum_get
-    if _newclass:PointNum = _swig_property(_Data.TBaseFuncType_PointNum_get, _Data.TBaseFuncType_PointNum_set)
+    if _newclass:PointNum = _swig_property(_Data.TBaseFuncType_PointNum_get)
     __swig_setmethods__["Color"] = _Data.TBaseFuncType_Color_set
     __swig_getmethods__["Color"] = _Data.TBaseFuncType_Color_get
     if _newclass:Color = _swig_property(_Data.TBaseFuncType_Color_get, _Data.TBaseFuncType_Color_set)
