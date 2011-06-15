@@ -6,15 +6,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2009-01-25 19:59\n"
+"POT-Creation-Date: 2011-06-15 21:57\n"
 "PO-Revision-Date: 2010-08-30 23:44+0100\n"
-"Last-Translator: Ivan Johansen\n"
 "Last-Translator: Yashar PourMohammad <YasharPM@yahoo.com>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: dxgettext 1.2.1\n"
-"Language-Team: \n"
 
 #. Form1..Recent1..Hint
 #. Hint for recent file menu items
@@ -107,6 +106,27 @@ msgstr "برچسب را در محل دلخواه خود قرار دهید"
 msgid "Rotation"
 msgstr "چرخش"
 
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_0..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_0..Hint
+#, fuzzy
+msgid "Show the label with no rotation."
+msgstr "هاشور زنی ناحیه زیر تابع."
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_90..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_90..Hint
+msgid "Show the label rotated 90° counter clockwise."
+msgstr ""
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_180..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_180..Hint
+msgid "Show the label rotated 180°."
+msgstr ""
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_270..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_270..Hint
+msgid "Show the label rotated 270° counter clockwise."
+msgstr ""
+
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
 msgid "Specify the angle of rotation for the label."
@@ -164,8 +184,7 @@ msgstr "ویرایش"
 #. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Category
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Category
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Category
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Category
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Category
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Category
 #. ParFuncFrame..ComboBox1..Text
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1..Text
@@ -192,9 +211,9 @@ msgstr "متمرکز کردن"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Area")..Category
+#. Form1..ActionManager..AreaAction("Integrate")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
-#. Form1..ActionManager..TableAction("Table...")..Category
+#. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
 #. Form15("Calculate table")..Button2("Calc")..Caption
 msgid "Calc"
@@ -213,11 +232,12 @@ msgstr "اینترنت"
 #. Form1..ActionManager..ListAction("List of functions")..Category
 #. Form1..ActionManager..HomePageAction("Graph web site")..Category
 #. Form1..ActionManager..UpdateAction("Check for update")..Category
-#. Form1..ActionManager..AboutAction("About Graph...")..Category
+#. Form1..ActionManager..AboutAction("About Graph")..Category
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Category
 #. Form1..ActionManager..DonateAction("Donate")..Category
 #. Form1..ActionManager..TipAction("Tip of the day")..Category
 #. Form1..ActionManager..SupportAction("Support")..Category
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Category
 #. Form11("Insert relation")..Button3("Help")..Caption
 #. Form12("Insert tangent/normal")..Button3("Help")..Caption
 #. Form13("Insert trendline")..Button3("Help")..Caption
@@ -540,15 +560,14 @@ msgstr "طول مسیر"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "محاسبه طول مسیر بین دو نقطه نتخابی از منحنی."
 
-#. Form1..ActionManager..AreaAction("Area")..Caption
-#. AreaFrame..GridPanel1..Label3("Area")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Area"
-msgstr "مساحت"
+#. Form1..ActionManager..AreaAction("Integrate")..Caption
+#, fuzzy
+msgid "Integrate"
+msgstr "اینترنت"
 
-#. Form1..ActionManager..AreaAction("Area")..Hint
-msgid "Calculate the area under the path of the selected function."
-msgstr "محاسبه مساحت زیر مسیر انتخاب شده از تابع."
+#. Form1..ActionManager..AreaAction("Integrate")..Hint
+msgid "Calculate the definite integral over a given domain."
+msgstr ""
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -559,11 +578,12 @@ msgstr "ارزیابی"
 msgid "Evaluate or trace the selected function."
 msgstr "ارزیابی یا ردیابی تابع انتخاب شده."
 
-#. Form1..ActionManager..TableAction("Table...")..Caption
-msgid "Table..."
+#. Form1..ActionManager..TableAction("Table")..Caption
+#, fuzzy
+msgid "Table"
 msgstr "جدول..."
 
-#. Form1..ActionManager..TableAction("Table...")..Hint
+#. Form1..ActionManager..TableAction("Table")..Hint
 msgid "Show an evaluation table."
 msgstr "نمایش یک جدول ارزیابی."
 
@@ -588,7 +608,8 @@ msgid "Graph web site"
 msgstr "وب سایت گراف"
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
-msgid "Open the default browser and shows the home page of the program."
+#, fuzzy
+msgid "Open the default browser and show the Graph web site."
 msgstr "بازکردن مرورگر پیش فرض و نمایش صفحه خانگی برنامه."
 
 #. Form1..ActionManager..UpdateAction("Check for update")..Caption
@@ -599,11 +620,12 @@ msgstr "بررسی برای به روز رسانی"
 msgid "Contact the home page to see if a newer version is available."
 msgstr "تماس با صفحه خانگی برای آگاهی از وجود نسخه جدید تر."
 
-#. Form1..ActionManager..AboutAction("About Graph...")..Caption
-msgid "About Graph..."
-msgstr "در مورد نرم افزار گراف..."
+#. Form1..ActionManager..AboutAction("About Graph")..Caption
+#. Form2("About Graph")..Caption
+msgid "About Graph"
+msgstr "درمورد گراف"
 
-#. Form1..ActionManager..AboutAction("About Graph...")..Hint
+#. Form1..ActionManager..AboutAction("About Graph")..Hint
 msgid "Show copyright information."
 msgstr "نمایش اطلاعات کپی رایت."
 
@@ -654,7 +676,7 @@ msgstr "اهداء پول به پروژه"
 
 #. Form1..ActionManager..TipAction("Tip of the day")..Caption
 #. Form10("Tip of the day")..Caption
-#. Form10("Tip of the day")..Panel1..Label2("Tip of the day")..Caption
+#. Form10("Tip of the day")..Panel1..LinkLabel1("Tip of the day")..Caption
 msgid "Tip of the day"
 msgstr "نکته روز"
 
@@ -710,11 +732,12 @@ msgstr "درج رابطه..."
 msgid "Insert a new equation or inequality."
 msgstr "درج مساوی یا نا مساوی جدید."
 
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Caption
-msgid "Custom functions..."
-msgstr "توابع سفارشی"
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Caption
+#, fuzzy
+msgid "Custom functions/constants..."
+msgstr "توابع و ثابت های سفارشی"
 
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Hint
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Hint
 msgid "Create custom functions and constants for use in graphs."
 msgstr "ایجاد توابع سفارشی و مقادیر ثابت برای استفاده در گراف ها."
 
@@ -742,14 +765,13 @@ msgstr "دنباله نقاط..."
 msgid "Import point series from a data file."
 msgstr "وارد کردن دنباله نقاط از پرونده داده ها."
 
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Caption
-#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
-msgid "Insert object..."
-msgstr "درج شی ء..."
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Caption
+msgid "Scripting engine dokumentation"
+msgstr ""
 
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Hint
-msgid "Insert an OLE object such as a drawing or an equation."
-msgstr "درج شی ء OLE مانند یک طرح یا یک تساوی."
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Hint
+msgid "Show dokumentation for scripting engine and plugin system."
+msgstr ""
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -788,9 +810,19 @@ msgstr "حذف برچسب زیر ماوس."
 msgid "Show legend"
 msgstr "نمایش اختصارات"
 
+#. Form1..PopupMenu4..Legend_Show("Show legend")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Hint
+msgid "Select to show a legend in the coordinate system."
+msgstr "انتخاب نمایش اختصارات در دستگاه مختصات."
+
 #. Form1..PopupMenu4..Legend_Font("Font...")..Caption
 msgid "Font..."
 msgstr "نوع حروف..."
+
+#. Form1..PopupMenu4..Legend_Font("Font...")..Hint
+#, fuzzy
+msgid "Change the font of the legend."
+msgstr "انتخاب قلم برای عنوان."
 
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
@@ -1300,9 +1332,14 @@ msgstr "انتخاب عرض خطوط به پیکسل."
 msgid "Select which kind of line to draw between the markers."
 msgstr "نوع خط رسم شده بین شاخصه ها را انتخاب کنید."
 
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Text
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-msgid "Cubic splines"
+#, fuzzy
+msgid "1D cubic spline"
+msgstr "اسپیلاین های مکعبی"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+#, fuzzy
+msgid "2D cubic spline"
 msgstr "اسپیلاین های مکعبی"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
@@ -1337,14 +1374,13 @@ msgstr "انتخاب قلم برای مختصات."
 msgid "Select where the coordinates should be shown."
 msgstr "انتخاب محل نمایش مختصات."
 
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1..Text
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-msgid "Below"
-msgstr "زیر"
-
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 msgid "Above"
 msgstr "بالا"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+msgid "Below"
+msgstr "زیر"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 #. Shortcut key
@@ -1355,6 +1391,44 @@ msgstr "چپ"
 #. Shortcut key
 msgid "Right"
 msgstr "راست"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#, fuzzy
+msgid "Above Left"
+msgstr "حرکت به چپ"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#, fuzzy
+msgid "Above Right"
+msgstr "حرکت به راست"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#, fuzzy
+msgid "Below Left"
+msgstr "پایین چپ"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#, fuzzy
+msgid "Below Right"
+msgstr "پایین راست"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Hint
+msgid "Choose between cartesian (x,y) coordinates and polar (θ,r) coordinates."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")..Caption
+#, fuzzy
+msgid "Coordinate type"
+msgstr "مختصات تعریف نشده است"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
+msgid "Cartesian"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
+msgid "Polar"
+msgstr "قطبی"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..Caption
 msgid "Error bars"
@@ -1649,25 +1723,19 @@ msgstr "کاهش به تقاطع"
 msgid "Select the style used for the shading."
 msgstr "انتخاب نوع هاشور زنی."
 
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
-msgid "Mark the end of the shading with a line."
-msgstr "علامت زدن پایان هاشور زنی با یک خط."
-
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
-msgid "Mark end of range"
-msgstr "علامت زدن پایان بازه"
-
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
 msgid "Select color used for shading."
 msgstr "انتخاب رنگ مورد استفاده در هاشور زنی."
 
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
-msgid "Mark the start of the shading with a line."
-msgstr "علامت زدن شروع هاشور زنی با یک خط."
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Hint
+#, fuzzy
+msgid "Mark the border around the shading."
+msgstr "علامت زدن پایان هاشور زنی با یک خط."
 
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
-msgid "Mark start of range"
-msgstr "علامت زدن شروع بازه"
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Caption
+#, fuzzy
+msgid "Mark border"
+msgstr "شاخصه"
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
@@ -1880,26 +1948,10 @@ msgstr "تعداد فریم ها بر ثانیه هنگام اجرا شدن ان
 msgid "Working"
 msgstr "طرز کار"
 
-#. Form2("About Graph")..Caption
-msgid "About Graph"
-msgstr "درمورد گراف"
-
-#. Form2("About Graph")..Panel1..Label6("<Language> translation by <Translator>")..Caption
-#. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
-msgid "<Language> translation by <Translator>"
-msgstr ""
-"Farsi translation by\n"
-"Shayan Abyari (<a href=\"mailto:ShayanAbyari@gmail.com\">ShayanAbyari@gmail.com</a>) &\n"
-"Yashar PourMohammad (<a href=\"mailto:Yasharpm@yahoo.com\">Yasharpm@yahoo.com</a>)"
-
 #. Form2("About Graph")..Panel1..Version("Version %s")..Caption
 #. %s is replaced with version number
 msgid "Version %s"
 msgstr "Version %s"
-
-#. Form2("About Graph")..Panel1..Label1("Email:")..Caption
-msgid "Email:"
-msgstr "Email:"
 
 #. Form2("About Graph")..Panel1..Label3("Build %s")..Caption
 #. %s is replaced with build number
@@ -1907,12 +1959,27 @@ msgid "Build %s"
 msgstr "Build %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
-msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
+#, fuzzy
+msgid "This is free software, and you are welcome to redistribute it under the terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please send bug reports and suggestions to the programmer."
 msgstr "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
 
-#. Form2("About Graph")..Panel1..Label4("The newest version as well as the source code are available ")..Caption
-msgid "The newest version as well as the source code are available at:"
+#. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
+#, fuzzy
+msgid "The newest version as well as the source code are available at: %s"
 msgstr "جدید ترین نسخه و همینطور کد اصلی در آدرس زیر موجود می باشند:"
+
+#. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
+#, fuzzy
+msgid "Email: %s"
+msgstr "Email:"
+
+#. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
+#. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
+msgid "<Language> translation by <Translator>"
+msgstr ""
+"Farsi translation by\n"
+"Shayan Abyari (<a href=\"mailto:ShayanAbyari@gmail.com\">ShayanAbyari@gmail.com</a>) &\n"
+"Yashar PourMohammad (<a href=\"mailto:Yasharpm@yahoo.com\">Yasharpm@yahoo.com</a>)"
 
 #. Form20("Animation")..Caption
 msgid "Animation"
@@ -2085,6 +2152,15 @@ msgstr "تخمین واحد تیک به طور خودکار."
 msgid "Auto tick"
 msgstr "تیک خودکار"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
+msgid "Show tick marks on the x-axis."
+msgstr "نمایش نشانه های تیک روی محور x."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
+msgid "Show ticks"
+msgstr "نمایش تیک ها"
+
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Hint
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Hint
 msgid "Set the grid unit to the same as the tick unit."
@@ -2095,15 +2171,6 @@ msgstr "تنظیم واحد شبکه همانند واحد تیک."
 msgid "Auto grid"
 msgstr "شبکه بندی خودکار"
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
-msgid "Show tick marks on the x-axis."
-msgstr "نمایش نشانه های تیک روی محور x."
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
-msgid "Show ticks"
-msgstr "نمایش تیک ها"
-
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Hint
 msgid "Show vertical grid lines."
 msgstr "نمایش خطوط عمودی شبکه."
@@ -2112,14 +2179,6 @@ msgstr "نمایش خطوط عمودی شبکه."
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Caption
 msgid "Show grid"
 msgstr "نمایش شبکه"
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
-msgid "The x-axis cross at y="
-msgstr "محور x عبور می کند از y="
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
-msgid "The x-axis will intersect with the y-axis at this value."
-msgstr "محور x، محور y را در این مقدار قطع می کند."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
 msgid "Show the label at the right side of the graphing area, above the x-axis."
@@ -2134,6 +2193,14 @@ msgstr "برچسب:"
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..Edit11..Hint
 msgid "Edit the label for the axis here."
 msgstr "برچسب محور را اینجا ویرایش کنید."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
+msgid "The x-axis cross at y="
+msgstr "محور x عبور می کند از y="
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr "محور x، محور y را در این مقدار قطع می کند."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox1("Logarithmic scale")..Hint
 msgid "Use logarithmic scale on the x-axis."
@@ -2153,14 +2220,15 @@ msgstr "نمایش واحد ها روی محور x."
 msgid "Show numbers"
 msgstr "نمایش اعداد"
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Hint
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Hint
 msgid "Show units on the selected axis as a fraction multiplied by pi."
 msgstr "نمایش واحد ها روی محور انتخاب شده بصورت کسر ضرب شده در عدد پی."
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Caption
-msgid "Show as a multiple of pi"
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
+#, fuzzy
+msgid "Show as a multiple of π"
 msgstr "نمایش به صورت مضربی از پی"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
@@ -2185,6 +2253,14 @@ msgstr ""
 msgid "Units between the grid lines perpendicular to the y-axis."
 msgstr "واحد های بین تیک ها روی محور y"
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
+msgid "Show tick marks on the y-axis."
+msgstr "نمایش نشانه های تیک روی محور y."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
+msgid "Show horizontal grid lines."
+msgstr "نمایش خطوط افقی شبکه."
+
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")....Hint
 msgid "Show the label at the top of the graphing area, to the right of the y-axis."
 msgstr "نمایش برچسب در بالای ناحیه تصویری سمت راست محور y."
@@ -2196,14 +2272,6 @@ msgstr "محور x عبور می کند از y="
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel4..Edit12..Hint
 msgid "The y-axis will intersect with the x-axis at this value."
 msgstr "محور y، محور x را در این مقدار قطع می کند."
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
-msgid "Show tick marks on the y-axis."
-msgstr "نمایش نشانه های تیک روی محور y."
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
-msgid "Show horizontal grid lines."
-msgstr "نمایش خطوط افقی شبکه."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox8("Logarithmic scale")..Hint
 msgid "Use logarithmic scale for the y-axis."
@@ -2220,10 +2288,6 @@ msgstr "تنظیمات"
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Label16("Title:")..Caption
 msgid "Title:"
 msgstr "عنوان:"
-
-#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Hint
-msgid "Select to show a legend in the coordinate system."
-msgstr "انتخاب نمایش اختصارات در دستگاه مختصات."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Hint
 msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
@@ -2370,10 +2434,6 @@ msgstr "حقیقی"
 msgid "Rectangular"
 msgstr "قائم"
 
-#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
-msgid "Polar"
-msgstr "قطبی"
-
 #. Form4("Options")..GridPanelEx1..Label2("Recent files:")..Caption
 msgid "Recent files:"
 msgstr "پرونده های اخیر:"
@@ -2437,6 +2497,18 @@ msgstr "در صورت انتخاب هر بار که برنامه اجرا می �
 #. Form4("Options")..GridPanelEx1..CheckBox4("Check for new version of Graph at startup")..Caption
 msgid "Check for new version of Graph at startup"
 msgstr "بررسی وجود نسخه جدید به هنگام اجرای اولیه"
+
+#. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")....Hint
+msgid "Use a custom decimal separator instead of the default from the Windows Regional settings."
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")..Caption
+msgid "Custom decimal separator:"
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..Edit4..Hint
+msgid "Decimal separator used when exporting to other programs."
+msgstr ""
 
 #. Form5("Insert function")..Caption
 msgid "Insert function"
@@ -2600,6 +2672,10 @@ msgstr "درج ویژه..."
 msgid "Select which clipboard representation you want to paste."
 msgstr "انتخاب کلیپ بورد برای درج."
 
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
+msgid "Insert object..."
+msgstr "درج شی ء..."
+
 #. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
 msgid "Create a new OLE object."
 msgstr "ایجاد شیء OLE جدید."
@@ -2639,17 +2715,19 @@ msgstr "انتخاب تابع تابع یا مماس برای ارزیابی."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "انتخاب محل مکان نما به هنگام کلیک روی تصویر."
 
-#. AreaFrame..GridPanel1..Edit1....Hint
+#. AreaFrame..GridPanel1..Label3("Integral")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
+#, fuzzy
+msgid "Integral"
+msgstr "اینترنت"
+
+#. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "وارد کردن مختصات شروع یا نمایش بازه ای روی نمودار با ماوس."
 
-#. AreaFrame..GridPanel1..Edit2....Hint
+#. AreaFrame..GridPanel1..Panel2..Edit2....Hint
 msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
 msgstr "وارد کردن مختصات پایان یا نمایش بازه ای روی نمودار با ماوس."
-
-#. AreaFrame..GridPanel1..Edit3....Hint
-msgid "Area or length of path calculated for the given range using Simpson's formula."
-msgstr "مساحت یا طول مسیر محاسبه شده در بازه مورد استفاده در فرمول سیمپسون."
 
 #. ParFuncFrame..Label7("Snap to:")..Caption
 #. PolFuncFrame..Label7("Snap to:")..Caption
@@ -2694,6 +2772,7 @@ msgstr "حداکثر مقدار x"
 
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1....Items.Strings
 msgid "Extreme y-value"
 msgstr "حداکثر مقدار y"
 
@@ -2725,10 +2804,6 @@ msgstr "مقدار زاویه قطبی را برای هر تابع ارزیاب�
 msgid "Enter a value for which you want to evaluate the function, or click on the graph in the graphing area."
 msgstr "مقدار را برای هر تابع ارزیابی شده وارد کنید یا بر روی نمودار در ناحیه تصویری کلیک کنید."
 
-#. StdFuncFrame..ComboBox1....Items.Strings
-msgid "Extremum"
-msgstr "اکسترمم"
-
 #. StdFuncFrame..Edit2..Hint
 msgid "This is the function evaluated for the entered x-value."
 msgstr "این تابع ارزیابی شده برای مقدار ورودی x است."
@@ -2750,14 +2825,25 @@ msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "یک مختصات x یا کلیک کردن در ناحیه تصویری."
 
 #. Used in titles of error message boxes
+#. Indicates an error code, e.g. "Error 5"
 #. Error message when an invalid value is entered.
 #. Error message in Axes dialog when zoom in/out too much
 msgid "Error"
 msgstr "خطا"
 
+#. Indicates an error code, e.g. "Error 5"
+#, fuzzy
+msgid "Error %s"
+msgstr "نوارهای خطا"
+
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "طول"
+
+#. Shown in rotation dialog
+#, fuzzy
+msgid "Degrees"
+msgstr "درجه"
 
 #. Name for labels shown in the function list if there is no text in the label.
 msgid "Label"
@@ -2886,6 +2972,9 @@ msgstr "فراخوانی های بازگشتی بیش از حد می باشند.
 msgid "Overflow: A function returned a value too large to handle."
 msgstr "Overflow: محاسبه مقدار برگشتی تابع به علت بزرگی از عهده برنامه خارج است."
 
+msgid "A plugin function failed: %s"
+msgstr ""
+
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "عملگر غیر منتظره. عملگر '%s' در اینجا قابل استفاده نیست."
 
@@ -2949,7 +3038,8 @@ msgstr "مشتق گیری از تابع بازگشتی امکان پذیر نم�
 msgid "Internal error."
 msgstr "خطای داخلی."
 
-msgid "Function cannot be differentiated."
+#, fuzzy
+msgid "Function \"%s\" cannot be differentiated."
 msgstr "تابع مشتق پذیر نمی باشد."
 
 msgid "Not further specified error occurred under calculation."
@@ -2957,6 +3047,13 @@ msgstr "هیچ خطای از پیش تعریف شده ای در محاسبات �
 
 msgid "No solution found. Try another guess or another model."
 msgstr "هیچ راه حلی پیدا نشد. حدس یا مدل دیگری را انتخاب کنید"
+
+msgid "No result found."
+msgstr ""
+
+#, fuzzy
+msgid "An accurate result cannot be found."
+msgstr "نتیجه یک محاسبه سر ریز شده است."
 
 msgid "Internal error. Please notify the programmer with as much information as possible."
 msgstr "خطای داخلی. لطفا برنامه نویس را با حداکثر اطلاعات ممکن آگاه کنید."
@@ -3132,6 +3229,9 @@ msgstr "خطا در خواندن پرونده"
 msgid "Printer error"
 msgstr "خطای چاپگر"
 
+msgid "Invalid use of infinity. Infinity cannot be used here."
+msgstr ""
+
 msgid "Confirm delete"
 msgstr "تایید حذف"
 
@@ -3143,8 +3243,8 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "پرونده های گراف [*.grf]|*.grf|همه پرونده ها [*.*]|*.*"
 
 #. Import from file dialog
-msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-msgstr "متنی [*.txt; *.csv]|*.txt;*.csv|همه پرونده ها [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+msgstr ""
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "آیا از حذف مدل %s مطمئن هستید؟"
@@ -3214,8 +3314,9 @@ msgstr "بررسی برای نسخه جدید تر..."
 msgid "Abort printing?"
 msgstr "لغو چاپ؟"
 
-msgid "Calculate area"
-msgstr "محاسبه مساحت"
+#, fuzzy
+msgid "Calculate definite integral"
+msgstr "محاسبه جدول"
 
 msgid "Calculate length of path"
 msgstr "محاسبه طول مسیر"
@@ -3269,13 +3370,11 @@ msgstr "شما باید تابعی را انتخاب کنید."
 msgid "New version of Graph available"
 msgstr "نسخه جدیدی از گراف موجود است"
 
+#, fuzzy
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
-"with these new features since the previous version:\n"
 "\n"
-"%s\n"
-"\n"
-"Would you like to visit the web site?"
+"Would you like to visit the download page?"
 msgstr ""
 "گراف %s برای دانلود در آدرس www.padowan.dk موجود است.\n"
 "با ویژگی های جدید نسبت به نسخه قبلی:\n"
@@ -3287,7 +3386,8 @@ msgstr ""
 msgid "No new version"
 msgstr "نسخه جدیدی موجود نیست"
 
-msgid "You are already using the most recent version of the program."
+#, fuzzy
+msgid "You are already using the most recent version of Graph."
 msgstr "شما هم اکنون آخرین نسخه برنامه را استفاده می کنید."
 
 msgid ""
@@ -3300,6 +3400,13 @@ msgstr ""
 #. Communication error when checking for newer version
 msgid "Socket error %s"
 msgstr "خطا در socket %s"
+
+msgid "Definite integral, or signed area between function and x-axis, for the given domain range."
+msgstr ""
+
+#, fuzzy
+msgid "Length of path along the curve calculated for the given range."
+msgstr "محاسبه شیب تابع با زاویه داده شده."
 
 msgid ""
 "The file cannot be opened by this version of the program.\n"
@@ -3362,9 +3469,9 @@ msgstr "زیر برنامه جواب نمی دهد"
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "نکته روز می تواند اطلاعات زیادی را در مورد برنامه به شما بدهد که اکثر کاربران از آن اطلاع ندارند."
 
-#. Tip of the Day
-msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
-msgstr "شما می توانید پیشنهادات خود را برای نسخه های آینده، گزارش ایراد ها و پیغام دادن به graph@padowan.dk بفرستید."
+#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
+msgstr ""
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
@@ -3676,3 +3783,42 @@ msgstr "انتخاب تعداد رونوشت ها برای چاپ."
 msgid "Enter percent of original size."
 msgstr "وارد کردن درصد اندازه اصلی."
 
+#, fuzzy
+#~ msgid "Arial"
+#~ msgstr "مساحت"
+
+#~ msgid "Calculate the area under the path of the selected function."
+#~ msgstr "محاسبه مساحت زیر مسیر انتخاب شده از تابع."
+
+#~ msgid "About Graph..."
+#~ msgstr "در مورد نرم افزار گراف..."
+
+#~ msgid "Custom functions..."
+#~ msgstr "توابع سفارشی"
+
+#~ msgid "Insert an OLE object such as a drawing or an equation."
+#~ msgstr "درج شی ء OLE مانند یک طرح یا یک تساوی."
+
+#~ msgid "Mark end of range"
+#~ msgstr "علامت زدن پایان بازه"
+
+#~ msgid "Mark the start of the shading with a line."
+#~ msgstr "علامت زدن شروع هاشور زنی با یک خط."
+
+#~ msgid "Mark start of range"
+#~ msgstr "علامت زدن شروع بازه"
+
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "مساحت یا طول مسیر محاسبه شده در بازه مورد استفاده در فرمول سیمپسون."
+
+#~ msgid "Extremum"
+#~ msgstr "اکسترمم"
+
+#~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+#~ msgstr "متنی [*.txt; *.csv]|*.txt;*.csv|همه پرونده ها [*.*]|*.*"
+
+#~ msgid "Calculate area"
+#~ msgstr "محاسبه مساحت"
+
+#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgstr "شما می توانید پیشنهادات خود را برای نسخه های آینده، گزارش ایراد ها و پیغام دادن به graph@padowan.dk بفرستید."
