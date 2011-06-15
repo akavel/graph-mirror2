@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE book SYSTEM "dtd/dblite.dtd">
+<!DOCTYPE book SYSTEM "dtd/dblite.dtd" [
+<!ENTITY theta  "<markup role='symbolfont'>&#x003B8;</markup>"> <!-- GREEK SMALL LETTER THETA -->
+]>
 <book id="Plugin" lang="en" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Script Engine Documentation for Graph</title>
 	<subtitle>
