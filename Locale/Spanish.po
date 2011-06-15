@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2010-05-29 11:21\n"
-"PO-Revision-Date: 2011-02-02 17:54+0100\n"
-"Last-Translator: Francisco Oliver <graph.esp@gmail.com>\n"
+"POT-Creation-Date: 2011-06-15 21:57\n"
+"PO-Revision-Date: 2011-02-13 11:00+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -182,7 +182,6 @@ msgstr "Editar"
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Category
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Category
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Category
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Category
 #. ParFuncFrame..ComboBox1..Text
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1..Text
@@ -209,7 +208,7 @@ msgstr "Zoom"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Area")..Category
+#. Form1..ActionManager..AreaAction("Integrate")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -235,6 +234,7 @@ msgstr "Internet"
 #. Form1..ActionManager..DonateAction("Donate")..Category
 #. Form1..ActionManager..TipAction("Tip of the day")..Category
 #. Form1..ActionManager..SupportAction("Support")..Category
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Category
 #. Form11("Insert relation")..Button3("Help")..Caption
 #. Form12("Insert tangent/normal")..Button3("Help")..Caption
 #. Form13("Insert trendline")..Button3("Help")..Caption
@@ -557,15 +557,14 @@ msgstr "Longitud de arco"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Calcula la longitud del arco comprendido entre dos puntos de una gráfica."
 
-#. Form1..ActionManager..AreaAction("Area")..Caption
-#. AreaFrame..GridPanel1..Label3("Area")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Area"
-msgstr "Área"
+#. Form1..ActionManager..AreaAction("Integrate")..Caption
+#, fuzzy
+msgid "Integrate"
+msgstr "Internet"
 
-#. Form1..ActionManager..AreaAction("Area")..Hint
-msgid "Calculate the area under the path of the selected function."
-msgstr "Calcula el área respecto a la función seleccionada en el intervalo especificado."
+#. Form1..ActionManager..AreaAction("Integrate")..Hint
+msgid "Calculate the definite integral over a given domain."
+msgstr ""
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -760,14 +759,13 @@ msgstr "Serie de puntos..."
 msgid "Import point series from a data file."
 msgstr "Importa una serie de puntos desde un archivo al sistema de coordenadas activo."
 
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Caption
-#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
-msgid "Insert object..."
-msgstr "Insertar objeto..."
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Caption
+msgid "Scripting engine dokumentation"
+msgstr ""
 
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Hint
-msgid "Insert an OLE object such as a drawing or an equation."
-msgstr "Inserta un objeto OLE, por ejemplo, una imagen, un gráfico o un elemento del Editor de Ecuaciones de Microsoft."
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Hint
+msgid "Show dokumentation for scripting engine and plugin system."
+msgstr ""
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -1327,9 +1325,14 @@ msgstr "Elige la anchura del trazo, en píxeles."
 msgid "Select which kind of line to draw between the markers."
 msgstr "Elige la clase de línea que unirá los marcadores entre sí."
 
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Text
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-msgid "Cubic splines"
+#, fuzzy
+msgid "1D cubic spline"
+msgstr "Splines cúbicos"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+#, fuzzy
+msgid "2D cubic spline"
 msgstr "Splines cúbicos"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
@@ -1950,7 +1953,8 @@ msgid "Build %s"
 msgstr "Compilación %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
-msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
+#, fuzzy
+msgid "This is free software, and you are welcome to redistribute it under the terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please send bug reports and suggestions to the programmer."
 msgstr "Este programa es gratuito, y eres bienvenido para redistribuirlo bajo los términos de la Licencia Pública General de GNU. Por favor, envía informes de errores y sugerencias al programador."
 
 #. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
@@ -2140,6 +2144,15 @@ msgstr "Fija automáticamente el valor del módulo entre dos marcas de graduaci�
 msgid "Auto tick"
 msgstr "Automarcar"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
+msgid "Show tick marks on the x-axis."
+msgstr "Muestra las divisiones o marcas de graduación del eje X."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
+msgid "Show ticks"
+msgstr "Mostrar marcas"
+
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Hint
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Hint
 msgid "Set the grid unit to the same as the tick unit."
@@ -2150,15 +2163,6 @@ msgstr "Establece que el Módulo de cuadrícula coincida con el Módulo entre ma
 msgid "Auto grid"
 msgstr "Autoajustar"
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
-msgid "Show tick marks on the x-axis."
-msgstr "Muestra las divisiones o marcas de graduación del eje X."
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
-msgid "Show ticks"
-msgstr "Mostrar marcas"
-
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Hint
 msgid "Show vertical grid lines."
 msgstr "Muestra las líneas de división perpendiculares al eje X."
@@ -2167,14 +2171,6 @@ msgstr "Muestra las líneas de división perpendiculares al eje X."
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Caption
 msgid "Show grid"
 msgstr "Mostrar cuadrícula"
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
-msgid "The x-axis cross at y="
-msgstr "El eje X cruza en y="
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
-msgid "The x-axis will intersect with the y-axis at this value."
-msgstr "El eje X intersecta al eje Y en la ordenada indicada."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
 msgid "Show the label at the right side of the graphing area, above the x-axis."
@@ -2189,6 +2185,14 @@ msgstr "Título del eje:"
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..Edit11..Hint
 msgid "Edit the label for the axis here."
 msgstr "Escribe el nombre que deseas asignar a este eje."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
+msgid "The x-axis cross at y="
+msgstr "El eje X cruza en y="
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr "El eje X intersecta al eje Y en la ordenada indicada."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox1("Logarithmic scale")..Hint
 msgid "Use logarithmic scale on the x-axis."
@@ -2208,14 +2212,15 @@ msgstr "Muestra las unidades del eje X."
 msgid "Show numbers"
 msgstr "Mostrar números"
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Hint
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Hint
 msgid "Show units on the selected axis as a fraction multiplied by pi."
 msgstr "Muestra las unidades del eje seleccionado como fracciones múltiplos de pi."
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Caption
-msgid "Show as a multiple of pi"
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
+#, fuzzy
+msgid "Show as a multiple of π"
 msgstr "Mostrar números como múltiplos de pi"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
@@ -2240,6 +2245,14 @@ msgstr "Intervalo entre dos marcas de graduación sobre el eje Y."
 msgid "Units between the grid lines perpendicular to the y-axis."
 msgstr "Intervalo entre dos líneas de división perpendiculares al eje Y."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
+msgid "Show tick marks on the y-axis."
+msgstr "Muestra las divisiones o marcas de graduación del eje Y."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
+msgid "Show horizontal grid lines."
+msgstr "Muestra las líneas de división perpendiculares al eje Y."
+
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")....Hint
 msgid "Show the label at the top of the graphing area, to the right of the y-axis."
 msgstr "Muestra el título del eje de ordenadas."
@@ -2251,14 +2264,6 @@ msgstr "El eje Y cruza en x="
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel4..Edit12..Hint
 msgid "The y-axis will intersect with the x-axis at this value."
 msgstr "El eje Y intersecta al eje X en la abscisa indicada."
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
-msgid "Show tick marks on the y-axis."
-msgstr "Muestra las divisiones o marcas de graduación del eje Y."
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
-msgid "Show horizontal grid lines."
-msgstr "Muestra las líneas de división perpendiculares al eje Y."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox8("Logarithmic scale")..Hint
 msgid "Use logarithmic scale for the y-axis."
@@ -2659,6 +2664,10 @@ msgstr "Pegado especial..."
 msgid "Select which clipboard representation you want to paste."
 msgstr "Pega el contenido del Portapapeles con el formato seleccionado."
 
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
+msgid "Insert object..."
+msgstr "Insertar objeto..."
+
 #. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
 msgid "Create a new OLE object."
 msgstr "Inserta un objeto desde una lista de archivos disponibles."
@@ -2698,9 +2707,11 @@ msgstr "Selecciona una función para evaluar."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Selecciona qué deseas señalar cuando hagas clic sobre el área gráfica."
 
-#. AreaFrame..GridPanel1..Edit3....Hint
-msgid "Area or length of path calculated for the given range using Simpson's formula."
-msgstr "Cálculo del área, o longitud de arco en el intervalo dado usando la fórmula de Simpson."
+#. AreaFrame..GridPanel1..Label3("Integral")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
+#, fuzzy
+msgid "Integral"
+msgstr "Internet"
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2819,6 +2830,11 @@ msgstr "Error %s"
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Longitud"
+
+#. Shown in rotation dialog
+#, fuzzy
+msgid "Degrees"
+msgstr "Grados"
 
 #. Name for labels shown in the function list if there is no text in the label.
 msgid "Label"
@@ -3013,7 +3029,8 @@ msgstr "La función recursiva no puede ser derivada."
 msgid "Internal error."
 msgstr "Error interno."
 
-msgid "Function cannot be differentiated."
+#, fuzzy
+msgid "Function \"%s\" cannot be differentiated."
 msgstr "La función no puede ser derivada."
 
 msgid "Not further specified error occurred under calculation."
@@ -3202,6 +3219,9 @@ msgstr "Error leyendo el archivo"
 msgid "Printer error"
 msgstr "Error de impresora"
 
+msgid "Invalid use of infinity. Infinity cannot be used here."
+msgstr ""
+
 msgid "Confirm delete"
 msgstr "Confirmar eliminación"
 
@@ -3213,8 +3233,8 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Archivos de Graph [*.grf]|*.grf|Todos los archivos [*.*]|*.*"
 
 #. Import from file dialog
-msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-msgstr "Texto [*.txt; *.csv]|*.txt;*.csv|Todos los archivos [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+msgstr ""
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "¿Estás seguro de que deseas eliminar el modelo %s?"
@@ -3284,8 +3304,9 @@ msgstr "Comprobando si hay una nueva versión..."
 msgid "Abort printing?"
 msgstr "¿Cancelar impresión?"
 
-msgid "Calculate area"
-msgstr "Calcular área"
+#, fuzzy
+msgid "Calculate definite integral"
+msgstr "Calcular tabla de valores"
 
 msgid "Calculate length of path"
 msgstr "Calcular longitud de arco"
@@ -3339,13 +3360,11 @@ msgstr "Debes seleccionar una función."
 msgid "New version of Graph available"
 msgstr "Nueva versión de Graph"
 
+#, fuzzy
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
-"with these new features since the previous version:\n"
 "\n"
-"%s\n"
-"\n"
-"Would you like to visit the web site?"
+"Would you like to visit the download page?"
 msgstr ""
 "Graph %s ya puede ser descargado desde www.padowan.dk\n"
 "con nuevas funcionalidades y mejoras respecto a la versión anterior:\n"
@@ -3357,7 +3376,8 @@ msgstr ""
 msgid "No new version"
 msgstr "No hay ninguna nueva versión"
 
-msgid "You are already using the most recent version of the program."
+#, fuzzy
+msgid "You are already using the most recent version of Graph."
 msgstr "Ya estás utilizando la versión más reciente de Graph."
 
 msgid ""
@@ -3370,6 +3390,13 @@ msgstr ""
 #. Communication error when checking for newer version
 msgid "Socket error %s"
 msgstr "Error %s"
+
+msgid "Definite integral, or signed area between function and x-axis, for the given domain range."
+msgstr ""
+
+#, fuzzy
+msgid "Length of path along the curve calculated for the given range."
+msgstr "Pendiente de la función, evaluada en el ángulo t indicado. "
 
 msgid ""
 "The file cannot be opened by this version of the program.\n"
@@ -3749,70 +3776,123 @@ msgstr "Indica el número de copias que deseas imprimir."
 msgid "Enter percent of original size."
 msgstr "Indica un porcentaje del tamaño original del área gráfica."
 
+#, fuzzy
+#~ msgid "Arial"
+#~ msgstr "Área"
+
+#~ msgid "Show as a multiple of pi"
+#~ msgstr "Mostrar números como múltiplos de pi"
+
+#~ msgid "Calculate area"
+#~ msgstr "Calcular área"
+
+#~ msgid "Calculate the area under the path of the selected function."
+#~ msgstr "Calcula el área respecto a la función seleccionada en el intervalo especificado."
+
+#~ msgid "Insert an OLE object such as a drawing or an equation."
+#~ msgstr "Inserta un objeto OLE, por ejemplo, una imagen, un gráfico o un elemento del Editor de Ecuaciones de Microsoft."
+
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "Cálculo del área, o longitud de arco en el intervalo dado usando la fórmula de Simpson."
+
+#~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+#~ msgstr "Texto [*.txt; *.csv]|*.txt;*.csv|Todos los archivos [*.*]|*.*"
+
 #~ msgid "About Graph..."
 #~ msgstr "Acerca de Graph"
+
 #~ msgid "Custom functions..."
 #~ msgstr "Personalizar funciones/constantes..."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Marcar el final del relleno"
+
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Delimita el inicio del intervalo del relleno con una línea."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Marcar el inicio del relleno"
+
 #~ msgid "You can send suggestions for future versions, bug reports and comments to <a href=\"mailto:graph@padowan.dk\">graph@padowan.dk</a>"
 #~ msgstr "Puedes enviar comentarios, sugerencias para futuras versiones e informes de errores a la siguiente dirección electrónica: <a href=\"mailto:graph@padowan.dk\">graph@padowan.dk</a>"
+
 #~ msgid "Extremum"
 #~ msgstr "Mínimo / Máximo"
+
 #~ msgid "Zoom in."
 #~ msgstr "Acerca la presentación del sistema de coordenadas."
+
 #~ msgid "Zoom out."
 #~ msgstr "Aleja la presentación del sistema de coordenadas."
+
 #~ msgid "Ctrl+Shift+Up"
 #~ msgstr "Ctrl+Mayús+Arriba"
+
 #~ msgid "Ctrl+Shift+Down"
 #~ msgstr "Ctrl+Mayús+Abajo"
+
 #~ msgid "Ctrl+Shift+Left"
 #~ msgstr "Ctrl+Mayús+Izquierda"
+
 #~ msgid "Ctrl+Shift+Right"
 #~ msgstr "Ctrl+Mayús+Derecha"
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Sólo acercamiento al eje X."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Sólo alejamiento del eje X."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Sólo acercamiento al eje Y."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Sólo alejamiento del eje Y."
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "El servidor respondió con este mensaje: '%s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Error de respuesta del protocolo %s"
+
 #~ msgid "Enter the image position on the page."
 #~ msgstr "Especifica la distancia entre los márgenes de la página y los márgenes del área de impresión, en milímetros."
+
 #~ msgid "Enter the independent variable for which you want to evaluate the function, or click on the graph in the graphing area."
 #~ msgstr "Introduce un valor para la variable independiente, o haz clic sobre un punto de la gráfica."
+
 #~ msgid "Saves the coordinate system as a new name."
 #~ msgstr "Guarda el sistema de coordenadas activo con un nombre nuevo, o una ubicación diferente."
+
 #~ msgid "Saves a copy of the current coordinate system."
 #~ msgstr "Guarda una copia del sistema de coordenadas activo."
+
 #~ msgid "Show the f''(x) column in the table."
 #~ msgstr "Muestra la columna de f''(x) en la tabla."
+
 #~ msgid "Open the file %s."
 #~ msgstr "Abre el archivo %s"
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Centra el área de impresión en la página."
+
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Valor de la segunda derivada de la función, evaluada en la coordenada x indicada."
+
 #~ msgid "Write coordinate system and functions to a file."
 #~ msgstr "Guarda el actual sistema de coordenadas en un archivo."
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Devuelve a los ejes su configuración por defecto."
+
 #~ msgid "Go to home page"
 #~ msgstr "Ir a la página principal de Graph"
+
 #~ msgid "All points"
 #~ msgstr "Ajustar todos los puntos"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Redimensiona el área gráfica para que todos los puntos introducidos sean visibles."
+
 #~ msgid "Image information"
 #~ msgstr "Opciones de imagen"
-

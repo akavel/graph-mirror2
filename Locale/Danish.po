@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2009-08-25 21:00\n"
+"POT-Creation-Date: 2011-06-15 21:57\n"
 "PO-Revision-Date: 2009-10-02 17:04+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Ivan Johansen\n"
@@ -177,8 +177,7 @@ msgstr "Rediger"
 #. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Category
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Category
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Category
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Category
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Category
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Category
 #. ParFuncFrame..ComboBox1..Text
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1..Text
@@ -205,9 +204,9 @@ msgstr "Zoom"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Area")..Category
+#. Form1..ActionManager..AreaAction("Integrate")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
-#. Form1..ActionManager..TableAction("Table...")..Category
+#. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
 #. Form15("Calculate table")..Button2("Calc")..Caption
 msgid "Calc"
@@ -226,11 +225,12 @@ msgstr "Internet"
 #. Form1..ActionManager..ListAction("List of functions")..Category
 #. Form1..ActionManager..HomePageAction("Graph web site")..Category
 #. Form1..ActionManager..UpdateAction("Check for update")..Category
-#. Form1..ActionManager..AboutAction("About Graph...")..Category
+#. Form1..ActionManager..AboutAction("About Graph")..Category
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Category
 #. Form1..ActionManager..DonateAction("Donate")..Category
 #. Form1..ActionManager..TipAction("Tip of the day")..Category
 #. Form1..ActionManager..SupportAction("Support")..Category
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Category
 #. Form11("Insert relation")..Button3("Help")..Caption
 #. Form12("Insert tangent/normal")..Button3("Help")..Caption
 #. Form13("Insert trendline")..Button3("Help")..Caption
@@ -553,15 +553,14 @@ msgstr "Buelængde..."
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Beregn buelængden mellem de to angivne punkter på kurven."
 
-#. Form1..ActionManager..AreaAction("Area")..Caption
-#. AreaFrame..GridPanel1..Label3("Area")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Area"
-msgstr "Areal"
+#. Form1..ActionManager..AreaAction("Integrate")..Caption
+#, fuzzy
+msgid "Integrate"
+msgstr "Internet"
 
-#. Form1..ActionManager..AreaAction("Area")..Hint
-msgid "Calculate the area under the path of the selected function."
-msgstr "Beregn arealet under grafen for den markerede funktion."
+#. Form1..ActionManager..AreaAction("Integrate")..Hint
+msgid "Calculate the definite integral over a given domain."
+msgstr ""
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -572,11 +571,12 @@ msgstr "Evaluer"
 msgid "Evaluate or trace the selected function."
 msgstr "Evaluer en funktion ved indtastet koordinat eller med musen."
 
-#. Form1..ActionManager..TableAction("Table...")..Caption
-msgid "Table..."
+#. Form1..ActionManager..TableAction("Table")..Caption
+#, fuzzy
+msgid "Table"
 msgstr "Tabel..."
 
-#. Form1..ActionManager..TableAction("Table...")..Hint
+#. Form1..ActionManager..TableAction("Table")..Hint
 msgid "Show an evaluation table."
 msgstr "Vis en evalueringstabel."
 
@@ -601,7 +601,8 @@ msgid "Graph web site"
 msgstr "Graphs hjemmeside"
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
-msgid "Open the default browser and shows the home page of the program."
+#, fuzzy
+msgid "Open the default browser and show the Graph web site."
 msgstr "Åbn programmets hjemmeside i standardbrowseren."
 
 #. Form1..ActionManager..UpdateAction("Check for update")..Caption
@@ -612,11 +613,12 @@ msgstr "Tjek for opdatering"
 msgid "Contact the home page to see if a newer version is available."
 msgstr "Undersøger om der er en nyere version af programmet tilgængelig fra programmets hjemmeside."
 
-#. Form1..ActionManager..AboutAction("About Graph...")..Caption
-msgid "About Graph..."
-msgstr "Om Graph..."
+#. Form1..ActionManager..AboutAction("About Graph")..Caption
+#. Form2("About Graph")..Caption
+msgid "About Graph"
+msgstr "Om Graph"
 
-#. Form1..ActionManager..AboutAction("About Graph...")..Hint
+#. Form1..ActionManager..AboutAction("About Graph")..Hint
 msgid "Show copyright information."
 msgstr "Viser copyright information."
 
@@ -723,11 +725,12 @@ msgstr "Indsæt relation..."
 msgid "Insert a new equation or inequality."
 msgstr "Indsæt en ny funktion eller ulighed."
 
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Caption
-msgid "Custom functions..."
-msgstr "Brugerdefinerede funktioner..."
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Caption
+#, fuzzy
+msgid "Custom functions/constants..."
+msgstr "Brugerdefinerede funktioner/konstanter"
 
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Hint
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Hint
 msgid "Create custom functions and constants for use in graphs."
 msgstr "Opret brugerdefinerede funktioner og konstanter til brug i udtryk."
 
@@ -755,14 +758,13 @@ msgstr "Punktserier..."
 msgid "Import point series from a data file."
 msgstr "Importer punktserier fra en datafil."
 
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Caption
-#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
-msgid "Insert object..."
-msgstr "Indsæt objekt..."
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Caption
+msgid "Scripting engine dokumentation"
+msgstr ""
 
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Hint
-msgid "Insert an OLE object such as a drawing or an equation."
-msgstr "Indsæt et OLE-objekt, f.eks. en tegning eller en ligning."
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Hint
+msgid "Show dokumentation for scripting engine and plugin system."
+msgstr ""
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -1322,9 +1324,14 @@ msgstr "Vælg linjetykkelsen i pixels."
 msgid "Select which kind of line to draw between the markers."
 msgstr "Vælg hvilken type linje, der skal tegnes mellem markørerne."
 
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Text
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-msgid "Cubic splines"
+#, fuzzy
+msgid "1D cubic spline"
+msgstr "Cubic splines"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+#, fuzzy
+msgid "2D cubic spline"
 msgstr "Cubic splines"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
@@ -1703,25 +1710,19 @@ msgstr "Formindsk indtil skæring"
 msgid "Select the style used for the shading."
 msgstr "Vælg skraveringstype."
 
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
-msgid "Mark the end of the shading with a line."
-msgstr "Marker slutningen på skraveringen med en linje."
-
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
-msgid "Mark end of range"
-msgstr "Marker slutning"
-
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
 msgid "Select color used for shading."
 msgstr "Vælg farve til skraveringen."
 
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
-msgid "Mark the start of the shading with a line."
-msgstr "Marker starten af skraveringen med en linje."
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Hint
+#, fuzzy
+msgid "Mark the border around the shading."
+msgstr "Marker slutningen på skraveringen med en linje."
 
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
-msgid "Mark start of range"
-msgstr "Marker start"
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Caption
+#, fuzzy
+msgid "Mark border"
+msgstr "Markering"
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
@@ -1934,10 +1935,6 @@ msgstr "Antal billeder, som skal vises pr. sekund, når animationen afspilles."
 msgid "Working"
 msgstr "Arbejder"
 
-#. Form2("About Graph")..Caption
-msgid "About Graph"
-msgstr "Om Graph"
-
 #. Form2("About Graph")..Panel1..Version("Version %s")..Caption
 #. %s is replaced with version number
 msgid "Version %s"
@@ -1949,7 +1946,8 @@ msgid "Build %s"
 msgstr "Underversion %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
-msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
+#, fuzzy
+msgid "This is free software, and you are welcome to redistribute it under the terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please send bug reports and suggestions to the programmer."
 msgstr "Dette er frit software, og du er velkommen til at videredistribuere det under de rettigheder og betingelser, som findes i GNU General Public License. Fejl og mangler bedes rapporteret til programmøren."
 
 #. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
@@ -2138,6 +2136,15 @@ msgstr "Beregn afstanden mellem skalastregerne automatisk."
 msgid "Auto tick"
 msgstr "Automatisk"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
+msgid "Show tick marks on the x-axis."
+msgstr "Vis skalastreger på x-aksen."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
+msgid "Show ticks"
+msgstr "Vis skalastreger"
+
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Hint
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Hint
 msgid "Set the grid unit to the same as the tick unit."
@@ -2148,15 +2155,6 @@ msgstr "Sæt gitterenhed til det samme som skalaenhed."
 msgid "Auto grid"
 msgstr "Automatisk"
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
-msgid "Show tick marks on the x-axis."
-msgstr "Vis skalastreger på x-aksen."
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
-msgid "Show ticks"
-msgstr "Vis skalastreger"
-
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Hint
 msgid "Show vertical grid lines."
 msgstr "Vis lodrette gitterlinjer."
@@ -2165,14 +2163,6 @@ msgstr "Vis lodrette gitterlinjer."
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Caption
 msgid "Show grid"
 msgstr "Vis gitter"
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
-msgid "The x-axis cross at y="
-msgstr "x-aksen krydser ved y="
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
-msgid "The x-axis will intersect with the y-axis at this value."
-msgstr "x-aksen krydser y-aksen ved dette punkt."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
 msgid "Show the label at the right side of the graphing area, above the x-axis."
@@ -2187,6 +2177,14 @@ msgstr "Tekst:"
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..Edit11..Hint
 msgid "Edit the label for the axis here."
 msgstr "Redigér akseteksten her."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
+msgid "The x-axis cross at y="
+msgstr "x-aksen krydser ved y="
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr "x-aksen krydser y-aksen ved dette punkt."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox1("Logarithmic scale")..Hint
 msgid "Use logarithmic scale on the x-axis."
@@ -2206,14 +2204,15 @@ msgstr "Vis tal på x-aksen."
 msgid "Show numbers"
 msgstr "Vis tal"
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Hint
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Hint
 msgid "Show units on the selected axis as a fraction multiplied by pi."
 msgstr "Viser enheder på akserne som brøker ganget med pi."
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Caption
-msgid "Show as a multiple of pi"
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
+#, fuzzy
+msgid "Show as a multiple of π"
 msgstr "Vis som brøk gange pi"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
@@ -2238,6 +2237,14 @@ msgstr "Afstand mellem skalastreger på y-aksen."
 msgid "Units between the grid lines perpendicular to the y-axis."
 msgstr "Afstand mellem gitter linjer vinkelret på y-aksen."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
+msgid "Show tick marks on the y-axis."
+msgstr "Vis skalastreger på y-aksen."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
+msgid "Show horizontal grid lines."
+msgstr "Vis vandrette gitterlinjer."
+
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")....Hint
 msgid "Show the label at the top of the graphing area, to the right of the y-axis."
 msgstr "Vis etiket øverst i grafområdet, til højre for y-aksen."
@@ -2249,14 +2256,6 @@ msgstr "y-aksen krydser ved x="
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel4..Edit12..Hint
 msgid "The y-axis will intersect with the x-axis at this value."
 msgstr "y-aksen krydser x-aksen ved denne punkt."
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
-msgid "Show tick marks on the y-axis."
-msgstr "Vis skalastreger på y-aksen."
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
-msgid "Show horizontal grid lines."
-msgstr "Vis vandrette gitterlinjer."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox8("Logarithmic scale")..Hint
 msgid "Use logarithmic scale for the y-axis."
@@ -2657,6 +2656,10 @@ msgstr "Indsæt speciel..."
 msgid "Select which clipboard representation you want to paste."
 msgstr "Vælg mellem forskellige repræsentation fra udklipsholderen at indsætte."
 
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
+msgid "Insert object..."
+msgstr "Indsæt objekt..."
+
 #. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
 msgid "Create a new OLE object."
 msgstr "Opret et nyt OLE objekt."
@@ -2696,9 +2699,11 @@ msgstr "Vælg en funktion eller tangent at evaluere."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Vælg hvor markøren skal placeres når der klikkes på billedet."
 
-#. AreaFrame..GridPanel1..Edit3....Hint
-msgid "Area or length of path calculated for the given range using Simpson's formula."
-msgstr "Areal eller buelængde beregnet for det angivne interval ved brug af Simpsons formel."
+#. AreaFrame..GridPanel1..Label3("Integral")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
+#, fuzzy
+msgid "Integral"
+msgstr "Internet"
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2804,14 +2809,25 @@ msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Indtast et x-koordinat eller klik i hovedvinduet."
 
 #. Used in titles of error message boxes
+#. Indicates an error code, e.g. "Error 5"
 #. Error message when an invalid value is entered.
 #. Error message in Axes dialog when zoom in/out too much
 msgid "Error"
 msgstr "Fejl"
 
+#. Indicates an error code, e.g. "Error 5"
+#, fuzzy
+msgid "Error %s"
+msgstr "Usikkerhedssøjler"
+
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Længde"
+
+#. Shown in rotation dialog
+#, fuzzy
+msgid "Degrees"
+msgstr "Grader"
 
 #. Name for labels shown in the function list if there is no text in the label.
 msgid "Label"
@@ -2940,6 +2956,9 @@ msgstr "For mange rekursive kald."
 msgid "Overflow: A function returned a value too large to handle."
 msgstr "Dataoverløb: En funktion returnerede en værdi, som er for stor."
 
+msgid "A plugin function failed: %s"
+msgstr ""
+
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Uventet operator. Operatoren '%s' kan ikke placeres her."
 
@@ -3003,7 +3022,8 @@ msgstr "Rekursiv funktion kan ikke differentieres."
 msgid "Internal error."
 msgstr "Intern fejl."
 
-msgid "Function cannot be differentiated."
+#, fuzzy
+msgid "Function \"%s\" cannot be differentiated."
 msgstr "Funktionen kan ikke differentieres."
 
 msgid "Not further specified error occurred under calculation."
@@ -3011,6 +3031,13 @@ msgstr "Fejl under beregning."
 
 msgid "No solution found. Try another guess or another model."
 msgstr "Ingen løsning fundet. Prøv et andet gæt eller en anden model."
+
+msgid "No result found."
+msgstr ""
+
+#, fuzzy
+msgid "An accurate result cannot be found."
+msgstr "En beregning resulterede i dataoverløb."
 
 msgid "Internal error. Please notify the programmer with as much information as possible."
 msgstr "Intern fejl. Vær venlig at kontakte programmøren med så megen information som muligt."
@@ -3186,6 +3213,9 @@ msgstr "Fejl ved læsning af fil"
 msgid "Printer error"
 msgstr "Printerfejl"
 
+msgid "Invalid use of infinity. Infinity cannot be used here."
+msgstr ""
+
 msgid "Confirm delete"
 msgstr "Bekræft sletning"
 
@@ -3197,8 +3227,8 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Graph filer [*.grf]|*.grf|Alle filer [*.*]|*.*"
 
 #. Import from file dialog
-msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle filer [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+msgstr ""
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "Er du sikker på at du vil slette modellen: %s?"
@@ -3268,8 +3298,9 @@ msgstr "Søger efter nyere version..."
 msgid "Abort printing?"
 msgstr "Afbryd udskrivning?"
 
-msgid "Calculate area"
-msgstr "Beregn areal"
+#, fuzzy
+msgid "Calculate definite integral"
+msgstr "Beregn tabel"
 
 msgid "Calculate length of path"
 msgstr "Beregn buelængde"
@@ -3323,13 +3354,11 @@ msgstr "Du skal markere en funktion."
 msgid "New version of Graph available"
 msgstr "Ny version af Graph tilgængelig"
 
+#, fuzzy
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
-"with these new features since the previous version:\n"
 "\n"
-"%s\n"
-"\n"
-"Would you like to visit the web site?"
+"Would you like to visit the download page?"
 msgstr ""
 "Graph %s kan nu downloades fra www.padowan.dk\n"
 "med disse ændringer siden sidste version:\n"
@@ -3341,7 +3370,8 @@ msgstr ""
 msgid "No new version"
 msgstr "Ingen ny version"
 
-msgid "You are already using the most recent version of the program."
+#, fuzzy
+msgid "You are already using the most recent version of Graph."
 msgstr "Du anvender allerede den nyeste version af programmet."
 
 msgid ""
@@ -3354,6 +3384,13 @@ msgstr ""
 #. Communication error when checking for newer version
 msgid "Socket error %s"
 msgstr "Forbindelsesfejl %s"
+
+msgid "Definite integral, or signed area between function and x-axis, for the given domain range."
+msgstr ""
+
+#, fuzzy
+msgid "Length of path along the curve calculated for the given range."
+msgstr "dy/dx evalueret for den angivne t-værdi."
 
 msgid ""
 "The file cannot be opened by this version of the program.\n"
@@ -3733,45 +3770,90 @@ msgstr "Vælg hvor mange eksemplarer der skal udskrives."
 msgid "Enter percent of original size."
 msgstr "Indtast procentdel af oprindelig størrelse."
 
+#, fuzzy
+#~ msgid "Arial"
+#~ msgstr "Areal"
+
+#~ msgid "Calculate the area under the path of the selected function."
+#~ msgstr "Beregn arealet under grafen for den markerede funktion."
+
+#~ msgid "About Graph..."
+#~ msgstr "Om Graph..."
+
+#~ msgid "Custom functions..."
+#~ msgstr "Brugerdefinerede funktioner..."
+
+#~ msgid "Insert an OLE object such as a drawing or an equation."
+#~ msgstr "Indsæt et OLE-objekt, f.eks. en tegning eller en ligning."
+
+#~ msgid "Mark end of range"
+#~ msgstr "Marker slutning"
+
+#~ msgid "Mark the start of the shading with a line."
+#~ msgstr "Marker starten af skraveringen med en linje."
+
+#~ msgid "Mark start of range"
+#~ msgstr "Marker start"
+
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "Areal eller buelængde beregnet for det angivne interval ved brug af Simpsons formel."
+
+#~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+#~ msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle filer [*.*]|*.*"
+
+#~ msgid "Calculate area"
+#~ msgstr "Beregn areal"
+
 #~ msgid "Extremum"
 #~ msgstr "Ekstremum"
-#~ msgid ""
-#~ "This is the functions second derivative evaluated for the entered value."
+
+#~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Funktionens anden afledte evalueret for den indtastede værdi."
+
 #~ msgid "Zoom in."
 #~ msgstr "Zoom ind."
+
 #~ msgid "Zoom out."
 #~ msgstr "Zoom ud."
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Zoom tilbage til standardindstillingerne."
+
 #~ msgid "Go to home page"
 #~ msgstr "Vis hjemmeside"
+
 #~ msgid "All points"
 #~ msgstr "Alle punkter"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zoom så meget at alle punkter er synlige."
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoom kun ind på x-aksen."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoom kun ud på x-aksen."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoom kun ind på y-aksen."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoom kun ud på y-aksen."
+
 #~ msgid "Image information"
 #~ msgstr "Billedinformation"
+
 #~ msgid "Open the file %s."
 #~ msgstr "Åbner filen %s."
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Serveren svarede med beskeden '%s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokolfejl %s"
-#~ msgid ""
-#~ "You can send suggestions for future versions, bug reports and comments to "
-#~ "graph@padowan.dk"
-#~ msgstr ""
-#~ "Du kan sende forslag til forbedringer, fejlrapporter og kommentarer til "
-#~ "graph@padowan.dk."
+
+#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgstr "Du kan sende forslag til forbedringer, fejlrapporter og kommentarer til graph@padowan.dk."
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Vælg dette for at placere billedet midt på siden."
-

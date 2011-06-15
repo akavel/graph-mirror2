@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2010-12-19 23:26\n"
-"PO-Revision-Date: 2010-12-19 23:26\n"
+"POT-Creation-Date: 2011-06-15 21:57\n"
+"PO-Revision-Date: 2011-06-15 21:57\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -217,7 +217,7 @@ msgstr ""
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Area")..Category
+#. Form1..ActionManager..AreaAction("Integrate")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -243,7 +243,7 @@ msgstr ""
 #. Form1..ActionManager..DonateAction("Donate")..Category
 #. Form1..ActionManager..TipAction("Tip of the day")..Category
 #. Form1..ActionManager..SupportAction("Support")..Category
-#. Form1..ActionManager..ScriptDocAction("Plugin system dokumentation")..Category
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Category
 #. Form11("Insert relation")..Button3("Help")..Caption
 #. Form12("Insert tangent/normal")..Button3("Help")..Caption
 #. Form13("Insert trendline")..Button3("Help")..Caption
@@ -589,15 +589,13 @@ msgid "Calculate the length of path between two given points on the "
 "curve."
 msgstr ""
 
-#. Form1..ActionManager..AreaAction("Area")..Caption
-#. AreaFrame..GridPanel1..Label3("Area")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Area"
+#. Form1..ActionManager..AreaAction("Integrate")..Caption
+msgid "Integrate"
 msgstr ""
 
-#. Form1..ActionManager..AreaAction("Area")..Hint
-msgid "Calculate the area under the path of the selected "
-"function."
+#. Form1..ActionManager..AreaAction("Integrate")..Hint
+msgid "Calculate the definite integral over a given "
+"domain."
 msgstr ""
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
@@ -804,12 +802,13 @@ msgstr ""
 msgid "Import point series from a data file."
 msgstr ""
 
-#. Form1..ActionManager..ScriptDocAction("Plugin system dokumentation")..Caption
-msgid "Plugin system dokumentation"
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Caption
+msgid "Scripting engine dokumentation"
 msgstr ""
 
-#. Form1..ActionManager..ScriptDocAction("Plugin system dokumentation")..Hint
-msgid "Show dokumentation for plugin system."
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Hint
+msgid "Show dokumentation for scripting engine and plugin "
+"system."
 msgstr ""
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
@@ -1395,9 +1394,12 @@ msgid "Select which kind of line to draw between the "
 "markers."
 msgstr ""
 
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Text
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-msgid "Cubic splines"
+msgid "1D cubic spline"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+msgid "2D cubic spline"
 msgstr ""
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
@@ -2230,6 +2232,15 @@ msgstr ""
 msgid "Auto tick"
 msgstr ""
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
+msgid "Show tick marks on the x-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
+msgid "Show ticks"
+msgstr ""
+
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Hint
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Hint
 msgid "Set the grid unit to the same as the tick "
@@ -2241,15 +2252,6 @@ msgstr ""
 msgid "Auto grid"
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
-msgid "Show tick marks on the x-axis."
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
-msgid "Show ticks"
-msgstr ""
-
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Hint
 msgid "Show vertical grid lines."
 msgstr ""
@@ -2257,15 +2259,6 @@ msgstr ""
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Caption
 msgid "Show grid"
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
-msgid "The x-axis cross at y="
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
-msgid "The x-axis will intersect with the y-axis at this "
-"value."
 msgstr ""
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
@@ -2281,6 +2274,15 @@ msgstr ""
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..Edit5..Hint
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..Edit11..Hint
 msgid "Edit the label for the axis here."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
+msgid "The x-axis cross at y="
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
+msgid "The x-axis will intersect with the y-axis at this "
+"value."
 msgstr ""
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox1("Logarithmic scale")..Hint
@@ -2301,15 +2303,15 @@ msgstr ""
 msgid "Show numbers"
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Hint
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Hint
 msgid "Show units on the selected axis as a fraction multiplied by "
 "pi."
 msgstr ""
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Caption
-msgid "Show as a multiple of pi"
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
+msgid "Show as a multiple of π"
 msgstr ""
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
@@ -2335,6 +2337,14 @@ msgid "Units between the grid lines perpendicular to the "
 "y-axis."
 msgstr ""
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
+msgid "Show tick marks on the y-axis."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
+msgid "Show horizontal grid lines."
+msgstr ""
+
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")....Hint
 msgid "Show the label at the top of the graphing area, to the right of the "
 "y-axis."
@@ -2347,14 +2357,6 @@ msgstr ""
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel4..Edit12..Hint
 msgid "The y-axis will intersect with the x-axis at this "
 "value."
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
-msgid "Show tick marks on the y-axis."
-msgstr ""
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
-msgid "Show horizontal grid lines."
 msgstr ""
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox8("Logarithmic scale")..Hint
@@ -2825,6 +2827,11 @@ msgid "Select where the cursor will be placed when you click on the "
 "image."
 msgstr ""
 
+#. AreaFrame..GridPanel1..Label3("Integral")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
+msgid "Integral"
+msgstr ""
+
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with "
 "the mouse."
@@ -2961,6 +2968,10 @@ msgstr ""
 
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
+msgstr ""
+
+#. Shown in rotation dialog
+msgid "Degrees"
 msgstr ""
 
 #. Name for labels shown in the function list if there is no text in the label.
@@ -3174,7 +3185,7 @@ msgstr ""
 msgid "Internal error."
 msgstr ""
 
-msgid "Function cannot be differentiated."
+msgid "Function \"%s\" cannot be differentiated."
 msgstr ""
 
 msgid "Not further specified error occurred under "
@@ -3465,7 +3476,7 @@ msgstr ""
 msgid "Abort printing?"
 msgstr ""
 
-msgid "Calculate area"
+msgid "Calculate definite integral"
 msgstr ""
 
 msgid "Calculate length of path"
@@ -3545,8 +3556,8 @@ msgstr ""
 msgid "Socket error %s"
 msgstr ""
 
-msgid "Signed area between curve and x-axis calculated for the given "
-"range."
+msgid "Definite integral, or signed area between function and x-axis, for "
+"the given domain range."
 msgstr ""
 
 msgid "Length of path along the curve calculated for the given "

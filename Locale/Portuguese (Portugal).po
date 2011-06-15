@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2009-01-05 18:19\n"
+"POT-Creation-Date: 2011-06-15 21:57\n"
 "PO-Revision-Date: 2009-01-05 22:47-0000\n"
 "Last-Translator: jorge Geraldes <jmbgeraldes@sapo.pt>\n"
 "Language-Team: \n"
@@ -105,6 +105,27 @@ msgstr "Colocar o rótulo personalizado na posição padrão"
 msgid "Rotation"
 msgstr "Rotação"
 
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_0..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_0..Hint
+#, fuzzy
+msgid "Show the label with no rotation."
+msgstr "Sombreia a área abaixo da função"
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_90..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_90..Hint
+msgid "Show the label rotated 90° counter clockwise."
+msgstr ""
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_180..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_180..Hint
+msgid "Show the label rotated 180°."
+msgstr ""
+
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_270..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_270..Hint
+msgid "Show the label rotated 270° counter clockwise."
+msgstr ""
+
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
 msgid "Specify the angle of rotation for the label."
@@ -162,8 +183,7 @@ msgstr "Editar"
 #. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Category
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Category
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Category
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Category
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Category
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Category
 #. ParFuncFrame..ComboBox1..Text
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1..Text
@@ -190,9 +210,9 @@ msgstr "Zoom"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Area")..Category
+#. Form1..ActionManager..AreaAction("Integrate")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
-#. Form1..ActionManager..TableAction("Table...")..Category
+#. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
 #. Form15("Calculate table")..Button2("Calc")..Caption
 msgid "Calc"
@@ -211,11 +231,12 @@ msgstr "Internet"
 #. Form1..ActionManager..ListAction("List of functions")..Category
 #. Form1..ActionManager..HomePageAction("Graph web site")..Category
 #. Form1..ActionManager..UpdateAction("Check for update")..Category
-#. Form1..ActionManager..AboutAction("About Graph...")..Category
+#. Form1..ActionManager..AboutAction("About Graph")..Category
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Category
 #. Form1..ActionManager..DonateAction("Donate")..Category
 #. Form1..ActionManager..TipAction("Tip of the day")..Category
 #. Form1..ActionManager..SupportAction("Support")..Category
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Category
 #. Form11("Insert relation")..Button3("Help")..Caption
 #. Form12("Insert tangent/normal")..Button3("Help")..Caption
 #. Form13("Insert trendline")..Button3("Help")..Caption
@@ -554,16 +575,14 @@ msgstr "Comprimento da curva"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Calcula o comprimento da curva entre dois pontos."
 
-#. Form1..ActionManager..AreaAction("Area")..Caption
-#. AreaFrame..GridPanel1..Label3("Area")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Area"
-msgstr "Área"
-
-#. Form1..ActionManager..AreaAction("Area")..Hint
+#. Form1..ActionManager..AreaAction("Integrate")..Caption
 #, fuzzy
-msgid "Calculate the area under the path of the selected function."
-msgstr "Calcula a área  no intervalo da função seleccionada."
+msgid "Integrate"
+msgstr "Internet"
+
+#. Form1..ActionManager..AreaAction("Integrate")..Hint
+msgid "Calculate the definite integral over a given domain."
+msgstr ""
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -574,11 +593,12 @@ msgstr "Cálculo"
 msgid "Evaluate or trace the selected function."
 msgstr "Calcula ou traça a função seleccionada."
 
-#. Form1..ActionManager..TableAction("Table...")..Caption
-msgid "Table..."
+#. Form1..ActionManager..TableAction("Table")..Caption
+#, fuzzy
+msgid "Table"
 msgstr "Tabela..."
 
-#. Form1..ActionManager..TableAction("Table...")..Hint
+#. Form1..ActionManager..TableAction("Table")..Hint
 #, fuzzy
 msgid "Show an evaluation table."
 msgstr "Mostra a tabela de cálculo."
@@ -607,7 +627,7 @@ msgstr "Propriedades do gráfico"
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
 #, fuzzy
-msgid "Open the default browser and shows the home page of the program."
+msgid "Open the default browser and show the Graph web site."
 msgstr "Abre o navegador de Internet padrão e mostra o Home Page do programa."
 
 #. Form1..ActionManager..UpdateAction("Check for update")..Caption
@@ -618,11 +638,12 @@ msgstr "Procura por actualização"
 msgid "Contact the home page to see if a newer version is available."
 msgstr "Verifica na Home Page do Graph se há uma nova versão disponível."
 
-#. Form1..ActionManager..AboutAction("About Graph...")..Caption
-msgid "About Graph..."
-msgstr "Sobre o Graph..."
+#. Form1..ActionManager..AboutAction("About Graph")..Caption
+#. Form2("About Graph")..Caption
+msgid "About Graph"
+msgstr "Sobre o Graph"
 
-#. Form1..ActionManager..AboutAction("About Graph...")..Hint
+#. Form1..ActionManager..AboutAction("About Graph")..Hint
 msgid "Show copyright information."
 msgstr "Mostra informações do Graph."
 
@@ -678,7 +699,7 @@ msgstr "Doações em dinheiro para o projecto."
 
 #. Form1..ActionManager..TipAction("Tip of the day")..Caption
 #. Form10("Tip of the day")..Caption
-#. Form10("Tip of the day")..Panel1..Label2("Tip of the day")..Caption
+#. Form10("Tip of the day")..Panel1..LinkLabel1("Tip of the day")..Caption
 msgid "Tip of the day"
 msgstr "Dicas do dia"
 
@@ -734,11 +755,12 @@ msgstr "Inserir relação..."
 msgid "Insert a new equation or inequality."
 msgstr "Insere uma nova equação ou inequação."
 
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Caption
-msgid "Custom functions..."
-msgstr "Funções usuais..."
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Caption
+#, fuzzy
+msgid "Custom functions/constants..."
+msgstr "Funções usuais/constantes"
 
-#. Form1..ActionManager..CustomFunctionsAction("Custom functions...")..Hint
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Hint
 msgid "Create custom functions and constants for use in graphs."
 msgstr "Cria uma função ou uma constante para usar nos gráficos."
 
@@ -766,14 +788,13 @@ msgstr "Série de Pontos..."
 msgid "Import point series from a data file."
 msgstr "Importa uma série de pontos de um ficheiro de dados."
 
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Caption
-#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
-msgid "Insert object..."
-msgstr "Inserir objecto..."
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Caption
+msgid "Scripting engine dokumentation"
+msgstr ""
 
-#. Form1..ActionManager..InsertObjectAction("Insert object...")..Hint
-msgid "Insert an OLE object such as a drawing or an equation."
-msgstr "Inserir o Objecto OLE como por exemplo um desenho ou uma equação."
+#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Hint
+msgid "Show dokumentation for scripting engine and plugin system."
+msgstr ""
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -812,9 +833,18 @@ msgstr "Apaga o rótulo sob o cursor."
 msgid "Show legend"
 msgstr "Mostrar legenda"
 
+#. Form1..PopupMenu4..Legend_Show("Show legend")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Hint
+msgid "Select to show a legend in the coordinate system."
+msgstr "Seleccione para mostrar um legenda no sistema cartesiano."
+
 #. Form1..PopupMenu4..Legend_Font("Font...")..Caption
 msgid "Font..."
 msgstr "Fonte..."
+
+#. Form1..PopupMenu4..Legend_Font("Font...")..Hint
+msgid "Change the font of the legend."
+msgstr "Seleccione a fonte para a legenda."
 
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
@@ -1162,10 +1192,6 @@ msgstr "Gera uma função potência: f(x)=ax^b"
 msgid "Create a exponential function: f(x)=a*b^x"
 msgstr "Gera uma função exponencial: f(x)=a*b^x"
 
-#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit1..Hint
-msgid "The order of the polynomium. For example 2 means a parable."
-msgstr "A ordem dos polinómios. Por exemplo 2 significa uma parábola."
-
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText1("Order:")..Caption
 msgid "Order:"
 msgstr "Ordem:"
@@ -1206,6 +1232,10 @@ msgstr "Período:"
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit4..Hint
 msgid "Determines how many points are used for the average."
 msgstr "Determina quantos pontos são usados para a média."
+
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit1..Hint
+msgid "The order of the polynomium. For example 2 means a parable."
+msgstr "A ordem dos polinómios. Por exemplo 2 significa uma parábola."
 
 #. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Caption
 msgid "User defined"
@@ -1329,9 +1359,14 @@ msgstr "Escolha a espessura da linha em pixels."
 msgid "Select which kind of line to draw between the markers."
 msgstr "Escolha o tipo de linha para ligar os pontos."
 
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Text
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-msgid "Cubic splines"
+#, fuzzy
+msgid "1D cubic spline"
+msgstr "Cúbico "
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+#, fuzzy
+msgid "2D cubic spline"
 msgstr "Cúbico "
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
@@ -1366,14 +1401,13 @@ msgstr "Selcecione a fonte para as coordenadas."
 msgid "Select where the coordinates should be shown."
 msgstr "Seleccione onde as coordenadas serão mostradas em relação ao ponto."
 
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1..Text
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-msgid "Below"
-msgstr "Abaixo"
-
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 msgid "Above"
 msgstr "Acima"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+msgid "Below"
+msgstr "Abaixo"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 #. Shortcut key
@@ -1384,6 +1418,44 @@ msgstr "Esquerda"
 #. Shortcut key
 msgid "Right"
 msgstr "Direita"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#, fuzzy
+msgid "Above Left"
+msgstr "Mover para esquerda"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#, fuzzy
+msgid "Above Right"
+msgstr "Mover para direita"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#, fuzzy
+msgid "Below Left"
+msgstr "No alto à esquerda"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#, fuzzy
+msgid "Below Right"
+msgstr "No alto à direita"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Hint
+msgid "Choose between cartesian (x,y) coordinates and polar (θ,r) coordinates."
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")..Caption
+#, fuzzy
+msgid "Coordinate type"
+msgstr "Coordenada não definida"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
+msgid "Cartesian"
+msgstr ""
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
+msgid "Polar"
+msgstr "Polar"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..Caption
 msgid "Error bars"
@@ -1682,25 +1754,19 @@ msgstr "Diminuir até a intersecção."
 msgid "Select the style used for the shading."
 msgstr "Seleccione o estilo do sombreado."
 
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Hint
-msgid "Mark the end of the shading with a line."
-msgstr "Delimita o fim do sombreado com  linha."
-
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox6("Mark end of range")..Caption
-msgid "Mark end of range"
-msgstr "Delimita o fim do intervalo"
-
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
 msgid "Select color used for shading."
 msgstr "Seleccione uma cor para o sombreado."
 
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Hint
-msgid "Mark the start of the shading with a line."
-msgstr "Delimita o início do sombreado com uma linha."
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Hint
+#, fuzzy
+msgid "Mark the border around the shading."
+msgstr "Delimita o fim do sombreado com  linha."
 
-#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark start of range")..Caption
-msgid "Mark start of range"
-msgstr "Delimita o inicio do intervalo"
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Caption
+#, fuzzy
+msgid "Mark border"
+msgstr "Marcador"
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
@@ -1922,23 +1988,10 @@ msgstr "Número de frames por segundo usado quando a animação for mostrada."
 msgid "Working"
 msgstr "Trabalhando"
 
-#. Form2("About Graph")..Caption
-msgid "About Graph"
-msgstr "Sobre o Graph"
-
-#. Form2("About Graph")..Panel1..Label6("<Language> translation by <Translator>")..Caption
-#. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
-msgid "<Language> translation by <Translator>"
-msgstr "Tradução para o português (Portugal) por Jorge Geraldes - PAM "
-
 #. Form2("About Graph")..Panel1..Version("Version %s")..Caption
 #. %s is replaced with version number
 msgid "Version %s"
 msgstr "Versão %s"
-
-#. Form2("About Graph")..Panel1..Label1("Email:")..Caption
-msgid "Email:"
-msgstr "Email:"
 
 #. Form2("About Graph")..Panel1..Label3("Build %s")..Caption
 #. %s is replaced with build number
@@ -1946,12 +1999,24 @@ msgid "Build %s"
 msgstr "Build %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
-msgid "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
+#, fuzzy
+msgid "This is free software, and you are welcome to redistribute it under the terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please send bug reports and suggestions to the programmer."
 msgstr "Este é um software livre e  pode usá-lo sob os termos de licença GNU. Por favor, envie sugestões e notifique eventuais erros ao programador."
 
-#. Form2("About Graph")..Panel1..Label4("The newest version as well as the source code are available ")..Caption
-msgid "The newest version as well as the source code are available at:"
+#. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
+#, fuzzy
+msgid "The newest version as well as the source code are available at: %s"
 msgstr "Novas versões e o código fonte estão disponíveis em:"
+
+#. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
+#, fuzzy
+msgid "Email: %s"
+msgstr "Email:"
+
+#. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
+#. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
+msgid "<Language> translation by <Translator>"
+msgstr "Tradução para o português (Portugal) por Jorge Geraldes - PAM "
 
 #. Form20("Animation")..Caption
 msgid "Animation"
@@ -2135,6 +2200,15 @@ msgstr "Determina a unidade das marcas automaticamente."
 msgid "Auto tick"
 msgstr "Auto marcas"
 
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
+msgid "Show tick marks on the x-axis."
+msgstr "Mostra as marcas no eixo-x"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
+msgid "Show ticks"
+msgstr "Mostrar marcas"
+
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Hint
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Hint
 msgid "Set the grid unit to the same as the tick unit."
@@ -2145,15 +2219,6 @@ msgstr "Ajusta a unidade da grelha ultilizando a mesma unidade das marcas."
 msgid "Auto grid"
 msgstr "Grelha automática"
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
-msgid "Show tick marks on the x-axis."
-msgstr "Mostra as marcas no eixo-x"
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
-msgid "Show ticks"
-msgstr "Mostrar marcas"
-
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Hint
 msgid "Show vertical grid lines."
 msgstr "Mostra linha de grelha vertical."
@@ -2162,14 +2227,6 @@ msgstr "Mostra linha de grelha vertical."
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Caption
 msgid "Show grid"
 msgstr "Mostrar grelha"
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
-msgid "The x-axis cross at y="
-msgstr "O eixo-x cruza em y="
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
-msgid "The x-axis will intersect with the y-axis at this value."
-msgstr "O eixo-x cruzará o eixo-y nesse ponto."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
 #, fuzzy
@@ -2185,6 +2242,14 @@ msgstr "Rótulo:"
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..Edit11..Hint
 msgid "Edit the label for the axis here."
 msgstr "Altere aqui o rótulo para os eixos."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
+msgid "The x-axis cross at y="
+msgstr "O eixo-x cruza em y="
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr "O eixo-x cruzará o eixo-y nesse ponto."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox1("Logarithmic scale")..Hint
 msgid "Use logarithmic scale on the x-axis."
@@ -2204,14 +2269,15 @@ msgstr "Mostra os números no eixo-x."
 msgid "Show numbers"
 msgstr "Mostrar números"
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Hint
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Hint
 msgid "Show units on the selected axis as a fraction multiplied by pi."
 msgstr "Mostra as unidades no eixo seleccionado como fracções múltiplas de pi."
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of pi")..Caption
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Caption
-msgid "Show as a multiple of pi"
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
+#, fuzzy
+msgid "Show as a multiple of π"
 msgstr "Mostrar como múltiplos de pi "
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
@@ -2236,6 +2302,14 @@ msgstr "Unidades entre as marcas no eixo-y."
 msgid "Units between the grid lines perpendicular to the y-axis."
 msgstr "Unidades entre as linhas da  grelha perpendiculares ao eixo-y."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
+msgid "Show tick marks on the y-axis."
+msgstr "Mostra marcas no eixo-y"
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
+msgid "Show horizontal grid lines."
+msgstr "Mostra linhas de grelha horizontal."
+
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")....Hint
 #, fuzzy
 msgid "Show the label at the top of the graphing area, to the right of the y-axis."
@@ -2248,14 +2322,6 @@ msgstr "O eixo-y cruza em x="
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel4..Edit12..Hint
 msgid "The y-axis will intersect with the x-axis at this value."
 msgstr "O eixo-y cruzará o eixo-x nesse ponto."
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
-msgid "Show tick marks on the y-axis."
-msgstr "Mostra marcas no eixo-y"
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
-msgid "Show horizontal grid lines."
-msgstr "Mostra linhas de grelha horizontal."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox8("Logarithmic scale")..Hint
 msgid "Use logarithmic scale for the y-axis."
@@ -2272,10 +2338,6 @@ msgstr "Configurações"
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Label16("Title:")..Caption
 msgid "Title:"
 msgstr "Título:"
-
-#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Hint
-msgid "Select to show a legend in the coordinate system."
-msgstr "Seleccione para mostrar um legenda no sistema cartesiano."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Hint
 msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
@@ -2422,10 +2484,6 @@ msgstr "Real"
 msgid "Rectangular"
 msgstr "Rectangular"
 
-#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
-msgid "Polar"
-msgstr "Polar"
-
 #. Form4("Options")..GridPanelEx1..Label2("Recent files:")..Caption
 msgid "Recent files:"
 msgstr "Ficheiros:"
@@ -2490,6 +2548,18 @@ msgstr "Se marcado, ao  iniciar o programa contactará a página do Graph para p
 #. Form4("Options")..GridPanelEx1..CheckBox4("Check for new version of Graph at startup")..Caption
 msgid "Check for new version of Graph at startup"
 msgstr "Procura por nova versão do Graph ao iniciar"
+
+#. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")....Hint
+msgid "Use a custom decimal separator instead of the default from the Windows Regional settings."
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")..Caption
+msgid "Custom decimal separator:"
+msgstr ""
+
+#. Form4("Options")..GridPanelEx1..Edit4..Hint
+msgid "Decimal separator used when exporting to other programs."
+msgstr ""
 
 #. Form5("Insert function")..Caption
 msgid "Insert function"
@@ -2655,6 +2725,10 @@ msgstr "Colar especial..."
 msgid "Select which clipboard representation you want to paste."
 msgstr "Selecciona qual o tipo do conteúdo da área de transferência."
 
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
+msgid "Insert object..."
+msgstr "Inserir objecto..."
+
 #. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
 msgid "Create a new OLE object."
 msgstr "Cria um novo objeto OLE."
@@ -2694,17 +2768,19 @@ msgstr "Seleccione uma função ou tangente para o cálculo."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Seleccione onde o cursor será colocado quando você clicar sobre a imagem."
 
-#. AreaFrame..GridPanel1..Edit1....Hint
+#. AreaFrame..GridPanel1..Label3("Integral")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
+#, fuzzy
+msgid "Integral"
+msgstr "Internet"
+
+#. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Entre com a coordenada inicial ou marque o intervalo na imagem com o \"rato\"."
 
-#. AreaFrame..GridPanel1..Edit2....Hint
+#. AreaFrame..GridPanel1..Panel2..Edit2....Hint
 msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
 msgstr "Entre com a coordenada final ou marque o intervalo no gráfico com o \"rato\"."
-
-#. AreaFrame..GridPanel1..Edit3....Hint
-msgid "Area or length of path calculated for the given range using Simpson's formula."
-msgstr "Área ou comprimento da curva calculada para o intervalo dado utilizando a fórmula de Simpson."
 
 #. ParFuncFrame..Label7("Snap to:")..Caption
 #. PolFuncFrame..Label7("Snap to:")..Caption
@@ -2750,6 +2826,7 @@ msgstr "Valor extremo-x"
 
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
+#. StdFuncFrame..ComboBox1....Items.Strings
 msgid "Extreme y-value"
 msgstr "Valor extremo-y"
 
@@ -2783,10 +2860,6 @@ msgstr "Entre com a variável independente para a função que  quer calcular, o
 msgid "Enter a value for which you want to evaluate the function, or click on the graph in the graphing area."
 msgstr "Entre com o valor de x desejado para calcular a função, ou clique na função na janela principal."
 
-#. StdFuncFrame..ComboBox1....Items.Strings
-msgid "Extremum"
-msgstr "Extremo"
-
 #. StdFuncFrame..Edit2..Hint
 msgid "This is the function evaluated for the entered x-value."
 msgstr "Este é da função, calculado para o valor-x introduzido."
@@ -2810,14 +2883,25 @@ msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Entre com uma coordenada-x ou clique na janela principal."
 
 #. Used in titles of error message boxes
+#. Indicates an error code, e.g. "Error 5"
 #. Error message when an invalid value is entered.
 #. Error message in Axes dialog when zoom in/out too much
 msgid "Error"
 msgstr "Erro"
 
+#. Indicates an error code, e.g. "Error 5"
+#, fuzzy
+msgid "Error %s"
+msgstr "Barras de erro"
+
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Comprimento"
+
+#. Shown in rotation dialog
+#, fuzzy
+msgid "Degrees"
+msgstr "Graus"
 
 #. Name for labels shown in the function list if there is no text in the label.
 msgid "Label"
@@ -2950,6 +3034,9 @@ msgstr "Muitas chamadas de recursividade."
 msgid "Overflow: A function returned a value too large to handle."
 msgstr "Overflow: A função dá um valor demasiado elevado para ser considerado."
 
+msgid "A plugin function failed: %s"
+msgstr ""
+
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Operador inesperado. O operador ' %s' não pode ser colocado aqui."
 
@@ -3016,7 +3103,8 @@ msgstr "Não posso calcular função recursiva."
 msgid "Internal error."
 msgstr "Erro interno."
 
-msgid "Function cannot be differentiated."
+#, fuzzy
+msgid "Function \"%s\" cannot be differentiated."
 msgstr "A função não pode ser diferenciada."
 
 msgid "Not further specified error occurred under calculation."
@@ -3024,6 +3112,13 @@ msgstr "Não pode  especificar o erro que ocorreu durante o cálculo."
 
 msgid "No solution found. Try another guess or another model."
 msgstr "Nenhuma solução encontrada. Tente uma outra hipóetese ou um outro modelo."
+
+msgid "No result found."
+msgstr ""
+
+#, fuzzy
+msgid "An accurate result cannot be found."
+msgstr "Um cálculo resultou em um overflow."
 
 msgid "Internal error. Please notify the programmer with as much information as possible."
 msgstr "Erro interno. Por favor, notifique o programador com o maxímo de informação possível."
@@ -3203,6 +3298,9 @@ msgstr "Erro na leitura do ficheiro"
 msgid "Printer error"
 msgstr "Erro de impressão"
 
+msgid "Invalid use of infinity. Infinity cannot be used here."
+msgstr ""
+
 msgid "Confirm delete"
 msgstr "Confirma a eliminação"
 
@@ -3214,8 +3312,8 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Ficheiros do Graph [*.grf]|*.grf|Todos os ficheiros [*.*]|*.*"
 
 #. Import from file dialog
-msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-msgstr "Texto [*.txt; *.csv]|*.txt;*.csv|Todos os ficheiros [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+msgstr ""
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "Tem a certeza que quer apagar o modelo: %s ?"
@@ -3286,8 +3384,9 @@ msgstr "A procurar por nova versão ..."
 msgid "Abort printing?"
 msgstr "Cancelar impressão?"
 
-msgid "Calculate area"
-msgstr "Calcule a área"
+#, fuzzy
+msgid "Calculate definite integral"
+msgstr "Calcular tabela"
 
 msgid "Calculate length of path"
 msgstr "Calcule o comprimento do trajecto"
@@ -3342,13 +3441,11 @@ msgstr "É preciso seleccionar uma função"
 msgid "New version of Graph available"
 msgstr "Nova versão do Graph está disponível"
 
+#, fuzzy
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
-"with these new features since the previous version:\n"
 "\n"
-"%s\n"
-"\n"
-"Would you like to visit the web site?"
+"Would you like to visit the download page?"
 msgstr ""
 "Graph %s já está disponível para o download do www.padowan.dk\n"
 "com novos recursos que essa não tem versão :\n"
@@ -3360,7 +3457,8 @@ msgstr ""
 msgid "No new version"
 msgstr "Não há nova versão."
 
-msgid "You are already using the most recent version of the program."
+#, fuzzy
+msgid "You are already using the most recent version of Graph."
 msgstr "Está a utilizae  a versão  mais recente deste programa."
 
 msgid ""
@@ -3373,6 +3471,13 @@ msgstr ""
 #. Communication error when checking for newer version
 msgid "Socket error %s"
 msgstr "Erro de socket %s"
+
+msgid "Definite integral, or signed area between function and x-axis, for the given domain range."
+msgstr ""
+
+#, fuzzy
+msgid "Length of path along the curve calculated for the given range."
+msgstr "o declive da recta tangente à  função calculada para o ângulo dado."
 
 msgid ""
 "The file cannot be opened by this version of the program.\n"
@@ -3436,9 +3541,9 @@ msgstr "Nã está a responder..."
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "Esta \"Dica do dia\" pode dar-lhe algumas informações sobre o programa e que muitos utilizadores não conhecem."
 
-#. Tip of the Day
-msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
-msgstr "Podedar sugestões para as versões futuras, relatar erros e comentários enviando um email para: graph@padowan.dk"
+#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
+msgstr ""
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
@@ -3578,7 +3683,7 @@ msgstr "Pode usar 'Zoom|Todos os Pontos' para mudar o de sistema eixos coordenad
 
 #. Tip of the Day
 #, fuzzy
-msgid "You can use Zoom|Fit to change the coordinate system to show the selected function or point series in an optimal way."
+msgid "You can use Zoom|Fit to change the coordinate system to show all parts of the selected function or point series."
 msgstr "Pode usar 'Zoom|Ajustar' mudando o sistema de eixos coordenados para mostrar a função ou a lista de pontos."
 
 #. Tip of the Day
@@ -3762,128 +3867,210 @@ msgstr "Escolha o número de cópias para imprimir:"
 msgid "Enter percent of original size."
 msgstr "Entre o valor em percentagem do tamanho original."
 
-#~ msgid ""
-#~ "This is the functions second derivative evaluated for the entered value."
+#, fuzzy
+#~ msgid "Arial"
+#~ msgstr "Área"
+
+#, fuzzy
+#~ msgid "Calculate the area under the path of the selected function."
+#~ msgstr "Calcula a área  no intervalo da função seleccionada."
+
+#~ msgid "About Graph..."
+#~ msgstr "Sobre o Graph..."
+
+#~ msgid "Custom functions..."
+#~ msgstr "Funções usuais..."
+
+#~ msgid "Insert an OLE object such as a drawing or an equation."
+#~ msgstr "Inserir o Objecto OLE como por exemplo um desenho ou uma equação."
+
+#~ msgid "Mark end of range"
+#~ msgstr "Delimita o fim do intervalo"
+
+#~ msgid "Mark the start of the shading with a line."
+#~ msgstr "Delimita o início do sombreado com uma linha."
+
+#~ msgid "Mark start of range"
+#~ msgstr "Delimita o inicio do intervalo"
+
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "Área ou comprimento da curva calculada para o intervalo dado utilizando a fórmula de Simpson."
+
+#~ msgid "Extremum"
+#~ msgstr "Extremo"
+
+#~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+#~ msgstr "Texto [*.txt; *.csv]|*.txt;*.csv|Todos os ficheiros [*.*]|*.*"
+
+#~ msgid "Calculate area"
+#~ msgstr "Calcule a área"
+
+#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgstr "Podedar sugestões para as versões futuras, relatar erros e comentários enviando um email para: graph@padowan.dk"
+
+#~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Esta é a derivada segunda da função, calculada para o valor-x dado."
+
 #~ msgid "Zoom in."
 #~ msgstr "Amplia."
+
 #~ msgid "Zoom out."
 #~ msgstr "Reduz."
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Retornar a forma padrão."
+
 #~ msgid "Go to home page"
 #~ msgstr "Vai para Home Page"
+
 #~ msgid "All points"
 #~ msgstr "Todos os pontos"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Ajusta o Zoom para mostrar todos os pontos que são visíveis."
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Amplia somente no eixo-x."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Reduz somente no eixo-x."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Amplia somento no eixo-y."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Reduz somente no eixo-y."
-#~ msgid "Change the font of the legend."
-#~ msgstr "Seleccione a fonte para a legenda."
+
 #~ msgid "Image information"
 #~ msgstr "Informações da imagem"
+
 #~ msgid "Open the file %s."
 #~ msgstr "Abrir o ficheiro %s."
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "O servidor respondeu com a mensagem ' %s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Retorno de erro do protocolo %s"
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Seleccione o lugar da imagem no meio da página."
+
 #~ msgid "Insert shade..."
 #~ msgstr "Inserir sombra..."
+
 #~ msgid "Shade"
 #~ msgstr "Sombra"
+
 #~ msgid "Black"
 #~ msgstr "Preto"
+
 #~ msgid "Maroon"
 #~ msgstr "Castanho"
+
 #~ msgid "Green"
 #~ msgstr "Verde"
+
 #~ msgid "Olive"
 #~ msgstr "Verde oliva"
+
 #~ msgid "Navy"
 #~ msgstr "Azul marinho"
+
 #~ msgid "Purple"
 #~ msgstr "Violeta"
+
 #~ msgid "Teal"
 #~ msgstr "Verde teal"
+
 #~ msgid "Gray"
 #~ msgstr "Cinza"
+
 #~ msgid "Silver"
 #~ msgstr "Prata"
+
 #~ msgid "Red"
 #~ msgstr "Vermelho"
+
 #~ msgid "Lime"
 #~ msgstr "Verde limão"
+
 #~ msgid "Yellow"
 #~ msgstr "Amarelo"
+
 #~ msgid "Blue"
 #~ msgstr "Azul"
+
 #~ msgid "Fuchsia"
 #~ msgstr "Cor-de-rosa"
+
 #~ msgid "Aqua"
 #~ msgstr "Azul claro"
+
 #~ msgid "Money Green"
 #~ msgstr "Verde moeda"
+
 #~ msgid "Sky Blue"
 #~ msgstr "Azul céu"
+
 #~ msgid "Cream"
 #~ msgstr "Creme"
+
 #~ msgid "Med Gray"
 #~ msgstr "Cinza médio"
-#~ msgid ""
-#~ "Insert a text label (select and click in the main window where you want "
-#~ "the label)."
-#~ msgstr ""
-#~ "Insere um rótulo de texto (selecione e clique na janela principal onde "
-#~ "você deseja o rótulo)"
+
+#~ msgid "Insert a text label (select and click in the main window where you want the label)."
+#~ msgstr "Insere um rótulo de texto (selecione e clique na janela principal onde você deseja o rótulo)"
+
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Recorta e envia o texto selecionado para a área de transferência."
+
 #~ msgid "Open an animation file."
 #~ msgstr "Abrir um arquivo de animação."
 
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Versão "
+
 #~ msgid "Visible"
 #~ msgstr "Visivel"
+
 #~ msgid "Check to make the selected item visible in the coordinate system."
-#~ msgstr ""
-#~ "Se marcado, o item selecionado torna-se visível no sistema de coordenadas."
+#~ msgstr "Se marcado, o item selecionado torna-se visível no sistema de coordenadas."
+
 #~ msgid "Functions"
 #~ msgstr "Funções"
+
 #~ msgid "Tangents"
 #~ msgstr "Tangentes"
+
 #~ msgid "Point series"
 #~ msgstr "Série de Pontos"
+
 #~ msgid "Shades"
 #~ msgstr "Sombras"
+
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Não ocorreu nenhum erro. Você não deve ver esta mensagem."
+
 #~ msgid "Conversion error"
 #~ msgstr "Erro de conversão"
+
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Código de erro desconhecido. \n"
 #~ "Não podia encontrar a mensagem para este erro."
+
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr "Este erro não deve ocorrer. Relate, por favor, isto ao programador."
+
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "O tamanho máximo do texto foi alcançado."
+
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Erro de dialogo: %sh"
-#~ msgid "Unknown Graph data found while pasting clipboard data."
-#~ msgstr ""
-#~ "O Graph encontrou dados desconhecidos ao colar dados da área de "
-#~ "transferência."
 
+#~ msgid "Unknown Graph data found while pasting clipboard data."
+#~ msgstr "O Graph encontrou dados desconhecidos ao colar dados da área de transferência."
