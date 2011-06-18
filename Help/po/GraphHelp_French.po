@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-02-13 11:00Romance Standard Time\n"
+"POT-Creation-Date: 2011-06-18 17:09Romance Daylight Time\n"
 "PO-Revision-Date: 2009-09-22 19:41+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
@@ -2239,48 +2239,54 @@ msgid "It is possible to draw lines between the markers. The line will always be
 msgstr "Il est possible de tracer des lignes entre les marqueurs. La ligne sera toujours tracée entre les points dans l'ordre où ils apparaissent dans la grille. Vous pouvez choisir entre différents styles, couleurs et épaisseurs pour les lignes. Vous pouvez également choisir de ne pas tracer de ligne."
 
 #. InsertPointSeriesDialog.xml:98(guilabel) 
-msgid "Cubic splines"
+#, fuzzy
+msgid "1D cubic spline"
 msgstr "Splines cubiques"
 
 #. InsertPointSeriesDialog.xml:100(guilabel) 
+#, fuzzy
+msgid "2D cubic spline"
+msgstr "Splines cubiques"
+
+#. InsertPointSeriesDialog.xml:101(guilabel) 
 msgid "Half cosine"
 msgstr "\"Half cosine\""
 
 #. InsertPointSeriesDialog.xml:96(para) 
 #, fuzzy
-msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink> which is a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr "Vous pouvez choisir entre trois types d'interpolation : <placeholder-1/> tracera un segment entre les marqueurs. <placeholder-2/> tracera une courbe lissée joignant tous les points avec des polynômes du 3<superscript>ème</superscript> degré. <placeholder-3/> tracera une courbe de demi-cosinus entre les points, qui n'apparaîtra pas aussi lissée que les splines cubiques mais ne présentant pas de débordements excessifs comme les splines peuvent le faire."
 
-#. InsertPointSeriesDialog.xml:107(term) 
+#. InsertPointSeriesDialog.xml:108(term) 
 msgid "Labels"
 msgstr "Labels"
 
-#. InsertPointSeriesDialog.xml:110(guilabel) 
+#. InsertPointSeriesDialog.xml:111(guilabel) 
 msgid "Show coordinates"
 msgstr "Montrer les coordonnées"
 
-#. InsertPointSeriesDialog.xml:109(para) 
+#. InsertPointSeriesDialog.xml:110(para) 
 #, fuzzy
 msgid "Put a check in <placeholder-1/> to show Cartesian or polar coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
 msgstr "Validez l'option <placeholder-1/> pour afficher les coordonnées en chaque point. Vous pouvez utiliser le bouton <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> pour changer de police, et la boîte déroulante pour choisir d'afficher les labels au-dessus, en-dessous, à gauche ou à droite des points."
 
-#. InsertPointSeriesDialog.xml:118(term) 
+#. InsertPointSeriesDialog.xml:119(term) 
 msgid "Error bars"
 msgstr "Intervalles d'incertitude"
 
-#. InsertPointSeriesDialog.xml:124(guilabel) 
+#. InsertPointSeriesDialog.xml:125(guilabel) 
 msgid "Fixed"
 msgstr "Fixé "
 
-#. InsertPointSeriesDialog.xml:125(guilabel) 
+#. InsertPointSeriesDialog.xml:126(guilabel) 
 msgid "Relative"
 msgstr "Relatif "
 
-#. InsertPointSeriesDialog.xml:126(guilabel) 
+#. InsertPointSeriesDialog.xml:127(guilabel) 
 msgid "Custom"
 msgstr "Choisi :"
 
-#. InsertPointSeriesDialog.xml:120(para) 
+#. InsertPointSeriesDialog.xml:121(para) 
 msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are &plusmn;values. Custom Y-errors are also used to weight the points when creating trendlines."
 msgstr "Ici vous pouvez choisir d'afficher les intervalles d'incertitude verticalement ou horizontalement. Ils sont affichés sous forme de fins segments à chaque point de la série indiquant l'incertitude sur le point. Il y a trois manières d'indiquer la grandeur des l'intervalles d'incertitude : <placeholder-1/> est utilisé pour spécifier que l'incertitude sur tous les points est la même. <placeholder-2/> est utilisé pour spécifier l'incertitude comme un pourcentage des coordonnées de chaque point. <placeholder-3/> sera utilisé pour ajouter une colonne à la table dans laquelle vous pourrez spécifier une incertitude différente pour chaque point. Toutes les incertitudes sont des valeurs algébriques. Les intervalles d'incertitude en y sont également utilisés pour pondérer les points lors de la création de courbes d'ajustement."
 
@@ -3797,7 +3803,8 @@ msgid "It is not possible to differentiate a recursive function because the resu
 msgstr "Il n'est pas possible de dériver une fonction récursive car la fonction qui en résulterait serait infiniment grande."
 
 #. Errors.xml:373(term) 
-msgid "Error 79: Function cannot be differentiated."
+#, fuzzy
+msgid "Error 79: Function %s cannot be differentiated."
 msgstr "Erreur 79 : la fonction ne peut pas être dérivée."
 
 #. Errors.xml:375(para) 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-02-13 11:00Romance Standard Time\n"
+"POT-Creation-Date: 2011-06-18 17:09Romance Daylight Time\n"
 "PO-Revision-Date: 2009-09-28 18:01+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
@@ -2239,48 +2239,54 @@ msgid "It is possible to draw lines between the markers. The line will always be
 msgstr "Det er muligt at tegne linjestykker mellem markeringerne. Linjerne vil altid blive tegnet mellem punkterne i samme rækkefølge, som de fremgår af tabellen. Der er mulighed for at vælge udseende, farve og linjetykkelse. Du kan også vælge slet ikke at tegne nogen linje."
 
 #. InsertPointSeriesDialog.xml:98(guilabel) 
-msgid "Cubic splines"
+#, fuzzy
+msgid "1D cubic spline"
 msgstr "Cubic splines"
 
 #. InsertPointSeriesDialog.xml:100(guilabel) 
+#, fuzzy
+msgid "2D cubic spline"
+msgstr "Cubic splines"
+
+#. InsertPointSeriesDialog.xml:101(guilabel) 
 msgid "Half cosine"
 msgstr "Halve cosinuskurver"
 
 #. InsertPointSeriesDialog.xml:96(para) 
 #, fuzzy
-msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink> which is a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr "Man kan vælge mellem tre typer af interpolation: <placeholder-1/> tegner et linjestykke mellem markørerne. <placeholder-2/> tegner en glat, blød kurve, som består af tredjegradspolynomier, mellem markørerne. <placeholder-3/> tegner halve cosinuskurver mellem punkterne, hvilket kan få kurven til at se mindre blød ud end med cubic splines; men det vil til gengæld aldrig skyde for lavt eller for højt."
 
-#. InsertPointSeriesDialog.xml:107(term) 
+#. InsertPointSeriesDialog.xml:108(term) 
 msgid "Labels"
 msgstr "Etiketter"
 
-#. InsertPointSeriesDialog.xml:110(guilabel) 
+#. InsertPointSeriesDialog.xml:111(guilabel) 
 msgid "Show coordinates"
 msgstr "Vis koordinater"
 
-#. InsertPointSeriesDialog.xml:109(para) 
+#. InsertPointSeriesDialog.xml:110(para) 
 #, fuzzy
 msgid "Put a check in <placeholder-1/> to show Cartesian or polar coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
 msgstr "Marker <placeholder-1/> for at vise koordinatsæt ved hvert punkt i serien. Knappen <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> kan bruges til at ændre skrifttype, og rullemenuen kan bruges til at vælge, om teksterne skal vises over, under, til venstre eller til højre for punkterne."
 
-#. InsertPointSeriesDialog.xml:118(term) 
+#. InsertPointSeriesDialog.xml:119(term) 
 msgid "Error bars"
 msgstr "Usikkerhedssøjler"
 
-#. InsertPointSeriesDialog.xml:124(guilabel) 
+#. InsertPointSeriesDialog.xml:125(guilabel) 
 msgid "Fixed"
 msgstr "Fast"
 
-#. InsertPointSeriesDialog.xml:125(guilabel) 
+#. InsertPointSeriesDialog.xml:126(guilabel) 
 msgid "Relative"
 msgstr "Relativ"
 
-#. InsertPointSeriesDialog.xml:126(guilabel) 
+#. InsertPointSeriesDialog.xml:127(guilabel) 
 msgid "Custom"
 msgstr "Brugervalgt"
 
-#. InsertPointSeriesDialog.xml:120(para) 
+#. InsertPointSeriesDialog.xml:121(para) 
 msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are &plusmn;values. Custom Y-errors are also used to weight the points when creating trendlines."
 msgstr "Her kan du vælge, om der skal vises vandrette og/eller lodrette usikkerhedssøjler. De vises som tynde streger ved alle punkter i punktserien, og de viser, hvor stor usikkerheden er på det enkelte punkt. Der er tre måder, hvorpå man kan vælge usikkerhedssøjlernes størrelse: <placeholder-1/> giver alle punkterne den samme absolutte usikkerhed. <placeholder-2/> gør en vis procentdel af alle punkterne usikre. <placeholder-3/> opretter en ny kolonne i punktserien, hvor du selv kan indtaste usikkerheden for hvert punkt. Alle usikkerheder er &plusmn;-værdier. Brugerdefinerede Y-usikkerheder bruges også til at vægte punkterne, når der oprettes tendenslinjer."
 
@@ -3797,7 +3803,8 @@ msgid "It is not possible to differentiate a recursive function because the resu
 msgstr "Det er ikke muligt at differentiere en rekursiv funktion, fordi udtrykket for den afledede funktion vil fortsætte i det uendelige."
 
 #. Errors.xml:373(term) 
-msgid "Error 79: Function cannot be differentiated."
+#, fuzzy
+msgid "Error 79: Function %s cannot be differentiated."
 msgstr "Fejl 79: Funktionen kan ikke differentieres."
 
 #. Errors.xml:375(para) 
