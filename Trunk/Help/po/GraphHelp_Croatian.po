@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-02-13 11:00Romance Standard Time\n"
+"POT-Creation-Date: 2011-06-18 17:09Romance Daylight Time\n"
 "PO-Revision-Date: 2009-02-08 20:35+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team:  <LL@li.org>\n"
@@ -2264,48 +2264,54 @@ msgid "It is possible to draw lines between the markers. The line will always be
 msgstr "Između točaka možete umetnuti linije različitog stila, boje i debljine. Iscrtavat će se prema redoslijedu mreže. Naravno, možete odabrati i bez linija."
 
 #. InsertPointSeriesDialog.xml:98(guilabel) 
-msgid "Cubic splines"
+#, fuzzy
+msgid "1D cubic spline"
 msgstr "Kubna linija"
 
 #. InsertPointSeriesDialog.xml:100(guilabel) 
+#, fuzzy
+msgid "2D cubic spline"
+msgstr "Kubna linija"
+
+#. InsertPointSeriesDialog.xml:101(guilabel) 
 msgid "Half cosine"
 msgstr "Pola sinusoide"
 
 #. InsertPointSeriesDialog.xml:96(para) 
 #, fuzzy
-msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink> which is a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr "Raspoloživa su tri oblika interpolacije: Linearna, koja iscrtava ravne linije između oznaka, kubna, koja iscrtava lijepu glatku liniju povezujući sve točke polinomom 3<superscript>°</superscript> i <placeholder-3/> koja iscrtava polovicu kosinusa između točaka i koja nije tako glatka kao polinomna, ali nikad ne podbaci/prebaci kao ponekad ova."
 
-#. InsertPointSeriesDialog.xml:107(term) 
+#. InsertPointSeriesDialog.xml:108(term) 
 msgid "Labels"
 msgstr "Tekstne oznake vrijednosti"
 
-#. InsertPointSeriesDialog.xml:110(guilabel) 
+#. InsertPointSeriesDialog.xml:111(guilabel) 
 msgid "Show coordinates"
 msgstr "Prikaži  uz krivulju"
 
-#. InsertPointSeriesDialog.xml:109(para) 
+#. InsertPointSeriesDialog.xml:110(para) 
 #, fuzzy
 msgid "Put a check in <placeholder-1/> to show Cartesian or polar coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
 msgstr "Ako označite kvačicom mogućnost <placeholder-1/>, sve točke x- i y-koordinata će biti označene. Tipkom <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> mijenjate font, a iz padajućeg izbornika odabirete položaj oznaka: Gore, dolje, lijevo ili desno od točke."
 
-#. InsertPointSeriesDialog.xml:118(term) 
+#. InsertPointSeriesDialog.xml:119(term) 
 msgid "Error bars"
 msgstr "Traka grešaka"
 
-#. InsertPointSeriesDialog.xml:124(guilabel) 
+#. InsertPointSeriesDialog.xml:125(guilabel) 
 msgid "Fixed"
 msgstr "Fiksno"
 
-#. InsertPointSeriesDialog.xml:125(guilabel) 
+#. InsertPointSeriesDialog.xml:126(guilabel) 
 msgid "Relative"
 msgstr "Razmjer"
 
-#. InsertPointSeriesDialog.xml:126(guilabel) 
+#. InsertPointSeriesDialog.xml:127(guilabel) 
 msgid "Custom"
 msgstr "Prema želji"
 
-#. InsertPointSeriesDialog.xml:120(para) 
+#. InsertPointSeriesDialog.xml:121(para) 
 #, fuzzy
 msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are &plusmn;values. Custom Y-errors are also used to weight the points when creating trendlines."
 msgstr "Ovdje odabirete vodoravnu ili vertikalnu traku grešaka poznatu i kao traka neodređenosti. Ona se prikazuje za svaku točku serije označujući njenu neodređenost. Veličinu trake grešaka određujete na tri načina. <placeholder-2/> upotrijebite kada želite da sve točke imaju istu neodređenost. <placeholder-2/> određuje prikaz neodređenosti u postotku x- ili y-koordinate za svaku točku. Odabir <placeholder-3/>, dodaje kolonu u tablicu u kojoj možete za svaku točku navesti njenu neodređenost. Sve neodređenosti imaju +/- vrijednost."
@@ -3831,7 +3837,8 @@ msgid "It is not possible to differentiate a recursive function because the resu
 msgstr "Rezultat derivacije je beskonačan."
 
 #. Errors.xml:373(term) 
-msgid "Error 79: Function cannot be differentiated."
+#, fuzzy
+msgid "Error 79: Function %s cannot be differentiated."
 msgstr "Greška 79: Funkcija se ne može derivirati."
 
 #. Errors.xml:375(para) 

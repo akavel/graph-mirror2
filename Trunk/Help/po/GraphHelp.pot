@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-02-13 11:00Romance Standard Time\n"
+"POT-Creation-Date: 2011-06-18 17:13Romance Daylight Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: <LL@li.org>\n"
@@ -2210,46 +2210,50 @@ msgid "It is possible to draw lines between the markers. The line will always be
 msgstr ""
 
 #. InsertPointSeriesDialog.xml:98(guilabel) 
-msgid "Cubic splines"
+msgid "1D cubic spline"
 msgstr ""
 
 #. InsertPointSeriesDialog.xml:100(guilabel) 
+msgid "2D cubic spline"
+msgstr ""
+
+#. InsertPointSeriesDialog.xml:101(guilabel) 
 msgid "Half cosine"
 msgstr ""
 
 #. InsertPointSeriesDialog.xml:96(para) 
-msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink> which is a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:107(term) 
+#. InsertPointSeriesDialog.xml:108(term) 
 msgid "Labels"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:110(guilabel) 
+#. InsertPointSeriesDialog.xml:111(guilabel) 
 msgid "Show coordinates"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:109(para) 
+#. InsertPointSeriesDialog.xml:110(para) 
 msgid "Put a check in <placeholder-1/> to show Cartesian or polar coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:118(term) 
+#. InsertPointSeriesDialog.xml:119(term) 
 msgid "Error bars"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:124(guilabel) 
+#. InsertPointSeriesDialog.xml:125(guilabel) 
 msgid "Fixed"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:125(guilabel) 
+#. InsertPointSeriesDialog.xml:126(guilabel) 
 msgid "Relative"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:126(guilabel) 
+#. InsertPointSeriesDialog.xml:127(guilabel) 
 msgid "Custom"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:120(para) 
+#. InsertPointSeriesDialog.xml:121(para) 
 msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are &plusmn;values. Custom Y-errors are also used to weight the points when creating trendlines."
 msgstr ""
 
@@ -3746,7 +3750,7 @@ msgid "It is not possible to differentiate a recursive function because the resu
 msgstr ""
 
 #. Errors.xml:373(term) 
-msgid "Error 79: Function cannot be differentiated."
+msgid "Error 79: Function %s cannot be differentiated."
 msgstr ""
 
 #. Errors.xml:375(para) 
