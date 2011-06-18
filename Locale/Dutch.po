@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.0.1\n"
 "POT-Creation-Date: 2011-06-15 21:57\n"
-"PO-Revision-Date: 2007-08-19 15:07+0100\n"
+"PO-Revision-Date: 2011-06-18 07:44+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Etienne Goemaere <etienne.goemaere@pandora.be>\n"
 "MIME-Version: 1.0\n"
@@ -104,9 +104,8 @@ msgstr "Rotatie"
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_0..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_0..Hint
-#, fuzzy
 msgid "Show the label with no rotation."
-msgstr "Arceert het gebied onder de kromme."
+msgstr ""
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_90..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_90..Hint
@@ -125,9 +124,8 @@ msgstr ""
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
-#, fuzzy
 msgid "Specify the angle of rotation for the label."
-msgstr "Kies lettertype voor titel."
+msgstr ""
 
 #. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
@@ -265,9 +263,8 @@ msgid "Open..."
 msgstr "Open..."
 
 #. Form1..ActionManager..OpenAction("Open...")..Hint
-#, fuzzy
 msgid "Read a coordinate system from a file."
-msgstr "Laad functies en assenstel uit bestand."
+msgstr ""
 
 #. Form1..ActionManager..SaveAction("Save")..Caption
 msgid "Save"
@@ -382,9 +379,8 @@ msgid "Copy image"
 msgstr "Kopieer de figuur"
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Hint
-#, fuzzy
 msgid "Copy the shown coordinate system to the clipboard."
-msgstr "Kopieert  het getoonde assenstelsel naar het klembord."
+msgstr "Kopieert het getoonde assenstelsel naar het klembord."
 
 #. Form1..ActionManager..AxesAction("Axes...")..Caption
 msgid "Axes..."
@@ -574,9 +570,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Berekent de lengte langs de kromme tussen twee punten."
 
 #. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
 msgid "Integrate"
-msgstr "Internet"
+msgstr ""
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
 msgid "Calculate the definite integral over a given domain."
@@ -592,14 +587,12 @@ msgid "Evaluate or trace the selected function."
 msgstr "Evalueer of traceer de geselecteerde functie"
 
 #. Form1..ActionManager..TableAction("Table")..Caption
-#, fuzzy
 msgid "Table"
-msgstr "Tabel..."
+msgstr "Tabel"
 
 #. Form1..ActionManager..TableAction("Table")..Hint
-#, fuzzy
 msgid "Show an evaluation table."
-msgstr "Toon een waardentabel"
+msgstr "Toon een waardentabel."
 
 #. Form1..ActionManager..ContentsAction("Contents and index")..Caption
 msgid "Contents and index"
@@ -619,14 +612,12 @@ msgid "Show a list of built-in functions that can be used for graphing."
 msgstr "Geeft de lijst van functies die getekend kunnen worden."
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Caption
-#, fuzzy
 msgid "Graph web site"
-msgstr "Grafiek eigenschappen"
+msgstr ""
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
-#, fuzzy
 msgid "Open the default browser and show the Graph web site."
-msgstr "Opent de standaardbrowser en toont de homepage van het programma."
+msgstr "Opent de standaardbrowser en toont de homepage van Graph."
 
 #. Form1..ActionManager..UpdateAction("Check for update")..Caption
 msgid "Check for update"
@@ -674,7 +665,6 @@ msgid "Frequently Asked Questions"
 msgstr "Veel Gestelde Vragen"
 
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Hint
-#, fuzzy
 msgid "Show a list of frequently asked questions and their answers."
 msgstr "Toon een lijst van veel gestelde vragen en hun antwoorden."
 
@@ -685,7 +675,7 @@ msgstr "Voeg een label in..."
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
 #, fuzzy
 msgid "Insert a text label."
-msgstr "Voeg een label in"
+msgstr "Voeg een label in."
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -1284,7 +1274,7 @@ msgstr "Importeer puntenreeksen vanuit een gegevensbestand."
 #. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Caption
 #, fuzzy
 msgid "Export all to file..."
-msgstr "Exporteer naar bestand ..."
+msgstr "Exporteer naar bestand..."
 
 #. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Hint
 #, fuzzy
@@ -1358,14 +1348,12 @@ msgid "Select which kind of line to draw between the markers."
 msgstr "Selecteer de soort lijn te tekenen tussen de markeringen."
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "1D cubic spline"
-msgstr "Kubische boog"
+msgstr "1D kubische boog"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "2D cubic spline"
-msgstr "Kubische boog"
+msgstr "2D kubische boog"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Half cosine"
@@ -1460,9 +1448,8 @@ msgid "Error bars"
 msgstr "Foutstaafjes"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..Caption
-#, fuzzy
 msgid "X error amount"
-msgstr "x-fout staafje"
+msgstr ""
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..CheckBox3("Show x-bars")..Hint
 msgid "Show horizontal error bars."
@@ -1512,9 +1499,8 @@ msgid "Enter relative value in percent."
 msgstr "Geef de relatieve waarde in procent in."
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..Caption
-#, fuzzy
 msgid "Y error amount"
-msgstr "y-foutenstaafje"
+msgstr ""
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..CheckBox4("Show y-bars")..Hint
 msgid "Show vertical error bars."
@@ -1762,9 +1748,8 @@ msgid "Mark the border around the shading."
 msgstr "Duid arceringeinde aan met een lijn."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Caption
-#, fuzzy
 msgid "Mark border"
-msgstr "Markering"
+msgstr ""
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
@@ -1897,18 +1882,16 @@ msgid "Choose paper size to use."
 msgstr "Kies documentgrootte."
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Letter"
-msgstr "Links"
+msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Ledger"
 msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Legal"
-msgstr "Donkergroen"
+msgstr ""
 
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
@@ -2007,9 +1990,8 @@ msgid "The newest version as well as the source code are available at: %s"
 msgstr "De nieuwste versie en de broncode is beschikbaar op:"
 
 #. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
-#, fuzzy
 msgid "Email: %s"
-msgstr "E-mail:"
+msgstr "E-mail: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
@@ -2078,9 +2060,8 @@ msgid "Save the animation to a file."
 msgstr "Sla de animatie op in een bestand."
 
 #. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Caption
-#, fuzzy
 msgid "Save frame..."
-msgstr "Sla op als"
+msgstr ""
 
 #. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Hint
 #, fuzzy
@@ -2088,9 +2069,8 @@ msgid "Save the shown frame to an image file."
 msgstr "Slaat het getoonde assenstelsel op als een figuur."
 
 #. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")..Caption
-#, fuzzy
 msgid "Save all frames..."
-msgstr "Sla op als"
+msgstr ""
 
 #. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")....Hint
 msgid "Save all frames in the animation to image files. This will create as many files as there are frames in the animation."
@@ -2137,9 +2117,8 @@ msgid "Python interpreter"
 msgstr ""
 
 #. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
-#, fuzzy
 msgid "Clear"
-msgstr "Roomkleurig"
+msgstr ""
 
 #. Form3("Edit axes")..Caption
 msgid "Edit axes"
@@ -2274,9 +2253,8 @@ msgstr "Toon eenheden op geselecteerde as als breuk vermenigvuldigd met pi."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
-#, fuzzy
 msgid "Show as a multiple of π"
-msgstr "Toon als veelvoud van pi"
+msgstr "Toon als veelvoud van π"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 #. ParFuncFrame..ComboBox1....Items.Strings
@@ -2646,9 +2624,8 @@ msgid "Insert symbol (Ctrl+G)"
 msgstr "Voeg een symbool in (Ctrl+G)"
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
-#, fuzzy
 msgid "Insert object."
-msgstr "Voeg object in"
+msgstr "Voeg object in."
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
@@ -2768,9 +2745,8 @@ msgstr "Kies waar de cursor geplaatst moet worden als je de figuur aanklikt."
 
 #. AreaFrame..GridPanel1..Label3("Integral")..Caption
 #. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
 msgid "Integral"
-msgstr "Internet"
+msgstr ""
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2890,14 +2866,13 @@ msgstr "Fout"
 #. Indicates an error code, e.g. "Error 5"
 #, fuzzy
 msgid "Error %s"
-msgstr "Foutstaafjes"
+msgstr "Fout %s"
 
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Lengte"
 
 #. Shown in rotation dialog
-#, fuzzy
 msgid "Degrees"
 msgstr "Graden"
 
@@ -3112,9 +3087,8 @@ msgstr "Geen oplossing gevonden. Probeer een andere startwaarde of een ander mod
 msgid "No result found."
 msgstr ""
 
-#, fuzzy
 msgid "An accurate result cannot be found."
-msgstr "Een berekening resulteerde in een overflow."
+msgstr ""
 
 msgid "Internal error. Please notify the programmer with as much information as possible."
 msgstr "Interne fout. Licht de programmeur zo goed mogelijk in."
@@ -3244,14 +3218,12 @@ msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "Het lettertype \"%s\" bestaat niet. In de plaats wordt een standaardlettertype gebruikt."
 
 #. Description of grf file
-#, fuzzy
 msgid "Graph system"
-msgstr "Beweeg het assenstel"
+msgstr ""
 
 #. Menu item shown in OLE client to open a Graph system object in Graph
-#, fuzzy
 msgid "Open"
-msgstr "Open..."
+msgstr "Open"
 
 #. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
@@ -3290,7 +3262,6 @@ msgstr "Bestand niet gevonden"
 msgid "Error reading file"
 msgstr "Leesfout"
 
-#, fuzzy
 msgid "Printer error"
 msgstr "Printfout"
 
@@ -3370,9 +3341,8 @@ msgid "The derivative of the function is not defined at %s=%s"
 msgstr "De afgeleide van de functie is niet gedefinieerd in %s=%s"
 
 #. Caption of message box when trying to insert tangent at undefined coordinate
-#, fuzzy
 msgid "Coordinate not defined"
-msgstr "Coördinaat niet gedefinieerd."
+msgstr "Coördinaat niet gedefinieerd"
 
 msgid "Checking for newer version..."
 msgstr "Controleer op een nieuwere versie..."
@@ -3396,9 +3366,8 @@ msgstr "Raaklijn/normaal bewerken"
 msgid "Error processing file '%s' at line %s."
 msgstr "Uitvoeringsfout bestand '%s' in regel %s."
 
-#, fuzzy
 msgid "Edit text label"
-msgstr "Tekstlabel"
+msgstr ""
 
 msgid "The model needs some constants (starting with a $) for Graph to find."
 msgstr ""
@@ -3838,9 +3807,8 @@ msgid "Top margin:"
 msgstr "Bovenmarge:"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
-#, fuzzy
 msgid "Center the printing area on the page."
-msgstr "Voeg de plaats van de figuur op de pagina in."
+msgstr ""
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
@@ -3866,203 +3834,140 @@ msgstr "Voer procent van het orgineel in."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Oppervlakte"
-
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Oppervlakte of lengte langs de kromme voor een gegeven domein berekend met formule van Simpson"
-
 #~ msgid "Extremum"
 #~ msgstr "Extremum"
-
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Dit is de waarde van de tweede afgeleide van de functie voor de gegeven x-waarde."
-
 #~ msgid "Zoom in."
 #~ msgstr "Zoom in."
-
 #~ msgid "Zoom out."
 #~ msgstr "Zoom uit"
-
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Zoom naar een standaardassenstel."
-
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Berekent de oppervlakte onder een deel van de grafiek van de geselecteerde functie."
-
 #~ msgid "Go to home page"
 #~ msgstr "Ga naar de homepage"
-
 #~ msgid "About Graph..."
 #~ msgstr "Over Graph..."
-
 #~ msgid "All points"
 #~ msgstr "Alle punten"
-
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zoom tot alle punten zichtbaar zijn."
-
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoom in op de x-as alleen."
-
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoom uit op de x-as alleen. "
-
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoom in op de y-as alleen."
-
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoom uit op de y-as alleen."
-
 #~ msgid "Custom functions..."
 #~ msgstr "Basisfuncties..."
-
 #~ msgid "Mark end of range"
 #~ msgstr "Duid bereikeinde aan"
-
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Duid het begin van de arcering aan met een lijn."
-
 #~ msgid "Mark start of range"
 #~ msgstr "Duid bereikbegin aan"
-
 #~ msgid "Image information"
 #~ msgstr "Beeldinformatie"
-
 #~ msgid "Open the file %s."
 #~ msgstr "Open het bestand%s."
-
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle bestanden [*.*]|*.*"
-
 #~ msgid "Calculate area"
 #~ msgstr "Oppervlakteberekening"
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "De server antwoordde met het bericht '%s'"
-
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Fout antwoordprotocol"
-
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Suggesties voor toekomstige versies, foutmeldingen en opmerkingen zijn welkom op graph@padowan.dk."
-
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Kies om de figuur in het midden van blad te plaatsen."
-
 #~ msgid "Insert shade..."
 #~ msgstr "Arceer"
-
 #~ msgid "Shade"
 #~ msgstr "Arceer"
-
 #~ msgid "Black"
 #~ msgstr "Zwart"
-
 #~ msgid "Maroon"
 #~ msgstr "Bruin"
-
 #~ msgid "Green"
 #~ msgstr "Groen"
-
 #~ msgid "Olive"
 #~ msgstr "Olijfkleurig"
-
 #~ msgid "Navy"
 #~ msgstr "Marineblauw"
-
 #~ msgid "Purple"
 #~ msgstr "Purper"
-
 #~ msgid "Gray"
 #~ msgstr "Grijs"
-
 #~ msgid "Silver"
 #~ msgstr "Zilverkleurig"
-
 #~ msgid "Red"
 #~ msgstr "Rood"
-
 #~ msgid "Lime"
 #~ msgstr "Citroengeel"
-
 #~ msgid "Yellow"
 #~ msgstr "Geel"
-
 #~ msgid "Blue"
 #~ msgstr "Blauw"
-
 #~ msgid "Fuchsia"
 #~ msgstr "Fuchsia"
-
 #~ msgid "Aqua"
 #~ msgstr "Aqua"
-
 #~ msgid "Money Green"
 #~ msgstr "Muntgrijs"
-
 #~ msgid "Sky Blue"
 #~ msgstr "Hemels blauw"
-
 #~ msgid "Med Gray"
 #~ msgstr "Licht grijs"
-
 #~ msgid "Insert a text label (select and click in the main window where you want the label)."
 #~ msgstr "Voeg tekstlabel in (selecteer en klik in het basisscherm waar je het label wil."
-
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Knip de selectie naar het klembord"
-
 #~ msgid "Open an animation file."
 #~ msgstr "Open het animatiebestand."
 
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Versie"
-
 #~ msgid "Visible"
 #~ msgstr "Zichtbaar"
-
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr "Controleer of het geselecteerde zichtbaar gemaakt kan worden in het coördinatenstelsel."
-
 #~ msgid "Functions"
 #~ msgstr "Functies"
-
 #~ msgid "Tangents"
 #~ msgstr "Raaklijnen"
-
 #~ msgid "Point series"
 #~ msgstr "Puntenreeks"
-
 #~ msgid "Shades"
 #~ msgstr "Arceringen"
-
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Geen fouten. Deze boodschap zou niet te zien mogen zijn."
-
 #~ msgid "Right bracket missing."
 #~ msgstr "Rechterhaakje ontbreekt."
-
 #~ msgid "Conversion error"
 #~ msgstr "Conversiefout"
-
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Onbekende foutcode.\n"
 #~ "Kan geen foutboodschap hiervoor vinden."
-
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr "Deze fout zou niet mogen vorkomen. Rapporteer dit aan de programmeur."
-
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "De maximum tekstlengte werd bereikt."
-
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Dialoogfout: %sh"
-
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "Onbekende Graph-gegevens aangetroffen bij plakken van klembordgegevens."
-
 #~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
 #~ msgstr "Om acties toe te voegen  aan een toepassing, volstaat het slepen en loslaten van een Categorie of een Actie naar een bestaande werkbalk"
+

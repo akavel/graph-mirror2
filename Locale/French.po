@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-06-15 21:57\n"
-"PO-Revision-Date: 2008-08-31 00:18+0100\n"
-"Last-Translator: Ivan Johansen\n"
+"PO-Revision-Date: 2011-06-18 08:24+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -573,9 +573,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Calcule la longueur de l'arc entre deux points de la courbe."
 
 #. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
 msgid "Integrate"
-msgstr "Internet"
+msgstr ""
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
 msgid "Calculate the definite integral over a given domain."
@@ -591,9 +590,8 @@ msgid "Evaluate or trace the selected function."
 msgstr "Évalue les images ou parcourt la fonction sélectionnée."
 
 #. Form1..ActionManager..TableAction("Table")..Caption
-#, fuzzy
 msgid "Table"
-msgstr "Table..."
+msgstr "Table"
 
 #. Form1..ActionManager..TableAction("Table")..Hint
 #, fuzzy
@@ -618,9 +616,8 @@ msgid "Show a list of built-in functions that can be used for graphing."
 msgstr "Montre la liste des fonctions intégrées utilisables pour les tracés."
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Caption
-#, fuzzy
 msgid "Graph web site"
-msgstr "Propriétés du tracé"
+msgstr ""
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
 #, fuzzy
@@ -1896,19 +1893,16 @@ msgid "Choose paper size to use."
 msgstr "Choisit la taille du papier à utiliser."
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Letter"
-msgstr "Gauche"
+msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Ledger"
-msgstr "Gauche"
+msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Legal"
-msgstr "Turquoise"
+msgstr ""
 
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
@@ -2007,9 +2001,8 @@ msgid "The newest version as well as the source code are available at: %s"
 msgstr "La version la plus récente et le code source sont disponibles sur :"
 
 #. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
-#, fuzzy
 msgid "Email: %s"
-msgstr "Email :"
+msgstr "Email : %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
@@ -2097,9 +2090,8 @@ msgid "Save all frames in the animation to image files. This will create as many
 msgstr ""
 
 #. Form21("Placement")..Label1("Corner:")..Caption
-#, fuzzy
 msgid "Corner:"
-msgstr "Couleur :"
+msgstr ""
 
 #. Form21("Placement")..ComboBox1..Hint
 #, fuzzy
@@ -2137,9 +2129,8 @@ msgid "Python interpreter"
 msgstr ""
 
 #. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
-#, fuzzy
 msgid "Clear"
-msgstr "Écru"
+msgstr ""
 
 #. Form3("Edit axes")..Caption
 msgid "Edit axes"
@@ -2274,9 +2265,8 @@ msgstr "Place les marques en abscisses en fraction de pi. "
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
-#, fuzzy
 msgid "Show as a multiple of π"
-msgstr "Graduer en fractions de pi"
+msgstr "Graduer en fractions de π"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 #. ParFuncFrame..ComboBox1....Items.Strings
@@ -2646,9 +2636,8 @@ msgid "Insert symbol (Ctrl+G)"
 msgstr "Insérer un symbole (Ctrl+G) "
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
-#, fuzzy
 msgid "Insert object."
-msgstr "Insérer un objet"
+msgstr "Insérer un objet."
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
@@ -2768,9 +2757,8 @@ msgstr "Choisir où placer le curseur avec un clic de souris sur l'image."
 
 #. AreaFrame..GridPanel1..Label3("Integral")..Caption
 #. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
 msgid "Integral"
-msgstr "Internet"
+msgstr ""
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2897,9 +2885,8 @@ msgid "Length"
 msgstr "Longueur "
 
 #. Shown in rotation dialog
-#, fuzzy
 msgid "Degrees"
-msgstr "Degré"
+msgstr "Degrés"
 
 #. Name for labels shown in the function list if there is no text in the label.
 msgid "Label"
@@ -2914,19 +2901,17 @@ msgid "Axes"
 msgstr "Axes"
 
 #. Shortcut key
-#, fuzzy
 msgid "Ctrl"
-msgstr "Ctrl+"
+msgstr "Ctrl"
 
 #. Shortcut key
-#, fuzzy
 msgid "Alt"
-msgstr "Alt+"
+msgstr "Alt"
 
 #. Shortcut key
 #, fuzzy
 msgid "Shift"
-msgstr "Maj+"
+msgstr "Maj"
 
 #. Shortcut key
 msgid "Del"
@@ -3106,7 +3091,7 @@ msgstr "Erreur interne."
 
 #, fuzzy
 msgid "Function \"%s\" cannot be differentiated."
-msgstr "La fonction ne peut être dérivée."
+msgstr "La fonction \"%s\" ne peut pas être dérivée."
 
 msgid "Not further specified error occurred under calculation."
 msgstr "Une erreur non répertoriée s'est produite pendant le calcul."
@@ -3254,9 +3239,8 @@ msgid "Graph system"
 msgstr "Déplacer le repère"
 
 #. Menu item shown in OLE client to open a Graph system object in Graph
-#, fuzzy
 msgid "Open"
-msgstr "Ouvrir..."
+msgstr "Ouvrir"
 
 #. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
@@ -3872,289 +3856,200 @@ msgstr "Saisir un pourcentage de la taille d'origine."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Aire "
-
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Aire ou longueur de l'arc calculée pour l'intervalle donné avec la méhode de Simpson."
-
 #~ msgid "Extremum"
 #~ msgstr "Extremum"
-
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "C'est une valeur approchée de la dérivée seconde des fonctions pour la valeur donnée."
-
 #~ msgid "Zoom in."
 #~ msgstr "Agrandit."
-
 #~ msgid "Zoom out."
 #~ msgstr "Diminue."
-
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Utilise le repère standard."
-
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Calcule l'aire en-dessous de l'arc de la fonction sélectionnée."
-
 #~ msgid "Go to home page"
 #~ msgstr "Aller sur le site de Graph"
-
 #~ msgid "About Graph..."
 #~ msgstr "À propos de Graph..."
-
 #~ msgid "All points"
 #~ msgstr "Tous les points"
-
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Ajuste la taille de façon à voir tous les points."
-
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Agrandit  seulement dans le sens des abscisses."
-
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Diminue seulement dans le sens des abscisses."
-
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Agrandit  seulement dans le sens des ordonnées."
-
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Diminue seulement dans le sens des ordonnées."
-
 #~ msgid "Custom functions..."
 #~ msgstr "Fonctions personnelles..."
-
 #~ msgid "Mark end of range"
 #~ msgstr "Marquer fin de plage."
-
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Marque le début du remplissage avec un trait."
-
 #~ msgid "Mark start of range"
 #~ msgstr "Marquer début de plage"
-
 #~ msgid "Image information"
 #~ msgstr "Information sur l'image"
-
 #~ msgid "Open the file %s."
 #~ msgstr "Ouvre le fichier %s."
-
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Fichiers texte [*.txt; *.csv]|*.txt;*.csv|Tous les fichiers [*.*]|*.*"
-
 #~ msgid "Calculate area"
 #~ msgstr "Calcul de l'aire"
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Le serveur renvoie le message : '%s'"
-
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Erreur de réponse du protocole %s"
-
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Vous pouvez envoyer des suggestions pour les futures versions, rapporter les dysfonctionnements et faire vos commentaires à graph@padowan.dk."
-
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Choisir pour centrer l'image dans la page."
-
 #~ msgid "Insert shade..."
 #~ msgstr "Insérer un remplissage..."
-
 #~ msgid "Shade"
 #~ msgstr "Remplissage"
-
 #~ msgid "Black"
 #~ msgstr "Noir"
-
 #~ msgid "Maroon"
 #~ msgstr "Marron"
-
 #~ msgid "Green"
 #~ msgstr "Vert"
-
 #~ msgid "Olive"
 #~ msgstr "Olive"
-
 #~ msgid "Navy"
 #~ msgstr "Bleu marine"
-
 #~ msgid "Purple"
 #~ msgstr "Violet"
-
 #~ msgid "Gray"
 #~ msgstr "Gris"
-
 #~ msgid "Silver"
 #~ msgstr "Argent"
-
 #~ msgid "Red"
 #~ msgstr "Rouge"
-
 #~ msgid "Lime"
 #~ msgstr "Vert citron"
-
 #~ msgid "Yellow"
 #~ msgstr "Jaune"
-
 #~ msgid "Blue"
 #~ msgstr "Bleu"
-
 #~ msgid "Fuchsia"
 #~ msgstr "Fuchsia"
-
 #~ msgid "Aqua"
 #~ msgstr "Bleu vert"
-
 #~ msgid "White"
 #~ msgstr "Blanc"
-
 #~ msgid "Money Green"
 #~ msgstr "Vert pâle"
-
 #~ msgid "Sky Blue"
 #~ msgstr "Bleu ciel"
-
 #~ msgid "Med Gray"
 #~ msgstr "Gris moyen"
-
 #~ msgid "Insert a text label (select and click in the main window where you want the label)."
 #~ msgstr "Insère le texte d'un label (sélectionnez puis cliquez à l'emplacement souhaité du label)."
-
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Couper le texte selectionné vers le presse-papiers"
-
 #~ msgid "Open an animation file."
 #~ msgstr "Ouvre un fichier d'animation."
 
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Version "
-
 #~ msgid "Visible"
 #~ msgstr "Visible"
-
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr "Cocher pour rendre visible l'item sélectionné dans le repère."
-
 #~ msgid "Functions"
 #~ msgstr "Fonctions"
-
 #~ msgid "Tangents"
 #~ msgstr "Tangentes"
-
 #~ msgid "Point series"
 #~ msgstr "Séries de points"
-
 #~ msgid "Shades"
 #~ msgstr "Remplissages"
-
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Pas d'erreur. Vous ne devriez pas voir ce message."
-
 #~ msgid "Right bracket missing."
 #~ msgstr "Parenthèse droite manquante."
-
 #~ msgid "Conversion error"
 #~ msgstr "Erreur de conversion"
-
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Code d'erreur inconnu.\n"
 #~ "Pas de message d'erreur associé à ce code."
-
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr "Cette erreur ne devrait pas se produire. SVP informez le concepteur du programme."
-
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "La longueur maximale du teste a été atteinte."
-
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Erreur de dialogue : %sh"
-
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "Des données Graph inconnues ont été rencontrées en collant les données du presse-papiers."
-
 #~ msgid "Symbol '%s' not found."
 #~ msgstr "Symbole '%s' pas trouvé."
 
 #, fuzzy
 #~ msgid "Copy the animation to the clipboard."
 #~ msgstr "Copie le texte sélectionné dans le presse-papiers."
-
 #~ msgid "Edit options."
 #~ msgstr "Édite les options."
-
 #~ msgid "Insert a new point series."
 #~ msgstr "Insèe une nouvelle série de points."
-
 #~ msgid "Calculates area under the path."
 #~ msgstr "Calcule l'aire sous l'arc de courbe."
-
 #~ msgid "Select language to use."
 #~ msgstr "Choisir la langue à  utiliser."
-
 #~ msgid "Cut selected text to the clipboard."
 #~ msgstr "Coupe le texte sélectionné et le met dans le presse-papiers."
-
 #~ msgid "End of parenthesis missing."
 #~ msgstr "Une fermeture de parenthèses manque."
 
 #, fuzzy
 #~ msgid "Panel1"
 #~ msgstr "Annuler"
-
 #~ msgid "Text too long"
 #~ msgstr "Texte trop long"
-
 #~ msgid "Write a descriptive text to show in the legend, else the inequality will be used."
 #~ msgstr "Écrire une description pour mettre dans la légende, sinon c'est  l'inéquation qui est utilisée."
-
 #~ msgid "Description shown in the legend. If empty the function equation is used."
 #~ msgstr "Texte affiché dans la légende. Remplacé s'il est vide par l'équation de la fonction."
-
 #~ msgid "Actions"
 #~ msgstr "Actions"
-
 #~ msgid "A&ctions:"
 #~ msgstr "A&ctions :"
-
 #~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
 #~ msgstr "Pour ajouter des actions faites simplement glisser et déposer depuis les Catégories ou les Actions dans une barre existante."
-
 #~ msgid "Area..."
 #~ msgstr "Aire..."
-
 #~ msgid "Evaluate..."
 #~ msgstr "Évaluer..."
-
 #~ msgid "Are you sure you want to delete the function: %s"
 #~ msgstr "Êtes-vous sûr de vouloir supprimer cette fonction : %s"
-
 #~ msgid "Are you sure you want to delete the tangent: %s"
 #~ msgstr "Êtes-vous sûr de vouloir supprimer la tangente : %s"
-
 #~ msgid "Show some frequently asked questions and their answers."
 #~ msgstr "Liste des questions les plus courantes avec leurs réponses."
-
 #~ msgid "Double-click or select box and press space to change the color of the graph."
 #~ msgstr "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace pour changer la couleur du tracé."
-
 #~ msgid "Check to increase the end coordinate until interception."
 #~ msgstr "Augmentera l'abscisse de fin jusqu'à la prochaine ordonnée nulle."
-
 #~ msgid "Increase to interception"
 #~ msgstr "Croître jusqu'à couper"
-
 #~ msgid "Check to decrease start coordinate until interception."
 #~ msgstr "Diminuera l'abscisse de début jusqu'à la prochaine ordonnée nulle."
-
 #~ msgid "Decrease to interception"
 #~ msgstr "Décroître jusqu'à couper"
-
 #~ msgid "Double-click or select box and press space to change the background color of the coordinate system."
 #~ msgstr "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace pour pouvoir changer la couleur de fond du repère."
-
 #~ msgid "Double-click or select box and press space to change the color of the axes."
 #~ msgstr "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace pour pouvoir changer la couleur des axes du repère."
-
 #~ msgid "Double-click or select box and press space to change the color of the grids."
 #~ msgstr "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace pour pouvoir changer la couleur du quadrillage."
+
