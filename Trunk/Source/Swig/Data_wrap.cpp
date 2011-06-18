@@ -12504,8 +12504,8 @@ SWIGINTERN PyObject *_wrap_TBaseFuncType_Eval(PyObject *SWIGUNUSEDPARM(self), Py
   long double arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  boost::shared_ptr< TBaseFuncType > tempshared1 ;
-  boost::shared_ptr< TBaseFuncType > *smartarg1 = 0 ;
+  boost::shared_ptr< TBaseFuncType const > tempshared1 ;
+  boost::shared_ptr< TBaseFuncType const > *smartarg1 = 0 ;
   double val2 ;
   int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
@@ -12517,14 +12517,14 @@ SWIGINTERN PyObject *_wrap_TBaseFuncType_Eval(PyObject *SWIGUNUSEDPARM(self), Py
     int newmem = 0;
     res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TBaseFuncType_t, 0 |  0 , &newmem);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TBaseFuncType_Eval" "', argument " "1"" of type '" "TBaseFuncType *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TBaseFuncType_Eval" "', argument " "1"" of type '" "TBaseFuncType const *""'");
     }
     if (newmem & SWIG_CAST_NEW_MEMORY) {
-      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
-      delete reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
+      tempshared1 = *reinterpret_cast< boost::shared_ptr< const TBaseFuncType > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr< const TBaseFuncType > * >(argp1);
       arg1 = const_cast< TBaseFuncType * >(tempshared1.get());
     } else {
-      smartarg1 = reinterpret_cast< boost::shared_ptr<  TBaseFuncType > * >(argp1);
+      smartarg1 = reinterpret_cast< boost::shared_ptr< const TBaseFuncType > * >(argp1);
       arg1 = const_cast< TBaseFuncType * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
@@ -12533,7 +12533,15 @@ SWIGINTERN PyObject *_wrap_TBaseFuncType_Eval(PyObject *SWIGUNUSEDPARM(self), Py
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TBaseFuncType_Eval" "', argument " "2"" of type '" "long double""'");
   } 
   arg2 = static_cast< long double >(val2);
-  result = (arg1)->Eval(arg2);
+  try {
+    result = ((TBaseFuncType const *)arg1)->Eval(arg2);
+  }
+  catch(Func32::EFuncError &_e) {
+    PyErr_SetString(Python::PyEFuncError, ToString(GetErrorMsg(_e)).c_str());
+    SWIG_fail;
+    
+  }
+  
   {
     resultobj = Py_BuildValue("dd", (double)(&result)->x, (double)(&result)->y);
   }
@@ -13710,7 +13718,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_InsertPoint(PyObject *SWIGUNUSEDPARM(sel
   }
   {
     TPointSeriesPoint *p = &arg2;
-    if(!Python::FromTuple(obj1, p->First,p->Second))
+    if(!Python::FromTuple(obj1, p->First,p->Second,p->xError.Text,p->yError.Text))
     SWIG_fail;
   }
   ecode3 = SWIG_AsVal_int(obj2, &val3);
@@ -13825,7 +13833,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_ReplacePoint(PyObject *SWIGUNUSEDPARM(se
   }
   {
     TPointSeriesPoint *p = &arg2;
-    if(!Python::FromTuple(obj1, p->First,p->Second))
+    if(!Python::FromTuple(obj1, p->First,p->Second,p->xError.Text,p->yError.Text))
     SWIG_fail;
   }
   ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
@@ -13996,7 +14004,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_GetPoint(PyObject *SWIGUNUSEDPARM(self),
   
   {
     TPointSeriesPoint *p = result;
-    resultobj = Python::CreateTuple(p->First,p->Second);
+    resultobj = Python::CreateTuple(p->First,p->Second,p->xError.Text,p->yError.Text);
   }
   return resultobj;
 fail:
@@ -18985,6 +18993,7 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "iaLinear",SWIG_From_int(static_cast< int >(iaLinear)));
   SWIG_Python_SetConstant(d, "iaCubicSpline",SWIG_From_int(static_cast< int >(iaCubicSpline)));
   SWIG_Python_SetConstant(d, "iaHalfCosine",SWIG_From_int(static_cast< int >(iaHalfCosine)));
+  SWIG_Python_SetConstant(d, "iaCubicSpline2",SWIG_From_int(static_cast< int >(iaCubicSpline2)));
   SWIG_Python_SetConstant(d, "ptCartesian",SWIG_From_int(static_cast< int >(ptCartesian)));
   SWIG_Python_SetConstant(d, "ptPolar",SWIG_From_int(static_cast< int >(ptPolar)));
   SWIG_Python_SetConstant(d, "lpAbove",SWIG_From_int(static_cast< int >(Graph::lpAbove)));

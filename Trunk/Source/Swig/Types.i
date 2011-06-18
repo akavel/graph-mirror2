@@ -105,7 +105,7 @@
 %}
 %enddef
 
-TUPLE(TPointSeriesPoint, p->First, p->Second)
+TUPLE(TPointSeriesPoint, p->First, p->Second, p->xError.Text, p->yError.Text)
 TUPLE(Func32::TDblPoint, p->x, p->y)
 TUPLE(TDefaultData, p->Style, p->Color, p->Size)
 

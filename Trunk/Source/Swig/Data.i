@@ -166,7 +166,7 @@ public:
   TDrawType DrawType;
 
   boost::shared_ptr<TBaseFuncType> MakeDifFunc();
-  Func32::TCoord<long double> Eval(long double t);
+  Func32::TCoord<long double> Eval(long double t) const throw(Func32::EFuncError);
   long double CalcArea(long double From, long double To) const throw(Func32::EFuncError);
 };
 
@@ -224,7 +224,7 @@ public:
 };
 
 enum TErrorBarType {ebtNone, ebtFixed, ebtRelative, ebtCustom};
-enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine};
+enum TInterpolationAlgorithm {iaLinear, iaCubicSpline, iaHalfCosine, iaCubicSpline2};
 enum TPointType {ptCartesian, ptPolar};
 namespace Graph
 {

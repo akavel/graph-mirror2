@@ -531,6 +531,7 @@ ebtCustom = _Data.ebtCustom
 iaLinear = _Data.iaLinear
 iaCubicSpline = _Data.iaCubicSpline
 iaHalfCosine = _Data.iaHalfCosine
+iaCubicSpline2 = _Data.iaCubicSpline2
 ptCartesian = _Data.ptCartesian
 ptPolar = _Data.ptPolar
 lpAbove = _Data.lpAbove
