@@ -15,6 +15,7 @@
 #pragma link "LineSelect"
 #pragma link "MyEdit"
 #pragma link "ExtColorBox"
+#pragma link "GridPanelEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)

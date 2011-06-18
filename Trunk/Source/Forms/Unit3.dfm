@@ -35,10 +35,6 @@ object Form3: TForm3
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'x-axis'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GridPanel1: TGridPanelEx
         Left = 0
         Top = 0
@@ -323,7 +319,7 @@ object Form3: TForm3
             Top = 0
             Width = 48
             Height = 32
-            Hint =
+            Hint = 
               'Show the label at the right side of the graphing area, above the' +
               ' x-axis.'
             Align = alLeft
@@ -366,11 +362,12 @@ object Form3: TForm3
             Left = 0
             Top = 0
             Width = 102
-            Height = 13
+            Height = 32
             Align = alLeft
             Caption = 'The x-axis cross at y='
             FocusControl = Edit6
             Layout = tlCenter
+            ExplicitHeight = 13
           end
           object Edit6: TMyEdit
             AlignWithMargins = True
@@ -719,7 +716,7 @@ object Form3: TForm3
             Top = 0
             Width = 48
             Height = 32
-            Hint =
+            Hint = 
               'Show the label at the top of the graphing area, to the right of ' +
               'the y-axis.'
             Align = alLeft
@@ -748,7 +745,7 @@ object Form3: TForm3
           Left = 173
           Top = 32
           Width = 219
-          Height = 31
+          Height = 32
           Anchors = []
           BevelOuter = bvNone
           TabOrder = 7
@@ -756,7 +753,7 @@ object Form3: TForm3
             Left = 0
             Top = 0
             Width = 102
-            Height = 31
+            Height = 32
             Align = alLeft
             Caption = 'The y-axis cross at x='
             FocusControl = Edit12
@@ -768,7 +765,7 @@ object Form3: TForm3
             Left = 105
             Top = 5
             Width = 114
-            Height = 20
+            Height = 21
             Hint = 'The y-axis will intersect with the x-axis at this value.'
             Margins.Top = 5
             Margins.Right = 0
@@ -777,7 +774,6 @@ object Form3: TForm3
             ParentShowHint = False
             ShowHint = True
             TabOrder = 0
-            ExplicitHeight = 21
           end
         end
         object CheckBox8: TCheckBoxEx
@@ -827,10 +823,6 @@ object Form3: TForm3
     object TabSheet3: TTabSheet
       Caption = 'Settings'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         396
         185)
@@ -857,7 +849,7 @@ object Form3: TForm3
         Top = 64
         Width = 116
         Height = 73
-        Hint =
+        Hint = 
           'Choose if you want to show the axes, and if you want to show the' +
           'm crossed or at the left and bottom of the image.'
         Anchors = [akTop, akRight]
@@ -875,7 +867,7 @@ object Form3: TForm3
         Top = 64
         Width = 97
         Height = 57
-        Hint =
+        Hint = 
           'Choose if trigonometric functions should calculate in radians or' +
           ' degrees.'
         Anchors = [akTop, akRight]
@@ -937,7 +929,7 @@ object Form3: TForm3
         Top = 40
         Width = 170
         Height = 17
-        Hint =
+        Hint = 
           'Check this to use complex numbers for calculations. Notice that ' +
           'this will slow graphing down.'
         Anchors = [akLeft, akTop, akRight]
