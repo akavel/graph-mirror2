@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2011-06-15 21:57\n"
-"PO-Revision-Date: 2007-08-19 15:01+0100\n"
+"PO-Revision-Date: 2011-06-18 08:18+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Frank Hüttemeister & Michael Bach Ipsen <deutsch@padowan.dk>\n"
 "MIME-Version: 1.0\n"
@@ -573,9 +573,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Die Länge eines Kurvenstücks zwischen zwei Punkten berechnen."
 
 #. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
 msgid "Integrate"
-msgstr "Internet"
+msgstr ""
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
 msgid "Calculate the definite integral over a given domain."
@@ -591,9 +590,8 @@ msgid "Evaluate or trace the selected function."
 msgstr "Funktionswerte der gewählten Funktion berechnen oder deren Graph verfolgen."
 
 #. Form1..ActionManager..TableAction("Table")..Caption
-#, fuzzy
 msgid "Table"
-msgstr "Tabelle..."
+msgstr "Tabelle"
 
 #. Form1..ActionManager..TableAction("Table")..Hint
 #, fuzzy
@@ -618,9 +616,8 @@ msgid "Show a list of built-in functions that can be used for graphing."
 msgstr "Liste verwendbarer mathematischer Funktionen (sin, cos, log usw.)."
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Caption
-#, fuzzy
 msgid "Graph web site"
-msgstr "Eigenschaften des Graphen"
+msgstr ""
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
 #, fuzzy
@@ -1896,18 +1893,16 @@ msgid "Choose paper size to use."
 msgstr "Wählen Sie die zu benutzende Papiergröße."
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Letter"
-msgstr "Links"
+msgstr "Letter"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Ledger"
-msgstr ""
+msgstr "Ledger"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Legal"
-msgstr "Aquamarin"
+msgstr "Legal"
 
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
@@ -2006,9 +2001,8 @@ msgid "The newest version as well as the source code are available at: %s"
 msgstr "Sowohl die neueste Version als auch den Quellcode finden Sie auf:"
 
 #. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
-#, fuzzy
 msgid "Email: %s"
-msgstr "E-Mail:"
+msgstr "E-Mail: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
@@ -2101,7 +2095,7 @@ msgstr ""
 #. Form21("Placement")..Label1("Corner:")..Caption
 #, fuzzy
 msgid "Corner:"
-msgstr "Farbe:"
+msgstr "Ecke:"
 
 #. Form21("Placement")..ComboBox1..Hint
 #, fuzzy
@@ -2139,9 +2133,8 @@ msgid "Python interpreter"
 msgstr ""
 
 #. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
-#, fuzzy
 msgid "Clear"
-msgstr "Beige"
+msgstr ""
 
 #. Form3("Edit axes")..Caption
 msgid "Edit axes"
@@ -2276,9 +2269,8 @@ msgstr "Skalenteilung als Bruchteile bzw. Vielfaches von Pi anzeigen."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
-#, fuzzy
 msgid "Show as a multiple of π"
-msgstr "Als Vielfaches von Pi anzeigen"
+msgstr "Als Vielfaches von π anzeigen"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 #. ParFuncFrame..ComboBox1....Items.Strings
@@ -2648,9 +2640,8 @@ msgid "Insert symbol (Ctrl+G)"
 msgstr "Zeichen einfügen (Strg+G)"
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
-#, fuzzy
 msgid "Insert object."
-msgstr "Objekt einfügen..."
+msgstr "Objekt einfügen."
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
@@ -2770,9 +2761,8 @@ msgstr "Durch Klicken können Sie den Cursor im Koordinatensystem platzieren."
 
 #. AreaFrame..GridPanel1..Label3("Integral")..Caption
 #. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
 msgid "Integral"
-msgstr "Internet"
+msgstr ""
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2890,9 +2880,8 @@ msgid "Error"
 msgstr "Fehler"
 
 #. Indicates an error code, e.g. "Error 5"
-#, fuzzy
 msgid "Error %s"
-msgstr "Fehlerbalken"
+msgstr "Fehler %s"
 
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
@@ -2916,19 +2905,17 @@ msgid "Axes"
 msgstr "Achsen"
 
 #. Shortcut key
-#, fuzzy
 msgid "Ctrl"
-msgstr "Strg+"
+msgstr "Strg"
 
 #. Shortcut key
-#, fuzzy
 msgid "Alt"
-msgstr "Alt+"
+msgstr "Alt"
 
 #. Shortcut key
 #, fuzzy
 msgid "Shift"
-msgstr "Umschalt+"
+msgstr "Umschalt"
 
 #. Shortcut key
 msgid "Del"
@@ -2987,7 +2974,7 @@ msgstr "Bei der Berechnung der Potenzfunktion trat ein Fehler auf."
 
 #, fuzzy
 msgid "Tangent to pi/2+n*pi (90+n180 in degrees) is undefined."
-msgstr "Tangente zu 90°+p180° ist nicht definiert."
+msgstr "Tangente zu pi/2+n*pi (90+n180 in Grad) ist nicht definiert."
 
 msgid "Fact can only be calculated for positive integers."
 msgstr "Die Fakultät kann nur für positive Zahlen berechnet werden."
@@ -3402,9 +3389,8 @@ msgstr "Tangente/Normale bearbeiten."
 msgid "Error processing file '%s' at line %s."
 msgstr "Fehler in Datei '%s' in der Zeile %s."
 
-#, fuzzy
 msgid "Edit text label"
-msgstr "Textfeld"
+msgstr "Textfeld bearbeiten"
 
 msgid "The model needs some constants (starting with a $) for Graph to find."
 msgstr ""
@@ -3876,144 +3862,98 @@ msgstr "Geben die den Prozentssatz zur Originalgröße ein."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Fläche"
-
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Fläche oder Kurvenlänge des gegebenen Intervalls, bestimmt mit der Simpson'schen Regel (Keplersche Fassregel)"
-
 #~ msgid "Extremum"
 #~ msgstr "Extremwert"
-
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Dies ist die zweite Ableitung der Funktion für den eingegebenen Wert."
-
 #~ msgid "Zoom in."
 #~ msgstr "Vergrößern"
-
 #~ msgid "Zoom out."
 #~ msgstr "Verkleinern"
-
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Auf Standardkoordinaten zoomen."
-
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Den Bereich unter dem Kurvenstück der gewählten Funktion berechnen."
-
 #~ msgid "Go to home page"
 #~ msgstr "Die Graph-Homepage besuchen"
-
 #~ msgid "About Graph..."
 #~ msgstr "Über Graph..."
-
 #~ msgid "All points"
 #~ msgstr "Alle Punkte"
-
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zoomen, so dass alle Punkte sichtbar sind."
-
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Nur die X-Achse vergrößern."
-
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Nur die X-Achse verkleinern."
-
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Nur die Y-Achse vergrößern."
-
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Nur die Y-Achse verkleinern."
-
 #~ msgid "Custom functions..."
 #~ msgstr "Benutzerdefinierte Funktionen..."
-
 #~ msgid "Mark end of range"
 #~ msgstr "Bereichsende markieren"
-
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Markieren Sie den Anfang der Schraffur mit einer Linie."
-
 #~ msgid "Mark start of range"
 #~ msgstr "Bereichsanfang markieren"
-
 #~ msgid "Image information"
 #~ msgstr "Bildinformationen"
-
 #~ msgid "Open the file %s."
 #~ msgstr "Öffne die Datei %s."
-
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Textdateien [*.txt; *.csv]|*.txt;*.csv|Alle Dateien [*.*]|*.*"
-
 #~ msgid "Calculate area"
 #~ msgstr "Fläche berechnen"
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Der Server hat mit der Meldung '%s' geantwortet."
-
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokollantwortfehler %s"
-
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Vorschläge für zukünftige Versionen, Fehlermeldungen und Kommentare senden Sie bitte an deutsch@padowan.dk."
-
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Hiermit plazieren Sie das Bild in der Seitenmitte."
-
 #~ msgid "Insert shade..."
 #~ msgstr "Schraffur einfügen..."
-
 #~ msgid "Shade"
 #~ msgstr "Schraffur"
-
 #~ msgid "Black"
 #~ msgstr "Schwarz"
-
 #~ msgid "Maroon"
 #~ msgstr "Marone"
-
 #~ msgid "Green"
 #~ msgstr "Hellgrün"
-
 #~ msgid "Olive"
 #~ msgstr "Chamois"
-
 #~ msgid "Navy"
 #~ msgstr "Marine"
-
 #~ msgid "Purple"
 #~ msgstr "Lila"
-
 #~ msgid "Gray"
 #~ msgstr "Grau"
-
 #~ msgid "Silver"
 #~ msgstr "Silber"
-
 #~ msgid "Red"
 #~ msgstr "Rot"
-
 #~ msgid "Lime"
 #~ msgstr "Limette"
-
 #~ msgid "Yellow"
 #~ msgstr "Gelb"
-
 #~ msgid "Blue"
 #~ msgstr "Blau"
-
 #~ msgid "Fuchsia"
 #~ msgstr "Pink"
-
 #~ msgid "Aqua"
 #~ msgstr "Zyan"
-
 #~ msgid "White"
 #~ msgstr "Weiß"
-
 #~ msgid "Money Green"
 #~ msgstr "Dollargrün"
-
 #~ msgid "Sky Blue"
 #~ msgstr "Azur"
-
 #~ msgid "Med Gray"
 #~ msgstr "Hellgrau"
+

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2011-06-15 21:57\n"
-"PO-Revision-Date: 2009-10-02 17:04+0100\n"
+"PO-Revision-Date: 2011-06-17 18:33+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 #. Form1..Recent1..Hint
 #. Hint for recent file menu items
 msgid "Open file: %s"
-msgstr "Åbn filen %s."
+msgstr "Åbn fil: %s"
 
 #. Form1..PopupMenu1..Tree_ShowInLegend("Show in legend")..Caption
 msgid "Show in legend"
@@ -554,13 +554,12 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Beregn buelængden mellem de to angivne punkter på kurven."
 
 #. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
 msgid "Integrate"
-msgstr "Internet"
+msgstr "Integrer"
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
 msgid "Calculate the definite integral over a given domain."
-msgstr ""
+msgstr "Beregn det bestemte integrale over et givet interval."
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -572,9 +571,8 @@ msgid "Evaluate or trace the selected function."
 msgstr "Evaluer en funktion ved indtastet koordinat eller med musen."
 
 #. Form1..ActionManager..TableAction("Table")..Caption
-#, fuzzy
 msgid "Table"
-msgstr "Tabel..."
+msgstr "Tabel"
 
 #. Form1..ActionManager..TableAction("Table")..Hint
 msgid "Show an evaluation table."
@@ -601,9 +599,8 @@ msgid "Graph web site"
 msgstr "Graphs hjemmeside"
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
-#, fuzzy
 msgid "Open the default browser and show the Graph web site."
-msgstr "Åbn programmets hjemmeside i standardbrowseren."
+msgstr "Åbn Graphs hjemmeside i standardbrowseren."
 
 #. Form1..ActionManager..UpdateAction("Check for update")..Caption
 msgid "Check for update"
@@ -726,9 +723,8 @@ msgid "Insert a new equation or inequality."
 msgstr "Indsæt en ny funktion eller ulighed."
 
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Caption
-#, fuzzy
 msgid "Custom functions/constants..."
-msgstr "Brugerdefinerede funktioner/konstanter"
+msgstr "Brugerdefinerede funktioner/konstanter..."
 
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Hint
 msgid "Create custom functions and constants for use in graphs."
@@ -760,11 +756,11 @@ msgstr "Importer punktserier fra en datafil."
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Caption
 msgid "Scripting engine dokumentation"
-msgstr ""
+msgstr "Scripting engine-dokumentation"
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Hint
 msgid "Show dokumentation for scripting engine and plugin system."
-msgstr ""
+msgstr "Vis dokumentation for scripting engine og plugin-system."
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -1325,14 +1321,12 @@ msgid "Select which kind of line to draw between the markers."
 msgstr "Vælg hvilken type linje, der skal tegnes mellem markørerne."
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "1D cubic spline"
-msgstr "Cubic splines"
+msgstr "1D cubic spline"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "2D cubic spline"
-msgstr "Cubic splines"
+msgstr "2D cubic spline"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Half cosine"
@@ -1715,14 +1709,12 @@ msgid "Select color used for shading."
 msgstr "Vælg farve til skraveringen."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Hint
-#, fuzzy
 msgid "Mark the border around the shading."
-msgstr "Marker slutningen på skraveringen med en linje."
+msgstr "Marker rammen omkring skraveringen."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Caption
-#, fuzzy
 msgid "Mark border"
-msgstr "Markering"
+msgstr "Marker ramme"
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
@@ -1946,9 +1938,8 @@ msgid "Build %s"
 msgstr "Underversion %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
-#, fuzzy
 msgid "This is free software, and you are welcome to redistribute it under the terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please send bug reports and suggestions to the programmer."
-msgstr "Dette er frit software, og du er velkommen til at videredistribuere det under de rettigheder og betingelser, som findes i GNU General Public License. Fejl og mangler bedes rapporteret til programmøren."
+msgstr "Dette er fri software, og du er velkommen til at videredistribuere det under betingelserne i <a href=\"%s\">GNU General Public License</a> version 2. Fejl og mangler bedes rapporteret til programmøren."
 
 #. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
 msgid "The newest version as well as the source code are available at: %s"
@@ -2211,9 +2202,8 @@ msgstr "Viser enheder på akserne som brøker ganget med pi."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
-#, fuzzy
 msgid "Show as a multiple of π"
-msgstr "Vis som brøk gange pi"
+msgstr "Vis som brøk gange π"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 #. ParFuncFrame..ComboBox1....Items.Strings
@@ -2701,9 +2691,8 @@ msgstr "Vælg hvor markøren skal placeres når der klikkes på billedet."
 
 #. AreaFrame..GridPanel1..Label3("Integral")..Caption
 #. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
 msgid "Integral"
-msgstr "Internet"
+msgstr "Integrale"
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2816,16 +2805,14 @@ msgid "Error"
 msgstr "Fejl"
 
 #. Indicates an error code, e.g. "Error 5"
-#, fuzzy
 msgid "Error %s"
-msgstr "Usikkerhedssøjler"
+msgstr "Fejl %s"
 
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Længde"
 
 #. Shown in rotation dialog
-#, fuzzy
 msgid "Degrees"
 msgstr "Grader"
 
@@ -2957,7 +2944,7 @@ msgid "Overflow: A function returned a value too large to handle."
 msgstr "Dataoverløb: En funktion returnerede en værdi, som er for stor."
 
 msgid "A plugin function failed: %s"
-msgstr ""
+msgstr "Fejl i plugin-funktion: %s"
 
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Uventet operator. Operatoren '%s' kan ikke placeres her."
@@ -3022,9 +3009,8 @@ msgstr "Rekursiv funktion kan ikke differentieres."
 msgid "Internal error."
 msgstr "Intern fejl."
 
-#, fuzzy
 msgid "Function \"%s\" cannot be differentiated."
-msgstr "Funktionen kan ikke differentieres."
+msgstr "Funktionen \"%s\" kan ikke differentieres."
 
 msgid "Not further specified error occurred under calculation."
 msgstr "Fejl under beregning."
@@ -3033,11 +3019,10 @@ msgid "No solution found. Try another guess or another model."
 msgstr "Ingen løsning fundet. Prøv et andet gæt eller en anden model."
 
 msgid "No result found."
-msgstr ""
+msgstr "Intet resultat fundet."
 
-#, fuzzy
 msgid "An accurate result cannot be found."
-msgstr "En beregning resulterede i dataoverløb."
+msgstr "Et nøjagtigt resultat kan ikke beregnes."
 
 msgid "Internal error. Please notify the programmer with as much information as possible."
 msgstr "Intern fejl. Vær venlig at kontakte programmøren med så megen information som muligt."
@@ -3214,7 +3199,7 @@ msgid "Printer error"
 msgstr "Printerfejl"
 
 msgid "Invalid use of infinity. Infinity cannot be used here."
-msgstr ""
+msgstr "Ugyldig brug af uendelig. Uendelig kan ikke bruges her."
 
 msgid "Confirm delete"
 msgstr "Bekræft sletning"
@@ -3228,7 +3213,7 @@ msgstr "Graph filer [*.grf]|*.grf|Alle filer [*.*]|*.*"
 
 #. Import from file dialog
 msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
-msgstr ""
+msgstr "CSV (semikolonsepareret) [*.csv]|*.csv|CSV (kommasepareret) [*.csv]|*.csv|Text (tabulatorsepareret) [*.txt]|*.txt|Text (mellemrumssepareret)|*.txt|Alle filer [*.*]|*.*"
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "Er du sikker på at du vil slette modellen: %s?"
@@ -3298,9 +3283,8 @@ msgstr "Søger efter nyere version..."
 msgid "Abort printing?"
 msgstr "Afbryd udskrivning?"
 
-#, fuzzy
 msgid "Calculate definite integral"
-msgstr "Beregn tabel"
+msgstr "Beregn det bestemte integrale"
 
 msgid "Calculate length of path"
 msgstr "Beregn buelængde"
@@ -3354,25 +3338,20 @@ msgstr "Du skal markere en funktion."
 msgid "New version of Graph available"
 msgstr "Ny version af Graph tilgængelig"
 
-#, fuzzy
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
 "\n"
 "Would you like to visit the download page?"
 msgstr ""
 "Graph %s kan nu downloades fra www.padowan.dk\n"
-"med disse ændringer siden sidste version:\n"
 "\n"
-"%s\n"
-"\n"
-"Ønsker du at åbne hjemmesiden for at opgradere?"
+"Ønsker du at åbne download-hjemmesiden?"
 
 msgid "No new version"
 msgstr "Ingen ny version"
 
-#, fuzzy
 msgid "You are already using the most recent version of Graph."
-msgstr "Du anvender allerede den nyeste version af programmet."
+msgstr "Du anvender allerede den nyeste version af Graph."
 
 msgid ""
 "Cannot connect to server www.padowan.dk.\n"
@@ -3386,11 +3365,10 @@ msgid "Socket error %s"
 msgstr "Forbindelsesfejl %s"
 
 msgid "Definite integral, or signed area between function and x-axis, for the given domain range."
-msgstr ""
+msgstr "Bestemt integrale eller areal mellem funktionsgraf og x-akse for det givne interval."
 
-#, fuzzy
 msgid "Length of path along the curve calculated for the given range."
-msgstr "dy/dx evalueret for den angivne t-værdi."
+msgstr "Buelængde for funktionsgrafen over et givet interval."
 
 msgid ""
 "The file cannot be opened by this version of the program.\n"
@@ -3773,87 +3751,60 @@ msgstr "Indtast procentdel af oprindelig størrelse."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Areal"
-
 #~ msgid "Calculate the area under the path of the selected function."
 #~ msgstr "Beregn arealet under grafen for den markerede funktion."
-
 #~ msgid "About Graph..."
 #~ msgstr "Om Graph..."
-
 #~ msgid "Custom functions..."
 #~ msgstr "Brugerdefinerede funktioner..."
-
 #~ msgid "Insert an OLE object such as a drawing or an equation."
 #~ msgstr "Indsæt et OLE-objekt, f.eks. en tegning eller en ligning."
-
 #~ msgid "Mark end of range"
 #~ msgstr "Marker slutning"
-
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Marker starten af skraveringen med en linje."
-
 #~ msgid "Mark start of range"
 #~ msgstr "Marker start"
-
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Areal eller buelængde beregnet for det angivne interval ved brug af Simpsons formel."
-
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle filer [*.*]|*.*"
-
 #~ msgid "Calculate area"
 #~ msgstr "Beregn areal"
-
 #~ msgid "Extremum"
 #~ msgstr "Ekstremum"
-
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Funktionens anden afledte evalueret for den indtastede værdi."
-
 #~ msgid "Zoom in."
 #~ msgstr "Zoom ind."
-
 #~ msgid "Zoom out."
 #~ msgstr "Zoom ud."
-
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Zoom tilbage til standardindstillingerne."
-
 #~ msgid "Go to home page"
 #~ msgstr "Vis hjemmeside"
-
 #~ msgid "All points"
 #~ msgstr "Alle punkter"
-
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zoom så meget at alle punkter er synlige."
-
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoom kun ind på x-aksen."
-
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoom kun ud på x-aksen."
-
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoom kun ind på y-aksen."
-
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoom kun ud på y-aksen."
-
 #~ msgid "Image information"
 #~ msgstr "Billedinformation"
-
 #~ msgid "Open the file %s."
 #~ msgstr "Åbner filen %s."
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Serveren svarede med beskeden '%s'"
-
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokolfejl %s"
-
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Du kan sende forslag til forbedringer, fejlrapporter og kommentarer til graph@padowan.dk."
-
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Vælg dette for at placere billedet midt på siden."
+

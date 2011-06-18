@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.3 (384)\n"
 "POT-Creation-Date: 2011-06-15 21:57\n"
-"PO-Revision-Date: 2010-08-30 23:18+0100\n"
-"Last-Translator: Ivan Johansen\n"
+"PO-Revision-Date: 2011-06-18 07:52+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: SWEDISH <par.smars@bredband.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -105,9 +105,8 @@ msgstr "Rotation"
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_0..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_0..Hint
-#, fuzzy
 msgid "Show the label with no rotation."
-msgstr "Skuggar området under funktionen."
+msgstr ""
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_90..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_90..Hint
@@ -126,9 +125,8 @@ msgstr ""
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
-#, fuzzy
 msgid "Specify the angle of rotation for the label."
-msgstr "Välj teckensnitt för rubriken."
+msgstr ""
 
 #. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
@@ -266,9 +264,8 @@ msgid "Open..."
 msgstr "Öppna..."
 
 #. Form1..ActionManager..OpenAction("Open...")..Hint
-#, fuzzy
 msgid "Read a coordinate system from a file."
-msgstr "Läs in koordinatsystem och funktioner från en fil."
+msgstr "Läs in koordinatsystem från en fil."
 
 #. Form1..ActionManager..SaveAction("Save")..Caption
 msgid "Save"
@@ -575,9 +572,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Beräknar grafens längd mellan två punkter på grafen."
 
 #. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
 msgid "Integrate"
-msgstr "Internet"
+msgstr ""
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
 msgid "Calculate the definite integral over a given domain."
@@ -593,9 +589,8 @@ msgid "Evaluate or trace the selected function."
 msgstr "Utvärderar eller spårar den valda funktionen."
 
 #. Form1..ActionManager..TableAction("Table")..Caption
-#, fuzzy
 msgid "Table"
-msgstr "Tabell..."
+msgstr "Tabell"
 
 #. Form1..ActionManager..TableAction("Table")..Hint
 #, fuzzy
@@ -620,9 +615,8 @@ msgid "Show a list of built-in functions that can be used for graphing."
 msgstr "Visar en lista med funktioner som kan användas vid kurvritning."
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Caption
-#, fuzzy
 msgid "Graph web site"
-msgstr "Egenskaper för grafen"
+msgstr ""
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
 #, fuzzy
@@ -1359,14 +1353,12 @@ msgid "Select which kind of line to draw between the markers."
 msgstr "Välj vilken linjetyp att rita mellan markeringarna."
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "1D cubic spline"
-msgstr "Kubisk spline"
+msgstr "1D kubisk spline"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "2D cubic spline"
-msgstr "Kubisk spline"
+msgstr "2D kubisk spline"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Half cosine"
@@ -1421,31 +1413,30 @@ msgstr "Höger"
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 #, fuzzy
 msgid "Above Left"
-msgstr "Flytta vänster"
+msgstr "Ovan vänster"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 #, fuzzy
 msgid "Above Right"
-msgstr "Flytta höger"
+msgstr "Ovan höger"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 #, fuzzy
 msgid "Below Left"
-msgstr "Under funktion"
+msgstr "Nedan vänster"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 #, fuzzy
 msgid "Below Right"
-msgstr "Uppe till höger"
+msgstr "Nedan höger"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Hint
 msgid "Choose between cartesian (x,y) coordinates and polar (θ,r) coordinates."
 msgstr ""
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")..Caption
-#, fuzzy
 msgid "Coordinate type"
-msgstr "Koordinat ej definierad."
+msgstr ""
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
 msgid "Cartesian"
@@ -1763,9 +1754,8 @@ msgid "Mark the border around the shading."
 msgstr "Markera slutpunkt för skuggning med en linje."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Caption
-#, fuzzy
 msgid "Mark border"
-msgstr "Markör"
+msgstr ""
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
@@ -1898,18 +1888,16 @@ msgid "Choose paper size to use."
 msgstr "Välj pappersstorlek."
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Letter"
-msgstr "Vänster"
+msgstr "Letter"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Ledger"
 msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Legal"
-msgstr "Blågrön"
+msgstr "Legal"
 
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
@@ -2003,14 +1991,12 @@ msgid "This is free software, and you are welcome to redistribute it under the t
 msgstr "Detta är fri programvara, och du får återdistribuera den under de förutsättningar som finns i GNU General Public Licence (allmän licens). Sänd felrapporter och förslag på förbättringar till programmeraren."
 
 #. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
-#, fuzzy
 msgid "The newest version as well as the source code are available at: %s"
-msgstr "Nyaste version och källkod finns hos:"
+msgstr "Nyaste version och källkod finns hos: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
-#, fuzzy
 msgid "Email: %s"
-msgstr "E-post:"
+msgstr "E-post: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
@@ -2138,9 +2124,8 @@ msgid "Python interpreter"
 msgstr ""
 
 #. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
-#, fuzzy
 msgid "Clear"
-msgstr "Krämfärgad"
+msgstr ""
 
 #. Form3("Edit axes")..Caption
 msgid "Edit axes"
@@ -2275,9 +2260,8 @@ msgstr "Visa enheter på axlarna som en multipel av Pi"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
-#, fuzzy
 msgid "Show as a multiple of π"
-msgstr "Visa som multipel av Pi"
+msgstr "Visa som multipel av π"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 #. ParFuncFrame..ComboBox1....Items.Strings
@@ -2618,9 +2602,8 @@ msgid "Lines"
 msgstr "Linjer"
 
 #. Form6("Insert text label")..Caption
-#, fuzzy
 msgid "Insert text label"
-msgstr "Lägg till etikett"
+msgstr ""
 
 #. Form6("Insert text label")..Label1("Font name:")..Caption
 msgid "Font name:"
@@ -2647,9 +2630,8 @@ msgid "Insert symbol (Ctrl+G)"
 msgstr "Lägg till symbol (Ctrl-G)"
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
-#, fuzzy
 msgid "Insert object."
-msgstr "Infoga objekt..."
+msgstr "Infoga objekt."
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
@@ -2769,9 +2751,8 @@ msgstr "Välj var markören skall placeras då du klickar på bilden."
 
 #. AreaFrame..GridPanel1..Label3("Integral")..Caption
 #. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
 msgid "Integral"
-msgstr "Internet"
+msgstr ""
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2868,9 +2849,8 @@ msgid "This is the first derivative of the function evaluated for the entered va
 msgstr "Detta är funktionens förstaderivata utvärderad för inmatat värde."
 
 #. StdFuncFrame..Edit4....Hint
-#, fuzzy
 msgid "This is the second derivative of the function evaluated for the entered value."
-msgstr "Detta är funktionens förstaderivata utvärderad för inmatat värde."
+msgstr "Detta är funktionens andraderivata utvärderad för inmatat värde."
 
 #. TanFrame..Edit2....Hint
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
@@ -2889,9 +2869,8 @@ msgid "Error"
 msgstr "Fel"
 
 #. Indicates an error code, e.g. "Error 5"
-#, fuzzy
 msgid "Error %s"
-msgstr "Felstaplar"
+msgstr "Fel %s"
 
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
@@ -2915,19 +2894,16 @@ msgid "Axes"
 msgstr "Axlar"
 
 #. Shortcut key
-#, fuzzy
 msgid "Ctrl"
-msgstr "Ctrl+"
+msgstr "Ctrl"
 
 #. Shortcut key
-#, fuzzy
 msgid "Alt"
-msgstr "Alt+"
+msgstr "Alt"
 
 #. Shortcut key
-#, fuzzy
 msgid "Shift"
-msgstr "Shift+"
+msgstr "Shift"
 
 #. Shortcut key
 msgid "Del"
@@ -2986,7 +2962,7 @@ msgstr "Ett fel uppstod då en potensfunktion utvärderades."
 
 #, fuzzy
 msgid "Tangent to pi/2+n*pi (90+n180 in degrees) is undefined."
-msgstr "Tangenten till 90+p180 är odefinierad."
+msgstr "Tangenten till pi/2+n*pi (90+n180 i grader) är odefinierad."
 
 msgid "Fact can only be calculated for positive integers."
 msgstr "\"Fact\" kan bara beräknas för positiva heltal."
@@ -3044,7 +3020,7 @@ msgstr "Slutparentes saknas."
 
 #, fuzzy
 msgid "Invalid number of arguments supplied for the function '%s'"
-msgstr "Felaktigt antal argument för funktionen '%s'."
+msgstr "Felaktigt antal argument för funktionen '%s'"
 
 msgid "Comparison operator misplaced."
 msgstr "Jämförelseoperator felplacerad."
@@ -3176,9 +3152,8 @@ msgstr "Du har nått maximal förstoring."
 msgid "You have reached the minimum range of zoom."
 msgstr "Du har nått största förminskning."
 
-#, fuzzy
 msgid "'%s' must not be zero."
-msgstr "'%s' måste vara större än 0 (noll)."
+msgstr "'%s' får inte vara 0 (noll)."
 
 #. Error message when an invalid value is entered.
 msgid "Error in value"
@@ -3252,9 +3227,8 @@ msgid "Graph system"
 msgstr "Flytta systemet"
 
 #. Menu item shown in OLE client to open a Graph system object in Graph
-#, fuzzy
 msgid "Open"
-msgstr "Öppna..."
+msgstr "Öppna"
 
 #. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
@@ -3293,7 +3267,6 @@ msgstr "Filen hittades inte"
 msgid "Error reading file"
 msgstr "Fel vid läsning av fil"
 
-#, fuzzy
 msgid "Printer error"
 msgstr "Utskriftsfel"
 
@@ -3373,9 +3346,8 @@ msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Funktionens derivata är inte definierad vid %s=%s"
 
 #. Caption of message box when trying to insert tangent at undefined coordinate
-#, fuzzy
 msgid "Coordinate not defined"
-msgstr "Koordinat ej definierad."
+msgstr "Koordinat ej definierad"
 
 msgid "Checking for newer version..."
 msgstr "Kontrollerar om det finns en ny version..."
@@ -3383,9 +3355,8 @@ msgstr "Kontrollerar om det finns en ny version..."
 msgid "Abort printing?"
 msgstr "Avbryt utskrift?"
 
-#, fuzzy
 msgid "Calculate definite integral"
-msgstr "Tabellberäkning"
+msgstr ""
 
 msgid "Calculate length of path"
 msgstr "Beräkna grafens längd."
@@ -3447,18 +3418,14 @@ msgid ""
 "Would you like to visit the download page?"
 msgstr ""
 "Graph %s finns nu tillgänglig för nedladdning från www.padowan.dk\n"
-"med följande nya funktioner:\n"
 "\n"
-"%s\n"
-"\n"
-"Vill du besöka webbsidan?"
+"Vill du besöka nedladdningssidan?"
 
 msgid "No new version"
 msgstr "Finns ingen ny version"
 
-#, fuzzy
 msgid "You are already using the most recent version of Graph."
-msgstr "Du använder redan den senaste versionen av programmet."
+msgstr "Du använder redan den senaste versionen av Graph."
 
 msgid ""
 "Cannot connect to server www.padowan.dk.\n"
@@ -3770,7 +3737,7 @@ msgstr "Beskrivning"
 
 #, fuzzy
 msgid "Cannot open clipboard: %s"
-msgstr "Kan inte läsa från urklipp"
+msgstr "Kan inte läsa från urklipp: %s"
 
 #, fuzzy
 msgid "There is no default printer currently selected."
@@ -3870,207 +3837,143 @@ msgstr "Välj procent av originalstorlek."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Area"
-
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Använder Simpsons formel för att beräkna area eller längd på kurvan för angivet område."
-
 #~ msgid "Extremum"
 #~ msgstr "Extremvärde"
-
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Detta är funktionens andraderivata utvärderad för inmatat värde."
-
 #~ msgid "Zoom in."
 #~ msgstr "Zooma in."
-
 #~ msgid "Zoom out."
 #~ msgstr "Zooma ut."
-
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Zooma till standardkoordinater."
-
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Beräknar arean under grafen till den valda funktionen."
-
 #~ msgid "Go to home page"
 #~ msgstr "Gå till hemsidan"
-
 #~ msgid "About Graph..."
 #~ msgstr "Om Graph..."
-
 #~ msgid "All points"
 #~ msgstr "Alla punkter"
-
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zooma så mycket att alla punkter är synliga."
-
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoomar in enbart x-axeln."
-
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoomar ut enbart x-axeln."
-
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoomar in enbart y-axeln."
-
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoomar ut enbart y-axeln."
-
 #~ msgid "Custom functions..."
 #~ msgstr "Skapa funktioner..."
-
 #~ msgid "Mark end of range"
 #~ msgstr "Markera områdesslut"
-
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Markera startpunkt för skuggning med en linje."
-
 #~ msgid "Mark start of range"
 #~ msgstr "Markera områdesstart"
-
 #~ msgid "Image information"
 #~ msgstr "Bildinformation"
-
 #~ msgid "Open the file %s."
 #~ msgstr "Öppna filen %s."
-
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Textfiler [*.txt; *.csv]|*.txt;*.csv|Alla filer [*.*]|*.*"
-
 #~ msgid "Calculate area"
 #~ msgstr "Beräkna area"
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Servern svarade med meddelandet '%s'"
-
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Fel i svar från nätverksprotokoll %s"
-
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Du kan sända förslag på förbättringar för framtida versioner, felrapporter och kommentarer till graph@padowan.dk."
-
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Välj för att placera bilden mitt på sidan."
 
 # Funktion-menyn
 #~ msgid "Insert shade..."
 #~ msgstr "Skuggning..."
-
 #~ msgid "Shade"
 #~ msgstr "Skuggning"
-
 #~ msgid "Black"
 #~ msgstr "Svart"
-
 #~ msgid "Maroon"
 #~ msgstr "Rödbrun"
-
 #~ msgid "Green"
 #~ msgstr "Grön"
-
 #~ msgid "Olive"
 #~ msgstr "Olivfärgad"
-
 #~ msgid "Navy"
 #~ msgstr "Marinblå"
-
 #~ msgid "Purple"
 #~ msgstr "Mörklila"
-
 #~ msgid "Gray"
 #~ msgstr "Grå"
-
 #~ msgid "Silver"
 #~ msgstr "Silver"
-
 #~ msgid "Red"
 #~ msgstr "Röd"
-
 #~ msgid "Lime"
 #~ msgstr "Limegrön"
-
 #~ msgid "Yellow"
 #~ msgstr "Gul"
-
 #~ msgid "Blue"
 #~ msgstr "Blå"
-
 #~ msgid "Fuchsia"
 #~ msgstr "Cerise"
-
 #~ msgid "Aqua"
 #~ msgstr "Akvamarin"
-
 #~ msgid "White"
 #~ msgstr "Vit"
-
 #~ msgid "Money Green"
 #~ msgstr "Mintgrön"
-
 #~ msgid "Sky Blue"
 #~ msgstr "Himmelsblå"
-
 #~ msgid "Med Gray"
 #~ msgstr "Medelgrå"
-
 #~ msgid "Insert a text label (select and click in the main window where you want the label)."
 #~ msgstr "Lägg till textetikett (välj och klicka i huvudfönstret där du vill placera etiketten)."
-
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Klipp ur vald text till Windows urklipp."
-
 #~ msgid "Open an animation file."
 #~ msgstr "Öppna en animeringsfil."
-
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Version"
-
 #~ msgid "Visible"
 #~ msgstr "Synlig"
-
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr "Välj för att göra valt objekt synligt i koordinatsystemet."
-
 #~ msgid "Functions"
 #~ msgstr "Funktioner"
-
 #~ msgid "Tangents"
 #~ msgstr "Tangenter"
-
 #~ msgid "Point series"
 #~ msgstr "Punktserier"
-
 #~ msgid "Shades"
 #~ msgstr "Skuggningar"
-
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Inget fel uppstod. Du borde inte se detta meddelande."
-
 #~ msgid "Right bracket missing."
 #~ msgstr "Högerparentes saknas."
-
 #~ msgid "Conversion error"
 #~ msgstr "Konverteringsfel"
-
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Okänd felkod.\n"
 #~ "Kan inte hitta felmeddelandet för detta fel."
-
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr "Detta fel skall ej uppkomma. Var god rapportera händelsen till programmeraren."
-
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "Maximal textlängd har uppnåtts."
-
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Dialogrutefel: %sh"
-
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "Okänt Graph-data hittades när inehållet i urklipp klistrades in."
-
 #~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
 #~ msgstr "För att lägga till en åtgärd till din applikation, dra objekt från antingen Kategorier eller Åtgärder och släpp dem på en befintlig Åtgärdslist."
+
