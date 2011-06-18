@@ -56,6 +56,7 @@ __published:	// IDE-managed Components
   void __fastcall FormResize(TObject *Sender);
   void __fastcall Popup1_ExportClick(TObject *Sender);
   void __fastcall Popup1_Show(TObject *Sender);
+	void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
   const TBaseFuncType *Func;
 

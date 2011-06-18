@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "Unit15.h"
 #include <cmath>
+#include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
 #pragma link "Grid"
 #pragma link "ProgressForm"
@@ -24,30 +25,34 @@ __fastcall TForm15::TForm15(TComponent* Owner)
   TranslateProperties(this);
   MoveControl(Edit1, Label1);
   MoveLabel(Edit2, Label2);
-  Edit3->Left = Edit1->Left;
+	Edit3->Left = Edit1->Left;
 
-  //Initialize as dialog and change to sizeable to prevent change in client size when the border size changes
-  BorderStyle = bsSizeable;
-  ScaleForm(this);
-  SetAccelerators(this);
+	Edit1->Text = ToUString(GetRegValue(REGISTRY_KEY "\\Table", L"From", HKEY_CURRENT_USER, L"-10"));
+	Edit2->Text = ToUString(GetRegValue(REGISTRY_KEY "\\Table", L"To", HKEY_CURRENT_USER, L"10"));
+	Edit3->Text = ToUString(GetRegValue(REGISTRY_KEY "\\Table", L"dx", HKEY_CURRENT_USER, L"0.1"));
+
+	//Initialize as dialog and change to sizeable to prevent change in client size when the border size changes
+	BorderStyle = bsSizeable;
+	ScaleForm(this);
+	SetAccelerators(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm15::Button2Click(TObject *Sender)
 {
-  double ds = std::abs(MakeFloat(Edit3));
-  double Min = MakeFloat(Edit1);
-  double Max = MakeFloat(Edit2);
-  int Digits = GetDecimals(ds);
+	double ds = std::abs(MakeFloat(Edit3));
+	double Min = MakeFloat(Edit1);
+	double Max = MakeFloat(Edit2);
+	int Digits = GetDecimals(ds);
 
-  if(ds == 0)
-  {
-    Grid1->RowCount = 2;
-    for(int I = 0; I < Grid1->ColCount; I++)
-      Grid1->Cells[I][1] = "";
-    return;
-  }
+	if(ds == 0)
+	{
+		Grid1->RowCount = 2;
+		for(int I = 0; I < Grid1->ColCount; I++)
+			Grid1->Cells[I][1] = "";
+		return;
+	}
 
-  Grid1->RowCount = std::abs(Max - Min)/ds + 2.5;
+	Grid1->RowCount = std::abs(Max - Min)/ds + 2.5;
   Grid1->FixedRows = 1;
 
   ProgressForm1->Max = Grid1->RowCount;
@@ -291,5 +296,11 @@ void __fastcall TForm15::Popup1_Show(TObject *Sender)
   Grid1->ColWidths[Index+1] = MenuItem->Checked ? Grid1->DefaultColWidth : -1;
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TForm15::Button1Click(TObject *Sender)
+{
+	SetRegValue(REGISTRY_KEY "\\Table", L"From", HKEY_CURRENT_USER, Edit1->Text.c_str());
+	SetRegValue(REGISTRY_KEY "\\Table", L"To", HKEY_CURRENT_USER, Edit2->Text.c_str());
+	SetRegValue(REGISTRY_KEY "\\Table", L"dx", HKEY_CURRENT_USER, Edit3->Text.c_str());
+}
+//---------------------------------------------------------------------------
 

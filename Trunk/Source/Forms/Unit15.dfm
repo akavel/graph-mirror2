@@ -72,6 +72,7 @@ object Form15: TForm15
     Caption = 'Close'
     ModalResult = 2
     TabOrder = 5
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 232
