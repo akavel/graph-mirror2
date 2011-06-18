@@ -2,8 +2,9 @@ import glob
 import os
 import gettext
 import codecs
+import sys
 
-Languages = ["Danish", "Croatian", "Spanish", "German", "Swedish", "French", "Polish", "Czech", "Dutch", "Turkish"]
+Languages = ["Danish", "Croatian", "Spanish", "German", "Swedish", "French", "Polish", "Czech", "Dutch", "Turkish", "Italian"]
 LocalePath = "d:\\Projects\\Graph\\Locale\\"
 
 def Encode(Str):
@@ -11,7 +12,7 @@ def Encode(Str):
 
 os.chdir("../Source")
 Files = glob.glob("*.xml")
-os.system("..\\Scripts\\xml2po.py -k -o ..\\po\\GraphHelp.pot " + " ".join(Files))
+os.system(sys.executable + " ..\\Scripts\\xml2po.py -k -o ..\\po\\GraphHelp.pot " + " ".join(Files))
 os.chdir("../po")
 
 for Language in Languages:
