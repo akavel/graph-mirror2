@@ -189,105 +189,206 @@ object Form5: TForm5
     Anchors = [akLeft, akTop, akRight]
     Caption = 'Graph properties'
     TabOrder = 5
-    DesignSize = (
-      322
-      84)
-    object Label7: TLabel
-      Left = 8
-      Top = 20
-      Width = 47
-      Height = 13
-      Caption = 'Line style:'
-      FocusControl = LineSelect1
-    end
-    object Label8: TLabel
-      Left = 176
-      Top = 56
-      Width = 31
-      Height = 13
-      Anchors = [akTop, akRight]
-      Caption = 'Width:'
-      FocusControl = Edit6
-    end
-    object Label9: TLabel
-      Left = 8
-      Top = 54
-      Width = 27
-      Height = 13
-      Caption = 'Color:'
-      FocusControl = ExtColorBox1
-    end
-    object Label13: TLabel
-      Left = 176
-      Top = 20
-      Width = 51
-      Height = 13
-      Anchors = [akTop, akRight]
-      Caption = 'Draw type:'
-      FocusControl = ComboBox4
-    end
-    object Edit6: TEdit
-      Left = 232
-      Top = 50
-      Width = 41
-      Height = 21
-      Hint = 'Width of graph in pixels.'
-      Anchors = [akTop, akRight]
-      TabOrder = 3
-      Text = '1'
-    end
-    object UpDown1: TUpDown
-      Left = 273
-      Top = 50
-      Width = 15
-      Height = 21
-      Anchors = [akTop, akRight]
-      Associate = Edit6
-      Min = 1
-      Max = 20
-      Position = 1
-      TabOrder = 4
-    end
-    object LineSelect1: TLineSelect
-      Left = 64
-      Top = 18
-      Width = 81
-      Height = 21
-      Hint = 'Choose which line style to use for drawing the graph.'
+    object GridPanelEx1: TGridPanelEx
+      Left = 2
+      Top = 15
+      Width = 318
+      Height = 67
+      Align = alClient
+      Alignment = taLeftJustify
+      BevelOuter = bvNone
+      ColumnCollection = <
+        item
+          SizeStyle = ssAuto
+          Value = 50.000000000000000000
+        end
+        item
+          SizeStyle = ssAuto
+          Value = 100.000000000000000000
+        end
+        item
+          Value = 100.000000000000000000
+        end
+        item
+          SizeStyle = ssAuto
+          Value = 50.000000000000000000
+        end
+        item
+          SizeStyle = ssAuto
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = Label7
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = LineSelect1
+          Row = 0
+        end
+        item
+          Column = 3
+          Control = Label13
+          Row = 0
+        end
+        item
+          Column = 4
+          Control = ComboBox4
+          Row = 0
+        end
+        item
+          Column = 0
+          Control = Label9
+          Row = 1
+        end
+        item
+          Column = 1
+          Control = ExtColorBox1
+          Row = 1
+        end
+        item
+          Column = 3
+          Control = Label8
+          Row = 1
+        end
+        item
+          Column = 4
+          Control = Panel1
+          Row = 1
+        end>
+      Padding.Left = 3
+      Padding.Right = 3
+      RowCollection = <
+        item
+          Value = 50.000000000000000000
+        end
+        item
+          Value = 50.000000000000000000
+        end>
       TabOrder = 0
-      ItemHeight = 15
-    end
-    object ComboBox4: TComboBox
-      Left = 232
-      Top = 18
-      Width = 81
-      Height = 21
-      Hint = 
-        'Choose Lines if you want the calculated points for the graph to ' +
-        'be connected. Choose Dots if you only want to show a dot at each' +
-        ' point.'
-      Style = csDropDownList
-      Anchors = [akTop, akRight]
-      ItemIndex = 0
-      TabOrder = 1
-      Text = 'Automatic'
-      OnChange = ComboBox4Change
-      Items.Strings = (
-        'Automatic'
-        'Dots'
-        'Lines')
-    end
-    object ExtColorBox1: TExtColorBox
-      Left = 64
-      Top = 50
-      Width = 81
-      Height = 22
-      Hint = 'Select the color of the graph.'
-      TabOrder = 2
-      AutoDroppedWidth = True
-      Selected = clScrollBar
-      DefaultName = 'Default'
-      CustomName = 'Custom...'
+      DesignSize = (
+        318
+        67)
+      object Label7: TLabel
+        Left = 6
+        Top = 10
+        Width = 47
+        Height = 13
+        Anchors = []
+        Caption = 'Line style:'
+        Layout = tlCenter
+      end
+      object LineSelect1: TLineSelect
+        Left = 59
+        Top = 6
+        Width = 81
+        Height = 21
+        Hint = 'Choose which line style to use for drawing the graph.'
+        TabOrder = 0
+        Anchors = [akLeft]
+        ItemHeight = 15
+      end
+      object Label13: TLabel
+        Left = 167
+        Top = 0
+        Width = 51
+        Height = 33
+        Align = alLeft
+        Caption = 'Draw type:'
+        Layout = tlCenter
+        ExplicitLeft = 161
+        ExplicitHeight = 13
+      end
+      object ComboBox4: TComboBox
+        Left = 224
+        Top = 6
+        Width = 88
+        Height = 21
+        Hint = 
+          'Choose Lines if you want the calculated points for the graph to ' +
+          'be connected. Choose Dots if you only want to show a dot at each' +
+          ' point.'
+        Style = csDropDownList
+        Anchors = [akLeft, akTop, akBottom]
+        ItemIndex = 0
+        TabOrder = 1
+        Text = 'Automatic'
+        OnChange = ComboBox4Change
+        Items.Strings = (
+          'Automatic'
+          'Dots'
+          'Lines')
+      end
+      object Label9: TLabel
+        Left = 6
+        Top = 33
+        Width = 27
+        Height = 34
+        Align = alLeft
+        Caption = 'Color:'
+        Layout = tlCenter
+        ExplicitHeight = 13
+      end
+      object ExtColorBox1: TExtColorBox
+        Left = 59
+        Top = 39
+        Width = 81
+        Height = 22
+        Hint = 'Select the color of the graph.'
+        Anchors = [akLeft]
+        TabOrder = 2
+        AutoDroppedWidth = True
+        Selected = clScrollBar
+        DefaultName = 'Default'
+        CustomName = 'Custom...'
+      end
+      object Label8: TLabel
+        Left = 167
+        Top = 33
+        Width = 31
+        Height = 34
+        Align = alLeft
+        Caption = 'Width:'
+        Layout = tlCenter
+        ExplicitLeft = 161
+        ExplicitHeight = 13
+      end
+      object Panel1: TPanel
+        Left = 224
+        Top = 33
+        Width = 88
+        Height = 34
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 3
+        ExplicitLeft = 215
+        ExplicitWidth = 58
+        DesignSize = (
+          88
+          34)
+        object Edit6: TEdit
+          Left = 0
+          Top = 8
+          Width = 49
+          Height = 21
+          Hint = 'Width of graph in pixels.'
+          TabOrder = 0
+          Text = '1'
+        end
+        object UpDown1: TUpDown
+          Left = 49
+          Top = 8
+          Width = 15
+          Height = 21
+          Anchors = [akTop, akRight]
+          Associate = Edit6
+          Min = 1
+          Max = 20
+          Position = 1
+          TabOrder = 1
+        end
+      end
     end
   end
   object Button3: TButton

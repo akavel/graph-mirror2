@@ -20,6 +20,7 @@
 #include <ComCtrls.hpp>
 #include <ImgList.hpp>
 #include "ExtColorBox.h"
+#include "GridPanelEx.h"
 //---------------------------------------------------------------------------
 class TForm5 : public TForm
 {
@@ -33,12 +34,6 @@ __published:	// IDE-managed Components
   TLabel *Label3;
   TGroupBox *GroupBox2;
   TGroupBox *GroupBox4;
-  TLabel *Label7;
-  TLabel *Label8;
-  TLabel *Label9;
-  TEdit *Edit6;
-  TUpDown *UpDown1;
-  TLineSelect *LineSelect1;
   TLabel *Label4;
   TLabel *Label5;
   TMyEdit *Edit3;
@@ -56,9 +51,17 @@ __published:	// IDE-managed Components
   TComboBox *ComboBox3;
   TLabel *Label11;
   TLabel *Label12;
-  TComboBox *ComboBox4;
-  TLabel *Label13;
-  TExtColorBox *ExtColorBox1;
+	TGridPanelEx *GridPanelEx1;
+	TLabel *Label7;
+	TLineSelect *LineSelect1;
+	TLabel *Label13;
+	TComboBox *ComboBox4;
+	TLabel *Label9;
+	TExtColorBox *ExtColorBox1;
+	TLabel *Label8;
+	TPanel *Panel1;
+	TEdit *Edit6;
+	TUpDown *UpDown1;
 	void __fastcall Button1Click(TObject *Sender);
   void __fastcall ComboBox1Change(TObject *Sender);
   void __fastcall Button3Click(TObject *Sender);
