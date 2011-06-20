@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2011-06-15 21:57\n"
-"PO-Revision-Date: 2011-06-17 18:33+0100\n"
+"PO-Revision-Date: 2011-06-20 14:28+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
@@ -1594,7 +1594,7 @@ msgstr "Beregner"
 #. Form15("Calculate table")..SaveDialog1..Filter
 #. Export to file dialog
 msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
-msgstr "CSV (Kommasepareret) [*.csv]|*.csv|Text [*.txt]|*.txt"
+msgstr "CSV (Kommasepareret) [*.csv]|*.csv|Tekst [*.txt]|*.txt"
 
 #. Form16("Insert shading")..Caption
 msgid "Insert shading"
