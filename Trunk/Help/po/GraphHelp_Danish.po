@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-06-18 17:09Romance Daylight Time\n"
-"PO-Revision-Date: 2011-06-21 22:29+0100\n"
+"PO-Revision-Date: 2011-06-22 00:35+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -254,9 +254,8 @@ msgid "The dialog shown below is used to evaluate the selected function for a ra
 msgstr "Nedenstående dialogboks anvendes til at evaluere den markerede funktion i et interval. Vælg først en funktion i <placeholder-1/> og brug menupunktet <placeholder-2/> til at vise dialogboksen. Indtast den første og sidste x-værdi i intervallet i felterne <placeholder-3/> og <placeholder-4/>. I felterne <placeholder-5/> eller <placeholder-6/> angives den forskel, der skal være mellem x-værdierne i intervallet for hver evaluering."
 
 #. TableDialog.xml:20(para)
-#, fuzzy
 msgid "When you press the <guibutton>Calc</guibutton> button, the table will be filled with the independent variable in the first column. The rest of the columns depend on the type of function. For a standard function, the table will show f(x), f'(x) and f''(x). For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx. For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx. Unneeded columns can be hidden from the context menu. If the calculations takes a long time, a progress indicator will be shown."
-msgstr "Når du trykker på knappen <guibutton>Beregn</guibutton>, bliver tabellen fyldt med x-værdierne i intervallet. De øvrige kolonner afhænger af funktionstypen. For normale funktioner viser tabellen f(x), f'(x) og f''(x). For parameterfunktioner viser den x(t), y(t), dx/dt, dy/dt og dy/dx. For polærfunktioner viser den r(t), x(t), y(t), dr/dt og dy/dx. Overflødige kolonner kan fjernes vha. undermenuen. Hvis beregningen tager lang tid, viser programmet en indikator, mens værdierne beregnes, hvoraf det fremgår, hvor langt programmet er med beregningerne."
+msgstr "Når du trykker på knappen <guibutton>Beregn</guibutton>, bliver tabellen fyldt med værdier for den uafhængige variabel i første kolonne. De øvrige kolonner afhænger af funktionstypen. For normale funktioner viser tabellen f(x), f'(x) og f''(x). For parameterfunktioner viser den x(t), y(t), dx/dt, dy/dt og dy/dx. For polærfunktioner viser den r(t), x(t), y(t), dr/dt og dy/dx. Overflødige kolonner kan fjernes vha. undermenuen. Hvis beregningen tager lang tid, viser programmet en indikator, mens værdierne beregnes, hvoraf det fremgår, hvor langt programmet er med beregningerne."
 
 #. TableDialog.xml:35(guimenuitem) MenuItems.xml:185(guimenuitem)
 msgid "Copy"
@@ -295,9 +294,8 @@ msgid "area"
 msgstr "areal"
 
 #. Special.xml:13(para)
-#, fuzzy
 msgid "Returns an aproximation for the numerical integral of the given expression over the given range."
-msgstr "Returnerer det numeriske integral af det første argument i intervallet fra det andet til det tredje argument."
+msgstr "Returnerer en tilnærmet værdi for det numeriske integral af det givne udtryk over det givne interval."
 
 #. Special.xml:34(glossterm) Special.xml:80(glossterm) Special.xml:114(glossterm) Special.xml:209(glossterm) Special.xml:314(glossterm) Special.xml:345(glossterm) Piecewise.xml:84(glossterm) Piecewise.xml:108(glossterm) Piecewise.xml:133(glossterm) Piecewise.xml:158(glossterm)
 msgid "numeric expressions"
@@ -721,11 +719,11 @@ msgstr "For at bruge plugin-systemet i Graph, skal du installere <application>Py
 
 #. Plugins.xml:14(para)
 msgid "Plugins are Python scripts and are usually distributed in source form as .py files but the can also be distributed as compiled .pyc files. The plugin files are placed in the <placeholder-1/> directory where Graph is installed, and will automatically be found and loaded by Graph."
-msgstr ""
+msgstr "Plugins er Python-scripts og distribueres sædvanligvis som py-filer, men kan også distribueres som kompilerede pyc-filer. Plugin-filerne findes i mappen <placeholder-1/>, hvor Graph er installeret, og vil automatisk blive indlæst af Graph."
 
 #. Plugins.xml:19(para)
 msgid "Plugins are scripts, which are just small programs that run inside Graph and interacts with Graph. But a plugin can do anything that a program with the same rights can do. This means that if Graph is run with administrator rights, it is possible to write a plugin that erases the whole hard disk. Therefore you should be careful about which plugins you use and only install plugins from a trusted source, or at least you should check the source code for suspicious parts."
-msgstr ""
+msgstr "Plugins er scripts, som blot er små programmer, der kører inde i Graph og interagerer med Graph. Men et plugin kan gøre alt, hvad et program med de samme rettigheder kan. Det betyder, at hvis Graph køres med administratorrettigheder, er det muligt at programmere et plugin, som sletter hele harddisken. Du bør derfor være forsigtig med, hvilke plugins du bruger, og kun installere plugins fra en pålidelig kilde eller som minimum undersøge kildekoden for mistænkelige dele."
 
 #. Plugins.xml:30(title)
 msgid "Python interpreter"
@@ -733,7 +731,7 @@ msgstr "Python-fortolker"
 
 #. Plugins.xml:31(para)
 msgid "The plugin system also gives access to a Python interpreter by pressing <placeholder-1/>. In this interpreter you can write Python expressions and that way do very advanced things in Graph. It is also an easy way to test code before it is used in a plugin."
-msgstr ""
+msgstr "Plugin-systemet giver også adgang til en Python-fortolker ved at trykke <placeholder-1/>. Her kan du skrive Python-udtryk og dermed foretage avancerede handlinger i Graph. Det er også en enkel måde at afprøve kode, inden det bruges som plugin."
 
 #. Piecewise.xml:7(title) FunctionList.xml:374(emphasis)
 msgid "Piecewise"
@@ -793,7 +791,7 @@ msgstr "Funktionen <placeholder-1/> returner <placeholder-2/>, hvis <placeholder
 
 #. Piecewise.xml:144(para)
 msgid "Evaluates one or more conditions and returns a different results based on them."
-msgstr ""
+msgstr "Evaluerer en eller flere betingelser og returnerer forskellige resultater baseret på dette grundlag."
 
 #. Piecewise.xml:153(para)
 #, fuzzy
@@ -1363,7 +1361,7 @@ msgstr "Integrere"
 
 #. MenuItems.xml:582(para)
 msgid "Calculates the definite integral for a specified domain range. This is the same as the signed area between the graph and the x-axis."
-msgstr ""
+msgstr "Beregner det bestemte integral for et angivet interval. Dette er det samme som arealet (med fortegn) mellem grafen og x-aksen."
 
 #. MenuItems.xml:593(guimenuitem) Glossary.xml:25(guilabel) EvaluateDialog.xml:8(title) EvaluateDialog.xml:19(title) EvaluateDialog.xml:24(guimenuitem)
 msgid "Evaluate"
@@ -1499,9 +1497,8 @@ msgid "Graph is free software; you can redistribute it and/or modify it under th
 msgstr "Dette program er fri software, og du må distribuere det og/eller ændre det under begrænsningerne angivet i <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink>. Nyeste version og programmets kildekode kan frit hentes fra <ulink url=\"http://www.padowan.dk\"/>."
 
 #. Introduction.xml:30(para)
-#, fuzzy
 msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <ulink url=\"http://www.padowan.dk/forum\">Graph support forum</ulink>."
-msgstr "Programmet er testet under Microsoft Windows 2000, Windows XP og Windows Vista, men der kan stadig være nogle fejl tilbage. Hvis du har brug for hjælp til at bruge programmet eller har forslag til forbedringer, bedes du benytte dig af <ulink url=\"http://www.padowan.dk/forum\">Graph support forum</ulink>."
+msgstr "Graph er testet under <placeholder-1/>, men der kan stadig være nogle fejl tilbage. Hvis du har brug for hjælp til at bruge Graph eller har forslag til forbedringer, bedes du benytte dig af <ulink url=\"http://www.padowan.dk/forum\">Graph support forum</ulink>."
 
 #. Introduction.xml:42(para)
 msgid "When you send a bug report, please write the following:"
@@ -3311,13 +3308,12 @@ msgid "If you want to find the area between two functions f1(x)=3x and f2(x)=x^2
 msgstr "Hvis du vil bestemme arealet mellem graferne for to funktioner, f1(x)=3x og f2(x)=x^2, er den letteste metode at definere en ny funktion, som er differensen mellem de to funktioner: f(x)=f1(x)-f2(x)=3x-x^2. Du kan så bruge <placeholder-1/> til at beregne arealet for et givet interval."
 
 #. FAQ.xml:231(para)
-#, fuzzy
 msgid "How do I plot the inverse of any given function?"
-msgstr "Hvordan beregner jeg arealet af en punktmængde mellem graferne for to funktioner?"
+msgstr "Hvordan plotter jeg den inverse til en given funktion?"
 
 #. FAQ.xml:236(para)
 msgid "You can use a parametric function for this. If you want to plot the inverse of <placeholder-1/>, you can insert it as the parametric function <userinput>x(t)=t^2-2t, y(t)=t</userinput>."
-msgstr ""
+msgstr "Du kan bruge en parameterfunktion til dette. Hvis du vil plotte den inverse til <placeholder-1/>, kan du indsætte den som parameterfunktionen <userinput>x(t)=t^2-2t, y(t)=t</userinput>."
 
 #. FAQ.xml:246(para)
 msgid "How can I draw the negative part of f(x)=sqrt(x+2) ?"
@@ -3333,9 +3329,8 @@ msgid "How do I plot a complex function like f(t)=e^(i*t)?"
 msgstr "Hvordan plotter jeg en kompleks funktion, f.eks. f(t)=e^(i*t)?"
 
 #. FAQ.xml:268(para)
-#, fuzzy
 msgid "You probably want to show the real part on the x-axis and the imaginary part on the y-axis. In that case you can draw the function as the parametric function <userinput>x(t)=re(e^(i*t)), y(t)=im(e^(i*t))</userinput>. Notice that <placeholder-1/> must be enabled in the <placeholder-2/> dialog."
-msgstr "Du ønsker antageligvis at få den reelle del vist på x-aksen og den imaginære del på y-aksen. Hvis dette er tilfældet, kan funktionen tegnes som en parameterfunktion x(t)=re(e^(i*t)), y(t)=im(e^(i*t)). Bemærk at <placeholder-1/> skal være slået til i dialogboksen <placeholder-2/>."
+msgstr "Du ønsker antageligvis at få den reelle del vist på x-aksen og den imaginære del på y-aksen. Hvis dette er tilfældet, kan funktionen tegnes som en parameterfunktion <userinput>x(t)=re(e^(i*t)), y(t)=im(e^(i*t))</userinput>. Bemærk at <placeholder-1/> skal være slået til i dialogboksen <placeholder-2/>."
 
 #. FAQ.xml:278(para)
 msgid "How can I make Graph plot functions with vertical asymptotes correctly?"
@@ -3448,9 +3443,8 @@ msgid "When <placeholder-1/> is selected the dialog is used to calculate the def
 msgstr "Når <placeholder-1/> vælges, bruges vinduet til at beregne arealer (med fortegn). For standardfunktioner, parameterfunktioner og tangenter er resultatet arealet (med fortegn) mellem grafen for funktionen og x-aksen (den rigtige x-akse er ikke nødvendigvis den, der vises) i det angivne interval."
 
 #. EvaluateDialog.xml:113(para)
-#, fuzzy
 msgid "For polar functions, the definite integral is the same as the signed area between the graph in the given range and the origin. The area is considered negative when the angle goes from a higher to a lower value (clockwise)."
-msgstr "For polærfunktioner ligger arealet (med fortegn) mellem grafen for funktionen i det angivne interval og koordinatsystemets begyndelsespunkt. Arealet betragtes som negativt, når intervallet går fra en høj værdi til en lavere værdi (med uret)."
+msgstr "For polærfunktioner er det bestemte integral det samme som arealet (med fortegn) mellem grafen for funktionen i det angivne interval og koordinatsystemets begyndelsespunkt. Arealet betragtes som negativt, når intervallet går fra en høj værdi til en lavere værdi (med uret)."
 
 #. EvaluateDialog.xml:117(para)
 msgid "For the other functions the area is considered negative when the graph is below the x-axis or when the function goes from a higher to a lower x-value."
@@ -3615,7 +3609,7 @@ msgstr "Fejl 18: En plugin-funktion fejlede."
 
 #. Errors.xml:170(para)
 msgid "A custom function in a Python plugin did not return a result. The Python interpreter window may show more detailed information."
-msgstr ""
+msgstr "En brugerdefineret funktion i et Python-plugin gav intet resultat. Python-fortolkningsvinduet viser evt. mere detaljeret information."
 
 #. Errors.xml:178(term)
 msgid "Error 50: Unexpected operator. Operator %s cannot be placed here"
@@ -4355,7 +4349,7 @@ msgstr "Oversættelsesdatabase."
 
 #. Acknowledgements.xml:23(member)
 msgid "Library for creating shell extensions."
-msgstr ""
+msgstr "Bibliotek til fremstilling af shell extensions."
 
 #. Acknowledgements.xml:30(member)
 msgid "Used to create PDF files."
@@ -4363,15 +4357,15 @@ msgstr "Bruges til at oprette pdf-filer."
 
 #. Acknowledgements.xml:37(member)
 msgid "Used for plugin support and advanced interaction."
-msgstr ""
+msgstr "Bruges til plugin-understøttelse og avanceret interaktion."
 
 #. Acknowledgements.xml:44(member)
 msgid "Numerical library."
-msgstr ""
+msgstr "Numerisk bibliotek."
 
 #. Acknowledgements.xml:51(member)
 msgid "Peer-reviewed C++ library."
-msgstr ""
+msgstr "Peer-reviewed C++ bibliotek."
 
 #. Acknowledgements.xml:58(title)
 msgid "Translations"
