@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.3 (384)\n"
 "POT-Creation-Date: 2011-06-15 21:57\n"
-"PO-Revision-Date: 2011-06-20 14:54+0100\n"
+"PO-Revision-Date: 2011-06-21 17:25+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: SWEDISH <par.smars@bredband.net>\n"
 "MIME-Version: 1.0\n"
@@ -296,9 +296,8 @@ msgid "Save as image..."
 msgstr "Spara som bild..."
 
 #. Form1..ActionManager..SaveAsImageAction("Save as image...")..Hint
-#, fuzzy
 msgid "Save the shown coordinate system as an image."
-msgstr "Sparar aktuellt koordinatsystem som en bild."
+msgstr "Spara aktuellt koordinatsystem som en bild."
 
 #. Form1..ActionManager..PrintAction("Print...")..Caption
 msgid "Print..."
@@ -342,9 +341,8 @@ msgid "Cut"
 msgstr "Klipp ur"
 
 #. Form1..ActionManager..CutAction("Cut")..Hint
-#, fuzzy
 msgid "Cut the selected function or point series to the clipboard."
-msgstr "Klipper ur den valda funktionen eller punktserien till Windows urklipp."
+msgstr "Klipper ur den valda funktionen eller punktserien till urklipp."
 
 #. Form1..ActionManager..CopyAction("Copy")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Caption
@@ -355,9 +353,8 @@ msgid "Copy"
 msgstr "Kopiera"
 
 #. Form1..ActionManager..CopyAction("Copy")..Hint
-#, fuzzy
 msgid "Copy the selected function or point series to the clipboard."
-msgstr "Kopierar den valda funktionen eller punktserien till Windows urklipp."
+msgstr "Kopiera den valda funktionen eller punktserien till urklipp."
 
 #. Form1..ActionManager..PasteAction("Paste")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")..Caption
@@ -367,18 +364,16 @@ msgid "Paste"
 msgstr "Klistra in"
 
 #. Form1..ActionManager..PasteAction("Paste")....Hint
-#, fuzzy
 msgid "Paste a function or point series from the clipboard into the coordinate system."
-msgstr "Klistrar in den valda funktionen eller punktserien från Windows urklipp till koordinatsystemet."
+msgstr "Klistra in den valda funktionen eller punktserien från urklipp till koordinatsystemet."
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Caption
 msgid "Copy image"
 msgstr "Kopiera bild"
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Hint
-#, fuzzy
 msgid "Copy the shown coordinate system to the clipboard."
-msgstr "Kopierar aktuellt koordinatsystem som en bild till Windows urklipp."
+msgstr "Kopiera aktuellt koordinatsystem till urklipp."
 
 #. Form1..ActionManager..AxesAction("Axes...")..Caption
 msgid "Axes..."
@@ -518,36 +513,32 @@ msgid "Move up"
 msgstr "Flytta upp"
 
 #. Form1..ActionManager..MoveUpAction("Move up")....Hint
-#, fuzzy
 msgid "Move the graphing area up along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Flytta fönstret uppåt längs koordinatsystemet."
+msgstr "Flytta fönstret uppåt längs koordinatsystemet. Håll ned Shift för att flytta i större steg."
 
 #. Form1..ActionManager..MoveDownAction("Move down")..Caption
 msgid "Move down"
 msgstr "Flytta ner"
 
 #. Form1..ActionManager..MoveDownAction("Move down")....Hint
-#, fuzzy
 msgid "Move the graphing area down along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Flytta fönstret nedåt längs koordinatsystemet."
+msgstr "Flytta fönstret nedåt längs koordinatsystemet. Håll ned Shift för att flytta i större steg."
 
 #. Form1..ActionManager..MoveLeftAction("Move left")..Caption
 msgid "Move left"
 msgstr "Flytta vänster"
 
 #. Form1..ActionManager..MoveLeftAction("Move left")....Hint
-#, fuzzy
 msgid "Move the graphing area to the left along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Flytta fönstret åt vänster längs koordinatsystemet."
+msgstr "Flytta fönstret åt vänster längs koordinatsystemet. Håll ned Shift för att flytta i större steg."
 
 #. Form1..ActionManager..MoveRightAction("Move right")..Caption
 msgid "Move right"
 msgstr "Flytta höger"
 
 #. Form1..ActionManager..MoveRightAction("Move right")....Hint
-#, fuzzy
 msgid "Move the graphing area to the right along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Flytta fönstret åt höger längs koordinatsystemet."
+msgstr "Flytta fönstret åt höger längs koordinatsystemet. Håll ned Shift för att flytta i större steg."
 
 #. Form1..ActionManager..MoveAction("Move system")..Caption
 msgid "Move system"
@@ -571,7 +562,7 @@ msgstr "Integrera"
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
 msgid "Calculate the definite integral over a given domain."
-msgstr ""
+msgstr "Beräkna bestämd integral för ett givet intervall."
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -2078,7 +2069,7 @@ msgstr "Python-interpreterande"
 
 #. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
 msgid "Clear"
-msgstr ""
+msgstr "Rensa"
 
 #. Form3("Edit axes")..Caption
 msgid "Edit axes"
@@ -2166,7 +2157,6 @@ msgid "Show grid"
 msgstr "Visa rutnät"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
-#, fuzzy
 msgid "Show the label at the right side of the graphing area, above the x-axis."
 msgstr "Visa etikett på höger sida av fönstret, ovanför x-axeln."
 
@@ -2247,7 +2237,6 @@ msgid "Show horizontal grid lines."
 msgstr "Visa horisontella rutnätslinjer."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")....Hint
-#, fuzzy
 msgid "Show the label at the top of the graphing area, to the right of the y-axis."
 msgstr "Visa etikett i överkant av fönstret, till höger om y-axeln."
 
@@ -2469,9 +2458,8 @@ msgid "Show tooltip"
 msgstr "Visa verktygstips"
 
 #. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")....Hint
-#, fuzzy
 msgid "Save the size of the main window when the program exits. This is used the next time Graph is run."
-msgstr "Spara fönsterposition när programmmet avslutas. Denna inställning används nästa gång programmet startas.|Spara fönsterposition vid avslut."
+msgstr "Spara huvudfönstrets storlek när programmmet avslutas. Denna inställning används nästa gång Graph startas."
 
 #. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")..Caption
 msgid "Save workspace on exit"
@@ -2742,9 +2730,8 @@ msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr "Funktionens lutning utvärderad för inmatad t-parameter."
 
 #. ParFuncFrame..Edit1....Hint
-#, fuzzy
 msgid "Enter the value for the parameter t for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Skriv in ett värde för vilket du vill utvärdera funktionen, eller klicka på funktionen i koordinatsystemet."
+msgstr "Skriv in ett värde för parametern t för vilken du vill utvärdera funktionen, eller klicka på grafen i koordinatsystemet."
 
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
@@ -2784,14 +2771,12 @@ msgid "The slope of the function evaluated for the given angle."
 msgstr "Funktionens lutning utvärderad för angiven vinkel."
 
 #. PolFuncFrame..Edit1....Hint
-#, fuzzy
 msgid "Enter the value of the polar angle for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Skriv in den oberoende variabeln för vilken du vill utvärdera funktionen, eller klicka på funktionen i huvudfönstret."
+msgstr "Skriv in ett värde för den polära vinkeln för vilken du vill utvärdera funktionen, eller klicka på grafen i koordinatsystemet."
 
 #. StdFuncFrame..Edit1....Hint
-#, fuzzy
 msgid "Enter a value for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Skriv in ett värde för vilket du vill utvärdera funktionen, eller klicka på funktionen i koordinatsystemet."
+msgstr "Skriv in ett värde för vilket du vill utvärdera funktionen, eller klicka på grafen i koordinatsystemet."
 
 #. StdFuncFrame..Edit2..Hint
 msgid "This is the function evaluated for the entered x-value."
@@ -3215,7 +3200,7 @@ msgid "Printer error"
 msgstr "Utskriftsfel"
 
 msgid "Invalid use of infinity. Infinity cannot be used here."
-msgstr ""
+msgstr "Felaktig användning av oändlighet. Oändlighet kan inte användas här."
 
 msgid "Confirm delete"
 msgstr "Bekräfta ta bort"
@@ -3300,7 +3285,7 @@ msgid "Abort printing?"
 msgstr "Avbryt utskrift?"
 
 msgid "Calculate definite integral"
-msgstr ""
+msgstr "Beräkna bestämd integral"
 
 msgid "Calculate length of path"
 msgstr "Beräkna grafens längd."
@@ -3381,11 +3366,10 @@ msgid "Socket error %s"
 msgstr "TCP-protokollfel %s"
 
 msgid "Definite integral, or signed area between function and x-axis, for the given domain range."
-msgstr ""
+msgstr "Bestämd integral, eller storleken av area mellan funktion och x-axel, för givet intervall."
 
-#, fuzzy
 msgid "Length of path along the curve calculated for the given range."
-msgstr "Funktionens lutning utvärderad för angiven vinkel."
+msgstr "Kurvlängd utvärderad för angivet intervall."
 
 msgid ""
 "The file cannot be opened by this version of the program.\n"
@@ -3421,7 +3405,6 @@ msgstr "Kommandon"
 msgid "(All Commands)"
 msgstr "(Alla kommandon)"
 
-#, fuzzy
 msgid "To add a command to the toolbar simply select a category and drag the command out of this dialog box to the toolbar."
 msgstr "För att lägga till ett kommando, välj en kategori och dra kommandot från denna dialogruta till verktygsfältet."
 
@@ -3441,6 +3424,9 @@ msgid ""
 "If you cancel the operation the program will become unstable.\n"
 "You should therefore save your data under a new name and restart the application."
 msgstr ""
+"Programmet verkar sitta fast i oändliga loop.\n"
+"Om du avbryter beräkningen kommer programmet att bli instabilt.\n"
+"Därför bör du spara dina data under ett nytt namn och starta om applikationen."
 
 msgid "Thread is not responding"
 msgstr "Tråden svarar inte"
@@ -3451,16 +3437,15 @@ msgstr "Dagens Tips kan ge dig sådan information om programmet som de flesta in
 
 #. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
 msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr ""
+msgstr "Du kan få hjälp till att använda Graph, inrapportera buggar och föreslå framtida förbättringar på internetforum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
 msgstr "Du kan anpassa verktygsfältet genom att högerklicka på det och välja 'Anpassa verktygsfält'."
 
 #. Tip of the Day
-#, fuzzy
 msgid "Instead of deleting a function, you can make it invisible by removing the check mark for the item in the function list."
-msgstr "Istället för att ta bort en funktion, kan du göra den osynlig genom att högerklicka på den i funktionslistan och sedan klicka på 'Synlig'."
+msgstr "Istället för att ta bort en funktion, kan du göra den osynlig genom att ta bort slipfåran i funktionslistan."
 
 #. Tip of the Day
 msgid "You can paste images into a text label."
@@ -3741,7 +3726,7 @@ msgstr "Toppmarginal:"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
 msgid "Center the printing area on the page."
-msgstr ""
+msgstr "Centrera utskriftsområdet på sidan."
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
@@ -3750,7 +3735,7 @@ msgstr "Centrera på sidan"
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1....Hint
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2....Hint
 msgid "Specify the printing area of the page. The printer will print only within these margins."
-msgstr ""
+msgstr "Ange sidans utskriftsområde. Skrivaren kommer endast att skriva inom dessa kanter."
 
 #. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
 msgid "Number of copies:"
