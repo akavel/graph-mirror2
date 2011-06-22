@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-06-18 17:09Romance Daylight Time\n"
-"PO-Revision-Date: 2011-06-22 00:35+0100\n"
+"PO-Revision-Date: 2011-06-22 11:36+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -306,9 +306,8 @@ msgid "real numbers"
 msgstr "reelle tal"
 
 #. Special.xml:22(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns an aproximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to a estimated relative error less than <placeholder-19/>."
-msgstr "Funktionen <placeholder-1/> returnerer det bestemte integral af <placeholder-2/> fra <placeholder-3/> til <placeholder-4/>. Dette skrives matematisk således: <placeholder-5/> Resultatet af integralet er det samme som arealet af punktmængden afgrænset af grafen for <placeholder-6/>, x-aksen og linjerne med ligningerne x = <placeholder-7/> og x = <placeholder-8/>, idet arealer af punktmængder under x-aksen betragtes som negative. <placeholder-9/> kan være et hvilket som helst funktionsudtryk med x som variabel, hvis funktionen bruges i en normal funktion, og med t som variabel, hvis det er en parameterfunktion. <placeholder-10/> og <placeholder-11/> er <placeholder-12/>, der evalueres til <placeholder-13/>. <placeholder-14/> beregner ikke integralet eksakt, men beregner resultatet ved hjælp af Simpsons Regel med 100 iterationer."
+msgstr "Funktionen <placeholder-1/> returnerer en tilnærmet værdi for det bestemte integral af <placeholder-2/> med variablen <placeholder-3/> fra <placeholder-4/> til <placeholder-5/>. Dette skrives matematisk således: <placeholder-6/> Resultatet af integralet er det samme som arealet af punktmængden afgrænset af grafen for <placeholder-7/>, x-aksen og linjerne med ligningerne x = <placeholder-8/> og x = <placeholder-9/>, idet arealer af punktmængder under x-aksen betragtes som negative. <placeholder-10/> kan være et hvilket som helst funktionsudtryk med variablen angivet som det andet argument <placeholder-11/>. <placeholder-12/> og <placeholder-13/> er <placeholder-14/>, der evalueres til <placeholder-15/>, eller de kan være <placeholder-16/> eller <placeholder-17/> for at angive negativ eller positiv uendelig. <placeholder-18/> beregner ikke integralet eksakt, men ved hjælp af Gauss-Kronrods 21-punktsintegrationsregel tilpasset en relativ fejl på åmindre end <placeholder-19/>."
 
 #. Special.xml:41(title) Rounding.xml:153(title)
 msgid "Examples"
@@ -1492,9 +1491,8 @@ msgid "Graph is a program designed to draw graphs of mathematical functions in a
 msgstr "Graph er et program til tegning af grafer for matematiske funktioner i et koordinatsystem. Programmet er opbygget som et standard Windows-program med menuer og dialogbokse. Det understøtter tegning af normale funktioner, parameterfunktioner og polærfunktioner. Desuden kan der indsættes tangenter, laves evalueringer af punkter på de indsatte funktioner, indsættes skraveringer, laves serier af punkter og meget mere. For yderligere information om anvendelse af programmet se <placeholder-1/>."
 
 #. Introduction.xml:25(para)
-#, fuzzy
 msgid "Graph is free software; you can redistribute it and/or modify it under the terms of the <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink>. Newest version of the program as well as the source code may be downloaded from <ulink url=\"http://www.padowan.dk\"/>."
-msgstr "Dette program er fri software, og du må distribuere det og/eller ændre det under begrænsningerne angivet i <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink>. Nyeste version og programmets kildekode kan frit hentes fra <ulink url=\"http://www.padowan.dk\"/>."
+msgstr "Graph er fri software, og du må distribuere det og/eller ændre det under betingelserne angivet i <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink>. Nyeste version og programmets kildekode kan hentes på <ulink url=\"http://www.padowan.dk\"/>."
 
 #. Introduction.xml:30(para)
 msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <ulink url=\"http://www.padowan.dk/forum\">Graph support forum</ulink>."
@@ -2037,9 +2035,8 @@ msgid "Mark border"
 msgstr "Marker kant"
 
 #. InsertShadingDialog.xml:166(para)
-#, fuzzy
 msgid "Check this to draw a line around the border of the shading. Uncheck it to leave the shading without a border, which is useful if you want two shadings to look as one."
-msgstr "Afkryds dette felt for at vise en linje ved skraveringens slutning. Fjern markeringen for at få to skraveringer til at se ud som en."
+msgstr "Afkryds dette felt for at tegne en linje langs skraveringens kant. Fjern markeringen for ikke at tegne kant på skraveringen. Dette kan bruges til at få to skraveringer til at se ud som en."
 
 #. InsertShadingDialog.xml:177(para)
 msgid "When you have chosen <placeholder-1/> in the <placeholder-2/> tab, you may select the second function in the <placeholder-3/> tab. The dialog with the <placeholder-4/> tab is shown below."
@@ -2238,9 +2235,8 @@ msgid "Half cosine"
 msgstr "Halve cosinuskurver"
 
 #. InsertPointSeriesDialog.xml:96(para)
-#, fuzzy
 msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
-msgstr "Man kan vælge mellem tre typer af interpolation: <placeholder-1/> tegner et linjestykke mellem markørerne. <placeholder-2/> tegner en glat, blød kurve, som består af tredjegradspolynomier, mellem markørerne. <placeholder-3/> tegner halve cosinuskurver mellem punkterne, hvilket kan få kurven til at se mindre blød ud end med cubic splines; men det vil til gengæld aldrig skyde for lavt eller for højt."
+msgstr "Man kan vælge mellem tre typer af interpolation: <placeholder-1/> tegner et linjestykke mellem markørerne. <placeholder-2/> tegner <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink> mellem markørerne; en glat, blød kurve, som består af tredjegradspolynomier. <placeholder-3/> vil tegne en glat cubic spline gennem alle punkterne i rækkefølge. <placeholder-4/> tegner halve cosinuskurver mellem punkterne, hvilket kan få kurven til at se mindre blød ud end med cubic splines; men det vil til gengæld aldrig skyde for lavt eller for højt."
 
 #. InsertPointSeriesDialog.xml:108(term)
 msgid "Labels"
