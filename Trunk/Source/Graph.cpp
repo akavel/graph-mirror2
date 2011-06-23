@@ -51,6 +51,7 @@ USEFORM("Forms\Unit21.cpp", Form21);
 USEFORM("Forms\Unit22.cpp", Form22);
 USEFORM("Forms\Unit2.cpp", Form2);
 USEFORM("Forms\Unit20.cpp", Form20);
+USEFORM("Frames\TTanFrame.cpp", TanFrame); /* TFrame: File Type */
 //---------------------------------------------------------------------------
 TComModule _ProjectModule(0 /*InitATLServer*/);
 TComModule &_Module = _ProjectModule;

@@ -110,23 +110,6 @@ object Form9: TForm9
       Anchors = [akTop, akRight]
     end
   end
-  inline TanFrame1: TTanFrame
-    Left = 0
-    Top = 0
-    Width = 184
-    Height = 69
-    HelpContext = 100
-    Anchors = [akLeft, akTop, akRight]
-    ParentBackground = False
-    TabOrder = 1
-    Visible = False
-    inherited Edit1: TMyEdit
-      OnChange = Edit1Change
-    end
-    inherited UpDownEx1: TUpDownEx
-      OnUpDown = UpDownExUpDown
-    end
-  end
   inline AreaFrame1: TAreaFrame
     Left = 0
     Top = 0
@@ -134,7 +117,7 @@ object Form9: TForm9
     Height = 102
     Anchors = [akLeft, akTop, akRight]
     ParentBackground = False
-    TabOrder = 4
+    TabOrder = 2
     Visible = False
     ExplicitWidth = 184
     ExplicitHeight = 102
@@ -230,7 +213,7 @@ object Form9: TForm9
     HelpContext = 101
     Anchors = [akLeft, akTop, akRight]
     ParentBackground = False
-    TabOrder = 2
+    TabOrder = 1
     Visible = False
     inherited Label7: TLabel
       Width = 40
