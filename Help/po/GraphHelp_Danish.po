@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-06-18 17:09Romance Daylight Time\n"
-"PO-Revision-Date: 2011-06-22 11:36+0100\n"
+"PO-Revision-Date: 2011-06-26 20:31+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -307,7 +307,7 @@ msgstr "reelle tal"
 
 #. Special.xml:22(para)
 msgid "The <placeholder-1/> function returns an aproximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to a estimated relative error less than <placeholder-19/>."
-msgstr "Funktionen <placeholder-1/> returnerer en tilnærmet værdi for det bestemte integral af <placeholder-2/> med variablen <placeholder-3/> fra <placeholder-4/> til <placeholder-5/>. Dette skrives matematisk således: <placeholder-6/> Resultatet af integralet er det samme som arealet af punktmængden afgrænset af grafen for <placeholder-7/>, x-aksen og linjerne med ligningerne x = <placeholder-8/> og x = <placeholder-9/>, idet arealer af punktmængder under x-aksen betragtes som negative. <placeholder-10/> kan være et hvilket som helst funktionsudtryk med variablen angivet som det andet argument <placeholder-11/>. <placeholder-12/> og <placeholder-13/> er <placeholder-14/>, der evalueres til <placeholder-15/>, eller de kan være <placeholder-16/> eller <placeholder-17/> for at angive negativ eller positiv uendelig. <placeholder-18/> beregner ikke integralet eksakt, men ved hjælp af Gauss-Kronrods 21-punktsintegrationsregel tilpasset en relativ fejl på åmindre end <placeholder-19/>."
+msgstr "Funktionen <placeholder-1/> returnerer en tilnærmet værdi for det bestemte integral af <placeholder-2/> med variablen <placeholder-3/> fra <placeholder-4/> til <placeholder-5/>. Dette skrives matematisk således: <placeholder-6/> Resultatet af integralet er det samme som arealet af punktmængden afgrænset af grafen for <placeholder-7/>, x-aksen og linjerne med ligningerne x = <placeholder-8/> og x = <placeholder-9/>, idet arealer af punktmængder under x-aksen betragtes som negative. <placeholder-10/> kan være et hvilket som helst funktionsudtryk med variablen angivet som det andet argument <placeholder-11/>. <placeholder-12/> og <placeholder-13/> er <placeholder-14/>, der evalueres til <placeholder-15/>, eller de kan være <placeholder-16/> eller <placeholder-17/> for at angive negativ eller positiv uendelig. <placeholder-18/> beregner ikke integralet eksakt, men ved hjælp af Gauss-Kronrods 21-punktsintegrationsregel tilpasset en relativ fejl på mindre end <placeholder-19/>."
 
 #. Special.xml:41(title) Rounding.xml:153(title)
 msgid "Examples"
@@ -330,26 +330,24 @@ msgid "integers"
 msgstr "heltal"
 
 #. Special.xml:71(para)
-#, fuzzy
 msgid ""
 "The <placeholder-1/> function returns the summation of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr ""
-"Funktionen <placeholder-1/> returnerer summen af <placeholder-2/> evalueret for alle heltal fra <placeholder-3/> til <placeholder-4/>. Dette kan matematisk skrives som: <placeholder-5/>\n"
-"\t\t\t\t<placeholder-6/> kan være et hvilket som helst funktionsudtryk med x som variabel, hvis funktionen bruges i en normal funktion, og med t som variabel, hvis det er en parameter- eller polær funktion. <placeholder-7/> og <placeholder-8/> er <placeholder-9/>, der evalueres til <placeholder-10/>."
+"Funktionen <placeholder-1/> returnerer summen af <placeholder-2/>, hvor <placeholder-3/> evalueres for alle heltal fra <placeholder-4/> til <placeholder-5/>. Dette kan matematisk skrives som: <placeholder-6/>\n"
+"\t\t\t\t<placeholder-7/> kan være et hvilket som helst funktionsudtryk med den angivne variabel som det andet argument <placeholder-8/>. <placeholder-9/> og <placeholder-10/> kan være hvilke som helst <placeholder-11/>, som evalueres til <placeholder-12/>."
 
 #. Special.xml:96(para)
 msgid "Returns the product of an expression evaluated over a range of integers."
 msgstr "Returnerer produktet af et udtryk evalueret over et interval af heltal."
 
 #. Special.xml:105(para)
-#, fuzzy
 msgid ""
 "The <placeholder-1/> function returns the product of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr ""
-"Funktionen <placeholder-1/> returnerer produktet af <placeholder-2/> evalueret for alle heltal fra <placeholder-3/> til <placeholder-4/>. Dette skrives matematisk som: <placeholder-5/>\n"
-"\t\t\t\t<placeholder-6/> kan være enhver funktion med x som variabel, hvis funktionen bruges i en normal funktion, og med t som variabel, hvis det er en parameter- eller polærfunktion. <placeholder-7/> og <placeholder-8/> er <placeholder-9/>, der evalueres til <placeholder-10/>."
+"Funktionen <placeholder-1/> returnerer produktet af <placeholder-2/>, hvor <placeholder-3/> evalueres for alle heltal fra <placeholder-4/> til <placeholder-5/>. Dette kan matematisk skrives som: <placeholder-6/>\n"
+"\t\t\t\t<placeholder-7/> kan være et hvilket som helst funktionsudtryk med den angivne variabel som det andet argument <placeholder-8/>. <placeholder-9/> og <placeholder-10/> kan være hvilke som helst <placeholder-11/>, som evalueres til <placeholder-12/>."
 
 #. Special.xml:130(primary) Special.xml:160(primary)
 msgid "factorial"
@@ -368,9 +366,8 @@ msgid "Returns the value of the Euler gamma function of the argument."
 msgstr "Returnerer værdien af Eulers gammafunktion evalueret for argumentet."
 
 #. Special.xml:170(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the result of the Euler gamma function of <placeholder-2/>, commonly written as &Gamma;(z). <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The gamma function relates to the factorial function as <placeholder-7/>. The mathematical definition of the gamma function is: <placeholder-8/> This cannot be calculated precisely, so Graph is using the Lanczos approximation to calculate the <placeholder-9/> function."
-msgstr "Funktionen <placeholder-1/> returnerer resultatet af Eulers gammafunktion for <placeholder-2/>, almindeligvis skrevet som &Gamma;(z). <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>, og funktionen har en sammenhæng med funktionen fact givet ved <placeholder-7/>. Den matematiske definition af gammafunktionen er: <placeholder-8/> Dette kan ikke beregnes præcist, så Graph bruger den såkaldte Lanczos-tilnærmelse til at beregne funktionen <placeholder-9/>."
+msgstr "Funktionen <placeholder-1/> returnerer resultatet af Eulers gammafunktion for <placeholder-2/>, almindeligvis skrevet som &Gamma;(z). <placeholder-3/> kan være et hvilket som helst <placeholder-4/>, der evalueres til et <placeholder-5/> eller et <placeholder-6/>. Gammafunktionen har en sammenhæng med funktionen fact givet ved <placeholder-7/>. Den matematiske definition af gammafunktionen er: <placeholder-8/> Dette kan ikke beregnes præcist, så Graph bruger den såkaldte Lanczos-tilnærmelse til at beregne funktionen <placeholder-9/>."
 
 #. Special.xml:198(para)
 msgid "Returns the value of the Euler beta function evaluated for the arguments."
@@ -793,9 +790,8 @@ msgid "Evaluates one or more conditions and returns a different results based on
 msgstr "Evaluerer en eller flere betingelser og returnerer forskellige resultater baseret på dette grundlag."
 
 #. Piecewise.xml:153(para)
-#, fuzzy
 msgid "The <placeholder-1/> function evaluates <placeholder-2/> and if it is different from 0 then <placeholder-3/> is evaluated and returned. Else <placeholder-4/> is evaluated and if it is different from 0 then <placeholder-5/> is returned and so forth. If none of the conditions are true <placeholder-6/> is returned. <placeholder-7/> is optional and if not specified <placeholder-8/> returns an error if none of the conditions are true. The arguments may be any <placeholder-9/> that evaluate to <placeholder-10/> or <placeholder-11/>."
-msgstr "Funktionen <placeholder-1/> evaluerer <placeholder-2/>, og hvis den er forskellig fra 0, vil <placeholder-3/> blive evalueret og returneret. Ellers vil <placeholder-4/> blive evalueret, og hvis resultatet er forskelligt fra 0, vil <placeholder-5/> blive returneret osv. Såfremt ingen af betingelserne er sande, vil <placeholder-6/> blive returneret. <placeholder-7/> er valgfri, og er denne ikke angivet, vil <placeholder-8/> returnere en fejl, såfremt ingen af betingelserne er sande. Hvis <placeholder-9/> har 3 argumenter, er den identisk med funktionen <placeholder-10/>. Argumenterne kan være hvilke som helst <placeholder-11/>, der evalueres til <placeholder-12/> eller <placeholder-13/>."
+msgstr "Funktionen <placeholder-1/> evaluerer <placeholder-2/>, og hvis den er forskellig fra 0, vil <placeholder-3/> blive evalueret og returneret. Ellers vil <placeholder-4/> blive evalueret, og hvis resultatet er forskelligt fra 0, vil <placeholder-5/> blive returneret osv. Såfremt ingen af betingelserne er sande, vil <placeholder-6/> blive returneret. <placeholder-7/> er valgfri, og er denne ikke angivet, vil <placeholder-8/> returnere en fejl, såfremt ingen af betingelserne er sande. Argumenterne kan være hvilke som helst <placeholder-9/>, som evalueres til <placeholder-10/> eller placeholder-11/>."
 
 #. OptionsDialog.xml:8(title) InsertShadingDialog.xml:109(title) InsertShadingDialog.xml:111(guilabel) InsertShadingDialog.xml:191(guilabel)
 msgid "Options"
@@ -1194,9 +1190,8 @@ msgid "Insert tangent..."
 msgstr "Indsæt tangent..."
 
 #. MenuItems.xml:284(para)
-#, fuzzy
 msgid "Use this dialog to add a tangent to an already shown function at a user specified point. The tangent will be added to the function selected in the <placeholder-1/>."
-msgstr "Her indsættes en tangent i et brugerdefineret punkt på grafen for en allerede eksisterende funktion. Tangenten vil blive tilknyttet den funktion, der er markeret i <placeholder-1/>."
+msgstr "Brug denne dialogboks for at indsætte en tangent i et brugerdefineret punkt på grafen for en allerede eksisterende funktion. Tangenten vil blive tilknyttet den funktion, der er markeret i <placeholder-1/>."
 
 #. MenuItems.xml:295(guimenuitem) InsertShadingDialog.xml:18(guimenuitem)
 msgid "Insert shading..."
@@ -3271,9 +3266,8 @@ msgid "Parametric function"
 msgstr "Parameterfunktion"
 
 #. FAQ.xml:159(para)
-#, fuzzy
 msgid "A vertical line can be drawn as a parametric function. Select <placeholder-1/> as <placeholder-2/> when adding the function. You can then add the vertical line at x=5 as <userinput>x(t)=5, y(t)=t</userinput>. Alternatively you can add <userinput>x=5</userinput> as a relation."
-msgstr "Grafen for en standardfunktion kan ikke være lodret, men den kan have en hældning, der er så stor, at den ser ud til at være lodret. Grafen for funktionen <userinput>f(x)=1000(x-5)</userinput> ser ud til at være lodret ved x=5. En lodret linje kan tegnes som graf for en parameterfunktion. Vælg <placeholder-1/> som <placeholder-2/>, når funktionen indsættes. Grafen for parameterfunktionen <userinput>x(t)=5, y(t)=t</userinput> er lodret. Alternativt kan du indsætte relationen x=5."
+msgstr "En lodret linje kan tegnes som en parameterfunktion. Vælg <placeholder-1/> som <placeholder-2/>, når funktionen indsættes. Den lodrette linje gennem x=5 kan nu indsættes som <userinput>x(t)=5, y(t)=t</userinput>. Alternativt kan du indsætte relationen <userinput>x=5</userinput>."
 
 #. FAQ.xml:170(para)
 msgid "How do I plot a function x=f(y)?"
@@ -3316,9 +3310,8 @@ msgid "How can I draw the negative part of f(x)=sqrt(x+2) ?"
 msgstr "Hvordan kan jeg tegne den negative del af f(x)=sqrt(x+2)?"
 
 #. FAQ.xml:251(para)
-#, fuzzy
 msgid "For each value x, f(x) will evaluate to at most one value. <userinput>f(x)=sqrt(x+2)</userinput> will therefore only have positive values of f(x). To plot it for negative f(x) too, you will have to create two separate functions: <userinput>f(x)=sqrt(x+2)</userinput> and <userinput>f(x)=-sqrt(x+2)</userinput>. Alternatively you can plot it as the relation: <userinput>y^2=x+2</userinput>."
-msgstr "For hver x-værdi vil f(x) højst evaluere én værdi. Derfor vil f(x)=sqrt(x+2) kun have positive værdier af f(x). For også at plotte den negative værdier af f(x), er det nødvendigt at oprette to separate funktioner: f(x)=sqrt(x+2) og f(x)=-sqrt(x+2). Som alternativ hertil kan man plotte funktionen ved at indsætte relationen: y^2=x+2."
+msgstr "For hver x-værdi vil f(x) højst evaluere én værdi. Derfor vil <userinput>f(x)=sqrt(x+2)</userinput> kun have positive værdier af f(x). For også at plotte den for negative værdier af f(x) er det nødvendigt at oprette to forskellige funktioner: <userinput>f(x)=sqrt(x+2)</userinput> og <userinput>f(x)=-sqrt(x+2)</userinput>. Som alternativ hertil kan man plotte funktionen ved at indsætte relationen: <userinput>y^2=x+2</userinput>."
 
 #. FAQ.xml:263(para)
 msgid "How do I plot a complex function like f(t)=e^(i*t)?"
@@ -3333,9 +3326,8 @@ msgid "How can I make Graph plot functions with vertical asymptotes correctly?"
 msgstr "Hvordan plotter jeg funktioner med lodrette asymptoter korrekt?"
 
 #. FAQ.xml:283(para)
-#, fuzzy
 msgid "Functions like <userinput>f(x)=tan(x)</userinput> with vertical asymptotes may not always be shown correctly. As default Graph will evaluate the function for each pixel on the x-axis. But if the graph has a steep slope that goes against infinite and back between two pixels, Graph will not notice it. To plot the function correctly you can tell Graph how many evaluations to perform. This may be entered in the <placeholder-1/> field in the <placeholder-2/> dialog. A number around 100000 will usually show the function correctly."
-msgstr "Funktioner som f(x)=tan(x) med lodrette asymptoter vises måske ikke altid korrekt. Som standard evaluerer Graph funktionen for hver pixel på x-aksen. Hvis grafen har en stejl hældning, der går mod uendelig og tilbage igen mellem to pixel, vil Graph imidlertid ikke bemærke det. For at plotte funktionen korrekt, kan man instruere Graph i, hvor mange evalueringer der skal foretages. Dette kan indtastes i feltet <placeholder-1/> i dialogboksen <placeholder-2/>. En tal i omegnen af 100000 vil som regel få funktionen til at blive vist korrekt."
+msgstr "Funktioner som <userinput>f(x)=tan(x)</userinput> med lodrette asymptoter vises måske ikke altid korrekt. Som standard evaluerer Graph funktionen for hver pixel på x-aksen. Hvis grafen har en stejl hældning, der går mod uendelig og tilbage igen mellem to pixel, vil Graph imidlertid ikke bemærke det. For at plotte funktionen korrekt kan man angive, hvor mange evalueringer Graph skal foretage. Dette kan indtastes i feltet <placeholder-1/> i dialogboksen <placeholder-2/>. Et tal i omegnen af 100.000 vil som regel få funktionen til at blive vist korrekt."
 
 #. FAQ.xml:296(para)
 msgid "How to create a PDF file from Graph?"
@@ -3434,9 +3426,8 @@ msgid "When you click with the mouse on the graphing area you may choose what th
 msgstr "Når der klikkes med musen i koordinatsystemet, kan du vælge, hvad cursoren skal låse sig fast til: <placeholder-1/>"
 
 #. EvaluateDialog.xml:103(para)
-#, fuzzy
 msgid "When <placeholder-1/> is selected the dialog is used to calculate the definite integral for the selected function over a specified domain range. For standard functions, parametric functions and tangents the definite integral is the same as the signed area between the graph and the x-axis (the real x-axis and not necessarily the visible one) for the given range."
-msgstr "Når <placeholder-1/> vælges, bruges vinduet til at beregne arealer (med fortegn). For standardfunktioner, parameterfunktioner og tangenter er resultatet arealet (med fortegn) mellem grafen for funktionen og x-aksen (den rigtige x-akse er ikke nødvendigvis den, der vises) i det angivne interval."
+msgstr "Når <placeholder-1/> vælges, bruges vinduet til at beregne det bestemte integral for den valgte funktion over et givet interval. For standardfunktioner, parameterfunktioner og tangenter er det bestemte integral det samme som arealet (med fortegn) mellem grafen for funktionen og x-aksen (den rigtige x-akse er ikke nødvendigvis den, der vises) i det angivne interval."
 
 #. EvaluateDialog.xml:113(para)
 msgid "For polar functions, the definite integral is the same as the signed area between the graph in the given range and the origin. The area is considered negative when the angle goes from a higher to a lower value (clockwise)."
@@ -3447,9 +3438,8 @@ msgid "For the other functions the area is considered negative when the graph is
 msgstr "For andre funktioner betragtes arealet som negativt, når grafen ligger under x-aksen, eller når funktionen går fra en højere til en lavere x-værdi."
 
 #. EvaluateDialog.xml:120(para)
-#, fuzzy
 msgid "You can either enter the range in the edit boxes or select the range with the mouse. The calculated integral will be shown below the range, and the matched area will be marked with a shading in the coordinate system. The calculation is done using the Gauss-Kronrod 21-point integration rule adaptively with as much accuracy as possible. If an estimated relative error less than <placeholder-1/> cannot be reached, no result will be shown."
-msgstr "Du kan enten indtaste intervallet i vinduet eller markere det med musen i hovedvinduet. Det beregnede areal vil blive vist i vinduet og skraveret på billedet i hovedvinduet. Beregningen foretages med Simpsons regel med 1000 iterationer."
+msgstr "Du kan enten indtaste intervallet i vinduet eller markere det med musen. Det beregnede integral vil blive vist under intervallet, og det tilsvarende areal vil blive markeret med en skravering i koordinatsystemet. Beregningen foretages med Gauss-Kronrods 21-punktsintegrationsregel tilpasset størst mulige nøjagtighed. Hvis en forventet relativ fejl på mindre end <placeholder-1/> ikke kan opnås, bliver der ikke vist noget resultat."
 
 #. EvaluateDialog.xml:130(para)
 msgid "When <placeholder-1/> is selected the dialog is used to calculate the distance between two points on the function along the curve. You may either enter the range in the dialog or use the mouse to mark it. The range will be marked in the coordinate system. The calculation is done by converting it to an integration and using Simpson's formula through 1000 iterations."
