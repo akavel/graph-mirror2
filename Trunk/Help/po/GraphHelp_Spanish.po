@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spanish Help File 4.4\n"
-"POT-Creation-Date: 2011-06-18 17:09Romance Daylight Time\n"
+"POT-Creation-Date: 2011-02-13 11:00Romance Standard Time\n"
 "PO-Revision-Date: 2011-02-02 17:53+0100\n"
 "Last-Translator: Francisco Oliver <graph.esp@gmail.com>\n"
 "Language-Team:  <fran_oliver@ono.com>\n"
@@ -2233,53 +2233,46 @@ msgid "It is possible to draw lines between the markers. The line will always be
 msgstr "Si lo deseas, puedes unir los marcadores con líneas. En <guilabel>Estilo</guilabel> selecciona una opción para el trazo. Por defecto, no se dibuja ninguna línea. En este sentido, nota que en la lista desplegable hay una opción en blanco. Asimismo, puedes escoger un color y un grosor para el trazo, en píxeles. Ten en cuenta que las líneas serán dibujadas en el mismo orden en el que definas los puntos dentro de la cuadrícula."
 
 #. InsertPointSeriesDialog.xml:98(guilabel) 
-#, fuzzy
-msgid "1D cubic spline"
+msgid "Cubic splines"
 msgstr "Splines cúbicos"
 
 #. InsertPointSeriesDialog.xml:100(guilabel) 
-#, fuzzy
-msgid "2D cubic spline"
-msgstr "Splines cúbicos"
-
-#. InsertPointSeriesDialog.xml:101(guilabel) 
 msgid "Half cosine"
 msgstr "Coseno 1/2 fase"
 
 #. InsertPointSeriesDialog.xml:96(para) 
-#, fuzzy
-msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink> which is a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr "La lista desplegable <guilabel>Interpolación</guilabel> ofrece tres clases de ajuste. <placeholder-1/>: define líneas rectas entre los puntos. <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">Splines cúbicos</ulink>: ajusta una curvilínea entre los puntos mediante un polinomio de tercer grado. <placeholder-3/>: el ajuste entre dos puntos dibuja la mitad de la fase de la función <link linkend=\"cos\">coseno</link>. Aquí el resultado puede no parecer tan suave como el obtenido por splines cúbicos, pero la interpolación por coseno no sobretraza o subtraza el ajuste respecto a los puntos o nodos, extremo que sí hacen los splines cúbicos."
 
-#. InsertPointSeriesDialog.xml:108(term) 
+#. InsertPointSeriesDialog.xml:107(term) 
 msgid "Labels"
 msgstr "Rótulos"
 
-#. InsertPointSeriesDialog.xml:111(guilabel) 
+#. InsertPointSeriesDialog.xml:110(guilabel) 
 msgid "Show coordinates"
 msgstr "Mostrar coordenadas"
 
-#. InsertPointSeriesDialog.xml:110(para) 
+#. InsertPointSeriesDialog.xml:109(para) 
 msgid "Put a check in <placeholder-1/> to show Cartesian or polar coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
 msgstr "Activa la casilla <placeholder-1/> si deseas adjuntar a cada punto sus coordenadas, cartesianas o polares. El botón <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> te permite elegir un formato para dichas coordenadas. En la lista desplegable <guilabel>Posición</guilabel> selecciona dónde quieres situar las coordenadas respecto a los puntos."
 
-#. InsertPointSeriesDialog.xml:119(term) 
+#. InsertPointSeriesDialog.xml:118(term) 
 msgid "Error bars"
 msgstr "Barras de error"
 
-#. InsertPointSeriesDialog.xml:125(guilabel) 
+#. InsertPointSeriesDialog.xml:124(guilabel) 
 msgid "Fixed"
 msgstr "Valor fijo"
 
-#. InsertPointSeriesDialog.xml:126(guilabel) 
+#. InsertPointSeriesDialog.xml:125(guilabel) 
 msgid "Relative"
 msgstr "Porcentaje"
 
-#. InsertPointSeriesDialog.xml:127(guilabel) 
+#. InsertPointSeriesDialog.xml:126(guilabel) 
 msgid "Custom"
 msgstr "Personalizada"
 
-#. InsertPointSeriesDialog.xml:121(para) 
+#. InsertPointSeriesDialog.xml:120(para) 
 msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are &plusmn;values. Custom Y-errors are also used to weight the points when creating trendlines."
 msgstr "Las barras de error expresan gráficamente el error o grado de incertidumbre relativo a cada punto. Dicho error puede afectar a la coordenada <emphasis>x</emphasis> ­–barras de error horizontales–, a la coordenada <emphasis>y</emphasis> –barras de error verticales–, o a ambas al mismo tiempo.<para><graphic fileref=\"ErrorAmountTab-SP.png\" align=\"center\" scale=\"60\"/><para>Tres opciones permiten especificar la cuantía o margen de error. <placeholder-1/>: las cuantías de error de todos los puntos tienen la misma magnitud. <placeholder-2/>: las cuantías de error de todos los puntos tienen el mismo porcentaje respecto a la coordenada seleccionada. <placeholder-3/>: define una cuantía de error diferente para cada punto. En este caso, el área de edición de la cuadrícula desplegará una o dos nuevas columnas (<emphasis>Error X</emphasis>, <emphasis>Error Y</emphasis>) donde podrás fijar una determinada cuantía de error para cada punto. Recuerda que todas las cuantías de error se representan como valores &plusmn;, esto es, valores positivos y negativos.</para><para>El recuadro <guilabel>Muestra</guilabel> proporciona una vista previa de las opciones elegidas, por ejemplo, el marcador seleccionado, su color y tamaño, y otros detalles como los rótulos o las barras de error.</para></para>"
 
@@ -3792,8 +3785,7 @@ msgid "It is not possible to differentiate a recursive function because the resu
 msgstr "No es posible derivar una función recursiva porque la función resultante tendría una longitud infinita."
 
 #. Errors.xml:373(term) 
-#, fuzzy
-msgid "Error 79: Function %s cannot be differentiated."
+msgid "Error 79: Function cannot be differentiated."
 msgstr "Error 79: La función no puede ser derivada."
 
 #. Errors.xml:375(para) 
