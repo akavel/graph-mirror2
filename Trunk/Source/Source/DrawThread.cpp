@@ -1175,7 +1175,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
 {
   bool xLogScl = Axes.xAxis.LogScl;
   bool yLogScl = Axes.yAxis.LogScl;
-  int dX = (Draw->Width > 1200) ? Draw->Width / 120 : 1;
+  int dX = (Draw->Width > 1200) ? (Draw->Width > 2400 ? Draw->Width / 120 : 2 ) : 1;
   std::exp(1.0); //Workaround for stupid bug in bcc 5.6.4
   double dx = xLogScl ? std::exp(dX/Draw->xScale) : dX/Draw->xScale;
   double dx2 = xLogScl ? std::exp(1/Draw->xScale) : 1/Draw->xScale;
