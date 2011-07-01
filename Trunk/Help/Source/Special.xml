@@ -34,7 +34,7 @@
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to
 				<glossterm linkend="RealNumber">real numbers</glossterm> or they can be <constant>-INF</constant> or <constant>INF</constant> to indicate negative or positive infinity.
 				<function>integrate</function> does not calculate the integral exactly.
-				Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to a estimated relative error less than <mathphrase>10<superscript>-3</superscript></mathphrase>.
+				Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to an estimated relative error less than <mathphrase>10<superscript>-3</superscript></mathphrase>.
 			</para>
 		</simplesect>
 		<simplesect>

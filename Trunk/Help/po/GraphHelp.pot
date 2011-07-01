@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-06-18 17:13Romance Daylight Time\n"
+"POT-Creation-Date: 2011-07-01 23:06Romance Daylight Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: <LL@li.org>\n"
@@ -306,7 +306,7 @@ msgid "real numbers"
 msgstr ""
 
 #. Special.xml:22(para) 
-msgid "The <placeholder-1/> function returns an aproximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to a estimated relative error less than <placeholder-19/>."
+msgid "The <placeholder-1/> function returns an aproximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to an estimated relative error less than <placeholder-19/>."
 msgstr ""
 
 #. Special.xml:41(title) Rounding.xml:153(title) 
@@ -778,7 +778,7 @@ msgid "The <placeholder-1/> function returns <placeholder-2/>, if <placeholder-3
 msgstr ""
 
 #. Piecewise.xml:144(para) 
-msgid "Evaluates one or more conditions and returns a different results based on them."
+msgid "Evaluates one or more conditions and returns a different result based on them."
 msgstr ""
 
 #. Piecewise.xml:153(para) 
@@ -2910,7 +2910,7 @@ msgid "Subtraction (-)"
 msgstr ""
 
 #. FunctionList.xml:127(entry) 
-msgid "Subtracts two terms. Example f(x)=2-x"
+msgid "Subtracts two terms. Example: f(x)=2-x"
 msgstr ""
 
 #. FunctionList.xml:130(entry) 
