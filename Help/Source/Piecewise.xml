@@ -142,7 +142,7 @@
 		<title><markup>if</markup> function</title>
 		<indexterm><primary><function>if</function> function</primary></indexterm>
 		<para>
-			Evaluates one or more conditions and returns a different results based on them.
+			Evaluates one or more conditions and returns a different result based on them.
 		</para>
 		<simplesect>
 			<title>Syntax</title>
