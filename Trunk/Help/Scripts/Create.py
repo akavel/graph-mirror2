@@ -4,7 +4,7 @@ import gettext
 import codecs
 import sys
 
-Languages = ["Danish", "Croatian", "Spanish", "German", "Swedish", "French", "Polish", "Czech", "Dutch", "Turkish", "Italian"]
+Languages = ["Danish", "Croatian", "Spanish", "German", "Swedish", "French", "Polish", "Czech", "Dutch", "Turkish", "Italian", "Portuguese (Brazil)"]
 LocalePath = "d:\\Projects\\Graph\\Locale\\"
 
 def Encode(Str):
@@ -18,7 +18,7 @@ os.chdir("../po")
 for Language in Languages:
     print
     print Language + ":"
-    FileName = "GraphHelp_%s.po" % (Language,)
+    FileName = "GraphHelp_%s.po" % (Language[:Language.find(" ") if Language.find(" ") != -1 else None],)
 
     if os.path.exists(FileName):
         # Merge with old translation
