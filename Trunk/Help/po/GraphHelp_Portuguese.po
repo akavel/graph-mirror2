@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-07-02 01:24Romance Daylight Time\n"
+"POT-Creation-Date: 2011-07-04 21:20Romance Daylight Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: <LL@li.org>\n"
@@ -330,7 +330,9 @@ msgid "integers"
 msgstr ""
 
 #. Special.xml:71(para) 
-msgid "The <placeholder-1/> function returns the summation of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
+msgid ""
+"The <placeholder-1/> function returns the summation of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
+"\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr ""
 
 #. Special.xml:96(para) 
@@ -338,7 +340,9 @@ msgid "Returns the product of an expression evaluated over a range of integers."
 msgstr ""
 
 #. Special.xml:105(para) 
-msgid "The <placeholder-1/> function returns the product of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
+msgid ""
+"The <placeholder-1/> function returns the product of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
+"\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr ""
 
 #. Special.xml:130(primary) Special.xml:160(primary) 
@@ -2222,7 +2226,7 @@ msgid "Half cosine"
 msgstr "Meio coseno"
 
 #. InsertPointSeriesDialog.xml:96(para) 
-msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+msgid "You can choose between four types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr ""
 
 #. InsertPointSeriesDialog.xml:108(term) 
@@ -4507,4 +4511,3 @@ msgstr ""
 
 msgid "Translator:"
 msgstr ""
-

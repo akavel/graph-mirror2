@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spanish Help File 4.4\n"
-"POT-Creation-Date: 2011-07-01 23:06Romance Daylight Time\n"
+"POT-Creation-Date: 2011-07-04 21:20Romance Daylight Time\n"
 "PO-Revision-Date: 2011-02-02 17:53+0100\n"
 "Last-Translator: Francisco Oliver <graph.esp@gmail.com>\n"
 "Language-Team:  <fran_oliver@ono.com>\n"
@@ -2248,7 +2248,7 @@ msgstr "Coseno 1/2 fase"
 
 #. InsertPointSeriesDialog.xml:96(para) 
 #, fuzzy
-msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+msgid "You can choose between four types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr "La lista desplegable <guilabel>Interpolación</guilabel> ofrece tres clases de ajuste. <placeholder-1/>: define líneas rectas entre los puntos. <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">Splines cúbicos</ulink>: ajusta una curvilínea entre los puntos mediante un polinomio de tercer grado. <placeholder-3/>: el ajuste entre dos puntos dibuja la mitad de la fase de la función <link linkend=\"cos\">coseno</link>. Aquí el resultado puede no parecer tan suave como el obtenido por splines cúbicos, pero la interpolación por coseno no sobretraza o subtraza el ajuste respecto a los puntos o nodos, extremo que sí hacen los splines cúbicos."
 
 #. InsertPointSeriesDialog.xml:108(term) 
