@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-07-01 23:06Romance Daylight Time\n"
+"POT-Creation-Date: 2011-07-04 21:20Romance Daylight Time\n"
 "PO-Revision-Date: 2011-06-22 10:19+0100\n"
 "Last-Translator: JP Fontaine <pguichon@aol.com>\n"
 "Language-Team:  <LL@li.org>\n"
@@ -2235,7 +2235,7 @@ msgstr "\"Half cosine\""
 
 #. InsertPointSeriesDialog.xml:96(para) 
 #, fuzzy
-msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+msgid "You can choose between four types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr "Vous pouvez choisir entre trois types d'interpolation : <placeholder-1/> tracera un segment entre les marqueurs. <placeholder-2/> tracera une <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink> courbe lissée joignant tous les points avec des polynômes du 3<superscript>ème</superscript> degré. <placeholder-3/> tracera une courbe de demi-cosinus entre les points, qui n'apparaîtra pas aussi lissée que les splines cubiques mais ne présentant pas de débordements excessifs comme les splines peuvent le faire."
 
 #. InsertPointSeriesDialog.xml:108(term) 
