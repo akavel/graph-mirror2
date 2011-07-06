@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2011-06-15 21:57\n"
-"PO-Revision-Date: 2008-02-15 18:46+0100\n"
-"Last-Translator: Tore Ottinsen <t-ottin@online.no>\n"
+"PO-Revision-Date: 2011-07-05 18:58+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,9 +102,8 @@ msgstr "Retning"
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_0..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_0..Hint
-#, fuzzy
 msgid "Show the label with no rotation."
-msgstr "Skraverer området under funksjonen."
+msgstr ""
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_90..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_90..Hint
@@ -123,9 +122,8 @@ msgstr ""
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
-#, fuzzy
 msgid "Specify the angle of rotation for the label."
-msgstr "Velg tittelens skrifttype."
+msgstr ""
 
 #. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
@@ -254,7 +252,6 @@ msgid "New"
 msgstr "Ny"
 
 #. Form1..ActionManager..NewAction("New")..Hint
-#, fuzzy
 msgid "Create a new coordinate system."
 msgstr "Opprett et nytt koordinatsystem."
 
@@ -263,7 +260,6 @@ msgid "Open..."
 msgstr "Åpne.."
 
 #. Form1..ActionManager..OpenAction("Open...")..Hint
-#, fuzzy
 msgid "Read a coordinate system from a file."
 msgstr "Les inn et koordinatsystem fra en fil."
 
@@ -272,7 +268,6 @@ msgid "Save"
 msgstr "Lagre"
 
 #. Form1..ActionManager..SaveAction("Save")..Hint
-#, fuzzy
 msgid "Write the current coordinate system to a file."
 msgstr "Lagre koordinatsystemet i en fil."
 
@@ -300,9 +295,8 @@ msgid "Save as image..."
 msgstr "Lagre som bilde..."
 
 #. Form1..ActionManager..SaveAsImageAction("Save as image...")..Hint
-#, fuzzy
 msgid "Save the shown coordinate system as an image."
-msgstr "Lagrer det viste koordinatsystem som et bilde."
+msgstr "Lagre det viste koordinatsystem som et bilde."
 
 #. Form1..ActionManager..PrintAction("Print...")..Caption
 msgid "Print..."
@@ -346,7 +340,6 @@ msgid "Cut"
 msgstr "Klipp ut"
 
 #. Form1..ActionManager..CutAction("Cut")..Hint
-#, fuzzy
 msgid "Cut the selected function or point series to the clipboard."
 msgstr "Klipper ut den merkede funksjonen eller punktlisten og plasserer den på klippebordet."
 
@@ -359,7 +352,6 @@ msgid "Copy"
 msgstr "Kopier"
 
 #. Form1..ActionManager..CopyAction("Copy")..Hint
-#, fuzzy
 msgid "Copy the selected function or point series to the clipboard."
 msgstr "Kopierer den merkede funksjonen eller punktlisten og plasserer den på klippebordet."
 
@@ -380,9 +372,8 @@ msgid "Copy image"
 msgstr "Kopier bilde"
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Hint
-#, fuzzy
 msgid "Copy the shown coordinate system to the clipboard."
-msgstr "Kopierer det viste koordinatsystemet og plasserer det som bilde på klippebordet."
+msgstr "Kopierer det viste koordinatsystemet og plasserer det på klippebordet."
 
 #. Form1..ActionManager..AxesAction("Axes...")..Caption
 msgid "Axes..."
@@ -506,9 +497,8 @@ msgid "Standard"
 msgstr "Standard"
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Hint
-#, fuzzy
 msgid "Reset the axes to their default settings."
-msgstr "Nulstill ikonene i verktøylinjen til installasjonsstandard."
+msgstr ""
 
 #. Form1..ActionManager..MoveUpAction("Move up")..Category
 #. Form1..ActionManager..MoveDownAction("Move down")..Category
@@ -572,9 +562,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Beregn grafens buelengde mellom de to punktene."
 
 #. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
 msgid "Integrate"
-msgstr "Internett"
+msgstr ""
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
 msgid "Calculate the definite integral over a given domain."
@@ -590,9 +579,8 @@ msgid "Evaluate or trace the selected function."
 msgstr "Beregn  eller spor  den valgte funksjonen med musen."
 
 #. Form1..ActionManager..TableAction("Table")..Caption
-#, fuzzy
 msgid "Table"
-msgstr "Tabell..."
+msgstr "Tabell"
 
 #. Form1..ActionManager..TableAction("Table")..Hint
 #, fuzzy
@@ -612,14 +600,12 @@ msgid "List of functions"
 msgstr "Liste over funksjoner"
 
 #. Form1..ActionManager..ListAction("List of functions")..Hint
-#, fuzzy
 msgid "Show a list of built-in functions that can be used for graphing."
-msgstr "Viser en liste over de innebyggede funksjonene som  kan brukes til tegning av grafer."
+msgstr "Vis en liste over de innebyggede funksjonene som kan brukes til tegning av grafer."
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Caption
-#, fuzzy
 msgid "Graph web site"
-msgstr "Grafegenskaper"
+msgstr ""
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
 #, fuzzy
@@ -681,9 +667,8 @@ msgid "Insert label..."
 msgstr "Sett inn notis..."
 
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
-#, fuzzy
 msgid "Insert a text label."
-msgstr "Sett inn en notis"
+msgstr ""
 
 #. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
@@ -752,9 +737,8 @@ msgid "Insert a new equation or inequality."
 msgstr "Sett inn en ny funksjon eller ulikhet."
 
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Caption
-#, fuzzy
 msgid "Custom functions/constants..."
-msgstr "Brukerdefinerte funksjoner/konstanter"
+msgstr "Brukerdefinerte funksjoner/konstanter..."
 
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Hint
 msgid "Create custom functions and constants for use in graphs."
@@ -969,7 +953,6 @@ msgstr "Beskrivelse:"
 
 #. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
 #. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
-#, fuzzy
 msgid "Write a descriptive text to show in the legend and function list. If empty the formula will be used."
 msgstr "Lag en beskrivende tekst som skal vises i signaturforklaringen; ellers vil funksjonsforskriften bli brukt."
 
@@ -1032,9 +1015,8 @@ msgid "Insert tangent/normal"
 msgstr "Skriv inn tangent/normal"
 
 #. Form12("Insert tangent/normal")..Edit1..Hint
-#, fuzzy
 msgid "Value where the tangent/normal will interact with the function."
-msgstr "Koordinaten  hvor tangenten/normalen skjærer funksjonen."
+msgstr "Koordinaten hvor tangenten/normalen skjærer funksjonen."
 
 #. Form12("Insert tangent/normal")..RadioGroup1("Type")..Hint
 msgid "Choose if you want a tangent or a normal."
@@ -1895,18 +1877,16 @@ msgid "Choose paper size to use."
 msgstr "Velg papirstørrelse."
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Letter"
-msgstr "Venstre"
+msgstr "Letter"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Ledger"
-msgstr ""
+msgstr "Ledger"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Legal"
-msgstr "Reell"
+msgstr "Legal"
 
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
@@ -1948,17 +1928,14 @@ msgid "The chosen constant is changed by this value between each frame."
 msgstr "Den valgte konstanten endres med denne verdien mellom hvert bilde."
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Caption
-#, fuzzy
 msgid "Frame options"
 msgstr "Bildeinnstillinger"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Label5("Frame width:")..Caption
-#, fuzzy
 msgid "Frame width:"
 msgstr "Bildebredde:"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Label6("Frame height:")..Caption
-#, fuzzy
 msgid "Frame height:"
 msgstr "Bildehøyde:"
 
@@ -2005,9 +1982,8 @@ msgid "The newest version as well as the source code are available at: %s"
 msgstr "Nyeste versjon av programmet og den tilhørende kildekode kan finnes på:"
 
 #. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
-#, fuzzy
 msgid "Email: %s"
-msgstr "Epost:"
+msgstr "Epost: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
@@ -2095,9 +2071,8 @@ msgid "Save all frames in the animation to image files. This will create as many
 msgstr ""
 
 #. Form21("Placement")..Label1("Corner:")..Caption
-#, fuzzy
 msgid "Corner:"
-msgstr "Farge:"
+msgstr ""
 
 #. Form21("Placement")..ComboBox1..Hint
 #, fuzzy
@@ -2105,12 +2080,10 @@ msgid "Choose which corner of the label should be locked."
 msgstr "Velg hvor signaturforklaringen skal plasseres."
 
 #. Form21("Placement")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Upper Left"
 msgstr "Øverst til venstre"
 
 #. Form21("Placement")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Upper Right"
 msgstr "Øverst til høyre"
 
@@ -2135,9 +2108,8 @@ msgid "Python interpreter"
 msgstr ""
 
 #. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
-#, fuzzy
 msgid "Clear"
-msgstr "Farge"
+msgstr ""
 
 #. Form3("Edit axes")..Caption
 msgid "Edit axes"
@@ -2272,9 +2244,8 @@ msgstr "Viser enheter på aksene som en brøk multiplisert med pi."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
-#, fuzzy
 msgid "Show as a multiple of π"
-msgstr "Vis som multiplum av pi"
+msgstr "Vis som multiplum av π"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 #. ParFuncFrame..ComboBox1....Items.Strings
@@ -2644,9 +2615,8 @@ msgid "Insert symbol (Ctrl+G)"
 msgstr "Sett inn symbol (Ctrl+G)"
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
-#, fuzzy
 msgid "Insert object."
-msgstr "Sett inn objekt"
+msgstr "Sett inn objekt."
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
@@ -2766,9 +2736,8 @@ msgstr "Velg hvor markøren skal plasseres når det klikkes på bildet."
 
 #. AreaFrame..GridPanel1..Label3("Integral")..Caption
 #. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
 msgid "Integral"
-msgstr "Internett"
+msgstr ""
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2895,7 +2864,6 @@ msgid "Length"
 msgstr "Lengde"
 
 #. Shown in rotation dialog
-#, fuzzy
 msgid "Degrees"
 msgstr "Grader"
 
@@ -2912,19 +2880,16 @@ msgid "Axes"
 msgstr "Akser"
 
 #. Shortcut key
-#, fuzzy
 msgid "Ctrl"
-msgstr "Ctrl+"
+msgstr "Ctrl"
 
 #. Shortcut key
-#, fuzzy
 msgid "Alt"
-msgstr "Alt+"
+msgstr "Alt"
 
 #. Shortcut key
-#, fuzzy
 msgid "Shift"
-msgstr "Skift+"
+msgstr "Skift"
 
 #. Shortcut key
 msgid "Del"
@@ -2981,9 +2946,8 @@ msgstr "Mellomrom"
 msgid "An error occurred while evaluating power function."
 msgstr "Det oppsto en feil under beregning av potensfunksjonen."
 
-#, fuzzy
 msgid "Tangent to pi/2+n*pi (90+n180 in degrees) is undefined."
-msgstr "Tangenten til 90+pi*180 er udefinert."
+msgstr "Tangenten til pi/2+n*pi (90+n180 i grader) er udefinert."
 
 msgid "Fact can only be calculated for positive integers."
 msgstr "Fakultet kan bare beregnes for positive heltall."
@@ -3039,7 +3003,6 @@ msgstr "Uventet operator. Operatoren '%s' kan ikke plasseres her."
 msgid "The right bracket is missing."
 msgstr "Sluttparentes mangler."
 
-#, fuzzy
 msgid "Invalid number of arguments supplied for the function '%s'"
 msgstr "Galt antall argumenter angitt for funksjonen '%s'"
 
@@ -3049,7 +3012,6 @@ msgstr "Feilplassert sammenligningsoperator."
 msgid "Invalid number found. Use the format: -5.475E-8"
 msgstr "Ugyldig tall. Bruk formatet: -5.475E-8"
 
-#, fuzzy
 msgid "String is empty. You need to enter a formula."
 msgstr "Strengen er tom. Du må skrive inn en funksjon."
 
@@ -3099,9 +3061,8 @@ msgstr "Rekursiv funksjon kan ikke deriveres."
 msgid "Internal error."
 msgstr "Intern feil."
 
-#, fuzzy
 msgid "Function \"%s\" cannot be differentiated."
-msgstr "Funksjonen kan ikke deriveres."
+msgstr "Funksjonen \"%s\" kan ikke deriveres."
 
 msgid "Not further specified error occurred under calculation."
 msgstr "Feil under beregning."
@@ -3244,14 +3205,12 @@ msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "Skrifttypen \"%s\" eksisterer ikke. Standardskrifttypen brukes i stedet."
 
 #. Description of grf file
-#, fuzzy
 msgid "Graph system"
-msgstr "Flytt systemet"
+msgstr ""
 
 #. Menu item shown in OLE client to open a Graph system object in Graph
-#, fuzzy
 msgid "Open"
-msgstr "Åpne.."
+msgstr "Åpne"
 
 #. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
@@ -3290,7 +3249,6 @@ msgstr "Filen ble ikke funnet"
 msgid "Error reading file"
 msgstr "Feil ved lesing av fil"
 
-#, fuzzy
 msgid "Printer error"
 msgstr "Skriverfeil"
 
@@ -3370,9 +3328,8 @@ msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Funksjonens deriverte er ikke definert for %s=%s"
 
 #. Caption of message box when trying to insert tangent at undefined coordinate
-#, fuzzy
 msgid "Coordinate not defined"
-msgstr "Koordinaten er ikke definert."
+msgstr "Koordinaten er ikke definert"
 
 msgid "Checking for newer version..."
 msgstr "Søker etter nyere versjon..."
@@ -3380,9 +3337,8 @@ msgstr "Søker etter nyere versjon..."
 msgid "Abort printing?"
 msgstr "Avbryt utskrift?"
 
-#, fuzzy
 msgid "Calculate definite integral"
-msgstr "Beregn tabell"
+msgstr ""
 
 msgid "Calculate length of path"
 msgstr "Beregn buelengde"
@@ -3396,9 +3352,8 @@ msgstr "Rediger tangent/normal"
 msgid "Error processing file '%s' at line %s."
 msgstr "Feil ved behandling av filen '%s' i linje %s."
 
-#, fuzzy
 msgid "Edit text label"
-msgstr "Tekstnotis"
+msgstr ""
 
 msgid "The model needs some constants (starting with a $) for Graph to find."
 msgstr ""
@@ -3866,84 +3821,58 @@ msgstr "Skriv inn prosentdel av opprinnelig størrelse."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Areal"
-
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Areal eller buelengde beregnet for det gitte intervallet ved bruk av Simpsons formel."
-
 #~ msgid "Extremum"
 #~ msgstr "Ekstremalpunkt"
-
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Den andrederiverte av funksjonen  beregnet for den innskrevne  verdien."
-
 #~ msgid "Zoom in."
 #~ msgstr "Zoom inn."
-
 #~ msgid "Zoom out."
 #~ msgstr "Zoom ut."
-
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Zoom tilbake til standardinnstillingene."
-
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Beregner arealet under grafen for den merkede funksjonen."
-
 #~ msgid "Go to home page"
 #~ msgstr "Vis hjemmesiden"
-
 #~ msgid "About Graph..."
 #~ msgstr "Om Graph..."
-
 #~ msgid "All points"
 #~ msgstr "Alle punkter"
-
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zoom slik at alle punkter er synlige."
-
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoom inn bare på x-aksen."
-
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoom ut bare på x-aksen."
-
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoom inn bare  på y-aksen."
-
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoom ut bare på y-aksen."
-
 #~ msgid "Custom functions..."
 #~ msgstr "Brukerdefinerte funksjoner..."
-
 #~ msgid "Mark end of range"
 #~ msgstr "Merk slutten av intervallet"
-
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Merk starten av skraveringen med en linje."
-
 #~ msgid "Mark start of range"
 #~ msgstr "Merk starten av intervallet"
-
 #~ msgid "Image information"
 #~ msgstr "Bildeinformasjon"
-
 #~ msgid "Open the file %s."
 #~ msgstr "Åpner filen %s."
-
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle filer [*.*]|*.*"
-
 #~ msgid "Calculate area"
 #~ msgstr "Beregn areal"
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Serveren svarte med meldingen '%s'"
-
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokollfeil %s"
-
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Du kan sende forslag til forbedringer, feilrapporter og kommentarer til graph@padowan.dk."
-
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Velg dette for at plassere bildet midt på siden."
+
