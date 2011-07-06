@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-06-15 21:57\n"
-"PO-Revision-Date: 2009-01-05 22:47-0000\n"
-"Last-Translator: jorge Geraldes <jmbgeraldes@sapo.pt>\n"
+"PO-Revision-Date: 2011-07-06 16:12+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -576,9 +576,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Calcula o comprimento da curva entre dois pontos."
 
 #. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
 msgid "Integrate"
-msgstr "Internet"
+msgstr ""
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
 msgid "Calculate the definite integral over a given domain."
@@ -594,9 +593,8 @@ msgid "Evaluate or trace the selected function."
 msgstr "Calcula ou traça a função seleccionada."
 
 #. Form1..ActionManager..TableAction("Table")..Caption
-#, fuzzy
 msgid "Table"
-msgstr "Tabela..."
+msgstr "Tabela"
 
 #. Form1..ActionManager..TableAction("Table")..Hint
 #, fuzzy
@@ -621,9 +619,8 @@ msgid "Show a list of built-in functions that can be used for graphing."
 msgstr "Mostra a lista de funções construídas que podem ser usadas."
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Caption
-#, fuzzy
 msgid "Graph web site"
-msgstr "Propriedades do gráfico"
+msgstr ""
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
 #, fuzzy
@@ -1899,18 +1896,16 @@ msgid "Choose paper size to use."
 msgstr "Escolha o tamanho do papel."
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Letter"
-msgstr "Esquerda"
+msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Ledger"
 msgstr ""
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Legal"
-msgstr "Real"
+msgstr ""
 
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
@@ -1957,12 +1952,10 @@ msgid "Frame options"
 msgstr "Opções da imagem"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Label5("Frame width:")..Caption
-#, fuzzy
 msgid "Frame width:"
 msgstr "Largura da imagem:"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Label6("Frame height:")..Caption
-#, fuzzy
 msgid "Frame height:"
 msgstr "Altura da imagem:"
 
@@ -2009,9 +2002,8 @@ msgid "The newest version as well as the source code are available at: %s"
 msgstr "Novas versões e o código fonte estão disponíveis em:"
 
 #. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
-#, fuzzy
 msgid "Email: %s"
-msgstr "Email:"
+msgstr "Email: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
@@ -2099,9 +2091,8 @@ msgid "Save all frames in the animation to image files. This will create as many
 msgstr "Guarde todos os frames da animação de imagens. Isto irá criar tantos ficheiros como existem nos frames de  animação."
 
 #. Form21("Placement")..Label1("Corner:")..Caption
-#, fuzzy
 msgid "Corner:"
-msgstr "Cor:"
+msgstr ""
 
 #. Form21("Placement")..ComboBox1..Hint
 #, fuzzy
@@ -2770,9 +2761,8 @@ msgstr "Seleccione onde o cursor será colocado quando você clicar sobre a imag
 
 #. AreaFrame..GridPanel1..Label3("Integral")..Caption
 #. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
 msgid "Integral"
-msgstr "Internet"
+msgstr ""
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2899,9 +2889,8 @@ msgid "Length"
 msgstr "Comprimento"
 
 #. Shown in rotation dialog
-#, fuzzy
 msgid "Degrees"
-msgstr "Graus"
+msgstr ""
 
 #. Name for labels shown in the function list if there is no text in the label.
 msgid "Label"
@@ -2924,14 +2913,12 @@ msgid "Alt"
 msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Shift"
-msgstr "Branco"
+msgstr ""
 
 #. Shortcut key
-#, fuzzy
 msgid "Del"
-msgstr "Apagar"
+msgstr ""
 
 #. Shortcut key
 msgid "Ins"
@@ -2942,9 +2929,8 @@ msgid "Home"
 msgstr "Início"
 
 #. Shortcut key
-#, fuzzy
 msgid "End"
-msgstr "Fim:"
+msgstr ""
 
 #. Shortcut key
 msgid "PgUp"
@@ -3253,7 +3239,6 @@ msgid "Graph system"
 msgstr "Mover o plano"
 
 #. Menu item shown in OLE client to open a Graph system object in Graph
-#, fuzzy
 msgid "Open"
 msgstr "Abrir"
 
@@ -3874,203 +3859,140 @@ msgstr "Entre o valor em percentagem do tamanho original."
 #, fuzzy
 #~ msgid "Calculate the area under the path of the selected function."
 #~ msgstr "Calcula a área  no intervalo da função seleccionada."
-
 #~ msgid "About Graph..."
 #~ msgstr "Sobre o Graph..."
-
 #~ msgid "Custom functions..."
 #~ msgstr "Funções usuais..."
-
 #~ msgid "Insert an OLE object such as a drawing or an equation."
 #~ msgstr "Inserir o Objecto OLE como por exemplo um desenho ou uma equação."
-
 #~ msgid "Mark end of range"
 #~ msgstr "Delimita o fim do intervalo"
-
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Delimita o início do sombreado com uma linha."
-
 #~ msgid "Mark start of range"
 #~ msgstr "Delimita o inicio do intervalo"
-
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Área ou comprimento da curva calculada para o intervalo dado utilizando a fórmula de Simpson."
-
 #~ msgid "Extremum"
 #~ msgstr "Extremo"
-
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Texto [*.txt; *.csv]|*.txt;*.csv|Todos os ficheiros [*.*]|*.*"
-
 #~ msgid "Calculate area"
 #~ msgstr "Calcule a área"
-
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Podedar sugestões para as versões futuras, relatar erros e comentários enviando um email para: graph@padowan.dk"
-
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Esta é a derivada segunda da função, calculada para o valor-x dado."
-
 #~ msgid "Zoom in."
 #~ msgstr "Amplia."
-
 #~ msgid "Zoom out."
 #~ msgstr "Reduz."
-
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Retornar a forma padrão."
-
 #~ msgid "Go to home page"
 #~ msgstr "Vai para Home Page"
-
 #~ msgid "All points"
 #~ msgstr "Todos os pontos"
-
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Ajusta o Zoom para mostrar todos os pontos que são visíveis."
-
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Amplia somente no eixo-x."
-
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Reduz somente no eixo-x."
-
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Amplia somento no eixo-y."
-
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Reduz somente no eixo-y."
-
 #~ msgid "Image information"
 #~ msgstr "Informações da imagem"
-
 #~ msgid "Open the file %s."
 #~ msgstr "Abrir o ficheiro %s."
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "O servidor respondeu com a mensagem ' %s'"
-
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Retorno de erro do protocolo %s"
-
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Seleccione o lugar da imagem no meio da página."
-
 #~ msgid "Insert shade..."
 #~ msgstr "Inserir sombra..."
-
 #~ msgid "Shade"
 #~ msgstr "Sombra"
-
 #~ msgid "Black"
 #~ msgstr "Preto"
-
 #~ msgid "Maroon"
 #~ msgstr "Castanho"
-
 #~ msgid "Green"
 #~ msgstr "Verde"
-
 #~ msgid "Olive"
 #~ msgstr "Verde oliva"
-
 #~ msgid "Navy"
 #~ msgstr "Azul marinho"
-
 #~ msgid "Purple"
 #~ msgstr "Violeta"
-
 #~ msgid "Teal"
 #~ msgstr "Verde teal"
-
 #~ msgid "Gray"
 #~ msgstr "Cinza"
-
 #~ msgid "Silver"
 #~ msgstr "Prata"
-
 #~ msgid "Red"
 #~ msgstr "Vermelho"
-
 #~ msgid "Lime"
 #~ msgstr "Verde limão"
-
 #~ msgid "Yellow"
 #~ msgstr "Amarelo"
-
 #~ msgid "Blue"
 #~ msgstr "Azul"
-
 #~ msgid "Fuchsia"
 #~ msgstr "Cor-de-rosa"
-
 #~ msgid "Aqua"
 #~ msgstr "Azul claro"
-
 #~ msgid "Money Green"
 #~ msgstr "Verde moeda"
-
 #~ msgid "Sky Blue"
 #~ msgstr "Azul céu"
-
 #~ msgid "Cream"
 #~ msgstr "Creme"
-
 #~ msgid "Med Gray"
 #~ msgstr "Cinza médio"
-
 #~ msgid "Insert a text label (select and click in the main window where you want the label)."
 #~ msgstr "Insere um rótulo de texto (selecione e clique na janela principal onde você deseja o rótulo)"
-
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Recorta e envia o texto selecionado para a área de transferência."
-
 #~ msgid "Open an animation file."
 #~ msgstr "Abrir um arquivo de animação."
 
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Versão "
-
 #~ msgid "Visible"
 #~ msgstr "Visivel"
-
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr "Se marcado, o item selecionado torna-se visível no sistema de coordenadas."
-
 #~ msgid "Functions"
 #~ msgstr "Funções"
-
 #~ msgid "Tangents"
 #~ msgstr "Tangentes"
-
 #~ msgid "Point series"
 #~ msgstr "Série de Pontos"
-
 #~ msgid "Shades"
 #~ msgstr "Sombras"
-
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Não ocorreu nenhum erro. Você não deve ver esta mensagem."
-
 #~ msgid "Conversion error"
 #~ msgstr "Erro de conversão"
-
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Código de erro desconhecido. \n"
 #~ "Não podia encontrar a mensagem para este erro."
-
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr "Este erro não deve ocorrer. Relate, por favor, isto ao programador."
-
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "O tamanho máximo do texto foi alcançado."
-
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Erro de dialogo: %sh"
-
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "O Graph encontrou dados desconhecidos ao colar dados da área de transferência."
+
