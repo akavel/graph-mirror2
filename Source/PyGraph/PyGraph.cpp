@@ -187,7 +187,7 @@ static PyObject* PluginSetCustomFunction(PyObject *Self, PyObject *Args)
   //The number of arguments are in func_code.co_argcount
   const wchar_t *Name;
   PyObject *Function;
-  if(!PyArg_ParseTuple(Args, "uO", &Name, &Function))
+  if(!PyArg_ParseTuple(Args, "uO!", &Name, &PyFunction_Type, &Function))
     return NULL;
 
   PyObject *FuncCode = PyObject_GetAttrString(Function, "__code__");
