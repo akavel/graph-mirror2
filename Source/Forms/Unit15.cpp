@@ -79,8 +79,8 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
     long double x = Min;
     for(int N = 1; N < Grid1->RowCount; ++N, x += ds)
     {
-      String Str = DoubleToStr(x, (x >= 10000 || x <= -10000) ? 3 : Digits);
-      //Calculate back to take care of rounding. What is written is also what is used for evaluation
+			String Str = FloatToStrF(x, ffFixed, 9999, Digits);
+			//Calculate back to take care of rounding. What is written is also what is used for evaluation
       x = Str.ToDouble();
       Grid1->Cells[0][N] = Str;
       String y, dy, ddy; //Default to empty string
@@ -96,7 +96,7 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
         dy = ComplexToString(UseReal ? Func32::TComplex(Dif1.CalcY(x)) : Dif1.CalcY(Func32::TComplex(x)));
         ddy = ComplexToString(UseReal ? Func32::TComplex(Dif2.CalcY(x)) : Dif2.CalcY(Func32::TComplex(x)));
       }
-      catch(Func32::ECalcError&)
+			catch(Func32::ECalcError&)
       { //Ignore errors and continue
       }
 
@@ -108,11 +108,11 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
         ProgressForm1->StepIt();
       if(ProgressForm1->AbortProgress)
         break;
-    }
-  }
-  else if(const TParFunc *ParFunc = dynamic_cast<const TParFunc*>(Func))
-  {
-    double t = Min;
+		}
+	}
+	else if(const TParFunc *ParFunc = dynamic_cast<const TParFunc*>(Func))
+	{
+		double t = Min;
     Func32::TParamFunc F = ParFunc->GetFunc();
     Func32::TParamFunc Dif;
     try
@@ -125,8 +125,8 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
 
     for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
     {
-      String Str = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
-      //Calculate back to take care of rounding. What is written is also what is used for evaluation
+			String Str = FloatToStrF(t, ffFixed, 9999, Digits);
+			//Calculate back to take care of rounding. What is written is also what is used for evaluation
       t = Str.ToDouble();
       Grid1->Cells[0][N] = Str;
       Func32::TComplex xDif = 0;
@@ -137,7 +137,7 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
         Grid1->Cells[1][N] = ComplexToString(UseReal ? Func32::TComplex(F.CalcX(t)) : F.CalcX(Func32::TComplex(t)));
         xDif = UseReal ? Func32::TComplex(Dif.CalcX(t)) : Dif.CalcX(Func32::TComplex(t));
         Grid1->Cells[3][N] = ComplexToString(xDif);
-      }
+			}
       catch(Func32::EFuncError&)
       {
         Grid1->Cells[3][N] = "";
@@ -152,7 +152,7 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
       }
       catch(Func32::EFuncError&)
       {
-        Grid1->Cells[4][N] = "";
+				Grid1->Cells[4][N] = "";
       }
 
       if(real(xDif) != 0 || imag(xDif) != 0)
@@ -166,23 +166,23 @@ void __fastcall TForm15::Button2Click(TObject *Sender)
         break;
     }
   }
-  else if(const TPolFunc *PolFunc = dynamic_cast<const TPolFunc*>(Func))
-  {
-    Func32::TPolarFunc F = PolFunc->GetFunc();
-    Func32::TPolarFunc Dif;
-    try
-    {
-      Dif = F.MakeDif();
-    }
-    catch(Func32::EFuncError&)
-    {
-    }
-    
-    double t = Min;
-    for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
-    {
-      String Str = DoubleToStr(t, (t >= 10000 || t <= -10000) ? 3 : Digits);
-      //Calculate back to take care of rounding. What is written is also what is used for evaluation
+	else if(const TPolFunc *PolFunc = dynamic_cast<const TPolFunc*>(Func))
+	{
+		Func32::TPolarFunc F = PolFunc->GetFunc();
+		Func32::TPolarFunc Dif;
+		try
+		{
+			Dif = F.MakeDif();
+		}
+		catch(Func32::EFuncError&)
+		{
+		}
+
+		double t = Min;
+		for(int N = 1; N < Grid1->RowCount; ++N, t += ds)
+		{
+			String Str = FloatToStrF(t, ffFixed, 9999, Digits);
+			//Calculate back to take care of rounding. What is written is also what is used for evaluation
       t = Str.ToDouble();
       Grid1->Cells[0][N] = Str;
       String r, x, y, dr, dydx;
