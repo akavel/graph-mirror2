@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2011-02-13 10:58\n"
-"PO-Revision-Date: 2011-02-13 11:00+0100\n"
+"POT-Creation-Date: 2011-06-15 21:57\n"
+"PO-Revision-Date: 2011-07-07 22:33+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
 "MIME-Version: 1.0\n"
@@ -1325,9 +1325,14 @@ msgstr "Elige la anchura del trazo, en píxeles."
 msgid "Select which kind of line to draw between the markers."
 msgstr "Elige la clase de línea que unirá los marcadores entre sí."
 
-#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Text
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-msgid "Cubic splines"
+#, fuzzy
+msgid "1D cubic spline"
+msgstr "Splines cúbicos"
+
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
+#, fuzzy
+msgid "2D cubic spline"
 msgstr "Splines cúbicos"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
@@ -2167,14 +2172,6 @@ msgstr "Muestra las líneas de división perpendiculares al eje X."
 msgid "Show grid"
 msgstr "Mostrar cuadrícula"
 
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
-msgid "The x-axis cross at y="
-msgstr "El eje X cruza en y="
-
-#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
-msgid "The x-axis will intersect with the y-axis at this value."
-msgstr "El eje X intersecta al eje Y en la ordenada indicada."
-
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
 msgid "Show the label at the right side of the graphing area, above the x-axis."
 msgstr "Muestra el título del eje de abscisas."
@@ -2188,6 +2185,14 @@ msgstr "Título del eje:"
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..Edit11..Hint
 msgid "Edit the label for the axis here."
 msgstr "Escribe el nombre que deseas asignar a este eje."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Label4("The x-axis cross at y=")..Caption
+msgid "The x-axis cross at y="
+msgstr "El eje X cruza en y="
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel2..Edit6..Hint
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr "El eje X intersecta al eje Y en la ordenada indicada."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox1("Logarithmic scale")..Hint
 msgid "Use logarithmic scale on the x-axis."
@@ -2208,11 +2213,12 @@ msgid "Show numbers"
 msgstr "Mostrar números"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Hint
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Hint
 msgid "Show units on the selected axis as a fraction multiplied by pi."
 msgstr "Muestra las unidades del eje seleccionado como fracciones múltiplos de pi."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
 #, fuzzy
 msgid "Show as a multiple of π"
 msgstr "Mostrar números como múltiplos de pi"
@@ -2239,6 +2245,14 @@ msgstr "Intervalo entre dos marcas de graduación sobre el eje Y."
 msgid "Units between the grid lines perpendicular to the y-axis."
 msgstr "Intervalo entre dos líneas de división perpendiculares al eje Y."
 
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
+msgid "Show tick marks on the y-axis."
+msgstr "Muestra las divisiones o marcas de graduación del eje Y."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
+msgid "Show horizontal grid lines."
+msgstr "Muestra las líneas de división perpendiculares al eje Y."
+
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")....Hint
 msgid "Show the label at the top of the graphing area, to the right of the y-axis."
 msgstr "Muestra el título del eje de ordenadas."
@@ -2251,14 +2265,6 @@ msgstr "El eje Y cruza en x="
 msgid "The y-axis will intersect with the x-axis at this value."
 msgstr "El eje Y intersecta al eje X en la abscisa indicada."
 
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
-msgid "Show tick marks on the y-axis."
-msgstr "Muestra las divisiones o marcas de graduación del eje Y."
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
-msgid "Show horizontal grid lines."
-msgstr "Muestra las líneas de división perpendiculares al eje Y."
-
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox8("Logarithmic scale")..Hint
 msgid "Use logarithmic scale for the y-axis."
 msgstr "Define una escala logarítmica (por defecto, base 10) para el eje Y."
@@ -2266,10 +2272,6 @@ msgstr "Define una escala logarítmica (por defecto, base 10) para el eje Y."
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox9("Show numbers")..Hint
 msgid "Show units on the y-axis."
 msgstr "Muestra las unidades del eje Y."
-
-#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of pi")..Caption
-msgid "Show as a multiple of pi"
-msgstr "Mostrar números como múltiplos de pi"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Caption
 msgid "Settings"
@@ -3027,7 +3029,8 @@ msgstr "La función recursiva no puede ser derivada."
 msgid "Internal error."
 msgstr "Error interno."
 
-msgid "Function cannot be differentiated."
+#, fuzzy
+msgid "Function \"%s\" cannot be differentiated."
 msgstr "La función no puede ser derivada."
 
 msgid "Not further specified error occurred under calculation."
@@ -3301,8 +3304,9 @@ msgstr "Comprobando si hay una nueva versión..."
 msgid "Abort printing?"
 msgstr "¿Cancelar impresión?"
 
-msgid "Calculate area"
-msgstr "Calcular área"
+#, fuzzy
+msgid "Calculate definite integral"
+msgstr "Calcular tabla de valores"
 
 msgid "Calculate length of path"
 msgstr "Calcular longitud de arco"
@@ -3771,6 +3775,12 @@ msgstr "Indica el número de copias que deseas imprimir."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Indica un porcentaje del tamaño original del área gráfica."
+
+#~ msgid "Show as a multiple of pi"
+#~ msgstr "Mostrar números como múltiplos de pi"
+
+#~ msgid "Calculate area"
+#~ msgstr "Calcular área"
 
 #~ msgid "Area"
 #~ msgstr "Área"
