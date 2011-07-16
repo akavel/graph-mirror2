@@ -62,7 +62,7 @@ bool ExecutePythonCommand(const String &Command)
 	      if(MainModule)
         {
       	  PyObject *Dict = PyModule_GetDict(MainModule);
-          PyObject *Temp = PyEval_EvalCode((PyCodeObject*)Code, Dict, Dict);
+          PyObject *Temp = PyEval_EvalCode(Code, Dict, Dict);
           if(Temp == NULL)
 						PyErr_Print();
           Py_XDECREF(Temp);
@@ -505,8 +505,8 @@ void InitPlugins()
 		PyImport_ExtendInittab(Modules);
 		static String ExeName = Application->ExeName; //Py_SetProgramName() requires variable to be static
 		Py_SetProgramName(ExeName.c_str());
-		PyEval_InitThreads();
 		Py_Initialize();
+		PyEval_InitThreads();
 		int argc;
 		wchar_t **argv = CommandLineToArgvW(GetCommandLine(), &argc);
 		PySys_SetArgv(argc, argv);

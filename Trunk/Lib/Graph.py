@@ -170,9 +170,6 @@ def ExecuteEvent(event, args):
         except:
             traceback.print_exc()
 
-def GetBaseObject(o):
-    return GetBaseObject(o.SWIGSharedPtrUpcast(o)) if "SWIGSharedPtrUpcast" in o.__swig_getmethods__ else o
-
 def LoadDfmFile(FileName):
     Stream = vcl.TFileStream(FileName, 0x20)
     Stream2 = vcl.TMemoryStream()
@@ -184,7 +181,7 @@ def LoadDfmFile(FileName):
 
 class ChildListType(collections.MutableSequence):
     def __init__(self, node):
-        self.node = GetBaseObject(node)
+        self.node = node
     def __getitem__(self, key):
         if key < Data.ChildCount(self.node):
             return Data.GetChild(self.node, key)
@@ -192,16 +189,16 @@ class ChildListType(collections.MutableSequence):
     def __len__(self):
         return Data.ChildCount(self.node)
     def insert(self, key, value):
-        Data.InsertChild(self.node, GetBaseObject(value), key)
+        Data.InsertChild(self.node, value, key)
     def __setitem__(self, key, value):
-        Data.ReplaceChild(self.node, key, GetBaseObject(value))
+        Data.ReplaceChild(self.node, key, value)
     def append(self, value):
-        Data.InsertChild(self.node, GetBaseObject(value), -1)
+        Data.InsertChild(self.node, value, -1)
     def __delitem__(self, key):
         Data.RemoveChild(self.node, key)
     def __repr__(self):
         return repr(list(self))
-    Selected = property(lambda self:Data.GetSelected(), lambda self,x:Data.SetSelected(GetBaseObject(x)))
+    Selected = property(lambda self:Data.GetSelected(), lambda self,x:Data.SetSelected(x))
 
 class PluginDataType(collections.MutableMapping):
     def __init__(self, dict): self.data = dict
