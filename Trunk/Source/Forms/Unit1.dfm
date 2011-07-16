@@ -3997,7 +3997,7 @@ object Form1: TForm1
     object AreaAction: TAction
       Category = 'Calc'
       Caption = 'Integrate'
-      Hint = 'Calculate the definite integral over a given domain.'
+      Hint = 'Calculate the definite integral over a given interval.'
       ImageIndex = 32
       OnExecute = AreaActionExecute
     end
@@ -4198,8 +4198,8 @@ object Form1: TForm1
     end
     object ScriptDocAction: TAction
       Category = 'Help'
-      Caption = 'Scripting engine dokumentation'
-      Hint = 'Show dokumentation for scripting engine and plugin system.'
+      Caption = 'Scripting engine documentation'
+      Hint = 'Show documentation for scripting engine and plugin system.'
       ImageIndex = 35
       Visible = False
       OnExecute = ScriptDocActionExecute
