@@ -1,5 +1,5 @@
 %module Settings
-%import "std_wstring.i"
+%include "std_wstring.i"
 %import "Types.i"
 
 %begin %{

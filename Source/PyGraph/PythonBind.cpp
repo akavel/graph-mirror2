@@ -16,7 +16,7 @@
 #include "ConfigRegistry.h"
 #include <Rtti.hpp>
 #include "PyVclObject.h"
-#pragma link "python31.lib"
+#pragma link "python32.lib"
 //---------------------------------------------------------------------------
 namespace Python
 {
@@ -36,7 +36,7 @@ bool IsPythonInstalled()
 	static int Result = -1;
   if(Result == -1)
   {
-    PythonInstance = LoadLibrary(L"Python31.dll");
+    PythonInstance = LoadLibrary(L"Python32.dll");
     Result = PythonInstance != NULL;
   }
   return Result;

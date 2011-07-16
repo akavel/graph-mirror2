@@ -1,6 +1,6 @@
 %module Utility
 
-%import "std_wstring.i"
+%include "std_wstring.i"
 %include "Types.i"
 
 %begin %{

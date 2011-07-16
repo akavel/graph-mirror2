@@ -6,9 +6,23 @@
 %include "std_wstring.i"
 %include "boost_shared_ptr.i"
 %include "attribute.i"
-%include "Types.i"
 
 %pythonnondynamic;
+
+%shared_ptr(TGraphElem)
+%shared_ptr(TTopGraphElem)
+%shared_ptr(TBaseFuncType)
+%shared_ptr(TStdFunc)
+%shared_ptr(TParFunc)
+%shared_ptr(TPolFunc)
+%shared_ptr(TTan)
+%shared_ptr(TPointSeries)
+%shared_ptr(TTextLabel)
+%shared_ptr(TShading)
+%shared_ptr(TRelation)
+%shared_ptr(TAxesView)
+
+%include "Types.i"
 
 %template(PointVector) std::vector<TPoint>;
 %template(CoordSetVector) std::vector<Func32::TCoordSet<> >;
@@ -77,7 +91,7 @@ static void RemoveChild(const TGraphElemPtr &Elem, unsigned Index)
   Form1->UpdateTreeView();
 }
 
-static void InsertChild(TGraphElemPtr Elem, TGraphElemPtr Child, int Index)
+static void InsertChild(const TGraphElemPtr &Elem, const TGraphElemPtr &Child, int Index)
 {
   UndoList.BeginMultiUndo();
   TGraphElemPtr Parent = Child->GetParent();
@@ -101,20 +115,7 @@ static std::map<std::wstring,std::wstring>& GetPluginData() {return Form1->Data.
 static const boost::shared_ptr<TTopGraphElem>& GetTopElem() {return Form1->Data.GetTopElem();}
 %}
 
-SWIG_SHARED_PTR(TGraphElem, TGraphElem)
-SWIG_SHARED_PTR_DERIVED(TTopGraphElem, TGraphElem, TTopGraphElem)
-SWIG_SHARED_PTR_DERIVED(TBaseFuncType, TGraphElem, TBaseFuncType)
-SWIG_SHARED_PTR_DERIVED(TStdFunc, TBaseFuncType, TStdFunc)
-SWIG_SHARED_PTR_DERIVED(TParFunc, TBaseFuncType, TParFunc)
-SWIG_SHARED_PTR_DERIVED(TPolFunc, TBaseFuncType, TPolFunc)
-SWIG_SHARED_PTR_DERIVED(TTan, TBaseFuncType, TTan)
-SWIG_SHARED_PTR_DERIVED(TPointSeries, TGraphElem, TPointSeries)
-SWIG_SHARED_PTR_DERIVED(TTextLabel, TGraphElem, TTextLabel)
-SWIG_SHARED_PTR_DERIVED(TShading, TGraphElem, TShading)
-SWIG_SHARED_PTR_DERIVED(TRelation, TGraphElem, TRelation)
-SWIG_SHARED_PTR_DERIVED(TAxesView, TGraphElem, TAxesView)
-
-//This must be placed after the SWIG_SHARED_PTR_DERIVED macro
+//This must be placed after the %shared_ptr macro
 %typemap(out) boost::shared_ptr<TBaseFuncType>
 {
   $result = DownCastSharedPtr($1);
