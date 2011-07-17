@@ -66,8 +66,8 @@
 						<para>
 							<property>PluginData</property> is a dictionary like object where a plugin can store data local to an element.
 							The data is stored in the .grf file.	Graph itself does not use this, it is only for use by plugins
-							Every plugins should use a unique value as key in the <property>PluginData</property> dictionary.
-							The value assigned should be a tuple, which may contain anything that can be passed to xmlrpc, e.g. tuples, lists, strings, numbers
+							Every plugin should use a unique value as key in the <property>PluginData</property> dictionary.
+							The value assigned should be a tuple, which may contain anything that can be passed to xmlrpc, e.g. tuples, lists, strings, numbers.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -793,6 +793,9 @@
 						</para>
 					</listitem>
 				</varlistentry>
+			</variablelist>
+		</para>
+	</section>
 
 	<section id="Graph.TRelation" xreflabel="Graph.TRelation">
 		<indexterm><primary>TRelation (class in Graph)</primary></indexterm>
