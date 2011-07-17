@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-07-04 21:20Romance Daylight Time\n"
+"POT-Creation-Date: 2011-07-17 02:38Romance Daylight Time\n"
 "PO-Revision-Date: 2009-02-08 20:35+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team:  <LL@li.org>\n"
@@ -726,7 +726,7 @@ msgid "plugins"
 msgstr ""
 
 #. Plugins.xml:7(para) 
-msgid "To use the plugin system in Graph you need to install <application>Python 3.1</application> from <ulink url=\"http://www.python.org\"/>. Documentation of the Python language may be found installed with Python or <ulink url=\"http://docs.python.org/3.1/\">online</ulink>."
+msgid "To use the plugin system in Graph you need to install <placeholder-1/> from <placeholder-2/>. Documentation of the Python language may be found installed with Python or <placeholder-3/>."
 msgstr ""
 
 #. Plugins.xml:14(para) 
@@ -1513,14 +1513,19 @@ msgstr "izvještaj o bag-u"
 msgid "Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things. The program is a standard Windows program with menus and dialogs. The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations. It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more. For more information on using the program see <placeholder-1/>."
 msgstr "Graph je program koji iscrtava krivulje matematičkih funkcija u koordinatnom sustavu. To je uobičajeni Windows program s izbornikom i dijalozima. Program iscrtava standardne, parametarske i polarne funkcije, tangente, nizove točaka, jednadžbe i umeće šrafure. Iz zadanih točaka, iscrtat će funkciju, prati vrijednosti funkcije pod kursorom miša i još puno više. Više detalja u poglavlju <placeholder-1/>."
 
+#. Introduction.xml:27(citetitle) 
+msgid "GNU General Public License"
+msgstr ""
+
 #. Introduction.xml:25(para) 
 #, fuzzy
-msgid "Graph is free software; you can redistribute it and/or modify it under the terms of the <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink>. Newest version of the program as well as the source code may be downloaded from <ulink url=\"http://www.padowan.dk\"/>."
+msgid "Graph is free software; you can redistribute it and/or modify it under the terms of the <placeholder-1/>. Newest version of the program as well as the source code may be downloaded from <placeholder-2/>."
 msgstr "Program je slobodan softver. To znači da ga možete redistribuirati i/ili mijenjati pod uvjetima <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle> GNU javne licence</citetitle></ulink>. Najnoviju verziju programa i izvorni kod možete preuzeti s <ulink url=\"http://www.padowan.dk\"/>."
 
 #. Introduction.xml:30(para) 
-msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <ulink url=\"http://www.padowan.dk/forum\">Graph support forum</ulink>."
-msgstr ""
+#, fuzzy
+msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <placeholder-2/>."
+msgstr "Iako je program ispitan pod  Microsoft Windows 98, Windows ME, Windows 2000, Windows XP i Windows Vista o.s., uvijek su može potkrasti bag. U tom slučaju, kao i sa svojim prijedlozima za poboljšanja, molimo vas da nam javite na <placeholder-1/>."
 
 #. Introduction.xml:42(para) 
 #, fuzzy
@@ -2279,7 +2284,7 @@ msgstr "Pola sinusoide"
 
 #. InsertPointSeriesDialog.xml:96(para) 
 #, fuzzy
-msgid "You can choose between four types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+msgid "You can choose between four types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <placeholder-3/>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-4/> will draw a smooth cubic spline through all points in order. <placeholder-5/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr "Raspoloživa su tri oblika interpolacije: Linearna, koja iscrtava ravne linije između oznaka, kubna, koja iscrtava lijepu glatku liniju povezujući sve točke polinomom 3<superscript>°</superscript> i <placeholder-3/> koja iscrtava polovicu kosinusa između točaka i koja nije tako glatka kao polinomna, ali nikad ne podbaci/prebaci kao ponekad ova."
 
 #. InsertPointSeriesDialog.xml:108(term) 
@@ -4628,10 +4633,6 @@ msgstr "Prevoditelj(i)"
 
 #~ msgid "Calculates the signed area between the graph and the x-axis. This is the same as the numerical integral."
 #~ msgstr "Izračun pripadne ploštine između krivulje i x-osi. To je u stvari određeni integral."
-
-#, fuzzy
-#~ msgid "The program has been tested under Microsoft Windows 2000, Windows XP and Windows Vista, but there may still be bugs left. Please report bugs and suggestions for improvements to <placeholder-1/>."
-#~ msgstr "Iako je program ispitan pod  Microsoft Windows 98, Windows ME, Windows 2000, Windows XP i Windows Vista o.s., uvijek su može potkrasti bag. U tom slučaju, kao i sa svojim prijedlozima za poboljšanja, molimo vas da nam javite na <placeholder-1/>."
 
 #~ msgid "Mark start of range"
 #~ msgstr "Oznaka početka raspona."
