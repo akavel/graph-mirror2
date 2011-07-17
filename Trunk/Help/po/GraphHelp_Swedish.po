@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-07-04 21:20Romance Daylight Time\n"
+"POT-Creation-Date: 2011-07-17 02:38Romance Daylight Time\n"
 "PO-Revision-Date: 2011-06-21 17:37+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
@@ -706,7 +706,7 @@ msgid "plugins"
 msgstr ""
 
 #. Plugins.xml:7(para) 
-msgid "To use the plugin system in Graph you need to install <application>Python 3.1</application> from <ulink url=\"http://www.python.org\"/>. Documentation of the Python language may be found installed with Python or <ulink url=\"http://docs.python.org/3.1/\">online</ulink>."
+msgid "To use the plugin system in Graph you need to install <placeholder-1/> from <placeholder-2/>. Documentation of the Python language may be found installed with Python or <placeholder-3/>."
 msgstr ""
 
 #. Plugins.xml:14(para) 
@@ -719,7 +719,7 @@ msgstr ""
 
 #. Plugins.xml:30(title) 
 msgid "Python interpreter"
-msgstr ""
+msgstr "Python-interpreterande"
 
 #. Plugins.xml:31(para) 
 msgid "The plugin system also gives access to a Python interpreter by pressing <placeholder-1/>. In this interpreter you can write Python expressions and that way do very advanced things in Graph. It is also an easy way to test code before it is used in a plugin."
@@ -851,7 +851,7 @@ msgstr ""
 
 #. OptionsDialog.xml:78(term) 
 msgid "Custom decimal separator"
-msgstr "Inställbar decimalavskiljare"
+msgstr "Valfri decimalavskiljar"
 
 #. OptionsDialog.xml:80(para) 
 msgid "Decimal separator used when data are exported to files and the clipboard. When disabled the decimal separator from the Windows Regional settings is used. This is not used for expressions entered into Graph, which always use a dot as decimal separator."
@@ -987,7 +987,7 @@ msgstr ""
 
 #. OLE.xml:43(guilabel) 
 msgid "Graph system"
-msgstr "Graph-system."
+msgstr "Graph-system"
 
 #. OLE.xml:43(guilabel) 
 msgid "Object type"
@@ -1481,12 +1481,16 @@ msgstr ""
 msgid "Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things. The program is a standard Windows program with menus and dialogs. The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations. It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more. For more information on using the program see <placeholder-1/>."
 msgstr ""
 
+#. Introduction.xml:27(citetitle) 
+msgid "GNU General Public License"
+msgstr ""
+
 #. Introduction.xml:25(para) 
-msgid "Graph is free software; you can redistribute it and/or modify it under the terms of the <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink>. Newest version of the program as well as the source code may be downloaded from <ulink url=\"http://www.padowan.dk\"/>."
+msgid "Graph is free software; you can redistribute it and/or modify it under the terms of the <placeholder-1/>. Newest version of the program as well as the source code may be downloaded from <placeholder-2/>."
 msgstr ""
 
 #. Introduction.xml:30(para) 
-msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <ulink url=\"http://www.padowan.dk/forum\">Graph support forum</ulink>."
+msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <placeholder-2/>."
 msgstr ""
 
 #. Introduction.xml:42(para) 
@@ -1799,7 +1803,7 @@ msgstr ""
 
 #. InsertTrendlineDialog.xml:138(title) 
 msgid "User defined"
-msgstr "Användardefinierad"
+msgstr "Inställbar"
 
 #. InsertTrendlineDialog.xml:142(para) 
 msgid "In this tab you can enter your own trendline models. The model is entered as a standard function, where all the constants that you want Graph to find are named with a $ followed by any combination of characters (a-z) and digits (0-9). Examples of valid constants are: $a, $y0, $const."
@@ -2179,11 +2183,11 @@ msgstr ""
 
 #. InsertPointSeriesDialog.xml:58(term) 
 msgid "Coordinate type"
-msgstr ""
+msgstr "Koordinattyp"
 
 #. InsertPointSeriesDialog.xml:62(guilabel) 
 msgid "Cartesian"
-msgstr "Kartesisk"
+msgstr "Kartesiansk"
 
 #. InsertPointSeriesDialog.xml:60(para) 
 msgid "You need to choose between the type of coordinates used for the points. <placeholder-1/> is used when you want to specify (x,y)-coordinates. <placeholder-2/> is used when you want to specify (&theta;,r)-coordinates, where <emphasis>&theta;</emphasis> is the angle and <emphasis>r</emphasis> is the distance from the origin. The angle <emphasis>&theta;</emphasis> is in <placeholder-3/> or degrees depending on the current setting."
@@ -2226,7 +2230,7 @@ msgid "Half cosine"
 msgstr "Halv cosinus"
 
 #. InsertPointSeriesDialog.xml:96(para) 
-msgid "You can choose between four types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw a smooth cubic spline through all points in order. <placeholder-4/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+msgid "You can choose between four types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <placeholder-3/>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-4/> will draw a smooth cubic spline through all points in order. <placeholder-5/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr ""
 
 #. InsertPointSeriesDialog.xml:108(term) 
@@ -4295,7 +4299,7 @@ msgstr ""
 
 #. AnimateDialog.xml:122(term) 
 msgid "Save all frames..."
-msgstr ""
+msgstr "Spara alla bilder..."
 
 #. AnimateDialog.xml:124(para) 
 msgid "This will save all frames as single bitmap files. This is the same as repeating <placeholder-1/> for each frame in the animation."

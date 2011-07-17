@@ -48,7 +48,7 @@ class docbookXmlMode:
         self.lists = ['itemizedlist', 'orderedlist', 'variablelist',
                       'segmentedlist', 'simplelist', 'calloutlist', 'varlistentry', 'informaltable' ]
         self.objects = [ 'figure', 'textobject', 'imageobject', 'mediaobject',
-                         'screenshot', 'function', 'parameter', 'personname', 'mathphrase', 'filename', 'constant', 'email', 'xref', 'varname', 'markup']
+                         'screenshot', 'function', 'parameter', 'personname', 'mathphrase', 'filename', 'constant', 'email', 'xref', 'varname', 'markup', 'application', 'ulink']
 
     def getIgnoredTags(self):
         "Returns array of tags to be ignored."
