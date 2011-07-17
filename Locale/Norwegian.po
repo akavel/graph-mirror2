@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2011-06-15 21:57\n"
+"POT-Creation-Date: 2011-07-17 01:13\n"
 "PO-Revision-Date: 2011-07-05 18:58+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Ivan Johansen\n"
@@ -82,7 +82,7 @@ msgstr "Plasser notisen rett til høyre for y-aksen."
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
-#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ExtColorBox1..CustomName
 #. Form6("Insert text label")..ColorBox1..CustomName
 #. Form6("Insert text label")..ColorBox2..CustomName
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
@@ -230,7 +230,7 @@ msgstr "Internett"
 #. Form1..ActionManager..DonateAction("Donate")..Category
 #. Form1..ActionManager..TipAction("Tip of the day")..Category
 #. Form1..ActionManager..SupportAction("Support")..Category
-#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Category
+#. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Category
 #. Form11("Insert relation")..Button3("Help")..Caption
 #. Form12("Insert tangent/normal")..Button3("Help")..Caption
 #. Form13("Insert trendline")..Button3("Help")..Caption
@@ -566,7 +566,7 @@ msgid "Integrate"
 msgstr ""
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
-msgid "Calculate the definite integral over a given domain."
+msgid "Calculate the definite integral over a given interval."
 msgstr ""
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
@@ -768,12 +768,12 @@ msgstr "Punktlister..."
 msgid "Import point series from a data file."
 msgstr "Importer punktlister fra en datafil."
 
-#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Caption
-msgid "Scripting engine dokumentation"
+#. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Caption
+msgid "Scripting engine documentation"
 msgstr ""
 
-#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Hint
-msgid "Show dokumentation for scripting engine and plugin system."
+#. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Hint
+msgid "Show documentation for scripting engine and plugin system."
 msgstr ""
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
@@ -976,7 +976,7 @@ msgstr "Type:"
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label2("Color:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label6("Color:")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
-#. Form5("Insert function")..GroupBox4("Graph properties")..Label9("Color:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label9("Color:")..Caption
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label9("Color:")..Caption
 msgid "Color:"
 msgstr "Farge:"
@@ -985,7 +985,7 @@ msgstr "Farge:"
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label8("Width:")..Caption
 #. Form13("Insert trendline")..GroupBox1("Line")..Label5("Width:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label7("Width:")..Caption
-#. Form5("Insert function")..GroupBox4("Graph properties")..Label8("Width:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label8("Width:")..Caption
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label8("Width:")..Caption
 msgid "Width:"
 msgstr "Tykkelse:"
@@ -1046,28 +1046,28 @@ msgid "Graph properties"
 msgstr "Grafegenskaper"
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label7("Line style:")..Caption
-#. Form5("Insert function")..GroupBox4("Graph properties")..Label7("Line style:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label7("Line style:")..Caption
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label7("Line style:")..Caption
 msgid "Line style:"
 msgstr "Linjetype:"
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Edit3..Hint
 #. Form13("Insert trendline")..GroupBox1("Line")..Edit2..Hint
-#. Form5("Insert function")..GroupBox4("Graph properties")..Edit6..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Panel1..Edit6..Hint
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Edit4..Hint
 msgid "Width of graph in pixels."
 msgstr "Tangentens/normalens tykkelse i pixels."
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..LineSelect1..Hint
 #. Form13("Insert trendline")..GroupBox1("Line")..LineSelect1..Hint
-#. Form5("Insert function")..GroupBox4("Graph properties")..LineSelect1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..LineSelect1..Hint
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..LineSelect1..Hint
 msgid "Choose which line style to use for drawing the graph."
 msgstr "Velg den linjetypen som skal brukes til å tegne tangenten/normalen."
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..Hint
 #. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..Hint
-#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ExtColorBox1..Hint
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..Hint
 msgid "Select the color of the graph."
 msgstr "Velg grafens farge."
@@ -2564,24 +2564,24 @@ msgstr "Trinn:"
 msgid "Number of calculation steps used to draw the graph."
 msgstr "Antall beregninger som brukes til å tegne grafen."
 
-#. Form5("Insert function")..GroupBox4("Graph properties")..Label13("Draw type:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label13("Draw type:")..Caption
 msgid "Draw type:"
 msgstr "Tegnemetode:"
 
-#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Hint
 msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
 msgstr "Velg Linjer  hvis du vil at de beregnede punktene på grafen skal forbindes. Velg Punkter hvis du bare vil vise de utregnede punktene."
 
-#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4..Text
-#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4..Text
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Items.Strings
 msgid "Automatic"
 msgstr "Automatisk"
 
-#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Items.Strings
 msgid "Dots"
 msgstr "Prikker"
 
-#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Items.Strings
 msgid "Lines"
 msgstr "Linjer"
 
@@ -3821,58 +3821,84 @@ msgstr "Skriv inn prosentdel av opprinnelig størrelse."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Areal"
+
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Areal eller buelengde beregnet for det gitte intervallet ved bruk av Simpsons formel."
+
 #~ msgid "Extremum"
 #~ msgstr "Ekstremalpunkt"
+
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Den andrederiverte av funksjonen  beregnet for den innskrevne  verdien."
+
 #~ msgid "Zoom in."
 #~ msgstr "Zoom inn."
+
 #~ msgid "Zoom out."
 #~ msgstr "Zoom ut."
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Zoom tilbake til standardinnstillingene."
+
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Beregner arealet under grafen for den merkede funksjonen."
+
 #~ msgid "Go to home page"
 #~ msgstr "Vis hjemmesiden"
+
 #~ msgid "About Graph..."
 #~ msgstr "Om Graph..."
+
 #~ msgid "All points"
 #~ msgstr "Alle punkter"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zoom slik at alle punkter er synlige."
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoom inn bare på x-aksen."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoom ut bare på x-aksen."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoom inn bare  på y-aksen."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoom ut bare på y-aksen."
+
 #~ msgid "Custom functions..."
 #~ msgstr "Brukerdefinerte funksjoner..."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Merk slutten av intervallet"
+
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Merk starten av skraveringen med en linje."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Merk starten av intervallet"
+
 #~ msgid "Image information"
 #~ msgstr "Bildeinformasjon"
+
 #~ msgid "Open the file %s."
 #~ msgstr "Åpner filen %s."
+
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle filer [*.*]|*.*"
+
 #~ msgid "Calculate area"
 #~ msgstr "Beregn areal"
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Serveren svarte med meldingen '%s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokollfeil %s"
+
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Du kan sende forslag til forbedringer, feilrapporter og kommentarer til graph@padowan.dk."
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Velg dette for at plassere bildet midt på siden."
-
