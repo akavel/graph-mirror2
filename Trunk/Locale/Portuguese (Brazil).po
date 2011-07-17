@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-06-15 21:57\n"
+"POT-Creation-Date: 2011-07-17 01:13\n"
 "PO-Revision-Date: 2011-07-06 16:11+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
@@ -87,7 +87,7 @@ msgstr "Mostra o rótulo no topo da janela à direita do eixo-y."
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
-#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ExtColorBox1..CustomName
 #. Form6("Insert text label")..ColorBox1..CustomName
 #. Form6("Insert text label")..ColorBox2..CustomName
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
@@ -237,7 +237,7 @@ msgstr "Internet"
 #. Form1..ActionManager..DonateAction("Donate")..Category
 #. Form1..ActionManager..TipAction("Tip of the day")..Category
 #. Form1..ActionManager..SupportAction("Support")..Category
-#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Category
+#. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Category
 #. Form11("Insert relation")..Button3("Help")..Caption
 #. Form12("Insert tangent/normal")..Button3("Help")..Caption
 #. Form13("Insert trendline")..Button3("Help")..Caption
@@ -581,8 +581,9 @@ msgid "Integrate"
 msgstr ""
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
-msgid "Calculate the definite integral over a given domain."
-msgstr ""
+#, fuzzy
+msgid "Calculate the definite integral over a given interval."
+msgstr "Calcular tabela"
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -787,12 +788,12 @@ msgstr "Série de Pontos..."
 msgid "Import point series from a data file."
 msgstr "Importa uma série de pontos de um arquivo de dados."
 
-#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Caption
-msgid "Scripting engine dokumentation"
+#. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Caption
+msgid "Scripting engine documentation"
 msgstr ""
 
-#. Form1..ActionManager..ScriptDocAction("Scripting engine dokumentation")..Hint
-msgid "Show dokumentation for scripting engine and plugin system."
+#. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Hint
+msgid "Show documentation for scripting engine and plugin system."
 msgstr ""
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
@@ -996,7 +997,7 @@ msgstr "Estilo:"
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label2("Color:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label6("Color:")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
-#. Form5("Insert function")..GroupBox4("Graph properties")..Label9("Color:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label9("Color:")..Caption
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label9("Color:")..Caption
 msgid "Color:"
 msgstr "Cor:"
@@ -1005,7 +1006,7 @@ msgstr "Cor:"
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label8("Width:")..Caption
 #. Form13("Insert trendline")..GroupBox1("Line")..Label5("Width:")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label7("Width:")..Caption
-#. Form5("Insert function")..GroupBox4("Graph properties")..Label8("Width:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label8("Width:")..Caption
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label8("Width:")..Caption
 msgid "Width:"
 msgstr "Largura:"
@@ -1067,28 +1068,28 @@ msgid "Graph properties"
 msgstr "Propriedades do gráfico"
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label7("Line style:")..Caption
-#. Form5("Insert function")..GroupBox4("Graph properties")..Label7("Line style:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label7("Line style:")..Caption
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label7("Line style:")..Caption
 msgid "Line style:"
 msgstr "Estilo da linha:"
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Edit3..Hint
 #. Form13("Insert trendline")..GroupBox1("Line")..Edit2..Hint
-#. Form5("Insert function")..GroupBox4("Graph properties")..Edit6..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Panel1..Edit6..Hint
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Edit4..Hint
 msgid "Width of graph in pixels."
 msgstr "Largura da linha do gráfico em pixels."
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..LineSelect1..Hint
 #. Form13("Insert trendline")..GroupBox1("Line")..LineSelect1..Hint
-#. Form5("Insert function")..GroupBox4("Graph properties")..LineSelect1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..LineSelect1..Hint
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..LineSelect1..Hint
 msgid "Choose which line style to use for drawing the graph."
 msgstr "Escolha o estilo da linha que será usado no gráfico."
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..Hint
 #. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..Hint
-#. Form5("Insert function")..GroupBox4("Graph properties")..ExtColorBox1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ExtColorBox1..Hint
 #. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..Hint
 msgid "Select the color of the graph."
 msgstr "Selecione a cor do gráfico."
@@ -2591,24 +2592,24 @@ msgstr "Passos:"
 msgid "Number of calculation steps used to draw the graph."
 msgstr "Número de passos para cálculos usados para desenhar o gráfico."
 
-#. Form5("Insert function")..GroupBox4("Graph properties")..Label13("Draw type:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label13("Draw type:")..Caption
 msgid "Draw type:"
 msgstr "Tipo:"
 
-#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Hint
 msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
 msgstr "Escolha Linha se você quiser que os pontos do gráfico sejam ligados. Escolha Pontos se você quiser mostrar o gráfico como pontos. "
 
-#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4..Text
-#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4..Text
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Items.Strings
 msgid "Automatic"
 msgstr "Automático"
 
-#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Items.Strings
 msgid "Dots"
 msgstr "Pontos"
 
-#. Form5("Insert function")..GroupBox4("Graph properties")..ComboBox4....Items.Strings
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Items.Strings
 msgid "Lines"
 msgstr "Linhas"
 
@@ -3859,136 +3860,197 @@ msgstr "Entre o percentual do tamanho original."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Área"
+
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Área ou comprimento da curva calculada para o intervalo dado usando a fórmula de Simpson."
+
 #~ msgid "Extremum"
 #~ msgstr "Extremidade"
+
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Esta é a derivada segunda da função, calculada para o valor-x informado."
+
 #~ msgid "Zoom in."
 #~ msgstr "Amplia."
+
 #~ msgid "Zoom out."
 #~ msgstr "Reduz."
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Retornar a forma padrão."
+
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Calcula a área sobre o intervalo da função selecionada."
+
 #~ msgid "Go to home page"
 #~ msgstr "Vai para Home Page"
+
 #~ msgid "About Graph..."
 #~ msgstr "Sobre o Graph..."
+
 #~ msgid "All points"
 #~ msgstr "Todos os pontos"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Ajusta o Zoom para mostrar todos os pontos que são visíveis."
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Amplia somente no eixo-x."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Reduz somente no eixo-x."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Amplia somento no eixo-y."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Reduz somente no eixo-y."
+
 #~ msgid "Custom functions..."
 #~ msgstr "Funções otimizadas..."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Delimita o fim do intervalo"
+
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Delimita o início do sombreamento com uma linha."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Delimita o inicio do intervalo"
+
 #~ msgid "Image information"
 #~ msgstr "Informações da imagem"
+
 #~ msgid "Open the file %s."
 #~ msgstr "Abrir o arquivo %s."
+
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Texto [*.txt; *.csv]|*.txt;*.csv|Todos os arquivos [*.*]|*.*"
+
 #~ msgid "Calculate area"
 #~ msgstr "Calcule a área"
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "O servidor respondeu com a mensagem ' %s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Retorno de erro do protocolo %s"
+
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Você pode dar sugestões para as versões futuras, relatar erros e comentarios enviando um email para: graph@padowan.dk"
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Selecione o lugar da imagem no meio da página."
+
 #~ msgid "Insert shade..."
 #~ msgstr "Inserir sombra..."
+
 #~ msgid "Shade"
 #~ msgstr "Sombra"
+
 #~ msgid "Black"
 #~ msgstr "Preto"
+
 #~ msgid "Maroon"
 #~ msgstr "Castanho"
+
 #~ msgid "Green"
 #~ msgstr "Verde"
+
 #~ msgid "Olive"
 #~ msgstr "Verde oliva"
+
 #~ msgid "Navy"
 #~ msgstr "Azul marinho"
+
 #~ msgid "Purple"
 #~ msgstr "Violeta"
+
 #~ msgid "Gray"
 #~ msgstr "Cinza"
+
 #~ msgid "Silver"
 #~ msgstr "Prata"
+
 #~ msgid "Red"
 #~ msgstr "Vermelho"
+
 #~ msgid "Lime"
 #~ msgstr "Verde limão"
+
 #~ msgid "Yellow"
 #~ msgstr "Amarelo"
+
 #~ msgid "Blue"
 #~ msgstr "Azul"
+
 #~ msgid "Fuchsia"
 #~ msgstr "Cor-de-rosa"
+
 #~ msgid "Aqua"
 #~ msgstr "Azul claro"
+
 #~ msgid "Money Green"
 #~ msgstr "Verde moeda"
+
 #~ msgid "Sky Blue"
 #~ msgstr "Azul céu"
+
 #~ msgid "Med Gray"
 #~ msgstr "Cinza médio"
+
 #~ msgid "Insert a text label (select and click in the main window where you want the label)."
 #~ msgstr "Insere um rótulo de texto (selecione e clique na janela principal onde você deseja o rótulo)"
+
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Recorta e envia o texto selecionado para a área de transferência."
+
 #~ msgid "Open an animation file."
 #~ msgstr "Abrir um arquivo de animação."
 
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Versão "
+
 #~ msgid "Visible"
 #~ msgstr "Visivel"
+
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr "Se marcado, o item selecionado torna-se visível no sistema de coordenadas."
+
 #~ msgid "Functions"
 #~ msgstr "Funções"
+
 #~ msgid "Tangents"
 #~ msgstr "Tangentes"
+
 #~ msgid "Point series"
 #~ msgstr "Série de Pontos"
+
 #~ msgid "Shades"
 #~ msgstr "Sombras"
+
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Não ocorreu nenhum erro. Você não deve ver esta mensagem."
+
 #~ msgid "Conversion error"
 #~ msgstr "Erro de conversão"
+
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Código de erro desconhecido. \n"
 #~ "Não podia encontrar a mensagem para este erro."
+
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr "Este erro não deve ocorrer. Relate, por favor, isto ao programador."
+
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "O tamanho máximo do texto foi alcançado."
+
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Erro de dialogo: %sh"
+
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "O Graph encontrou dados desconhecidos ao colar dados da área de transferência."
-
