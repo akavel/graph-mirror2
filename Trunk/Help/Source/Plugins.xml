@@ -5,7 +5,7 @@
 	<indexterm><primary>plugins</primary></indexterm>
 	<indexterm><primary><markup>Python</markup></primary></indexterm>
 	<para>
-		To use the plugin system in Graph you need to install <application>Python 3.1</application> from <ulink url="http://www.python.org"/>.
+		To use the plugin system in Graph you need to install <application>Python 3.2</application> from <ulink url="http://www.python.org"/>.
 		Documentation of the Python language may be found installed with Python or <ulink url="http://docs.python.org/3.1/">online</ulink>.
 	</para>
 

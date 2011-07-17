@@ -404,6 +404,9 @@
 				</term>
 				<listitem>
 					<para>
+						This can be used to create custom functions implemented in Python.
+						<property>CustomFunctions</property> is a dictionary where the key is the function name and the value is the Python function.
+						For example the function sinc(x)=sin(x)/x can be implemented in Python like this: <code>Graph.CustomFunctions["sinc"] = lambda x: math.sin(x)/x</code>
 					</para>
 				</listitem>
 			</varlistentry>
@@ -415,6 +418,11 @@
 				</term>
 				<listitem>
 					<para>
+						This is a list of <classname><xref linkend="Graph.TGraphElem"/></classname> elements which are plotted by Graph.
+						It is the same list that is shown in the GUI.
+						To plot an element, you just add it to the list.
+						To make sure the undo functionality works, you should not change an element already in the list.
+						Instead you should replace the old element in the list with a new element.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -426,7 +434,10 @@
 				</term>
 				<listitem>
 					<para>
-
+							<property>PluginData</property> is a dictionary like object where a plugin can store data.
+							The data is stored in the .grf file.	Graph itself does not use this, it is only for use by plugins
+							Every plugin should use a unique value as key in the <property>PluginData</property> dictionary.
+							The value assigned should be a tuple, which may contain anything that can be passed to xmlrpc, e.g. tuples, lists, strings, numbers.
 					</para>
 				</listitem>
 			</varlistentry>
