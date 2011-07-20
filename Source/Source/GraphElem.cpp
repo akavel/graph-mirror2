@@ -230,7 +230,7 @@ boost::shared_ptr<TTopGraphElem> TTopGraphElem::Clone(const TData *AData) const
 // TBaseFuncType //
 ///////////////////
 TBaseFuncType::TBaseFuncType() :
-  Color(clRed), Size(1), Style(psSolid), Steps(0), DrawType(dtAuto),
+  Color(clRed), Size(1), Style(psSolid), DrawType(dtAuto),
   StartPointStyle(0), EndPointStyle(0), From(-INF), To(INF)
 {
 }
