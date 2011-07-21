@@ -12,8 +12,10 @@
 <!ENTITY imag 	"<emphasis role='bold'>i</emphasis>"> 		<!-- Imaginary unit -->
 <!ENTITY copy   "&#x00A9;">           <!-- COPYRIGHT SIGN -->
 <!ENTITY frac14 "&#x00BC;">					<!-- VULGAR FRACTION ONE QUARTER -->
+<!ENTITY frac12 "&#x00BD;"> <!-- VULGAR FRACTION ONE HALF -->
 <!ENTITY le     "<markup role='symbolfont'>&#x2264;</markup>"> <!-- Less than or equal -->
 <!ENTITY ge     "<markup role='symbolfont'>&#x2265;</markup>"> <!-- Greater than or equal -->
 <!ENTITY infin  "<markup role='symbolfont'>&#x221E;</markup>"> <!-- INIFINITY -->
 <!ENTITY hArr   "<markup role='symbolfont'>&#x21D4;</markup>"> <!-- LEFT RIGHT DOUBLE ARROW -->
 <!ENTITY rarr   "<markup role='symbolfont'>&#x2192;</markup>"> <!-- RIGHTWARDS ARROW -->
+<!ENTITY plusmn "&#x00B1;"> <!-- PLUS-MINUS SIGN -->

@@ -1,2 +1,2 @@
-@Build.py Czech
+@c:\python27\python.exe Build.py Czech
 @pause
