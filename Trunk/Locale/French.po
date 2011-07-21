@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-07-17 01:13\n"
-"PO-Revision-Date: 2011-06-22 11:18+0100\n"
+"PO-Revision-Date: 2011-07-21 23:08+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -559,7 +559,6 @@ msgid "Integrate"
 msgstr "Intégrer"
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
-#, fuzzy
 msgid "Calculate the definite integral over a given interval."
 msgstr "Calcule l'intégrale définie sur un domaine donné."
 
@@ -757,12 +756,10 @@ msgid "Import point series from a data file."
 msgstr "Importe une série de points d'un fichier de données."
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Caption
-#, fuzzy
 msgid "Scripting engine documentation"
 msgstr "Documentation du moteur de script"
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Hint
-#, fuzzy
 msgid "Show documentation for scripting engine and plugin system."
 msgstr "Affiche la documentation du moteur de script et du système de plugin."
 
@@ -3756,289 +3753,200 @@ msgstr "Saisir un pourcentage de la taille d'origine."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Aire "
-
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Aire ou longueur de l'arc calculée pour l'intervalle donné avec la méhode de Simpson."
-
 #~ msgid "Extremum"
 #~ msgstr "Extremum"
-
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "C'est une valeur approchée de la dérivée seconde des fonctions pour la valeur donnée."
-
 #~ msgid "Zoom in."
 #~ msgstr "Agrandit."
-
 #~ msgid "Zoom out."
 #~ msgstr "Diminue."
-
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Utilise le repère standard."
-
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Calcule l'aire en-dessous de l'arc de la fonction sélectionnée."
-
 #~ msgid "Go to home page"
 #~ msgstr "Aller sur le site de Graph"
-
 #~ msgid "About Graph..."
 #~ msgstr "À propos de Graph..."
-
 #~ msgid "All points"
 #~ msgstr "Tous les points"
-
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Ajuste la taille de façon à voir tous les points."
-
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Agrandit  seulement dans le sens des abscisses."
-
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Diminue seulement dans le sens des abscisses."
-
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Agrandit  seulement dans le sens des ordonnées."
-
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Diminue seulement dans le sens des ordonnées."
-
 #~ msgid "Custom functions..."
 #~ msgstr "Fonctions personnelles..."
-
 #~ msgid "Mark end of range"
 #~ msgstr "Marquer fin de plage."
-
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Marque le début du remplissage avec un trait."
-
 #~ msgid "Mark start of range"
 #~ msgstr "Marquer début de plage"
-
 #~ msgid "Image information"
 #~ msgstr "Information sur l'image"
-
 #~ msgid "Open the file %s."
 #~ msgstr "Ouvre le fichier %s."
-
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Fichiers texte [*.txt; *.csv]|*.txt;*.csv|Tous les fichiers [*.*]|*.*"
-
 #~ msgid "Calculate area"
 #~ msgstr "Calcul de l'aire"
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Le serveur renvoie le message : '%s'"
-
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Erreur de réponse du protocole %s"
-
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Vous pouvez envoyer des suggestions pour les futures versions, rapporter les dysfonctionnements et faire vos commentaires à graph@padowan.dk."
-
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Choisir pour centrer l'image dans la page."
-
 #~ msgid "Insert shade..."
 #~ msgstr "Insérer un remplissage..."
-
 #~ msgid "Shade"
 #~ msgstr "Remplissage"
-
 #~ msgid "Black"
 #~ msgstr "Noir"
-
 #~ msgid "Maroon"
 #~ msgstr "Marron"
-
 #~ msgid "Green"
 #~ msgstr "Vert"
-
 #~ msgid "Olive"
 #~ msgstr "Olive"
-
 #~ msgid "Navy"
 #~ msgstr "Bleu marine"
-
 #~ msgid "Purple"
 #~ msgstr "Violet"
-
 #~ msgid "Gray"
 #~ msgstr "Gris"
-
 #~ msgid "Silver"
 #~ msgstr "Argent"
-
 #~ msgid "Red"
 #~ msgstr "Rouge"
-
 #~ msgid "Lime"
 #~ msgstr "Vert citron"
-
 #~ msgid "Yellow"
 #~ msgstr "Jaune"
-
 #~ msgid "Blue"
 #~ msgstr "Bleu"
-
 #~ msgid "Fuchsia"
 #~ msgstr "Fuchsia"
-
 #~ msgid "Aqua"
 #~ msgstr "Bleu vert"
-
 #~ msgid "White"
 #~ msgstr "Blanc"
-
 #~ msgid "Money Green"
 #~ msgstr "Vert pâle"
-
 #~ msgid "Sky Blue"
 #~ msgstr "Bleu ciel"
-
 #~ msgid "Med Gray"
 #~ msgstr "Gris moyen"
-
 #~ msgid "Insert a text label (select and click in the main window where you want the label)."
 #~ msgstr "Insère le texte d'un label (sélectionnez puis cliquez à l'emplacement souhaité du label)."
-
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Couper le texte selectionné vers le presse-papiers"
-
 #~ msgid "Open an animation file."
 #~ msgstr "Ouvre un fichier d'animation."
 
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Version "
-
 #~ msgid "Visible"
 #~ msgstr "Visible"
-
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr "Cocher pour rendre visible l'item sélectionné dans le repère."
-
 #~ msgid "Functions"
 #~ msgstr "Fonctions"
-
 #~ msgid "Tangents"
 #~ msgstr "Tangentes"
-
 #~ msgid "Point series"
 #~ msgstr "Séries de points"
-
 #~ msgid "Shades"
 #~ msgstr "Remplissages"
-
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Pas d'erreur. Vous ne devriez pas voir ce message."
-
 #~ msgid "Right bracket missing."
 #~ msgstr "Parenthèse droite manquante."
-
 #~ msgid "Conversion error"
 #~ msgstr "Erreur de conversion"
-
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Code d'erreur inconnu.\n"
 #~ "Pas de message d'erreur associé à ce code."
-
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr "Cette erreur ne devrait pas se produire. SVP informez le concepteur du programme."
-
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "La longueur maximale du teste a été atteinte."
-
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Erreur de dialogue : %sh"
-
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "Des données Graph inconnues ont été rencontrées en collant les données du presse-papiers."
-
 #~ msgid "Symbol '%s' not found."
 #~ msgstr "Symbole '%s' pas trouvé."
 
 #, fuzzy
 #~ msgid "Copy the animation to the clipboard."
 #~ msgstr "Copie le texte sélectionné dans le presse-papiers."
-
 #~ msgid "Edit options."
 #~ msgstr "Édite les options."
-
 #~ msgid "Insert a new point series."
 #~ msgstr "Insèe une nouvelle série de points."
-
 #~ msgid "Calculates area under the path."
 #~ msgstr "Calcule l'aire sous l'arc de courbe."
-
 #~ msgid "Select language to use."
 #~ msgstr "Choisir la langue à  utiliser."
-
 #~ msgid "Cut selected text to the clipboard."
 #~ msgstr "Coupe le texte sélectionné et le met dans le presse-papiers."
-
 #~ msgid "End of parenthesis missing."
 #~ msgstr "Une fermeture de parenthèses manque."
 
 #, fuzzy
 #~ msgid "Panel1"
 #~ msgstr "Annuler"
-
 #~ msgid "Text too long"
 #~ msgstr "Texte trop long"
-
 #~ msgid "Write a descriptive text to show in the legend, else the inequality will be used."
 #~ msgstr "Écrire une description pour mettre dans la légende, sinon c'est  l'inéquation qui est utilisée."
-
 #~ msgid "Description shown in the legend. If empty the function equation is used."
 #~ msgstr "Texte affiché dans la légende. Remplacé s'il est vide par l'équation de la fonction."
-
 #~ msgid "Actions"
 #~ msgstr "Actions"
-
 #~ msgid "A&ctions:"
 #~ msgstr "A&ctions :"
-
 #~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
 #~ msgstr "Pour ajouter des actions faites simplement glisser et déposer depuis les Catégories ou les Actions dans une barre existante."
-
 #~ msgid "Area..."
 #~ msgstr "Aire..."
-
 #~ msgid "Evaluate..."
 #~ msgstr "Évaluer..."
-
 #~ msgid "Are you sure you want to delete the function: %s"
 #~ msgstr "Êtes-vous sûr de vouloir supprimer cette fonction : %s"
-
 #~ msgid "Are you sure you want to delete the tangent: %s"
 #~ msgstr "Êtes-vous sûr de vouloir supprimer la tangente : %s"
-
 #~ msgid "Show some frequently asked questions and their answers."
 #~ msgstr "Liste des questions les plus courantes avec leurs réponses."
-
 #~ msgid "Double-click or select box and press space to change the color of the graph."
 #~ msgstr "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace pour changer la couleur du tracé."
-
 #~ msgid "Check to increase the end coordinate until interception."
 #~ msgstr "Augmentera l'abscisse de fin jusqu'à la prochaine ordonnée nulle."
-
 #~ msgid "Increase to interception"
 #~ msgstr "Croître jusqu'à couper"
-
 #~ msgid "Check to decrease start coordinate until interception."
 #~ msgstr "Diminuera l'abscisse de début jusqu'à la prochaine ordonnée nulle."
-
 #~ msgid "Decrease to interception"
 #~ msgstr "Décroître jusqu'à couper"
-
 #~ msgid "Double-click or select box and press space to change the background color of the coordinate system."
 #~ msgstr "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace pour pouvoir changer la couleur de fond du repère."
-
 #~ msgid "Double-click or select box and press space to change the color of the axes."
 #~ msgstr "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace pour pouvoir changer la couleur des axes du repère."
-
 #~ msgid "Double-click or select box and press space to change the color of the grids."
 #~ msgstr "Double-cliquer dans la zone ou cliquer puis appuyer sur la barre d'espace pour pouvoir changer la couleur du quadrillage."
+
