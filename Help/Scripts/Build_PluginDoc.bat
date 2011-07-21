@@ -1,2 +1,2 @@
-@c:\python26\python Build_PluginDoc.py
+@c:\python27\python Build_PluginDoc.py
 @pause

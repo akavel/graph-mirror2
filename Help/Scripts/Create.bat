@@ -1,2 +1,2 @@
-@c:\python26\python Create.py
+@c:\python27\python.exe Create.py
 @pause

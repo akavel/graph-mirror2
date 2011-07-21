@@ -1,2 +1,2 @@
-@c:\python26\python Build.py English
+@c:\python27\python Build.py English
 @pause
