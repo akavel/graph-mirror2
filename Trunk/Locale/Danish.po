@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2011-07-17 01:13\n"
-"PO-Revision-Date: 2011-06-20 14:28+0100\n"
+"PO-Revision-Date: 2011-07-21 21:51+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
@@ -558,9 +558,8 @@ msgid "Integrate"
 msgstr "Integrer"
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
-#, fuzzy
 msgid "Calculate the definite integral over a given interval."
-msgstr "Beregn det bestemte integrale over et givet interval."
+msgstr "Beregn det bestemte integral over et givet interval."
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -756,12 +755,10 @@ msgid "Import point series from a data file."
 msgstr "Importer punktserier fra en datafil."
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Caption
-#, fuzzy
 msgid "Scripting engine documentation"
 msgstr "Scripting engine-dokumentation"
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Hint
-#, fuzzy
 msgid "Show documentation for scripting engine and plugin system."
 msgstr "Vis dokumentation for scripting engine og plugin-system."
 
@@ -3754,87 +3751,60 @@ msgstr "Indtast procentdel af oprindelig størrelse."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Areal"
-
 #~ msgid "Calculate the area under the path of the selected function."
 #~ msgstr "Beregn arealet under grafen for den markerede funktion."
-
 #~ msgid "About Graph..."
 #~ msgstr "Om Graph..."
-
 #~ msgid "Custom functions..."
 #~ msgstr "Brugerdefinerede funktioner..."
-
 #~ msgid "Insert an OLE object such as a drawing or an equation."
 #~ msgstr "Indsæt et OLE-objekt, f.eks. en tegning eller en ligning."
-
 #~ msgid "Mark end of range"
 #~ msgstr "Marker slutning"
-
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Marker starten af skraveringen med en linje."
-
 #~ msgid "Mark start of range"
 #~ msgstr "Marker start"
-
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Areal eller buelængde beregnet for det angivne interval ved brug af Simpsons formel."
-
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle filer [*.*]|*.*"
-
 #~ msgid "Calculate area"
 #~ msgstr "Beregn areal"
-
 #~ msgid "Extremum"
 #~ msgstr "Ekstremum"
-
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Funktionens anden afledte evalueret for den indtastede værdi."
-
 #~ msgid "Zoom in."
 #~ msgstr "Zoom ind."
-
 #~ msgid "Zoom out."
 #~ msgstr "Zoom ud."
-
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Zoom tilbage til standardindstillingerne."
-
 #~ msgid "Go to home page"
 #~ msgstr "Vis hjemmeside"
-
 #~ msgid "All points"
 #~ msgstr "Alle punkter"
-
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zoom så meget at alle punkter er synlige."
-
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoom kun ind på x-aksen."
-
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoom kun ud på x-aksen."
-
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoom kun ind på y-aksen."
-
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoom kun ud på y-aksen."
-
 #~ msgid "Image information"
 #~ msgstr "Billedinformation"
-
 #~ msgid "Open the file %s."
 #~ msgstr "Åbner filen %s."
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Serveren svarede med beskeden '%s'"
-
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokolfejl %s"
-
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Du kan sende forslag til forbedringer, fejlrapporter og kommentarer til graph@padowan.dk."
-
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Vælg dette for at placere billedet midt på siden."
+
