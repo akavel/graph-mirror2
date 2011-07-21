@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-07-17 02:38Romance Daylight Time\n"
-"PO-Revision-Date: 2011-07-21 23:03+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2011-07-21 23:17+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -791,7 +791,7 @@ msgstr "Evaluerer en eller flere betingelser og returnerer forskellige resultate
 
 #. Piecewise.xml:153(para)
 msgid "The <placeholder-1/> function evaluates <placeholder-2/> and if it is different from 0 then <placeholder-3/> is evaluated and returned. Else <placeholder-4/> is evaluated and if it is different from 0 then <placeholder-5/> is returned and so forth. If none of the conditions are true <placeholder-6/> is returned. <placeholder-7/> is optional and if not specified <placeholder-8/> returns an error if none of the conditions are true. The arguments may be any <placeholder-9/> that evaluate to <placeholder-10/> or <placeholder-11/>."
-msgstr "Funktionen <placeholder-1/> evaluerer <placeholder-2/>, og hvis den er forskellig fra 0, vil <placeholder-3/> blive evalueret og returneret. Ellers vil <placeholder-4/> blive evalueret, og hvis resultatet er forskelligt fra 0, vil <placeholder-5/> blive returneret osv. Såfremt ingen af betingelserne er sande, vil <placeholder-6/> blive returneret. <placeholder-7/> er valgfri, og er denne ikke angivet, vil <placeholder-8/> returnere en fejl, såfremt ingen af betingelserne er sande. Argumenterne kan være hvilke som helst <placeholder-9/>, som evalueres til <placeholder-10/> eller placeholder-11/>."
+msgstr "Funktionen <placeholder-1/> evaluerer <placeholder-2/>, og hvis den er forskellig fra 0, vil <placeholder-3/> blive evalueret og returneret. Ellers vil <placeholder-4/> blive evalueret, og hvis resultatet er forskelligt fra 0, vil <placeholder-5/> blive returneret osv. Såfremt ingen af betingelserne er sande, vil <placeholder-6/> blive returneret. <placeholder-7/> er valgfri, og er denne ikke angivet, vil <placeholder-8/> returnere en fejl, såfremt ingen af betingelserne er sande. Argumenterne kan være hvilke som helst <placeholder-9/>, som evalueres til <placeholder-10/> eller <placeholder-11/>."
 
 #. OptionsDialog.xml:8(title) InsertShadingDialog.xml:109(title) InsertShadingDialog.xml:111(guilabel) InsertShadingDialog.xml:191(guilabel)
 msgid "Options"
@@ -4522,84 +4522,123 @@ msgstr "Oversætter(e):"
 
 #~ msgid "&Delta;x"
 #~ msgstr "&Delta;x"
+
 #~ msgid "&Delta;t"
 #~ msgstr "&Delta;t"
+
 #~ msgid "Returns the summation of the first argument evaluated for all integers from the second to the third argument."
 #~ msgstr "Returnerer summen af det første argument evalueret for alle heltal fra det andet til det tredje argument."
+
 #~ msgid "Returns the product of the first argument evaluated for all integers from the second to the third argument."
 #~ msgstr "Returnerer produktet af det første argument evalueret for hvert heltal i intervallet fra det andet til det tredje argument."
+
 #~ msgid "Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned."
 #~ msgstr "Returnerer det andet argument, hvis det første argument er forskelligt fra nul. Ellers returneres det tredje argument."
+
 #~ msgid "Evaluates a sequence of if functions and returns the first result found with a condition different from zero."
 #~ msgstr "Evaluerer en sekvens af if-funktioner og returnerer det første resultat fundet med en betingelse forskellig fra nul."
+
 #~ msgid "Calculates the signed area between the graph and the x-axis. This is the same as the numerical integral."
 #~ msgstr "Beregner arealet af punktmængden afgrænset af grafen, x-aksen samt to lodrette linjer. Det samme som det bestemte integral."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Marker start"
+
 #~ msgid "Check this to draw a line at the start of the range. Uncheck it if you want two shadings to look as one."
 #~ msgstr "Afkryds dette felt for at vise en linje ved skraveringens start. Fjern markeringen for at få to skraveringer til at se ud som en."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Marker slutning"
+
 #~ msgid "Indicates if a term evaluates to 0."
 #~ msgstr "Indikerer om et udtryk evalueres til 0."
+
 #~ msgid "Indicates if two expressions both evaluate to a value different from 0."
 #~ msgstr "Indikerer om to udtryk begge evalueres til en værdi forskellig fra 0."
+
 #~ msgid "Indicates if at least one of two expressions evaluates to a value different from 0."
 #~ msgstr "Indikerer om mindst et af to udtryk evalueres til en værdi forskellig fra 0."
+
 #~ msgid "Indicates if exactly one of two expressions evaluates to a value different from 0."
 #~ msgstr "Indikerer om præcist et af to udtryk evalueres til en værdi forskellig fra 0."
+
 #~ msgid "The same as a sequence of if functions."
 #~ msgstr "Det samme som en sekvens af if-funktioner."
+
 #~ msgid "Graph requires 32 bit Windows. It has been tested under Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is able to run Windows, it should be able to run the program, though Windows 95 is no longer supported."
 #~ msgstr "Graph kræver 32 bit Windows. Programmet er testet under Windows 95, Windows 98, Windows ME, Windows 2000 og Windows XP. Hvis systemet kan køre Windows, burde det også kunne køre programmet."
+
 #~ msgid "Can I copy a function or point series from one instance of the program to another?"
 #~ msgstr "Kan jeg kopiere en funktion eller punktserie fra en instans af programmet til en anden?"
+
 #~ msgid "Yes, you can select a function or point series and use the <placeholder-1/> menu item to place a copy of the selected item in the clipboard. You can then paste the item into another coordinate system."
 #~ msgstr "Ja, du kan bruge menupunktet <placeholder-1/> til at kopiere den markerede funktion eller punktserie til udklipsholderen. Den kan herefter indsættes i et andet koordinatsystem."
+
 #~ msgid "Graph uses dxgettext as translation library:"
 #~ msgstr "Graph benytter dxgettext som oversættelsesbibliotek:"
+
 #~ msgid "For shell extensions the EasyNSE library is used:"
 #~ msgstr "Til shell extensions benyttes biblioteket EasyNSE:"
+
 #~ msgid "Python is used for plugin support:"
 #~ msgstr "Python bruges til understøttelse af plugins:"
+
 #~ msgid "CompuServe Graphics Interchange (gif) is not supported because it uses the LZW compression, which is patented by Unisys."
 #~ msgstr "CompuServe Graphics Interchange (gif) er ikke understøttet, da formatet anvender LZW komprimering, som er patenteret af Unisys."
+
 #~ msgid "Shadings"
 #~ msgstr "Skraveringer"
+
 #~ msgid "Extreme y-value (Extremum)"
 #~ msgstr "Ekstrem y-værdi (ekstremum)"
+
 #~ msgid "The <placeholder-1/> function calculates the inverse tangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a real number. This is the reverse of the <placeholder-6/> function."
 #~ msgstr "Funktionen <placeholder-1/> beregner invers tangens til vinklen <placeholder-2/>. Resultatet kan være i <placeholder-3/> eller grader afhængig af de aktuelle indstillinger. <placeholder-4/> kan være et hvilket som helst <placeholder-5/>, der evalueres til et reelt tal. Dette er den omvendte af funktionen <placeholder-6/>."
+
 #~ msgid "f'(x)"
 #~ msgstr "f'(x)"
+
 #~ msgid "hyperbolic cosecanr"
 #~ msgstr "hyperbolsk cosekans"
+
 #~ msgid "hyperbolic secanr"
 #~ msgstr "hyperbolsk sekans"
+
 #~ msgid "The probability function of the normal distribution in a variate with mean and standard"
 #~ msgstr "Sandsynlighedsfunktionen for en stokastisk variabels normalfordeling med middelværdi og spredning."
+
 #~ msgid "sin(x)^2= (sin(x))^2"
 #~ msgstr "sin(x)^2 = (sin(x))^2"
+
 #~ msgid "sin 2x = sin(2x)"
 #~ msgstr "sin 2x = sin(2x)"
+
 #~ msgid "sin 2+x = sin(2)+x"
 #~ msgstr "sin 2+x = sin(2)+x"
+
 #~ msgid "sin x^2 = sin(x^2)"
 #~ msgstr "sin x^2 = sin(x^2)"
+
 #~ msgid "2(x+3)x = 2*(x+3)*x"
 #~ msgstr "2(x+3)x = 2*(x+3)*x"
+
 #~ msgid "-x^2 = -(x^2)"
 #~ msgstr "-x^2 = -(x^2)"
+
 #~ msgid "2x = 2*x"
 #~ msgstr "2x = 2*x"
+
 #~ msgid "e^2x = e^(2*x)"
 #~ msgstr "e^2x = e^(2*x)"
+
 #~ msgid "avi"
 #~ msgstr "avi"
+
 #~ msgid "Parts of Graph are using the Spirit parser library:"
 #~ msgstr "Dele af Graph benytter Spirit parser library:"
+
 #~ msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
 #~ msgstr "Graph benytter BMGLib til at gemme billeder som Portable Network Graphics:"
+
 #~ msgid "Tnt Delphi Unicode Controls"
 #~ msgstr "Tnt Delphi Unicode Controls"
-
