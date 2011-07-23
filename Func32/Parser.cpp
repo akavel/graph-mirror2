@@ -35,10 +35,10 @@
 #ifdef _DEBUG
 std::ostream& operator<<(std::ostream& Stream, const std::deque<Func32::TElem> &D)
 {
-  Stream << "deque(";
-  for(std::deque<Func32::TElem>::const_iterator Iter = D.begin(); Iter != D.end(); ++Iter)
-    Stream << Iter->Ident;
-  Stream << ")" << std::endl;
+	Stream << "deque(";
+	for(std::deque<Func32::TElem>::const_iterator Iter = D.begin(); Iter != D.end(); ++Iter)
+		Stream << Iter->Ident;
+	Stream << ")" << std::endl;
   return Stream;
 }
 #endif
@@ -313,7 +313,7 @@ public:
 		: Container(AContainer), Symbols(ASymbols) {}
 	void operator()(const wchar_t *Begin, const wchar_t *End) const
 	{
-		boost::shared_ptr<long double> Ptr(new long double);
+		boost::shared_ptr<long double> Ptr(new long double(0));
 		std::wstring Str = ToLower(std::wstring(Begin, End));
 		Symbols.add(Str.begin(), Str.end(), TElem(CodeConst, Ptr, Str));
 		Container().front().Value = Ptr;
@@ -384,7 +384,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 					)[TDoFuncSymbol(Function.List, Function.Arg)];
 
 	SpecialFunc =
-      SpecialFuncSymbols[PushFront(SpecialFunc.List)] >> '(' >>
+			SpecialFuncSymbols[PushFront(SpecialFunc.List)] >> '(' >>
 					(
 							((DummyExpression >> ',' >> Literal[SpecialFunc.Symbols = TempVariables][TSpecialAddVar(SpecialFunc.List, TempVariables)]) >> nothing_p)
 					|   AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)][var(TempVariables) = SpecialFunc.Symbols] >>
@@ -413,7 +413,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 
   Sum =
       Term[Sum.List = arg1] >>
-         *(   '+' >> AssertFactor_p(Term)[TDoOperator(Sum.List, CodeAdd)]
+				 *(   '+' >> AssertFactor_p(Term)[TDoOperator(Sum.List, CodeAdd)]
 					|   MinusSign >> AssertFactor_p(Term)[TDoOperator(Sum.List, CodeSub)]
 					);
 
