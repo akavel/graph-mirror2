@@ -172,7 +172,7 @@ const TFuncData& GetDif(TIdent Ident)
 			else
         Table.push_back(TFuncData());
   }
-  return Table[Ident - FirstFunction1P];
+	return Table[Ident - FirstFunction1P];
 }
 
 //---------------------------------------------------------------------------
@@ -200,9 +200,8 @@ bool TElem::operator ==(const TElem &E) const
 			return Text == E.Text;
 
 		case CodeConst:
-			return boost::any_cast<boost::shared_ptr<long double> >(Value) ==
-				boost::any_cast<boost::shared_ptr<long double> >(E.Value);
-
+			return *boost::any_cast<boost::shared_ptr<long double> >(Value) ==
+				*boost::any_cast<boost::shared_ptr<long double> >(E.Value);
 		default:
 			return Arguments == E.Arguments;
 	}

@@ -539,18 +539,18 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
 
     case CodeIntegrate:
     {
-      //Check for backward compatibility
-      long double *Constant = Elem.Value.empty() ? NULL :
-        &*boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
-      TConstIterator F = Iter;
-      Iter = FindEnd(Iter);
-      T Min = real(CalcF(Iter, DynData));
-      T Max = real(CalcF(Iter, DynData));
-      if(imag(Min) != 0 || imag(Max) != 0)
-        ErrorCode = ecComplexError;
-      if(ErrorCode)
-        return 0;
-      return Integrate(F, real(Min), real(Max), 1E-3, DynData, Constant);
+			//Check for backward compatibility
+			long double *Constant = Elem.Value.empty() ? NULL :
+				&*boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
+			TConstIterator F = Iter;
+			Iter = FindEnd(Iter);
+			T Min = real(CalcF(Iter, DynData));
+			T Max = real(CalcF(Iter, DynData));
+			if(imag(Min) != 0 || imag(Max) != 0)
+				ErrorCode = ecComplexError;
+			if(ErrorCode)
+				return 0;
+			return Integrate(F, real(Min), real(Max), 1E-3, DynData, Constant);
     }
 
     case CodeSum:
@@ -1021,33 +1021,35 @@ double TFuncData::CalcGSLFunc(double x, void *Params)
  template<typename T>
  double TFuncData::Integrate(TConstIterator Func, double Min, double Max, double RelError, TDynData<T> &DynData, long double *Value)
 {
-  const int MaxSubIntervals = 1000;
-  if(Max < Min)
-    return -Integrate(Func, Max, Min, RelError, DynData, Value);
-  TGSLFunction<T> Function(Func, DynData, Value);
-  gsl_integration_workspace *w = gsl_integration_workspace_alloc(MaxSubIntervals);
-  gsl_function F = {CalcGSLFunc<T>, &Function};
+	const int MaxSubIntervals = 1000;
+	if(Max < Min)
+		return -Integrate(Func, Max, Min, RelError, DynData, Value);
+	TGSLFunction<T> Function(Func, DynData, Value);
+	gsl_integration_workspace *w = gsl_integration_workspace_alloc(MaxSubIntervals);
+	gsl_function F = {CalcGSLFunc<T>, &Function};
 
-  double Result, Error;
-  unsigned ErrorResult;
-  if(boost::math::isfinite(Min) && boost::math::isfinite(Max))
-    ErrorResult = gsl_integration_qags(&F, Min, Max, 0, RelError, MaxSubIntervals, w, &Result, &Error);
-  else if(!boost::math::isfinite(Min) && !boost::math::isfinite(Max))
-    ErrorResult = gsl_integration_qagi(&F, 0, RelError, MaxSubIntervals, w, &Result, &Error);
-  else if(!boost::math::isfinite(Min))
-    ErrorResult = gsl_integration_qagil(&F, Max, 0, RelError, MaxSubIntervals, w, &Result, &Error);
-  else
-    ErrorResult = gsl_integration_qagiu(&F, Min, 0, RelError, MaxSubIntervals, w, &Result, &Error);
-  gsl_integration_workspace_free(w);
-  if(ErrorResult != 0)
-    DynData.ErrorCode = ecNoResult;
-  else if(!boost::math::isfinite(Result))
-    DynData.ErrorCode = ecNoResult;
-  else if(Result != 0 && Error / Result > RelError)
-    DynData.ErrorCode = ecNoAccurateResult;
-  else
-    DynData.ErrorCode = ecNoError;
-  return Result;
+	double Result, Error;
+	unsigned ErrorResult;
+	if(boost::math::isfinite(Min) && boost::math::isfinite(Max))
+		ErrorResult = gsl_integration_qags(&F, Min, Max, 0, RelError, MaxSubIntervals, w, &Result, &Error);
+	else if(!boost::math::isfinite(Min) && !boost::math::isfinite(Max))
+		ErrorResult = gsl_integration_qagi(&F, 0, RelError, MaxSubIntervals, w, &Result, &Error);
+	else if(!boost::math::isfinite(Min))
+		ErrorResult = gsl_integration_qagil(&F, Max, 0, RelError, MaxSubIntervals, w, &Result, &Error);
+	else
+		ErrorResult = gsl_integration_qagiu(&F, Min, 0, RelError, MaxSubIntervals, w, &Result, &Error);
+	gsl_integration_workspace_free(w);
+	if(ErrorResult != 0)
+		DynData.ErrorCode = ecNoResult;
+	else if(!boost::math::isfinite(Result))
+		DynData.ErrorCode = ecNoResult;
+	else if(Result != 0 && Error / Result > RelError)
+		DynData.ErrorCode = ecNoAccurateResult;
+	else
+		DynData.ErrorCode = ecNoError;
+	if(Value != NULL)
+  	*Value = 0; //Leave Value set 0 zero when unused to make compare possible.
+	return Result;
 }
 //---------------------------------------------------------------------------
 /** Returns the numeric integrale of the functions pointed to by Func from Min to Max.
