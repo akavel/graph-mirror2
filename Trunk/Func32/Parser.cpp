@@ -20,6 +20,8 @@
 
 //#define BOOST_SPIRIT_DEBUG
 #define BOOST_SPIRIT_DEBUG_OUT std::clog
+#define BOOST_SPIRIT_CLOSURE_LIMIT 4
+#define PHOENIX_LIMIT 4
 
 #pragma option -vi- //Disable inline expansion to fix several compiler bugs in BCC 5.6.4
 
@@ -77,7 +79,7 @@ const struct TCaseSymbols : public TSymbols
 const struct TNoCaseSymbols : symbols<TElem, wchar_t>
 {
   TNoCaseSymbols()
-  {
+	{
      add(L"pi",    CodePi)
         (L"rand",  CodeRand)
         (L"undef", CodeUndef)
@@ -123,11 +125,17 @@ struct TUserSymbols : symbols<std::wstring>
 	}
 };
 //---------------------------------------------------------------------------
-struct TContext : boost::spirit::closure<TContext, std::deque<TElem>, unsigned, symbols<TElem, wchar_t> >
+struct TContext : boost::spirit::closure<TContext, std::deque<TElem>, unsigned, symbols<TElem, wchar_t>, wchar_t>
 {
 	member1 List;
 	member2 Arg;
 	member3 Symbols;
+	member4 EndBracket;
+};
+//---------------------------------------------------------------------------
+struct TContext2 : boost::spirit::closure<TContext2, wchar_t>
+{
+	member1 EndBracket;
 };
 //---------------------------------------------------------------------------
 void ThrowParseError(const wchar_t *Begin, const EParseError &E)
@@ -322,7 +330,7 @@ public:
 };
 
 //Valid symbols in addition to 0..9, a..z and A..Z.
-static const std::wstring ValidChars = L"+-*/^=_.,() \x2212";
+static const std::wstring ValidChars = L"+-*/^=_.,()[]{} \x2212";
 //---------------------------------------------------------------------------
 /** Parse the string and store the result. The function is strong exception safe.
  *  \param Str: The string to parse
@@ -355,6 +363,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 
 	rule<wide_phrase_scanner_t, TContext::context_t> Term, Expression, Factor, Constant,
 		Function, Parentheses, Power, FactorSeq, Sum, Neg, Relation, SpecialFunc;
+	rule<wide_phrase_scanner_t, TContext2::context_t> Bracket;
 	rule<wide_phrase_scanner_t> Literal, MinusSign, DummyExpression;
 
 	//DummyExpression accepts everything until it finds a comma. It is used to jump
@@ -374,39 +383,46 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 							| Symbols[TAssign(Constant.List)]
 							) >> (eps_p - alnum_p)] >> !(+ch_p('('))[TDoError(ecParAfterConst)];
 
+	Bracket =	ch_p('(')[Bracket.EndBracket = ')'] |
+						ch_p('[')[Bracket.EndBracket = ']'] |
+						ch_p('{')[Bracket.EndBracket = '}'];
+
 	//A function name may not be followd by character og digit, because they should be part of the name.
 	//If an alphanumeric character is found afterwards, the pushed function is popped
 	Function =
 			lexeme_d[as_lower_d[FuncSymbols[PushFront(Function.List)][Function.Arg = 1] >> (eps_p - alnum_p)]] >>
-					(   '(' >> Expression[TPushBack(Function.List)] >>
-							*(',' >> AssertExpression_p(Expression)[TPushBack(Function.List)])[++Function.Arg] >> AssertEndPar_p(ch_p(')'))
+					(   Bracket[Function.EndBracket = arg1] >>
+							Expression[TPushBack(Function.List)] >>
+							*(',' >> AssertExpression_p(Expression)[TPushBack(Function.List)])[++Function.Arg] >>
+							AssertEndPar_p(f_ch_p(Function.EndBracket))
 					|   FactorSeq[TPushBack(Function.List)]
 					)[TDoFuncSymbol(Function.List, Function.Arg)];
 
 	SpecialFunc =
-			SpecialFuncSymbols[PushFront(SpecialFunc.List)] >> '(' >>
+			SpecialFuncSymbols[PushFront(SpecialFunc.List)] >>
+			Bracket[SpecialFunc.EndBracket = arg1] >>
 					(
 							((DummyExpression >> ',' >> Literal[SpecialFunc.Symbols = TempVariables][TSpecialAddVar(SpecialFunc.List, TempVariables)]) >> nothing_p)
 					|   AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)][var(TempVariables) = SpecialFunc.Symbols] >>
-              ',' >> Literal >> ',' >>
-              AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >> ',' >>
-              AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >> ')'
+							',' >> Literal >> ',' >>
+							AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >> ',' >>
+							AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >>
+							f_ch_p(SpecialFunc.EndBracket)
 					);
 
-  Parentheses =
-              '(' >> AssertExpression_p(Expression)[Parentheses.List = arg1] >> AssertEndPar_p(ch_p(')'))
-					|   '[' >> AssertExpression_p(Expression)[Parentheses.List = arg1] >> AssertEndPar_p(ch_p(']'))
-					|   '{' >> AssertExpression_p(Expression)[Parentheses.List = arg1] >> AssertEndPar_p(ch_p('}'));
+	Parentheses = Bracket[Parentheses.EndBracket = arg1] >>
+								AssertExpression_p(Expression)[Parentheses.List = arg1] >>
+								AssertEndPar_p(f_ch_p(Parentheses.EndBracket));
 
-  Relation =
-      Sum[Relation.List = arg1] >>
+	Relation =
+			Sum[Relation.List = arg1] >>
 							!(CompareSymbols[PushFront(Relation.List)] >> AssertExpression_p(Sum)[TPushBack(Relation.List)] >>
-              !(CompareSymbols[TConvertRelation(Relation.List)] >> AssertExpression_p(Sum)[TPushBack(Relation.List)]))
-          ;
+							!(CompareSymbols[TConvertRelation(Relation.List)] >> AssertExpression_p(Sum)[TPushBack(Relation.List)]))
+					;
 
-  Expression =
-      Relation[Expression.List = arg1] >>
-         *(   lexeme_d[as_lower_d["and"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeAnd)])
+	Expression =
+			Relation[Expression.List = arg1] >>
+				 *(   lexeme_d[as_lower_d["and"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeAnd)])
 					|   lexeme_d[as_lower_d["or"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeOr)])
 					|   lexeme_d[as_lower_d["xor"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeXor)])
 					);
@@ -426,8 +442,8 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 
 	Term =
 			Neg[Term.List = arg1] >>
-         *Factor[TDoOperator(Term.List, CodeMul)] >>
-         *(   ('*' >> FactorSeq[TDoOperator(Term.List, CodeMul)])
+				 *Factor[TDoOperator(Term.List, CodeMul)] >>
+				 *(   ('*' >> FactorSeq[TDoOperator(Term.List, CodeMul)])
 					|   ('/' >> FactorSeq[TDoOperator(Term.List, CodeDiv)])
           );
 
@@ -455,17 +471,18 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 	BOOST_SPIRIT_DEBUG_RULE(DummyExpression);
 	BOOST_SPIRIT_DEBUG_RULE(MinusSign);
 	BOOST_SPIRIT_DEBUG_RULE(Literal);
+	BOOST_SPIRIT_DEBUG_RULE(Bracket);
 
-  //Set pointers to start and end of string.
+	//Set pointers to start and end of string.
 	//Ignore ending spaces as the parser doesn't seem to handle this.
 	const wchar_t *Begin = &Str[0];
 	const wchar_t *End = &Str[0] + Str.find_last_not_of(L" ") + 1;
-  if(Begin == End)
-    throw EParseError(ecEmptyString);
+	if(Begin == End)
+		throw EParseError(ecEmptyString);
 
-  try
-  {
-    //Parse expression and ignore spaces
+	try
+	{
+		//Parse expression and ignore spaces
 		std::deque<TElem> Temp;
 		errno = 0;
 		parse_info<const wchar_t*> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);

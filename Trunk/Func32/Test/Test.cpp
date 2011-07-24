@@ -76,7 +76,7 @@ bool CompareFunc(const TFunc &f1, const TFunc &f2, double x)
   ECalcError E2;
   long double y1 = f1.CalcY(x, E1);
   long double y2 = f2.CalcY(x, E2);
-  if(E1.ErrorCode != E2.ErrorCode)
+	if(E1.ErrorCode != E2.ErrorCode)
     return false;
   if(E1.ErrorCode == ecNoError)
 		return ::IsEqual(y1, y2);
@@ -91,29 +91,29 @@ bool CompareFunc(const TFunc &f1, const TFunc &f2)
       return false;
   return true;
 }
-
+                         
 void TestText(const std::wstring &Str, const TSymbolList &SymbolList = TSymbolList())
 {
   std::wstring Str2;
 	try
-  {
-    TFunc Func(Str, L"x", SymbolList);
-    Str2 = Func.MakeText();
-    TFunc Func2(Str2, L"x", SymbolList);
-    if(Func != Func2)
-    {
-      std::wcerr << "Failed to convert function back to text!" << std::endl;
-      std::wcerr << "Function: " << Str << std::endl;
-      std::wcerr << "Result:   " << Str2 << std::endl << std::endl << std::endl;
-    }
-  }
-  catch(EFuncError &E)
-  {
-    std::wcerr << "Failed to convert function back to test!" << std::endl;
-    std::wcerr << "Function:  " << Str << std::endl;
-    std::wcerr << "Result:    " << Str2 << std::endl;
-    std::wcerr << "ErrorCode: " << E.ErrorCode << std::endl << std::endl;
-  }
+	{
+		TFunc Func(Str, L"x", SymbolList);
+		Str2 = Func.MakeText();
+		TFunc Func2(Str2, L"x", SymbolList);
+		if(Func != Func2)
+		{
+			std::wcerr << "Failed to convert function back to text!" << std::endl;
+			std::wcerr << "Function: " << Str << std::endl;
+			std::wcerr << "Result:   " << Str2 << std::endl << std::endl << std::endl;
+		}
+	}
+	catch(EFuncError &E)
+	{
+		std::wcerr << "Failed to convert function back to test!" << std::endl;
+		std::wcerr << "Function:  " << Str << std::endl;
+		std::wcerr << "Result:    " << Str2 << std::endl;
+		std::wcerr << "ErrorCode: " << E.ErrorCode << std::endl << std::endl;
+	}
 }
 
 template<typename T>
@@ -123,7 +123,7 @@ void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian, co
   {
     TFunc Func(Str, L"x", SymbolList);
     Func.SetTrigonometry(Trig);
-    T f = Func.CalcY(x);
+		T f = Func.CalcY(x);
 		if(!::IsEqual(f, y))
     {
       wcerr << "Function:     " << Str << std::endl;
@@ -132,7 +132,7 @@ void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian, co
       wcerr << "Expected:     " << setprecision(10) << y << std::endl << std::endl;
     }
   }
-  catch(EFuncError &E)
+	catch(EFuncError &E)
   {
     wcerr << "Function:  " << Str << std::endl;
     wcerr << "x:         " << setprecision(10) << x << std::endl;
@@ -207,7 +207,7 @@ void TestTrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &P, con
   catch(EFuncError &E)
   {
 		cerr << "-- Trendline --" << endl;
-    cerr << "Error code:     " << E.ErrorCode << std::endl << std::endl;
+		cerr << "Error code:     " << E.ErrorCode << std::endl << std::endl;
   }
 }
 
@@ -216,7 +216,7 @@ void TestCustomTrendLine(const std::wstring &Model, const std::vector<TDblPoint>
   try
   {
     std::vector<std::wstring> Unknowns = FindUnknowns(Model);
-    std::vector<long double> Values(Unknowns.size(), 1);
+		std::vector<long double> Values(Unknowns.size(), 1);
     Unknowns.insert(Unknowns.begin(), L"x");
     TCustomFunc Func(Model, Unknowns);
     Regression(P, Func, Values, W);
@@ -244,7 +244,7 @@ void TestTrendLineError(Func32::TTrendType Type, const TDblPoint *Points, unsign
     std::vector<double> W;
     TrendLine(Type, std::vector<TDblPoint>(Points, Points + Size), W, N);
 
-    cerr << "-- Trendline --" << endl;
+		cerr << "-- Trendline --" << endl;
     cerr << "Expected error code:     " << ErrorCode << endl << endl;
   }
   catch(EFuncError &E)
@@ -300,7 +300,7 @@ void TestDif(const std::wstring &Str, long double x, long double y, TTrigonometr
       wcerr << "f'(x)=" << Dif.MakeText() << std::endl;
 			wcerr << "f'(" << x << ")=" << f << std::endl;
       wcerr << "Expected f'(" << x << ")=" << y << std::endl << std::endl;
-    }
+		}
 	}
   catch(EFuncError &E)
   {
@@ -375,7 +375,7 @@ void TestCustom(const std::wstring &Str, const TArgType &Args, const std::vector
 	}
   catch(EFuncError &E)
   {
-    wcerr << "Function:     " << Str << std::endl;
+		wcerr << "Function:     " << Str << std::endl;
     for(unsigned I = 0; I < Values.size(); I++)
       wcerr << Args[I] << ":            " << setprecision(10) << Values[I] << std::endl;
     wcerr << "Error code   : " << E.ErrorCode << std::endl;
@@ -440,7 +440,7 @@ public:
   TComplex Call(const TComplex *Args, TTrigonometry Trig, TErrorCode &ErrorCode, std::wstring &ErrorStr) const
   {
     return Args[0] * Args[0] * Args[0] + Args[1] * Args[1] + Args[2];
-  }
+	}
 };
 
 void TestParamFunc(const std::wstring &xText, const std::wstring &yText)
@@ -461,7 +461,7 @@ void TestParamFunc(const std::wstring &xText, const std::wstring &yText)
 	{
 	}
 }
-  
+
 void Test()
 {
   //Test parsing errors
@@ -469,10 +469,10 @@ void Test()
   TestError("x2", 0, ecUnknownVar);
   TestError("sin2 x", 0, ecUnknownVar);
 	TestError("integrate(x, 5)", 0, ecArgCountError);
-  TestError("integrate(x, x, 5, 7, 8)", 0, ecArgCountError);
+	TestError("integrate(x, x, 5, 7, 8)", 0, ecArgCountError);
 
   //Test redundant space
-  Test("x*sin x", PI/2, PI/2);
+	Test("x*sin x", PI/2, PI/2);
 	Test("  x*sin x", PI/2, PI/2);
   Test("x * sin x", PI/2, PI/2);
   Test("x*sin x   ", PI/2, PI/2);
@@ -487,7 +487,7 @@ void Test()
 
   //Test numbers
 	Test("45", 0, 45);
-  Test("-0.5796", 0, -0.5796);
+	Test("-0.5796", 0, -0.5796);
   Test("-.5796", 0, -0.5796);
 	Test("-5.478E-23x", 10, -5.478E-22);
   Test("pi", 0, PI);
@@ -599,7 +599,7 @@ void Test()
   Test("atan(x)", 1, PI/4);
   Test("atan(x)", 1, 45, Degree);
   Test("asec(x)", -1, PI);
-  Test("asec(x)", -1, 180, Degree);
+	Test("asec(x)", -1, 180, Degree);
   Test("acsc(x)", 1, PI/2);
   Test("acsc(x)", 1, 90, Degree);
 	Test("acot(x)", 1, PI/4);
@@ -627,7 +627,7 @@ void Test()
 
   Test("fact(x)", 5, 120);
 
-  Test("sign(x)", 7.98, 1);
+	Test("sign(x)", 7.98, 1);
   Test("sign(x)", -7.98, -1);
 	Test("sign(x)", 0, 0);
   TestEval<TComplex>(L"sign(x)", TComplex(5, 5), TComplex(M_SQRT_2, M_SQRT_2));
@@ -664,7 +664,7 @@ void Test()
 
   //Rounding
 	Test("trunc(x)", -4.567, -4);
-  Test("fract(x)", -4.567, -0.567);
+	Test("fract(x)", -4.567, -0.567);
   Test("ceil(x)", -4.567, -4);
   Test("floor(x)", -4.567, -5);
   Test("Round(x, 3)", 412.4572, 412.457);
@@ -683,7 +683,7 @@ void Test()
   Test("x<5", 5, 0);
 	Test("x<5", 6, 0);
   Test("x>5", 4, 0);
-  Test("x>5", 5, 0);
+	Test("x>5", 5, 0);
   Test("x>5", 6, 1);
   Test("x<=5", 4, 1);
   Test("x<=5", 5, 1);
@@ -711,7 +711,7 @@ void Test()
   Test("0 xor 0", 0, 0);
 
   //Test picewise functions
-  Test("if(x<3, 5, 9)", 2, 5);
+	Test("if(x<3, 5, 9)", 2, 5);
   Test("if(x<3, 5, 9)", 3, 9);
   Test("if(x<3, 5, 9)", 4, 9);
   Test("range(2,x,5)", 1, 2);
@@ -739,7 +739,7 @@ void Test()
   TestError("product(x, 3, 7)", NaN, ecArgCountError);
 
   //Test improved integrate
-  Test("integrate(x^2,x,2,5)", NaN, 39);
+	Test("integrate(x^2,x,2,5)", NaN, 39);
   Test("integrate(dnorm(x,100,60),x,-inf,100)", 0, 0.5);
   Test("integrate(dnorm(x,100,20),x,-inf,100)", 0, 0.5);
   Test("integrate(dnorm(x,100,60),x,100,inf)", 0, 0.5);
@@ -812,7 +812,7 @@ void Test()
 	Test("W(x)", 0, 0);
   Test("W(x)", -M_LN2/2, -M_LN2);
   Test("W(x)", 1, 0.5671432904097838729999686622);
-  Test("W(x)", M_E, 1);
+	Test("W(x)", M_E, 1);
 
 	//Test handling of other symbols
 	Test(L"80 − 2*x", 5, 70); //Test Minus sign (0x2212)
@@ -821,15 +821,35 @@ void Test()
 	TestError("x+sin ¤", 0, ecUnknownChar);
 	TestError("x * &", 0, ecUnknownChar);
 
-  //Test vertical trend lines
-  TDblPoint Vertical[] = {TDblPoint(5,1), TDblPoint(5,7)};
-  TestTrendLineError(ttPower, Vertical, 2, 0, ecNoResult);
+	//Test square brackets
+	Test("2*[x+1]", 5, 12);
+	Test("[x]+5", 3, 8);
+	Test("log[x]+5", 10, 6);
+	Test("log[x+20] * 3", 80, 6);
+	Test("log[10] x", 10, 10);
 
-  //Test difficult trend line
-  TDblPoint Points1[] = {TDblPoint(1950,1571), TDblPoint(1970,524), TDblPoint(1980, 208), TDblPoint(2003, 29)};
+	//Test curly brackets
+	Test("2*{x+1}", 5, 12);
+	Test("{x}+5", 3, 8);
+	Test("log{x}+5", 10, 6);
+	Test("log{x+20} * 3", 80, 6);
+	Test("log{10} x", 10, 10);
+
+	//Test brackets combined
+	Test("2+(x*[5+x*{2-x}])", 10, -748);
+	Test("log[log(log{x}10)10]", 10, 1);
+	TestError("2+(x*[5+x*{2-x})]", 10, ecNoEndPar);
+	TestError("log[log(log{x}10]10)", 10, ecNoEndPar);
+
+	//Test vertical trend lines
+	TDblPoint Vertical[] = {TDblPoint(5,1), TDblPoint(5,7)};
+	TestTrendLineError(ttPower, Vertical, 2, 0, ecNoResult);
+
+	//Test difficult trend line
+	TDblPoint Points1[] = {TDblPoint(1950,1571), TDblPoint(1970,524), TDblPoint(1980, 208), TDblPoint(2003, 29)};
 	std::vector<double> Empty;
-  std::vector<TDblPoint> Points(Points1, Points1 + 4);
-  TestTrendLine(ttPower, Points, Empty, 0, NaN, L"7.23106321804096256E+498*x^(-150.630652337941856)");
+	std::vector<TDblPoint> Points(Points1, Points1 + 4);
+	TestTrendLine(ttPower, Points, Empty, 0, NaN, L"7.23106321804096256E+498*x^(-150.630652337941856)");
 
   //Test sample trendline
   TDblPoint P1[] = {TDblPoint(0,0.1), TDblPoint(1,0.9), TDblPoint(2,1.9), TDblPoint(3,2.7), TDblPoint(4,4.7)};
@@ -896,7 +916,7 @@ void Test()
 	TestDif("sum(sum(k*l,k,1,10),l,1,x)", "0");
 	TestDif("sum(sum(k*l*x,k,1,10),l,1,2)", "sum(sum(k*l,k,1,10),l,1,2)");
 	TestDif("product(k*x, k, 1, 10)", ecNotDifAble);
-	TestDif("integrate(k*x, k, 1, 10)", ecNotDifAble);
+	TestDif("integrate(k*x, k, 1, 10)", "integrate(k,k,1,10)");
 	TestDif("fact(x)", ecNotDifAble);
 	TestDif("fact(5)", "0");
 
