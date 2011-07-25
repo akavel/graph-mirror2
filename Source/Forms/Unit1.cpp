@@ -747,7 +747,8 @@ void TForm1::LoadSettings(void)
 
   Registry.OpenKey(REGISTRY_KEY);
   Recent1->MaxFiles = Registry.Read("Recents", 4);
-  Application->ShowHint = Registry.Read("ShowHint", true);
+	Application->ShowHint = Registry.Read("ShowHint", true);
+	TreeView->ToolTips = Application->ShowHint;
   Width = Registry.Read("Width", Width); //Note: Calls FormConstrainedResize()
   StdWidth = Width;
 
@@ -1379,33 +1380,23 @@ void __fastcall TForm1::FormKeyPress(TObject *Sender, char &Key)
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::TreeViewMouseMove(TObject *Sender,
-      TShiftState Shift, int X, int Y)
+			TShiftState Shift, int X, int Y)
 {
-  if(StatusBar1->AutoHint)
-  {
-    TTreeNode *Node = TreeView->GetNodeAt(X,Y);
-    boost::shared_ptr<TGraphElem> GraphElem = GetGraphElem(Node);
-    if(GraphElem)
-    {
-      String Str = ToUString(GraphElem->MakeText());
-      String LegendText = ToUString(GraphElem->MakeLegendText());
-      if(!LegendText.IsEmpty() && Str != LegendText)
-        Str += L"    \"" + LegendText + L'\"';
-      ShowStatusMessage(Str, true);
-      if(TreeView->Hint != LegendText)
-        Application->CancelHint();
-      if(Node->DisplayRect(true).Right > TreeView->ClientRect.Right)
-        TreeView->Hint = LegendText;
-      else
-        TreeView->Hint = "";
-    }
+	if(StatusBar1->AutoHint)
+	{
+		TTreeNode *Node = TreeView->GetNodeAt(X,Y);
+		boost::shared_ptr<TGraphElem> GraphElem = GetGraphElem(Node);
+		if(GraphElem)
+		{
+			String Str = ToUString(GraphElem->MakeText());
+			String LegendText = ToUString(GraphElem->MakeLegendText());
+			if(!LegendText.IsEmpty() && Str != LegendText)
+				Str += L"    \"" + LegendText + L'\"';
+			ShowStatusMessage(Str, true);
+		}
     else
-    {
-      ShowStatusMessage(L"", true);
-      TreeView->Hint = "";
-      Application->CancelHint();
-    }
-  }
+			ShowStatusMessage(L"", true);
+	}
 }
 //---------------------------------------------------------------------------
 void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
@@ -3667,4 +3658,6 @@ void __fastcall TForm1::ScriptDocActionExecute(TObject *Sender)
   ShowHelp("", ExtractFilePath(Application->ExeName) + "Help\\PluginDoc.chm");
 }
 //---------------------------------------------------------------------------
+
+
 
