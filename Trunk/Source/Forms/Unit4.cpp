@@ -82,7 +82,8 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
   }
   else
     RemoveAsociation(L".grf", L"GraphFile", false);
-  Application->ShowHint = CheckBox2->Checked;
+	Application->ShowHint = CheckBox2->Checked;
+	Form1->TreeView->ToolTips = CheckBox2->Checked;
   Property.SavePos = CheckBox3->Checked;
   Property.CheckForUpdate = CheckBox4->Checked;
 
