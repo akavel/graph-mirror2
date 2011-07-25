@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-02-13 11:00Romance Standard Time\n"
-"PO-Revision-Date: 2011-07-21 23:27+0100\n"
-"Last-Translator: Ivan Johansen\n"
+"POT-Creation-Date: 2011-07-17 02:38Romance Daylight Time\n"
+"PO-Revision-Date: 2011-07-25 20:09+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -306,7 +306,8 @@ msgid "real numbers"
 msgstr "reelle Zahlen"
 
 #. Special.xml:22(para)
-msgid "The <placeholder-1/> function returns an aproximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to a estimated relative error less than <placeholder-19/>."
+#, fuzzy
+msgid "The <placeholder-1/> function returns an aproximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to an estimated relative error less than <placeholder-19/>."
 msgstr "Die Funktion <placeholder-1/> berechnet das numerische Integral von <placeholder-2/> über <placeholder-3/> von <placeholder-4/> bis <placeholder-5/>, mathematisch beschrieben mit: <placeholder-6/> Dieses Integral entspricht der Fläche zwischen der Funktion <placeholder-7/> und der X-Achse von <placeholder-8/> bis <placeholder-9/>, wobei hier die Fläche unterhalb der Achse negativ gezählt wird. <placeholder-10/> können beliebige Funktionen sein: mit x als Variable, wenn eine Standardfunktion vorliegt, und mit <placeholder-11/> als Variable, wenn es eine Parameterfunktion ist. <placeholder-12/> und <placeholder-13/> können beliebige <placeholder-14/> sein, die <placeholder-15/> entsprechen, oder <placeholder-16/> oder <placeholder-17/> (negativ bzw. positiv unendlich). <placeholder-18/> berechnet das Integral nicht exakt, sondern approximiert es mithilfe der Gauß-Kronrod-Quadratur, wobei der relative Schätzfehler unterhalb von  <placeholder-19/> liegt."
 
 #. Special.xml:41(title) Rounding.xml:153(title)
@@ -710,7 +711,8 @@ msgid "plugins"
 msgstr "Plugins"
 
 #. Plugins.xml:7(para)
-msgid "To use the plugin system in Graph you need to install <application>Python 3.1</application> from <ulink url=\"http://www.python.org\"/>. Documentation of the Python language may be found installed with Python or <ulink url=\"http://docs.python.org/3.1/\">online</ulink>."
+#, fuzzy
+msgid "To use the plugin system in Graph you need to install <placeholder-1/> from <placeholder-2/>. Documentation of the Python language may be found installed with Python or <placeholder-3/>."
 msgstr "Zur Verwendung der Plugin-Schnittstelle von Graph benötigen Sie die Skriptsprache <application>Python 3.1</application>. Sie können diese Software unter <ulink url=\"http://www.python.org\"/> frei herunterladen. Eine ausführliche Dokumentation der Sprache \"Python\" wird mitgeliefert und gibt es zudem unter <ulink url=\"http://docs.python.org/3.1/\"></ulink>."
 
 #. Plugins.xml:14(para)
@@ -786,7 +788,8 @@ msgid "The <placeholder-1/> function returns <placeholder-2/>, if <placeholder-3
 msgstr "Die <placeholder-1/>-Funktion liefert <placeholder-2/> zurück, wenn <placeholder-3/> größer als <placeholder-4/> und kleiner als <placeholder-5/> ist. Ist <placeholder-6/> &lt; <placeholder-7/>, wird <placeholder-8/> zurückgeliefert. Ist <placeholder-9/> &gt; <placeholder-10/>, wird <placeholder-11/> zurückgeliefert. Die Argumente können beliebige <placeholder-12/> sein, die <placeholder-13/> oder <placeholder-14/> ergeben. Die Funktion hat dieselbe Wirkung wie <placeholder-15/>."
 
 #. Piecewise.xml:144(para)
-msgid "Evaluates one or more conditions and returns a different results based on them."
+#, fuzzy
+msgid "Evaluates one or more conditions and returns a different result based on them."
 msgstr "Wertet eine oder mehrere Ausdrücke aus und gibt in Abhängigkeit davon verschieden Ergebnisse zurück."
 
 #. Piecewise.xml:153(para)
@@ -1485,12 +1488,18 @@ msgstr "Fehlerbericht"
 msgid "Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things. The program is a standard Windows program with menus and dialogs. The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations. It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more. For more information on using the program see <placeholder-1/>."
 msgstr "Das Programm Graph wurde ursprünglich entworfen, um Graphen von mathematischen Funktionen in ein Koordinatensystem zu zeichnen. Graph ist ein normales Windows-Programm mit Menüs und Dialogen und unterstützt das Zeichnen von Standardfunktionen, Parameterfunktionen, Polarfunktionen, Tangenten, Punktserien, Schraffuren und Relationen. Es ist auch möglich, eine Funktion für einen vorgegebenen Punkt zu berechnen, einen Graphen mit der Maus zu verfolgen und noch viel mehr. Weitere Informationen unter <placeholder-1/>."
 
+#. Introduction.xml:27(citetitle)
+msgid "GNU General Public License"
+msgstr "Version <placeholder-1/>"
+
 #. Introduction.xml:25(para)
-msgid "Graph is free software; you can redistribute it and/or modify it under the terms of the <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink>. Newest version of the program as well as the source code may be downloaded from <ulink url=\"http://www.padowan.dk\"/>."
+#, fuzzy
+msgid "Graph is free software; you can redistribute it and/or modify it under the terms of the <placeholder-1/>. Newest version of the program as well as the source code may be downloaded from <placeholder-2/>."
 msgstr "Dieses Programm ist freie Software; Sie können es gemäß der <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink> weiter verteilen und/oder verändern. Sowohl die neueste Version wie auch der Quelltext des Programms können von <ulink url=\"http://www.padowan.dk\"/> heruntergeladen werden."
 
 #. Introduction.xml:30(para)
-msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <ulink url=\"http://www.padowan.dk/forum\">Graph support forum</ulink>."
+#, fuzzy
+msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <placeholder-2/>."
 msgstr "Das Programm ist unter  <placeholder-1/> getestet worden, kann aber trotzdem noch einige Programmfehler enthalten. Im <ulink url=\"http://www.padowan.dk/forum\">Graph Support Forum</ulink> erhalten Sie Unterstützung, können Sie Fehler melden und Verbesserungsvorschlägen machen."
 
 #. Introduction.xml:42(para)
@@ -2103,7 +2112,7 @@ msgstr "Restriktionen"
 
 #. InsertRelationDialog.xml:50(para)
 msgid "Here you can enter optional constraints, which can be any <placeholder-1/>. The relation will only be valid and plotted where the constraints are fulfilled, i.e. evaluates to a non-zero value. The constraints usually consist of a series of inequalities separated with the logical operators (<placeholder-2/>). As for the relation, <placeholder-3/> and <placeholder-4/> are used as the independent variables."
-msgstr "Hier geben Sie die Nebenbedingungen für die Relation ein. Eine Nebenbedingung ist ein beliebiger <placeholder-1/>. Geplottet werden nur die Bereiche der Relation, für die alle Nebenbedingungen erfüllt sind (d.h. einen Wert ungleich Null egeben). Nebenbedingungen bestehen normalerweise aus einer Reihe von Ungleichungen, die durch Logikoperatoren (<placeholder-2/>) verbunden werden.  Für Relationen stellen <placeholder-3/> und <placeholder-4/> die unabhängigen Variablen dar."
+msgstr "Hier geben Sie die Nebenbedingungen für die Relation ein. Eine Nebenbedingung ist ein beliebiger <placeholder-1/>. Geplottet werden nur die Bereiche der Relation, für die alle Nebenbedingungen erfüllt sind (d.h. einen Wert ungleich Null egeben). Nebenbedingungen bestehen normalerweise aus einer Reihe von Ungleichungen, die durch Logikoperatoren (<placeholder-2/>) verbunden werden.  Für Relationen stellen <placeholder-2/> und <placeholder-3/> die unabhängigen Variablen dar."
 
 #. InsertRelationDialog.xml:61(para)
 msgid "For example if you have the relation <literal>x^2 + y^2 &lt; 25</literal>, which is a shaded circle, the constraints <literal>x &gt; 0 and y &lt; 0</literal> will only show the part of the circle in the 4<superscript>th</superscript> quadrant."
@@ -2218,46 +2227,53 @@ msgid "It is possible to draw lines between the markers. The line will always be
 msgstr "Man kann zwischen die Markierungen Linien zeichnen. Die Reihenfolge der Linien ist dieselbe wie in der Tabelle. Für die Linien lassen sich Stil, Farbe und Breite wählen. Man kann auch einstellen, gar keine Linie zu zeichnen."
 
 #. InsertPointSeriesDialog.xml:98(guilabel)
-msgid "Cubic splines"
+#, fuzzy
+msgid "1D cubic spline"
 msgstr "Kubische Spline"
 
 #. InsertPointSeriesDialog.xml:100(guilabel)
+#, fuzzy
+msgid "2D cubic spline"
+msgstr "Kubische Spline"
+
+#. InsertPointSeriesDialog.xml:101(guilabel)
 msgid "Half cosine"
 msgstr "Trigonometrisch"
 
 #. InsertPointSeriesDialog.xml:96(para)
-msgid "You can choose between three types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <ulink url=\"http://en.wikipedia.org/wiki/Cubic_splines\">natural cubic spline</ulink> which is a nice smooth line connecting all the points with 3<superscript>rd</superscript> degree polynomials. <placeholder-3/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
+#, fuzzy
+msgid "You can choose between four types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <placeholder-3/>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-4/> will draw a smooth cubic spline through all points in order. <placeholder-5/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
 msgstr "Drei Typen der Interpolation stehen zur Wahl: <placeholder-1/> zeichnet eine gerade Linie zwischen die Markierungen. <placeholder-2/> zeichnet eine <ulink url=\"http://de.wikipedia.org/wiki/Spline#Kubische_Splines\">kubische Spline</ulink>, eine Kurve auf Basis eines Polynoms dritten Grades, die alle Punkte verbindet. <placeholder-3/> zeichnet eine Halb-Cosinus -Kurve zwischen die Punkte, die evtl. nicht so geschwungen ist wie kubische Splines, aber auch nicht stark ausschlagen wie es bei diesen möglich ist."
 
-#. InsertPointSeriesDialog.xml:107(term)
+#. InsertPointSeriesDialog.xml:108(term)
 msgid "Labels"
 msgstr "Textfelder"
 
-#. InsertPointSeriesDialog.xml:110(guilabel)
+#. InsertPointSeriesDialog.xml:111(guilabel)
 msgid "Show coordinates"
 msgstr "Koordinaten anzeigen"
 
-#. InsertPointSeriesDialog.xml:109(para)
+#. InsertPointSeriesDialog.xml:110(para)
 msgid "Put a check in <placeholder-1/> to show Cartesian or polar coordinates at each point. You may use the <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> button to change the font, and the drop down box to select whether the labels are shown over, below, to the left or to the right of the points."
 msgstr "Mit der Option <placeholder-1/> werden die X- und Y-Koordinaten an jedem Punkt angezeigt. Mit <guibutton><inlinegraphic fileref=\"Font.png\" scale=\"60\"/></guibutton> lässt sich die Schriftart ändern, ebenso die Auswahl, ob die Textfelder oberhalb, unterhalb, links oder rechts der Punkte angezeigt werden."
 
-#. InsertPointSeriesDialog.xml:118(term)
+#. InsertPointSeriesDialog.xml:119(term)
 msgid "Error bars"
 msgstr "Fehlerbalken"
 
-#. InsertPointSeriesDialog.xml:124(guilabel)
+#. InsertPointSeriesDialog.xml:125(guilabel)
 msgid "Fixed"
 msgstr "Fest"
 
-#. InsertPointSeriesDialog.xml:125(guilabel)
+#. InsertPointSeriesDialog.xml:126(guilabel)
 msgid "Relative"
 msgstr "Relativ"
 
-#. InsertPointSeriesDialog.xml:126(guilabel)
+#. InsertPointSeriesDialog.xml:127(guilabel)
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
-#. InsertPointSeriesDialog.xml:120(para)
+#. InsertPointSeriesDialog.xml:121(para)
 msgid "Here you can choose to show horizontal or vertical error bars, also known as uncertainty bars. They are shown as thin bars at each point in the point series indicating the uncertainty of the point. There are three ways to indicate the size of the error bars: <placeholder-1/> is used to specify that all points have the same uncertainty. <placeholder-2/> is used to specify a percentage of the x- or y-coordinate for each point as uncertainty. <placeholder-3/> will add an extra column to the table where you may specify a different uncertainty value for each point. All uncertainties are &plusmn;values. Custom Y-errors are also used to weight the points when creating trendlines."
 msgstr "Hier können Sie sich waagerechte oder senkrechte Fehlerbalken - auch bekannt als Toleranzbalken - anzeigen lassen. Als dünne Balken an jedem Punkt der Punktserie zeigen Sie Ungenauigkeiten dieses (Mess-)Punkts an. Es gibt drei Arten, die Größe der Fehlerbalken darzustellen: Mit <placeholder-1/> gibt man an, dass alle Punkte dieselbe Abweichung haben. Mit <placeholder-2/> gibt man für jeden Punkt einen Prozentsatz der X- oder Y-Koordinate als Abweichung an. <placeholder-3/> erweitert die Tabelle um eine gesonderte Spalte, in der man für jeden Punkt eine andere Abweichung festlegen kann. Alle Abweichungen sind vorzeichenbehaftet. Benutzerdefinierte Y-Abweichungen werden auch bei der Erzeugung einer Trendlinie zur Gewichtung der Punkte verwendet."
 
@@ -2914,7 +2930,7 @@ msgid "Subtraction (-)"
 msgstr "Subtraktion (-)"
 
 #. FunctionList.xml:127(entry)
-msgid "Subtracts two terms. Example f(x)=2-x"
+msgid "Subtracts two terms. Example: f(x)=2-x"
 msgstr "Subtrahiert zwei Terme. Beispiel: f(x)=2-x"
 
 #. FunctionList.xml:130(entry)
@@ -3756,8 +3772,8 @@ msgid "It is not possible to differentiate a recursive function because the resu
 msgstr "Es ist nicht möglich, eine rekursive Funktion zu differenzieren, weil die Ergebnisfunktion unendlich lang würde."
 
 #. Errors.xml:373(term)
-msgid "Error 79: Function cannot be differentiated."
-msgstr "Fehler 79: Funktion läßt sich nicht differenzieren."
+msgid "Error 79: Function %s cannot be differentiated."
+msgstr "Fehler 79: Die Funktion %s lässt sich nicht differenzieren."
 
 #. Errors.xml:375(para)
 msgid "The function cannot be differentiated, because some part of the function does not have a first derivative. This is for example the case for arg(x), conj(x), re(x) and im(x)."
@@ -4523,149 +4539,235 @@ msgstr ""
 msgid "Translator:"
 msgstr "Übersetzer:"
 
-#~ msgid "Returns the summation of the first argument evaluated for all integers from the second to the third argument."
-#~ msgstr "Liefert die Summierung des ersten Argument für alle Integer-Zahlen im Bereich vom zweiten zum dritten Argument."
-
-#~ msgid "Returns the product of the first argument evaluated for all integers from the second to the third argument."
-#~ msgstr "Liefert das Produkt des ersten Arguments für alle Integer-Zahlen im Bereich vom zweiten zum dritten Argument."
-
-#~ msgid "Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned."
-#~ msgstr "Liefert das zweite Argument, wenn das erste Argument einen von Null unterschiedlichen Wert ergibt, sonst wird das dritte Argument zurückgeliefert."
-
-#~ msgid "Evaluates a sequence of if functions and returns the first result found with a condition different from zero."
-#~ msgstr "Wertet eine Reihe von if-Abfragen aus und liefert das erste Ergebnis, dessen Bedingung ungleich 0 ist."
-
-#~ msgid "Calculates the signed area between the graph and the x-axis. This is the same as the numerical integral."
-#~ msgstr "Berechnet die vorzeichenbehaftete Fläche zwischen dem Graph und der X-Achse. Dies entspricht dem numerischen Integral."
-
+#~ msgid ""
+#~ "Returns the summation of the first argument evaluated for all integers "
+#~ "from the second to the third argument."
+#~ msgstr ""
+#~ "Liefert die Summierung des ersten Argument für alle Integer-Zahlen im "
+#~ "Bereich vom zweiten zum dritten Argument."
+#~ msgid ""
+#~ "Returns the product of the first argument evaluated for all integers from "
+#~ "the second to the third argument."
+#~ msgstr ""
+#~ "Liefert das Produkt des ersten Arguments für alle Integer-Zahlen im "
+#~ "Bereich vom zweiten zum dritten Argument."
+#~ msgid ""
+#~ "Returns the second argument if the first argument evaluates to a value "
+#~ "different from zero, else the third value is returned."
+#~ msgstr ""
+#~ "Liefert das zweite Argument, wenn das erste Argument einen von Null "
+#~ "unterschiedlichen Wert ergibt, sonst wird das dritte Argument "
+#~ "zurückgeliefert."
+#~ msgid ""
+#~ "Evaluates a sequence of if functions and returns the first result found "
+#~ "with a condition different from zero."
+#~ msgstr ""
+#~ "Wertet eine Reihe von if-Abfragen aus und liefert das erste Ergebnis, "
+#~ "dessen Bedingung ungleich 0 ist."
+#~ msgid ""
+#~ "Calculates the signed area between the graph and the x-axis. This is the "
+#~ "same as the numerical integral."
+#~ msgstr ""
+#~ "Berechnet die vorzeichenbehaftete Fläche zwischen dem Graph und der X-"
+#~ "Achse. Dies entspricht dem numerischen Integral."
 #~ msgid "Mark start of range"
 #~ msgstr "Bereichsanfang markieren"
-
-#~ msgid "Check this to draw a line at the start of the range. Uncheck it if you want two shadings to look as one."
-#~ msgstr "Aktivieren, wenn eine Linie an den Beginn des Bereichs gezeichnet werden soll. Deaktivieren, wenn zwei Schraffuren wie eine einzige zusammenhängende Schraffur aussehen sollen."
-
+#~ msgid ""
+#~ "Check this to draw a line at the start of the range. Uncheck it if you "
+#~ "want two shadings to look as one."
+#~ msgstr ""
+#~ "Aktivieren, wenn eine Linie an den Beginn des Bereichs gezeichnet werden "
+#~ "soll. Deaktivieren, wenn zwei Schraffuren wie eine einzige "
+#~ "zusammenhängende Schraffur aussehen sollen."
 #~ msgid "Mark end of range"
 #~ msgstr "Bereichsende markieren"
-
 #~ msgid "Indicates if a term evaluates to 0."
 #~ msgstr "Zeigt an, ob ein Term null ergibt."
-
-#~ msgid "Indicates if two expressions both evaluate to a value different from 0."
-#~ msgstr "Zeigt an, ob jeder der beiden Ausdrücke einen Wert ungleich Null ergibt."
-
-#~ msgid "Indicates if at least one of two expressions evaluates to a value different from 0."
-#~ msgstr "Zeigt an, ob mindestens einer von zwei Ausdrücken einen Wert ungleich Null ergibt."
-
-#~ msgid "Indicates if exactly one of two expressions evaluates to a value different from 0."
-#~ msgstr "Zeigt an, ob genau einer von zwei Ausdrücken einen Wert ungleich Null ergibt."
-
+#~ msgid ""
+#~ "Indicates if two expressions both evaluate to a value different from 0."
+#~ msgstr ""
+#~ "Zeigt an, ob jeder der beiden Ausdrücke einen Wert ungleich Null ergibt."
+#~ msgid ""
+#~ "Indicates if at least one of two expressions evaluates to a value "
+#~ "different from 0."
+#~ msgstr ""
+#~ "Zeigt an, ob mindestens einer von zwei Ausdrücken einen Wert ungleich "
+#~ "Null ergibt."
+#~ msgid ""
+#~ "Indicates if exactly one of two expressions evaluates to a value "
+#~ "different from 0."
+#~ msgstr ""
+#~ "Zeigt an, ob genau einer von zwei Ausdrücken einen Wert ungleich Null "
+#~ "ergibt."
 #~ msgid "The same as a sequence of if functions."
 #~ msgstr "Dasselbe wie mehrere if-Funktionen hintereinander."
-
-#~ msgid "Graph requires 32 bit Windows. It has been tested under Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is able to run Windows, it should be able to run the program, though Windows 95 is no longer supported."
-#~ msgstr "Graph benötigt eine 32-bittige Version von Windows. Das Programm wurde unter Windows 98, ME, 2000, XP und Vista getestet. Wenn also Windows auf dem Computer läuft, wird Graph auch funktionieren, es sei denn, es handelt sich um Windows 95, da diese Version von Windows nicht mehr unterstützt wird."
-
-#~ msgid "Can I copy a function or point series from one instance of the program to another?"
-#~ msgstr "Kann ich eine Funktion oder einer Punktserie von einem laufenden Graph-Fenster zu einem anderen Graph-Fenster kopieren?"
-
-#~ msgid "Yes, you can select a function or point series and use the <placeholder-1/> menu item to place a copy of the selected item in the clipboard. You can then paste the item into another coordinate system."
-#~ msgstr "Ja, das ist möglich. Wählen Sie eine Funktion oder Punktserie und wählen Sie den Menüpunkt <placeholder-1/>, um das ausgewähltte Objekt in die Zwischenablage zu kopieren. Anschließend können Sie es in ein anderes Koordinatensystem einfügen."
-
+#~ msgid ""
+#~ "Graph requires 32 bit Windows. It has been tested under Windows 98, "
+#~ "Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is "
+#~ "able to run Windows, it should be able to run the program, though Windows "
+#~ "95 is no longer supported."
+#~ msgstr ""
+#~ "Graph benötigt eine 32-bittige Version von Windows. Das Programm wurde "
+#~ "unter Windows 98, ME, 2000, XP und Vista getestet. Wenn also Windows auf "
+#~ "dem Computer läuft, wird Graph auch funktionieren, es sei denn, es "
+#~ "handelt sich um Windows 95, da diese Version von Windows nicht mehr "
+#~ "unterstützt wird."
+#~ msgid ""
+#~ "Can I copy a function or point series from one instance of the program to "
+#~ "another?"
+#~ msgstr ""
+#~ "Kann ich eine Funktion oder einer Punktserie von einem laufenden Graph-"
+#~ "Fenster zu einem anderen Graph-Fenster kopieren?"
+#~ msgid ""
+#~ "Yes, you can select a function or point series and use the <placeholder-1/"
+#~ "> menu item to place a copy of the selected item in the clipboard. You "
+#~ "can then paste the item into another coordinate system."
+#~ msgstr ""
+#~ "Ja, das ist möglich. Wählen Sie eine Funktion oder Punktserie und wählen "
+#~ "Sie den Menüpunkt <placeholder-1/>, um das ausgewähltte Objekt in die "
+#~ "Zwischenablage zu kopieren. Anschließend können Sie es in ein anderes "
+#~ "Koordinatensystem einfügen."
 #~ msgid "Graph uses dxgettext as translation library:"
 #~ msgstr "Graph verwendet dxgettext als Übersetzungsbibliothek:"
-
 #~ msgid "For shell extensions the EasyNSE library is used:"
-#~ msgstr "Für die Einträge ins Explorer-Kontextmenü wird die EasyNSE Bibliothek eingesetzt."
-
+#~ msgstr ""
+#~ "Für die Einträge ins Explorer-Kontextmenü wird die EasyNSE Bibliothek "
+#~ "eingesetzt."
 #~ msgid "Python is used for plugin support:"
 #~ msgstr "Python dient als Plugin-Schnittstelle."
-
-#~ msgid "CompuServe Graphics Interchange (gif) is not supported because it uses the LZW compression, which is patented by Unisys."
-#~ msgstr "Das gif-Format (CompuServe Grafik Interchange) wird nicht unterstützt, weil es die von Unisys patentierte LZW Kompression verwendet."
-
+#~ msgid ""
+#~ "CompuServe Graphics Interchange (gif) is not supported because it uses "
+#~ "the LZW compression, which is patented by Unisys."
+#~ msgstr ""
+#~ "Das gif-Format (CompuServe Grafik Interchange) wird nicht unterstützt, "
+#~ "weil es die von Unisys patentierte LZW Kompression verwendet."
 #~ msgid "Shadings"
 #~ msgstr "Schraffuren"
-
 #~ msgid "Extreme y-value (Extremum)"
 #~ msgstr "Y-Extremwert (Extremum)"
-
-#~ msgid "The <placeholder-1/> function calculates the inverse cosine of <placeholder-2/>. The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>. This is the reverse of the <placeholder-4/> function."
-#~ msgstr "Die <placeholder-1/>-Funktion berechnet den Arcuscosinus von <placeholder-2/>. Das Ergebnis kann die Einheit <glossterm>rad</glossterm> oder Grad haben, abhängig von der aktuellen Einstellung. <placeholder-3/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> darstellt. Dies ist die Umkehrung der <placeholder-4/>-Funktion."
-
-#~ msgid "The <placeholder-1/> function calculates the secant of an angle <placeholder-2/>, which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> is the same as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-#~ msgstr "Die <placeholder-1/>-Funktion berechnet den Sekans eines Winkels <placeholder-2/> mit der Einheit <glossterm>rad</glossterm> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-3/> ist dasselbe wie <placeholder-4/>. <placeholder-5/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
-
-#~ msgid "The <placeholder-1/> function calculates the cosecant of an angle <placeholder-2/>, which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> is the same as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
-#~ msgstr "Die <placeholder-1/>-Funktion berechnet den Cosekans eines Winkels <placeholder-2/> mit der Einheit <glossterm>rad</glossterm> oder Grad, abhängig von der aktuellen Einstellung. <placeholder-3/> ist dasselbe wie <placeholder-4/>. <placeholder-5/> kann ein beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine <glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</glossterm> darstellt."
-
-#~ msgid "The <placeholder-1/> function is not defined for real values of <placeholder-2/> when <placeholder-3/> &lt; -1/e."
-#~ msgstr "Die <placeholder-1/>-Funktion ist für Werte von <placeholder-2/> &lt; -1/e nicht definiert."
-
+#~ msgid ""
+#~ "The <placeholder-1/> function calculates the inverse cosine of "
+#~ "<placeholder-2/>. The result may be in <glossterm>radians</glossterm> or "
+#~ "degrees depending on the current settings. <placeholder-3/> may be any "
+#~ "<glossterm>numeric expression</glossterm> that evaluates to a "
+#~ "<glossterm>real number</glossterm>. This is the reverse of the "
+#~ "<placeholder-4/> function."
+#~ msgstr ""
+#~ "Die <placeholder-1/>-Funktion berechnet den Arcuscosinus von <placeholder-"
+#~ "2/>. Das Ergebnis kann die Einheit <glossterm>rad</glossterm> oder Grad "
+#~ "haben, abhängig von der aktuellen Einstellung. <placeholder-3/> kann ein "
+#~ "beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine "
+#~ "<glossterm>reelle Zahl</glossterm> darstellt. Dies ist die Umkehrung der "
+#~ "<placeholder-4/>-Funktion."
+#~ msgid ""
+#~ "The <placeholder-1/> function calculates the secant of an angle "
+#~ "<placeholder-2/>, which may be in <glossterm>radians</glossterm> or "
+#~ "degrees depending on the current settings. <placeholder-3/> is the same "
+#~ "as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric "
+#~ "expression</glossterm> that evaluates to a <glossterm>real number</"
+#~ "glossterm> or a <glossterm>complex number</glossterm>."
+#~ msgstr ""
+#~ "Die <placeholder-1/>-Funktion berechnet den Sekans eines Winkels "
+#~ "<placeholder-2/> mit der Einheit <glossterm>rad</glossterm> oder Grad, "
+#~ "abhängig von der aktuellen Einstellung. <placeholder-3/> ist dasselbe wie "
+#~ "<placeholder-4/>. <placeholder-5/> kann ein beliebiger "
+#~ "<glossterm>numerischer Ausdruck</glossterm> sein, der eine "
+#~ "<glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</"
+#~ "glossterm> darstellt."
+#~ msgid ""
+#~ "The <placeholder-1/> function calculates the cosecant of an angle "
+#~ "<placeholder-2/>, which may be in <glossterm>radians</glossterm> or "
+#~ "degrees depending on the current settings. <placeholder-3/> is the same "
+#~ "as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric "
+#~ "expression</glossterm> that evaluates to a <glossterm>real number</"
+#~ "glossterm> or a <glossterm>complex number</glossterm>."
+#~ msgstr ""
+#~ "Die <placeholder-1/>-Funktion berechnet den Cosekans eines Winkels "
+#~ "<placeholder-2/> mit der Einheit <glossterm>rad</glossterm> oder Grad, "
+#~ "abhängig von der aktuellen Einstellung. <placeholder-3/> ist dasselbe wie "
+#~ "<placeholder-4/>. <placeholder-5/> kann ein beliebiger "
+#~ "<glossterm>numerischer Ausdruck</glossterm> sein, der eine "
+#~ "<glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</"
+#~ "glossterm> darstellt."
+#~ msgid ""
+#~ "The <placeholder-1/> function is not defined for real values of "
+#~ "<placeholder-2/> when <placeholder-3/> &lt; -1/e."
+#~ msgstr ""
+#~ "Die <placeholder-1/>-Funktion ist für Werte von <placeholder-2/> &lt; -1/"
+#~ "e nicht definiert."
 #~ msgid "double-click"
 #~ msgstr "doppelklicken"
-
 #~ msgid "left mouse button"
 #~ msgstr "linke Maustaste"
-
 #~ msgid "Right click"
 #~ msgstr "Rechts-Klick"
-
 #~ msgid "right click"
 #~ msgstr "Rechts-Klick"
-
 #~ msgid "f'(x)"
 #~ msgstr "f'(x)"
-
 #~ msgid "hyperbolic cosecanr"
 #~ msgstr "Cosecans Hyperbolicus"
-
 #~ msgid "hyperbolic secanr"
 #~ msgstr "Secans Hyperbolicus"
-
 #~ msgid "Variable/constant"
 #~ msgstr "Variable/Konstante"
-
 #~ msgid "Operator/constant"
 #~ msgstr "Operator/Konstante"
-
-#~ msgid "The probability function of the normal distribution in a variate with mean and standard"
-#~ msgstr "Die Dichtefunktion der Gauss'schen Normalverteilung, wobei Mittelwert und Standardabweichung anzugeben sind."
-
+#~ msgid ""
+#~ "The probability function of the normal distribution in a variate with "
+#~ "mean and standard"
+#~ msgstr ""
+#~ "Die Dichtefunktion der Gauss'schen Normalverteilung, wobei Mittelwert und "
+#~ "Standardabweichung anzugeben sind."
 #~ msgid "sin(x)^2= (sin(x))^2"
 #~ msgstr "sin(x)^2= (sin(x))^2"
-
 #~ msgid "sin 2x = sin(2x)"
 #~ msgstr "sin 2x = sin(2x)"
-
 #~ msgid "sin 2+x = sin(2)+x"
 #~ msgstr "sin 2+x = sin(2)+x"
-
 #~ msgid "sin x^2 = sin(x^2)"
 #~ msgstr "sin x^2 = sin(x^2)"
-
 #~ msgid "2(x+3)x = 2*(x+3)*x"
 #~ msgstr "2(x+3)x = 2*(x+3)*x"
-
 #~ msgid "-x^2 = -(x^2)"
 #~ msgstr "-x^2 = -(x^2)"
-
 #~ msgid "2x = 2*x"
 #~ msgstr "2x = 2*x"
-
 #~ msgid "e^2x = e^(2*x)"
 #~ msgstr "e^2x = e^(2*x)"
-
 #~ msgid "avi"
 #~ msgstr "avi"
-
-#~ msgid "When the animation is finished, a very simple player is shown. You can use this to play the animation. The rightmost button will give you some additional options, for example to save the animation to a file, which can be played by any media player. You can also have the player repeat playing the animation until you stop it. The <placeholder-1/> option will make the animation run backwards when it reaches the end. This is very useful in combination with the <placeholder-2/> option to make the animation oscillate between the two ends. You can also make some changes to the speed, though a more accurate speed needs to be set before the animation is created."
-#~ msgstr "Ist die Animation fertig gestellt, wird ein einfaches Wiedergabefenster dargestellt, mit dem man die Animation abspielen kann. Mit Hilfe der rechten Schaltfläche erreicht man zusätzliche Einstellungen, beispielsweise um die Animation in eine Datei zu exportieren, die  mit einem beliebigen Mediaplayer abgespielt werden kann. Weiterhin kann die Animation im Wiedergabefenster in einer Schleife abgespielt werden, bis man sie von Hand anhält. Die Einstellung <placeholder-1/> führt dazu, dass die Animation rückwärt abläuft, nachdem sie einmal vollständig abgelaufen ist. In Verbindung mit der Einstellung <placeholder-2/> schwingt die Animation zwischen den beiden Enden hin und her. Zudem kann die Animationsgeschwindigkeit eingestellt werden. Vor der Erstellung der Animation sollte allerdings keine allzu hohe Geschwindigkeit eingestellt werden."
-
+#~ msgid ""
+#~ "When the animation is finished, a very simple player is shown. You can "
+#~ "use this to play the animation. The rightmost button will give you some "
+#~ "additional options, for example to save the animation to a file, which "
+#~ "can be played by any media player. You can also have the player repeat "
+#~ "playing the animation until you stop it. The <placeholder-1/> option will "
+#~ "make the animation run backwards when it reaches the end. This is very "
+#~ "useful in combination with the <placeholder-2/> option to make the "
+#~ "animation oscillate between the two ends. You can also make some changes "
+#~ "to the speed, though a more accurate speed needs to be set before the "
+#~ "animation is created."
+#~ msgstr ""
+#~ "Ist die Animation fertig gestellt, wird ein einfaches Wiedergabefenster "
+#~ "dargestellt, mit dem man die Animation abspielen kann. Mit Hilfe der "
+#~ "rechten Schaltfläche erreicht man zusätzliche Einstellungen, "
+#~ "beispielsweise um die Animation in eine Datei zu exportieren, die  mit "
+#~ "einem beliebigen Mediaplayer abgespielt werden kann. Weiterhin kann die "
+#~ "Animation im Wiedergabefenster in einer Schleife abgespielt werden, bis "
+#~ "man sie von Hand anhält. Die Einstellung <placeholder-1/> führt dazu, "
+#~ "dass die Animation rückwärt abläuft, nachdem sie einmal vollständig "
+#~ "abgelaufen ist. In Verbindung mit der Einstellung <placeholder-2/> "
+#~ "schwingt die Animation zwischen den beiden Enden hin und her. Zudem kann "
+#~ "die Animationsgeschwindigkeit eingestellt werden. Vor der Erstellung der "
+#~ "Animation sollte allerdings keine allzu hohe Geschwindigkeit eingestellt "
+#~ "werden."
 #~ msgid "Parts of Graph are using the Spirit parser library:"
 #~ msgstr "Teile von Graph greifen auf die Spirit Parser Bibliothek zurück."
-
 #~ msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
-#~ msgstr "Zur Speicherung von Portable Network Graphic Dateien wird die BMGLib Bibliothek eingesetzt."
-
+#~ msgstr ""
+#~ "Zur Speicherung von Portable Network Graphic Dateien wird die BMGLib "
+#~ "Bibliothek eingesetzt."
 #~ msgid "Tnt Delphi Unicode Controls"
 #~ msgstr "Tnt Delphi Unicode Controls"
+
