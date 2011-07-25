@@ -166,6 +166,7 @@ object Form1: TForm1
     Top = 0
     Width = 624
     Height = 23
+    ParentCustomHint = False
     UseSystemFont = False
     ActionManager = ActionManager
     ColorMap.HighlightColor = 14410210
@@ -311,8 +312,8 @@ object Form1: TForm1
         OnMouseDown = Image1MouseDown
         OnMouseMove = Image1MouseMove
         OnMouseUp = Image1MouseUp
-        ExplicitLeft = 3
-        ExplicitTop = -3
+        ExplicitLeft = -3
+        ExplicitTop = 6
       end
       object Image2: TImage
         Left = 344
@@ -3239,95 +3240,66 @@ object Form1: TForm1
       item
         Items.AutoHotKeys = False
         Items.Customizable = False
-        Items.HideUnused = False
         Items.CaptionOptions = coAll
         Items = <
           item
-            Items.HideUnused = False
             Items = <
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = NewAction
                 ImageIndex = 0
                 ShortCut = 16462
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = OpenAction
                 ImageIndex = 1
                 ShortCut = 16463
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = SaveAction
                 ImageIndex = 2
                 ShortCut = 16467
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = SaveAsAction
                 ImageIndex = 3
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Visible = False
                 Action = SaveCopyAsAction
                 ImageIndex = 49
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Caption = '-'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = SaveAsImageAction
                 ImageIndex = 45
                 ShortCut = 16450
               end
               item
-                Items.HideUnused = False
                 Items = <
                   item
-                    Items.HideUnused = False
-                    Items = <>
                     Action = ImportGraphFileAction
                     ImageIndex = 58
                   end
                   item
-                    Items.HideUnused = False
-                    Items = <>
                     Action = ImportPointSeriesAction
                     ImageIndex = 17
                   end>
                 Caption = 'Import'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Caption = '-'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = PrintAction
                 ImageIndex = 5
                 ShortCut = 16464
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Caption = '-'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = ExitAction
                 ImageIndex = 6
                 ShortCut = 32883
@@ -3335,167 +3307,115 @@ object Form1: TForm1
             Caption = 'File'
           end
           item
-            Items.HideUnused = False
             Items = <
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = UndoAction
                 ImageIndex = 7
                 ShortCut = 16474
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = RedoAction
                 ImageIndex = 8
                 ShortCut = 16473
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Caption = '-'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = CutAction
                 ImageIndex = 9
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = CopyAction
                 ImageIndex = 10
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = PasteAction
                 ImageIndex = 11
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Caption = '-'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = CopyImageAction
                 ImageIndex = 4
                 ShortCut = 16457
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Caption = '-'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = AxesAction
                 ImageIndex = 12
                 ShortCut = 16449
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = OptionsAction
                 ImageIndex = 13
               end>
             Caption = 'Edit'
           end
           item
-            Items.HideUnused = False
             Items = <
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = InsertFunctionAction
                 ImageIndex = 14
                 ShortCut = 45
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = InsertTangentAction
                 ImageIndex = 15
                 ShortCut = 113
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = InsertShadeAction
                 ImageIndex = 16
                 ShortCut = 114
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = InsertDifAction
                 ImageIndex = 21
                 ShortCut = 118
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Caption = '-'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = InsertPointsAction
                 ImageIndex = 17
                 ShortCut = 115
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = InsertTrendlineAction
                 ImageIndex = 18
                 ShortCut = 16468
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Caption = '-'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = InsertRelationAction
                 ImageIndex = 54
                 ShortCut = 117
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = InsertLabelAction
                 ImageIndex = 46
                 ShortCut = 119
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Caption = '-'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = EditAction
                 ImageIndex = 19
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = DeleteAction
                 ImageIndex = 20
                 ShortCut = 16430
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = CustomFunctionsAction
                 ImageIndex = 55
                 ShortCut = 16454
@@ -3503,80 +3423,56 @@ object Form1: TForm1
             Caption = 'Function'
           end
           item
-            Items.HideUnused = False
             Items = <
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = ZoomInAction
                 ImageIndex = 22
                 ShortCut = 16571
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = ZoomOutAction
                 ImageIndex = 23
                 ShortCut = 16495
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = ZoomWindowAction
                 ImageIndex = 24
                 ShortCut = 16471
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = ZoomSquareAction
                 ImageIndex = 44
                 ShortCut = 16465
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = ZoomStandardAction
                 ImageIndex = 25
                 ShortCut = 16452
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Caption = '-'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = MoveAction
                 ImageIndex = 30
                 ShortCut = 16461
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Caption = '-'
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = ZoomFitAction
                 ImageIndex = 43
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = ZoomFitAllAction
                 ImageIndex = 41
               end>
             Caption = 'Zoom'
           end
           item
-            Items.HideUnused = False
             Items = <
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = PathAction
                 ImageIndex = 31
               end
@@ -3585,21 +3481,15 @@ object Form1: TForm1
                 ImageIndex = 32
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = EvalAction
                 ImageIndex = 33
                 ShortCut = 16453
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = TableAction
                 ImageIndex = 34
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = AnimateAction
                 ImageIndex = 56
               end>
@@ -3614,25 +3504,18 @@ object Form1: TForm1
             Caption = 'Plugins'
           end
           item
-            Items.HideUnused = False
             Items = <
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = ContentsAction
                 ImageIndex = 35
                 ShortCut = 112
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = ListAction
                 ImageIndex = 36
                 ShortCut = 16496
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = FaqAction
                 ImageIndex = 42
               end
@@ -3642,42 +3525,29 @@ object Form1: TForm1
                 ImageIndex = 35
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = TipAction
                 ImageIndex = 47
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = UpdateAction
                 Caption = '-'
                 ImageIndex = 39
               end
               item
-                Items.HideUnused = False
                 Items = <
                   item
-                    Items.HideUnused = False
-                    Items = <>
                     Action = HomePageAction
                     ImageIndex = 40
                   end
                   item
-                    Items.HideUnused = False
-                    Items = <>
                     Action = SupportAction
                     ImageIndex = 40
                   end
                   item
-                    Items.HideUnused = False
-                    Items = <>
                     Action = DonateAction
                     ImageIndex = 48
                   end
                   item
-                    Items.HideUnused = False
-                    Items = <>
                     Action = UpdateAction
                     ImageIndex = 39
                   end>
@@ -3685,8 +3555,6 @@ object Form1: TForm1
                 UsageCount = 1
               end
               item
-                Items.HideUnused = False
-                Items = <>
                 Action = AboutAction
                 ImageIndex = 37
                 ShortCut = 32880
