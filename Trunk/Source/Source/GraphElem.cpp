@@ -581,9 +581,9 @@ void TTan::Update()
 long double TTan::CalcArea(long double From, long double To) const
 {
   if(_isnanl(a))
-    return NAN; //The tangent is not valid, i.e. it is touching a undefined function
-  if(_finitel(a))
-    return (To - From) * a * 0.5 * (To + From);
+		return NAN; //The tangent is not valid, i.e. it is touching a undefined function
+	if(_finitel(a))
+		return a*To*To/2 + q*To - a*From*From/2 - q*From;
   return 0;    //The tangent is vertical
 }
 //---------------------------------------------------------------------------
