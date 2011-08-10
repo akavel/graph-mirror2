@@ -180,6 +180,20 @@ if (isset($_POST['form_sent']))
 		$message = preparse_bbcode($message, $errors);
 	}
 
+   // Spam protection added by IJO
+   if ($forum_user['is_guest'])
+   {
+      $temp_message = strtolower($message);//lowercase it so we can be case insensitive, stripos is php5 only
+      if ((strpos($temp_message, '[url') !== false) || (strpos($temp_message, '[email') !== false) || (strpos($temp_message, '@') !== false))
+         $errors[] = $lang_post['Guest spam protection'];
+   }
+   else if ($forum_user['num_posts'] <= 3)
+   {
+      $temp_message = strtolower($message);//lowercase it so we can be case insensitive, stripos is php5 only
+      if ((strpos($temp_message, '[url') !== false) || (strpos($temp_message, '[email') !== false) || (strpos($temp_message, '@') !== false))
+         $errors[] = $lang_post['New Member spam protection'];
+   }
+
 	if ($message == '')
 		$errors[] = $lang_post['No message'];
 
