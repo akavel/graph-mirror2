@@ -55,6 +55,10 @@ $lang_post = array(
 'Silent edit'			=>	'Silent edit (don\'t display "Last edited by…" in topic view for this edit).',
 'Preview edited topic'	=>	'Preview of your edited topic',
 'Preview edited reply'	=>	'Preview of your edited reply',
-'Edit redirect'			=>	'Post updated. Redirecting…'
+'Edit redirect'         => 'Post updated. Redirecting…',
+
+// Texts for spam protection added by IJO
+'New Member spam protection' => 'New Members can not post links or email addresses until they become more active.',
+'Guest spam protection' => 'Guests can not post links or email addresses.'
 
 );
