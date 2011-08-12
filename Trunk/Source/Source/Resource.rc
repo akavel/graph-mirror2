@@ -279,6 +279,7 @@ BEGIN
 "There is no default printer currently selected."
 
 "Install for all users"  //Text from the installation
+"Examples"               //Icon added to Start menu
 
 "Local"
 "Global"
