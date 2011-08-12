@@ -12,23 +12,23 @@ AppPublisherURL=http://www.padowan.dk
 AppSupportURL=http://www.padowan.dk
 AppUpdatesURL=http://www.padowan.dk
 ChangesAssociations=Yes
-Compression=lzma
+Compression=lzma2
+SolidCompression=Yes
 DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
 InfoBeforeFile=License.txt
-OutputBaseFilename=SetupGraphBeta-4.4.0.475
+OutputBaseFilename=SetupGraphBeta-4.4.0.506
 OutputDir=.
-SolidCompression=yes
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.4.0.475
+VersionInfoVersion=4.4.0.506
 PrivilegesRequired=None
 
 [Languages]
 Name: "Arabic"; MessagesFile: "compiler:Languages\Arabic.isl"
 Name: "Basque"; MessagesFile: "compiler:Languages\Basque.isl"
-Name: "Chinese_Traditional"; MessagesFile: "compiler:Languages\ChineseTrad.isl"
 Name: "Chinese_Simplified"; MessagesFile: "compiler:Languages\ChineseSimp.isl"
+Name: "Chinese_Traditional"; MessagesFile: "compiler:Languages\ChineseTrad.isl"
 Name: "Croatian"; MessagesFile:  "compiler:Languages\Croatian.isl"
 Name: "Czech"; MessagesFile:  "compiler:Languages\Czech.isl"
 Name: "Danish"; MessagesFile: "compiler:Languages\Danish.isl"
@@ -69,16 +69,17 @@ Source: "Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
 Source: "Help\*.chm"; DestDir: "{app}\Help"; Flags: ignoreversion
 Source: "Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritereadonly
 Source: "Plugins\*.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "Lib\*.py"; DestDir: "{app}\Lib"; Flags: ignoreversion overwritereadonly
 ;Source: "Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 
 [Icons]
-Name: "{userprograms}\Graph\Examples"; Filename: "{app}\Examples"; IconFilename: "{sys}\shell32.dll"; IconIndex: 19; Flags: foldershortcut; Tasks: not InstallAllUsers; Check: not WizardNoIcons
+Name: "{userprograms}\Graph\{cm:Examples}"; Filename: "{app}\Examples"; IconFilename: "{sys}\shell32.dll"; IconIndex: 19; Flags: foldershortcut; Tasks: not InstallAllUsers; Check: not WizardNoIcons
 Name: "{userprograms}\Graph\Graph"; Filename: "{app}\Graph.exe"; Comment: "Graph"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
-Name: "{userprograms}\Graph\Uninstall"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
-Name: "{commonprograms}\Graph\Examples"; Filename: "{app}\Examples"; Flags: foldershortcut; Tasks: InstallAllUsers; Check: not WizardNoIcons
+Name: "{userprograms}\Graph\{cm:Uninstall}"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
+Name: "{commonprograms}\Graph\{cm:Examples}"; Filename: "{app}\Examples"; Flags: foldershortcut; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{commonprograms}\Graph\Graph"; Filename: "{app}\Graph.exe"; Comment: "Graph"; Tasks: InstallAllUsers; Check: not WizardNoIcons
-Name: "{commonprograms}\Graph\Uninstall"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Tasks: InstallAllUsers; Check: not WizardNoIcons
+Name: "{commonprograms}\Graph\{cm:Uninstall}"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{userdesktop}\Graph"; Filename: "{app}\Graph.exe"; Tasks: DesktopIcon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\Graph"; Filename: "{app}\Graph.exe"; Tasks: QuickLaunchIcon
 
@@ -103,11 +104,15 @@ Type: files; Name: "{app}\uninstall.ini"
 Type: files; Name: "{app}\Help\*.gid"
 Type: files; Name: "{app}\Help\*.hlp"
 Type: files; Name: "{app}\Help\*.cnt"
-Type: files; Name: "{app}\Examples\*.grf"
+;Type: files; Name: "{app}\Examples\*.grf"
 Type: files; Name: "{userprograms}\Graph.lnk"
 Type: files; Name: "{commonprograms}\Graph.lnk"
 Type: files; Name: "{app}\Locale\Chinese.mo"
 Type: files; Name: "{app}\Locale\Portuguese.mo"
+Type: files; Name: "{userprograms}\Graph\Uninstall.lnk"
+Type: files; Name: "{commonprograms}\Graph\Uninstall.lnk"
+Type: filesandordirs; Name: "{userprograms}\Graph\Examples"
+Type: filesandordirs; Name: "{commonprograms}\Graph\Examples"
 
 [UninstallRun]
 Filename: "{app}\Graph.exe"; Parameters: "/unregserver"
@@ -121,6 +126,8 @@ Type: files; Name: "{app}\Thumbnails.dll"
 Type: files; Name: "{app}\Examples\Thumbs.db"
 Type: files; Name: "{app}\Plugins\*.pyc"
 Type: files; Name: "{app}\Lib\*.pyc"
+Type: filesandordirs; Name: "{app}\Plugins\__pycache__"
+Type: filesandordirs; Name: "{app}\Lib\__pycache__"
 Type: dirifempty; Name: "{app}\Examples"
 Type: dirifempty; Name: "{app}\Help"
 Type: dirifempty; Name: "{app}\Locale"
@@ -145,6 +152,42 @@ Russian.InstallAllUsers=Установить для всех пользоват�
 Dutch.InstallAllUsers=Installeer voor elke gebruiker
 Greek.InstallAllUsers=Εγκατάσταση για όλους τους χρήστες
 Persian.InstallAllUsers=نصب براي همه کاربران
+
+Examples=Examples
+Croatian.Examples=Primjeri
+Danish.Examples=Eksempler
+Dutch.Examples=Voorbeelden
+French.Examples=Exemples
+German.Examples=Beispiele
+Spanish.Examples=Ejemplos
+
+Uninstall=Uninstall
+Arabic.Uninstall=إلغاء تثبيت
+Basque.Uninstall=Desinstalaketa
+Chinese_Simplified.Uninstall=安装程序
+Chinese_Traditional.Uninstall=安裝程式
+Croatian.Uninstall=Deinstalacija
+Czech.Uninstall=Prùvodce odinstalací
+Danish.Uninstall=Afinstaller
+Dutch.Uninstall=Verwijderen
+Finnish.Uninstall=Asennuksen poisto
+French.Uninstall=Désinstallation
+German.Uninstall=Entfernen
+Greek.Uninstall=Απεγκατάσταση
+Hebrew.Uninstall=הסרה
+Hungarian.Uninstall=Eltávolító
+Italian.Uninstall=Disinstallazione
+Korean.Uninstall=프로그램 제거
+Norwegian.Uninstall=Avinstaller
+Persian.Uninstall=حذف برنامه
+Polish.Uninstall=Deinstalacja
+Portuguese_Brazil.Uninstall=Desinstalar
+Portuguese_Portugal.Uninstall=Desinstalação
+Russian.Uninstall=Деинсталляция
+Serbian.Uninstall=Deinstalacija
+Slovenian.Uninstall=Odstranitev
+Spanish.Uninstall=Desinstalar
+Swedish.Uninstall=Avinstallation
 
 [code]
 function FilesEqual(FileName : String): Boolean;
@@ -185,6 +228,9 @@ begin
   if I <> 0 then
     Result := Copy(Result, 1, I-1) + ' (' + Copy(Result, I+1, MaxInt) + ')';
 end;
+
+
+
 
 
 
