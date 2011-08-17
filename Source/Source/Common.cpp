@@ -244,8 +244,12 @@ void LoadLanguage(const String &Lang)
   String Path = ExtractFilePath(Application->ExeName);
   UseLanguage(Lang); //dxGetText will not update translation unless language has been changed
   DefaultInstance->bindtextdomainToFile("default", Path + "locale\\" + Lang + ".mo");
-  String HelpFile = Path + "Help\\Graph-" + Lang + ".chm";
-  if(FileExists(HelpFile))
+	String HelpFile = DefaultInstance->GetTranslationProperty("Help-file");
+	if(HelpFile.IsEmpty() )
+		HelpFile = Path + "Help\\Graph-" + Lang + ".chm";
+	else
+	  HelpFile = Path + "Help\\" + HelpFile;
+	if(FileExists(HelpFile))
     Application->HelpFile = HelpFile;
   else
     Application->HelpFile = Path + "Help\\Graph-English.chm";
