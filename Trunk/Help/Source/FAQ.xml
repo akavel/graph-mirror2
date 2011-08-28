@@ -219,7 +219,7 @@
 						You can then use
 						<menuchoice>
 							<guimenu>Calc</guimenu>
-							<guimenuitem>Area</guimenuitem>
+							<guimenuitem>Integrate</guimenuitem>
 						</menuchoice>
 						to calculate the area for a given interval.
 					</para>
