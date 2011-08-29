@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-07-17 02:38Romance Daylight Time\n"
+"POT-Creation-Date: 2011-08-29 21:12Romance Daylight Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: <LL@li.org>\n"
@@ -294,7 +294,7 @@ msgid "area"
 msgstr ""
 
 #. Special.xml:13(para) 
-msgid "Returns an aproximation for the numerical integral of the given expression over the given range."
+msgid "Returns an approximation for the numerical integral of the given expression over the given range."
 msgstr ""
 
 #. Special.xml:34(glossterm) Special.xml:80(glossterm) Special.xml:114(glossterm) Special.xml:209(glossterm) Special.xml:314(glossterm) Special.xml:345(glossterm) Piecewise.xml:84(glossterm) Piecewise.xml:108(glossterm) Piecewise.xml:133(glossterm) Piecewise.xml:158(glossterm) 
@@ -306,7 +306,7 @@ msgid "real numbers"
 msgstr ""
 
 #. Special.xml:22(para) 
-msgid "The <placeholder-1/> function returns an aproximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to an estimated relative error less than <placeholder-19/>."
+msgid "The <placeholder-1/> function returns an approximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to an estimated relative error less than <placeholder-19/>."
 msgstr ""
 
 #. Special.xml:41(title) Rounding.xml:153(title) 
@@ -1341,7 +1341,7 @@ msgstr ""
 msgid "Calculates the distance along the path between two points on the selected graph."
 msgstr ""
 
-#. MenuItems.xml:577(guimenuitem) EvaluateDialog.xml:102(title) EvaluateDialog.xml:107(guimenuitem) 
+#. MenuItems.xml:577(guimenuitem) FAQ.xml:222(guimenuitem) EvaluateDialog.xml:102(title) EvaluateDialog.xml:107(guimenuitem) 
 msgid "Integrate"
 msgstr ""
 
@@ -3283,10 +3283,6 @@ msgstr ""
 
 #. FAQ.xml:211(para) 
 msgid "How do I calculate the area between two functions?"
-msgstr ""
-
-#. FAQ.xml:222(guimenuitem) 
-msgid "Area"
 msgstr ""
 
 #. FAQ.xml:216(para) 
