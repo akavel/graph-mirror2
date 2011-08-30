@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-08-29 21:12Romance Daylight Time\n"
+"POT-Creation-Date: 2011-08-30 23:12Romance Daylight Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: <LL@li.org>\n"
@@ -699,6 +699,10 @@ msgstr ""
 
 #. Plugins.xml:5(primary) 
 msgid "plugins"
+msgstr ""
+
+#. Plugins.xml:9(ulink) 
+msgid "online"
 msgstr ""
 
 #. Plugins.xml:7(para) 
@@ -1477,12 +1481,12 @@ msgstr ""
 msgid "Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things. The program is a standard Windows program with menus and dialogs. The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations. It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more. For more information on using the program see <placeholder-1/>."
 msgstr ""
 
-#. Introduction.xml:27(citetitle) 
-msgid "GNU General Public License"
-msgstr ""
-
 #. Introduction.xml:25(para) 
 msgid "Graph is free software; you can redistribute it and/or modify it under the terms of the <placeholder-1/>. Newest version of the program as well as the source code may be downloaded from <placeholder-2/>."
+msgstr ""
+
+#. Introduction.xml:40(ulink) 
+msgid "Graph support forum"
 msgstr ""
 
 #. Introduction.xml:30(para) 
@@ -2215,6 +2219,10 @@ msgstr ""
 
 #. InsertPointSeriesDialog.xml:98(guilabel) 
 msgid "1D cubic spline"
+msgstr ""
+
+#. InsertPointSeriesDialog.xml:98(ulink) 
+msgid "natural cubic spline"
 msgstr ""
 
 #. InsertPointSeriesDialog.xml:100(guilabel) 
