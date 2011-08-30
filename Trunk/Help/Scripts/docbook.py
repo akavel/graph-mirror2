@@ -47,18 +47,18 @@ class docbookXmlMode:
     def __init__(self):
         self.lists = ['itemizedlist', 'orderedlist', 'variablelist',
                       'segmentedlist', 'simplelist', 'calloutlist', 'varlistentry', 'informaltable' ]
-        self.objects = [ 'figure', 'textobject', 'imageobject', 'mediaobject',
-                         'screenshot', 'function', 'parameter', 'personname', 'mathphrase', 'filename', 'constant', 'email', 'xref', 'varname', 'markup', 'application', 'ulink']
+        self.objects = [ 'figure', 'textobject', 'imageobject', 'mediaobject', 'citetitle',
+                         'screenshot', 'function', 'parameter', 'personname', 'mathphrase', 'filename', 'constant', 'email', 'xref', 'varname', 'markup', 'application']
 
     def getIgnoredTags(self):
         "Returns array of tags to be ignored."
-        return  self.objects + self.lists + ['firstname', 'surname', 'personname', 'year', 'holder', 'orgname', 'ulink',
+        return  self.objects + self.lists + ['firstname', 'surname', 'personname', 'year', 'holder', 'orgname',
           'superscript', 'subscript', 'application', 'acronym']
 
     def getFinalTags(self):
         "Returns array of tags to be considered 'final'."
         return ['para', 'formalpara', 'simpara',
-                'releaseinfo', 'revnumber', 'title',
+                'releaseinfo', 'revnumber', 'title', 'ulink',
                 'date', 'term', 'programlisting', 'menuchoice', 'guilabel', 'guimenu', 'guimenuitem', 'glossterm'] + self.objects + self.lists
 
     def getSpacePreserveTags(self):
