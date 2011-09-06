@@ -18,7 +18,6 @@
 #include <cstdio>
 #include <delayimp.h>
 #include <except.h>
-#include <gsl/gsl_errno.h>
 //---------------------------------------------------------------------------
 struct TStackFrame
 {
@@ -380,14 +379,7 @@ Exception* __fastcall MyGetExceptionObject(Windows::PExceptionRecord P)
     if(EExternal *E = dynamic_cast<EExternal*>(Result))
       LogOsException(E, 3);
 
-  return Result;
-}
-//---------------------------------------------------------------------------
-void GSL_ErrorHandler(const char * reason, const char * file, int line, int gsl_errno)
-{
-#ifdef _DEBUG
-  OutputDebugStringA(reason);
-#endif
+	return Result;
 }
 //---------------------------------------------------------------------------
 /** Call at startup to setup handling of exceptions.
@@ -397,25 +389,8 @@ void SetApplicationExceptionHandler(bool ALogAllExceptions)
 //  RaiseExceptionProc = MyRaiseException;
 //  OldExceptObjProc = reinterpret_cast<TGetExceptionObject>(ExceptObjProc);
 //  ExceptObjProc = MyGetExceptionObject;
-  LogAllExceptions = ALogAllExceptions;
-  __pfnDliFailureHook = DllLoadFailure;
-  gsl_set_error_handler(GSL_ErrorHandler);
-}
-//---------------------------------------------------------------------------
-//Math error handler
-//Called on any math errors;
-int _matherr(_exception *a)
-{
-  //Bug in RTL (cosl.asm) cosl() will call _matherr() instead of _matherrl() on error
-  //Because of this a->arg1 is also wrong
-  if(strcmp(a->name, "cosl") == 0)
-  {
-    a->retval = 0;//NAN gives problems with log(-0)
-    errno = a->type;
-  }
-  else
-    a->retval = NAN;
-  return 1;
+	LogAllExceptions = ALogAllExceptions;
+	__pfnDliFailureHook = DllLoadFailure;
 }
 //---------------------------------------------------------------------------
 
