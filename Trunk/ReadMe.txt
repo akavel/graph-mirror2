@@ -1,4 +1,4 @@
-Graph is an appliation used for drawing functions in a coordinate system. The
+Graph is an application used for drawing functions in a coordinate system. The
 program is licensed under the GNU Gneral Public License. This pacakge contains
 the following parts necesarry to rebuild the application:
 =============
