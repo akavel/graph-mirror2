@@ -220,7 +220,8 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
 					TConstIterator End = FindEnd(To);
 					TElem Elem = *Iter;
 					Elem.Ident = CodeConst;
-					Data.push_back(CodeAdd);
+					if(!Iter->Text.empty())
+						Data.push_back(CodeAdd);
 					Data.push_back(CodeSub);
 					Data.push_back(CodeMul);
 					CopyReplace(Data, Iter + 1, Elem, To, End);
@@ -229,10 +230,14 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
 					Data.push_back(CodeMul);
 					CopyReplace(Data, Iter + 1, Elem, From, To);
 					AddDif(From, Var, Trigonometry, Level);
-
-					Data.push_back(*Iter);
-					AddDif(Iter + 1, Var, Trigonometry, Level);
-					Data.insert(Data.end(), From, End);
+					if(!Iter->Text.empty())
+					{ //Backward compatibility:
+						//f(x)=integrate(g(x), a(x), b(x))
+						//f'(x)=g(x,b(x))*db(x)/dx - g(x,a(x))*da(x)/dx
+						Data.push_back(*Iter);
+						AddDif(Iter + 1, Var, Trigonometry, Level);
+						Data.insert(Data.end(), From, End);
+          }
 				}
 				else if(DifData.IsEmpty())
 					throw EFuncError(ecNotDifAble, FunctionName(Iter->Ident));
