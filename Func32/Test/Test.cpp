@@ -623,7 +623,7 @@ void Test()
   TestErrorEval<long double>(L"root(3.5, x)", -27, ecPowCalcError);
   Test("root(4,x)", 625, 5);
   TestErrorEval<long double>(L"root(4,x)", -625, ecPowCalcError);
-  TestEval<TComplex>(L"root(4,x)", -4, TComplex(1, 1));
+	TestEval<TComplex>(L"root(4,x)", -4, TComplex(1, 1));
 
   Test("fact(x)", 5, 120);
 
@@ -644,15 +644,15 @@ void Test()
   Test("asinh(x)", 5, 2.31243834);
 
   Test("acosh(x)", 5, 2.29243167);
-  Test("acosh(x)", 1, 0);
-  TestEval<TComplex>(L"acosh(x)", -1, TComplex(0, M_PI));
+	Test("acosh(x)", 1, 0);
+  TestEval<TComplex>(L"acosh(x)", -1, TComplex(0, PI));
   TestErrorEval<long double>(L"acosh(x)", -1, ecACoshError);
 
   Test("atanh(x)", 0.5, 0.54930614);
   TestError("atanh(x)", 1, ecATanhError);
   TestError("atanh(x)", -1, ecATanhError);
 
-  Test("abs(x)", -4.67, 4.67);
+	Test("abs(x)", -4.67, 4.67);
   TestEval<TComplex>(L"abs(x)", TComplex(3, 4), 5);
   TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 0.927295218);
 	TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 53.13010235, Degree);
@@ -702,7 +702,7 @@ void Test()
   Test("1 and 0", 0, 0);
   Test("0 and 0", 0, 0);
   Test("1 or 1", 0, 1);
-  Test("0 or 1", 0, 1);
+	Test("0 or 1", 0, 1);
   Test("1 or 0", 0, 1);
   Test("0 or 0", 0, 0);
   Test("1 xor 1", 0, 0);
@@ -710,7 +710,7 @@ void Test()
 	Test("1 xor 0", 0, 1);
   Test("0 xor 0", 0, 0);
 
-  //Test picewise functions
+	//Test picewise functions
 	Test("if(x<3, 5, 9)", 2, 5);
   Test("if(x<3, 5, 9)", 3, 9);
   Test("if(x<3, 5, 9)", 4, 9);
@@ -731,7 +731,7 @@ void Test()
   Test("mod(x, 1.2)", -5.6, 0.4);
   Test("dnorm(x, 5, 7)", 3, 0.054712394277745);
   Test("dnorm(x)", 3, 0.00443184841193801);
-  Test("dnorm(x, 0, 1)", 3, 0.00443184841193801);
+	Test("dnorm(x, 0, 1)", 3, 0.00443184841193801);
 
 	//Test backward compatibility
   Test("integrate(x^2,2,5)", NaN, 39);
@@ -759,13 +759,16 @@ void Test()
 	Test("sum(min(k,8)*2,k,0,x)", 10, 104);
 	Test("sum(min((k),[6+2])*(2)/2,k,0,x)", 10, 52);
 	Test("sum(sum(k*l,k,1,10),l,1,x)", 2, 165);
+	Test("integrate(1/((1+x)*x^(1/2)),x, 0, inf)", 0, PI);
+	TestEval<long double>(L"integrate(1/x^(2/3),-1,1)", 0, 6);
+	TestErrorEval<TComplex>(L"integrate(1/x^(2/3),-1,1)", 0, ecNoResult);
 //	TestError("sum(x,k+1,0,10)", 0, ecLiteralExpected); To be fixed in Graph 4.5
 //	TestError("sum(x,x+1,0,10)", 0, ecLiteralExpected);
 //	TestError("sum(x,1,0,10)", 0, ecLiteralExpected);
 
   //Test infinity
   Test("inf", 0, INF);
-  Test("-inf", 0, -INF);
+	Test("-inf", 0, -INF);
   TestEval<long double>(L"2*inf", 0, INF);
   TestEval<TComplex>(L"2*inf", 0, TComplex(INF, NaN));
 	Test("2+inf", 0, INF);
@@ -806,8 +809,8 @@ void Test()
   Test("zeta(x)", -5, -1.0/252);
 
   //Test Omega function
-	TestErrorEval<long double>(L"W(x)", -M_PI/2, ecComplexError);
-  TestEval<TComplex>(L"W(x)", -M_PI/2, TComplex(0, M_PI/2));
+	TestErrorEval<long double>(L"W(x)", -PI/2, ecComplexError);
+	TestEval<TComplex>(L"W(x)", -PI/2, TComplex(0, PI/2));
   Test("W(-1/e)", 0, -1);
 	Test("W(x)", 0, 0);
   Test("W(x)", -M_LN2/2, -M_LN2);
@@ -917,6 +920,10 @@ void Test()
 	TestDif("sum(sum(k*l*x,k,1,10),l,1,2)", "sum(sum(k*l,k,1,10),l,1,2)");
 	TestDif("product(k*x, k, 1, 10)", ecNotDifAble);
 	TestDif("integrate(k*x, k, 1, 10)", "integrate(k,k,1,10)");
+	TestDif("integrate(x, x, 1, 10)", "0");
+	TestDif("integrate(x, 1, 10)", "0");
+	TestDif("integrate(sin(x), x, 0, x)", "sin(x)");
+	TestDif("integrate(sin(x), 0, x)", "sin(x)");
 	TestDif("fact(x)", ecNotDifAble);
 	TestDif("fact(5)", "0");
 
