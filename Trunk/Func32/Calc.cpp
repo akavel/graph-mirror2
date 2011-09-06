@@ -14,6 +14,7 @@
 #include <limits>
 #include <boost\math\special_functions\fpclassify.hpp>
 #include <gsl/gsl_integration.h>
+#include <gsl/gsl_errno.h>
 #include <boost/tr1/complex.hpp>
 
 //Disable Warnings: "Condition is always true/false", "Unreachable code"
@@ -1039,7 +1040,9 @@ double TFuncData::CalcGSLFunc(double x, void *Params)
 	else
 		ErrorResult = gsl_integration_qagiu(&F, Min, 0, RelError, MaxSubIntervals, w, &Result, &Error);
 	gsl_integration_workspace_free(w);
-	if(ErrorResult != 0)
+	if(ErrorResult == GSL_EROUND)    //Should we give a warning?
+		DynData.ErrorCode = ecNoError; //ecNoAccurateResult;
+	else if(ErrorResult != 0)
 		DynData.ErrorCode = ecNoResult;
 	else if(!boost::math::isfinite(Result))
 		DynData.ErrorCode = ecNoResult;
@@ -1073,6 +1076,17 @@ double TFuncData::Integrate(double Min, double Max, double RelError, TTrigonomet
   return Result;
 }
 //---------------------------------------------------------------------------
+void GSL_ErrorHandler(const char * reason, const char * file, int line, int gsl_errno)
+{
+	DEBUG_LOG(std::wclog << reason << std::endl);
+}
+//---------------------------------------------------------------------------
+class TInitGSL
+{
+public:
+	TInitGSL(){gsl_set_error_handler(GSL_ErrorHandler);}
+} InitGSL;
+//---------------------------------------------------------------------------
 } //namespace Func32
 
 //Math error handler
@@ -1080,13 +1094,29 @@ double TFuncData::Integrate(double Min, double Max, double RelError, TTrigonomet
 #ifdef __BORLANDC__
 int _RTLENTRY _matherrl(_exceptionl *a)
 {
-  using namespace std;
+	using namespace std;
 //  DEBUG_LOG(std::wclog << "Math error: " << a->name << "(" << a->arg1 << ", " << a->arg2 << ")" << std::endl);
-  a->retval = 0;//NAN gives problems with log(-0)
+	a->retval = 0;//NAN gives problems with log(-0)
 //  a->retval = std::numeric_limits<long double>::quiet_NaN();
-  if(a->type != UNDERFLOW) //Convert underflow errors to 0
-    errno = a->type;
-  return 1;
+	if(a->type != UNDERFLOW) //Convert underflow errors to 0
+		errno = a->type;
+	return 1;
+}
+//---------------------------------------------------------------------------
+//Math error handler
+//Called on any math errors;
+int _matherr(_exception *a)
+{
+	//Bug in RTL (cosl.asm) cosl() will call _matherr() instead of _matherrl() on error
+	//Because of this a->arg1 is also wrong
+	if(strcmp(a->name, "cosl") == 0)
+	{
+		a->retval = 0;//NAN gives problems with log(-0)
+		errno = a->type;
+	}
+	else
+		a->retval = std::numeric_limits<double>::quiet_NaN();
+	return 1;
 }
 #endif
 //---------------------------------------------------------------------------
