@@ -16,7 +16,8 @@
 #include <gsl/gsl_integration.h>
 #include <gsl/gsl_errno.h>
 #include <boost/tr1/complex.hpp>
-
+#define BOOST_THREAD_USE_LIB //Needed by thread.hpp
+#include <boost/thread.hpp>
 //Disable Warnings: "Condition is always true/false", "Unreachable code"
 #pragma warn -8008
 #pragma warn -8066
@@ -1003,11 +1004,12 @@ double TFuncData::CalcGSLFunc(double x, void *Params)
   Function->DynData.ErrorCode = ecNoError;
   T Result = CalcFunc(Function->Func, Function->DynData);
   Function->DynData.Args = OldArgs;
-  if(Function->DynData.ErrorCode != ecNoError || imag(Result) != 0)
-    return std::numeric_limits<double>::quiet_NaN();
-  return real(Result);
+	if(Function->DynData.ErrorCode != ecNoError || imag(Result) != 0)
+		return std::numeric_limits<double>::quiet_NaN();
+	return real(Result);
 }
 //---------------------------------------------------------------------------
+boost::recursive_mutex Mutex;
 /** Returns the numeric integrale of the functions pointed to by Func from Min to Max.
  *  The integral is calculated by the GNU Scientific Library (GSL)
  *  It applies the Gauss-Kronrod 21-point integration rule adaptively until the estimated
@@ -1028,6 +1030,9 @@ double TFuncData::CalcGSLFunc(double x, void *Params)
 	TGSLFunction<T> Function(Func, DynData, Value);
 	gsl_integration_workspace *w = gsl_integration_workspace_alloc(MaxSubIntervals);
 	gsl_function F = {CalcGSLFunc<T>, &Function};
+
+	//! \todo Find a metter way to do this without locking
+	boost::lock_guard<boost::recursive_mutex> Guard(Mutex);
 
 	double Result, Error;
 	unsigned ErrorResult;
@@ -1071,7 +1076,7 @@ double TFuncData::Integrate(double Min, double Max, double RelError, TTrigonomet
   long double Value;
   TDynData<long double> DynData(&Value, Trigonometry);
   double Result = Integrate(Data.begin(), Min, Max, RelError, DynData, &Value);
-  if(DynData.ErrorCode != ecNoError)
+	if(DynData.ErrorCode != ecNoError)
     throw ECalcError(DynData.ErrorCode);
   return Result;
 }
