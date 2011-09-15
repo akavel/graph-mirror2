@@ -188,6 +188,12 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
 				break;
 			}
 
+			case CodeMod:
+				if(ContainsElem(FindEnd(Iter+1), Var))
+					throw EFuncError(ecNotDifAble, FunctionName(CodeMod));
+        AddDif(Iter+1, Var, Trigonometry, Level + 1);
+				break;
+
 			default:
 			{
 				if(Trigonometry == Degree)
