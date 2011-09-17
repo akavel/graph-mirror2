@@ -33,18 +33,15 @@ void DrawComboBoxEndPoint(TCanvas *Canvas, int Index, const TRect &Rect)
       TPointSelect::DrawPoint(Canvas, Pos, 0, clRed, clWhite, 5);
       break;
 
-    case 2:
-      TPointSelect::DrawPoint(Canvas, Pos, 0, clRed, clRed, 5);
-      break;
+		case 2:
+			TPointSelect::DrawPoint(Canvas, Pos, 0, clRed, clRed, 5);
+			break;
 
-    case 3:
-      Canvas->MoveTo(Pos.x + 6, Pos.y);
-      Canvas->LineTo(Pos.x - 5, Pos.y - 6);
-      Canvas->MoveTo(Pos.x + 6, Pos.y);
-      Canvas->LineTo(Pos.x - 5, Pos.y + 6);
-      break;
+		case 3:
+			TPointSelect::DrawPoint(Canvas, Pos, 7, clRed, clRed, 5);
+			break;
 
-    case 4:
+		case 4:
       Canvas->Arc(Pos.x - 11, Pos.y - 6, Pos.x + 5, Pos.y + 7, Pos.x - 3, Pos.y + 7, Pos.x - 3, Pos.y - 7);
       break;
 

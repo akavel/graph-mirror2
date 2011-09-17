@@ -895,9 +895,9 @@ void TDrawThread::DrawEndPoint(const TBaseFuncType &Func, long double t, const T
 
         case 3:
           if(InvertArrow)
-            DrawArrow(Pos, Func.GetFunc().CalcAngleSlope(t) + M_PI, Func.Color, Func.Size);
-          else
-            DrawArrow(Pos, Func.GetFunc().CalcAngleSlope(t), Func.Color, Func.Size);
+						DrawArrow(Pos, Func.GetFunc().CalcAngleSlope(t) + M_PI, Func.Color, Func.Size + 4);
+					else
+            DrawArrow(Pos, Func.GetFunc().CalcAngleSlope(t), Func.Color, Func.Size + 4);
           break;
 
         case 4:
@@ -1132,7 +1132,7 @@ void TDrawThread::DrawArrow(const TPoint &Point, long double Angle, TColor Color
   if(std::abs(std::fmod(Angle, 2.0L*M_PI)) > M_PI_2)
     Angle2 -= M_PI;
 
-  int Length = 13 + 2*Size;
+  int Length = 5 + 2*Size;
   int dX1 = Length * std::cos(Angle2 + 2.8);
   int dY1 = Length * std::sin(Angle2 + 2.8);
   int dX2 = Length * std::cos(Angle2 - 2.8);

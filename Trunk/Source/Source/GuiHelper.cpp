@@ -76,7 +76,7 @@ void TAddView::Visit(TPointSeries &Series)
     Series.GetStyle(),
     Series.GetFrameColor(),
     Series.GetFillColor(),
-    Series.GetStyle() == 7 ? 3 : 5);
+    5);
   AddNode(Series, Form1->ImageList1->AddMasked(Bitmap.get(), clWhite));
 }
 //---------------------------------------------------------------------------

@@ -879,7 +879,7 @@ void TDrawLegend::Visit(TPointSeries &Series)
   }
 
   //Adjust point size in legend to max 6 (4 for arrow)
-  unsigned PointSize = std::min(Series.GetSize(), Series.GetStyle() == 7 ? 4U : 6U);
+  unsigned PointSize = std::min(Series.GetSize(), 6U);
   TColor FrameColor = Draw->ForceBlack ? clBlack : Series.GetFrameColor();
   TColor FillColor = Draw->ForceBlack ? clWhite : Series.GetFillColor();
   if(PointSize > 0)
