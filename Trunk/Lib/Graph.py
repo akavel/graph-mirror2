@@ -10,6 +10,7 @@ import Utility
 import vcl
 import xmlrpc.client
 import getopt
+import collections
 
 # enum values
 Radian = Settings.Radian
@@ -84,6 +85,8 @@ Form1 = GraphImpl.Form1
 Form22 = GraphImpl.Form22
 EFuncError = GraphImpl.EFuncError
 EGraphError = GraphImpl.EGraphError
+
+VersionInfo = collections.namedtuple("VersionInfo", ["Major","Minor","Release","ReleaseLevel","Build"])._make(GraphImpl.version_info)
 
 def InitPlugins(BaseDir):
     global PluginsDir
