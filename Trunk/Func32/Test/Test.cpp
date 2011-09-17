@@ -344,11 +344,12 @@ void TestSimplify(const std::wstring &Str, const std::wstring &Str2)
 {
 	TFunc Func(Str);
 	Func.Simplify();
-	if(Func != TFunc(Str2))
+//	if(Func != TFunc(Str2))
+  if(Func.MakeText() != Str2)
 	{
 		wcerr << "f(x)=" << Str << std::endl;
-		wcerr << "Simplified to: f(x)=" << Func.MakeText() << std::endl;;
-		wcerr << "Expected: f(x)=" << Str2 << std::endl << std::endl;
+		wcerr << "Simplified: f(x)=" << Func.MakeText() << std::endl;;
+		wcerr << "Expected:   f(x)=" << Str2 << std::endl << std::endl;
 	}
 }
 //---------------------------------------------------------------------------
@@ -843,6 +844,9 @@ void Test()
 	TestError("2+(x*[5+x*{2-x})]", 10, ecNoEndPar);
 	TestError("log[log(log{x}10]10)", 10, ecNoEndPar);
 
+	//Test difficult function
+	Test("-sin(x)+(-sin(x)*sqrt((-sin(x))^2+cos(x)^2)-cos(x)*0.5/sqrt((-sin(x))^2+cos(x)^2)*(--2*sin(x)*cos(x)-2*cos(x)*sin(x)))/sqrt((-sin(x))^2+cos(x)^2)^2", 0, 0);
+
 	//Test vertical trend lines
 	TDblPoint Vertical[] = {TDblPoint(5,1), TDblPoint(5,7)};
 	TestTrendLineError(ttPower, Vertical, 2, 0, ecNoResult);
@@ -868,7 +872,7 @@ void Test()
 	TestTrendLine(ttPolynomial, P, Empty, 2, NaN, L"0.157142857142857*x^2+0.471428571428571*x+0.174285714285714");
   TestTrendLine(ttPolynomial, P, Empty, 2, 1, L"0.290322580645161*x^2-0.247741935483871*x+1"); //Force crossing
   TestTrendLine(ttPolynomial, P, W, 2, NaN, L"0.123428984493036*x^2+0.596597125830378*x+0.12279529365147");
-  TestTrendLine(ttPolynomial, P, W, 2, 1, L"0.292651922716118*x^2-0.254573787956674*x+1");
+	TestTrendLine(ttPolynomial, P, W, 2, 1, L"0.292651922716118*x^2-0.254573787956674*x+1");
 
   TestTrendLine(ttPower, P, Empty, 0, NaN, L"0.872147571158689*x^1.14047602443827");
   TestTrendLine(ttPower, P, W, 0, NaN, L"0.890072586434138*x^1.10326113209501");
@@ -931,11 +935,19 @@ void Test()
 	//Differentiation of piecewise functions
 	TestDif("min(x,2)", "if(x<2,1,0)");
 
+	//Test difficult function
+	TestDif("(cos x)+(cos(x))/sqrt((-sin(x))^2+(cos(x))^2)", "-sin(x)+(-sin(x)*sqrt((-sin(x))^2+cos(x)^2)-cos(x)*0.5/sqrt((-sin(x))^2+cos(x)^2)*(-(-2*sin(x)*cos(x))-2*cos(x)*sin(x)))/sqrt((-sin(x))^2+cos(x)^2)^2");
+
   //Test the simplify code
 	TestSimplify("ln(e)", "1");
-  TestSimplify("log(10)", "1");
-  TestSimplify("1--sin x", "1+sin x");
-  TestSimplify("--sin x", "sin x");
+	TestSimplify("log(10)", "1");
+	TestSimplify("1--sin x", "1+sin(x)");
+	TestSimplify("--sin x", "sin(x)");
+	TestSimplify("sqrt(x^2)", "x");
+	TestSimplify("sqrt(x)^2", "x");
+	TestSimplify("(-x)^2", "x^2");
+	TestSimplify("-sin(x)+(-sin(x)*sqrt((-sin(x))^2+cos(x)^2)-cos(x)*0.5/sqrt((-sin(x))^2+cos(x)^2)*(--2*sin(x)*cos(x)-2*cos(x)*sin(x)))/sqrt((-sin(x))^2+cos(x)^2)^2",
+							 "-sin(x)+(-sin(x)*sqrt(sin(x)^2+cos(x)^2)-0.5*cos(x)/sqrt(sin(x)^2+cos(x)^2)*(2*sin(x)*cos(x)-2*cos(x)*sin(x)))/(sin(x)^2+cos(x)^2)");
 
   //Test custom functions
   TArgType Args;
