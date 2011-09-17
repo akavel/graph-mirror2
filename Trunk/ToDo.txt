@@ -179,6 +179,7 @@ Plugins:
 - Insert Taylor series by selecting function, order and center. (See http://padowan.dk/forum/viewtopic.php?id=541)
 - Create new function from exisitng, e.g. k(x)=y''/(1+(y')^2)^(3/2) (See http://padowan.dk/forum/viewtopic.php?id=541)
 - Show additional axes (See http://padowan.dk/forum/viewtopic.php?id=542)
+- Easy way to show one dimentional inequalities on a number line.
 
 Bugs:
 The relation (x+y)^2<=x^2+2*x*y+y^2 cannot be plotted with a border. Windows Bug in FrameRgn().
