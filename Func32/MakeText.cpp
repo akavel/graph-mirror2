@@ -21,13 +21,28 @@ namespace Func32
  */
 bool IsNextNeg(TConstIterator Iter)
 {
-  if(IsOperator(*Iter))
-    return IsNextNeg(++Iter);
-  if(Iter->Ident == CodeNeg)
-    return true;
-  if(Iter->Ident == CodeNumber && boost::any_cast<long double>(Iter->Value) < 0)
-    return true;
-  return false;
+	switch(Iter->Ident)
+	{
+		case CodeAdd:
+		case CodeSub:
+			return IsNextNeg(++Iter);
+
+		case CodeMul:
+		case CodeDiv:
+			++Iter;
+			return Iter->Ident != CodeAdd && Iter->Ident != CodeSub && IsNextNeg(Iter);
+
+		case CodeNeg:
+			return true;
+
+		case CodeNumber:
+			if(boost::any_cast<long double>(Iter->Value) < 0)
+				return true;
+			return false;
+
+		default:
+			return false;
+	}
 }
 //---------------------------------------------------------------------------
 /** Create text defining function pointed to by the iterator. For debug use only.
@@ -46,9 +61,9 @@ std::wstring TFuncData::MakeText(TConstIterator Iter)
   Args.push_back(L"Arg6");
   Args.push_back(L"Arg7");
   Args.push_back(L"Arg8");
-  std::wstringstream Stream;
+	std::wstringstream Stream;
   TMakeTextData TextData = {Iter, Args, Stream, 4};
-  CreateText(TextData);
+	CreateText(TextData);
   return Stream.str();
 }
 //---------------------------------------------------------------------------
@@ -87,14 +102,14 @@ std::wstring GetCompareString(TCompareMethod CompareMethod)
 //---------------------------------------------------------------------------
 std::wstring ConvertToStr(long double Number, unsigned Decimals)
 {
-  std::wstringstream Stream;
+	std::wstringstream Stream;
   if(std::abs(Number) >= 10000 || (std::abs(Number) <= 1E-4 && Number != 0))
-  {
+	{
     Stream << std::uppercase << std::scientific << std::setprecision(Decimals) << Number;
     std::wstring Str = Stream.str();
     unsigned N = Str.find(L'E');
     while(Str[N-1] == L'0' && Str[N-2] != L'.')
-      Str.erase(--N, 1);
+			Str.erase(--N, 1);
     return Str;
   }
 
@@ -120,18 +135,18 @@ std::wstring ConvertToStr(long double Number, unsigned Decimals)
 void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
 {
   std::wostream &Stream = TextData.Stream;
-  const TElem &Elem = *TextData.Iter++;
+	const TElem &Elem = *TextData.Iter++;
   const TConstIterator &Iter = TextData.Iter;
-  if(AddPar)
+	if(AddPar)
     Stream << L'(';
-  switch(Elem.Ident)
+	switch(Elem.Ident)
   {
-    case CodeNumber:
+		case CodeNumber:
     {
       long double Number = boost::any_cast<long double>(Elem.Value);
       Stream << ConvertToStr(Number, TextData.Decimals);
       break;
-    }
+		}
     case CodeArgument:
       BOOST_ASSERT(Elem.Arguments < TextData.Args.size());
       Stream << TextData.Args[Elem.Arguments];
@@ -157,64 +172,64 @@ void TFuncData::CreateText(TMakeTextData &TextData, bool AddPar)
       Stream << L"rand";
       break;
 
-    case CodeInf:
-      Stream << "INF";
-      break;
+		case CodeInf:
+			Stream << "INF";
+			break;
 
-    case CodeConst:
-      Stream << Elem.Text;
-      break;
+		case CodeConst:
+			Stream << Elem.Text;
+			break;
 
-    case CodeAdd:
-      CreateText(TextData);
-      if(!IsNextNeg(Iter))
-        Stream << L'+';
-      CreateText(TextData);
-      break;
+		case CodeAdd:
+			CreateText(TextData);
+			if(!IsNextNeg(Iter))
+				Stream << L'+';
+			CreateText(TextData);
+			break;
 
-    case CodeSub:
-      CreateText(TextData);
-      Stream << L'-';
-      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub || IsNextNeg(Iter));
-      break;
+		case CodeSub:
+			CreateText(TextData);
+			Stream << L'-';
+			CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub || IsNextNeg(Iter));
+			break;
 
-    case CodeMul:
-      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
-      Stream << L'*';
-      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
-      break;
+		case CodeMul:
+			CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
+			Stream << L'*';
+			CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
+			break;
 
-    case CodeDiv:
-      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
-      Stream << L'/';
-      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub || *Iter == CodeMul || *Iter == CodeDiv);
-      break;
+		case CodeDiv:
+			CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
+			Stream << L'/';
+			CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub || *Iter == CodeMul || *Iter == CodeDiv);
+			break;
 
-    case CodePow:
-      CreateText(TextData, IsOperator(*Iter) || *Iter == CodeSqr || IsNextNeg(Iter));
-      Stream << L'^';
-      CreateText(TextData, IsOperator(*Iter));
-      break;
+		case CodePow:
+			CreateText(TextData, IsOperator(*Iter) || *Iter == CodeSqr || IsNextNeg(Iter));
+			Stream << L'^';
+			CreateText(TextData, IsOperator(*Iter));
+			break;
 
-    case CodePowDiv:
-      CreateText(TextData, IsOperator(*Iter) || *Iter == CodeSqr || IsNextNeg(Iter));
-      Stream << L"^(";
-      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
-      Stream << L'/';
-      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub || *Iter == CodeMul || *Iter == CodeDiv);
-      Stream << L')';
-      break;
+		case CodePowDiv:
+			CreateText(TextData, IsOperator(*Iter) || *Iter == CodeSqr || IsNextNeg(Iter));
+			Stream << L"^(";
+			CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
+			Stream << L'/';
+			CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub || *Iter == CodeMul || *Iter == CodeDiv);
+			Stream << L')';
+			break;
 
-    case CodeNeg:
-    {
-      Stream << L'-';
-      CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
-      break;
-    }
-    case CodeSqr:
-      CreateText(TextData, IsOperator(*Iter) || IsNextNeg(Iter));
-      Stream << L"^2";
-      break;
+		case CodeNeg:
+		{
+			Stream << L'-';
+			CreateText(TextData, *Iter == CodeAdd || *Iter == CodeSub);
+			break;
+		}
+		case CodeSqr:
+			CreateText(TextData, IsOperator(*Iter) || IsNextNeg(Iter));
+			Stream << L"^2";
+			break;
 
     case CodeCompare1:
       CreateText(TextData);

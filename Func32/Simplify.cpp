@@ -20,7 +20,7 @@ struct TSimplify
   TElem Result[4];
 };
 
-const unsigned TableSize = 30;
+const unsigned TableSize = 33;
 const TSimplify& SimplifyTable(unsigned Index)
 {
 
@@ -55,11 +55,14 @@ static const TSimplify Table[TableSize] =
 
   {CodePow, 1, CodeIgnore, 1},
   {CodePow, CodeIgnore, 0, 1},
-  {CodePow, CodeIgnore, 1, CodePar1},
+	{CodePow, CodeIgnore, 1, CodePar1},
+	{CodePow, CodeIgnore, 2, CodeSqr, CodePar1},
 
   {CodeLn, Codee, CodeIgnore, 1},
-  {CodeLog, 10, CodeIgnore, 1},
+	{CodeLog, 10, CodeIgnore, 1},
+	{CodeSqrt, CodeSqr, CodeIgnore, CodePar1Par},
 	{CodeSqr, CodeSqrt, CodeIgnore, CodePar1Par},
+	{CodeSqr, CodeNeg, CodeIgnore, CodeSqr, CodePar1Par},
 	{CodeIntegrate, 0, CodeIgnore, 0},
 };
 
