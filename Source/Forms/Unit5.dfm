@@ -297,7 +297,6 @@ object Form5: TForm5
         Align = alLeft
         Caption = 'Draw type:'
         Layout = tlCenter
-        ExplicitLeft = 161
         ExplicitHeight = 13
       end
       object ComboBox4: TComboBox
@@ -351,7 +350,6 @@ object Form5: TForm5
         Align = alLeft
         Caption = 'Width:'
         Layout = tlCenter
-        ExplicitLeft = 161
         ExplicitHeight = 13
       end
       object Panel1: TPanel
@@ -362,8 +360,6 @@ object Form5: TForm5
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 3
-        ExplicitLeft = 215
-        ExplicitWidth = 58
         DesignSize = (
           88
           34)
