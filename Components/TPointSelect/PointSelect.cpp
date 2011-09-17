@@ -64,7 +64,7 @@ void __fastcall TPointSelect::DrawItem(int Index, const TRect &Rect, TOwnerDrawS
   Canvas->FillRect(Rect);
 
   TPoint Pos((Rect.Left+Rect.Right)/2, (Rect.Top+Rect.Bottom)/2);
-  DrawPoint(Canvas, Pos, Index, FrameColor, FillColor, Index == 7 ? 3 : 5);
+  DrawPoint(Canvas, Pos, Index, FrameColor, FillColor, 5);
 
   //This is necesarry to use white as brush before the VCL can draw the focus
   //rectangle correct; I don't know why.
@@ -75,6 +75,8 @@ void __fastcall TPointSelect::DrawItem(int Index, const TRect &Rect, TOwnerDrawS
 //---------------------------------------------------------------------------
 void TPointSelect::DrawPoint(TCanvas *Canvas, TPoint Pos, int Style, TColor FrameColor, TColor FillColor, unsigned Size)
 {
+	if(Size == 0)
+	  return;
   Canvas->Pen->Color = Size > 2 ? FrameColor : FillColor;
   Canvas->Pen->Width = Size/10 + 1;
   Canvas->Pen->Style = psSolid;
@@ -136,13 +138,16 @@ void TPointSelect::DrawPoint(TCanvas *Canvas, TPoint Pos, int Style, TColor Fram
       break;
 
     case 7: //Draw arrow
-      Canvas->Pen->Width = Size;
-      Canvas->Pen->Color = FillColor;
-      Canvas->MoveTo(Pos.x + 6, Pos.y);
-      Canvas->LineTo(Pos.x - 6, Pos.y - 5);
-      Canvas->MoveTo(Pos.x + 6, Pos.y);
-      Canvas->LineTo(Pos.x - 6, Pos.y + 5);
-      break;
+			Canvas->Pen->Width = 1;
+			Canvas->Pen->Color = FillColor;
+			Canvas->Brush->Color = FillColor;
+			int Length = 5 + 2*Size;
+			int dX = Length * 0.9422;
+			int dY = Length * 0.3350;
+			Pos.x += dX / 2;
+			TPoint Arrow[] = {TPoint(Pos.x - dX, Pos.y - dY), Pos, TPoint(Pos.x - dX, Pos.y + dY)};
+			Canvas->Polygon(Arrow, 2);
+			break;
   }
 }
 //---------------------------------------------------------------------------
