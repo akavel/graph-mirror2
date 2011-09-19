@@ -572,7 +572,7 @@
 					</term>
 					<listitem>
 						<para>
-							This is a tuple with the (x,y) coordinates of the top left coorner of the legend.
+							This is a tuple with the (x,y) coordinates of the top left corner of the legend.
 							It is only used when <property>LegendPlacement</property> is <classname>Graph.lpCustom</classname>.
 						</para>
 					</listitem>

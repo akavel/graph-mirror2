@@ -72,6 +72,22 @@
 
 			<varlistentry>
 				<term>
+					<indexterm><primary>VersionInfo (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>VersionInfo</property>
+				</term>
+				<listitem>
+					<para>
+						A tuple containing the five components of the version number of Graph: <classname>Major</classname>, <classname>Minor</classname>, <classname>Release</classname>,
+						<classname>ReleaseLevel</classname>, and <classname>Build</classname>.
+						All values except <classname>ReleaseLevel</classname> are integers; the release level is <code>'beta'</code> or <code>'final'</code>.
+						The <classname>VersionInfo</classname> value corresponding to the Graph version 4.3 is <code>(4, 3, 0, 'final', 384)</code>.
+						The components can also be accessed by name, so <code>Graph.VersionInfo[0]</code> is equivalent to <code>Graph.VersionInfo.Major</code> and so on.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
 					<indexterm><primary>Redraw (in module Graph)</primary></indexterm>
 					<classname>Graph</classname>.<property>Redraw</property>()
 				</term>
@@ -102,7 +118,7 @@
 				<listitem>
 					<para>
 						Creates a new action with <parameter>Caption</parameter> as the shown text.
-						Actions are used in the user interface, for example in toolbars and menus.
+						Actions are used in the user interface, for example in the toolbar and menus.
 						<parameter>OnExecute</parameter> is a function with the action as argument that is called when the action is triggered.
 						<parameter>Hint</parameter> is an optional tooltip for the action.
 						<parameter>ShortCut</parameter> is an optional shortcut as a text string, e.g. "Ctrl+Shift+C".
@@ -110,7 +126,7 @@
 						The file name can be a fully qualified path or a path relative to the Plugin directory.
 						<parameter>OnUpdate</parameter> is an optional function with the action as argument that will be called when Graph is idle.
 						This can be used to update the action, for example change its visibility state or enable/disable the action.
-						<parameter>AddToToolBar</parameter> indciates if the action will be available to add to the toolbar by the user.
+						<parameter>AddToToolBar</parameter> indicates if the action will be available to add to the toolbar by the user.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -269,7 +285,7 @@
     				    		<entry>OnAnimate</entry>
     				    		<entry>Function(<parameter>Data, Var, Value</parameter>)</entry>
     				    		<entry>
-											When an animation is created this is called everytime a frame is created.
+											When an animation is created this is called every time a frame is created.
 											<parameter>Data</parameter> is the temporary data used for creating the animation.
 											<parameter>Var</parameter> is the constant changed in every frame and <parameter>Value</parameter> is the new value of the constant.
 										</entry>
@@ -357,7 +373,7 @@
 				<listitem>
 					<para>
 						Saves the current coordinate system as an image file, where <parameter>FileName</parameter> specifies the file name.
-						If given <parameter>FileType</parameter> specifies the file type, which can be Enhanced Metafile (1), Scaleable Vector Graphics (2),
+						If given <parameter>FileType</parameter> specifies the file type, which can be Enhanced Metafile (1), Scalable Vector Graphics (2),
 						Bitmap (3), PNG (4), JPEG (5) or PDF (6).
 						If <parameter>FileType</parameter> is not specified, the format will be guessed from the extension in the file name.
 						<parameter>Width</parameter> and <parameter>Height</parameter> specifies the resolution of the image file.

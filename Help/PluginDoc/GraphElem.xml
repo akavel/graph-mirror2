@@ -120,7 +120,7 @@
 				<varlistentry>
 					<term>
 						<indexterm><primary>PointNum (Graph.TBaseFuncType attribute)</primary></indexterm>
-						<classname>TBaseFuncType</classname>.<property>PointNumsList</property>
+						<classname>TBaseFuncType</classname>.<property>PointNum</property>
 					</term>
 					<listitem>
 						<para>
@@ -166,13 +166,11 @@
 				</varlistentry>
 
 				<varlistentry>
-					<term>
+					<term><classname>TBaseFuncType</classname>.<property>From</property></term>
+					<term><classname>TBaseFuncType</classname>.<property>To</property></term>
+					<listitem>
 						<indexterm><primary>From (Graph.TBaseFuncType attribute)</primary></indexterm>
 						<indexterm><primary>To (Graph.TBaseFuncType attribute)</primary></indexterm>
-						<classname>TBaseFuncType</classname>.<property>From</property>
-						<classname>TBaseFuncType</classname>.<property>To</property>
-					</term>
-					<listitem>
 						<para>
 							<property>From</property> and <property>To</property> specifies the the range of the function.
 							Standard functions may use <code>float("-inf")</code> and <code>float("inf")</code> for an infinite range.
@@ -181,13 +179,11 @@
 				</varlistentry>
 
 				<varlistentry>
-					<term>
+					<term><classname>TBaseFuncType</classname>.<property>StartPointStyle</property></term>
+					<term><classname>TBaseFuncType</classname>.<property>EndPointStyle</property></term>
+					<listitem>
 						<indexterm><primary>StartPointStyle (Graph.TBaseFuncType attribute)</primary></indexterm>
 						<indexterm><primary>EndPointStyle (Graph.TBaseFuncType attribute)</primary></indexterm>
-						<classname>TBaseFuncType</classname>.<property>StartPointStyle</property>
-						<classname>TBaseFuncType</classname>.<property>EndPointStyle</property>
-					</term>
-					<listitem>
 						<para>
 							These indicates the style of the end points. Use 0 if you don't want an endpoint.
 						</para>
@@ -201,7 +197,7 @@
 					</term>
 					<listitem>
 						<para>
-							This inidcates how the functions is plotted.
+							This indicates how the functions is plotted.
 							Valid values are <classname>Graph.dtAuto</classname>, <classname>Graph.dtDots</classname> and <classname>Graph.dtLines</classname>.
 						</para>
 					</listitem>
@@ -418,17 +414,15 @@
 				</varlistentry>
 
 				<varlistentry>
-					<term>
+					<term><classname>TPointSeries</classname>.<property>FillColor</property></term>
+					<term><classname>TPointSeries</classname>.<property>FrameColor</property></term>
+					<term><classname>TPointSeries</classname>.<property>Size</property></term>
+					<term><classname>TPointSeries</classname>.<property>Style</property></term>
+					<listitem>
 						<indexterm><primary>FillColor (Graph.TPointSeries attribute)</primary></indexterm>
 						<indexterm><primary>FrameColor (Graph.TPointSeries attribute)</primary></indexterm>
 						<indexterm><primary>Size (Graph.TPointSeries attribute)</primary></indexterm>
 						<indexterm><primary>Style (Graph.TPointSeries attribute)</primary></indexterm>
-						<classname>TPointSeries</classname>.<property>FillColor</property>
-						<classname>TPointSeries</classname>.<property>FrameColor</property>
-						<classname>TPointSeries</classname>.<property>Size</property>
-						<classname>TPointSeries</classname>.<property>Style</property>
-					</term>
-					<listitem>
 						<para>
 							These properties sets the color filling the markers, the border color of the markers and the style of the markers.
 						</para>
@@ -436,15 +430,13 @@
 				</varlistentry>
 
 				<varlistentry>
-					<term>
+					<term><classname>TPointSeries</classname>.<property>LineColor</property></term>
+					<term><classname>TPointSeries</classname>.<property>LineSize</property></term>
+					<term><classname>TPointSeries</classname>.<property>LineStyle</property></term>
+					<listitem>
 						<indexterm><primary>LineColor (Graph.TPointSeries attribute)</primary></indexterm>
 						<indexterm><primary>LineSize (Graph.TPointSeries attribute)</primary></indexterm>
 						<indexterm><primary>LineStyle (Graph.TPointSeries attribute)</primary></indexterm>
-						<classname>TPointSeries</classname>.<property>LineColor</property>
-						<classname>TPointSeries</classname>.<property>LineSize</property>
-						<classname>TPointSeries</classname>.<property>LineStyle</property>
-					</term>
-					<listitem>
 						<para>
 							These properties sets the color, size and style of the line between the markers.
 						</para>
@@ -452,13 +444,11 @@
 				</varlistentry>
 
 				<varlistentry>
-					<term>
+					<term><classname>TPointSeries</classname>.<property>xErrorBarType</property></term>
+					<term><classname>TPointSeries</classname>.<property>yErrorBarType</property></term>
+					<listitem>
 						<indexterm><primary>xErrorBarType (Graph.TPointSeries attribute)</primary></indexterm>
 						<indexterm><primary>yErrorBarType (Graph.TPointSeries attribute)</primary></indexterm>
-						<classname>TPointSeries</classname>.<property>xErrorBarType</property>
-						<classname>TPointSeries</classname>.<property>yErrorBarType</property>
-					</term>
-					<listitem>
 						<para>
 							These specifies the type of vertical and horizontal error bars.
 							Valid values are <classname>Graph.ebtNone</classname> for no error bars, <classname>Graph.ebtFixed</classname> for fixed size error bars,
@@ -469,13 +459,11 @@
 				</varlistentry>
 
 				<varlistentry>
-					<term>
+					<term><classname>TPointSeries</classname>.<property>xErrorValues</property></term>
+					<term><classname>TPointSeries</classname>.<property>yErrorValues</property></term>
+					<listitem>
 						<indexterm><primary>xErrorValue (Graph.TPointSeries attribute)</primary></indexterm>
 						<indexterm><primary>yErrorValue (Graph.TPointSeries attribute)</primary></indexterm>
-						<classname>TPointSeries</classname>.<property>xErrorValues</property>
-						<classname>TPointSeries</classname>.<property>yErrorValues</property>
-					</term>
-					<listitem>
 						<para>
 							These contains the value used for the error bars when <property>xErrorBarType</property> or <property>yErrorBarType</property> is
 							<classname>Graph.ebtFixed</classname> or <classname>Graph.ebtRelative</classname>.
@@ -648,15 +636,13 @@
 				</varlistentry>
 
 				<varlistentry>
-					<term>
+					<term><classname>TTextLabel</classname>.<property>xPos</property></term>
+					<term><classname>TTextLabel</classname>.<property>yPos</property></term>
+					<listitem>
 						<indexterm><primary>xPos (Graph.TTextLabel attribute)</primary></indexterm>
 						<indexterm><primary>yPos (Graph.TTextLabel attribute)</primary></indexterm>
-						<classname>TTextLabel</classname>.<property>xPos</property>
-						<classname>TTextLabel</classname>.<property>yPos</property>
-					</term>
-					<listitem>
 						<para>
-							<classname>xPos</classname> and <classname>yPos</classname> indicates the (x,y) coordiante of the label when <property>Placement</property> is
+							<classname>xPos</classname> and <classname>yPos</classname> indicates the (x,y) coordinate of the label when <property>Placement</property> is
 							<classname>Graph.lpUserTopLeft</classname>, <classname>Graph.lpUserTopRight</classname>, <classname>Graph.lpUserBottomLeft</classname> or
 							<classname>Graph.lpUserBottomRight</classname>.
 						</para>
@@ -690,6 +676,9 @@
 					</term>
 					<listitem>
 						<para>
+							This specifies the type of shading.
+							Valid values are <classname>Graph.ssAbove</classname>, <classname>Graph.ssBelow</classname>, <classname>Graph.ssXAxis</classname>,
+							<classname>Graph.ssYAxis</classname>, <classname>Graph.ssBetween</classname> and <classname>Graph.ssInside</classname>.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -701,6 +690,7 @@
 					</term>
 					<listitem>
 						<para>
+							This is a <classname>vcl.TBrushStyle</classname> that specifies the brush style used to plot the shading.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -712,6 +702,7 @@
 					</term>
 					<listitem>
 						<para>
+							This specifies the color of the shading.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -723,62 +714,48 @@
 					</term>
 					<listitem>
 						<para>
+							This must specify the second function when <property>BrushStyle</property> is <classname>Graph.ssBetween</classname>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term>
+					<term><classname>TShading</classname>.<property>sMin</property></term>
+					<term><classname>TShading</classname>.<property>sMax</property></term>
+					<listitem>
 						<indexterm><primary>sMin (Graph.TShading attribute)</primary></indexterm>
 						<indexterm><primary>sMax (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>sMin</property>
-						<classname>TShading</classname>.<property>sMax</property>
-					</term>
-					<listitem>
 						<para>
+							This is the start and end values on the function for the shading.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term>
+					<term><classname>TShading</classname>.<property>sMin2</property></term>
+				  <term><classname>TShading</classname>.<property>sMax2</property></term>
+					<listitem>
 						<indexterm><primary>sMin2 (Graph.TShading attribute)</primary></indexterm>
 						<indexterm><primary>sMax2 (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>sMin2</property>
-						<classname>TShading</classname>.<property>sMax2</property>
-					</term>
-					<listitem>
 						<para>
+							When <property>ShadeStyle</property> is <classname>Graph.ssBetween</classname> this is the start and end value on <property>Func2</property> for the shading.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
-					<term>
+					<term><classname>TShading</classname>.<property>ExtendMinToIntercept</property></term>
+					<term><classname>TShading</classname>.<property>ExtendMaxToIntercept</property></term>
+					<term><classname>TShading</classname>.<property>ExtendMin2ToIntercept</property></term>
+					<term><classname>TShading</classname>.<property>ExtendMax2ToIntercept</property></term>
+					<listitem>
 						<indexterm><primary>ExtendMinToIntercept (Graph.TShading attribute)</primary></indexterm>
 						<indexterm><primary>ExtendMaxToIntercept (Graph.TShading attribute)</primary></indexterm>
 						<indexterm><primary>ExtendMin2ToIntercept (Graph.TShading attribute)</primary></indexterm>
 						<indexterm><primary>ExtendMax2ToIntercept (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>ExtendMinToIntercept</property>
-						<classname>TShading</classname>.<property>ExtendMaxToIntercept</property>
-						<classname>TShading</classname>.<property>ExtendMin2ToIntercept</property>
-						<classname>TShading</classname>.<property>ExtendMax2ToIntercept</property>
-					</term>
-					<listitem>
 						<para>
-						</para>
-					</listitem>
-				</varlistentry>
-
-				<varlistentry>
-					<term>
-						<indexterm><primary>sMin2 (Graph.TShading attribute)</primary></indexterm>
-						<indexterm><primary>sMax2 (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>sMin2</property>
-						<classname>TShading</classname>.<property>sMax2</property>
-					</term>
-					<listitem>
-						<para>
+							When True, <property>sMin</property> and <property>sMin2</property> are decreased and <property>sMax</property> and <property>sMax2</property> are
+							increased until the function is crossing the axis, the edge of the graphing area, itself or another graph depending of the value in <property>ShadeStyle</property>.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -790,6 +767,7 @@
 					</term>
 					<listitem>
 						<para>
+							When True a line will be drawn around the shading.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -804,122 +782,96 @@
 			<variablelist>
 				<varlistentry>
 					<term>
-						class <classname>Graph</classname>.<property>TRelation</property>()
+						class <classname>Graph</classname>.<property>TRelation</property>(<parameter>Str, [ConstraintStr]</parameter>)
 					</term>
 					<listitem>
 						<para>
-							Creates a new relation object.
+							Creates a new relation object with the relation specified in <parameter>Str</parameter> and an optional constraint specified in <parameter>ConstraintStr</parameter>.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
 					<term>
-						<indexterm><primary>ShadeStyle (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>ShadeStyle</property>
+						<indexterm><primary>BrushStyle (Graph.TRelation attribute)</primary></indexterm>
+						<classname>TRelation</classname>.<property>BrushStyle</property>
 					</term>
 					<listitem>
 						<para>
+							This is a <classname>vcl.TBrushStyle</classname> that specifies the brush style used to plot inequalities.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
 					<term>
-						<indexterm><primary>BrushStyle (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>BrushStyle</property>
+						<indexterm><primary>Color (Graph.TRelation attribute)</primary></indexterm>
+						<classname>TRelation</classname>.<property>Color</property>
 					</term>
 					<listitem>
 						<para>
+							This specifies the color of the relation.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
 					<term>
-						<indexterm><primary>Color (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>Color</property>
+						<indexterm><primary>RelationType (Graph.TRelation attribute)</primary></indexterm>
+						<classname>TRelation</classname>.<property>RelationType</property>
 					</term>
 					<listitem>
 						<para>
+							This read only attribute indicates if the relation is an equation (<classname>Graph.rtEquation</classname>) or inequation (<classname>Graph.rtInequality</classname>).
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
 					<term>
-						<indexterm><primary>Func2 (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>Func2</property>
+						<indexterm><primary>Size (Graph.TRelation attribute)</primary></indexterm>
+						<classname>TRelation</classname>.<property>Size</property>
 					</term>
 					<listitem>
 						<para>
+							This is the width of the plot of the inequation or the width of the borderline around the inequality.
+							<property>Size</property> may be 0 if no borderline is wanted.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
 					<term>
-						<indexterm><primary>sMin (Graph.TShading attribute)</primary></indexterm>
-						<indexterm><primary>sMax (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>sMin</property>
-						<classname>TShading</classname>.<property>sMax</property>
+						<indexterm><primary>Text (Graph.TRelation attribute)</primary></indexterm>
+						<classname>TRelation</classname>.<property>Text</property>
 					</term>
 					<listitem>
 						<para>
+							This is the text of the equation or inequality.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
 					<term>
-						<indexterm><primary>sMin2 (Graph.TShading attribute)</primary></indexterm>
-						<indexterm><primary>sMax2 (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>sMin2</property>
-						<classname>TShading</classname>.<property>sMax2</property>
+						<indexterm><primary>Constraints (Graph.TRelation attribute)</primary></indexterm>
+						<classname>TRelation</classname>.<property>Constraints</property>
 					</term>
 					<listitem>
 						<para>
+							This is the text of the constraints.
 						</para>
 					</listitem>
 				</varlistentry>
 
 				<varlistentry>
 					<term>
-						<indexterm><primary>ExtendMinToIntercept (Graph.TShading attribute)</primary></indexterm>
-						<indexterm><primary>ExtendMaxToIntercept (Graph.TShading attribute)</primary></indexterm>
-						<indexterm><primary>ExtendMin2ToIntercept (Graph.TShading attribute)</primary></indexterm>
-						<indexterm><primary>ExtendMax2ToIntercept (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>ExtendMinToIntercept</property>
-						<classname>TShading</classname>.<property>ExtendMaxToIntercept</property>
-						<classname>TShading</classname>.<property>ExtendMin2ToIntercept</property>
-						<classname>TShading</classname>.<property>ExtendMax2ToIntercept</property>
+						<indexterm><primary>Eval (Graph.TRelation attribute)</primary></indexterm>
+						<classname>TRelation</classname>.<property>Eval</property>(<parameter>x, y</parameter>)
 					</term>
 					<listitem>
 						<para>
-						</para>
-					</listitem>
-				</varlistentry>
-
-				<varlistentry>
-					<term>
-						<indexterm><primary>sMin2 (Graph.TShading attribute)</primary></indexterm>
-						<indexterm><primary>sMax2 (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>sMin2</property>
-						<classname>TShading</classname>.<property>sMax2</property>
-					</term>
-					<listitem>
-						<para>
-						</para>
-					</listitem>
-				</varlistentry>
-
-				<varlistentry>
-					<term>
-						<indexterm><primary>MarkBorder (Graph.TShading attribute)</primary></indexterm>
-						<classname>TShading</classname>.<property>MarkBorder</property>
-					</term>
-					<listitem>
-						<para>
+							Evaluate the relation at the given x- and y-coordinates and return the result.
 						</para>
 					</listitem>
 				</varlistentry>
