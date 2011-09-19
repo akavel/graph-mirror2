@@ -40,6 +40,7 @@ int VclType_Init(TVclObject *self, PyObject *args, PyObject *kwds)
 		  throw EPyVclError("No constructor found");
 		self->Instance = CallMethod(Type->RttiType, NULL, Methods, args).AsObject();
 		self->Owned = true;
+		CreateDeleteHandler(self);
 		if(kwds)
 		{
 			PyObject *Key, *Value;
