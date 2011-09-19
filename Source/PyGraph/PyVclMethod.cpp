@@ -28,13 +28,13 @@ struct TVclMethod
 static PyObject *VclMethod_Repr(TVclMethod* self)
 {
 	String Str = L'<';
-	String LastStr;
+	int VirtualIndex = MaxInt;
 	for(int I = 0; I < self->Methods.get_length(); I++)
 	{
-		String NewStr = self->Methods[I]->ToString();
-		if(NewStr != LastStr)
-			Str += NewStr + ", ";
-		LastStr = NewStr;
+		TRttiMethod *Method = self->Methods[I];
+		if(Method->VirtualIndex != VirtualIndex)
+			Str += Method->ToString() + ", ";
+		VirtualIndex = Method->VirtualIndex;
 	}
 	Str.Delete(Str.Length()-1, 2); //Remove last ", "
 	TComponent *Component = dynamic_cast<TComponent*>(self->Instance);

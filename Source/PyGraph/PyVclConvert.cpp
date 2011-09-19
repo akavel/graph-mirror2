@@ -75,6 +75,8 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 			TRttiType *Type = Context.GetType(TypeInfo);
 			std::vector<BYTE> Data(Type->TypeSize);
 			DynamicArray<TRttiField*> Fields = Type->GetFields();
+			if(PyTuple_Size(O) != Fields.Length)
+			  throw EPyVclError("Expected tuple with " + IntToStr(Fields.Length) + " elements");
 			for(int I = 0; I < Fields.Length; I++)
 				Fields[I]->SetValue(&Data[0], ToValue(PyTuple_GetItem(O, I), Fields[I]->FieldType->Handle));
 			TValue::Make(&Data[0], TypeInfo, Result);
@@ -185,7 +187,12 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 		{
 			if(AnsiString(Value.TypeInfo->Name) == "Boolean")
 				return ToPyObject(static_cast<bool>(Value.AsOrdinal()));
-			return ToPyObject(GetEnumName(Value.TypeInfo, Value.AsOrdinal()));
+			TRttiEnumerationType *Type = static_cast<TRttiEnumerationType*>(Context.GetType(Value.TypeInfo));
+			int Ordinal = Value.AsOrdinal();
+			if(Ordinal >= Type->MinValue && Ordinal <= Type->MaxValue)
+			  //GetEnumName() lacks range check
+				return ToPyObject(GetEnumName(Value.TypeInfo, Ordinal));
+			return ToPyObject("0x" + IntToHex(Ordinal, 2));
 		}
 
 		case tkClass:
@@ -250,7 +257,7 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 //---------------------------------------------------------------------------
 template<> double FromPyObject<double>(PyObject *O)
 {
-  if(PyComplex_Check(O))
+	if(PyComplex_Check(O))
     if(PyComplex_ImagAsDouble(O) != 0)
       PyErr_SetString(PyExc_TypeError, "complex number has an imaginary part");
 		else

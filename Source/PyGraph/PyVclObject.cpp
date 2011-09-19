@@ -25,6 +25,55 @@
 namespace Python
 {
 //---------------------------------------------------------------------------
+class TObjectDeleteHandler : public TComponent
+{
+	std::deque<TVclObject*> Objects;
+public:
+	__fastcall TObjectDeleteHandler(TComponent *AOwner) : TComponent(AOwner)
+	{
+		Name = L"ObjectDeleteHandler";
+	}
+
+	__fastcall ~TObjectDeleteHandler()
+	{
+		for(std::deque<TVclObject*>::iterator Iter = Objects.begin(); Iter != Objects.end(); ++Iter)
+		{
+			(*Iter)->Instance = NULL;
+			(*Iter)->Owned = false;
+    }
+	}
+
+	void Register(TVclObject *VclObject) {Objects.push_back(VclObject);}
+	void Unregister(TVclObject *VclObject)
+	{
+		std::deque<TVclObject*>::iterator Iter = std::find(Objects.begin(), Objects.end(), VclObject);
+		if(Iter != Objects.end())
+		  Objects.erase(Iter);
+	}
+};
+//---------------------------------------------------------------------------
+void CreateDeleteHandler(TVclObject *VclObject)
+{
+	if(TComponent *Component = dynamic_cast<TComponent*>(VclObject->Instance))
+	{
+		TObjectDeleteHandler *DeleteHandler =
+			dynamic_cast<TObjectDeleteHandler*>(Component->FindComponent("ObjectDeleteHandler"));
+		if(DeleteHandler == NULL)
+			DeleteHandler = new TObjectDeleteHandler(Component);
+		DeleteHandler->Register(VclObject);
+	}
+}
+//---------------------------------------------------------------------------
+void RemoveDeleteHandler(TVclObject *VclObject)
+{
+	if(TComponent *Component = dynamic_cast<TComponent*>(VclObject->Instance))
+	{
+		if(TObjectDeleteHandler *DeleteHandler =
+			dynamic_cast<TObjectDeleteHandler*>(Component->FindComponent("ObjectDeleteHandler")))
+				DeleteHandler->Unregister(VclObject);
+  }
+}
+//---------------------------------------------------------------------------
 struct TPythonCallback : public TCppInterfacedObject<TMethodImplementationCallback>
 {
 	void __fastcall Invoke(void * UserData, System::DynamicArray<TValue> Args, TValue &Result);
@@ -97,47 +146,59 @@ TMethodImplementation::TInvokeInfo* CreateInvokeInfo(TTypeInfo *TypeInfo)
 //---------------------------------------------------------------------------
 static PyObject *VclObject_Repr(TVclObject* self)
 {
-	String Str;
-	TComponent *Component = dynamic_cast<TComponent*>(self->Instance);
-	if(Component != NULL)
-		Str = "<object '" + Component->Name + "' of type '" + Component->ClassName() + "'>";
-	else
-		Str = "<object of type '" + self->Instance->ClassName() + "'>";
-	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
+	try
+	{
+		String Str;
+		TComponent *Component = dynamic_cast<TComponent*>(self->Instance);
+		if(self->Instance == NULL)
+			Str = "<Reference to released object>";
+		else if(Component != NULL)
+			Str = "<object '" + Component->Name + "' of type '" + Component->ClassName() + "'>";
+		else
+			Str = "<object of type '" + self->Instance->ClassName() + "'>";
+		return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
+	}
+	catch(...)
+	{
+		return PyVclHandleException();
+	}
 }
 //---------------------------------------------------------------------------
 static PyObject* VclObject_Dir(TVclObject *self, PyObject *arg)
 {
-	TRttiType *Type = Context.GetType(self->Instance->ClassType());
-	DynamicArray<TRttiProperty*> Properties = Type->GetProperties();
-	DynamicArray<TRttiMethod*> Methods = Type->GetMethods();
-	DynamicArray<TRttiField*> Fields = Type->GetFields();
-	int PropertyCount = Properties.Length;
-	int MethodCount = Methods.Length;
-	int FieldCount = Fields.Length;
 	PyObject *List = PyList_New(0);
-	PyObject *Value;
-	for(int I = 0; I < PropertyCount; I++)
+	if(self->Instance != NULL)
 	{
-		Value = ToPyObject(Properties[I]->Name);
-		if(!PySequence_Contains(List, Value))
-			PyList_Append(List, Value);
-		Py_DECREF(Value);
-	}
-	for(int I = 0; I < MethodCount; I++)
-	{
-		Value = ToPyObject(Methods[I]->Name);
-		if(!PySequence_Contains(List, Value))
-			PyList_Append(List, Value);
-		Py_DECREF(Value);
-	}
-	for(int I = 0; I < FieldCount; I++)
-		if(Fields[I]->Visibility == mvPublic)
+		TRttiType *Type = Context.GetType(self->Instance->ClassType());
+		DynamicArray<TRttiProperty*> Properties = Type->GetProperties();
+		DynamicArray<TRttiMethod*> Methods = Type->GetMethods();
+		DynamicArray<TRttiField*> Fields = Type->GetFields();
+		int PropertyCount = Properties.Length;
+		int MethodCount = Methods.Length;
+		int FieldCount = Fields.Length;
+		PyObject *Value;
+		for(int I = 0; I < PropertyCount; I++)
 		{
-			Value = ToPyObject(Fields[I]->Name);
-			PyList_Append(List, Value);
+			Value = ToPyObject(Properties[I]->Name);
+			if(!PySequence_Contains(List, Value))
+				PyList_Append(List, Value);
 			Py_DECREF(Value);
 		}
+		for(int I = 0; I < MethodCount; I++)
+		{
+			Value = ToPyObject(Methods[I]->Name);
+			if(!PySequence_Contains(List, Value))
+				PyList_Append(List, Value);
+			Py_DECREF(Value);
+		}
+		for(int I = 0; I < FieldCount; I++)
+			if(Fields[I]->Visibility == mvPublic)
+			{
+				Value = ToPyObject(Fields[I]->Name);
+				PyList_Append(List, Value);
+				Py_DECREF(Value);
+			}
+	}
 	return List;
 }
 //---------------------------------------------------------------------------
@@ -150,6 +211,8 @@ static void VclObject_Dealloc(TVclObject* self)
 				Control->Controls[Control->ControlCount-1]->Parent = NULL;
 		delete self->Instance;
 	}
+	else if(TComponent *Component = dynamic_cast<TComponent*>(self->Instance))
+		RemoveDeleteHandler(self);
 	Py_TYPE(self)->tp_free(reinterpret_cast<PyObject*>(self));
 }
 //---------------------------------------------------------------------------
@@ -157,6 +220,9 @@ PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
 {
 	try
 	{
+		if(self->Instance == NULL)
+			throw EPyVclError("Referenced object has been deleted.");
+
 		TObject *Object = self->Instance;
 		String Name = PyUnicode_AsUnicode(attr_name);
 		TRttiType *Type = Context.GetType(Object->ClassType());
@@ -196,6 +262,9 @@ int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 {
 	try
 	{
+		if(self->Instance == NULL)
+			throw EPyVclError("Referenced object has been deleted.");
+
 		String Name = PyUnicode_AsUnicode(attr_name);
 		TRttiType *Type = Context.GetType(self->Instance->ClassType());
 		TRttiProperty *Property = Type->GetProperty(Name);
@@ -295,6 +364,7 @@ PyObject* VclObject_Create(TObject *Instance, bool Owned)
 	TVclObject *VclObject = PyObject_New(TVclObject, &VclObjectType);
 	VclObject->Instance = Instance;
 	VclObject->Owned = Owned;
+	CreateDeleteHandler(VclObject);
 	return reinterpret_cast<PyObject*>(VclObject);
 }
 //---------------------------------------------------------------------------
