@@ -25,6 +25,14 @@ const long double INF = numeric_limits<long double>::infinity();
 inline long double real(long double x) {return x;}
 inline long double imag(long double x) {return 0;}
 //---------------------------------------------------------------------------
+#ifdef __BORLANDC__
+//Workaround for a bug in C++ Builder XE
+int _RTLENTRY _EXPFUNC std::iswspace(wchar_t c)
+{
+	return c == L' ' || c == L'\t' || c == L'\r' || c == L'\n';
+}
+#endif
+//---------------------------------------------------------------------------
 long double StrToDouble(const char *Str)
 {
 	istringstream Stream(Str);
@@ -224,7 +232,7 @@ void TestCustomTrendLine(const std::wstring &Model, const std::vector<TDblPoint>
     if(Str != Str2)
     {
       wcerr << "-- Custom trendline --" << endl;
-      wcerr << "Model:              f(x)=" << Model << std::endl;
+			wcerr << "Model:              f(x)=" << Model << std::endl;
       wcerr << "Expected trendline: f(x)=" << Str << std::endl;
 			wcerr << "Evaluated to:       f(x)=" << Str2 << std::endl << std::endl;
     }
@@ -250,7 +258,7 @@ void TestTrendLineError(Func32::TTrendType Type, const TDblPoint *Points, unsign
   catch(EFuncError &E)
   {
     if(E.ErrorCode != ErrorCode)
-    {
+		{
       cerr << "-- Trendline --" << endl;
       cerr << "Error code:     " << E.ErrorCode << endl << endl;
     }
@@ -276,7 +284,7 @@ void TestDif(const std::wstring &f, const std::wstring &df, TTrigonometry Trig =
   {
     wcerr << "f(x)=" << f << std::endl;
     wcerr << "Expected f'(x)=" << df << std::endl;
-    wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
+		wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
   }
 }
 //---------------------------------------------------------------------------
@@ -302,7 +310,7 @@ void TestDif(const std::wstring &Str, long double x, long double y, TTrigonometr
 		}
 	}
   catch(EFuncError &E)
-  {
+	{
     wcerr << "f(x)=" << Str << std::endl;
     wcerr << "Expected f'(" << x << ")=" << y << std::endl;
     wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
@@ -380,7 +388,7 @@ void TestCustom(const std::wstring &Str, const TArgType &Args, const std::vector
       wcerr << Args[I] << ":            " << setprecision(10) << Values[I] << std::endl;
     wcerr << "Error code   : " << E.ErrorCode << std::endl;
     wcerr << "Expected:     " << setprecision(10) << Result << std::endl << std::endl;
-  }
+	}
 }
 //---------------------------------------------------------------------------
 void TestMakeText(const TFunc &Func, const std::wstring &Result)
