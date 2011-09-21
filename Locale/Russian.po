@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph russian interface\n"
-"POT-Creation-Date: 2011-07-17 01:13\n"
+"POT-Creation-Date: 2011-09-21 23:00\n"
 "PO-Revision-Date: 2007-02-19 22:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -3411,7 +3411,7 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 
 #. Import from file dialog
-msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
 msgstr ""
 
 #, fuzzy
@@ -3892,6 +3892,10 @@ msgstr "На системе не установлен принтер."
 
 msgid "Install for all users"
 msgstr ""
+
+#, fuzzy
+msgid "Examples"
+msgstr "Образец"
 
 #, fuzzy
 msgid "Local"

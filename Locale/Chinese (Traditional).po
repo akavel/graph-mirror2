@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-07-17 01:13\n"
+"POT-Creation-Date: 2011-09-21 23:00\n"
 "PO-Revision-Date: 2007-07-30 19:51+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -3317,7 +3317,7 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "圖檔 [*.grf]|*.grf|All files [*.*]|*.*"
 
 #. Import from file dialog
-msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
 msgstr ""
 
 msgid "Are you sure you want to delete the model: %s?"
@@ -3783,6 +3783,10 @@ msgstr "你的系統沒有安裝印表機"
 
 msgid "Install for all users"
 msgstr ""
+
+#, fuzzy
+msgid "Examples"
+msgstr "範例"
 
 msgid "Local"
 msgstr "區域"

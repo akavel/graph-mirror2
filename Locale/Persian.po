@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-07-17 01:13\n"
+"POT-Creation-Date: 2011-09-21 23:00\n"
 "PO-Revision-Date: 2010-08-30 23:44+0100\n"
 "Last-Translator: Yashar PourMohammad <YasharPM@yahoo.com>\n"
 "Language-Team: \n"
@@ -3244,7 +3244,7 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "پرونده های گراف [*.grf]|*.grf|همه پرونده ها [*.*]|*.*"
 
 #. Import from file dialog
-msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
 msgstr ""
 
 msgid "Are you sure you want to delete the model: %s?"
@@ -3696,6 +3696,10 @@ msgstr "چاپگر پیش فرض هنوز انتخاب نشده است."
 
 msgid "Install for all users"
 msgstr "نصب برای همه کاربران"
+
+#, fuzzy
+msgid "Examples"
+msgstr "نمونه"
 
 msgid "Local"
 msgstr "محلی"
