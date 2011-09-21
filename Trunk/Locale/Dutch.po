@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.0.1\n"
-"POT-Creation-Date: 2011-07-17 01:13\n"
+"POT-Creation-Date: 2011-09-21 23:00\n"
 "PO-Revision-Date: 2011-07-25 19:52+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Etienne Goemaere <etienne.goemaere@pandora.be>\n"
@@ -3212,7 +3212,8 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Graph-bestanden [*.grf]|*.grf|Alle bestanden [*.*]|*.*"
 
 #. Import from file dialog
-msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+#, fuzzy
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
 msgstr "CSV (puntkomma gescheiden) [*. csv] | *. csv | CSV (komma gescheiden) [*. csv] | *. csv | Tekst (tab gescheiden) [*. txt] | *. txt | Tekst (spatie gescheiden) | *. txt | Alle bestanden [*.*]|*.*"
 
 msgid "Are you sure you want to delete the model: %s?"
@@ -3658,6 +3659,10 @@ msgstr "Er is geen printer geïnstalleerd in het systeem."
 msgid "Install for all users"
 msgstr "Installeer voor alle gebruikers"
 
+#, fuzzy
+msgid "Examples"
+msgstr "Voorbeeld"
+
 msgid "Local"
 msgstr "Lokaal"
 
@@ -3748,165 +3753,203 @@ msgstr "Voer procent van het orgineel in."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Oppervlakte"
-#~ msgid ""
-#~ "Area or length of path calculated for the given range using Simpson's "
-#~ "formula."
-#~ msgstr ""
-#~ "Oppervlakte of lengte langs de kromme voor een gegeven domein berekend "
-#~ "met formule van Simpson"
+
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "Oppervlakte of lengte langs de kromme voor een gegeven domein berekend met formule van Simpson"
+
 #~ msgid "Extremum"
 #~ msgstr "Extremum"
-#~ msgid ""
-#~ "This is the functions second derivative evaluated for the entered value."
-#~ msgstr ""
-#~ "Dit is de waarde van de tweede afgeleide van de functie voor de gegeven x-"
-#~ "waarde."
+
+#~ msgid "This is the functions second derivative evaluated for the entered value."
+#~ msgstr "Dit is de waarde van de tweede afgeleide van de functie voor de gegeven x-waarde."
+
 #~ msgid "Zoom in."
 #~ msgstr "Zoom in."
+
 #~ msgid "Zoom out."
 #~ msgstr "Zoom uit"
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Zoom naar een standaardassenstel."
+
 #~ msgid "Calculates the area under the path of the selected function."
-#~ msgstr ""
-#~ "Berekent de oppervlakte onder een deel van de grafiek van de "
-#~ "geselecteerde functie."
+#~ msgstr "Berekent de oppervlakte onder een deel van de grafiek van de geselecteerde functie."
+
 #~ msgid "Go to home page"
 #~ msgstr "Ga naar de homepage"
+
 #~ msgid "About Graph..."
 #~ msgstr "Over Graph..."
+
 #~ msgid "All points"
 #~ msgstr "Alle punten"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zoom tot alle punten zichtbaar zijn."
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoom in op de x-as alleen."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoom uit op de x-as alleen. "
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoom in op de y-as alleen."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoom uit op de y-as alleen."
+
 #~ msgid "Custom functions..."
 #~ msgstr "Basisfuncties..."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Duid bereikeinde aan"
+
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Duid het begin van de arcering aan met een lijn."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Duid bereikbegin aan"
+
 #~ msgid "Image information"
 #~ msgstr "Beeldinformatie"
+
 #~ msgid "Open the file %s."
 #~ msgstr "Open het bestand%s."
+
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle bestanden [*.*]|*.*"
+
 #~ msgid "Calculate area"
 #~ msgstr "Oppervlakteberekening"
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "De server antwoordde met het bericht '%s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Fout antwoordprotocol"
-#~ msgid ""
-#~ "You can send suggestions for future versions, bug reports and comments to "
-#~ "graph@padowan.dk"
-#~ msgstr ""
-#~ "Suggesties voor toekomstige versies, foutmeldingen en opmerkingen zijn "
-#~ "welkom op graph@padowan.dk."
+
+#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgstr "Suggesties voor toekomstige versies, foutmeldingen en opmerkingen zijn welkom op graph@padowan.dk."
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Kies om de figuur in het midden van blad te plaatsen."
+
 #~ msgid "Insert shade..."
 #~ msgstr "Arceer"
+
 #~ msgid "Shade"
 #~ msgstr "Arceer"
+
 #~ msgid "Black"
 #~ msgstr "Zwart"
+
 #~ msgid "Maroon"
 #~ msgstr "Bruin"
+
 #~ msgid "Green"
 #~ msgstr "Groen"
+
 #~ msgid "Olive"
 #~ msgstr "Olijfkleurig"
+
 #~ msgid "Navy"
 #~ msgstr "Marineblauw"
+
 #~ msgid "Purple"
 #~ msgstr "Purper"
+
 #~ msgid "Gray"
 #~ msgstr "Grijs"
+
 #~ msgid "Silver"
 #~ msgstr "Zilverkleurig"
+
 #~ msgid "Red"
 #~ msgstr "Rood"
+
 #~ msgid "Lime"
 #~ msgstr "Citroengeel"
+
 #~ msgid "Yellow"
 #~ msgstr "Geel"
+
 #~ msgid "Blue"
 #~ msgstr "Blauw"
+
 #~ msgid "Fuchsia"
 #~ msgstr "Fuchsia"
+
 #~ msgid "Aqua"
 #~ msgstr "Aqua"
+
 #~ msgid "Money Green"
 #~ msgstr "Muntgrijs"
+
 #~ msgid "Sky Blue"
 #~ msgstr "Hemels blauw"
+
 #~ msgid "Med Gray"
 #~ msgstr "Licht grijs"
-#~ msgid ""
-#~ "Insert a text label (select and click in the main window where you want "
-#~ "the label)."
-#~ msgstr ""
-#~ "Voeg tekstlabel in (selecteer en klik in het basisscherm waar je het "
-#~ "label wil."
+
+#~ msgid "Insert a text label (select and click in the main window where you want the label)."
+#~ msgstr "Voeg tekstlabel in (selecteer en klik in het basisscherm waar je het label wil."
+
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Knip de selectie naar het klembord"
+
 #~ msgid "Open an animation file."
 #~ msgstr "Open het animatiebestand."
 
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Versie"
+
 #~ msgid "Visible"
 #~ msgstr "Zichtbaar"
+
 #~ msgid "Check to make the selected item visible in the coordinate system."
-#~ msgstr ""
-#~ "Controleer of het geselecteerde zichtbaar gemaakt kan worden in het "
-#~ "coördinatenstelsel."
+#~ msgstr "Controleer of het geselecteerde zichtbaar gemaakt kan worden in het coördinatenstelsel."
+
 #~ msgid "Functions"
 #~ msgstr "Functies"
+
 #~ msgid "Tangents"
 #~ msgstr "Raaklijnen"
+
 #~ msgid "Point series"
 #~ msgstr "Puntenreeks"
+
 #~ msgid "Shades"
 #~ msgstr "Arceringen"
+
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Geen fouten. Deze boodschap zou niet te zien mogen zijn."
+
 #~ msgid "Right bracket missing."
 #~ msgstr "Rechterhaakje ontbreekt."
+
 #~ msgid "Conversion error"
 #~ msgstr "Conversiefout"
+
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Onbekende foutcode.\n"
 #~ "Kan geen foutboodschap hiervoor vinden."
+
 #~ msgid "This error should not occur. Please report this to the programmer."
-#~ msgstr ""
-#~ "Deze fout zou niet mogen vorkomen. Rapporteer dit aan de programmeur."
+#~ msgstr "Deze fout zou niet mogen vorkomen. Rapporteer dit aan de programmeur."
+
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "De maximum tekstlengte werd bereikt."
+
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Dialoogfout: %sh"
-#~ msgid "Unknown Graph data found while pasting clipboard data."
-#~ msgstr ""
-#~ "Onbekende Graph-gegevens aangetroffen bij plakken van klembordgegevens."
-#~ msgid ""
-#~ "To add actions to your application simply drag and drop from either "
-#~ "Categories or Actions onto an existing ActionBar."
-#~ msgstr ""
-#~ "Om acties toe te voegen  aan een toepassing, volstaat het slepen en "
-#~ "loslaten van een Categorie of een Actie naar een bestaande werkbalk"
 
+#~ msgid "Unknown Graph data found while pasting clipboard data."
+#~ msgstr "Onbekende Graph-gegevens aangetroffen bij plakken van klembordgegevens."
+
+#~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
+#~ msgstr "Om acties toe te voegen  aan een toepassing, volstaat het slepen en loslaten van een Categorie of een Actie naar een bestaande werkbalk"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-07-17 01:13\n"
+"POT-Creation-Date: 2011-09-21 23:00\n"
 "PO-Revision-Date: 2007-02-19 22:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -3413,7 +3413,7 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Αρχεία Graph f [*.grf]|*.grf|όλα τα αρχεία [*.*]|*.*"
 
 #. Import from file dialog
-msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
 msgstr ""
 
 #, fuzzy
@@ -3894,6 +3894,10 @@ msgstr "Δεν υπάρχει εγκατεστημένος εκτυπωτής."
 
 msgid "Install for all users"
 msgstr ""
+
+#, fuzzy
+msgid "Examples"
+msgstr "Δείγμα"
 
 #, fuzzy
 msgid "Local"

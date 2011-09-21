@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-07-17 01:13\n"
+"POT-Creation-Date: 2011-09-21 23:00\n"
 "PO-Revision-Date: 2010-08-30 23:02+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
@@ -3322,7 +3322,7 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Soubory programu Graph [*.grf]|*.grf|Všechny soubory [*.*]|*.*"
 
 #. Import from file dialog
-msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
 msgstr ""
 
 msgid "Are you sure you want to delete the model: %s?"
@@ -3790,6 +3790,10 @@ msgstr "V systému není nainstalována žádná tiskárna."
 
 msgid "Install for all users"
 msgstr ""
+
+#, fuzzy
+msgid "Examples"
+msgstr "Náhled"
 
 msgid "Local"
 msgstr "Místní"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2011-07-17 01:13\n"
+"POT-Creation-Date: 2011-09-21 23:00\n"
 "PO-Revision-Date: 2011-07-07 22:33+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
@@ -3234,7 +3234,7 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Archivos de Graph [*.grf]|*.grf|Todos los archivos [*.*]|*.*"
 
 #. Import from file dialog
-msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
 msgstr ""
 
 msgid "Are you sure you want to delete the model: %s?"
@@ -3689,6 +3689,10 @@ msgstr "No hay ninguna impresora instalada."
 
 msgid "Install for all users"
 msgstr "Instalar para todos los usuarios"
+
+#, fuzzy
+msgid "Examples"
+msgstr "Muestra"
 
 msgid "Local"
 msgstr "Local"

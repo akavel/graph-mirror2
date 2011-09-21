@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Граф\n"
-"POT-Creation-Date: 2011-07-17 01:13\n"
+"POT-Creation-Date: 2011-09-21 23:00\n"
 "PO-Revision-Date: 2007-05-08 22:39+0800\n"
 "Last-Translator: Батнасан <bat_nasan@mail.mn>\n"
 "Language-Team: Батнасан <baagiibat@yahoo.com>\n"
@@ -3334,7 +3334,7 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Графикын файлууд [*.grf]|*.grf|All files [*.*]|*.*"
 
 #. Import from file dialog
-msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited)|*.txt|All files [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
 msgstr ""
 
 #, fuzzy
@@ -3797,6 +3797,10 @@ msgstr ""
 
 msgid "Install for all users"
 msgstr ""
+
+#, fuzzy
+msgid "Examples"
+msgstr "Жишээ"
 
 msgid "Local"
 msgstr "Дэд"
