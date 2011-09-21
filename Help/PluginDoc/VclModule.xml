@@ -4,7 +4,7 @@
 	<title><classname>vcl</classname> module</title>
 	<indexterm><primary><classname>vcl</classname> (module)</primary></indexterm>
 	<para>
-		The <classname>vcl</classname> module is an interface to the Embarcadero Visual Component library (VCL) used by Delphi and C++ Builder.
+		The <classname>vcl</classname> module is an interface to the Embarcadero Visual Component Library (VCL) used by Delphi and C++ Builder.
 		Documentation for the VCL can be found online at
 		<ulink url="http://docwiki.embarcadero.com/VCL/en/Main_Page">http://docwiki.embarcadero.com/VCL/en/Main_Page</ulink>.
 	</para>
@@ -19,7 +19,7 @@
 		<title>Classes</title>
 		<para>
 			VCL classes as <classname>TForm</classname> and <classname>TButton</classname> are found in the <classname>vcl</classname> module.
-			You create a new VCL object by instantiating a VCL type in the same way you always create Python objects.
+			You create a new VCL object by instantiating a VCL class in the same way you always create Python objects.
 			All positional arguments are passed on to the constructor for the VCL class.
 			VCL classes can have several constructors.
 			The first constructor that matches the passed arguments will be used,
@@ -44,12 +44,15 @@
 			The <classname>vcl</classname> module contains some global objects as
 			<varname>Application</varname>, <varname>Mouse</varname>, <varname>Clipboard</varname> and <varname>Screen</varname>.
 			Other objects can be directly constructed or returned from a function.
-			The Python object is actually a proxy object to the actual VCL object.
-			Per default for objects created directly in Python the proxy object owns the VCL object, which will therefore be destroyed when the proxy object in Python is destroyed.
-			Objects returned from a function or accessed through properties are now owned and will continue to exist after the proxy object has been destroyed.
+			<varname>None</varname> in Python can be used to pass a NULL pointer to a VCL function instead of an object.
+		</para>
+		<para>
+			The Python object is a proxy object to the actual VCL object.
+			Per default VCL objects created directly in Python are owned by the proxy object.
+			The VCL object will therefore be destroyed when the proxy object in Python is destroyed.
+			Objects returned from a function or accessed through properties are not owned and will continue to exist after the proxy object has been destroyed.
 			The proxy object has an <property>_owned</property> property that specify if the proxy object owns the underlying VCL object.
 		</para>
-
 		<para>
 			Object methods and properties are accessed as you normally would in Python so you can use <literal>Form.Show()</literal> and <literal>Form.Caption = "Test"</literal>.
 			If a method is overloaded, the first one that matches the parameters will be called.
@@ -77,7 +80,7 @@
 			Enumerations are always returned as strings but can be assigned as strings or integers, e.g. <literal>Form.WindowState = "wsMaximized"</literal> and
 			<literal>Form.WindowState = 2</literal> will both maximize the window.
 			Records are converted to tuples with one element for every item in the record.
-			Similarly a function that expects a record must be passed a tuple.
+			Similarly a function that expects a record must be passed a tuple, e.g. <literal>Form1.ClientToScreen((100,50))</literal>.
 		</para>
 	</simplesect>
 

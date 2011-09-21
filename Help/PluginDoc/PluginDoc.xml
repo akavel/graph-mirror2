@@ -21,6 +21,7 @@
 		</copyright>
 	</bookinfo>
 	<!-- include external files -->
+	<xi:include href="Overview.xml"/>
 	<xi:include href="GraphModule.xml"/>
 	<xi:include href="VclModule.xml"/>
 </book>
