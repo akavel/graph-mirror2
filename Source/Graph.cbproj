@@ -3,7 +3,7 @@
 			<ProjectGuid>{83C28049-A225-408A-83AB-2FB99DF42339}</ProjectGuid>
 			<ProjectVersion>12.3</ProjectVersion>
 			<MainSource>Graph.cpp</MainSource>
-			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Config Condition="'$(Config)'==''">Release</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Application</AppType>
@@ -69,6 +69,13 @@
 			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<BCC_LoopInductionReduction>true</BCC_LoopInductionReduction>
+			<BCC_EliminateDuplicateExpressions>true</BCC_EliminateDuplicateExpressions>
+			<BCC_OptimizeJumps>true</BCC_OptimizeJumps>
+			<BCC_OptimizeVariables>true</BCC_OptimizeVariables>
+			<BCC_EliminateDeadStore>true</BCC_EliminateDeadStore>
+			<BCC_ExpandIntrinsics>true</BCC_ExpandIntrinsics>
+			<BCC_PentiumInstructionScheduling>true</BCC_PentiumInstructionScheduling>
 			<Defines>NDEBUG;$(Defines)</Defines>
 			<IntermediateOutputDir>Release</IntermediateOutputDir>
 			<ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;..\Func32\Release;..\Libraries\gsl\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>

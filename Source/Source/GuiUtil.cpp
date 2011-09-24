@@ -296,26 +296,29 @@ class THelpButtonHelper
   TWndMethod OldWindowProc;
   int ErrorCode;
 public:
-  THelpButtonHelper(int AErrorCode) : OldWindowProc(NULL), ErrorCode(AErrorCode)
-  {
-    if(Screen->ActiveForm)
-    {
-      OldWindowProc = Screen->ActiveForm->WindowProc;
-      Screen->ActiveForm->WindowProc = &WindowProc;
-    }
-  }
-  ~THelpButtonHelper()
-  {
-    if(Screen->ActiveForm)
-      Screen->ActiveForm->WindowProc = OldWindowProc;
-  }
-  void __fastcall WindowProc(TMessage &Message)
-  {
-    if(Message.Msg == WM_HELP && ErrorCode)
-      ShowHelp(String().sprintf(L"Errors.html#Error%02d", ErrorCode));
-    OldWindowProc(Message);
-  }
+	THelpButtonHelper(int AErrorCode);
+	~THelpButtonHelper()
+	{
+		if(Screen->ActiveForm)
+			Screen->ActiveForm->WindowProc = OldWindowProc;
+	}
+	void __fastcall WindowProc(TMessage &Message)
+	{
+		if(Message.Msg == WM_HELP && ErrorCode)
+			ShowHelp(String().sprintf(L"Errors.html#Error%02d", ErrorCode));
+		OldWindowProc(Message);
+	}
 };
+//---------------------------------------------------------------------------
+//Constructor may not be inlined. It will hit a compiler bug in C++ Builder XE
+THelpButtonHelper::THelpButtonHelper(int AErrorCode) : OldWindowProc(NULL), ErrorCode(AErrorCode)
+{
+	if(Screen->ActiveForm)
+	{
+		OldWindowProc = Screen->ActiveForm->WindowProc;
+		Screen->ActiveForm->WindowProc = &WindowProc;
+	}
+}
 //---------------------------------------------------------------------------
 //Shows error message corresponding to ErrorCode in Func
 //If Edit parameter is suported the Edit box gets focus and
