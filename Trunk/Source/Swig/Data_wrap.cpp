@@ -18,6 +18,7 @@
 #include "PythonBind.h"
 #include "PyVclObject.h"
 #pragma warn -8060
+#pragma warn -8070
 
 
 #define SWIGPYTHON
@@ -5383,43 +5384,43 @@ PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem)
   TGraphElem *Ptr = Elem.get();
   if(Ptr == NULL)
     return SWIG_Py_Void();
-  /*@SWIG:Data.i,45,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,46,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TStdFunc*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TStdFunc>(boost::static_pointer_cast<TStdFunc>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TStdFunc_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,45,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,46,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TParFunc*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TParFunc>(boost::static_pointer_cast<TParFunc>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TParFunc_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,45,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,46,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TPolFunc*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TPolFunc>(boost::static_pointer_cast<TPolFunc>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TPolFunc_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,45,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,46,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TTan*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TTan>(boost::static_pointer_cast<TTan>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TTan_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,45,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,46,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TPointSeries*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TPointSeries>(boost::static_pointer_cast<TPointSeries>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TPointSeries_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,45,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,46,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TTextLabel*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TTextLabel>(boost::static_pointer_cast<TTextLabel>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TTextLabel_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,45,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,46,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TShading*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TShading>(boost::static_pointer_cast<TShading>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TShading_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,45,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,46,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TRelation*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TRelation>(boost::static_pointer_cast<TRelation>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TRelation_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,45,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,46,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TAxesView*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TAxesView>(boost::static_pointer_cast<TAxesView>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TAxesView_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/
-  /*@SWIG:Data.i,45,CHECK_GRAPH_ELEM@*/
+  /*@SWIG:Data.i,46,CHECK_GRAPH_ELEM@*/
   if(dynamic_cast<TTopGraphElem*>(Ptr))
     return SWIG_NewPointerObj(new boost::shared_ptr<TTopGraphElem>(boost::static_pointer_cast<TTopGraphElem>(Elem)), SWIGTYPE_p_boost__shared_ptrT_TTopGraphElem_t, SWIG_POINTER_OWN |  0 );
 /*@SWIG@*/

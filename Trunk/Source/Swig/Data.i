@@ -40,6 +40,7 @@
 #include "PythonBind.h"
 #include "PyVclObject.h"
 #pragma warn -8060
+#pragma warn -8070
 %}
 
 %define CHECK_GRAPH_ELEM(TType)
