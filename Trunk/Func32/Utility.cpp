@@ -13,6 +13,7 @@
 #include <complex>
 #include <string>
 #include <map>
+#include <iostream>
 #include <boost/shared_ptr.hpp>
 #include <boost\math\special_functions\fpclassify.hpp>
 namespace Func32
