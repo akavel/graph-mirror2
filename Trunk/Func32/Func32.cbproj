@@ -2,7 +2,7 @@
 		<PropertyGroup>
 			<ProjectGuid>{F67008AA-C431-4CFF-8605-CC9792164092}</ProjectGuid>
 			<ProjectVersion>12.3</ProjectVersion>
-			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Config Condition="'$(Config)'==''">Release</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>StaticLibrary</AppType>
@@ -59,8 +59,15 @@
 			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<BCC_ExpandIntrinsics>true</BCC_ExpandIntrinsics>
+			<BCC_LoopInductionReduction>true</BCC_LoopInductionReduction>
+			<BCC_EliminateDuplicateExpressions>true</BCC_EliminateDuplicateExpressions>
+			<BCC_OptimizeJumps>true</BCC_OptimizeJumps>
+			<BCC_EliminateDeadStore>true</BCC_EliminateDeadStore>
+			<BCC_OptimizeVariables>true</BCC_OptimizeVariables>
+			<BCC_PentiumInstructionScheduling>true</BCC_PentiumInstructionScheduling>
 			<BCC_wtai>false</BCC_wtai>
-			<Defines>NDEBUG;$(Defines)</Defines>
+			<Defines>NDEBUG;_HAS_TRADITIONAL_ITERATORS=1;$(Defines)</Defines>
 			<IntermediateOutputDir>Release</IntermediateOutputDir>
 			<ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<TASM_Debugging>None</TASM_Debugging>
