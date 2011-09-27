@@ -33,6 +33,7 @@
 #include <boost/bind.hpp>
 #include <boost/spirit/utility/distinct.hpp>
 #include <boost/spirit/utility/confix.hpp>
+#include <boost\math\special_functions\fpclassify.hpp>
 //---------------------------------------------------------------------------
 #ifdef _DEBUG
 std::ostream& operator<<(std::ostream& Stream, const std::deque<Func32::TElem> &D)
@@ -60,7 +61,7 @@ const struct TFuncSymbols : TSymbols
       TIdent Ident = static_cast<TIdent>(I);
       const wchar_t *Name = FunctionName(Ident);
       if(*Name)
-        add(Name, Ident);
+				add(Name, Ident);
     }
   }
 } DefaultFuncSymbols;
@@ -261,6 +262,13 @@ public:
 	{
 		Container().push_front(Data(Val));
 	}
+
+	void operator()(long double Value) const
+	{
+		Container().push_front(Value);
+		if(!boost::math::isfinite(Value)) //Number is too large
+			throw EParseError(ecInvalidNumber, 0);
+	}
 };
 
 template <typename T, typename T2>
@@ -454,7 +462,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 			|   FuncUReal_p[PushFront(Factor.List)] >> !(+ch_p('.'))[TDoError(ecInvalidNumber)]
 			|   Parentheses[Factor.List = arg1]
 			)   >> !('^' >> FactorSeq[TDoOperator(Factor.List, CodePow)])
-      ;
+			;
 
   BOOST_SPIRIT_DEBUG_RULE(Expression);
   BOOST_SPIRIT_DEBUG_RULE(Relation);
@@ -484,12 +492,8 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 	{
 		//Parse expression and ignore spaces
 		std::deque<TElem> Temp;
-		errno = 0;
 		parse_info<const wchar_t*> Info = parse(Begin, End, Expression[var(Temp) = arg1], space_p);
 		DEBUG_LOG(std::clog.flush());
-		if(errno)
-			//Throw error if a calculation error occured under parsing
-			throw EParseError(ecParseError, Info.stop - Begin);
 		std::vector<TElem> Temp2(Temp.begin(), Temp.end());
 
 		if(!Info.full)
@@ -521,13 +525,13 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
     Data.swap(Temp2);
   }
   //Should not be necesarry. Bug in BCB6? Error on "sin ¤" is not caught without
-  catch(parser_error<const EParseError, const wchar_t*> &E)
+	catch(parser_error<const EParseError, const wchar_t*> &E)
   {
     HandleParseError(E.descriptor, E.where, E.where - Begin);
   }
   catch(parser_error<EParseError, const wchar_t*> &E)
   {
-    HandleParseError(E.descriptor, E.where, E.where - Begin);
+		HandleParseError(E.descriptor, E.where, E.where - Begin);
   }
   catch(EFuncError &E)
   {
@@ -555,7 +559,7 @@ void TFuncData::HandleParseError(const EParseError &E, const wchar_t* Where, uns
 	if(!std::isalnum(*Where) && ValidChars.find_first_of(*Where) == std::wstring::npos)
 		throw EParseError(ecUnknownChar, Pos, std::wstring(1, *Where));
 
-  throw EParseError(E.ErrorCode, Pos, E.Str);
+	throw EParseError(E.ErrorCode, Pos, E.Str);
 }
 //---------------------------------------------------------------------------
 } //namespace Func32

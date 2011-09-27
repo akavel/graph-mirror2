@@ -63,7 +63,7 @@ inline bool IsEqual(long double a, long double b)
 
 	int a_exp, b_exp, exp;
 	frexp(a, &a_exp);
-  frexp(b, &b_exp);
+	frexp(b, &b_exp);
 	frexp(a - b, &exp);
   return ::IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 40);
 }
@@ -226,7 +226,7 @@ void TestCustomTrendLine(const std::wstring &Model, const std::vector<TDblPoint>
     std::vector<std::wstring> Unknowns = FindUnknowns(Model);
 		std::vector<long double> Values(Unknowns.size(), 1);
     Unknowns.insert(Unknowns.begin(), L"x");
-    TCustomFunc Func(Model, Unknowns);
+		TCustomFunc Func(Model, Unknowns);
     Regression(P, Func, Values, W);
     std::wstring Str2 = Func.ConvToFunc(Values, 0).MakeText(L"x", 5);
     if(Str != Str2)
@@ -235,13 +235,13 @@ void TestCustomTrendLine(const std::wstring &Model, const std::vector<TDblPoint>
 			wcerr << "Model:              f(x)=" << Model << std::endl;
       wcerr << "Expected trendline: f(x)=" << Str << std::endl;
 			wcerr << "Evaluated to:       f(x)=" << Str2 << std::endl << std::endl;
-    }
+		}
 	}
   catch(EFuncError &E)
 	{
     wcerr << "-- Custom trendline --" << endl;
     wcerr << "Model:      f(x)=" << Model << std::endl;
-    wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
+		wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
   }
 }
 //---------------------------------------------------------------------------
@@ -255,7 +255,7 @@ void TestTrendLineError(Func32::TTrendType Type, const TDblPoint *Points, unsign
 		cerr << "-- Trendline --" << endl;
 		cerr << "Expected error code:     " << ErrorCode << endl << endl;
   }
-  catch(EFuncError &E)
+	catch(EFuncError &E)
   {
     if(E.ErrorCode != ErrorCode)
 		{
@@ -297,7 +297,7 @@ void TestDif(const std::wstring &Str, long double x, long double y, TTrigonometr
 {
 	try
   {
-    TFunc Func(Str, L"x", Trig);
+		TFunc Func(Str, L"x", Trig);
 		TFunc Dif = Func.MakeDif();
 		long double f = Dif(x);
 
@@ -309,11 +309,11 @@ void TestDif(const std::wstring &Str, long double x, long double y, TTrigonometr
       wcerr << "Expected f'(" << x << ")=" << y << std::endl << std::endl;
 		}
 	}
-  catch(EFuncError &E)
+	catch(EFuncError &E)
 	{
     wcerr << "f(x)=" << Str << std::endl;
     wcerr << "Expected f'(" << x << ")=" << y << std::endl;
-    wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
+		wcerr << "Error code: " << E.ErrorCode << std::endl << std::endl;
   }
 }
 //---------------------------------------------------------------------------
@@ -353,7 +353,7 @@ void TestSimplify(const std::wstring &Str, const std::wstring &Str2)
 	TFunc Func(Str);
 	Func.Simplify();
 //	if(Func != TFunc(Str2))
-  if(Func.MakeText() != Str2)
+	if(Func.MakeText() != Str2)
 	{
 		wcerr << "f(x)=" << Str << std::endl;
 		wcerr << "Simplified: f(x)=" << Func.MakeText() << std::endl;;
@@ -371,17 +371,17 @@ void TestCustom(const std::wstring &Str, const TArgType &Args, const std::vector
 	try
   {
     Func32::TCustomFunc Func(Str, Args);
-    TComplex FuncResult = Func.Calc(Values);
+		TComplex FuncResult = Func.Calc(Values);
     if(!IsEqual(Result, FuncResult))
     {
 			wcerr << "Function:     " << Str << std::endl;
-      for(unsigned I = 0; I < Values.size(); I++)
+			for(unsigned I = 0; I < Values.size(); I++)
         wcerr << Args[I] << ":            " << setprecision(10) << Values[I] << std::endl;
 			wcerr << "Evaluated to: " << setprecision(10) << FuncResult << std::endl;
       wcerr << "Expected:     " << setprecision(10) << Result << std::endl << std::endl;
     }
 	}
-  catch(EFuncError &E)
+	catch(EFuncError &E)
   {
 		wcerr << "Function:     " << Str << std::endl;
     for(unsigned I = 0; I < Values.size(); I++)
@@ -400,7 +400,7 @@ void TestMakeText(const TFunc &Func, const std::wstring &Result)
     {
       wcerr << "Function:     " << TextResult << std::endl;
       wcerr << "Expected:     " << Result << std::endl << std::endl;
-    }
+		}
 	}
 	catch(EFuncError &E)
 	{
@@ -458,14 +458,14 @@ void TestParamFunc(const std::wstring &xText, const std::wstring &yText)
 		TParamFunc Func(xText, yText); //Test for known problem with parameter functions
 	}
 	catch(EFuncError &E)
-	{
+	{                                             
 	}
 	try
 	{
 		TParamFunc Func;
 		Func.SetFunc(xText, yText);
 	}
-	catch(EFuncError &E)
+	catch(EFuncError &E)                      
 	{
 	}
 }
@@ -474,26 +474,26 @@ void Test()
 {
 	//Test parsing errors
 	TestError("sinx", 0, ecUnknownVar);
-  TestError("x2", 0, ecUnknownVar);
-  TestError("sin2 x", 0, ecUnknownVar);
+	TestError("x2", 0, ecUnknownVar);
+	TestError("sin2 x", 0, ecUnknownVar);
 	TestError("integrate(x, 5)", 0, ecArgCountError);
 	TestError("integrate(x, x, 5, 7, 8)", 0, ecArgCountError);
 
-  //Test redundant space
+	//Test redundant space
 	Test("x*sin x", PI/2, PI/2);
 	Test("  x*sin x", PI/2, PI/2);
-  Test("x * sin x", PI/2, PI/2);
-  Test("x*sin x   ", PI/2, PI/2);
-  Test("x*sin    x", PI/2, PI/2);
-  TestError("", 0, ecEmptyString);
+	Test("x * sin x", PI/2, PI/2);
+	Test("x*sin x   ", PI/2, PI/2);
+	Test("x*sin    x", PI/2, PI/2);
+	TestError("", 0, ecEmptyString);
 	TestError("     ", 0, ecEmptyString);
 
-  //Test case (in)sesitivity
-  Test("Sin X+x/pI", 0, 0);
-  TestError("4.5e2", 0, ecUnknownVar);
+	//Test case (in)sesitivity
+	Test("Sin X+x/pI", 0, 0);
+	TestError("4.5e2", 0, ecUnknownVar);
 	TestError("4.5I", 0, ecUnknownVar);
 
-  //Test numbers
+	//Test numbers
 	Test("45", 0, 45);
 	Test("-0.5796", 0, -0.5796);
   Test("-.5796", 0, -0.5796);
@@ -502,10 +502,10 @@ void Test()
   Test("e", 0, EULER);
   TestError("E", 0, ecUnknownVar);
   TestEval<TComplex>(L"i*i", 0, -1);
-  TestErrorEval<long double>(L"i*i", 0, ecComplexError);
-  Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4
+	TestErrorEval<long double>(L"i*i", 0, ecComplexError);
+	Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4
 	Test("1E4000", 1, StrToDouble("1E4000")); //2E400 doesn't work directly with BCC 5.6.4
-  TestError("1E5000", 1, ecParseError); //Number too large
+	TestError("1E5000", 1, ecInvalidNumber); //Number too large
   TestError("1.2.3", 0, ecInvalidNumber);
 	TestError("5.", 0, ecInvalidNumber);
 
@@ -516,12 +516,12 @@ void Test()
   TestEval<TComplex>(L"i", 0, TComplex(0, 1));
   TestErrorEval(L"undef", 0, ecNotDefError);
 
-  //Test functions with arguments
+	//Test functions with arguments
   TestError("round x", 1.2345, ecArgCountError);
   TestError("round(x)", 1.2345, ecArgCountError);
 	Test("round(x, 0)", 1.2345, 1);
 
-  //Implied multiplication
+	//Implied multiplication
   Test("10sin(pi/2)x", 10, 100);
 	Test("sin(pi*x)4x", 1.5, -6);
   Test("-3x", 10, -30);
@@ -531,7 +531,7 @@ void Test()
   Test("x+4.5", 3.1, 7.6);
   Test("4.5-x", 3.1, 1.4);
   Test("x-4.5", 3.1, -1.4);
-  Test("4.5*x", 3.1, 13.95);
+	Test("4.5*x", 3.1, 13.95);
 	Test("x*4.5", 3.1, 13.95);
 	Test("4.5/x", 3.1, 1.4516129);
   Test("x/4.5", 3.1, 0.688888889);
@@ -540,7 +540,7 @@ void Test()
   TestError("x(5.4)", 0, ecParAfterConst);
   TestError("rand(2)", 0, ecParAfterConst);
   Test("x 5.4", 3, 16.2);     //Should this be allowed?
-  Test("--x", 5, 5);
+	Test("--x", 5, 5);
   Test("-x", 5, -5);
   Test("-5", NaN, -5);
 	Test("++x", 5, 5);
@@ -605,11 +605,11 @@ void Test()
   Test("acos(x)", 0, PI/2);
 	Test("acos(x)", 0, 90, Degree);
   Test("atan(x)", 1, PI/4);
-  Test("atan(x)", 1, 45, Degree);
+	Test("atan(x)", 1, 45, Degree);
   Test("asec(x)", -1, PI);
 	Test("asec(x)", -1, 180, Degree);
   Test("acsc(x)", 1, PI/2);
-  Test("acsc(x)", 1, 90, Degree);
+	Test("acsc(x)", 1, 90, Degree);
 	Test("acot(x)", 1, PI/4);
 	Test("acot(x)", 1, 45, Degree);
 	Test("acot(x)", 0, PI/2);
@@ -633,7 +633,7 @@ void Test()
   TestErrorEval<long double>(L"root(4,x)", -625, ecPowCalcError);
 	TestEval<TComplex>(L"root(4,x)", -4, TComplex(1, 1));
 
-  Test("fact(x)", 5, 120);
+	Test("fact(x)", 5, 120);
 
 	Test("sign(x)", 7.98, 1);
   Test("sign(x)", -7.98, -1);
@@ -651,17 +651,19 @@ void Test()
   Test("tanh(x)", 5, 0.999909204);
   Test("asinh(x)", 5, 2.31243834);
 
-  Test("acosh(x)", 5, 2.29243167);
+	Test("acosh(x)", 5, 2.29243167);
 	Test("acosh(x)", 1, 0);
   TestEval<TComplex>(L"acosh(x)", -1, TComplex(0, PI));
   TestErrorEval<long double>(L"acosh(x)", -1, ecACoshError);
 
-  Test("atanh(x)", 0.5, 0.54930614);
-  TestError("atanh(x)", 1, ecATanhError);
-  TestError("atanh(x)", -1, ecATanhError);
+	Test("atanh(x)", 0.5, 0.54930614);
+	Test("atanh(x)", 0, 0);                         
+	TestError("atanh(x)", 1, ecATanhError);
+	TestError("atanh(x)", -1, ecATanhError);
+	TestEval<TComplex>(L"atanh(x)", TComplex(2.5, 1), TComplex(0.351336, 1.41594));
 
 	Test("abs(x)", -4.67, 4.67);
-  TestEval<TComplex>(L"abs(x)", TComplex(3, 4), 5);
+	TestEval<TComplex>(L"abs(x)", TComplex(3, 4), 5);
   TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 0.927295218);
 	TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 53.13010235, Degree);
   TestEval<TComplex>(L"conj(x)", TComplex(3, 4), TComplex(3, -4));
@@ -679,16 +681,18 @@ void Test()
   Test("Round(x, 2)", 412.4572, 412.46);
   Test("Round(x, 1)", 412.4572, 412.5);
   Test("Round(x, 0)", 412.4572, 412);
-  Test("Round(x, -2)", 412.4572, 400);
+	Test("Round(x, -2)", 412.4572, 400);
   Test("Round(x, 2)", -412.4572, -412.46);
 
   //Boolean functions
   Test("not(x)", -4.567, 0);
   Test("not(x)", 0, 1);
-  Test("x=5", 5, 1);
-  Test("x=5", 3, 0);
+	Test("x=5", 5, 1);
+	Test("x=5", 3, 0);
+//	Test("((1-x)^2)^.5+((1+2)^2)^.5 = ((x+2)^2)^.5", 5, 1);
+//	Test("((1-x)^2)^.5+((1+2)^2)^.5 = ((x+2)^2)^.5", -5, 0);
 	Test("x<5", 4, 1);
-  Test("x<5", 5, 0);
+	Test("x<5", 5, 0);
 	Test("x<5", 6, 0);
   Test("x>5", 4, 0);
 	Test("x>5", 5, 0);
@@ -723,7 +727,7 @@ void Test()
   Test("if(x<3, 5, 9)", 3, 9);
   Test("if(x<3, 5, 9)", 4, 9);
   Test("range(2,x,5)", 1, 2);
-  Test("range(2,x,5)", 3, 3);
+	Test("range(2,x,5)", 3, 3);
   Test("range(2,x,5)", 6, 5);
   Test("min(8, 2, 5)", 0, 2);
 	Test("min(x,2)", 1, 1);
@@ -746,7 +750,7 @@ void Test()
 	TestError("sum(x, 3, 7)", NaN, ecArgCountError);
   TestError("product(x, 3, 7)", NaN, ecArgCountError);
 
-  //Test improved integrate
+	//Test improved integrate
 	Test("integrate(x^2,x,2,5)", NaN, 39);
   Test("integrate(dnorm(x,100,60),x,-inf,100)", 0, 0.5);
   Test("integrate(dnorm(x,100,20),x,-inf,100)", 0, 0.5);
@@ -775,7 +779,7 @@ void Test()
 //	TestError("sum(x,1,0,10)", 0, ecLiteralExpected);
 
   //Test infinity
-  Test("inf", 0, INF);
+	Test("inf", 0, INF);
 	Test("-inf", 0, -INF);
   TestEval<long double>(L"2*inf", 0, INF);
   TestEval<TComplex>(L"2*inf", 0, TComplex(INF, NaN));
@@ -797,7 +801,7 @@ void Test()
 		0, 2.4680223E+08);
 
   //Test undef
-  TestError("undef", 0, ecNotDefError);
+	TestError("undef", 0, ecNotDefError);
 	Test("if(x<5, x, undef)", 0, 0);
 	TestError("if(x<5, x, undef)", 6, ecNotDefError);
 
