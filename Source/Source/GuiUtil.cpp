@@ -14,6 +14,7 @@
 #include "PointSelect.h"
 #include <ValueEdit.hpp>
 #include <set>
+#include <algorithm>
 #pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
 #include <boost/format.hpp>
 #include <MultiMon.hpp>
@@ -253,10 +254,10 @@ std::wstring LoadRes(short Ident, std::wstring Par1, std::wstring Par2, const st
     return L"";
   }
 	if(Par1 != L"&") //An & might be found in an expression
-		Par1.erase(remove(Par1.begin(), Par1.end(), L'&'));
-  Par2.erase(remove(Par2.begin(), Par2.end(), L'&'));
+		Par1.erase(std::remove(Par1.begin(), Par1.end(), L'&'));
+	Par2.erase(std::remove(Par2.begin(), Par2.end(), L'&'));
 
-  if(!Par1.empty() && Par1[Par1.size()-1] == L':')
+	if(!Par1.empty() && Par1[Par1.size()-1] == L':')
     Par1.erase(Par1.end()-1);
 
   boost::wformat fmter(ResStr);

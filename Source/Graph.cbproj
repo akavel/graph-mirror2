@@ -69,6 +69,8 @@
 			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
 			<BCC_LoopInductionReduction>true</BCC_LoopInductionReduction>
 			<BCC_EliminateDuplicateExpressions>true</BCC_EliminateDuplicateExpressions>
 			<BCC_OptimizeJumps>true</BCC_OptimizeJumps>
@@ -76,7 +78,7 @@
 			<BCC_EliminateDeadStore>true</BCC_EliminateDeadStore>
 			<BCC_ExpandIntrinsics>true</BCC_ExpandIntrinsics>
 			<BCC_PentiumInstructionScheduling>true</BCC_PentiumInstructionScheduling>
-			<Defines>NDEBUG;$(Defines)</Defines>
+			<Defines>NDEBUG;_HAS_TRADITIONAL_ITERATORS=1;$(Defines)</Defines>
 			<IntermediateOutputDir>Release</IntermediateOutputDir>
 			<ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;..\Func32\Release;..\Libraries\gsl\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<TASM_Debugging>None</TASM_Debugging>
