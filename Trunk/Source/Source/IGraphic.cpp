@@ -303,7 +303,7 @@ struct TCompPoint
 void CreateCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint> &P)
 {
 	std::vector<TPoint> P2 = P;
-	sort(P2.begin(), P2.end(), TCompPoint());
+	std::sort(P2.begin(), P2.end(), TCompPoint());
 	for(unsigned I = P2.size()-1; I > 1; I--)
 		if(P2[I-1].X == P2[I].X) //Two points with same x-coordinate is not allowed
 			P2.erase(P2.begin() + I);
