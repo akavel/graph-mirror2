@@ -2,6 +2,7 @@
 
   <xsl:import href="./db_htmlhelp.xsl"/>
   <xsl:import href="./defaults.xsl"/>
+  <xsl:import href="./html.xsl"/>
 
   <xsl:param name="suppress.navigation" select="0"/>
   <xsl:param name="toc.section.depth" select="4"/>
@@ -28,17 +29,5 @@
   <xsl:param name="ignore.image.scaling" select="1"/>
   <xsl:param name="generate.index" select="1" />
   <xsl:param name="preferred.mediaobject.role">htmlhelp</xsl:param>
-
-  <xsl:template match="markup[@role = 'fo']" />
-
-  <!-- Show "Translator:" followed by the list of translators, one on each line -->
-  <xsl:template match="othercredit" mode="titlepage.mode">
-    <xsl:variable name="contrib" select="string(contrib)"/>
-    <xsl:if test="not(preceding-sibling::othercredit[string(contrib)=$contrib])">
-      <xsl:apply-templates mode="titlepage.mode" select="contrib"/>
-      <br/>
-    </xsl:if>
-    <xsl:call-template name="person.name"/>
-  </xsl:template>
 
 </xsl:stylesheet>
