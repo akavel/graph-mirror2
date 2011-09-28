@@ -190,5 +190,38 @@
     <xsl:call-template name="person.name"/>
   </xsl:template>
 
+  <!-- Copied from fo\lists.xsl in DocBook and changed to not show comma before "and" -->
+  <xsl:template match="simplelist[@type='inline']">
+    <!-- if dbchoice PI exists, use that to determine the choice separator -->
+    <!-- (that is, equivalent of "and" or "or" in current locale), or literal -->
+    <!-- value of "choice" otherwise -->
+    <fo:inline><xsl:variable name="localized-choice-separator">
+      <xsl:choose>
+        <xsl:when test="processing-instruction('dbchoice')">
+          <xsl:call-template name="select.choice.separator"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <!-- empty -->
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:for-each select="member">
+      <xsl:apply-templates/>
+      <xsl:choose>
+        <xsl:when test="position() &lt; last() - 1">
+          <xsl:text>, </xsl:text>
+        </xsl:when>
+      </xsl:choose>
+      <xsl:if test="position() = last() - 1">
+        <xsl:if test="$localized-choice-separator != ''">
+          <xsl:text> </xsl:text>
+          <xsl:value-of select="$localized-choice-separator"/>
+          <xsl:text> </xsl:text>
+        </xsl:if>
+      </xsl:if>
+    </xsl:for-each></fo:inline>
+  </xsl:template>
+
 </xsl:stylesheet>
 
