@@ -9,9 +9,13 @@
 #include "Func32.h"
 #include "Func32Impl.h"
 #pragma hdrstop
+#pragma warn -8072
 #include <cmath>
 #include <limits>
 #include <boost\math\special_functions\fpclassify.hpp>
+#include <boost/math/complex/asin.hpp>
+#include <boost/math/complex/acos.hpp>
+#include <boost/math/complex/atan.hpp>
 #include <gsl/gsl_integration.h>
 #include <gsl/gsl_errno.h>
 #include <boost/tr1/complex.hpp>
@@ -103,7 +107,7 @@ inline T acosh(T x)
 //---------------------------------------------------------------------------
 //Returns the inverse hyperbolic tangent to x
 template<typename T>
-inline T atanh(T x)
+T atanh(T x)
 {
 	if(x != 1.0L)
 	{
@@ -113,42 +117,25 @@ inline T atanh(T x)
 	return std::numeric_limits<long double>::quiet_NaN();
 }
 //---------------------------------------------------------------------------
-inline TComplex atanh(const TComplex &x)
-{
-	if(x != 1.0L)
-	{
-		TComplex Result = log((1.0L + x) / (1.0L - x));
-		return Result * 0.5L;
-	}
-	TComplex R = std::numeric_limits<long double>::quiet_NaN();
-	return R;
-}
-//---------------------------------------------------------------------------
 //Returns the inverse sine to x
 template<typename T>
 inline std::complex<T> asin(const std::complex<T> &C)
 {
-	if(!imag(C))
-		return std::asin(real(C));
-	return std::numeric_limits<long double>::quiet_NaN();
+	return boost::math::asin<double>(C);
 }
 //---------------------------------------------------------------------------
 //Returns the inverse cosine to x
 template<typename T>
 inline std::complex<T> acos(const std::complex<T> &C)
 {
-	if(!imag(C))
-		return std::acos(real(C));
-	return std::numeric_limits<long double>::quiet_NaN();
+	return boost::math::acos<double>(C);
 }
 //---------------------------------------------------------------------------
 //Returns the inverse tangent to x
 template<typename T>
 inline std::complex<T> atan(const std::complex<T> &C)
 {
-  if(!imag(C))
-    return std::atan(real(C));
-	return std::numeric_limits<long double>::quiet_NaN();
+	return boost::math::atan<double>(C);
 }
 //---------------------------------------------------------------------------
 //Returns x without the decimals
@@ -215,7 +202,7 @@ template<typename T>
 inline T Round(const T &Number, int Decimals)
 {
   T DecMul = pow(10.0, Decimals);
-  return Trunc(Number * DecMul + (Number < 0 ? -0.5L : 0.5L)) / DecMul;
+	return Trunc(Number * DecMul + (Number < 0 ? -0.5L : 0.5L)) / DecMul;
 }
 //---------------------------------------------------------------------------
 //Rounds Number to the given number of decimals
@@ -244,7 +231,7 @@ long double Fact(unsigned x)
   {
     List.reserve(101);
     List.push_back(1); //Fact(0) = 1
-    for(unsigned I = 1; I <= 100; I++)
+		for(unsigned I = 1; I <= 100; I++)
       List.push_back(List.back() * I);
   }
 
@@ -273,7 +260,7 @@ T Gamma(const T &z)
   long double q[N] = {75122.6331530, 80916.6278952, 36308.2951477, 8687.24529705, 1168.92649479, 83.8676043424,	2.50662827511};
   T Sum = 0;
   for(int n = 0; n < N; n++)
-    Sum += q[n]*pow(z, n);
+		Sum += q[n]*pow(z, n);
 
   T Product = 1;
   for(unsigned n = 0; n < N; n++)
@@ -293,14 +280,6 @@ T Gamma(const T &z)
 template<typename T>
 T Omega(T z, TErrorCode &ErrorCode)
 {
-/*
-  const long double Limit = -1/EULER - LDBL_EPSILON;
-  if(!TComplexTrait<T>::HasImagUnit && real(z) < Limit)
-  {
-    ErrorCode = ecComplexError; //Not defined for z<-1/e when we are not using complex numbers
-    return -1;
-	}
-*/
 	const double eps = 0.00001; //Accuracy
 	T p, w;
 	if(!z)
@@ -360,7 +339,7 @@ T Zeta(T s, TErrorCode &ErrorCode)
 {
   if(real(s) == 1)
   {
-    ErrorCode = ecNotDefError;
+		ErrorCode = ecNotDefError;
     return 0;
   }
 
@@ -389,7 +368,7 @@ bool Compare(const T &t1, const T &t2, TCompareMethod Compare, TErrorCode &Error
 {
   if(Compare != cmEqual && Compare != cmNotEqual)
     if(imag(t1) || imag(t2))
-      ErrorCode = ecComplexError;
+			ErrorCode = ecComplexError;
   switch(Compare)
   {
     case cmEqual:         return t1 == t2;
@@ -476,7 +455,7 @@ inline std::complex<T> PowDiv(const std::complex<T> &a, const std::complex<T> &b
 
 template<typename T> struct TComplexTrait
 {
-  static const bool HasImagUnit = false;
+	static const bool HasImagUnit = false;
   static const T ImagUnit() {return 0;}
 };
 template<typename T> struct TComplexTrait<std::complex<T> >
@@ -505,7 +484,7 @@ T TFuncData::CalcF(TDynData<T> &DynData) const
       DynData.ErrorCode = ecNoFunc;
       return 0;
     }
-    DynData.ErrorCode = ecNoError;
+		DynData.ErrorCode = ecNoError;
     return CalcFunc(Data.begin(), DynData);
   }
   catch(...)
@@ -534,7 +513,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
 
     case CodeArgument:
       BOOST_ASSERT(DynData.Args);
-      return DynData.Args[Elem.Arguments];
+			return DynData.Args[Elem.Arguments];
 
     case CodePi:
       return PI;
@@ -563,7 +542,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodeConst:
       return *boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
 
-    case CodeIntegrate:
+		case CodeIntegrate:
     {
 			//Check for backward compatibility
 			long double *Constant = Elem.Value.empty() ? NULL :
@@ -592,7 +571,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         ErrorCode = ecComplexError;
         return 0;
       }
-      T Sum = Elem.Ident == CodeSum ? 0 : 1;
+			T Sum = Elem.Ident == CodeSum ? 0 : 1;
       for(long double i = real(Min); i <= real(Max); i++)
       {
         *Variable = i;
@@ -621,7 +600,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       }
 
       boost::shared_ptr<TBaseCustomFunc> Func = boost::any_cast<boost::shared_ptr<TBaseCustomFunc> >(Elem.Value);
-      if(Func)
+			if(Func)
       {
         const T *OldArgs = DynData.Args;
         DynData.Args = Values.empty() ? NULL : &Values[0];
@@ -650,7 +629,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       if(!!Temp && ErrorCode == ecNoError)
         return 1;
       ErrorCode = ecNoError;
-      return 0;
+			return 0;
     }
   }
 
@@ -679,7 +658,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       if(!ErrorCode)
         ErrorCode = ecDivByZero;
       return 0;
-    }
+		}
 
     case CodePow:
     {
@@ -708,7 +687,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodePowDiv:
     {  //Temp^(Temp2/Temp3)
       T Temp2 = CalcF(Iter, DynData);
-      T Temp3 = CalcF(Iter, DynData);
+			T Temp3 = CalcF(Iter, DynData);
       if(!Temp3)  //Cannot raise to root 0
       {
         ErrorCode = ecDivByZero;
@@ -737,7 +716,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     {
       T Temp2 = CalcF(Iter, DynData);
       if(imag(Temp2))
-      {
+			{
         ErrorCode = ecComplexError;
         return std::numeric_limits<long double>::quiet_NaN();
       }
@@ -766,7 +745,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
 				ErrorCode = ecTotalLoss; //We should also check the value of errno
       return Temp;
 
-    case CodeASin:
+		case CodeASin:
     case CodeACos:
     case CodeATan:
     case CodeArg:
@@ -853,7 +832,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         ErrorCode = ecNotDefError;
       return real(Temp) < 0 ? 0 : 1;
 
-    case CodeSinh:
+		case CodeSinh:
       if(real(Temp) < -8191) //BCC 5.6.4 has an error. It returns a positive number for sinh(x) when x < -8191
         ErrorCode = ecHugeValReturned;
       Temp = sinh(Temp);
@@ -875,14 +854,14 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         ErrorCode = ecACoshError;
       return Temp;
 
-    case CodeATanh:
-			Temp = atanh(Temp);
+		case CodeATanh:
+			Temp = atanh<T>(Temp);
 			if(!IsFinite(Temp))
 				ErrorCode = ecATanhError;
       return Temp;
 
     case CodeAbs:   return abs(Temp);
-    case CodeConj:  return Conj(Temp);
+		case CodeConj:  return Conj(Temp);
     case CodeRe:    return real(Temp);
     case CodeIm:    return imag(Temp);
     case CodeTrunc: return Trunc(Temp);
@@ -911,7 +890,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodeCompare2:
     {
       T Temp2 = CalcF(Iter, DynData);
-      T Temp3 = CalcF(Iter, DynData);
+			T Temp3 = CalcF(Iter, DynData);
       std::pair<TCompareMethod,TCompareMethod> Comp = boost::any_cast<std::pair<TCompareMethod,TCompareMethod> >(Elem.Value);
       return Compare(Temp, Temp2, Comp.first, ErrorCode) && Compare(Temp2, Temp3, Comp.second, ErrorCode);
     }
@@ -969,7 +948,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodeIfSeq:
       for(unsigned I = 1; I < Elem.Arguments; I += 2)
       {
-        if(!!Temp)
+				if(!!Temp)
         {
           Temp = CalcF(Iter, DynData);
           while(++I < Elem.Arguments)
@@ -998,7 +977,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
           return 0;
         Temp3 = CalcF(Iter, DynData);
       }
-      if(!ErrorCode && (imag(Temp) || imag(Temp2) || imag(Temp3)))
+			if(!ErrorCode && (imag(Temp) || imag(Temp2) || imag(Temp3)))
 				ErrorCode = ecComplexError;
       if(!ErrorCode && real(Temp3) <= 0)
         ErrorCode = ecNotDefError;

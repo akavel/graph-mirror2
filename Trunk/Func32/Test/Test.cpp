@@ -31,6 +31,12 @@ int _RTLENTRY _EXPFUNC std::iswspace(wchar_t c)
 {
 	return c == L' ' || c == L'\t' || c == L'\r' || c == L'\n';
 }
+
+int _RTLENTRY _EXPFUNC std::iswdigit(wint_t c)
+{
+	return c >= L'0' && c <= L'9';
+}
+
 #endif
 //---------------------------------------------------------------------------
 long double StrToDouble(const char *Str)
@@ -233,7 +239,7 @@ void TestCustomTrendLine(const std::wstring &Model, const std::vector<TDblPoint>
     {
       wcerr << "-- Custom trendline --" << endl;
 			wcerr << "Model:              f(x)=" << Model << std::endl;
-      wcerr << "Expected trendline: f(x)=" << Str << std::endl;
+			wcerr << "Expected trendline: f(x)=" << Str << std::endl;
 			wcerr << "Evaluated to:       f(x)=" << Str2 << std::endl << std::endl;
 		}
 	}
@@ -261,7 +267,7 @@ void TestTrendLineError(Func32::TTrendType Type, const TDblPoint *Points, unsign
 		{
       cerr << "-- Trendline --" << endl;
       cerr << "Error code:     " << E.ErrorCode << endl << endl;
-    }
+		}
 	}
 }
 //---------------------------------------------------------------------------
@@ -373,7 +379,7 @@ void TestCustom(const std::wstring &Str, const TArgType &Args, const std::vector
     Func32::TCustomFunc Func(Str, Args);
 		TComplex FuncResult = Func.Calc(Values);
     if(!IsEqual(Result, FuncResult))
-    {
+		{
 			wcerr << "Function:     " << Str << std::endl;
 			for(unsigned I = 0; I < Values.size(); I++)
         wcerr << Args[I] << ":            " << setprecision(10) << Values[I] << std::endl;
@@ -513,7 +519,7 @@ void Test()
 	Test("e", 0, EULER);
   Test("pi", 0, PI);
   TestErrorEval<long double>(L"i", 0, ecComplexError);
-  TestEval<TComplex>(L"i", 0, TComplex(0, 1));
+	TestEval<TComplex>(L"i", 0, TComplex(0, 1));
   TestErrorEval(L"undef", 0, ecNotDefError);
 
 	//Test functions with arguments
@@ -541,7 +547,7 @@ void Test()
   TestError("rand(2)", 0, ecParAfterConst);
   Test("x 5.4", 3, 16.2);     //Should this be allowed?
 	Test("--x", 5, 5);
-  Test("-x", 5, -5);
+	Test("-x", 5, -5);
   Test("-5", NaN, -5);
 	Test("++x", 5, 5);
 	Test("+x", 5, 5);
@@ -597,18 +603,32 @@ void Test()
   Test("csc(x)", PI/2, 1);
   Test("csc(x)", 90, 1, Degree);
   Test("cot(x)", PI/4, 1);
-  Test("cot(x)", 45, 1, Degree);
+	Test("cot(x)", 45, 1, Degree);
 
   //Test inverse trigonometry functions
-  Test("asin(x)", 1, PI/2);
-  Test("asin(x)", 1, 90, Degree);
-  Test("acos(x)", 0, PI/2);
+	Test("asin(x)", 1, PI/2);
+	Test("asin(x)", 1, 90, Degree);
+	Test("asin(x)", 0.4, 0.41151684606748801938473789761734);
+	Test("asin(x)", 0.5, PI/6);
+	TestEval<TComplex>(L"asin(x)", 1.5, TComplex(1.570796327, 0.9624236501)); //sign on imag can be both positive and negative
+	TestErrorEval<long double>(L"asin(x)", 1.5, ecArcError);  
+	TestEval<TComplex>(L"asin(x)", TComplex(2.5, 1), TComplex(1.16462351, 1.658693299));
+	
+	Test("acos(x)", 0, PI/2);
 	Test("acos(x)", 0, 90, Degree);
-  Test("atan(x)", 1, PI/4);
+	Test("acos(x)", 0.4, 1.1592794807274085998465837940224);
+	TestEval<TComplex>(L"acos(x)", 1.5, TComplex(0, 0.9624236501));
+	TestErrorEval<long double>(L"acos(x)", 1.5, ecArcError);
+	TestEval<TComplex>(L"acos(x)", TComplex(2.5, 1), TComplex(0.4061728165, -1.658693299));
+	
+	Test("atan(x)", 1, PI/4);
+	Test("atan(x)", 0, 0);
 	Test("atan(x)", 1, 45, Degree);
-  Test("asec(x)", -1, PI);
+	TestEval<TComplex>(L"atan(x)", TComplex(2.5, 1), TComplex(1.233425856, 0.1236740605));
+	
+	Test("asec(x)", -1, PI);
 	Test("asec(x)", -1, 180, Degree);
-  Test("acsc(x)", 1, PI/2);
+	Test("acsc(x)", 1, PI/2);
 	Test("acsc(x)", 1, 90, Degree);
 	Test("acot(x)", 1, PI/4);
 	Test("acot(x)", 1, 45, Degree);
@@ -648,25 +668,29 @@ void Test()
   //Test hyperbolic functions
   Test("sinh(x)", 5, 74.20321058);
   Test("cosh(x)", 5, 74.20994852);
-  Test("tanh(x)", 5, 0.999909204);
-  Test("asinh(x)", 5, 2.31243834);
+	Test("tanh(x)", 5, 0.999909204);
+	
+	Test("asinh(x)", 5, 2.31243834);
+	Test("asinh(x)", 0, 0);
+	TestEval<TComplex>(L"asinh(x)", TComplex(1.5, 0.7), TComplex(1.256224291, 0.3776375126));
 
 	Test("acosh(x)", 5, 2.29243167);
 	Test("acosh(x)", 1, 0);
-  TestEval<TComplex>(L"acosh(x)", -1, TComplex(0, PI));
-  TestErrorEval<long double>(L"acosh(x)", -1, ecACoshError);
+	TestEval<TComplex>(L"acosh(x)", -1, TComplex(0, PI));
+	TestEval<TComplex>(L"acosh(x)", TComplex(1.5, 1), TComplex(1.260475188, 0.6644205508));
+	TestErrorEval<long double>(L"acosh(x)", -1, ecACoshError);
 
 	Test("atanh(x)", 0.5, 0.54930614);
 	Test("atanh(x)", 0, 0);                         
 	TestError("atanh(x)", 1, ecATanhError);
 	TestError("atanh(x)", -1, ecATanhError);
-	TestEval<TComplex>(L"atanh(x)", TComplex(2.5, 1), TComplex(0.351336, 1.41594));
+	TestEval<TComplex>(L"atanh(x)", TComplex(2.5, 1), TComplex(0.351335639, 1.415944855));
 
 	Test("abs(x)", -4.67, 4.67);
 	TestEval<TComplex>(L"abs(x)", TComplex(3, 4), 5);
-  TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 0.927295218);
+	TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 0.927295218);
 	TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 53.13010235, Degree);
-  TestEval<TComplex>(L"conj(x)", TComplex(3, 4), TComplex(3, -4));
+	TestEval<TComplex>(L"conj(x)", TComplex(3, 4), TComplex(3, -4));
   TestEval<TComplex>(L"re(x)", TComplex(3, 4), 3);
   TestEval<TComplex>(L"im(x)", TComplex(3, 4), 4);
   Test("re(x)", 3, 3);
@@ -830,7 +854,8 @@ void Test()
 	Test("W(x)", M_E, 1);
 
 	//Test handling of other symbols
-	Test(L"80 − 2*x", 5, 70); //Test Minus sign (0x2212)
+	Test(L"80 \x2212 2*x", 5, 70); //Test Minus sign (0x2212)
+	Test(L"\x2212 5x", 2, -10); //Test Minus sign (0x2212)
 	TestError("?2", 0, ecUnknownChar);
 	TestError("x+?", 0, ecUnknownChar);
 	TestError("x+sin ¤", 0, ecUnknownChar);
