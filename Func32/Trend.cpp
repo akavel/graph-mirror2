@@ -12,7 +12,7 @@
 #include <cmath>
 #include <limits>
 #include "Matrix.h"
-#include <boost\math\special_functions\fpclassify.hpp>
+#include <boost/math/special_functions/fpclassify.hpp>
 #include <limits>
 
 namespace Func32

@@ -14,8 +14,8 @@
 #include "Func32.h"
 #include "Func32Impl.h"
 #pragma hdrstop
-#include <boost/spirit/phoenix/operators.hpp>
-#include <boost/spirit/phoenix/primitives.hpp>
+#include <boost/spirit/include/phoenix1_operators.hpp>
+#include <boost/spirit/include/phoenix1_primitives.hpp>
 #include <boost/function.hpp>
 #include <limits>
 //---------------------------------------------------------------------------

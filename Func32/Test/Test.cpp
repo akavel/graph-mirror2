@@ -8,13 +8,15 @@
 #include <limits>
 #include <cmath>
 #include <fstream>
-#include <boost\math\special_functions\fpclassify.hpp>
+#include <boost/math/special_functions/fpclassify.hpp>
+#include <math.h>
 //---------------------------------------------------------------------------
 using namespace Func32;
 using namespace std;
 
 #define EULER 2.718281828459045235360287
 #define PI    3.141592653589793238462643
+#define SQRT_2    0.707106781186547524401
 
 #define SQRT2 1.41421356237
 #define DEFAULT_FPU_CONTROL EM_INVALID | EM_DENORMAL | EM_OVERFLOW | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64
@@ -220,8 +222,9 @@ void TestTrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &P, con
 	}
 	catch(EFuncError &E)
 	{
-		cerr << "-- Trendline --" << endl;
-		cerr << "Error code:     " << E.ErrorCode << std::endl << std::endl;
+		wcerr << "-- Trendline --" << endl;
+		wcerr << "Expected trendline: f(x)=" << Str << std::endl;
+		wcerr << "Error code:     " << E.ErrorCode << std::endl << std::endl;
 	}
 }
 //---------------------------------------------------------------------------
@@ -384,7 +387,7 @@ void TestCustom(const std::wstring &Str, const TArgType &Args, const std::vector
 			for(unsigned I = 0; I < Values.size(); I++)
         wcerr << Args[I] << ":            " << setprecision(10) << Values[I] << std::endl;
 			wcerr << "Evaluated to: " << setprecision(10) << FuncResult << std::endl;
-      wcerr << "Expected:     " << setprecision(10) << Result << std::endl << std::endl;
+			wcerr << "Expected:     " << setprecision(10) << Result << std::endl << std::endl;
     }
 	}
 	catch(EFuncError &E)
@@ -471,7 +474,7 @@ void TestParamFunc(const std::wstring &xText, const std::wstring &yText)
 		TParamFunc Func;
 		Func.SetFunc(xText, yText);
 	}
-	catch(EFuncError &E)                      
+	catch(EFuncError &E)
 	{
 	}
 }
@@ -509,8 +512,8 @@ void Test()
   TestError("E", 0, ecUnknownVar);
   TestEval<TComplex>(L"i*i", 0, -1);
 	TestErrorEval<long double>(L"i*i", 0, ecComplexError);
-	Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4
-	Test("1E4000", 1, StrToDouble("1E4000")); //2E400 doesn't work directly with BCC 5.6.4
+	Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4; Fails under Cygwin
+	Test("1E4000", 1, StrToDouble("1E4000")); //2E4000 doesn't work directly with BCC 5.6.4; Fails under Cygwin
 	TestError("1E5000", 1, ecInvalidNumber); //Number too large
   TestError("1.2.3", 0, ecInvalidNumber);
 	TestError("5.", 0, ecInvalidNumber);
@@ -524,7 +527,7 @@ void Test()
 
 	//Test functions with arguments
   TestError("round x", 1.2345, ecArgCountError);
-  TestError("round(x)", 1.2345, ecArgCountError);
+	TestError("round(x)", 1.2345, ecArgCountError);
 	Test("round(x, 0)", 1.2345, 1);
 
 	//Implied multiplication
@@ -658,7 +661,7 @@ void Test()
 	Test("sign(x)", 7.98, 1);
   Test("sign(x)", -7.98, -1);
 	Test("sign(x)", 0, 0);
-  TestEval<TComplex>(L"sign(x)", TComplex(5, 5), TComplex(M_SQRT_2, M_SQRT_2));
+  TestEval<TComplex>(L"sign(x)", TComplex(5, 5), TComplex(SQRT_2, SQRT_2));
 	TestEval<TComplex>(L"sign(x)", TComplex(4, -3), TComplex(4.0/5, -3.0/5));
 
   Test("u(x)", 7.98, 1);
@@ -892,7 +895,7 @@ void Test()
 	TDblPoint Points1[] = {TDblPoint(1950,1571), TDblPoint(1970,524), TDblPoint(1980, 208), TDblPoint(2003, 29)};
 	std::vector<double> Empty;
 	std::vector<TDblPoint> Points(Points1, Points1 + 4);
-	TestTrendLine(ttPower, Points, Empty, 0, NaN, L"7.23106321804096256E+498*x^(-150.630652337941856)");
+	TestTrendLine(ttPower, Points, Empty, 0, NaN, L"7.23106321804096256E+498*x^(-150.630652337941856)"); //Fails under Cygwin
 
   //Test sample trendline
   TDblPoint P1[] = {TDblPoint(0,0.1), TDblPoint(1,0.9), TDblPoint(2,1.9), TDblPoint(3,2.7), TDblPoint(4,4.7)};
@@ -1018,11 +1021,11 @@ void Test()
 std::wstringstream DebugStreamBuf;
 int main()
 {
+#ifdef __BORLANDC__
 	_control87(DEFAULT_FPU_CONTROL, FPU_MASK);
+#endif
 	std::wclog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
-//	std::ofstream DebugLog("Test.log");
 	std::basic_streambuf<char> *OldBuf = std::clog.rdbuf();
-//	std::clog.rdbuf(DebugLog.rdbuf());
 	try
 	{
 		Test();
