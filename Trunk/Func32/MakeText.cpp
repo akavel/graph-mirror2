@@ -11,7 +11,7 @@
 #pragma hdrstop
 //#include <cstdio>
 #include <iomanip>
-#include <boost\math\special_functions\fpclassify.hpp>
+#include <boost/math/special_functions/fpclassify.hpp>
 //---------------------------------------------------------------------------
 namespace Func32
 {

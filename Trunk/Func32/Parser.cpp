@@ -25,15 +25,15 @@
 
 #pragma option -vi- //Disable inline expansion to fix several compiler bugs in BCC 5.6.4
 
-#include "boost/spirit/core.hpp"
-#include "boost/spirit/symbols/symbols.hpp"
-#include "boost/spirit/utility/chset.hpp"
-#include "boost/spirit/error_handling/exceptions.hpp"
-#include <boost/spirit/attribute.hpp>
+#include <boost/spirit/include/classic_core.hpp>
+#include <boost/spirit/include/classic_symbols.hpp>
+#include <boost/spirit/include/classic_chset.hpp>
+#include <boost/spirit/include/classic_exceptions.hpp>
+#include <boost/spirit/include/classic_attribute.hpp>
 #include <boost/bind.hpp>
-#include <boost/spirit/utility/distinct.hpp>
-#include <boost/spirit/utility/confix.hpp>
-#include <boost\math\special_functions\fpclassify.hpp>
+#include <boost/spirit/include/classic_distinct.hpp>
+#include <boost/spirit/include/classic_confix.hpp>
+#include <boost/math/special_functions/fpclassify.hpp>
 //---------------------------------------------------------------------------
 #ifdef _DEBUG
 std::ostream& operator<<(std::ostream& Stream, const std::deque<Func32::TElem> &D)
@@ -48,7 +48,7 @@ std::ostream& operator<<(std::ostream& Stream, const std::deque<Func32::TElem> &
 //---------------------------------------------------------------------------
 namespace Func32
 {
-using namespace boost::spirit;
+using namespace boost::spirit::classic;
 using namespace phoenix;
 
 typedef symbols<TElem, wchar_t> TSymbols;
@@ -126,7 +126,7 @@ struct TUserSymbols : symbols<std::wstring>
 	}
 };
 //---------------------------------------------------------------------------
-struct TContext : boost::spirit::closure<TContext, std::deque<TElem>, unsigned, symbols<TElem, wchar_t>, wchar_t>
+struct TContext : boost::spirit::classic::closure<TContext, std::deque<TElem>, unsigned, symbols<TElem, wchar_t>, wchar_t>
 {
 	member1 List;
 	member2 Arg;
@@ -134,7 +134,7 @@ struct TContext : boost::spirit::closure<TContext, std::deque<TElem>, unsigned, 
 	member4 EndBracket;
 };
 //---------------------------------------------------------------------------
-struct TContext2 : boost::spirit::closure<TContext2, wchar_t>
+struct TContext2 : boost::spirit::classic::closure<TContext2, wchar_t>
 {
 	member1 EndBracket;
 };

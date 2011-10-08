@@ -12,7 +12,7 @@
 #pragma warn -8072
 #include <cmath>
 #include <limits>
-#include <boost\math\special_functions\fpclassify.hpp>
+#include <boost/math/special_functions/fpclassify.hpp>
 #include <boost/math/complex/asin.hpp>
 #include <boost/math/complex/acos.hpp>
 #include <boost/math/complex/atan.hpp>
@@ -121,21 +121,21 @@ T atanh(T x)
 template<typename T>
 inline std::complex<T> asin(const std::complex<T> &C)
 {
-	return boost::math::asin<double>(C);
+	return boost::math::asin(std::complex<double>(C));
 }
 //---------------------------------------------------------------------------
 //Returns the inverse cosine to x
 template<typename T>
 inline std::complex<T> acos(const std::complex<T> &C)
 {
-	return boost::math::acos<double>(C);
+	return boost::math::acos(std::complex<double>(C));
 }
 //---------------------------------------------------------------------------
 //Returns the inverse tangent to x
 template<typename T>
 inline std::complex<T> atan(const std::complex<T> &C)
 {
-	return boost::math::atan<double>(C);
+	return boost::math::atan(std::complex<double>(C));
 }
 //---------------------------------------------------------------------------
 //Returns x without the decimals
@@ -416,16 +416,14 @@ template<typename T>
 std::complex<T> Pow(const std::complex<T> &a, const std::complex<T> &b)
 {
   if(!b) //Define: 0^0 = 1
-    return 1;
+		return 1;
 
-  //pow(0, n) is undefined if n has an imaginary part or is real and less than 0
-  if(!a && !imag(b) && real(b) > 0)
-    return 0; //pow(0,b) seems to give problems with complex numbers
+	//pow(0, n) is undefined if n has an imaginary part or is real and less than 0
+	if(!a && !imag(b) && real(b) > 0)
+		return 0; //pow(0,b) seems to give problems with complex numbers
 
-  if(!a && real(b) < 0) //pow(complex(0), complex(-2.8,0)) crashed with bcc 6.13 (C++ Builder 2009)
-  {
+	if(!a && real(b) < 0 || imag(b)) //pow(complex(0), complex(-2.8,0)) crashed with bcc 6.13 (C++ Builder 2009)
 		return std::numeric_limits<long double>::quiet_NaN();
-  }
 
   //Calculations with complex numbers may return a complex number if Temp<0,
   //e.g. (-2)^2 = 4+i4.3368E-19; Because of this

@@ -632,22 +632,22 @@ public:
   TSymbolList operator-(const TSymbolList &SymbolList) const {return TSymbolList(*this) -= SymbolList;}
 };
 //---------------------------------------------------------------------------
-template<typename T>
-inline TCoord<long double> GetReal(const TCoord<T> &Coord)
-{
-  return TCoord<long double>(GetReal(Coord.x), GetReal(Coord.y));
-}
-//---------------------------------------------------------------------------
 inline long double GetReal(TComplex Number)
 {
-  if(imag(Number))
-    throw ECalcError(ecComplexError);
-  return std::real(Number);
+	if(imag(Number))
+		throw ECalcError(ecComplexError);
+	return Number.real();
 }
 //---------------------------------------------------------------------------
 inline long double GetReal(long double Number)
 {
-  return Number;
+	return Number;
+}
+//---------------------------------------------------------------------------
+template<typename T>
+inline TCoord<long double> GetReal(const TCoord<T> &Coord)
+{
+  return TCoord<long double>(GetReal(Coord.x), GetReal(Coord.y));
 }
 //---------------------------------------------------------------------------
 typedef TCoord<double> TDblPoint;
