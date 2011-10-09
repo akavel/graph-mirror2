@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.3 (384)\n"
 "POT-Creation-Date: 2011-09-21 23:00\n"
-"PO-Revision-Date: 2011-07-25 19:53+0100\n"
+"PO-Revision-Date: 2011-10-09 18:01+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: SWEDISH <par.smars@bredband.net>\n"
 "MIME-Version: 1.0\n"
@@ -3213,9 +3213,8 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Graph-filer [*.grf]|*.grf|Alla filer [*.*]|*.*"
 
 #. Import from file dialog
-#, fuzzy
 msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
-msgstr "CSV (semikolonavskilt) [*.csv]|*.csv|CSV (kommaavskilt) [*.csv]|*.csv|Text (tabulatoravskilt) [*.txt]|*.txt|Text (mellanrumsavskilt)|*.txt|Alla filer [*.*]|*.*"
+msgstr "CSV (semikolonavskilt) [*.csv]|*.csv|CSV (kommaavskilt) [*.csv]|*.csv|Text (tabulatoravskilt) [*.txt]|*.txt|Text (mellanrumsavskilt) [*.txt]|*.txt|Alla filer [*.*]|*.*"
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "Är du säker på att du vill radera modellen: %s?"
@@ -3663,9 +3662,8 @@ msgstr "Det har inte valts en standardskrivare."
 msgid "Install for all users"
 msgstr "Installera för alla användare"
 
-#, fuzzy
 msgid "Examples"
-msgstr "Prov"
+msgstr "Exempel"
 
 msgid "Local"
 msgstr "Lokal"
@@ -3757,207 +3755,143 @@ msgstr "Välj procent av originalstorlek."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Area"
-
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Använder Simpsons formel för att beräkna area eller längd på kurvan för angivet område."
-
 #~ msgid "Extremum"
 #~ msgstr "Extremvärde"
-
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Detta är funktionens andraderivata utvärderad för inmatat värde."
-
 #~ msgid "Zoom in."
 #~ msgstr "Zooma in."
-
 #~ msgid "Zoom out."
 #~ msgstr "Zooma ut."
-
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Zooma till standardkoordinater."
-
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Beräknar arean under grafen till den valda funktionen."
-
 #~ msgid "Go to home page"
 #~ msgstr "Gå till hemsidan"
-
 #~ msgid "About Graph..."
 #~ msgstr "Om Graph..."
-
 #~ msgid "All points"
 #~ msgstr "Alla punkter"
-
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zooma så mycket att alla punkter är synliga."
-
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoomar in enbart x-axeln."
-
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoomar ut enbart x-axeln."
-
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoomar in enbart y-axeln."
-
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoomar ut enbart y-axeln."
-
 #~ msgid "Custom functions..."
 #~ msgstr "Skapa funktioner..."
-
 #~ msgid "Mark end of range"
 #~ msgstr "Markera områdesslut"
-
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Markera startpunkt för skuggning med en linje."
-
 #~ msgid "Mark start of range"
 #~ msgstr "Markera områdesstart"
-
 #~ msgid "Image information"
 #~ msgstr "Bildinformation"
-
 #~ msgid "Open the file %s."
 #~ msgstr "Öppna filen %s."
-
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Textfiler [*.txt; *.csv]|*.txt;*.csv|Alla filer [*.*]|*.*"
-
 #~ msgid "Calculate area"
 #~ msgstr "Beräkna area"
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Servern svarade med meddelandet '%s'"
-
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Fel i svar från nätverksprotokoll %s"
-
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Du kan sända förslag på förbättringar för framtida versioner, felrapporter och kommentarer till graph@padowan.dk."
-
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Välj för att placera bilden mitt på sidan."
 
 # Funktion-menyn
 #~ msgid "Insert shade..."
 #~ msgstr "Skuggning..."
-
 #~ msgid "Shade"
 #~ msgstr "Skuggning"
-
 #~ msgid "Black"
 #~ msgstr "Svart"
-
 #~ msgid "Maroon"
 #~ msgstr "Rödbrun"
-
 #~ msgid "Green"
 #~ msgstr "Grön"
-
 #~ msgid "Olive"
 #~ msgstr "Olivfärgad"
-
 #~ msgid "Navy"
 #~ msgstr "Marinblå"
-
 #~ msgid "Purple"
 #~ msgstr "Mörklila"
-
 #~ msgid "Gray"
 #~ msgstr "Grå"
-
 #~ msgid "Silver"
 #~ msgstr "Silver"
-
 #~ msgid "Red"
 #~ msgstr "Röd"
-
 #~ msgid "Lime"
 #~ msgstr "Limegrön"
-
 #~ msgid "Yellow"
 #~ msgstr "Gul"
-
 #~ msgid "Blue"
 #~ msgstr "Blå"
-
 #~ msgid "Fuchsia"
 #~ msgstr "Cerise"
-
 #~ msgid "Aqua"
 #~ msgstr "Akvamarin"
-
 #~ msgid "White"
 #~ msgstr "Vit"
-
 #~ msgid "Money Green"
 #~ msgstr "Mintgrön"
-
 #~ msgid "Sky Blue"
 #~ msgstr "Himmelsblå"
-
 #~ msgid "Med Gray"
 #~ msgstr "Medelgrå"
-
 #~ msgid "Insert a text label (select and click in the main window where you want the label)."
 #~ msgstr "Lägg till textetikett (välj och klicka i huvudfönstret där du vill placera etiketten)."
-
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Klipp ur vald text till Windows urklipp."
-
 #~ msgid "Open an animation file."
 #~ msgstr "Öppna en animeringsfil."
-
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Version"
-
 #~ msgid "Visible"
 #~ msgstr "Synlig"
-
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr "Välj för att göra valt objekt synligt i koordinatsystemet."
-
 #~ msgid "Functions"
 #~ msgstr "Funktioner"
-
 #~ msgid "Tangents"
 #~ msgstr "Tangenter"
-
 #~ msgid "Point series"
 #~ msgstr "Punktserier"
-
 #~ msgid "Shades"
 #~ msgstr "Skuggningar"
-
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Inget fel uppstod. Du borde inte se detta meddelande."
-
 #~ msgid "Right bracket missing."
 #~ msgstr "Högerparentes saknas."
-
 #~ msgid "Conversion error"
 #~ msgstr "Konverteringsfel"
-
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Okänd felkod.\n"
 #~ "Kan inte hitta felmeddelandet för detta fel."
-
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr "Detta fel skall ej uppkomma. Var god rapportera händelsen till programmeraren."
-
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "Maximal textlängd har uppnåtts."
-
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Dialogrutefel: %sh"
-
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "Okänt Graph-data hittades när inehållet i urklipp klistrades in."
-
 #~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
 #~ msgstr "För att lägga till en åtgärd till din applikation, dra objekt från antingen Kategorier eller Åtgärder och släpp dem på en befintlig Åtgärdslist."
+

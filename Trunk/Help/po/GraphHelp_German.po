@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-07-17 02:38Romance Daylight Time\n"
-"PO-Revision-Date: 2011-07-25 20:09+0100\n"
+"PO-Revision-Date: 2011-10-09 18:07+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -2243,7 +2243,7 @@ msgstr "Trigonometrisch"
 #. InsertPointSeriesDialog.xml:96(para)
 #, fuzzy
 msgid "You can choose between four types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <placeholder-3/>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-4/> will draw a smooth cubic spline through all points in order. <placeholder-5/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
-msgstr "Drei Typen der Interpolation stehen zur Wahl: <placeholder-1/> zeichnet eine gerade Linie zwischen die Markierungen. <placeholder-2/> zeichnet eine <ulink url=\"http://de.wikipedia.org/wiki/Spline#Kubische_Splines\">kubische Spline</ulink>, eine Kurve auf Basis eines Polynoms dritten Grades, die alle Punkte verbindet. <placeholder-3/> zeichnet eine Halb-Cosinus -Kurve zwischen die Punkte, die evtl. nicht so geschwungen ist wie kubische Splines, aber auch nicht stark ausschlagen wie es bei diesen möglich ist."
+msgstr "Vier Typen der Interpolation stehen zur Wahl: <placeholder-1/> zeichnet eine gerade Linie zwischen die Markierungen. <placeholder-2/> zeichnet eine <placeholder-3/>, eine Kurve auf Basis eines Polynoms dritten Grades, die alle Punkte verbindet. <placeholder-4/> zeichnet eine Halb-Cosinus-Kurve zwischen die Punkte, die evtl. nicht so geschwungen ist wie kubische Splines, aber auch nicht stark ausschlagen wie es bei diesen möglich ist."
 
 #. InsertPointSeriesDialog.xml:108(term)
 msgid "Labels"
