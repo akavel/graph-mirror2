@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-09-21 23:00\n"
-"PO-Revision-Date: 2011-07-25 19:53+0100\n"
+"PO-Revision-Date: 2011-10-09 18:00+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -3215,9 +3215,8 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Ficheiros do Graph [*.grf]|*.grf|Todos os ficheiros [*.*]|*.*"
 
 #. Import from file dialog
-#, fuzzy
 msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
-msgstr "CSV (Ponto e vírgula a delimitar) [*.csv]|*.csv|CSV (Vírgula a delimitar) [*.csv]|*.csv|Text (tab delimitar) [*.txt]|*.txt|Texto (espaço delimitado)|*.txt|todosl os ficheiros [*.*]|*.*"
+msgstr "CSV (Ponto e vírgula a delimitar) [*.csv]|*.csv|CSV (Vírgula a delimitar) [*.csv]|*.csv|Text (tab delimitar) [*.txt]|*.txt|Texto (espaço delimitado) [*.txt]|*.txt|todosl os ficheiros [*.*]|*.*"
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "Tem a certeza que quer apagar o modelo: %s ?"
@@ -3668,9 +3667,8 @@ msgstr "Não há impressora instalada no sistema."
 msgid "Install for all users"
 msgstr "Intalar para todos os utilizadores"
 
-#, fuzzy
 msgid "Examples"
-msgstr "Exemplo"
+msgstr "Exemplos"
 
 msgid "Local"
 msgstr "Local"
@@ -3766,203 +3764,140 @@ msgstr "Entre o valor em percentagem do tamanho original."
 #, fuzzy
 #~ msgid "Calculate the area under the path of the selected function."
 #~ msgstr "Calcula a área  no intervalo da função seleccionada."
-
 #~ msgid "About Graph..."
 #~ msgstr "Sobre o Graph..."
-
 #~ msgid "Custom functions..."
 #~ msgstr "Funções usuais..."
-
 #~ msgid "Insert an OLE object such as a drawing or an equation."
 #~ msgstr "Inserir o Objecto OLE como por exemplo um desenho ou uma equação."
-
 #~ msgid "Mark end of range"
 #~ msgstr "Delimita o fim do intervalo"
-
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Delimita o início do sombreado com uma linha."
-
 #~ msgid "Mark start of range"
 #~ msgstr "Delimita o inicio do intervalo"
-
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Área ou comprimento da curva calculada para o intervalo dado utilizando a fórmula de Simpson."
-
 #~ msgid "Extremum"
 #~ msgstr "Extremo"
-
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Texto [*.txt; *.csv]|*.txt;*.csv|Todos os ficheiros [*.*]|*.*"
-
 #~ msgid "Calculate area"
 #~ msgstr "Calcule a área"
-
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Podedar sugestões para as versões futuras, relatar erros e comentários enviando um email para: graph@padowan.dk"
-
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Esta é a derivada segunda da função, calculada para o valor-x dado."
-
 #~ msgid "Zoom in."
 #~ msgstr "Amplia."
-
 #~ msgid "Zoom out."
 #~ msgstr "Reduz."
-
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Retornar a forma padrão."
-
 #~ msgid "Go to home page"
 #~ msgstr "Vai para Home Page"
-
 #~ msgid "All points"
 #~ msgstr "Todos os pontos"
-
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Ajusta o Zoom para mostrar todos os pontos que são visíveis."
-
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Amplia somente no eixo-x."
-
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Reduz somente no eixo-x."
-
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Amplia somento no eixo-y."
-
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Reduz somente no eixo-y."
-
 #~ msgid "Image information"
 #~ msgstr "Informações da imagem"
-
 #~ msgid "Open the file %s."
 #~ msgstr "Abrir o ficheiro %s."
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "O servidor respondeu com a mensagem ' %s'"
-
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Retorno de erro do protocolo %s"
-
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Seleccione o lugar da imagem no meio da página."
-
 #~ msgid "Insert shade..."
 #~ msgstr "Inserir sombra..."
-
 #~ msgid "Shade"
 #~ msgstr "Sombra"
-
 #~ msgid "Black"
 #~ msgstr "Preto"
-
 #~ msgid "Maroon"
 #~ msgstr "Castanho"
-
 #~ msgid "Green"
 #~ msgstr "Verde"
-
 #~ msgid "Olive"
 #~ msgstr "Verde oliva"
-
 #~ msgid "Navy"
 #~ msgstr "Azul marinho"
-
 #~ msgid "Purple"
 #~ msgstr "Violeta"
-
 #~ msgid "Teal"
 #~ msgstr "Verde teal"
-
 #~ msgid "Gray"
 #~ msgstr "Cinza"
-
 #~ msgid "Silver"
 #~ msgstr "Prata"
-
 #~ msgid "Red"
 #~ msgstr "Vermelho"
-
 #~ msgid "Lime"
 #~ msgstr "Verde limão"
-
 #~ msgid "Yellow"
 #~ msgstr "Amarelo"
-
 #~ msgid "Blue"
 #~ msgstr "Azul"
-
 #~ msgid "Fuchsia"
 #~ msgstr "Cor-de-rosa"
-
 #~ msgid "Aqua"
 #~ msgstr "Azul claro"
-
 #~ msgid "Money Green"
 #~ msgstr "Verde moeda"
-
 #~ msgid "Sky Blue"
 #~ msgstr "Azul céu"
-
 #~ msgid "Cream"
 #~ msgstr "Creme"
-
 #~ msgid "Med Gray"
 #~ msgstr "Cinza médio"
-
 #~ msgid "Insert a text label (select and click in the main window where you want the label)."
 #~ msgstr "Insere um rótulo de texto(selecione e clique na janela principal onde você deseja o rótulo)"
-
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Recorta e envia o texto selecionado para a área de transferência."
-
 #~ msgid "Open an animation file."
 #~ msgstr "Abrir um ficheiro de animação."
 
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Versão "
-
 #~ msgid "Visible"
 #~ msgstr "Visivel"
-
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr "Se marcado, o item selecionado torna-se visível no sistema de coordenadas."
-
 #~ msgid "Functions"
 #~ msgstr "Funções"
-
 #~ msgid "Tangents"
 #~ msgstr "Tangentes"
-
 #~ msgid "Point series"
 #~ msgstr "Série de Pontos"
-
 #~ msgid "Shades"
 #~ msgstr "Sombras"
-
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Não ocorreu nenhum erro. Você não deve ver esta mensagem."
-
 #~ msgid "Conversion error"
 #~ msgstr "Erro de conversão"
-
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Código de erro desconhecido. \n"
 #~ "Não podia encontrar a mensagem para este erro."
-
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr "Este erro não deve ocorrer. Relate, por favor, isto ao programador."
-
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "O tamanho máximo do texto foi alcançado."
-
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Erro de dialogo: %sh"
-
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "O Graph encontrou dados desconhecidos ao colar dados da área de transferência."
+
