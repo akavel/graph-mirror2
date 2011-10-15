@@ -63,11 +63,11 @@ object Form15: TForm15
     Text = '0.1'
   end
   object Button1: TButton
-    Left = 56
+    Left = 134
     Top = 432
     Width = 75
     Height = 25
-    Anchors = [akLeft, akBottom]
+    Anchors = [akRight, akBottom]
     Cancel = True
     Caption = 'Close'
     ModalResult = 2
@@ -103,11 +103,11 @@ object Form15: TForm15
     Text = '10'
   end
   object Button3: TButton
-    Left = 152
+    Left = 230
     Top = 432
     Width = 75
     Height = 25
-    Anchors = [akLeft, akBottom]
+    Anchors = [akRight, akBottom]
     Caption = 'Help'
     TabOrder = 6
     OnClick = Button3Click
@@ -141,8 +141,8 @@ object Form15: TForm15
       64)
   end
   object PopupMenu1: TPopupActionBar
-    Left = 8
-    Top = 432
+    Left = 14
+    Top = 423
     object Popup1_Show1: TMenuItem
       AutoCheck = True
       Caption = 'Show %s'
@@ -203,14 +203,14 @@ object Form15: TForm15
     Caption = 'Calculating'
     Step = 1000
     ButtonCaption = 'Cancel'
-    Left = 248
-    Top = 432
+    Left = 56
+    Top = 424
   end
   object SaveDialog1: TSaveDialogEx
     DefaultExt = 'csv'
     Filter = 'CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt'
     Options = [ofOverwritePrompt, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing]
-    Left = 288
-    Top = 432
+    Left = 96
+    Top = 424
   end
 end
