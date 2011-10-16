@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-07-17 02:38Romance Daylight Time\n"
-"PO-Revision-Date: 2011-10-09 18:07+0100\n"
+"POT-Creation-Date: 2011-08-30 23:12Romance Daylight Time\n"
+"PO-Revision-Date: 2011-10-16 19:40+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -294,7 +294,8 @@ msgid "area"
 msgstr "Bereich"
 
 #. Special.xml:13(para)
-msgid "Returns an aproximation for the numerical integral of the given expression over the given range."
+#, fuzzy
+msgid "Returns an approximation for the numerical integral of the given expression over the given range."
 msgstr "Berechnet eine Näherung für das numerische Integral über das angegebene Intervall."
 
 #. Special.xml:34(glossterm) Special.xml:80(glossterm) Special.xml:114(glossterm) Special.xml:209(glossterm) Special.xml:314(glossterm) Special.xml:345(glossterm) Piecewise.xml:84(glossterm) Piecewise.xml:108(glossterm) Piecewise.xml:133(glossterm) Piecewise.xml:158(glossterm)
@@ -306,9 +307,8 @@ msgid "real numbers"
 msgstr "reelle Zahlen"
 
 #. Special.xml:22(para)
-#, fuzzy
-msgid "The <placeholder-1/> function returns an aproximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to an estimated relative error less than <placeholder-19/>."
-msgstr "Die Funktion <placeholder-1/> berechnet das numerische Integral von <placeholder-2/> über <placeholder-3/> von <placeholder-4/> bis <placeholder-5/>, mathematisch beschrieben mit: <placeholder-6/> Dieses Integral entspricht der Fläche zwischen der Funktion <placeholder-7/> und der X-Achse von <placeholder-8/> bis <placeholder-9/>, wobei hier die Fläche unterhalb der Achse negativ gezählt wird. <placeholder-10/> können beliebige Funktionen sein: mit x als Variable, wenn eine Standardfunktion vorliegt, und mit <placeholder-11/> als Variable, wenn es eine Parameterfunktion ist. <placeholder-12/> und <placeholder-13/> können beliebige <placeholder-14/> sein, die <placeholder-15/> entsprechen, oder <placeholder-16/> oder <placeholder-17/> (negativ bzw. positiv unendlich). <placeholder-18/> berechnet das Integral nicht exakt, sondern approximiert es mithilfe der Gauß-Kronrod-Quadratur, wobei der relative Schätzfehler unterhalb von  <placeholder-19/> liegt."
+msgid "The <placeholder-1/> function returns an approximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to an estimated relative error less than <placeholder-19/>."
+msgstr "Die Funktion <placeholder-1/> liefert eine Näherung für das numerische Integral von <placeholder-2/> mit der Variablen <placeholder-3/> von <placeholder-4/> bis <placeholder-5/>, mathematisch beschrieben mit: <placeholder-6/> Dieses Integral entspricht der Fläche zwischen der Funktion <placeholder-7/> und der X-Achse von <placeholder-8/> bis <placeholder-9/>, wobei hier die Fläche unterhalb der Achse negativ gezählt wird. <placeholder-10/> kann jede beliebige Funktionen mit <placeholder-11/> als zweitem Argument sein.  <placeholder-12/> und <placeholder-13/> können beliebige <placeholder-14/> sein, die <placeholder-15/> entsprechen, oder <placeholder-16/> oder <placeholder-17/> (negativ bzw. positiv unendlich). <placeholder-18/> berechnet das Integral nicht exakt, sondern approximiert es mithilfe der Gauß-Kronrod-Quadratur, wobei der relative Schätzfehler unterhalb von  <placeholder-19/> liegt."
 
 #. Special.xml:41(title) Rounding.xml:153(title)
 msgid "Examples"
@@ -710,10 +710,13 @@ msgstr "Plugins"
 msgid "plugins"
 msgstr "Plugins"
 
+#. Plugins.xml:9(ulink)
+msgid "online"
+msgstr "online"
+
 #. Plugins.xml:7(para)
-#, fuzzy
 msgid "To use the plugin system in Graph you need to install <placeholder-1/> from <placeholder-2/>. Documentation of the Python language may be found installed with Python or <placeholder-3/>."
-msgstr "Zur Verwendung der Plugin-Schnittstelle von Graph benötigen Sie die Skriptsprache <application>Python 3.1</application>. Sie können diese Software unter <ulink url=\"http://www.python.org\"/> frei herunterladen. Eine ausführliche Dokumentation der Sprache \"Python\" wird mitgeliefert und gibt es zudem unter <ulink url=\"http://docs.python.org/3.1/\"></ulink>."
+msgstr "Um in Graph Plugins zu benutzen, muß man <placeholder-1/> von <placeholder-2/> installieren. Die Dokumentation der Sprache Python wird mitgeliefert, und es gibt sie unter <placeholder-3/>."
 
 #. Plugins.xml:14(para)
 msgid "Plugins are Python scripts and are usually distributed in source form as .py files but the can also be distributed as compiled .pyc files. The plugin files are placed in the <placeholder-1/> directory where Graph is installed, and will automatically be found and loaded by Graph."
@@ -788,9 +791,8 @@ msgid "The <placeholder-1/> function returns <placeholder-2/>, if <placeholder-3
 msgstr "Die <placeholder-1/>-Funktion liefert <placeholder-2/> zurück, wenn <placeholder-3/> größer als <placeholder-4/> und kleiner als <placeholder-5/> ist. Ist <placeholder-6/> &lt; <placeholder-7/>, wird <placeholder-8/> zurückgeliefert. Ist <placeholder-9/> &gt; <placeholder-10/>, wird <placeholder-11/> zurückgeliefert. Die Argumente können beliebige <placeholder-12/> sein, die <placeholder-13/> oder <placeholder-14/> ergeben. Die Funktion hat dieselbe Wirkung wie <placeholder-15/>."
 
 #. Piecewise.xml:144(para)
-#, fuzzy
 msgid "Evaluates one or more conditions and returns a different result based on them."
-msgstr "Wertet eine oder mehrere Ausdrücke aus und gibt in Abhängigkeit davon verschieden Ergebnisse zurück."
+msgstr "Wertet eine oder mehrere Bedingungen aus und liefert ein davon abhängiges Ergebnis zurück."
 
 #. Piecewise.xml:153(para)
 msgid "The <placeholder-1/> function evaluates <placeholder-2/> and if it is different from 0 then <placeholder-3/> is evaluated and returned. Else <placeholder-4/> is evaluated and if it is different from 0 then <placeholder-5/> is returned and so forth. If none of the conditions are true <placeholder-6/> is returned. <placeholder-7/> is optional and if not specified <placeholder-8/> returns an error if none of the conditions are true. The arguments may be any <placeholder-9/> that evaluate to <placeholder-10/> or <placeholder-11/>."
@@ -1352,7 +1354,7 @@ msgstr "Länge eines Kurvenstücks"
 msgid "Calculates the distance along the path between two points on the selected graph."
 msgstr "Berechnet die Entfernung entlang der Kurve zwischen zwei Punkten des ausgewählten Graphen."
 
-#. MenuItems.xml:577(guimenuitem) EvaluateDialog.xml:102(title) EvaluateDialog.xml:107(guimenuitem)
+#. MenuItems.xml:577(guimenuitem) FAQ.xml:222(guimenuitem) EvaluateDialog.xml:102(title) EvaluateDialog.xml:107(guimenuitem)
 msgid "Integrate"
 msgstr "Integrieren"
 
@@ -1488,19 +1490,17 @@ msgstr "Fehlerbericht"
 msgid "Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things. The program is a standard Windows program with menus and dialogs. The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations. It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more. For more information on using the program see <placeholder-1/>."
 msgstr "Das Programm Graph wurde ursprünglich entworfen, um Graphen von mathematischen Funktionen in ein Koordinatensystem zu zeichnen. Graph ist ein normales Windows-Programm mit Menüs und Dialogen und unterstützt das Zeichnen von Standardfunktionen, Parameterfunktionen, Polarfunktionen, Tangenten, Punktserien, Schraffuren und Relationen. Es ist auch möglich, eine Funktion für einen vorgegebenen Punkt zu berechnen, einen Graphen mit der Maus zu verfolgen und noch viel mehr. Weitere Informationen unter <placeholder-1/>."
 
-#. Introduction.xml:27(citetitle)
-msgid "GNU General Public License"
-msgstr "Version <placeholder-1/>"
-
 #. Introduction.xml:25(para)
-#, fuzzy
 msgid "Graph is free software; you can redistribute it and/or modify it under the terms of the <placeholder-1/>. Newest version of the program as well as the source code may be downloaded from <placeholder-2/>."
-msgstr "Dieses Programm ist freie Software; Sie können es gemäß der <ulink url=\"http://www.gnu.org/licenses/gpl.html\"><citetitle>GNU General Public License</citetitle></ulink> weiter verteilen und/oder verändern. Sowohl die neueste Version wie auch der Quelltext des Programms können von <ulink url=\"http://www.padowan.dk\"/> heruntergeladen werden."
+msgstr "Graph ist freie Software; Sie können es gemäß der <placeholder-1/> weiter verteilen und/oder verändern. Sowohl die neueste Version des Programms wie auch der Quelltext können von <placeholder-2/> heruntergeladen werden."
+
+#. Introduction.xml:40(ulink)
+msgid "Graph support forum"
+msgstr "Graph-Support-Forum"
 
 #. Introduction.xml:30(para)
-#, fuzzy
 msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <placeholder-2/>."
-msgstr "Das Programm ist unter  <placeholder-1/> getestet worden, kann aber trotzdem noch einige Programmfehler enthalten. Im <ulink url=\"http://www.padowan.dk/forum\">Graph Support Forum</ulink> erhalten Sie Unterstützung, können Sie Fehler melden und Verbesserungsvorschlägen machen."
+msgstr "Das Programm ist unter  <placeholder-1/> getestet worden, kann aber trotzdem noch einige Programmfehler enthalten. Im <placeholder-2/> erhalten Sie Unterstützung, können Fehler melden und Verbesserungsvorschläge machen."
 
 #. Introduction.xml:42(para)
 msgid "When you send a bug report, please write the following:"
@@ -2227,23 +2227,24 @@ msgid "It is possible to draw lines between the markers. The line will always be
 msgstr "Man kann zwischen die Markierungen Linien zeichnen. Die Reihenfolge der Linien ist dieselbe wie in der Tabelle. Für die Linien lassen sich Stil, Farbe und Breite wählen. Man kann auch einstellen, gar keine Linie zu zeichnen."
 
 #. InsertPointSeriesDialog.xml:98(guilabel)
-#, fuzzy
 msgid "1D cubic spline"
-msgstr "Kubische Spline"
+msgstr "Kubischer Spline 1D"
+
+#. InsertPointSeriesDialog.xml:98(ulink)
+msgid "natural cubic spline"
+msgstr "Natürlicher Kubischer Spline"
 
 #. InsertPointSeriesDialog.xml:100(guilabel)
-#, fuzzy
 msgid "2D cubic spline"
-msgstr "Kubische Spline"
+msgstr "Kubischer Spline 2D"
 
 #. InsertPointSeriesDialog.xml:101(guilabel)
 msgid "Half cosine"
 msgstr "Trigonometrisch"
 
 #. InsertPointSeriesDialog.xml:96(para)
-#, fuzzy
 msgid "You can choose between four types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <placeholder-3/>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-4/> will draw a smooth cubic spline through all points in order. <placeholder-5/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
-msgstr "Vier Typen der Interpolation stehen zur Wahl: <placeholder-1/> zeichnet eine gerade Linie zwischen die Markierungen. <placeholder-2/> zeichnet eine <placeholder-3/>, eine Kurve auf Basis eines Polynoms dritten Grades, die alle Punkte verbindet. <placeholder-4/> zeichnet eine Halb-Cosinus-Kurve zwischen die Punkte, die evtl. nicht so geschwungen ist wie kubische Splines, aber auch nicht stark ausschlagen wie es bei diesen möglich ist."
+msgstr "Vier Typen der Interpolation stehen zur Wahl: <placeholder-1/> zeichnet eine gerade Linie zwischen die Markierungen. <placeholder-2/> zeichnet eine <placeholder-3/>, eine Kurve auf Basis eines Polynoms dritten Grades, die alle Punkte entlang der x-Koordinate verbindet. <placeholder-4/> zeichnet einen kubischen Spline nacheinander durch alle Punkte.  <placeholder-4/> zeichnet Halb-Cosinus-Kurve zwischen die Punkte, die evtl. nicht so geschwungen ist wie kubische Splines, aber auch nicht stark ausschlagen wie es bei diesen möglich ist."
 
 #. InsertPointSeriesDialog.xml:108(term)
 msgid "Labels"
@@ -3302,10 +3303,6 @@ msgstr "Mit Hilfe einer Parameterfunktion können Sie Graph einen Kreis zeichnen
 #. FAQ.xml:211(para)
 msgid "How do I calculate the area between two functions?"
 msgstr "Wie lasse ich Graph die Fläche zwischen zwei Funktionsgraphen berechnen?"
-
-#. FAQ.xml:222(guimenuitem)
-msgid "Area"
-msgstr "Fläche"
 
 #. FAQ.xml:216(para)
 msgid "If you want to find the area between two functions f1(x)=3x and f2(x)=x^2, the easiest way is to create a new function that is the difference between the two functions: f(x)=f1(x)-f2(x)=3x-x^2. You can then use <placeholder-1/> to calculate the area for a given interval."
@@ -4539,6 +4536,10 @@ msgstr ""
 msgid "Translator:"
 msgstr "Übersetzer:"
 
+#~ msgid "GNU General Public License"
+#~ msgstr "Version <placeholder-1/>"
+#~ msgid "Area"
+#~ msgstr "Fläche"
 #~ msgid ""
 #~ "Returns the summation of the first argument evaluated for all integers "
 #~ "from the second to the third argument."
