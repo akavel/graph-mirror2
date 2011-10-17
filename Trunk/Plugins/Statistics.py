@@ -11,10 +11,10 @@ def Execute(Sender):
 
     Form = Gui.SimpleDialog(Caption="Statistics", Height=220, ShowCancel=False)
     Lines = "Statistics for " + Graph.Selected.LegendText + ":"
-    Lines += "\n  Mean:\t\t" + str(Mean)
+    Lines += "\n  Mean:\t\t" + format(Mean, ".8g")
     Lines += "\n  Sum:\t\t" + str(Sum)
-    Lines += "\n  Median:\t\t" + str(yList[N//2] if N % 2 else (yList[N//2-1] + yList[N//2]) / 2)
-    Lines += "\n  Standard deviation: " + str( math.sqrt(math.fsum([(y-Mean)**2 for y in yList]) / N))
+    Lines += "\n  Median:\t\t" + format(yList[N//2] if N % 2 else (yList[N//2-1] + yList[N//2]) / 2, ".8g")
+    Lines += "\n  Standard deviation: " + format( math.sqrt(math.fsum([(y-Mean)**2 for y in yList]) / N), ".8g")
     Lines += "\n  1st quartile:\t" + str(yList[N//4] if (N//2) % 2 else (yList[N//4-1] + yList[N//4]) / 2)
     Lines += "\n  3rd quartile:\t" + str(yList[math.ceil(N/2)+N//4] if (N//2) % 2 else (yList[math.ceil(N/2)+N//4-1] + yList[math.ceil(N/2)+N//4]) / 2)
     Lines += "\n  Min:\t\t" + str(min(yList))
