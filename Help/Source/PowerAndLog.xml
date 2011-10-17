@@ -88,7 +88,7 @@
 		<title><markup>root</markup> function</title>
 		<indexterm><primary><function>root</function> function</primary></indexterm>
 		<para>
-			Returns the <mathphrase><parameter>n</parameter><superscript>th</superscript></mathphrase> root of the argument.
+			Returns the <parameter>n</parameter><superscript>th</superscript> root of the argument.
 		</para>
 		<simplesect>
 			<title>Syntax</title>
