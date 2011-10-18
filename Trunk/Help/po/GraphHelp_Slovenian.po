@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-08-30 23:12Romance Daylight Time\n"
-"PO-Revision-Date: 2011-10-10 16:33+0100\n"
+"POT-Creation-Date: 2011-10-17 23:46Romance Daylight Time\n"
+"PO-Revision-Date: 2011-10-18 18:37+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -647,7 +647,7 @@ msgid "The <placeholder-1/> function calculates the square root of <placeholder-
 msgstr ""
 
 #. PowerAndLog.xml:90(para)
-msgid "Returns the <placeholder-1/> root of the argument."
+msgid "Returns the <placeholder-1/><superscript>th</superscript> root of the argument."
 msgstr ""
 
 #. PowerAndLog.xml:99(para)
@@ -3119,7 +3119,7 @@ msgid "Rounds the first argument to the number of decimals given by the second a
 msgstr ""
 
 #. FunctionList.xml:378(entry)
-msgid "Returns the sign of the argument: 1 if the argument is greater than 0, and -1 if the argument if less than 0."
+msgid "Returns the sign of the argument: 1 if the argument is greater than 0, and -1 if the argument is less than 0."
 msgstr ""
 
 #. FunctionList.xml:382(entry)
