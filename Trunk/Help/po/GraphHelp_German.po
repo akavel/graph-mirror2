@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-10-17 23:46Romance Daylight Time\n"
-"PO-Revision-Date: 2011-10-18 18:36+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2011-10-18 21:04+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2111,7 +2111,7 @@ msgstr "Restriktionen"
 
 #. InsertRelationDialog.xml:50(para)
 msgid "Here you can enter optional constraints, which can be any <placeholder-1/>. The relation will only be valid and plotted where the constraints are fulfilled, i.e. evaluates to a non-zero value. The constraints usually consist of a series of inequalities separated with the logical operators (<placeholder-2/>). As for the relation, <placeholder-3/> and <placeholder-4/> are used as the independent variables."
-msgstr "Hier geben Sie die Nebenbedingungen für die Relation ein. Eine Nebenbedingung ist ein beliebiger <placeholder-1/>. Geplottet werden nur die Bereiche der Relation, für die alle Nebenbedingungen erfüllt sind (d.h. einen Wert ungleich Null egeben). Nebenbedingungen bestehen normalerweise aus einer Reihe von Ungleichungen, die durch Logikoperatoren (<placeholder-2/>) verbunden werden.  Für Relationen stellen <placeholder-2/> und <placeholder-3/> die unabhängigen Variablen dar."
+msgstr "Hier geben Sie die Nebenbedingungen für die Relation ein. Eine Nebenbedingung ist ein beliebiger <placeholder-1/>. Geplottet werden nur die Bereiche der Relation, für die alle Nebenbedingungen erfüllt sind (d.h. einen Wert ungleich Null egeben). Nebenbedingungen bestehen normalerweise aus einer Reihe von Ungleichungen, die durch Logikoperatoren (<placeholder-2/>) verbunden werden.  Für Relationen stellen <placeholder-3/> und <placeholder-4/> die unabhängigen Variablen dar."
 
 #. InsertRelationDialog.xml:61(para)
 msgid "For example if you have the relation <literal>x^2 + y^2 &lt; 25</literal>, which is a shaded circle, the constraints <literal>x &gt; 0 and y &lt; 0</literal> will only show the part of the circle in the 4<superscript>th</superscript> quadrant."
@@ -2243,7 +2243,7 @@ msgstr "Trigonometrisch"
 
 #. InsertPointSeriesDialog.xml:96(para)
 msgid "You can choose between four types of interpolation: <placeholder-1/> will draw straight lines between the markers. <placeholder-2/> will draw a <placeholder-3/>, which is a nice smooth line connecting all the points sorted by the x-coordinate with 3<superscript>rd</superscript> degree polynomials. <placeholder-4/> will draw a smooth cubic spline through all points in order. <placeholder-5/> will draw half cosine curves between the points, which might not look as smooth as the cubic splines but they never undershoot/overshoot like the cubic splines can do."
-msgstr "Vier Typen der Interpolation stehen zur Wahl: <placeholder-1/> zeichnet eine gerade Linie zwischen die Markierungen. <placeholder-2/> zeichnet eine <placeholder-3/>, eine Kurve auf Basis eines Polynoms dritten Grades, die alle Punkte entlang der x-Koordinate verbindet. <placeholder-4/> zeichnet einen kubischen Spline nacheinander durch alle Punkte.  <placeholder-4/> zeichnet Halb-Cosinus-Kurve zwischen die Punkte, die evtl. nicht so geschwungen ist wie kubische Splines, aber auch nicht stark ausschlagen wie es bei diesen möglich ist."
+msgstr "Vier Typen der Interpolation stehen zur Wahl: <placeholder-1/> zeichnet eine gerade Linie zwischen die Markierungen. <placeholder-2/> zeichnet eine <placeholder-3/>, eine Kurve auf Basis eines Polynoms dritten Grades, die alle Punkte entlang der x-Koordinate verbindet. <placeholder-4/> zeichnet einen kubischen Spline nacheinander durch alle Punkte. <placeholder-5/> zeichnet Halb-Cosinus-Kurve zwischen die Punkte, die evtl. nicht so geschwungen ist wie kubische Splines, aber auch nicht stark ausschlagen wie es bei diesen möglich ist."
 
 #. InsertPointSeriesDialog.xml:108(term)
 msgid "Labels"
@@ -4537,22 +4537,27 @@ msgstr "Übersetzer:"
 
 #~ msgid "Returns the <placeholder-1/> root of the argument."
 #~ msgstr "Liefert die <placeholder-1/> Wurzel des Arguments."
+
 #~ msgid "GNU General Public License"
 #~ msgstr "Version <placeholder-1/>"
+
 #~ msgid "Area"
 #~ msgstr "Fläche"
+
 #~ msgid ""
 #~ "Returns the summation of the first argument evaluated for all integers "
 #~ "from the second to the third argument."
 #~ msgstr ""
 #~ "Liefert die Summierung des ersten Argument für alle Integer-Zahlen im "
 #~ "Bereich vom zweiten zum dritten Argument."
+
 #~ msgid ""
 #~ "Returns the product of the first argument evaluated for all integers from "
 #~ "the second to the third argument."
 #~ msgstr ""
 #~ "Liefert das Produkt des ersten Arguments für alle Integer-Zahlen im "
 #~ "Bereich vom zweiten zum dritten Argument."
+
 #~ msgid ""
 #~ "Returns the second argument if the first argument evaluates to a value "
 #~ "different from zero, else the third value is returned."
@@ -4560,20 +4565,24 @@ msgstr "Übersetzer:"
 #~ "Liefert das zweite Argument, wenn das erste Argument einen von Null "
 #~ "unterschiedlichen Wert ergibt, sonst wird das dritte Argument "
 #~ "zurückgeliefert."
+
 #~ msgid ""
 #~ "Evaluates a sequence of if functions and returns the first result found "
 #~ "with a condition different from zero."
 #~ msgstr ""
 #~ "Wertet eine Reihe von if-Abfragen aus und liefert das erste Ergebnis, "
 #~ "dessen Bedingung ungleich 0 ist."
+
 #~ msgid ""
 #~ "Calculates the signed area between the graph and the x-axis. This is the "
 #~ "same as the numerical integral."
 #~ msgstr ""
 #~ "Berechnet die vorzeichenbehaftete Fläche zwischen dem Graph und der X-"
 #~ "Achse. Dies entspricht dem numerischen Integral."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Bereichsanfang markieren"
+
 #~ msgid ""
 #~ "Check this to draw a line at the start of the range. Uncheck it if you "
 #~ "want two shadings to look as one."
@@ -4581,28 +4590,35 @@ msgstr "Übersetzer:"
 #~ "Aktivieren, wenn eine Linie an den Beginn des Bereichs gezeichnet werden "
 #~ "soll. Deaktivieren, wenn zwei Schraffuren wie eine einzige "
 #~ "zusammenhängende Schraffur aussehen sollen."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Bereichsende markieren"
+
 #~ msgid "Indicates if a term evaluates to 0."
 #~ msgstr "Zeigt an, ob ein Term null ergibt."
+
 #~ msgid ""
 #~ "Indicates if two expressions both evaluate to a value different from 0."
 #~ msgstr ""
 #~ "Zeigt an, ob jeder der beiden Ausdrücke einen Wert ungleich Null ergibt."
+
 #~ msgid ""
 #~ "Indicates if at least one of two expressions evaluates to a value "
 #~ "different from 0."
 #~ msgstr ""
 #~ "Zeigt an, ob mindestens einer von zwei Ausdrücken einen Wert ungleich "
 #~ "Null ergibt."
+
 #~ msgid ""
 #~ "Indicates if exactly one of two expressions evaluates to a value "
 #~ "different from 0."
 #~ msgstr ""
 #~ "Zeigt an, ob genau einer von zwei Ausdrücken einen Wert ungleich Null "
 #~ "ergibt."
+
 #~ msgid "The same as a sequence of if functions."
 #~ msgstr "Dasselbe wie mehrere if-Funktionen hintereinander."
+
 #~ msgid ""
 #~ "Graph requires 32 bit Windows. It has been tested under Windows 98, "
 #~ "Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is "
@@ -4614,12 +4630,14 @@ msgstr "Übersetzer:"
 #~ "dem Computer läuft, wird Graph auch funktionieren, es sei denn, es "
 #~ "handelt sich um Windows 95, da diese Version von Windows nicht mehr "
 #~ "unterstützt wird."
+
 #~ msgid ""
 #~ "Can I copy a function or point series from one instance of the program to "
 #~ "another?"
 #~ msgstr ""
 #~ "Kann ich eine Funktion oder einer Punktserie von einem laufenden Graph-"
 #~ "Fenster zu einem anderen Graph-Fenster kopieren?"
+
 #~ msgid ""
 #~ "Yes, you can select a function or point series and use the <placeholder-1/"
 #~ "> menu item to place a copy of the selected item in the clipboard. You "
@@ -4629,24 +4647,31 @@ msgstr "Übersetzer:"
 #~ "Sie den Menüpunkt <placeholder-1/>, um das ausgewähltte Objekt in die "
 #~ "Zwischenablage zu kopieren. Anschließend können Sie es in ein anderes "
 #~ "Koordinatensystem einfügen."
+
 #~ msgid "Graph uses dxgettext as translation library:"
 #~ msgstr "Graph verwendet dxgettext als Übersetzungsbibliothek:"
+
 #~ msgid "For shell extensions the EasyNSE library is used:"
 #~ msgstr ""
 #~ "Für die Einträge ins Explorer-Kontextmenü wird die EasyNSE Bibliothek "
 #~ "eingesetzt."
+
 #~ msgid "Python is used for plugin support:"
 #~ msgstr "Python dient als Plugin-Schnittstelle."
+
 #~ msgid ""
 #~ "CompuServe Graphics Interchange (gif) is not supported because it uses "
 #~ "the LZW compression, which is patented by Unisys."
 #~ msgstr ""
 #~ "Das gif-Format (CompuServe Grafik Interchange) wird nicht unterstützt, "
 #~ "weil es die von Unisys patentierte LZW Kompression verwendet."
+
 #~ msgid "Shadings"
 #~ msgstr "Schraffuren"
+
 #~ msgid "Extreme y-value (Extremum)"
 #~ msgstr "Y-Extremwert (Extremum)"
+
 #~ msgid ""
 #~ "The <placeholder-1/> function calculates the inverse cosine of "
 #~ "<placeholder-2/>. The result may be in <glossterm>radians</glossterm> or "
@@ -4661,6 +4686,7 @@ msgstr "Übersetzer:"
 #~ "beliebiger <glossterm>numerischer Ausdruck</glossterm> sein, der eine "
 #~ "<glossterm>reelle Zahl</glossterm> darstellt. Dies ist die Umkehrung der "
 #~ "<placeholder-4/>-Funktion."
+
 #~ msgid ""
 #~ "The <placeholder-1/> function calculates the secant of an angle "
 #~ "<placeholder-2/>, which may be in <glossterm>radians</glossterm> or "
@@ -4676,6 +4702,7 @@ msgstr "Übersetzer:"
 #~ "<glossterm>numerischer Ausdruck</glossterm> sein, der eine "
 #~ "<glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</"
 #~ "glossterm> darstellt."
+
 #~ msgid ""
 #~ "The <placeholder-1/> function calculates the cosecant of an angle "
 #~ "<placeholder-2/>, which may be in <glossterm>radians</glossterm> or "
@@ -4691,54 +4718,75 @@ msgstr "Übersetzer:"
 #~ "<glossterm>numerischer Ausdruck</glossterm> sein, der eine "
 #~ "<glossterm>reelle Zahl</glossterm> oder eine <glossterm>komplexe Zahl</"
 #~ "glossterm> darstellt."
+
 #~ msgid ""
 #~ "The <placeholder-1/> function is not defined for real values of "
 #~ "<placeholder-2/> when <placeholder-3/> &lt; -1/e."
 #~ msgstr ""
 #~ "Die <placeholder-1/>-Funktion ist für Werte von <placeholder-2/> &lt; -1/"
 #~ "e nicht definiert."
+
 #~ msgid "double-click"
 #~ msgstr "doppelklicken"
+
 #~ msgid "left mouse button"
 #~ msgstr "linke Maustaste"
+
 #~ msgid "Right click"
 #~ msgstr "Rechts-Klick"
+
 #~ msgid "right click"
 #~ msgstr "Rechts-Klick"
+
 #~ msgid "f'(x)"
 #~ msgstr "f'(x)"
+
 #~ msgid "hyperbolic cosecanr"
 #~ msgstr "Cosecans Hyperbolicus"
+
 #~ msgid "hyperbolic secanr"
 #~ msgstr "Secans Hyperbolicus"
+
 #~ msgid "Variable/constant"
 #~ msgstr "Variable/Konstante"
+
 #~ msgid "Operator/constant"
 #~ msgstr "Operator/Konstante"
+
 #~ msgid ""
 #~ "The probability function of the normal distribution in a variate with "
 #~ "mean and standard"
 #~ msgstr ""
 #~ "Die Dichtefunktion der Gauss'schen Normalverteilung, wobei Mittelwert und "
 #~ "Standardabweichung anzugeben sind."
+
 #~ msgid "sin(x)^2= (sin(x))^2"
 #~ msgstr "sin(x)^2= (sin(x))^2"
+
 #~ msgid "sin 2x = sin(2x)"
 #~ msgstr "sin 2x = sin(2x)"
+
 #~ msgid "sin 2+x = sin(2)+x"
 #~ msgstr "sin 2+x = sin(2)+x"
+
 #~ msgid "sin x^2 = sin(x^2)"
 #~ msgstr "sin x^2 = sin(x^2)"
+
 #~ msgid "2(x+3)x = 2*(x+3)*x"
 #~ msgstr "2(x+3)x = 2*(x+3)*x"
+
 #~ msgid "-x^2 = -(x^2)"
 #~ msgstr "-x^2 = -(x^2)"
+
 #~ msgid "2x = 2*x"
 #~ msgstr "2x = 2*x"
+
 #~ msgid "e^2x = e^(2*x)"
 #~ msgstr "e^2x = e^(2*x)"
+
 #~ msgid "avi"
 #~ msgstr "avi"
+
 #~ msgid ""
 #~ "When the animation is finished, a very simple player is shown. You can "
 #~ "use this to play the animation. The rightmost button will give you some "
@@ -4764,12 +4812,14 @@ msgstr "Übersetzer:"
 #~ "die Animationsgeschwindigkeit eingestellt werden. Vor der Erstellung der "
 #~ "Animation sollte allerdings keine allzu hohe Geschwindigkeit eingestellt "
 #~ "werden."
+
 #~ msgid "Parts of Graph are using the Spirit parser library:"
 #~ msgstr "Teile von Graph greifen auf die Spirit Parser Bibliothek zurück."
+
 #~ msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
 #~ msgstr ""
 #~ "Zur Speicherung von Portable Network Graphic Dateien wird die BMGLib "
 #~ "Bibliothek eingesetzt."
+
 #~ msgid "Tnt Delphi Unicode Controls"
 #~ msgstr "Tnt Delphi Unicode Controls"
-
