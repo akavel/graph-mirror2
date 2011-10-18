@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-10-17 23:46Romance Daylight Time\n"
-"PO-Revision-Date: 2011-10-18 18:38+0100\n"
+"PO-Revision-Date: 2011-10-18 20:21+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "trigonometri"
 
 #. Trigonometric.xml:12(primary) Trigonometric.xml:128(primary)
 msgid "sine"
-msgstr ""
+msgstr "sinus"
 
 #. Trigonometric.xml:13(para)
 msgid "Returns the sine of the argument."
@@ -35,7 +35,7 @@ msgstr ""
 
 #. Trigonometric.xml:17(title) Trigonometric.xml:55(title) Trigonometric.xml:93(title) Trigonometric.xml:134(title) Trigonometric.xml:166(title) Trigonometric.xml:198(title) Trigonometric.xml:229(title) Trigonometric.xml:266(title) Trigonometric.xml:303(title) Trigonometric.xml:341(title) Trigonometric.xml:374(title) Trigonometric.xml:407(title) Special.xml:17(title) Special.xml:66(title) Special.xml:100(title) Special.xml:135(title) Special.xml:165(title) Special.xml:202(title) Special.xml:234(title) Special.xml:269(title) Special.xml:304(title) Special.xml:335(title) Rounding.xml:17(title) Rounding.xml:49(title) Rounding.xml:80(title) Rounding.xml:111(title) Rounding.xml:139(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:66(title) PowerAndLog.xml:94(title) PowerAndLog.xml:139(title) PowerAndLog.xml:170(title) PowerAndLog.xml:200(title) Piecewise.xml:16(title) Piecewise.xml:46(title) Piecewise.xml:76(title) Piecewise.xml:100(title) Piecewise.xml:123(title) Piecewise.xml:148(title) Hyperbolic.xml:16(title) Hyperbolic.xml:47(title) Hyperbolic.xml:78(title) Hyperbolic.xml:110(title) Hyperbolic.xml:140(title) Hyperbolic.xml:172(title) Hyperbolic.xml:201(title) Hyperbolic.xml:232(title) Hyperbolic.xml:263(title) Hyperbolic.xml:296(title) Hyperbolic.xml:326(title) Hyperbolic.xml:356(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:47(title) Complex.xml:80(title) Complex.xml:109(title) Complex.xml:137(title)
 msgid "Syntax"
-msgstr ""
+msgstr "Syntax"
 
 #. Trigonometric.xml:21(title) Trigonometric.xml:59(title) Trigonometric.xml:97(title) Trigonometric.xml:138(title) Trigonometric.xml:170(title) Trigonometric.xml:202(title) Trigonometric.xml:233(title) Trigonometric.xml:270(title) Trigonometric.xml:307(title) Trigonometric.xml:345(title) Trigonometric.xml:378(title) Trigonometric.xml:411(title) Special.xml:21(title) Special.xml:70(title) Special.xml:104(title) Special.xml:139(title) Special.xml:169(title) Special.xml:206(title) Special.xml:238(title) Special.xml:273(title) Special.xml:308(title) Special.xml:339(title) Rounding.xml:21(title) Rounding.xml:53(title) Rounding.xml:84(title) Rounding.xml:115(title) Rounding.xml:143(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:70(title) PowerAndLog.xml:98(title) PowerAndLog.xml:143(title) PowerAndLog.xml:174(title) PowerAndLog.xml:204(title) Piecewise.xml:20(title) Piecewise.xml:50(title) Piecewise.xml:80(title) Piecewise.xml:104(title) Piecewise.xml:127(title) Piecewise.xml:152(title) Installation.xml:28(entry) Installation.xml:90(entry) Installation.xml:161(entry) InsertRelationDialog.xml:69(term) InsertPointSeriesDialog.xml:49(term) Hyperbolic.xml:20(title) Hyperbolic.xml:51(title) Hyperbolic.xml:82(title) Hyperbolic.xml:114(title) Hyperbolic.xml:144(title) Hyperbolic.xml:176(title) Hyperbolic.xml:205(title) Hyperbolic.xml:236(title) Hyperbolic.xml:267(title) Hyperbolic.xml:300(title) Hyperbolic.xml:330(title) Hyperbolic.xml:360(title) FunctionList.xml:46(entry) FunctionList.xml:97(entry) FunctionList.xml:190(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:51(title) Complex.xml:84(title) Complex.xml:113(title) Complex.xml:141(title)
 msgid "Description"
@@ -43,7 +43,7 @@ msgstr "Beskrivning"
 
 #. Trigonometric.xml:24(glossterm) Trigonometric.xml:62(glossterm) Trigonometric.xml:100(glossterm) Trigonometric.xml:141(glossterm) Trigonometric.xml:173(glossterm) Trigonometric.xml:205(glossterm) Trigonometric.xml:236(glossterm) Trigonometric.xml:273(glossterm) Trigonometric.xml:310(glossterm) Trigonometric.xml:348(glossterm) Trigonometric.xml:381(glossterm) Trigonometric.xml:414(glossterm) InsertPointSeriesDialog.xml:65(glossterm) Glossary.xml:95(glossterm) Glossary.xml:96(primary) Complex.xml:56(glossterm)
 msgid "radians"
-msgstr ""
+msgstr "radianer"
 
 #. Trigonometric.xml:25(glossterm) Trigonometric.xml:63(glossterm) Trigonometric.xml:101(glossterm) Trigonometric.xml:174(glossterm) Trigonometric.xml:206(glossterm) Trigonometric.xml:238(glossterm) Trigonometric.xml:275(glossterm) Trigonometric.xml:350(glossterm) Trigonometric.xml:383(glossterm) Trigonometric.xml:416(glossterm) Special.xml:142(glossterm) Special.xml:172(glossterm) Special.xml:241(glossterm) Special.xml:276(glossterm) Rounding.xml:25(glossterm) Rounding.xml:57(glossterm) Rounding.xml:87(glossterm) Rounding.xml:118(glossterm) Rounding.xml:146(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:73(glossterm) PowerAndLog.xml:101(glossterm) PowerAndLog.xml:147(glossterm) PowerAndLog.xml:177(glossterm) PowerAndLog.xml:207(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:53(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:54(glossterm) Hyperbolic.xml:85(glossterm) Hyperbolic.xml:117(glossterm) Hyperbolic.xml:147(glossterm) Hyperbolic.xml:179(glossterm) Hyperbolic.xml:208(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:270(glossterm) Hyperbolic.xml:303(glossterm) Hyperbolic.xml:333(glossterm) Hyperbolic.xml:363(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:54(glossterm) Complex.xml:87(glossterm) Complex.xml:116(glossterm) Complex.xml:144(glossterm)
 msgid "numeric expression"
@@ -63,7 +63,7 @@ msgstr ""
 
 #. Trigonometric.xml:31(title) Trigonometric.xml:69(title) Trigonometric.xml:106(title) Trigonometric.xml:242(title) Trigonometric.xml:279(title) Trigonometric.xml:316(title) Trigonometric.xml:421(title) Special.xml:246(title) Special.xml:280(title) PowerAndLog.xml:106(title) Constants.xml:25(title)
 msgid "Remarks"
-msgstr ""
+msgstr "Anmärkningar"
 
 #. Trigonometric.xml:32(para) Trigonometric.xml:70(para) Trigonometric.xml:243(para) Trigonometric.xml:280(para) Trigonometric.xml:317(para)
 msgid "For arguments with a large magnitude, the function will begin to lose precision."
@@ -75,7 +75,7 @@ msgstr "Se även"
 
 #. Trigonometric.xml:50(primary) Trigonometric.xml:160(primary)
 msgid "cosine"
-msgstr ""
+msgstr "cosinus"
 
 #. Trigonometric.xml:51(para)
 msgid "Returns the cosine of the argument."
@@ -87,7 +87,7 @@ msgstr ""
 
 #. Trigonometric.xml:88(primary) Trigonometric.xml:192(primary) InsertTangentDialog.xml:10(primary)
 msgid "tangent"
-msgstr ""
+msgstr "tangent"
 
 #. Trigonometric.xml:89(para)
 msgid "Returns the tangent of the argument."
@@ -99,7 +99,7 @@ msgstr ""
 
 #. Trigonometric.xml:110(glossterm) Special.xml:142(glossterm) Rounding.xml:23(glossterm) Rounding.xml:56(glossterm) Rounding.xml:86(glossterm) Rounding.xml:117(glossterm) Rounding.xml:148(glossterm) PowerAndLog.xml:108(glossterm) Glossary.xml:58(glossterm) Glossary.xml:59(primary)
 msgid "integer"
-msgstr ""
+msgstr "heltal"
 
 #. Trigonometric.xml:107(para)
 msgid "For arguments with a large magnitude, the function will begin to lose precision. <placeholder-1/> is undefined at <placeholder-2/>, where p is an <placeholder-3/>, but the function returns a very large number if <placeholder-4/> is near the undefined value."
@@ -143,7 +143,7 @@ msgstr ""
 
 #. Trigonometric.xml:224(primary) Trigonometric.xml:335(primary)
 msgid "secant"
-msgstr ""
+msgstr "sekant"
 
 #. Trigonometric.xml:225(para)
 msgid "Returns the secant of the argument."
@@ -283,7 +283,7 @@ msgstr ""
 
 #. Special.xml:7(title) FunctionList.xml:401(emphasis)
 msgid "Special"
-msgstr ""
+msgstr "Special"
 
 #. Special.xml:11(primary)
 msgid "numerical integral"
@@ -379,11 +379,11 @@ msgstr ""
 
 #. Special.xml:228(primary)
 msgid "Lambert W-function"
-msgstr ""
+msgstr "Lambert W-funktion"
 
 #. Special.xml:229(primary)
 msgid "omega function"
-msgstr ""
+msgstr "omega-funktion"
 
 #. Special.xml:230(para)
 msgid "Returns the value of the Lambert W-function evaluated for the argument."
@@ -399,7 +399,7 @@ msgstr ""
 
 #. Special.xml:264(primary)
 msgid "Riemann Zeta function"
-msgstr ""
+msgstr "Riemann Zeta-funktion"
 
 #. Special.xml:265(para)
 msgid "Returns the value of the Riemann Zeta function evaluated for the argument."
@@ -419,7 +419,7 @@ msgstr ""
 
 #. Special.xml:299(primary)
 msgid "remainder"
-msgstr ""
+msgstr "rest"
 
 #. Special.xml:300(para) FunctionList.xml:437(entry)
 msgid "Returns the remainder of the first argument divided by the second argument."
@@ -431,7 +431,7 @@ msgstr ""
 
 #. Special.xml:330(primary)
 msgid "normal distribution"
-msgstr ""
+msgstr "normalfördelning"
 
 #. Special.xml:331(para) FunctionList.xml:441(entry)
 msgid "Returns the normal distribution of the first argument with optional mean value and standard deviation."
@@ -483,7 +483,7 @@ msgstr ""
 
 #. SaveImageDialog.xml:28(term)
 msgid "Windows Enhanced Metafile (emf)"
-msgstr ""
+msgstr "Windows Enhanced Metafile (emf)"
 
 #. SaveImageDialog.xml:30(para)
 msgid "Metafiles are usually preferred because they are small and look nice even when scaled. Though emf files are widely supported under MS Windows, they are not very portable."
@@ -491,7 +491,7 @@ msgstr ""
 
 #. SaveImageDialog.xml:38(term)
 msgid "Scalable Vector Graphics (svg)"
-msgstr ""
+msgstr "Scalable Vector Graphics (svg)"
 
 #. SaveImageDialog.xml:40(para)
 msgid "This is a format for portable metafiles and should therefore be preferred for files placed on the Internet. However the format is still not supported by all browsers."
@@ -507,7 +507,7 @@ msgstr ""
 
 #. SaveImageDialog.xml:58(term)
 msgid "Windows Bitmap (bmp)"
-msgstr ""
+msgstr "Windows Bitmap (bmp)"
 
 #. SaveImageDialog.xml:60(para)
 msgid "Windows Bitmap (bmp) is a standard format supported by almost all Windows programs that can read graphics files."
@@ -515,7 +515,7 @@ msgstr ""
 
 #. SaveImageDialog.xml:67(term)
 msgid "Joint Photographic Experts Group (jpeg)"
-msgstr ""
+msgstr "Joint Photographic Experts Group (jpeg)"
 
 #. SaveImageDialog.xml:69(para)
 msgid "Joint Photographic Experts Group (jpeg) is a bitmap format with loss. It is supported but not recommended because graphs will usually become blurred."
@@ -523,7 +523,7 @@ msgstr ""
 
 #. SaveImageDialog.xml:77(term)
 msgid "Portable Document Format (pdf)"
-msgstr ""
+msgstr "Portable Document Format (pdf)"
 
 #. SaveImageDialog.xml:79(para)
 msgid "Portable Document Format (pdf) is actually not an image format. It is a way to store documents as postscript in a portable way. Graph will store the image as Portable Network Graphics inside the pdf file."
@@ -607,7 +607,7 @@ msgstr ""
 
 #. PowerAndLog.xml:7(title)
 msgid "Power and logarithm"
-msgstr ""
+msgstr "Dignitet och logaritm"
 
 #. PowerAndLog.xml:11(primary)
 msgid "square"
@@ -623,7 +623,7 @@ msgstr ""
 
 #. PowerAndLog.xml:32(primary) InsertTrendlineDialog.xml:15(primary)
 msgid "exponential"
-msgstr ""
+msgstr "exponentiell"
 
 #. PowerAndLog.xml:33(para)
 msgid "Returns <emphasis>e</emphasis> raised to the power of the argument."
@@ -635,7 +635,7 @@ msgstr ""
 
 #. PowerAndLog.xml:61(primary)
 msgid "square root"
-msgstr ""
+msgstr "kvadratrot"
 
 #. PowerAndLog.xml:62(para) FunctionList.xml:309(entry)
 msgid "Returns the square root of the argument."
@@ -663,7 +663,7 @@ msgstr "Exempel"
 
 #. PowerAndLog.xml:116(para)
 msgid "Instead of <placeholder-1/>, you can use <placeholder-2/>."
-msgstr ""
+msgstr "Istället för <placeholder-1/> kan du använda <placeholder-2/>."
 
 #. PowerAndLog.xml:133(primary) PowerAndLog.xml:165(primary) PowerAndLog.xml:195(primary)
 msgid "logarithm"
@@ -671,7 +671,7 @@ msgstr "logaritm"
 
 #. PowerAndLog.xml:134(primary)
 msgid "natural logarithm"
-msgstr ""
+msgstr "naturlig logaritm"
 
 #. PowerAndLog.xml:135(para)
 msgid "Returns the natural logarithm of the argument."
@@ -706,9 +706,8 @@ msgid "plugins"
 msgstr ""
 
 #. Plugins.xml:9(ulink)
-#, fuzzy
 msgid "online"
-msgstr "Mongoliska"
+msgstr "online"
 
 #. Plugins.xml:7(para)
 msgid "To use the plugin system in Graph you need to install <placeholder-1/> from <placeholder-2/>. Documentation of the Python language may be found installed with Python or <placeholder-3/>."
@@ -944,7 +943,7 @@ msgstr ""
 
 #. OLE.xml:4(title)
 msgid "OLE server/client"
-msgstr ""
+msgstr "OLE-server/-klient"
 
 #. OLE.xml:7(primary)
 msgid "linking"
@@ -960,7 +959,7 @@ msgstr ""
 
 #. OLE.xml:11(title)
 msgid "OLE server"
-msgstr ""
+msgstr "OLE-server"
 
 #. OLE.xml:12(para)
 msgid "Graph has been implemented as an OLE (Object Linking and Embedding) server, which means that Graph objects can be placed (embedded) into an OLE client. Many applications can work as OLE clients, for example Microsoft Word."
@@ -988,7 +987,7 @@ msgstr "Lägg till"
 
 #. OLE.xml:41(guimenuitem)
 msgid "Object..."
-msgstr ""
+msgstr "Objekt..."
 
 #. OLE.xml:43(guilabel)
 msgid "Graph system"
@@ -1012,7 +1011,7 @@ msgstr ""
 
 #. OLE.xml:56(title)
 msgid "OLE client"
-msgstr ""
+msgstr "OLE-klient"
 
 #. OLE.xml:61(guimenuitem)
 msgid "Insert object..."
@@ -1248,7 +1247,7 @@ msgstr "Redigera..."
 
 #. MenuItems.xml:399(keycap)
 msgid "Enter"
-msgstr ""
+msgstr "Enter"
 
 #. MenuItems.xml:403(para)
 msgid "This will show a dialog where you can change the selected <placeholder-1/> in the <placeholder-2/>."
@@ -1468,7 +1467,7 @@ msgstr "open source"
 
 #. Introduction.xml:12(primary)
 msgid "payment"
-msgstr ""
+msgstr "betalning"
 
 #. Introduction.xml:13(primary)
 msgid "web site"
@@ -1492,7 +1491,7 @@ msgstr ""
 
 #. Introduction.xml:40(ulink)
 msgid "Graph support forum"
-msgstr ""
+msgstr "Graph supportforum"
 
 #. Introduction.xml:30(para)
 msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <placeholder-2/>."
@@ -1528,7 +1527,7 @@ msgstr "installation"
 
 #. Installation.xml:6(primary)
 msgid "uninstall"
-msgstr ""
+msgstr "deinstallera"
 
 #. Installation.xml:8(primary)
 msgid "language"
@@ -1536,7 +1535,7 @@ msgstr "språk"
 
 #. Installation.xml:10(primary)
 msgid "Control panel"
-msgstr ""
+msgstr "Kontrollpanel"
 
 #. Installation.xml:11(primary)
 msgid "Add/Remove Programs"
@@ -1560,7 +1559,7 @@ msgstr "Fil(er)"
 
 #. Installation.xml:34(entry)
 msgid "The program file."
-msgstr ""
+msgstr "Programfilen."
 
 #. Installation.xml:38(entry)
 msgid "Library used to create PDF files."
@@ -1572,11 +1571,11 @@ msgstr ""
 
 #. Installation.xml:46(entry)
 msgid "Translations of the program."
-msgstr ""
+msgstr "Översättningar av programvaran."
 
 #. Installation.xml:50(entry)
 msgid "Help files in different languages."
-msgstr ""
+msgstr "Hjälpfiler på olika språk."
 
 #. Installation.xml:54(entry)
 msgid "Some examples of plugins. Custom plugins can be placed here too."
@@ -1640,7 +1639,7 @@ msgstr ""
 
 #. Installation.xml:137(title)
 msgid "Uninstallation"
-msgstr ""
+msgstr "Deinstallation"
 
 #. Installation.xml:138(para)
 msgid "Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>. Just select Graph and click on the <emphasis>Change/Remove button</emphasis>. This will remove all traces of the program. If files were added to the installation directory after the installation, you will be asked if you want to delete them. Make sure Graph is not running while uninstalling."
@@ -1852,7 +1851,7 @@ msgstr ""
 
 #. InsertTangentDialog.xml:13(primary)
 msgid "normal"
-msgstr ""
+msgstr "normal"
 
 #. InsertTangentDialog.xml:16(guimenuitem)
 msgid "Insert tangent/normal..."
@@ -2160,7 +2159,7 @@ msgstr ""
 
 #. InsertPointSeriesDialog.xml:17(primary) AxesDialog.xml:19(primary)
 msgid "arrow"
-msgstr ""
+msgstr "pilar"
 
 #. InsertPointSeriesDialog.xml:19(para)
 msgid "You can use the dialog below to add a series of points to the coordinate system. The points will be shown in the coordinate system in the graphing area as a series of markers. To insert a new point series, you use <placeholder-1/>. To change an existing point series, you first select it in the <placeholder-2/> and use <placeholder-3/>."
@@ -2208,7 +2207,7 @@ msgstr ""
 
 #. InsertPointSeriesDialog.xml:81(guilabel)
 msgid "Interpolation"
-msgstr ""
+msgstr "Interpolation"
 
 #. InsertPointSeriesDialog.xml:79(para)
 msgid "Notice that if you select an arrow as marker, the arrow will be shown pointing tangential to the line at the point. The actual direction therefore depends on the <placeholder-1/> setting. The first point is never shown when the marker is an arrow."
@@ -2227,9 +2226,8 @@ msgid "1D cubic spline"
 msgstr "1D kubisk spline"
 
 #. InsertPointSeriesDialog.xml:98(ulink)
-#, fuzzy
 msgid "natural cubic spline"
-msgstr "1D kubisk spline"
+msgstr "naturlig kubisk spline"
 
 #. InsertPointSeriesDialog.xml:100(guilabel)
 msgid "2D cubic spline"
@@ -2289,11 +2287,11 @@ msgstr ""
 
 #. InsertLabelDialog.xml:12(primary)
 msgid "OLE object"
-msgstr ""
+msgstr "OLE-objekt"
 
 #. InsertLabelDialog.xml:13(primary)
 msgid "rotate"
-msgstr ""
+msgstr "rotera"
 
 #. InsertLabelDialog.xml:14(primary)
 msgid "special character"
@@ -2309,7 +2307,7 @@ msgstr ""
 
 #. InsertLabelDialog.xml:17(primary)
 msgid "symbol"
-msgstr ""
+msgstr "symbol"
 
 #. InsertLabelDialog.xml:18(primary)
 msgid "superscript"
@@ -2321,11 +2319,11 @@ msgstr ""
 
 #. InsertLabelDialog.xml:20(primary)
 msgid "bold"
-msgstr ""
+msgstr "fet"
 
 #. InsertLabelDialog.xml:21(primary)
 msgid "italic"
-msgstr ""
+msgstr "kursiv"
 
 #. InsertLabelDialog.xml:22(primary)
 msgid "underline"
@@ -2701,7 +2699,7 @@ msgstr ""
 
 #. Glossary.xml:11(title)
 msgid "Glossary"
-msgstr ""
+msgstr "Ordlista"
 
 #. Glossary.xml:16(para)
 msgid "Complex numbers are a superset of real numbers. Complex numbers are two dimensional and is most often written on rectangular form as a+b&imag; where <placeholder-1/> is the real part and <placeholder-2/> is the imaginary part. The imaginary unit &imag; is defined as &imag;^2=-1. Complex numbers can also be shown on polar form as a&ang;&theta; where <placeholder-3/> is the absolute value of the number and &theta; is the angle of the number in radians or degrees."
@@ -3177,7 +3175,7 @@ msgstr ""
 
 #. FAQ.xml:6(primary)
 msgid "FAQ"
-msgstr ""
+msgstr "Vanliga frågor"
 
 #. FAQ.xml:7(primary)
 msgid "questions"
@@ -3185,7 +3183,7 @@ msgstr "frågor"
 
 #. FAQ.xml:8(primary)
 msgid "tips"
-msgstr ""
+msgstr "tips"
 
 #. FAQ.xml:9(primary)
 msgid "tricks"
@@ -3217,11 +3215,11 @@ msgstr ""
 
 #. FAQ.xml:62(para)
 msgid "When will the next version be released?"
-msgstr ""
+msgstr "När släpps nästa version?"
 
 #. FAQ.xml:67(para)
 msgid "When it is ready."
-msgstr ""
+msgstr "När den är klar."
 
 #. FAQ.xml:75(para)
 msgid "How can I move the coordinate system?"
@@ -3357,7 +3355,7 @@ msgstr "linjelängd"
 
 #. EvaluateDialog.xml:12(primary)
 msgid "integrate"
-msgstr ""
+msgstr "integrera"
 
 #. EvaluateDialog.xml:13(primary)
 msgid "definite integral"
@@ -3453,11 +3451,11 @@ msgstr ""
 
 #. Errors.xml:7(title)
 msgid "Error messages"
-msgstr ""
+msgstr "Felmeddelanden"
 
 #. Errors.xml:8(primary)
 msgid "Errors"
-msgstr ""
+msgstr "Fel"
 
 #. Errors.xml:12(term)
 msgid "Error 01: An error occurred while evaluating power function."
@@ -3889,7 +3887,7 @@ msgstr ""
 
 #. Constants.xml:32(title)
 msgid "Implementation"
-msgstr ""
+msgstr "implementering"
 
 #. Constants.xml:33(para)
 msgid "<placeholder-1/> uses a multiplicative congruential random number generator with period 2 to the 32<superscript>nd</superscript> power to return successive pseudo-random numbers in the range from 0 to 1."
@@ -3953,7 +3951,7 @@ msgstr ""
 
 #. AxesDialog.xml:14(primary)
 msgid "unit"
-msgstr ""
+msgstr "enhet"
 
 #. AxesDialog.xml:15(primary)
 msgid "logarithmic scale"
@@ -3969,7 +3967,7 @@ msgstr ""
 
 #. AxesDialog.xml:20(primary)
 msgid "colors"
-msgstr ""
+msgstr "färger"
 
 #. AxesDialog.xml:21(primary)
 msgid "crossing"
@@ -4325,7 +4323,7 @@ msgstr ""
 
 #. Acknowledgements.xml:10(primary)
 msgid "translators"
-msgstr ""
+msgstr "översättare"
 
 #. Acknowledgements.xml:11(primary)
 msgid "logo"
