@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-08-30 23:12Romance Daylight Time\n"
-"PO-Revision-Date: 2011-10-16 19:40+0100\n"
+"POT-Creation-Date: 2011-10-17 23:46Romance Daylight Time\n"
+"PO-Revision-Date: 2011-10-18 18:36+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -294,7 +294,6 @@ msgid "area"
 msgstr "Bereich"
 
 #. Special.xml:13(para)
-#, fuzzy
 msgid "Returns an approximation for the numerical integral of the given expression over the given range."
 msgstr "Berechnet eine Näherung für das numerische Integral über das angegebene Intervall."
 
@@ -651,8 +650,8 @@ msgid "The <placeholder-1/> function calculates the square root of <placeholder-
 msgstr "Die <placeholder-1/>-Funktion berechnet die Quadratwurzel von <placeholder-2/>, also <placeholder-3/> hoch &frac12;. <placeholder-4/> kann ein beliebiger <placeholder-5/> sein , der eine <placeholder-6/> oder eine <placeholder-7/> darstellt. Wird die Berechnung mit reellen Zahlen durchgeführt, so ist das Argument nur für <placeholder-8/> &ge; 0 definiert."
 
 #. PowerAndLog.xml:90(para)
-msgid "Returns the <placeholder-1/> root of the argument."
-msgstr "Liefert die <placeholder-1/> Wurzel des Arguments."
+msgid "Returns the <placeholder-1/><superscript>th</superscript> root of the argument."
+msgstr "Liefert die <placeholder-1/>-te Wurzel des Arguments."
 
 #. PowerAndLog.xml:99(para)
 msgid "The <placeholder-1/> function calculates the <placeholder-2/><superscript>th</superscript> root of <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-9/> &ge; 0."
@@ -3124,7 +3123,7 @@ msgstr "Rundet das erste Argument auf die Anzahl der Dezimalstellen aus dem zwei
 
 # What is returned with argument 0?
 #. FunctionList.xml:378(entry)
-msgid "Returns the sign of the argument: 1 if the argument is greater than 0, and -1 if the argument if less than 0."
+msgid "Returns the sign of the argument: 1 if the argument is greater than 0, and -1 if the argument is less than 0."
 msgstr "Liefert das Vorzeichen des Arguments zurück: 1, wenn das Argument gößer als 0 ist und -1, wenn es kleiner als 0 ist."
 
 #. FunctionList.xml:382(entry)
@@ -4536,6 +4535,8 @@ msgstr ""
 msgid "Translator:"
 msgstr "Übersetzer:"
 
+#~ msgid "Returns the <placeholder-1/> root of the argument."
+#~ msgstr "Liefert die <placeholder-1/> Wurzel des Arguments."
 #~ msgid "GNU General Public License"
 #~ msgstr "Version <placeholder-1/>"
 #~ msgid "Area"
