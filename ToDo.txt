@@ -182,7 +182,9 @@ Plugins:
 - Easy way to show one dimentional inequalities on a number line.
 
 Bugs:
-The relation (x+y)^2<=x^2+2*x*y+y^2 cannot be plotted with a border. Windows Bug in FrameRgn().
+The relation "(x+y)^2<=x^2+2*x*y+y^2" cannot be plotted with a border. Windows Bug in FrameRgn().
+The relation "((1-x)^2)^.5+((1-a)^2)^.5 >= ((x-a)^2)^.5" is not plotted correctly because of reounding errors.
+The relation "(x-y) * (x-y) = 0" is not plotted as the sign never changes.
 
 Translations:
 New Portuguese help file: mateus kahler <mateus.kahler@gmail.com>
