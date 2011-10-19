@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-10-17 23:46Romance Daylight Time\n"
-"PO-Revision-Date: 2011-10-18 21:04+0100\n"
-"Last-Translator: Ivan Johansen\n"
+"PO-Revision-Date: 2011-10-19 20:46+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -293,9 +293,10 @@ msgstr "Numerisches Integral"
 msgid "area"
 msgstr "Bereich"
 
+# "im angegebenen Intervall" ist schon richtig.
 #. Special.xml:13(para)
 msgid "Returns an approximation for the numerical integral of the given expression over the given range."
-msgstr "Berechnet eine Näherung für das numerische Integral über das angegebene Intervall."
+msgstr "Berechnet eine Näherung für das numerische Integral des gegebenen Ausdrucks im angegebenen Intervall."
 
 #. Special.xml:34(glossterm) Special.xml:80(glossterm) Special.xml:114(glossterm) Special.xml:209(glossterm) Special.xml:314(glossterm) Special.xml:345(glossterm) Piecewise.xml:84(glossterm) Piecewise.xml:108(glossterm) Piecewise.xml:133(glossterm) Piecewise.xml:158(glossterm)
 msgid "numeric expressions"
@@ -307,7 +308,7 @@ msgstr "reelle Zahlen"
 
 #. Special.xml:22(para)
 msgid "The <placeholder-1/> function returns an approximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to an estimated relative error less than <placeholder-19/>."
-msgstr "Die Funktion <placeholder-1/> liefert eine Näherung für das numerische Integral von <placeholder-2/> mit der Variablen <placeholder-3/> von <placeholder-4/> bis <placeholder-5/>, mathematisch beschrieben mit: <placeholder-6/> Dieses Integral entspricht der Fläche zwischen der Funktion <placeholder-7/> und der X-Achse von <placeholder-8/> bis <placeholder-9/>, wobei hier die Fläche unterhalb der Achse negativ gezählt wird. <placeholder-10/> kann jede beliebige Funktionen mit <placeholder-11/> als zweitem Argument sein.  <placeholder-12/> und <placeholder-13/> können beliebige <placeholder-14/> sein, die <placeholder-15/> entsprechen, oder <placeholder-16/> oder <placeholder-17/> (negativ bzw. positiv unendlich). <placeholder-18/> berechnet das Integral nicht exakt, sondern approximiert es mithilfe der Gauß-Kronrod-Quadratur, wobei der relative Schätzfehler unterhalb von  <placeholder-19/> liegt."
+msgstr "Die Funktion <placeholder-1/> liefert eine Näherung für das numerische Integral von <placeholder-2/> mit der Variablen <placeholder-3/> von <placeholder-4/> bis <placeholder-5/>, mathematisch beschrieben mit: <placeholder-6/> Dieses Integral entspricht der Fläche zwischen der Funktion <placeholder-7/> und der X-Achse von <placeholder-8/> bis <placeholder-9/>, wobei hier die Fläche unterhalb der Achse negativ gezählt wird. <placeholder-10/> kann jede beliebige Funktionen mit <placeholder-11/> als zweitem Argument sein. <placeholder-12/> und <placeholder-13/> können beliebige <placeholder-14/> sein, die <placeholder-15/> entsprechen; sie können auch <placeholder-16/> oder <placeholder-17/> sein (negativ bzw. positiv unendlich). <placeholder-18/> berechnet das Integral nicht exakt, sondern approximiert es mit Hilfe der Gauß-Kronrod-Quadratur, wobei der relative Schätzfehler geringer als <placeholder-19/> ist."
 
 #. Special.xml:41(title) Rounding.xml:153(title)
 msgid "Examples"
@@ -3121,7 +3122,6 @@ msgstr "Rundet das Argument zur nächsten Ganzzahl ab."
 msgid "Rounds the first argument to the number of decimals given by the second argument."
 msgstr "Rundet das erste Argument auf die Anzahl der Dezimalstellen aus dem zweiten Argument."
 
-# What is returned with argument 0?
 #. FunctionList.xml:378(entry)
 msgid "Returns the sign of the argument: 1 if the argument is greater than 0, and -1 if the argument is less than 0."
 msgstr "Liefert das Vorzeichen des Arguments zurück: 1, wenn das Argument gößer als 0 ist und -1, wenn es kleiner als 0 ist."
@@ -3138,7 +3138,6 @@ msgstr "Liefert das kleinste Argument zurück."
 msgid "Returns the greatest of the arguments."
 msgstr "Liefert das grösste Argument zurück."
 
-# What is returned, if the 2nd argument is outside the range?
 #. FunctionList.xml:394(entry)
 msgid "Returns the second argument if it is in the range of the first and third argument."
 msgstr "Liefert das zweite Argument zurück, wenn es im Bereich zwischen dem ersten und dritten Argument ist."
@@ -4303,9 +4302,6 @@ msgstr "Die Animation wird als AVI-Datei (Audio Video Interleave) gespeichert, d
 msgid "Save frame..."
 msgstr "Aktuelles Bild speichern..."
 
-# "as a bitmap file"
-# better: "as an image file", because the type of the image file is specified in the second sentence.
-# (Please forget my comment if "bitmap file" is so common, that is doesn't necessarily state the file format.)
 #. AnimateDialog.xml:114(para)
 msgid "This will save the currently shown frame as a bitmap file. This can be either Windows Bitmap (bmp), Portable Network Graphics (png) or Joint Photographic Experts Group (jpeg)."
 msgstr "Dies speichert das aktuelle Einzelbild in eine Datei, entweder als Windows Bitmap (bmp), Portable Network Graphics (png) oder Joint Photographic Experts Group (jpeg)."
@@ -4314,9 +4310,6 @@ msgstr "Dies speichert das aktuelle Einzelbild in eine Datei, entweder als Windo
 msgid "Save all frames..."
 msgstr "Alle Bilder speichern..."
 
-# "as single bitmap files"
-# better: "as single image files" or "as single graphic files", because "bitmap" states the image file format.
-# Please forget my comment if "bitmap file" is a common expression and has nothing to do with the file format in normal speech.
 #. AnimateDialog.xml:124(para)
 msgid "This will save all frames as single bitmap files. This is the same as repeating <placeholder-1/> for each frame in the animation."
 msgstr "Dies speichert alle Einzelbilder als separate Bilddateien. Dasselbe wird erreicht durch wiederholtes <placeholder-1/> für jedes Einzelbild der Animation."
