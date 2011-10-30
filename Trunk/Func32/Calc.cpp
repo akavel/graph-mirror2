@@ -462,12 +462,6 @@ template<typename T> struct TComplexTrait<std::complex<T> >
   static const std::complex<T> ImagUnit() {return std::complex<T>(0, 1);}
 };
 //---------------------------------------------------------------------------
-template<typename T>
-inline T TFuncData::CalcFunc(TConstIterator Iter, TDynData<T> &DynData)
-{
-  return CalcF(Iter, DynData);
-}
-//---------------------------------------------------------------------------
 /** Evaluate Data with x as variable and returns the result
  *  \param DynData: Contains information used for the evaluation
  *  \return The result of the evaluation
@@ -479,15 +473,16 @@ T TFuncData::CalcF(TDynData<T> &DynData) const
   {
     if(Data.empty())
     {
-      DynData.ErrorCode = ecNoFunc;
-      return 0;
-    }
-		DynData.ErrorCode = ecNoError;
-    return CalcFunc(Data.begin(), DynData);
-  }
-  catch(...)
-  {
-    DynData.ErrorCode = ecCalcError;
+			DynData.Error.ErrorCode = ecNoFunc;
+			return 0;
+		}
+		DynData.Error.ErrorCode = ecNoError;
+		TConstIterator Iter = Data.begin();
+		return CalcFunc(Iter, DynData);
+	}
+	catch(...)
+	{
+    DynData.Error.ErrorCode = ecCalcError;
 		return std::numeric_limits<long double>::quiet_NaN();
   }
 }
@@ -499,10 +494,10 @@ T TFuncData::CalcF(TDynData<T> &DynData) const
  *  \return The result of the evaluation.
  */
 template<typename T>
-T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
+T TFuncData::CalcFunc(TConstIterator &Iter, TDynData<T> &DynData)
 {
-  TErrorCode &ErrorCode = DynData.ErrorCode;
-  const TElem &Elem = *Iter++;
+	TErrorCode &ErrorCode = DynData.Error.ErrorCode;
+	const TElem &Elem = *Iter++;
 	switch(Elem.Ident)
 	{
 		case CodeNumber:
@@ -541,14 +536,14 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       return *boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
 
 		case CodeIntegrate:
-    {
+		{
 			//Check for backward compatibility
 			long double *Constant = Elem.Value.empty() ? NULL :
 				&*boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
 			TConstIterator F = Iter;
 			Iter = FindEnd(Iter);
-			T Min = real(CalcF(Iter, DynData));
-			T Max = real(CalcF(Iter, DynData));
+			T Min = real(CalcFunc(Iter, DynData));
+			T Max = real(CalcFunc(Iter, DynData));
 			if(imag(Min) != 0 || imag(Max) != 0)
 				ErrorCode = ecComplexError;
 			if(ErrorCode)
@@ -559,63 +554,65 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodeSum:
 		case CodeProduct:
     {
-      boost::shared_ptr<long double> Variable = boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
+			boost::shared_ptr<long double> Variable = boost::any_cast<boost::shared_ptr<long double> >(Elem.Value);
       TConstIterator F = Iter;
       Iter = FindEnd(Iter);
-      T Min = CalcF(Iter, DynData);
-      T Max = CalcF(Iter, DynData);
+			T Min = CalcFunc(Iter, DynData);
+			T Max = CalcFunc(Iter, DynData);
       if(imag(Min) || imag(Max))
       {
         ErrorCode = ecComplexError;
         return 0;
       }
 			T Sum = Elem.Ident == CodeSum ? 0 : 1;
-      for(long double i = real(Min); i <= real(Max); i++)
-      {
-        *Variable = i;
-        if(Elem.Ident == CodeSum)
-          Sum += CalcFunc(F, DynData);
-        else
-          Sum *= CalcFunc(F, DynData);
+			for(long double i = real(Min); i <= real(Max); i++)
+			{
+				TConstIterator Temp = F;
+				*Variable = i;
+				if(Elem.Ident == CodeSum)
+					Sum += CalcFunc(Temp, DynData);
+				else
+          Sum *= CalcFunc(Temp, DynData);
       }
       return Sum;
     }
 
     case CodeCustom:
-    {
-      if(++DynData.Recursion > MaxRecursion)
-      {
-        ErrorCode = ecRecusionLimit;
+		{
+			if(++DynData.Recursion > MaxRecursion)
+			{
+				ErrorCode = ecRecusionLimit;
 				return 0;
-      }
+			}
 
-      std::vector<T> Values;
-      for(unsigned I = 0; I < Elem.Arguments; I++)
-      {
-        Values.push_back(CalcF(Iter, DynData));
-        if(ErrorCode != ecNoError)
-          return 0;
-      }
-
-      boost::shared_ptr<TBaseCustomFunc> Func = boost::any_cast<boost::shared_ptr<TBaseCustomFunc> >(Elem.Value);
+			T *Values = Elem.Arguments > 0 ? new T[Elem.Arguments] : NULL;
+			for(unsigned I = 0; I < Elem.Arguments; I++)
+			{
+				Values[I] = CalcFunc(Iter, DynData);
+				if(ErrorCode != ecNoError)
+					return 0;
+			}
+			const boost::shared_ptr<TBaseCustomFunc> &Func = *boost::unsafe_any_cast<boost::shared_ptr<TBaseCustomFunc> >(&Elem.Value);
 			if(Func)
-      {
-        const T *OldArgs = DynData.Args;
-        DynData.Args = Values.empty() ? NULL : &Values[0];
-        T Result = Func->DynCall(DynData);
-        DynData.Args = OldArgs;
-        DynData.Recursion--;
-        return Result;
-      }
+			{
+				const T *OldArgs = DynData.Args;
+				DynData.Args = Values;
+				T Result = Func->DynCall(DynData);
+				DynData.Args = OldArgs;
+				DynData.Recursion--;
+				delete[] Values;
+				return Result;
+			}
 
-      ErrorCode = ecSymbolNotFound;
-      DynData.ErrorStr = Elem.Text;
-      return 0;
-    }
+			ErrorCode = ecSymbolNotFound;
+			DynData.Error.Str = Elem.Text;
+			delete[] Values;
+			return 0;
+		}
 
-    case CodeOr:
-    {
-			T Temp = CalcF(Iter, DynData);
+		case CodeOr:
+		{
+			T Temp = CalcFunc(Iter, DynData);
       //An error is handles as evaluation to 0
       if(!!Temp && ErrorCode == ecNoError)
       {
@@ -623,7 +620,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         return 1;
       }
       ErrorCode = ecNoError;
-      Temp = CalcF(Iter, DynData);
+			Temp = CalcFunc(Iter, DynData);
       if(!!Temp && ErrorCode == ecNoError)
         return 1;
       ErrorCode = ecNoError;
@@ -631,26 +628,26 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     }
   }
 
-  T Temp = CalcF(Iter, DynData);
+	T Temp = CalcFunc(Iter, DynData);
   if(ErrorCode != ecNoError)
     return 0;                    //! \bug I think we may need to adjust Iter here
 	switch(Elem.Ident)
   {
     case CodeAdd:
-      return Temp + CalcF(Iter, DynData);
+			return Temp + CalcFunc(Iter, DynData);
 
-    case CodeSub:
-      return Temp - CalcF(Iter, DynData);
+		case CodeSub:
+			return Temp - CalcFunc(Iter, DynData);
 
     case CodeMul:
 		{
-      T Temp2 = CalcF(Iter, DynData);
+			T Temp2 = CalcFunc(Iter, DynData);
       return Temp * Temp2;
     }
 
     case CodeDiv:
     {
-      T Temp2 = CalcF(Iter, DynData);
+			T Temp2 = CalcFunc(Iter, DynData);
       if(!!Temp2)
         return Temp / Temp2;
       if(!ErrorCode)
@@ -660,16 +657,16 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
 
     case CodePow:
     {
-      T Temp2 = CalcF(Iter, DynData);
-      Temp = Pow(Temp, Temp2);
+			T Temp2 = CalcFunc(Iter, DynData);
+			Temp = Pow(Temp, Temp2);
 			if(!IsFinite(Temp))
-        ErrorCode = ecPowCalcError;
-      return Temp;
-    }
+				ErrorCode = ecPowCalcError;
+			return Temp;
+		}
 
-    case CodeRoot: //y=root(n,x)
-    {
-      T Temp2 = CalcF(Iter, DynData);
+		case CodeRoot: //y=root(n,x)
+		{
+			T Temp2 = CalcFunc(Iter, DynData);
       if(!Temp)  //Cannot raise to root 0
       {
 				ErrorCode = ecDivByZero;
@@ -682,37 +679,37 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       return Temp;
     }
 
-    case CodePowDiv:
-    {  //Temp^(Temp2/Temp3)
-      T Temp2 = CalcF(Iter, DynData);
-			T Temp3 = CalcF(Iter, DynData);
-      if(!Temp3)  //Cannot raise to root 0
-      {
-        ErrorCode = ecDivByZero;
-        return 0;
-      }
+		case CodePowDiv:
+		{  //Temp^(Temp2/Temp3)
+			T Temp2 = CalcFunc(Iter, DynData);
+			T Temp3 = CalcFunc(Iter, DynData);
+			if(!Temp3)  //Cannot raise to root 0
+			{
+				ErrorCode = ecDivByZero;
+				return 0;
+			}
 
-      Temp = PowDiv(Temp, Temp2, Temp3);
+			Temp = PowDiv(Temp, Temp2, Temp3);
 			if(!IsFinite(Temp))
 				ErrorCode = ecPowCalcError;
       return Temp;
     }
 
-    case CodeMod:
+		case CodeMod:
     {
-			T Temp2 = CalcF(Iter, DynData);
-      Temp = fmod(Temp, Temp2);
+			T Temp2 = CalcFunc(Iter, DynData);
+			Temp = fmod(Temp, Temp2);
 			if(!IsFinite(Temp))
-        ErrorCode = ecComplexError;
-      //The C++ implementation doesn't follow the documentation, which also seems to be wrong.
-      //We want the sign of mod(m,n) to be the same as the sign of n.
-      if(!!Temp && (real(Temp) >= 0) != (real(Temp2) >= 0))
-        return Temp + Temp2;
-      return Temp;
-    }
-    case CodeRound:
-    {
-      T Temp2 = CalcF(Iter, DynData);
+				ErrorCode = ecComplexError;
+			//The C++ implementation doesn't follow the documentation, which also seems to be wrong.
+			//We want the sign of mod(m,n) to be the same as the sign of n.
+			if(!!Temp && (real(Temp) >= 0) != (real(Temp2) >= 0))
+				return Temp + Temp2;
+			return Temp;
+		}
+		case CodeRound:
+		{
+			T Temp2 = CalcFunc(Iter, DynData);
       if(imag(Temp2))
 			{
         ErrorCode = ecComplexError;
@@ -727,7 +724,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodeSin:
     case CodeCos:
     case CodeTan:
-      if(DynData.Trigonometry == Degree)
+			if(DynData.Trigonometry == Degree)
         Temp *= PI / 180;
 			switch(Elem.Ident)
       {
@@ -756,7 +753,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         case CodeATan:
           Temp = atan(Temp); break;
         case CodeArg:
-          Temp = arg(Temp);
+					Temp = arg(Temp);
 					if(!IsFinite(Temp))
 					{
 						ErrorCode = ecArgError;
@@ -783,9 +780,9 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
 
     case CodeLogB:
     {
-      T Temp2 = CalcF(Iter, DynData);
+			T Temp2 = CalcFunc(Iter, DynData);
       if(ErrorCode)
-        return 0;
+				return 0;
       if(imag(Temp2))
 			{
         ErrorCode = ecComplexError;
@@ -868,27 +865,27 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
     case CodeFloor: return floor(Temp);
 		case CodeMin:
 			for(unsigned I = 1; I < Elem.Arguments; I++)
-				Temp = Minimum(Temp, CalcF(Iter, DynData));
+				Temp = Minimum(Temp, CalcFunc(Iter, DynData));
 			return Temp;
 
     case CodeMax:
 			for(unsigned I = 1; I < Elem.Arguments; I++)
-				Temp = Maximum(Temp, CalcF(Iter, DynData));
+				Temp = Maximum(Temp, CalcFunc(Iter, DynData));
 			return Temp;
 
     case CodeRange:
-      return Maximum(Temp, Minimum(CalcF(Iter, DynData), CalcF(Iter, DynData)));
+			return Maximum(Temp, Minimum(CalcFunc(Iter, DynData), CalcFunc(Iter, DynData)));
 
     case CodeCompare1:
     {
-      T Temp2 = CalcF(Iter, DynData);
+			T Temp2 = CalcFunc(Iter, DynData);
       return Compare(Temp, Temp2, boost::any_cast<TCompareMethod>(Elem.Value), ErrorCode);
     }
 
     case CodeCompare2:
     {
-      T Temp2 = CalcF(Iter, DynData);
-			T Temp3 = CalcF(Iter, DynData);
+			T Temp2 = CalcFunc(Iter, DynData);
+			T Temp3 = CalcFunc(Iter, DynData);
       std::pair<TCompareMethod,TCompareMethod> Comp = boost::any_cast<std::pair<TCompareMethod,TCompareMethod> >(Elem.Value);
       return Compare(Temp, Temp2, Comp.first, ErrorCode) && Compare(Temp2, Temp3, Comp.second, ErrorCode);
     }
@@ -897,10 +894,10 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       return !Temp;
 
     case CodeAnd:
-      return !!Temp & !!CalcF(Iter, DynData); //Do not use logical and because of hort-circuit rule
+			return !!Temp & !!CalcFunc(Iter, DynData); //Do not use logical and because of hort-circuit rule
 
     case CodeXor:
-      return !!Temp ^ !!CalcF(Iter, DynData);
+			return !!Temp ^ !!CalcFunc(Iter, DynData);
 
     case CodeCsc:
     case CodeSec:
@@ -930,9 +927,9 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       }
       return Gamma(Temp);
 
-    case CodeBeta:
+		case CodeBeta:
     {
-      T Temp2 = CalcF(Iter, DynData);
+			T Temp2 = CalcFunc(Iter, DynData);
       return Gamma(Temp) * Gamma(Temp2) / Gamma(Temp + Temp2); //Gamma will never return 0
     }
 
@@ -948,7 +945,7 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
       {
 				if(!!Temp)
         {
-          Temp = CalcF(Iter, DynData);
+					Temp = CalcFunc(Iter, DynData);
           while(++I < Elem.Arguments)
 						Iter = FindEnd(Iter);
           return Temp;
@@ -956,10 +953,10 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
 
         Iter = FindEnd(Iter);
         if(I+1 < Elem.Arguments)
-          Temp = CalcF(Iter, DynData);
+					Temp = CalcFunc(Iter, DynData);
       }
 			if(Elem.Arguments % 2 == 0)
-        ErrorCode = ecNotDefError;
+				ErrorCode = ecNotDefError;
       return Temp;
 
     case CodeDNorm:
@@ -970,19 +967,19 @@ T TFuncData::CalcF(TConstIterator &Iter, TDynData<T> &DynData)
         Temp2 = 0, Temp3 = 1;
       else
       {
-        Temp2 = CalcF(Iter, DynData);
-        if(ErrorCode)
-          return 0;
-        Temp3 = CalcF(Iter, DynData);
-      }
+				Temp2 = CalcFunc(Iter, DynData);
+				if(ErrorCode)
+					return 0;
+				Temp3 = CalcFunc(Iter, DynData);
+			}
 			if(!ErrorCode && (imag(Temp) || imag(Temp2) || imag(Temp3)))
 				ErrorCode = ecComplexError;
-      if(!ErrorCode && real(Temp3) <= 0)
-        ErrorCode = ecNotDefError;
-      if(ErrorCode)
-        return 0;
-      return NormalDist(real(Temp), real(Temp2), real(Temp3));
-    }
+			if(!ErrorCode && real(Temp3) <= 0)
+				ErrorCode = ecNotDefError;
+			if(ErrorCode)
+				return 0;
+			return NormalDist(real(Temp), real(Temp2), real(Temp3));
+		}
 
 		default:
 			ErrorCode = ecInternalError;
@@ -1000,10 +997,11 @@ double TFuncData::CalcGSLFunc(double x, void *Params)
 		*Function->Value = x;
 	else
 		Function->DynData.Args = &X;
-	Function->DynData.ErrorCode = ecNoError;
-	T Result = CalcFunc(Function->Func, Function->DynData);
+	Function->DynData.Error.ErrorCode = ecNoError;
+	TConstIterator Iter = Function->Func;
+	T Result = CalcFunc(Iter, Function->DynData);
 	Function->DynData.Args = OldArgs;
-	if(Function->DynData.ErrorCode != ecNoError || imag(Result) != 0)
+	if(Function->DynData.Error.ErrorCode != ecNoError || imag(Result) != 0)
 		return std::numeric_limits<double>::quiet_NaN();
 	return real(Result);
 }
@@ -1045,15 +1043,15 @@ boost::recursive_mutex Mutex;
 		ErrorResult = gsl_integration_qagiu(&F, Min, 0, RelError, MaxSubIntervals, w, &Result, &Error);
 	gsl_integration_workspace_free(w);
 	if(ErrorResult == GSL_EROUND)    //Should we give a warning?
-		DynData.ErrorCode = ecNoError; //ecNoAccurateResult;
+		DynData.Error.ErrorCode = ecNoError; //ecNoAccurateResult;
 	else if(ErrorResult != 0)
-		DynData.ErrorCode = ecNoResult;
+		DynData.Error.ErrorCode = ecNoResult;
 	else if(!boost::math::isfinite(Result))
-		DynData.ErrorCode = ecNoResult;
+		DynData.Error.ErrorCode = ecNoResult;
 	else if(Result != 0 && Error / Result > RelError)
-		DynData.ErrorCode = ecNoAccurateResult;
+		DynData.Error.ErrorCode = ecNoAccurateResult;
 	else
-		DynData.ErrorCode = ecNoError;
+		DynData.Error.ErrorCode = ecNoError;
 	if(Value != NULL)
   	*Value = 0; //Leave Value set 0 zero when unused to make compare possible.
 	return Result;
@@ -1072,11 +1070,12 @@ boost::recursive_mutex Mutex;
  */
 double TFuncData::Integrate(double Min, double Max, double RelError, TTrigonometry Trigonometry) const
 {
-  long double Value;
-  TDynData<long double> DynData(&Value, Trigonometry);
-  double Result = Integrate(Data.begin(), Min, Max, RelError, DynData, &Value);
-	if(DynData.ErrorCode != ecNoError)
-    throw ECalcError(DynData.ErrorCode);
+	long double Value;
+	ECalcError Error;
+	TDynData<long double> DynData(&Value, Trigonometry, Error);
+	double Result = Integrate(Data.begin(), Min, Max, RelError, DynData, &Value);
+	if(Error.ErrorCode != ecNoError)
+    throw Error;
   return Result;
 }
 //---------------------------------------------------------------------------

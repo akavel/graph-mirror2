@@ -16,12 +16,12 @@ namespace Func32
 //---------------------------------------------------------------------------
 TComplex TBaseCustomFunc::DynCall(TDynData<TComplex> &DynData) const
 {
-  return Call(DynData.Args, DynData.Trigonometry, DynData.ErrorCode, DynData.ErrorStr);
+	return Call(DynData.Args, DynData.Trigonometry, DynData.Error.ErrorCode, DynData.Error.Str);
 }
 //---------------------------------------------------------------------------
 long double TBaseCustomFunc::DynCall(TDynData<long double> &DynData) const
 {
-  return Call(DynData.Args, DynData.Trigonometry, DynData.ErrorCode, DynData.ErrorStr);
+	return Call(DynData.Args, DynData.Trigonometry, DynData.Error.ErrorCode, DynData.Error.Str);
 }
 //---------------------------------------------------------------------------
 /** Default constructor to create an empty custom function
