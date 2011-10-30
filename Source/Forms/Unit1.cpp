@@ -2235,19 +2235,21 @@ void TForm1::CheckForUpdate(bool StartupCheck)
 
   try
   {
-    TVersionInfo Info;
-    std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
+		TVersionInfo Info;
+		std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
 		std::auto_ptr<TIdHTTP> IdHTTP(new TIdHTTP(NULL));
 
 		IdHTTP->Request->UserAgent = (L"Mozilla/3.0 (compatible; Graph " + Info.StringValue(L"ProductVersion") + L')').c_str();
-    IdHTTP->HandleRedirects = true;
+		IdHTTP->HandleRedirects = true;
 
-    std::wstring Url = GetRegValue(REGISTRY_KEY, L"InfFile", HKEY_CURRENT_USER, INF_FILE);
+		std::wstring Url = GetRegValue(REGISTRY_KEY, L"InfFile", HKEY_CURRENT_USER, INF_FILE);
 		Url += L"?Version=" + Info.StringValue(L"ProductVersion");
+		if(Info.FileFlags() & ffDebug)
+			Url += L"&Build=" + ToWString(Info.FileVersion().Build);
 		Url += L"&Language=" + Property.Language;
-    IdHTTP->Get(Url.c_str(), Stream.get());
+		IdHTTP->Get(Url.c_str(), Stream.get());
 
-    Stream->Position = 0;
+		Stream->Position = 0;
     std::auto_ptr<TStringList> StringList(new TStringList);
     StringList->LoadFromStream(Stream.get());
     std::auto_ptr<TMemIniFile> IniFile(new TMemIniFile(""));
