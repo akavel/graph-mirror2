@@ -74,62 +74,44 @@ TDraw::~TDraw()
 //---------------------------------------------------------------------------
 //Converts an x-coordinate to a pixel value
 //Returns MAXINT on error
+//Consider disabling exceptions in the FPU for overflow and NAN
 int TDraw::xPoint(long double x) const
 {
-	try
-  {
-    long double Result;
-    if(std::_isnanl(x))
-      return -1;   //x=NAN may else throw an exception
-    if(Axes.xAxis.LogScl)
-      if(x <= 0) //Check for negative value
-        return MAXINT; //Report error
-      else
-        Result = std::log(x / Axes.xAxis.Min) * xScale + AxesRect.Left + 0.5;
+  long double Result;
+  if(Axes.xAxis.LogScl)
+    if(x <= 0) //Check for negative value
+      return MAXINT; //Report error
     else
-      Result = (x - Axes.xAxis.Min) * xScale + AxesRect.Left + 0.5;
+      Result = std::log(x / Axes.xAxis.Min) * xScale + AxesRect.Left + 0.5;
+  else
+    Result = (x - Axes.xAxis.Min) * xScale + AxesRect.Left + 0.5;
 
-    if(Result > PixelLimit)
-      return PixelLimit;
-    if(Result < -PixelLimit)
-      return -PixelLimit;
-    return Result;
-  }
-  catch(EOverflow&)
-  {
-    //Handle very large numbers which causes overflow
-    return x > 0 ? PixelLimit : -PixelLimit;
-  }
+  if(Result > PixelLimit)
+    return PixelLimit;
+  if(Result < -PixelLimit)
+    return -PixelLimit;
+  return Result;
 }
 //---------------------------------------------------------------------------
 //Converts a y-coordinate to a pixel value
 //Returns MAXINT on error
+//Consider disabling exceptions in the FPU for overflow and NAN
 int TDraw::yPoint(long double y) const
 {
-  try
-  {
-    long double Result;
-    if(std::_isnanl(y))
-      return -1;  //y=NAN may else throw an exception
-    if(Axes.yAxis.LogScl)
-      if(y <= 0) //Check for negative value
-        return MAXINT; //Report error
-      else
-        Result = std::log(Axes.yAxis.Max / y) * yScale + AxesRect.Top + 0.5;
+  long double Result;
+  if(Axes.yAxis.LogScl)
+    if(y <= 0) //Check for negative value
+      return MAXINT; //Report error
     else
-      Result = (Axes.yAxis.Max - y) * yScale + AxesRect.Top + 0.5;
+      Result = std::log(Axes.yAxis.Max / y) * yScale + AxesRect.Top + 0.5;
+  else
+    Result = (Axes.yAxis.Max - y) * yScale + AxesRect.Top + 0.5;
 
-    if(Result > PixelLimit)
-      return PixelLimit;
-    if(Result < -PixelLimit)
-      return -PixelLimit;
-    return Result;
-  }
-  catch(EOverflow&)
-  {
-    //Handle very large numbers which causes overflow
-    return y > 0 ? -PixelLimit : PixelLimit;
-  }
+  if(Result > PixelLimit)
+    return PixelLimit;
+  if(Result < -PixelLimit)
+    return -PixelLimit;
+  return Result;
 }
 //---------------------------------------------------------------------------
 double TDraw::xPointExact(long double x) const
