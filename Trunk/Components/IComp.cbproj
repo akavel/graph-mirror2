@@ -39,6 +39,8 @@
 			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<FinalOutputDir>$(BDSCOMMONDIR)\BPL\Debug</FinalOutputDir>
+			<BPILibOutputDir>$(BDSCOMMONDIR)\DCP\Debug</BPILibOutputDir>
 			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
 			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
 			<DCC_Optimize>false</DCC_Optimize>
@@ -58,6 +60,8 @@
 			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<BPILibOutputDir>$(BDSCOMMONDIR)\DCP\Release</BPILibOutputDir>
+			<FinalOutputDir>$(BDSCOMMONDIR)\BPL\Release</FinalOutputDir>
 			<Defines>NDEBUG;$(Defines)</Defines>
 			<IntermediateOutputDir>Release</IntermediateOutputDir>
 			<TASM_Debugging>None</TASM_Debugging>

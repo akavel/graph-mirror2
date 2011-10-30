@@ -6,6 +6,9 @@
 #ifdef _DEBUG
   #define BOOST_ENABLE_ASSERT_HANDLER
 #else
+  //Nasty hack: C++ Builder does not inline functions with throw specifications
+	#define throw(...)
+
   #define NDEBUG
   #define BOOST_DISABLE_ASSERTS
 
