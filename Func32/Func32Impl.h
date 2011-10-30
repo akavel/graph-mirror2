@@ -179,12 +179,11 @@ struct TDynData
 {
   const T *Args;
   TTrigonometry Trigonometry;
-  TErrorCode ErrorCode;
-  std::wstring ErrorStr;
-  unsigned Recursion;
+	ECalcError &Error;
+	unsigned Recursion;
 
-  TDynData(const T *AArgs, TTrigonometry ATrigonometry)
-    : Args(AArgs), Trigonometry(ATrigonometry), ErrorCode(ecNoError), Recursion(0) {}
+	TDynData(const T *AArgs, TTrigonometry ATrigonometry, ECalcError &AError)
+		: Args(AArgs), Trigonometry(ATrigonometry), Error(AError), Recursion(0) {}
 };
 
 struct TMakeTextData
@@ -210,11 +209,9 @@ class TFuncData
   std::vector<TElem> Data;
 
   template<typename T>
-  static T CalcF(TConstIterator &Iter, TDynData<T> &DynData);
-  template<typename T>
-  static T CalcFunc(TConstIterator Iter, TDynData<T> &DynData);
-  template<typename T>
-  static double CalcGSLFunc(double x, void *Params);
+  static T CalcFunc(TConstIterator &Iter, TDynData<T> &DynData);
+	template<typename T>
+	static double CalcGSLFunc(double x, void *Params);
   template<typename T>
   static double Integrate(TConstIterator Func, double Min, double Max, double RelError, TDynData<T> &DynData, long double *Value);
   void AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trigonometry, unsigned Level);
@@ -242,24 +239,22 @@ public:
   template<typename T>
   T CalcF(TDynData<T> &DynData) const;
 
-  template<typename T>
-  T Calc(const T *Args, TTrigonometry Trigonometry, ECalcError &CalcError) const
-  {
-    TDynData<T> DynData(Args, Trigonometry);
-    T Result = CalcF(DynData);
-    CalcError.ErrorCode = DynData.ErrorCode;
-    if(!DynData.ErrorStr.empty())
-      CalcError.Str = DynData.ErrorStr;
+	template<typename T>
+	T Calc(const T *Args, TTrigonometry Trigonometry, ECalcError &CalcError) const
+	{
+		TDynData<T> DynData(Args, Trigonometry, CalcError);
+		T Result = CalcF(DynData);
     return Result;
   }
 
   template<typename T>
   T Calc(const T *Args, TTrigonometry Trigonometry) const
-  {
-    TDynData<T> DynData(Args, Trigonometry);
-    T Result = CalcF(DynData);
-    if(DynData.ErrorCode)
-      throw ECalcError(DynData.ErrorCode, DynData.ErrorStr);
+	{
+		ECalcError Error;
+		TDynData<T> DynData(Args, Trigonometry, Error);
+		T Result = CalcF(DynData);
+		if(Error.ErrorCode)
+			throw Error;
     return Result;
   }
 
