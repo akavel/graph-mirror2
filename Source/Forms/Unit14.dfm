@@ -296,7 +296,7 @@ object Form14: TForm14
           Position = 1
           TabOrder = 3
         end
-        object ComboBox2: TComboBox
+        object ComboBox2: TExtComboBox
           Left = 76
           Top = 96
           Width = 86
@@ -310,6 +310,7 @@ object Form14: TForm14
             '1D cubic spline'
             '2D cubic spline'
             'Half cosine')
+          AutoDroppedWidth = True
         end
         object ExtColorBox2: TExtColorBox
           Left = 76

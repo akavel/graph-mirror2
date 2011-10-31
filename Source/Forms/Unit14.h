@@ -45,6 +45,7 @@
 #include "SaveDialogEx.h"
 #include <ActnPopup.hpp>
 #include <PlatformDefaultStyleActnCtrls.hpp>
+#include "ExtComboBox.h"
 //---------------------------------------------------------------------------
 class TForm14 : public TForm
 {
@@ -110,7 +111,7 @@ __published:	// IDE-managed Components
   TRadioButton *RadioButton5;
   TRadioButton *RadioButton6;
   TMyEdit *Edit7;
-  TComboBox *ComboBox2;
+  TExtComboBox *ComboBox2;
   TLabel *Label11;
   TExtColorBox *ExtColorBox1;
   TExtColorBox *ExtColorBox2;
