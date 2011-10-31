@@ -1540,7 +1540,7 @@ bool TForm1::Zoom(double xZoomRate, double yZoomRate, bool ChangeUnits)
 }
 //---------------------------------------------------------------------------
 //Use this function to zoom in at a given position
-//ZoomRate = sqrt(Z/2), where Z is the relative window size
+//ZoomRate = sqrt(Z), where Z is the relative window size
 //If you want the new window to be 1/4 of the current:  Z=0.25 => ZoomRate=0.5
 //If you want the new window to be 4 times the current: Z=4    => ZoomRate=2
 bool TForm1::Zoom(double x, double y, double xZoomRate, double yZoomRate, bool ChangeUnits)
@@ -3137,25 +3137,25 @@ void __fastcall TForm1::SupportActionExecute(TObject *Sender)
 void __fastcall TForm1::ZoomXInActionExecute(TObject *Sender)
 {
   //Zoom in on x-axis only
-  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomIn : GuiSettings.MinorZoomIn, 0.5);
+  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomIn : GuiSettings.MinorZoomIn, 1.0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomXOutActionExecute(TObject *Sender)
 {
   //Zoom out on x-axis only
-  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomOut : GuiSettings.MinorZoomOut, 0.5);
+  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomOut : GuiSettings.MinorZoomOut, 1.0);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomYInActionExecute(TObject *Sender)
 {
   //Zoom in on y-axis only
-  Zoom(0.5, GetKeyState(ssShift) ? GuiSettings.MajorZoomIn : GuiSettings.MinorZoomIn);
+  Zoom(1.0, GetKeyState(ssShift) ? GuiSettings.MajorZoomIn : GuiSettings.MinorZoomIn);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomYOutActionExecute(TObject *Sender)
 {
   //Zoom out on y-axis only
-  Zoom(0.5, GetKeyState(ssShift) ? GuiSettings.MajorZoomOut : GuiSettings.MinorZoomOut);
+  Zoom(1.0, GetKeyState(ssShift) ? GuiSettings.MajorZoomOut : GuiSettings.MinorZoomOut);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::InsertRelationActionExecute(TObject *Sender)
