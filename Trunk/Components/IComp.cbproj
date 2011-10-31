@@ -33,8 +33,8 @@
 			<ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 			<Defines>STRICT</Defines>
-			<IncludePath>TIFontBox\;TUpDownEx\;TIPolygon\;TProgress\;TIColorBox\;TIRichEdit\;TIColorSelect\;TIPrintDialog\;TRadioGroupEx\;TSymbolDialog\;TProgressForm\;TSaveDialogEx\;TFocusPanel\;TLineSelect\;TIPageSetup\;TMyRadioButton\;TMySplitter\;TSerialHandler\;TMediaPlayerEx\;TCheckBoxEx\;TMyEdit\;TRecent\;TGrid\;TOpenPreviewDialog\;TExtColorBox\;TGridPanelEx\;TPointSelect\;TShadeSelect\;TLinkLabelEx\;Common\;TCross\;TLinkLabelEx;TUpDownEx;TRadioGroupEx;TGridPanelEx;TCheckBoxEx;TSymbolDialog;TShadeSelect;TSerialHandler;TSaveDialogEx;TRecent;TProgressForm;TProgress;TPointSelect;TOpenPreviewDialog;TMySplitter;TIRichEdit;TMyRadioButton;TMyEdit;TMediaPlayerEx;TLineSelect;TIPrintDialog;TIPolygon;TIPageSetup;TIFontBox;TIColorBox;TIColorSelect;TGrid;TFocusPanel;TExtColorBox;TCross;..\Libraries\;$(BDS)\include\windows;$(BDS)\include\dinkumware;Common;$(IncludePath)</IncludePath>
-			<ILINK_LibraryPath>TIFontBox\;TUpDownEx\;TIPolygon\;TProgress\;TIColorBox\;TIRichEdit\;TIColorSelect\;TIPrintDialog\;TRadioGroupEx\;TSymbolDialog\;TProgressForm\;TSaveDialogEx\;TFocusPanel\;TLineSelect\;TIPageSetup\;TMyRadioButton\;TMySplitter\;TSerialHandler\;TMediaPlayerEx\;TCheckBoxEx\;TMyEdit\;TRecent\;TGrid\;TOpenPreviewDialog\;TExtColorBox\;TGridPanelEx\;TPointSelect\;TShadeSelect\;TLinkLabelEx\;Common\;TCross\;TLinkLabelEx;TUpDownEx;TRadioGroupEx;TGridPanelEx;TCheckBoxEx;TSymbolDialog;TShadeSelect;TSerialHandler;TSaveDialogEx;TRecent;TProgressForm;TProgress;TPointSelect;TOpenPreviewDialog;TMySplitter;TIRichEdit;TMyRadioButton;TMyEdit;TMediaPlayerEx;TLineSelect;TIPrintDialog;TIPolygon;TIPageSetup;TIFontBox;TIColorBox;Common;TIColorSelect;TGrid;TFocusPanel;TExtColorBox;TCross;..\Components;$(BDS)\lib\obj;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<IncludePath>TExtComboBox\;TIFontBox\;TUpDownEx\;TIPolygon\;TProgress\;TIColorBox\;TIRichEdit\;TIColorSelect\;TIPrintDialog\;TRadioGroupEx\;TSymbolDialog\;TProgressForm\;TSaveDialogEx\;TFocusPanel\;TLineSelect\;TIPageSetup\;TMyRadioButton\;TMySplitter\;TSerialHandler\;TMediaPlayerEx\;TCheckBoxEx\;TMyEdit\;TRecent\;TGrid\;TOpenPreviewDialog\;TExtColorBox\;TGridPanelEx\;TPointSelect\;TShadeSelect\;TLinkLabelEx\;Common\;TCross\;TLinkLabelEx;TUpDownEx;TRadioGroupEx;TGridPanelEx;TCheckBoxEx;TSymbolDialog;TShadeSelect;TSerialHandler;TSaveDialogEx;TRecent;TProgressForm;TProgress;TPointSelect;TOpenPreviewDialog;TMySplitter;TIRichEdit;TMyRadioButton;TMyEdit;TMediaPlayerEx;TLineSelect;TIPrintDialog;TIPolygon;TIPageSetup;TIFontBox;TIColorBox;TIColorSelect;TGrid;TFocusPanel;TExtColorBox;TCross;..\Libraries\;$(BDS)\include\windows;$(BDS)\include\dinkumware;Common;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>TExtComboBox\;TIFontBox\;TUpDownEx\;TIPolygon\;TProgress\;TIColorBox\;TIRichEdit\;TIColorSelect\;TIPrintDialog\;TRadioGroupEx\;TSymbolDialog\;TProgressForm\;TSaveDialogEx\;TFocusPanel\;TLineSelect\;TIPageSetup\;TMyRadioButton\;TMySplitter\;TSerialHandler\;TMediaPlayerEx\;TCheckBoxEx\;TMyEdit\;TRecent\;TGrid\;TOpenPreviewDialog\;TExtColorBox\;TGridPanelEx\;TPointSelect\;TShadeSelect\;TLinkLabelEx\;Common\;TCross\;TLinkLabelEx;TUpDownEx;TRadioGroupEx;TGridPanelEx;TCheckBoxEx;TSymbolDialog;TShadeSelect;TSerialHandler;TSaveDialogEx;TRecent;TProgressForm;TProgress;TPointSelect;TOpenPreviewDialog;TMySplitter;TIRichEdit;TMyRadioButton;TMyEdit;TMediaPlayerEx;TLineSelect;TIPrintDialog;TIPolygon;TIPageSetup;TIFontBox;TIColorBox;Common;TIColorSelect;TGrid;TFocusPanel;TExtColorBox;TCross;..\Components;$(BDS)\lib\obj;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<BCC_wpar>false</BCC_wpar>
 			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
 		</PropertyGroup>
@@ -106,6 +106,10 @@
 			<CppCompile Include="TExtColorBox\ExtColorBox.cpp">
 				<DependentOn>TExtColorBox\ExtColorBox.h</DependentOn>
 				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TExtComboBox\ExtComboBox.cpp">
+				<DependentOn>TExtComboBox\ExtComboBox.h</DependentOn>
+				<BuildOrder>61</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="TFocusPanel\FocusPanel.cpp">
 				<DependentOn>TFocusPanel\FocusPanel.h</DependentOn>
