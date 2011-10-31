@@ -28,6 +28,7 @@
 #pragma link "MyEdit"
 #pragma link "PointSelect"
 #pragma link "SaveDialogEx"
+#pragma link "ExtComboBox"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 const int ToGuiAlgorithm[4] = {0, 2, 3, 1};
