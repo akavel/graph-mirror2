@@ -30,7 +30,7 @@ object Form3: TForm3
     Top = 8
     Width = 404
     Height = 213
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -859,7 +859,7 @@ object Form3: TForm3
           'None'
           'Crossed'
           'Boxed')
-        TabOrder = 4
+        TabOrder = 5
         OnClick = RadioGroup1Click
       end
       object RadioGroup2: TRadioGroup
@@ -878,7 +878,7 @@ object Form3: TForm3
           'Degree')
         ParentShowHint = False
         ShowHint = True
-        TabOrder = 5
+        TabOrder = 6
       end
       object Edit13: TMyEdit
         Left = 40
@@ -922,7 +922,7 @@ object Form3: TForm3
           'Bottom Right'
           'Top Left'
           'Bottom Left')
-        TabOrder = 3
+        TabOrder = 4
       end
       object CheckBox19: TCheckBoxEx
         Left = 152
@@ -934,7 +934,7 @@ object Form3: TForm3
           'this will slow graphing down.'
         Anchors = [akLeft, akTop, akRight]
         Caption = 'Calculate with complex numbers'
-        TabOrder = 6
+        TabOrder = 3
       end
     end
     object TabSheet4: TTabSheet

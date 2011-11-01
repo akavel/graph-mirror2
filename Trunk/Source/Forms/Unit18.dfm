@@ -44,6 +44,7 @@ object Form18: TForm18
         Width = 60
         Height = 13
         Caption = 'Image width:'
+        FocusControl = Edit1
       end
       object Label2: TLabel
         Left = 8
@@ -51,6 +52,7 @@ object Form18: TForm18
         Width = 64
         Height = 13
         Caption = 'Image height:'
+        FocusControl = Edit2
       end
       object Edit1: TEdit
         Left = 80
@@ -96,10 +98,6 @@ object Form18: TForm18
       Font.Style = []
       ImageIndex = 1
       ParentFont = False
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         298
         165)
@@ -116,7 +114,7 @@ object Form18: TForm18
         Items.Strings = (
           'Sequential'
           'Progressive')
-        TabOrder = 0
+        TabOrder = 1
       end
       object GroupBox1: TGroupBox
         Left = 8
@@ -126,7 +124,7 @@ object Form18: TForm18
         Hint = 'Select a compression quality.'
         Anchors = [akLeft, akTop, akRight]
         Caption = 'Quality'
-        TabOrder = 1
+        TabOrder = 0
         DesignSize = (
           282
           57)
@@ -141,7 +139,7 @@ object Form18: TForm18
           PageSize = 10
           Frequency = 5
           Position = 1
-          TabOrder = 0
+          TabOrder = 1
           TickMarks = tmTopLeft
           OnChange = TrackBar1Change
         end
@@ -151,7 +149,7 @@ object Form18: TForm18
           Width = 25
           Height = 21
           MaxLength = 2
-          TabOrder = 1
+          TabOrder = 0
           Text = '0'
           OnChange = Edit3Change
           OnKeyPress = EditKeyPress
@@ -161,16 +159,13 @@ object Form18: TForm18
     object TabSheet3: TTabSheet
       Caption = 'PDF'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label3: TLabel
         Left = 8
         Top = 8
         Width = 52
         Height = 13
         Caption = 'Paper size:'
+        FocusControl = ComboBox1
       end
       object RadioGroup2: TRadioGroup
         Left = 8
@@ -183,7 +178,7 @@ object Form18: TForm18
         Items.Strings = (
           'Portrait'
           'Landscape')
-        TabOrder = 0
+        TabOrder = 1
       end
       object ComboBox1: TComboBox
         Left = 64
@@ -192,8 +187,7 @@ object Form18: TForm18
         Height = 21
         Hint = 'Choose paper size to use.'
         Style = csDropDownList
-        ItemHeight = 0
-        TabOrder = 1
+        TabOrder = 0
         Items.Strings = (
           'A2'
           'A3'
@@ -215,7 +209,7 @@ object Form18: TForm18
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2
-    TabOrder = 2
+    TabOrder = 3
   end
   object CheckBox1: TCheckBox
     Left = 8
@@ -224,7 +218,7 @@ object Form18: TForm18
     Height = 17
     Hint = 'Select this to use these settings as defaults in the future.'
     Caption = 'Save as default'
-    TabOrder = 3
+    TabOrder = 1
   end
   object Button1: TButton
     Left = 153
@@ -235,6 +229,6 @@ object Form18: TForm18
     Caption = 'OK'
     Default = True
     ModalResult = 1
-    TabOrder = 1
+    TabOrder = 2
   end
 end

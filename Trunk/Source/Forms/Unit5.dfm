@@ -277,6 +277,7 @@ object Form5: TForm5
         Height = 13
         Anchors = []
         Caption = 'Line style:'
+        FocusControl = ExtColorBox1
         Layout = tlCenter
       end
       object LineSelect1: TLineSelect
@@ -296,8 +297,9 @@ object Form5: TForm5
         Height = 33
         Align = alLeft
         Caption = 'Draw type:'
+        FocusControl = ComboBox4
         Layout = tlCenter
-        ExplicitHeight = 13
+        ExplicitTop = -6
       end
       object ComboBox4: TComboBox
         Left = 224
@@ -326,6 +328,7 @@ object Form5: TForm5
         Height = 34
         Align = alLeft
         Caption = 'Color:'
+        FocusControl = ExtColorBox1
         Layout = tlCenter
         ExplicitHeight = 13
       end
@@ -349,6 +352,7 @@ object Form5: TForm5
         Height = 34
         Align = alLeft
         Caption = 'Width:'
+        FocusControl = Edit6
         Layout = tlCenter
         ExplicitHeight = 13
       end

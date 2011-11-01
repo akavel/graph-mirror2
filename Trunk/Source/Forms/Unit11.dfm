@@ -29,6 +29,7 @@ object Form11: TForm11
     Width = 42
     Height = 13
     Caption = 'Relation:'
+    FocusControl = Edit1
   end
   object Label2: TLabel
     Left = 8
@@ -36,6 +37,7 @@ object Form11: TForm11
     Width = 55
     Height = 13
     Caption = 'Constraints:'
+    FocusControl = Edit2
   end
   object Button1: TButton
     Left = 137
@@ -173,7 +175,6 @@ object Form11: TForm11
       Width = 81
       Height = 22
       Hint = 'Select the color for drawing the relation.'
-      ItemHeight = 16
       TabOrder = 1
       AutoDroppedWidth = True
       Selected = clScrollBar
