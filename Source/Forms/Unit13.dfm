@@ -30,7 +30,7 @@ object Form13: TForm13
     Height = 25
     Caption = 'OK'
     Default = True
-    TabOrder = 2
+    TabOrder = 4
     OnClick = Button1Click
   end
   object Button2: TButton
@@ -41,7 +41,7 @@ object Form13: TForm13
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2
-    TabOrder = 3
+    TabOrder = 5
   end
   object Button3: TButton
     Left = 272
@@ -49,7 +49,7 @@ object Form13: TForm13
     Width = 75
     Height = 25
     Caption = 'Help'
-    TabOrder = 4
+    TabOrder = 6
     OnClick = Button3Click
   end
   object GroupBox1: TGroupBox
@@ -144,10 +144,6 @@ object Form13: TForm13
     object TabSheet1: TTabSheet
       Caption = 'Built-in'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel1: TPanel
         Left = 8
         Top = 8
@@ -566,11 +562,11 @@ object Form13: TForm13
       ' want the trendline to meet the y-axis. This is only available f' +
       'or linear, polynomial and exponential trendlines.'
     Caption = 'Intercept ='
-    TabOrder = 5
+    TabOrder = 2
     OnClick = CheckBox1Click
   end
   object Edit5: TMyEdit
-    Left = 436
+    Left = 435
     Top = 166
     Width = 65
     Height = 21
@@ -578,7 +574,7 @@ object Form13: TForm13
       'Type a value in the Intercept box to specify the point where you' +
       ' want the trendline to meet the y-axis. This is only available f' +
       'or linear, polynomial and exponential trendlines.'
-    TabOrder = 6
+    TabOrder = 3
     Text = '0'
     OnChange = Edit5Change
   end
