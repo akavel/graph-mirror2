@@ -52,7 +52,7 @@ def HandleLanguage(Language, Lang, Dict):
     os.system("hhc.exe ..\\Temp\\htmlhelp.hhp > NUL")
     print "Creating %s HTML chunks..." % (Language,)
     StyleSheet = "..\\xsl\\htmlchunk.xsl" if not os.path.exists("..\\xsl\\%s\\htmlchunk.xsl" % (Language,)) else "..\\xsl\\%s\\htmlchunk.xsl" % (Language,)
-    os.system("XCopy ..\\Source\\styles_html.css ..\\html\\%s\\ /Q /Y /I > NUL" % (Language.lower(),))
+    os.system("XCopy ..\\Source\\*.css ..\\html\\%s\\ /Q /Y /I > NUL" % (Language.lower(),))
     os.system("xsltproc.exe --nonet --xinclude --noout --output ..\\html\\%s\\Graph %s %s > NUL"  % (Language, StyleSheet, InFile))
     os.system("XCopy ..\\Images\\Common\\*.png ..\\html\\%s\\images /I /Q /Y > NUL" % (Language,))
     os.system("XCopy ..\\Images\\%s\\*.* ..\\html\\%s\\images /I /Q /Y > NUL" % (Language,Language))
