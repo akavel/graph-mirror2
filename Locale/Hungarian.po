@@ -3425,7 +3425,7 @@ msgid ""
 msgstr ""
 "A program végtelen ciklusba került. \n"
 "Ha megszakítja a műveletet, a program futása instabillá válhat. \n"
-"Mentse el adatait más néven, és indítsa újra az alkalmazást! \n"
+"Mentse el adatait más néven, és indítsa újra az alkalmazást!"
 
 msgid "Thread is not responding"
 msgstr "Nem válaszol."
