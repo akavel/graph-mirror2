@@ -27,7 +27,7 @@ def Execute(Sender):
 def OnSelect(Item):
     Action.Enabled = isinstance(Item, Graph.TPointSeries)
 
-Action = Graph.CreateAction(Caption="Statistics", OnExecute=Execute, Hint="Statistics on a point series")
+Action = Graph.CreateAction(Caption="Statistics", OnExecute=Execute, Hint="Statistics on a point series.")
 Graph.AddActionToMainMenu(Action)
 Graph.AddActionToContextMenu(Action)
 Graph.OnSelect.append(OnSelect)
