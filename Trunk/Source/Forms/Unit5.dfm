@@ -299,7 +299,7 @@ object Form5: TForm5
         Caption = 'Draw type:'
         FocusControl = ComboBox4
         Layout = tlCenter
-        ExplicitTop = -6
+        ExplicitHeight = 13
       end
       object ComboBox4: TComboBox
         Left = 224
@@ -460,7 +460,7 @@ object Form5: TForm5
       Caption = 'End:'
       FocusControl = ComboBox3
     end
-    object ComboBox2: TComboBox
+    object ComboBox2: TExtComboBox
       Left = 40
       Top = 16
       Width = 65
@@ -479,8 +479,9 @@ object Form5: TForm5
         ''
         ''
         '')
+      AutoDroppedWidth = True
     end
-    object ComboBox3: TComboBox
+    object ComboBox3: TExtComboBox
       Left = 248
       Top = 16
       Width = 65
@@ -500,6 +501,7 @@ object Form5: TForm5
         ''
         ''
         '')
+      AutoDroppedWidth = True
     end
   end
 end

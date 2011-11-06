@@ -5,12 +5,11 @@ inherited AreaFrame: TAreaFrame
   ParentBackground = False
   ExplicitWidth = 178
   ExplicitHeight = 101
-  object GridPanel1: TGridPanel
+  object GridPanel1: TGridPanelEx
     Left = 0
     Top = 0
     Width = 178
-    Height = 101
-    Align = alClient
+    Height = 90
     BevelOuter = bvNone
     ColumnCollection = <
       item
@@ -57,26 +56,20 @@ inherited AreaFrame: TAreaFrame
     Padding.Bottom = 5
     RowCollection = <
       item
-        SizeStyle = ssAbsolute
-        Value = 30.000000000000000000
+        Value = 33.333333333333330000
       end
       item
-        SizeStyle = ssAbsolute
-        Value = 30.000000000000000000
+        Value = 33.333333333333330000
       end
       item
-        SizeStyle = ssAbsolute
-        Value = 30.000000000000000000
-      end
-      item
-        SizeStyle = ssAuto
+        Value = 33.333333333333330000
       end>
     TabOrder = 0
     object Label1: TLabel
       Left = 4
       Top = 8
       Width = 28
-      Height = 21
+      Height = 17
       Align = alLeft
       Caption = 'From:'
       Layout = tlCenter
@@ -84,9 +77,9 @@ inherited AreaFrame: TAreaFrame
     end
     object Label2: TLabel
       Left = 4
-      Top = 38
+      Top = 34
       Width = 16
-      Height = 21
+      Height = 17
       Align = alLeft
       Caption = 'To:'
       Layout = tlCenter
@@ -94,9 +87,9 @@ inherited AreaFrame: TAreaFrame
     end
     object Label3: TLabel
       Left = 4
-      Top = 68
+      Top = 60
       Width = 38
-      Height = 21
+      Height = 20
       Align = alLeft
       Caption = 'Integral'
       Layout = tlCenter
@@ -104,31 +97,32 @@ inherited AreaFrame: TAreaFrame
     end
     object Edit3: TEdit
       Left = 46
-      Top = 68
+      Top = 60
       Width = 128
-      Height = 21
+      Height = 20
       Align = alClient
       Color = clBtnFace
       ReadOnly = True
       TabOrder = 2
+      ExplicitHeight = 21
     end
     object Panel1: TPanel
       Left = 46
       Top = 8
       Width = 128
-      Height = 21
+      Height = 17
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
       DesignSize = (
         128
-        21)
+        17)
       object Edit1: TMyEdit
         Left = 0
         Top = 0
         Width = 114
         Height = 21
-        Hint = 
+        Hint =
           'Enter the start coordinate or mark the range on the graph itself' +
           ' with the mouse.'
         Anchors = [akLeft, akTop, akRight]
@@ -145,21 +139,21 @@ inherited AreaFrame: TAreaFrame
     end
     object Panel2: TPanel
       Left = 46
-      Top = 38
+      Top = 34
       Width = 128
-      Height = 21
+      Height = 17
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
       DesignSize = (
         128
-        21)
+        17)
       object Edit2: TMyEdit
         Left = 0
         Top = 0
         Width = 114
         Height = 21
-        Hint = 
+        Hint =
           'Enter the end coordinate or mark the range on the graph itself w' +
           'ith the mouse.'
         Anchors = [akLeft, akTop, akRight]

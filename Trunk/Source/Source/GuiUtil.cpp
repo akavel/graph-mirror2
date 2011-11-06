@@ -132,11 +132,11 @@ void ResizeControl(TControl *Control, int Left)
   Control->Width = Width;
 }
 //---------------------------------------------------------------------------
-void ResizeControl(TControl *Control, TCustomLabel *Label1, TCustomLabel *Label2, TCustomLabel *Label3)
+void ResizeControl(TControl *Control, TControl *Control1, TControl *Control2, TControl *Control3)
 {
-  int MaxRight = Label1->Left + Label1->Width;
-  if(Label2) MaxRight = std::max(MaxRight, Label2->Left + Label2->Width);
-  if(Label3) MaxRight = std::max(MaxRight, Label3->Left + Label3->Width);
+  int MaxRight = Control1->Left + Control1->Width;
+  if(Control2) MaxRight = std::max(MaxRight, Control2->Left + Control2->Width);
+  if(Control3) MaxRight = std::max(MaxRight, Control3->Left + Control3->Width);
   ResizeControl(Control, MaxRight + 5);
 }
 //---------------------------------------------------------------------------

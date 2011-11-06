@@ -21,6 +21,7 @@
 __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
 	: TForm(Owner), Data(AData)
 {
+  ScaleForm(this);
   Translate();
 
   const TAxes &Axes = Data.Axes;
@@ -73,7 +74,6 @@ __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
   Panel1->Align = alClient;
   Panel2->Align = alClient;
 
-  ScaleForm(this);
   UpdateEnabledControls();
 }
 //---------------------------------------------------------------------------

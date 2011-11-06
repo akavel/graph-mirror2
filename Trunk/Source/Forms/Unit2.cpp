@@ -21,6 +21,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 {
   String TranslatorString = LinkLabel3->Caption;
   TranslateProperties(this);
+  ScaleForm(this);
 
   TVersionInfo Info;
   //Make string with file version information
@@ -42,8 +43,6 @@ __fastcall TForm2::TForm2(TComponent* Owner)
   if(LinkLabel3->Caption != TranslatorString)
     LinkLabel3->Visible = true;
   Comments->Caption = FormatStr(Comments->Caption, "http://www.gnu.org/licenses/old-licenses/gpl-2.0.html");
-
-  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm2::ProgramIconDblClick(TObject *Sender)

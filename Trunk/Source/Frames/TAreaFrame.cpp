@@ -17,6 +17,7 @@
 #pragma link "MyEdit"
 #pragma link "UpDownEx"
 #pragma link "TEvalFrame"
+#pragma link "GridPanelEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TAreaFrame::TAreaFrame(TComponent* Owner)

@@ -15,6 +15,7 @@
 #pragma link "LineSelect"
 #pragma link "ExtColorBox"
 #pragma link "MyEdit"
+#pragma link "ExtComboBox"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm12::TForm12(TComponent* Owner, TData &AData)
@@ -23,6 +24,7 @@ __fastcall TForm12::TForm12(TComponent* Owner, TData &AData)
   TranslateProperties(this);
   TranslateStrings(ExtColorBox1->Items);
   SetAccelerators(this);
+  ScaleForm(this);
   Edit4->Left = Label4->Left + Label4->Width + 5;
   ResizeControl(Edit2, Label10);
 
@@ -39,8 +41,6 @@ __fastcall TForm12::TForm12(TComponent* Owner, TData &AData)
   UpDown1->Position = Property.DefaultTangent.Size;
   ComboBox1->ItemIndex = 0;
   ComboBox2->ItemIndex = 0;
-
-  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm12::Button1Click(TObject *Sender)

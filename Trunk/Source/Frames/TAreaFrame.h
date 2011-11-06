@@ -20,11 +20,12 @@
 #include <ComCtrls.hpp>
 #include "UpDownEx.h"
 #include "TEvalFrame.h"
+#include "GridPanelEx.h"
 //---------------------------------------------------------------------------
 class TAreaFrame : public TEvalFrame
 {
 __published:	// IDE-managed Components
-  TGridPanel *GridPanel1;
+  TGridPanelEx *GridPanel1;
   TLabel *Label1;
   TLabel *Label2;
   TLabel *Label3;

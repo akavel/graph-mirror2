@@ -136,7 +136,6 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 	BOOST_ASSERT(TreeView->Items->Count == 0);
 	LoadSettings();
-	ScaleForm(this, false);
 	ActionToolBar1->ActionClient->Items->SmallIcons = Property.FontScale < 150;
 
 	//Don't create Form9 before settings are loaded. Scaling and other settings are needed in the constructor.
@@ -745,6 +744,13 @@ void TForm1::LoadSettings(void)
 {
   TConfigRegistry Registry;
 
+  if(Registry.KeyExists(REGISTRY_KEY L"\\Property"))
+    Registry.OpenKey(REGISTRY_KEY L"\\Property");
+  Property.Read(Registry);
+
+  //We must scale after FontScale has been read and before the form size has been set
+	ScaleForm(this, false);
+
   Registry.OpenKey(REGISTRY_KEY);
   Recent1->MaxFiles = Registry.Read("Recents", 4);
 	Application->ShowHint = Registry.Read("ShowHint", true);
@@ -776,10 +782,6 @@ void TForm1::LoadSettings(void)
     ChangeLanguage(Registry.Read(L"Language", L"English").c_str());
   else
     ChangeLanguage(GetRegValue(REGISTRY_KEY, L"Language", HKEY_LOCAL_MACHINE, L"English").c_str());
-
-  if(Registry.KeyExists(REGISTRY_KEY L"\\Property"))
-    Registry.OpenKey(REGISTRY_KEY L"\\Property");
-  Property.Read(Registry);
 
   StartToolBar = GetToolBar(); //Save shown toolbar
 

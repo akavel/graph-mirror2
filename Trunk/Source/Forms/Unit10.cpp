@@ -19,6 +19,7 @@ __fastcall TForm10::TForm10(TComponent* Owner)
 {
   TranslateProperties(this);
   SetAccelerators(this);
+  ScaleForm(this);
 
   //Take care of range problems
   if(Property.NextTip < RES_FIRST_TIP || Property.NextTip > RES_LAST_TIP)
@@ -28,7 +29,6 @@ __fastcall TForm10::TForm10(TComponent* Owner)
   LinkLabel1->Caption = LoadRes(Property.NextTip);
 
   Width = Width - Button3->Width + Canvas->TextWidth(Button3->Caption) + 20;
-  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm10::Button2Click(TObject *Sender)

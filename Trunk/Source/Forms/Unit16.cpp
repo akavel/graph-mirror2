@@ -25,6 +25,7 @@ __fastcall TForm16::TForm16(TComponent* Owner, TData &AData)
   TranslateStrings(ExtColorBox1->Items);
   SetAccelerators(this);
   ResizeControl(Edit5, Label12);
+  ScaleForm(this);
 
   ShadeSelect1->ShadeStyle = static_cast<TBrushStyle>(Property.DefaultShade.Style);
   ExtColorBox1->Selected = Property.DefaultShade.Color;
@@ -44,8 +45,6 @@ __fastcall TForm16::TForm16(TComponent* Owner, TData &AData)
             Found = true;
   }
   Edit5->Text = CmpStr;
-
-  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void TForm16::ShowFuncList()

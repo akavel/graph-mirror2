@@ -741,7 +741,6 @@ object Form16: TForm16
           Width = 81
           Height = 22
           Hint = 'Select color used for shading.'
-          ItemHeight = 16
           TabOrder = 2
           OnChange = ExtColorBox1Change
           AutoDroppedWidth = True

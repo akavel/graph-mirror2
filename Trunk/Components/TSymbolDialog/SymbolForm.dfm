@@ -71,7 +71,6 @@ object SymbolFrm: TSymbolFrm
     Width = 129
     Height = 21
     Style = csDropDownList
-    ItemHeight = 0
     TabOrder = 0
     OnSelect = ComboBox1Select
   end
@@ -129,7 +128,6 @@ object SymbolFrm: TSymbolFrm
     Width = 170
     Height = 21
     Style = csDropDownList
-    ItemHeight = 0
     TabOrder = 1
     OnChange = ComboBox2Change
   end
