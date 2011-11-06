@@ -18,11 +18,13 @@ DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
 InfoBeforeFile=License.txt
-OutputBaseFilename=SetupGraphBeta-4.4.0.506
+OutputBaseFilename=SetupGraphBeta-4.4.0.511
 OutputDir=.
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.4.0.506
+VersionInfoVersion=4.4.0.511
 PrivilegesRequired=None
+SignTool=SignTool /d $qGraph$q $f
+SetupIconFile=Graph in a box.ico
 
 [Languages]
 Name: "Arabic"; MessagesFile: "compiler:Languages\Arabic.isl"
@@ -38,11 +40,10 @@ Name: "Finnish"; MessagesFile: "compiler:Languages\Finnish.isl"
 Name: "French"; MessagesFile: "compiler:Languages\French.isl"
 Name: "German"; MessagesFile: "compiler:Languages\German.isl"
 Name: "Greek"; MessagesFile: "compiler:Languages\Greek.isl"
-Name: "Hebrew"; MessagesFile: "compiler:Languages\Hebrew.isl"
 Name: "Hungarian"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "Italian"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "Korean"; MessagesFile: "compiler:Languages\Korean.isl"
-;Name: "Mongolian"; MessagesFile: "compiler:Languages\Mongolian.isl"
+Name: "Mongolian"; MessagesFile: "compiler:Languages\Mongolian.isl"
 Name: "Norwegian"; MessagesFile:  "compiler:Languages\Norwegian.isl"
 Name: "Persian"; MessagesFile: "compiler:Languages\Farsi.isl"
 Name: "Polish"; MessagesFile:  "compiler:Languages\Polish.isl"
@@ -53,7 +54,8 @@ Name: "Serbian"; MessagesFile: "compiler:Languages\Serbian.isl"
 Name: "Slovenian"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "Spanish"; MessagesFile: "Languages\Spanish.isl"
 Name: "Swedish"; MessagesFile:  "compiler:Languages\Swedish.isl"
-;Name: "Vietnamese"; MessagesFile: "compiler:Languages\Vietnamese.isl"
+Name: "Turkish"; MessagesFile: "compiler:Languages\Turkish.isl"
+Name: "Vietnamese"; MessagesFile: "compiler:Languages\Vietnamese.isl"
 
 [Tasks]
 Name: "DesktopIcon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
@@ -71,7 +73,6 @@ Source: "Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritere
 Source: "Plugins\*.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "Lib\*.py"; DestDir: "{app}\Lib"; Flags: ignoreversion overwritereadonly
-;Source: "Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 
 [Icons]
 Name: "{userprograms}\Graph\{cm:Examples}"; Filename: "{app}\Examples"; IconFilename: "{sys}\shell32.dll"; IconIndex: 19; Flags: foldershortcut; Tasks: not InstallAllUsers; Check: not WizardNoIcons
@@ -139,25 +140,28 @@ English.WelcomeLabel1=Welcome to the [name/ver] Setup Wizard
 
 [CustomMessages]
 InstallAllUsers=Install for all users
+Basque.InstallAllUsers=Instalatu erabiltzaile guztientzat
 Danish.InstallAllUsers=Installér for alle brugere
+Dutch.InstallAllUsers=Installeer voor alle gebruikers
+French.InstallAllUsers=Installer pour tous les utilisateurs
 German.InstallAllUsers=Für alle Benutzer installieren
-Spanish.InstallAllUsers=Instalar para todos los usuarios
+Greek.InstallAllUsers=Εγκατάσταση για όλους τους χρήστες
+Hungarian.InstallAllUsers=Telepítés minden felhasználónak
+Italian.InstallAllUsers=Installa per tutti gli utenti
+Persian.InstallAllUsers=نصب براي همه کاربران
 Portuguese_Brazil.InstallAllUsers=Instala para todos os usuários
 Portuguese_Portugal.InstallAllUsers=Instala para todos os usuários
-Italian.InstallAllUsers=Installa per tutti gli utenti
-Hungarian.InstallAllUsers=Telepítés minden felhasználónak
-Slovenian.InstallAllUsers=Namesti za vse uporabnike
-French.InstallAllUsers=Installer pour tous les utilisateurs
 Russian.InstallAllUsers=Установить для всех пользователей
-Dutch.InstallAllUsers=Installeer voor elke gebruiker
-Greek.InstallAllUsers=Εγκατάσταση για όλους τους χρήστες
-Persian.InstallAllUsers=نصب براي همه کاربران
+Slovenian.InstallAllUsers=Namesti za vse uporabnike
+Spanish.InstallAllUsers=Instalar para todos los usuarios
 
 Examples=Examples
+Basque.Examples=Adibideak
 Croatian.Examples=Primjeri
 Danish.Examples=Eksempler
 Dutch.Examples=Voorbeelden
 French.Examples=Exemples
+Hungarian.Examples=Példák
 German.Examples=Beispiele
 Spanish.Examples=Ejemplos
 
@@ -174,10 +178,10 @@ Finnish.Uninstall=Asennuksen poisto
 French.Uninstall=Désinstallation
 German.Uninstall=Entfernen
 Greek.Uninstall=Απεγκατάσταση
-Hebrew.Uninstall=הסרה
 Hungarian.Uninstall=Eltávolító
 Italian.Uninstall=Disinstallazione
 Korean.Uninstall=프로그램 제거
+Mongolian.Uninstall=Óñòãàõ
 Norwegian.Uninstall=Avinstaller
 Persian.Uninstall=حذف برنامه
 Polish.Uninstall=Deinstalacja
@@ -188,6 +192,8 @@ Serbian.Uninstall=Deinstalacija
 Slovenian.Uninstall=Odstranitev
 Spanish.Uninstall=Desinstalar
 Swedish.Uninstall=Avinstallation
+Turkish.Uninstall=Kaldýr
+Vietnamese.Uninstall=GõÞ boÒ
 
 [code]
 function FilesEqual(FileName : String): Boolean;
