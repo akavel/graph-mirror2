@@ -19,6 +19,7 @@
 #include <ComCtrls.hpp>
 #include "ExtColorBox.h"
 #include "MyEdit.h"
+#include "ExtComboBox.h"
 //---------------------------------------------------------------------------
 class TForm12 : public TForm
 {
@@ -47,8 +48,8 @@ __published:	// IDE-managed Components
   TGroupBox *GroupBox5;
   TLabel *Label11;
   TLabel *Label12;
-  TComboBox *ComboBox1;
-  TComboBox *ComboBox2;
+  TExtComboBox *ComboBox1;
+  TExtComboBox *ComboBox2;
   TExtColorBox *ExtColorBox1;
 
     void __fastcall Button1Click(TObject *Sender);

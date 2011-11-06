@@ -56,4 +56,10 @@ int TExtComboBox::FindMaxWidth()
   return MaxWidth + 10;
 }
 //---------------------------------------------------------------------------
+void __fastcall TExtComboBox::ChangeScale(int M, int D)
+{
+  TComboBox::ChangeScale(M, D); // Call inherited
+  ItemHeight = (ItemHeight * M) / D;
+}
+//---------------------------------------------------------------------------
 

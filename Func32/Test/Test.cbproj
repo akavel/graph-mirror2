@@ -2,7 +2,7 @@
 		<PropertyGroup>
 			<ProjectGuid>{9DFDD0A7-0D84-450E-9A6D-1077D3B0B894}</ProjectGuid>
 			<ProjectVersion>12.3</ProjectVersion>
-			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Config Condition="'$(Config)'==''">Release</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Console</AppType>
@@ -58,7 +58,7 @@
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
 			<ILINK_StackReserveSize>0x00800000</ILINK_StackReserveSize>
 			<ILINK_LibraryPath>..\..\Libraries\gsl\Release;..\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-			<Defines>NDEBUG;$(Defines)</Defines>
+			<Defines>NDEBUG;_HAS_TRADITIONAL_ITERATORS=1;$(Defines)</Defines>
 			<IntermediateOutputDir>Release</IntermediateOutputDir>
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>

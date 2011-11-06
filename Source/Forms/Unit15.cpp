@@ -22,6 +22,8 @@
 __fastcall TForm15::TForm15(TComponent* Owner)
         : TForm(Owner), Func(NULL)
 {
+	ScaleForm(this);
+	SetAccelerators(this);
   TranslateProperties(this);
   MoveControl(Edit1, Label1);
   MoveLabel(Edit2, Label2);
@@ -33,8 +35,6 @@ __fastcall TForm15::TForm15(TComponent* Owner)
 
 	//Initialize as dialog and change to sizeable to prevent change in client size when the border size changes
 	BorderStyle = bsSizeable;
-	ScaleForm(this);
-	SetAccelerators(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm15::Button2Click(TObject *Sender)

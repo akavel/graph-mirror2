@@ -16,21 +16,22 @@
 #pragma link "MyRadioButton"
 #pragma link "MyEdit"
 #pragma link "ExtColorBox"
+#pragma link "CheckBoxEx"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm13::TForm13(TComponent* Owner, TData &AData)
         : TForm(Owner), Data(AData)
 {
-  int OldTextWidth = Canvas->TextWidth(CheckBox1->Caption);
+  ScaleForm(this);
+  int OldLabelWidth = TMaxWidth(Label5)(Label6)(Label7);
   TranslateProperties(this);
   TranslateStrings(ExtColorBox1->Items);
-  SetAccelerators(this);
   int LabelWidth = TMaxWidth(Label5)(Label6)(Label7);
-  if(LabelWidth > 32)
-    Width = Width + LabelWidth - 32;
-  ResizeControl(Edit5, Edit5->Left + Canvas->TextWidth(CheckBox1->Caption) - OldTextWidth);
+  SetAccelerators(this);
+  if(LabelWidth != OldLabelWidth)
+    Width = Width + LabelWidth - OldLabelWidth;
+  ResizeControl(Edit5, CheckBox1->Left + CheckBox1->Width);
   PageControl1->ActivePage = TabSheet1;
-  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm13::ImageClick(TObject *Sender)

@@ -35,6 +35,10 @@ object Form3: TForm3
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'x-axis'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GridPanel1: TGridPanelEx
         Left = 0
         Top = 0
@@ -362,12 +366,11 @@ object Form3: TForm3
             Left = 0
             Top = 0
             Width = 102
-            Height = 32
+            Height = 13
             Align = alLeft
             Caption = 'The x-axis cross at y='
             FocusControl = Edit6
             Layout = tlCenter
-            ExplicitHeight = 13
           end
           object Edit6: TMyEdit
             AlignWithMargins = True
@@ -429,6 +432,10 @@ object Form3: TForm3
     end
     object TabSheet2: TTabSheet
       Caption = 'y-axis'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GridPanel2: TGridPanelEx
         Left = 0
         Top = 0
@@ -753,12 +760,11 @@ object Form3: TForm3
             Left = 0
             Top = 0
             Width = 102
-            Height = 32
+            Height = 13
             Align = alLeft
             Caption = 'The y-axis cross at x='
             FocusControl = Edit12
             Layout = tlCenter
-            ExplicitHeight = 13
           end
           object Edit12: TMyEdit
             AlignWithMargins = True
@@ -823,6 +829,10 @@ object Form3: TForm3
     object TabSheet3: TTabSheet
       Caption = 'Settings'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         396
         185)

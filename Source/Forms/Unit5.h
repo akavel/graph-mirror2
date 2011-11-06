@@ -21,6 +21,7 @@
 #include <ImgList.hpp>
 #include "ExtColorBox.h"
 #include "GridPanelEx.h"
+#include "ExtComboBox.h"
 //---------------------------------------------------------------------------
 class TForm5 : public TForm
 {
@@ -47,8 +48,8 @@ __published:	// IDE-managed Components
   TLabel *Label10;
   TMyEdit *Edit7;
   TGroupBox *GroupBox5;
-  TComboBox *ComboBox2;
-  TComboBox *ComboBox3;
+  TExtComboBox *ComboBox2;
+  TExtComboBox *ComboBox3;
   TLabel *Label11;
   TLabel *Label12;
 	TGridPanelEx *GridPanelEx1;

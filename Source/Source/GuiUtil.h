@@ -23,7 +23,7 @@ namespace Tntclasses
 void DrawComboBoxEndPoint(TCanvas *Canvas, int Index, const TRect &Rect);
 
 void ResizeControl(TControl *Control, int Left);
-void ResizeControl(TControl *Control, TCustomLabel *Label1, TCustomLabel *Label2 = NULL, TCustomLabel *Label3 = NULL);
+void ResizeControl(TControl *Control, TControl *Control1, TControl *Control2 = NULL, TControl *Control3 = NULL);
 void MoveLabel(TControl *Control, TCustomLabel *Label);
 void MoveControl(TControl *Control, TCustomLabel *Label);
 

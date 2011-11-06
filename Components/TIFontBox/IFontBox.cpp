@@ -36,6 +36,8 @@ __fastcall TIFontBox::TIFontBox(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TIFontBox::CreateParams(TCreateParams &Params)
 {
+  //Do not set Style to csOwnerDrawFixed. It will prevent the user from entering text
+  //in the edit part.
   inherited::CreateParams(Params);
   Params.Style = Params.Style | CBS_OWNERDRAWFIXED;
 }
@@ -86,7 +88,9 @@ void __fastcall TIFontBox::Select()
 void __fastcall TIFontBox::ChangeScale(int M, int D)
 {
   inherited::ChangeScale(M, D); // Call inherited
-  ItemHeight = (ItemHeight * M) / D;
+  //Changing ItemHeight here doesn't work. It is always 0
+  SendMessage(Handle, CB_SETITEMHEIGHT, 0, (SendMessage(Handle, CB_GETITEMHEIGHT, 0, 0) * M) / D);
+  SendMessage(Handle, CB_SETITEMHEIGHT, -1, (SendMessage(Handle, CB_GETITEMHEIGHT, -1, 0) * M) / D);
   FSamplePos = (FSamplePos * M) / D;
 }
 //---------------------------------------------------------------------------

@@ -16,11 +16,13 @@
 #pragma link "MyEdit"
 #pragma link "ExtColorBox"
 #pragma link "GridPanelEx"
+#pragma link "ExtComboBox"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)
 	: TForm(Owner), OldItemIndex(0), Data(AData)
 {
+  ScaleForm(this);
   LineSelect1->Height = (LineSelect1->Height * Property.FontScale) / 100;
   Translate();
 
@@ -42,7 +44,6 @@ __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)
   if(SysLocale.MiddleEast)
     GroupBox1->FlipChildren(false);
 
-  ScaleForm(this);
 	ComboBox1Change(NULL);
 }
 //---------------------------------------------------------------------------

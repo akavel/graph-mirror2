@@ -21,7 +21,6 @@ object Form4: TForm4
   OldCreateOrder = False
   ParentBiDiMode = False
   Position = poMainFormCenter
-  Scaled = False
   ShowHint = True
   DesignSize = (
     281
@@ -272,11 +271,11 @@ object Form4: TForm4
     object RadioGroup1: TRadioGroupEx
       AlignWithMargins = True
       Left = 160
-      Top = 5
+      Top = 12
       Width = 92
-      Height = 63
+      Height = 76
       Hint = 'Format used when complex numbers are shown.'
-      Anchors = [akTop, akRight]
+      Anchors = [akTop, akRight, akBottom]
       Caption = 'Complex form'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText

@@ -26,6 +26,8 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
 {
   TranslateProperties(this);
   SetAccelerators(this);
+  ScaleForm(this);
+
   CheckBox1->Checked = CheckAssocation(L".grf", L"GraphFile");
   CheckBox2->Checked = Application->ShowHint;
   CheckBox3->Checked = Property.SavePos;
@@ -41,7 +43,6 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
   ComboBox2->ItemIndex = OldLanguageIndex;
   ComboBox1->Text = String(Property.FontScale) + "%";
 
-  ScaleForm(this);
   ClientWidth = GridPanelEx1->Width + GridPanelEx1->Left * 2;
   ComboBox1->SelLength = 0; //Don't know why this is necesarry
 

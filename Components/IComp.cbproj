@@ -3,7 +3,7 @@
 			<ProjectGuid>{A1226338-C69F-4866-9220-ED350B8C5D17}</ProjectGuid>
 			<MainSource>IComp.cpp</MainSource>
 			<ProjectVersion>12.3</ProjectVersion>
-			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Config Condition="'$(Config)'==''">Release</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Library</AppType>
@@ -60,9 +60,12 @@
 			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
 			<BPILibOutputDir>$(BDSCOMMONDIR)\DCP\Release</BPILibOutputDir>
 			<FinalOutputDir>$(BDSCOMMONDIR)\BPL\Release</FinalOutputDir>
-			<Defines>NDEBUG;$(Defines)</Defines>
+			<Defines>NDEBUG;_HAS_TRADITIONAL_ITERATORS=1;$(Defines)</Defines>
 			<IntermediateOutputDir>Release</IntermediateOutputDir>
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>

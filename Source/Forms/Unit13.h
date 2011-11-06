@@ -25,6 +25,7 @@
 #include "ExtColorBox.h"
 #include <Dialogs.hpp>
 #include <Menus.hpp>
+#include "CheckBoxEx.h"
 //---------------------------------------------------------------------------
 class TForm13 : public TForm
 {
@@ -74,7 +75,7 @@ __published:	// IDE-managed Components
   TUpDown *UpDown3;
   TExtColorBox *ExtColorBox1;
   TMyEdit *Edit5;
-  TCheckBox *CheckBox1;
+  TCheckBoxEx *CheckBox1;
         TPopupMenu *TntPopupMenu1;
         TMenuItem *Popup_Export;
         TMenuItem *Popup_Import;

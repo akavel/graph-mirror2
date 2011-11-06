@@ -143,6 +143,8 @@ __fastcall TSymbolFrm::TSymbolFrm(TComponent* Owner, bool AShowUnicode, wchar_t 
     ScrollBar1->Visible = false;
   }
 
+  if(PixelsPerInch != 96)
+    StatusBar1->Height = (StatusBar1->Height * PixelsPerInch) / 96;
   FocusPanel1->DoubleBuffered = true;
 }
 //---------------------------------------------------------------------------

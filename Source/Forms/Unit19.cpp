@@ -32,6 +32,7 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData, int AWidth, int AHe
 {
   TranslateProperties(this);
   SetAccelerators(this);
+  ScaleForm(this);
 
   int Left = Label7->Left + TMaxWidth(Label2)(Label3)(Label4)(Label5)(Label6)(Label7) + 5;
   ResizeControl(ComboBox1, Left);
@@ -79,8 +80,6 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData, int AWidth, int AHe
   Edit4->Text = ImageWidth;
   Edit5->Text = ImageHeight;
   Edit6->Text = AnimationInfo.FramesPerSecond;
-
-  ScaleForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button1Click(TObject *Sender)

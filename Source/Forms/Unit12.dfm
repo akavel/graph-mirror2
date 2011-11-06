@@ -166,7 +166,6 @@ object Form12: TForm12
       Height = 22
       Hint = 'Choose which line style to use for drawing the graph.'
       TabOrder = 0
-      ItemHeight = 16
     end
     object ExtColorBox1: TExtColorBox
       Left = 72
@@ -175,7 +174,6 @@ object Form12: TForm12
       Height = 22
       Hint = 'Select the color of the graph.'
       HelpType = htKeyword
-      ItemHeight = 16
       TabOrder = 1
       AutoDroppedWidth = True
       Selected = clScrollBar
@@ -263,7 +261,7 @@ object Form12: TForm12
       Caption = 'End:'
       FocusControl = ComboBox2
     end
-    object ComboBox1: TComboBox
+    object ComboBox1: TExtComboBox
       Left = 40
       Top = 16
       Width = 65
@@ -272,7 +270,6 @@ object Form12: TForm12
         'Select marker to show at the start of the interval. Only used if' +
         ' an argument range is specified.'
       Style = csOwnerDrawFixed
-      ItemHeight = 16
       ItemIndex = 0
       TabOrder = 0
       OnDrawItem = ComboBoxDrawItem
@@ -283,8 +280,9 @@ object Form12: TForm12
         ''
         ''
         '')
+      AutoDroppedWidth = True
     end
-    object ComboBox2: TComboBox
+    object ComboBox2: TExtComboBox
       Left = 208
       Top = 16
       Width = 65
@@ -293,7 +291,6 @@ object Form12: TForm12
         'Select marker to show at the end of the interval. Only used if a' +
         'n argument range is specified.'
       Style = csOwnerDrawFixed
-      ItemHeight = 16
       ItemIndex = 0
       TabOrder = 1
       OnDrawItem = ComboBoxDrawItem
@@ -304,6 +301,7 @@ object Form12: TForm12
         ''
         ''
         '')
+      AutoDroppedWidth = True
     end
   end
 end

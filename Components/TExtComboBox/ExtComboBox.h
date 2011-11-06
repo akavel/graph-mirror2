@@ -17,6 +17,7 @@ private:
   int FindMaxWidth();
   DYNAMIC void __fastcall DropDown();
   void __fastcall SetDroppedWidth(int AWidth);
+  DYNAMIC void __fastcall ChangeScale(int M, int D);
 
 protected:
 public:
