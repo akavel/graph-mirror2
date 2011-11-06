@@ -5,6 +5,7 @@ import os
 import sys
 import traceback
 import datetime
+import subprocess
 
 try:
   # Test that Graph can be started without some obscure dll files
@@ -29,9 +30,14 @@ try:
   File.writelines(Lines)
   File.close()
 
+  # Sign Graph.exe
+  Password = getpass()
+  os.system('signtool.exe sign /f %s\\Certificate.p12 /p %s /t http://timestamp.comodoca.com/authenticode /d "Graph" Graph.exe")
+  SignTool = 'SignTool=signtool.exe sign /f %s\\Certificate.p12 /p %s /t http://timestamp.comodoca.com/authenticode $p' % (os.getcwd(), Password)
+
   # Compile SetupGraphBeta-4.2.0.x.exe
   print("Compiling", FileName, "...")
-  os.system('"c:\progra~1\\Inno Setup 5\\iscc.exe" /Q Graph.iss')
+  subprocess.check_call(["c:\\program files\\Inno Setup 5\\iscc.exe", "/Q", "/S%s" % SignTool, "Graph.iss"])
 
   #Creating GraphBeta.inf
   print("Writing GraphBeta.inf ...")
@@ -47,7 +53,7 @@ try:
 
   # Upload SetupGraphBeta.exe to the server
   ftp = FTP('ftp.padowan.dk')   # connect to host, default port
-  ftp.login('padowan.dk', getpass())
+  ftp.login('padowan.dk', Password)
   ftp.cwd('bin')
   print("Uploading", FileName, "...")
   File = open(FileName, 'rb')
@@ -62,6 +68,6 @@ try:
 
   ftp.quit()
   print("Upload complete!")
-except:
+except Exception:
   traceback.print_exception(sys.exc_info()[0], sys.exc_info()[1], sys.exc_info()[2])
   sys.stdin.readline()
