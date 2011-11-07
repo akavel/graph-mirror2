@@ -28,6 +28,7 @@ public:
 __published:
   __property TColor Color = {read=FColor,write=SetColor,default=clGreen};
   __property TBrushStyle ShadeStyle = {read=GetShadeStyle,write=SetShadeStyle,default=bsBDiagonal};
+  __property Align;
   __property OnChange;
   __property OnDropDown;
   __property OnClick;
