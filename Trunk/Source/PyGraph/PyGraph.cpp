@@ -34,10 +34,19 @@ namespace Python
 PyObject *PyEFuncError = NULL;
 PyObject *PyEGraphError = NULL;
 //---------------------------------------------------------------------------
+void PrintException()
+{
+  PyObject *Type, *Value, *Traceback;
+  PyErr_Fetch(&Type, &Value, &Traceback);
+  PyErr_Restore(Type, Value, NULL);
+  Py_XDECREF(Traceback);
+  PyErr_Print();
+}
+//---------------------------------------------------------------------------
 bool ExecutePythonCommand(const String &Command)
 {
 	TLockGIL Dummy;
-
+  PyErr_Clear();
   PyObject *Module = PyImport_ImportModule("code");
   bool Result = true;
   if(Module)
@@ -47,13 +56,7 @@ bool ExecutePythonCommand(const String &Command)
     {
       PyObject *Code = PyObject_CallFunction(Function, "us", Command.c_str(), "<console>");
       if(Code == NULL)
-      {
-        PyObject *Type, *Value, *Traceback;
-	      PyErr_Fetch(&Type, &Value, &Traceback);
-        PyErr_Restore(Type, Value, NULL);
-        Py_XDECREF(Traceback);
-        PyErr_Print();
-      }
+        PrintException();
       else if(Code == Py_None)
         Result = false;
       else
@@ -73,7 +76,8 @@ bool ExecutePythonCommand(const String &Command)
     }
     Py_DECREF(Module);
   }
-
+  else
+    PyErr_Print();
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -516,6 +520,7 @@ void InitPlugins()
 		TVersion Version = Info.FileVersion();
 		const char *BetaFinal = Info.FileFlags() & ffDebug ? "beta" : "final";
 		AnsiString BaseDir = GetRegValue(REGISTRY_KEY, L"BaseDir", HKEY_CURRENT_USER, ExtractFileDir(Application->ExeName).c_str()).c_str();
+    BaseDir = ReplaceStr(BaseDir, '\\', "\\\\");
 		AnsiString PythonCommands = AnsiString().sprintf(
 			"import sys\n"
 			"import GraphImpl\n"
@@ -540,7 +545,6 @@ void InitPlugins()
 			"import vcl\n"
 			"import Graph\n"
 			"Graph.InitPlugins('%s')\n"
-
 			"sys.stdin = sys.stdout\n"
 			, Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
 			, BaseDir.c_str()
