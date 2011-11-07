@@ -37,10 +37,11 @@ __published:	// IDE-managed Components
   TMyEdit *Edit1;
   TLabel *Label2;
   TLabel *Label3;
-  TEdit *Edit4;
-  TUpDown *UpDown1;
   TMyEdit *Edit2;
   TExtColorBox *ExtColorBox1;
+  TPanel *Panel1;
+  TEdit *Edit4;
+  TUpDown *UpDown1;
   void __fastcall Button3Click(TObject *Sender);
   void __fastcall Button1Click(TObject *Sender);
   void __fastcall Edit4KeyPress(TObject *Sender, char &Key);

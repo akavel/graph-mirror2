@@ -48,6 +48,7 @@ public:
   __fastcall TExtColorBox(TComponent* Owner);
 
 __published:
+  __property Align;
   __property Anchors;
   __property BevelEdges;
   __property BevelInner;

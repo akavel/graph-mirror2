@@ -37,7 +37,6 @@ void TForm11::Translate()
   ResizeControl(Edit1, Label1, Label2);
   ResizeControl(Edit2, Label1, Label2);
   ResizeControl(Edit3, Label10);
-  ResizeControl(Edit4, Label3);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm11::Button3Click(TObject *Sender)

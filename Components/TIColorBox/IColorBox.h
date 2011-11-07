@@ -35,6 +35,7 @@ protected:
 public:
   __fastcall TIColorBox(TComponent* Owner);
 __published:
+  __property Align;
   __property TabStop;
   __property TabOrder;
   __property Enabled;

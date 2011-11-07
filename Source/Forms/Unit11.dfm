@@ -107,79 +107,118 @@ object Form11: TForm11
     Top = 130
     Width = 379
     Height = 47
+    Margins.Right = 8
     Anchors = [akLeft, akTop, akRight]
     Caption = 'Properties'
     TabOrder = 3
     object Label7: TLabel
-      Left = 10
-      Top = 20
+      AlignWithMargins = True
+      Left = 8
+      Top = 18
       Width = 26
-      Height = 13
-      Alignment = taRightJustify
+      Height = 24
+      Margins.Left = 6
+      Align = alLeft
       Caption = 'Style:'
       FocusControl = ShadeSelect1
+      Layout = tlCenter
+      ExplicitLeft = 2
+      ExplicitTop = 15
+      ExplicitHeight = 13
     end
     object Label9: TLabel
-      Left = 144
-      Top = 20
+      AlignWithMargins = True
+      Left = 148
+      Top = 18
       Width = 27
-      Height = 13
+      Height = 24
+      Align = alRight
       Alignment = taRightJustify
       Caption = 'Color:'
       FocusControl = ExtColorBox1
+      Layout = tlCenter
+      ExplicitLeft = 144
+      ExplicitTop = 20
+      ExplicitHeight = 13
     end
     object Label3: TLabel
-      Left = 276
-      Top = 20
+      AlignWithMargins = True
+      Left = 277
+      Top = 18
       Width = 31
-      Height = 13
+      Height = 24
+      Align = alRight
       Alignment = taRightJustify
       Caption = 'Width:'
-      FocusControl = Edit4
+      Layout = tlCenter
+      ExplicitLeft = 263
+      ExplicitTop = 15
+      ExplicitHeight = 30
     end
     object ShadeSelect1: TShadeSelect
+      AlignWithMargins = True
       Left = 40
-      Top = 16
+      Top = 18
       Width = 81
       Height = 22
       Hint = 
         'Select the style used for drawing the inequality. Not used for e' +
         'quations.'
+      Align = alLeft
       TabOrder = 0
-    end
-    object Edit4: TEdit
-      Left = 312
-      Top = 16
-      Width = 41
-      Height = 21
-      Hint = 
-        'Width in pixels of the equation line or the borderline of the in' +
-        'equality.'
-      TabOrder = 2
-      Text = '1'
-      OnKeyPress = Edit4KeyPress
-    end
-    object UpDown1: TUpDown
-      Left = 353
-      Top = 16
-      Width = 15
-      Height = 21
-      Associate = Edit4
-      Max = 20
-      Position = 1
-      TabOrder = 3
+      ExplicitLeft = 28
     end
     object ExtColorBox1: TExtColorBox
-      Left = 176
-      Top = 16
+      AlignWithMargins = True
+      Left = 181
+      Top = 18
       Width = 81
       Height = 22
       Hint = 'Select the color for drawing the relation.'
+      Margins.Right = 12
+      Align = alRight
       TabOrder = 1
       AutoDroppedWidth = True
       Selected = clScrollBar
       DefaultName = 'Default'
       CustomName = 'Custom...'
+      ExplicitLeft = 176
+      ExplicitTop = 16
+    end
+    object Panel1: TPanel
+      AlignWithMargins = True
+      Left = 314
+      Top = 18
+      Width = 56
+      Height = 24
+      Margins.Right = 7
+      Align = alRight
+      AutoSize = True
+      BevelOuter = bvNone
+      TabOrder = 2
+      ExplicitLeft = 293
+      object Edit4: TEdit
+        Left = 0
+        Top = 0
+        Width = 41
+        Height = 21
+        Hint = 
+          'Width in pixels of the equation line or the borderline of the in' +
+          'equality.'
+        TabOrder = 0
+        Text = '1'
+        OnKeyPress = Edit4KeyPress
+      end
+      object UpDown1: TUpDown
+        Left = 41
+        Top = 0
+        Width = 15
+        Height = 21
+        Associate = Edit4
+        Max = 20
+        Position = 1
+        TabOrder = 1
+      end
     end
   end
   object Edit1: TMyEdit
