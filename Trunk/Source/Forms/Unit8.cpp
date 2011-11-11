@@ -28,12 +28,12 @@ bool TForm8::EditModel(std::wstring &Name)
   Edit1->Text = Name.c_str();
   TUserModel UserModel = Data.UserModels[Name];
   for(unsigned I = 0; I < UserModel.Defaults.size(); I++)
-    ValueListEditor1->Values[UserModel.Defaults[I].first.c_str()] = UserModel.Defaults[I].second;
+    ValueListEditor1->Values[ToUString(UserModel.Defaults[I].first)] = ToUString(UserModel.Defaults[I].second);
 
   if(ShowModal() == mrOk)
   {
     for(unsigned I = 0; I < UserModel.Defaults.size(); I++)
-      UserModel.Defaults[I].second = ValueListEditor1->Values[UserModel.Defaults[I].first.c_str()].ToDouble();
+      UserModel.Defaults[I].second = ToWString(ValueListEditor1->Values[ToUString(UserModel.Defaults[I].first)]);
 
     Data.UserModels.erase(Name);
     Name = ToWString(Edit1->Text);
@@ -65,7 +65,7 @@ bool TForm8::AddModel(const std::wstring &Model, std::wstring &ModelName)
   if(ShowModal() == mrOk)
   {
     for(std::vector<std::wstring>::const_iterator Iter = Unknowns.begin() + 1; Iter != Unknowns.end(); ++Iter)
-      UserModel.Defaults.push_back(std::make_pair(*Iter, ValueListEditor1->Values[Iter->c_str()].ToDouble()));
+      UserModel.Defaults.push_back(std::make_pair(*Iter, ToWString(ValueListEditor1->Values[ToUString(*Iter)])));
 
     ModelName = ToWString(Edit1->Text);
     Data.UserModels[ModelName] = UserModel;
@@ -74,46 +74,40 @@ bool TForm8::AddModel(const std::wstring &Model, std::wstring &ModelName)
   return false;
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm8::ValueListEditor1KeyPress(TObject *Sender,
-      char &Key)
-{
-  if(Key == ',')
-    Key = '.';
-  else if(!isdigit(Key) && Key != '\b' && Key != '-' && Key != '.')
-    Key = 0;
-}
-//---------------------------------------------------------------------------
 void __fastcall TForm8::Button1Click(TObject *Sender)
 {
   //Make sure that all numbers are valid
   int I;
-  try
+  std::wstring Name = ToWString(Edit1->Text);
+  //Empty names are not allowed
+  if(Name.empty())
   {
-    std::wstring Name = ToWString(Edit1->Text);
-    //Empty names are not allowed
-    if(Name.empty())
+    MessageBox(LoadRes(516), LoadRes(RES_ERROR));
+    return;
+  }
+
+  //Two models with the same name cannot exist
+  if(!AllowReplace)
+  for(unsigned I = 0; I < Data.UserModels.size(); I++)
+    if(Data.UserModels.count(Name) != 0)
     {
-      MessageBox(LoadRes(516), LoadRes(RES_ERROR));
+      MessageBox(LoadRes(517), LoadRes(RES_ERROR));
       return;
     }
-
-    //Two models with the same name cannot exist
-    if(!AllowReplace)
-    for(unsigned I = 0; I < Data.UserModels.size(); I++)
-      if(Data.UserModels.count(Name) != 0)
-      {
-        MessageBox(LoadRes(517), LoadRes(RES_ERROR));
-        return;
-      }
-
-    for(I = 1; I < ValueListEditor1->RowCount; I++)
-      ValueListEditor1->Cells[1][I].ToDouble();
-    ModalResult = mrOk;
-  }
-  catch(...)
-  {
-    MessageBox(LoadRes(RES_NOT_VALID_NUMBER, ValueListEditor1->Cells[1][I]), LoadRes(RES_ERROR_IN_VALUE));
-  }
+  //We only validate here. The values is calculated again later
+  for(I = 1; I < ValueListEditor1->RowCount; I++)
+    try
+    {
+      ToDouble(ValueListEditor1->Cells[1][I]);
+    }
+    catch(...)
+    {
+      ValueListEditor1->Row = I;
+      ValueListEditor1->SetFocus();
+      MessageBox(LoadRes(RES_NOT_VALID_NUMBER, ValueListEditor1->Cells[1][I]), LoadRes(RES_ERROR_IN_VALUE));
+      return;
+    }
+  ModalResult = mrOk;
 }
 //---------------------------------------------------------------------------
 

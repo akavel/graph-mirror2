@@ -25,7 +25,6 @@ double CellToDouble(class TGrid *Grid, int Col, int Row);
 int GetDecimals(double Number);
 std::wstring FontToStr(TFont *Font);
 void StrToFont(const std::wstring &Str, TFont *Font);
-double StringToDouble(const String &Str);
 bool CheckLimit(TWinControl *Control, String Str, int Min=-MaxInt, int Max=MaxInt);
 std::pair<int, int> FloatToFract(double f, double Epsilon = 0.01);
 inline std::wstring RoundToString(long double Number, unsigned Decimals) {return RoundToStr(Number, Decimals).c_str();}
@@ -34,6 +33,9 @@ std::wstring RtfToPlainText(const std::string &Str);
 
 inline int ToIntDef(const std::wstring &Str, int Default) {return StrToIntDef(Str.c_str(), Default);}
 inline int ToIntDef(const String &Str, int Default) {return StrToIntDef(Str, Default);}
+
+double ToDouble(const String &Str);
+double ToDouble(const std::wstring &Str);
 
 std::string ToString(int Value);
 std::string ToString(unsigned Value);

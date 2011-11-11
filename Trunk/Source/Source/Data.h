@@ -20,7 +20,7 @@ namespace Graph
 struct TUserModel
 {
   std::wstring Model;
-  std::vector<std::pair<std::wstring, double> > Defaults;
+  std::vector<std::pair<std::wstring, std::wstring> > Defaults;
 };
 
 typedef std::map<std::wstring, TUserModel> TUserModels;

@@ -239,18 +239,14 @@ void StrToFont(const std::wstring &Str, TFont *Font)
   }
 }
 //---------------------------------------------------------------------------
-//Coverts a string to a double
-//Takes care of INF, -INF and +INF
-double StringToDouble(const String &Str)
+double ToDouble(const String &Str)
 {
-  //Chek for INF or +INF
-  if(!Str.CompareIC("INF") || !Str.CompareIC("+INF"))
-    return std::numeric_limits<double>::infinity();
-  //Check for -INF
-  if(!Str.CompareIC("-INF"))
-    return -std::numeric_limits<double>::infinity();
-  //Convert number to double
   return Str.ToDouble();
+}
+//---------------------------------------------------------------------------
+double ToDouble(const std::wstring &Str)
+{
+  return ToUString(Str).ToDouble();
 }
 //---------------------------------------------------------------------------
 bool CheckLimit(TWinControl *Control, String Str, int Min, int Max)
