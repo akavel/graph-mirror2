@@ -25,7 +25,6 @@ __published:	// IDE-managed Components
   TValueListEditor *ValueListEditor1;
   TButton *Button1;
   TButton *Button2;
-  void __fastcall ValueListEditor1KeyPress(TObject *Sender, char &Key);
   void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
   TData &Data;

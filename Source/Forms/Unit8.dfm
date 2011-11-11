@@ -43,7 +43,6 @@ object Form8: TForm8
     TitleCaptions.Strings = (
       'Constant'
       'Value')
-    OnKeyPress = ValueListEditor1KeyPress
     ColWidths = (
       112
       188)

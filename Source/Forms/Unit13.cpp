@@ -119,7 +119,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
         std::wstring ModelName = ToWString(ListBox1->Items->Strings[ListBox1->ItemIndex]);
         TUserModel &Model = Data.UserModels[ModelName];
         for(unsigned I = 0; I < Model.Defaults.size(); I++)
-          Values[I] = Model.Defaults[I].second;
+          Values[I] = ToDouble(Model.Defaults[I].second);
       }
 
       Arguments.insert(Arguments.begin(), L"x");
@@ -232,7 +232,11 @@ void __fastcall TForm13::Button4Click(TObject *Sender)
   {
     std::wstring ModelName;
     if(CreateForm<TForm8>(Data)->AddModel(::ToWString(Edit3->Text), ModelName))
+    {
       ShowUserModels(ModelName);
+      Button5->Enabled = true;
+      Button6->Enabled = true;
+    }
   }
   catch(Func32::EFuncError &Error)
   {

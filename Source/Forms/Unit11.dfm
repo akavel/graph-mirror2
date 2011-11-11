@@ -122,8 +122,6 @@ object Form11: TForm11
       Caption = 'Style:'
       FocusControl = ShadeSelect1
       Layout = tlCenter
-      ExplicitLeft = 2
-      ExplicitTop = 15
       ExplicitHeight = 13
     end
     object Label9: TLabel
@@ -137,8 +135,6 @@ object Form11: TForm11
       Caption = 'Color:'
       FocusControl = ExtColorBox1
       Layout = tlCenter
-      ExplicitLeft = 144
-      ExplicitTop = 20
       ExplicitHeight = 13
     end
     object Label3: TLabel
@@ -151,9 +147,7 @@ object Form11: TForm11
       Alignment = taRightJustify
       Caption = 'Width:'
       Layout = tlCenter
-      ExplicitLeft = 263
-      ExplicitTop = 15
-      ExplicitHeight = 30
+      ExplicitHeight = 13
     end
     object ShadeSelect1: TShadeSelect
       AlignWithMargins = True
@@ -166,7 +160,6 @@ object Form11: TForm11
         'quations.'
       Align = alLeft
       TabOrder = 0
-      ExplicitLeft = 28
     end
     object ExtColorBox1: TExtColorBox
       AlignWithMargins = True
@@ -182,8 +175,6 @@ object Form11: TForm11
       Selected = clScrollBar
       DefaultName = 'Default'
       CustomName = 'Custom...'
-      ExplicitLeft = 176
-      ExplicitTop = 16
     end
     object Panel1: TPanel
       AlignWithMargins = True
@@ -196,7 +187,6 @@ object Form11: TForm11
       AutoSize = True
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitLeft = 293
       object Edit4: TEdit
         Left = 0
         Top = 0

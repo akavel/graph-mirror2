@@ -400,7 +400,7 @@ void TData::ImportUserModels(const std::wstring &Str)
     for(TConfigFileSection::TIterator Iter = Section.Begin(); Iter != Section.End(); ++Iter)
     {
       if(Iter->first[0] == '$')
-        UserModel.Defaults.push_back(std::make_pair(Iter->first, Calc(Iter->second)));
+        UserModel.Defaults.push_back(std::make_pair(Iter->first, Iter->second));
     }
 
     UserModels[Section.GetName()] = UserModel;
