@@ -812,6 +812,8 @@ void TForm1::SaveSettings(void)
     Registry.Write("Orientation", IPrintDialog1->Orientation);
 
     Registry.Write("DockCalcForm", Panel4->DockClientCount);
+    Registry.Write(L"UserModels", Data.ExportUserModels());
+
     if(Property.SavePos)
     {
       Registry.Write("Maximized", WindowState == wsMaximized);
@@ -834,8 +836,6 @@ void TForm1::SaveSettings(void)
     if(Registry.CreateKey(REGISTRY_KEY "\\Property"))
       Property.Write(Registry);
   }
-
-  Registry.Write(L"UserModels", Data.ExportUserModels());
 }
 //---------------------------------------------------------------------------
 void TForm1::UpdateMenu()
