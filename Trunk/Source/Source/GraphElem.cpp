@@ -1231,6 +1231,7 @@ long double TRelation::Eval(long double x, long double y)
 void TRelation::ClearCache()
 {
   Region.reset();
+  BoundingRegion.reset();
 }
 //---------------------------------------------------------------------------
 void TRelation::Update()
