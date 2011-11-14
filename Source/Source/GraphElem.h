@@ -455,6 +455,7 @@ class TRelation : public TGraphElem
 
 public:
   boost::shared_ptr<class TRegion> Region;
+  boost::shared_ptr<class TRegion> BoundingRegion; //Used to draw the frame around Region for inequalities
 
   TRelation();
   TRelation(const std::wstring &AText, const std::wstring &AConstraints, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig);

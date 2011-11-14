@@ -425,6 +425,8 @@ void TContext::DrawRegion(const TRegion &Region)
 //---------------------------------------------------------------------------
 void TContext::DrawFrameRegion(const TRegion &Region, unsigned Width)
 {
+  //Danger, danger Will Robinson: The FrameRgn() function can be extremely slow
+  //for complex regions.
   FrameRgn(Canvas->Handle, Region.Handle, Canvas->Brush->Handle, Width, Width);
   Changed();
 }
