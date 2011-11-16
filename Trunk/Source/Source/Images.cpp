@@ -375,5 +375,12 @@ void CompressBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<RG
   Data.push_back(1);                //End of bitmap
 }
 //---------------------------------------------------------------------------
+RGBQUAD ColorToRGBQUAD(TColor Color)
+{
+  RGBQUAD Result = {(Color >> 16) & 0xFF, (Color >> 8) & 0xFF, Color & 0xFF};
+  return Result;
+}
+//---------------------------------------------------------------------------
+
 
 

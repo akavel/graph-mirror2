@@ -25,4 +25,5 @@ void GetColors(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<RGBQUAD
 void CompressBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, std::vector<RGBQUAD> &Colors, std::vector<char> &Data);
 bool SaveCompressedBitmap(Graphics::TBitmap *Bitmap, const TRect &Rect, const String &FileName);
 void FillBitmapInfoHeader(BITMAPINFOHEADER &BitmapHeader, Graphics::TBitmap *Bitmap, const TRect &Rect, unsigned Colors, unsigned DataSize);
+RGBQUAD ColorToRGBQUAD(TColor Color);
 #endif
