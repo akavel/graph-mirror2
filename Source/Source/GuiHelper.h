@@ -9,6 +9,7 @@
 //---------------------------------------------------------------------------
 #ifndef GuiHelperH
 #define GuiHelperH
+#include <set>
 //---------------------------------------------------------------------------
 class TAddView : public TGraphElemVisitor
 {
@@ -41,4 +42,19 @@ struct TZoomFit : public TGraphElemVisitor
   void Visit(TRelation &Relation);
   void Visit(TAxesView &AxesView) {} //Not used
 };
+
+struct TFindColors : public TGraphElemVisitor
+{
+  std::set<TColor> &Colors;
+  TFindColors(std::set<TColor> &AColors) : Colors(AColors) {}
+  void Visit(TBaseFuncType &Func);
+  void Visit(TTan &Tan) {Visit(static_cast<TBaseFuncType&>(Tan));} //Forward
+  void Visit(TShading &Shade);
+  void Visit(TPointSeries &Series);
+  void Visit(TTextLabel &Label);
+  void Visit(TRelation &Relation);
+  void Visit(TAxesView &AxesView);
+};
+
+void FindColors(const TData &Data, std::set<TColor> &Colors);
 #endif

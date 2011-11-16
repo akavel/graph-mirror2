@@ -1294,4 +1294,9 @@ void TAxesView::ChangeVisible()
   }
 }
 //---------------------------------------------------------------------------
+const TAxes& TAxesView::GetAxes() const
+{
+  return GetData().Axes;
+}
+//---------------------------------------------------------------------------
 } //namespace Graph

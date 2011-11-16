@@ -174,4 +174,50 @@ void TZoomFit::Visit(TRelation &Relation)
   yMax = Draw.yCoord(Rect.Top);
 }
 //---------------------------------------------------------------------------
+/////////////////
+// TFindColors //
+/////////////////
+void TFindColors::Visit(TBaseFuncType &Func)
+{
+  Colors.insert(Func.Color);
+}
+//---------------------------------------------------------------------------
+void TFindColors::Visit(TShading &Shade)
+{
+  Colors.insert(Shade.Color);
+}
+//---------------------------------------------------------------------------
+void TFindColors::Visit(TPointSeries &Series)
+{
+  Colors.insert(clBlack);
+  Colors.insert(Series.GetFillColor());
+  Colors.insert(Series.GetLineColor());
+  Colors.insert(Series.GetFrameColor());
+}
+//---------------------------------------------------------------------------
+void TFindColors::Visit(TTextLabel &Label)
+{
+  Colors.insert(Label.GetBackgroundColor());
+}
+//---------------------------------------------------------------------------
+void TFindColors::Visit(TRelation &Relation)
+{
+  Colors.insert(Relation.GetColor());
+}
+//---------------------------------------------------------------------------
+void TFindColors::Visit(TAxesView &AxesView)
+{
+  Colors.insert(AxesView.GetAxes().AxesColor);
+  Colors.insert(AxesView.GetAxes().GridColor);
+  Colors.insert(AxesView.GetAxes().BackgroundColor);
+}
+//---------------------------------------------------------------------------
+void FindColors(const TData &Data, std::set<TColor> &Colors)
+{
+  TFindColors ColorFinder(Colors);
+  for(unsigned I = 0; I < Data.ElemCount(); I++)
+    if(Data.GetElem(I)->GetVisible())
+      Data.GetElem(I)->Accept(ColorFinder);
+}
+//---------------------------------------------------------------------------
 

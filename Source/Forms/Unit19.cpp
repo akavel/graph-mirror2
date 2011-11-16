@@ -21,6 +21,7 @@
 #include <boost/spirit/phoenix/primitives.hpp>
 #include "Swig.h"
 #include "PythonBind.h"
+#include "GuiHelper.h"
 using phoenix::arg1;
 //---------------------------------------------------------------------------
 #pragma link "ProgressForm"
@@ -162,12 +163,19 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     StreamInfo.dwEditCount = 0;
     StreamInfo.dwFormatChangeCount = 0;
     strcpy(StreamInfo.szName, "Graph animation");
-                 
+
     OleCheck(AVIFileCreateStreamA(pFile, &pStream, &StreamInfo));
     TCallOnRelease Dummy5(AVIStreamRelease, pStream);
 
-    unsigned I = 0;
+    //WARNING: The media player in Graph may still have some problems when the palette
+    //changes. Therefore we try to guess the colors beforehand.
+    std::set<TColor> GraphColors;
+    FindColors(Data, GraphColors);
     std::vector<RGBQUAD> Colors;
+    for(std::set<TColor>::iterator Iter = GraphColors.begin(); Iter != GraphColors.end(); ++Iter)
+      Colors.push_back(ColorToRGBQUAD(*Iter));
+
+    unsigned I = 0;
 		Python::TPyObjectPtr DataObject(Python::IsPythonInstalled() ? ToPyObject(Data) : NULL, false);
     for(double Value = Min; I < StepCount; Value += Step, I++)
     {

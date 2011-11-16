@@ -493,6 +493,7 @@ public:
   boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TAxesView(*this));}
   int GetVisible() const;
   void ChangeVisible();
+  const TAxes& GetAxes() const;
 };
 } //namespace Graph
 using namespace Graph;
