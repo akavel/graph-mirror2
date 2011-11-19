@@ -100,6 +100,15 @@ void TCustomFunc::SetFunc(const std::wstring &Text, const TArgType &AArgs, const
   Args.swap(Temp);
 }
 //---------------------------------------------------------------------------
+/** Assigns a value to the function.
+ *  \param Values: The value assigned to the function
+ */
+void TCustomFunc::SetFunc(long double Value)
+{
+  FuncData.reset(new TFuncData);
+  FuncData->Add(Value);
+}
+//---------------------------------------------------------------------------
 /** Evaluates the function for a given set of arguments.
  *  \param Values: Arguments to pass into function. Values.size() must equal Args.size()
  *  \return Result of the evaluation
