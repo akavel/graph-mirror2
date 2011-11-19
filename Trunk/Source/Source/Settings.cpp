@@ -318,7 +318,8 @@ void TCustomFunctions::Replace(const std::wstring &Name, const std::wstring &Val
     if(Iter->Name == Name)
     {
       Iter->Text = Value;
-      SymbolList.Add(Name, boost::shared_ptr<Func32::TCustomFunc>(new Func32::TCustomFunc(Value, Iter->Arguments, SymbolList)));
+      if(Func32::TCustomFunc *Func = dynamic_cast<Func32::TCustomFunc*>(SymbolList.Get(Name).get()))
+        Func->SetFunc(Value, Iter->Arguments, SymbolList);
       return;
     }
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
@@ -330,7 +331,8 @@ void TCustomFunctions::Replace(const std::wstring &Name, long double Value)
     if(Iter->Name == Name)
     {
       Iter->Text = ToWString(Value);
-      SymbolList.Add(Name, boost::shared_ptr<Func32::TCustomFunc>(new Func32::TCustomFunc(Value)));
+      if(Func32::TCustomFunc *Func = dynamic_cast<Func32::TCustomFunc*>(SymbolList.Get(Name).get()))
+        Func->SetFunc(Value);
       return;
     }
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
