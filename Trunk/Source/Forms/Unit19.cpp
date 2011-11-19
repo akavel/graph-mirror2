@@ -184,7 +184,6 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
       Bitmap->Canvas->FillRect(TRect(0, 0, ImageWidth, ImageHeight));
       Data.CustomFunctions.Replace(AnimationInfo.Constant, Value);
       ExecutePluginEvent(Python::peAnimate, DataObject.get(), AnimationInfo.Constant, Value);
-      Data.CustomFunctions.Update();
       Data.Update();
       Data.ClearCache();
       Draw.DrawAll();
