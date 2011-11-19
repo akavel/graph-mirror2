@@ -121,7 +121,7 @@ object Form9: TForm9
     Visible = False
     ExplicitWidth = 184
     ExplicitHeight = 102
-    inherited GridPanel1: TGridPanel
+    inherited GridPanel1: TGridPanelEx
       Width = 184
       Height = 102
       ControlCollection = <
@@ -159,23 +159,35 @@ object Form9: TForm9
       ExplicitHeight = 102
       inherited Label1: TLabel
         Width = 26
+        Height = 22
         ExplicitWidth = 26
       end
+      inherited Label2: TLabel
+        Top = 39
+        Height = 22
+      end
       inherited Label3: TLabel
+        Top = 70
         Width = 35
+        Height = 22
         ExplicitWidth = 35
       end
       inherited Edit3: TEdit
         Left = 43
+        Top = 70
         Width = 137
+        Height = 22
         ExplicitLeft = 43
+        ExplicitTop = 70
         ExplicitWidth = 137
       end
       inherited Panel1: TPanel
         Left = 43
         Width = 137
+        Height = 22
         ExplicitLeft = 43
         ExplicitWidth = 137
+        ExplicitHeight = 22
         inherited Edit1: TMyEdit
           Width = 122
           OnChange = Edit1Change
@@ -183,15 +195,20 @@ object Form9: TForm9
         end
         inherited UpDown1: TUpDownEx
           Left = 122
+          Top = 0
           OnUpDown = UpDownExUpDown
           ExplicitLeft = 122
         end
       end
       inherited Panel2: TPanel
         Left = 43
+        Top = 39
         Width = 137
+        Height = 22
         ExplicitLeft = 43
+        ExplicitTop = 39
         ExplicitWidth = 137
+        ExplicitHeight = 22
         inherited Edit2: TMyEdit
           Width = 122
           OnChange = Edit1Change
@@ -234,6 +251,20 @@ object Form9: TForm9
     end
     inherited UpDownEx1: TUpDownEx
       OnUpDown = UpDownExUpDown
+    end
+  end
+  inline TanFrame1: TTanFrame
+    Left = 0
+    Top = 0
+    Width = 184
+    Height = 69
+    HelpContext = 100
+    Anchors = [akLeft, akTop, akRight]
+    ParentBackground = False
+    TabOrder = 4
+    Visible = False
+    inherited Edit1: TMyEdit
+      OnChange = Edit1Change
     end
   end
 end
