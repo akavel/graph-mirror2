@@ -95,14 +95,14 @@ void TForm9::FuncChanged(const boost::shared_ptr<TGraphElem> &AElem)
   switch(EvalType)
   {
     case etEval:
-      if(dynamic_cast<TStdFunc*>(Elem.get()))
+      if(dynamic_cast<TTan*>(Elem.get()) || dynamic_cast<TPointSeries*>(Elem.get()))
+        ShowFrame(TanFrame1);
+      else if(dynamic_cast<TStdFunc*>(Elem.get()))
         ShowFrame(StdFuncFrame1);
       else if(dynamic_cast<TParFunc*>(Elem.get()))
         ShowFrame(ParFuncFrame1);
       else if(dynamic_cast<TPolFunc*>(Elem.get()))
         ShowFrame(PolFuncFrame1);
-      else if(dynamic_cast<TTan*>(Elem.get()) || dynamic_cast<TPointSeries*>(Elem.get()))
-        ShowFrame(TanFrame1);
       else
         ShowFrame(NULL);
 

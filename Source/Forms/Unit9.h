@@ -37,11 +37,11 @@ class TForm9 : public TForm
 {
 __published:	// IDE-managed Components
   TStdFuncFrame *StdFuncFrame1;
-  TTanFrame *TanFrame1;
   TParFuncFrame *ParFuncFrame1;
   TLabel *Label1;
   TPolFuncFrame *PolFuncFrame1;
   TAreaFrame *AreaFrame1;
+  TTanFrame *TanFrame1;
   void __fastcall FormHide(TObject *Sender);
   void __fastcall Edit1Change(TObject *Sender);
   void __fastcall FormShortCut(TWMKey &Msg, bool &Handled);
