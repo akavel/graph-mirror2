@@ -581,6 +581,7 @@ public:
 
   void SetFunc(const std::wstring &Text, const TArgType &AArgs);
   void SetFunc(const std::wstring &Text, const TArgType &AArgs, const TSymbolList &SymbolList);
+  void SetFunc(long double Value);
   long double Calc(const std::vector<long double> &Values) const;
   long double Calc(const std::vector<long double> &Values, ECalcError &E) const;
   TComplex Calc(const std::vector<TComplex> &Values) const;
