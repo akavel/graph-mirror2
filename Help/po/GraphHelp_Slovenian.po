@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-10-17 23:46Romance Daylight Time\n"
-"PO-Revision-Date: 2011-11-14 21:02+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2011-11-19 11:38+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -397,7 +397,7 @@ msgstr "Vrne vrednost Lambertove W-funkcije argumenta."
 
 #. Special.xml:239(para)
 msgid "The <placeholder-1/> function returns the result of the Lambert W-function, also known as the omega function, evaluated for <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The inverse of the <placeholder-7/> function is given by <placeholder-8/>."
-msgstr "Funkcija <placehoder-1/>  vrne vrednost  Lambertove W-funkcije, znane tudi pod imenom omega funkcija, izračunane pri <placehoder-2/>. <placehoder-3/> je lahko<placehoder-4/> , katerega rezultat je  <placehoder-5/> ali <placehoder-6/>. Inverzna funkcija funkcije <placehoder-7/> je podana z obrazcem <placehoder-8/>. "
+msgstr "Funkcija <placeholder-1/>  vrne vrednost  Lambertove W-funkcije, znane tudi pod imenom omega funkcija, izračunane pri <placeholder-2/>. <placeholder-3/> je lahko<placeholder-4/> , katerega rezultat je  <placeholder-5/> ali <placeholder-6/>. Inverzna funkcija funkcije <placeholder-7/> je podana z obrazcem <placeholder-8/>. "
 
 #. Special.xml:247(para)
 msgid "For real values of <placeholder-1/> when <placeholder-2/>, the <placeholder-3/> function will evaluate to values with an imaginary part."
@@ -433,7 +433,7 @@ msgstr "Vrne ostanek pri deljenju prvega argumenta z drugim argumentom."
 
 #. Special.xml:309(para)
 msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>, <placeholder-8/> returns 0. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
-msgstr "Izračuna <placeholder-1/> po modulu <placeholder-2/>, ostanek je <placeholder-3/>. <placeholder-4/> izračuna ostanek f, in zanj velja, da je <placeholder-5/>, za celo število a. Predznak ostanka f je vedno isti kot je predznak <placehoder-6/>. Ko je <placeholder-7/>, <placeholder-8/> vrne rezultat 0. <placeholder-9/> in <placeholder-10/> sta lahko poljubna <placeholder-11/> , katerih vrednost je  <placeholdeer-12/>."
+msgstr "Izračuna <placeholder-1/> po modulu <placeholder-2/>, ostanek je <placeholder-3/>. <placeholder-4/> izračuna ostanek f, in zanj velja, da je <placeholder-5/>, za celo število a. Predznak ostanka f je vedno isti kot je predznak <placeholder-6/>. Ko je <placeholder-7/>, <placeholder-8/> vrne rezultat 0. <placeholder-9/> in <placeholder-10/> sta lahko poljubna <placeholder-11/> , katerih vrednost je  <placeholder-12/>."
 
 #. Special.xml:330(primary)
 msgid "normal distribution"
@@ -557,7 +557,7 @@ msgstr "Odstrani decimalni del argumenta."
 
 #. Rounding.xml:22(para)
 msgid "The <placeholder-1/> function returns the <placeholder-2/> part of <placeholder-3/>. The function removes the decimal part of <placeholder-4/>, i.e. rounds against zero. <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If <placeholder-9/> is a complex number, the function returns <placeholder-10/>."
-msgstr "Funkcija <placeholder-1/> vrne <placeholder-2/> del od <placeholder-3/>. Funkcija odstrani decimalni del od <placeholder-4/>, to pomeni, da zaokroža navzdol. <placeholder-5/> je lahko poljubeni <placeholder-6>, katerega vrednost je <placeholder-7/> ali <placeholder-8/>. Če je <placeholder-9/> kompleksno število, funkcija vrne <placeholder-10/>."
+msgstr "Funkcija <placeholder-1/> vrne <placeholder-2/> del od <placeholder-3/>. Funkcija odstrani decimalni del od <placeholder-4/>, to pomeni, da zaokroža navzdol. <placeholder-5/> je lahko poljubeni <placeholder-6/>, katerega vrednost je <placeholder-7/> ali <placeholder-8/>. Če je <placeholder-9/> kompleksno število, funkcija vrne <placeholder-10/>."
 
 #. Rounding.xml:43(primary)
 msgid "fractional part"
@@ -701,7 +701,7 @@ msgstr "Vrne logaritem z osnovo <placeholder-1/> argumenta."
 
 #. PowerAndLog.xml:205(para)
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/>&gt;0. When calculating with complex numbers, <placeholder-9/> is defined for all numbers except <placeholder-10/>=0. <placeholder-11/> must evaluate to a positive real number."
-msgstr "Funkcija <placeholder-1/> izračuna logaritem  argumenta <placeholder-2/> z osnovo <placeholder-3/>. <placeholder-4/> je lahko <placeholder-5/>, katerega rezultat je <placeholder-6/> ali <placeholder-6/>. Če računamo v obsegu realnih števil, mora biti argument <placeholder-8/>&gt;0, ko pa računamo s kompleksnimi števili, je <placeholder-9/> definiran za vsa števila, razen za <placeholder-9/>=0. Vrednost <placeholder-11/> mora biti pozitivno realno število. "
+msgstr "Funkcija <placeholder-1/> izračuna logaritem  argumenta <placeholder-2/> z osnovo <placeholder-3/>. <placeholder-4/> je lahko <placeholder-5/>, katerega rezultat je <placeholder-6/> ali <placeholder-7/>. Če računamo v obsegu realnih števil, mora biti argument <placeholder-8/>&gt;0, ko pa računamo s kompleksnimi števili, je <placeholder-9/> definiran za vsa števila, razen za <placeholder-10/>=0. Vrednost <placeholder-11/> mora biti pozitivno realno število. "
 
 #. Plugins.xml:4(title) Plugins.xml:13(title)
 msgid "Plugins"
@@ -925,7 +925,7 @@ msgstr "Izberite format za izpis kompleksnega števila v <placeholder-1/> okviru
 
 #. OptionsDialog.xml:133(para)
 msgid "Notice that in some cases you may get a different result in the <placeholder-1/> frame depending on the <placeholder-2/> setting: When <placeholder-3/> is chosen, Graph will try to find a real result if possible, while <placeholder-4/> and <placeholder-5/> may give a non-real result for the same evaluation."
-msgstr "V okviru <placholder-1/> lahko v nekaterih primerih dobite različen rezultat, glede na nastavitev <placeholder-2/>: Ko je izbran <placeholder-3/>, bo Graph poskušal poiskati rezultat v realnem obsegu, medtem ko lahko <placeholder-4/> in <placeholder-5/> vrneta ne-realni rezultat za isto vrednotenje."
+msgstr "V okviru <placeholder-1/> lahko v nekaterih primerih dobite različen rezultat, glede na nastavitev <placeholder-2/>: Ko je izbran <placeholder-3/>, bo Graph poskušal poiskati rezultat v realnem obsegu, medtem ko lahko <placeholder-4/> in <placeholder-5/> vrneta ne-realni rezultat za isto vrednotenje."
 
 #. OptionsDialog.xml:142(term)
 msgid "Check for new version of Graph at startup"
@@ -1269,7 +1269,7 @@ msgstr "Del"
 
 #. MenuItems.xml:417(para)
 msgid "This will delete the selected <placeholder-1/> in the <placeholder-2/>."
-msgstr "To bo izbrisalo izbrani <placeholder-1> v <placeholder-2/>."
+msgstr "To bo izbrisalo izbrani <placeholder-1/> v <placeholder-2/>."
 
 #. MenuItems.xml:427(guimenuitem) CustomFunctionsDialog.xml:16(guimenuitem)
 msgid "Custom functions..."
@@ -1501,7 +1501,7 @@ msgstr "Forum za podporo programa Graph"
 
 #. Introduction.xml:30(para)
 msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <placeholder-2/>."
-msgstr "Program je bil testiran na sistemih <placeholder.1/>, vendar je lahko v njem še kakšen hrošč. Če potrebujete pomoč pri delu z Graphom ali želite predlagati izboljšave, pišite na <placeholder-2/>. "
+msgstr "Program je bil testiran na sistemih <placeholder-1/>, vendar je lahko v njem še kakšen hrošč. Če potrebujete pomoč pri delu z Graphom ali želite predlagati izboljšave, pišite na <placeholder-2/>. "
 
 #. Introduction.xml:42(para)
 msgid "When you send a bug report, please write the following:"
@@ -1633,7 +1633,7 @@ msgstr "Izberite jezik"
 
 #. Installation.xml:117(entry)
 msgid "Specifies the language to use. <placeholder-1/> specifies the English name of the language. When a valid /LANG parameter is used, the <placeholder-2/> dialog will be suppressed."
-msgstr "Določi kateri jezik uporabljati. <placeholder-1/> določa angleško ime jezika. Če je uporabljen veljaven parameter /LANG, okno <placeholdeer-2/> ne bo prikazano."
+msgstr "Določi kateri jezik uporabljati. <placeholder-1/> določa angleško ime jezika. Če je uporabljen veljaven parameter /LANG, okno <placeholder-2/> ne bo prikazano."
 
 #. Installation.xml:126(guilabel)
 msgid "Select destination location"
@@ -1729,7 +1729,7 @@ msgstr "Uporabite spodnje pogovorno okno za vstavljanje najbolje prilegajoče se
 
 #. InsertTrendlineDialog.xml:28(para)
 msgid "If the point series has custom Y-errors defined, these values are used to weight the points. The weight for each point is <placeholder-1/> where &sigma; is the Y-error for the point. X-errors are not used."
-msgstr "Če ima zaporedje točk definirane lastne y-napake, se le te uporabijo za uteževanje točk. Utež za vsako točko je <placeholde-1/>, kjer je  &sigma;  y-napaka točke. x-napak se ne uporabi."
+msgstr "Če ima zaporedje točk definirane lastne y-napake, se le te uporabijo za uteževanje točk. Utež za vsako točko je <placeholder-1/>, kjer je  &sigma;  y-napaka točke. x-napak se ne uporabi."
 
 #. InsertTrendlineDialog.xml:35(title)
 msgid "Built-in"
@@ -1785,7 +1785,7 @@ msgstr "Potenca"
 
 #. InsertTrendlineDialog.xml:94(para)
 msgid "A power function is given by <placeholder-1/>, where <placeholder-2/> and <placeholder-3/> are constants calculated so the function is the best fit of the point series. To add a power function, no point in the series may have an x- or y-coordinate that is negative or zero."
-msgstr "Potenča funkcija je podana s predpisom <placeholed-1/>, kjer sta <placeholder-2/> in placeholder-3/> konstanti, določeni tako, da se graf najbolje prilega zaporedju točk. Za dodajanje potenčne trendne črte morata biti x- in y-koordinati vseh točk pozitivni. "
+msgstr "Potenča funkcija je podana s predpisom <placeholder-1/>, kjer sta <placeholder-2/> in placeholder-3/> konstanti, določeni tako, da se graf najbolje prilega zaporedju točk. Za dodajanje potenčne trendne črte morata biti x- in y-koordinati vseh točk pozitivni. "
 
 #. InsertTrendlineDialog.xml:99(para)
 msgid "A power function is a straight line in a double logarithmic coordinate system. The point series is therefore converted to a double logarithmic coordinate system and the power function with the smallest sum of squares (SSQ) is found."
@@ -2097,7 +2097,7 @@ msgstr "Relacija"
 
 #. InsertRelationDialog.xml:28(para)
 msgid "Here you enter the relation you want to graph. This must either be an equation or an inequality. <placeholder-1/> and <placeholder-2/> are used as the independent variables. An equation is a statement that one quantity equals another and the quantities must be separated by the = operator. For example the equation <literal>x^2 + y^2 = 25</literal> will plot a circle of radius 5."
-msgstr "V vnosno polje vnesite relacijo. Relacija mora biti enačba ali neenačba. <placeholder-1/> in <placeholder-2/> sta neodvisni spremenljivki. V enačbi izenačite levo in desno stran enačbe z operatorjem =. Na primer enačba <litearal>x^2 + y^2 = 25</literal>  bo izrisana kot krog s polmerom 5."
+msgstr "V vnosno polje vnesite relacijo. Relacija mora biti enačba ali neenačba. <placeholder-1/> in <placeholder-2/> sta neodvisni spremenljivki. V enačbi izenačite levo in desno stran enačbe z operatorjem =. Na primer enačba <literal>x^2 + y^2 = 25</literal>  bo izrisana kot krog s polmerom 5."
 
 #. InsertRelationDialog.xml:35(para)
 msgid "An inequality is a statement that one quantity is greater or less than another, and the quantities must be separated by one of the four operators: &lt;, &gt;, &lt;=, &gt;=. An inequality can for example be <literal>abs(x) + abs(y) &lt; 1</literal>. Two operators can be used to specify a range, for example <literal>y &lt; sin(x) &lt; 0.5</literal>."
@@ -2217,7 +2217,7 @@ msgstr "Interpolacija"
 
 #. InsertPointSeriesDialog.xml:79(para)
 msgid "Notice that if you select an arrow as marker, the arrow will be shown pointing tangential to the line at the point. The actual direction therefore depends on the <placeholder-1/> setting. The first point is never shown when the marker is an arrow."
-msgstr "Če izberete za oznako točke puščico, bo le-ta prikazana tangencialno na krivuljo v tej točki. Dejanska smer je torej odvisna od nastavitev v <placeholder.1/>. Ko je izbrana oznaka puščica, ni prva točka  nikoli prikazana."
+msgstr "Če izberete za oznako točke puščico, bo le-ta prikazana tangencialno na krivuljo v tej točki. Dejanska smer je torej odvisna od nastavitev v <placeholder-1/>. Ko je izbrana oznaka puščica, ni prva točka  nikoli prikazana."
 
 #. InsertPointSeriesDialog.xml:88(term)
 msgid "Line"
@@ -2753,7 +2753,7 @@ msgstr "Izraz, katerega vrednost je število, imenujemo številski izraz. Izraz 
 
 #. Glossary.xml:98(para)
 msgid "Radians are a way to describe the size of an angle similar to degrees, but radians are not a unit like degrees. The angle of a whole circle is 360&deg; or 2&pi; radians. An angle in radians can be converted to degrees by multiplying with 180&deg;/&pi;. An angle in degrees can be converted to radians by multiplying with &pi;/180&deg;. You can choose to use radians or degrees for trigonometric functions in the <placeholder-1/> dialog under the <placeholder-2/> tab."
-msgstr "Radiani so merska enota za velikost kota. Kot, ki predstavlja celoten krog je360&deg; ali 2&pi; radianov. Kot v radianih lahko pretvorimo v kot v stopinjah tako, da ga množimo s 180&deg;/&pi;. Kot podan v stopinjah lahko pretvorimo v radiane, tako da ga množimo s  &pi;/180&deg;. Med radiani in stopinjami lahko izbirate v meniju <placeholder-1/> na zavihku <placholder-2/>."
+msgstr "Radiani so merska enota za velikost kota. Kot, ki predstavlja celoten krog je360&deg; ali 2&pi; radianov. Kot v radianih lahko pretvorimo v kot v stopinjah tako, da ga množimo s 180&deg;/&pi;. Kot podan v stopinjah lahko pretvorimo v radiane, tako da ga množimo s  &pi;/180&deg;. Med radiani in stopinjami lahko izbirate v meniju <placeholder-1/> na zavihku <placeholder-2/>."
 
 #. Glossary.xml:112(para)
 msgid "A real number is on the form nnn.fffEeee where nnn is the whole number part that may be negative. fff is the fraction part that is separated from the integer part with a dot '.'. The fraction part is optional, but either the integer part or the fraction part must be there. E is the exponent separator and must be an 'E' in upper case. eee is the exponent optionally preceded by '-'. The exponent is only needed if the E is there. Notice that 5E8 is the same as 5*10^8."
@@ -2869,7 +2869,7 @@ msgstr "Imaginarna enota. Definirana kot <placeholder-1/>.Uporabna samo, ko dela
 
 #. FunctionList.xml:76(entry)
 msgid "The constant for infinity. Only useful as argument to the <placeholder-1/> function."
-msgstr "Konstanta, ki predstavlja neskončnost. Uporabna samo za funkcijo <placholder-1/>."
+msgstr "Konstanta, ki predstavlja neskončnost. Uporabna samo za funkcijo <placeholder-1/>."
 
 #. FunctionList.xml:80(entry)
 msgid "Evaluates to a random number between 0 and 1."
@@ -3329,7 +3329,7 @@ msgstr "Kako naj narišem komleksno funckijo kot na primer f(t)=e^(i*t) ?"
 
 #. FAQ.xml:268(para)
 msgid "You probably want to show the real part on the x-axis and the imaginary part on the y-axis. In that case you can draw the function as the parametric function <userinput>x(t)=re(e^(i*t)), y(t)=im(e^(i*t))</userinput>. Notice that <placeholder-1/> must be enabled in the <placeholder-2/> dialog."
-msgstr "Verjetno želite predstaviti realni del na osi x, imaginarni pa na osi y. V tem primeru, jo narišete kot parametrično funkcijo: <userinput>x(t)=re(e^(i*t)), y(t)=im(e^(i*t))</userinput>. Pazite, da je <placholder-1/> omogočen v pogovrnem oknu <placeholder-2/>."
+msgstr "Verjetno želite predstaviti realni del na osi x, imaginarni pa na osi y. V tem primeru, jo narišete kot parametrično funkcijo: <userinput>x(t)=re(e^(i*t)), y(t)=im(e^(i*t))</userinput>. Pazite, da je <placeholder-1/> omogočen v pogovrnem oknu <placeholder-2/>."
 
 #. FAQ.xml:278(para)
 msgid "How can I make Graph plot functions with vertical asymptotes correctly?"
@@ -3433,7 +3433,7 @@ msgstr "Kurzor bo na najbližjem lokalnem ekstremu za y-koordinato."
 
 #. EvaluateDialog.xml:46(para)
 msgid "When you click with the mouse on the graphing area you may choose what the cursor will snap to: <placeholder-1/>"
-msgstr "Ko na sliko kliknete z miško, lahko v vnosnem oknu izberete, kje naj se  kurzor prikaže: <placeholder-1>"
+msgstr "Ko na sliko kliknete z miško, lahko v vnosnem oknu izberete, kje naj se  kurzor prikaže: <placeholder-1/>"
 
 #. EvaluateDialog.xml:103(para)
 msgid "When <placeholder-1/> is selected the dialog is used to calculate the definite integral for the selected function over a specified domain range. For standard functions, parametric functions and tangents the definite integral is the same as the signed area between the graph and the x-axis (the real x-axis and not necessarily the visible one) for the given range."
@@ -4181,7 +4181,7 @@ msgstr "Izberite <placeholder-1/>, če ne želite imeti prikazanih osi. Izberite
 
 #. AxesDialog.xml:227(para)
 msgid "Choose whether trigonometric functions should calculate in <placeholder-1/> or <placeholder-2/>. This is also used for showing <placeholder-3/> in the polar format."
-msgstr "Izberite ali naj se trigonometrične funkcije izračunavajo v <placeholder1/> ali v <placeholder-2/>. Nastavitev se uporablja tudi, ko prikazujemo <placeholder-3/> v polarni obliki."
+msgstr "Izberite ali naj se trigonometrične funkcije izračunavajo v <placeholder-1/> ali v <placeholder-2/>. Nastavitev se uporablja tudi, ko prikazujemo <placeholder-3/> v polarni obliki."
 
 #. AxesDialog.xml:244(term)
 msgid "Colors"
