@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Spanish Help File 4.4\n"
 "POT-Creation-Date: 2011-10-17 23:46Romance Daylight Time\n"
-"PO-Revision-Date: 2011-10-18 18:38+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2011-11-20 13:55+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team:  <fran_oliver@ono.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -316,7 +316,6 @@ msgid "Examples"
 msgstr "Ejemplos"
 
 #. Special.xml:42(para)
-#, fuzzy
 msgid "<placeholder-1/> will integrate f(t)=t^2-7t+1 from -3 to 15 and evaluate to 396. More useful is <placeholder-2/>. This will plot the integral of f(s)=s*sin(s) from 0 to x, which is the same as the definite integral of f(x)=x*sin(x)."
 msgstr "<placeholder-1/> calculará la integral definida de la función f(t)=t^2-7t+1 desde -3 hasta 15, y la evaluará como 396. Asimismo, si introduces <placeholder-2/>, Graph representará la integral de f(s)=s*sin(s) desde 0 hasta x, o lo que es lo mismo, la integral de f(x)=x*sin(x)."
 
@@ -653,7 +652,6 @@ msgid "The <placeholder-1/> function calculates the square root of <placeholder-
 msgstr "La función <placeholder-1/> calcula la raíz cuadrada del argumento <placeholder-2/>, esto es, <placeholder-3/> elevado a la potencia &frac12;: sqrt(z)=z<superscript>&frac12;</superscript>. Así, <placeholder-4/> puede ser cualquier <placeholder-5/> que evalúe a un <placeholder-6/> o a un <placeholder-7/>.<para>Si los cálculos se realizan con números reales, el argumento sólo está definido para <placeholder-8/>&ge;0.</para>"
 
 #. PowerAndLog.xml:90(para)
-#, fuzzy
 msgid "Returns the <placeholder-1/><superscript>th</superscript> root of the argument."
 msgstr "Devuelve la raíz enésima del argumento."
 
@@ -3126,9 +3124,8 @@ msgid "Rounds the first argument to the number of decimals given by the second a
 msgstr "Devuelve el primer argumento con el número de decimales indicado por el segundo argumento."
 
 #. FunctionList.xml:378(entry)
-#, fuzzy
 msgid "Returns the sign of the argument: 1 if the argument is greater than 0, and -1 if the argument is less than 0."
-msgstr "Devuelve el signo del argumento."
+msgstr "Devuelve el signo del argumento: 1 si el argumento es major que 0, y -1 si el argumento es menor que 0."
 
 #. FunctionList.xml:382(entry)
 msgid "Unit step: Returns 1 if the argument is greater than or equal 0, and 0 otherwise."
@@ -4531,14 +4528,17 @@ msgstr "Traducido al español por:"
 
 #~ msgid "Returns the <placeholder-1/> root of the argument."
 #~ msgstr "Devuelve la raíz enésima del argumento."
+
 #~ msgid "Area"
 #~ msgstr "Área"
+
 #~ msgid ""
 #~ "Returns the second argument if the first argument evaluates to a value "
 #~ "different from zero, else the third value is returned."
 #~ msgstr ""
 #~ "Devuelve el segundo argumento si la condición evalúa a verdadera, de otro "
 #~ "modo devuelve el tercer argumento. "
+
 #~ msgid ""
 #~ "Evaluates a sequence of if functions and returns the first result found "
 #~ "with a condition different from zero."
@@ -4546,18 +4546,21 @@ msgstr "Traducido al español por:"
 #~ "Analiza una secuencia de funciones <emphasis><link linkend=\"if\">if</"
 #~ "link></emphasis> devolviendo el primer argumento cuya condición evalúe a "
 #~ "verdadera."
+
 #~ msgid ""
 #~ "Calculates the signed area between the graph and the x-axis. This is the "
 #~ "same as the numerical integral."
 #~ msgstr ""
 #~ "Calcula el área comprendida entre la gráfica de la función seleccionada y "
 #~ "el eje X en el intervalo especificado."
+
 #~ msgid ""
 #~ "Evaluates to 1 if an expression evaluates to 0, and evaluates to 0 "
 #~ "otherwise."
 #~ msgstr ""
 #~ "Operador lógico unario: NO lógico. Devuelve 1 si una expresión evalúa a "
 #~ "0, de otro modo, devuelve 0. Ejemplo: f(x)=not x, devuelve 1 en x=0."
+
 #~ msgid ""
 #~ "Evaluates to 1 if two expressions both evaluate to a value different from "
 #~ "0, and evaluates to 0 otherwise."
@@ -4565,6 +4568,7 @@ msgstr "Traducido al español por:"
 #~ "Operador lógico binario: Y lógico. Devuelve 1 si dos expresiones no "
 #~ "evalúan a 0, de otro modo, devuelve 0. Ejemplo: f(x)=x and x^2-x, "
 #~ "devuelve 0 en x=0."
+
 #~ msgid ""
 #~ "Evaluates to 1 if at least one of two expressions evaluates to a value "
 #~ "different from 0, and evaluates to 0 otherwise."
@@ -4572,6 +4576,7 @@ msgstr "Traducido al español por:"
 #~ "Operador lógico binario: O lógico. Devuelve 1 si una de dos expresiones, "
 #~ "o ambas, no evalúan a 0, de otro modo, devuelve 0. Ejemplo: f(x)=x or x^2-"
 #~ "1, devuelve 1 en x=0 y x=1."
+
 #~ msgid ""
 #~ "Evaluates to 1 if exactly one of two expressions evaluates to a value "
 #~ "different from 0, and evaluates to 0 otherwise."
@@ -4579,16 +4584,19 @@ msgstr "Traducido al español por:"
 #~ "Operador lógico binario: O lógico exclusivo. Devuelve 1 si sólo una de "
 #~ "dos expresiones evalúa a 0, de otro modo, devuelve 0. Ejemplo: f(x)=x xor "
 #~ "x^2-1, devuelve 1 en x=0 y x=1."
+
 #~ msgid "The same as a sequence of if functions."
 #~ msgstr ""
 #~ "Analiza una secuencia de funciones <emphasis>if</emphasis> devolviendo el "
 #~ "primer argumento cuya condición evalúe a verdadera."
+
 #~ msgid ""
 #~ "Can I copy a function or point series from one instance of the program to "
 #~ "another?"
 #~ msgstr ""
 #~ "¿Puedo copiar un <glossterm linkend=\"GraphElement\">elemento de Graph</"
 #~ "glossterm> desde una ejecución del programa a otra?"
+
 #~ msgid ""
 #~ "Yes, you can select a function or point series and use the <placeholder-1/"
 #~ "> menu item to place a copy of the selected item in the clipboard. You "
@@ -4618,24 +4626,30 @@ msgstr "Traducido al español por:"
 #, fuzzy
 #~ msgid "Windows 2000"
 #~ msgstr "Seleccionar"
+
 #~ msgid "&Delta;x"
 #~ msgstr "&Delta;x"
+
 #~ msgid "&Delta;t"
 #~ msgstr "&Delta;t"
+
 #~ msgid ""
 #~ "Returns the summation of the first argument evaluated for all integers "
 #~ "from the second to the third argument."
 #~ msgstr ""
 #~ "Devuelve el sumatorio del primer argumento evaluado para todos los "
 #~ "números enteros entre el segundo argumento y el tercer argumento."
+
 #~ msgid ""
 #~ "Returns the product of the first argument evaluated for all integers from "
 #~ "the second to the third argument."
 #~ msgstr ""
 #~ "Devuelve el multiplicatorio del primer argumento evaluado para todos los "
 #~ "números enteros entre el segundo argumento y el tercer argumento."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Marcar el inicio del relleno"
+
 #~ msgid ""
 #~ "Check this to draw a line at the start of the range. Uncheck it if you "
 #~ "want two shadings to look as one."
@@ -4643,12 +4657,15 @@ msgstr "Traducido al español por:"
 #~ "Activa esta casilla si deseas delimitar el inicio del intervalo del "
 #~ "relleno con una línea. Desactívala si quieres que dos rellenos con el "
 #~ "mismo estilo semejen uno sólo."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Marcar el final del relleno"
+
 #~ msgid "Indicates if a term evaluates to 0."
 #~ msgstr ""
 #~ "Operador lógico unario: NO lógico. Devuelve 1 si una expresión evalúa a "
 #~ "0, de otro modo, devuelve 0."
+
 #~ msgid ""
 #~ "Graph requires 32 bit Windows. It has been tested under Windows 98, "
 #~ "Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is "
@@ -4660,17 +4677,22 @@ msgstr "Traducido al español por:"
 #~ "Vista y Windows 7. Si tu ordenador es capaz de ejecutar Windows debería "
 #~ "ser capaz igualmente de ejecutar el programa, aunque Windows 95 ya no "
 #~ "está soportado."
+
 #~ msgid "Graph uses dxgettext as translation library:"
 #~ msgstr ""
 #~ "Graph usa <emphasis>dxgettext</emphasis> como biblioteca de traducción:"
+
 #~ msgid "For shell extensions the EasyNSE library is used:"
 #~ msgstr ""
 #~ "Para extensiones <emphasis>shell</emphasis> ha sido utilizada la "
 #~ "biblioteca EasyNSE:"
+
 #~ msgid "Python is used for plugin support:"
 #~ msgstr "Python ha sido empleado para soporte de los complementos:"
+
 #~ msgid "Shadings"
 #~ msgstr "Relleno"
+
 #~ msgid ""
 #~ "CompuServe Graphics Interchange (gif) is not supported because it uses "
 #~ "the LZW compression, which is patented by Unisys."
@@ -4678,10 +4700,10 @@ msgstr "Traducido al español por:"
 #~ "El formato gif (Graphics Interchange Format) no está reconocido por Graph "
 #~ "ya que utiliza el algoritmo LZW (Lempel-Ziv-Welch), que es patente de "
 #~ "Unisys."
+
 #~ msgid ""
 #~ "The probability function of the normal distribution in a variate with "
 #~ "mean and standard"
 #~ msgstr ""
 #~ "Devuelve la función de densidad de probabilidad de una variable aleatoria "
 #~ "en la media y desviación típica indicadas."
-

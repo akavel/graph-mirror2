@@ -1,14 +1,9 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Shayan Abyari <ShayanAbyari@gmail.com>, 2009.
-# Yashar PourMohammad <YasharPM@yahoo.com>, 2009.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-09-21 23:00\n"
-"PO-Revision-Date: 2010-08-30 23:44+0100\n"
-"Last-Translator: Yashar PourMohammad <YasharPM@yahoo.com>\n"
+"POT-Creation-Date: 2011-08-13 00:00\n"
+"PO-Revision-Date: 2011-11-20 13:38+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -566,9 +561,8 @@ msgid "Integrate"
 msgstr "اینترنت"
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
-#, fuzzy
 msgid "Calculate the definite integral over a given interval."
-msgstr "محاسبه جدول"
+msgstr ""
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -582,7 +576,7 @@ msgstr "ارزیابی یا ردیابی تابع انتخاب شده."
 #. Form1..ActionManager..TableAction("Table")..Caption
 #, fuzzy
 msgid "Table"
-msgstr "جدول..."
+msgstr "Tab"
 
 #. Form1..ActionManager..TableAction("Table")..Hint
 msgid "Show an evaluation table."
@@ -609,9 +603,8 @@ msgid "Graph web site"
 msgstr "وب سایت گراف"
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
-#, fuzzy
 msgid "Open the default browser and show the Graph web site."
-msgstr "بازکردن مرورگر پیش فرض و نمایش صفحه خانگی برنامه."
+msgstr ""
 
 #. Form1..ActionManager..UpdateAction("Check for update")..Caption
 msgid "Check for update"
@@ -823,7 +816,7 @@ msgstr "نوع حروف..."
 #. Form1..PopupMenu4..Legend_Font("Font...")..Hint
 #, fuzzy
 msgid "Change the font of the legend."
-msgstr "انتخاب قلم برای عنوان."
+msgstr "انتخاب رنگ خطوط."
 
 #. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
@@ -1334,14 +1327,12 @@ msgid "Select which kind of line to draw between the markers."
 msgstr "نوع خط رسم شده بین شاخصه ها را انتخاب کنید."
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "1D cubic spline"
-msgstr "اسپیلاین های مکعبی"
+msgstr ""
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "2D cubic spline"
-msgstr "اسپیلاین های مکعبی"
+msgstr ""
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Half cosine"
@@ -1731,7 +1722,7 @@ msgstr "انتخاب رنگ مورد استفاده در هاشور زنی."
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Hint
 #, fuzzy
 msgid "Mark the border around the shading."
-msgstr "علامت زدن پایان هاشور زنی با یک خط."
+msgstr "انتخاب نوع هاشور زنی."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Caption
 #, fuzzy
@@ -1960,19 +1951,16 @@ msgid "Build %s"
 msgstr "Build %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
-#, fuzzy
 msgid "This is free software, and you are welcome to redistribute it under the terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please send bug reports and suggestions to the programmer."
-msgstr "This is free software, and you are welcome to redistribute it under the terms in the GNU General Public License. Please send bug reports and suggestions to the programmer."
+msgstr ""
 
 #. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
-#, fuzzy
 msgid "The newest version as well as the source code are available at: %s"
-msgstr "جدید ترین نسخه و همینطور کد اصلی در آدرس زیر موجود می باشند:"
+msgstr ""
 
 #. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
-#, fuzzy
 msgid "Email: %s"
-msgstr "Email:"
+msgstr ""
 
 #. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
@@ -2228,9 +2216,8 @@ msgstr "نمایش واحد ها روی محور انتخاب شده بصورت 
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
-#, fuzzy
 msgid "Show as a multiple of π"
-msgstr "نمایش به صورت مضربی از پی"
+msgstr ""
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 #. ParFuncFrame..ComboBox1....Items.Strings
@@ -2247,8 +2234,9 @@ msgid "Maximum y-value."
 msgstr "مقدار بیشینه y"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Edit9..Hint
+#, fuzzy
 msgid "Units between ticks on the y-axis."
-msgstr ""
+msgstr "واحد های بین تیک ها روی محور x"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Edit10..Hint
 msgid "Units between the grid lines perpendicular to the y-axis."
@@ -3039,9 +3027,8 @@ msgstr "مشتق گیری از تابع بازگشتی امکان پذیر نم�
 msgid "Internal error."
 msgstr "خطای داخلی."
 
-#, fuzzy
 msgid "Function \"%s\" cannot be differentiated."
-msgstr "تابع مشتق پذیر نمی باشد."
+msgstr ""
 
 msgid "Not further specified error occurred under calculation."
 msgstr "هیچ خطای از پیش تعریف شده ای در محاسبات اتفاق نیفتاده است."
@@ -3371,25 +3358,17 @@ msgstr "شما باید تابعی را انتخاب کنید."
 msgid "New version of Graph available"
 msgstr "نسخه جدیدی از گراف موجود است"
 
-#, fuzzy
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
 "\n"
 "Would you like to visit the download page?"
 msgstr ""
-"گراف %s برای دانلود در آدرس www.padowan.dk موجود است.\n"
-"با ویژگی های جدید نسبت به نسخه قبلی:\n"
-"\n"
-"%s\n"
-"\n"
-"آیا مایل به مشاهده وب سایت هستید؟"
 
 msgid "No new version"
 msgstr "نسخه جدیدی موجود نیست"
 
-#, fuzzy
 msgid "You are already using the most recent version of Graph."
-msgstr "شما هم اکنون آخرین نسخه برنامه را استفاده می کنید."
+msgstr ""
 
 msgid ""
 "Cannot connect to server www.padowan.dk.\n"
@@ -3788,42 +3767,3 @@ msgstr "انتخاب تعداد رونوشت ها برای چاپ."
 msgid "Enter percent of original size."
 msgstr "وارد کردن درصد اندازه اصلی."
 
-#, fuzzy
-#~ msgid "Arial"
-#~ msgstr "مساحت"
-
-#~ msgid "Calculate the area under the path of the selected function."
-#~ msgstr "محاسبه مساحت زیر مسیر انتخاب شده از تابع."
-
-#~ msgid "About Graph..."
-#~ msgstr "در مورد نرم افزار گراف..."
-
-#~ msgid "Custom functions..."
-#~ msgstr "توابع سفارشی"
-
-#~ msgid "Insert an OLE object such as a drawing or an equation."
-#~ msgstr "درج شی ء OLE مانند یک طرح یا یک تساوی."
-
-#~ msgid "Mark end of range"
-#~ msgstr "علامت زدن پایان بازه"
-
-#~ msgid "Mark the start of the shading with a line."
-#~ msgstr "علامت زدن شروع هاشور زنی با یک خط."
-
-#~ msgid "Mark start of range"
-#~ msgstr "علامت زدن شروع بازه"
-
-#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
-#~ msgstr "مساحت یا طول مسیر محاسبه شده در بازه مورد استفاده در فرمول سیمپسون."
-
-#~ msgid "Extremum"
-#~ msgstr "اکسترمم"
-
-#~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-#~ msgstr "متنی [*.txt; *.csv]|*.txt;*.csv|همه پرونده ها [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "محاسبه مساحت"
-
-#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
-#~ msgstr "شما می توانید پیشنهادات خود را برای نسخه های آینده، گزارش ایراد ها و پیغام دادن به graph@padowan.dk بفرستید."
