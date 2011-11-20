@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2011-09-21 23:00\n"
-"PO-Revision-Date: 2007-07-30 19:51+0100\n"
+"PO-Revision-Date: 2011-11-18 11:46+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -93,7 +93,7 @@ msgstr "自定"
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Hint
 msgid "Place the label at a custom position."
-msgstr ""
+msgstr "把標籤放到自訂的位置"
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Caption
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
@@ -110,17 +110,17 @@ msgstr "函數下面範圍陰影"
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_90..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_90..Hint
 msgid "Show the label rotated 90° counter clockwise."
-msgstr ""
+msgstr "逆時鐘旋轉標籤90度"
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_180..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_180..Hint
 msgid "Show the label rotated 180°."
-msgstr ""
+msgstr "順時鐘旋轉標籤180度"
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_270..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_270..Hint
 msgid "Show the label rotated 270° counter clockwise."
-msgstr ""
+msgstr "逆時鐘旋轉標籤270度"
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
@@ -217,7 +217,7 @@ msgstr "計算"
 
 #. Form1..ActionManager........("File")..Caption
 msgid "Plugins"
-msgstr ""
+msgstr "外掛"
 
 #. Form1..ActionManager........("File")....("Import")..Caption
 msgid "Internet"
@@ -442,7 +442,7 @@ msgstr "插入趨勢線"
 
 #. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Hint
 msgid "Insert a curve of best fit for the selected point series."
-msgstr "插入一個最適合曲線到選定的座標數列"
+msgstr "插入選定座標點數列的最適曲線"
 
 #. Form1..ActionManager..EditAction("Edit...")..Caption
 msgid "Edit..."
@@ -476,7 +476,7 @@ msgstr "放大"
 
 #. Form1..ActionManager..ZoomInAction("In")..Hint
 msgid "Zoom in. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "放大。若同時按住Shift鍵可以放大更多。"
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Caption
 msgid "Out"
@@ -484,7 +484,7 @@ msgstr "縮小"
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Hint
 msgid "Zoom out. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "縮小。若同時按住Shift鍵可以縮小更多。"
 
 #. Form1..ActionManager..ZoomWindowAction("Window")..Caption
 msgid "Window"
@@ -573,14 +573,12 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "計算曲線上兩點之間的路徑長度"
 
 #. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
 msgid "Integrate"
-msgstr "網路"
+msgstr "積分"
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
-#, fuzzy
 msgid "Calculate the definite integral over a given interval."
-msgstr "計算表格"
+msgstr "計算範圍內的有限積分"
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -719,7 +717,7 @@ msgstr "放大 x 軸"
 
 #. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")....Hint
 msgid "Zoom in on the x-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "只放大x軸。若同時按住Shift鍵可以放大更多。"
 
 #. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Caption
 msgid "Zoom x-axis out"
@@ -727,7 +725,7 @@ msgstr "縮小 x 軸"
 
 #. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")....Hint
 msgid "Zoom out on the x-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "只縮小x軸。若同時按住Shift鍵可以縮小更多。"
 
 #. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Caption
 msgid "Zoom y-axis in"
@@ -735,7 +733,7 @@ msgstr "放大 y 軸"
 
 #. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")....Hint
 msgid "Zoom in on the y-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "只放大y軸。若同時按住Shift鍵可以放大更多。"
 
 #. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Caption
 msgid "Zoom y-axis out"
@@ -743,7 +741,7 @@ msgstr "縮小 y 軸"
 
 #. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")....Hint
 msgid "Zoom out on the y-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "只縮小y軸。若同時按住Shift鍵可以縮小更多。"
 
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Caption
 msgid "Insert relation..."
@@ -772,11 +770,11 @@ msgstr "用改變常數來新增動畫"
 
 #. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Caption
 msgid "Graph file..."
-msgstr "圖檔..."
+msgstr "Graph 檔案..."
 
 #. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Hint
 msgid "Import a Graph file into the current coordinate system."
-msgstr "輸入一個圖檔到現在的座標系"
+msgstr "輸入一個Graph 檔案到現在的座標系"
 
 #. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Caption
 msgid "Point series..."
@@ -788,11 +786,11 @@ msgstr "由資料檔案輸入座標點"
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Caption
 msgid "Scripting engine documentation"
-msgstr ""
+msgstr "描述性引擎文件"
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Hint
 msgid "Show documentation for scripting engine and plugin system."
-msgstr ""
+msgstr "呈現描述性引擎和外掛系統文件"
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -1107,7 +1105,7 @@ msgstr "參數範圍"
 #. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label4("From:")..Caption
 #. AreaFrame..GridPanel1..Label1("From:")..Caption
 msgid "From:"
-msgstr "From:"
+msgstr "由:"
 
 #. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label5("To:")..Caption
 #. Form15("Calculate table")..Label2("To:")..Caption
@@ -1205,7 +1203,7 @@ msgstr "對數"
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton1("Linear")..Caption
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Linear"
-msgstr "直線"
+msgstr "線性"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton4("Power")..Caption
 msgid "Power"
@@ -1241,16 +1239,16 @@ msgstr "使用者定義"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Label1("Model:")..Caption
 msgid "Model:"
-msgstr "模式:"
+msgstr "模型:"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button4("Add model")..Caption
 #. Form8("Add model")..Caption
 msgid "Add model"
-msgstr "增加模式"
+msgstr "增加模型"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button5("Remove model")..Caption
 msgid "Remove model"
-msgstr "移除模式"
+msgstr "移除模型"
 
 #. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button6("Edit model")..Caption
 #. Insert trendline dialog
@@ -1287,14 +1285,13 @@ msgid "Export all to file..."
 msgstr "輸出到檔案"
 
 #. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Hint
-#, fuzzy
 msgid "Export user models to a file."
-msgstr "輸出選擇的資料到檔案"
+msgstr "輸出使用者模型到檔案"
 
 #. Form13("Insert trendline")..SaveDialog1..Filter
 #. Form13("Insert trendline")..OpenDialog1..Filter
 msgid "User models [*.ini]|*.ini"
-msgstr ""
+msgstr "使用者模型[*.ini]*.ini"
 
 #. Form14("Insert point series")..Caption
 msgid "Insert point series"
@@ -1358,14 +1355,12 @@ msgid "Select which kind of line to draw between the markers."
 msgstr "選擇標示之間的線條樣式"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "1D cubic spline"
-msgstr "三次曲線"
+msgstr "1D cubic spline"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "2D cubic spline"
-msgstr "三次曲線"
+msgstr "2D cubic spline"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Half cosine"
@@ -1439,7 +1434,7 @@ msgstr "右上"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Hint
 msgid "Choose between cartesian (x,y) coordinates and polar (θ,r) coordinates."
-msgstr ""
+msgstr "  選擇笛卡兒坐標系(x,y)或極坐標系(θ,r) "
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")..Caption
 #, fuzzy
@@ -1448,7 +1443,7 @@ msgstr "座標未定義"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
 msgid "Cartesian"
-msgstr ""
+msgstr "笛卡兒"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
 #. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
@@ -1642,7 +1637,7 @@ msgstr "計算"
 #. Form15("Calculate table")..SaveDialog1..Filter
 #. Export to file dialog
 msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
-msgstr "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
+msgstr "CSV (逗號分隔) [*.csv]|*.csv|Text [*.txt]|*.txt"
 
 #. Form16("Insert shading")..Caption
 msgid "Insert shading"
@@ -1904,7 +1899,7 @@ msgstr "左邊"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Ledger"
-msgstr ""
+msgstr "Ledger"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 #, fuzzy
@@ -2043,7 +2038,7 @@ msgstr "間隔數:"
 
 #. Form20("Animation")..SaveDialog1..Filter
 msgid "Audio Video Interleave [*.avi]|*.avi"
-msgstr ""
+msgstr "影音格式[*.avi]|*.avi"
 
 #. Form20("Animation")..PopupMenu1..Speed1("Speed")..Caption
 msgid "Speed"
@@ -2095,7 +2090,7 @@ msgstr "另存新檔"
 
 #. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")....Hint
 msgid "Save all frames in the animation to image files. This will create as many files as there are frames in the animation."
-msgstr ""
+msgstr "儲存所有動畫的影格到圖片檔。這會產生許多相關的動畫影格。"
 
 #. Form21("Placement")..Label1("Corner:")..Caption
 #, fuzzy
@@ -2135,7 +2130,7 @@ msgstr "輸入 x 座標或者點主視窗上的 切線"
 
 #. Form22("Python interpreter")..Caption
 msgid "Python interpreter"
-msgstr ""
+msgstr "Python 直譯器"
 
 #. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
 #, fuzzy
@@ -2364,7 +2359,7 @@ msgstr "選擇三角函數的計算使用弧度或者角度"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")..Caption
 msgid "Trigonometry"
-msgstr "三角"
+msgstr "平面三角"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Items.Strings
 msgid "Radian"
@@ -2550,15 +2545,15 @@ msgstr "在啟動  Graph 時就檢查新版本"
 
 #. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")....Hint
 msgid "Use a custom decimal separator instead of the default from the Windows Regional settings."
-msgstr ""
+msgstr "不用系統的設定，而改使用自定的十進位分隔符號。"
 
 #. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")..Caption
 msgid "Custom decimal separator:"
-msgstr ""
+msgstr "自訂十進位分割符號"
 
 #. Form4("Options")..GridPanelEx1..Edit4..Hint
 msgid "Decimal separator used when exporting to other programs."
-msgstr ""
+msgstr "當轉出到其他程式時用的十進位分隔符號。"
 
 #. Form5("Insert function")..Caption
 msgid "Insert function"
@@ -2769,9 +2764,8 @@ msgstr "選擇點選圖片後的游標放置位置。"
 
 #. AreaFrame..GridPanel1..Label3("Integral")..Caption
 #. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
 msgid "Integral"
-msgstr "網路"
+msgstr "積分"
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2889,9 +2883,8 @@ msgid "Error"
 msgstr "錯誤"
 
 #. Indicates an error code, e.g. "Error 5"
-#, fuzzy
 msgid "Error %s"
-msgstr "誤差槓"
+msgstr "誤差槓 %s"
 
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
@@ -2916,11 +2909,11 @@ msgstr "座標軸"
 
 #. Shortcut key
 msgid "Ctrl"
-msgstr ""
+msgstr "Ctrl"
 
 #. Shortcut key
 msgid "Alt"
-msgstr ""
+msgstr "Alt"
 
 #. Shortcut key
 #, fuzzy
@@ -2939,24 +2932,23 @@ msgstr "放大"
 
 #. Shortcut key
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. Shortcut key
-#, fuzzy
 msgid "End"
-msgstr "結束:"
+msgstr "End"
 
 #. Shortcut key
 msgid "PgUp"
-msgstr ""
+msgstr "PgUp"
 
 #. Shortcut key
 msgid "PgDn"
-msgstr ""
+msgstr "PgDn"
 
 #. Shortcut key
 msgid "Up"
-msgstr ""
+msgstr "Up"
 
 #. Shortcut key
 #, fuzzy
@@ -2965,32 +2957,29 @@ msgstr "捐助"
 
 #. Shortcut key
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #. Shortcut key
-#, fuzzy
 msgid "Enter"
-msgstr "印表機:"
+msgstr "輸入"
 
 #. Shortcut key
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Shortcut key
 msgid "BkSp"
-msgstr ""
+msgstr "BkSp"
 
 #. Shortcut key
-#, fuzzy
 msgid "Space"
-msgstr "存檔"
+msgstr "空白"
 
 msgid "An error occurred while evaluating power function."
 msgstr "在求冪方程式解的過程發生錯誤"
 
-#, fuzzy
 msgid "Tangent to pi/2+n*pi (90+n180 in degrees) is undefined."
-msgstr "切線到 90+p180 未被定義"
+msgstr "切線到 pi/2+n*pi(90度+n180度) 未被定義"
 
 msgid "Fact can only be calculated for positive integers."
 msgstr "階層只有在正整數的情況下計算。"
@@ -3035,10 +3024,10 @@ msgid "Too many recursive calls."
 msgstr "太多遞迴呼叫"
 
 msgid "Overflow: A function returned a value too large to handle."
-msgstr ""
+msgstr "資料異位：程式回傳一個過大無法處理的數值。"
 
 msgid "A plugin function failed: %s"
-msgstr ""
+msgstr "外掛功能失敗： %s"
 
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "運算子 '%s' 不可以被放在這裡"
@@ -3106,18 +3095,17 @@ msgstr "無法區別遞迴函數"
 msgid "Internal error."
 msgstr "內部錯誤"
 
-#, fuzzy
 msgid "Function \"%s\" cannot be differentiated."
-msgstr "函數無法被區別"
+msgstr "函數\"%s\"無法被區別"
 
 msgid "Not further specified error occurred under calculation."
 msgstr "沒有進一步特定的錯誤出現在計算過程。"
 
 msgid "No solution found. Try another guess or another model."
-msgstr "無解,請試用其他的假設或者模式"
+msgstr "無解,請試用其他的假設或者模型"
 
 msgid "No result found."
-msgstr ""
+msgstr "沒有找到任何結果。"
 
 #, fuzzy
 msgid "An accurate result cannot be found."
@@ -3154,7 +3142,7 @@ msgid "Character found after brackets."
 msgstr "括號後出現字元"
 
 msgid "Symbol \"%s\" defined more than once."
-msgstr "符號 \"%s\" 已經被建立超過一次"
+msgstr "符號 \"%s\" 已經被定義過"
 
 msgid "Invalid equation or inequality."
 msgstr "無效的等式或不等式"
@@ -3180,9 +3168,8 @@ msgstr "你已經放到最大的限度了"
 msgid "You have reached the minimum range of zoom."
 msgstr "你已經縮小到最小限度"
 
-#, fuzzy
 msgid "'%s' must not be zero."
-msgstr "'%s' 必須要大於0。"
+msgstr "'%s' 不可為0。"
 
 #. Error message when an invalid value is entered.
 msgid "Error in value"
@@ -3231,14 +3218,14 @@ msgid ""
 "The file is not a correct Graph file."
 msgstr ""
 "檔案讀取錯誤: %s\n"
-"檔案不是一個正確的圖檔"
+"檔案不是一個正確的Graph 檔案"
 
 msgid "Unknown error while reading file: %s"
 msgstr "未明的讀取錯誤: %s"
 
 #. Used in Save as dialog
 msgid "Graph files [*.grf]|*.grf"
-msgstr "圖檔 [*.grf]|*.grf"
+msgstr "Graph 檔案 [*.grf]|*.grf"
 
 msgid ""
 "Cannot write to file: %s\n"
@@ -3251,9 +3238,8 @@ msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "字型 \"%s\"不存在，使用標準的字型替代。"
 
 #. Description of grf file
-#, fuzzy
 msgid "Graph system"
-msgstr "移動座標系"
+msgstr "Graph 系統"
 
 #. Menu item shown in OLE client to open a Graph system object in Graph
 #, fuzzy
@@ -3291,9 +3277,8 @@ msgstr "系統的資源不足以儲存此大圖檔"
 msgid "'%1%' must be between %2% and %3%."
 msgstr "'%1%' 必需介於 %2% and %3%之間"
 
-#, fuzzy
 msgid "File not found"
-msgstr "找不到 '%s' 這個檔案"
+msgstr "找不到這個檔案"
 
 #, fuzzy
 msgid "Error reading file"
@@ -3304,7 +3289,7 @@ msgid "Printer error"
 msgstr "列印錯誤"
 
 msgid "Invalid use of infinity. Infinity cannot be used here."
-msgstr ""
+msgstr "無限不能在此使用。"
 
 msgid "Confirm delete"
 msgstr "確定刪除"
@@ -3314,11 +3299,11 @@ msgstr "你確定想要刪除  %s ?"
 
 #. Save as dialog
 msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
-msgstr "圖檔 [*.grf]|*.grf|All files [*.*]|*.*"
+msgstr "Graph 檔案 [*.grf]|*.grf|All files [*.*]|*.*"
 
 #. Import from file dialog
 msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
-msgstr ""
+msgstr "CSV (分號分隔) [*.csv]|*.csv|CSV (逗號分隔) [*.csv]|*.csv|Text (tab分隔) [*.txt]|*.txt|Text (空白分隔) [*.txt]|*.txt|All files [*.*]|*.*"
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "你確定想要刪除此模型 %s 嗎?"
@@ -3370,10 +3355,10 @@ msgid "The end of interval must be greater than the start of interval and %s mus
 msgstr "間隔終點必須大於間隔起始點而且 %s 必須大於0。"
 
 msgid "Invalid model name."
-msgstr ""
+msgstr "無效的模型名稱。"
 
 msgid "A model of that name already exist."
-msgstr ""
+msgstr "這個名稱的模型已經存在"
 
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "此函數的導數並沒有被定義在%s=%s。"
@@ -3389,9 +3374,8 @@ msgstr "檢查新版本"
 msgid "Abort printing?"
 msgstr "取消列印嗎?"
 
-#, fuzzy
 msgid "Calculate definite integral"
-msgstr "計算表格"
+msgstr "計算有限積分"
 
 msgid "Calculate length of path"
 msgstr "計算路徑長度"
@@ -3405,12 +3389,11 @@ msgstr "編輯 切線/ 法線"
 msgid "Error processing file '%s' at line %s."
 msgstr "錯誤執行檔案'%s'在第'%s' 行。"
 
-#, fuzzy
 msgid "Edit text label"
-msgstr "文字標籤:"
+msgstr "編輯文字標籤:"
 
 msgid "The model needs some constants (starting with a $) for Graph to find."
-msgstr ""
+msgstr "這個模型需要一些常數(由a $ 開始)讓Graph找到"
 
 msgid "'%s' has to be an integer value between 0 and 1000."
 msgstr "'%s' 必須要為一個介於0和1000之間的整數。"
@@ -3446,16 +3429,12 @@ msgstr "你要選一個函數"
 msgid "New version of Graph available"
 msgstr "新版本的 Graph 已經可以取得"
 
-#, fuzzy
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
 "\n"
 "Would you like to visit the download page?"
 msgstr ""
 "Graph %s 現在已經可以在 http://www.padowan.dk 下載\n"
-"並且從之前的版本後有新的功能：\n"
-"\n"
-"%s\n"
 "\n"
 "你想要參觀本網站嗎? "
 
@@ -3478,7 +3457,7 @@ msgid "Socket error %s"
 msgstr "Socket error %s"
 
 msgid "Definite integral, or signed area between function and x-axis, for the given domain range."
-msgstr ""
+msgstr "有限積分，或在有限範圍內程式與x軸之間的面積。"
 
 #, fuzzy
 msgid "Length of path along the curve calculated for the given range."
@@ -3530,7 +3509,7 @@ msgstr "編輯趨勢線"
 
 #. Customize toolbar dialog
 msgid "Categories:"
-msgstr "類 別:"
+msgstr "類別:"
 
 #. An error message that hopefully is never seen by the user
 msgid ""
@@ -3538,9 +3517,12 @@ msgid ""
 "If you cancel the operation the program will become unstable.\n"
 "You should therefore save your data under a new name and restart the application."
 msgstr ""
+"程式似乎沒有反應，\n"
+"如果你取消此項操作，程式可能會不穩定，\n"
+"建議令存一個新檔名或重開此程式。"
 
 msgid "Thread is not responding"
-msgstr ""
+msgstr "執行緒沒有反應"
 
 #. Tip of the Day
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
@@ -3548,7 +3530,7 @@ msgstr "今天的提示給你大部分使用者通常不知道的訊息"
 
 #. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
 msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr ""
+msgstr "你可以在<a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>找到更多Graph的幫助，或者回報問題到網站。"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
@@ -3775,14 +3757,14 @@ msgid "Description"
 msgstr "敘述"
 
 msgid "Cannot open clipboard: %s"
-msgstr ""
+msgstr "無法開啟剪貼簿: %s"
 
 #, fuzzy
 msgid "There is no default printer currently selected."
 msgstr "你的系統沒有安裝印表機"
 
 msgid "Install for all users"
-msgstr ""
+msgstr "為每一位使用者安裝"
 
 #, fuzzy
 msgid "Examples"
@@ -3862,7 +3844,7 @@ msgstr "頁面中間"
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1....Hint
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2....Hint
 msgid "Specify the printing area of the page. The printer will print only within these margins."
-msgstr ""
+msgstr "設定列印範圍，印表機只會印出邊界內的範圍。"
 
 #. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
 msgid "Number of copies:"
