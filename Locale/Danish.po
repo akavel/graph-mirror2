@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2011-08-13 00:00\n"
-"PO-Revision-Date: 2011-10-19 15:47+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2011-11-20 13:06+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: Ivan Johansen\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2102,7 +2102,7 @@ msgstr "Maksimal x-værdi."
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label3("Tick unit:")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label7("Tick unit:")..Caption
 msgid "Tick unit:"
-msgstr "Skalaenhed:"
+msgstr "Skala:"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit3..Hint
 msgid "Units between ticks on the x-axis."
@@ -2111,7 +2111,7 @@ msgstr "Afstand mellem skalastreger på x-aksen."
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label14("Grid unit:")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label9("Grid unit:")..Caption
 msgid "Grid unit:"
-msgstr "Gitterenhed:"
+msgstr "Gitter:"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit4..Hint
 msgid "Units between the grid lines perpendicular to the x-axis."
@@ -2134,7 +2134,7 @@ msgstr "Vis skalastreger på x-aksen."
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
 msgid "Show ticks"
-msgstr "Vis skalastreger"
+msgstr "Vis"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Hint
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Hint
@@ -2153,7 +2153,7 @@ msgstr "Vis lodrette gitterlinjer."
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Caption
 msgid "Show grid"
-msgstr "Vis gitter"
+msgstr "Vis"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
 msgid "Show the label at the right side of the graphing area, above the x-axis."
@@ -3754,69 +3754,96 @@ msgstr "Indtast procentdel af oprindelig størrelse."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Areal"
+
 #~ msgid "Calculate the area under the path of the selected function."
 #~ msgstr "Beregn arealet under grafen for den markerede funktion."
+
 #~ msgid "About Graph..."
 #~ msgstr "Om Graph..."
+
 #~ msgid "Custom functions..."
 #~ msgstr "Brugerdefinerede funktioner..."
+
 #~ msgid "Insert an OLE object such as a drawing or an equation."
 #~ msgstr "Indsæt et OLE-objekt, f.eks. en tegning eller en ligning."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Marker slutning"
+
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Marker starten af skraveringen med en linje."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Marker start"
+
 #~ msgid ""
 #~ "Area or length of path calculated for the given range using Simpson's "
 #~ "formula."
 #~ msgstr ""
 #~ "Areal eller buelængde beregnet for det angivne interval ved brug af "
 #~ "Simpsons formel."
+
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle filer [*.*]|*.*"
+
 #~ msgid "Calculate area"
 #~ msgstr "Beregn areal"
+
 #~ msgid "Extremum"
 #~ msgstr "Ekstremum"
+
 #~ msgid ""
 #~ "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Funktionens anden afledte evalueret for den indtastede værdi."
+
 #~ msgid "Zoom in."
 #~ msgstr "Zoom ind."
+
 #~ msgid "Zoom out."
 #~ msgstr "Zoom ud."
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Zoom tilbage til standardindstillingerne."
+
 #~ msgid "Go to home page"
 #~ msgstr "Vis hjemmeside"
+
 #~ msgid "All points"
 #~ msgstr "Alle punkter"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zoom så meget at alle punkter er synlige."
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoom kun ind på x-aksen."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoom kun ud på x-aksen."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoom kun ind på y-aksen."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoom kun ud på y-aksen."
+
 #~ msgid "Image information"
 #~ msgstr "Billedinformation"
+
 #~ msgid "Open the file %s."
 #~ msgstr "Åbner filen %s."
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Serveren svarede med beskeden '%s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokolfejl %s"
+
 #~ msgid ""
 #~ "You can send suggestions for future versions, bug reports and comments to "
 #~ "graph@padowan.dk"
 #~ msgstr ""
 #~ "Du kan sende forslag til forbedringer, fejlrapporter og kommentarer til "
 #~ "graph@padowan.dk."
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Vælg dette for at placere billedet midt på siden."
-

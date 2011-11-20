@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.3 (384)\n"
 "POT-Creation-Date: 2011-08-13 00:00\n"
-"PO-Revision-Date: 2011-10-10 16:24+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2011-11-20 13:11+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: SWEDISH <par.smars@bredband.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2103,7 +2103,7 @@ msgstr "Största x-värde."
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label3("Tick unit:")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label7("Tick unit:")..Caption
 msgid "Tick unit:"
-msgstr "Streckindelning:"
+msgstr "Streck:"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit3..Hint
 msgid "Units between ticks on the x-axis."
@@ -2112,7 +2112,7 @@ msgstr "Värde mellan streckindelningen på x-axeln."
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label14("Grid unit:")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label9("Grid unit:")..Caption
 msgid "Grid unit:"
-msgstr "Rutnätsindelning:"
+msgstr "Rutnät:"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit4..Hint
 msgid "Units between the grid lines perpendicular to the x-axis."
@@ -2126,7 +2126,7 @@ msgstr "Automatisk streckindelning."
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox4("Auto tick")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox11("Auto tick")..Caption
 msgid "Auto tick"
-msgstr "Auto-streck"
+msgstr "Auto"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
 msgid "Show tick marks on the x-axis."
@@ -2135,7 +2135,7 @@ msgstr "Visa streckindelning på x-axeln."
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
 msgid "Show ticks"
-msgstr "Visa streckindelning"
+msgstr "Visa"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Hint
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Hint
@@ -2145,7 +2145,7 @@ msgstr "Ställ in enheterna för rutnätet till samma som för streckindelningen
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Caption
 msgid "Auto grid"
-msgstr "Auto-rutnät"
+msgstr "Auto"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Hint
 msgid "Show vertical grid lines."
@@ -2154,7 +2154,7 @@ msgstr "Visa vertikala rutnätslinjer."
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Caption
 msgid "Show grid"
-msgstr "Visa rutnät"
+msgstr "Visa"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
 msgid "Show the label at the right side of the graphing area, above the x-axis."
@@ -3755,67 +3755,94 @@ msgstr "Välj procent av originalstorlek."
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Area"
+
 #~ msgid ""
 #~ "Area or length of path calculated for the given range using Simpson's "
 #~ "formula."
 #~ msgstr ""
 #~ "Använder Simpsons formel för att beräkna area eller längd på kurvan för "
 #~ "angivet område."
+
 #~ msgid "Extremum"
 #~ msgstr "Extremvärde"
+
 #~ msgid ""
 #~ "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Detta är funktionens andraderivata utvärderad för inmatat värde."
+
 #~ msgid "Zoom in."
 #~ msgstr "Zooma in."
+
 #~ msgid "Zoom out."
 #~ msgstr "Zooma ut."
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Zooma till standardkoordinater."
+
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Beräknar arean under grafen till den valda funktionen."
+
 #~ msgid "Go to home page"
 #~ msgstr "Gå till hemsidan"
+
 #~ msgid "About Graph..."
 #~ msgstr "Om Graph..."
+
 #~ msgid "All points"
 #~ msgstr "Alla punkter"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zooma så mycket att alla punkter är synliga."
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoomar in enbart x-axeln."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoomar ut enbart x-axeln."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoomar in enbart y-axeln."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoomar ut enbart y-axeln."
+
 #~ msgid "Custom functions..."
 #~ msgstr "Skapa funktioner..."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Markera områdesslut"
+
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Markera startpunkt för skuggning med en linje."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Markera områdesstart"
+
 #~ msgid "Image information"
 #~ msgstr "Bildinformation"
+
 #~ msgid "Open the file %s."
 #~ msgstr "Öppna filen %s."
+
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Textfiler [*.txt; *.csv]|*.txt;*.csv|Alla filer [*.*]|*.*"
+
 #~ msgid "Calculate area"
 #~ msgstr "Beräkna area"
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Servern svarade med meddelandet '%s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Fel i svar från nätverksprotokoll %s"
+
 #~ msgid ""
 #~ "You can send suggestions for future versions, bug reports and comments to "
 #~ "graph@padowan.dk"
 #~ msgstr ""
 #~ "Du kan sända förslag på förbättringar för framtida versioner, "
 #~ "felrapporter och kommentarer till graph@padowan.dk."
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Välj för att placera bilden mitt på sidan."
 
@@ -3873,40 +3900,55 @@ msgstr "Välj procent av originalstorlek."
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Version"
+
 #~ msgid "Visible"
 #~ msgstr "Synlig"
+
 #~ msgid "Check to make the selected item visible in the coordinate system."
 #~ msgstr "Välj för att göra valt objekt synligt i koordinatsystemet."
+
 #~ msgid "Functions"
 #~ msgstr "Funktioner"
+
 #~ msgid "Tangents"
 #~ msgstr "Tangenter"
+
 #~ msgid "Point series"
 #~ msgstr "Punktserier"
+
 #~ msgid "Shades"
 #~ msgstr "Skuggningar"
+
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Inget fel uppstod. Du borde inte se detta meddelande."
+
 #~ msgid "Right bracket missing."
 #~ msgstr "Högerparentes saknas."
+
 #~ msgid "Conversion error"
 #~ msgstr "Konverteringsfel"
+
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Okänd felkod.\n"
 #~ "Kan inte hitta felmeddelandet för detta fel."
+
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr ""
 #~ "Detta fel skall ej uppkomma. Var god rapportera händelsen till "
 #~ "programmeraren."
+
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "Maximal textlängd har uppnåtts."
+
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Dialogrutefel: %sh"
+
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "Okänt Graph-data hittades när inehållet i urklipp klistrades in."
+
 #~ msgid ""
 #~ "To add actions to your application simply drag and drop from either "
 #~ "Categories or Actions onto an existing ActionBar."
@@ -3914,4 +3956,3 @@ msgstr "Välj procent av originalstorlek."
 #~ "För att lägga till en åtgärd till din applikation, dra objekt från "
 #~ "antingen Kategorier eller Åtgärder och släpp dem på en befintlig "
 #~ "Åtgärdslist."
-
